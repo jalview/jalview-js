@@ -4,6 +4,9 @@ JavaScript artefacts and documents for deploying JalviewJS
 ## About
 JalviewJS is the [Jalview multiple sequence alignment visual analytics workbench](https://www.jalview.org), in [JavaScript](https://www.jalview.org/jalview-js/). It is made possible by [Java2Script](https://github.com/java2script/java2script) - a JavaScript transpiler plugin for Eclipse and the SwingJS library which provides access to a JavaScript port of the Java Runtime Environment, including support for AWT, Swing, Desktop Applications and Applets. 
 
+### Which version of JalviewJS is this ?
+
+The version, build date and originating commit ID are given in (swingjs/j2s/.build_properties) and (VERSION).  
 ## How to deploy JalviewJS to your site
 Clone this repository somewhere, and when you want to provide a JalviewJS component on a page, you just need to reference the SwingJS bootstrap script for JalviewJS, and include a call to start JalviewJS in one of the following ways:
 
