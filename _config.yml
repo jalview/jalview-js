@@ -1,4 +1,2 @@
 encoding: "utf-8"
-include:
- - "_*"
- - ".*"
+include: [_,"swingjs/j2s/.author_props"]
