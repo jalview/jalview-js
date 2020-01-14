@@ -1,0 +1,457 @@
+(function(){var P$=Clazz.newPackage("org.jmol.dialog"),p$1={},I$=[[0,'org.jmol.dialog.Dialog','javax.swing.border.TitledBorder','org.jmol.i18n.GT','java.io.File',['org.jmol.dialog.Dialog','.TypeFilter'],'org.jmol.dialog.FileChooser','javax.swing.UIManager','Boolean','org.jmol.dialog.FilePreview','org.jmol.viewer.FileManager','javax.swing.JFileChooser','java.awt.BorderLayout','javax.swing.JPanel','java.awt.FlowLayout','javax.swing.JComboBox',['org.jmol.dialog.Dialog','.ExportChoiceListener'],'javax.swing.JSlider',['org.jmol.dialog.Dialog','.QualityListener'],'javax.swing.JOptionPane','javax.swing.SwingUtilities','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
+var C$=Clazz.newClass(P$, "Dialog", function(){
+Clazz.newInstance(this, arguments,0,C$);
+}, 'javax.swing.JPanel', 'org.jmol.api.JmolDialogInterface');
+C$.defaultChoice=0;
+C$.qualityJPG=0;
+C$.qualityPNG=0;
+C$.imageChooser=null;
+C$.saveChooser=null;
+C$.openChooser=null;
+C$.haveTranslations=false;
+C$.isMac=false;
+
+C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.qualityJPG=75;
+C$.qualityPNG=2;
+C$.haveTranslations=false;
+C$.isMac=System.getProperty$S$S("os.name", "").startsWith$S("Mac");
+}
+
+Clazz.newMeth(C$, '$init0$', function () {
+var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
+this.extensions=null;
+this.choice=null;
+this.extension=null;
+this.qSliderJPEG=null;
+this.qSliderPNG=null;
+this.cb=null;
+this.qPanelJPEG=null;
+this.qPanelPNG=null;
+this.openPreview=null;
+this.initialFile=null;
+this.imageChoices=null;
+this.imageExtensions=null;
+this.outputFileName=null;
+this.dialogType=null;
+this.inputFileName=null;
+this.vwr=null;
+this.qualityJ=0;
+this.qualityP=0;
+this.imageType=null;
+}, 1);
+
+Clazz.newMeth(C$, '$init$', function () {
+this.extensions=Clazz.array(String, [10]);
+this.imageChoices=Clazz.array(String, -1, ["JPEG", "PNG", "GIF", "PPM"]);
+this.imageExtensions=Clazz.array(String, -1, ["jpg", "png", "gif", "ppm"]);
+this.qualityJ=-1;
+this.qualityP=-1;
+}, 1);
+
+Clazz.newMeth(C$, 'c$', function () {
+Clazz.super_(C$, this,1);
+}, 1);
+
+Clazz.newMeth(C$, 'getOpenFileNameFromDialog$java_util_Map$org_jmol_viewer_Viewer$S$org_jmol_api_JmolAppAPI$S$Z', function (vwrOptions, vwr, fileName, jmolApp, windowName, allowAppend) {
+if (C$.openChooser == null ) {
+C$.openChooser=Clazz.new_($I$(6));
+var temp=$I$(7).get$O("FileChooser.fileNameLabelText");
+$I$(7).put$O$O("FileChooser.fileNameLabelText", $I$(3).$$S("File or URL:"));
+C$.getXPlatformLook$javax_swing_JFileChooser(C$.openChooser);
+$I$(7).put$O$O("FileChooser.fileNameLabelText", temp);
+}if (this.openPreview == null  && (vwr.isApplet || $I$(8).valueOf$S(System.getProperty$S$S("openFilePreview", "true")).booleanValue$() ) ) {
+this.openPreview=Clazz.new_($I$(9).c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$Z$java_util_Map,[vwr, C$.openChooser, allowAppend, vwrOptions]);
+}if (jmolApp != null ) {
+var dim=jmolApp.getHistoryWindowSize$S(windowName);
+if (dim != null ) C$.openChooser.setDialogSize$java_awt_Dimension(dim);
+var loc=jmolApp.getHistoryWindowPosition$S(windowName);
+if (loc != null ) C$.openChooser.setDialogLocation$java_awt_Point(loc);
+}C$.openChooser.resetChoosableFileFilters$();
+if (this.openPreview != null ) this.openPreview.setPreviewOptions$Z(allowAppend);
+if (fileName != null ) {
+var pt=fileName.lastIndexOf$S(".");
+var sType=fileName.substring$I(pt + 1);
+if (pt >= 0 && sType.length$() > 0 ) C$.openChooser.addChoosableFileFilter$javax_swing_filechooser_FileFilter(Clazz.new_($I$(5).c$$S,[sType]));
+if (fileName.indexOf$S(".") == 0) fileName="Jmol" + fileName;
+if (fileName.length$() > 0) C$.openChooser.setSelectedFile$java_io_File(Clazz.new_($I$(4).c$$S,[fileName]));
+}if (fileName == null  || fileName.indexOf$S(":") < 0 && fileName.indexOf$S("/") != 0  ) {
+var dir=$I$(10).getLocalDirectory$org_jmol_viewer_Viewer$Z(vwr, true);
+C$.openChooser.setCurrentDirectory$java_io_File(dir);
+}var file=null;
+if (C$.openChooser.showOpenDialog$java_awt_Component(this) == 0) file=C$.openChooser.getSelectedFile$();
+if (file == null ) return this.closePreview$();
+if (jmolApp != null ) jmolApp.addHistoryWindowInfo$S$java_awt_Component$java_awt_Point(windowName, C$.openChooser.getDialog$(), null);
+var url=vwr.getLocalUrl$S(file.getAbsolutePath$());
+if (url != null ) {
+fileName=url;
+} else {
+$I$(10).setLocalPath$org_jmol_viewer_Viewer$S$Z(vwr, file.getParent$(), true);
+fileName=file.getAbsolutePath$();
+}if (fileName.startsWith$S("/")) fileName="file://" + fileName;
+var doCartoons=(jmolApp == null  || allowAppend && this.openPreview != null   && this.openPreview.isCartoonsSelected$()  );
+var doAppend=(allowAppend && !$I$(10).isScriptType$S(fileName) && this.openPreview != null    && this.openPreview.isAppendSelected$() );
+this.closePreview$();
+return (doCartoons ? "" : "#NOCARTOONS#;") + (doAppend ? "#APPEND#;" : "") + fileName ;
+});
+
+Clazz.newMeth(C$, 'closePreview$', function () {
+if (this.openPreview != null ) this.openPreview.doUpdatePreview$java_io_File(null);
+return null;
+});
+
+Clazz.newMeth(C$, 'getSaveFileNameFromDialog$org_jmol_viewer_Viewer$S$S', function (vwr, fileName, type) {
+if (C$.saveChooser == null ) {
+C$.saveChooser=Clazz.new_($I$(11));
+C$.getXPlatformLook$javax_swing_JFileChooser(C$.saveChooser);
+}C$.saveChooser.setCurrentDirectory$java_io_File($I$(10).getLocalDirectory$org_jmol_viewer_Viewer$Z(vwr, true));
+var file=null;
+C$.saveChooser.resetChoosableFileFilters$();
+if (fileName != null ) {
+var pt=fileName.lastIndexOf$S(".");
+var sType=fileName.substring$I(pt + 1);
+if (pt >= 0 && sType.length$() > 0 ) C$.saveChooser.addChoosableFileFilter$javax_swing_filechooser_FileFilter(Clazz.new_($I$(5).c$$S,[sType]));
+if (fileName.equals$O("*")) fileName=vwr.getModelSetFileName$();
+if (fileName.indexOf$S(".") == 0) fileName="Jmol" + fileName;
+file=Clazz.new_($I$(4).c$$S,[fileName]);
+}if (type != null ) C$.saveChooser.addChoosableFileFilter$javax_swing_filechooser_FileFilter(Clazz.new_($I$(5).c$$S,[type]));
+C$.saveChooser.setSelectedFile$java_io_File(file);
+if ((file=p$1.showSaveDialog$java_awt_Component$javax_swing_JFileChooser$java_io_File.apply(this, [this, C$.saveChooser, file])) == null ) return null;
+$I$(10).setLocalPath$org_jmol_viewer_Viewer$S$Z(vwr, file.getParent$(), true);
+return file.getAbsolutePath$();
+});
+
+Clazz.newMeth(C$, 'getImageFileNameFromDialog$org_jmol_viewer_Viewer$S$S$SA$SA$I$I', function (vwr, fileName, type, imageChoices, imageExtensions, qualityJPG0, qualityPNG0) {
+if (qualityJPG0 < 0 || qualityJPG0 > 100 ) qualityJPG0=C$.qualityJPG;
+if (qualityPNG0 < 0) qualityPNG0=C$.qualityPNG;
+if (qualityPNG0 > 9) qualityPNG0=2;
+C$.qualityJPG=qualityJPG0;
+C$.qualityPNG=qualityPNG0;
+if (this.extension == null ) this.extension="jpg";
+if (C$.imageChooser == null ) {
+C$.imageChooser=Clazz.new_($I$(11));
+C$.getXPlatformLook$javax_swing_JFileChooser(C$.imageChooser);
+}C$.imageChooser.setCurrentDirectory$java_io_File($I$(10).getLocalDirectory$org_jmol_viewer_Viewer$Z(vwr, true));
+C$.imageChooser.resetChoosableFileFilters$();
+var file=null;
+if (fileName == null ) {
+fileName=vwr.getModelSetFileName$();
+if (fileName.indexOf$S("?") >= 0) fileName=fileName.substring$I$I(0, fileName.indexOf$S("?"));
+var pathName=C$.imageChooser.getCurrentDirectory$().getPath$();
+if (fileName != null  && pathName != null  ) {
+var extensionStart=fileName.lastIndexOf$I(".");
+if (extensionStart != -1) {
+fileName=fileName.substring$I$I(0, extensionStart) + "." + this.extension ;
+}file=Clazz.new_($I$(4).c$$S$S,[pathName, fileName]);
+}} else {
+if (fileName.indexOf$S(".") == 0) fileName="Jmol" + fileName;
+file=Clazz.new_($I$(4).c$$S,[fileName]);
+type=fileName.substring$I(fileName.lastIndexOf$S(".") + 1);
+for (var i=0; i < imageExtensions.length; i++) if (type.equals$O(imageChoices[i]) || type.toLowerCase$().equals$O(imageExtensions[i]) ) {
+type=imageChoices[i];
+break;
+}
+}p$1.createExportPanel$SA$SA$S.apply(this, [imageChoices, imageExtensions, type]);
+C$.imageChooser.setSelectedFile$java_io_File(this.initialFile=file);
+if ((file=p$1.showSaveDialog$java_awt_Component$javax_swing_JFileChooser$java_io_File.apply(this, [this, C$.imageChooser, file])) == null ) return null;
+C$.qualityJPG=this.qSliderJPEG.getValue$();
+C$.qualityPNG=this.qSliderPNG.getValue$();
+if (this.cb.getSelectedIndex$() >= 0) C$.defaultChoice=this.cb.getSelectedIndex$();
+$I$(10).setLocalPath$org_jmol_viewer_Viewer$S$Z(vwr, file.getParent$(), true);
+return file.getAbsolutePath$();
+});
+
+Clazz.newMeth(C$, 'createExportPanel$SA$SA$S', function (choices, extensions, type) {
+C$.imageChooser.setAccessory$javax_swing_JComponent(this);
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(12)));
+if (type == null  || type.equals$O("JPG") ) type="JPEG";
+for (C$.defaultChoice=choices.length; --C$.defaultChoice >= 1; ) if (choices[C$.defaultChoice].equals$O(type)) break;
+
+this.extension=extensions[C$.defaultChoice];
+this.choice=choices[C$.defaultChoice];
+this.extensions=extensions;
+C$.imageChooser.resetChoosableFileFilters$();
+C$.imageChooser.addChoosableFileFilter$javax_swing_filechooser_FileFilter(Clazz.new_($I$(5).c$$S,[this.extension]));
+var cbPanel=Clazz.new_($I$(13));
+cbPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14)));
+cbPanel.setBorder$javax_swing_border_Border(Clazz.new_($I$(2).c$$S,[$I$(3).$$S("Image Type")]));
+this.cb=Clazz.new_($I$(15));
+for (var i=0; i < choices.length; i++) {
+this.cb.addItem$TE(choices[i]);
+}
+cbPanel.add$java_awt_Component(this.cb);
+this.cb.setSelectedIndex$I(C$.defaultChoice);
+this.cb.addItemListener$java_awt_event_ItemListener(Clazz.new_($I$(16), [this, null]));
+this.add$java_awt_Component$O(cbPanel, "North");
+var qPanel2=Clazz.new_($I$(13));
+qPanel2.setLayout$java_awt_LayoutManager(Clazz.new_($I$(12)));
+this.qPanelJPEG=Clazz.new_($I$(13));
+this.qPanelJPEG.setLayout$java_awt_LayoutManager(Clazz.new_($I$(12)));
+this.qPanelJPEG.setBorder$javax_swing_border_Border(Clazz.new_($I$(2).c$$S,[$I$(3).i$S$I($I$(3).$$S("JPEG Quality ({0})"), C$.qualityJPG)]));
+this.qSliderJPEG=Clazz.new_($I$(17).c$$I$I$I$I,[0, 50, 100, C$.qualityJPG]);
+this.qSliderJPEG.putClientProperty$O$O("JSlider.isFilled", $I$(8).TRUE);
+this.qSliderJPEG.setPaintTicks$Z(true);
+this.qSliderJPEG.setMajorTickSpacing$I(10);
+this.qSliderJPEG.setPaintLabels$Z(true);
+this.qSliderJPEG.addChangeListener$javax_swing_event_ChangeListener(Clazz.new_($I$(18).c$$Z$javax_swing_JSlider, [this, null, true, this.qSliderJPEG]));
+this.qPanelJPEG.add$java_awt_Component$O(this.qSliderJPEG, "South");
+qPanel2.add$java_awt_Component$O(this.qPanelJPEG, "North");
+this.qPanelPNG=Clazz.new_($I$(13));
+this.qPanelPNG.setLayout$java_awt_LayoutManager(Clazz.new_($I$(12)));
+this.qPanelPNG.setBorder$javax_swing_border_Border(Clazz.new_($I$(2).c$$S,[$I$(3).i$S$I($I$(3).$$S("PNG Compression  ({0})"), C$.qualityPNG)]));
+this.qSliderPNG=Clazz.new_($I$(17).c$$I$I$I$I,[0, 0, 9, C$.qualityPNG]);
+this.qSliderPNG.putClientProperty$O$O("JSlider.isFilled", $I$(8).TRUE);
+this.qSliderPNG.setPaintTicks$Z(true);
+this.qSliderPNG.setMajorTickSpacing$I(2);
+this.qSliderPNG.setPaintLabels$Z(true);
+this.qSliderPNG.addChangeListener$javax_swing_event_ChangeListener(Clazz.new_($I$(18).c$$Z$javax_swing_JSlider, [this, null, false, this.qSliderPNG]));
+this.qPanelPNG.add$java_awt_Component$O(this.qSliderPNG, "South");
+qPanel2.add$java_awt_Component$O(this.qPanelPNG, "South");
+this.add$java_awt_Component$O(qPanel2, "South");
+}, p$1);
+
+Clazz.newMeth(C$, 'getType$', function () {
+return this.choice;
+});
+
+Clazz.newMeth(C$, 'getQuality$S', function (sType) {
+return (sType.equals$O("JPEG") || sType.equals$O("JPG")  ? C$.qualityJPG : sType.equals$O("PNG") ? C$.qualityPNG : -1);
+});
+
+Clazz.newMeth(C$, 'doOverWrite$javax_swing_JFileChooser$java_io_File', function (chooser, file) {
+var options=Clazz.array(java.lang.Object, -1, [$I$(3).$$S("Yes"), $I$(3).$$S("No")]);
+var opt=$I$(19).showOptionDialog$java_awt_Component$O$S$I$I$javax_swing_Icon$OA$O(chooser, $I$(3).o$S$O($I$(3).$$S("Do you want to overwrite file {0}?"), file.getAbsolutePath$()), $I$(3).$$S("Warning"), -1, 2, null, options, options[0]);
+return (opt == 0);
+}, 1);
+
+Clazz.newMeth(C$, 'showSaveDialog$java_awt_Component$javax_swing_JFileChooser$java_io_File', function (c, chooser, file) {
+while (true){
+if (chooser.showSaveDialog$java_awt_Component(c) != 0) return null;
+if (this.cb != null  && this.cb.getSelectedIndex$() >= 0 ) C$.defaultChoice=this.cb.getSelectedIndex$();
+if ((file=chooser.getSelectedFile$()) == null  || !file.exists$()  || C$.doOverWrite$javax_swing_JFileChooser$java_io_File(chooser, file) ) return file;
+}
+}, p$1);
+
+Clazz.newMeth(C$, 'setupUI$Z', function (forceNewTranslation) {
+if (forceNewTranslation || !C$.haveTranslations ) C$.setupUIManager$();
+C$.haveTranslations=true;
+});
+
+Clazz.newMeth(C$, 'setupUIManager$', function () {
+$I$(7).put$O$O("FileChooser.acceptAllFileFilterText", $I$(3).$$S("All Files"));
+$I$(7).put$O$O("FileChooser.cancelButtonText", $I$(3).$$S("Cancel"));
+$I$(7).put$O$O("FileChooser.cancelButtonToolTipText", $I$(3).$$S("Abort file chooser dialog"));
+$I$(7).put$O$O("FileChooser.detailsViewButtonAccessibleName", $I$(3).$$S("Details"));
+$I$(7).put$O$O("FileChooser.detailsViewButtonToolTipText", $I$(3).$$S("Details"));
+$I$(7).put$O$O("FileChooser.directoryDescriptionText", $I$(3).$$S("Directory"));
+$I$(7).put$O$O("FileChooser.directoryOpenButtonText", $I$(3).$$S("Open"));
+$I$(7).put$O$O("FileChooser.directoryOpenButtonToolTipText", $I$(3).$$S("Open selected directory"));
+$I$(7).put$O$O("FileChooser.fileAttrHeaderText", $I$(3).$$S("Attributes"));
+$I$(7).put$O$O("FileChooser.fileDateHeaderText", $I$(3).$$S("Modified"));
+$I$(7).put$O$O("FileChooser.fileDescriptionText", $I$(3).$$S("Generic File"));
+$I$(7).put$O$O("FileChooser.fileNameHeaderText", $I$(3).$$S("Name"));
+$I$(7).put$O$O("FileChooser.fileNameLabelText", $I$(3).$$S("File Name:"));
+$I$(7).put$O$O("FileChooser.fileSizeHeaderText", $I$(3).$$S("Size"));
+$I$(7).put$O$O("FileChooser.filesOfTypeLabelText", $I$(3).$$S("Files of Type:"));
+$I$(7).put$O$O("FileChooser.fileTypeHeaderText", $I$(3).$$S("Type"));
+$I$(7).put$O$O("FileChooser.helpButtonText", $I$(3).$$S("Help"));
+$I$(7).put$O$O("FileChooser.helpButtonToolTipText", $I$(3).$$S("FileChooser help"));
+$I$(7).put$O$O("FileChooser.homeFolderAccessibleName", $I$(3).$$S("Home"));
+$I$(7).put$O$O("FileChooser.homeFolderToolTipText", $I$(3).$$S("Home"));
+$I$(7).put$O$O("FileChooser.listViewButtonAccessibleName", $I$(3).$$S("List"));
+$I$(7).put$O$O("FileChooser.listViewButtonToolTipText", $I$(3).$$S("List"));
+$I$(7).put$O$O("FileChooser.lookInLabelText", $I$(3).$$S("Look In:"));
+$I$(7).put$O$O("FileChooser.newFolderErrorText", $I$(3).$$S("Error creating new folder"));
+$I$(7).put$O$O("FileChooser.newFolderAccessibleName", $I$(3).$$S("New Folder"));
+$I$(7).put$O$O("FileChooser.newFolderToolTipText", $I$(3).$$S("Create New Folder"));
+$I$(7).put$O$O("FileChooser.openButtonText", $I$(3).$$S("Open"));
+$I$(7).put$O$O("FileChooser.openButtonToolTipText", $I$(3).$$S("Open selected file"));
+$I$(7).put$O$O("FileChooser.openDialogTitleText", $I$(3).$$S("Open"));
+$I$(7).put$O$O("FileChooser.saveButtonText", $I$(3).$$S("Save"));
+$I$(7).put$O$O("FileChooser.saveButtonToolTipText", $I$(3).$$S("Save selected file"));
+$I$(7).put$O$O("FileChooser.saveDialogTitleText", $I$(3).$$S("Save"));
+$I$(7).put$O$O("FileChooser.saveInLabelText", $I$(3).$$S("Save In:"));
+$I$(7).put$O$O("FileChooser.updateButtonText", $I$(3).$$S("Update"));
+$I$(7).put$O$O("FileChooser.updateButtonToolTipText", $I$(3).$$S("Update directory listing"));
+$I$(7).put$O$O("FileChooser.upFolderAccessibleName", $I$(3).$$S("Up"));
+$I$(7).put$O$O("FileChooser.upFolderToolTipText", $I$(3).$$S("Up One Level"));
+$I$(7).put$O$O("OptionPane.cancelButtonText", $I$(3).$$S("Cancel"));
+$I$(7).put$O$O("OptionPane.noButtonText", $I$(3).$$S("No"));
+$I$(7).put$O$O("OptionPane.okButtonText", $I$(3).$$S("OK"));
+$I$(7).put$O$O("OptionPane.yesButtonText", $I$(3).$$S("Yes"));
+}, 1);
+
+Clazz.newMeth(C$, 'getXPlatformLook$javax_swing_JFileChooser', function (fc) {
+if (C$.isMac) {
+var lnf=$I$(7).getLookAndFeel$();
+if (lnf.isNativeLookAndFeel$()) {
+try {
+$I$(7).setLookAndFeel$S($I$(7).getCrossPlatformLookAndFeelClassName$());
+} catch (e) {
+if (Clazz.exceptionOf(e,"Exception")){
+System.out.println$S(e.getMessage$());
+} else {
+throw e;
+}
+}
+fc.updateUI$();
+try {
+$I$(7).setLookAndFeel$javax_swing_LookAndFeel(lnf);
+} catch (e) {
+if (Clazz.exceptionOf(e,"javax.swing.UnsupportedLookAndFeelException")){
+System.out.println$S(e.getMessage$());
+} else {
+throw e;
+}
+}
+}} else {
+fc.updateUI$();
+}}, 1);
+
+Clazz.newMeth(C$, 'setImageInfo$I$I$S', function (qualityJPG, qualityPNG, imageType) {
+this.qualityJ=qualityJPG;
+this.qualityP=qualityPNG;
+this.imageType=imageType;
+});
+
+Clazz.newMeth(C$, 'getFileNameFromDialog$org_jmol_viewer_Viewer$S$S', function (v, dType, iFileName) {
+this.vwr=v;
+this.dialogType=dType;
+this.inputFileName=iFileName;
+this.outputFileName=null;
+try {
+$I$(20).invokeAndWait$Runnable(((P$.Dialog$1||
+(function(){var C$=Clazz.newClass(P$, "Dialog$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$ = function() {Clazz.load(C$, 1);
+}
+
+Clazz.newMeth(C$, '$init$', function () {
+}, 1);
+
+Clazz.newMeth(C$, 'run$', function () {
+if (this.b$['org.jmol.dialog.Dialog'].dialogType.equals$O("Load")) {
+this.b$['org.jmol.dialog.Dialog'].outputFileName=this.b$['org.jmol.dialog.Dialog'].getOpenFileNameFromDialog$java_util_Map$org_jmol_viewer_Viewer$S$org_jmol_api_JmolAppAPI$S$Z.apply(this.b$['org.jmol.dialog.Dialog'], [this.b$['org.jmol.dialog.Dialog'].vwr.vwrOptions, this.b$['org.jmol.dialog.Dialog'].vwr, this.b$['org.jmol.dialog.Dialog'].inputFileName, null, null, false]);
+return;
+}if (this.b$['org.jmol.dialog.Dialog'].dialogType.equals$O("Save")) {
+this.b$['org.jmol.dialog.Dialog'].outputFileName=this.b$['org.jmol.dialog.Dialog'].getSaveFileNameFromDialog$org_jmol_viewer_Viewer$S$S.apply(this.b$['org.jmol.dialog.Dialog'], [this.b$['org.jmol.dialog.Dialog'].vwr, this.b$['org.jmol.dialog.Dialog'].inputFileName, null]);
+return;
+}if (this.b$['org.jmol.dialog.Dialog'].dialogType.startsWith$S("Save Image")) {
+this.b$['org.jmol.dialog.Dialog'].outputFileName=this.b$['org.jmol.dialog.Dialog'].getImageFileNameFromDialog$org_jmol_viewer_Viewer$S$S$SA$SA$I$I.apply(this.b$['org.jmol.dialog.Dialog'], [this.b$['org.jmol.dialog.Dialog'].vwr, this.b$['org.jmol.dialog.Dialog'].inputFileName, this.b$['org.jmol.dialog.Dialog'].imageType, this.b$['org.jmol.dialog.Dialog'].imageChoices, this.b$['org.jmol.dialog.Dialog'].imageExtensions, this.b$['org.jmol.dialog.Dialog'].qualityJ, this.b$['org.jmol.dialog.Dialog'].qualityP]);
+return;
+}this.b$['org.jmol.dialog.Dialog'].outputFileName=null;
+});
+})()
+), Clazz.new_(P$.Dialog$1.$init$, [this, null])));
+} catch (e) {
+if (Clazz.exceptionOf(e,"Exception")){
+$I$(21).error$S(e.getMessage$());
+} else {
+throw e;
+}
+}
+return this.outputFileName;
+});
+;
+(function(){var C$=Clazz.newClass(P$.Dialog, "QualityListener", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, 'javax.swing.event.ChangeListener');
+
+C$.$clinit$ = function() {Clazz.load(C$, 1);
+}
+
+Clazz.newMeth(C$, '$init0$', function () {
+var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
+this.isJPEG=false;
+this.slider=null;
+}, 1);
+
+Clazz.newMeth(C$, '$init$', function () {
+}, 1);
+
+Clazz.newMeth(C$, 'c$$Z$javax_swing_JSlider', function (isJPEG, slider) {
+C$.$init$.apply(this);
+this.isJPEG=isJPEG;
+this.slider=slider;
+}, 1);
+
+Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (arg0) {
+var value=this.slider.getValue$();
+if (this.isJPEG) {
+$I$(1).qualityJPG=value;
+this.this$0.qPanelJPEG.setBorder$javax_swing_border_Border(Clazz.new_($I$(2).c$$S,[$I$(3).i$S$I($I$(3).$$S("JPEG Quality ({0})"), value)]));
+} else {
+$I$(1).qualityPNG=value;
+this.this$0.qPanelPNG.setBorder$javax_swing_border_Border(Clazz.new_($I$(2).c$$S,[$I$(3).i$S$I($I$(3).$$S("PNG Quality ({0})"), value)]));
+}});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){var C$=Clazz.newClass(P$.Dialog, "ExportChoiceListener", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, 'java.awt.event.ItemListener');
+
+C$.$clinit$ = function() {Clazz.load(C$, 1);
+}
+
+Clazz.newMeth(C$, '$init$', function () {
+}, 1);
+
+Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+var source=e.getSource$();
+var selectedFile=$I$(1).imageChooser.getSelectedFile$();
+if (selectedFile == null ) selectedFile=this.this$0.initialFile;
+var newFile=null;
+var name;
+var newExt=this.this$0.extensions[source.getSelectedIndex$()];
+if ((name=selectedFile.getName$()) != null  && name.endsWith$S("." + this.this$0.extension) ) {
+name=name.substring$I$I(0, name.length$() - this.this$0.extension.length$());
+name += newExt;
+this.this$0.initialFile=newFile=Clazz.new_($I$(4).c$$S$S,[selectedFile.getParent$(), name]);
+}this.this$0.extension=newExt;
+$I$(1).imageChooser.resetChoosableFileFilters$();
+$I$(1).imageChooser.addChoosableFileFilter$javax_swing_filechooser_FileFilter(Clazz.new_($I$(5).c$$S,[this.this$0.extension]));
+if (newFile != null ) $I$(1).imageChooser.setSelectedFile$java_io_File(newFile);
+this.this$0.choice=source.getSelectedItem$();
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){var C$=Clazz.newClass(P$.Dialog, "TypeFilter", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+}, 'javax.swing.filechooser.FileFilter');
+
+C$.$clinit$ = function() {Clazz.load(C$, 1);
+}
+
+Clazz.newMeth(C$, '$init0$', function () {
+var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
+this.thisType=null;
+}, 1);
+
+Clazz.newMeth(C$, '$init$', function () {
+}, 1);
+
+Clazz.newMeth(C$, 'c$$S', function (type) {
+Clazz.super_(C$, this,1);
+this.thisType=type.toLowerCase$();
+}, 1);
+
+Clazz.newMeth(C$, 'accept$java_io_File', function (f) {
+if (f.isDirectory$() || this.thisType == null  ) {
+return true;
+}var ext=f.getName$();
+var pt=ext.lastIndexOf$S(".");
+return (pt >= 0 && ext.substring$I(pt + 1).toLowerCase$().equals$O(this.thisType) );
+});
+
+Clazz.newMeth(C$, 'getDescription$', function () {
+return this.thisType.toUpperCase$() + " (*." + this.thisType + ")" ;
+});
+
+Clazz.newMeth(C$);
+})()
+})();
+;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07

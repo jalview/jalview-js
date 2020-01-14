@@ -1,0 +1,58 @@
+		Info.z && Info.zIndexBase
+				&& (J2S._z = J2S.getZOrders(Info.zIndexBase));
+		(obj._z = Info.z) || Info.zIndexBase
+				&& (obj._z = obj.__Info.z = J2S.getZOrders(Info.zIndexBase));
+		obj._width = Info.width;
+		obj._height = Info.height;
+		obj._noscript = !obj._isJava && Info.noscript;
+		obj._console = Info.console;
+		obj._cacheFiles = !!Info.cacheFiles;
+		obj._viewSet = (Info.viewSet == null || obj._isJava ? null : "Set"
+				+ Info.viewSet);
+		obj._color = (Info.color ? Info.color.replace(/0x/, "#") : "#FFFFFF");
+		obj._disableInitialConsole = Info.disableInitialConsole;
+		obj._noMonitor = Info.disableJ2SLoadMonitor;
+		J2S._j2sPath && (Info.j2sPath = J2S._j2sPath);
+		obj._j2sPath = Info.j2sPath;
+		obj._coverImage = Info.coverImage;
+		obj._deferApplet = Info.deferApplet || obj._isCovered && obj._isJava; // must
+		obj._deferUncover = Info.deferUncover && !obj._isJava; // can't do this
+		obj._coverScript = Info.coverScript;
+		obj._coverTitle = Info.coverTitle;
+		obj._hasOptions = Info.addSelectionOptions;
+		obj._defaultModel = Info.defaultModel;
+		obj._readyScript = (Info.script ? Info.script : "");
+		obj._readyFunction = Info.readyFunction;
+		obj._src = Info.src;
+		J2S._use && (Info.use = J2S._use);
+		if (Info.use.indexOf("SIGNED") >= 0) {
+			if (Info.jarFile.indexOf("Signed") < 0)
+				Info.jarFile = Info.jarFile.replace(/Applet/, "AppletSigned");
+			Info.use = Info.use.replace(/SIGNED/, "JAVA");
+			Info.isSigned = true;
+			if (applet.__Info.uncompressed)
+		this._isJNLP = !!Info.main;
+		this._isLayered = Info._isLayered || false; // JSV or SwingJS are
+		this._isSwing = Info._isSwing || false;
+		this._isApp = !!Info._main;
+		this._isJSV = Info._isJSV || false;
+		this._isAstex = Info._isAstex || false;
+		this._platform = Info._platform || "";
+			if (Info.main) // a Java application, not an applet -- let
+			if (Info.addSelectionOptions)
+			if (!applet.__Info.args || applet.__Info.args == "?") {
+					applet.__Info.args = decodeURIComponent(s);
+			var isApp = applet._isApp = !!applet.__Info.main; 
+				var clazz = (applet.__Info.main || applet.__Info.code);
+							applet.__Info.main = clazz;
+							applet.__Info.code = clazz;
+						applet.__Info.headless = true;
+				if (isApp && applet.__Info.headless) {
+					cl.main$SA(applet.__Info.args || []);
+					applet.__Info.main
+					if (applet.__Info.code)
+						codePath += applet.__Info.code.replace(/\./g, "/");
+					var w = applet.__Info.width;
+					var h = applet.__Info.height;
+						// developer has used static { J2S.thisApplet.__Info.width=...}
+			path = (!isJavaPath && applet.__Info.resourcePath || applet.__Info.j2sPath)

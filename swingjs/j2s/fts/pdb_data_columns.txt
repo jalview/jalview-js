@@ -1,0 +1,130 @@
+/*
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ */
+
+pdb_data_columns
+#
+_group.id
+_group.name
+_group.sort_order
+g1;Quality Measures;1
+g2;Cross References;2
+g3;Names & Taxonomy;3
+g4;Procedures & Software;4
+g5;Date Of;5
+g6;Miscellaneous;6
+#
+_data_column.primary_key;pdb_id
+_data_column.default_response_page_size;100
+#
+_data_column.name
+_data_column.code
+_data_column.group_id
+_data_column.data_type | _data_column.isFormated | _data_column.significantDigit
+_data_column.min_col_width
+_data_column.max_col_width
+_data_column.preferred_col_width
+_data_column.is_shown_by_default
+_data_column.is_searchable
+PDB Id;pdb_id;String;g2;40;60;45;true;true
+Title;title;String;g6;50;1500;400;true;false
+Molecule;molecule_name;String;g3;50;400;95;false;true
+Molecule Type;molecule_type;String;g3;50;400;95;false;true
+Sequence;molecule_sequence;String;g6;50;400;95;false;false
+PFAM Accession;pfam_accession;String;g2;50;400;95;false;true
+PFAM Name;pfam_name;String;g3;50;400;95;false;true
+InterPro Name;interpro_name;String;g3;50;400;95;false;false
+InterPro Accession;interpro_accession;String;g2;50;400;95;false;false
+UniProt Id;uniprot_id;String;g2;50;400;95;false;true
+UniProt Accession;uniprot_accession;String;g2;50;400;95;false;false
+UniProt Coverage;uniprot_coverage;String;g6;50;400;95;false;false
+Uniprot Features;uniprot_features;String;g6;50;400;95;false;false
+R Factor;r_factor;Double|T|3;g1;50;150;85;false;false
+Experimental Method;experimental_method;String;g4;50;400;105;true;false
+Resolution;resolution;Double|T|3;g1;50;150;85;true;false
+Data Quality;data_quality;Double|T|2;g1;50;150;85;false;false
+Overall Quality;overall_quality;Double|T|1;g1;50;150;85;false;false
+Number of Polymers;number_of_polymers;int;g6;50;400;95;false;false
+Number of Protein Chains;number_of_protein_chains;int;g6;50;400;95;false;false
+Number of Bound Molecule;number_of_bound_molecules;int;g6;50;400;95;false;false
+Number of Polymer Residue;number_of_polymer_residues;int;g6;50;400;95;false;false
+GENUS;genus;String;g3;50;400;95;false;true
+Gene Name;gene_name;String;g3;50;400;95;false;true
+GO Id;go_id;String;g2;50;400;95;false;false
+Assembly Id;assembly_id;String;g2;50;400;95;false;false
+Assembly Form;assembly_form;String;g6;50;400;95;false;false
+Assembly Type;assembly_type;String;g6;50;400;95;false;false
+Space Group;spacegroup;String;g6;50;400;95;false;false
+Cath Code;cath_code;String;g2;50;400;95;false;false
+Tax Id;tax_id;String;g2;50;400;95;false;false
+Tax Query;tax_query;String;g2;50;400;95;false;false
+Interacting Entity Id;interacting_entity_id;String;g2;50;400;95;false;false
+Interacting Molecules;interacting_molecules;String;g6;50;400;95;false;false
+Pubmed Id;pubmed_id;int;g2;50;400;95;false;false
+Status;status;String;g6;50;400;95;false;false
+Model Quality;model_quality;Double|T|2;g1;50;150;85;false;false
+Pivot Resolution;pivot_resolution;Double|T|3;g1;50;150;85;false;false
+Data reduction software;data_reduction_software;String;g4;50;400;95;false;false
+Max observed residues;max_observed_residues;Integer|F;g6;50;400;95;false;false
+Organism scientific name;organism_scientific_name;String;g3;50;400;95;false;false
+Super kingdom;superkingdom;String;g3;50;400;95;false;false
+Rank;rank;String;g3;50;400;95;false;false
+Crystallisation Ph;crystallisation_ph;String;g6;50;400;95;false;false
+Biological Function;biological_function;String;g6;50;400;95;false;false
+Biological Process;biological_process;String;g6;50;400;95;false;false
+Biological Cell Component;biological_cell_component;String;g6;50;400;95;false;false
+Compound Name;compound_name;String;g3;50;400;95;false;false
+Compound Id;compound_id;String;g2;50;400;95;false;false
+Compound Weight;compound_weight;String;g6;50;400;95;false;false
+Compound Systematic Name;compound_systematic_name;String;g3;50;400;95;false;false
+Interacting Ligands;interacting_ligands;String;g6;50;400;95;false;false
+Journal;journal;String;g6;50;400;95;false;false
+All Authors;all_authors;String;g6;50;400;95;false;false
+Experiment Data Available;experiment_data_available;String;g6;50;400;95;false;false
+Diffraction Protocol;diffraction_protocol;String;g4;50;400;95;false;false
+Refinement Software;refinement_software;String;g4;50;400;95;false;false
+Structure Determination Method;structure_determination_method;String;g4;50;400;95;false;false
+Synchrotron Site;synchrotron_site;String;g6;50;400;95;false;false
+Sample Preparation Method;sample_preparation_method;String;g4;50;400;95;false;false
+Entry Authors;entry_authors;String;g6;50;400;95;false;false
+Citation Title;citation_title;String;g6;50;400;95;false;false
+Structure Solution Software;structure_solution_software;String;g4;50;400;95;false;false
+Entry Entity;entry_entity;String;g6;50;400;95;false;false
+R Free;r_free;Double|T|3;g1;50;150;85;false;false
+Number of Polymer Entities;number_of_polymer_entities;int;g6;50;400;95;false;false
+Number of Bound Entities;number_of_bound_entities;int;g6;50;400;95;false;false
+Crystallisation Reservoir;crystallisation_reservoir;String;g6;50;400;95;false;false
+Data Scaling Software;data_scaling_software;String;g4;50;400;95;false;false
+Detector;detector;String;g6;50;400;95;false;false
+Detector Type;detector_type;String;g6;50;400;95;false;false
+Modified Residue Flag;modified_residue_flag;String;g6;50;400;95;false;false
+Number of Copies;number_of_copies;int;g6;50;400;95;false;false
+Struc Asym Id;struct_asym_id;String;g2;50;400;95;false;false
+Homologus PDB Entity Id;homologus_pdb_entity_id;String;g2;50;400;95;false;false
+Molecule Synonym;molecule_synonym;String;g6;50;400;95;false;false
+Deposition Site;deposition_site;String;g6;50;400;95;false;false
+Synchrotron Beamline;synchrotron_beamline;String;g6;50;400;95;false;false
+Entity Id; entity_id;String;g2;50;400;95;false;false
+Beam Source Name;beam_source_name;String;g3;50;400;95;false;false
+Processing Site;processing_site;String;g6;50;400;95;false;false
+Entity Weight;entity_weight;Double|T|0;g6;50;400;95;false;false
+Version;_version_;Double|F|0;g6;50;400;95;false;false
+ALL;text;String;g6;50;400;95;false;true
+#

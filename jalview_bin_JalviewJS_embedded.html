@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SwingJS test JalviewJS2</title><meta charset="utf-8" />
+<script src="swingjs/swingjs2.js"></script>
+<script>
+if (!self.SwingJS)alert('swingjs2.js was not found. It needs to be in swingjs folder in the same directory as ' + document.location.href)
+Info = {
+  code: null,
+  main: "jalview.bin.JalviewJS2",
+  core: "NONE",
+  readyFunction: null,
+	serverURL: 'https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php',
+	j2sPath: 'swingjs/j2s',
+	console:'sysoutdiv',
+	allowjavascript: true,
+	
+	//Jalview-specific:
+	// note that desktop-frame-div has been set to display:none
+	jalview_SCREEN_WIDTH: 100, // desktop width -- 0 to hide
+	jalview_SCREEN_HEIGHT: 70,  // desktop height -- 0 to hide
+	jalview_SCREEN_X: 10,
+	jalview_SCREEN_Y: 10,
+	jalview_EMBEDDED: true
+	
+}
+</script>
+</head>
+<body>
+<table><tr><td>
+<!-- note that the desktop must have a z-index ge 1000 because it is the root of all popups -->
+<div id="jalview-desktop-div" style="z-index:1000;position:relative;top:0px;left:0px;width:300px;height:70px">desktop here</div>
+</td></tr><tr><td>
+<div id="jalview-alignment-div" style="position:relative;top:0px;left:0px;width:600px;height:400px">
+The alignment frame will appear here momentarily...
+</div>
+</td></tr><tr>
+<td>
+<div id="jalview-structureviewer-div" style="position:relative;top:0px;left:0px;width:400px;height:400px">
+jalview-structureviewer-div
+</div>
+</td>
+<td>
+<div id="jalview-tree-div" style="position:relative;top:0px;left:0px;width:400px;height:400px">
+jalview-tree-div
+</div>
+</td>
+<td>
+<div id="jalview-pca-div" style="position:relative;top:0px;left:0px;width:400px;height:400px">
+jalview-pca-div
+</div>
+</td>
+
+</tr></table>
+
+
+<script>
+SwingJS.getApplet('testApplet', Info)
+getClassList = function(){J2S._saveFile('_j2sclasslist.txt', Clazz.ClassFilesLoaded.sort().join('\n'))}
+</script>
+
+
+<div style="position:absolute;left:900px;top:30px;width:600px;height:300px;">
+<div id="sysoutdiv" style="border:1px solid green;width:100%;height:95%;overflow:auto"></div>
+This is System.out. <a href="javascript:testApplet._clearConsole()">clear it</a> <br>Add ?j2snocore to URL to see full class list; ?j2sdebug to use uncompressed j2s/core files <br><a href="javascript:getClassList()">get _j2sClassList.txt</a>
+</div>
+</body>
+</html>

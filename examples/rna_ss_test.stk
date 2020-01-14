@@ -1,0 +1,6 @@
+# STOCKHOLM 1.0
+#=GF ID RNA.SS.TEST
+#=GF TP RNA;
+Test.sequence         GUACAAAAAAAAAA
+#=GC SS_cons          <(EHBheb(E)e)>
+//

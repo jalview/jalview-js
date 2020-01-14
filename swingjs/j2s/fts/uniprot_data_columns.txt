@@ -1,0 +1,175 @@
+/*
+ * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
+ * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ */
+
+uniprot_data_columns
+#
+_group.id
+_group.name
+_group.sort_order
+g1;Quality Measures;3
+g2;Cross References;2
+g3;Names & Taxonomy;1
+g4;Procedures & Softwares;4
+g5;Date Of;5
+g6;Miscellaneous;6
+g7;Sequences;7
+g8;Function;8
+g9;Interaction;9
+g10;Expression;10
+g11;Gene Ontology;11
+g12;Pathology & Biotech;12
+g13;Subcellular location;13
+g14;PTM / Processing;14
+g15;Structure;15
+g16;Publications;16
+g17;Date of;17
+g18;Family & Domain;18
+#
+_data_column.primary_key;id
+_data_column.default_response_page_size;500
+#
+_data_column.name
+_data_column.code|_data_column.alt_code (optional: used for specifying search code when different from original code)
+_data_column.group_id
+_data_column.data_type
+_data_column.min_col_width
+_data_column.max_col_width
+_data_column.preferred_col_width
+_data_column.is_shown_by_default
+_data_column.is_searchable
+Uniprot Id;id;String;g3;80;150;85;true;true
+Entry Name;entry name|mnemonic;String;g3;100;150;105;true;true
+Protein names;protein names|name;String;g3;300;1500;500;true;true
+Gene Names;genes|gene;String;g3;100;1000;145;true;true
+Organism;organism;String;g3;100;1000;200;true;true
+Organism ID;organism-id;int;g3;60;100;80;false;false
+Proteomes;proteome;String;g3;50;1000;95;false;false
+Taxonomic lineage (ALL);lineage(ALL)|taxonomy;String;g3;50;400;95;false;false
+Virus hosts;virus hosts|host;String;g3;50;1000;95;false;true
+Fragment;fragment;String;g7;50;1000;95;false;false
+Gene encoded by;encodedon;String;g7;50;1000;95;false;false
+Alternative products (isoforms);comment(ALTERNATIVE PRODUCTS);String;g7;50;1000;95;false;false
+Erroneous gene model prediction;comment(ERRONEOUS GENE MODEL PREDICTION);String;g7;50;1000;95;false;false
+Erroneous initiation;comment(ERRONEOUS INITIATION);String;g7;50;1000;95;false;false
+Erroneous translation;comment(ERRONEOUS TRANSLATION);String;g7;50;1000;95;false;false
+Frameshift;comment(FRAMESHIFT);String;g7;50;1000;95;false;false
+Mass spectrometry;comment(MASS SPECTROMETRY);String;g7;50;1000;95;false;false
+Polymorphism;comment(POLYMORPHISM);String;g7;50;1000;95;false;false
+RNA editing;comment(RNA EDITING);String;g7;50;1000;95;false;false
+Sequence caution;comment(SEQUENCE CAUTION);String;g7;50;1000;95;false;false
+Status;reviewed;String;g6;50;100;95;true;true
+Length;length;int|T|0;g7;50;100;65;true;true
+Mass;mass;int|T|0;g7;50;100;80;false;true
+Sequence;sequence;String;g7;50;1000;95;false;false
+Alternative sequence;feature(ALTERNATIVE SEQUENCE);String;g7;50;1000;95;false;false
+Natural variant;feature(NATURAL VARIANT);String;g7;50;1000;95;false;false
+Non-adjacent residues;feature(NON ADJACENT RESIDUES);String;g7;50;1000;95;false;false
+Non-standard residue;feature(NON STANDARD RESIDUE);String;g7;50;1000;95;false;false
+Non-terminal residue;feature(NON TERMINAL RESIDUE);String;g7;50;1000;95;false;false
+Sequence conflict;feature(SEQUENCE CONFLICT);String;g7;50;1000;95;false;false
+Sequence uncertainty;feature(SEQUENCE UNCERTAINTY);String;g7;50;1000;95;false;false
+Version (Sequence);version(sequence);String;g7;50;1000;95;false;false
+EC number;ec;String;g8;50;1000;95;false;true
+Absorption;comment(ABSORPTION);String;g8;50;1000;95;false;false
+Catalytic activity;comment(CATALYTIC ACTIVITY);String;g8;50;1000;95;false;false
+Cofactor;comment(COFACTOR);String;g8;50;1000;95;false;false
+Enzyme regulation;comment(ENZYME REGULATION);String;g8;50;1000;95;false;false
+Function [CC];comment(FUNCTION);String;g8;50;1000;95;false;false
+Kinetics;comment(KINETICS);String;g8;50;1000;95;false;false
+Pathway;comment(PATHWAY);String;g8;50;1000;95;false;false
+Redox potential;comment(REDOX POTENTIAL);String;g8;50;1000;95;false;false
+Temperature dependence;comment(TEMPERATURE DEPENDENCE);String;g8;50;1000;95;false;false
+pH dependence;comment(PH DEPENDENCE);String;g8;50;1000;95;false;false
+Active site;feature(ACTIVE SITE);String;g8;50;1000;95;false;false
+Binding site;feature(BINDING SITE);String;g8;50;1000;95;false;false
+DNA binding;feature(DNA BINDING);String;g8;50;1000;95;false;false
+Metal binding;feature(METAL BINDING);String;g8;50;1000;95;false;false
+Nucleotide binding;feature(NP BIND);String;g8;50;1000;95;false;false
+Site;feature(SITE);String;g8;50;1000;95;false;false
+Annotation;annotation score;String;g6;50;1000;95;false;false
+Features;features;String;g6;50;1000;95;false;false
+Caution;comment(CAUTION);String;g6;50;1000;95;false;false
+Miscellaneous [CC];comment(GENERAL);String;g6;50;1000;95;false;false
+Keywords;keywords|keyword;String;g6;50;1000;95;false;true
+Protein existence;existence;String;g6;50;1000;95;false;true
+ALL;Search All;String;g7;50;1000;95;false;true
+Subunit structure [CC];comment(SUBUNIT);String;g9;50;1000;95;false;false
+Interacts with;interactor;String;g9;50;1000;95;false;false
+Developmental stage;comment(DEVELOPMENTAL STAGE);String;g10;50;1000;95;false;false
+Induction;comment(INDUCTION);String;g10;50;1000;95;false;false
+Tissue specificity;comment(TISSUE SPECIFICITY);String;g10;50;1000;95;false;false
+Gene ontology (GO);go;String;g11;50;1000;95;false;true
+Gene ontology (biological process);go(biological process);String;g11;50;1000;95;false;false
+Gene ontology (molecular function);go(molecular function);String;g11;50;1000;95;false;false
+Gene ontology (cellular component);go(cellular component);String;g11;50;1000;95;false;false
+Gene ontology IDs;go-id;String;g11;50;1000;95;false;true
+Allergenic properties;comment(ALLERGEN);String;g12;50;1000;95;false;false
+Biotechnological use;comment(BIOTECHNOLOGY);String;g12;50;1000;95;false;false
+Disruption phenotype;comment(DISRUPTION PHENOTYPE);String;g12;50;1000;95;false;false
+Involvement in disease;comment(DISEASE);String;g12;50;1000;95;false;false
+Pharmaceutical use;comment(PHARMACEUTICAL);String;g12;50;1000;95;false;false
+Toxic dose;comment(TOXIC DOSE);String;g12;50;1000;95;false;false
+Subcellular location [CC];comment(SUBCELLULAR LOCATION);String;g13;50;1000;95;false;false
+Intramembrane;feature(INTRAMEMBRANE);String;g13;50;1000;95;false;false
+Topological domain;feature(TOPOLOGICAL DOMAIN);String;g13;50;1000;95;false;false
+Transmembrane;feature(TRANSMEMBRANE);String;g13;50;1000;95;false;false
+Post-translational modification;comment(PTM);String;g14;50;1000;95;false;false
+Chain;feature(CHAIN);String;g14;50;1000;95;false;false
+Cross-link;feature(CROSS LINK);String;g14;50;1000;95;false;false
+Disulfide bond;feature(DISULFIDE BOND);String;g14;50;1000;95;false;false
+Glycosylation;feature(GLYCOSYLATION);String;g14;50;1000;95;false;false
+Initiator methionine;feature(INITIATOR METHIONINE);String;g14;50;1000;95;false;false
+Lipidation;feature(LIPIDATION);String;g14;50;1000;95;false;false
+Modified residue;feature(MODIFIED RESIDUE);String;g14;50;1000;95;false;false
+Peptide;feature(PEPTIDE);String;g14;50;1000;95;false;false
+Propeptide;feature(PROPEPTIDE);String;g14;50;1000;95;false;false
+Signal peptide;feature(SIGNAL);String;g14;50;1000;95;false;false
+Transit peptide;feature(TRANSIT);String;g14;50;1000;95;false;false
+3D;3d;String;g15;50;1000;95;false;false
+Beta strand;feature(BETA STRAND);String;g15;50;1000;95;false;false
+Helix;feature(HELIX);String;g15;50;1000;95;false;false
+Turn;feature(TURN);String;g15;50;1000;95;false;false
+PubMed ID;citation;String;g16;50;1000;95;false;true
+Date of creation;created;String;g17;80;150;100;false;true
+Date of last modification;last-modified;String;g17;80;150;100;false;true
+Date of last sequence modification;sequence-modified;String;g17;80;150;100;false;true
+Version (entry);version(entry);int;g17;80;100;80;false;false
+Domain [cc];comment(DOMAIN)|domain;String;g18;80;1000;95;false;true
+Sequence similarities;comment(SIMILARITY);String;g18;50;1000;95;false;false
+Protein families;families|family;String;g18;50;1000;95;false;true
+Coiled coil;feature(COILED COIL);String;g18;50;1000;95;false;false
+Compositional bias;feature(COMPOSITIONAL BIAS);String;g18;50;1000;95;false;false
+Domain [FT];feature(DOMAIN EXTENT);String;g18;50;1000;95;false;false
+Motif;feature(MOTIF);String;g18;50;1000;95;false;false
+Region;feature(REGION);String;g18;50;1000;95;false;false
+Repeat;feature(REPEAT);String;g18;50;1000;95;false;false
+Zinc finger;feature(ZINC FINGER);String;g18;50;1000;95;false;false
+Cross-reference (EMBL);database(EMBL);String;g2;50;1000;95;false;false
+Cross-reference (PDB);database(PDB);String;g2;50;1000;95;false;false
+Cross-reference (ENSEMBL);database(ENSEMBL);String;g2;50;1000;95;false;false
+Cross-reference (PFAM);database(PFAM);String;g2;50;1000;95;false;false
+Cross-reference (RFAM);database(RFAM);String;g2;50;1000;95;false;false
+Cross-reference (CATH);database(CATH);String;g2;50;1000;95;false;false
+Cross-reference (SCOPE);database(SCOPE);String;g2;50;1000;95;false;false
+Cross-reference (GO);database(GO);String;g2;50;1000;95;false;false
+Cross-reference (INTERPRO);database(INTERPRO);String;g2;50;1000;95;false;false
+Mapped PubMed ID;citationmapping;String;g16;50;1000;95;false;true
+#

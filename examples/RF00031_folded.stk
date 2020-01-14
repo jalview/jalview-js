@@ -1,0 +1,227 @@
+# STOCKHOLM 1.0
+
+#=GF ID SECIS_1
+#=GF AC RF00031
+#=GF DE Selenocysteine insertion sequence 1
+#=GF AU Griffiths-Jones SR
+#=GF GA 20.0
+#=GF NC 0.0
+#=GF TC 22.6
+#=GF PI SECIS
+#=GF SE Gautheret D, PMID:12458087
+#=GF SS Published; PMID:12458087
+#=GF TP Cis-reg;
+#=GF BM cmbuild  -F CM SEED; cmcalibrate --mpi -s 1 CM
+#=GF BM cmsearch  -Z 169604 -E 1000  --toponly  CM SEQDB
+#=GF DR SO:1001274 SO:SECIS_element
+#=GF DR GO:0001514 GO:selenocysteine incorporation
+#=GF RN [1]
+#=GF RM 8634917
+#=GF RT A novel RNA structural motif in the selenocysteine insertion element
+#=GF RT of eukaryotic selenoprotein mRNAs.
+#=GF RA Walczak R, Westhof E, Carbon P, Krol A;
+#=GF RL RNA 1996;2:367-379.
+#=GF RN [2]
+#=GF RM 12458087
+#=GF RT A survey of metazoan selenocysteine insertion sequences.
+#=GF RA Lambert A, Lescure A, Gautheret D;
+#=GF RL Biochimie 2002;84:953-959.
+#=GF CC The incorporation of selenocysteine into a protein sequence
+#=GF CC is directed by an in-frame UGA codon (usually a stop codon)
+#=GF CC within the coding region of the mRNA.  Selenoprotein mRNAs
+#=GF CC contain a conserved secondary structure in the 3' UTR that
+#=GF CC is required for the distinction of UGA stop from UGA 
+#=GF CC selenocysteine.  The selenocysteine insertion sequence 
+#=GF CC (SECIS) is around 60 nt in length and adopts a hairpin 
+#=GF CC structure which is sufficiently well-defined and conserved
+#=GF CC to act as a computational screen for selenoprotein genes [2].
+#=GF WK http://en.wikipedia.org/wiki/SECIS_element
+#=GF SQ 61
+
+#=GS D.melanogaster.1 AC AY119185.1/838-902
+#=GS D.melanogaster.2 AC AC092237.1/57223-57161
+#=GS D.melanogaster.3 AC AY060611.1/560-627
+#=GS O.niloticus.1    AC Y11109.1/1272-1330
+#=GS O.niloticus.2    AC Y11109.1/927-987
+#=GS O.niloticus.3    AC Y11111.1/1260-1324
+#=GS D.rerio.1        AC AF322071.1/1577-1642
+#=GS X.laevis.1       AC L28111.1/1299-1365
+#=GS G.gallus.1       AC AF125575.1/5781-5843
+#=GS G.gallus.2       AC Y11110.1/1218-1277
+#=GS G.gallus.3       AC Y11273.1/1139-1211
+#=GS M.musculus.1     AC AF195142.1/461-524
+#=GS M.musculus.2     AC AF021345.1/10097-10160
+#=GS M.musculus.3     AC X03920.1/1172-1235
+#=GS M.musculus.4     AC AF096875.1/5504-5568
+#=GS M.musculus.5     AC AF241527.2/359-424
+#=GS M.musculus.6     AC AF136399.1/1808-1868
+#=GS M.musculus.7     AC X84742.1/5239-5302
+#=GS M.musculus.8     AC AF288740.1/1291-1357
+#=GS M.musculus.9     AC AF274027.1/835-900
+#=GS M.musculus.10    AC AB030643.1/4176-4241
+#=GS M.musculus.11    AC AL645723.11/192421-192359
+#=GS M.musculus.12    AC AC002327.1/156204-156268
+#=GS M.musculus.13    AC AF333036.1/2190-2249
+#=GS M.musculus.14    AC U43285.1/2009-2075
+#=GS R.norvegicus.1   AC X57999.1/1526-1586
+#=GS R.norvegicus.2   AC M63574.1/1465-1528
+#=GS R.norvegicus.3   AC AF390544.1/1076-1142
+#=GS R.norvegicus.4   AC AF072865.1/1887-1947
+#=GS R.norvegicus.5   AC X12367.1/703-764
+#=GS R.norvegicus.6   AC U25264.1/366-432
+#=GS R.norvegicus.7   AC L24896.1/600-665
+#=GS H.sapiens.1      AC AF201385.1/3055-3117
+#=GS H.sapiens.2      AC AL049837.4/130674-130738
+#=GS H.sapiens.3      AC U67171.1/375-442
+#=GS H.sapiens.4      AC AF195141.1/689-759
+#=GS H.sapiens.5      AC X53463.1/847-903
+#=GS H.sapiens.6      AC AF093774.1/5851-5916
+#=GS H.sapiens.7      AC X58295.1/1384-1453
+#=GS H.sapiens.8      AC AL833145.1/1479-1545
+#=GS H.sapiens.9      AC S48220.1/1731-1788
+#=GS H.sapiens.10     AC X71973.1/730-791
+#=GS H.sapiens.11     AC AF166127.1/1919-1981
+#=GS H.sapiens.12     AC U43286.1/2054-2120
+#=GS H.sapiens.13     AC BC003127.1/865-928
+#=GS H.sapiens.14     AC S79854.1/1605-1666
+#=GS H.sapiens.15     AC X13710.1/946-1008
+#=GS B.taurus.1       AC D88033.3/5711-5774
+#=GS B.taurus.2       AC D25220.1/1493-1556
+#=GS B.taurus.3       AC AB017534.1/661-726
+#=GS B.taurus.4       AC AB032826.1/1401-1464
+#=GS B.taurus.5       AC AB022283.1/1669-1729
+#=GS B.taurus.6       AC AF053984.1/1951-2017
+#=GS B.taurus.7       AC X13684.1/700-760
+#=GS O.aries.1        AC U67853.1/375-442
+#=GS S.scrofa.1       AC AF380118.1/366-433
+#=GS S.scrofa.2       AC L12743.1/694-758
+#=GS S.scrofa.3       AC AF532927.1/678-740
+#=GS S.scrofa.4       AC X76008.1/2709-2772
+#=GS C.elegans.1      AC U61947.2/4246-4309
+#=GS S.mansoni.1      AC L37762.1/2940-3006
+
+D.melanogaster.1          G.AGCC.CU...AUGAUCGAUGAUUGG.CAAA.UCCUCUC..GAGG..A.......ACCGAUC.G.U.UGAGAA..CCCCU.....UUGCCUU
+#=GR D.melanogaster.1 SS  ................(((((((((((......((((......)))..)........)))))).).).)))......................
+D.melanogaster.2          C.AUUCAACU.UAUGAGGAUUAUUUCU.UAAA.GGCCUCU...GGC..U.......CGGAAAU.A.G.UCUGAA...CCU........UAUUG
+#=GR D.melanogaster.2 SS  ................(((((((((((......((((......)))..)........)))))).).).)))......................
+D.melanogaster.3          G.UGGCGCU..UAUGACGCAGUUGUCU.UAAA.CUCGAAC..UCGA.GC........GGGCAA.U.U.GCUGAU...UACG...AUUAACCAC
+#=GR D.melanogaster.3 SS  (.(((...(....((((((((((((((......((((......))).).........)))))).).).)).).)...)).....)....))))
+O.niloticus.1             G.UUUCUCA...GUGAAGGCUACAGAU.UAAA..CCUCU....GGC...........CUCUGG.A.G.CCAGAU..GCAUU.......GAAAC
+#=GR O.niloticus.1 SS     ......(((...(((..(((((.((..........)).)....)))...........)((((.......))))....)))).......))...
+O.niloticus.2             U.GUUUAUU..AAUGACGGCUACAGAU.UAAA..CCUUU....AGC...........CUCUGG.A.G.CCAGAU..GCAUU......CAAACA
+#=GR O.niloticus.2 SS     ..((((.....((((..(((((.((..........)).)....)))...........)((((.......))))....)))).......)))).
+O.niloticus.3             G.UGUCUCU...GUGAAGUUCGGUUUU.UAAA.AGGGUCA...UCC..A.......GAAAACC.G.ACACUGAU..GUUUC......CGACAC
+#=GR O.niloticus.3 SS     (.((((..........(((((((((((.(......((.......))..........))))))).).).))).................)))))
+D.rerio.1                 A.UGUGGUCUUUAUGAAGGCAGGUGCA.GAAA.CUAUGCA...CUA.GU........GGUGUC.U.G.UCUGAU..GUUUG.......GCCAU
+#=GR D.rerio.1 SS         ...((((((.......(((((((..(.....(.(((........)).)).........)..)).).).))).........).......)))))
+X.laevis.1                G.UGUUUGCA.AAUGACGACCGAUUUU.GAAA.UGGUCUCACGGCC..A.......AAAACUC.GUG.UCCGAC...AUC........AACCC
+#=GR X.laevis.1 SS        .................((((((.(((......(((((....))))..)........))).)).).).)).......................
+G.gallus.1                G.UGUGUUU...AUGAAGAGCACUAAC.AAAA.GAGUAAU.UGACU..C.......AGUUGGU.G.U.UCAGAU..GCU.........CUCAC
+#=GR G.gallus.1 SS        (.((.(..(...((...((((((((((......((((......)))..)........)))))).).).))..))..)...........).)))
+G.gallus.2                U.AUUUGUC...AUGACAGUCACAGCA.UAAA..GCGCA....GAC...........GGCUGU.G.A.CCUGAU..UUUAG......AAAAUA
+#=GR G.gallus.2 SS        ................((((((((((................................))))).).)..))).....................
+G.gallus.3                U.AUUUCUU..UGUGAUGACCGAUUUU.GAAA.UGGGUUU...CUC..UAAUGCCAGGAAAUC.GUG.UCUGAU...GUUG.....UCAAGUA
+#=GR G.gallus.3 SS        ......(((...(..((((((((((((......((((((..........))).))).)))))).).).)).......)).......).)))..
+M.musculus.1              G.UCACCGA...AUGAUCUGCUCUGGU.CAAA.UCCUUCU...AUG..C......CAGCCAGG.G.U.GGUGAU..GACCC.......GUGAC
+#=GR M.musculus.1 SS      (.((((.(....((.(((.((((((((..............................)))))).).).))).)).....)........)))))
+M.musculus.2              G.UUACAUU..AAUGAGAACAGAAACA.UAAA..CUAUGA.CCUAG.G.........GGUUUC.U.G.UUGGAU..AGCUU.......GUAAU
+#=GR M.musculus.2 SS      (.(((((..........(((((((((........(((......)))............))))).).).))..........).......)))))
+M.musculus.3              G.GUUCUUC..CAUGAUGGUGUUUCCUCUAAA..UUUGC....ACG...........GAGAAA.C.A.CCUGAU.UUCCAG.....GAAAAUC
+#=GR M.musculus.3 SS      (.(((.(((..(..((.((((((((.(((................)...........)))))).).).))......))..).....)))))))
+M.musculus.4              G.UGUGCGA...AUGAUAACUACUGAC.GAAA.GAGCUGU.CUGCU..C.......AGUCUGU.G.G.UUGGAU...GUAG......UCACAC
+#=GR M.musculus.4 SS      (.(((((.........(((((((.(((......((((......)))..)........))).)).).).))).........).......)))))
+M.musculus.5              G.CCGCUUC...AUGACAGGAAGGACU.GAAA.UGUCUUA...GAC..C.....UGUGGUCUU.U.C.CUCGAU..GUUCC......UGCGGC
+#=GR M.musculus.5 SS      (.((((..(...((...((((((((((.(.....(((......)))..........))))))).).).))..))..)...........)))))
+M.musculus.6              G.UCAGAUG...AUGAUGGCCUGGGCA.GAAA.CCCCAUG..UGGG..C........CGCCCA.G.G.UUUGAA...CCC........CUGGC
+#=GR M.musculus.6 SS      (.((((...........(((((((((..(.....(((......)))..).........))))).).).))..................)))))
+M.musculus.7              G.UGUCUCU...AUGAAGGAGGGGCCC.GAAG.CCCUUGU...GGG..C........GGGCCU.C.C.CCUGAG...CCCG....UCUGUGGU
+#=GR M.musculus.7 SS      ................(((.(((((((....(.(((.......)))..)........)))))).)...)))..(...(((........).)))
+M.musculus.8              U.UUGCAUU..AAUGAGGAUUACACAG.AAAA.CCUUUGU..UAAG.GA.......CUUGUGU.AGA.UCUGAU..AAUUG.......GCAAA
+#=GR M.musculus.8 SS      ..((((......((.(((.((((((((......((((......))).).........)))))).))..))).))..............)))).
+M.musculus.9              C.CGGCACU..CAUGAAGGUCUGCUUG.AAAA.CCAGCCU..GCUG.GU........GGGGCA.G.U.CCUGAG.GACCUG.......GCGUG
+#=GR M.musculus.9 SS      (.(((..((..((....((.((((((.....(.((((......))).)).........))))).)...))))))...)).).......)....
+M.musculus.10             C.CGGCACU..CAUGAAGGUCUGCCUG.AAAA.CCAGCCU..GCUG.GU........GGGGCA.G.U.CCUGAG.GACCUG.......GCGUG
+#=GR M.musculus.10 SS     (.(((..((..((....((.((((((.....(.((((......))).)).........))))).)...))))))...)).).......)....
+M.musculus.11             U.AUUUGUG..UAUGAUGGUCACAGUG.UAAA..GUUCC....CAC...........AGCUGU.G.A.CUUGAU..UUUUA....AAAAUGUC
+#=GR M.musculus.11 SS     (.((((...........((((((((((.(...............))...........).)))).).).))................)))))..
+M.musculus.12             C.UCAGCAG..GAUGAUGAGAAGGGCU.GAAA.UGCUGCC..AAAC..C.......AGGUCCU.U.U.UCUGAU..GGUGG.......CUGGG
+#=GR M.musculus.12 SS     (.(((((..........((((((((((......((....)..)..............)))))).).).))..........).......)))))
+M.musculus.13             C.AUGCGUC..CAUGAAGUCACUGGCC.UCAA.GCCCAA....GUG.GU........GGGCAG.U.G.ACAGAA...GA.........GCUGC
+#=GR M.musculus.13 SS     (.(((......))))..(((((((.((......(((.........).))........)).))).).).)).......................
+M.musculus.14             C.UCUGAUA...AUGAUGUCUCUCCCU.CUAA.CUCCCAGUAAGGA..C........UGGGAG.A.G.GCUGAACAAACCU.......CAGAG
+#=GR M.musculus.14 SS     (.(((((.........(((.((..(((.(.....(((((((....)..)........)))))).).).)..)))))....).......)))))
+R.norvegicus.1            A.UAUUUGUU.UAUGAUGGUCACAGUG.UAAA..GUUCA....CAC...........AGCUGU.G.A.CUUGAU..UUUUA.......AAAAU
+#=GR R.norvegicus.1 SS    ....((((.........((((((((((.(...............))...........).)))).).).)).........)).......))...
+R.norvegicus.2            G.UUACAUU..GAUGAGAACAGAAACA.UAAA..CUAUGA.CCUAG.G.........GGUUUC.U.G.UUGGAU..AGCUC.......GUAAU
+#=GR R.norvegicus.2 SS    ............((((((((((((((........(((......)))............))))).).).))........))).......))...
+R.norvegicus.3            U.UUGCAUU..AAUGAGGAUUACACAG.AAAA.CCUUUGU..UAAGGGU........UUGUGUCG.A.UCUGCU..AAUUG.......GCAAA
+#=GR R.norvegicus.3 SS    ..((((..........(((((((((((.(....((((......)))).)........)))))).).).))).................)))).
+R.norvegicus.4            G.UCAGAUG...AUGACGGCCUGUGCA.GAAA.CCCCCAC.GUGGG..C........UGC.CA.G.G.UUUGAA...CCC........CUGGC
+#=GR R.norvegicus.4 SS    (.(((........)))).(((..((...(.......)..).)..))..).........((.((.(.(............)........)))))
+R.norvegicus.5            G.UUUUUCC...AUGACGGUGUUUCCUCUAAA..UUUAC....AUG...........GAGAAA.C.A.CCUGAU.UUCCAG......AAAAAU
+#=GR R.norvegicus.5 SS    (.((((((......(((((((((((.((((..............))...........)))))).).).)).).).)....)......))))))
+R.norvegicus.6            G.CCGCUUC...AUGACAGGAAGGACU.GAAA.UGUCUCA.AAGAC..C.....UGUGGUCUU.U.C.UUCGAU..GUUCU.......GCGGC
+#=GR R.norvegicus.6 SS    (.((((..(...((((..(((((((((.(.....(((......)))..........))))))).).).))).))..)...........)))))
+R.norvegicus.7            C.CGGCACU..CAUGACGGUCUGCCUG.AAAA.CCAGCCC..GCUG.GU........GGGGCA.G.U.CCCGAG.GACCUG.......GCGUG
+#=GR R.norvegicus.7 SS    (.(((..((..(.....((.((((((.....(.((((......))).)).........))))).)...)).)))...)).).......)....
+H.sapiens.1               G.CCAGAUG...AUGACGACCUGGGUG.GAAA.CCUACCC.UGUGG..G........CACCCA.U.G.UCCGAG...CCCC.......CUGGC
+#=GR H.sapiens.1 SS       (.((((...........(((.((((((......(((((....))))..)........))))))...).))..................)))))
+H.sapiens.2               G.UGUGCGG...AUGAUAACUACUGAC.GAAA.GAGUCAU.CGACU..C.......AGUUAGU.G.G.UUGGAU...GUAG......UCACAU
+#=GR H.sapiens.2 SS       (.(((((.........(((((((((((......(((((....))))..)........)))))).).).))).........).......)))))
+H.sapiens.3               G.ACGCUUC...AUGAUAGGAAGGACU.GAAA.AGUCUUG.UGGAC..A.....CCUGGUCUU.U.C.CCUGAU..GUUCU......CGUGGC
+#=GR H.sapiens.3 SS       ..(((...(...((.(..(((((((((.......(((......)))...........)))))).).).).).))..)..........)))...
+H.sapiens.4               G.ACUGACAU.UAUGAAGGCCUGUACU.GAAG.ACAGCAA..GCUG..U.......UAGUACA.G.A.CCAGAU..GCUUU..CUUGGCAGGC
+#=GR H.sapiens.4 SS       ...(((.((.....(((((((((((((....(.((((......)))..).......))))))).)...........)))))..).)).)))..
+H.sapiens.5               U.UCACAGA...AUGAUGGCACCUUCC.UAA...ACCCU....CAU...........GGGUGG.U.G.UCUGAG..AGGC........GUGAA
+#=GR H.sapiens.5 SS       ..((((...........((((((...........((((...................)))))).).).))..................)))).
+H.sapiens.6               G.UGUGCGG...AUGAUAACUACUGAC.GAAAGAGUCAUC...GAC..C.....UCAGUUAGU.G.G.UUGGAU...GUAG......UCACAU
+#=GR H.sapiens.6 SS       (.(((((.........(((((((((((....((.(((......)))..).....)..)))))).).).))).........).......)))))
+H.sapiens.7               U.GGCGUCUU.CAUGAGGGAGGGGCCC..AAA.GCCCUUG..UGGG..C........GGACCU.C.C.CCUGAG...CCUGUCUGAGGGGCCA
+#=GR H.sapiens.7 SS       ..(((.((((.((...((((((((.........((((......)))..)...............).).)))......)))...))))))))).
+H.sapiens.8               U.UUGCUUU..AAUGAGAAUAGAAACG.UAAA..CUAUGA.CCUAG.G.........GGUUUC.U.G.UUGGAU.AAUUAG.....CAGUUUA
+#=GR H.sapiens.8 SS       ..(((((..........(((((((((........(((......)))............))))).).).)).........)).....)))....
+H.sapiens.9               U.AUUUGUU..UAUGAUGGCCACAGCC.UAAA..GUACA....CAC...........GGCUGU.G.A.CUUGAU...UCA........AAAGA
+#=GR H.sapiens.9 SS       .............(((.((.(((((((..............................)))))).)...)).......))).............
+H.sapiens.10              C.CGGCACU..CAUGACGGCCUGCCUG.CAAA..CCUGC....UGG..U........GGGGCA.G.A.CCCGAA.AAUCCA.......GCGUG
+#=GR H.sapiens.10 SS      ...((((....(......)..))))............((....(((..(........(((........))))......))).......))...
+H.sapiens.11              G.CCGGAUG...AUGACGACCUGGGUG.GAAA.CCUACCC.UGUGG..G........CACCCA.U.G.UCCGAG...CCCC.......CUGGC
+#=GR H.sapiens.11 SS      (.((((...........(((.((((((......(((((....))))..)........))))))...).))..................)))))
+H.sapiens.12              C.UCUGUUA...AUGACGUCUCUCCCUCUAAA.CCCCAUU.AAGGA..C........UGGGAG.A.G.GCAGAGCAAGCCU.......CAGAG
+#=GR H.sapiens.12 SS      (.((((.......((..(((((((((.......((........)).............))))).).).))....))............)))))
+H.sapiens.13              G.UCACUGC...AUGAUCCGCUCUGGU.CAAA.CCCUUCC...AGG..C......CAGCCAGA.G.U.GGGGAU..GGUCU.......GUGAC
+#=GR H.sapiens.13 SS      (.((((.((.......(((((((((((......((.........))...........)))))).).).)))......)).........)))))
+H.sapiens.14              C.ACUGCUG...AUGACGAACUAUCUC.UAAC.UGGUCUU..GACC..A.......CGAGCUA.G.U.UCUGAA...UU.G.......CAGGG
+#=GR H.sapiens.14 SS      ...((((.(...((...((((((.(((......((((......)))..)........))).)).).).))...)...)).).......)))..
+H.sapiens.15              U.UUUCAUC..UAUGAGGGUGUUUCCUCUAAA..CCUACG...AGG...........GAGGAA.C.A.CCUGAU...CUUA.....CAGAAAA
+#=GR H.sapiens.15 SS      .......((..(.((((((((((.(((((................)...........)))))).).).)).......))))......)))...
+B.taurus.1                C.UUGCGUU..AAUGAGAACAGAAACG.UAAA..CUAUAA.CCUAG.G.........GGUUUC.U.G.UUGGAU..GGUUG.......GCAAC
+#=GR B.taurus.1 SS        ......(((..(((.(.(((((((((........(((......)))............))))).).).))...)...)))).......))...
+B.taurus.2                C.UUGCGUU..AAUGAGAACAGAAACG.AAAA..CUAUAA.CCUAG.G.........GGUUUC.U.G.UUGGAU..GGUUG.......GCAAC
+#=GR B.taurus.2 SS        ......(((..(((.(.(((((((((........(((......)))............))))).).).))...)...)))).......))...
+B.taurus.3                C.CCGGUGCC.UAUGACGGUCUGUCUG.AAAA.CCAGCCC...CUG.GU........GGGGCA.G.A.CCUGAG.AACCUG.......GCGUG
+#=GR B.taurus.3 SS        (.(.(((..(.(.....(((((((((.....(.((((......))).)).........))))).).).))..))..))).).......)....
+B.taurus.4                ACUUGCGUU..AAUGAGAACAGAAACG.UAAA..CUAUAA.CCUAG.G.........GGUUUC.U.G.UUGGAU..GGUUG.......GCAA.
+#=GR B.taurus.4 SS        ......(((..(((.(.(((((((((........(((......)))............))))).).).))...)...)))).......))...
+B.taurus.5                G.CCAGAUG...AUGAGGACCUGUGCG.GAAA.CCCCCCG..CGGG..C........UGCCCA.U.G.UCUGAG...CCC........CUGGC
+#=GR B.taurus.5 SS        (.((((((....(((.((.((((((.(.(.......))))..)))).............)))).).).)))).)...)...............
+B.taurus.6                G.AUGCGUC..CAUGAAGUCACCAGCC.CCAA.GCCCCUC...GUG.GU........GGGUGG.U.G.AUGGAA.CCGUCA.....AAGCAGU
+#=GR B.taurus.6 SS        (.(((..((..((.....((((((.((.(((.............)).).........)).))).).).)))))...)))).............
+B.taurus.7                U.UUUGCCC...AUGAAGGUGUUCCCUCUAAA..CCUAC....GUG...........GAGGAA.U.G.CCUGAU.GUCCAG.......GAAAA
+#=GR B.taurus.7 SS        (.((((..(...((..(((((((((.((((..............))...........)))))).).).))).)).)..))).......))...
+O.aries.1                 G.ACGCUUC...AUGACAGGAAGGACU.GAAA.UGUCUCU.UGGAC.GC......CUGGUCCU.U.C.CUUGAU..GUUCU......CACGGC
+#=GR O.aries.1 SS         (.(.((.((...(....((((((((((.(....((((......))).)........))))))).).).)))))...))..)......).....
+S.scrofa.1                G.ACGCUUC...AUGACAGGAAGGACU.GAAA.UGUCUUG.UGGAC.GC......CUGGUCCU.U.C.CCUGAU..GUUCU......CAUGGC
+#=GR S.scrofa.1 SS        .......((...(((((((((((((((.(....((((......))).)........))))))).)...))))........)......))))).
+S.scrofa.2                C.UGGCACC..CAUGACAGUCUGCCUA.AAAA.CCAGCCC...CUG.GU........GGGGCA.G.A.CUCGAG.AACCUG.......GCGUG
+#=GR S.scrofa.2 SS        .....((((..((.(.((((((((((.....(.((((......))).)).........))))).).).)).).....).)).......).)))
+S.scrofa.3                A.UUUUAUC..CAUGAAAGUGUUUCCUCUAAA..CCUAU....GUG...........GAGGAA.C.A.CCUGAU.GUCCAG......GAAAAU
+#=GR S.scrofa.3 SS        ...........(((....))).((((((((..............))...........)))))).....((((......)))......).....
+S.scrofa.4                C.UGGCACC..CAUGACAGUCUGCCUA.AAAA.CCAGCC....CUG.GU........GGGGCA.G.A.CUCGAG.AACCUG.......GCGUG
+#=GR S.scrofa.4 SS        .....((((..((.(.((((((((((.....(.(((........)).)).........))))).).).)).).....).)).......).)))
+C.elegans.1               G.AGGCAGCUUUGUGACGACCUUUGGC.UAAA.CUCCAUC..GUGA.GC........GCCUCU.G.G.UCUGAU...GC.........GCCUC
+#=GR C.elegans.1 SS       (.((((.((...((.(.((((...(((......(((........)).).........)))....).).))).))...)).........)))))
+S.mansoni.1               C.UCGCUAU...AUGACGAUGGCAAUC.UCAA..AUGUU....CAU..U........GGUUGC.C.A.UUUGAU..GAAAUCAGUUUUGUGUG
+#=GR S.mansoni.1 SS       ...(((.((...(.(((((((((((((..............................)))))).).).)).............))).))))))
+#=GC SS_cons              <-<<<<-----------<<<<<<<<<<-------<<<______>>>----------->>>>>>->->->>------------------>>>>>
+#=GC RF                   g.ucucauu..uAUGAuGgccucuccc.uAAA.ucccuuu...ggg..c........gggaga.g.g.cCuGAU..gcuug.......gagac
+//
