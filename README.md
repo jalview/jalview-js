@@ -60,8 +60,8 @@ You probably want to have the 'sysoutdiv' hidden or omitted, of course.
 By default, the jalview.bin.Jalview entrypoint for JalviewJS will look at the first argument passed on the URL 
 and process it as a standard Jalview command line.
 
-. <a href="JalviewJS.html?open%20https://www.jalview.org/jalview-js/demo-data/test_jalviewJS4.jvp">Open a Jalview project in the Desktop</a>
-. <a href="JalviewJS_embedded.html?open%20https://www.jalview.org/jalview-js/demo-data/test_jalviewJS4.jvp">Open a Jalview project in the Embedded Demo</a>
+. [Open a Jalview project in the Desktop - https://jalview.github.io/jalview-js/JalviewJS.html?open%20https://www.jalview.org/jalview-js/demo-data/test_jalviewJS4.jvp](JalviewJS.html?open%20https://www.jalview.org/jalview-js/demo-data/test_jalviewJS4.jvp)
+. [Open a Jalview project in the Embedded Demo - https://jalview.github.io/jalview-js/JalviewJS_embedded.html?open%20https://www.jalview.org/jalview-js/demo-data/test_jalviewJS4.jvp](JalviewJS_embedded.html?open%20https://www.jalview.org/jalview-js/demo-data/test_jalviewJS4.jvp)
 
 
 
