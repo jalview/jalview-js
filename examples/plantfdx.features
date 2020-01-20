@@ -1,0 +1,118 @@
+HELIX	d4d189
+MOD_RES	47e459
+TRANSIT	6f949b
+TURN	1d1e2d
+METAL	70686e
+SIGNAL	92c7dd
+VARIANT	60beac
+Pfam	dc206a
+CONFLICT	c46c6e
+STRAND	25c54c
+
+STARTGROUP	uniprot
+Iron-sulfur (2Fe-2S) 	FER_CAPAA	-1	39	39	METAL
+Iron-sulfur (2Fe-2S) 	FER_CAPAA	-1	44	44	METAL
+Iron-sulfur (2Fe-2S) 	FER_CAPAA	-1	47	47	METAL
+Iron-sulfur (2Fe-2S) 	FER_CAPAA	-1	77	77	METAL
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 8_83</a></html>	FER_CAPAA	-1	8	83	Pfam
+Chloroplast 	FER_CAPAN	-1	1	47	TRANSIT
+Iron-sulfur (2Fe-2S) 	FER_CAPAN	-1	86	86	METAL
+Iron-sulfur (2Fe-2S) 	FER_CAPAN	-1	91	91	METAL
+Iron-sulfur (2Fe-2S) 	FER_CAPAN	-1	94	94	METAL
+Iron-sulfur (2Fe-2S) 	FER_CAPAN	-1	124	124	METAL
+Phosphothreonine 	FER_CAPAN	-1	136	136	MOD_RES
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 55_130</a></html>	FER_CAPAN	-1	55	130	Pfam
+Chloroplast 	FER1_SOLLC	-1	1	47	TRANSIT
+Iron-sulfur (2Fe-2S) 	FER1_SOLLC	-1	86	86	METAL
+Iron-sulfur (2Fe-2S) 	FER1_SOLLC	-1	91	91	METAL
+Iron-sulfur (2Fe-2S) 	FER1_SOLLC	-1	94	94	METAL
+Iron-sulfur (2Fe-2S) 	FER1_SOLLC	-1	124	124	METAL
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 55_130</a></html>	FER1_SOLLC	-1	55	130	Pfam
+Evidence: EI4 	Q93XJ9_SOLTU	-1	1	48	SIGNAL
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 55_130</a></html>	Q93XJ9_SOLTU	-1	55	130	Pfam
+Chloroplast 	FER1_PEA	-1	1	52	TRANSIT
+L -> I (in strain: cv. Onward) 	FER1_PEA	-1	59	59	VARIANT
+I -> L (in strain: cv. Onward) 	FER1_PEA	-1	85	85	VARIANT
+Iron-sulfur (2Fe-2S) 	FER1_PEA	-1	91	91	METAL
+Iron-sulfur (2Fe-2S) 	FER1_PEA	-1	96	96	METAL
+Iron-sulfur (2Fe-2S) 	FER1_PEA	-1	99	99	METAL
+Iron-sulfur (2Fe-2S) 	FER1_PEA	-1	129	129	METAL
+YPTS -> PPPA (in Ref. 2) 	FER1_PEA	-1	132	135	CONFLICT
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 60_135</a></html>	FER1_PEA	-1	60	135	Pfam
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 63_138</a></html>	Q7XA98_TRIPR	-1	63	138	Pfam
+Chloroplast 	FER1_MESCR	-1	1	51	TRANSIT
+Iron-sulfur (2Fe-2S) 	FER1_MESCR	-1	90	90	METAL
+Iron-sulfur (2Fe-2S) 	FER1_MESCR	-1	95	95	METAL
+Iron-sulfur (2Fe-2S) 	FER1_MESCR	-1	98	98	METAL
+Iron-sulfur (2Fe-2S) 	FER1_MESCR	-1	128	128	METAL
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 59_134</a></html>	FER1_MESCR	-1	59	134	Pfam
+Chloroplast 	FER1_SPIOL	-1	1	50	TRANSIT
+STRAND	FER1_SPIOL	-1	52	59	STRAND
+TURN	FER1_SPIOL	-1	60	61	TURN
+STRAND	FER1_SPIOL	-1	62	69	STRAND
+TURN	FER1_SPIOL	-1	70	71	TURN
+HELIX	FER1_SPIOL	-1	74	80	HELIX
+TURN	FER1_SPIOL	-1	81	82	TURN
+STRAND	FER1_SPIOL	-1	88	92	STRAND
+Iron-sulfur (2Fe-2S) 	FER1_SPIOL	-1	89	89	METAL
+Iron-sulfur (2Fe-2S) 	FER1_SPIOL	-1	94	94	METAL
+TURN	FER1_SPIOL	-1	96	97	TURN
+Iron-sulfur (2Fe-2S) 	FER1_SPIOL	-1	97	97	METAL
+STRAND	FER1_SPIOL	-1	98	104	STRAND
+TURN	FER1_SPIOL	-1	109	110	TURN
+HELIX	FER1_SPIOL	-1	116	121	HELIX
+TURN	FER1_SPIOL	-1	122	122	TURN
+STRAND	FER1_SPIOL	-1	123	125	STRAND
+HELIX	FER1_SPIOL	-1	126	128	HELIX
+Iron-sulfur (2Fe-2S) 	FER1_SPIOL	-1	127	127	METAL
+STRAND	FER1_SPIOL	-1	130	133	STRAND
+STRAND	FER1_SPIOL	-1	135	138	STRAND
+HELIX	FER1_SPIOL	-1	142	144	HELIX
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 58_133</a></html>	FER1_SPIOL	-1	58	133	Pfam
+I -> V 	FER3_RAPSA	-1	8	8	VARIANT
+Iron-sulfur (2Fe-2S) 	FER3_RAPSA	-1	39	39	METAL
+Iron-sulfur (2Fe-2S) 	FER3_RAPSA	-1	44	44	METAL
+Iron-sulfur (2Fe-2S) 	FER3_RAPSA	-1	47	47	METAL
+S -> T 	FER3_RAPSA	-1	55	55	VARIANT
+Iron-sulfur (2Fe-2S) 	FER3_RAPSA	-1	77	77	METAL
+R -> K 	FER3_RAPSA	-1	91	91	VARIANT
+M -> V 	FER3_RAPSA	-1	95	95	VARIANT
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 8_83</a></html>	FER3_RAPSA	-1	8	83	Pfam
+Chloroplast 	FER2_ARATH	-1	1	52	TRANSIT
+Iron-sulfur (2Fe-2S) 	FER2_ARATH	-1	91	91	METAL
+Iron-sulfur (2Fe-2S) 	FER2_ARATH	-1	96	96	METAL
+Iron-sulfur (2Fe-2S) 	FER2_ARATH	-1	99	99	METAL
+Iron-sulfur (2Fe-2S) 	FER2_ARATH	-1	129	129	METAL
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 60_135</a></html>	FER2_ARATH	-1	60	135	Pfam
+Iron-sulfur (2Fe-2S) 	FER_BRANA	-1	39	39	METAL
+Iron-sulfur (2Fe-2S) 	FER_BRANA	-1	44	44	METAL
+Iron-sulfur (2Fe-2S) 	FER_BRANA	-1	47	47	METAL
+Iron-sulfur (2Fe-2S) 	FER_BRANA	-1	77	77	METAL
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 8_83</a></html>	FER_BRANA	-1	8	83	Pfam
+Chloroplast 	FER1_ARATH	-1	1	52	TRANSIT
+Iron-sulfur (2Fe-2S) 	FER1_ARATH	-1	91	91	METAL
+Iron-sulfur (2Fe-2S) 	FER1_ARATH	-1	96	96	METAL
+Iron-sulfur (2Fe-2S) 	FER1_ARATH	-1	99	99	METAL
+Iron-sulfur (2Fe-2S) 	FER1_ARATH	-1	129	129	METAL
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 60_135</a></html>	FER1_ARATH	-1	60	135	Pfam
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 60_118</a></html>	Q93Z60_ARATH	-1	60	118	Pfam
+Chloroplast 	FER1_MAIZE	-1	1	52	TRANSIT
+STRAND	FER1_MAIZE	-1	57	59	STRAND
+STRAND	FER1_MAIZE	-1	72	74	STRAND
+HELIX	FER1_MAIZE	-1	76	80	HELIX
+TURN	FER1_MAIZE	-1	81	84	TURN
+STRAND	FER1_MAIZE	-1	90	97	STRAND
+Iron-sulfur (2Fe-2S) 	FER1_MAIZE	-1	91	91	METAL
+Iron-sulfur (2Fe-2S) 	FER1_MAIZE	-1	96	96	METAL
+TURN	FER1_MAIZE	-1	98	99	TURN
+Iron-sulfur (2Fe-2S) 	FER1_MAIZE	-1	99	99	METAL
+TURN	FER1_MAIZE	-1	118	119	TURN
+HELIX	FER1_MAIZE	-1	120	123	HELIX
+TURN	FER1_MAIZE	-1	128	129	TURN
+Iron-sulfur (2Fe-2S) 	FER1_MAIZE	-1	129	129	METAL
+STRAND	FER1_MAIZE	-1	132	135	STRAND
+STRAND	FER1_MAIZE	-1	137	141	STRAND
+TURN	FER1_MAIZE	-1	142	142	TURN
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 60_135</a></html>	FER1_MAIZE	-1	60	135	Pfam
+<html>Description: Fer2 Status: True Positive <a href="http://pfam.xfam.org/family/PF00111">Pfam 52_127</a></html>	O80429_MAIZE	-1	52	127	Pfam
+ENDGROUP	uniprot
