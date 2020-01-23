@@ -1,4 +1,7 @@
 # jalview-js
+
+[![Join the chat at https://gitter.im/jalviewJS/community](https://badges.gitter.im/jalviewJS/community.svg)](https://gitter.im/jalviewJS/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 JavaScript artefacts and documents for deploying JalviewJS
 
 ## About
