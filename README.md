@@ -6,7 +6,7 @@ JalviewJS is the [Jalview multiple sequence alignment visual analytics workbench
 
 ### Which version of JalviewJS is this ?
 
-The version, build date and originating commit ID are given in (swingjs/j2s/.build_properties) and (VERSION).
+The version, build date and originating commit ID are given in [swingjs/j2s/.build_properties](https://jalview.github.io/jalview-js/swingjs/j2s/.build_properties).
 
 ## How to deploy JalviewJS to your site
 Clone this repository somewhere, and when you want to provide a JalviewJS component on a page, you just need to reference the SwingJS bootstrap script for JalviewJS, and include a call to start JalviewJS in one of the following ways:
@@ -158,8 +158,7 @@ Until the process is fully automated, this git repository is manually updated by
 cd jalview-js # change to repository working directory
 rm -Rf swingjs # delete existing jalviewjs files
 tar -zxf jalviewjs-site.tar.gz # unpack the latest JalviewJS distribution
-cp swingjs/j2s/.build_properties VERSION
-git add -u # add updated files
+git add -u # add any updated files in swingjs, or examples directory
 git add swingjs # add any new files in swingjs
 git commit # make sure you state which version the release includes
 ```
