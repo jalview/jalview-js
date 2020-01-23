@@ -6,7 +6,8 @@ JalviewJS is the [Jalview multiple sequence alignment visual analytics workbench
 
 ### Which version of JalviewJS is this ?
 
-The version, build date and originating commit ID are given in (swingjs/j2s/.build_properties) and (VERSION).  
+The version, build date and originating commit ID are given in (swingjs/j2s/.build_properties) and (VERSION).
+
 ## How to deploy JalviewJS to your site
 Clone this repository somewhere, and when you want to provide a JalviewJS component on a page, you just need to reference the SwingJS bootstrap script for JalviewJS, and include a call to start JalviewJS in one of the following ways:
 
@@ -131,6 +132,39 @@ SwingJS.getApplet('JalviewJSEmbedded', Info)
 getClassList = function(){J2S._saveFile('_j2sclasslist.txt', Clazz.ClassFilesLoaded.sort().join('\n'))}
 </script>
 ```
+
+# Developing and updating JalviewJS
+
+JalviewJS is still experimental, and we are working to improve its functionality and also the way in which JalviewJS is built.
+
+### How do I build my own JalviewJS ?
+
+Either clone Jalview's git repository and check out the version you need, or download the corresponding Jalview source distribution. Instructions for setting up the SwingJS/Java2Script toolchain and building JalviewJS are given in documentation accompanying Jalview's source.
+
+The Jalview build system will ultimately generate a tarball 'jalviewjs-site.tar.gz" that can be deployed on a local or remote web server.
+
+### Updating this jalview-js repository
+
+This repository contains a subset of the full jalviewjs-site.tar.gz tarball:
+
+* swingjs - The JalviewJS JavaScript files
+* this documentation: README.md
+* JalviewJS.html, JalviewJS_embedded.html 
+* a minimal amount of example data in examples and demo-data so you can get going. 
+
+Until the process is fully automated, this git repository is manually updated by:
+
+```
+cd jalview-js # change to repository working directory
+rm -Rf swingjs # delete existing jalviewjs files
+tar -zxf jalviewjs-site.tar.gz # unpack the latest JalviewJS distribution
+cp swingjs/j2s/.build_properties VERSION
+git add -u # add updated files
+git add swingjs # add any new files in swingjs
+git commit # make sure you state which version the release includes
+```
+
+It is probably also a good idea to verify the links above for JalviewJS.html and JalviewJS_embedded.html still work. If they don't, then patch them and add and commit those changes.
 
 
 
