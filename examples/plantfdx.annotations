@@ -1,0 +1,7 @@
+JALVIEW_ANNOTATION
+# Created: Mon Dec 11 10:43:00 GMT 2006
+
+NO_GRAPH	Secondary Structure	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||1,E|E|E|||||2,E|E|E|E|E|E|E|E|||||3,H|H|H|H|H|||||||||||Fe|||||Fe|||Fe||4,E|E||||||5,E|E|||||||||||6,H|H|H|H||7,E||||Fe|||E|E||||9,E|E|E|E|E||||||||||
+NO_GRAPH	Iron Sulphur Contacts	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Fe|||||Fe|||Fe||||||||||||||||||||||||||||||Fe||||||||||||||||||||||
+COLOUR	Conservation	5d1500
+COLOUR	Quality	560c00
