@@ -47,9 +47,9 @@ Info = {
 SwingJS.getApplet('JalviewJS', Info)
 </script>
 # JalviewJS console output - can be omitted (may also need to omit reference above! 
-<div style="position:absolute;left:900px;top:30px;width:600px;height:300px;resize:both">
+<div style="position:absolute;left:900px;top:30px;width:600px;height:300px">
 <div id="sysoutdiv" style="border:1px solid 
-green;width:100%;height:95%;overflow:auto"></div>
+green;width:100%;height:95%;overflow:auto; resize:both;"></div>
 This is System.out. <a href="javascript:JalviewJS._clearConsole()">clear it</a> 
 <br>Add ?j2snocore to URL to see full class list; ?j2sdebug to use uncompressed 
 j2s/core files <br><a href="javascript:getClassList()">get _j2sClassList.txt</a>
