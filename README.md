@@ -47,7 +47,7 @@ Info = {
 SwingJS.getApplet('JalviewJS', Info)
 </script>
 # JalviewJS console output - can be omitted (may also need to omit reference above! 
-<div style="position:left:900px;top:30px;width:600px;height:300px;">
+<div style="position:absolute;left:900px;top:30px;width:600px;height:300px;resize:both">
 <div id="sysoutdiv" style="border:1px solid 
 green;width:100%;height:95%;overflow:auto"></div>
 This is System.out. <a href="javascript:JalviewJS._clearConsole()">clear it</a> 
