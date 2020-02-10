@@ -29,14 +29,15 @@ in the same directory as ' + document.location.href)
 Info = {
    code: null,
    main: "jalview.bin.Jalview", # starts the JalviewJS desktop
+   args: null, // specify command line to be passed to the main method of above class
    core: "jvexamplefile", # preload classes
-         width: 850,
-         height: 550,
+   width: 850,
+   height: 550,
    readyFunction: null, # called once the app is finished
-         serverURL: 'https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php',
-         j2sPath: 'swingjs/j2s', 
-         console:'sysoutdiv', # div for stdout and stderr log
-         allowjavascript: true
+   serverURL: 'https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php',
+   j2sPath: 'swingjs/j2s', 
+   console:'sysoutdiv', # div for stdout and stderr log
+   allowjavascript: true
 }
 </script>
 </head>
@@ -67,6 +68,14 @@ and process it as a standard Jalview command line.
 * [Open a Jalview project in the Desktop - https://jalview.github.io/jalview-js/JalviewJS.html?open%20examples/exampleFile_2_7.jvp](JalviewJS.html?open%20examples/exampleFile_2_7.jvp)
 * [Open a Jalview project in the Embedded Demo - https://jalview.github.io/jalview-js/JalviewJS_embedded.html?open%20examples/exampleFile_2_7.jvp](JalviewJS_embedded.html?open%20examples/exampleFile_2_7.jvp)
 
+#### Arguments via the Info block
+
+SwingJS calls the main method of the class specified by the 'main' key. If an 'args' key is defined then this will be parsed as command line arguments in the same way, except URL-encoding of spaces to separate each argument is not necessary.
+
+```
+args:"-open examples/uniref50.fa -tree examples/ferredoxin.nw -annotations examples/plantfdx.annotations"
+```
+
 
 #### Loading Speed and Corefiles
 
@@ -74,7 +83,7 @@ JalviewJS is fairly slow when first opening Jalview projects but the example pro
 
 
 ### Embedded mode
-For JalviewJS alpha, embedded mode is still a work in progress. The principle is that when JalviewJS is started up in embedded mode, the Jalview Desktop is hidden, and any windows opened are shown in specially tagged <div>s.
+For JalviewJS alpha, embedded mode is still a work in progress. The principle is that when JalviewJS is started up in embedded mode, the Jalview Desktop is hidden, and any windows opened are shown in specially tagged &lt;div&gt; elements.
 
 ```
 <script src="swingjs/swingjs2.js"></script>
@@ -83,21 +92,20 @@ if (!self.SwingJS)alert('swingjs2.js was not found. It needs to be in swingjs fo
 Info = {
   code: null,
   main: "jalview.bin.Jalview",
-//  core: "NONE",
-	core:"jvexamplefile",
+  core:"jvexamplefile",
   readyFunction: null,
-	serverURL: 'https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php',
-	j2sPath: 'swingjs/j2s',
-	console:'sysoutdiv',
-	allowjavascript: true,
+  serverURL: 'https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php',
+  j2sPath: 'swingjs/j2s',
+  console:'sysoutdiv',
+  allowjavascript: true,
 	
-	//Jalview-specific:
-	// note that desktop-frame-div has been set to display:none
-	jalview_SCREEN_WIDTH: 100, // desktop width -- 0 to hide
-	jalview_SCREEN_HEIGHT: 70,  // desktop height -- 0 to hide
-	jalview_SCREEN_X: 10,
-	jalview_SCREEN_Y: 10,
-	jalview_EMBEDDED: true
+  //Jalview-specific:
+  // note that desktop-frame-div has been set to display:none
+  jalview_SCREEN_WIDTH: 100, // desktop width -- 0 to hide
+  jalview_SCREEN_HEIGHT: 70,  // desktop height -- 0 to hide
+  jalview_SCREEN_X: 10,
+  jalview_SCREEN_Y: 10,
+  jalview_EMBEDDED: true
 	
 }
 </script>
