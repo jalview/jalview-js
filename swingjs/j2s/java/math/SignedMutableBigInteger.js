@@ -1,31 +1,24 @@
 (function(){var P$=Clazz.newPackage("java.math"),I$=[];
-var C$=Clazz.newClass(P$, "SignedMutableBigInteger", null, 'java.math.MutableBigInteger');
+/*c*/var C$=Clazz.newClass(P$, "SignedMutableBigInteger", null, 'java.math.MutableBigInteger');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sign=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.sign=1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['sign']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (val) {
-C$.superclazz.c$$I.apply(this, [val]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[val]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_math_MutableBigInteger', function (val) {
-C$.superclazz.c$$java_math_MutableBigInteger.apply(this, [val]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_math_MutableBigInteger.apply(this,[val]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'signedAdd$java_math_SignedMutableBigInteger', function (addend) {
@@ -53,4 +46,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.toBigInteger$I(this.sign).toString();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

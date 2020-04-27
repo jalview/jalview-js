@@ -1,27 +1,18 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),p$1={},I$=[[0,['java.awt.geom.Line2D','.Double'],'fr.orsay.lri.varna.models.geom.LinesIntersect','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Benchmark");
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),p$1={},I$=[[0,['java.awt.geom.Line2D','.Double'],'fr.orsay.lri.varna.models.geom.LinesIntersect','java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Benchmark");
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rna=null;
-this.backboneCrossings=0;
-this.averageUnpairedDistance=0;
-this.medianConsecutiveBaseDistance=0;
-this.tooNearConsecutiveBases=0;
-this.tooFarConsecutiveBases=0;
-this.targetConsecutiveBaseDistance=0;
-this.tooNearFactor=0;
-this.tooFarFactor=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.targetConsecutiveBaseDistance=40.0;
 this.tooNearFactor=0.5;
 this.tooFarFactor=2;
-}, 1);
+},1);
+
+C$.$fields$=[['D',['averageUnpairedDistance','medianConsecutiveBaseDistance','targetConsecutiveBaseDistance','tooNearFactor','tooFarFactor'],'I',['backboneCrossings','tooNearConsecutiveBases','tooFarConsecutiveBases'],'O',['rna','fr.orsay.lri.varna.models.rna.RNA']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_RNA', function (rna) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rna=rna;
 p$1.computeAll.apply(this, []);
 }, 1);
@@ -31,7 +22,7 @@ Clazz.newMeth(C$, 'computeAll', function () {
 var n=this.rna.getSize$();
 var lines=Clazz.array($I$(1), [n - 1]);
 for (var i=0; i < n - 1; i++) {
-lines[i]=Clazz.new_($I$(1).c$$java_awt_geom_Point2D$java_awt_geom_Point2D,[this.rna.getCoords$I(i), this.rna.getCoords$I(i + 1)]);
+lines[i]=Clazz.new_([this.rna.getCoords$I(i), this.rna.getCoords$I(i + 1)],$I$(1,1).c$$java_awt_geom_Point2D$java_awt_geom_Point2D);
 }
 var intersectLines=0;
 for (var i=0; i < n - 1; i++) {
@@ -87,4 +78,4 @@ System.out.println$S("\tNumber of too far consecutive bases = " + this.tooFarCon
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

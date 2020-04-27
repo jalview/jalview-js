@@ -1,24 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.text.NumberFormat','StringBuffer',['java.text.NumberFormat','.Field']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NumberFormatter", null, 'javax.swing.text.InternationalFormatter');
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.text.NumberFormat','StringBuffer',['java.text.NumberFormat','.Field']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NumberFormatter", null, 'javax.swing.text.InternationalFormatter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.specialChars=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['specialChars']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.setN$java_text_NumberFormat.apply(this, [$I$(1).getNumberInstance$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_text_NumberFormat', function (format) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.setN$java_text_NumberFormat.apply(this, [format]);
 }, 1);
 
@@ -33,7 +29,7 @@ Clazz.newMeth(C$, 'setFormat$java_text_Format', function (format) {
 C$.superclazz.prototype.setFormat$java_text_Format.apply(this, [format]);
 var dfs=p$1.getDecimalFormatSymbols.apply(this, []);
 if (dfs != null ) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S(dfs.getCurrencySymbol$());
 sb.append$C(dfs.getDecimalSeparator$());
 sb.append$C(dfs.getGroupingSeparator$());
@@ -67,7 +63,7 @@ return  new Float((value).floatValue$());
 } else if (valueClass === Clazz.getClass(Double) ) {
 return  new Double((value).doubleValue$());
 } else if (valueClass === Clazz.getClass(Byte) ) {
-return  new Byte(($b$[0] = (value).byteValue$(), $b$[0]));
+return  new Byte((value).byteValue$());
 } else if (valueClass === Clazz.getClass(Short) ) {
 return  new Short((value).shortValue$());
 }}return value;
@@ -235,6 +231,5 @@ string=this.getReplaceString$I$I$S(offset, replaceLength, null);
 string=this.getReplaceString$I$I$S(offset, replaceLength,  String.instantialize(Clazz.array(Character.TYPE, -1, [aChar])));
 }return this.stringToValue$S(string);
 }, p$1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

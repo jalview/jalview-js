@@ -1,252 +1,242 @@
-(function(){var P$=java.io,p$1={},I$=[[0,'org.apache.harmony.luni.util.Msg','StringBuilder','java.util.stream.StreamSupport','java.util.Spliterators']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BufferedReader", null, 'java.io.Reader');
+(function(){var P$=java.io,p$1={},I$=[[0,'StringBuffer','java.util.stream.StreamSupport','java.util.Spliterators']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BufferedReader", null, 'java.io.Reader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$in=null;
-this.buf=null;
-this.marklimit=0;
-this.count=0;
-this.markpos=0;
-this.pos=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.marklimit=-1;
-this.markpos=-1;
+this.markedChar=-1;
+this.readAheadLimit=0;
+this.skipLF=false;
+this.markedSkipLF=false;
+},1);
+
+C$.$fields$=[['Z',['skipLF','markedSkipLF'],'I',['nChars','nextChar','markedChar','readAheadLimit'],'O',['$in','java.io.Reader','cb','char[]']]
+,['I',['defaultCharBufferSize','defaultExpectedLineLength']]]
+
+Clazz.newMeth(C$, 'c$$java_io_Reader$I', function ($in, sz) {
+;C$.superclazz.c$$O.apply(this,[$in]);C$.$init$.apply(this);
+if (sz <= 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Buffer size <= 0"]);
+this.$in=$in;
+this.cb=Clazz.array(Character.TYPE, [sz]);
+this.nextChar=this.nChars=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Reader', function ($in) {
-C$.superclazz.c$$O.apply(this, [$in]);
-C$.$init$.apply(this);
-this.$in=$in;
-this.buf=Clazz.array(Character.TYPE, [8192]);
+C$.c$$java_io_Reader$I.apply(this, [$in, C$.defaultCharBufferSize]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_Reader$I', function ($in, size) {
-C$.superclazz.c$$O.apply(this, [$in]);
-C$.$init$.apply(this);
-if (size > 0) {
-this.$in=$in;
-this.buf=Clazz.array(Character.TYPE, [size]);
-} else {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(1).getString$S("K0058")]);
-}}, 1);
-
-Clazz.newMeth(C$, 'close$', function () {
-{
-if (p$1.isOpen.apply(this, [])) {
-this.$in.close$();
-this.buf=null;
-}}});
-
-Clazz.newMeth(C$, 'fillbuf', function () {
-if (this.markpos == -1 || (this.pos - this.markpos >= this.marklimit) ) {
-var result=this.$in.read$CA$I$I(this.buf, 0, this.buf.length);
-if (result > 0) {
-this.markpos=-1;
-this.pos=0;
-this.count=result == -1 ? 0 : result;
-}return result;
-}if (this.markpos == 0 && this.marklimit > this.buf.length ) {
-var newLength=this.buf.length * 2;
-if (newLength > this.marklimit) {
-newLength=this.marklimit;
-}var newbuf=Clazz.array(Character.TYPE, [newLength]);
-System.arraycopy$O$I$O$I$I(this.buf, 0, newbuf, 0, this.buf.length);
-this.buf=newbuf;
-} else if (this.markpos > 0) {
-System.arraycopy$O$I$O$I$I(this.buf, this.markpos, this.buf, 0, this.buf.length - this.markpos);
-}this.pos-=this.markpos;
-this.count=this.markpos=0;
-var charsread=this.$in.read$CA$I$I(this.buf, this.pos, this.buf.length - this.pos);
-this.count=charsread == -1 ? this.pos : this.pos + charsread;
-return charsread;
+Clazz.newMeth(C$, 'ensureOpen', function () {
+if (this.$in == null ) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }, p$1);
 
-Clazz.newMeth(C$, 'isOpen', function () {
-return this.buf != null ;
+Clazz.newMeth(C$, 'fill', function () {
+var dst;
+if (this.markedChar <= -1) {
+dst=0;
+} else {
+var delta=this.nextChar - this.markedChar;
+if (delta >= this.readAheadLimit) {
+this.markedChar=-2;
+this.readAheadLimit=0;
+dst=0;
+} else {
+if (this.readAheadLimit <= this.cb.length) {
+System.arraycopy$O$I$O$I$I(this.cb, this.markedChar, this.cb, 0, delta);
+this.markedChar=0;
+dst=delta;
+} else {
+var ncb=Clazz.array(Character.TYPE, [this.readAheadLimit]);
+System.arraycopy$O$I$O$I$I(this.cb, this.markedChar, ncb, 0, delta);
+this.cb=ncb;
+this.markedChar=0;
+dst=delta;
+}this.nextChar=this.nChars=delta;
+}}var n;
+do {
+n=this.$in.read$CA$I$I(this.cb, dst, this.cb.length - dst);
+} while (n == 0);
+if (n > 0) {
+this.nChars=dst + n;
+this.nextChar=dst;
+}}, p$1);
+
+Clazz.newMeth(C$, 'read$', function () {
+{
+p$1.ensureOpen.apply(this, []);
+for (; ; ) {
+if (this.nextChar >= this.nChars) {
+p$1.fill.apply(this, []);
+if (this.nextChar >= this.nChars) return -1;
+}if (this.skipLF) {
+this.skipLF=false;
+if (this.cb[this.nextChar] == "\n") {
+this.nextChar++;
+continue;
+}}return this.cb[this.nextChar++].$c();
+}
+}});
+
+Clazz.newMeth(C$, 'read1$CA$I$I', function (cbuf, off, len) {
+if (this.nextChar >= this.nChars) {
+if (len >= this.cb.length && this.markedChar <= -1  && !this.skipLF ) {
+return this.$in.read$CA$I$I(cbuf, off, len);
+}p$1.fill.apply(this, []);
+}if (this.nextChar >= this.nChars) return -1;
+if (this.skipLF) {
+this.skipLF=false;
+if (this.cb[this.nextChar] == "\n") {
+this.nextChar++;
+if (this.nextChar >= this.nChars) p$1.fill.apply(this, []);
+if (this.nextChar >= this.nChars) return -1;
+}}var n=Math.min(len, this.nChars - this.nextChar);
+System.arraycopy$O$I$O$I$I(this.cb, this.nextChar, cbuf, off, n);
+this.nextChar+=n;
+return n;
 }, p$1);
 
-Clazz.newMeth(C$, 'mark$I', function (readlimit) {
-if (readlimit >= 0) {
+Clazz.newMeth(C$, 'read$CA$I$I', function (cbuf, off, len) {
 {
-if (p$1.isOpen.apply(this, [])) {
-this.marklimit=readlimit;
-this.markpos=this.pos;
+p$1.ensureOpen.apply(this, []);
+if ((off < 0) || (off > cbuf.length) || (len < 0) || ((off + len) > cbuf.length) || ((off + len) < 0)  ) {
+throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
+} else if (len == 0) {
+return 0;
+}var n=p$1.read1$CA$I$I.apply(this, [cbuf, off, len]);
+if (n <= 0) return n;
+while ((n < len) && this.$in.ready$() ){
+var n1=p$1.read1$CA$I$I.apply(this, [cbuf, off + n, len - n]);
+if (n1 <= 0) break;
+n+=n1;
+}
+return n;
+}});
+
+Clazz.newMeth(C$, 'readLine$Z', function (ignoreLF) {
+var s=null;
+var startChar;
+{
+p$1.ensureOpen.apply(this, []);
+var omitLF=ignoreLF || this.skipLF ;
+ bufferLoop : for (; ; ) {
+if (this.nextChar >= this.nChars) p$1.fill.apply(this, []);
+if (this.nextChar >= this.nChars) {
+if (s != null  && s.length$() > 0 ) return s.toString();
+ else return null;
+}var eol=false;
+var c=String.fromCharCode(0);
+var i;
+if (omitLF && (this.cb[this.nextChar] == "\n") ) this.nextChar++;
+this.skipLF=false;
+omitLF=false;
+ charLoop : for (i=this.nextChar; i < this.nChars; i++) {
+c=this.cb[i];
+if ((c == "\n") || (c == "\r") ) {
+eol=true;
+break charLoop;
+}}
+startChar=this.nextChar;
+this.nextChar=i;
+if (eol) {
+var str;
+if (s == null ) {
+str= String.instantialize(this.cb, startChar, i - startChar);
 } else {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005b")]);
-}}} else {
-throw Clazz.new_(Clazz.load('IllegalArgumentException'));
+s.append$CA$I$I(this.cb, startChar, i - startChar);
+str=s.toString();
+}this.nextChar++;
+if (c == "\r") {
+this.skipLF=true;
+}return str;
+}if (s == null ) s=Clazz.new_($I$(1,1).c$$I,[C$.defaultExpectedLineLength]);
+s.append$CA$I$I(this.cb, startChar, i - startChar);
+}
+}});
+
+Clazz.newMeth(C$, 'readLine$', function () {
+return this.readLine$Z(false);
+});
+
+Clazz.newMeth(C$, 'skip$J', function (n) {
+if (n < 0) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["skip value is negative"]);
+}{
+p$1.ensureOpen.apply(this, []);
+var r=n;
+while (r > 0){
+if (this.nextChar >= this.nChars) p$1.fill.apply(this, []);
+if (this.nextChar >= this.nChars) break;
+if (this.skipLF) {
+this.skipLF=false;
+if (this.cb[this.nextChar] == "\n") {
+this.nextChar++;
+}}var d=this.nChars - this.nextChar;
+if (r <= d) {
+this.nextChar+=r;
+r=0;
+break;
+} else {
+r-=d;
+this.nextChar=this.nChars;
+}}
+return n - r;
+}});
+
+Clazz.newMeth(C$, 'ready$', function () {
+{
+p$1.ensureOpen.apply(this, []);
+if (this.skipLF) {
+if (this.nextChar >= this.nChars && this.$in.ready$() ) {
+p$1.fill.apply(this, []);
+}if (this.nextChar < this.nChars) {
+if (this.cb[this.nextChar] == "\n") this.nextChar++;
+this.skipLF=false;
+}}return (this.nextChar < this.nChars) || this.$in.ready$() ;
 }});
 
 Clazz.newMeth(C$, 'markSupported$', function () {
 return true;
 });
 
-Clazz.newMeth(C$, 'read$', function () {
-{
-if (p$1.isOpen.apply(this, [])) {
-if (this.pos < this.count || p$1.fillbuf.apply(this, []) != -1 ) {
-return this.buf[this.pos++].$c();
-}return -1;
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005b")]);
-}});
-
-Clazz.newMeth(C$, 'read$CA$I$I', function (buffer, offset, length) {
-{
-if (!p$1.isOpen.apply(this, [])) {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005b")]);
-}if (offset < 0 || offset > buffer.length - length  || length < 0 ) {
-throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
-}if (length == 0) {
-return 0;
-}var required;
-if (this.pos < this.count) {
-var copylength=this.count - this.pos >= length ? length : this.count - this.pos;
-System.arraycopy$O$I$O$I$I(this.buf, this.pos, buffer, offset, copylength);
-this.pos+=copylength;
-if (copylength == length || !this.$in.ready$() ) {
-return copylength;
-}offset+=copylength;
-required=length - copylength;
-} else {
-required=length;
-}while (true){
-var read;
-if (this.markpos == -1 && required >= this.buf.length ) {
-read=this.$in.read$CA$I$I(buffer, offset, required);
-if (read == -1) {
-return required == length ? -1 : length - required;
-}} else {
-if (p$1.fillbuf.apply(this, []) == -1) {
-return required == length ? -1 : length - required;
-}read=this.count - this.pos >= required ? required : this.count - this.pos;
-System.arraycopy$O$I$O$I$I(this.buf, this.pos, buffer, offset, read);
-this.pos+=read;
-}required-=read;
-if (required == 0) {
-return length;
-}if (!this.$in.ready$()) {
-return length - required;
-}offset+=read;
-}
-}});
-
-Clazz.newMeth(C$, 'readLine$', function () {
-{
-if (p$1.isOpen.apply(this, [])) {
-if ((this.pos >= this.count) && (p$1.fillbuf.apply(this, []) == -1) ) {
-return null;
-}for (var charPos=this.pos; charPos < this.count; charPos++) {
-var ch=this.buf[charPos];
-if (ch > "\r") continue;
-if (ch == "\n") {
-var res= String.instantialize(this.buf, this.pos, charPos - this.pos);
-this.pos=charPos + 1;
-return res;
-} else if (ch == "\r") {
-var res= String.instantialize(this.buf, this.pos, charPos - this.pos);
-this.pos=charPos + 1;
-if (((this.pos < this.count) || (p$1.fillbuf.apply(this, []) != -1) ) && (this.buf[this.pos] == "\n") ) {
-this.pos++;
-}return res;
-}}
-var eol="\u0000";
-var result=Clazz.new_($I$(2).c$$I,[80]);
-result.append$CA$I$I(this.buf, this.pos, this.count - this.pos);
-this.pos=this.count;
-while (true){
-if (this.pos >= this.count) {
-if (eol == "\n") {
-return result.toString();
-}if (p$1.fillbuf.apply(this, []) == -1) {
-return result.length$() > 0 || eol != "\u0000"  ? result.toString() : null;
-}}for (var charPos=this.pos; charPos < this.count; charPos++) {
-if (eol == "\u0000") {
-if ((this.buf[charPos] == "\n" || this.buf[charPos] == "\r" )) {
-eol=this.buf[charPos];
-}} else if (eol == "\r" && (this.buf[charPos] == "\n") ) {
-if (charPos > this.pos) {
-result.append$CA$I$I(this.buf, this.pos, charPos - this.pos - 1 );
-}this.pos=charPos + 1;
-return result.toString();
-} else if (eol != "\u0000") {
-if (charPos > this.pos) {
-result.append$CA$I$I(this.buf, this.pos, charPos - this.pos - 1 );
-}this.pos=charPos;
-return result.toString();
-}}
-if (eol == "\u0000") {
-result.append$CA$I$I(this.buf, this.pos, this.count - this.pos);
-} else {
-result.append$CA$I$I(this.buf, this.pos, this.count - this.pos - 1 );
-}this.pos=this.count;
-}
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005b")]);
-}});
-
-Clazz.newMeth(C$, 'ready$', function () {
-{
-if (p$1.isOpen.apply(this, [])) {
-return ((this.count - this.pos) > 0) || this.$in.ready$() ;
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005b")]);
+Clazz.newMeth(C$, 'mark$I', function (readAheadLimit) {
+if (readAheadLimit < 0) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Read-ahead limit < 0"]);
+}{
+p$1.ensureOpen.apply(this, []);
+this.readAheadLimit=readAheadLimit;
+this.markedChar=this.nextChar;
+this.markedSkipLF=this.skipLF;
 }});
 
 Clazz.newMeth(C$, 'reset$', function () {
 {
-if (p$1.isOpen.apply(this, [])) {
-if (this.markpos != -1) {
-this.pos=this.markpos;
-} else {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005c")]);
-}} else {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005b")]);
-}}});
+p$1.ensureOpen.apply(this, []);
+if (this.markedChar < 0) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[(this.markedChar == -2) ? "Mark invalid" : "Stream not marked"]);
+this.nextChar=this.markedChar;
+this.skipLF=this.markedSkipLF;
+}});
 
-Clazz.newMeth(C$, 'skip$J', function (amount) {
-if (amount >= 0) {
+Clazz.newMeth(C$, 'close$', function () {
 {
-if (p$1.isOpen.apply(this, [])) {
-if (amount < 1) {
-return 0;
-}if (this.count - this.pos >= amount) {
-this.pos+=amount;
-return amount;
-}var read=this.count - this.pos;
-this.pos=this.count;
-while (read < amount){
-if (p$1.fillbuf.apply(this, []) == -1) {
-return read;
-}if (this.count - this.pos >= amount - read) {
-this.pos+=amount - read;
-return amount;
-}read+=(this.count - this.pos);
-this.pos=this.count;
+if (this.$in == null ) return;
+try {
+this.$in.close$();
+} finally {
+this.$in=null;
+this.cb=null;
 }
-return amount;
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K005b")]);
-}}throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-});
+}});
 
 Clazz.newMeth(C$, 'lines$', function () {
 var iter=((P$.BufferedReader$1||
-(function(){var C$=Clazz.newClass(P$, "BufferedReader$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "BufferedReader$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextLine=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nextLine=null;
-}, 1);
+},1);
+
+C$.$fields$=[['S',['nextLine']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 if (this.nextLine != null ) {
@@ -273,10 +263,15 @@ return line;
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 }});
 })()
-), Clazz.new_(P$.BufferedReader$1.$init$, [this, null]));
-return $I$(3).stream$java_util_Spliterator$Z($I$(4).spliteratorUnknownSize$java_util_Iterator$I(iter, 272), false);
+), Clazz.new_(P$.BufferedReader$1.$init$,[this, null]));
+return $I$(2,"stream$java_util_Spliterator$Z",[$I$(3).spliteratorUnknownSize$java_util_Iterator$I(iter, 272), false]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultCharBufferSize=8192;
+C$.defaultExpectedLineLength=80;
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

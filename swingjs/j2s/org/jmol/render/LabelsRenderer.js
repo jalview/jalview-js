@@ -1,41 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'javajs.util.P3i','javajs.util.P3','org.jmol.viewer.JC','org.jmol.render.TextRenderer','org.jmol.modelset.Text']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LabelsRenderer", null, 'org.jmol.render.FontLineShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'javajs.util.P3i','javajs.util.P3','org.jmol.viewer.JC','org.jmol.render.TextRenderer','org.jmol.modelset.Text']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "LabelsRenderer", null, 'org.jmol.render.FontLineShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.minZ=null;
-this.ascent=0;
-this.descent=0;
-this.sppm=0;
-this.xy=null;
-this.screen=null;
-this.fidPrevious=0;
-this.pTemp=null;
-this.bgcolix=0;
-this.labelColix=0;
-this.fid=0;
-this.atom=null;
-this.atomPt=null;
-this.isAbsolute=false;
-this.offset=0;
-this.textAlign=0;
-this.pointer=0;
-this.zSlab=0;
-this.zBox=0;
-this.boxXY=null;
-this.scalePixelsPerMicron=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.minZ=Clazz.array(Integer.TYPE, [1]);
 this.xy=Clazz.array(Float.TYPE, [3]);
-this.screen=Clazz.new_($I$(1));
-this.pTemp=Clazz.new_($I$(2));
+this.screen=Clazz.new_($I$(1,1));
+this.pTemp=Clazz.new_($I$(2,1));
 this.zSlab=-2147483648;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAbsolute'],'B',['fidPrevious','fid'],'F',['sppm','scalePixelsPerMicron'],'I',['ascent','descent','offset','textAlign','pointer','zSlab','zBox'],'H',['bgcolix','labelColix'],'O',['minZ','int[]','xy','float[]','screen','javajs.util.P3i','pTemp','javajs.util.P3','atom','org.jmol.modelset.Atom','atomPt','org.jmol.util.Point3fi','boxXY','float[]']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 this.fidPrevious=($b$[0] = 0, $b$[0]);
@@ -61,7 +37,7 @@ if (label == null  || label.length$() == 0  || labels.mads != null  && labels.ma
 this.labelColix=labels.getColix2$I$org_jmol_modelset_Atom$Z(i, this.atom, false);
 this.bgcolix=labels.getColix2$I$org_jmol_modelset_Atom$Z(i, this.atom, true);
 if (this.bgcolix == 0 && this.vwr.gdata.getColorArgbOrGray$H(this.labelColix) == backgroundColor ) this.labelColix=backgroundColixContrast;
-this.fid=($b$[0] = ((fids == null  || i >= fids.length  || fids[i] == 0 ) ? (labels.zeroFontId|0) : (fids[i]|0)), $b$[0]);
+this.fid=((fids == null  || i >= fids.length  || fids[i] == 0 ) ? labels.zeroFontId : fids[i]);
 this.offset=(offsets == null  || i >= offsets.length  ? 0 : offsets[i]);
 var labelsFront=((this.offset & 32) != 0);
 var labelsGroup=((this.offset & 16) != 0);
@@ -98,7 +74,7 @@ return false;
 Clazz.newMeth(C$, 'renderLabelOrMeasure$org_jmol_modelset_Text$S', function (text, label) {
 var newText=false;
 if (text != null ) {
-if (text.font == null ) text.setFontFromFid$B(($b$[0] = this.fid, $b$[0]));
+if (text.font == null ) text.setFontFromFid$B(this.fid);
 text.atomX=this.atomPt.sX;
 text.atomY=this.atomPt.sY;
 text.atomZ=this.zSlab;
@@ -111,8 +87,8 @@ text.getPymolScreenOffset$javajs_util_P3$javajs_util_P3i$I$javajs_util_P3$F(this
 }} else {
 var isLeft=(this.textAlign == 4 || this.textAlign == 0 );
 if (this.fid != this.fidPrevious || this.ascent == 0 ) {
-this.vwr.gdata.setFontFid$B(($b$[0] = this.fid, $b$[0]));
-this.fidPrevious=($b$[0] = this.fid, $b$[0]);
+this.vwr.gdata.setFontFid$B(this.fid);
+this.fidPrevious=this.fid;
 this.font3d=this.vwr.gdata.getFont3DCurrent$();
 if (isLeft) {
 this.ascent=this.font3d.getAscent$();
@@ -123,16 +99,16 @@ var doPointer=((this.pointer & 1) != 0);
 var pointerColix=((this.pointer & 2) != 0 && this.bgcolix != 0  ? this.bgcolix : this.labelColix);
 this.boxXY[0]=this.atomPt.sX;
 this.boxXY[1]=this.atomPt.sY;
-$I$(4).renderSimpleLabel$org_jmol_api_JmolRendererInterface$javajs_awt_Font$S$H$H$FA$I$I$I$I$F$I$Z$H$Z(this.g3d, this.font3d, label, this.labelColix, this.bgcolix, this.boxXY, this.zBox, this.zSlab, $I$(3).getXOffset$I(this.offset), $I$(3).getYOffset$I(this.offset), this.ascent, this.descent, doPointer, pointerColix, this.isAbsolute);
+(function(a,f){return f.apply(null,a)})([this.g3d, this.font3d, label, this.labelColix, this.bgcolix, this.boxXY, this.zBox, this.zSlab, $I$(3).getXOffset$I(this.offset), $I$(3).getYOffset$I(this.offset), this.ascent, this.descent, doPointer, pointerColix, this.isAbsolute],$I$(4).renderSimpleLabel$org_jmol_api_JmolRendererInterface$org_jmol_util_Font$S$H$H$FA$I$I$I$I$F$I$Z$H$Z);
 return null;
-}text=$I$(5).newLabel$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$H$I$F(this.vwr, this.font3d, label, this.labelColix, this.bgcolix, this.textAlign, 0);
+}text=$I$(5).newLabel$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$H$I$F(this.vwr, this.font3d, label, this.labelColix, this.bgcolix, this.textAlign, 0);
 text.atomX=this.atomPt.sX;
 text.atomY=this.atomPt.sY;
 text.atomZ=this.zSlab;
 text.setXYZs$I$I$I$I(this.atomPt.sX, this.atomPt.sY, this.zBox, this.zSlab);
 newText=true;
 }if (text.pymolOffset == null ) {
-if (text.font == null ) text.setFontFromFid$B(($b$[0] = this.font3d.fid, $b$[0]));
+if (text.font == null ) text.setFontFromFid$B(this.font3d.fid);
 text.setOffset$I(this.offset);
 if (this.textAlign != 0) text.setAlignment$I(this.textAlign);
 }text.pointer=this.pointer;
@@ -144,4 +120,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

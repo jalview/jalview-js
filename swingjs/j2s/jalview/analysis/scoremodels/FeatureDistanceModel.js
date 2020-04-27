@@ -1,34 +1,37 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),I$=[[0,'jalview.math.Matrix','jalview.util.SetUtils','java.util.HashMap','java.util.HashSet']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeatureDistanceModel", null, 'jalview.analysis.scoremodels.DistanceScoreModel');
+(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),I$=[[0,'jalview.math.Matrix','jalview.util.SetUtils','java.util.HashMap','java.util.HashSet']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeatureDistanceModel", null, 'jalview.analysis.scoremodels.DistanceScoreModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.description=null;
-this.fr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['description'],'O',['fr','jalview.api.FeatureRenderer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getInstance$jalview_api_AlignmentViewPanel', function (view) {
 var instance;
 try {
-instance=this.getClass$().newInstance$();
+instance=this.getClass$().getDeclaredConstructor$ClassA([]).newInstance$OA([]);
 instance.configureFromAlignmentView$jalview_api_AlignmentViewPanel(view);
 return instance;
-} catch (e) {
-if (Clazz.exceptionOf(e,"InstantiationException") || Clazz.exceptionOf(e,"IllegalAccessException")){
+} catch (e$$) {
+if (Clazz.exceptionOf(e$$,"InstantiationException") || Clazz.exceptionOf(e$$,"IllegalAccessException")){
+var e = e$$;
+{
 System.err.println$S("Error in " + this.getClass$().getName$() + ".getInstance(): " + e.getMessage$() );
 return null;
+}
+} else if (Clazz.exceptionOf(e$$,"ReflectiveOperationException")){
+var roe = e$$;
+{
+return null;
+}
 } else {
-throw e;
+throw e$$;
 }
 }
 });
@@ -47,7 +50,7 @@ var dft=null;
 if (this.fr != null ) {
 dft=this.fr.getDisplayedFeatureTypes$();
 }if (dft == null  || dft.isEmpty$() ) {
-return Clazz.new_($I$(1).c$$DAA,[distances]);
+return Clazz.new_($I$(1,1).c$$DAA,[distances]);
 }var viscont=seqData.getVisibleContigs$();
 for (var vc=0; vc < viscont.length; vc+=2) {
 for (var cpos=viscont[vc]; cpos <= viscont[vc + 1]; cpos++) {
@@ -74,20 +77,20 @@ distances[i][j] /= cpwidth;
 distances[j][i]=distances[i][j];
 }
 }
-return Clazz.new_($I$(1).c$$DAA,[distances]);
+return Clazz.new_($I$(1,1).c$$DAA,[distances]);
 });
 
 Clazz.newMeth(C$, 'findFeatureTypesAtColumn$jalview_datamodel_SeqCigarA$I', function (seqs, columnPosition) {
-var sfap=Clazz.new_($I$(3));
+var sfap=Clazz.new_($I$(3,1));
 for (var seq, $seq = 0, $$seq = seqs; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
 var spos=seq.findPosition$I(columnPosition);
 if (spos != -1) {
-var types=Clazz.new_($I$(4));
-var sfs=this.fr.findFeaturesAtResidue$jalview_datamodel_SequenceI$I(seq.getRefSeq$(), spos);
+var types=Clazz.new_($I$(4,1));
+var sfs=this.fr.findFeaturesAtResidue$jalview_datamodel_SequenceI$I$I(seq.getRefSeq$(), spos, spos);
 for (var sf, $sf = sfs.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
-types.add$TE(sf.getType$());
+types.add$O(sf.getType$());
 }
-sfap.put$TK$TV(seq, types);
+sfap.put$O$O(seq, types);
 }}
 return sfap;
 });
@@ -112,4 +115,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return "Score between sequences based on hamming distance between binary vectors marking features displayed at each column";
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

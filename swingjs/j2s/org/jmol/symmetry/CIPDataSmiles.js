@@ -1,26 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'org.jmol.util.Node','org.jmol.util.BSUtil','javajs.util.Measure','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CIPDataSmiles", null, 'org.jmol.symmetry.CIPData');
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'org.jmol.util.Node','org.jmol.util.BSUtil','javajs.util.Measure','javajs.util.Lst']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CIPDataSmiles", null, 'org.jmol.symmetry.CIPData');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.smiles=null;
-this.nodes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.smiles=null;
 this.nodes=Clazz.array($I$(1), [6]);
-}, 1);
+},1);
+
+C$.$fields$=[['S',['smiles'],'O',['nodes','org.jmol.util.Node[]']]]
 
 Clazz.newMeth(C$, 'isSmiles$', function () {
 return true;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setAtomsForSmiles$org_jmol_viewer_Viewer$S', function (vwr, smiles) {
@@ -72,7 +67,7 @@ if (center == null ) return 0;
 var jn=center.stereo.getAlleneAtoms$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom(center, b.atom);
 if (jn == null ) return 0;
 center.stereo.setTopoCoordinates$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$org_jmol_util_NodeA(center, null, null, jn);
-var angle=$I$(3).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(jn[0].getXYZ$(), jn[1].getXYZ$(), jn[2].getXYZ$(), jn[3].getXYZ$(), true);
+var angle=(function(a,f){return f.apply(null,a)})([jn[0].getXYZ$(), jn[1].getXYZ$(), jn[2].getXYZ$(), jn[3].getXYZ$(), true],$I$(3).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z);
 return ((angle > 0 ) == ((a.atom.getIndex$() == jn[0].getIndex$()) && (d.atom.getIndex$() == jn[3].getIndex$())  || (a.atom.getIndex$() == jn[1].getIndex$()) && (d.atom.getIndex$() == jn[2].getIndex$())  )  ? 18 : 17);
 });
 
@@ -105,15 +100,15 @@ return true;
 });
 
 Clazz.newMeth(C$, 'getSmilesChiralityArray$', function () {
-var chirality=Clazz.new_($I$(4));
+var chirality=Clazz.new_($I$(4,1));
 for (var i=0; i < this.atoms.length; i++) {
 var a=this.atoms[i];
 var pt=a.getPatternIndex$();
 if (pt >= 0) {
 var c=a.getCIPChirality$Z(false);
-chirality.addLast$TV(c);
+chirality.addLast$O(c);
 }}
-return chirality.toArray$TTA(Clazz.array(String, [chirality.size$()]));
+return chirality.toArray$OA(Clazz.array(String, [chirality.size$()]));
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

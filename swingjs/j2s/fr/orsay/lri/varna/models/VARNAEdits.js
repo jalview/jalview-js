@@ -1,31 +1,27 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models"),I$=[[0,['java.awt.geom.Point2D','.Double'],'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VARNAEdits", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models"),I$=[[0,['java.awt.geom.Point2D','.Double'],'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VARNAEdits", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['BasesShiftEdit',9],['HelixRotateEdit',9],['SingleBaseMoveEdit',9],['HelixFlipEdit',9],['AddBPEdit',9],['RemoveBPEdit',9],['RescaleRNAEdit',9],['RotateRNAEdit',9],['RedrawEdit',9]];
+
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "BasesShiftEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "BasesShiftEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._indices=null;
-this._dx=0;
-this._dy=0;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_dx','_dy'],'O',['_indices','java.util.ArrayList','_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$java_util_ArrayList$D$D$fr_orsay_lri_varna_VARNAPanel', function (indices, dx, dy, p) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._indices=indices;
 this._dx=dx;
 this._dy=dy;
@@ -35,8 +31,8 @@ this._vp=p;
 Clazz.newMeth(C$, 'undo$', function () {
 for (var index, $index = this._indices.iterator$(); $index.hasNext$()&&((index=($index.next$()).intValue$()),1);) {
 var mb=this._vp.getRNA$().getBaseAt$I(index);
-this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(index, Clazz.new_($I$(1).c$$D$D,[mb.getCoords$().x - this._dx, mb.getCoords$().y - this._dy]));
-this._vp.getRNA$().setCenter$I$java_awt_geom_Point2D_Double(index, Clazz.new_($I$(1).c$$D$D,[mb.getCenter$().x - this._dx, mb.getCenter$().y - this._dy]));
+this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(index, Clazz.new_([mb.getCoords$().x - this._dx, mb.getCoords$().y - this._dy],$I$(1,1).c$$D$D));
+this._vp.getRNA$().setCenter$I$java_awt_geom_Point2D_Double(index, Clazz.new_([mb.getCenter$().x - this._dx, mb.getCenter$().y - this._dy],$I$(1,1).c$$D$D));
 }
 this._vp.repaint$();
 });
@@ -44,8 +40,8 @@ this._vp.repaint$();
 Clazz.newMeth(C$, 'redo$', function () {
 for (var index, $index = this._indices.iterator$(); $index.hasNext$()&&((index=($index.next$()).intValue$()),1);) {
 var mb=this._vp.getRNA$().getBaseAt$I(index);
-this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(index, Clazz.new_($I$(1).c$$D$D,[mb.getCoords$().x + this._dx, mb.getCoords$().y + this._dy]));
-this._vp.getRNA$().setCenter$I$java_awt_geom_Point2D_Double(index, Clazz.new_($I$(1).c$$D$D,[mb.getCenter$().x - this._dx, mb.getCenter$().y - this._dy]));
+this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(index, Clazz.new_([mb.getCoords$().x + this._dx, mb.getCoords$().y + this._dy],$I$(1,1).c$$D$D));
+this._vp.getRNA$().setCenter$I$java_awt_geom_Point2D_Double(index, Clazz.new_([mb.getCenter$().x - this._dx, mb.getCenter$().y - this._dy],$I$(1,1).c$$D$D));
 }
 this._vp.repaint$();
 });
@@ -66,7 +62,7 @@ Clazz.newMeth(C$, 'addEdit$javax_swing_undo_UndoableEdit', function (anEdit) {
 if (Clazz.instanceOf(anEdit, "fr.orsay.lri.varna.models.VARNAEdits.BasesShiftEdit")) {
 var e=anEdit;
 if (e._indices.equals$O(this._indices)) {
-var tot=Clazz.new_($I$(1).c$$D$D,[this._dx + e._dx, this._dy + e._dy]);
+var tot=Clazz.new_($I$(1,1).c$$D$D,[this._dx + e._dx, this._dy + e._dy]);
 if (tot.distance$D$D(0.0, 0.0) < 55.0 ) {
 this._dx=this._dx + e._dx;
 this._dy=this._dy + e._dy;
@@ -77,29 +73,19 @@ return true;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "HelixRotateEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "HelixRotateEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._delta=0;
-this._base=0;
-this._pLimL=0;
-this._pLimR=0;
-this._h=null;
-this._ml=null;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_delta','_base','_pLimL','_pLimR'],'O',['_h','java.awt.Point','+_ml','_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$java_awt_Point$java_awt_Point$fr_orsay_lri_varna_VARNAPanel', function (delta, base, pLimL, pLimR, h, ml, vp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._delta=delta;
 this._base=base;
 this._pLimL=pLimL;
@@ -148,28 +134,19 @@ return true;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "SingleBaseMoveEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "SingleBaseMoveEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._index=0;
-this._ox=0;
-this._oy=0;
-this._nx=0;
-this._ny=0;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_ox','_oy','_nx','_ny'],'I',['_index'],'O',['_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$I$D$D$fr_orsay_lri_varna_VARNAPanel', function (index, nx, ny, p) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._index=index;
 var mb=p.getRNA$().getBaseAt$I(index);
 this._ox=mb.getCoords$().x;
@@ -180,12 +157,12 @@ this._vp=p;
 }, 1);
 
 Clazz.newMeth(C$, 'undo$', function () {
-this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(this._index, Clazz.new_($I$(1).c$$D$D,[this._ox, this._oy]));
+this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(this._index, Clazz.new_($I$(1,1).c$$D$D,[this._ox, this._oy]));
 this._vp.repaint$();
 });
 
 Clazz.newMeth(C$, 'redo$', function () {
-this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(this._index, Clazz.new_($I$(1).c$$D$D,[this._nx, this._ny]));
+this._vp.getRNA$().setCoord$I$java_awt_geom_Point2D_Double(this._index, Clazz.new_($I$(1,1).c$$D$D,[this._nx, this._ny]));
 this._vp.repaint$();
 });
 
@@ -205,10 +182,10 @@ Clazz.newMeth(C$, 'addEdit$javax_swing_undo_UndoableEdit', function (anEdit) {
 if (Clazz.instanceOf(anEdit, "fr.orsay.lri.varna.models.VARNAEdits.SingleBaseMoveEdit")) {
 var e=anEdit;
 if (e._index == this._index) {
-var po1=Clazz.new_($I$(1).c$$D$D,[this._ox, this._oy]);
-var pn1=Clazz.new_($I$(1).c$$D$D,[this._nx, this._ny]);
-var po2=Clazz.new_($I$(1).c$$D$D,[e._ox, e._oy]);
-var pn2=Clazz.new_($I$(1).c$$D$D,[e._nx, e._ny]);
+var po1=Clazz.new_($I$(1,1).c$$D$D,[this._ox, this._oy]);
+var pn1=Clazz.new_($I$(1,1).c$$D$D,[this._nx, this._ny]);
+var po2=Clazz.new_($I$(1,1).c$$D$D,[e._ox, e._oy]);
+var pn2=Clazz.new_($I$(1,1).c$$D$D,[e._nx, e._ny]);
 if ((pn1.equals$O(po2)) && (po1.distance$java_awt_geom_Point2D(pn2) < 55.0 ) ) {
 this._nx=e._nx;
 this._ny=e._ny;
@@ -219,24 +196,19 @@ return true;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "HelixFlipEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "HelixFlipEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._h=null;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['_h','java.awt.Point','_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Point$fr_orsay_lri_varna_VARNAPanel', function (h, vp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._h=h;
 this._vp=vp;
 }, 1);
@@ -270,26 +242,19 @@ return false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "AddBPEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "AddBPEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._msbp=null;
-this._i=0;
-this._j=0;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['_i','_j'],'O',['_msbp','fr.orsay.lri.varna.models.rna.ModeleBP','_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$I$I$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_VARNAPanel', function (i, j, msbp, vp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._msbp=msbp;
 this._i=i;
 this._j=j;
@@ -325,26 +290,19 @@ return false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "RemoveBPEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "RemoveBPEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._msbp=null;
-this._i=0;
-this._j=0;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['_i','_j'],'O',['_msbp','fr.orsay.lri.varna.models.rna.ModeleBP','_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$I$I$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_VARNAPanel', function (i, j, msbp, vp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._msbp=msbp;
 this._i=i;
 this._j=j;
@@ -380,24 +338,19 @@ return false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "RescaleRNAEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "RescaleRNAEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._factor=0;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_factor'],'O',['_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$D$fr_orsay_lri_varna_VARNAPanel', function (angle, vp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._factor=angle;
 this._vp=vp;
 }, 1);
@@ -437,24 +390,19 @@ return true;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "RotateRNAEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "RotateRNAEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._angle=0;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_angle'],'O',['_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$D$fr_orsay_lri_varna_VARNAPanel', function (angle, vp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._angle=angle;
 this._vp=vp;
 }, 1);
@@ -493,28 +441,18 @@ return true;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.VARNAEdits, "RedrawEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.VARNAEdits, "RedrawEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._prevMode=0;
-this._newMode=0;
-this._prevFlat=false;
-this._newFlat=false;
-this._backupCoords=null;
-this._backupCenters=null;
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._backupCoords=Clazz.new_($I$(2));
-this._backupCenters=Clazz.new_($I$(2));
-}, 1);
+this._backupCoords=Clazz.new_($I$(2,1));
+this._backupCenters=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['_prevFlat','_newFlat'],'I',['_prevMode','_newMode'],'O',['_backupCoords','java.util.ArrayList','+_backupCenters','_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_VARNAPanel$Z', function (vp, newFlat) {
 C$.c$$I$fr_orsay_lri_varna_VARNAPanel$Z.apply(this, [vp.getRNA$().getDrawMode$(), vp, newFlat]);
@@ -525,14 +463,14 @@ C$.c$$I$fr_orsay_lri_varna_VARNAPanel$Z.apply(this, [newMode, vp, vp.getFlatExte
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$fr_orsay_lri_varna_VARNAPanel$Z', function (newMode, vp, newFlat) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._vp=vp;
 this._newMode=newMode;
 this._newFlat=newFlat;
 this._prevFlat=this._vp.getFlatExteriorLoop$();
 for (var mb, $mb = this._vp.getRNA$().get_listeBases$().iterator$(); $mb.hasNext$()&&((mb=($mb.next$())),1);) {
-this._backupCoords.add$TE(Clazz.new_($I$(1).c$$D$D,[mb.getCoords$().x, mb.getCoords$().y]));
-this._backupCenters.add$TE(Clazz.new_($I$(1).c$$D$D,[mb.getCenter$().x, mb.getCenter$().y]));
+this._backupCoords.add$O(Clazz.new_([mb.getCoords$().x, mb.getCoords$().y],$I$(1,1).c$$D$D));
+this._backupCenters.add$O(Clazz.new_([mb.getCenter$().x, mb.getCenter$().y],$I$(1,1).c$$D$D));
 }
 this._prevMode=this._vp.getDrawMode$();
 }, 1);
@@ -585,4 +523,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:44 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

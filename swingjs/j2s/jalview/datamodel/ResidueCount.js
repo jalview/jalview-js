@@ -1,42 +1,23 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'jalview.util.Comparison','jalview.util.SparseCount','StringBuilder',['jalview.datamodel.ResidueCount','.SymbolCounts'],'jalview.util.QuickSort','jalview.util.Format']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ResidueCount", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'jalview.util.Comparison','jalview.util.SparseCount','StringBuilder',['jalview.datamodel.ResidueCount','.SymbolCounts'],'jalview.util.QuickSort','jalview.util.Format']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ResidueCount", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.NUC_INDEX=null;
-C$.AA_INDEX=null;
+C$.$classes$=[['SymbolCounts',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NUC_INDEX=Clazz.array(Integer.TYPE, [26]);
-C$.AA_INDEX=Clazz.array(Integer.TYPE, [26]);
-{
-for (var i=0; i < "ACGNTU".length$(); i++) {
-C$.NUC_INDEX[("ACGNTU".charCodeAt$I(i)) - 65]=i + 1;
-}
-for (var i=0; i < "ACDEFGHIKLMNPQRSTUVWXY".length$(); i++) {
-C$.AA_INDEX[("ACDEFGHIKLMNPQRSTUVWXY".charCodeAt$I(i)) - 65]=i + 1;
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.counts=null;
-this.intCounts=null;
-this.useIntCounts=false;
-this.otherData=null;
-this.maxCount=0;
-this.isNucleotide=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['useIntCounts','isNucleotide'],'I',['maxCount'],'O',['counts','short[]','intCounts','int[]','otherData','jalview.util.SparseCount']]
+,['O',['NUC_INDEX','int[]','+AA_INDEX']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (nucleotide) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.isNucleotide=nucleotide;
 var charsToCount=nucleotide ? "ACGNTU".length$() : "ACDEFGHIKLMNPQRSTUVWXY".length$();
 this.counts=Clazz.array(Short.TYPE, [charsToCount + 1]);
@@ -98,7 +79,7 @@ u=String.fromCharCode((c.$c() + -32));
 
 Clazz.newMeth(C$, 'addOtherCharacter$C', function (c) {
 if (this.otherData == null ) {
-this.otherData=Clazz.new_($I$(2));
+this.otherData=Clazz.new_($I$(2,1));
 }var newValue=this.otherData.add$I$I(c.$c(), 1);
 this.maxCount=Math.max(this.maxCount, newValue);
 return newValue;
@@ -106,7 +87,7 @@ return newValue;
 
 Clazz.newMeth(C$, 'setOtherCharacter$C$I', function (c, value) {
 if (this.otherData == null ) {
-this.otherData=Clazz.new_($I$(2));
+this.otherData=Clazz.new_($I$(2,1));
 }this.otherData.put$I$I(c.$c(), value);
 });
 
@@ -168,7 +149,7 @@ return this.otherData != null ;
 Clazz.newMeth(C$, 'getResiduesForCount$I', function (count) {
 if (count == 0) {
 return "";
-}var modal=Clazz.new_($I$(3));
+}var modal=Clazz.new_($I$(3,1));
 if (this.useIntCounts) {
 for (var i=1; i < this.intCounts.length; i++) {
 if (this.intCounts[i] == count) {
@@ -235,7 +216,7 @@ symbols[j]=String.fromCharCode(this.otherData.keyAt$I(i));
 values[j]=this.otherData.valueAt$I(i);
 j++;
 }
-}return Clazz.new_($I$(4).c$$CA$IA, [this, null, symbols, values]);
+}return Clazz.new_($I$(4,1).c$$CA$IA,[this, null, symbols, values]);
 });
 
 Clazz.newMeth(C$, 'getTooltip$I$I', function (normaliseBy, percentageDecPl) {
@@ -244,7 +225,7 @@ var ca=symbolCounts.symbols;
 var vl=symbolCounts.values;
 $I$(5).sort$IA$CA(vl, ca);
 var first=true;
-var sb=Clazz.new_($I$(3).c$$I,[64]);
+var sb=Clazz.new_($I$(3,1).c$$I,[64]);
 for (var c=ca.length - 1; c >= 0; c--) {
 var residue=ca[c];
 var tval=(vl[c] * 100.0) / normaliseBy;
@@ -257,7 +238,7 @@ return sb.toString();
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 sb.append$S("[ ");
 var sc=this.getSymbolCounts$();
 for (var i=0; i < sc.symbols.length; i++) {
@@ -266,26 +247,34 @@ sb.append$C(sc.symbols[i]).append$S(":").append$I(sc.values[i]).append$S(" ");
 sb.append$S("]");
 return sb.toString();
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.NUC_INDEX=Clazz.array(Integer.TYPE, [26]);
+C$.AA_INDEX=Clazz.array(Integer.TYPE, [26]);
+{
+for (var i=0; i < "ACGNTU".length$(); i++) {
+C$.NUC_INDEX[("ACGNTU".charCodeAt$I(i)) - 65]=i + 1;
+}
+for (var i=0; i < "ACDEFGHIKLMNPQRSTUVWXY".length$(); i++) {
+C$.AA_INDEX[("ACDEFGHIKLMNPQRSTUVWXY".charCodeAt$I(i)) - 65]=i + 1;
+}
+};
+};
 var $s$ = new Int16Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.ResidueCount, "SymbolCounts", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ResidueCount, "SymbolCounts", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.symbols=null;
-this.values=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['symbols','char[]','values','int[]']]]
 
 Clazz.newMeth(C$, 'c$$CA$IA', function (s, v) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.symbols=s;
 this.values=v;
 }, 1);
@@ -293,4 +282,4 @@ this.values=v;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

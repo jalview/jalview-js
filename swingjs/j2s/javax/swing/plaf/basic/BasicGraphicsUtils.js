@@ -1,15 +1,13 @@
-(function(){var P$=Clazz.newPackage("javax.swing.plaf.basic"),I$=[[0,'java.awt.Insets']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BasicGraphicsUtils");
-C$.GROOVE_INSETS=null;
-C$.ETCHED_INSETS=null;
+(function(){var P$=Clazz.newPackage("javax.swing.plaf.basic"),I$=[[0,'java.awt.Insets','java.awt.Toolkit']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BasicGraphicsUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.GROOVE_INSETS=Clazz.new_($I$(1).c$$I$I$I$I,[2, 2, 2, 2]);
-C$.ETCHED_INSETS=Clazz.new_($I$(1).c$$I$I$I$I,[2, 2, 2, 2]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['GROOVE_INSETS','java.awt.Insets','+ETCHED_INSETS']]]
 
 Clazz.newMeth(C$, 'drawEtchedRect$java_awt_Graphics$I$I$I$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (g, x, y, w, h, shadow, darkShadow, highlight, lightHighlight) {
 var oldColor=g.getColor$();
@@ -126,6 +124,15 @@ Clazz.newMeth(C$, 'isLeftToRight$java_awt_Component', function (c) {
 return c.getComponentOrientation$().isLeftToRight$();
 }, 1);
 
+Clazz.newMeth(C$, 'isMenuShortcutKeyDown$java_awt_event_InputEvent', function (event) {
+return (event.getModifiers$() & $I$(2).getDefaultToolkit$().getMenuShortcutKeyMask$()) != 0;
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.GROOVE_INSETS=Clazz.new_($I$(1,1).c$$I$I$I$I,[2, 2, 2, 2]);
+C$.ETCHED_INSETS=Clazz.new_($I$(1,1).c$$I$I$I$I,[2, 2, 2, 2]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,27 +1,17 @@
 (function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[];
-var C$=Clazz.newClass(P$, "DotMulti", null, 'com.stevesoft.pat.PatternSub');
-C$.idcount=0;
+/*c*/var C$=Clazz.newClass(P$, "DotMulti", null, 'com.stevesoft.pat.PatternSub');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.idcount=1;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fewestMatches=null;
-this.mostMatches=null;
-this.matchFewest=false;
-this.src=null;
-this.srclength=0;
-this.dotDoesntMatchCR=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.matchFewest=false;
 this.src=null;
 this.srclength=0;
 this.dotDoesntMatchCR=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['matchFewest','dotDoesntMatchCR'],'I',['srclength'],'O',['fewestMatches','com.stevesoft.pat.patInt','+mostMatches','src','com.stevesoft.pat.StringLike']]
+,['I',['idcount']]]
 
 Clazz.newMeth(C$, 'minChars$', function () {
 return this.fewestMatches;
@@ -32,7 +22,7 @@ return this.mostMatches;
 });
 
 Clazz.newMeth(C$, 'c$$com_stevesoft_pat_patInt$com_stevesoft_pat_patInt', function (a, b) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.fewestMatches=a;
 this.mostMatches=b;
 }, 1);
@@ -137,6 +127,10 @@ dm.matchFewest=this.matchFewest;
 return dm;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.idcount=1;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

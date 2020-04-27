@@ -1,45 +1,25 @@
 (function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[];
-var C$=Clazz.newClass(P$, "InfCodes");
-C$.inflate_mask=null;
+/*c*/var C$=Clazz.newClass(P$, "InfCodes");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.inflate_mask=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mode=0;
-this.len=0;
-this.tree=null;
-this.tree_index=0;
-this.need=0;
-this.lit=0;
-this.get=0;
-this.dist=0;
-this.lbits=0;
-this.dbits=0;
-this.ltree=null;
-this.ltree_index=0;
-this.dtree=null;
-this.dtree_index=0;
-this.z=null;
-this.s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tree_index=0;
-}, 1);
+},1);
+
+C$.$fields$=[['B',['lbits','dbits'],'I',['mode','len','tree_index','need','lit','get','dist','ltree_index','dtree_index'],'O',['+tree','+ltree','+dtree','z','swingjs.jzlib.ZStream','s','swingjs.jzlib.InfBlocks']]
+,['O',['inflate_mask','int[]']]]
 
 Clazz.newMeth(C$, 'c$$swingjs_jzlib_ZStream$swingjs_jzlib_InfBlocks', function (z, s) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.z=z;
 this.s=s;
 }, 1);
 
 Clazz.newMeth(C$, 'init$I$I$IA$I$IA$I', function (bl, bd, tl, tl_index, td, td_index) {
 this.mode=0;
-this.lbits=($b$[0] = (bl|0), $b$[0]);
-this.dbits=($b$[0] = (bd|0), $b$[0]);
+this.lbits=($b$[0] = bl, $b$[0]);
+this.dbits=($b$[0] = bd, $b$[0]);
 this.ltree=tl;
 this.ltree_index=tl_index;
 this.dtree=td;
@@ -58,7 +38,7 @@ var n;
 var q;
 var m;
 var f;
-p=this.z.next_in_index;
+p=this.z.in_index;
 n=this.z.avail_in;
 b=this.s.bitb;
 k=this.s.bitk;
@@ -71,11 +51,11 @@ if (m >= 258 && n >= 10 ) {
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 r=this.inflate_fast$I$I$IA$I$IA$I$swingjs_jzlib_InfBlocks$swingjs_jzlib_ZStream(this.lbits, this.dbits, this.ltree, this.ltree_index, this.dtree, this.dtree_index, this.s, this.z);
-p=this.z.next_in_index;
+p=this.z.in_index;
 n=this.z.avail_in;
 b=this.s.bitb;
 k=this.s.bitk;
@@ -96,12 +76,12 @@ if (n != 0) r=0;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 }n--;
-b|=(this.z.next_in[p++] & 255) << k;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 tindex=(this.tree_index + (b & C$.inflate_mask[j])) * 3;
@@ -130,8 +110,8 @@ r=-3;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 case 2:
@@ -142,12 +122,12 @@ if (n != 0) r=0;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 }n--;
-b|=(this.z.next_in[p++] & 255) << k;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 this.len+=(b & C$.inflate_mask[j]);
@@ -165,12 +145,12 @@ if (n != 0) r=0;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 }n--;
-b|=(this.z.next_in[p++] & 255) << k;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 tindex=(this.tree_index + (b & C$.inflate_mask[j])) * 3;
@@ -192,8 +172,8 @@ r=-3;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 case 4:
@@ -204,12 +184,12 @@ if (n != 0) r=0;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 }n--;
-b|=(this.z.next_in[p++] & 255) << k;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 this.dist+=(b & C$.inflate_mask[j]);
@@ -238,11 +218,11 @@ m=q < this.s.read ? this.s.read - q - 1  : this.s.end - q;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
-}}}this.s.window[q++]=(this.s.window[f++]|0);
+}}}this.s.window[q++]=this.s.window[f++];
 m--;
 if (f == this.s.end) f=0;
 this.len--;
@@ -266,12 +246,12 @@ m=q < this.s.read ? this.s.read - q - 1  : this.s.end - q;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 }}}r=0;
-this.s.window[q++]=((this.lit|0)|0);
+this.s.window[q++]=(this.lit|0);
 m--;
 this.mode=0;
 break;
@@ -288,8 +268,8 @@ if (this.s.read != this.s.write) {
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 }this.mode=8;
@@ -298,8 +278,8 @@ r=1;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 case 9:
@@ -307,8 +287,8 @@ r=-3;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 default:
@@ -316,8 +296,8 @@ r=-2;
 this.s.bitb=b;
 this.s.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.s.write=q;
 return this.s.inflate_flush$I(r);
 }
@@ -344,7 +324,7 @@ var c;
 var d;
 var r;
 var tp_index_t_3;
-p=z.next_in_index;
+p=z.in_index;
 n=z.avail_in;
 b=s.bitb;
 k=s.bitk;
@@ -355,7 +335,7 @@ md=C$.inflate_mask[bd];
 do {
 while (k < (20)){
 n--;
-b|=(z.next_in[p++] & 255) << k;
+b|=(z.$in[p++] & 255) << k;
 k+=8;
 }
 t=b & ml;
@@ -365,7 +345,7 @@ tp_index_t_3=(tp_index + t) * 3;
 if ((e=tp[tp_index_t_3]) == 0) {
 b>>=(tp[tp_index_t_3 + 1]);
 k-=(tp[tp_index_t_3 + 1]);
-s.window[q++]=((tp[tp_index_t_3 + 2]|0)|0);
+s.window[q++]=(tp[tp_index_t_3 + 2]|0);
 m--;
 continue;
 }do {
@@ -378,7 +358,7 @@ b>>=e;
 k-=e;
 while (k < (15)){
 n--;
-b|=(z.next_in[p++] & 255) << k;
+b|=(z.$in[p++] & 255) << k;
 k+=8;
 }
 t=b & md;
@@ -393,7 +373,7 @@ if ((e & 16) != 0) {
 e&=15;
 while (k < (e)){
 n--;
-b|=(z.next_in[p++] & 255) << k;
+b|=(z.$in[p++] & 255) << k;
 k+=8;
 }
 d=tp[tp_index_t_3 + 2] + (b & C$.inflate_mask[e]);
@@ -403,8 +383,8 @@ m-=c;
 if (q >= d) {
 r=q - d;
 if (q - r > 0 && 2 > (q - r) ) {
-s.window[q++]=(s.window[r++]|0);
-s.window[q++]=(s.window[r++]|0);
+s.window[q++]=s.window[r++];
+s.window[q++]=s.window[r++];
 c-=2;
 } else {
 System.arraycopy$O$I$O$I$I(s.window, r, s.window, q, 2);
@@ -421,7 +401,7 @@ if (c > e) {
 c-=e;
 if (q - r > 0 && e > (q - r) ) {
 do {
-s.window[q++]=(s.window[r++]|0);
+s.window[q++]=s.window[r++];
 } while (--e != 0);
 } else {
 System.arraycopy$O$I$O$I$I(s.window, r, s.window, q, e);
@@ -431,7 +411,7 @@ e=0;
 }r=0;
 }}if (q - r > 0 && c > (q - r) ) {
 do {
-s.window[q++]=(s.window[r++]|0);
+s.window[q++]=s.window[r++];
 } while (--c != 0);
 } else {
 System.arraycopy$O$I$O$I$I(s.window, r, s.window, q, c);
@@ -454,8 +434,8 @@ k-=c << 3;
 s.bitb=b;
 s.bitk=k;
 z.avail_in=n;
-z.total_in+=p - z.next_in_index;
-z.next_in_index=p;
+z.total_in+=p - z.in_index;
+z.in_index=p;
 s.write=q;
 return -3;
 }} while (true);
@@ -467,7 +447,7 @@ tp_index_t_3=(tp_index + t) * 3;
 if ((e=tp[tp_index_t_3]) == 0) {
 b>>=(tp[tp_index_t_3 + 1]);
 k-=(tp[tp_index_t_3 + 1]);
-s.window[q++]=((tp[tp_index_t_3 + 2]|0)|0);
+s.window[q++]=(tp[tp_index_t_3 + 2]|0);
 m--;
 break;
 }} else if ((e & 32) != 0) {
@@ -479,8 +459,8 @@ k-=c << 3;
 s.bitb=b;
 s.bitk=k;
 z.avail_in=n;
-z.total_in+=p - z.next_in_index;
-z.next_in_index=p;
+z.total_in+=p - z.in_index;
+z.in_index=p;
 s.write=q;
 return 1;
 } else {
@@ -493,8 +473,8 @@ k-=c << 3;
 s.bitb=b;
 s.bitk=k;
 z.avail_in=n;
-z.total_in+=p - z.next_in_index;
-z.next_in_index=p;
+z.total_in+=p - z.in_index;
+z.in_index=p;
 s.write=q;
 return -3;
 }} while (true);
@@ -507,13 +487,17 @@ k-=c << 3;
 s.bitb=b;
 s.bitk=k;
 z.avail_in=n;
-z.total_in+=p - z.next_in_index;
-z.next_in_index=p;
+z.total_in+=p - z.in_index;
+z.in_index=p;
 s.write=q;
 return 0;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.inflate_mask=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535]);
+};
 var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

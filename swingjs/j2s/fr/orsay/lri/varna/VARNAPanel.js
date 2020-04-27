@@ -1,89 +1,43 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna"),p$1={},I$=[[0,'fr.orsay.lri.varna.models.rna.RNA','fr.orsay.lri.varna.models.VARNAConfig','java.util.ArrayList',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.models.BaseList','java.awt.Dimension','fr.orsay.lri.varna.views.VueMenu','fr.orsay.lri.varna.views.VueUI','javax.swing.undo.UndoManager','fr.orsay.lri.varna.controlers.ControleurBlinkingThread','java.awt.Point','fr.orsay.lri.varna.controlers.ControleurClicMovement','fr.orsay.lri.varna.controlers.ControleurMolette','fr.orsay.lri.varna.controlers.ControleurDraggedMolette','fr.orsay.lri.varna.controlers.ControleurVARNAPanelKeys','fr.orsay.lri.varna.controlers.ControleurInterpolator','java.awt.Font','java.awt.Color',['fr.orsay.lri.varna.models.rna.ModeleBP','.Edge'],'java.awt.geom.GeneralPath',['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],['fr.orsay.lri.varna.models.annotations.ChemProbAnnotation','.ChemProbAnnotationType'],['fr.orsay.lri.varna.models.annotations.TextAnnotation','.AnchorType'],['fr.orsay.lri.varna.models.rna.ModeleBackboneElement','.BackboneType'],['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.AffineTransform','java.text.NumberFormat','fr.orsay.lri.varna.models.export.SwingGraphics','java.awt.RenderingHints','java.awt.BasicStroke','fr.orsay.lri.varna.factories.RNAFactory','fr.orsay.lri.varna.exceptions.ExceptionFileFormatOrSyntax','fr.orsay.lri.varna.models.rna.Mapping','javax.swing.JOptionPane','java.awt.Rectangle','javax.print.attribute.HashPrintRequestAttributeSet','java.awt.print.PrinterJob','java.io.File','java.io.FileInputStream','fr.orsay.lri.varna.exceptions.ExceptionLoadingFailed','javax.xml.parsers.SAXParserFactory','fr.orsay.lri.varna.utils.VARNASessionParser','fr.orsay.lri.varna.models.FullBackup','java.io.FileReader','java.io.FileOutputStream','java.io.PrintWriter','javax.xml.transform.stream.StreamResult','javax.xml.transform.TransformerFactory','org.xml.sax.helpers.AttributesImpl']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VARNAPanel", null, 'javax.swing.JPanel', 'java.beans.PropertyChangeListener');
-C$.DISTANCE_FACT=0;
-C$.VARNA_SESSION_EXTENSION=null;
-C$.XML_ELEMENT_NAME=null;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna"),p$1={},I$=[[0,'fr.orsay.lri.varna.models.rna.RNA','fr.orsay.lri.varna.models.VARNAConfig','java.util.ArrayList',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.models.BaseList','java.awt.Dimension','fr.orsay.lri.varna.views.VueMenu','fr.orsay.lri.varna.views.VueUI','javax.swing.undo.UndoManager','fr.orsay.lri.varna.controlers.ControleurBlinkingThread','java.awt.Point','fr.orsay.lri.varna.controlers.ControleurClicMovement','fr.orsay.lri.varna.controlers.ControleurMolette','fr.orsay.lri.varna.controlers.ControleurDraggedMolette','fr.orsay.lri.varna.controlers.ControleurVARNAPanelKeys','fr.orsay.lri.varna.controlers.ControleurInterpolator','java.awt.Font','java.awt.Color',['fr.orsay.lri.varna.models.rna.ModeleBP','.Edge'],'java.awt.geom.GeneralPath',['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],['fr.orsay.lri.varna.models.annotations.ChemProbAnnotation','.ChemProbAnnotationType'],['fr.orsay.lri.varna.models.annotations.TextAnnotation','.AnchorType'],['fr.orsay.lri.varna.models.rna.ModeleBackboneElement','.BackboneType'],['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.AffineTransform','java.text.NumberFormat','fr.orsay.lri.varna.models.export.SwingGraphics','java.awt.RenderingHints','java.awt.BasicStroke','fr.orsay.lri.varna.factories.RNAFactory','fr.orsay.lri.varna.exceptions.ExceptionFileFormatOrSyntax','fr.orsay.lri.varna.models.rna.Mapping','javax.swing.JOptionPane','java.awt.Rectangle','javax.print.attribute.HashPrintRequestAttributeSet','java.awt.print.PrinterJob','java.io.File','java.io.FileInputStream','fr.orsay.lri.varna.exceptions.ExceptionLoadingFailed','javax.xml.parsers.SAXParserFactory','fr.orsay.lri.varna.utils.VARNASessionParser','fr.orsay.lri.varna.models.FullBackup','java.io.FileReader','java.io.FileOutputStream','java.io.PrintWriter','javax.xml.transform.stream.StreamResult','javax.xml.transform.TransformerFactory','org.xml.sax.helpers.AttributesImpl']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VARNAPanel", null, 'javax.swing.JPanel', 'java.beans.PropertyChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DISTANCE_FACT=2.0;
-C$.VARNA_SESSION_EXTENSION="varna";
-C$.XML_ELEMENT_NAME="VARNASession";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._RNA=null;
-this._debug=false;
-this._conf=null;
-this._VARNAListeners=null;
-this._selectionListeners=null;
-this._RNAListeners=null;
-this._basesListeners=null;
-this._manager=null;
-this._realCoords=null;
-this._realCenters=null;
-this._scaleFactor=0;
-this._offsetPanel=null;
-this._offsetRNA=null;
-this._offX=0;
-this._offY=0;
-this._blink=null;
-this._selectedBases=null;
-this._backupSelection=null;
-this._nearestBase=null;
-this._lastSelectedCoord=null;
-this._linkOrigin=null;
-this._linkDestination=null;
-this._selectionRectangle=null;
-this._highlightAnnotation=false;
-this._titleHeight=0;
-this._border=null;
-this._drawBBox=false;
-this._drawBorder=false;
-this._translation=null;
-this._horsCadre=false;
-this._premierAffichage=false;
-this._interpolator=null;
-this._popup=null;
-this._UI=null;
-this._selectedAnnotation=null;
-this._target=null;
-this._target2=null;
-this._hoveredBase=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._RNA=Clazz.new_($I$(1));
+this._RNA=Clazz.new_($I$(1,1));
 this._debug=false;
-this._conf=Clazz.new_($I$(2));
-this._VARNAListeners=Clazz.new_($I$(3));
-this._selectionListeners=Clazz.new_($I$(3));
-this._RNAListeners=Clazz.new_($I$(3));
-this._basesListeners=Clazz.new_($I$(3));
+this._conf=Clazz.new_($I$(2,1));
+this._VARNAListeners=Clazz.new_($I$(3,1));
+this._selectionListeners=Clazz.new_($I$(3,1));
+this._RNAListeners=Clazz.new_($I$(3,1));
+this._basesListeners=Clazz.new_($I$(3,1));
 this._realCoords=Clazz.array($I$(4), [0]);
 this._realCenters=Clazz.array($I$(4), [0]);
 this._scaleFactor=1.0;
-this._offsetPanel=Clazz.new_($I$(4));
-this._offsetRNA=Clazz.new_($I$(4));
-this._selectedBases=Clazz.new_($I$(5).c$$S,["selection"]);
-this._backupSelection=Clazz.new_($I$(3));
+this._offsetPanel=Clazz.new_($I$(4,1));
+this._offsetRNA=Clazz.new_($I$(4,1));
+this._selectedBases=Clazz.new_($I$(5,1).c$$S,["selection"]);
+this._backupSelection=Clazz.new_($I$(3,1));
 this._nearestBase=null;
-this._lastSelectedCoord=Clazz.new_($I$(4).c$$D$D,[0.0, 0.0]);
+this._lastSelectedCoord=Clazz.new_($I$(4,1).c$$D$D,[0.0, 0.0]);
 this._linkOrigin=null;
 this._linkDestination=null;
 this._selectionRectangle=null;
 this._highlightAnnotation=false;
-this._border=Clazz.new_($I$(6).c$$I$I,[0, 0]);
+this._border=Clazz.new_($I$(6,1).c$$I$I,[0, 0]);
 this._drawBBox=false;
 this._drawBorder=false;
-this._popup=Clazz.new_($I$(7).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
-this._UI=Clazz.new_($I$(8).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
-this._target=Clazz.new_($I$(4).c$$D$D,[0, 0]);
-this._target2=Clazz.new_($I$(4).c$$D$D,[0, 0]);
+this._popup=Clazz.new_($I$(7,1).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
+this._UI=Clazz.new_($I$(8,1).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
+this._target=Clazz.new_($I$(4,1).c$$D$D,[0, 0]);
+this._target2=Clazz.new_($I$(4,1).c$$D$D,[0, 0]);
 this._hoveredBase=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (event) {
+C$.$fields$=[['Z',['_debug','_highlightAnnotation','_drawBBox','_drawBorder','_horsCadre','_premierAffichage'],'D',['_scaleFactor','_offX','_offY'],'I',['_titleHeight'],'O',['_RNA','fr.orsay.lri.varna.models.rna.RNA','_conf','fr.orsay.lri.varna.models.VARNAConfig','_VARNAListeners','java.util.ArrayList','+_selectionListeners','+_RNAListeners','+_basesListeners','_manager','javax.swing.undo.UndoManager','_realCoords','java.awt.geom.Point2D.Double[]','+_realCenters','_offsetPanel','java.awt.geom.Point2D.Double','+_offsetRNA','_blink','fr.orsay.lri.varna.controlers.ControleurBlinkingThread','_selectedBases','fr.orsay.lri.varna.models.BaseList','_backupSelection','java.util.ArrayList','_nearestBase','Integer','_lastSelectedCoord','java.awt.geom.Point2D.Double','+_linkOrigin','+_linkDestination','_selectionRectangle','java.awt.Rectangle','_border','java.awt.Dimension','_translation','java.awt.Point','_interpolator','fr.orsay.lri.varna.controlers.ControleurInterpolator','_popup','fr.orsay.lri.varna.views.VueMenu','_UI','fr.orsay.lri.varna.views.VueUI','_selectedAnnotation','fr.orsay.lri.varna.models.annotations.TextAnnotation','_target','java.awt.geom.Point2D.Double','+_target2','_hoveredBase','fr.orsay.lri.varna.models.rna.ModeleBase']]
+,['D',['DISTANCE_FACT'],'S',['VARNA_SESSION_EXTENSION','XML_ELEMENT_NAME']]]
+
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (event) {
 var val=event.getNewValue$();
 switch (event.getPropertyName$()) {
 case "value":
@@ -98,7 +52,7 @@ break;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.init.apply(this, []);
 this.drawRNA$();
 }, 1);
@@ -120,7 +74,7 @@ C$.c$$java_io_Reader$I$S.apply(this, [r, drawMode, ""]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Reader$I$S', function (r, drawMode, title) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.init.apply(this, []);
 this.drawRNA$java_io_Reader$I(r, drawMode);
 this.setTitle$S(title);
@@ -140,20 +94,20 @@ this._linkDestination=null;
 });
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_RNA', function (r) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.showRNA$fr_orsay_lri_varna_models_rna_RNA(r);
 p$1.init.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$I$S', function (seq, str, drawMode, title) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.drawRNA$S$S$I(seq, str, drawMode);
 p$1.init.apply(this, []);
 this.setTitle$S(title);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S$S$I$S', function (seq1, struct1, seq2, struct2, drawMode, title) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._conf._comparisonMode=true;
 this.drawRNA$S$S$S$S$I(seq1, struct1, seq2, struct2, drawMode);
 p$1.init.apply(this, []);
@@ -161,39 +115,42 @@ this.setTitle$S(title);
 }, 1);
 
 Clazz.newMeth(C$, 'init', function () {
+this._popup.buildPopupMenu$();
 this.setBackground$java_awt_Color($I$(2).DEFAULT_BACKGROUND_COLOR);
-this._manager=Clazz.new_($I$(9));
+this._manager=Clazz.new_($I$(9,1));
 this._manager.setLimit$I(10000);
 this._UI.addUndoableEditListener$javax_swing_undo_UndoManager(this._manager);
-this._blink=Clazz.new_($I$(10).c$$fr_orsay_lri_varna_VARNAPanel$J$D$D$D$D,[this, 50, 0, 1.0, 0.0, 0.2]);
+this._blink=Clazz.new_($I$(10,1).c$$fr_orsay_lri_varna_VARNAPanel$J$D$D$D$D,[this, 50, 0, 1.0, 0.0, 0.2]);
 this._blink.start$();
 this._premierAffichage=true;
-this._translation=Clazz.new_($I$(11).c$$I$I,[0, 0]);
+this._translation=Clazz.new_($I$(11,1).c$$I$I,[0, 0]);
 this._horsCadre=false;
 this.setFont$java_awt_Font(this._conf._fontBasesGeneral);
-var controleurClicMovement=Clazz.new_($I$(12).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
+var controleurClicMovement=Clazz.new_($I$(12,1).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
 this.addMouseListener$java_awt_event_MouseListener(controleurClicMovement);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(controleurClicMovement);
-this.addMouseWheelListener$java_awt_event_MouseWheelListener(Clazz.new_($I$(13).c$$fr_orsay_lri_varna_VARNAPanel,[this]));
-var ctrlDraggedMolette=Clazz.new_($I$(14).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
+this.addMouseWheelListener$java_awt_event_MouseWheelListener(Clazz.new_($I$(13,1).c$$fr_orsay_lri_varna_VARNAPanel,[this]));
+var ctrlDraggedMolette=Clazz.new_($I$(14,1).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(ctrlDraggedMolette);
 this.addMouseListener$java_awt_event_MouseListener(ctrlDraggedMolette);
-var ctrlKey=Clazz.new_($I$(15).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
+var ctrlKey=Clazz.new_($I$(15,1).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
 this.addKeyListener$java_awt_event_KeyListener(ctrlKey);
 this.addFocusListener$java_awt_event_FocusListener(ctrlKey);
-this._interpolator=Clazz.new_($I$(16).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
+this._interpolator=Clazz.new_($I$(16,1).c$$fr_orsay_lri_varna_VARNAPanel,[this]);
 {
 
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'undo$', function () {
-if (this._manager.canUndo$()) this._manager.undo$();
-});
+if (this._manager.canUndo$()) {
+this._manager.undo$();
+}});
 
 Clazz.newMeth(C$, 'redo$', function () {
-if (this._manager.canRedo$()) this._manager.redo$();
-});
+if (this._manager.canRedo$()) {
+this._manager.redo$();
+}});
 
 Clazz.newMeth(C$, 'setTitleFontStyle$I', function (newStyle) {
 this._conf._titleFont=this._conf._titleFont.deriveFont$I(newStyle);
@@ -206,7 +163,7 @@ p$1.updateTitleHeight.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setTitleFontFamily$S', function (newFamily) {
-this._conf._titleFont=Clazz.new_($I$(17).c$$S$I$I,[newFamily, this._conf._titleFont.getStyle$(), this._conf._titleFont.getSize$()]);
+this._conf._titleFont=Clazz.new_([newFamily, this._conf._titleFont.getStyle$(), this._conf._titleFont.getSize$()],$I$(17,1).c$$S$I$I);
 p$1.updateTitleHeight.apply(this, []);
 });
 
@@ -216,11 +173,11 @@ p$1.updateTitleHeight.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setBaseFontSize$Float', function (size) {
-this._conf._fontBasesGeneral=this._conf._fontBasesGeneral.deriveFont$F((size).floatValue$());
+this._conf._fontBasesGeneral=this._conf._fontBasesGeneral.deriveFont$F((size).valueOf());
 });
 
 Clazz.newMeth(C$, 'setNumbersFontSize$Float', function (size) {
-this._conf._numbersFont=this._conf._numbersFont.deriveFont$F((size).floatValue$());
+this._conf._numbersFont=this._conf._numbersFont.deriveFont$F((size).valueOf());
 });
 
 Clazz.newMeth(C$, 'setBaseFontStyle$I', function (style) {
@@ -297,7 +254,7 @@ g2D.drawCircle$D$D$D((posx - (radius) / 2.0), (posy - (radius) / 2.0), (radius))
 }break;
 case $I$(19).HOOGSTEEN:
 {
-var p2=Clazz.new_($I$(20));
+var p2=Clazz.new_($I$(20,1));
 radius /= 1.05;
 p2.moveTo$F$F((posx - radius * normx / 2.0 - radius * normy / 2.0), (posy - radius * normy / 2.0 + radius * normx / 2.0));
 p2.lineTo$F$F((posx + radius * normx / 2.0 - radius * normy / 2.0), (posy + radius * normy / 2.0 + radius * normx / 2.0));
@@ -320,7 +277,7 @@ var ix=radius * normx / 2.0;
 var iy=radius * normy / 2.0;
 var jx=radius * normy / 2.0;
 var jy=-radius * normx / 2.0;
-var p2=Clazz.new_($I$(20));
+var p2=Clazz.new_($I$(20,1));
 p2.moveTo$F$F((posx - ix + jx), (posy - iy + jy));
 p2.lineTo$F$F((posx + ix + jx ), (posy + iy + jy ));
 p2.lineTo$F$F((posx - jx), (posy - jy));
@@ -342,9 +299,11 @@ g2D.setColor$java_awt_Color(bck);
 Clazz.newMeth(C$, 'drawBasePairArc$fr_orsay_lri_varna_models_export_VueVARNAGraphics$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$fr_orsay_lri_varna_models_rna_ModeleBP$D', function (g2D, i, j, orig, dest, scaleFactor, style, newRadius) {
 var distance;
 var coef;
-if (j - i == 1) coef=this.getBPHeightIncrement$() * 1.75;
- else coef=this.getBPHeightIncrement$();
-distance=dest.x - orig.x;
+if (j - i == 1) {
+coef=this.getBPHeightIncrement$() * 1.75;
+} else {
+coef=this.getBPHeightIncrement$();
+}distance=dest.x - orig.x;
 switch (this._conf._mainBPStyle) {
 case $I$(21).LW:
 {
@@ -357,17 +316,17 @@ g2D.drawArc$D$D$D$D$D$D((dest.x + orig.x) / 2.0, dest.y - scaleFactor * this._RN
 }} else if (style.isCanonicalAU$()) {
 g2D.drawArc$D$D$D$D$D$D((dest.x + orig.x) / 2.0, dest.y - scaleFactor * this._RNA.BASE_RADIUS / 2.0, (distance), (distance * coef), 0, 180);
 } else if (style.isWobbleUG$()) {
-var midtop=Clazz.new_($I$(4).c$$D$D,[(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0]);
+var midtop=Clazz.new_([(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0],$I$(4,1).c$$D$D);
 g2D.drawArc$D$D$D$D$D$D(midtop.x, dest.y - scaleFactor * this._RNA.BASE_RADIUS / 2.0, (distance), (distance * coef), 0, 180);
 p$1.drawSymbol$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$D$D$D$D$Z$fr_orsay_lri_varna_models_rna_ModeleBP_Edge.apply(this, [g2D, midtop.x, midtop.y, 1.0, 0.0, radiusCircle, false, $I$(19).WC]);
 } else {
-var midtop=Clazz.new_($I$(4).c$$D$D,[(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0]);
+var midtop=Clazz.new_([(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0],$I$(4,1).c$$D$D);
 g2D.drawArc$D$D$D$D$D$D(midtop.x, dest.y - scaleFactor * this._RNA.BASE_RADIUS / 2.0, (distance), (distance * coef), 0, 180);
 p$1.drawSymbol$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$D$D$D$D$Z$fr_orsay_lri_varna_models_rna_ModeleBP_Edge.apply(this, [g2D, midtop.x, midtop.y, 1.0, 0.0, radiusCircle, style.isCIS$(), style.getEdgePartner5$()]);
 }} else {
 var p1=style.getEdgePartner5$();
 var p2=style.getEdgePartner3$();
-var midtop=Clazz.new_($I$(4).c$$D$D,[(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0]);
+var midtop=Clazz.new_([(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0],$I$(4,1).c$$D$D);
 g2D.drawArc$D$D$D$D$D$D(midtop.x, dest.y - scaleFactor * this._RNA.BASE_RADIUS / 2.0, (distance), (distance * coef), 0, 180);
 if (p1 === p2 ) {
 p$1.drawSymbol$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$D$D$D$D$Z$fr_orsay_lri_varna_models_rna_ModeleBP_Edge.apply(this, [g2D, midtop.x, midtop.y, 1.0, 0.0, radiusCircle, false, style.getEdgePartner5$()]);
@@ -379,8 +338,8 @@ case $I$(21).LW_ALT:
 {
 var radiusCircle=((65.0 - this._RNA.BASE_RADIUS) / 5.0) * scaleFactor;
 var distFromBaseCenter=C$.DISTANCE_FACT * scaleFactor;
-orig=Clazz.new_($I$(4).c$$D$D,[orig.x, orig.y - (distFromBaseCenter + newRadius)]);
-dest=Clazz.new_($I$(4).c$$D$D,[dest.x, dest.y - (distFromBaseCenter + newRadius)]);
+orig=Clazz.new_([orig.x, orig.y - (distFromBaseCenter + newRadius)],$I$(4,1).c$$D$D);
+dest=Clazz.new_([dest.x, dest.y - (distFromBaseCenter + newRadius)],$I$(4,1).c$$D$D);
 if (style.isCanonical$()) {
 if (style.isCanonicalGC$()) {
 if ((orig.x != dest.x ) || (orig.y != dest.y ) ) {
@@ -391,7 +350,7 @@ g2D.drawArc$D$D$D$D$D$D((dest.x + orig.x) / 2.0, dest.y - scaleFactor * this._RN
 }} else {
 var p1=style.getEdgePartner5$();
 var p2=style.getEdgePartner3$();
-var midtop=Clazz.new_($I$(4).c$$D$D,[(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0]);
+var midtop=Clazz.new_([(dest.x + orig.x) / 2.0, dest.y - distance * coef / 2.0 - scaleFactor * this._RNA.BASE_RADIUS / 2.0],$I$(4,1).c$$D$D);
 g2D.drawArc$D$D$D$D$D$D(midtop.x, dest.y - scaleFactor * this._RNA.BASE_RADIUS / 2.0, (distance), (distance * coef), 0, 180);
 p$1.drawSymbol$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$D$D$D$D$Z$fr_orsay_lri_varna_models_rna_ModeleBP_Edge.apply(this, [g2D, orig.x, orig.y - radiusCircle * 0.95, 1.0, 0.0, radiusCircle, style.isCIS$(), p1]);
 p$1.drawSymbol$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$D$D$D$D$Z$fr_orsay_lri_varna_models_rna_ModeleBP_Edge.apply(this, [g2D, dest.x, dest.y - radiusCircle * 0.95, -1.0, 0.0, radiusCircle, style.isCIS$(), p2]);
@@ -410,8 +369,8 @@ dx /= dist;
 dy /= dist;
 var nx=-dy;
 var ny=dx;
-orig=Clazz.new_($I$(4).c$$D$D,[orig.x + newRadius * dx, orig.y + newRadius * dy]);
-dest=Clazz.new_($I$(4).c$$D$D,[dest.x - newRadius * dx, dest.y - newRadius * dy]);
+orig=Clazz.new_($I$(4,1).c$$D$D,[orig.x + newRadius * dx, orig.y + newRadius * dy]);
+dest=Clazz.new_($I$(4,1).c$$D$D,[dest.x - newRadius * dx, dest.y - newRadius * dy]);
 switch (this._conf._mainBPStyle) {
 case $I$(21).LW:
 {
@@ -455,8 +414,8 @@ case $I$(21).LW_ALT:
 {
 var radiusCircle=((65.0 - this._RNA.BASE_RADIUS) / 5.0) * scaleFactor;
 var distFromBaseCenter=C$.DISTANCE_FACT * scaleFactor;
-var norig=Clazz.new_($I$(4).c$$D$D,[orig.x + (distFromBaseCenter + 0.5 * newRadius) * dx, orig.y + (distFromBaseCenter + 0.5 * newRadius) * dy]);
-var ndest=Clazz.new_($I$(4).c$$D$D,[dest.x - (distFromBaseCenter + 0.5 * newRadius) * dx, dest.y - (distFromBaseCenter + 0.5 * newRadius) * dy]);
+var norig=Clazz.new_([orig.x + (distFromBaseCenter + 0.5 * newRadius) * dx, orig.y + (distFromBaseCenter + 0.5 * newRadius) * dy],$I$(4,1).c$$D$D);
+var ndest=Clazz.new_([dest.x - (distFromBaseCenter + 0.5 * newRadius) * dx, dest.y - (distFromBaseCenter + 0.5 * newRadius) * dy],$I$(4,1).c$$D$D);
 if (style.isCanonical$()) {
 if (style.isCanonicalGC$()) {
 if ((norig.x != ndest.x ) || (norig.y != ndest.y ) ) {
@@ -514,30 +473,31 @@ var val=this._blink.getVal$();
 var nr=Math.max(0, Math.min((((r1 * val + r2 * (1.0 - val)))|0), 255));
 var ng=Math.max(0, Math.min((((g1 * val + g2 * (1.0 - val)))|0), 255));
 var nb=Math.max(0, Math.min((((b1 * val + b2 * (1.0 - val)))|0), 255));
-return Clazz.new_($I$(18).c$$I$I$I,[nr, ng, nb]);
+return Clazz.new_($I$(18,1).c$$I$I$I,[nr, ng, nb]);
 }, p$1);
 
 Clazz.newMeth(C$, 'highlightFilter$I$java_awt_Color$java_awt_Color$java_awt_Color$Z', function (index, initialColor, c1, c2, localView) {
 if (this._selectedBases.contains$fr_orsay_lri_varna_models_rna_ModeleBase(this._RNA.getBaseAt$I(index)) && localView ) {
 return p$1.getHighlightedVersion$java_awt_Color$java_awt_Color.apply(this, [c1, c2]);
-} else return initialColor;
-}, p$1);
+} else {
+return initialColor;
+}}, p$1);
 
 Clazz.newMeth(C$, 'computeExcentricUnitVector$I$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA', function (i, points, centers) {
 var dist=points[i].distance$java_awt_geom_Point2D(centers[i]);
-var byCenter=Clazz.new_($I$(4).c$$D$D,[(points[i].x - centers[i].x) / dist, (points[i].y - centers[i].y) / dist]);
+var byCenter=Clazz.new_([(points[i].x - centers[i].x) / dist, (points[i].y - centers[i].y) / dist],$I$(4,1).c$$D$D);
 if ((i > 0) && (i < points.length - 1) ) {
 var p0=points[i - 1];
 var p1=points[i];
 var p2=points[i + 1];
 var dist1=p2.distance$java_awt_geom_Point2D(p1);
-var v1=Clazz.new_($I$(4).c$$D$D,[(p2.x - p1.x) / dist1, (p2.y - p1.y) / dist1]);
-var vn1=Clazz.new_($I$(4).c$$D$D,[v1.y, -v1.x]);
+var v1=Clazz.new_([(p2.x - p1.x) / dist1, (p2.y - p1.y) / dist1],$I$(4,1).c$$D$D);
+var vn1=Clazz.new_($I$(4,1).c$$D$D,[v1.y, -v1.x]);
 var dist2=p1.distance$java_awt_geom_Point2D(p0);
-var v2=Clazz.new_($I$(4).c$$D$D,[(p1.x - p0.x) / dist2, (p1.y - p0.y) / dist2]);
-var vn2=Clazz.new_($I$(4).c$$D$D,[v2.y, -v2.x]);
-var vn=Clazz.new_($I$(4).c$$D$D,[(vn1.x + vn2.x) / 2.0, (vn1.y + vn2.y) / 2.0]);
-var D=vn.distance$java_awt_geom_Point2D(Clazz.new_($I$(4).c$$D$D,[0.0, 0.0]));
+var v2=Clazz.new_([(p1.x - p0.x) / dist2, (p1.y - p0.y) / dist2],$I$(4,1).c$$D$D);
+var vn2=Clazz.new_($I$(4,1).c$$D$D,[v2.y, -v2.x]);
+var vn=Clazz.new_([(vn1.x + vn2.x) / 2.0, (vn1.y + vn2.y) / 2.0],$I$(4,1).c$$D$D);
+var D=vn.distance$java_awt_geom_Point2D(Clazz.new_($I$(4,1).c$$D$D,[0.0, 0.0]));
 vn.x /= D;
 vn.y /= D;
 if (byCenter.x * vn.x + byCenter.y * vn.y < 0 ) {
@@ -548,7 +508,7 @@ vn.y=-vn.y;
 var a=(i == 0) ? 0 : points.length - 1;
 var b=(i == 0) ? 1 : points.length - 2;
 var D=points[a].distance$java_awt_geom_Point2D(points[b]);
-return Clazz.new_($I$(4).c$$D$D,[(points[a].x - points[b].x) / D, (points[a].y - points[b].y) / D]);
+return Clazz.new_([(points[a].x - points[b].x) / D, (points[a].y - points[b].y) / D],$I$(4,1).c$$D$D);
 } else {
 return byCenter;
 }}, 1);
@@ -610,24 +570,24 @@ g2D.setStrokeThickness$D($I$(1).CHEM_PROB_ARROW_THICKNESS * scaleFactor * cpa.ge
 g2D.setPlainStroke$();
 var v=cpa.getDirVector$();
 var vn=cpa.getNormalVector$();
-var base=Clazz.new_($I$(4).c$$D$D,[(anchor.x + this._RNA.CHEM_PROB_DIST * scaleFactor * v.x ), (anchor.y + this._RNA.CHEM_PROB_DIST * scaleFactor * v.y )]);
-var edge=Clazz.new_($I$(4).c$$D$D,[(base.x + this._RNA.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * scaleFactor * v.x ), (base.y + this._RNA.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * scaleFactor * v.y )]);
+var base=Clazz.new_([(anchor.x + this._RNA.CHEM_PROB_DIST * scaleFactor * v.x ), (anchor.y + this._RNA.CHEM_PROB_DIST * scaleFactor * v.y )],$I$(4,1).c$$D$D);
+var edge=Clazz.new_([(base.x + this._RNA.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * scaleFactor * v.x ), (base.y + this._RNA.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * scaleFactor * v.y )],$I$(4,1).c$$D$D);
 switch (cpa.getType$()) {
 case $I$(22).ARROW:
 {
-var arrowTip1=Clazz.new_($I$(4).c$$D$D,[(base.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_ARROW_WIDTH * vn.x + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.x) ), (base.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_ARROW_WIDTH * vn.y + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.y) )]);
-var arrowTip2=Clazz.new_($I$(4).c$$D$D,[(base.x + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_ARROW_WIDTH * vn.x + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.x) ), (base.y + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_ARROW_WIDTH * vn.y + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.y) )]);
+var arrowTip1=Clazz.new_([(base.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_ARROW_WIDTH * vn.x + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.x) ), (base.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_ARROW_WIDTH * vn.y + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.y) )],$I$(4,1).c$$D$D);
+var arrowTip2=Clazz.new_([(base.x + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_ARROW_WIDTH * vn.x + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.x) ), (base.y + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_ARROW_WIDTH * vn.y + this._RNA.CHEM_PROB_ARROW_HEIGHT * v.y) )],$I$(4,1).c$$D$D);
 g2D.drawLine$D$D$D$D(base.x, base.y, edge.x, edge.y);
 g2D.drawLine$D$D$D$D(base.x, base.y, arrowTip1.x, arrowTip1.y);
 g2D.drawLine$D$D$D$D(base.x, base.y, arrowTip2.x, arrowTip2.y);
 }break;
 case $I$(22).PIN:
 {
-var side1=Clazz.new_($I$(4).c$$D$D,[(edge.x - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.x) ), (edge.y - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.y) )]);
-var side2=Clazz.new_($I$(4).c$$D$D,[(edge.x - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.x) ), (edge.y - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.y) )]);
-var side3=Clazz.new_($I$(4).c$$D$D,[(edge.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.y) )]);
-var side4=Clazz.new_($I$(4).c$$D$D,[(edge.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.y) )]);
-var p2=Clazz.new_($I$(20));
+var side1=Clazz.new_([(edge.x - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.x) ), (edge.y - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.y) )],$I$(4,1).c$$D$D);
+var side2=Clazz.new_([(edge.x - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.x) ), (edge.y - cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.y) )],$I$(4,1).c$$D$D);
+var side3=Clazz.new_([(edge.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * v.y) )],$I$(4,1).c$$D$D);
+var side4=Clazz.new_([(edge.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_PIN_SEMIDIAG * vn.y) )],$I$(4,1).c$$D$D);
+var p2=Clazz.new_($I$(20,1));
 p2.moveTo$F$F(side1.x, side1.y);
 p2.lineTo$F$F(side2.x, side2.y);
 p2.lineTo$F$F(side3.x, side3.y);
@@ -638,9 +598,9 @@ g2D.drawLine$D$D$D$D(base.x, base.y, edge.x, edge.y);
 }break;
 case $I$(22).TRIANGLE:
 {
-var arrowTip1=Clazz.new_($I$(4).c$$D$D,[(edge.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.y) )]);
-var arrowTip2=Clazz.new_($I$(4).c$$D$D,[(edge.x + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.y) )]);
-var p2=Clazz.new_($I$(20));
+var arrowTip1=Clazz.new_([(edge.x + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.y) )],$I$(4,1).c$$D$D);
+var arrowTip2=Clazz.new_([(edge.x + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.x) ), (edge.y + cpa.getIntensity$() * scaleFactor * (-this._RNA.CHEM_PROB_TRIANGLE_WIDTH * vn.y) )],$I$(4,1).c$$D$D);
+var p2=Clazz.new_($I$(20,1));
 p2.moveTo$F$F(base.x, base.y);
 p2.lineTo$F$F(arrowTip1.x, arrowTip1.y);
 p2.lineTo$F$F(arrowTip2.x, arrowTip2.y);
@@ -650,8 +610,8 @@ g2D.fill$java_awt_geom_GeneralPath(p2);
 case $I$(22).DOT:
 {
 var radius=new Double(scaleFactor * this._RNA.CHEM_PROB_DOT_RADIUS * cpa.getIntensity$() );
-var center=Clazz.new_($I$(4).c$$D$D,[(base.x + (radius).doubleValue$() * v.x), (base.y + (radius).doubleValue$() * v.y)]);
-g2D.fillCircle$D$D$D((center.x - (radius).doubleValue$()), (center.y - (radius).doubleValue$()), (2 * (radius).doubleValue$()));
+var center=Clazz.new_([(base.x + (radius).valueOf() * v.x), (base.y + (radius).valueOf() * v.y)],$I$(4,1).c$$D$D);
+g2D.fillCircle$D$D$D((center.x - (radius).valueOf()), (center.y - (radius).valueOf()), (2 * (radius).valueOf()));
 }break;
 }
 });
@@ -663,7 +623,7 @@ radius += this._conf._distNumbers;
 }var center=mb.getCenter$();
 var p=mb.getCoords$();
 var realDistance=this._RNA.BASE_RADIUS * radius + heightEstimate;
-return Clazz.new_($I$(4).c$$D$D,[center.getX$() + (p.getX$() - center.getX$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center)), center.getY$() + (p.getY$() - center.getY$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center))]);
+return Clazz.new_([center.getX$() + (p.getX$() - center.getX$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center)), center.getY$() + (p.getY$() - center.getY$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center))],$I$(4,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'renderAnnotations$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$D$D$D$D', function (g2D, offX, offY, rnaBBoxX, rnaBBoxY, scaleFactor) {
@@ -713,7 +673,7 @@ var a=this._RNA.getBaseAt$I(i - 1).getElementStructure$();
 var b=this._RNA.getBaseAt$I(i).getElementStructure$();
 var consecutivePair=(a == i) && (b == i - 1) ;
 if ((dist > 0 )) {
-var vbp=Clazz.new_($I$(4));
+var vbp=Clazz.new_($I$(4,1));
 vbp.x=(p2.x - p1.x) / dist;
 vbp.y=(p2.y - p1.y) / dist;
 var bt=bck.getTypeBefore$I(i);
@@ -729,11 +689,11 @@ if (i + 1 < newCoords.length) {
 dir=(this._RNA.testDirectionality$I$I$I(i - 1, i, i + 1) ? -1 : 1);
 } else if (i - 2 >= 0) {
 dir=(this._RNA.testDirectionality$I$I$I(i - 2, i - 1, i) ? -1 : 1);
-}var vn=Clazz.new_($I$(4).c$$D$D,[dir * vbp.y, -dir * vbp.x]);
-var centerSeg=Clazz.new_($I$(4).c$$D$D,[(p1.x + p2.x) / 2.0, (p1.y + p2.y) / 2.0]);
+}var vn=Clazz.new_($I$(4,1).c$$D$D,[dir * vbp.y, -dir * vbp.x]);
+var centerSeg=Clazz.new_([(p1.x + p2.x) / 2.0, (p1.y + p2.y) / 2.0],$I$(4,1).c$$D$D);
 var distp1CenterSeq=p1.distance$java_awt_geom_Point2D(centerSeg);
 var centerDist=Math.sqrt((40.0 * _scaleFactor * 40.0 * _scaleFactor ) - distp1CenterSeq * distp1CenterSeq);
-var centerLoop=Clazz.new_($I$(4).c$$D$D,[centerSeg.x + centerDist * vn.x, centerSeg.y + centerDist * vn.y]);
+var centerLoop=Clazz.new_($I$(4,1).c$$D$D,[centerSeg.x + centerDist * vn.x, centerSeg.y + centerDist * vn.y]);
 var radius=centerLoop.distance$java_awt_geom_Point2D(p1);
 var a1=360.0 * (Math.atan2(-(p1.y - centerLoop.y), (p1.x - centerLoop.x))) / (6.283185307179586);
 var a2=360.0 * (Math.atan2(-(p2.y - centerLoop.y), (p2.x - centerLoop.x))) / (6.283185307179586);
@@ -747,7 +707,7 @@ g2D.drawLine$D$D$D$D((newCoords[i - 1].x + newRadius * vbp.x), (newCoords[i - 1]
 }});
 
 Clazz.newMeth(C$, 'logicToPanel$java_awt_geom_Point2D_Double', function (logicPoint) {
-return Clazz.new_($I$(4).c$$D$D,[this._offX + (p$1.getScaleFactor.apply(this, []) * (logicPoint.x - this._offsetRNA.x)), this._offY + (p$1.getScaleFactor.apply(this, []) * (logicPoint.y - this._offsetRNA.y))]);
+return Clazz.new_([this._offX + (p$1.getScaleFactor.apply(this, []) * (logicPoint.x - this._offsetRNA.x)), this._offY + (p$1.getScaleFactor.apply(this, []) * (logicPoint.y - this._offsetRNA.y))],$I$(4,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'renderRNA$fr_orsay_lri_varna_models_export_VueVARNAGraphics$java_awt_geom_Rectangle2D_Double', function (g2D, bbox) {
@@ -766,13 +726,14 @@ rnabbox.height += p$1.getColorMapHeight.apply(this, []);
 rnabbox.width += newFontSize;
 scaleFactor=Math.min(bbox.width / rnabbox.width, bbox.height / rnabbox.height);
 if (localView) {
-if (this._conf._autoFit) p$1.setScaleFactor$D.apply(this, [scaleFactor]);
-scaleFactor=p$1.getScaleFactor.apply(this, []);
+if (this._conf._autoFit) {
+p$1.setScaleFactor$D.apply(this, [scaleFactor]);
+}scaleFactor=p$1.getScaleFactor.apply(this, []);
 }return scaleFactor;
 }, p$1);
 
 Clazz.newMeth(C$, 'renderRNA$fr_orsay_lri_varna_models_export_VueVARNAGraphics$java_awt_geom_Rectangle2D_Double$Z$Z', function (g2D, bbox, localView, autoCenter) {
-var rnaMultiBox=Clazz.new_($I$(25).c$$D$D$D$D,[0, 0, 1, 1]);
+var rnaMultiBox=Clazz.new_($I$(25,1).c$$D$D$D$D,[0, 0, 1, 1]);
 var scaleFactor=p$1.computeScaleFactor$java_awt_geom_Rectangle2D_Double$Z$Z.apply(this, [bbox, localView, autoCenter]);
 var newFontSize=Math.max(1, (((1.7 * this._RNA.BASE_RADIUS) * scaleFactor)|0));
 var newRadius=Math.max(1.0, (scaleFactor * this._RNA.BASE_RADIUS));
@@ -782,15 +743,15 @@ var offX=bbox.x;
 var offY=bbox.y;
 var rnabbox=this.getExtendedRNABBox$();
 if (this._RNA.getSize$() != 0) {
-var offsetRNA=Clazz.new_($I$(4).c$$D$D,[rnabbox.x, rnabbox.y]);
+var offsetRNA=Clazz.new_($I$(4,1).c$$D$D,[rnabbox.x, rnabbox.y]);
 if (autoCenter) {
 offX=(bbox.x + (bbox.width - Math.round(rnabbox.width * scaleFactor)) / 2.0);
 offY=(bbox.y + (bbox.height - Math.round(rnabbox.height * scaleFactor)) / 2.0);
 if (localView) {
 this._offX=offX;
 this._offY=offY;
-this._offsetPanel=Clazz.new_($I$(4).c$$D$D,[this._offX, this._offY]);
-this._offsetRNA=Clazz.new_($I$(4).c$$D$D,[rnabbox.x, rnabbox.y]);
+this._offsetPanel=Clazz.new_($I$(4,1).c$$D$D,[this._offX, this._offY]);
+this._offsetRNA=Clazz.new_($I$(4,1).c$$D$D,[rnabbox.x, rnabbox.y]);
 }}if (localView) {
 offX=this._offX;
 offY=this._offY;
@@ -799,7 +760,7 @@ offsetRNA=this._offsetRNA;
 var newCenters=Clazz.array($I$(4), [this._RNA.get_listeBases$().size$()]);
 for (var i=0; i < this._RNA.get_listeBases$().size$(); i++) {
 var mb=this._RNA.getBaseAt$I(i);
-newCoords[i]=Clazz.new_($I$(4).c$$D$D,[offX + (scaleFactor * (mb.getCoords$().x - offsetRNA.x)), offY + (scaleFactor * (mb.getCoords$().y - offsetRNA.y))]);
+newCoords[i]=Clazz.new_([offX + (scaleFactor * (mb.getCoords$().x - offsetRNA.x)), offY + (scaleFactor * (mb.getCoords$().y - offsetRNA.y))],$I$(4,1).c$$D$D);
 var centerBck=this._RNA.getCenter$I(i);
 if (this._RNA.get_drawMode$() == 3 || this._RNA.get_drawMode$() == 2 ) {
 if ((mb.getElementStructure$() != -1) && i < this._RNA.get_listeBases$().size$() - 1  && i > 1 ) {
@@ -814,7 +775,7 @@ var c1=b1.getCenter$();
 var c2=b2.getCenter$();
 centerBck.x=mb.getCoords$().x + (c1.x - a1.x) / c1.distance$java_awt_geom_Point2D(a1) + (c2.x - a2.x) / c2.distance$java_awt_geom_Point2D(a2);
 centerBck.y=mb.getCoords$().y + (c1.y - a1.y) / c1.distance$java_awt_geom_Point2D(a1) + (c2.y - a2.y) / c2.distance$java_awt_geom_Point2D(a2);
-}}}newCenters[i]=Clazz.new_($I$(4).c$$D$D,[offX + (scaleFactor * (centerBck.x - offsetRNA.x)), offY + (scaleFactor * (centerBck.y - offsetRNA.y))]);
+}}}newCenters[i]=Clazz.new_([offX + (scaleFactor * (centerBck.x - offsetRNA.x)), offY + (scaleFactor * (centerBck.y - offsetRNA.y))],$I$(4,1).c$$D$D);
 }
 if (localView) {
 this._realCoords=newCoords;
@@ -863,7 +824,7 @@ p$1.drawBasePair$fr_orsay_lri_varna_models_export_VueVARNAGraphics$java_awt_geom
 for (var i=0; i < Math.min(this._RNA.get_listeBases$().size$(), newCoords.length); i++) {
 p$1.drawBase$fr_orsay_lri_varna_models_export_VueVARNAGraphics$I$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$D$D$Z.apply(this, [g2D, i, newCoords, newCenters, newRadius, scaleFactor, localView]);
 }
-rnaMultiBox=Clazz.new_($I$(25).c$$D$D$D$D,[offX, offY, (scaleFactor * rnabbox.width) - 1, (scaleFactor * rnabbox.height) - 1]);
+rnaMultiBox=Clazz.new_([offX, offY, (scaleFactor * rnabbox.width) - 1, (scaleFactor * rnabbox.height) - 1],$I$(25,1).c$$D$D$D$D);
 if (localView) {
 if (this._debug || this._drawBBox ) {
 g2D.setColor$java_awt_Color($I$(18).RED);
@@ -877,9 +838,9 @@ g2D.setSelectionStroke$();
 g2D.drawRect$D$D$D$D(0, 0, this.getWidth$() - 1, this.getHeight$() - p$1.getTitleHeight.apply(this, []) - 1 );
 }}p$1.renderAnnotations$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$D$D$D$D.apply(this, [g2D, offX, offY, offsetRNA.x, offsetRNA.y, scaleFactor]);
 if (this._RNA._debugShape != null ) {
-var c=Clazz.new_($I$(18).c$$I$I$I$I,[255, 0, 0, 50]);
+var c=Clazz.new_($I$(18,1).c$$I$I$I$I,[255, 0, 0, 50]);
 g2D.setColor$java_awt_Color(c);
-var at=Clazz.new_($I$(26));
+var at=Clazz.new_($I$(26,1));
 at.translate$D$D(offX - scaleFactor * rnabbox.x, offY - scaleFactor * rnabbox.y);
 at.scale$D$D(scaleFactor, scaleFactor);
 var s=at.createTransformedShape$java_awt_Shape(this._RNA._debugShape);
@@ -888,16 +849,16 @@ g2D.fill$java_awt_geom_GeneralPath(s);
 }}} else {
 g2D.setColor$java_awt_Color($I$(2).DEFAULT_MESSAGE_COLOR);
 g2D.setFont$java_awt_Font($I$(2).DEFAULT_MESSAGE_FONT);
-rnaMultiBox=Clazz.new_($I$(25).c$$D$D$D$D,[0, 0, 10, 10]);
+rnaMultiBox=Clazz.new_($I$(25,1).c$$D$D$D$D,[0, 0, 10, 10]);
 g2D.drawStringCentered$S$D$D("No RNA here", bbox.getCenterX$(), bbox.getCenterY$());
 }return rnaMultiBox;
 });
 
 Clazz.newMeth(C$, 'centerViewOn$D$D', function (x, y) {
 var r=this._RNA.getBBox$();
-this._target=Clazz.new_($I$(4).c$$D$D,[x, y]);
+this._target=Clazz.new_($I$(4,1).c$$D$D,[x, y]);
 var q=this.logicToPanel$java_awt_geom_Point2D_Double(this._target);
-var p=Clazz.new_($I$(11).c$$I$I,[((-q.x)|0), ((-q.y)|0)]);
+var p=Clazz.new_([((-q.x)|0), ((-q.y)|0)],$I$(11,1).c$$I$I);
 this.setTranslation$java_awt_Point(p);
 this.repaint$();
 });
@@ -953,8 +914,9 @@ this._conf._drawColorMap=draw;
 
 Clazz.newMeth(C$, 'getColorMapHeight', function () {
 var result=$I$(2).DEFAULT_COLOR_MAP_FONT_SIZE + this._conf._colorMapHeight;
-if (!this._conf._colorMapCaption.equals$O("")) result += $I$(2).DEFAULT_COLOR_MAP_FONT_SIZE;
-return result;
+if (!this._conf._colorMapCaption.equals$O("")) {
+result += $I$(2).DEFAULT_COLOR_MAP_FONT_SIZE;
+}return result;
 }, p$1);
 
 Clazz.newMeth(C$, 'drawColorMap$fr_orsay_lri_varna_models_export_VueVARNAGraphics$D$java_awt_geom_Rectangle2D_Double', function (g2D, scaleFactor, rnabbox) {
@@ -987,15 +949,16 @@ nf.setMaximumFractionDigits$I(2);
 nf.setMinimumFractionDigits$I(0);
 g2D.drawStringCentered$S$D$D(nf.format$D(this._conf._cm.getMinValue$()), xBase, yBase + scaleFactor * (this._conf._colorMapHeight + ($I$(2).DEFAULT_COLOR_MAP_FONT_SIZE / 1.7)));
 g2D.drawStringCentered$S$D$D(nf.format$D(this._conf._cm.getMaxValue$()), xBase + $I$(2).DEFAULT_COLOR_MAP_STRIPE_WIDTH + scaleFactor * this._conf._colorMapWidth , yBase + scaleFactor * (this._conf._colorMapHeight + ($I$(2).DEFAULT_COLOR_MAP_FONT_SIZE / 1.7)));
-if (!this._conf._colorMapCaption.equals$O("")) g2D.drawStringCentered$S$D$D("" + this._conf._colorMapCaption, xBase + scaleFactor * this._conf._colorMapWidth / 2.0, yBase + scaleFactor * ($I$(2).DEFAULT_COLOR_MAP_FONT_SIZE / 1.7 + this._conf._colorMapHeight));
-}, p$1);
+if (!this._conf._colorMapCaption.equals$O("")) {
+g2D.drawStringCentered$S$D$D("" + this._conf._colorMapCaption, xBase + scaleFactor * this._conf._colorMapWidth / 2.0, yBase + scaleFactor * ($I$(2).DEFAULT_COLOR_MAP_FONT_SIZE / 1.7 + this._conf._colorMapHeight));
+}}, p$1);
 
 Clazz.newMeth(C$, 'panelToLogicPoint$java_awt_geom_Point2D_Double', function (p) {
-return Clazz.new_($I$(4).c$$D$D,[((p.x - this.getOffsetPanel$().x) / p$1.getScaleFactor.apply(this, [])) + p$1.getRNAOffset.apply(this, []).x, ((p.y - this.getOffsetPanel$().y) / p$1.getScaleFactor.apply(this, [])) + p$1.getRNAOffset.apply(this, []).y]);
+return Clazz.new_([((p.x - this.getOffsetPanel$().x) / p$1.getScaleFactor.apply(this, [])) + p$1.getRNAOffset.apply(this, []).x, ((p.y - this.getOffsetPanel$().y) / p$1.getScaleFactor.apply(this, [])) + p$1.getRNAOffset.apply(this, []).y],$I$(4,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'transformCoord$java_awt_geom_Point2D_Double$D$D$D$D$D', function (coordDebut, offX, offY, rnaBBoxX, rnaBBoxY, scaleFactor) {
-return Clazz.new_($I$(4).c$$D$D,[offX + (scaleFactor * (coordDebut.x - rnaBBoxX)), offY + (scaleFactor * (coordDebut.y - rnaBBoxY))]);
+return Clazz.new_([offX + (scaleFactor * (coordDebut.x - rnaBBoxX)), offY + (scaleFactor * (coordDebut.y - rnaBBoxY))],$I$(4,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'eraseSequence$', function () {
@@ -1004,7 +967,7 @@ this._RNA.eraseSequence$();
 
 Clazz.newMeth(C$, 'transformCoord$java_awt_geom_Point2D_Double', function (coordDebut) {
 var rnabbox=this.getExtendedRNABBox$();
-return Clazz.new_($I$(4).c$$D$D,[this._offX + (p$1.getScaleFactor.apply(this, []) * (coordDebut.x - rnabbox.x)), this._offY + (p$1.getScaleFactor.apply(this, []) * (coordDebut.y - rnabbox.y))]);
+return Clazz.new_([this._offX + (p$1.getScaleFactor.apply(this, []) * (coordDebut.x - rnabbox.x)), this._offY + (p$1.getScaleFactor.apply(this, []) * (coordDebut.y - rnabbox.y))],$I$(4,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
@@ -1015,18 +978,15 @@ Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics$Z', function (g, transparent
 if (this._premierAffichage) {
 this._translation.x=0;
 this._translation.y=((-p$1.getTitleHeight.apply(this, []) / 2.0)|0);
-this._popup.buildPopupMenu$();
-this.add$java_awt_Component(this._popup);
 this._premierAffichage=false;
 }var g2=g;
 var dflt=g2.getStroke$();
-var g2D=Clazz.new_($I$(28).c$$java_awt_Graphics2D,[g2]);
+var g2D=Clazz.new_($I$(28,1).c$$java_awt_Graphics2D,[g2]);
 g2.setRenderingHint$java_awt_RenderingHints_Key$O($I$(29).KEY_ANTIALIASING, $I$(29).VALUE_ANTIALIAS_ON);
-this.removeAll$();
 C$.superclazz.prototype.paintComponent$java_awt_Graphics.apply(this, [g2]);
 this.renderComponent$fr_orsay_lri_varna_models_export_VueVARNAGraphics$Z$D(g2D, transparentBackground, p$1.getScaleFactor.apply(this, []));
 if (this.isFocusOwner$()) {
-g2.setStroke$java_awt_Stroke(Clazz.new_($I$(30).c$$F,[1.5]));
+g2.setStroke$java_awt_Stroke(Clazz.new_($I$(30,1).c$$F,[1.5]));
 g2.setColor$java_awt_Color($I$(18).decode$S("#C0C0C0"));
 g2.drawRect$I$I$I$I(0, 0, this.getWidth$() - 1, this.getHeight$() - 1);
 }g2.setStroke$java_awt_Stroke(dflt);
@@ -1034,15 +994,16 @@ g2.drawRect$I$I$I$I(0, 0, this.getWidth$() - 1, this.getHeight$() - 1);
 
 Clazz.newMeth(C$, 'renderComponent$fr_orsay_lri_varna_models_export_VueVARNAGraphics$Z$D', function (g2D, transparentBackground, scaleFactor) {
 p$1.updateTitleHeight.apply(this, []);
-if (this._debug || this._drawBorder ) {
+if (true || !transparentBackground ) {
+g2D.setColor$java_awt_Color(this._conf._backgroundColor);
+g2D.fillRect$D$D$D$D(0, 0, this.getWidth$(), this.getHeight$());
+} else {
+g2D.setColor$java_awt_Color(Clazz.new_($I$(18,1).c$$I$I$I$I,[0, 0, 0, 120]));
+}if (this._debug || this._drawBorder ) {
 g2D.setColor$java_awt_Color($I$(18).BLACK);
 g2D.setPlainStroke$();
 g2D.drawRect$D$D$D$D(this.getLeftOffset$(), this.getTopOffset$(), this.getInnerWidth$(), this.getInnerHeight$());
-}if (!transparentBackground) {
-C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [this._conf._backgroundColor]);
-} else {
-C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [Clazz.new_($I$(18).c$$I$I$I$I,[0, 0, 0, 120])]);
-}if (this.getMinimumSize$().height <= this.getSize$().height && this.getMinimumSize$().width <= this.getSize$().width ) {
+}if (this.getMinimumSize$().height < this.getSize$().height && this.getMinimumSize$().width < this.getSize$().width ) {
 if (!this.getTitle$().equals$O("")) {
 g2D.setColor$java_awt_Color(this._conf._titleColor);
 g2D.setFont$java_awt_Font(this._conf._titleFont);
@@ -1059,8 +1020,9 @@ g2D.setStrokeThickness$D(3.0 * scaleFactor);
 var linkOrigin=(this._linkOrigin);
 var linkDestination=(this._linkDestination);
 g2D.drawLine$D$D$D$D(linkOrigin.x, linkOrigin.y, linkDestination.x, linkDestination.y);
-for (var i, $i = this.getSelection$().getIndices$().iterator$(); $i.hasNext$()&&((i=($i.next$()).intValue$()),1);) p$1.drawBase$fr_orsay_lri_varna_models_export_VueVARNAGraphics$I$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$D$D$Z.apply(this, [g2D, i, this._realCoords, this._realCenters, scaleFactor * this._RNA.BASE_RADIUS, scaleFactor, true]);
-
+for (var i, $i = this.getSelection$().getIndices$().iterator$(); $i.hasNext$()&&((i=($i.next$()).intValue$()),1);) {
+p$1.drawBase$fr_orsay_lri_varna_models_export_VueVARNAGraphics$I$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$D$D$Z.apply(this, [g2D, i, this._realCoords, this._realCenters, scaleFactor * this._RNA.BASE_RADIUS, scaleFactor, true]);
+}
 }if (this._debug) {
 g2D.setStrokeThickness$D(3.0 * scaleFactor);
 g2D.setColor$java_awt_Color($I$(18).black);
@@ -1086,11 +1048,11 @@ g2D.draw$java_awt_geom_GeneralPath(s);
 });
 
 Clazz.newMeth(C$, 'getClip', function () {
-return Clazz.new_($I$(25).c$$D$D$D$D,[this.getLeftOffset$(), this.getTopOffset$(), this.getInnerWidth$(), this.getInnerHeight$()]);
+return Clazz.new_([this.getLeftOffset$(), this.getTopOffset$(), this.getInnerWidth$(), this.getInnerHeight$()],$I$(25,1).c$$D$D$D$D);
 }, p$1);
 
 Clazz.newMeth(C$, 'getViewClip$', function () {
-return Clazz.new_($I$(25).c$$D$D$D$D,[this.getLeftOffset$(), this.getTopOffset$(), this.getInnerWidth$(), this.getInnerHeight$()]);
+return Clazz.new_([this.getLeftOffset$(), this.getTopOffset$(), this.getInnerWidth$(), this.getInnerHeight$()],$I$(25,1).c$$D$D$D$D);
 });
 
 Clazz.newMeth(C$, 'getBackboneColor$', function () {
@@ -1181,7 +1143,7 @@ Clazz.newMeth(C$, 'drawRNA$java_io_Reader$I', function (r, drawMode) {
 this._RNA.setDrawMode$I(drawMode);
 var rnas=$I$(31).loadSecStr$java_io_Reader(r);
 if (rnas.isEmpty$()) {
-throw Clazz.new_($I$(32).c$$S,["No RNA could be parsed from that source."]);
+throw Clazz.new_($I$(32,1).c$$S,["No RNA could be parsed from that source."]);
 }this._RNA=rnas.iterator$().next$();
 this.drawRNA$();
 });
@@ -1191,7 +1153,7 @@ this.drawRNAInterpolated$S$S$I(seq, str, this._RNA.get_drawMode$());
 });
 
 Clazz.newMeth(C$, 'drawRNAInterpolated$S$S$I', function (seq, str, drawMode) {
-this.drawRNAInterpolated$S$S$I$fr_orsay_lri_varna_models_rna_Mapping(seq, str, drawMode, $I$(33).DefaultOutermostMapping$I$I(this._RNA.get_listeBases$().size$(), str.length$()));
+this.drawRNAInterpolated$S$S$I$fr_orsay_lri_varna_models_rna_Mapping(seq, str, drawMode, $I$(33,"DefaultOutermostMapping$I$I",[this._RNA.get_listeBases$().size$(), str.length$()]));
 });
 
 Clazz.newMeth(C$, 'drawRNAInterpolated$S$S$fr_orsay_lri_varna_models_rna_Mapping', function (seq, str, m) {
@@ -1199,7 +1161,7 @@ this.drawRNAInterpolated$S$S$I$fr_orsay_lri_varna_models_rna_Mapping(seq, str, t
 });
 
 Clazz.newMeth(C$, 'drawRNAInterpolated$S$S$I$fr_orsay_lri_varna_models_rna_Mapping', function (seq, str, drawMode, m) {
-var target=Clazz.new_($I$(1));
+var target=Clazz.new_($I$(1,1));
 try {
 target.setRNA$S$S(seq, str);
 this.drawRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$I$fr_orsay_lri_varna_models_rna_Mapping(target, drawMode, m);
@@ -1221,7 +1183,7 @@ throw e$$;
 });
 
 Clazz.newMeth(C$, 'drawRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA', function (target) {
-this.drawRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$I$fr_orsay_lri_varna_models_rna_Mapping(target, target.get_drawMode$(), $I$(33).DefaultOutermostMapping$I$I(this._RNA.get_listeBases$().size$(), target.getSize$()));
+this.drawRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$I$fr_orsay_lri_varna_models_rna_Mapping(target, target.get_drawMode$(), $I$(33,"DefaultOutermostMapping$I$I",[this._RNA.get_listeBases$().size$(), target.getSize$()]));
 });
 
 Clazz.newMeth(C$, 'drawRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$fr_orsay_lri_varna_models_rna_Mapping', function (target, m) {
@@ -1257,11 +1219,12 @@ this.setConfig$fr_orsay_lri_varna_models_VARNAConfig(cfg);
 Clazz.newMeth(C$, 'isInterpolationInProgress$', function () {
 if (this._interpolator == null ) {
 return false;
-} else return this._interpolator.isInterpolationInProgress$();
-});
+} else {
+return this._interpolator.isInterpolationInProgress$();
+}});
 
 Clazz.newMeth(C$, 'showRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA', function (target) {
-this.showRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$fr_orsay_lri_varna_models_rna_Mapping(target, $I$(33).DefaultOutermostMapping$I$I(this._RNA.get_listeBases$().size$(), target.getSize$()));
+this.showRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$fr_orsay_lri_varna_models_rna_Mapping(target, $I$(33,"DefaultOutermostMapping$I$I",[this._RNA.get_listeBases$().size$(), target.getSize$()]));
 });
 
 Clazz.newMeth(C$, 'showRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$fr_orsay_lri_varna_models_rna_Mapping', function (target, m) {
@@ -1296,22 +1259,22 @@ secondSeq=secondSeq.substring$I$I(0, secondStruct.length$());
 }}var RNALength=firstSeq.length$();
 var string_superStruct= String.instantialize("");
 var string_superSeq= String.instantialize("");
-var array_rnaOwn=Clazz.new_($I$(3));
+var array_rnaOwn=Clazz.new_($I$(3,1));
 firstStruct=firstStruct.replace$C$C("-", ".");
 secondStruct=secondStruct.replace$C$C("-", ".");
 for (var i=0; i < RNALength; i++) {
 if (firstStruct.charAt$I(i) == secondStruct.charAt$I(i)) {
 string_superStruct=string_superStruct + firstStruct.charAt$I(i);
-array_rnaOwn.add$TE(new Integer(0));
+array_rnaOwn.add$O(new Integer(0));
 } else if (firstStruct.charAt$I(i) == "(" || secondStruct.charAt$I(i) == "(" ) {
 string_superStruct=string_superStruct + '(';
-array_rnaOwn.add$TE(new Integer((firstStruct.charAt$I(i) == "(") ? 1 : 2));
+array_rnaOwn.add$O(new Integer((firstStruct.charAt$I(i) == "(") ? 1 : 2));
 } else if (firstStruct.charAt$I(i) == ")" || secondStruct.charAt$I(i) == ")" ) {
 string_superStruct=string_superStruct + ')';
-array_rnaOwn.add$TE(new Integer((firstStruct.charAt$I(i) == ")") ? 1 : 2));
+array_rnaOwn.add$O(new Integer((firstStruct.charAt$I(i) == ")") ? 1 : 2));
 } else {
 string_superStruct=string_superStruct + '.';
-array_rnaOwn.add$TE(new Integer(-1));
+array_rnaOwn.add$O(new Integer(-1));
 }}
 for (var i=0; i < RNALength; i++) {
 string_superSeq=string_superSeq + firstSeq.charAt$I(i) + secondSeq.charAt$I(i) ;
@@ -1448,7 +1411,7 @@ return this._conf._zoom;
 });
 
 Clazz.newMeth(C$, 'setZoom$O', function (_zoom) {
-var d=(Float.valueOf$S(_zoom.toString())).floatValue$();
+var d=(Float.valueOf$S(_zoom.toString())).valueOf();
 if (this._conf._zoom != d ) {
 this._conf._zoom=d;
 this.fireZoomLevelChanged$D(d);
@@ -1478,19 +1441,20 @@ this.errorDialog$Exception$java_awt_Component(error, this);
 
 Clazz.newMeth(C$, 'errorDialog$Exception$java_awt_Component', function (error, c) {
 if (this.isErrorsOn$()) {
-$I$(34).showMessageDialog$java_awt_Component$O$S$I(c, error.getMessage$(), "VARNA Error", 0);
+$I$(34,"showMessageDialog$java_awt_Component$O$S$I",[c, error.getMessage$(), "VARNA Error", 0]);
 }});
 
 Clazz.newMeth(C$, 'errorDialogStatic$Exception$java_awt_Component', function (error, c) {
 if (c != null ) {
-$I$(34).showMessageDialog$java_awt_Component$O$S$I(c, error.getMessage$(), "VARNA Critical Error", 0);
+$I$(34,"showMessageDialog$java_awt_Component$O$S$I",[c, error.getMessage$(), "VARNA Critical Error", 0]);
 } else {
 System.err.println$S("Error: " + error.getMessage$());
 }}, 1);
 
 Clazz.newMeth(C$, 'emitWarning$S', function (warning) {
-if (this._conf._showWarnings) $I$(34).showMessageDialog$java_awt_Component$O$S$I(this, warning, "VARNA Warning", 2);
-});
+if (this._conf._showWarnings) {
+$I$(34).showMessageDialog$java_awt_Component$O$S$I(this, warning, "VARNA Warning", 2);
+}});
 
 Clazz.newMeth(C$, 'emitWarningStatic$Exception$java_awt_Component', function (e, c) {
 C$.emitWarningStatic$S$java_awt_Component(e.getMessage$(), c);
@@ -1512,8 +1476,8 @@ return this._conf._modifiable;
 });
 
 Clazz.newMeth(C$, 'reset$', function () {
-this.setBorderSize$java_awt_Dimension(Clazz.new_($I$(6).c$$I$I,[0, 0]));
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[0, ((-p$1.getTitleHeight.apply(this, []) / 2.0)|0)]));
+this.setBorderSize$java_awt_Dimension(Clazz.new_($I$(6,1).c$$I$I,[0, 0]));
+this.setTranslation$java_awt_Point(Clazz.new_([0, ((-p$1.getTitleHeight.apply(this, []) / 2.0)|0)],$I$(11,1).c$$I$I));
 this.setZoom$O(new Double(1.0));
 this.setZoomIncrement$D(1.2);
 });
@@ -1529,13 +1493,13 @@ this._conf._specialBasesColor=basesColor;
 Clazz.newMeth(C$, 'checkTranslation$', function () {
 if (this.getZoom$() <= 1 ) {
 if (this.getTranslation$().x < -(((this.getWidth$() - this.getInnerWidth$()) / 2.0)|0)) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[-(((this.getWidth$() - this.getInnerWidth$()) / 2.0)|0), this.getTranslation$().y]));
+this.setTranslation$java_awt_Point(Clazz.new_([-(((this.getWidth$() - this.getInnerWidth$()) / 2.0)|0), this.getTranslation$().y],$I$(11,1).c$$I$I));
 }if (this.getTranslation$().x > (((this.getWidth$() - this.getInnerWidth$()) / 2.0)|0)) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[(((this.getWidth$() - this.getInnerWidth$()) / 2.0)|0), this.getTranslation$().y]));
+this.setTranslation$java_awt_Point(Clazz.new_([(((this.getWidth$() - this.getInnerWidth$()) / 2.0)|0), this.getTranslation$().y],$I$(11,1).c$$I$I));
 }if (this.getTranslation$().y > (((this.getHeight$() - p$1.getTitleHeight.apply(this, []) * 2 - this.getInnerHeight$()) / 2.0)|0)) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[this.getTranslation$().x, (((this.getHeight$() - p$1.getTitleHeight.apply(this, []) * 2 - this.getInnerHeight$()) / 2.0)|0)]));
+this.setTranslation$java_awt_Point(Clazz.new_([this.getTranslation$().x, (((this.getHeight$() - p$1.getTitleHeight.apply(this, []) * 2 - this.getInnerHeight$()) / 2.0)|0)],$I$(11,1).c$$I$I));
 }if (this.getTranslation$().y < -(((this.getHeight$() - this.getInnerHeight$()) / 2.0)|0)) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[this.getTranslation$().x, -(((this.getHeight$() - this.getInnerHeight$()) / 2.0)|0)]));
+this.setTranslation$java_awt_Point(Clazz.new_([this.getTranslation$().x, -(((this.getHeight$() - this.getInnerHeight$()) / 2.0)|0)],$I$(11,1).c$$I$I));
 }} else {
 var r2=this.getZoomedInTranslationBox$();
 var LBoundX=r2.x;
@@ -1543,13 +1507,13 @@ var UBoundX=r2.x + r2.width;
 var LBoundY=r2.y;
 var UBoundY=r2.y + r2.height;
 if (this.getTranslation$().x < LBoundX) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[LBoundX, this.getTranslation$().y]));
+this.setTranslation$java_awt_Point(Clazz.new_([LBoundX, this.getTranslation$().y],$I$(11,1).c$$I$I));
 } else if (this.getTranslation$().x > UBoundX) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[UBoundX, this.getTranslation$().y]));
+this.setTranslation$java_awt_Point(Clazz.new_([UBoundX, this.getTranslation$().y],$I$(11,1).c$$I$I));
 }if (this.getTranslation$().y < LBoundY) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[this.getTranslation$().x, LBoundY]));
+this.setTranslation$java_awt_Point(Clazz.new_([this.getTranslation$().x, LBoundY],$I$(11,1).c$$I$I));
 } else if (this.getTranslation$().y > UBoundY) {
-this.setTranslation$java_awt_Point(Clazz.new_($I$(11).c$$I$I,[this.getTranslation$().x, UBoundY]));
+this.setTranslation$java_awt_Point(Clazz.new_([this.getTranslation$().x, UBoundY],$I$(11,1).c$$I$I));
 }}});
 
 Clazz.newMeth(C$, 'getZoomedInTranslationBox$', function () {
@@ -1557,7 +1521,7 @@ var LBoundX=-(((this.getInnerWidth$()) / 2.0)|0);
 var UBoundX=(((this.getInnerWidth$()) / 2.0)|0);
 var LBoundY=-(((this.getInnerHeight$()) / 2.0)|0);
 var UBoundY=(((this.getInnerHeight$()) / 2.0)|0);
-return Clazz.new_($I$(35).c$$I$I$I$I,[LBoundX, LBoundY, UBoundX - LBoundX, UBoundY - LBoundY]);
+return Clazz.new_($I$(35,1).c$$I$I$I$I,[LBoundX, LBoundY, UBoundX - LBoundX, UBoundY - LBoundY]);
 });
 
 Clazz.newMeth(C$, 'getLeftOffset$', function () {
@@ -1604,7 +1568,7 @@ this._conf._dashBasesColor=c;
 
 Clazz.newMeth(C$, 'imprimer', function () {
 var attributes;
-attributes=Clazz.new_($I$(36));
+attributes=Clazz.new_($I$(36,1));
 try {
 var job=$I$(37).getPrinterJob$();
 if (job.printDialog$javax_print_attribute_PrintRequestAttributeSet(attributes)) {
@@ -1701,15 +1665,15 @@ this._conf._drawBackground=false;
 }}});
 
 Clazz.newMeth(C$, 'highlightSelectedBase$fr_orsay_lri_varna_models_rna_ModeleBase', function (m) {
-var v=Clazz.new_($I$(3));
+var v=Clazz.new_($I$(3,1));
 var sel=m.getIndex$();
 if (sel != -1) {
-v.add$TE(new Integer(sel));
+v.add$O(new Integer(sel));
 }this.setSelection$java_util_ArrayList(v);
 });
 
 Clazz.newMeth(C$, 'highlightSelectedStem$fr_orsay_lri_varna_models_rna_ModeleBase', function (m) {
-var v=Clazz.new_($I$(3));
+var v=Clazz.new_($I$(3,1));
 var sel=m.getIndex$();
 if (sel != -1) {
 var r=this._RNA.findStem$I(sel);
@@ -1730,7 +1694,7 @@ this.setSelection$java_util_Collection(this._RNA.getBasesAt$java_util_Collection
 });
 
 Clazz.newMeth(C$, 'setSelection$java_util_Collection', function (mbs) {
-var bck=Clazz.new_($I$(5).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
+var bck=Clazz.new_($I$(5,1).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
 this._selectedBases.clear$();
 this._selectedBases.addBases$java_util_Collection(mbs);
 this._blink.setActive$Z(true);
@@ -1738,28 +1702,30 @@ this.fireSelectionChanged$fr_orsay_lri_varna_models_BaseList$fr_orsay_lri_varna_
 });
 
 Clazz.newMeth(C$, 'getBasesInRectangleDiff$java_awt_Rectangle$java_awt_Rectangle', function (recIn, recOut) {
-var result=Clazz.new_($I$(3));
+var result=Clazz.new_($I$(3,1));
 for (var i=0; i < this._realCoords.length; i++) {
-if (!!(recIn.contains$java_awt_geom_Point2D(this._realCoords[i]) ^ recOut.contains$java_awt_geom_Point2D(this._realCoords[i]))) result.add$TE(new Integer(i));
-}
+if (!!(recIn.contains$java_awt_geom_Point2D(this._realCoords[i]) ^ recOut.contains$java_awt_geom_Point2D(this._realCoords[i]))) {
+result.add$O(new Integer(i));
+}}
 return result;
 });
 
 Clazz.newMeth(C$, 'getBasesInRectangle$java_awt_Rectangle', function (rec) {
-var result=Clazz.new_($I$(3));
+var result=Clazz.new_($I$(3,1));
 for (var i=0; i < this._realCoords.length; i++) {
-if (rec.contains$java_awt_geom_Point2D(this._realCoords[i])) result.add$TE(new Integer(i));
-}
+if (rec.contains$java_awt_geom_Point2D(this._realCoords[i])) {
+result.add$O(new Integer(i));
+}}
 return result;
 });
 
 Clazz.newMeth(C$, 'setSelectionRectangle$java_awt_Rectangle', function (rec) {
-var result=Clazz.new_($I$(3));
+var result=Clazz.new_($I$(3,1));
 if (this._selectionRectangle != null ) {
 result=this.getBasesInRectangleDiff$java_awt_Rectangle$java_awt_Rectangle(this._selectionRectangle, rec);
 } else {
 result=this.getBasesInRectangle$java_awt_Rectangle(rec);
-}this._selectionRectangle=Clazz.new_($I$(35).c$$java_awt_Rectangle,[rec]);
+}this._selectionRectangle=Clazz.new_($I$(35,1).c$$java_awt_Rectangle,[rec]);
 this.toggleSelection$java_util_Collection(result);
 this.repaint$();
 });
@@ -1775,7 +1741,7 @@ this.addToSelection$I(i);
 });
 
 Clazz.newMeth(C$, 'addToSelection$I', function (i) {
-var bck=Clazz.new_($I$(5).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
+var bck=Clazz.new_($I$(5,1).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
 var mb=this._RNA.getBaseAt$I(i);
 this._selectedBases.addBase$fr_orsay_lri_varna_models_rna_ModeleBase(mb);
 this._blink.setActive$Z(true);
@@ -1783,7 +1749,7 @@ this.fireSelectionChanged$fr_orsay_lri_varna_models_BaseList$fr_orsay_lri_varna_
 });
 
 Clazz.newMeth(C$, 'removeFromSelection$I', function (i) {
-var bck=Clazz.new_($I$(5).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
+var bck=Clazz.new_($I$(5,1).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
 var mb=this._RNA.getBaseAt$I(i);
 this._selectedBases.removeBase$fr_orsay_lri_varna_models_rna_ModeleBase(mb);
 if (this._selectedBases.size$() == 0) {
@@ -1798,9 +1764,11 @@ return this._selectedBases.contains$fr_orsay_lri_varna_models_rna_ModeleBase(thi
 });
 
 Clazz.newMeth(C$, 'toggleSelection$I', function (i) {
-if (this.isInSelection$I(i)) this.removeFromSelection$I(i);
- else this.addToSelection$I(i);
-});
+if (this.isInSelection$I(i)) {
+this.removeFromSelection$I(i);
+} else {
+this.addToSelection$I(i);
+}});
 
 Clazz.newMeth(C$, 'toggleSelection$java_util_Collection', function (indices) {
 for (var i, $i = indices.iterator$(); $i.hasNext$()&&((i=($i.next$()).intValue$()),1);) {
@@ -1809,7 +1777,7 @@ this.toggleSelection$I(i);
 });
 
 Clazz.newMeth(C$, 'clearSelection$', function () {
-var bck=Clazz.new_($I$(5).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
+var bck=Clazz.new_($I$(5,1).c$$fr_orsay_lri_varna_models_BaseList,[this._selectedBases]);
 this._selectedBases.clear$();
 this._blink.setActive$Z(false);
 this.repaint$();
@@ -1932,12 +1900,12 @@ this.toXML$S(path);
 });
 
 Clazz.newMeth(C$, 'loadSession$S', function (path) {
-return this.loadSession$java_io_File(Clazz.new_($I$(38).c$$S,[path]));
+return this.loadSession$java_io_File(Clazz.new_($I$(38,1).c$$S,[path]));
 });
 
 Clazz.newMeth(C$, 'loadSession$java_io_File', function (path) {
 var bck=C$.importSession$O(path);
-var map=$I$(33).DefaultOutermostMapping$I$I(this.getRNA$().getSize$(), bck.rna.getSize$());
+var map=$I$(33,"DefaultOutermostMapping$I$I",[this.getRNA$().getSize$(), bck.rna.getSize$()]);
 this.showRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA$fr_orsay_lri_varna_models_rna_Mapping(bck.rna, map);
 this._conf=bck.config;
 this.repaint$();
@@ -1946,19 +1914,19 @@ return bck;
 
 Clazz.newMeth(C$, 'importSession$O', function (path) {
 try {
-var fis=(Clazz.instanceOf(path, "java.io.File") ? Clazz.new_($I$(39).c$$java_io_File,[path]) : Clazz.new_($I$(39).c$$S,[path.toString()]));
+var fis=(Clazz.instanceOf(path, "java.io.File") ? Clazz.new_($I$(39,1).c$$java_io_File,[path]) : Clazz.new_([path.toString()],$I$(39,1).c$$S));
 var h=C$.importSession$java_io_InputStream$S(fis, path.toString());
 return h;
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.io.FileNotFoundException")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(40).c$$S$S,["File not found.", path.toString()]));
+throw (Clazz.new_(["File not found.", path.toString()],$I$(40,1).c$$S$S));
 }
 } else if (Clazz.exceptionOf(e$$,"java.io.IOException")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(40).c$$S$S,["I/O error while loading session.", path.toString()]));
+throw (Clazz.new_(["I/O error while loading session.", path.toString()],$I$(40,1).c$$S$S));
 }
 } else {
 throw e$$;
@@ -1974,25 +1942,25 @@ saxFact.setXIncludeAware$Z(false);
 saxFact.setNamespaceAware$Z(false);
 try {
 var sp=saxFact.newSAXParser$();
-var sessionData=Clazz.new_($I$(42));
+var sessionData=Clazz.new_($I$(42,1));
 sp.parse$java_io_InputStream$org_xml_sax_helpers_DefaultHandler(fis, sessionData);
-var res=Clazz.new_($I$(43).c$$fr_orsay_lri_varna_models_VARNAConfig$fr_orsay_lri_varna_models_rna_RNA$S,[sessionData.getVARNAConfig$(), sessionData.getRNA$(), "test"]);
+var res=Clazz.new_([sessionData.getVARNAConfig$(), sessionData.getRNA$(), "test"],$I$(43,1).c$$fr_orsay_lri_varna_models_VARNAConfig$fr_orsay_lri_varna_models_rna_RNA$S);
 return res;
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"javax.xml.parsers.ParserConfigurationException")){
 var e = e$$;
 {
-throw Clazz.new_($I$(40).c$$S$S,["Bad XML parser configuration", path]);
+throw Clazz.new_($I$(40,1).c$$S$S,["Bad XML parser configuration", path]);
 }
 } else if (Clazz.exceptionOf(e$$,"org.xml.sax.SAXException")){
 var e = e$$;
 {
-throw Clazz.new_($I$(40).c$$S$S,["XML parser Exception", path]);
+throw Clazz.new_($I$(40,1).c$$S$S,["XML parser Exception", path]);
 }
 } else if (Clazz.exceptionOf(e$$,"java.io.IOException")){
 var e = e$$;
 {
-throw Clazz.new_($I$(40).c$$S$S,["I/O error", path]);
+throw Clazz.new_($I$(40,1).c$$S$S,["I/O error", path]);
 }
 } else {
 throw e$$;
@@ -2034,9 +2002,9 @@ this.loadRNA$O$Z(path, false);
 
 Clazz.newMeth(C$, 'loadRNA$O$Z', function (path, interpolate) {
 try {
-var rnas=(Clazz.instanceOf(path, "java.io.File") ? $I$(31).loadSecStr$java_io_Reader(Clazz.new_($I$(44).c$$java_io_File,[path])) : $I$(31).loadSecStr$S(path.toString()));
+var rnas=(Clazz.instanceOf(path, "java.io.File") ? $I$(31,"loadSecStr$java_io_Reader",[Clazz.new_($I$(44,1).c$$java_io_File,[path])]) : $I$(31,"loadSecStr$S",[path.toString()]));
 if (rnas.isEmpty$()) {
-throw Clazz.new_($I$(32).c$$S,["No RNA could be parsed from that source."]);
+throw Clazz.new_($I$(32,1).c$$S,["No RNA could be parsed from that source."]);
 }var rna=rnas.iterator$().next$();
 try {
 rna.drawRNA$fr_orsay_lri_varna_models_VARNAConfig(this._conf);
@@ -2110,7 +2078,7 @@ this._RNA.readValues$java_io_Reader$fr_orsay_lri_varna_models_rna_ModeleColorMap
 });
 
 Clazz.newMeth(C$, 'addVARNAListener$fr_orsay_lri_varna_interfaces_InterfaceVARNAListener', function (v) {
-this._VARNAListeners.add$TE(v);
+this._VARNAListeners.add$O(v);
 });
 
 Clazz.newMeth(C$, 'fireLayoutChanged$', function () {
@@ -2138,7 +2106,7 @@ v2.onTranslationChanged$();
 });
 
 Clazz.newMeth(C$, 'addSelectionListener$fr_orsay_lri_varna_interfaces_InterfaceVARNASelectionListener', function (v) {
-this._selectionListeners.add$TE(v);
+this._selectionListeners.add$O(v);
 });
 
 Clazz.newMeth(C$, 'fireSelectionChanged$fr_orsay_lri_varna_models_BaseList$fr_orsay_lri_varna_models_BaseList', function (mold, mnew) {
@@ -2156,11 +2124,11 @@ v2.onHoverChanged$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_mo
 });
 
 Clazz.newMeth(C$, 'addRNAListener$fr_orsay_lri_varna_interfaces_InterfaceVARNARNAListener', function (v) {
-this._RNAListeners.add$TE(v);
+this._RNAListeners.add$O(v);
 });
 
 Clazz.newMeth(C$, 'addVARNABasesListener$fr_orsay_lri_varna_interfaces_InterfaceVARNABasesListener', function (l) {
-this._basesListeners.add$TE(l);
+this._basesListeners.add$O(l);
 });
 
 Clazz.newMeth(C$, 'fireSequenceChanged$I$S$S', function (index, oldseq, newseq) {
@@ -2184,7 +2152,7 @@ v2.onRNALayoutChanged$java_util_Hashtable(movedPositions);
 Clazz.newMeth(C$, 'fireBaseClicked$fr_orsay_lri_varna_models_rna_ModeleBase$java_awt_event_MouseEvent', function (mb, me) {
 if (mb != null ) {
 for (var v2, $v2 = this._basesListeners.iterator$(); $v2.hasNext$()&&((v2=($v2.next$())),1);) {
-v2.onBaseClicked$(mb, me);
+v2.onBaseClicked$fr_orsay_lri_varna_models_rna_ModeleBase$java_awt_event_MouseEvent(mb, me);
 }
 }});
 
@@ -2203,8 +2171,8 @@ this.fireHoverChanged$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varn
 Clazz.newMeth(C$, 'toXML$S', function (path) {
 var fis;
 try {
-fis=Clazz.new_($I$(45).c$$S,[path]);
-var pw=Clazz.new_($I$(46).c$$java_io_OutputStream,[fis]);
+fis=Clazz.new_($I$(45,1).c$$S,[path]);
+var pw=Clazz.new_($I$(46,1).c$$java_io_OutputStream,[fis]);
 this.toXML$java_io_PrintWriter(pw);
 pw.flush$();
 fis.close$();
@@ -2227,7 +2195,7 @@ throw e$$;
 
 Clazz.newMeth(C$, 'toXML$java_io_PrintWriter', function (out) {
 try {
-var streamResult=Clazz.new_($I$(47).c$$java_io_Writer,[out]);
+var streamResult=Clazz.new_($I$(47,1).c$$java_io_Writer,[out]);
 var tf=$I$(48).newInstance$();
 var hd=tf.newTransformerHandler$();
 var serializer=hd.getTransformer$();
@@ -2256,7 +2224,7 @@ throw e$$;
 });
 
 Clazz.newMeth(C$, 'toXML$javax_xml_transform_sax_TransformerHandler', function (hd) {
-var atts=Clazz.new_($I$(49));
+var atts=Clazz.new_($I$(49,1));
 hd.startElement$S$S$S$org_xml_sax_Attributes("", "", C$.XML_ELEMENT_NAME, atts);
 this._RNA.toXML$javax_xml_transform_sax_TransformerHandler(hd);
 this._conf.toXML$javax_xml_transform_sax_TransformerHandler(hd);
@@ -2282,8 +2250,9 @@ dist=d2;
 
 Clazz.newMeth(C$, 'getNearestBase$I$I$Z$Z', function (x, y, always, onlyPaired) {
 var i=this.getNearestBaseIndex$I$I$Z$Z(x, y, always, onlyPaired);
-if (i == -1) return null;
-return this.getRNA$().get_listeBases$().get$I(i);
+if (i == -1) {
+return null;
+}return this.getRNA$().get_listeBases$().get$I(i);
 });
 
 Clazz.newMeth(C$, 'getNearestBase$I$I', function (x, y) {
@@ -2317,5 +2286,11 @@ this._conf._spaceBetweenBases=sp;
 Clazz.newMeth(C$, 'getSpaceBetweenBases$', function () {
 return this._conf._spaceBetweenBases;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.DISTANCE_FACT=2.0;
+C$.VARNA_SESSION_EXTENSION="varna";
+C$.XML_ELEMENT_NAME="VARNASession";
+};
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:57 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,20 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AmpacReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "AmpacReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ac=0;
-this.freqAtom0=0;
-this.partialCharges=null;
-this.atomPositions=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.freqAtom0=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['ac','freqAtom0'],'O',['partialCharges','float[]','atomPositions','javajs.util.P3[]']]]
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 if (this.line.indexOf$S("CARTESIAN COORDINATES") >= 0) {
@@ -43,7 +36,7 @@ while (this.rd$() != null ){
 var tokens=this.getTokens$();
 if (tokens.length < 5) break;
 if (haveFreq) {
-this.atomPositions[this.ac]=$I$(1).new3$F$F$F(this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3]), this.parseFloatStr$S(tokens[4]));
+this.atomPositions[this.ac]=(function(a,f){return f.apply(null,a)})([this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3]), this.parseFloatStr$S(tokens[4])],$I$(1).new3$F$F$F);
 } else {
 this.addAtomXYZSymName$SA$I$S$S(tokens, 2, tokens[1], null);
 }this.ac++;
@@ -97,4 +90,4 @@ this.rd$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

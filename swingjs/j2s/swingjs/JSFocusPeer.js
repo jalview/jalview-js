@@ -1,17 +1,12 @@
-(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'swingjs.JSUtil','Thread','java.awt.event.FocusEvent','swingjs.JSToolkit','java.awt.JSComponent','java.awt.event.WindowEvent','java.awt.KeyboardFocusManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSFocusPeer", null, null, 'java.awt.peer.KeyboardFocusManagerPeer');
+(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'swingjs.JSUtil','Thread','java.awt.event.FocusEvent','swingjs.JSToolkit','java.awt.JSComponent','java.awt.event.WindowEvent','java.awt.KeyboardFocusManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSFocusPeer", null, null, 'java.awt.peer.KeyboardFocusManagerPeer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.currentWindow=null;
-this.currentFocusOwner=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['currentWindow','java.awt.Window','currentFocusOwner','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'setCurrentFocusedWindow$java_awt_Window', function (win) {
 this.currentWindow=win;
@@ -68,26 +63,26 @@ Clazz.newMeth(C$, 'handleJSFocus$O$O$Z', function (jco, related, focusGained) {
 var c0=jco;
 var e;
 if (related == null ) {
-e=Clazz.new_($I$(3).c$$java_awt_Component$I,[c0, focusGained ? 1004 : 1005]);
+e=Clazz.new_($I$(3,1).c$$java_awt_Component$I,[c0, focusGained ? 1004 : 1005]);
 c0.dispatchEvent$java_awt_AWTEvent(e);
 return;
 }var other;
 if (focusGained) {
 other=C$.getAccessibleComponentFor$swingjs_api_js_DOMNode(related);
 if (other != null  && other !== c0  ) {
-other.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3).c$$java_awt_Component$I$Z$java_awt_Component,[other, 1005, false, c0]));
-}c0.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3).c$$java_awt_Component$I$Z$java_awt_Component,[c0, 1004, false, other]));
+other.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3,1).c$$java_awt_Component$I$Z$java_awt_Component,[other, 1005, false, c0]));
+}c0.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3,1).c$$java_awt_Component$I$Z$java_awt_Component,[c0, 1004, false, other]));
 } else {
 other=$I$(4).getCurrentFocusOwner$O(related);
-c0.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3).c$$java_awt_Component$I$Z$java_awt_Component,[c0, 1005, false, other]));
-if (other != null  && other !== c0  ) other.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3).c$$java_awt_Component$I$Z$java_awt_Component,[other, 1004, false, c0]));
+c0.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3,1).c$$java_awt_Component$I$Z$java_awt_Component,[c0, 1005, false, other]));
+if (other != null  && other !== c0  ) other.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(3,1).c$$java_awt_Component$I$Z$java_awt_Component,[other, 1004, false, c0]));
 }}, 1);
 
 Clazz.newMeth(C$, 'checkFrameFocusOnMouseDown$java_awt_AWTEvent', function (e) {
-var p=$I$(5).getTopInvokableAncestor$java_awt_Component$Z(e.getSource$(), true);
-if (this.getCurrentFocusOwner$() != null  && p === this.currentWindow  ) return;
+var p=$I$(5,"秘getTopInvokableAncestor$java_awt_Component$Z",[e.getSource$(), true]);
+if (p == null  || this.getCurrentFocusOwner$() != null  && p === this.currentWindow   ) return;
 var w=this.currentWindow;
-p.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(6).c$$java_awt_Window$I,[p, 205]));
+p.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(6,1).c$$java_awt_Window$I,[p, 205]));
 this.setCurrentFocusedWindow$java_awt_Window(p);
 if (Clazz.instanceOf(p, "javax.swing.JInternalFrame")) {
 try {
@@ -101,7 +96,7 @@ throw e1;
 }
 } else if (Clazz.instanceOf(p, "java.awt.Window")) {
 (p).toFront$();
-}if (p._isFocusSetAndEnabled$()) {
+}if (p.秘isFocusSetAndEnabled$()) {
 ((p).ui).focus$();
 C$.handleJSFocus$O$O$Z(p, w, true);
 }});
@@ -118,4 +113,4 @@ if (c != null ) c.requestFocus$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

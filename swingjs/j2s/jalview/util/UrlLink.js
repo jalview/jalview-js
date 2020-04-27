@@ -1,51 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'com.stevesoft.pat.Regex','java.util.Vector','java.util.Arrays','jalview.util.DBRefUtils','java.util.Collections']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UrlLink");
-C$.LINK_COMPARATOR=null;
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'com.stevesoft.pat.Regex','java.util.Vector','java.util.Arrays','jalview.util.DBRefUtils','java.util.Collections']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UrlLink");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LINK_COMPARATOR=((P$.UrlLink$1||
-(function(){var C$=Clazz.newClass(P$, "UrlLink$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['compare$S$S','compare$','compare$TT$TT'], function (link1, link2) {
-if (link1 == null  || link2 == null  ) {
-return 0;
-}if (link1.contains$CharSequence("$SEQUENCE_ID$") && link2.contains$CharSequence("$DB_ACCESSION$") ) {
-return -1;
-}if (link2.contains$CharSequence("$SEQUENCE_ID$") && link1.contains$CharSequence("$DB_ACCESSION$") ) {
-return 1;
-}return String.CASE_INSENSITIVE_ORDER.compare$(link1, link2);
-});
-})()
-), Clazz.new_(P$.UrlLink$1.$init$, [this, null]));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.urlSuffix=null;
-this.urlPrefix=null;
-this.target=null;
-this.label=null;
-this.dbname=null;
-this.regexReplace=null;
-this.dynamic=false;
-this.usesDBaccession=false;
-this.invalidMessage=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dynamic=false;
 this.usesDBaccession=false;
 this.invalidMessage=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['dynamic','usesDBaccession'],'S',['urlSuffix','urlPrefix','target','label','dbname','regexReplace','invalidMessage']]
+,['O',['LINK_COMPARATOR','java.util.Comparator']]]
 
 Clazz.newMeth(C$, 'c$$S', function (link) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var sep=link.indexOf$S("|");
 var psqid=link.indexOf$S("$DB_ACCESSION");
 var nsqid=link.indexOf$S("$SEQUENCE_ID");
@@ -140,7 +108,7 @@ return Clazz.array(String, -1, [rg.stringMatched$(), this.urlPrefix + rg.stringM
 for (var s=0; s <= rg.numSubs$(); s++) {
 System.err.println$S("Sub " + s + " : " + rg.matchedFrom$I(s) + " : " + rg.matchedTo$I(s) + " : '" + rg.stringMatched$I(s) + "'" );
 }
-var subs=Clazz.new_($I$(2));
+var subs=Clazz.new_($I$(2,1));
 var s=0;
 while (s <= ns){
 if (s + 1 <= ns && rg.matchedTo$I(s) > -1  && rg.matchedTo$I(s + 1) > -1  && rg.matchedTo$I(s + 1) < rg.matchedTo$I(s) ) {
@@ -152,13 +120,13 @@ mtch += rg.stringMatched$I(r);
 }r++;
 }
 if (mtch.length$() > 0) {
-subs.addElement$TE(mtch);
-subs.addElement$TE(this.urlPrefix + mtch + this.urlSuffix );
+subs.addElement$O(mtch);
+subs.addElement$O(this.urlPrefix + mtch + this.urlSuffix );
 }s=r;
 } else {
 if (rg.matchedFrom$I(s) > -1) {
-subs.addElement$TE(rg.stringMatched$I(s));
-subs.addElement$TE(this.urlPrefix + rg.stringMatched$I(s) + this.urlSuffix );
+subs.addElement$O(rg.stringMatched$I(s));
+subs.addElement$O(this.urlPrefix + rg.stringMatched$I(s) + this.urlSuffix );
 }s++;
 }}
 var res=Clazz.array(String, [subs.size$()]);
@@ -249,7 +217,7 @@ this.createStaticLink$java_util_Map(linkset);
 
 Clazz.newMeth(C$, 'createStaticLink$java_util_Map', function (linkset) {
 if (!linkset.containsKey$O(this.label + "|" + this.getUrlPrefix$() )) {
-linkset.put$TK$TV(this.label + "|" + this.getUrlPrefix$() , $I$(3).asList$TTA([this.target, this.label, null, this.getUrlPrefix$()]));
+linkset.put$O$O(this.label + "|" + this.getUrlPrefix$() , $I$(3,"asList$OA",[[this.target, this.label, null, this.getUrlPrefix$()]]));
 }});
 
 Clazz.newMeth(C$, 'createDynamicLinks$jalview_datamodel_SequenceI$java_util_Map', function (seq, linkset) {
@@ -258,7 +226,7 @@ var descr=seq.getDescription$();
 if (descr != null  && descr.length$() < 1 ) {
 descr=null;
 }if (this.usesDBAccession$()) {
-var dbr=$I$(4).selectRefs$java_util_List$SA(seq.getDBRefs$(), Clazz.array(String, -1, [this.target]));
+var dbr=$I$(4,"selectRefs$java_util_List$SA",[seq.getDBRefs$(), Clazz.array(String, -1, [this.target])]);
 if (dbr != null ) {
 for (var r=0, nd=dbr.size$(); r < nd; r++) {
 this.createBareURLLink$S$Boolean$java_util_Map(dbr.get$I(r).getAccessionId$(), new Boolean(true), linkset);
@@ -275,9 +243,9 @@ if (urls != null ) {
 for (var u=0; u < urls.length; u+=2) {
 if (!linkset.containsKey$O(urls[u] + "|" + urls[u + 1] )) {
 var thisLabel=this.label;
-if ((combineLabel).booleanValue$()) {
+if ((combineLabel).valueOf()) {
 thisLabel=this.label + "|" + urls[u] ;
-}linkset.put$TK$TV(urls[u] + "|" + urls[u + 1] , $I$(3).asList$TTA([this.target, thisLabel, urls[u], urls[u + 1]]));
+}linkset.put$O$O(urls[u] + "|" + urls[u + 1] , $I$(3).asList$OA([this.target, thisLabel, urls[u], urls[u + 1]]));
 }}
 }});
 
@@ -285,6 +253,28 @@ Clazz.newMeth(C$, 'sort$java_util_List', function (nlinks) {
 $I$(5).sort$java_util_List$java_util_Comparator(nlinks, C$.LINK_COMPARATOR);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.LINK_COMPARATOR=((P$.UrlLink$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "UrlLink$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, ['compare$S$S','compare$O$O'], function (link1, link2) {
+if (link1 == null  || link2 == null  ) {
+return 0;
+}if (link1.contains$CharSequence("$SEQUENCE_ID$") && link2.contains$CharSequence("$DB_ACCESSION$") ) {
+return -1;
+}if (link2.contains$CharSequence("$SEQUENCE_ID$") && link1.contains$CharSequence("$DB_ACCESSION$") ) {
+return 1;
+}return String.CASE_INSENSITIVE_ORDER.compare$O$O(link1, link2);
+});
+})()
+), Clazz.new_(P$.UrlLink$1.$init$,[this, null]));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

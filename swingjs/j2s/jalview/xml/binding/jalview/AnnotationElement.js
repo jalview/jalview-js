@@ -1,21 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[];
-var C$=Clazz.newClass(P$, "AnnotationElement");
+/*c*/var C$=Clazz.newClass(P$, "AnnotationElement");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.displayCharacter=null;
-this.description=null;
-this.secondaryStructure=null;
-this.value=null;
-this.position=0;
-this.colour=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['position'],'S',['displayCharacter','description','secondaryStructure'],'O',['value','Float','colour','Integer']]]
 
 Clazz.newMeth(C$, 'getDisplayCharacter$', function () {
 return this.displayCharacter;
@@ -64,14 +55,15 @@ return this.colour;
 Clazz.newMeth(C$, 'setColour$Integer', function (value) {
 this.colour=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.AnnotationElement'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"displayCharacter"  "description"  "secondaryStructure"  "value"  } )','@XmlRootElement(name="annotationElement" )']],
-  [['position','int'],['@XmlAttribute(name="position" required="true" )']],
-  [['colour','Integer'],['@XmlAttribute(name="colour" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.AnnotationElement',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType','javax.xml.bind.annotation.XmlRootElement']],['XmlAccessType.FIELD','name="" propOrder={"displayCharacter"  "description"  "secondaryStructure"  "value"  } ','name="annotationElement" ']],
+  [['position','int',null,['javax.xml.bind.annotation.XmlAttribute']],['name="position" required="true" ']],
+  [['colour','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colour" ']],
   [['displayCharacter','String'],['@XmlElement']],
   [['description','String'],['@XmlElement']],
   [['secondaryStructure','String'],['@XmlElement']],
-  [['value','Float'],['@XmlElement']]];
+  [['value','Float'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

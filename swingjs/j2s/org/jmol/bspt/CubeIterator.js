@@ -1,31 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.bspt"),p$1={},I$=[[0,'org.jmol.bspt.Element']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CubeIterator");
+(function(){var P$=Clazz.newPackage("org.jmol.bspt"),p$1={},I$=[[0,'org.jmol.bspt.Element']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CubeIterator");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bspt=null;
-this.stack=null;
-this.sp=0;
-this.leafIndex=0;
-this.leaf=null;
-this.radius=0;
-this.cx=0;
-this.cy=0;
-this.cz=0;
-this.dx=0;
-this.dy=0;
-this.dz=0;
-this.tHemisphere=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['tHemisphere'],'F',['radius','cx','cy','cz','dx','dy','dz'],'I',['sp','leafIndex'],'O',['bspt','org.jmol.bspt.Bspt','stack','org.jmol.bspt.Element[]','leaf','org.jmol.bspt.Leaf']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_bspt_Bspt', function (bspt) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.set$org_jmol_bspt_Bspt(bspt);
 }, 1);
 
@@ -111,4 +95,4 @@ return ((!this.tHemisphere || this.dx >= 0  ) && (this.dx=Math.abs(this.dx)) <= 
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

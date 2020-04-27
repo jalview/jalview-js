@@ -1,42 +1,32 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},p$2={},I$=[[0,'javax.swing.text.StyleConstants',['javax.swing.text.AbstractDocument','.AbstractElement'],'java.util.Vector','javax.swing.text.StateInvariantError','java.util.Hashtable',['javax.swing.text.AbstractDocument','.UndoRedoDocumentEvent'],['javax.swing.event.DocumentEvent','.EventType'],'javax.swing.UIManager','javax.swing.event.EventListenerList','javax.swing.text.StyleContext','javax.swing.event.DocumentListener','javax.swing.event.UndoableEditListener',['javax.swing.text.AbstractDocument','.DefaultDocumentEvent'],'javax.swing.text.Utilities','javax.swing.event.UndoableEditEvent','javax.swing.text.Element',['javax.swing.text.AbstractDocument','.DefaultFilterBypass'],'Boolean','javax.swing.text.SegmentCache',['javax.swing.text.AbstractDocument','.LeafElement'],['javax.swing.text.AbstractDocument','.BranchElement']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractDocument", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},p$2={},I$=[[0,'javax.swing.text.StyleConstants',['javax.swing.text.AbstractDocument','.AbstractElement'],'java.util.Vector','javax.swing.text.StateInvariantError','java.util.Hashtable',['javax.swing.text.AbstractDocument','.UndoRedoDocumentEvent'],['javax.swing.event.DocumentEvent','.EventType'],'javax.swing.UIManager','javax.swing.event.EventListenerList','javax.swing.text.StyleContext','javax.swing.event.DocumentListener','javax.swing.event.UndoableEditListener',['javax.swing.text.AbstractDocument','.DefaultDocumentEvent'],'javax.swing.text.Utilities','javax.swing.event.UndoableEditEvent','javax.swing.text.Element',['javax.swing.text.AbstractDocument','.DefaultFilterBypass'],'javax.swing.text.SegmentCache',['javax.swing.text.AbstractDocument','.LeafElement'],['javax.swing.text.AbstractDocument','.BranchElement']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractDocument", function(){
 Clazz.newInstance(this, arguments,0,C$);
-}, null, 'swingjs.api.JSMinimalAbstractDocument');
-C$.MultiByteProperty=null;
+}, null, 'javax.swing.text.Document');
+C$.$classes$=[['Content',9],['AttributeContext',9],['AbstractElement',1025],['BranchElement',1],['LeafElement',1],['DefaultDocumentEvent',1],['UndoRedoDocumentEvent',0],['ElementEdit',9],['DefaultFilterBypass',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.MultiByteProperty="multiByte";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.documentProperties=null;
-this.listenerList=null;
-this.data=null;
-this.context=null;
-this.bidiRoot=null;
-this.documentFilter=null;
-this.filterBypass=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.documentProperties=null;
-this.listenerList=Clazz.new_($I$(9));
-}, 1);
+this.listenerList=Clazz.new_($I$(9,1));
+},1);
+
+C$.$fields$=[['Z',['isAWT','秘replacing'],'I',['currentDot','currentMark'],'O',['documentProperties','java.util.Dictionary','listenerList','javax.swing.event.EventListenerList','data','javax.swing.text.AbstractDocument.Content','context','javax.swing.text.AbstractDocument.AttributeContext','bidiRoot','javax.swing.text.AbstractDocument.BranchElement','documentFilter','javax.swing.text.DocumentFilter','filterBypass','javax.swing.text.DocumentFilter.FilterBypass','editor','javax.swing.text.JTextComponent']]
+,['O',['MultiByteProperty','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_Content', function (data) {
 C$.c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_AbstractDocument_AttributeContext.apply(this, [data, $I$(10).getDefaultStyleContext$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_AbstractDocument_AttributeContext', function (data, context) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.data=data;
 this.context=context;
 }, 1);
 
 Clazz.newMeth(C$, 'getDocumentProperties$', function () {
 if (this.documentProperties == null ) {
-this.documentProperties=Clazz.new_($I$(5).c$$I,[2]);
+this.documentProperties=Clazz.new_($I$(5,1).c$$I,[2]);
 }return this.documentProperties;
 });
 
@@ -81,7 +71,7 @@ Clazz.newMeth(C$, 'fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent', 
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(12),['undoableEditHappened$javax_swing_event_UndoableEditEvent']) ) {
-(listeners[i + 1]).undoableEditHappened$(e);
+(listeners[i + 1]).undoableEditHappened$javax_swing_event_UndoableEditEvent(e);
 }}
 });
 
@@ -109,16 +99,23 @@ Clazz.newMeth(C$, 'getDocumentFilter$', function () {
 return this.documentFilter;
 });
 
+Clazz.newMeth(C$, 'render$Runnable', function (r) {
+try {
+r.run$();
+} finally {
+}
+});
+
 Clazz.newMeth(C$, 'getLength$', function () {
 return this.data.length$() - 1;
 });
 
 Clazz.newMeth(C$, 'addDocumentListener$javax_swing_event_DocumentListener', function (listener) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(11),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(11),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'removeDocumentListener$javax_swing_event_DocumentListener', function (listener) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(11),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(11),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'getDocumentListeners$', function () {
@@ -126,11 +123,11 @@ return this.listenerList.getListeners$Class(Clazz.getClass($I$(11),['changedUpda
 });
 
 Clazz.newMeth(C$, 'addUndoableEditListener$javax_swing_event_UndoableEditListener', function (listener) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(12),['undoableEditHappened$javax_swing_event_UndoableEditEvent']), listener);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(12),['undoableEditHappened$javax_swing_event_UndoableEditEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'removeUndoableEditListener$javax_swing_event_UndoableEditListener', function (listener) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(12),['undoableEditHappened$javax_swing_event_UndoableEditEvent']), listener);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(12),['undoableEditHappened$javax_swing_event_UndoableEditEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'getUndoableEditListeners$', function () {
@@ -143,7 +140,7 @@ return this.getDocumentProperties$().get$O(key);
 
 Clazz.newMeth(C$, 'putProperty$O$O', function (key, value) {
 if (value != null ) {
-this.getDocumentProperties$().put$TK$TV(key, value);
+this.getDocumentProperties$().put$O$O(key, value);
 } else {
 this.getDocumentProperties$().remove$O(key);
 }});
@@ -165,7 +162,7 @@ Clazz.newMeth(C$, 'handleRemove$I$I', function (offs, len) {
 if (len > 0) {
 if (offs < 0 || (offs + len) > this.getLength$() ) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Invalid remove", this.getLength$() + 1]);
-}var chng=Clazz.new_($I$(13).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, offs, len, $I$(7).REMOVE]);
+}var chng=Clazz.new_([this, null, offs, len, $I$(7).REMOVE],$I$(13,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 var isComposedTextElement=false;
 isComposedTextElement=$I$(14).isComposedTextElement$javax_swing_text_Document$I(this, offs);
 this.removeUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent(chng);
@@ -176,7 +173,7 @@ chng.addEdit$javax_swing_undo_UndoableEdit(u);
 chng.end$();
 this.fireRemoveUpdate$javax_swing_event_DocumentEvent(chng);
 if ((u != null ) && !isComposedTextElement ) {
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(15).c$$O$javax_swing_undo_UndoableEdit,[this, chng]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(15,1).c$$O$javax_swing_undo_UndoableEdit,[this, chng]));
 }}});
 
 Clazz.newMeth(C$, 'replace$I$I$S$javax_swing_text_AttributeSet', function (offset, length, text, attrs) {
@@ -190,9 +187,13 @@ filter.replace$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_te
 } else {
 if (length > 0) {
 this.remove$I$I(offset, length);
+this.秘replacing=true;
+} else {
+this.秘replacing=false;
 }if (text != null  && text.length$() > 0 ) {
 this.insertString$I$S$javax_swing_text_AttributeSet(offset, text, attrs);
-}}} finally {
+}this.秘replacing=false;
+}} finally {
 this.writeUnlock$();
 }
 });
@@ -216,14 +217,14 @@ Clazz.newMeth(C$, 'handleInsertString$I$S$javax_swing_text_AttributeSet', functi
 if ((str == null ) || (str.length$() == 0) ) {
 return;
 }var u=this.data.insertString$I$S(offs, str);
-var e=Clazz.new_($I$(13).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, offs, str.length$(), $I$(7).INSERT]);
+var e=Clazz.new_([this, null, offs, str.length$(), $I$(7).INSERT],$I$(13,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 if (u != null ) {
 e.addEdit$javax_swing_undo_UndoableEdit(u);
 }this.insertUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent$javax_swing_text_AttributeSet(e, a);
 e.end$();
 this.fireInsertUpdate$javax_swing_event_DocumentEvent(e);
 if (u != null  && (a == null  || !a.isDefined$O($I$(1).ComposedTextAttribute) ) ) {
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(15).c$$O$javax_swing_undo_UndoableEdit,[this, e]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(15,1).c$$O$javax_swing_undo_UndoableEdit,[this, e]));
 }});
 
 Clazz.newMeth(C$, 'getText$I$I', function (offset, length) {
@@ -280,7 +281,7 @@ return elems;
 
 Clazz.newMeth(C$, 'getFilterBypass', function () {
 if (this.filterBypass == null ) {
-this.filterBypass=Clazz.new_($I$(17), [this, null]);
+this.filterBypass=Clazz.new_($I$(17,1),[this, null]);
 }return this.filterBypass;
 }, p$2);
 
@@ -297,14 +298,14 @@ return this.context;
 });
 
 Clazz.newMeth(C$, 'insertUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent$javax_swing_text_AttributeSet', function (chng, attr) {
-if (chng.type === $I$(7).INSERT  && chng.getLength$() > 0  && !$I$(18).TRUE.equals$O(this.getProperty$O(C$.MultiByteProperty)) ) {
-var segment=$I$(19).getSharedSegment$();
+if (chng.type === $I$(7).INSERT  && chng.getLength$() > 0  && !Boolean.TRUE.equals$O(this.getProperty$O(C$.MultiByteProperty)) ) {
+var segment=$I$(18).getSharedSegment$();
 try {
 this.getText$I$I$javax_swing_text_Segment(chng.getOffset$(), chng.getLength$(), segment);
 segment.first$();
 do {
 if (segment.current$().$c() > 255) {
-this.putProperty$O$O(C$.MultiByteProperty, $I$(18).TRUE);
+this.putProperty$O$O(C$.MultiByteProperty, Boolean.TRUE);
 break;
 }} while (segment.next$() != "\uffff");
 } catch (ble) {
@@ -313,7 +314,7 @@ if (Clazz.exceptionOf(ble,"javax.swing.text.BadLocationException")){
 throw ble;
 }
 }
-$I$(19).releaseSharedSegment$javax_swing_text_Segment(segment);
+$I$(18).releaseSharedSegment$javax_swing_text_Segment(segment);
 }});
 
 Clazz.newMeth(C$, 'removeUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent', function (chng) {
@@ -327,11 +328,11 @@ return this.data;
 });
 
 Clazz.newMeth(C$, 'createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I', function (parent, a, p0, p1) {
-return Clazz.new_($I$(20).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I, [this, null, parent, a, p0, p1]);
+return Clazz.new_($I$(19,1).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I,[this, null, parent, a, p0, p1]);
 });
 
 Clazz.newMeth(C$, 'createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet', function (parent, a) {
-return Clazz.new_($I$(21).c$$javax_swing_text_Element$javax_swing_text_AttributeSet, [this, null, parent, a]);
+return Clazz.new_($I$(20,1).c$$javax_swing_text_Element$javax_swing_text_AttributeSet,[this, null, parent, a]);
 });
 
 Clazz.newMeth(C$, 'writeLock$', function () {
@@ -345,33 +346,47 @@ Clazz.newMeth(C$, 'readLock$', function () {
 
 Clazz.newMeth(C$, 'readUnlock$', function () {
 });
+
+Clazz.newMeth(C$, 'replace$I$I$S$javax_swing_text_AttributeSet$javax_swing_text_JTextComponent', function (offset, length, text, attrs, c) {
+this.editor=c;
+this.isAWT=c.秘isAWT$();
+if (this.isAWT) {
+this.currentDot=c.getCaret$().getDot$();
+this.currentMark=c.getCaret$().getMark$();
+}this.replace$I$I$S$javax_swing_text_AttributeSet(offset, length, text, attrs);
+});
+
+Clazz.newMeth(C$, 'resetAWTScroll$', function () {
+if (this.isAWT) {
+this.editor.getCaret$().setDot$I(this.currentMark);
+this.editor.getCaret$().moveDot$I(this.currentDot);
+}});
+
+C$.$static$=function(){C$.$static$=0;
+C$.MultiByteProperty="multiByte";
+};
 ;
-(function(){var C$=Clazz.newInterface(P$.AbstractDocument, "Content", function(){
+(function(){/*i*/var C$=Clazz.newInterface(P$.AbstractDocument, "Content", function(){
 });
 })()
 ;
-(function(){var C$=Clazz.newInterface(P$.AbstractDocument, "AttributeContext", function(){
+(function(){/*i*/var C$=Clazz.newInterface(P$.AbstractDocument, "AttributeContext", function(){
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractDocument, "AbstractElement", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractDocument, "AbstractElement", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['javax.swing.text.Element', 'javax.swing.text.MutableAttributeSet', 'javax.swing.tree.TreeNode']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.attributes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['parent','javax.swing.text.Element','attributes','javax.swing.text.AttributeSet']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$javax_swing_text_AttributeSet', function (parent, a) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.parent=parent;
 this.attributes=this.this$0.getAttributeContext$.apply(this.this$0, []).getEmptySet$();
 if (a != null ) {
@@ -506,26 +521,19 @@ return -1;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractDocument, "BranchElement", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractDocument, "BranchElement", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.AbstractDocument','.AbstractElement']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.children=null;
-this.nchildren=0;
-this.lastIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nchildren','lastIndex'],'O',['children','javax.swing.text.AbstractDocument.AbstractElement[]']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$javax_swing_text_AttributeSet', function (parent, a) {
-C$.superclazz.c$$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this, [parent, a]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this,[parent, a]);C$.$init$.apply(this);
 this.children=Clazz.array($I$(2), [1]);
 this.nchildren=0;
 this.lastIndex=-1;
@@ -642,8 +650,8 @@ return true;
 
 Clazz.newMeth(C$, 'children$', function () {
 if (this.nchildren == 0) return null;
-var tempVector=Clazz.new_($I$(3).c$$I,[this.nchildren]);
-for (var counter=0; counter < this.nchildren; counter++) tempVector.addElement$TE(this.children[counter]);
+var tempVector=Clazz.new_($I$(3,1).c$$I,[this.nchildren]);
+for (var counter=0; counter < this.nchildren; counter++) tempVector.addElement$O(this.children[counter]);
 
 return tempVector.elements$();
 });
@@ -651,25 +659,19 @@ return tempVector.elements$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractDocument, "LeafElement", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractDocument, "LeafElement", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.AbstractDocument','.AbstractElement']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.p0=null;
-this.p1=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['p0','javax.swing.text.Position','+p1']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I', function (parent, a, offs0, offs1) {
-C$.superclazz.c$$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this, [parent, a]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this,[parent, a]);C$.$init$.apply(this);
 try {
 this.p0=this.this$0.createPosition$I.apply(this.this$0, [offs0]);
 this.p1=this.this$0.createPosition$I.apply(this.this$0, [offs1]);
@@ -677,7 +679,7 @@ this.p1=this.this$0.createPosition$I.apply(this.this$0, [offs1]);
 if (Clazz.exceptionOf(e,"javax.swing.text.BadLocationException")){
 this.p0=null;
 this.p1=null;
-throw Clazz.new_($I$(4).c$$S,["Can\'t create Position references"]);
+throw Clazz.new_($I$(4,1).c$$S,["Can\'t create Position references"]);
 } else {
 throw e;
 }
@@ -730,27 +732,19 @@ return null;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractDocument, "DefaultDocumentEvent", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractDocument, "DefaultDocumentEvent", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.undo.CompoundEdit', 'javax.swing.event.DocumentEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.length=0;
-this.changeLookup=null;
-this.type=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offset','length'],'O',['changeLookup','java.util.Hashtable','type','javax.swing.event.DocumentEvent.EventType']]]
 
 Clazz.newMeth(C$, 'c$$I$I$javax_swing_event_DocumentEvent_EventType', function (offs, len, type) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.offset=offs;
 this.length=len;
 this.type=type;
@@ -762,17 +756,16 @@ return this.edits.toString();
 
 Clazz.newMeth(C$, 'addEdit$javax_swing_undo_UndoableEdit', function (anEdit) {
 if ((this.changeLookup == null ) && (this.edits.size$() > 10) ) {
-this.changeLookup=Clazz.new_($I$(5));
-var n=this.edits.size$();
-for (var i=0; i < n; i++) {
-var o=this.edits.elementAt$I(i);
+this.changeLookup=Clazz.new_($I$(5,1));
+for (var i=0, n=this.edits.size$(); i < n; i++) {
+var o=this.edits.get$I(i);
 if (Clazz.instanceOf(o, "javax.swing.event.DocumentEvent.ElementChange")) {
 var ec=o;
-this.changeLookup.put$TK$TV(ec.getElement$(), ec);
+this.changeLookup.put$O$O(ec.getElement$(), ec);
 }}
 }if ((this.changeLookup != null ) && (Clazz.instanceOf(anEdit, "javax.swing.event.DocumentEvent.ElementChange")) ) {
 var ec=anEdit;
-this.changeLookup.put$TK$TV(ec.getElement$(), ec);
+this.changeLookup.put$O$O(ec.getElement$(), ec);
 }return C$.superclazz.prototype.addEdit$javax_swing_undo_UndoableEdit.apply(this, [anEdit]);
 });
 
@@ -780,7 +773,7 @@ Clazz.newMeth(C$, 'redo$', function () {
 this.this$0.writeLock$.apply(this.this$0, []);
 try {
 C$.superclazz.prototype.redo$.apply(this, []);
-var ev=Clazz.new_($I$(6).c$$javax_swing_text_AbstractDocument_DefaultDocumentEvent$Z, [this, null, this, false]);
+var ev=Clazz.new_($I$(6,1).c$$javax_swing_text_AbstractDocument_DefaultDocumentEvent$Z,[this, null, this, false]);
 if (this.type === $I$(7).INSERT ) {
 this.this$0.fireInsertUpdate$javax_swing_event_DocumentEvent.apply(this.this$0, [ev]);
 } else if (this.type === $I$(7).REMOVE ) {
@@ -796,7 +789,7 @@ Clazz.newMeth(C$, 'undo$', function () {
 this.this$0.writeLock$.apply(this.this$0, []);
 try {
 C$.superclazz.prototype.undo$.apply(this, []);
-var ev=Clazz.new_($I$(6).c$$javax_swing_text_AbstractDocument_DefaultDocumentEvent$Z, [this, null, this, true]);
+var ev=Clazz.new_($I$(6,1).c$$javax_swing_text_AbstractDocument_DefaultDocumentEvent$Z,[this, null, this, true]);
 if (this.type === $I$(7).REMOVE ) {
 this.this$0.fireInsertUpdate$javax_swing_event_DocumentEvent.apply(this.this$0, [ev]);
 } else if (this.type === $I$(7).INSERT ) {
@@ -846,9 +839,8 @@ return this.this$0;
 Clazz.newMeth(C$, 'getChange$javax_swing_text_Element', function (elem) {
 if (this.changeLookup != null ) {
 return this.changeLookup.get$O(elem);
-}var n=this.edits.size$();
-for (var i=0; i < n; i++) {
-var o=this.edits.elementAt$I(i);
+}for (var i=0, n=this.edits.size$(); i < n; i++) {
+var o=this.edits.get$I(i);
 if (Clazz.instanceOf(o, "javax.swing.event.DocumentEvent.ElementChange")) {
 var c=o;
 if (elem.equals$O(c.getElement$())) {
@@ -860,26 +852,21 @@ return null;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractDocument, "UndoRedoDocumentEvent", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractDocument, "UndoRedoDocumentEvent", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.DocumentEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.src=null;
-this.type=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.src=null;
 this.type=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['src','javax.swing.text.AbstractDocument.DefaultDocumentEvent','type','javax.swing.event.DocumentEvent.EventType']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_DefaultDocumentEvent$Z', function (src, isUndo) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.src=src;
 if (isUndo) {
 if (src.getType$().equals$O($I$(7).INSERT)) {
@@ -919,27 +906,19 @@ return this.src.getChange$javax_swing_text_Element(elem);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractDocument, "ElementEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractDocument, "ElementEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit', [['javax.swing.event.DocumentEvent','javax.swing.event.DocumentEvent.ElementChange']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.e=null;
-this.index=0;
-this.removed=null;
-this.added=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index'],'O',['e','javax.swing.text.Element','removed','javax.swing.text.Element[]','+added']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA', function (e, index, removed, added) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.e=e;
 this.index=index;
 this.removed=removed;
@@ -981,15 +960,14 @@ this.added=tmp;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractDocument, "DefaultFilterBypass", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractDocument, "DefaultFilterBypass", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.DocumentFilter','.FilterBypass']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getDocument$', function () {
 return this.this$0;
@@ -1004,8 +982,10 @@ this.this$0.handleInsertString$I$S$javax_swing_text_AttributeSet.apply(this.this
 });
 
 Clazz.newMeth(C$, 'replace$I$I$S$javax_swing_text_AttributeSet', function (offset, length, text, attrs) {
+this.this$0.秘replacing=true;
 this.this$0.handleRemove$I$I.apply(this.this$0, [offset, length]);
 this.this$0.handleInsertString$I$S$javax_swing_text_AttributeSet.apply(this.this$0, [offset, text, attrs]);
+this.this$0.秘replacing=false;
 });
 
 Clazz.newMeth(C$);
@@ -1013,4 +993,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

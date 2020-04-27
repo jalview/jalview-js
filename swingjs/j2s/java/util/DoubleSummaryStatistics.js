@@ -1,29 +1,20 @@
 (function(){var P$=java.util,p$1={};
-var C$=Clazz.newClass(P$, "DoubleSummaryStatistics", null, null, 'java.util.function.DoubleConsumer');
+/*c*/var C$=Clazz.newClass(P$, "DoubleSummaryStatistics", null, null, 'java.util.function.DoubleConsumer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.count=0;
-this.sum=0;
-this.sumCompensation=0;
-this.simpleSum=0;
-this.min=0;
-this.max=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.min=Infinity;
 this.max=-Infinity;
-}, 1);
+},1);
+
+C$.$fields$=[['D',['sum','sumCompensation','simpleSum','min','max'],'J',['count']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['accept$D','accept$'], function (value) {
+Clazz.newMeth(C$, 'accept$D', function (value) {
 ++this.count;
 this.simpleSum += value;
 p$1.sumWithCompensation$D.apply(this, [value]);
@@ -73,4 +64,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return String.format$S$OA("%s{count=%d, sum=%f, min=%f, average=%f, max=%f}", [this.getClass$().getSimpleName$(), new Long(this.getCount$()), new Double(this.getSum$()), new Double(this.getMin$()), new Double(this.getAverage$()), new Double(this.getMax$())]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:45 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

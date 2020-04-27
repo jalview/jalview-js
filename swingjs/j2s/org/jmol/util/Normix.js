@@ -1,22 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.Geodesic','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Normix");
-C$.normixCount=0;
-C$.vertexVectors=null;
-C$.inverseNormixes=null;
-C$.neighborVertexesArrays=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.Geodesic','javajs.util.BS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Normix");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['H',['normixCount'],'O',['vertexVectors','javajs.util.V3[]','inverseNormixes','short[]','neighborVertexesArrays','short[][]']]]
 
 Clazz.newMeth(C$, 'getNormixCount$', function () {
 return (C$.normixCount > 1 ? C$.normixCount : (C$.normixCount=$I$(1).getVertexCount$I(3)));
 }, 1);
 
 Clazz.newMeth(C$, 'newVertexBitSet$', function () {
-return $I$(2).newN$I(C$.getNormixCount$());
+return (function(a,f){return f.apply(null,a)})([C$.getNormixCount$()],$I$(2).newN$I);
 }, 1);
 
 Clazz.newMeth(C$, 'getVertexVectors$', function () {
@@ -29,7 +27,7 @@ if (C$.inverseNormixes != null ) return;
 C$.getNormixCount$();
 C$.getVertexVectors$();
 C$.inverseNormixes=Clazz.array(Short.TYPE, [C$.normixCount]);
-var bsTemp=Clazz.new_($I$(2));
+var bsTemp=Clazz.new_($I$(2,1));
 for (var n=C$.normixCount; --n >= 0; ) {
 var v=C$.vertexVectors[n];
 C$.inverseNormixes[n]=C$.getNormix$D$D$D$I$javajs_util_BS(-v.x, -v.y, -v.z, 3, bsTemp);
@@ -95,4 +93,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'java.util.ArrayList','org.json.JSONObject','org.json.JSONTokener','java.lang.reflect.Array','Boolean','java.math.BigDecimal','java.math.BigInteger','StringBuilder','Enum','org.json.JSONPointer','java.io.StringWriter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONArray", null, null, 'Iterable');
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'java.util.ArrayList','org.json.JSONObject','org.json.JSONTokener','java.lang.reflect.Array','java.math.BigDecimal','java.math.BigInteger','StringBuilder','Enum','org.json.JSONPointer','java.io.StringWriter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONArray", null, null, 'Iterable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myArrayList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['myArrayList','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.myArrayList=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.myArrayList=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_json_JSONTokener', function (x) {
@@ -29,10 +25,10 @@ x.back$();
 for (; ; ) {
 if (x.nextClean$() == ",") {
 x.back$();
-this.myArrayList.add$TE($I$(2).NULL);
+this.myArrayList.add$O($I$(2).NULL);
 } else {
 x.back$();
-this.myArrayList.add$TE(x.nextValue$());
+this.myArrayList.add$O(x.nextValue$());
 }switch ((x.nextClean$()).$c()) {
 case 0:
 throw x.syntaxError$S("Expected a \',\' or \']\'");
@@ -53,17 +49,17 @@ throw x.syntaxError$S("Expected a \',\' or \']\'");
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (source) {
-C$.c$$org_json_JSONTokener.apply(this, [Clazz.new_($I$(3).c$$S,[source])]);
+C$.c$$org_json_JSONTokener.apply(this, [Clazz.new_($I$(3,1).c$$S,[source])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (collection) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (collection == null ) {
-this.myArrayList=Clazz.new_($I$(1));
+this.myArrayList=Clazz.new_($I$(1,1));
 } else {
-this.myArrayList=Clazz.new_($I$(1).c$$I,[collection.size$()]);
+this.myArrayList=Clazz.new_([collection.size$()],$I$(1,1).c$$I);
 for (var o, $o = collection.iterator$(); $o.hasNext$()&&((o=($o.next$())),1);) {
-this.myArrayList.add$TE($I$(2).wrap$O(o));
+this.myArrayList.add$O($I$(2).wrap$O(o));
 }
 }}, 1);
 
@@ -73,7 +69,7 @@ if (array.getClass$().isArray$()) {
 var length=$I$(4).getLength$O(array);
 this.myArrayList.ensureCapacity$I(length);
 for (var i=0; i < length; i+=1) {
-this.put$O($I$(2).wrap$O($I$(4).get$O$I(array, i)));
+this.put$O($I$(2,"wrap$O",[$I$(4).get$O$I(array, i)]));
 }
 } else {
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONArray initial value should be a string or collection or array."]);
@@ -92,9 +88,9 @@ throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONArray[" + index
 
 Clazz.newMeth(C$, 'getBoolean$I', function (index) {
 var object=this.get$I(index);
-if (object.equals$O($I$(5).FALSE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("false") ) ) {
+if (object.equals$O(Boolean.FALSE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("false") ) ) {
 return false;
-} else if (object.equals$O($I$(5).TRUE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("true") ) ) {
+} else if (object.equals$O(Boolean.TRUE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("true") ) ) {
 return true;
 }throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONArray[" + index + "] is not a boolean." ]);
 });
@@ -130,7 +126,7 @@ var object=this.get$I(index);
 try {
 if (Clazz.instanceOf(object, "java.lang.Number")) {
 return object;
-}return $I$(2).stringToNumber$S(object.toString());
+}return $I$(2,"stringToNumber$S",[object.toString()]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,["JSONArray[" + index + "] is not a number." , e]);
@@ -143,14 +139,14 @@ throw e;
 Clazz.newMeth(C$, 'getEnum$Class$I', function (clazz, index) {
 var val=this.optEnum$Class$I(clazz, index);
 if (val == null ) {
-throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONArray[" + index + "] is not an enum of type " + $I$(2).quote$S(clazz.getSimpleName$()) + "." ]);
+throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONArray[" + index + "] is not an enum of type " + $I$(2,"quote$S",[clazz.getSimpleName$()]) + "." ]);
 }return val;
 });
 
 Clazz.newMeth(C$, 'getBigDecimal$I', function (index) {
 var object=this.get$I(index);
 try {
-return Clazz.new_($I$(6).c$$S,[object.toString()]);
+return Clazz.new_([object.toString()],$I$(5,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,["JSONArray[" + index + "] could not convert to BigDecimal." , e]);
@@ -163,7 +159,7 @@ throw e;
 Clazz.newMeth(C$, 'getBigInteger$I', function (index) {
 var object=this.get$I(index);
 try {
-return Clazz.new_($I$(7).c$$S,[object.toString()]);
+return Clazz.new_([object.toString()],$I$(6,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,["JSONArray[" + index + "] could not convert to BigInteger." , e]);
@@ -226,11 +222,11 @@ return $I$(2).NULL.equals$O(this.opt$I(index));
 
 Clazz.newMeth(C$, 'join$S', function (separator) {
 var len=this.length$();
-var sb=Clazz.new_($I$(8));
+var sb=Clazz.new_($I$(7,1));
 for (var i=0; i < len; i+=1) {
 if (i > 0) {
 sb.append$S(separator);
-}sb.append$S($I$(2).valueToString$O(this.myArrayList.get$I(i)));
+}sb.append$S($I$(2,"valueToString$O",[this.myArrayList.get$I(i)]));
 }
 return sb.toString();
 });
@@ -317,7 +313,7 @@ return defaultValue;
 return (val).intValue$();
 }if (Clazz.instanceOf(val, "java.lang.String")) {
 try {
-return Clazz.new_($I$(6).c$$S,[val.toString()]).intValue$();
+return Clazz.new_([val.toString()],$I$(5,1).c$$S).intValue$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -329,10 +325,10 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'optEnum$Class$I', function (clazz, index) {
-return this.optEnum$Class$I$TE(clazz, index, null);
+return this.optEnum$Class$I$Enum(clazz, index, null);
 });
 
-Clazz.newMeth(C$, 'optEnum$Class$I$TE', function (clazz, index, defaultValue) {
+Clazz.newMeth(C$, 'optEnum$Class$I$Enum', function (clazz, index, defaultValue) {
 try {
 var val=this.opt$I(index);
 if ($I$(2).NULL.equals$O(val)) {
@@ -340,7 +336,7 @@ return defaultValue;
 }if (clazz.isAssignableFrom$Class(val.getClass$())) {
 var myE=val;
 return myE;
-}return $I$(9).valueOf$Class$S(clazz, val.toString());
+}return $I$(8,"valueOf$Class$S",[clazz, val.toString()]);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"IllegalArgumentException")){
 var e = e$$;
@@ -367,14 +363,14 @@ return val;
 }if (Clazz.instanceOf(val, "java.math.BigDecimal")) {
 return (val).toBigInteger$();
 }if (Clazz.instanceOf(val, "java.lang.Double") || Clazz.instanceOf(val, "java.lang.Float") ) {
-return Clazz.new_($I$(6).c$$D,[(val).doubleValue$()]).toBigInteger$();
+return Clazz.new_([(val).doubleValue$()],$I$(5,1).c$$D).toBigInteger$();
 }if (Clazz.instanceOf(val, "java.lang.Long") || Clazz.instanceOf(val, "java.lang.Integer") || Clazz.instanceOf(val, "java.lang.Short") || Clazz.instanceOf(val, "java.lang.Byte")  ) {
-return $I$(7).valueOf$J((val).longValue$());
+return $I$(6,"valueOf$J",[(val).longValue$()]);
 }try {
 var valStr=val.toString();
 if ($I$(2).isDecimalNotation$S(valStr)) {
-return Clazz.new_($I$(6).c$$S,[valStr]).toBigInteger$();
-}return Clazz.new_($I$(7).c$$S,[valStr]);
+return Clazz.new_($I$(5,1).c$$S,[valStr]).toBigInteger$();
+}return Clazz.new_($I$(6,1).c$$S,[valStr]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -391,13 +387,13 @@ return defaultValue;
 }if (Clazz.instanceOf(val, "java.math.BigDecimal")) {
 return val;
 }if (Clazz.instanceOf(val, "java.math.BigInteger")) {
-return Clazz.new_($I$(6).c$$java_math_BigInteger,[val]);
+return Clazz.new_($I$(5,1).c$$java_math_BigInteger,[val]);
 }if (Clazz.instanceOf(val, "java.lang.Double") || Clazz.instanceOf(val, "java.lang.Float") ) {
-return Clazz.new_($I$(6).c$$D,[(val).doubleValue$()]);
+return Clazz.new_([(val).doubleValue$()],$I$(5,1).c$$D);
 }if (Clazz.instanceOf(val, "java.lang.Long") || Clazz.instanceOf(val, "java.lang.Integer") || Clazz.instanceOf(val, "java.lang.Short") || Clazz.instanceOf(val, "java.lang.Byte")  ) {
-return Clazz.new_($I$(6).c$$J,[(val).longValue$()]);
+return Clazz.new_([(val).longValue$()],$I$(5,1).c$$J);
 }try {
-return Clazz.new_($I$(6).c$$S,[val.toString()]);
+return Clazz.new_([val.toString()],$I$(5,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -429,7 +425,7 @@ return defaultValue;
 return (val).longValue$();
 }if (Clazz.instanceOf(val, "java.lang.String")) {
 try {
-return Clazz.new_($I$(6).c$$S,[val.toString()]).longValue$();
+return Clazz.new_([val.toString()],$I$(5,1).c$$S).longValue$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -473,7 +469,7 @@ return $I$(2).NULL.equals$O(object) ? defaultValue : object.toString();
 });
 
 Clazz.newMeth(C$, 'put$Z', function (value) {
-return this.put$O(value ? $I$(5).TRUE : $I$(5).FALSE);
+return this.put$O(value ? Boolean.TRUE : Boolean.FALSE);
 });
 
 Clazz.newMeth(C$, 'put$java_util_Collection', function (value) {
@@ -497,17 +493,17 @@ return this.put$O(Long.valueOf$J(value));
 });
 
 Clazz.newMeth(C$, 'put$java_util_Map', function (value) {
-return this.put$O(Clazz.new_($I$(2).c$$java_util_Map,[value]));
+return this.put$O(Clazz.new_($I$(2,1).c$$java_util_Map,[value]));
 });
 
 Clazz.newMeth(C$, 'put$O', function (value) {
 $I$(2).testValidity$O(value);
-this.myArrayList.add$TE(value);
+this.myArrayList.add$O(value);
 return this;
 });
 
 Clazz.newMeth(C$, 'put$I$Z', function (index, value) {
-return this.put$I$O(index, value ? $I$(5).TRUE : $I$(5).FALSE);
+return this.put$I$O(index, value ? Boolean.TRUE : Boolean.FALSE);
 });
 
 Clazz.newMeth(C$, 'put$I$java_util_Collection', function (index, value) {
@@ -531,7 +527,7 @@ return this.put$I$O(index, Long.valueOf$J(value));
 });
 
 Clazz.newMeth(C$, 'put$I$java_util_Map', function (index, value) {
-this.put$I$O(index, Clazz.new_($I$(2).c$$java_util_Map,[value]));
+this.put$I$O(index, Clazz.new_($I$(2,1).c$$java_util_Map,[value]));
 return this;
 });
 
@@ -540,19 +536,19 @@ if (index < 0) {
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONArray[" + index + "] not found." ]);
 }if (index < this.length$()) {
 $I$(2).testValidity$O(value);
-this.myArrayList.set$I$TE(index, value);
+this.myArrayList.set$I$O(index, value);
 return this;
 }if (index == this.length$()) {
 return this.put$O(value);
 }this.myArrayList.ensureCapacity$I(index + 1);
 while (index != this.length$()){
-this.myArrayList.add$TE($I$(2).NULL);
+this.myArrayList.add$O($I$(2).NULL);
 }
 return this.put$O(value);
 });
 
 Clazz.newMeth(C$, 'query$S', function (jsonPointer) {
-return this.query$org_json_JSONPointer(Clazz.new_($I$(10).c$$S,[jsonPointer]));
+return this.query$org_json_JSONPointer(Clazz.new_($I$(9,1).c$$S,[jsonPointer]));
 });
 
 Clazz.newMeth(C$, 'query$org_json_JSONPointer', function (jsonPointer) {
@@ -560,7 +556,7 @@ return jsonPointer.queryFrom$O(this);
 });
 
 Clazz.newMeth(C$, 'optQuery$S', function (jsonPointer) {
-return this.optQuery$org_json_JSONPointer(Clazz.new_($I$(10).c$$S,[jsonPointer]));
+return this.optQuery$org_json_JSONPointer(Clazz.new_($I$(9,1).c$$S,[jsonPointer]));
 });
 
 Clazz.newMeth(C$, 'optQuery$org_json_JSONPointer', function (jsonPointer) {
@@ -607,7 +603,7 @@ return true;
 Clazz.newMeth(C$, 'toJSONObject$org_json_JSONArray', function (names) {
 if (names == null  || names.isEmpty$()  || this.isEmpty$() ) {
 return null;
-}var jo=Clazz.new_($I$(2).c$$I,[names.length$()]);
+}var jo=Clazz.new_([names.length$()],$I$(2,1).c$$I);
 for (var i=0; i < names.length$(); i+=1) {
 jo.put$S$O(names.getString$I(i), this.opt$I(i));
 }
@@ -627,7 +623,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'toString$I', function (indentFactor) {
-var sw=Clazz.new_($I$(11));
+var sw=Clazz.new_($I$(10,1));
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(sw.getBuffer$());
 {
 return this.write$java_io_Writer$I$I(sw, indentFactor, 0).toString();
@@ -644,7 +640,7 @@ var length=this.length$();
 writer.write$I("[".$c());
 if (length == 1) {
 try {
-$I$(2).writeValue$java_io_Writer$O$I$I(writer, this.myArrayList.get$I(0), indentFactor, indent);
+$I$(2,"writeValue$java_io_Writer$O$I$I",[writer, this.myArrayList.get$I(0), indentFactor, indent]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,["Unable to write JSONArray value at index: 0", e]);
@@ -661,7 +657,7 @@ writer.write$I(",".$c());
 writer.write$I("\n".$c());
 }$I$(2).indent$java_io_Writer$I(writer, newindent);
 try {
-$I$(2).writeValue$java_io_Writer$O$I$I(writer, this.myArrayList.get$I(i), indentFactor, newindent);
+$I$(2,"writeValue$java_io_Writer$O$I$I",[writer, this.myArrayList.get$I(i), indentFactor, newindent]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,["Unable to write JSONArray value at index: " + i, e]);
@@ -686,16 +682,16 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'toList$', function () {
-var results=Clazz.new_($I$(1).c$$I,[this.myArrayList.size$()]);
+var results=Clazz.new_([this.myArrayList.size$()],$I$(1,1).c$$I);
 for (var element, $element = this.myArrayList.iterator$(); $element.hasNext$()&&((element=($element.next$())),1);) {
 if (element == null  || $I$(2).NULL.equals$O(element) ) {
-results.add$TE(null);
+results.add$O(null);
 } else if (Clazz.instanceOf(element, "org.json.JSONArray")) {
-results.add$TE((element).toList$());
+results.add$O((element).toList$());
 } else if (Clazz.instanceOf(element, "org.json.JSONObject")) {
-results.add$TE((element).toMap$());
+results.add$O((element).toMap$());
 } else {
-results.add$TE(element);
+results.add$O(element);
 }}
 return results;
 });
@@ -704,4 +700,4 @@ Clazz.newMeth(C$, 'isEmpty$', function () {
 return this.myArrayList.isEmpty$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:31 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

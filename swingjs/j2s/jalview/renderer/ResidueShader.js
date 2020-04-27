@@ -1,31 +1,21 @@
-(function(){var P$=Clazz.newPackage("jalview.renderer"),I$=[[0,'java.awt.Color','jalview.util.Comparison','jalview.util.ColorUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ResidueShader", null, null, 'jalview.renderer.ResidueShaderI');
+(function(){var P$=Clazz.newPackage("jalview.renderer"),I$=[[0,'java.awt.Color','jalview.util.Comparison','jalview.util.ColorUtils']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ResidueShader", null, null, 'jalview.renderer.ResidueShaderI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.colourScheme=null;
-this.consensus=null;
-this.conservationColouring=false;
-this.conservation=null;
-this.pidThreshold=0;
-this.ignoreGaps=false;
-this.conservationIncrement=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.conservationIncrement=30;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['conservationColouring','ignoreGaps'],'I',['pidThreshold','conservationIncrement'],'O',['colourScheme','jalview.schemes.ColourSchemeI','consensus','jalview.datamodel.ProfilesI','conservation','char[]']]]
 
 Clazz.newMeth(C$, 'c$$jalview_schemes_ColourSchemeI', function (cs) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.colourScheme=cs;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_api_ViewStyleI', function (viewStyle) {
@@ -34,7 +24,7 @@ this.setConservationApplied$Z(viewStyle.isConservationColourSelected$());
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_renderer_ResidueShader', function (rs) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.colourScheme=rs.colourScheme;
 this.consensus=rs.consensus;
 this.conservation=rs.conservation;
@@ -142,4 +132,4 @@ Clazz.newMeth(C$, 'setColourScheme$jalview_schemes_ColourSchemeI', function (cs)
 this.colourScheme=cs;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

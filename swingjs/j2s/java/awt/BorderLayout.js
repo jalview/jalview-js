@@ -1,33 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BorderLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BorderLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.hgap=0;
-this.vgap=0;
-this.north=null;
-this.west=null;
-this.east=null;
-this.south=null;
-this.center=null;
-this.firstLine=null;
-this.lastLine=null;
-this.firstItem=null;
-this.lastItem=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['hgap','vgap'],'O',['north','java.awt.Component','+west','+east','+south','+center','+firstLine','+lastLine','+firstItem','+lastItem']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (hgap, vgap) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.hgap=hgap;
 this.vgap=vgap;
 }, 1);
@@ -179,7 +165,7 @@ return "After";
 Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var ltr=target.getComponentOrientation$().isLeftToRight$();
 var c=null;
 if ((c=p$1.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
@@ -211,7 +197,7 @@ return dim;
 Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var ltr=target.getComponentOrientation$().isLeftToRight$();
 var c=null;
 if ((c=p$1.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
@@ -241,7 +227,7 @@ return dim;
 }});
 
 Clazz.newMeth(C$, 'maximumLayoutSize$java_awt_Container', function (target) {
-return Clazz.new_($I$(1).c$$I$I,[2147483647, 2147483647]);
+return Clazz.new_($I$(1,1).c$$I$I,[2147483647, 2147483647]);
 });
 
 Clazz.newMeth(C$, 'getLayoutAlignmentX$java_awt_Container', function (parent) {
@@ -314,4 +300,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

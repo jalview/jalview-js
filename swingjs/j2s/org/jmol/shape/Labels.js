@@ -1,55 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shape"),p$1={},I$=[[0,'org.jmol.modelset.LabelToken','java.util.Hashtable','javajs.util.P3','org.jmol.viewer.JC','org.jmol.c.PAL','org.jmol.util.C','org.jmol.modelset.Text','org.jmol.script.SV','javajs.util.BS','javajs.util.AU','org.jmol.util.BSUtil','javajs.awt.Font','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Labels", null, 'org.jmol.shape.AtomShape');
-C$.nullToken=null;
+(function(){var P$=Clazz.newPackage("org.jmol.shape"),p$1={},I$=[[0,'org.jmol.modelset.LabelToken','java.util.Hashtable','javajs.util.P3','org.jmol.viewer.JC','org.jmol.c.PAL','org.jmol.util.C','org.jmol.modelset.Text','org.jmol.script.SV','javajs.util.BS','javajs.util.AU','org.jmol.util.BSUtil','org.jmol.util.Font','javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Labels", null, 'org.jmol.shape.AtomShape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nullToken=Clazz.array($I$(1), -2, [null]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.strings=null;
-this.formats=null;
-this.bgcolixes=null;
-this.fids=null;
-this.offsets=null;
-this.atomLabels=null;
-this.labelBoxes=null;
-this.bsFontSet=null;
-this.bsBgColixSet=null;
-this.defaultOffset=0;
-this.defaultAlignment=0;
-this.defaultZPos=0;
-this.defaultFontId=0;
-this.defaultColix=0;
-this.defaultBgcolix=0;
-this.defaultPaletteID=0;
-this.defaultPointer=0;
-this.zeroFontId=0;
-this.defaultsOnlyForNone=false;
-this.setDefaults=false;
-this.isScaled=false;
-this.scalePixelsPerMicron=0;
-this.ptTemp=null;
-this.pickedAtom=0;
-this.lastPicked=0;
-this.pickedOffset=0;
-this.pickedX=0;
-this.pickedY=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.atomLabels=Clazz.new_($I$(2));
+this.atomLabels=Clazz.new_($I$(2,1));
 this.defaultsOnlyForNone=true;
 this.setDefaults=false;
-this.ptTemp=Clazz.new_($I$(3));
+this.ptTemp=Clazz.new_($I$(3,1));
 this.pickedAtom=-1;
 this.lastPicked=-1;
 this.pickedOffset=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['defaultsOnlyForNone','setDefaults','isScaled'],'B',['defaultFontId','defaultPaletteID','zeroFontId'],'F',['scalePixelsPerMicron'],'I',['defaultOffset','defaultAlignment','defaultZPos','defaultPointer','pickedAtom','lastPicked','pickedOffset','pickedX','pickedY'],'H',['defaultColix','defaultBgcolix'],'O',['strings','String[]','+formats','bgcolixes','short[]','fids','byte[]','offsets','int[]','atomLabels','java.util.Map','+labelBoxes','bsFontSet','javajs.util.BS','+bsBgColixSet','ptTemp','javajs.util.P3']]
+,['O',['nullToken','org.jmol.modelset.LabelToken[][]']]]
 
 Clazz.newMeth(C$, 'initShape$', function () {
-this.defaultFontId=($b$[0] = this.zeroFontId=($b$[0] = this.vwr.gdata.getFont3DFSS$S$S$F("SansSerif", "Plain", 13).fid, $b$[0]), $b$[0]);
+this.defaultFontId=this.zeroFontId=this.vwr.gdata.getFont3DFSS$S$S$F("SansSerif", "Plain", 13).fid;
 this.defaultColix=($s$[0] = 0, $s$[0]);
 this.defaultBgcolix=($s$[0] = 0, $s$[0]);
 this.defaultOffset=$I$(4).LABEL_DEFAULT_OFFSET;
@@ -65,15 +33,15 @@ if ("setDefaults" == propertyName) {
 this.setDefaults=(value).booleanValue$();
 return;
 }if ("color" == propertyName) {
-var pid=($b$[0] = $I$(5).pidOf$O(value), $b$[0]);
+var pid=$I$(5).pidOf$O(value);
 var colix=$I$(6).getColixO$O(value);
 if (!this.setDefaults) {
 var n=this.checkColixLength$H$I(colix, bsSelected.length$());
-for (var i=bsSelected.nextSetBit$I(0); i >= 0 && i < n ; i=bsSelected.nextSetBit$I(i + 1)) p$1.setLabelColix$I$H$B.apply(this, [i, colix, ($b$[0] = pid, $b$[0])]);
+for (var i=bsSelected.nextSetBit$I(0); i >= 0 && i < n ; i=bsSelected.nextSetBit$I(i + 1)) p$1.setLabelColix$I$H$B.apply(this, [i, colix, pid]);
 
 }if (this.setDefaults || !this.defaultsOnlyForNone ) {
 this.defaultColix=colix;
-this.defaultPaletteID=($b$[0] = pid, $b$[0]);
+this.defaultPaletteID=pid;
 }return;
 }if ("scalereference" == propertyName) {
 if (this.strings == null ) return;
@@ -83,7 +51,7 @@ var n=Math.min(this.ac, this.strings.length);
 for (var i=bsSelected.nextSetBit$I(0); i >= 0 && i < n ; i=bsSelected.nextSetBit$I(i + 1)) {
 var text=this.getLabel$I(i);
 if (text == null ) {
-text=$I$(7).newLabel$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$H$I$F(this.vwr, null, this.strings[i], 0, 0, 0, scalePixelsPerMicron);
+text=$I$(7).newLabel$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$H$I$F(this.vwr, null, this.strings[i], 0, 0, 0, scalePixelsPerMicron);
 this.putLabel$I$org_jmol_modelset_Text(i, text);
 } else {
 text.setScalePixelsPerMicron$F(scalePixelsPerMicron);
@@ -105,7 +73,7 @@ if (pt >= n) {
 p$1.setLabel$org_jmol_modelset_LabelTokenAA$S$I$Z.apply(this, [C$.nullToken, "", i, !isPicked]);
 continue;
 }tokens[0]=null;
-p$1.setLabel$org_jmol_modelset_LabelTokenAA$S$I$Z.apply(this, [tokens, $I$(8).sValue$org_jmol_script_T(list.get$I(pt++)), i, !isPicked]);
+p$1.setLabel$org_jmol_modelset_LabelTokenAA$S$I$Z.apply(this, [tokens, (function(a,f){return f.apply(null,a)})([list.get$I(pt++)],$I$(8).sValue$org_jmol_script_T), i, !isPicked]);
 }
 } else {
 var strLabel=value;
@@ -141,16 +109,16 @@ var fontsize=(value).intValue$();
 if (fontsize < 0) {
 this.fids=null;
 return;
-}var fid=($b$[0] = this.vwr.gdata.getFontFid$F(fontsize), $b$[0]);
-if (!this.setDefaults) for (var i=bsSelected.nextSetBit$I(0); i >= 0 && i < this.ac ; i=bsSelected.nextSetBit$I(i + 1)) p$1.setFont$I$B.apply(this, [i, ($b$[0] = fid, $b$[0])]);
+}var fid=this.vwr.gdata.getFontFid$F(fontsize);
+if (!this.setDefaults) for (var i=bsSelected.nextSetBit$I(0); i >= 0 && i < this.ac ; i=bsSelected.nextSetBit$I(i + 1)) p$1.setFont$I$B.apply(this, [i, fid]);
 
-if (this.setDefaults || !this.defaultsOnlyForNone ) this.defaultFontId=($b$[0] = fid, $b$[0]);
+if (this.setDefaults || !this.defaultsOnlyForNone ) this.defaultFontId=fid;
 return;
 }if ("font" == propertyName) {
-var fid=($b$[0] = (value).fid, $b$[0]);
-if (!this.setDefaults) for (var i=bsSelected.nextSetBit$I(0); i >= 0 && i < this.ac ; i=bsSelected.nextSetBit$I(i + 1)) p$1.setFont$I$B.apply(this, [i, ($b$[0] = fid, $b$[0])]);
+var fid=(value).fid;
+if (!this.setDefaults) for (var i=bsSelected.nextSetBit$I(0); i >= 0 && i < this.ac ; i=bsSelected.nextSetBit$I(i + 1)) p$1.setFont$I$B.apply(this, [i, fid]);
 
-if (this.setDefaults || !this.defaultsOnlyForNone ) this.defaultFontId=($b$[0] = fid, $b$[0]);
+if (this.setDefaults || !this.defaultsOnlyForNone ) this.defaultFontId=fid;
 return;
 }if ("offset" == propertyName) {
 if (!(Clazz.instanceOf(value, "java.lang.Integer"))) {
@@ -275,9 +243,9 @@ Clazz.newMeth(C$, 'setPymolOffset$I$FA', function (i, value) {
 var text=this.getLabel$I(i);
 if (text == null ) {
 if (this.strings == null  || i >= this.strings.length  || this.strings[i] == null  ) return;
-var fid=($b$[0] = (this.bsFontSet != null  && this.bsFontSet.get$I(i)  ? (this.fids[i]|0) : (-1|0)), $b$[0]);
-if (fid < 0) p$1.setFont$I$B.apply(this, [i, ($b$[0] = fid=($b$[0] = this.defaultFontId, $b$[0]), $b$[0])]);
-text=$I$(7).newLabel$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$H$I$F(this.vwr, $I$(12).getFont3D$B(($b$[0] = fid, $b$[0])), this.strings[i], this.getColix2$I$org_jmol_modelset_Atom$Z(i, this.atoms[i], false), this.getColix2$I$org_jmol_modelset_Atom$Z(i, this.atoms[i], true), 0, this.scalePixelsPerMicron);
+var fid=(this.bsFontSet != null  && this.bsFontSet.get$I(i)  ? this.fids[i] : ($b$[0] = -1, $b$[0]));
+if (fid < 0) p$1.setFont$I$B.apply(this, [i, fid=this.defaultFontId]);
+text=(function(a,f){return f.apply(null,a)})([this.vwr, $I$(12).getFont3D$B(fid), this.strings[i], this.getColix2$I$org_jmol_modelset_Atom$Z(i, this.atoms[i], false), this.getColix2$I$org_jmol_modelset_Atom$Z(i, this.atoms[i], true), 0, this.scalePixelsPerMicron],$I$(7).newLabel$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$H$I$F);
 p$1.setPymolLabel$I$org_jmol_modelset_Text$S.apply(this, [i, text, this.formats[i]]);
 }text.pymolOffset=value;
 }, p$1);
@@ -295,8 +263,8 @@ var label=t.text;
 var atom=this.atoms[i];
 p$1.addString$org_jmol_modelset_Atom$I$S$S.apply(this, [atom, i, label, format == null  ? $I$(13).rep$S$S$S(label, "%", "%%") : format]);
 atom.setShapeVisibility$I$Z(this.vf, true);
-if (t.colix >= 0) p$1.setLabelColix$I$H$B.apply(this, [i, t.colix, ($b$[0] = $I$(5).UNKNOWN.id, $b$[0])]);
-p$1.setFont$I$B.apply(this, [i, ($b$[0] = t.font.fid, $b$[0])]);
+if (t.colix >= 0) p$1.setLabelColix$I$H$B.apply(this, [i, t.colix, $I$(5).UNKNOWN.id]);
+p$1.setFont$I$B.apply(this, [i, t.font.fid]);
 this.putLabel$I$org_jmol_modelset_Text(i, t);
 }, p$1);
 
@@ -309,7 +277,7 @@ var isNew=p$1.addString$org_jmol_modelset_Atom$I$S$S.apply(this, [atom, i, label
 doAll|=isNew || label == null  ;
 var text=this.getLabel$I(i);
 if (this.isScaled && doAll ) {
-text=$I$(7).newLabel$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$H$I$F(this.vwr, null, label, 0, 0, 0, this.scalePixelsPerMicron);
+text=$I$(7).newLabel$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$H$I$F(this.vwr, null, label, 0, 0, 0, this.scalePixelsPerMicron);
 this.putLabel$I$org_jmol_modelset_Text(i, text);
 } else if (text != null  && label != null  ) {
 text.setText$S(label);
@@ -320,9 +288,9 @@ if (this.defaultAlignment != 4) p$1.setHorizAlignment$I$I.apply(this, [i, this.d
 if ((this.defaultZPos & 32) != 0) p$1.setZPos$I$I$Z.apply(this, [i, 32, true]);
  else if ((this.defaultZPos & 16) != 0) p$1.setZPos$I$I$Z.apply(this, [i, 16, true]);
 if (this.defaultPointer != 0) p$1.setPointer$I$I.apply(this, [i, this.defaultPointer]);
-if (this.defaultColix != 0 || this.defaultPaletteID != 0 ) p$1.setLabelColix$I$H$B.apply(this, [i, this.defaultColix, ($b$[0] = this.defaultPaletteID, $b$[0])]);
+if (this.defaultColix != 0 || this.defaultPaletteID != 0 ) p$1.setLabelColix$I$H$B.apply(this, [i, this.defaultColix, this.defaultPaletteID]);
 if (this.defaultBgcolix != 0) p$1.setBgcolix$I$H.apply(this, [i, this.defaultBgcolix]);
-if (this.defaultFontId != this.zeroFontId) p$1.setFont$I$B.apply(this, [i, ($b$[0] = this.defaultFontId, $b$[0])]);
+if (this.defaultFontId != this.zeroFontId) p$1.setFont$I$B.apply(this, [i, this.defaultFontId]);
 }, p$1);
 
 Clazz.newMeth(C$, 'addString$org_jmol_modelset_Atom$I$S$S', function (atom, i, label, strLabel) {
@@ -344,7 +312,7 @@ return null;
 Clazz.newMeth(C$, 'putLabel$I$org_jmol_modelset_Text', function (i, text) {
 if (text == null ) this.atomLabels.remove$O(Integer.valueOf$I(i));
  else {
-this.atomLabels.put$TK$TV(Integer.valueOf$I(i), text);
+this.atomLabels.put$O$O(Integer.valueOf$I(i), text);
 text.textUnformatted=this.formats[i];
 }});
 
@@ -353,8 +321,8 @@ return this.atomLabels.get$O(Integer.valueOf$I(i));
 });
 
 Clazz.newMeth(C$, 'putBox$I$FA', function (i, boxXY) {
-if (this.labelBoxes == null ) this.labelBoxes=Clazz.new_($I$(2));
-this.labelBoxes.put$TK$TV(Integer.valueOf$I(i), boxXY);
+if (this.labelBoxes == null ) this.labelBoxes=Clazz.new_($I$(2,1));
+this.labelBoxes.put$O$O(Integer.valueOf$I(i), boxXY);
 });
 
 Clazz.newMeth(C$, 'getBox$I', function (i) {
@@ -363,7 +331,7 @@ return this.labelBoxes.get$O(Integer.valueOf$I(i));
 });
 
 Clazz.newMeth(C$, 'setLabelColix$I$H$B', function (i, colix, pid) {
-this.setColixAndPalette$H$B$I(colix, ($b$[0] = pid, $b$[0]), i);
+this.setColixAndPalette$H$B$I(colix, pid, i);
 var text;
 if (this.colixes != null  && ((text=this.getLabel$I(i)) != null ) ) text.colix=this.colixes[i];
 }, p$1);
@@ -418,11 +386,11 @@ Clazz.newMeth(C$, 'setFont$I$B', function (i, fid) {
 if (this.fids == null  || i >= this.fids.length ) {
 if (fid == this.zeroFontId) return;
 this.fids=$I$(10).ensureLengthByte$BA$I(this.fids, this.ac);
-}this.fids[i]=(fid|0);
+}this.fids[i]=fid;
 this.bsFontSet.set$I(i);
 var text=this.getLabel$I(i);
 if (text != null ) {
-text.setFontFromFid$B(($b$[0] = fid, $b$[0]));
+text.setFontFromFid$B(fid);
 }}, p$1);
 
 Clazz.newMeth(C$, 'setAtomClickability$', function () {
@@ -437,9 +405,9 @@ Clazz.newMeth(C$, 'checkObjectClicked$I$I$I$javajs_util_BS$Z', function (x, y, m
 if (!p$1.isPickingMode.apply(this, [])) return null;
 var iAtom=p$1.findNearestLabel$I$I.apply(this, [x, y]);
 if (iAtom < 0) return null;
-var map=Clazz.new_($I$(2));
-map.put$TK$TV("type", "label");
-map.put$TK$TV("atomIndex", Integer.valueOf$I(iAtom));
+var map=Clazz.new_($I$(2,1));
+map.put$O$O("type", "label");
+map.put$O$O("atomIndex", Integer.valueOf$I(iAtom));
 this.lastPicked=iAtom;
 return map;
 });
@@ -503,9 +471,13 @@ colix=$I$(6).getColixInherited$H$H(colix, atom.colixAtom);
 if ($I$(6).isColixTranslucent$H(colix)) colix=$I$(6).getColixTranslucent3$H$Z$F(colix, false, 0);
 }return colix;
 });
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.nullToken=Clazz.array($I$(1), -2, [null]);
+};
 var $s$ = new Int16Array(1);
+var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

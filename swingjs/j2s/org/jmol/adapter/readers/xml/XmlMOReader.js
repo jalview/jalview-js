@@ -1,44 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','org.jmol.adapter.smarter.Resolver','org.jmol.quantum.QS','javajs.util.PT','org.jmol.util.Logger','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XmlMOReader", null, 'org.jmol.adapter.readers.xml.XmlCmlReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','org.jmol.adapter.smarter.Resolver','org.jmol.quantum.QS','javajs.util.PT','org.jmol.adapter.readers.quantum.BasisFunctionReader','org.jmol.util.Logger','javajs.util.AU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "XmlMOReader", null, 'org.jmol.adapter.readers.xml.XmlCmlReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.moReader=null;
-this.skipMOs=false;
-this.htSlaterIDs=null;
-this.basisData=null;
-this.basisId=null;
-this.isSpherical=false;
-this.minL=0;
-this.maxL=0;
-this.basisIds=null;
-this.basisAtoms=null;
-this.orbOcc=0;
-this.orbEnergy=0;
-this.gaussianCount=0;
-this.slaterCount=0;
-this.coefCount=0;
-this.groupCount=0;
-this.lstGaussians=null;
-this.moCount=0;
-this.calcType=null;
-this.iModelMO=0;
-this.dclist=null;
-this.dslist=null;
-this.fclist=null;
-this.fslist=null;
-this.iHaveCoefMaps=false;
-this.maxContraction=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['skipMOs','isSpherical','iHaveCoefMaps'],'F',['orbOcc','orbEnergy'],'I',['minL','maxL','gaussianCount','slaterCount','coefCount','groupCount','moCount','iModelMO','maxContraction'],'S',['basisId','calcType','dclist','dslist','fclist','fslist'],'O',['moReader','org.jmol.adapter.readers.quantum.MOReader','htSlaterIDs','java.util.Map','basisData','javajs.util.Lst','basisIds','String[]','+basisAtoms','lstGaussians','javajs.util.Lst']]]
 
 Clazz.newMeth(C$, 'processXml$org_jmol_adapter_readers_xml_XmlReader$O', function (parent, saxReader) {
-this.htModelAtomMap=Clazz.new_($I$(1));
+this.htModelAtomMap=Clazz.new_($I$(1,1));
 this.processXml2$org_jmol_adapter_readers_xml_XmlReader$O(parent, saxReader);
 });
 
@@ -50,8 +21,8 @@ if (method != null ) this.calcType=method + "(" + this.atts.get$O("basis") + ")"
 return true;
 }if (localName.equals$O("basisset")) {
 this.iModelMO=this.asc.iSet;
-this.lstGaussians=Clazz.new_($I$(2));
-this.htSlaterIDs=Clazz.new_($I$(1));
+this.lstGaussians=Clazz.new_($I$(2,1));
+this.htSlaterIDs=Clazz.new_($I$(1,1));
 this.coefCount=this.groupCount=this.gaussianCount=this.slaterCount=0;
 if (this.moReader == null  && !this.skipMOs ) {
 var rdr=$I$(3).getReader$S$java_util_Map("MO", this.parent.htParams);
@@ -73,18 +44,18 @@ if (localName.equals$O("basisgroup")) {
 this.groupCount++;
 this.basisId=this.atts.get$O("id");
 this.isSpherical="spherical".equalsIgnoreCase$S(this.atts.get$O("angular"));
-this.minL=$I$(5).parseInt$S(this.atts.get$O("minl"));
-this.maxL=$I$(5).parseInt$S(this.atts.get$O("maxl"));
-var nContractions=$I$(5).parseInt$S(this.atts.get$O("contractions"));
+this.minL=(function(a,f){return f.apply(null,a)})([this.atts.get$O("minl")],$I$(5).parseInt$S);
+this.maxL=(function(a,f){return f.apply(null,a)})([this.atts.get$O("maxl")],$I$(5).parseInt$S);
+var nContractions=(function(a,f){return f.apply(null,a)})([this.atts.get$O("contractions")],$I$(5).parseInt$S);
 var n=nContractions * (this.isSpherical ? this.minL * 2 + 1 : (this.minL * (this.minL + 3)/2|0) + 1);
-this.htModelAtomMap.put$TK$TV(this.basisId + "_count", Integer.valueOf$I(n));
+this.htModelAtomMap.put$O$O(this.basisId + "_count", Integer.valueOf$I(n));
 return true;
 }if (localName.equals$O("basisexponents") || localName.equals$O("basiscontraction") ) {
 this.setKeepChars$Z(true);
 return true;
 }if (localName.equals$O("orbital") && this.gaussianCount > 0 ) {
-this.orbOcc=$I$(5).parseFloat$S(this.atts.get$O("occupation"));
-this.orbEnergy=$I$(5).parseFloat$S(this.atts.get$O("energy"));
+this.orbOcc=(function(a,f){return f.apply(null,a)})([this.atts.get$O("occupation")],$I$(5).parseFloat$S);
+this.orbEnergy=(function(a,f){return f.apply(null,a)})([this.atts.get$O("energy")],$I$(5).parseFloat$S);
 this.setKeepChars$Z(true);
 return true;
 }}return false;
@@ -93,13 +64,13 @@ return true;
 Clazz.newMeth(C$, 'processEndMO$S', function (localName) {
 if (this.moReader != null ) {
 if (localName.equals$O("basisexponents")) {
-this.basisData=Clazz.new_($I$(2));
-this.basisData.addLast$TV($I$(5).parseFloatArray$S(this.chars.toString()));
+this.basisData=Clazz.new_($I$(2,1));
+this.basisData.addLast$O((function(a,f){return f.apply(null,a)})([this.chars.toString()],$I$(5).parseFloatArray$S));
 this.setKeepChars$Z(false);
 return true;
 }if (localName.equals$O("basiscontraction")) {
-var data=$I$(5).parseFloatArray$S(this.chars.toString());
-this.basisData.addLast$TV(data);
+var data=(function(a,f){return f.apply(null,a)})([this.chars.toString()],$I$(5).parseFloatArray$S);
+this.basisData.addLast$O(data);
 if (this.basisData.size$() > this.maxContraction) this.maxContraction=this.basisData.size$();
 this.setKeepChars$Z(false);
 return true;
@@ -116,10 +87,10 @@ default:
 otype=(this.minL <= 7 ? "SPDFGHI".substring$I$I(this.minL, this.minL + 1) : "?");
 if (this.isSpherical) otype=(2 * (this.minL) + 1) + otype;
 }
-this.lstGaussians.addLast$TV(this.basisData);
+this.lstGaussians.addLast$O(this.basisData);
 var nPrimitives=this.basisData.get$I(0).length;
 for (var i=1, n=this.basisData.size$(); i < n; i++) {
-this.htSlaterIDs.put$TK$TV(this.basisId + "_" + i , Clazz.array(Integer.TYPE, -1, [-1, this.moReader.getQuantumShellTagID$S(otype), this.gaussianCount + 1, nPrimitives]));
+this.htSlaterIDs.put$O$O(this.basisId + "_" + i , Clazz.array(Integer.TYPE, -1, [-1, $I$(6).getQuantumShellTagID$S(otype), this.gaussianCount + 1, nPrimitives]));
 this.gaussianCount+=nPrimitives;
 }
 return true;
@@ -128,19 +99,19 @@ p$1.buildSlaters.apply(this, []);
 return true;
 }if (localName.equals$O("orbital")) {
 if (this.gaussianCount == 0) return true;
-var coef=$I$(5).parseFloatArray$S(this.chars.toString());
+var coef=(function(a,f){return f.apply(null,a)})([this.chars.toString()],$I$(5).parseFloatArray$S);
 if (this.moCount == 0) {
 if (coef.length != this.coefCount) {
-$I$(6).error$S("Number of orbital coefficients (" + coef.length + ") does not agree with expected number (" + this.coefCount + ")" );
+(function(a,f){return f.apply(null,a)})(["Number of orbital coefficients (" + coef.length + ") does not agree with expected number (" + this.coefCount + ")" ],$I$(7).error$S);
 this.moReader=null;
 return this.skipMOs=true;
-}$I$(6).info$S(this.coefCount + " coefficients found");
-}this.moReader.addCoef$java_util_Map$FA$S$F$F$I(Clazz.new_($I$(1)), coef, null, this.orbEnergy, this.orbOcc, this.moCount++);
+}$I$(7).info$S(this.coefCount + " coefficients found");
+}this.moReader.addCoef$java_util_Map$FA$S$F$F$I(Clazz.new_($I$(1,1)), coef, null, this.orbEnergy, this.orbOcc, this.moCount++);
 this.setKeepChars$Z(false);
 return true;
 }if (localName.equals$O("orbitals")) {
 this.moReader.setMOData$Z(true);
-$I$(6).info$S("XmlMOReader created\n " + this.gaussianCount + " gaussians\n " + this.slaterCount + " slaters\n " + this.groupCount + " groups\n " + this.coefCount + " orbital coefficients\n " + this.moCount + " orbitals" );
+$I$(7).info$S("XmlMOReader created\n " + this.gaussianCount + " gaussians\n " + this.slaterCount + " slaters\n " + this.groupCount + " groups\n " + this.coefCount + " orbital coefficients\n " + this.moCount + " orbitals" );
 return true;
 }if (this.state == 19) {
 if (localName.equals$O("bases")) {
@@ -152,10 +123,10 @@ this.state=6;
 for (var i=this.basisAtoms.length; --i >= 0; ) {
 var a=this.htModelAtomMap.get$O(this.basisAtoms[i]);
 if (a == null ) {
-$I$(6).error$S("XmlMOReader atom not found; orbitals skipped: " + a);
+$I$(7).error$S("XmlMOReader atom not found; orbitals skipped: " + a);
 this.moReader=null;
 return this.skipMOs=true;
-}this.htModelAtomMap.put$TK$TV(this.basisAtoms[i] + "_basis", this.basisIds);
+}this.htModelAtomMap.put$O$O(this.basisAtoms[i] + "_basis", this.basisIds);
 }
 this.slaterCount+=this.basisIds.length * this.basisAtoms.length;
 }return true;
@@ -163,7 +134,7 @@ this.slaterCount+=this.basisIds.length * this.basisAtoms.length;
 });
 
 Clazz.newMeth(C$, 'buildSlaters', function () {
-var gaussians=$I$(7).newFloat2$I(this.gaussianCount);
+var gaussians=$I$(8).newFloat2$I(this.gaussianCount);
 for (var i=0, p=0, n=this.lstGaussians.size$(); i < n; i++) {
 this.basisData=this.lstGaussians.get$I(i);
 var exp=this.basisData.get$I(0);
@@ -174,7 +145,7 @@ for (var j=0; j < exp.length; j++) gaussians[p++]=Clazz.array(Float.TYPE, -1, [e
 }
 }
 this.moReader.gaussians=gaussians;
-var slaters=Clazz.new_($I$(2));
+var slaters=Clazz.new_($I$(2,1));
 var modelID=this.htModelAtomMap.get$O("" + this.iModelMO);
 var i0=this.asc.getAtomSetAtomIndex$I(this.iModelMO);
 for (var i=0, n=this.asc.getAtomSetAtomCount$I(this.iModelMO); i < n; i++) {
@@ -186,10 +157,10 @@ this.coefCount+=(this.htModelAtomMap.get$O(key)).intValue$();
 for (var kk=1; kk < this.maxContraction; kk++) {
 var slater=this.htSlaterIDs.get$O(ids[k] + "_" + kk );
 if (slater == null ) break;
-slater=$I$(7).arrayCopyI$IA$I(slater, -1);
+slater=$I$(8).arrayCopyI$IA$I(slater, -1);
 this.moReader.shells=slaters;
 slater[0]=i + 1;
-slaters.addLast$TV(slater);
+slaters.addLast$O(slater);
 }
 }
 }
@@ -197,9 +168,9 @@ slaters.addLast$TV(slater);
 
 Clazz.newMeth(C$, 'getXlink$S$S$Z', function (href, key, addMoleculeID) {
 var p=href.indexOf$S(key + "[") + 1;
-var tokens=$I$(5).split$S$S(href.substring$I(p), "\'");
+var tokens=(function(a,f){return f.apply(null,a)})([href.substring$I(p), "\'"],$I$(5).split$S$S);
 var data=Clazz.array(String, [(tokens.length/2|0)]);
-var molID=(addMoleculeID ? $I$(5).getQuotedAttribute$S$S(href.substring$I$I(0, p).replace$C$C("\'", "\""), "molecule[@id") : "");
+var molID=(addMoleculeID ? (function(a,f){return f.apply(null,a)})([href.substring$I$I(0, p).replace$C$C("\'", "\""), "molecule[@id"],$I$(5).getQuotedAttribute$S$S) : "");
 for (var i=1, pt=0; i < tokens.length; i+=2) data[pt++]=molID + tokens[i];
 
 return data;
@@ -207,4 +178,4 @@ return data;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

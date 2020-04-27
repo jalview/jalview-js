@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapebio"),p$1={},I$=[[0,'org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Trace", null, 'org.jmol.shapebio.BioShapeCollection');
+(function(){var P$=Clazz.newPackage("org.jmol.shapebio"),p$1={},I$=[[0,'org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Trace", null, 'org.jmol.shapebio.BioShapeCollection');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initShape$', function () {
 this.madOn=($s$[0] = 600, $s$[0]);
@@ -84,11 +83,11 @@ if ((scale < scale_min ) && (scale_min >= 0.0 ) ) scale=scale_min;
 if ((scale > scale_max ) && (scale_max >= 0.0 ) ) scale=scale_max;
 data[i]=scale * rad;
 }
-var rd=Clazz.new_($I$(1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[data, 0, $I$(2).ABSOLUTE, $I$(3).AUTO]);
+var rd=Clazz.new_([data, 0, $I$(2).ABSOLUTE, $I$(3).AUTO],$I$(1,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
 this.setShapeSizeRD$I$org_jmol_atomdata_RadiusData$javajs_util_BS(0, rd, bsAtoms);
 }, p$1);
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

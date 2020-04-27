@@ -1,35 +1,23 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'java.awt.Frame','jalview.renderer.seqfeatures.FeatureRenderer','java.awt.Dimension','jalview.renderer.OverviewRenderer','jalview.renderer.OverviewResColourFinder','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OverviewCanvas", null, 'java.awt.Component');
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'java.awt.Frame','jalview.renderer.seqfeatures.FeatureRenderer','java.awt.Dimension','jalview.renderer.OverviewRenderer','jalview.renderer.OverviewResColourFinder','java.awt.Color']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OverviewCanvas", null, 'java.awt.Label');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.restart=false;
-this.updaterunning=false;
-this.od=null;
-this.or=null;
-this.miniMe=null;
-this.offscreen=null;
-this.av=null;
-this.fr=null;
-this.nullFrame=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.restart=false;
 this.updaterunning=false;
 this.or=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['restart','updaterunning'],'O',['od','jalview.viewmodel.OverviewDimensions','or','jalview.renderer.OverviewRenderer','miniMe','java.awt.Image','+offscreen','av','jalview.appletgui.AlignViewport','fr','jalview.renderer.seqfeatures.FeatureRenderer','nullFrame','java.awt.Frame']]]
 
 Clazz.newMeth(C$, 'c$$jalview_viewmodel_OverviewDimensions$jalview_appletgui_AlignViewport', function (overviewDims, alignvp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.od=overviewDims;
 this.av=alignvp;
-this.nullFrame=Clazz.new_($I$(1));
+this.nullFrame=Clazz.new_($I$(1,1));
 this.nullFrame.addNotify$();
-this.fr=Clazz.new_($I$(2).c$$jalview_api_AlignViewportI,[this.av]);
+this.fr=Clazz.new_($I$(2,1).c$$jalview_api_AlignViewportI,[this.av]);
 }, 1);
 
 Clazz.newMeth(C$, 'resetOviewDims$jalview_viewmodel_OverviewDimensions', function (overviewDims) {
@@ -51,8 +39,8 @@ Clazz.newMeth(C$, 'draw$Z$Z$jalview_appletgui_FeatureRenderer', function (showSe
 this.miniMe=null;
 if (showSequenceFeatures) {
 this.fr.transferSettings$jalview_api_FeatureRenderer(transferRenderer);
-}this.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(3).c$$I$I,[this.od.getWidth$(), this.od.getHeight$()]));
-this.or=Clazz.new_($I$(4).c$$jalview_renderer_seqfeatures_FeatureRenderer$jalview_viewmodel_OverviewDimensions$jalview_datamodel_AlignmentI$jalview_renderer_ResidueShaderI$jalview_renderer_OverviewResColourFinder,[this.fr, this.od, this.av.getAlignment$(), this.av.getResidueShading$(), Clazz.new_($I$(5))]);
+}this.setPreferredSize$java_awt_Dimension(Clazz.new_([this.od.getWidth$(), this.od.getHeight$()],$I$(3,1).c$$I$I));
+this.or=Clazz.new_([this.fr, this.od, this.av.getAlignment$(), this.av.getResidueShading$(), Clazz.new_($I$(5,1))],$I$(4,1).c$$jalview_renderer_seqfeatures_FeatureRenderer$jalview_viewmodel_OverviewDimensions$jalview_datamodel_AlignmentI$jalview_renderer_ResidueShaderI$jalview_renderer_OverviewResColourFinder);
 this.miniMe=this.nullFrame.createImage$I$I(this.od.getWidth$(), this.od.getHeight$());
 this.offscreen=this.nullFrame.createImage$I$I(this.od.getWidth$(), this.od.getHeight$());
 this.miniMe=this.or.draw$jalview_api_AlignmentRowsCollectionI$jalview_api_AlignmentColsCollectionI(this.od.getRows$jalview_datamodel_AlignmentI(this.av.getAlignment$()), this.od.getColumns$jalview_datamodel_AlignmentI(this.av.getAlignment$()));
@@ -87,4 +75,4 @@ this.od=null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:45 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,35 +1,22 @@
-(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},p$2={},p$3={},I$=[[0,'javajs.img.JpegObj','javajs.img.DCT','javajs.img.Huffman','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JpgEncoder", null, 'javajs.img.ImageEncoder');
-C$.eoi=null;
-C$.jfif=null;
-C$.soi=null;
+(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},p$2={},p$3={},I$=[[0,'javajs.img.JpegObj','javajs.img.DCT','javajs.img.Huffman','javajs.util.AU']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JpgEncoder", null, 'javajs.img.ImageEncoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.eoi=Clazz.array(Byte.TYPE, -1, [-1, -39]);
-C$.jfif=Clazz.array(Byte.TYPE, -1, [-1, -32, 0, 16, 74, 70, 73, 70, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0]);
-C$.soi=Clazz.array(Byte.TYPE, -1, [-1, -40]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jpegObj=null;
-this.huf=null;
-this.dct=null;
-this.defaultQuality=0;
-this.applicationTag=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultQuality=100;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['defaultQuality'],'S',['applicationTag'],'O',['jpegObj','javajs.img.JpegObj','huf','javajs.img.Huffman','dct','javajs.img.DCT']]
+,['O',['eoi','byte[]','+jfif','+soi']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setParams$java_util_Map', function (params) {
 if (this.quality <= 0) this.quality=(params.containsKey$O("qualityJPG") ? (params.get$O("qualityJPG")).intValue$() : this.defaultQuality);
-this.jpegObj=Clazz.new_($I$(1));
+this.jpegObj=Clazz.new_($I$(1,1));
 this.jpegObj.comment=params.get$O("comment");
 this.applicationTag=params.get$O("jpgAppTag");
 });
@@ -37,8 +24,8 @@ this.applicationTag=params.get$O("jpgAppTag");
 Clazz.newMeth(C$, 'generate$', function () {
 this.jpegObj.imageWidth=this.width;
 this.jpegObj.imageHeight=this.height;
-this.dct=Clazz.new_($I$(2).c$$I,[this.quality]);
-this.huf=Clazz.new_($I$(3).c$$I$I,[this.width, this.height]);
+this.dct=Clazz.new_($I$(2,1).c$$I,[this.quality]);
+this.huf=Clazz.new_($I$(3,1).c$$I$I,[this.width, this.height]);
 if (this.jpegObj == null ) return;
 this.jpegObj.getYCCArray$IA(this.pixels);
 var longState=p$1.writeHeaders$javajs_img_JpegObj$javajs_img_DCT.apply(this, [this.jpegObj, this.dct]);
@@ -116,38 +103,38 @@ var tempArray;
 this.writeMarker$BA(C$.soi);
 this.writeArray$BA(C$.jfif);
 var comment=null;
-if (jpegObj.comment != null  && jpegObj.comment.length$() > 0 ) p$1.writeString$S$B.apply(this, [jpegObj.comment, ($b$[0] = -31, $b$[0])]);
-p$1.writeString$S$B.apply(this, ["JPEG Encoder Copyright 1998, James R. Weeks and BioElectroMech.\n\n", ($b$[0] = -2, $b$[0])]);
+if (jpegObj.comment != null  && jpegObj.comment.length$() > 0 ) p$1.writeString$S$B.apply(this, [jpegObj.comment, -31]);
+p$1.writeString$S$B.apply(this, ["JPEG Encoder Copyright 1998, James R. Weeks and BioElectroMech.\n\n", -2]);
 var dqt=Clazz.array(Byte.TYPE, [134]);
-dqt[0]=(-1|0);
-dqt[1]=(-37|0);
+dqt[0]=-1;
+dqt[1]=-37;
 dqt[2]=(0|0);
-dqt[3]=(-124|0);
+dqt[3]=-124;
 offset=4;
 for (i=0; i < 2; i++) {
-dqt[offset++]=((((0) + i)|0)|0);
+dqt[offset++]=(((0) + i)|0);
 tempArray=dct.quantum[i];
 for (j=0; j < 64; j++) {
-dqt[offset++]=((tempArray[$I$(3).jpegNaturalOrder[j]]|0)|0);
+dqt[offset++]=(tempArray[$I$(3).jpegNaturalOrder[j]]|0);
 }
 }
 this.writeArray$BA(dqt);
 var sof=Clazz.array(Byte.TYPE, [19]);
-sof[0]=(-1|0);
-sof[1]=(-64|0);
+sof[0]=-1;
+sof[1]=-64;
 sof[2]=(0|0);
 sof[3]=(17|0);
-sof[4]=((jpegObj.precision|0)|0);
-sof[5]=((((jpegObj.imageHeight >> 8) & 255)|0)|0);
-sof[6]=((((jpegObj.imageHeight) & 255)|0)|0);
-sof[7]=((((jpegObj.imageWidth >> 8) & 255)|0)|0);
-sof[8]=((((jpegObj.imageWidth) & 255)|0)|0);
-sof[9]=((jpegObj.numberOfComponents|0)|0);
+sof[4]=(jpegObj.precision|0);
+sof[5]=(((jpegObj.imageHeight >> 8) & 255)|0);
+sof[6]=(((jpegObj.imageHeight) & 255)|0);
+sof[7]=(((jpegObj.imageWidth >> 8) & 255)|0);
+sof[8]=(((jpegObj.imageWidth) & 255)|0);
+sof[9]=(jpegObj.numberOfComponents|0);
 index=10;
 for (i=0; i < sof[9]; i++) {
-sof[index++]=((jpegObj.compID[i]|0)|0);
-sof[index++]=((((jpegObj.hsampFactor[i] << 4) + jpegObj.vsampFactor[i])|0)|0);
-sof[index++]=((jpegObj.qtableNumber[i]|0)|0);
+sof[index++]=(jpegObj.compID[i]|0);
+sof[index++]=(((jpegObj.hsampFactor[i] << 4) + jpegObj.vsampFactor[i])|0);
+sof[index++]=(jpegObj.qtableNumber[i]|0);
 }
 this.writeArray$BA(sof);
 this.WriteDHTHeader$IA$IA($I$(3).bitsDCluminance, $I$(3).valDCluminance);
@@ -155,19 +142,19 @@ this.WriteDHTHeader$IA$IA($I$(3).bitsACluminance, $I$(3).valACluminance);
 this.WriteDHTHeader$IA$IA($I$(3).bitsDCchrominance, $I$(3).valDCchrominance);
 this.WriteDHTHeader$IA$IA($I$(3).bitsACchrominance, $I$(3).valACchrominance);
 var sos=Clazz.array(Byte.TYPE, [14]);
-sos[0]=(-1|0);
-sos[1]=(-38|0);
+sos[0]=-1;
+sos[1]=-38;
 sos[2]=(0|0);
 sos[3]=(12|0);
-sos[4]=((jpegObj.numberOfComponents|0)|0);
+sos[4]=(jpegObj.numberOfComponents|0);
 index=5;
 for (i=0; i < sos[4]; i++) {
-sos[index++]=((jpegObj.compID[i]|0)|0);
-sos[index++]=((((jpegObj.dctableNumber[i] << 4) + jpegObj.actableNumber[i])|0)|0);
+sos[index++]=(jpegObj.compID[i]|0);
+sos[index++]=(((jpegObj.dctableNumber[i] << 4) + jpegObj.actableNumber[i])|0);
 }
-sos[index++]=((jpegObj.ss|0)|0);
-sos[index++]=((jpegObj.se|0)|0);
-sos[index++]=((((jpegObj.ah << 4) + jpegObj.al)|0)|0);
+sos[index++]=(jpegObj.ss|0);
+sos[index++]=(jpegObj.se|0);
+sos[index++]=(((jpegObj.ah << 4) + jpegObj.al)|0);
 this.writeArray$BA(sos);
 return comment;
 }, p$1);
@@ -183,7 +170,7 @@ nBytes=65500;
 var pt=s.lastIndexOf$I$I("\n", i0 + nBytes);
 if (pt > i0 + 1) nBytes=pt - i0;
 }if (i0 + nBytes == len) suffix="";
-p$1.writeTag$I$B.apply(this, [nBytes + suffix.length$(), ($b$[0] = id, $b$[0])]);
+p$1.writeTag$I$B.apply(this, [nBytes + suffix.length$(), id]);
 this.writeArray$BA(s.substring$I$I(i0, i0 + nBytes).getBytes$());
 if (suffix.length$() > 0) this.writeArray$BA(suffix.getBytes$());
 i0+=nBytes;
@@ -193,10 +180,10 @@ i0+=nBytes;
 Clazz.newMeth(C$, 'writeTag$I$B', function (length, id) {
 length+=2;
 var com=Clazz.array(Byte.TYPE, [4]);
-com[0]=(-1|0);
-com[1]=(id|0);
-com[2]=((((length >> 8) & 255)|0)|0);
-com[3]=(((length & 255)|0)|0);
+com[0]=-1;
+com[1]=id;
+com[2]=(((length >> 8) & 255)|0);
+com[3]=((length & 255)|0);
 this.writeArray$BA(com);
 }, p$1);
 
@@ -206,15 +193,15 @@ var bytes=0;
 for (var j=1; j < 17; j++) bytes+=bits[j];
 
 dht=Clazz.array(Byte.TYPE, [21 + bytes]);
-dht[0]=(-1|0);
-dht[1]=(-60|0);
+dht[0]=-1;
+dht[1]=-60;
 var index=4;
-for (var j=0; j < 17; j++) dht[index++]=((bits[j]|0)|0);
+for (var j=0; j < 17; j++) dht[index++]=(bits[j]|0);
 
-for (var j=0; j < bytes; j++) dht[index++]=((val[j]|0)|0);
+for (var j=0; j < bytes; j++) dht[index++]=(val[j]|0);
 
-dht[2]=(((((index - 2) >> 8) & 255)|0)|0);
-dht[3]=((((index - 2) & 255)|0)|0);
+dht[2]=((((index - 2) >> 8) & 255)|0);
+dht[3]=(((index - 2) & 255)|0);
 this.writeArray$BA(dht);
 });
 
@@ -225,6 +212,11 @@ this.out.write$BA$I$I(data, 0, 2);
 Clazz.newMeth(C$, 'writeArray$BA', function (data) {
 this.out.write$BA$I$I(data, 0, data.length);
 });
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.eoi=Clazz.array(Byte.TYPE, -1, [-1, -39]);
+C$.jfif=Clazz.array(Byte.TYPE, -1, [-1, -32, 0, 16, 74, 70, 73, 70, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0]);
+C$.soi=Clazz.array(Byte.TYPE, -1, [-1, -40]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

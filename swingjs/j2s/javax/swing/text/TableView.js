@@ -1,38 +1,29 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'java.util.BitSet','javax.swing.text.TableView','java.util.Vector',['javax.swing.text.TableView','.TableRow'],['javax.swing.text.TableView','.TableCell'],'javax.swing.SizeRequirements']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TableView", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'java.util.BitSet','javax.swing.text.TableView','java.util.Vector',['javax.swing.text.TableView','.TableRow'],['javax.swing.text.TableView','.TableCell'],'javax.swing.SizeRequirements']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TableView", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.BoxView');
-C$.EMPTY=null;
+C$.$classes$=[['TableRow',1],['TableCell',1],['GridCell',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.columnSpans=null;
-this.columnOffsets=null;
-this.columnRequirements=null;
-this.rows=null;
-this.gridValid=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['gridValid'],'O',['columnSpans','int[]','+columnOffsets','columnRequirements','javax.swing.SizeRequirements[]','rows','java.util.Vector']]
+,['O',['EMPTY','java.util.BitSet']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 1]);
-C$.$init$.apply(this);
-this.rows=Clazz.new_($I$(3));
+;C$.superclazz.c$$javax_swing_text_Element$I.apply(this,[elem, 1]);C$.$init$.apply(this);
+this.rows=Clazz.new_($I$(3,1));
 this.gridValid=false;
 }, 1);
 
 Clazz.newMeth(C$, 'createTableRow$javax_swing_text_Element', function (elem) {
-return Clazz.new_($I$(4).c$$javax_swing_text_Element, [this, null, elem]);
+return Clazz.new_($I$(4,1).c$$javax_swing_text_Element,[this, null, elem]);
 });
 
 Clazz.newMeth(C$, 'createTableCell$javax_swing_text_Element', function (elem) {
-return Clazz.new_($I$(5).c$$javax_swing_text_Element, [this, null, elem]);
+return Clazz.new_($I$(5,1).c$$javax_swing_text_Element,[this, null, elem]);
 });
 
 Clazz.newMeth(C$, 'getColumnCount$', function () {
@@ -93,7 +84,7 @@ var n=this.getViewCount$();
 for (var i=0; i < n; i++) {
 var v=this.getView$I(i);
 if (Clazz.instanceOf(v, "javax.swing.text.TableView.TableRow")) {
-this.rows.addElement$TE(v);
+this.rows.addElement$O(v);
 var rv=v;
 rv.clearFilledColumns$();
 rv.setRow$I(i);
@@ -126,7 +117,7 @@ this.columnSpans=Clazz.array(Integer.TYPE, [maxColumns]);
 this.columnOffsets=Clazz.array(Integer.TYPE, [maxColumns]);
 this.columnRequirements=Clazz.array($I$(6), [maxColumns]);
 for (var i=0; i < maxColumns; i++) {
-this.columnRequirements[i]=Clazz.new_($I$(6));
+this.columnRequirements[i]=Clazz.new_($I$(6,1));
 }
 this.gridValid=true;
 }});
@@ -156,7 +147,7 @@ Clazz.newMeth(C$, 'calculateMinorAxisRequirements$I$javax_swing_SizeRequirements
 this.updateGrid$();
 this.calculateColumnRequirements$I(axis);
 if (r == null ) {
-r=Clazz.new_($I$(6));
+r=Clazz.new_($I$(6,1));
 }var min=0;
 var pref=0;
 var max=0;
@@ -272,27 +263,25 @@ this.childAllocation$I$java_awt_Rectangle(n - 1, a);
 }return v;
 }return null;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY=Clazz.new_($I$(1,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.TableView, "TableRow", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TableView, "TableRow", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.BoxView');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fillColumns=null;
-this.row=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['row'],'O',['fillColumns','java.util.BitSet']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 0]);
-C$.$init$.apply(this);
-this.fillColumns=Clazz.new_($I$(1));
+;C$.superclazz.c$$javax_swing_text_Element$I.apply(this,[elem, 0]);C$.$init$.apply(this);
+this.fillColumns=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'clearFilledColumns$', function () {
@@ -396,25 +385,19 @@ this.childAllocation$I$java_awt_Rectangle(n - 1, a);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.TableView, "TableCell", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TableView, "TableCell", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.BoxView', [['javax.swing.text.TableView','javax.swing.text.TableView.GridCell']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.row=0;
-this.col=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['row','col']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 1]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element$I.apply(this,[elem, 1]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getColumnCount$', function () {
@@ -441,10 +424,10 @@ return this.col;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newInterface(P$.TableView, "GridCell", function(){
+(function(){/*i*/var C$=Clazz.newInterface(P$.TableView, "GridCell", function(){
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

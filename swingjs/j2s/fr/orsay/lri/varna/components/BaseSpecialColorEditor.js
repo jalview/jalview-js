@@ -1,32 +1,23 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'javax.swing.JButton','fr.orsay.lri.varna.controlers.ControleurBaseSpecialColorEditor','javax.swing.JColorChooser']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BaseSpecialColorEditor", null, 'javax.swing.AbstractCellEditor', 'javax.swing.table.TableCellEditor');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'javax.swing.JButton','fr.orsay.lri.varna.controlers.ControleurBaseSpecialColorEditor','javax.swing.JColorChooser']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BaseSpecialColorEditor", null, 'javax.swing.AbstractCellEditor', 'javax.swing.table.TableCellEditor');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.currentColor=null;
-this.button=null;
-this.colorChooser=null;
-this.dialog=null;
-this._vueBases=null;
-this._controleurSpecialColorEditor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['currentColor','java.awt.Color','button','javax.swing.JButton','colorChooser','javax.swing.JColorChooser','dialog','javax.swing.JDialog','_vueBases','fr.orsay.lri.varna.views.VueBases','_controleurSpecialColorEditor','fr.orsay.lri.varna.controlers.ControleurBaseSpecialColorEditor']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_views_VueBases', function (vueBases) {
-Clazz.super_(C$, this,1);
-this.button=Clazz.new_($I$(1));
+Clazz.super_(C$, this);
+this.button=Clazz.new_($I$(1,1));
 this.button.setActionCommand$S("edit");
-this._controleurSpecialColorEditor=Clazz.new_($I$(2).c$$fr_orsay_lri_varna_components_BaseSpecialColorEditor,[this]);
+this._controleurSpecialColorEditor=Clazz.new_($I$(2,1).c$$fr_orsay_lri_varna_components_BaseSpecialColorEditor,[this]);
 this.button.addActionListener$java_awt_event_ActionListener(this._controleurSpecialColorEditor);
 this.button.setBorderPainted$Z(false);
 this.fireEditingStopped$();
 this._vueBases=vueBases;
-this.colorChooser=Clazz.new_($I$(3));
+this.colorChooser=Clazz.new_($I$(3,1));
 this.dialog=$I$(3).createDialog$java_awt_Component$S$Z$javax_swing_JColorChooser$java_awt_event_ActionListener$java_awt_event_ActionListener(this.button, "Pick a Color", true, this.colorChooser, this._controleurSpecialColorEditor, null);
 }, 1);
 
@@ -81,4 +72,4 @@ this.fireEditingStopped$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

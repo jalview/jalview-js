@@ -1,32 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.nio.charset"),p$1={},I$=[[0,'java.nio.charset.CodingErrorAction','java.util.Arrays','java.nio.ByteBuffer','java.nio.CharBuffer','java.nio.charset.CoderMalfunctionError','java.nio.charset.CoderResult']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CharsetEncoder");
-C$.stateNames=null;
+(function(){var P$=Clazz.newPackage("java.nio.charset"),p$1={},I$=[[0,'java.nio.charset.CodingErrorAction','java.util.Arrays','java.nio.ByteBuffer','java.nio.CharBuffer','java.nio.charset.CoderMalfunctionError','java.nio.charset.CoderResult']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CharsetEncoder");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.stateNames=Clazz.array(String, -1, ["RESET", "CODING", "CODING_END", "FLUSHED"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.charset=null;
-this.averageBytesPerChar=0;
-this.maxBytesPerChar=0;
-this.replacement=null;
-this.malformedInputAction=null;
-this.unmappableCharacterAction=null;
-this.state=0;
-this.cachedDecoder=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.malformedInputAction=$I$(1).REPORT;
 this.unmappableCharacterAction=$I$(1).REPORT;
 this.state=0;
 this.cachedDecoder=null;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['averageBytesPerChar','maxBytesPerChar'],'I',['state'],'O',['charset','java.nio.charset.Charset','replacement','byte[]','malformedInputAction','java.nio.charset.CodingErrorAction','+unmappableCharacterAction','cachedDecoder','java.nio.charset.CharsetDecoder']]
+,['O',['stateNames','String[]']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$F$F$BA', function (charset, ave, max, rep) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.charset=charset;
 if (ave <= 0.0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Non-positive averageBytesPerChar"]);
@@ -79,7 +67,7 @@ this.cachedDecoder=localCharsetDecoder;
 } else {
 localCharsetDecoder.reset$();
 }var localByteBuffer=$I$(3).wrap$BA(rep);
-var localCharBuffer=$I$(4).allocate$I(((localByteBuffer.remaining$() * localCharsetDecoder.maxCharsPerByte$())|0));
+var localCharBuffer=$I$(4,"allocate$I",[((localByteBuffer.remaining$() * localCharsetDecoder.maxCharsPerByte$())|0)]);
 var localCoderResult=localCharsetDecoder.decode$java_nio_ByteBuffer$java_nio_CharBuffer$Z(localByteBuffer, localCharBuffer, true);
 return !localCoderResult.isError$();
 });
@@ -135,12 +123,12 @@ localCoderResult=this.encodeLoop$java_nio_CharBuffer$java_nio_ByteBuffer($in, ou
 if (Clazz.exceptionOf(e$$,"java.nio.BufferUnderflowException")){
 var localBufferUnderflowException = e$$;
 {
-throw Clazz.new_($I$(5).c$$Exception,[localBufferUnderflowException]);
+throw Clazz.new_($I$(5,1).c$$Exception,[localBufferUnderflowException]);
 }
 } else if (Clazz.exceptionOf(e$$,"java.nio.BufferOverflowException")){
 var localBufferOverflowException = e$$;
 {
-throw Clazz.new_($I$(5).c$$Exception,[localBufferOverflowException]);
+throw Clazz.new_($I$(5,1).c$$Exception,[localBufferOverflowException]);
 }
 } else {
 throw e$$;
@@ -150,7 +138,7 @@ if (localCoderResult.isOverflow$()) {
 return localCoderResult;
 }if (localCoderResult.isUnderflow$()) {
 if ((done) && ($in.hasRemaining$()) ) {
-localCoderResult=$I$(6).malformedForLength$I($in.remaining$());
+localCoderResult=$I$(6,"malformedForLength$I",[$in.remaining$()]);
 } else {
 return localCoderResult;
 }}var localCodingErrorAction=null;
@@ -254,7 +242,7 @@ var localCharBuffer;
 if ((Clazz.instanceOf(cs, "java.nio.CharBuffer"))) {
 localCharBuffer=(cs).duplicate$();
 } else {
-localCharBuffer=$I$(4).wrap$CharSequence(cs.toString());
+localCharBuffer=$I$(4,"wrap$CharSequence",[cs.toString()]);
 }return p$1.canEncode$java_nio_CharBuffer.apply(this, [localCharBuffer]);
 });
 
@@ -262,6 +250,10 @@ Clazz.newMeth(C$, 'throwIllegalStateException$I$I', function (old, now) {
 throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["Current state = " + C$.stateNames[old] + ", new state = " + C$.stateNames[now] ]);
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.stateNames=Clazz.array(String, -1, ["RESET", "CODING", "CODING_END", "FLUSHED"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:40 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

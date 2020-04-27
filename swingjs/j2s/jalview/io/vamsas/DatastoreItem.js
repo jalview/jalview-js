@@ -1,30 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'jalview.javascript.log4j.Logger','jalview.bin.Cache','jalview.util.MessageManager','Error','java.util.Vector','jalview.datamodel.Provenance','uk.ac.vamsas.objects.core.Entry','java.util.Date','uk.ac.vamsas.objects.core.Provenance']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DatastoreItem");
-C$.log=null;
+(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'jalview.javascript.log4j.Logger','jalview.bin.Cache','jalview.util.MessageManager','Error','java.util.Vector','jalview.datamodel.Provenance','uk.ac.vamsas.objects.core.Entry','java.util.Date','uk.ac.vamsas.objects.core.Provenance']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DatastoreItem");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.log=$I$(1).getLogger$Class(Clazz.getClass(C$));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.provEntry=null;
-this.cdoc=null;
-this.vobj2jv=null;
-this.jv2vobj=null;
-this.tojalview=false;
-this.addtodoc=false;
-this.conflicted=false;
-this.updated=false;
-this.addfromdoc=false;
-this.success=false;
-this.updatedtodoc=false;
-this.updatedfromdoc=false;
-this.datastore=null;
-this.vobj=null;
-this.jvobj=null;
-this.dsReg=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.provEntry=null;
@@ -37,7 +14,10 @@ this.success=false;
 this.datastore=null;
 this.vobj=null;
 this.jvobj=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['tojalview','addtodoc','conflicted','updated','addfromdoc','success','updatedtodoc','updatedfromdoc'],'O',['provEntry','uk.ac.vamsas.objects.core.Entry','cdoc','uk.ac.vamsas.client.IClientDocument','vobj2jv','java.util.Hashtable','jv2vobj','java.util.IdentityHashMap','datastore','jalview.io.VamsasAppDatastore','vobj','uk.ac.vamsas.client.Vobject','jvobj','java.lang.Object','dsReg','jalview.io.vamsas.DatastoreRegistry']]
+,['O',['log','jalview.javascript.log4j.Logger']]]
 
 Clazz.newMeth(C$, 'getjv2vObj$O', function (jvobj) {
 if (this.jv2vobj.containsKey$O(jvobj)) {
@@ -70,8 +50,8 @@ $I$(2).log.debug$O$Throwable("Warning? Overwriting existing vamsas id binding fo
 } else if (this.jv2vobj.containsKey$O(jvobj) && !(this.jv2vobj.get$O(jvobj)).equals$O(vobj.getVorbaId$()) ) {
 $I$(2).log.debug$O$Throwable("Warning? Overwriting existing jalview object binding for " + jvobj, Clazz.new_(Clazz.load('Exception').c$$S,[$I$(3).getString$S("exception.overwriting_jalview_id_binding")]));
 }$I$(2).log.debug$O("Binding " + vobj.getVorbaId$() + " to " + jvobj );
-this.vobj2jv.put$TK$TV(vobj.getVorbaId$(), jvobj);
-this.jv2vobj.put$TK$TV(jvobj, vobj.getVorbaId$());
+this.vobj2jv.put$O$O(vobj.getVorbaId$(), jvobj);
+this.jv2vobj.put$O$O(jvobj, vobj.getVorbaId$());
 if (jvobj === this.jvobj  || vobj === this.vobj  ) {
 p$1.updateRegistryEntry$O$uk_ac_vamsas_client_Vobject.apply(this, [jvobj, vobj]);
 }});
@@ -87,15 +67,15 @@ this.dsReg.registerDsObj$jalview_io_vamsas_DatastoreItem(this);
 Clazz.newMeth(C$, 'replaceJvObjMapping$O$O', function (oldjvobject, newjvobject) {
 var vobject=this.jv2vobj.remove$O(oldjvobject);
 if (vobject == null ) {
-throw Clazz.new_($I$(4).c$$S,[$I$(3).formatMessage$S$SA("error.implementation_error_old_jalview_object_not_bound", Clazz.array(String, -1, [oldjvobject.toString()]))]);
+throw Clazz.new_([$I$(3,"formatMessage$S$SA",["error.implementation_error_old_jalview_object_not_bound", Clazz.array(String, -1, [oldjvobject.toString()])])],$I$(4,1).c$$S);
 }if (newjvobject != null ) {
-this.jv2vobj.put$TK$TV(newjvobject, vobject);
-this.vobj2jv.put$TK$TV(vobject, newjvobject);
+this.jv2vobj.put$O$O(newjvobject, vobject);
+this.vobj2jv.put$O$O(vobject, newjvobject);
 p$1.updateRegistryEntry$O$uk_ac_vamsas_client_Vobject.apply(this, [newjvobject, this.vobj]);
 }});
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_VamsasAppDatastore', function (datastore) {
@@ -109,7 +89,7 @@ this.vobj=vobj2;
 this.jvobj=this.getvObj2jv$uk_ac_vamsas_client_Vobject(vobj2);
 this.tojalview=true;
 if (this.jvobj != null  && !(boundType.isAssignableFrom$Class(this.jvobj.getClass$())) ) {
-throw Clazz.new_($I$(4).c$$S,[$I$(3).formatMessage$S$SA("error.implementation_error_vamsas_doc_class_should_bind_to_type", Clazz.array(String, -1, [this.vobj.getClass$().toString(), boundType.toString(), this.jvobj.getClass$().toString()]))]);
+throw Clazz.new_([$I$(3,"formatMessage$S$SA",["error.implementation_error_vamsas_doc_class_should_bind_to_type", Clazz.array(String, -1, [this.vobj.getClass$().toString(), boundType.toString(), this.jvobj.getClass$().toString()])])],$I$(4,1).c$$S);
 }this.dsReg.registerDsObj$jalview_io_vamsas_DatastoreItem(this);
 }, 1);
 
@@ -119,7 +99,7 @@ this.jvobj=jvobj2;
 this.tojalview=false;
 this.vobj=this.getjv2vObj$O(this.jvobj);
 if (this.vobj != null  && !(boundToType.isAssignableFrom$Class(this.vobj.getClass$())) ) {
-throw Clazz.new_($I$(4).c$$S,[$I$(3).formatMessage$S$SA("error.implementation_error_vamsas_doc_class_should_bind_to_type", Clazz.array(String, -1, [jvobj2.getClass$().toString(), boundToType.toString(), this.vobj.getClass$().toString()]))]);
+throw Clazz.new_([$I$(3,"formatMessage$S$SA",["error.implementation_error_vamsas_doc_class_should_bind_to_type", Clazz.array(String, -1, [jvobj2.getClass$().toString(), boundToType.toString(), this.vobj.getClass$().toString()])])],$I$(4,1).c$$S);
 }this.dsReg.registerDsObj$jalview_io_vamsas_DatastoreItem(this);
 }, 1);
 
@@ -172,10 +152,10 @@ return modifiable == null ;
 });
 
 Clazz.newMeth(C$, 'getjv2vObjs$java_util_Vector', function (alsq) {
-var vObjs=Clazz.new_($I$(5));
+var vObjs=Clazz.new_($I$(5,1));
 var elm=alsq.elements$();
 while (elm.hasMoreElements$()){
-vObjs.addElement$TE(this.getjv2vObj$O(elm.nextElement$()));
+vObjs.addElement$O(this.getjv2vObj$O(elm.nextElement$()));
 }
 return vObjs;
 });
@@ -193,7 +173,7 @@ start=t;
 });
 
 Clazz.newMeth(C$, 'getJalviewProvenance$uk_ac_vamsas_objects_core_Provenance', function (prov) {
-var jprov=Clazz.new_($I$(6));
+var jprov=Clazz.new_($I$(6,1));
 for (var i=0; i < prov.getEntryCount$(); i++) {
 jprov.addEntry$S$S$java_util_Date$S(prov.getEntry$I(i).getUser$(), prov.getEntry$I(i).getAction$(), prov.getEntry$I(i).getDate$(), prov.getEntry$I(i).getId$());
 }
@@ -205,19 +185,19 @@ return this.dummyProvenance$S(null);
 });
 
 Clazz.newMeth(C$, 'dummyPEntry$S', function (action) {
-var entry=Clazz.new_($I$(7));
+var entry=Clazz.new_($I$(7,1));
 entry.setApp$S(this.provEntry.getApp$());
 if (action != null ) {
 entry.setAction$S(action);
 } else {
 entry.setAction$S("created.");
-}entry.setDate$java_util_Date(Clazz.new_($I$(8)));
+}entry.setDate$java_util_Date(Clazz.new_($I$(8,1)));
 entry.setUser$S(this.provEntry.getUser$());
 return entry;
 });
 
 Clazz.newMeth(C$, 'dummyProvenance$S', function (action) {
-var prov=Clazz.new_($I$(9));
+var prov=Clazz.new_($I$(9,1));
 prov.addEntry$uk_ac_vamsas_objects_core_Entry(this.dummyPEntry$S(action));
 return prov;
 });
@@ -269,5 +249,9 @@ return (this.addtodoc || this.updated ) && this.success ;
 Clazz.newMeth(C$, 'jvWasUpdated$', function () {
 return (this.success);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.log=$I$(1,"getLogger$Class",[Clazz.getClass(C$)]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','javajs.util.V3','javajs.util.P3','org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.util.BSUtil','Boolean','org.jmol.jvxl.data.MeshData','javajs.util.BS','javajs.util.CU','org.jmol.jvxl.data.VolumeData','org.jmol.util.BoxInfo','javajs.util.Lst','org.jmol.atomdata.AtomData','org.jmol.util.ContactPair','org.jmol.c.HB','org.jmol.util.TempArray','javajs.util.Measure','java.util.Hashtable','org.jmol.script.T']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Contact", null, 'org.jmol.shapesurface.Isosurface');
-C$.rdVDW=null;
+(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','javajs.util.V3','javajs.util.P3','org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.util.BSUtil','Boolean','org.jmol.jvxl.data.MeshData','javajs.util.BS','javajs.util.CU','org.jmol.jvxl.data.VolumeData','org.jmol.util.BoxInfo','javajs.util.Lst','org.jmol.atomdata.AtomData','org.jmol.util.ContactPair','org.jmol.c.HB','org.jmol.util.TempArray','javajs.util.Measure','java.util.Hashtable','org.jmol.script.T']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Contact", null, 'org.jmol.shapesurface.Isosurface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.rdVDW=Clazz.new_($I$(1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 1, $I$(2).FACTOR, $I$(3).AUTO]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.displayType=0;
-this.atoms=null;
-this.ac=0;
-this.minData=0;
-this.maxData=0;
-this.vZ=null;
-this.vY=null;
-this.vX=null;
-this.pt1=null;
-this.pt2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.vZ=Clazz.new_($I$(4));
-this.vY=Clazz.new_($I$(4));
-this.vX=Clazz.new_($I$(4));
-this.pt1=Clazz.new_($I$(5));
-this.pt2=Clazz.new_($I$(5));
-}, 1);
+this.vZ=Clazz.new_($I$(4,1));
+this.vY=Clazz.new_($I$(4,1));
+this.vX=Clazz.new_($I$(4,1));
+this.pt1=Clazz.new_($I$(5,1));
+this.pt2=Clazz.new_($I$(5,1));
+},1);
+
+C$.$fields$=[['F',['minData','maxData'],'I',['displayType','ac'],'O',['atoms','org.jmol.modelset.Atom[]','vZ','javajs.util.V3','+vY','+vX','pt1','javajs.util.P3','+pt2']]
+,['O',['rdVDW','org.jmol.atomdata.RadiusData']]]
 
 Clazz.newMeth(C$, 'initShape$', function () {
 C$.superclazz.prototype.initShape$.apply(this, []);
@@ -73,7 +59,7 @@ var parameters=value[8];
 var modelIndex=(value[9]).intValue$();
 var command=value[10];
 if (Float.isNaN$F(saProbeRadius)) saProbeRadius=0;
-if (rd == null ) rd=Clazz.new_($I$(1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, saProbeRadius, $I$(2).OFFSET, $I$(3).AUTO]);
+if (rd == null ) rd=Clazz.new_([null, saProbeRadius, $I$(2).OFFSET, $I$(3).AUTO],$I$(1,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
 if (colorDensity) {
 switch (displayType) {
 case 1073741961:
@@ -97,8 +83,8 @@ var intramolecularMode=((parameters == null  || parameters.length < 2  ? 0 : par
 var ptSize=(colorDensity && parameters != null   && parameters[0] < 0   ? Math.abs(parameters[0]) : 0.15);
 if ($I$(7).debugging) {
 $I$(7).debug$S("Contact intramolecularMode " + intramolecularMode);
-$I$(7).debug$S("Contacts for " + bsA.cardinality$() + ": " + $I$(8).eBS$javajs_util_BS(bsA) );
-$I$(7).debug$S("Contacts to " + bsB.cardinality$() + ": " + $I$(8).eBS$javajs_util_BS(bsB) );
+(function(a,f){return f.apply(null,a)})(["Contacts for " + bsA.cardinality$() + ": " + $I$(8).eBS$javajs_util_BS(bsA) ],$I$(7).debug$S);
+(function(a,f){return f.apply(null,a)})(["Contacts to " + bsB.cardinality$() + ": " + $I$(8).eBS$javajs_util_BS(bsB) ],$I$(7).debug$S);
 }this.setPropI$S$O$javajs_util_BS("newObject", null, null);
 this.thisMesh.setMerged$Z(true);
 this.thisMesh.nSets=0;
@@ -152,7 +138,7 @@ this.sg.initState$();
 p$1.newSurface$I$org_jmol_util_ContactPair$javajs_util_BS$javajs_util_BS$org_jmol_atomdata_RadiusData$FA$O$Z$org_jmol_jvxl_data_VolumeData$F.apply(this, [1275068932, null, bsB, bsA, rd, parameters, func, colorDensity, null, 0]);
 p$1.mergeMesh$org_jmol_jvxl_data_MeshData.apply(this, [null]);
 } else {
-var meshData=Clazz.new_($I$(11));
+var meshData=Clazz.new_($I$(11,1));
 this.fillMeshData$org_jmol_jvxl_data_MeshData$I$org_jmol_shapesurface_IsosurfaceMesh(meshData, 1, null);
 meshData.getSurfaceSet$();
 this.fillMeshData$org_jmol_jvxl_data_MeshData$I$org_jmol_shapesurface_IsosurfaceMesh(meshData, 3, null);
@@ -172,7 +158,7 @@ if (modelIndex != -2147483648) this.thisMesh.modelIndex=modelIndex;
 this.thisMesh.jvxlData.vertexDataOnly=true;
 this.thisMesh.reinitializeLightingAndColor$org_jmol_viewer_Viewer(this.vwr);
 if (contactType != 1073742036) {
-this.thisMesh.bsVdw=Clazz.new_($I$(12));
+this.thisMesh.bsVdw=Clazz.new_($I$(12,1));
 this.thisMesh.bsVdw.or$javajs_util_BS(bsA);
 this.thisMesh.bsVdw.or$javajs_util_BS(bsB);
 }this.setPropI$S$O$javajs_util_BS("finalize", command, null);
@@ -213,14 +199,14 @@ if (colorDensity) ce.setRange$F$F$Z(-0.3, 0.3, false);
 }, p$1);
 
 Clazz.newMeth(C$, 'combineSurfaces$javajs_util_Lst$I$I$FA$O$Z$Z', function (pairs, contactType, displayType, parameters, func, isColorDensity, colorByType) {
-var volumeData=Clazz.new_($I$(14));
+var volumeData=Clazz.new_($I$(14,1));
 var logLevel=$I$(7).getLogLevel$();
 $I$(7).setLogLevel$I(0);
 var resolution=this.sg.params.resolution;
 var nContacts=pairs.size$();
 var volume=0;
 if (displayType == 1073741961 && resolution == 3.4028235E38  ) resolution=(nContacts > 1000 ? 3 : 10);
-var box=Clazz.new_($I$(15));
+var box=Clazz.new_($I$(15,1));
 for (var i=nContacts; --i >= 0; ) {
 var cp=pairs.get$I(i);
 var oldScore=cp.score;
@@ -273,8 +259,8 @@ return this.thisMesh.vc;
 }, p$1);
 
 Clazz.newMeth(C$, 'getPairs$javajs_util_BS$javajs_util_BS$org_jmol_atomdata_RadiusData$I$Z', function (bsA, bsB, rd, intramolecularMode, doEditCpList) {
-var list=Clazz.new_($I$(16));
-var ad=Clazz.new_($I$(17));
+var list=Clazz.new_($I$(16,1));
+var ad=Clazz.new_($I$(17,1));
 ad.radiusData=rd;
 var bs=$I$(9).copy$javajs_util_BS(bsA);
 bs.or$javajs_util_BS(bsB);
@@ -312,7 +298,7 @@ var ra=ad.atomRadius[ia];
 var rb=ad.atomRadius[ib];
 var d=atomA.distance$javajs_util_T3(atomB);
 if (d > ra + rb ) continue;
-var cp=Clazz.new_($I$(18).c$$org_jmol_modelset_AtomA$I$I$F$F$F$F,[this.atoms, ia, ib, ra, rb, vdwA, vdwB]);
+var cp=Clazz.new_($I$(18,1).c$$org_jmol_modelset_AtomA$I$I$F$F$F$F,[this.atoms, ia, ib, ra, rb, vdwA, vdwB]);
 if (cp.score < 0 ) C$.getVdwClashRadius$org_jmol_util_ContactPair$D$D$D$D(cp, ra - vdwA, vdwA, vdwB, d);
 var typeA=$I$(19).getType$org_jmol_modelset_Atom(atomA);
 var typeB=(typeA === $I$(19).NOT  ? $I$(19).NOT : $I$(19).getType$org_jmol_modelset_Atom(atomB));
@@ -320,14 +306,14 @@ var isHBond=$I$(19).isPossibleHBond$org_jmol_c_HB$org_jmol_c_HB(typeA, typeB);
 var hbondCutoff=(atomA.getElementNumber$() == 1 || atomB.getElementNumber$() == 1  ? -1.2 : -1.0);
 if (isHBond && cp.score < hbondCutoff  ) isHBond=false;
 if (isHBond && cp.score < 0  ) cp.contactType=1613238294;
-list.addLast$TV(cp);
+list.addLast$O(cp);
 }
 }
 iter.release$();
 iter=null;
 if (!doEditCpList) return list;
 var n=list.size$() - 1;
-var bsBad=Clazz.new_($I$(12));
+var bsBad=Clazz.new_($I$(12,1));
 for (var i=0; i < n; i++) {
 var cp1=list.get$I(i);
 for (var j=i + 1; j <= n; j++) {
@@ -349,9 +335,9 @@ default:
 }
 for (var i=bsBad.length$(); --i >= 0; ) if (bsBad.get$I(i)) list.removeItemAt$I(i);
 
-if ($I$(7).debugging) for (var i=0; i < list.size$(); i++) $I$(7).debug$S(list.get$I(i).toString());
+if ($I$(7).debugging) for (var i=0; i < list.size$(); i++) (function(a,f){return f.apply(null,a)})([list.get$I(i).toString()],$I$(7).debug$S);
 
-$I$(7).info$S("Contact pairs: " + list.size$());
+(function(a,f){return f.apply(null,a)})(["Contact pairs: " + list.size$()],$I$(7).info$S);
 return list;
 }, p$1);
 
@@ -397,7 +383,7 @@ var rdA;
 var rdB;
 if (displayType == 2097180) {
 rdA=C$.rdVDW;
-rdB=Clazz.new_($I$(1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, (rd.factorType === $I$(2).OFFSET  ? rd.value * 2 : (rd.value - 1) * 2 + 1), rd.factorType, rd.vdwType]);
+rdB=Clazz.new_([null, (rd.factorType === $I$(2).OFFSET  ? rd.value * 2 : (rd.value - 1) * 2 + 1), rd.factorType, rd.vdwType],$I$(1,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
 } else {
 rdA=rdB=rd;
 }params.colorDensity=isColorDensity;
@@ -505,22 +491,22 @@ this.jvxlData.valueMappedToRed=this.maxData;
 
 Clazz.newMeth(C$, 'addMeshInfo$org_jmol_shapesurface_IsosurfaceMesh$java_util_Map', function (mesh, info) {
 if (mesh.info == null ) return;
-var pairInfo=Clazz.new_($I$(16));
-info.put$TK$TV("pairInfo", pairInfo);
+var pairInfo=Clazz.new_($I$(16,1));
+info.put$O$O("pairInfo", pairInfo);
 var list=mesh.info;
 for (var i=0; i < list.size$(); i++) {
-var cpInfo=Clazz.new_($I$(22));
-pairInfo.addLast$TV(cpInfo);
+var cpInfo=Clazz.new_($I$(22,1));
+pairInfo.addLast$O(cpInfo);
 var cp=list.get$I(i);
-cpInfo.put$TK$TV("type", $I$(23).nameOf$I(cp.contactType));
-cpInfo.put$TK$TV("volume", Double.valueOf$D(cp.volume));
-cpInfo.put$TK$TV("vdwVolume", Double.valueOf$D(cp.vdwVolume));
+cpInfo.put$O$O("type", $I$(23).nameOf$I(cp.contactType));
+cpInfo.put$O$O("volume", Double.valueOf$D(cp.volume));
+cpInfo.put$O$O("vdwVolume", Double.valueOf$D(cp.vdwVolume));
 if (!Float.isNaN$F(cp.xVdwClash)) {
-cpInfo.put$TK$TV("xVdwClash", Double.valueOf$D(cp.xVdwClash));
-}cpInfo.put$TK$TV("score", Double.valueOf$D(cp.score));
-cpInfo.put$TK$TV("atoms", cp.myAtoms);
-cpInfo.put$TK$TV("radii", cp.radii);
-cpInfo.put$TK$TV("vdws", cp.vdws);
+cpInfo.put$O$O("xVdwClash", Double.valueOf$D(cp.xVdwClash));
+}cpInfo.put$O$O("score", Double.valueOf$D(cp.score));
+cpInfo.put$O$O("atoms", cp.myAtoms);
+cpInfo.put$O$O("radii", cp.radii);
+cpInfo.put$O$O("vdws", cp.vdws);
 }
 });
 
@@ -550,6 +536,10 @@ if (x > 0 ) {
 cp.xVdwClash=((x / 2));
 }}, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.rdVDW=Clazz.new_([null, 1, $I$(2).FACTOR, $I$(3).AUTO],$I$(1,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

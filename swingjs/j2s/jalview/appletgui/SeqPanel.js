@@ -1,41 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'Thread','jalview.appletgui.SeqCanvas','java.awt.BorderLayout','jalview.structure.StructureSelectionManager','StringBuffer','jalview.datamodel.SequenceGroup','StringBuilder','jalview.schemes.ResidueProperties','jalview.util.Platform','jalview.datamodel.SearchResults','java.util.Collections','jalview.util.Comparison','jalview.appletgui.Tooltip','java.awt.Font','jalview.util.MessageManager','jalview.commands.EditCommand','jalview.datamodel.SequenceI',['jalview.commands.EditCommand','.Action'],'java.util.Vector','jalview.appletgui.APopupMenu','jalview.appletgui.SliderPanel','jalview.appletgui.PaintRefresher',['jalview.appletgui.SeqPanel','.ScrollThread'],'jalview.datamodel.ColumnSelection','jalview.util.MappingUtils','jalview.datamodel.HiddenColumns']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SeqPanel", function(){
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'Thread','jalview.appletgui.SeqCanvas','java.awt.BorderLayout','jalview.structure.StructureSelectionManager','StringBuffer','jalview.datamodel.SequenceGroup','StringBuilder','jalview.schemes.ResidueProperties','jalview.util.Platform','jalview.datamodel.SearchResults','java.util.Collections','jalview.util.Comparison','jalview.appletgui.Tooltip','java.awt.Font','jalview.util.MessageManager','jalview.commands.EditCommand','jalview.datamodel.SequenceI',['jalview.commands.EditCommand','.Action'],'java.util.Vector','jalview.appletgui.APopupMenu','jalview.appletgui.SliderPanel','jalview.appletgui.PaintRefresher',['jalview.appletgui.SeqPanel','.ScrollThread'],'jalview.datamodel.ColumnSelection','jalview.util.MappingUtils','jalview.datamodel.HiddenColumns']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SeqPanel", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.Panel', ['java.awt.event.MouseMotionListener', 'java.awt.event.MouseListener', 'jalview.structure.SequenceListener', 'jalview.structure.SelectionListener']);
+C$.$classes$=[['ScrollThread',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seqCanvas=null;
-this.ap=null;
-this.lastres=0;
-this.startseq=0;
-this.av=null;
-this.seqEditOccurred=false;
-this.scrollThread=null;
-this.mouseDragging=false;
-this.editingSeqs=false;
-this.groupEditing=false;
-this.oldSeq=0;
-this.changeEndSeq=false;
-this.changeStartSeq=false;
-this.changeEndRes=false;
-this.changeStartRes=false;
-this.stretchGroup=null;
-this.keyboardNo1=null;
-this.keyboardNo2=null;
-this.mouseWheelPressed=false;
-this.lastMousePress=null;
-this.editCommand=null;
-this.ssm=null;
-this.startWrapBlock=0;
-this.wrappedBlock=0;
-this.lastMessage=null;
-this.tooltip=null;
-this.needOverviewUpdate=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.seqEditOccurred=false;
@@ -52,13 +21,15 @@ this.stretchGroup=null;
 this.mouseWheelPressed=false;
 this.startWrapBlock=-1;
 this.wrappedBlock=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['seqEditOccurred','mouseDragging','editingSeqs','groupEditing','changeEndSeq','changeStartSeq','changeEndRes','changeStartRes','mouseWheelPressed','needOverviewUpdate'],'I',['lastres','startseq','oldSeq','startWrapBlock','wrappedBlock'],'S',['lastMessage'],'O',['seqCanvas','jalview.appletgui.SeqCanvas','ap','jalview.appletgui.AlignmentPanel','av','jalview.appletgui.AlignViewport','scrollThread','jalview.appletgui.SeqPanel.ScrollThread','stretchGroup','jalview.datamodel.SequenceGroup','keyboardNo1','StringBuffer','+keyboardNo2','lastMousePress','java.awt.Point','editCommand','jalview.commands.EditCommand','ssm','jalview.structure.StructureSelectionManager','tooltip','jalview.appletgui.Tooltip']]]
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel', function (avp, p) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=avp;
-this.seqCanvas=Clazz.new_($I$(2).c$$jalview_appletgui_AlignViewport,[avp]);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3)));
+this.seqCanvas=Clazz.new_($I$(2,1).c$$jalview_appletgui_AlignViewport,[avp]);
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3,1)));
 this.add$java_awt_Component(this.seqCanvas);
 this.ap=p;
 this.seqCanvas.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
@@ -94,7 +65,7 @@ this.scrollToVisible$Z(true);
 
 Clazz.newMeth(C$, 'setCursorRowAndColumn$', function () {
 if (this.keyboardNo2 == null ) {
-this.keyboardNo2=Clazz.new_($I$(5));
+this.keyboardNo2=Clazz.new_($I$(5,1));
 } else {
 this.seqCanvas.cursorX=this.getKeyboardNo1$() - 1;
 this.seqCanvas.cursorY=this.getKeyboardNo2$() - 1;
@@ -176,7 +147,7 @@ for (var i=min; i < max; i++) {
 sg.addSequence$jalview_datamodel_SequenceI$Z(this.av.getAlignment$().getSequenceAt$I(i), false);
 }
 }}if (this.av.getSelectionGroup$() == null ) {
-var sg=Clazz.new_($I$(6));
+var sg=Clazz.new_($I$(6,1));
 sg.setStartRes$I(this.seqCanvas.cursorX);
 sg.setEndRes$I(this.seqCanvas.cursorX);
 sg.addSequence$jalview_datamodel_SequenceI$Z(sequence, false);
@@ -203,7 +174,7 @@ this.endEditing$();
 
 Clazz.newMeth(C$, 'numberPressed$C', function (value) {
 if (this.keyboardNo1 == null ) {
-this.keyboardNo1=Clazz.new_($I$(5));
+this.keyboardNo1=Clazz.new_($I$(5,1));
 }if (this.keyboardNo2 != null ) {
 this.keyboardNo2.append$C(value);
 } else {
@@ -243,7 +214,7 @@ return 1;
 });
 
 Clazz.newMeth(C$, 'setStatusMessage$jalview_datamodel_SequenceI$I$I', function (sequence, column, seq) {
-var text=Clazz.new_($I$(7).c$$I,[32]);
+var text=Clazz.new_($I$(7,1).c$$I,[32]);
 var seqno=seq == -1 ? "" : " " + (seq + 1);
 text.append$S("Sequence" + seqno + " ID: " + sequence.getName$() );
 var residue=null;
@@ -314,10 +285,10 @@ this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
 }var column=this.findColumn$java_awt_event_MouseEvent(evt);
 var features=this.findFeaturesAtColumn$jalview_datamodel_SequenceI$I(sequence, column + 1);
 if (!features.isEmpty$()) {
-var highlight=Clazz.new_($I$(10));
+var highlight=Clazz.new_($I$(10,1));
 highlight.addResult$jalview_datamodel_SequenceI$I$I(sequence, features.get$I(0).getBegin$(), features.get$I(0).getEnd$());
 this.seqCanvas.highlightSearchResults$jalview_datamodel_SearchResultsI(highlight);
-this.seqCanvas.getFeatureRenderer$().amendFeatures$java_util_List$java_util_List$Z$jalview_appletgui_AlignmentPanel($I$(11).singletonList$TT(sequence), features, false, this.ap);
+this.seqCanvas.getFeatureRenderer$().amendFeatures$java_util_List$java_util_List$Z$jalview_appletgui_AlignmentPanel($I$(11).singletonList$O(sequence), features, false, this.ap);
 this.av.setSearchResults$jalview_datamodel_SearchResultsI(null);
 this.seqCanvas.repaint$();
 }}});
@@ -409,6 +380,7 @@ this.ap.alignFrame.repaint$();
 }this.ap.setToScrollComplementPanel$Z(true);
 }p$1.setStatusMessage$jalview_datamodel_SearchResultsI.apply(this, [results]);
 this.seqCanvas.highlightSearchResults$jalview_datamodel_SearchResultsI(results);
+return null;
 });
 
 Clazz.newMeth(C$, 'getVamsasSource$', function () {
@@ -436,7 +408,7 @@ var isGapped=$I$(12).isGap$C(ch);
 var respos=sequence.findPosition$I(column);
 if (this.ssm != null  && !isGapped ) {
 this.mouseOverSequence$jalview_datamodel_SequenceI$I$I(sequence, column, respos);
-}var text=Clazz.new_($I$(7));
+}var text=Clazz.new_($I$(7,1));
 text.append$S("Sequence ").append$S(Integer.toString$I(seq + 1)).append$S(" ID: ").append$S(sequence.getName$());
 if (!isGapped) {
 if (this.av.getAlignment$().isNucleotide$()) {
@@ -447,7 +419,7 @@ var residue=(ch == "x" || ch == "X" ) ? "X" : $I$(8).aa2Triplet.get$O(String.val
 text.append$S(" Residue: ").append$O(residue == null  ? new Character(ch) : residue);
 }text.append$S(" (").append$S(Integer.toString$I(respos)).append$S(")");
 }this.ap.alignFrame.statusBar.setText$S(text.toString());
-var tooltipText=Clazz.new_($I$(7));
+var tooltipText=Clazz.new_($I$(7,1));
 var groups=this.av.getAlignment$().findAllGroups$jalview_datamodel_SequenceI(sequence);
 if (groups != null ) {
 for (var g=0; g < groups.length; g++) {
@@ -471,7 +443,7 @@ tooltipText.append$S(" (" + sf.getValue$S("status") + ")" );
 }}tooltipText.append$S("\n");
 }
 }if (this.tooltip == null ) {
-this.tooltip=Clazz.new_($I$(13).c$$S$java_awt_Component,[tooltipText.toString(), this.seqCanvas]);
+this.tooltip=Clazz.new_([tooltipText.toString(), this.seqCanvas],$I$(13,1).c$$S$java_awt_Component);
 } else {
 this.tooltip.setTip$S(tooltipText.toString());
 }});
@@ -491,7 +463,7 @@ fontSize--;
 fontSize++;
 }if (fontSize < 1) {
 fontSize=1;
-}this.av.setFont$java_awt_Font$Z(Clazz.new_($I$(14).c$$S$I$I,[this.av.font.getName$(), this.av.font.getStyle$(), fontSize]), true);
+}this.av.setFont$java_awt_Font$Z(Clazz.new_([this.av.font.getName$(), this.av.font.getStyle$(), fontSize],$I$(14,1).c$$S$I$I), true);
 this.av.setCharWidth$I(oldWidth);
 } else {
 if (evt.getX$() < this.lastMousePress.x && this.av.getCharWidth$() > 1 ) {
@@ -534,18 +506,18 @@ if (!this.groupEditing && this.av.hasHiddenRows$() ) {
 if (this.av.isHiddenRepSequence$jalview_datamodel_SequenceI(seq)) {
 sg=this.av.getRepresentedSequences$jalview_datamodel_SequenceI(seq);
 this.groupEditing=true;
-}}var message=Clazz.new_($I$(5));
+}}var message=Clazz.new_($I$(5,1));
 if (this.groupEditing) {
 message.append$S($I$(15).getString$S("action.edit_group")).append$S(":");
 if (this.editCommand == null ) {
-this.editCommand=Clazz.new_($I$(16).c$$S,[$I$(15).getString$S("action.edit_group")]);
+this.editCommand=Clazz.new_([$I$(15).getString$S("action.edit_group")],$I$(16,1).c$$S);
 }} else {
 message.append$S($I$(15).getString$S("label.edit_sequence")).append$S(" " + seq.getName$());
 var label=seq.getName$();
 if (label.length$() > 10) {
 label=label.substring$I$I(0, 10);
 }if (this.editCommand == null ) {
-this.editCommand=Clazz.new_($I$(16).c$$S,[$I$(15).formatMessage$S$SA("label.edit_params", Clazz.array(String, -1, [label]))]);
+this.editCommand=Clazz.new_([$I$(15,"formatMessage$S$SA",["label.edit_params", Clazz.array(String, -1, [label])])],$I$(16,1).c$$S);
 }}if (insertGap) {
 message.append$S(" insert ");
 } else {
@@ -583,7 +555,7 @@ fixedLeft=y2;
 } else {
 fixedRight=y2 - 1;
 }}}if (this.groupEditing) {
-var groupSeqs=sg.getSequences$java_util_Map(this.av.getHiddenRepSequences$()).toArray$TTA(Clazz.array($I$(17), [0]));
+var groupSeqs=sg.getSequences$java_util_Map(this.av.getHiddenRepSequences$()).toArray$OA(Clazz.array($I$(17), [0]));
 if (insertGap) {
 if (sg.getStartRes$() == 0 && sg.getEndRes$() == fixedRight  && sg.getEndRes$() == this.av.getAlignment$().getWidth$() - 1 ) {
 sg.setEndRes$I(this.av.getAlignment$().getWidth$() + startres - this.lastres);
@@ -593,7 +565,7 @@ for (; fixedRight > this.lastres; fixedRight--) {
 blank=true;
 for (var gs, $gs = 0, $$gs = groupSeqs; $gs<$$gs.length&&((gs=($$gs[$gs])),1);$gs++) {
 for (var j=0; j < startres - this.lastres; j++) {
-if (!$I$(12).isGap$C(gs.getCharAt$I(fixedRight - j))) {
+if (!$I$(12,"isGap$C",[gs.getCharAt$I(fixedRight - j)])) {
 blank=false;
 break;
 }}
@@ -621,7 +593,7 @@ for (var gs, $gs = 0, $$gs = groupSeqs; $gs<$$gs.length&&((gs=($$gs[$gs])),1);$g
 for (var j=startres; j < this.lastres; j++) {
 if (gs.getLength$() <= j) {
 continue;
-}if (!$I$(12).isGap$C(gs.getCharAt$I(j))) {
+}if (!$I$(12,"isGap$C",[gs.getCharAt$I(j)])) {
 this.endEditing$();
 return;
 }}
@@ -651,7 +623,7 @@ this.editCommand.appendEdit$jalview_commands_EditCommand_Action$jalview_datamode
 }} else {
 if (fixedColumns && fixedRight != -1 ) {
 for (var j=this.lastres; j > startres; j--) {
-if (!$I$(12).isGap$C(seq.getCharAt$I(startres))) {
+if (!$I$(12,"isGap$C",[seq.getCharAt$I(startres)])) {
 this.endEditing$();
 break;
 }this.deleteChar$I$jalview_datamodel_SequenceIA$I(startres, Clazz.array($I$(17), -1, [seq]), fixedRight);
@@ -659,7 +631,7 @@ break;
 } else {
 var max=0;
 for (var m=startres; m < this.lastres; m++) {
-if (!$I$(12).isGap$C(seq.getCharAt$I(m))) {
+if (!$I$(12,"isGap$C",[seq.getCharAt$I(m)])) {
 break;
 }max++;
 }
@@ -673,7 +645,7 @@ Clazz.newMeth(C$, 'insertChar$I$jalview_datamodel_SequenceIA$I', function (j, se
 var blankColumn=fixedColumn;
 for (var s=0; s < seq.length; s++) {
 for (blankColumn=fixedColumn; blankColumn > j; blankColumn--) {
-if ($I$(12).isGap$C(seq[s].getCharAt$I(blankColumn))) {
+if ($I$(12,"isGap$C",[seq[s].getCharAt$I(blankColumn)])) {
 break;
 }}
 if (blankColumn <= j) {
@@ -708,16 +680,16 @@ if (this.stretchGroup == null  || !this.stretchGroup.contains$jalview_datamodel_
 this.stretchGroup=this.av.getAlignment$().findGroup$jalview_datamodel_SequenceI$I(sequence, column);
 if (this.stretchGroup != null ) {
 this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(this.stretchGroup);
-}}if ((evt.getModifiers$() & 4) == 4) {
+}}if ((evt.getModifiersEx$() & 4096) == 4096) {
 var allFeatures=this.findFeaturesAtColumn$jalview_datamodel_SequenceI$I(sequence, sequence.findPosition$I(column + 1));
 var links=null;
 for (var sf, $sf = allFeatures.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
 if (sf.links != null ) {
 if (links == null ) {
-links=Clazz.new_($I$(19));
+links=Clazz.new_($I$(19,1));
 }links.addAll$java_util_Collection(sf.links);
 }}
-var popup=Clazz.new_($I$(20).c$$jalview_appletgui_AlignmentPanel$jalview_datamodel_SequenceI$java_util_List,[this.ap, null, links]);
+var popup=Clazz.new_($I$(20,1).c$$jalview_appletgui_AlignmentPanel$jalview_datamodel_SequenceI$java_util_List,[this.ap, null, links]);
 this.add$java_awt_PopupMenu(popup);
 popup.show$java_awt_Component$I$I(this, evt.getX$(), evt.getY$());
 return;
@@ -727,16 +699,16 @@ this.seqCanvas.cursorY=this.findSeq$java_awt_event_MouseEvent(evt);
 this.seqCanvas.repaint$();
 return;
 }if (this.stretchGroup == null ) {
-var sg=Clazz.new_($I$(6));
+var sg=Clazz.new_($I$(6,1));
 sg.setStartRes$I(column);
 sg.setEndRes$I(column);
 sg.addSequence$jalview_datamodel_SequenceI$Z(sequence, false);
 this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(sg);
 this.stretchGroup=sg;
 if (this.av.getConservationSelected$()) {
-$I$(21).setConservationSlider$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.ap, this.av.getResidueShading$(), this.ap.getViewName$());
+$I$(21,"setConservationSlider$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.ap, this.av.getResidueShading$(), this.ap.getViewName$()]);
 }if (this.av.getAbovePIDThreshold$()) {
-$I$(21).setPIDSliderSource$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.ap, this.av.getResidueShading$(), this.ap.getViewName$());
+$I$(21,"setPIDSliderSource$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.ap, this.av.getResidueShading$(), this.ap.getViewName$()]);
 }}});
 
 Clazz.newMeth(C$, 'doMouseReleasedDefineMode$java_awt_event_MouseEvent$Z', function (evt, afterDrag) {
@@ -747,10 +719,10 @@ this.needOverviewUpdate|=vischange && this.av.isSelectionDefinedGroup$() && afte
 if (this.stretchGroup.cs != null ) {
 this.stretchGroup.cs.alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map(this.stretchGroup, this.av.getHiddenRepSequences$());
 if (this.stretchGroup.cs.conservationApplied$()) {
-$I$(21).setConservationSlider$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.ap, this.stretchGroup.cs, this.stretchGroup.getName$());
+$I$(21,"setConservationSlider$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.ap, this.stretchGroup.cs, this.stretchGroup.getName$()]);
 }if (this.stretchGroup.cs.getThreshold$() > 0) {
-$I$(21).setPIDSliderSource$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.ap, this.stretchGroup.cs, this.stretchGroup.getName$());
-}}$I$(22).Refresh$java_awt_Component$S(this.ap, this.av.getSequenceSetId$());
+$I$(21,"setPIDSliderSource$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.ap, this.stretchGroup.cs, this.stretchGroup.getName$()]);
+}}$I$(22,"Refresh$java_awt_Component$S",[this.ap, this.av.getSequenceSetId$()]);
 this.ap.paintAlignment$Z$Z(this.needOverviewUpdate, this.needOverviewUpdate);
 this.needOverviewUpdate=false;
 this.changeEndRes=false;
@@ -826,7 +798,7 @@ Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
 if (this.av.getWrapAlignment$()) {
 return;
 }if (this.mouseDragging && this.scrollThread == null  ) {
-this.scrollThread=Clazz.new_($I$(23), [this, null]);
+this.scrollThread=Clazz.new_($I$(23,1),[this, null]);
 }});
 
 Clazz.newMeth(C$, 'scrollCanvas$java_awt_event_MouseEvent', function (evt) {
@@ -837,12 +809,12 @@ this.scrollThread=null;
 }this.mouseDragging=false;
 } else {
 if (this.scrollThread == null ) {
-this.scrollThread=Clazz.new_($I$(23), [this, null]);
+this.scrollThread=Clazz.new_($I$(23,1),[this, null]);
 }this.mouseDragging=true;
 this.scrollThread.setEvent$java_awt_event_MouseEvent(evt);
 }});
 
-Clazz.newMeth(C$, ['selection$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_structure_SelectionSource','selection$'], function (seqsel, colsel, hidden, source) {
+Clazz.newMeth(C$, 'selection$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_structure_SelectionSource', function (seqsel, colsel, hidden, source) {
 if (this.av != null  && (this.av === source  || !this.av.followSelection  || (Clazz.instanceOf(source, "jalview.appletgui.AlignViewport") && (source).getSequenceSetId$().equals$O(this.av.getSequenceSetId$()) ) ) ) {
 return;
 }if (this.selectionFromTranslation$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_structure_SelectionSource(seqsel, colsel, hidden, source)) {
@@ -869,7 +841,7 @@ if (this.av.getColumnSelection$() != null ) {
 this.av.getColumnSelection$().clear$();
 }} else {
 if (this.av.getColumnSelection$() == null ) {
-this.av.setColumnSelection$jalview_datamodel_ColumnSelection(Clazz.new_($I$(24).c$$jalview_datamodel_ColumnSelection,[colsel]));
+this.av.setColumnSelection$jalview_datamodel_ColumnSelection(Clazz.new_($I$(24,1).c$$jalview_datamodel_ColumnSelection,[colsel]));
 } else {
 this.av.getColumnSelection$().setElementsFrom$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns(colsel, this.av.getAlignment$().getHiddenColumns$());
 }}repaint|=this.av.isColSelChanged$Z(true);
@@ -905,8 +877,8 @@ return false;
 }var sg=$I$(25).mapSequenceGroup$jalview_datamodel_SequenceGroup$jalview_api_AlignViewportI$jalview_api_AlignViewportI(seqsel, sourceAv, this.av);
 this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(sg);
 this.av.isSelectionGroupChanged$Z(true);
-var cs=Clazz.new_($I$(24));
-var hs=Clazz.new_($I$(26));
+var cs=Clazz.new_($I$(24,1));
+var hs=Clazz.new_($I$(26,1));
 $I$(25).mapColumnSelection$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_api_AlignViewportI$jalview_api_AlignViewportI$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns(colsel, hidden, sourceAv, this.av, cs, hs);
 this.av.setColumnSelection$jalview_datamodel_ColumnSelection(cs);
 this.av.getAlignment$().setHiddenColumns$jalview_datamodel_HiddenColumns(hs);
@@ -915,25 +887,20 @@ this.ap.repaint$();
 return true;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.SeqPanel, "ScrollThread", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SeqPanel, "ScrollThread", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'Thread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.evt=null;
-this.threadRunning=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.threadRunning=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['threadRunning'],'O',['evt','java.awt.event.MouseEvent']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.start$();
 }, 1);
 
@@ -974,4 +941,4 @@ throw ex;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:45 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,20 +1,16 @@
-(function(){var P$=java.util,p$1={},I$=[[0,'sun.util.ResourceBundleEnumeration','java.util.HashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ListResourceBundle", null, 'java.util.ResourceBundle');
+(function(){var P$=java.util,p$1={},I$=[[0,'sun.util.ResourceBundleEnumeration','java.util.HashMap']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ListResourceBundle", null, 'java.util.ResourceBundle');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lookup=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.lookup=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['lookup','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'handleGetObject$S', function (key) {
@@ -29,7 +25,7 @@ Clazz.newMeth(C$, 'getKeys$', function () {
 if (this.lookup == null ) {
 p$1.loadLookup.apply(this, []);
 }var parent=this.parent;
-return Clazz.new_($I$(1).c$$java_util_Set$java_util_Enumeration,[this.lookup.keySet$(), (parent != null ) ? parent.getKeys$() : null]);
+return Clazz.new_([this.lookup.keySet$(), (parent != null ) ? parent.getKeys$() : null],$I$(1,1).c$$java_util_Set$java_util_Enumeration);
 });
 
 Clazz.newMeth(C$, 'handleKeySet$', function () {
@@ -41,15 +37,15 @@ p$1.loadLookup.apply(this, []);
 Clazz.newMeth(C$, 'loadLookup', function () {
 if (this.lookup != null ) return;
 var contents=this.getContents$();
-var temp=Clazz.new_($I$(2).c$$I,[contents.length]);
+var temp=Clazz.new_($I$(2,1).c$$I,[contents.length]);
 for (var i=0; i < contents.length; ++i) {
 var key=contents[i][0];
 var value=contents[i][1];
 if (key == null  || value == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}temp.put$TK$TV(key, value);
+}temp.put$O$O(key, value);
 }
 this.lookup=temp;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

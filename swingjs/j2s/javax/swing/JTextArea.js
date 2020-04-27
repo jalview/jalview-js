@@ -1,21 +1,12 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.LookAndFeel','javax.swing.JComponent','javax.swing.text.PlainDocument','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JTextArea", null, 'javax.swing.text.JTextComponent');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.text.PlainDocument','java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JTextArea", null, 'javax.swing.text.JTextComponent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rows=0;
-this.columns=0;
-this.columnWidth=0;
-this.rowHeight=0;
-this.wrap=false;
-this.word=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['wrap','word'],'I',['rows','columns','columnWidth','rowHeight']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$javax_swing_text_Document$S$I$I.apply(this, [null, null, 0, 0]);
@@ -38,7 +29,8 @@ C$.c$$javax_swing_text_Document$S$I$I.apply(this, [doc, null, 0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Document$S$I$I', function (doc, text, rows, columns) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
+this.setFocusTraversalKeysEnabled$Z(false);
 this.rows=rows;
 this.columns=columns;
 if (doc == null ) {
@@ -51,16 +43,14 @@ this.select$I$I(0, 0);
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["rows: " + rows]);
 }if (columns < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["columns: " + columns]);
-}$I$(1).installProperty$javax_swing_JComponent$S$O(this, "focusTraversalKeysForward", $I$(2).getManagingFocusForwardTraversalKeys$());
-$I$(1).installProperty$javax_swing_JComponent$S$O(this, "focusTraversalKeysBackward", $I$(2).getManagingFocusBackwardTraversalKeys$());
-}, 1);
+}}, 1);
 
 Clazz.newMeth(C$, 'getUIClassID$', function () {
 return "TextAreaUI";
 });
 
 Clazz.newMeth(C$, 'createDefaultModel$', function () {
-return Clazz.new_($I$(3));
+return Clazz.new_($I$(1,1));
 });
 
 Clazz.newMeth(C$, 'setTabSize$I', function (size) {
@@ -175,8 +165,8 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["end before start"
 }var doc=this.getDocument$();
 if (doc != null ) {
 try {
-if (Clazz.instanceOf(doc, "swingjs.api.JSMinimalAbstractDocument")) {
-(doc).replace$I$I$S$javax_swing_text_AttributeSet(start, end - start, str, null);
+if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
+(doc).replace$I$I$S$javax_swing_text_AttributeSet$javax_swing_text_JTextComponent(start, end - start, str, null, this);
 } else {
 doc.remove$I$I(start, end - start);
 doc.insertString$I$S$javax_swing_text_AttributeSet(start, str, null);
@@ -237,7 +227,7 @@ Clazz.newMeth(C$, 'getSizeJS$java_awt_Dimension$I$I$I', function (d, n, rows, co
 var w=10;
 var h=10;
 if (d == null ) {
-d=Clazz.new_($I$(4).c$$I$I,[n, n]);
+d=Clazz.new_($I$(2,1).c$$I$I,[n, n]);
 } else {
 w=d.width;
 h=d.height;
@@ -272,7 +262,7 @@ return (this.wrap) ? true : C$.superclazz.prototype.getScrollableTracksViewportW
 
 Clazz.newMeth(C$, 'getPreferredScrollableViewportSize$', function () {
 var size=C$.superclazz.prototype.getPreferredScrollableViewportSize$.apply(this, []);
-size=(size == null ) ? Clazz.new_($I$(4).c$$I$I,[400, 400]) : size;
+size=(size == null ) ? Clazz.new_($I$(2,1).c$$I$I,[400, 400]) : size;
 var insets=this.getInsets$();
 size.width=(this.columns == 0) ? size.width : this.columns * this.getColumnWidth$() + insets.left + insets.right;
 size.height=(this.rows == 0) ? size.height : this.rows * this.getRowHeight$() + insets.top + insets.bottom;
@@ -290,4 +280,4 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid orientati
 }
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

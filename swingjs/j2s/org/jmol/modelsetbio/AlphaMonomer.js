@@ -1,19 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'org.jmol.c.STR','org.jmol.modelsetbio.Helix','org.jmol.modelsetbio.Sheet','org.jmol.modelsetbio.Turn','javajs.util.V3','javajs.util.Quat']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlphaMonomer", null, 'org.jmol.modelsetbio.Monomer');
-C$.alphaOffsets=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'org.jmol.c.STR','org.jmol.modelsetbio.Helix','org.jmol.modelsetbio.Sheet','org.jmol.modelsetbio.Turn','javajs.util.V3','javajs.util.Quat']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "AlphaMonomer", null, 'org.jmol.modelsetbio.Monomer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.alphaOffsets=Clazz.array(Byte.TYPE, -1, [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.proteinStructure=null;
-this.nitrogenHydrogenPoint=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['proteinStructure','org.jmol.modelsetbio.ProteinStructure','nitrogenHydrogenPoint','javajs.util.P3']]
+,['O',['alphaOffsets','byte[]']]]
 
 Clazz.newMeth(C$, 'isProtein$', function () {
 return true;
@@ -24,7 +18,7 @@ return (firstIndex != lastIndex || specialAtomIndexes[2] != firstIndex  ? null :
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'isAlphaMonomer$', function () {
@@ -71,13 +65,13 @@ case $I$(1).HELIX:
 case $I$(1).HELIXALPHA:
 case $I$(1).HELIX310:
 case $I$(1).HELIXPI:
-this.setStructure$org_jmol_modelsetbio_ProteinStructure(Clazz.new_($I$(2).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this.bioPolymer, this.monomerIndex, 1, type]));
+this.setStructure$org_jmol_modelsetbio_ProteinStructure(Clazz.new_($I$(2,1).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this.bioPolymer, this.monomerIndex, 1, type]));
 break;
 case $I$(1).SHEET:
-this.setStructure$org_jmol_modelsetbio_ProteinStructure(Clazz.new_($I$(3).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this.bioPolymer, this.monomerIndex, 1, type]));
+this.setStructure$org_jmol_modelsetbio_ProteinStructure(Clazz.new_($I$(3,1).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this.bioPolymer, this.monomerIndex, 1, type]));
 break;
 case $I$(1).TURN:
-this.setStructure$org_jmol_modelsetbio_ProteinStructure(Clazz.new_($I$(4).c$$org_jmol_modelsetbio_AlphaPolymer$I$I,[this.bioPolymer, this.monomerIndex, 1]));
+this.setStructure$org_jmol_modelsetbio_ProteinStructure(Clazz.new_($I$(4,1).c$$org_jmol_modelsetbio_AlphaPolymer$I$I,[this.bioPolymer, this.monomerIndex, 1]));
 break;
 case $I$(1).NONE:
 this.setStructure$org_jmol_modelsetbio_ProteinStructure(null);
@@ -138,8 +132,8 @@ return this.getQuaternionAlpha$C(qType);
 
 Clazz.newMeth(C$, 'getQuaternionAlpha$C', function (qType) {
 if (this.monomerIndex < 0) return null;
-var vA=Clazz.new_($I$(5));
-var vB=Clazz.new_($I$(5));
+var vA=Clazz.new_($I$(5,1));
+var vB=Clazz.new_($I$(5,1));
 var vC=null;
 switch (qType.$c()) {
 default:
@@ -161,5 +155,9 @@ break;
 }
 return $I$(6).getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z(vA, vB, vC, false);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.alphaOffsets=Clazz.array(Byte.TYPE, -1, [0]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

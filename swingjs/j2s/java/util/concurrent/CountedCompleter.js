@@ -1,46 +1,27 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),I$=[[0,'sun.misc.Unsafe','Error','Thread','java.util.concurrent.ForkJoinPool']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CountedCompleter", null, 'java.util.concurrent.ForkJoinTask');
-C$.$U=null;
-C$.PENDING=0;
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),I$=[[0,'sun.misc.Unsafe','Error','Thread','java.util.concurrent.ForkJoinPool']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CountedCompleter", null, 'java.util.concurrent.ForkJoinTask');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.PENDING=0;
-{
-try {
-C$.$U=$I$(1).getUnsafe$();
-C$.PENDING=C$.$U.objectFieldOffset$reflect_Field(Clazz.getClass(C$).getDeclaredField$S("pending"));
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_($I$(2).c$$Throwable,[e]);
-} else {
-throw e;
-}
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.completer=null;
-this.pending=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pending'],'O',['completer','java.util.concurrent.CountedCompleter']]
+,['J',['PENDING'],'O',['$U','sun.misc.Unsafe']]]
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_CountedCompleter$I', function (completer, initialPendingCount) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.completer=completer;
 this.pending=initialPendingCount;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_CountedCompleter', function (completer) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.completer=completer;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.completer=null;
 }, 1);
 
@@ -111,9 +92,9 @@ return;
 }
 });
 
-Clazz.newMeth(C$, ['complete$TT','complete$TV'], function (rawResult) {
+Clazz.newMeth(C$, 'complete$O', function (rawResult) {
 var p;
-this.setRawResult$TT(rawResult);
+this.setRawResult$O(rawResult);
 this.onCompletion$java_util_concurrent_CountedCompleter(this);
 this.quietlyComplete$();
 if ((p=this.completer) != null ) p.tryComplete$();
@@ -166,7 +147,22 @@ Clazz.newMeth(C$, 'getRawResult$', function () {
 return null;
 });
 
-Clazz.newMeth(C$, ['setRawResult$TT','setRawResult$TV'], function (t) {
+Clazz.newMeth(C$, 'setRawResult$O', function (t) {
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+try {
+C$.$U=$I$(1).getUnsafe$();
+C$.PENDING=C$.$U.objectFieldOffset$java_lang_reflect_Field(Clazz.getClass(C$).getDeclaredField$S("pending"));
+} catch (e) {
+if (Clazz.exceptionOf(e,"Exception")){
+throw Clazz.new_($I$(2,1).c$$Throwable,[e]);
+} else {
+throw e;
+}
+}
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

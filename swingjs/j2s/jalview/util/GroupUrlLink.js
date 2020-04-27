@@ -1,35 +1,20 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),p$1={},I$=[[0,'jalview.util.QuickSort','com.stevesoft.pat.Regex','java.util.Hashtable','Error','jalview.util.MessageManager','StringBuffer','jalview.util.Platform',['jalview.util.GroupUrlLink','.UrlStringTooLongException']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GroupUrlLink", function(){
+(function(){var P$=Clazz.newPackage("jalview.util"),p$1={},I$=[[0,'jalview.util.QuickSort','com.stevesoft.pat.Regex','java.util.Hashtable','Error','jalview.util.MessageManager','StringBuffer','jalview.util.Platform',['jalview.util.GroupUrlLink','.UrlStringTooLongException']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GroupUrlLink", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.tokens=null;
+C$.$classes$=[['UrlStringTooLongException',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-if (C$.tokens == null ) {
-C$.tokens=Clazz.array(String, -1, ["SEQUENCEIDS", "SEQUENCES", "DATASETID"]);
-}};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.url_prefix=null;
-this.target=null;
-this.label=null;
-this.url_suffix=null;
-this.separators=null;
-this.regexReplace=null;
-this.invalidMessage=null;
-this.segs=null;
-this.mtch=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.invalidMessage=null;
-}, 1);
+},1);
+
+C$.$fields$=[['S',['url_prefix','target','label','invalidMessage'],'O',['+url_suffix','+separators','+regexReplace','segs','int[]','mtch','String[]']]
+,['O',['tokens','String[]']]]
 
 Clazz.newMeth(C$, 'c$$S', function (link) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var sep=link.indexOf$S("|");
 this.segs=Clazz.array(Integer.TYPE, [C$.tokens.length]);
 var ntoks=0;
@@ -164,12 +149,12 @@ return this.makeUrls$java_util_Hashtable$Z(rstrings, onlyIfMatches);
 });
 
 Clazz.newMeth(C$, 'replacementArgs$SA$SA$S', function (idstrings, seqstrings, dsstring) {
-var rstrings=Clazz.new_($I$(3));
-rstrings.put$TK$TV(C$.tokens[0], idstrings);
-rstrings.put$TK$TV(C$.tokens[1], seqstrings);
-rstrings.put$TK$TV(C$.tokens[2], Clazz.array(String, -1, [dsstring]));
+var rstrings=Clazz.new_($I$(3,1));
+rstrings.put$O$O(C$.tokens[0], idstrings);
+rstrings.put$O$O(C$.tokens[1], seqstrings);
+rstrings.put$O$O(C$.tokens[2], Clazz.array(String, -1, [dsstring]));
 if (idstrings.length != seqstrings.length) {
-throw Clazz.new_($I$(4).c$$S,[$I$(5).getString$S("error.idstring_seqstrings_only_one_per_sequence")]);
+throw Clazz.new_([$I$(5).getString$S("error.idstring_seqstrings_only_one_per_sequence")],$I$(4,1).c$$S);
 }return rstrings;
 }, p$1);
 
@@ -204,14 +189,14 @@ mins=1;
 maxs=idseq[i].length;
 } else {
 if (maxs != idseq[i].length) {
-throw Clazz.new_($I$(4).c$$S,[$I$(5).formatMessage$S$SA("error.cannot_have_mixed_length_replacement_vectors", Clazz.array(String, -1, [(this.mtch[i]), Integer.valueOf$I(idseq[i].length).toString(), Integer.valueOf$I(maxs).toString()]))]);
+throw Clazz.new_([$I$(5,"formatMessage$S$SA",["error.cannot_have_mixed_length_replacement_vectors", Clazz.array(String, -1, [(this.mtch[i]), Integer.valueOf$I(idseq[i].length).toString(), Integer.valueOf$I(maxs).toString()])])],$I$(4,1).c$$S);
 }}} else {
-throw Clazz.new_($I$(4).c$$S,[$I$(5).getString$S("error.cannot_have_zero_length_vector_replacement_strings")]);
+throw Clazz.new_([$I$(5).getString$S("error.cannot_have_zero_length_vector_replacement_strings")],$I$(4,1).c$$S);
 }}
 var matched=Clazz.array($I$(6), [idseq.length]);
 var rgxs=Clazz.array($I$(2), [matched.length]);
 for (pass=0; pass < matched.length; pass++) {
-matched[pass]=Clazz.new_($I$(6));
+matched[pass]=Clazz.new_($I$(6,1));
 if (this.regexReplace[pass] != null ) {
 rgxs[pass]=$I$(2).perlCode$S("/" + this.regexReplace[pass] + "/" );
 } else {
@@ -227,7 +212,7 @@ for (var sq=0; sq < maxs; sq++) {
 thismatched[sq]=false;
 var thematches=Clazz.array($I$(6), [rgxs.length]);
 for (pass=0; pass < rgxs.length; pass++) {
-thematches[pass]=Clazz.new_($I$(6));
+thematches[pass]=Clazz.new_($I$(6,1));
 if (idseq[pass].length <= sq) {
 continue;
 }if (rgxs[pass] != null ) {
@@ -238,19 +223,19 @@ rematchat=rg.matchedTo$();
 thismatched[sq]|=true;
 urllength+=rg.charsMatched$();
 if ((urllength + 32) > $I$(7).getMaxCommandLineLength$()) {
-throw Clazz.new_($I$(8).c$$I, [this, null, urllength]);
+throw Clazz.new_($I$(8,1).c$$I,[this, null, urllength]);
 }if (!createFullUrl) {
 continue;
 }var ns=rg.numSubs$();
 if (ns == 0) {
 thematches[pass].append$S(rg.stringMatched$());
 } else {
-var subs=Clazz.new_($I$(6));
+var subs=Clazz.new_($I$(6,1));
 var s=0;
 while (s <= ns){
 if (s + 1 <= ns && rg.matchedTo$I(s) > -1  && rg.matchedTo$I(s + 1) > -1  && rg.matchedTo$I(s + 1) < rg.matchedTo$I(s) ) {
 var r=s + 1;
-var rmtch=Clazz.new_($I$(6));
+var rmtch=Clazz.new_($I$(6,1));
 while (r <= ns && rg.matchedTo$I(r) <= rg.matchedTo$I(s) ){
 if (rg.matchedFrom$I(r) > -1) {
 rmtch.append$S(rg.stringMatched$I(r));
@@ -271,7 +256,7 @@ if (!onlyIfMatches) {
 thismatched[sq]|=true;
 urllength+=idseq[pass][sq].length$();
 if (createFullUrl) {
-thematches[pass]=Clazz.new_($I$(6).c$$S,[idseq[pass][sq]]);
+thematches[pass]=Clazz.new_($I$(6,1).c$$S,[idseq[pass][sq]]);
 }}}}
 if (thismatched[sq]) {
 if (createFullUrl) {
@@ -285,10 +270,10 @@ matched[pass].append$S(this.separators[pass]);
 if (seqsmatched == 0 || (createFullUrl && matched[0].length$() == 0 ) ) {
 return null;
 }if ((urllength + 32) > $I$(7).getMaxCommandLineLength$()) {
-throw Clazz.new_($I$(8).c$$I, [this, null, urllength]);
+throw Clazz.new_($I$(8,1).c$$I,[this, null, urllength]);
 }if (!createFullUrl) {
 return Clazz.array(java.lang.Object, -1, [Clazz.array(Integer.TYPE, -1, [seqsmatched]), thismatched]);
-}var submiturl=Clazz.new_($I$(6));
+}var submiturl=Clazz.new_($I$(6,1));
 submiturl.append$S(this.url_prefix);
 for (pass=0; pass < matched.length; pass++) {
 submiturl.append$StringBuffer(matched[pass]);
@@ -314,7 +299,7 @@ return r;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var result=Clazz.new_($I$(6));
+var result=Clazz.new_($I$(6,1));
 result.append$S(this.label + "|" + this.url_prefix );
 var r;
 for (r=0; r < this.url_suffix.length; r++) {
@@ -365,24 +350,27 @@ return idset;
 Clazz.newMeth(C$, 'setLabel$S', function (newlabel) {
 this.label=newlabel;
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+if (C$.tokens == null ) {
+C$.tokens=Clazz.array(String, -1, ["SEQUENCEIDS", "SEQUENCES", "DATASETID"]);
+}};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.GroupUrlLink, "UrlStringTooLongException", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GroupUrlLink, "UrlStringTooLongException", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'Exception');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.urlLength=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['urlLength']]]
 
 Clazz.newMeth(C$, 'c$$I', function (lng) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.urlLength=lng;
 }, 1);
 
@@ -395,4 +383,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

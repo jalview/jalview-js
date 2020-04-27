@@ -1,35 +1,25 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.util.HashMap','sun.awt.NullComponentPeer','java.awt.Insets','swingjs.JSToolkit','java.awt.GraphicsEnvironment','java.awt.Cursor',['java.awt.Toolkit','.SelectiveAWTEventListener'],['java.awt.Toolkit','.ToolkitEventMulticaster'],'java.awt.AWTEventMulticaster','java.awt.event.AWTEventListener','java.awt.event.AWTEventListenerProxy','java.util.ArrayList','java.beans.PropertyChangeSupport']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Toolkit", function(){
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.AWTEventMulticaster','java.util.HashMap','sun.awt.NullComponentPeer','java.awt.Insets','swingjs.JSToolkit','java.awt.GraphicsEnvironment','java.awt.Cursor',['java.awt.Toolkit','.SelectiveAWTEventListener'],['java.awt.Toolkit','.ToolkitEventMulticaster'],'java.awt.event.AWTEventListener','java.awt.event.AWTEventListenerProxy','java.util.ArrayList','java.beans.PropertyChangeSupport']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Toolkit", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.lightweightMarker=null;
-C$.toolkit=null;
-C$.resources=null;
-C$.enabledOnToolkitMask=0;
+C$.$classes$=[['ToolkitEventMulticaster',10],['SelectiveAWTEventListener',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.desktopProperties=null;
-this.desktopPropsSupport=null;
-this.calls=null;
-this.eventListener=null;
-this.listener2SelectiveListener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.desktopProperties=Clazz.new_($I$(1));
+this.desktopProperties=Clazz.new_($I$(2,1));
 this.desktopPropsSupport=C$.createPropertyChangeSupport$java_awt_Toolkit(this);
 this.calls=Clazz.array(Integer.TYPE, [32]);
 this.eventListener=null;
-this.listener2SelectiveListener=Clazz.new_($I$(1));
-}, 1);
+this.listener2SelectiveListener=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['O',['desktopProperties','java.util.Map','desktopPropsSupport','java.beans.PropertyChangeSupport','calls','int[]','eventListener','java.awt.event.AWTEventListener','listener2SelectiveListener','java.util.HashMap']]
+,['J',['enabledOnToolkitMask'],'O',['lightweightMarker','java.awt.peer.LightweightPeer','toolkit','java.awt.Toolkit','resources','java.util.ResourceBundle']]]
 
 Clazz.newMeth(C$, 'createComponent$java_awt_Component', function (target) {
 if (C$.lightweightMarker == null ) {
-C$.lightweightMarker=Clazz.new_($I$(2));
+C$.lightweightMarker=Clazz.new_($I$(3,1));
 }return C$.lightweightMarker;
 });
 
@@ -57,11 +47,11 @@ Clazz.newMeth(C$, 'getScreenInsets$java_awt_GraphicsConfiguration', function (gc
 if (this !== C$.getDefaultToolkit$() ) {
 return C$.getDefaultToolkit$().getScreenInsets$java_awt_GraphicsConfiguration(gc);
 } else {
-return Clazz.new_($I$(3).c$$I$I$I$I,[0, 0, 0, 0]);
+return Clazz.new_($I$(4,1).c$$I$I$I$I,[0, 0, 0, 0]);
 }});
 
 Clazz.newMeth(C$, 'getDefaultToolkit$', function () {
-return (C$.toolkit == null  ? C$.toolkit=Clazz.new_($I$(4)) : C$.toolkit);
+return (C$.toolkit == null  ? C$.toolkit=Clazz.new_($I$(5,1)) : C$.toolkit);
 }, 1);
 
 Clazz.newMeth(C$, 'createImage$BA', function (imagedata) {
@@ -86,7 +76,7 @@ Clazz.newMeth(C$, 'getSystemSelection$', function () {
 if (this !== C$.getDefaultToolkit$() ) {
 return C$.getDefaultToolkit$().getSystemSelection$();
 } else {
-$I$(5).checkHeadless$();
+$I$(6).checkHeadless$();
 return null;
 }});
 
@@ -99,7 +89,7 @@ return null;
 }, 1);
 
 Clazz.newMeth(C$, 'createCustomCursor$java_awt_Image$java_awt_Point$S', function (cursor, hotSpot, name) {
-return (name == null  ? Clazz.new_($I$(6).c$$I,[0]) : Clazz.new_($I$(6).c$$S,[name]));
+return (name == null  ? Clazz.new_($I$(7,1).c$$I,[0]) : Clazz.new_($I$(7,1).c$$S,[name]));
 });
 
 Clazz.newMeth(C$, 'isFrameStateSupported$I', function (state) {
@@ -152,7 +142,7 @@ Clazz.newMeth(C$, 'setDesktopProperty$S$O', function (name, newValue) {
 var oldValue;
 {
 oldValue=this.desktopProperties.get$O(name);
-this.desktopProperties.put$TK$TV(name, newValue);
+this.desktopProperties.put$O$O(name, newValue);
 }this.desktopPropsSupport.firePropertyChange$S$O$O(name, oldValue, newValue);
 });
 
@@ -199,9 +189,9 @@ return;
 }{
 var selectiveListener=this.listener2SelectiveListener.get$O(localL);
 if (selectiveListener == null ) {
-selectiveListener=Clazz.new_($I$(7).c$$java_awt_event_AWTEventListener$J, [this, null, localL, eventMask]);
-this.listener2SelectiveListener.put$TK$TV(localL, selectiveListener);
-this.eventListener=$I$(8).add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, selectiveListener);
+selectiveListener=Clazz.new_($I$(8,1).c$$java_awt_event_AWTEventListener$J,[this, null, localL, eventMask]);
+this.listener2SelectiveListener.put$O$O(localL, selectiveListener);
+this.eventListener=$I$(9).add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, selectiveListener);
 }selectiveListener.orEventMasks$J(eventMask);
 C$.enabledOnToolkitMask|=eventMask;
 var mask=eventMask;
@@ -228,7 +218,7 @@ this.calls[i]-=listenerCalls[i];
 if (this.calls[i] == 0) {
 C$.enabledOnToolkitMask&=~(1 << i);
 }}
-}this.eventListener=$I$(8).remove$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(this.eventListener, (selectiveListener == null ) ? localL : selectiveListener);
+}this.eventListener=$I$(9,"remove$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener",[this.eventListener, (selectiveListener == null ) ? localL : selectiveListener]);
 }});
 
 Clazz.newMeth(C$, 'enabledOnToolkit$J', function (eventMask) {
@@ -245,51 +235,49 @@ return this.calls[ci];
 
 Clazz.newMeth(C$, 'getAWTEventListeners$', function () {
 {
-var la=$I$(9).getListeners$java_util_EventListener$Class(this.eventListener, Clazz.getClass($I$(10),['eventDispatched$java_awt_AWTEvent']));
+var la=$I$(1,"getListeners$java_util_EventListener$Class",[this.eventListener, Clazz.getClass($I$(10),['eventDispatched$java_awt_AWTEvent'])]);
 var ret=Clazz.array($I$(10), [la.length]);
 for (var i=0; i < la.length; i++) {
 var sael=la[i];
 var tempL=sael.getListener$();
-ret[i]=Clazz.new_($I$(11).c$$J$java_awt_event_AWTEventListener,[sael.getEventMask$(), tempL]);
+ret[i]=Clazz.new_([sael.getEventMask$(), tempL],$I$(11,1).c$$J$java_awt_event_AWTEventListener);
 }
 return ret;
 }});
 
 Clazz.newMeth(C$, 'getAWTEventListeners$J', function (eventMask) {
 {
-var la=$I$(9).getListeners$java_util_EventListener$Class(this.eventListener, Clazz.getClass($I$(10),['eventDispatched$java_awt_AWTEvent']));
-var list=Clazz.new_($I$(12).c$$I,[la.length]);
+var la=$I$(1,"getListeners$java_util_EventListener$Class",[this.eventListener, Clazz.getClass($I$(10),['eventDispatched$java_awt_AWTEvent'])]);
+var list=Clazz.new_($I$(12,1).c$$I,[la.length]);
 for (var i=0; i < la.length; i++) {
 var sael=la[i];
 if ((sael.getEventMask$() & eventMask) == eventMask) {
-list.add$TE(Clazz.new_($I$(11).c$$J$java_awt_event_AWTEventListener,[sael.getEventMask$(), sael.getListener$()]));
+list.add$O(Clazz.new_([sael.getEventMask$(), sael.getListener$()],$I$(11,1).c$$J$java_awt_event_AWTEventListener));
 }}
-return list.toArray$TTA(Clazz.array($I$(10), [0]));
+return list.toArray$OA(Clazz.array($I$(10), [0]));
 }});
 
 Clazz.newMeth(C$, 'notifyAWTEventListeners$java_awt_AWTEvent', function (theEvent) {
 var eventListener=this.eventListener;
 if (eventListener != null ) {
-eventListener.eventDispatched$(theEvent);
+eventListener.eventDispatched$java_awt_AWTEvent(theEvent);
 }});
 
 Clazz.newMeth(C$, 'createPropertyChangeSupport$java_awt_Toolkit', function (toolkit) {
-return Clazz.new_($I$(13).c$$O,[toolkit]);
+return Clazz.new_($I$(13,1).c$$O,[toolkit]);
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.Toolkit, "ToolkitEventMulticaster", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Toolkit, "ToolkitEventMulticaster", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AWTEventMulticaster', 'java.awt.event.AWTEventListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener', function (a, b) {
-C$.superclazz.c$$java_util_EventListener$java_util_EventListener.apply(this, [a, b]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_EventListener$java_util_EventListener.apply(this,[a, b]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener', function (a, b) {
@@ -299,44 +287,38 @@ return Clazz.new_(C$.c$$java_awt_event_AWTEventListener$java_awt_event_AWTEventL
 }, 1);
 
 Clazz.newMeth(C$, 'remove$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener', function (l, oldl) {
-return P$.AWTEventMulticaster.removeInternal$java_util_EventListener$java_util_EventListener(l, oldl);
+return $I$(1).removeInternal$java_util_EventListener$java_util_EventListener(l, oldl);
 }, 1);
 
 Clazz.newMeth(C$, 'remove$java_util_EventListener', function (oldl) {
 if (oldl === this.a ) return this.b;
 if (oldl === this.b ) return this.a;
-var a2=P$.AWTEventMulticaster.removeInternal$java_util_EventListener$java_util_EventListener(this.a, oldl);
-var b2=P$.AWTEventMulticaster.removeInternal$java_util_EventListener$java_util_EventListener(this.b, oldl);
+var a2=$I$(1).removeInternal$java_util_EventListener$java_util_EventListener(this.a, oldl);
+var b2=$I$(1).removeInternal$java_util_EventListener$java_util_EventListener(this.b, oldl);
 if (a2 === this.a  && b2 === this.b  ) {
 return this;
 }return C$.add$java_awt_event_AWTEventListener$java_awt_event_AWTEventListener(a2, b2);
 });
 
-Clazz.newMeth(C$, ['eventDispatched$java_awt_AWTEvent','eventDispatched$'], function (event) {
-(this.a).eventDispatched$(event);
-(this.b).eventDispatched$(event);
+Clazz.newMeth(C$, 'eventDispatched$java_awt_AWTEvent', function (event) {
+(this.a).eventDispatched$java_awt_AWTEvent(event);
+(this.b).eventDispatched$java_awt_AWTEvent(event);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Toolkit, "SelectiveAWTEventListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Toolkit, "SelectiveAWTEventListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.awt.event.AWTEventListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.listener=null;
-this.eventMask=0;
-this.calls=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.calls=Clazz.array(Integer.TYPE, [32]);
-}, 1);
+},1);
+
+C$.$fields$=[['J',['eventMask'],'O',['listener','java.awt.event.AWTEventListener','calls','int[]']]]
 
 Clazz.newMeth(C$, 'getListener$', function () {
 return this.listener;
@@ -362,12 +344,12 @@ this.calls[i]++;
 });
 
 Clazz.newMeth(C$, 'c$$java_awt_event_AWTEventListener$J', function (l, mask) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.listener=l;
 this.eventMask=mask;
 }, 1);
 
-Clazz.newMeth(C$, ['eventDispatched$java_awt_AWTEvent','eventDispatched$'], function (event) {
+Clazz.newMeth(C$, 'eventDispatched$java_awt_AWTEvent', function (event) {
 var eventBit=0;
 if (((eventBit=this.eventMask & 1) != 0 && event.id >= 100  && event.id <= 103 ) || ((eventBit=this.eventMask & 2) != 0 && event.id >= 300  && event.id <= 301 ) || ((eventBit=this.eventMask & 4) != 0 && event.id >= 1004  && event.id <= 1005 ) || ((eventBit=this.eventMask & 8) != 0 && event.id >= 400  && event.id <= 402 ) || ((eventBit=this.eventMask & 131072) != 0 && event.id == 507 ) || ((eventBit=this.eventMask & 32) != 0 && (event.id == 503 || event.id == 506 ) ) || ((eventBit=this.eventMask & 16) != 0 && event.id != 503  && event.id != 506  && event.id != 507  && event.id >= 500  && event.id <= 507 ) || ((eventBit=this.eventMask & 64) != 0 && (event.id >= 200 && event.id <= 209 ) ) || ((eventBit=this.eventMask & 128) != 0 && event.id >= 1001  && event.id <= 1001 ) || ((eventBit=this.eventMask & 256) != 0 && event.id >= 601  && event.id <= 601 ) || ((eventBit=this.eventMask & 512) != 0 && event.id >= 701  && event.id <= 701 ) || ((eventBit=this.eventMask & 1024) != 0 && event.id >= 900  && event.id <= 900 ) || ((eventBit=this.eventMask & 2048) != 0 && event.id >= 1100  && event.id <= 1101 ) || ((eventBit=this.eventMask & 8192) != 0 && event.id >= 800  && event.id <= 801 ) || ((eventBit=this.eventMask & 16384) != 0 && event.id >= 1200  && event.id <= 1201 ) || ((eventBit=this.eventMask & 32768) != 0 && event.id == 1400 ) || ((eventBit=this.eventMask & 65536) != 0 && (event.id == 1401 || event.id == 1402 ) ) || ((eventBit=this.eventMask & 262144) != 0 && event.id == 209 ) || ((eventBit=this.eventMask & 524288) != 0 && (event.id == 207 || event.id == 208 ) )  ) {
 var ci=0;
@@ -375,7 +357,7 @@ for (var eMask=eventBit; eMask != 0; eMask>>>=1, ci++) {
 }
 ci--;
 for (var i=0; i < this.calls[ci]; i++) {
-this.listener.eventDispatched$(event);
+this.listener.eventDispatched$java_awt_AWTEvent(event);
 }
 }});
 
@@ -384,4 +366,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

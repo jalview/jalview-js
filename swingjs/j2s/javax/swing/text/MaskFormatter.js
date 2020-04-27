@@ -1,29 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['javax.swing.text.MaskFormatter','.MaskCharacter'],'StringBuffer','java.util.ArrayList',['javax.swing.text.MaskFormatter','.DigitMaskCharacter'],['javax.swing.text.MaskFormatter','.LiteralCharacter'],['javax.swing.text.MaskFormatter','.UpperCaseCharacter'],['javax.swing.text.MaskFormatter','.LowerCaseCharacter'],['javax.swing.text.MaskFormatter','.AlphaNumericCharacter'],['javax.swing.text.MaskFormatter','.CharCharacter'],['javax.swing.text.MaskFormatter','.HexCharacter']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MaskFormatter", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['javax.swing.text.MaskFormatter','.MaskCharacter'],'StringBuffer','java.util.ArrayList',['javax.swing.text.MaskFormatter','.DigitMaskCharacter'],['javax.swing.text.MaskFormatter','.LiteralCharacter'],['javax.swing.text.MaskFormatter','.UpperCaseCharacter'],['javax.swing.text.MaskFormatter','.LowerCaseCharacter'],['javax.swing.text.MaskFormatter','.AlphaNumericCharacter'],['javax.swing.text.MaskFormatter','.CharCharacter'],['javax.swing.text.MaskFormatter','.HexCharacter']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MaskFormatter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.DefaultFormatter');
-C$.EmptyMaskChars=null;
+C$.$classes$=[['MaskCharacter',2],['LiteralCharacter',2],['DigitMaskCharacter',2],['UpperCaseCharacter',2],['LowerCaseCharacter',2],['AlphaNumericCharacter',2],['CharCharacter',2],['HexCharacter',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EmptyMaskChars=Clazz.array($I$(1), [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mask=null;
-this.maskChars=null;
-this.validCharacters=null;
-this.invalidCharacters=null;
-this.placeholderString=null;
-this.placeholder='\0';
-this.containsLiteralChars=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['containsLiteralChars'],'C',['placeholder'],'S',['mask','validCharacters','invalidCharacters','placeholderString'],'O',['+maskChars']]
+,['O',['EmptyMaskChars','javax.swing.text.MaskFormatter.MaskCharacter[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setAllowsInvalid$Z(false);
 this.containsLiteralChars=true;
 this.maskChars=C$.EmptyMaskChars;
@@ -90,7 +80,7 @@ return p$1.stringToValue$S$Z.apply(this, [value, true]);
 
 Clazz.newMeth(C$, 'valueToString$O', function (value) {
 var sValue=(value == null ) ? "" : value.toString();
-var result=Clazz.new_($I$(2));
+var result=Clazz.new_($I$(2,1));
 var placeholder=this.getPlaceholder$();
 var valueCounter=Clazz.array(Integer.TYPE, -1, [0]);
 p$1.append$StringBuffer$S$IA$S$javax_swing_text_MaskFormatter_MaskCharacterA.apply(this, [result, sValue, valueCounter, placeholder, this.maskChars]);
@@ -141,40 +131,40 @@ mask[counter].append$StringBuffer$S$IA$S(result, value, index, placeholder);
 
 Clazz.newMeth(C$, 'updateInternalMask', function () {
 var mask=this.getMask$();
-var fixed=Clazz.new_($I$(3));
+var fixed=Clazz.new_($I$(3,1));
 var temp=fixed;
 if (mask != null ) {
 for (var counter=0, maxCounter=mask.length$(); counter < maxCounter; counter++) {
 var maskChar=mask.charAt$I(counter);
 switch (maskChar.$c()) {
 case 35:
-temp.add$TE(Clazz.new_($I$(4), [this, null]));
+temp.add$O(Clazz.new_($I$(4,1),[this, null]));
 break;
 case 39:
 if (++counter < maxCounter) {
 maskChar=mask.charAt$I(counter);
-temp.add$TE(Clazz.new_($I$(5).c$$C, [this, null, maskChar]));
+temp.add$O(Clazz.new_($I$(5,1).c$$C,[this, null, maskChar]));
 }break;
 case 85:
-temp.add$TE(Clazz.new_($I$(6), [this, null]));
+temp.add$O(Clazz.new_($I$(6,1),[this, null]));
 break;
 case 76:
-temp.add$TE(Clazz.new_($I$(7), [this, null]));
+temp.add$O(Clazz.new_($I$(7,1),[this, null]));
 break;
 case 65:
-temp.add$TE(Clazz.new_($I$(8), [this, null]));
+temp.add$O(Clazz.new_($I$(8,1),[this, null]));
 break;
 case 63:
-temp.add$TE(Clazz.new_($I$(9), [this, null]));
+temp.add$O(Clazz.new_($I$(9,1),[this, null]));
 break;
 case 42:
-temp.add$TE(Clazz.new_($I$(1), [this, null]));
+temp.add$O(Clazz.new_($I$(1,1),[this, null]));
 break;
 case 72:
-temp.add$TE(Clazz.new_($I$(10), [this, null]));
+temp.add$O(Clazz.new_($I$(10,1),[this, null]));
 break;
 default:
-temp.add$TE(Clazz.new_($I$(5).c$$C, [this, null, maskChar]));
+temp.add$O(Clazz.new_($I$(5,1).c$$C,[this, null, maskChar]));
 break;
 }
 }
@@ -182,7 +172,7 @@ break;
 this.maskChars=C$.EmptyMaskChars;
 } else {
 this.maskChars=Clazz.array($I$(1), [fixed.size$()]);
-fixed.toArray$TTA(this.maskChars);
+fixed.toArray$OA(this.maskChars);
 }}, p$1);
 
 Clazz.newMeth(C$, 'getMaskCharacter$I', function (index) {
@@ -221,7 +211,7 @@ var last=0;
 for (var counter=0, max=string.length$(); counter < max; counter++) {
 if (p$1.isLiteral$I.apply(this, [counter])) {
 if (sb == null ) {
-sb=Clazz.new_($I$(2));
+sb=Clazz.new_($I$(2,1));
 if (counter > 0) {
 sb.append$S(string.substring$I$I(0, counter));
 }last=counter + 1;
@@ -273,7 +263,7 @@ if (textIndex < tl && p$1.isValidCharacter$I$C.apply(this, [rh.offset + counter,
 var aChar=text.charAt$I(textIndex);
 if (aChar != p$1.getCharacter$I$C.apply(this, [rh.offset + counter, aChar])) {
 if (replace == null ) {
-replace=Clazz.new_($I$(2));
+replace=Clazz.new_($I$(2,1));
 if (textIndex > 0) {
 replace.append$S(text.substring$I$I(0, textIndex));
 }}}if (replace != null ) {
@@ -285,7 +275,7 @@ replace.append$C(p$1.getLiteral$I.apply(this, [rh.offset + counter]));
 if (textIndex < tl) {
 max=Math.min(max + 1, p$1.getMaxLength.apply(this, []) - rh.offset);
 }} else if (textIndex > 0) {
-replace=Clazz.new_($I$(2).c$$I,[max]);
+replace=Clazz.new_($I$(2,1).c$$I,[max]);
 replace.append$S(text.substring$I$I(0, textIndex));
 replace.append$C(p$1.getLiteral$I.apply(this, [rh.offset + counter]));
 if (textIndex < tl) {
@@ -299,7 +289,7 @@ counter--;
 max--;
 }} else if (textIndex >= tl) {
 if (replace == null ) {
-replace=Clazz.new_($I$(2));
+replace=Clazz.new_($I$(2,1));
 if (text != null ) {
 replace.append$S(text);
 }}replace.append$C(this.getPlaceholderCharacter$());
@@ -316,16 +306,19 @@ rh.text=text.substring$I$I(0, p$1.getMaxLength.apply(this, []) - rh.offset);
 rh.length=rh.text.length$();
 }}return C$.superclazz.prototype.canReplace$javax_swing_text_DefaultFormatter_ReplaceHolder.apply(this, [rh]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EmptyMaskChars=Clazz.array($I$(1), [0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "MaskCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "MaskCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isLiteral$', function () {
 return false;
@@ -373,23 +366,19 @@ throw Clazz.new_(Clazz.load('java.text.ParseException').c$$S$I,["Invalid charact
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "LiteralCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "LiteralCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.MaskFormatter','.MaskCharacter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fixedChar='\0';
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['C',['fixedChar']]]
 
 Clazz.newMeth(C$, 'c$$C', function (fixedChar) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.fixedChar=fixedChar;
 }, 1);
 
@@ -404,15 +393,14 @@ return this.fixedChar;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "DigitMaskCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "DigitMaskCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.MaskFormatter','.MaskCharacter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValidCharacter$C', function (aChar) {
 return (Character.isDigit$C(aChar) && C$.superclazz.prototype.isValidCharacter$C.apply(this, [aChar]) );
@@ -421,15 +409,14 @@ return (Character.isDigit$C(aChar) && C$.superclazz.prototype.isValidCharacter$C
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "UpperCaseCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "UpperCaseCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.MaskFormatter','.MaskCharacter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValidCharacter$C', function (aChar) {
 return (Character.isLetter$C(aChar) && C$.superclazz.prototype.isValidCharacter$C.apply(this, [aChar]) );
@@ -442,15 +429,14 @@ return Character.toUpperCase$C(aChar);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "LowerCaseCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "LowerCaseCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.MaskFormatter','.MaskCharacter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValidCharacter$C', function (aChar) {
 return (Character.isLetter$C(aChar) && C$.superclazz.prototype.isValidCharacter$C.apply(this, [aChar]) );
@@ -463,15 +449,14 @@ return Character.toLowerCase$C(aChar);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "AlphaNumericCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "AlphaNumericCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.MaskFormatter','.MaskCharacter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValidCharacter$C', function (aChar) {
 return (Character.isLetterOrDigit$C(aChar) && C$.superclazz.prototype.isValidCharacter$C.apply(this, [aChar]) );
@@ -480,15 +465,14 @@ return (Character.isLetterOrDigit$C(aChar) && C$.superclazz.prototype.isValidCha
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "CharCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "CharCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.MaskFormatter','.MaskCharacter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValidCharacter$C', function (aChar) {
 return (Character.isLetter$C(aChar) && C$.superclazz.prototype.isValidCharacter$C.apply(this, [aChar]) );
@@ -497,15 +481,14 @@ return (Character.isLetter$C(aChar) && C$.superclazz.prototype.isValidCharacter$
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MaskFormatter, "HexCharacter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MaskFormatter, "HexCharacter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.MaskFormatter','.MaskCharacter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValidCharacter$C', function (aChar) {
 return ((aChar == "0" || aChar == "1"  || aChar == "2"  || aChar == "3"  || aChar == "4"  || aChar == "5"  || aChar == "6"  || aChar == "7"  || aChar == "8"  || aChar == "9"  || aChar == "a"  || aChar == "A"  || aChar == "b"  || aChar == "B"  || aChar == "c"  || aChar == "C"  || aChar == "d"  || aChar == "D"  || aChar == "e"  || aChar == "E"  || aChar == "f"  || aChar == "F" ) && C$.superclazz.prototype.isValidCharacter$C.apply(this, [aChar]) );
@@ -520,4 +503,4 @@ return aChar;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

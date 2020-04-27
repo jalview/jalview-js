@@ -1,27 +1,21 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'java.util.Vector','sun.awt.geom.Curve',['sun.awt.geom.AreaOp','.EOWindOp'],['sun.awt.geom.AreaOp','.NZWindOp'],['sun.awt.geom.AreaOp','.AddOp'],['sun.awt.geom.AreaOp','.SubOp'],['sun.awt.geom.AreaOp','.IntOp'],['sun.awt.geom.AreaOp','.XorOp'],['java.awt.geom.Rectangle2D','.Double'],'sun.awt.geom.Crossings','java.awt.geom.AreaIterator','java.awt.geom.FlatteningPathIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Area", null, null, ['java.awt.Shape', 'Cloneable']);
-C$.EmptyCurves=null;
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'java.util.Vector','sun.awt.geom.Curve',['sun.awt.geom.AreaOp','.EOWindOp'],['sun.awt.geom.AreaOp','.NZWindOp'],['sun.awt.geom.AreaOp','.AddOp'],['sun.awt.geom.AreaOp','.SubOp'],['sun.awt.geom.AreaOp','.IntOp'],['sun.awt.geom.AreaOp','.XorOp'],['java.awt.geom.Rectangle2D','.Double'],'sun.awt.geom.Crossings','java.awt.geom.AreaIterator','java.awt.geom.FlatteningPathIterator']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Area", null, null, ['java.awt.Shape', 'Cloneable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EmptyCurves=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.curves=null;
-this.cachedBounds=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['+curves','cachedBounds','java.awt.geom.Rectangle2D']]
+,['O',['EmptyCurves','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.curves=C$.EmptyCurves;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Shape', function (s) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (Clazz.instanceOf(s, "java.awt.geom.Area")) {
 this.curves=(s).curves;
 } else {
@@ -29,7 +23,7 @@ this.curves=C$.pathToCurves$java_awt_geom_PathIterator(s.getPathIterator$java_aw
 }}, 1);
 
 Clazz.newMeth(C$, 'pathToCurves$java_awt_geom_PathIterator', function (pi) {
-var curves=Clazz.new_($I$(1));
+var curves=Clazz.new_($I$(1,1));
 var windingRule=pi.getWindingRule$();
 var coords=Clazz.array(Double.TYPE, [23]);
 var movx=0;
@@ -78,34 +72,34 @@ pi.next$();
 $I$(2).insertLine$java_util_Vector$D$D$D$D(curves, curx, cury, movx, movy);
 var operator;
 if (windingRule == 0) {
-operator=Clazz.new_($I$(3));
+operator=Clazz.new_($I$(3,1));
 } else {
-operator=Clazz.new_($I$(4));
+operator=Clazz.new_($I$(4,1));
 }return operator.calculate$java_util_Vector$java_util_Vector(curves, C$.EmptyCurves);
 }, 1);
 
 Clazz.newMeth(C$, 'add$java_awt_geom_Area', function (rhs) {
-this.curves=Clazz.new_($I$(5)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
+this.curves=Clazz.new_($I$(5,1)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
 p$1.invalidateBounds.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'subtract$java_awt_geom_Area', function (rhs) {
-this.curves=Clazz.new_($I$(6)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
+this.curves=Clazz.new_($I$(6,1)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
 p$1.invalidateBounds.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'intersect$java_awt_geom_Area', function (rhs) {
-this.curves=Clazz.new_($I$(7)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
+this.curves=Clazz.new_($I$(7,1)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
 p$1.invalidateBounds.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'exclusiveOr$java_awt_geom_Area', function (rhs) {
-this.curves=Clazz.new_($I$(8)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
+this.curves=Clazz.new_($I$(8,1)).calculate$java_util_Vector$java_util_Vector(this.curves, rhs.curves);
 p$1.invalidateBounds.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'reset$', function () {
-this.curves=Clazz.new_($I$(1));
+this.curves=Clazz.new_($I$(1,1));
 p$1.invalidateBounds.apply(this, []);
 });
 
@@ -158,7 +152,7 @@ this.cachedBounds=null;
 Clazz.newMeth(C$, 'getCachedBounds', function () {
 if (this.cachedBounds != null ) {
 return this.cachedBounds;
-}var r=Clazz.new_($I$(9));
+}var r=Clazz.new_($I$(9,1));
 if (this.curves.size$() > 0) {
 var c=this.curves.get$I(0);
 r.setRect$D$D$D$D(c.getX0$(), c.getY0$(), 0, 0);
@@ -185,7 +179,7 @@ if (other === this ) {
 return true;
 }if (other == null ) {
 return false;
-}var c=Clazz.new_($I$(8)).calculate$java_util_Vector$java_util_Vector(this.curves, other.curves);
+}var c=Clazz.new_($I$(8,1)).calculate$java_util_Vector$java_util_Vector(this.curves, other.curves);
 return c.isEmpty$();
 });
 
@@ -245,11 +239,15 @@ return this.intersects$D$D$D$D(r.getX$(), r.getY$(), r.getWidth$(), r.getHeight$
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return Clazz.new_($I$(11).c$$java_util_Vector$java_awt_geom_AffineTransform,[this.curves, at]);
+return Clazz.new_($I$(11,1).c$$java_util_Vector$java_awt_geom_AffineTransform,[this.curves, at]);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform$D', function (at, flatness) {
-return Clazz.new_($I$(12).c$$java_awt_geom_PathIterator$D,[this.getPathIterator$java_awt_geom_AffineTransform(at), flatness]);
+return Clazz.new_([this.getPathIterator$java_awt_geom_AffineTransform(at), flatness],$I$(12,1).c$$java_awt_geom_PathIterator$D);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EmptyCurves=Clazz.new_($I$(1,1));
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

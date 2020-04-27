@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SpinnerListModel", null, 'javax.swing.AbstractSpinnerModel');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SpinnerListModel", null, 'javax.swing.AbstractSpinnerModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.list=null;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index'],'O',['list','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (values) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (values == null  || values.size$() == 0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["SpinnerListModel(List) expects non-null non-empty List"]);
 }this.list=values;
@@ -22,10 +17,10 @@ this.index=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$OA', function (values) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (values == null  || values.length == 0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["SpinnerListModel(Object[]) expects non-null non-empty Object[]"]);
-}this.list=$I$(1).asList$TTA(values);
+}this.list=$I$(1).asList$OA(values);
 this.index=0;
 }, 1);
 
@@ -82,4 +77,4 @@ return value;
 return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

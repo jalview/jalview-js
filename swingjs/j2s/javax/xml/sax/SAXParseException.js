@@ -1,23 +1,15 @@
 (function(){var P$=Clazz.newPackage("javax.xml.sax"),p$1={};
-var C$=Clazz.newClass(P$, "SAXParseException", null, 'javax.xml.sax.SAXException');
+/*c*/var C$=Clazz.newClass(P$, "SAXParseException", null, 'javax.xml.sax.SAXException');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.publicId=null;
-this.systemId=null;
-this.lineNumber=0;
-this.columnNumber=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['lineNumber','columnNumber'],'S',['publicId','systemId']]]
 
 Clazz.newMeth(C$, 'c$$S$javax_xml_sax_Locator', function (message, locator) {
-C$.superclazz.c$$S.apply(this, [message]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[message]);C$.$init$.apply(this);
 if (locator != null ) {
 p$1.init$S$S$I$I.apply(this, [locator.getPublicId$(), locator.getSystemId$(), locator.getLineNumber$(), locator.getColumnNumber$()]);
 } else {
@@ -25,8 +17,7 @@ p$1.init$S$S$I$I.apply(this, [null, null, -1, -1]);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S$javax_xml_sax_Locator$Exception', function (message, locator, e) {
-C$.superclazz.c$$S$Exception.apply(this, [message, e]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$Exception.apply(this,[message, e]);C$.$init$.apply(this);
 if (locator != null ) {
 p$1.init$S$S$I$I.apply(this, [locator.getPublicId$(), locator.getSystemId$(), locator.getLineNumber$(), locator.getColumnNumber$()]);
 } else {
@@ -34,14 +25,12 @@ p$1.init$S$S$I$I.apply(this, [null, null, -1, -1]);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S$I$I', function (message, publicId, systemId, lineNumber, columnNumber) {
-C$.superclazz.c$$S.apply(this, [message]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[message]);C$.$init$.apply(this);
 p$1.init$S$S$I$I.apply(this, [publicId, systemId, lineNumber, columnNumber]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S$I$I$Exception', function (message, publicId, systemId, lineNumber, columnNumber, e) {
-C$.superclazz.c$$S$Exception.apply(this, [message, e]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$Exception.apply(this,[message, e]);C$.$init$.apply(this);
 p$1.init$S$S$I$I.apply(this, [publicId, systemId, lineNumber, columnNumber]);
 }, 1);
 
@@ -70,4 +59,4 @@ return this.columnNumber;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

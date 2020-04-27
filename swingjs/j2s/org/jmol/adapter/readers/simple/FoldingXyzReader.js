@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.PT','java.util.Hashtable','org.jmol.adapter.smarter.Atom']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FoldingXyzReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.PT','java.util.Hashtable','org.jmol.adapter.smarter.Atom']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "FoldingXyzReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 });
@@ -32,7 +31,7 @@ return readLine;
 });
 
 Clazz.newMeth(C$, 'readAtoms$I$Z', function (ac, addAtoms) {
-var htBondCounts=Clazz.new_($I$(2));
+var htBondCounts=Clazz.new_($I$(2,1));
 var bonds=Clazz.array(String, [ac, null]);
 var haveAtomTypes=true;
 var checking=true;
@@ -48,7 +47,7 @@ readNextLine=false;
 break;
 }lastAtom=sIndex;
 if (!addAtoms) continue;
-var atom=Clazz.new_($I$(3));
+var atom=Clazz.new_($I$(3,1));
 atom.atomName=tokens[1];
 atom.elementSymbol=p$1.getElement$S.apply(this, [tokens[1]]);
 atom.atomSerial=this.parseIntStr$S(sIndex);
@@ -68,7 +67,7 @@ haveAtomTypes=(n > 0);
 checking=false;
 } else {
 var count=htBondCounts.get$O(t);
-if (count == null ) htBondCounts.put$TK$TV(t, count=Clazz.array(Integer.TYPE, [1]));
+if (count == null ) htBondCounts.put$O$O(t, count=Clazz.array(Integer.TYPE, [1]));
 if (++count[0] > 10) haveAtomTypes=!(checking=false);
 }}}
 }
@@ -84,7 +83,7 @@ var b=bonds[i];
 if (b == null ) continue;
 var a1=this.asc.getAtomFromName$S(b[b.length - 1]);
 var b0=0;
-if (haveAtomTypes) a1.atomName += "\0" + b[b0++];
+if (haveAtomTypes) a1.atomName += "\u0000" + b[b0++];
 for (var j=b.length - 1; --j >= b0; ) {
 var a2=this.asc.getAtomFromName$S(b[j]);
 if (a1.index < a2.index) this.asc.addNewBondWithOrderA$org_jmol_adapter_smarter_Atom$org_jmol_adapter_smarter_Atom$I(a1, a2, 1);
@@ -107,4 +106,4 @@ return name.substring$I$I(0, n);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

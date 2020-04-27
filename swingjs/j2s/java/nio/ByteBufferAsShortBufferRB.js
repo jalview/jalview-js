@@ -1,20 +1,17 @@
-(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ByteBufferAsShortBufferRB", null, 'java.nio.ByteBufferAsShortBufferB');
+(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ByteBufferAsShortBufferRB", null, 'java.nio.ByteBufferAsShortBufferB');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer', function (paramByteBuffer) {
-C$.superclazz.c$$java_nio_ByteBuffer.apply(this, [paramByteBuffer]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_nio_ByteBuffer.apply(this,[paramByteBuffer]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer$I$I$I$I$I', function (paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5) {
-C$.superclazz.c$$java_nio_ByteBuffer$I$I$I$I$I.apply(this, [paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_nio_ByteBuffer$I$I$I$I$I.apply(this,[paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'slice$', function () {
@@ -58,8 +55,11 @@ return true;
 Clazz.newMeth(C$, 'order$', function () {
 return $I$(1).BIG_ENDIAN;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

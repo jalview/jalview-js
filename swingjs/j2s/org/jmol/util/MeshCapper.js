@@ -1,31 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},p$2={},I$=[[0,'javajs.util.P3','org.jmol.util.Logger','java.util.Hashtable','javajs.util.Lst','javajs.util.AU',['org.jmol.util.MeshCapper','.CapVertex'],'javajs.util.V3','javajs.util.Quat','javajs.util.M3','java.util.Arrays',['org.jmol.util.MeshCapper','.MeshCapperSorter']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeshCapper", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},p$2={},I$=[[0,'javajs.util.P3','org.jmol.util.Logger','java.util.Hashtable','javajs.util.Lst','javajs.util.AU',['org.jmol.util.MeshCapper','.CapVertex'],'javajs.util.V3','javajs.util.Quat','javajs.util.M3','java.util.Arrays',['org.jmol.util.MeshCapper','.MeshCapperSorter']]],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MeshCapper", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['MeshCapperSorter',1],['CapVertex',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.slicer=null;
-this.dumping=false;
-this.capMap=null;
-this.vertices=null;
-this.lstRegions=null;
-this.nTriangles=0;
-this.nRegions=0;
-this.lstTriangles=null;
-this.nPoints=0;
-this.m3=null;
-this.m3inv=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['dumping'],'I',['nTriangles','nRegions','nPoints'],'O',['slicer','org.jmol.util.MeshSlicer','capMap','java.util.Map','vertices','javajs.util.Lst','+lstRegions','+lstTriangles','m3','javajs.util.M3','+m3inv']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_util_MeshSlicer', function (slicer) {
@@ -35,12 +22,12 @@ return this;
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-this.capMap=Clazz.new_($I$(3));
-this.vertices=Clazz.new_($I$(4));
+this.capMap=Clazz.new_($I$(3,1));
+this.vertices=Clazz.new_($I$(4,1));
 });
 
 Clazz.newMeth(C$, 'triangulateFaces$IAA$javajs_util_P3A$IAA', function (faces, vertices, faceTriangles) {
-this.lstTriangles=Clazz.new_($I$(4));
+this.lstTriangles=Clazz.new_($I$(4,1));
 var points=Clazz.array($I$(1), [10]);
 for (var f=0, n=faces.length; f < n; f++) {
 var face=faces[f];
@@ -61,21 +48,21 @@ for (var j=3; --j >= 0; ) t[j]=face[t[j]];
 t[3]=-t[3];
 }
 }
-var triangles=$I$(5).newInt2$I(this.lstTriangles.size$());
-this.lstTriangles.toArray$TTA(triangles);
+var triangles=(function(a,f){return f.apply(null,a)})([this.lstTriangles.size$()],$I$(5).newInt2$I);
+this.lstTriangles.toArray$OA(triangles);
 return triangles;
 });
 
 Clazz.newMeth(C$, 'triangulatePolygon$javajs_util_P3A$I', function (points, nPoints) {
 this.clear$();
 var haveList=(nPoints >= 0);
-if (!haveList || this.lstTriangles == null  ) this.lstTriangles=Clazz.new_($I$(4));
+if (!haveList || this.lstTriangles == null  ) this.lstTriangles=Clazz.new_($I$(4,1));
 nPoints=this.nPoints=(haveList ? nPoints : points.length);
 var v0=null;
 for (var i=0; i < nPoints; i++) {
 if (points[i] == null ) return null;
-var v=Clazz.new_($I$(6).c$$javajs_util_T3$I, [this, null, points[i], i]);
-this.vertices.addLast$TV(v);
+var v=Clazz.new_($I$(6,1).c$$javajs_util_T3$I,[this, null, points[i], i]);
+this.vertices.addLast$O(v);
 if (v0 != null ) {
 v0.link$org_jmol_util_MeshCapper_CapVertex(v);
 }v0=v;
@@ -83,7 +70,7 @@ v0.link$org_jmol_util_MeshCapper_CapVertex(v);
 v0.link$org_jmol_util_MeshCapper_CapVertex(this.vertices.get$I(0));
 this.createCap$javajs_util_V3(null);
 if (haveList) return null;
-var a=$I$(5).newInt2$I(this.lstTriangles.size$());
+var a=(function(a,f){return f.apply(null,a)})([this.lstTriangles.size$()],$I$(5).newInt2$I);
 for (var i=this.lstTriangles.size$(); --i >= 0; ) a[i]=this.lstTriangles.get$I(i);
 
 return a;
@@ -101,9 +88,9 @@ var v=this.capMap.get$O(ii);
 if (v == null ) {
 var pt=this.slicer.m.vs[i];
 i=this.slicer.addIntersectionVertex$javajs_util_T3$F$I$I$java_util_Map$I$I(pt, 0, -1, thisSet, null, -1, -1);
-v=Clazz.new_($I$(6).c$$javajs_util_T3$I, [this, null, pt, i]);
-this.vertices.addLast$TV(v);
-this.capMap.put$TK$TV(ii, v);
+v=Clazz.new_($I$(6,1).c$$javajs_util_T3$I,[this, null, pt, i]);
+this.vertices.addLast$O(v);
+this.capMap.put$O$O(ii, v);
 }if (this.dumping) $I$(2).info$S(i + "\t" + this.slicer.m.vs[i] );
 return v;
 }, p$2);
@@ -118,7 +105,7 @@ var mask=0;
 if (p$2.isEdge$I$I.apply(this, [ipt1, ipt2])) mask|=1;
 if (p$2.isEdge$I$I.apply(this, [ipt2, ipt3])) mask|=2;
 if (p$2.isEdge$I$I.apply(this, [ipt3, ipt1])) mask|=4;
-this.lstTriangles.addLast$TV(Clazz.array(Integer.TYPE, -1, [ipt1, ipt2, ipt3, mask]));
+this.lstTriangles.addLast$O(Clazz.array(Integer.TYPE, -1, [ipt1, ipt2, ipt3, mask]));
 } else {
 this.slicer.addTriangle$I$I$I(ipt1, ipt2, ipt3);
 }}, p$2);
@@ -129,11 +116,11 @@ return (j == (i + 1) % this.nPoints);
 
 Clazz.newMeth(C$, 'createCap$javajs_util_V3', function (norm) {
 this.capMap=null;
-this.lstRegions=Clazz.new_($I$(4));
+this.lstRegions=Clazz.new_($I$(4,1));
 var vs=Clazz.array($I$(6), [this.vertices.size$()]);
 if (vs.length < 3) return;
 if ($I$(2).debugging) $I$(2).info$S("MeshCapper using " + vs.length + " vertices" );
-this.vertices.toArray$TTA(vs);
+this.vertices.toArray$OA(vs);
 this.vertices=null;
 var vab=$I$(7).newVsub$javajs_util_T3$javajs_util_T3(vs[0], vs[1]);
 var vac;
@@ -168,14 +155,14 @@ if ($I$(2).debugging) $I$(2).info$S("MeshCapper created " + this.nTriangles + " 
 });
 
 Clazz.newMeth(C$, 'fixEndsAndSortVertices$org_jmol_util_MeshCapper_CapVertexA', function (vs) {
-var v0s=Clazz.new_($I$(4));
-var v1s=Clazz.new_($I$(4));
+var v0s=Clazz.new_($I$(4,1));
+var v1s=Clazz.new_($I$(4,1));
 var n=vs.length;
 for (var i=n; --i >= 0; ) {
 if (vs[i].next == null ) {
-v0s.addLast$TV(vs[i]);
+v0s.addLast$O(vs[i]);
 } else if (vs[i].prev == null ) {
-v1s.addLast$TV(vs[i]);
+v1s.addLast$O(vs[i]);
 }}
 for (var i=v0s.size$(); --i >= 0; ) {
 var v0=v0s.get$I(i);
@@ -186,7 +173,7 @@ System.out.println$S("MESHCAPPER OHOH");
 v0.link$org_jmol_util_MeshCapper_CapVertex(v1);
 if (v0.distanceSquared$javajs_util_T3(v1) < 1.0E-6 ) v1.link$org_jmol_util_MeshCapper_CapVertex(null);
 }}
-$I$(10).sort$TTA$java_util_Comparator(vs, Clazz.new_($I$(11), [this, null]));
+(function(a,f){return f.apply(null,a)})([vs, Clazz.new_($I$(11,1),[this, null])],$I$(10).sort$OA$java_util_Comparator);
 for (var i=n; --i >= 0; ) vs[i].yxNext=vs[(i + 1) % n];
 
 vs[n - 1].yxNext=vs[0];
@@ -211,11 +198,11 @@ return vmin;
 Clazz.newMeth(C$, 'process$org_jmol_util_MeshCapper_CapVertex', function (v) {
 var q=v.yxNext;
 v.yxNext=null;
-if (this.dumping) $I$(2).info$S(v.toString());
+if (this.dumping) (function(a,f){return f.apply(null,a)})([v.toString()],$I$(2).info$S);
 if (v.prev === v.next ) return q;
 var isDescending=(v.prev.region != null );
 var isAscending=(v.next.region != null );
-if (this.dumping) $I$(2).info$S("#" + (isAscending ? v.next.id : "    ") + "    " + (isDescending ? v.prev.id : "") + "\n#" + (isAscending ? "   \\" : "    ") + (isDescending ? "    /\n" : "\n") + "#    " + v.id );
+if (this.dumping) (function(a,f){return f.apply(null,a)})(["#" + (isAscending ? v.next.id : "    ") + "    " + (isDescending ? v.prev.id : "") + "\n#" + (isAscending ? "   \\" : "    ") + (isDescending ? "    /\n" : "\n") + "#    " + v.id ],$I$(2).info$S);
 if (!isDescending && !isAscending ) {
 var last=p$2.getLastPoint$org_jmol_util_MeshCapper_CapVertex.apply(this, [v]);
 if (last == null ) {
@@ -312,7 +299,7 @@ return p;
 
 Clazz.newMeth(C$, 'newRegion$org_jmol_util_MeshCapper_CapVertex', function (v) {
 this.nRegions++;
-this.lstRegions.addLast$TV(v.region=Clazz.array($I$(6), -1, [v, v, v]));
+this.lstRegions.addLast$O(v.region=Clazz.array($I$(6), -1, [v, v, v]));
 }, p$2);
 
 Clazz.newMeth(C$, 'getLastPoint$org_jmol_util_MeshCapper_CapVertex', function (v) {
@@ -363,46 +350,36 @@ var p2=p$2.getInputPoint$org_jmol_util_MeshCapper_CapVertex.apply(this, [v2]);
 $I$(2).info$S("draw " + color + index + "/* " + v0.id + " " + v1.id + " " + v2.id + " */" + p0 + p1 + p2 + " color " + color );
 }, p$2);
 ;
-(function(){var C$=Clazz.newClass(P$.MeshCapper, "MeshCapperSorter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MeshCapper, "MeshCapperSorter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Comparator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['compare$org_jmol_util_MeshCapper_CapVertex$org_jmol_util_MeshCapper_CapVertex','compare$','compare$TT$TT'], function (v1, v2) {
+Clazz.newMeth(C$, ['compare$org_jmol_util_MeshCapper_CapVertex$org_jmol_util_MeshCapper_CapVertex','compare$O$O'], function (v1, v2) {
 return (v1.y < v2.y  ? 1 : v1.y > v2.y  || v1.x < v2.x   ? -1 : v1.x > v2.x  ? 1 : 0);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.MeshCapper, "CapVertex", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MeshCapper, "CapVertex", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javajs.util.T3', 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ipt=0;
-this.id=null;
-this.yxNext=null;
-this.prev=null;
-this.next=null;
-this.region=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.id="";
-}, 1);
+},1);
+
+C$.$fields$=[['I',['ipt'],'S',['id'],'O',['yxNext','org.jmol.util.MeshCapper.CapVertex','+prev','+next','region','org.jmol.util.MeshCapper.CapVertex[]']]]
 
 Clazz.newMeth(C$, 'c$$javajs_util_T3$I', function (p, i) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.ipt=i;
 this.id="" + i;
 this.setT$javajs_util_T3(p);
@@ -453,7 +430,7 @@ return s + "\n";
 }, p$1);
 
 Clazz.newMeth(C$, 'toString', function () {
-var c=(this.this$0.m3 == null  ? this : Clazz.new_($I$(1)));
+var c=(this.this$0.m3 == null  ? this : Clazz.new_($I$(1,1)));
 if (this.this$0.m3 != null ) this.this$0.m3.rotate2$javajs_util_T3$javajs_util_T3(this, c);
 return "draw p" + this.id + " {" + new Float(c.x).toString() + " " + new Float(c.y).toString() + " " + new Float(c.z).toString() + "} # " + (this.prev == null  ? "null" : this.prev.id) + (this.next == null  ? " null" : " " + this.next.id) + (this.region == null  ? "" : p$1.dumpRegion.apply(this, [])) ;
 });
@@ -461,4 +438,4 @@ return "draw p" + this.id + " {" + new Float(c.x).toString() + " " + new Float(c
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

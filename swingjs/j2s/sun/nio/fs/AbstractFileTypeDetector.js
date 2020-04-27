@@ -1,15 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'java.util.Locale','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractFileTypeDetector", null, 'java.nio.file.spi.FileTypeDetector');
+(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'java.util.Locale','StringBuilder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractFileTypeDetector", null, 'java.nio.file.spi.FileTypeDetector');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'probeContentType$java_nio_file_Path', function (file) {
@@ -27,7 +25,7 @@ if (!C$.isValidToken$S(type)) return null;
 var subtype=(semicolon < 0) ? s.substring$I(slash + 1) : s.substring$I$I(slash + 1, semicolon);
 subtype=subtype.trim$().toLowerCase$java_util_Locale($I$(1).ENGLISH);
 if (!C$.isValidToken$S(subtype)) return null;
-var sb=Clazz.new_($I$(2).c$$I,[type.length$() + subtype.length$() + 1 ]);
+var sb=Clazz.new_([type.length$() + subtype.length$() + 1 ],$I$(2,1).c$$I);
 sb.append$S(type);
 sb.append$C("/");
 sb.append$S(subtype);
@@ -47,4 +45,4 @@ if (!C$.isTokenChar$C(s.charAt$I(i))) return false;
 return true;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

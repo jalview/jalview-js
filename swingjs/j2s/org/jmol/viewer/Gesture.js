@@ -1,26 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},p$2={},I$=[[0,'org.jmol.viewer.MouseState','org.jmol.util.Rectangle','org.jmol.viewer.Viewer','org.jmol.viewer.binding.JmolBinding','org.jmol.viewer.binding.Binding','org.jmol.viewer.Gesture','org.jmol.i18n.GT','org.jmol.util.BSUtil','org.jmol.thread.HoverWatcherThread','org.jmol.util.Logger','javajs.util.AU','javajs.util.PT','org.jmol.util.Escape','org.jmol.util.Point3fi','org.jmol.api.Interface','javajs.util.P3','org.jmol.script.ScriptEval','org.jmol.script.SV','org.jmol.viewer.MotionPoint']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Gesture");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},p$2={},I$=[[0,'org.jmol.viewer.MouseState','org.jmol.util.Rectangle','org.jmol.viewer.Viewer','org.jmol.viewer.binding.JmolBinding','org.jmol.viewer.binding.Binding','org.jmol.viewer.Gesture','org.jmol.i18n.GT','org.jmol.util.BSUtil','org.jmol.thread.HoverWatcherThread','org.jmol.util.Logger','javajs.util.AU','javajs.util.PT','org.jmol.util.Escape','org.jmol.util.Point3fi','org.jmol.api.Interface','org.jmol.script.ScriptEval','org.jmol.script.SV','org.jmol.viewer.MotionPoint']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Gesture");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.action=0;
-this.nodes=null;
-this.ptNext=0;
-this.time0=0;
-this.vwr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['action','ptNext'],'J',['time0'],'O',['nodes','org.jmol.viewer.MotionPoint[]','vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'c$$I$org_jmol_viewer_Viewer', function (nPoints, vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
-this.nodes=Clazz.array($I$(19), [nPoints]);
-for (var i=0; i < nPoints; i++) this.nodes[i]=Clazz.new_($I$(19));
+this.nodes=Clazz.array($I$(18), [nPoints]);
+for (var i=0; i < nPoints; i++) this.nodes[i]=Clazz.new_($I$(18,1));
 
 }, 1);
 
@@ -96,4 +88,4 @@ return $I$(5).getMouseActionName$I$Z(this.action, false) + " nPoints = " + this.
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:23:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

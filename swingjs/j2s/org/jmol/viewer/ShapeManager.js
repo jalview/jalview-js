@@ -1,32 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.viewer.JC','org.jmol.api.Interface','org.jmol.shape.Shape','org.jmol.c.VDW','Boolean','org.jmol.c.PAL','javajs.util.P3','org.jmol.modelset.Atom','org.jmol.util.BSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ShapeManager");
-C$.hoverable=null;
-C$.clickableMax=0;
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.viewer.JC','org.jmol.api.Interface','org.jmol.shape.Shape','org.jmol.c.VDW','Boolean','org.jmol.c.PAL','javajs.util.P3','org.jmol.modelset.Atom','org.jmol.util.BSUtil']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ShapeManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.hoverable=Clazz.array(Integer.TYPE, -1, [31, 25, 24, 22, 36]);
-C$.clickableMax=C$.hoverable.length - 1;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ms=null;
-this.shapes=null;
-this.vwr=null;
-this.bsRenderableAtoms=null;
-this.bsSlabbedInternal=null;
-this.navMinMax=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.navMinMax=Clazz.array(Integer.TYPE, [4]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ms','org.jmol.modelset.ModelSet','shapes','org.jmol.shape.Shape[]','vwr','org.jmol.viewer.Viewer','bsRenderableAtoms','javajs.util.BS','+bsSlabbedInternal','navMinMax','int[]']]
+,['I',['clickableMax'],'O',['hoverable','int[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer', function (vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
-this.bsRenderableAtoms=Clazz.new_($I$(1));
-this.bsSlabbedInternal=Clazz.new_($I$(1));
+this.bsRenderableAtoms=Clazz.new_($I$(1,1));
+this.bsSlabbedInternal=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'findNearestShapeAtomIndex$I$I$org_jmol_modelset_AtomA$javajs_util_BS', function (x, y, closest, bsNot) {
@@ -130,7 +118,7 @@ var shape;
 var map=null;
 if (this.vwr.getPickingMode$() == 2) {
 return this.shapes[5].checkObjectClicked$I$I$I$javajs_util_BS$Z(x, y, modifiers, bsVisible, false);
-}if (modifiers != 0 && this.vwr.getBondPicking$()  && (map=this.shapes[1].checkObjectClicked$I$I$I$javajs_util_BS$Z(x, y, modifiers, bsVisible, false)) != null  ) return map;
+}if (modifiers != 0 && this.vwr.getBondsPickable$()  && (map=this.shapes[1].checkObjectClicked$I$I$I$javajs_util_BS$Z(x, y, modifiers, bsVisible, false)) != null  ) return map;
 for (var i=0; i < C$.clickableMax; i++) if ((shape=this.shapes[C$.hoverable[i]]) != null  && (map=shape.checkObjectClicked$I$I$I$javajs_util_BS$Z(x, y, modifiers, bsVisible, drawPicking)) != null  ) return map;
 
 return null;
@@ -248,7 +236,7 @@ var tm=vwr.tm;
 if (finalizeParams) vwr.finalizeTransformParameters$();
 if (bsTranslateSelected != null ) {
 var ptCenter=this.ms.getAtomSetCenter$javajs_util_BS(bsTranslateSelected);
-var pt=Clazz.new_($I$(8));
+var pt=Clazz.new_($I$(8,1));
 tm.transformPt3f$javajs_util_T3$javajs_util_P3(ptCenter, pt);
 pt.add$javajs_util_T3(tm.ptOffset);
 tm.unTransformPoint$javajs_util_T3$javajs_util_T3(pt, pt);
@@ -370,8 +358,13 @@ this.setLabel$O$javajs_util_BS(null, bs);
 if (!isBond) this.vwr.setBooleanProperty$S$Z("bondModeOr", bondmode);
 this.vwr.select$javajs_util_BS$Z$I$Z(bsSelected, false, 0, true);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.hoverable=Clazz.array(Integer.TYPE, -1, [31, 20, 25, 24, 22, 36]);
+C$.clickableMax=C$.hoverable.length - 1;
+};
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

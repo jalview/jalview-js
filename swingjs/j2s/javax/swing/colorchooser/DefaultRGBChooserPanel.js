@@ -1,31 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'java.awt.BorderLayout','javax.swing.JPanel','javax.swing.colorchooser.SmartGridLayout','javax.swing.JLabel','javax.swing.colorchooser.AbstractColorChooserPanel','javax.swing.JSpinner','javax.swing.SpinnerNumberModel','javax.swing.colorchooser.CenterLayout','Boolean','javax.swing.JSlider','java.awt.Font','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultRGBChooserPanel", null, 'javax.swing.colorchooser.AbstractColorChooserPanel', 'javax.swing.event.ChangeListener');
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'javax.swing.colorchooser.AbstractColorChooserPanel','java.awt.BorderLayout','javax.swing.JPanel','javax.swing.colorchooser.SmartGridLayout','javax.swing.JLabel','javax.swing.JSpinner','javax.swing.SpinnerNumberModel','javax.swing.colorchooser.CenterLayout','javax.swing.JSlider','java.awt.Font','java.awt.Color']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultRGBChooserPanel", null, 'javax.swing.colorchooser.AbstractColorChooserPanel', 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.redSlider=null;
-this.greenSlider=null;
-this.blueSlider=null;
-this.redField=null;
-this.blueField=null;
-this.greenField=null;
-this.minValue=0;
-this.maxValue=0;
-this.isAdjusting=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.minValue=0;
 this.maxValue=255;
 this.isAdjusting=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAdjusting'],'I',['minValue','maxValue'],'O',['redSlider','javax.swing.JSlider','+greenSlider','+blueSlider','redField','javax.swing.JSpinner','+blueField','+greenField']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.setInheritsPopupMenu$Z(true);
 }, 1);
 
@@ -49,11 +36,11 @@ return "RGB";
 });
 
 Clazz.newMeth(C$, 'getMnemonic$', function () {
-return P$.AbstractColorChooserPanel.getInt$O$I("ColorChooser.rgbMnemonic", -1);
+return $I$(1).getInt$O$I("ColorChooser.rgbMnemonic", -1);
 });
 
 Clazz.newMeth(C$, 'getDisplayedMnemonicIndex$', function () {
-return P$.AbstractColorChooserPanel.getInt$O$I("ColorChooser.rgbDisplayedMnemonicIndex", -1);
+return $I$(1).getInt$O$I("ColorChooser.rgbDisplayedMnemonicIndex", -1);
 });
 
 Clazz.newMeth(C$, 'getSmallDisplayIcon$', function () {
@@ -72,44 +59,44 @@ Clazz.newMeth(C$, 'buildChooser$', function () {
 var redString="Red";
 var greenString="Green";
 var blueString="Blue";
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(1)));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(2,1)));
 var color=this.getColorFromModel$();
-var enclosure=Clazz.new_($I$(2));
-enclosure.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3).c$$I$I,[3, 3]));
+var enclosure=Clazz.new_($I$(3,1));
+enclosure.setLayout$java_awt_LayoutManager(Clazz.new_($I$(4,1).c$$I$I,[3, 3]));
 enclosure.setInheritsPopupMenu$Z(true);
 this.add$java_awt_Component$O(enclosure, "Center");
-var l=Clazz.new_($I$(4).c$$S,[redString]);
-l.setDisplayedMnemonic$I($I$(5).getInt$O$I("ColorChooser.rgbRedMnemonic", -1));
+var l=Clazz.new_($I$(5,1).c$$S,[redString]);
+l.setDisplayedMnemonic$I($I$(1).getInt$O$I("ColorChooser.rgbRedMnemonic", -1));
 enclosure.add$java_awt_Component(l);
 this.redSlider=p$1.newSlider$I$javax_swing_JLabel.apply(this, [color.getRed$(), l]);
 enclosure.add$java_awt_Component(this.redSlider);
-this.redField=Clazz.new_($I$(6).c$$javax_swing_SpinnerModel,[Clazz.new_($I$(7).c$$I$I$I$I,[color.getRed$(), 0, 255, 1])]);
+this.redField=Clazz.new_([Clazz.new_([color.getRed$(), 0, 255, 1],$I$(7,1).c$$I$I$I$I)],$I$(6,1).c$$javax_swing_SpinnerModel);
 this.redField.setInheritsPopupMenu$Z(true);
-var redFieldHolder=Clazz.new_($I$(2).c$$java_awt_LayoutManager,[Clazz.new_($I$(8))]);
+var redFieldHolder=Clazz.new_([Clazz.new_($I$(8,1))],$I$(3,1).c$$java_awt_LayoutManager);
 redFieldHolder.setInheritsPopupMenu$Z(true);
 this.redField.addChangeListener$javax_swing_event_ChangeListener(this);
 redFieldHolder.add$java_awt_Component(this.redField);
 enclosure.add$java_awt_Component(redFieldHolder);
-l=Clazz.new_($I$(4).c$$S,[greenString]);
-l.setDisplayedMnemonic$I($I$(5).getInt$O$I("ColorChooser.rgbGreenMnemonic", -1));
+l=Clazz.new_($I$(5,1).c$$S,[greenString]);
+l.setDisplayedMnemonic$I($I$(1).getInt$O$I("ColorChooser.rgbGreenMnemonic", -1));
 enclosure.add$java_awt_Component(l);
 this.greenSlider=p$1.newSlider$I$javax_swing_JLabel.apply(this, [color.getGreen$(), l]);
 enclosure.add$java_awt_Component(this.greenSlider);
-this.greenField=Clazz.new_($I$(6).c$$javax_swing_SpinnerModel,[Clazz.new_($I$(7).c$$I$I$I$I,[color.getGreen$(), 0, 255, 1])]);
+this.greenField=Clazz.new_([Clazz.new_([color.getGreen$(), 0, 255, 1],$I$(7,1).c$$I$I$I$I)],$I$(6,1).c$$javax_swing_SpinnerModel);
 this.greenField.setInheritsPopupMenu$Z(true);
-var greenFieldHolder=Clazz.new_($I$(2).c$$java_awt_LayoutManager,[Clazz.new_($I$(8))]);
+var greenFieldHolder=Clazz.new_([Clazz.new_($I$(8,1))],$I$(3,1).c$$java_awt_LayoutManager);
 greenFieldHolder.add$java_awt_Component(this.greenField);
 greenFieldHolder.setInheritsPopupMenu$Z(true);
 this.greenField.addChangeListener$javax_swing_event_ChangeListener(this);
 enclosure.add$java_awt_Component(greenFieldHolder);
-l=Clazz.new_($I$(4).c$$S,[blueString]);
-l.setDisplayedMnemonic$I($I$(5).getInt$O$I("ColorChooser.rgbBlueMnemonic", -1));
+l=Clazz.new_($I$(5,1).c$$S,[blueString]);
+l.setDisplayedMnemonic$I($I$(1).getInt$O$I("ColorChooser.rgbBlueMnemonic", -1));
 enclosure.add$java_awt_Component(l);
 this.blueSlider=p$1.newSlider$I$javax_swing_JLabel.apply(this, [color.getBlue$(), l]);
 enclosure.add$java_awt_Component(this.blueSlider);
-this.blueField=Clazz.new_($I$(6).c$$javax_swing_SpinnerModel,[Clazz.new_($I$(7).c$$I$I$I$I,[color.getBlue$(), 0, 255, 1])]);
+this.blueField=Clazz.new_([Clazz.new_([color.getBlue$(), 0, 255, 1],$I$(7,1).c$$I$I$I$I)],$I$(6,1).c$$javax_swing_SpinnerModel);
 this.blueField.setInheritsPopupMenu$Z(true);
-var blueFieldHolder=Clazz.new_($I$(2).c$$java_awt_LayoutManager,[Clazz.new_($I$(8))]);
+var blueFieldHolder=Clazz.new_([Clazz.new_($I$(8,1))],$I$(3,1).c$$java_awt_LayoutManager);
 blueFieldHolder.add$java_awt_Component(this.blueField);
 this.blueField.addChangeListener$javax_swing_event_ChangeListener(this);
 blueFieldHolder.setInheritsPopupMenu$Z(true);
@@ -117,14 +104,14 @@ enclosure.add$java_awt_Component(blueFieldHolder);
 this.redSlider.addChangeListener$javax_swing_event_ChangeListener(this);
 this.greenSlider.addChangeListener$javax_swing_event_ChangeListener(this);
 this.blueSlider.addChangeListener$javax_swing_event_ChangeListener(this);
-this.redSlider.putClientProperty$O$O("JSlider.isFilled", $I$(9).TRUE);
-this.greenSlider.putClientProperty$O$O("JSlider.isFilled", $I$(9).TRUE);
-this.blueSlider.putClientProperty$O$O("JSlider.isFilled", $I$(9).TRUE);
+this.redSlider.putClientProperty$O$O("JSlider.isFilled", Boolean.TRUE);
+this.greenSlider.putClientProperty$O$O("JSlider.isFilled", Boolean.TRUE);
+this.blueSlider.putClientProperty$O$O("JSlider.isFilled", Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'newSlider$I$javax_swing_JLabel', function (val, l) {
-var s=Clazz.new_($I$(10).c$$I$I$I$I,[0, 0, 255, val]);
-s.setFont$java_awt_Font(Clazz.new_($I$(11).c$$S$I$I,["Helvetica", 0, 8]));
+var s=Clazz.new_($I$(9,1).c$$I$I$I$I,[0, 0, 255, val]);
+s.setFont$java_awt_Font(Clazz.new_($I$(10,1).c$$S$I$I,["Helvetica", 0, 8]));
 s.setMajorTickSpacing$I(85);
 s.setMinorTickSpacing$I(17);
 s.setPaintTicks$Z(true);
@@ -146,19 +133,19 @@ p$1.setColor$java_awt_Color.apply(this, [this.getColorFromModel$()]);
 this.isAdjusting=false;
 }});
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 if (Clazz.instanceOf(e.getSource$(), "javax.swing.JSlider") && !this.isAdjusting ) {
 var red=this.redSlider.getValue$();
 var green=this.greenSlider.getValue$();
 var blue=this.blueSlider.getValue$();
-var color=Clazz.new_($I$(12).c$$I$I$I,[red, green, blue]);
+var color=Clazz.new_($I$(11,1).c$$I$I$I,[red, green, blue]);
 this.getColorSelectionModel$().setSelectedColor$java_awt_Color(color);
 } else if (Clazz.instanceOf(e.getSource$(), "javax.swing.JSpinner") && !this.isAdjusting ) {
 var red=(this.redField.getValue$()).intValue$();
 var green=(this.greenField.getValue$()).intValue$();
 var blue=(this.blueField.getValue$()).intValue$();
-var color=Clazz.new_($I$(12).c$$I$I$I,[red, green, blue]);
+var color=Clazz.new_($I$(11,1).c$$I$I$I,[red, green, blue]);
 this.getColorSelectionModel$().setSelectedColor$java_awt_Color(color);
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

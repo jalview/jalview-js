@@ -1,22 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.api.Interface','org.jmol.script.SV','org.jmol.script.ScriptMathProcessor','org.jmol.script.T','java.util.Hashtable','javajs.util.BS','javajs.util.PT','javajs.util.Lst','Boolean','org.jmol.util.BSUtil','javajs.util.CU','org.jmol.util.Escape','org.jmol.modelset.ModelSet','javajs.util.P3','org.jmol.modelset.BondSet','javajs.util.Measure','javajs.util.SB','org.jmol.modelset.Group','org.jmol.util.Elements']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptExpr", null, 'org.jmol.script.ScriptParam');
+(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.api.Interface','org.jmol.script.SV','org.jmol.script.ScriptMathProcessor','org.jmol.script.T','java.util.Hashtable','javajs.util.BS','javajs.util.PT','javajs.util.Lst','Boolean','org.jmol.util.BSUtil','javajs.util.CU','org.jmol.util.Escape','org.jmol.modelset.ModelSet','javajs.util.P3','org.jmol.modelset.BondSet','javajs.util.Measure','javajs.util.SB','org.jmol.modelset.Group','org.jmol.util.Elements','org.jmol.script.ScriptParam']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptExpr", null, 'org.jmol.script.ScriptParam');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.debugHigh=false;
-this.cmdExt=null;
-this.isoExt=null;
-this.mathExt=null;
-this.smilesExt=null;
-this.tempStatement=null;
-this.ptTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['debugHigh'],'O',['cmdExt','org.jmol.scriptext.CmdExt','isoExt','org.jmol.scriptext.IsoExt','mathExt','org.jmol.scriptext.MathExt','smilesExt','org.jmol.scriptext.SmilesExt','tempStatement','org.jmol.script.T[]','ptTemp','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'getCmdExt$', function () {
 return (this.cmdExt == null  ? this.cmdExt=(p$1.getExt$S.apply(this, ["Cmd"])).init$O(this) : this.cmdExt);
@@ -72,7 +62,7 @@ var allContext=(localVars == null  || ptMax != -2147483648 );
 if (ptMax < pt) ptMax=this.slen;
 var ptEq=(isSpecialAssignment ? 0 : 1);
 var ptWithin=-1;
-var rpn=Clazz.new_($I$(3).c$$org_jmol_script_ScriptExpr$Z$Z$Z$Z$Z$S,[this, isSpecialAssignment, isArrayItem, asVector, false, false, key]);
+var rpn=Clazz.new_($I$(3,1).c$$org_jmol_script_ScriptExpr$Z$Z$Z$Z$Z$S,[this, isSpecialAssignment, isArrayItem, asVector, false, false, key]);
 var v;
 var res;
 var nSquare=0;
@@ -115,7 +105,7 @@ v=this.getParameter$S$I$Z($I$(2).sValue$org_jmol_script_T(this.st[i]), 107374219
 break;
 case 134320649:
 if (this.getToken$I(++i).tok != 268435472) this.invArg$();
-if (localVars == null ) localVars=Clazz.new_($I$(5));
+if (localVars == null ) localVars=Clazz.new_($I$(5,1));
 res=p$1.parameterExpression$I$I$S$Z$Z$I$Z$java_util_Map$S$Z.apply(this, [++i, -1, null, ignoreComma, false, -1, false, localVars, localVar, false]);
 var TF=(res).booleanValue$();
 var iT=this.iToken;
@@ -135,7 +125,7 @@ var isFunctionOfX=(pt > 0);
 var isFor=(isFunctionOfX && tok == 134320648 );
 var dummy;
 if (isFunctionOfX) {
-if (this.getToken$I(++i).tok != 268435472 || !$I$(4).tokAttr$I$I(this.getToken$I(++i).tok, 1073741824) ) this.invArg$();
+if (this.getToken$I(++i).tok != 268435472 || !(function(a,f){return f.apply(null,a)})([this.getToken$I(++i).tok, 1073741824],$I$(4).tokAttr$I$I) ) this.invArg$();
 dummy=this.paramAsStr$I(i);
 if (this.getToken$I(++i).tok != 1073742339) this.invArg$();
 } else {
@@ -145,14 +135,14 @@ if (!(Clazz.instanceOf(v, "javajs.util.BS"))) this.invArg$();
 var bsAtoms=v;
 i=this.iToken;
 if (isFunctionOfX && this.getToken$I(i++).tok != 1073742339 ) this.invArg$();
-var bsSelect=Clazz.new_($I$(6));
-var bsX=Clazz.new_($I$(6));
+var bsSelect=Clazz.new_($I$(6,1));
+var bsX=Clazz.new_($I$(6,1));
 var sout=(isFor ? Clazz.array(String, [bsAtoms.cardinality$()]) : null);
-if (localVars == null ) localVars=Clazz.new_($I$(5));
+if (localVars == null ) localVars=Clazz.new_($I$(5,1));
 bsX.set$I(0);
 var t=$I$(2).newV$I$O(10, bsX);
 t.index=0;
-localVars.put$TK$TV(dummy, t.setName$S(dummy));
+localVars.put$O$O(dummy, t.setName$S(dummy));
 var pt2=-1;
 if (isFunctionOfX) {
 pt2=i - 1;
@@ -239,7 +229,7 @@ i=this.iToken;
 case 1073742332:
 if (this.tokAt$I(i + 1) == 4) {
 if (this.tokAt$I(i + 2) == 1073742338) {
-v=(this.chk ? Clazz.new_($I$(6)) : this.getAtomBitSet$O(this.stringParameter$I(i + 1)));
+v=(this.chk ? Clazz.new_($I$(6,1)) : this.getAtomBitSet$O(this.stringParameter$I(i + 1)));
 i+=2;
 break;
 }v=this.getAssocArray$I(i);
@@ -249,7 +239,7 @@ v=this.getPointOrPlane$I$Z$Z$Z$Z$I$I$Z(i, false, true, true, false, 3, 4, true);
 break;
 case 1073742325:
 if (this.tokAt$I(i + 1) == 1073742326) {
-v=Clazz.new_($I$(5));
+v=Clazz.new_($I$(5,1));
 i++;
 break;
 } else if (this.tokAt$I(i + 1) == 1073742327 && this.tokAt$I(i + 2) == 1073742326 ) {
@@ -419,22 +409,22 @@ if (!this.chk) rpn.dumpStacks$S("null result");
 this.error$I(13);
 }if (result.tok == 135198) {
 if (isSpecialAssignment && ptEq == 0 ) {
-var rv=Clazz.new_($I$(8));
-rv.addLast$TV(Clazz.new_($I$(2)));
+var rv=Clazz.new_($I$(8,1));
+rv.addLast$O(Clazz.new_($I$(2,1)));
 return rv;
 }return result.value;
 }if (this.chk) {
 if (returnBoolean) return $I$(9).TRUE;
 if (returnString) return "";
 } else {
-if (returnBoolean) return $I$(9).valueOf$Z(result.asBoolean$());
+if (returnBoolean) return (function(a,f){return f.apply(null,a)})([result.asBoolean$()],$I$(9).valueOf$Z);
 if (returnString) {
 if (result.tok == 4) result.intValue=2147483647;
 return result.asString$();
 }}switch (result.tok) {
 case 1073742335:
 case 1073742334:
-return $I$(9).valueOf$Z(result.intValue == 1);
+return (function(a,f){return f.apply(null,a)})([result.intValue == 1],$I$(9).valueOf$Z);
 case 2:
 return Integer.valueOf$I(result.intValue);
 case 10:
@@ -458,7 +448,7 @@ this.isBondSet=false;
 if (code !== this.st ) {
 this.tempStatement=this.st;
 this.st=code;
-}var rpn=Clazz.new_($I$(3).c$$org_jmol_script_ScriptExpr$Z$Z$Z$Z$Z$S,[this, false, false, false, ret == null , allowUnderflow, null]);
+}var rpn=Clazz.new_([this, false, false, false, ret == null , allowUnderflow, null],$I$(3,1).c$$org_jmol_script_ScriptExpr$Z$Z$Z$Z$Z$S);
 var val;
 var refreshed=false;
 this.iToken=1000;
@@ -495,7 +485,7 @@ pc=this.iToken;
 break;
 }}break;
 case 1073742338:
-if (pc > 0 && code[pc - 1].tok == 1073742332 ) rpn.addXBs$javajs_util_BS(Clazz.new_($I$(6)));
+if (pc > 0 && code[pc - 1].tok == 1073742332 ) rpn.addXBs$javajs_util_BS(Clazz.new_($I$(6,1)));
 break;
 case 268435520:
 isInMath=true;
@@ -518,12 +508,12 @@ rpn.addXBs$javajs_util_BS(this.vwr.ms.getAtoms$I$O(1086324744, (instruction).asS
 break;
 case 134219265:
 rpn.addX$org_jmol_script_SV($I$(2).newT$org_jmol_script_T(instruction));
-rpn.addX$org_jmol_script_SV($I$(2).newV$I$O(9, this.hklParameter$I(pc + 2)));
+rpn.addX$org_jmol_script_SV((function(a,f){return f.apply(null,a)})([9, this.hklParameter$I(pc + 2)],$I$(2).newV$I$O));
 pc=this.iToken;
 break;
 case 134217750:
 rpn.addX$org_jmol_script_SV($I$(2).newT$org_jmol_script_T(instruction));
-rpn.addX$org_jmol_script_SV($I$(2).newV$I$O(9, this.planeParameter$I(pc + 2)));
+rpn.addX$org_jmol_script_SV((function(a,f){return f.apply(null,a)})([9, this.planeParameter$I(pc + 2)],$I$(2).newV$I$O));
 pc=this.iToken;
 break;
 case 1073742329:
@@ -543,7 +533,7 @@ rpn.addXBs$javajs_util_BS(this.vwr.ms.getAtoms$I$O(1086324744, s));
 break;
 }rpn.addX$org_jmol_script_SV($I$(2).newT$org_jmol_script_T(instruction));
 if (s.equals$O("hkl")) {
-rpn.addX$org_jmol_script_SV($I$(2).newV$I$O(9, this.hklParameter$I(pc + 2)));
+rpn.addX$org_jmol_script_SV((function(a,f){return f.apply(null,a)})([9, this.hklParameter$I(pc + 2)],$I$(2).newV$I$O));
 pc=this.iToken;
 }break;
 case 134217759:
@@ -561,34 +551,34 @@ case 1073742327:
 rpn.addXBs$javajs_util_BS(this.vwr.getAllAtoms$());
 break;
 case 1073742333:
-rpn.addXBs$javajs_util_BS(Clazz.new_($I$(6)));
+rpn.addXBs$javajs_util_BS(Clazz.new_($I$(6,1)));
 break;
 case 1073742335:
 case 1073742334:
 rpn.addX$org_jmol_script_SV($I$(2).newT$org_jmol_script_T(instruction));
 break;
 case 1113589787:
-rpn.addXBs$javajs_util_BS($I$(10).copy$javajs_util_BS(this.vwr.bsA$()));
+rpn.addXBs$javajs_util_BS((function(a,f){return f.apply(null,a)})([this.vwr.bsA$()],$I$(10).copy$javajs_util_BS));
 break;
 case 2097194:
-rpn.addXBs$javajs_util_BS($I$(10).copy$javajs_util_BS(this.vwr.slm.getHiddenSet$()));
+rpn.addXBs$javajs_util_BS((function(a,f){return f.apply(null,a)})([this.vwr.slm.getHiddenSet$()],$I$(10).copy$javajs_util_BS));
 break;
 case 12293:
-rpn.addXBs$javajs_util_BS($I$(10).copy$javajs_util_BS(this.vwr.getMotionFixedAtoms$()));
+rpn.addXBs$javajs_util_BS((function(a,f){return f.apply(null,a)})([this.vwr.getMotionFixedAtoms$()],$I$(10).copy$javajs_util_BS));
 break;
 case 2097192:
-rpn.addXBs$javajs_util_BS($I$(10).copyInvert$javajs_util_BS$I(this.vwr.slm.getHiddenSet$(), ac));
+rpn.addXBs$javajs_util_BS((function(a,f){return f.apply(null,a)})([this.vwr.slm.getHiddenSet$(), ac],$I$(10).copyInvert$javajs_util_BS$I));
 break;
 case 2097200:
 rpn.addXBs$javajs_util_BS(this.vwr.getBaseModelBitSet$());
 break;
 case 2097198:
-rpn.addXBs$javajs_util_BS(this.chk ? Clazz.new_($I$(6)) : $I$(10).copy$javajs_util_BS(this.vwr.ms.getVisibleSet$Z(!refreshed)));
+rpn.addXBs$javajs_util_BS(this.chk ? Clazz.new_($I$(6,1)) : (function(a,f){return f.apply(null,a)})([this.vwr.ms.getVisibleSet$Z(!refreshed)],$I$(10).copy$javajs_util_BS));
 refreshed=true;
 break;
 case 2097190:
 if (!this.chk && allowRefresh ) (this).refresh$Z(false);
-rpn.addXBs$javajs_util_BS(this.chk ? Clazz.new_($I$(6)) : this.vwr.ms.getClickableSet$Z(!allowRefresh));
+rpn.addXBs$javajs_util_BS(this.chk ? Clazz.new_($I$(6,1)) : this.vwr.ms.getClickableSet$Z(!allowRefresh));
 allowRefresh=false;
 break;
 case 1073742356:
@@ -685,7 +675,7 @@ if (tokWhat == 1715472409) {
 if (pc + 2 == code.length) this.invArg$();
 if (!this.chk) data=this.vwr.getDataObj$S$javajs_util_BS$I(code[++pc].value, null, 1);
 }if (++pc == code.length) this.invArg$();
-rpn.addXBs$javajs_util_BS(this.chk ? Clazz.new_($I$(6)) : p$1.getComparison$org_jmol_script_T$I$I$S$FA.apply(this, [code[pc], tokWhat, tok, value, data]));
+rpn.addXBs$javajs_util_BS(this.chk ? Clazz.new_($I$(6,1)) : p$1.getComparison$org_jmol_script_T$I$I$S$FA.apply(this, [code[pc], tokWhat, tok, value, data]));
 break;
 case 3:
 case 2:
@@ -722,11 +712,11 @@ if (!this.chk) rpn.dumpStacks$S("after getResult");
 this.error$I(13);
 }var exp=expressionResult.value;
 if (Clazz.instanceOf(exp, "java.lang.String") && (ret == null  || (exp).startsWith$S("({") ) ) {
-exp=(this.chk ? Clazz.new_($I$(6)) : this.getAtomBitSet$O(exp));
+exp=(this.chk ? Clazz.new_($I$(6,1)) : this.getAtomBitSet$O(exp));
 }if (ret != null  && !(Clazz.instanceOf(exp, "javajs.util.BS")) ) {
 ret[0]=exp;
 return null;
-}bs=(Clazz.instanceOf(exp, "javajs.util.BS") ? exp : Clazz.new_($I$(6)));
+}bs=(Clazz.instanceOf(exp, "javajs.util.BS") ? exp : Clazz.new_($I$(6,1)));
 this.isBondSet=(Clazz.instanceOf(exp, "org.jmol.modelset.BondSet"));
 if (!this.isBondSet && (bs=this.vwr.slm.excludeAtoms$javajs_util_BS$Z(bs, ignoreSubset)).length$() > this.vwr.ms.ac ) bs.clearAll$();
 if (this.tempStatement != null ) {
@@ -738,7 +728,7 @@ this.tempStatement=null;
 Clazz.newMeth(C$, 'getComparison$org_jmol_script_T$I$I$S$FA', function (t, tokWhat, tokOp, strOp, data) {
 var tokValue=t.tok;
 if (tokValue == 7) {
-var bs=Clazz.new_($I$(6));
+var bs=Clazz.new_($I$(6,1));
 if (tokOp != 268435860) bs.setBits$I$I(0, this.vwr.ms.ac);
 var lst=(t).getList$();
 for (var i=lst.size$(); --i >= 0; ) {
@@ -788,7 +778,7 @@ isIntProperty=true;
 if (tokWhat == 1639976963 || tokWhat == 1237320707  || tokWhat == 1086326789 ) isStringProperty=!(isIntProperty=(comparisonInt != 2147483647));
  else val=$I$(2).nValue$org_jmol_script_T(t);
 if (Clazz.instanceOf(val, "java.lang.Integer")) comparisonFloat=comparisonInt=(val).intValue$();
- else if (Clazz.instanceOf(val, "java.lang.Float") && isModel ) comparisonInt=$I$(13).modelFileNumberFromFloat$F((val).floatValue$());
+ else if (Clazz.instanceOf(val, "java.lang.Float") && isModel ) comparisonInt=(function(a,f){return f.apply(null,a)})([(val).floatValue$()],$I$(13).modelFileNumberFromFloat$F);
 }}if (isStringProperty && !(Clazz.instanceOf(val, "java.lang.String")) ) {
 val="" + val;
 }if (Clazz.instanceOf(val, "java.lang.Integer") || tokValue == 2 ) {
@@ -833,7 +823,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'getAssocArray$I', function (i) {
-var ht=Clazz.new_($I$(5));
+var ht=Clazz.new_($I$(5,1));
 var closer=(this.tokAt$I(i) == 1073742332 ? 1073742338 : 268435521);
 for (i=i + 1; i < this.slen; i++) {
 var tok=this.tokAt$I(i);
@@ -845,7 +835,7 @@ i++;
 if (this.tokAt$I(i++) != 268435490) this.invArg$();
 var v=p$1.parameterExpression$I$I$S$Z$Z$I$Z$java_util_Map$S$Z.apply(this, [i, 0, null, false, true, -1, false, null, null, false]);
 if (v.size$() == 0) this.invArg$();
-ht.put$TK$TV(key, v.get$I(0));
+ht.put$O$O(key, v.get$I(0));
 i=this.iToken;
 if (this.tokAt$I(i) != 268435504) break;
 }
@@ -855,20 +845,20 @@ return ht;
 });
 
 Clazz.newMeth(C$, 'listBS$javajs_util_BS', function (bs) {
-var l=Clazz.new_($I$(8));
-l.addLast$TV($I$(2).newV$I$O(10, bs));
+var l=Clazz.new_($I$(8,1));
+l.addLast$O($I$(2).newV$I$O(10, bs));
 return l;
 });
 
 Clazz.newMeth(C$, 'compareFloatData$I$FA$I$F', function (tokWhat, data, tokOperator, comparisonFloat) {
-var bs=Clazz.new_($I$(6));
+var bs=Clazz.new_($I$(6,1));
 var ac=this.vwr.ms.ac;
 var modelSet=this.vwr.ms;
 var atoms=modelSet.at;
 var propertyFloat=0;
 this.vwr.autoCalculate$I$S(tokWhat, null);
 var isProp=(tokWhat == 1715472409);
-if (!isProp && this.ptTemp == null  ) this.ptTemp=Clazz.new_($I$(14));
+if (!isProp && this.ptTemp == null  ) this.ptTemp=Clazz.new_($I$(14,1));
 for (var i=ac; --i >= 0; ) {
 var match=false;
 var atom=atoms[i];
@@ -902,7 +892,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'compareString$I$I$S', function (tokWhat, tokOperator, comparisonString) {
-var bs=Clazz.new_($I$(6));
+var bs=Clazz.new_($I$(6,1));
 var atoms=this.vwr.ms.at;
 var ac=this.vwr.ms.ac;
 var isCaseSensitive=(tokOperator == 268435862 || tokWhat == 1086326788 && this.vwr.getBoolean$I(603979822)  );
@@ -963,7 +953,7 @@ return $I$(10).newBitSet2$I$I(ival, ac);
 case 268435856:
 return $I$(10).newBitSet2$I$I(ival + 1, ac);
 case 268435860:
-return (ival < ac ? $I$(10).newBitSet2$I$I(ival, ival + 1) : Clazz.new_($I$(6)));
+return (ival < ac ? $I$(10).newBitSet2$I$I(ival, ival + 1) : Clazz.new_($I$(6,1)));
 case 268435861:
 default:
 bs=$I$(10).setAll$I(ac);
@@ -972,7 +962,7 @@ return bs;
 }
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-return Clazz.new_($I$(6));
+return Clazz.new_($I$(6,1));
 } else {
 throw e;
 }
@@ -988,7 +978,7 @@ ia=atom.atomPropertyInt$I(tokWhat);
 break;
 case 1094713368:
 case 1094717448:
-return $I$(10).copy$javajs_util_BS(this.vwr.ms.getConformation$I$I$Z$javajs_util_BS(-1, ival - 1, false, null));
+return (function(a,f){return f.apply(null,a)})([this.vwr.ms.getConformation$I$I$Z$javajs_util_BS(-1, ival - 1, false, null)],$I$(10).copy$javajs_util_BS);
 case 1296041986:
 propertyBitSet=atom.atomSymmetry;
 if (propertyBitSet == null ) continue;
@@ -1090,7 +1080,7 @@ if (this.vwr.isFunction$S(name.toLowerCase$())) {
 tok=134320141;
 break;
 }}
-return $I$(2).newSV$I$I$O(268435665, tok, this.paramAsStr$I(i));
+return (function(a,f){return f.apply(null,a)})([268435665, tok, this.paramAsStr$I(i)],$I$(2).newSV$I$I$O);
 }, p$1);
 
 Clazz.newMeth(C$, 'getBitsetProperty$javajs_util_BS$javajs_util_Lst$I$javajs_util_P3$javajs_util_P4$O$O$Z$I$Z', function (bs, pts, tok, ptRef, planeRef, tokenValue, opValue, useAtomMap, index, asVectorIfAll) {
@@ -1132,9 +1122,9 @@ default:
 isInt=$I$(4).tokAttr$I$I(tok, 1094713344) && !$I$(4).tokAttr$I$I(tok, 1111490560) ;
 isString=!isInt && $I$(4).tokAttr$I$I(tok, 1086324736) ;
 }
-var pt=(isPt || !isAtoms  ? Clazz.new_($I$(14)) : null);
+var pt=(isPt || !isAtoms  ? Clazz.new_($I$(14,1)) : null);
 if (isExplicitlyAll || isString && !haveIndex && minmaxtype != 256   && minmaxtype != 32  ) minmaxtype=1073742327;
-var vout=(minmaxtype == 1073742327 ? Clazz.new_($I$(8)) : null);
+var vout=(minmaxtype == 1073742327 ? Clazz.new_($I$(8,1)) : null);
 var bsNew=null;
 var userFunction=null;
 var params=null;
@@ -1146,7 +1136,7 @@ switch (tok) {
 case 1140850689:
 case 1677721602:
 if (this.chk) return bs;
-bsNew=(tok == 1140850689 ? (isAtoms ? bs : this.vwr.ms.getAtoms$I$O(1677721602, bs)) : (isAtoms ? $I$(15).newBS$javajs_util_BS$IA(this.vwr.getBondsForSelectedAtoms$javajs_util_BS(bs), null) : bs));
+bsNew=(tok == 1140850689 ? (isAtoms ? bs : this.vwr.ms.getAtoms$I$O(1677721602, bs)) : (isAtoms ? (function(a,f){return f.apply(null,a)})([this.vwr.getBondsForSelectedAtoms$javajs_util_BS(bs), null],$I$(15).newBS$javajs_util_BS$IA) : bs));
 var i;
 switch (minmaxtype) {
 case 32:
@@ -1186,10 +1176,10 @@ case 1111490575:
 this.vwr.autoCalculate$I$S(tok, tokenValue);
 break;
 case 1275069443:
-if (ptRef == null  && planeRef == null  ) return Clazz.new_($I$(14));
+if (ptRef == null  && planeRef == null  ) return Clazz.new_($I$(14,1));
 break;
 case 1765808134:
-ptT=Clazz.new_($I$(14));
+ptT=Clazz.new_($I$(14,1));
 break;
 case 1715472409:
 data=this.vwr.getDataObj$S$javajs_util_BS$I(opValue, null, 1);
@@ -1238,7 +1228,7 @@ var fv=3.4028235E38;
 switch (tok) {
 case 134320141:
 bsAtom.set$I(i);
-fv=$I$(2).fValue$org_jmol_script_T((this).getUserFunctionResult$S$javajs_util_Lst$org_jmol_script_SV(userFunction, params, tokenAtom));
+fv=(function(a,f){return f.apply(null,a)})([(this).getUserFunctionResult$S$javajs_util_Lst$org_jmol_script_SV(userFunction, params, tokenAtom)],$I$(2).fValue$org_jmol_script_T);
 bsAtom.clear$I(i);
 break;
 case 1715472409:
@@ -1246,7 +1236,7 @@ fv=(data == null  ? 0 : data[i]);
 break;
 case 1275069443:
 if (planeRef != null ) fv=$I$(16).distanceToPlane$javajs_util_P4$javajs_util_T3(planeRef, atom);
- else fv=(pts != null  ? $I$(2).ptValue$org_jmol_script_SV(pts.get$I(i)).distance$javajs_util_T3(ptRef) : atom !== ptRef  || minmaxtype != 32  ? atom.distance$javajs_util_T3(ptRef) : NaN);
+ else fv=(pts != null  ? (function(a,f){return f.apply(null,a)})([pts.get$I(i)],$I$(2).ptValue$org_jmol_script_SV).distance$javajs_util_T3(ptRef) : atom !== ptRef  || minmaxtype != 32  ? atom.distance$javajs_util_T3(ptRef) : NaN);
 break;
 default:
 fv=atom.atomPropertyFloat$org_jmol_viewer_Viewer$I$javajs_util_P3(this.vwr, tok, this.ptTemp);
@@ -1265,7 +1255,7 @@ case 256:
 fout[i]=fv;
 break;
 case 1073742327:
-vout.addLast$TV(Float.valueOf$F(fv));
+vout.addLast$O(Float.valueOf$F(fv));
 break;
 case 160:
 case 192:
@@ -1296,7 +1286,7 @@ case 256:
 fout[i]=iv;
 break;
 case 1073742327:
-vout.addLast$TV(Integer.valueOf$I(iv));
+vout.addLast$O(Integer.valueOf$I(iv));
 break;
 case 160:
 case 192:
@@ -1314,7 +1304,7 @@ fout[i]=$I$(7).parseFloat$S(s);
 break;
 default:
 if (vout == null ) return s;
-vout.addLast$TV(s);
+vout.addLast$O(s);
 }
 break;
 case 3:
@@ -1324,7 +1314,7 @@ case 256:
 fout[i]=(pt == null  ? -1 : t == null  ? 0 : t.length$());
 break;
 case 1073742327:
-vout.addLast$TV(t == null  ? Integer.valueOf$I(-1) : $I$(14).newP$javajs_util_T3(t));
+vout.addLast$O(t == null  ? Integer.valueOf$I(-1) : $I$(14).newP$javajs_util_T3(t));
 break;
 default:
 if (t == null ) n--;
@@ -1339,7 +1329,7 @@ info[1]="";
 this.vwr.shm.getShapePropertyData$I$S$OA(21, "info", info);
 if (info[1] != null ) {
 if (vout == null ) return info[1];
-vout.addLast$TV(info[1]);
+vout.addLast$O(info[1]);
 }break;
 }
 }
@@ -1363,7 +1353,7 @@ case 64:
 if (fv > fvMinMax ) fvMinMax=fv;
 break;
 case 1073742327:
-vout.addLast$TV(Float.valueOf$F(fv));
+vout.addLast$O(Float.valueOf$F(fv));
 break;
 case 160:
 case 192:
@@ -1377,7 +1367,7 @@ case 1145047050:
 switch (minmaxtype) {
 case 1073742327:
 pt.ave$javajs_util_T3$javajs_util_T3(bond.atom1, bond.atom2);
-vout.addLast$TV($I$(14).newP$javajs_util_T3(pt));
+vout.addLast$O($I$(14).newP$javajs_util_T3(pt));
 break;
 default:
 pt.add$javajs_util_T3(bond.atom1);
@@ -1386,10 +1376,10 @@ n++;
 }
 break;
 case 1765808134:
-$I$(11).colorPtFromInt$I$javajs_util_P3(this.vwr.gdata.getColorArgbOrGray$H(bond.colix), ptT);
+(function(a,f){return f.apply(null,a)})([this.vwr.gdata.getColorArgbOrGray$H(bond.colix), ptT],$I$(11).colorPtFromInt$I$javajs_util_P3);
 switch (minmaxtype) {
 case 1073742327:
-vout.addLast$TV($I$(14).newP$javajs_util_T3(ptT));
+vout.addLast$O($I$(14).newP$javajs_util_T3(ptT));
 break;
 default:
 pt.add$javajs_util_T3(ptT);
@@ -1425,7 +1415,7 @@ break;
 }
 return fout;
 }if (tok == 1086324744) {
-var sb=Clazz.new_($I$(17));
+var sb=Clazz.new_($I$(17,1));
 for (var i=0; i < len; i++) sb.append$S(vout.get$I(i));
 
 return sb.toString();
@@ -1437,7 +1427,7 @@ if (Clazz.instanceOf(v, "javajs.util.P3")) sout[i]=$I$(12).eP$javajs_util_T3(v);
 }
 return sout;
 }if (isPt) return (n == 0 ? Integer.valueOf$I(-1) : $I$(14).new3$F$F$F(pt.x / n, pt.y / n, pt.z / n));
-if (isHash) return Clazz.new_($I$(5));
+if (isHash) return Clazz.new_($I$(5,1));
 if (n == 0 || n == 1 && minmaxtype == 192  ) return Float.valueOf$F(NaN);
 if (isInt) {
 switch (minmaxtype) {
@@ -1509,7 +1499,7 @@ return (bs == null  ? "" : bs);
 }, p$1);
 
 Clazz.newMeth(C$, 'getAtomBits$I$O', function (tokType, specInfo) {
-return (this.chk ? Clazz.new_($I$(6)) : this.vwr.ms.getAtoms$I$O(tokType, specInfo));
+return (this.chk ? Clazz.new_($I$(6,1)) : this.vwr.ms.getAtoms$I$O(tokType, specInfo));
 });
 
 Clazz.newMeth(C$, 'getSeqCode$org_jmol_script_T', function (instruction) {
@@ -1522,7 +1512,7 @@ var propertyName="";
 var settingData=key.startsWith$S("property_");
 var isThrown=key.equals$O("thrown_value");
 var isExpression=(this.tokAt$I(1) == 1073742325 || this.tokAt$I(1) == 268435472 );
-var t=(settingData ? null : key.length$() == 0 ? Clazz.new_($I$(2)) : this.getContextVariableAsVariable$S$Z(key, false));
+var t=(settingData ? null : key.length$() == 0 ? Clazz.new_($I$(2,1)) : this.getContextVariableAsVariable$S$Z(key, false));
 if (isSet && !isExpression ) {
 switch (this.tokAt$I(2)) {
 default:
@@ -1546,7 +1536,7 @@ var v=p$1.parameterExpression$I$I$S$Z$Z$I$Z$java_util_Map$S$Z.apply(this, [pt, p
 nv=v.size$();
 if (nv == 0) this.invArg$();
 if (this.chk || v.get$I(0).tok == 0 ) return null;
-var tv=$I$(2).selectItemVar$org_jmol_script_SV($I$(2).newS$S("").setv$org_jmol_script_SV(v.get$I(nv - 1)));
+var tv=(function(a,f){return f.apply(null,a)})([$I$(2).newS$S("").setv$org_jmol_script_SV(v.get$I(nv - 1))],$I$(2).selectItemVar$org_jmol_script_SV);
 if (nv > 1) {
 var sel=(nv > 2 ? v.get$I(1) : null);
 t=v.get$I(0);
@@ -1567,7 +1557,7 @@ t=$I$(2).selectItemVar$org_jmol_script_SV(t);
 break;
 case 4:
 if (sel.tok != 2) {
-t.value=$I$(7).rep$S$S$S(t.asString$(), sel.asString$(), tv.asString$());
+t.value=(function(a,f){return f.apply(null,a)})([t.asString$(), sel.asString$(), tv.asString$()],$I$(7).rep$S$S$S);
 t.intValue=2147483647;
 break;
 }case 11:
@@ -1578,7 +1568,7 @@ break;
 case 8:
 var p=(t.value=$I$(14).newP$javajs_util_T3(t.value));
 var f=tv.asFloat$();
-switch ($I$(4).getTokFromName$S(sel.asString$())) {
+switch ((function(a,f){return f.apply(null,a)})([sel.asString$()],$I$(4).getTokFromName$S)) {
 case 1111492629:
 p.x=f;
 break;
@@ -1599,7 +1589,7 @@ var tok=$I$(4).getTokFromName$S(propertyName);
 switch (tok) {
 case 0:
 if (propertyName.startsWith$S("property_")) {
-var obj=(tv.tok == 7 ? $I$(2).flistValue$org_jmol_script_T$I(tv, tv.getList$().size$() == nbs ? nbs : nAtoms) : tv.asString$());
+var obj=(tv.tok == 7 ? (function(a,f){return f.apply(null,a)})([tv, tv.getList$().size$() == nbs ? nbs : nAtoms],$I$(2).flistValue$org_jmol_script_T$I) : tv.asString$());
 this.vwr.setData$S$OA$I$I$I$I$I(propertyName, Clazz.array(java.lang.Object, -1, [propertyName, obj, $I$(10).copy$javajs_util_BS(bs), Integer.valueOf$I(-1)]), nAtoms, 0, 0, tv.tok == 7 ? 2147483647 : -2147483648, 0);
 break;
 }this.iToken=pt;
@@ -1623,7 +1613,7 @@ if (key.startsWith$S("_") || (t=this.vwr.g.getAndSetNewVariable$S$Z(key, true)) 
 var vv=$I$(2).oValue$O(tv);
 if (settingData) {
 if (tv.tok == 7) vv=tv.asString$();
-this.vwr.setData$S$OA$I$I$I$I$I(key, Clazz.array(java.lang.Object, -1, [key, "" + vv, $I$(10).copy$javajs_util_BS(this.vwr.bsA$()), Integer.valueOf$I(0)]), this.vwr.ms.ac, 0, 0, -2147483648, 0);
+this.vwr.setData$S$OA$I$I$I$I$I(key, Clazz.array(java.lang.Object, -1, [key, "" + vv, (function(a,f){return f.apply(null,a)})([this.vwr.bsA$()],$I$(10).copy$javajs_util_BS), Integer.valueOf$I(0)]), this.vwr.ms.ac, 0, 0, -2147483648, 0);
 return null;
 }if (Clazz.instanceOf(vv, "java.lang.Boolean")) {
 this.setBooleanProperty$S$Z(key, (vv).booleanValue$());
@@ -1678,7 +1668,7 @@ values[i]=$I$(11).colorPtToFFRGB$javajs_util_T3(pt);
 } else if (svi.tok == 2) {
 values[i]=svi.intValue;
 } else {
-values[i]=$I$(11).getArgbFromString$S(svi.asString$());
+values[i]=(function(a,f){return f.apply(null,a)})([svi.asString$()],$I$(11).getArgbFromString$S);
 if (values[i] == 0) values[i]=svi.asInt$();
 }if (values[i] == 0) this.errorStr2$I$S$S(50, "ARRAY", svi.asString$());
 }
@@ -1713,7 +1703,7 @@ if (isStrProperty) list=$I$(2).strListValue$org_jmol_script_T(tokenValue);
  else fvalues=$I$(2).flistValue$org_jmol_script_T$I(tokenValue, nValues);
 break;
 case 4:
-if (sValue == null ) list=$I$(7).getTokens$S($I$(2).sValue$org_jmol_script_T(tokenValue));
+if (sValue == null ) list=(function(a,f){return f.apply(null,a)})([$I$(2).sValue$org_jmol_script_T(tokenValue)],$I$(7).getTokens$S);
 break;
 }
 if (list != null ) {
@@ -1792,7 +1782,7 @@ v=(sv.indexOf$S("|") < 0 ? this.getAtomBitSet$O(sv) : sv);
 v=bs;
 }}i=this.iToken;
 } else if (this.chk) {
-v=Clazz.new_($I$(6));
+v=Clazz.new_($I$(6,1));
 } else {
 if (this.tokAt$I(i) == 2) {
 v=this.vwr.ms.getAtoms$I$O(1094715393, Integer.valueOf$I(this.st[i].intValue));
@@ -1810,9 +1800,9 @@ fixed[j]=v;
 } else if (Clazz.instanceOf(v, "java.lang.Boolean")) {
 fixed[j]=((v).booleanValue$() ? $I$(4).tokenOn : $I$(4).tokenOff);
 } else if (Clazz.instanceOf(v, "java.lang.Integer")) {
-fixed[j]=$I$(4).tv$I$I$O(2, (v).intValue$(), v);
+fixed[j]=(function(a,f){return f.apply(null,a)})([2, (v).intValue$(), v],$I$(4).tv$I$I$O);
 } else if (Clazz.instanceOf(v, "java.lang.Float")) {
-fixed[j]=$I$(4).tv$I$I$O(3, P$.ScriptParam.getFloatEncodedInt$S("" + v), v);
+fixed[j]=(function(a,f){return f.apply(null,a)})([3, $I$(20).getFloatEncodedInt$S("" + v), v],$I$(4).tv$I$I$O);
 } else if (Clazz.instanceOf(v, "java.lang.String")) {
 if (!forceString && !isExpression ) {
 if ((tok != 36867 || j > 1 && this.st[1].tok != 537022465  && !"labelfor".equalsIgnoreCase$S(this.st[1].value.toString())  ) && $I$(4).tokAttr$I$I(tok, 36864) ) {
@@ -1824,7 +1814,7 @@ fixed[j]=v;
 } else {
 s=v;
 if (isExpression && !forceString ) {
-fixed[j]=(s.indexOf$S("|") >= 0 || $I$(4).tokAttr$I$I(fixed[j - 1].tok, 268435712)  ? $I$(4).o$I$O(4, s) : $I$(4).o$I$O(10, this.getAtomBitSet$O(s)));
+fixed[j]=(s.indexOf$S("|") >= 0 || $I$(4).tokAttr$I$I(fixed[j - 1].tok, 268435712)  ? $I$(4).o$I$O(4, s) : (function(a,f){return f.apply(null,a)})([10, this.getAtomBitSet$O(s)],$I$(4).o$I$O));
 } else {
 tok=(isSetAt ? $I$(4).getTokFromName$S(s) : isClauseDefine || forceString || s.length$() == 0   || s.indexOf$S(".") >= 0  || s.indexOf$S(" ") >= 0  || s.indexOf$S("=") >= 0  || s.indexOf$S(";") >= 0  || s.indexOf$S("[") >= 0  || s.indexOf$S("{") >= 0  ? 4 : 1073741824);
 fixed[j]=$I$(4).o$I$O(tok, v);
@@ -1837,12 +1827,12 @@ fixed[j]=$I$(2).newV$I$O(8, v);
 } else if (Clazz.instanceOf(v, "javajs.util.P4")) {
 fixed[j]=$I$(2).newV$I$O(9, v);
 } else if (Clazz.instanceOf(v, "javajs.util.M34")) {
-fixed[j]=$I$(2).newV$I$O(Clazz.instanceOf(v, "javajs.util.M4") ? 12 : 11, v);
+fixed[j]=(function(a,f){return f.apply(null,a)})([Clazz.instanceOf(v, "javajs.util.M4") ? 12 : 11, v],$I$(2).newV$I$O);
 } else if (Clazz.instanceOf(v, "java.util.Map") || Clazz.instanceOf(v, "org.jmol.script.ScriptContext") && (v=(v).getFullMap$()) != null   ) {
-fixed[j]=$I$(2).newV$I$O(6, (isExpression ? v : $I$(2).deepCopy$O$Z$Z(v, true, true)));
+fixed[j]=(function(a,f){return f.apply(null,a)})([6, (isExpression ? v : $I$(2).deepCopy$O$Z$Z(v, true, true))],$I$(2).newV$I$O);
 } else if (Clazz.instanceOf(v, "javajs.util.Lst")) {
 if (!isExpression) {
-fixed[j]=$I$(2).newV$I$O(7, $I$(2).deepCopy$O$Z$Z(v, false, true));
+fixed[j]=(function(a,f){return f.apply(null,a)})([7, $I$(2).deepCopy$O$Z$Z(v, false, true)],$I$(2).newV$I$O);
 break;
 }var sv=v;
 var bs=null;
@@ -1851,7 +1841,7 @@ var svk=sv.get$I(k);
 if (svk.tok != 10) {
 bs=null;
 break;
-}if (bs == null ) bs=Clazz.new_($I$(6));
+}if (bs == null ) bs=Clazz.new_($I$(6,1));
 bs.or$javajs_util_BS(svk.value);
 }
 fixed[j]=(bs == null  ? $I$(2).getVariable$O(v) : $I$(4).o$I$O(10, bs));
@@ -1873,4 +1863,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:18:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

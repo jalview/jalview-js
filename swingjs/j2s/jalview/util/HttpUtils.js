@@ -1,16 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.net.URL']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HttpUtils");
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.net.URL']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HttpUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValidUrl$S', function (url) {
 var is=null;
 try {
-is=Clazz.new_($I$(1).c$$S,[url]).openStream$();
+is=Clazz.new_($I$(1,1).c$$S,[url]).openStream$();
 if (is != null ) {
 return true;
 }} catch (x) {
@@ -35,4 +34,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

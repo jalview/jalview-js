@@ -1,46 +1,31 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.rest"),p$1={},I$=[[0,'java.util.regex.Pattern',['jalview.ws.rest.RestServiceDescription','.UIinfo'],'java.util.HashMap','java.util.ArrayList','jalview.ws.rest.params.Alignment','jalview.ws.rest.params.AnnotationFile','jalview.ws.rest.params.SeqGroupIndexVector','StringBuffer','jalview.util.StringUtils','java.util.StringTokenizer',['jalview.io.packed.DataProvider','.JvDataType'],'java.util.Hashtable','java.net.URL','jalview.ws.rest.params.SeqIdVector','jalview.ws.rest.params.SeqVector','jalview.ws.rest.params.Tree','jalview.ws.rest.InputType']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RestServiceDescription", function(){
+(function(){var P$=Clazz.newPackage("jalview.ws.rest"),p$1={},I$=[[0,'java.util.regex.Pattern',['jalview.ws.rest.RestServiceDescription','.UIinfo'],'java.util.HashMap','java.util.ArrayList','jalview.ws.rest.params.Alignment','jalview.ws.rest.params.AnnotationFile','jalview.ws.rest.params.SeqGroupIndexVector','StringBuffer','jalview.util.StringUtils','java.util.StringTokenizer',['jalview.io.packed.DataProvider','.JvDataType'],'java.util.Hashtable','java.net.URL','jalview.ws.rest.params.SeqIdVector','jalview.ws.rest.params.SeqVector','jalview.ws.rest.params.Tree','jalview.ws.rest.InputType']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RestServiceDescription", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.PARAM_ENCODED_URL_PATTERN=null;
+C$.$classes$=[['UIinfo',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.PARAM_ENCODED_URL_PATTERN=$I$(1).compile$S("([?&])([A-Za-z0-9_]+)=\\$([^$]+)\\$");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.details=null;
-this.postUrl=null;
-this.urlSuffix=null;
-this.inputParams=null;
-this.aligndata=false;
-this.annotdata=false;
-this.partitiondata=false;
-this.invalidMessage=null;
-this.hseparable=false;
-this.vseparable=false;
-this.gapCharacter='\0';
-this.resultData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.details=Clazz.new_($I$(2), [this, null]);
-this.inputParams=Clazz.new_($I$(3));
+this.details=Clazz.new_($I$(2,1),[this, null]);
+this.inputParams=Clazz.new_($I$(3,1));
 this.invalidMessage=null;
 this.hseparable=false;
 this.vseparable=false;
 this.gapCharacter="-";
-this.resultData=Clazz.new_($I$(4));
-}, 1);
+this.resultData=Clazz.new_($I$(4,1));
+},1);
+
+C$.$fields$=[['Z',['aligndata','annotdata','partitiondata','hseparable','vseparable'],'C',['gapCharacter'],'S',['postUrl','urlSuffix','invalidMessage'],'O',['details','jalview.ws.rest.RestServiceDescription.UIinfo','inputParams','java.util.Map','resultData','java.util.List']]
+,['O',['PARAM_ENCODED_URL_PATTERN','java.util.regex.Pattern']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S$S$S$java_util_Map$Z$Z$C', function (action, description, name, postUrl, urlSuffix, inputParams, hseparable, vseparable, gapCharacter) {
-C$.$init$.apply(this);
-this.details=Clazz.new_($I$(2), [this, null]);
+;C$.$init$.apply(this);
+this.details=Clazz.new_($I$(2,1),[this, null]);
 this.details.Action=action == null  ? "" : action;
 this.details.description=description == null  ? "" : description;
 this.details.Name=name == null  ? "" : name;
@@ -128,7 +113,7 @@ this.gapCharacter=gapCharacter;
 });
 
 Clazz.newMeth(C$, 'setInputParam$jalview_ws_rest_InputType', function (it) {
-this.inputParams.put$TK$TV(it.token, it);
+this.inputParams.put$O$O(it.token, it);
 });
 
 Clazz.newMeth(C$, 'removeInputParam$jalview_ws_rest_InputType', function (it) {
@@ -142,8 +127,8 @@ this.partitiondata=this.inputInvolves$Class(Clazz.getClass($I$(7)));
 });
 
 Clazz.newMeth(C$, 'c$$S', function (link) {
-C$.$init$.apply(this);
-var warnings=Clazz.new_($I$(8));
+;C$.$init$.apply(this);
+var warnings=Clazz.new_($I$(8,1));
 if (!this.configureFromEncodedString$S$StringBuffer(link, warnings)) {
 if (warnings.length$() > 0) {
 this.invalidMessage=warnings.toString();
@@ -206,12 +191,12 @@ return buff;
 Clazz.newMeth(C$, '_configureOutputFormatFrom$S$StringBuffer', function (outstring, warnings) {
 if (outstring.indexOf$S(";") == -1) {
 outstring=outstring + ";";
-}var st=Clazz.new_($I$(10).c$$S$S,[outstring, ";"]);
+}var st=Clazz.new_($I$(10,1).c$$S$S,[outstring, ";"]);
 var tok="";
-this.resultData=Clazz.new_($I$(4));
+this.resultData=Clazz.new_($I$(4,1));
 while (st.hasMoreTokens$()){
 try {
-this.resultData.add$TE($I$(11).valueOf$S(tok=st.nextToken$()));
+this.resultData.add$O($I$(11,"valueOf$S",[tok=st.nextToken$()]));
 } catch (x) {
 if (Clazz.exceptionOf(x,"java.util.NoSuchElementException")){
 warnings.append$S("Invalid result type: '" + tok + "' (must be one of: " );
@@ -230,18 +215,18 @@ throw x;
 }, p$1);
 
 Clazz.newMeth(C$, 'getServiceIOProperties', function () {
-var vls=Clazz.new_($I$(4));
+var vls=Clazz.new_($I$(4,1));
 if (this.isHseparable$()) {
-vls.add$TE("hseparable");
+vls.add$O("hseparable");
 };if (this.isVseparable$()) {
-vls.add$TE("vseparable");
-};vls.add$TE( String.instantialize("gapCharacter='" + this.gapCharacter + "'" ));
-vls.add$TE( String.instantialize("returns='" + p$1._genOutputFormatString.apply(this, []) + "'" ));
-return $I$(9).arrayToSeparatorList$SA$S(vls.toArray$TTA(Clazz.array(String, [0])), ",");
+vls.add$O("vseparable");
+};vls.add$O( String.instantialize("gapCharacter='" + this.gapCharacter + "'" ));
+vls.add$O( String.instantialize("returns='" + p$1._genOutputFormatString.apply(this, []) + "'" ));
+return $I$(9,"arrayToSeparatorList$SA$S",[vls.toArray$OA(Clazz.array(String, [0])), ","]);
 }, p$1);
 
 Clazz.newMeth(C$, 'toString', function () {
-var result=Clazz.new_($I$(8));
+var result=Clazz.new_($I$(8,1));
 result.append$S("|");
 result.append$S(this.details.Name);
 result.append$C("|");
@@ -289,7 +274,7 @@ p+=5;
 });
 
 Clazz.newMeth(C$, 'getInputParamEncodedUrl', function () {
-var url=Clazz.new_($I$(8));
+var url=Clazz.new_($I$(8,1));
 if (this.postUrl == null  || this.postUrl.length$() < 5 ) {
 return "";
 }url.append$S(this.postUrl);
@@ -315,7 +300,7 @@ url.append$S("=");
 url.append$S("$");
 url.append$S(param.getValue$().getURLtokenPrefix$());
 url.append$S(":");
-url.append$S($I$(9).arrayToSeparatorList$SA$S(vals.toArray$TTA(Clazz.array(String, [0])), ","));
+url.append$S($I$(9,"arrayToSeparatorList$SA$S",[vals.toArray$OA(Clazz.array(String, [0])), ","]));
 url.append$S("$");
 }}}
 } while (!(consts=!consts));
@@ -327,7 +312,7 @@ var valid=true;
 var lastp=0;
 var url= String.instantialize();
 var prms=C$.PARAM_ENCODED_URL_PATTERN.matcher$CharSequence(ipurl);
-var iparams=Clazz.new_($I$(12));
+var iparams=Clazz.new_($I$(12,1));
 var jinput;
 while (prms.find$()){
 if (lastp < prms.start$I(0)) {
@@ -345,7 +330,7 @@ iprm=iprm.substring$I$I(0, colon);
 }
 if (valid) {
 try {
-var u=Clazz.new_($I$(13).c$$S,[url]);
+var u=Clazz.new_($I$(13,1).c$$S,[url]);
 this.postUrl=url;
 this.inputParams=iparams;
 } catch (e) {
@@ -370,16 +355,16 @@ for (var type, $type = 0, $$type = C$.getInputTypes$(); $type<$$type.length&&((t
 try {
 jinput=(type.getConstructor$ClassA([]).newInstance$OA([]));
 if (iprm.equalsIgnoreCase$S(jinput.getURLtokenPrefix$())) {
-var al=Clazz.new_($I$(4));
+var al=Clazz.new_($I$(4,1));
 for (var prprm, $prprm = 0, $$prprm = $I$(9).separatorListToArray$S$S(iprmparams, ","); $prprm<$$prprm.length&&((prprm=($$prprm[$prprm])),1);$prprm++) {
-al.add$TE(prprm.trim$());
+al.add$O(prprm.trim$());
 }
 if (!jinput.configureFromURLtokenString$java_util_List$StringBuffer(al, warnings)) {
 valid=false;
 warnings.append$S("Failed to parse '" + fullstring + "' as a " + jinput.getURLtokenPrefix$() + " input tag.\n" );
 } else {
 jinput.token=tok;
-iparams.put$TK$TV(tok, jinput);
+iparams.put$O$O(tok, jinput);
 valid=true;
 }break;
 }} catch (thr) {
@@ -424,8 +409,8 @@ return jobId + this.urlSuffix;
 
 Clazz.newMeth(C$, 'addResultDatatype$jalview_io_packed_DataProvider_JvDataType', function (dt) {
 if (this.resultData == null ) {
-this.resultData=Clazz.new_($I$(4));
-}this.resultData.add$TE(dt);
+this.resultData=Clazz.new_($I$(4,1));
+}this.resultData.add$O(dt);
 });
 
 Clazz.newMeth(C$, 'removeRsultDatatype$jalview_io_packed_DataProvider_JvDataType', function (dt) {
@@ -440,38 +425,36 @@ return this.resultData;
 
 Clazz.newMeth(C$, 'parseDescriptions$S', function (services) {
 var list=$I$(9).separatorListToArray$S$S(services, "|");
-var svcparsed=Clazz.new_($I$(4));
+var svcparsed=Clazz.new_($I$(4,1));
 var p=0;
 var lastp=0;
-var warnings=Clazz.new_($I$(8));
+var warnings=Clazz.new_($I$(8,1));
 do {
 var rsd=Clazz.new_(C$);
 p=rsd.parseServiceList$SA$StringBuffer$I(list, warnings, lastp=p);
 if (p > lastp && rsd.isValid$() ) {
-svcparsed.add$TE(rsd);
+svcparsed.add$O(rsd);
 } else {
 throw Clazz.new_(Clazz.load('Exception').c$$S,["Failed to parse user defined RSBS services from :" + services + "\nFirst error was encountered at token " + lastp + " starting " + list[lastp] + ":\n" + rsd.getInvalidMessage$() ]);
 }} while (p < lastp && p < list.length - 1 );
 return svcparsed;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.PARAM_ENCODED_URL_PATTERN=$I$(1,"compile$S",["([?&])([A-Za-z0-9_]+)=\\$([^$]+)\\$"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.RestServiceDescription, "UIinfo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RestServiceDescription, "UIinfo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.Action=null;
-this.Name=null;
-this.description=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['Action','Name','description']]]
 
 Clazz.newMeth(C$, 'getAction$', function () {
 return this.Action;
@@ -500,4 +483,4 @@ this.description=description;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

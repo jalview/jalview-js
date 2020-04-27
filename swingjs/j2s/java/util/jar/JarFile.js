@@ -1,54 +1,23 @@
-(function(){var P$=Clazz.newPackage("java.util.jar"),p$1={},I$=[[0,['java.util.jar.JarFile','.JarFileEntry'],'java.io.File','java.util.jar.Manifest','java.io.ByteArrayInputStream','java.lang.ref.SoftReference',['java.util.jar.JarFile','.JarEntryIterator'],'java.util.stream.StreamSupport','java.util.Spliterators','sun.misc.IOUtils','java.util.Locale','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JarFile", function(){
+(function(){var P$=Clazz.newPackage("java.util.jar"),p$1={},I$=[[0,['java.util.jar.JarFile','.JarFileEntry'],'java.io.File','java.util.jar.Manifest','java.io.ByteArrayInputStream',['java.util.jar.JarFile','.JarEntryIterator'],'java.util.stream.StreamSupport','java.util.Spliterators','sun.misc.IOUtils','java.util.Locale','java.util.ArrayList']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JarFile", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.zip.ZipFile');
-C$.CLASSPATH_CHARS=null;
-C$.CLASSPATH_LASTOCC=null;
-C$.CLASSPATH_OPTOSFT=null;
-C$.javaHome=null;
-C$.jarNames=null;
+C$.$classes$=[['JarEntryIterator',2],['JarFileEntry',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-};
-C$.CLASSPATH_CHARS=Clazz.array(Character.TYPE, -1, ["c", "l", "a", "s", "s", "-", "p", "a", "t", "h"]);
-{
-C$.CLASSPATH_LASTOCC=Clazz.array(Integer.TYPE, [128]);
-C$.CLASSPATH_OPTOSFT=Clazz.array(Integer.TYPE, [10]);
-C$.CLASSPATH_LASTOCC["c".$c()]=1;
-C$.CLASSPATH_LASTOCC["l".$c()]=2;
-C$.CLASSPATH_LASTOCC["s".$c()]=5;
-C$.CLASSPATH_LASTOCC["-".$c()]=6;
-C$.CLASSPATH_LASTOCC["p".$c()]=7;
-C$.CLASSPATH_LASTOCC["a".$c()]=8;
-C$.CLASSPATH_LASTOCC["t".$c()]=9;
-C$.CLASSPATH_LASTOCC["h".$c()]=10;
-for (var i=0; i < 9; i++) C$.CLASSPATH_OPTOSFT[i]=10;
-
-C$.CLASSPATH_OPTOSFT[9]=1;
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.manRef=null;
-this.manEntry=null;
-this.jvInitialized=false;
-this.verify=false;
-this.hasClassPathAttribute=false;
-this.hasCheckedSpecialAttributes=false;
-this.jv=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['jvInitialized','verify','hasClassPathAttribute','hasCheckedSpecialAttributes'],'O',['manRef','java.util.jar.Manifest','manEntry','java.util.jar.JarEntry','jv','java.lang.Object']]
+,['S',['javaHome'],'O',['CLASSPATH_CHARS','char[]','CLASSPATH_LASTOCC','int[]','+CLASSPATH_OPTOSFT','jarNames','String[]']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.c$$java_io_File$Z$I.apply(this, [Clazz.new_($I$(2).c$$S,[name]), true, 1]);
+C$.c$$java_io_File$Z$I.apply(this, [Clazz.new_($I$(2,1).c$$S,[name]), true, 1]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$Z', function (name, verify) {
-C$.c$$java_io_File$Z$I.apply(this, [Clazz.new_($I$(2).c$$S,[name]), verify, 1]);
+C$.c$$java_io_File$Z$I.apply(this, [Clazz.new_($I$(2,1).c$$S,[name]), verify, 1]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (file) {
@@ -60,8 +29,7 @@ C$.c$$java_io_File$Z$I.apply(this, [file, verify, 1]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File$Z$I', function (file, verify, mode) {
-C$.superclazz.c$$java_io_File$I.apply(this, [file, mode]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_File$I.apply(this,[file, mode]);C$.$init$.apply(this);
 this.verify=verify;
 }, 1);
 
@@ -70,22 +38,22 @@ return p$1.getManifestFromReference.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getManifestFromReference', function () {
-var man=this.manRef != null  ? this.manRef.get$() : null;
+var man=this.manRef;
 if (man == null ) {
 var manEntry=p$1.getManEntry.apply(this, []);
 if (manEntry != null ) {
 if (this.verify) {
 var b=p$1.getBytes$java_util_zip_ZipEntry.apply(this, [manEntry]);
-man=Clazz.new_($I$(3).c$$java_io_InputStream,[Clazz.new_($I$(4).c$$BA,[b])]);
+man=Clazz.new_([Clazz.new_($I$(4,1).c$$BA,[b])],$I$(3,1).c$$java_io_InputStream);
 if (!this.jvInitialized) {
 }} else {
-man=Clazz.new_($I$(3).c$$java_io_InputStream,[C$.superclazz.prototype.getInputStream$java_util_zip_ZipEntry.apply(this, [manEntry])]);
-}this.manRef=Clazz.new_($I$(5).c$$TT,[man]);
+man=Clazz.new_([C$.superclazz.prototype.getInputStream$java_util_zip_ZipEntry.apply(this, [manEntry])],$I$(3,1).c$$java_io_InputStream);
+}this.manRef=man;
 }}return man;
 }, p$1);
 
 Clazz.newMeth(C$, 'getMetaInfEntryNames', function () {
-alert('native method must be replaced! Ljava/util/jar/JarFile;.getMetaInfEntryNames()[Ljava/lang/String;');
+alert('native method must be replaced! getMetaInfEntryNames');
 }
 , p$1);
 
@@ -96,16 +64,16 @@ return this.getEntry$S(name);
 Clazz.newMeth(C$, 'getEntry$S', function (name) {
 var ze=C$.superclazz.prototype.getEntry$S.apply(this, [name]);
 if (ze != null ) {
-return Clazz.new_($I$(1).c$$java_util_zip_ZipEntry, [this, null, ze]);
+return Clazz.new_($I$(1,1).c$$java_util_zip_ZipEntry,[this, null, ze]);
 }return null;
 });
 
 Clazz.newMeth(C$, 'entries$', function () {
-return Clazz.new_($I$(6), [this, null]);
+return Clazz.new_($I$(5,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'stream$', function () {
-return $I$(7).stream$java_util_Spliterator$Z($I$(8).spliterator$java_util_Iterator$J$I(Clazz.new_($I$(6), [this, null]), this.size$(), 1297), false);
+return $I$(6,"stream$java_util_Spliterator$Z",[$I$(7,"spliterator$java_util_Iterator$J$I",[Clazz.new_($I$(5,1),[this, null]), this.size$(), 1297]), false]);
 });
 
 Clazz.newMeth(C$, 'maybeInstantiateVerifier', function () {
@@ -113,9 +81,13 @@ this.verify=false;
 }, p$1);
 
 Clazz.newMeth(C$, 'getBytes$java_util_zip_ZipEntry', function (ze) {
-/*try*/ {var is=C$.superclazz.prototype.getInputStream$java_util_zip_ZipEntry.apply(this, [ze]);
-return $I$(9).readFully$java_io_InputStream$I$Z(is, (ze.getSize$()|0), true);
+try {
+var is=C$.superclazz.prototype.getInputStream$java_util_zip_ZipEntry.apply(this, [ze]);
+/*try*/ {
+return $I$(8,"readFully$java_io_InputStream$I$Z",[is, (ze.getSize$()|0), true]);
 }
+}finally{/*res*/
+try{is&&is.close$&&is.close$()}catch(_){}}
 }, p$1);
 
 Clazz.newMeth(C$, 'getInputStream$java_util_zip_ZipEntry', function (ze) {
@@ -129,7 +101,7 @@ if (this.manEntry == null ) {
 var names=p$1.getMetaInfEntryNames.apply(this, []);
 if (names != null ) {
 for (var i=0; i < names.length; i++) {
-if ("META-INF/MANIFEST.MF".equals$O(names[i].toUpperCase$java_util_Locale($I$(10).ENGLISH))) {
+if ("META-INF/MANIFEST.MF".equals$O(names[i].toUpperCase$java_util_Locale($I$(9).ENGLISH))) {
 this.manEntry=this.getJarEntry$S(names[i]);
 break;
 }}
@@ -185,24 +157,20 @@ throw e;
 }, p$1);
 
 Clazz.newMeth(C$, 'newEntry$java_util_zip_ZipEntry', function (ze) {
-return Clazz.new_($I$(1).c$$java_util_zip_ZipEntry, [this, null, ze]);
+return Clazz.new_($I$(1,1).c$$java_util_zip_ZipEntry,[this, null, ze]);
 });
 
 Clazz.newMeth(C$, 'entries2$', function () {
 var enum_=C$.superclazz.prototype.entries$.apply(this, []);
 return ((P$.JarFile$1||
-(function(){var C$=Clazz.newClass(P$, "JarFile$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JarFile$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.entry=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['entry','java.util.zip.ZipEntry']]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 if (this.entry != null ) {
@@ -219,11 +187,11 @@ Clazz.newMeth(C$, 'nextElement$', function () {
 if (this.hasMoreElements$()) {
 var ze=this.entry;
 this.entry=null;
-return Clazz.new_($I$(1).c$$java_util_zip_ZipEntry, [this, null, ze]);
+return Clazz.new_($I$(1,1).c$$java_util_zip_ZipEntry,[this, null, ze]);
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 })()
-), Clazz.new_(P$.JarFile$1.$init$, [this, {enum_: enum_}]));
+), Clazz.new_(P$.JarFile$1.$init$,[this, {enum_:enum_}]));
 });
 
 Clazz.newMeth(C$, 'getCodeSources$java_net_URL', function (url) {
@@ -233,18 +201,14 @@ return null;
 Clazz.newMeth(C$, 'unsignedEntryNames$', function () {
 var entries=this.entries$();
 return ((P$.JarFile$2||
-(function(){var C$=Clazz.newClass(P$, "JarFile$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JarFile$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name']]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 if (this.name != null ) {
@@ -269,7 +233,7 @@ return value;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 })()
-), Clazz.new_(P$.JarFile$2.$init$, [this, {entries: entries}]));
+), Clazz.new_(P$.JarFile$2.$init$,[this, {entries:entries}]));
 });
 
 Clazz.newMeth(C$, 'getCodeSource$java_net_URL$S', function (url, name) {
@@ -277,24 +241,41 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getManifestDigests$', function () {
-return Clazz.new_($I$(11));
+return Clazz.new_($I$(10,1));
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+};
+C$.CLASSPATH_CHARS=Clazz.array(Character.TYPE, -1, ["c", "l", "a", "s", "s", "-", "p", "a", "t", "h"]);
+{
+C$.CLASSPATH_LASTOCC=Clazz.array(Integer.TYPE, [128]);
+C$.CLASSPATH_OPTOSFT=Clazz.array(Integer.TYPE, [10]);
+C$.CLASSPATH_LASTOCC["c".$c()]=1;
+C$.CLASSPATH_LASTOCC["l".$c()]=2;
+C$.CLASSPATH_LASTOCC["s".$c()]=5;
+C$.CLASSPATH_LASTOCC["-".$c()]=6;
+C$.CLASSPATH_LASTOCC["p".$c()]=7;
+C$.CLASSPATH_LASTOCC["a".$c()]=8;
+C$.CLASSPATH_LASTOCC["t".$c()]=9;
+C$.CLASSPATH_LASTOCC["h".$c()]=10;
+for (var i=0; i < 9; i++) C$.CLASSPATH_OPTOSFT[i]=10;
+
+C$.CLASSPATH_OPTOSFT[9]=1;
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JarFile, "JarEntryIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JarFile, "JarEntryIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['java.util.Enumeration', 'java.util.Iterator']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.e=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.e=C$.superclazz.prototype.entries$.apply(this, []);
-}, 1);
+this.e=P$.JarFile.prototype.entries$.apply(this, []);
+},1);
+
+C$.$fields$=[['O',['e','java.util.Enumeration']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.e.hasMoreElements$();
@@ -302,7 +283,7 @@ return this.e.hasMoreElements$();
 
 Clazz.newMeth(C$, 'next$', function () {
 var ze=this.e.nextElement$();
-return Clazz.new_($I$(1).c$$java_util_zip_ZipEntry, [this, null, ze]);
+return Clazz.new_($I$(1,1).c$$java_util_zip_ZipEntry,[this, null, ze]);
 });
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
@@ -316,19 +297,17 @@ return this.next$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JarFile, "JarFileEntry", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JarFile, "JarFileEntry", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.jar.JarEntry');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_zip_ZipEntry', function (ze) {
-C$.superclazz.c$$java_util_zip_ZipEntry.apply(this, [ze]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_zip_ZipEntry.apply(this,[ze]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getAttributes$', function () {
@@ -344,4 +323,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,12 @@
 (function(){var P$=Clazz.newPackage("javajs.util"),I$=[];
-var C$=Clazz.newClass(P$, "M34");
+/*c*/var C$=Clazz.newClass(P$, "M34");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m00=0;
-this.m01=0;
-this.m02=0;
-this.m10=0;
-this.m11=0;
-this.m12=0;
-this.m20=0;
-this.m21=0;
-this.m22=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['m00','m01','m02','m10','m11','m12','m20','m21','m22']]]
 
 Clazz.newMeth(C$, 'setAA33$javajs_util_A4', function (a) {
 var x=a.x;
@@ -343,4 +331,4 @@ throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["matrix colu
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

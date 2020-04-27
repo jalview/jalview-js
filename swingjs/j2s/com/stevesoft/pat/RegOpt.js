@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'java.util.Hashtable','java.util.Vector','com.stevesoft.pat.oneChar','com.stevesoft.pat.FastChar','com.stevesoft.pat.patInt','com.stevesoft.pat.NullPattern','com.stevesoft.pat.RegOpt','com.stevesoft.pat.Or','StringBuffer','com.stevesoft.pat.FastBracket','com.stevesoft.pat.Branch','com.stevesoft.pat.FastMulti']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RegOpt");
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'java.util.Hashtable','java.util.Vector','com.stevesoft.pat.oneChar','com.stevesoft.pat.FastChar','com.stevesoft.pat.patInt','com.stevesoft.pat.NullPattern','com.stevesoft.pat.RegOpt','com.stevesoft.pat.Or','StringBuffer','com.stevesoft.pat.FastBracket','com.stevesoft.pat.Branch','com.stevesoft.pat.FastMulti']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RegOpt");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'opt$com_stevesoft_pat_Pattern$Z$Z', function (p, ignoreCase, dontMinQ) {
 if (p == null ) {
@@ -17,7 +16,7 @@ p.next=b.next;
 p.parent=b.parent;
 } else if (Clazz.instanceOf(p, "com.stevesoft.pat.oneChar") && !ignoreCase && !dontMinQ  ) {
 var o=p;
-p=Clazz.new_($I$(4).c$$C,[o.c]);
+p=Clazz.new_($I$(4,1).c$$C,[o.c]);
 p.next=o.next;
 p.parent=o.parent;
 } else if (Clazz.instanceOf(p, "com.stevesoft.pat.Or") && (p).leftForm$().equals$O("(?:") && (p).v.size$() == 1  ) {
@@ -30,8 +29,8 @@ p.add$com_stevesoft_pat_Pattern(o.next);
 var o=p;
 o.pv=null;
 var v=o.v;
-o.v=Clazz.new_($I$(2));
-var b=Clazz.new_($I$(11));
+o.v=Clazz.new_($I$(2,1));
+var b=Clazz.new_($I$(11,1));
 b.parent=o.parent;
 for (var i=0; i < v.size$(); i++) {
 var pp=v.elementAt$I(i);
@@ -42,7 +41,7 @@ if (b.keys.size$() > 0) {
 var p2=b.reduce$Z$Z(ignoreCase, dontMinQ);
 if (p2 != null ) {
 o.addOr$com_stevesoft_pat_Pattern(p2);
-b=Clazz.new_($I$(11));
+b=Clazz.new_($I$(11,1));
 b.parent=o.parent;
 }}o.addOr$com_stevesoft_pat_Pattern(C$.opt$com_stevesoft_pat_Pattern$Z$Z(pp, ignoreCase, dontMinQ));
 }}
@@ -62,7 +61,7 @@ ps.sub=C$.opt$com_stevesoft_pat_Pattern$Z$Z(ps.sub, ignoreCase, dontMinQ);
 var m=p;
 var fm=null;
 try {
-fm=Clazz.new_($I$(12).c$$com_stevesoft_pat_patInt$com_stevesoft_pat_patInt$com_stevesoft_pat_Pattern,[m.a, m.b, C$.opt$com_stevesoft_pat_Pattern$Z$Z(m.sub, ignoreCase, dontMinQ)]);
+fm=Clazz.new_([m.a, m.b, C$.opt$com_stevesoft_pat_Pattern$Z$Z(m.sub, ignoreCase, dontMinQ)],$I$(12,1).c$$com_stevesoft_pat_patInt$com_stevesoft_pat_patInt$com_stevesoft_pat_Pattern);
 } catch (rs) {
 if (Clazz.exceptionOf(rs,"com.stevesoft.pat.RegSyntax")){
 } else {
@@ -106,4 +105,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

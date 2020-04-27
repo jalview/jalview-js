@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'Boolean','javajs.util.SB','java.util.Hashtable','java.util.HashMap','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSJSONParser");
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.SB','java.util.Hashtable','java.util.HashMap','javajs.util.Lst']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSJSONParser");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.str=null;
-this.index=0;
-this.len=0;
-this.asHashTable=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['asHashTable'],'I',['index','len'],'S',['str']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'parseMap$S$Z', function (str, asHashTable) {
@@ -82,9 +75,9 @@ if (isKey && c.$c() == 0  ) throw Clazz.new_(Clazz.load('javajs.util.JSONExcepti
 var string=this.str.substring$I$I(i, this.index).trim$();
 if (!isKey) {
 if (string.equals$O("true")) {
-return $I$(1).TRUE;
+return Boolean.TRUE;
 }if (string.equals$O("false")) {
-return $I$(1).FALSE;
+return Boolean.FALSE;
 }if (string.equals$O("null")) {
 return (this.asHashTable ? string : null);
 }}c=string.charAt$I(0);
@@ -158,14 +151,14 @@ break;
 }
 if (this.index > i1 + 1) {
 if (sb == null ) {
-sb=Clazz.new_($I$(2));
+sb=Clazz.new_($I$(1,1));
 sb.append$S(this.str.substring$I$I(i0, i1));
 }}if (sb != null ) sb.appendC$C(c);
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'getObject', function () {
-var map=(this.asHashTable ? Clazz.new_($I$(3)) : Clazz.new_($I$(4)));
+var map=(this.asHashTable ? Clazz.new_($I$(2,1)) : Clazz.new_($I$(3,1)));
 var key=null;
 switch ((p$1.getChar.apply(this, [])).$c()) {
 case 125:
@@ -177,7 +170,7 @@ p$1.returnChar.apply(this, []);
 var isKey=false;
 for (; ; ) {
 if ((isKey=!isKey) == true ) key=p$1.getValue$Z.apply(this, [true]).toString();
- else map.put$TK$TV(key, p$1.getValue$Z.apply(this, [false]));
+ else map.put$O$O(key, p$1.getValue$Z.apply(this, [false]));
 switch ((p$1.getChar.apply(this, [])).$c()) {
 case 125:
 return map;
@@ -193,7 +186,7 @@ throw this.syntaxError$S("Expected \',\' or \':\' or \'}\'");
 }, p$1);
 
 Clazz.newMeth(C$, 'getArray', function () {
-var l=Clazz.new_($I$(5));
+var l=Clazz.new_($I$(4,1));
 switch ((p$1.getChar.apply(this, [])).$c()) {
 case 93:
 return l;
@@ -204,10 +197,10 @@ p$1.returnChar.apply(this, []);
 var isNull=false;
 for (; ; ) {
 if (isNull) {
-l.addLast$TV(null);
+l.addLast$O(null);
 isNull=false;
 } else {
-l.addLast$TV(p$1.getValue$Z.apply(this, [false]));
+l.addLast$O(p$1.getValue$Z.apply(this, [false]));
 }switch ((p$1.getChar.apply(this, [])).$c()) {
 case 44:
 switch ((p$1.getChar.apply(this, [])).$c()) {
@@ -231,4 +224,4 @@ Clazz.newMeth(C$, 'syntaxError$S', function (message) {
 return Clazz.new_(Clazz.load('javajs.util.JSONException').c$$S,[message + " for " + this.str.substring$I$I(0, Math.min(this.index, this.len)) ]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'javajs.util.MessagePackReader','org.jmol.util.Logger','Boolean','org.jmol.script.SV','org.jmol.adapter.smarter.Atom','org.jmol.adapter.smarter.Bond','javajs.util.Lst','java.util.Hashtable','javajs.util.SB','javajs.util.M4','javajs.util.PT','javajs.util.BS','org.jmol.adapter.smarter.Structure']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MMTFReader", null, 'org.jmol.adapter.readers.cif.MMCifReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'javajs.util.MessagePackReader','org.jmol.util.Logger','Boolean','org.jmol.script.SV','org.jmol.adapter.smarter.Atom','org.jmol.adapter.smarter.Bond','javajs.util.Lst','java.util.Hashtable','javajs.util.SB','javajs.util.M4','javajs.util.PT','javajs.util.BS','org.jmol.adapter.smarter.Structure']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MMTFReader", null, 'org.jmol.adapter.readers.cif.MMCifReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.haveStructure=false;
-this.$pdbID=null;
-this.map=null;
-this.fileAtomCount=0;
-this.opCount=0;
-this.groupModels=null;
-this.groupMap=null;
-this.groupDSSP=null;
-this.atomGroup=null;
-this.labelAsymList=null;
-this.atomMap=null;
-this.entities=null;
-this.groupCount=0;
-this.ac0=0;
-this.bsStructures=null;
-this.lastGroup=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.opCount=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveStructure'],'I',['fileAtomCount','opCount','groupCount','ac0','lastGroup'],'S',['$pdbID'],'O',['map','java.util.Map','groupModels','int[]','+groupMap','+groupDSSP','+atomGroup','labelAsymList','String[]','atomMap','org.jmol.adapter.smarter.Atom[]','entities','Object[]','bsStructures','javajs.util.BS[]']]]
 
 Clazz.newMeth(C$, 'addHeader$', function () {
 });
@@ -43,14 +24,14 @@ var doDoubleBonds=(!this.isCourseGrained && !this.checkFilterKey$S("NODOUBLE") )
 this.isDSSP1=!this.checkFilterKey$S("DSSP2");
 var mmtfImplementsDSSP2=false;
 this.applySymmetryToBonds=true;
-this.map=(Clazz.new_($I$(1).c$$javajs_api_GenericBinaryDocumentReader$Z,[this.binaryDoc, true])).readMap$();
+this.map=(Clazz.new_($I$(1,1).c$$javajs_api_GenericBinaryDocumentReader$Z,[this.binaryDoc, true])).readMap$();
 this.entities=this.map.get$O("entityList");
 if ($I$(2).debugging) {
 for (var s, $s = this.map.keySet$().iterator$(); $s.hasNext$()&&((s=($s.next$())),1);) $I$(2).info$S(s);
 
 }this.asc.setInfo$S$O("noAutoBond", $I$(3).TRUE);
-$I$(2).info$S("MMTF version " + this.map.get$O("mmtfVersion"));
-$I$(2).info$S("MMTF Producer " + this.map.get$O("mmtfProducer"));
+(function(a,f){return f.apply(null,a)})(["MMTF version " + this.map.get$O("mmtfVersion")],$I$(2).info$S);
+(function(a,f){return f.apply(null,a)})(["MMTF Producer " + this.map.get$O("mmtfProducer")],$I$(2).info$S);
 var title=this.map.get$O("title");
 if (title != null ) this.appendLoadNote$S(title);
 this.$pdbID=this.map.get$O("structureId");
@@ -72,7 +53,7 @@ if (this.isDSSP1 || mmtfImplementsDSSP2 ) p$1.getStructure.apply(this, []);
 }p$1.setMMTFSymmetry.apply(this, []);
 p$1.getMMTFBioAssembly.apply(this, []);
 this.setModelPDB$Z(true);
-if ($I$(2).debuggingHigh) $I$(2).info$S($I$(4).getVariable$O(this.map).asString$());
+if ($I$(2).debuggingHigh) (function(a,f){return f.apply(null,a)})([$I$(4).getVariable$O(this.map).asString$()],$I$(2).info$S);
 });
 
 Clazz.newMeth(C$, 'applySymmetryAndSetTrajectory$', function () {
@@ -155,7 +136,7 @@ this.addHetero$S$S$Z$Z(group3, hetName, false, true);
 }}var elementList=g.get$O("elementList");
 var haveAtom=false;
 for (var ia=0, pt=0; ia < len; ia++, iatom++) {
-var a=Clazz.new_($I$(5));
+var a=Clazz.new_($I$(5,1));
 a.isHetero=isHetero;
 if (insCode.$c() != 0 ) a.insertionCode=insCode;
 this.setAtomCoordXYZ$org_jmol_adapter_smarter_Atom$F$F$F(a, x[iatom], y[iatom], z[iatom]);
@@ -196,10 +177,10 @@ for (var bj=0, pt=0, nj=(bi.length/2|0); bj < nj; bj++) {
 var a1=this.atomMap[bi[pt++] + a0];
 var a2=this.atomMap[bi[pt++] + a0];
 if (a1 != null  && a2 != null  ) {
-var bond=Clazz.new_($I$(6).c$$I$I$I,[a1.index, a2.index, doMulti ? bo[bj] : 1]);
+var bond=Clazz.new_($I$(6,1).c$$I$I$I,[a1.index, a2.index, doMulti ? bo[bj] : 1]);
 this.asc.addBond$org_jmol_adapter_smarter_Bond(bond);
 if ($I$(2).debugging && isInter ) {
-$I$(2).info$S("inter-group (" + (a1.atomSetIndex + 1) + "." + a1.index + "/" + (a2.atomSetIndex + 1) + "." + a2.index + ") bond " + a1.group3 + a1.sequenceNumber + "." + a1.atomName + " - " + a2.group3 + a2.sequenceNumber + "." + a2.atomName + " " + bond.order );
+(function(a,f){return f.apply(null,a)})(["inter-group (" + (a1.atomSetIndex + 1) + "." + a1.index + "/" + (a2.atomSetIndex + 1) + "." + a2.index + ") bond " + a1.group3 + a1.sequenceNumber + "." + a1.atomName + " - " + a2.group3 + a2.sequenceNumber + "." + a2.atomName + " " + bond.order ],$I$(2).info$S);
 }}}
 }, p$1);
 
@@ -213,41 +194,41 @@ if (o != null ) for (var i=0; i < 6; i++) this.setUnitCellItem$I$F(i, o[i]);
 Clazz.newMeth(C$, 'getMMTFBioAssembly', function () {
 var o=this.map.get$O("bioAssemblyList");
 if (o == null ) return;
-if (this.vBiomolecules == null ) this.vBiomolecules=Clazz.new_($I$(7));
+if (this.vBiomolecules == null ) this.vBiomolecules=Clazz.new_($I$(7,1));
 for (var i=o.length; --i >= 0; ) {
-var info=Clazz.new_($I$(8));
-this.vBiomolecules.addLast$TV(info);
+var info=Clazz.new_($I$(8,1));
+this.vBiomolecules.addLast$O(info);
 var iMolecule=i + 1;
 this.checkFilterAssembly$S$java_util_Map("" + iMolecule, info);
-info.put$TK$TV("name", "biomolecule " + iMolecule);
-info.put$TK$TV("molecule", Integer.valueOf$I(iMolecule));
-var assemb=Clazz.new_($I$(7));
-var ops=Clazz.new_($I$(7));
-info.put$TK$TV("biomts", Clazz.new_($I$(7)));
-info.put$TK$TV("chains", Clazz.new_($I$(7)));
-info.put$TK$TV("assemblies", assemb);
-info.put$TK$TV("operators", ops);
+info.put$O$O("name", "biomolecule " + iMolecule);
+info.put$O$O("molecule", Integer.valueOf$I(iMolecule));
+var assemb=Clazz.new_($I$(7,1));
+var ops=Clazz.new_($I$(7,1));
+info.put$O$O("biomts", Clazz.new_($I$(7,1)));
+info.put$O$O("chains", Clazz.new_($I$(7,1)));
+info.put$O$O("assemblies", assemb);
+info.put$O$O("operators", ops);
 var m=o[i];
 var tlist=m.get$O("transformList");
-var chlist=Clazz.new_($I$(9));
+var chlist=Clazz.new_($I$(9,1));
 for (var j=0, n=tlist.length; j < n; j++) {
 var t=tlist[j];
 chlist.setLength$I(0);
 var chainList=t.get$O("chainIndexList");
 for (var k=0, kn=chainList.length; k < kn; k++) chlist.append$S("$").append$S(this.labelAsymList[chainList[k]]);
 
-assemb.addLast$TV(chlist.append$S("$").toString());
+assemb.addLast$O(chlist.append$S("$").toString());
 var id="" + (++this.opCount);
-this.addMatrix$S$javajs_util_M4$Z(id, $I$(10).newA16$FA(t.get$O("matrix")), false);
-ops.addLast$TV(id);
+this.addMatrix$S$javajs_util_M4$Z(id, (function(a,f){return f.apply(null,a)})([t.get$O("matrix")],$I$(10).newA16$FA), false);
+ops.addLast$O(id);
 }
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'getStructure', function () {
 var a=p$1.decode$S.apply(this, ["secStructList"]);
-if ($I$(2).debugging) $I$(2).info$S($I$(11).toJSON$S$O("secStructList", a));
-this.bsStructures=Clazz.array($I$(12), -1, [Clazz.new_($I$(12)), null, Clazz.new_($I$(12)), Clazz.new_($I$(12)), Clazz.new_($I$(12)), null, Clazz.new_($I$(12))]);
+if ($I$(2).debugging) (function(a,f){return f.apply(null,a)})([$I$(11).toJSON$S$O("secStructList", a)],$I$(2).info$S);
+this.bsStructures=Clazz.array($I$(12), -1, [Clazz.new_($I$(12,1)), null, Clazz.new_($I$(12,1)), Clazz.new_($I$(12,1)), Clazz.new_($I$(12,1)), null, Clazz.new_($I$(12,1))]);
 var lastGroup=-1;
 for (var j=0; j < a.length; j++) {
 var type=a[j];
@@ -266,7 +247,7 @@ lastGroup=j;
 var n=(this.isDSSP1 ? this.asc.iSet : this.groupModels[lastGroup]);
 if (lastGroup >= 0) {
 this.haveStructure=true;
-this.asc.addStructure$org_jmol_adapter_smarter_Structure(Clazz.new_($I$(13).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA,[n, null, null, null, 0, 0, this.bsStructures]));
+this.asc.addStructure$org_jmol_adapter_smarter_Structure(Clazz.new_($I$(13,1).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA,[n, null, null, null, 0, 0, this.bsStructures]));
 }}, p$1);
 
 Clazz.newMeth(C$, 'addStructureSymmetry', function () {
@@ -289,9 +270,9 @@ this.bsStructures[dssp - 1].set$I(ptGroup);
 }, p$1);
 
 Clazz.newMeth(C$, 'decode$S', function (key) {
-return $I$(1).decode$BA(this.map.get$O(key));
+return (function(a,f){return f.apply(null,a)})([this.map.get$O(key)],$I$(1).decode$BA);
 }, p$1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

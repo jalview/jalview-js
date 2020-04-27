@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'jalview.util.Comparison',['jalview.commands.EditCommand','.Action'],'jalview.datamodel.SequenceI']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RemoveGapsCommand", null, 'jalview.commands.EditCommand');
+(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'jalview.util.Comparison',['jalview.commands.EditCommand','.Action'],'jalview.datamodel.SequenceI']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RemoveGapsCommand", null, 'jalview.commands.EditCommand');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI', function (description, seqs, al) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.description=description;
 var width=0;
 for (var i=0; i < seqs.length; i++) {
@@ -19,7 +18,7 @@ this.findGaps$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI(seqs
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI', function (description, seqs, start, end, al) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.description=description;
 this.findGaps$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI(seqs, start, end, al);
 }, 1);
@@ -61,4 +60,4 @@ this.performEdit$I$jalview_datamodel_AlignmentIA(0, null);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

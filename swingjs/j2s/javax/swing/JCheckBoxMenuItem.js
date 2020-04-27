@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,['javax.swing.JToggleButton','.ToggleButtonModel']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JCheckBoxMenuItem", null, 'javax.swing.JMenuItem', 'javax.swing.SwingConstants');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,['javax.swing.JToggleButton','.ToggleButtonModel']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JCheckBoxMenuItem", null, 'javax.swing.JMenuItem', 'javax.swing.SwingConstants');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$S$javax_swing_Icon$Z.apply(this, [null, null, false]);
@@ -33,8 +32,7 @@ C$.c$$S$javax_swing_Icon$Z.apply(this, [text, null, b]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_Icon$Z', function (text, icon, b) {
-C$.superclazz.c$$S$javax_swing_Icon.apply(this, [text, icon]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$javax_swing_Icon.apply(this,[text, icon]);C$.$init$.apply(this);
 this.setSelected$Z(b);
 this.setFocusable$Z(false);
 }, 1);
@@ -44,7 +42,7 @@ return "CheckBoxMenuItemUI";
 });
 
 Clazz.newMeth(C$, 'setModel$', function () {
-this.setModel$javax_swing_ButtonModel(Clazz.new_($I$(1)));
+this.setModel$javax_swing_ButtonModel(Clazz.new_($I$(1,1)));
 });
 
 Clazz.newMeth(C$, 'getState$', function () {
@@ -70,4 +68,4 @@ Clazz.newMeth(C$, 'shouldUpdateSelectedStateFromAction$', function () {
 return true;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

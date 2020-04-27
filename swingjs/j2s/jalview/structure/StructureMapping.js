@@ -1,26 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.structure"),I$=[[0,'java.util.ArrayList','jalview.datamodel.AlignmentAnnotation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StructureMapping");
+(function(){var P$=Clazz.newPackage("jalview.structure"),I$=[[0,'java.util.ArrayList','jalview.datamodel.AlignmentAnnotation']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StructureMapping");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mappingDetails=null;
-this.sequence=null;
-this.pdbfile=null;
-this.pdbid=null;
-this.pdbchain=null;
-this.mapping=null;
-this.seqToPdbMapping=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.seqToPdbMapping=null;
-}, 1);
+},1);
+
+C$.$fields$=[['S',['mappingDetails','pdbfile','pdbid','pdbchain'],'O',['sequence','jalview.datamodel.SequenceI','mapping','java.util.HashMap','seqToPdbMapping','jalview.datamodel.Mapping']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$S$S$S$java_util_HashMap$S', function (seq, pdbfile, pdbid, chain, mapping, mappingDetails) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.sequence=seq;
 this.pdbfile=pdbfile;
 this.pdbid=pdbid;
@@ -63,7 +53,7 @@ return -2147483648;
 }});
 
 Clazz.newMeth(C$, 'getPDBResNumRanges$I$I', function (fromSeqPos, toSeqPos) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 var startRes=-1;
 var endRes=-1;
 for (var i=fromSeqPos; i <= toSeqPos; i++) {
@@ -81,25 +71,25 @@ continue;
 }if (resNo == endRes + 1) {
 endRes++;
 continue;
-}result.add$TE(Clazz.array(Integer.TYPE, -1, [startRes, endRes]));
+}result.add$O(Clazz.array(Integer.TYPE, -1, [startRes, endRes]));
 startRes=resNo;
 endRes=resNo;
 }
 if (startRes != -1) {
-result.add$TE(Clazz.array(Integer.TYPE, -1, [startRes, endRes]));
+result.add$O(Clazz.array(Integer.TYPE, -1, [startRes, endRes]));
 }return result;
 });
 
 Clazz.newMeth(C$, 'getSeqPos$I', function (pdbResNum) {
 for (var seqPos, $seqPos = this.mapping.keySet$().iterator$(); $seqPos.hasNext$()&&((seqPos=($seqPos.next$())),1);) {
-if (pdbResNum == this.getPDBResNum$I((seqPos).intValue$())) {
-return (seqPos).intValue$();
+if (pdbResNum == this.getPDBResNum$I((seqPos).valueOf())) {
+return (seqPos).valueOf();
 }}
 return -2147483648;
 });
 
 Clazz.newMeth(C$, 'transfer$jalview_datamodel_AlignmentAnnotation', function (ana) {
-var ala_copy=Clazz.new_($I$(2).c$$jalview_datamodel_AlignmentAnnotation,[ana]);
+var ala_copy=Clazz.new_($I$(2,1).c$$jalview_datamodel_AlignmentAnnotation,[ana]);
 var ds=this.sequence;
 while (ds.getDatasetSequence$() != null ){
 ds=ds.getDatasetSequence$();
@@ -107,7 +97,7 @@ ds=ds.getDatasetSequence$();
 ala_copy.remap$jalview_datamodel_SequenceI$java_util_HashMap$I$I$I(ds, this.mapping, -1, -1, 0);
 ds.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(ala_copy);
 if (ds !== this.sequence ) {
-ala_copy=Clazz.new_($I$(2).c$$jalview_datamodel_AlignmentAnnotation,[ala_copy]);
+ala_copy=Clazz.new_($I$(2,1).c$$jalview_datamodel_AlignmentAnnotation,[ala_copy]);
 this.sequence.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(ala_copy);
 }return ala_copy;
 });
@@ -176,4 +166,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

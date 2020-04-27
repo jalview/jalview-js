@@ -1,25 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.nio.file.attribute"),I$=[[0,'java.nio.file.attribute.AclEntry','java.util.Collections','java.util.EnumSet','java.nio.file.attribute.AclEntryPermission','java.nio.file.attribute.AclEntryFlag',['java.nio.file.attribute.AclEntry','.Builder'],'java.util.HashSet','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AclEntry", function(){
+(function(){var P$=Clazz.newPackage("java.nio.file.attribute"),I$=[[0,'java.nio.file.attribute.AclEntry','java.util.Collections','java.util.EnumSet','java.nio.file.attribute.AclEntryPermission','java.nio.file.attribute.AclEntryFlag',['java.nio.file.attribute.AclEntry','.Builder'],'java.util.HashSet','StringBuilder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AclEntry", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Builder',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.who=null;
-this.perms=null;
-this.flags=null;
-this.hash=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['hash'],'O',['type','java.nio.file.attribute.AclEntryType','who','java.nio.file.attribute.UserPrincipal','perms','java.util.Set','+flags']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set', function (type, who, perms, flags) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.type=type;
 this.who=who;
 this.perms=perms;
@@ -29,11 +22,11 @@ this.flags=flags;
 Clazz.newMeth(C$, 'newBuilder$', function () {
 var perms=$I$(2).emptySet$();
 var flags=$I$(2).emptySet$();
-return Clazz.new_($I$(6).c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set,[null, null, perms, flags]);
+return Clazz.new_($I$(6,1).c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set,[null, null, perms, flags]);
 }, 1);
 
 Clazz.newMeth(C$, 'newBuilder$java_nio_file_attribute_AclEntry', function (entry) {
-return Clazz.new_($I$(6).c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set,[entry.type, entry.who, entry.perms, entry.flags]);
+return Clazz.new_($I$(6,1).c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set,[entry.type, entry.who, entry.perms, entry.flags]);
 }, 1);
 
 Clazz.newMeth(C$, 'type$', function () {
@@ -45,11 +38,11 @@ return this.who;
 });
 
 Clazz.newMeth(C$, 'permissions$', function () {
-return Clazz.new_($I$(7).c$$java_util_Collection,[this.perms]);
+return Clazz.new_($I$(7,1).c$$java_util_Collection,[this.perms]);
 });
 
 Clazz.newMeth(C$, 'flags$', function () {
-return Clazz.new_($I$(7).c$$java_util_Collection,[this.flags]);
+return Clazz.new_($I$(7,1).c$$java_util_Collection,[this.flags]);
 });
 
 Clazz.newMeth(C$, 'equals$O', function (ob) {
@@ -78,7 +71,7 @@ return this.hash;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(8));
+var sb=Clazz.new_($I$(8,1));
 sb.append$S(this.who.getName$());
 sb.append$C(":");
 for (var perm, $perm = this.perms.iterator$(); $perm.hasNext$()&&((perm=($perm.next$())),1);) {
@@ -98,26 +91,19 @@ sb.append$C(":");
 return sb.toString();
 });
 ;
-(function(){var C$=Clazz.newClass(P$.AclEntry, "Builder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AclEntry, "Builder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.who=null;
-this.perms=null;
-this.flags=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['type','java.nio.file.attribute.AclEntryType','who','java.nio.file.attribute.UserPrincipal','perms','java.util.Set','+flags']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set', function (type, who, perms, flags) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 Clazz.assert(C$, this, function(){return perms != null  && flags != null  });
 this.type=type;
 this.who=who;
@@ -128,7 +114,7 @@ this.flags=flags;
 Clazz.newMeth(C$, 'build$', function () {
 if (this.type == null ) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["Missing type component"]);
 if (this.who == null ) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["Missing who component"]);
-return Clazz.new_($I$(1).c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set,[this.type, this.who, this.perms, this.flags]);
+return Clazz.new_($I$(1,1).c$$java_nio_file_attribute_AclEntryType$java_nio_file_attribute_UserPrincipal$java_util_Set$java_util_Set,[this.type, this.who, this.perms, this.flags]);
 });
 
 Clazz.newMeth(C$, 'setType$java_nio_file_attribute_AclEntryType', function (type) {
@@ -161,10 +147,10 @@ return this;
 });
 
 Clazz.newMeth(C$, 'setPermissions$java_nio_file_attribute_AclEntryPermissionA', function (perms) {
-var set=$I$(3).noneOf$Class(Clazz.getClass($I$(4)));
+var set=$I$(3,"noneOf$Class",[Clazz.getClass($I$(4))]);
 for (var p, $p = 0, $$p = perms; $p<$$p.length&&((p=($$p[$p])),1);$p++) {
 if (p == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-set.add$TE(p);
+set.add$O(p);
 }
 this.perms=set;
 return this;
@@ -181,17 +167,22 @@ return this;
 });
 
 Clazz.newMeth(C$, 'setFlags$java_nio_file_attribute_AclEntryFlagA', function (flags) {
-var set=$I$(3).noneOf$Class(Clazz.getClass($I$(5)));
+var set=$I$(3,"noneOf$Class",[Clazz.getClass($I$(5))]);
 for (var f, $f = 0, $$f = flags; $f<$$f.length&&((f=($$f[$f])),1);$f++) {
 if (f == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-set.add$TE(f);
+set.add$O(f);
 }
 this.flags=set;
 return this;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
+
+Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:42 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:29 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

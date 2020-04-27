@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.SB','javajs.util.PT','org.jmol.jvxl.readers.VolumeFileReader','org.jmol.util.Logger','org.jmol.jvxl.data.JvxlCoder','javajs.util.P4','org.jmol.util.Escape','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JvxlReader", null, 'org.jmol.jvxl.readers.JvxlXmlReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.SB','javajs.util.PT','org.jmol.jvxl.readers.VolumeFileReader','org.jmol.util.Logger','org.jmol.jvxl.data.JvxlCoder','javajs.util.P4','org.jmol.util.Escape','org.jmol.util.C']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JvxlReader", null, 'org.jmol.jvxl.readers.JvxlXmlReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -18,7 +17,7 @@ this.JVXL_VERSION="2.0";
 });
 
 Clazz.newMeth(C$, 'readParameters$', function () {
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(1)).append$S(this.skipComments$Z(false));
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(1,1)).append$S(this.skipComments$Z(false));
 if (this.line == null  || this.line.length$() == 0 ) this.line="Line 1";
 this.jvxlFileHeaderBuffer.append$S(this.line).appendC$C("\n");
 if (this.rd$() == null  || this.line.length$() == 0 ) this.line="Line 2";
@@ -88,7 +87,7 @@ if (n > 0) $I$(4).info$S("skipping " + n + " data sets, " + nPoints + " points e
 this.vertexDataOnly=this.jvxlData.vertexDataOnly=(nPoints == 0);
 for (var i=0; i < n; i++) {
 p$1.jvxlReadDefinitionLine$Z.apply(this, [true]);
-$I$(4).info$S("JVXL skipping: jvxlSurfaceDataCount=" + this.surfaceDataCount + " jvxlEdgeDataCount=" + this.edgeDataCount + " jvxlDataIsColorMapped=" + this.jvxlDataIsColorMapped );
+(function(a,f){return f.apply(null,a)})(["JVXL skipping: jvxlSurfaceDataCount=" + this.surfaceDataCount + " jvxlEdgeDataCount=" + this.edgeDataCount + " jvxlDataIsColorMapped=" + this.jvxlDataIsColorMapped ],$I$(4).info$S);
 this.jvxlSkipData$I$Z(nPoints, true);
 }
 p$1.jvxlReadDefinitionLine$Z.apply(this, [true]);
@@ -99,17 +98,17 @@ var comment=this.skipComments$Z(true);
 if (showMsg) $I$(4).info$S("reading jvxl data set: " + comment + this.line );
 this.haveContourData=(comment.indexOf$S("+contourlines") >= 0);
 this.jvxlCutoff=this.parseFloatStr$S(this.line);
-$I$(4).info$S("JVXL read: cutoff " + new Float(this.jvxlCutoff).toString());
+(function(a,f){return f.apply(null,a)})(["JVXL read: cutoff " + new Float(this.jvxlCutoff).toString()],$I$(4).info$S);
 var param1=this.parseInt$();
 var param2=this.parseInt$();
 var param3=this.parseInt$();
 if (param3 == -2147483648 || param3 == -1 ) param3=0;
 if (param1 == -1) {
 try {
-this.params.thePlane=$I$(6).new4$F$F$F$F(this.parseFloat$(), this.parseFloat$(), this.parseFloat$(), this.parseFloat$());
+this.params.thePlane=(function(a,f){return f.apply(null,a)})([this.parseFloat$(), this.parseFloat$(), this.parseFloat$(), this.parseFloat$()],$I$(6).new4$F$F$F$F);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(4).error$S("Error reading 4 floats for PLANE definition -- setting to 0 0 1 0  (z=0)");
+(function(a,f){return f.apply(null,a)})(["Error reading 4 floats for PLANE definition -- setting to 0 0 1 0  (z=0)"],$I$(4).error$S);
 this.params.thePlane=$I$(6).new4$F$F$F$F(0, 0, 1, 0);
 } else {
 throw e;
@@ -125,8 +124,8 @@ var nContoursRead=this.parseInt$();
 if (nContoursRead == -2147483648) {
 if (this.line.charAt$I(this.next[0]) == "[") {
 this.jvxlData.contourValues=this.params.contoursDiscrete=this.parseFloatArray$FA$S$S(null, null, null);
-$I$(4).info$S("JVXL read: contourValues " + $I$(7).eAF$FA(this.jvxlData.contourValues));
-this.jvxlData.contourColixes=this.params.contourColixes=$I$(8).getColixArray$S(this.getQuotedStringNext$());
+(function(a,f){return f.apply(null,a)})(["JVXL read: contourValues " + $I$(7).eAF$FA(this.jvxlData.contourValues)],$I$(4).info$S);
+this.jvxlData.contourColixes=this.params.contourColixes=(function(a,f){return f.apply(null,a)})([this.getQuotedStringNext$()],$I$(8).getColixArray$S);
 this.jvxlData.contourColors=$I$(8).getHexCodes$HA(this.jvxlData.contourColixes);
 $I$(4).info$S("JVXL read: contourColixes " + this.jvxlData.contourColors);
 this.params.nContours=this.jvxlData.contourValues.length;
@@ -192,4 +191,4 @@ n=this.parseIntNext$S(str);
 return count;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

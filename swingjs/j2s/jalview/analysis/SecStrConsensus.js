@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.ArrayList','java.util.Hashtable',['jalview.analysis.SecStrConsensus','.SimpleBP']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SecStrConsensus", function(){
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.ArrayList','java.util.Hashtable',['jalview.analysis.SecStrConsensus','.SimpleBP']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SecStrConsensus", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['SimpleBP',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'extractConsensus$java_util_ArrayList', function (bps) {
 var maxlength=0;
@@ -16,9 +16,9 @@ for (var bp, $bp = strs.iterator$(); $bp.hasNext$()&&((bp=($bp.next$())),1);) {
 maxlength=Math.max(1 + Math.max(bp.bp5, bp.bp3), maxlength);
 }
 }
-var seq=Clazz.new_($I$(1));
+var seq=Clazz.new_($I$(1,1));
 for (var i=0; i < maxlength; i++) {
-seq.add$TE(Clazz.new_($I$(2)));
+seq.add$O(Clazz.new_($I$(2,1)));
 }
 for (var strs, $strs = bps.iterator$(); $strs.hasNext$()&&((strs=($strs.next$())),1);) {
 for (var bp, $bp = strs.iterator$(); $bp.hasNext$()&&((bp=($bp.next$())),1);) {
@@ -26,8 +26,8 @@ var i=bp.bp5;
 var j=bp.bp3;
 var h=seq.get$I(i);
 if (!h.containsKey$O(new Integer(j))) {
-h.put$TK$TV(new Integer(j), new Double(0.0));
-}h.put$TK$TV(new Integer(j), new Double((h.get$O(new Integer(j))).doubleValue$() + 1.0));
+h.put$O$O(new Integer(j), new Double(0.0));
+}h.put$O$O(new Integer(j), new Double((h.get$O(new Integer(j))).valueOf() + 1.0));
 }
 }
 var mat=C$.fillMatrix$java_util_ArrayList(seq);
@@ -48,7 +48,7 @@ return seq.get$I(i).containsKey$O(new Integer(k));
 }, 1);
 
 Clazz.newMeth(C$, 'basePairScore$java_util_ArrayList$I$I', function (seq, i, k) {
-return (seq.get$I(i).get$O(new Integer(k))).doubleValue$();
+return (seq.get$I(i).get$O(new Integer(k))).valueOf();
 }, 1);
 
 Clazz.newMeth(C$, 'fillMatrix$java_util_ArrayList', function (seq) {
@@ -80,12 +80,12 @@ return C$.backtrack$DAA$java_util_ArrayList$I$I(tab, seq, 0, seq.size$() - 1);
 }, 1);
 
 Clazz.newMeth(C$, 'backtrack$DAA$java_util_ArrayList$I$I', function (tab, seq, i, j) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 if (i < j) {
-var indices=Clazz.new_($I$(1));
-indices.add$TE(new Integer(-1));
+var indices=Clazz.new_($I$(1,1));
+indices.add$O(new Integer(-1));
 for (var k=i + 1; k <= j; k++) {
-indices.add$TE(new Integer(k));
+indices.add$O(new Integer(k));
 }
 for (var k, $k = indices.iterator$(); $k.hasNext$()&&((k=($k.next$()).intValue$()),1);) {
 if (k == -1) {
@@ -102,35 +102,30 @@ fact2=tab[k + 1][j];
 }if (tab[i][j] == C$.basePairScore$java_util_ArrayList$I$I(seq, i, k) + fact1 + fact2  ) {
 result=C$.backtrack$DAA$java_util_ArrayList$I$I(tab, seq, i + 1, k - 1);
 result.addAll$java_util_Collection(C$.backtrack$DAA$java_util_ArrayList$I$I(tab, seq, k + 1, j));
-result.add$TE(Clazz.new_($I$(3).c$$I$I,[i, k]));
+result.add$O(Clazz.new_($I$(3,1).c$$I$I,[i, k]));
 }}}}
 } else if (i == j) {
 } else {
 }return result;
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.SecStrConsensus, "SimpleBP", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SecStrConsensus, "SimpleBP", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bp5=0;
-this.bp3=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['bp5','bp3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (i5, i3) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.bp5=i5;
 this.bp3=i3;
 }, 1);
@@ -158,4 +153,4 @@ return "(" + this.bp5 + "," + this.bp3 + ")" ;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

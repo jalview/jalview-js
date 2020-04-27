@@ -1,21 +1,15 @@
-(function(){var P$=java.util,p$1={},p$2={},I$=[[0,['java.util.AbstractList','.Itr'],['java.util.AbstractList','.ListItr'],'java.util.RandomAccessSubList','java.util.SubList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SubList", null, 'java.util.AbstractList');
+(function(){var P$=java.util,p$1={},p$2={},I$=[[0,['java.util.AbstractList','.Itr'],['java.util.AbstractList','.ListItr'],'java.util.RandomAccessSubList','java.util.SubList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SubList", null, 'java.util.AbstractList');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.l=null;
-this.offset=0;
-this.size=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offset','size'],'O',['l','java.util.AbstractList']]]
 
 Clazz.newMeth(C$, 'c$$java_util_AbstractList$I$I', function (list, fromIndex, toIndex) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (fromIndex < 0) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["fromIndex = " + fromIndex]);
 if (toIndex > list.size$()) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["toIndex = " + toIndex]);
 if (fromIndex > toIndex) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["fromIndex(" + fromIndex + ") > toIndex(" + toIndex + ")" ]);
@@ -25,10 +19,10 @@ this.size=toIndex - fromIndex;
 this.modCount=this.l.modCount;
 }, 1);
 
-Clazz.newMeth(C$, 'set$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'set$I$O', function (index, element) {
 p$2.rangeCheck$I.apply(this, [index]);
 p$2.checkForComodification.apply(this, []);
-return this.l.set$I$TE(index + this.offset, element);
+return this.l.set$I$O(index + this.offset, element);
 });
 
 Clazz.newMeth(C$, 'get$I', function (index) {
@@ -42,10 +36,10 @@ p$2.checkForComodification.apply(this, []);
 return this.size;
 });
 
-Clazz.newMeth(C$, 'add$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'add$I$O', function (index, element) {
 p$2.rangeCheckForAdd$I.apply(this, [index]);
 p$2.checkForComodification.apply(this, []);
-this.l.add$I$TE(index + this.offset, element);
+this.l.add$I$O(index + this.offset, element);
 this.modCount=this.l.modCount;
 this.size++;
 });
@@ -89,19 +83,15 @@ Clazz.newMeth(C$, 'listIterator$I', function (index) {
 p$2.checkForComodification.apply(this, []);
 p$2.rangeCheckForAdd$I.apply(this, [index]);
 return ((P$.SubList$1||
-(function(){var C$=Clazz.newClass(P$, "SubList$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.ListIterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "SubList$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.ListIterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.i=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.i=this.b$['java.util.SubList'].l.listIterator$I(this.$finals$.index + this.b$['java.util.SubList'].offset);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['i','java.util.ListIterator']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.nextIndex$() < this.b$['java.util.SubList'].size;
@@ -135,17 +125,17 @@ this.b$['java.util.SubList'].modCount=this.b$['java.util.SubList'].l.modCount;
 this.b$['java.util.SubList'].size--;
 });
 
-Clazz.newMeth(C$, ['set$TE'], function (e) {
-this.i.set$TE(e);
+Clazz.newMeth(C$, 'set$O', function (e) {
+this.i.set$O(e);
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.i.add$TE(e);
+Clazz.newMeth(C$, 'add$O', function (e) {
+this.i.add$O(e);
 this.b$['java.util.SubList'].modCount=this.b$['java.util.SubList'].l.modCount;
 this.b$['java.util.SubList'].size++;
 });
 })()
-), Clazz.new_(P$.SubList$1.$init$, [this, {index: index}]));
+), Clazz.new_(P$.SubList$1.$init$,[this, {index:index}]));
 });
 
 Clazz.newMeth(C$, 'subList$I$I', function (fromIndex, toIndex) {
@@ -170,4 +160,4 @@ if (this.modCount != this.l.modCount) throw Clazz.new_(Clazz.load('java.util.Con
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

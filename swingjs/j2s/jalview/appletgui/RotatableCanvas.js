@@ -1,42 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'jalview.datamodel.Point','jalview.appletgui.PaintRefresher','java.awt.Dimension','java.awt.Font','jalview.util.MessageManager','java.awt.Color','jalview.datamodel.SequenceGroup','jalview.math.RotatableMatrix',['jalview.math.RotatableMatrix','.Axis']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RotatableCanvas", null, 'java.awt.Panel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.KeyListener', 'jalview.api.RotatableCanvasI']);
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'jalview.datamodel.Point','jalview.appletgui.PaintRefresher','java.awt.Dimension','java.awt.Font','jalview.util.MessageManager','java.awt.Color','jalview.datamodel.SequenceGroup','jalview.math.RotatableMatrix',['jalview.math.RotatableMatrix','.Axis']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RotatableCanvas", null, 'java.awt.Panel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.KeyListener', 'jalview.api.RotatableCanvasI']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tooltip=null;
-this.toolx=0;
-this.tooly=0;
-this.drawAxes=false;
-this.mouseX=0;
-this.mouseY=0;
-this.img=null;
-this.ig=null;
-this.prefsize=null;
-this.centre=null;
-this.$width=null;
-this.max=null;
-this.min=null;
-this.maxwidth=0;
-this.scale=0;
-this.npoint=0;
-this.points=null;
-this.orig=null;
-this.axisEndPoints=null;
-this.startx=0;
-this.starty=0;
-this.lastx=0;
-this.lasty=0;
-this.rectx1=0;
-this.recty1=0;
-this.rectx2=0;
-this.recty2=0;
-this.scalefactor=0;
-this.av=null;
-this.showLabels=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.drawAxes=true;
@@ -47,10 +12,12 @@ this.max=Clazz.array(Float.TYPE, [3]);
 this.min=Clazz.array(Float.TYPE, [3]);
 this.scalefactor=1;
 this.showLabels=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['drawAxes','showLabels'],'F',['maxwidth','scale','scalefactor'],'I',['toolx','tooly','mouseX','mouseY','npoint','startx','starty','lastx','lasty','rectx1','recty1','rectx2','recty2'],'S',['tooltip'],'O',['img','java.awt.Image','ig','java.awt.Graphics','prefsize','java.awt.Dimension','centre','jalview.datamodel.Point','$width','float[]','+max','+min','points','java.util.List','orig','jalview.datamodel.Point[]','+axisEndPoints','av','jalview.viewmodel.AlignmentViewport']]]
 
 Clazz.newMeth(C$, 'c$$jalview_viewmodel_AlignmentViewport', function (viewport) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=viewport;
 this.axisEndPoints=Clazz.array($I$(1), [3]);
 }, 1);
@@ -63,7 +30,7 @@ this.repaint$();
 Clazz.newMeth(C$, 'setPoints$java_util_List$I', function (points, npoint) {
 this.points=points;
 this.npoint=npoint;
-$I$(2).Register$java_awt_Component$S(this, this.av.getSequenceSetId$());
+$I$(2,"Register$java_awt_Component$S",[this, this.av.getSequenceSetId$()]);
 this.prefsize=this.getPreferredSize$();
 this.orig=Clazz.array($I$(1), [npoint]);
 for (var i=0; i < npoint; i++) {
@@ -80,9 +47,9 @@ this.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
 });
 
 Clazz.newMeth(C$, 'resetAxes$', function () {
-this.axisEndPoints[0]=Clazz.new_($I$(1).c$$F$F$F,[1.0, 0.0, 0.0]);
-this.axisEndPoints[1]=Clazz.new_($I$(1).c$$F$F$F,[0.0, 1.0, 0.0]);
-this.axisEndPoints[2]=Clazz.new_($I$(1).c$$F$F$F,[0.0, 0.0, 1.0]);
+this.axisEndPoints[0]=Clazz.new_($I$(1,1).c$$F$F$F,[1.0, 0.0, 0.0]);
+this.axisEndPoints[1]=Clazz.new_($I$(1,1).c$$F$F$F,[0.0, 1.0, 0.0]);
+this.axisEndPoints[2]=Clazz.new_($I$(1,1).c$$F$F$F,[0.0, 0.0, 1.0]);
 });
 
 Clazz.newMeth(C$, 'findWidth$', function () {
@@ -130,14 +97,14 @@ this.findWidth$();
 var x=(this.max[0] + this.min[0]) / 2;
 var y=(this.max[1] + this.min[1]) / 2;
 var z=(this.max[2] + this.min[2]) / 2;
-this.centre=Clazz.new_($I$(1).c$$F$F$F,[x, y, z]);
+this.centre=Clazz.new_($I$(1,1).c$$F$F$F,[x, y, z]);
 });
 
 Clazz.newMeth(C$, 'getPreferredSize$', function () {
 if (this.prefsize != null ) {
 return this.prefsize;
 } else {
-return Clazz.new_($I$(3).c$$I$I,[400, 400]);
+return Clazz.new_($I$(3,1).c$$I$I,[400, 400]);
 }});
 
 Clazz.newMeth(C$, 'getMinimumSize$', function () {
@@ -150,7 +117,7 @@ this.paint$java_awt_Graphics(g);
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 if (this.points == null ) {
-g.setFont$java_awt_Font(Clazz.new_($I$(4).c$$S$I$I,["Verdana", 0, 18]));
+g.setFont$java_awt_Font(Clazz.new_($I$(4,1).c$$S$I$I,["Verdana", 0, 18]));
 g.drawString$S$I$I($I$(5).getString$S("label.calculating_pca") + "....", 20, (this.getSize$().height/2|0));
 } else {
 if ((this.img == null ) || (this.prefsize.width != this.getSize$().width) || (this.prefsize.height != this.getSize$().height)  ) {
@@ -262,10 +229,10 @@ if (this.av.getSelectionGroup$() != null ) {
 this.av.getSelectionGroup$().addOrRemove$jalview_datamodel_SequenceI$Z(found, true);
 this.av.getSelectionGroup$().setEndRes$I(this.av.getAlignment$().getWidth$() - 1);
 } else {
-this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(7)));
+this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(7,1)));
 this.av.getSelectionGroup$().addOrRemove$jalview_datamodel_SequenceI$Z(found, true);
 this.av.getSelectionGroup$().setEndRes$I(this.av.getAlignment$().getWidth$() - 1);
-}$I$(2).Refresh$java_awt_Component$S(this, this.av.getSequenceSetId$());
+}$I$(2,"Refresh$java_awt_Component$S",[this, this.av.getSequenceSetId$()]);
 this.av.sendSelection$();
 }this.repaint$();
 });
@@ -337,7 +304,7 @@ this.scalefactor *= factor;
 Clazz.newMeth(C$, 'rotate$F$F', function (x, y) {
 if (x == 0.0  && y == 0.0  ) {
 return;
-}var rotmat=Clazz.new_($I$(8));
+}var rotmat=Clazz.new_($I$(8,1));
 if (y != 0 ) {
 rotmat.rotate$F$jalview_math_RotatableMatrix_Axis(y, $I$(9).X);
 }if (x != 0 ) {
@@ -355,4 +322,4 @@ this.axisEndPoints[i]=rotmat.vectorMultiply$jalview_datamodel_Point(this.axisEnd
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:45 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

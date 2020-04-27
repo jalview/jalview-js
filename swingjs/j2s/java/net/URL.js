@@ -1,34 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.net"),p$1={},I$=[[0,'java.util.Hashtable','java.net.Parts','javajs.util.AjaxURLConnection','Error']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "URL");
-C$.factory=null;
-C$.handlers=null;
-C$.streamHandlerLock=null;
+(function(){var P$=Clazz.newPackage("java.net"),p$1={},I$=[[0,'java.util.Hashtable','java.net.Parts','javajs.util.AjaxURLConnection','Error']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "URL");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.handlers=Clazz.new_($I$(1));
-C$.streamHandlerLock= Clazz.new_();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.protocol=null;
-this.host=null;
-this.port=0;
-this.file=null;
-this.query=null;
-this.authority=null;
-this.path=null;
-this.userInfo=null;
-this.ref=null;
-this.handler=null;
-this._streamData=null;
-this.hashCode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.port=-1;
 this.hashCode=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['port','hashCode'],'S',['protocol','host','file','query','authority','path','userInfo','ref'],'O',['handler','java.net.URLStreamHandler','_streamData','java.lang.Object']]
+,['O',['秘factory','java.net.URLStreamHandlerFactory','handlers','java.util.Hashtable','streamHandlerLock','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$S$S$I$S', function (protocol, host, port, file) {
 C$.c$$S$S$I$S$java_net_URLStreamHandler.apply(this, [protocol, host, port, file, null]);
@@ -39,7 +20,7 @@ C$.c$$S$S$I$S.apply(this, [protocol, host, -1, file]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$I$S$java_net_URLStreamHandler', function (protocol, host, port, file, handler) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 protocol=protocol.toLowerCase$();
 this.protocol=protocol;
 if (host != null ) {
@@ -50,7 +31,7 @@ if (port < -1) {
 throw Clazz.new_(Clazz.load('java.net.MalformedURLException').c$$S,["Invalid port number :" + port]);
 }this.port=port;
 this.authority=(port == -1) ? host : host + ":" + port ;
-}var parts=Clazz.new_($I$(2).c$$S,[file]);
+}var parts=Clazz.new_($I$(2,1).c$$S,[file]);
 this.path=parts.getPath$();
 this.query=parts.getQuery$();
 if (this.query != null ) {
@@ -72,7 +53,7 @@ C$.c$$java_net_URL$S$java_net_URLStreamHandler.apply(this, [context, spec, null]
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_net_URL$S$java_net_URLStreamHandler', function (context, spec, handler) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var original=spec;
 var i;
 var limit;
@@ -270,19 +251,19 @@ return (bis == null  ? this.openConnection$().getInputStream$() : bis);
 
 Clazz.newMeth(C$, 'setURLStreamHandlerFactory$java_net_URLStreamHandlerFactory', function (fac) {
 {
-if (C$.factory != null ) {
-throw Clazz.new_($I$(4).c$$S,["factory already defined"]);
+if (C$.秘factory != null ) {
+throw Clazz.new_($I$(4,1).c$$S,["factory already defined"]);
 }var security=System.getSecurityManager$();
 if (security != null ) {
 security.checkSetFactory$();
 }C$.handlers.clear$();
-C$.factory=fac;
+C$.秘factory=fac;
 }}, 1);
 
 Clazz.newMeth(C$, 'getURLStreamHandler$S', function (protocol) {
 var handler=C$.handlers.get$O(protocol);
 if (handler == null ) {
-if (C$.factory == null ) {
+if (C$.秘factory == null ) {
 try {
 C$.setURLStreamHandlerFactory$java_net_URLStreamHandlerFactory(Clazz.forName("javajs.util.AjaxURLStreamHandlerFactory").newInstance$());
 } catch (e) {
@@ -291,11 +272,16 @@ if (Clazz.exceptionOf(e,"Exception")){
 throw e;
 }
 }
-}if (C$.factory != null ) {
-handler=C$.factory.createURLStreamHandler$(protocol);
+}if (C$.秘factory != null ) {
+handler=C$.秘factory.createURLStreamHandler$S(protocol);
 }}return handler;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.handlers=Clazz.new_($I$(1,1));
+C$.streamHandlerLock= Clazz.new_();
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

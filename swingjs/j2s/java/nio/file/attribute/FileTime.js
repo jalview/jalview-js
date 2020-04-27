@@ -1,29 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.nio.file.attribute"),p$1={},I$=[[0,'java.util.Objects','java.util.concurrent.TimeUnit','AssertionError','java.time.Instant','java.time.LocalDateTime','java.time.ZoneOffset','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileTime", null, null, 'Comparable');
+(function(){var P$=Clazz.newPackage("java.nio.file.attribute"),p$1={},I$=[[0,'java.util.Objects','java.util.concurrent.TimeUnit','AssertionError','java.time.Instant','java.time.LocalDateTime','java.time.ZoneOffset','StringBuilder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FileTime", null, null, 'Comparable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.unit=null;
-this.value=0;
-this.instant=null;
-this.valueAsString=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['value'],'S',['valueAsString'],'O',['unit','java.util.concurrent.TimeUnit','instant','java.time.Instant']]]
 
 Clazz.newMeth(C$, 'c$$J$java_util_concurrent_TimeUnit$java_time_Instant', function (value, unit, instant) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.value=value;
 this.unit=unit;
 this.instant=instant;
 }, 1);
 
 Clazz.newMeth(C$, 'from$J$java_util_concurrent_TimeUnit', function (value, unit) {
-$I$(1).requireNonNull$TT$S(unit, "unit");
+$I$(1).requireNonNull$O$S(unit, "unit");
 return Clazz.new_(C$.c$$J$java_util_concurrent_TimeUnit$java_time_Instant,[value, unit, null]);
 }, 1);
 
@@ -32,12 +25,12 @@ return Clazz.new_(C$.c$$J$java_util_concurrent_TimeUnit$java_time_Instant,[value
 }, 1);
 
 Clazz.newMeth(C$, 'from$java_time_Instant', function (instant) {
-$I$(1).requireNonNull$TT$S(instant, "instant");
+$I$(1).requireNonNull$O$S(instant, "instant");
 return Clazz.new_(C$.c$$J$java_util_concurrent_TimeUnit$java_time_Instant,[0, null, instant]);
 }, 1);
 
 Clazz.newMeth(C$, 'to$java_util_concurrent_TimeUnit', function (unit) {
-$I$(1).requireNonNull$TT$S(unit, "unit");
+$I$(1).requireNonNull$O$S(unit, "unit");
 if (this.unit != null ) {
 return unit.convert$J$java_util_concurrent_TimeUnit(this.value, this.unit);
 } else {
@@ -101,7 +94,7 @@ secs=Math.floorDiv(this.value, 1000000000);
 nanos=(Math.floorMod(this.value, 1000000000)|0);
 break;
 default:
-throw Clazz.new_($I$(3).c$$O,["Unit not handled"]);
+throw Clazz.new_($I$(3,1).c$$O,["Unit not handled"]);
 }
 if (secs <= -31557014167219200) this.instant=$I$(4).MIN;
  else if (secs >= 31556889864403199) this.instant=$I$(4).MAX;
@@ -131,7 +124,7 @@ return this.unit.toNanos$J(this.value - this.unit.convert$J$java_util_concurrent
 return $I$(2).SECONDS.toNanos$J(this.toInstant$().getEpochSecond$() - $I$(2).DAYS.toSeconds$J(days));
 }}, p$1);
 
-Clazz.newMeth(C$, ['compareTo$java_nio_file_attribute_FileTime','compareTo$','compareTo$TT'], function (other) {
+Clazz.newMeth(C$, ['compareTo$java_nio_file_attribute_FileTime','compareTo$O'], function (other) {
 if (this.unit != null  && this.unit === other.unit  ) {
 return Long.compare$J$J(this.value, other.value);
 } else {
@@ -165,7 +158,7 @@ Clazz.newMeth(C$, 'toString', function () {
 if (this.valueAsString == null ) {
 var secs=0;
 var nanos=0;
-if (this.instant == null  && this.unit.compareTo$TE($I$(2).SECONDS) >= 0 ) {
+if (this.instant == null  && this.unit.compareTo$Enum($I$(2).SECONDS) >= 0 ) {
 secs=this.unit.toSeconds$J(this.value);
 } else {
 secs=this.toInstant$().getEpochSecond$();
@@ -176,18 +169,18 @@ if (secs >= -62167219200) {
 var zeroSecs=secs - 315569520000 + 62167219200;
 var hi=Math.floorDiv(zeroSecs, 315569520000) + 1;
 var lo=Math.floorMod(zeroSecs, 315569520000);
-ldt=$I$(5).ofEpochSecond$J$I$java_time_ZoneOffset(lo - 62167219200, nanos, $I$(6).UTC);
+ldt=$I$(5,"ofEpochSecond$J$I$java_time_ZoneOffset",[lo - 62167219200, nanos, $I$(6).UTC]);
 year=ldt.getYear$() + (hi|0) * 10000;
 } else {
 var zeroSecs=secs + 62167219200;
 var hi=(zeroSecs/315569520000|0);
 var lo=zeroSecs % 315569520000;
-ldt=$I$(5).ofEpochSecond$J$I$java_time_ZoneOffset(lo - 62167219200, nanos, $I$(6).UTC);
+ldt=$I$(5,"ofEpochSecond$J$I$java_time_ZoneOffset",[lo - 62167219200, nanos, $I$(6).UTC]);
 year=ldt.getYear$() + (hi|0) * 10000;
 }if (year <= 0) {
 year=year - 1;
 }var fraction=ldt.getNano$();
-var sb=Clazz.new_($I$(7).c$$I,[64]);
+var sb=Clazz.new_($I$(7,1).c$$I,[64]);
 sb.append$S(year < 0 ? "-" : "");
 year=Math.abs(year);
 if (year < 10000) {
@@ -219,4 +212,4 @@ this.valueAsString=sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:42 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

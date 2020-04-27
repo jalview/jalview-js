@@ -1,27 +1,13 @@
 (function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[];
-var C$=Clazz.newClass(P$, "DBRefSource");
-C$.UP_NAME=null;
-C$.UNIPROTKB=null;
-C$.EMBLCDSProduct=null;
-C$.GENEDB=null;
-C$.allSources=null;
-C$.DNACODINGDBS=null;
-C$.CODINGDBS=null;
-C$.PROTEINDBS=null;
+/*c*/var C$=Clazz.newClass(P$, "DBRefSource");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.UP_NAME="UNIPROT_NAME".toUpperCase$();
-C$.UNIPROTKB="UniProtKB/TrEMBL".toUpperCase$();
-C$.EMBLCDSProduct="EMBLCDSProtein".toUpperCase$();
-C$.GENEDB="GeneDB".toUpperCase$();
-C$.allSources=Clazz.array(String, -1, ["UNIPROT", C$.UP_NAME, C$.UNIPROTKB, "ENSEMBL", "ENSEMBLGENOMES", "EMBL", "EMBLCDS", C$.EMBLCDSProduct, "PDB", "PFAM", "RFAM", C$.GENEDB]);
-C$.DNACODINGDBS=Clazz.array(String, -1, ["ENSEMBL", "ENSEMBLGENOMES", "EMBL", "EMBLCDS", C$.GENEDB]);
-C$.CODINGDBS=Clazz.array(String, -1, ["EMBLCDS", C$.GENEDB, "ENSEMBL"]);
-C$.PROTEINDBS=Clazz.array(String, -1, ["UNIPROT", C$.UNIPROTKB, "ENSEMBL", C$.EMBLCDSProduct]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['S',['UP_NAME','UNIPROTKB','EMBLCDSProduct','GENEDB'],'O',['allSources','String[]','+DNACODINGDBS','+CODINGDBS','+PROTEINDBS']]]
 
 Clazz.newMeth(C$, 'getSourceKey$S', function (name) {
 for (var i=0; i < 12; i++) {
@@ -43,6 +29,17 @@ return false;
 return true;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.UP_NAME="UNIPROT_NAME".toUpperCase$();
+C$.UNIPROTKB="UniProtKB/TrEMBL".toUpperCase$();
+C$.EMBLCDSProduct="EMBLCDSProtein".toUpperCase$();
+C$.GENEDB="GeneDB".toUpperCase$();
+C$.allSources=Clazz.array(String, -1, ["UNIPROT", C$.UP_NAME, C$.UNIPROTKB, "ENSEMBL", "ENSEMBLGENOMES", "EMBL", "EMBLCDS", C$.EMBLCDSProduct, "PDB", "PFAM", "RFAM", C$.GENEDB]);
+C$.DNACODINGDBS=Clazz.array(String, -1, ["ENSEMBL", "ENSEMBLGENOMES", "EMBL", "EMBLCDS", C$.GENEDB]);
+C$.CODINGDBS=Clazz.array(String, -1, ["EMBLCDS", C$.GENEDB, "ENSEMBL"]);
+C$.PROTEINDBS=Clazz.array(String, -1, ["UNIPROT", C$.UNIPROTKB, "ENSEMBL", C$.EMBLCDSProduct]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

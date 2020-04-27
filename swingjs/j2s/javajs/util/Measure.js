@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.T3','javajs.util.Lst','javajs.util.Quat','javajs.api.Interface','javajs.util.P4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Measure");
-C$.axisY=null;
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.T3','javajs.util.Lst','javajs.util.Quat','javajs.api.Interface','javajs.util.P4']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Measure");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.axisY=$I$(1).new3$F$F$F(0, 1, 0);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['axisY','javajs.util.V3']]]
 
 Clazz.newMeth(C$, 'computeAngle$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$Z', function (pointA, pointB, pointC, vectorBA, vectorBC, asDegrees) {
 vectorBA.sub2$javajs_util_T3$javajs_util_T3(pointA, pointB);
@@ -17,8 +17,8 @@ return (asDegrees ? angle / 0.017453292 : angle);
 }, 1);
 
 Clazz.newMeth(C$, 'computeAngleABC$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z', function (pointA, pointB, pointC, asDegrees) {
-var vectorBA=Clazz.new_($I$(1));
-var vectorBC=Clazz.new_($I$(1));
+var vectorBA=Clazz.new_($I$(1,1));
+var vectorBC=Clazz.new_($I$(1,1));
 return C$.computeAngle$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$Z(pointA, pointB, pointC, vectorBA, vectorBC, asDegrees);
 }, 1);
 
@@ -57,16 +57,16 @@ return (asDegrees ? torsion / 0.017453292 : torsion);
 }, 1);
 
 Clazz.newMeth(C$, 'computeHelicalAxis$javajs_util_P3$javajs_util_P3$javajs_util_Quat', function (a, b, dq) {
-var vab=Clazz.new_($I$(1));
+var vab=Clazz.new_($I$(1,1));
 vab.sub2$javajs_util_T3$javajs_util_T3(b, a);
 var theta=dq.getTheta$();
 var n=dq.getNormal$();
 var v_dot_n=vab.dot$javajs_util_T3(n);
 if (Math.abs(v_dot_n) < 1.0E-4 ) v_dot_n=0;
-var va_prime_d=Clazz.new_($I$(1));
+var va_prime_d=Clazz.new_($I$(1,1));
 va_prime_d.cross$javajs_util_T3$javajs_util_T3(vab, n);
 if (va_prime_d.dot$javajs_util_T3(va_prime_d) != 0 ) va_prime_d.normalize$();
-var vda=Clazz.new_($I$(1));
+var vda=Clazz.new_($I$(1,1));
 var vcb=$I$(1).newV$javajs_util_T3(n);
 if (v_dot_n == 0 ) v_dot_n=1.4E-45;
 vcb.scale$F(v_dot_n);
@@ -192,10 +192,10 @@ axisA.setT$javajs_util_T3(tempA);
 }, 1);
 
 Clazz.newMeth(C$, 'findAxis$javajs_util_P3A$I$javajs_util_P3$javajs_util_V3$javajs_util_V3', function (points, nPoints, axisA, axisUnitVector, vectorProjection) {
-var sumXiYi=Clazz.new_($I$(1));
-var vTemp=Clazz.new_($I$(1));
-var pt=Clazz.new_($I$(2));
-var ptProj=Clazz.new_($I$(2));
+var sumXiYi=Clazz.new_($I$(1,1));
+var vTemp=Clazz.new_($I$(1,1));
+var pt=Clazz.new_($I$(2,1));
+var ptProj=Clazz.new_($I$(2,1));
 var a=$I$(1).newV$javajs_util_T3(axisUnitVector);
 var sum_Xi2=0;
 for (var i=nPoints; --i >= 0; ) {
@@ -228,13 +228,13 @@ averagePoint.scale$F(1.0 / nPoints);
 }, 1);
 
 Clazz.newMeth(C$, 'transformPoints$javajs_util_Lst$javajs_util_M4$javajs_util_P3', function (vPts, m4, center) {
-var v=Clazz.new_($I$(4));
+var v=Clazz.new_($I$(4,1));
 for (var i=0; i < vPts.size$(); i++) {
-var pt=$I$(2).newP$javajs_util_T3(vPts.get$I(i));
+var pt=$I$(2,"newP$javajs_util_T3",[vPts.get$I(i)]);
 pt.sub$javajs_util_T3(center);
 m4.rotTrans$javajs_util_T3(pt);
 pt.add$javajs_util_T3(center);
-v.addLast$TV(pt);
+v.addLast$O(pt);
 }
 return v;
 }, 1);
@@ -260,7 +260,7 @@ var c2=plane2.z;
 var d2=plane2.w;
 var norm1=$I$(1).new3$F$F$F(a1, b1, c1);
 var norm2=$I$(1).new3$F$F$F(a2, b2, c2);
-var nxn=Clazz.new_($I$(1));
+var nxn=Clazz.new_($I$(1,1));
 nxn.cross$javajs_util_T3$javajs_util_T3(norm1, norm2);
 var ax=Math.abs(nxn.x);
 var ay=Math.abs(nxn.y);
@@ -293,10 +293,10 @@ x=(b1 * d2 - b2 * d1) / diff;
 y=(a2 * d1 - d2 * a1) / diff;
 z=0;
 }
-var list=Clazz.new_($I$(4));
-list.addLast$TV($I$(2).new3$F$F$F(x, y, z));
+var list=Clazz.new_($I$(4,1));
+list.addLast$O($I$(2).new3$F$F$F(x, y, z));
 nxn.normalize$();
-list.addLast$TV(nxn);
+list.addLast$O(nxn);
 return list;
 }, 1);
 
@@ -314,7 +314,7 @@ return ptRet;
 
 Clazz.newMeth(C$, 'calculateQuaternionRotation$javajs_util_P3AA$FA', function (centerAndPoints, retStddev) {
 retStddev[1]=NaN;
-var q=Clazz.new_($I$(5));
+var q=Clazz.new_($I$(5,1));
 var ptsA=centerAndPoints[0];
 var ptsB=centerAndPoints[1];
 var nPts=ptsA.length - 1;
@@ -328,8 +328,8 @@ var Syz=0;
 var Szx=0;
 var Szy=0;
 var Szz=0;
-var ptA=Clazz.new_($I$(2));
-var ptB=Clazz.new_($I$(2));
+var ptA=Clazz.new_($I$(2,1));
+var ptB=Clazz.new_($I$(2,1));
 var ptA0=ptsA[0];
 var ptB0=ptsB[0];
 for (var i=nPts + 1; --i >= 1; ) {
@@ -358,7 +358,7 @@ N[2][2]=-Sxx + Syy - Szz;
 N[2][3]=N[3][2]=Syz + Szy;
 N[3][3]=-Sxx - Syy + Szz;
 var v=($I$(6).getInterface$S("javajs.util.Eigen")).setM$DAA(N).getEigenvectorsFloatTransposed$()[3];
-q=$I$(5).newP4$javajs_util_P4($I$(7).new4$F$F$F$F(v[1], v[2], v[3], v[0]));
+q=$I$(5,"newP4$javajs_util_P4",[$I$(7).new4$F$F$F$F(v[1], v[2], v[3], v[0])]);
 retStddev[1]=C$.getRmsd$javajs_util_P3AA$javajs_util_Quat(centerAndPoints, q);
 return q;
 }, 1);
@@ -379,7 +379,7 @@ return retStddev[1];
 Clazz.newMeth(C$, 'getCenterAndPoints$javajs_util_Lst', function (vPts) {
 var n=vPts.size$();
 var pts=Clazz.array($I$(2), [n + 1]);
-pts[0]=Clazz.new_($I$(2));
+pts[0]=Clazz.new_($I$(2,1));
 if (n > 0) {
 for (var i=0; i < n; i++) {
 pts[0].add$javajs_util_T3(pts[i + 1]=vPts.get$I(i));
@@ -395,7 +395,7 @@ var ptsB=centerAndPoints[1];
 var cA=ptsA[0];
 var cB=ptsB[0];
 var n=ptsA.length - 1;
-var ptAnew=Clazz.new_($I$(2));
+var ptAnew=Clazz.new_($I$(2,1));
 for (var i=n + 1; --i >= 1; ) {
 ptAnew.sub2$javajs_util_T3$javajs_util_T3(ptsA[i], cA);
 q.transform2$javajs_util_T3$javajs_util_T3(ptAnew, ptAnew).add$javajs_util_T3(cB);
@@ -404,6 +404,10 @@ sum2 += ptAnew.distanceSquared$javajs_util_T3(ptsB[i]);
 return Math.sqrt(sum2 / n);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.axisY=$I$(1).new3$F$F$F(0, 1, 0);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

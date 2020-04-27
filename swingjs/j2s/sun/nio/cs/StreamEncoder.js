@@ -1,27 +1,15 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.Charset','java.nio.charset.CodingErrorAction','java.nio.ByteBuffer','java.nio.CharBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StreamEncoder", null, 'java.io.Writer');
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.Charset','java.nio.charset.CodingErrorAction','java.nio.ByteBuffer','java.nio.CharBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StreamEncoder", null, 'java.io.Writer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isOpen=false;
-this.cs=null;
-this.encoder=null;
-this.bb=null;
-this.out=null;
-this.ch=null;
-this.haveLeftoverChar=false;
-this.leftoverChar='\0';
-this.lcb=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isOpen=true;
 this.haveLeftoverChar=false;
 this.lcb=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isOpen','haveLeftoverChar'],'C',['leftoverChar'],'O',['cs','java.nio.charset.Charset','encoder','java.nio.charset.CharsetEncoder','bb','java.nio.ByteBuffer','out','java.io.OutputStream','ch','java.nio.channels.WritableByteChannel','lcb','java.nio.CharBuffer']]]
 
 Clazz.newMeth(C$, 'ensureOpen', function () {
 if (!this.isOpen) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
@@ -109,8 +97,7 @@ C$.c$$java_io_OutputStream$O$java_nio_charset_CharsetEncoder.apply(this, [out, l
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$O$java_nio_charset_CharsetEncoder', function (out, lock, enc) {
-C$.superclazz.c$$O.apply(this, [lock]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O.apply(this,[lock]);C$.$init$.apply(this);
 this.out=out;
 this.ch=null;
 this.cs=enc.charset$();
@@ -123,7 +110,7 @@ this.bb=$I$(3).allocate$I(8192);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$java_nio_channels_WritableByteChannel$java_nio_charset_CharsetEncoder$I', function (ch, enc, mbc) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.out=null;
 this.ch=ch;
 this.cs=enc.charset$();
@@ -225,8 +212,11 @@ throw x;
 Clazz.newMeth(C$, 'encodingName$', function () {
 return ((Clazz.instanceOf(this.cs, "sun.nio.cs.HistoricallyNamedCharset")) ? (this.cs).historicalName$() : this.cs.name$());
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

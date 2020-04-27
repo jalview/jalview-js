@@ -1,26 +1,21 @@
 (function(){var P$=Clazz.newPackage("org.xml.sax.helpers"),p$1={};
-var C$=Clazz.newClass(P$, "AttributesImpl", null, null, 'org.xml.sax.Attributes');
+/*c*/var C$=Clazz.newClass(P$, "AttributesImpl", null, null, 'org.xml.sax.Attributes');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.length=0;
-this.data=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['length'],'O',['data','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.length=0;
 this.data=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_xml_sax_Attributes', function (atts) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setAttributes$org_xml_sax_Attributes(atts);
 }, 1);
 
@@ -233,4 +228,4 @@ var msg="Attempt to modify attribute at illegal index: " + index;
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,[msg]);
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

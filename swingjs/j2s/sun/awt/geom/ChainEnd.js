@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ChainEnd");
+(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ChainEnd");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.head=null;
-this.tail=null;
-this.partner=null;
-this.etag=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['etag'],'O',['head','sun.awt.geom.CurveLink','+tail','partner','sun.awt.geom.ChainEnd']]]
 
 Clazz.newMeth(C$, 'c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd', function (first, partner) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.head=first;
 this.tail=first;
 this.partner=partner;
@@ -37,9 +30,9 @@ return this.partner;
 
 Clazz.newMeth(C$, 'linkTo$sun_awt_geom_ChainEnd', function (that) {
 if (this.etag == 0 || that.etag == 0 ) {
-throw Clazz.new_($I$(1).c$$S,["ChainEnd linked more than once!"]);
+throw Clazz.new_($I$(1,1).c$$S,["ChainEnd linked more than once!"]);
 }if (this.etag == that.etag) {
-throw Clazz.new_($I$(1).c$$S,["Linking chains of the same type!"]);
+throw Clazz.new_($I$(1,1).c$$S,["Linking chains of the same type!"]);
 }var enter;
 var exit;
 if (this.etag == 1) {
@@ -85,4 +78,4 @@ return this.head.getXBot$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

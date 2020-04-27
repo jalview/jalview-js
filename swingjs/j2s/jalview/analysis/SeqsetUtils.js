@@ -1,27 +1,26 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.Hashtable','java.util.Vector','jalview.datamodel.Sequence','jalview.analysis.SequenceIdMatcher','jalview.analysis.AlignSeq','jalview.util.Comparison','jalview.datamodel.SequenceI']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SeqsetUtils");
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.Hashtable','java.util.Vector','jalview.datamodel.Sequence','jalview.analysis.SequenceIdMatcher','jalview.analysis.AlignSeq','jalview.util.Comparison','jalview.datamodel.SequenceI']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SeqsetUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'SeqCharacterHash$jalview_datamodel_SequenceI', function (seq) {
-var sqinfo=Clazz.new_($I$(1));
-sqinfo.put$TK$TV("Name", seq.getName$());
-sqinfo.put$TK$TV("Start",  new Integer(seq.getStart$()));
-sqinfo.put$TK$TV("End",  new Integer(seq.getEnd$()));
+var sqinfo=Clazz.new_($I$(1,1));
+sqinfo.put$O$O("Name", seq.getName$());
+sqinfo.put$O$O("Start", Integer.valueOf$I(seq.getStart$()));
+sqinfo.put$O$O("End", Integer.valueOf$I(seq.getEnd$()));
 if (seq.getDescription$() != null ) {
-sqinfo.put$TK$TV("Description", seq.getDescription$());
-}var sfeat=Clazz.new_($I$(2));
+sqinfo.put$O$O("Description", seq.getDescription$());
+}var sfeat=Clazz.new_($I$(2,1));
 var sfs=seq.getFeatures$().getAllFeatures$SA([]);
 sfeat.addAll$java_util_Collection(sfs);
 if (seq.getDatasetSequence$() == null ) {
-sqinfo.put$TK$TV("SeqFeatures", sfeat);
-sqinfo.put$TK$TV("PdbId", (seq.getAllPDBEntries$() != null ) ? seq.getAllPDBEntries$() : Clazz.new_($I$(2)));
+sqinfo.put$O$O("SeqFeatures", sfeat);
+sqinfo.put$O$O("PdbId", (seq.getAllPDBEntries$() != null ) ? seq.getAllPDBEntries$() : Clazz.new_($I$(2,1)));
 } else {
-sqinfo.put$TK$TV("datasetSequence", (seq.getDatasetSequence$() != null ) ? seq.getDatasetSequence$() : Clazz.new_($I$(3).c$$S$S,["THISISAPLACEHOLDER", ""]));
+sqinfo.put$O$O("datasetSequence", (seq.getDatasetSequence$() != null ) ? seq.getDatasetSequence$() : Clazz.new_($I$(3,1).c$$S$S,["THISISAPLACEHOLDER", ""]));
 }return sqinfo;
 }, 1);
 
@@ -61,10 +60,10 @@ return  String.instantialize("Sequence" + i);
 }, 1);
 
 Clazz.newMeth(C$, 'uniquify$jalview_datamodel_SequenceIA$Z', function (sequences, write_names) {
-var map=Clazz.new_($I$(1));
+var map=Clazz.new_($I$(1,1));
 for (var i=0; i < sequences.length; i++) {
 var safename=C$.unique_name$I(i);
-map.put$TK$TV(safename, C$.SeqCharacterHash$jalview_datamodel_SequenceI(sequences[i]));
+map.put$O$O(safename, C$.SeqCharacterHash$jalview_datamodel_SequenceI(sequences[i]));
 if (write_names) {
 sequences[i].setName$S(safename);
 }}
@@ -76,12 +75,12 @@ return C$.deuniquify$java_util_Hashtable$jalview_datamodel_SequenceIA$Z(map, seq
 }, 1);
 
 Clazz.newMeth(C$, 'deuniquify$java_util_Hashtable$jalview_datamodel_SequenceIA$Z', function (map, sequences, quiet) {
-var matcher=Clazz.new_($I$(4).c$$jalview_datamodel_SequenceIA,[sequences]);
+var matcher=Clazz.new_($I$(4,1).c$$jalview_datamodel_SequenceIA,[sequences]);
 var msq=null;
 var keys=map.keys$();
-var unmatched=Clazz.new_($I$(2));
+var unmatched=Clazz.new_($I$(2,1));
 for (var i=0, j=sequences.length; i < j; i++) {
-unmatched.addElement$TE(sequences[i]);
+unmatched.addElement$O(sequences[i]);
 }
 while (keys.hasMoreElements$()){
 var key=keys.nextElement$();
@@ -106,7 +105,7 @@ Clazz.newMeth(C$, 'getNonEmptySequenceSet$jalview_datamodel_SequenceIA', functio
 var ungapped=Clazz.array(Boolean.TYPE, [sequences.length]);
 var msflen=0;
 for (var i=0, j=sequences.length; i < j; i++) {
-var tempseq=$I$(5).extractGaps$S$S($I$(6).GapChars, sequences[i].getSequenceAsString$());
+var tempseq=$I$(5,"extractGaps$S$S",[$I$(6).GapChars, sequences[i].getSequenceAsString$()]);
 if (tempseq.length$() == 0) {
 ungapped[i]=false;
 } else {
@@ -126,4 +125,4 @@ return mset;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

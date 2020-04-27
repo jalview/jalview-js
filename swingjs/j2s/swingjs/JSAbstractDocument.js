@@ -1,32 +1,20 @@
-(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'javajs.util.AU','java.util.HashMap','javax.swing.text.Element',['swingjs.JSAbstractDocument','.DefaultFilterBypass'],['swingjs.JSAbstractDocument','.JSElement'],'swingjs.JSDocumentEvent',['javax.swing.event.DocumentEvent','.EventType'],'javax.swing.event.DocumentListener','javax.swing.event.EventListenerList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSAbstractDocument", function(){
+(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'javajs.util.AU','java.util.HashMap','javax.swing.text.Element',['swingjs.JSAbstractDocument','.DefaultFilterBypass'],['swingjs.JSAbstractDocument','.JSElement'],'swingjs.JSDocumentEvent',['javax.swing.event.DocumentEvent','.EventType'],'javax.swing.event.DocumentListener','javax.swing.event.EventListenerList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSAbstractDocument", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'swingjs.api.JSMinimalAbstractDocument');
+C$.$classes$=[['DefaultFilterBypass',2],['JSElement',4]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.props=null;
-this.root=null;
-this.positions=null;
-this.listenerList=null;
-this.notifyingListeners=false;
-this.filterBypass=null;
-this.me=null;
-this.sb=null;
-this.tempChar=null;
-this.filter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['notifyingListeners'],'O',['props','java.util.Map','root','swingjs.JSAbstractDocument.JSElement','positions','java.util.Map','listenerList','javax.swing.event.EventListenerList','filterBypass','javax.swing.text.DocumentFilter.FilterBypass','me','swingjs.JSAbstractDocument','sb','javajs.util.SB','tempChar','char[]','filter','javax.swing.text.DocumentFilter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.me=this;
-this.props=Clazz.new_($I$(2));
+this.props=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'getRootElements$', function () {
@@ -55,7 +43,7 @@ if (pos >= offset + length) this.positions.get$O(i).pos-=length;
 
 Clazz.newMeth(C$, 'getFilterBypass', function () {
 if (this.filterBypass == null ) {
-this.filterBypass=Clazz.new_($I$(4), [this, null]);
+this.filterBypass=Clazz.new_($I$(4,1),[this, null]);
 }return this.filterBypass;
 }, p$1);
 
@@ -86,13 +74,13 @@ this.tempChar=null;
 }, p$1);
 
 Clazz.newMeth(C$, 'setLines', function () {
-this.root=Clazz.new_($I$(5), [this, null]);
+this.root=Clazz.new_($I$(5,1),[this, null]);
 var s=this.sb.toString();
 if (s.lastIndexOf$I("\n") != s.length$() - 1) s += "\n";
 var ilast=0;
 for (var i=0; i < s.length$(); i++) {
 if (s.charAt$I(i) != "\n") continue;
-var e=Clazz.new_($I$(5), [this, null]);
+var e=Clazz.new_($I$(5,1),[this, null]);
 e.start=ilast;
 e.end=i + 1;
 ilast=i + 1;
@@ -108,7 +96,7 @@ p$1.taint.apply(this, []);
 this.sb.insert$I$S(offs, str);
 this.fixPositions$I$I$Z(offs, str.length$(), true);
 if (str.indexOf$I("\n") >= 0) p$1.setLines.apply(this, []);
-var e=Clazz.new_($I$(6).c$$swingjs_JSAbstractDocument$I$I$javax_swing_event_DocumentEvent_EventType,[this, offs, str.length$(), $I$(7).INSERT]);
+var e=Clazz.new_([this, offs, str.length$(), $I$(7).INSERT],$I$(6,1).c$$swingjs_JSAbstractDocument$I$I$javax_swing_event_DocumentEvent_EventType);
 this.fireInsertUpdate$javax_swing_event_DocumentEvent(e);
 });
 
@@ -120,7 +108,7 @@ this.sb.replace$I$I$S(offs, offs + len, "");
 this.fixPositions$I$I$Z(offs, offs + len, false);
 if (str.indexOf$I("\n") >= 0) p$1.setLines.apply(this, []);
 if (len > 0) {
-var chng=Clazz.new_($I$(6).c$$swingjs_JSAbstractDocument$I$I$javax_swing_event_DocumentEvent_EventType,[this, offs, len, $I$(7).REMOVE]);
+var chng=Clazz.new_([this, offs, len, $I$(7).REMOVE],$I$(6,1).c$$swingjs_JSAbstractDocument$I$I$javax_swing_event_DocumentEvent_EventType);
 this.fireRemoveUpdate$javax_swing_event_DocumentEvent(chng);
 }});
 
@@ -174,12 +162,12 @@ if (this.notifyingListeners) throw Clazz.new_(Clazz.load('IllegalStateException'
 }, p$1);
 
 Clazz.newMeth(C$, 'addDocumentListener$javax_swing_event_DocumentListener', function (listener) {
-if (this.listenerList == null ) this.listenerList=Clazz.new_($I$(9));
-this.listenerList.add$Class$TT(Clazz.getClass($I$(8),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
+if (this.listenerList == null ) this.listenerList=Clazz.new_($I$(9,1));
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(8),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'removeDocumentListener$javax_swing_event_DocumentListener', function (listener) {
-if (this.listenerList != null ) this.listenerList.remove$Class$TT(Clazz.getClass($I$(8),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
+if (this.listenerList != null ) this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(8),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'addUndoableEditListener$javax_swing_event_UndoableEditListener', function (listener) {
@@ -193,7 +181,7 @@ return this.props.get$O(key);
 });
 
 Clazz.newMeth(C$, 'putProperty$O$O', function (key, value) {
-this.props.put$TK$TV(key, value);
+this.props.put$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'getAsynchronousLoadPriority$', function () {
@@ -208,15 +196,14 @@ Clazz.newMeth(C$, 'getDocumentFilter$', function () {
 return this.filter;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JSAbstractDocument, "DefaultFilterBypass", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSAbstractDocument, "DefaultFilterBypass", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.DocumentFilter','.FilterBypass']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getDocument$', function () {
 return this.this$0.me;
@@ -238,29 +225,19 @@ this.this$0.handleInsertString$I$S$javax_swing_text_AttributeSet.apply(this.this
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSAbstractDocument, "JSElement", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSAbstractDocument, "JSElement", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.text.Element');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.attributeSet=null;
-this.start=0;
-this.end=0;
-this.nchildren=0;
-this.children=null;
-this.lastIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['start','end','nchildren','lastIndex'],'O',['parent','javax.swing.text.Element','attributeSet','javax.swing.text.AttributeSet','children','swingjs.JSAbstractDocument.JSElement[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.children=null;
 this.nchildren=0;
 this.lastIndex=-1;
@@ -356,4 +333,4 @@ return "JSElement " + this.getStartOffset$() + "," + this.getEndOffset$() ;
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-27 13:56:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,67 +1,21 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},p$4={},I$=[[0,'swingjs.plaf.JSTableHeaderUI','javax.swing.SwingUtilities','java.awt.Cursor','java.awt.Rectangle','swingjs.api.js.DOMNode','swingjs.plaf.CellHolder',['swingjs.plaf.JSTableHeaderUI','.MouseInputHandler'],'javax.swing.CellRendererPane','javax.swing.LookAndFeel','Boolean','sun.swing.DefaultLookup','swingjs.plaf.LazyActionMap',['swingjs.plaf.JSTableHeaderUI','.Actions'],'java.awt.Point','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSTableHeaderUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},p$4={},I$=[[0,'swingjs.plaf.JSTableHeaderUI','javax.swing.SwingUtilities','java.awt.Cursor','java.awt.Rectangle','swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode','swingjs.plaf.CellHolder',['swingjs.plaf.JSTableHeaderUI','.MouseInputHandler'],'javax.swing.CellRendererPane','javax.swing.LookAndFeel','sun.swing.DefaultLookup','swingjs.plaf.LazyActionMap',['swingjs.plaf.JSTableHeaderUI','.Actions'],'java.awt.Point','swingjs.plaf.JSTableUI','java.awt.Dimension']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSTableHeaderUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSLightweightUI');
-C$.resizeCursor=null;
-C$.tmpRect=null;
-C$.cellBounds=null;
-C$.focusListener=null;
+C$.$classes$=[['MouseInputHandler',1],['Actions',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.resizeCursor=$I$(3).getPredefinedCursor$I(11);
-C$.tmpRect=Clazz.new_($I$(4));
-C$.cellBounds=Clazz.new_($I$(4));
-C$.focusListener=((P$.JSTableHeaderUI$1||
-(function(){var C$=Clazz.newClass(P$, "JSTableHeaderUI$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.FocusListener', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
-p$4.repaintHeader$O.apply(this, [e.getSource$()]);
-});
-
-Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
-p$4.repaintHeader$O.apply(this, [e.getSource$()]);
-});
-
-Clazz.newMeth(C$, 'repaintHeader$O', function (source) {
-if (Clazz.instanceOf(source, "javax.swing.table.JTableHeader")) {
-var th=source;
-var ui=th.getUI$();
-if (ui == null ) {
-return;
-}th.repaint$java_awt_Rectangle(th.getHeaderRect$I(p$2.getSelectedColumnIndex.apply(ui, [])));
-}}, p$4);
-})()
-), Clazz.new_(P$.JSTableHeaderUI$1.$init$, [this, null]));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.table=null;
-this.oldrc=0;
-this.oldrh=0;
-this.headdiv=null;
-this.working=false;
-this.tableHeader=null;
-this.rendererPane=null;
-this.mouseInputListener=null;
-this.rolloverColumn=0;
-this.selectedColumnIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.rolloverColumn=-1;
 this.selectedColumnIndex=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['working'],'I',['rolloverColumn','selectedColumnIndex'],'O',['table','javax.swing.JTable','headdiv','swingjs.api.js.DOMNode','tableHeader','javax.swing.table.JTableHeader','rendererPane','javax.swing.CellRendererPane','mouseInputListener','javax.swing.event.MouseInputListener']]
+,['O',['resizeCursor','java.awt.Cursor','tmpRect','java.awt.Rectangle','+cellBounds','focusListener','java.awt.event.FocusListener']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.isContainer=true;
 }, 1);
 
@@ -71,16 +25,11 @@ if (!this.working) this.isTainted=true;
 
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
 this.table=this.tableHeader.getTable$();
-var rc=this.table.getRowCount$();
-var rh=this.table.getRowHeight$();
-var rebuild=(rc != this.oldrc || rh != this.oldrh );
-this.oldrh=rh;
-this.oldrc=rc;
 var thh=this.tableHeader.getHeight$();
 var w=this.table.getWidth$();
 if (this.domNode == null ) {
-this.domNode=P$.JSComponentUI.newDOMObject$S$S$SA("div", this.id, []);
-}$I$(5).setStyles(this.domNode, ["width", w + "px", "height", thh + "px"]);
+this.domNode=$I$(5).newDOMObject$S$S$SA("div", this.id, []);
+}$I$(6).setStyles(this.domNode, ["width", w + "px", "height", thh + "px"]);
 return this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.domNode, this.c.getFont$());
 });
 
@@ -91,21 +40,21 @@ var cw=Clazz.array(Integer.TYPE, [ncols]);
 for (var col=0; col < ncols; col++) cw[col]=this.table.getColumnModel$().getColumn$I(col).getWidth$();
 
 var rid=this.id + "_tab_header";
-if (this.headdiv != null ) $I$(5).dispose(this.headdiv);
-this.headdiv=$I$(5).createElement("div", rid);
-$I$(5).setStyles(this.headdiv, ["height", thh + "px"]);
+if (this.headdiv != null ) $I$(6).dispose(this.headdiv);
+this.headdiv=$I$(6).createElement("div", rid);
+$I$(6).setStyles(this.headdiv, ["height", thh + "px"]);
 this.domNode.appendChild(this.headdiv);
 for (var col=0, tx=0; col < ncols; col++) {
-var td=$I$(6).createCellOuterNode$swingjs_plaf_JSComponentUI$I$I(this, -1, col);
-$I$(5).setStyles(td, ["width", cw[col] + "px", "height", thh + "px", "left", tx + "px", "top", "0px"]);
+var td=$I$(7).createCellOuterNode$swingjs_plaf_JSComponentUI$I$I(this, -1, col);
+$I$(6).setStyles(td, ["width", cw[col] + "px", "height", thh + "px", "left", tx + "px", "top", "0px"]);
 tx+=cw[col];
 this.headdiv.appendChild(td);
-$I$(6).updateCellNode$swingjs_api_js_DOMNode$java_awt_JSComponent$I$I(td, p$2.getHeaderComponent$I.apply(this, [col]), cw[col], thh);
+$I$(7,"updateCellNode$swingjs_api_js_DOMNode$java_awt_JSComponent$I$I",[td, p$2.getHeaderComponent$I.apply(this, [col]), cw[col], thh]);
 }
 });
 
 Clazz.newMeth(C$, 'createMouseInputListener$', function () {
-return Clazz.new_($I$(7), [this, null]);
+return Clazz.new_($I$(8,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'createUI$javax_swing_JComponent', function (h) {
@@ -114,7 +63,7 @@ return Clazz.new_(C$);
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
 this.tableHeader=c;
-this.rendererPane=Clazz.new_($I$(8));
+this.rendererPane=Clazz.new_($I$(9,1));
 this.tableHeader.add$java_awt_Component(this.rendererPane);
 this.installDefaults$();
 this.installListeners$();
@@ -122,8 +71,8 @@ this.installKeyboardActions$();
 });
 
 Clazz.newMeth(C$, 'installDefaults$', function () {
-$I$(9).installColorsAndFont$javax_swing_JComponent$S$S$S(this.tableHeader, "TableHeader.background", "TableHeader.foreground", "TableHeader.font");
-$I$(9).installProperty$javax_swing_JComponent$S$O(this.tableHeader, "opaque", $I$(10).TRUE);
+$I$(10).installColorsAndFont$javax_swing_JComponent$S$S$S(this.tableHeader, "TableHeader.background", "TableHeader.foreground", "TableHeader.font");
+$I$(10).installProperty$javax_swing_JComponent$S$O(this.tableHeader, "opaque", Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'installListeners$', function () {
@@ -136,7 +85,7 @@ this.tableHeader.addFocusListener$java_awt_event_FocusListener(C$.focusListener)
 Clazz.newMeth(C$, 'installKeyboardActions$', function () {
 var keyMap=$I$(11).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.tableHeader, this, "TableHeader.ancestorInputMap");
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.tableHeader, 1, keyMap);
-$I$(12).installLazyActionMap$javax_swing_JComponent$Class$S(this.tableHeader, Clazz.getClass(C$), "TableHeader.actionMap");
+$I$(12,"installLazyActionMap$javax_swing_JComponent$Class$S",[this.tableHeader, Clazz.getClass(C$), "TableHeader.actionMap"]);
 });
 
 Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (c) {
@@ -163,14 +112,14 @@ $I$(2).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(this.tabl
 });
 
 Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap', function (map) {
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["toggleSortOrder"]));
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["selectColumnToLeft"]));
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["selectColumnToRight"]));
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["moveColumnLeft"]));
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["moveColumnRight"]));
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["resizeLeft"]));
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["resizeRight"]));
-map.put$javax_swing_Action(Clazz.new_($I$(13).c$$S,["focusTable"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["toggleSortOrder"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["selectColumnToLeft"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["selectColumnToRight"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["moveColumnLeft"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["moveColumnRight"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["resizeLeft"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["resizeRight"]));
+map.put$javax_swing_Action(Clazz.new_($I$(13,1).c$$S,["focusTable"]));
 }, 1);
 
 Clazz.newMeth(C$, 'getRolloverColumn$', function () {
@@ -294,7 +243,7 @@ return;
 var ltr=this.tableHeader.getComponentOrientation$().isLeftToRight$();
 var clip=g.getClipBounds$();
 var left=clip.getLocation$();
-var right=Clazz.new_($I$(14).c$$I$I,[clip.x + clip.width - 1, clip.y]);
+var right=Clazz.new_($I$(14,1).c$$I$I,[clip.x + clip.width - 1, clip.y]);
 var cm=this.tableHeader.getColumnModel$();
 var cMin=this.tableHeader.columnAtPoint$java_awt_Point(ltr ? left : right);
 var cMax=this.tableHeader.columnAtPoint$java_awt_Point(ltr ? right : left);
@@ -333,9 +282,37 @@ draggedCellRect.x+=this.tableHeader.getDraggedDistance$();
 g.setColor$java_awt_Color(this.tableHeader.getBackground$());
 g.fillRect$I$I$I$I(draggedCellRect.x, draggedCellRect.y, draggedCellRect.width, draggedCellRect.height);
 p$2.paintCell$java_awt_Graphics$java_awt_Rectangle$I.apply(this, [g, draggedCellRect, draggedColumnIndex]);
-}this.rendererPane.removeAll$();
+}p$2.paintGrid$java_awt_Graphics$I$I.apply(this, [g, cMin, cMax]);
+this.rendererPane.removeAll$();
 this.working=false;
 });
+
+Clazz.newMeth(C$, 'paintGrid$java_awt_Graphics$I$I', function (g, cMin, cMax) {
+g.setColor$java_awt_Color(this.table.getGridColor$());
+this.table._getCellRect$I$I$Z$java_awt_Rectangle(0, cMin, true, $I$(15).minCell);
+this.table._getCellRect$I$I$Z$java_awt_Rectangle(0, cMax, true, $I$(15).maxCell);
+var damagedArea=$I$(15).minCell.union$java_awt_Rectangle($I$(15).maxCell);
+var tableHeight=p$2.getHeaderHeight.apply(this, []);
+if (this.table.getShowHorizontalLines$()) {
+g.drawLine$I$I$I$I(0, tableHeight - 1, damagedArea.width, tableHeight - 1);
+}if (this.table.getShowVerticalLines$()) {
+var cm=this.table.getColumnModel$();
+var x;
+if (this.table.getComponentOrientation$().isLeftToRight$()) {
+x=damagedArea.x;
+for (var column=cMin; column <= cMax; column++) {
+var w=cm.getColumn$I(column).getWidth$();
+x+=w;
+g.drawLine$I$I$I$I(x - 1, 0, x - 1, tableHeight - 1);
+}
+} else {
+x=damagedArea.x;
+for (var column=cMax; column >= cMin; column--) {
+var w=cm.getColumn$I(column).getWidth$();
+x+=w;
+g.drawLine$I$I$I$I(x - 1, 0, x - 1, tableHeight - 1);
+}
+}}}, p$2);
 
 Clazz.newMeth(C$, 'getHeaderComponent$I', function (columnIndex) {
 var aColumn=this.tableHeader.getColumnModel$().getColumn$I(columnIndex);
@@ -343,14 +320,14 @@ var renderer=aColumn.getHeaderRenderer$();
 if (renderer == null ) {
 renderer=this.tableHeader.getDefaultRenderer$();
 }var hasFocus=!this.tableHeader.isPaintingForPrint$() && (columnIndex == p$2.getSelectedColumnIndex.apply(this, [])) && this.tableHeader.hasFocus$()  ;
-var c=renderer.getTableCellRendererComponent$(this.tableHeader.getTable$(), aColumn.getHeaderValue$(), false, hasFocus, -1, columnIndex);
+var c=renderer.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(this.tableHeader.getTable$(), aColumn.getHeaderValue$(), false, hasFocus, -1, columnIndex);
 return c;
 }, p$2);
 
 Clazz.newMeth(C$, 'paintCell$java_awt_Graphics$java_awt_Rectangle$I', function (g, cellRect, columnIndex) {
-var component=p$2.getHeaderComponent$I.apply(this, [columnIndex]);
-(component.getUI$()).setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(component, cellRect.width, cellRect.height, null);
-this.rendererPane.paintComponent$java_awt_Graphics$java_awt_Component$java_awt_Container$I$I$I$I$Z(g, component, this.tableHeader, cellRect.x, cellRect.y, cellRect.width, cellRect.height, true);
+var c=p$2.getHeaderComponent$I.apply(this, [columnIndex]);
+c.秘getUI$().setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(c, cellRect.width, cellRect.height, null);
+this.rendererPane.paintComponent$java_awt_Graphics$java_awt_Component$java_awt_Container$I$I$I$I$Z(g, c, this.tableHeader, cellRect.x, cellRect.y, cellRect.width, cellRect.height, true);
 }, p$2);
 
 Clazz.newMeth(C$, 'viewIndexForColumn$javax_swing_table_TableColumn', function (aColumn) {
@@ -384,10 +361,9 @@ return height;
 }, p$2);
 
 Clazz.newMeth(C$, 'createHeaderSize$J', function (width) {
-var columnModel=this.tableHeader.getColumnModel$();
 if (width > 2147483647) {
 width=2147483647;
-}return Clazz.new_($I$(15).c$$I$I,[(width|0), p$2.getHeaderHeight.apply(this, [])]);
+}return Clazz.new_([(width|0), p$2.getHeaderHeight.apply(this, [])],$I$(16,1).c$$I$I);
 }, p$2);
 
 Clazz.newMeth(C$, 'getMinimumSize$javax_swing_JComponent', function (jc) {
@@ -423,23 +399,52 @@ return p$2.createHeaderSize$J.apply(this, [width]);
 Clazz.newMeth(C$, 'setHTMLElement$', function () {
 return this.setHTMLElementCUI$();
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.resizeCursor=$I$(3).getPredefinedCursor$I(11);
+C$.tmpRect=Clazz.new_($I$(4,1));
+C$.cellBounds=Clazz.new_($I$(4,1));
+C$.focusListener=((P$.JSTableHeaderUI$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JSTableHeaderUI$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.FocusListener', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
+p$4.repaintHeader$O.apply(this, [e.getSource$()]);
+});
+
+Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
+p$4.repaintHeader$O.apply(this, [e.getSource$()]);
+});
+
+Clazz.newMeth(C$, 'repaintHeader$O', function (source) {
+if (Clazz.instanceOf(source, "javax.swing.table.JTableHeader")) {
+var th=source;
+var ui=th.getUI$();
+if (ui == null ) {
+return;
+}th.repaint$java_awt_Rectangle(th.getHeaderRect$I(p$2.getSelectedColumnIndex.apply(ui, [])));
+}}, p$4);
+})()
+), Clazz.new_(P$.JSTableHeaderUI$1.$init$,[this, null]));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSTableHeaderUI, "MouseInputHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableHeaderUI, "MouseInputHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.MouseInputListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mouseXOffset=0;
-this.otherCursor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.otherCursor=$I$(1).resizeCursor;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mouseXOffset'],'O',['otherCursor','java.awt.Cursor']]]
 
 Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
 if (e.getClickCount$() % 2 == 1 && $I$(2).isLeftMouseButton$java_awt_event_MouseEvent(e) ) {
@@ -483,7 +488,7 @@ var columnModel=this.this$0.tableHeader.getColumnModel$();
 var index=this.this$0.tableHeader.columnAtPoint$java_awt_Point(p);
 if (index != -1) {
 var resizingColumn=p$1.getResizingColumn$java_awt_Point$I.apply(this, [p, index]);
-if (P$.JSTableHeaderUI.canResize$javax_swing_table_TableColumn$javax_swing_table_JTableHeader(resizingColumn, this.this$0.tableHeader)) {
+if ($I$(1).canResize$javax_swing_table_TableColumn$javax_swing_table_JTableHeader(resizingColumn, this.this$0.tableHeader)) {
 this.this$0.tableHeader.setResizingColumn$javax_swing_table_TableColumn(resizingColumn);
 if (this.this$0.tableHeader.getComponentOrientation$().isLeftToRight$()) {
 this.mouseXOffset=p.x - resizingColumn.getWidth$();
@@ -506,7 +511,7 @@ this.otherCursor=tmp;
 }, p$1);
 
 Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (e) {
-if (P$.JSTableHeaderUI.canResize$javax_swing_table_TableColumn$javax_swing_table_JTableHeader(p$1.getResizingColumn$java_awt_Point.apply(this, [e.getPoint$()]), this.this$0.tableHeader) != (this.this$0.tableHeader.getCursor$() === $I$(1).resizeCursor ) ) {
+if ($I$(1,"canResize$javax_swing_table_TableColumn$javax_swing_table_JTableHeader",[p$1.getResizingColumn$java_awt_Point.apply(this, [e.getPoint$()]), this.this$0.tableHeader]) != (this.this$0.tableHeader.getCursor$() === $I$(1).resizeCursor ) ) {
 p$1.swapCursor.apply(this, []);
 }p$2.updateRolloverColumn$java_awt_event_MouseEvent.apply(this.this$0, [e]);
 });
@@ -570,19 +575,17 @@ this.this$0.tableHeader.getColumnModel$().moveColumn$I$I(column, column);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTableHeaderUI, "Actions", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableHeaderUI, "Actions", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.swing.UIAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'isEnabled$O', function (sender) {
@@ -599,13 +602,13 @@ return th.getReorderingAllowed$() && p$3.maybeMoveColumn$Z$javax_swing_table_JTa
 } else if (key == "moveColumnRight") {
 return th.getReorderingAllowed$() && p$3.maybeMoveColumn$Z$javax_swing_table_JTableHeader$swingjs_plaf_JSTableHeaderUI$Z.apply(this, [false, th, ui, false]) ;
 } else if (key == "resizeLeft" || key == "resizeRight" ) {
-return P$.JSTableHeaderUI.canResize$javax_swing_table_TableColumn$javax_swing_table_JTableHeader(cm.getColumn$I(p$2.getSelectedColumnIndex.apply(ui, [])), th);
+return $I$(1,"canResize$javax_swing_table_TableColumn$javax_swing_table_JTableHeader",[cm.getColumn$I(p$2.getSelectedColumnIndex.apply(ui, [])), th]);
 } else if (key == "focusTable") {
 return (th.getTable$() != null );
 }}}return true;
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var th=e.getSource$();
 var ui=th.getUI$();
 if (ui == null ) {
@@ -677,4 +680,4 @@ newWidth=newWidth + (leftArrow ? 1 : -1);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

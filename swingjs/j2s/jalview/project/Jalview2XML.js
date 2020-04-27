@@ -1,41 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.project"),p$1={},I$=[[0,'jalview.util.Platform','java.util.HashMap','java.util.IdentityHashMap','java.util.ArrayList',['jalview.project.Jalview2XML','.SeqFref'],'java.io.FileOutputStream','java.util.jar.JarOutputStream','jalview.bin.Cache','jalview.gui.Desktop','java.util.Arrays','java.util.Hashtable','java.io.File','jalview.io.BackupFiles','jalview.xml.binding.jalview.ObjectFactory','jalview.xml.binding.jalview.VAMSAS','java.util.GregorianCalendar','javax.xml.datatype.DatatypeFactory','jalview.xml.binding.jalview.SequenceSet',['jalview.xml.binding.jalview.SequenceSet','.SequenceSetProperties'],'java.util.HashSet',['jalview.xml.binding.jalview.JalviewModel','.JSeq'],'jalview.xml.binding.jalview.Feature',['jalview.xml.binding.jalview.Feature','.OtherData'],['jalview.xml.binding.jalview.JalviewModel','.JSeq','.Pdbids'],['jalview.xml.binding.jalview.Pdbentry','.Property'],'jalview.xml.binding.jalview.AlcodonFrame',['jalview.xml.binding.jalview.AlcodonFrame','.AlcodMap'],['jalview.xml.binding.jalview.JalviewModel','.Tree'],['jalview.xml.binding.jalview.JalviewModel','.JGroup'],['jalview.xml.binding.jalview.JalviewModel','.Viewport'],'jalview.schemes.ColourSchemeProperty',['jalview.xml.binding.jalview.JalviewModel','.FeatureSettings'],'java.util.Vector',['jalview.xml.binding.jalview.JalviewModel','.FeatureSettings','.Setting'],'jalview.xml.binding.jalview.NoValueColour',['jalview.xml.binding.jalview.JalviewModel','.FeatureSettings','.Group'],['jalview.xml.binding.jalview.JalviewModel','.Viewport','.HiddenColumns'],'java.util.jar.JarEntry','java.io.PrintWriter','java.io.OutputStreamWriter','javax.xml.bind.JAXBContext','jalview.xml.binding.jalview.JalviewModel',['jalview.xml.binding.jalview.JalviewModel','.PcaViewer'],['jalview.math.RotatableMatrix','.Axis'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.SeqPointMin'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.SeqPointMax'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.SequencePoint'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.Axis'],'jalview.xml.binding.jalview.PcaDataType','jalview.xml.binding.jalview.DoubleMatrix','jalview.xml.binding.jalview.DoubleVector','jalview.math.Matrix',['jalview.xml.binding.jalview.JalviewModel','.JSeq','.RnaViewer'],['jalview.xml.binding.jalview.JalviewModel','.JSeq','.RnaViewer','.SecondaryStructure'],'java.io.DataInputStream','java.io.FileInputStream','java.io.DataOutputStream',['jalview.xml.binding.jalview.JalviewModel','.JSeq','.Pdbids','.StructureState'],'jalview.xml.binding.jalview.AnnotationColourScheme','jalview.xml.binding.jalview.Annotation',['jalview.xml.binding.jalview.Annotation','.ThresholdLine'],['jalview.xml.binding.jalview.Annotation','.Property'],'jalview.xml.binding.jalview.AnnotationElement','java.awt.Color',['jalview.xml.binding.jalview.JalviewModel','.Viewport','.CalcIdParam'],'jalview.ws.jws2.Jws2Discoverer','jalview.ws.jws2.dm.AAConSettings','Error','jalview.util.MessageManager','jalview.xml.binding.jalview.Sequence',['jalview.xml.binding.jalview.Sequence','.DBRef'],'jalview.xml.binding.jalview.Mapping',['jalview.xml.binding.jalview.MapListType','.MapListFrom'],['jalview.xml.binding.jalview.MapListType','.MapListTo'],'java.math.BigInteger',['jalview.xml.binding.jalview.JalviewModel','.UserColours'],'jalview.xml.binding.jalview.JalviewUserColours',['jalview.xml.binding.jalview.JalviewUserColours','.Colour'],'jalview.schemes.ResidueProperties','jalview.util.Format','jalview.schemes.UserColourScheme','javax.swing.SwingUtilities','java.net.URL','java.util.jar.JarInputStream','java.io.ByteArrayInputStream','javax.xml.stream.XMLInputFactory','jalview.structure.StructureSelectionManager','jalview.gui.SplitFrame','jalview.gui.JvOptionPane','java.io.BufferedReader','java.io.InputStreamReader','jalview.datamodel.Sequence','jalview.datamodel.SequenceI','jalview.datamodel.Alignment','jalview.datamodel.SequenceFeature','jalview.datamodel.PDBEntry',['jalview.datamodel.PDBEntry','.Type'],'jalview.datamodel.AlignedCodonFrame','jalview.datamodel.Annotation','jalview.datamodel.AlignmentAnnotation','jalview.datamodel.GraphLine',['jalview.project.Jalview2XML','.JvAnnotRow'],'jalview.datamodel.SequenceGroup','jalview.analysis.Conservation','jalview.ext.varna.RnaModel','jalview.datamodel.RnaViewerModel','jalview.gui.AppVarna','jalview.io.NewickFile','java.awt.Rectangle','java.awt.Font','java.util.LinkedHashMap','jalview.datamodel.StructureViewerModel',['jalview.datamodel.StructureViewerModel','.StructureData'],['jalview.gui.StructureViewer','.ViewerType'],'jalview.gui.ChimeraViewFrame','StringBuilder','jalview.gui.StructureViewer','jalview.gui.OOMWarning','jalview.io.DataSourceType','Thread','jalview.util.StringUtils','jalview.gui.AlignFrame','jalview.io.FileFormat','jalview.gui.PaintRefresher','jalview.viewmodel.seqfeatures.FeaturesDisplayed','jalview.schemes.FeatureColour','jalview.viewmodel.seqfeatures.FeatureRendererSettings','jalview.schemes.AnnotationColourGradient','jalview.util.QuickSort','jalview.analysis.AlignSeq','jalview.util.Comparison','jalview.datamodel.DBRefEntry','jalview.datamodel.Mapping','jalview.analysis.scoremodels.SimilarityParams','jalview.gui.PCAPanel','jalview.analysis.scoremodels.ScoreModels','jalview.analysis.PCA','jalview.datamodel.Point','jalview.datamodel.SequencePoint','jalview.xml.binding.jalview.ThresholdType','jalview.xml.binding.jalview.FeatureMatcherSet',['jalview.xml.binding.jalview.FeatureMatcherSet','.CompoundMatcher'],'java.util.Collections','jalview.xml.binding.jalview.FeatureMatcher','jalview.xml.binding.jalview.FilterBy','jalview.datamodel.features.FeatureMatcherSet','jalview.util.matcher.Condition','jalview.datamodel.features.FeatureMatcher']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Jalview2XML", function(){
+(function(){var P$=Clazz.newPackage("jalview.project"),p$1={},I$=[[0,'jalview.util.Platform','java.util.HashMap','java.util.IdentityHashMap','java.util.ArrayList',['jalview.project.Jalview2XML','.SeqFref'],'java.io.FileOutputStream','java.util.jar.JarOutputStream','jalview.bin.Cache','jalview.gui.Desktop','java.util.Arrays','java.util.Hashtable','java.io.File','jalview.io.BackupFiles','jalview.xml.binding.jalview.ObjectFactory','jalview.xml.binding.jalview.VAMSAS','java.util.GregorianCalendar','javax.xml.datatype.DatatypeFactory','jalview.xml.binding.jalview.SequenceSet',['jalview.xml.binding.jalview.SequenceSet','.SequenceSetProperties'],'java.util.HashSet',['jalview.xml.binding.jalview.JalviewModel','.JSeq'],'jalview.xml.binding.jalview.Feature',['jalview.xml.binding.jalview.Feature','.OtherData'],['jalview.xml.binding.jalview.JalviewModel','.JSeq','.Pdbids'],['jalview.xml.binding.jalview.Pdbentry','.Property'],'jalview.xml.binding.jalview.AlcodonFrame',['jalview.xml.binding.jalview.AlcodonFrame','.AlcodMap'],['jalview.xml.binding.jalview.JalviewModel','.Tree'],['jalview.xml.binding.jalview.JalviewModel','.JGroup'],['jalview.xml.binding.jalview.JalviewModel','.Viewport'],'jalview.schemes.ColourSchemeProperty',['jalview.xml.binding.jalview.JalviewModel','.FeatureSettings'],'java.util.Vector',['jalview.xml.binding.jalview.JalviewModel','.FeatureSettings','.Setting'],'jalview.xml.binding.jalview.NoValueColour',['jalview.xml.binding.jalview.JalviewModel','.FeatureSettings','.Group'],['jalview.xml.binding.jalview.JalviewModel','.Viewport','.HiddenColumns'],'java.util.jar.JarEntry','java.io.PrintWriter','java.io.OutputStreamWriter','javax.xml.bind.JAXBContext','jalview.xml.binding.jalview.JalviewModel',['jalview.xml.binding.jalview.JalviewModel','.PcaViewer'],['jalview.math.RotatableMatrix','.Axis'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.SeqPointMin'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.SeqPointMax'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.SequencePoint'],['jalview.xml.binding.jalview.JalviewModel','.PcaViewer','.Axis'],'jalview.xml.binding.jalview.PcaDataType','jalview.xml.binding.jalview.DoubleMatrix','jalview.xml.binding.jalview.DoubleVector','jalview.math.Matrix',['jalview.xml.binding.jalview.JalviewModel','.JSeq','.RnaViewer'],['jalview.xml.binding.jalview.JalviewModel','.JSeq','.RnaViewer','.SecondaryStructure'],'java.io.DataInputStream','java.io.FileInputStream','java.io.DataOutputStream',['jalview.xml.binding.jalview.JalviewModel','.JSeq','.Pdbids','.StructureState'],'jalview.xml.binding.jalview.AnnotationColourScheme','jalview.xml.binding.jalview.Annotation',['jalview.xml.binding.jalview.Annotation','.ThresholdLine'],['jalview.xml.binding.jalview.Annotation','.Property'],'jalview.xml.binding.jalview.AnnotationElement','java.awt.Color',['jalview.xml.binding.jalview.JalviewModel','.Viewport','.CalcIdParam'],'jalview.ws.jws2.Jws2Discoverer','jalview.ws.jws2.dm.AAConSettings','Error','jalview.util.MessageManager','jalview.xml.binding.jalview.Sequence',['jalview.xml.binding.jalview.Sequence','.DBRef'],'jalview.xml.binding.jalview.Mapping',['jalview.xml.binding.jalview.MapListType','.MapListFrom'],['jalview.xml.binding.jalview.MapListType','.MapListTo'],'java.math.BigInteger',['jalview.xml.binding.jalview.JalviewModel','.UserColours'],'jalview.xml.binding.jalview.JalviewUserColours',['jalview.xml.binding.jalview.JalviewUserColours','.Colour'],'jalview.schemes.ResidueProperties','jalview.util.Format','jalview.schemes.UserColourScheme','javax.swing.SwingUtilities','java.net.URL','java.util.jar.JarInputStream','java.io.ByteArrayInputStream','javax.xml.stream.XMLInputFactory','jalview.structure.StructureSelectionManager','jalview.gui.SplitFrame','jalview.gui.JvOptionPane','java.io.BufferedReader','java.io.InputStreamReader','jalview.datamodel.Sequence','jalview.datamodel.SequenceI','jalview.datamodel.Alignment','jalview.datamodel.SequenceFeature','jalview.datamodel.PDBEntry',['jalview.datamodel.PDBEntry','.Type'],'jalview.datamodel.AlignedCodonFrame','jalview.datamodel.Annotation','jalview.datamodel.AlignmentAnnotation','jalview.datamodel.GraphLine',['jalview.project.Jalview2XML','.JvAnnotRow'],'jalview.datamodel.SequenceGroup','jalview.analysis.Conservation','jalview.ext.varna.RnaModel','jalview.datamodel.RnaViewerModel','jalview.gui.AppVarna','jalview.io.NewickFile','java.awt.Rectangle','java.awt.Font','java.util.LinkedHashMap','jalview.datamodel.StructureViewerModel',['jalview.datamodel.StructureViewerModel','.StructureData'],['jalview.gui.StructureViewer','.ViewerType'],'jalview.gui.ChimeraViewFrame','StringBuilder','jalview.gui.StructureViewer','jalview.gui.OOMWarning','jalview.io.DataSourceType','Thread','jalview.util.StringUtils','jalview.gui.AlignFrame','jalview.io.FileFormat','jalview.gui.PaintRefresher','jalview.viewmodel.seqfeatures.FeaturesDisplayed','jalview.schemes.FeatureColour','Boolean','jalview.viewmodel.seqfeatures.FeatureRendererSettings','jalview.schemes.AnnotationColourGradient','jalview.util.QuickSort','jalview.analysis.AlignSeq','jalview.util.Comparison','jalview.datamodel.GeneLocus','jalview.datamodel.DBRefEntry','jalview.datamodel.Mapping','jalview.analysis.scoremodels.SimilarityParams','jalview.gui.PCAPanel','jalview.analysis.scoremodels.ScoreModels','jalview.analysis.PCA','jalview.datamodel.Point','jalview.datamodel.SequencePoint','jalview.xml.binding.jalview.ThresholdType','jalview.xml.binding.jalview.FeatureMatcherSet',['jalview.xml.binding.jalview.FeatureMatcherSet','.CompoundMatcher'],'java.util.Collections','jalview.xml.binding.jalview.FeatureMatcher','jalview.xml.binding.jalview.FilterBy','jalview.datamodel.features.FeatureMatcherSet','jalview.util.matcher.Condition','jalview.datamodel.features.FeatureMatcher']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Jalview2XML", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['SeqFref',1024],['JvAnnotRow',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-$I$(1).addJ2SBinaryType$S(".jvp?");
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.counter=0;
-this.seqsToIds=null;
-this.seqRefIds=null;
-this.incompleteSeqs=null;
-this.frefedSequence=null;
-this.raiseGUI=false;
-this.splitFrameCandidates=null;
-this.rnaSessions=null;
-this.viewportsAdded=null;
-this.annotationIds=null;
-this.uniqueSetSuffix=null;
-this.pdbfiles=null;
-this.jv2vobj=null;
-this.vobj2jv=null;
-this.errorMessage=null;
-this.attemptversion1parse=false;
-this.alreadyLoadedPDB=null;
-this.updateLocalViews=false;
-this.newStructureViewers=null;
-this.skipList=null;
-this.seqToDataset=null;
-this.datasetIds=null;
-this.dataset2Ids=null;
-this.jvids2vobj=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.counter=0;
@@ -44,23 +13,25 @@ this.seqRefIds=null;
 this.incompleteSeqs=null;
 this.frefedSequence=null;
 this.raiseGUI=true;
-this.splitFrameCandidates=Clazz.new_($I$(2));
-this.rnaSessions=Clazz.new_($I$(2));
-this.viewportsAdded=Clazz.new_($I$(2));
-this.annotationIds=Clazz.new_($I$(2));
+this.splitFrameCandidates=Clazz.new_($I$(2,1));
+this.rnaSessions=Clazz.new_($I$(2,1));
+this.viewportsAdded=Clazz.new_($I$(2,1));
+this.annotationIds=Clazz.new_($I$(2,1));
 this.uniqueSetSuffix="";
 this.pdbfiles=null;
 this.jv2vobj=null;
 this.errorMessage=null;
 this.attemptversion1parse=false;
-this.alreadyLoadedPDB=Clazz.new_($I$(2));
+this.alreadyLoadedPDB=Clazz.new_($I$(2,1));
 this.updateLocalViews=false;
 this.newStructureViewers=null;
 this.skipList=null;
-this.seqToDataset=Clazz.new_($I$(2));
+this.seqToDataset=Clazz.new_($I$(2,1));
 this.datasetIds=null;
 this.dataset2Ids=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['raiseGUI','attemptversion1parse','updateLocalViews'],'I',['counter'],'S',['uniqueSetSuffix','errorMessage'],'O',['seqsToIds','java.util.IdentityHashMap','seqRefIds','java.util.Map','+incompleteSeqs','frefedSequence','java.util.List','splitFrameCandidates','java.util.Map','+rnaSessions','+viewportsAdded','+annotationIds','pdbfiles','java.util.List','jv2vobj','java.util.IdentityHashMap','vobj2jv','java.util.Hashtable','alreadyLoadedPDB','java.util.Map','newStructureViewers','java.util.Vector','skipList','java.util.Hashtable','seqToDataset','java.util.HashMap','datasetIds','java.util.Hashtable','dataset2Ids','java.util.IdentityHashMap','jvids2vobj','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'safeBoolean$Boolean', function (b) {
 return b == null  ? false : b.booleanValue$();
@@ -82,45 +53,41 @@ return this.seqsToIds.get$O(sq);
 } else {
 var key="sq" + (this.seqsToIds.size$() + 1);
 key=p$1.makeHashCode$O$S.apply(this, [sq, key]);
-this.seqsToIds.put$TK$TV(sq, key);
+this.seqsToIds.put$O$O(sq, key);
 return key;
 }});
 
 Clazz.newMeth(C$, 'initSeqRefs$', function () {
 if (this.seqsToIds == null ) {
-this.seqsToIds=Clazz.new_($I$(3));
+this.seqsToIds=Clazz.new_($I$(3,1));
 }if (this.seqRefIds == null ) {
-this.seqRefIds=Clazz.new_($I$(2));
+this.seqRefIds=Clazz.new_($I$(2,1));
 }if (this.incompleteSeqs == null ) {
-this.incompleteSeqs=Clazz.new_($I$(2));
+this.incompleteSeqs=Clazz.new_($I$(2,1));
 }if (this.frefedSequence == null ) {
-this.frefedSequence=Clazz.new_($I$(4));
+this.frefedSequence=Clazz.new_($I$(4,1));
 }});
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (raiseGUI) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.raiseGUI=raiseGUI;
 }, 1);
 
 Clazz.newMeth(C$, 'newMappingRef$S$jalview_datamodel_Mapping', function (sref, _jmap) {
 var fref=((P$.Jalview2XML$1||
-(function(){var C$=Clazz.newClass(P$, "Jalview2XML$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['jalview.project.Jalview2XML','.SeqFref']), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview2XML$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['jalview.project.Jalview2XML','.SeqFref']), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jmap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.jmap=this.$finals$._jmap;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['jmap','jalview.datamodel.Mapping']]]
 
 Clazz.newMeth(C$, 'resolve$', function () {
 var seq=this.getSrefDatasetSeq$();
@@ -130,27 +97,22 @@ return false;
 return true;
 });
 })()
-), Clazz.new_($I$(5).c$$S$S, [this, {_jmap: _jmap}, sref, "Mapping"],P$.Jalview2XML$1));
+), Clazz.new_($I$(5,1).c$$S$S,[this, {_jmap:_jmap}, sref, "Mapping"],P$.Jalview2XML$1));
 return fref;
 });
 
 Clazz.newMeth(C$, 'newAlcodMapRef$S$jalview_datamodel_AlignedCodonFrame$jalview_datamodel_Mapping', function (sref, _cf, _jmap) {
 var fref=((P$.Jalview2XML$2||
-(function(){var C$=Clazz.newClass(P$, "Jalview2XML$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['jalview.project.Jalview2XML','.SeqFref']), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview2XML$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['jalview.project.Jalview2XML','.SeqFref']), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cf=null;
-this.mp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.cf=this.$finals$._cf;
 this.mp=this.$finals$._jmap;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['cf','jalview.datamodel.AlignedCodonFrame','mp','jalview.datamodel.Mapping']]]
 
 Clazz.newMeth(C$, 'isResolvable$', function () {
 return C$.superclazz.prototype.isResolvable$.apply(this, []) && this.mp.getTo$() != null  ;
@@ -164,7 +126,7 @@ return false;
 return true;
 });
 })()
-), Clazz.new_($I$(5).c$$S$S, [this, {_cf: _cf, _jmap: _jmap}, sref, "Codon Frame"],P$.Jalview2XML$2));
+), Clazz.new_($I$(5,1).c$$S$S,[this, {_jmap:_jmap,_cf:_cf}, sref, "Codon Frame"],P$.Jalview2XML$2));
 return fref;
 });
 
@@ -210,8 +172,8 @@ System.err.println$S("Too many to report. Skipping output of incomplete sequence
 Clazz.newMeth(C$, 'saveState$java_io_File', function (statefile) {
 var fos=null;
 try {
-fos=Clazz.new_($I$(6).c$$java_io_File,[statefile]);
-var jout=Clazz.new_($I$(7).c$$java_io_OutputStream,[fos]);
+fos=Clazz.new_($I$(6,1).c$$java_io_File,[statefile]);
+var jout=Clazz.new_($I$(7,1).c$$java_io_OutputStream,[fos]);
 this.saveState$java_util_jar_JarOutputStream(jout);
 fos.close$();
 } catch (e) {
@@ -243,16 +205,16 @@ Clazz.newMeth(C$, 'saveState$java_util_jar_JarOutputStream', function (jout) {
 var frames=$I$(9).getAlignFrames$();
 if (frames == null ) {
 return;
-}p$1.saveAllFrames$java_util_List$java_util_jar_JarOutputStream.apply(this, [$I$(10).asList$TTA(frames), jout]);
+}p$1.saveAllFrames$java_util_List$java_util_jar_JarOutputStream.apply(this, [$I$(10).asList$OA(frames), jout]);
 });
 
 Clazz.newMeth(C$, 'saveAllFrames$java_util_List$java_util_jar_JarOutputStream', function (frames, jout) {
-var dsses=Clazz.new_($I$(11));
+var dsses=Clazz.new_($I$(11,1));
 this.rnaSessions.clear$();
 this.splitFrameCandidates.clear$();
 try {
-var shortNames=Clazz.new_($I$(4));
-var viewIds=Clazz.new_($I$(4));
+var shortNames=Clazz.new_($I$(4,1));
+var viewIds=Clazz.new_($I$(4,1));
 for (var i=frames.size$() - 1; i > -1; i--) {
 var af=frames.get$I(i);
 if (this.skipList != null  && this.skipList.containsKey$O(af.getViewport$().getSequenceSetId$()) ) {
@@ -267,7 +229,7 @@ fileName=fileName + ".xml";
 }this.saveState$jalview_gui_AlignmentPanel$S$java_util_jar_JarOutputStream$java_util_List(apanel, fileName, jout, viewIds);
 var dssid=p$1.getDatasetIdRef$jalview_datamodel_AlignmentI.apply(this, [af.getViewport$().getAlignment$().getDataset$()]);
 if (!dsses.containsKey$O(dssid)) {
-dsses.put$TK$TV(dssid, af);
+dsses.put$O$O(dssid, af);
 }}
 }
 p$1.writeDatasetFor$java_util_Hashtable$S$java_util_jar_JarOutputStream.apply(this, [dsses, "" + jout.hashCode$() + " " + this.uniqueSetSuffix , jout]);
@@ -302,7 +264,7 @@ shortName=shortName.substring$I$I(0, shortName.lastIndexOf$S("_"));
 }shortName=shortName.concat$S("_" + count);
 count++;
 }
-namesUsed.add$TE(shortName);
+namesUsed.add$O(shortName);
 if (!shortName.endsWith$S(".xml")) {
 shortName=shortName + ".xml";
 }return shortName;
@@ -311,14 +273,14 @@ shortName=shortName + ".xml";
 Clazz.newMeth(C$, 'saveAlignment$jalview_gui_AlignFrame$S$S', function (af, jarFile, fileName) {
 try {
 var doBackup=$I$(13).getEnabled$();
-var backupfiles=doBackup ? Clazz.new_($I$(13).c$$S,[jarFile]) : null;
-var fos=Clazz.new_($I$(6).c$$S,[doBackup ? backupfiles.getTempFilePath$() : jarFile]);
-var jout=Clazz.new_($I$(7).c$$java_io_OutputStream,[fos]);
-var frames=Clazz.new_($I$(4));
+var backupfiles=doBackup ? Clazz.new_($I$(13,1).c$$S,[jarFile]) : null;
+var fos=Clazz.new_([doBackup ? backupfiles.getTempFilePath$() : jarFile],$I$(6,1).c$$S);
+var jout=Clazz.new_($I$(7,1).c$$java_io_OutputStream,[fos]);
+var frames=Clazz.new_($I$(4,1));
 if (af.getViewport$().getCodingComplement$() != null ) {
 frames=(af.getSplitViewContainer$()).getAlignFrames$();
 } else {
-frames.add$TE(af);
+frames.add$O(af);
 }p$1.saveAllFrames$java_util_List$java_util_jar_JarOutputStream.apply(this, [frames, jout]);
 try {
 jout.flush$();
@@ -361,16 +323,16 @@ return this.saveState$jalview_gui_AlignmentPanel$S$Z$java_util_jar_JarOutputStre
 
 Clazz.newMeth(C$, 'saveState$jalview_gui_AlignmentPanel$S$Z$java_util_jar_JarOutputStream$java_util_List', function (ap, fileName, storeDS, jout, viewIds) {
 if (viewIds == null ) {
-viewIds=Clazz.new_($I$(4));
+viewIds=Clazz.new_($I$(4,1));
 }this.initSeqRefs$();
-var userColours=Clazz.new_($I$(4));
+var userColours=Clazz.new_($I$(4,1));
 var av=ap.av;
 var vpRanges=av.getRanges$();
-var objectFactory=Clazz.new_($I$(14));
+var objectFactory=Clazz.new_($I$(14,1));
 var object=objectFactory.createJalviewModel$();
-object.setVamsasModel$jalview_xml_binding_jalview_VAMSAS(Clazz.new_($I$(15)));
+object.setVamsasModel$jalview_xml_binding_jalview_VAMSAS(Clazz.new_($I$(15,1)));
 try {
-var c=Clazz.new_($I$(16));
+var c=Clazz.new_($I$(16,1));
 var datatypeFactory=$I$(17).newInstance$();
 var now=datatypeFactory.newXMLGregorianCalendar$java_util_GregorianCalendar(c);
 object.setCreationDate$javax_xml_datatype_XMLGregorianCalendar(now);
@@ -386,7 +348,7 @@ var rjal=av.getAlignment$();
 var jal=rjal;
 if (av.hasHiddenRows$()) {
 rjal=jal.getHiddenSequences$().getFullAlignment$();
-}var vamsasSet=Clazz.new_($I$(18));
+}var vamsasSet=Clazz.new_($I$(18,1));
 var vamsasSeq;
 vamsasSet.setGapChar$S(jal.getGapCharacter$() + "");
 if (jal.getDataset$() != null ) {
@@ -398,14 +360,14 @@ rjal=jal;
 var en=jal.getProperties$().keys$();
 while (en.hasMoreElements$()){
 var key=en.nextElement$().toString();
-var ssp=Clazz.new_($I$(19));
+var ssp=Clazz.new_($I$(19,1));
 ssp.setKey$S(key);
 ssp.setValue$S(jal.getProperties$().get$O(key).toString());
-vamsasSet.getSequenceSetProperties$().add$TE(ssp);
+vamsasSet.getSequenceSetProperties$().add$O(ssp);
 }
 }var jseq;
-var calcIdSet=Clazz.new_($I$(20));
-var vamsasSetIds=Clazz.new_($I$(2));
+var calcIdSet=Clazz.new_($I$(20,1));
+var vamsasSetIds=Clazz.new_($I$(2,1));
 for (var jds, $jds = rjal.getSequences$().iterator$(); $jds.hasNext$()&&((jds=($jds.next$())),1);) {
 var jdatasq=jds.getDatasetSequence$() == null  ? jds : jds.getDatasetSequence$();
 var id=this.seqHash$jalview_datamodel_SequenceI(jds);
@@ -413,10 +375,10 @@ if (vamsasSetIds.get$O(id) == null ) {
 if (this.seqRefIds.get$O(id) != null  && !storeDS ) {
 } else {
 vamsasSeq=p$1.createVamsasSequence$S$jalview_datamodel_SequenceI.apply(this, [id, jds]);
-vamsasSet.getSequence$().add$TE(vamsasSeq);
-vamsasSetIds.put$TK$TV(id, vamsasSeq);
-this.seqRefIds.put$TK$TV(id, jds);
-}}jseq=Clazz.new_($I$(21));
+vamsasSet.getSequence$().add$O(vamsasSeq);
+vamsasSetIds.put$O$O(id, vamsasSeq);
+this.seqRefIds.put$O$O(id, jds);
+}}jseq=Clazz.new_($I$(21,1));
 jseq.setStart$I(jds.getStart$());
 jseq.setEnd$I(jds.getEnd$());
 jseq.setColour$Integer(new Integer(av.getSequenceColour$jalview_datamodel_SequenceI(jds).getRGB$()));
@@ -428,13 +390,13 @@ if (av.isHiddenRepSequence$jalview_datamodel_SequenceI(jds)) {
 var reps=av.getRepresentedSequences$jalview_datamodel_SequenceI(jds).getSequencesInOrder$jalview_datamodel_AlignmentI(rjal);
 for (var h=0; h < reps.length; h++) {
 if (reps[h] !== jds ) {
-jseq.getHiddenSequences$().add$TE(new Integer(rjal.findIndex$jalview_datamodel_SequenceI(reps[h])));
+jseq.getHiddenSequences$().add$O(new Integer(rjal.findIndex$jalview_datamodel_SequenceI(reps[h])));
 }}
 }}if (jal.hasSeqrep$()) {
 jseq.setViewreference$Boolean(new Boolean(jds === jal.getSeqrep$() ));
 }}var sfs=jds.getSequenceFeatures$();
 for (var sf, $sf = sfs.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
-var features=Clazz.new_($I$(22));
+var features=Clazz.new_($I$(22,1));
 features.setBegin$I(sf.getBegin$());
 features.setEnd$I(sf.getEnd$());
 features.setDescription$S(sf.getDescription$());
@@ -443,10 +405,10 @@ features.setFeatureGroup$S(sf.getFeatureGroup$());
 features.setScore$Float(new Float(sf.getScore$()));
 if (sf.links != null ) {
 for (var l=0; l < sf.links.size$(); l++) {
-var keyValue=Clazz.new_($I$(23));
+var keyValue=Clazz.new_($I$(23,1));
 keyValue.setKey$S("LINK_" + l);
 keyValue.setValue$S(sf.links.elementAt$I(l).toString());
-features.getOtherData$().add$TE(keyValue);
+features.getOtherData$().add$O(keyValue);
 }
 }if (sf.otherDetails != null ) {
 for (var entry, $entry = sf.otherDetails.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
@@ -454,24 +416,24 @@ var key=entry.getKey$();
 var value=entry.getValue$();
 if (Clazz.instanceOf(value, "java.util.Map")) {
 for (var subAttribute, $subAttribute = (value).entrySet$().iterator$(); $subAttribute.hasNext$()&&((subAttribute=($subAttribute.next$())),1);) {
-var otherData=Clazz.new_($I$(23));
+var otherData=Clazz.new_($I$(23,1));
 otherData.setKey$S(key);
 otherData.setKey2$S(subAttribute.getKey$());
 otherData.setValue$S(subAttribute.getValue$().toString());
-features.getOtherData$().add$TE(otherData);
+features.getOtherData$().add$O(otherData);
 }
 } else {
-var otherData=Clazz.new_($I$(23));
+var otherData=Clazz.new_($I$(23,1));
 otherData.setKey$S(key);
 otherData.setValue$S(value.toString());
-features.getOtherData$().add$TE(otherData);
+features.getOtherData$().add$O(otherData);
 }}
-}jseq.getFeatures$().add$TE(features);
+}jseq.getFeatures$().add$O(features);
 }
 if (jdatasq.getAllPDBEntries$() != null ) {
 var en=jdatasq.getAllPDBEntries$().elements$();
 while (en.hasMoreElements$()){
-var pdb=Clazz.new_($I$(24));
+var pdb=Clazz.new_($I$(24,1));
 var entry=en.nextElement$();
 var pdbId=entry.getId$();
 pdb.setId$S(pdbId);
@@ -484,7 +446,7 @@ var viewFrame=frames[f];
 matchedFile=this.saveStructureState$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceI$jalview_xml_binding_jalview_JalviewModel_JSeq_Pdbids$jalview_datamodel_PDBEntry$java_util_List$S$jalview_gui_StructureViewerBase(ap, jds, pdb, entry, viewIds, matchedFile, viewFrame);
 var viewId=viewFrame.getViewId$();
 if (!storeDS && !viewIds.contains$O(viewId) ) {
-viewIds.add$TE(viewId);
+viewIds.add$O(viewId);
 try {
 var viewerState=viewFrame.getStateInfo$();
 this.writeJarEntry$java_util_jar_JarOutputStream$S$BA(jout, this.getViewerJarEntryName$S(viewId), viewerState.getBytes$());
@@ -501,43 +463,43 @@ if (entry.getFile$() != null ) {
 matchedFile=entry.getFile$();
 }pdb.setFile$S(matchedFile);
 if (this.pdbfiles == null ) {
-this.pdbfiles=Clazz.new_($I$(4));
+this.pdbfiles=Clazz.new_($I$(4,1));
 }if (!this.pdbfiles.contains$O(pdbId)) {
-this.pdbfiles.add$TE(pdbId);
+this.pdbfiles.add$O(pdbId);
 this.copyFileToJar$java_util_jar_JarOutputStream$S$S(jout, matchedFile, pdbId);
 }}var props=entry.getProperties$();
 if (props.hasMoreElements$()) {
 while (props.hasMoreElements$()){
-var prop=Clazz.new_($I$(25));
+var prop=Clazz.new_($I$(25,1));
 var key=props.nextElement$();
 prop.setName$S(key);
 prop.setValue$S(entry.getProperty$S(key).toString());
-pdb.getProperty$().add$TE(prop);
+pdb.getProperty$().add$O(prop);
 }
-}jseq.getPdbids$().add$TE(pdb);
+}jseq.getPdbids$().add$O(pdb);
 }
 }this.saveRnaViewers$java_util_jar_JarOutputStream$jalview_xml_binding_jalview_JalviewModel_JSeq$jalview_datamodel_SequenceI$java_util_List$jalview_gui_AlignmentPanel$Z(jout, jseq, jds, viewIds, ap, storeDS);
-object.getJSeq$().add$TE(jseq);
+object.getJSeq$().add$O(jseq);
 }
 if (!storeDS && av.hasHiddenRows$() ) {
 jal=av.getAlignment$();
 }if (storeDS && jal.getCodonFrames$() != null  ) {
 var jac=jal.getCodonFrames$();
 for (var acf, $acf = jac.iterator$(); $acf.hasNext$()&&((acf=($acf.next$())),1);) {
-var alc=Clazz.new_($I$(26));
+var alc=Clazz.new_($I$(26,1));
 if (acf.getProtMappings$() != null  && acf.getProtMappings$().length > 0 ) {
 var hasMap=false;
 var dnas=acf.getdnaSeqs$();
 var pmaps=acf.getProtMappings$();
 for (var m=0; m < pmaps.length; m++) {
-var alcmap=Clazz.new_($I$(27));
+var alcmap=Clazz.new_($I$(27,1));
 alcmap.setDnasq$S(this.seqHash$jalview_datamodel_SequenceI(dnas[m]));
 alcmap.setMapping$jalview_xml_binding_jalview_Mapping(p$1.createVamsasMapping$jalview_datamodel_Mapping$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$Z.apply(this, [pmaps[m], dnas[m], null, false]));
-alc.getAlcodMap$().add$TE(alcmap);
+alc.getAlcodMap$().add$O(alcmap);
 hasMap=true;
 }
 if (hasMap) {
-vamsasSet.getAlcodonFrame$().add$TE(alc);
+vamsasSet.getAlcodonFrame$().add$O(alc);
 }}}
 }if (!storeDS && av.getCurrentTree$() != null  ) {
 if ($I$(9).desktop != null ) {
@@ -546,7 +508,7 @@ for (var t=0; t < frames.length; t++) {
 if (Clazz.instanceOf(frames[t], "jalview.gui.TreePanel")) {
 var tp=frames[t];
 if (tp.getTreeCanvas$().getViewport$().getAlignment$() === jal ) {
-var tree=Clazz.new_($I$(28));
+var tree=Clazz.new_($I$(28,1));
 tree.setTitle$S(tp.getTitle$());
 tree.setCurrentTree$Boolean(new Boolean((av.getCurrentTree$() === tp.getTree$() )));
 tree.setNewick$S(tp.getTree$().print$());
@@ -564,7 +526,7 @@ tree.setXpos$Integer(new Integer(tp.getX$()));
 tree.setYpos$Integer(new Integer(tp.getY$()));
 tree.setId$S(p$1.makeHashCode$O$S.apply(this, [tp, null]));
 tree.setLinkToAllViews$Boolean(new Boolean(tp.getTreeCanvas$().isApplyToAllViews$()));
-object.getTree$().add$TE(tree);
+object.getTree$().add$O(tree);
 }}}
 }}if (!storeDS && $I$(9).desktop != null  ) {
 for (var frame, $frame = 0, $$frame = $I$(9).desktop.getAllFrames$(); $frame<$$frame.length&&((frame=($$frame[$frame])),1);$frame++) {
@@ -573,7 +535,7 @@ var panel=frame;
 if (panel.getAlignViewport$().getAlignment$() === jal ) {
 this.savePCA$jalview_gui_PCAPanel$jalview_xml_binding_jalview_JalviewModel(panel, object);
 }}}
-}var groupRefs=Clazz.new_($I$(3));
+}var groupRefs=Clazz.new_($I$(3,1));
 if (storeDS) {
 for (var sq, $sq = jal.getSequences$().iterator$(); $sq.hasNext$()&&((sq=($sq.next$())),1);) {
 var aa=sq.getAnnotation$();
@@ -588,7 +550,7 @@ p$1.storeAlignmentAnnotation$jalview_datamodel_AlignmentAnnotationA$java_util_Id
 var groups=Clazz.array($I$(29), [jal.getGroups$().size$()]);
 var i=-1;
 for (var sg, $sg = jal.getGroups$().iterator$(); $sg.hasNext$()&&((sg=($sg.next$())),1);) {
-var jGroup=Clazz.new_($I$(29));
+var jGroup=Clazz.new_($I$(29,1));
 groups[++i]=jGroup;
 jGroup.setStart$Integer(new Integer(sg.getStartRes$()));
 jGroup.setEnd$Integer(new Integer(sg.getEndRes$()));
@@ -625,15 +587,15 @@ jGroup.setShowConsensusHistogram$Boolean(new Boolean(sg.isShowConsensusHistogram
 jGroup.setShowSequenceLogo$Boolean(new Boolean(sg.isShowSequenceLogo$()));
 jGroup.setNormaliseSequenceLogo$Boolean(new Boolean(sg.isNormaliseSequenceLogo$()));
 for (var seq, $seq = sg.getSequences$().iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
-jGroup.getSeq$().add$TE(this.seqHash$jalview_datamodel_SequenceI(seq));
+jGroup.getSeq$().add$O(this.seqHash$jalview_datamodel_SequenceI(seq));
 }
 }
 var group;
 for (var grp, $grp = 0, $$grp = groups; $grp<$$grp.length&&((grp=($$grp[$grp])),1);$grp++) {
-object.getJGroup$().add$TE(grp);
+object.getJGroup$().add$O(grp);
 }
 }if (!storeDS) {
-var view=Clazz.new_($I$(30));
+var view=Clazz.new_($I$(30,1));
 view.setTitle$S(ap.alignFrame.getTitle$());
 view.setSequenceSetId$S(p$1.makeHashCode$O$S.apply(this, [av.getSequenceSetId$(), av.getSequenceSetId$()]));
 view.setId$S(av.getViewId$());
@@ -662,7 +624,7 @@ var ac=p$1.constructAnnotationColours$jalview_schemes_AnnotationColourGradient$j
 view.setAnnotationColours$jalview_xml_binding_jalview_AnnotationColourScheme(ac);
 view.setBgColour$S("AnnotationColourGradient");
 } else {
-view.setBgColour$S($I$(31).getColourName$jalview_schemes_ColourSchemeI(av.getGlobalColourScheme$()));
+view.setBgColour$S($I$(31,"getColourName$jalview_schemes_ColourSchemeI",[av.getGlobalColourScheme$()]));
 }var vcs=av.getResidueShading$();
 var cs=av.getGlobalColourScheme$();
 if (cs != null ) {
@@ -701,14 +663,16 @@ view.setShowDbRefTooltip$Boolean(new Boolean(av.isShowDBRefs$()));
 view.setFollowHighlight$Boolean(new Boolean(av.isFollowHighlight$()));
 view.setFollowSelection$Boolean(new Boolean(av.followSelection));
 view.setIgnoreGapsinConsensus$Boolean(new Boolean(av.isIgnoreGapsConsensus$()));
+view.setShowComplementFeatures$Boolean(new Boolean(av.isShowComplementFeatures$()));
+view.setShowComplementFeaturesOnTop$Boolean(new Boolean(av.isShowComplementFeaturesOnTop$()));
 if (av.getFeaturesDisplayed$() != null ) {
-var fs=Clazz.new_($I$(32));
+var fs=Clazz.new_($I$(32,1));
 var fr=ap.getSeqPanel$().seqCanvas.getFeatureRenderer$();
-var renderOrder=fr.getRenderOrder$().toArray$TTA(Clazz.array(String, [0]));
-var settingsAdded=Clazz.new_($I$(33));
+var renderOrder=fr.getRenderOrder$().toArray$OA(Clazz.array(String, [0]));
+var settingsAdded=Clazz.new_($I$(33,1));
 if (renderOrder != null ) {
 for (var featureType, $featureType = 0, $$featureType = renderOrder; $featureType<$$featureType.length&&((featureType=($$featureType[$featureType])),1);$featureType++) {
-var setting=Clazz.new_($I$(34));
+var setting=Clazz.new_($I$(34,1));
 setting.setType$S(featureType);
 var filter=fr.getFeatureFilter$S(featureType);
 if (filter != null ) {
@@ -724,9 +688,9 @@ setting.setMax$Float(new Float(fcol.getMax$()));
 setting.setColourByLabel$Boolean(new Boolean(fcol.isColourByLabel$()));
 if (fcol.isColourByAttribute$()) {
 var attName=fcol.getAttributeName$();
-setting.getAttributeName$().add$TE(attName[0]);
+setting.getAttributeName$().add$O(attName[0]);
 if (attName.length > 1) {
-setting.getAttributeName$().add$TE(attName[1]);
+setting.getAttributeName$().add$O(attName[1]);
 }}setting.setAutoScale$Boolean(new Boolean(fcol.isAutoScaled$()));
 setting.setThreshold$Float(new Float(fcol.getThreshold$()));
 var noColour=fcol.getNoColour$();
@@ -743,20 +707,20 @@ setting.setColour$I(fcol.getColour$().getRGB$());
 var rorder=fr.getOrder$S(featureType);
 if (rorder > -1 ) {
 setting.setOrder$Float(new Float(rorder));
-}fs.getSetting$().add$TE(setting);
-settingsAdded.addElement$TE(featureType);
+}fs.getSetting$().add$O(setting);
+settingsAdded.addElement$O(featureType);
 }
 }var en=fr.getFeatureGroups$().iterator$();
-var groupsAdded=Clazz.new_($I$(33));
+var groupsAdded=Clazz.new_($I$(33,1));
 while (en.hasNext$()){
 var grp=en.next$();
 if (groupsAdded.contains$O(grp)) {
 continue;
-}var g=Clazz.new_($I$(36));
+}var g=Clazz.new_($I$(36,1));
 g.setName$S(grp);
 g.setDisplay$Z((fr.checkGroupVisibility$S$Z(grp, false)).booleanValue$());
-fs.getGroup$().add$TE(g);
-groupsAdded.addElement$TE(grp);
+fs.getGroup$().add$O(g);
+groupsAdded.addElement$O(grp);
 }
 object.setFeatureSettings$jalview_xml_binding_jalview_JalviewModel_FeatureSettings(fs);
 }if (av.hasHiddenColumns$()) {
@@ -767,30 +731,30 @@ p$1.warn$S.apply(this, ["REPORT BUG: avoided null columnselection bug (DMAM repo
 var hiddenRegions=hidden.iterator$();
 while (hiddenRegions.hasNext$()){
 var region=hiddenRegions.next$();
-var hc=Clazz.new_($I$(37));
+var hc=Clazz.new_($I$(37,1));
 hc.setStart$Integer(new Integer(region[0]));
 hc.setEnd$Integer(new Integer(region[1]));
-view.getHiddenColumns$().add$TE(hc);
+view.getHiddenColumns$().add$O(hc);
 }
 }}if (calcIdSet.size$() > 0) {
 for (var calcId, $calcId = calcIdSet.iterator$(); $calcId.hasNext$()&&((calcId=($calcId.next$())),1);) {
 if (calcId.trim$().length$() > 0) {
 var cidp=p$1.createCalcIdParam$S$jalview_gui_AlignViewport.apply(this, [calcId, av]);
 if (cidp != null ) {
-view.getCalcIdParam$().add$TE(cidp);
+view.getCalcIdParam$().add$O(cidp);
 }}}
-}object.getViewport$().add$TE(view);
-}object.getVamsasModel$().getSequenceSet$().add$TE(vamsasSet);
+}object.getViewport$().add$O(view);
+}object.getVamsasModel$().getSequenceSet$().add$O(vamsasSet);
 if (jout != null  && fileName != null  ) {
 try {
 fileName=fileName.replace$C$C("\\", "/");
 System.out.println$S("Writing jar entry " + fileName);
-var entry=Clazz.new_($I$(38).c$$S,[fileName]);
+var entry=Clazz.new_($I$(38,1).c$$S,[fileName]);
 jout.putNextEntry$java_util_zip_ZipEntry(entry);
-var pout=Clazz.new_($I$(39).c$$java_io_Writer,[Clazz.new_($I$(40).c$$java_io_OutputStream$S,[jout, "UTF-8"])]);
-var jaxbContext=$I$(41).newInstance$ClassA([Clazz.getClass($I$(42))]);
+var pout=Clazz.new_([Clazz.new_($I$(40,1).c$$java_io_OutputStream$S,[jout, "UTF-8"])],$I$(39,1).c$$java_io_Writer);
+var jaxbContext=$I$(41,"newInstance$ClassA",[[Clazz.getClass($I$(42))]]);
 var jaxbMarshaller=jaxbContext.createMarshaller$();
-jaxbMarshaller.marshal$O$java_io_Writer(Clazz.new_($I$(14)).createJalviewModel$jalview_xml_binding_jalview_JalviewModel(object), pout);
+jaxbMarshaller.marshal$O$java_io_Writer(Clazz.new_($I$(14,1)).createJalviewModel$jalview_xml_binding_jalview_JalviewModel(object), pout);
 pout.flush$();
 jout.closeEntry$();
 } catch (ex) {
@@ -806,7 +770,7 @@ throw ex;
 
 Clazz.newMeth(C$, 'savePCA$jalview_gui_PCAPanel$jalview_xml_binding_jalview_JalviewModel', function (panel, object) {
 try {
-var viewer=Clazz.new_($I$(43));
+var viewer=Clazz.new_($I$(43,1));
 viewer.setHeight$Integer(new Integer(panel.getHeight$()));
 viewer.setWidth$Integer(new Integer(panel.getWidth$()));
 viewer.setXpos$Integer(new Integer(panel.getX$()));
@@ -820,13 +784,13 @@ viewer.setZDim$Integer(new Integer(panel.getSelectedDimensionIndex$jalview_math_
 viewer.setBgColour$Integer(new Integer(panel.getRotatableCanvas$().getBackgroundColour$().getRGB$()));
 viewer.setScaleFactor$Float(new Float(panel.getRotatableCanvas$().getScaleFactor$()));
 var spMin=panel.getRotatableCanvas$().getSeqMin$();
-var spmin=Clazz.new_($I$(45));
+var spmin=Clazz.new_($I$(45,1));
 spmin.setXPos$Float(new Float(spMin[0]));
 spmin.setYPos$Float(new Float(spMin[1]));
 spmin.setZPos$Float(new Float(spMin[2]));
 viewer.setSeqPointMin$jalview_xml_binding_jalview_JalviewModel_PcaViewer_SeqPointMin(spmin);
 var spMax=panel.getRotatableCanvas$().getSeqMax$();
-var spmax=Clazz.new_($I$(46));
+var spmax=Clazz.new_($I$(46,1));
 spmax.setXPos$Float(new Float(spMax[0]));
 spmax.setYPos$Float(new Float(spMax[1]));
 spmax.setZPos$Float(new Float(spMax[2]));
@@ -839,33 +803,33 @@ viewer.setMatchGaps$Boolean(new Boolean(sp.matchGaps$()));
 viewer.setIncludeGappedColumns$Boolean(new Boolean(sp.includeGappedColumns$()));
 viewer.setDenominateByShortestLength$Boolean(new Boolean(sp.denominateByShortestLength$()));
 for (var spt, $spt = pcaModel.getSequencePoints$().iterator$(); $spt.hasNext$()&&((spt=($spt.next$())),1);) {
-var point=Clazz.new_($I$(47));
+var point=Clazz.new_($I$(47,1));
 point.setSequenceRef$S(this.seqHash$jalview_datamodel_SequenceI(spt.getSequence$()));
 point.setXPos$Float(new Float(spt.coord.x));
 point.setYPos$Float(new Float(spt.coord.y));
 point.setZPos$Float(new Float(spt.coord.z));
-viewer.getSequencePoint$().add$TE(point);
+viewer.getSequencePoint$().add$O(point);
 }
 for (var p, $p = 0, $$p = panel.getRotatableCanvas$().getAxisEndPoints$(); $p<$$p.length&&((p=($$p[$p])),1);$p++) {
-var axis=Clazz.new_($I$(48));
+var axis=Clazz.new_($I$(48,1));
 axis.setXPos$Float(new Float(p.x));
 axis.setYPos$Float(new Float(p.y));
 axis.setZPos$Float(new Float(p.z));
-viewer.getAxis$().add$TE(axis);
+viewer.getAxis$().add$O(axis);
 }
-var data=Clazz.new_($I$(49));
+var data=Clazz.new_($I$(49,1));
 viewer.setPcaData$jalview_xml_binding_jalview_PcaDataType(data);
 var pca=pcaModel.getPcaData$();
-var pm=Clazz.new_($I$(50));
+var pm=Clazz.new_($I$(50,1));
 this.saveDoubleMatrix$jalview_math_MatrixI$jalview_xml_binding_jalview_DoubleMatrix(pca.getPairwiseScores$(), pm);
 data.setPairwiseMatrix$jalview_xml_binding_jalview_DoubleMatrix(pm);
-var tm=Clazz.new_($I$(50));
+var tm=Clazz.new_($I$(50,1));
 this.saveDoubleMatrix$jalview_math_MatrixI$jalview_xml_binding_jalview_DoubleMatrix(pca.getTridiagonal$(), tm);
 data.setTridiagonalMatrix$jalview_xml_binding_jalview_DoubleMatrix(tm);
-var eigenMatrix=Clazz.new_($I$(50));
+var eigenMatrix=Clazz.new_($I$(50,1));
 data.setEigenMatrix$jalview_xml_binding_jalview_DoubleMatrix(eigenMatrix);
 this.saveDoubleMatrix$jalview_math_MatrixI$jalview_xml_binding_jalview_DoubleMatrix(pca.getEigenmatrix$(), eigenMatrix);
-object.getPcaViewer$().add$TE(viewer);
+object.getPcaViewer$().add$O(viewer);
 } catch (t) {
 $I$(8).log.error$O("Error saving PCA: " + t.getMessage$());
 }
@@ -875,44 +839,44 @@ Clazz.newMeth(C$, 'saveDoubleMatrix$jalview_math_MatrixI$jalview_xml_binding_jal
 xmlMatrix.setRows$Integer(new Integer(m.height$()));
 xmlMatrix.setColumns$Integer(new Integer(m.width$()));
 for (var i=0; i < m.height$(); i++) {
-var row=Clazz.new_($I$(51));
+var row=Clazz.new_($I$(51,1));
 for (var j=0; j < m.width$(); j++) {
-row.getV$().add$TE(new Double(m.getValue$I$I(i, j)));
+row.getV$().add$O(new Double(m.getValue$I$I(i, j)));
 }
-xmlMatrix.getRow$().add$TE(row);
+xmlMatrix.getRow$().add$O(row);
 }
 if (m.getD$() != null ) {
-var dVector=Clazz.new_($I$(51));
+var dVector=Clazz.new_($I$(51,1));
 for (var d, $d = 0, $$d = m.getD$(); $d<$$d.length&&((d=($$d[$d])),1);$d++) {
-dVector.getV$().add$TE(new Double(d));
+dVector.getV$().add$O(new Double(d));
 }
 xmlMatrix.setD$jalview_xml_binding_jalview_DoubleVector(dVector);
 }if (m.getE$() != null ) {
-var eVector=Clazz.new_($I$(51));
+var eVector=Clazz.new_($I$(51,1));
 for (var e, $e = 0, $$e = m.getE$(); $e<$$e.length&&((e=($$e[$e])),1);$e++) {
-eVector.getV$().add$TE(new Double(e));
+eVector.getV$().add$O(new Double(e));
 }
 xmlMatrix.setE$jalview_xml_binding_jalview_DoubleVector(eVector);
 }});
 
 Clazz.newMeth(C$, 'loadDoubleMatrix$jalview_xml_binding_jalview_DoubleMatrix', function (mData) {
-var rows=(mData.getRows$()).intValue$();
+var rows=(mData.getRows$()).valueOf();
 var vals=Clazz.array(Double.TYPE, [rows, null]);
 for (var i=0; i < rows; i++) {
 var dVector=mData.getRow$().get$I(i).getV$();
 vals[i]=Clazz.array(Double.TYPE, [dVector.size$()]);
 var dvi=0;
 for (var d, $d = dVector.iterator$(); $d.hasNext$()&&((d=($d.next$())),1);) {
-vals[i][dvi++]=(d).doubleValue$();
+vals[i][dvi++]=(d).valueOf();
 }
 }
-var m=Clazz.new_($I$(52).c$$DAA,[vals]);
+var m=Clazz.new_($I$(52,1).c$$DAA,[vals]);
 if (mData.getD$() != null ) {
 var dVector=mData.getD$().getV$();
 var vec=Clazz.array(Double.TYPE, [dVector.size$()]);
 var dvi=0;
 for (var d, $d = dVector.iterator$(); $d.hasNext$()&&((d=($d.next$())),1);) {
-vec[dvi++]=(d).doubleValue$();
+vec[dvi++]=(d).valueOf();
 }
 m.setD$DA(vec);
 }if (mData.getE$() != null ) {
@@ -920,7 +884,7 @@ var dVector=mData.getE$().getV$();
 var vec=Clazz.array(Double.TYPE, [dVector.size$()]);
 var dvi=0;
 for (var d, $d = dVector.iterator$(); $d.hasNext$()&&((d=($d.next$())),1);) {
-vec[dvi++]=(d).doubleValue$();
+vec[dvi++]=(d).valueOf();
 }
 m.setE$DA(vec);
 }return m;
@@ -935,7 +899,7 @@ if (Clazz.instanceOf(frames[f], "jalview.gui.AppVarna")) {
 var varna=frames[f];
 if (varna.isListeningFor$jalview_datamodel_SequenceI(jds) && ap === varna.getAlignmentPanel$()  ) {
 var viewId=varna.getViewId$();
-var rna=Clazz.new_($I$(53));
+var rna=Clazz.new_($I$(53,1));
 rna.setViewId$S(viewId);
 rna.setTitle$S(varna.getTitle$());
 rna.setXpos$Integer(new Integer(varna.getX$()));
@@ -944,7 +908,7 @@ rna.setWidth$Integer(new Integer(varna.getWidth$()));
 rna.setHeight$Integer(new Integer(varna.getHeight$()));
 rna.setDividerLocation$Integer(new Integer(varna.getDividerLocation$()));
 rna.setSelectedRna$Integer(new Integer(varna.getSelectedIndex$()));
-jseq.getRnaViewer$().add$TE(rna);
+jseq.getRnaViewer$().add$O(rna);
 for (var model, $model = varna.getModels$().iterator$(); $model.hasNext$()&&((model=($model.next$())),1);) {
 if (model.seq === jds ) {
 var jarEntryName=this.rnaSessions.get$O(model);
@@ -952,14 +916,14 @@ if (jarEntryName == null ) {
 var varnaStateFile=varna.getStateInfo$fr_orsay_lri_varna_models_rna_RNA(model.rna);
 jarEntryName="rna_" + viewId + "_" + p$1.nextCounter.apply(this, []) ;
 this.copyFileToJar$java_util_jar_JarOutputStream$S$S(jout, varnaStateFile, jarEntryName);
-this.rnaSessions.put$TK$TV(model, jarEntryName);
-}var ss=Clazz.new_($I$(54));
+this.rnaSessions.put$O$O(model, jarEntryName);
+}var ss=Clazz.new_($I$(54,1));
 var annotationId=varna.getAnnotation$jalview_datamodel_SequenceI(jds).annotationId;
 ss.setAnnotationId$S(annotationId);
 ss.setViewerState$S(jarEntryName);
 ss.setGapped$Boolean(new Boolean(model.gapped));
 ss.setTitle$S(model.title);
-rna.getSecondaryStructure$().add$TE(ss);
+rna.getSecondaryStructure$().add$O(ss);
 }}
 }}}
 });
@@ -967,9 +931,9 @@ rna.getSecondaryStructure$().add$TE(ss);
 Clazz.newMeth(C$, 'copyFileToJar$java_util_jar_JarOutputStream$S$S', function (jout, infilePath, jarEntryName) {
 var dis=null;
 try {
-var file=Clazz.new_($I$(12).c$$S,[infilePath]);
+var file=Clazz.new_($I$(12,1).c$$S,[infilePath]);
 if (file.exists$() && jout != null  ) {
-dis=Clazz.new_($I$(55).c$$java_io_InputStream,[Clazz.new_($I$(56).c$$java_io_File,[file])]);
+dis=Clazz.new_([Clazz.new_($I$(56,1).c$$java_io_File,[file])],$I$(55,1).c$$java_io_InputStream);
 var data=Clazz.array(Byte.TYPE, [(file.length$()|0)]);
 dis.readFully$BA(data);
 this.writeJarEntry$java_util_jar_JarOutputStream$S$BA(jout, jarEntryName, data);
@@ -996,8 +960,8 @@ Clazz.newMeth(C$, 'writeJarEntry$java_util_jar_JarOutputStream$S$BA', function (
 if (jout != null ) {
 jarEntryName=jarEntryName.replace$C$C("\\", "/");
 System.out.println$S("Writing jar entry " + jarEntryName);
-jout.putNextEntry$java_util_zip_ZipEntry(Clazz.new_($I$(38).c$$S,[jarEntryName]));
-var dout=Clazz.new_($I$(57).c$$java_io_OutputStream,[jout]);
+jout.putNextEntry$java_util_zip_ZipEntry(Clazz.new_($I$(38,1).c$$S,[jarEntryName]));
+var dout=Clazz.new_($I$(57,1).c$$java_io_OutputStream,[jout]);
 dout.write$BA$I$I(data, 0, data.length);
 dout.flush$();
 jout.closeEntry$();
@@ -1016,7 +980,7 @@ matchedFile=pdbentry.getFile$();
 $I$(8).log.warn$O("Probably lost some PDB-Sequence mappings for this structure file (which apparently has same PDB Entry code): " + pdbentry.getFile$());
 }for (var smap=0; smap < viewFrame.getBinding$().getSequence$()[peid].length; smap++) {
 if (jds === viewFrame.getBinding$().getSequence$()[peid][smap] ) {
-var state=Clazz.new_($I$(58));
+var state=Clazz.new_($I$(58,1));
 state.setVisible$Boolean(new Boolean(true));
 state.setXpos$Integer(new Integer(viewFrame.getX$()));
 state.setYpos$Integer(new Integer(viewFrame.getY$()));
@@ -1028,21 +992,21 @@ state.setAlignwithAlignPanel$Boolean(new Boolean(viewFrame.isUsedforaligment$jal
 state.setColourwithAlignPanel$Boolean(new Boolean(viewFrame.isUsedforcolourby$jalview_gui_AlignmentPanel(ap)));
 state.setColourByJmol$Boolean(new Boolean(viewFrame.isColouredByViewer$()));
 state.setType$S(viewFrame.getViewerType$().toString());
-pdb.getStructureState$().add$TE(state);
+pdb.getStructureState$().add$O(state);
 }}
 }
 return matchedFile;
 });
 
 Clazz.newMeth(C$, 'constructAnnotationColours$jalview_schemes_AnnotationColourGradient$java_util_List$jalview_xml_binding_jalview_JalviewModel', function (acg, userColours, jm) {
-var ac=Clazz.new_($I$(59));
+var ac=Clazz.new_($I$(59,1));
 ac.setAboveThreshold$Integer(new Integer(acg.getAboveThreshold$()));
 ac.setThreshold$Float(new Float(acg.getAnnotationThreshold$()));
 ac.setAnnotation$S(acg.getAnnotation$().annotationId);
 if (Clazz.instanceOf(acg.getBaseColour$(), "jalview.schemes.UserColourScheme")) {
 ac.setColourScheme$S(this.setUserColourScheme$jalview_schemes_ColourSchemeI$java_util_List$jalview_xml_binding_jalview_JalviewModel(acg.getBaseColour$(), userColours, jm));
 } else {
-ac.setColourScheme$S($I$(31).getColourName$jalview_schemes_ColourSchemeI(acg.getBaseColour$()));
+ac.setColourScheme$S($I$(31,"getColourName$jalview_schemes_ColourSchemeI",[acg.getBaseColour$()]));
 }ac.setMaxColour$Integer(new Integer(acg.getMaxColour$().getRGB$()));
 ac.setMinColour$Integer(new Integer(acg.getMinColour$().getRGB$()));
 ac.setPerSequence$Boolean(new Boolean(acg.isSeqAssociated$()));
@@ -1052,10 +1016,10 @@ return ac;
 
 Clazz.newMeth(C$, 'storeAlignmentAnnotation$jalview_datamodel_AlignmentAnnotationA$java_util_IdentityHashMap$jalview_viewmodel_AlignmentViewport$java_util_Set$Z$jalview_xml_binding_jalview_SequenceSet', function (aa, groupRefs, av, calcIdSet, storeDS, vamsasSet) {
 for (var i=0; i < aa.length; i++) {
-var an=Clazz.new_($I$(60));
+var an=Clazz.new_($I$(60,1));
 var annotation=aa[i];
 if (annotation.annotationId != null ) {
-this.annotationIds.put$TK$TV(annotation.annotationId, annotation);
+this.annotationIds.put$O$O(annotation.annotationId, annotation);
 }an.setId$S(annotation.annotationId);
 an.setVisible$Boolean(new Boolean(annotation.visible));
 an.setDescription$S(annotation.description);
@@ -1064,7 +1028,7 @@ an.setSequenceRef$S(this.seqsToIds.get$O(annotation.sequenceRef));
 }if (annotation.groupRef != null ) {
 var groupIdr=groupRefs.get$O(annotation.groupRef);
 if (groupIdr == null ) {
-groupRefs.put$TK$TV(annotation.groupRef, groupIdr=("" + System.currentTimeMillis$() + annotation.groupRef.getName$() + groupRefs.size$() ));
+groupRefs.put$O$O(annotation.groupRef, groupIdr=("" + System.currentTimeMillis$() + annotation.groupRef.getName$() + groupRefs.size$() ));
 }an.setGroupRef$S(groupIdr.toString());
 }an.setGraphHeight$Integer(new Integer(annotation.graphHeight));
 an.setCentreColLabels$Boolean(new Boolean(annotation.centreColLabels));
@@ -1076,7 +1040,7 @@ an.setGraph$Z(true);
 an.setGraphType$Integer(new Integer(annotation.graph));
 an.setGraphGroup$Integer(new Integer(annotation.graphGroup));
 if (annotation.getThreshold$() != null ) {
-var line=Clazz.new_($I$(61));
+var line=Clazz.new_($I$(61,1));
 line.setLabel$S(annotation.getThreshold$().label);
 line.setValue$Float(new Float(annotation.getThreshold$().value));
 line.setColour$Integer(new Integer(annotation.getThreshold$().colour.getRGB$()));
@@ -1089,14 +1053,14 @@ an.setAutoCalculated$Boolean(new Boolean(annotation.autoCalculated));
 }if (annotation.hasScore$()) {
 an.setScore$Double(new Double(annotation.getScore$()));
 }if (annotation.getCalcId$() != null ) {
-calcIdSet.add$TE(annotation.getCalcId$());
+calcIdSet.add$O(annotation.getCalcId$());
 an.setCalcId$S(annotation.getCalcId$());
 }if (annotation.hasProperties$()) {
 for (var pr, $pr = annotation.getProperties$().iterator$(); $pr.hasNext$()&&((pr=($pr.next$())),1);) {
-var prop=Clazz.new_($I$(62));
+var prop=Clazz.new_($I$(62,1));
 prop.setName$S(pr);
 prop.setValue$S(annotation.getProperty$S(pr));
-an.getProperty$().add$TE(prop);
+an.getProperty$().add$O(prop);
 }
 }var ae;
 if (annotation.annotations != null ) {
@@ -1104,7 +1068,7 @@ an.setScoreOnly$Boolean(new Boolean(false));
 for (var a=0; a < annotation.annotations.length; a++) {
 if ((annotation == null ) || (annotation.annotations[a] == null ) ) {
 continue;
-}ae=Clazz.new_($I$(63));
+}ae=Clazz.new_($I$(63,1));
 if (annotation.annotations[a].description != null ) {
 ae.setDescription$S(annotation.annotations[a].description);
 }if (annotation.annotations[a].displayCharacter != null ) {
@@ -1116,25 +1080,25 @@ if (annotation.annotations[a].secondaryStructure > " ") {
 ae.setSecondaryStructure$S(annotation.annotations[a].secondaryStructure + "");
 }if (annotation.annotations[a].colour != null  && annotation.annotations[a].colour !== $I$(64).black  ) {
 ae.setColour$Integer(new Integer(annotation.annotations[a].colour.getRGB$()));
-}an.getAnnotationElement$().add$TE(ae);
+}an.getAnnotationElement$().add$O(ae);
 if (annotation.autoCalculated) {
 continue;
 }}
 } else {
 an.setScoreOnly$Boolean(new Boolean(true));
 }if (!storeDS || (storeDS && !annotation.autoCalculated ) ) {
-vamsasSet.getAnnotation$().add$TE(an);
+vamsasSet.getAnnotation$().add$O(an);
 }}
 }, p$1);
 
 Clazz.newMeth(C$, 'createCalcIdParam$S$jalview_gui_AlignViewport', function (calcId, av) {
 var settings=av.getCalcIdSettingsFor$S(calcId);
 if (settings != null ) {
-var vCalcIdParam=Clazz.new_($I$(65));
+var vCalcIdParam=Clazz.new_($I$(65,1));
 vCalcIdParam.setCalcId$S(calcId);
-vCalcIdParam.getServiceURL$().add$TE(settings.getServiceURI$());
+vCalcIdParam.getServiceURL$().add$O(settings.getServiceURI$());
 for (var url, $url = 0, $$url = settings.getServiceURLs$(); $url<$$url.length&&((url=($$url[$url])),1);$url++) {
-vCalcIdParam.getServiceURL$().add$TE(url);
+vCalcIdParam.getServiceURL$().add$O(url);
 }
 vCalcIdParam.setVersion$S("1.0");
 if (settings.getPreset$() != null ) {
@@ -1152,7 +1116,7 @@ return vCalcIdParam;
 
 Clazz.newMeth(C$, 'recoverCalcIdParam$jalview_xml_binding_jalview_JalviewModel_Viewport_CalcIdParam$jalview_gui_AlignViewport', function (calcIdParam, av) {
 if (calcIdParam.getVersion$().equals$O("1.0")) {
-var calcIds=calcIdParam.getServiceURL$().toArray$TTA(Clazz.array(String, [0]));
+var calcIds=calcIdParam.getServiceURL$().toArray$OA(Clazz.array(String, [0]));
 var service=$I$(66).getDiscoverer$().getPreferredServiceFor$SA(calcIds);
 if (service != null ) {
 var parmSet=null;
@@ -1173,13 +1137,13 @@ if (parmSet != null ) {
 }} else {
 argList=parmSet.getArguments$();
 parmSet=null;
-}var settings=Clazz.new_($I$(67).c$$Z$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_ws_params_WsParamSetI$java_util_List,[calcIdParam.isAutoUpdate$(), service, parmSet, argList]);
+}var settings=Clazz.new_([calcIdParam.isAutoUpdate$(), service, parmSet, argList],$I$(67,1).c$$Z$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_ws_params_WsParamSetI$java_util_List);
 av.setCalcIdSettingsFor$S$jalview_ws_params_AutoCalcSetting$Z(calcIdParam.getCalcId$(), settings, calcIdParam.isNeedsUpdate$());
 return true;
 } else {
 p$1.warn$S.apply(this, ["Cannot resolve a service for the parameters used in this project. Try configuring a JABAWS server."]);
 return false;
-}}throw Clazz.new_($I$(68).c$$S,[$I$(69).formatMessage$S$OA("error.unsupported_version_calcIdparam", Clazz.array(java.lang.Object, -1, [calcIdParam.toString()]))]);
+}}throw Clazz.new_([$I$(69,"formatMessage$S$OA",["error.unsupported_version_calcIdparam", Clazz.array(java.lang.Object, -1, [calcIdParam.toString()])])],$I$(68,1).c$$S);
 }, p$1);
 
 Clazz.newMeth(C$, 'makeHashCode$O$S', function (jvobj, altCode) {
@@ -1206,7 +1170,7 @@ return p$1.createVamsasSequence$Z$S$jalview_datamodel_SequenceI$jalview_datamode
 }, p$1);
 
 Clazz.newMeth(C$, 'createVamsasSequence$Z$S$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI', function (recurse, id, jds, parentseq) {
-var vamsasSeq=Clazz.new_($I$(70));
+var vamsasSeq=Clazz.new_($I$(70,1));
 vamsasSeq.setId$S(id);
 vamsasSeq.setName$S(jds.getName$());
 vamsasSeq.setSequence$S(jds.getSequenceAsString$());
@@ -1221,15 +1185,17 @@ if (parentseq == null ) {
 parentseq=jds;
 }}if (dbrefs != null ) {
 for (var d=0, nd=dbrefs.size$(); d < nd; d++) {
-var dbref=Clazz.new_($I$(71));
+var dbref=Clazz.new_($I$(71,1));
 var ref=dbrefs.get$I(d);
 dbref.setSource$S(ref.getSource$());
 dbref.setVersion$S(ref.getVersion$());
 dbref.setAccessionId$S(ref.getAccessionId$());
-if (ref.hasMap$()) {
+if (Clazz.instanceOf(ref, "jalview.datamodel.GeneLocus")) {
+dbref.setLocus$Boolean(new Boolean(true));
+}if (ref.hasMap$()) {
 var mp=p$1.createVamsasMapping$jalview_datamodel_Mapping$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$Z.apply(this, [ref.getMap$(), parentseq, jds, recurse]);
 dbref.setMapping$jalview_xml_binding_jalview_Mapping(mp);
-}vamsasSeq.getDBRef$().add$TE(dbref);
+}vamsasSeq.getDBRef$().add$O(dbref);
 }
 }return vamsasSeq;
 }, p$1);
@@ -1237,24 +1203,24 @@ dbref.setMapping$jalview_xml_binding_jalview_Mapping(mp);
 Clazz.newMeth(C$, 'createVamsasMapping$jalview_datamodel_Mapping$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$Z', function (jmp, parentseq, jds, recurse) {
 var mp=null;
 if (jmp.getMap$() != null ) {
-mp=Clazz.new_($I$(72));
+mp=Clazz.new_($I$(72,1));
 var mlst=jmp.getMap$();
 var r=mlst.getFromRanges$();
 for (var range, $range = r.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
-var mfrom=Clazz.new_($I$(73));
+var mfrom=Clazz.new_($I$(73,1));
 mfrom.setStart$I(range[0]);
 mfrom.setEnd$I(range[1]);
-mp.getMapListFrom$().add$TE(mfrom);
+mp.getMapListFrom$().add$O(mfrom);
 }
 r=mlst.getToRanges$();
 for (var range, $range = r.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
-var mto=Clazz.new_($I$(74));
+var mto=Clazz.new_($I$(74,1));
 mto.setStart$I(range[0]);
 mto.setEnd$I(range[1]);
-mp.getMapListTo$().add$TE(mto);
+mp.getMapListTo$().add$O(mto);
 }
-mp.setMapFromUnit$java_math_BigInteger($I$(75).valueOf$J(mlst.getFromRatio$()));
-mp.setMapToUnit$java_math_BigInteger($I$(75).valueOf$J(mlst.getToRatio$()));
+mp.setMapFromUnit$java_math_BigInteger($I$(75,"valueOf$J",[mlst.getFromRatio$()]));
+mp.setMapToUnit$java_math_BigInteger($I$(75,"valueOf$J",[mlst.getToRatio$()]));
 if (jmp.getTo$() != null ) {
 var jmpid="";
 var ps=null;
@@ -1265,7 +1231,7 @@ jmpid=this.seqHash$jalview_datamodel_SequenceI(ps=parentseq);
 }mp.setDseqFor$S(jmpid);
 if (!this.seqRefIds.containsKey$O(jmpid)) {
 $I$(8).log.debug$O("creatign new DseqFor ID");
-this.seqRefIds.put$TK$TV(jmpid, ps);
+this.seqRefIds.put$O$O(jmpid, ps);
 } else {
 $I$(8).log.debug$O("reusing DseqFor ID");
 }}}return mp;
@@ -1276,30 +1242,30 @@ var id=null;
 var ucs=cs;
 var newucs=false;
 if (!userColours.contains$O(ucs)) {
-userColours.add$TE(ucs);
+userColours.add$O(ucs);
 newucs=true;
 }id="ucs" + userColours.indexOf$O(ucs);
 if (newucs) {
 var colours=ucs.getColours$();
-var uc=Clazz.new_($I$(76));
-var jbucs=Clazz.new_($I$(77));
+var uc=Clazz.new_($I$(76,1));
+var jbucs=Clazz.new_($I$(77,1));
 for (var i=0; i < colours.length; i++) {
-var col=Clazz.new_($I$(78));
+var col=Clazz.new_($I$(78,1));
 col.setName$S($I$(79).aa[i]);
 col.setRGB$S($I$(80).getHexString$java_awt_Color(colours[i]));
-jbucs.getColour$().add$TE(col);
+jbucs.getColour$().add$O(col);
 }
 if (ucs.getLowerCaseColours$() != null ) {
 colours=ucs.getLowerCaseColours$();
 for (var i=0; i < colours.length; i++) {
-var col=Clazz.new_($I$(78));
+var col=Clazz.new_($I$(78,1));
 col.setName$S($I$(79).aa[i].toLowerCase$());
 col.setRGB$S($I$(80).getHexString$java_awt_Color(colours[i]));
-jbucs.getColour$().add$TE(col);
+jbucs.getColour$().add$O(col);
 }
 }uc.setId$S(id);
 uc.setUserColourScheme$jalview_xml_binding_jalview_JalviewUserColours(jbucs);
-jm.getUserColours$().add$TE(uc);
+jm.getUserColours$().add$O(uc);
 }return id;
 });
 
@@ -1313,13 +1279,13 @@ break;
 }}
 var newColours=Clazz.array($I$(64), [24]);
 for (var i=0; i < 24; i++) {
-newColours[i]=Clazz.new_($I$(64).c$$I,[Integer.parseInt$S$I(colours.getUserColourScheme$().getColour$().get$I(i).getRGB$(), 16)]);
+newColours[i]=Clazz.new_([Integer.parseInt$S$I(colours.getUserColourScheme$().getColour$().get$I(i).getRGB$(), 16)],$I$(64,1).c$$I);
 }
-var ucs=Clazz.new_($I$(81).c$$java_awt_ColorA,[newColours]);
+var ucs=Clazz.new_($I$(81,1).c$$java_awt_ColorA,[newColours]);
 if (colours.getUserColourScheme$().getColour$().size$() > 24) {
 newColours=Clazz.array($I$(64), [23]);
 for (var i=0; i < 23; i++) {
-newColours[i]=Clazz.new_($I$(64).c$$I,[Integer.parseInt$S$I(colours.getUserColourScheme$().getColour$().get$I(i + 24).getRGB$(), 16)]);
+newColours[i]=Clazz.new_([Integer.parseInt$S$I(colours.getUserColourScheme$().getColour$().get$I(i + 24).getRGB$(), 16)],$I$(64,1).c$$I);
 }
 ucs.setLowerCaseColours$java_awt_ColorA(newColours);
 }return ucs;
@@ -1328,7 +1294,7 @@ ucs.setLowerCaseColours$java_awt_ColorA(newColours);
 Clazz.newMeth(C$, 'loadJalviewAlign$O', function (file) {
 var af=null;
 try {
-this.newStructureViewers=Clazz.new_($I$(33));
+this.newStructureViewers=Clazz.new_($I$(33,1));
 var jprovider=p$1.createjarInputStreamProvider$O.apply(this, [file]);
 af=this.loadJalviewAlign$jalview_util_jarInputStreamProvider(jprovider);
 if (af != null ) {
@@ -1342,20 +1308,19 @@ throw e;
 }
 } finally {
 try {
-$I$(82).invokeAndWait$Runnable(((P$.Jalview2XML$3||
-(function(){var C$=Clazz.newClass(P$, "Jalview2XML$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(82,"invokeAndWait$Runnable",[((P$.Jalview2XML$3||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview2XML$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.project.Jalview2XML'].setLoadingFinishedForNewStructureViewers$.apply(this.b$['jalview.project.Jalview2XML'], []);
 });
 })()
-), Clazz.new_(P$.Jalview2XML$3.$init$, [this, null])));
+), Clazz.new_(P$.Jalview2XML$3.$init$,[this, null]))]);
 } catch (x) {
 if (Clazz.exceptionOf(x,"Exception")){
 System.err.println$S("Error loading alignment: " + x.getMessage$());
@@ -1378,31 +1343,30 @@ this.seqRefIds=null;
 this.viewportsAdded.clear$();
 this.frefedSequence=null;
 if (file.startsWith$S("http://")) {
-url=Clazz.new_($I$(83).c$$S,[file]);
+url=Clazz.new_($I$(83,1).c$$S,[file]);
 }var _url=url;
 return ((P$.Jalview2XML$4||
-(function(){var C$=Clazz.newClass(P$, "Jalview2XML$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.util.jarInputStreamProvider', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview2XML$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.util.jarInputStreamProvider', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getJarInputStream$', function () {
 if (this.$finals$.bytes != null ) {
-return Clazz.new_($I$(84).c$$java_io_InputStream,[Clazz.new_($I$(85).c$$BA,[this.$finals$.bytes])]);
+return Clazz.new_([Clazz.new_($I$(85,1).c$$BA,[this.$finals$.bytes])],$I$(84,1).c$$java_io_InputStream);
 }if (this.$finals$._url != null ) {
-return Clazz.new_($I$(84).c$$java_io_InputStream,[this.$finals$._url.openStream$()]);
+return Clazz.new_([this.$finals$._url.openStream$()],$I$(84,1).c$$java_io_InputStream);
 } else {
-return Clazz.new_($I$(84).c$$java_io_InputStream,[Clazz.new_($I$(56).c$$S,[this.$finals$.file])]);
+return Clazz.new_([Clazz.new_($I$(56,1).c$$S,[this.$finals$.file])],$I$(84,1).c$$java_io_InputStream);
 }});
 
 Clazz.newMeth(C$, 'getFilename$', function () {
 return this.$finals$.file;
 });
 })()
-), Clazz.new_(P$.Jalview2XML$4.$init$, [this, {bytes: bytes, _url: _url, file: file}]));
+), Clazz.new_(P$.Jalview2XML$4.$init$,[this, {_url:_url,bytes:bytes,file:file}]));
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 e.printStackTrace$();
@@ -1421,8 +1385,8 @@ this.uniqueSetSuffix=System.currentTimeMillis$() % 100000 + "";
 this.initSeqRefs$();
 }var af=null;
 var _af=null;
-var importedDatasets=Clazz.new_($I$(3));
-var gatherToThisFrame=Clazz.new_($I$(2));
+var importedDatasets=Clazz.new_($I$(3,1));
+var gatherToThisFrame=Clazz.new_($I$(2,1));
 var file=jprovider.getFilename$();
 try {
 var jin=null;
@@ -1446,8 +1410,8 @@ if (af == null ) {
 af=_af;
 }if (_af.getViewport$().isGatherViewsHere$()) {
 af=_af;
-gatherToThisFrame.put$TK$TV(_af.getViewport$().getSequenceSetId$(), _af);
-}importedDatasets.put$TK$TV(af.getViewport$().getAlignment$().getDataset$(), af.getViewport$().getAlignment$().getDataset$());
+gatherToThisFrame.put$O$O(_af.getViewport$().getSequenceSetId$(), _af);
+}importedDatasets.put$O$O(af.getViewport$().getAlignment$().getDataset$(), af.getViewport$().getAlignment$().getDataset$());
 }}entryCount++;
 } else if (jarentry != null ) {
 entryCount++;
@@ -1492,7 +1456,7 @@ $I$(9).instance.gatherViews$jalview_gui_AlignFrame(fr);
 this.restoreSplitFrames$();
 for (var ds, $ds = importedDatasets.keySet$().iterator$(); $ds.hasNext$()&&((ds=($ds.next$())),1);) {
 if (ds.getCodonFrames$() != null ) {
-$I$(87).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider($I$(9).instance).registerMappings$java_util_List(ds.getCodonFrames$());
+$I$(87,"getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider",[$I$(9).instance]).registerMappings$java_util_List(ds.getCodonFrames$());
 }}
 if (this.errorMessage != null ) {
 this.reportErrors$();
@@ -1502,13 +1466,13 @@ $I$(9).instance.stopLoading$();
 });
 
 Clazz.newMeth(C$, 'restoreSplitFrames$', function () {
-var gatherTo=Clazz.new_($I$(4));
-var addedToSplitFrames=Clazz.new_($I$(4));
-var dna=Clazz.new_($I$(2));
+var gatherTo=Clazz.new_($I$(4,1));
+var addedToSplitFrames=Clazz.new_($I$(4,1));
+var dna=Clazz.new_($I$(2,1));
 for (var candidate, $candidate = this.splitFrameCandidates.entrySet$().iterator$(); $candidate.hasNext$()&&((candidate=($candidate.next$())),1);) {
 var af=candidate.getValue$();
 if (af.getViewport$().getAlignment$().isNucleotide$()) {
-dna.put$TK$TV(candidate.getKey$().getId$(), af);
+dna.put$O$O(candidate.getKey$().getId$(), af);
 }}
 for (var candidate, $candidate = this.splitFrameCandidates.entrySet$().iterator$(); $candidate.hasNext$()&&((candidate=($candidate.next$())),1);) {
 var af=candidate.getValue$();
@@ -1517,18 +1481,18 @@ var complementId=candidate.getKey$().getComplementId$();
 if (complementId != null  && dna.containsKey$O(complementId) ) {
 var dnaFrame=dna.get$O(complementId);
 var sf=this.createSplitFrame$jalview_gui_AlignFrame$jalview_gui_AlignFrame(dnaFrame, af);
-addedToSplitFrames.add$TE(dnaFrame);
-addedToSplitFrames.add$TE(af);
+addedToSplitFrames.add$O(dnaFrame);
+addedToSplitFrames.add$O(af);
 dnaFrame.setMenusForViewport$();
 af.setMenusForViewport$();
 if (af.getViewport$().isGatherViewsHere$()) {
-gatherTo.add$TE(sf);
+gatherTo.add$O(sf);
 }}}}
 for (var candidate, $candidate = this.splitFrameCandidates.entrySet$().iterator$(); $candidate.hasNext$()&&((candidate=($candidate.next$())),1);) {
 var af=candidate.getValue$();
 if (!addedToSplitFrames.contains$O(af)) {
 var view=candidate.getKey$();
-$I$(9).addInternalFrame$javax_swing_JInternalFrame$S$I$I(af, view.getTitle$(), C$.safeInt$Integer(view.getWidth$()), C$.safeInt$Integer(view.getHeight$()));
+$I$(9,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[af, view.getTitle$(), C$.safeInt$Integer(view.getWidth$()), C$.safeInt$Integer(view.getHeight$())]);
 af.setMenusForViewport$();
 System.err.println$S("Failed to restore view " + view.getTitle$() + " to split frame" );
 }}
@@ -1539,7 +1503,7 @@ this.splitFrameCandidates.clear$();
 });
 
 Clazz.newMeth(C$, 'createSplitFrame$jalview_gui_AlignFrame$jalview_gui_AlignFrame', function (dnaFrame, proteinFrame) {
-var splitFrame=Clazz.new_($I$(88).c$$jalview_jbgui_GAlignFrame$jalview_jbgui_GAlignFrame,[dnaFrame, proteinFrame]);
+var splitFrame=Clazz.new_($I$(88,1).c$$jalview_jbgui_GAlignFrame$jalview_jbgui_GAlignFrame,[dnaFrame, proteinFrame]);
 var title=$I$(69).getString$S("label.linked_view_title");
 var width=(dnaFrame.getBounds$().getWidth$()|0);
 var height=((dnaFrame.getBounds$().getHeight$() + proteinFrame.getBounds$().getHeight$() + 50 )|0);
@@ -1557,20 +1521,19 @@ Clazz.newMeth(C$, 'reportErrors$Z', function (saving) {
 if (this.errorMessage != null ) {
 var finalErrorMessage=this.errorMessage;
 if (this.raiseGUI) {
-$I$(82).invokeLater$Runnable(((P$.Jalview2XML$5||
-(function(){var C$=Clazz.newClass(P$, "Jalview2XML$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(82,"invokeLater$Runnable",[((P$.Jalview2XML$5||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview2XML$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-$I$(89).showInternalMessageDialog$java_awt_Component$S$S$I($I$(9).desktop, this.$finals$.finalErrorMessage, "Error " + (this.$finals$.saving ? "saving" : "loading") + " Jalview file" , 2);
+$I$(89,"showInternalMessageDialog$java_awt_Component$S$S$I",[$I$(9).desktop, this.$finals$.finalErrorMessage, "Error " + (this.$finals$.saving ? "saving" : "loading") + " Jalview file" , 2]);
 });
 })()
-), Clazz.new_(P$.Jalview2XML$5.$init$, [this, {finalErrorMessage: finalErrorMessage, saving: saving}])));
+), Clazz.new_(P$.Jalview2XML$5.$init$,[this, {saving:saving,finalErrorMessage:finalErrorMessage}]))]);
 } else {
 System.err.println$S("Problem loading Jalview file: " + this.errorMessage);
 }}this.errorMessage=null;
@@ -1581,19 +1544,19 @@ if (this.alreadyLoadedPDB.containsKey$O(pdbId)) {
 return this.alreadyLoadedPDB.get$O(pdbId).toString();
 }var tempFile=this.copyJarEntry$jalview_util_jarInputStreamProvider$S$S$S(jprovider, pdbId, "jalview_pdb", origFile);
 if (tempFile != null ) {
-this.alreadyLoadedPDB.put$TK$TV(pdbId, tempFile);
+this.alreadyLoadedPDB.put$O$O(pdbId, tempFile);
 }return tempFile;
 });
 
-Clazz.newMeth(C$, 'copyJarEntry$jalview_util_jarInputStreamProvider$S$S$S', function (jprovider, jarEntryName, prefix, origFile) {
+Clazz.newMeth(C$, 'copyJarEntry$jalview_util_jarInputStreamProvider$S$S$S', function (jprovider, jarEntryName, prefix, suffixModel) {
 var $in=null;
 var out=null;
 var suffix=".tmp";
-if (origFile == null ) {
-origFile=jarEntryName;
-}var sfpos=origFile.lastIndexOf$S(".");
-if (sfpos > -1 && sfpos < (origFile.length$() - 3) ) {
-suffix="." + origFile.substring$I(sfpos + 1);
+if (suffixModel == null ) {
+suffixModel=jarEntryName;
+}var sfpos=suffixModel.lastIndexOf$S(".");
+if (sfpos > -1 && sfpos < (suffixModel.length$() - 1) ) {
+suffix="." + suffixModel.substring$I(sfpos + 1);
 }try {
 var jin=jprovider.getJarInputStream$();
 var entry=null;
@@ -1601,10 +1564,10 @@ do {
 entry=jin.getNextJarEntry$();
 } while (entry != null  && !entry.getName$().equals$O(jarEntryName) );
 if (entry != null ) {
-$in=Clazz.new_($I$(90).c$$java_io_Reader,[Clazz.new_($I$(91).c$$java_io_InputStream$S,[jin, "UTF-8"])]);
+$in=Clazz.new_([Clazz.new_($I$(91,1).c$$java_io_InputStream$S,[jin, "UTF-8"])],$I$(90,1).c$$java_io_Reader);
 var outFile=$I$(12).createTempFile$S$S(prefix, suffix);
 outFile.deleteOnExit$();
-out=Clazz.new_($I$(39).c$$java_io_OutputStream,[Clazz.new_($I$(6).c$$java_io_File,[outFile])]);
+out=Clazz.new_([Clazz.new_($I$(6,1).c$$java_io_File,[outFile])],$I$(39,1).c$$java_io_OutputStream);
 var data;
 while ((data=$in.readLine$()) != null ){
 out.println$S(data);
@@ -1646,7 +1609,7 @@ if (view != null ) {
 uniqueSeqSetId=view.getSequenceSetId$() + this.uniqueSetSuffix;
 viewId=(view.getId$() == null  ? null : view.getId$() + this.uniqueSetSuffix);
 }var hiddenSeqs=null;
-var tmpseqs=Clazz.new_($I$(4));
+var tmpseqs=Clazz.new_($I$(4,1));
 var multipleView=false;
 var referenceseqForView=null;
 var jseqs=jalviewModel.getJSeq$();
@@ -1658,7 +1621,7 @@ var tmpSeq=this.seqRefIds.get$O(seqId);
 if (tmpSeq != null ) {
 if (!this.incompleteSeqs.containsKey$O(seqId)) {
 if (tmpSeq.getStart$() != jseq.getStart$() || tmpSeq.getEnd$() != jseq.getEnd$() ) {
-System.err.println$S("Warning JAL-2154 regression: updating start/end for sequence " + tmpSeq.toString() + " to " + jseq );
+System.err.println$S(String.format$S$OA("Warning JAL-2154 regression: updating start/end for sequence %s from %d/%d to %d/%d", [tmpSeq.getName$(), new Integer(tmpSeq.getStart$()), new Integer(tmpSeq.getEnd$()), new Integer(jseq.getStart$()), new Integer(jseq.getEnd$())]));
 }} else {
 this.incompleteSeqs.remove$O(seqId);
 }if (vamsasSeqs.size$() > vi && vamsasSeqs.get$I(vi).getId$().equals$O(seqId) ) {
@@ -1670,35 +1633,35 @@ vi++;
 multipleView=true;
 }tmpSeq.setStart$I(jseq.getStart$());
 tmpSeq.setEnd$I(jseq.getEnd$());
-tmpseqs.add$TE(tmpSeq);
+tmpseqs.add$O(tmpSeq);
 } else {
 var vamsasSeq=vamsasSeqs.get$I(vi);
-tmpSeq=Clazz.new_($I$(92).c$$S$S,[vamsasSeq.getName$(), vamsasSeq.getSequence$()]);
+tmpSeq=Clazz.new_([vamsasSeq.getName$(), vamsasSeq.getSequence$()],$I$(92,1).c$$S$S);
 tmpSeq.setDescription$S(vamsasSeq.getDescription$());
 tmpSeq.setStart$I(jseq.getStart$());
 tmpSeq.setEnd$I(jseq.getEnd$());
 tmpSeq.setVamsasId$S(this.uniqueSetSuffix + seqId);
-this.seqRefIds.put$TK$TV(vamsasSeq.getId$(), tmpSeq);
-tmpseqs.add$TE(tmpSeq);
+this.seqRefIds.put$O$O(vamsasSeq.getId$(), tmpSeq);
+tmpseqs.add$O(tmpSeq);
 vi++;
 }if (C$.safeBoolean$Boolean(jseq.isViewreference$())) {
 referenceseqForView=tmpseqs.get$I(tmpseqs.size$() - 1);
 }if (jseq.isHidden$() != null  && jseq.isHidden$().booleanValue$() ) {
 if (hiddenSeqs == null ) {
-hiddenSeqs=Clazz.new_($I$(4));
-}hiddenSeqs.add$TE(tmpSeq);
+hiddenSeqs=Clazz.new_($I$(4,1));
+}hiddenSeqs.add$O(tmpSeq);
 }}
-var orderedSeqs=tmpseqs.toArray$TTA(Clazz.array($I$(93), [tmpseqs.size$()]));
+var orderedSeqs=tmpseqs.toArray$OA(Clazz.array($I$(93), [tmpseqs.size$()]));
 var al=null;
-if (vamsasSet.getDatasetId$() == null  || vamsasSet.getDatasetId$() == "" ) {
-al=Clazz.new_($I$(94).c$$jalview_datamodel_SequenceIA,[orderedSeqs]);
+if (vamsasSet.getDatasetId$() == null  || vamsasSet.getDatasetId$() === ""  ) {
+al=Clazz.new_($I$(94,1).c$$jalview_datamodel_SequenceIA,[orderedSeqs]);
 al.setDataset$jalview_datamodel_AlignmentI(null);
 } else {
 var isdsal=jalviewModel.getViewport$().isEmpty$();
 if (isdsal) {
 al=p$1.getDatasetFor$S.apply(this, [vamsasSet.getDatasetId$()]);
 }if (al == null ) {
-al=Clazz.new_($I$(94).c$$jalview_datamodel_SequenceIA,[orderedSeqs]);
+al=Clazz.new_($I$(94,1).c$$jalview_datamodel_SequenceIA,[orderedSeqs]);
 }if (isdsal) {
 p$1.addDatasetRef$S$jalview_datamodel_AlignmentI.apply(this, [vamsasSet.getDatasetId$(), al]);
 }p$1.recoverDatasetFor$jalview_xml_binding_jalview_SequenceSet$jalview_datamodel_AlignmentI$Z$S.apply(this, [vamsasSet, al, isdsal, uniqueSeqSetId]);
@@ -1708,7 +1671,7 @@ al.setSeqrep$jalview_datamodel_SequenceI(referenceseqForView);
 var ssp=vamsasSet.getSequenceSetProperties$().get$I(i);
 al.setProperty$O$O(ssp.getKey$(), ssp.getValue$());
 }
-var pdbloaded=Clazz.new_($I$(11));
+var pdbloaded=Clazz.new_($I$(11,1));
 if (!multipleView) {
 for (var i=0; i < vamsasSeqs.size$(); i++) {
 var jseq=jseqs.get$I(i);
@@ -1716,9 +1679,9 @@ if (jseq.getFeatures$().size$() > 0) {
 var features=jseq.getFeatures$();
 for (var f=0; f < features.size$(); f++) {
 var feat=features.get$I(f);
-var sf=Clazz.new_($I$(95).c$$S$S$I$I$F$S,[feat.getType$(), feat.getDescription$(), feat.getBegin$(), feat.getEnd$(), C$.safeFloat$Float(feat.getScore$()), feat.getFeatureGroup$()]);
+var sf=Clazz.new_([feat.getType$(), feat.getDescription$(), feat.getBegin$(), feat.getEnd$(), C$.safeFloat$Float(feat.getScore$()), feat.getFeatureGroup$()],$I$(95,1).c$$S$S$I$I$F$S);
 sf.setStatus$S(feat.getStatus$());
-var mapAttributes=Clazz.new_($I$(2));
+var mapAttributes=Clazz.new_($I$(2,1));
 for (var od=0; od < feat.getOtherData$().size$(); od++) {
 var keyValue=feat.getOtherData$().get$I(od);
 var attributeName=keyValue.getKey$();
@@ -1731,8 +1694,8 @@ if (subAttribute == null ) {
 sf.setValue$S$O(attributeName, attributeValue);
 } else {
 if (!mapAttributes.containsKey$O(attributeName)) {
-mapAttributes.put$TK$TV(attributeName, Clazz.new_($I$(2)));
-}mapAttributes.get$O(attributeName).put$TK$TV(subAttribute, attributeValue);
+mapAttributes.put$O$O(attributeName, Clazz.new_($I$(2,1)));
+}mapAttributes.get$O(attributeName).put$O$O(subAttribute, attributeValue);
 }}}
 for (var mapAttribute, $mapAttribute = mapAttributes.entrySet$().iterator$(); $mapAttribute.hasNext$()&&((mapAttribute=($mapAttribute.next$())),1);) {
 sf.setValue$S$O(mapAttribute.getKey$(), mapAttribute.getValue$());
@@ -1745,11 +1708,11 @@ p$1.addDBRefs$jalview_datamodel_SequenceI$jalview_xml_binding_jalview_Sequence.a
 var ids=jseq.getPdbids$();
 for (var p=0; p < ids.size$(); p++) {
 var pdbid=ids.get$I(p);
-var entry=Clazz.new_($I$(96));
+var entry=Clazz.new_($I$(96,1));
 entry.setId$S(pdbid.getId$());
 if (pdbid.getType$() != null ) {
-if ($I$(97).getType$S(pdbid.getType$()) != null ) {
-entry.setType$jalview_datamodel_PDBEntry_Type($I$(97).getType$S(pdbid.getType$()));
+if ($I$(97,"getType$S",[pdbid.getType$()]) != null ) {
+entry.setType$jalview_datamodel_PDBEntry_Type($I$(97,"getType$S",[pdbid.getType$()]));
 } else {
 entry.setType$jalview_datamodel_PDBEntry_Type($I$(97).FILE);
 }}if (pdbid.getFile$() != null  && jprovider != null  ) {
@@ -1760,7 +1723,7 @@ entry.setFile$S(pdbloaded.get$O(pdbid.getId$()).toString());
 }}for (var prop, $prop = pdbid.getProperty$().iterator$(); $prop.hasNext$()&&((prop=($prop.next$())),1);) {
 entry.setProperty$S$O(prop.getName$(), prop.getValue$());
 }
-$I$(87).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider($I$(9).instance).registerPDBEntry$jalview_datamodel_PDBEntry(entry);
+$I$(87,"getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider",[$I$(9).instance]).registerPDBEntry$jalview_datamodel_PDBEntry(entry);
 if (al.getSequenceAt$I(i).getDatasetSequence$() != null ) {
 al.getSequenceAt$I(i).getDatasetSequence$().addPDBId$jalview_datamodel_PDBEntry(entry);
 } else {
@@ -1770,7 +1733,7 @@ al.getSequenceAt$I(i).addPDBId$jalview_datamodel_PDBEntry(entry);
 }if (vamsasSet.getAlcodonFrame$().size$() > 0) {
 var alc=vamsasSet.getAlcodonFrame$();
 for (var i=0; i < alc.size$(); i++) {
-var cf=Clazz.new_($I$(98));
+var cf=Clazz.new_($I$(98,1));
 if (alc.get$I(i).getAlcodMap$().size$() > 0) {
 var maps=alc.get$I(i).getAlcodMap$();
 for (var m=0; m < maps.size$(); m++) {
@@ -1782,12 +1745,12 @@ mapping=p$1.addMapping$jalview_xml_binding_jalview_Mapping.apply(this, [map.getM
 if (dnaseq != null  && mapping.getTo$() != null  ) {
 cf.addMap$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList(dnaseq, mapping.getTo$(), mapping.getMap$());
 } else {
-this.frefedSequence.add$TE(this.newAlcodMapRef$S$jalview_datamodel_AlignedCodonFrame$jalview_datamodel_Mapping(map.getDnasq$(), cf, mapping));
+this.frefedSequence.add$O(this.newAlcodMapRef$S$jalview_datamodel_AlignedCodonFrame$jalview_datamodel_Mapping(map.getDnasq$(), cf, mapping));
 }}}
 al.addCodonFrame$jalview_datamodel_AlignedCodonFrame(cf);
 }}
-}var autoAlan=Clazz.new_($I$(4));
-var groupAnnotRefs=Clazz.new_($I$(11));
+}var autoAlan=Clazz.new_($I$(4,1));
+var groupAnnotRefs=Clazz.new_($I$(11,1));
 if (vamsasSet.getAnnotation$().size$() > 0) {
 var an=vamsasSet.getAnnotation$();
 for (var i=0; i < an.size$(); i++) {
@@ -1801,7 +1764,7 @@ annotation.setId$S(null);
 if (annotationId != null  && this.annotationIds.containsKey$O(annotationId) ) {
 var jda=this.annotationIds.get$O(annotationId);
 if (annotation.isVisible$() != null ) {
-jda.visible=(annotation.isVisible$()).booleanValue$();
+jda.visible=(annotation.isVisible$()).valueOf();
 }al.addAnnotation$jalview_datamodel_AlignmentAnnotation(jda);
 continue;
 }var ae=annotation.getAnnotationElement$();
@@ -1816,8 +1779,8 @@ anpos=annElement.getPosition$();
 if (anpos >= anot.length) {
 continue;
 }var value=C$.safeFloat$Float(annElement.getValue$());
-anot[anpos]=Clazz.new_($I$(99).c$$S$S$C$F,[annElement.getDisplayCharacter$(), annElement.getDescription$(), (annElement.getSecondaryStructure$() == null  || annElement.getSecondaryStructure$().length$() == 0 ) ? " " : annElement.getSecondaryStructure$().charAt$I(0), value]);
-anot[anpos].colour=Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(annElement.getColour$())]);
+anot[anpos]=Clazz.new_([annElement.getDisplayCharacter$(), annElement.getDescription$(), (annElement.getSecondaryStructure$() == null  || annElement.getSecondaryStructure$().length$() == 0 ) ? " " : annElement.getSecondaryStructure$().charAt$I(0), value],$I$(99,1).c$$S$S$C$F);
+anot[anpos].colour=Clazz.new_([C$.safeInt$Integer(annElement.getColour$())],$I$(64,1).c$$I);
 if (firstColour == null ) {
 firstColour=anot[anpos].colour;
 }}
@@ -1825,18 +1788,18 @@ firstColour=anot[anpos].colour;
 if (annotation.isGraph$()) {
 var llim=0;
 var hlim=0;
-jaa=Clazz.new_($I$(100).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,[annotation.getLabel$(), annotation.getDescription$(), anot, llim, hlim, C$.safeInt$Integer(annotation.getGraphType$())]);
+jaa=Clazz.new_([annotation.getLabel$(), annotation.getDescription$(), anot, llim, hlim, C$.safeInt$Integer(annotation.getGraphType$())],$I$(100,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I);
 jaa.graphGroup=C$.safeInt$Integer(annotation.getGraphGroup$());
 jaa._linecolour=firstColour;
 if (annotation.getThresholdLine$() != null ) {
-jaa.setThreshold$jalview_datamodel_GraphLine(Clazz.new_($I$(101).c$$F$S$java_awt_Color,[C$.safeFloat$Float(annotation.getThresholdLine$().getValue$()), annotation.getThresholdLine$().getLabel$(), Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(annotation.getThresholdLine$().getColour$())])]));
+jaa.setThreshold$jalview_datamodel_GraphLine(Clazz.new_([C$.safeFloat$Float(annotation.getThresholdLine$().getValue$()), annotation.getThresholdLine$().getLabel$(), Clazz.new_([C$.safeInt$Integer(annotation.getThresholdLine$().getColour$())],$I$(64,1).c$$I)],$I$(101,1).c$$F$S$java_awt_Color));
 }if (autoForView || annotation.isAutoCalculated$() ) {
 jaa.hasText=true;
 }} else {
-jaa=Clazz.new_($I$(100).c$$S$S$jalview_datamodel_AnnotationA,[annotation.getLabel$(), annotation.getDescription$(), anot]);
+jaa=Clazz.new_([annotation.getLabel$(), annotation.getDescription$(), anot],$I$(100,1).c$$S$S$jalview_datamodel_AnnotationA);
 jaa._linecolour=firstColour;
 }if (annotation.getId$() != null ) {
-this.annotationIds.put$TK$TV(annotation.getId$(), jaa);
+this.annotationIds.put$O$O(annotation.getId$(), jaa);
 jaa.annotationId=annotation.getId$();
 }var sequenceRef=annotation.getSequenceRef$();
 if (sequenceRef != null ) {
@@ -1849,9 +1812,9 @@ sequence.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(jaa);
 }}if (annotation.getGroupRef$() != null  && annotation.getGroupRef$().length$() > 0 ) {
 var aal=groupAnnotRefs.get$O(annotation.getGroupRef$());
 if (aal == null ) {
-aal=Clazz.new_($I$(4));
-groupAnnotRefs.put$TK$TV(annotation.getGroupRef$(), aal);
-}aal.add$TE(jaa);
+aal=Clazz.new_($I$(4,1));
+groupAnnotRefs.put$O$O(annotation.getGroupRef$(), aal);
+}aal.add$O(jaa);
 }if (annotation.getScore$() != null ) {
 jaa.setScore$D(annotation.getScore$().doubleValue$());
 }if (annotation.isVisible$() != null ) {
@@ -1871,7 +1834,7 @@ for (var prop, $prop = annotation.getProperty$().iterator$(); $prop.hasNext$()&&
 jaa.setProperty$S$S(prop.getName$(), prop.getValue$());
 }
 }if (jaa.autoCalculated) {
-autoAlan.add$TE(Clazz.new_($I$(102).c$$I$jalview_datamodel_AlignmentAnnotation, [this, null, i, jaa]));
+autoAlan.add$O(Clazz.new_($I$(102,1).c$$I$jalview_datamodel_AlignmentAnnotation,[this, null, i, jaa]));
 } else {
 al.addAnnotation$jalview_datamodel_AlignmentAnnotation(jaa);
 }}
@@ -1887,23 +1850,23 @@ cs=this.getUserColourScheme$jalview_xml_binding_jalview_JalviewModel$S(jalviewMo
 } else if (jGroup.getColour$().equals$O("AnnotationColourGradient") && jGroup.getAnnotationColours$() != null  ) {
 addAnnotSchemeGroup=true;
 } else {
-cs=$I$(31).getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S(null, al, jGroup.getColour$());
+cs=$I$(31,"getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S",[null, al, jGroup.getColour$()]);
 }}var pidThreshold=C$.safeInt$Integer(jGroup.getPidThreshold$());
-var seqs=Clazz.new_($I$(33));
+var seqs=Clazz.new_($I$(33,1));
 for (var s=0; s < jGroup.getSeq$().size$(); s++) {
 var seqId=jGroup.getSeq$().get$I(s);
 var ts=this.seqRefIds.get$O(seqId);
 if (ts != null ) {
-seqs.addElement$TE(ts);
+seqs.addElement$O(ts);
 }}
 if (seqs.size$() < 1) {
 continue;
-}var sg=Clazz.new_($I$(103).c$$java_util_List$S$jalview_schemes_ColourSchemeI$Z$Z$Z$I$I,[seqs, jGroup.getName$(), cs, C$.safeBoolean$Boolean(jGroup.isDisplayBoxes$()), C$.safeBoolean$Boolean(jGroup.isDisplayText$()), C$.safeBoolean$Boolean(jGroup.isColourText$()), C$.safeInt$Integer(jGroup.getStart$()), C$.safeInt$Integer(jGroup.getEnd$())]);
+}var sg=Clazz.new_([seqs, jGroup.getName$(), cs, C$.safeBoolean$Boolean(jGroup.isDisplayBoxes$()), C$.safeBoolean$Boolean(jGroup.isDisplayText$()), C$.safeBoolean$Boolean(jGroup.isColourText$()), C$.safeInt$Integer(jGroup.getStart$()), C$.safeInt$Integer(jGroup.getEnd$())],$I$(103,1).c$$java_util_List$S$jalview_schemes_ColourSchemeI$Z$Z$Z$I$I);
 sg.getGroupColourScheme$().setThreshold$I$Z(pidThreshold, true);
 sg.getGroupColourScheme$().setConservationInc$I(C$.safeInt$Integer(jGroup.getConsThreshold$()));
-sg.setOutlineColour$java_awt_Color(Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(jGroup.getOutlineColour$())]));
-sg.textColour=Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(jGroup.getTextCol1$())]);
-sg.textColour2=Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(jGroup.getTextCol2$())]);
+sg.setOutlineColour$java_awt_Color(Clazz.new_([C$.safeInt$Integer(jGroup.getOutlineColour$())],$I$(64,1).c$$I));
+sg.textColour=Clazz.new_([C$.safeInt$Integer(jGroup.getTextCol1$())],$I$(64,1).c$$I);
+sg.textColour2=Clazz.new_([C$.safeInt$Integer(jGroup.getTextCol2$())],$I$(64,1).c$$I);
 sg.setShowNonconserved$Z(C$.safeBoolean$Boolean(jGroup.isShowUnconserved$()));
 sg.thresholdTextColour=C$.safeInt$Integer(jGroup.getTextColThreshold$());
 sg.setShowConsensusHistogram$Z(jGroup.isShowConsensusHistogram$());
@@ -1911,7 +1874,7 @@ sg.setshowSequenceLogo$Z(jGroup.isShowSequenceLogo$());
 sg.setNormaliseSequenceLogo$Z(jGroup.isNormaliseSequenceLogo$());
 sg.setIgnoreGapsConsensus$Z(jGroup.isIgnoreGapsinConsensus$());
 if (jGroup.getConsThreshold$() != null  && jGroup.getConsThreshold$().intValue$() != 0 ) {
-var c=Clazz.new_($I$(104).c$$S$java_util_List$I$I,["All", sg.getSequences$java_util_Map(null), 0, sg.getWidth$() - 1]);
+var c=Clazz.new_(["All", sg.getSequences$java_util_Map(null), 0, sg.getWidth$() - 1],$I$(104,1).c$$S$java_util_List$I$I);
 c.calculate$();
 c.verdict$Z$F(false, 25);
 sg.cs.setConservation$jalview_analysis_Conservation(c);
@@ -1981,7 +1944,7 @@ var gapped=C$.safeBoolean$Boolean(ss.isGapped$());
 var rnaTitle=ss.getTitle$();
 var sessionState=ss.getViewerState$();
 var tempStateFile=this.copyJarEntry$jalview_util_jarInputStreamProvider$S$S$S(jprovider, sessionState, "varna", null);
-var rna=Clazz.new_($I$(105).c$$S$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_SequenceI$fr_orsay_lri_varna_models_rna_RNA$Z,[rnaTitle, ann, seq, null, gapped]);
+var rna=Clazz.new_($I$(105,1).c$$S$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_SequenceI$fr_orsay_lri_varna_models_rna_RNA$Z,[rnaTitle, ann, seq, null, gapped]);
 appVarna.addModelSession$jalview_ext_varna_RnaModel$S$S(rna, rnaTitle, tempStateFile);
 }
 appVarna.setInitialSelection$I(C$.safeInt$Integer(viewer.getSelectedRna$()));
@@ -1997,8 +1960,8 @@ var varna=frame;
 if (postLoadId.equals$O(varna.getViewId$())) {
 return varna;
 }}}
-var model=Clazz.new_($I$(106).c$$S$S$I$I$I$I$I,[postLoadId, viewer.getTitle$(), C$.safeInt$Integer(viewer.getXpos$()), C$.safeInt$Integer(viewer.getYpos$()), C$.safeInt$Integer(viewer.getWidth$()), C$.safeInt$Integer(viewer.getHeight$()), C$.safeInt$Integer(viewer.getDividerLocation$())]);
-var varna=Clazz.new_($I$(107).c$$jalview_datamodel_RnaViewerModel$jalview_gui_AlignmentPanel,[model, ap]);
+var model=Clazz.new_([postLoadId, viewer.getTitle$(), C$.safeInt$Integer(viewer.getXpos$()), C$.safeInt$Integer(viewer.getYpos$()), C$.safeInt$Integer(viewer.getWidth$()), C$.safeInt$Integer(viewer.getHeight$()), C$.safeInt$Integer(viewer.getDividerLocation$())],$I$(106,1).c$$S$S$I$I$I$I$I);
+var varna=Clazz.new_($I$(107,1).c$$jalview_datamodel_RnaViewerModel$jalview_gui_AlignmentPanel,[model, ap]);
 return varna;
 });
 
@@ -2008,11 +1971,11 @@ for (var t=0; t < jm.getTree$().size$(); t++) {
 var tree=jm.getTree$().get$I(t);
 var tp=p$1.retrieveExistingObj$S.apply(this, [tree.getId$()]);
 if (tp == null ) {
-tp=af.showNewickTree$jalview_io_NewickFile$S$I$I$I$I(Clazz.new_($I$(108).c$$S,[tree.getNewick$()]), tree.getTitle$(), C$.safeInt$Integer(tree.getWidth$()), C$.safeInt$Integer(tree.getHeight$()), C$.safeInt$Integer(tree.getXpos$()), C$.safeInt$Integer(tree.getYpos$()));
+tp=af.showNewickTree$jalview_io_NewickFile$S$I$I$I$I(Clazz.new_([tree.getNewick$()],$I$(108,1).c$$S), tree.getTitle$(), C$.safeInt$Integer(tree.getWidth$()), C$.safeInt$Integer(tree.getHeight$()), C$.safeInt$Integer(tree.getXpos$()), C$.safeInt$Integer(tree.getYpos$()));
 if (tree.getId$() != null ) {
 }} else {
 tp.setTitle$S(tree.getTitle$());
-tp.setBounds$java_awt_Rectangle(Clazz.new_($I$(109).c$$I$I$I$I,[C$.safeInt$Integer(tree.getXpos$()), C$.safeInt$Integer(tree.getYpos$()), C$.safeInt$Integer(tree.getWidth$()), C$.safeInt$Integer(tree.getHeight$())]));
+tp.setBounds$java_awt_Rectangle(Clazz.new_([C$.safeInt$Integer(tree.getXpos$()), C$.safeInt$Integer(tree.getYpos$()), C$.safeInt$Integer(tree.getWidth$()), C$.safeInt$Integer(tree.getHeight$())],$I$(109,1).c$$I$I$I$I));
 tp.setViewport$jalview_gui_AlignViewport(av);
 tp.getTreeCanvas$().setViewport$jalview_gui_AlignViewport(av);
 tp.getTreeCanvas$().setAssociatedPanel$jalview_gui_AlignmentPanel(ap);
@@ -2023,9 +1986,9 @@ continue;
 }tp.fitToWindow.setState$Z(C$.safeBoolean$Boolean(tree.isFitToWindow$()));
 tp.fitToWindow_actionPerformed$java_awt_event_ActionEvent(null);
 if (tree.getFontName$() != null ) {
-tp.setTreeFont$java_awt_Font(Clazz.new_($I$(110).c$$S$I$I,[tree.getFontName$(), C$.safeInt$Integer(tree.getFontStyle$()), C$.safeInt$Integer(tree.getFontSize$())]));
+tp.setTreeFont$java_awt_Font(Clazz.new_([tree.getFontName$(), C$.safeInt$Integer(tree.getFontStyle$()), C$.safeInt$Integer(tree.getFontSize$())],$I$(110,1).c$$S$I$I));
 } else {
-tp.setTreeFont$java_awt_Font(Clazz.new_($I$(110).c$$S$I$I,[view.getFontName$(), C$.safeInt$Integer(view.getFontStyle$()), C$.safeInt$Integer(view.getFontSize$())]));
+tp.setTreeFont$java_awt_Font(Clazz.new_([view.getFontName$(), C$.safeInt$Integer(view.getFontStyle$()), C$.safeInt$Integer(view.getFontSize$())],$I$(110,1).c$$S$I$I));
 }tp.showPlaceholders$Z(C$.safeBoolean$Boolean(tree.isMarkUnlinked$()));
 tp.showBootstrap$Z(C$.safeBoolean$Boolean(tree.isShowBootstrap$()));
 tp.showDistances$Z(C$.safeBoolean$Boolean(tree.isShowDistances$()));
@@ -2043,7 +2006,7 @@ throw ex;
 });
 
 Clazz.newMeth(C$, 'loadPDBStructures$jalview_util_jarInputStreamProvider$java_util_List$jalview_gui_AlignFrame$jalview_gui_AlignmentPanel', function (jprovider, jseqs, af, ap) {
-var structureViewers=Clazz.new_($I$(111));
+var structureViewers=Clazz.new_($I$(111,1));
 for (var i=0; i < jseqs.size$(); i++) {
 var jseq=jseqs.get$I(i);
 if (jseq.getPdbids$().size$() > 0) {
@@ -2054,7 +2017,7 @@ var structureStateCount=pdbid.getStructureState$().size$();
 for (var s=0; s < structureStateCount; s++) {
 var structureState=pdbid.getStructureState$().get$I(s);
 var sviewid=(structureState.getViewId$() == null ) ? null : structureState.getViewId$() + this.uniqueSetSuffix;
-var jpdb=Clazz.new_($I$(96));
+var jpdb=Clazz.new_($I$(96,1));
 jpdb.setFile$S(this.loadPDBFile$jalview_util_jarInputStreamProvider$S$S(jprovider, pdbid.getId$(), pdbid.getFile$()));
 jpdb.setId$S(pdbid.getId$());
 var x=C$.safeInt$Integer(structureState.getXpos$());
@@ -2066,7 +2029,7 @@ var seq=this.seqRefIds.get$O(jseq.getId$() + "");
 if (sviewid == null ) {
 sviewid="_jalview_pre2_4_" + x + "," + y + "," + width + "," + height ;
 }if (!structureViewers.containsKey$O(sviewid)) {
-structureViewers.put$TK$TV(sviewid, Clazz.new_($I$(112).c$$I$I$I$I$Z$Z$Z$S$S,[x, y, width, height, false, false, true, structureState.getViewId$(), structureState.getType$()]));
+structureViewers.put$O$O(sviewid, Clazz.new_([x, y, width, height, false, false, true, structureState.getViewId$(), structureState.getType$()],$I$(112,1).c$$I$I$I$I$Z$Z$Z$S$S));
 }var jmoldat=structureViewers.get$O(sviewid);
 jmoldat.setAlignWithPanel$Z(jmoldat.isAlignWithPanel$() || structureState.isAlignwithAlignPanel$() );
 var colourWithAlignPanel=jmoldat.isColourWithAlignPanel$();
@@ -2078,12 +2041,12 @@ jmoldat.setColourByViewer$Z(colourByViewer);
 if (jmoldat.getStateData$().length$() < structureState.getValue$().length$()) {
 jmoldat.setStateData$S(structureState.getValue$());
 }if (pdbid.getFile$() != null ) {
-var mapkey=Clazz.new_($I$(12).c$$S,[pdbid.getFile$()]);
+var mapkey=Clazz.new_([pdbid.getFile$()],$I$(12,1).c$$S);
 var seqstrmaps=jmoldat.getFileData$().get$O(mapkey);
 if (seqstrmaps == null ) {
-jmoldat.getFileData$().put$TK$TV(mapkey, seqstrmaps=Clazz.new_($I$(113).c$$S$S, [jmoldat, null, pdbFile, pdbid.getId$()]));
+jmoldat.getFileData$().put$O$O(mapkey, seqstrmaps=Clazz.new_([jmoldat, null, pdbFile, pdbid.getId$()],$I$(113,1).c$$S$S));
 }if (!seqstrmaps.getSeqList$().contains$O(seq)) {
-seqstrmaps.getSeqList$().add$TE(seq);
+seqstrmaps.getSeqList$().add$O(seq);
 }} else {
 this.errorMessage=("The Jmol views in this project were imported\nfrom an older version of Jalview.\nPlease review the sequence colour associations\nin the Colour by section of the Jmol View menu.\n\nIn the case of problems, see note at\nhttp://issues.jalview.org/browse/JAL-747");
 p$1.warn$S.apply(this, [this.errorMessage]);
@@ -2119,24 +2082,24 @@ Clazz.newMeth(C$, 'createChimeraViewer$java_util_Map_Entry$jalview_gui_AlignFram
 var data=viewerData.getValue$();
 var chimeraSessionFile=data.getStateData$();
 var viewerJarEntryName=this.getViewerJarEntryName$S(data.getViewId$());
-chimeraSessionFile=this.copyJarEntry$jalview_util_jarInputStreamProvider$S$S$S(jprovider, viewerJarEntryName, "chimera", null);
+chimeraSessionFile=this.copyJarEntry$jalview_util_jarInputStreamProvider$S$S$S(jprovider, viewerJarEntryName, "chimera", ".py");
 var fileData=data.getFileData$().entrySet$();
-var pdbs=Clazz.new_($I$(4));
-var allseqs=Clazz.new_($I$(4));
+var pdbs=Clazz.new_($I$(4,1));
+var allseqs=Clazz.new_($I$(4,1));
 for (var pdb, $pdb = fileData.iterator$(); $pdb.hasNext$()&&((pdb=($pdb.next$())),1);) {
 var filePath=pdb.getValue$().getFilePath$();
 var pdbId=pdb.getValue$().getPdbId$();
-pdbs.add$TE(Clazz.new_($I$(96).c$$S$S$jalview_datamodel_PDBEntry_Type$S,[pdbId, null, $I$(97).PDB, filePath]));
+pdbs.add$O(Clazz.new_([pdbId, null, $I$(97).PDB, filePath],$I$(96,1).c$$S$S$jalview_datamodel_PDBEntry_Type$S));
 var seqList=pdb.getValue$().getSeqList$();
-var seqs=seqList.toArray$TTA(Clazz.array($I$(93), [seqList.size$()]));
-allseqs.add$TE(seqs);
+var seqs=seqList.toArray$OA(Clazz.array($I$(93), [seqList.size$()]));
+allseqs.add$O(seqs);
 }
 var colourByChimera=data.isColourByViewer$();
 var colourBySequence=data.isColourWithAlignPanel$();
-var pdbArray=pdbs.toArray$TTA(Clazz.array($I$(96), [pdbs.size$()]));
-var seqsArray=allseqs.toArray$TTA(Clazz.array($I$(93), [allseqs.size$(), null]));
+var pdbArray=pdbs.toArray$OA(Clazz.array($I$(96), [pdbs.size$()]));
+var seqsArray=allseqs.toArray$OA(Clazz.array($I$(93), [allseqs.size$(), null]));
 var newViewId=viewerData.getKey$();
-var cvf=Clazz.new_($I$(115).c$$S$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$Z$Z$S,[chimeraSessionFile, af.alignPanel, pdbArray, seqsArray, colourByChimera, colourBySequence, newViewId]);
+var cvf=Clazz.new_($I$(115,1).c$$S$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$Z$Z$S,[chimeraSessionFile, af.alignPanel, pdbArray, seqsArray, colourByChimera, colourBySequence, newViewId]);
 cvf.setSize$I$I(data.getWidth$(), data.getHeight$());
 cvf.setLocation$I$I(data.getX$(), data.getY$());
 });
@@ -2146,10 +2109,10 @@ var svattrib=viewerData.getValue$();
 var state=svattrib.getStateData$();
 if ($I$(114).JMOL.toString().equals$O(svattrib.getType$())) {
 state=this.readJarEntry$jalview_util_jarInputStreamProvider$S(jprovider, this.getViewerJarEntryName$S(svattrib.getViewId$()));
-}var pdbfilenames=Clazz.new_($I$(4));
-var seqmaps=Clazz.new_($I$(4));
-var pdbids=Clazz.new_($I$(4));
-var newFileLoc=Clazz.new_($I$(116).c$$I,[64]);
+}var pdbfilenames=Clazz.new_($I$(4,1));
+var seqmaps=Clazz.new_($I$(4,1));
+var pdbids=Clazz.new_($I$(4,1));
+var newFileLoc=Clazz.new_($I$(116,1).c$$I,[64]);
 var cp=0;
 var ncp;
 var ecp;
@@ -2158,14 +2121,14 @@ while ((ncp=state.indexOf$S$I("load ", cp)) > -1){
 do {
 newFileLoc.append$S(state.substring$I$I(cp, ncp=(state.indexOf$S$I("\"", ncp + 1) + 1)));
 var oldfilenam=state.substring$I$I(ncp, ecp=state.indexOf$S$I("\"", ncp));
-var filedat=oldFiles.get$O(Clazz.new_($I$(12).c$$S,[oldfilenam]));
+var filedat=oldFiles.get$O(Clazz.new_($I$(12,1).c$$S,[oldfilenam]));
 if (filedat == null ) {
 var reformatedOldFilename=oldfilenam.replaceAll$S$S("/", "\\\\");
-filedat=oldFiles.get$O(Clazz.new_($I$(12).c$$S,[reformatedOldFilename]));
-}newFileLoc.append$S($I$(1).escapeString$S(filedat.getFilePath$()));
-pdbfilenames.add$TE(filedat.getFilePath$());
-pdbids.add$TE(filedat.getPdbId$());
-seqmaps.add$TE(filedat.getSeqList$().toArray$TTA(Clazz.array($I$(93), [0])));
+filedat=oldFiles.get$O(Clazz.new_($I$(12,1).c$$S,[reformatedOldFilename]));
+}newFileLoc.append$S($I$(1,"escapeBackslashes$S",[filedat.getFilePath$()]));
+pdbfilenames.add$O(filedat.getFilePath$());
+pdbids.add$O(filedat.getPdbId$());
+seqmaps.add$O(filedat.getSeqList$().toArray$OA(Clazz.array($I$(93), [0])));
 newFileLoc.append$S("\"");
 cp=ecp + 1;
 } while ((ncp=state.indexOf$S$I("/*file*/", cp)) > -1);
@@ -2174,14 +2137,14 @@ if (cp > 0) {
 newFileLoc.append$S(state.substring$I(cp));
 } else {
 System.err.print$S("Ignoring incomplete Jmol state for PDB ids: ");
-newFileLoc=Clazz.new_($I$(116).c$$S,[state]);
+newFileLoc=Clazz.new_($I$(116,1).c$$S,[state]);
 newFileLoc.append$S("; load append ");
 for (var id, $id = oldFiles.keySet$().iterator$(); $id.hasNext$()&&((id=($id.next$())),1);) {
 var filedat=oldFiles.get$O(id);
 newFileLoc.append$S(filedat.getFilePath$());
-pdbfilenames.add$TE(filedat.getFilePath$());
-pdbids.add$TE(filedat.getPdbId$());
-seqmaps.add$TE(filedat.getSeqList$().toArray$TTA(Clazz.array($I$(93), [0])));
+pdbfilenames.add$O(filedat.getFilePath$());
+pdbids.add$O(filedat.getPdbId$());
+seqmaps.add$O(filedat.getSeqList$().toArray$OA(Clazz.array($I$(93), [0])));
 newFileLoc.append$S(" \"");
 newFileLoc.append$S(filedat.getFilePath$());
 newFileLoc.append$S("\"");
@@ -2201,31 +2164,30 @@ val="1";
 } else {
 val="0";
 }newFileLoc.replace$I$I$S(histbug, diff, val);
-}}}var pdbf=pdbfilenames.toArray$TTA(Clazz.array(String, [pdbfilenames.size$()]));
-var id=pdbids.toArray$TTA(Clazz.array(String, [pdbids.size$()]));
-var sq=seqmaps.toArray$TTA(Clazz.array($I$(93), [seqmaps.size$(), null]));
+}}}var pdbf=pdbfilenames.toArray$OA(Clazz.array(String, [pdbfilenames.size$()]));
+var id=pdbids.toArray$OA(Clazz.array(String, [pdbids.size$()]));
+var sq=seqmaps.toArray$OA(Clazz.array($I$(93), [seqmaps.size$(), null]));
 var fileloc=newFileLoc.toString();
 var sviewid=viewerData.getKey$();
 var alf=af;
-var rect=Clazz.new_($I$(109).c$$I$I$I$I,[svattrib.getX$(), svattrib.getY$(), svattrib.getWidth$(), svattrib.getHeight$()]);
+var rect=Clazz.new_([svattrib.getX$(), svattrib.getY$(), svattrib.getWidth$(), svattrib.getHeight$()],$I$(109,1).c$$I$I$I$I);
 try {
-$I$(82).invokeAndWait$Runnable(((P$.Jalview2XML$6||
-(function(){var C$=Clazz.newClass(P$, "Jalview2XML$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(82,"invokeAndWait$Runnable",[((P$.Jalview2XML$6||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview2XML$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var sview=null;
 try {
-sview=Clazz.new_($I$(117).c$$jalview_structure_StructureSelectionManager,[this.$finals$.alf.alignPanel.getStructureSelectionManager$()]).createView$jalview_gui_StructureViewer_ViewerType$SA$SA$jalview_datamodel_SequenceIAA$jalview_gui_AlignmentPanel$jalview_datamodel_StructureViewerModel$S$java_awt_Rectangle$S($I$(114).JMOL, this.$finals$.pdbf, this.$finals$.id, this.$finals$.sq, this.$finals$.alf.alignPanel, this.$finals$.svattrib, this.$finals$.fileloc, this.$finals$.rect, this.$finals$.sviewid);
+sview=Clazz.new_([this.$finals$.alf.alignPanel.getStructureSelectionManager$()],$I$(117,1).c$$jalview_structure_StructureSelectionManager).createView$jalview_gui_StructureViewer_ViewerType$SA$SA$jalview_datamodel_SequenceIAA$jalview_gui_AlignmentPanel$jalview_datamodel_StructureViewerModel$S$java_awt_Rectangle$S($I$(114).JMOL, this.$finals$.pdbf, this.$finals$.id, this.$finals$.sq, this.$finals$.alf.alignPanel, this.$finals$.svattrib, this.$finals$.fileloc, this.$finals$.rect, this.$finals$.sviewid);
 this.b$['jalview.project.Jalview2XML'].addNewStructureViewer$jalview_api_structures_JalviewStructureDisplayI.apply(this.b$['jalview.project.Jalview2XML'], [sview]);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"OutOfMemoryError")){
-Clazz.new_($I$(118).c$$S$OutOfMemoryError,["restoring structure view for PDB id " + this.$finals$.id, ex.getCause$()]);
+Clazz.new_(["restoring structure view for PDB id " + this.$finals$.id, ex.getCause$()],$I$(118,1).c$$S$OutOfMemoryError);
 if (sview != null  && sview.isVisible$() ) {
 sview.closeViewer$Z(false);
 sview.setVisible$Z(false);
@@ -2236,7 +2198,7 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.Jalview2XML$6.$init$, [this, {alf: alf, pdbf: pdbf, id: id, sq: sq, svattrib: svattrib, fileloc: fileloc, rect: rect, sviewid: sviewid}])));
+), Clazz.new_(P$.Jalview2XML$6.$init$,[this, {alf:alf,svattrib:svattrib,rect:rect,pdbf:pdbf,fileloc:fileloc,sq:sq,id:id,sviewid:sviewid}]))]);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.lang.reflect.InvocationTargetException")){
 var ex = e$$;
@@ -2282,7 +2244,7 @@ var binding=viewer.getBinding$();
 for (var id, $id = oldFiles.keySet$().iterator$(); $id.hasNext$()&&((id=($id.next$())),1);) {
 var filedat=oldFiles.get$O(id);
 var pdbFile=filedat.getFilePath$();
-var seq=filedat.getSeqList$().toArray$TTA(Clazz.array($I$(93), [0]));
+var seq=filedat.getSeqList$().toArray$OA(Clazz.array($I$(93), [0]));
 binding.getSsm$().setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(seq, null, pdbFile, $I$(119).FILE, null);
 binding.addSequenceForStructFile$S$jalview_datamodel_SequenceIA(pdbFile, seq);
 }
@@ -2331,7 +2293,7 @@ return $I$(121).compareVersions$S$S$S(version, supported, "b") >= 0;
 Clazz.newMeth(C$, 'addNewStructureViewer$jalview_api_structures_JalviewStructureDisplayI', function (sview) {
 if (this.newStructureViewers != null ) {
 sview.getBinding$().setFinishedLoadingFromArchive$Z(false);
-this.newStructureViewers.add$TE(sview);
+this.newStructureViewers.add$O(sview);
 }});
 
 Clazz.newMeth(C$, 'setLoadingFinishedForNewStructureViewers$', function () {
@@ -2345,12 +2307,12 @@ this.newStructureViewers=null;
 
 Clazz.newMeth(C$, 'loadViewport$S$java_util_List$java_util_List$jalview_datamodel_AlignmentI$jalview_xml_binding_jalview_JalviewModel$jalview_xml_binding_jalview_JalviewModel_Viewport$S$S$java_util_List', function (file, JSEQ, hiddenSeqs, al, jm, view, uniqueSeqSetId, viewId, autoAlan) {
 var af=null;
-af=Clazz.new_($I$(122).c$$jalview_datamodel_AlignmentI$I$I$S$S,[al, C$.safeInt$Integer(view.getWidth$()), C$.safeInt$Integer(view.getHeight$()), uniqueSeqSetId, viewId]);
+af=Clazz.new_([al, C$.safeInt$Integer(view.getWidth$()), C$.safeInt$Integer(view.getHeight$()), uniqueSeqSetId, viewId],$I$(122,1).c$$jalview_datamodel_AlignmentI$I$I$S$S);
 af.setFileName$S$jalview_io_FileFormatI(file, $I$(123).Jalview);
 var viewport=af.getViewport$();
 for (var i=0; i < JSEQ.size$(); i++) {
 var colour=C$.safeInt$Integer(JSEQ.get$I(i).getColour$());
-viewport.setSequenceColour$jalview_datamodel_SequenceI$java_awt_Color(viewport.getAlignment$().getSequenceAt$I(i), Clazz.new_($I$(64).c$$I,[colour]));
+viewport.setSequenceColour$jalview_datamodel_SequenceI$java_awt_Color(viewport.getAlignment$().getSequenceAt$I(i), Clazz.new_($I$(64,1).c$$I,[colour]));
 }
 if (al.hasSeqrep$()) {
 viewport.setColourByReferenceSeq$Z(true);
@@ -2363,15 +2325,15 @@ if (av != null ) {
 viewport.setHistoryList$java_util_Deque(av.getHistoryList$());
 viewport.setRedoList$java_util_Deque(av.getRedoList$());
 } else {
-this.viewportsAdded.put$TK$TV(uniqueSeqSetId, viewport);
+this.viewportsAdded.put$O$O(uniqueSeqSetId, viewport);
 }$I$(124).Register$java_awt_Component$S(af.alignPanel, uniqueSeqSetId);
 }if (hiddenSeqs != null ) {
 for (var s=0; s < JSEQ.size$(); s++) {
-var hidden=Clazz.new_($I$(103));
+var hidden=Clazz.new_($I$(103,1));
 var isRepresentative=false;
 for (var r=0; r < JSEQ.get$I(s).getHiddenSequences$().size$(); r++) {
 isRepresentative=true;
-var sequenceToHide=al.getSequenceAt$I((JSEQ.get$I(s).getHiddenSequences$().get$I(r)).intValue$());
+var sequenceToHide=al.getSequenceAt$I((JSEQ.get$I(s).getHiddenSequences$().get$I(r)).valueOf());
 hidden.addSequence$jalview_datamodel_SequenceI$Z(sequenceToHide, false);
 hiddenSeqs.remove$O(sequenceToHide);
 }
@@ -2380,7 +2342,7 @@ var representativeSequence=al.getSequenceAt$I(s);
 hidden.addSequence$jalview_datamodel_SequenceI$Z(representativeSequence, false);
 viewport.hideRepSequences$jalview_datamodel_SequenceI$jalview_datamodel_SequenceGroup(representativeSequence, hidden);
 }}
-var hseqs=hiddenSeqs.toArray$TTA(Clazz.array($I$(93), [hiddenSeqs.size$()]));
+var hseqs=hiddenSeqs.toArray$OA(Clazz.array($I$(93), [hiddenSeqs.size$()]));
 viewport.hideSequence$jalview_datamodel_SequenceIA(hseqs);
 }viewport.setShowAnnotation$Z(C$.safeBoolean$Boolean(view.isShowAnnotation$()));
 viewport.setAbovePIDThreshold$Z(C$.safeBoolean$Boolean(view.isPidSelected$()));
@@ -2391,7 +2353,7 @@ viewport.setConservationSelected$Z(C$.safeBoolean$Boolean(view.isConservationSel
 viewport.setIncrement$I(C$.safeInt$Integer(view.getConsThreshold$()));
 viewport.setShowJVSuffix$Z(C$.safeBoolean$Boolean(view.isShowFullId$()));
 viewport.setRightAlignIds$Z(C$.safeBoolean$Boolean(view.isRightAlignIds$()));
-viewport.setFont$java_awt_Font$Z(Clazz.new_($I$(110).c$$S$I$I,[view.getFontName$(), C$.safeInt$Integer(view.getFontStyle$()), C$.safeInt$Integer(view.getFontSize$())]), true);
+viewport.setFont$java_awt_Font$Z(Clazz.new_([view.getFontName$(), C$.safeInt$Integer(view.getFontStyle$()), C$.safeInt$Integer(view.getFontSize$())],$I$(110,1).c$$S$I$I), true);
 var vs=viewport.getViewStyle$();
 vs.setScaleProteinAsCdna$Z(view.isScaleProteinAsCdna$());
 viewport.setViewStyle$jalview_api_ViewStyleI(vs);
@@ -2400,8 +2362,8 @@ viewport.setWrapAlignment$Z(C$.safeBoolean$Boolean(view.isWrapAlignment$()));
 viewport.setShowAnnotation$Z(C$.safeBoolean$Boolean(view.isShowAnnotation$()));
 viewport.setShowBoxes$Z(C$.safeBoolean$Boolean(view.isShowBoxes$()));
 viewport.setShowText$Z(C$.safeBoolean$Boolean(view.isShowText$()));
-viewport.setTextColour$java_awt_Color(Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(view.getTextCol1$())]));
-viewport.setTextColour2$java_awt_Color(Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(view.getTextCol2$())]));
+viewport.setTextColour$java_awt_Color(Clazz.new_([C$.safeInt$Integer(view.getTextCol1$())],$I$(64,1).c$$I));
+viewport.setTextColour2$java_awt_Color(Clazz.new_([C$.safeInt$Integer(view.getTextCol2$())],$I$(64,1).c$$I));
 viewport.setThresholdTextColour$I(C$.safeInt$Integer(view.getTextColThreshold$()));
 viewport.setShowUnconserved$Z(view.isShowUnconserved$());
 viewport.getRanges$().setStartRes$I(C$.safeInt$Integer(view.getStartRes$()));
@@ -2418,7 +2380,7 @@ cs=this.getUserColourScheme$jalview_xml_binding_jalview_JalviewModel$S(jm, view.
 var viewAnnColour=view.getAnnotationColours$();
 cs=p$1.constructAnnotationColour$jalview_xml_binding_jalview_AnnotationColourScheme$jalview_gui_AlignFrame$jalview_datamodel_AlignmentI$jalview_xml_binding_jalview_JalviewModel$Z.apply(this, [viewAnnColour, af, al, jm, true]);
 } else {
-cs=$I$(31).getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S(af.getViewport$(), al, view.getBgColour$());
+cs=$I$(31,"getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S",[af.getViewport$(), al, view.getBgColour$()]);
 }}viewport.setColourAppliesToAllGroups$Z(false);
 viewport.setGlobalColourScheme$jalview_schemes_ColourSchemeI(cs);
 viewport.getResidueShading$().setThreshold$I$Z(pidThreshold, view.isIgnoreGapsinConsensus$());
@@ -2439,13 +2401,15 @@ viewport.setShowDBRefs$Z(C$.safeBoolean$Boolean(view.isShowDbRefTooltip$()));
 viewport.setShowNPFeats$Z(C$.safeBoolean$Boolean(view.isShowNPfeatureTooltip$()));
 viewport.setShowGroupConsensus$Z(view.isShowGroupConsensus$());
 viewport.setShowGroupConservation$Z(view.isShowGroupConservation$());
+viewport.setShowComplementFeatures$Z(view.isShowComplementFeatures$());
+viewport.setShowComplementFeaturesOnTop$Z(view.isShowComplementFeaturesOnTop$());
 if (jm.getFeatureSettings$() != null ) {
 var fr=af.alignPanel.getSeqPanel$().seqCanvas.getFeatureRenderer$();
 var fdi;
-viewport.setFeaturesDisplayed$jalview_api_FeaturesDisplayedI(fdi=Clazz.new_($I$(125)));
+viewport.setFeaturesDisplayed$jalview_api_FeaturesDisplayedI(fdi=Clazz.new_($I$(125,1)));
 var renderOrder=Clazz.array(String, [jm.getFeatureSettings$().getSetting$().size$()]);
-var featureColours=Clazz.new_($I$(11));
-var featureOrder=Clazz.new_($I$(11));
+var featureColours=Clazz.new_($I$(11,1));
+var featureOrder=Clazz.new_($I$(11,1));
 for (var fs=0; fs < jm.getFeatureSettings$().getSetting$().size$(); fs++) {
 var setting=jm.getFeatureSettings$().getSetting$().get$I(fs);
 var featureType=setting.getType$();
@@ -2454,9 +2418,9 @@ if (filters != null ) {
 var filter=C$.parseFilter$S$jalview_xml_binding_jalview_FeatureMatcherSet(featureType, filters);
 if (!filter.isEmpty$()) {
 fr.setFeatureFilter$S$jalview_datamodel_features_FeatureMatcherSetI(featureType, filter);
-}}var maxColour=Clazz.new_($I$(64).c$$I,[setting.getColour$()]);
+}}var maxColour=Clazz.new_([setting.getColour$()],$I$(64,1).c$$I);
 if (setting.getMincolour$() != null ) {
-var minColour=Clazz.new_($I$(64).c$$I,[setting.getMincolour$().intValue$()]);
+var minColour=Clazz.new_([setting.getMincolour$().intValue$()],$I$(64,1).c$$I);
 var noValueColour=minColour;
 var noColour=setting.getNoValueColour$();
 if (noColour === $I$(35).NONE ) {
@@ -2465,9 +2429,9 @@ noValueColour=null;
 noValueColour=maxColour;
 }var min=C$.safeFloat$Float(new Float(C$.safeFloat$Float(setting.getMin$())));
 var max=setting.getMax$() == null  ? 1.0 : setting.getMax$().floatValue$();
-var gc=Clazz.new_($I$(126).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[maxColour, minColour, maxColour, noValueColour, min, max]);
+var gc=Clazz.new_($I$(126,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[maxColour, minColour, maxColour, noValueColour, min, max]);
 if (setting.getAttributeName$().size$() > 0) {
-gc.setAttributeName$SA(setting.getAttributeName$().toArray$TTA(Clazz.array(String, [setting.getAttributeName$().size$()])));
+gc.setAttributeName$SA(setting.getAttributeName$().toArray$OA(Clazz.array(String, [setting.getAttributeName$().size$()])));
 }if (setting.getThreshold$() != null ) {
 gc.setThreshold$F(setting.getThreshold$().floatValue$());
 var threshstate=C$.safeInt$Integer(setting.getThreshstate$());
@@ -2477,26 +2441,26 @@ gc.setBelowThreshold$Z(true);
 gc.setAboveThreshold$Z(true);
 }}gc.setAutoScaled$Z(true);
 if (setting.isAutoScale$() != null ) {
-gc.setAutoScaled$Z((setting.isAutoScale$()).booleanValue$());
+gc.setAutoScaled$Z((setting.isAutoScale$()).valueOf());
 }if (setting.isColourByLabel$() != null ) {
-gc.setColourByLabel$Z((setting.isColourByLabel$()).booleanValue$());
-}featureColours.put$TK$TV(featureType, gc);
+gc.setColourByLabel$Z((setting.isColourByLabel$()).valueOf());
+}featureColours.put$O$O(featureType, gc);
 } else {
-featureColours.put$TK$TV(featureType, Clazz.new_($I$(126).c$$java_awt_Color,[maxColour]));
+featureColours.put$O$O(featureType, Clazz.new_($I$(126,1).c$$java_awt_Color,[maxColour]));
 }renderOrder[fs]=featureType;
 if (setting.getOrder$() != null ) {
-featureOrder.put$TK$TV(featureType, new Float(setting.getOrder$().floatValue$()));
+featureOrder.put$O$O(featureType, new Float(setting.getOrder$().floatValue$()));
 } else {
-featureOrder.put$TK$TV(featureType,  new Float((fs/jm.getFeatureSettings$().getSetting$().size$()|0)));
+featureOrder.put$O$O(featureType, Float.valueOf$F((fs/jm.getFeatureSettings$().getSetting$().size$()|0)));
 }if (C$.safeBoolean$Boolean(new Boolean(setting.isDisplay$()))) {
 fdi.setVisible$S(featureType);
 }}
-var fgtable=Clazz.new_($I$(11));
+var fgtable=Clazz.new_($I$(11,1));
 for (var gs=0; gs < jm.getFeatureSettings$().getGroup$().size$(); gs++) {
 var grp=jm.getFeatureSettings$().getGroup$().get$I(gs);
-fgtable.put$TK$TV(grp.getName$(),  Boolean.from(grp.isDisplay$()));
+fgtable.put$O$O(grp.getName$(), $I$(127,"valueOf$Z",[grp.isDisplay$()]));
 }
-var frs=Clazz.new_($I$(127).c$$SA$java_util_Map$java_util_Map$F$java_util_Map,[renderOrder, fgtable, featureColours, 1.0, featureOrder]);
+var frs=Clazz.new_($I$(128,1).c$$SA$java_util_Map$java_util_Map$F$java_util_Map,[renderOrder, fgtable, featureColours, 1.0, featureOrder]);
 fr.transferSettings$jalview_viewmodel_seqfeatures_FeatureRendererSettings(frs);
 }if (view.getHiddenColumns$().size$() > 0) {
 for (var c=0; c < view.getHiddenColumns$().size$(); c++) {
@@ -2514,12 +2478,12 @@ p$1.warn$S.apply(this, ["Couldn't recover parameters for " + calcIdParam.getCalc
 af.setTitle$S(view.getTitle$());
 var complementaryViewId=view.getComplementId$();
 if (complementaryViewId == null ) {
-$I$(9).addInternalFrame$javax_swing_JInternalFrame$S$I$I(af, view.getTitle$(), C$.safeInt$Integer(view.getWidth$()), C$.safeInt$Integer(view.getHeight$()));
+$I$(9,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[af, view.getTitle$(), C$.safeInt$Integer(view.getWidth$()), C$.safeInt$Integer(view.getHeight$())]);
 af.alignPanel.updateAnnotation$Z$Z(false, true);
 p$1.reorderAutoannotation$jalview_gui_AlignFrame$jalview_datamodel_AlignmentI$java_util_List.apply(this, [af, al, autoAlan]);
 af.alignPanel.alignmentChanged$();
 } else {
-this.splitFrameCandidates.put$TK$TV(view, af);
+this.splitFrameCandidates.put$O$O(view, af);
 }return af;
 });
 
@@ -2544,14 +2508,14 @@ break;
 System.err.println$S("Failed to match annotation colour scheme for " + annotationId);
 return null;
 }if (matchedAnnotation.getThreshold$() == null ) {
-matchedAnnotation.setThreshold$jalview_datamodel_GraphLine(Clazz.new_($I$(101).c$$F$S$java_awt_Color,[C$.safeFloat$Float(viewAnnColour.getThreshold$()), "Threshold", $I$(64).black]));
+matchedAnnotation.setThreshold$jalview_datamodel_GraphLine(Clazz.new_([C$.safeFloat$Float(viewAnnColour.getThreshold$()), "Threshold", $I$(64).black],$I$(101,1).c$$F$S$java_awt_Color));
 }var cs=null;
 if (viewAnnColour.getColourScheme$().equals$O("None")) {
-cs=Clazz.new_($I$(128).c$$jalview_datamodel_AlignmentAnnotation$java_awt_Color$java_awt_Color$I,[matchedAnnotation, Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(viewAnnColour.getMinColour$())]), Clazz.new_($I$(64).c$$I,[C$.safeInt$Integer(viewAnnColour.getMaxColour$())]), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())]);
+cs=Clazz.new_([matchedAnnotation, Clazz.new_([C$.safeInt$Integer(viewAnnColour.getMinColour$())],$I$(64,1).c$$I), Clazz.new_([C$.safeInt$Integer(viewAnnColour.getMaxColour$())],$I$(64,1).c$$I), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())],$I$(129,1).c$$jalview_datamodel_AlignmentAnnotation$java_awt_Color$java_awt_Color$I);
 } else if (viewAnnColour.getColourScheme$().startsWith$S("ucs")) {
-cs=Clazz.new_($I$(128).c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I,[matchedAnnotation, this.getUserColourScheme$jalview_xml_binding_jalview_JalviewModel$S(model, viewAnnColour.getColourScheme$()), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())]);
+cs=Clazz.new_([matchedAnnotation, this.getUserColourScheme$jalview_xml_binding_jalview_JalviewModel$S(model, viewAnnColour.getColourScheme$()), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())],$I$(129,1).c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I);
 } else {
-cs=Clazz.new_($I$(128).c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I,[matchedAnnotation, $I$(31).getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S(af.getViewport$(), al, viewAnnColour.getColourScheme$()), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())]);
+cs=Clazz.new_([matchedAnnotation, $I$(31,"getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S",[af.getViewport$(), al, viewAnnColour.getColourScheme$()]), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())],$I$(129,1).c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I);
 }var perSequenceOnly=C$.safeBoolean$Boolean(viewAnnColour.isPerSequence$());
 var useOriginalColours=C$.safeBoolean$Boolean(viewAnnColour.isPredefinedColours$());
 cs.setSeqAssociated$Z(perSequenceOnly);
@@ -2561,7 +2525,7 @@ for (var g=0; g < al.getGroups$().size$(); g++) {
 var sg=al.getGroups$().get$I(g);
 if (sg.getGroupColourScheme$() == null ) {
 continue;
-}var groupScheme=Clazz.new_($I$(128).c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I,[matchedAnnotation, sg.getColourScheme$(), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())]);
+}var groupScheme=Clazz.new_([matchedAnnotation, sg.getColourScheme$(), C$.safeInt$Integer(viewAnnColour.getAboveThreshold$())],$I$(129,1).c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I);
 sg.setColourScheme$jalview_schemes_ColourSchemeI(groupScheme);
 groupScheme.setSeqAssociated$Z(perSequenceOnly);
 groupScheme.setPredefinedColours$Z(useOriginalColours);
@@ -2572,17 +2536,17 @@ groupScheme.setPredefinedColours$Z(useOriginalColours);
 Clazz.newMeth(C$, 'reorderAutoannotation$jalview_gui_AlignFrame$jalview_datamodel_AlignmentI$java_util_List', function (af, al, autoAlan) {
 if (al.getAlignmentAnnotation$() != null ) {
 var magicNames=Clazz.array(String, -1, ["Consensus", "Quality", "Conservation"]);
-var nullAnnot=Clazz.new_($I$(102).c$$I$jalview_datamodel_AlignmentAnnotation, [this, null, -1, null]);
-var visan=Clazz.new_($I$(11));
+var nullAnnot=Clazz.new_($I$(102,1).c$$I$jalview_datamodel_AlignmentAnnotation,[this, null, -1, null]);
+var visan=Clazz.new_($I$(11,1));
 for (var nm, $nm = 0, $$nm = magicNames; $nm<$$nm.length&&((nm=($$nm[$nm])),1);$nm++) {
-visan.put$TK$TV(nm, nullAnnot);
+visan.put$O$O(nm, nullAnnot);
 }
 for (var auan, $auan = autoAlan.iterator$(); $auan.hasNext$()&&((auan=($auan.next$())),1);) {
-visan.put$TK$TV(auan.template.label + (auan.template.getCalcId$() == null  ? "" : "\t" + auan.template.getCalcId$()), auan);
+visan.put$O$O(auan.template.label + (auan.template.getCalcId$() == null  ? "" : "\t" + auan.template.getCalcId$()), auan);
 }
 var hSize=al.getAlignmentAnnotation$().length;
-var reorder=Clazz.new_($I$(4));
-var remains=Clazz.new_($I$(4).c$$java_util_Collection,[visan.keySet$()]);
+var reorder=Clazz.new_($I$(4,1));
+var remains=Clazz.new_([visan.keySet$()],$I$(4,1).c$$java_util_Collection);
 for (var h=0; h < hSize; h++) {
 var jalan=al.getAlignmentAnnotation$()[h];
 if (jalan.autoCalculated) {
@@ -2600,12 +2564,12 @@ if (jalan !== valan.template ) {
 if (valan.template.graphHeight >= 0) {
 jalan.graphHeight=valan.template.graphHeight;
 }jalan.visible=valan.template.visible;
-}reorder.add$TE(Clazz.new_($I$(102).c$$I$jalview_datamodel_AlignmentAnnotation, [this, null, valan.order, jalan]));
+}reorder.add$O(Clazz.new_($I$(102,1).c$$I$jalview_datamodel_AlignmentAnnotation,[this, null, valan.order, jalan]));
 }}}}
 for (var other, $other = remains.iterator$(); $other.hasNext$()&&((other=($other.next$())),1);) {
 var othera=visan.get$O(other);
 if (othera !== nullAnnot  && othera.template.getCalcId$() != null   && othera.template.getCalcId$().length$() > 0 ) {
-reorder.add$TE(othera);
+reorder.add$O(othera);
 }}
 var s=0;
 var srt=Clazz.array(Integer.TYPE, [reorder.size$()]);
@@ -2615,7 +2579,7 @@ rws[s]=jvar;
 srt[s++]=jvar.order;
 }
 reorder.clear$();
-$I$(129).sort$IA$OA(srt, rws);
+$I$(130).sort$IA$OA(srt, rws);
 for (var jvar, $jvar = 0, $$jvar = rws; $jvar<$$jvar.length&&((jvar=($$jvar[$jvar])),1);$jvar++) {
 al.addAnnotation$jalview_datamodel_AlignmentAnnotation$I(jvar.template, jvar.order);
 }
@@ -2635,8 +2599,8 @@ $I$(8).log.debug$O("Skipping seuqence set id " + id);
 
 Clazz.newMeth(C$, 'addToSkipList$jalview_gui_AlignFrame', function (af) {
 if (this.skipList == null ) {
-this.skipList=Clazz.new_($I$(11));
-}this.skipList.put$TK$TV(af.getViewport$().getSequenceSetId$(), af);
+this.skipList=Clazz.new_($I$(11,1));
+}this.skipList.put$O$O(af.getViewport$().getSequenceSetId$(), af);
 });
 
 Clazz.newMeth(C$, 'clearSkipList$', function () {
@@ -2665,7 +2629,7 @@ p$1.warn$S.apply(this, ["JAL-3171 SERIOUS!  TOTAL CONFUSION - please consider co
 p$1.addDatasetRef$S$jalview_datamodel_AlignmentI.apply(this, [vamsasSet.getDatasetId$(), ds]);
 }}if (ds == null ) {
 var xtantDS=this.checkIfHasDataset$java_util_List(vamsasSet.getSequence$());
-dseqs=Clazz.new_($I$(33));
+dseqs=Clazz.new_($I$(33,1));
 }for (var i=0, iSize=vamsasSet.getSequence$().size$(); i < iSize; i++) {
 var vamsasSeq=vamsasSet.getSequence$().get$I(i);
 p$1.ensureJalviewDatasetSequence$jalview_xml_binding_jalview_Sequence$jalview_datamodel_AlignmentI$java_util_Vector$Z$I.apply(this, [vamsasSeq, ds, dseqs, ignoreUnrefed, i]);
@@ -2673,7 +2637,7 @@ p$1.ensureJalviewDatasetSequence$jalview_xml_binding_jalview_Sequence$jalview_da
 if (ds == null ) {
 var dsseqs=Clazz.array($I$(93), [dseqs.size$()]);
 dseqs.copyInto$OA(dsseqs);
-ds=Clazz.new_($I$(94).c$$jalview_datamodel_SequenceIA,[dsseqs]);
+ds=Clazz.new_($I$(94,1).c$$jalview_datamodel_SequenceIA,[dsseqs]);
 p$1.debug$S.apply(this, ["Created new dataset " + vamsasSet.getDatasetId$() + " for alignment " + System.identityHashCode$O(al) ]);
 p$1.addDatasetRef$S$jalview_datamodel_AlignmentI.apply(this, [vamsasSet.getDatasetId$(), ds]);
 }if (al.getDataset$() == null  && !ignoreUnrefed ) {
@@ -2693,7 +2657,7 @@ return null;
 
 Clazz.newMeth(C$, 'updateSeqDatasetBinding$java_util_List$jalview_datamodel_AlignmentI', function (list, ds) {
 for (var restoredSeq, $restoredSeq = list.iterator$(); $restoredSeq.hasNext$()&&((restoredSeq=($restoredSeq.next$())),1);) {
-var prevDS=this.seqToDataset.put$TK$TV(restoredSeq.getDsseqid$(), ds);
+var prevDS=this.seqToDataset.put$O$O(restoredSeq.getDsseqid$(), ds);
 if (prevDS != null  && prevDS !== ds  ) {
 p$1.warn$S.apply(this, ["Dataset sequence appears in many datasets: " + restoredSeq.getDsseqid$()]);
 }}
@@ -2718,10 +2682,10 @@ dsq=sq.createDatasetSequence$();
 if (sqid == null ) {
 sqid=this.seqHash$jalview_datamodel_SequenceI(dsq);
 }dsq.setVamsasId$S(this.uniqueSetSuffix + sqid);
-this.seqRefIds.put$TK$TV(sqid, dsq);
+this.seqRefIds.put$O$O(sqid, dsq);
 if (ds == null ) {
 if (dseqs != null ) {
-dseqs.addElement$TE(dsq);
+dseqs.addElement$O(dsq);
 }} else {
 ds.addSequence$jalview_datamodel_SequenceI(dsq);
 }} else {
@@ -2730,12 +2694,12 @@ sq.setDatasetSequence$jalview_datamodel_SequenceI(dsq);
 if (ds == null ) {
 if (dseqs != null ) {
 if (!dseqs.contains$O(dsq)) {
-dseqs.add$TE(dsq);
+dseqs.add$O(dsq);
 }} else {
 if (ds.findIndex$jalview_datamodel_SequenceI(dsq) < 0) {
 ds.addSequence$jalview_datamodel_SequenceI(dsq);
 }}}}}}if (sq !== dsq ) {
-var newres=$I$(130).extractGaps$S$S($I$(131).GapChars, sq.getSequenceAsString$());
+var newres=$I$(131,"extractGaps$S$S",[$I$(132).GapChars, sq.getSequenceAsString$()]);
 if (!newres.equalsIgnoreCase$S(dsq.getSequenceAsString$()) && newres.length$() > dsq.getLength$() ) {
 {
 dsq.setSequence$S(newres);
@@ -2757,7 +2721,7 @@ ds.addSequence$jalview_datamodel_SequenceI(dsq);
 
 Clazz.newMeth(C$, 'getDatasetFor$S', function (datasetId) {
 if (this.datasetIds == null ) {
-this.datasetIds=Clazz.new_($I$(11));
+this.datasetIds=Clazz.new_($I$(11,1));
 return null;
 }if (this.datasetIds.containsKey$O(datasetId)) {
 return this.datasetIds.get$O(datasetId);
@@ -2766,8 +2730,8 @@ return this.datasetIds.get$O(datasetId);
 
 Clazz.newMeth(C$, 'addDatasetRef$S$jalview_datamodel_AlignmentI', function (datasetId, dataset) {
 if (this.datasetIds == null ) {
-this.datasetIds=Clazz.new_($I$(11));
-}this.datasetIds.put$TK$TV(datasetId, dataset);
+this.datasetIds=Clazz.new_($I$(11,1));
+}this.datasetIds.put$O$O(datasetId, dataset);
 }, p$1);
 
 Clazz.newMeth(C$, 'getDatasetIdRef$jalview_datamodel_AlignmentI', function (dataset) {
@@ -2776,20 +2740,24 @@ p$1.warn$S.apply(this, ["Serious issue!  Dataset Object passed to getDatasetIdRe
 }var datasetId=p$1.makeHashCode$O$S.apply(this, [dataset, null]);
 if (datasetId == null ) {
 if (this.dataset2Ids == null ) {
-this.dataset2Ids=Clazz.new_($I$(3));
+this.dataset2Ids=Clazz.new_($I$(3,1));
 } else {
 datasetId=this.dataset2Ids.get$O(dataset);
 }if (datasetId == null ) {
 datasetId="ds" + this.dataset2Ids.size$() + 1 ;
-this.dataset2Ids.put$TK$TV(dataset, datasetId);
+this.dataset2Ids.put$O$O(dataset, datasetId);
 }}return datasetId;
 }, p$1);
 
 Clazz.newMeth(C$, 'addDBRefs$jalview_datamodel_SequenceI$jalview_xml_binding_jalview_Sequence', function (datasetSequence, sequence) {
 for (var d=0; d < sequence.getDBRef$().size$(); d++) {
 var dr=sequence.getDBRef$().get$I(d);
-var entry=Clazz.new_($I$(132).c$$S$S$S,[dr.getSource$(), dr.getVersion$(), dr.getAccessionId$()]);
-if (dr.getMapping$() != null ) {
+var entry;
+if (dr.isLocus$()) {
+entry=Clazz.new_([dr.getSource$(), dr.getVersion$(), dr.getAccessionId$()],$I$(133,1).c$$S$S$S);
+} else {
+entry=Clazz.new_([dr.getSource$(), dr.getVersion$(), dr.getAccessionId$()],$I$(134,1).c$$S$S$S);
+}if (dr.getMapping$() != null ) {
 entry.setMap$jalview_datamodel_Mapping(p$1.addMapping$jalview_xml_binding_jalview_Mapping.apply(this, [dr.getMapping$()]));
 }datasetSequence.addDBRef$jalview_datamodel_DBRefEntry(entry);
 }
@@ -2811,13 +2779,13 @@ var mf=to.next$();
 fto[_i]=mf.getStart$();
 fto[_i + 1]=mf.getEnd$();
 }
-var jmap=Clazz.new_($I$(133).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[dsto, fr, fto, m.getMapFromUnit$().intValue$(), m.getMapToUnit$().intValue$()]);
+var jmap=Clazz.new_([dsto, fr, fto, m.getMapFromUnit$().intValue$(), m.getMapToUnit$().intValue$()],$I$(135,1).c$$jalview_datamodel_SequenceI$IA$IA$I$I);
 if (m.getDseqFor$() != null ) {
 var dsfor=m.getDseqFor$();
 if (this.seqRefIds.containsKey$O(dsfor)) {
 jmap.setTo$jalview_datamodel_SequenceI(this.seqRefIds.get$O(dsfor));
 } else {
-this.frefedSequence.add$TE(this.newMappingRef$S$jalview_datamodel_Mapping(dsfor, jmap));
+this.frefedSequence.add$O(this.newMappingRef$S$jalview_datamodel_Mapping(dsfor, jmap));
 }} else if (m.getSequence$() != null ) {
 var ms=m.getSequence$();
 var djs=null;
@@ -2828,13 +2796,13 @@ djs=this.seqRefIds.get$O(sqid);
 System.err.println$S("Warning - making up dataset sequence id for DbRef sequence map reference");
 sqid=(ms).toString();
 }if (djs == null ) {
-djs=Clazz.new_($I$(92).c$$S$S,[ms.getName$(), ms.getSequence$()]);
+djs=Clazz.new_([ms.getName$(), ms.getSequence$()],$I$(92,1).c$$S$S);
 djs.setStart$I(jmap.getMap$().getToLowest$());
 djs.setEnd$I(jmap.getMap$().getToHighest$());
 djs.setVamsasId$S(this.uniqueSetSuffix + sqid);
 jmap.setTo$jalview_datamodel_SequenceI(djs);
-this.incompleteSeqs.put$TK$TV(sqid, djs);
-this.seqRefIds.put$TK$TV(sqid, djs);
+this.incompleteSeqs.put$O$O(sqid, djs);
+this.seqRefIds.put$O$O(sqid, djs);
 }$I$(8).log.debug$O("about to recurse on addDBRefs.");
 p$1.addDBRefs$jalview_datamodel_SequenceI$jalview_xml_binding_jalview_Sequence.apply(this, [djs, ms]);
 }return jmap;
@@ -2847,7 +2815,7 @@ p$1.addDatasetRef$S$jalview_datamodel_AlignmentI.apply(this, [jm.getVamsasModel$
 this.uniqueSetSuffix="";
 jm.getViewport$().get$I(0).setId$S(null);
 if (this.frefedSequence == null ) {
-this.frefedSequence=Clazz.new_($I$(33));
+this.frefedSequence=Clazz.new_($I$(33,1));
 }this.viewportsAdded.clear$();
 var af=this.loadFromObject$jalview_xml_binding_jalview_JalviewModel$S$Z$jalview_util_jarInputStreamProvider(jm, null, false, null);
 af.getAlignPanels$().clear$();
@@ -2900,15 +2868,15 @@ if ((jvobj).getDataset$() == null ) {
 p$1.addDatasetRef$S$jalview_datamodel_AlignmentI.apply(this, [id, jvobj]);
 }} else if (Clazz.instanceOf(jvobj, "jalview.datamodel.Sequence")) {
 if (this.seqRefIds == null ) {
-this.seqRefIds=Clazz.new_($I$(2));
+this.seqRefIds=Clazz.new_($I$(2,1));
 }if (this.seqsToIds == null ) {
-this.seqsToIds=Clazz.new_($I$(3));
-}this.seqRefIds.put$TK$TV(jv2vobj.get$O(jvobj).toString(), jvobj);
-this.seqsToIds.put$TK$TV(jvobj, id);
+this.seqsToIds=Clazz.new_($I$(3,1));
+}this.seqRefIds.put$O$O(jv2vobj.get$O(jvobj).toString(), jvobj);
+this.seqsToIds.put$O$O(jvobj, id);
 } else if (Clazz.instanceOf(jvobj, "jalview.datamodel.AlignmentAnnotation")) {
 var anid;
 var jvann=jvobj;
-this.annotationIds.put$TK$TV(anid=jv2vobj.get$O(jvobj).toString(), jvann);
+this.annotationIds.put$O$O(anid=jv2vobj.get$O(jvobj).toString(), jvann);
 if (jvann.annotationId == null ) {
 jvann.annotationId=anid;
 }if (!jvann.annotationId.equals$O(anid)) {
@@ -2916,8 +2884,8 @@ p$1.warn$S.apply(this, ["Overriding Annotation ID for " + anid + " from differen
 jvann.annotationId=anid;
 }} else if (Clazz.instanceOf(jvobj, "java.lang.String")) {
 if (this.jvids2vobj == null ) {
-this.jvids2vobj=Clazz.new_($I$(11));
-this.jvids2vobj.put$TK$TV(jvobj, jv2vobj.get$O(jvobj).toString());
+this.jvids2vobj=Clazz.new_($I$(11,1));
+this.jvids2vobj.put$O$O(jvobj, jv2vobj.get$O(jvobj).toString());
 }} else {
 $I$(8).log.debug$O("Ignoring " + jvobj.getClass$() + " (ID = " + id );
 }}
@@ -2941,8 +2909,8 @@ do {
 entry=jin.getNextJarEntry$();
 } while (entry != null  && !entry.getName$().equals$O(jarEntryName) );
 if (entry != null ) {
-var out=Clazz.new_($I$(116).c$$I,[256]);
-$in=Clazz.new_($I$(90).c$$java_io_Reader,[Clazz.new_($I$(91).c$$java_io_InputStream$S,[jin, "UTF-8"])]);
+var out=Clazz.new_($I$(116,1).c$$I,[256]);
+$in=Clazz.new_([Clazz.new_($I$(91,1).c$$java_io_InputStream$S,[jin, "UTF-8"])],$I$(90,1).c$$java_io_Reader);
 var data;
 while ((data=$in.readLine$()) != null ){
 out.append$S(data);
@@ -2979,17 +2947,17 @@ try {
 var pcaviewers=model.getPcaViewer$();
 for (var viewer, $viewer = pcaviewers.iterator$(); $viewer.hasNext$()&&((viewer=($viewer.next$())),1);) {
 var modelName=viewer.getScoreModelName$();
-var params=Clazz.new_($I$(134).c$$Z$Z$Z$Z,[(viewer.isIncludeGappedColumns$()).booleanValue$(), (viewer.isMatchGaps$()).booleanValue$(), (viewer.isIncludeGaps$()).booleanValue$(), (viewer.isDenominateByShortestLength$()).booleanValue$()]);
-var panel=Clazz.new_($I$(135).c$$jalview_gui_AlignmentPanel$S$jalview_api_analysis_SimilarityParamsI,[ap, modelName, params]);
+var params=Clazz.new_([(viewer.isIncludeGappedColumns$()).valueOf(), (viewer.isMatchGaps$()).valueOf(), (viewer.isIncludeGaps$()).valueOf(), (viewer.isDenominateByShortestLength$()).valueOf()],$I$(136,1).c$$Z$Z$Z$Z);
+var panel=Clazz.new_($I$(137,1).c$$jalview_gui_AlignmentPanel$S$jalview_api_analysis_SimilarityParamsI,[ap, modelName, params]);
 panel.setTitle$S(viewer.getTitle$());
-panel.setBounds$java_awt_Rectangle(Clazz.new_($I$(109).c$$I$I$I$I,[(viewer.getXpos$()).intValue$(), (viewer.getYpos$()).intValue$(), (viewer.getWidth$()).intValue$(), (viewer.getHeight$()).intValue$()]));
-var showLabels=(viewer.isShowLabels$()).booleanValue$();
+panel.setBounds$java_awt_Rectangle(Clazz.new_([(viewer.getXpos$()).valueOf(), (viewer.getYpos$()).valueOf(), (viewer.getWidth$()).valueOf(), (viewer.getHeight$()).valueOf()],$I$(109,1).c$$I$I$I$I));
+var showLabels=(viewer.isShowLabels$()).valueOf();
 panel.setShowLabels$Z(showLabels);
 panel.getRotatableCanvas$().setShowLabels$Z(showLabels);
-panel.getRotatableCanvas$().setBgColour$java_awt_Color(Clazz.new_($I$(64).c$$I,[(viewer.getBgColour$()).intValue$()]));
-panel.getRotatableCanvas$().setApplyToAllViews$Z((viewer.isLinkToAllViews$()).booleanValue$());
-var scoreModel=$I$(136).getInstance$().getScoreModel$S$jalview_api_AlignmentViewPanel(modelName, ap);
-var pca=Clazz.new_($I$(137).c$$jalview_datamodel_AlignmentView$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI,[null, scoreModel, params]);
+panel.getRotatableCanvas$().setBgColour$java_awt_Color(Clazz.new_([(viewer.getBgColour$()).valueOf()],$I$(64,1).c$$I));
+panel.getRotatableCanvas$().setApplyToAllViews$Z((viewer.isLinkToAllViews$()).valueOf());
+var scoreModel=$I$(138).getInstance$().getScoreModel$S$jalview_api_AlignmentViewPanel(modelName, ap);
+var pca=Clazz.new_($I$(139,1).c$$jalview_datamodel_AlignmentView$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI,[null, scoreModel, params]);
 var pcaData=viewer.getPcaData$();
 var pairwise=this.loadDoubleMatrix$jalview_xml_binding_jalview_DoubleMatrix(pcaData.getPairwiseMatrix$());
 pca.setPairwiseScores$jalview_math_MatrixI(pairwise);
@@ -2999,34 +2967,34 @@ var result=this.loadDoubleMatrix$jalview_xml_binding_jalview_DoubleMatrix(pcaDat
 pca.setEigenmatrix$jalview_math_MatrixI(result);
 panel.getPcaModel$().setPCA$jalview_analysis_PCA(pca);
 panel.setInputData$jalview_datamodel_AlignmentView(null);
-var seqPoints=Clazz.new_($I$(4));
+var seqPoints=Clazz.new_($I$(4,1));
 for (var sp, $sp = viewer.getSequencePoint$().iterator$(); $sp.hasNext$()&&((sp=($sp.next$())),1);) {
 var seqId=sp.getSequenceRef$();
 var seq=this.seqRefIds.get$O(seqId);
 if (seq == null ) {
 throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["Unmatched seqref for PCA: " + seqId]);
-}var pt=Clazz.new_($I$(138).c$$F$F$F,[(sp.getXPos$()).floatValue$(), (sp.getYPos$()).floatValue$(), (sp.getZPos$()).floatValue$()]);
-var seqPoint=Clazz.new_($I$(139).c$$jalview_datamodel_SequenceI$jalview_datamodel_Point,[seq, pt]);
-seqPoints.add$TE(seqPoint);
+}var pt=Clazz.new_([(sp.getXPos$()).valueOf(), (sp.getYPos$()).valueOf(), (sp.getZPos$()).valueOf()],$I$(140,1).c$$F$F$F);
+var seqPoint=Clazz.new_($I$(141,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_Point,[seq, pt]);
+seqPoints.add$O(seqPoint);
 }
 panel.getRotatableCanvas$().setPoints$java_util_List$I(seqPoints, seqPoints.size$());
-panel.getRotatableCanvas$().setScaleFactor$F((viewer.getScaleFactor$()).floatValue$());
+panel.getRotatableCanvas$().setScaleFactor$F((viewer.getScaleFactor$()).valueOf());
 var spMin=viewer.getSeqPointMin$();
-var min=Clazz.array(Float.TYPE, -1, [(spMin.getXPos$()).floatValue$(), (spMin.getYPos$()).floatValue$(), (spMin.getZPos$()).floatValue$()]);
+var min=Clazz.array(Float.TYPE, -1, [(spMin.getXPos$()).valueOf(), (spMin.getYPos$()).valueOf(), (spMin.getZPos$()).valueOf()]);
 var spMax=viewer.getSeqPointMax$();
-var max=Clazz.array(Float.TYPE, -1, [(spMax.getXPos$()).floatValue$(), (spMax.getYPos$()).floatValue$(), (spMax.getZPos$()).floatValue$()]);
+var max=Clazz.array(Float.TYPE, -1, [(spMax.getXPos$()).valueOf(), (spMax.getYPos$()).valueOf(), (spMax.getZPos$()).valueOf()]);
 panel.getRotatableCanvas$().setSeqMinMax$FA$FA(min, max);
 panel.getPcaModel$().setSequencePoints$java_util_List(seqPoints);
-panel.setSelectedDimensionIndex$I$jalview_math_RotatableMatrix_Axis((viewer.getXDim$()).intValue$(), $I$(44).X);
-panel.setSelectedDimensionIndex$I$jalview_math_RotatableMatrix_Axis((viewer.getYDim$()).intValue$(), $I$(44).Y);
-panel.setSelectedDimensionIndex$I$jalview_math_RotatableMatrix_Axis((viewer.getZDim$()).intValue$(), $I$(44).Z);
+panel.setSelectedDimensionIndex$I$jalview_math_RotatableMatrix_Axis((viewer.getXDim$()).valueOf(), $I$(44).X);
+panel.setSelectedDimensionIndex$I$jalview_math_RotatableMatrix_Axis((viewer.getYDim$()).valueOf(), $I$(44).Y);
+panel.setSelectedDimensionIndex$I$jalview_math_RotatableMatrix_Axis((viewer.getZDim$()).valueOf(), $I$(44).Z);
 panel.setTop$I(seqPoints.size$() - 1);
 panel.getPcaModel$().setTop$I(seqPoints.size$() - 1);
 for (var i=0; i < 3; i++) {
 var axis=viewer.getAxis$().get$I(i);
-panel.getRotatableCanvas$().getAxisEndPoints$()[i]=Clazz.new_($I$(138).c$$F$F$F,[(axis.getXPos$()).floatValue$(), (axis.getYPos$()).floatValue$(), (axis.getZPos$()).floatValue$()]);
+panel.getRotatableCanvas$().getAxisEndPoints$()[i]=Clazz.new_([(axis.getXPos$()).valueOf(), (axis.getYPos$()).valueOf(), (axis.getZPos$()).valueOf()],$I$(140,1).c$$F$F$F);
 }
-$I$(9).addInternalFrame$javax_swing_JInternalFrame$S$I$I(panel, $I$(69).formatMessage$S$OA("label.calc_title", ["PCA", modelName]), 475, 450);
+$I$(9,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[panel, $I$(69).formatMessage$S$OA("label.calc_title", ["PCA", modelName]), 475, 450]);
 }
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
@@ -3038,23 +3006,23 @@ throw ex;
 });
 
 Clazz.newMeth(C$, 'marshalColour$S$jalview_api_FeatureColourI', function (featureType, fcol) {
-var col=Clazz.new_($I$(78));
+var col=Clazz.new_($I$(78,1));
 if (fcol.isSimpleColour$()) {
-col.setRGB$S($I$(80).getHexString$java_awt_Color(fcol.getColour$()));
+col.setRGB$S($I$(80,"getHexString$java_awt_Color",[fcol.getColour$()]));
 } else {
-col.setRGB$S($I$(80).getHexString$java_awt_Color(fcol.getMaxColour$()));
+col.setRGB$S($I$(80,"getHexString$java_awt_Color",[fcol.getMaxColour$()]));
 col.setMin$Float(new Float(fcol.getMin$()));
 col.setMax$Float(new Float(fcol.getMax$()));
-col.setMinRGB$S($I$(80).getHexString$java_awt_Color(fcol.getMinColour$()));
+col.setMinRGB$S($I$(80,"getHexString$java_awt_Color",[fcol.getMinColour$()]));
 col.setAutoScale$Boolean(new Boolean(fcol.isAutoScaled$()));
 col.setThreshold$Float(new Float(fcol.getThreshold$()));
 col.setColourByLabel$Boolean(new Boolean(fcol.isColourByLabel$()));
-col.setThreshType$jalview_xml_binding_jalview_ThresholdType(fcol.isAboveThreshold$() ? $I$(140).ABOVE : (fcol.isBelowThreshold$() ? $I$(140).BELOW : $I$(140).NONE));
+col.setThreshType$jalview_xml_binding_jalview_ThresholdType(fcol.isAboveThreshold$() ? $I$(142).ABOVE : (fcol.isBelowThreshold$() ? $I$(142).BELOW : $I$(142).NONE));
 if (fcol.isColourByAttribute$()) {
 var attName=fcol.getAttributeName$();
-col.getAttributeName$().add$TE(attName[0]);
+col.getAttributeName$().add$O(attName[0]);
 if (attName.length > 1) {
-col.getAttributeName$().add$TE(attName[1]);
+col.getAttributeName$().add$O(attName[1]);
 }}var noColour=fcol.getNoColour$();
 if (noColour == null ) {
 col.setNoValueColour$jalview_xml_binding_jalview_NoValueColour($I$(35).NONE);
@@ -3067,36 +3035,36 @@ return col;
 }, 1);
 
 Clazz.newMeth(C$, 'marshalFilter$jalview_datamodel_features_FeatureMatcherI$java_util_Iterator$Z', function (firstMatcher, filters, and) {
-var result=Clazz.new_($I$(141));
+var result=Clazz.new_($I$(143,1));
 if (filters.hasNext$()) {
-var compound=Clazz.new_($I$(142));
+var compound=Clazz.new_($I$(144,1));
 compound.setAnd$Z(and);
-var matcher1=C$.marshalFilter$jalview_datamodel_features_FeatureMatcherI$java_util_Iterator$Z(firstMatcher, $I$(143).emptyIterator$(), and);
-compound.getMatcherSet$().add$TE(matcher1);
+var matcher1=C$.marshalFilter$jalview_datamodel_features_FeatureMatcherI$java_util_Iterator$Z(firstMatcher, $I$(145).emptyIterator$(), and);
+compound.getMatcherSet$().add$O(matcher1);
 var nextMatcher=filters.next$();
 var matcher2=C$.marshalFilter$jalview_datamodel_features_FeatureMatcherI$java_util_Iterator$Z(nextMatcher, filters, and);
-compound.getMatcherSet$().add$TE(matcher2);
+compound.getMatcherSet$().add$O(matcher2);
 result.setCompoundMatcher$jalview_xml_binding_jalview_FeatureMatcherSet_CompoundMatcher(compound);
 } else {
-var matcherModel=Clazz.new_($I$(144));
+var matcherModel=Clazz.new_($I$(146,1));
 matcherModel.setCondition$S(firstMatcher.getMatcher$().getCondition$().getStableName$());
 matcherModel.setValue$S(firstMatcher.getMatcher$().getPattern$());
 if (firstMatcher.isByAttribute$()) {
-matcherModel.setBy$jalview_xml_binding_jalview_FilterBy($I$(145).BY_ATTRIBUTE);
+matcherModel.setBy$jalview_xml_binding_jalview_FilterBy($I$(147).BY_ATTRIBUTE);
 var attName=firstMatcher.getAttribute$();
-matcherModel.getAttributeName$().add$TE(attName[0]);
+matcherModel.getAttributeName$().add$O(attName[0]);
 if (attName.length > 1) {
-matcherModel.getAttributeName$().add$TE(attName[1]);
+matcherModel.getAttributeName$().add$O(attName[1]);
 }} else if (firstMatcher.isByLabel$()) {
-matcherModel.setBy$jalview_xml_binding_jalview_FilterBy($I$(145).BY_LABEL);
+matcherModel.setBy$jalview_xml_binding_jalview_FilterBy($I$(147).BY_LABEL);
 } else if (firstMatcher.isByScore$()) {
-matcherModel.setBy$jalview_xml_binding_jalview_FilterBy($I$(145).BY_SCORE);
+matcherModel.setBy$jalview_xml_binding_jalview_FilterBy($I$(147).BY_SCORE);
 }result.setMatchCondition$jalview_xml_binding_jalview_FeatureMatcher(matcherModel);
 }return result;
 }, 1);
 
 Clazz.newMeth(C$, 'parseFilter$S$jalview_xml_binding_jalview_FeatureMatcherSet', function (featureType, matcherSetModel) {
-var result=Clazz.new_($I$(146));
+var result=Clazz.new_($I$(148,1));
 try {
 C$.parseFilterConditions$jalview_datamodel_features_FeatureMatcherSetI$jalview_xml_binding_jalview_FeatureMatcherSet$Z(result, matcherSetModel, true);
 } catch (e) {
@@ -3113,17 +3081,17 @@ Clazz.newMeth(C$, 'parseFilterConditions$jalview_datamodel_features_FeatureMatch
 var mc=matcherSetModel.getMatchCondition$();
 if (mc != null ) {
 var filterBy=mc.getBy$();
-var cond=$I$(147).fromString$S(mc.getCondition$());
+var cond=$I$(149,"fromString$S",[mc.getCondition$()]);
 var pattern=mc.getValue$();
 var matchCondition=null;
-if (filterBy === $I$(145).BY_LABEL ) {
-matchCondition=$I$(148).byLabel$jalview_util_matcher_Condition$S(cond, pattern);
-} else if (filterBy === $I$(145).BY_SCORE ) {
-matchCondition=$I$(148).byScore$jalview_util_matcher_Condition$S(cond, pattern);
-} else if (filterBy === $I$(145).BY_ATTRIBUTE ) {
+if (filterBy === $I$(147).BY_LABEL ) {
+matchCondition=$I$(150).byLabel$jalview_util_matcher_Condition$S(cond, pattern);
+} else if (filterBy === $I$(147).BY_SCORE ) {
+matchCondition=$I$(150).byScore$jalview_util_matcher_Condition$S(cond, pattern);
+} else if (filterBy === $I$(147).BY_ATTRIBUTE ) {
 var attributeName=mc.getAttributeName$();
-var attNames=attributeName.toArray$TTA(Clazz.array(String, [attributeName.size$()]));
-matchCondition=$I$(148).byAttribute$jalview_util_matcher_Condition$S$SA(cond, pattern, attNames);
+var attNames=attributeName.toArray$OA(Clazz.array(String, [attributeName.size$()]));
+matchCondition=$I$(150).byAttribute$jalview_util_matcher_Condition$S$SA(cond, pattern, attNames);
 }if (and) {
 matcherSet.and$jalview_datamodel_features_FeatureMatcherI(matchCondition);
 } else {
@@ -3145,8 +3113,8 @@ var mincol=null;
 var maxcol=null;
 var noValueColour=null;
 try {
-mincol=Clazz.new_($I$(64).c$$I,[Integer.parseInt$S$I(colourModel.getMinRGB$(), 16)]);
-maxcol=Clazz.new_($I$(64).c$$I,[Integer.parseInt$S$I(colourModel.getRGB$(), 16)]);
+mincol=Clazz.new_([Integer.parseInt$S$I(colourModel.getMinRGB$(), 16)],$I$(64,1).c$$I);
+maxcol=Clazz.new_([Integer.parseInt$S$I(colourModel.getRGB$(), 16)],$I$(64,1).c$$I);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 $I$(8).log.warn$O$Throwable("Couldn\'t parse out graduated feature color.", e);
@@ -3159,9 +3127,9 @@ if (noCol === $I$(35).MIN ) {
 noValueColour=mincol;
 } else if (noCol === $I$(35).MAX ) {
 noValueColour=maxcol;
-}colour=Clazz.new_($I$(126).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[maxcol, mincol, maxcol, noValueColour, C$.safeFloat$Float(colourModel.getMin$()), C$.safeFloat$Float(colourModel.getMax$())]);
+}colour=Clazz.new_([maxcol, mincol, maxcol, noValueColour, C$.safeFloat$Float(colourModel.getMin$()), C$.safeFloat$Float(colourModel.getMax$())],$I$(126,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F);
 var attributeName=colourModel.getAttributeName$();
-var attributes=attributeName.toArray$TTA(Clazz.array(String, [attributeName.size$()]));
+var attributes=attributeName.toArray$OA(Clazz.array(String, [attributeName.size$()]));
 if (attributes != null  && attributes.length > 0 ) {
 colour.setAttributeName$SA(attributes);
 }if (colourModel.isAutoScale$() != null ) {
@@ -3171,34 +3139,35 @@ colour.setColourByLabel$Z(colourModel.isColourByLabel$().booleanValue$());
 }if (colourModel.getThreshold$() != null ) {
 colour.setThreshold$F(colourModel.getThreshold$().floatValue$());
 }var ttyp=colourModel.getThreshType$();
-if (ttyp === $I$(140).ABOVE ) {
+if (ttyp === $I$(142).ABOVE ) {
 colour.setAboveThreshold$Z(true);
-} else if (ttyp === $I$(140).BELOW ) {
+} else if (ttyp === $I$(142).BELOW ) {
 colour.setBelowThreshold$Z(true);
 }} else {
-var color=Clazz.new_($I$(64).c$$I,[Integer.parseInt$S$I(colourModel.getRGB$(), 16)]);
-colour=Clazz.new_($I$(126).c$$java_awt_Color,[color]);
+var color=Clazz.new_([Integer.parseInt$S$I(colourModel.getRGB$(), 16)],$I$(64,1).c$$I);
+colour=Clazz.new_($I$(126,1).c$$java_awt_Color,[color]);
 }return colour;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+$I$(1).addJ2SBinaryType$S(".jvp?");
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Jalview2XML, "SeqFref", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Jalview2XML, "SeqFref", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sref=null;
-this.type=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['sref','type']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (_sref, type) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.sref=_sref;
 this.type=type;
 }, 1);
@@ -3231,24 +3200,19 @@ return this.type + " reference to " + this.sref ;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Jalview2XML, "JvAnnotRow", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Jalview2XML, "JvAnnotRow", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.template=null;
-this.order=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['order'],'O',['template','jalview.datamodel.AlignmentAnnotation']]]
 
 Clazz.newMeth(C$, 'c$$I$jalview_datamodel_AlignmentAnnotation', function (i, jaa) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.order=i;
 this.template=jaa;
 }, 1);
@@ -3256,4 +3220,4 @@ this.template=jaa;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

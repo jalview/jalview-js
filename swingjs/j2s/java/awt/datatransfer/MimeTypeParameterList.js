@@ -1,25 +1,21 @@
-(function(){var P$=Clazz.newPackage("java.awt.datatransfer"),I$=[[0,'java.util.Hashtable','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MimeTypeParameterList", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("java.awt.datatransfer"),I$=[[0,'java.util.Hashtable','StringBuilder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MimeTypeParameterList", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parameters=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['parameters','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.parameters=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.parameters=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (rawdata) {
-C$.$init$.apply(this);
-this.parameters=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.parameters=Clazz.new_($I$(1,1));
 this.parse$S(rawdata);
 }, 1);
 
@@ -122,7 +118,7 @@ foundit=true;
 value=rawdata.substring$I$I(lastIndex, currentIndex);
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Unexpected character encountered at index " + currentIndex]);
-}this.parameters.put$TK$TV(name, value);
+}this.parameters.put$O$O(name, value);
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Couldn't find a value for parameter named " + name]);
 }} else {
@@ -150,7 +146,7 @@ return this.parameters.get$O(name.trim$().toLowerCase$());
 });
 
 Clazz.newMeth(C$, 'set$S$S', function (name, value) {
-this.parameters.put$TK$TV(name.trim$().toLowerCase$(), value);
+this.parameters.put$O$O(name.trim$().toLowerCase$(), value);
 });
 
 Clazz.newMeth(C$, 'remove$S', function (name) {
@@ -162,7 +158,7 @@ return this.parameters.keys$();
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var buffer=Clazz.new_($I$(2).c$$I,[this.parameters.size$() * 16]);
+var buffer=Clazz.new_([this.parameters.size$() * 16],$I$(2,1).c$$I);
 var keys=this.parameters.keys$();
 while (keys.hasMoreElements$()){
 buffer.append$S("; ");
@@ -210,7 +206,7 @@ for (var i=0; (i < length) && !needsQuotes ; ++i) {
 needsQuotes=!C$.isTokenChar$C(value.charAt$I(i));
 }
 if (needsQuotes) {
-var buffer=Clazz.new_($I$(2).c$$I,[((length * 1.5)|0)]);
+var buffer=Clazz.new_([((length * 1.5)|0)],$I$(2,1).c$$I);
 buffer.append$C("\"");
 for (var i=0; i < length; ++i) {
 var c=value.charAt$I(i);
@@ -226,7 +222,7 @@ return value;
 
 Clazz.newMeth(C$, 'unquote$S', function (value) {
 var valueLength=value.length$();
-var buffer=Clazz.new_($I$(2).c$$I,[valueLength]);
+var buffer=Clazz.new_($I$(2,1).c$$I,[valueLength]);
 var escaped=false;
 for (var i=0; i < valueLength; ++i) {
 var currentChar=value.charAt$I(i);
@@ -241,4 +237,4 @@ escaped=true;
 return buffer.toString();
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

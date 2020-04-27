@@ -1,47 +1,29 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.text.SimpleDateFormat','java.util.ArrayList','java.io.File','jalview.bin.Cache','jalview.util.Platform','jalview.io.BackupFilenameFilter','jalview.io.BackupFilenameParts','StringBuilder','jalview.util.MessageManager','jalview.gui.JvOptionPane','jalview.gui.Desktop','java.util.HashMap','java.util.TreeMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BackupFiles");
-C$.enabled=false;
-C$.confirmDelete=false;
-C$.sdf=null;
+(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.text.SimpleDateFormat','java.util.ArrayList','java.io.File','jalview.io.BackupFilesPresetEntry','jalview.bin.Cache','jalview.util.Platform','jalview.io.BackupFilenameFilter','jalview.io.BackupFilenameParts','StringBuilder','jalview.util.MessageManager','jalview.gui.JvOptionPane','jalview.gui.Desktop','java.util.HashMap','java.util.TreeMap']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BackupFiles");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.sdf=Clazz.new_($I$(1).c$$S,["yyyy-MM-dd HH:mm:ss"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.file=null;
-this.suffix=null;
-this.noMax=false;
-this.max=0;
-this.digits=0;
-this.reverseOrder=false;
-this.tempFile=null;
-this.tempFileWriteSuccess=false;
-this.deleteFiles=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.deleteFiles=Clazz.new_($I$(2));
-}, 1);
+this.deleteFiles=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['noMax','reverseOrder','tempFileWriteSuccess'],'I',['max','digits'],'S',['suffix'],'O',['file','java.io.File','+tempFile','deleteFiles','java.util.ArrayList']]
+,['Z',['enabled','confirmDelete'],'O',['sdf','java.text.SimpleDateFormat']]]
 
 Clazz.newMeth(C$, 'c$$S', function (filename) {
-C$.c$$java_io_File.apply(this, [Clazz.new_($I$(3).c$$S,[filename])]);
+C$.c$$java_io_File.apply(this, [Clazz.new_($I$(3,1).c$$S,[filename])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (file) {
-C$.c$$java_io_File$S$Z$I$I$Z.apply(this, [file, ".bak%n", false, 3, 3, false]);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$java_io_File$S$Z$I$I$Z', function (file, defaultSuffix, defaultNoMax, defaultMax, defaultDigits, defaultReverseOrder) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 C$.classInit$();
 this.file=file;
-this.suffix=$I$(4).getDefault$S$S("BACKUPFILES_SUFFIX", defaultSuffix);
-this.noMax=$I$(4).getDefault$S$Z("BACKUPFILES_NO_MAX", defaultNoMax);
-this.max=$I$(4).getDefault$S$I("BACKUPFILES_ROLL_MAX", defaultMax);
-this.digits=$I$(4).getDefault$S$I("BACKUPFILES_SUFFIX_DIGITS", defaultDigits);
-this.reverseOrder=$I$(4).getDefault$S$Z("BACKUPFILES_REVERSE_ORDER", defaultReverseOrder);
+var bfpe=$I$(4).getSavedBackupEntry$();
+this.suffix=bfpe.suffix;
+this.noMax=bfpe.keepAll;
+this.max=bfpe.rollMax;
+this.digits=bfpe.digits;
+this.reverseOrder=bfpe.reverse;
 var temp=null;
 try {
 if (file != null ) {
@@ -69,8 +51,9 @@ this.setTempFile$java_io_File(temp);
 }, 1);
 
 Clazz.newMeth(C$, 'classInit$', function () {
-C$.setEnabled$Z($I$(4).getDefault$S$Z("BACKUPFILES_ENABLED", !$I$(5).isJS$()));
-C$.setConfirmDelete$Z($I$(4).getDefault$S$Z("BACKUPFILES_CONFIRM_DELETE_OLD", true));
+C$.setEnabled$Z($I$(5,"getDefault$S$Z",["BACKUPFILES_ENABLED", !$I$(6).isJS$()]));
+var bfpe=$I$(4).getSavedBackupEntry$();
+C$.setConfirmDelete$Z(bfpe.confirmDelete);
 }, 1);
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (flag) {
@@ -151,7 +134,7 @@ var filename=this.file.getName$();
 var basename=filename;
 var ret=true;
 this.deleteFiles.clear$();
-var bff=Clazz.new_($I$(6).c$$S$S$I,[basename, this.suffix, this.digits]);
+var bff=Clazz.new_($I$(7,1).c$$S$S$I,[basename, this.suffix, this.digits]);
 var backupFiles=dirFile.listFiles$java_io_FilenameFilter(bff);
 var nextIndexNum=0;
 if (backupFiles.length == 0) {
@@ -167,8 +150,8 @@ tempMax=i;
 var previousFile=null;
 var fileToBeDeleted=null;
 for (var n=tempMax; n > 0; n--) {
-var backupfilename=dir + $I$(3).separatorChar + $I$(7).getBackupFilename$I$S$S$I(n, basename, this.suffix, this.digits) ;
-var backupfile_n=Clazz.new_($I$(3).c$$S,[backupfilename]);
+var backupfilename=dir + $I$(3).separatorChar + $I$(8).getBackupFilename$I$S$S$I(n, basename, this.suffix, this.digits) ;
+var backupfile_n=Clazz.new_($I$(3,1).c$$S,[backupfilename]);
 if (!backupfile_n.exists$()) {
 previousFile=backupfile_n;
 fileToBeDeleted=null;
@@ -209,7 +192,7 @@ ret=ret && backupfile_n.renameTo$java_io_File(previousFile) ;
 }
 nextIndexNum=1;
 } else {
-bfTreeMap.values$().toArray$TTA(backupFiles);
+bfTreeMap.values$().toArray$OA(backupFiles);
 if ((!this.noMax) && bfTreeMap.size$() >= this.max ) {
 var numToDelete=bfTreeMap.size$() - this.max + 1;
 var replacementFile=numToDelete < backupFiles.length ? backupFiles[numToDelete] : null;
@@ -232,9 +215,9 @@ $delete=false;
 }}}if ($delete) {
 p$1.addDeleteFile$java_io_File.apply(this, [fileToBeDeleted]);
 }}
-}nextIndexNum=(bfTreeMap.lastKey$()).intValue$() + 1;
-}}var latestBackupFilename=dir + $I$(3).separatorChar + $I$(7).getBackupFilename$I$S$S$I(nextIndexNum, basename, this.suffix, this.digits) ;
-ret|=this.file.renameTo$java_io_File(Clazz.new_($I$(3).c$$S,[latestBackupFilename]));
+}nextIndexNum=(bfTreeMap.lastKey$()).valueOf() + 1;
+}}var latestBackupFilename=dir + $I$(3).separatorChar + $I$(8).getBackupFilename$I$S$S$I(nextIndexNum, basename, this.suffix, this.digits) ;
+ret|=this.file.renameTo$java_io_File(Clazz.new_($I$(3,1).c$$S,[latestBackupFilename]));
 if (tidyUp) {
 p$1.tidyUpFiles.apply(this, []);
 }return ret;
@@ -243,7 +226,7 @@ p$1.tidyUpFiles.apply(this, []);
 Clazz.newMeth(C$, 'nextTempFile$S$java_io_File', function (filename, dirFile) {
 var temp=null;
  COUNT : for (var i=1; i < 1000; i++) {
-var trythis=Clazz.new_($I$(3).c$$java_io_File$S,[dirFile, filename + '~' + Integer.toString$I(i) ]);
+var trythis=Clazz.new_([dirFile, filename + '~' + Integer.toString$I(i) ],$I$(3,1).c$$java_io_File$S);
 if (!trythis.exists$()) {
 temp=trythis;
 break COUNT;
@@ -258,7 +241,7 @@ p$1.deleteOldFiles.apply(this, []);
 }, p$1);
 
 Clazz.newMeth(C$, 'confirmNewerDeleteFile$java_io_File$java_io_File$Z', function (fileToBeDeleted, replacementFile, replace) {
-var messageSB=Clazz.new_($I$(8));
+var messageSB=Clazz.new_($I$(9,1));
 var ftbd=fileToBeDeleted;
 var ftbdLMT=C$.sdf.format$O(new Long(ftbd.lastModified$()));
 var ftbdSize=Long.toString$J(ftbd.length$());
@@ -278,17 +261,17 @@ e.printStackTrace$();
 throw e;
 }
 }
-messageSB.append$S($I$(9).formatMessage$S$SA("label.newerdelete_replacement_line", Clazz.array(String, -1, [ftbd.getName$(), rf.getName$(), ftbdLMT, rfLMT, ftbdSize, rfSize])));
+messageSB.append$S($I$(10,"formatMessage$S$SA",["label.newerdelete_replacement_line", Clazz.array(String, -1, [ftbd.getName$(), rf.getName$(), ftbdLMT, rfLMT, ftbdSize, rfSize])]));
 messageSB.append$S("\n\n");
-messageSB.append$S($I$(9).formatMessage$S$SA("label.confirm_deletion_or_rename", Clazz.array(String, -1, [ftbd.getName$(), saveFile.getName$()])));
-var options=Clazz.array(String, -1, [$I$(9).getString$S("label.delete"), $I$(9).getString$S("label.rename")]);
-confirmButton=$I$(10).showOptionDialog$java_awt_Component$S$S$I$I$javax_swing_Icon$OA$O($I$(11).desktop, messageSB.toString(), $I$(9).getString$S("label.backupfiles_confirm_delete"), 0, 2, null, options, options[0]);
+messageSB.append$S($I$(10,"formatMessage$S$SA",["label.confirm_deletion_or_rename", Clazz.array(String, -1, [ftbd.getName$(), saveFile.getName$()])]));
+var options=Clazz.array(String, -1, [$I$(10).getString$S("label.delete"), $I$(10).getString$S("label.rename")]);
+confirmButton=$I$(11,"showOptionDialog$java_awt_Component$S$S$I$I$javax_swing_Icon$OA$O",[$I$(12).desktop, messageSB.toString(), $I$(10).getString$S("label.backupfiles_confirm_delete"), 0, 2, null, options, options[0]]);
 } else {
-messageSB.append$S($I$(9).formatMessage$S$SA("label.newerdelete_line", Clazz.array(String, -1, [ftbd.getName$(), rf.getName$(), ftbdLMT, rfLMT, ftbdSize, rfSize])));
+messageSB.append$S($I$(10,"formatMessage$S$SA",["label.newerdelete_line", Clazz.array(String, -1, [ftbd.getName$(), rf.getName$(), ftbdLMT, rfLMT, ftbdSize, rfSize])]));
 messageSB.append$S("\n\n");
-messageSB.append$S($I$(9).formatMessage$S$SA("label.confirm_deletion", Clazz.array(String, -1, [ftbd.getName$()])));
-var options=Clazz.array(String, -1, [$I$(9).getString$S("label.delete"), $I$(9).getString$S("label.keep")]);
-confirmButton=$I$(10).showOptionDialog$java_awt_Component$S$S$I$I$javax_swing_Icon$OA$O($I$(11).desktop, messageSB.toString(), $I$(9).getString$S("label.backupfiles_confirm_delete"), 0, 2, null, options, options[0]);
+messageSB.append$S($I$(10,"formatMessage$S$SA",["label.confirm_deletion", Clazz.array(String, -1, [ftbd.getName$()])]));
+var options=Clazz.array(String, -1, [$I$(10).getString$S("label.delete"), $I$(10).getString$S("label.keep")]);
+confirmButton=$I$(11,"showOptionDialog$java_awt_Component$S$S$I$I$javax_swing_Icon$OA$O",[$I$(12).desktop, messageSB.toString(), $I$(10).getString$S("label.backupfiles_confirm_delete"), 0, 2, null, options, options[0]]);
 }return (confirmButton == 0);
 }, 1);
 
@@ -297,16 +280,16 @@ if (this.deleteFiles != null  && !this.deleteFiles.isEmpty$() ) {
 var doDelete=false;
 var messageSB=null;
 if (C$.confirmDelete && this.deleteFiles.size$() > 0 ) {
-messageSB=Clazz.new_($I$(8));
-messageSB.append$S($I$(9).getString$S("label.backupfiles_confirm_delete_old_files"));
+messageSB=Clazz.new_($I$(9,1));
+messageSB.append$S($I$(10).getString$S("label.backupfiles_confirm_delete_old_files"));
 for (var i=0; i < this.deleteFiles.size$(); i++) {
 var df=this.deleteFiles.get$I(i);
 messageSB.append$S("\n");
 messageSB.append$S(df.getName$());
 messageSB.append$S(" ");
-messageSB.append$S($I$(9).formatMessage$S$SA("label.file_info", Clazz.array(String, -1, [C$.sdf.format$O(new Long(df.lastModified$())), Long.toString$J(df.length$())])));
+messageSB.append$S($I$(10,"formatMessage$S$SA",["label.file_info", Clazz.array(String, -1, [C$.sdf.format$O(new Long(df.lastModified$())), Long.toString$J(df.length$())])]));
 }
-var confirmButton=$I$(10).showConfirmDialog$java_awt_Component$O$S$I$I($I$(11).desktop, messageSB.toString(), $I$(9).getString$S("label.backupfiles_confirm_delete"), 0, 2);
+var confirmButton=$I$(11,"showConfirmDialog$java_awt_Component$O$S$I$I",[$I$(12).desktop, messageSB.toString(), $I$(10).getString$S("label.backupfiles_confirm_delete"), 0, 2]);
 doDelete=(confirmButton == 0);
 } else {
 doDelete=true;
@@ -320,13 +303,13 @@ System.out.println$S("DELETING '" + fileToDelete.getName$() + "'" );
 }, p$1);
 
 Clazz.newMeth(C$, 'sortBackupFilesAsTreeMap$java_io_FileA$S', function (backupFiles, basename) {
-var bfHashMap=Clazz.new_($I$(12));
+var bfHashMap=Clazz.new_($I$(13,1));
 for (var i=0; i < backupFiles.length; i++) {
 var f=backupFiles[i];
-var bfp=Clazz.new_($I$(7).c$$java_io_File$S$S$I,[f, basename, this.suffix, this.digits]);
-bfHashMap.put$TK$TV(new Integer(bfp.indexNum$()), f);
+var bfp=Clazz.new_($I$(8,1).c$$java_io_File$S$S$I,[f, basename, this.suffix, this.digits]);
+bfHashMap.put$O$O(new Integer(bfp.indexNum$()), f);
 }
-var bfTreeMap=Clazz.new_($I$(13));
+var bfTreeMap=Clazz.new_($I$(14,1));
 bfTreeMap.putAll$java_util_Map(bfHashMap);
 return bfTreeMap;
 }, p$1);
@@ -340,17 +323,17 @@ roll=this.rollBackupFiles$Z(false);
 rename=this.renameTempFile$();
 }var okay=roll && rename ;
 if (!okay) {
-var messageSB=Clazz.new_($I$(8));
-messageSB.append$S($I$(9).getString$S("label.backupfiles_confirm_save_file_backupfiles_roll_wrong"));
+var messageSB=Clazz.new_($I$(9,1));
+messageSB.append$S($I$(10).getString$S("label.backupfiles_confirm_save_file_backupfiles_roll_wrong"));
 if (rename) {
 if (messageSB.length$() > 0) {
 messageSB.append$S("\n");
-}messageSB.append$S($I$(9).getString$S("label.backupfiles_confirm_save_new_saved_file_ok"));
+}messageSB.append$S($I$(10).getString$S("label.backupfiles_confirm_save_new_saved_file_ok"));
 } else {
 if (messageSB.length$() > 0) {
 messageSB.append$S("\n");
-}messageSB.append$S($I$(9).getString$S("label.backupfiles_confirm_save_new_saved_file_not_ok"));
-}var confirmButton=$I$(10).showConfirmDialog$java_awt_Component$O$S$I$I($I$(11).desktop, messageSB.toString(), $I$(9).getString$S("label.backupfiles_confirm_save_file"), 0, 2);
+}messageSB.append$S($I$(10).getString$S("label.backupfiles_confirm_save_new_saved_file_not_ok"));
+}var confirmButton=$I$(11,"showConfirmDialog$java_awt_Component$O$S$I$I",[$I$(12).desktop, messageSB.toString(), $I$(10).getString$S("label.backupfiles_confirm_save_file"), 0, 2]);
 okay=confirmButton == 0;
 }if (okay) {
 p$1.tidyUpFiles.apply(this, []);
@@ -359,29 +342,29 @@ p$1.tidyUpFiles.apply(this, []);
 
 Clazz.newMeth(C$, 'getBackupFilesAsTreeMap$S$S$I', function (fileName, suffix, digits) {
 var backupFiles=null;
-var file=Clazz.new_($I$(3).c$$S,[fileName]);
+var file=Clazz.new_($I$(3,1).c$$S,[fileName]);
 var dirFile;
 try {
 dirFile=file.getParentFile$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.out.println$S("Could not get canonical path for file '" + file + "'" );
-return Clazz.new_($I$(13));
+return Clazz.new_($I$(14,1));
 } else {
 throw e;
 }
 }
 var filename=file.getName$();
 var basename=filename;
-var bff=Clazz.new_($I$(6).c$$S$S$I,[basename, suffix, digits]);
+var bff=Clazz.new_($I$(7,1).c$$S$S$I,[basename, suffix, digits]);
 backupFiles=dirFile.listFiles$java_io_FilenameFilter(bff);
-var bfHashMap=Clazz.new_($I$(12));
+var bfHashMap=Clazz.new_($I$(13,1));
 for (var i=0; i < backupFiles.length; i++) {
 var f=backupFiles[i];
-var bfp=Clazz.new_($I$(7).c$$java_io_File$S$S$I,[f, basename, suffix, digits]);
-bfHashMap.put$TK$TV(new Integer(bfp.indexNum$()), f);
+var bfp=Clazz.new_($I$(8,1).c$$java_io_File$S$S$I,[f, basename, suffix, digits]);
+bfHashMap.put$O$O(new Integer(bfp.indexNum$()), f);
 }
-var bfTreeMap=Clazz.new_($I$(13));
+var bfTreeMap=Clazz.new_($I$(14,1));
 bfTreeMap.putAll$java_util_Map(bfHashMap);
 return bfTreeMap;
 }, 1);
@@ -392,10 +375,14 @@ var pos=this.deleteFiles.indexOf$O(fileToBeDeleted);
 if (pos > -1) {
 return true;
 } else {
-this.deleteFiles.add$TE(fileToBeDeleted);
+this.deleteFiles.add$O(fileToBeDeleted);
 }return ret;
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.sdf=Clazz.new_($I$(1,1).c$$S,["yyyy-MM-dd HH:mm:ss"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

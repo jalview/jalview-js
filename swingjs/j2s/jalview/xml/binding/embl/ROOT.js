@@ -1,17 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.embl"),I$=[];
-var C$=Clazz.newClass(P$, "ROOT");
+/*c*/var C$=Clazz.newClass(P$, "ROOT");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.entrySet=null;
-this.entry=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['entrySet','jalview.xml.binding.embl.EntrySetType','entry','jalview.xml.binding.embl.EntryType']]]
 
 Clazz.newMeth(C$, 'getEntrySet$', function () {
 return this.entrySet;
@@ -28,10 +23,11 @@ return this.entry;
 Clazz.newMeth(C$, 'setEntry$jalview_xml_binding_embl_EntryType', function (value) {
 this.entry=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.ROOT'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"entrySet"  "entry"  } )','@XmlRootElement(name="ROOT" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.ROOT',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType','javax.xml.bind.annotation.XmlRootElement']],['XmlAccessType.FIELD','name="" propOrder={"entrySet"  "entry"  } ','name="ROOT" ']],
   [['entrySet','jalview.xml.binding.embl.EntrySetType'],['@XmlElement']],
-  [['entry','jalview.xml.binding.embl.EntryType'],['@XmlElement']]];
+  [['entry','jalview.xml.binding.embl.EntryType'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

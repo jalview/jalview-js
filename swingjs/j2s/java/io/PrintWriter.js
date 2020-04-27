@@ -1,32 +1,22 @@
-(function(){var P$=java.io,p$1={},I$=[[0,'java.io.BufferedWriter','java.io.OutputStreamWriter','java.io.FileOutputStream','java.io.File','Thread','java.util.Locale','swingjs.api.Interface','Appendable','java.util.Formatter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PrintWriter", null, 'java.io.Writer');
+(function(){var P$=java.io,p$1={},I$=[[0,'java.io.BufferedWriter','java.io.OutputStreamWriter','java.io.FileOutputStream','java.io.File','Thread','java.util.Locale','swingjs.api.Interface','Appendable','java.util.Formatter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PrintWriter", null, 'java.io.Writer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.out=null;
-this.autoFlush=false;
-this.trouble=false;
-this.formatter=null;
-this.psOut=null;
-this.lineSeparator=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.autoFlush=false;
 this.trouble=false;
 this.psOut=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['autoFlush','trouble'],'S',['lineSeparator'],'O',['out','java.io.Writer','formatter','java.util.Formatter','psOut','java.io.PrintStream']]]
 
 Clazz.newMeth(C$, 'c$$java_io_Writer', function (out) {
 C$.c$$java_io_Writer$Z.apply(this, [out, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$Z', function (out, autoFlush) {
-C$.superclazz.c$$O.apply(this, [out]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O.apply(this,[out]);C$.$init$.apply(this);
 this.out=out;
 this.autoFlush=autoFlush;
 this.lineSeparator=System.lineSeparator$();
@@ -37,25 +27,25 @@ C$.c$$java_io_OutputStream$Z.apply(this, [out, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$Z', function (out, autoFlush) {
-C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_($I$(1).c$$java_io_Writer,[Clazz.new_($I$(2).c$$java_io_OutputStream,[out])]), autoFlush]);
+C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_([Clazz.new_($I$(2,1).c$$java_io_OutputStream,[out])],$I$(1,1).c$$java_io_Writer), autoFlush]);
 if (Clazz.instanceOf(out, "java.io.PrintStream")) {
 this.psOut=out;
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (fileName) {
-C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_($I$(1).c$$java_io_Writer,[Clazz.new_($I$(2).c$$java_io_OutputStream,[Clazz.new_($I$(3).c$$java_io_File,[Clazz.new_($I$(4).c$$S,[fileName])])])]), false]);
+C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_([Clazz.new_([Clazz.new_([Clazz.new_($I$(4,1).c$$S,[fileName])],$I$(3,1).c$$java_io_File)],$I$(2,1).c$$java_io_OutputStream)],$I$(1,1).c$$java_io_Writer), false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (fileName, csn) {
-C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_($I$(1).c$$java_io_Writer,[Clazz.new_($I$(2).c$$java_io_OutputStream$S,[Clazz.new_($I$(3).c$$java_io_File,[Clazz.new_($I$(4).c$$S,[fileName])]), csn])]), false]);
+C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_([Clazz.new_([Clazz.new_([Clazz.new_($I$(4,1).c$$S,[fileName])],$I$(3,1).c$$java_io_File), csn],$I$(2,1).c$$java_io_OutputStream$S)],$I$(1,1).c$$java_io_Writer), false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (file) {
-C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_($I$(1).c$$java_io_Writer,[Clazz.new_($I$(2).c$$java_io_OutputStream,[Clazz.new_($I$(3).c$$java_io_File,[file])])]), false]);
+C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_([Clazz.new_([Clazz.new_($I$(3,1).c$$java_io_File,[file])],$I$(2,1).c$$java_io_OutputStream)],$I$(1,1).c$$java_io_Writer), false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File$S', function (file, csn) {
-C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_($I$(1).c$$java_io_Writer,[Clazz.new_($I$(2).c$$java_io_OutputStream$S,[Clazz.new_($I$(3).c$$java_io_File,[file]), csn])]), false]);
+C$.c$$java_io_Writer$Z.apply(this, [Clazz.new_([Clazz.new_([Clazz.new_($I$(3,1).c$$java_io_File,[file]), csn],$I$(2,1).c$$java_io_OutputStream$S)],$I$(1,1).c$$java_io_Writer), false]);
 }, 1);
 
 Clazz.newMeth(C$, 'ensureOpen', function () {
@@ -338,14 +328,14 @@ return this;
 });
 
 Clazz.newMeth(C$, 'newFormatter', function () {
-return $I$(7).getInstanceWithParams$S$ClassA$OA("java.util.Formatter", Clazz.array(Class, -1, [Clazz.getClass($I$(8),['append$C','append$CharSequence','append$CharSequence$I$I'])]), Clazz.array(java.lang.Object, -1, [this]));
+return $I$(7,"getInstanceWithParams$S$ClassA$OA",["java.util.Formatter", Clazz.array(Class, -1, [Clazz.getClass($I$(8),['append$C','append$CharSequence','append$CharSequence$I$I'])]), Clazz.array(java.lang.Object, -1, [this])]);
 }, p$1);
 
 Clazz.newMeth(C$, 'format$java_util_Locale$S$OA', function (l, format, args) {
 try {
 {
 p$1.ensureOpen.apply(this, []);
-if ((this.formatter == null ) || (this.formatter.locale$() !== l ) ) this.formatter=Clazz.new_($I$(9).c$$Appendable$java_util_Locale,[this, l]);
+if ((this.formatter == null ) || (this.formatter.locale$() !== l ) ) this.formatter=Clazz.new_($I$(9,1).c$$Appendable$java_util_Locale,[this, l]);
 this.formatter.format$java_util_Locale$S$OA(l, format, args);
 if (this.autoFlush) this.out.flush$();
 }} catch (e$$) {
@@ -395,4 +385,4 @@ return this;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

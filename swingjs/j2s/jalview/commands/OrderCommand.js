@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'jalview.analysis.AlignmentSorter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OrderCommand", null, null, 'jalview.commands.CommandI');
+(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'jalview.analysis.AlignmentSorter']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OrderCommand", null, null, 'jalview.commands.CommandI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.description=null;
-this.seqs=null;
-this.seqs2=null;
-this.al=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['description'],'O',['seqs','jalview.datamodel.SequenceI[]','+seqs2','al','jalview.datamodel.AlignmentI']]]
 
 Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI', function (description, seqs, al) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.description=description;
 this.seqs=seqs;
 this.seqs2=al.getSequencesArray$();
@@ -46,4 +39,4 @@ return undo ? this.seqs : this.seqs2;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,26 +1,15 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.CaseMgr']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SkipBMH", null, 'com.stevesoft.pat.Skip');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.CaseMgr','com.stevesoft.pat.Skip']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SkipBMH", null, 'com.stevesoft.pat.Skip');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.MAX_CHAR=0;
-this.skip=null;
-this.sm1=0;
-this.jump_ahead=0;
-this.uc='\0';
-this.lc='\0';
-this.tc='\0';
-this.x='\0';
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.MAX_CHAR=64;
 this.skip=Clazz.array(Character.TYPE, [64]);
 this.jump_ahead=0;
-}, 1);
+},1);
+
+C$.$fields$=[['C',['uc','lc','tc','x'],'I',['MAX_CHAR','sm1','jump_ahead'],'O',['skip','char[]']]]
 
 Clazz.newMeth(C$, 'exact$C', function (c) {
 return (this.ign && this.anyc$C(c) ) || c == this.x ;
@@ -39,8 +28,7 @@ C$.c$$S$Z$I.apply(this, [pt, false, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$Z$I', function (pt, ign, offset) {
-C$.superclazz.c$$S$Z$I.apply(this, [pt, ign, offset]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$Z$I.apply(this,[pt, ign, offset]);C$.$init$.apply(this);
 for (var k=0; k < 64; k++) {
 this.skip[k]=String.fromCharCode(this.src.length$());
 }
@@ -84,7 +72,7 @@ return this.find$S$I$I(s, 0, s.length$());
 
 Clazz.newMeth(C$, 'find$S$I$I', function (s, start, end) {
 start+=this.offset + this.sm1;
-var vend=P$.Skip.min$I$I(s.length$() - 1, end + this.sm1 + this.offset );
+var vend=$I$(2,"min$I$I",[s.length$() - 1, end + this.sm1 + this.offset ]);
 var k;
 var vend1=vend - this.jump_ahead;
 if (this.ign) {
@@ -124,7 +112,7 @@ Clazz.newMeth(C$, 'find$com_stevesoft_pat_StringLike$I$I', function (s, start, e
 if (Clazz.instanceOf(s, "com.stevesoft.pat.wrap.StringWrap")) {
 return this.find$S$I$I(s.toString(), start, end);
 }start+=this.offset + this.sm1;
-var vend=P$.Skip.min$I$I(s.length$() - 1, end + this.sm1 + this.offset );
+var vend=$I$(2,"min$I$I",[s.length$() - 1, end + this.sm1 + this.offset ]);
 var k;
 var vend1=vend - this.jump_ahead;
 if (this.ign) {
@@ -162,4 +150,4 @@ return -1;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

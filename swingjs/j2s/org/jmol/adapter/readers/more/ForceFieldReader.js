@@ -1,18 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),I$=[[0,'java.util.Properties','javajs.util.PT','org.jmol.adapter.smarter.Atom']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ForceFieldReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),I$=[[0,'java.util.Properties','javajs.util.PT','org.jmol.adapter.smarter.Atom']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ForceFieldReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.userAtomTypes=null;
-this.atomTypes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.atomTypes=Clazz.new_($I$(1));
-}, 1);
+this.atomTypes=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['S',['userAtomTypes'],'O',['atomTypes','java.util.Properties']]]
 
 Clazz.newMeth(C$, 'setUserAtomTypes$', function () {
 this.userAtomTypes=this.htParams.get$O("atomTypes");
@@ -41,13 +36,13 @@ var isXx=($I$(2).isUpperCase$C(ch0) && $I$(2).isLowerCase$C(ch1) );
 if (" IM IP sz az sy ay ayt ".indexOf$S(atomType) >= 0) {
 if (ch0 == "I") {
 elementSymbol=atom.atomName.substring$I$I(0, 2);
-if (!$I$(2).isLowerCase$C(elementSymbol.charAt$I(1))) elementSymbol=elementSymbol.substring$I$I(0, 1);
+if (!(function(a,f){return f.apply(null,a)})([elementSymbol.charAt$I(1)],$I$(2).isLowerCase$C)) elementSymbol=elementSymbol.substring$I$I(0, 1);
 } else {
 elementSymbol=(ch0 == "s" ? "Si" : "Al");
 }} else if (nChar == 2 && isXx ) {
 } else if ($I$(2).isLetter$C(ch0) && !$I$(2).isLetter$C(ch1) ) {
 elementSymbol="" + Character.toUpperCase$C(ch0);
-} else if (nChar > 2 && isXx  && !$I$(2).isLetter$C(atomType.charAt$I(2)) ) {
+} else if (nChar > 2 && isXx  && !(function(a,f){return f.apply(null,a)})([atomType.charAt$I(2)],$I$(2).isLetter$C) ) {
 elementSymbol="" + ch0 + ch1 ;
 } else {
 ch0=Character.toUpperCase$C(ch0);
@@ -64,7 +59,7 @@ elementSymbol="" + ch0 + Character.toLowerCase$C(ch1) ;
 } else {
 haveSymbol=true;
 }}atom.elementSymbol=elementSymbol;
-if (haveSymbol) this.atomTypes.put$TK$TV(atomType, elementSymbol);
+if (haveSymbol) this.atomTypes.put$O$O(atomType, elementSymbol);
 return haveSymbol;
 });
 
@@ -93,4 +88,4 @@ return "Xx";
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

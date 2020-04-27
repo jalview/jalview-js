@@ -1,19 +1,14 @@
-(function(){var P$=Clazz.newPackage("javajs.util");
-var C$=Clazz.newClass(P$, "JSThread", null, 'Thread');
-C$.threadCount=0;
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'Thread']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSThread", null, 'Thread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.threadCount=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isJS=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isJS=true ||false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isJS']]
+,['I',['threadCount']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$ThreadGroup$S.apply(this, [null, "JSThread-" + (++C$.threadCount)]);
@@ -24,8 +19,7 @@ C$.c$$ThreadGroup$S.apply(this, [null, name]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$ThreadGroup$S', function (group, name) {
-C$.superclazz.c$$ThreadGroup$S.apply(this, [group, name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$ThreadGroup$S.apply(this,[group, name]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'run$', function () {
@@ -41,7 +35,7 @@ Clazz.load("swingjs.JSToolkit").dispatch$O$I$I(this, 1, 0);
 Clazz.newMeth(C$, 'run1$I', function (state) {
 var executeFinally=true;
 try {
-while (!Thread.interrupted$()){
+while (!$I$(1).interrupted$()){
 switch (state) {
 case 0:
 if (!this.myInit$()) return;
@@ -74,27 +68,30 @@ if (executeFinally) this.doFinally$();
 
 Clazz.newMeth(C$, 'sleepAndReturn$I$I', function (delay, state) {
 if (!this.isJS) {
-Thread.sleep$J(delay);
+$I$(1).sleep$J(delay);
 return false;
 }var me=this;
 var r=((P$.JSThread$1||
-(function(){var C$=Clazz.newClass(P$, "JSThread$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JSThread$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.$finals$.me.run1$I(this.$finals$.state);
 });
 })()
-), Clazz.new_(P$.JSThread$1.$init$, [this, {me: me, state: state}]));
+), Clazz.new_(P$.JSThread$1.$init$,[this, {state:state,me:me}]));
 {
 setTimeout( function() { java.awt.Toolkit.getDefaultToolkit$().getSystemEventQueue$().postEvent$java_awt_AWTEvent( Clazz.new_(java.awt.event.InvocationEvent.c$$O$Runnable,[me, r]))}, delay);
 }
 return true;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.threadCount=0;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

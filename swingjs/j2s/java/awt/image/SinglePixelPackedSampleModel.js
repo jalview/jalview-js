@@ -1,31 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBufferByte','java.awt.image.DataBufferInt','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SinglePixelPackedSampleModel", null, 'java.awt.image.SampleModel');
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBufferByte','java.awt.image.DataBufferUShort','java.awt.image.DataBufferInt','java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SinglePixelPackedSampleModel", null, 'java.awt.image.SampleModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bitMasks=null;
-this.bitOffsets=null;
-this.bitSizes=null;
-this.maxBitSize=0;
-this.scanlineStride=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['maxBitSize','scanlineStride'],'O',['bitMasks','int[]','+bitOffsets','+bitSizes']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$IA', function (dataType, w, h, bitMasks) {
 C$.c$$I$I$I$I$IA.apply(this, [dataType, w, h, w, bitMasks]);
-if (dataType != 0 && dataType != 3 ) {
+if (dataType != 0 && dataType != 1  && dataType != 3 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$IA', function (dataType, w, h, scanlineStride, bitMasks) {
-C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, bitMasks.length]);
-C$.$init$.apply(this);
-if (dataType != 0 && dataType != 3 ) {
+;C$.superclazz.c$$I$I$I$I.apply(this,[dataType, w, h, bitMasks.length]);C$.$init$.apply(this);
+if (dataType != 0 && dataType != 1  && dataType != 3 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
 }this.dataType=dataType;
 this.bitMasks=bitMasks.clone$();
@@ -75,10 +66,13 @@ var dataBuffer=null;
 var size=(p$1.getBufferSize.apply(this, [])|0);
 switch (this.dataType) {
 case 0:
-dataBuffer=Clazz.new_($I$(1).c$$I,[size]);
+dataBuffer=Clazz.new_($I$(1,1).c$$I,[size]);
+break;
+case 1:
+dataBuffer=Clazz.new_($I$(2,1).c$$I,[size]);
 break;
 case 3:
-dataBuffer=Clazz.new_($I$(2).c$$I,[size]);
+dataBuffer=Clazz.new_($I$(3,1).c$$I,[size]);
 break;
 }
 return dataBuffer;
@@ -142,8 +136,15 @@ case 0:
 var bdata;
 if (obj == null ) bdata=Clazz.array(Byte.TYPE, [1]);
  else bdata=obj;
-bdata[0]=((data.getElem$I(y * this.scanlineStride + x)|0)|0);
+bdata[0]=(data.getElem$I(y * this.scanlineStride + x)|0);
 obj=bdata;
+break;
+case 1:
+var sdata;
+if (obj == null ) sdata=Clazz.array(Short.TYPE, [1]);
+ else sdata=obj;
+sdata[0]=(data.getElem$I(y * this.scanlineStride + x)|0);
+obj=sdata;
 break;
 case 3:
 var idata;
@@ -229,6 +230,10 @@ case 0:
 var barray=obj;
 data.setElem$I$I(y * this.scanlineStride + x, (barray[0]) & 255);
 break;
+case 1:
+var sarray=obj;
+data.setElem$I$I(y * this.scanlineStride + x, (sarray[0]) & 65535);
+break;
 case 3:
 var iarray=obj;
 data.setElem$I$I(y * this.scanlineStride + x, iarray[0]);
@@ -297,7 +302,7 @@ Clazz.newMeth(C$, 'equals$O', function (o) {
 if ((o == null ) || !(Clazz.instanceOf(o, "java.awt.image.SinglePixelPackedSampleModel")) ) {
 return false;
 }var that=o;
-return this.width == that.width && this.height == that.height  && this.numBands == that.numBands  && this.dataType == that.dataType  && $I$(3).equals$IA$IA(this.bitMasks, that.bitMasks)  && $I$(3).equals$IA$IA(this.bitOffsets, that.bitOffsets)  && $I$(3).equals$IA$IA(this.bitSizes, that.bitSizes)  && this.maxBitSize == that.maxBitSize  && this.scanlineStride == that.scanlineStride ;
+return this.width == that.width && this.height == that.height  && this.numBands == that.numBands  && this.dataType == that.dataType  && $I$(4).equals$IA$IA(this.bitMasks, that.bitMasks)  && $I$(4).equals$IA$IA(this.bitOffsets, that.bitOffsets)  && $I$(4).equals$IA$IA(this.bitSizes, that.bitSizes)  && this.maxBitSize == that.maxBitSize  && this.scanlineStride == that.scanlineStride ;
 });
 
 Clazz.newMeth(C$, 'hashCode$', function () {
@@ -330,4 +335,4 @@ return hash;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,28 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.xml.sax.helpers"),p$1={},I$=[[0,'org.xml.sax.helpers.ParserFactory','org.xml.sax.helpers.AttributesImpl','org.xml.sax.helpers.NamespaceSupport',['org.xml.sax.helpers.ParserAdapter','.AttributeListAdapter'],'org.xml.sax.InputSource','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ParserAdapter", function(){
+(function(){var P$=Clazz.newPackage("org.xml.sax.helpers"),p$1={},I$=[[0,'org.xml.sax.helpers.ParserFactory','org.xml.sax.helpers.AttributesImpl','org.xml.sax.helpers.NamespaceSupport',['org.xml.sax.helpers.ParserAdapter','.AttributeListAdapter'],'org.xml.sax.InputSource','java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ParserAdapter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['org.xml.sax.XMLReader', 'org.xml.sax.DocumentHandler']);
+C$.$classes$=[['AttributeListAdapter',16]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nsSupport=null;
-this.attAdapter=null;
-this.parsing=false;
-this.nameParts=null;
-this.parser=null;
-this.atts=null;
-this.namespaces=false;
-this.prefixes=false;
-this.uris=false;
-this.locator=null;
-this.entityResolver=null;
-this.dtdHandler=null;
-this.contentHandler=null;
-this.errorHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.parsing=false;
@@ -36,10 +18,12 @@ this.entityResolver=null;
 this.dtdHandler=null;
 this.contentHandler=null;
 this.errorHandler=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['parsing','namespaces','prefixes','uris'],'O',['nsSupport','org.xml.sax.helpers.NamespaceSupport','attAdapter','org.xml.sax.helpers.ParserAdapter.AttributeListAdapter','nameParts','String[]','parser','org.xml.sax.Parser','atts','org.xml.sax.helpers.AttributesImpl','locator','org.xml.sax.Locator','entityResolver','org.xml.sax.EntityResolver','dtdHandler','org.xml.sax.DTDHandler','contentHandler','org.xml.sax.ContentHandler','errorHandler','org.xml.sax.ErrorHandler']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var driver=System.getProperty$S("org.xml.sax.parser");
 try {
 p$1.setup$org_xml_sax_Parser.apply(this, [$I$(1).makeParser$()]);
@@ -76,7 +60,7 @@ throw e$$;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_xml_sax_Parser', function (parser) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.setup$org_xml_sax_Parser.apply(this, [parser]);
 }, 1);
 
@@ -84,9 +68,9 @@ Clazz.newMeth(C$, 'setup$org_xml_sax_Parser', function (parser) {
 if (parser == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Parser argument must not be null"]);
 }this.parser=parser;
-this.atts=Clazz.new_($I$(2));
-this.nsSupport=Clazz.new_($I$(3));
-this.attAdapter=Clazz.new_($I$(4), [this, null]);
+this.atts=Clazz.new_($I$(2,1));
+this.nsSupport=Clazz.new_($I$(3,1));
+this.attAdapter=Clazz.new_($I$(4,1),[this, null]);
 }, p$1);
 
 Clazz.newMeth(C$, 'setFeature$S$Z', function (name, value) {
@@ -159,7 +143,7 @@ return this.errorHandler;
 });
 
 Clazz.newMeth(C$, 'parse$S', function (systemId) {
-this.parse$org_xml_sax_InputSource(Clazz.new_($I$(5).c$$S,[systemId]));
+this.parse$org_xml_sax_InputSource(Clazz.new_($I$(5,1).c$$S,[systemId]));
 });
 
 Clazz.newMeth(C$, 'parse$org_xml_sax_InputSource', function (input) {
@@ -240,8 +224,8 @@ var attName=p$1.processName$S$Z$Z.apply(this, [attQName, true, true]);
 this.atts.addAttribute$S$S$S$S$S(attName[0], attName[1], attName[2], type, value);
 } catch (e) {
 if (Clazz.exceptionOf(e,"org.xml.sax.SAXException")){
-if (exceptions == null ) exceptions=Clazz.new_($I$(6));
-exceptions.addElement$TE(e);
+if (exceptions == null ) exceptions=Clazz.new_($I$(6,1));
+exceptions.addElement$O(e);
 this.atts.addAttribute$S$S$S$S$S("", attQName, attQName, type, value);
 } else {
 throw e;
@@ -328,23 +312,19 @@ if (this.parsing) {
 throw Clazz.new_(Clazz.load('org.xml.sax.SAXNotSupportedException').c$$S,["Cannot change " + type + ' ' + name + " while parsing" ]);
 }}, p$1);
 ;
-(function(){var C$=Clazz.newClass(P$.ParserAdapter, "AttributeListAdapter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ParserAdapter, "AttributeListAdapter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'org.xml.sax.Attributes');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.qAtts=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['qAtts','org.xml.sax.AttributeList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setAttributeList$org_xml_sax_AttributeList', function (qAtts) {
@@ -405,4 +385,4 @@ return this.qAtts.getValue$S(qName);
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

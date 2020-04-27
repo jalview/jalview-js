@@ -1,27 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.util.matcher"),I$=[[0,'java.util.Objects','jalview.util.matcher.Condition','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Matcher", null, null, 'jalview.util.matcher.MatcherI');
+(function(){var P$=Clazz.newPackage("jalview.util.matcher"),I$=[[0,'java.util.Objects','jalview.util.matcher.Condition','StringBuilder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Matcher", null, null, 'jalview.util.matcher.MatcherI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.condition=null;
-this.pattern=null;
-this.uppercasePattern=null;
-this.regexPattern=null;
-this.value=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['value'],'S',['pattern','uppercasePattern'],'O',['condition','jalview.util.matcher.Condition','regexPattern','java.util.regex.Pattern']]]
 
 Clazz.newMeth(C$, 'c$$jalview_util_matcher_Condition$S', function (cond, compareTo) {
-C$.$init$.apply(this);
-$I$(1).requireNonNull$TT(cond);
+;C$.$init$.apply(this);
+$I$(1).requireNonNull$O(cond);
 this.condition=cond;
 if (cond.isNumeric$()) {
-this.value=(Float.valueOf$S(compareTo)).floatValue$();
+this.value=(Float.valueOf$S(compareTo)).valueOf();
 this.pattern=String.valueOf$F(this.value);
 this.uppercasePattern=this.pattern;
 } else {
@@ -37,7 +29,7 @@ C$.c$$jalview_util_matcher_Condition$S.apply(this, [cond, String.valueOf$F(compa
 Clazz.newMeth(C$, 'matches$S', function (val) {
 if (this.condition.isNumeric$()) {
 try {
-return val == null  ? false : this.matches$F((Float.valueOf$S(val)).floatValue$());
+return val == null  ? false : this.matches$F((Float.valueOf$S(val)).valueOf());
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
 return false;
@@ -128,7 +120,7 @@ return this.value;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 sb.append$S(this.condition.toString()).append$S(" ");
 if (this.condition.isNumeric$()) {
 sb.append$S(this.pattern);
@@ -139,4 +131,4 @@ sb.append$S("\'").append$S(this.pattern).append$S("\'");
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

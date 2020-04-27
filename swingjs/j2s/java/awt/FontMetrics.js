@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.font.FontRenderContext']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FontMetrics");
-C$.DEFAULT_FRC=null;
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.font.FontRenderContext']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FontMetrics");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEFAULT_FRC=Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform$Z$Z,[null, false, false]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.font=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['font','java.awt.Font']]
+,['O',['DEFAULT_FRC','java.awt.font.FontRenderContext']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Font', function (font) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.font=font;
 }, 1);
 
@@ -68,13 +63,17 @@ return this.font.getStringBounds$CA$I$I$java_awt_font_FontRenderContext(chars, b
 });
 
 Clazz.newMeth(C$, 'myFRC$java_awt_Graphics', function (context) {
-return null;
+return C$.DEFAULT_FRC;
 }, p$1);
 
 Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[font=" + this.getFont$() + "ascent=" + this.getAscent$() + ", descent=" + this.getDescent$() + ", height=" + this.getHeight$() + "]" ;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.DEFAULT_FRC=Clazz.new_($I$(1,1).c$$java_awt_geom_AffineTransform$Z$Z,[null, false, false]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

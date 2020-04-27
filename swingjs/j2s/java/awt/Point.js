@@ -1,17 +1,12 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "Point", null, 'java.awt.geom.Point2D');
+/*c*/var C$=Clazz.newClass(P$, "Point", null, 'java.awt.geom.Point2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['x','y']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [0, 0]);
@@ -22,7 +17,7 @@ C$.c$$I$I.apply(this, [p.x, p.y]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (x, y) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.x=x;
 this.y=y;
 }, 1);
@@ -73,4 +68,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[x=" + this.x + ",y=" + this.y + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

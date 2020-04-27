@@ -1,29 +1,20 @@
-(function(){var P$=java.util,p$1={},p$2={},p$3={},I$=[[0,'java.util.concurrent.atomic.AtomicInteger','java.util.TaskQueue','java.util.TimerThread','java.util.TimerTask','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Timer");
-C$.nextSerialNumber=null;
+(function(){var P$=java.util,p$1={},p$2={},p$3={},I$=[[0,'java.util.concurrent.atomic.AtomicInteger','java.util.TaskQueue','java.util.TimerThread','java.util.TimerTask','java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Timer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nextSerialNumber=Clazz.new_($I$(1).c$$I,[0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queue=null;
-this.thread=null;
-this.threadReaper=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.queue=Clazz.new_($I$(2));
-this.thread=Clazz.new_($I$(3).c$$java_util_TaskQueue,[this.queue]);
+this.queue=Clazz.new_($I$(2,1));
+this.thread=Clazz.new_($I$(3,1).c$$java_util_TaskQueue,[this.queue]);
 this.threadReaper=((P$.Timer$1||
-(function(){var C$=Clazz.newClass(P$, "Timer$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Timer$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]]
 
 Clazz.newMeth(C$, 'finalize$', function () {
 {
@@ -31,8 +22,11 @@ this.b$['java.util.Timer'].thread.newTasksMayBeScheduled=false;
 this.b$['java.util.Timer'].queue.notify$();
 }});
 })()
-), Clazz.new_(P$.Timer$1.$init$, [this, null]));
-}, 1);
+), Clazz.new_(P$.Timer$1.$init$,[this, null]));
+},1);
+
+C$.$fields$=[['O',['queue','java.util.TaskQueue','thread','java.util.TimerThread','threadReaper','java.lang.Object']]
+,['O',['nextSerialNumber','java.util.concurrent.atomic.AtomicInteger']]]
 
 Clazz.newMeth(C$, 'serialNumber$', function () {
 return C$.nextSerialNumber.getAndIncrement$();
@@ -47,13 +41,13 @@ C$.c$$S$Z.apply(this, ["Timer-" + C$.serialNumber$(), isDaemon]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.thread.setName$S(name);
 this.thread.start$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$Z', function (name, isDaemon) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.thread.setName$S(name);
 this.thread.setDaemon$Z(isDaemon);
 this.thread.start$();
@@ -122,5 +116,9 @@ result++;
 if (result != 0) this.queue.heapify$();
 }return result;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.nextSerialNumber=Clazz.new_($I$(1,1).c$$I,[0]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:50 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

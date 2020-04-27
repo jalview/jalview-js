@@ -1,16 +1,15 @@
-(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.Inflate']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Inflater", null, 'swingjs.jzlib.ZStream');
+(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.Inflate']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Inflater", null, 'swingjs.jzlib.ZStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'init$I$Z', function (w, nowrap) {
 this.setAdler32$();
 if (w == 0) w=15;
-this.istate=Clazz.new_($I$(1).c$$swingjs_jzlib_ZStream,[this]);
+this.istate=Clazz.new_($I$(1,1).c$$swingjs_jzlib_ZStream,[this]);
 this.istate.inflateInit$I(nowrap ? -w : w);
 return this;
 });
@@ -22,9 +21,8 @@ return ret;
 });
 
 Clazz.newMeth(C$, 'end$', function () {
-if (this.istate == null ) return -2;
-var ret=this.istate.inflateEnd$();
-return ret;
+if (this.istate == null ) return;
+this.istate.inflateEnd$();
 });
 
 Clazz.newMeth(C$, 'sync$', function () {
@@ -53,4 +51,4 @@ if (this.istate != null ) this.istate.reset$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

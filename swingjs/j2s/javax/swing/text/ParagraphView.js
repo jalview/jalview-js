@@ -1,40 +1,24 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'Boolean','java.util.Arrays','javax.swing.text.StateInvariantError','javax.swing.text.StyleConstants','java.awt.font.TextAttribute',['javax.swing.text.Position','.Bias'],['javax.swing.text.ParagraphView','.Row'],'javax.swing.text.Segment']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ParagraphView", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.util.Arrays','javax.swing.text.StateInvariantError','javax.swing.text.StyleConstants','java.awt.font.TextAttribute',['javax.swing.text.Position','.Bias'],['javax.swing.text.ParagraphView','.Row'],'javax.swing.text.Segment']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ParagraphView", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.FlowView', 'javax.swing.text.TabExpander');
-C$.i18nStrategy=null;
-C$.tabChars=null;
-C$.tabDecimalChars=null;
+C$.$classes$=[['Row',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-C$.tabChars=Clazz.array(Character.TYPE, [1]);
-C$.tabChars[0]="\t";
-C$.tabDecimalChars=Clazz.array(Character.TYPE, [2]);
-C$.tabDecimalChars[0]="\t";
-C$.tabDecimalChars[1]=".";
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.justification=0;
-this.lineSpacing=0;
-this.firstLineIndent=0;
-this.tabBase=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.firstLineIndent=0;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['lineSpacing'],'I',['justification','firstLineIndent','tabBase']]
+,['O',['i18nStrategy','Class','tabChars','char[]','+tabDecimalChars']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 1]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element$I.apply(this,[elem, 1]);C$.$init$.apply(this);
 this.setPropertiesFromAttributes$();
 var doc=elem.getDocument$();
 var i18nFlag=doc.getProperty$O("i18n");
-if ((i18nFlag != null ) && i18nFlag.equals$O($I$(1).TRUE) ) {
+if ((i18nFlag != null ) && i18nFlag.equals$O(Boolean.TRUE) ) {
 try {
 if (C$.i18nStrategy == null ) {
 var classname="javax.swing.text.TextLayoutStrategy";
@@ -47,7 +31,7 @@ C$.i18nStrategy=Clazz.forName(classname);
 if (Clazz.instanceOf(o, "javax.swing.text.FlowView.FlowStrategy")) {
 this.strategy=o;
 }} catch (e) {
-throw Clazz.new_($I$(3).c$$S,["ParagraphView: Can't create i18n strategy: " + e.getMessage$()]);
+throw Clazz.new_(["ParagraphView: Can't create i18n strategy: " + e.getMessage$()],$I$(2,1).c$$S);
 }
 }}, 1);
 
@@ -67,20 +51,20 @@ Clazz.newMeth(C$, 'setPropertiesFromAttributes$', function () {
 var attr=this.getAttributes$();
 if (attr != null ) {
 this.setParagraphInsets$javax_swing_text_AttributeSet(attr);
-var a=attr.getAttribute$O($I$(4).Alignment);
+var a=attr.getAttribute$O($I$(3).Alignment);
 var alignment;
 if (a == null ) {
 var doc=this.getElement$().getDocument$();
-var o=doc.getProperty$O($I$(5).RUN_DIRECTION);
-if ((o != null ) && o.equals$O($I$(5).RUN_DIRECTION_RTL) ) {
+var o=doc.getProperty$O($I$(4).RUN_DIRECTION);
+if ((o != null ) && o.equals$O($I$(4).RUN_DIRECTION_RTL) ) {
 alignment=2;
 } else {
 alignment=0;
 }} else {
 alignment=a.intValue$();
 }this.setJustification$I(alignment);
-this.setLineSpacing$F($I$(4).getLineSpacing$javax_swing_text_AttributeSet(attr));
-this.setFirstLineIndent$F($I$(4).getFirstLineIndent$javax_swing_text_AttributeSet(attr));
+this.setLineSpacing$F($I$(3).getLineSpacing$javax_swing_text_AttributeSet(attr));
+this.setFirstLineIndent$F($I$(3).getFirstLineIndent$javax_swing_text_AttributeSet(attr));
 }});
 
 Clazz.newMeth(C$, 'getLayoutViewCount$', function () {
@@ -99,7 +83,7 @@ var vIndex;
 if (pos == -1) {
 vIndex=(direction == 1) ? this.getViewCount$() - 1 : 0;
 } else {
-if (b === $I$(6).Backward  && pos > 0 ) {
+if (b === $I$(5).Backward  && pos > 0 ) {
 vIndex=this.getViewIndexAtPosition$I(pos - 1);
 } else {
 vIndex=this.getViewIndexAtPosition$I(pos);
@@ -140,7 +124,7 @@ var doc=this.getDocument$();
 var aDoc=(Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) ? doc : null;
 var row=this.getView$I(rowIndex);
 var lastPos=-1;
-biasRet[0]=$I$(6).Forward;
+biasRet[0]=$I$(5).Forward;
 for (var vc=0, numViews=row.getViewCount$(); vc < numViews; vc++) {
 var v=row.getView$I(vc);
 var start=v.getStartOffset$();
@@ -196,10 +180,10 @@ adjust=row.getLeftInset$();
 });
 
 Clazz.newMeth(C$, 'createRow$', function () {
-return Clazz.new_($I$(7).c$$javax_swing_text_Element, [this, null, this.getElement$()]);
+return Clazz.new_([this, null, this.getElement$()],$I$(6,1).c$$javax_swing_text_Element);
 });
 
-Clazz.newMeth(C$, ['nextTabStop$F$I','nextTabStop$'], function (x, tabOffset) {
+Clazz.newMeth(C$, 'nextTabStop$F$I', function (x, tabOffset) {
 if (this.justification != 0) return x + 10.0;
 x -= this.tabBase;
 var tabs=this.getTabSet$();
@@ -238,7 +222,7 @@ return x;
 });
 
 Clazz.newMeth(C$, 'getTabSet$', function () {
-return $I$(4).getTabSet$javax_swing_text_AttributeSet(this.getElement$().getAttributes$());
+return $I$(3,"getTabSet$javax_swing_text_AttributeSet",[this.getElement$().getAttributes$()]);
 });
 
 Clazz.newMeth(C$, 'getPartialSize$I$I', function (startOffset, endOffset) {
@@ -265,7 +249,7 @@ return size;
 Clazz.newMeth(C$, 'findOffsetToCharactersInString$CA$I', function (string, start) {
 var stringLength=string.length;
 var end=this.getEndOffset$();
-var seg=Clazz.new_($I$(8));
+var seg=Clazz.new_($I$(7,1));
 try {
 this.getDocument$().getText$I$I$javax_swing_text_Segment(start, end - start, seg);
 } catch (ble) {
@@ -345,26 +329,31 @@ this.layoutChanged$I(0);
 this.layoutChanged$I(1);
 C$.superclazz.prototype.changedUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory.apply(this, [changes, a, f]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+C$.tabChars=Clazz.array(Character.TYPE, [1]);
+C$.tabChars[0]="\t";
+C$.tabDecimalChars=Clazz.array(Character.TYPE, [2]);
+C$.tabDecimalChars[0]="\t";
+C$.tabDecimalChars[1]=".";
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ParagraphView, "Row", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ParagraphView, "Row", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.BoxView');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.justificationData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.justificationData=(null|0);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['justificationData','int[]']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element$I.apply(this,[elem, 0]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'loadChildren$javax_swing_text_ViewFactory', function (f) {
@@ -452,7 +441,7 @@ rv=true;
 }, p$1);
 
 Clazz.newMeth(C$, 'isJustifiableDocument', function () {
-return (!$I$(1).TRUE.equals$O(this.getDocument$().getProperty$O("i18n")));
+return (!Boolean.TRUE.equals$O(this.getDocument$().getProperty$O("i18n")));
 }, p$1);
 
 Clazz.newMeth(C$, 'isJustifyEnabled', function () {
@@ -491,7 +480,7 @@ var lastLeadingSpaces=0;
 var rowStartOffset=this.getStartOffset$();
 var rowEndOffset=this.getEndOffset$();
 var spaceMap=Clazz.array(Integer.TYPE, [rowEndOffset - rowStartOffset]);
-$I$(2).fill$IA$I(spaceMap, 0);
+$I$(1).fill$IA$I(spaceMap, 0);
 for (var i=this.getViewCount$() - 1; i >= 0; i--) {
 var view=this.getView$I(i);
 if (Clazz.instanceOf(view, "javax.swing.text.GlyphView")) {
@@ -572,4 +561,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

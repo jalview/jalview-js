@@ -1,19 +1,13 @@
 (function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={};
-var C$=Clazz.newClass(P$, "StrandsRenderer", null, 'org.jmol.renderbio.BioShapeRenderer');
+/*c*/var C$=Clazz.newClass(P$, "StrandsRenderer", null, 'org.jmol.renderbio.BioShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.strandCount=0;
-this.strandSeparation=0;
-this.baseStrandOffset=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.strandCount=1;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['strandSeparation','baseStrandOffset'],'I',['strandCount']]]
 
 Clazz.newMeth(C$, 'renderBioShape$org_jmol_shapebio_BioShape', function (bioShape) {
 this.renderStrandShape$();
@@ -56,4 +50,4 @@ for (var i=this.bsVisible.nextSetBit$I(0); i >= 0; i=this.bsVisible.nextSetBit$I
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

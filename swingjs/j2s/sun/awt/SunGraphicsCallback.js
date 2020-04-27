@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.awt"),I$=[[0,'java.awt.JSComponent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SunGraphicsCallback", function(){
+(function(){var P$=Clazz.newPackage("sun.awt"),I$=[[0,'java.awt.JSComponent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SunGraphicsCallback", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['PaintHeavyweightComponentsCallback',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'constrainGraphics$java_awt_Graphics$java_awt_Rectangle', function (g, bounds) {
 g.clipRect$I$I$I$I(0, 0, bounds.width, bounds.height);
@@ -29,7 +29,7 @@ cg.setColor$java_awt_Color(comp.getForeground$());
 if (Clazz.instanceOf(cg, "java.awt.Graphics2D")) {
 (cg).setBackground$java_awt_Color(comp.getBackground$());
 } else if (Clazz.instanceOf(cg, "sun.awt.Graphics2Delegate")) {
-(cg).setBackground$(comp.getBackground$());
+(cg).setBackground$java_awt_Color(comp.getBackground$());
 }this.run$java_awt_Component$java_awt_Graphics(comp, cg);
 } finally {
 cg.dispose$();
@@ -44,34 +44,38 @@ this.runOneComponent$java_awt_Component$java_awt_Rectangle$java_awt_Graphics$jav
 }
 });
 ;
-(function(){var C$=Clazz.newClass(P$.SunGraphicsCallback, "PaintHeavyweightComponentsCallback", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SunGraphicsCallback, "PaintHeavyweightComponentsCallback", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.SunGraphicsCallback');
-C$.instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['instance','sun.awt.SunGraphicsCallback.PaintHeavyweightComponentsCallback']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'run$java_awt_Component$java_awt_Graphics', function (comp, cg) {
 if (!comp.isLightweight$()) {
 comp.paintAll$java_awt_Graphics(cg);
 } else if (Clazz.instanceOf(comp, "java.awt.Container")) {
-this.runComponents$I$java_awt_ComponentA$java_awt_Graphics$I((comp).getComponentCount$(), $I$(1).getChildArray$java_awt_Container(comp), cg, 3);
+this.runComponents$I$java_awt_ComponentA$java_awt_Graphics$I((comp).getComponentCount$(), $I$(1).秘getChildArray$java_awt_Container(comp), cg, 3);
 }});
 
 Clazz.newMeth(C$, 'getInstance$', function () {
 return C$.instance;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

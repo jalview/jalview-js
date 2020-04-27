@@ -1,14 +1,13 @@
 (function(){var P$=java.util,I$=[];
-var C$=Clazz.newClass(P$, "DualPivotQuicksort");
+/*c*/var C$=Clazz.newClass(P$, "DualPivotQuicksort");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'sort$IA$I$I$IA$I$I', function (a, left, right, work, workBase, workLen) {
@@ -1021,21 +1020,21 @@ var count=Clazz.array(Integer.TYPE, [256]);
 for (var i=left - 1; ++i <= right; count[a[i] - -128]++) ;
 for (var i=256, k=right + 1; k > left; ) {
 while (count[--i] == 0);
-var value=($b$[0] = ((i + -128)|0), $b$[0]);
+var value=($b$[0] = (i + -128), $b$[0]);
 var s=count[i];
 do {
-a[--k]=(value|0);
+a[--k]=value;
 } while (--s > 0);
 }
 } else {
 for (var i=left, j=i; i < right; j=++i) {
-var ai=($b$[0] = a[i + 1], $b$[0]);
+var ai=a[i + 1];
 while (ai < a[j]){
-a[j + 1]=(a[j]|0);
+a[j + 1]=a[j];
 if (j-- == left) {
 break;
 }}
-a[j + 1]=(ai|0);
+a[j + 1]=ai;
 }
 }}, 1);
 
@@ -1595,4 +1594,4 @@ C$.sort$DA$I$I$Z(a, great + 1, right, false);
 var $b$ = new Int8Array(1);
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:45 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

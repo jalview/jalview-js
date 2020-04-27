@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.io"),p$1={},I$=[[0,'javajs.util.AU','javajs.util.OC','java.net.URL','javajs.util.Rdr','org.jmol.util.Logger','org.jmol.viewer.FileManager','javajs.util.Lst','java.util.Hashtable','javajs.util.ZipTools','org.jmol.api.Interface','javajs.util.PT','org.jmol.adapter.smarter.AtomSetCollection']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JmolUtil");
+(function(){var P$=Clazz.newPackage("org.jmol.io"),p$1={},I$=[[0,'javajs.util.AU','javajs.util.OC','java.net.URL','javajs.util.Rdr','org.jmol.util.Logger','org.jmol.viewer.FileManager','javajs.util.Lst','java.util.Hashtable','javajs.util.ZipTools','org.jmol.api.Interface','javajs.util.PT','org.jmol.adapter.smarter.AtomSetCollection']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JmolUtil");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getImage$org_jmol_viewer_Viewer$O$S$Z', function (vwr, fullPathNameOrBytes, echoName, forceSync) {
@@ -27,7 +26,7 @@ if (vwr.isJSNoAWT) info=Clazz.array(java.lang.Object, -1, [echoName, fullPathNam
 } else if ($I$(2).urlTypeIndex$S(fullPathName) >= 0) {
 if (vwr.isJSNoAWT) info=Clazz.array(java.lang.Object, -1, [echoName, fullPathNameOrBytes, null]);
  else try {
-image=apiPlatform.createImage$O(Clazz.new_($I$(3).c$$java_net_URL$S$java_net_URLStreamHandler,[null, fullPathName, null]));
+image=apiPlatform.createImage$O(Clazz.new_($I$(3,1).c$$java_net_URL$S$java_net_URLStreamHandler,[null, fullPathName, null]));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return "bad URL: " + fullPathName;
@@ -41,7 +40,7 @@ createImage=true;
 info=Clazz.array(java.lang.Object, -1, [echoName, $I$(4).guessMimeTypeForBytes$BA(fullPathNameOrBytes), fullPathNameOrBytes]);
 } else {
 createImage=true;
-}if (createImage) image=apiPlatform.createImage$O("\1close".equals$O(fullPathNameOrBytes) ? "\1close" + echoName : fullPathNameOrBytes);
+}if (createImage) image=apiPlatform.createImage$O("\u0001close".equals$O(fullPathNameOrBytes) ? "\u0001close" + echoName : fullPathNameOrBytes);
  else if (info != null ) image=apiPlatform.createImage$O(info);
 {
 return image;
@@ -51,7 +50,7 @@ return image;
 Clazz.newMeth(C$, 'getAtomSetCollectionOrBufferedReaderFromZip$org_jmol_viewer_Viewer$java_io_InputStream$S$SA$java_util_Map$I$Z', function (vwr, is, fileName, zipDirectory, htParams, subFilePtr, asBufferedReader) {
 var adapter=vwr.getModelAdapter$();
 var doCombine=(subFilePtr == 1);
-htParams.put$TK$TV("zipSet", fileName);
+htParams.put$O$O("zipSet", fileName);
 var subFileList=htParams.get$O("subFileList");
 if (subFileList == null ) subFileList=p$1.getSpartanSubfiles$SA.apply(this, [zipDirectory]);
 var subFileName=(subFileList == null  || subFilePtr >= subFileList.length  ? htParams.get$O("SubFileName") : subFileList[subFilePtr]);
@@ -74,14 +73,14 @@ if (useFileManifest && haveManifest ) {
 var path=$I$(6).getManifestScriptPath$S(manifest);
 if (path != null ) {
 return "NOTE: file recognized as a script file: " + fileName + path + "\n" ;
-}}var vCollections=Clazz.new_($I$(7));
-var htCollections=(haveManifest ? Clazz.new_($I$(8)) : null);
+}}var vCollections=Clazz.new_($I$(7,1));
+var htCollections=(haveManifest ? Clazz.new_($I$(8,1)) : null);
 var nFiles=0;
 try {
 var spartanData=(p$1.isSpartanZip$SA.apply(this, [zipDirectory]) ? vwr.fm.spartanUtil$().getData$java_io_InputStream$SA(is, zipDirectory) : null);
 var ret;
 if (spartanData != null ) {
-var reader=$I$(4).getBR$S(spartanData.toString());
+var reader=(function(a,f){return f.apply(null,a)})([spartanData.toString()],$I$(4).getBR$S);
 if (asBufferedReader) return reader;
 ret=adapter.getAtomSetCollectionFromReader$S$O$java_util_Map(fileName, reader, htParams);
 if (Clazz.instanceOf(ret, "java.lang.String")) return ret;
@@ -101,10 +100,10 @@ while ((ze=zis.getNextEntry$()) != null  && (selectedFile <= 0 || vCollections.s
 if (ze.isDirectory$()) continue;
 var thisEntry=ze.getName$();
 if (subFileName != null  && !thisEntry.equals$O(subFileName) ) continue;
-if (subFileName != null ) htParams.put$TK$TV("subFileName", subFileName);
+if (subFileName != null ) htParams.put$O$O("subFileName", subFileName);
 if (thisEntry.startsWith$S("JmolManifest") || haveManifest && exceptFiles == manifest.indexOf$S("|" + thisEntry + "|" ) >= 0   ) continue;
-var bytes=$I$(4).getLimitedStreamBytes$java_io_InputStream$J(zis, ze.getSize$());
-if ($I$(4).isGzipB$BA(bytes)) bytes=$I$(4).getLimitedStreamBytes$java_io_InputStream$J($I$(9).getUnGzippedInputStream$BA(bytes), -1);
+var bytes=(function(a,f){return f.apply(null,a)})([zis, ze.getSize$()],$I$(4).getLimitedStreamBytes$java_io_InputStream$J);
+if ($I$(4).isGzipB$BA(bytes)) bytes=(function(a,f){return f.apply(null,a)})([$I$(9).getUnGzippedInputStream$BA(bytes), -1],$I$(4).getLimitedStreamBytes$java_io_InputStream$J);
 if ($I$(4).isZipB$BA(bytes) || $I$(4).isPngZipB$BA(bytes) ) {
 var bis=$I$(4).getBIS$BA(bytes);
 var zipDir2=$I$(9).getZipDirectoryAndClose$java_io_BufferedInputStream$S(bis, "JmolManifest");
@@ -114,8 +113,8 @@ if (Clazz.instanceOf(atomSetCollections, "java.lang.String")) {
 if (ignoreErrors) continue;
 return atomSetCollections;
 } else if (Clazz.instanceOf(atomSetCollections, "org.jmol.adapter.smarter.AtomSetCollection") || Clazz.instanceOf(atomSetCollections, "javajs.util.Lst") ) {
-if (haveManifest && !exceptFiles ) htCollections.put$TK$TV(thisEntry, atomSetCollections);
- else vCollections.addLast$TV(atomSetCollections);
+if (haveManifest && !exceptFiles ) htCollections.put$O$O(thisEntry, atomSetCollections);
+ else vCollections.addLast$O(atomSetCollections);
 } else if (Clazz.instanceOf(atomSetCollections, "java.io.BufferedReader")) {
 if (doCombine) zis.close$();
 return atomSetCollections;
@@ -145,8 +144,8 @@ if (!(Clazz.instanceOf(ret, "org.jmol.adapter.smarter.AtomSetCollection"))) {
 if (ignoreErrors) continue;
 zis.close$();
 return "" + ret;
-}if (haveManifest && !exceptFiles ) htCollections.put$TK$TV(thisEntry, ret);
- else vCollections.addLast$TV(ret);
+}if (haveManifest && !exceptFiles ) htCollections.put$O$O(thisEntry, ret);
+ else vCollections.addLast$O(ret);
 var a=ret;
 if (a.errorMessage != null ) {
 if (ignoreErrors) continue;
@@ -159,11 +158,11 @@ var list=$I$(11).split$S$S(manifest, "|");
 for (var i=0; i < list.length; i++) {
 var file=list[i];
 if (file.length$() == 0 || file.indexOf$S("#") == 0 ) continue;
-if (htCollections.containsKey$O(file)) vCollections.addLast$TV(htCollections.get$O(file));
+if (htCollections.containsKey$O(file)) vCollections.addLast$O(htCollections.get$O(file));
  else if ($I$(5).debugging) $I$(5).debug$S("manifested file " + file + " was not found in " + fileName );
 }
 }if (!doCombine) return vCollections;
-var result=(vCollections.size$() == 1 && Clazz.instanceOf(vCollections.get$I(0), "org.jmol.adapter.smarter.AtomSetCollection")  ? vCollections.get$I(0) : Clazz.new_($I$(12).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,["Array", null, null, vCollections]));
+var result=(vCollections.size$() == 1 && Clazz.instanceOf(vCollections.get$I(0), "org.jmol.adapter.smarter.AtomSetCollection")  ? vCollections.get$I(0) : Clazz.new_($I$(12,1).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,["Array", null, null, vCollections]));
 if (result.errorMessage != null ) {
 if (ignoreErrors) return null;
 return result.errorMessage;
@@ -210,13 +209,13 @@ return cache.get$O(shortName);
 });
 
 Clazz.newMeth(C$, 'clearAndCachePngjFile$org_jmol_viewer_FileManager$SA', function (fm, data) {
-fm.pngjCache=Clazz.new_($I$(8));
+fm.pngjCache=Clazz.new_($I$(8,1));
 if (data == null  || data[0] == null  ) return false;
 data[0]=$I$(4).getZipRoot$S(data[0]);
 var shortName=p$1.shortSceneFilename$S.apply(this, [data[0]]);
 var cache=fm.pngjCache;
 try {
-data[1]=$I$(9).cacheZipContents$java_io_BufferedInputStream$S$java_util_Map$Z($I$(9).getPngZipStream$java_io_BufferedInputStream$Z(fm.getBufferedInputStreamOrErrorMessageFromName$S$S$Z$Z$BA$Z$Z(data[0], null, false, false, null, false, true), true), shortName, cache, false);
+data[1]=(function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([fm.getBufferedInputStreamOrErrorMessageFromName$S$S$Z$Z$BA$Z$Z(data[0], null, false, false, null, false, true), true],$I$(9).getPngZipStream$java_io_BufferedInputStream$Z), shortName, cache, false],$I$(9).cacheZipContents$java_io_BufferedInputStream$S$java_util_Map$Z);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return false;
@@ -226,11 +225,11 @@ throw e;
 }
 if (data[1] == null ) return false;
 var bytes=data[1].getBytes$();
-cache.put$TK$TV(fm.getCanonicalName$S(data[0]), bytes);
+cache.put$O$O(fm.getCanonicalName$S(data[0]), bytes);
 if (shortName.indexOf$S("_scene_") >= 0) {
-cache.put$TK$TV(p$1.shortSceneFilename$S.apply(this, [data[0]]), bytes);
+cache.put$O$O(p$1.shortSceneFilename$S.apply(this, [data[0]]), bytes);
 bytes=cache.remove$O(shortName + "|state.spt");
-if (bytes != null ) cache.put$TK$TV(p$1.shortSceneFilename$S.apply(this, [data[0] + "|state.spt"]), bytes);
+if (bytes != null ) cache.put$O$O(p$1.shortSceneFilename$S.apply(this, [data[0] + "|state.spt"]), bytes);
 }return true;
 }, p$1);
 
@@ -257,4 +256,4 @@ for (var i=1; i < zipDirectory.length; i++) if (zipDirectory[i].endsWith$S(".spa
 return false;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

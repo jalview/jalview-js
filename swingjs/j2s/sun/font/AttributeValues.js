@@ -1,41 +1,7 @@
-(function(){var P$=Clazz.newPackage("sun.font"),p$1={},I$=[[0,'sun.font.EAttribute','java.awt.geom.AffineTransform','InternalError','java.util.HashMap','StringBuilder','java.awt.font.TextAttribute','Boolean',['java.awt.geom.Point2D','.Double']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AttributeValues", null, null, 'Cloneable');
-C$.DEFAULT=null;
-C$.MASK_ALL=0;
+(function(){var P$=Clazz.newPackage("sun.font"),p$1={},I$=[[0,'sun.font.EAttribute','java.awt.geom.AffineTransform','InternalError','java.util.HashMap','StringBuilder','java.awt.font.TextAttribute','java.awt.font.TransformAttribute','java.awt.Toolkit',['java.awt.geom.Point2D','.Double']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AttributeValues", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEFAULT=Clazz.new_(C$);
-C$.MASK_ALL=C$.getMask$sun_font_EAttributeA(Clazz.getClass($I$(1)).getEnumConstants$());
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.defined=0;
-this.nondefault=0;
-this.family=null;
-this.weight=0;
-this.width=0;
-this.posture=0;
-this.size=0;
-this.tracking=0;
-this.transform=null;
-this.foreground=null;
-this.background=null;
-this.justification=0;
-this.imHighlight=null;
-this.font=null;
-this.imUnderline=0;
-this.superscript=0;
-this.underline=0;
-this.runDirection=0;
-this.bidiEmbedding=0;
-this.kerning=0;
-this.ligatures=0;
-this.strikethrough=false;
-this.swapColors=false;
-this.baselineTransform=null;
-this.charTransform=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.family="Default";
@@ -46,7 +12,10 @@ this.justification=1.0;
 this.imUnderline=($b$[0] = -1, $b$[0]);
 this.underline=($b$[0] = -1, $b$[0]);
 this.runDirection=($b$[0] = -2, $b$[0]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['strikethrough','swapColors'],'B',['imUnderline','superscript','underline','runDirection','bidiEmbedding','kerning','ligatures'],'F',['weight','width','posture','size','tracking','justification'],'I',['defined','nondefault'],'S',['family'],'O',['numericShaping','java.awt.font.NumericShaper','transform','java.awt.geom.AffineTransform','charReplacement','java.awt.font.GraphicAttribute','foreground','java.awt.Paint','+background','imHighlight','java.lang.Object','font','java.awt.Font','baselineTransform','java.awt.geom.AffineTransform','+charTransform']]
+,['I',['MASK_ALL'],'O',['DEFAULT','sun.font.AttributeValues']]]
 
 Clazz.newMeth(C$, 'getFamily$', function () {
 return this.family;
@@ -98,7 +67,13 @@ return this.transform;
 });
 
 Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (f) {
-this.transform=(f == null  || f.isIdentity$() ) ? C$.DEFAULT.transform : Clazz.new_($I$(2).c$$java_awt_geom_AffineTransform,[f]);
+this.transform=(f == null  || f.isIdentity$() ) ? C$.DEFAULT.transform : Clazz.new_($I$(2,1).c$$java_awt_geom_AffineTransform,[f]);
+this.updateDerivedTransforms$();
+p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ETRANSFORM]);
+});
+
+Clazz.newMeth(C$, 'setTransform$java_awt_font_TransformAttribute', function (f) {
+this.transform=(f == null  || f.isIdentity$() ) ? C$.DEFAULT.transform : f.getTransform$();
 this.updateDerivedTransforms$();
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ETRANSFORM]);
 });
@@ -108,7 +83,7 @@ return this.superscript;
 });
 
 Clazz.newMeth(C$, 'setSuperscript$I', function (f) {
-this.superscript=($b$[0] = (f|0), $b$[0]);
+this.superscript=($b$[0] = f, $b$[0]);
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ESUPERSCRIPT]);
 });
 
@@ -119,6 +94,15 @@ return this.font;
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (f) {
 this.font=f;
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).EFONT]);
+});
+
+Clazz.newMeth(C$, 'getCharReplacement$', function () {
+return this.charReplacement;
+});
+
+Clazz.newMeth(C$, 'setCharReplacement$java_awt_font_GraphicAttribute', function (f) {
+this.charReplacement=f;
+p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ECHAR_REPLACEMENT]);
 });
 
 Clazz.newMeth(C$, 'getForeground$', function () {
@@ -144,7 +128,7 @@ return this.underline;
 });
 
 Clazz.newMeth(C$, 'setUnderline$I', function (f) {
-this.underline=($b$[0] = (f|0), $b$[0]);
+this.underline=($b$[0] = f, $b$[0]);
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).EUNDERLINE]);
 });
 
@@ -162,7 +146,7 @@ return this.runDirection;
 });
 
 Clazz.newMeth(C$, 'setRunDirection$I', function (f) {
-this.runDirection=($b$[0] = (f|0), $b$[0]);
+this.runDirection=($b$[0] = f, $b$[0]);
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ERUN_DIRECTION]);
 });
 
@@ -171,7 +155,7 @@ return this.bidiEmbedding;
 });
 
 Clazz.newMeth(C$, 'setBidiEmbedding$I', function (f) {
-this.bidiEmbedding=($b$[0] = (f|0), $b$[0]);
+this.bidiEmbedding=($b$[0] = f, $b$[0]);
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).EBIDI_EMBEDDING]);
 });
 
@@ -193,12 +177,17 @@ this.imHighlight=f;
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).EINPUT_METHOD_HIGHLIGHT]);
 });
 
+Clazz.newMeth(C$, 'setInputMethodHighlight$java_awt_im_InputMethodHighlight', function (f) {
+this.imHighlight=f;
+p$1.update$sun_font_EAttribute.apply(this, [$I$(1).EINPUT_METHOD_HIGHLIGHT]);
+});
+
 Clazz.newMeth(C$, 'getInputMethodUnderline$', function () {
 return this.imUnderline;
 });
 
 Clazz.newMeth(C$, 'setInputMethodUnderline$I', function (f) {
-this.imUnderline=($b$[0] = (f|0), $b$[0]);
+this.imUnderline=($b$[0] = f, $b$[0]);
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).EINPUT_METHOD_UNDERLINE]);
 });
 
@@ -211,12 +200,21 @@ this.swapColors=f;
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ESWAP_COLORS]);
 });
 
+Clazz.newMeth(C$, 'getNumericShaping$', function () {
+return this.numericShaping;
+});
+
+Clazz.newMeth(C$, 'setNumericShaping$java_awt_font_NumericShaper', function (f) {
+this.numericShaping=f;
+p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ENUMERIC_SHAPING]);
+});
+
 Clazz.newMeth(C$, 'getKerning$', function () {
 return this.kerning;
 });
 
 Clazz.newMeth(C$, 'setKerning$I', function (f) {
-this.kerning=($b$[0] = (f|0), $b$[0]);
+this.kerning=($b$[0] = f, $b$[0]);
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).EKERNING]);
 });
 
@@ -234,7 +232,7 @@ return this.ligatures;
 });
 
 Clazz.newMeth(C$, 'setLigatures$I', function (f) {
-this.ligatures=($b$[0] = (f|0), $b$[0]);
+this.ligatures=($b$[0] = f, $b$[0]);
 p$1.update$sun_font_EAttribute.apply(this, [$I$(1).ELIGATURES]);
 });
 
@@ -265,7 +263,7 @@ this.defined&=this.nondefault;
 Clazz.newMeth(C$, 'defineAll$I', function (mask) {
 this.defined|=mask;
 if ((this.defined & $I$(1).EBASELINE_TRANSFORM.mask) != 0) {
-throw Clazz.new_($I$(3).c$$S,["can\'t define derived attribute"]);
+throw Clazz.new_($I$(3,1).c$$S,["can\'t define derived attribute"]);
 }});
 
 Clazz.newMeth(C$, 'allDefined$I', function (mask) {
@@ -290,7 +288,7 @@ return (this.nondefault & a.mask) != 0;
 
 Clazz.newMeth(C$, 'setDefault$sun_font_EAttribute', function (a) {
 if (a.att == null ) {
-throw Clazz.new_($I$(3).c$$S,["can't set default derived attribute: " + a]);
+throw Clazz.new_($I$(3,1).c$$S,["can't set default derived attribute: " + a]);
 }p$1.i_set$sun_font_EAttribute$sun_font_AttributeValues.apply(this, [a, C$.DEFAULT]);
 this.defined|=a.mask;
 this.nondefault&=~a.mask;
@@ -298,7 +296,7 @@ this.nondefault&=~a.mask;
 
 Clazz.newMeth(C$, 'unset$sun_font_EAttribute', function (a) {
 if (a.att == null ) {
-throw Clazz.new_($I$(3).c$$S,["can't unset derived attribute: " + a]);
+throw Clazz.new_($I$(3,1).c$$S,["can't unset derived attribute: " + a]);
 }p$1.i_set$sun_font_EAttribute$sun_font_AttributeValues.apply(this, [a, C$.DEFAULT]);
 this.defined&=~a.mask;
 this.nondefault&=~a.mask;
@@ -306,7 +304,7 @@ this.nondefault&=~a.mask;
 
 Clazz.newMeth(C$, 'set$sun_font_EAttribute$sun_font_AttributeValues', function (a, src) {
 if (a.att == null ) {
-throw Clazz.new_($I$(3).c$$S,["can't set derived attribute: " + a]);
+throw Clazz.new_($I$(3,1).c$$S,["can't set derived attribute: " + a]);
 }if (src == null  || src === C$.DEFAULT  ) {
 this.setDefault$sun_font_EAttribute(a);
 } else {
@@ -317,7 +315,7 @@ p$1.update$sun_font_EAttribute.apply(this, [a]);
 
 Clazz.newMeth(C$, 'set$sun_font_EAttribute$O', function (a, o) {
 if (a.att == null ) {
-throw Clazz.new_($I$(3).c$$S,["can't set derived attribute: " + a]);
+throw Clazz.new_($I$(3,1).c$$S,["can't set derived attribute: " + a]);
 }if (o != null ) {
 try {
 p$1.i_set$sun_font_EAttribute$O.apply(this, [a, o]);
@@ -334,7 +332,7 @@ throw e;
 
 Clazz.newMeth(C$, 'get$sun_font_EAttribute', function (a) {
 if (a.att == null ) {
-throw Clazz.new_($I$(3).c$$S,["can't get derived attribute: " + a]);
+throw Clazz.new_($I$(3,1).c$$S,["can't get derived attribute: " + a]);
 }if ((this.nondefault & a.mask) != 0) {
 return p$1.i_get$sun_font_EAttribute.apply(this, [a]);
 }return null;
@@ -349,7 +347,7 @@ if (Clazz.instanceOf(map, "sun.font.AttributeMap") && (map).getValues$() != null
 this.merge$sun_font_AttributeValues$I((map).getValues$(), mask);
 } else if (map != null  && !map.isEmpty$() ) {
 for (var e, $e = map.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
-var ea=$I$(1).forAttribute$java_text_AttributedCharacterIterator_Attribute(e.getKey$());
+var ea=$I$(1,"forAttribute$java_text_AttributedCharacterIterator_Attribute",[e.getKey$()]);
 if (ea != null  && (mask & ea.mask) != 0 ) {
 this.set$sun_font_EAttribute$O(ea, e.getValue$());
 }}
@@ -383,12 +381,12 @@ return Clazz.new_(C$).merge$java_util_Map$I(map, mask);
 
 Clazz.newMeth(C$, 'toMap$java_util_Map', function (fill) {
 if (fill == null ) {
-fill=Clazz.new_($I$(4));
+fill=Clazz.new_($I$(4,1));
 }for (var m=this.defined, i=0; m != 0; ++i) {
 var ea=$I$(1).atts[i];
 if ((m & ea.mask) != 0) {
 m&=~ea.mask;
-fill.put$TK$TV(ea.att, this.get$sun_font_EAttribute(ea));
+fill.put$O$O(ea.att, this.get$sun_font_EAttribute(ea));
 }}
 return fill;
 });
@@ -439,14 +437,14 @@ return false;
 Clazz.newMeth(C$, 'equals$sun_font_AttributeValues', function (rhs) {
 if (rhs == null ) return false;
 if (rhs === this ) return true;
-return this.defined == rhs.defined && this.nondefault == rhs.nondefault  && this.underline == rhs.underline  && this.strikethrough == rhs.strikethrough   && this.superscript == rhs.superscript  && this.width == rhs.width   && this.kerning == rhs.kerning  && this.tracking == rhs.tracking   && this.ligatures == rhs.ligatures  && this.runDirection == rhs.runDirection  && this.bidiEmbedding == rhs.bidiEmbedding  && this.swapColors == rhs.swapColors   && C$.equals$O$O(this.transform, rhs.transform)  && C$.equals$O$O(new Float(this.justification), new Float(rhs.justification))  && this.size == rhs.size   && this.weight == rhs.weight   && this.posture == rhs.posture   && C$.equals$O$O(this.family, rhs.family)  && C$.equals$O$O(this.font, rhs.font)  && this.imUnderline == rhs.imUnderline  && C$.equals$O$O(this.imHighlight, rhs.imHighlight) ;
+return this.defined == rhs.defined && this.nondefault == rhs.nondefault  && this.underline == rhs.underline  && this.strikethrough == rhs.strikethrough   && this.superscript == rhs.superscript  && this.width == rhs.width   && this.kerning == rhs.kerning  && this.tracking == rhs.tracking   && this.ligatures == rhs.ligatures  && this.runDirection == rhs.runDirection  && this.bidiEmbedding == rhs.bidiEmbedding  && this.swapColors == rhs.swapColors   && C$.equals$O$O(this.transform, rhs.transform)  && C$.equals$O$O(this.foreground, rhs.foreground)  && C$.equals$O$O(this.background, rhs.background)  && C$.equals$O$O(this.numericShaping, rhs.numericShaping)  && C$.equals$O$O(new Float(this.justification), new Float(rhs.justification))  && C$.equals$O$O(this.charReplacement, rhs.charReplacement)  && this.size == rhs.size   && this.weight == rhs.weight   && this.posture == rhs.posture   && C$.equals$O$O(this.family, rhs.family)  && C$.equals$O$O(this.font, rhs.font)  && this.imUnderline == rhs.imUnderline  && C$.equals$O$O(this.imHighlight, rhs.imHighlight) ;
 });
 
 Clazz.newMeth(C$, 'clone$', function () {
 try {
 var result=Clazz.clone(this);
 if (this.transform != null ) {
-result.transform=Clazz.new_($I$(2).c$$java_awt_geom_AffineTransform,[this.transform]);
+result.transform=Clazz.new_($I$(2,1).c$$java_awt_geom_AffineTransform,[this.transform]);
 result.updateDerivedTransforms$();
 }return result;
 } catch (e) {
@@ -459,7 +457,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var b=Clazz.new_($I$(5));
+var b=Clazz.new_($I$(5,1));
 b.append$C("{");
 for (var m=this.defined, i=0; m != 0; ++i) {
 var ea=$I$(1).atts[i];
@@ -491,22 +489,31 @@ case $I$(1).ETRANSFORM:
 b.append$O(this.transform);
 break;
 case $I$(1).ESUPERSCRIPT:
-b.append$S("" + this.superscript);
+b.append$I(this.superscript);
 break;
 case $I$(1).EFONT:
 b.append$O(this.font);
 break;
+case $I$(1).ECHAR_REPLACEMENT:
+b.append$O(this.charReplacement);
+break;
+case $I$(1).EFOREGROUND:
+b.append$O(this.foreground);
+break;
+case $I$(1).EBACKGROUND:
+b.append$O(this.background);
+break;
 case $I$(1).EUNDERLINE:
-b.append$S("" + this.underline);
+b.append$I(this.underline);
 break;
 case $I$(1).ESTRIKETHROUGH:
 b.append$Z(this.strikethrough);
 break;
 case $I$(1).ERUN_DIRECTION:
-b.append$S("" + this.runDirection);
+b.append$I(this.runDirection);
 break;
 case $I$(1).EBIDI_EMBEDDING:
-b.append$S("" + this.bidiEmbedding);
+b.append$I(this.bidiEmbedding);
 break;
 case $I$(1).EJUSTIFICATION:
 b.append$F(this.justification);
@@ -515,10 +522,13 @@ case $I$(1).EINPUT_METHOD_HIGHLIGHT:
 b.append$O(this.imHighlight);
 break;
 case $I$(1).EINPUT_METHOD_UNDERLINE:
-b.append$S("" + this.imUnderline);
+b.append$I(this.imUnderline);
 break;
 case $I$(1).ESWAP_COLORS:
 b.append$Z(this.swapColors);
+break;
+case $I$(1).ENUMERIC_SHAPING:
+b.append$O(this.numericShaping);
 break;
 case $I$(1).EKERNING:
 b.append$I(this.kerning);
@@ -530,7 +540,7 @@ case $I$(1).ETRACKING:
 b.append$F(this.tracking);
 break;
 default:
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(3,1));
 }
 if ((this.nondefault & ea.mask) == 0) {
 b.append$C("*");
@@ -577,22 +587,31 @@ this.transform=src.transform;
 this.updateDerivedTransforms$();
 break;
 case $I$(1).ESUPERSCRIPT:
-this.superscript=($b$[0] = src.superscript, $b$[0]);
+this.superscript=src.superscript;
 break;
 case $I$(1).EFONT:
 this.font=src.font;
 break;
+case $I$(1).ECHAR_REPLACEMENT:
+this.charReplacement=src.charReplacement;
+break;
+case $I$(1).EFOREGROUND:
+this.foreground=src.foreground;
+break;
+case $I$(1).EBACKGROUND:
+this.background=src.background;
+break;
 case $I$(1).EUNDERLINE:
-this.underline=($b$[0] = src.underline, $b$[0]);
+this.underline=src.underline;
 break;
 case $I$(1).ESTRIKETHROUGH:
 this.strikethrough=src.strikethrough;
 break;
 case $I$(1).ERUN_DIRECTION:
-this.runDirection=($b$[0] = src.runDirection, $b$[0]);
+this.runDirection=src.runDirection;
 break;
 case $I$(1).EBIDI_EMBEDDING:
-this.bidiEmbedding=($b$[0] = src.bidiEmbedding, $b$[0]);
+this.bidiEmbedding=src.bidiEmbedding;
 break;
 case $I$(1).EJUSTIFICATION:
 this.justification=src.justification;
@@ -601,22 +620,25 @@ case $I$(1).EINPUT_METHOD_HIGHLIGHT:
 this.imHighlight=src.imHighlight;
 break;
 case $I$(1).EINPUT_METHOD_UNDERLINE:
-this.imUnderline=($b$[0] = src.imUnderline, $b$[0]);
+this.imUnderline=src.imUnderline;
 break;
 case $I$(1).ESWAP_COLORS:
 this.swapColors=src.swapColors;
 break;
+case $I$(1).ENUMERIC_SHAPING:
+this.numericShaping=src.numericShaping;
+break;
 case $I$(1).EKERNING:
-this.kerning=($b$[0] = src.kerning, $b$[0]);
+this.kerning=src.kerning;
 break;
 case $I$(1).ELIGATURES:
-this.ligatures=($b$[0] = src.ligatures, $b$[0]);
+this.ligatures=src.ligatures;
 break;
 case $I$(1).ETRACKING:
 this.tracking=src.tracking;
 break;
 default:
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(3,1));
 }
 }, p$1);
 
@@ -638,6 +660,12 @@ case $I$(1).ESUPERSCRIPT:
 return this.superscript == src.superscript;
 case $I$(1).EFONT:
 return C$.equals$O$O(this.font, src.font);
+case $I$(1).ECHAR_REPLACEMENT:
+return C$.equals$O$O(this.charReplacement, src.charReplacement);
+case $I$(1).EFOREGROUND:
+return C$.equals$O$O(this.foreground, src.foreground);
+case $I$(1).EBACKGROUND:
+return C$.equals$O$O(this.background, src.background);
 case $I$(1).EUNDERLINE:
 return this.underline == src.underline;
 case $I$(1).ESTRIKETHROUGH:
@@ -654,6 +682,8 @@ case $I$(1).EINPUT_METHOD_UNDERLINE:
 return this.imUnderline == src.imUnderline;
 case $I$(1).ESWAP_COLORS:
 return this.swapColors == src.swapColors ;
+case $I$(1).ENUMERIC_SHAPING:
+return C$.equals$O$O(this.numericShaping, src.numericShaping);
 case $I$(1).EKERNING:
 return this.kerning == src.kerning;
 case $I$(1).ELIGATURES:
@@ -661,7 +691,7 @@ return this.ligatures == src.ligatures;
 case $I$(1).ETRACKING:
 return this.tracking == src.tracking ;
 default:
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(3,1));
 }
 }, p$1);
 
@@ -682,14 +712,35 @@ break;
 case $I$(1).ESIZE:
 this.size=(o).floatValue$();
 break;
+case $I$(1).ETRANSFORM:
+{
+if (Clazz.instanceOf(o, "java.awt.font.TransformAttribute")) {
+var ta=o;
+if (ta.isIdentity$()) {
+this.transform=null;
+} else {
+this.transform=ta.getTransform$();
+}} else {
+this.transform=Clazz.new_($I$(2,1).c$$java_awt_geom_AffineTransform,[o]);
+}this.updateDerivedTransforms$();
+}break;
 case $I$(1).ESUPERSCRIPT:
-this.superscript=($b$[0] = ((o).intValue$()|0), $b$[0]);
+this.superscript=($b$[0] = (o).intValue$(), $b$[0]);
 break;
 case $I$(1).EFONT:
 this.font=o;
 break;
+case $I$(1).ECHAR_REPLACEMENT:
+this.charReplacement=o;
+break;
+case $I$(1).EFOREGROUND:
+this.foreground=o;
+break;
+case $I$(1).EBACKGROUND:
+this.background=o;
+break;
 case $I$(1).EUNDERLINE:
-this.underline=($b$[0] = ((o).intValue$()|0), $b$[0]);
+this.underline=($b$[0] = (o).intValue$(), $b$[0]);
 break;
 case $I$(1).ESTRIKETHROUGH:
 this.strikethrough=(o).booleanValue$();
@@ -697,33 +748,44 @@ break;
 case $I$(1).ERUN_DIRECTION:
 {
 if (Clazz.instanceOf(o, "java.lang.Boolean")) {
-this.runDirection=($b$[0] = (($I$(6).RUN_DIRECTION_LTR.equals$O(o) ? 0 : 1)|0), $b$[0]);
+this.runDirection=($b$[0] = ($I$(6).RUN_DIRECTION_LTR.equals$O(o) ? 0 : 1), $b$[0]);
 } else {
-this.runDirection=($b$[0] = ((o).intValue$()|0), $b$[0]);
+this.runDirection=($b$[0] = (o).intValue$(), $b$[0]);
 }}break;
 case $I$(1).EBIDI_EMBEDDING:
-this.bidiEmbedding=($b$[0] = ((o).intValue$()|0), $b$[0]);
+this.bidiEmbedding=($b$[0] = (o).intValue$(), $b$[0]);
 break;
 case $I$(1).EJUSTIFICATION:
 this.justification=(o).floatValue$();
 break;
+case $I$(1).EINPUT_METHOD_HIGHLIGHT:
+{
+if (Clazz.instanceOf(o, "java.text.Annotation")) {
+var at=o;
+this.imHighlight=at.getValue$();
+} else {
+this.imHighlight=o;
+}}break;
 case $I$(1).EINPUT_METHOD_UNDERLINE:
-this.imUnderline=($b$[0] = ((o).intValue$()|0), $b$[0]);
+this.imUnderline=($b$[0] = (o).intValue$(), $b$[0]);
 break;
 case $I$(1).ESWAP_COLORS:
 this.swapColors=(o).booleanValue$();
 break;
+case $I$(1).ENUMERIC_SHAPING:
+this.numericShaping=o;
+break;
 case $I$(1).EKERNING:
-this.kerning=($b$[0] = ((o).intValue$()|0), $b$[0]);
+this.kerning=($b$[0] = (o).intValue$(), $b$[0]);
 break;
 case $I$(1).ELIGATURES:
-this.ligatures=($b$[0] = ((o).intValue$()|0), $b$[0]);
+this.ligatures=($b$[0] = (o).intValue$(), $b$[0]);
 break;
 case $I$(1).ETRACKING:
 this.tracking=(o).floatValue$();
 break;
 default:
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(3,1));
 }
 }, p$1);
 
@@ -739,14 +801,22 @@ case $I$(1).EPOSTURE:
 return Float.valueOf$F(this.posture);
 case $I$(1).ESIZE:
 return Float.valueOf$F(this.size);
+case $I$(1).ETRANSFORM:
+return this.transform == null  ? $I$(7).IDENTITY : Clazz.new_($I$(7,1).c$$java_awt_geom_AffineTransform,[this.transform]);
 case $I$(1).ESUPERSCRIPT:
 return Integer.valueOf$I(this.superscript);
 case $I$(1).EFONT:
 return this.font;
+case $I$(1).ECHAR_REPLACEMENT:
+return this.charReplacement;
+case $I$(1).EFOREGROUND:
+return this.foreground;
+case $I$(1).EBACKGROUND:
+return this.background;
 case $I$(1).EUNDERLINE:
 return Integer.valueOf$I(this.underline);
 case $I$(1).ESTRIKETHROUGH:
-return $I$(7).valueOf$Z(this.strikethrough);
+return Boolean.valueOf$Z(this.strikethrough);
 case $I$(1).ERUN_DIRECTION:
 {
 switch (this.runDirection) {
@@ -766,7 +836,9 @@ return this.imHighlight;
 case $I$(1).EINPUT_METHOD_UNDERLINE:
 return Integer.valueOf$I(this.imUnderline);
 case $I$(1).ESWAP_COLORS:
-return $I$(7).valueOf$Z(this.swapColors);
+return Boolean.valueOf$Z(this.swapColors);
+case $I$(1).ENUMERIC_SHAPING:
+return this.numericShaping;
 case $I$(1).EKERNING:
 return Integer.valueOf$I(this.kerning);
 case $I$(1).ELIGATURES:
@@ -774,7 +846,7 @@ return Integer.valueOf$I(this.ligatures);
 case $I$(1).ETRACKING:
 return Float.valueOf$F(this.tracking);
 default:
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(3,1));
 }
 }, p$1);
 
@@ -830,7 +902,7 @@ return this.ligatures >= 0 && this.ligatures <= 1 ;
 case $I$(1).ETRACKING:
 return this.tracking >= -1  && this.tracking <= 10  ;
 default:
-throw Clazz.new_($I$(3).c$$S,["unknown attribute: " + a]);
+throw Clazz.new_($I$(3,1).c$$S,["unknown attribute: " + a]);
 }
 }, p$1);
 
@@ -844,8 +916,30 @@ return Math.max(0, Math.min(1, (obj).floatValue$()));
 }}return C$.DEFAULT.justification;
 }, 1);
 
+Clazz.newMeth(C$, 'getNumericShaping$java_util_Map', function (map) {
+if (map != null ) {
+if (Clazz.instanceOf(map, "sun.font.AttributeMap") && (map).getValues$() != null  ) {
+return (map).getValues$().numericShaping;
+}var obj=map.get$O($I$(6).NUMERIC_SHAPING);
+if (obj != null  && Clazz.instanceOf(obj, "java.awt.font.NumericShaper") ) {
+return obj;
+}}return C$.DEFAULT.numericShaping;
+}, 1);
+
 Clazz.newMeth(C$, 'applyIMHighlight$', function () {
-return this;
+if (this.imHighlight != null ) {
+var hl=null;
+if (Clazz.instanceOf(this.imHighlight, "java.awt.im.InputMethodHighlight")) {
+hl=this.imHighlight;
+} else {
+hl=(this.imHighlight).getValue$();
+}var imStyles=hl.getStyle$();
+if (imStyles == null ) {
+var tk=$I$(8).getDefaultToolkit$();
+imStyles=tk.mapInputMethodHighlight$java_awt_im_InputMethodHighlight(hl);
+}if (imStyles != null ) {
+return this.clone$().merge$java_util_Map(imStyles);
+}}return this;
 });
 
 Clazz.newMeth(C$, 'getBaselineTransform$java_util_Map', function (map) {
@@ -877,7 +971,7 @@ if (this.transform == null ) {
 this.baselineTransform=null;
 this.charTransform=null;
 } else {
-this.charTransform=Clazz.new_($I$(2).c$$java_awt_geom_AffineTransform,[this.transform]);
+this.charTransform=Clazz.new_($I$(2,1).c$$java_awt_geom_AffineTransform,[this.transform]);
 this.baselineTransform=C$.extractXRotation$java_awt_geom_AffineTransform$Z(this.charTransform, true);
 if (this.charTransform.isIdentity$()) {
 this.charTransform=null;
@@ -890,11 +984,11 @@ this.nondefault|=$I$(1).EBASELINE_TRANSFORM.mask;
 }});
 
 Clazz.newMeth(C$, 'extractXRotation$java_awt_geom_AffineTransform$Z', function (tx, andTranslation) {
-return C$.extractRotation$java_awt_geom_Point2D_Double$java_awt_geom_AffineTransform$Z(Clazz.new_($I$(8).c$$D$D,[1, 0]), tx, andTranslation);
+return C$.extractRotation$java_awt_geom_Point2D_Double$java_awt_geom_AffineTransform$Z(Clazz.new_($I$(9,1).c$$D$D,[1, 0]), tx, andTranslation);
 }, 1);
 
 Clazz.newMeth(C$, 'extractYRotation$java_awt_geom_AffineTransform$Z', function (tx, andTranslation) {
-return C$.extractRotation$java_awt_geom_Point2D_Double$java_awt_geom_AffineTransform$Z(Clazz.new_($I$(8).c$$D$D,[0, 1]), tx, andTranslation);
+return C$.extractRotation$java_awt_geom_Point2D_Double$java_awt_geom_AffineTransform$Z(Clazz.new_($I$(9,1).c$$D$D,[0, 1]), tx, andTranslation);
 }, 1);
 
 Clazz.newMeth(C$, 'extractRotation$java_awt_geom_Point2D_Double$java_awt_geom_AffineTransform$Z', function (pt, tx, andTranslation) {
@@ -918,6 +1012,13 @@ throw e;
 }
 return rtx;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.DEFAULT=Clazz.new_(C$);
+C$.MASK_ALL=C$.getMask$sun_font_EAttributeA(Clazz.getClass($I$(1)).getEnumConstants$());
+};
 var $b$ = new Int8Array(1);
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,28 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,['java.awt.geom.Path2D','.Iterator'],'java.util.Arrays',['java.awt.geom.Point2D','.Float'],'sun.awt.geom.Curve',['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Path2D','.Float','.CopyIterator'],['java.awt.geom.Path2D','.Float','.TxIterator'],['java.awt.geom.Point2D','.Double'],['java.awt.geom.Rectangle2D','.Double'],['java.awt.geom.Path2D','.Double','.CopyIterator'],['java.awt.geom.Path2D','.Double','.TxIterator'],'java.awt.geom.FlatteningPathIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Path2D", function(){
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,['java.awt.geom.Path2D','.Iterator'],'java.util.Arrays',['java.awt.geom.Point2D','.Float'],'sun.awt.geom.Curve',['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Path2D','.Float','.CopyIterator'],['java.awt.geom.Path2D','.Float','.TxIterator'],['java.awt.geom.Point2D','.Double'],['java.awt.geom.Rectangle2D','.Double'],['java.awt.geom.Path2D','.Double','.CopyIterator'],['java.awt.geom.Path2D','.Double','.TxIterator'],'java.awt.geom.FlatteningPathIterator']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Path2D", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.awt.Shape', 'Cloneable']);
+C$.$classes$=[['Iterator',1032],['Float',9],['Double',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pointTypes=null;
-this.numTypes=0;
-this.numCoords=0;
-this.windingRule=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['numTypes','numCoords','windingRule'],'O',['pointTypes','byte[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (rule, initialTypes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setWindingRule$I(rule);
 this.pointTypes=Clazz.array(Byte.TYPE, [initialTypes]);
 }, 1);
@@ -30,7 +24,7 @@ this.pointTypes=Clazz.array(Byte.TYPE, [initialTypes]);
 Clazz.newMeth(C$, 'closePath$', function () {
 if (this.numTypes == 0 || this.pointTypes[this.numTypes - 1] != 4 ) {
 this.needRoom$Z$I(true, 0);
-this.pointTypes[this.numTypes++]=(4|0);
+this.pointTypes[this.numTypes++]=4;
 }});
 
 Clazz.newMeth(C$, 'append$java_awt_Shape$Z', function (s, connect) {
@@ -171,30 +165,23 @@ return this.intersects$D$D$D$D(r.getX$(), r.getY$(), r.getWidth$(), r.getHeight$
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform$D', function (at, flatness) {
-return Clazz.new_($I$(12).c$$java_awt_geom_PathIterator$D,[this.getPathIterator$java_awt_geom_AffineTransform(at), flatness]);
+return Clazz.new_([this.getPathIterator$java_awt_geom_AffineTransform(at), flatness],$I$(12,1).c$$java_awt_geom_PathIterator$D);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Path2D, "Iterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Path2D, "Iterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.awt.geom.PathIterator');
-C$.curvecoords=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.curvecoords=Clazz.array(Integer.TYPE, -1, [2, 2, 4, 6, 0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.typeIdx=0;
-this.pointIdx=0;
-this.path=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['typeIdx','pointIdx'],'O',['path','java.awt.geom.Path2D']]
+,['O',['curvecoords','int[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D', function (path) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.path=path;
 }, 1);
 
@@ -211,23 +198,24 @@ var type=this.path.pointTypes[this.typeIdx++];
 this.pointIdx+=C$.curvecoords[type];
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.curvecoords=Clazz.array(Integer.TYPE, -1, [2, 2, 4, 6, 0]);
+};
+
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Path2D, "Float", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Path2D, "Float", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.Path2D');
+C$.$classes$=[['CopyIterator',8],['TxIterator',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.floatCoords=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['floatCoords','float[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [1, 20]);
@@ -238,7 +226,7 @@ C$.c$$I$I.apply(this, [rule, 20]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (rule, initialCapacity) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setWindingRule$I(rule);
 this.pointTypes=Clazz.array(Byte.TYPE, [initialCapacity]);
 this.floatCoords=Clazz.array(Float.TYPE, [initialCapacity * 2]);
@@ -249,7 +237,7 @@ C$.c$$java_awt_Shape$java_awt_geom_AffineTransform.apply(this, [s, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Shape$java_awt_geom_AffineTransform', function (s, at) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.setPath$java_awt_Shape$java_awt_geom_AffineTransform.apply(this, [s, at]);
 }, 1);
 
@@ -329,7 +317,7 @@ connect=false;
 });
 
 Clazz.newMeth(C$, 'getPoint$I', function (coordindex) {
-return Clazz.new_($I$(3).c$$F$F,[this.floatCoords[coordindex], this.floatCoords[coordindex + 1]]);
+return Clazz.new_($I$(3,1).c$$F$F,[this.floatCoords[coordindex], this.floatCoords[coordindex + 1]]);
 });
 
 Clazz.newMeth(C$, 'needRoom$Z$I', function (needMove, newCoords) {
@@ -357,7 +345,7 @@ this.floatCoords[this.numCoords - 2]=x;
 this.floatCoords[this.numCoords - 1]=y;
 } else {
 this.needRoom$Z$I(false, 2);
-this.pointTypes[this.numTypes++]=(0|0);
+this.pointTypes[this.numTypes++]=0;
 this.floatCoords[this.numCoords++]=x;
 this.floatCoords[this.numCoords++]=y;
 }});
@@ -368,28 +356,28 @@ this.floatCoords[this.numCoords - 2]=x;
 this.floatCoords[this.numCoords - 1]=y;
 } else {
 this.needRoom$Z$I(false, 2);
-this.pointTypes[this.numTypes++]=(0|0);
+this.pointTypes[this.numTypes++]=0;
 this.floatCoords[this.numCoords++]=x;
 this.floatCoords[this.numCoords++]=y;
 }});
 
 Clazz.newMeth(C$, 'lineTo$D$D', function (x, y) {
 this.needRoom$Z$I(true, 2);
-this.pointTypes[this.numTypes++]=(1|0);
+this.pointTypes[this.numTypes++]=1;
 this.floatCoords[this.numCoords++]=x;
 this.floatCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'lineTo$F$F', function (x, y) {
 this.needRoom$Z$I(true, 2);
-this.pointTypes[this.numTypes++]=(1|0);
+this.pointTypes[this.numTypes++]=1;
 this.floatCoords[this.numCoords++]=x;
 this.floatCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'quadTo$D$D$D$D', function (x1, y1, x2, y2) {
 this.needRoom$Z$I(true, 4);
-this.pointTypes[this.numTypes++]=(2|0);
+this.pointTypes[this.numTypes++]=2;
 this.floatCoords[this.numCoords++]=x1;
 this.floatCoords[this.numCoords++]=y1;
 this.floatCoords[this.numCoords++]=x2;
@@ -398,7 +386,7 @@ this.floatCoords[this.numCoords++]=y2;
 
 Clazz.newMeth(C$, 'quadTo$F$F$F$F', function (x1, y1, x2, y2) {
 this.needRoom$Z$I(true, 4);
-this.pointTypes[this.numTypes++]=(2|0);
+this.pointTypes[this.numTypes++]=2;
 this.floatCoords[this.numCoords++]=x1;
 this.floatCoords[this.numCoords++]=y1;
 this.floatCoords[this.numCoords++]=x2;
@@ -407,7 +395,7 @@ this.floatCoords[this.numCoords++]=y2;
 
 Clazz.newMeth(C$, 'curveTo$D$D$D$D$D$D', function (x1, y1, x2, y2, x3, y3) {
 this.needRoom$Z$I(true, 6);
-this.pointTypes[this.numTypes++]=(3|0);
+this.pointTypes[this.numTypes++]=3;
 this.floatCoords[this.numCoords++]=x1;
 this.floatCoords[this.numCoords++]=y1;
 this.floatCoords[this.numCoords++]=x2;
@@ -418,7 +406,7 @@ this.floatCoords[this.numCoords++]=y3;
 
 Clazz.newMeth(C$, 'curveTo$F$F$F$F$F$F', function (x1, y1, x2, y2, x3, y3) {
 this.needRoom$Z$I(true, 6);
-this.pointTypes[this.numTypes++]=(3|0);
+this.pointTypes[this.numTypes++]=3;
 this.floatCoords[this.numCoords++]=x1;
 this.floatCoords[this.numCoords++]=y1;
 this.floatCoords[this.numCoords++]=x2;
@@ -448,17 +436,17 @@ crossings+=$I$(4).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, mo
 movy=cury=coords[ci++];
 break;
 case 1:
-crossings+=$I$(4).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, endx=coords[ci++], endy=coords[ci++]);
+crossings+=$I$(4,"pointCrossingsForLine$D$D$D$D$D$D",[px, py, curx, cury, endx=coords[ci++], endy=coords[ci++]]);
 curx=endx;
 cury=endy;
 break;
 case 2:
-crossings+=$I$(4).pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings+=$I$(4,"pointCrossingsForQuad$D$D$D$D$D$D$D$D$I",[px, py, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
 case 3:
-crossings+=$I$(4).pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings+=$I$(4,"pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I",[px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
@@ -496,17 +484,17 @@ crossings=$I$(4).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin,
 movy=cury=coords[ci++];
 break;
 case 1:
-crossings=$I$(4).rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxmax, rymax, curx, cury, endx=coords[ci++], endy=coords[ci++]);
+crossings=$I$(4,"rectCrossingsForLine$I$D$D$D$D$D$D$D$D",[crossings, rxmin, rymin, rxmax, rymax, curx, cury, endx=coords[ci++], endy=coords[ci++]]);
 curx=endx;
 cury=endy;
 break;
 case 2:
-crossings=$I$(4).rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings=$I$(4,"rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I",[crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
 case 3:
-crossings=$I$(4).rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings=$I$(4,"rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I",[crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
@@ -546,38 +534,33 @@ if (y > y2 ) y2=y;
 }
 } else {
 x1=y1=x2=y2=0.0;
-}return Clazz.new_($I$(5).c$$F$F$F$F,[x1, y1, x2 - x1, y2 - y1]);
+}return Clazz.new_($I$(5,1).c$$F$F$F$F,[x1, y1, x2 - x1, y2 - y1]);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
 if (at == null ) {
-return Clazz.new_($I$(6).c$$java_awt_geom_Path2D_Float,[this]);
+return Clazz.new_($I$(6,1).c$$java_awt_geom_Path2D_Float,[this]);
 } else {
-return Clazz.new_($I$(7).c$$java_awt_geom_Path2D_Float$java_awt_geom_AffineTransform,[this, at]);
+return Clazz.new_($I$(7,1).c$$java_awt_geom_Path2D_Float$java_awt_geom_AffineTransform,[this, at]);
 }});
 
 Clazz.newMeth(C$, 'clone$', function () {
 return Clazz.new_(C$.c$$java_awt_Shape,[this]);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Path2D.Float, "CopyIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Path2D.Float, "CopyIterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.awt.geom.Path2D','.Iterator']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.floatCoords=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['floatCoords','float[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Float', function (p2df) {
-C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2df]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_geom_Path2D.apply(this,[p2df]);C$.$init$.apply(this);
 this.floatCoords=p2df.floatCoords;
 }, 1);
 
@@ -602,25 +585,19 @@ coords[i]=this.floatCoords[this.pointIdx + i];
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Path2D.Float, "TxIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Path2D.Float, "TxIterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.awt.geom.Path2D','.Iterator']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.floatCoords=null;
-this.affine=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['floatCoords','float[]','affine','java.awt.geom.AffineTransform']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Float$java_awt_geom_AffineTransform', function (p2df, at) {
-C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2df]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_geom_Path2D.apply(this,[p2df]);C$.$init$.apply(this);
 this.floatCoords=p2df.floatCoords;
 this.affine=at;
 }, 1);
@@ -645,20 +622,17 @@ Clazz.newMeth(C$);
 })()
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Path2D, "Double", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Path2D, "Double", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.Path2D');
+C$.$classes$=[['CopyIterator',8],['TxIterator',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doubleCoords=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['doubleCoords','double[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [1, 20]);
@@ -669,8 +643,7 @@ C$.c$$I$I.apply(this, [rule, 20]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (rule, initialCapacity) {
-C$.superclazz.c$$I$I.apply(this, [rule, initialCapacity]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I.apply(this,[rule, initialCapacity]);C$.$init$.apply(this);
 this.doubleCoords=Clazz.array(Double.TYPE, [initialCapacity * 2]);
 }, 1);
 
@@ -679,7 +652,7 @@ C$.c$$java_awt_Shape$java_awt_geom_AffineTransform.apply(this, [s, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Shape$java_awt_geom_AffineTransform', function (s, at) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (Clazz.instanceOf(s, "java.awt.geom.Path2D")) {
 var p2d=s;
 this.setWindingRule$I(p2d.windingRule);
@@ -755,7 +728,7 @@ connect=false;
 });
 
 Clazz.newMeth(C$, 'getPoint$I', function (coordindex) {
-return Clazz.new_($I$(8).c$$D$D,[this.doubleCoords[coordindex], this.doubleCoords[coordindex + 1]]);
+return Clazz.new_($I$(8,1).c$$D$D,[this.doubleCoords[coordindex], this.doubleCoords[coordindex + 1]]);
 });
 
 Clazz.newMeth(C$, 'needRoom$Z$I', function (needMove, newCoords) {
@@ -783,21 +756,21 @@ this.doubleCoords[this.numCoords - 2]=x;
 this.doubleCoords[this.numCoords - 1]=y;
 } else {
 this.needRoom$Z$I(false, 2);
-this.pointTypes[this.numTypes++]=(0|0);
+this.pointTypes[this.numTypes++]=0;
 this.doubleCoords[this.numCoords++]=x;
 this.doubleCoords[this.numCoords++]=y;
 }});
 
 Clazz.newMeth(C$, 'lineTo$D$D', function (x, y) {
 this.needRoom$Z$I(true, 2);
-this.pointTypes[this.numTypes++]=(1|0);
+this.pointTypes[this.numTypes++]=1;
 this.doubleCoords[this.numCoords++]=x;
 this.doubleCoords[this.numCoords++]=y;
 });
 
 Clazz.newMeth(C$, 'quadTo$D$D$D$D', function (x1, y1, x2, y2) {
 this.needRoom$Z$I(true, 4);
-this.pointTypes[this.numTypes++]=(2|0);
+this.pointTypes[this.numTypes++]=2;
 this.doubleCoords[this.numCoords++]=x1;
 this.doubleCoords[this.numCoords++]=y1;
 this.doubleCoords[this.numCoords++]=x2;
@@ -806,7 +779,7 @@ this.doubleCoords[this.numCoords++]=y2;
 
 Clazz.newMeth(C$, 'curveTo$D$D$D$D$D$D', function (x1, y1, x2, y2, x3, y3) {
 this.needRoom$Z$I(true, 6);
-this.pointTypes[this.numTypes++]=(3|0);
+this.pointTypes[this.numTypes++]=3;
 this.doubleCoords[this.numCoords++]=x1;
 this.doubleCoords[this.numCoords++]=y1;
 this.doubleCoords[this.numCoords++]=x2;
@@ -836,17 +809,17 @@ crossings+=$I$(4).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, mo
 movy=cury=coords[ci++];
 break;
 case 1:
-crossings+=$I$(4).pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, endx=coords[ci++], endy=coords[ci++]);
+crossings+=$I$(4,"pointCrossingsForLine$D$D$D$D$D$D",[px, py, curx, cury, endx=coords[ci++], endy=coords[ci++]]);
 curx=endx;
 cury=endy;
 break;
 case 2:
-crossings+=$I$(4).pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings+=$I$(4,"pointCrossingsForQuad$D$D$D$D$D$D$D$D$I",[px, py, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
 case 3:
-crossings+=$I$(4).pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings+=$I$(4,"pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I",[px, py, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
@@ -891,12 +864,12 @@ curx=endx;
 cury=endy;
 break;
 case 2:
-crossings=$I$(4).rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings=$I$(4,"rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I",[crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
 case 3:
-crossings=$I$(4).rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0);
+crossings=$I$(4,"rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I",[crossings, rxmin, rymin, rxmax, rymax, curx, cury, coords[ci++], coords[ci++], coords[ci++], coords[ci++], endx=coords[ci++], endy=coords[ci++], 0]);
 curx=endx;
 cury=endy;
 break;
@@ -936,38 +909,33 @@ if (y > y2 ) y2=y;
 }
 } else {
 x1=y1=x2=y2=0.0;
-}return Clazz.new_($I$(9).c$$D$D$D$D,[x1, y1, x2 - x1, y2 - y1]);
+}return Clazz.new_($I$(9,1).c$$D$D$D$D,[x1, y1, x2 - x1, y2 - y1]);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
 if (at == null ) {
-return Clazz.new_($I$(10).c$$java_awt_geom_Path2D_Double,[this]);
+return Clazz.new_($I$(10,1).c$$java_awt_geom_Path2D_Double,[this]);
 } else {
-return Clazz.new_($I$(11).c$$java_awt_geom_Path2D_Double$java_awt_geom_AffineTransform,[this, at]);
+return Clazz.new_($I$(11,1).c$$java_awt_geom_Path2D_Double$java_awt_geom_AffineTransform,[this, at]);
 }});
 
 Clazz.newMeth(C$, 'clone$', function () {
 return Clazz.new_(C$.c$$java_awt_Shape,[this]);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Path2D.Double, "CopyIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Path2D.Double, "CopyIterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.awt.geom.Path2D','.Iterator']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doubleCoords=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['doubleCoords','double[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Double', function (p2dd) {
-C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2dd]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_geom_Path2D.apply(this,[p2dd]);C$.$init$.apply(this);
 this.doubleCoords=p2dd.doubleCoords;
 }, 1);
 
@@ -992,25 +960,19 @@ System.arraycopy$O$I$O$I$I(this.doubleCoords, this.pointIdx, coords, 0, numCoord
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Path2D.Double, "TxIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Path2D.Double, "TxIterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.awt.geom.Path2D','.Iterator']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doubleCoords=null;
-this.affine=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['doubleCoords','double[]','affine','java.awt.geom.AffineTransform']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Path2D_Double$java_awt_geom_AffineTransform', function (p2dd, at) {
-C$.superclazz.c$$java_awt_geom_Path2D.apply(this, [p2dd]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_geom_Path2D.apply(this,[p2dd]);C$.$init$.apply(this);
 this.doubleCoords=p2dd.doubleCoords;
 this.affine=at;
 }, 1);
@@ -1035,4 +997,4 @@ Clazz.newMeth(C$);
 })()
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

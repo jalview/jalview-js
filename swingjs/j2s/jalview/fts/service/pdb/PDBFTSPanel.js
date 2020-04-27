@@ -1,19 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.fts.service.pdb"),I$=[[0,'jalview.util.MessageManager','java.util.HashMap','jalview.fts.service.pdb.PDBFTSRestClient','jalview.fts.core.FTSRestRequest','jalview.fts.core.FTSRestResponse','jalview.fts.service.pdb.PDBFTSPanel','jalview.fts.core.GFTSPanel','Thread','StringBuilder','java.util.HashSet','jalview.gui.Help',['jalview.gui.Help','.HelpId']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDBFTSPanel", null, 'jalview.fts.core.GFTSPanel');
-C$.defaultFTSFrameTitle=null;
-C$.tempUserPrefs=null;
+(function(){var P$=Clazz.newPackage("jalview.fts.service.pdb"),I$=[[0,'jalview.util.MessageManager','java.util.HashMap','jalview.fts.service.pdb.PDBFTSRestClient','jalview.fts.service.pdb.PDBFTSPanel','jalview.fts.core.FTSRestRequest','jalview.fts.core.FTSRestResponse','jalview.fts.core.GFTSPanel','Thread','StringBuilder','java.util.HashSet','jalview.gui.Help',['jalview.gui.Help','.HelpId']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDBFTSPanel", null, 'jalview.fts.core.GFTSPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultFTSFrameTitle=$I$(1).getString$S("label.pdb_sequence_fetcher");
-C$.tempUserPrefs=Clazz.new_($I$(2));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['S',['defaultFTSFrameTitle'],'O',['tempUserPrefs','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_SequenceFetcher', function (fetcher) {
-C$.superclazz.c$$jalview_gui_SequenceFetcher.apply(this, [fetcher]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_gui_SequenceFetcher.apply(this,[fetcher]);C$.$init$.apply(this);
 this.pageLimit=$I$(3).getInstance$().getDefaultResponsePageSize$();
 this.seqFetcher=fetcher;
 this.progressIndicator=(fetcher == null ) ? null : fetcher.getProgressIndicator$();
@@ -24,13 +21,12 @@ this.mainFrame.requestFocusInWindow$();
 if (isFreshSearch) {
 this.offSet=0;
 }((P$.PDBFTSPanel$1||
-(function(){var C$=Clazz.newClass(P$, "PDBFTSPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "PDBFTSPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.fts.core.GFTSPanel'].reset$.apply(this.b$['jalview.fts.core.GFTSPanel'], []);
@@ -40,8 +36,8 @@ this.b$['jalview.fts.core.GFTSPanel'].setSearchInProgress$Boolean.apply(this.b$[
 var startTime=System.currentTimeMillis$();
 var searchTarget=(this.b$['jalview.fts.service.pdb.PDBFTSPanel'].cmb_searchTarget.getSelectedItem$()).getCode$();
 this.b$['jalview.fts.service.pdb.PDBFTSPanel'].wantedFields=$I$(3).getInstance$().getAllDefaultDisplayedFTSDataColumns$();
-var searchTerm=P$.PDBFTSPanel.decodeSearchTerm$S$S(this.b$['jalview.fts.core.GFTSPanel'].getTypedText$.apply(this.b$['jalview.fts.core.GFTSPanel'], []), searchTarget);
-var request=Clazz.new_($I$(4));
+var searchTerm=$I$(4,"decodeSearchTerm$S$S",[this.b$['jalview.fts.core.GFTSPanel'].getTypedText$.apply(this.b$['jalview.fts.core.GFTSPanel'], []), searchTarget]);
+var request=Clazz.new_($I$(5,1));
 request.setAllowEmptySeq$Z(allowEmptySequence);
 request.setResponseSize$I(100);
 request.setFieldToSearchBy$S("(" + searchTarget + ":" );
@@ -63,8 +59,8 @@ throw e;
 }
 }
 if (resultList.getSearchSummary$() != null  && resultList.getSearchSummary$().size$() > 0 ) {
-this.b$['jalview.fts.core.GFTSPanel'].getResultTable$.apply(this.b$['jalview.fts.core.GFTSPanel'], []).setModel$javax_swing_table_TableModel($I$(5).getTableModel$jalview_fts_core_FTSRestRequest$java_util_Collection(request, resultList.getSearchSummary$()));
-$I$(5).configureTableColumn$javax_swing_JTable$java_util_Collection$java_util_Map(this.b$['jalview.fts.core.GFTSPanel'].getResultTable$.apply(this.b$['jalview.fts.core.GFTSPanel'], []), this.b$['jalview.fts.service.pdb.PDBFTSPanel'].wantedFields, $I$(6).tempUserPrefs);
+this.b$['jalview.fts.core.GFTSPanel'].getResultTable$.apply(this.b$['jalview.fts.core.GFTSPanel'], []).setModel$javax_swing_table_TableModel($I$(6,"getTableModel$jalview_fts_core_FTSRestRequest$java_util_Collection",[request, resultList.getSearchSummary$()]));
+$I$(6,"configureTableColumn$javax_swing_JTable$java_util_Collection$java_util_Map",[this.b$['jalview.fts.core.GFTSPanel'].getResultTable$.apply(this.b$['jalview.fts.core.GFTSPanel'], []), this.b$['jalview.fts.service.pdb.PDBFTSPanel'].wantedFields, $I$(4).tempUserPrefs]);
 this.b$['jalview.fts.core.GFTSPanel'].getResultTable$.apply(this.b$['jalview.fts.core.GFTSPanel'], []).setVisible$Z(true);
 }var endTime=System.currentTimeMillis$();
 this.b$['jalview.fts.service.pdb.PDBFTSPanel'].totalResultSetCount=resultList.getNumberOfItemsFound$();
@@ -74,21 +70,21 @@ if (this.b$['jalview.fts.service.pdb.PDBFTSPanel'].isPaginationEnabled$.apply(th
 var f1=$I$(7).totalNumberformatter.format$O(Integer.valueOf$I(this.b$['jalview.fts.service.pdb.PDBFTSPanel'].offSet + 1));
 var f2=$I$(7).totalNumberformatter.format$O(Integer.valueOf$I(this.b$['jalview.fts.service.pdb.PDBFTSPanel'].offSet + this.b$['jalview.fts.service.pdb.PDBFTSPanel'].resultSetCount));
 var f3=$I$(7).totalNumberformatter.format$O(Integer.valueOf$I(this.b$['jalview.fts.service.pdb.PDBFTSPanel'].totalResultSetCount));
-this.b$['jalview.fts.core.GFTSPanel'].updateSearchFrameTitle$S.apply(this.b$['jalview.fts.core.GFTSPanel'], [$I$(6).defaultFTSFrameTitle + " - " + result + " " + f1 + " to " + f2 + " of " + f3 + " " + " (" + (endTime - startTime) + " milli secs)" ]);
+this.b$['jalview.fts.core.GFTSPanel'].updateSearchFrameTitle$S.apply(this.b$['jalview.fts.core.GFTSPanel'], [$I$(4).defaultFTSFrameTitle + " - " + result + " " + f1 + " to " + f2 + " of " + f3 + " " + " (" + (endTime - startTime) + " milli secs)" ]);
 } else {
-this.b$['jalview.fts.core.GFTSPanel'].updateSearchFrameTitle$S.apply(this.b$['jalview.fts.core.GFTSPanel'], [$I$(6).defaultFTSFrameTitle + " - " + this.b$['jalview.fts.service.pdb.PDBFTSPanel'].resultSetCount + " " + result + " (" + (endTime - startTime) + " milli secs)" ]);
+this.b$['jalview.fts.core.GFTSPanel'].updateSearchFrameTitle$S.apply(this.b$['jalview.fts.core.GFTSPanel'], [$I$(4).defaultFTSFrameTitle + " - " + this.b$['jalview.fts.service.pdb.PDBFTSPanel'].resultSetCount + " " + result + " (" + (endTime - startTime) + " milli secs)" ]);
 }this.b$['jalview.fts.core.GFTSPanel'].setSearchInProgress$Boolean.apply(this.b$['jalview.fts.core.GFTSPanel'], [new Boolean(false)]);
 this.b$['jalview.fts.core.GFTSPanel'].refreshPaginatorState$.apply(this.b$['jalview.fts.core.GFTSPanel'], []);
 this.b$['jalview.fts.core.GFTSPanel'].updateSummaryTableSelections$.apply(this.b$['jalview.fts.core.GFTSPanel'], []);
 }this.b$['jalview.fts.service.pdb.PDBFTSPanel'].txt_search.updateCache$();
 });
 })()
-), Clazz.new_($I$(8), [this, null],P$.PDBFTSPanel$1)).start$();
+), Clazz.new_($I$(8,1),[this, null],P$.PDBFTSPanel$1)).start$();
 });
 
 Clazz.newMeth(C$, 'decodeSearchTerm$S$S', function (enteredText, targetField) {
 var foundSearchTerms=enteredText;
-var foundSearchTermsBuilder=Clazz.new_($I$(9));
+var foundSearchTermsBuilder=Clazz.new_($I$(9,1));
 if (enteredText.contains$CharSequence(";")) {
 var searchTerms=enteredText.split$S(";");
 for (var searchTerm, $searchTerm = 0, $$searchTerm = searchTerms; $searchTerm<$$searchTerm.length&&((searchTerm=($$searchTerm[$searchTerm])),1);$searchTerm++) {
@@ -108,8 +104,8 @@ foundSearchTerms=foundSearchTerms.split$S(":")[0];
 
 Clazz.newMeth(C$, 'okAction$', function () {
 this.disableActionButtons$();
-var selectedIds=Clazz.new_($I$(9));
-var selectedIdsSet=Clazz.new_($I$(10));
+var selectedIds=Clazz.new_($I$(9,1));
+var selectedIdsSet=Clazz.new_($I$(10,1));
 var primaryKeyColIndex=0;
 try {
 primaryKeyColIndex=this.getFTSRestClient$().getPrimaryKeyColumIndex$java_util_Collection$Z(this.wantedFields, false);
@@ -124,17 +120,17 @@ var selectedRows=this.getResultTable$().getSelectedRows$();
 var searchTerm=this.getTypedText$();
 for (var summaryRow, $summaryRow = 0, $$summaryRow = selectedRows; $summaryRow<$$summaryRow.length&&((summaryRow=($$summaryRow[$summaryRow])),1);$summaryRow++) {
 var idStr=this.getResultTable$().getValueAt$I$I(summaryRow, primaryKeyColIndex).toString();
-selectedIdsSet.add$TE(C$.getPDBIdwithSpecifiedChain$S$S(idStr, searchTerm));
+selectedIdsSet.add$O(C$.getPDBIdwithSpecifiedChain$S$S(idStr, searchTerm));
 }
 for (var idStr, $idStr = this.paginatorCart.iterator$(); $idStr.hasNext$()&&((idStr=($idStr.next$())),1);) {
-selectedIdsSet.add$TE(C$.getPDBIdwithSpecifiedChain$S$S(idStr, searchTerm));
+selectedIdsSet.add$O(C$.getPDBIdwithSpecifiedChain$S$S(idStr, searchTerm));
 }
 for (var selectedId, $selectedId = selectedIdsSet.iterator$(); $selectedId.hasNext$()&&((selectedId=($selectedId.next$())),1);) {
 selectedIds.append$S(selectedId).append$S(";");
 }
 var ids=selectedIds.toString();
 this.seqFetcher.setQuery$S(ids);
-var worker=Clazz.new_($I$(8).c$$Runnable,[this.seqFetcher]);
+var worker=Clazz.new_($I$(8,1).c$$Runnable,[this.seqFetcher]);
 worker.start$();
 this.delayAndEnableActionButtons$();
 });
@@ -180,7 +176,7 @@ return "FTS.PDB.AUTOSEARCH";
 
 Clazz.newMeth(C$, 'showHelp$', function () {
 try {
-$I$(11).showHelpWindow$jalview_gui_Help_HelpId($I$(12).PdbFts);
+$I$(11,"showHelpWindow$jalview_gui_Help_HelpId",[$I$(12).PdbFts]);
 } catch (e1) {
 if (Clazz.exceptionOf(e1,"javax.help.HelpSetException")){
 e1.printStackTrace$();
@@ -190,6 +186,11 @@ throw e1;
 }
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.defaultFTSFrameTitle=$I$(1).getString$S("label.pdb_sequence_fetcher");
+C$.tempUserPrefs=Clazz.new_($I$(2,1));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

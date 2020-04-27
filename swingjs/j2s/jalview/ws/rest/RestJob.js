@@ -1,68 +1,46 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.rest"),I$=[[0,'java.util.Hashtable','jalview.analysis.SeqsetUtils','java.util.ArrayList','jalview.datamodel.AlignmentOrder','jalview.io.packed.JalviewDataset','jalview.datamodel.SequenceI','jalview.datamodel.AlignmentI']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RestJob", null, 'jalview.ws.AWsJob');
+(function(){var P$=Clazz.newPackage("jalview.ws.rest"),I$=[[0,'java.util.Hashtable','jalview.analysis.SeqsetUtils','java.util.ArrayList','jalview.datamodel.AlignmentOrder','jalview.io.packed.JalviewDataset','jalview.datamodel.SequenceI','jalview.datamodel.AlignmentI']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RestJob", null, 'jalview.ws.AWsJob');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rsd=null;
-this.gotresponse=false;
-this.error=false;
-this.waiting=false;
-this.gotresult=false;
-this.squniq=null;
-this.dsForIO=null;
-this.inputOrder=null;
-this.origviscontig=null;
-this.contextAl=null;
-this.validInput=false;
-this.statMessage=null;
-this.resSet=null;
-this.inputData=null;
-this.running=false;
-this.context=null;
-this.parsedResults=false;
-this.validJvresults=false;
-this.jvresultobj=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.contextAl=null;
 this.validInput=false;
 this.statMessage=null;
-this.inputData=Clazz.new_($I$(1));
+this.inputData=Clazz.new_($I$(1,1));
 this.running=false;
 this.context=null;
 this.parsedResults=false;
 this.validJvresults=false;
 this.jvresultobj=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['gotresponse','error','waiting','gotresult','validInput','running','parsedResults','validJvresults'],'S',['statMessage'],'O',['rsd','jalview.ws.rest.RestServiceDescription','squniq','java.util.Hashtable','dsForIO','jalview.datamodel.AlignmentI','inputOrder','jalview.datamodel.AlignmentOrder','origviscontig','int[]','contextAl','jalview.datamodel.AlignmentI','resSet','jalview.ws.rest.HttpResultSet','inputData','java.util.Hashtable','context','jalview.io.packed.JalviewDataset','jvresultobj','Object[]']]]
 
 Clazz.newMeth(C$, 'c$$I$jalview_ws_rest_RestJobThread$jalview_datamodel_AlignmentI$IA', function (jobNum, restJobThread, _input, viscontigs) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.rsd=restJobThread.restClient.service;
 this.jobnum=jobNum;
 if (viscontigs != null ) {
 this.origviscontig=Clazz.array(Integer.TYPE, [viscontigs.length]);
 System.arraycopy$O$I$O$I$I(viscontigs, 0, this.origviscontig, 0, viscontigs.length);
-}this.squniq=$I$(2).uniquify$jalview_datamodel_SequenceIA$Z(_input.getSequencesArray$(), true);
-var alinp=Clazz.new_($I$(3));
+}this.squniq=$I$(2,"uniquify$jalview_datamodel_SequenceIA$Z",[_input.getSequencesArray$(), true]);
+var alinp=Clazz.new_($I$(3,1));
 var paramsWithData=0;
 for (var prm, $prm = this.rsd.inputParams.entrySet$().iterator$(); $prm.hasNext$()&&((prm=($prm.next$())),1);) {
 if (!prm.getValue$().isConstant$()) {
 if (Clazz.instanceOf(prm.getValue$(), "jalview.ws.rest.params.Alignment")) {
-alinp.add$TE(prm.getValue$());
+alinp.add$O(prm.getValue$());
 } else {
 if (Clazz.instanceOf(prm.getValue$(), "jalview.ws.rest.params.SeqGroupIndexVector") && _input.getGroups$() != null   && _input.getGroups$().size$() >= -1 + prm.getValue$().min ) {
-alinp.add$TE(prm.getValue$());
+alinp.add$O(prm.getValue$());
 } else {
 this.statMessage=("Not enough groups defined on the alignment - need at least " + prm.getValue$().min);
 }}} else {
 paramsWithData++;
 }}
 if ((paramsWithData + alinp.size$()) == this.rsd.inputParams.size$()) {
-this.inputOrder=Clazz.new_($I$(4).c$$jalview_datamodel_AlignmentI,[_input]);
+this.inputOrder=Clazz.new_($I$(4,1).c$$jalview_datamodel_AlignmentI,[_input]);
 if ((this.dsForIO=_input.getDataset$()) == null ) {
 _input.setDataset$jalview_datamodel_AlignmentI(null);
 }this.dsForIO=_input.getDataset$();
@@ -139,7 +117,7 @@ return this.rsd.getDecoratedResultUrl$S(this.jobId);
 
 Clazz.newMeth(C$, 'newJalviewDataset$', function () {
 if (this.context == null ) {
-this.context=Clazz.new_($I$(5).c$$jalview_datamodel_AlignmentI$java_util_Map$java_util_Hashtable$jalview_datamodel_AlignmentI,[this.dsForIO, null, this.squniq, null]);
+this.context=Clazz.new_($I$(5,1).c$$jalview_datamodel_AlignmentI$java_util_Map$java_util_Hashtable$jalview_datamodel_AlignmentI,[this.dsForIO, null, this.squniq, null]);
 if (this.contextAl != null ) {
 if (this.contextAl.getAlignmentAnnotation$() != null ) {
 for (var alan, $alan = 0, $$alan = this.contextAl.getAlignmentAnnotation$(); $alan<$$alan.length&&((alan=($$alan[$alan])),1);$alan++) {
@@ -172,8 +150,8 @@ for (var itype, $itype = itypes.iterator$(); $itype.hasNext$()&&((itype=($itype.
 if (!this.rsd.inputParams.values$().contains$O(itype)) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["InputType " + itype.getClass$() + " is not valid for service at " + this.rsd.postUrl ]);
 }if (Clazz.instanceOf(itype, "jalview.ws.rest.AlignmentProcessor")) {
-(itype).prepareAlignment$(al);
-}this.inputData.put$TK$TV(itype.token, al);
+(itype).prepareAlignment$jalview_datamodel_AlignmentI(al);
+}this.inputData.put$O$O(itype.token, al);
 }
 });
 
@@ -216,4 +194,4 @@ return map;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

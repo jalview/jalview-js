@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awtjs2d"),p$1={},I$=[[0,'javajs.awt.Color','org.jmol.awtjs2d.Platform','javajs.util.CU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JsG2D", null, null, 'org.jmol.api.GenericGraphics');
+(function(){var P$=Clazz.newPackage("org.jmol.awtjs2d"),p$1={},I$=[[0,'org.jmol.awtjs.swing.Color','org.jmol.awtjs2d.Platform','javajs.util.CU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JsG2D", null, null, 'org.jmol.api.GenericGraphics');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.windowWidth=0;
-this.windowHeight=0;
-this.isShifted=false;
-this.inPath=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isShifted','inPath'],'I',['windowWidth','windowHeight']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getColor4$I$I$I$I', function (r, g, b, a) {
@@ -154,7 +147,7 @@ g.fillStyle = g.strokeStyle = s;
 }
 });
 
-Clazz.newMeth(C$, 'setFont$O$javajs_awt_Font', function (g, font) {
+Clazz.newMeth(C$, 'setFont$O$org_jmol_util_Font', function (g, font) {
 var s=font.getInfo$();
 var pt=s.indexOf$S(" ");
 s=s.substring$I$I(0, pt) + "px" + s.substring$I(pt) ;
@@ -197,4 +190,4 @@ g.lineTo(x2, y2);
 }
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

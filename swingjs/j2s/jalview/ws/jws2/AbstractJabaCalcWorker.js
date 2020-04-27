@@ -1,28 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.jws2"),I$=[[0,'jalview.ws.jws2.dm.AAConSettings','jalview.ws.jws2.JabaParamStore','java.util.ArrayList','compbio.metadata.Option','StringBuffer','compbio.metadata.JobStatus','Thread','jalview.bin.Cache','java.util.HashMap','jalview.analysis.SeqsetUtils','compbio.data.sequence.FastaSequence','jalview.schemes.ResidueProperties','jalview.analysis.AlignSeq','jalview.util.Comparison']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractJabaCalcWorker", null, 'jalview.workers.AlignCalcWorker');
+(function(){var P$=Clazz.newPackage("jalview.ws.jws2"),I$=[[0,'jalview.ws.jws2.dm.AAConSettings','jalview.ws.jws2.JabaParamStore','java.util.ArrayList','compbio.metadata.Option','StringBuffer','compbio.metadata.JobStatus','Thread','jalview.bin.Cache','java.util.HashMap','jalview.analysis.SeqsetUtils','compbio.data.sequence.FastaSequence','jalview.schemes.ResidueProperties','jalview.analysis.AlignSeq','jalview.util.Comparison']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractJabaCalcWorker", null, 'jalview.workers.AlignCalcWorker');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.service=null;
-this.preset=null;
-this.$arguments=null;
-this.guiProgress=null;
-this.submitGaps=false;
-this.filterNonStandardResidues=false;
-this.alignedSeqs=false;
-this.nucleotidesAllowed=false;
-this.proteinAllowed=false;
-this.bySequence=false;
-this.seqNames=null;
-this.gapMap=null;
-this.realw=0;
-this.start=0;
-this.end=0;
-this.rslt=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.submitGaps=true;
@@ -32,11 +11,13 @@ this.nucleotidesAllowed=false;
 this.proteinAllowed=false;
 this.bySequence=false;
 this.rslt="JOB NOT DEFINED";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['submitGaps','filterNonStandardResidues','alignedSeqs','nucleotidesAllowed','proteinAllowed','bySequence'],'I',['realw','start','end'],'S',['rslt'],'O',['service','jalview.ws.jws2.jabaws2.Jws2Instance','preset','jalview.ws.params.WsParamSetI','$arguments','java.util.List','guiProgress','jalview.gui.IProgressIndicator','seqNames','java.util.Map','gapMap','boolean[]']]]
 
 Clazz.newMeth(C$, 'initViewportParams$', function () {
 if (this.getCalcId$() != null ) {
-(this.alignViewport).setCalcIdSettingsFor$S$jalview_ws_params_AutoCalcSetting$Z(this.getCalcId$(), Clazz.new_($I$(1).c$$Z$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_ws_params_WsParamSetI$java_util_List,[true, this.service, this.preset, (this.$arguments != null ) ? $I$(2).getJwsArgsfromJaba$java_util_List(this.$arguments) : null]), true);
+(this.alignViewport).setCalcIdSettingsFor$S$jalview_ws_params_AutoCalcSetting$Z(this.getCalcId$(), Clazz.new_([true, this.service, this.preset, (this.$arguments != null ) ? $I$(2).getJwsArgsfromJaba$java_util_List(this.$arguments) : null],$I$(1,1).c$$Z$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_ws_params_WsParamSetI$java_util_List), true);
 }});
 
 Clazz.newMeth(C$, 'getPreset$', function () {
@@ -55,20 +36,19 @@ this.initViewportParams$();
 });
 
 Clazz.newMeth(C$, 'getJabaArguments$', function () {
-var newargs=Clazz.new_($I$(3));
+var newargs=Clazz.new_($I$(3,1));
 if (this.preset != null  && Clazz.instanceOf(this.preset, "jalview.ws.jws2.dm.JabaWsParamSet") ) {
 newargs.addAll$java_util_Collection((this.preset).getjabaArguments$());
 }if (this.$arguments != null  && this.$arguments.size$() > 0 ) {
 for (var rg, $rg = this.$arguments.iterator$(); $rg.hasNext$()&&((rg=($rg.next$())),1);) {
 if (Clazz.getClass($I$(4)).isAssignableFrom$Class(rg.getClass$())) {
-newargs.add$TE(rg);
+newargs.add$O(rg);
 }}
 }return newargs;
 });
 
 Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel', function (alignViewport, alignPanel) {
-C$.superclazz.c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel.apply(this, [alignViewport, alignPanel]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel.apply(this,[alignViewport, alignPanel]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_gui_AlignFrame$jalview_ws_params_WsParamSetI$java_util_List', function (service, alignFrame, preset, paramset) {
@@ -84,7 +64,7 @@ if (!this.hasService$()) {
 return;
 }var progressId=-1;
 var serverErrorsLeft=3;
-var msg=Clazz.new_($I$(5));
+var msg=Clazz.new_($I$(5,1));
 try {
 if (this.checkDone$()) {
 return;
@@ -98,15 +78,14 @@ this.guiProgress.setProgressBar$S$J("JABA " + this.getServiceActionText$(), prog
 }this.rslt=this.submitToService$java_util_List(seqs);
 if (this.guiProgress != null ) {
 this.guiProgress.registerHandler$J$jalview_gui_IProgressIndicatorHandler(progressId, ((P$.AbstractJabaCalcWorker$1||
-(function(){var C$=Clazz.newClass(P$, "AbstractJabaCalcWorker$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.gui.IProgressIndicatorHandler', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AbstractJabaCalcWorker$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.gui.IProgressIndicatorHandler', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['cancelActivity$J','cancelActivity$'], function (id) {
+Clazz.newMeth(C$, 'cancelActivity$J', function (id) {
 this.b$['jalview.ws.jws2.AbstractJabaCalcWorker'].cancelCurrentJob$.apply(this.b$['jalview.ws.jws2.AbstractJabaCalcWorker'], []);
 return true;
 });
@@ -115,7 +94,7 @@ Clazz.newMeth(C$, 'canCancel$', function () {
 return true;
 });
 })()
-), Clazz.new_(P$.AbstractJabaCalcWorker$1.$init$, [this, null])));
+), Clazz.new_(P$.AbstractJabaCalcWorker$1.$init$,[this, null])));
 }var finished=false;
 var rpos=0;
 do {
@@ -214,7 +193,7 @@ this.calcMan.disableWorker$jalview_api_AlignCalcWorkerI(this);
 var error = e$$;
 {
 this.calcMan.disableWorker$jalview_api_AlignCalcWorkerI(this);
-this.ap.raiseOOMWarning$(this.getServiceActionText$(), error);
+this.ap.raiseOOMWarning$S$OutOfMemoryError(this.getServiceActionText$(), error);
 }
 } else if (Clazz.exceptionOf(e$$,"Exception")){
 var x = e$$;
@@ -258,22 +237,22 @@ if (alignment == null  || alignment.getWidth$() <= 0  || alignment.getSequences$
 return null;
 }if (inputSeqs == null  || inputSeqs.getWidth$() <= 0  || inputSeqs.getSequences$() == null   || inputSeqs.getSequences$().size$() < 1 ) {
 inputSeqs=alignment;
-}var seqs=Clazz.new_($I$(3));
+}var seqs=Clazz.new_($I$(3,1));
 var minlen=10;
 var ln=-1;
 if (this.bySequence) {
-this.seqNames=Clazz.new_($I$(9));
+this.seqNames=Clazz.new_($I$(9,1));
 }this.gapMap=Clazz.array(Boolean.TYPE, [0]);
 this.start=inputSeqs.getStartRes$();
 this.end=inputSeqs.getEndRes$();
 for (var sq, $sq = (inputSeqs.getSequences$()).iterator$(); $sq.hasNext$()&&((sq=($sq.next$())),1);) {
 if (this.bySequence ? sq.findPosition$I(this.end + 1) - sq.findPosition$I(this.start + 1) > minlen - 1 : sq.getEnd$() - sq.getStart$() > minlen - 1) {
-var newname=$I$(10).unique_name$I(seqs.size$() + 1);
+var newname=$I$(10,"unique_name$I",[seqs.size$() + 1]);
 if (this.seqNames != null ) {
-this.seqNames.put$TK$TV(newname, sq);
+this.seqNames.put$O$O(newname, sq);
 }var seq;
 if (this.submitGaps) {
-seqs.add$TE(seq=Clazz.new_($I$(11).c$$S$S,[newname, sq.getSequenceAsString$()]));
+seqs.add$O(seq=Clazz.new_([newname, sq.getSequenceAsString$()],$I$(11,1).c$$S$S));
 if (this.gapMap == null  || this.gapMap.length < seq.getSequence$().length$() ) {
 var tg=this.gapMap;
 this.gapMap=Clazz.array(Boolean.TYPE, [seq.getLength$()]);
@@ -287,7 +266,7 @@ if (!this.filterNonStandardResidues || (sq.isProtein$() ? $I$(12).aaIndex[sqc.$c
 this.gapMap[apos]=true;
 };}
 } else {
-seqs.add$TE(seq=Clazz.new_($I$(11).c$$S$S,[newname, $I$(13).extractGaps$S$S($I$(14).GapChars, sq.getSequenceAsString$I$I(this.start, this.end + 1))]));
+seqs.add$O(seq=Clazz.new_([newname, $I$(13,"extractGaps$S$S",[$I$(14).GapChars, sq.getSequenceAsString$I$I(this.start, this.end + 1)])],$I$(11,1).c$$S$S));
 }if (seq.getSequence$().length$() > ln) {
 ln=seq.getSequence$().length$();
 }}}
@@ -309,7 +288,7 @@ padded[i++]=orig[pp];
 } else {
 padded[i++]="-";
 }}}
-seqs.set$I$TE(p, Clazz.new_($I$(11).c$$S$S,[sq.getId$(),  String.instantialize(padded)]));
+seqs.set$I$O(p, Clazz.new_([sq.getId$(),  String.instantialize(padded)],$I$(11,1).c$$S$S));
 }
 }return seqs;
 });
@@ -358,4 +337,4 @@ this.ap.adjustAnnotationHeight$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,8 +1,10 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.geom"),I$=[[0,'java.awt.geom.Line2D']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LinesIntersect");
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.geom"),I$=[[0,'java.awt.geom.Line2D']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LinesIntersect");
+
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'linesIntersect$D$D$D$D$D$D$D$D', function (x1, y1, x2, y2, x3, y3, x4, y4) {
 var denom=(y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
@@ -37,4 +39,4 @@ C$.test$D$D$D$D$D$D$D$D$Z(0, 0, 2, 2, 4, 0, 3, 2, false);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

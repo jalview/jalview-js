@@ -1,43 +1,14 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.ArrayList','java.io.File','swingjs.JSUtil','javax.swing.JDialog','java.awt.event.WindowAdapter','javax.swing.JOptionPane','java.awt.BorderLayout','javax.swing.UIManager','javax.swing.filechooser.FileFilter','java.awt.Toolkit','java.awt.event.ActionListener','java.awt.EventQueue','java.awt.event.ActionEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JFileChooser", null, 'javax.swing.JComponent');
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.ArrayList','java.io.File','swingjs.JSUtil','javax.swing.JDialog','java.awt.event.WindowAdapter','javax.swing.JOptionPane','java.awt.BorderLayout','javax.swing.UIManager','javax.swing.filechooser.FileFilter','java.awt.Toolkit','java.awt.event.ActionListener','java.awt.EventQueue','java.awt.event.ActionEvent']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JFileChooser", null, 'javax.swing.JComponent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dialogTitle=null;
-this.approveButtonText=null;
-this.approveButtonToolTipText=null;
-this.approveButtonMnemonic=0;
-this.filters=null;
-this.dialog=null;
-this.dialogType=0;
-this.returnValue=0;
-this.accessory=null;
-this.fileView=null;
-this.uiFileView=null;
-this.controlsShown=false;
-this.useFileHiding=false;
-this.showFilesListener=null;
-this.fileSelectionMode=0;
-this.multiSelectionEnabled=false;
-this.useAcceptAllFileFilter=false;
-this.dragEnabled=false;
-this.fileFilter=null;
-this.currentDirectory=null;
-this.selectedFile=null;
-this.selectedFiles=null;
-this.lastFileName=null;
-this.opensaveType=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dialogTitle=null;
 this.approveButtonText=null;
 this.approveButtonToolTipText=null;
 this.approveButtonMnemonic=0;
-this.filters=Clazz.new_($I$(1).c$$I,[5]);
+this.filters=Clazz.new_($I$(1,1).c$$I,[5]);
 this.dialog=null;
 this.dialogType=0;
 this.returnValue=-1;
@@ -56,28 +27,39 @@ this.currentDirectory=null;
 this.selectedFile=null;
 this.lastFileName="";
 this.opensaveType=2;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['controlsShown','useFileHiding','multiSelectionEnabled','useAcceptAllFileFilter','dragEnabled'],'I',['approveButtonMnemonic','dialogType','returnValue','fileSelectionMode','opensaveType'],'S',['dialogTitle','approveButtonText','approveButtonToolTipText','lastFileName'],'O',['filters','java.util.ArrayList','dialog','javax.swing.JDialog','accessory','javax.swing.JComponent','fileView','javax.swing.filechooser.FileView','+uiFileView','showFilesListener','java.beans.PropertyChangeListener','fileFilter','javax.swing.filechooser.FileFilter','currentDirectory','java.io.File','+selectedFile','selectedFiles','java.io.File[]']]]
 
 Clazz.newMeth(C$, 'getOpenSaveType$', function () {
 return this.opensaveType;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.c$$java_io_File.apply(this, [Clazz.new_($I$(2).c$$S,["."])]);
+C$.c$$java_io_File.apply(this, [Clazz.new_($I$(2,1).c$$S,["."])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (currentDirectoryPath) {
-C$.c$$java_io_File.apply(this, [Clazz.new_($I$(2).c$$S,[currentDirectoryPath])]);
+C$.c$$java_io_File.apply(this, [Clazz.new_($I$(2,1).c$$S,[currentDirectoryPath])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (currentDirectory) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.currentDirectory=currentDirectory;
 }, 1);
 
 Clazz.newMeth(C$, 'getUIClassID$', function () {
 return "FileChooserUI";
 });
+
+Clazz.newMeth(C$, 'c$$javax_swing_filechooser_FileSystemView', function (fsv) {
+C$.c$$java_io_File$javax_swing_filechooser_FileSystemView.apply(this, [null, fsv]);
+}, 1);
+
+Clazz.newMeth(C$, 'c$$java_io_File$javax_swing_filechooser_FileSystemView', function (currentDirectory, fsv) {
+Clazz.super_(C$, this);
+this.setCurrentDirectory$java_io_File(currentDirectory);
+}, 1);
 
 Clazz.newMeth(C$, 'setDragEnabled$Z', function (b) {
 this.dragEnabled=b;
@@ -145,7 +127,7 @@ this.setCurrentDirectory$java_io_File(p$1.getParentDirectory$java_io_File.apply(
 Clazz.newMeth(C$, 'getParentDirectory$java_io_File', function (f) {
 var path=f.getPath$();
 if (path.endsWith$S("/")) path=path.substring$I(path.length$() - 1);
-return Clazz.new_($I$(2).c$$S,[path.substring$I$I(0, path.lastIndexOf$S("/"))]);
+return Clazz.new_([path.substring$I$I(0, path.lastIndexOf$S("/"))],$I$(2,1).c$$S);
 }, p$1);
 
 Clazz.newMeth(C$, 'rescanCurrentDirectory$', function () {
@@ -179,14 +161,29 @@ this.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
 } else {
 this.removePropertyChangeListener$java_beans_PropertyChangeListener(parent);
 this.addPropertyChangeListener$java_beans_PropertyChangeListener(parent);
-}var r=((P$.JFileChooser$1||
-(function(){var C$=Clazz.newClass(P$, "JFileChooser$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+}var format=(this.isMultiSelectionEnabled$() ? "java.util.Array" : "java.io.File");
+var r=(this.isMultiSelectionEnabled$() ? ((P$.JFileChooser$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JFileChooser$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+Clazz.newMeth(C$, 'run$', function () {
+
+this.b$['javax.swing.JFileChooser'].selectedFiles = arguments[0] || null;
+this.b$['javax.swing.JFileChooser'].selectedFile = arguments[0][0] || null;
+this.b$['java.awt.Component'].firePropertyChange$S$O$O.apply(this.b$['java.awt.Component'], ["SelectedFiles", null, this.b$['javax.swing.JFileChooser'].selectedFiles]);
+});
+})()
+), Clazz.new_(P$.JFileChooser$1.$init$,[this, null])) : ((P$.JFileChooser$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JFileChooser$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 
@@ -194,13 +191,14 @@ this.b$['javax.swing.JFileChooser'].selectedFile = arguments[0] || null;
 this.b$['java.awt.Component'].firePropertyChange$S$O$O.apply(this.b$['java.awt.Component'], ["SelectedFile", null, this.b$['javax.swing.JFileChooser'].selectedFile]);
 });
 })()
-), Clazz.new_(P$.JFileChooser$1.$init$, [this, null]));
-$I$(3).J2S.getFileFromDialog(function(file){r.run$(file)}||null, "java.io.File");
+), Clazz.new_(P$.JFileChooser$2.$init$,[this, null])));
+$I$(3).J2S.getFileFromDialog(function(file){r.run$(file)}||null, format);
 return $I$(4).ASYNCHRONOUS_INTEGER;
 case 1:
-var name=$I$(3).prompt$S$S((this.dialogTitle == null  ? "File to Save?" : this.dialogTitle), this.lastFileName);
+if (this.selectedFile != null ) this.lastFileName=this.selectedFile.getName$();
+var name=$I$(3,"prompt$S$S",[(this.dialogTitle == null  ? "File to Save?" : this.dialogTitle), this.lastFileName]);
 if (name == null ) return 1;
-this.selectedFile=Clazz.new_($I$(2).c$$S,[name]);
+this.selectedFile=Clazz.new_($I$(2,1).c$$S,[name]);
 p$1.closeDialog.apply(this, []);
 return 0;
 }
@@ -208,28 +206,27 @@ if (approveButtonText != null ) {
 this.setApproveButtonText$S(approveButtonText);
 this.setDialogType$I(2);
 }this.dialog=this.createDialog$java_awt_Component(parent);
-this.dialog.addWindowListener$java_awt_event_WindowListener(((P$.JFileChooser$2||
-(function(){var C$=Clazz.newClass(P$, "JFileChooser$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
+this.dialog.addWindowListener$java_awt_event_WindowListener(((P$.JFileChooser$3||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JFileChooser$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (e) {
 this.b$['javax.swing.JFileChooser'].returnValue=1;
 p$1.closeDialog.apply(this.b$['javax.swing.JFileChooser'], []);
 });
 })()
-), Clazz.new_($I$(5), [this, null],P$.JFileChooser$2)));
+), Clazz.new_($I$(5,1),[this, null],P$.JFileChooser$3)));
 this.returnValue=$I$(4).ASYNCHRONOUS_INTEGER;
 this.dialog.setVisible$Z(true);
 return this.returnValue;
 });
 
 Clazz.newMeth(C$, 'warnJSDeveloper$', function () {
-System.err.println$S("JFileChooser: Neither component nor this implements PropertyChangeListener.");
+System.err.println$S("JFileChooser: Neither component nor \"this\" implements PropertyChangeListener for \"SelectedFile\".");
 }, 1);
 
 Clazz.newMeth(C$, 'closeDialog', function () {
@@ -246,12 +243,12 @@ if (title == null ) title="SwingJS";
 var dialog;
 var window=$I$(6).getWindowForComponent$java_awt_Component(parent);
 if (Clazz.instanceOf(window, "java.awt.JSFrame")) {
-dialog=Clazz.new_($I$(4).c$$java_awt_JSFrame$S$Z,[window, title, true]);
+dialog=Clazz.new_($I$(4,1).c$$java_awt_JSFrame$S$Z,[window, title, true]);
 } else {
-dialog=Clazz.new_($I$(4).c$$java_awt_JSDialog$S$Z,[window, title, true]);
+dialog=Clazz.new_($I$(4,1).c$$java_awt_JSDialog$S$Z,[window, title, true]);
 }dialog.setComponentOrientation$java_awt_ComponentOrientation(this.getComponentOrientation$());
 var contentPane=dialog.getContentPane$();
-contentPane.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+contentPane.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7,1)));
 contentPane.add$java_awt_Component$O(this, "Center");
 if ($I$(4).isDefaultLookAndFeelDecorated$()) {
 var supportsWindowDecorations=$I$(8).getLookAndFeel$().getSupportsWindowDecorations$();
@@ -348,14 +345,14 @@ return this.approveButtonText;
 
 Clazz.newMeth(C$, 'getChoosableFileFilters$', function () {
 var filterArray=Clazz.array($I$(9), [this.filters.size$()]);
-this.filters.toArray$TTA(filterArray);
+this.filters.toArray$OA(filterArray);
 return filterArray;
 });
 
 Clazz.newMeth(C$, 'addChoosableFileFilter$javax_swing_filechooser_FileFilter', function (filter) {
 if (filter != null  && !this.filters.contains$O(filter) ) {
 var oldValue=this.getChoosableFileFilters$();
-this.filters.add$TE(filter);
+this.filters.add$O(filter);
 this.firePropertyChange$S$O$O("ChoosableFileFilterChangedProperty", oldValue, this.getChoosableFileFilters$());
 if (this.fileFilter == null  && this.filters.size$() == 1 ) {
 this.setFileFilter$javax_swing_filechooser_FileFilter(filter);
@@ -383,7 +380,7 @@ this.addChoosableFileFilter$javax_swing_filechooser_FileFilter(this.getAcceptAll
 });
 
 Clazz.newMeth(C$, 'getAcceptAllFileFilter$', function () {
-return Clazz.new_($I$(9).c$$SA,[Clazz.array(String, -1, ["*.*", "All Files"])]);
+return Clazz.new_([Clazz.array(String, -1, ["*.*", "All Files"])],$I$(9,1).c$$SA);
 });
 
 Clazz.newMeth(C$, 'isAcceptAllFileFilterUsed$', function () {
@@ -464,16 +461,16 @@ var oldValue=this.fileFilter;
 this.fileFilter=filter;
 if (filter != null ) {
 if (this.isMultiSelectionEnabled$() && this.selectedFiles != null   && this.selectedFiles.length > 0 ) {
-var fList=Clazz.new_($I$(1));
+var fList=Clazz.new_($I$(1,1));
 var failed=false;
 for (var i=0; i < this.selectedFiles.length; i++) {
 if (filter.accept$java_io_File(this.selectedFiles[i])) {
-fList.add$TE(this.selectedFiles[i]);
+fList.add$O(this.selectedFiles[i]);
 } else {
 failed=true;
 }}
 if (failed) {
-this.setSelectedFiles$java_io_FileA((fList.size$() == 0) ? null : fList.toArray$TTA(Clazz.array($I$(2), [fList.size$()])));
+this.setSelectedFiles$java_io_FileA((fList.size$() == 0) ? null : fList.toArray$OA(Clazz.array($I$(2), [fList.size$()])));
 }} else if (this.selectedFile != null  && !filter.accept$java_io_File(this.selectedFile) ) {
 this.setSelectedFile$java_io_File(null);
 }}this.firePropertyChange$S$O$O("fileFilterChanged", oldValue, this.fileFilter);
@@ -555,11 +552,11 @@ this.dialog.setVisible$Z(false);
 });
 
 Clazz.newMeth(C$, 'addActionListener$java_awt_event_ActionListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(11),['actionPerformed$java_awt_event_ActionEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(11),['actionPerformed$java_awt_event_ActionEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeActionListener$java_awt_event_ActionListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(11),['actionPerformed$java_awt_event_ActionEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(11),['actionPerformed$java_awt_event_ActionEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getActionListeners$', function () {
@@ -579,8 +576,8 @@ modifiers=(currentEvent).getModifiers$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(11),['actionPerformed$java_awt_event_ActionEvent']) ) {
 if (e == null ) {
-e=Clazz.new_($I$(13).c$$O$I$S$J$I,[this, 1001, command, mostRecentEventTime, modifiers]);
-}(listeners[i + 1]).actionPerformed$(e);
+e=Clazz.new_($I$(13,1).c$$O$I$S$J$I,[this, 1001, command, mostRecentEventTime, modifiers]);
+}(listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
 });
 
@@ -617,4 +614,4 @@ var selectedFileString=(this.selectedFile != null  ? this.selectedFile.toString(
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",approveButtonText=" + approveButtonTextString + ",currentDirectory=" + currentDirectoryString + ",dialogTitle=" + dialogTitleString + ",dialogType=" + dialogTypeString + ",fileSelectionMode=" + fileSelectionModeString + ",returnValue=" + returnValueString + ",selectedFile=" + selectedFileString + ",useFileHiding=" + useFileHidingString ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

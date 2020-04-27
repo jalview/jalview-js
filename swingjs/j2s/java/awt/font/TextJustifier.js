@@ -1,23 +1,16 @@
 (function(){var P$=Clazz.newPackage("java.awt.font"),I$=[];
-var C$=Clazz.newClass(P$, "TextJustifier");
-C$.DEBUG=false;
+/*c*/var C$=Clazz.newClass(P$, "TextJustifier");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEBUG=false;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.info=null;
-this.start=0;
-this.limit=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['start','limit'],'O',['info','java.awt.font.GlyphJustificationInfo[]']]
+,['Z',['DEBUG']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_font_GlyphJustificationInfoA$I$I', function (info, start, limit) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.info=info;
 this.start=start;
 this.limit=limit;
@@ -121,6 +114,10 @@ System.out.println$();
 }return deltas;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.DEBUG=false;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

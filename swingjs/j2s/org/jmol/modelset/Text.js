@@ -1,69 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'org.jmol.viewer.JC','javajs.awt.Font','javajs.util.PT','org.jmol.util.Txt','org.jmol.shape.Shape','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Text");
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'org.jmol.viewer.JC','org.jmol.util.Font','javajs.util.PT','org.jmol.util.Txt','org.jmol.shape.Shape','org.jmol.util.C']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Text");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isEcho=false;
-this.doFormatText=false;
-this.lines=null;
-this.font=null;
-this.fid=0;
-this.ascent=0;
-this.descent=0;
-this.lineHeight=0;
-this.offsetX=0;
-this.offsetY=0;
-this.textWidth=0;
-this.textHeight=0;
-this.text=null;
-this.textUnformatted=null;
-this.widths=null;
-this.vwr=null;
-this.image=null;
-this.imageScale=0;
-this.boxYoff2=0;
-this.xAdj=0;
-this.yAdj=0;
-this.y0=0;
-this.pointerPt=null;
-this.isLabelOrHover=false;
-this.xyz=null;
-this.target=null;
-this.script=null;
-this.colix=0;
-this.bgcolix=0;
-this.pointer=0;
-this.fontScale=0;
-this.align=0;
-this.valign=0;
-this.atomX=0;
-this.atomY=0;
-this.atomZ=0;
-this.movableX=0;
-this.movableY=0;
-this.movableZ=0;
-this.movableXPercent=0;
-this.movableYPercent=0;
-this.movableZPercent=0;
-this.z=0;
-this.zSlab=0;
-this.pymolOffset=null;
-this.windowWidth=0;
-this.windowHeight=0;
-this.adjustForWindow=false;
-this.boxWidth=0;
-this.boxHeight=0;
-this.boxX=0;
-this.boxY=0;
-this.modelIndex=0;
-this.visible=false;
-this.hidden=false;
-this.boxXY=null;
-this.scalePixelsPerMicron=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.imageScale=1;
@@ -76,34 +14,37 @@ this.zSlab=-2147483648;
 this.modelIndex=-1;
 this.visible=true;
 this.hidden=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'setOffset$I', function (offset) {
-this.offsetX=$I$(1).getXOffset$I(offset);
-this.offsetY=$I$(1).getYOffset$I(offset);
-this.pymolOffset=null;
-this.valign=3;
-});
+C$.$fields$=[['Z',['doFormatText','isMeasure','isEcho','adjustForWindow','visible','hidden'],'B',['fid'],'F',['imageScale','xAdj','yAdj','y0','fontScale','boxWidth','boxHeight','boxX','boxY','scalePixelsPerMicron'],'I',['ascent','descent','lineHeight','offsetX','offsetY','boxYoff2','textWidth','textHeight','pointer','align','valign','atomX','atomY','atomZ','movableX','movableY','movableZ','movableXPercent','movableYPercent','movableZPercent','z','zSlab','windowWidth','windowHeight','modelIndex'],'H',['colix','bgcolix'],'S',['text','textUnformatted','target','script'],'O',['vwr','org.jmol.viewer.Viewer','font','org.jmol.util.Font','widths','int[]','lines','String[]','image','java.lang.Object','pointerPt','javajs.util.P3','+xyz','pymolOffset','float[]','+boxXY']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.boxXY=Clazz.array(Float.TYPE, [5]);
 }, 1);
 
-Clazz.newMeth(C$, 'newLabel$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$H$I$F', function (vwr, font, text, colix, bgcolix, align, scalePixelsPerMicron) {
+Clazz.newMeth(C$, 'newLabel$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$H$I$F', function (vwr, font, text, colix, bgcolix, align, scalePixelsPerMicron) {
 var t=Clazz.new_(C$);
 t.vwr=vwr;
-p$1.set$javajs_awt_Font$H$I$Z$F.apply(t, [font, colix, align, true, scalePixelsPerMicron]);
+p$1.set$org_jmol_util_Font$H$I$F.apply(t, [font, colix, align, scalePixelsPerMicron]);
 t.setText$S(text);
 t.bgcolix=bgcolix;
 return t;
 }, 1);
 
-Clazz.newMeth(C$, 'newEcho$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$I$I$F', function (vwr, font, target, colix, valign, align, scalePixelsPerMicron) {
+Clazz.newMeth(C$, 'newMeasure$org_jmol_viewer_Viewer$org_jmol_util_Font$H', function (vwr, font, colix) {
 var t=Clazz.new_(C$);
 t.vwr=vwr;
+p$1.set$org_jmol_util_Font$H$I$F.apply(t, [font, colix, 0, 0]);
+t.isMeasure=true;
+return t;
+}, 1);
+
+Clazz.newMeth(C$, 'newEcho$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$I$I$F', function (vwr, font, target, colix, valign, align, scalePixelsPerMicron) {
+var t=Clazz.new_(C$);
 t.isEcho=true;
-p$1.set$javajs_awt_Font$H$I$Z$F.apply(t, [font, colix, align, false, scalePixelsPerMicron]);
+t.vwr=vwr;
+p$1.set$org_jmol_util_Font$H$I$F.apply(t, [font, colix, align, scalePixelsPerMicron]);
 t.target=target;
 t.valign=valign;
 t.z=2;
@@ -111,13 +52,20 @@ t.zSlab=-2147483648;
 return t;
 }, 1);
 
-Clazz.newMeth(C$, 'set$javajs_awt_Font$H$I$Z$F', function (font, colix, align, isLabelOrHover, scalePixelsPerMicron) {
+Clazz.newMeth(C$, 'set$org_jmol_util_Font$H$I$F', function (font, colix, align, scalePixelsPerMicron) {
 this.scalePixelsPerMicron=scalePixelsPerMicron;
-this.isLabelOrHover=isLabelOrHover;
+this.isEcho=this.isEcho;
 this.colix=colix;
 this.align=align;
-this.setFont$javajs_awt_Font$Z(font, isLabelOrHover);
+this.setFont$org_jmol_util_Font$Z(font, !this.isEcho);
 }, p$1);
+
+Clazz.newMeth(C$, 'setOffset$I', function (offset) {
+this.offsetX=$I$(1).getXOffset$I(offset);
+this.offsetY=$I$(1).getYOffset$I(offset);
+this.pymolOffset=null;
+this.valign=3;
+});
 
 Clazz.newMeth(C$, 'getFontMetrics', function () {
 this.descent=this.font.getDescent$();
@@ -128,7 +76,7 @@ this.lineHeight=this.ascent + this.descent;
 Clazz.newMeth(C$, 'setFontFromFid$B', function (fid) {
 if (this.fid == fid) return;
 this.fontScale=0;
-this.setFont$javajs_awt_Font$Z($I$(2).getFont3D$B(($b$[0] = fid, $b$[0])), true);
+this.setFont$org_jmol_util_Font$Z($I$(2).getFont3D$B(fid), true);
 });
 
 Clazz.newMeth(C$, 'setText$S', function (text) {
@@ -151,19 +99,19 @@ this.imageScale=scale;
 p$1.recalc.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'setFont$javajs_awt_Font$Z', function (f3d, doAll) {
+Clazz.newMeth(C$, 'setFont$org_jmol_util_Font$Z', function (f3d, doAll) {
 this.font=f3d;
 if (this.font == null ) return;
 p$1.getFontMetrics.apply(this, []);
 if (!doAll) return;
-this.fid=($b$[0] = this.font.fid, $b$[0]);
+this.fid=this.font.fid;
 p$1.recalc.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setFontScale$F', function (scale) {
 if (this.fontScale == scale ) return;
 this.fontScale=scale;
-if (this.fontScale != 0 ) this.setFont$javajs_awt_Font$Z(this.vwr.gdata.getFont3DScaled$javajs_awt_Font$F(this.font, scale), true);
+if (this.fontScale != 0 ) this.setFont$org_jmol_util_Font$Z(this.vwr.gdata.getFont3DScaled$org_jmol_util_Font$F(this.font, scale), true);
 });
 
 Clazz.newMeth(C$, 'recalc', function () {
@@ -179,7 +127,7 @@ this.lines=null;
 this.widths=null;
 return;
 }if (this.font == null ) return;
-this.lines=$I$(3).split$S$S(this.text, (this.text.indexOf$S("\n") >= 0 ? "\n" : "|"));
+this.lines=(function(a,f){return f.apply(null,a)})([this.text, (this.text.indexOf$S("\n") >= 0 ? "\n" : "|")],$I$(3).split$S$S);
 this.textWidth=0;
 this.widths=Clazz.array(Integer.TYPE, [this.lines.length]);
 for (var i=this.lines.length; --i >= 0; ) this.textWidth=Math.max(this.textWidth, this.widths[i]=p$1.stringWidth$S.apply(this, [this.lines[i]]));
@@ -202,13 +150,13 @@ p$1.recalc.apply(this, []);
 var dy=this.offsetY * imageFontScaling;
 this.xAdj=(this.fontScale >= 2  ? 8 : 4);
 this.yAdj=this.ascent - this.lineHeight + this.xAdj;
-if (this.isLabelOrHover || this.pymolOffset != null  ) {
+if (!this.isEcho || this.pymolOffset != null  ) {
 boxXY[0]=this.movableX;
 boxXY[1]=this.movableY;
 if (this.pymolOffset != null  && this.pymolOffset[0] != 2   && this.pymolOffset[0] != 3  ) {
 var pixelsPerAngstrom=this.vwr.tm.scaleToScreen$I$I(this.z, 1000);
 var pz=this.pymolOffset[3];
-var dz=(pz < 0  ? -1 : 1) * Math.max(0, Math.abs(pz) - 1) * pixelsPerAngstrom ;
+var dz=(pz < 0  ? -1 : 1) * Math.max(pz == 0  ? 0.5 : 0, Math.abs(pz) - 1) * pixelsPerAngstrom ;
 this.z-=(dz|0);
 pixelsPerAngstrom=this.vwr.tm.scaleToScreen$I$I(this.z, 1000);
 dx=p$1.getPymolXYOffset$F$I$F.apply(this, [this.pymolOffset[1], this.textWidth, pixelsPerAngstrom]);
@@ -239,8 +187,9 @@ C$.setBoxXY$F$F$F$F$FA$Z(this.boxWidth, this.boxHeight, dx, dy, boxXY, isAbsolut
 p$1.setPos$F.apply(this, [this.fontScale]);
 }this.boxX=boxXY[0];
 this.boxY=boxXY[1];
-if (this.adjustForWindow) this.setBoxOffsetsInWindow$F$F$F(0, this.isLabelOrHover ? 16 * this.fontScale + this.lineHeight : 0, this.boxY - this.textHeight);
+if (this.adjustForWindow) this.setBoxOffsetsInWindow$F$F$F(0, this.isEcho ? 0 : 16 * this.fontScale + this.lineHeight, this.boxY - this.textHeight);
 this.y0=this.boxY + this.yAdj;
+if (this.isMeasure && this.align != 8 ) this.y0 += this.ascent + (this.lines.length - 1) / 2.0 * this.lineHeight;
 });
 
 Clazz.newMeth(C$, 'getPymolXYOffset$F$I$F', function (off, width, ppa) {
@@ -364,7 +313,7 @@ xy[1] += this.lineHeight;
 });
 
 Clazz.newMeth(C$, 'appendFontCmd$javajs_util_SB', function (s) {
-s.append$S("  " + $I$(5).getFontCommand$S$javajs_awt_Font("echo", this.font));
+s.append$S("  " + $I$(5).getFontCommand$S$org_jmol_util_Font("echo", this.font));
 if (this.scalePixelsPerMicron > 0 ) s.append$S(" " + (new Float(10000.0 / this.scalePixelsPerMicron).toString()));
 });
 
@@ -383,9 +332,9 @@ this.adjustForWindow=(xyz == null );
 
 Clazz.newMeth(C$, 'setTranslucent$F$Z', function (level, isBackground) {
 if (isBackground) {
-if (this.bgcolix != 0) this.bgcolix=$I$(6).getColixTranslucent3$H$Z$F(this.bgcolix, !Float.isNaN$F(level), level);
+if (this.bgcolix != 0) this.bgcolix=(function(a,f){return f.apply(null,a)})([this.bgcolix, !Float.isNaN$F(level), level],$I$(6).getColixTranslucent3$H$Z$F);
 } else {
-this.colix=$I$(6).getColixTranslucent3$H$Z$F(this.colix, !Float.isNaN$F(level), level);
+this.colix=(function(a,f){return f.apply(null,a)})([this.colix, !Float.isNaN$F(level), level],$I$(6).getColixTranslucent3$H$Z$F);
 }});
 
 Clazz.newMeth(C$, 'setMovableX$I', function (x) {
@@ -487,6 +436,5 @@ screen.z=(screen.z+(this.pymolOffset[3])|0);
 }this.setXYZs$I$I$I$I(screen.x, screen.y, screen.z, zSlab);
 this.setScalePixelsPerMicron$F(sppm);
 });
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

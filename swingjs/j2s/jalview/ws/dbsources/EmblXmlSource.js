@@ -1,29 +1,25 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),I$=[[0,'java.util.regex.Pattern','jalview.ws.ebi.EBIFetchClient','jalview.util.MessageManager','java.io.FileInputStream','java.util.ArrayList','jalview.datamodel.Alignment','jalview.datamodel.SequenceI','javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','jalview.xml.binding.embl.ROOT','jalview.datamodel.Sequence','jalview.datamodel.DBRefEntry','jalview.datamodel.Mapping','jalview.util.DBRefUtils','jalview.analysis.SequenceIdMatcher','jalview.datamodel.FeatureProperties','java.util.Hashtable','jalview.util.MappingUtils','jalview.util.MapList','jalview.datamodel.DBRefSource','jalview.util.DnaUtils','jalview.bin.Cache','jalview.datamodel.SequenceFeature','StringBuilder','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EmblXmlSource", null, 'jalview.ws.dbsources.EbiFileRetrievedProxy');
-C$.SPACE_PATTERN=null;
+(function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),I$=[[0,'jalview.ws.ebi.EBIFetchClient','jalview.util.MessageManager','java.io.FileInputStream','java.util.ArrayList','jalview.datamodel.Alignment','jalview.datamodel.SequenceI','javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','jalview.xml.binding.embl.ROOT','jalview.datamodel.Sequence','jalview.datamodel.DBRefEntry','jalview.datamodel.Mapping','jalview.util.DBRefUtils','jalview.analysis.SequenceIdMatcher','jalview.datamodel.FeatureProperties','java.util.Hashtable','jalview.util.MappingUtils','jalview.util.MapList','jalview.datamodel.DBRefSource','jalview.util.DnaUtils','jalview.bin.Cache','jalview.datamodel.SequenceFeature','java.util.Arrays']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EmblXmlSource", null, 'jalview.ws.dbsources.EbiFileRetrievedProxy');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.SPACE_PATTERN=$I$(1).compile$S(" ");
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getEmblSequenceRecords$S$S', function (emprefx, query) {
 this.startQuery$();
-var dbFetch=Clazz.new_($I$(2));
+var dbFetch=Clazz.new_($I$(1,1));
 var reply;
 try {
 reply=dbFetch.fetchDataAsFile$S$S$S(emprefx.toLowerCase$() + ":" + query.trim$() , "display=xml", "xml");
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 this.stopQuery$();
-throw Clazz.new_(Clazz.load('Exception').c$$S$Throwable,[$I$(3).formatMessage$S$SA("exception.ebiembl_retrieval_failed_on", Clazz.array(String, -1, [emprefx.toLowerCase$(), query.trim$()])), e]);
+throw Clazz.new_(Clazz.load('Exception').c$$S$Throwable,[$I$(2,"formatMessage$S$SA",["exception.ebiembl_retrieval_failed_on", Clazz.array(String, -1, [emprefx.toLowerCase$(), query.trim$()])]), e]);
 } else {
 throw e;
 }
@@ -36,19 +32,19 @@ var entries=null;
 if (reply != null  && reply.exists$() ) {
 this.file=reply.getAbsolutePath$();
 if (reply.length$() > "ERROR 12 No entries found.".length$()) {
-var is=Clazz.new_($I$(4).c$$java_io_File,[reply]);
+var is=Clazz.new_($I$(3,1).c$$java_io_File,[reply]);
 entries=this.getEmblEntries$java_io_InputStream(is);
 }}var al=null;
-var seqs=Clazz.new_($I$(5));
-var peptides=Clazz.new_($I$(5));
+var seqs=Clazz.new_($I$(4,1));
+var peptides=Clazz.new_($I$(4,1));
 if (entries != null ) {
 for (var entry, $entry = entries.iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var seq=this.getSequence$S$jalview_xml_binding_embl_EntryType$java_util_List(emprefx, entry, peptides);
 if (seq != null ) {
-seqs.add$TE(seq.deriveSequence$());
+seqs.add$O(seq.deriveSequence$());
 }}
 if (!seqs.isEmpty$()) {
-al=Clazz.new_($I$(6).c$$jalview_datamodel_SequenceIA,[seqs.toArray$TTA(Clazz.array($I$(7), [seqs.size$()]))]);
+al=Clazz.new_([seqs.toArray$OA(Clazz.array($I$(6), [seqs.size$()]))],$I$(5,1).c$$jalview_datamodel_SequenceIA);
 } else {
 System.out.println$S("No record found for '" + emprefx + ":" + query + "'" );
 }}this.stopQuery$();
@@ -56,19 +52,19 @@ return al;
 });
 
 Clazz.newMeth(C$, 'getEmblEntries$java_io_InputStream', function (is) {
-var entries=Clazz.new_($I$(5));
+var entries=Clazz.new_($I$(4,1));
 try {
-var jc=$I$(8).newInstance$S("jalview.xml.binding.embl");
-var streamReader=$I$(9).newInstance$().createXMLStreamReader$java_io_InputStream(is);
+var jc=$I$(7).newInstance$S("jalview.xml.binding.embl");
+var streamReader=$I$(8).newInstance$().createXMLStreamReader$java_io_InputStream(is);
 var um=jc.createUnmarshaller$();
-var rootElement=um.unmarshal$javax_xml_stream_XMLStreamReader$Class(streamReader, Clazz.getClass($I$(10)));
+var rootElement=um.unmarshal$javax_xml_stream_XMLStreamReader$Class(streamReader, Clazz.getClass($I$(9)));
 var root=rootElement.getValue$();
 if (root == null ) {
 return entries;
 }if (root.getEntrySet$() != null ) {
 entries=root.getEntrySet$().getEntry$();
 } else if (root.getEntry$() != null ) {
-entries.add$TE(root.getEntry$());
+entries.add$O(root.getEntry$());
 }} catch (e) {
 if (Clazz.exceptionOf(e,"javax.xml.bind.JAXBException") || Clazz.exceptionOf(e,"javax.xml.stream.XMLStreamException") || Clazz.exceptionOf(e,"javax.xml.stream.FactoryConfigurationError")){
 e.printStackTrace$();
@@ -85,28 +81,28 @@ if (seqString == null ) {
 return null;
 }seqString=seqString.replace$CharSequence$CharSequence(" ", "").replace$CharSequence$CharSequence("\n", "").replace$CharSequence$CharSequence("\t", "");
 var accession=entry.getAccession$();
-var dna=Clazz.new_($I$(11).c$$S$S,[sourceDb + "|" + accession , seqString]);
+var dna=Clazz.new_($I$(10,1).c$$S$S,[sourceDb + "|" + accession , seqString]);
 dna.setDescription$S(entry.getDescription$());
 var sequenceVersion=String.valueOf$I(entry.getVersion$().intValue$());
-var selfRref=Clazz.new_($I$(12).c$$S$S$S,[sourceDb, sequenceVersion, accession]);
+var selfRref=Clazz.new_($I$(11,1).c$$S$S$S,[sourceDb, sequenceVersion, accession]);
 dna.addDBRef$jalview_datamodel_DBRefEntry(selfRref);
-selfRref.setMap$jalview_datamodel_Mapping(Clazz.new_($I$(13).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[null, Clazz.array(Integer.TYPE, -1, [1, dna.getLength$()]), Clazz.array(Integer.TYPE, -1, [1, dna.getLength$()]), 1, 1]));
+selfRref.setMap$jalview_datamodel_Mapping(Clazz.new_([null, Clazz.array(Integer.TYPE, -1, [1, dna.getLength$()]), Clazz.array(Integer.TYPE, -1, [1, dna.getLength$()]), 1, 1],$I$(12,1).c$$jalview_datamodel_SequenceI$IA$IA$I$I));
 var xrefs=entry.getXref$();
 if (xrefs != null ) {
 for (var xref, $xref = xrefs.iterator$(); $xref.hasNext$()&&((xref=($xref.next$())),1);) {
 var acc=xref.getId$();
-var source=$I$(14).getCanonicalName$S(xref.getDb$());
+var source=$I$(13,"getCanonicalName$S",[xref.getDb$()]);
 var version=xref.getSecondaryId$();
 if (version == null  || "".equals$O(version) ) {
 version="0";
-}dna.addDBRef$jalview_datamodel_DBRefEntry(Clazz.new_($I$(12).c$$S$S$S,[source, version, acc]));
+}dna.addDBRef$jalview_datamodel_DBRefEntry(Clazz.new_($I$(11,1).c$$S$S$S,[source, version, acc]));
 }
-}var matcher=Clazz.new_($I$(15).c$$java_util_List,[peptides]);
+}var matcher=Clazz.new_($I$(14,1).c$$java_util_List,[peptides]);
 try {
 var features=entry.getFeature$();
 if (features != null ) {
 for (var feature, $feature = features.iterator$(); $feature.hasNext$()&&((feature=($feature.next$())),1);) {
-if ($I$(16).isCodingFeature$S$S(sourceDb, feature.getName$())) {
+if ($I$(15,"isCodingFeature$S$S",[sourceDb, feature.getName$()])) {
 this.parseCodingFeature$jalview_xml_binding_embl_EntryType$jalview_xml_binding_embl_EntryType_Feature$S$jalview_datamodel_SequenceI$java_util_List$jalview_analysis_SequenceIdMatcher(entry, feature, sourceDb, dna, peptides, matcher);
 }}
 }} catch (e) {
@@ -131,7 +127,7 @@ var exons=this.getCdsRanges$S$jalview_xml_binding_embl_EntryType_Feature(entry.g
 var translation=null;
 var proteinName="";
 var proteinId=null;
-var vals=Clazz.new_($I$(17));
+var vals=Clazz.new_($I$(16,1));
 var codonStart=1;
 if (feature.getQualifier$() != null ) {
 for (var q, $q = feature.getQualifier$().iterator$(); $q.hasNext$()&&((q=($q.next$())),1);) {
@@ -156,19 +152,19 @@ throw e;
 proteinName=value;
 } else {
 if (!"".equals$O(value)) {
-vals.put$TK$TV(qname, value);
+vals.put$O$O(qname, value);
 }}}
 }var proteinToEmblProteinRef=null;
-exons=$I$(18).removeStartPositions$I$IA(codonStart - 1, exons);
+exons=$I$(17).removeStartPositions$I$IA(codonStart - 1, exons);
 var product=null;
 var dnaToProteinMapping=null;
 if (translation != null  && proteinName != null   && proteinId != null  ) {
 var translationLength=translation.length$();
 product=matcher.findIdMatch$S(proteinId);
 if (product == null ) {
-product=Clazz.new_($I$(11).c$$S$S$I$I,[proteinId, translation, 1, translationLength]);
+product=Clazz.new_($I$(10,1).c$$S$S$I$I,[proteinId, translation, 1, translationLength]);
 product.setDescription$S(((proteinName.length$() == 0) ? "Protein Product from " + sourceDb : proteinName));
-peptides.add$TE(product);
+peptides.add$O(product);
 matcher.add$jalview_datamodel_SequenceI(product);
 }if (exons == null  || exons.length == 0 ) {
 System.err.println$S("Implementation Notice: EMBLCDS records not properly supported yet - Making up the CDNA region of this sequence... may be incorrect (" + sourceDb + ":" + entry.getAccession$() + ")" );
@@ -176,24 +172,24 @@ var dnaLength=dna.getLength$();
 if (translationLength * 3 == (1 - codonStart + dnaLength)) {
 System.err.println$S("Not allowing for additional stop codon at end of cDNA fragment... !");
 exons=Clazz.array(Integer.TYPE, -1, [dna.getStart$() + (codonStart - 1), dna.getEnd$()]);
-dnaToProteinMapping=Clazz.new_($I$(13).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[product, exons, Clazz.array(Integer.TYPE, -1, [1, translationLength]), 3, 1]);
+dnaToProteinMapping=Clazz.new_([product, exons, Clazz.array(Integer.TYPE, -1, [1, translationLength]), 3, 1],$I$(12,1).c$$jalview_datamodel_SequenceI$IA$IA$I$I);
 }if ((translationLength + 1) * 3 == (1 - codonStart + dnaLength)) {
 System.err.println$S("Allowing for additional stop codon at end of cDNA fragment... will probably cause an error in VAMSAs!");
 exons=Clazz.array(Integer.TYPE, -1, [dna.getStart$() + (codonStart - 1), dna.getEnd$() - 3]);
-dnaToProteinMapping=Clazz.new_($I$(13).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[product, exons, Clazz.array(Integer.TYPE, -1, [1, translationLength]), 3, 1]);
+dnaToProteinMapping=Clazz.new_([product, exons, Clazz.array(Integer.TYPE, -1, [1, translationLength]), 3, 1],$I$(12,1).c$$jalview_datamodel_SequenceI$IA$IA$I$I);
 }} else {
 if (isEmblCdna) {
 } else {
 var cdsRanges=C$.adjustForProteinLength$I$IA(translationLength, exons);
-dnaToProteinMapping=Clazz.new_($I$(13).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[product, cdsRanges, Clazz.array(Integer.TYPE, -1, [1, translationLength]), 3, 1]);
+dnaToProteinMapping=Clazz.new_([product, cdsRanges, Clazz.array(Integer.TYPE, -1, [1, translationLength]), 3, 1],$I$(12,1).c$$jalview_datamodel_SequenceI$IA$IA$I$I);
 if (product != null ) {
-var proteinToEmblRef=Clazz.new_($I$(12).c$$S$S$S$jalview_datamodel_Mapping,["EMBL", sequenceVersion, proteinId, Clazz.new_($I$(13).c$$jalview_util_MapList,[dnaToProteinMapping.getMap$().getInverse$()])]);
+var proteinToEmblRef=Clazz.new_(["EMBL", sequenceVersion, proteinId, Clazz.new_([dnaToProteinMapping.getMap$().getInverse$()],$I$(12,1).c$$jalview_util_MapList)],$I$(11,1).c$$S$S$S$jalview_datamodel_Mapping);
 product.addDBRef$jalview_datamodel_DBRefEntry(proteinToEmblRef);
-var proteinToCdsMapList=Clazz.new_($I$(19).c$$IA$IA$I$I,[Clazz.array(Integer.TYPE, -1, [1, translationLength]), Clazz.array(Integer.TYPE, -1, [1 + (codonStart - 1), (codonStart - 1) + 3 * translationLength]), 1, 3]);
-var proteinToEmblCdsRef=Clazz.new_($I$(12).c$$S$S$S$jalview_datamodel_Mapping,["EMBLCDS", sequenceVersion, proteinId, Clazz.new_($I$(13).c$$jalview_util_MapList,[proteinToCdsMapList])]);
+var proteinToCdsMapList=Clazz.new_([Clazz.array(Integer.TYPE, -1, [1, translationLength]), Clazz.array(Integer.TYPE, -1, [1 + (codonStart - 1), (codonStart - 1) + 3 * translationLength]), 1, 3],$I$(18,1).c$$IA$IA$I$I);
+var proteinToEmblCdsRef=Clazz.new_(["EMBLCDS", sequenceVersion, proteinId, Clazz.new_($I$(12,1).c$$jalview_util_MapList,[proteinToCdsMapList])],$I$(11,1).c$$S$S$S$jalview_datamodel_Mapping);
 product.addDBRef$jalview_datamodel_DBRefEntry(proteinToEmblCdsRef);
-proteinToEmblProteinRef=Clazz.new_($I$(12).c$$jalview_api_DBRefEntryI,[proteinToEmblCdsRef]);
-proteinToEmblProteinRef.setSource$S($I$(20).EMBLCDSProduct);
+proteinToEmblProteinRef=Clazz.new_($I$(11,1).c$$jalview_api_DBRefEntryI,[proteinToEmblCdsRef]);
+proteinToEmblProteinRef.setSource$S($I$(19).EMBLCDSProduct);
 proteinToEmblProteinRef.setMap$jalview_datamodel_Mapping(null);
 product.addDBRef$jalview_datamodel_DBRefEntry(proteinToEmblProteinRef);
 }}}var cds=feature.getName$();
@@ -218,23 +214,23 @@ var xrefs=feature.getXref$();
 if (xrefs != null ) {
 var mappingUsed=false;
 for (var xref, $xref = xrefs.iterator$(); $xref.hasNext$()&&((xref=($xref.next$())),1);) {
-var source=$I$(14).getCanonicalName$S(xref.getDb$());
+var source=$I$(13,"getCanonicalName$S",[xref.getDb$()]);
 var version=xref.getSecondaryId$();
 if (version == null  || "".equals$O(version) ) {
 version="0";
-}var dbref=Clazz.new_($I$(12).c$$S$S$S,[source, version, xref.getId$()]);
-var proteinDbRef=Clazz.new_($I$(12).c$$S$S$S,[source, version, dbref.getAccessionId$()]);
+}var dbref=Clazz.new_([source, version, xref.getId$()],$I$(11,1).c$$S$S$S);
+var proteinDbRef=Clazz.new_([source, version, dbref.getAccessionId$()],$I$(11,1).c$$S$S$S);
 if (source.equals$O("UNIPROT")) {
 var proteinSeqName="UNIPROT" + "|" + dbref.getAccessionId$() ;
 if (dnaToProteinMapping != null  && dnaToProteinMapping.getTo$() != null  ) {
 if (mappingUsed) {
-dnaToProteinMapping=Clazz.new_($I$(13).c$$jalview_datamodel_Mapping,[dnaToProteinMapping]);
+dnaToProteinMapping=Clazz.new_($I$(12,1).c$$jalview_datamodel_Mapping,[dnaToProteinMapping]);
 }mappingUsed=true;
 var proteinSeq=matcher.findIdMatch$S(proteinSeqName);
 if (proteinSeq == null ) {
-proteinSeq=Clazz.new_($I$(11).c$$S$S,[proteinSeqName, product.getSequenceAsString$()]);
+proteinSeq=Clazz.new_([proteinSeqName, product.getSequenceAsString$()],$I$(10,1).c$$S$S);
 matcher.add$jalview_datamodel_SequenceI(proteinSeq);
-peptides.add$TE(proteinSeq);
+peptides.add$O(proteinSeq);
 }dnaToProteinMapping.setTo$jalview_datamodel_SequenceI(proteinSeq);
 dnaToProteinMapping.setMappedFromId$S(proteinId);
 proteinSeq.addDBRef$jalview_datamodel_DBRefEntry(proteinDbRef);
@@ -245,8 +241,8 @@ var pref=proteinDbRef;
 pref.setMap$jalview_datamodel_Mapping(null);
 product.addDBRef$jalview_datamodel_DBRefEntry(pref);
 if (dnaToProteinMapping != null ) {
-var pmap=Clazz.new_($I$(13).c$$jalview_datamodel_SequenceI$jalview_util_MapList,[dna, dnaToProteinMapping.getMap$().getInverse$()]);
-pref=Clazz.new_($I$(12).c$$S$S$S,[sourceDb, sequenceVersion, accession]);
+var pmap=Clazz.new_([dna, dnaToProteinMapping.getMap$().getInverse$()],$I$(12,1).c$$jalview_datamodel_SequenceI$jalview_util_MapList);
+pref=Clazz.new_($I$(11,1).c$$S$S$S,[sourceDb, sequenceVersion, accession]);
 pref.setMap$jalview_datamodel_Mapping(pmap);
 if (dnaToProteinMapping.getTo$() != null ) {
 dnaToProteinMapping.getTo$().addDBRef$jalview_datamodel_DBRefEntry(pref);
@@ -254,10 +250,10 @@ dnaToProteinMapping.getTo$().addDBRef$jalview_datamodel_DBRefEntry(pref);
 }
 }if (!hasUniprotDbref && product != null  ) {
 if (proteinToEmblProteinRef == null ) {
-proteinToEmblProteinRef=Clazz.new_($I$(12).c$$S$S$S,[$I$(20).EMBLCDSProduct, sequenceVersion, proteinId]);
+proteinToEmblProteinRef=Clazz.new_([$I$(19).EMBLCDSProduct, sequenceVersion, proteinId],$I$(11,1).c$$S$S$S);
 }product.addDBRef$jalview_datamodel_DBRefEntry(proteinToEmblProteinRef);
 if (dnaToProteinMapping != null  && dnaToProteinMapping.getTo$() != null  ) {
-var dnaToEmblProteinRef=Clazz.new_($I$(12).c$$S$S$S,[$I$(20).EMBLCDSProduct, sequenceVersion, proteinId]);
+var dnaToEmblProteinRef=Clazz.new_([$I$(19).EMBLCDSProduct, sequenceVersion, proteinId],$I$(11,1).c$$S$S$S);
 dnaToEmblProteinRef.setMap$jalview_datamodel_Mapping(dnaToProteinMapping);
 dnaToProteinMapping.setMappedFromId$S(proteinId);
 dna.addDBRef$jalview_datamodel_DBRefEntry(dnaToEmblProteinRef);
@@ -272,11 +268,11 @@ var location=feature.getLocation$();
 if (location == null ) {
 return Clazz.array(Integer.TYPE, -1, []);
 }try {
-var ranges=$I$(21).parseLocation$S(location);
+var ranges=$I$(20).parseLocation$S(location);
 return this.listToArray$java_util_List(ranges);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.text.ParseException")){
-$I$(22).log.warn$O(String.format$S$OA("Not parsing inexact CDS location %s in ENA %s", [location, accession]));
+$I$(21).log.warn$O(String.format$S$OA("Not parsing inexact CDS location %s in ENA %s", [location, accession]));
 return Clazz.array(Integer.TYPE, -1, []);
 } else {
 throw e;
@@ -295,18 +291,11 @@ return result;
 });
 
 Clazz.newMeth(C$, 'makeCdsFeature$S$S$I$I$S$java_util_Map', function (type, desc, begin, end, group, vals) {
-var sf=Clazz.new_($I$(23).c$$S$S$I$I$S,[type, desc, begin, end, group]);
+var sf=Clazz.new_($I$(22,1).c$$S$S$I$I$S,[type, desc, begin, end, group]);
 if (!vals.isEmpty$()) {
-var sb=Clazz.new_($I$(24));
-var first=true;
 for (var val, $val = vals.entrySet$().iterator$(); $val.hasNext$()&&((val=($val.next$())),1);) {
-if (!first) {
-sb.append$S(";");
-}sb.append$S(val.getKey$()).append$S("=").append$S(val.getValue$());
-first=false;
 sf.setValue$S$O(val.getKey$(), val.getValue$());
 }
-sf.setAttributes$S(sb.toString());
 }return sf;
 });
 
@@ -314,7 +303,7 @@ Clazz.newMeth(C$, 'adjustForProteinLength$I$IA', function (proteinLength, exon) 
 if (proteinLength <= 0 || exon == null  ) {
 return exon;
 }var expectedCdsLength=proteinLength * 3;
-var exonLength=$I$(18).getLength$java_util_List($I$(25).asList$TTA([exon]));
+var exonLength=$I$(17,"getLength$java_util_List",[$I$(23).asList$OA([exon])]);
 if (expectedCdsLength >= exonLength || expectedCdsLength == exonLength - 3 ) {
 return exon;
 }var origxon;
@@ -342,4 +331,4 @@ exon=nxon;
 }return exon;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

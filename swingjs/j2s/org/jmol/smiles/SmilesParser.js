@@ -1,51 +1,34 @@
-(function(){var P$=Clazz.newPackage("org.jmol.smiles"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.smiles.SmilesSearch','javajs.util.PT','javajs.util.SB','org.jmol.smiles.SmilesBond','org.jmol.util.Elements','org.jmol.smiles.SmilesMeasure','org.jmol.util.Logger','javajs.util.Lst','org.jmol.smiles.SmilesAtom','org.jmol.smiles.SmilesStereo']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmilesParser");
+(function(){var P$=Clazz.newPackage("org.jmol.smiles"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.smiles.SmilesSearch','javajs.util.PT','javajs.util.SB','org.jmol.smiles.SmilesBond','org.jmol.util.Elements','org.jmol.smiles.SmilesMeasure','org.jmol.util.Logger','javajs.util.Lst','org.jmol.smiles.SmilesAtom','org.jmol.smiles.SmilesStereo']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SmilesParser");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.connections=null;
-this.htMeasures=null;
-this.flags=0;
-this.isSmarts=false;
-this.isBioSequence=false;
-this.bioType='\0';
-this.braceCount=0;
-this.branchLevel=0;
-this.componentCount=0;
-this.componentParenCount=0;
-this.ignoreStereochemistry=false;
-this.bondDirectionPaired=false;
-this.isTarget=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.connections=Clazz.new_($I$(1));
-this.htMeasures=Clazz.new_($I$(1));
+this.connections=Clazz.new_($I$(1,1));
+this.htMeasures=Clazz.new_($I$(1,1));
 this.bioType="\u0000";
 this.bondDirectionPaired=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isSmarts','isBioSequence','ignoreStereochemistry','bondDirectionPaired','isTarget'],'C',['bioType'],'I',['flags','braceCount','branchLevel','componentCount','componentParenCount'],'O',['connections','java.util.Map','+htMeasures']]]
 
 Clazz.newMeth(C$, 'newSearch$S$Z$Z', function (pattern, isSmarts, isTarget) {
 return (Clazz.new_(C$.c$$Z$Z,[isSmarts, isTarget])).parse$S(pattern);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$Z', function (isSmarts, isTarget) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.isSmarts=isSmarts;
 this.isTarget=isTarget;
 }, 1);
 
 Clazz.newMeth(C$, 'parse$S', function (pattern) {
 if (pattern == null ) throw Clazz.new_(Clazz.load('org.jmol.smiles.InvalidSmilesException').c$$S,["expression must not be null"]);
-var search=Clazz.new_($I$(2));
+var search=Clazz.new_($I$(2,1));
 if (pattern.indexOf$S("$(select") >= 0) pattern=p$1.parseNested$org_jmol_smiles_SmilesSearch$S$S.apply(this, [search, pattern, "select"]);
 var ret=Clazz.array(Integer.TYPE, [1]);
 pattern=C$.extractFlags$S$IA(pattern, ret);
 this.flags=ret[0];
-this.ignoreStereochemistry=((this.flags & 32) == 32);
 search.setFlags$I(this.flags);
 if (pattern.indexOf$S("$") >= 0) pattern=p$1.parseVariables$S.apply(this, [pattern]);
 if (this.isSmarts && pattern.indexOf$S("[$") >= 0 ) pattern=p$1.parseVariableLength$S.apply(this, [pattern]);
@@ -63,7 +46,7 @@ return search;
 });
 
 Clazz.newMeth(C$, 'parseVariableLength$S', function (pattern) {
-var sout=Clazz.new_($I$(4));
+var sout=Clazz.new_($I$(4,1));
 var len=pattern.length$() - 1;
 var nParen=0;
 var haveInternalOr=false;
@@ -141,7 +124,7 @@ continue;
 }if (max == -2147483648) max=min;
 if (repeat.indexOf$S("|") >= 0) repeat="[$(" + repeat + ")]" ;
 for (var i=min; i <= max; i++) {
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 sb.append$S("||").append$S(pattern.substring$I$I(0, pt0));
 for (var j=0; j < i; j++) sb.append$S(repeat);
 
@@ -154,8 +137,8 @@ if (!isOK) throw Clazz.new_(Clazz.load('org.jmol.smiles.InvalidSmilesException')
 }, p$1);
 
 Clazz.newMeth(C$, 'getSubsearch$org_jmol_smiles_SmilesSearch$S$I', function (parent, pattern, flags) {
-this.htMeasures=Clazz.new_($I$(1));
-var search=Clazz.new_($I$(2));
+this.htMeasures=Clazz.new_($I$(1,1));
+var search=Clazz.new_($I$(2,1));
 search.setTop$org_jmol_smiles_SmilesSearch(parent);
 search.isSmarts=this.isSmarts;
 search.pattern=pattern;
@@ -246,7 +229,7 @@ break;
 case 0:
 break out;
 case -1:
-if (!(($I$(3).isDigit$C(C$.getChar$S$I(pattern, ++index)) && index++ > 0  ? $I$(3).isDigit$C(C$.getChar$S$I(pattern, index++)) : true) && (ch=C$.getChar$S$I(pattern, index)) == "-" )) throw Clazz.new_(Clazz.load('org.jmol.smiles.InvalidSmilesException').c$$S,["malformed atropisomerism bond ^nn-  or ^^nn-"]);
+if (!(((function(a,f){return f.apply(null,a)})([C$.getChar$S$I(pattern, ++index)],$I$(3).isDigit$C) && index++ > 0  ? (function(a,f){return f.apply(null,a)})([C$.getChar$S$I(pattern, index++)],$I$(3).isDigit$C) : true) && (ch=C$.getChar$S$I(pattern, index)) == "-" )) throw Clazz.new_(Clazz.load('org.jmol.smiles.InvalidSmilesException').c$$S,["malformed atropisomerism bond ^nn-  or ^^nn-"]);
 continue;
 }
 ch=C$.getChar$S$I(pattern, ++index);
@@ -304,7 +287,7 @@ bond=null;
 break;
 default:
 var ch2=(!this.isBioSequence && $I$(3).isUpperCase$C(ch)  ? C$.getChar$S$I(pattern, index + 1) : "\u0000");
-if (ch != "X" || ch2 != "x" ) if (!$I$(3).isLowerCase$C(ch2) || $I$(6).elementNumberFromSymbol$S$Z(pattern.substring$I$I(index, index + 2), true) == 0 ) ch2="\u0000";
+if (ch != "X" || ch2 != "x" ) if (!$I$(3).isLowerCase$C(ch2) || (function(a,f){return f.apply(null,a)})([pattern.substring$I$I(index, index + 2), true],$I$(6).elementNumberFromSymbol$S$Z) == 0 ) ch2="\u0000";
 if (ch2 != "\u0000" && "NA CA BA PA SC AC".indexOf$S(pattern.substring$I$I(index, index + 2)) >= 0 ) {
 ch2="\u0000";
 }var size=($I$(3).isUpperCase$C(ch) && $I$(3).isLowerCase$C(ch2)  ? 2 : 1);
@@ -325,7 +308,7 @@ Clazz.newMeth(C$, 'parseConnection$org_jmol_smiles_SmilesSearch$I$org_jmol_smile
 var r=Integer.valueOf$I(ringNum);
 var bond0=this.connections.get$O(r);
 if (bond0 == null ) {
-this.connections.put$TK$TV(r, bond);
+this.connections.put$O$O(r, bond);
 search.top.ringCount++;
 return;
 }this.connections.remove$O(r);
@@ -415,9 +398,9 @@ var i=tokens.length;
 for (; --i >= 0; ) if (Float.isNaN$F(vals[i]=Float.parseFloat$S(tokens[i]))) break;
 
 if (i >= 0) break;
-m=Clazz.new_($I$(7).c$$org_jmol_smiles_SmilesSearch$I$I$Z$FA,[search, index, type, isNot, vals]);
-search.measures.addLast$TV(m);
-if (index > 0) this.htMeasures.put$TK$TV(id, m);
+m=Clazz.new_($I$(7,1).c$$org_jmol_smiles_SmilesSearch$I$I$Z$FA,[search, index, type, isNot, vals]);
+search.measures.addLast$O(m);
+if (index > 0) this.htMeasures.put$O$O(id, m);
  else if (index == 0 && $I$(8).debugging ) $I$(8).debug$S("measure created: " + m);
 } else {
 if (!m.addPoint$I(currentAtom.index)) break;
@@ -475,8 +458,8 @@ return pattern;
 }, p$1);
 
 Clazz.newMeth(C$, 'parseVariables$S', function (pattern) {
-var keys=Clazz.new_($I$(9));
-var values=Clazz.new_($I$(9));
+var keys=Clazz.new_($I$(9,1));
+var values=Clazz.new_($I$(9,1));
 var index;
 var ipt=0;
 var iptLast=-1;
@@ -488,8 +471,8 @@ if (ipt <= index + 1 || C$.getChar$S$I(pattern, ipt + 1) != "\"" ) break;
 var key=pattern.substring$I$I(index, ipt);
 if (key.lastIndexOf$I("$") > 0 || key.indexOf$I("]") > 0 ) throw Clazz.new_(Clazz.load('org.jmol.smiles.InvalidSmilesException').c$$S,["Invalid variable name: " + key]);
 var s=C$.getSubPattern$S$I$C(pattern, ipt + 1, "\"");
-keys.addLast$TV("[" + key + "]" );
-values.addLast$TV(s);
+keys.addLast$O("[" + key + "]" );
+values.addLast$O(s);
 ipt+=s.length$() + 2;
 ipt=C$.skipTo$S$I$C(pattern, ipt, ";");
 iptLast=++ipt;
@@ -507,7 +490,7 @@ return pattern;
 
 Clazz.newMeth(C$, 'parseAtom$org_jmol_smiles_SmilesSearch$org_jmol_smiles_SmilesAtom$S$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesBond$Z$Z$Z', function (search, atomSet, pattern, atom, bond, isBracketed, isAND, isBranchAtom) {
 if (pattern == null  || pattern.length$() == 0 ) throw Clazz.new_(Clazz.load('org.jmol.smiles.InvalidSmilesException').c$$S,["Empty atom definition"]);
-var newAtom=Clazz.new_($I$(10));
+var newAtom=Clazz.new_($I$(10,1));
 if (this.componentParenCount > 0) newAtom.component=this.componentCount;
 if (atomSet == null ) search.appendAtom$org_jmol_smiles_SmilesAtom(newAtom);
 var isNewAtom=true;
@@ -601,7 +584,7 @@ newAtom.atomClass=ret[0];
 break;
 default:
 var nextChar=C$.getChar$S$I(pattern, index + 1);
-var len=index + ($I$(3).isLowerCase$C(nextChar) && (!isBracketed || !$I$(3).isDigit$C(C$.getChar$S$I(pattern, index + 2)) )  ? 2 : 1);
+var len=index + ($I$(3).isLowerCase$C(nextChar) && (!isBracketed || !(function(a,f){return f.apply(null,a)})([C$.getChar$S$I(pattern, index + 2)],$I$(3).isDigit$C) )  ? 2 : 1);
 var sym2=pattern.substring$I$I(index + 1, len);
 var symbol=Character.toUpperCase$C(ch) + sym2;
 var mustBeSymbol=true;
@@ -725,7 +708,7 @@ break;
 }case 46:
 if (bond == null  && bondSet == null  ) {
 this.isBioSequence=(C$.getChar$S$I(pattern, 1) == "~");
-return Clazz.new_($I$(5).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z,[null, null, 0, false]);
+return Clazz.new_($I$(5,1).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z,[null, null, 0, false]);
 }len=-1;
 break;
 case 43:
@@ -734,7 +717,7 @@ break;
 }
 } else {
 ch="\u0000";
-}var newBond=(bondSet == null  ? (bond == null  ? Clazz.new_($I$(5).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z,[currentAtom, null, (this.isBioSequence && currentAtom != null   ? (isBranchAtom ? 112 : 96) : -1), false]) : bond) : isAND ? bondSet.addPrimitive$() : bondSet.addBondOr$());
+}var newBond=(bondSet == null  ? (bond == null  ? Clazz.new_([currentAtom, null, (this.isBioSequence && currentAtom != null   ? (isBranchAtom ? 112 : 96) : -1), false],$I$(5,1).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z) : bond) : isAND ? bondSet.addPrimitive$() : bondSet.addBondOr$());
 if (len > 0 && !p$1.checkLogic$org_jmol_smiles_SmilesSearch$S$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesBond$org_jmol_smiles_SmilesAtom$Z$Z$IA.apply(this, [search, pattern, null, newBond, currentAtom, isAND, false, ret]) ) {
 var isBondNot=(ch == "!");
 if (isBondNot) {
@@ -810,7 +793,7 @@ index=pt + 1;
 if (pt == 0 || bond == null  && !this.isSmarts  ) break;
 if (bond != null  && pt < 0 ) {
 if (len > 1) {
-var sNew=Clazz.new_($I$(4));
+var sNew=Clazz.new_($I$(4,1));
 for (var i=0; i < len; ) {
 var ch=pattern.charAt$I(i++);
 sNew.appendC$C(ch);
@@ -886,7 +869,7 @@ return (i < pattern.length$() ? pattern.charAt$I(i) : "\u0000");
 Clazz.newMeth(C$, 'getDigits$S$I$IA', function (pattern, index, ret) {
 var pt=index;
 var len=pattern.length$();
-while (pt < len && $I$(3).isDigit$C(pattern.charAt$I(pt)) )pt++;
+while (pt < len && (function(a,f){return f.apply(null,a)})([pattern.charAt$I(pt)],$I$(3).isDigit$C) )pt++;
 
 if (pt > index) try {
 ret[0]=Integer.parseInt$S(pattern.substring$I$I(index, pt));
@@ -940,4 +923,4 @@ return ret[0];
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

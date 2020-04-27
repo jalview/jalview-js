@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ShiftList");
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ShiftList");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.shifts=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['shifts','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.shifts=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.shifts=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'addShift$I$I', function (pos, shift) {
@@ -25,7 +21,7 @@ while (sidx < this.shifts.size$() && (rshift=this.shifts.get$I(sidx))[0] < pos )
 sidx++;
 }
 if (sidx == this.shifts.size$()) {
-this.shifts.add$I$TE(sidx, Clazz.array(Integer.TYPE, -1, [pos, shift]));
+this.shifts.add$I$O(sidx, Clazz.array(Integer.TYPE, -1, [pos, shift]));
 } else {
 rshift[1]+=shift;
 }}});
@@ -52,7 +48,7 @@ var inverse=Clazz.new_(C$);
 if (this.shifts != null ) {
 for (var sh, $sh = this.shifts.iterator$(); $sh.hasNext$()&&((sh=($sh.next$())),1);) {
 if (sh != null ) {
-inverse.shifts.add$TE(Clazz.array(Integer.TYPE, -1, [sh[0], -sh[1]]));
+inverse.shifts.add$O(Clazz.array(Integer.TYPE, -1, [sh[0], -sh[1]]));
 }}
 }}return inverse;
 });
@@ -73,4 +69,4 @@ Clazz.newMeth(C$, 'getShifts$', function () {
 return this.shifts;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,28 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'InternalError',['java.awt.geom.Point2D','.Double'],['java.awt.geom.Point2D','.Float'],'javajs.util.AU',['java.awt.geom.Path2D','.Double']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AffineTransform", null, null, ['Cloneable', 'java.io.Serializable']);
-C$.rot90conversion=null;
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'InternalError',['java.awt.geom.Point2D','.Double'],['java.awt.geom.Point2D','.Float'],'javajs.util.AU',['java.awt.geom.Path2D','.Double']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AffineTransform", null, null, ['Cloneable', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.rot90conversion=Clazz.array(Integer.TYPE, -1, [4, 5, 4, 5, 2, 3, 6, 7]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m00=0;
-this.m10=0;
-this.m01=0;
-this.m11=0;
-this.m02=0;
-this.m12=0;
-this.state=0;
-this.type=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['m00','m10','m01','m11','m02','m12'],'I',['state','type']]
+,['O',['rot90conversion','int[]']]]
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (m00, m10, m01, m11, m02, m12, state) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m00=m00;
 this.m10=m10;
 this.m01=m01;
@@ -34,12 +22,12 @@ this.type=-1;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m00=this.m11=1.0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform', function (Tx) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m00=Tx.m00;
 this.m10=Tx.m10;
 this.m01=Tx.m01;
@@ -51,7 +39,7 @@ this.type=Tx.type;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$F$F$F$F', function (m00, m10, m01, m11, m02, m12) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m00=m00;
 this.m10=m10;
 this.m01=m01;
@@ -62,7 +50,7 @@ this.updateState$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$FA', function (flatmatrix) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m00=flatmatrix[0];
 this.m10=flatmatrix[1];
 this.m01=flatmatrix[2];
@@ -74,7 +62,7 @@ this.m12=flatmatrix[5];
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D', function (m00, m10, m01, m11, m02, m12) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m00=m00;
 this.m10=m10;
 this.m01=m01;
@@ -85,7 +73,7 @@ this.updateState$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$DA', function (flatmatrix) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m00=flatmatrix[0];
 this.m10=flatmatrix[1];
 this.m01=flatmatrix[2];
@@ -298,7 +286,7 @@ this.type=-1;
 }}}});
 
 Clazz.newMeth(C$, 'stateError', function () {
-throw Clazz.new_($I$(1).c$$S,["missing case in transform state switch"]);
+throw Clazz.new_($I$(1,1).c$$S,["missing case in transform state switch"]);
 }, p$1);
 
 Clazz.newMeth(C$, 'getMatrix$DA', function (flatmatrix) {
@@ -1371,9 +1359,9 @@ break;
 Clazz.newMeth(C$, 'transform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst=Clazz.new_($I$(2));
+ptDst=Clazz.new_($I$(2,1));
 } else {
-ptDst=Clazz.new_($I$(3));
+ptDst=Clazz.new_($I$(3,1));
 }}var x=ptSrc.getX$();
 var y=ptSrc.getY$();
 switch (this.state) {
@@ -1419,9 +1407,9 @@ var y=src.getY$();
 var dst=ptDst[dstOff++];
 if (dst == null ) {
 if (Clazz.instanceOf(src, "java.awt.geom.Point2D.Double")) {
-dst=Clazz.new_($I$(2));
+dst=Clazz.new_($I$(2,1));
 } else {
-dst=Clazz.new_($I$(3));
+dst=Clazz.new_($I$(3,1));
 }ptDst[dstOff - 1]=dst;
 }switch (state) {
 default:
@@ -1829,9 +1817,9 @@ return;
 Clazz.newMeth(C$, 'inverseTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst=Clazz.new_($I$(2));
+ptDst=Clazz.new_($I$(2,1));
 } else {
-ptDst=Clazz.new_($I$(3));
+ptDst=Clazz.new_($I$(3,1));
 }}var x=ptSrc.getX$();
 var y=ptSrc.getY$();
 switch (this.state) {
@@ -1981,9 +1969,9 @@ System.arraycopy$O$I$O$I$I(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 Clazz.newMeth(C$, 'deltaTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst=Clazz.new_($I$(2));
+ptDst=Clazz.new_($I$(2,1));
 } else {
-ptDst=Clazz.new_($I$(3));
+ptDst=Clazz.new_($I$(3,1));
 }}var x=ptSrc.getX$();
 var y=ptSrc.getY$();
 switch (this.state) {
@@ -2062,7 +2050,7 @@ System.arraycopy$O$I$O$I$I(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 Clazz.newMeth(C$, 'createTransformedShape$java_awt_Shape', function (pSrc) {
 if (pSrc == null ) {
 return null;
-}return Clazz.new_($I$(5).c$$java_awt_Shape$java_awt_geom_AffineTransform,[pSrc, this]);
+}return Clazz.new_($I$(5,1).c$$java_awt_Shape$java_awt_geom_AffineTransform,[pSrc, this]);
 });
 
 Clazz.newMeth(C$, '_matround$D', function (matval) {
@@ -2082,7 +2070,7 @@ try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(1));
+throw Clazz.new_($I$(1,1));
 } else {
 throw e;
 }
@@ -2105,5 +2093,9 @@ return false;
 }var a=obj;
 return ((this.m00 == a.m00 ) && (this.m01 == a.m01 ) && (this.m02 == a.m02 ) && (this.m10 == a.m10 ) && (this.m11 == a.m11 ) && (this.m12 == a.m12 )  );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.rot90conversion=Clazz.array(Integer.TYPE, -1, [4, 5, 4, 5, 2, 3, 6, 7]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

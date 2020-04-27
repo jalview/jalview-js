@@ -1,24 +1,17 @@
 (function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={};
-var C$=Clazz.newClass(P$, "_MayaExporter", null, 'org.jmol.export.__CartesianExporter');
+/*c*/var C$=Clazz.newClass(P$, "_MayaExporter", null, 'org.jmol.export.__CartesianExporter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nBalls=0;
-this.nCyl=0;
-this.name=null;
-this.id=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nBalls=0;
 this.nCyl=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nBalls','nCyl'],'S',['name','id']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.commentChar="// ";
 }, 1);
 
@@ -134,4 +127,4 @@ Clazz.newMeth(C$, 'outputFace$IA$IA$I', function (is, coordMap, faceVertexMax) {
 Clazz.newMeth(C$, 'output$javajs_util_T3', function (pt) {
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

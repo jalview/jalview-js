@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultButtonModel',['javax.swing.JMenuItem','.MenuItemFocusListener'],'Boolean','javax.swing.UIManager','javax.swing.event.MenuDragMouseEvent','javax.swing.event.MenuKeyEvent','javax.swing.event.MenuDragMouseListener','javax.swing.event.MenuKeyListener','javax.swing.MenuElement']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JMenuItem", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultButtonModel',['javax.swing.JMenuItem','.MenuItemFocusListener'],'javax.swing.UIManager','javax.swing.event.MenuDragMouseEvent','javax.swing.event.MenuKeyEvent','javax.swing.event.MenuDragMouseListener','javax.swing.event.MenuKeyListener','javax.swing.MenuElement']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JMenuItem", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.AbstractButton', 'javax.swing.MenuElement');
+C$.$classes$=[['MenuItemFocusListener',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isMouseDragged=false;
-this.accelerator=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isMouseDragged=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isMouseDragged'],'O',['accelerator','javax.swing.KeyStroke']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$S$javax_swing_Icon.apply(this, [null, null]);
@@ -34,14 +30,14 @@ this.setAction$javax_swing_Action(a);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_Icon', function (text, icon) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setModel$();
 this.init$S$javax_swing_Icon(text, icon);
 this.initFocusability$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I', function (text, mnemonic) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setModel$();
 this.init$S$javax_swing_Icon(text, null);
 this.setMnemonic$I(mnemonic);
@@ -49,7 +45,7 @@ this.initFocusability$();
 }, 1);
 
 Clazz.newMeth(C$, 'setModel$', function () {
-this.setModel$javax_swing_ButtonModel(Clazz.new_($I$(1)));
+this.setModel$javax_swing_ButtonModel(Clazz.new_($I$(1,1)));
 });
 
 Clazz.newMeth(C$, 'setModel$javax_swing_ButtonModel', function (newModel) {
@@ -63,12 +59,12 @@ return "MenuItemUI";
 });
 
 Clazz.newMeth(C$, 'init$S$javax_swing_Icon', function (text, icon) {
-this._j2sInvalidateOnAdd=false;
+this.秘j2sInvalidateOnAdd=false;
 this.updateUI$();
 if (text != null ) this.setText$S(text);
 if (icon != null ) this.setIcon$javax_swing_Icon(icon);
-this.addFocusListener$java_awt_event_FocusListener(Clazz.new_($I$(2)));
-this.setUIProperty$S$O("borderPainted", $I$(3).FALSE);
+this.addFocusListener$java_awt_event_FocusListener(Clazz.new_($I$(2,1)));
+this.setUIProperty$S$O("borderPainted", Boolean.FALSE);
 this.setOpaque$Z(true);
 this.setFocusPainted$Z(false);
 this.setHorizontalTextPosition$I(11);
@@ -91,7 +87,7 @@ return model.isArmed$();
 });
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (b) {
-if (!b && !$I$(4).getBoolean$O("MenuItem.disabledAreNavigable") ) {
+if (!b && !$I$(3).getBoolean$O("MenuItem.disabledAreNavigable") ) {
 this.setArmed$Z(false);
 }C$.superclazz.prototype.setEnabled$Z.apply(this, [b]);
 });
@@ -103,7 +99,7 @@ return true;
 Clazz.newMeth(C$, 'setAccelerator$javax_swing_KeyStroke', function (keyStroke) {
 var oldAccelerator=this.accelerator;
 this.accelerator=keyStroke;
-this.repaint$();
+this.秘repaint$();
 this.revalidate$();
 this.firePropertyChange$S$O$O("accelerator", oldAccelerator, this.accelerator);
 });
@@ -144,11 +140,11 @@ C$.superclazz.prototype.actionPropertyChanged$javax_swing_Action$S.apply(this, [
 }});
 
 Clazz.newMeth(C$, 'processMouseEvent$java_awt_event_MouseEvent$javax_swing_MenuElementA$javax_swing_MenuSelectionManager', function (e, path, manager) {
-this.processMenuDragMouseEvent$javax_swing_event_MenuDragMouseEvent(Clazz.new_($I$(5).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager,[e.getComponent$(), e.getID$(), e.getWhen$(), e.getModifiers$(), e.getX$(), e.getY$(), e.getXOnScreen$(), e.getYOnScreen$(), e.getClickCount$(), e.isPopupTrigger$(), path, manager]));
+this.processMenuDragMouseEvent$javax_swing_event_MenuDragMouseEvent(Clazz.new_([e.getComponent$(), e.getID$(), e.getWhen$(), e.getModifiers$(), e.getX$(), e.getY$(), e.getXOnScreen$(), e.getYOnScreen$(), e.getClickCount$(), e.isPopupTrigger$(), path, manager],$I$(4,1).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager));
 });
 
 Clazz.newMeth(C$, 'processKeyEvent$java_awt_event_KeyEvent$javax_swing_MenuElementA$javax_swing_MenuSelectionManager', function (e, path, manager) {
-var mke=Clazz.new_($I$(6).c$$java_awt_Component$I$J$I$I$C$javax_swing_MenuElementA$javax_swing_MenuSelectionManager,[e.getComponent$(), e.getID$(), e.getWhen$(), e.getModifiers$(), e.getKeyCode$(), e.getKeyChar$(), path, manager]);
+var mke=Clazz.new_([e.getComponent$(), e.getID$(), e.getWhen$(), e.getModifiers$(), e.getKeyCode$(), e.getKeyChar$(), path, manager],$I$(5,1).c$$java_awt_Component$I$J$I$I$C$javax_swing_MenuElementA$javax_swing_MenuSelectionManager);
 mke.bdata=e.bdata ||null;
 this.processMenuKeyEvent$javax_swing_event_MenuKeyEvent(mke);
 if (mke.isConsumed$()) {
@@ -196,7 +192,7 @@ break;
 Clazz.newMeth(C$, 'fireMenuDragMouseEntered$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
-if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
+if (listeners[i] === Clazz.getClass($I$(6),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent(event);
 }}
 });
@@ -204,7 +200,7 @@ if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_ev
 Clazz.newMeth(C$, 'fireMenuDragMouseExited$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
-if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
+if (listeners[i] === Clazz.getClass($I$(6),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseExited$javax_swing_event_MenuDragMouseEvent(event);
 }}
 });
@@ -212,7 +208,7 @@ if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_ev
 Clazz.newMeth(C$, 'fireMenuDragMouseDragged$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
-if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
+if (listeners[i] === Clazz.getClass($I$(6),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent(event);
 }}
 });
@@ -220,7 +216,7 @@ if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_ev
 Clazz.newMeth(C$, 'fireMenuDragMouseReleased$javax_swing_event_MenuDragMouseEvent', function (event) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
-if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
+if (listeners[i] === Clazz.getClass($I$(6),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']) ) {
 (listeners[i + 1]).menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent(event);
 }}
 });
@@ -228,7 +224,7 @@ if (listeners[i] === Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_ev
 Clazz.newMeth(C$, 'fireMenuKeyPressed$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
-if (listeners[i] === Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
+if (listeners[i] === Clazz.getClass($I$(7),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyPressed$javax_swing_event_MenuKeyEvent(event);
 }}
 });
@@ -236,7 +232,7 @@ if (listeners[i] === Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_Me
 Clazz.newMeth(C$, 'fireMenuKeyReleased$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
-if (listeners[i] === Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
+if (listeners[i] === Clazz.getClass($I$(7),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyReleased$javax_swing_event_MenuKeyEvent(event);
 }}
 });
@@ -244,7 +240,7 @@ if (listeners[i] === Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_Me
 Clazz.newMeth(C$, 'fireMenuKeyTyped$javax_swing_event_MenuKeyEvent', function (event) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
-if (listeners[i] === Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
+if (listeners[i] === Clazz.getClass($I$(7),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']) ) {
 (listeners[i + 1]).menuKeyTyped$javax_swing_event_MenuKeyEvent(event);
 }}
 });
@@ -254,7 +250,7 @@ this.setArmed$Z(isIncluded);
 });
 
 Clazz.newMeth(C$, 'getSubElements$', function () {
-return Clazz.array($I$(9), [0]);
+return Clazz.array($I$(8), [0]);
 });
 
 Clazz.newMeth(C$, 'getComponent$', function () {
@@ -262,42 +258,41 @@ return this;
 });
 
 Clazz.newMeth(C$, 'addMenuDragMouseListener$javax_swing_event_MenuDragMouseListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(6),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeMenuDragMouseListener$javax_swing_event_MenuDragMouseListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(6),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getMenuDragMouseListeners$', function () {
-return this.listenerList.getListeners$Class(Clazz.getClass($I$(7),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']));
+return this.listenerList.getListeners$Class(Clazz.getClass($I$(6),['menuDragMouseDragged$javax_swing_event_MenuDragMouseEvent','menuDragMouseEntered$javax_swing_event_MenuDragMouseEvent','menuDragMouseExited$javax_swing_event_MenuDragMouseEvent','menuDragMouseReleased$javax_swing_event_MenuDragMouseEvent']));
 });
 
 Clazz.newMeth(C$, 'addMenuKeyListener$javax_swing_event_MenuKeyListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(7),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeMenuKeyListener$javax_swing_event_MenuKeyListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(7),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getMenuKeyListeners$', function () {
-return this.listenerList.getListeners$Class(Clazz.getClass($I$(8),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']));
+return this.listenerList.getListeners$Class(Clazz.getClass($I$(7),['menuKeyPressed$javax_swing_event_MenuKeyEvent','menuKeyReleased$javax_swing_event_MenuKeyEvent','menuKeyTyped$javax_swing_event_MenuKeyEvent']));
 });
 
 Clazz.newMeth(C$, 'paramString$', function () {
 return C$.superclazz.prototype.paramString$.apply(this, []);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JMenuItem, "MenuItemFocusListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JMenuItem, "MenuItemFocusListener", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.awt.event.FocusListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (event) {
 });
@@ -305,10 +300,10 @@ Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (event) {
 Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (event) {
 var mi=event.getSource$();
 if (mi.isFocusPainted$()) {
-mi.repaint$();
+mi.秘repaint$();
 }});
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

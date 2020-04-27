@@ -1,28 +1,28 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "GraphicsCallback", function(){
+/*c*/var C$=Clazz.newClass(P$, "GraphicsCallback", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'sun.awt.SunGraphicsCallback');
+C$.$classes$=[['PaintCallback',24],['PaintAllCallback',24],['PaintHeavyweightComponentsCallback',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 ;
-(function(){var C$=Clazz.newClass(P$.GraphicsCallback, "PaintCallback", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GraphicsCallback, "PaintCallback", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.GraphicsCallback');
-C$.instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['instance','java.awt.GraphicsCallback.PaintCallback']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'run$java_awt_Component$java_awt_Graphics', function (comp, cg) {
@@ -32,22 +32,26 @@ comp.paint$java_awt_Graphics(cg);
 Clazz.newMeth(C$, 'getInstance$', function () {
 return C$.instance;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GraphicsCallback, "PaintAllCallback", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GraphicsCallback, "PaintAllCallback", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.GraphicsCallback');
-C$.instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['instance','java.awt.GraphicsCallback.PaintAllCallback']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'run$java_awt_Component$java_awt_Graphics', function (comp, cg) {
@@ -57,22 +61,26 @@ comp.paintAll$java_awt_Graphics(cg);
 Clazz.newMeth(C$, 'getInstance$', function () {
 return C$.instance;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GraphicsCallback, "PaintHeavyweightComponentsCallback", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GraphicsCallback, "PaintHeavyweightComponentsCallback", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.GraphicsCallback');
-C$.instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['instance','java.awt.GraphicsCallback.PaintHeavyweightComponentsCallback']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'run$java_awt_Component$java_awt_Graphics', function (comp, cg) {
@@ -85,8 +93,12 @@ comp.paintAll$java_awt_Graphics(cg);
 Clazz.newMeth(C$, 'getInstance$', function () {
 return C$.instance;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

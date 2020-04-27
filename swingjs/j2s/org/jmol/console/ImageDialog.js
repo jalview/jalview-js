@@ -1,42 +1,32 @@
-(function(){var P$=Clazz.newPackage("org.jmol.console"),p$1={},I$=[[0,'org.jmol.awt.Platform','javax.swing.JPanel','java.awt.BorderLayout','java.awt.Color',['org.jmol.console.ImageDialog','.ImageCanvas'],'javax.swing.JMenuBar','javajs.util.PT','Thread','java.util.Hashtable','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageDialog", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.console"),p$1={},I$=[[0,'java.awt.Color','org.jmol.awt.Platform','javax.swing.JPanel','java.awt.BorderLayout',['org.jmol.console.ImageDialog','.ImageCanvas'],'javax.swing.JMenuBar','javajs.util.PT','Thread','java.util.Hashtable','java.awt.image.BufferedImage','java.awt.Dimension']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ImageDialog", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JDialog', ['org.jmol.api.GenericImageDialog', 'java.awt.event.WindowListener', 'java.awt.event.ActionListener']);
+C$.$classes$=[['ImageCanvas',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.menubar=null;
-this.image=null;
-this.vwr=null;
-this.canvas=null;
-this.$title=null;
-this.imageMap=null;
-this.console=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['$title'],'O',['menubar','javax.swing.JMenuBar','image','java.awt.Image','vwr','org.jmol.viewer.Viewer','canvas','org.jmol.console.ImageDialog.ImageCanvas','imageMap','java.util.Map','console','org.jmol.api.JmolAppConsoleInterface']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$S$java_util_Map', function (vwr, title, imageMap) {
-C$.superclazz.c$$java_awt_Frame$S$Z.apply(this, [Clazz.instanceOf($I$(1).getWindow$java_awt_Container(vwr.display), "javax.swing.JFrame") ? $I$(1).getWindow$java_awt_Container(vwr.display) : null, title, false]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Frame$S$Z.apply(this,[Clazz.instanceOf($I$(2).getWindow$java_awt_Container(vwr.display), "javax.swing.JFrame") ? $I$(2).getWindow$java_awt_Container(vwr.display) : null, title, false]);C$.$init$.apply(this);
 this.vwr=vwr;
 this.setResizable$Z(false);
 this.console=vwr.getConsole$();
 this.addWindowListener$java_awt_event_WindowListener(this);
 this.$title=title;
 this.imageMap=imageMap;
-imageMap.put$TK$TV(title, this);
-var wrapper=Clazz.new_($I$(2).c$$java_awt_LayoutManager,[Clazz.new_($I$(3))]);
-wrapper.setBackground$java_awt_Color(Clazz.new_($I$(4).c$$I$I$I,[255, 0, 0]));
-this.canvas=Clazz.new_($I$(5), [this, null]);
+imageMap.put$O$O(title, this);
+var wrapper=Clazz.new_([Clazz.new_($I$(4,1))],$I$(3,1).c$$java_awt_LayoutManager);
+wrapper.setBackground$java_awt_Color(Clazz.new_($I$(1,1).c$$I$I$I,[255, 0, 0]));
+this.canvas=Clazz.new_($I$(5,1),[this, null]);
 wrapper.add$java_awt_Component$O(this.canvas, "Center");
-var container=Clazz.new_($I$(2));
-container.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3)));
-this.menubar=Clazz.new_($I$(6));
+var container=Clazz.new_($I$(3,1));
+container.setLayout$java_awt_LayoutManager(Clazz.new_($I$(4,1)));
+this.menubar=Clazz.new_($I$(6,1));
 this.menubar.add$javax_swing_JMenu(p$1.createMenu.apply(this, []));
 this.setJMenuBar$javax_swing_JMenuBar(this.menubar);
 container.add$java_awt_Component$O(wrapper, "Center");
@@ -67,7 +57,7 @@ mi.setVisible$Z(true);
 return mi;
 }, p$1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var cmd=e.getActionCommand$();
 if (cmd.equals$O("close")) {
 this.closeMe$();
@@ -77,37 +67,35 @@ p$1.saveAs.apply(this, []);
 
 Clazz.newMeth(C$, 'saveAs', function () {
 (((P$.ImageDialog$2||
-(function(){var C$=Clazz.newClass(P$, "ImageDialog$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ImageDialog$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 })()
-), Clazz.new_($I$(8).c$$Runnable, [this, null, ((P$.ImageDialog$1||
-(function(){var C$=Clazz.newClass(P$, "ImageDialog$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+), Clazz.new_([this, null, ((P$.ImageDialog$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "ImageDialog$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-var params=Clazz.new_($I$(9));
+var params=Clazz.new_($I$(9,1));
 var fname=this.b$['org.jmol.console.ImageDialog'].vwr.dialogAsk$S$S$java_util_Map("Save Image", "jmol.png", params);
 if (fname == null ) return;
 var type="PNG";
 var pt=fname.lastIndexOf$S(".");
 if (pt > 0) type=fname.substring$I(pt + 1).toUpperCase$();
-params.put$TK$TV("fileName", fname);
-params.put$TK$TV("type", type);
-params.put$TK$TV("image", this.b$['org.jmol.console.ImageDialog'].image);
+params.put$O$O("fileName", fname);
+params.put$O$O("type", type);
+params.put$O$O("image", this.b$['org.jmol.console.ImageDialog'].image);
 this.b$['org.jmol.console.ImageDialog'].vwr.showString$S$Z(this.b$['org.jmol.console.ImageDialog'].vwr.processWriteOrCapture$java_util_Map(params), false);
 });
 })()
-), Clazz.new_(P$.ImageDialog$1.$init$, [this, null]))],P$.ImageDialog$2))).start$();
+), Clazz.new_(P$.ImageDialog$1.$init$,[this, null]))],$I$(8,1).c$$Runnable,P$.ImageDialog$2))).start$();
 }, p$1);
 
 Clazz.newMeth(C$, 'closeMe$', function () {
@@ -119,14 +107,20 @@ Clazz.newMeth(C$, 'setImage$O', function (oimage) {
 if (oimage == null ) {
 this.closeMe$();
 return;
-}this.image=oimage;
-var w=this.image.getWidth$java_awt_image_ImageObserver(null);
-var h=this.image.getHeight$java_awt_image_ImageObserver(null);
+}var w=(oimage).getWidth$java_awt_image_ImageObserver(null);
+var h=(oimage).getHeight$java_awt_image_ImageObserver(null);
+this.image=Clazz.new_($I$(10,1).c$$I$I$I,[w, h, 1]);
+var g=this.image.getGraphics$();
+g.setColor$java_awt_Color($I$(1).white);
+g.fillRect$I$I$I$I(0, 0, w, h);
+g.drawImage$java_awt_Image$I$I$java_awt_image_ImageObserver(oimage, 0, 0, null);
+g.dispose$();
 this.setTitle$S(this.$title + " [" + w + " x " + h + "]" );
-var d=Clazz.new_($I$(10).c$$I$I,[w, h]);
-this.canvas.setSize$java_awt_Dimension(d);
+var d=Clazz.new_($I$(11,1).c$$I$I,[w, h]);
+this.canvas.setPreferredSize$java_awt_Dimension(d);
+this.setBackground$java_awt_Color($I$(1).WHITE);
+this.getContentPane$().setBackground$java_awt_Color($I$(1).WHITE);
 this.pack$();
-this.repaint$();
 });
 
 Clazz.newMeth(C$, 'windowClosed$java_awt_event_WindowEvent', function (e) {
@@ -151,17 +145,19 @@ Clazz.newMeth(C$, 'windowActivated$java_awt_event_WindowEvent', function (e) {
 Clazz.newMeth(C$, 'windowDeactivated$java_awt_event_WindowEvent', function (e) {
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ImageDialog, "ImageCanvas", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ImageDialog, "ImageCanvas", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
+System.out.println$S(this.this$0.image.getClass$().getName$());
+g.setColor$java_awt_Color($I$(1).white);
+g.fillRect$I$I$I$I(0, 0, this.this$0.image.getWidth$java_awt_image_ImageObserver(null), this.this$0.image.getHeight$java_awt_image_ImageObserver(null));
 g.drawImage$java_awt_Image$I$I$java_awt_image_ImageObserver(this.this$0.image, 0, 0, null);
 });
 
@@ -170,4 +166,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

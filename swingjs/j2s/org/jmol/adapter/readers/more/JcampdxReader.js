@@ -1,27 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'javajs.util.Lst','org.jmol.util.Logger','javajs.util.PT','org.jmol.api.Interface','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Rdr','org.jmol.viewer.JC','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JcampdxReader", null, 'org.jmol.adapter.readers.molxyz.MolReader', 'org.jmol.api.JmolJDXMOLReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'javajs.util.Lst','org.jmol.util.Logger','javajs.util.PT','org.jmol.api.Interface','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Rdr','org.jmol.viewer.JC','javajs.util.BS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JcampdxReader", null, 'org.jmol.adapter.readers.molxyz.MolReader', 'org.jmol.api.JmolJDXMOLReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.selectedModel=0;
-this.mpr=null;
-this.acdMolFile=null;
-this.nPeaks=0;
-this.acdAssignments=null;
-this.title=null;
-this.nucleus=null;
-this.type=null;
-this.peakData=null;
-this.allTypes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nucleus="";
-this.peakData=Clazz.new_($I$(1));
-}, 1);
+this.peakData=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['I',['selectedModel','nPeaks'],'S',['acdMolFile','title','nucleus','type','allTypes'],'O',['mpr','org.jmol.api.JmolJDXMOLParser','acdAssignments','javajs.util.Lst','+peakData']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.vwr.setBooleanProperty$S$Z("_JSpecView".toLowerCase$(), true);
@@ -39,7 +26,7 @@ if (!this.checkFilterKey$S("NOSYNC")) this.addJmolScript$S("sync on");
 Clazz.newMeth(C$, 'checkLine$', function () {
 var i=this.line.indexOf$S("=");
 if (i < 0 || !this.line.startsWith$S("##") ) return true;
-var label=$I$(3).replaceAllCharacters$S$S$S(this.line.substring$I$I(0, i).trim$(), " ", "").toUpperCase$();
+var label=(function(a,f){return f.apply(null,a)})([this.line.substring$I$I(0, i).trim$(), " ", ""],$I$(3).replaceAllCharacters$S$S$S).toUpperCase$();
 if (label.length$() > 12) label=label.substring$I$I(0, 12);
 var pt=("##$MODELS   ##$PEAKS    ##$SIGNALS  ##$MOLFILE  ##NPOINTS   ##TITLE     ##PEAKASSIGN##$UVIR_ASSI##$MS_FRAGME##.OBSERVENU##DATATYPE  ").indexOf$S(label);
 if (pt < 0) return true;
@@ -92,7 +79,7 @@ Clazz.newMeth(C$, 'processModelData$S$S$S$S$S$F$F$Z', function (data, id, type, 
 var model0=this.asc.iSet;
 var model=null;
 while (true){
-var ret=$I$(5).staticGetAtomSetCollectionReader$S$S$O$java_util_Map(this.filePath, type, $I$(6).getBR$S(data), this.htParams);
+var ret=(function(a,f){return f.apply(null,a)})([this.filePath, type, $I$(6).getBR$S(data), this.htParams],$I$(5).staticGetAtomSetCollectionReader$S$S$O$java_util_Map);
 if (Clazz.instanceOf(ret, "java.lang.String")) {
 $I$(2).warn$S("" + ret);
 if ((ret).startsWith$S($I$(7).READER_NOT_FOUND)) this.asc.errorMessage=ret;
@@ -112,17 +99,17 @@ for (var i=model.atomSetCount; --i >= 0; ) model.setModelInfoForSet$S$O$I("jdxBa
 
 if (model.bondCount == 0) p$1.setBonding$org_jmol_adapter_smarter_AtomSetCollection$I.apply(this, [model, ibase]);
 }}if (!Float.isNaN$F(vibScale)) {
-$I$(2).info$S("JcampdxReader applying vibration scaling of " + new Float(vibScale).toString() + " to " + model.ac + " atoms" );
+(function(a,f){return f.apply(null,a)})(["JcampdxReader applying vibration scaling of " + new Float(vibScale).toString() + " to " + model.ac + " atoms" ],$I$(2).info$S);
 var atoms=model.atoms;
 for (var i=model.ac; --i >= 0; ) {
 if (atoms[i].vib != null  && !Float.isNaN$F(atoms[i].vib.z) ) atoms[i].vib.scale$F(vibScale);
 }
 }if (!Float.isNaN$F(modelScale)) {
-$I$(2).info$S("JcampdxReader applying model scaling of " + new Float(modelScale).toString() + " to " + model.ac + " atoms" );
+(function(a,f){return f.apply(null,a)})(["JcampdxReader applying model scaling of " + new Float(modelScale).toString() + " to " + model.ac + " atoms" ],$I$(2).info$S);
 var atoms=model.atoms;
 for (var i=model.ac; --i >= 0; ) atoms[i].scale$F(modelScale);
 
-}$I$(2).info$S("jdx model=" + id + " type=" + model.fileTypeName );
+}(function(a,f){return f.apply(null,a)})(["jdx model=" + id + " type=" + model.fileTypeName ],$I$(2).info$S);
 this.asc.appendAtomSetCollection$I$org_jmol_adapter_smarter_AtomSetCollection(-1, model);
 break;
 }
@@ -133,7 +120,7 @@ Clazz.newMeth(C$, 'setBonding$org_jmol_adapter_smarter_AtomSetCollection$I', fun
 var n0=this.asc.getAtomSetAtomCount$I(ibase);
 var n=a.ac;
 if (n % n0 != 0) {
-$I$(2).warn$S("atom count in secondary model (" + n + ") is not a multiple of " + n0 + " -- bonding ignored" );
+(function(a,f){return f.apply(null,a)})(["atom count in secondary model (" + n + ") is not a multiple of " + n0 + " -- bonding ignored" ],$I$(2).warn$S);
 return;
 }var bonds=this.asc.bonds;
 var b0=0;
@@ -145,7 +132,7 @@ var nModels=a.atomSetCount;
 for (var j=0; j < nModels; j++) {
 var i0=a.getAtomSetAtomIndex$I(j) - ii0;
 if (a.getAtomSetAtomCount$I(j) != n0) {
-$I$(2).warn$S("atom set atom count in secondary model (" + a.getAtomSetAtomCount$I(j) + ") is not equal to " + n0 + " -- bonding ignored" );
+(function(a,f){return f.apply(null,a)})(["atom set atom count in secondary model (" + a.getAtomSetAtomCount$I(j) + ") is not equal to " + n0 + " -- bonding ignored" ],$I$(2).warn$S);
 return;
 }for (var i=b0; i < b1; i++) a.addNewBondWithOrder$I$I$I(bonds[i].atomIndex1 + i0, bonds[i].atomIndex2 + i0, bonds[i].order);
 
@@ -162,7 +149,7 @@ return;
 }, p$1);
 
 Clazz.newMeth(C$, 'addPeakData$S', function (info) {
-this.peakData.addLast$TV(info);
+this.peakData.addLast$O(info);
 });
 
 Clazz.newMeth(C$, 'processPeakData', function () {
@@ -177,7 +164,7 @@ throw e;
 }
 }var n=this.peakData.size$();
 if (n == 0) return;
-var bsModels=Clazz.new_($I$(8));
+var bsModels=Clazz.new_($I$(8,1));
 var havePeaks=(n > 0);
 for (var p=0; p < n; p++) {
 this.line=this.peakData.get$I(p);
@@ -245,8 +232,8 @@ return types + type;
 
 Clazz.newMeth(C$, 'processPeakSelectAtom$I$S$S', function (i, key, data) {
 var peaks=this.asc.getAtomSetAuxiliaryInfoValue$I$S(i, key);
-if (peaks == null ) this.asc.setModelInfoForSet$S$O$I(key, peaks=Clazz.new_($I$(1)), i);
-peaks.addLast$TV(data);
+if (peaks == null ) this.asc.setModelInfoForSet$S$O$I(key, peaks=Clazz.new_($I$(1,1)), i);
+peaks.addLast$O(data);
 }, p$1);
 
 Clazz.newMeth(C$, 'processPeakSelectModel$I$S', function (i, title) {
@@ -261,4 +248,4 @@ Clazz.newMeth(C$, 'setSpectrumPeaks$I$S$S', function (nH, piUnitsX, piUnitsY) {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

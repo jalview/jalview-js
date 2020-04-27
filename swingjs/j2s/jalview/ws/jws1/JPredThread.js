@@ -1,31 +1,26 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.jws1"),p$1={},I$=[[0,'jalview.bin.Cache','jalview.io.JPredFile','jalview.io.DataSourceType','jalview.io.IdentifyFile','jalview.datamodel.Alignment','jalview.io.FormatAdapter','jalview.datamodel.SequenceI','jalview.analysis.SeqsetUtils','jalview.util.MessageManager','jalview.io.JnetAnnotationMaker','Error','jalview.commands.RemoveGapsCommand','jalview.datamodel.AlignmentAnnotation','StringBuffer','jalview.analysis.AlignSeq','jalview.util.Comparison','vamsas.objects.simple.Sequence','vamsas.objects.simple.Msfalignment','jalview.io.PileUpfile',['jalview.ws.jws1.JPredThread','.JPredJob'],'jalview.ws.jws1.WSJob','vamsas.objects.simple.JpredResult','jalview.ws.JobStateSummary','jalview.gui.WebserviceInfo','jalview.gui.AlignFrame','jalview.gui.Desktop']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JPredThread", function(){
+(function(){var P$=Clazz.newPackage("jalview.ws.jws1"),p$1={},I$=[[0,'jalview.bin.Cache','jalview.io.JPredFile','jalview.io.DataSourceType','jalview.io.IdentifyFile','jalview.datamodel.Alignment','jalview.io.FormatAdapter','jalview.datamodel.SequenceI','jalview.analysis.SeqsetUtils','jalview.util.MessageManager','jalview.io.JnetAnnotationMaker','Error','jalview.commands.RemoveGapsCommand','jalview.datamodel.AlignmentAnnotation','StringBuffer','jalview.analysis.AlignSeq','jalview.util.Comparison','vamsas.objects.simple.Sequence','vamsas.objects.simple.Msfalignment','jalview.io.PileUpfile',['jalview.ws.jws1.JPredThread','.JPredJob'],'jalview.ws.jws1.WSJob','vamsas.objects.simple.JpredResult','jalview.ws.JobStateSummary','jalview.gui.WebserviceInfo','jalview.gui.AlignFrame','jalview.gui.Desktop']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JPredThread", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'jalview.ws.jws1.JWS1Thread', 'jalview.ws.WSClientI');
+C$.$classes$=[['JPredJob',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.server=null;
-this.altitle=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.altitle="";
-}, 1);
+},1);
+
+C$.$fields$=[['S',['altitle'],'O',['server','ext.vamsas.Jpred']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_WebserviceInfo$S$ext_vamsas_Jpred$S$jalview_datamodel_AlignmentView$jalview_gui_AlignFrame', function (wsinfo, altitle, server, wsurl, alview, alframe) {
-C$.superclazz.c$$jalview_gui_AlignFrame$jalview_gui_WebserviceInfo$jalview_datamodel_AlignmentView$S.apply(this, [alframe, wsinfo, alview, wsurl]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_gui_AlignFrame$jalview_gui_WebserviceInfo$jalview_datamodel_AlignmentView$S.apply(this,[alframe, wsinfo, alview, wsurl]);C$.$init$.apply(this);
 this.altitle=altitle;
 this.server=server;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_gui_WebserviceInfo$S$ext_vamsas_Jpred$S$java_util_Hashtable$jalview_datamodel_SequenceI$IA$jalview_datamodel_AlignmentView$jalview_gui_AlignFrame', function (wsinfo, altitle, server, wsurl, SequenceInfo, seq, delMap, alview, alframe) {
 C$.c$$jalview_gui_WebserviceInfo$S$ext_vamsas_Jpred$S$jalview_datamodel_AlignmentView$jalview_gui_AlignFrame.apply(this, [wsinfo, altitle, server, wsurl, alview, alframe]);
-var job=Clazz.new_($I$(20).c$$java_util_Hashtable$jalview_datamodel_SequenceI$IA, [this, null, SequenceInfo, seq, delMap]);
+var job=Clazz.new_($I$(20,1).c$$java_util_Hashtable$jalview_datamodel_SequenceI$IA,[this, null, SequenceInfo, seq, delMap]);
 if (job.hasValidInput$()) {
 this.OutputHeader=this.wsInfo.getProgressText$();
 this.jobs=Clazz.array($I$(21), -1, [job]);
@@ -36,7 +31,7 @@ this.wsInfo.appendProgressText$S(job.getValidationMessages$());
 
 Clazz.newMeth(C$, 'c$$jalview_gui_WebserviceInfo$S$ext_vamsas_Jpred$java_util_Hashtable$jalview_datamodel_SequenceIA$IA$jalview_datamodel_AlignmentView$jalview_gui_AlignFrame$S', function (wsinfo, altitle, server, SequenceInfo, msf, delMap, alview, alframe, wsurl) {
 C$.c$$jalview_gui_WebserviceInfo$S$ext_vamsas_Jpred$S$jalview_datamodel_AlignmentView$jalview_gui_AlignFrame.apply(this, [wsinfo, altitle, server, wsurl, alview, alframe]);
-var job=Clazz.new_($I$(20).c$$java_util_Hashtable$jalview_datamodel_SequenceIA$IA, [this, null, SequenceInfo, msf, delMap]);
+var job=Clazz.new_($I$(20,1).c$$java_util_Hashtable$jalview_datamodel_SequenceIA$IA,[this, null, SequenceInfo, msf, delMap]);
 if (job.hasValidInput$()) {
 this.jobs=Clazz.array($I$(21), -1, [job]);
 this.OutputHeader=this.wsInfo.getProgressText$();
@@ -47,7 +42,7 @@ this.wsInfo.appendProgressText$S(job.getValidationMessages$());
 
 Clazz.newMeth(C$, 'StartJob$jalview_ws_AWsJob', function (j) {
 if (!(Clazz.instanceOf(j, "jalview.ws.jws1.JPredThread.JPredJob"))) {
-throw Clazz.new_($I$(11).c$$S,[$I$(9).formatMessage$S$SA("error.implementation_error_startjob_called", Clazz.array(String, -1, [j.getClass$().toString()]))]);
+throw Clazz.new_([$I$(9,"formatMessage$S$SA",["error.implementation_error_startjob_called", Clazz.array(String, -1, [j.getClass$().toString()])])],$I$(11,1).c$$S);
 }try {
 var job=j;
 if (job.msa != null ) {
@@ -56,9 +51,9 @@ job.setJobId$S(this.server.predictOnMsa$vamsas_objects_simple_Msfalignment(job.m
 job.setJobId$S(this.server.predict$vamsas_objects_simple_Sequence(job.sequence));
 }if (job.getJobId$() != null ) {
 if (job.getJobId$().startsWith$S("Broken")) {
-job.result=Clazz.new_($I$(22));
+job.result=Clazz.new_($I$(22,1));
 job.result.setInvalid$Z(true);
-job.result.setStatus$S($I$(9).formatMessage$S$SA("label.submission_params", Clazz.array(String, -1, [job.getJobId$().toString()])));
+job.result.setStatus$S($I$(9,"formatMessage$S$SA",["label.submission_params", Clazz.array(String, -1, [job.getJobId$().toString()])]));
 throw Clazz.new_(Clazz.load('Exception').c$$S,[job.getJobId$()]);
 } else {
 job.setSubmitted$Z(true);
@@ -76,7 +71,7 @@ System.err.println$S("JPredWS Client: Failed to submit the prediction. Quite pos
 $I$(1).log.warn$O$Throwable("Server Exception", e);
 } else {
 this.wsInfo.setStatus$I$I(j.getJobnum$(), 4);
-this.wsInfo.appendProgressText$I$S(j.getJobnum$(), $I$(9).formatMessage$S$SA("info.failed_to_submit_prediction", Clazz.array(String, -1, [e.getMessage$(), this.wsInfo.getProgressText$()])));
+this.wsInfo.appendProgressText$I$S(j.getJobnum$(), $I$(9,"formatMessage$S$SA",["info.failed_to_submit_prediction", Clazz.array(String, -1, [e.getMessage$(), this.wsInfo.getProgressText$()])]));
 $I$(1).log.debug$O$Throwable("Failed Submission of job " + j.getJobnum$(), e);
 }j.setAllowedServerExceptions$I(-1);
 j.setSubjobComplete$Z(true);
@@ -88,7 +83,7 @@ throw e;
 
 Clazz.newMeth(C$, 'parseResult$', function () {
 var results=0;
-var finalState=Clazz.new_($I$(23));
+var finalState=Clazz.new_($I$(23,1));
 try {
 for (var j=0; j < this.jobs.length; j++) {
 finalState.updateJobPanelState$jalview_gui_WebserviceInfo$S$jalview_ws_AWsJob(this.wsInfo, this.OutputHeader, this.jobs[j]);
@@ -105,33 +100,31 @@ throw ex;
 }
 if (results > 0) {
 this.wsInfo.showResultsNewFrame.addActionListener$java_awt_event_ActionListener(((P$.JPredThread$1||
-(function(){var C$=Clazz.newClass(P$, "JPredThread$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JPredThread$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 this.b$['jalview.ws.jws1.JPredThread'].displayResults$Z.apply(this.b$['jalview.ws.jws1.JPredThread'], [true]);
 });
 })()
-), Clazz.new_(P$.JPredThread$1.$init$, [this, null])));
+), Clazz.new_(P$.JPredThread$1.$init$,[this, null])));
 this.wsInfo.mergeResults.addActionListener$java_awt_event_ActionListener(((P$.JPredThread$2||
-(function(){var C$=Clazz.newClass(P$, "JPredThread$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JPredThread$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 this.b$['jalview.ws.jws1.JPredThread'].displayResults$Z.apply(this.b$['jalview.ws.jws1.JPredThread'], [false]);
 });
 })()
-), Clazz.new_(P$.JPredThread$2.$init$, [this, null])));
+), Clazz.new_(P$.JPredThread$2.$init$,[this, null])));
 this.wsInfo.setResultsReady$();
 } else {
 this.wsInfo.setStatus$I($I$(24).STATE_STOPPED_ERROR);
@@ -155,12 +148,12 @@ $I$(1).log.debug$O("Finished parsing output.");
 if (this.jobs.length == 1) {
 res=jobres;
 } else {
-throw Clazz.new_($I$(11).c$$S,[$I$(9).getString$S("error.multiple_jnet_subjob_merge_not_implemented")]);
+throw Clazz.new_([$I$(9).getString$S("error.multiple_jnet_subjob_merge_not_implemented")],$I$(11,1).c$$S);
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 $I$(1).log.error$O$Throwable("JNet Client: JPred Annotation Parse Error", e);
 this.wsInfo.setStatus$I$I(j.getJobnum$(), 4);
-this.wsInfo.appendProgressText$I$S(j.getJobnum$(), $I$(9).formatMessage$S$SA("info.invalid_jnet_job_result_data", Clazz.array(String, -1, [this.OutputHeader.toString(), j.result.getStatus$(), e.getMessage$()])));
+this.wsInfo.appendProgressText$I$S(j.getJobnum$(), $I$(9,"formatMessage$S$SA",["info.invalid_jnet_job_result_data", Clazz.array(String, -1, [this.OutputHeader.toString(), j.result.getStatus$(), e.getMessage$()])]));
 j.result.setBroken$Z(true);
 } else {
 throw e;
@@ -173,11 +166,11 @@ var af;
 (res[0]).setSeqrep$jalview_datamodel_SequenceI((res[0]).getSequenceAt$I(0));
 if (this.input == null ) {
 if (res[1] != null ) {
-af=Clazz.new_($I$(25).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$I$I,[res[0], res[1], 700, 500]);
+af=Clazz.new_($I$(25,1).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$I$I,[res[0], res[1], 700, 500]);
 } else {
-af=Clazz.new_($I$(25).c$$jalview_datamodel_AlignmentI$I$I,[res[0], 700, 500]);
+af=Clazz.new_($I$(25,1).c$$jalview_datamodel_AlignmentI$I$I,[res[0], 700, 500]);
 }} else {
-af=Clazz.new_($I$(25).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$I$I,[res[0], res[1], 700, 500]);
+af=Clazz.new_($I$(25,1).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$I$I,[res[0], res[1], 700, 500]);
 }$I$(26).addInternalFrame$javax_swing_JInternalFrame$S$I$I(af, this.altitle, 700, 500);
 } else {
 $I$(1).log.info$O("Append results onto existing alignment.");
@@ -192,36 +185,27 @@ return false;
 });
 
 Clazz.newMeth(C$, 'cancelJob$', function () {
-throw Clazz.new_($I$(11).c$$S,[$I$(9).getString$S("error.implementation_error")]);
+throw Clazz.new_([$I$(9).getString$S("error.implementation_error")],$I$(11,1).c$$S);
 });
 
 Clazz.newMeth(C$, 'canMergeResults$', function () {
 return false;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JPredThread, "JPredJob", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JPredThread, "JPredJob", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'jalview.ws.jws1.WSJob');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.predMap=null;
-this.sequence=null;
-this.msa=null;
-this.SequenceInfo=null;
-this.msaIndex=0;
-this.errorMessage=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.predMap=null;
 this.SequenceInfo=null;
 this.msaIndex=0;
 this.errorMessage="";
-}, 1);
+},1);
+
+C$.$fields$=[['I',['msaIndex'],'S',['errorMessage'],'O',['predMap','int[]','sequence','vamsas.objects.simple.Sequence','msa','vamsas.objects.simple.Msfalignment','SequenceInfo','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'hasResults$', function () {
 if (this.subjobComplete && this.result != null   && this.result.isFinished$()  && (this.result).getPredfile$() != null   && (this.result).getAligfile$() != null  ) {
@@ -243,21 +227,21 @@ var alhidden=null;
 var FirstSeq=-1;
 var result=this.result;
 $I$(1).log.debug$O("Parsing output from JNet job.");
-var prediction=Clazz.new_($I$(2).c$$O$jalview_io_DataSourceType,[result.getPredfile$(), $I$(3).PASTE]);
+var prediction=Clazz.new_([result.getPredfile$(), $I$(3).PASTE],$I$(2,1).c$$O$jalview_io_DataSourceType);
 var preds=prediction.getSeqsAsArray$();
 $I$(1).log.debug$O("Got prediction profile.");
 if ((this.msa != null ) && (result.getAligfile$() != null ) ) {
 $I$(1).log.debug$O("Getting associated alignment.");
-var format=Clazz.new_($I$(4)).identify$S$jalview_io_DataSourceType(result.getAligfile$(), $I$(3).PASTE);
+var format=Clazz.new_($I$(4,1)).identify$S$jalview_io_DataSourceType(result.getAligfile$(), $I$(3).PASTE);
 if (format != null ) {
 var sqs;
 if (this.predMap != null ) {
 var alandcolsel=this.this$0.input.getAlignmentAndHiddenColumns$C(this.b$['jalview.ws.AWSThread'].getGapChar$.apply(this.b$['jalview.ws.AWSThread'], []));
 sqs=alandcolsel[0];
-al=Clazz.new_($I$(5).c$$jalview_datamodel_SequenceIA,[sqs]);
+al=Clazz.new_($I$(5,1).c$$jalview_datamodel_SequenceIA,[sqs]);
 alhidden=alandcolsel[1];
 } else {
-al=Clazz.new_($I$(6)).readFile$S$jalview_io_DataSourceType$jalview_io_FileFormatI(result.getAligfile$(), $I$(3).PASTE, format);
+al=Clazz.new_($I$(6,1)).readFile$S$jalview_io_DataSourceType$jalview_io_FileFormatI(result.getAligfile$(), $I$(3).PASTE, format);
 sqs=Clazz.array($I$(7), [al.getHeight$()]);
 for (var i=0, j=al.getHeight$(); i < j; i++) {
 sqs[i]=al.getSequenceAt$I(i);
@@ -271,19 +255,19 @@ al.setDataset$jalview_datamodel_AlignmentI(this.this$0.currentView.getDataset$()
 al.setDataset$jalview_datamodel_AlignmentI(null);
 }$I$(10).add_annotation$jalview_io_JPredFile$jalview_datamodel_AlignmentI$I$Z$IA(prediction, al, FirstSeq, false, this.predMap);
 } else {
-throw (Clazz.new_(Clazz.load('Exception').c$$S,[$I$(9).formatMessage$S$SA("exception.unknown_format_for_file", Clazz.array(String, -1, ["", result.getAligfile$()]))]));
+throw (Clazz.new_(Clazz.load('Exception').c$$S,[$I$(9,"formatMessage$S$SA",["exception.unknown_format_for_file", Clazz.array(String, -1, ["", result.getAligfile$()])])]));
 }} else {
-al=Clazz.new_($I$(5).c$$jalview_datamodel_SequenceIA,[preds]);
+al=Clazz.new_($I$(5,1).c$$jalview_datamodel_SequenceIA,[preds]);
 FirstSeq=prediction.getQuerySeqPosition$();
 if (this.predMap != null ) {
 var gc=this.b$['jalview.ws.AWSThread'].getGapChar$.apply(this.b$['jalview.ws.AWSThread'], []);
 var sqs=this.this$0.input.getAlignmentAndHiddenColumns$C(gc)[0];
 if (this.msaIndex >= sqs.length) {
-throw Clazz.new_($I$(11).c$$S,[$I$(9).getString$S("error.implementation_error_invalid_msa_index_for_job")]);
-}Clazz.new_($I$(12).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[$I$(9).getString$S("label.remove_gaps"), Clazz.array($I$(7), -1, [sqs[this.msaIndex]]), this.this$0.currentView]);
+throw Clazz.new_([$I$(9).getString$S("error.implementation_error_invalid_msa_index_for_job")],$I$(11,1).c$$S);
+}Clazz.new_([$I$(9).getString$S("label.remove_gaps"), Clazz.array($I$(7), -1, [sqs[this.msaIndex]]), this.this$0.currentView],$I$(12,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI);
 var profileseq=al.getSequenceAt$I(FirstSeq);
 profileseq.setSequence$S(sqs[this.msaIndex].getSequenceAsString$());
-}if (!$I$(8).SeqCharacterUnhash$jalview_datamodel_SequenceI$java_util_Hashtable(al.getSequenceAt$I(FirstSeq), this.SequenceInfo)) {
+}if (!$I$(8,"SeqCharacterUnhash$jalview_datamodel_SequenceI$java_util_Hashtable",[al.getSequenceAt$I(FirstSeq), this.SequenceInfo])) {
 throw (Clazz.new_(Clazz.load('Exception').c$$S,[$I$(9).getString$S("exception.couldnt_recover_sequence_props_for_jnet_query")]));
 } else {
 if (this.this$0.currentView.getDataset$() != null ) {
@@ -312,7 +296,7 @@ if (dsan != null  && dsan.size$() > 0 ) {
 for (var dssan, $dssan = dsan.iterator$(); $dssan.hasNext$()&&((dssan=($dssan.next$())),1);) {
 dsseq.removeAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(dssan);
 }
-}var dssan=Clazz.new_($I$(13).c$$jalview_datamodel_AlignmentAnnotation,[newAnnot]);
+}var dssan=Clazz.new_($I$(13,1).c$$jalview_datamodel_AlignmentAnnotation,[newAnnot]);
 dsseq.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(dssan);
 dssan.adjustForAlignment$();
 });
@@ -322,7 +306,7 @@ var gc=al.getGapCharacter$();
 var gapMap=profileseq.gapMap$();
 for (var lp=0, r=0; r < gapMap.length; r++) {
 if (gapMap[r] - lp > 1) {
-var sb=Clazz.new_($I$(14));
+var sb=Clazz.new_($I$(14,1));
 for (var s=0, ns=gapMap[r] - lp; s < ns; s++) {
 sb.append$C(gc);
 }
@@ -343,13 +327,12 @@ al.getSequenceAt$I(s).setSequence$S(sq.substring$I$I(0, gapMap[r]) + sb.toString
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$java_util_Hashtable$jalview_datamodel_SequenceI$IA', function (SequenceInfo, seq, delMap) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.predMap=delMap;
-var sq=$I$(15).extractGaps$S$S($I$(16).GapChars, seq.getSequenceAsString$());
+var sq=$I$(15,"extractGaps$S$S",[$I$(16).GapChars, seq.getSequenceAsString$()]);
 if (sq.length$() >= 20) {
 this.SequenceInfo=SequenceInfo;
-this.sequence=Clazz.new_($I$(17));
+this.sequence=Clazz.new_($I$(17,1));
 this.sequence.setId$S(seq.getName$());
 this.sequence.setSeq$S(sq);
 } else {
@@ -360,8 +343,8 @@ Clazz.newMeth(C$, 'c$$java_util_Hashtable$jalview_datamodel_SequenceIA$IA', func
 C$.c$$java_util_Hashtable$jalview_datamodel_SequenceI$IA.apply(this, [SequenceInfo, msf[0], delMap]);
 if (this.sequence != null ) {
 if (msf.length > 1) {
-this.msa=Clazz.new_($I$(18));
-var pileup=Clazz.new_($I$(19));
+this.msa=Clazz.new_($I$(18,1));
+var pileup=Clazz.new_($I$(19,1));
 this.msa.setMsf$S(pileup.print$jalview_datamodel_SequenceIA$Z(msf, true));
 }}}, 1);
 
@@ -374,4 +357,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

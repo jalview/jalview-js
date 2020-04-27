@@ -1,17 +1,12 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),p$1={};
-var C$=Clazz.newClass(P$, "AlignedNode", null, null, 'fr.orsay.lri.varna.models.treealign.GraphvizDrawableNodeValue');
+/*c*/var C$=Clazz.newClass(P$, "AlignedNode", null, null, 'fr.orsay.lri.varna.models.treealign.GraphvizDrawableNodeValue');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.leftNode=null;
-this.rightNode=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['leftNode','fr.orsay.lri.varna.models.treealign.Tree','+rightNode']]]
 
 Clazz.newMeth(C$, 'getLeftNode$', function () {
 return this.leftNode;
@@ -39,4 +34,4 @@ return "(" + p$1.maybeNodeToGraphvizNodeName$fr_orsay_lri_varna_models_treealign
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[];
-var C$=Clazz.newClass(P$, "FileLoadThread", null, 'org.jmol.thread.JmolThread');
+(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[[0,'org.jmol.viewer.Viewer']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "FileLoadThread", null, 'org.jmol.thread.JmolThread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fileName=null;
-this.cacheName=null;
-this.key=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['fileName','cacheName','key']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_api_JmolScriptEvaluator$org_jmol_viewer_Viewer$S$S$S', function (eval, vwr, fileName, key, cacheName) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setViewer$org_jmol_viewer_Viewer$S(vwr, "FileLoadThread");
 this.fileName=fileName;
 this.key=key;
@@ -33,11 +27,7 @@ case 0:
 if (this.stopped || !this.vwr.testAsync && this.eval.isStopped$()  ) {
 mode=-2;
 break;
-}var jmol=null;
-{
-jmol = self.Jmol;
-}
-if (jmol != null ) jmol.loadFileAsynchronously(this, this.vwr.html5Applet, this.fileName, null);
+}if ($I$(1).jmolObject != null ) $I$(1).jmolObject.loadFileAsynchronously(this, this.vwr.html5Applet, this.fileName, null);
 {
 
 }
@@ -55,7 +45,7 @@ return;
 
 Clazz.newMeth(C$, 'setData$S$S$O$O', function (fileName, fileName0, data, myData) {
 var isCanceled=fileName.equals$O("#CANCELED#");
-this.sc.parentContext.htFileCache.put$TK$TV(this.key, (isCanceled ? fileName : (this.cacheName=this.cacheName.substring$I$I(0, this.cacheName.lastIndexOf$S("_") + 1) + fileName)));
+this.sc.parentContext.htFileCache.put$O$O(this.key, (isCanceled ? fileName : (this.cacheName=this.cacheName.substring$I$I(0, this.cacheName.lastIndexOf$S("_") + 1) + fileName)));
 this.vwr.cachePut$S$O(this.cacheName, data);
 if (fileName0 != null ) {
 this.vwr.cachePut$S$O(this.vwr.fm.getFilePath$S$Z$Z(fileName, true, false), data);
@@ -64,4 +54,4 @@ this.vwr.cachePut$S$O(this.vwr.fm.getFilePath$S$Z$Z(fileName, true, false), data
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

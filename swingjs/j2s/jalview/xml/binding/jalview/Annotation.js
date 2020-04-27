@@ -1,43 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Annotation", function(){
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Annotation", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Property',9],['ThresholdLine',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.annotationElement=null;
-this.label=null;
-this.description=null;
-this.thresholdLine=null;
-this.property=null;
-this.graph=false;
-this.graphType=null;
-this.sequenceRef=null;
-this.groupRef=null;
-this.graphColour=null;
-this.graphGroup=null;
-this.graphHeight=null;
-this.id=null;
-this.scoreOnly=null;
-this.score=null;
-this.visible=null;
-this.centreColLabels=null;
-this.scaleColLabels=null;
-this.showAllColLabels=null;
-this.autoCalculated=null;
-this.belowAlignment=null;
-this.calcId=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['graph'],'S',['label','description','sequenceRef','groupRef','id','calcId'],'O',['annotationElement','java.util.List','thresholdLine','jalview.xml.binding.jalview.Annotation.ThresholdLine','property','java.util.List','graphType','Integer','+graphColour','+graphGroup','+graphHeight','scoreOnly','Boolean','score','Double','visible','Boolean','+centreColLabels','+scaleColLabels','+showAllColLabels','+autoCalculated','+belowAlignment']]]
 
 Clazz.newMeth(C$, 'getAnnotationElement$', function () {
 if (this.annotationElement == null ) {
-this.annotationElement=Clazz.new_($I$(1));
+this.annotationElement=Clazz.new_($I$(1,1));
 }return this.annotationElement;
 });
 
@@ -67,7 +43,7 @@ this.thresholdLine=value;
 
 Clazz.newMeth(C$, 'getProperty$', function () {
 if (this.property == null ) {
-this.property=Clazz.new_($I$(1));
+this.property=Clazz.new_($I$(1,1));
 }return this.property;
 });
 
@@ -139,7 +115,7 @@ Clazz.newMeth(C$, 'isScoreOnly$', function () {
 if (this.scoreOnly == null ) {
 return false;
 } else {
-return (this.scoreOnly).booleanValue$();
+return (this.scoreOnly).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setScoreOnly$Boolean', function (value) {
@@ -190,7 +166,7 @@ Clazz.newMeth(C$, 'isAutoCalculated$', function () {
 if (this.autoCalculated == null ) {
 return false;
 } else {
-return (this.autoCalculated).booleanValue$();
+return (this.autoCalculated).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setAutoCalculated$Boolean', function (value) {
@@ -201,7 +177,7 @@ Clazz.newMeth(C$, 'isBelowAlignment$', function () {
 if (this.belowAlignment == null ) {
 return true;
 } else {
-return (this.belowAlignment).booleanValue$();
+return (this.belowAlignment).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setBelowAlignment$Boolean', function (value) {
@@ -215,47 +191,43 @@ return this.calcId;
 Clazz.newMeth(C$, 'setCalcId$S', function (value) {
 this.calcId=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.Annotation'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"annotationElement"  "label"  "description"  "thresholdLine"  "property"  } )','@XmlRootElement(name="Annotation" )']],
-  [['label','String'],['@XmlElement(required="true" )']],
-  [['graph','boolean'],['@XmlAttribute(name="graph" required="true" )']],
-  [['graphType','Integer'],['@XmlAttribute(name="graphType" )']],
-  [['sequenceRef','String'],['@XmlAttribute(name="sequenceRef" )']],
-  [['groupRef','.'],['@XmlAttribute(name="groupRef" )']],
-  [['graphColour','Integer'],['@XmlAttribute(name="graphColour" )']],
-  [['graphGroup','.'],['@XmlAttribute(name="graphGroup" )']],
-  [['graphHeight','.'],['@XmlAttribute(name="graphHeight" )']],
-  [['id','String'],['@XmlAttribute(name="id" )']],
-  [['scoreOnly','Boolean'],['@XmlAttribute(name="scoreOnly" )']],
-  [['score','Double'],['@XmlAttribute(name="score" )']],
-  [['visible','Boolean'],['@XmlAttribute(name="visible" )']],
-  [['centreColLabels','.'],['@XmlAttribute(name="centreColLabels" )']],
-  [['scaleColLabels','.'],['@XmlAttribute(name="scaleColLabels" )']],
-  [['showAllColLabels','.'],['@XmlAttribute(name="showAllColLabels" )']],
-  [['autoCalculated','.'],['@XmlAttribute(name="autoCalculated" )']],
-  [['belowAlignment','.'],['@XmlAttribute(name="belowAlignment" )']],
-  [['calcId','String'],['@XmlAttribute(name="calcId" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.Annotation',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType','javax.xml.bind.annotation.XmlRootElement']],['XmlAccessType.FIELD','name="" propOrder={"annotationElement"  "label"  "description"  "thresholdLine"  "property"  } ','name="Annotation" ']],
+  [['label','String',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['graph','boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="graph" required="true" ']],
+  [['graphType','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="graphType" ']],
+  [['sequenceRef','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="sequenceRef" ']],
+  [['groupRef','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="groupRef" ']],
+  [['graphColour','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="graphColour" ']],
+  [['graphGroup','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="graphGroup" ']],
+  [['graphHeight','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="graphHeight" ']],
+  [['id','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="id" ']],
+  [['scoreOnly','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="scoreOnly" ']],
+  [['score','Double',null,['javax.xml.bind.annotation.XmlAttribute']],['name="score" ']],
+  [['visible','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="visible" ']],
+  [['centreColLabels','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="centreColLabels" ']],
+  [['scaleColLabels','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="scaleColLabels" ']],
+  [['showAllColLabels','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showAllColLabels" ']],
+  [['autoCalculated','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="autoCalculated" ']],
+  [['belowAlignment','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="belowAlignment" ']],
+  [['calcId','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="calcId" ']],
   [['null','jalview.xml.binding.jalview.Annotation.Property'],['!XmlInner']],
   [['null','jalview.xml.binding.jalview.Annotation.ThresholdLine'],['!XmlInner']],
   [['annotationElement','java.util.List<jalview.xml.binding.jalview.AnnotationElement>'],['@XmlElement']],
   [['description','String'],['@XmlElement']],
   [['thresholdLine','jalview.xml.binding.jalview.Annotation.ThresholdLine'],['@XmlElement']],
-  [['property','java.util.List<jalview.xml.binding.jalview.Annotation.Property>'],['@XmlElement']]];
+  [['property','java.util.List<jalview.xml.binding.jalview.Annotation.Property>'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.Annotation, "Property", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Annotation, "Property", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.value=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name','value']]]
 
 Clazz.newMeth(C$, 'getName$', function () {
 return this.name;
@@ -272,29 +244,24 @@ return this.value;
 Clazz.newMeth(C$, 'setValue$S', function (value) {
 this.value=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.Annotation.Property'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['name','String'],['@XmlAttribute(name="name" )']],
-  [['value','.'],['@XmlAttribute(name="value" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.Annotation.Property',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['name','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" ']],
+  [['value','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="value" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Annotation, "ThresholdLine", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Annotation, "ThresholdLine", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.label=null;
-this.value=null;
-this.colour=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['label'],'O',['value','Float','colour','Integer']]]
 
 Clazz.newMeth(C$, 'getLabel$', function () {
 return this.label;
@@ -319,14 +286,15 @@ return this.colour;
 Clazz.newMeth(C$, 'setColour$Integer', function (value) {
 this.colour=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.Annotation.ThresholdLine'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['label','String'],['@XmlAttribute(name="label" )']],
-  [['value','Float'],['@XmlAttribute(name="value" )']],
-  [['colour','Integer'],['@XmlAttribute(name="colour" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.Annotation.ThresholdLine',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['label','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="label" ']],
+  [['value','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="value" ']],
+  [['colour','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colour" ']]]}
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

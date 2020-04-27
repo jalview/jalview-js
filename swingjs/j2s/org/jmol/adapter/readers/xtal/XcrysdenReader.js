@@ -1,21 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XcrysdenReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.adapter.smarter.AtomSetCollectionReader']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "XcrysdenReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nAtoms=0;
-this.animation=false;
-this.unitCellData=null;
-this.animationStep=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.animation=false;
 this.unitCellData=Clazz.array(Float.TYPE, [9]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['animation'],'I',['nAtoms','animationStep'],'O',['unitCellData','float[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.doApplySymmetry=true;
@@ -57,13 +50,13 @@ this.setFractionalCoordinates$Z(false);
 }, p$1);
 
 Clazz.newMeth(C$, 'readCoordinates', function () {
-var atomStr=$I$(1).getTokens$S(this.rd$());
+var atomStr=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(1).getTokens$S);
 this.nAtoms=Integer.parseInt$S(atomStr[0]);
 this.setFractionalCoordinates$Z(false);
 var counter=0;
 while (counter < this.nAtoms && this.rd$() != null  ){
 var tokens=this.getTokens$();
-this.addAtomXYZSymName$SA$I$S$S(tokens, 1, null, org.jmol.adapter.smarter.AtomSetCollectionReader.getElementSymbol$I(Integer.parseInt$S(tokens[0])));
+this.addAtomXYZSymName$SA$I$S$S(tokens, 1, null, (function(a,f){return f.apply(null,a)})([Integer.parseInt$S(tokens[0])],$I$(2).getElementSymbol$I));
 counter++;
 }
 this.asc.setAtomSetName$S(this.animation ? "Structure " + (this.animationStep++) : "Initial coordinates");
@@ -71,4 +64,4 @@ this.asc.setAtomSetName$S(this.animation ? "Structure " + (this.animationStep++)
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

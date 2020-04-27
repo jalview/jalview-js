@@ -1,35 +1,21 @@
-(function(){var P$=Clazz.newPackage("uk.ac.ebi.picr.model"),I$=[[0,'Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CrossReference", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("uk.ac.ebi.picr.model"),I$=[[0,'Boolean']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CrossReference", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.accession=null;
-this.accessionVersion=null;
-this.databaseDescription=null;
-this.databaseName=null;
-this.dateAdded=null;
-this.dateDeleted=null;
-this.deleted=false;
-this.gi=null;
-this.taxonId=null;
-this.__equalsCalc=null;
-this.__hashCodeCalc=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.__equalsCalc=null;
 this.__hashCodeCalc=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['deleted','__hashCodeCalc'],'S',['accession','accessionVersion','databaseDescription','databaseName','gi','taxonId'],'O',['dateAdded','java.util.Calendar','+dateDeleted','__equalsCalc','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S$S$java_util_Calendar$java_util_Calendar$Z$S$S', function (accession, accessionVersion, databaseDescription, databaseName, dateAdded, dateDeleted, deleted, gi, taxonId) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.accession=accession;
 this.accessionVersion=accessionVersion;
 this.databaseDescription=databaseDescription;
@@ -156,4 +142,4 @@ _hashCode+=this.getTaxonId$().hashCode$();
 return _hashCode;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

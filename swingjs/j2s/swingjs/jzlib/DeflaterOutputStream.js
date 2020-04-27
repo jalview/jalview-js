@@ -1,19 +1,7 @@
-(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.Deflater']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DeflaterOutputStream", null, 'java.io.FilterOutputStream');
+(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.Deflater']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DeflaterOutputStream", null, 'java.io.FilterOutputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.deflater=null;
-this.buffer=null;
-this.closed=false;
-this.syncFlush=false;
-this.buf1=null;
-this.mydeflater=false;
-this.close_out=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.closed=false;
@@ -21,10 +9,12 @@ this.syncFlush=false;
 this.buf1=Clazz.array(Byte.TYPE, [1]);
 this.mydeflater=false;
 this.close_out=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['closed','syncFlush','mydeflater','close_out'],'O',['deflater','swingjs.jzlib.Deflater','buffer','byte[]','+buf1']]]
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
-C$.c$$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z.apply(this, [out, Clazz.new_($I$(1)).init$I$I$Z(-1, 0, false), 512, true]);
+C$.c$$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z.apply(this, [out, Clazz.new_($I$(1,1)).init$I$I$Z(-1, 0, false), 512, true]);
 this.mydeflater=true;
 }, 1);
 
@@ -37,8 +27,7 @@ C$.c$$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z.apply(this, [out, deflater
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z', function (out, deflater, size, close_out) {
-C$.superclazz.c$$java_io_OutputStream.apply(this, [out]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_OutputStream.apply(this,[out]);C$.$init$.apply(this);
 this.jzSetDOS$java_io_OutputStream$swingjs_jzlib_Deflater$I$Z(out, deflater, size, close_out);
 }, 1);
 
@@ -51,7 +40,7 @@ this.close_out=close_out;
 });
 
 Clazz.newMeth(C$, 'write$I', function (b) {
-this.buf1[0]=(((b & 255)|0)|0);
+this.buf1[0]=((b & 255)|0);
 this.write$BA$I$I(this.buf1, 0, 1);
 });
 
@@ -81,6 +70,10 @@ this.deflater.end$();
 }if (this.close_out) this.out.close$();
 this.closed=true;
 }});
+
+Clazz.newMeth(C$, 'isClosed$', function () {
+return this.closed;
+});
 
 Clazz.newMeth(C$, 'deflate$I', function (flush) {
 this.deflater.setOutput$BA$I$I(this.buffer, 0, this.buffer.length);
@@ -112,11 +105,11 @@ if (err == 1) break;
 });
 
 Clazz.newMeth(C$, 'getTotalIn$', function () {
-return this.deflater.getTotalIn$();
+return this.deflater.getTotalInL$();
 });
 
 Clazz.newMeth(C$, 'getTotalOut$', function () {
-return this.deflater.getTotalOut$();
+return this.deflater.getTotalOutL$();
 });
 
 Clazz.newMeth(C$, 'setSyncFlush$Z', function (syncFlush) {
@@ -133,4 +126,4 @@ return this.deflater;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

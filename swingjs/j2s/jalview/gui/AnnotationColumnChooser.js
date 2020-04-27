@@ -1,59 +1,34 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'javax.swing.JRadioButton','javax.swing.ButtonGroup','jalview.gui.JvSwingUtils','jalview.gui.AnnotationColumnChooser','javax.swing.JCheckBox','javax.swing.border.TitledBorder','jalview.util.MessageManager','jalview.io.cache.JvCacheableInputBox','java.awt.event.KeyAdapter','java.awt.event.FocusAdapter','jalview.util.Platform','javax.swing.JPanel','java.awt.CardLayout','javax.swing.JInternalFrame','javax.swing.JLayeredPane','jalview.gui.Desktop','java.awt.Dimension','javax.swing.JComboBox','java.awt.Color','net.miginfocom.swing.MigLayout',['jalview.gui.AnnotationColumnChooser','.SearchPanel'],['jalview.gui.AnnotationColumnChooser','.FurtherActionPanel'],['jalview.gui.AnnotationColumnChooser','.StructureFilterPanel'],'java.awt.BorderLayout','jalview.viewmodel.annotationfilter.AnnotationFilterParameter','jalview.datamodel.GraphLine',['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.ThresholdType'],['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.SearchableAnnotationField'],'jalview.datamodel.HiddenColumns']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationColumnChooser", function(){
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'javax.swing.JRadioButton','javax.swing.ButtonGroup','jalview.gui.JvSwingUtils','jalview.gui.AnnotationColumnChooser','javax.swing.JCheckBox','javax.swing.border.TitledBorder','jalview.util.MessageManager','jalview.io.cache.JvCacheableInputBox','java.awt.event.KeyAdapter','java.awt.event.FocusAdapter','jalview.util.Platform','javax.swing.JPanel','java.awt.CardLayout','javax.swing.JInternalFrame','javax.swing.JLayeredPane','jalview.gui.Desktop','java.awt.Dimension','javax.swing.JComboBox','java.awt.Color','net.miginfocom.swing.MigLayout',['jalview.gui.AnnotationColumnChooser','.SearchPanel'],['jalview.gui.AnnotationColumnChooser','.FurtherActionPanel'],['jalview.gui.AnnotationColumnChooser','.StructureFilterPanel'],'java.awt.BorderLayout','jalview.viewmodel.annotationfilter.AnnotationFilterParameter','jalview.datamodel.GraphLine',['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.ThresholdType'],['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.SearchableAnnotationField'],'jalview.datamodel.HiddenColumns']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'jalview.gui.AnnotationRowFilter', 'java.awt.event.ItemListener');
-C$.ACTION_OPTION_HIDE=0;
-C$.NO_GRAPH_VIEW=null;
-C$.GRAPH_VIEW=null;
-C$.MIN_WIDTH=0;
-C$.MIN_HEIGHT=0;
+C$.$classes$=[['FurtherActionPanel',1],['StructureFilterPanel',1],['SearchPanel',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.ACTION_OPTION_HIDE=2;
-C$.NO_GRAPH_VIEW="0";
-C$.GRAPH_VIEW="1";
-C$.MIN_WIDTH=($I$(11).isJS$() ? 370 : 420);
-C$.MIN_HEIGHT=($I$(11).isJS$() ? 370 : 430);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.switchableViewsPanel=null;
-this.annotationComboBoxPanel=null;
-this.gStructureFilterPanel=null;
-this.ngStructureFilterPanel=null;
-this.currentStructureFilterPanel=null;
-this.currentSearchPanel=null;
-this.gSearchPanel=null;
-this.ngSearchPanel=null;
-this.currentFurtherActionPanel=null;
-this.gFurtherActionPanel=null;
-this.ngFurtherActionPanel=null;
-this.actionOption=0;
-this.oldHiddenColumns=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.switchableViewsPanel=Clazz.new_($I$(12).c$$java_awt_LayoutManager,[Clazz.new_($I$(13))]);
-this.annotationComboBoxPanel=Clazz.new_($I$(12));
+this.switchableViewsPanel=Clazz.new_([Clazz.new_($I$(13,1))],$I$(12,1).c$$java_awt_LayoutManager);
+this.annotationComboBoxPanel=Clazz.new_($I$(12,1));
 this.actionOption=1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['actionOption'],'O',['switchableViewsPanel','javax.swing.JPanel','+annotationComboBoxPanel','gStructureFilterPanel','jalview.gui.AnnotationColumnChooser.StructureFilterPanel','+ngStructureFilterPanel','+currentStructureFilterPanel','currentSearchPanel','jalview.gui.AnnotationColumnChooser.SearchPanel','+gSearchPanel','+ngSearchPanel','currentFurtherActionPanel','jalview.gui.AnnotationColumnChooser.FurtherActionPanel','+gFurtherActionPanel','+ngFurtherActionPanel','oldHiddenColumns','jalview.datamodel.HiddenColumns']]
+,['I',['ACTION_OPTION_HIDE','MIN_WIDTH','MIN_HEIGHT'],'S',['NO_GRAPH_VIEW','GRAPH_VIEW']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel', function (av, ap) {
-C$.superclazz.c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel.apply(this, [av, ap]);
-C$.$init$.apply(this);
-this.frame=Clazz.new_($I$(14));
+;C$.superclazz.c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel.apply(this,[av, ap]);C$.$init$.apply(this);
+this.frame=Clazz.new_($I$(14,1));
 this.frame.setContentPane$java_awt_Container(this);
 this.frame.setLayer$Integer($I$(15).PALETTE_LAYER);
-$I$(16).addInternalFrame$javax_swing_JInternalFrame$S$I$I(this.frame, $I$(7).getString$S("label.select_by_annotation"), 0, 0);
-this.frame.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(17).c$$I$I,[C$.MIN_WIDTH, C$.MIN_HEIGHT]));
+$I$(16,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[this.frame, $I$(7).getString$S("label.select_by_annotation"), 0, 0]);
+this.frame.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[C$.MIN_WIDTH, C$.MIN_HEIGHT]));
 this.addSliderChangeListener$();
 this.addSliderMouseListeners$();
 if (av.getAlignment$().getAlignmentAnnotation$() == null ) {
 return;
 }this.setOldHiddenColumns$jalview_datamodel_HiddenColumns(av.getAlignment$().getHiddenColumns$());
 this.adjusting=true;
-this.setAnnotations$javax_swing_JComboBox(Clazz.new_($I$(18).c$$java_util_Vector,[this.getAnnotationItems$Z(false)]));
+this.setAnnotations$javax_swing_JComboBox(Clazz.new_([this.getAnnotationItems$Z(false)],$I$(18,1).c$$java_util_Vector));
 this.populateThresholdComboBox$javax_swing_JComboBox(this.threshold);
 var lastChooser=av.getAnnotationColumnSelectionState$();
 if (lastChooser != null ) {
@@ -79,30 +54,30 @@ this.frame.pack$();
 
 Clazz.newMeth(C$, 'jbInit$', function () {
 C$.superclazz.prototype.jbInit$.apply(this, []);
-var thresholdPanel=Clazz.new_($I$(12));
-thresholdPanel.setBorder$javax_swing_border_Border(Clazz.new_($I$(6).c$$S,[$I$(7).getString$S("label.threshold_filter")]));
+var thresholdPanel=Clazz.new_($I$(12,1));
+thresholdPanel.setBorder$javax_swing_border_Border(Clazz.new_([$I$(7).getString$S("label.threshold_filter")],$I$(6,1).c$$S));
 thresholdPanel.setBackground$java_awt_Color($I$(19).white);
 thresholdPanel.setFont$java_awt_Font($I$(3).getLabelFont$());
-thresholdPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(20).c$$S$S$S,["", "[left][right]", "[][]"]));
+thresholdPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(20,1).c$$S$S$S,["", "[left][right]", "[][]"]));
 this.percentThreshold.setBackground$java_awt_Color($I$(19).white);
 this.percentThreshold.setFont$java_awt_Font($I$(3).getLabelFont$());
-var actionPanel=Clazz.new_($I$(12));
+var actionPanel=Clazz.new_($I$(12,1));
 actionPanel.setBackground$java_awt_Color($I$(19).white);
 actionPanel.setFont$java_awt_Font($I$(3).getLabelFont$());
-var graphFilterView=Clazz.new_($I$(12));
-graphFilterView.setLayout$java_awt_LayoutManager(Clazz.new_($I$(20).c$$S$S$S,["", "[left][right]", "[][]"]));
+var graphFilterView=Clazz.new_($I$(12,1));
+graphFilterView.setLayout$java_awt_LayoutManager(Clazz.new_($I$(20,1).c$$S$S$S,["", "[left][right]", "[][]"]));
 graphFilterView.setBackground$java_awt_Color($I$(19).white);
-var noGraphFilterView=Clazz.new_($I$(12));
-noGraphFilterView.setLayout$java_awt_LayoutManager(Clazz.new_($I$(20).c$$S$S$S,["", "[left][right]", "[][]"]));
+var noGraphFilterView=Clazz.new_($I$(12,1));
+noGraphFilterView.setLayout$java_awt_LayoutManager(Clazz.new_($I$(20,1).c$$S$S$S,["", "[left][right]", "[][]"]));
 noGraphFilterView.setBackground$java_awt_Color($I$(19).white);
 this.annotationComboBoxPanel.setBackground$java_awt_Color($I$(19).white);
 this.annotationComboBoxPanel.setFont$java_awt_Font($I$(3).getLabelFont$());
-this.gSearchPanel=Clazz.new_($I$(21).c$$jalview_gui_AnnotationColumnChooser, [this, null, this]);
-this.ngSearchPanel=Clazz.new_($I$(21).c$$jalview_gui_AnnotationColumnChooser, [this, null, this]);
-this.gFurtherActionPanel=Clazz.new_($I$(22).c$$jalview_gui_AnnotationColumnChooser, [this, null, this]);
-this.ngFurtherActionPanel=Clazz.new_($I$(22).c$$jalview_gui_AnnotationColumnChooser, [this, null, this]);
-this.gStructureFilterPanel=Clazz.new_($I$(23).c$$jalview_gui_AnnotationColumnChooser, [this, null, this]);
-this.ngStructureFilterPanel=Clazz.new_($I$(23).c$$jalview_gui_AnnotationColumnChooser, [this, null, this]);
+this.gSearchPanel=Clazz.new_($I$(21,1).c$$jalview_gui_AnnotationColumnChooser,[this, null, this]);
+this.ngSearchPanel=Clazz.new_($I$(21,1).c$$jalview_gui_AnnotationColumnChooser,[this, null, this]);
+this.gFurtherActionPanel=Clazz.new_($I$(22,1).c$$jalview_gui_AnnotationColumnChooser,[this, null, this]);
+this.ngFurtherActionPanel=Clazz.new_($I$(22,1).c$$jalview_gui_AnnotationColumnChooser,[this, null, this]);
+this.gStructureFilterPanel=Clazz.new_($I$(23,1).c$$jalview_gui_AnnotationColumnChooser,[this, null, this]);
+this.ngStructureFilterPanel=Clazz.new_($I$(23,1).c$$jalview_gui_AnnotationColumnChooser,[this, null, this]);
 thresholdPanel.add$java_awt_Component(this.getThreshold$());
 thresholdPanel.add$java_awt_Component$O(this.percentThreshold, "wrap");
 thresholdPanel.add$java_awt_Component$O(this.slider, "grow");
@@ -119,7 +94,7 @@ noGraphFilterView.add$java_awt_Component(this.ngFurtherActionPanel);
 this.annotationComboBoxPanel.add$java_awt_Component(this.getAnnotations$());
 this.switchableViewsPanel.add$java_awt_Component$O(noGraphFilterView, C$.NO_GRAPH_VIEW);
 this.switchableViewsPanel.add$java_awt_Component$O(graphFilterView, C$.GRAPH_VIEW);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(24)));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(24,1)));
 this.add$java_awt_Component$O(this.annotationComboBoxPanel, "First");
 this.add$java_awt_Component$O(this.switchableViewsPanel, "Center");
 this.add$java_awt_Component$O(actionPanel, "South");
@@ -159,7 +134,7 @@ this.ap.paintAlignment$Z$Z(false, false);
 Clazz.newMeth(C$, 'updateView$', function () {
 if (this.adjusting) {
 return;
-}var filterParams=Clazz.new_($I$(25));
+}var filterParams=Clazz.new_($I$(25,1));
 this.setCurrentAnnotation$jalview_datamodel_AlignmentAnnotation(this.av.getAlignment$().getAlignmentAnnotation$()[this.annmap[this.getAnnotations$().getSelectedIndex$()]]);
 var selectedThresholdItem=this.getSelectedThresholdItem$I(this.getThreshold$().getSelectedIndex$());
 this.slider.setEnabled$Z(true);
@@ -172,7 +147,7 @@ this.thresholdValue.setText$S("");
 this.percentThreshold.setEnabled$Z(false);
 } else if (selectedThresholdItem != -1) {
 if (this.getCurrentAnnotation$().threshold == null ) {
-this.getCurrentAnnotation$().setThreshold$jalview_datamodel_GraphLine(Clazz.new_($I$(26).c$$F$S$java_awt_Color,[(this.getCurrentAnnotation$().graphMax - this.getCurrentAnnotation$().graphMin) / 2.0, "Threshold", $I$(19).black]));
+this.getCurrentAnnotation$().setThreshold$jalview_datamodel_GraphLine(Clazz.new_([(this.getCurrentAnnotation$().graphMax - this.getCurrentAnnotation$().graphMin) / 2.0, "Threshold", $I$(19).black],$I$(26,1).c$$F$S$java_awt_Color));
 }this.adjusting=true;
 var range=this.getCurrentAnnotation$().graphMax * 1000 - this.getCurrentAnnotation$().graphMin * 1000;
 this.slider.setMinimum$I(((this.getCurrentAnnotation$().graphMin * 1000)|0));
@@ -222,7 +197,7 @@ return this.oldHiddenColumns;
 
 Clazz.newMeth(C$, 'setOldHiddenColumns$jalview_datamodel_HiddenColumns', function (currentHiddenColumns) {
 if (currentHiddenColumns != null ) {
-this.oldHiddenColumns=Clazz.new_($I$(29).c$$jalview_datamodel_HiddenColumns,[currentHiddenColumns]);
+this.oldHiddenColumns=Clazz.new_($I$(29,1).c$$jalview_datamodel_HiddenColumns,[currentHiddenColumns]);
 }});
 
 Clazz.newMeth(C$, 'getCurrentFutherActionPanel$', function () {
@@ -271,7 +246,7 @@ this.setActionOption$I(C$.ACTION_OPTION_HIDE);
 this.updateView$();
 }});
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 this.selectedAnnotationChanged$();
 });
 
@@ -307,61 +282,60 @@ this.ngSearchPanel.searchBox.persistCache$();
 this.gSearchPanel.searchBox.updateCache$();
 this.ngSearchPanel.searchBox.updateCache$();
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.ACTION_OPTION_HIDE=2;
+C$.NO_GRAPH_VIEW="0";
+C$.GRAPH_VIEW="1";
+C$.MIN_WIDTH=($I$(11).isJS$() ? 370 : 420);
+C$.MIN_HEIGHT=($I$(11).isJS$() ? 370 : 430);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.AnnotationColumnChooser, "FurtherActionPanel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AnnotationColumnChooser, "FurtherActionPanel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.aColChooser=null;
-this.hideOption=null;
-this.selectOption=null;
-this.optionsGroup=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.hideOption=Clazz.new_($I$(1));
-this.selectOption=Clazz.new_($I$(1));
-this.optionsGroup=Clazz.new_($I$(2));
-}, 1);
+this.hideOption=Clazz.new_($I$(1,1));
+this.selectOption=Clazz.new_($I$(1,1));
+this.optionsGroup=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['O',['aColChooser','jalview.gui.AnnotationColumnChooser','hideOption','javax.swing.JRadioButton','+selectOption','optionsGroup','javax.swing.ButtonGroup']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AnnotationColumnChooser', function (aColChooser) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.aColChooser=aColChooser;
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.selectOption, "action.select");
 this.selectOption.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$FurtherActionPanel$1||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$FurtherActionPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$FurtherActionPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.FurtherActionPanel'].selectRadioAction$java_awt_event_ActionEvent.apply(this.b$['jalview.gui.AnnotationColumnChooser.FurtherActionPanel'], [actionEvent]);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$FurtherActionPanel$1.$init$, [this, null])));
+), Clazz.new_(P$.AnnotationColumnChooser$FurtherActionPanel$1.$init$,[this, null])));
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.hideOption, "action.hide");
 this.hideOption.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$FurtherActionPanel$2||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$FurtherActionPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$FurtherActionPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.FurtherActionPanel'].hideRadioAction$java_awt_event_ActionEvent.apply(this.b$['jalview.gui.AnnotationColumnChooser.FurtherActionPanel'], [actionEvent]);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$FurtherActionPanel$2.$init$, [this, null])));
+), Clazz.new_(P$.AnnotationColumnChooser$FurtherActionPanel$2.$init$,[this, null])));
 this.optionsGroup.add$javax_swing_AbstractButton(this.selectOption);
 this.optionsGroup.add$javax_swing_AbstractButton(this.hideOption);
 this.optionsGroup.setSelected$javax_swing_ButtonModel$Z(this.selectOption.getModel$(), true);
@@ -391,93 +365,81 @@ this.optionsGroup.setSelected$javax_swing_ButtonModel$Z(this.selectOption.getMod
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AnnotationColumnChooser, "StructureFilterPanel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AnnotationColumnChooser, "StructureFilterPanel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.aColChooser=null;
-this.alphaHelix=null;
-this.betaStrand=null;
-this.turn=null;
-this.all=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.alphaHelix=Clazz.new_($I$(5));
-this.betaStrand=Clazz.new_($I$(5));
-this.turn=Clazz.new_($I$(5));
-this.all=Clazz.new_($I$(5));
-}, 1);
+this.alphaHelix=Clazz.new_($I$(5,1));
+this.betaStrand=Clazz.new_($I$(5,1));
+this.turn=Clazz.new_($I$(5,1));
+this.all=Clazz.new_($I$(5,1));
+},1);
+
+C$.$fields$=[['O',['aColChooser','jalview.gui.AnnotationColumnChooser','alphaHelix','javax.swing.JCheckBox','+betaStrand','+turn','+all']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AnnotationColumnChooser', function (aColChooser) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.aColChooser=aColChooser;
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.alphaHelix, "label.alpha_helix");
 this.alphaHelix.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$StructureFilterPanel$1||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'].alphaHelix_actionPerformed$.apply(this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'], []);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$1.$init$, [this, null])));
+), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$1.$init$,[this, null])));
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.betaStrand, "label.beta_strand");
 this.betaStrand.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$StructureFilterPanel$2||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'].betaStrand_actionPerformed$.apply(this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'], []);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$2.$init$, [this, null])));
+), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$2.$init$,[this, null])));
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.turn, "label.turn");
 this.turn.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$StructureFilterPanel$3||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'].turn_actionPerformed$.apply(this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'], []);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$3.$init$, [this, null])));
+), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$3.$init$,[this, null])));
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.all, "label.select_all");
 this.all.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$StructureFilterPanel$4||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$StructureFilterPanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'].all_actionPerformed$.apply(this.b$['jalview.gui.AnnotationColumnChooser.StructureFilterPanel'], []);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$4.$init$, [this, null])));
-this.setBorder$javax_swing_border_Border(Clazz.new_($I$(6).c$$S,[$I$(7).getString$S("label.structures_filter")]));
+), Clazz.new_(P$.AnnotationColumnChooser$StructureFilterPanel$4.$init$,[this, null])));
+this.setBorder$javax_swing_border_Border(Clazz.new_([$I$(7).getString$S("label.structures_filter")],$I$(6,1).c$$S));
 $I$(3).jvInitComponent$javax_swing_JComponent(this);
 this.add$java_awt_Component(this.all);
 this.add$java_awt_Component(this.alphaHelix);
@@ -539,42 +501,34 @@ this.turn.setSelected$Z(true);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AnnotationColumnChooser, "SearchPanel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AnnotationColumnChooser, "SearchPanel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.aColChooser=null;
-this.displayName=null;
-this.description=null;
-this.searchBox=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.displayName=Clazz.new_($I$(5));
-this.description=Clazz.new_($I$(5));
-this.searchBox=Clazz.new_($I$(8).c$$S,["CACHE.SELECT_FILTER_BY_ANNOT"]);
-}, 1);
+this.displayName=Clazz.new_($I$(5,1));
+this.description=Clazz.new_($I$(5,1));
+this.searchBox=Clazz.new_($I$(8,1).c$$S,["CACHE.SELECT_FILTER_BY_ANNOT"]);
+},1);
+
+C$.$fields$=[['O',['aColChooser','jalview.gui.AnnotationColumnChooser','displayName','javax.swing.JCheckBox','+description','searchBox','jalview.io.cache.JvCacheableInputBox']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AnnotationColumnChooser', function (aColChooser) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.aColChooser=aColChooser;
 $I$(3).jvInitComponent$javax_swing_JComponent(this);
-this.setBorder$javax_swing_border_Border(Clazz.new_($I$(6).c$$S,[$I$(7).getString$S("label.search_filter")]));
+this.setBorder$javax_swing_border_Border(Clazz.new_([$I$(7).getString$S("label.search_filter")],$I$(6,1).c$$S));
 this.searchBox.setPrototypeDisplayValue$S("XXXXXXXXXXXXXXXXXXXXXXX");
 this.searchBox.getComponent$().setToolTipText$S($I$(7).getString$S("info.enter_search_text_here"));
 this.searchBox.addKeyListener$java_awt_event_KeyListener(((P$.AnnotationColumnChooser$SearchPanel$1||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (e) {
 if (e.getKeyCode$() == 10) {
@@ -582,51 +536,48 @@ e.consume$();
 this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'].searchStringAction$.apply(this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'], []);
 }});
 })()
-), Clazz.new_($I$(9), [this, null],P$.AnnotationColumnChooser$SearchPanel$1)));
+), Clazz.new_($I$(9,1),[this, null],P$.AnnotationColumnChooser$SearchPanel$1)));
 this.searchBox.addFocusListener$java_awt_event_FocusListener(((P$.AnnotationColumnChooser$SearchPanel$2||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.FocusAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.FocusAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
 this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'].searchStringAction$.apply(this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'], []);
 });
 })()
-), Clazz.new_($I$(10), [this, null],P$.AnnotationColumnChooser$SearchPanel$2)));
+), Clazz.new_($I$(10,1),[this, null],P$.AnnotationColumnChooser$SearchPanel$2)));
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.displayName, "label.label");
 this.displayName.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$SearchPanel$3||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'].displayNameCheckboxAction$.apply(this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'], []);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$SearchPanel$3.$init$, [this, null])));
+), Clazz.new_(P$.AnnotationColumnChooser$SearchPanel$3.$init$,[this, null])));
 $I$(3).jvInitComponent$javax_swing_AbstractButton$S(this.description, "label.description");
 this.description.addActionListener$java_awt_event_ActionListener(((P$.AnnotationColumnChooser$SearchPanel$4||
-(function(){var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationColumnChooser$SearchPanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (actionEvent) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
 this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'].descriptionCheckboxAction$.apply(this.b$['jalview.gui.AnnotationColumnChooser.SearchPanel'], []);
 });
 })()
-), Clazz.new_(P$.AnnotationColumnChooser$SearchPanel$4.$init$, [this, null])));
+), Clazz.new_(P$.AnnotationColumnChooser$SearchPanel$4.$init$,[this, null])));
 this.syncState$();
 this.add$java_awt_Component(this.searchBox.getComponent$());
 this.add$java_awt_Component(this.displayName);
@@ -663,8 +614,8 @@ this.searchBox.setSelectedItem$S(sp.searchBox.getUserInput$());
 
 Clazz.newMeth(C$, 'updateSearchPanelToolTips$', function () {
 var defaultTtip=$I$(7).getString$S("info.enter_search_text_to_enable");
-var labelTtip=$I$(7).formatMessage$S$OA("info.search_in_annotation_label", [this.this$0.annotations.getSelectedItem$().toString()]);
-var descTtip=$I$(7).formatMessage$S$OA("info.search_in_annotation_description", [this.this$0.annotations.getSelectedItem$().toString()]);
+var labelTtip=$I$(7,"formatMessage$S$OA",["info.search_in_annotation_label", [this.this$0.annotations.getSelectedItem$().toString()]]);
+var descTtip=$I$(7,"formatMessage$S$OA",["info.search_in_annotation_description", [this.this$0.annotations.getSelectedItem$().toString()]]);
 this.displayName.setToolTipText$S(this.displayName.isEnabled$() ? labelTtip : defaultTtip);
 this.description.setToolTipText$S(this.description.isEnabled$() ? descTtip : defaultTtip);
 });
@@ -674,4 +625,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

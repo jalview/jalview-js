@@ -1,52 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.ThreadLocalRandom','java.util.concurrent.atomic.AtomicInteger','java.util.concurrent.atomic.AtomicLong','java.io.ObjectStreamField','sun.misc.Unsafe','Thread','Error','java.security.AccessController','sun.security.action.GetPropertyAction','java.security.SecureRandom','StrictMath','java.util.stream.StreamSupport',['java.util.concurrent.ThreadLocalRandom','.RandomIntsSpliterator'],['java.util.concurrent.ThreadLocalRandom','.RandomLongsSpliterator'],['java.util.concurrent.ThreadLocalRandom','.RandomDoublesSpliterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ThreadLocalRandom", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.ThreadLocalRandom','java.util.concurrent.atomic.AtomicInteger','java.util.concurrent.atomic.AtomicLong','java.io.ObjectStreamField','sun.misc.Unsafe','Thread','Error','java.security.AccessController','sun.security.action.GetPropertyAction','java.security.SecureRandom','StrictMath','java.util.stream.StreamSupport',['java.util.concurrent.ThreadLocalRandom','.RandomIntsSpliterator'],['java.util.concurrent.ThreadLocalRandom','.RandomLongsSpliterator'],['java.util.concurrent.ThreadLocalRandom','.RandomDoublesSpliterator']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ThreadLocalRandom", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.Random');
-C$.probeGenerator=null;
-C$.seeder=null;
-C$.nextLocalGaussian=null;
-C$.instance=null;
-C$.serialPersistentFields=null;
-C$.UNSAFE=null;
-C$.SEED=0;
-C$.PROBE=0;
-C$.SECONDARY=0;
+C$.$classes$=[['RandomIntsSpliterator',24],['RandomLongsSpliterator',24],['RandomDoublesSpliterator',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.probeGenerator=Clazz.new_($I$(2));
-C$.seeder=Clazz.new_($I$(3).c$$J,[C$.initialSeed$()]);
-C$.instance=Clazz.new_(C$);
-C$.serialPersistentFields=Clazz.array($I$(4), -1, [Clazz.new_($I$(4).c$$S$Class,["rnd", Long.TYPE]), Clazz.new_($I$(4).c$$S$Class,["initialized", Boolean.TYPE])]);
-C$.SEED=0;
-C$.PROBE=0;
-C$.SECONDARY=0;
-{
-try {
-C$.UNSAFE=$I$(5).getUnsafe$();
-var tk=Clazz.getClass($I$(6));
-C$.SEED=C$.UNSAFE.objectFieldOffset$reflect_Field(tk.getDeclaredField$S("threadLocalRandomSeed"));
-C$.PROBE=C$.UNSAFE.objectFieldOffset$reflect_Field(tk.getDeclaredField$S("threadLocalRandomProbe"));
-C$.SECONDARY=C$.UNSAFE.objectFieldOffset$reflect_Field(tk.getDeclaredField$S("threadLocalRandomSecondarySeed"));
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_($I$(7).c$$Throwable,[e]);
-} else {
-throw e;
-}
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.initialized=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['initialized']]
+,['J',['SEED','PROBE','SECONDARY'],'O',['probeGenerator','java.util.concurrent.atomic.AtomicInteger','seeder','java.util.concurrent.atomic.AtomicLong','nextLocalGaussian','Double','instance','java.util.concurrent.ThreadLocalRandom','serialPersistentFields','java.io.ObjectStreamField[]','UNSAFE','sun.misc.Unsafe']]]
 
 Clazz.newMeth(C$, 'initialSeed$', function () {
-var pp=$I$(8).doPrivileged$java_security_PrivilegedAction(Clazz.new_($I$(9).c$$S,["java.util.secureRandomSeed"]));
+var pp=$I$(8,"doPrivileged$java_security_PrivilegedAction",[Clazz.new_($I$(9,1).c$$S,["java.util.secureRandomSeed"])]);
 if (pp != null  && pp.equalsIgnoreCase$S("true") ) {
 var seedBytes=$I$(10).getSeed$I(8);
 var s=(seedBytes[0]) & 255;
@@ -66,7 +33,7 @@ return ((((z ^ (z >>> 33)) * -4265267296055464877) >>> 32)|0);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.initialized=true;
 }, 1);
 
@@ -211,69 +178,69 @@ v1=2 * this.nextDouble$() - 1;
 v2=2 * this.nextDouble$() - 1;
 s=v1 * v1 + v2 * v2;
 } while (s >= 1  || s == 0  );
-var multiplier=$I$(11).sqrt$D(-2 * $I$(11).log$D(s) / s);
+var multiplier=$I$(11,"sqrt$D",[-2 * $I$(11).log$D(s) / s]);
 C$.nextLocalGaussian=( new Double(v2 * multiplier));
 return v1 * multiplier;
 });
 
 Clazz.newMeth(C$, 'ints$J', function (streamSize) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
-return $I$(12).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(13).c$$J$J$I$I,[0, streamSize, 2147483647, 0]), false);
+return $I$(12,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(13,1).c$$J$J$I$I,[0, streamSize, 2147483647, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'ints$', function () {
-return $I$(12).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(13).c$$J$J$I$I,[0, 9223372036854775807, 2147483647, 0]), false);
+return $I$(12,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(13,1).c$$J$J$I$I,[0, 9223372036854775807, 2147483647, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'ints$J$I$I', function (streamSize, randomNumberOrigin, randomNumberBound) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(12).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(13).c$$J$J$I$I,[0, streamSize, randomNumberOrigin, randomNumberBound]), false);
+return $I$(12,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(13,1).c$$J$J$I$I,[0, streamSize, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'ints$I$I', function (randomNumberOrigin, randomNumberBound) {
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(12).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(13).c$$J$J$I$I,[0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false);
+return $I$(12,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(13,1).c$$J$J$I$I,[0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$J', function (streamSize) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
-return $I$(12).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(14).c$$J$J$J$J,[0, streamSize, 9223372036854775807, 0]), false);
+return $I$(12,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(14,1).c$$J$J$J$J,[0, streamSize, 9223372036854775807, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$', function () {
-return $I$(12).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(14).c$$J$J$J$J,[0, 9223372036854775807, 9223372036854775807, 0]), false);
+return $I$(12,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(14,1).c$$J$J$J$J,[0, 9223372036854775807, 9223372036854775807, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$J$J$J', function (streamSize, randomNumberOrigin, randomNumberBound) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(12).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(14).c$$J$J$J$J,[0, streamSize, randomNumberOrigin, randomNumberBound]), false);
+return $I$(12,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(14,1).c$$J$J$J$J,[0, streamSize, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$J$J', function (randomNumberOrigin, randomNumberBound) {
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(12).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(14).c$$J$J$J$J,[0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false);
+return $I$(12,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(14,1).c$$J$J$J$J,[0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$J', function (streamSize) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
-return $I$(12).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(15).c$$J$J$D$D,[0, streamSize, 1.7976931348623157E308, 0.0]), false);
+return $I$(12,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(15,1).c$$J$J$D$D,[0, streamSize, 1.7976931348623157E308, 0.0]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$', function () {
-return $I$(12).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(15).c$$J$J$D$D,[0, 9223372036854775807, 1.7976931348623157E308, 0.0]), false);
+return $I$(12,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(15,1).c$$J$J$D$D,[0, 9223372036854775807, 1.7976931348623157E308, 0.0]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$J$D$D', function (streamSize, randomNumberOrigin, randomNumberBound) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
 if (!(randomNumberOrigin < randomNumberBound )) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(12).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(15).c$$J$J$D$D,[0, streamSize, randomNumberOrigin, randomNumberBound]), false);
+return $I$(12,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(15,1).c$$J$J$D$D,[0, streamSize, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$D$D', function (randomNumberOrigin, randomNumberBound) {
 if (!(randomNumberOrigin < randomNumberBound )) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(12).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(15).c$$J$J$D$D,[0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false);
+return $I$(12,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(15,1).c$$J$J$D$D,[0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'getProbe$', function () {
@@ -312,27 +279,42 @@ s.writeFields$();
 Clazz.newMeth(C$, 'readResolve', function () {
 return C$.current$();
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.probeGenerator=Clazz.new_($I$(2,1));
+C$.seeder=Clazz.new_([C$.initialSeed$()],$I$(3,1).c$$J);
+C$.instance=Clazz.new_(C$);
+C$.serialPersistentFields=Clazz.array($I$(4), -1, [Clazz.new_($I$(4,1).c$$S$Class,["rnd", Long.TYPE]), Clazz.new_($I$(4,1).c$$S$Class,["initialized", Boolean.TYPE])]);
+{
+try {
+C$.UNSAFE=$I$(5).getUnsafe$();
+var tk=Clazz.getClass($I$(6));
+C$.SEED=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(tk.getDeclaredField$S("threadLocalRandomSeed"));
+C$.PROBE=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(tk.getDeclaredField$S("threadLocalRandomProbe"));
+C$.SECONDARY=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(tk.getDeclaredField$S("threadLocalRandomSecondarySeed"));
+} catch (e) {
+if (Clazz.exceptionOf(e,"Exception")){
+throw Clazz.new_($I$(7,1).c$$Throwable,[e]);
+} else {
+throw e;
+}
+}
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadLocalRandom, "RandomIntsSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadLocalRandom, "RandomIntsSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Spliterator','java.util.Spliterator.OfInt']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.fence=0;
-this.origin=0;
-this.bound=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['origin','bound'],'J',['index','fence']]]
 
 Clazz.newMeth(C$, 'c$$J$J$I$I', function (index, fence, origin, bound) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.index=index;
 this.fence=fence;
 this.origin=origin;
@@ -353,18 +335,18 @@ Clazz.newMeth(C$, 'characteristics$', function () {
 return (17728);
 });
 
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_IntConsumer','tryAdvance$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['tryAdvance$java_util_function_IntConsumer','tryAdvance$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
 if (i < f) {
-consumer.accept$($I$(1).current$().internalNextInt$I$I(this.origin, this.bound));
+consumer.accept$I($I$(1).current$().internalNextInt$I$I(this.origin, this.bound));
 this.index=i + 1;
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_IntConsumer','forEachRemaining$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['forEachRemaining$java_util_function_IntConsumer','forEachRemaining$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
@@ -374,33 +356,26 @@ var o=this.origin;
 var b=this.bound;
 var rng=$I$(1).current$();
 do {
-consumer.accept$(rng.internalNextInt$I$I(o, b));
+consumer.accept$I(rng.internalNextInt$I$I(o, b));
 } while (++i < f);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadLocalRandom, "RandomLongsSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadLocalRandom, "RandomLongsSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Spliterator','java.util.Spliterator.OfLong']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.fence=0;
-this.origin=0;
-this.bound=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['index','fence','origin','bound']]]
 
 Clazz.newMeth(C$, 'c$$J$J$J$J', function (index, fence, origin, bound) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.index=index;
 this.fence=fence;
 this.origin=origin;
@@ -421,18 +396,18 @@ Clazz.newMeth(C$, 'characteristics$', function () {
 return (17728);
 });
 
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_LongConsumer','tryAdvance$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['tryAdvance$java_util_function_LongConsumer','tryAdvance$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
 if (i < f) {
-consumer.accept$($I$(1).current$().internalNextLong$J$J(this.origin, this.bound));
+consumer.accept$J($I$(1).current$().internalNextLong$J$J(this.origin, this.bound));
 this.index=i + 1;
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_LongConsumer','forEachRemaining$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['forEachRemaining$java_util_function_LongConsumer','forEachRemaining$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
@@ -442,33 +417,26 @@ var o=this.origin;
 var b=this.bound;
 var rng=$I$(1).current$();
 do {
-consumer.accept$(rng.internalNextLong$J$J(o, b));
+consumer.accept$J(rng.internalNextLong$J$J(o, b));
 } while (++i < f);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadLocalRandom, "RandomDoublesSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadLocalRandom, "RandomDoublesSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Spliterator','java.util.Spliterator.OfDouble']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.fence=0;
-this.origin=0;
-this.bound=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['origin','bound'],'J',['index','fence']]]
 
 Clazz.newMeth(C$, 'c$$J$J$D$D', function (index, fence, origin, bound) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.index=index;
 this.fence=fence;
 this.origin=origin;
@@ -489,18 +457,18 @@ Clazz.newMeth(C$, 'characteristics$', function () {
 return (17728);
 });
 
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_DoubleConsumer','tryAdvance$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['tryAdvance$java_util_function_DoubleConsumer','tryAdvance$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
 if (i < f) {
-consumer.accept$($I$(1).current$().internalNextDouble$D$D(this.origin, this.bound));
+consumer.accept$D($I$(1).current$().internalNextDouble$D$D(this.origin, this.bound));
 this.index=i + 1;
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_DoubleConsumer','forEachRemaining$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['forEachRemaining$java_util_function_DoubleConsumer','forEachRemaining$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
@@ -510,11 +478,11 @@ var o=this.origin;
 var b=this.bound;
 var rng=$I$(1).current$();
 do {
-consumer.accept$(rng.internalNextDouble$D$D(o, b));
+consumer.accept$D(rng.internalNextDouble$D$D(o, b));
 } while (++i < f);
 }});
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

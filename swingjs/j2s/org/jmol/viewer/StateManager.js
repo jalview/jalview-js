@@ -1,25 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','java.util.Arrays','org.jmol.util.BSUtil','javajs.util.BS','org.jmol.modelset.Orientation','org.jmol.viewer.Scene','org.jmol.viewer.Connections','org.jmol.viewer.Connection']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StateManager");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','java.util.Arrays','org.jmol.util.BSUtil','javajs.util.BS','org.jmol.modelset.Orientation','org.jmol.viewer.Scene','org.jmol.viewer.Connections','org.jmol.viewer.Connection']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "StateManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.saved=null;
-this.lastOrientation=null;
-this.lastContext=null;
-this.lastConnections=null;
-this.lastScene=null;
-this.lastSelected=null;
-this.lastState=null;
-this.lastShape=null;
-this.lastCoordinates=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.saved=Clazz.new_($I$(1));
+this.saved=Clazz.new_($I$(1,1));
 this.lastOrientation="";
 this.lastContext="";
 this.lastConnections="";
@@ -28,10 +13,12 @@ this.lastSelected="";
 this.lastState="";
 this.lastShape="";
 this.lastCoordinates="";
-}, 1);
+},1);
+
+C$.$fields$=[['S',['lastOrientation','lastContext','lastConnections','lastScene','lastSelected','lastState','lastShape','lastCoordinates'],'O',['vwr','org.jmol.viewer.Viewer','saved','java.util.Map']]]
 
 Clazz.newMeth(C$, 'getVariableList$java_util_Map$I$Z$Z', function (htVariables, nMax, withSites, definedOnly) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 var n=0;
 var list=Clazz.array(String, [htVariables.size$()]);
 for (var entry, $entry = htVariables.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
@@ -58,7 +45,7 @@ return "background axis1      axis2      axis3      boundbox   unitcell   frank 
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer', function (vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 }, 1);
 
@@ -158,14 +145,14 @@ if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["Selected_"]);
 return;
 }saveName=this.lastSelected="Selected_" + saveName;
-this.saved.put$TK$TV(saveName, $I$(4).copy$javajs_util_BS(bsSelected));
+this.saved.put$O$O(saveName, $I$(4).copy$javajs_util_BS(bsSelected));
 });
 
 Clazz.newMeth(C$, 'restoreSelection$S', function (saveName) {
 var name=(saveName.length$() > 0 ? "Selected_" + saveName : this.lastSelected);
 var bsSelected=C$.getNoCase$java_util_Map$S(this.saved, name);
 if (bsSelected == null ) {
-this.vwr.select$javajs_util_BS$Z$I$Z(Clazz.new_($I$(5)), false, 0, false);
+this.vwr.select$javajs_util_BS$Z$I$Z(Clazz.new_($I$(5,1)), false, 0, false);
 return false;
 }this.vwr.select$javajs_util_BS$Z$I$Z(bsSelected, false, 0, false);
 return true;
@@ -176,7 +163,7 @@ if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["State_"]);
 return;
 }saveName=this.lastState="State_" + saveName;
-this.saved.put$TK$TV(saveName, this.vwr.getStateInfo$());
+this.saved.put$O$O(saveName, this.vwr.getStateInfo$());
 });
 
 Clazz.newMeth(C$, 'getSavedState$S', function (saveName) {
@@ -190,7 +177,7 @@ if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["Shape_"]);
 return;
 }saveName=this.lastShape="Shape_" + saveName;
-this.saved.put$TK$TV(saveName, this.vwr.getStructureState$());
+this.saved.put$O$O(saveName, this.vwr.getStructureState$());
 });
 
 Clazz.newMeth(C$, 'getSavedStructure$S', function (saveName) {
@@ -204,7 +191,7 @@ if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["Coordinates_"]);
 return;
 }saveName=this.lastCoordinates="Coordinates_" + saveName;
-this.saved.put$TK$TV(saveName, this.vwr.getCoordinateState$javajs_util_BS(bsSelected));
+this.saved.put$O$O(saveName, this.vwr.getCoordinateState$javajs_util_BS(bsSelected));
 });
 
 Clazz.newMeth(C$, 'getSavedCoordinates$S', function (saveName) {
@@ -214,7 +201,7 @@ return (script == null  ? "" : script);
 });
 
 Clazz.newMeth(C$, 'getOrientation$', function () {
-return Clazz.new_($I$(6).c$$org_jmol_viewer_Viewer$Z$FA,[this.vwr, false, null]);
+return Clazz.new_($I$(6,1).c$$org_jmol_viewer_Viewer$Z$FA,[this.vwr, false, null]);
 });
 
 Clazz.newMeth(C$, 'getSavedOrientationText$S', function (saveName) {
@@ -222,7 +209,7 @@ var o;
 if (saveName != null ) {
 o=p$1.getOrientationFor$S.apply(this, [saveName]);
 return (o == null  ? "" : o.getMoveToText$Z(true));
-}var sb=Clazz.new_($I$(2));
+}var sb=Clazz.new_($I$(2,1));
 for (var e, $e = this.saved.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var name=e.getKey$();
 if (name.startsWith$S("Orientation_")) sb.append$S((e.getValue$()).getMoveToText$Z(true));
@@ -234,9 +221,9 @@ Clazz.newMeth(C$, 'saveScene$S$java_util_Map', function (saveName, scene) {
 if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["Scene_"]);
 return;
-}var o=Clazz.new_($I$(7).c$$java_util_Map,[scene]);
+}var o=Clazz.new_($I$(7,1).c$$java_util_Map,[scene]);
 o.saveName=this.lastScene="Scene_" + saveName;
-this.saved.put$TK$TV(o.saveName, o);
+this.saved.put$O$O(o.saveName, o);
 });
 
 Clazz.newMeth(C$, 'restoreScene$S$F', function (saveName, timeSeconds) {
@@ -248,9 +235,9 @@ Clazz.newMeth(C$, 'saveOrientation$S$FA', function (saveName, pymolView) {
 if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["Orientation_"]);
 return;
-}var o=Clazz.new_($I$(6).c$$org_jmol_viewer_Viewer$Z$FA,[this.vwr, saveName.equalsIgnoreCase$S("default"), pymolView]);
+}var o=Clazz.new_([this.vwr, saveName.equalsIgnoreCase$S("default"), pymolView],$I$(6,1).c$$org_jmol_viewer_Viewer$Z$FA);
 o.saveName=this.lastOrientation="Orientation_" + saveName;
-this.saved.put$TK$TV(o.saveName, o);
+this.saved.put$O$O(o.saveName, o);
 });
 
 Clazz.newMeth(C$, 'restoreOrientation$S$F$Z', function (saveName, timeSeconds, isAll) {
@@ -267,7 +254,7 @@ Clazz.newMeth(C$, 'saveContext$S$O', function (saveName, context) {
 if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["Context_"]);
 return;
-}this.saved.put$TK$TV((this.lastContext="Context_" + saveName), context);
+}this.saved.put$O$O((this.lastContext="Context_" + saveName), context);
 });
 
 Clazz.newMeth(C$, 'getContext$S', function (saveName) {
@@ -278,9 +265,9 @@ Clazz.newMeth(C$, 'saveBonds$S', function (saveName) {
 if (saveName.equalsIgnoreCase$S("DELETE")) {
 p$1.deleteSavedType$S.apply(this, ["Bonds_"]);
 return;
-}var b=Clazz.new_($I$(8).c$$org_jmol_viewer_Viewer,[this.vwr]);
+}var b=Clazz.new_($I$(8,1).c$$org_jmol_viewer_Viewer,[this.vwr]);
 b.saveName=this.lastConnections="Bonds_" + saveName;
-this.saved.put$TK$TV(b.saveName, b);
+this.saved.put$O$O(b.saveName, b);
 });
 
 Clazz.newMeth(C$, 'restoreBonds$S', function (saveName) {
@@ -297,4 +284,4 @@ return sv;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

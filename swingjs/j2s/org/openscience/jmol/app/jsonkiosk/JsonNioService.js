@@ -1,40 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.jsonkiosk"),p$1={},I$=[[0,'org.jmol.util.Logger','Thread','java.util.ArrayList','org.jmol.script.SV','javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','naga.packetreader.AsciiLinePacketReader','naga.packetwriter.RawPacketWriter',['org.openscience.jmol.app.jsonkiosk.JsonNioService','.JsonNioThread'],['org.openscience.jmol.app.jsonkiosk.JsonNioService','.JSONObject'],'naga.SocketObserverAdapter','naga.ServerSocketObserverAdapter',['org.openscience.jmol.app.jsonkiosk.JsonNioService','.JsonNioServerThread'],'java.io.File','java.io.BufferedReader','java.io.InputStreamReader','java.io.FileInputStream','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JsonNioService", function(){
+(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.jsonkiosk"),p$1={},I$=[[0,'org.jmol.util.Logger','Thread','java.util.ArrayList','org.jmol.script.SV','javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','naga.packetreader.AsciiLinePacketReader','naga.packetwriter.RawPacketWriter',['org.openscience.jmol.app.jsonkiosk.JsonNioService','.JsonNioThread'],['org.openscience.jmol.app.jsonkiosk.JsonNioService','.JSONObject'],'naga.SocketObserverAdapter','naga.ServerSocketObserverAdapter',['org.openscience.jmol.app.jsonkiosk.JsonNioService','.JsonNioServerThread'],'java.io.File','java.io.BufferedReader','java.io.InputStreamReader','java.io.FileInputStream','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JsonNioService", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'naga.NIOService', 'org.openscience.jmol.app.jsonkiosk.JsonNioServer');
+C$.$classes$=[['JsonNioThread',4],['JsonNioServerThread',4],['JSONObject',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myName=null;
-this.halt=false;
-this.isPaused=false;
-this.latestMoveTime=0;
-this.port=0;
-this.thread=null;
-this.serverThread=null;
-this.inSocket=null;
-this.outSocket=null;
-this.serverSocket=null;
-this.vwr=null;
-this.client=null;
-this.wasSpinOn=false;
-this.contentPath=null;
-this.terminatorMessage=null;
-this.resetMessage=null;
-this.version=0;
-this.nFast=0;
-this.swipeCutoff=0;
-this.swipeCount=0;
-this.swipeDelayMs=0;
-this.previousMoveTime=0;
-this.swipeStartTime=0;
-this.swipeFactor=0;
-this.motionDisabled=false;
-this.contentDisabled=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.contentPath="./%ID%.json";
@@ -45,11 +15,12 @@ this.swipeCutoff=100;
 this.swipeCount=2;
 this.swipeDelayMs=3000;
 this.swipeFactor=30;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['halt','isPaused','wasSpinOn','motionDisabled','contentDisabled'],'F',['swipeCutoff','swipeDelayMs','swipeFactor'],'I',['port','version','nFast','swipeCount'],'J',['latestMoveTime','previousMoveTime','swipeStartTime'],'S',['myName','contentPath','terminatorMessage','resetMessage'],'O',['thread','Thread','+serverThread','inSocket','naga.NIOSocket','+outSocket','serverSocket','naga.NIOServerSocket','vwr','org.jmol.viewer.Viewer','client','org.openscience.jmol.app.jsonkiosk.JsonNioClient']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'scriptCallback$S', function (msg) {
@@ -103,24 +74,23 @@ if (s != "") this.terminatorMessage=s;
 s=C$.getJmolValueAsString$org_jmol_viewer_Viewer$S(jmolViewer, "NIOresetMessage");
 if (s != "") this.resetMessage=s;
 p$1.setEnabled.apply(this, []);
-$I$(1).info$S("NIOcontentPath=" + this.contentPath);
-$I$(1).info$S("NIOterminatorMessage=" + this.terminatorMessage);
-$I$(1).info$S("NIOresetMessage=" + this.resetMessage);
-$I$(1).info$S("NIOcontentDisabled=" + this.contentDisabled);
-$I$(1).info$S("NIOmotionDisabled=" + this.motionDisabled);
+(function(a,f){return f.apply(null,a)})(["NIOcontentPath=" + this.contentPath],$I$(1).info$S);
+(function(a,f){return f.apply(null,a)})(["NIOterminatorMessage=" + this.terminatorMessage],$I$(1).info$S);
+(function(a,f){return f.apply(null,a)})(["NIOresetMessage=" + this.resetMessage],$I$(1).info$S);
+(function(a,f){return f.apply(null,a)})(["NIOcontentDisabled=" + this.contentDisabled],$I$(1).info$S);
+(function(a,f){return f.apply(null,a)})(["NIOmotionDisabled=" + this.motionDisabled],$I$(1).info$S);
 }$I$(1).info$S("JsonNioService" + this.myName + " using port " + port );
 if (port != 0) {
 this.inSocket=this.openSocket$S$I("127.0.0.1", port);
-this.inSocket.setPacketReader$naga_PacketReader(Clazz.new_($I$(8)));
+this.inSocket.setPacketReader$naga_PacketReader(Clazz.new_($I$(8,1)));
 this.inSocket.setPacketWriter$naga_PacketWriter($I$(9).INSTANCE);
 this.inSocket.listen$naga_SocketObserver(((P$.JsonNioService$1||
-(function(){var C$=Clazz.newClass(P$, "JsonNioService$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'naga.SocketObserver', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JsonNioService$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'naga.SocketObserver', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'connectionOpened$naga_NIOSocket', function (nioSocket) {
 this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].initialize$S$naga_NIOSocket.apply(this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'], ["out", nioSocket]);
@@ -132,25 +102,24 @@ this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].processMessage$BA$n
 
 Clazz.newMeth(C$, 'connectionBroken$naga_NIOSocket$Exception', function (nioSocket, exception) {
 this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].halt=true;
-$I$(1).info$S($I$(2).currentThread$().getName$() + " inSocket connectionBroken");
+(function(a,f){return f.apply(null,a)})([$I$(2).currentThread$().getName$() + " inSocket connectionBroken"],$I$(1).info$S);
 });
 
 Clazz.newMeth(C$, 'packetSent$naga_NIOSocket$O', function (arg0, arg1) {
 });
 })()
-), Clazz.new_(P$.JsonNioService$1.$init$, [this, null])));
+), Clazz.new_(P$.JsonNioService$1.$init$,[this, null])));
 if (version == 1) {
 this.outSocket=this.openSocket$S$I("127.0.0.1", port);
-this.outSocket.setPacketReader$naga_PacketReader(Clazz.new_($I$(8)));
+this.outSocket.setPacketReader$naga_PacketReader(Clazz.new_($I$(8,1)));
 this.outSocket.setPacketWriter$naga_PacketWriter($I$(9).INSTANCE);
 this.outSocket.listen$naga_SocketObserver(((P$.JsonNioService$2||
-(function(){var C$=Clazz.newClass(P$, "JsonNioService$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'naga.SocketObserver', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JsonNioService$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'naga.SocketObserver', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'connectionOpened$naga_NIOSocket', function (nioSocket) {
 this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].initialize$S$naga_NIOSocket.apply(this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'], ["in", nioSocket]);
@@ -162,15 +131,15 @@ $I$(1).info$S("outpacketreceived");
 
 Clazz.newMeth(C$, 'connectionBroken$naga_NIOSocket$Exception', function (nioSocket, exception) {
 this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].halt=true;
-$I$(1).info$S($I$(2).currentThread$().getName$() + " outSocket connectionBroken");
+(function(a,f){return f.apply(null,a)})([$I$(2).currentThread$().getName$() + " outSocket connectionBroken"],$I$(1).info$S);
 });
 
 Clazz.newMeth(C$, 'packetSent$naga_NIOSocket$O', function (arg0, arg1) {
 });
 })()
-), Clazz.new_(P$.JsonNioService$2.$init$, [this, null])));
+), Clazz.new_(P$.JsonNioService$2.$init$,[this, null])));
 }}if (port != 0) {
-this.thread=Clazz.new_($I$(2).c$$Runnable$S,[Clazz.new_($I$(10), [this, null]), "JsonNiosThread" + this.myName]);
+this.thread=Clazz.new_([Clazz.new_($I$(10,1),[this, null]), "JsonNiosThread" + this.myName],$I$(2,1).c$$Runnable$S);
 this.thread.start$();
 }if (port == 0 && this.contentDisabled ) client.nioRunContent$org_openscience_jmol_app_jsonkiosk_JsonNioServer(this);
 });
@@ -205,13 +174,13 @@ if (this.client != null ) this.client.nioClosed$org_openscience_jmol_app_jsonkio
 
 Clazz.newMeth(C$, 'initialize$S$naga_NIOSocket', function (role, nioSocket) {
 $I$(1).info$S("JsonNioService" + this.myName + " initialize " + role );
-var json=Clazz.new_($I$(11), [this, null]);
+var json=Clazz.new_($I$(11,1),[this, null]);
 if (this.version == 1) {
-json.put$TK$TV("magic", "JmolApp");
-json.put$TK$TV("role", role);
+json.put$O$O("magic", "JmolApp");
+json.put$O$O("role", role);
 } else {
-json.put$TK$TV("source", "Jmol");
-json.put$TK$TV("type", "login");
+json.put$O$O("source", "Jmol");
+json.put$O$O("type", "login");
 }p$1.sendMessage$org_openscience_jmol_app_jsonkiosk_JsonNioService_JSONObject$S$naga_NIOSocket.apply(this, [json, null, nioSocket]);
 });
 
@@ -219,26 +188,24 @@ Clazz.newMeth(C$, 'startServerService', function () {
 try {
 this.serverSocket=this.openServerSocket$I(this.port);
 this.serverSocket.listen$naga_ServerSocketObserver(((P$.JsonNioService$3||
-(function(){var C$=Clazz.newClass(P$, "JsonNioService$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('naga.ServerSocketObserverAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JsonNioService$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('naga.ServerSocketObserverAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'newConnection$naga_NIOSocket', function (nioSocket) {
-$I$(1).info$S($I$(2).currentThread$().getName$() + " Received connection: " + nioSocket );
-nioSocket.setPacketReader$naga_PacketReader(Clazz.new_($I$(8)));
+(function(a,f){return f.apply(null,a)})([$I$(2).currentThread$().getName$() + " Received connection: " + nioSocket ],$I$(1).info$S);
+nioSocket.setPacketReader$naga_PacketReader(Clazz.new_($I$(8,1)));
 nioSocket.setPacketWriter$naga_PacketWriter($I$(9).INSTANCE);
 nioSocket.listen$naga_SocketObserver(((P$.JsonNioService$3$1||
-(function(){var C$=Clazz.newClass(P$, "JsonNioService$3$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('naga.SocketObserverAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JsonNioService$3$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('naga.SocketObserverAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'packetReceived$naga_NIOSocket$BA', function (socket, packet) {
 this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].processMessage$BA$naga_NIOSocket.apply(this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'], [packet, socket]);
@@ -252,25 +219,24 @@ $I$(1).info$S("JsonNioService" + this.b$['org.openscience.jmol.app.jsonkiosk.Jso
 if (socket === this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].outSocket ) this.b$['org.openscience.jmol.app.jsonkiosk.JsonNioService'].outSocket=null;
 });
 })()
-), Clazz.new_($I$(12), [this, null],P$.JsonNioService$3$1)));
+), Clazz.new_($I$(12,1),[this, null],P$.JsonNioService$3$1)));
 });
 })()
-), Clazz.new_($I$(13), [this, null],P$.JsonNioService$3)));
+), Clazz.new_($I$(13,1),[this, null],P$.JsonNioService$3)));
 this.serverSocket.setConnectionAcceptor$naga_ConnectionAcceptor(((P$.JsonNioService$4||
-(function(){var C$=Clazz.newClass(P$, "JsonNioService$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'naga.ConnectionAcceptor', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JsonNioService$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'naga.ConnectionAcceptor', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['acceptConnection$java_net_InetSocketAddress','acceptConnection$'], function (arg0) {
+Clazz.newMeth(C$, 'acceptConnection$java_net_InetSocketAddress', function (arg0) {
 var isOK=arg0.getAddress$().isLoopbackAddress$();
 return isOK;
 });
 })()
-), Clazz.new_(P$.JsonNioService$4.$init$, [this, null])));
+), Clazz.new_(P$.JsonNioService$4.$init$,[this, null])));
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 } else {
@@ -278,7 +244,7 @@ throw e;
 }
 }
 if (this.serverThread != null ) this.serverThread.interrupt$();
-this.serverThread=Clazz.new_($I$(2).c$$Runnable$S,[Clazz.new_($I$(14), [this, null]), "JsonNioServerThread" + this.myName]);
+this.serverThread=Clazz.new_([Clazz.new_($I$(14,1),[this, null]), "JsonNioServerThread" + this.myName],$I$(2,1).c$$Runnable$S);
 this.serverThread.start$();
 }, p$1);
 
@@ -288,7 +254,7 @@ var msg= String.instantialize(packet);
 $I$(1).info$S("JNIOS received " + msg);
 if (this.vwr == null ) {
 return;
-}var json=Clazz.new_($I$(11).c$$S, [this, null, msg]);
+}var json=Clazz.new_($I$(11,1).c$$S,[this, null, msg]);
 if (this.version == 1) {
 if (socket != null  && json.has$S("magic")  && json.getString$S("magic").equals$O("JmolApp")  && json.getString$S("role").equals$O("out") ) this.outSocket=socket;
 } else {
@@ -301,7 +267,7 @@ e.printStackTrace$();
 });
 
 Clazz.newMeth(C$, 'processJSON$org_openscience_jmol_app_jsonkiosk_JsonNioService_JSONObject$S', function (json, msg) {
-if (json == null ) json=Clazz.new_($I$(11).c$$S, [this, null, msg]);
+if (json == null ) json=Clazz.new_($I$(11,1).c$$S,[this, null, msg]);
 var pt=("banner....command...content...move......quit......sync......touch.....").indexOf$S(json.getString$S("type"));
 p$1.setEnabled.apply(this, []);
 switch (pt) {
@@ -311,7 +277,7 @@ p$1.setBanner$S$Z.apply(this, [(json.has$S("text") ? json.getString$S("text") : 
 break;
 case 10:
 if (this.contentDisabled) break;
-if (json.containsKey$O("var") && json.containsKey$O("data") ) this.vwr.g.setUserVariable$S$org_jmol_script_SV(json.get$S("var").toString(), $I$(4).getVariable$O(json.get$S("data")));
+if (json.containsKey$O("var") && json.containsKey$O("data") ) this.vwr.g.setUserVariable$S$org_jmol_script_SV(json.get$S("var").toString(), (function(a,f){return f.apply(null,a)})([json.get$S("data")],$I$(4).getVariable$O));
 p$1.sendScript$S.apply(this, [json.getString$S("command")]);
 break;
 case 20:
@@ -320,20 +286,20 @@ this.client.nioRunContent$org_openscience_jmol_app_jsonkiosk_JsonNioServer(this)
 break;
 }var id=json.getString$S("id");
 var path=$I$(6).rep$S$S$S(this.contentPath, "%ID%", id).replace$C$C("\\", "/");
-var f=Clazz.new_($I$(15).c$$S,[path]);
-$I$(1).info$S("JsonNiosService Setting path to " + f.getAbsolutePath$());
+var f=Clazz.new_($I$(15,1).c$$S,[path]);
+(function(a,f){return f.apply(null,a)})(["JsonNiosService Setting path to " + f.getAbsolutePath$()],$I$(1).info$S);
 pt=path.lastIndexOf$I("/");
 if (pt >= 0) path=path.substring$I$I(0, pt);
  else path=".";
 var contentJSON=null;
 try {
-var br=Clazz.new_($I$(16).c$$java_io_Reader,[Clazz.new_($I$(17).c$$java_io_InputStream$S,[Clazz.new_($I$(18).c$$java_io_File,[f]), "UTF-8"])]);
+var br=Clazz.new_([Clazz.new_([Clazz.new_($I$(18,1).c$$java_io_File,[f]), "UTF-8"],$I$(17,1).c$$java_io_InputStream$S)],$I$(16,1).c$$java_io_Reader);
 var sb=$I$(5).newN$I(8192);
 var line;
 while ((line=br.readLine$()) != null )sb.append$S(line).appendC$C("\n");
 
 br.close$();
-contentJSON=Clazz.new_($I$(11).c$$S, [this, null, sb.toString()]);
+contentJSON=Clazz.new_([this, null, sb.toString()],$I$(11,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.UnsupportedEncodingException")){
 } else {
@@ -352,7 +318,7 @@ break;
 if (script == null ) throw Clazz.new_(Clazz.load('Exception').c$$S,["scripts startup:yes not found"]);
 } else {
 script=contentJSON.getString$S("startup_script");
-}$I$(1).info$S("JsonNiosService startup_script=" + script);
+}(function(a,f){return f.apply(null,a)})(["JsonNiosService startup_script=" + script],$I$(1).info$S);
 p$1.setBanner$S$Z.apply(this, ["", false]);
 p$1.sendScript$S.apply(this, ["exit"]);
 p$1.sendScript$S.apply(this, ["zap;cd \"" + path + "\";script " + script ]);
@@ -403,7 +369,7 @@ p$1.syncScript$S.apply(this, ["Mouse: " + json.getString$S("sync")]);
 break;
 case 60:
 if (this.motionDisabled) break;
-this.vwr.acm.processMultitouchEvent$I$I$I$I$javajs_util_P3$J(0, json.getInt$S("eventType"), json.getInt$S("touchID"), json.getInt$S("iData"), $I$(19).new3$F$F$F(json.getDouble$S("x"), json.getDouble$S("y"), json.getDouble$S("z")), json.getLong$S("time"));
+this.vwr.acm.processMultitouchEvent$I$I$I$I$javajs_util_P3$J(0, json.getInt$S("eventType"), json.getInt$S("touchID"), json.getInt$S("iData"), (function(a,f){return f.apply(null,a)})([json.getDouble$S("x"), json.getDouble$S("y"), json.getDouble$S("z")],$I$(19).new3$F$F$F), json.getLong$S("time"));
 break;
 }
 }, p$1);
@@ -445,34 +411,33 @@ try {
 if (json != null ) {
 msg=json.toString();
 } else if (msg != null  && msg.indexOf$S("{") != 0 ) {
-json=Clazz.new_($I$(11), [this, null]);
+json=Clazz.new_($I$(11,1),[this, null]);
 if (msg.equalsIgnoreCase$S("!script_terminated!")) {
-json.put$TK$TV("type", "script");
-json.put$TK$TV("event", "done");
+json.put$O$O("type", "script");
+json.put$O$O("event", "done");
 } else {
-json.put$TK$TV("type", "command");
-json.put$TK$TV("command", msg);
+json.put$O$O("type", "command");
+json.put$O$O("command", msg);
 }msg=json.toString();
 }msg += "\r\n";
-$I$(1).info$S($I$(2).currentThread$().getName$() + " sending " + msg + " to " + socket );
+(function(a,f){return f.apply(null,a)})([$I$(2).currentThread$().getName$() + " sending " + msg + " to " + socket ],$I$(1).info$S);
 socket.write$BA(msg.getBytes$S("UTF-8"));
 } catch (e) {
 e.printStackTrace$();
 }
 }, p$1);
 ;
-(function(){var C$=Clazz.newClass(P$.JsonNioService, "JsonNioThread", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JsonNioService, "JsonNioThread", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-$I$(1).info$S($I$(2).currentThread$().getName$() + " JsonNioSocket on " + this.this$0.port );
+(function(a,f){return f.apply(null,a)})([$I$(2).currentThread$().getName$() + " JsonNioSocket on " + this.this$0.port ],$I$(1).info$S);
 try {
 while (!this.this$0.halt){
 this.b$['naga.NIOService'].selectNonBlocking$.apply(this.b$['naga.NIOService'], []);
@@ -489,18 +454,17 @@ this.this$0.close$.apply(this.this$0, []);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JsonNioService, "JsonNioServerThread", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JsonNioService, "JsonNioServerThread", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-$I$(1).info$S($I$(2).currentThread$().getName$() + " JsonNioServerSocket on " + this.this$0.port );
+(function(a,f){return f.apply(null,a)})([$I$(2).currentThread$().getName$() + " JsonNioServerSocket on " + this.this$0.port ],$I$(1).info$S);
 try {
 while (!this.this$0.halt)this.b$['naga.NIOService'].selectBlocking$.apply(this.b$['naga.NIOService'], []);
 
@@ -516,29 +480,28 @@ this.this$0.close$.apply(this.this$0, []);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JsonNioService, "JSONObject", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JsonNioService, "JSONObject", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.Hashtable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (msg) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var o=this.this$0.vwr.evaluateExpressionAsVariable$O(msg);
 if (!(Clazz.instanceOf(o.value, "java.util.Map"))) throw Clazz.new_(Clazz.load('Exception').c$$S,["invalid JSON: " + msg]);
 this.putAll$java_util_Map(o.value);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (map) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.putAll$java_util_Map(map);
 }, 1);
 
@@ -552,9 +515,9 @@ return this.containsKey$O(key) ? this.get$S(key).toString() : null;
 
 Clazz.newMeth(C$, 'getJSONArray$S', function (key) {
 if (!this.has$S(key)) throw Clazz.new_(Clazz.load('Exception').c$$S,["JSON key not found:" + key]);
-var list=Clazz.new_($I$(3));
+var list=Clazz.new_($I$(3,1));
 var svlist=(this.get$S(key)).getList$();
-for (var i=0; i < svlist.size$(); i++) list.add$TE(Clazz.new_(C$.c$$java_util_Map, [this, null, (svlist.get$I(i).value)]));
+for (var i=0; i < svlist.size$(); i++) list.add$O(Clazz.new_(C$.c$$java_util_Map,[this, null, (svlist.get$I(i).value)]));
 
 return list;
 });
@@ -580,15 +543,15 @@ return Double.parseDouble$S(this.get$S(key).toString());
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(5,1));
 sb.append$S("{");
 var sep="";
 for (var e, $e = this.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
-sb.append$S(sep).append$S($I$(6).esc$S(e.getKey$())).append$S(":").append$S($I$(7).e$O(e.getValue$()));
+sb.append$S(sep).append$S((function(a,f){return f.apply(null,a)})([e.getKey$()],$I$(6).esc$S)).append$S(":").append$S((function(a,f){return f.apply(null,a)})([e.getValue$()],$I$(7).e$O));
 sep=",";
 }
 return sb.append$S("}").toString();
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

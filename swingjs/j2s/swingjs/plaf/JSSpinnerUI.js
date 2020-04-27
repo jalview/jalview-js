@@ -1,27 +1,16 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},I$=[[0,'javax.swing.Timer','javax.swing.UIManager',['java.text.DateFormat','.Field'],'javax.swing.SwingUtilities','java.awt.KeyboardFocusManager','swingjs.plaf.JSSpinnerUI','java.awt.Dimension','sun.swing.DefaultLookup',['swingjs.plaf.JSSpinnerUI','.ArrowButtonHandler'],'javax.swing.LookAndFeel','Boolean',['swingjs.plaf.JSSpinnerUI','.Handler'],'swingjs.plaf.BasicArrowButton','javax.swing.border.CompoundBorder','swingjs.plaf.LazyActionMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSSpinnerUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},I$=[[0,'javax.swing.Timer','javax.swing.UIManager',['java.text.DateFormat','.Field'],'javax.swing.SwingUtilities','java.awt.KeyboardFocusManager','swingjs.plaf.JSSpinnerUI','java.awt.Dimension','sun.swing.DefaultLookup',['swingjs.plaf.JSSpinnerUI','.ArrowButtonHandler'],'javax.swing.LookAndFeel',['swingjs.plaf.JSSpinnerUI','.Handler'],'swingjs.plaf.BasicArrowButton','javax.swing.border.CompoundBorder','swingjs.plaf.LazyActionMap']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSSpinnerUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSPanelUI');
-C$.nextButtonHandler=null;
-C$.previousButtonHandler=null;
-C$.zeroSize=null;
+C$.$classes$=[['ArrowButtonHandler',10],['Handler',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nextButtonHandler=Clazz.new_($I$(9).c$$S$Z,["increment", true]);
-C$.previousButtonHandler=Clazz.new_($I$(9).c$$S$Z,["decrement", false]);
-C$.zeroSize=Clazz.new_($I$(7).c$$I$I,[0, 0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.up=null;
-this.dn=null;
-this.spinner=null;
-this.handler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['up','swingjs.api.js.DOMNode','+dn','spinner','javax.swing.JSpinner','handler','swingjs.plaf.JSSpinnerUI.Handler']]
+,['O',['nextButtonHandler','swingjs.plaf.JSSpinnerUI.ArrowButtonHandler','+previousButtonHandler','zeroSize','java.awt.Dimension']]]
 
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
 this.spinner=this.jc;
@@ -84,7 +73,7 @@ Clazz.newMeth(C$, 'installDefaults$', function () {
 this.spinner.setLayout$java_awt_LayoutManager(this.createLayout$());
 $I$(10).installBorder$javax_swing_JComponent$S(this.spinner, "Spinner.border");
 $I$(10).installColorsAndFont$javax_swing_JComponent$S$S$S(this.spinner, "Spinner.background", "Spinner.foreground", "Spinner.font");
-$I$(10).installProperty$javax_swing_JComponent$S$O(this.spinner, "opaque", $I$(11).TRUE);
+$I$(10).installProperty$javax_swing_JComponent$S$O(this.spinner, "opaque", Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'uninstallDefaults$', function () {
@@ -93,7 +82,7 @@ this.spinner.setLayout$java_awt_LayoutManager(null);
 
 Clazz.newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler=Clazz.new_($I$(12));
+this.handler=Clazz.new_($I$(11,1));
 }return this.handler;
 }, p$3);
 
@@ -130,10 +119,10 @@ return c;
 });
 
 Clazz.newMeth(C$, 'createArrowButton$I', function (direction) {
-var b=Clazz.new_($I$(13).c$$I,[direction]);
+var b=Clazz.new_($I$(12,1).c$$I,[direction]);
 var buttonBorder=$I$(2).getBorder$O("Spinner.arrowButtonBorder");
 if (Clazz.instanceOf(buttonBorder, "javax.swing.plaf.UIResource")) {
-b.setBorder$javax_swing_border_Border(Clazz.new_($I$(14).c$$javax_swing_border_Border$javax_swing_border_Border,[buttonBorder, null]));
+b.setBorder$javax_swing_border_Border(Clazz.new_($I$(13,1).c$$javax_swing_border_Border$javax_swing_border_Border,[buttonBorder, null]));
 } else {
 b.setBorder$javax_swing_border_Border(buttonBorder);
 }b.setText$S("\u0000");
@@ -198,9 +187,9 @@ for (var counter=c.getComponentCount$() - 1; counter >= 0; counter--) {
 var child=c.getComponent$I(counter);
 if ($I$(8).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.spinner, this, "Spinner.disableOnBoundaryValues", false)) {
 var model=this.spinner.getModel$();
-if (child.getName$() == "Spinner.nextButton" && model.getNextValue$() == null  ) {
+if (child.getName$() === "Spinner.nextButton"  && model.getNextValue$() == null  ) {
 child.setEnabled$Z(false);
-} else if (child.getName$() == "Spinner.previousButton" && model.getPreviousValue$() == null  ) {
+} else if (child.getName$() === "Spinner.previousButton"  && model.getPreviousValue$() == null  ) {
 child.setEnabled$Z(false);
 } else {
 child.setEnabled$Z(enabled);
@@ -214,7 +203,7 @@ p$3.updateEnabledState$java_awt_Container$Z.apply(this, [child, enabled]);
 Clazz.newMeth(C$, 'installKeyboardActions$', function () {
 var iMap=p$3.getInputMap$I.apply(this, [1]);
 $I$(4).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.spinner, 1, iMap);
-$I$(15).installLazyActionMap$javax_swing_JComponent$Class$S(this.spinner, Clazz.getClass(C$), "Spinner.actionMap");
+$I$(14,"installLazyActionMap$javax_swing_JComponent$Class$S",[this.spinner, Clazz.getClass(C$), "Spinner.actionMap"]);
 });
 
 Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
@@ -246,7 +235,7 @@ C$.superclazz.prototype.getBaselineResizeBehavior$javax_swing_JComponent.apply(t
 return this.spinner.getEditor$().getBaselineResizeBehavior$();
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var prop=e.getPropertyName$();
 var ui=this;
 if (Clazz.instanceOf(e.getSource$(), "javax.swing.JSpinner")) {
@@ -299,32 +288,30 @@ tf.setToolTipText$S(toolTipText);
 (children[i]).setToolTipText$S(spinner.getToolTipText$());
 }}
 }, p$3);
+
+C$.$static$=function(){C$.$static$=0;
+C$.nextButtonHandler=Clazz.new_($I$(9,1).c$$S$Z,["increment", true]);
+C$.previousButtonHandler=Clazz.new_($I$(9,1).c$$S$Z,["decrement", false]);
+C$.zeroSize=Clazz.new_($I$(7,1).c$$I$I,[0, 0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSSpinnerUI, "ArrowButtonHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSSpinnerUI, "ArrowButtonHandler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.AbstractAction', ['java.awt.event.FocusListener', 'java.awt.event.MouseListener', 'javax.swing.plaf.UIResource']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.autoRepeatTimer=null;
-this.isNext=false;
-this.spinner=null;
-this.arrowButton=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.spinner=null;
 this.arrowButton=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNext'],'O',['autoRepeatTimer','javax.swing.Timer','spinner','javax.swing.JSpinner','arrowButton','javax.swing.JButton']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (name, isNext) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 this.isNext=isNext;
-this.autoRepeatTimer=Clazz.new_($I$(1).c$$I$java_awt_event_ActionListener,[60, this]);
+this.autoRepeatTimer=Clazz.new_($I$(1,1).c$$I$java_awt_event_ActionListener,[60, this]);
 this.autoRepeatTimer.setInitialDelay$I(300);
 }, 1);
 
@@ -336,7 +323,7 @@ src=(src).getParent$();
 return (Clazz.instanceOf(src, "javax.swing.JSpinner")) ? src : null;
 }, p$1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var spinner=this.spinner;
 if (!(Clazz.instanceOf(e.getSource$(), "javax.swing.Timer"))) {
 spinner=p$1.eventToSpinner$java_awt_AWTEvent.apply(this, [e]);
@@ -383,7 +370,7 @@ var format=dateEditor.getFormat$();
 var value;
 if (format != null  && (value=spinner.getValue$()) != null  ) {
 var model=dateEditor.getModel$();
-var field=$I$(3).ofCalendarField$I(model.getCalendarField$());
+var field=$I$(3,"ofCalendarField$I",[model.getCalendarField$()]);
 if (field != null ) {
 try {
 var iterator=format.formatToCharacterIterator$O(value);
@@ -491,25 +478,19 @@ this.arrowButton=null;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSSpinnerUI, "Handler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSSpinnerUI, "Handler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.awt.LayoutManager', 'javax.swing.event.ChangeListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextButton=null;
-this.previousButton=null;
-this.editor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nextButton=null;
 this.previousButton=null;
 this.editor=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['nextButton','java.awt.Component','+previousButton','+editor']]]
 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, c) {
 if ("Next".equals$O(name)) {
@@ -538,7 +519,7 @@ var nextD=p$2.preferredSize$java_awt_Component.apply(this, [this.nextButton]);
 var previousD=p$2.preferredSize$java_awt_Component.apply(this, [this.previousButton]);
 var editorD=p$2.preferredSize$java_awt_Component.apply(this, [this.editor]);
 editorD.height=(((editorD.height + 1)/2|0)) * 2;
-var size=Clazz.new_($I$(7).c$$I$I,[editorD.width, editorD.height]);
+var size=Clazz.new_($I$(7,1).c$$I$I,[editorD.width, editorD.height]);
 size.width+=Math.max(nextD.width, previousD.width);
 var insets=parent.getInsets$();
 size.width+=insets.left + insets.right;
@@ -589,7 +570,7 @@ p$2.setBounds$java_awt_Component$I$I$I$I.apply(this, [this.nextButton, buttonsX,
 p$2.setBounds$java_awt_Component$I$I$I$I.apply(this, [this.previousButton, buttonsX, previousY, buttonsWidth, previousHeight]);
 });
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 if (Clazz.instanceOf(e.getSource$(), "javax.swing.JSpinner")) {
 var spinner=e.getSource$();
 var ui=spinner.getUI$();
@@ -602,4 +583,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

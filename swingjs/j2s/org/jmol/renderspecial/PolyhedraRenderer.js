@@ -1,25 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'org.jmol.util.C','javajs.util.T3','javajs.util.V3','javajs.util.P3','org.jmol.util.MeshSurface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PolyhedraRenderer", null, 'org.jmol.render.ShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'org.jmol.util.C','javajs.util.T3','javajs.util.V3','javajs.util.P3','org.jmol.util.MeshSurface']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "PolyhedraRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.drawEdges=0;
-this.isAll=false;
-this.frontOnly=false;
-this.edgesOnly=false;
-this.screens3f=null;
-this.scrVib=null;
-this.vibs=false;
-this.bsSelected=null;
-this.showNumbers=false;
-this.meshSurface=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAll','frontOnly','edgesOnly','vibs','showNumbers'],'I',['drawEdges'],'O',['screens3f','javajs.util.P3[]','scrVib','javajs.util.P3i','bsSelected','javajs.util.BS','meshSurface','org.jmol.util.MeshSurface']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 var polyhedra=this.shape;
@@ -73,7 +60,7 @@ v[i]=a;
 }vertices=v;
 }if (this.screens3f == null  || this.screens3f.length < vertices.length ) {
 this.screens3f=Clazz.array($I$(4), [vertices.length]);
-for (var i=vertices.length; --i >= 0; ) this.screens3f[i]=Clazz.new_($I$(4));
+for (var i=vertices.length; --i >= 0; ) this.screens3f[i]=Clazz.new_($I$(4,1));
 
 }var sc=this.screens3f;
 var planes=p.triangles;
@@ -93,7 +80,7 @@ this.g3d.fillSphereBits$I$javajs_util_P3((this.tm.scaleToScreen$I$I((v.z|0), ((p
 this.g3d.setC$H(colix);
 }if (this.showNumbers) {
 if (this.g3d.setC$H(4)) {
-this.g3d.drawStringNoSlab$S$javajs_awt_Font$I$I$I$H("" + i, null, (v.x|0), (v.y|0), (v.z|0) - 30, 0);
+this.g3d.drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H("" + i, null, (v.x|0), (v.y|0), (v.z|0) - 30, 0);
 this.g3d.setC$H(colix);
 }}}
 var isSelected=(iAtom >= 0 && this.bsSelected != null   && this.bsSelected.get$I(iAtom) );
@@ -103,7 +90,7 @@ this.edgesOnly=(this.drawEdges == 3);
 var normixes=p.getNormixes$();
 if ((!needTranslucent || this.g3d.setC$H(colix) ) && !this.edgesOnly ) {
 if (this.exportType == 1 && !p.collapsed ) {
-if (this.meshSurface == null ) this.meshSurface=Clazz.new_($I$(5));
+if (this.meshSurface == null ) this.meshSurface=Clazz.new_($I$(5,1));
 this.meshSurface.vs=vertices;
 this.meshSurface.pis=planes;
 this.meshSurface.pc=planes.length;
@@ -135,13 +122,12 @@ p$1.drawEdges$H$javajs_util_P3$javajs_util_P3$javajs_util_P3$I.apply(this, [norm
 Clazz.newMeth(C$, 'drawEdges$H$javajs_util_P3$javajs_util_P3$javajs_util_P3$I', function (normix, a, b, c, edgeMask) {
 if (this.isAll || this.edgesOnly || this.frontOnly && this.vwr.gdata.isDirectedTowardsCamera$H(normix)   ) {
 var d=(this.g3d.isAntialiased$() ? 6 : 3);
-if ((edgeMask & 1) == 1) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 3, $b$[0]), d, a, b);
-if ((edgeMask & 2) == 2) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 3, $b$[0]), d, b, c);
-if ((edgeMask & 4) == 4) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 3, $b$[0]), d, a, c);
+if ((edgeMask & 1) == 1) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(3, d, a, b);
+if ((edgeMask & 2) == 2) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(3, d, b, c);
+if ((edgeMask & 4) == 4) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(3, d, a, c);
 }}, p$1);
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

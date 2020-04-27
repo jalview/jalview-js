@@ -1,28 +1,19 @@
 (function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[];
-var C$=Clazz.newClass(P$, "SequenceCursor");
+/*c*/var C$=Clazz.newClass(P$, "SequenceCursor");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequence=null;
-this.residuePosition=0;
-this.columnPosition=0;
-this.firstColumnPosition=0;
-this.lastColumnPosition=0;
-this.token=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['residuePosition','columnPosition','firstColumnPosition','lastColumnPosition','token'],'O',['sequence','jalview.datamodel.SequenceI']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$I$I$I', function (seq, resPos, column, tok) {
 C$.c$$jalview_datamodel_SequenceI$I$I$I$I$I.apply(this, [seq, resPos, column, 0, 0, tok]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$I$I$I$I$I', function (seq, resPos, column, firstResCol, lastResCol, tok) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.sequence=seq;
 this.residuePosition=resPos;
 this.columnPosition=column;
@@ -54,4 +45,4 @@ return String.format$S$OA("%s:Pos%d:Col%d:startCol%d:endCol%d:tok%d", [name, new
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),I$=[[0,'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CenterLayout", null, null, 'java.awt.LayoutManager');
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),I$=[[0,'java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CenterLayout", null, null, 'java.awt.LayoutManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
 });
@@ -22,7 +21,7 @@ size.width+=insets.left + insets.right;
 size.height+=insets.top + insets.bottom;
 return size;
 } else {
-return Clazz.new_($I$(1).c$$I$I,[0, 0]);
+return Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 }});
 
 Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (cont) {
@@ -53,4 +52,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,25 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.android"),I$=[[0,'jalview.ext.android.ContainerHelpers','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SparseDoubleArray", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("jalview.ext.android"),I$=[[0,'jalview.ext.android.ContainerHelpers','StringBuilder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SparseDoubleArray", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mKeys=null;
-this.mValues=null;
-this.mSize=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mSize'],'O',['mKeys','int[]','mValues','double[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [10]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (initialCapacity == 0) {
 this.mKeys=$I$(1).EMPTY_INTS;
 this.mValues=$I$(1).EMPTY_DOUBLES;
@@ -160,7 +154,7 @@ return need;
 Clazz.newMeth(C$, 'toString', function () {
 if (this.size$() <= 0) {
 return "{}";
-}var buffer=Clazz.new_($I$(2).c$$I,[this.mSize * 28]);
+}var buffer=Clazz.new_($I$(2,1).c$$I,[this.mSize * 28]);
 buffer.append$C("{");
 for (var i=0; i < this.mSize; i++) {
 if (i > 0) {
@@ -211,4 +205,4 @@ newValue=this.mValues[i];
 }return newValue;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

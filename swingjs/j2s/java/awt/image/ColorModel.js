@@ -1,41 +1,7 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),I$=[[0,'java.awt.color.ColorSpace','java.awt.image.DirectColorModel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ColorModel", null, null, 'java.awt.Transparency');
-C$.RGBdefault=null;
-C$.l8Tos8=null;
-C$.s8Tol8=null;
-C$.l16Tos8=null;
-C$.s8Tol16=null;
-C$.g8Tos8Map=null;
-C$.lg16Toog8Map=null;
-C$.g16Tos8Map=null;
-C$.lg16Toog16Map=null;
+(function(){var P$=Clazz.newPackage("java.awt.image"),I$=[[0,'java.awt.color.ColorSpace','java.awt.image.DirectColorModel','sun.java2d.cmm.ColorTransform','sun.java2d.cmm.CMSManager','java.util.Collections','java.util.WeakHashMap']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ColorModel", null, null, 'java.awt.Transparency');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.l8Tos8=null;
-C$.s8Tol8=null;
-C$.l16Tos8=null;
-C$.s8Tol16=null;
-C$.g8Tos8Map=null;
-C$.lg16Toog8Map=null;
-C$.g16Tos8Map=null;
-C$.lg16Toog16Map=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pixel_bits=0;
-this.nBits=null;
-this.transparency=0;
-this.supportsAlpha=false;
-this.isAlphaPremultiplied=false;
-this.numComponents=0;
-this.numColorComponents=0;
-this.colorSpace=null;
-this.colorSpaceType=0;
-this.maxBits=0;
-this.is_sRGB=false;
-this.transferType=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.transparency=3;
@@ -46,16 +12,19 @@ this.numColorComponents=-1;
 this.colorSpace=$I$(1).getInstance$I(1000);
 this.colorSpaceType=5;
 this.is_sRGB=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['supportsAlpha','isAlphaPremultiplied','is_sRGB'],'I',['pixel_bits','transparency','numComponents','numColorComponents','colorSpaceType','maxBits','transferType'],'O',['nBits','int[]','colorSpace','java.awt.color.ColorSpace']]
+,['O',['秘RGBdefault','java.awt.image.ColorModel','l8Tos8','byte[]','+s8Tol8','+l16Tos8','s8Tol16','short[]','g8Tos8Map','java.util.Map','+lg16Toog8Map','+g16Tos8Map','+lg16Toog16Map','GRAYspace','java.awt.color.ColorSpace']]]
 
 Clazz.newMeth(C$, 'getRGBdefault$', function () {
-if (C$.RGBdefault == null ) {
-C$.RGBdefault=Clazz.new_($I$(2).c$$I$I$I$I$I,[32, 16711680, 65280, 255, -16777216]);
-}return C$.RGBdefault;
+if (C$.秘RGBdefault == null ) {
+C$.秘RGBdefault=Clazz.new_($I$(2,1).c$$I$I$I$I$I,[32, 16711680, 65280, 255, -16777216]);
+}return C$.秘RGBdefault;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (bits) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.pixel_bits=bits;
 if (bits < 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Number of bits must be > 0"]);
@@ -66,7 +35,7 @@ this.transferType=C$.getDefaultTransferType$I(bits);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I', function (pixel_bits, bits, cspace, hasAlpha, isAlphaPremultiplied, transparency, transferType) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.colorSpace=cspace;
 this.colorSpaceType=cspace.getType$();
 this.numColorComponents=cspace.getNumComponents$();
@@ -382,6 +351,10 @@ Clazz.newMeth(C$, 'getColorSpace$', function () {
 return this.colorSpace;
 });
 
+Clazz.newMeth(C$, 'coerceData$java_awt_image_WritableRaster$Z', function (raster, isAlphaPremultiplied) {
+throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method is not supported by this color model"]);
+});
+
 Clazz.newMeth(C$, 'isCompatibleRaster$java_awt_image_Raster', function (raster) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method has not been implemented for this ColorModel."]);
 });
@@ -406,14 +379,19 @@ return null;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-return  String.instantialize("ColorModel: #pixelBits = " + this.pixel_bits + " numComponents = " + this.numComponents + " color space = " + this.colorSpace + " transparency = " + this.transparency + " has alpha = " + this.supportsAlpha + " isAlphaPre = " + this.isAlphaPremultiplied );
+return ("ColorModel: #pixelBits = " + this.pixel_bits + " numComponents = " + this.numComponents + " color space = " + this.colorSpace + " transparency = " + this.transparency + " has alpha = " + this.supportsAlpha + " isAlphaPre = " + this.isAlphaPremultiplied );
 });
 
 Clazz.newMeth(C$, 'getDefaultTransferType$I', function (pixel_bits) {
 if (pixel_bits <= 8) {
 return 0;
-}return 3;
-}, 1);
+} else if (pixel_bits <= 16) {
+return 1;
+} else if (pixel_bits <= 32) {
+return 3;
+} else {
+return 32;
+}}, 1);
 
 Clazz.newMeth(C$, 'isLinearRGBspace$java_awt_color_ColorSpace', function (cs) {
 return false;
@@ -423,6 +401,184 @@ Clazz.newMeth(C$, 'isLinearGRAYspace$java_awt_color_ColorSpace', function (cs) {
 return false;
 }, 1);
 
+Clazz.newMeth(C$, 'getLinearRGB8TosRGB8LUT$', function () {
+if (C$.l8Tos8 == null ) {
+C$.l8Tos8=Clazz.array(Byte.TYPE, [256]);
+var input;
+var output;
+for (var i=0; i <= 255; i++) {
+input=(i) / 255.0;
+if (input <= 0.0031308 ) {
+output=input * 12.92;
+} else {
+output=1.055 * (Math.pow(input, (0.4166666666666667))) - 0.055;
+}C$.l8Tos8[i]=(Math.round(output * 255.0)|0);
+}
+}return C$.l8Tos8;
+}, 1);
+
+Clazz.newMeth(C$, 'getsRGB8ToLinearRGB8LUT$', function () {
+if (C$.s8Tol8 == null ) {
+C$.s8Tol8=Clazz.array(Byte.TYPE, [256]);
+var input;
+var output;
+for (var i=0; i <= 255; i++) {
+input=(i) / 255.0;
+if (input <= 0.04045 ) {
+output=input / 12.92;
+} else {
+output=Math.pow((input + 0.055) / 1.055, 2.4);
+}C$.s8Tol8[i]=(Math.round(output * 255.0)|0);
+}
+}return C$.s8Tol8;
+}, 1);
+
+Clazz.newMeth(C$, 'getLinearRGB16TosRGB8LUT$', function () {
+if (C$.l16Tos8 == null ) {
+C$.l16Tos8=Clazz.array(Byte.TYPE, [65536]);
+var input;
+var output;
+for (var i=0; i <= 65535; i++) {
+input=(i) / 65535.0;
+if (input <= 0.0031308 ) {
+output=input * 12.92;
+} else {
+output=1.055 * (Math.pow(input, (0.4166666666666667))) - 0.055;
+}C$.l16Tos8[i]=(Math.round(output * 255.0)|0);
+}
+}return C$.l16Tos8;
+}, 1);
+
+Clazz.newMeth(C$, 'getsRGB8ToLinearRGB16LUT$', function () {
+if (C$.s8Tol16 == null ) {
+C$.s8Tol16=Clazz.array(Short.TYPE, [256]);
+var input;
+var output;
+for (var i=0; i <= 255; i++) {
+input=(i) / 255.0;
+if (input <= 0.04045 ) {
+output=input / 12.92;
+} else {
+output=Math.pow((input + 0.055) / 1.055, 2.4);
+}C$.s8Tol16[i]=(Math.round(output * 65535.0)|0);
+}
+}return C$.s8Tol16;
+}, 1);
+
+Clazz.newMeth(C$, 'getGray8TosRGB8LUT$java_awt_color_ICC_ColorSpace', function (grayCS) {
+if (C$.isLinearGRAYspace$java_awt_color_ColorSpace(grayCS)) {
+return C$.getLinearRGB8TosRGB8LUT$();
+}if (C$.g8Tos8Map != null ) {
+var g8Tos8LUT=C$.g8Tos8Map.get$O(grayCS);
+if (g8Tos8LUT != null ) {
+return g8Tos8LUT;
+}}var g8Tos8LUT=Clazz.array(Byte.TYPE, [256]);
+for (var i=0; i <= 255; i++) {
+g8Tos8LUT[i]=(i|0);
+}
+var transformList=Clazz.array($I$(3), [2]);
+var mdl=$I$(4).getModule$();
+var srgbCS=$I$(1).getInstance$I(1000);
+transformList[0]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(grayCS.getProfile$(), -1, 1);
+transformList[1]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(srgbCS.getProfile$(), -1, 2);
+var t=mdl.createTransform$sun_java2d_cmm_ColorTransformA(transformList);
+var tmp=t.colorConvert$BA$BA(g8Tos8LUT, null);
+for (var i=0, j=2; i <= 255; i++, j+=3) {
+g8Tos8LUT[i]=tmp[j];
+}
+if (C$.g8Tos8Map == null ) {
+C$.g8Tos8Map=$I$(5,"synchronizedMap$java_util_Map",[Clazz.new_($I$(6,1).c$$I,[2])]);
+}C$.g8Tos8Map.put$O$O(grayCS, g8Tos8LUT);
+return g8Tos8LUT;
+}, 1);
+
+Clazz.newMeth(C$, 'getLinearGray16ToOtherGray8LUT$java_awt_color_ICC_ColorSpace', function (grayCS) {
+if (C$.lg16Toog8Map != null ) {
+var lg16Toog8LUT=C$.lg16Toog8Map.get$O(grayCS);
+if (lg16Toog8LUT != null ) {
+return lg16Toog8LUT;
+}}var tmp=Clazz.array(Short.TYPE, [65536]);
+for (var i=0; i <= 65535; i++) {
+tmp[i]=(i|0);
+}
+var transformList=Clazz.array($I$(3), [2]);
+var mdl=$I$(4).getModule$();
+var lgCS=$I$(1).getInstance$I(1003);
+transformList[0]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(lgCS.getProfile$(), -1, 1);
+transformList[1]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(grayCS.getProfile$(), -1, 2);
+var t=mdl.createTransform$sun_java2d_cmm_ColorTransformA(transformList);
+tmp=t.colorConvert$HA$HA(tmp, null);
+var lg16Toog8LUT=Clazz.array(Byte.TYPE, [65536]);
+for (var i=0; i <= 65535; i++) {
+lg16Toog8LUT[i]=((((tmp[i] & 65535)) * (0.0038910506) + 0.5)|0);
+}
+if (C$.lg16Toog8Map == null ) {
+C$.lg16Toog8Map=$I$(5,"synchronizedMap$java_util_Map",[Clazz.new_($I$(6,1).c$$I,[2])]);
+}C$.lg16Toog8Map.put$O$O(grayCS, lg16Toog8LUT);
+return lg16Toog8LUT;
+}, 1);
+
+Clazz.newMeth(C$, 'getGray16TosRGB8LUT$java_awt_color_ICC_ColorSpace', function (grayCS) {
+if (C$.isLinearGRAYspace$java_awt_color_ColorSpace(grayCS)) {
+return C$.getLinearRGB16TosRGB8LUT$();
+}if (C$.g16Tos8Map != null ) {
+var g16Tos8LUT=C$.g16Tos8Map.get$O(grayCS);
+if (g16Tos8LUT != null ) {
+return g16Tos8LUT;
+}}var tmp=Clazz.array(Short.TYPE, [65536]);
+for (var i=0; i <= 65535; i++) {
+tmp[i]=(i|0);
+}
+var transformList=Clazz.array($I$(3), [2]);
+var mdl=$I$(4).getModule$();
+var srgbCS=$I$(1).getInstance$I(1000);
+transformList[0]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(grayCS.getProfile$(), -1, 1);
+transformList[1]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(srgbCS.getProfile$(), -1, 2);
+var t=mdl.createTransform$sun_java2d_cmm_ColorTransformA(transformList);
+tmp=t.colorConvert$HA$HA(tmp, null);
+var g16Tos8LUT=Clazz.array(Byte.TYPE, [65536]);
+for (var i=0, j=2; i <= 65535; i++, j+=3) {
+g16Tos8LUT[i]=((((tmp[j] & 65535)) * (0.0038910506) + 0.5)|0);
+}
+if (C$.g16Tos8Map == null ) {
+C$.g16Tos8Map=$I$(5,"synchronizedMap$java_util_Map",[Clazz.new_($I$(6,1).c$$I,[2])]);
+}C$.g16Tos8Map.put$O$O(grayCS, g16Tos8LUT);
+return g16Tos8LUT;
+}, 1);
+
+Clazz.newMeth(C$, 'getLinearGray16ToOtherGray16LUT$java_awt_color_ICC_ColorSpace', function (grayCS) {
+if (C$.lg16Toog16Map != null ) {
+var lg16Toog16LUT=C$.lg16Toog16Map.get$O(grayCS);
+if (lg16Toog16LUT != null ) {
+return lg16Toog16LUT;
+}}var tmp=Clazz.array(Short.TYPE, [65536]);
+for (var i=0; i <= 65535; i++) {
+tmp[i]=(i|0);
+}
+var transformList=Clazz.array($I$(3), [2]);
+var mdl=$I$(4).getModule$();
+var lgCS=$I$(1).getInstance$I(1003);
+transformList[0]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(lgCS.getProfile$(), -1, 1);
+transformList[1]=mdl.createTransform$java_awt_color_ICC_Profile$I$I(grayCS.getProfile$(), -1, 2);
+var t=mdl.createTransform$sun_java2d_cmm_ColorTransformA(transformList);
+var lg16Toog16LUT=t.colorConvert$HA$HA(tmp, null);
+if (C$.lg16Toog16Map == null ) {
+C$.lg16Toog16Map=$I$(5,"synchronizedMap$java_util_Map",[Clazz.new_($I$(6,1).c$$I,[2])]);
+}C$.lg16Toog16Map.put$O$O(grayCS, lg16Toog16LUT);
+return lg16Toog16LUT;
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.l8Tos8=null;
+C$.s8Tol8=null;
+C$.l16Tos8=null;
+C$.s8Tol16=null;
+C$.g8Tos8Map=null;
+C$.lg16Toog8Map=null;
+C$.g16Tos8Map=null;
+C$.lg16Toog16Map=null;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

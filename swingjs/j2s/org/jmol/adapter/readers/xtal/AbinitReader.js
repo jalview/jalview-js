@@ -1,21 +1,12 @@
 (function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={};
-var C$=Clazz.newClass(P$, "AbinitReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+/*c*/var C$=Clazz.newClass(P$, "AbinitReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.znucl=null;
-this.inputOnly=false;
-this.nAtom=0;
-this.nType=0;
-this.typeArray=null;
-this.cellLattice=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['inputOnly'],'I',['nAtom','nType'],'O',['znucl','float[]','+typeArray','+cellLattice']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.setSpaceGroupName$S("P1");
@@ -115,4 +106,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

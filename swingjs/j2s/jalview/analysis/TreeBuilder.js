@@ -1,36 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.Vector','jalview.datamodel.SeqCigar','jalview.datamodel.CigarArray','jalview.datamodel.AlignmentView','java.util.BitSet','jalview.datamodel.SequenceNode']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TreeBuilder");
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.Vector','jalview.datamodel.SeqCigar','jalview.datamodel.CigarArray','jalview.datamodel.AlignmentView','java.util.BitSet','jalview.datamodel.SequenceNode']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TreeBuilder");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.clusters=null;
-this.sequences=null;
-this.seqData=null;
-this.done=null;
-this.noseqs=0;
-this.noClus=0;
-this.distances=null;
-this.mini=0;
-this.minj=0;
-this.ri=0;
-this.rj=0;
-this.maxdist=null;
-this.top=null;
-this.maxDistValue=0;
-this.maxheight=0;
-this.ycount=0;
-this.node=null;
-this.seqStrings=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['ri','rj','maxDistValue','maxheight'],'I',['noseqs','noClus','mini','minj','ycount'],'O',['clusters','java.util.Vector','sequences','jalview.datamodel.SequenceI[]','seqData','jalview.datamodel.AlignmentView','done','java.util.BitSet','distances','jalview.math.MatrixI','maxdist','jalview.datamodel.SequenceNode','+top','node','java.util.Vector','seqStrings','jalview.datamodel.AlignmentView']]]
 
 Clazz.newMeth(C$, 'c$$jalview_viewmodel_AlignmentViewport$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI', function (av, sm, scoreParameters) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var start;
 var end;
 var selview=av.getSelectionGroup$() != null  && av.getSelectionGroup$().getSize$() > 1 ;
@@ -154,19 +133,19 @@ tmp=tmp / (this.noClus - 2);
 });
 
 Clazz.newMeth(C$, 'init$jalview_datamodel_AlignmentView$I$I', function (seqView, start, end) {
-this.node=Clazz.new_($I$(1));
+this.node=Clazz.new_($I$(1,1));
 if (seqView != null ) {
 this.seqData=seqView;
 } else {
 var seqs=Clazz.array($I$(2), [this.sequences.length]);
 for (var i=0; i < this.sequences.length; i++) {
-seqs[i]=Clazz.new_($I$(2).c$$jalview_datamodel_SequenceI$I$I,[this.sequences[i], start, end]);
+seqs[i]=Clazz.new_($I$(2,1).c$$jalview_datamodel_SequenceI$I$I,[this.sequences[i], start, end]);
 }
-var sdata=Clazz.new_($I$(3).c$$jalview_datamodel_CigarSimpleA,[seqs]);
+var sdata=Clazz.new_($I$(3,1).c$$jalview_datamodel_CigarSimpleA,[seqs]);
 sdata.addOperation$C$I("M", end - start + 1);
-this.seqData=Clazz.new_($I$(4).c$$jalview_datamodel_CigarArray$I,[sdata, start]);
+this.seqData=Clazz.new_($I$(4,1).c$$jalview_datamodel_CigarArray$I,[sdata, start]);
 }this.noseqs=0;
-this.done=Clazz.new_($I$(5));
+this.done=Clazz.new_($I$(5,1));
 for (var seq, $seq = 0, $$seq = this.sequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
 if (seq != null ) {
 this.noseqs++;
@@ -178,7 +157,7 @@ var dist=this.distances.getValue$I$I(i, j);
 this.ri=this.findr$I$I(i, j);
 this.rj=this.findr$I$I(j, i);
 this.findClusterDistance$I$I(i, j);
-var sn=Clazz.new_($I$(6));
+var sn=Clazz.new_($I$(6,1));
 sn.setLeft$jalview_datamodel_BinaryNode((this.node.elementAt$I(i)));
 sn.setRight$jalview_datamodel_BinaryNode((this.node.elementAt$I(j)));
 var tmpi=(this.node.elementAt$I(i));
@@ -186,22 +165,22 @@ var tmpj=(this.node.elementAt$I(j));
 this.findNewDistances$jalview_datamodel_SequenceNode$jalview_datamodel_SequenceNode$D(tmpi, tmpj, dist);
 tmpi.setParent$jalview_datamodel_BinaryNode(sn);
 tmpj.setParent$jalview_datamodel_BinaryNode(sn);
-this.node.setElementAt$TE$I(sn, i);
+this.node.setElementAt$O$I(sn, i);
 this.clusters.get$I(i).or$java_util_BitSet(this.clusters.get$I(j));
 this.clusters.get$I(j).clear$();
 this.done.set$I(j);
 });
 
 Clazz.newMeth(C$, 'makeLeaves$', function () {
-this.clusters=Clazz.new_($I$(1));
+this.clusters=Clazz.new_($I$(1,1));
 for (var i=0; i < this.noseqs; i++) {
-var sn=Clazz.new_($I$(6));
+var sn=Clazz.new_($I$(6,1));
 sn.setElement$O(this.sequences[i]);
 sn.setName$S(this.sequences[i].getName$());
-this.node.addElement$TE(sn);
-var bs=Clazz.new_($I$(5));
+this.node.addElement$O(sn);
+var bs=Clazz.new_($I$(5,1));
 bs.set$I(i);
-this.clusters.addElement$TE(bs);
+this.clusters.addElement$O(bs);
 }
 });
 
@@ -211,4 +190,4 @@ return this.seqStrings;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

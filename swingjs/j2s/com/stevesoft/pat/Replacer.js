@@ -1,37 +1,26 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.RegHolder','com.stevesoft.pat.wrap.StringWrap','jalview.util.MessageManager','com.stevesoft.pat.StringBufferLike']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Replacer");
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.RegHolder','com.stevesoft.pat.wrap.StringWrap','jalview.util.MessageManager','com.stevesoft.pat.StringBufferLike']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Replacer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.first=false;
-this.rh=null;
-this.sb=null;
-this.src=null;
-this.pos=0;
-this.want_more_text=false;
-this.want_more_text_enable=false;
-this.lastMatchedTo=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.rh=Clazz.new_($I$(1));
+this.rh=Clazz.new_($I$(1,1));
 this.sb=null;
 this.src=null;
 this.pos=0;
 this.want_more_text=false;
 this.want_more_text_enable=false;
 this.lastMatchedTo=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['first','want_more_text','want_more_text_enable'],'I',['pos','lastMatchedTo'],'O',['rh','com.stevesoft.pat.RegHolder','sb','com.stevesoft.pat.StringBufferLike','src','com.stevesoft.pat.StringLike']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'replaceFirstRegion$S$com_stevesoft_pat_Regex$I$I', function (s, r, start, end) {
-return this.replaceFirstRegion$com_stevesoft_pat_StringLike$com_stevesoft_pat_Regex$I$I(Clazz.new_($I$(2).c$$S,[s]), r, start, end);
+return this.replaceFirstRegion$com_stevesoft_pat_StringLike$com_stevesoft_pat_Regex$I$I(Clazz.new_($I$(2,1).c$$S,[s]), r, start, end);
 });
 
 Clazz.newMeth(C$, 'replaceFirstRegion$com_stevesoft_pat_StringLike$com_stevesoft_pat_Regex$I$I', function (s, r, start, end) {
@@ -55,7 +44,7 @@ return this.dorep$com_stevesoft_pat_StringLike$I$I(s, start, end);
 });
 
 Clazz.newMeth(C$, 'replaceAllRegion$S$com_stevesoft_pat_Regex$I$I', function (s, r, start, end) {
-return this.replaceAllRegion$com_stevesoft_pat_StringLike$com_stevesoft_pat_Regex$I$I(Clazz.new_($I$(2).c$$S,[s]), r, start, end);
+return this.replaceAllRegion$com_stevesoft_pat_StringLike$com_stevesoft_pat_Regex$I$I(Clazz.new_($I$(2,1).c$$S,[s]), r, start, end);
 });
 
 Clazz.newMeth(C$, 'replaceAllRegion$com_stevesoft_pat_StringLike$com_stevesoft_pat_Regex$I$I', function (s, r, start, end) {
@@ -79,16 +68,16 @@ return this.dorep$com_stevesoft_pat_StringLike$I$I(s, start, end);
 });
 
 Clazz.newMeth(C$, 'replaceAll$S', function (s) {
-return this.replaceAllRegion$com_stevesoft_pat_StringLike$I$I(Clazz.new_($I$(2).c$$S,[s]), 0, s.length$()).toString();
+return this.replaceAllRegion$com_stevesoft_pat_StringLike$I$I(Clazz.new_($I$(2,1).c$$S,[s]), 0, s.length$()).toString();
 });
 
 Clazz.newMeth(C$, 'replaceAllFrom$S$I', function (s, start) {
-return this.replaceAllRegion$com_stevesoft_pat_StringLike$I$I(Clazz.new_($I$(2).c$$S,[s]), start, s.length$()).toString();
+return this.replaceAllRegion$com_stevesoft_pat_StringLike$I$I(Clazz.new_($I$(2,1).c$$S,[s]), start, s.length$()).toString();
 });
 
 Clazz.newMeth(C$, 'replaceAllRegion$S$I$I', function (s, start, end) {
 this.first=false;
-return this.dorep$com_stevesoft_pat_StringLike$I$I(Clazz.new_($I$(2).c$$S,[s]), start, end).toString();
+return this.dorep$com_stevesoft_pat_StringLike$I$I(Clazz.new_($I$(2,1).c$$S,[s]), start, end).toString();
 });
 
 Clazz.newMeth(C$, 'isSpecial$com_stevesoft_pat_ReplaceRule', function (x) {
@@ -139,7 +128,7 @@ return;
 if (this.src == null ) {
 this.src=r.getStringLike$();
 }if (this.sb == null ) {
-this.sb=Clazz.new_($I$(4).c$$com_stevesoft_pat_BasicStringBufferLike,[this.src.newStringBufferLike$()]);
+this.sb=Clazz.new_([this.src.newStringBufferLike$()],$I$(4,1).c$$com_stevesoft_pat_BasicStringBufferLike);
 }var rmf=r.matchedFrom$();
 for (var ii=this.pos; ii < rmf; ii++) {
 this.sb.append$C(this.src.charAt$I(ii));
@@ -150,7 +139,7 @@ if (Clazz.instanceOf(x, "com.stevesoft.pat.SpecialRule")) {
 if (Clazz.instanceOf(x, "com.stevesoft.pat.WantMoreTextReplaceRule") && this.want_more_text_enable ) {
 this.want_more_text=true;
 } else if (Clazz.instanceOf(x, "com.stevesoft.pat.PushRule")) {
-var rh2=Clazz.new_($I$(1));
+var rh2=Clazz.new_($I$(1,1));
 rh2.me=(x).NewRule;
 rh2.prev=this.rh;
 this.rh=rh2;
@@ -221,4 +210,4 @@ Clazz.newMeth(C$, 'setPos$I', function (pos) {
 this.pos=pos;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

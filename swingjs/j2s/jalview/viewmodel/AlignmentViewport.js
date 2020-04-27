@@ -1,84 +1,26 @@
-(function(){var P$=Clazz.newPackage("jalview.viewmodel"),p$1={},I$=[[0,'jalview.viewmodel.styles.ViewStyle','java.util.ArrayDeque','jalview.datamodel.ColumnSelection','jalview.renderer.ResidueShader','jalview.workers.AlignCalcManager','java.beans.PropertyChangeSupport','java.util.HashMap','jalview.viewmodel.ViewportRanges','jalview.workers.ConservationThread','jalview.workers.ConsensusThread','jalview.workers.ComplementConsensusThread','jalview.workers.StrucConsensusThread','jalview.datamodel.SequenceGroup','jalview.datamodel.SequenceI','java.util.Hashtable','jalview.datamodel.Sequence','jalview.datamodel.AlignmentView','java.util.ArrayList','jalview.datamodel.AlignmentAnnotation','jalview.analysis.Conservation','jalview.util.MessageManager','jalview.datamodel.Annotation','java.util.BitSet','java.awt.Color','jalview.util.Comparison','jalview.util.MappingUtils','StringBuffer','jalview.datamodel.AlignmentExportData']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignmentViewport", null, null, ['jalview.api.AlignViewportI', 'jalview.structure.CommandListener', 'jalview.structure.VamsasSource']);
+(function(){var P$=Clazz.newPackage("jalview.viewmodel"),p$1={},I$=[[0,'jalview.viewmodel.styles.ViewStyle','java.util.ArrayDeque','jalview.datamodel.ColumnSelection','jalview.renderer.ResidueShader','jalview.workers.AlignCalcManager','java.beans.PropertyChangeSupport','java.util.HashMap','jalview.viewmodel.ViewportRanges','jalview.workers.ConservationThread','jalview.workers.ConsensusThread','jalview.workers.ComplementConsensusThread','jalview.workers.StrucConsensusThread','jalview.datamodel.SequenceGroup','jalview.datamodel.SequenceI','java.util.Hashtable','jalview.datamodel.Sequence','jalview.datamodel.AlignmentView','java.util.ArrayList','jalview.datamodel.AlignmentAnnotation','jalview.analysis.Conservation','jalview.util.MessageManager','jalview.datamodel.Annotation','java.util.BitSet','java.awt.Color','jalview.util.Comparison','jalview.util.MappingUtils','StringBuffer','jalview.datamodel.AlignmentExportData']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignmentViewport", null, null, ['jalview.api.AlignViewportI', 'jalview.structure.CommandListener', 'jalview.structure.VamsasSource']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ranges=null;
-this.viewStyle=null;
-this.codingComplement=null;
-this.featuresDisplayed=null;
-this.historyList=null;
-this.redoList=null;
-this.alignment=null;
-this.sequenceSetID=null;
-this.isDataset=false;
-this.hiddenRepSequences=null;
-this.colSel=null;
-this.autoCalculateConsensus=false;
-this.autoCalculateStrucConsensus=false;
-this.ignoreGapsInConsensusCalculation=false;
-this.residueShading=null;
-this.consensus=null;
-this.complementConsensus=null;
-this.gapcounts=null;
-this.strucConsensus=null;
-this.conservation=null;
-this.quality=null;
-this.groupConsensus=null;
-this.groupConservation=null;
-this.hconsensus=null;
-this.hcomplementConsensus=null;
-this.hStrucConsensus=null;
-this.hconservation=null;
-this.ConsPercGaps=0;
-this.calculator=null;
-this.showGroupConservation=false;
-this.showGroupConsensus=false;
-this.showSequenceLogo=false;
-this.normaliseSequenceLogo=false;
-this.showConsensusHistogram=false;
-this.padGaps=false;
-this.sortByTree=false;
-this.selectionGroup=null;
-this.viewId=null;
-this.sgrouphash=0;
-this.colselhash=0;
-this.changeSupport=null;
-this.showConservation=false;
-this.showQuality=false;
-this.showConsensus=false;
-this.showOccupancy=false;
-this.sequenceColours=null;
-this.sortAnnotationsBy=null;
-this.showAutocalculatedAbove=false;
-this.followHighlight=false;
-this.selectionIsDefinedGroup=false;
-this.searchResults=null;
-this.currentTree=null;
-this.needToUpdateStructureViews=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.viewStyle=Clazz.new_($I$(1));
+this.viewStyle=Clazz.new_($I$(1,1));
 this.codingComplement=null;
 this.featuresDisplayed=null;
-this.historyList=Clazz.new_($I$(2));
-this.redoList=Clazz.new_($I$(2));
+this.historyList=Clazz.new_($I$(2,1));
+this.redoList=Clazz.new_($I$(2,1));
 this.isDataset=false;
-this.colSel=Clazz.new_($I$(3));
+this.colSel=Clazz.new_($I$(3,1));
 this.autoCalculateConsensus=true;
 this.autoCalculateStrucConsensus=true;
 this.ignoreGapsInConsensusCalculation=false;
-this.residueShading=Clazz.new_($I$(4));
+this.residueShading=Clazz.new_($I$(4,1));
 this.hconsensus=null;
 this.hcomplementConsensus=null;
 this.hStrucConsensus=null;
 this.hconservation=null;
 this.ConsPercGaps=25;
-this.calculator=Clazz.new_($I$(5));
+this.calculator=Clazz.new_($I$(5,1));
 this.showGroupConservation=false;
 this.showGroupConsensus=false;
 this.showSequenceLogo=false;
@@ -89,24 +31,26 @@ this.sortByTree=false;
 this.viewId=null;
 this.sgrouphash=-1;
 this.colselhash=-1;
-this.changeSupport=Clazz.new_($I$(6).c$$O,[this]);
+this.changeSupport=Clazz.new_($I$(6,1).c$$O,[this]);
 this.showConservation=true;
 this.showQuality=true;
 this.showConsensus=true;
 this.showOccupancy=true;
-this.sequenceColours=Clazz.new_($I$(7));
+this.sequenceColours=Clazz.new_($I$(7,1));
 this.sortAnnotationsBy=null;
 this.followHighlight=true;
 this.selectionIsDefinedGroup=false;
 this.searchResults=null;
 this.currentTree=null;
 this.needToUpdateStructureViews=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isDataset','autoCalculateConsensus','autoCalculateStrucConsensus','ignoreGapsInConsensusCalculation','showGroupConservation','showGroupConsensus','showSequenceLogo','normaliseSequenceLogo','showConsensusHistogram','padGaps','sortByTree','showConservation','showQuality','showConsensus','showOccupancy','showAutocalculatedAbove','followHighlight','selectionIsDefinedGroup','needToUpdateStructureViews'],'I',['ConsPercGaps'],'J',['sgrouphash','colselhash'],'S',['sequenceSetID','viewId'],'O',['ranges','jalview.viewmodel.ViewportRanges','viewStyle','jalview.api.ViewStyleI','codingComplement','jalview.api.AlignViewportI','featuresDisplayed','jalview.api.FeaturesDisplayedI','historyList','java.util.Deque','+redoList','alignment','jalview.datamodel.AlignmentI','hiddenRepSequences','java.util.Map','colSel','jalview.datamodel.ColumnSelection','residueShading','jalview.renderer.ResidueShaderI','consensus','jalview.datamodel.AlignmentAnnotation','+complementConsensus','+gapcounts','+strucConsensus','+conservation','+quality','groupConsensus','jalview.datamodel.AlignmentAnnotation[]','+groupConservation','hconsensus','jalview.datamodel.ProfilesI','hcomplementConsensus','java.util.Hashtable[]','+hStrucConsensus','hconservation','jalview.analysis.Conservation','calculator','jalview.api.AlignCalcManagerI','selectionGroup','jalview.datamodel.SequenceGroup','changeSupport','java.beans.PropertyChangeSupport','sequenceColours','java.util.Map','sortAnnotationsBy','jalview.analysis.AnnotationSorter.SequenceAnnotationOrder','searchResults','jalview.datamodel.SearchResultsI','currentTree','jalview.analysis.TreeModel']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI', function (al) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setAlignment$jalview_datamodel_AlignmentI(al);
-this.ranges=Clazz.new_($I$(8).c$$jalview_datamodel_AlignmentI,[al]);
+this.ranges=Clazz.new_($I$(8,1).c$$jalview_datamodel_AlignmentI,[al]);
 }, 1);
 
 Clazz.newMeth(C$, 'setFontName$S', function (name) {
@@ -312,7 +256,7 @@ return this.isDataset;
 
 Clazz.newMeth(C$, 'setGlobalColourScheme$jalview_schemes_ColourSchemeI', function (cs) {
 if (this.residueShading == null ) {
-this.residueShading=Clazz.new_($I$(4).c$$jalview_api_ViewStyleI,[this.viewStyle]);
+this.residueShading=Clazz.new_($I$(4,1).c$$jalview_api_ViewStyleI,[this.viewStyle]);
 }this.residueShading.setColourScheme$jalview_schemes_ColourSchemeI(cs);
 if (cs != null ) {
 if (this.getConservationSelected$()) {
@@ -395,14 +339,14 @@ Clazz.newMeth(C$, 'updateConservation$jalview_api_AlignmentViewPanel', function 
 if (this.alignment.isNucleotide$() || (this.conservation == null  && this.quality == null  ) || !this.autoCalculateConsensus  ) {
 return;
 }if (this.calculator.getRegisteredWorkersOfClass$Class(Clazz.getClass($I$(9))) == null ) {
-this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(9).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
+this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(9,1).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
 }});
 
 Clazz.newMeth(C$, 'updateConsensus$jalview_api_AlignmentViewPanel', function (ap) {
 if (this.consensus == null  || !this.autoCalculateConsensus ) {
 return;
 }if (this.calculator.getRegisteredWorkersOfClass$Class(Clazz.getClass($I$(10))) == null ) {
-this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(10).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
+this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(10,1).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
 }var al=this.getAlignment$();
 if (!al.isNucleotide$() && al.getCodonFrames$() != null   && !al.getCodonFrames$().isEmpty$() ) {
 var doConsensus=false;
@@ -414,7 +358,7 @@ break;
 }}
 if (doConsensus) {
 if (this.calculator.getRegisteredWorkersOfClass$Class(Clazz.getClass($I$(11))) == null ) {
-this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(11).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
+this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(11,1).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
 }}}});
 
 Clazz.newMeth(C$, 'updateStrucConsensus$jalview_api_AlignmentViewPanel', function (ap) {
@@ -423,7 +367,7 @@ p$1.initRNAStructure.apply(this, []);
 }if (this.strucConsensus == null  || !this.autoCalculateStrucConsensus ) {
 return;
 }if (this.calculator.getRegisteredWorkersOfClass$Class(Clazz.getClass($I$(12))) == null ) {
-this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(12).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
+this.calculator.registerWorker$jalview_api_AlignCalcWorkerI(Clazz.new_($I$(12,1).c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, ap]));
 }});
 
 Clazz.newMeth(C$, 'isCalcInProgress$', function () {
@@ -649,7 +593,7 @@ var startSeq=this.ranges.getStartSeq$();
 var endSeq=this.ranges.getEndSeq$();
 if (this.alignment.getHiddenSequences$().getSize$() > 0) {
 if (this.selectionGroup == null ) {
-this.selectionGroup=Clazz.new_($I$(13));
+this.selectionGroup=Clazz.new_($I$(13,1));
 this.selectionGroup.setEndRes$I(this.alignment.getWidth$() - 1);
 }var tmp=this.alignment.getHiddenSequences$().showAll$java_util_Map(this.hiddenRepSequences);
 for (var seq, $seq = tmp.iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
@@ -668,7 +612,7 @@ var endSeq=this.ranges.getEndSeq$();
 var tmp=this.alignment.getHiddenSequences$().showSequence$I$java_util_Map(index, this.hiddenRepSequences);
 if (tmp.size$() > 0) {
 if (this.selectionGroup == null ) {
-this.selectionGroup=Clazz.new_($I$(13));
+this.selectionGroup=Clazz.new_($I$(13,1));
 this.selectionGroup.setEndRes$I(this.alignment.getWidth$() - 1);
 }for (var seq, $seq = tmp.iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
 this.selectionGroup.addSequence$jalview_datamodel_SequenceI$Z(seq, false);
@@ -707,7 +651,7 @@ this.hideRepSequences$jalview_datamodel_SequenceI$jalview_datamodel_SequenceGrou
 this.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
 return;
 }var gsize=this.selectionGroup.getSize$();
-var hseqs=this.selectionGroup.getSequences$().toArray$TTA(Clazz.array($I$(14), [gsize]));
+var hseqs=this.selectionGroup.getSequences$().toArray$OA(Clazz.array($I$(14), [gsize]));
 this.hideSequence$jalview_datamodel_SequenceIA(hseqs);
 this.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
 this.sendSelection$();
@@ -727,8 +671,8 @@ var sSize=sg.getSize$();
 if (sSize < 2) {
 return;
 }if (this.hiddenRepSequences == null ) {
-this.hiddenRepSequences=Clazz.new_($I$(15));
-}this.hiddenRepSequences.put$TK$TV(repSequence, sg);
+this.hiddenRepSequences=Clazz.new_($I$(15,1));
+}this.hiddenRepSequences.put$O$O(repSequence, sg);
 var seqs=Clazz.array($I$(14), [sSize - 1]);
 var index=0;
 for (var i=0; i < sSize; i++) {
@@ -773,7 +717,7 @@ if (this.selectionGroup == null  || this.selectionGroup.getSize$() == 0 ) {
 sequences=this.alignment.getSequencesArray$();
 var annots=this.alignment.getAlignmentAnnotation$();
 for (var i=0; i < sequences.length; i++) {
-sequences[i]=Clazz.new_($I$(16).c$$jalview_datamodel_SequenceI$jalview_datamodel_AlignmentAnnotationA,[sequences[i], annots]);
+sequences[i]=Clazz.new_($I$(16,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_AlignmentAnnotationA,[sequences[i], annots]);
 }
 } else {
 sequences=this.selectionGroup.getSelectionAsNewSequences$jalview_datamodel_AlignmentI(this.alignment);
@@ -794,7 +738,7 @@ return this.getAlignmentView$Z$Z(selectedOnly, false);
 });
 
 Clazz.newMeth(C$, 'getAlignmentView$Z$Z', function (selectedOnly, markGroups) {
-return Clazz.new_($I$(17).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup$Z$Z$Z,[this.alignment, this.alignment.getHiddenColumns$(), this.selectionGroup, this.alignment.getHiddenColumns$() != null  && this.alignment.getHiddenColumns$().hasHiddenColumns$() , selectedOnly, markGroups]);
+return Clazz.new_([this.alignment, this.alignment.getHiddenColumns$(), this.selectionGroup, this.alignment.getHiddenColumns$() != null  && this.alignment.getHiddenColumns$().hasHiddenColumns$() , selectedOnly, markGroups],$I$(17,1).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup$Z$Z$Z);
 });
 
 Clazz.newMeth(C$, 'getViewAsString$Z', function (selectedRegionOnly) {
@@ -837,7 +781,7 @@ selection[i]=seqs[i].getSequenceAsString$I$I(start, end);
 });
 
 Clazz.newMeth(C$, 'getVisibleRegionBoundaries$I$I', function (min, max) {
-var regions=Clazz.new_($I$(18));
+var regions=Clazz.new_($I$(18,1));
 var start=min;
 var end=max;
 do {
@@ -850,7 +794,7 @@ if (start == end) {
 end=max;
 }if (end > max) {
 end=max;
-}}regions.add$TE(Clazz.array(Integer.TYPE, -1, [start, end]));
+}}regions.add$O(Clazz.array(Integer.TYPE, -1, [start, end]));
 if (hidden != null  && hidden.hasHiddenColumns$() ) {
 start=hidden.visibleToAbsoluteColumn$I(end);
 start=hidden.getNextHiddenBoundary$Z$I(true, start) + 1;
@@ -859,16 +803,16 @@ return regions;
 });
 
 Clazz.newMeth(C$, 'getVisibleAlignmentAnnotation$Z', function (selectedOnly) {
-var ala=Clazz.new_($I$(18));
+var ala=Clazz.new_($I$(18,1));
 var aa;
 if ((aa=this.alignment.getAlignmentAnnotation$()) != null ) {
 for (var annot, $annot = 0, $$annot = aa; $annot<$$annot.length&&((annot=($$annot[$annot])),1);$annot++) {
-var clone=Clazz.new_($I$(19).c$$jalview_datamodel_AlignmentAnnotation,[annot]);
+var clone=Clazz.new_($I$(19,1).c$$jalview_datamodel_AlignmentAnnotation,[annot]);
 if (selectedOnly && this.selectionGroup != null  ) {
 clone.makeVisibleAnnotation$I$I$jalview_datamodel_HiddenColumns(this.selectionGroup.getStartRes$(), this.selectionGroup.getEndRes$(), this.alignment.getHiddenColumns$());
 } else {
 clone.makeVisibleAnnotation$jalview_datamodel_HiddenColumns(this.alignment.getHiddenColumns$());
-}ala.add$TE(clone);
+}ala.add$O(clone);
 }
 }return ala;
 });
@@ -909,7 +853,7 @@ if (rs != null ) {
 rs.alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map(this.alignment, this.hiddenRepSequences);
 rs.setConsensus$jalview_datamodel_ProfilesI(this.hconsensus);
 if (rs.conservationApplied$()) {
-rs.setConservation$jalview_analysis_Conservation($I$(20).calculateConservation$S$java_util_List$I$I$Z$I$Z("All", this.alignment.getSequences$(), 0, this.alignment.getWidth$(), false, this.getConsPercGaps$(), false));
+rs.setConservation$jalview_analysis_Conservation($I$(20,"calculateConservation$S$java_util_List$I$I$Z$I$Z",["All", this.alignment.getSequences$(), 0, this.alignment.getWidth$(), false, this.getConsPercGaps$(), false]));
 }}for (var sg, $sg = this.alignment.getGroups$().iterator$(); $sg.hasNext$()&&((sg=($sg.next$())),1);) {
 if (sg.cs != null ) {
 sg.cs.alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map(sg, this.hiddenRepSequences);
@@ -924,7 +868,7 @@ p$1.initConservation.apply(this, []);
 p$1.initQuality.apply(this, []);
 } else {
 p$1.initRNAStructure.apply(this, []);
-}this.consensus=Clazz.new_($I$(19).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["Consensus", $I$(21).getString$S("label.consensus_descr"), Clazz.array($I$(22), [1]), 0.0, 100.0, 1]);
+}this.consensus=Clazz.new_(["Consensus", $I$(21).getString$S("label.consensus_descr"), Clazz.array($I$(22), [1]), 0.0, 100.0, 1],$I$(19,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I);
 p$1.initConsensus$jalview_datamodel_AlignmentAnnotation.apply(this, [this.consensus]);
 p$1.initGapCounts.apply(this, []);
 this.initComplementConsensus$();
@@ -942,7 +886,7 @@ doConsensus=true;
 break;
 }}
 if (doConsensus) {
-this.complementConsensus=Clazz.new_($I$(19).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["cDNA Consensus", $I$(21).getString$S("label.complement_consensus_descr"), Clazz.array($I$(22), [1]), 0.0, 100.0, 1]);
+this.complementConsensus=Clazz.new_(["cDNA Consensus", $I$(21).getString$S("label.complement_consensus_descr"), Clazz.array($I$(22), [1]), 0.0, 100.0, 1],$I$(19,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I);
 p$1.initConsensus$jalview_datamodel_AlignmentAnnotation.apply(this, [this.complementConsensus]);
 return true;
 }}}return false;
@@ -957,7 +901,7 @@ this.alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(aa);
 
 Clazz.newMeth(C$, 'initGapCounts', function () {
 if (this.showOccupancy) {
-this.gapcounts=Clazz.new_($I$(19).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["Occupancy", $I$(21).getString$S("label.occupancy_descr"), Clazz.array($I$(22), [1]), 0.0, this.alignment.getHeight$(), 1]);
+this.gapcounts=Clazz.new_(["Occupancy", $I$(21).getString$S("label.occupancy_descr"), Clazz.array($I$(22), [1]), 0.0, this.alignment.getHeight$(), 1],$I$(19,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I);
 this.gapcounts.hasText=true;
 this.gapcounts.autoCalculated=true;
 this.gapcounts.scaleColLabel=true;
@@ -968,7 +912,7 @@ this.alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(this.gapcount
 Clazz.newMeth(C$, 'initConservation', function () {
 if (this.showConservation) {
 if (this.conservation == null ) {
-this.conservation=Clazz.new_($I$(19).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["Conservation", $I$(21).formatMessage$S$OA("label.conservation_descr", [new Integer(this.getConsPercGaps$())]), Clazz.array($I$(22), [1]), 0.0, 11.0, 1]);
+this.conservation=Clazz.new_(["Conservation", $I$(21,"formatMessage$S$OA",["label.conservation_descr", [new Integer(this.getConsPercGaps$())]]), Clazz.array($I$(22), [1]), 0.0, 11.0, 1],$I$(19,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I);
 this.conservation.hasText=true;
 this.conservation.autoCalculated=true;
 this.alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(this.conservation);
@@ -977,7 +921,7 @@ this.alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(this.conserva
 Clazz.newMeth(C$, 'initQuality', function () {
 if (this.showQuality) {
 if (this.quality == null ) {
-this.quality=Clazz.new_($I$(19).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["Quality", $I$(21).getString$S("label.quality_descr"), Clazz.array($I$(22), [1]), 0.0, 11.0, 1]);
+this.quality=Clazz.new_(["Quality", $I$(21).getString$S("label.quality_descr"), Clazz.array($I$(22), [1]), 0.0, 11.0, 1],$I$(19,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I);
 this.quality.hasText=true;
 this.quality.autoCalculated=true;
 this.alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(this.quality);
@@ -985,7 +929,7 @@ this.alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(this.quality)
 
 Clazz.newMeth(C$, 'initRNAStructure', function () {
 if (this.alignment.hasRNAStructure$() && this.strucConsensus == null  ) {
-this.strucConsensus=Clazz.new_($I$(19).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["StrucConsensus", $I$(21).getString$S("label.strucconsensus_descr"), Clazz.array($I$(22), [1]), 0.0, 100.0, 1]);
+this.strucConsensus=Clazz.new_(["StrucConsensus", $I$(21).getString$S("label.strucconsensus_descr"), Clazz.array($I$(22), [1]), 0.0, 100.0, 1],$I$(19,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I);
 this.strucConsensus.hasText=true;
 this.strucConsensus.autoCalculated=true;
 if (this.showConsensus) {
@@ -997,7 +941,7 @@ var anns=this.getAlignment$().getAlignmentAnnotation$();
 var height=0;
 var charHeight=this.getCharHeight$();
 if (anns != null ) {
-var graphgrp=Clazz.new_($I$(23));
+var graphgrp=Clazz.new_($I$(23,1));
 for (var aa, $aa = 0, $$aa = anns; $aa<$$aa.length&&((aa=($$aa[$aa])),1);$aa++) {
 if (aa == null ) {
 System.err.println$S("Null annotation row: ignoring.");
@@ -1033,11 +977,11 @@ var showprf=this.isShowSequenceLogo$();
 var showConsHist=this.isShowConsensusHistogram$();
 var normLogo=this.isNormaliseSequenceLogo$();
 var aan=this.alignment.getAlignmentAnnotation$();
-var oldrfs=Clazz.new_($I$(18));
+var oldrfs=Clazz.new_($I$(18,1));
 if (aan != null ) {
 for (var an=0; an < aan.length; an++) {
 if (aan[an].autoCalculated && aan[an].groupRef != null  ) {
-oldrfs.add$TE(aan[an].groupRef);
+oldrfs.add$O(aan[an].groupRef);
 this.alignment.deleteAnnotation$jalview_datamodel_AlignmentAnnotation$Z(aan[an], false);
 }}
 }if (this.alignment.getGroups$() != null ) {
@@ -1080,14 +1024,14 @@ Clazz.newMeth(C$, 'setSequenceColour$jalview_datamodel_SequenceI$java_awt_Color'
 if (col == null ) {
 this.sequenceColours.remove$O(seq);
 } else {
-this.sequenceColours.put$TK$TV(seq, col);
+this.sequenceColours.put$O$O(seq, col);
 }});
 
 Clazz.newMeth(C$, 'updateSequenceIdColours$', function () {
 for (var sg, $sg = this.alignment.getGroups$().iterator$(); $sg.hasNext$()&&((sg=($sg.next$())),1);) {
 if (sg.idColour != null ) {
 for (var s, $s = sg.getSequences$java_util_Map(this.getHiddenRepSequences$()).iterator$(); $s.hasNext$()&&((s=($s.next$())),1);) {
-this.sequenceColours.put$TK$TV(s, sg.idColour);
+this.sequenceColours.put$O$O(s, sg.idColour);
 }
 }}
 });
@@ -1210,11 +1154,11 @@ this.viewStyle.setTextColour2$java_awt_Color(textColour2);
 });
 
 Clazz.newMeth(C$, 'getViewStyle$', function () {
-return Clazz.new_($I$(1).c$$jalview_api_ViewStyleI,[this.viewStyle]);
+return Clazz.new_($I$(1,1).c$$jalview_api_ViewStyleI,[this.viewStyle]);
 });
 
 Clazz.newMeth(C$, 'setViewStyle$jalview_api_ViewStyleI', function (settingsForView) {
-this.viewStyle=Clazz.new_($I$(1).c$$jalview_api_ViewStyleI,[settingsForView]);
+this.viewStyle=Clazz.new_($I$(1,1).c$$jalview_api_ViewStyleI,[settingsForView]);
 if (this.residueShading != null ) {
 this.residueShading.setConservationApplied$Z(settingsForView.isConservationColourSelected$());
 }});
@@ -1257,7 +1201,7 @@ this.viewStyle.setShowNPFeats$Z(shownpfeats);
 
 Clazz.newMeth(C$, 'addToHistoryList$jalview_commands_CommandI', function (command) {
 if (this.historyList != null ) {
-this.historyList.push$TE(command);
+this.historyList.push$O(command);
 this.broadcastCommand$jalview_commands_CommandI$Z(command, false);
 }});
 
@@ -1267,7 +1211,7 @@ this.getStructureSelectionManager$().commandPerformed$jalview_commands_CommandI$
 
 Clazz.newMeth(C$, 'addToRedoList$jalview_commands_CommandI', function (command) {
 if (this.redoList != null ) {
-this.redoList.push$TE(command);
+this.redoList.push$O(command);
 }this.broadcastCommand$jalview_commands_CommandI$Z(command, true);
 });
 
@@ -1328,6 +1272,22 @@ Clazz.newMeth(C$, 'setProteinFontAsCdna$Z', function (b) {
 this.viewStyle.setProteinFontAsCdna$Z(b);
 });
 
+Clazz.newMeth(C$, 'setShowComplementFeatures$Z', function (b) {
+this.viewStyle.setShowComplementFeatures$Z(b);
+});
+
+Clazz.newMeth(C$, 'isShowComplementFeatures$', function () {
+return this.viewStyle.isShowComplementFeatures$();
+});
+
+Clazz.newMeth(C$, 'setShowComplementFeaturesOnTop$Z', function (b) {
+this.viewStyle.setShowComplementFeaturesOnTop$Z(b);
+});
+
+Clazz.newMeth(C$, 'isShowComplementFeaturesOnTop$', function () {
+return this.viewStyle.isShowComplementFeaturesOnTop$();
+});
+
 Clazz.newMeth(C$, 'isFollowHighlight$', function () {
 return this.followHighlight;
 });
@@ -1359,15 +1319,15 @@ for (var seqNo=this.ranges.getStartSeq$(); seqNo <= lastSeq; seqNo++, seqOffset+
 sequence=this.getAlignment$().getSequenceAt$I(seqNo);
 if (hiddenSequences != null  && hiddenSequences.isHidden$jalview_datamodel_SequenceI(sequence) ) {
 continue;
-}if ($I$(25).isGap$C(sequence.getCharAt$I(middleColumn))) {
+}if ($I$(25,"isGap$C",[sequence.getCharAt$I(middleColumn)])) {
 continue;
-}seqMappings=$I$(26).findMappingsForSequenceAndOthers$jalview_datamodel_SequenceI$java_util_List$java_util_List(sequence, mappings, this.getCodingComplement$().getAlignment$().getSequences$());
+}seqMappings=$I$(26,"findMappingsForSequenceAndOthers$jalview_datamodel_SequenceI$java_util_List$java_util_List",[sequence, mappings, this.getCodingComplement$().getAlignment$().getSequences$()]);
 if (!seqMappings.isEmpty$()) {
 break;
 }}
 if (sequence == null  || seqMappings == null   || seqMappings.isEmpty$() ) {
 return 0;
-}$I$(26).addSearchResults$jalview_datamodel_SearchResultsI$jalview_datamodel_SequenceI$I$java_util_List(sr, sequence, sequence.findPosition$I(middleColumn), seqMappings);
+}$I$(26,"addSearchResults$jalview_datamodel_SearchResultsI$jalview_datamodel_SequenceI$I$java_util_List",[sr, sequence, sequence.findPosition$I(middleColumn), seqMappings]);
 return seqOffset;
 });
 
@@ -1378,7 +1338,7 @@ if (sg != null  && (sgs=sg.getStartRes$()) >= 0  && sg.getStartRes$() <= (sge=sg
 if (!wholewidth && this.alignment.getWidth$() == (1 + sge - sgs) ) {
 return;
 }if (this.colSel == null ) {
-this.colSel=Clazz.new_($I$(3));
+this.colSel=Clazz.new_($I$(3,1));
 }for (var cspos=sg.getStartRes$(); cspos <= sg.getEndRes$(); cspos++) {
 this.colSel.addElement$I(cspos);
 }
@@ -1414,7 +1374,7 @@ if (this.consensus == null ) {
 this.updateConsensus$jalview_api_AlignmentViewPanel(null);
 }if (this.consensus == null ) {
 return null;
-}var seqs=Clazz.new_($I$(27));
+}var seqs=Clazz.new_($I$(27,1));
 for (var i=0; i < this.consensus.annotations.length; i++) {
 var annotation=this.consensus.annotations[i];
 if (annotation != null ) {
@@ -1424,7 +1384,7 @@ seqs.append$C(description.charAt$I(1));
 } else {
 seqs.append$S(annotation.displayCharacter);
 }}}
-var sq=Clazz.new_($I$(16).c$$S$S,["Consensus", seqs.toString()]);
+var sq=Clazz.new_(["Consensus", seqs.toString()],$I$(16,1).c$$S$S);
 sq.setDescription$S("Percentage Identity Consensus " + ((this.ignoreGapsInConsensusCalculation) ? " without gaps" : ""));
 return sq;
 });
@@ -1449,7 +1409,7 @@ alignmentToExport=this.getAlignment$().getHiddenSequences$().getFullAlignment$()
 } else {
 alignmentToExport=this.getAlignment$();
 }alignmentStartEnd=this.getAlignment$().getHiddenColumns$().getVisibleStartAndEndIndex$I(alignmentToExport.getWidth$());
-var ed=Clazz.new_($I$(28).c$$jalview_datamodel_AlignmentI$SA$IA,[alignmentToExport, omitHidden, alignmentStartEnd]);
+var ed=Clazz.new_($I$(28,1).c$$jalview_datamodel_AlignmentI$SA$IA,[alignmentToExport, omitHidden, alignmentStartEnd]);
 return ed;
 });
 
@@ -1488,4 +1448,4 @@ this.codingComplement.setSequenceColour$jalview_datamodel_SequenceI$java_awt_Col
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

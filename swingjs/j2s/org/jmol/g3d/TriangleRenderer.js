@@ -1,27 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'org.jmol.util.Rgb16','org.jmol.util.GData']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TriangleRenderer", null, 'org.jmol.g3d.PrecisionRenderer', 'org.jmol.g3d.G3DRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'org.jmol.util.Rgb16','org.jmol.util.GData']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "TriangleRenderer", null, 'org.jmol.g3d.PrecisionRenderer', 'org.jmol.g3d.G3DRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.g3d=null;
-this.ax=null;
-this.ay=null;
-this.az=null;
-this.aa=null;
-this.bb=null;
-this.axW=null;
-this.azW=null;
-this.axE=null;
-this.azE=null;
-this.rgb16sW=null;
-this.rgb16sE=null;
-this.rgb16sGouraud=null;
-this.rgb16t1=null;
-this.rgb16t2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.ax=Clazz.array(Integer.TYPE, [3]);
@@ -33,25 +13,27 @@ this.axW=Clazz.array(Integer.TYPE, [64]);
 this.azW=Clazz.array(Integer.TYPE, [64]);
 this.axE=Clazz.array(Integer.TYPE, [64]);
 this.azE=Clazz.array(Integer.TYPE, [64]);
-this.rgb16t1=Clazz.new_($I$(1));
-this.rgb16t2=Clazz.new_($I$(1));
-}, 1);
+this.rgb16t1=Clazz.new_($I$(1,1));
+this.rgb16t2=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['g3d','org.jmol.g3d.Graphics3D','ax','int[]','+ay','+az','aa','float[]','+bb','axW','int[]','+azW','+axE','+azE','rgb16sW','org.jmol.util.Rgb16[]','+rgb16sE','+rgb16sGouraud','rgb16t1','org.jmol.util.Rgb16','+rgb16t2']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
-Clazz.newMeth(C$, ['set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData','set$'], function (g3d, gdata) {
+Clazz.newMeth(C$, 'set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData', function (g3d, gdata) {
 try {
 this.rgb16sW=Clazz.array($I$(1), [64]);
 this.rgb16sE=Clazz.array($I$(1), [64]);
 for (var i=64; --i >= 0; ) {
-this.rgb16sW[i]=Clazz.new_($I$(1));
-this.rgb16sE[i]=Clazz.new_($I$(1));
+this.rgb16sW[i]=Clazz.new_($I$(1,1));
+this.rgb16sE[i]=Clazz.new_($I$(1,1));
 }
 this.g3d=g3d;
 this.rgb16sGouraud=Clazz.array($I$(1), [3]);
-for (var i=3; --i >= 0; ) this.rgb16sGouraud[i]=Clazz.new_($I$(1));
+for (var i=3; --i >= 0; ) this.rgb16sGouraud[i]=Clazz.new_($I$(1,1));
 
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -65,7 +47,7 @@ return this;
 Clazz.newMeth(C$, 'reallocRgb16s$org_jmol_util_Rgb16A$I', function (rgb16s, n) {
 var t=Clazz.array($I$(1), [n]);
 System.arraycopy$O$I$O$I$I(rgb16s, 0, t, 0, rgb16s.length);
-for (var i=rgb16s.length; i < n; ++i) t[i]=Clazz.new_($I$(1));
+for (var i=rgb16s.length; i < n; ++i) t[i]=Clazz.new_($I$(1,1));
 
 return t;
 }, p$1);
@@ -144,7 +126,7 @@ p$1.generateRaster$I$I$I$IA$IA$I$org_jmol_util_Rgb16A.apply(this, [nLines, iMinY
 } else {
 var dxMaxMin=this.ax[iMaxY] - this.ax[iMinY];
 var roundFactor;
-roundFactor=$I$(2).roundInt$I((nLines/2|0));
+roundFactor=(function(a,f){return f.apply(null,a)})([(nLines/2|0)],$I$(2).roundInt$I);
 if (dxMaxMin < 0) roundFactor=-roundFactor;
 var axSplit=this.ax[iMinY] + ((dxMaxMin * dyMidMin + roundFactor)/nLines|0);
 if (axSplit < this.ax[iMidY]) {
@@ -218,7 +200,7 @@ if (width <= dy) {
 xMajorIncrement=0;
 xMajorError=width;
 } else {
-xMajorIncrement=$I$(2).roundInt$I((dx/dy|0));
+xMajorIncrement=(function(a,f){return f.apply(null,a)})([(dx/dy|0)],$I$(2).roundInt$I);
 xMajorError=width % dy;
 }this.setRastAB$I$I$I$I(this.ay[iN], this.az[iN], this.ay[iS], this.az[iS]);
 var a0=this.a;
@@ -247,4 +229,4 @@ for (var i=iRaster, iMax=iRaster + dy; i < iMax; ++i) gouraud[i].setAndIncrement
 
 }}, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

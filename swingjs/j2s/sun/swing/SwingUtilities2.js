@@ -1,33 +1,16 @@
-(function(){var P$=Clazz.newPackage("sun.swing"),p$1={},I$=[[0,'java.util.HashMap',['sun.swing.SwingUtilities2','.BearingCacheEntry'],'java.util.HashSet','java.awt.font.FontRenderContext','sun.swing.StringUIClientPropertyKey','java.lang.ref.SoftReference','java.text.AttributedString','java.awt.font.LineBreakMeasurer','java.awt.RenderingHints','java.awt.font.TextLayout','java.awt.font.TextHitInfo','javax.swing.SwingUtilities','StringBuffer','javax.swing.UIManager',['sun.swing.SwingUtilities2','.Section']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SwingUtilities2", function(){
+(function(){var P$=Clazz.newPackage("sun.swing"),p$1={},I$=[[0,'java.util.HashMap',['sun.swing.SwingUtilities2','.BearingCacheEntry'],'java.util.HashSet','java.awt.font.FontRenderContext','sun.swing.StringUIClientPropertyKey','java.lang.ref.SoftReference','java.text.AttributedString','java.awt.font.LineBreakMeasurer','java.awt.RenderingHints','java.awt.font.TextLayout','java.awt.font.TextHitInfo','javax.swing.SwingUtilities','StringBuffer','javax.swing.UIManager',['sun.swing.SwingUtilities2','.Section'],'javax.swing.tree.TreePath']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SwingUtilities2", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.LAF_STATE_KEY=null;
-C$.strongBearingCache=null;
-C$.strongBearingCacheNextIndex=0;
-C$.softBearingCache=null;
-C$.DEFAULT_FRC=null;
-C$.AA_TEXT_PROPERTY_KEY=null;
-C$.COMPONENT_UI_PROPERTY_KEY=null;
-C$.BASICMENUITEMUI_MAX_TEXT_OFFSET=null;
-C$.charsBufferLock=null;
-C$.charsBuffer=null;
+C$.$classes$=[['AATextInfo',9],['BearingCacheEntry',10],['Section',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LAF_STATE_KEY= Clazz.new_();
-C$.strongBearingCache=Clazz.array($I$(2), [10]);
-C$.strongBearingCacheNextIndex=0;
-C$.softBearingCache=Clazz.new_($I$(3));
-C$.DEFAULT_FRC=Clazz.new_($I$(4).c$$java_awt_geom_AffineTransform$Z$Z,[null, false, false]);
-C$.AA_TEXT_PROPERTY_KEY= Clazz.new_();
-C$.COMPONENT_UI_PROPERTY_KEY= Clazz.new_();
-C$.BASICMENUITEMUI_MAX_TEXT_OFFSET=Clazz.new_($I$(5).c$$S,["maxTextOffset"]);
-C$.charsBufferLock= Clazz.new_();
-C$.charsBuffer=Clazz.array(Character.TYPE, [100]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['I',['strongBearingCacheNextIndex'],'O',['LAF_STATE_KEY','java.lang.Object','strongBearingCache','sun.swing.SwingUtilities2.BearingCacheEntry[]','softBearingCache','java.util.Set','DEFAULT_FRC','java.awt.font.FontRenderContext','AA_TEXT_PROPERTY_KEY','java.lang.Object','+SKIP_CLICK_COUNT','+COMPONENT_UI_PROPERTY_KEY','BASICMENUITEMUI_MAX_TEXT_OFFSET','sun.swing.StringUIClientPropertyKey','charsBufferLock','java.lang.Object','charsBuffer','char[]']]]
 
 Clazz.newMeth(C$, 'isComplexLayout$CA$I$I', function (text, start, limit) {
 return false;
@@ -67,7 +50,7 @@ return 0;
 fm=comp.getFontMetrics$java_awt_Font(comp.getFont$());
 }}{
 var entry=null;
-var searchKey=Clazz.new_($I$(2).c$$java_awt_FontMetrics,[fm]);
+var searchKey=Clazz.new_($I$(2,1).c$$java_awt_FontMetrics,[fm]);
 for (var cacheEntry, $cacheEntry = 0, $$cacheEntry = C$.strongBearingCache; $cacheEntry<$$cacheEntry.length&&((cacheEntry=($$cacheEntry[$cacheEntry])),1);$cacheEntry++) {
 if (searchKey.equals$O(cacheEntry)) {
 entry=cacheEntry;
@@ -94,7 +77,7 @@ C$.cacheEntry$sun_swing_SwingUtilities2_BearingCacheEntry(entry);
 Clazz.newMeth(C$, 'cacheEntry$sun_swing_SwingUtilities2_BearingCacheEntry', function (entry) {
 var oldestEntry=C$.strongBearingCache[C$.strongBearingCacheNextIndex];
 if (oldestEntry != null ) {
-C$.softBearingCache.add$TE(Clazz.new_($I$(6).c$$TT,[oldestEntry]));
+C$.softBearingCache.add$O(Clazz.new_($I$(6,1).c$$O,[oldestEntry]));
 }C$.putEntryInStrongCache$sun_swing_SwingUtilities2_BearingCacheEntry(entry);
 }, 1);
 
@@ -153,8 +136,8 @@ break;
 }}
 }}if (needsTextLayout) {
 var frc=C$.getFontRenderContext$java_awt_Component$java_awt_FontMetrics(c, fm);
-var aString=Clazz.new_($I$(7).c$$S,[string]);
-var measurer=Clazz.new_($I$(8).c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext,[aString.getIterator$(), frc]);
+var aString=Clazz.new_($I$(7,1).c$$S,[string]);
+var measurer=Clazz.new_([aString.getIterator$(), frc],$I$(8,1).c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext);
 var nChars=measurer.nextOffset$F(availTextWidth);
 string=string.substring$I$I(0, nChars);
 }return string + clipString;
@@ -213,7 +196,7 @@ underlineRectWidth=fm.charWidth$C(text.charAt$I(underlinedIndex));
 } else {
 var g2d=C$.getGraphics2D$java_awt_Graphics(g);
 if (g2d != null ) {
-var layout=Clazz.new_($I$(10).c$$S$java_awt_Font$java_awt_font_FontRenderContext,[text, g2d.getFont$(), g2d.getFontRenderContext$()]);
+var layout=Clazz.new_([text, g2d.getFont$(), g2d.getFontRenderContext$()],$I$(10,1).c$$S$java_awt_Font$java_awt_font_FontRenderContext);
 if (isPrinting) {
 var screenWidth=g2d.getFont$().getStringBounds$S$java_awt_font_FontRenderContext(text, C$.DEFAULT_FRC).getWidth$();
 layout=layout.getJustifiedLayout$F(screenWidth);
@@ -239,7 +222,7 @@ Clazz.newMeth(C$, 'pointIsInActualBounds$javax_swing_JList$I$java_awt_Point', fu
 var renderer=list.getCellRenderer$();
 var dataModel=list.getModel$();
 var value=dataModel.getElementAt$I(index);
-var item=renderer.getListCellRendererComponent$(list, value, index, false, false);
+var item=renderer.getListCellRendererComponent$javax_swing_JList$O$I$Z$Z(list, value, index, false, false);
 var itemSize=item.getPreferredSize$();
 var cellBounds=list.getCellBounds$I$I(index, index);
 if (!item.getComponentOrientation$().isLeftToRight$()) {
@@ -253,7 +236,7 @@ if (table.convertColumnIndexToModel$I(column) != 0 || row == -1 ) {
 return true;
 }var tcr=table.getCellRenderer$I$I(row, column);
 var value=table.getValueAt$I$I(row, column);
-var cell=tcr.getTableCellRendererComponent$(table, value, false, false, row, column);
+var cell=tcr.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(table, value, false, false, row, column);
 var itemSize=cell.getPreferredSize$();
 var cellBounds=table.getCellRect$I$I$Z(row, column, false);
 cellBounds.width=itemSize.width;
@@ -337,7 +320,7 @@ return false;
 }, 1);
 
 Clazz.newMeth(C$, 'displayPropertiesToCSS$java_awt_Font$java_awt_Color', function (font, fg) {
-var rule=Clazz.new_($I$(13).c$$S,["body {"]);
+var rule=Clazz.new_($I$(13,1).c$$S,["body {"]);
 if (font != null ) {
 rule.append$S(" font-family: ");
 rule.append$S(font.getFamily$());
@@ -401,6 +384,28 @@ throw nfe;
 }return defaultValue;
 }, 1);
 
+Clazz.newMeth(C$, 'compositeRequestFocus$java_awt_Component', function (component) {
+if (Clazz.instanceOf(component, "java.awt.Container")) {
+var container=component;
+if (container.isFocusCycleRoot$()) {
+var policy=container.getFocusTraversalPolicy$();
+var comp=policy.getDefaultComponent$java_awt_Container(container);
+if (comp != null ) {
+comp.requestFocus$();
+return comp;
+}}var rootAncestor=container.getFocusCycleRootAncestor$();
+if (rootAncestor != null ) {
+var policy=rootAncestor.getFocusTraversalPolicy$();
+var comp=policy.getComponentAfter$java_awt_Container$java_awt_Component(rootAncestor, container);
+if (comp != null  && $I$(12).isDescendingFrom$java_awt_Component$java_awt_Component(comp, container) ) {
+comp.requestFocus$();
+return comp;
+}}}if (component.isFocusable$()) {
+component.requestFocus$();
+return component;
+}return null;
+}, 1);
+
 Clazz.newMeth(C$, 'tabbedPaneChangeFocusTo$java_awt_Component', function (comp) {
 if (comp != null ) {
 if (comp.isFocusTraversable$()) {
@@ -410,6 +415,11 @@ return true;
 return true;
 }}return false;
 }, 1);
+
+Clazz.newMeth(C$, 'setSkipClickCount$java_awt_Component$I', function (comp, count) {
+if (Clazz.instanceOf(comp, "javax.swing.text.JTextComponent") && Clazz.instanceOf((comp).getCaret$(), "javax.swing.text.DefaultCaret") ) {
+(comp).putClientProperty$O$O(C$.SKIP_CLICK_COUNT, new Integer(count));
+}}, 1);
 
 Clazz.newMeth(C$, 'liesIn$java_awt_Rectangle$java_awt_Point$Z$Z$Z', function (rect, p, horizontal, ltr, three) {
 var p0;
@@ -449,25 +459,39 @@ Clazz.newMeth(C$, 'liesInVertical$java_awt_Rectangle$java_awt_Point$Z', function
 return C$.liesIn$java_awt_Rectangle$java_awt_Point$Z$Z$Z(rect, p, false, false, three);
 }, 1);
 
-Clazz.newMeth(C$, 'compositeRequestFocus$java_awt_Component', function (editorComponent) {
+Clazz.newMeth(C$, 'getTreePath$javax_swing_event_TreeModelEvent$javax_swing_tree_TreeModel', function (event, model) {
+var path=event.getTreePath$();
+if ((path == null ) && (model != null ) ) {
+var root=model.getRoot$();
+if (root != null ) {
+path=Clazz.new_($I$(16,1).c$$O,[root]);
+}}return path;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.LAF_STATE_KEY= Clazz.new_();
+C$.strongBearingCache=Clazz.array($I$(2), [10]);
+C$.strongBearingCacheNextIndex=0;
+C$.softBearingCache=Clazz.new_($I$(3,1));
+C$.DEFAULT_FRC=Clazz.new_($I$(4,1).c$$java_awt_geom_AffineTransform$Z$Z,[null, false, false]);
+C$.AA_TEXT_PROPERTY_KEY= Clazz.new_();
+C$.SKIP_CLICK_COUNT= Clazz.new_();
+C$.COMPONENT_UI_PROPERTY_KEY= Clazz.new_();
+C$.BASICMENUITEMUI_MAX_TEXT_OFFSET=Clazz.new_($I$(5,1).c$$S,["maxTextOffset"]);
+C$.charsBufferLock= Clazz.new_();
+C$.charsBuffer=Clazz.array(Character.TYPE, [100]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SwingUtilities2, "AATextInfo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SwingUtilities2, "AATextInfo", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.aaHint=null;
-this.lcdContrastHint=null;
-this.frc=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['aaHint','java.lang.Object','lcdContrastHint','Integer','frc','java.awt.font.FontRenderContext']]]
 
 Clazz.newMeth(C$, 'getAATextInfo$Z', function (lafCondition) {
 return null;
@@ -476,48 +500,40 @@ return null;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SwingUtilities2, "BearingCacheEntry", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SwingUtilities2, "BearingCacheEntry", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.oneChar=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.oneChar=Clazz.array(Character.TYPE, [1]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fontMetrics=null;
-this.font=null;
-this.frc=null;
-this.cache=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['fontMetrics','java.awt.FontMetrics','font','java.awt.Font','frc','java.awt.font.FontRenderContext','cache','java.util.Map']]
+,['O',['oneChar','char[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_FontMetrics', function (fontMetrics) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.fontMetrics=fontMetrics;
 this.font=fontMetrics.getFont$();
 this.frc=fontMetrics.getFontRenderContext$();
-this.cache=Clazz.new_($I$(1));
+this.cache=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'getLeftSideBearing$C', function (aChar) {
 var bearing=this.cache.get$O(new Character(aChar));
 if (bearing == null ) {
 bearing=new Short(p$1.calcBearing$C.apply(this, [aChar]));
-this.cache.put$TK$TV(new Character(aChar), bearing);
-}return ((65280 & (bearing).shortValue$()) >>> 8) - 127;
+this.cache.put$O$O(new Character(aChar), bearing);
+}return ((65280 & (bearing).valueOf()) >>> 8) - 127;
 });
 
 Clazz.newMeth(C$, 'getRightSideBearing$C', function (aChar) {
 var bearing=this.cache.get$O(new Character(aChar));
 if (bearing == null ) {
 bearing=new Short(p$1.calcBearing$C.apply(this, [aChar]));
-this.cache.put$TK$TV(new Character(aChar), bearing);
-}return (255 & (bearing).shortValue$()) - 127;
+this.cache.put$O$O(new Character(aChar), bearing);
+}return (255 & (bearing).valueOf()) - 127;
 });
 
 Clazz.newMeth(C$, 'calcBearing$C', function (aChar) {
@@ -548,24 +564,30 @@ result=37 * result + this.font.hashCode$();
 result=37 * result + this.frc.hashCode$();
 }return result;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.oneChar=Clazz.array(Character.TYPE, [1]);
+};
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SwingUtilities2, "Section", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.SwingUtilities2, "Section", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "LEADING", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "MIDDLE", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "TRAILING", 2, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -575,4 +597,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:40 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,27 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),I$=[[0,'Thread',['java.util.concurrent.Semaphore','.NonfairSync'],['java.util.concurrent.Semaphore','.FairSync']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Semaphore", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),I$=[[0,'Thread',['java.util.concurrent.Semaphore','.NonfairSync'],['java.util.concurrent.Semaphore','.FairSync']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Semaphore", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'java.io.Serializable');
+C$.$classes$=[['Sync',1032],['NonfairSync',24],['FairSync',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sync=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sync','java.util.concurrent.Semaphore.Sync']]]
 
 Clazz.newMeth(C$, 'c$$I', function (permits) {
-C$.$init$.apply(this);
-this.sync=Clazz.new_($I$(2).c$$I,[permits]);
+;C$.$init$.apply(this);
+this.sync=Clazz.new_($I$(2,1).c$$I,[permits]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$Z', function (permits, fair) {
-C$.$init$.apply(this);
-this.sync=(fair) ? Clazz.new_($I$(3).c$$I,[permits]) : Clazz.new_($I$(2).c$$I,[permits]);
+;C$.$init$.apply(this);
+this.sync=(fair) ? Clazz.new_($I$(3,1).c$$I,[permits]) : Clazz.new_($I$(2,1).c$$I,[permits]);
 }, 1);
 
 Clazz.newMeth(C$, 'acquire$', function () {
@@ -102,18 +99,17 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + "[Permits = " + this.sync.getPermits$() + "]" ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Semaphore, "Sync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Semaphore, "Sync", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.concurrent.locks.AbstractQueuedSynchronizer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$I', function (permits) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setState$I(permits);
 }, 1);
 
@@ -154,19 +150,17 @@ if (current == 0 || this.compareAndSetState$I$I(current, 0) ) return current;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Semaphore, "NonfairSync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Semaphore, "NonfairSync", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.Semaphore','.Sync']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$I', function (permits) {
-C$.superclazz.c$$I.apply(this, [permits]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[permits]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'tryAcquireShared$I', function (acquires) {
@@ -176,19 +170,17 @@ return this.nonfairTryAcquireShared$I(acquires);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Semaphore, "FairSync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Semaphore, "FairSync", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.Semaphore','.Sync']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$I', function (permits) {
-C$.superclazz.c$$I.apply(this, [permits]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[permits]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'tryAcquireShared$I', function (acquires) {
@@ -205,4 +197,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

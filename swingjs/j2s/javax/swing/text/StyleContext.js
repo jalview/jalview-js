@@ -1,31 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},p$2={},I$=[[0,'javax.swing.text.StyleConstants',['javax.swing.text.StyleContext','.KeyEnumeration'],'java.util.Vector','javax.swing.event.EventListenerList','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent',['javax.swing.text.StyleContext','.FontKey'],'java.util.Hashtable','java.util.Collections','java.util.HashMap','javax.swing.text.SimpleAttributeSet',['javax.swing.text.StyleContext','.NamedStyle'],'java.awt.Font','javax.swing.SwingUtilities',['javax.swing.text.StyleContext','.SmallAttributeSet']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StyleContext", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},p$2={},I$=[[0,'javax.swing.text.StyleConstants',['javax.swing.text.StyleContext','.KeyEnumeration'],'java.util.Vector','javax.swing.event.EventListenerList','javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent',['javax.swing.text.StyleContext','.FontKey'],'java.util.Hashtable','java.util.Collections','java.util.HashMap','javax.swing.text.SimpleAttributeSet',['javax.swing.text.StyleContext','.NamedStyle'],'java.awt.Font','javax.swing.SwingUtilities',['javax.swing.text.StyleContext','.SmallAttributeSet']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StyleContext", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, [['javax.swing.text.AbstractDocument','javax.swing.text.AbstractDocument.AttributeContext']]);
-C$.defaultContext=null;
-C$.freezeKeyMap=null;
-C$.thawKeyMap=null;
+C$.$classes$=[['SmallAttributeSet',1],['KeyEnumeration',0],['KeyBuilder',0],['FontKey',8],['NamedStyle',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.styles=null;
-this.fontSearch=null;
-this.fontTable=null;
-this.attributesPool=null;
-this.search=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.fontSearch=Clazz.new_($I$(7).c$$S$I$I,[null, 0, 0]);
-this.fontTable=Clazz.new_($I$(8));
-this.attributesPool=$I$(9).synchronizedMap$java_util_Map(Clazz.new_($I$(10)));
-this.search=Clazz.new_($I$(11));
-}, 1);
+this.fontSearch=Clazz.new_($I$(7,1).c$$S$I$I,[null, 0, 0]);
+this.fontTable=Clazz.new_($I$(8,1));
+this.attributesPool=$I$(9,"synchronizedMap$java_util_Map",[Clazz.new_($I$(10,1))]);
+this.search=Clazz.new_($I$(11,1));
+},1);
+
+C$.$fields$=[['O',['styles','javax.swing.text.Style','fontSearch','javax.swing.text.StyleContext.FontKey','fontTable','java.util.Hashtable','attributesPool','java.util.Map','search','javax.swing.text.MutableAttributeSet']]
+,['O',['defaultContext','javax.swing.text.StyleContext','freezeKeyMap','java.util.Hashtable','+thawKeyMap']]]
 
 Clazz.newMeth(C$, 'getDefaultStyleContext$', function () {
 if (C$.defaultContext == null ) {
@@ -34,13 +23,13 @@ C$.defaultContext=Clazz.new_(C$);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.styles=Clazz.new_($I$(12).c$$javax_swing_text_Style, [this, null, null]);
+;C$.$init$.apply(this);
+this.styles=Clazz.new_($I$(12,1).c$$javax_swing_text_Style,[this, null, null]);
 this.addStyle$S$javax_swing_text_Style("default", null);
 }, 1);
 
 Clazz.newMeth(C$, 'addStyle$S$javax_swing_text_Style', function (nm, parent) {
-var style=Clazz.new_($I$(12).c$$S$javax_swing_text_Style, [this, null, nm, parent]);
+var style=Clazz.new_($I$(12,1).c$$S$javax_swing_text_Style,[this, null, nm, parent]);
 if (nm != null ) {
 this.styles.addAttribute$O$O(nm, style);
 }return style;
@@ -102,9 +91,9 @@ var defaultFont=defaultStyle.getAttribute$O("FONT_ATTRIBUTE_KEY");
 if (defaultFont != null  && defaultFont.getFamily$().equalsIgnoreCase$S(family) ) {
 f=defaultFont.deriveFont$I$F(style, size);
 }}if (f == null ) {
-f=Clazz.new_($I$(13).c$$S$I$I,[family, style, size]);
-}var key=Clazz.new_($I$(7).c$$S$I$I,[family, style, size]);
-this.fontTable.put$TK$TV(key, f);
+f=Clazz.new_($I$(13,1).c$$S$I$I,[family, style, size]);
+}var key=Clazz.new_($I$(7,1).c$$S$I$I,[family, style, size]);
+this.fontTable.put$O$O(key, f);
 }return f;
 });
 
@@ -186,11 +175,11 @@ return 9;
 });
 
 Clazz.newMeth(C$, 'createSmallAttributeSet$javax_swing_text_AttributeSet', function (a) {
-return Clazz.new_($I$(15).c$$javax_swing_text_AttributeSet, [this, null, a]);
+return Clazz.new_($I$(15,1).c$$javax_swing_text_AttributeSet,[this, null, a]);
 });
 
 Clazz.newMeth(C$, 'createLargeAttributeSet$javax_swing_text_AttributeSet', function (a) {
-return Clazz.new_($I$(11).c$$javax_swing_text_AttributeSet,[a]);
+return Clazz.new_($I$(11,1).c$$javax_swing_text_AttributeSet,[a]);
 });
 
 Clazz.newMeth(C$, 'removeUnusedSets$', function () {
@@ -222,10 +211,10 @@ return s;
 Clazz.newMeth(C$, 'registerStaticAttributeKey$O', function (key) {
 var ioFmt=key.getClass$().getName$() + "." + key.toString() ;
 if (C$.freezeKeyMap == null ) {
-C$.freezeKeyMap=Clazz.new_($I$(8));
-C$.thawKeyMap=Clazz.new_($I$(8));
-}C$.freezeKeyMap.put$TK$TV(key, ioFmt);
-C$.thawKeyMap.put$TK$TV(ioFmt, key);
+C$.freezeKeyMap=Clazz.new_($I$(8,1));
+C$.thawKeyMap=Clazz.new_($I$(8,1));
+}C$.freezeKeyMap.put$O$O(key, ioFmt);
+C$.thawKeyMap.put$O$O(ioFmt, key);
 }, 1);
 
 Clazz.newMeth(C$, 'getStaticAttribute$O', function (key) {
@@ -237,31 +226,31 @@ return null;
 Clazz.newMeth(C$, 'getStaticAttributeKey$O', function (key) {
 return key.getClass$().getName$() + "." + key.toString() ;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.StyleContext, "SmallAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleContext, "SmallAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.text.AttributeSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attributes=null;
-this.resolveParent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['attributes','Object[]','resolveParent','javax.swing.text.AttributeSet']]]
 
 Clazz.newMeth(C$, 'c$$OA', function (attributes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.attributes=attributes;
 p$1.updateResolveParent.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet', function (attrs) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var n=attrs.getAttributeCount$();
 var tbl=Clazz.array(java.lang.Object, [2 * n]);
 var names=attrs.getAttributeNames$();
@@ -362,7 +351,7 @@ if (parent != null ) value=parent.getAttribute$O(key);
 });
 
 Clazz.newMeth(C$, 'getAttributeNames$', function () {
-return Clazz.new_($I$(2).c$$OA, [this, null, this.attributes]);
+return Clazz.new_($I$(2,1).c$$OA,[this, null, this.attributes]);
 });
 
 Clazz.newMeth(C$, 'containsAttribute$O$O', function (name, value) {
@@ -386,24 +375,19 @@ return this.resolveParent;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StyleContext, "KeyEnumeration", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleContext, "KeyEnumeration", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Enumeration');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attr=null;
-this.i=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['i'],'O',['attr','Object[]']]]
 
 Clazz.newMeth(C$, 'c$$OA', function (attr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.attr=attr;
 this.i=0;
 }, 1);
@@ -423,23 +407,18 @@ return o;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StyleContext, "KeyBuilder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleContext, "KeyBuilder", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.keys=null;
-this.data=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.keys=Clazz.new_($I$(3));
-this.data=Clazz.new_($I$(3));
-}, 1);
+this.keys=Clazz.new_($I$(3,1));
+this.data=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['O',['keys','java.util.Vector','+data']]]
 
 Clazz.newMeth(C$, 'initialize$javax_swing_text_AttributeSet', function (a) {
 if (Clazz.instanceOf(a, "javax.swing.text.StyleContext.SmallAttributeSet")) {
@@ -459,8 +438,8 @@ this.keys.removeAllElements$();
 this.data.removeAllElements$();
 var n=sorted.length;
 for (var i=0; i < n; i+=2) {
-this.keys.addElement$TE(sorted[i]);
-this.data.addElement$TE(sorted[i + 1]);
+this.keys.addElement$O(sorted[i]);
+this.data.addElement$O(sorted[i + 1]);
 }
 }, p$2);
 
@@ -480,8 +459,8 @@ return this.keys.size$();
 });
 
 Clazz.newMeth(C$, 'addAttribute$O$O', function (key, value) {
-this.keys.addElement$TE(key);
-this.data.addElement$TE(value);
+this.keys.addElement$O(key);
+this.data.addElement$O(value);
 });
 
 Clazz.newMeth(C$, 'addAttributes$javax_swing_text_AttributeSet', function (attr) {
@@ -539,25 +518,19 @@ this.data.removeElementAt$I(i);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StyleContext, "FontKey", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleContext, "FontKey", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.family=null;
-this.style=0;
-this.size=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['style','size'],'S',['family']]]
 
 Clazz.newMeth(C$, 'c$$S$I$I', function (family, style, size) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setValue$S$I$I(family, style, size);
 }, 1);
 
@@ -582,27 +555,21 @@ return (this.size == font.size) && (this.style == font.style) && (this.family ==
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StyleContext, "NamedStyle", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleContext, "NamedStyle", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.text.Style');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.listenerList=null;
-this.changeEvent=null;
-this.attributes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.listenerList=Clazz.new_($I$(4));
+this.listenerList=Clazz.new_($I$(4,1));
 this.changeEvent=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['listenerList','javax.swing.event.EventListenerList','changeEvent','javax.swing.event.ChangeEvent','attributes','javax.swing.text.AttributeSet']]]
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_text_Style', function (name, parent) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.attributes=this.this$0.getEmptySet$.apply(this.this$0, []);
 if (name != null ) {
 this.setName$S(name);
@@ -615,7 +582,7 @@ C$.c$$S$javax_swing_text_Style.apply(this, [null, parent]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.attributes=this.this$0.getEmptySet$.apply(this.this$0, []);
 }, 1);
 
@@ -635,11 +602,11 @@ this.addAttribute$O$O($I$(1).NameAttribute, name);
 }});
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getChangeListeners$', function () {
@@ -650,8 +617,8 @@ Clazz.newMeth(C$, 'fireStateChanged$', function () {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(6).c$$O,[this]);
-(listeners[i + 1]).stateChanged$(this.changeEvent);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(6,1).c$$O,[this]);
+(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
 
@@ -672,7 +639,7 @@ return this.attributes.isEqual$javax_swing_text_AttributeSet(attr);
 });
 
 Clazz.newMeth(C$, 'copyAttributes$', function () {
-var a=Clazz.new_(C$, [this, null]);
+var a=Clazz.new_(C$,[this, null]);
 a.attributes=this.attributes.copyAttributes$();
 return a;
 });
@@ -738,4 +705,4 @@ this.removeAttribute$O($I$(1).ResolveAttribute);
 }});
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

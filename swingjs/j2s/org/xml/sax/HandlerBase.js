@@ -1,13 +1,12 @@
 (function(){var P$=Clazz.newPackage("org.xml.sax"),I$=[];
-var C$=Clazz.newClass(P$, "HandlerBase", null, null, ['org.xml.sax.EntityResolver', 'org.xml.sax.DTDHandler', 'org.xml.sax.DocumentHandler', 'org.xml.sax.ErrorHandler']);
+/*c*/var C$=Clazz.newClass(P$, "HandlerBase", null, null, ['org.xml.sax.EntityResolver', 'org.xml.sax.DTDHandler', 'org.xml.sax.DocumentHandler', 'org.xml.sax.ErrorHandler']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['resolveEntity$S$S','resolveEntity$'], function (publicId, systemId) {
+Clazz.newMeth(C$, 'resolveEntity$S$S', function (publicId, systemId) {
 return null;
 });
 
@@ -53,4 +52,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

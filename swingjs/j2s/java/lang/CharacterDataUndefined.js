@@ -1,13 +1,13 @@
 (function(){var P$=java.lang,I$=[];
-var C$=Clazz.newClass(P$, "CharacterDataUndefined", null, 'CharacterData');
-C$.instance=null;
+/*c*/var C$=Clazz.newClass(P$, "CharacterDataUndefined", null, 'CharacterData');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['instance','CharacterData']]]
 
 Clazz.newMeth(C$, 'getProperties$I', function (ch) {
 return 0;
@@ -62,7 +62,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'getDirectionality$I', function (ch) {
-return $b$[0] = -1, $b$[0];
+return -1;
 });
 
 Clazz.newMeth(C$, 'isMirrored$I', function (ch) {
@@ -70,8 +70,11 @@ return false;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt.event"),I$=[[0,'sun.awt.SunToolkit','sun.awt.AppContext']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "WindowEvent", null, 'java.awt.event.ComponentEvent');
+(function(){var P$=Clazz.newPackage("java.awt.event"),I$=[[0,'sun.awt.SunToolkit','sun.awt.AppContext']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "WindowEvent", null, 'java.awt.event.ComponentEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.opposite=null;
-this.oldState=0;
-this.newState=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['oldState','newState'],'O',['opposite','java.awt.Window']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Window$I$java_awt_Window$I$I', function (source, id, opposite, oldState, newState) {
-C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Component$I.apply(this,[source, id]);C$.$init$.apply(this);
 this.opposite=opposite;
 this.oldState=oldState;
 this.newState=newState;
@@ -94,4 +87,4 @@ return typeStr;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 22:59:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

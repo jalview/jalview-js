@@ -1,158 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.P3','org.jmol.util.Logger','javajs.util.V3','javajs.util.M3','javajs.util.A4','javajs.util.P4','org.jmol.util.Escape','java.util.Hashtable','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Parameters");
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.P3','org.jmol.util.Logger','javajs.util.V3','javajs.util.M3','javajs.util.A4','javajs.util.P4','org.jmol.util.Escape','java.util.Hashtable','javajs.util.Lst']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Parameters");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.state=0;
-this.testFlags=0;
-this.logMessages=false;
-this.logCompression=false;
-this.logCube=false;
-this.isSilent=false;
-this.assocCutoff=0;
-this.dataType=0;
-this.surfaceType=0;
-this.calculationType=null;
-this.atomRadiusData=null;
-this.addHydrogens=false;
-this.solventRadius=0;
-this.solventExtendedAtomRadius=0;
-this.propertySmoothing=false;
-this.propertySmoothingPower=0;
-this.envelopeRadius=0;
-this.cavityRadius=0;
-this.isCavity=false;
-this.pocket=null;
-this.minSet=0;
-this.slabInfo=null;
-this.slabPlaneOffset=0;
-this.theProperty=null;
-this.solvent_ptsPerAngstrom=0;
-this.solvent_gridMax=0;
-this.plane_ptsPerAngstrom=0;
-this.plane_gridMax=0;
-this.colorBySign=false;
-this.colorByPhase=false;
-this.colorBySets=false;
-this.colorRgb=0;
-this.colorNeg=0;
-this.colorPos=0;
-this.colorPosLCAO=0;
-this.colorNegLCAO=0;
-this.colorPhase=0;
-this.colorDensity=false;
-this.iAddGridPoints=false;
-this.atomIndex=0;
-this.isAngstroms=false;
-this.scale=0;
-this.scale3d=0;
-this.anisotropy=null;
-this.isAnisotropic=false;
-this.eccentricityMatrix=null;
-this.eccentricityMatrixInverse=null;
-this.isEccentric=false;
-this.eccentricityScale=0;
-this.eccentricityRatio=0;
-this.aniosU=null;
-this.anisoB=null;
-this.lcaoType=null;
-this.functionInfo=null;
-this.psi_n=0;
-this.psi_l=0;
-this.psi_m=0;
-this.psi_Znuc=0;
-this.psi_ptsPerAngstrom=0;
-this.psi_monteCarloCount=0;
-this.mep_gridMax=0;
-this.mep_ptsPerAngstrom=0;
-this.mep_marginAngstroms=0;
-this.mep_calcType=0;
-this.qmOrbitalType=0;
-this.qmOrbitalCount=0;
-this.moData=null;
-this.qm_gridMax=0;
-this.qm_ptsPerAngstrom=0;
-this.qm_marginAngstroms=0;
-this.qm_nAtoms=0;
-this.qm_moNumber=0;
-this.qm_moLinearCombination=null;
-this.center=null;
-this.point=null;
-this.distance=0;
-this.allowVolumeRender=false;
-this.script=null;
-this.bsSelected=null;
-this.bsIgnore=null;
-this.bsSolvent=null;
-this.func=null;
-this.title=null;
-this.blockCubeData=false;
-this.readAllData=false;
-this.fileIndex=0;
-this.fileName=null;
-this.modelIndex=0;
-this.modelInvRotation=null;
-this.isXLowToHigh=false;
-this.insideOut=false;
-this.dataXYReversed=false;
-this.cutoff=0;
-this.sigma=0;
-this.cutoffAutomatic=false;
-this.isCutoffAbsolute=false;
-this.isPositiveOnly=false;
-this.rangeAll=false;
-this.rangeSelected=false;
-this.rangeDefined=false;
-this.valueMappedToRed=0;
-this.valueMappedToBlue=0;
-this.mappedDataMin=0;
-this.mappedDataMax=0;
-this.isColorReversed=false;
-this.isBicolorMap=false;
-this.isSquared=false;
-this.isSquaredLinear=false;
-this.thePlane=null;
-this.isContoured=false;
-this.nContours=0;
-this.thisContour=0;
-this.contourFromZero=false;
-this.parameters=null;
-this.resolution=0;
-this.downsampleFactor=0;
-this.maxSet=0;
-this.contoursDiscrete=null;
-this.contourColixes=null;
-this.contourIncrements=null;
-this.boundingBox=null;
-this.bsExcluded=null;
-this.contourType=0;
-this.colorSchemeTranslucent=false;
-this.colorEncoder=null;
-this.usePropertyForColorRange=false;
-this.isPeriodic=false;
-this.doFullMolecular=false;
-this.propertyDistanceMax=0;
-this.randomSeed=0;
-this.fullyLit=false;
-this.vertexSource=null;
-this.intersection=null;
-this.origin=null;
-this.steps=null;
-this.points=null;
-this.volumeData=null;
-this.contactPair=null;
-this.mapLattice=null;
-this.extendGrid=0;
-this.isMapped=false;
-this.showTiming=false;
-this.pointSize=0;
-this.isModelConnected=false;
-this.surfaceAtoms=null;
-this.filesData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.state=0;
@@ -193,7 +42,9 @@ this.sigma=3.4028235E38;
 this.cutoffAutomatic=true;
 this.usePropertyForColorRange=true;
 this.propertyDistanceMax=2147483647;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['logMessages','logCompression','logCube','isSilent','addHydrogens','propertySmoothing','isCavity','colorBySign','colorByPhase','colorBySets','colorDensity','iAddGridPoints','isAngstroms','isAnisotropic','isEccentric','allowVolumeRender','blockCubeData','readAllData','isXLowToHigh','insideOut','dataXYReversed','cutoffAutomatic','isCutoffAbsolute','isPositiveOnly','rangeAll','rangeSelected','rangeDefined','isColorReversed','isBicolorMap','isSquared','isSquaredLinear','isContoured','contourFromZero','colorSchemeTranslucent','usePropertyForColorRange','isPeriodic','doFullMolecular','fullyLit','isMapped','showTiming','isModelConnected'],'F',['assocCutoff','solventRadius','solventExtendedAtomRadius','envelopeRadius','cavityRadius','slabPlaneOffset','solvent_ptsPerAngstrom','plane_ptsPerAngstrom','scale','scale3d','eccentricityScale','eccentricityRatio','psi_Znuc','psi_ptsPerAngstrom','mep_ptsPerAngstrom','mep_marginAngstroms','qm_ptsPerAngstrom','qm_marginAngstroms','distance','cutoff','sigma','valueMappedToRed','valueMappedToBlue','mappedDataMin','mappedDataMax','resolution','propertyDistanceMax','extendGrid','pointSize'],'I',['state','testFlags','dataType','surfaceType','propertySmoothingPower','minSet','solvent_gridMax','plane_gridMax','colorRgb','colorNeg','colorPos','colorPosLCAO','colorNegLCAO','colorPhase','atomIndex','psi_n','psi_l','psi_m','psi_monteCarloCount','mep_gridMax','mep_calcType','qmOrbitalType','qmOrbitalCount','qm_gridMax','qm_nAtoms','qm_moNumber','fileIndex','modelIndex','nContours','thisContour','downsampleFactor','maxSet','contourType','randomSeed'],'S',['calculationType','lcaoType','script','fileName'],'O',['atomRadiusData','org.jmol.atomdata.RadiusData','pocket','Boolean','slabInfo','javajs.util.Lst','theProperty','float[]','+anisotropy','eccentricityMatrix','javajs.util.M3','+eccentricityMatrixInverse','aniosU','float[]','+anisoB','functionInfo','javajs.util.Lst','moData','java.util.Map','qm_moLinearCombination','float[]','center','javajs.util.P3','+point','bsSelected','javajs.util.BS','+bsIgnore','+bsSolvent','func','java.lang.Object','title','String[]','modelInvRotation','javajs.util.M4','thePlane','javajs.util.P4','parameters','float[]','+contoursDiscrete','contourColixes','short[]','contourIncrements','javajs.util.P3','boundingBox','javajs.util.P3[]','bsExcluded','javajs.util.BS[]','colorEncoder','org.jmol.util.ColorEncoder','vertexSource','int[]','intersection','javajs.util.BS[]','origin','javajs.util.P3','+steps','+points','volumeData','org.jmol.jvxl.data.VolumeData','contactPair','org.jmol.util.ContactPair','mapLattice','javajs.util.P3','surfaceAtoms','javajs.util.BS','filesData','Object[]']]]
 
 Clazz.newMeth(C$, 'initialize$', function () {
 this.addHydrogens=false;
@@ -207,7 +58,7 @@ this.bsIgnore=null;
 this.bsSelected=null;
 this.bsSolvent=null;
 this.calculationType="";
-this.center=Clazz.new_($I$(2));
+this.center=Clazz.new_($I$(2,1));
 this.resetForMapping$Z(true);
 this.colorBySign=this.colorByPhase=this.colorBySets=false;
 this.colorEncoder=null;
@@ -315,8 +166,8 @@ var z=$I$(4).new3$F$F$F(0, 0, 1);
 ecc.add$javajs_util_T3(z);
 ecc.normalize$();
 if (Float.isNaN$F(ecc.x)) ecc.set$F$F$F(1, 0, 0);
-this.eccentricityMatrixInverse=Clazz.new_($I$(5));
-this.eccentricityMatrixInverse.invertM$javajs_util_M3(this.eccentricityMatrix=Clazz.new_($I$(5)).setAA$javajs_util_A4($I$(6).newVA$javajs_util_V3$F(ecc, 3.1415927)));
+this.eccentricityMatrixInverse=Clazz.new_($I$(5,1));
+this.eccentricityMatrixInverse.invertM$javajs_util_M3(this.eccentricityMatrix=Clazz.new_($I$(5,1)).setAA$javajs_util_A4($I$(6).newVA$javajs_util_V3$F(ecc, 3.1415927)));
 this.isEccentric=this.isAnisotropic=true;
 this.eccentricityScale=c;
 this.eccentricityRatio=fab_c;
@@ -513,7 +364,7 @@ if (this.parameters == null  || this.parameters.length < 2 ) this.parameters=Cla
 }if (this.cutoff == 3.4028235E38  || this.cutoff == 0  ) this.cutoff=0.3;
 if (this.isSquared) this.cutoff *= this.cutoff;
 if (this.title == null ) this.title=Clazz.array(String, [0]);
-this.moData=Clazz.new_($I$(9));
+this.moData=Clazz.new_($I$(9,1));
 });
 
 Clazz.newMeth(C$, 'setMO$I$FA', function (iMo, linearCombination) {
@@ -523,7 +374,7 @@ this.qm_moNumber=(linearCombination == null  ? Math.abs(iMo) : (linearCombinatio
 this.qmOrbitalType=(this.moData.containsKey$O("haveVolumeData") ? 5 : this.moData.containsKey$O("gaussians") ? 1 : this.moData.containsKey$O("slaters") ? 2 : 0);
 var isElectronDensity=(iMo <= 0 && linearCombination == null  );
 if (this.qmOrbitalType == 0) {
-$I$(3).error$S("MO ERROR: No basis functions found in file for MO calculation. (GAUSSIAN \'gfprint\' keyword may be missing?)");
+(function(a,f){return f.apply(null,a)})(["MO ERROR: No basis functions found in file for MO calculation. (GAUSSIAN \'gfprint\' keyword may be missing?)"],$I$(3).error$S);
 this.title=Clazz.array(String, -1, ["no basis functions found in file"]);
 } else {
 var mos=this.moData.get$O("mos");
@@ -568,8 +419,8 @@ this.valueMappedToBlue=this.mappedDataMax;
 }});
 
 Clazz.newMeth(C$, 'addSlabInfo$OA', function (slabObject) {
-if (this.slabInfo == null ) this.slabInfo=Clazz.new_($I$(10));
-this.slabInfo.addLast$TV(slabObject);
+if (this.slabInfo == null ) this.slabInfo=Clazz.new_($I$(10,1));
+this.slabInfo.addLast$O(slabObject);
 });
 
 Clazz.newMeth(C$, 'isInsideOut$', function () {
@@ -582,4 +433,4 @@ return (this.thePlane != null  || this.fullyLit );
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

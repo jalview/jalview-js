@@ -1,53 +1,33 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'java.awt.Color','fr.orsay.lri.varna.components.ReorderableJList','java.awt.datatransfer.DataFlavor',['fr.orsay.lri.varna.components.ReorderableJList','.ReorderableListCellRenderer'],'javax.swing.DefaultListModel','java.awt.dnd.DragSource','java.awt.dnd.DropTarget',['fr.orsay.lri.varna.components.ReorderableJList','.RJLTransferable'],'java.awt.Cursor']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ReorderableJList", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'java.awt.Color','fr.orsay.lri.varna.components.ReorderableJList','java.awt.datatransfer.DataFlavor',['fr.orsay.lri.varna.components.ReorderableJList','.ReorderableListCellRenderer'],'javax.swing.DefaultListModel','java.awt.dnd.DragSource','java.awt.dnd.DropTarget',['fr.orsay.lri.varna.components.ReorderableJList','.RJLTransferable'],'java.awt.Cursor']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ReorderableJList", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JList', ['java.awt.dnd.DragSourceListener', 'java.awt.dnd.DropTargetListener', 'java.awt.dnd.DragGestureListener']);
-C$.localObjectFlavor=null;
-C$.supportedFlavors=null;
+C$.$classes$=[['ReorderableListCellRenderer',2],['RJLTransferable',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-try {
-C$.localObjectFlavor=Clazz.new_($I$(3).c$$S,["application/x-java-jvm-local-objectref"]);
-} catch (cnfe) {
-if (Clazz.exceptionOf(cnfe,"ClassNotFoundException")){
-cnfe.printStackTrace$();
-} else {
-throw cnfe;
-}
-}
-};
-C$.supportedFlavors=Clazz.array($I$(3), -1, [C$.localObjectFlavor]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dragSource=null;
-this.$dropTarget=null;
-this.dropTargetIndex=0;
-this.draggedIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.draggedIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['dropTargetIndex','draggedIndex'],'O',['dragSource','java.awt.dnd.DragSource','$dropTarget','java.awt.dnd.DropTarget']]
+,['O',['localObjectFlavor','java.awt.datatransfer.DataFlavor','supportedFlavors','java.awt.datatransfer.DataFlavor[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.setCellRenderer$javax_swing_ListCellRenderer(Clazz.new_($I$(4), [this, null]));
-this.setModel$javax_swing_ListModel(Clazz.new_($I$(5)));
-this.dragSource=Clazz.new_($I$(6));
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.setCellRenderer$javax_swing_ListCellRenderer(Clazz.new_($I$(4,1),[this, null]));
+this.setModel$javax_swing_ListModel(Clazz.new_($I$(5,1)));
+this.dragSource=Clazz.new_($I$(6,1));
 var dgr=this.dragSource.createDefaultDragGestureRecognizer$java_awt_Component$I$java_awt_dnd_DragGestureListener(this, 2, this);
-this.$dropTarget=Clazz.new_($I$(7).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this, this]);
+this.$dropTarget=Clazz.new_($I$(7,1).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this, this]);
 }, 1);
 
-Clazz.newMeth(C$, ['dragGestureRecognized$java_awt_dnd_DragGestureEvent','dragGestureRecognized$'], function (dge) {
+Clazz.newMeth(C$, 'dragGestureRecognized$java_awt_dnd_DragGestureEvent', function (dge) {
 var clickPoint=dge.getDragOrigin$();
 var index=this.locationToIndex$java_awt_Point(clickPoint);
 if (index == -1) return;
 var target=this.getModel$().getElementAt$I(index);
-var trans=Clazz.new_($I$(8).c$$O, [this, null, target]);
+var trans=Clazz.new_($I$(8,1).c$$O,[this, null, target]);
 this.draggedIndex=index;
 this.dragSource.startDrag$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener(dge, $I$(9).getDefaultCursor$(), trans, this);
 });
@@ -114,7 +94,7 @@ var dragged=dtde.getTransferable$().getTransferData$java_awt_datatransfer_DataFl
 var sourceBeforeTarget=(this.draggedIndex < index);
 var mod=this.getModel$();
 mod.remove$I(this.draggedIndex);
-mod.add$I$TE((sourceBeforeTarget ? index - 1 : index), dragged);
+mod.add$I$O((sourceBeforeTarget ? index - 1 : index), dragged);
 dropped=true;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -125,29 +105,38 @@ throw e;
 }
 dtde.dropComplete$Z(dropped);
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+try {
+C$.localObjectFlavor=Clazz.new_($I$(3,1).c$$S,["application/x-java-jvm-local-objectref"]);
+} catch (cnfe) {
+if (Clazz.exceptionOf(cnfe,"ClassNotFoundException")){
+cnfe.printStackTrace$();
+} else {
+throw cnfe;
+}
+}
+};
+C$.supportedFlavors=Clazz.array($I$(3), -1, [C$.localObjectFlavor]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ReorderableJList, "ReorderableListCellRenderer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ReorderableJList, "ReorderableListCellRenderer", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.DefaultListCellRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isTargetCell=false;
-this.isLastItem=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isTargetCell','isLastItem']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['getListCellRendererComponent$javax_swing_JList$O$I$Z$Z','getListCellRendererComponent$','getListCellRendererComponent$javax_swing_JList$TE$I$Z$Z'], function (list, value, index, isSelected, hasFocus) {
+Clazz.newMeth(C$, 'getListCellRendererComponent$javax_swing_JList$O$I$Z$Z', function (list, value, index, isSelected, hasFocus) {
 this.isTargetCell=(index == this.this$0.dropTargetIndex);
 this.isLastItem=(index == list.getModel$().getSize$() - 1) && (this.this$0.dropTargetIndex == list.getModel$().getSize$()) ;
 var showSelected=isSelected;
@@ -165,23 +154,19 @@ g.drawLine$I$I$I$I(0, this.getSize$().height - 1, this.getSize$().width, this.ge
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ReorderableJList, "RJLTransferable", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ReorderableJList, "RJLTransferable", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.awt.datatransfer.Transferable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.object=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['object','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$O', function (o) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.object=o;
 }, 1);
 
@@ -201,4 +186,4 @@ return $I$(2).supportedFlavors;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

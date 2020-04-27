@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsoIntersectGridReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "IsoIntersectGridReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.readers=null;
-this.factors=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['readers','org.jmol.jvxl.readers.VolumeFileReader[]','factors','float[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$org_jmol_jvxl_readers_SurfaceGenerator', function (sg) {
@@ -45,10 +39,10 @@ for (var i=this.readers.length; --i >= 0; ) this.readers[i].closeReaderSFR$();
 
 if (this.nData == 0 || this.dataMax == -3.4028235E38  ) return;
 this.dataMean /= this.nData;
-$I$(1).info$S("IsoIntersectFileReader closing file: " + this.nData + " points read \ndata min/max/mean = " + new Float(this.dataMin).toString() + "/" + new Float(this.dataMax).toString() + "/" + new Float(this.dataMean).toString() );
+(function(a,f){return f.apply(null,a)})(["IsoIntersectFileReader closing file: " + this.nData + " points read \ndata min/max/mean = " + new Float(this.dataMin).toString() + "/" + new Float(this.dataMax).toString() + "/" + new Float(this.dataMean).toString() ],$I$(1).info$S);
 });
 
 Clazz.newMeth(C$, 'readParameters$', function () {
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

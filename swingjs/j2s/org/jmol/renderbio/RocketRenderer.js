@@ -1,52 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.c.STR','org.jmol.util.MeshSurface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RocketRenderer");
-C$.boxFaces=null;
-C$.arrowHeadFaces=null;
+(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.c.STR','org.jmol.util.MeshSurface']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "RocketRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.boxFaces=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [0, 1, 3, 2]), Clazz.array(Integer.TYPE, -1, [0, 2, 6, 4]), Clazz.array(Integer.TYPE, -1, [0, 4, 5, 1]), Clazz.array(Integer.TYPE, -1, [7, 5, 4, 6]), Clazz.array(Integer.TYPE, -1, [7, 6, 2, 3]), Clazz.array(Integer.TYPE, -1, [7, 3, 1, 5])]);
-C$.arrowHeadFaces=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [1, 0, 4]), Clazz.array(Integer.TYPE, -1, [2, 3, 5]), Clazz.array(Integer.TYPE, -1, [0, 1, 3, 2]), Clazz.array(Integer.TYPE, -1, [2, 5, 4, 0]), Clazz.array(Integer.TYPE, -1, [1, 4, 5, 3])]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tPending=false;
-this.proteinstructurePending=null;
-this.startIndexPending=0;
-this.endIndexPending=0;
-this.vtemp=null;
-this.screenA=null;
-this.screenB=null;
-this.screenC=null;
-this.colix=0;
-this.mad=0;
-this.rr=null;
-this.vwr=null;
-this.g3d=null;
-this.tm=null;
-this.renderArrowHeads=false;
-this.isRockets=false;
-this.ptC=null;
-this.ptTip=null;
-this.corners=null;
-this.screenCorners=null;
-this.vW=null;
-this.vH=null;
-this.meshSurface=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['tPending','renderArrowHeads','isRockets'],'I',['startIndexPending','endIndexPending'],'H',['colix','mad'],'O',['proteinstructurePending','org.jmol.modelsetbio.ProteinStructure','vtemp','javajs.util.V3','screenA','javajs.util.P3','+screenB','+screenC','rr','org.jmol.renderbio.RocketsRenderer','vwr','org.jmol.viewer.Viewer','g3d','org.jmol.api.JmolRendererInterface','tm','org.jmol.viewer.TransformManager','ptC','javajs.util.P3','+ptTip','corners','javajs.util.P3[]','+screenCorners','vW','javajs.util.V3','+vH','meshSurface','org.jmol.util.MeshSurface']]
+,['O',['boxFaces','int[][]','+arrowHeadFaces']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_renderbio_RocketsRenderer', function (rr) {
-this.screenA=Clazz.new_($I$(1));
-this.screenB=Clazz.new_($I$(1));
-this.screenC=Clazz.new_($I$(1));
-this.vtemp=Clazz.new_($I$(2));
+this.screenA=Clazz.new_($I$(1,1));
+this.screenB=Clazz.new_($I$(1,1));
+this.screenC=Clazz.new_($I$(1,1));
+this.vtemp=Clazz.new_($I$(2,1));
 this.rr=rr;
 this.vwr=rr.vwr;
 this.tm=rr.vwr.tm;
@@ -98,13 +69,13 @@ this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(pointStart, this.screenA);
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3((renderArrowHead ? pointBeforeEnd : pointEnd), this.screenB);
 var zMid=(Math.floor((this.screenA.z + this.screenB.z) / 2.0)|0);
 var diameter=((this.vwr.tm.scaleToScreen$I$I(zMid, this.mad)|0));
-if (!renderArrowHead || pointStart !== pointBeforeEnd  ) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), diameter, this.screenA, this.screenB);
+if (!renderArrowHead || pointStart !== pointBeforeEnd  ) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, diameter, this.screenA, this.screenB);
 if (renderArrowHead) {
 this.screenA.sub2$javajs_util_T3$javajs_util_T3(pointEnd, pointBeforeEnd);
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(pointEnd, this.screenC);
 var coneDiameter=(this.mad << 1) - (this.mad >> 1);
 coneDiameter=(this.vwr.tm.scaleToScreen$I$I((Math.floor(this.screenB.z)|0), coneDiameter)|0);
-this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(($b$[0] = 2, $b$[0]), coneDiameter, this.screenB, this.screenC, false);
+this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(2, coneDiameter, this.screenB, this.screenC, false);
 } else {
 }if (this.startIndexPending == this.endIndexPending) return;
 var t=this.screenB;
@@ -115,15 +86,15 @@ this.screenC=t;
 Clazz.newMeth(C$, 'renderPendingSheetPlank$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z', function (ptStart, pointBeforeEnd, ptEnd, renderArrowHead) {
 if (!this.g3d.setC$H(this.colix)) return;
 if (this.corners == null ) {
-this.ptC=Clazz.new_($I$(1));
-this.ptTip=Clazz.new_($I$(1));
-this.vW=Clazz.new_($I$(2));
-this.vH=Clazz.new_($I$(2));
+this.ptC=Clazz.new_($I$(1,1));
+this.ptTip=Clazz.new_($I$(1,1));
+this.vW=Clazz.new_($I$(2,1));
+this.vH=Clazz.new_($I$(2,1));
 this.screenCorners=Clazz.array($I$(1), [8]);
 this.corners=Clazz.array($I$(1), [8]);
 for (var i=8; --i >= 0; ) {
-this.corners[i]=Clazz.new_($I$(1));
-this.screenCorners[i]=Clazz.new_($I$(1));
+this.corners[i]=Clazz.new_($I$(1,1));
+this.screenCorners[i]=Clazz.new_($I$(1,1));
 }
 }if (renderArrowHead) {
 p$1.setBox$F$F$javajs_util_P3.apply(this, [1.25, 0.333, pointBeforeEnd]);
@@ -162,7 +133,7 @@ if ((i & 4) != 0) corner.add$javajs_util_T3(lengthVector);
 Clazz.newMeth(C$, 'renderPart$IAA', function (planes) {
 if (this.rr.exportType == 1) {
 if (this.meshSurface == null ) {
-this.meshSurface=Clazz.new_($I$(4));
+this.meshSurface=Clazz.new_($I$(4,1));
 this.meshSurface.vs=this.corners;
 this.meshSurface.haveQuads=true;
 this.meshSurface.vc=this.corners.length;
@@ -178,6 +149,10 @@ if (f.length == 3) this.g3d.fillTriangle3f$javajs_util_P3$javajs_util_P3$javajs_
  else this.g3d.fillQuadrilateral$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z(this.screenCorners[f[0]], this.screenCorners[f[1]], this.screenCorners[f[2]], this.screenCorners[f[3]], true);
 }
 }}, p$1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.boxFaces=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [0, 1, 3, 2]), Clazz.array(Integer.TYPE, -1, [0, 2, 6, 4]), Clazz.array(Integer.TYPE, -1, [0, 4, 5, 1]), Clazz.array(Integer.TYPE, -1, [7, 5, 4, 6]), Clazz.array(Integer.TYPE, -1, [7, 6, 2, 3]), Clazz.array(Integer.TYPE, -1, [7, 3, 1, 5])]);
+C$.arrowHeadFaces=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [1, 0, 4]), Clazz.array(Integer.TYPE, -1, [2, 3, 5]), Clazz.array(Integer.TYPE, -1, [0, 1, 3, 2]), Clazz.array(Integer.TYPE, -1, [2, 5, 4, 0]), Clazz.array(Integer.TYPE, -1, [1, 4, 5, 3])]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

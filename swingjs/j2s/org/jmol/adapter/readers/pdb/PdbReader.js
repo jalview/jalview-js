@@ -1,78 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pdb"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','Boolean','javajs.util.PT','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Lst','javajs.util.M4','org.jmol.api.JmolAdapter','org.jmol.adapter.smarter.Atom','org.jmol.c.STR','org.jmol.adapter.smarter.Structure','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PdbReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pdb"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','Boolean','javajs.util.PT','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Lst','javajs.util.M4','org.jmol.api.JmolAdapter','org.jmol.adapter.smarter.Atom','org.jmol.c.STR','org.jmol.adapter.smarter.Structure','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "PdbReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.serMode=0;
-this.seqMode=0;
-this.serial=0;
-this.lineLength=0;
-this.pdbHeader=null;
-this.applySymmetry=false;
-this.getTlsGroups=false;
-this.isMultiModel=false;
-this.haveMappedSerials=false;
-this.isConnectStateBug=false;
-this.isLegacyModelType=false;
-this.gromacsWideFormat=false;
-this.htFormul=null;
-this.htHetero=null;
-this.htSites=null;
-this.htElementsInCurrentGroup=null;
-this.htMolIds=null;
-this.vCompnds=null;
-this.vBiomolecules=null;
-this.vTlsModels=null;
-this.sbTlsErrors=null;
-this.biomtChainAtomCounts=null;
-this.sbIgnored=null;
-this.sbSelected=null;
-this.sbConect=null;
-this.sb=null;
-this.ac=0;
-this.maxSerial=0;
-this.nUNK=0;
-this.nRes=0;
-this.currentCompnd=null;
-this.currentGroup3=null;
-this.currentKey=null;
-this.currentResno=0;
-this.configurationPtr=0;
-this.resetKey=false;
-this.compnd=null;
-this.conformationIndex=0;
-this.fileAtomIndex=0;
-this.lastAltLoc='\0';
-this.lastGroup=0;
-this.lastInsertion='\0';
-this.lastSourceSerial=0;
-this.lastTargetSerial=0;
-this.tlsGroupID=0;
-this.atomTypePt0=0;
-this.atomTypeLen=0;
-this.isCourseGrained=false;
-this.isbiomol=false;
-this.htGroup1=null;
-this.maxLength=0;
-this.pdbID=null;
-this.haveDoubleBonds=false;
-this.cryst1=0;
-this.fileSgName=null;
-this.dataT=null;
-this.tlsU=null;
-this.vConnect=null;
-this.connectNextAtomIndex=0;
-this.connectNextAtomSet=0;
-this.connectLast=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.serMode=0;
 this.seqMode=0;
-this.htFormul=Clazz.new_($I$(1));
+this.htFormul=Clazz.new_($I$(1,1));
 this.currentResno=-2147483648;
 this.configurationPtr=-2147483648;
 this.resetKey=true;
@@ -86,11 +20,13 @@ this.maxLength=80;
 this.dataT=Clazz.array(Float.TYPE, [8]);
 this.connectNextAtomIndex=0;
 this.connectNextAtomSet=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['applySymmetry','getTlsGroups','isMultiModel','haveMappedSerials','isConnectStateBug','isLegacyModelType','gromacsWideFormat','resetKey','isCourseGrained','isbiomol','haveDoubleBonds'],'C',['lastAltLoc','lastInsertion'],'F',['cryst1'],'I',['serMode','seqMode','serial','lineLength','ac','maxSerial','nUNK','nRes','currentResno','configurationPtr','conformationIndex','fileAtomIndex','lastGroup','lastSourceSerial','lastTargetSerial','tlsGroupID','atomTypePt0','atomTypeLen','maxLength','connectNextAtomIndex','connectNextAtomSet'],'S',['currentGroup3','currentKey','compnd','pdbID','fileSgName'],'O',['pdbHeader','javajs.util.SB','htFormul','java.util.Map','+htHetero','+htSites','+htElementsInCurrentGroup','+htMolIds','vCompnds','javajs.util.Lst','+vBiomolecules','+vTlsModels','sbTlsErrors','javajs.util.SB','biomtChainAtomCounts','int[]','sbIgnored','javajs.util.SB','+sbSelected','+sbConect','+sb','currentCompnd','java.util.Map','+htGroup1','dataT','float[]','tlsU','java.util.Map','vConnect','javajs.util.Lst','connectLast','int[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.allowPDBFilter=true;
-this.pdbHeader=(this.getHeader ? Clazz.new_($I$(2)) : null);
+this.pdbHeader=(this.getHeader ? Clazz.new_($I$(2,1)) : null);
 this.applySymmetry=!this.checkFilterKey$S("NOSYMMETRY");
 if (this.isDSSP1) this.asc.setInfo$S$O("isDSSP1", $I$(3).TRUE);
 this.getTlsGroups=this.checkFilterKey$S("TLS");
@@ -106,7 +42,7 @@ if (this.htParams.containsKey$O("vTlsModels")) {
 this.vTlsModels=this.htParams.remove$O("vTlsModels");
 }var s=this.getFilter$S("TYPE ");
 if (s != null ) {
-var tokens=$I$(4).getTokens$S(s.replace$C$C(",", " "));
+var tokens=(function(a,f){return f.apply(null,a)})([s.replace$C$C(",", " ")],$I$(4).getTokens$S);
 this.atomTypePt0=Integer.parseInt$S(tokens[0]) - 1;
 var pt=tokens[1].indexOf$S("=");
 if (pt >= 0) {
@@ -117,8 +53,8 @@ pt=tokens[1].length$();
 }var conf=this.getFilter$S("CONF ");
 if (conf != null ) {
 this.configurationPtr=this.parseIntStr$S(conf);
-this.sbIgnored=Clazz.new_($I$(2));
-this.sbSelected=Clazz.new_($I$(2));
+this.sbIgnored=Clazz.new_($I$(2,1));
+this.sbSelected=Clazz.new_($I$(2,1));
 }this.isLegacyModelType=(this.stateScriptVersionInt < 120000);
 this.isConnectStateBug=(this.stateScriptVersionInt >= 120151 && this.stateScriptVersionInt <= 120220  || this.stateScriptVersionInt >= 120300 && this.stateScriptVersionInt <= 120320  );
 });
@@ -221,9 +157,9 @@ this.checkCurrentLineForScript$();
 Clazz.newMeth(C$, 'seqAdv', function () {
 var g1=this.line.substring$I$I(39, 42).trim$().toLowerCase$();
 if (g1.length$() != 1) return;
-if (this.htGroup1 == null ) this.asc.setInfo$S$O("htGroup1", this.htGroup1=Clazz.new_($I$(1)));
+if (this.htGroup1 == null ) this.asc.setInfo$S$O("htGroup1", this.htGroup1=Clazz.new_($I$(1,1)));
 var g3=this.line.substring$I$I(12, 15).trim$();
-this.htGroup1.put$TK$TV(g3, g1);
+this.htGroup1.put$O$O(g3, g1);
 }, p$1);
 
 Clazz.newMeth(C$, 'readHeader$Z', function (getLine) {
@@ -260,7 +196,7 @@ if (n == this.vTlsModels.size$()) {
 for (var i=n; --i >= 0; ) p$1.setTlsGroups$I$I$org_jmol_api_SymmetryInterface.apply(this, [i, i, symmetry]);
 
 } else {
-$I$(5).info$S(n + " models but " + this.vTlsModels.size$() + " TLS descriptions" );
+(function(a,f){return f.apply(null,a)})([n + " models but " + this.vTlsModels.size$() + " TLS descriptions" ],$I$(5).info$S);
 if (this.vTlsModels.size$() == 1) {
 $I$(5).info$S(" -- assuming all models have the same TLS description -- check REMARK 3 for details.");
 for (var i=n; --i >= 0; ) p$1.setTlsGroups$I$I$org_jmol_api_SymmetryInterface.apply(this, [0, i, symmetry]);
@@ -286,8 +222,8 @@ for (var i=this.asc.iSet + 1; --i >= 0; ) this.asc.setModelInfoForSet$S$O$I("com
 this.addSites$java_util_Map(this.htSites);
 }if (this.pdbHeader != null ) this.asc.setInfo$S$O("fileHeader", this.pdbHeader.toString());
 if (this.configurationPtr > 0) {
-$I$(5).info$S(this.sbSelected.toString());
-$I$(5).info$S(this.sbIgnored.toString());
+(function(a,f){return f.apply(null,a)})([this.sbSelected.toString()],$I$(5).info$S);
+(function(a,f){return f.apply(null,a)})([this.sbIgnored.toString()],$I$(5).info$S);
 }});
 
 Clazz.newMeth(C$, 'checkUnitCellParams', function () {
@@ -307,7 +243,7 @@ if (resid < 0  || Float.isNaN$F(resid) ) {
 isResidual=true;
 break;
 }}
-$I$(5).info$S("TLS analysis suggests Bfactors are " + (isResidual ? "" : "NOT") + " residuals" );
+(function(a,f){return f.apply(null,a)})(["TLS analysis suggests Bfactors are " + (isResidual ? "" : "NOT") + " residuals" ],$I$(5).info$S);
 for (var entry, $entry = this.tlsU.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var anisou=entry.getValue$();
 var resid=anisou[7];
@@ -317,9 +253,9 @@ anisou[0] += resid;
 anisou[1] += resid;
 anisou[2] += resid;
 entry.getKey$().addTensor$org_jmol_util_Tensor$S$Z(symmetry.getTensor$org_jmol_viewer_Viewer$FA(this.vwr, anisou).setType$S(null), "TLS-R", false);
-$I$(5).info$S("TLS-U:  " + $I$(6).eAF$FA(anisou));
+(function(a,f){return f.apply(null,a)})(["TLS-U:  " + $I$(6).eAF$FA(anisou)],$I$(5).info$S);
 anisou=(entry.getKey$().anisoBorU);
-if (anisou != null ) $I$(5).info$S("ANISOU: " + $I$(6).eAF$FA(anisou));
+if (anisou != null ) (function(a,f){return f.apply(null,a)})(["ANISOU: " + $I$(6).eAF$FA(anisou)],$I$(5).info$S);
 }
 this.tlsU=null;
 }, p$1);
@@ -350,12 +286,12 @@ this.compnd += s.substring$I(10).trim$();
 this.asc.setInfo$S$O("COMPND", this.compnd);
 }if (this.vCompnds == null ) {
 if (isSource) return;
-this.vCompnds=Clazz.new_($I$(7));
-this.htMolIds=Clazz.new_($I$(1));
-this.currentCompnd=Clazz.new_($I$(1));
-this.currentCompnd.put$TK$TV("select", "(*)");
+this.vCompnds=Clazz.new_($I$(7,1));
+this.htMolIds=Clazz.new_($I$(1,1));
+this.currentCompnd=Clazz.new_($I$(1,1));
+this.currentCompnd.put$O$O("select", "(*)");
 this.currentKey="MOLECULE";
-this.htMolIds.put$TK$TV("", this.currentCompnd);
+this.htMolIds.put$O$O("", this.currentCompnd);
 }if (isSource && this.resetKey ) {
 this.resetKey=false;
 this.currentKey="SOURCE";
@@ -370,20 +306,20 @@ if (value == null ) return;
 if (isSource) {
 this.currentCompnd=this.htMolIds.remove$O(value);
 return;
-}this.currentCompnd=Clazz.new_($I$(1));
-this.vCompnds.addLast$TV(this.currentCompnd);
-this.htMolIds.put$TK$TV(value, this.currentCompnd);
+}this.currentCompnd=Clazz.new_($I$(1,1));
+this.vCompnds.addLast$O(this.currentCompnd);
+this.htMolIds.put$O$O(value, this.currentCompnd);
 }if (this.currentCompnd == null ) return;
 if (value == null ) {
 value=this.currentCompnd.get$O(this.currentKey);
 if (value == null ) value="";
 value += key;
-if (this.vCompnds.size$() == 0) this.vCompnds.addLast$TV(this.currentCompnd);
+if (this.vCompnds.size$() == 0) this.vCompnds.addLast$O(this.currentCompnd);
 } else {
 this.currentKey=key;
 }if (value.endsWith$S(";")) value=value.substring$I$I(0, value.length$() - 1);
-this.currentCompnd.put$TK$TV(this.currentKey, value);
-if (this.currentKey.equals$O("CHAIN")) this.currentCompnd.put$TK$TV("select", "(:" + $I$(4).rep$S$S$S($I$(4).rep$S$S$S(value, ", ", ",:"), " ", "") + ")" );
+this.currentCompnd.put$O$O(this.currentKey, value);
+if (this.currentKey.equals$O("CHAIN")) this.currentCompnd.put$O$O("select", "(:" + (function(a,f){return f.apply(null,a)})([$I$(4).rep$S$S$S(value, ", ", ",:"), " ", ""],$I$(4).rep$S$S$S) + ")" );
 }, p$1);
 
 Clazz.newMeth(C$, 'setBiomoleculeAtomCounts', function () {
@@ -398,14 +334,14 @@ var chains=biomtchains.get$I(k);
 for (var j=chains.length$() - 1; --j >= 0; ) if (chains.charAt$I(j) == ":") nAtoms+=this.biomtChainAtomCounts[0 + (chains.charCodeAt$I(j + 1))];
 
 }
-biomolecule.put$TK$TV("atomCount", Integer.valueOf$I(nAtoms));
+biomolecule.put$O$O("atomCount", Integer.valueOf$I(nAtoms));
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'remark350', function () {
 var biomts=null;
 var biomtchains=null;
-this.vBiomolecules=Clazz.new_($I$(7));
+this.vBiomolecules=Clazz.new_($I$(7,1));
 this.biomtChainAtomCounts=Clazz.array(Integer.TYPE, [255]);
 var title="";
 var chainlist="";
@@ -421,15 +357,15 @@ if (this.line == null  || !this.line.startsWith$S("REMARK 350") ) break;
 try {
 if (this.line.startsWith$S("REMARK 350 BIOMOLECULE:")) {
 if (nBiomt > 0) $I$(5).info$S("biomolecule " + id + ": number of transforms: " + nBiomt );
-info=Clazz.new_($I$(1));
+info=Clazz.new_($I$(1,1));
 id=this.line.substring$I(this.line.indexOf$S(":") + 1).trim$();
 title=this.line.trim$();
-info.put$TK$TV("name", "biomolecule " + id);
-info.put$TK$TV("molecule", id.length$() == 3 ? id : Integer.valueOf$I(this.parseIntStr$S(id)));
-info.put$TK$TV("title", title);
-info.put$TK$TV("chains", biomtchains=Clazz.new_($I$(7)));
-info.put$TK$TV("biomts", biomts=Clazz.new_($I$(7)));
-this.vBiomolecules.addLast$TV(info);
+info.put$O$O("name", "biomolecule " + id);
+info.put$O$O("molecule", id.length$() == 3 ? id : Integer.valueOf$I(this.parseIntStr$S(id)));
+info.put$O$O("title", title);
+info.put$O$O("chains", biomtchains=Clazz.new_($I$(7,1)));
+info.put$O$O("biomts", biomts=Clazz.new_($I$(7,1)));
+this.vBiomolecules.addLast$O(info);
 nBiomt=0;
 }if (this.line.indexOf$S("APPLY THE FOLLOWING TO CHAINS:") >= 0) {
 if (info == null ) {
@@ -460,14 +396,14 @@ mat[i++]=this.parseFloatStr$S(tokens[7]);
 if (i == 4 || i == 8 ) p$1.readHeader$Z.apply(this, [true]);
 }
 mat[15]=1;
-var m4=Clazz.new_($I$(8));
+var m4=Clazz.new_($I$(8,1));
 m4.setA$FA(mat);
 if (m4.equals$O(mIdent)) {
-biomts.add$I$TE(0, m4);
-biomtchains.add$I$TE(0, chainlist);
+biomts.add$I$O(0, m4);
+biomtchains.add$I$O(0, chainlist);
 } else {
-biomts.addLast$TV(m4);
-biomtchains.addLast$TV(chainlist);
+biomts.addLast$O(m4);
+biomtchains.addLast$O(chainlist);
 }continue;
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -517,9 +453,9 @@ throw e;
 }
 }
 case 2:
-return (isBase10 || $I$(4).isDigit$C(c)  ? this.parseIntRange$S$I$I(this.line, i, j) : $I$(4).parseIntRadix$S$I(this.line.substring$I$I(i, j), 36) + ($I$(4).isUpperCase$C(c) ? -16696160 : 26973856));
+return (isBase10 || $I$(4).isDigit$C(c)  ? this.parseIntRange$S$I$I(this.line, i, j) : (function(a,f){return f.apply(null,a)})([this.line.substring$I$I(i, j), 36],$I$(4).parseIntRadix$S$I) + ($I$(4).isUpperCase$C(c) ? -16696160 : 26973856));
 case 1:
-if (!isBase10) return this.serial=$I$(4).parseIntRadix$S$I(this.line.substring$I$I(i, j), 16);
+if (!isBase10) return this.serial=(function(a,f){return f.apply(null,a)})([this.line.substring$I$I(i, j), 16],$I$(4).parseIntRadix$S$I);
 this.serMode=0;
 return p$1.getSerial$I$I.apply(this, [i, j]);
 }
@@ -543,9 +479,9 @@ throw e;
 }
 }
 case 2:
-return (isBase10 || $I$(4).isDigit$C(c)  ? this.parseIntRange$S$I$I(this.line, i, j) : $I$(4).parseIntRadix$S$I(this.line.substring$I$I(i, j), 36) + ($I$(4).isUpperCase$C(c) ? -456560 : 756496));
+return (isBase10 || $I$(4).isDigit$C(c)  ? this.parseIntRange$S$I$I(this.line, i, j) : (function(a,f){return f.apply(null,a)})([this.line.substring$I$I(i, j), 36],$I$(4).parseIntRadix$S$I) + ($I$(4).isUpperCase$C(c) ? -456560 : 756496));
 case 1:
-if (!isBase10) return $I$(4).parseIntRadix$S$I(this.line.substring$I$I(i, j), 16);
+if (!isBase10) return (function(a,f){return f.apply(null,a)})([this.line.substring$I$I(i, j), 16],$I$(4).parseIntRadix$S$I);
 this.seqMode=0;
 return p$1.getSeqNo$I$I.apply(this, [i, j]);
 }
@@ -592,10 +528,10 @@ this.htHetero=null;
 
 Clazz.newMeth(C$, 'atom', function () {
 var isHetero=this.line.startsWith$S("HETATM");
-var atom=this.processAtom$org_jmol_adapter_smarter_Atom$S$C$S$I$I$C$Z$S(Clazz.new_($I$(10)), this.line.substring$I$I(12, 16).trim$(), this.line.charAt$I(16), this.parseTokenRange$S$I$I(this.line, 17, 20), this.vwr.getChainID$S$Z(this.line.substring$I$I(21, 22), true), p$1.getSeqNo$I$I.apply(this, [22, 26]), this.line.charAt$I(26), isHetero, this.deduceElementSymbol$Z(isHetero));
+var atom=this.processAtom$org_jmol_adapter_smarter_Atom$S$C$S$I$I$C$Z$S(Clazz.new_($I$(10,1)), this.line.substring$I$I(12, 16).trim$(), this.line.charAt$I(16), this.parseTokenRange$S$I$I(this.line, 17, 20), this.vwr.getChainID$S$Z(this.line.substring$I$I(21, 22), true), p$1.getSeqNo$I$I.apply(this, [22, 26]), this.line.charAt$I(26), isHetero, this.deduceElementSymbol$Z(isHetero));
 if (this.atomTypeLen > 0) {
 var s=this.line.substring$I$I(this.atomTypePt0, this.atomTypePt0 + this.atomTypeLen).trim$();
-if (s.length$() > 0) atom.atomName += "\0" + s;
+if (s.length$() > 0) atom.atomName += "\u0000" + s;
 }if (!this.filterPDBAtom$org_jmol_adapter_smarter_Atom$I(atom, this.fileAtomIndex++)) return;
 var charge=0;
 var x;
@@ -672,8 +608,8 @@ return "Xx";
 
 Clazz.newMeth(C$, 'conect', function () {
 if (this.sbConect == null ) {
-this.sbConect=Clazz.new_($I$(2));
-this.sb=Clazz.new_($I$(2));
+this.sbConect=Clazz.new_($I$(2,1));
+this.sb=Clazz.new_($I$(2,1));
 } else {
 this.sb.setLength$I(0);
 }var sourceSerial=p$1.getSerial$I$I.apply(this, [6, 11]);
@@ -728,7 +664,7 @@ startChainIDIndex=19;
 startIndex=21;
 endChainIDIndex=31;
 endIndex=33;
-if (this.line.length$() >= 40) substructureType=$I$(12).getHelixType$I(this.parseIntRange$S$I$I(this.line, 38, 40));
+if (this.line.length$() >= 40) substructureType=(function(a,f){return f.apply(null,a)})([this.parseIntRange$S$I$I(this.line, 38, 40)],$I$(12).getHelixType$I);
 } else if (this.line.startsWith$S("SHEET ")) {
 structureType=$I$(11).SHEET;
 startChainIDIndex=21;
@@ -754,7 +690,7 @@ var endSequenceNumber=this.parseIntRange$S$I$I(this.line, endIndex, endIndex + 4
 var endInsertionCode=" ";
 if (this.lineLength > endIndex + 4) endInsertionCode=this.line.charAt$I(endIndex + 4);
 if (substructureType === $I$(11).NONE ) substructureType=structureType;
-var structure=Clazz.new_($I$(12).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA,[-1, structureType, substructureType, structureID, serialID, strandCount, null]);
+var structure=Clazz.new_($I$(12,1).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA,[-1, structureType, substructureType, structureID, serialID, strandCount, null]);
 structure.set$I$I$C$I$I$C$I$I(startChainID, startSequenceNumber, startInsertionCode, endChainID, endSequenceNumber, endInsertionCode, -2147483648, 2147483647);
 this.asc.addStructure$org_jmol_adapter_smarter_Structure(structure);
 }, p$1);
@@ -826,15 +762,15 @@ var ichRightParen=formula.indexOf$I(")");
 if (ichRightParen < 0 || ichLeftParen >= ichRightParen  || ichLeftParen + 1 == ichRightParen ) return;
 formula=$I$(4).parseTrimmedRange$S$I$I(formula, ichLeftParen + 1, ichRightParen);
 }var htElementsInGroup=this.htFormul.get$O(groupName);
-if (htElementsInGroup == null ) this.htFormul.put$TK$TV(groupName, htElementsInGroup=Clazz.new_($I$(1)));
+if (htElementsInGroup == null ) this.htFormul.put$O$O(groupName, htElementsInGroup=Clazz.new_($I$(1,1)));
 this.next[0]=0;
 var elementWithCount;
 while ((elementWithCount=this.parseTokenNext$S(formula)) != null ){
 if (elementWithCount.length$() < 2) continue;
 var chFirst=elementWithCount.charAt$I(0);
 var chSecond=elementWithCount.charAt$I(1);
-if ($I$(10).isValidSymNoCase$C$C(chFirst, chSecond)) htElementsInGroup.put$TK$TV("" + chFirst + chSecond , $I$(3).TRUE);
- else if ($I$(10).isValidSym1$C(chFirst)) htElementsInGroup.put$TK$TV("" + chFirst, $I$(3).TRUE);
+if ($I$(10).isValidSymNoCase$C$C(chFirst, chSecond)) htElementsInGroup.put$O$O("" + chFirst + chSecond , $I$(3).TRUE);
+ else if ($I$(10).isValidSym1$C(chFirst)) htElementsInGroup.put$O$O("" + chFirst, $I$(3).TRUE);
 }
 }, p$1);
 
@@ -842,17 +778,17 @@ Clazz.newMeth(C$, 'het', function () {
 if (this.line.length$() < 30) {
 return;
 }if (this.htHetero == null ) {
-this.htHetero=Clazz.new_($I$(1));
+this.htHetero=Clazz.new_($I$(1,1));
 }var groupName=this.parseTokenRange$S$I$I(this.line, 7, 10);
 if (this.htHetero.containsKey$O(groupName)) {
 return;
 }var hetName=$I$(4).parseTrimmedRange$S$I$I(this.line, 30, 70);
-this.htHetero.put$TK$TV(groupName, hetName);
+this.htHetero.put$O$O(groupName, hetName);
 }, p$1);
 
 Clazz.newMeth(C$, 'hetnam', function () {
 if (this.htHetero == null ) {
-this.htHetero=Clazz.new_($I$(1));
+this.htHetero=Clazz.new_($I$(1,1));
 }var groupName=this.parseTokenRange$S$I$I(this.line, 11, 14);
 var hetName=$I$(4).parseTrimmedRange$S$I$I(this.line, 15, 70);
 if (groupName == null ) {
@@ -861,7 +797,7 @@ return;
 }var htName=this.htHetero.get$O(groupName);
 if (htName != null ) {
 hetName=htName + hetName;
-}this.htHetero.put$TK$TV(groupName, hetName);
+}this.htHetero.put$O$O(groupName, hetName);
 this.appendLoadNote$S(groupName + " = " + hetName );
 }, p$1);
 
@@ -872,7 +808,7 @@ var serial=this.line.substring$I$I(6, 11).trim$();
 if (!this.haveMappedSerials && this.asc.ac > 0 ) {
 for (var i=this.asc.getAtomSetAtomIndex$I(this.asc.iSet); i < this.asc.ac; i++) {
 var atomSerial=this.asc.atoms[i].atomSerial;
-if (atomSerial != -2147483648) this.asc.atomSymbolicMap.put$TK$TV("" + atomSerial, this.asc.atoms[i]);
+if (atomSerial != -2147483648) this.asc.atomSymbolicMap.put$O$O("" + atomSerial, this.asc.atoms[i]);
 }
 this.haveMappedSerials=true;
 }var atom=this.asc.getAtomFromName$S(serial);
@@ -891,15 +827,15 @@ this.asc.setAnisoBorU$org_jmol_adapter_smarter_Atom$FA$I(atom, data, 12);
 
 Clazz.newMeth(C$, 'site', function () {
 if (this.htSites == null ) {
-this.htSites=Clazz.new_($I$(1));
+this.htSites=Clazz.new_($I$(1,1));
 }var nResidues=this.parseIntRange$S$I$I(this.line, 15, 17);
 var siteID=$I$(4).parseTrimmedRange$S$I$I(this.line, 11, 14);
 var htSite=this.htSites.get$O(siteID);
 if (htSite == null ) {
-htSite=Clazz.new_($I$(1));
-htSite.put$TK$TV("nResidues", Integer.valueOf$I(nResidues));
-htSite.put$TK$TV("groups", "");
-this.htSites.put$TK$TV(siteID, htSite);
+htSite=Clazz.new_($I$(1,1));
+htSite.put$O$O("nResidues", Integer.valueOf$I(nResidues));
+htSite.put$O$O("groups", "");
+this.htSites.put$O$O(siteID, htSite);
 }var groups=htSite.get$O("groups");
 for (var i=0; i < 4; i++) {
 var pt=18 + i * 11;
@@ -911,7 +847,7 @@ var iCode=$I$(4).parseTrimmedRange$S$I$I(this.line, pt + 9, pt + 10);
 groups += (groups.length$() == 0 ? "" : ",") + "[" + resName + "]" + seq ;
 if (iCode.length$() > 0) groups += "^" + iCode;
 if (chainID.length$() > 0) groups += ":" + chainID;
-htSite.put$TK$TV("groups", groups);
+htSite.put$O$O("groups", groups);
 }
 }, p$1);
 
@@ -926,28 +862,28 @@ var range=null;
 var remark=this.line.substring$I$I(0, 11);
 while (p$1.readHeader$Z.apply(this, [true]) != null  && this.line.startsWith$S(remark) ){
 try {
-var tokens=$I$(4).getTokens$S(this.line.substring$I(10).replace$C$C(":", " "));
+var tokens=(function(a,f){return f.apply(null,a)})([this.line.substring$I(10).replace$C$C(":", " ")],$I$(4).getTokens$S);
 if (tokens.length < 2) continue;
 $I$(5).info$S(this.line);
 if (tokens[1].equalsIgnoreCase$S("GROUP")) {
-tlsGroup=Clazz.new_($I$(1));
-ranges=Clazz.new_($I$(7));
-tlsGroup.put$TK$TV("ranges", ranges);
-tlsGroups.addLast$TV(tlsGroup);
+tlsGroup=Clazz.new_($I$(1,1));
+ranges=Clazz.new_($I$(7,1));
+tlsGroup.put$O$O("ranges", ranges);
+tlsGroups.addLast$O(tlsGroup);
 this.tlsGroupID=this.parseIntStr$S(tokens[tokens.length - 1]);
-tlsGroup.put$TK$TV("id", Integer.valueOf$I(this.tlsGroupID));
+tlsGroup.put$O$O("id", Integer.valueOf$I(this.tlsGroupID));
 } else if (tokens[0].equalsIgnoreCase$S("NUMBER")) {
 if (tokens[2].equalsIgnoreCase$S("COMPONENTS")) {
 } else {
 nGroups=this.parseIntStr$S(tokens[tokens.length - 1]);
 if (nGroups < 1) break;
-if (this.vTlsModels == null ) this.vTlsModels=Clazz.new_($I$(7));
-tlsGroups=Clazz.new_($I$(7));
+if (this.vTlsModels == null ) this.vTlsModels=Clazz.new_($I$(7,1));
+tlsGroups=Clazz.new_($I$(7,1));
 this.appendLoadNote$S(this.line.substring$I(11).trim$());
 }} else if (tokens[0].equalsIgnoreCase$S("COMPONENTS")) {
 components=this.line;
 } else if (tokens[0].equalsIgnoreCase$S("RESIDUE")) {
-range=Clazz.new_($I$(1));
+range=Clazz.new_($I$(1,1));
 var chain1;
 var chain2;
 var res1;
@@ -965,10 +901,10 @@ chain2=this.line.charAt$I(toC);
 res1=this.parseIntRange$S$I$I(this.line, fromC + 1, toC);
 res2=this.parseIntStr$S(this.line.substring$I(toC + 1));
 }if (chain1 == chain2) {
-range.put$TK$TV("chains", "" + chain1 + chain2 );
+range.put$O$O("chains", "" + chain1 + chain2 );
 if (res1 <= res2) {
-range.put$TK$TV("residues", Clazz.array(Integer.TYPE, -1, [res1, res2]));
-ranges.addLast$TV(range);
+range.put$O$O("residues", Clazz.array(Integer.TYPE, -1, [res1, res2]));
+ranges.addLast$O(range);
 } else {
 p$1.tlsAddError$S.apply(this, [" TLS group residues are not in order (range ignored)"]);
 }} else {
@@ -981,14 +917,14 @@ chain=tokens[++i].charAt$I(0);
 continue;
 }var resno=this.parseIntStr$S(tokens[i]);
 if (resno == -2147483648) continue;
-range=Clazz.new_($I$(1));
-range.put$TK$TV("residues", Clazz.array(Integer.TYPE, -1, [resno, this.parseIntStr$S(tokens[++i])]));
-if (chain != "\u0000") range.put$TK$TV("chains", "" + chain + chain );
-ranges.addLast$TV(range);
+range=Clazz.new_($I$(1,1));
+range.put$O$O("residues", Clazz.array(Integer.TYPE, -1, [resno, this.parseIntStr$S(tokens[++i])]));
+if (chain != "\u0000") range.put$O$O("chains", "" + chain + chain );
+ranges.addLast$O(range);
 }
 } else if (tokens[0].equalsIgnoreCase$S("ORIGIN")) {
-var origin=Clazz.new_($I$(13));
-tlsGroup.put$TK$TV("origin", origin);
+var origin=Clazz.new_($I$(13,1));
+tlsGroup.put$O$O("origin", origin);
 if (tokens.length == 8) {
 origin.set$F$F$F(this.parseFloatStr$S(tokens[5]), this.parseFloatStr$S(tokens[6]), this.parseFloatStr$S(tokens[7]));
 } else {
@@ -1002,7 +938,7 @@ var tensorType=tokens[0].charAt$I(0);
 var s=(p$1.readHeader$Z.apply(this, [true]).substring$I(10) + p$1.readHeader$Z.apply(this, [true]).substring$I(10) + p$1.readHeader$Z.apply(this, [true]).substring$I(10) ).replace$C$C(tensorType, " ").replace$C$C(":", " ");
 tokens=$I$(4).getTokens$S(s);
 var data=Clazz.array(Float.TYPE, [3, 3]);
-tlsGroup.put$TK$TV("t" + tensorType, data);
+tlsGroup.put$O$O("t" + tensorType, data);
 for (var i=0; i < tokens.length; i++) {
 var ti=(tokens[i].charCodeAt$I(0)) - 49;
 var tj=(tokens[i].charCodeAt$I(1)) - 49;
@@ -1028,10 +964,10 @@ throw e;
 }
 }
 if (tlsGroups != null ) {
-var tlsModel=Clazz.new_($I$(1));
-tlsModel.put$TK$TV("groupCount", Integer.valueOf$I(nGroups));
-tlsModel.put$TK$TV("groups", tlsGroups);
-this.vTlsModels.addLast$TV(tlsModel);
+var tlsModel=Clazz.new_($I$(1,1));
+tlsModel.put$O$O("groupCount", Integer.valueOf$I(nGroups));
+tlsModel.put$O$O("groups", tlsGroups);
+this.vTlsModels.addLast$O(tlsModel);
 }return (nGroups < 1);
 }, p$1);
 
@@ -1040,7 +976,7 @@ this.vTlsModels=null;
 }, p$1);
 
 Clazz.newMeth(C$, 'setTlsGroups$I$I$org_jmol_api_SymmetryInterface', function (iGroup, iModel, symmetry) {
-$I$(5).info$S("TLS model " + (iModel + 1) + " set " + (iGroup + 1) );
+(function(a,f){return f.apply(null,a)})(["TLS model " + (iModel + 1) + " set " + (iGroup + 1) ],$I$(5).info$S);
 var tlsGroupInfo=this.vTlsModels.get$I(iGroup);
 var groups=tlsGroupInfo.get$O("groups");
 var index0=this.asc.getAtomSetAtomIndex$I(iModel);
@@ -1064,7 +1000,7 @@ var index2=(index1 >= 0 ? p$1.findAtomForRange$I$I$I$I$Z.apply(this, [index1, in
 if (index2 < 0) {
 $I$(5).info$S("TLS processing terminated");
 return;
-}$I$(5).info$S("TLS ID=" + this.tlsGroupID + " model atom index range " + index1 + "-" + index2 );
+}(function(a,f){return f.apply(null,a)})(["TLS ID=" + this.tlsGroupID + " model atom index range " + index1 + "-" + index2 ],$I$(5).info$S);
 var isSameChain=(chain0 == chain1);
 for (var iAtom=index0; iAtom < indexMax; iAtom++) {
 var atom=atoms[iAtom];
@@ -1091,7 +1027,7 @@ var atom=atoms[i];
 if ((atom.chainID == chain && atom.sequenceNumber == resno ) == isTrue ) return i;
 }
 if (isTrue) {
-$I$(5).warn$S("PdbReader findAtom chain=" + chain + " resno=" + resno + " not found" );
+(function(a,f){return f.apply(null,a)})(["PdbReader findAtom chain=" + chain + " resno=" + resno + " not found" ],$I$(5).warn$S);
 p$1.tlsAddError$S.apply(this, ["atom not found: chain=" + chain + " resno=" + resno ]);
 }return (isTrue ? -1 : atom2);
 }, p$1);
@@ -1129,13 +1065,13 @@ anisou[4]=this.dataT[4] - L[1][1] * xz + L[1][2] * xy - L[2][0] * yy + L[0][1] *
 anisou[5]=this.dataT[5] - L[0][0] * yz - L[1][2] * xx + L[2][0] * xy + L[0][1] * xz - S[1][1] * x + S[2][2] * x + S[0][1] * y - S[0][2] * z;
 anisou[6]=12;
 anisou[7]=bresidual;
-if (this.tlsU == null ) this.tlsU=Clazz.new_($I$(1));
-this.tlsU.put$TK$TV(atom, anisou);
+if (this.tlsU == null ) this.tlsU=Clazz.new_($I$(1,1));
+this.tlsU.put$O$O(atom, anisou);
 atom.addTensor$org_jmol_util_Tensor$S$Z(symmetry.getTensor$org_jmol_viewer_Viewer$FA(this.vwr, this.dataT).setType$S(null), "TLS-U", false);
 }, p$1);
 
 Clazz.newMeth(C$, 'tlsAddError$S', function (error) {
-if (this.sbTlsErrors == null ) this.sbTlsErrors=Clazz.new_($I$(2));
+if (this.sbTlsErrors == null ) this.sbTlsErrors=Clazz.new_($I$(2,1));
 this.sbTlsErrors.append$S(this.fileName).appendC$C("\t").append$S("TLS group ").appendI$I(this.tlsGroupID).appendC$C("\t").append$S(error).appendC$C("\n");
 }, p$1);
 
@@ -1146,12 +1082,12 @@ return (r < 0.9  ? 1 : r);
 Clazz.newMeth(C$, 'addConnection$IA', function (is) {
 if (this.vConnect == null ) {
 this.connectLast=null;
-this.vConnect=Clazz.new_($I$(7));
+this.vConnect=Clazz.new_($I$(7,1));
 }if (this.connectLast != null ) {
 if (is[0] == this.connectLast[0] && is[1] == this.connectLast[1]  && is[2] != 2048 ) {
 this.connectLast[2]++;
 return;
-}}this.vConnect.addLast$TV(this.connectLast=is);
+}}this.vConnect.addLast$O(this.connectLast=is);
 }, p$1);
 
 Clazz.newMeth(C$, 'connectAllBad$I', function (maxSerial) {
@@ -1191,4 +1127,4 @@ this.connectNextAtomIndex=firstAtom;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

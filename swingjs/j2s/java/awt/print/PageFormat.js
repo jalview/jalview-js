@@ -1,22 +1,17 @@
-(function(){var P$=Clazz.newPackage("java.awt.print"),I$=[[0,'java.awt.print.Paper','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PageFormat", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("java.awt.print"),I$=[[0,'java.awt.print.Paper','InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PageFormat", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mPaper=null;
-this.mOrientation=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.mOrientation=1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mOrientation'],'O',['mPaper','java.awt.print.Paper']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.mPaper=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.mPaper=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'clone$', function () {
@@ -68,7 +63,7 @@ case 2:
 x=this.mPaper.getImageableY$();
 break;
 default:
-throw Clazz.new_($I$(2).c$$S,["unrecognized orientation"]);
+throw Clazz.new_($I$(2,1).c$$S,["unrecognized orientation"]);
 }
 return x;
 });
@@ -86,7 +81,7 @@ case 2:
 y=this.mPaper.getWidth$() - (this.mPaper.getImageableX$() + this.mPaper.getImageableWidth$());
 break;
 default:
-throw Clazz.new_($I$(2).c$$S,["unrecognized orientation"]);
+throw Clazz.new_($I$(2,1).c$$S,["unrecognized orientation"]);
 }
 return y;
 });
@@ -161,4 +156,4 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 return matrix;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

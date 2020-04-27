@@ -1,45 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.renderer"),I$=[[0,'java.awt.Color','jalview.util.Platform','jalview.analysis.Rna','jalview.schemes.NucleotideColourScheme','jalview.schemes.ZappoColourScheme','jalview.renderer.ResidueShader','jalview.analysis.AAFrequency','jalview.analysis.StructureFrequency','java.util.BitSet','java.awt.geom.AffineTransform','java.awt.BasicStroke','jalview.analysis.CodingUtils','jalview.schemes.ResidueProperties']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationRenderer");
-C$.GLYPHLINE_COLOR=null;
-C$.SHEET_COLOUR=null;
-C$.HELIX_COLOUR=null;
-C$.STEM_COLOUR=null;
+(function(){var P$=Clazz.newPackage("jalview.renderer"),I$=[[0,'java.awt.Color','jalview.util.Platform','jalview.analysis.Rna','jalview.schemes.NucleotideColourScheme','jalview.schemes.ZappoColourScheme','jalview.renderer.ResidueShader','jalview.analysis.AAFrequency','jalview.analysis.StructureFrequency','java.util.BitSet','java.awt.geom.AffineTransform','java.awt.BasicStroke','jalview.analysis.CodingUtils','jalview.schemes.ResidueProperties']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.GLYPHLINE_COLOR=$I$(1).gray;
-C$.SHEET_COLOUR=$I$(1).green;
-C$.HELIX_COLOUR=$I$(1).red;
-C$.STEM_COLOUR=$I$(1).blue;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.debugRedraw=false;
-this.charWidth=0;
-this.endRes=0;
-this.charHeight=0;
-this.validCharWidth=false;
-this.hasHiddenColumns=false;
-this.fm=null;
-this.USE_FILL_ROUND_RECT=false;
-this.av_renderHistogram=false;
-this.av_renderProfile=false;
-this.av_normaliseProfile=false;
-this.profcolour=null;
-this.columnSelection=null;
-this.hiddenColumns=null;
-this.hconsensus=null;
-this.complementConsensus=null;
-this.hStrucConsensus=null;
-this.av_ignoreGapsConsensus=false;
-this.fadedImage=null;
-this.annotationPanel=null;
-this.imgWidth=0;
-this.sOffset=0;
-this.visHeight=0;
-this.useClip=false;
-this.canClip=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.USE_FILL_ROUND_RECT=$I$(2).isAMacAndNotJS$();
@@ -49,14 +11,17 @@ this.av_normaliseProfile=false;
 this.profcolour=null;
 this.useClip=true;
 this.canClip=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['debugRedraw','validCharWidth','hasHiddenColumns','USE_FILL_ROUND_RECT','av_renderHistogram','av_renderProfile','av_normaliseProfile','av_ignoreGapsConsensus','useClip','canClip'],'I',['charWidth','endRes','charHeight','imgWidth','sOffset','visHeight'],'O',['fm','java.awt.FontMetrics','profcolour','jalview.renderer.ResidueShaderI','columnSelection','jalview.datamodel.ColumnSelection','hiddenColumns','jalview.datamodel.HiddenColumns','hconsensus','jalview.datamodel.ProfilesI','complementConsensus','java.util.Hashtable[]','+hStrucConsensus','fadedImage','java.awt.Image','annotationPanel','java.awt.image.ImageObserver']]
+,['O',['GLYPHLINE_COLOR','java.awt.Color','+SHEET_COLOUR','+HELIX_COLOUR','+STEM_COLOUR']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (debugRedraw) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.debugRedraw=debugRedraw;
 }, 1);
 
@@ -143,8 +108,8 @@ this.av_renderProfile=av.isShowSequenceLogo$();
 this.av_normaliseProfile=av.isNormaliseSequenceLogo$();
 this.profcolour=av.getResidueShading$();
 if (this.profcolour == null  || this.profcolour.getColourScheme$() == null  ) {
-var col=av.getAlignment$().isNucleotide$() ? Clazz.new_($I$(4)) : Clazz.new_($I$(5));
-this.profcolour=Clazz.new_($I$(6).c$$jalview_schemes_ColourSchemeI,[col]);
+var col=av.getAlignment$().isNucleotide$() ? Clazz.new_($I$(4,1)) : Clazz.new_($I$(5,1));
+this.profcolour=Clazz.new_($I$(6,1).c$$jalview_schemes_ColourSchemeI,[col]);
 }this.columnSelection=av.getColumnSelection$();
 this.hiddenColumns=av.getAlignment$().getHiddenColumns$();
 this.hconsensus=av.getSequenceConsensusHash$();
@@ -157,12 +122,12 @@ Clazz.newMeth(C$, 'getProfileFor$jalview_datamodel_AlignmentAnnotation$I', funct
 if (aa.autoCalculated && (aa.label.startsWith$S("Consensus") || aa.label.startsWith$S("cDNA Consensus") ) ) {
 var forComplement=aa.label.startsWith$S("cDNA Consensus");
 if (aa.groupRef != null  && aa.groupRef.consensusData != null   && aa.groupRef.isShowSequenceLogo$() ) {
-return $I$(7).extractProfile$jalview_datamodel_ProfileI$Z(aa.groupRef.consensusData.get$I(column), aa.groupRef.getIgnoreGapsConsensus$());
+return $I$(7,"extractProfile$jalview_datamodel_ProfileI$Z",[aa.groupRef.consensusData.get$I(column), aa.groupRef.getIgnoreGapsConsensus$()]);
 }if (aa.groupRef == null  && aa.sequenceRef == null  ) {
 if (forComplement) {
 return $I$(7).extractCdnaProfile$java_util_Hashtable$Z(this.complementConsensus[column], this.av_ignoreGapsConsensus);
 } else {
-return $I$(7).extractProfile$jalview_datamodel_ProfileI$Z(this.hconsensus.get$I(column), this.av_ignoreGapsConsensus);
+return $I$(7,"extractProfile$jalview_datamodel_ProfileI$Z",[this.hconsensus.get$I(column), this.av_ignoreGapsConsensus]);
 }}} else {
 if (aa.autoCalculated && aa.label.startsWith$S("StrucConsensus") ) {
 if (aa.groupRef == null  && aa.sequenceRef == null   && this.hStrucConsensus != null   && this.hStrucConsensus.length > column ) {
@@ -191,7 +156,7 @@ var scaleColLabel=false;
 var consensusAnnot=av.getAlignmentConsensusAnnotation$();
 var structConsensusAnnot=av.getAlignmentStrucConsensusAnnotation$();
 var complementConsensusAnnot=av.getComplementConsensusAnnotation$();
-var graphGroupDrawn=Clazz.new_($I$(9));
+var graphGroupDrawn=Clazz.new_($I$(9,1));
 var charOffset=0;
 var yfrom=0;
 var f_i=0;
@@ -606,10 +571,10 @@ x++;
 if (_aa.threshold != null ) {
 g.setColor$java_awt_Color(_aa.threshold.colour);
 var g2=g;
-g2.setStroke$java_awt_Stroke(Clazz.new_($I$(11).c$$F$I$I$F$FA$F,[1, 2, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0]));
+g2.setStroke$java_awt_Stroke(Clazz.new_([1, 2, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0],$I$(11,1).c$$F$I$I$F$FA$F));
 y2=((y - ((_aa.threshold.value - min) / range) * graphHeight)|0);
 g.drawLine$I$I$I$I(0, y2, (eRes - sRes) * this.charWidth, y2);
-g2.setStroke$java_awt_Stroke(Clazz.new_($I$(11)));
+g2.setStroke$java_awt_Stroke(Clazz.new_($I$(11,1)));
 }});
 
 Clazz.newMeth(C$, 'drawBarGraph$java_awt_Graphics$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_AnnotationA$I$I$F$F$I$Z$Z$Z', function (g, _aa, aa_annotations, sRes, eRes, min, max, y, renderHistogram, renderProfile, normaliseProfile) {
@@ -703,17 +668,17 @@ ht2 += newHeight;
 if (_aa.threshold != null ) {
 g.setColor$java_awt_Color(_aa.threshold.colour);
 var g2=g;
-g2.setStroke$java_awt_Stroke(Clazz.new_($I$(11).c$$F$I$I$F$FA$F,[1, 2, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0]));
+g2.setStroke$java_awt_Stroke(Clazz.new_([1, 2, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0],$I$(11,1).c$$F$I$I$F$FA$F));
 y2=((y - ((_aa.threshold.value - min) / range) * _aa.graphHeight)|0);
 g.drawLine$I$I$I$I(0, y2, (eRes - sRes) * this.charWidth, y2);
-g2.setStroke$java_awt_Stroke(Clazz.new_($I$(11)));
+g2.setStroke$java_awt_Stroke(Clazz.new_($I$(11,1)));
 }});
 
 Clazz.newMeth(C$, 'drawGraph$java_awt_Graphics$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_AnnotationA$I$I$I$I', function (g, _aa, aa_annotations, width, y, sRes, eRes) {
 eRes=Math.min(eRes, aa_annotations.length);
 g.setColor$java_awt_Color($I$(1).white);
 g.fillRect$I$I$I$I(0, 0, width, y);
-g.setColor$java_awt_Color(Clazz.new_($I$(1).c$$I$I$I,[0, 0, 180]));
+g.setColor$java_awt_Color(Clazz.new_($I$(1,1).c$$I$I$I,[0, 0, 180]));
 var x=0;
 var height;
 for (var j=sRes; j < eRes; j++) {
@@ -734,95 +699,102 @@ Clazz.newMeth(C$, 'getNotCanonicalColor$C', function (lastss) {
 switch (lastss.$c()) {
 case 123:
 case 125:
-return Clazz.new_($I$(1).c$$I$I$I,[255, 125, 5]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[255, 125, 5]);
 case 91:
 case 93:
-return Clazz.new_($I$(1).c$$I$I$I,[245, 115, 10]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[245, 115, 10]);
 case 62:
 case 60:
-return Clazz.new_($I$(1).c$$I$I$I,[235, 135, 15]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[235, 135, 15]);
 case 65:
 case 97:
-return Clazz.new_($I$(1).c$$I$I$I,[225, 105, 20]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[225, 105, 20]);
 case 66:
 case 98:
-return Clazz.new_($I$(1).c$$I$I$I,[215, 145, 30]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[215, 145, 30]);
 case 67:
 case 99:
-return Clazz.new_($I$(1).c$$I$I$I,[205, 95, 35]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[205, 95, 35]);
 case 68:
 case 100:
-return Clazz.new_($I$(1).c$$I$I$I,[195, 155, 45]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[195, 155, 45]);
 case 69:
 case 101:
-return Clazz.new_($I$(1).c$$I$I$I,[185, 85, 55]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[185, 85, 55]);
 case 70:
 case 102:
-return Clazz.new_($I$(1).c$$I$I$I,[175, 165, 65]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[175, 165, 65]);
 case 71:
 case 103:
-return Clazz.new_($I$(1).c$$I$I$I,[170, 75, 75]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[170, 75, 75]);
 case 72:
 case 104:
-return Clazz.new_($I$(1).c$$I$I$I,[160, 175, 85]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[160, 175, 85]);
 case 73:
 case 105:
-return Clazz.new_($I$(1).c$$I$I$I,[150, 65, 95]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[150, 65, 95]);
 case 74:
 case 106:
-return Clazz.new_($I$(1).c$$I$I$I,[140, 185, 105]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[140, 185, 105]);
 case 75:
 case 107:
-return Clazz.new_($I$(1).c$$I$I$I,[130, 55, 110]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[130, 55, 110]);
 case 76:
 case 108:
-return Clazz.new_($I$(1).c$$I$I$I,[120, 195, 120]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[120, 195, 120]);
 case 77:
 case 109:
-return Clazz.new_($I$(1).c$$I$I$I,[110, 45, 130]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[110, 45, 130]);
 case 78:
 case 110:
-return Clazz.new_($I$(1).c$$I$I$I,[100, 205, 140]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[100, 205, 140]);
 case 79:
 case 111:
-return Clazz.new_($I$(1).c$$I$I$I,[90, 35, 150]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[90, 35, 150]);
 case 80:
 case 112:
-return Clazz.new_($I$(1).c$$I$I$I,[85, 215, 160]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[85, 215, 160]);
 case 81:
 case 113:
-return Clazz.new_($I$(1).c$$I$I$I,[75, 25, 170]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[75, 25, 170]);
 case 82:
 case 114:
-return Clazz.new_($I$(1).c$$I$I$I,[65, 225, 180]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[65, 225, 180]);
 case 83:
 case 115:
-return Clazz.new_($I$(1).c$$I$I$I,[55, 15, 185]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[55, 15, 185]);
 case 84:
 case 116:
-return Clazz.new_($I$(1).c$$I$I$I,[45, 235, 195]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[45, 235, 195]);
 case 85:
 case 117:
-return Clazz.new_($I$(1).c$$I$I$I,[35, 5, 205]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[35, 5, 205]);
 case 86:
 case 118:
-return Clazz.new_($I$(1).c$$I$I$I,[25, 245, 215]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[25, 245, 215]);
 case 87:
 case 119:
-return Clazz.new_($I$(1).c$$I$I$I,[15, 0, 225]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[15, 0, 225]);
 case 88:
 case 120:
-return Clazz.new_($I$(1).c$$I$I$I,[10, 255, 235]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[10, 255, 235]);
 case 89:
 case 121:
-return Clazz.new_($I$(1).c$$I$I$I,[5, 150, 245]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[5, 150, 245]);
 case 90:
 case 122:
-return Clazz.new_($I$(1).c$$I$I$I,[0, 80, 255]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[0, 80, 255]);
 default:
 System.out.println$S("This is not a interaction : " + lastss);
 return null;
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.GLYPHLINE_COLOR=$I$(1).gray;
+C$.SHEET_COLOUR=$I$(1).green;
+C$.HELIX_COLOUR=$I$(1).red;
+C$.STEM_COLOUR=$I$(1).blue;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

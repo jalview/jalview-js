@@ -1,41 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','Boolean','javajs.util.AU','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder','javajs.util.PT','org.jmol.util.Escape','org.jmol.quantum.QS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MolecularOrbital", null, 'org.jmol.shapesurface.Isosurface');
+(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','Boolean','javajs.util.AU','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder','javajs.util.PT','org.jmol.shape.Shape','org.jmol.util.Escape','org.jmol.quantum.QS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MolecularOrbital", null, 'org.jmol.shapesurface.Isosurface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.moTranslucency=null;
-this.moTranslucentLevel=null;
-this.moPlane=null;
-this.moCutoff=null;
-this.moResolution=null;
-this.moScale=null;
-this.moColorPos=null;
-this.moColorNeg=null;
-this.moMonteCarloCount=null;
-this.moIsPositiveOnly=false;
-this.moSquareData=null;
-this.moSquareLinear=null;
-this.moRandomSeed=null;
-this.moFill=0;
-this.moMesh=0;
-this.moDots=0;
-this.moFrontOnly=0;
-this.moShell=0;
-this.moTitleFormat=null;
-this.moDebug=false;
-this.myColorPt=0;
-this.strID=null;
-this.$moNumber=0;
-this.$moLinearCombination=null;
-this.htModels=null;
-this.thisModel=null;
-this.moSlab=null;
-this.moSlabValue=null;
-this.nboType=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.moFill=1073742046;
@@ -43,7 +9,9 @@ this.moMesh=1073742018;
 this.moDots=1073742042;
 this.moFrontOnly=1073741960;
 this.moShell=1073742057;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['moIsPositiveOnly','moDebug'],'I',['moFill','moMesh','moDots','moFrontOnly','moShell','myColorPt','$moNumber'],'S',['moTranslucency','moTitleFormat','strID','nboType'],'O',['moTranslucentLevel','Float','moPlane','javajs.util.P4','moCutoff','Float','+moResolution','+moScale','moColorPos','Integer','+moColorNeg','+moMonteCarloCount','moSquareData','Boolean','+moSquareLinear','moRandomSeed','Integer','$moLinearCombination','float[]','htModels','java.util.Map','+thisModel','moSlab','javajs.util.Lst','moSlabValue','Integer']]]
 
 Clazz.newMeth(C$, 'initShape$', function () {
 C$.superclazz.prototype.initShape$.apply(this, []);
@@ -59,8 +27,8 @@ var modelIndex=(value).intValue$();
 this.strID=p$1.getId$I.apply(this, [modelIndex]);
 this.setPropI$S$O$javajs_util_BS("init", null, null);
 this.setPropI$S$O$javajs_util_BS("modelIndex", Integer.valueOf$I(modelIndex), null);
-if (this.htModels == null ) this.htModels=Clazz.new_($I$(1));
-if (!this.htModels.containsKey$O(this.strID)) this.htModels.put$TK$TV(this.strID, Clazz.new_($I$(1)));
+if (this.htModels == null ) this.htModels=Clazz.new_($I$(1,1));
+if (!this.htModels.containsKey$O(this.strID)) this.htModels.put$O$O(this.strID, Clazz.new_($I$(1,1)));
 this.thisModel=this.htModels.get$O(this.strID);
 this.$moNumber=(!this.thisModel.containsKey$O("moNumber") ? 0 : (this.thisModel.get$O("moNumber")).intValue$());
 this.$moLinearCombination=this.thisModel.get$O("moLinearCombination");
@@ -70,41 +38,41 @@ return;
 }if (this.htModels != null  && this.strID != null  ) this.thisModel=this.htModels.get$O(this.strID);
 if ("slab" == propertyName) {
 if (Clazz.instanceOf(value, "java.lang.Integer")) {
-this.thisModel.put$TK$TV("slabValue", value);
+this.thisModel.put$O$O("slabValue", value);
 } else {
 var slabInfo=value;
 var tok=(slabInfo[0]).intValue$();
 this.moSlab=this.thisModel.get$O("slab");
-if (this.moSlab == null ) this.thisModel.put$TK$TV("slab", this.moSlab=Clazz.new_($I$(2)));
+if (this.moSlab == null ) this.thisModel.put$O$O("slab", this.moSlab=Clazz.new_($I$(2,1)));
 if (tok == 1073742333) {
 this.moSlab=null;
 this.thisModel.remove$O("slab");
 return;
-}this.moSlab.addLast$TV(value);
+}this.moSlab.addLast$O(value);
 }return;
 }if ("cutoff" == propertyName) {
-this.thisModel.put$TK$TV("moCutoff", value);
-this.thisModel.put$TK$TV("moIsPositiveOnly", $I$(3).FALSE);
+this.thisModel.put$O$O("moCutoff", value);
+this.thisModel.put$O$O("moIsPositiveOnly", $I$(3).FALSE);
 return;
 }if ("scale" == propertyName) {
-this.thisModel.put$TK$TV("moScale", value);
+this.thisModel.put$O$O("moScale", value);
 return;
 }if ("squareData" == propertyName) {
-if (value === $I$(3).TRUE ) this.thisModel.put$TK$TV("moSquareData", $I$(3).TRUE);
+if (value === $I$(3).TRUE ) this.thisModel.put$O$O("moSquareData", $I$(3).TRUE);
  else this.thisModel.remove$O("moSquareData");
 this.moSquareData=value;
 return;
 }if ("squareLinear" == propertyName) {
-if (value === $I$(3).TRUE ) this.thisModel.put$TK$TV("moSquareLinear", $I$(3).TRUE);
+if (value === $I$(3).TRUE ) this.thisModel.put$O$O("moSquareLinear", $I$(3).TRUE);
  else this.thisModel.remove$O("moSquareLinear");
 this.moSquareLinear=value;
 return;
 }if ("cutoffPositive" == propertyName) {
-this.thisModel.put$TK$TV("moCutoff", value);
-this.thisModel.put$TK$TV("moIsPositiveOnly", $I$(3).TRUE);
+this.thisModel.put$O$O("moCutoff", value);
+this.thisModel.put$O$O("moIsPositiveOnly", $I$(3).TRUE);
 return;
 }if ("resolution" == propertyName) {
-this.thisModel.put$TK$TV("moResolution", value);
+this.thisModel.put$O$O("moResolution", value);
 return;
 }if ("titleFormat" == propertyName) {
 this.moTitleFormat=value;
@@ -118,40 +86,40 @@ this.myColorPt=0;
 }if ("colorRGB" == propertyName) {
 this.moColorPos=value;
 if (this.myColorPt++ == 0) this.moColorNeg=this.moColorPos;
-this.thisModel.put$TK$TV("moColorNeg", this.moColorNeg);
-this.thisModel.put$TK$TV("moColorPos", this.moColorPos);
+this.thisModel.put$O$O("moColorNeg", this.moColorNeg);
+this.thisModel.put$O$O("moColorPos", this.moColorPos);
 return;
 }if ("plane" == propertyName) {
 if (value == null ) this.thisModel.remove$O("moPlane");
- else this.thisModel.put$TK$TV("moPlane", value);
+ else this.thisModel.put$O$O("moPlane", value);
 return;
 }if ("monteCarloCount" == propertyName) {
-this.thisModel.put$TK$TV("monteCarloCount", value);
+this.thisModel.put$O$O("monteCarloCount", value);
 return;
 }if ("randomSeed" == propertyName) {
 if (value == null ) this.thisModel.remove$O("randomSeed");
- else this.thisModel.put$TK$TV("randomSeed", value);
+ else this.thisModel.put$O$O("randomSeed", value);
 return;
 }if ("molecularOrbital" == propertyName) {
 if (Clazz.instanceOf(value, "java.lang.Integer")) {
 this.$moNumber=(value).intValue$();
-this.thisModel.put$TK$TV("moNumber", value);
+this.thisModel.put$O$O("moNumber", value);
 this.thisModel.remove$O("moLinearCombination");
 this.$moLinearCombination=null;
 } else {
 this.$moNumber=0;
 this.$moLinearCombination=value;
-this.thisModel.put$TK$TV("moNumber", Integer.valueOf$I(0));
-this.thisModel.put$TK$TV("moLinearCombination", this.$moLinearCombination);
-}if (this.moSquareData === $I$(3).TRUE ) this.thisModel.put$TK$TV("moSquareData", $I$(3).TRUE);
+this.thisModel.put$O$O("moNumber", Integer.valueOf$I(0));
+this.thisModel.put$O$O("moLinearCombination", this.$moLinearCombination);
+}if (this.moSquareData === $I$(3).TRUE ) this.thisModel.put$O$O("moSquareData", $I$(3).TRUE);
  else this.thisModel.remove$O("moSquareData");
-if (this.moSquareLinear === $I$(3).TRUE ) this.thisModel.put$TK$TV("moSquareLinear", $I$(3).TRUE);
+if (this.moSquareLinear === $I$(3).TRUE ) this.thisModel.put$O$O("moSquareLinear", $I$(3).TRUE);
  else this.thisModel.remove$O("moSquareLinear");
 p$1.setOrbital$I$FA.apply(this, [this.$moNumber, this.$moLinearCombination]);
 return;
 }if (propertyName == "deleteModelAtoms") {
 var modelIndex=((value)[2])[0];
-var htModelsNew=Clazz.new_($I$(1));
+var htModelsNew=Clazz.new_($I$(1,1));
 for (var i=this.meshCount; --i >= 0; ) {
 if (this.meshes[i] == null ) continue;
 if (this.meshes[i].modelIndex == modelIndex) {
@@ -165,7 +133,7 @@ continue;
 if (this.meshes[i].modelIndex > modelIndex) {
 this.meshes[i].modelIndex--;
 this.meshes[i].thisID=p$1.getId$I.apply(this, [this.meshes[i].modelIndex]);
-}htModelsNew.put$TK$TV(this.meshes[i].thisID, htModel);
+}htModelsNew.put$O$O(this.meshes[i].thisID, htModel);
 }
 this.htModels=htModelsNew;
 return;
@@ -174,12 +142,12 @@ var moData=value;
 this.nboType=moData.get$O("nboType");
 this.thisModel=this.htModels.get$O(this.strID);
 if (this.nboType == null ) this.thisModel.remove$O("nboType");
- else this.thisModel.put$TK$TV("nboType", this.nboType);
+ else this.thisModel.put$O$O("nboType", this.nboType);
 } else if ("translucentLevel" == propertyName) {
 if (this.thisModel == null ) {
 if (this.currentMesh == null ) return;
 this.thisModel=this.htModels.get$O(this.currentMesh.thisID);
-}this.thisModel.put$TK$TV("moTranslucentLevel", value);
+}this.thisModel.put$O$O("moTranslucentLevel", value);
 } else if ("delete" == propertyName) {
 this.htModels.remove$O(this.strID);
 this.$moNumber=0;
@@ -212,7 +180,7 @@ break;
 if (this.thisModel == null ) {
 if (this.currentMesh == null ) return;
 this.thisModel=this.htModels.get$O(this.currentMesh.thisID);
-}this.thisModel.put$TK$TV("moTranslucency", value);
+}this.thisModel.put$O$O("moTranslucency", value);
 }this.setPropI$S$O$javajs_util_BS(propertyName, value, bs);
 });
 
@@ -233,7 +201,7 @@ if (propertyName == "moLinearCombination") return this.$moLinearCombination;
 if (propertyName == "moSquareData") return this.moSquareData;
 if (propertyName == "moSquareLinear") return this.moSquareLinear;
 if (propertyName == "showMO") {
-var str=Clazz.new_($I$(5));
+var str=Clazz.new_($I$(5,1));
 var mos=(this.sg.params.moData.get$O("mos"));
 var nOrb=(mos == null  ? 0 : mos.size$());
 var thisMO=index;
@@ -254,7 +222,7 @@ p$1.setOrbital$I$FA.apply(this, [i, null]);
 if (!haveHeader) {
 str.append$S($I$(6).jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S(this.jvxlData, null, null, "HEADERONLY", true, nTotal, null, null));
 haveHeader=true;
-}str.append$S($I$(6).jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S(this.jvxlData, null, this.jvxlData.title, null, false, 1, this.thisMesh.getState$S(this.myType), (this.thisMesh.scriptCommand == null  ? "" : this.thisMesh.scriptCommand)));
+}str.append$S((function(a,f){return f.apply(null,a)})([this.jvxlData, null, this.jvxlData.title, null, false, 1, this.thisMesh.getState$S(this.myType), (this.thisMesh.scriptCommand == null  ? "" : this.thisMesh.scriptCommand)],$I$(6).jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S));
 if (!doOneMo) this.setPropI$S$O$javajs_util_BS("delete", "mo_show", null);
 if (nTotal == 1) break;
 }
@@ -268,7 +236,7 @@ return "";
 });
 
 Clazz.newMeth(C$, 'getMoInfo$I', function (modelIndex) {
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(5,1));
 for (var m=0, mc=this.vwr.ms.mc; m < mc; m++) {
 if (modelIndex >= 0 && m != modelIndex ) continue;
 var moData=this.vwr.ms.getInfo$I$S(m, "moData");
@@ -289,8 +257,8 @@ if (occ != null ) type="occupancy " + new Float(occ.floatValue$()).toString() + 
 var sym=mo.get$O("symmetry");
 if (sym != null ) type += sym;
 var energy="" + mo.get$O("energy");
-if (Float.isNaN$F($I$(7).parseFloat$S(energy))) sb.append$S($I$(7).sprintf$S$S$OA("model %-2s; %s %-2i # %s\n", "ssis", Clazz.array(java.lang.Object, -1, [this.vwr.ms.getModelNumberDotted$I(m), moType, Integer.valueOf$I(i + 1), type])));
- else sb.append$S($I$(7).sprintf$S$S$OA("model %-2s;  %s %-2i # energy %-8.3f %s %s\n", "ssifss", Clazz.array(java.lang.Object, -1, [this.vwr.ms.getModelNumberDotted$I(m), moType, Integer.valueOf$I(i + 1), mo.get$O("energy"), units, type])));
+if (Float.isNaN$F($I$(7).parseFloat$S(energy))) sb.append$S((function(a,f){return f.apply(null,a)})(["model %-2s; %s %-2i # %s\n", "ssis", Clazz.array(java.lang.Object, -1, [this.vwr.ms.getModelNumberDotted$I(m), moType, Integer.valueOf$I(i + 1), type])],$I$(7).sprintf$S$S$OA));
+ else sb.append$S((function(a,f){return f.apply(null,a)})(["model %-2s;  %s %-2i # energy %-8.3f %s %s\n", "ssifss", Clazz.array(java.lang.Object, -1, [this.vwr.ms.getModelNumberDotted$I(m), moType, Integer.valueOf$I(i + 1), mo.get$O("energy"), units, type])],$I$(7).sprintf$S$S$OA));
 }
 }
 return sb.toString();
@@ -309,7 +277,7 @@ this.moCutoff=this.thisModel.get$O("moCutoff");
 if (this.moCutoff == null ) this.moCutoff=this.sg.params.moData.get$O("defaultCutoff");
 if (this.moCutoff == null ) {
 this.moCutoff=Float.valueOf$F(0.05);
-}this.thisModel.put$TK$TV("moCutoff", Float.valueOf$F(this.moCutoff.floatValue$()));
+}this.thisModel.put$O$O("moCutoff", Float.valueOf$F(this.moCutoff.floatValue$()));
 this.moResolution=this.thisModel.get$O("moResolution");
 this.moScale=this.thisModel.get$O("moScale");
 this.nboType=this.thisModel.get$O("moType");
@@ -321,7 +289,7 @@ this.moMonteCarloCount=this.thisModel.get$O("monteCarloCount");
 this.moRandomSeed=this.thisModel.get$O("randomSeed");
 this.moSlabValue=this.thisModel.get$O("slabValue");
 this.moSlab=this.thisModel.get$O("slab");
-if (this.moRandomSeed == null ) this.thisModel.put$TK$TV("randomSeed", this.moRandomSeed=Integer.valueOf$I(((-System.currentTimeMillis$()|0)) % 10000));
+if (this.moRandomSeed == null ) this.thisModel.put$O$O("randomSeed", this.moRandomSeed=Integer.valueOf$I(((-System.currentTimeMillis$()|0)) % 10000));
 this.$moNumber=(this.thisModel.get$O("moNumber")).intValue$();
 this.$moLinearCombination=this.thisModel.get$O("moLinearCombination");
 var b=this.thisModel.get$O("moIsPositiveOnly");
@@ -368,34 +336,34 @@ this.setPropI$S$O$javajs_util_BS("token", Integer.valueOf$I(this.moMesh), null);
 this.setPropI$S$O$javajs_util_BS("token", Integer.valueOf$I(this.moShell), null);
 this.setPropI$S$O$javajs_util_BS("token", Integer.valueOf$I(this.moDots), null);
 this.setPropI$S$O$javajs_util_BS("token", Integer.valueOf$I(this.moFrontOnly), null);
-this.thisModel.put$TK$TV("mesh", this.currentMesh);
+this.thisModel.put$O$O("mesh", this.currentMesh);
 return;
 }, p$1);
 
 Clazz.newMeth(C$, 'getShapeState$', function () {
 if (this.htModels == null ) return "";
-var s=Clazz.new_($I$(5));
+var s=Clazz.new_($I$(5,1));
 var modelCount=this.vwr.ms.mc;
 for (var iModel=0; iModel < modelCount; iModel++) {
 if (!p$1.getSettings$S.apply(this, [p$1.getId$I.apply(this, [iModel])])) continue;
-if (modelCount > 1) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, "frame " + this.vwr.getModelNumberDotted$I(iModel));
-if (this.nboType != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, "nbo type " + this.nboType);
-if (this.moCutoff != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " cutoff " + (this.sg.params.isPositiveOnly ? "+" : "") + this.moCutoff.toString() );
-if (this.moScale != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " scale " + this.moScale.toString() );
-if (this.moMonteCarloCount != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " points " + this.moMonteCarloCount + " " + this.moRandomSeed );
-if (this.moResolution != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " resolution " + this.moResolution.toString() );
-if (this.moPlane != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " plane {" + new Float(this.moPlane.x).toString() + " " + new Float(this.moPlane.y).toString() + " " + new Float(this.moPlane.z).toString() + " " + new Float(this.moPlane.w).toString() + "}" );
-if (this.moTitleFormat != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " titleFormat " + $I$(7).esc$S(this.moTitleFormat) );
-if (this.moColorNeg != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " color " + $I$(8).escapeColor$I(this.moColorNeg.intValue$()) + (this.moColorNeg.equals$O(this.moColorPos) ? "" : " " + $I$(8).escapeColor$I(this.moColorPos.intValue$())) );
+if (modelCount > 1) (function(a,f){return f.apply(null,a)})([s, "frame " + this.vwr.getModelNumberDotted$I(iModel)],$I$(8).appendCmd$javajs_util_SB$S);
+if (this.nboType != null ) $I$(8).appendCmd$javajs_util_SB$S(s, "nbo type " + this.nboType);
+if (this.moCutoff != null ) (function(a,f){return f.apply(null,a)})([s, this.myType + " cutoff " + (this.sg.params.isPositiveOnly ? "+" : "") + this.moCutoff.toString() ],$I$(8).appendCmd$javajs_util_SB$S);
+if (this.moScale != null ) (function(a,f){return f.apply(null,a)})([s, this.myType + " scale " + this.moScale.toString() ],$I$(8).appendCmd$javajs_util_SB$S);
+if (this.moMonteCarloCount != null ) $I$(8).appendCmd$javajs_util_SB$S(s, this.myType + " points " + this.moMonteCarloCount + " " + this.moRandomSeed );
+if (this.moResolution != null ) (function(a,f){return f.apply(null,a)})([s, this.myType + " resolution " + this.moResolution.toString() ],$I$(8).appendCmd$javajs_util_SB$S);
+if (this.moPlane != null ) (function(a,f){return f.apply(null,a)})([s, this.myType + " plane {" + new Float(this.moPlane.x).toString() + " " + new Float(this.moPlane.y).toString() + " " + new Float(this.moPlane.z).toString() + " " + new Float(this.moPlane.w).toString() + "}" ],$I$(8).appendCmd$javajs_util_SB$S);
+if (this.moTitleFormat != null ) (function(a,f){return f.apply(null,a)})([s, this.myType + " titleFormat " + $I$(7).esc$S(this.moTitleFormat) ],$I$(8).appendCmd$javajs_util_SB$S);
+if (this.moColorNeg != null ) (function(a,f){return f.apply(null,a)})([s, this.myType + " color " + (function(a,f){return f.apply(null,a)})([this.moColorNeg.intValue$()],$I$(9).escapeColor$I) + (this.moColorNeg.equals$O(this.moColorPos) ? "" : " " + (function(a,f){return f.apply(null,a)})([this.moColorPos.intValue$()],$I$(9).escapeColor$I)) ],$I$(8).appendCmd$javajs_util_SB$S);
 if (this.moSlab != null ) {
-if (this.thisMesh.slabOptions != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.thisMesh.slabOptions.toString());
-if (this.thisMesh.jvxlData.slabValue != -2147483648) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " slab " + this.thisMesh.jvxlData.slabValue );
+if (this.thisMesh.slabOptions != null ) (function(a,f){return f.apply(null,a)})([s, this.thisMesh.slabOptions.toString()],$I$(8).appendCmd$javajs_util_SB$S);
+if (this.thisMesh.jvxlData.slabValue != -2147483648) $I$(8).appendCmd$javajs_util_SB$S(s, this.myType + " slab " + this.thisMesh.jvxlData.slabValue );
 }if (this.$moLinearCombination == null ) {
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " " + (this.moSquareData === $I$(3).TRUE  ? "squared " : "") + this.$moNumber );
+(function(a,f){return f.apply(null,a)})([s, this.myType + " " + (this.moSquareData === $I$(3).TRUE  ? "squared " : "") + this.$moNumber ],$I$(8).appendCmd$javajs_util_SB$S);
 } else {
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " " + $I$(9).getMOString$FA(this.$moLinearCombination) + (this.moSquareLinear === $I$(3).TRUE  ? " squared" : "") );
-}if (this.moTranslucency != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " translucent " + this.moTranslucentLevel.toString() );
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, (this.thisModel.get$O("mesh")).getState$S(this.myType));
+(function(a,f){return f.apply(null,a)})([s, this.myType + " " + $I$(10).getMOString$FA(this.$moLinearCombination) + (this.moSquareLinear === $I$(3).TRUE  ? " squared" : "") ],$I$(8).appendCmd$javajs_util_SB$S);
+}if (this.moTranslucency != null ) (function(a,f){return f.apply(null,a)})([s, this.myType + " translucent " + this.moTranslucentLevel.toString() ],$I$(8).appendCmd$javajs_util_SB$S);
+(function(a,f){return f.apply(null,a)})([s, (this.thisModel.get$O("mesh")).getState$S(this.myType)],$I$(8).appendCmd$javajs_util_SB$S);
 }
 return s.toString();
 });
@@ -412,16 +380,16 @@ this.moSlab=mo.moSlab;
 this.moSlabValue=mo.moSlabValue;
 this.moTitleFormat=mo.moTitleFormat;
 this.moTranslucency=mo.moTranslucency;
-if (this.htModels == null ) this.htModels=Clazz.new_($I$(1));
+if (this.htModels == null ) this.htModels=Clazz.new_($I$(1,1));
 var ht=mo.htModels;
 if (ht != null ) {
 for (var entry, $entry = ht.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var key=entry.getKey$();
-this.htModels.put$TK$TV(key, entry.getValue$());
+this.htModels.put$O$O(key, entry.getValue$());
 }
 }C$.superclazz.prototype.merge$org_jmol_shape_MeshCollection.apply(this, [shape]);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

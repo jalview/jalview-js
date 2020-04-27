@@ -1,36 +1,7 @@
-(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},p$2={},p$3={},I$=[[0,'javajs.img.JpegObj','javajs.img.DCT','javajs.img.Huffman','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JpegObj");
+(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},p$2={},p$3={},I$=[[0,'javajs.img.JpegObj','javajs.img.DCT','javajs.img.Huffman','javajs.util.AU']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JpegObj");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.comment=null;
-this.imageHeight=0;
-this.imageWidth=0;
-this.blockWidth=null;
-this.blockHeight=null;
-this.precision=0;
-this.numberOfComponents=0;
-this.components=null;
-this.compID=null;
-this.hsampFactor=null;
-this.vsampFactor=null;
-this.qtableNumber=null;
-this.dctableNumber=null;
-this.actableNumber=null;
-this.lastColumnIsDummy=null;
-this.lastRowIsDummy=null;
-this.ss=0;
-this.se=0;
-this.ah=0;
-this.al=0;
-this.compWidth=null;
-this.compHeight=null;
-this.maxHsampFactor=0;
-this.maxVsampFactor=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.precision=8;
@@ -47,10 +18,12 @@ this.ss=0;
 this.se=63;
 this.ah=0;
 this.al=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['imageHeight','imageWidth','precision','numberOfComponents','ss','se','ah','al','maxHsampFactor','maxVsampFactor'],'S',['comment'],'O',['blockWidth','int[]','+blockHeight','components','float[][][]','compID','int[]','+hsampFactor','+vsampFactor','+qtableNumber','+dctableNumber','+actableNumber','lastColumnIsDummy','boolean[]','+lastRowIsDummy','compWidth','int[]','+compHeight']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.components=$I$(4).newFloat3$I$I(this.numberOfComponents, -1);
 this.compWidth=Clazz.array(Integer.TYPE, [this.numberOfComponents]);
 this.compHeight=Clazz.array(Integer.TYPE, [this.numberOfComponents]);
@@ -94,4 +67,4 @@ this.components[1]=Cb1;
 this.components[2]=Cr1;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

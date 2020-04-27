@@ -1,61 +1,36 @@
-(function(){var P$=Clazz.newPackage("mc_view"),p$1={},I$=[[0,'java.awt.MenuBar','java.awt.Menu','java.awt.MenuItem','java.awt.CheckboxGroup','java.awt.CheckboxMenuItem','mc_view.AppletPDBCanvas','StringBuffer','jalview.bin.JalviewLite','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','jalview.util.MessageManager','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.appletgui.UserDefinedColours']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AppletPDBViewer", null, 'jalview.appletgui.EmbmenuFrame', ['java.awt.event.ActionListener', 'java.awt.event.ItemListener']);
+(function(){var P$=Clazz.newPackage("mc_view"),p$1={},I$=[[0,'java.awt.MenuBar','java.awt.Menu','java.awt.MenuItem','java.awt.CheckboxGroup','java.awt.CheckboxMenuItem','mc_view.AppletPDBCanvas','StringBuffer','jalview.bin.JalviewLite','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','jalview.util.MessageManager','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.appletgui.UserDefinedColours']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AppletPDBViewer", null, 'jalview.appletgui.EmbmenuFrame', ['java.awt.event.ActionListener', 'java.awt.event.ItemListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pdbcanvas=null;
-this.jMenuBar1=null;
-this.fileMenu=null;
-this.coloursMenu=null;
-this.mapping=null;
-this.bg=null;
-this.wire=null;
-this.depth=null;
-this.zbuffer=null;
-this.charge=null;
-this.hydro=null;
-this.chain=null;
-this.seqButton=null;
-this.allchains=null;
-this.viewMenu=null;
-this.turn=null;
-this.strand=null;
-this.helix=null;
-this.taylor=null;
-this.zappo=null;
-this.buried=null;
-this.user=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.jMenuBar1=Clazz.new_($I$(1));
-this.fileMenu=Clazz.new_($I$(2));
-this.coloursMenu=Clazz.new_($I$(2));
-this.mapping=Clazz.new_($I$(3));
-this.bg=Clazz.new_($I$(4));
-this.wire=Clazz.new_($I$(5));
-this.depth=Clazz.new_($I$(5));
-this.zbuffer=Clazz.new_($I$(5));
-this.charge=Clazz.new_($I$(3));
-this.hydro=Clazz.new_($I$(3));
-this.chain=Clazz.new_($I$(3));
-this.seqButton=Clazz.new_($I$(3));
-this.allchains=Clazz.new_($I$(5));
-this.viewMenu=Clazz.new_($I$(2));
-this.turn=Clazz.new_($I$(3));
-this.strand=Clazz.new_($I$(3));
-this.helix=Clazz.new_($I$(3));
-this.taylor=Clazz.new_($I$(3));
-this.zappo=Clazz.new_($I$(3));
-this.buried=Clazz.new_($I$(3));
-this.user=Clazz.new_($I$(3));
-}, 1);
+this.jMenuBar1=Clazz.new_($I$(1,1));
+this.fileMenu=Clazz.new_($I$(2,1));
+this.coloursMenu=Clazz.new_($I$(2,1));
+this.mapping=Clazz.new_($I$(3,1));
+this.bg=Clazz.new_($I$(4,1));
+this.wire=Clazz.new_($I$(5,1));
+this.depth=Clazz.new_($I$(5,1));
+this.zbuffer=Clazz.new_($I$(5,1));
+this.charge=Clazz.new_($I$(3,1));
+this.hydro=Clazz.new_($I$(3,1));
+this.chain=Clazz.new_($I$(3,1));
+this.seqButton=Clazz.new_($I$(3,1));
+this.allchains=Clazz.new_($I$(5,1));
+this.viewMenu=Clazz.new_($I$(2,1));
+this.turn=Clazz.new_($I$(3,1));
+this.strand=Clazz.new_($I$(3,1));
+this.helix=Clazz.new_($I$(3,1));
+this.taylor=Clazz.new_($I$(3,1));
+this.zappo=Clazz.new_($I$(3,1));
+this.buried=Clazz.new_($I$(3,1));
+this.user=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['O',['pdbcanvas','mc_view.AppletPDBCanvas','jMenuBar1','java.awt.MenuBar','fileMenu','java.awt.Menu','+coloursMenu','mapping','java.awt.MenuItem','bg','java.awt.CheckboxGroup','wire','java.awt.CheckboxMenuItem','+depth','+zbuffer','charge','java.awt.MenuItem','+hydro','+chain','+seqButton','allchains','java.awt.CheckboxMenuItem','viewMenu','java.awt.Menu','turn','java.awt.MenuItem','+strand','+helix','+taylor','+zappo','+buried','+user']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType', function (pdbentry, seq, chains, ap, protocol) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 try {
 p$1.jbInit.apply(this, []);
 } catch (ex) {
@@ -65,19 +40,19 @@ ex.printStackTrace$();
 throw ex;
 }
 }
-this.pdbcanvas=Clazz.new_($I$(6).c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType,[pdbentry, seq, chains, ap, protocol]);
+this.pdbcanvas=Clazz.new_($I$(6,1).c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType,[pdbentry, seq, chains, ap, protocol]);
 this.embedMenuIfNeeded$java_awt_Panel(this.pdbcanvas);
 this.add$java_awt_Component$O(this.pdbcanvas, "Center");
-var title=Clazz.new_($I$(7).c$$S,[seq[0].getName$() + ":" + this.pdbcanvas.pdbentry.getFile$() ]);
-$I$(8).addFrame$java_awt_Frame$S$I$I(this, title.toString(), 400, 400);
+var title=Clazz.new_([seq[0].getName$() + ":" + this.pdbcanvas.pdbentry.getFile$() ],$I$(7,1).c$$S);
+$I$(8,"addFrame$java_awt_Frame$S$I$I",[this, title.toString(), 400, 400]);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 if (evt.getSource$() === this.mapping ) {
-var cap=Clazz.new_($I$(9).c$$Z$jalview_appletgui_AlignFrame,[false, null]);
-var frame=Clazz.new_($I$(10));
+var cap=Clazz.new_($I$(9,1).c$$Z$jalview_appletgui_AlignFrame,[false, null]);
+var frame=Clazz.new_($I$(10,1));
 frame.add$java_awt_Component(cap);
-$I$(8).addFrame$java_awt_Frame$S$I$I(frame, $I$(11).getString$S("label.pdb_sequence_mapping"), 500, 600);
+$I$(8,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(11).getString$S("label.pdb_sequence_mapping"), 500, 600]);
 cap.setText$S(this.pdbcanvas.mappingDetails.toString());
 } else if (evt.getSource$() === this.charge ) {
 this.pdbcanvas.bysequence=false;
@@ -89,27 +64,27 @@ this.pdbcanvas.pdb.setChainColours$();
 this.pdbcanvas.bysequence=true;
 this.pdbcanvas.colourBySequence$();
 } else if (evt.getSource$() === this.zappo ) {
-this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(12)));
+this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(12,1)));
 } else if (evt.getSource$() === this.taylor ) {
-this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(13)));
+this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(13,1)));
 } else if (evt.getSource$() === this.hydro ) {
-this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(14)));
+this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(14,1)));
 } else if (evt.getSource$() === this.helix ) {
-this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(15)));
+this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(15,1)));
 } else if (evt.getSource$() === this.strand ) {
-this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(16)));
+this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(16,1)));
 } else if (evt.getSource$() === this.turn ) {
-this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(17)));
+this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(17,1)));
 } else if (evt.getSource$() === this.buried ) {
-this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(18)));
+this.pdbcanvas.setColours$jalview_schemes_ColourSchemeI(Clazz.new_($I$(18,1)));
 } else if (evt.getSource$() === this.user ) {
 this.pdbcanvas.bysequence=false;
-Clazz.new_($I$(19).c$$mc_view_AppletPDBCanvas,[this.pdbcanvas]);
+Clazz.new_($I$(19,1).c$$mc_view_AppletPDBCanvas,[this.pdbcanvas]);
 }this.pdbcanvas.redrawneeded=true;
 this.pdbcanvas.repaint$();
 });
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (evt) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (evt) {
 if (evt.getSource$() === this.allchains ) {
 this.pdbcanvas.setAllchainsVisible$Z(this.allchains.getState$());
 } else if (evt.getSource$() === this.wire ) {
@@ -185,4 +160,4 @@ this.allchains.setState$Z(true);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

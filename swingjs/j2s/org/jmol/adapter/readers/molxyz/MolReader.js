@@ -1,24 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.molxyz"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.api.JmolAdapter','java.util.Hashtable','javajs.util.PT','org.jmol.adapter.smarter.Atom']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MolReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.molxyz"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.api.JmolAdapter','java.util.Hashtable','javajs.util.Lst','javajs.util.PT','org.jmol.adapter.smarter.Atom']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MolReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.optimize2D=false;
-this.haveAtomSerials=false;
-this.dimension=null;
-this.allow2D=false;
-this.iatom0=0;
-this.vr=null;
-this.atomCount=0;
-this.atomData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.allow2D=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['optimize2D','haveAtomSerials','allow2D','is2D'],'I',['iatom0','atomCount'],'O',['vr','org.jmol.adapter.readers.molxyz.V3000Rdr','atomData','String[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.optimize2D=this.checkFilterKey$S("2D");
@@ -65,12 +54,11 @@ header += this.line + "\n";
 this.rd$();
 if (this.line == null ) return;
 header += this.line + "\n";
-this.dimension=(this.line.length$() < 22 ? "3D" : this.line.substring$I$I(20, 22));
-if (this.dimension.equals$O("2D")) {
+p$1.set2D$Z.apply(this, [this.line.length$() >= 22 && this.line.substring$I$I(20, 22).equals$O("2D") ]);
+if (this.is2D) {
 if (!this.allow2D) throw Clazz.new_(Clazz.load('Exception').c$$S,["File is 2D, not 3D"]);
 this.appendLoadNote$S("This model is 2D. Its 3D structure has not been generated.");
-}this.asc.setInfo$S$O("dimension", this.dimension);
-this.rd$();
+}this.rd$();
 if (this.line == null ) return;
 this.line=this.line.trim$();
 header += this.line + "\n";
@@ -84,7 +72,7 @@ Clazz.newMeth(C$, 'processCtab$Z', function (isMDL) {
 if (isMDL) this.discardLinesUntilStartsWith$S("$CTAB");
 if (this.rd$() == null ) return;
 if (this.line.indexOf$S("V3000") >= 0) {
-this.optimize2D=(this.dimension.equals$O("2D"));
+this.optimize2D=this.is2D;
 this.vr=(this.getInterface$S("org.jmol.adapter.readers.molxyz.V3000Rdr")).set$org_jmol_adapter_smarter_AtomSetCollectionReader(this);
 this.discardLinesUntilContains$S("COUNTS");
 this.vr.readAtomsAndBonds$SA(this.getTokens$());
@@ -108,6 +96,7 @@ var iAtom=-2147483648;
 x=this.parseFloatRange$S$I$I(this.line, 0, 10);
 y=this.parseFloatRange$S$I$I(this.line, 10, 20);
 z=this.parseFloatRange$S$I$I(this.line, 20, 30);
+if (this.is2D && z != 0  ) p$1.set2D$Z.apply(this, [false]);
 if (len < 34) {
 elementSymbol=this.line.substring$I(31).trim$();
 } else {
@@ -120,10 +109,11 @@ var code=this.parseIntRange$S$I$I(this.line, 36, 39);
 if (code >= 1 && code <= 7 ) charge=4 - code;
 code=this.parseIntRange$S$I$I(this.line, 34, 36);
 if (code != 0 && code >= -3  && code <= 4 ) {
-isotope=$I$(2).getNaturalIsotope$I($I$(2).getElementNumber$S(elementSymbol)) + code;
+isotope=(function(a,f){return f.apply(null,a)})([$I$(2).getElementNumber$S(elementSymbol)],$I$(2).getNaturalIsotope$I) + code;
 }if (iAtom == -2147483648 && this.haveAtomSerials ) iAtom=i + 1;
 }}this.addMolAtom$I$I$S$I$F$F$F(iAtom, isotope, elementSymbol, charge, x, y, z);
 }
+this.asc.setModelInfoForSet$S$O$I("dimension", (this.is2D ? "2D" : "3D"), this.asc.iSet);
 this.rd$();
 if (this.line.startsWith$S("V  ")) {
 p$1.readAtomValues.apply(this, []);
@@ -141,11 +131,12 @@ order=this.fixOrder$I$I(order, stereo);
 if (this.haveAtomSerials) this.asc.addNewBondFromNames$S$S$I(iAtom1, iAtom2, order);
  else this.asc.addNewBondWithOrder$I$I$I(this.iatom0 + this.parseIntStr$S(iAtom1) - 1, this.iatom0 + this.parseIntStr$S(iAtom2) - 1, order);
 }
-var molData=Clazz.new_($I$(3));
+var molData=Clazz.new_($I$(3,1));
+var _keyList=Clazz.new_($I$(4,1));
 this.rd$();
 while (this.line != null  && this.line.indexOf$S("$$$$") != 0 ){
 if (this.line.indexOf$S(">") == 0) {
-p$1.readMolData$java_util_Map.apply(this, [molData]);
+p$1.readMolData$java_util_Map$javajs_util_Lst.apply(this, [molData, _keyList]);
 continue;
 }if (this.line.startsWith$S("M  ISO")) {
 p$1.readIsotopes.apply(this, []);
@@ -154,8 +145,15 @@ continue;
 }
 if (this.atomData != null ) {
 var atomValueName=molData.get$O("atom_value_name");
-molData.put$TK$TV(atomValueName == null  ? "atom_values" : atomValueName.toString(), this.atomData);
-}if (!molData.isEmpty$()) this.asc.setCurrentModelInfo$S$O("molData", molData);
+molData.put$O$O(atomValueName == null  ? "atom_values" : atomValueName.toString(), this.atomData);
+}if (!molData.isEmpty$()) {
+this.asc.setCurrentModelInfo$S$O("molDataKeys", _keyList);
+this.asc.setCurrentModelInfo$S$O("molData", molData);
+}}, p$1);
+
+Clazz.newMeth(C$, 'set2D$Z', function (b) {
+this.is2D=b;
+this.asc.setInfo$S$O("dimension", (b ? "2D" : "3D"));
 }, p$1);
 
 Clazz.newMeth(C$, 'readAtomValues', function () {
@@ -182,27 +180,28 @@ var ipt=this.parseIntAt$S$I(this.line, pt);
 var atom=this.asc.atoms[ipt + i0 - 1];
 var iso=this.parseIntAt$S$I(this.line, pt + 4);
 pt+=8;
-atom.elementSymbol="" + iso + $I$(4).replaceAllCharacters$S$S$S(atom.elementSymbol, "0123456789", "") ;
+atom.elementSymbol="" + iso + $I$(5).replaceAllCharacters$S$S$S(atom.elementSymbol, "0123456789", "") ;
 }
 } catch (e) {
 }
 this.rd$();
 }, p$1);
 
-Clazz.newMeth(C$, 'readMolData$java_util_Map', function (molData) {
+Clazz.newMeth(C$, 'readMolData$java_util_Map$javajs_util_Lst', function (molData, _keyList) {
 var atoms=this.asc.atoms;
-var dataName=$I$(4).trim$S$S(this.line, "> <").toLowerCase$();
+var dataName=$I$(5).trim$S$S(this.line, "> <").toLowerCase$();
 var data="";
 var fdata=null;
 while (this.rd$() != null  && !this.line.equals$O("$$$$")  && this.line.length$() > 0 )data += (this.line.length$() == 81 && this.line.charAt$I(80) == "+"  ? this.line.substring$I$I(0, 80) : this.line + "\n");
 
-data=$I$(4).trim$S$S(data, "\n");
-$I$(1).info$S(dataName + ":" + $I$(4).esc$S(data) );
-molData.put$TK$TV(dataName, data);
+data=$I$(5).trim$S$S(data, "\n");
+(function(a,f){return f.apply(null,a)})([dataName + ":" + $I$(5).esc$S(data) ],$I$(1).info$S);
+molData.put$O$O(dataName, data);
+_keyList.addLast$O(dataName);
 var ndata=0;
 if (dataName.toUpperCase$().contains$CharSequence("_PARTIAL_CHARGES")) {
 try {
-fdata=$I$(4).parseFloatArray$S(data);
+fdata=$I$(5).parseFloatArray$S(data);
 for (var i=this.asc.getLastAtomSetAtomIndex$(), n=this.asc.ac; i < n; i++) atoms[i].partialCharge=0;
 
 var pt=0;
@@ -221,7 +220,7 @@ $I$(1).info$S(ndata + " partial charges read");
 } else if (dataName.toUpperCase$().contains$CharSequence("ATOM_NAMES")) {
 ndata=0;
 try {
-var tokens=$I$(4).getTokens$S(data);
+var tokens=$I$(5).getTokens$S(data);
 var pt=0;
 for (var i=this.parseIntStr$S(tokens[pt++]); --i >= 0; ) {
 var iatom;
@@ -255,7 +254,7 @@ default:
 elementSymbol=isotope + elementSymbol;
 }
 if (this.optimize2D && z != 0  ) this.optimize2D=false;
-var atom=Clazz.new_($I$(5));
+var atom=Clazz.new_($I$(6,1));
 atom.elementSymbol=elementSymbol;
 atom.formalCharge=charge;
 this.setAtomCoordXYZ$org_jmol_adapter_smarter_Atom$F$F$F(atom, x, y, z);
@@ -314,4 +313,4 @@ if (this.haveAtomSerials) this.asc.addNewBondFromNames$S$S$I(iAtom1, iAtom2, ord
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

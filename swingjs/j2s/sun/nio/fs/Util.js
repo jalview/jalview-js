@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'java.nio.charset.Charset','java.security.AccessController','sun.security.action.GetPropertyAction','java.util.HashSet','java.nio.file.LinkOption','AssertionError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Util");
-C$.jnuEncoding=null;
+(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'java.nio.charset.Charset','java.security.AccessController','sun.security.action.GetPropertyAction','java.util.HashSet','java.nio.file.LinkOption','AssertionError']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Util");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.jnuEncoding=$I$(1).forName$S($I$(2).doPrivileged$java_security_PrivilegedAction(Clazz.new_($I$(3).c$$S,["sun.jnu.encoding"])));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['jnuEncoding','java.nio.charset.Charset']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'jnuEncoding$', function () {
@@ -42,18 +42,18 @@ result[n]=s.substring$I$I(last, s.length$());
 return result;
 }, 1);
 
-Clazz.newMeth(C$, 'newSet$TEA', function (elements) {
-var set=Clazz.new_($I$(4));
+Clazz.newMeth(C$, 'newSet$OA', function (elements) {
+var set=Clazz.new_($I$(4,1));
 for (var e, $e = 0, $$e = elements; $e<$$e.length&&((e=($$e[$e])),1);$e++) {
-set.add$TE(e);
+set.add$O(e);
 }
 return set;
 }, 1);
 
-Clazz.newMeth(C$, 'newSet$java_util_Set$TEA', function (other, elements) {
-var set=Clazz.new_($I$(4).c$$java_util_Collection,[other]);
+Clazz.newMeth(C$, 'newSet$java_util_Set$OA', function (other, elements) {
+var set=Clazz.new_($I$(4,1).c$$java_util_Collection,[other]);
 for (var e, $e = 0, $$e = elements; $e<$$e.length&&((e=($$e[$e])),1);$e++) {
-set.add$TE(e);
+set.add$O(e);
 }
 return set;
 }, 1);
@@ -66,9 +66,13 @@ followLinks=false;
 } else if (option == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 } else {
-throw Clazz.new_($I$(6).c$$O,["Should not get here"]);
+throw Clazz.new_($I$(6,1).c$$O,["Should not get here"]);
 }}
 return followLinks;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.jnuEncoding=$I$(1,"forName$S",[$I$(2,"doPrivileged$java_security_PrivilegedAction",[Clazz.new_($I$(3,1).c$$S,["sun.jnu.encoding"])])]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

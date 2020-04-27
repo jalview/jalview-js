@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("sun.java2d"),I$=[[0,'sun.java2d.loops.CompositeType','java.awt.image.BufferedImage']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SunCompositeContext", null, null, 'java.awt.CompositeContext');
+(function(){var P$=Clazz.newPackage("sun.java2d"),I$=[[0,'sun.java2d.loops.CompositeType','java.awt.image.BufferedImage']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SunCompositeContext", null, null, 'java.awt.CompositeContext');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.srcCM=null;
-this.dstCM=null;
-this.composite=null;
-this.comptype=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['srcCM','java.awt.image.ColorModel','+dstCM','composite','java.awt.Composite','comptype','sun.java2d.loops.CompositeType']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_AlphaComposite$java_awt_image_ColorModel$java_awt_image_ColorModel', function (ac, s, d) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (s == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Source color model cannot be null"]);
 }if (d == null ) {
@@ -28,7 +21,7 @@ this.comptype=$I$(1).forAlphaComposite$java_awt_AlphaComposite(ac);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$sun_java2d_loops_XORComposite$java_awt_image_ColorModel$java_awt_image_ColorModel', function (xc, s, d) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (s == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Source color model cannot be null"]);
 }if (d == null ) {
@@ -55,10 +48,10 @@ src=srcArg.createCompatibleWritableRaster$();
 src.setDataElements$I$I$java_awt_image_Raster(0, 0, srcArg);
 }w=Math.min(src.getWidth$(), dstIn.getWidth$());
 h=Math.min(src.getHeight$(), dstIn.getHeight$());
-var srcImg=Clazz.new_($I$(2).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[this.srcCM, src, this.srcCM.isAlphaPremultiplied$(), null]);
-var dstImg=Clazz.new_($I$(2).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[this.dstCM, dstOut, this.dstCM.isAlphaPremultiplied$(), null]);
+var srcImg=Clazz.new_([this.srcCM, src, this.srcCM.isAlphaPremultiplied$(), null],$I$(2,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
+var dstImg=Clazz.new_([this.dstCM, dstOut, this.dstCM.isAlphaPremultiplied$(), null],$I$(2,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

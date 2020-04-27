@@ -1,12 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),I$=[[0,'org.jmol.adapter.smarter.Resolver','org.jmol.util.Logger','org.jmol.script.SV','javajs.util.PT','javajs.util.Rdr','org.jmol.adapter.smarter.AtomSetCollectionReader','org.jmol.adapter.smarter.AtomSetCollection','org.jmol.adapter.smarter.AtomIterator','org.jmol.adapter.smarter.BondIterator','org.jmol.adapter.smarter.StructureIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmarterJmolAdapter", null, 'org.jmol.api.JmolAdapter');
-C$.PATH_SEPARATOR=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),I$=[[0,'org.jmol.adapter.smarter.Resolver','org.jmol.util.Logger','org.jmol.script.SV','javajs.util.PT','javajs.util.Rdr','org.jmol.adapter.smarter.AtomSetCollectionReader','org.jmol.adapter.smarter.AtomSetCollection','org.jmol.adapter.smarter.AtomIterator','org.jmol.adapter.smarter.BondIterator','org.jmol.adapter.smarter.StructureIterator']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SmarterJmolAdapter", null, 'org.jmol.api.JmolAdapter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.PATH_SEPARATOR=System.getProperty$S$S("path.separator", "/");
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['S',['PATH_SEPARATOR']]]
+
+Clazz.newMeth(C$, 'c$', function () {
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getFileTypeName$O', function (ascOrReader) {
@@ -73,10 +77,10 @@ if (asc.errorMessage != null ) return asc.errorMessage;
 return asc;
 } catch (e) {
 try {
-$I$(2).info$S(e.toString());
+(function(a,f){return f.apply(null,a)})([e.toString()],$I$(2).info$S);
 } catch (ee) {
 if (Clazz.exceptionOf(ee,"Exception")){
-$I$(2).error$S(e.toString());
+(function(a,f){return f.apply(null,a)})([e.toString()],$I$(2).error$S);
 } else {
 throw ee;
 }
@@ -107,7 +111,7 @@ var f=vwr.getFileAsString3$S$Z$S(name, false, null);
 if (i > 0 && size <= 3  && f.startsWith$S("{") ) {
 var type=(f.contains$CharSequence("version\":\"DSSR") ? "dssr" : f.contains$CharSequence("/outliers/") ? "validation" : "domains");
 var x=vwr.parseJSONMap$S(f);
-if (x != null ) htParams.put$TK$TV(type, (type.equals$O("dssr") ? x : $I$(3).getVariableMap$java_util_Map(x)));
+if (x != null ) htParams.put$O$O(type, (type.equals$O("dssr") ? x : $I$(3).getVariableMap$java_util_Map(x)));
 continue;
 }if (name.indexOf$S("|") >= 0) name=$I$(4).rep$S$S$S(name, "_", "/");
 if (i == 1) {
@@ -127,12 +131,12 @@ var atomsets=(getReadersOnly ? null : Clazz.array($I$(7), [size]));
 var r=null;
 for (var i=0; i < size; i++) {
 try {
-htParams.put$TK$TV("vwr", vwr);
+htParams.put$O$O("vwr", vwr);
 if (reader == null ) reader=filesReader.getBufferedReaderOrBinaryDocument$I$Z(i, false);
 if (!(Clazz.instanceOf(reader, "java.io.BufferedReader") || Clazz.instanceOf(reader, "javajs.api.GenericBinaryDocument") )) return reader;
 var fullPathName=names[i];
-htParams.put$TK$TV("fullPathName", fullPathName);
-var ret=$I$(1).getAtomCollectionReader$S$S$O$java_util_Map$I(names[i], (types == null  ? null : types[i]), reader, htParams, i);
+htParams.put$O$O("fullPathName", fullPathName);
+var ret=(function(a,f){return f.apply(null,a)})([names[i], (types == null  ? null : types[i]), reader, htParams, i],$I$(1).getAtomCollectionReader$S$S$O$java_util_Map$I);
 if (!(Clazz.instanceOf(ret, "org.jmol.adapter.smarter.AtomSetCollectionReader"))) return ret;
 r=ret;
 r.setup$S$java_util_Map$O(null, null, null);
@@ -191,7 +195,7 @@ result=asc[0];
 for (var i=1; i < asc.length; i++) asc[0].mergeTrajectories$org_jmol_adapter_smarter_AtomSetCollection(asc[i]);
 
 } else {
-result=(asc.length == 1 ? asc[0] : Clazz.new_($I$(7).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,["Array", null, asc, null]));
+result=(asc.length == 1 ? asc[0] : Clazz.new_($I$(7,1).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,["Array", null, asc, null]));
 }return (result.errorMessage == null  ? result : result.errorMessage);
 });
 
@@ -258,15 +262,15 @@ return (asc).coordinatesAreFractional;
 });
 
 Clazz.newMeth(C$, 'getAtomIterator$O', function (asc) {
-return Clazz.new_($I$(8).c$$org_jmol_adapter_smarter_AtomSetCollection,[asc]);
+return Clazz.new_($I$(8,1).c$$org_jmol_adapter_smarter_AtomSetCollection,[asc]);
 });
 
 Clazz.newMeth(C$, 'getBondIterator$O', function (asc) {
-return Clazz.new_($I$(9).c$$org_jmol_adapter_smarter_AtomSetCollection,[asc]);
+return Clazz.new_($I$(9,1).c$$org_jmol_adapter_smarter_AtomSetCollection,[asc]);
 });
 
 Clazz.newMeth(C$, 'getStructureIterator$O', function (asc) {
-return (asc).structureCount == 0 ? null : Clazz.new_($I$(10).c$$org_jmol_adapter_smarter_AtomSetCollection,[asc]);
+return (asc).structureCount == 0 ? null : Clazz.new_($I$(10,1).c$$org_jmol_adapter_smarter_AtomSetCollection,[asc]);
 });
 
 Clazz.newMeth(C$, 'close$O', function (bufferedReader) {
@@ -274,6 +278,8 @@ if (Clazz.instanceOf(bufferedReader, "java.io.BufferedReader")) (bufferedReader)
  else (bufferedReader).close$();
 }, 1);
 
-Clazz.newMeth(C$);
+C$.$static$=function(){C$.$static$=0;
+C$.PATH_SEPARATOR=System.getProperty$S$S("path.separator", "/");
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

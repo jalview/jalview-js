@@ -1,29 +1,23 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.StringContent','.PosRec'],['javax.swing.text.StringContent','.InsertUndo'],['javax.swing.text.StringContent','.RemoveUndo'],'java.util.Vector',['javax.swing.text.StringContent','.StickyPosition'],['javax.swing.text.StringContent','.UndoPosRef']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StringContent", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.StringContent','.PosRec'],['javax.swing.text.StringContent','.InsertUndo'],['javax.swing.text.StringContent','.RemoveUndo'],'java.util.Vector',['javax.swing.text.StringContent','.StickyPosition'],['javax.swing.text.StringContent','.UndoPosRef']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StringContent", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, [['javax.swing.text.AbstractDocument','javax.swing.text.AbstractDocument.Content']]);
-C$.empty=null;
+C$.$classes$=[['PosRec',16],['StickyPosition',16],['UndoPosRef',16],['InsertUndo',0],['RemoveUndo',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.empty=Clazz.array(Character.TYPE, [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.data=null;
-this.count=0;
-this.marks=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['count'],'O',['+data','marks','java.util.Vector']]
+,['O',['empty','char[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [10]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialLength) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (initialLength < 1) {
 initialLength=1;
 }this.data=Clazz.array(Character.TYPE, [initialLength]);
@@ -42,14 +36,14 @@ throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["In
 this.replace$I$I$CA$I$I(where, 0, chars, 0, chars.length);
 if (this.marks != null ) {
 this.updateMarksForInsert$I$I(where, str.length$());
-}return Clazz.new_($I$(2).c$$I$I, [this, null, where, str.length$()]);
+}return Clazz.new_([this, null, where, str.length$()],$I$(2,1).c$$I$I);
 });
 
 Clazz.newMeth(C$, 'remove$I$I', function (where, nitems) {
 if (where + nitems >= this.count) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Invalid range", this.count]);
 }var removedString=this.getString$I$I(where, nitems);
-var edit=Clazz.new_($I$(3).c$$I$S, [this, null, where, removedString]);
+var edit=Clazz.new_($I$(3,1).c$$I$S,[this, null, where, removedString]);
 this.replace$I$I$CA$I$I(where, nitems, C$.empty, 0, 0);
 if (this.marks != null ) {
 this.updateMarksForRemove$I$I(where, nitems);
@@ -72,8 +66,8 @@ chars.count=len;
 
 Clazz.newMeth(C$, 'createPosition$I', function (offset) {
 if (this.marks == null ) {
-this.marks=Clazz.new_($I$(4));
-}return Clazz.new_($I$(5).c$$I, [this, null, offset]);
+this.marks=Clazz.new_($I$(4,1));
+}return Clazz.new_($I$(5,1).c$$I,[this, null, offset]);
 });
 
 Clazz.newMeth(C$, 'replace$I$I$CA$I$I', function (offset, length, replArray, replOffset, replLength) {
@@ -133,14 +127,14 @@ mark.offset=offset;
 Clazz.newMeth(C$, 'getPositionsInRange$java_util_Vector$I$I', function (v, offset, length) {
 var n=this.marks.size$();
 var end=offset + length;
-var placeIn=(v == null ) ? Clazz.new_($I$(4)) : v;
+var placeIn=(v == null ) ? Clazz.new_($I$(4,1)) : v;
 for (var i=0; i < n; i++) {
 var mark=this.marks.elementAt$I(i);
 if (mark.unused) {
 this.marks.removeElementAt$I(i);
 i-=1;
 n-=1;
-} else if (mark.offset >= offset && mark.offset <= end ) placeIn.addElement$TE(Clazz.new_($I$(6).c$$javax_swing_text_StringContent_PosRec, [this, null, mark]));
+} else if (mark.offset >= offset && mark.offset <= end ) placeIn.addElement$O(Clazz.new_($I$(6,1).c$$javax_swing_text_StringContent_PosRec,[this, null, mark]));
 }
 return placeIn;
 });
@@ -153,50 +147,45 @@ positions.removeElementAt$I(counter);
 } else ref.resetLocation$();
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.empty=Clazz.array(Character.TYPE, [0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.StringContent, "PosRec", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StringContent, "PosRec", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.unused=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['unused'],'I',['offset']]]
 
 Clazz.newMeth(C$, 'c$$I', function (offset) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.offset=offset;
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StringContent, "StickyPosition", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StringContent, "StickyPosition", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.text.Position');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rec=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['rec','javax.swing.text.StringContent.PosRec']]]
 
 Clazz.newMeth(C$, 'c$$I', function (offset) {
-C$.$init$.apply(this);
-this.rec=Clazz.new_($I$(1).c$$I, [this, null, offset]);
-this.this$0.marks.addElement$TE(this.rec);
+;C$.$init$.apply(this);
+this.rec=Clazz.new_($I$(1,1).c$$I,[this, null, offset]);
+this.this$0.marks.addElement$O(this.rec);
 }, 1);
 
 Clazz.newMeth(C$, 'getOffset$', function () {
@@ -214,24 +203,19 @@ return Integer.toString$I(this.getOffset$());
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StringContent, "UndoPosRef", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StringContent, "UndoPosRef", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.undoLocation=0;
-this.rec=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['undoLocation'],'O',['rec','javax.swing.text.StringContent.PosRec']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_StringContent_PosRec', function (rec) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rec=rec;
 this.undoLocation=rec.offset;
 }, 1);
@@ -243,27 +227,19 @@ this.rec.offset=this.undoLocation;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StringContent, "InsertUndo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StringContent, "InsertUndo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.length=0;
-this.string=null;
-this.posRefs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offset','length'],'S',['string'],'O',['posRefs','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (offset, length) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.offset=offset;
 this.length=length;
 }, 1);
@@ -305,27 +281,19 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StringContent, "RemoveUndo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StringContent, "RemoveUndo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.length=0;
-this.string=null;
-this.posRefs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offset','length'],'S',['string'],'O',['posRefs','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'c$$I$S', function (offset, string) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.offset=offset;
 this.string=string;
 this.length=string.length$();
@@ -369,4 +337,4 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

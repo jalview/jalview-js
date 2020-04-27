@@ -1,22 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},p$2={},I$=[[0,'javajs.util.BS','java.util.Hashtable',['org.jmol.symmetry.CIPDataTracker','.CIPTracker'],'org.jmol.viewer.JC']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CIPDataTracker", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},p$2={},I$=[[0,'javajs.util.BS','java.util.Hashtable',['org.jmol.symmetry.CIPDataTracker','.CIPTracker'],'org.jmol.viewer.JC']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CIPDataTracker", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.symmetry.CIPData');
+C$.$classes$=[['CIPTracker',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.htTracker=null;
-this.lastIndex=0;
-this.lastInfo=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.htTracker=Clazz.new_($I$(2));
+this.htTracker=Clazz.new_($I$(2,1));
 this.lastIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['lastIndex'],'O',['htTracker','java.util.Map','+lastInfo']]]
 
 Clazz.newMeth(C$, 'isTracker$', function () {
 return true;
@@ -33,8 +28,8 @@ b1=a;
 } else {
 a1=a;
 b1=b;
-}t=Clazz.new_($I$(3).c$$I$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$I$I$Z, [this, null, cip.currentRule, a1, b1, sphere, Math.abs(finalScore), trackTerminal]);
-this.htTracker.put$TK$TV(C$.getTrackerKey$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom(cip.root, a1, b1), t);
+}t=Clazz.new_([this, null, cip.currentRule, a1, b1, sphere, Math.abs(finalScore), trackTerminal],$I$(3,1).c$$I$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$I$I$Z);
+this.htTracker.put$O$O(C$.getTrackerKey$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom(cip.root, a1, b1), t);
 });
 
 Clazz.newMeth(C$, 'getRootTrackerResult$org_jmol_symmetry_CIPChirality_CIPAtom', function (root) {
@@ -58,8 +53,8 @@ Clazz.newMeth(C$, 'setCIPInfo$S$I$S', function (s, index, name) {
 var modelInfo=p$2.getModelAuxiliaryInfoForAtom$I.apply(this, [index]);
 if (modelInfo != null ) {
 var cipInfo=modelInfo.get$O("CIPInfo");
-if (cipInfo == null ) modelInfo.put$TK$TV("CIPInfo", cipInfo=Clazz.new_($I$(2)));
-cipInfo.put$TK$TV(name, s);
+if (cipInfo == null ) modelInfo.put$O$O("CIPInfo", cipInfo=Clazz.new_($I$(2,1)));
+cipInfo.put$O$O(name, s);
 }}, p$2);
 
 Clazz.newMeth(C$, 'getModelAuxiliaryInfoForAtom$I', function (index) {
@@ -70,38 +65,27 @@ Clazz.newMeth(C$, 'getTrackerKey$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol
 return (b.rootSubstituent == null  ? "" : root.atom.getAtomName$() + "." + a.rootSubstituent.atom.getAtomName$() + "-" + b.rootSubstituent.atom.getAtomName$() );
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.CIPDataTracker, "CIPTracker", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.CIPDataTracker, "CIPTracker", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.a=null;
-this.b=null;
-this.sphere=0;
-this.score=0;
-this.rule=0;
-this.bsa=null;
-this.bsb=null;
-this.trackTerminal=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['trackTerminal'],'I',['sphere','score','rule'],'O',['a','org.jmol.symmetry.CIPChirality.CIPAtom','+b','bsa','javajs.util.BS','+bsb']]]
 
 Clazz.newMeth(C$, 'c$$I$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$I$I$Z', function (rule, a, b, sphere, score, trackTerminal) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rule=rule;
 this.a=a;
 this.b=b;
 this.sphere=sphere;
 this.score=score;
 this.trackTerminal=trackTerminal;
-this.bsa=a.listRS == null  ? Clazz.new_($I$(1)) : a.listRS[0];
-this.bsb=b.listRS == null  ? Clazz.new_($I$(1)) : b.listRS[0];
+this.bsa=a.listRS == null  ? Clazz.new_($I$(1,1)) : a.listRS[0];
+this.bsb=b.listRS == null  ? Clazz.new_($I$(1,1)) : b.listRS[0];
 }, 1);
 
 Clazz.newMeth(C$, 'getTrackerLine$org_jmol_symmetry_CIPChirality_CIPAtom$javajs_util_BS$javajs_util_BS$I', function (b, bsb, bsS, n) {
@@ -122,4 +106,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,33 +1,17 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "Event");
-C$.actionKeyCodes=null;
+/*c*/var C$=Clazz.newClass(P$, "Event");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.actionKeyCodes=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [36, 1000]), Clazz.array(Integer.TYPE, -1, [35, 1001]), Clazz.array(Integer.TYPE, -1, [33, 1002]), Clazz.array(Integer.TYPE, -1, [34, 1003]), Clazz.array(Integer.TYPE, -1, [38, 1004]), Clazz.array(Integer.TYPE, -1, [40, 1005]), Clazz.array(Integer.TYPE, -1, [37, 1006]), Clazz.array(Integer.TYPE, -1, [39, 1007]), Clazz.array(Integer.TYPE, -1, [112, 1008]), Clazz.array(Integer.TYPE, -1, [113, 1009]), Clazz.array(Integer.TYPE, -1, [114, 1010]), Clazz.array(Integer.TYPE, -1, [115, 1011]), Clazz.array(Integer.TYPE, -1, [116, 1012]), Clazz.array(Integer.TYPE, -1, [117, 1013]), Clazz.array(Integer.TYPE, -1, [118, 1014]), Clazz.array(Integer.TYPE, -1, [119, 1015]), Clazz.array(Integer.TYPE, -1, [120, 1016]), Clazz.array(Integer.TYPE, -1, [121, 1017]), Clazz.array(Integer.TYPE, -1, [122, 1018]), Clazz.array(Integer.TYPE, -1, [123, 1019]), Clazz.array(Integer.TYPE, -1, [154, 1020]), Clazz.array(Integer.TYPE, -1, [145, 1021]), Clazz.array(Integer.TYPE, -1, [20, 1022]), Clazz.array(Integer.TYPE, -1, [144, 1023]), Clazz.array(Integer.TYPE, -1, [19, 1024]), Clazz.array(Integer.TYPE, -1, [155, 1025])]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.data=0;
-this.target=null;
-this.when=0;
-this.id=0;
-this.x=0;
-this.y=0;
-this.key=0;
-this.modifiers=0;
-this.clickCount=0;
-this.arg=null;
-this.evt=null;
-this.consumed=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.consumed=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['consumed'],'I',['id','x','y','key','modifiers','clickCount'],'J',['data','when'],'O',['target','java.lang.Object','+arg','evt','java.awt.Event']]
+,['O',['actionKeyCodes','int[][]']]]
 
 Clazz.newMeth(C$, 'c$$O$J$I$I$I$I$I$O', function (target, when, id, x, y, key, modifiers, arg) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.target=target;
 this.when=when;
 this.id=id;
@@ -138,6 +122,10 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[" + this.paramString$() + "]" ;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.actionKeyCodes=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [36, 1000]), Clazz.array(Integer.TYPE, -1, [35, 1001]), Clazz.array(Integer.TYPE, -1, [33, 1002]), Clazz.array(Integer.TYPE, -1, [34, 1003]), Clazz.array(Integer.TYPE, -1, [38, 1004]), Clazz.array(Integer.TYPE, -1, [40, 1005]), Clazz.array(Integer.TYPE, -1, [37, 1006]), Clazz.array(Integer.TYPE, -1, [39, 1007]), Clazz.array(Integer.TYPE, -1, [112, 1008]), Clazz.array(Integer.TYPE, -1, [113, 1009]), Clazz.array(Integer.TYPE, -1, [114, 1010]), Clazz.array(Integer.TYPE, -1, [115, 1011]), Clazz.array(Integer.TYPE, -1, [116, 1012]), Clazz.array(Integer.TYPE, -1, [117, 1013]), Clazz.array(Integer.TYPE, -1, [118, 1014]), Clazz.array(Integer.TYPE, -1, [119, 1015]), Clazz.array(Integer.TYPE, -1, [120, 1016]), Clazz.array(Integer.TYPE, -1, [121, 1017]), Clazz.array(Integer.TYPE, -1, [122, 1018]), Clazz.array(Integer.TYPE, -1, [123, 1019]), Clazz.array(Integer.TYPE, -1, [154, 1020]), Clazz.array(Integer.TYPE, -1, [145, 1021]), Clazz.array(Integer.TYPE, -1, [20, 1022]), Clazz.array(Integer.TYPE, -1, [144, 1023]), Clazz.array(Integer.TYPE, -1, [19, 1024]), Clazz.array(Integer.TYPE, -1, [155, 1025])]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

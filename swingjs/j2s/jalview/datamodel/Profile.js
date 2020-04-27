@@ -1,23 +1,15 @@
 (function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[];
-var C$=Clazz.newClass(P$, "Profile", null, null, 'jalview.datamodel.ProfileI');
+/*c*/var C$=Clazz.newClass(P$, "Profile", null, null, 'jalview.datamodel.ProfileI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.counts=null;
-this.height=0;
-this.gapped=0;
-this.maxCount=0;
-this.modalResidue=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['height','gapped','maxCount'],'S',['modalResidue'],'O',['counts','jalview.datamodel.ResidueCount']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$S', function (seqCount, gaps, max, modalRes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.height=seqCount;
 this.gapped=gaps;
 this.maxCount=max;
@@ -65,4 +57,4 @@ return this.height - this.gapped;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

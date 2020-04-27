@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.util.ArrayList',['javax.swing.UIManager','.LookAndFeelInfo'],'swingjs.JSUtil','javax.swing.SwingUtilities','java.util.Locale','java.beans.PropertyChangeListener','swingjs.JSToolkit','javax.swing.RepaintManager','sun.awt.PaintEventDispatcher','javax.swing.SwingPaintEventDispatcher']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UIManager", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.util.ArrayList',['javax.swing.UIManager','.LookAndFeelInfo'],'swingjs.JSUtil','javax.swing.SwingUtilities','java.util.Locale','java.beans.PropertyChangeListener','swingjs.JSToolkit','javax.swing.FocusManager','java.awt.KeyboardFocusManager','javax.swing.LayoutFocusTraversalPolicy','javax.swing.RepaintManager','sun.awt.PaintEventDispatcher','javax.swing.SwingPaintEventDispatcher']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UIManager", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.installedLAFs=null;
-C$.laf=null;
-C$.uid=null;
+C$.$classes$=[['LookAndFeelInfo',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-var iLAFs=Clazz.new_($I$(1).c$$I,[4]);
-iLAFs.add$TE(Clazz.new_($I$(2).c$$S$S,["HTML5", "swingjs.plaf.HTML5LookAndFeel"]));
-C$.installedLAFs=iLAFs.toArray$TTA(Clazz.array($I$(2), [iLAFs.size$()]));
-};
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['installedLAFs','javax.swing.UIManager.LookAndFeelInfo[]','laf','javax.swing.LookAndFeel','uid','javax.swing.UIDefaults']]]
 
 Clazz.newMeth(C$, 'getLookAndFeelDefaults$', function () {
 return C$.uid;
@@ -153,6 +148,7 @@ return C$.getDefaults$().put$O$O(key, value);
 
 Clazz.newMeth(C$, 'getUI$java_awt_Component', function (target) {
 C$.maybeInitialize$();
+C$.maybeInitializeFocusPolicy$javax_swing_JComponent(target);
 var ui=C$.getDefaults$().getUI$javax_swing_JComponent(target);
 if (ui == null ) System.out.println$S("SwingJS interface has not been implemented for " + target.getClass$().getName$());
 return ui;
@@ -174,29 +170,39 @@ C$.uid=$I$(7).getLookAndFeelDefaults$();
 C$.initialize$();
 }}, 1);
 
+Clazz.newMeth(C$, 'maybeInitializeFocusPolicy$javax_swing_JComponent', function (comp) {
+if (Clazz.instanceOf(comp, "javax.swing.JRootPane")) {
+if ($I$(8).isFocusManagerEnabled$()) {
+var fm=$I$(9).getCurrentKeyboardFocusManager$();
+if (fm.getDefaultFocusTraversalPolicy$() == null ) fm.setDefaultFocusTraversalPolicy$java_awt_FocusTraversalPolicy(Clazz.new_($I$(10,1)));
+}}}, 1);
+
 Clazz.newMeth(C$, 'initialize$', function () {
-if ($I$(8).HANDLE_TOP_LEVEL_PAINT) {
-$I$(9).setPaintEventDispatcher$sun_awt_PaintEventDispatcher(Clazz.new_($I$(10)));
+if ($I$(11).HANDLE_TOP_LEVEL_PAINT) {
+$I$(12,"setPaintEventDispatcher$sun_awt_PaintEventDispatcher",[Clazz.new_($I$(13,1))]);
 }}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+var iLAFs=Clazz.new_($I$(1,1).c$$I,[4]);
+iLAFs.add$O(Clazz.new_($I$(2,1).c$$S$S,["HTML5", "swingjs.plaf.HTML5LookAndFeel"]));
+C$.installedLAFs=iLAFs.toArray$OA(Clazz.array($I$(2), [iLAFs.size$()]));
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.UIManager, "LookAndFeelInfo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.UIManager, "LookAndFeelInfo", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.className=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name','className']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (name, className) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 this.className=className;
 }, 1);
@@ -218,4 +224,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

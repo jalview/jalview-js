@@ -1,57 +1,35 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuilder','org.json.XMLTokener','org.json.JSONObject','Boolean','java.io.StringReader','org.json.JSONArray']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XML");
-C$.AMP=null;
-C$.APOS=null;
-C$.BANG=null;
-C$.EQ=null;
-C$.GT=null;
-C$.LT=null;
-C$.QUEST=null;
-C$.QUOT=null;
-C$.SLASH=null;
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuilder','org.json.XMLTokener','org.json.JSONObject','java.io.StringReader','org.json.JSONArray']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XML");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.AMP=new Character('&');
-C$.APOS=new Character('\'');
-C$.BANG=new Character('!');
-C$.EQ=new Character('=');
-C$.GT=new Character('>');
-C$.LT=new Character('<');
-C$.QUEST=new Character('?');
-C$.QUOT=new Character('"');
-C$.SLASH=new Character('/');
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['AMP','Character','+APOS','+BANG','+EQ','+GT','+LT','+QUEST','+QUOT','+SLASH']]]
 
 Clazz.newMeth(C$, 'codePointIterator$S', function (string) {
 return ((P$.XML$1||
-(function(){var C$=Clazz.newClass(P$, "XML$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Iterable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "XML$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Iterable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
 return ((P$.XML$1$1||
-(function(){var C$=Clazz.newClass(P$, "XML$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "XML$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextIndex=0;
-this.length=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nextIndex=0;
 this.length=this.$finals$.string.length$();
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nextIndex','length']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.nextIndex < this.length;
@@ -67,14 +45,14 @@ Clazz.newMeth(C$, 'remove$', function () {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 })()
-), Clazz.new_(P$.XML$1$1.$init$, [this, {string: this.$finals$.string}]));
+), Clazz.new_(P$.XML$1$1.$init$,[this, {string:this.$finals$.string}]));
 });
 })()
-), Clazz.new_(P$.XML$1.$init$, [this, {string: string}]));
+), Clazz.new_(P$.XML$1.$init$,[this, {string:string}]));
 }, 1);
 
 Clazz.newMeth(C$, 'escape$S', function (string) {
-var sb=Clazz.new_($I$(1).c$$I,[string.length$()]);
+var sb=Clazz.new_([string.length$()],$I$(1,1).c$$I);
 for (var cp, $cp = C$.codePointIterator$S(string).iterator$(); $cp.hasNext$()&&((cp=($cp.next$()).intValue$()),1);) {
 switch (cp) {
 case 38:
@@ -109,7 +87,7 @@ return (Character.isISOControl$I(cp) && cp != 9  && cp != 10  && cp != 13 ) || !
 }, 1);
 
 Clazz.newMeth(C$, 'unescape$S', function (string) {
-var sb=Clazz.new_($I$(1).c$$I,[string.length$()]);
+var sb=Clazz.new_([string.length$()],$I$(1,1).c$$I);
 for (var i=0, length=string.length$(); i < length; i++) {
 var c=string.charAt$I(i);
 if (c == "&") {
@@ -189,7 +167,7 @@ throw x.syntaxError$S("Misshaped tag");
 } else {
 tagName=token;
 token=null;
-jsonobject=Clazz.new_($I$(3));
+jsonobject=Clazz.new_($I$(3,1));
 for (; ; ) {
 if (token == null ) {
 token=x.nextToken$();
@@ -242,9 +220,9 @@ Clazz.newMeth(C$, 'stringToValue$S', function (string) {
 if (string.equals$O("")) {
 return string;
 }if (string.equalsIgnoreCase$S("true")) {
-return $I$(4).TRUE;
+return Boolean.TRUE;
 }if (string.equalsIgnoreCase$S("false")) {
-return $I$(4).FALSE;
+return Boolean.FALSE;
 }if (string.equalsIgnoreCase$S("null")) {
 return $I$(3).NULL;
 }var initial=string.charAt$I(0);
@@ -278,8 +256,8 @@ return C$.toJSONObject$java_io_Reader$Z(reader, false);
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONObject$java_io_Reader$Z', function (reader, keepStrings) {
-var jo=Clazz.new_($I$(3));
-var x=Clazz.new_($I$(2).c$$java_io_Reader,[reader]);
+var jo=Clazz.new_($I$(3,1));
+var x=Clazz.new_($I$(2,1).c$$java_io_Reader,[reader]);
 while (x.more$()){
 x.skipPast$S("<");
 if (x.more$()) {
@@ -289,7 +267,7 @@ return jo;
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONObject$S$Z', function (string, keepStrings) {
-return C$.toJSONObject$java_io_Reader$Z(Clazz.new_($I$(5).c$$S,[string]), keepStrings);
+return C$.toJSONObject$java_io_Reader$Z(Clazz.new_($I$(4,1).c$$S,[string]), keepStrings);
 }, 1);
 
 Clazz.newMeth(C$, 'toString$O', function (object) {
@@ -297,7 +275,7 @@ return C$.toString$O$S(object, null);
 }, 1);
 
 Clazz.newMeth(C$, 'toString$O$S', function (object, tagName) {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 var ja;
 var jo;
 var string;
@@ -312,7 +290,7 @@ var value=jo.opt$S(key);
 if (value == null ) {
 value="";
 } else if (value.getClass$().isArray$()) {
-value=Clazz.new_($I$(6).c$$O,[value]);
+value=Clazz.new_($I$(5,1).c$$O,[value]);
 }if ("content".equals$O(key)) {
 if (Clazz.instanceOf(value, "org.json.JSONArray")) {
 ja=value;
@@ -355,7 +333,7 @@ sb.append$C(">");
 }return sb.toString();
 }if (object != null  && (Clazz.instanceOf(object, "org.json.JSONArray") || object.getClass$().isArray$() ) ) {
 if (object.getClass$().isArray$()) {
-ja=Clazz.new_($I$(6).c$$O,[object]);
+ja=Clazz.new_($I$(5,1).c$$O,[object]);
 } else {
 ja=object;
 }var jaLength=ja.length$();
@@ -368,6 +346,18 @@ return sb.toString();
 return (tagName == null ) ? "\"" + string + "\""  : (string.length$() == 0) ? "<" + tagName + "/>"  : "<" + tagName + ">" + string + "</" + tagName + ">" ;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.AMP=new Character('&');
+C$.APOS=new Character('\'');
+C$.BANG=new Character('!');
+C$.EQ=new Character('=');
+C$.GT=new Character('>');
+C$.LT=new Character('<');
+C$.QUEST=new Character('?');
+C$.QUOT=new Character('\"');
+C$.SLASH=new Character('/');
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,40 +1,28 @@
-(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'java.util.TreeMap','java.util.HashSet','ext.edu.ucsf.rbvi.strucviz2.ChimUtils',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'ext.edu.ucsf.rbvi.strucviz2.ChimeraChain','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ChimeraModel", null, null, 'ext.edu.ucsf.rbvi.strucviz2.ChimeraStructuralObject');
+(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'java.util.TreeMap','java.util.HashSet','ext.edu.ucsf.rbvi.strucviz2.ChimUtils',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'ext.edu.ucsf.rbvi.strucviz2.ChimeraChain','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ChimeraModel", null, null, 'ext.edu.ucsf.rbvi.strucviz2.ChimeraStructuralObject');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.type=null;
-this.modelNumber=0;
-this.subModelNumber=0;
-this.modelColor=null;
-this.userData=null;
-this.selected=false;
-this.chainMap=null;
-this.funcResidues=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.modelColor=null;
 this.userData=null;
 this.selected=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['selected'],'I',['modelNumber','subModelNumber'],'S',['name'],'O',['type','ext.edu.ucsf.rbvi.strucviz2.StructureManager.ModelType','modelColor','java.awt.Color','userData','java.lang.Object','chainMap','java.util.TreeMap','funcResidues','java.util.HashSet']]]
 
 Clazz.newMeth(C$, 'c$$S$ext_edu_ucsf_rbvi_strucviz2_StructureManager_ModelType$I$I', function (name, type, modelNumber, subModelNumber) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 this.type=type;
 this.modelNumber=modelNumber;
 this.subModelNumber=subModelNumber;
-this.chainMap=Clazz.new_($I$(1));
-this.funcResidues=Clazz.new_($I$(2));
+this.chainMap=Clazz.new_($I$(1,1));
+this.funcResidues=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (inputLine) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=$I$(3).parseModelName$S(inputLine);
 if (this.name.startsWith$S("smiles")) {
 this.type=$I$(4).SMILES;
@@ -42,8 +30,8 @@ this.type=$I$(4).SMILES;
 this.type=$I$(4).PDB_MODEL;
 }this.modelNumber=$I$(3).parseModelNumber$S(inputLine)[0];
 this.subModelNumber=$I$(3).parseModelNumber$S(inputLine)[1];
-this.chainMap=Clazz.new_($I$(1));
-this.funcResidues=Clazz.new_($I$(2));
+this.chainMap=Clazz.new_($I$(1,1));
+this.funcResidues=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'addResidue$ext_edu_ucsf_rbvi_strucviz2_ChimeraResidue', function (residue) {
@@ -58,9 +46,9 @@ this.addResidue$S$ext_edu_ucsf_rbvi_strucviz2_ChimeraResidue("_", residue);
 Clazz.newMeth(C$, 'addResidue$S$ext_edu_ucsf_rbvi_strucviz2_ChimeraResidue', function (chainId, residue) {
 var chain=null;
 if (!this.chainMap.containsKey$O(chainId)) {
-chain=Clazz.new_($I$(5).c$$I$I$S,[this.modelNumber, this.subModelNumber, chainId]);
+chain=Clazz.new_($I$(5,1).c$$I$I$S,[this.modelNumber, this.subModelNumber, chainId]);
 chain.setChimeraModel$ext_edu_ucsf_rbvi_strucviz2_ChimeraModel(this);
-this.chainMap.put$TK$TV(chainId, chain);
+this.chainMap.put$O$O(chainId, chain);
 } else {
 chain=this.chainMap.get$O(chainId);
 }chain.addResidue$ext_edu_ucsf_rbvi_strucviz2_ChimeraResidue(residue);
@@ -120,7 +108,7 @@ for (var chain, $chain = this.getChains$().iterator$(); $chain.hasNext$()&&((cha
 if (residue.indexOf$S("-") > 0) {
 this.funcResidues.addAll$java_util_Collection(chain.getResidueRange$S(residue));
 } else {
-this.funcResidues.add$TE(chain.getResidue$S(residue));
+this.funcResidues.add$O(chain.getResidue$S(residue));
 }}
 }
 });
@@ -142,7 +130,7 @@ this.selected=selected;
 });
 
 Clazz.newMeth(C$, 'getChildren$', function () {
-return Clazz.new_($I$(6).c$$java_util_Collection,[this.chainMap.values$()]);
+return Clazz.new_([this.chainMap.values$()],$I$(6,1).c$$java_util_Collection);
 });
 
 Clazz.newMeth(C$, 'getChains$', function () {
@@ -158,7 +146,7 @@ return this.chainMap.keySet$();
 });
 
 Clazz.newMeth(C$, 'getResidues$', function () {
-var residues=Clazz.new_($I$(6));
+var residues=Clazz.new_($I$(6,1));
 for (var chain, $chain = this.getChains$().iterator$(); $chain.hasNext$()&&((chain=($chain.next$())),1);) {
 residues.addAll$java_util_Collection(chain.getResidues$());
 }
@@ -197,7 +185,7 @@ return true;
 });
 
 Clazz.newMeth(C$, 'getSelectedResidues$', function () {
-var residueList=Clazz.new_($I$(6));
+var residueList=Clazz.new_($I$(6,1));
 for (var chain, $chain = this.getChains$().iterator$(); $chain.hasNext$()&&((chain=($chain.next$())),1);) {
 if (this.selected) {
 residueList.addAll$java_util_Collection(chain.getSelectedResidues$());
@@ -221,9 +209,9 @@ modelName="Model " + this.toSpec$() + " " + this.name + " (" + this.getChainCoun
 modelName="Model " + this.toSpec$() + " " + this.name + " (" + this.getResidueCount$() + " residues)" ;
 } else {
 modelName="Model " + this.toSpec$() + " " + this.name + "" ;
-}var networkNames=Clazz.new_($I$(2));
-var nodeNames=Clazz.new_($I$(2));
-var edgeNames=Clazz.new_($I$(2));
+}var networkNames=Clazz.new_($I$(2,1));
+var nodeNames=Clazz.new_($I$(2,1));
+var edgeNames=Clazz.new_($I$(2,1));
 var cytoName=" [";
 if (networkNames.size$() > 0) {
 if (networkNames.size$() == 1) {
@@ -278,4 +266,4 @@ return hashCode;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

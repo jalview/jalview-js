@@ -1,34 +1,23 @@
-(function(){var P$=java.lang,p$1={},I$=[[0,'java.lang.reflect.Method','java.util.Arrays','java.lang.reflect.TypeVariable','swingjs.JSUtil','java.lang.reflect.Field','java.lang.reflect.Constructor','Boolean','Void','java.util.HashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Class", function(){
+(function(){var P$=java.lang,p$1={},I$=[[0,'java.lang.reflect.Method','java.util.Arrays','Class','java.util.Collections','java.util.ArrayList','sun.misc.CompoundEnumeration','java.util.Enumeration','java.lang.reflect.TypeVariable','swingjs.JSUtil','java.lang.reflect.Field','java.lang.reflect.Constructor',['sun.reflect.annotation.AnnotationParser','.JSAnnotationObject'],'Void','java.util.HashMap','java.util.Objects','sun.reflect.annotation.AnnotationParser','sun.reflect.annotation.AnnotationSupport','sun.reflect.annotation.AnnotationType','java.util.LinkedHashMap',['Class','.AnnotationData'],'Package','java.util.stream.Collectors','java.lang.annotation.Annotation','java.util.function.Function']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Class", function(){
 Clazz.newInstance(this, arguments,0,C$);
-}, null, ['java.io.Serializable', 'java.lang.reflect.GenericDeclaration']);
-C$.initted=false;
+});
+C$.$classes$=[['MethodArray',8],['AnnotationData',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.initted=false;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$clazz$=null;
-this.$methodList$=null;
-this.name=null;
-this.fields=null;
-this.classRedefinedCount=0;
-this.lastRedefinedCount=0;
-this.enumConstants=null;
-this.enumConstantDirectory=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.classRedefinedCount=0;
-this.lastRedefinedCount=0;
+this.modifiers=-1;
+this.fieldAnnMap=null;
 this.enumConstants=null;
 this.enumConstantDirectory=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['modifiers'],'S',['name'],'O',['$clazz$','java.lang.Object','$methodList$','String[]','fields','java.lang.reflect.Field[]','implementz','Class[]','fieldAnnMap','java.util.Map','declaredFields','java.lang.reflect.Field[]','$members$','java.lang.reflect.Method[]','enumConstants','_.T[]','enumConstantDirectory','java.util.Map','annotationData','Class.AnnotationData','annotationType','sun.reflect.annotation.AnnotationType','annotations','java.util.Map','+declaredAnnotations']]
+,['O',['NO_PARAMETERS','Class[]','+UNKNOWN_PARAMETERS']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -50,32 +39,37 @@ return Clazz.forName(name, initialize, loader);
 }, 1);
 
 Clazz.newMeth(C$, 'newInstance$', function () {
+var c=this.$clazz$;
 {
-return new this.$clazz$;
+return new c;
 }
 });
 
 Clazz.newMeth(C$, 'isInstance$O', function (obj) {
+var c=this.$clazz$;
 {
-return Clazz.instanceOf(obj, this.$clazz$);
+return Clazz.instanceOf(obj, c);
 }
 });
 
 Clazz.newMeth(C$, 'isAssignableFrom$Class', function (cls) {
-{
-return(Clazz.instanceOf(cls.$clazz$, this.$clazz$));
-}
+if (cls == null ) return false;
+var a=cls.$clazz$;
+var me=this.$clazz$;
+return Clazz.instanceOf(a, me) ||false;
 });
 
 Clazz.newMeth(C$, 'isInterface$', function () {
+var me=this.$clazz$;
 {
-return this.$clazz$.$isInterface;
+return me.$isInterface;
 }
 });
 
 Clazz.newMeth(C$, 'isArray$', function () {
+var me=this.$clazz$;
 {
-return !!this.$clazz$.__ARRAYTYPE;
+return !!me.__ARRAYTYPE;
 }
 });
 
@@ -86,11 +80,21 @@ return !!this.__PRIMITIVE;
 });
 
 Clazz.newMeth(C$, 'isAnnotation$', function () {
-return (this.getModifiers$() & 8192) != 0;
+var me=this.$clazz$;
+{
+return !!me.$getMembers$;
+}
+});
+
+Clazz.newMeth(C$, 'isEnum$', function () {
+var me=this.$clazz$;
+{
+return !!me.$isEnum;
+}
 });
 
 Clazz.newMeth(C$, 'isSynthetic$', function () {
-return (this.getModifiers$() & 4096) != 0;
+return false;
 });
 
 Clazz.newMeth(C$, 'getName$', function () {
@@ -102,7 +106,7 @@ Clazz.newMeth(C$, 'getName0', function () {
 var code="";
 
 code = this.$clazz$.__CLASS_NAME$__ || this.$clazz$.__CLASS_NAME__;
-if (code) return code;
+if (code) return (code.indexOf(".") < 0 ? "java.lang." + code : code);
 code = this.$clazz$.__PARAMCODE;
 switch (code) {
 case "S":
@@ -117,11 +121,14 @@ break;
 case "B":
 code="Byte";
 break;
-case "L":
+case "J":
 code="Long";
 break;
 case "C":
 code="Character";
+break;
+case "O":
+code="Object";
 break;
 default:
 return null;
@@ -138,18 +145,33 @@ return cl;
 
 Clazz.newMeth(C$, 'getClassLoader0$', function () {
 var loader=null;
-{
+
 var baseFolder = Clazz._Loader.getJ2SLibBase();
 loader = Clazz._Loader.requireLoaderByBase(baseFolder);
 var me = this;
 loader.getResourceAsStream$S = function(s) { return me.getResourceAsStream$S(s.indexOf("/") == 0 ? s : "/" + s) };
 loader.getResource$S = function(s) { return me.getResource$S(s.indexOf("/") == 0 ? s : "/" + s) };
-}
+loader.getResources$S = function(s) { return me.getResources$S(s) };
+loader.getParent$ = function() {return null};
 return loader;
 });
 
+Clazz.newMeth(C$, 'getResources$S', function (name) {
+var url1=this.getResource$S(name);
+var url2=(name.indexOf$S("/") == 0 ? null : this.getClassLoader$().getResource$S(name));
+var e;
+if (url1 == null  && url2 == null  ) {
+e=$I$(4).emptyEnumeration$();
+} else {
+var list=Clazz.new_($I$(5,1).c$$I,[2]);
+if (url1 != null ) list.add$O(url1);
+if (url2 != null  && !url2.equals$O(url1) ) list.add$O(url2);
+e=$I$(4).enumeration$java_util_Collection(list);
+}return Clazz.new_([Clazz.array($I$(7), -1, [null, e])],$I$(6,1).c$$java_util_EnumerationA);
+});
+
 Clazz.newMeth(C$, 'getTypeParameters$', function () {
-return Clazz.array($I$(3), [0]);
+return Clazz.array($I$(8), [0]);
 });
 
 Clazz.newMeth(C$, 'getSuperclass$', function () {
@@ -160,8 +182,17 @@ return Clazz.getClass(this.$clazz$.superclazz || java.lang.Object);
 });
 
 Clazz.newMeth(C$, 'getInterfaces$', function () {
-$I$(4).notImplemented$S(null);
-return Clazz.array(Class, [0]);
+if (this.implementz == null ) {
+var a=Clazz.array(Class, [0]);
+var me=this.$clazz$;
+var list=me.implementz ||null;
+if (list != null ) {
+for (var i=0, n=list.length; i < n; i++) {
+
+a.push(Clazz.getClass(list[i]));
+}
+}this.implementz=a;
+}return this.implementz;
 });
 
 Clazz.newMeth(C$, 'getComponentType$', function () {
@@ -169,20 +200,24 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getModifiers$', function () {
-return 1 | (this.isEnum$() ? 16384 : this.isInterface$() ? 512 : 0);
+return (this.modifiers >= 0 ? this.modifiers : 1 | (this.isEnum$() ? 16384 : this.isInterface$() ? 512 : 0) | (this.isAnnotation$() ? 8192 : 0) );
+});
+
+Clazz.newMeth(C$, '_setModifiers$I', function (m) {
+this.modifiers=m;
 });
 
 Clazz.newMeth(C$, 'getSigners$', function () {
-$I$(4).notImplemented$S(null);
+$I$(9).notImplemented$S(null);
 return Clazz.array(java.lang.Object, [0]);
 });
 
 Clazz.newMeth(C$, 'setSigners$OA', function (signers) {
-$I$(4).notImplemented$S(null);
+$I$(9).notImplemented$S(null);
 });
 
 Clazz.newMeth(C$, 'getDeclaringClass$', function () {
-$I$(4).notImplemented$S(null);
+$I$(9).notImplemented$S(null);
 return null;
 });
 
@@ -191,6 +226,7 @@ if (this.isArray$()) return this.getComponentType$().getSimpleName$() + "[]";
 var name="";
 {
 name = (this.$clazz$.__ANON ? "" : this.$clazz$.__CLASS_NAME__);
+name || (name = this.$clazz$.name);
 }
 return name.substring$I(name.lastIndexOf$S(".") + 1);
 });
@@ -224,22 +260,43 @@ return !!this.$clazz$.__ISANON || !!this.$clazz$.__LOCAL;
 }, p$1);
 
 Clazz.newMeth(C$, 'getClasses$', function () {
-return null;
+var list=Clazz.new_($I$(5,1));
+var currentClass=this;
+while (currentClass != null ){
+var members=currentClass.getDeclaredClasses$();
+for (var i=0; i < members.length; i++) {
+list.add$O(members[i]);
+}
+currentClass=currentClass.getSuperclass$();
+}
+return list.toArray$OA(Clazz.array(Class, [list.size$()]));
 });
 
 Clazz.newMeth(C$, 'getFields$', function () {
 if (this.fields != null ) return this.fields;
-this.fields=Clazz.array($I$(5), [0]);
-var _static=8;
-var cl=this.$clazz$ ||null;
-var proto=cl.prototype ||null;
-p$1.addFields$O$reflect_FieldA$I.apply(this, [proto, this.fields, 0]);
-p$1.addFields$O$reflect_FieldA$I.apply(this, [cl, this.fields, _static]);
+this.fields=Clazz.array($I$(10), [0]);
+p$1.addAllFields$java_lang_reflect_FieldA$Z.apply(this, [this.fields, true]);
 return this.fields;
 });
 
+Clazz.newMeth(C$, 'addAllFields$java_lang_reflect_FieldA$Z', function (fields, recurse) {
+var cl=this.$clazz$ ||null;
+
+Clazz._initClass(cl,1,1,0);
+p$1.addFields$O$java_lang_reflect_FieldA$I.apply(this, [cl, fields, 0]);
+p$1.addFields$O$java_lang_reflect_FieldA$I.apply(this, [cl, fields, 8]);
+if (!recurse) return;
+var c=this.getSuperclass$();
+if (c != null ) p$1.addAllFields$java_lang_reflect_FieldA$Z.apply(c, [fields, true]);
+}, p$1);
+
+Clazz.newMeth(C$, 'getFieldAnnMap$O', function (cl) {
+p$1.initAnnotationsIfNecessary.apply(this, []);
+return this.fieldAnnMap;
+});
+
 Clazz.newMeth(C$, 'getMethods$', function () {
-return (p$1.privateGetPublicMethods.apply(this, []));
+return (p$1.privateGetPublicMethods$Z.apply(this, [true]));
 });
 
 Clazz.newMeth(C$, 'getConstructors$', function () {
@@ -254,56 +311,58 @@ if (this.fields[i].jsName == name) return this.fields[i];
 throw Clazz.new_(Clazz.load('NoSuchFieldException').c$$S,["field " + name]);
 });
 
-Clazz.newMeth(C$, 'addFields$O$reflect_FieldA$I', function (c, f, modifiers) {
-var m=null;
-for (m in c) { if (!modifiers && this.$clazz$[m]) continue;
-if (this.excludeField$S(m)) continue;
-var o = c[m];
-switch (typeof o) { case "object": if (o && o.__CLASS_NAME__) continue;
-case "number": case "boolean": case "string":p$1.addField$reflect_FieldA$S$I.apply(this, [f, m, modifiers]);
-
-break;
-} }
+Clazz.newMeth(C$, 'addFields$O$java_lang_reflect_FieldA$I', function (cl, f, modifiers) {
+var fieldNames=Clazz._getFieldNames(cl, !!modifiers) || [] ||null;
+var types=Clazz._getFieldTypes(cl, !!modifiers) || [] ||null;
+for (var i=0; i < fieldNames.length; i++) {
+p$1.addField$java_lang_reflect_FieldA$S$I$S.apply(this, [f, fieldNames[i], modifiers, types[i]]);
+}
 }, p$1);
 
 Clazz.newMeth(C$, 'excludeField$S', function (name) {
-return (name == "prototype" || name.startsWith$S("__") );
+return (name === "prototype"  || name.startsWith$S("__")  || name.startsWith$S("$") && name.endsWith$S("$")   || name === "$isInterface"   || name === "$isEnum"   || name === "implementz"  );
 });
 
-Clazz.newMeth(C$, 'addField$reflect_FieldA$S$I', function (fields, m, modifiers) {
-var f=Clazz.new_($I$(5).c$$Class$S$I,[this, m, modifiers]);
+Clazz.newMeth(C$, 'addField$java_lang_reflect_FieldA$S$I$S', function (fields, name, modifiers, type) {
+var f=Clazz.new_($I$(10,1).c$$Class$S$I,[this, name, modifiers]);
+f._setTypeString$S(type);
 
 fields.push(f);
 }, p$1);
 
 Clazz.newMeth(C$, 'getMethod$S$ClassA', function (name, paramTypes) {
-var m=Clazz.new_($I$(1).c$$Class$S$ClassA$Class$ClassA$I,[this, name, paramTypes, null, null, 0]);
+var m=Clazz.new_($I$(1,1).c$$Class$S$ClassA$Class$ClassA$I,[this, name, paramTypes, null, null, 1]);
 if (!this.isInterface$()) {
-var o=null;
-var qname=name + C$.argumentTypesToString$ClassA(paramTypes);
+var o=this.$clazz$;
+var isStatic=false;
+var qname=m.getSignature$();
 
-o = this.$clazz$;
-o = o[qname] || o.prototype && o.prototype[qname];
+if (o[qname]) { isStatic = true;
+o = o[qname];
+} else { o = o.prototype && o.prototype[qname];
+}
 if (o == null ) throw Clazz.new_(Clazz.load('NoSuchMethodException').c$$S,[this.getName$() + "." + qname ]);
+m._setJSMethod$O$I(o, (isStatic ? 8 : 0));
 }return m;
 });
 
 Clazz.newMeth(C$, 'getConstructor$ClassA', function (parameterTypes) {
-var x=parameterTypes;
-if (parameterTypes == null ) parameterTypes=Clazz.array(Class, [0]);
-return Clazz.new_($I$(6).c$$Class$ClassA$ClassA$I,[this, parameterTypes, Clazz.array(Class, [0]), 0]);
+return Clazz.new_([this, parameterTypes, Clazz.array(Class, [0]), 0],$I$(11,1).c$$Class$ClassA$ClassA$I);
 });
 
 Clazz.newMeth(C$, 'getDeclaredClasses$', function () {
-return this.getClasses$();
+return p$1.getDeclaredClasses0.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getDeclaredFields$', function () {
-return this.getFields$();
+if (this.declaredFields != null ) return this.declaredFields;
+this.declaredFields=Clazz.array($I$(10), [0]);
+p$1.addAllFields$java_lang_reflect_FieldA$Z.apply(this, [this.declaredFields, false]);
+return this.declaredFields;
 });
 
 Clazz.newMeth(C$, 'getDeclaredMethods$', function () {
-return this.getMethods$();
+return (p$1.privateGetPublicMethods$Z.apply(this, [false]));
 });
 
 Clazz.newMeth(C$, 'getDeclaredConstructors$', function () {
@@ -323,7 +382,8 @@ return this.getConstructor$ClassA(parameterTypes);
 });
 
 Clazz.newMeth(C$, 'getResourceAsStream$S', function (name) {
-var clazzName=this.$clazz$.__CLASS_NAME$__ ||  this.$clazz$.__CLASS_NAME__ ||"";
+var clazzName=this.$clazz$ && (this.$clazz$.__CLASS_NAME$__ ||  this.$clazz$.__CLASS_NAME__)||"";
+if (clazzName === ""  && !name.startsWith$S("/") ) name="/" + name;
 var data=null;
 var fname=null;
 
@@ -350,7 +410,7 @@ fname += pkgs[i] + "/";
 } } fname += name;
 } var url = null;
 var javapath = fname;
-try { if (fname.indexOf(":/") < 0) { var d = document.location.href.split("?")[0].split("/");
+try { if (fname.indexOf(":/") < 0) { var d = document.location.href.split("#")[0].split("?")[0].split("/");
 d[d.length - 1] = fname;
 fname = d.join("/");
 } Clazz.load("java.net.URL");
@@ -358,7 +418,7 @@ url = Clazz.new_(java.net.URL.c$$S,[fname]);
 } catch (e) { return null;
 } var fileCache = J2S.getSetJavaFileCache(null);
 data = fileCache && fileCache.get$O(javapath);
-if (data == null ) data=$I$(4).J2S.getFileData(fname.toString(), null, true, true);
+if (data == null ) data=$I$(9).J2S.getFileData(fname.toString(), null, true, true);
 {
 if (data == null || data == "error" || data.indexOf && data.indexOf("[Exception") == 0) return null;
 var bytes = (data.__BYTESIZE == 1 ? data : J2S._strToBytes(data));
@@ -366,7 +426,7 @@ Clazz.load("java.io.BufferedInputStream");
 Clazz.load("java.io.ByteArrayInputStream");
 var is = Clazz.new_(java.io.BufferedInputStream.c$$java_io_InputStream, [Clazz.new_(java.io.ByteArrayInputStream.c$$BA, [bytes])]);
 is.url = url;
-url._streamData = is;
+url._streamData = bytes;
 return is;
 }
 });
@@ -378,46 +438,71 @@ return(stream ? stream.url : null);
 }
 });
 
-Clazz.newMeth(C$, 'getPrimitiveClass$S', function (name) {
+Clazz.newMeth(C$, 'getPrimitiveOrStringClass$S', function (name) {
 switch (name) {
+case "S":
+case "String":
+return Clazz.getClass(String);
+case "Z":
 case "boolean":
-return $I$(7).TYPE;
+return Boolean.TYPE;
+case "B":
 case "byte":
 return Byte.TYPE;
+case "C":
 case "char":
 return Character.TYPE;
+case "H":
 case "short":
 return Short.TYPE;
+case "I":
 case "int":
 return Integer.TYPE;
+case "J":
 case "long":
 return Long.TYPE;
+case "F":
 case "float":
 return Float.TYPE;
+case "D":
 case "double":
 return Double.TYPE;
+case "O":
+return Clazz.getClass(java.lang.Object);
 default:
 return null;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'privateGetPublicMethods', function () {
-var ms;
+Clazz.newMeth(C$, 'privateGetPublicMethods$Z', function (isAll) {
+if (this.isAnnotation$()) {
+if (this.$members$ == null ) {
+this.$members$=$I$(12).createMethods$Class(this);
+}return this.$members$;
+}var ms;
 if (this.$methodList$ != null ) {
 ms=Clazz.array($I$(1), [this.$methodList$.length]);
 for (var i=ms.length; --i >= 0; ) {
-ms[i]=Clazz.new_($I$(1).c$$Class$S$ClassA$Class$ClassA$I,[this, this.$methodList$[i], null, Clazz.getClass($I$(8)), null, 1]);
+ms[i]=Clazz.new_([this, this.$methodList$[i], null, Clazz.getClass($I$(13)), null, 1],$I$(1,1).c$$Class$S$ClassA$Class$ClassA$I);
 }
 return ms;
 }ms=Clazz.array($I$(1), [0]);
-{
+var attr=null;
+var o=null;
+
 var p = this.$clazz$.prototype;
-for (var attr in p) { if (typeof p[attr] == "function" && !p[attr].__CLASS_NAME__ && p[attr] != this.$clazz$[attr] && p[attr].exClazz == this.$clazz$) { // there are polynormical methods.
-ms.push(Clazz.new_(Clazz.load('java.lang.reflect.Method').c$$Class$S$ClassA$Class$ClassA$I,  [this, attr, [], java.lang.Void, [], 1]));
-} } p = this.$clazz$;
-for (var attr in p) { if (typeof p[attr] == "function" && !p[attr].__CLASS_NAME__  && p[attr].exClazz == this.$clazz$) { ms.push(Clazz.new_(Clazz.load('java.lang.reflect.Method').c$$Class$S$ClassA$Class$ClassA$I,  [this, attr, [], java.lang.Void, [], 1 | 8]));
-} }
-}
+for (attr in p) { o = p[attr]; if ( typeof o == "function" && o.exName && !o.__CLASS_NAME__ && o != this.$clazz$[attr] && (isAll || o.exClazz == this.$clazz$) && !o.exName.startsWith("c$") ) { // there are polynormical methods.
+var m=Clazz.new_([this, attr, Class.UNKNOWN_PARAMETERS, Clazz.getClass($I$(13)), Class.NO_PARAMETERS, 1],$I$(1,1).c$$Class$S$ClassA$Class$ClassA$I);
+m._setJSMethod$O$I(o, 1);
+
+ms.push(m);
+}} p = this.$clazz$;
+for (attr in p) { o = p[attr];if ( typeof o == "function" && o.exName && !o.__CLASS_NAME__ && (isAll || o.exClazz == this.$clazz$) && o.exName.indexOf("$") != 0 && !o.exName.startsWith("c$") ) {
+m=Clazz.new_([this, attr, Class.UNKNOWN_PARAMETERS, Clazz.getClass($I$(13)), Class.NO_PARAMETERS, 1],$I$(1,1).c$$Class$S$ClassA$Class$ClassA$I);
+m._setJSMethod$O$I(o, 8);
+
+ms.push(m);
+}}
 return ms;
 }, p$1);
 
@@ -435,18 +520,17 @@ return false;
 return true;
 }, 1);
 
+Clazz.newMeth(C$, 'getDeclaredClasses0', function () {
+return $I$(12).getDeclaredClasses$O(this.$clazz$);
+}, p$1);
+
 Clazz.newMeth(C$, 'argumentTypesToString$ClassA', function (parameterTypes) {
+if (parameterTypes == null ) return "$";
 var s="";
-if (parameterTypes != null ) for (var i=0; i < parameterTypes.length; i++) s += "$" + (Clazz._getParamCode(parameterTypes[i]) ||null);
+for (var i=0; i < parameterTypes.length; i++) s += "$" + (Clazz._getParamCode(parameterTypes[i]) ||null);
 
 return s;
 }, 1);
-
-Clazz.newMeth(C$, 'isEnum$', function () {
-{
-return this.$clazz$.$isEnum;
-}
-});
 
 Clazz.newMeth(C$, 'getEnumConstants$', function () {
 return this.getEnumConstantsShared$();
@@ -462,8 +546,8 @@ Clazz.newMeth(C$, 'enumConstantDirectory$', function () {
 if (this.enumConstantDirectory == null ) {
 var universe=this.getEnumConstantsShared$();
 if (universe == null ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[this.getName$() + " is not an enum type"]);
-var m=Clazz.new_($I$(9).c$$I,[2 * universe.length]);
-for (var constant, $constant = 0, $$constant = universe; $constant<$$constant.length&&((constant=($$constant[$constant])),1);$constant++) m.put$TK$TV((constant).name$(), constant);
+var m=Clazz.new_($I$(14,1).c$$I,[2 * universe.length]);
+for (var constant, $constant = 0, $$constant = universe; $constant<$$constant.length&&((constant=($$constant[$constant])),1);$constant++) m.put$O$O((constant).name$(), constant);
 
 this.enumConstantDirectory=m;
 }return this.enumConstantDirectory;
@@ -478,6 +562,96 @@ Clazz.newMeth(C$, 'cannotCastMsg$O', function (obj) {
 return "Cannot cast " + obj.getClass$().getName$() + " to " + this.getName$() ;
 }, p$1);
 
+Clazz.newMeth(C$, 'asSubclass$Class', function (clazz) {
+if (clazz.isAssignableFrom$Class(this)) return this;
+ else throw Clazz.new_(Clazz.load('ClassCastException').c$$S,[this.toString()]);
+});
+
+Clazz.newMeth(C$, 'getAnnotation$Class', function (annotationClass) {
+$I$(15).requireNonNull$O(annotationClass);
+p$1.initAnnotationsIfNecessary.apply(this, []);
+return (this.annotations == null  ? null : this.annotations.get$O(annotationClass));
+});
+
+Clazz.newMeth(C$, 'getAnnotations$', function () {
+p$1.initAnnotationsIfNecessary.apply(this, []);
+return this.annotations.values$().toArray$OA($I$(16).getEmptyAnnotationArray$());
+});
+
+Clazz.newMeth(C$, 'getAnnotationsByType$Class', function (annotationClass) {
+$I$(15).requireNonNull$O(annotationClass);
+var annotationData=p$1.annotationData.apply(this, []);
+return $I$(17).getAssociatedAnnotations$java_util_Map$Class$Class(annotationData.declaredAnnotations, this, annotationClass);
+});
+
+Clazz.newMeth(C$, 'annotationData', function () {
+var annotationData=this.annotationData;
+if (annotationData != null ) {
+return annotationData;
+}return annotationData=p$1.createAnnotationData$I.apply(this, [0]);
+}, p$1);
+
+Clazz.newMeth(C$, 'createAnnotationData$I', function (classRedefinedCount) {
+var declaredAnnotations=$I$(16).parseAnnotations$S$Class$Z(null, this, false);
+var superClass=this.getSuperclass$();
+var annotations=null;
+if (superClass != null ) {
+var superAnnotations=p$1.annotationData.apply(superClass, []).annotations;
+for (var e, $e = superAnnotations.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
+var annotationClass=e.getKey$();
+if ($I$(18).getInstance$Class(annotationClass).isInherited$()) {
+if (annotations == null ) {
+annotations=Clazz.new_([((Math.max(declaredAnnotations.size$(), Math.min(12, declaredAnnotations.size$() + superAnnotations.size$())) * 4 + 2)/3|0)],$I$(19,1).c$$I);
+}annotations.put$O$O(annotationClass, e.getValue$());
+}}
+}if (annotations == null ) {
+annotations=declaredAnnotations;
+} else {
+annotations.putAll$java_util_Map(declaredAnnotations);
+}return Clazz.new_($I$(20,1).c$$java_util_Map$java_util_Map$I,[annotations, declaredAnnotations, classRedefinedCount]);
+}, p$1);
+
+Clazz.newMeth(C$, 'setAnnotationResult$sun_reflect_annotation_AnnotationType', function (type) {
+this.annotationType=type;
+});
+
+Clazz.newMeth(C$, 'annotationType$', function () {
+return (this.isAnnotation$() ? this : null);
+});
+
+Clazz.newMeth(C$, 'getAnnotationType$', function () {
+return this.annotationType;
+});
+
+Clazz.newMeth(C$, 'getDeclaredAnnotationMap$', function () {
+return p$1.annotationData.apply(this, []).declaredAnnotations;
+});
+
+Clazz.newMeth(C$, 'getDeclaredAnnotations$', function () {
+p$1.initAnnotationsIfNecessary.apply(this, []);
+return this.declaredAnnotations.values$().toArray$OA($I$(16).getEmptyAnnotationArray$());
+});
+
+Clazz.newMeth(C$, 'initAnnotationsIfNecessary', function () {
+if (this.annotations != null ) return;
+this.declaredAnnotations=$I$(16).parseAnnotations$S$Class$Z(null, this, false);
+var superClass=this.getSuperclass$();
+if (superClass == null ) {
+this.annotations=this.declaredAnnotations;
+} else {
+this.annotations=Clazz.new_($I$(14,1));
+p$1.initAnnotationsIfNecessary.apply(superClass, []);
+for (var e, $e = superClass.annotations.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
+var annotationClass=e.getKey$();
+if ($I$(18).getInstance$Class(annotationClass).isInherited$()) this.annotations.put$O$O(annotationClass, e.getValue$());
+}
+this.annotations.putAll$java_util_Map(this.declaredAnnotations);
+}}, p$1);
+
+Clazz.newMeth(C$, 'setAnnotationType$sun_reflect_annotation_AnnotationType', function (type) {
+this.annotationType=type;
+});
+
 Clazz.newMeth(C$, 'hashCode$', function () {
 var name=null;
 
@@ -486,24 +660,20 @@ return name.hashCode$();
 });
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
-
-return o.__CLASS_NAME__ == "java.lang.Class" && o.$clazz$ == this.$clazz$;
-return false;
+{
+return o && o.__CLASS_NAME__ == "java.lang.Class" && o.$clazz$ == this.$clazz$;
+}
 });
 
 Clazz.newMeth(C$, 'getArgumentArray$ClassA$OA$Z', function (types, args, isProxy) {
 var a=Clazz.array(java.lang.Object, [args == null  ? 0 : args.length]);
-if (args != null  && (types != null  || isProxy ) ) for (var i=args.length; --i >= 0; ) a[i]=(isProxy ? args[i] : (types[i].__PRIMITIVE && args[i].valueOf$ ? args[i].valueOf$() : args[i]) ||null);
+if (args != null  && (types != null  || isProxy ) ) for (var i=args.length; --i >= 0; ) a[i]=(isProxy ? args[i] : (types[i].__PRIMITIVE && args[i].valueOf ? args[i].valueOf() : args[i]) ||null);
 
 return a;
 }, 1);
 
 Clazz.newMeth(C$, 'getPackage$', function () {
-return null;
-});
-
-Clazz.newMeth(C$, 'getAnnotation$Class', function (c) {
-return null;
+return $I$(21).getPackage$Class(this);
 });
 
 Clazz.newMeth(C$, 'getJ2SSuperclassFor$Class', function (cl) {
@@ -515,79 +685,110 @@ if (c == null  && cl !== Clazz.getClass(java.lang.Object)  ) {
 c=Clazz.getClass(java.lang.Object);
 }return c;
 }, 1);
-;
-(function(){var C$=Clazz.newClass(P$.Class, "JSClass", function(){
-Clazz.newInstance(this, arguments[0],false,C$);
+
+Clazz.newMeth(C$, 'getDeclaredAnnotation$Class', function (annotationClass) {
+$I$(15).requireNonNull$O(annotationClass);
+for (var annotation, $annotation = 0, $$annotation = this.getDeclaredAnnotations$(); $annotation<$$annotation.length&&((annotation=($$annotation[$annotation])),1);$annotation++) {
+if (annotationClass.equals$O(annotation.annotationType$())) {
+return annotationClass.cast$O(annotation);
+}}
+return null;
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+Clazz.newMeth(C$, 'getDeclaredAnnotationsByType$Class', function (annotationClass) {
+$I$(15).requireNonNull$O(annotationClass);
+return $I$(17,"getDirectlyAndIndirectlyPresent$java_util_Map$Class",[$I$(2,"stream$OA",[this.getDeclaredAnnotations$()]).collect$java_util_stream_Collector($I$(22,"toMap$java_util_function_Function$java_util_function_Function$java_util_function_BinaryOperator$java_util_function_Supplier",[(function($$){((
+(function(){/*m*/var C$=Clazz.newClass(P$, "Class$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Function', 1);
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.__CLASS_NAME__=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$);
+},1);
+/*lambda_M*/
+Clazz.newMeth(C$, 'apply$O', function (t) { return t.annotationType$.apply(t,[])});
 })()
+)); return Clazz.new_(Class$lambda1.$init$,[this, null])})($I$(23)), $I$(24).identity$(), ((Class$lambda2$||(Class$lambda2$=(((P$.Class$lambda2||
+(function(){/*m*/var C$=Clazz.newClass(P$, "Class$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.BinaryOperator', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+/*lambda_E*/
+Clazz.newMeth(C$, ['apply$java_lang_annotation_Annotation$java_lang_annotation_Annotation','apply$O$O'], function (first, second) { return (first);});
+})()
+), Clazz.new_(Class$lambda2.$init$,[this, null])))))), ((P$.Class$lambda3||
+(function(){/*m*/var C$=Clazz.newClass(P$, "Class$lambda3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Supplier', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+/*lambda_C*/
+Clazz.newMeth(C$, 'get$', function () { return Clazz.new_($I$(19,1),[])});
+})()
+), Clazz.new_(Class$lambda3.$init$,[this, null]))])), annotationClass]);
+});
+
+Clazz.newMeth(C$, 'isAnnotationPresent$Class', function (annotationClass) {
+if (annotationClass == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+return this.getAnnotation$Class(annotationClass) != null ;
+});
+
+C$.$static$=function(){C$.$static$=0;
+C$.NO_PARAMETERS=Clazz.array(Class, [0]);
+C$.UNKNOWN_PARAMETERS=Clazz.array(Class, [0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Class, "MethodArray", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Class, "MethodArray", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.methods=null;
-this.length=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['length'],'O',['methods','java.lang.reflect.Method[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.methods=Clazz.array($I$(1), [20]);
 this.length=0;
 }, 1);
 
-Clazz.newMeth(C$, 'add$reflect_Method', function (m) {
+Clazz.newMeth(C$, 'add$java_lang_reflect_Method', function (m) {
 if (this.length == this.methods.length) {
-this.methods=$I$(2).copyOf$TTA$I(this.methods, 2 * this.methods.length);
+this.methods=$I$(2).copyOf$OA$I(this.methods, 2 * this.methods.length);
 }this.methods[this.length++]=m;
 });
 
-Clazz.newMeth(C$, 'addAll$reflect_MethodA', function (ma) {
+Clazz.newMeth(C$, 'addAll$java_lang_reflect_MethodA', function (ma) {
 for (var i=0; i < ma.length; i++) {
-this.add$reflect_Method(ma[i]);
+this.add$java_lang_reflect_Method(ma[i]);
 }
 });
 
 Clazz.newMeth(C$, 'addAll$Class_MethodArray', function (ma) {
 for (var i=0; i < ma.length$(); i++) {
-this.add$reflect_Method(ma.get$I(i));
+this.add$java_lang_reflect_Method(ma.get$I(i));
 }
 });
 
-Clazz.newMeth(C$, 'addIfNotPresent$reflect_Method', function (newMethod) {
+Clazz.newMeth(C$, 'addIfNotPresent$java_lang_reflect_Method', function (newMethod) {
 for (var i=0; i < this.length; i++) {
 var m=this.methods[i];
 if (m === newMethod  || (m != null  && m.equals$O(newMethod) ) ) {
 return;
 }}
-this.add$reflect_Method(newMethod);
+this.add$java_lang_reflect_Method(newMethod);
 });
 
 Clazz.newMeth(C$, 'addAllIfNotPresent$Class_MethodArray', function (newMethods) {
 for (var i=0; i < newMethods.length$(); i++) {
 var m=newMethods.get$I(i);
 if (m != null ) {
-this.addIfNotPresent$reflect_Method(m);
+this.addIfNotPresent$java_lang_reflect_Method(m);
 }}
 });
 
@@ -599,10 +800,10 @@ Clazz.newMeth(C$, 'get$I', function (i) {
 return this.methods[i];
 });
 
-Clazz.newMeth(C$, 'removeByNameAndSignature$reflect_Method', function (toRemove) {
+Clazz.newMeth(C$, 'removeByNameAndSignature$java_lang_reflect_Method', function (toRemove) {
 for (var i=0; i < this.length; i++) {
 var m=this.methods[i];
-if (m != null  && m.getReturnType$() === toRemove.getReturnType$()   && m.getName$() == toRemove.getName$()  && Class.arrayContentsEq$OA$OA(m.getParameterTypes$(), toRemove.getParameterTypes$()) ) {
+if (m != null  && m.getName$() == toRemove.getName$()  && $I$(3,"arrayContentsEq$OA$OA",[m.getParameterTypes$(), toRemove.getParameterTypes$()]) ) {
 this.methods[i]=null;
 }}
 });
@@ -617,12 +818,32 @@ this.methods[newPos]=m;
 }newPos++;
 }}
 if (newPos != this.methods.length) {
-this.methods=$I$(2).copyOf$TTA$I(this.methods, newPos);
+this.methods=$I$(2).copyOf$OA$I(this.methods, newPos);
 }});
 
 Clazz.newMeth(C$, 'getArray$', function () {
 return this.methods;
 });
 })()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.Class, "AnnotationData", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+});
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['annotations','java.util.Map','+declaredAnnotations']]]
+
+Clazz.newMeth(C$, 'c$$java_util_Map$java_util_Map$I', function (annotations, declaredAnnotations, redefinedCount) {
+;C$.$init$.apply(this);
+this.annotations=annotations;
+this.declaredAnnotations=declaredAnnotations;
+}, 1);
+
+Clazz.newMeth(C$);
+})()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

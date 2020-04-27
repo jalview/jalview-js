@@ -1,72 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'org.jmol.smiles.SmilesBond','javajs.util.AU','org.jmol.util.Logger','org.jmol.util.Elements','org.jmol.viewer.JC']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmilesAtom", null, 'javajs.util.P3', 'org.jmol.util.Node');
+(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'org.jmol.smiles.SmilesBond','javajs.util.AU','org.jmol.util.Logger','org.jmol.util.Elements','org.jmol.viewer.JC']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SmilesAtom", null, 'javajs.util.P3', 'org.jmol.util.Node');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.patternIndex=0;
-this.pattern=null;
-this.primitiveType=0;
-this.isAND=false;
-this.subAtoms=null;
-this.nSubAtoms=0;
-this.index=0;
-this.referance=null;
-this.residueName=null;
-this.residueChar=null;
-this.insCode='\0';
-this.isBioAtom=false;
-this.isBioResidue=false;
-this.isBioAtomWild=false;
-this.bioType='\0';
-this.isLeadAtom=false;
-this.notBondedIndex=0;
-this.notCrossLinked=false;
-this.aromaticAmbiguous=false;
-this.covalentHydrogenCount=0;
-this.not=false;
-this.selected=false;
-this.hasSymbol=false;
-this.elementDefined=false;
-this.atomType=null;
-this.bioAtomName=null;
-this.isFirst=false;
-this.jmolIndex=0;
-this.elementNumber=0;
-this.atomNumber=0;
-this.residueNumber=0;
-this.explicitHydrogenCount=0;
-this.implicitHydrogenCount=0;
-this.parent=null;
-this.bonds=null;
-this.bondCount=0;
-this.iNested=0;
-this.isAromatic=false;
-this.atomicMass=0;
-this.charge=0;
-this.matchingIndex=0;
-this.stereo=null;
-this.component=0;
-this.matchingComponent=0;
-this.atomSite=0;
-this.degree=0;
-this.nonhydrogenDegree=0;
-this.valence=0;
-this.connectivity=0;
-this.ringMembership=0;
-this.ringSize=0;
-this.ringConnectivity=0;
-this.matchingNode=null;
-this.hasSubpattern=false;
-this.mapIndex=0;
-this.atomClass=0;
-this.symbol=null;
-this.isTopoAtom=false;
-this.missingHydrogenCount=0;
-this.cipChirality=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.patternIndex=-1;
@@ -96,14 +31,16 @@ this.ringSize=-2147483648;
 this.ringConnectivity=-1;
 this.mapIndex=-1;
 this.atomClass=NaN;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAND','isBioAtom','isBioResidue','isBioAtomWild','isLeadAtom','notCrossLinked','aromaticAmbiguous','not','selected','hasSymbol','elementDefined','isFirst','isAromatic','hasSubpattern','isTopoAtom'],'C',['insCode','bioType'],'F',['atomClass'],'I',['patternIndex','primitiveType','nSubAtoms','index','notBondedIndex','covalentHydrogenCount','jmolIndex','elementNumber','atomNumber','residueNumber','explicitHydrogenCount','implicitHydrogenCount','bondCount','iNested','atomicMass','charge','matchingIndex','component','matchingComponent','atomSite','degree','nonhydrogenDegree','valence','connectivity','ringMembership','ringSize','ringConnectivity','mapIndex','missingHydrogenCount','cipChirality'],'S',['pattern','referance','residueName','residueChar','atomType','bioAtomName','symbol'],'O',['subAtoms','org.jmol.smiles.SmilesAtom[]','parent','org.jmol.smiles.SmilesAtom','bonds','org.jmol.smiles.SmilesBond[]','stereo','org.jmol.smiles.SmilesStereo','matchingNode','org.jmol.util.Node']]]
 
 Clazz.newMeth(C$, 'allowSmilesUnbracketed$S', function (xx) {
 return ("B, C, N, O, P, S, F, Cl, Br, I, *,".indexOf$S(xx + ",") >= 0);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getAtomType$', function () {
@@ -491,9 +428,9 @@ Clazz.newMeth(C$, 'getCrossLinkVector$javajs_util_Lst$Z$Z', function (vLinks, cr
 var haveCrossLinks=false;
 for (var k=0; k < this.bonds.length; k++) if (this.bonds[k].order == 112) {
 if (vLinks == null ) return true;
-vLinks.addLast$TV(Integer.valueOf$I(this.index));
-vLinks.addLast$TV(Integer.valueOf$I(this.bonds[k].getOtherAtom$org_jmol_smiles_SmilesAtom(this).index));
-vLinks.addLast$TV(Integer.valueOf$I(this.bonds[k].getOtherAtom$org_jmol_smiles_SmilesAtom(this).index));
+vLinks.addLast$O(Integer.valueOf$I(this.index));
+vLinks.addLast$O(Integer.valueOf$I(this.bonds[k].getOtherAtom$org_jmol_smiles_SmilesAtom(this).index));
+vLinks.addLast$O(Integer.valueOf$I(this.bonds[k].getOtherAtom$org_jmol_smiles_SmilesAtom(this).index));
 haveCrossLinks=true;
 }
 return haveCrossLinks;
@@ -594,5 +531,9 @@ return this.stereo;
 Clazz.newMeth(C$, 'getPatternIndex$', function () {
 return this.patternIndex;
 });
+
+Clazz.newMeth(C$, 'modelIsRawPDB$', function () {
+return false;
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

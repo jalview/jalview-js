@@ -1,28 +1,12 @@
-(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'Boolean','javax.swing.event.SwingPropertyChangeSupport','java.beans.PropertyChangeListener','javax.swing.UIManager','javax.swing.table.DefaultTableCellRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TableColumn");
+(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'javax.swing.event.SwingPropertyChangeSupport','java.beans.PropertyChangeListener','javax.swing.UIManager','javax.swing.table.DefaultTableCellRenderer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TableColumn");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.modelIndex=0;
-this.identifier=null;
-this.width=0;
-this.minWidth=0;
-this.preferredWidth=0;
-this.maxWidth=0;
-this.headerRenderer=null;
-this.headerValue=null;
-this.cellRenderer=null;
-this.cellEditor=null;
-this.isResizable=false;
-this.resizedPostingDisableCount=0;
-this.changeSupport=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isResizable'],'I',['modelIndex','width','minWidth','preferredWidth','maxWidth','resizedPostingDisableCount'],'O',['identifier','java.lang.Object','headerRenderer','javax.swing.table.TableCellRenderer','headerValue','java.lang.Object','cellRenderer','javax.swing.table.TableCellRenderer','cellEditor','javax.swing.table.TableCellEditor','changeSupport','javax.swing.event.SwingPropertyChangeSupport']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [0]);
@@ -37,7 +21,7 @@ C$.c$$I$I$javax_swing_table_TableCellRenderer$javax_swing_table_TableCellEditor.
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$javax_swing_table_TableCellRenderer$javax_swing_table_TableCellEditor', function (modelIndex, width, cellRenderer, cellEditor) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.modelIndex=modelIndex;
 this.preferredWidth=this.width=Math.max(width, 0);
 this.cellRenderer=cellRenderer;
@@ -61,7 +45,7 @@ p$1.firePropertyChange$S$O$O.apply(this, [propertyName,  new Integer(oldValue), 
 
 Clazz.newMeth(C$, 'firePropertyChange$S$Z$Z', function (propertyName, oldValue, newValue) {
 if (oldValue != newValue ) {
-p$1.firePropertyChange$S$O$O.apply(this, [propertyName, $I$(1).valueOf$Z(oldValue), $I$(1).valueOf$Z(newValue)]);
+p$1.firePropertyChange$S$O$O.apply(this, [propertyName, Boolean.valueOf$Z(oldValue), Boolean.valueOf$Z(newValue)]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'setModelIndex$I', function (modelIndex) {
@@ -185,7 +169,7 @@ return this.isResizable;
 Clazz.newMeth(C$, 'sizeWidthToFit$', function () {
 if (this.headerRenderer == null ) {
 return;
-}var c=this.headerRenderer.getTableCellRendererComponent$(null, this.getHeaderValue$(), false, false, 0, 0);
+}var c=this.headerRenderer.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(null, this.getHeaderValue$(), false, false, 0, 0);
 this.setMinWidth$I(c.getMinimumSize$().width);
 this.setMaxWidth$I(c.getMaximumSize$().width);
 this.setPreferredWidth$I(c.getPreferredSize$().width);
@@ -202,7 +186,7 @@ this.resizedPostingDisableCount--;
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.changeSupport == null ) {
-this.changeSupport=Clazz.new_($I$(2).c$$O,[this]);
+this.changeSupport=Clazz.new_($I$(1,1).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 });
 
@@ -213,21 +197,20 @@ this.changeSupport.removePropertyChangeListener$java_beans_PropertyChangeListene
 
 Clazz.newMeth(C$, 'getPropertyChangeListeners$', function () {
 if (this.changeSupport == null ) {
-return Clazz.array($I$(3), [0]);
+return Clazz.array($I$(2), [0]);
 }return this.changeSupport.getPropertyChangeListeners$();
 });
 
 Clazz.newMeth(C$, 'createDefaultHeaderRenderer$', function () {
 var label=((P$.TableColumn$1||
-(function(){var C$=Clazz.newClass(P$, "TableColumn$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.table.DefaultTableCellRenderer'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "TableColumn$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.table.DefaultTableCellRenderer'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I','getTableCellRendererComponent$'], function (table, value, isSelected, hasFocus, row, column) {
+Clazz.newMeth(C$, 'getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I', function (table, value, isSelected, hasFocus, row, column) {
 if (table != null ) {
 var header=table.getTableHeader$();
 if (header != null ) {
@@ -235,14 +218,14 @@ this.setForeground$java_awt_Color(header.getForeground$());
 this.setBackground$java_awt_Color(header.getBackground$());
 this.setFont$java_awt_Font(header.getFont$());
 }}this.setText$S((value == null ) ? "" : value.toString());
-this.setBorder$javax_swing_border_Border($I$(4).getBorder$O("TableHeader.cellBorder"));
+this.setBorder$javax_swing_border_Border($I$(3).getBorder$O("TableHeader.cellBorder"));
 return this;
 });
 })()
-), Clazz.new_($I$(5), [this, null],P$.TableColumn$1));
+), Clazz.new_($I$(4,1),[this, null],P$.TableColumn$1));
 label.setHorizontalAlignment$I(0);
 label.setOpaque$Z(false);
 return label;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

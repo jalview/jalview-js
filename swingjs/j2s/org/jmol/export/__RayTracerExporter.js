@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),I$=[];
-var C$=Clazz.newClass(P$, "__RayTracerExporter", null, 'org.jmol.export.___Exporter');
+(function(){var P$=Clazz.newPackage("org.jmol.export"),I$=[[0,'org.jmol.export.___Exporter']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "__RayTracerExporter", null, 'org.jmol.export.___Exporter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isSlabEnabled=false;
-this.minScreenDimension=0;
-this.wasPerspective=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isSlabEnabled','wasPerspective'],'I',['minScreenDimension']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.exportType=2;
 this.lineWidthMad=($s$[0] = 2, $s$[0]);
 }, 1);
@@ -35,7 +29,7 @@ return C$.superclazz.prototype.finalizeOutput2$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'outputVertex$javajs_util_T3$javajs_util_T3', function (pt, offset) {
-P$.___Exporter.setTempVertex$javajs_util_T3$javajs_util_T3$javajs_util_T3(pt, offset, this.tempP1);
+$I$(1).setTempVertex$javajs_util_T3$javajs_util_T3$javajs_util_T3(pt, offset, this.tempP1);
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(this.tempP1, this.tempP1);
 this.output$javajs_util_T3(this.tempP1);
 });
@@ -84,12 +78,12 @@ this.outputCone$javajs_util_P3$javajs_util_P3$F$H$Z(screenBase, screenTip, scree
 
 Clazz.newMeth(C$, 'drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I', function (screenA, screenB, colix1, colix2, endcaps, madBond, bondOrder) {
 if (colix1 == colix2) {
-this.fillConicalCylinder$javajs_util_P3$javajs_util_P3$I$H$B(screenA, screenB, madBond, colix1, ($b$[0] = endcaps, $b$[0]));
+this.fillConicalCylinder$javajs_util_P3$javajs_util_P3$I$H$B(screenA, screenB, madBond, colix1, endcaps);
 } else {
 this.tempV2.ave$javajs_util_T3$javajs_util_T3(screenB, screenA);
 this.tempP1.setT$javajs_util_T3(this.tempV2);
-this.fillConicalCylinder$javajs_util_P3$javajs_util_P3$I$H$B(screenA, this.tempP1, madBond, colix1, ($b$[0] = endcaps, $b$[0]));
-this.fillConicalCylinder$javajs_util_P3$javajs_util_P3$I$H$B(this.tempP1, screenB, madBond, colix2, ($b$[0] = endcaps, $b$[0]));
+this.fillConicalCylinder$javajs_util_P3$javajs_util_P3$I$H$B(screenA, this.tempP1, madBond, colix1, endcaps);
+this.fillConicalCylinder$javajs_util_P3$javajs_util_P3$I$H$B(this.tempP1, screenB, madBond, colix2, endcaps);
 }if (endcaps != 3) return;
 var radius=this.vwr.tm.scaleToScreen$I$I((screenA.z|0), madBond) / 2.0;
 if (radius <= 1 ) return;
@@ -126,7 +120,7 @@ this.outputSphere$F$F$F$F$H(screenB.x, screenB.y, screenB.z, radius, colix);
 });
 
 Clazz.newMeth(C$, 'fillCylinderScreen$H$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F', function (colix, endcaps, screenDiameter, screenA, screenB, ptA, ptB, radius) {
-this.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(colix, ($b$[0] = endcaps, $b$[0]), screenDiameter, screenA, screenB);
+this.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(colix, endcaps, screenDiameter, screenA, screenB);
 });
 
 Clazz.newMeth(C$, 'fillSphere$H$I$javajs_util_P3', function (colix, diameter, pt) {
@@ -144,6 +138,5 @@ if (radius < 1 ) radius=1;
 this.outputEllipsoid$javajs_util_P3$F$DA$H(center, radius, coef, colix);
 });
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

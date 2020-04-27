@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("gov.nist.jama"),I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SingularValueDecomposition", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("gov.nist.jama"),I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SingularValueDecomposition", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.U=null;
-this.V=null;
-this.s=null;
-this.m=0;
-this.n=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['m','n'],'O',['U','double[][]','+V','s','double[]']]]
 
 Clazz.newMeth(C$, 'c$$gov_nist_jama_Matrix', function (Arg) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var A=Arg.getArrayCopy$();
 this.m=Arg.getRowDimension$();
 this.n=Arg.getColumnDimension$();
@@ -314,11 +306,11 @@ p--;
 }, 1);
 
 Clazz.newMeth(C$, 'getU$', function () {
-return Clazz.new_($I$(2).c$$DAA$I$I,[this.U, this.m, Math.min(this.m + 1, this.n)]);
+return Clazz.new_([this.U, this.m, Math.min(this.m + 1, this.n)],$I$(2,1).c$$DAA$I$I);
 });
 
 Clazz.newMeth(C$, 'getV$', function () {
-return Clazz.new_($I$(2).c$$DAA$I$I,[this.V, this.n, this.n]);
+return Clazz.new_($I$(2,1).c$$DAA$I$I,[this.V, this.n, this.n]);
 });
 
 Clazz.newMeth(C$, 'getSingularValues$', function () {
@@ -326,7 +318,7 @@ return this.s;
 });
 
 Clazz.newMeth(C$, 'getS$', function () {
-var X=Clazz.new_($I$(2).c$$I$I,[this.n, this.n]);
+var X=Clazz.new_($I$(2,1).c$$I$I,[this.n, this.n]);
 var S=X.getArray$();
 for (var i=0; i < this.n; i++) {
 for (var j=0; j < this.n; j++) {
@@ -358,4 +350,4 @@ return r;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

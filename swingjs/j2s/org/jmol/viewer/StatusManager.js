@@ -1,49 +1,25 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','javajs.util.PT','org.jmol.util.Logger','org.jmol.c.CBK','Boolean','org.jmol.script.SV','org.jmol.api.Interface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StatusManager");
-C$.MAXIMUM_QUEUE_LENGTH=0;
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','javajs.util.PT','org.jmol.util.Logger','org.jmol.c.CBK','Boolean','org.jmol.script.SV','org.jmol.api.Interface']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "StatusManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.MAXIMUM_QUEUE_LENGTH=16;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.jsl=null;
-this.cbl=null;
-this.statusList=null;
-this.allowStatusReporting=false;
-this.messageQueue=null;
-this.statusPtr=0;
-this.jmolScriptCallbacks=null;
-this.imageMap=null;
-this.minSyncRepeatMs=0;
-this.syncingScripts=false;
-this.syncingMouse=false;
-this.drivingSync=false;
-this.isSynced=false;
-this.syncDisabled=false;
-this.stereoSync=false;
-this.qualityJPG=0;
-this.qualityPNG=0;
-this.imageType=null;
-this.audios=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.statusList="";
-this.messageQueue=Clazz.new_($I$(1));
+this.messageQueue=Clazz.new_($I$(1,1));
 this.statusPtr=0;
-this.jmolScriptCallbacks=Clazz.new_($I$(1));
+this.jmolScriptCallbacks=Clazz.new_($I$(1,1));
 this.minSyncRepeatMs=100;
 this.syncingScripts=false;
 this.syncingMouse=false;
 this.qualityJPG=-1;
 this.qualityPNG=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['allowStatusReporting','syncingScripts','syncingMouse','drivingSync','isSynced','syncDisabled','stereoSync'],'I',['statusPtr','minSyncRepeatMs','qualityJPG','qualityPNG'],'S',['statusList','imageType'],'O',['vwr','org.jmol.viewer.Viewer','jsl','org.jmol.api.JmolStatusListener','cbl','org.jmol.api.JmolCallbackListener','messageQueue','java.util.Map','+jmolScriptCallbacks','+imageMap','+audios']]
+,['I',['MAXIMUM_QUEUE_LENGTH']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer', function (vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 }, 1);
 
@@ -53,15 +29,15 @@ return (this.allowStatusReporting && this.statusList.length$() > 0  && (this.sta
 
 Clazz.newMeth(C$, 'setStatusChanged$S$I$O$Z', function (statusName, intInfo, statusInfo, isReplace) {
 if (!p$1.recordStatus$S.apply(this, [statusName])) return;
-var msgRecord=Clazz.new_($I$(2));
-msgRecord.addLast$TV(Integer.valueOf$I(++this.statusPtr));
-msgRecord.addLast$TV(statusName);
-msgRecord.addLast$TV(Integer.valueOf$I(intInfo));
-msgRecord.addLast$TV(statusInfo);
+var msgRecord=Clazz.new_($I$(2,1));
+msgRecord.addLast$O(Integer.valueOf$I(++this.statusPtr));
+msgRecord.addLast$O(statusName);
+msgRecord.addLast$O(Integer.valueOf$I(intInfo));
+msgRecord.addLast$O(statusInfo);
 var statusRecordSet=(isReplace ? null : this.messageQueue.get$O(statusName));
-if (statusRecordSet == null ) this.messageQueue.put$TK$TV(statusName, statusRecordSet=Clazz.new_($I$(2)));
+if (statusRecordSet == null ) this.messageQueue.put$O$O(statusName, statusRecordSet=Clazz.new_($I$(2,1)));
  else if (statusRecordSet.size$() == C$.MAXIMUM_QUEUE_LENGTH) statusRecordSet.removeItemAt$I(0);
-statusRecordSet.addLast$TV(msgRecord);
+statusRecordSet.addLast$O(msgRecord);
 }, p$1);
 
 Clazz.newMeth(C$, 'getStatusChanged$S', function (newStatusList) {
@@ -69,7 +45,7 @@ var isRemove=(newStatusList.length$() > 0 && newStatusList.charAt$I(0) == "-" );
 var isAdd=(newStatusList.length$() > 0 && newStatusList.charAt$I(0) == "+" );
 var getList=false;
 if (isRemove) {
-this.statusList=$I$(3).rep$S$S$S(this.statusList, newStatusList.substring$I$I(1, newStatusList.length$()), "");
+this.statusList=(function(a,f){return f.apply(null,a)})([this.statusList, newStatusList.substring$I$I(1, newStatusList.length$()), ""],$I$(3).rep$S$S$S);
 } else {
 newStatusList=$I$(3).rep$S$S$S(newStatusList, "+", "");
 if (this.statusList.equals$O(newStatusList) || isAdd && this.statusList.indexOf$S(newStatusList) >= 0  ) {
@@ -77,9 +53,9 @@ getList=true;
 } else {
 if (!isAdd) this.statusList="";
 this.statusList += newStatusList;
-if ($I$(4).debugging) $I$(4).debug$S("StatusManager messageQueue = " + this.statusList);
-}}var list=Clazz.new_($I$(2));
-if (getList) for (var e, $e = this.messageQueue.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) list.addLast$TV(e.getValue$());
+if ($I$(4).debugging) (function(a,f){return f.apply(null,a)})(["StatusManager messageQueue = " + this.statusList],$I$(4).debug$S);
+}}var list=Clazz.new_($I$(2,1));
+if (getList) for (var e, $e = this.messageQueue.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) list.addLast$O(e.getValue$());
 
 this.messageQueue.clear$();
 this.statusPtr=0;
@@ -94,11 +70,11 @@ return s;
 
 Clazz.newMeth(C$, 'setCallbackFunction$S$S', function (callbackType, callbackFunction) {
 var callback=$I$(5).getCallback$S(callbackType);
-System.out.println$S("callback set for " + callbackType + " " + callbackFunction + " " + callback );
+System.out.println$S("StatusManager callback set for " + callbackType + " f=" + callbackFunction + " cb=" + callback );
 if (callback != null ) {
 var pt=(callbackFunction == null  ? 0 : callbackFunction.length$() > 7 && callbackFunction.toLowerCase$().indexOf$S("script:") == 0  ? 7 : callbackFunction.length$() > 11 && callbackFunction.toLowerCase$().indexOf$S("jmolscript:") == 0  ? 11 : 0);
 if (pt == 0) this.jmolScriptCallbacks.remove$O(callback);
- else this.jmolScriptCallbacks.put$TK$TV(callback, callbackFunction.substring$I(pt).trim$());
+ else this.jmolScriptCallbacks.put$O$O(callback, callbackFunction.substring$I(pt).trim$());
 }if (this.cbl != null ) this.cbl.setCallbackFunction$S$S(callbackType, callbackFunction);
 });
 
@@ -119,7 +95,7 @@ if (this.notifyEnabled$org_jmol_c_CBK($I$(5).ATOMMOVED)) this.cbl.notifyCallback
 
 Clazz.newMeth(C$, 'setStatusAtomPicked$I$S$java_util_Map', function (atomIndex, strInfo, map) {
 var sJmol=p$1.jmolScriptCallback$org_jmol_c_CBK.apply(this, [$I$(5).PICK]);
-$I$(4).info$S("setStatusAtomPicked(" + atomIndex + "," + strInfo + ")" );
+(function(a,f){return f.apply(null,a)})(["setStatusAtomPicked(" + atomIndex + "," + strInfo + ")" ],$I$(4).info$S);
 p$1.setStatusChanged$S$I$O$Z.apply(this, ["atomPicked", atomIndex, strInfo, false]);
 if (this.notifyEnabled$org_jmol_c_CBK($I$(5).PICK)) this.cbl.notifyCallback$org_jmol_c_CBK$OA($I$(5).PICK, Clazz.array(java.lang.Object, -1, [sJmol, strInfo, Integer.valueOf$I(atomIndex), map]));
 });
@@ -158,13 +134,13 @@ var sJmol=p$1.jmolScriptCallback$org_jmol_c_CBK.apply(this, [$I$(5).IMAGE]);
 if (this.notifyEnabled$org_jmol_c_CBK($I$(5).IMAGE)) this.cbl.notifyCallback$org_jmol_c_CBK$OA($I$(5).IMAGE, Clazz.array(java.lang.Object, -1, [sJmol, title, image]));
 if ($I$(6).TRUE.equals$O(image)) {
 if (this.imageMap == null ) return;
-var lst=Clazz.new_($I$(2));
-for (var key, $key = this.imageMap.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) lst.addLast$TV(key);
+var lst=Clazz.new_($I$(2,1));
+for (var key, $key = this.imageMap.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) lst.addLast$O(key);
 
 for (var i=lst.size$(); --i >= 0; ) this.imageMap.get$O(lst.get$I(i)).closeMe$();
 
 return;
-}if (this.imageMap == null ) this.imageMap=Clazz.new_($I$(1));
+}if (this.imageMap == null ) this.imageMap=Clazz.new_($I$(1,1));
 var d=this.imageMap.get$O(title);
 if ($I$(6).FALSE.equals$O(image)) {
 if (d != null ) d.closeMe$();
@@ -218,7 +194,7 @@ Clazz.newMeth(C$, 'setStatusMeasuring$S$I$S$F', function (status, intInfo, strMe
 p$1.setStatusChanged$S$I$O$Z.apply(this, [status, intInfo, strMeasure, false]);
 var sJmol=null;
 if (status.equals$O("measureCompleted")) {
-$I$(4).info$S("measurement[" + intInfo + "] = " + strMeasure );
+(function(a,f){return f.apply(null,a)})(["measurement[" + intInfo + "] = " + strMeasure ],$I$(4).info$S);
 sJmol=p$1.jmolScriptCallback$org_jmol_c_CBK.apply(this, [$I$(5).MEASURE]);
 } else if (status.equals$O("measurePicked")) {
 p$1.setStatusChanged$S$I$O$Z.apply(this, ["measurePicked", intInfo, strMeasure, false]);
@@ -249,7 +225,7 @@ if (p$1.recordStatus$S.apply(this, ["script"])) {
 var isError=(strErrorMessageUntranslated != null );
 p$1.setStatusChanged$S$I$O$Z.apply(this, [(isError ? "scriptError" : "scriptStatus"), 0, strStatus, false]);
 if (isError || isScriptCompletion ) p$1.setStatusChanged$S$I$O$Z.apply(this, ["scriptTerminated", 1, "Jmol script terminated" + (isError ? " unsuccessfully: " + strStatus : " successfully"), false]);
-}if (isScriptCompletion && this.vwr.getBoolean$I(603979880) && this.vwr.getBoolean$I(603979825)  ) strStatus=this.vwr.getChimeMessenger$().scriptCompleted$org_jmol_viewer_StatusManager$S$S(this, statusMessage, strErrorMessageUntranslated);
+}if (isScriptCompletion && this.vwr.getBoolean$I(603979879) && this.vwr.getBoolean$I(603979825)  ) strStatus=this.vwr.getChimeMessenger$().scriptCompleted$org_jmol_viewer_StatusManager$S$S(this, statusMessage, strErrorMessageUntranslated);
 var data=Clazz.array(java.lang.Object, -1, [sJmol, strStatus, statusMessage, Integer.valueOf$I(isScriptCompletion ? -1 : msWalltime), strErrorMessageUntranslated]);
 if (this.notifyEnabled$org_jmol_c_CBK($I$(5).SCRIPT)) this.cbl.notifyCallback$org_jmol_c_CBK$OA($I$(5).SCRIPT, data);
 this.processScript$OA(data);
@@ -257,18 +233,9 @@ this.processScript$OA(data);
 
 Clazz.newMeth(C$, 'processScript$OA', function (data) {
 var msWalltime=(data[3]).intValue$();
-if (this.vwr.scriptEditor != null ) {
-if (msWalltime > 0) {
-this.vwr.scriptEditor.notifyScriptTermination$();
-} else if (msWalltime < 0) {
-if (msWalltime == -2) this.vwr.scriptEditor.notifyScriptStart$();
-} else if (this.vwr.scriptEditor.isVisible$() && (data[2]).length$() > 0 ) {
-this.vwr.scriptEditor.notifyContext$org_jmol_script_ScriptContext$OA(this.vwr.getScriptContext$S("SE notify"), data);
-}}if (this.vwr.appConsole != null ) {
-if (msWalltime == 0) {
-var strInfo=(data[1] == null  ? null : data[1].toString());
-this.vwr.appConsole.sendConsoleMessage$S(strInfo);
-}}});
+this.vwr.notifyScriptEditor$I$OA(msWalltime, data);
+if (msWalltime == 0) this.vwr.sendConsoleMessage$S(data[1] == null  ? null : data[1].toString());
+});
 
 Clazz.newMeth(C$, 'doSync$', function () {
 return (this.isSynced && this.drivingSync && !this.syncDisabled  );
@@ -310,7 +277,7 @@ this.drivingSync=false;
 this.isSynced=false;
 }
 if ($I$(4).debugging) {
-$I$(4).debug$S(this.vwr.appletName + " sync mode=" + syncMode + "; synced? " + this.isSynced + "; driving? " + this.drivingSync + "; disabled? " + this.syncDisabled );
+(function(a,f){return f.apply(null,a)})([this.vwr.appletName + " sync mode=" + syncMode + "; synced? " + this.isSynced + "; driving? " + this.drivingSync + "; disabled? " + this.syncDisabled ],$I$(4).debug$S);
 }});
 
 Clazz.newMeth(C$, 'syncSend$S$O$I', function (script, appletNameOrProp, port) {
@@ -330,8 +297,8 @@ Clazz.newMeth(C$, 'processService$java_util_Map', function (info) {
 var s=info.get$O("service");
 if (s == null ) return null;
 if (Clazz.instanceOf(s, "org.jmol.script.SV")) {
-var m=Clazz.new_($I$(1));
-for (var e, $e = info.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) m.put$TK$TV(e.getKey$(), $I$(7).oValue$O(e.getValue$()));
+var m=Clazz.new_($I$(1,1));
+for (var e, $e = info.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) m.put$O$O(e.getKey$(), (function(a,f){return f.apply(null,a)})([e.getValue$()],$I$(7).oValue$O));
 
 info=m;
 }if (this.notifyEnabled$org_jmol_c_CBK($I$(5).SERVICE)) this.cbl.notifyCallback$org_jmol_c_CBK$OA($I$(5).SERVICE, Clazz.array(java.lang.Object, -1, [null, info]));
@@ -347,9 +314,8 @@ if (this.jsl != null ) this.jsl.showUrl$S(urlString);
 });
 
 Clazz.newMeth(C$, 'clearConsole$', function () {
-if (this.vwr.appConsole != null ) {
-this.vwr.appConsole.sendConsoleMessage$S(null);
-}if (this.jsl != null ) this.cbl.notifyCallback$org_jmol_c_CBK$OA($I$(5).MESSAGE, null);
+this.vwr.sendConsoleMessage$S(null);
+if (this.jsl != null ) this.cbl.notifyCallback$org_jmol_c_CBK$OA($I$(5).MESSAGE, null);
 });
 
 Clazz.newMeth(C$, 'functionXY$S$I$I', function (functionName, nX, nY) {
@@ -384,9 +350,9 @@ this.qualityJPG=sd.getQuality$S("JPG");
 this.qualityPNG=sd.getQuality$S("PNG");
 var sType=sd.getType$();
 if (params != null ) {
-params.put$TK$TV("qualityJPG", Integer.valueOf$I(this.qualityJPG));
-params.put$TK$TV("qualityPNG", Integer.valueOf$I(this.qualityPNG));
-if (sType != null ) params.put$TK$TV("dialogImageType", sType);
+params.put$O$O("qualityJPG", Integer.valueOf$I(this.qualityJPG));
+params.put$O$O("qualityPNG", Integer.valueOf$I(this.qualityPNG));
+if (sType != null ) params.put$O$O("dialogImageType", sType);
 }if (sType != null ) this.imageType=sType;
 }return outputFileName;
 });
@@ -405,21 +371,21 @@ if (this.jsl != null ) this.jsl.resizeInnerPanel$S(data);
 
 Clazz.newMeth(C$, 'registerAudio$S$java_util_Map', function (id, htParams) {
 p$1.stopAudio$S.apply(this, [id]);
-if (this.audios == null ) this.audios=Clazz.new_($I$(1));
+if (this.audios == null ) this.audios=Clazz.new_($I$(1,1));
 if (htParams == null ) this.audios.remove$O(id);
- else this.audios.put$TK$TV(id, htParams.get$O("audioPlayer"));
+ else this.audios.put$O$O(id, htParams.get$O("audioPlayer"));
 });
 
 Clazz.newMeth(C$, 'stopAudio$S', function (id) {
 if (this.audios == null ) return;
 var player=this.audios.get$O(id);
-if (player != null ) player.action$("kill");
+if (player != null ) player.action$S("kill");
 }, p$1);
 
 Clazz.newMeth(C$, 'playAudio$java_util_Map', function (htParams) {
 if (!this.vwr.getBoolean$I(603979797)) {
 if (htParams == null ) return;
-htParams.put$TK$TV("status", "close");
+htParams.put$O$O("status", "close");
 $I$(4).info$S("allowAudio is set false");
 this.notifyAudioStatus$java_util_Map(htParams);
 return;
@@ -432,18 +398,18 @@ if (this.audios == null  || this.audios.isEmpty$() ) return;
 if (action.equals$O("close")) {
 for (var key, $key = this.audios.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) {
 var player=this.audios.remove$O(key);
-player.action$("close");
+player.action$S("close");
 }
 }return;
 }var player=this.audios.get$O(id);
 if (player != null ) {
-player.action$(action);
+player.action$S(action);
 return;
 }}try {
 ($I$(8).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.util.JmolAudio", this.vwr, "script")).playAudio$org_jmol_viewer_Viewer$java_util_Map(this.vwr, htParams);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(4).info$S(e.getMessage$());
+(function(a,f){return f.apply(null,a)})([e.getMessage$()],$I$(4).info$S);
 } else {
 throw e;
 }
@@ -462,6 +428,10 @@ var sJmol=p$1.jmolScriptCallback$org_jmol_c_CBK.apply(this, [$I$(5).AUDIO]);
 if (this.notifyEnabled$org_jmol_c_CBK($I$(5).AUDIO)) this.cbl.notifyCallback$org_jmol_c_CBK$OA($I$(5).AUDIO, Clazz.array(java.lang.Object, -1, [sJmol, htParams]));
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.MAXIMUM_QUEUE_LENGTH=16;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

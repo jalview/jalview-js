@@ -1,30 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.util.stream"),p$1={},I$=[[0,'java.util.stream.StreamOpFlag','java.util.stream.Streams','java.util.Objects']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractPipeline", null, 'java.util.stream.PipelineHelper', 'java.util.stream.BaseStream');
+(function(){var P$=Clazz.newPackage("java.util.stream"),p$1={},I$=[[0,'java.util.stream.StreamOpFlag','java.util.stream.Streams','java.util.Objects']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractPipeline", null, 'java.util.stream.PipelineHelper', 'java.util.stream.BaseStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sourceStage=null;
-this.previousStage=null;
-this.sourceOrOpFlags=0;
-this.nextStage=null;
-this.depth=0;
-this.combinedFlags=0;
-this.sourceSpliterator=null;
-this.sourceSupplier=null;
-this.linkedOrConsumed=false;
-this.sourceAnyStateful=false;
-this.sourceCloseAction=null;
-this.parallel=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['linkedOrConsumed','sourceAnyStateful','parallel'],'I',['sourceOrOpFlags','depth','combinedFlags'],'O',['sourceStage','java.util.stream.AbstractPipeline','+previousStage','+nextStage','sourceSpliterator','java.util.Spliterator','sourceSupplier','java.util.function.Supplier','sourceCloseAction','Runnable']]]
 
 Clazz.newMeth(C$, 'c$$java_util_function_Supplier$I$Z', function (source, sourceFlags, parallel) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.previousStage=null;
 this.sourceSupplier=source;
 this.sourceStage=this;
@@ -35,7 +20,7 @@ this.parallel=parallel;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Spliterator$I$Z', function (source, sourceFlags, parallel) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.previousStage=null;
 this.sourceSpliterator=source;
 this.sourceStage=this;
@@ -46,7 +31,7 @@ this.parallel=parallel;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_stream_AbstractPipeline$I', function (previousStage, opFlags) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (previousStage.linkedOrConsumed) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["stream has already been operated upon or closed"]);
 previousStage.linkedOrConsumed=true;
 previousStage.nextStage=this;
@@ -58,11 +43,11 @@ if (this.opIsStateful$()) this.sourceStage.sourceAnyStateful=true;
 this.depth=previousStage.depth + 1;
 }, 1);
 
-Clazz.newMeth(C$, ['evaluate$java_util_stream_TerminalOp'], function (terminalOp) {
+Clazz.newMeth(C$, 'evaluate$java_util_stream_TerminalOp', function (terminalOp) {
 Clazz.assert(C$, this, function(){return this.getOutputShape$() === terminalOp.inputShape$() });
 if (this.linkedOrConsumed) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["stream has already been operated upon or closed"]);
 this.linkedOrConsumed=true;
-return this.isParallel$() ? terminalOp.evaluateParallel$java_util_stream_PipelineHelper$java_util_Spliterator(this, p$1.sourceSpliterator$I.apply(this, [terminalOp.getOpFlags$()])) : terminalOp.evaluateSequential$(this, p$1.sourceSpliterator$I.apply(this, [terminalOp.getOpFlags$()]));
+return this.isParallel$() ? terminalOp.evaluateParallel$java_util_stream_PipelineHelper$java_util_Spliterator(this, p$1.sourceSpliterator$I.apply(this, [terminalOp.getOpFlags$()])) : terminalOp.evaluateSequential$java_util_stream_PipelineHelper$java_util_Spliterator(this, p$1.sourceSpliterator$I.apply(this, [terminalOp.getOpFlags$()]));
 });
 
 Clazz.newMeth(C$, 'evaluateToArrayNode$java_util_function_IntFunction', function (generator) {
@@ -131,18 +116,17 @@ return this.lazySpliterator$java_util_function_Supplier(s);
 } else {
 throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["source already consumed or closed"]);
 }} else {
-return this.wrap$java_util_stream_PipelineHelper$java_util_function_Supplier$Z(this, ((P$.AbstractPipeline$lambda1||
-(function(){var C$=Clazz.newClass(P$, "AbstractPipeline$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Supplier', 1);
+return this.wrap$java_util_stream_PipelineHelper$java_util_function_Supplier$Z(this, (P$.AbstractPipeline$lambda1$||(P$.AbstractPipeline$lambda1$=(((P$.AbstractPipeline$lambda1||
+(function(){/*m*/var C$=Clazz.newClass(P$, "AbstractPipeline$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Supplier', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
 Clazz.newMeth(C$, 'get$', function () { return (p$1.sourceSpliterator$I.apply(this.b$['java.util.stream.AbstractPipeline'], [0]));});
 })()
-), Clazz.new_(P$.AbstractPipeline$lambda1.$init$, [this, null])), this.isParallel$());
+), Clazz.new_(P$.AbstractPipeline$lambda1.$init$,[this, null]))))), this.isParallel$());
 }});
 
 Clazz.newMeth(C$, 'isParallel$', function () {
@@ -209,13 +193,13 @@ Clazz.newMeth(C$, 'exactOutputSizeIfKnown$java_util_Spliterator', function (spli
 return $I$(1).SIZED.isKnown$I(this.getStreamAndOpFlags$()) ? spliterator.getExactSizeIfKnown$() : -1;
 });
 
-Clazz.newMeth(C$, ['wrapAndCopyInto$TS$java_util_Spliterator'], function (sink, spliterator) {
-this.copyInto$java_util_stream_Sink$java_util_Spliterator(this.wrapSink$java_util_stream_Sink($I$(3).requireNonNull$TT(sink)), spliterator);
+Clazz.newMeth(C$, 'wrapAndCopyInto$java_util_stream_Sink$java_util_Spliterator', function (sink, spliterator) {
+this.copyInto$java_util_stream_Sink$java_util_Spliterator(this.wrapSink$java_util_stream_Sink($I$(3).requireNonNull$O(sink)), spliterator);
 return sink;
 });
 
 Clazz.newMeth(C$, 'copyInto$java_util_stream_Sink$java_util_Spliterator', function (wrappedSink, spliterator) {
-$I$(3).requireNonNull$TT(wrappedSink);
+$I$(3).requireNonNull$O(wrappedSink);
 if (!$I$(1).SHORT_CIRCUIT.isKnown$I(this.getStreamAndOpFlags$())) {
 wrappedSink.begin$J(spliterator.getExactSizeIfKnown$());
 spliterator.forEachRemaining$java_util_function_Consumer(wrappedSink);
@@ -243,7 +227,7 @@ return $I$(1).ORDERED.isKnown$I(this.combinedFlags);
 });
 
 Clazz.newMeth(C$, 'wrapSink$java_util_stream_Sink', function (sink) {
-$I$(3).requireNonNull$TT(sink);
+$I$(3).requireNonNull$O(sink);
 for (var p=this; p.depth > 0; p=p.previousStage) {
 sink=p.opWrapSink$I$java_util_stream_Sink(p.previousStage.combinedFlags, sink);
 }
@@ -255,17 +239,16 @@ if (this.depth == 0) {
 return sourceSpliterator;
 } else {
 return this.wrap$java_util_stream_PipelineHelper$java_util_function_Supplier$Z(this, ((P$.AbstractPipeline$lambda2||
-(function(){var C$=Clazz.newClass(P$, "AbstractPipeline$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Supplier', 1);
+(function(){/*m*/var C$=Clazz.newClass(P$, "AbstractPipeline$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Supplier', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
 Clazz.newMeth(C$, 'get$', function () { return (this.$finals$.sourceSpliterator);});
 })()
-), Clazz.new_(P$.AbstractPipeline$lambda2.$init$, [this, {sourceSpliterator: sourceSpliterator}])), this.isParallel$());
+), Clazz.new_(P$.AbstractPipeline$lambda2.$init$,[this, {sourceSpliterator:sourceSpliterator}])), this.isParallel$());
 }});
 
 Clazz.newMeth(C$, 'evaluate$java_util_Spliterator$Z$java_util_function_IntFunction', function (spliterator, flatten, generator) {
@@ -273,7 +256,7 @@ if (this.isParallel$()) {
 return this.evaluateToNode$java_util_stream_PipelineHelper$java_util_Spliterator$Z$java_util_function_IntFunction(this, spliterator, flatten, generator);
 } else {
 var nb=this.makeNodeBuilder$J$java_util_function_IntFunction(this.exactOutputSizeIfKnown$java_util_Spliterator(spliterator), generator);
-return this.wrapAndCopyInto$TS$java_util_Spliterator(nb, spliterator).build$();
+return this.wrapAndCopyInto$java_util_stream_Sink$java_util_Spliterator(nb, spliterator).build$();
 }});
 
 Clazz.newMeth(C$, 'opEvaluateParallel$java_util_stream_PipelineHelper$java_util_Spliterator$java_util_function_IntFunction', function (helper, spliterator, generator) {
@@ -281,21 +264,23 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["Parallel eva
 });
 
 Clazz.newMeth(C$, 'opEvaluateParallelLazy$java_util_stream_PipelineHelper$java_util_Spliterator', function (helper, spliterator) {
-return this.opEvaluateParallel$java_util_stream_PipelineHelper$java_util_Spliterator$java_util_function_IntFunction(helper, spliterator, ((P$.AbstractPipeline$lambda3||
-(function(){var C$=Clazz.newClass(P$, "AbstractPipeline$lambda3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.IntFunction', 1);
+return this.opEvaluateParallel$java_util_stream_PipelineHelper$java_util_Spliterator$java_util_function_IntFunction(helper, spliterator, (P$.AbstractPipeline$lambda3$||(P$.AbstractPipeline$lambda3$=(((P$.AbstractPipeline$lambda3||
+(function(){/*m*/var C$=Clazz.newClass(P$, "AbstractPipeline$lambda3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.IntFunction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, 'apply$', function (i) { return (Clazz.array(java.lang.Object, [i]));});
+Clazz.newMeth(C$, ['apply$I','apply$O'], function (i) { return (Clazz.array(java.lang.Object, [i]));});
 })()
-), Clazz.new_(P$.AbstractPipeline$lambda3.$init$, [this, null]))).spliterator$();
+), Clazz.new_(P$.AbstractPipeline$lambda3.$init$,[this, null])))))).spliterator$();
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:46 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

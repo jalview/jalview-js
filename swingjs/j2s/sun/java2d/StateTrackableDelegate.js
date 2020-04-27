@@ -1,22 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.java2d"),I$=[[0,['sun.java2d.StateTrackable','.State'],'InternalError','sun.java2d.StateTracker']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StateTrackableDelegate", null, null, 'sun.java2d.StateTrackable');
-C$.UNTRACKABLE_DELEGATE=null;
-C$.IMMUTABLE_DELEGATE=null;
+(function(){var P$=Clazz.newPackage("sun.java2d"),I$=[[0,['sun.java2d.StateTrackable','.State'],'InternalError','sun.java2d.StateTracker']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StateTrackableDelegate", null, null, 'sun.java2d.StateTrackable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.UNTRACKABLE_DELEGATE=Clazz.new_(C$.c$$sun_java2d_StateTrackable_State,[$I$(1).UNTRACKABLE]);
-C$.IMMUTABLE_DELEGATE=Clazz.new_(C$.c$$sun_java2d_StateTrackable_State,[$I$(1).IMMUTABLE]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.theState=null;
-this.theTracker=null;
-this.numDynamicAgents=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['numDynamicAgents'],'O',['theState','sun.java2d.StateTrackable.State','theTracker','sun.java2d.StateTracker']]
+,['O',['UNTRACKABLE_DELEGATE','sun.java2d.StateTrackableDelegate','+IMMUTABLE_DELEGATE']]]
 
 Clazz.newMeth(C$, 'createInstance$sun_java2d_StateTrackable_State', function (state) {
 switch (state) {
@@ -29,12 +20,12 @@ return Clazz.new_(C$.c$$sun_java2d_StateTrackable_State,[$I$(1).DYNAMIC]);
 case $I$(1).IMMUTABLE:
 return C$.IMMUTABLE_DELEGATE;
 default:
-throw Clazz.new_($I$(2).c$$S,["unknown state"]);
+throw Clazz.new_($I$(2,1).c$$S,["unknown state"]);
 }
 }, 1);
 
 Clazz.newMeth(C$, 'c$$sun_java2d_StateTrackable_State', function (state) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.theState=state;
 }, 1);
 
@@ -51,19 +42,18 @@ st=$I$(3).ALWAYS_CURRENT;
 break;
 case $I$(1).STABLE:
 st=((P$.StateTrackableDelegate$1||
-(function(){var C$=Clazz.newClass(P$, "StateTrackableDelegate$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'sun.java2d.StateTracker', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "StateTrackableDelegate$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'sun.java2d.StateTracker', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isCurrent$', function () {
 return (this.b$['sun.java2d.StateTrackableDelegate'].theTracker === this );
 });
 })()
-), Clazz.new_(P$.StateTrackableDelegate$1.$init$, [this, null]));
+), Clazz.new_(P$.StateTrackableDelegate$1.$init$,[this, null]));
 break;
 case $I$(1).DYNAMIC:
 case $I$(1).UNTRACKABLE:
@@ -107,6 +97,11 @@ Clazz.newMeth(C$, 'markDirty$', function () {
 this.theTracker=null;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.UNTRACKABLE_DELEGATE=Clazz.new_(C$.c$$sun_java2d_StateTrackable_State,[$I$(1).UNTRACKABLE]);
+C$.IMMUTABLE_DELEGATE=Clazz.new_(C$.c$$sun_java2d_StateTrackable_State,[$I$(1).IMMUTABLE]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

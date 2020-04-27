@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),p$1={},I$=[[0,'javax.xml.bind.helpers.DefaultValidationEventHandler','javax.xml.parsers.SAXParserFactory','javax.xml.bind.helpers.Messages','org.xml.sax.InputSource','java.io.BufferedInputStream','java.io.FileInputStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractUnmarshallerImpl", null, null, 'javax.xml.bind.Unmarshaller');
+(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),p$1={},I$=[[0,'javax.xml.bind.helpers.DefaultValidationEventHandler','javax.xml.parsers.SAXParserFactory','javax.xml.bind.helpers.Messages','org.xml.sax.InputSource','java.io.BufferedInputStream','java.io.FileInputStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractUnmarshallerImpl", null, null, 'javax.xml.bind.Unmarshaller');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.eventHandler=null;
-this.validating=false;
-this.reader=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.eventHandler=Clazz.new_($I$(1));
+this.eventHandler=Clazz.new_($I$(1,1));
 this.validating=false;
 this.reader=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['validating'],'O',['eventHandler','javax.xml.bind.ValidationEventHandler','reader','org.xml.sax.XMLReader']]]
 
 Clazz.newMeth(C$, 'getXMLReader$', function () {
 if (this.reader == null ) {
@@ -65,7 +59,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(3).format$S$O(
 });
 
 Clazz.newMeth(C$, 'unmarshal$S', function (url) {
-return this.unmarshal$org_xml_sax_InputSource(Clazz.new_($I$(4).c$$S,[url]));
+return this.unmarshal$org_xml_sax_InputSource(Clazz.new_($I$(4,1).c$$S,[url]));
 }, p$1);
 
 Clazz.newMeth(C$, 'unmarshal$java_net_URL', function (url) {
@@ -78,7 +72,7 @@ Clazz.newMeth(C$, 'unmarshal$java_io_File', function (f) {
 if (f == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(3).format$S$O("Shared.MustNotBeNull", "file")]);
 }try {
-return this.unmarshal$java_io_InputStream(Clazz.new_($I$(5).c$$java_io_InputStream,[Clazz.new_($I$(6).c$$java_io_File,[f])]));
+return this.unmarshal$java_io_InputStream(Clazz.new_([Clazz.new_($I$(6,1).c$$java_io_File,[f])],$I$(5,1).c$$java_io_InputStream));
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.FileNotFoundException")){
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[e.getMessage$()]);
@@ -91,19 +85,19 @@ throw e;
 Clazz.newMeth(C$, 'unmarshal$java_io_InputStream', function (is) {
 if (is == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(3).format$S$O("Shared.MustNotBeNull", "is")]);
-}var isrc=Clazz.new_($I$(4).c$$java_io_InputStream,[is]);
+}var isrc=Clazz.new_($I$(4,1).c$$java_io_InputStream,[is]);
 return this.unmarshal$org_xml_sax_InputSource(isrc);
 });
 
 Clazz.newMeth(C$, 'unmarshal$java_io_Reader', function (reader) {
 if (reader == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(3).format$S$O("Shared.MustNotBeNull", "reader")]);
-}var isrc=Clazz.new_($I$(4).c$$java_io_Reader,[reader]);
+}var isrc=Clazz.new_($I$(4,1).c$$java_io_Reader,[reader]);
 return this.unmarshal$org_xml_sax_InputSource(isrc);
 });
 
 Clazz.newMeth(C$, 'streamSourceToInputSource$javax_xml_transform_stream_StreamSource', function (ss) {
-var is=Clazz.new_($I$(4));
+var is=Clazz.new_($I$(4,1));
 is.setSystemId$S(ss.getSystemId$());
 is.setByteStream$java_io_InputStream(ss.getInputStream$());
 is.setCharacterStream$java_io_Reader(ss.getReader$());
@@ -116,7 +110,7 @@ return this.validating;
 
 Clazz.newMeth(C$, 'setEventHandler$javax_xml_bind_ValidationEventHandler', function (handler) {
 if (handler == null ) {
-this.eventHandler=Clazz.new_($I$(1));
+this.eventHandler=Clazz.new_($I$(1,1));
 } else {
 this.eventHandler=handler;
 }});
@@ -183,10 +177,10 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 
 Clazz.newMeth(C$, 'setAdapter$javax_xml_bind_annotation_adapters_XmlAdapter', function (adapter) {
 if (adapter == null ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-this.setAdapter$Class$TA(adapter.getClass$(), adapter);
+this.setAdapter$Class$javax_xml_bind_annotation_adapters_XmlAdapter(adapter.getClass$(), adapter);
 });
 
-Clazz.newMeth(C$, 'setAdapter$Class$TA', function (type, adapter) {
+Clazz.newMeth(C$, 'setAdapter$Class$javax_xml_bind_annotation_adapters_XmlAdapter', function (type, adapter) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -212,4 +206,4 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,20 +1,15 @@
 (function(){var P$=Clazz.newPackage("sun.awt.datatransfer"),I$=[];
-var C$=Clazz.newClass(P$, "TransferableProxy", null, null, 'java.awt.datatransfer.Transferable');
+/*c*/var C$=Clazz.newClass(P$, "TransferableProxy", null, null, 'java.awt.datatransfer.Transferable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.transferable=null;
-this.isLocal=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isLocal'],'O',['transferable','java.awt.datatransfer.Transferable']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_datatransfer_Transferable$Z', function (t, local) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.transferable=t;
 this.isLocal=local;
 }, 1);
@@ -34,4 +29,4 @@ return data;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

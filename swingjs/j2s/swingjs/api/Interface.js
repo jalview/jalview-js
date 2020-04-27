@@ -1,13 +1,13 @@
 (function(){var P$=Clazz.newPackage("swingjs.api"),I$=[];
-var C$=Clazz.newClass(P$, "Interface");
-C$.instances=null;
+/*c*/var C$=Clazz.newClass(P$, "Interface");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instances="";
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['S',['instances']]]
 
 Clazz.newMeth(C$, 'getInstanceWithParams$S$ClassA$OA', function (name, classes, params) {
 try {
@@ -25,7 +25,7 @@ throw e;
 Clazz.newMeth(C$, 'getInstance$S$Z', function (name, isQuiet) {
 var x=null;
 {
-Clazz._isQuiet = isQuiet;
+Clazz._isQuietLoad = isQuiet;
 }
 try {
 if (!isQuiet && C$.instances.indexOf$S(name + ";") <= 0 ) {
@@ -40,12 +40,16 @@ if (e.stack)System.out.println(e.stack);
 }
 } finally {
 {
-Clazz._isQuiet = false;
+Clazz._isQuietLoad = false;
 }
 }
 return x;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.instances="";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,29 +1,15 @@
-(function(){var P$=Clazz.newPackage("javajs.export"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','javajs.export.PDFObject','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDFCreator");
+(function(){var P$=Clazz.newPackage("javajs.export"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','javajs.export.PDFObject','javajs.util.SB']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDFCreator");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.os=null;
-this.indirectObjects=null;
-this.root=null;
-this.graphics=null;
-this.pt=0;
-this.xrefPt=0;
-this.count=0;
-this.height=0;
-this.width=0;
-this.fonts=null;
-this.images=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pt','xrefPt','count','height','width'],'O',['os','java.io.OutputStream','indirectObjects','javajs.util.Lst','root','javajs.export.PDFObject','+graphics','fonts','java.util.Map','+images']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setOutputStream$java_io_OutputStream', function (os) {
@@ -34,8 +20,8 @@ Clazz.newMeth(C$, 'newDocument$I$I$Z', function (paperWidth, paperHeight, isLand
 this.width=(isLandscape ? paperHeight : paperWidth);
 this.height=(isLandscape ? paperWidth : paperHeight);
 System.out.println$S("Creating PDF with width=" + this.width + " and height=" + this.height );
-this.fonts=Clazz.new_($I$(1));
-this.indirectObjects=Clazz.new_($I$(2));
+this.fonts=Clazz.new_($I$(1,1));
+this.indirectObjects=Clazz.new_($I$(2,1));
 this.root=p$1.newObject$S.apply(this, ["Catalog"]);
 var pages=p$1.newObject$S.apply(this, ["Pages"]);
 var page=p$1.newObject$S.apply(this, ["Page"]);
@@ -83,24 +69,24 @@ this.g$S(x + " " + y + " l" );
 });
 
 Clazz.newMeth(C$, 'newObject$S', function (type) {
-var o=Clazz.new_($I$(3).c$$I,[++this.count]);
+var o=Clazz.new_($I$(3,1).c$$I,[++this.count]);
 if (type != null ) o.addDef$S$O("Type", "/" + type);
-this.indirectObjects.addLast$TV(o);
+this.indirectObjects.addLast$O(o);
 return o;
 }, p$1);
 
 Clazz.newMeth(C$, 'addInfo$java_util_Map', function (data) {
-var info=Clazz.new_($I$(1));
+var info=Clazz.new_($I$(1,1));
 for (var e, $e = data.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var value="(" + e.getValue$().replace$C$C(")", "_").replace$C$C("(", "_") + ")" ;
-info.put$TK$TV(e.getKey$(), value);
+info.put$O$O(e.getKey$(), value);
 }
 this.root.addDef$S$O("Info", info);
 });
 
 Clazz.newMeth(C$, 'addFontResource$S', function (fname) {
 var f=p$1.newObject$S.apply(this, ["Font"]);
-this.fonts.put$TK$TV(fname, f);
+this.fonts.put$O$O(fname, f);
 f.addDef$S$O("BaseFont", fname);
 f.addDef$S$O("Encoding", "/WinAnsiEncoding");
 f.addDef$S$O("Subtype", "/Type1");
@@ -110,8 +96,8 @@ return f;
 
 Clazz.newMeth(C$, 'addImageResource$O$I$I$IA$Z', function (newImage, width, height, buffer, isRGB) {
 var imageObj=p$1.newObject$S.apply(this, ["XObject"]);
-if (this.images == null ) this.images=Clazz.new_($I$(1));
-this.images.put$TK$TV(newImage, imageObj);
+if (this.images == null ) this.images=Clazz.new_($I$(1,1));
+this.images.put$O$O(newImage, imageObj);
 imageObj.addDef$S$O("Subtype", "/Image");
 imageObj.addDef$S$O("Length", "?");
 imageObj.addDef$S$O("ColorSpace", isRGB ? "/DeviceRGB" : "/DeviceGray");
@@ -123,12 +109,12 @@ var n=buffer.length;
 var stream=Clazz.array(Byte.TYPE, [n * (isRGB ? 3 : 1)]);
 if (isRGB) {
 for (var i=0, pt=0; i < n; i++) {
-stream[pt++]=((((buffer[i] >> 16) & 255)|0)|0);
-stream[pt++]=((((buffer[i] >> 8) & 255)|0)|0);
-stream[pt++]=(((buffer[i] & 255)|0)|0);
+stream[pt++]=(((buffer[i] >> 16) & 255)|0);
+stream[pt++]=(((buffer[i] >> 8) & 255)|0);
+stream[pt++]=((buffer[i] & 255)|0);
 }
 } else {
-for (var i=0; i < n; i++) stream[i]=((buffer[i]|0)|0);
+for (var i=0; i < n; i++) stream[i]=(buffer[i]|0);
 
 }imageObj.setStream$BA(stream);
 this.graphics.addResource$S$S$S("XObject", imageObj.getID$(), imageObj.getRef$());
@@ -163,7 +149,7 @@ p$1.output$S.apply(this, ["\n"]);
 }, p$1);
 
 Clazz.newMeth(C$, 'writeTrailer', function () {
-var trailer=Clazz.new_($I$(3).c$$I,[-2]);
+var trailer=Clazz.new_($I$(3,1).c$$I,[-2]);
 p$1.output$S.apply(this, ["trailer"]);
 trailer.addDef$S$O("Size", "" + this.indirectObjects.size$());
 trailer.addDef$S$O("Root", this.root.getRef$());
@@ -192,7 +178,7 @@ this.pt+=o.output$java_io_OutputStream(this.os);
 Clazz.newMeth(C$, 'writeXRefTable', function () {
 this.xrefPt=this.pt;
 var nObj=this.indirectObjects.size$();
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 sb.append$S("xref\n0 " + (nObj + 1) + "\n0000000000 65535 f\r\n" );
 for (var i=0; i < nObj; i++) {
 var o=this.indirectObjects.get$I(i);
@@ -306,4 +292,4 @@ Clazz.newMeth(C$, 'translateScale$F$F$F', function (x, y, scale) {
 this.g$S(new Float(scale).toString() + " 0 0 " + new Float(scale).toString() + " " + new Float(x).toString() + " " + new Float(y).toString() + " cm" );
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

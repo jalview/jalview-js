@@ -1,26 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.beans"),p$1={},I$=[[0,'java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeatureDescriptor");
+(function(){var P$=Clazz.newPackage("java.beans"),p$1={},I$=[[0,'java.util.Hashtable']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeatureDescriptor");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.classRef=null;
-this.expert=false;
-this.hidden=false;
-this.preferred=false;
-this.shortDescription=null;
-this.name=null;
-this.displayName=null;
-this.table=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['expert','hidden','preferred'],'S',['shortDescription','name','displayName'],'O',['classRef','Class','table','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getName$', function () {
@@ -77,8 +66,8 @@ this.shortDescription=text;
 
 Clazz.newMeth(C$, 'setValue$S$O', function (attributeName, value) {
 if (this.table == null ) {
-this.table=Clazz.new_($I$(1));
-}this.table.put$TK$TV(attributeName, value);
+this.table=Clazz.new_($I$(1,1));
+}this.table.put$O$O(attributeName, value);
 });
 
 Clazz.newMeth(C$, 'getValue$S', function (attributeName) {
@@ -89,12 +78,12 @@ return null;
 
 Clazz.newMeth(C$, 'attributeNames$', function () {
 if (this.table == null ) {
-this.table=Clazz.new_($I$(1));
+this.table=Clazz.new_($I$(1,1));
 }return this.table.keys$();
 });
 
 Clazz.newMeth(C$, 'c$$java_beans_FeatureDescriptor$java_beans_FeatureDescriptor', function (x, y) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.expert=!!(x.expert | y.expert);
 this.hidden=!!(x.hidden | y.hidden);
 this.preferred=!!(x.preferred | y.preferred);
@@ -113,7 +102,7 @@ p$1.addTable$java_util_Hashtable.apply(this, [y.table]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_beans_FeatureDescriptor', function (old) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.expert=old.expert;
 this.hidden=old.hidden;
 this.preferred=old.preferred;
@@ -143,12 +132,12 @@ Clazz.newMeth(C$, 'getClass0$', function () {
 return (this.classRef != null ) ? this.classRef : null;
 });
 
-Clazz.newMeth(C$, 'getReturnType$Class$reflect_Method', function (base, method) {
+Clazz.newMeth(C$, 'getReturnType$Class$java_lang_reflect_Method', function (base, method) {
 return null;
 }, 1);
 
-Clazz.newMeth(C$, 'getParameterTypes$Class$reflect_Method', function (base, method) {
+Clazz.newMeth(C$, 'getParameterTypes$Class$java_lang_reflect_Method', function (base, method) {
 return Clazz.array(Class, [0]);
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

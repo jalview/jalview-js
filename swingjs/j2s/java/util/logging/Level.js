@@ -1,40 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.util.logging"),p$1={},I$=[[0,'java.util.HashMap','java.util.logging.Level','java.util.ArrayList',['java.util.logging.Level','.KnownLevel'],'java.util.ResourceBundle','java.util.Locale']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Level", function(){
+(function(){var P$=Clazz.newPackage("java.util.logging"),p$1={},I$=[[0,'java.util.HashMap','java.util.logging.Level','java.util.ArrayList',['java.util.logging.Level','.KnownLevel'],'java.util.ResourceBundle','java.util.Locale']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Level", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'java.io.Serializable');
-C$.OFF=null;
-C$.SEVERE=null;
-C$.WARNING=null;
-C$.INFO=null;
-C$.CONFIG=null;
-C$.FINE=null;
-C$.FINER=null;
-C$.FINEST=null;
-C$.ALL=null;
+C$.$classes$=[['KnownLevel',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.OFF=Clazz.new_(C$.c$$S$I$S,["OFF", 2147483647, "sun.util.logging.resources.logging"]);
-C$.SEVERE=Clazz.new_(C$.c$$S$I$S,["SEVERE", 1000, "sun.util.logging.resources.logging"]);
-C$.WARNING=Clazz.new_(C$.c$$S$I$S,["WARNING", 900, "sun.util.logging.resources.logging"]);
-C$.INFO=Clazz.new_(C$.c$$S$I$S,["INFO", 800, "sun.util.logging.resources.logging"]);
-C$.CONFIG=Clazz.new_(C$.c$$S$I$S,["CONFIG", 700, "sun.util.logging.resources.logging"]);
-C$.FINE=Clazz.new_(C$.c$$S$I$S,["FINE", 500, "sun.util.logging.resources.logging"]);
-C$.FINER=Clazz.new_(C$.c$$S$I$S,["FINER", 400, "sun.util.logging.resources.logging"]);
-C$.FINEST=Clazz.new_(C$.c$$S$I$S,["FINEST", 300, "sun.util.logging.resources.logging"]);
-C$.ALL=Clazz.new_(C$.c$$S$I$S,["ALL", -2147483648, "sun.util.logging.resources.logging"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.value=0;
-this.resourceBundleName=null;
-this.localizedLevelName=null;
-this.cachedLocale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['value'],'S',['name','resourceBundleName','localizedLevelName'],'O',['cachedLocale','java.util.Locale']]
+,['O',['OFF','java.util.logging.Level','+SEVERE','+WARNING','+INFO','+CONFIG','+FINE','+FINER','+FINEST','+ALL']]]
 
 Clazz.newMeth(C$, 'c$$S$I', function (name, value) {
 C$.c$$S$I$S.apply(this, [name, value, null]);
@@ -45,7 +21,7 @@ C$.c$$S$I$S$Z.apply(this, [name, value, resourceBundleName, true]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I$S$Z', function (name, value, resourceBundleName, visible) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (name == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.name=name;
@@ -194,48 +170,52 @@ throw ex;
 Clazz.newMeth(C$, 'hashCode$', function () {
 return this.value;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.OFF=Clazz.new_(C$.c$$S$I$S,["OFF", 2147483647, "sun.util.logging.resources.logging"]);
+C$.SEVERE=Clazz.new_(C$.c$$S$I$S,["SEVERE", 1000, "sun.util.logging.resources.logging"]);
+C$.WARNING=Clazz.new_(C$.c$$S$I$S,["WARNING", 900, "sun.util.logging.resources.logging"]);
+C$.INFO=Clazz.new_(C$.c$$S$I$S,["INFO", 800, "sun.util.logging.resources.logging"]);
+C$.CONFIG=Clazz.new_(C$.c$$S$I$S,["CONFIG", 700, "sun.util.logging.resources.logging"]);
+C$.FINE=Clazz.new_(C$.c$$S$I$S,["FINE", 500, "sun.util.logging.resources.logging"]);
+C$.FINER=Clazz.new_(C$.c$$S$I$S,["FINER", 400, "sun.util.logging.resources.logging"]);
+C$.FINEST=Clazz.new_(C$.c$$S$I$S,["FINEST", 300, "sun.util.logging.resources.logging"]);
+C$.ALL=Clazz.new_(C$.c$$S$I$S,["ALL", -2147483648, "sun.util.logging.resources.logging"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Level, "KnownLevel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Level, "KnownLevel", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.nameToLevels=null;
-C$.intToLevels=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nameToLevels=Clazz.new_($I$(1));
-C$.intToLevels=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.levelObject=null;
-this.mirroredLevel=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['levelObject','java.util.logging.Level','+mirroredLevel']]
+,['O',['nameToLevels','java.util.Map','+intToLevels']]]
 
 Clazz.newMeth(C$, 'c$$java_util_logging_Level', function (l) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.levelObject=l;
 if (l.getClass$() === Clazz.getClass($I$(2)) ) {
 this.mirroredLevel=l;
 } else {
-this.mirroredLevel=Clazz.new_($I$(2).c$$S$I$S$Z,[l.name, l.value, l.resourceBundleName, false]);
+this.mirroredLevel=Clazz.new_($I$(2,1).c$$S$I$S$Z,[l.name, l.value, l.resourceBundleName, false]);
 }}, 1);
 
 Clazz.newMeth(C$, 'add$java_util_logging_Level', function (l) {
 var o=Clazz.new_(C$.c$$java_util_logging_Level,[l]);
 var list=C$.nameToLevels.get$O(l.name);
 if (list == null ) {
-list=Clazz.new_($I$(3));
-C$.nameToLevels.put$TK$TV(l.name, list);
-}list.add$TE(o);
-list=C$.intToLevels.get$O(new Integer(l.value));
+list=Clazz.new_($I$(3,1));
+C$.nameToLevels.put$O$O(l.name, list);
+}list.add$O(o);
+list=C$.intToLevels.get$O("" + l.value);
 if (list == null ) {
-list=Clazz.new_($I$(3));
-C$.intToLevels.put$TK$TV(new Integer(l.value), list);
-}list.add$TE(o);
+list=Clazz.new_($I$(3,1));
+C$.intToLevels.put$O$O("" + l.value, list);
+}list.add$O(o);
 }, 1);
 
 Clazz.newMeth(C$, 'findByName$S', function (name) {
@@ -246,7 +226,7 @@ return list.get$I(0);
 }, 1);
 
 Clazz.newMeth(C$, 'findByValue$I', function (value) {
-var list=C$.intToLevels.get$O(new Integer(value));
+var list=C$.intToLevels.get$O("" + value);
 if (list != null ) {
 return list.get$I(0);
 }return null;
@@ -274,9 +254,14 @@ return level;
 }return null;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.nameToLevels=Clazz.new_($I$(1,1));
+C$.intToLevels=Clazz.new_($I$(1,1));
+};
+
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:45 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

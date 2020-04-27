@@ -1,26 +1,7 @@
-(function(){var P$=java.io,p$1={},I$=[[0,'java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StreamTokenizer");
+(function(){var P$=java.io,p$1={},I$=[[0,'java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StreamTokenizer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.reader=null;
-this.input=null;
-this.buf=null;
-this.peekc=0;
-this.pushedBack=false;
-this.forceLower=false;
-this.LINENO=0;
-this.eolIsSignificantP=false;
-this.slashSlashCommentsP=false;
-this.slashStarCommentsP=false;
-this.ctype=null;
-this.ttype=0;
-this.sval=null;
-this.nval=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.reader=null;
@@ -33,10 +14,12 @@ this.slashSlashCommentsP=false;
 this.slashStarCommentsP=false;
 this.ctype=Clazz.array(Byte.TYPE, [256]);
 this.ttype=-4;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['pushedBack','forceLower','eolIsSignificantP','slashSlashCommentsP','slashStarCommentsP'],'D',['nval'],'I',['peekc','LINENO','ttype'],'S',['sval'],'O',['reader','java.io.Reader','input','java.io.InputStream','buf','char[]','ctype','byte[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.wordChars$I$I("a".$c(), "z".$c());
 this.wordChars$I$I("A".$c(), "Z".$c());
 this.wordChars$I$I(160, 255);
@@ -69,14 +52,14 @@ for (var i=this.ctype.length; --i >= 0; ) this.ctype[i]=(0|0);
 Clazz.newMeth(C$, 'wordChars$I$I', function (low, hi) {
 if (low < 0) low=0;
 if (hi >= this.ctype.length) hi=this.ctype.length - 1;
-while (low <= hi)this.ctype[$k$=low++]=(this.ctype[$k$]|(4)|0);
+while (low <= hi)this.ctype[low++]|=4;
 
 });
 
 Clazz.newMeth(C$, 'whitespaceChars$I$I', function (low, hi) {
 if (low < 0) low=0;
 if (hi >= this.ctype.length) hi=this.ctype.length - 1;
-while (low <= hi)this.ctype[low++]=(1|0);
+while (low <= hi)this.ctype[low++]=1;
 
 });
 
@@ -92,18 +75,18 @@ if (ch >= 0 && ch < this.ctype.length ) this.ctype[ch]=(0|0);
 });
 
 Clazz.newMeth(C$, 'commentChar$I', function (ch) {
-if (ch >= 0 && ch < this.ctype.length ) this.ctype[ch]=(16|0);
+if (ch >= 0 && ch < this.ctype.length ) this.ctype[ch]=16;
 });
 
 Clazz.newMeth(C$, 'quoteChar$I', function (ch) {
-if (ch >= 0 && ch < this.ctype.length ) this.ctype[ch]=(8|0);
+if (ch >= 0 && ch < this.ctype.length ) this.ctype[ch]=8;
 });
 
 Clazz.newMeth(C$, 'parseNumbers$', function () {
-for (var i="0".$c(); i <= 57 ; i++) this.ctype[i]=(this.ctype[i]|(2)|0);
+for (var i="0".$c(); i <= 57 ; i++) this.ctype[i]|=2;
 
-this.ctype[46]=(this.ctype[46]|(2)|0);
-this.ctype[45]=(this.ctype[45]|(2)|0);
+this.ctype[46]|=2;
+this.ctype[45]|=2;
 });
 
 Clazz.newMeth(C$, 'eolIsSignificant$Z', function (flag) {
@@ -145,7 +128,7 @@ c=p$1.read.apply(this, []);
 if (c < 0) return this.ttype=-1;
 }this.ttype=c;
 this.peekc=2147483647;
-var ctype=c < 256 ? ($b$[0] = ct[c], $b$[0]) : ($b$[0] = 4, $b$[0]);
+var ctype=c < 256 ? ct[c] : 4;
 while ((ctype & 1) != 0){
 if (c == 13 ) {
 this.LINENO++;
@@ -161,7 +144,7 @@ if (this.eolIsSignificantP) {
 return this.ttype=10;
 }}c=p$1.read.apply(this, []);
 }if (c < 0) return this.ttype=-1;
-ctype=c < 256 ? ($b$[0] = ct[c], $b$[0]) : ($b$[0] = 4, $b$[0]);
+ctype=c < 256 ? ct[c] : 4;
 }
 if ((ctype & 2) != 0) {
 var neg=false;
@@ -200,7 +183,7 @@ if (i >= this.buf.length) {
 this.buf=$I$(1).copyOf$CA$I(this.buf, this.buf.length * 2);
 }this.buf[i++]=String.fromCharCode(c);
 c=p$1.read.apply(this, []);
-ctype=c < 0 ? ($b$[0] = 1, $b$[0]) : ($b$[0] = c < 256 ? (ct[c]|0) : (4|0), $b$[0]);
+ctype=c < 0 ? 1 : c < 256 ? ct[c] : 4;
 } while ((ctype & (6)) != 0);
 this.peekc=c;
 this.sval=String.copyValueOf$CA$I$I(this.buf, 0, i);
@@ -336,7 +319,5 @@ break;
 }}
 return "Token[" + ret + "], line " + this.LINENO ;
 });
-var $k$;
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

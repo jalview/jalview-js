@@ -1,25 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.datamodel.AlignExportSettingsAdapter','jalview.io.FormatAdapter','jalview.io.FileFormat','StringBuilder','java.util.Objects','java.io.InputStreamReader','java.io.BufferedReader','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.util.MessageManager','jalview.bin.Cache','jalview.util.BrowserLauncher','java.io.File','Thread']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HTMLOutput", null, null, 'Runnable');
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.datamodel.AlignExportSettingsAdapter','jalview.io.FormatAdapter','jalview.io.FileFormat','StringBuilder','java.util.Objects','java.io.InputStreamReader','java.io.BufferedReader','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.util.MessageManager','jalview.bin.Cache','jalview.util.BrowserLauncher','java.io.File','Thread']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HTMLOutput", null, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ap=null;
-this.pSessionId=0;
-this.pIndicator=null;
-this.generatedFile=null;
-this._bioJson=null;
-this.description=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._bioJson=null;
-}, 1);
+},1);
+
+C$.$fields$=[['J',['pSessionId'],'S',['_bioJson','description'],'O',['ap','jalview.gui.AlignmentPanel','pIndicator','jalview.gui.IProgressIndicator','generatedFile','java.io.File']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel$S', function (ap, desc) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.ap=ap;
 this.pIndicator=ap.alignFrame;
 this.description=desc;
@@ -30,22 +21,22 @@ Clazz.newMeth(C$, 'getBioJSONData$', function () {
 if (!this.isEmbedData$()) {
 return null;
 }if (this._bioJson == null ) {
-var options=Clazz.new_($I$(1).c$$Z,[true]);
+var options=Clazz.new_($I$(1,1).c$$Z,[true]);
 var exportData=this.ap.getAlignViewport$().getAlignExportData$jalview_api_AlignExportSettingsI(options);
-this._bioJson=Clazz.new_($I$(2).c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI,[this.ap, options]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$jalview_datamodel_HiddenColumns($I$(3).Json, exportData.getAlignment$(), exportData.getOmitHidden$(), exportData.getStartEndPostions$(), this.ap.getAlignViewport$().getAlignment$().getHiddenColumns$());
+this._bioJson=Clazz.new_($I$(2,1).c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI,[this.ap, options]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$jalview_datamodel_HiddenColumns($I$(3).Json, exportData.getAlignment$(), exportData.getOmitHidden$(), exportData.getStartEndPostions$(), this.ap.getAlignViewport$().getAlignment$().getHiddenColumns$());
 }return this._bioJson;
 });
 
 Clazz.newMeth(C$, 'readFileAsString$java_io_File', function (file) {
 var isReader=null;
 var buffReader=null;
-var sb=Clazz.new_($I$(4));
-$I$(5).requireNonNull$TT$S(file, "File must not be null!");
+var sb=Clazz.new_($I$(4,1));
+$I$(5).requireNonNull$O$S(file, "File must not be null!");
 var url=file.toURL$();
 if (url != null ) {
 try {
-isReader=Clazz.new_($I$(6).c$$java_io_InputStream,[url.openStream$()]);
-buffReader=Clazz.new_($I$(7).c$$java_io_Reader,[isReader]);
+isReader=Clazz.new_([url.openStream$()],$I$(6,1).c$$java_io_InputStream);
+buffReader=Clazz.new_($I$(7,1).c$$java_io_Reader,[isReader]);
 var line;
 var lineSeparator=System.getProperty$S("line.separator");
 while ((line=buffReader.readLine$()) != null ){
@@ -72,13 +63,13 @@ return  String.instantialize("<html>\n<head>\n<script language=\"JavaScript\">\n
 
 Clazz.newMeth(C$, 'getOutputFile$', function () {
 var selectedFile=null;
-var jvFileChooser=Clazz.new_($I$(8).c$$S$S,["html", "HTML files"]);
-jvFileChooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(9)));
+var jvFileChooser=Clazz.new_($I$(8,1).c$$S$S,["html", "HTML files"]);
+jvFileChooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(9,1)));
 jvFileChooser.setDialogTitle$S($I$(10).getString$S("label.save_as_html"));
 jvFileChooser.setToolTipText$S($I$(10).getString$S("action.save"));
 var fileChooserOpt=jvFileChooser.showSaveDialog$java_awt_Component(null);
 if (fileChooserOpt == 0) {
-$I$(11).setProperty$S$S("LAST_DIRECTORY", jvFileChooser.getSelectedFile$().getParent$());
+$I$(11,"setProperty$S$S",["LAST_DIRECTORY", jvFileChooser.getSelectedFile$().getParent$()]);
 selectedFile=jvFileChooser.getSelectedFile$().getPath$();
 }return selectedFile;
 });
@@ -97,7 +88,7 @@ return System.getProperty$S("java.awt.headless") != null  && System.getProperty$
 Clazz.newMeth(C$, 'exportCompleted$', function () {
 if (this.isLaunchInBrowserAfterExport$() && !this.isHeadless$() ) {
 try {
-$I$(12).openURL$S("file:///" + this.getExportedFile$());
+$I$(12,"openURL$S",["file:///" + this.getExportedFile$()]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 e.printStackTrace$();
@@ -112,24 +103,24 @@ return this.generatedFile;
 });
 
 Clazz.newMeth(C$, 'exportHTML$S', function (outputFile) {
-this.setProgressMessage$S($I$(10).formatMessage$S$OA("status.exporting_alignment_as_x_file", [this.getDescription$()]));
+this.setProgressMessage$S($I$(10,"formatMessage$S$OA",["status.exporting_alignment_as_x_file", [this.getDescription$()]]));
 try {
 if (outputFile == null ) {
 outputFile=this.getOutputFile$();
 if (outputFile == null ) {
-this.setProgressMessage$S($I$(10).formatMessage$S$OA("status.cancelled_image_export_operation", [this.getDescription$()]));
+this.setProgressMessage$S($I$(10,"formatMessage$S$OA",["status.cancelled_image_export_operation", [this.getDescription$()]]));
 return;
-}}this.generatedFile=Clazz.new_($I$(13).c$$S,[outputFile]);
+}}this.generatedFile=Clazz.new_($I$(13,1).c$$S,[outputFile]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-this.setProgressMessage$S($I$(10).formatMessage$S$OA("info.error_creating_file", [this.getDescription$()]));
+this.setProgressMessage$S($I$(10,"formatMessage$S$OA",["info.error_creating_file", [this.getDescription$()]]));
 e.printStackTrace$();
 return;
 } else {
 throw e;
 }
 }
-Clazz.new_($I$(14).c$$Runnable,[this]).start$();
+Clazz.new_($I$(14,1).c$$Runnable,[this]).start$();
 });
 
 Clazz.newMeth(C$, 'getDescription$', function () {
@@ -138,4 +129,4 @@ return this.description;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

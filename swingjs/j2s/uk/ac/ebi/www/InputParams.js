@@ -1,122 +1,18 @@
-(function(){var P$=Clazz.newPackage("uk.ac.ebi.www"),I$=[[0,'org.apache.axis.description.TypeDesc','org.apache.axis.description.ElementDesc','javax.xml.namespace.QName','org.apache.axis.encoding.ser.BeanSerializer','org.apache.axis.encoding.ser.BeanDeserializer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "InputParams", null, null, 'java.io.Serializable');
-C$.typeDesc=null;
+(function(){var P$=Clazz.newPackage("uk.ac.ebi.www"),I$=[[0,'org.apache.axis.description.TypeDesc','org.apache.axis.description.ElementDesc','javax.xml.namespace.QName','Boolean','org.apache.axis.encoding.ser.BeanSerializer','org.apache.axis.encoding.ser.BeanDeserializer']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "InputParams", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.typeDesc=Clazz.new_($I$(1).c$$Class,[Clazz.getClass(C$)]);
-{
-var field=Clazz.new_($I$(2));
-field.setFieldName$S("program");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "program"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("database");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "database"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("matrix");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "matrix"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("exp");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "exp"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "float"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("echofilter");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "echofilter"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("filter");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "filter"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("numal");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "numal"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "int"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("scores");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "scores"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "int"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("sensitivity");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "sensitivity"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("sort");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "sort"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("stats");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "stats"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("strand");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "strand"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("outformat");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "outformat"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("topcombon");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "topcombon"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "int"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("async");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "async"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-field=Clazz.new_($I$(2));
-field.setFieldName$S("email");
-field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["", "email"]));
-field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
-C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.program=null;
-this.database=null;
-this.matrix=null;
-this.exp=0;
-this.echofilter=false;
-this.filter=null;
-this.numal=0;
-this.scores=0;
-this.sensitivity=null;
-this.sort=null;
-this.stats=null;
-this.strand=null;
-this.outformat=null;
-this.topcombon=0;
-this.async=false;
-this.email=null;
-this.__equalsCalc=null;
-this.__hashCodeCalc=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.__equalsCalc=null;
 this.__hashCodeCalc=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['echofilter','async','__hashCodeCalc'],'F',['exp'],'I',['numal','scores','topcombon'],'S',['program','database','matrix','filter','sensitivity','sort','stats','strand','outformat','email'],'O',['__equalsCalc','java.lang.Object']]
+,['O',['typeDesc','org.apache.axis.description.TypeDesc']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getProgram$', function () {
@@ -275,8 +171,8 @@ _hashCode+=this.getProgram$().hashCode$();
 _hashCode+=this.getDatabase$().hashCode$();
 }if (this.getMatrix$() != null ) {
 _hashCode+=this.getMatrix$().hashCode$();
-}_hashCode+= new Float(this.getExp$()).hashCode$();
-_hashCode+= Boolean.from(this.isEchofilter$()).hashCode$();
+}_hashCode+=Float.valueOf$F(this.getExp$()).hashCode$();
+_hashCode+=$I$(4,"valueOf$Z",[this.isEchofilter$()]).hashCode$();
 if (this.getFilter$() != null ) {
 _hashCode+=this.getFilter$().hashCode$();
 }_hashCode+=this.getNumal$();
@@ -292,7 +188,7 @@ _hashCode+=this.getStrand$().hashCode$();
 }if (this.getOutformat$() != null ) {
 _hashCode+=this.getOutformat$().hashCode$();
 }_hashCode+=this.getTopcombon$();
-_hashCode+= Boolean.from(this.isAsync$()).hashCode$();
+_hashCode+=$I$(4,"valueOf$Z",[this.isAsync$()]).hashCode$();
 if (this.getEmail$() != null ) {
 _hashCode+=this.getEmail$().hashCode$();
 }this.__hashCodeCalc=false;
@@ -304,11 +200,97 @@ return C$.typeDesc;
 }, 1);
 
 Clazz.newMeth(C$, 'getSerializer$S$Class$javax_xml_namespace_QName', function (mechType, _javaType, _xmlType) {
-return Clazz.new_($I$(4).c$$Class$javax_xml_namespace_QName$org_apache_axis_description_TypeDesc,[_javaType, _xmlType, C$.typeDesc]);
+return Clazz.new_($I$(5,1).c$$Class$javax_xml_namespace_QName$org_apache_axis_description_TypeDesc,[_javaType, _xmlType, C$.typeDesc]);
 }, 1);
 
 Clazz.newMeth(C$, 'getDeserializer$S$Class$javax_xml_namespace_QName', function (mechType, _javaType, _xmlType) {
-return Clazz.new_($I$(5).c$$Class$javax_xml_namespace_QName$org_apache_axis_description_TypeDesc,[_javaType, _xmlType, C$.typeDesc]);
+return Clazz.new_($I$(6,1).c$$Class$javax_xml_namespace_QName$org_apache_axis_description_TypeDesc,[_javaType, _xmlType, C$.typeDesc]);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.typeDesc=Clazz.new_([Clazz.getClass(C$)],$I$(1,1).c$$Class);
+{
+var field=Clazz.new_($I$(2,1));
+field.setFieldName$S("program");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "program"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("database");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "database"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("matrix");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "matrix"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("exp");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "exp"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "float"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("echofilter");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "echofilter"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("filter");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "filter"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("numal");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "numal"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "int"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("scores");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "scores"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "int"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("sensitivity");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "sensitivity"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("sort");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "sort"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("stats");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "stats"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("strand");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "strand"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("outformat");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "outformat"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("topcombon");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "topcombon"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "int"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("async");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "async"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+field=Clazz.new_($I$(2,1));
+field.setFieldName$S("email");
+field.setXmlName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["", "email"]));
+field.setXmlType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+C$.typeDesc.addFieldDesc$org_apache_axis_description_FieldDesc(field);
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,41 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Lst','javajs.util.BS','org.jmol.api.JmolAdapter','org.jmol.util.Elements','org.jmol.adapter.readers.quantum.BasisFunctionReader','javajs.util.AU','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NWChemReader", null, 'org.jmol.adapter.readers.quantum.MOReader');
-C$.$DS_LIST=null;
-C$.$FS_LIST=null;
-C$.$DC_LIST=null;
-C$.$FC_LIST=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Lst','javajs.util.BS','org.jmol.api.JmolAdapter','org.jmol.util.Elements','org.jmol.adapter.readers.quantum.BasisFunctionReader','javajs.util.AU','org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "NWChemReader", null, 'org.jmol.adapter.readers.quantum.MOReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$DS_LIST="d2-   d1-   d0    d1+   d2+";
-C$.$FS_LIST="f3-   f2-   f1-   f0    f1+   f2+   f3+";
-C$.$DC_LIST="DXX   DXY   DXZ   DYY   DYZ   DZZ";
-C$.$FC_LIST="XXX   XXY   XXZ   XYY   XYZ   XZZ   YYY   YYZ   YZZ   ZZZ";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.taskNumber=0;
-this.equivalentAtomSets=0;
-this.energyKey=null;
-this.energyValue=null;
-this.converged=false;
-this.haveEnergy=false;
-this.haveAt=false;
-this.inInput=false;
-this.atomTypes=null;
-this.htMOs=null;
-this.nBasisFunctions=0;
-this.moCount=0;
-this.purging=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.taskNumber=1;
 this.equivalentAtomSets=0;
 this.energyKey="";
 this.energyValue="";
-this.htMOs=Clazz.new_($I$(1));
-}, 1);
+this.htMOs=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['converged','haveEnergy','haveAt','inInput','purging'],'I',['taskNumber','equivalentAtomSets','nBasisFunctions','moCount'],'S',['energyKey','energyValue'],'O',['atomTypes','javajs.util.Lst','htMOs','java.util.Map']]
+,['S',['$DS_LIST','$FS_LIST','$DC_LIST','$FC_LIST']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.calculationType="(NWCHEM)";
@@ -51,7 +28,7 @@ p$1.init.apply(this, []);
 return true;
 }if (this.line.indexOf$S("  wavefunction    = ") >= 0) {
 this.calculationType=this.line.substring$I(this.line.indexOf$S("=") + 1).trim$() + "(NWCHEM)";
-this.moData.put$TK$TV("calculationType", this.calculationType);
+this.moData.put$O$O("calculationType", this.calculationType);
 return true;
 }if (this.line.indexOf$S("Total") >= 0) {
 p$1.readTotal.apply(this, []);
@@ -122,7 +99,7 @@ this.haveEnergy=true;
 }, p$1);
 
 Clazz.newMeth(C$, 'readSymmetry', function () {
-var tokens=$I$(2).getTokens$S(this.readLines$I(3));
+var tokens=(function(a,f){return f.apply(null,a)})([this.readLines$I(3)],$I$(2).getTokens$S);
 p$1.setProps$S$S$I.apply(this, ["Symmetry group name", tokens[tokens.length - 1], this.equivalentAtomSets]);
 }, p$1);
 
@@ -168,13 +145,13 @@ var tokens;
 this.haveEnergy=false;
 this.asc.newAtomSet$();
 this.asc.setAtomSetModelProperty$S$S(".PATH", "Task " + this.taskNumber + (this.inInput ? $I$(3).PATH_SEPARATOR + "Input" : $I$(3).PATH_SEPARATOR + "Geometry") );
-this.atomTypes=Clazz.new_($I$(4));
+this.atomTypes=Clazz.new_($I$(4,1));
 while (this.rd$() != null  && this.line.length$() > 0 ){
 tokens=this.getTokens$();
 if (tokens.length < 6) break;
 var name=p$1.fixTag$S.apply(this, [tokens[1]]);
 this.setAtomCoordScaled$org_jmol_adapter_smarter_Atom$SA$I$F(null, tokens, 3, scale).atomName=name;
-this.atomTypes.addLast$TV(name);
+this.atomTypes.addLast$O(name);
 }
 if (this.converged) {
 p$1.setEnergy$S$S.apply(this, [this.energyKey, this.energyValue]);
@@ -217,7 +194,7 @@ this.setAtomCoordScaled$org_jmol_adapter_smarter_Atom$SA$I$F(null, tokens, 2, 0.
 this.discardLinesUntilContains$S("(Projected Frequencies expressed in cm-1)");
 this.readLines$I(3);
 var firstTime=true;
-var bsIgnore=Clazz.new_($I$(5));
+var bsIgnore=Clazz.new_($I$(5,1));
 while (this.rd$() != null  && this.line.indexOf$S("P.Frequency") >= 0 ){
 tokens=$I$(2).getTokensAt$S$I(this.line, 12);
 var frequencyCount=tokens.length;
@@ -294,38 +271,38 @@ this.getDFMap$S$S$I$S$I("FC", C$.$FC_LIST, 6, "XXX   YYY   ZZZ   XYY   XXY   XXZ
 } else {
 this.getDFMap$S$S$I$S$I("DS", C$.$DS_LIST, 3, "d0    d1+   d1-   d2+   d2-", 2);
 this.getDFMap$S$S$I$S$I("FS", C$.$FS_LIST, 5, "f0    f1+   f1-   f2+   f2-   f3+   f3-", 2);
-}this.shells=Clazz.new_($I$(4));
-var atomInfo=Clazz.new_($I$(1));
+}this.shells=Clazz.new_($I$(4,1));
+var atomInfo=Clazz.new_($I$(1,1));
 var atomSym=null;
 var atomData=null;
 var shellData=null;
 while (this.line != null ){
 var nBlankLines=0;
 while (this.line.length$() < 3 || this.line.charAt$I(2) == " " ){
-shellData=Clazz.new_($I$(4));
+shellData=Clazz.new_($I$(4,1));
 this.rd$();
 if (this.line.length$() < 3) nBlankLines++;
 }
 if (nBlankLines >= 2) break;
 if (this.parseIntStr$S(this.line) == -2147483648) {
 atomSym=this.getTokens$()[0];
-if (atomSym.length$() > 2) atomSym=$I$(6).getElementSymbol$I($I$(7).elementNumberFromName$S(atomSym));
-atomData=Clazz.new_($I$(4));
-atomInfo.put$TK$TV(atomSym, atomData);
+if (atomSym.length$() > 2) atomSym=(function(a,f){return f.apply(null,a)})([$I$(7).elementNumberFromName$S(atomSym)],$I$(6).getElementSymbol$I);
+atomData=Clazz.new_($I$(4,1));
+atomInfo.put$O$O(atomSym, atomData);
 this.rd$();
 this.rd$();
 continue;
 }while (this.line != null  && this.line.length$() > 3 ){
 var tokens=this.getTokens$();
 var o=Clazz.array(java.lang.Object, -1, [tokens[1], Clazz.array(Float.TYPE, -1, [this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3])])]);
-shellData.addLast$TV(o);
+shellData.addLast$O(o);
 this.rd$();
 }
-atomData.addLast$TV(shellData);
+atomData.addLast$O(shellData);
 }
 var nD=(isD6F10 ? 6 : 5);
 var nF=(isD6F10 ? 10 : 7);
-var gdata=Clazz.new_($I$(4));
+var gdata=Clazz.new_($I$(4,1));
 for (var i=0; i < this.atomTypes.size$(); i++) {
 atomData=atomInfo.get$O(this.atomTypes.get$I(i));
 var nShells=atomData.size$();
@@ -353,8 +330,8 @@ slater[0]=i + 1;
 slater[1]=(isD6F10 ? $I$(8).getQuantumShellTagID$S(type) : $I$(8).getQuantumShellTagIDSpherical$S(type));
 slater[2]=this.gaussianCount + 1;
 slater[3]=nGaussians;
-this.shells.addLast$TV(slater);
-for (var ifunc=0; ifunc < nGaussians; ifunc++) gdata.addLast$TV(shellData.get$I(ifunc)[1]);
+this.shells.addLast$O(slater);
+for (var ifunc=0; ifunc < nGaussians; ifunc++) gdata.addLast$O(shellData.get$I(ifunc)[1]);
 
 this.gaussianCount+=nGaussians;
 }
@@ -367,12 +344,12 @@ return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'readMOs', function () {
-var lines=Clazz.new_($I$(4));
-this.htMOs.put$TK$TV(this.line, lines);
-lines.addLast$TV(this.line);
+var lines=Clazz.new_($I$(4,1));
+this.htMOs.put$O$O(this.line, lines);
+lines.addLast$O(this.line);
 var nblank=0;
 while (nblank != 2 && this.rd$() != null  ){
-lines.addLast$TV(this.line);
+lines.addLast$O(this.line);
 if (this.line.length$() < 2) nblank++;
  else nblank=0;
 }
@@ -398,15 +375,15 @@ var tokens=this.getTokens$();
 var occupancy=this.parseFloatStr$S(tokens[3]);
 var energy=this.parseFloatStr$S(tokens[5]);
 var symmetry=(tokens.length > 7 ? tokens[7] : null);
-var mo=Clazz.new_($I$(1));
-mo.put$TK$TV("occupancy", Float.valueOf$F(occupancy));
-mo.put$TK$TV("energy", Float.valueOf$F(energy));
-if (symmetry != null ) mo.put$TK$TV("symmetry", symmetry);
+var mo=Clazz.new_($I$(1,1));
+mo.put$O$O("occupancy", Float.valueOf$F(occupancy));
+mo.put$O$O("energy", Float.valueOf$F(energy));
+if (symmetry != null ) mo.put$O$O("symmetry", symmetry);
 var coefs=null;
 this.setMO$java_util_Map(mo);
-mo.put$TK$TV("type", this.alphaBeta + (++moCount));
+mo.put$O$O("type", this.alphaBeta + (++moCount));
 coefs=Clazz.array(Float.TYPE, [this.nBasisFunctions]);
-mo.put$TK$TV("coefficients", coefs);
+mo.put$O$O("coefficients", coefs);
 i+=3;
 while ((this.line=list.get$I(++i)) != null  && this.line.length$() > 3 ){
 tokens=this.getTokens$();
@@ -432,6 +409,13 @@ this.RL$();
 }return this.line;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.$DS_LIST="d2-   d1-   d0    d1+   d2+";
+C$.$FS_LIST="f3-   f2-   f1-   f0    f1+   f2+   f3+";
+C$.$DC_LIST="DXX   DXY   DXZ   DYY   DYZ   DZZ";
+C$.$FC_LIST="XXX   XXY   XXZ   XYY   XYZ   XZZ   YYY   YYZ   YZZ   ZZZ";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

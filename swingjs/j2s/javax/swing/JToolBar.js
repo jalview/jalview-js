@@ -1,25 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.BoxLayout',['javax.swing.JToolBar','.DefaultToolBarLayout'],'java.awt.JSComponent','java.awt.Insets','Boolean',['javax.swing.JToolBar','.Separator'],'javax.swing.JButton']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JToolBar", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.BoxLayout',['javax.swing.JToolBar','.DefaultToolBarLayout'],'java.awt.JSComponent','java.awt.Insets',['javax.swing.JToolBar','.Separator'],'javax.swing.JButton']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JToolBar", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
+C$.$classes$=[['Separator',9],['DefaultToolBarLayout',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.paintBorder=false;
-this.margin=null;
-this.floatable=false;
-this.orientation=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.paintBorder=true;
 this.margin=null;
 this.floatable=true;
 this.orientation=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['paintBorder','floatable'],'I',['orientation'],'O',['margin','java.awt.Insets']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [0]);
@@ -34,11 +28,11 @@ C$.c$$S$I.apply(this, [name, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I', function (name, orientation) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setName$S(name);
 p$1.checkOrientation$I.apply(this, [orientation]);
 this.orientation=orientation;
-var layout=Clazz.new_($I$(2).c$$I, [this, null, orientation]);
+var layout=Clazz.new_($I$(2,1).c$$I,[this, null, orientation]);
 this.setLayout$java_awt_LayoutManager(layout);
 this.addPropertyChangeListener$java_beans_PropertyChangeListener(layout);
 this.updateUI$();
@@ -51,13 +45,13 @@ return "ToolBarUI";
 Clazz.newMeth(C$, 'updateUI$', function () {
 C$.superclazz.prototype.updateUI$.apply(this, []);
 if (this.getLayout$() == null ) {
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(2).c$$I, [this, null, this.getOrientation$()]));
+this.setLayout$java_awt_LayoutManager(Clazz.new_([this, null, this.getOrientation$()],$I$(2,1).c$$I));
 }this.invalidate$();
 });
 
 Clazz.newMeth(C$, 'getComponentIndex$java_awt_Component', function (c) {
 var ncomponents=this.getComponentCount$();
-var component=$I$(3).getChildArray$java_awt_Container(this);
+var component=$I$(3).秘getChildArray$java_awt_Container(this);
 for (var i=0; i < ncomponents; i++) {
 var comp=component[i];
 if (comp === c ) return i;
@@ -66,7 +60,7 @@ return -1;
 });
 
 Clazz.newMeth(C$, 'getComponentAtIndex$I', function (i) {
-return (i >= 0 && i < this.getComponentCount$()  ? $I$(3).getChildArray$java_awt_Container(this)[i] : null);
+return (i >= 0 && i < this.getComponentCount$()  ? $I$(3).秘getChildArray$java_awt_Container(this)[i] : null);
 });
 
 Clazz.newMeth(C$, 'setMargin$java_awt_Insets', function (m) {
@@ -74,12 +68,12 @@ var old=this.margin;
 this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'getMargin$', function () {
 if (this.margin == null ) {
-return Clazz.new_($I$(4).c$$I$I$I$I,[0, 0, 0, 0]);
+return Clazz.new_($I$(4,1).c$$I$I$I$I,[0, 0, 0, 0]);
 } else {
 return this.margin;
 }});
@@ -94,7 +88,7 @@ var old=this.paintBorder;
 this.paintBorder=b;
 this.firePropertyChange$S$Z$Z("borderPainted", old, b);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Graphics', function (g) {
@@ -112,7 +106,7 @@ var old=this.floatable;
 this.floatable=b;
 this.firePropertyChange$S$Z$Z("floatable", old, b);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getOrientation$', function () {
@@ -126,11 +120,11 @@ var old=this.orientation;
 this.orientation=o;
 this.firePropertyChange$S$I$I("orientation", old, o);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setRollover$Z', function (rollover) {
-this.putClientProperty$O$O("JToolBar.isRollover", rollover ? $I$(5).TRUE : $I$(5).FALSE);
+this.putClientProperty$O$O("JToolBar.isRollover", rollover ? Boolean.TRUE : Boolean.FALSE);
 });
 
 Clazz.newMeth(C$, 'isRollover$', function () {
@@ -155,7 +149,7 @@ this.addSeparator$java_awt_Dimension(null);
 });
 
 Clazz.newMeth(C$, 'addSeparator$java_awt_Dimension', function (size) {
-var s=Clazz.new_($I$(6).c$$java_awt_Dimension,[size]);
+var s=Clazz.new_($I$(5,1).c$$java_awt_Dimension,[size]);
 this.add$java_awt_Component(s);
 });
 
@@ -168,13 +162,12 @@ return b;
 
 Clazz.newMeth(C$, 'createActionComponent$javax_swing_Action', function (a) {
 var b=((P$.JToolBar$1||
-(function(){var C$=Clazz.newClass(P$, "JToolBar$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.JButton'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JToolBar$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.JButton'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'createActionPropertyChangeListener$javax_swing_Action', function (a) {
 var pcl=this.b$['javax.swing.JToolBar'].createActionChangeListener$javax_swing_JButton.apply(this.b$['javax.swing.JToolBar'], [this]);
@@ -183,7 +176,7 @@ pcl=C$.superclazz.prototype.createActionPropertyChangeListener$javax_swing_Actio
 }return pcl;
 });
 })()
-), Clazz.new_($I$(7), [this, null],P$.JToolBar$1));
+), Clazz.new_($I$(6,1),[this, null],P$.JToolBar$1));
 if (a != null  && (a.getValue$S("SmallIcon") != null  || a.getValue$S("SwingLargeIconKey") != null  ) ) {
 b.setHideActionText$Z(true);
 }b.setHorizontalTextPosition$I(0);
@@ -221,28 +214,23 @@ this.removePropertyChangeListener$java_beans_PropertyChangeListener(oldMgr);
 }C$.superclazz.prototype.setLayout$java_awt_LayoutManager.apply(this, [mgr]);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JToolBar, "Separator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JToolBar, "Separator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.JSeparator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.separatorSize=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['separatorSize','java.awt.Dimension']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$java_awt_Dimension.apply(this, [null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Dimension', function (size) {
-C$.superclazz.c$$I.apply(this, [0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[0]);C$.$init$.apply(this);
 this.setSeparatorSize$java_awt_Dimension(size);
 }, 1);
 
@@ -284,27 +272,23 @@ return this.getPrefSizeJComp$();
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JToolBar, "DefaultToolBarLayout", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JToolBar, "DefaultToolBarLayout", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['java.awt.LayoutManager2', 'java.beans.PropertyChangeListener', 'javax.swing.plaf.UIResource']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['lm','javax.swing.BoxLayout']]]
 
 Clazz.newMeth(C$, 'c$$I', function (orientation) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (orientation == 1) {
-this.lm=Clazz.new_($I$(1).c$$java_awt_Container$I,[this.this$0, 3]);
+this.lm=Clazz.new_($I$(1,1).c$$java_awt_Container$I,[this.this$0, 3]);
 } else {
-this.lm=Clazz.new_($I$(1).c$$java_awt_Container$I,[this.this$0, 2]);
+this.lm=Clazz.new_($I$(1,1).c$$java_awt_Container$I,[this.this$0, 2]);
 }}, 1);
 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
@@ -347,16 +331,16 @@ Clazz.newMeth(C$, 'invalidateLayout$java_awt_Container', function (target) {
 this.lm.invalidateLayout$java_awt_Container(target);
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var name=e.getPropertyName$();
 if (name.equals$O("orientation")) {
 var o=(e.getNewValue$()).intValue$();
-if (o == 1) this.lm=Clazz.new_($I$(1).c$$java_awt_Container$I,[this.this$0, 3]);
+if (o == 1) this.lm=Clazz.new_($I$(1,1).c$$java_awt_Container$I,[this.this$0, 3]);
  else {
-this.lm=Clazz.new_($I$(1).c$$java_awt_Container$I,[this.this$0, 2]);
+this.lm=Clazz.new_($I$(1,1).c$$java_awt_Container$I,[this.this$0, 2]);
 }}});
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

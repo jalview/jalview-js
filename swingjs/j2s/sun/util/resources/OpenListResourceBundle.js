@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("sun.util.resources"),p$1={},I$=[[0,'sun.util.ResourceBundleEnumeration','java.util.HashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OpenListResourceBundle", null, 'java.util.ResourceBundle');
+(function(){var P$=Clazz.newPackage("sun.util.resources"),p$1={},I$=[[0,'sun.util.ResourceBundleEnumeration','java.util.HashMap','java.util.HashSet']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OpenListResourceBundle", null, 'java.util.ResourceBundle');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lookup=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.lookup=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['lookup','java.util.Map','keyset','java.util.Set']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'handleGetObject$S', function (key) {
@@ -25,17 +21,26 @@ return this.lookup.get$O(key);
 });
 
 Clazz.newMeth(C$, 'getKeys$', function () {
-var parent=this.parent;
-return Clazz.new_($I$(1).c$$java_util_Set$java_util_Enumeration,[this.handleGetKeys$(), (parent != null ) ? parent.getKeys$() : null]);
+var parentBundle=this.parent;
+return Clazz.new_([this.handleKeySet$(), (parentBundle != null ) ? parentBundle.getKeys$() : null],$I$(1,1).c$$java_util_Set$java_util_Enumeration);
 });
 
-Clazz.newMeth(C$, 'handleGetKeys$', function () {
+Clazz.newMeth(C$, 'handleKeySet$', function () {
 this.loadLookupTablesIfNecessary$();
 return this.lookup.keySet$();
 });
 
-Clazz.newMeth(C$, 'getParent$', function () {
-return this.parent;
+Clazz.newMeth(C$, 'keySet$', function () {
+if (this.keyset != null ) {
+return this.keyset;
+}var ks=this.createSet$();
+ks.addAll$java_util_Collection(this.handleKeySet$());
+if (this.parent != null ) {
+ks.addAll$java_util_Collection(this.parent.keySet$());
+}{
+if (this.keyset == null ) {
+this.keyset=ks;
+}}return this.keyset;
 });
 
 Clazz.newMeth(C$, 'loadLookupTablesIfNecessary$', function () {
@@ -44,7 +49,6 @@ p$1.loadLookup.apply(this, []);
 }});
 
 Clazz.newMeth(C$, 'loadLookup', function () {
-if (this.lookup != null ) return;
 var contents=this.getContents$();
 var temp=this.createMap$I(contents.length);
 for (var i=0; i < contents.length; ++i) {
@@ -52,13 +56,19 @@ var key=contents[i][0];
 var value=contents[i][1];
 if (key == null  || value == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}temp.put$TK$TV(key, value);
+}temp.put$O$O(key, value);
 }
+{
+if (this.lookup == null ) {
 this.lookup=temp;
-}, p$1);
+}}}, p$1);
 
 Clazz.newMeth(C$, 'createMap$I', function (size) {
-return Clazz.new_($I$(2).c$$I,[size]);
+return Clazz.new_($I$(2,1).c$$I,[size]);
+});
+
+Clazz.newMeth(C$, 'createSet$', function () {
+return Clazz.new_($I$(3,1));
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

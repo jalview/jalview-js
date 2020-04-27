@@ -1,22 +1,16 @@
 (function(){var P$=java.util,I$=[];
-var C$=Clazz.newClass(P$, "OptionalDouble");
-C$.EMPTY=null;
+/*c*/var C$=Clazz.newClass(P$, "OptionalDouble");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY=Clazz.new_(C$);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isPresent=false;
-this.value=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isPresent'],'D',['value']]
+,['O',['EMPTY','java.util.OptionalDouble']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.isPresent=false;
 this.value=NaN;
 }, 1);
@@ -26,7 +20,7 @@ return C$.EMPTY;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D', function (value) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.isPresent=true;
 this.value=value;
 }, 1);
@@ -46,7 +40,7 @@ return this.isPresent;
 });
 
 Clazz.newMeth(C$, 'ifPresent$java_util_function_DoubleConsumer', function (consumer) {
-if (this.isPresent) consumer.accept$(this.value);
+if (this.isPresent) consumer.accept$D(this.value);
 });
 
 Clazz.newMeth(C$, 'orElse$D', function (other) {
@@ -80,5 +74,9 @@ return this.isPresent ? Double.hashCode$D(this.value) : 0;
 Clazz.newMeth(C$, 'toString', function () {
 return this.isPresent ? String.format$S$OA("OptionalDouble[%s]", [new Double(this.value)]) : "OptionalDouble.empty";
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY=Clazz.new_(C$);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

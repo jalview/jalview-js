@@ -1,23 +1,15 @@
 (function(){var P$=Clazz.newPackage("sun.nio.cs"),I$=[];
-var C$=Clazz.newClass(P$, "StandardCharsets");
-C$.aliases_US_ASCII=null;
-C$.aliases_UTF_8=null;
-C$.aliases_CESU_8=null;
-C$.aliases_UTF_16=null;
-C$.aliases_UTF_16BE=null;
-C$.aliases_UTF_16LE=null;
-C$.aliases_UTF_16LE_BOM=null;
-C$.aliases_UTF_32=null;
-C$.aliases_UTF_32LE=null;
-C$.aliases_UTF_32BE=null;
-C$.aliases_UTF_32LE_BOM=null;
-C$.aliases_UTF_32BE_BOM=null;
-C$.aliases_ISO_8859_1=null;
-C$.aliases_GB18030=null;
-C$.aliases_GBK=null;
-C$.SWINGJS_ALIASES=null;
+/*c*/var C$=Clazz.newClass(P$, "StandardCharsets");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['aliases_US_ASCII','String[]','+aliases_UTF_8','+aliases_CESU_8','+aliases_UTF_16','+aliases_UTF_16BE','+aliases_UTF_16LE','+aliases_UTF_16LE_BOM','+aliases_UTF_32','+aliases_UTF_32LE','+aliases_UTF_32BE','+aliases_UTF_32LE_BOM','+aliases_UTF_32BE_BOM','+aliases_ISO_8859_1','+aliases_GB18030','+aliases_GBK','SWINGJS_ALIASES','String[][]']]]
+
+C$.$static$=function(){C$.$static$=0;
 C$.aliases_US_ASCII=Clazz.array(String, -1, ["US_ASCII", "US-ASCII", "iso-ir-6", "ANSI_X3.4-1986", "ISO_646.irv:1991", "ASCII", "ISO646-US", "us", "IBM367", "cp367", "csASCII", "default", "646", "iso_646.irv:1983", "ANSI_X3.4-1968", "ascii7"]);
 C$.aliases_UTF_8=Clazz.array(String, -1, ["UTF_8", "UTF-8", "UTF8", "unicode-1-1-utf-8"]);
 C$.aliases_CESU_8=Clazz.array(String, -1, ["CESU_8", "CESU-8", "CESU8", "csCESU-8"]);
@@ -34,11 +26,8 @@ C$.aliases_ISO_8859_1=Clazz.array(String, -1, ["ISO_8859_1", "ISO-8859-1", "iso-
 C$.aliases_GB18030=Clazz.array(String, -1, ["ext.GB18030", "gb18030", "gb18030-2005", "gb2312"]);
 C$.aliases_GBK=Clazz.array(String, -1, ["GBK"]);
 C$.SWINGJS_ALIASES=Clazz.array(String, -2, [C$.aliases_UTF_8, C$.aliases_UTF_16, C$.aliases_US_ASCII, C$.aliases_ISO_8859_1, C$.aliases_CESU_8, C$.aliases_UTF_32LE_BOM, C$.aliases_UTF_32LE, C$.aliases_UTF_32BE_BOM, C$.aliases_UTF_32BE, C$.aliases_UTF_32, C$.aliases_UTF_16LE_BOM, C$.aliases_UTF_16LE, C$.aliases_UTF_16BE, C$.aliases_GBK, C$.aliases_GB18030]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,23 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.params.simple"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Option", null, null, 'jalview.ws.params.OptionI');
+(function(){var P$=Clazz.newPackage("jalview.ws.params.simple"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Option", null, null, 'jalview.ws.params.OptionI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.value=null;
-this.defvalue=null;
-this.description=null;
-this.possibleVals=null;
-this.required=false;
-this.fdetails=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.possibleVals=Clazz.new_($I$(1));
-}, 1);
+this.possibleVals=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['required'],'S',['name','value','defvalue','description'],'O',['possibleVals','java.util.ArrayList','fdetails','java.net.URL']]]
 
 Clazz.newMeth(C$, 'getName$', function () {
 return this.name;
@@ -48,7 +38,7 @@ return this.possibleVals;
 });
 
 Clazz.newMeth(C$, 'c$$jalview_ws_params_simple_Option', function (opt) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name= String.instantialize(opt.name);
 if (opt.value != null ) this.value= String.instantialize(opt.value);
 if (opt.defvalue != null ) this.defvalue= String.instantialize(opt.defvalue);
@@ -60,18 +50,18 @@ this.fdetails=opt.fdetails;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$Z$S$S$java_util_Collection$java_net_URL', function (name2, description2, isrequired, defValue, value, possibleVals, fdetails) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name2;
 this.description=description2;
 this.value=value;
 this.required=isrequired;
 this.defvalue=defValue;
 if (possibleVals != null ) {
-this.possibleVals=Clazz.new_($I$(1));
+this.possibleVals=Clazz.new_($I$(1,1));
 this.possibleVals.addAll$java_util_Collection(possibleVals);
 }this.fdetails=fdetails;
 }, 1);
@@ -81,4 +71,4 @@ var opt=Clazz.new_(C$.c$$jalview_ws_params_simple_Option,[this]);
 return opt;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

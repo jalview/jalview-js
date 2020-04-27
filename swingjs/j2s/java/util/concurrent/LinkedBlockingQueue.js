@@ -1,30 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.atomic.AtomicInteger','java.util.concurrent.locks.ReentrantLock',['java.util.concurrent.LinkedBlockingQueue','.Node'],'java.lang.reflect.Array',['java.util.concurrent.LinkedBlockingQueue','.Itr']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LinkedBlockingQueue", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.atomic.AtomicInteger','java.util.concurrent.locks.ReentrantLock',['java.util.concurrent.LinkedBlockingQueue','.Node'],'java.lang.reflect.Array',['java.util.concurrent.LinkedBlockingQueue','.Itr']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LinkedBlockingQueue", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractQueue', ['java.util.concurrent.BlockingQueue', 'java.io.Serializable']);
+C$.$classes$=[['Node',8],['Itr',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.capacity=0;
-this.count=null;
-this.head=null;
-this.last=null;
-this.takeLock=null;
-this.notEmpty=null;
-this.putLock=null;
-this.notFull=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.count=Clazz.new_($I$(1).c$$I,[0]);
-this.takeLock=Clazz.new_($I$(2));
+this.count=Clazz.new_($I$(1,1).c$$I,[0]);
+this.takeLock=Clazz.new_($I$(2,1));
 this.notEmpty=this.takeLock.newCondition$();
-this.putLock=Clazz.new_($I$(2));
+this.putLock=Clazz.new_($I$(2,1));
 this.notFull=this.putLock.newCondition$();
-}, 1);
+},1);
+
+C$.$fields$=[['I',['capacity'],'O',['count','java.util.concurrent.atomic.AtomicInteger','head','java.util.concurrent.LinkedBlockingQueue.Node','+last','takeLock','java.util.concurrent.locks.ReentrantLock','notEmpty','java.util.concurrent.locks.Condition','putLock','java.util.concurrent.locks.ReentrantLock','notFull','java.util.concurrent.locks.Condition']]]
 
 Clazz.newMeth(C$, 'signalNotEmpty', function () {
 var takeLock=this.takeLock;
@@ -46,8 +36,8 @@ putLock.unlock$();
 }
 }, p$1);
 
-Clazz.newMeth(C$, ['insert$TE'], function (x) {
-this.last=this.last.next_=Clazz.new_($I$(3).c$$TE,[x]);
+Clazz.newMeth(C$, 'insert$O', function (x) {
+this.last=this.last.next_=Clazz.new_($I$(3,1).c$$O,[x]);
 }, p$1);
 
 Clazz.newMeth(C$, 'extract', function () {
@@ -73,15 +63,15 @@ C$.c$$I.apply(this, [2147483647]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (capacity) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (capacity <= 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 this.capacity=capacity;
-this.last=this.head=Clazz.new_($I$(3).c$$TE,[null]);
+this.last=this.head=Clazz.new_($I$(3,1).c$$O,[null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
 C$.c$$I.apply(this, [2147483647]);
-for (var e, $e = c.iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) this.add$TE(e);
+for (var e, $e = c.iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) this.add$O(e);
 
 }, 1);
 
@@ -93,7 +83,7 @@ Clazz.newMeth(C$, 'remainingCapacity$', function () {
 return this.capacity - this.count.get$();
 });
 
-Clazz.newMeth(C$, ['put$TE'], function (e) {
+Clazz.newMeth(C$, 'put$O', function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var c=-1;
 var putLock=this.putLock;
@@ -111,7 +101,7 @@ throw ie;
 throw ie;
 }
 }
-p$1.insert$TE.apply(this, [e]);
+p$1.insert$O.apply(this, [e]);
 c=count.getAndIncrement$();
 if (c + 1 < this.capacity) this.notFull.signal$();
 } finally {
@@ -120,7 +110,7 @@ putLock.unlock$();
 if (c == 0) p$1.signalNotEmpty.apply(this, []);
 });
 
-Clazz.newMeth(C$, ['offer$TE$J$java_util_concurrent_TimeUnit'], function (e, timeout, unit) {
+Clazz.newMeth(C$, 'offer$O$J$java_util_concurrent_TimeUnit', function (e, timeout, unit) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var nanos=unit.toNanos$J(timeout);
 var c=-1;
@@ -130,7 +120,7 @@ putLock.lockInterruptibly$();
 try {
 for (; ; ) {
 if (count.get$() < this.capacity) {
-p$1.insert$TE.apply(this, [e]);
+p$1.insert$O.apply(this, [e]);
 c=count.getAndIncrement$();
 if (c + 1 < this.capacity) this.notFull.signal$();
 break;
@@ -153,7 +143,7 @@ if (c == 0) p$1.signalNotEmpty.apply(this, []);
 return true;
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
+Clazz.newMeth(C$, 'offer$O', function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var count=this.count;
 if (count.get$() == this.capacity) return false;
@@ -162,7 +152,7 @@ var putLock=this.putLock;
 putLock.lock$();
 try {
 if (count.get$() < this.capacity) {
-p$1.insert$TE.apply(this, [e]);
+p$1.insert$O.apply(this, [e]);
 c=count.getAndIncrement$();
 if (c + 1 < this.capacity) this.notFull.signal$();
 }} finally {
@@ -304,7 +294,7 @@ p$1.fullyUnlock.apply(this, []);
 }
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 p$1.fullyLock.apply(this, []);
 try {
 var size=this.count.get$();
@@ -356,7 +346,7 @@ p$1.fullyUnlock.apply(this, []);
 }
 var n=0;
 for (var p=first; p != null ; p=p.next_) {
-c.add$TE(p.item);
+c.add$O(p.item);
 p.item=null;
 ++n;
 }
@@ -371,7 +361,7 @@ try {
 var n=0;
 var p=this.head.next_;
 while (p != null  && n < maxElements ){
-c.add$TE(p.item);
+c.add$O(p.item);
 p.item=null;
 p=p.next_;
 ++n;
@@ -388,7 +378,7 @@ p$1.fullyUnlock.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(5), [this, null]);
+return Clazz.new_($I$(5,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
@@ -406,60 +396,52 @@ p$1.fullyUnlock.apply(this, []);
 Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject$();
 this.count.set$I(0);
-this.last=this.head=Clazz.new_($I$(3).c$$TE,[null]);
+this.last=this.head=Clazz.new_($I$(3,1).c$$O,[null]);
 for (; ; ) {
 var item=s.readObject$();
 if (item == null ) break;
-this.add$TE(item);
+this.add$O(item);
 }
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.LinkedBlockingQueue, "Node", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.LinkedBlockingQueue, "Node", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.item=null;
-this.next_=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$TE', function (x) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['item','<E>','next_','java.util.concurrent.LinkedBlockingQueue.Node']]]
+
+Clazz.newMeth(C$, 'c$$O', function (x) {
+;C$.$init$.apply(this);
 this.item=x;
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.LinkedBlockingQueue, "Itr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.LinkedBlockingQueue, "Itr", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.current=null;
-this.lastRet=null;
-this.currentElement=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['current','java.util.concurrent.LinkedBlockingQueue.Node','+lastRet','currentElement','<E>']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-var putLock=this.b$['java.util.concurrent.LinkedBlockingQueue'].putLock;
-var takeLock=this.b$['java.util.concurrent.LinkedBlockingQueue'].takeLock;
+;C$.$init$.apply(this);
+var putLock=this.this$0.putLock;
+var takeLock=this.this$0.takeLock;
 putLock.lock$();
 takeLock.lock$();
 try {
@@ -476,8 +458,8 @@ return this.current != null ;
 });
 
 Clazz.newMeth(C$, 'next$', function () {
-var putLock=this.b$['java.util.concurrent.LinkedBlockingQueue'].putLock;
-var takeLock=this.b$['java.util.concurrent.LinkedBlockingQueue'].takeLock;
+var putLock=this.this$0.putLock;
+var takeLock=this.this$0.takeLock;
 putLock.lock$();
 takeLock.lock$();
 try {
@@ -495,8 +477,8 @@ putLock.unlock$();
 
 Clazz.newMeth(C$, 'remove$', function () {
 if (this.lastRet == null ) throw Clazz.new_(Clazz.load('IllegalStateException'));
-var putLock=this.b$['java.util.concurrent.LinkedBlockingQueue'].putLock;
-var takeLock=this.b$['java.util.concurrent.LinkedBlockingQueue'].takeLock;
+var putLock=this.this$0.putLock;
+var takeLock=this.this$0.takeLock;
 putLock.lock$();
 takeLock.lock$();
 try {
@@ -521,4 +503,4 @@ putLock.unlock$();
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,40 +1,17 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.Arrays','java.awt.Color','jalview.datamodel.Point','javax.swing.ToolTipManager','java.awt.Dimension','java.awt.RenderingHints','java.awt.Font','jalview.util.MessageManager','jalview.util.ColorUtils','jalview.datamodel.SequenceGroup','jalview.gui.PaintRefresher','jalview.math.RotatableMatrix',['jalview.math.RotatableMatrix','.Axis'],'jalview.gui.AlignmentPanel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RotatableCanvas", null, 'javax.swing.JPanel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.KeyListener', 'jalview.api.RotatableCanvasI', 'java.awt.event.MouseWheelListener']);
-C$.AXES=null;
-C$.AXIS_COLOUR=null;
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.Arrays','java.awt.Color','jalview.datamodel.Point','javax.swing.ToolTipManager','java.awt.Dimension','java.awt.RenderingHints','java.awt.Font','jalview.util.MessageManager','jalview.util.ColorUtils','jalview.datamodel.SequenceGroup','jalview.gui.PaintRefresher','jalview.math.RotatableMatrix',['jalview.math.RotatableMatrix','.Axis'],'jalview.gui.AlignmentPanel']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RotatableCanvas", null, 'javax.swing.JPanel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.KeyListener', 'jalview.api.RotatableCanvasI', 'java.awt.event.MouseWheelListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.AXES=$I$(1).asList$TTA(["x", "y", "z"]);
-C$.AXIS_COLOUR=$I$(2).yellow;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.drawAxes=false;
-this.mouseX=0;
-this.mouseY=0;
-this.img=null;
-this.ig=null;
-this.$prefSize=null;
-this.seqMin=null;
-this.seqMax=null;
-this.scaleFactor=0;
-this.npoint=0;
-this.sequencePoints=null;
-this.axisEndPoints=null;
-this.av=null;
-this.ap=null;
-this.showLabels=false;
-this.bgColour=null;
-this.applyToAllViews=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.drawAxes=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['drawAxes','showLabels','applyToAllViews'],'F',['scaleFactor'],'I',['mouseX','mouseY','npoint'],'O',['img','java.awt.Image','ig','java.awt.Graphics','$prefSize','java.awt.Dimension','seqMin','float[]','+seqMax','sequencePoints','java.util.List','axisEndPoints','jalview.datamodel.Point[]','av','jalview.viewmodel.AlignmentViewport','ap','jalview.gui.AlignmentPanel','bgColour','java.awt.Color']]
+,['O',['AXES','java.util.List','AXIS_COLOUR','java.awt.Color']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel', function (panel) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=panel.av;
 this.ap=panel;
 this.setAxisEndPoints$jalview_datamodel_PointA(Clazz.array($I$(3), [3]));
@@ -62,9 +39,9 @@ this.setScaleFactor$F(1.0);
 });
 
 Clazz.newMeth(C$, 'resetAxes$', function () {
-this.getAxisEndPoints$()[0]=Clazz.new_($I$(3).c$$F$F$F,[1.0, 0.0, 0.0]);
-this.getAxisEndPoints$()[1]=Clazz.new_($I$(3).c$$F$F$F,[0.0, 1.0, 0.0]);
-this.getAxisEndPoints$()[2]=Clazz.new_($I$(3).c$$F$F$F,[0.0, 0.0, 1.0]);
+this.getAxisEndPoints$()[0]=Clazz.new_($I$(3,1).c$$F$F$F,[1.0, 0.0, 0.0]);
+this.getAxisEndPoints$()[1]=Clazz.new_($I$(3,1).c$$F$F$F,[0.0, 1.0, 0.0]);
+this.getAxisEndPoints$()[2]=Clazz.new_($I$(3,1).c$$F$F$F,[0.0, 0.0, 1.0]);
 });
 
 Clazz.newMeth(C$, 'findWidths$', function () {
@@ -92,7 +69,7 @@ Clazz.newMeth(C$, 'getPreferredSize$', function () {
 if (this.$prefSize != null ) {
 return this.$prefSize;
 } else {
-return Clazz.new_($I$(5).c$$I$I,[400, 400]);
+return Clazz.new_($I$(5,1).c$$I$I,[400, 400]);
 }});
 
 Clazz.newMeth(C$, 'getMinimumSize$', function () {
@@ -103,7 +80,7 @@ Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g1) {
 var g=g1;
 g.setRenderingHint$java_awt_RenderingHints_Key$O($I$(6).KEY_ANTIALIASING, $I$(6).VALUE_ANTIALIAS_ON);
 if (this.sequencePoints == null ) {
-g.setFont$java_awt_Font(Clazz.new_($I$(7).c$$S$I$I,["Verdana", 0, 18]));
+g.setFont$java_awt_Font(Clazz.new_($I$(7,1).c$$S$I$I,["Verdana", 0, 18]));
 g.drawString$S$I$I($I$(8).getString$S("label.calculating_pca") + "....", 20, (this.getHeight$()/2|0));
 } else {
 var resized=this.$prefSize.width != this.getWidth$() || this.$prefSize.height != this.getHeight$() ;
@@ -187,9 +164,9 @@ if (this.av.getSelectionGroup$().getSequences$java_util_Map(null).contains$O(seq
 sequenceColour=$I$(2).gray;
 }}var zCentre=(this.seqMin[2] + this.seqMax[2]) / 2.0;
 if (sp.coord.z > zCentre ) {
-sequenceColour=$I$(9).getGraduatedColour$F$F$java_awt_Color$F$java_awt_Color(sp.coord.z, 0, sequenceColour, this.seqMax[2], sequenceColour.brighter$());
+sequenceColour=$I$(9,"getGraduatedColour$F$F$java_awt_Color$F$java_awt_Color",[sp.coord.z, 0, sequenceColour, this.seqMax[2], sequenceColour.brighter$()]);
 } else if (sp.coord.z < zCentre ) {
-sequenceColour=$I$(9).getGraduatedColour$F$F$java_awt_Color$F$java_awt_Color(sp.coord.z, this.seqMin[2], sequenceColour.darker$(), 0, sequenceColour);
+sequenceColour=$I$(9,"getGraduatedColour$F$F$java_awt_Color$F$java_awt_Color",[sp.coord.z, this.seqMin[2], sequenceColour.darker$(), 0, sequenceColour]);
 }return sequenceColour;
 });
 
@@ -249,11 +226,11 @@ for (var a=0; a < aps.length; a++) {
 if (aps[a].av.getSelectionGroup$() != null ) {
 aps[a].av.getSelectionGroup$().addOrRemove$jalview_datamodel_SequenceI$Z(found, true);
 } else {
-aps[a].av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(10)));
+aps[a].av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(10,1)));
 aps[a].av.getSelectionGroup$().addOrRemove$jalview_datamodel_SequenceI$Z(found, true);
 aps[a].av.getSelectionGroup$().setEndRes$I(aps[a].av.getAlignment$().getWidth$() - 1);
 }}
-$I$(11).Refresh$java_awt_Component$S(this, this.av.getSequenceSetId$());
+$I$(11,"Refresh$java_awt_Component$S",[this, this.av.getSequenceSetId$()]);
 this.av.sendSelection$();
 }this.repaint$();
 });
@@ -270,7 +247,7 @@ if (xPos == this.mouseX && yPos == this.mouseY ) {
 return;
 }var xDelta=xPos - this.mouseX;
 var yDelta=yPos - this.mouseY;
-if ((evt.getModifiers$() & 8) != 0) {
+if ((evt.getModifiersEx$() & 2048) != 0) {
 } else {
 this.rotate$F$F(xDelta, yDelta);
 this.mouseX=xPos;
@@ -281,7 +258,7 @@ this.repaint$();
 Clazz.newMeth(C$, 'rotate$F$F', function (x, y) {
 if (x == 0.0  && y == 0.0  ) {
 return;
-}var rotmat=Clazz.new_($I$(12));
+}var rotmat=Clazz.new_($I$(12,1));
 if (y != 0 ) {
 rotmat.rotate$F$jalview_math_RotatableMatrix_Axis(y, $I$(13).X);
 }if (x != 0 ) {
@@ -351,7 +328,7 @@ return null;
 
 Clazz.newMeth(C$, 'getAssociatedPanels$', function () {
 if (this.isApplyToAllViews$()) {
-return $I$(11).getAssociatedPanels$S(this.av.getSequenceSetId$());
+return $I$(11,"getAssociatedPanels$S",[this.av.getSequenceSetId$()]);
 } else {
 return Clazz.array($I$(14), -1, [this.ap]);
 }});
@@ -360,7 +337,7 @@ Clazz.newMeth(C$, 'getBackgroundColour$', function () {
 return this.getBgColour$();
 });
 
-Clazz.newMeth(C$, ['mouseWheelMoved$java_awt_event_MouseWheelEvent','mouseWheelMoved$'], function (e) {
+Clazz.newMeth(C$, 'mouseWheelMoved$java_awt_event_MouseWheelEvent', function (e) {
 var wheelRotation=e.getPreciseWheelRotation$();
 if (wheelRotation > 0 ) {
 this.zoom$F(1.1);
@@ -423,6 +400,11 @@ Clazz.newMeth(C$, 'setBgColour$java_awt_Color', function (bgColour) {
 this.bgColour=bgColour;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.AXES=$I$(1).asList$OA(["x", "y", "z"]);
+C$.AXIS_COLOUR=$I$(2).yellow;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

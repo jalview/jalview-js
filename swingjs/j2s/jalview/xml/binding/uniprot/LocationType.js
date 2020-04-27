@@ -1,19 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
-var C$=Clazz.newClass(P$, "LocationType");
+/*c*/var C$=Clazz.newClass(P$, "LocationType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.begin=null;
-this.end=null;
-this.position=null;
-this.sequence=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['sequence'],'O',['begin','jalview.xml.binding.uniprot.PositionType','+end','+position']]]
 
 Clazz.newMeth(C$, 'getBegin$', function () {
 return this.begin;
@@ -46,12 +39,13 @@ return this.sequence;
 Clazz.newMeth(C$, 'setSequence$S', function (value) {
 this.sequence=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.LocationType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="locationType" propOrder={"begin"  "end"  "position"  } )']],
-  [['sequence','String'],['@XmlAttribute(name="sequence" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.LocationType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="locationType" propOrder={"begin"  "end"  "position"  } ']],
+  [['sequence','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="sequence" ']],
   [['begin','jalview.xml.binding.uniprot.PositionType'],['@XmlElement']],
   [['end','jalview.xml.binding.uniprot.PositionType'],['@XmlElement']],
-  [['position','jalview.xml.binding.uniprot.PositionType'],['@XmlElement']]];
+  [['position','jalview.xml.binding.uniprot.PositionType'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

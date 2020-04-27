@@ -1,57 +1,26 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.SwingUtilities','javax.swing.text.Segment',['javax.swing.text.Position','.Bias'],'Boolean','javax.swing.event.EventListenerList',['javax.swing.text.DefaultCaret','.Handler'],'javax.swing.event.ChangeListener',['javax.swing.text.DefaultCaret','.SafeScroller'],'java.awt.Point','javax.swing.event.ChangeEvent',['javax.swing.text.DefaultCaret','.DefaultFilterBypass']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultCaret", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.SwingUtilities','javax.swing.text.DefaultCaret',['javax.swing.text.Position','.Bias'],'javax.swing.text.Segment','javax.swing.event.EventListenerList',['javax.swing.text.DefaultCaret','.Handler'],'javax.swing.event.ChangeListener',['javax.swing.text.DefaultCaret','.SafeScroller'],'java.awt.Point','javax.swing.event.ChangeEvent',['javax.swing.text.DefaultCaret','.DefaultFilterBypass']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultCaret", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.Rectangle', ['javax.swing.text.Caret', 'java.awt.event.FocusListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
-C$.biasRet=null;
-C$.selectWord=null;
-C$.selectLine=null;
+C$.$classes$=[['SafeScroller',0],['Handler',0],['DefaultFilterBypass',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.biasRet=Clazz.array($I$(3), [1]);
-C$.selectWord=null;
-C$.selectLine=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.working=false;
-this.listenerList=null;
-this.changeEvent=null;
-this.component=null;
-this.updatePolicy=0;
-this.visible=false;
-this.active=false;
-this.dot=0;
-this.mark=0;
-this.selectionTag=null;
-this.selectionVisible=false;
-this.magicCaretPosition=null;
-this.dotBias=null;
-this.markBias=null;
-this.dotLTR=false;
-this.markLTR=false;
-this.handler=null;
-this.flagXPoints=null;
-this.flagYPoints=null;
-this.filterBypass=null;
-this.ownsSelection=false;
-this.forceCaretPositionChange=false;
-this.shouldHandleRelease=false;
-this.selectedWordEvent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.listenerList=Clazz.new_($I$(5));
+this.listenerList=Clazz.new_($I$(5,1));
 this.changeEvent=null;
-this.updatePolicy=0;
-this.handler=Clazz.new_($I$(6), [this, null]);
+this.updatePolicy=2;
+this.handler=Clazz.new_($I$(6,1),[this, null]);
 this.flagXPoints=Clazz.array(Integer.TYPE, [3]);
 this.flagYPoints=Clazz.array(Integer.TYPE, [3]);
 this.selectedWordEvent=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['working','visible','active','selectionVisible','dotLTR','markLTR','ownsSelection','forceCaretPositionChange','shouldHandleRelease'],'I',['updatePolicy','dot','mark'],'O',['listenerList','javax.swing.event.EventListenerList','changeEvent','javax.swing.event.ChangeEvent','component','javax.swing.text.JTextComponent','selectionTag','java.lang.Object','magicCaretPosition','java.awt.Point','dotBias','javax.swing.text.Position.Bias','+markBias','handler','javax.swing.text.DefaultCaret.Handler','flagXPoints','int[]','+flagYPoints','filterBypass','javax.swing.text.NavigationFilter.FilterBypass','selectedWordEvent','java.awt.event.MouseEvent']]
+,['O',['biasRet','javax.swing.text.Position.Bias[]','s','javax.swing.text.Segment','selectWord','javax.swing.Action','+selectLine']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'install$javax_swing_text_JTextComponent', function (c) {
@@ -83,11 +52,11 @@ this.component=null;
 }});
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getChangeListeners$', function () {
@@ -115,7 +84,7 @@ return;
 }if ($I$(1).isEventDispatchThread$()) {
 this.component.scrollRectToVisible$java_awt_Rectangle(nloc);
 } else {
-$I$(1).invokeLater$Runnable(Clazz.new_($I$(8).c$$java_awt_Rectangle, [this, null, nloc]));
+$I$(1,"invokeLater$Runnable",[Clazz.new_($I$(8,1).c$$java_awt_Rectangle,[this, null, nloc])]);
 }});
 
 Clazz.newMeth(C$, 'getSelectionPainter$', function () {
@@ -123,7 +92,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'positionCaret$java_awt_event_MouseEvent', function (e) {
-var pt=Clazz.new_($I$(9).c$$I$I,[e.getX$(), e.getY$()]);
+var pt=Clazz.new_([e.getX$(), e.getY$()],$I$(9,1).c$$I$I);
 (this.component.getUI$()).viewToModel$javax_swing_text_JTextComponent$java_awt_Point$javax_swing_text_Position_BiasA(this.component, pt, C$.biasRet);
 if (pt.x >= 0) {
 if (C$.biasRet[0] == null ) C$.biasRet[0]=$I$(3).Forward;
@@ -132,7 +101,7 @@ if (pt.y != pt.x) this.moveDot$I$javax_swing_text_Position_Bias(pt.y, C$.biasRet
 }});
 
 Clazz.newMeth(C$, 'getPosition$java_awt_event_MouseEvent$javax_swing_text_Position_BiasA', function (e, biasret) {
-var pt=Clazz.new_($I$(9).c$$I$I,[e.getX$(), e.getY$()]);
+var pt=Clazz.new_([e.getX$(), e.getY$()],$I$(9,1).c$$I$I);
 var pos=(this.component.getUI$()).viewToModel$javax_swing_text_JTextComponent$java_awt_Point$javax_swing_text_Position_BiasA(this.component, pt, C$.biasRet);
 System.out.println$S("def caret getPos " + e.getID$() + " " + pt );
 return pos;
@@ -217,8 +186,8 @@ Clazz.newMeth(C$, 'fireStateChanged$', function () {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(10).c$$O,[this]);
-(listeners[i + 1]).stateChanged$(this.changeEvent);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(10,1).c$$O,[this]);
+(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
 
@@ -344,9 +313,11 @@ lastBias=$I$(3).Backward;
 lastBias=$I$(3).Backward;
 }if (lastBias === $I$(3).Backward  && offset > 0 ) {
 try {
-var s=Clazz.new_($I$(2));
-this.component.getDocument$().getText$I$I$javax_swing_text_Segment(offset - 1, 1, s);
-if (s.count > 0 && s.array[s.offset] == "\n" ) {
+C$.s.count=0;
+C$.s.offset=0;
+C$.s.array=null;
+this.component.getDocument$().getText$I$I$javax_swing_text_Segment(offset - 1, 1, C$.s);
+if (C$.s.count > 0 && C$.s.array[C$.s.offset] == "\n" ) {
 lastBias=$I$(3).Forward;
 }} catch (ble) {
 if (Clazz.exceptionOf(ble,"javax.swing.text.BadLocationException")){
@@ -362,7 +333,7 @@ this.dot=dot;
 this.dotBias=dotBias;
 this.dotLTR=this.isPositionLTR$I$javax_swing_text_Position_Bias(dot, dotBias);
 this.fireStateChanged$();
-if (false && !this.working ) p$1.updateSystemSelection.apply(this, []);
+if (!this.working) p$1.updateSystemSelection.apply(this, []);
 this.setMagicCaretPosition$java_awt_Point(null);
 });
 
@@ -370,7 +341,6 @@ Clazz.newMeth(C$, 'repaintNewCaret$', function () {
 });
 
 Clazz.newMeth(C$, 'updateSystemSelection', function () {
-(this.component.ui).updateJSCursorFromCaret$();
 }, p$1);
 
 Clazz.newMeth(C$, 'ensureValidPosition$', function () {
@@ -399,7 +369,7 @@ return s;
 
 Clazz.newMeth(C$, 'getFilterBypass', function () {
 if (this.filterBypass == null ) {
-this.filterBypass=Clazz.new_($I$(11), [this, null]);
+this.filterBypass=Clazz.new_($I$(11,1),[this, null]);
 }return this.filterBypass;
 }, p$1);
 
@@ -436,24 +406,27 @@ return false;
 Clazz.newMeth(C$, 'getCaretWidth$I', function (height) {
 return 1;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.biasRet=Clazz.array($I$(3), [1]);
+C$.s=Clazz.new_($I$(4,1));
+C$.selectWord=null;
+C$.selectLine=null;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultCaret, "SafeScroller", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultCaret, "SafeScroller", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.r=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['r','java.awt.Rectangle']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Rectangle', function (r) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.r=r;
 }, 1);
 
@@ -465,17 +438,16 @@ this.this$0.component.scrollRectToVisible$java_awt_Rectangle(this.r);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultCaret, "Handler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultCaret, "Handler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['java.beans.PropertyChangeListener', 'javax.swing.event.DocumentListener', 'java.awt.event.ActionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (this.this$0.width == 0 || this.this$0.height == 0 ) {
 if (this.this$0.component != null ) {
 }}this.this$0.visible=!this.this$0.visible;
@@ -515,9 +487,10 @@ if (this.this$0.dot == offset) {
 var doc=this.this$0.component.getDocument$();
 var isNewline;
 try {
-var s=Clazz.new_($I$(2));
-doc.getText$I$I$javax_swing_text_Segment(newDot - 1, 1, s);
-isNewline=(s.count > 0 && s.array[s.offset] == "\n" );
+$I$(2).s.count=$I$(2).s.offset=0;
+$I$(2).s.array=null;
+doc.getText$I$I$javax_swing_text_Segment(newDot - 1, 1, $I$(2).s);
+isNewline=($I$(2).s.count > 0 && $I$(2).s.array[$I$(2).s.offset] == "\n" );
 } catch (ble) {
 if (Clazz.exceptionOf(ble,"javax.swing.text.BadLocationException")){
 isNewline=false;
@@ -607,7 +580,7 @@ return;
 this.this$0.setDot$I.apply(this.this$0, [e.getOffset$() + e.getLength$()]);
 }});
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 var oldValue=evt.getOldValue$();
 var newValue=evt.getNewValue$();
 if ((Clazz.instanceOf(oldValue, "javax.swing.text.Document")) || (Clazz.instanceOf(newValue, "javax.swing.text.Document")) ) {
@@ -619,7 +592,7 @@ if (oldValue != null ) {
 }} else if ("enabled".equals$O(evt.getPropertyName$())) {
 var enabled=evt.getNewValue$();
 if (this.this$0.component.isFocusOwner$()) {
-if (enabled === $I$(4).TRUE ) {
+if (enabled === Boolean.TRUE ) {
 if (this.this$0.component.isEditable$()) {
 this.this$0.setVisible$Z.apply(this.this$0, [true]);
 }this.this$0.setSelectionVisible$Z.apply(this.this$0, [true]);
@@ -632,15 +605,14 @@ var $s$ = new Int16Array(1);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultCaret, "DefaultFilterBypass", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultCaret, "DefaultFilterBypass", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.NavigationFilter','.FilterBypass']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getCaret$', function () {
 return this.this$0;
@@ -657,4 +629,4 @@ this.this$0.handleMoveDot$I$javax_swing_text_Position_Bias.apply(this.this$0, [d
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

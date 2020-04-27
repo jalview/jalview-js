@@ -1,25 +1,15 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[[0,'Thread','sun.awt.image.ImageConsumerQueue']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageDecoder");
+(function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[[0,'Thread','sun.awt.image.ImageConsumerQueue']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ImageDecoder");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.source=null;
-this.input=null;
-this.feeder=null;
-this.aborted=false;
-this.finished=false;
-this.queue=null;
-this.next=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['aborted','finished'],'O',['source','sun.awt.image.InputStreamImageSource','input','java.io.InputStream','feeder','Thread','queue','sun.awt.image.ImageConsumerQueue','next','sun.awt.image.ImageDecoder']]]
 
 Clazz.newMeth(C$, 'c$$sun_awt_image_InputStreamImageSource$java_io_InputStream', function (src, is) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.source=src;
 this.input=is;
 this.feeder=$I$(1).currentThread$();
@@ -149,4 +139,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

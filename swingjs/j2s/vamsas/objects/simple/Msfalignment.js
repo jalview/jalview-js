@@ -1,28 +1,21 @@
 (function(){var P$=Clazz.newPackage("vamsas.objects.simple"),I$=[];
-var C$=Clazz.newClass(P$, "Msfalignment", null, null, 'java.io.Serializable');
+/*c*/var C$=Clazz.newClass(P$, "Msfalignment", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.msf=null;
-this.notes=null;
-this.__equalsCalc=null;
-this.__hashCodeCalc=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.__equalsCalc=null;
 this.__hashCodeCalc=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['__hashCodeCalc'],'S',['msf','notes'],'O',['__equalsCalc','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (msf, notes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.msf=msf;
 this.notes=notes;
 }, 1);
@@ -73,4 +66,4 @@ _hashCode+=this.getNotes$().hashCode$();
 return _hashCode;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

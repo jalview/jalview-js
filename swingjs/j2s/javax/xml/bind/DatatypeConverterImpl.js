@@ -1,36 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind"),I$=[[0,'StringBuilder','InternalError','javax.xml.datatype.DatatypeFactory','Error','java.math.BigInteger','javax.xml.bind.WhiteSpaceProcessor','java.math.BigDecimal','javax.xml.namespace.QName',['javax.xml.bind.DatatypeConverterImpl','.CalendarFormatter'],'javax.xml.bind.DatatypeConverter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DatatypeConverterImpl", function(){
+(function(){var P$=Clazz.newPackage("javax.xml.bind"),I$=[[0,'StringBuilder','InternalError','javax.xml.datatype.DatatypeFactory','Error','java.math.BigInteger','javax.xml.bind.WhiteSpaceProcessor','java.math.BigDecimal','javax.xml.namespace.QName',['javax.xml.bind.DatatypeConverterImpl','.CalendarFormatter'],'javax.xml.bind.DatatypeConverter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DatatypeConverterImpl", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'javax.xml.bind.DatatypeConverterInterface');
-C$.theInstance=null;
-C$.hexCode=null;
-C$.decodeMap=null;
-C$.encodeMap=null;
-C$.datatypeFactory=null;
+C$.$classes$=[['CalendarFormatter',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.theInstance=Clazz.new_(C$);
-C$.hexCode="0123456789ABCDEF".toCharArray$();
-C$.decodeMap=C$.initDecodeMap$();
-C$.encodeMap=C$.initEncodeMap$();
-{
-try {
-C$.datatypeFactory=$I$(3).newInstance$();
-} catch (e) {
-if (Clazz.exceptionOf(e,"javax.xml.datatype.DatatypeConfigurationException")){
-throw Clazz.new_($I$(4).c$$Throwable,[e]);
-} else {
-throw e;
-}
-}
-};
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['theInstance','javax.xml.bind.DatatypeConverterInterface','hexCode','char[]','decodeMap','byte[]','encodeMap','char[]','datatypeFactory','javax.xml.datatype.DatatypeFactory']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'parseString$S', function (lexicalXSDString) {
@@ -42,7 +25,7 @@ return C$._parseInteger$CharSequence(lexicalXSDInteger);
 });
 
 Clazz.newMeth(C$, '_parseInteger$CharSequence', function (s) {
-return Clazz.new_($I$(5).c$$S,[C$.removeOptionalPlus$CharSequence($I$(6).trim$CharSequence(s)).toString()]);
+return Clazz.new_([C$.removeOptionalPlus$CharSequence($I$(6).trim$CharSequence(s)).toString()],$I$(5,1).c$$S);
 }, 1);
 
 Clazz.newMeth(C$, 'printInteger$java_math_BigInteger', function (val) {
@@ -107,7 +90,7 @@ Clazz.newMeth(C$, '_parseDecimal$CharSequence', function (content) {
 content=$I$(6).trim$CharSequence(content);
 if (content.length$() <= 0) {
 return null;
-}return Clazz.new_($I$(7).c$$S,[content.toString()]);
+}return Clazz.new_([content.toString()],$I$(7,1).c$$S);
 }, 1);
 
 Clazz.newMeth(C$, 'parseFloat$S', function (lexicalXSDFloat) {
@@ -223,15 +206,15 @@ return val ? "true" : "false";
 }, 1);
 
 Clazz.newMeth(C$, 'parseByte$S', function (lexicalXSDByte) {
-return $b$[0] = C$._parseByte$CharSequence(lexicalXSDByte), $b$[0];
+return C$._parseByte$CharSequence(lexicalXSDByte);
 });
 
 Clazz.newMeth(C$, '_parseByte$CharSequence', function (literal) {
-return $b$[0] = (C$._parseInt$CharSequence(literal)|0), $b$[0];
+return ($b$[0] = C$._parseInt$CharSequence(literal), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'printByte$B', function (val) {
-return C$._printByte$B(($b$[0] = val, $b$[0]));
+return C$._printByte$B(val);
 });
 
 Clazz.newMeth(C$, '_printByte$B', function (val) {
@@ -245,11 +228,11 @@ return C$._parseQName$CharSequence$javax_xml_namespace_NamespaceContext(lexicalX
 Clazz.newMeth(C$, '_parseQName$CharSequence$javax_xml_namespace_NamespaceContext', function (text, nsc) {
 var length=text.length$();
 var start=0;
-while (start < length && $I$(6).isWhiteSpace$C(text.charAt$I(start)) ){
+while (start < length && $I$(6,"isWhiteSpace$C",[text.charAt$I(start)]) ){
 start++;
 }
 var end=length;
-while (end > start && $I$(6).isWhiteSpace$C(text.charAt$I(end - 1)) ){
+while (end > start && $I$(6,"isWhiteSpace$C",[text.charAt$I(end - 1)]) ){
 end--;
 }
 if (end == start) {
@@ -271,7 +254,7 @@ localPart=text.subSequence$I$I(idx + 1, end).toString();
 uri=nsc.getNamespaceURI$S(prefix);
 if (uri == null  || uri.length$() == 0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["prefix " + prefix + " is not bound to a namespace" ]);
-}}return Clazz.new_($I$(8).c$$S$S$S,[uri, localPart, prefix]);
+}}return Clazz.new_($I$(8,1).c$$S$S$S,[uri, localPart, prefix]);
 }, 1);
 
 Clazz.newMeth(C$, 'parseDateTime$S', function (lexicalXSDDateTime) {
@@ -305,7 +288,7 @@ var h=C$.hexToBin$C(s.charAt$I(i));
 var l=C$.hexToBin$C(s.charAt$I(i + 1));
 if (h == -1 || l == -1 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["contains illegal character for hexBinary: " + s]);
-}out[(i/2|0)]=(((h * 16 + l)|0)|0);
+}out[(i/2|0)]=((h * 16 + l)|0);
 }
 return out;
 });
@@ -321,7 +304,7 @@ return ch.$c() - 97 + 10;
 }, 1);
 
 Clazz.newMeth(C$, 'printHexBinary$BA', function (data) {
-var r=Clazz.new_($I$(1).c$$I,[data.length * 2]);
+var r=Clazz.new_($I$(1,1).c$$I,[data.length * 2]);
 for (var b, $b = 0, $$b = data; $b<$$b.length&&((b=($$b[$b])),1);$b++) {
 r.append$C(C$.hexCode[(b >> 4) & 15]);
 r.append$C(C$.hexCode[(b & 15)]);
@@ -358,7 +341,7 @@ return C$._printDate$java_util_Calendar(val);
 });
 
 Clazz.newMeth(C$, '_printDate$java_util_Calendar', function (val) {
-return $I$(9).doFormat$S$java_util_Calendar((Clazz.new_($I$(1).c$$S,["%Y-%M-%D"]).append$S("%z")).toString(), val);
+return $I$(9,"doFormat$S$java_util_Calendar",[(Clazz.new_($I$(1,1).c$$S,["%Y-%M-%D"]).append$S("%z")).toString(), val]);
 }, 1);
 
 Clazz.newMeth(C$, 'parseAnySimpleType$S', function (lexicalXSDAnySimpleType) {
@@ -446,17 +429,17 @@ for (i=0; i < 128; i++) {
 map[i]=(-1|0);
 }
 for (i="A".$c(); i <= 90 ; i++) {
-map[i]=(((i - 65)|0)|0);
+map[i]=((i - 65)|0);
 }
 for (i="a".$c(); i <= 122 ; i++) {
-map[i]=(((i - 97 + 26)|0)|0);
+map[i]=((i - 97 + 26)|0);
 }
 for (i="0".$c(); i <= 57 ; i++) {
-map[i]=(((i - 48 + 52)|0)|0);
+map[i]=((i - 48 + 52)|0);
 }
 map[43]=(62|0);
 map[47]=(63|0);
-map[61]=(127|0);
+map[61]=127;
 return map;
 }, 1);
 
@@ -464,7 +447,7 @@ Clazz.newMeth(C$, 'guessLength$S', function (text) {
 var len=text.length$();
 var j=len - 1;
 for (; j >= 0; j--) {
-var code=($b$[0] = C$.decodeMap[(text.charCodeAt$I(j))], $b$[0]);
+var code=C$.decodeMap[(text.charCodeAt$I(j))];
 if (code == 127) {
 continue;
 }if (code == -1) {
@@ -488,15 +471,15 @@ var quadruplet=Clazz.array(Byte.TYPE, [4]);
 var q=0;
 for (i=0; i < len; i++) {
 var ch=text.charAt$I(i);
-var v=($b$[0] = C$.decodeMap[ch.$c()], $b$[0]);
+var v=C$.decodeMap[ch.$c()];
 if (v != -1) {
-quadruplet[q++]=(v|0);
+quadruplet[q++]=v;
 }if (q == 4) {
-out[o++]=((((quadruplet[0] << 2) | (quadruplet[1] >> 4))|0)|0);
+out[o++]=(((quadruplet[0] << 2) | (quadruplet[1] >> 4))|0);
 if (quadruplet[2] != 127) {
-out[o++]=((((quadruplet[1] << 4) | (quadruplet[2] >> 2))|0)|0);
+out[o++]=(((quadruplet[1] << 4) | (quadruplet[2] >> 2))|0);
 }if (quadruplet[3] != 127) {
-out[o++]=((((quadruplet[2] << 6) | (quadruplet[3]))|0)|0);
+out[o++]=(((quadruplet[2] << 6) | (quadruplet[3]))|0);
 }q=0;
 }}
 if (buflen == o) {
@@ -528,7 +511,7 @@ return C$.encodeMap[i & 63];
 }, 1);
 
 Clazz.newMeth(C$, 'encodeByte$I', function (i) {
-return $b$[0] = (C$.encodeMap[i & 63].$c()|0), $b$[0];
+return ($b$[0] = C$.encodeMap[i & 63].$c(), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, '_printBase64Binary$BA', function (input) {
@@ -569,20 +552,20 @@ var buf=out;
 var remaining=len;
 var i;
 for (i=offset; remaining >= 3; remaining-=3, i+=3) {
-buf[ptr++]=(C$.encodeByte$I(input[i] >> 2)|0);
-buf[ptr++]=(C$.encodeByte$I(((input[i] & 3) << 4) | ((input[i + 1] >> 4) & 15))|0);
-buf[ptr++]=(C$.encodeByte$I(((input[i + 1] & 15) << 2) | ((input[i + 2] >> 6) & 3))|0);
-buf[ptr++]=(C$.encodeByte$I(input[i + 2] & 63)|0);
+buf[ptr++]=C$.encodeByte$I(input[i] >> 2);
+buf[ptr++]=C$.encodeByte$I(((input[i] & 3) << 4) | ((input[i + 1] >> 4) & 15));
+buf[ptr++]=C$.encodeByte$I(((input[i + 1] & 15) << 2) | ((input[i + 2] >> 6) & 3));
+buf[ptr++]=C$.encodeByte$I(input[i + 2] & 63);
 }
 if (remaining == 1) {
-buf[ptr++]=(C$.encodeByte$I(input[i] >> 2)|0);
-buf[ptr++]=(C$.encodeByte$I(((input[i]) & 3) << 4)|0);
+buf[ptr++]=C$.encodeByte$I(input[i] >> 2);
+buf[ptr++]=C$.encodeByte$I(((input[i]) & 3) << 4);
 buf[ptr++]=("=".$c()|0);
 buf[ptr++]=("=".$c()|0);
 }if (remaining == 2) {
-buf[ptr++]=(C$.encodeByte$I(input[i] >> 2)|0);
-buf[ptr++]=(C$.encodeByte$I(((input[i] & 3) << 4) | ((input[i + 1] >> 4) & 15))|0);
-buf[ptr++]=(C$.encodeByte$I((input[i + 1] & 15) << 2)|0);
+buf[ptr++]=C$.encodeByte$I(input[i] >> 2);
+buf[ptr++]=C$.encodeByte$I(((input[i] & 3) << 4) | ((input[i + 1] >> 4) & 15));
+buf[ptr++]=C$.encodeByte$I((input[i + 1] & 15) << 2);
 buf[ptr++]=("=".$c()|0);
 }return ptr;
 }, 1);
@@ -607,24 +590,41 @@ return true;
 return true;
 }return false;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.theInstance=Clazz.new_(C$);
+C$.hexCode="0123456789ABCDEF".toCharArray$();
+C$.decodeMap=C$.initDecodeMap$();
+C$.encodeMap=C$.initEncodeMap$();
+{
+try {
+C$.datatypeFactory=$I$(3).newInstance$();
+} catch (e) {
+if (Clazz.exceptionOf(e,"javax.xml.datatype.DatatypeConfigurationException")){
+throw Clazz.new_($I$(4,1).c$$Throwable,[e]);
+} else {
+throw e;
+}
+}
+};
+};
 var $s$ = new Int16Array(1);
 var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.DatatypeConverterImpl, "CalendarFormatter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DatatypeConverterImpl, "CalendarFormatter", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'doFormat$S$java_util_Calendar', function (format, cal) {
 var fidx=0;
 var flen=format.length$();
-var buf=Clazz.new_($I$(1));
+var buf=Clazz.new_($I$(1,1));
 while (fidx < flen){
 var fch=format.charAt$I(fidx++);
 if (fch != "%") {
@@ -653,7 +653,7 @@ case 122:
 C$.formatTimeZone$java_util_Calendar$StringBuilder(cal, buf);
 break;
 default:
-throw Clazz.new_($I$(2));
+throw Clazz.new_($I$(2,1));
 }
 }
 return buf.toString();
@@ -731,4 +731,4 @@ buf.append$C("0");
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

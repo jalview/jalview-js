@@ -1,27 +1,21 @@
 (function(){var P$=Clazz.newPackage("org.jmol.awtjs.swing"),p$1={};
-var C$=Clazz.newClass(P$, "JMenuItem", null, 'org.jmol.awtjs.swing.AbstractButton');
+/*c*/var C$=Clazz.newClass(P$, "JMenuItem", null, 'org.jmol.awtjs.swing.AbstractButton');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.btnType=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['btnType']]]
 
 Clazz.newMeth(C$, 'c$$S', function (text) {
-C$.superclazz.c$$S.apply(this, ["btn"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["btn"]);C$.$init$.apply(this);
 this.setText$S(text);
 this.btnType=(text == null  ? 0 : 1);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I', function (type, i) {
-C$.superclazz.c$$S.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[type]);C$.$init$.apply(this);
 this.btnType=i;
 }, 1);
 
@@ -39,4 +33,4 @@ return (this.btnType == 1 ? this.text : "<label><input id=\"" + this.id + "-" + 
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

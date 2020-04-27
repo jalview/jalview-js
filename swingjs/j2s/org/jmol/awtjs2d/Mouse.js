@@ -1,28 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awtjs2d"),p$1={},I$=[[0,'javajs.util.V3','org.jmol.util.Logger','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Mouse", null, null, 'org.jmol.api.GenericMouseInterface');
+(function(){var P$=Clazz.newPackage("org.jmol.awtjs2d"),p$1={},I$=[[0,'javajs.util.V3','org.jmol.util.Logger','javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Mouse", null, null, 'org.jmol.api.GenericMouseInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.manager=null;
-this.keyBuffer=null;
-this.isMouseDown=false;
-this.wheeling=false;
-this.modifiersDown=0;
-this.xWhenPressed=0;
-this.yWhenPressed=0;
-this.modifiersWhenPressed10=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.keyBuffer="";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isMouseDown','wheeling'],'I',['modifiersDown','xWhenPressed','yWhenPressed','modifiersWhenPressed10'],'S',['keyBuffer'],'O',['vwr','org.jmol.viewer.Viewer','manager','org.jmol.api.EventManager']]]
 
 Clazz.newMeth(C$, 'c$$D$org_jmol_viewer_Viewer$O', function (privateKey, vwr, display) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 this.manager=this.vwr.acm;
 }, 1);
@@ -147,7 +135,7 @@ ke.consume$();
 if (!this.vwr.menuEnabled$()) return;
 var ch=ke.getKeyChar$();
 var modifiers=ke.getModifiers$();
-if ($I$(2).debuggingHigh) $I$(2).debug$S("MouseManager keyTyped: " + ch + " " + (0 + ch.$c()) + " " + modifiers );
+if ($I$(2).debuggingHigh) (function(a,f){return f.apply(null,a)})(["MouseManager keyTyped: " + ch + " " + (0 + ch.$c()) + " " + modifiers ],$I$(2).debug$S);
 if (modifiers != 0 && modifiers != 1 ) {
 switch (ch.$c()) {
 case 11:
@@ -223,7 +211,7 @@ return;
 if (this.keyBuffer.length$() > 0) this.keyBuffer=this.keyBuffer.substring$I$I(0, this.keyBuffer.length$() - 1);
 } else {
 this.keyBuffer += ch;
-}if (this.vwr.getBooleanProperty$S("showKeyStrokes")) this.vwr.evalStringQuietSync$S$Z$Z("!set echo _KEYSTROKES; set echo bottom left;echo " + $I$(3).esc$S("\1" + this.keyBuffer), true, true);
+}if (this.vwr.getBooleanProperty$S("showKeyStrokes")) this.vwr.evalStringQuietSync$S$Z$Z("!set echo _KEYSTROKES; set echo bottom left;echo " + $I$(3).esc$S("\u0001" + this.keyBuffer), true, true);
 }, p$1);
 
 Clazz.newMeth(C$, 'sendKeyBuffer', function () {
@@ -284,4 +272,4 @@ return ((modifiers & 28) == 0) ? (modifiers | 16) : modifiers;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

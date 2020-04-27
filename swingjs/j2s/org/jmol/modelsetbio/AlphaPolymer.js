@@ -1,23 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.Logger','org.jmol.c.STR','org.jmol.modelsetbio.Helix','org.jmol.modelsetbio.Sheet','org.jmol.modelsetbio.Turn','javajs.util.Measure',['org.jmol.modelsetbio.AlphaPolymer','.Code']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlphaPolymer", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.Logger','org.jmol.c.STR','org.jmol.modelsetbio.Helix','org.jmol.modelsetbio.Sheet','org.jmol.modelsetbio.Turn','javajs.util.Measure',['org.jmol.modelsetbio.AlphaPolymer','.Code']]],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "AlphaPolymer", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.modelsetbio.BioPolymer');
-C$.dsspTypes=null;
+C$.$classes$=[['Code',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.dsspTypes=Clazz.array(String, -1, ["H", null, "H", "S", "H", null, "T"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pt0=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pt0']]
+,['O',['dsspTypes','String[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelsetbio_MonomerA$I', function (monomers, pt0) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.pt0=pt0;
 this.set$org_jmol_modelsetbio_MonomerA(monomers);
 this.hasStructure=true;
@@ -63,13 +59,13 @@ case $I$(3).HELIX:
 case $I$(3).HELIXALPHA:
 case $I$(3).HELIX310:
 case $I$(3).HELIXPI:
-ps=Clazz.new_($I$(4).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this, indexStart, structureCount, type]);
+ps=Clazz.new_($I$(4,1).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this, indexStart, structureCount, type]);
 break;
 case $I$(3).SHEET:
-ps=Clazz.new_($I$(5).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this, indexStart, structureCount, type]);
+ps=Clazz.new_($I$(5,1).c$$org_jmol_modelsetbio_AlphaPolymer$I$I$org_jmol_c_STR,[this, indexStart, structureCount, type]);
 break;
 case $I$(3).TURN:
-ps=Clazz.new_($I$(6).c$$org_jmol_modelsetbio_AlphaPolymer$I$I,[this, indexStart, structureCount]);
+ps=Clazz.new_($I$(6,1).c$$org_jmol_modelsetbio_AlphaPolymer$I$I,[this, indexStart, structureCount]);
 break;
 default:
 $I$(2).error$S("unrecognized secondary structure type");
@@ -101,7 +97,7 @@ p$1.addStructuresFromTags$org_jmol_c_STRA.apply(this, [tags]);
 
 Clazz.newMeth(C$, 'calculateAnglesInDegrees', function () {
 var angles=Clazz.array(Float.TYPE, [this.monomerCount]);
-for (var i=this.monomerCount - 1; --i >= 2; ) angles[i]=$I$(7).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(this.monomers[i - 2].getLeadAtom$(), this.monomers[i - 1].getLeadAtom$(), this.monomers[i].getLeadAtom$(), this.monomers[i + 1].getLeadAtom$(), true);
+for (var i=this.monomerCount - 1; --i >= 2; ) angles[i]=(function(a,f){return f.apply(null,a)})([this.monomers[i - 2].getLeadAtom$(), this.monomers[i - 1].getLeadAtom$(), this.monomers[i].getLeadAtom$(), this.monomers[i + 1].getLeadAtom$(), true],$I$(7).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z);
 
 return angles;
 }, p$1);
@@ -183,12 +179,21 @@ this.addStructureProtected$org_jmol_c_STR$S$I$I$I$I(type, C$.dsspTypes[dsspType]
 }
 return count;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.dsspTypes=Clazz.array(String, -1, ["H", null, "H", "S", "H", null, "T"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.AlphaPolymer, "Code", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.AlphaPolymer, "Code", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "NADA", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "RIGHT_HELIX", 1, []);
@@ -196,10 +201,7 @@ Clazz.newEnumConst($vals, C$.c$, "BETA_SHEET", 2, []);
 Clazz.newEnumConst($vals, C$.c$, "LEFT_HELIX", 3, []);
 Clazz.newEnumConst($vals, C$.c$, "LEFT_TURN", 4, []);
 Clazz.newEnumConst($vals, C$.c$, "RIGHT_TURN", 5, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -209,4 +211,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,23 @@
-(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},p$2={},I$=[[0,'javax.swing.JPanel','java.io.File','java.io.FileOutputStream','java.awt.event.WindowAdapter','java.awt.BorderLayout','gnu.jpdf.TestMenuBar','gnu.jpdf.PDFJob','gnu.jpdf.TestPanel','javax.swing.JScrollPane','java.awt.Dimension','java.awt.Toolkit','javax.swing.JOptionPane','gnu.jpdf.HelpFrame','java.awt.JobAttributes','java.awt.Color','java.awt.Point','java.awt.Font','gnu.jpdf.BoundingBox','java.awt.MediaTracker','javax.swing.JMenu','javax.swing.JMenuItem','javax.swing.KeyStroke','javax.swing.JTextArea','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HelpFrame", null, 'javax.swing.JFrame');
+(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},p$2={},I$=[[0,'javax.swing.JPanel','java.io.File','java.io.FileOutputStream','java.awt.event.WindowAdapter','java.awt.BorderLayout','gnu.jpdf.TestMenuBar','gnu.jpdf.PDFJob','gnu.jpdf.TestPanel','javax.swing.JScrollPane','java.awt.Dimension','java.awt.Toolkit','javax.swing.JOptionPane','gnu.jpdf.HelpFrame','java.awt.JobAttributes','java.awt.Color','java.awt.Point','java.awt.Font','gnu.jpdf.BoundingBox','java.awt.MediaTracker','javax.swing.JMenu','javax.swing.JMenuItem','javax.swing.KeyStroke','javax.swing.JTextArea','StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HelpFrame", null, 'javax.swing.JFrame');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setTitle$S("gnupdf Help");
 var helpContent=this.getContentPane$();
-helpContent.setLayout$java_awt_LayoutManager(Clazz.new_($I$(5)));
-var textArea=Clazz.new_($I$(23).c$$I$I,[20, 40]);
+helpContent.setLayout$java_awt_LayoutManager(Clazz.new_($I$(5,1)));
+var textArea=Clazz.new_($I$(23,1).c$$I$I,[20, 40]);
 textArea.setLineWrap$Z(true);
 textArea.append$S(p$2.getHelpText.apply(this, []));
-var helpScroller=Clazz.new_($I$(9).c$$java_awt_Component,[textArea]);
+var helpScroller=Clazz.new_($I$(9,1).c$$java_awt_Component,[textArea]);
 helpContent.add$java_awt_Component(helpScroller);
 this.setSize$java_awt_Dimension(helpScroller.getSize$());
-this.setLocation$java_awt_Point(Clazz.new_($I$(16).c$$I$I,[200, 200]));
+this.setLocation$java_awt_Point(Clazz.new_($I$(16,1).c$$I$I,[200, 200]));
 this.pack$();
 this.toFront$();
 this.show$();
@@ -27,7 +26,7 @@ textArea.setEditable$Z(false);
 }, 1);
 
 Clazz.newMeth(C$, 'getHelpText', function () {
-var out=Clazz.new_($I$(24));
+var out=Clazz.new_($I$(24,1));
 out.append$S("gnujpdf Help File and Tutorial\n");
 out.append$S("\n");
 out.append$S("This file contains some general help and a simple tutorial on the\n");
@@ -90,4 +89,4 @@ out.append$S("\n");
 return out.toString();
 }, p$2);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

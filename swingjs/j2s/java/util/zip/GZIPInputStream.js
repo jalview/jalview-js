@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.util.zip"),p$1={},I$=[[0,'java.util.zip.CRC32','java.util.zip.Inflater','java.util.zip.CheckedInputStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GZIPInputStream", null, 'java.util.zip.InflaterInputStream');
+(function(){var P$=Clazz.newPackage("java.util.zip"),p$1={},I$=[[0,'java.util.zip.CRC32','java.util.zip.Inflater','java.util.zip.CheckedInputStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GZIPInputStream", null, 'java.util.zip.InflaterInputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.crc=null;
-this.eos=false;
-this.$closed=false;
-this.tmpbuf=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.crc=Clazz.new_($I$(1));
+this.crc=Clazz.new_($I$(1,1));
 this.$closed=false;
 this.tmpbuf=Clazz.array(Byte.TYPE, [128]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['eos','$closed'],'O',['crc','java.util.zip.CRC32','tmpbuf','byte[]']]]
 
 Clazz.newMeth(C$, 'ensureOpen', function () {
 if (this.$closed) {
@@ -24,8 +17,7 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream$I', function ($in, size) {
-C$.superclazz.c$$java_io_InputStream$java_util_zip_Inflater$I.apply(this, [$in, Clazz.new_($I$(2)).init$I$Z(0, true), size]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_InputStream$java_util_zip_Inflater$I.apply(this,[$in, Clazz.new_($I$(2,1)).init$I$Z(0, true), size]);C$.$init$.apply(this);
 p$1.readHeader$java_io_InputStream.apply(this, [$in]);
 }, 1);
 
@@ -50,7 +42,7 @@ this.$closed=true;
 }});
 
 Clazz.newMeth(C$, 'readHeader$java_io_InputStream', function (this_in) {
-var $in=Clazz.new_($I$(3).c$$java_io_InputStream$swingjs_jzlib_Checksum,[this_in, this.crc]);
+var $in=Clazz.new_($I$(3,1).c$$java_io_InputStream$swingjs_jzlib_Checksum,[this_in, this.crc]);
 this.crc.reset$();
 if (p$1.readUShort$java_io_InputStream.apply(this, [$in]) != 35615) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["Not in GZIP format"]);
@@ -109,4 +101,4 @@ throw Clazz.new_(Clazz.load('java.io.EOFException'));
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

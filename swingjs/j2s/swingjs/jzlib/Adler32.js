@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[];
-var C$=Clazz.newClass(P$, "Adler32", null, null, 'swingjs.jzlib.Checksum');
+/*c*/var C$=Clazz.newClass(P$, "Adler32", null, null, 'swingjs.jzlib.Checksum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s1=0;
-this.s2=0;
-this.b1=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.s1=1;
 this.s2=0;
 this.b1=Clazz.array(Byte.TYPE, [1]);
-}, 1);
+},1);
+
+C$.$fields$=[['J',['s1','s2'],'O',['b1','byte[]']]]
 
 Clazz.newMeth(C$, 'resetLong$J', function (init) {
 this.s1=init & 65535;
@@ -61,10 +55,10 @@ this.s2%=65521;
 });
 
 Clazz.newMeth(C$, 'updateByteAsInt$I', function (b) {
-this.b1[0]=((b|0)|0);
+this.b1[0]=(b|0);
 this.update$BA$I$I(this.b1, 0, 1);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

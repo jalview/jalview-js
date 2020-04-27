@@ -1,41 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.urls"),I$=[[0,'jalview.util.MessageManager','java.util.ArrayList','jalview.util.UrlLink']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UrlLinkDisplay");
-C$.COLNAMES=null;
+(function(){var P$=Clazz.newPackage("jalview.urls"),I$=[[0,'jalview.util.MessageManager','java.util.ArrayList','jalview.util.UrlLink']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UrlLinkDisplay");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.COLNAMES=((P$.UrlLinkDisplay$1||
-(function(){var C$=Clazz.newClass(P$, "UrlLinkDisplay$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.util.ArrayList'), null, 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-{
-this.add$TE($I$(1).formatMessage$S$OA("label.database", []));
-this.add$TE($I$(1).formatMessage$S$OA("label.name", []));
-this.add$TE($I$(1).formatMessage$S$OA("label.url", []));
-this.add$TE($I$(1).formatMessage$S$OA("label.inmenu", []));
-this.add$TE($I$(1).formatMessage$S$OA("label.primary", []));
-this.add$TE($I$(1).formatMessage$S$OA("label.id", []));
-}
-}, 1);
-})()
-), Clazz.new_($I$(2), [this, null],P$.UrlLinkDisplay$1));
-}
+},1);
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=null;
-this.isPrimary=false;
-this.isSelected=false;
-this.link=null;
-}, 1);
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+C$.$fields$=[['Z',['isPrimary','isSelected'],'S',['id'],'O',['link','jalview.util.UrlLink']]
+,['O',['COLNAMES','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$S$jalview_util_UrlLink$Z$Z', function (rowId, rowLink, rowSelected, rowDefault) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.id=rowId;
 this.isPrimary=rowDefault;
 this.isSelected=rowSelected;
@@ -71,7 +46,7 @@ this.link.setTarget$S(name);
 });
 
 Clazz.newMeth(C$, 'setUrl$S', function (rowUrl) {
-this.link=Clazz.new_($I$(3).c$$S$S$S,[this.getDescription$(), rowUrl, this.getDBName$()]);
+this.link=Clazz.new_([this.getDescription$(), rowUrl, this.getDBName$()],$I$(3,1).c$$S$S$S);
 });
 
 Clazz.newMeth(C$, 'setDescription$S', function (desc) {
@@ -114,10 +89,10 @@ case 2:
 this.setUrl$S(value);
 break;
 case 4:
-this.isPrimary=(value).objectValue$();
+this.isPrimary=(value).valueOf();
 break;
 case 3:
-this.isSelected=(value).objectValue$();
+this.isSelected=(value).valueOf();
 break;
 case 1:
 this.setDescription$S(value);
@@ -139,6 +114,26 @@ Clazz.newMeth(C$, 'getDisplayColumnNames$', function () {
 return C$.COLNAMES.subList$I$I(0, 5);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.COLNAMES=((P$.UrlLinkDisplay$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "UrlLinkDisplay$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.util.ArrayList'), null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+{
+this.add$O($I$(1).formatMessage$S$OA("label.database", []));
+this.add$O($I$(1).formatMessage$S$OA("label.name", []));
+this.add$O($I$(1).formatMessage$S$OA("label.url", []));
+this.add$O($I$(1).formatMessage$S$OA("label.inmenu", []));
+this.add$O($I$(1).formatMessage$S$OA("label.primary", []));
+this.add$O($I$(1).formatMessage$S$OA("label.id", []));
+}
+},1);
+})()
+), Clazz.new_($I$(2,1),[this, null],P$.UrlLinkDisplay$1));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

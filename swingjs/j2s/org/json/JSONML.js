@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'org.json.XML','org.json.JSONArray','org.json.JSONObject','org.json.XMLTokener','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONML");
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'org.json.XML','org.json.JSONArray','org.json.JSONObject','org.json.XMLTokener','StringBuilder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONML");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'parse$org_json_XMLTokener$Z$org_json_JSONArray$Z', function (x, arrayForm, ja, keepStrings) {
 var attribute;
@@ -63,8 +62,8 @@ throw x.syntaxError$S("Misshaped tag");
 if (!(Clazz.instanceOf(token, "java.lang.String"))) {
 throw x.syntaxError$S("Bad tagName '" + token + "'." );
 }tagName=token;
-newja=Clazz.new_($I$(2));
-newjo=Clazz.new_($I$(3));
+newja=Clazz.new_($I$(2,1));
+newjo=Clazz.new_($I$(3,1));
 if (arrayForm) {
 newja.put$O(tagName);
 if (ja != null ) {
@@ -124,11 +123,11 @@ ja.put$O(Clazz.instanceOf(token, "java.lang.String") ? keepStrings ? $I$(1).unes
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONArray$S', function (string) {
-return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4).c$$S,[string]), true, null, false);
+return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4,1).c$$S,[string]), true, null, false);
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONArray$S$Z', function (string, keepStrings) {
-return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4).c$$S,[string]), true, null, keepStrings);
+return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4,1).c$$S,[string]), true, null, keepStrings);
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONArray$org_json_XMLTokener$Z', function (x, keepStrings) {
@@ -140,11 +139,11 @@ return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(x, true, null, false)
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONObject$S', function (string) {
-return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4).c$$S,[string]), false, null, false);
+return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4,1).c$$S,[string]), false, null, false);
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONObject$S$Z', function (string, keepStrings) {
-return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4).c$$S,[string]), false, null, keepStrings);
+return C$.parse$org_json_XMLTokener$Z$org_json_JSONArray$Z(Clazz.new_($I$(4,1).c$$S,[string]), false, null, keepStrings);
 }, 1);
 
 Clazz.newMeth(C$, 'toJSONObject$org_json_XMLTokener', function (x) {
@@ -160,7 +159,7 @@ var i;
 var jo;
 var length;
 var object;
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(5,1));
 var tagName;
 tagName=ja.getString$I(0);
 $I$(1).noSpace$S(tagName);
@@ -179,7 +178,7 @@ sb.append$C(" ");
 sb.append$S($I$(1).escape$S(key));
 sb.append$C("=");
 sb.append$C("\"");
-sb.append$S($I$(1).escape$S(value.toString()));
+sb.append$S($I$(1,"escape$S",[value.toString()]));
 sb.append$C("\"");
 }}
 } else {
@@ -195,7 +194,7 @@ object=ja.get$I(i);
 i+=1;
 if (object != null ) {
 if (Clazz.instanceOf(object, "java.lang.String")) {
-sb.append$S($I$(1).escape$S(object.toString()));
+sb.append$S($I$(1,"escape$S",[object.toString()]));
 } else if (Clazz.instanceOf(object, "org.json.JSONObject")) {
 sb.append$S(C$.toString$org_json_JSONObject(object));
 } else if (Clazz.instanceOf(object, "org.json.JSONArray")) {
@@ -211,7 +210,7 @@ sb.append$C(">");
 }, 1);
 
 Clazz.newMeth(C$, 'toString$org_json_JSONObject', function (jo) {
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(5,1));
 var i;
 var ja;
 var length;
@@ -220,7 +219,7 @@ var tagName;
 var value;
 tagName=jo.optString$S("tagName");
 if (tagName == null ) {
-return $I$(1).escape$S(jo.toString());
+return $I$(1,"escape$S",[jo.toString()]);
 }$I$(1).noSpace$S(tagName);
 tagName=$I$(1).escape$S(tagName);
 sb.append$C("<");
@@ -234,7 +233,7 @@ sb.append$C(" ");
 sb.append$S($I$(1).escape$S(key));
 sb.append$C("=");
 sb.append$C("\"");
-sb.append$S($I$(1).escape$S(value.toString()));
+sb.append$S($I$(1,"escape$S",[value.toString()]));
 sb.append$C("\"");
 }}}
 ja=jo.optJSONArray$S("childNodes");
@@ -248,7 +247,7 @@ for (i=0; i < length; i+=1) {
 object=ja.get$I(i);
 if (object != null ) {
 if (Clazz.instanceOf(object, "java.lang.String")) {
-sb.append$S($I$(1).escape$S(object.toString()));
+sb.append$S($I$(1,"escape$S",[object.toString()]));
 } else if (Clazz.instanceOf(object, "org.json.JSONObject")) {
 sb.append$S(C$.toString$org_json_JSONObject(object));
 } else if (Clazz.instanceOf(object, "org.json.JSONArray")) {
@@ -265,4 +264,4 @@ sb.append$C(">");
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:31 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,27 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList','jalview.xml.binding.jalview.NoValueColour']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JalviewModel", function(){
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList','jalview.xml.binding.jalview.NoValueColour']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JalviewModel", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['FeatureSettings',9],['JGroup',9],['JSeq',9],['PcaViewer',9],['Tree',9],['UserColours',9],['Viewport',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.creationDate=null;
-this.version=null;
-this.vamsasModel=null;
-this.jSeq=null;
-this.jGroup=null;
-this.viewport=null;
-this.userColours=null;
-this.tree=null;
-this.pcaViewer=null;
-this.featureSettings=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['version'],'O',['creationDate','javax.xml.datatype.XMLGregorianCalendar','vamsasModel','jalview.xml.binding.jalview.VAMSAS','jSeq','java.util.List','+jGroup','+viewport','+userColours','+tree','+pcaViewer','featureSettings','jalview.xml.binding.jalview.JalviewModel.FeatureSettings']]]
 
 Clazz.newMeth(C$, 'getCreationDate$', function () {
 return this.creationDate;
@@ -49,37 +37,37 @@ this.vamsasModel=value;
 
 Clazz.newMeth(C$, 'getJSeq$', function () {
 if (this.jSeq == null ) {
-this.jSeq=Clazz.new_($I$(1));
+this.jSeq=Clazz.new_($I$(1,1));
 }return this.jSeq;
 });
 
 Clazz.newMeth(C$, 'getJGroup$', function () {
 if (this.jGroup == null ) {
-this.jGroup=Clazz.new_($I$(1));
+this.jGroup=Clazz.new_($I$(1,1));
 }return this.jGroup;
 });
 
 Clazz.newMeth(C$, 'getViewport$', function () {
 if (this.viewport == null ) {
-this.viewport=Clazz.new_($I$(1));
+this.viewport=Clazz.new_($I$(1,1));
 }return this.viewport;
 });
 
 Clazz.newMeth(C$, 'getUserColours$', function () {
 if (this.userColours == null ) {
-this.userColours=Clazz.new_($I$(1));
+this.userColours=Clazz.new_($I$(1,1));
 }return this.userColours;
 });
 
 Clazz.newMeth(C$, 'getTree$', function () {
 if (this.tree == null ) {
-this.tree=Clazz.new_($I$(1));
+this.tree=Clazz.new_($I$(1,1));
 }return this.tree;
 });
 
 Clazz.newMeth(C$, 'getPcaViewer$', function () {
 if (this.pcaViewer == null ) {
-this.pcaViewer=Clazz.new_($I$(1));
+this.pcaViewer=Clazz.new_($I$(1,1));
 }return this.pcaViewer;
 });
 
@@ -90,16 +78,17 @@ return this.featureSettings;
 Clazz.newMeth(C$, 'setFeatureSettings$jalview_xml_binding_jalview_JalviewModel_FeatureSettings', function (value) {
 this.featureSettings=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="JalviewModel" namespace="www.jalview.org" propOrder={"creationDate"  "version"  "vamsasModel"  "jSeq"  "jGroup"  "viewport"  "userColours"  "tree"  "pcaViewer"  "featureSettings"  } )']],
-  [['creationDate','javax.xml.datatype.XMLGregorianCalendar'],['@XmlElement(required="true" )','@XmlSchemaType(name="dateTime" )']],
-  [['version','String'],['@XmlElement(required="true" )']],
-  [['vamsasModel','jalview.xml.binding.jalview.VAMSAS'],['@XmlElement(required="true" )']],
-  [['jSeq','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq>'],['@XmlElement(name="JSeq" )']],
-  [['jGroup','java.util.List<jalview.xml.binding.jalview.JalviewModel.JGroup>'],['@XmlElement(name="JGroup" )']],
-  [['viewport','java.util.List<jalview.xml.binding.jalview.JalviewModel.Viewport>'],['@XmlElement(name="Viewport" )']],
-  [['userColours','java.util.List<jalview.xml.binding.jalview.JalviewModel.UserColours>'],['@XmlElement(name="UserColours" )']],
-  [['pcaViewer','java.util.List<jalview.xml.binding.jalview.JalviewModel.PcaViewer>'],['@XmlElement(name="PcaViewer" )']],
-  [['featureSettings','jalview.xml.binding.jalview.JalviewModel.FeatureSettings'],['@XmlElement(name="FeatureSettings" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="JalviewModel" namespace="www.jalview.org" propOrder={"creationDate"  "version"  "vamsasModel"  "jSeq"  "jGroup"  "viewport"  "userColours"  "tree"  "pcaViewer"  "featureSettings"  } ']],
+  [['creationDate','javax.xml.datatype.XMLGregorianCalendar',null,['javax.xml.bind.annotation.XmlElement','javax.xml.bind.annotation.XmlSchemaType']],['required="true" ','name="dateTime" ']],
+  [['version','String',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['vamsasModel','jalview.xml.binding.jalview.VAMSAS',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['jSeq','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq>',null,['javax.xml.bind.annotation.XmlElement']],['name="JSeq" ']],
+  [['jGroup','java.util.List<jalview.xml.binding.jalview.JalviewModel.JGroup>',null,['javax.xml.bind.annotation.XmlElement']],['name="JGroup" ']],
+  [['viewport','java.util.List<jalview.xml.binding.jalview.JalviewModel.Viewport>',null,['javax.xml.bind.annotation.XmlElement']],['name="Viewport" ']],
+  [['userColours','java.util.List<jalview.xml.binding.jalview.JalviewModel.UserColours>',null,['javax.xml.bind.annotation.XmlElement']],['name="UserColours" ']],
+  [['pcaViewer','java.util.List<jalview.xml.binding.jalview.JalviewModel.PcaViewer>',null,['javax.xml.bind.annotation.XmlElement']],['name="PcaViewer" ']],
+  [['featureSettings','jalview.xml.binding.jalview.JalviewModel.FeatureSettings',null,['javax.xml.bind.annotation.XmlElement']],['name="FeatureSettings" ']],
   [['null','jalview.xml.binding.jalview.JalviewModel.FeatureSettings'],['!XmlInner']],
   [['null','jalview.xml.binding.jalview.JalviewModel.JGroup'],['!XmlInner']],
   [['null','jalview.xml.binding.jalview.JalviewModel.JSeq'],['!XmlInner']],
@@ -107,56 +96,48 @@ C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel'],['@XmlAccessorT
   [['null','jalview.xml.binding.jalview.JalviewModel.Tree'],['!XmlInner']],
   [['null','jalview.xml.binding.jalview.JalviewModel.UserColours'],['!XmlInner']],
   [['null','jalview.xml.binding.jalview.JalviewModel.Viewport'],['!XmlInner']],
-  [['tree','java.util.List<jalview.xml.binding.jalview.JalviewModel.Tree>'],['@XmlElement']]];
+  [['tree','java.util.List<jalview.xml.binding.jalview.JalviewModel.Tree>'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel, "FeatureSettings", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel, "FeatureSettings", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['Group',9],['Setting',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.setting=null;
-this.group=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['setting','java.util.List','+group']]]
 
 Clazz.newMeth(C$, 'getSetting$', function () {
 if (this.setting == null ) {
-this.setting=Clazz.new_($I$(1));
+this.setting=Clazz.new_($I$(1,1));
 }return this.setting;
 });
 
 Clazz.newMeth(C$, 'getGroup$', function () {
 if (this.group == null ) {
-this.group=Clazz.new_($I$(1));
+this.group=Clazz.new_($I$(1,1));
 }return this.group;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.FeatureSettings'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"setting"  "group"  } )']],
-  [['setting','java.util.List<jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Setting>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['group','java.util.List<jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Group>'],['@XmlElement(namespace="www.jalview.org" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.FeatureSettings',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"setting"  "group"  } ']],
+  [['setting','java.util.List<jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Setting>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['group','java.util.List<jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Group>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
   [['null','jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Group'],['!XmlInner']],
-  [['null','jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Setting'],['!XmlInner']]];
+  [['null','jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Setting'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.FeatureSettings, "Group", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.FeatureSettings, "Group", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.display=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['display'],'S',['name']]]
 
 Clazz.newMeth(C$, 'getName$', function () {
 return this.name;
@@ -173,44 +154,28 @@ return this.display;
 Clazz.newMeth(C$, 'setDisplay$Z', function (value) {
 this.display=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Group'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['name','String'],['@XmlAttribute(name="name" required="true" )']],
-  [['display','boolean'],['@XmlAttribute(name="display" required="true" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Group',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['name','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" required="true" ']],
+  [['display','boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="display" required="true" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.FeatureSettings, "Setting", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.FeatureSettings, "Setting", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attributeName=null;
-this.matcherSet=null;
-this.type=null;
-this.colour=0;
-this.display=false;
-this.order=null;
-this.mincolour=null;
-this.noValueColour=null;
-this.threshold=null;
-this.threshstate=null;
-this.max=null;
-this.min=null;
-this.colourByLabel=null;
-this.autoScale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['display'],'I',['colour'],'S',['type'],'O',['attributeName','java.util.List','matcherSet','jalview.xml.binding.jalview.FeatureMatcherSet','order','Float','mincolour','Integer','noValueColour','jalview.xml.binding.jalview.NoValueColour','threshold','Float','threshstate','Integer','max','Float','+min','colourByLabel','Boolean','+autoScale']]]
 
 Clazz.newMeth(C$, 'getAttributeName$', function () {
 if (this.attributeName == null ) {
-this.attributeName=Clazz.new_($I$(1));
+this.attributeName=Clazz.new_($I$(1,1));
 }return this.attributeName;
 });
 
@@ -320,21 +285,22 @@ return this.autoScale;
 Clazz.newMeth(C$, 'setAutoScale$Boolean', function (value) {
 this.autoScale=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Setting'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"attributeName"  "matcherSet"  } )']],
-  [['attributeName','java.util.List<java.lang.String>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['matcherSet','jalview.xml.binding.jalview.FeatureMatcherSet'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['type','String'],['@XmlAttribute(name="type" required="true" )']],
-  [['colour','int'],['@XmlAttribute(name="colour" required="true" )']],
-  [['display','boolean'],['@XmlAttribute(name="display" required="true" )']],
-  [['order','Float'],['@XmlAttribute(name="order" )']],
-  [['mincolour','Integer'],['@XmlAttribute(name="mincolour" )']],
-  [['noValueColour','jalview.xml.binding.jalview.NoValueColour'],['@XmlAttribute(name="noValueColour" )']],
-  [['threshold','Float'],['@XmlAttribute(name="threshold" )']],
-  [['threshstate','Integer'],['@XmlAttribute(name="threshstate" )']],
-  [['max','Float'],['@XmlAttribute(name="max" )']],
-  [['min','.'],['@XmlAttribute(name="min" )']],
-  [['colourByLabel','Boolean'],['@XmlAttribute(name="colourByLabel" )']],
-  [['autoScale','.'],['@XmlAttribute(name="autoScale" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.FeatureSettings.Setting',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"attributeName"  "matcherSet"  } ']],
+  [['attributeName','java.util.List<java.lang.String>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['matcherSet','jalview.xml.binding.jalview.FeatureMatcherSet',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" required="true" ']],
+  [['colour','int',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colour" required="true" ']],
+  [['display','boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="display" required="true" ']],
+  [['order','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="order" ']],
+  [['mincolour','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="mincolour" ']],
+  [['noValueColour','jalview.xml.binding.jalview.NoValueColour',null,['javax.xml.bind.annotation.XmlAttribute']],['name="noValueColour" ']],
+  [['threshold','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="threshold" ']],
+  [['threshstate','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="threshstate" ']],
+  [['max','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="max" ']],
+  [['min','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="min" ']],
+  [['colourByLabel','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colourByLabel" ']],
+  [['autoScale','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="autoScale" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -342,44 +308,20 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel, "JGroup", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel, "JGroup", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seq=null;
-this.annotationColours=null;
-this.start=null;
-this.end=null;
-this.name=null;
-this.colour=null;
-this.consThreshold=null;
-this.pidThreshold=null;
-this.outlineColour=null;
-this.displayBoxes=null;
-this.displayText=null;
-this.colourText=null;
-this.textCol1=null;
-this.textCol2=null;
-this.textColThreshold=null;
-this.showUnconserved=null;
-this.ignoreGapsinConsensus=null;
-this.showConsensusHistogram=null;
-this.showSequenceLogo=null;
-this.normaliseSequenceLogo=null;
-this.id=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name','colour','id'],'O',['seq','java.util.List','annotationColours','jalview.xml.binding.jalview.AnnotationColourScheme','start','Integer','+end','+consThreshold','+pidThreshold','+outlineColour','displayBoxes','Boolean','+displayText','+colourText','textCol1','Integer','+textCol2','+textColThreshold','showUnconserved','Boolean','+ignoreGapsinConsensus','+showConsensusHistogram','+showSequenceLogo','+normaliseSequenceLogo']]]
 
 Clazz.newMeth(C$, 'getSeq$', function () {
 if (this.seq == null ) {
-this.seq=Clazz.new_($I$(1));
+this.seq=Clazz.new_($I$(1,1));
 }return this.seq;
 });
 
@@ -507,7 +449,7 @@ Clazz.newMeth(C$, 'isIgnoreGapsinConsensus$', function () {
 if (this.ignoreGapsinConsensus == null ) {
 return true;
 } else {
-return (this.ignoreGapsinConsensus).booleanValue$();
+return (this.ignoreGapsinConsensus).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setIgnoreGapsinConsensus$Boolean', function (value) {
@@ -518,7 +460,7 @@ Clazz.newMeth(C$, 'isShowConsensusHistogram$', function () {
 if (this.showConsensusHistogram == null ) {
 return true;
 } else {
-return (this.showConsensusHistogram).booleanValue$();
+return (this.showConsensusHistogram).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setShowConsensusHistogram$Boolean', function (value) {
@@ -529,7 +471,7 @@ Clazz.newMeth(C$, 'isShowSequenceLogo$', function () {
 if (this.showSequenceLogo == null ) {
 return false;
 } else {
-return (this.showSequenceLogo).booleanValue$();
+return (this.showSequenceLogo).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setShowSequenceLogo$Boolean', function (value) {
@@ -540,7 +482,7 @@ Clazz.newMeth(C$, 'isNormaliseSequenceLogo$', function () {
 if (this.normaliseSequenceLogo == null ) {
 return false;
 } else {
-return (this.normaliseSequenceLogo).booleanValue$();
+return (this.normaliseSequenceLogo).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setNormaliseSequenceLogo$Boolean', function (value) {
@@ -554,77 +496,66 @@ return this.id;
 Clazz.newMeth(C$, 'setId$S', function (value) {
 this.id=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.JGroup'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"seq"  "annotationColours"  } )']],
-  [['seq','java.util.List<java.lang.String>'],['@XmlElement(namespace="www.jalview.org" required="true" )']],
-  [['annotationColours','jalview.xml.binding.jalview.AnnotationColourScheme'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['start','Integer'],['@XmlAttribute(name="start" )']],
-  [['end','.'],['@XmlAttribute(name="end" )']],
-  [['name','String'],['@XmlAttribute(name="name" )']],
-  [['colour','.'],['@XmlAttribute(name="colour" )']],
-  [['consThreshold','Integer'],['@XmlAttribute(name="consThreshold" )']],
-  [['pidThreshold','.'],['@XmlAttribute(name="pidThreshold" )']],
-  [['outlineColour','.'],['@XmlAttribute(name="outlineColour" )']],
-  [['displayBoxes','Boolean'],['@XmlAttribute(name="displayBoxes" )']],
-  [['displayText','.'],['@XmlAttribute(name="displayText" )']],
-  [['colourText','.'],['@XmlAttribute(name="colourText" )']],
-  [['textCol1','Integer'],['@XmlAttribute(name="textCol1" )']],
-  [['textCol2','.'],['@XmlAttribute(name="textCol2" )']],
-  [['textColThreshold','.'],['@XmlAttribute(name="textColThreshold" )']],
-  [['showUnconserved','Boolean'],['@XmlAttribute(name="showUnconserved" )']],
-  [['ignoreGapsinConsensus','.'],['@XmlAttribute(name="ignoreGapsinConsensus" )']],
-  [['showConsensusHistogram','.'],['@XmlAttribute(name="showConsensusHistogram" )']],
-  [['showSequenceLogo','.'],['@XmlAttribute(name="showSequenceLogo" )']],
-  [['normaliseSequenceLogo','.'],['@XmlAttribute(name="normaliseSequenceLogo" )']],
-  [['id','String'],['@XmlAttribute(name="id" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.JGroup',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"seq"  "annotationColours"  } ']],
+  [['seq','java.util.List<java.lang.String>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" required="true" ']],
+  [['annotationColours','jalview.xml.binding.jalview.AnnotationColourScheme',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['start','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="start" ']],
+  [['end','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="end" ']],
+  [['name','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" ']],
+  [['colour','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colour" ']],
+  [['consThreshold','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="consThreshold" ']],
+  [['pidThreshold','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="pidThreshold" ']],
+  [['outlineColour','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="outlineColour" ']],
+  [['displayBoxes','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="displayBoxes" ']],
+  [['displayText','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="displayText" ']],
+  [['colourText','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colourText" ']],
+  [['textCol1','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="textCol1" ']],
+  [['textCol2','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="textCol2" ']],
+  [['textColThreshold','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="textColThreshold" ']],
+  [['showUnconserved','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showUnconserved" ']],
+  [['ignoreGapsinConsensus','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ignoreGapsinConsensus" ']],
+  [['showConsensusHistogram','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showConsensusHistogram" ']],
+  [['showSequenceLogo','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showSequenceLogo" ']],
+  [['normaliseSequenceLogo','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="normaliseSequenceLogo" ']],
+  [['id','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="id" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel, "JSeq", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel, "JSeq", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['Pdbids',9],['RnaViewer',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.features=null;
-this.pdbids=null;
-this.hiddenSequences=null;
-this.rnaViewer=null;
-this.colour=null;
-this.start=0;
-this.end=0;
-this.id=null;
-this.hidden=null;
-this.viewreference=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['start','end'],'S',['id'],'O',['features','java.util.List','+pdbids','+hiddenSequences','+rnaViewer','colour','Integer','hidden','Boolean','+viewreference']]]
 
 Clazz.newMeth(C$, 'getFeatures$', function () {
 if (this.features == null ) {
-this.features=Clazz.new_($I$(1));
+this.features=Clazz.new_($I$(1,1));
 }return this.features;
 });
 
 Clazz.newMeth(C$, 'getPdbids$', function () {
 if (this.pdbids == null ) {
-this.pdbids=Clazz.new_($I$(1));
+this.pdbids=Clazz.new_($I$(1,1));
 }return this.pdbids;
 });
 
 Clazz.newMeth(C$, 'getHiddenSequences$', function () {
 if (this.hiddenSequences == null ) {
-this.hiddenSequences=Clazz.new_($I$(1));
+this.hiddenSequences=Clazz.new_($I$(1,1));
 }return this.hiddenSequences;
 });
 
 Clazz.newMeth(C$, 'getRnaViewer$', function () {
 if (this.rnaViewer == null ) {
-this.rnaViewer=Clazz.new_($I$(1));
+this.rnaViewer=Clazz.new_($I$(1,1));
 }return this.rnaViewer;
 });
 
@@ -675,68 +606,53 @@ return this.viewreference;
 Clazz.newMeth(C$, 'setViewreference$Boolean', function (value) {
 this.viewreference=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"features"  "pdbids"  "hiddenSequences"  "rnaViewer"  } )']],
-  [['features','java.util.List<jalview.xml.binding.jalview.Feature>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['pdbids','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['hiddenSequences','java.util.List<java.lang.Integer>'],['@XmlElement(namespace="www.jalview.org" type="java.lang.Integer.class" )']],
-  [['rnaViewer','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['colour','Integer'],['@XmlAttribute(name="colour" )']],
-  [['start','int'],['@XmlAttribute(name="start" required="true" )']],
-  [['end','.'],['@XmlAttribute(name="end" required="true" )']],
-  [['id','String'],['@XmlAttribute(name="id" required="true" )']],
-  [['hidden','Boolean'],['@XmlAttribute(name="hidden" )']],
-  [['viewreference','.'],['@XmlAttribute(name="viewreference" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"features"  "pdbids"  "hiddenSequences"  "rnaViewer"  } ']],
+  [['features','java.util.List<jalview.xml.binding.jalview.Feature>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['pdbids','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['hiddenSequences','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" type="java.lang.Integer.class" ']],
+  [['rnaViewer','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['colour','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colour" ']],
+  [['start','int',null,['javax.xml.bind.annotation.XmlAttribute']],['name="start" required="true" ']],
+  [['end','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="end" required="true" ']],
+  [['id','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="id" required="true" ']],
+  [['hidden','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="hidden" ']],
+  [['viewreference','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="viewreference" ']],
   [['null','jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids'],['!XmlInner']],
-  [['null','jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer'],['!XmlInner']]];
+  [['null','jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.JSeq, "Pdbids", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.JSeq, "Pdbids", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'jalview.xml.binding.jalview.Pdbentry');
+C$.$classes$=[['StructureState',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.structureState=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['structureState','java.util.List']]]
 
 Clazz.newMeth(C$, 'getStructureState$', function () {
 if (this.structureState == null ) {
-this.structureState=Clazz.new_($I$(1));
+this.structureState=Clazz.new_($I$(1,1));
 }return this.structureState;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"structureState"  } )']],
-  [['structureState','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.StructureState>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['null','jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.StructureState'],['!XmlInner']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"structureState"  } ']],
+  [['structureState','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.StructureState>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['null','jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.StructureState'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.JSeq.Pdbids, "StructureState", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.JSeq.Pdbids, "StructureState", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.visible=null;
-this.viewId=null;
-this.alignwithAlignPanel=null;
-this.colourwithAlignPanel=null;
-this.colourByJmol=null;
-this.type=null;
-this.width=null;
-this.height=null;
-this.xpos=null;
-this.ypos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value','viewId','type'],'O',['visible','Boolean','+alignwithAlignPanel','+colourwithAlignPanel','+colourByJmol','width','Integer','+height','+xpos','+ypos']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -766,7 +682,7 @@ Clazz.newMeth(C$, 'isAlignwithAlignPanel$', function () {
 if (this.alignwithAlignPanel == null ) {
 return true;
 } else {
-return (this.alignwithAlignPanel).booleanValue$();
+return (this.alignwithAlignPanel).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setAlignwithAlignPanel$Boolean', function (value) {
@@ -777,7 +693,7 @@ Clazz.newMeth(C$, 'isColourwithAlignPanel$', function () {
 if (this.colourwithAlignPanel == null ) {
 return false;
 } else {
-return (this.colourwithAlignPanel).booleanValue$();
+return (this.colourwithAlignPanel).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setColourwithAlignPanel$Boolean', function (value) {
@@ -788,7 +704,7 @@ Clazz.newMeth(C$, 'isColourByJmol$', function () {
 if (this.colourByJmol == null ) {
 return true;
 } else {
-return (this.colourByJmol).booleanValue$();
+return (this.colourByJmol).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setColourByJmol$Boolean', function (value) {
@@ -834,18 +750,19 @@ return this.ypos;
 Clazz.newMeth(C$, 'setYpos$Integer', function (value) {
 this.ypos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.StructureState'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['visible','Boolean'],['@XmlAttribute(name="visible" )']],
-  [['viewId','String'],['@XmlAttribute(name="viewId" )']],
-  [['alignwithAlignPanel','Boolean'],['@XmlAttribute(name="alignwithAlignPanel" )']],
-  [['colourwithAlignPanel','.'],['@XmlAttribute(name="colourwithAlignPanel" )']],
-  [['colourByJmol','.'],['@XmlAttribute(name="colourByJmol" )']],
-  [['type','String'],['@XmlAttribute(name="type" )']],
-  [['width','Integer'],['@XmlAttribute(name="width" )']],
-  [['height','.'],['@XmlAttribute(name="height" )']],
-  [['xpos','.'],['@XmlAttribute(name="xpos" )']],
-  [['ypos','.'],['@XmlAttribute(name="ypos" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.StructureState',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['visible','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="visible" ']],
+  [['viewId','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="viewId" ']],
+  [['alignwithAlignPanel','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="alignwithAlignPanel" ']],
+  [['colourwithAlignPanel','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colourwithAlignPanel" ']],
+  [['colourByJmol','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colourByJmol" ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" ']],
+  [['width','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="width" ']],
+  [['height','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="height" ']],
+  [['xpos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xpos" ']],
+  [['ypos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ypos" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -853,32 +770,21 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.JSeq, "RnaViewer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.JSeq, "RnaViewer", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['SecondaryStructure',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.secondaryStructure=null;
-this.title=null;
-this.viewId=null;
-this.dividerLocation=null;
-this.selectedRna=null;
-this.width=null;
-this.height=null;
-this.xpos=null;
-this.ypos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['title','viewId'],'O',['secondaryStructure','java.util.List','dividerLocation','Integer','+selectedRna','+width','+height','+xpos','+ypos']]]
 
 Clazz.newMeth(C$, 'getSecondaryStructure$', function () {
 if (this.secondaryStructure == null ) {
-this.secondaryStructure=Clazz.new_($I$(1));
+this.secondaryStructure=Clazz.new_($I$(1,1));
 }return this.secondaryStructure;
 });
 
@@ -945,35 +851,29 @@ return this.ypos;
 Clazz.newMeth(C$, 'setYpos$Integer', function (value) {
 this.ypos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"secondaryStructure"  } )']],
-  [['secondaryStructure','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer.SecondaryStructure>'],['@XmlElement(namespace="www.jalview.org" required="true" )']],
-  [['title','String'],['@XmlAttribute(name="title" )']],
-  [['viewId','.'],['@XmlAttribute(name="viewId" )']],
-  [['dividerLocation','Integer'],['@XmlAttribute(name="dividerLocation" )']],
-  [['selectedRna','.'],['@XmlAttribute(name="selectedRna" )']],
-  [['width','.'],['@XmlAttribute(name="width" )']],
-  [['height','.'],['@XmlAttribute(name="height" )']],
-  [['xpos','.'],['@XmlAttribute(name="xpos" )']],
-  [['ypos','.'],['@XmlAttribute(name="ypos" )']],
-  [['null','jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer.SecondaryStructure'],['!XmlInner']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"secondaryStructure"  } ']],
+  [['secondaryStructure','java.util.List<jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer.SecondaryStructure>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" required="true" ']],
+  [['title','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="title" ']],
+  [['viewId','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="viewId" ']],
+  [['dividerLocation','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="dividerLocation" ']],
+  [['selectedRna','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="selectedRna" ']],
+  [['width','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="width" ']],
+  [['height','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="height" ']],
+  [['xpos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xpos" ']],
+  [['ypos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ypos" ']],
+  [['null','jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer.SecondaryStructure'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.JSeq.RnaViewer, "SecondaryStructure", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.JSeq.RnaViewer, "SecondaryStructure", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.title=null;
-this.annotationId=null;
-this.gapped=null;
-this.viewerState=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['title','annotationId','viewerState'],'O',['gapped','Boolean']]]
 
 Clazz.newMeth(C$, 'getTitle$', function () {
 return this.title;
@@ -1006,11 +906,12 @@ return this.viewerState;
 Clazz.newMeth(C$, 'setViewerState$S', function (value) {
 this.viewerState=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer.SecondaryStructure'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['title','String'],['@XmlAttribute(name="title" )']],
-  [['annotationId','.'],['@XmlAttribute(name="annotationId" required="true" )']],
-  [['gapped','Boolean'],['@XmlAttribute(name="gapped" )']],
-  [['viewerState','String'],['@XmlAttribute(name="viewerState" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.JSeq.RnaViewer.SecondaryStructure',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['title','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="title" ']],
+  [['annotationId','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="annotationId" required="true" ']],
+  [['gapped','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="gapped" ']],
+  [['viewerState','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="viewerState" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -1021,51 +922,27 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel, "PcaViewer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel, "PcaViewer", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['Axis',9],['SeqPointMax',9],['SeqPointMin',9],['SequencePoint',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequencePoint=null;
-this.axis=null;
-this.seqPointMin=null;
-this.seqPointMax=null;
-this.pcaData=null;
-this.title=null;
-this.scoreModelName=null;
-this.xDim=null;
-this.yDim=null;
-this.zDim=null;
-this.bgColour=null;
-this.scaleFactor=null;
-this.showLabels=null;
-this.linkToAllViews=null;
-this.width=null;
-this.height=null;
-this.xpos=null;
-this.ypos=null;
-this.includeGaps=null;
-this.matchGaps=null;
-this.includeGappedColumns=null;
-this.denominateByShortestLength=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['title','scoreModelName'],'O',['sequencePoint','java.util.List','+axis','seqPointMin','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMin','seqPointMax','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMax','pcaData','jalview.xml.binding.jalview.PcaDataType','xDim','Integer','+yDim','+zDim','+bgColour','scaleFactor','Float','showLabels','Boolean','+linkToAllViews','width','Integer','+height','+xpos','+ypos','includeGaps','Boolean','+matchGaps','+includeGappedColumns','+denominateByShortestLength']]]
 
 Clazz.newMeth(C$, 'getSequencePoint$', function () {
 if (this.sequencePoint == null ) {
-this.sequencePoint=Clazz.new_($I$(1));
+this.sequencePoint=Clazz.new_($I$(1,1));
 }return this.sequencePoint;
 });
 
 Clazz.newMeth(C$, 'getAxis$', function () {
 if (this.axis == null ) {
-this.axis=Clazz.new_($I$(1));
+this.axis=Clazz.new_($I$(1,1));
 }return this.axis;
 });
 
@@ -1228,50 +1105,45 @@ return this.denominateByShortestLength;
 Clazz.newMeth(C$, 'setDenominateByShortestLength$Boolean', function (value) {
 this.denominateByShortestLength=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"sequencePoint"  "axis"  "seqPointMin"  "seqPointMax"  "pcaData"  } )']],
-  [['sequencePoint','java.util.List<jalview.xml.binding.jalview.JalviewModel.PcaViewer.SequencePoint>'],['@XmlElement(namespace="www.jalview.org" required="true" )']],
-  [['axis','java.util.List<jalview.xml.binding.jalview.JalviewModel.PcaViewer.Axis>'],['@XmlElement(namespace="www.jalview.org" required="true" )']],
-  [['seqPointMin','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMin'],['@XmlElement(namespace="www.jalview.org" required="true" )']],
-  [['seqPointMax','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMax'],['@XmlElement(namespace="www.jalview.org" required="true" )']],
-  [['pcaData','jalview.xml.binding.jalview.PcaDataType'],['@XmlElement(namespace="www.jalview.org" required="true" )']],
-  [['title','String'],['@XmlAttribute(name="title" )']],
-  [['scoreModelName','.'],['@XmlAttribute(name="scoreModelName" )']],
-  [['xDim','Integer'],['@XmlAttribute(name="xDim" )']],
-  [['yDim','.'],['@XmlAttribute(name="yDim" )']],
-  [['zDim','.'],['@XmlAttribute(name="zDim" )']],
-  [['bgColour','.'],['@XmlAttribute(name="bgColour" )']],
-  [['scaleFactor','Float'],['@XmlAttribute(name="scaleFactor" )']],
-  [['showLabels','Boolean'],['@XmlAttribute(name="showLabels" )']],
-  [['linkToAllViews','.'],['@XmlAttribute(name="linkToAllViews" )']],
-  [['width','Integer'],['@XmlAttribute(name="width" )']],
-  [['height','.'],['@XmlAttribute(name="height" )']],
-  [['xpos','.'],['@XmlAttribute(name="xpos" )']],
-  [['ypos','.'],['@XmlAttribute(name="ypos" )']],
-  [['includeGaps','Boolean'],['@XmlAttribute(name="includeGaps" )']],
-  [['matchGaps','.'],['@XmlAttribute(name="matchGaps" )']],
-  [['includeGappedColumns','.'],['@XmlAttribute(name="includeGappedColumns" )']],
-  [['denominateByShortestLength','.'],['@XmlAttribute(name="denominateByShortestLength" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"sequencePoint"  "axis"  "seqPointMin"  "seqPointMax"  "pcaData"  } ']],
+  [['sequencePoint','java.util.List<jalview.xml.binding.jalview.JalviewModel.PcaViewer.SequencePoint>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" required="true" ']],
+  [['axis','java.util.List<jalview.xml.binding.jalview.JalviewModel.PcaViewer.Axis>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" required="true" ']],
+  [['seqPointMin','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMin',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" required="true" ']],
+  [['seqPointMax','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMax',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" required="true" ']],
+  [['pcaData','jalview.xml.binding.jalview.PcaDataType',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" required="true" ']],
+  [['title','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="title" ']],
+  [['scoreModelName','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="scoreModelName" ']],
+  [['xDim','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xDim" ']],
+  [['yDim','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="yDim" ']],
+  [['zDim','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="zDim" ']],
+  [['bgColour','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="bgColour" ']],
+  [['scaleFactor','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="scaleFactor" ']],
+  [['showLabels','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showLabels" ']],
+  [['linkToAllViews','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="linkToAllViews" ']],
+  [['width','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="width" ']],
+  [['height','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="height" ']],
+  [['xpos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xpos" ']],
+  [['ypos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ypos" ']],
+  [['includeGaps','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="includeGaps" ']],
+  [['matchGaps','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="matchGaps" ']],
+  [['includeGappedColumns','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="includeGappedColumns" ']],
+  [['denominateByShortestLength','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="denominateByShortestLength" ']],
   [['null','jalview.xml.binding.jalview.JalviewModel.PcaViewer.Axis'],['!XmlInner']],
   [['null','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMax'],['!XmlInner']],
   [['null','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMin'],['!XmlInner']],
-  [['null','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SequencePoint'],['!XmlInner']]];
+  [['null','jalview.xml.binding.jalview.JalviewModel.PcaViewer.SequencePoint'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "Axis", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "Axis", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xPos=null;
-this.yPos=null;
-this.zPos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['xPos','Float','+yPos','+zPos']]]
 
 Clazz.newMeth(C$, 'getXPos$', function () {
 return this.xPos;
@@ -1296,30 +1168,25 @@ return this.zPos;
 Clazz.newMeth(C$, 'setZPos$Float', function (value) {
 this.zPos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.Axis'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['xPos','Float'],['@XmlAttribute(name="xPos" )']],
-  [['yPos','.'],['@XmlAttribute(name="yPos" )']],
-  [['zPos','.'],['@XmlAttribute(name="zPos" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.Axis',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['xPos','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xPos" ']],
+  [['yPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="yPos" ']],
+  [['zPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="zPos" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "SeqPointMax", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "SeqPointMax", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xPos=null;
-this.yPos=null;
-this.zPos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['xPos','Float','+yPos','+zPos']]]
 
 Clazz.newMeth(C$, 'getXPos$', function () {
 return this.xPos;
@@ -1344,30 +1211,25 @@ return this.zPos;
 Clazz.newMeth(C$, 'setZPos$Float', function (value) {
 this.zPos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMax'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['xPos','Float'],['@XmlAttribute(name="xPos" )']],
-  [['yPos','.'],['@XmlAttribute(name="yPos" )']],
-  [['zPos','.'],['@XmlAttribute(name="zPos" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMax',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['xPos','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xPos" ']],
+  [['yPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="yPos" ']],
+  [['zPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="zPos" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "SeqPointMin", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "SeqPointMin", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xPos=null;
-this.yPos=null;
-this.zPos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['xPos','Float','+yPos','+zPos']]]
 
 Clazz.newMeth(C$, 'getXPos$', function () {
 return this.xPos;
@@ -1392,31 +1254,25 @@ return this.zPos;
 Clazz.newMeth(C$, 'setZPos$Float', function (value) {
 this.zPos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMin'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['xPos','Float'],['@XmlAttribute(name="xPos" )']],
-  [['yPos','.'],['@XmlAttribute(name="yPos" )']],
-  [['zPos','.'],['@XmlAttribute(name="zPos" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.SeqPointMin',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['xPos','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xPos" ']],
+  [['yPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="yPos" ']],
+  [['zPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="zPos" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "SequencePoint", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.PcaViewer, "SequencePoint", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequenceRef=null;
-this.xPos=null;
-this.yPos=null;
-this.zPos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['sequenceRef'],'O',['xPos','Float','+yPos','+zPos']]]
 
 Clazz.newMeth(C$, 'getSequenceRef$', function () {
 return this.sequenceRef;
@@ -1449,11 +1305,12 @@ return this.zPos;
 Clazz.newMeth(C$, 'setZPos$Float', function (value) {
 this.zPos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.SequencePoint'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['sequenceRef','String'],['@XmlAttribute(name="sequenceRef" )']],
-  [['xPos','Float'],['@XmlAttribute(name="xPos" )']],
-  [['yPos','.'],['@XmlAttribute(name="yPos" )']],
-  [['zPos','.'],['@XmlAttribute(name="zPos" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.PcaViewer.SequencePoint',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['sequenceRef','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="sequenceRef" ']],
+  [['xPos','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xPos" ']],
+  [['yPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="yPos" ']],
+  [['zPos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="zPos" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -1461,36 +1318,16 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel, "Tree", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel, "Tree", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.title=null;
-this.newick=null;
-this.fontName=null;
-this.fontSize=null;
-this.fontStyle=null;
-this.threshold=null;
-this.showBootstrap=null;
-this.showDistances=null;
-this.markUnlinked=null;
-this.fitToWindow=null;
-this.currentTree=null;
-this.id=null;
-this.linkToAllViews=null;
-this.width=null;
-this.height=null;
-this.xpos=null;
-this.ypos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['title','newick','fontName','id'],'O',['fontSize','Integer','+fontStyle','threshold','Float','showBootstrap','Boolean','+showDistances','+markUnlinked','+fitToWindow','+currentTree','+linkToAllViews','width','Integer','+height','+xpos','+ypos']]]
 
 Clazz.newMeth(C$, 'getTitle$', function () {
 return this.title;
@@ -1592,7 +1429,7 @@ Clazz.newMeth(C$, 'isLinkToAllViews$', function () {
 if (this.linkToAllViews == null ) {
 return false;
 } else {
-return (this.linkToAllViews).booleanValue$();
+return (this.linkToAllViews).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setLinkToAllViews$Boolean', function (value) {
@@ -1630,43 +1467,39 @@ return this.ypos;
 Clazz.newMeth(C$, 'setYpos$Integer', function (value) {
 this.ypos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.Tree'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"title"  "newick"  } )']],
-  [['title','String'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['newick','.'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['fontName','.'],['@XmlAttribute(name="fontName" )']],
-  [['fontSize','Integer'],['@XmlAttribute(name="fontSize" )']],
-  [['fontStyle','.'],['@XmlAttribute(name="fontStyle" )']],
-  [['threshold','Float'],['@XmlAttribute(name="threshold" )']],
-  [['showBootstrap','Boolean'],['@XmlAttribute(name="showBootstrap" )']],
-  [['showDistances','.'],['@XmlAttribute(name="showDistances" )']],
-  [['markUnlinked','.'],['@XmlAttribute(name="markUnlinked" )']],
-  [['fitToWindow','.'],['@XmlAttribute(name="fitToWindow" )']],
-  [['currentTree','.'],['@XmlAttribute(name="currentTree" )']],
-  [['id','String'],['@XmlAttribute(name="id" )','@XmlJavaTypeAdapter("javax.xml.bind.annotation.adapters.CollapsedStringAdapter.class" )','@XmlID','@XmlSchemaType(name="ID" )']],
-  [['linkToAllViews','Boolean'],['@XmlAttribute(name="linkToAllViews" )']],
-  [['width','Integer'],['@XmlAttribute(name="width" )']],
-  [['height','.'],['@XmlAttribute(name="height" )']],
-  [['xpos','.'],['@XmlAttribute(name="xpos" )']],
-  [['ypos','.'],['@XmlAttribute(name="ypos" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.Tree',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"title"  "newick"  } ']],
+  [['title','String',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['newick','.',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['fontName','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fontName" ']],
+  [['fontSize','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fontSize" ']],
+  [['fontStyle','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fontStyle" ']],
+  [['threshold','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="threshold" ']],
+  [['showBootstrap','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showBootstrap" ']],
+  [['showDistances','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showDistances" ']],
+  [['markUnlinked','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="markUnlinked" ']],
+  [['fitToWindow','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fitToWindow" ']],
+  [['currentTree','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="currentTree" ']],
+  [['id','String',null,['javax.xml.bind.annotation.XmlAttribute','javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter','javax.xml.bind.annotation.XmlID','javax.xml.bind.annotation.XmlSchemaType']],['name="id" ','"javax.xml.bind.annotation.adapters.CollapsedStringAdapter.class" ','','name="ID" ']],
+  [['linkToAllViews','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="linkToAllViews" ']],
+  [['width','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="width" ']],
+  [['height','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="height" ']],
+  [['xpos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xpos" ']],
+  [['ypos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ypos" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel, "UserColours", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel, "UserColours", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.userColourScheme=null;
-this.id=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['id'],'O',['userColourScheme','jalview.xml.binding.jalview.JalviewUserColours']]]
 
 Clazz.newMeth(C$, 'getUserColourScheme$', function () {
 return this.userColourScheme;
@@ -1683,74 +1516,25 @@ return this.id;
 Clazz.newMeth(C$, 'setId$S', function (value) {
 this.id=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.UserColours'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"userColourScheme"  } )']],
-  [['userColourScheme','jalview.xml.binding.jalview.JalviewUserColours'],['@XmlElement(name="UserColourScheme" namespace="www.jalview.org" required="true" )']],
-  [['id','String'],['@XmlAttribute(name="id" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.UserColours',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"userColourScheme"  } ']],
+  [['userColourScheme','jalview.xml.binding.jalview.JalviewUserColours',null,['javax.xml.bind.annotation.XmlElement']],['name="UserColourScheme" namespace="www.jalview.org" required="true" ']],
+  [['id','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="id" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel, "Viewport", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel, "Viewport", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['CalcIdParam',9],['HiddenColumns',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.annotationColours=null;
-this.hiddenColumns=null;
-this.calcIdParam=null;
-this.conservationSelected=null;
-this.pidSelected=null;
-this.bgColour=null;
-this.consThreshold=null;
-this.pidThreshold=null;
-this.title=null;
-this.showFullId=null;
-this.rightAlignIds=null;
-this.showText=null;
-this.showColourText=null;
-this.showUnconserved=null;
-this.showBoxes=null;
-this.wrapAlignment=null;
-this.renderGaps=null;
-this.showSequenceFeatures=null;
-this.showNPfeatureTooltip=null;
-this.showDbRefTooltip=null;
-this.followHighlight=null;
-this.followSelection=null;
-this.showAnnotation=null;
-this.centreColumnLabels=null;
-this.showGroupConservation=null;
-this.showGroupConsensus=null;
-this.showConsensusHistogram=null;
-this.showSequenceLogo=null;
-this.normaliseSequenceLogo=null;
-this.ignoreGapsinConsensus=null;
-this.startRes=null;
-this.startSeq=null;
-this.fontName=null;
-this.fontSize=null;
-this.fontStyle=null;
-this.scaleProteinAsCdna=null;
-this.viewName=null;
-this.sequenceSetId=null;
-this.gatheredViews=null;
-this.textCol1=null;
-this.textCol2=null;
-this.textColThreshold=null;
-this.id=null;
-this.complementId=null;
-this.width=null;
-this.height=null;
-this.xpos=null;
-this.ypos=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['bgColour','title','fontName','viewName','sequenceSetId','id','complementId'],'O',['annotationColours','jalview.xml.binding.jalview.AnnotationColourScheme','hiddenColumns','java.util.List','+calcIdParam','conservationSelected','Boolean','+pidSelected','consThreshold','Integer','+pidThreshold','showFullId','Boolean','+rightAlignIds','+showText','+showColourText','+showUnconserved','+showBoxes','+wrapAlignment','+renderGaps','+showSequenceFeatures','+showNPfeatureTooltip','+showDbRefTooltip','+followHighlight','+followSelection','+showAnnotation','+centreColumnLabels','+showGroupConservation','+showGroupConsensus','+showConsensusHistogram','+showSequenceLogo','+normaliseSequenceLogo','+ignoreGapsinConsensus','startRes','Integer','+startSeq','+fontSize','+fontStyle','scaleProteinAsCdna','Boolean','+gatheredViews','textCol1','Integer','+textCol2','+textColThreshold','showComplementFeatures','Boolean','+showComplementFeaturesOnTop','width','Integer','+height','+xpos','+ypos']]]
 
 Clazz.newMeth(C$, 'getAnnotationColours$', function () {
 return this.annotationColours;
@@ -1762,13 +1546,13 @@ this.annotationColours=value;
 
 Clazz.newMeth(C$, 'getHiddenColumns$', function () {
 if (this.hiddenColumns == null ) {
-this.hiddenColumns=Clazz.new_($I$(1));
+this.hiddenColumns=Clazz.new_($I$(1,1));
 }return this.hiddenColumns;
 });
 
 Clazz.newMeth(C$, 'getCalcIdParam$', function () {
 if (this.calcIdParam == null ) {
-this.calcIdParam=Clazz.new_($I$(1));
+this.calcIdParam=Clazz.new_($I$(1,1));
 }return this.calcIdParam;
 });
 
@@ -1856,7 +1640,7 @@ Clazz.newMeth(C$, 'isShowUnconserved$', function () {
 if (this.showUnconserved == null ) {
 return false;
 } else {
-return (this.showUnconserved).booleanValue$();
+return (this.showUnconserved).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setShowUnconserved$Boolean', function (value) {
@@ -1915,7 +1699,7 @@ Clazz.newMeth(C$, 'isFollowHighlight$', function () {
 if (this.followHighlight == null ) {
 return true;
 } else {
-return (this.followHighlight).booleanValue$();
+return (this.followHighlight).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setFollowHighlight$Boolean', function (value) {
@@ -1926,7 +1710,7 @@ Clazz.newMeth(C$, 'isFollowSelection$', function () {
 if (this.followSelection == null ) {
 return true;
 } else {
-return (this.followSelection).booleanValue$();
+return (this.followSelection).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setFollowSelection$Boolean', function (value) {
@@ -1945,7 +1729,7 @@ Clazz.newMeth(C$, 'isCentreColumnLabels$', function () {
 if (this.centreColumnLabels == null ) {
 return false;
 } else {
-return (this.centreColumnLabels).booleanValue$();
+return (this.centreColumnLabels).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setCentreColumnLabels$Boolean', function (value) {
@@ -1956,7 +1740,7 @@ Clazz.newMeth(C$, 'isShowGroupConservation$', function () {
 if (this.showGroupConservation == null ) {
 return false;
 } else {
-return (this.showGroupConservation).booleanValue$();
+return (this.showGroupConservation).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setShowGroupConservation$Boolean', function (value) {
@@ -1967,7 +1751,7 @@ Clazz.newMeth(C$, 'isShowGroupConsensus$', function () {
 if (this.showGroupConsensus == null ) {
 return false;
 } else {
-return (this.showGroupConsensus).booleanValue$();
+return (this.showGroupConsensus).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setShowGroupConsensus$Boolean', function (value) {
@@ -1978,7 +1762,7 @@ Clazz.newMeth(C$, 'isShowConsensusHistogram$', function () {
 if (this.showConsensusHistogram == null ) {
 return true;
 } else {
-return (this.showConsensusHistogram).booleanValue$();
+return (this.showConsensusHistogram).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setShowConsensusHistogram$Boolean', function (value) {
@@ -1989,7 +1773,7 @@ Clazz.newMeth(C$, 'isShowSequenceLogo$', function () {
 if (this.showSequenceLogo == null ) {
 return false;
 } else {
-return (this.showSequenceLogo).booleanValue$();
+return (this.showSequenceLogo).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setShowSequenceLogo$Boolean', function (value) {
@@ -2000,7 +1784,7 @@ Clazz.newMeth(C$, 'isNormaliseSequenceLogo$', function () {
 if (this.normaliseSequenceLogo == null ) {
 return false;
 } else {
-return (this.normaliseSequenceLogo).booleanValue$();
+return (this.normaliseSequenceLogo).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setNormaliseSequenceLogo$Boolean', function (value) {
@@ -2011,7 +1795,7 @@ Clazz.newMeth(C$, 'isIgnoreGapsinConsensus$', function () {
 if (this.ignoreGapsinConsensus == null ) {
 return true;
 } else {
-return (this.ignoreGapsinConsensus).booleanValue$();
+return (this.ignoreGapsinConsensus).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setIgnoreGapsinConsensus$Boolean', function (value) {
@@ -2062,7 +1846,7 @@ Clazz.newMeth(C$, 'isScaleProteinAsCdna$', function () {
 if (this.scaleProteinAsCdna == null ) {
 return true;
 } else {
-return (this.scaleProteinAsCdna).booleanValue$();
+return (this.scaleProteinAsCdna).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setScaleProteinAsCdna$Boolean', function (value) {
@@ -2133,6 +1917,28 @@ Clazz.newMeth(C$, 'setComplementId$S', function (value) {
 this.complementId=value;
 });
 
+Clazz.newMeth(C$, 'isShowComplementFeatures$', function () {
+if (this.showComplementFeatures == null ) {
+return false;
+} else {
+return (this.showComplementFeatures).valueOf();
+}});
+
+Clazz.newMeth(C$, 'setShowComplementFeatures$Boolean', function (value) {
+this.showComplementFeatures=value;
+});
+
+Clazz.newMeth(C$, 'isShowComplementFeaturesOnTop$', function () {
+if (this.showComplementFeaturesOnTop == null ) {
+return false;
+} else {
+return (this.showComplementFeaturesOnTop).valueOf();
+}});
+
+Clazz.newMeth(C$, 'setShowComplementFeaturesOnTop$Boolean', function (value) {
+this.showComplementFeaturesOnTop=value;
+});
+
 Clazz.newMeth(C$, 'getWidth$', function () {
 return this.width;
 });
@@ -2164,74 +1970,71 @@ return this.ypos;
 Clazz.newMeth(C$, 'setYpos$Integer', function (value) {
 this.ypos=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.Viewport'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"annotationColours"  "hiddenColumns"  "calcIdParam"  } )']],
-  [['annotationColours','jalview.xml.binding.jalview.AnnotationColourScheme'],['@XmlElement(name="AnnotationColours" namespace="www.jalview.org" )']],
-  [['hiddenColumns','java.util.List<jalview.xml.binding.jalview.JalviewModel.Viewport.HiddenColumns>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['calcIdParam','java.util.List<jalview.xml.binding.jalview.JalviewModel.Viewport.CalcIdParam>'],['@XmlElement(namespace="www.jalview.org" )']],
-  [['conservationSelected','Boolean'],['@XmlAttribute(name="conservationSelected" )']],
-  [['pidSelected','.'],['@XmlAttribute(name="pidSelected" )']],
-  [['bgColour','String'],['@XmlAttribute(name="bgColour" )']],
-  [['consThreshold','Integer'],['@XmlAttribute(name="consThreshold" )']],
-  [['pidThreshold','.'],['@XmlAttribute(name="pidThreshold" )']],
-  [['title','String'],['@XmlAttribute(name="title" )']],
-  [['showFullId','Boolean'],['@XmlAttribute(name="showFullId" )']],
-  [['rightAlignIds','.'],['@XmlAttribute(name="rightAlignIds" )']],
-  [['showText','.'],['@XmlAttribute(name="showText" )']],
-  [['showColourText','.'],['@XmlAttribute(name="showColourText" )']],
-  [['showUnconserved','.'],['@XmlAttribute(name="showUnconserved" )']],
-  [['showBoxes','.'],['@XmlAttribute(name="showBoxes" )']],
-  [['wrapAlignment','.'],['@XmlAttribute(name="wrapAlignment" )']],
-  [['renderGaps','.'],['@XmlAttribute(name="renderGaps" )']],
-  [['showSequenceFeatures','.'],['@XmlAttribute(name="showSequenceFeatures" )']],
-  [['showNPfeatureTooltip','.'],['@XmlAttribute(name="showNPfeatureTooltip" )']],
-  [['showDbRefTooltip','.'],['@XmlAttribute(name="showDbRefTooltip" )']],
-  [['followHighlight','.'],['@XmlAttribute(name="followHighlight" )']],
-  [['followSelection','.'],['@XmlAttribute(name="followSelection" )']],
-  [['showAnnotation','.'],['@XmlAttribute(name="showAnnotation" )']],
-  [['centreColumnLabels','.'],['@XmlAttribute(name="centreColumnLabels" )']],
-  [['showGroupConservation','.'],['@XmlAttribute(name="showGroupConservation" )']],
-  [['showGroupConsensus','.'],['@XmlAttribute(name="showGroupConsensus" )']],
-  [['showConsensusHistogram','.'],['@XmlAttribute(name="showConsensusHistogram" )']],
-  [['showSequenceLogo','.'],['@XmlAttribute(name="showSequenceLogo" )']],
-  [['normaliseSequenceLogo','.'],['@XmlAttribute(name="normaliseSequenceLogo" )']],
-  [['ignoreGapsinConsensus','.'],['@XmlAttribute(name="ignoreGapsinConsensus" )']],
-  [['startRes','Integer'],['@XmlAttribute(name="startRes" )']],
-  [['startSeq','.'],['@XmlAttribute(name="startSeq" )']],
-  [['fontName','String'],['@XmlAttribute(name="fontName" )']],
-  [['fontSize','Integer'],['@XmlAttribute(name="fontSize" )']],
-  [['fontStyle','.'],['@XmlAttribute(name="fontStyle" )']],
-  [['scaleProteinAsCdna','Boolean'],['@XmlAttribute(name="scaleProteinAsCdna" )']],
-  [['viewName','String'],['@XmlAttribute(name="viewName" )']],
-  [['sequenceSetId','.'],['@XmlAttribute(name="sequenceSetId" )']],
-  [['gatheredViews','Boolean'],['@XmlAttribute(name="gatheredViews" )']],
-  [['textCol1','Integer'],['@XmlAttribute(name="textCol1" )']],
-  [['textCol2','.'],['@XmlAttribute(name="textCol2" )']],
-  [['textColThreshold','.'],['@XmlAttribute(name="textColThreshold" )']],
-  [['id','String'],['@XmlAttribute(name="id" )','@XmlJavaTypeAdapter("javax.xml.bind.annotation.adapters.CollapsedStringAdapter.class" )','@XmlID','@XmlSchemaType(name="ID" )']],
-  [['complementId','.'],['@XmlAttribute(name="complementId" )']],
-  [['width','Integer'],['@XmlAttribute(name="width" )']],
-  [['height','.'],['@XmlAttribute(name="height" )']],
-  [['xpos','.'],['@XmlAttribute(name="xpos" )']],
-  [['ypos','.'],['@XmlAttribute(name="ypos" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.Viewport',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"annotationColours"  "hiddenColumns"  "calcIdParam"  } ']],
+  [['annotationColours','jalview.xml.binding.jalview.AnnotationColourScheme',null,['javax.xml.bind.annotation.XmlElement']],['name="AnnotationColours" namespace="www.jalview.org" ']],
+  [['hiddenColumns','java.util.List<jalview.xml.binding.jalview.JalviewModel.Viewport.HiddenColumns>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['calcIdParam','java.util.List<jalview.xml.binding.jalview.JalviewModel.Viewport.CalcIdParam>',null,['javax.xml.bind.annotation.XmlElement']],['namespace="www.jalview.org" ']],
+  [['conservationSelected','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="conservationSelected" ']],
+  [['pidSelected','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="pidSelected" ']],
+  [['bgColour','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="bgColour" ']],
+  [['consThreshold','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="consThreshold" ']],
+  [['pidThreshold','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="pidThreshold" ']],
+  [['title','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="title" ']],
+  [['showFullId','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showFullId" ']],
+  [['rightAlignIds','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="rightAlignIds" ']],
+  [['showText','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showText" ']],
+  [['showColourText','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showColourText" ']],
+  [['showUnconserved','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showUnconserved" ']],
+  [['showBoxes','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showBoxes" ']],
+  [['wrapAlignment','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="wrapAlignment" ']],
+  [['renderGaps','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="renderGaps" ']],
+  [['showSequenceFeatures','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showSequenceFeatures" ']],
+  [['showNPfeatureTooltip','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showNPfeatureTooltip" ']],
+  [['showDbRefTooltip','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showDbRefTooltip" ']],
+  [['followHighlight','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="followHighlight" ']],
+  [['followSelection','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="followSelection" ']],
+  [['showAnnotation','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showAnnotation" ']],
+  [['centreColumnLabels','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="centreColumnLabels" ']],
+  [['showGroupConservation','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showGroupConservation" ']],
+  [['showGroupConsensus','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showGroupConsensus" ']],
+  [['showConsensusHistogram','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showConsensusHistogram" ']],
+  [['showSequenceLogo','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showSequenceLogo" ']],
+  [['normaliseSequenceLogo','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="normaliseSequenceLogo" ']],
+  [['ignoreGapsinConsensus','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ignoreGapsinConsensus" ']],
+  [['startRes','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="startRes" ']],
+  [['startSeq','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="startSeq" ']],
+  [['fontName','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fontName" ']],
+  [['fontSize','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fontSize" ']],
+  [['fontStyle','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fontStyle" ']],
+  [['scaleProteinAsCdna','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="scaleProteinAsCdna" ']],
+  [['viewName','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="viewName" ']],
+  [['sequenceSetId','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="sequenceSetId" ']],
+  [['gatheredViews','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="gatheredViews" ']],
+  [['textCol1','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="textCol1" ']],
+  [['textCol2','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="textCol2" ']],
+  [['textColThreshold','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="textColThreshold" ']],
+  [['id','String',null,['javax.xml.bind.annotation.XmlAttribute','javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter','javax.xml.bind.annotation.XmlID','javax.xml.bind.annotation.XmlSchemaType']],['name="id" ','"javax.xml.bind.annotation.adapters.CollapsedStringAdapter.class" ','','name="ID" ']],
+  [['complementId','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="complementId" ']],
+  [['showComplementFeatures','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showComplementFeatures" ']],
+  [['showComplementFeaturesOnTop','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="showComplementFeaturesOnTop" ']],
+  [['width','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="width" ']],
+  [['height','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="height" ']],
+  [['xpos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="xpos" ']],
+  [['ypos','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ypos" ']],
   [['null','jalview.xml.binding.jalview.JalviewModel.Viewport.CalcIdParam'],['!XmlInner']],
-  [['null','jalview.xml.binding.jalview.JalviewModel.Viewport.HiddenColumns'],['!XmlInner']]];
+  [['null','jalview.xml.binding.jalview.JalviewModel.Viewport.HiddenColumns'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.Viewport, "CalcIdParam", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.Viewport, "CalcIdParam", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'jalview.xml.binding.jalview.WebServiceParameterSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.calcId=null;
-this.needsUpdate=null;
-this.autoUpdate=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['autoUpdate'],'S',['calcId'],'O',['needsUpdate','Boolean']]]
 
 Clazz.newMeth(C$, 'getCalcId$', function () {
 return this.calcId;
@@ -2245,7 +2048,7 @@ Clazz.newMeth(C$, 'isNeedsUpdate$', function () {
 if (this.needsUpdate == null ) {
 return false;
 } else {
-return (this.needsUpdate).booleanValue$();
+return (this.needsUpdate).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setNeedsUpdate$Boolean', function (value) {
@@ -2259,29 +2062,25 @@ return this.autoUpdate;
 Clazz.newMeth(C$, 'setAutoUpdate$Z', function (value) {
 this.autoUpdate=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.Viewport.CalcIdParam'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['calcId','String'],['@XmlAttribute(name="calcId" required="true" )']],
-  [['needsUpdate','Boolean'],['@XmlAttribute(name="needsUpdate" )']],
-  [['autoUpdate','boolean'],['@XmlAttribute(name="autoUpdate" required="true" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.Viewport.CalcIdParam',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['calcId','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="calcId" required="true" ']],
+  [['needsUpdate','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="needsUpdate" ']],
+  [['autoUpdate','boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="autoUpdate" required="true" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JalviewModel.Viewport, "HiddenColumns", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JalviewModel.Viewport, "HiddenColumns", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.start=null;
-this.end=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['start','Integer','+end']]]
 
 Clazz.newMeth(C$, 'getStart$', function () {
 return this.start;
@@ -2298,9 +2097,10 @@ return this.end;
 Clazz.newMeth(C$, 'setEnd$Integer', function (value) {
 this.end=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.JalviewModel.Viewport.HiddenColumns'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['start','Integer'],['@XmlAttribute(name="start" )']],
-  [['end','.'],['@XmlAttribute(name="end" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.JalviewModel.Viewport.HiddenColumns',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['start','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="start" ']],
+  [['end','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="end" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -2310,4 +2110,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

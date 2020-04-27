@@ -1,23 +1,16 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.Rdr','javajs.util.ZipTools']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ZipData");
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.Rdr','javajs.util.ZipTools']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ZipData");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isEnabled=false;
-this.buf=null;
-this.pt=0;
-this.nBytes=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isEnabled=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isEnabled'],'I',['pt','nBytes'],'O',['buf','byte[]']]]
 
 Clazz.newMeth(C$, 'c$$I', function (nBytes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.nBytes=nBytes;
 }, 1);
 
@@ -39,4 +32,4 @@ data.append$S($I$(2).getGzippedBytesAsString$BA(this.buf));
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

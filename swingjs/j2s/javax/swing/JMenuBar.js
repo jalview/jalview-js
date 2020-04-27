@@ -1,25 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultSingleSelectionModel','Error','java.awt.JSComponent','java.awt.Insets','java.util.Vector','javax.swing.MenuElement','javax.swing.KeyboardManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JMenuBar", null, 'javax.swing.JComponent', 'javax.swing.MenuElement');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultSingleSelectionModel','Error','java.awt.JSComponent','java.awt.Insets','java.util.Vector','javax.swing.MenuElement','javax.swing.KeyboardManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JMenuBar", null, 'javax.swing.JComponent', 'javax.swing.MenuElement');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.selectionModel=null;
-this.paintBorder=false;
-this.margin=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.paintBorder=false;
 this.margin=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['paintBorder'],'O',['selectionModel','javax.swing.SingleSelectionModel','margin','java.awt.Insets']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.setSelectionModel$javax_swing_SingleSelectionModel(Clazz.new_($I$(1)));
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.setSelectionModel$javax_swing_SingleSelectionModel(Clazz.new_($I$(1,1)));
 this.updateUI$();
 }, 1);
 
@@ -53,11 +46,11 @@ return this.getComponentCount$();
 });
 
 Clazz.newMeth(C$, 'setHelpMenu$javax_swing_JMenu', function (menu) {
-throw Clazz.new_($I$(2).c$$S,["setHelpMenu() not yet implemented."]);
+throw Clazz.new_(["setHelpMenu() not yet implemented."],$I$(2,1).c$$S);
 });
 
 Clazz.newMeth(C$, 'getHelpMenu$', function () {
-throw Clazz.new_($I$(2).c$$S,["getHelpMenu() not yet implemented."]);
+throw Clazz.new_(["getHelpMenu() not yet implemented."],$I$(2,1).c$$S);
 });
 
 Clazz.newMeth(C$, 'getComponentAtIndex$I', function (i) {
@@ -68,7 +61,7 @@ return null;
 
 Clazz.newMeth(C$, 'getComponentIndex$java_awt_Component', function (c) {
 var ncomponents=this.getComponentCount$();
-var components=$I$(3).getChildArray$java_awt_Container(this);
+var components=$I$(3).秘getChildArray$java_awt_Container(this);
 for (var i=0; i < ncomponents; i++) {
 var comp=components[i];
 if (comp === c ) return i;
@@ -107,12 +100,12 @@ this.margin=m;
 this.firePropertyChange$S$O$O("margin", old, m);
 if (old == null  || !old.equals$O(m) ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getMargin$', function () {
 if (this.margin == null ) {
-return Clazz.new_($I$(4).c$$I$I$I$I,[0, 0, 0, 0]);
+return Clazz.new_($I$(4,1).c$$I$I$I$I,[0, 0, 0, 0]);
 } else {
 return this.margin;
 }});
@@ -128,13 +121,13 @@ Clazz.newMeth(C$, 'menuSelectionChanged$Z', function (isIncluded) {
 
 Clazz.newMeth(C$, 'getSubElements$', function () {
 var result;
-var tmp=Clazz.new_($I$(5));
+var tmp=Clazz.new_($I$(5,1));
 var c=this.getComponentCount$();
 var i;
 var m;
 for (i=0; i < c; i++) {
 m=this.getComponent$I(i);
-if (Clazz.instanceOf(m, "javax.swing.MenuElement")) tmp.addElement$TE(m);
+if (Clazz.instanceOf(m, "javax.swing.MenuElement")) tmp.addElement$O(m);
 }
 result=Clazz.array($I$(6), [tmp.size$()]);
 for (i=0, c=tmp.size$(); i < c; i++) result[i]=tmp.elementAt$I(i);
@@ -189,4 +182,4 @@ C$.superclazz.prototype.removeNotify$.apply(this, []);
 $I$(7).getCurrentManager$().unregisterMenuBar$javax_swing_JMenuBar(this);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

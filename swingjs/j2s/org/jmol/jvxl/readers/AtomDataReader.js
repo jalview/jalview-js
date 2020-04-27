@@ -1,71 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.atomdata.AtomData','javajs.util.BS','javajs.util.P3','javajs.util.P3i','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','org.jmol.util.BSUtil','org.jmol.util.Logger','javajs.util.V3','javajs.util.AU','javajs.util.SB','java.util.Date','org.jmol.jvxl.data.JvxlCoder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AtomDataReader", null, 'org.jmol.jvxl.readers.VolumeDataReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.atomdata.AtomData','javajs.util.BS','javajs.util.P3','javajs.util.P3i','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','org.jmol.util.BSUtil','org.jmol.util.Logger','javajs.util.V3','javajs.util.AU','javajs.util.SB','java.util.Date','org.jmol.jvxl.data.JvxlCoder']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "AtomDataReader", null, 'org.jmol.jvxl.readers.VolumeDataReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.maxDistance=0;
-this.contactPair=null;
-this.fileName=null;
-this.fileDotModel=null;
-this.modelIndex=0;
-this.atomData=null;
-this.atomXyzTruncated=null;
-this.atomRadius=null;
-this.atomProp=null;
-this.atomNo=null;
-this.atomIndex=null;
-this.myIndex=null;
-this.ac=0;
-this.myAtomCount=0;
-this.nearbyAtomCount=0;
-this.firstNearbyAtom=0;
-this.bsMySelected=null;
-this.bsMyIgnored=null;
-this.bsNearby=null;
-this.doAddHydrogens=false;
-this.havePlane=false;
-this.doUseIterator=false;
-this.theProperty=0;
-this.haveOneProperty=false;
-this.minPtsPerAng=0;
-this.sr=0;
-this.rs=null;
-this.rs2=null;
-this.maxRS=0;
-this.thisPlane=null;
-this.thisAtomSet=null;
-this.thisX=0;
-this.margin=0;
-this.vl0=0;
-this.vl1=0;
-this.vl2=0;
-this.bsSurfaceVoxels=null;
-this.validSpheres=null;
-this.noFaceSpheres=null;
-this.voxelSource=null;
-this.ptY0=null;
-this.ptZ0=null;
-this.pt0=null;
-this.pt1=null;
-this.ptV=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.atomData=Clazz.new_($I$(1));
-this.bsMySelected=Clazz.new_($I$(2));
-this.bsMyIgnored=Clazz.new_($I$(2));
-this.ptY0=Clazz.new_($I$(3));
-this.ptZ0=Clazz.new_($I$(3));
-this.pt0=Clazz.new_($I$(4));
-this.pt1=Clazz.new_($I$(4));
-this.ptV=Clazz.new_($I$(3));
-}, 1);
+this.atomData=Clazz.new_($I$(1,1));
+this.bsMySelected=Clazz.new_($I$(2,1));
+this.bsMyIgnored=Clazz.new_($I$(2,1));
+this.ptY0=Clazz.new_($I$(3,1));
+this.ptZ0=Clazz.new_($I$(3,1));
+this.pt0=Clazz.new_($I$(4,1));
+this.pt1=Clazz.new_($I$(4,1));
+this.ptV=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['Z',['doAddHydrogens','havePlane','doUseIterator','haveOneProperty'],'F',['maxDistance','theProperty','minPtsPerAng','sr','maxRS','margin','vl0','vl1','vl2'],'I',['modelIndex','ac','myAtomCount','nearbyAtomCount','firstNearbyAtom','thisX'],'S',['fileName','fileDotModel'],'O',['contactPair','org.jmol.util.ContactPair','atomData','org.jmol.atomdata.AtomData','atomXyzTruncated','javajs.util.P3[]','atomRadius','float[]','+atomProp','atomNo','int[]','+atomIndex','+myIndex','bsMySelected','javajs.util.BS','+bsMyIgnored','+bsNearby','rs','float[]','+rs2','+thisPlane','thisAtomSet','javajs.util.BS','+bsSurfaceVoxels','+validSpheres','+noFaceSpheres','voxelSource','int[]','ptY0','javajs.util.P3','+ptZ0','pt0','javajs.util.P3i','+pt1','ptV','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'initADR$org_jmol_jvxl_readers_SurfaceGenerator', function (sg) {
@@ -119,7 +71,7 @@ this.xyzMax=$I$(3).newP$javajs_util_T3(this.params.boundingBox[1]);
 Clazz.newMeth(C$, 'getAtoms$javajs_util_BS$Z$Z$Z$Z$Z$Z$F$javajs_util_M4', function (bsSelected, doAddHydrogens, getRadii, getMolecules, getAllModels, addNearbyAtoms, getAtomMinMax, marginAtoms, modelInvRotation) {
 if (addNearbyAtoms) getRadii=true;
 if (getRadii) {
-if (this.params.atomRadiusData == null ) this.params.atomRadiusData=Clazz.new_($I$(5).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 1, $I$(6).FACTOR, $I$(7).AUTO]);
+if (this.params.atomRadiusData == null ) this.params.atomRadiusData=Clazz.new_([null, 1, $I$(6).FACTOR, $I$(7).AUTO],$I$(5,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
 this.atomData.radiusData=this.params.atomRadiusData;
 this.atomData.radiusData.valueExtended=this.params.solventExtendedAtomRadius;
 if (doAddHydrogens) this.atomData.radiusData.vdwType=$I$(7).NOJMOL;
@@ -196,8 +148,8 @@ v.scale$F(this.params.scale);
 this.xyzMax.add2$javajs_util_T3$javajs_util_T3(this.xyzMin, v);
 this.xyzMin.sub$javajs_util_T3(v);
 }if (!addNearbyAtoms || this.myAtomCount == 0 ) return;
-var pt=Clazz.new_($I$(3));
-this.bsNearby=Clazz.new_($I$(2));
+var pt=Clazz.new_($I$(3,1));
+this.bsNearby=Clazz.new_($I$(2,1));
 for (var i=0; i < this.ac; i++) {
 if (atomSet.get$I(i) || this.bsMyIgnored.get$I(i) ) continue;
 var rA=this.atomData.atomRadius[i];
@@ -249,8 +201,8 @@ return (Float.isNaN$F(marginAtoms) ? Math.max(r, 0.1) : r + marginAtoms);
 }, p$1);
 
 Clazz.newMeth(C$, 'setHeader$S$S', function (calcType, line2) {
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(12));
-if (this.atomData.programInfo != null ) this.jvxlFileHeaderBuffer.append$S("#created by ").append$S(this.atomData.programInfo).append$S(" on ").append$S("" + Clazz.new_($I$(13))).append$S("\n");
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(12,1));
+if (this.atomData.programInfo != null ) this.jvxlFileHeaderBuffer.append$S("#created by ").append$S(this.atomData.programInfo).append$S(" on ").append$S("" + Clazz.new_($I$(13,1))).append$S("\n");
 this.jvxlFileHeaderBuffer.append$S(calcType).append$S("\n").append$S(line2).append$S("\n");
 });
 
@@ -329,7 +281,7 @@ pt1.z=Math.min(pt1.z + 1, this.nPointsZ);
 });
 
 Clazz.newMeth(C$, 'getAtomMinMax$javajs_util_BS$javajs_util_BSA', function (bs, bsAtomMinMax) {
-for (var i=0; i < this.nPointsX; i++) bsAtomMinMax[i]=Clazz.new_($I$(2));
+for (var i=0; i < this.nPointsX; i++) bsAtomMinMax[i]=Clazz.new_($I$(2,1));
 
 for (var iAtom=this.myAtomCount; --iAtom >= 0; ) {
 if (bs != null  && !bs.get$I(iAtom) ) continue;
@@ -381,4 +333,4 @@ if (this.isProgressive) this.thisPlane[ipt % this.yzCount]=value;
  else this.voxelData[i][j][k]=value;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

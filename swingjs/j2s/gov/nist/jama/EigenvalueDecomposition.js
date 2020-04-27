@@ -1,27 +1,13 @@
-(function(){var P$=Clazz.newPackage("gov.nist.jama"),p$1={},I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EigenvalueDecomposition", null, null, 'java.io.Serializable');
-C$.tqleps=0;
+(function(){var P$=Clazz.newPackage("gov.nist.jama"),p$1={},I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EigenvalueDecomposition", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.tqleps=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.n=0;
-this.issymmetric=false;
-this.needVectors=false;
-this.d=null;
-this.e=null;
-this.V=null;
-this.H=null;
-this.ort=null;
-this.cdivr=0;
-this.cdivi=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['issymmetric','needVectors'],'D',['cdivr','cdivi'],'I',['n'],'O',['d','double[]','+e','V','double[][]','+H','ort','double[]']]
+,['D',['tqleps']]]
 
 Clazz.newMeth(C$, 'tred2', function () {
 for (var j=0; j < this.n; j++) {
@@ -591,7 +577,7 @@ this.V[i][j]=z;
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$gov_nist_jama_Matrix$Z', function (Arg, nv) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var A=Arg.getArray$();
 this.n=Arg.getColumnDimension$();
 this.V=Clazz.array(Double.TYPE, [this.n, this.n]);
@@ -625,7 +611,7 @@ p$1.hqr2.apply(this, []);
 }}, 1);
 
 Clazz.newMeth(C$, 'getV$', function () {
-return Clazz.new_($I$(2).c$$DAA$I$I,[this.V, this.n, this.n]);
+return Clazz.new_($I$(2,1).c$$DAA$I$I,[this.V, this.n, this.n]);
 });
 
 Clazz.newMeth(C$, 'getRealEigenvalues$', function () {
@@ -637,7 +623,7 @@ return this.e;
 });
 
 Clazz.newMeth(C$, 'getD$', function () {
-var X=Clazz.new_($I$(2).c$$I$I,[this.n, this.n]);
+var X=Clazz.new_($I$(2,1).c$$I$I,[this.n, this.n]);
 var D=X.getArray$();
 for (var i=0; i < this.n; i++) {
 for (var j=0; j < this.n; j++) {
@@ -652,6 +638,10 @@ D[i][i - 1]=this.e[i];
 return X;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.tqleps=0;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

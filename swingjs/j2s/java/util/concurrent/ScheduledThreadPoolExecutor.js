@@ -1,22 +1,17 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},p$2={},I$=[[0,'java.util.concurrent.ScheduledThreadPoolExecutor','java.util.concurrent.TimeUnit','java.util.concurrent.DelayQueue','java.util.concurrent.atomic.AtomicLong',['java.util.concurrent.ScheduledThreadPoolExecutor','.DelayedWorkQueue'],['java.util.concurrent.ScheduledThreadPoolExecutor','.ScheduledFutureTask'],'java.util.concurrent.Executors']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScheduledThreadPoolExecutor", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},p$2={},I$=[[0,'java.util.concurrent.ScheduledThreadPoolExecutor','java.util.concurrent.TimeUnit','java.util.concurrent.DelayQueue','java.util.concurrent.atomic.AtomicLong',['java.util.concurrent.ScheduledThreadPoolExecutor','.DelayedWorkQueue'],['java.util.concurrent.ScheduledThreadPoolExecutor','.ScheduledFutureTask'],'java.util.concurrent.Executors']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScheduledThreadPoolExecutor", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.concurrent.ThreadPoolExecutor', 'java.util.concurrent.ScheduledExecutorService');
-C$.sequencer=null;
+C$.$classes$=[['ScheduledFutureTask',2],['DelayedWorkQueue',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.sequencer=Clazz.new_($I$(4).c$$J,[0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.continueExistingPeriodicTasksAfterShutdown=false;
-this.executeExistingDelayedTasksAfterShutdown=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.executeExistingDelayedTasksAfterShutdown=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['continueExistingPeriodicTasksAfterShutdown','executeExistingDelayedTasksAfterShutdown']]
+,['O',['sequencer','java.util.concurrent.atomic.AtomicLong']]]
 
 Clazz.newMeth(C$, 'now$', function () {
 return System.nanoTime$();
@@ -29,14 +24,14 @@ return this.isRunningOrShutdown$Z(periodic ? this.continueExistingPeriodicTasksA
 Clazz.newMeth(C$, 'delayedExecute$java_util_concurrent_RunnableScheduledFuture', function (task) {
 if (this.isShutdown$()) this.reject$Runnable(task);
  else {
-C$.superclazz.prototype.getQueue$.apply(this, []).add$TE(task);
+C$.superclazz.prototype.getQueue$.apply(this, []).add$O(task);
 if (this.isShutdown$() && !this.canRunInCurrentRunState$Z(task.isPeriodic$()) && this.remove$Runnable(task)  ) task.cancel$Z(false);
  else this.prestartCoreThread$();
 }}, p$2);
 
 Clazz.newMeth(C$, 'reExecutePeriodic$java_util_concurrent_RunnableScheduledFuture', function (task) {
 if (this.canRunInCurrentRunState$Z(true)) {
-C$.superclazz.prototype.getQueue$.apply(this, []).add$TE(task);
+C$.superclazz.prototype.getQueue$.apply(this, []).add$O(task);
 if (!this.canRunInCurrentRunState$Z(true) && this.remove$Runnable(task) ) task.cancel$Z(false);
  else this.prestartCoreThread$();
 }});
@@ -65,30 +60,26 @@ return task;
 });
 
 Clazz.newMeth(C$, 'c$$I', function (corePoolSize) {
-C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue.apply(this, [corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue.apply(this,[corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5,1))]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$java_util_concurrent_ThreadFactory', function (corePoolSize, threadFactory) {
-C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory.apply(this, [corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5)), threadFactory]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory.apply(this,[corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5,1)), threadFactory]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$java_util_concurrent_RejectedExecutionHandler', function (corePoolSize, handler) {
-C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_RejectedExecutionHandler.apply(this, [corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5)), handler]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_RejectedExecutionHandler.apply(this,[corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5,1)), handler]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler', function (corePoolSize, threadFactory, handler) {
-C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler.apply(this, [corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5)), threadFactory, handler]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler.apply(this,[corePoolSize, 2147483647, 0, $I$(2).NANOSECONDS, Clazz.new_($I$(5,1)), threadFactory, handler]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'schedule$Runnable$J$java_util_concurrent_TimeUnit', function (command, delay, unit) {
 if (command == null  || unit == null  ) throw Clazz.new_(Clazz.load('NullPointerException'));
 if (delay < 0) delay=0;
 var triggerTime=this.now$() + unit.toNanos$J(delay);
-var t=this.decorateTask$Runnable$java_util_concurrent_RunnableScheduledFuture(command, Clazz.new_($I$(6).c$$Runnable$TV$J, [this, null, command, null, triggerTime]));
+var t=this.decorateTask$Runnable$java_util_concurrent_RunnableScheduledFuture(command, Clazz.new_($I$(6,1).c$$Runnable$O$J,[this, null, command, null, triggerTime]));
 p$2.delayedExecute$java_util_concurrent_RunnableScheduledFuture.apply(this, [t]);
 return t;
 });
@@ -97,7 +88,7 @@ Clazz.newMeth(C$, 'schedule$java_util_concurrent_Callable$J$java_util_concurrent
 if (callable == null  || unit == null  ) throw Clazz.new_(Clazz.load('NullPointerException'));
 if (delay < 0) delay=0;
 var triggerTime=this.now$() + unit.toNanos$J(delay);
-var t=this.decorateTask$java_util_concurrent_Callable$java_util_concurrent_RunnableScheduledFuture(callable, Clazz.new_($I$(6).c$$java_util_concurrent_Callable$J, [this, null, callable, triggerTime]));
+var t=this.decorateTask$java_util_concurrent_Callable$java_util_concurrent_RunnableScheduledFuture(callable, Clazz.new_($I$(6,1).c$$java_util_concurrent_Callable$J,[this, null, callable, triggerTime]));
 p$2.delayedExecute$java_util_concurrent_RunnableScheduledFuture.apply(this, [t]);
 return t;
 });
@@ -107,7 +98,7 @@ if (command == null  || unit == null  ) throw Clazz.new_(Clazz.load('NullPointer
 if (period <= 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 if (initialDelay < 0) initialDelay=0;
 var triggerTime=this.now$() + unit.toNanos$J(initialDelay);
-var sft=Clazz.new_($I$(6).c$$Runnable$TV$J$J, [this, null, command, null, triggerTime, unit.toNanos$J(period)]);
+var sft=Clazz.new_([this, null, command, null, triggerTime, unit.toNanos$J(period)],$I$(6,1).c$$Runnable$O$J$J);
 var t=this.decorateTask$Runnable$java_util_concurrent_RunnableScheduledFuture(command, sft);
 sft.outerTask=t;
 p$2.delayedExecute$java_util_concurrent_RunnableScheduledFuture.apply(this, [t]);
@@ -119,14 +110,14 @@ if (command == null  || unit == null  ) throw Clazz.new_(Clazz.load('NullPointer
 if (delay <= 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 if (initialDelay < 0) initialDelay=0;
 var triggerTime=this.now$() + unit.toNanos$J(initialDelay);
-var sft=Clazz.new_($I$(6).c$$Runnable$TV$J$J, [this, null, command, null, triggerTime, unit.toNanos$J(-delay)]);
+var sft=Clazz.new_([this, null, command, null, triggerTime, unit.toNanos$J(-delay)],$I$(6,1).c$$Runnable$O$J$J);
 var t=this.decorateTask$Runnable$java_util_concurrent_RunnableScheduledFuture(command, sft);
 sft.outerTask=t;
 p$2.delayedExecute$java_util_concurrent_RunnableScheduledFuture.apply(this, [t]);
 return t;
 });
 
-Clazz.newMeth(C$, ['execute$Runnable','execute$'], function (command) {
+Clazz.newMeth(C$, 'execute$Runnable', function (command) {
 this.schedule$Runnable$J$java_util_concurrent_TimeUnit(command, 0, $I$(2).NANOSECONDS);
 });
 
@@ -134,8 +125,8 @@ Clazz.newMeth(C$, 'submit$Runnable', function (task) {
 return this.schedule$Runnable$J$java_util_concurrent_TimeUnit(task, 0, $I$(2).NANOSECONDS);
 });
 
-Clazz.newMeth(C$, 'submit$Runnable$TT', function (task, result) {
-return this.schedule$java_util_concurrent_Callable$J$java_util_concurrent_TimeUnit($I$(7).callable$Runnable$TT(task, result), 0, $I$(2).NANOSECONDS);
+Clazz.newMeth(C$, 'submit$Runnable$O', function (task, result) {
+return this.schedule$java_util_concurrent_Callable$J$java_util_concurrent_TimeUnit($I$(7).callable$Runnable$O(task, result), 0, $I$(2).NANOSECONDS);
 });
 
 Clazz.newMeth(C$, 'submit$java_util_concurrent_Callable', function (task) {
@@ -171,45 +162,39 @@ return C$.superclazz.prototype.shutdownNow$.apply(this, []);
 Clazz.newMeth(C$, 'getQueue$', function () {
 return C$.superclazz.prototype.getQueue$.apply(this, []);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.sequencer=Clazz.new_($I$(4,1).c$$J,[0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ScheduledThreadPoolExecutor, "ScheduledFutureTask", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ScheduledThreadPoolExecutor, "ScheduledFutureTask", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.concurrent.FutureTask', 'java.util.concurrent.RunnableScheduledFuture');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequenceNumber=0;
-this.time=0;
-this.period=0;
-this.outerTask=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.outerTask=this;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$Runnable$TV$J'], function (r, result, ns) {
-C$.superclazz.c$$Runnable$TV.apply(this, [r, result]);
-C$.$init$.apply(this);
+C$.$fields$=[['J',['sequenceNumber','time','period'],'O',['outerTask','java.util.concurrent.RunnableScheduledFuture']]]
+
+Clazz.newMeth(C$, 'c$$Runnable$O$J', function (r, result, ns) {
+;C$.superclazz.c$$Runnable$O.apply(this,[r, result]);C$.$init$.apply(this);
 this.time=ns;
 this.period=0;
 this.sequenceNumber=$I$(1).sequencer.getAndIncrement$();
 }, 1);
 
-Clazz.newMeth(C$, ['c$$Runnable$TV$J$J'], function (r, result, ns, period) {
-C$.superclazz.c$$Runnable$TV.apply(this, [r, result]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$Runnable$O$J$J', function (r, result, ns, period) {
+;C$.superclazz.c$$Runnable$O.apply(this,[r, result]);C$.$init$.apply(this);
 this.time=ns;
 this.period=period;
 this.sequenceNumber=$I$(1).sequencer.getAndIncrement$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_Callable$J', function (callable, ns) {
-C$.superclazz.c$$java_util_concurrent_Callable.apply(this, [callable]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_concurrent_Callable.apply(this,[callable]);C$.$init$.apply(this);
 this.time=ns;
 this.period=0;
 this.sequenceNumber=$I$(1).sequencer.getAndIncrement$();
@@ -220,7 +205,7 @@ var d=unit.convert$J$java_util_concurrent_TimeUnit(this.time - this.this$0.now$.
 return d;
 });
 
-Clazz.newMeth(C$, ['compareTo$java_util_concurrent_Delayed','compareTo$','compareTo$TT'], function (other) {
+Clazz.newMeth(C$, ['compareTo$java_util_concurrent_Delayed','compareTo$O'], function (other) {
 if (other === this ) return 0;
 if (Clazz.instanceOf(other, "java.util.concurrent.ScheduledThreadPoolExecutor.ScheduledFutureTask")) {
 var x=other;
@@ -246,8 +231,8 @@ if (p > 0) this.time+=p;
 Clazz.newMeth(C$, 'run$', function () {
 var periodic=this.isPeriodic$();
 if (!this.this$0.canRunInCurrentRunState$Z.apply(this.this$0, [periodic])) this.cancel$Z(false);
- else if (!periodic) C$.superclazz.prototype.run$.apply(this, []);
- else if (C$.superclazz.prototype.runAndReset$.apply(this, [])) {
+ else if (!periodic) C$.prototype.run$.apply(this, []);
+ else if (C$.prototype.runAndReset$.apply(this, [])) {
 p$1.setNextRunTime.apply(this, []);
 this.this$0.reExecutePeriodic$java_util_concurrent_RunnableScheduledFuture.apply(this.this$0, [this.outerTask]);
 }});
@@ -255,21 +240,17 @@ this.this$0.reExecutePeriodic$java_util_concurrent_RunnableScheduledFuture.apply
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ScheduledThreadPoolExecutor, "DelayedWorkQueue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ScheduledThreadPoolExecutor, "DelayedWorkQueue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractCollection', 'java.util.concurrent.BlockingQueue');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dq=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.dq=Clazz.new_($I$(3));
-}, 1);
+this.dq=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['O',['dq','java.util.concurrent.DelayQueue']]]
 
 Clazz.newMeth(C$, 'poll$', function () {
 return this.dq.poll$();
@@ -287,20 +268,20 @@ Clazz.newMeth(C$, 'poll$J$java_util_concurrent_TimeUnit', function (timeout, uni
 return this.dq.poll$J$java_util_concurrent_TimeUnit(timeout, unit);
 });
 
-Clazz.newMeth(C$, ['add$Runnable','add$TE'], function (x) {
-return this.dq.add$TE(x);
+Clazz.newMeth(C$, ['add$Runnable','add$O'], function (x) {
+return this.dq.add$java_util_concurrent_Delayed(x);
 });
 
-Clazz.newMeth(C$, ['offer$Runnable','offer$TE'], function (x) {
-return this.dq.offer$TE(x);
+Clazz.newMeth(C$, ['offer$Runnable','offer$O'], function (x) {
+return this.dq.offer$java_util_concurrent_Delayed(x);
 });
 
-Clazz.newMeth(C$, ['put$Runnable','put$TE'], function (x) {
-this.dq.put$TE(x);
+Clazz.newMeth(C$, ['put$Runnable','put$O'], function (x) {
+this.dq.put$java_util_concurrent_Delayed(x);
 });
 
-Clazz.newMeth(C$, ['offer$Runnable$J$java_util_concurrent_TimeUnit','offer$TE$J$java_util_concurrent_TimeUnit'], function (x, timeout, unit) {
-return this.dq.offer$TE$J$java_util_concurrent_TimeUnit(x, timeout, unit);
+Clazz.newMeth(C$, ['offer$Runnable$J$java_util_concurrent_TimeUnit','offer$O$J$java_util_concurrent_TimeUnit'], function (x, timeout, unit) {
+return this.dq.offer$java_util_concurrent_Delayed$J$java_util_concurrent_TimeUnit(x, timeout, unit);
 });
 
 Clazz.newMeth(C$, 'remove$', function () {
@@ -347,25 +328,21 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return this.dq.toArray$();
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (array) {
-return this.dq.toArray$TTA(array);
+Clazz.newMeth(C$, 'toArray$OA', function (array) {
+return this.dq.toArray$OA(array);
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
 return ((P$.ScheduledThreadPoolExecutor$DelayedWorkQueue$1||
-(function(){var C$=Clazz.newClass(P$, "ScheduledThreadPoolExecutor$DelayedWorkQueue$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ScheduledThreadPoolExecutor$DelayedWorkQueue$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.it=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.it=this.b$['java.util.concurrent.ScheduledThreadPoolExecutor.DelayedWorkQueue'].dq.iterator$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['it','java.util.Iterator']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.it.hasNext$();
@@ -379,7 +356,7 @@ Clazz.newMeth(C$, 'remove$', function () {
 this.it.remove$();
 });
 })()
-), Clazz.new_(P$.ScheduledThreadPoolExecutor$DelayedWorkQueue$1.$init$, [this, null]));
+), Clazz.new_(P$.ScheduledThreadPoolExecutor$DelayedWorkQueue$1.$init$,[this, null]));
 });
 
 Clazz.newMeth(C$);
@@ -387,4 +364,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

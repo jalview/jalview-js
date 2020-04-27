@@ -1,59 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.P3i','javajs.util.BS','javajs.util.AU','org.jmol.util.SimpleUnitCell','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeshRenderer", null, 'org.jmol.render.ShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.P3i','javajs.util.BS','javajs.util.AU','org.jmol.util.SimpleUnitCell','org.jmol.util.C']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MeshRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mesh=null;
-this.vertices=null;
-this.normixes=null;
-this.screens=null;
-this.p3Screens=null;
-this.transformedVectors=null;
-this.vertexCount=0;
-this.imageFontScaling=0;
-this.scalePixelsPerMicron=0;
-this.diameter=0;
-this.width=0;
-this.isTranslucent=false;
-this.frontOnly=false;
-this.isShell=false;
-this.antialias=false;
-this.haveBsDisplay=false;
-this.selectedPolyOnly=false;
-this.isGhostPass=false;
-this.thePlane=null;
-this.latticeOffset=null;
-this.pt1f=null;
-this.pt2f=null;
-this.pt1i=null;
-this.pt2i=null;
-this.pt3i=null;
-this.exportPass=0;
-this.needTranslucent=false;
-this.doRender=false;
-this.volumeRender=false;
-this.bsPolygons=null;
-this.isTranslucentInherit=false;
-this.renderLow=false;
-this.meshSlabValue=0;
-this.showTriangles=false;
-this.forceShowTriangles=false;
-this.bsPolygonsToExport=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.latticeOffset=Clazz.new_($I$(1));
-this.pt1f=Clazz.new_($I$(1));
-this.pt2f=Clazz.new_($I$(1));
-this.pt1i=Clazz.new_($I$(2));
-this.pt2i=Clazz.new_($I$(2));
-this.pt3i=Clazz.new_($I$(2));
+this.latticeOffset=Clazz.new_($I$(1,1));
+this.pt1f=Clazz.new_($I$(1,1));
+this.pt2f=Clazz.new_($I$(1,1));
+this.pt1i=Clazz.new_($I$(2,1));
+this.pt2i=Clazz.new_($I$(2,1));
+this.pt3i=Clazz.new_($I$(2,1));
 this.meshSlabValue=100;
-this.bsPolygonsToExport=Clazz.new_($I$(3));
-}, 1);
+this.bsPolygonsToExport=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['Z',['isTranslucent','frontOnly','isShell','antialias','haveBsDisplay','selectedPolyOnly','isGhostPass','needTranslucent','doRender','volumeRender','isTranslucentInherit','renderLow','showTriangles','forceShowTriangles'],'F',['imageFontScaling','scalePixelsPerMicron','width'],'I',['vertexCount','diameter','exportPass','meshSlabValue'],'O',['mesh','org.jmol.shape.Mesh','vertices','javajs.util.T3[]','normixes','short[]','screens','javajs.util.P3i[]','p3Screens','javajs.util.P3[]','transformedVectors','javajs.util.V3[]','thePlane','javajs.util.P4','latticeOffset','javajs.util.P3','+pt1f','+pt2f','pt1i','javajs.util.P3i','+pt2i','+pt3i','bsPolygons','javajs.util.BS','+bsPolygonsToExport']]]
 
 Clazz.newMeth(C$, 'renderMesh2$org_jmol_shape_Mesh', function (mesh) {
 this.mesh=mesh;
@@ -67,7 +28,7 @@ for (var i=this.vertexCount; --i >= 0; ) if (this.vertices[i] != null ) this.tm.
 
 this.render2$Z(this.isExport);
 } else {
-var vTemp=Clazz.new_($I$(1));
+var vTemp=Clazz.new_($I$(1,1));
 var unitcell=mesh.getUnitCell$();
 if (unitcell != null ) {
 if (mesh.symops != null ) {
@@ -90,7 +51,7 @@ unitcell.toCartesian$javajs_util_T3$Z(vTemp, true);
 this.tm.transformPtScr$javajs_util_T3$javajs_util_P3i(vTemp, this.screens[i]);
 if (needNormals) {
 verticesTemp[i]=vTemp;
-vTemp=Clazz.new_($I$(1));
+vTemp=Clazz.new_($I$(1,1));
 }}
 if (needNormals) this.normixes=mesh.symopNormixes[j]=mesh.setNormixes$javajs_util_V3A(mesh.getNormals$javajs_util_T3A$javajs_util_P4(verticesTemp, null));
  else this.normixes=mesh.normixes=mesh.symopNormixes[j];
@@ -98,9 +59,9 @@ this.render2$Z(this.isExport);
 }
 mesh.colix=c;
 } else {
-var minXYZ=Clazz.new_($I$(2));
-var maxXYZ=$I$(2).new3$I$I$I((mesh.lattice.x|0), (mesh.lattice.y|0), (mesh.lattice.z|0));
-$I$(5).setMinMaxLatticeParameters$I$javajs_util_P3i$javajs_util_P3i$I((unitcell.getUnitCellInfoType$I(6)|0), minXYZ, maxXYZ, 0);
+var minXYZ=Clazz.new_($I$(2,1));
+var maxXYZ=(function(a,f){return f.apply(null,a)})([(mesh.lattice.x|0), (mesh.lattice.y|0), (mesh.lattice.z|0)],$I$(2).new3$I$I$I);
+(function(a,f){return f.apply(null,a)})([(unitcell.getUnitCellInfoType$I(6)|0), minXYZ, maxXYZ, 0],$I$(5).setMinMaxLatticeParameters$I$javajs_util_P3i$javajs_util_P3i$I);
 for (var tx=minXYZ.x; tx < maxXYZ.x; tx++) for (var ty=minXYZ.y; ty < maxXYZ.y; ty++) for (var tz=minXYZ.z; tz < maxXYZ.z; tz++) {
 this.latticeOffset.set$F$F$F(tx, ty, tz);
 unitcell.toCartesian$javajs_util_T3$Z(this.latticeOffset, false);
@@ -286,9 +247,9 @@ if (!this.antialias && diam == 1 ) {
 this.vwr.gdata.drawTriangleBits$org_jmol_api_JmolRendererInterface$javajs_util_P3$H$javajs_util_P3$H$javajs_util_P3$H$I(this.g3d, screenA, colixA, screenB, colixB, screenC, colixC, check);
 return;
 }if (this.antialias) diam<<=1;
-if ((check & 1) == 1) this.g3d.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixA, colixB, ($b$[0] = 1, $b$[0]), diam, screenA, screenB);
-if ((check & 2) == 2) this.g3d.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixB, colixC, ($b$[0] = 1, $b$[0]), diam, screenB, screenC);
-if ((check & 4) == 4) this.g3d.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixA, colixC, ($b$[0] = 1, $b$[0]), diam, screenA, screenC);
+if ((check & 1) == 1) this.g3d.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixA, colixB, 1, diam, screenA, screenB);
+if ((check & 2) == 2) this.g3d.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixB, colixC, 1, diam, screenB, screenC);
+if ((check & 4) == 4) this.g3d.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixA, colixC, 1, diam, screenA, screenC);
 }, p$1);
 
 Clazz.newMeth(C$, 'drawTriangle$javajs_util_P3i$H$javajs_util_P3i$H$javajs_util_P3i$H$I$I', function (screenA, colixA, screenB, colixB, screenC, colixC, check, diam) {
@@ -296,9 +257,9 @@ if (!this.antialias && diam == 1 ) {
 this.g3d.drawTriangle3C$javajs_util_P3i$H$javajs_util_P3i$H$javajs_util_P3i$H$I(screenA, colixA, screenB, colixB, screenC, colixC, check);
 return;
 }if (this.antialias) diam<<=1;
-if ((check & 1) == 1) this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, ($b$[0] = 1, $b$[0]), diam, screenA.x, screenA.y, screenA.z, screenB.x, screenB.y, screenB.z);
-if ((check & 2) == 2) this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixB, colixC, ($b$[0] = 1, $b$[0]), diam, screenB.x, screenB.y, screenB.z, screenC.x, screenC.y, screenC.z);
-if ((check & 4) == 4) this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixC, ($b$[0] = 1, $b$[0]), diam, screenA.x, screenA.y, screenA.z, screenC.x, screenC.y, screenC.z);
+if ((check & 1) == 1) this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, 1, diam, screenA.x, screenA.y, screenA.z, screenB.x, screenB.y, screenB.z);
+if ((check & 2) == 2) this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixB, colixC, 1, diam, screenB.x, screenB.y, screenB.z, screenC.x, screenC.y, screenC.z);
+if ((check & 4) == 4) this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixC, 1, diam, screenA.x, screenA.y, screenA.z, screenC.x, screenC.y, screenC.z);
 });
 
 Clazz.newMeth(C$, 'checkFront$H$H$H', function (nA, nB, nC) {
@@ -310,7 +271,7 @@ return check;
 });
 
 Clazz.newMeth(C$, 'drawEdge$I$I$Z$javajs_util_T3$javajs_util_T3$javajs_util_P3i$javajs_util_P3i', function (iA, iB, fill, vA, vB, sA, sB) {
-var endCap=($b$[0] = (iA != iB && !fill  ? (0|0) : (this.width < 0  || this.width == -0.0   || iA != iB && this.isTranslucent   ? (2|0) : (3|0)|0)), $b$[0]);
+var endCap=(iA != iB && !fill  ? 0 : this.width < 0  || this.width == -0.0   || iA != iB && this.isTranslucent   ? 2 : 3);
 if (this.width == 0 ) {
 if (this.diameter == 0) this.diameter=(this.mesh.diameter > 0 ? this.mesh.diameter : iA == iB ? 7 : 3);
 if (this.exportType == 1) {
@@ -328,7 +289,7 @@ this.diameter=((this.vwr.tm.scaleToScreen$I$I(this.pt1i.z, mad))|0);
 }if (this.diameter == 0) this.diameter=1;
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(vA, this.pt1f);
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(vB, this.pt2f);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = endCap, $b$[0]), this.diameter, this.pt1f, this.pt2f);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(endCap, this.diameter, this.pt1f, this.pt2f);
 });
 
 Clazz.newMeth(C$, 'exportSurface$H', function (colix) {
@@ -340,8 +301,7 @@ this.mesh.normals=null;
 this.mesh.bsPolygons=null;
 });
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

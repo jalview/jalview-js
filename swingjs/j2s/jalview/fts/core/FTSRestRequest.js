@@ -1,29 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.fts.core"),I$=[[0,'jalview.bin.Cache']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FTSRestRequest");
+(function(){var P$=Clazz.newPackage("jalview.fts.core"),I$=[[0,'jalview.bin.Cache']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FTSRestRequest");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fieldToSearchBy=null;
-this.searchTerm=null;
-this.fieldToSortBy=null;
-this.associatedSequence=null;
-this.allowEmptySequence=false;
-this.allowUnpublishedEntries=false;
-this.facet=false;
-this.facetPivot=null;
-this.facetPivotMinCount=0;
-this.responseSize=0;
-this.offSet=0;
-this.isSortAscending=false;
-this.wantedFields=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.allowUnpublishedEntries=$I$(1).getDefault$S$Z("ALLOW_UNPUBLISHED_PDB_QUERYING", false);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['allowEmptySequence','allowUnpublishedEntries','facet','isSortAscending'],'I',['facetPivotMinCount','responseSize','offSet'],'S',['fieldToSearchBy','searchTerm','fieldToSortBy','facetPivot'],'O',['associatedSequence','jalview.datamodel.SequenceI','wantedFields','java.util.Collection']]]
 
 Clazz.newMeth(C$, 'getFieldToSearchBy$', function () {
 return this.fieldToSearchBy;
@@ -128,4 +112,4 @@ this.offSet=offSet;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,28 +1,22 @@
-(function(){var P$=Clazz.newPackage("sun.misc"),I$=[[0,'sun.misc.QueueElement','swingjs.JSUtil','sun.misc.LIFOQueueEnumerator','sun.misc.FIFOQueueEnumerator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Queue");
+(function(){var P$=Clazz.newPackage("sun.misc"),I$=[[0,'sun.misc.QueueElement','sun.misc.LIFOQueueEnumerator','sun.misc.FIFOQueueEnumerator']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Queue");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.length=0;
-this.head=null;
-this.tail=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.length=0;
 this.head=null;
 this.tail=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['length'],'O',['head','sun.misc.QueueElement','+tail']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'enqueue$O', function (obj) {
-var newElt=Clazz.new_($I$(1).c$$O,[obj]);
+var newElt=Clazz.new_($I$(1,1).c$$O,[obj]);
 if (this.head == null ) {
 this.head=newElt;
 this.tail=newElt;
@@ -41,7 +35,6 @@ return this.dequeue$J(0);
 
 Clazz.newMeth(C$, 'dequeue$J', function (timeOut) {
 while (this.tail == null ){
-$I$(2).warn$S("Cannot wait in Queue.java");
 this.wait$J(timeOut);
 }
 var elt=this.tail;
@@ -59,11 +52,11 @@ return (this.tail == null );
 });
 
 Clazz.newMeth(C$, 'elements$', function () {
-return Clazz.new_($I$(3).c$$sun_misc_Queue,[this]);
+return Clazz.new_($I$(2,1).c$$sun_misc_Queue,[this]);
 });
 
 Clazz.newMeth(C$, 'reverseElements$', function () {
-return Clazz.new_($I$(4).c$$sun_misc_Queue,[this]);
+return Clazz.new_($I$(3,1).c$$sun_misc_Queue,[this]);
 });
 
 Clazz.newMeth(C$, 'dump$S', function (msg) {
@@ -81,4 +74,4 @@ System.err.println$S("  tail != last: " + this.tail + ", " + last );
 }System.err.println$S("]");
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

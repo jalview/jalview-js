@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("jalview.io.packed"),I$=[];
-var C$=Clazz.newClass(P$, "SimpleDataProvider", null, null, 'jalview.io.packed.DataProvider');
+/*c*/var C$=Clazz.newClass(P$, "SimpleDataProvider", null, null, 'jalview.io.packed.DataProvider');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jvtype=null;
-this.source=null;
-this.assocseq=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['jvtype','jalview.io.packed.DataProvider.JvDataType','source','jalview.io.FileParse','assocseq','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$jalview_io_packed_DataProvider_JvDataType$jalview_io_FileParse$O', function (type, fp, assoc) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.jvtype=type;
 this.source=fp;
 this.assocseq=assoc;
@@ -35,4 +29,4 @@ return this.jvtype;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

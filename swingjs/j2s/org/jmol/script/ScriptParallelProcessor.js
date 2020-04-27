@@ -1,27 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'javajs.util.Lst','java.util.concurrent.Executors','org.jmol.util.Logger','org.jmol.viewer.Viewer','org.jmol.viewer.ShapeManager','org.jmol.script.ScriptProcess','org.jmol.script.ScriptProcessRunnable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptParallelProcessor", null, 'org.jmol.script.ScriptFunction', 'org.jmol.api.JmolParallelProcessor');
+(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'javajs.util.Lst','java.util.concurrent.Executors','org.jmol.util.Logger','org.jmol.viewer.Viewer','org.jmol.viewer.ShapeManager','org.jmol.script.ScriptProcess','org.jmol.script.ScriptProcessRunnable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptParallelProcessor", null, 'org.jmol.script.ScriptFunction', 'org.jmol.api.JmolParallelProcessor');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.counter=0;
-this.error=null;
-this.lock=null;
-this.processes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.counter=0;
 this.error=null;
 this.lock= Clazz.new_();
-this.processes=Clazz.new_($I$(1));
-}, 1);
+this.processes=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['I',['counter'],'O',['vwr','org.jmol.viewer.Viewer','error','Error','lock','java.lang.Object','processes','javajs.util.Lst']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getExecutor$', function () {
@@ -32,17 +24,17 @@ Clazz.newMeth(C$, 'runAllProcesses$org_jmol_viewer_Viewer', function (vwr) {
 if (this.processes.size$() == 0) return;
 this.vwr=vwr;
 var inParallel=!vwr.isParallel$() && vwr.setParallel$Z(true) ;
-var vShapeManagers=Clazz.new_($I$(1));
+var vShapeManagers=Clazz.new_($I$(1,1));
 this.error=null;
 this.counter=0;
-if ($I$(3).debugging) $I$(3).debug$S("running " + this.processes.size$() + " processes on " + $I$(4).nProcessors + " processesors inParallel=" + inParallel );
+if ($I$(3).debugging) (function(a,f){return f.apply(null,a)})(["running " + this.processes.size$() + " processes on " + $I$(4).nProcessors + " processesors inParallel=" + inParallel ],$I$(3).debug$S);
 this.counter=this.processes.size$();
 for (var i=this.processes.size$(); --i >= 0; ) {
 var sm=null;
 if (inParallel) {
-sm=Clazz.new_($I$(5).c$$org_jmol_viewer_Viewer,[vwr]);
+sm=Clazz.new_($I$(5,1).c$$org_jmol_viewer_Viewer,[vwr]);
 sm.setParallel$();
-vShapeManagers.addLast$TV(sm);
+vShapeManagers.addLast$O(sm);
 }p$1.runProcess$org_jmol_script_ScriptProcess$org_jmol_viewer_ShapeManager.apply(this, [this.processes.removeItemAt$I(0), sm]);
 }
 {
@@ -94,14 +86,14 @@ this.notifyAll$();
 }});
 
 Clazz.newMeth(C$, 'addProcess$S$org_jmol_script_ScriptContext', function (name, context) {
-this.processes.addLast$TV(Clazz.new_($I$(6).c$$S$org_jmol_script_ScriptContext,[name, context]));
+this.processes.addLast$O(Clazz.new_($I$(6,1).c$$S$org_jmol_script_ScriptContext,[name, context]));
 });
 
 Clazz.newMeth(C$, 'runProcess$org_jmol_script_ScriptProcess$org_jmol_viewer_ShapeManager', function (process, shapeManager) {
-var r=Clazz.new_($I$(7).c$$org_jmol_script_ScriptParallelProcessor$org_jmol_script_ScriptProcess$O$org_jmol_viewer_ShapeManager,[this, process, this.lock, shapeManager]);
+var r=Clazz.new_($I$(7,1).c$$org_jmol_script_ScriptParallelProcessor$org_jmol_script_ScriptProcess$O$org_jmol_viewer_ShapeManager,[this, process, this.lock, shapeManager]);
 var exec=(shapeManager == null  ? null : p$1.getMyExecutor.apply(this, []));
 if (exec != null ) {
-exec.execute$(r);
+exec.execute$Runnable(r);
 } else {
 r.run$();
 }}, p$1);
@@ -133,4 +125,4 @@ if (this.vwr.executor == null ) $I$(3).error$S("parallel processing is not avail
 return this.vwr.executor;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[];
-var C$=Clazz.newClass(P$, "QuadIterator", null, null, 'java.awt.geom.PathIterator');
+/*c*/var C$=Clazz.newClass(P$, "QuadIterator", null, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.quad=null;
-this.affine=null;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index'],'O',['quad','java.awt.geom.QuadCurve2D','affine','java.awt.geom.AffineTransform']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_QuadCurve2D$java_awt_geom_AffineTransform', function (q, at) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.quad=q;
 this.affine=at;
 }, 1);
@@ -72,4 +66,4 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, this.index == 0 ? 1 : 2)
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

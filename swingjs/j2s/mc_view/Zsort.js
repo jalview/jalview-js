@@ -1,11 +1,10 @@
 (function(){var P$=Clazz.newPackage("mc_view"),p$1={};
-var C$=Clazz.newClass(P$, "Zsort");
+/*c*/var C$=Clazz.newClass(P$, "Zsort");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'sort$java_util_Vector', function (bonds) {
 this.sort$java_util_Vector$I$I(bonds, 0, bonds.size$() - 1);
@@ -33,8 +32,8 @@ i++;
 } while ((i < bonds.size$()) && (bonds.elementAt$I(i).start[2] < x ) );
 if (i < j) {
 tmp=bonds.elementAt$I(i);
-bonds.setElementAt$TE$I(bonds.elementAt$I(j), i);
-bonds.setElementAt$TE$I(tmp, j);
+bonds.setElementAt$O$I(bonds.elementAt$I(j), i);
+bonds.setElementAt$O$I(tmp, j);
 } else {
 return j;
 }}
@@ -42,4 +41,4 @@ return j;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

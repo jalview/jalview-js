@@ -1,41 +1,24 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.JSComponent','java.awt.Component','java.awt.Color','java.util.Hashtable','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JLayeredPane", null, 'javax.swing.JComponent');
-C$.DEFAULT_LAYER=null;
-C$.PALETTE_LAYER=null;
-C$.MODAL_LAYER=null;
-C$.POPUP_LAYER=null;
-C$.DRAG_LAYER=null;
-C$.FRAME_CONTENT_LAYER=null;
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.JSComponent','java.awt.Component','java.awt.Color','java.util.Hashtable','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JLayeredPane", null, 'javax.swing.JComponent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEFAULT_LAYER= new Integer(0);
-C$.PALETTE_LAYER= new Integer(100);
-C$.MODAL_LAYER= new Integer(200);
-C$.POPUP_LAYER= new Integer(300);
-C$.DRAG_LAYER= new Integer(400);
-C$.FRAME_CONTENT_LAYER= new Integer(-30000);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.componentToLayer=null;
-this.optimizedDrawingPossible=false;
-this.isAWT=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.optimizedDrawingPossible=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['optimizedDrawingPossible','isAWT'],'O',['componentToLayer','java.util.Hashtable']]
+,['O',['DEFAULT_LAYER','Integer','+PALETTE_LAYER','+MODAL_LAYER','+POPUP_LAYER','+DRAG_LAYER','+FRAME_CONTENT_LAYER']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (isAWTContainer) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.initLayeredPane$();
 this.isAWT=isAWTContainer;
+this.秘paintClass=C$ ||null;
 }, 1);
 
 Clazz.newMeth(C$, 'initLayeredPane$', function () {
@@ -52,7 +35,7 @@ var layeredComponentFound=false;
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(this.getTreeLock$());
 {
 var layer=null;
-var children=$I$(1).getChildArray$java_awt_Container(this);
+var children=$I$(1).秘getChildArray$java_awt_Container(this);
 var n=this.getComponentCount$();
 for (var i=0; i < n; i++) {
 var c=children[i];
@@ -89,7 +72,7 @@ this.getComponentToLayer$().remove$O(c);
 });
 
 Clazz.newMeth(C$, 'removeAll$', function () {
-var children=$I$(1).getChildArray$java_awt_Container(this);
+var children=$I$(1).秘getChildArray$java_awt_Container(this);
 var n=this.getComponentCount$();
 var cToL=this.getComponentToLayer$();
 for (var counter=n - 1; counter >= 0; counter--) {
@@ -132,10 +115,10 @@ Clazz.newMeth(C$, 'setLayer$java_awt_Component$I$I', function (c, layer, positio
 var layerObj;
 layerObj=this.getObjectForLayer$I(layer);
 if (layer == C$.getLayer$java_awt_Component(c) && position == this.getPosition$java_awt_Component(c) ) {
-this.updateUIZOrder$();
+this.秘updateUIZOrder$();
 return;
 }if (Clazz.instanceOf(c, "javax.swing.JComponent")) (c).putClientProperty$O$O("layeredContainerLayer", layerObj);
- else this.getComponentToLayer$().put$TK$TV(c, layerObj);
+ else this.getComponentToLayer$().put$O$O(c, layerObj);
 if (c.getParent$() == null  || c.getParent$() !== this  ) {
 return;
 }this.setComponentZOrder$java_awt_Component$I(c, p$1.insertIndexForLayer$java_awt_Component$I$I.apply(this, [c, layer, position]));
@@ -247,7 +230,7 @@ g.fillRect$I$I$I$I(0, 0, this.getWidth$(), this.getHeight$());
 });
 
 Clazz.newMeth(C$, 'getComponentToLayer$', function () {
-if (this.componentToLayer == null ) this.componentToLayer=Clazz.new_($I$(4).c$$I,[4]);
+if (this.componentToLayer == null ) this.componentToLayer=Clazz.new_($I$(4,1).c$$I,[4]);
 return this.componentToLayer;
 });
 
@@ -286,10 +269,10 @@ var curLayer;
 var layerStart=-1;
 var layerEnd=-1;
 var componentCount=this.getComponentCount$();
-var compList=Clazz.new_($I$(5).c$$I,[componentCount]);
+var compList=Clazz.new_($I$(5,1).c$$I,[componentCount]);
 for (var index=0; index < componentCount; index++) {
 if (this.getComponent$I(index) !== comp ) {
-compList.add$TE(this.getComponent$I(index));
+compList.add$O(this.getComponent$I(index));
 }}
 count=compList.size$();
 for (i=0; i < count; i++) {
@@ -316,5 +299,14 @@ Clazz.newMeth(C$, 'paramString$', function () {
 var optimizedDrawingPossibleString=(this.optimizedDrawingPossible ? "true" : "false");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",optimizedDrawingPossible=" + optimizedDrawingPossibleString ;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.DEFAULT_LAYER= new Integer(0);
+C$.PALETTE_LAYER= new Integer(100);
+C$.MODAL_LAYER= new Integer(200);
+C$.POPUP_LAYER= new Integer(300);
+C$.DRAG_LAYER= new Integer(400);
+C$.FRAME_CONTENT_LAYER= new Integer(-30000);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

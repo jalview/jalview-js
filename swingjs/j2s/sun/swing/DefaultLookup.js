@@ -1,16 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.swing"),I$=[[0,'sun.awt.AppContext','Thread','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultLookup");
-C$.DEFAULT_LOOKUP_KEY=null;
-C$.currentDefaultThread=null;
-C$.currentDefaultLookup=null;
-C$.isLookupSet=false;
+(function(){var P$=Clazz.newPackage("sun.swing"),I$=[[0,'sun.awt.AppContext','Thread','javax.swing.UIManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultLookup");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEFAULT_LOOKUP_KEY= Clazz.new_();
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['Z',['isLookupSet'],'O',['DEFAULT_LOOKUP_KEY','java.lang.Object','currentDefaultThread','Thread','currentDefaultLookup','sun.swing.DefaultLookup']]]
 
 Clazz.newMeth(C$, 'setDefaultLookup$sun_swing_DefaultLookup', function (lookup) {
 {
@@ -29,7 +26,7 @@ var lookupSet;
 {
 lookupSet=C$.isLookupSet;
 }if (!lookupSet) {
-return $I$(3).get$O$java_util_Locale(key, c.getLocale$());
+return $I$(3,"get$O$java_util_Locale",[key, c.getLocale$()]);
 }var thisThread=$I$(2).currentThread$();
 var lookup;
 {
@@ -112,9 +109,13 @@ return C$.getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$javax_
 }, 1);
 
 Clazz.newMeth(C$, 'getDefault$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S', function (c, ui, key) {
-return $I$(3).get$O$java_util_Locale(key, c.getLocale$());
+return $I$(3,"get$O$java_util_Locale",[key, c.getLocale$()]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.DEFAULT_LOOKUP_KEY="DefaultLookup_LOOKUP_KEY";
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:40 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

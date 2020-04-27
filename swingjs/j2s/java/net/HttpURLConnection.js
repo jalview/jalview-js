@@ -1,23 +1,7 @@
-(function(){var P$=Clazz.newPackage("java.net"),I$=[[0,'java.net.NetPermission']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HttpURLConnection", null, 'java.net.URLConnection');
-C$.followRedirects=false;
-C$.methods=null;
+(function(){var P$=Clazz.newPackage("java.net"),I$=[[0,'java.net.NetPermission']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HttpURLConnection", null, 'java.net.URLConnection');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.followRedirects=true;
-C$.methods=Clazz.array(String, -1, ["GET", "POST", "HEAD", "OPTIONS", "PUT", "DELETE", "TRACE"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.method=null;
-this.chunkLength=0;
-this.fixedContentLength=0;
-this.fixedContentLengthLong=0;
-this.responseCode=0;
-this.responseMessage=null;
-this.instanceFollowRedirects=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.method="GET";
@@ -27,7 +11,10 @@ this.fixedContentLengthLong=-1;
 this.responseCode=-1;
 this.responseMessage=null;
 this.instanceFollowRedirects=C$.followRedirects;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['instanceFollowRedirects'],'I',['chunkLength','fixedContentLength','responseCode'],'J',['fixedContentLengthLong'],'S',['method','responseMessage']]
+,['Z',['followRedirects'],'O',['methods','String[]']]]
 
 Clazz.newMeth(C$, 'getHeaderFieldKey$I', function (n) {
 return null;
@@ -66,8 +53,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'c$$java_net_URL', function (u) {
-C$.superclazz.c$$java_net_URL.apply(this, [u]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_net_URL.apply(this,[u]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setFollowRedirects$Z', function (set) {
@@ -97,7 +83,7 @@ if (C$.methods[i].equals$O(method)) {
 if (method.equals$O("TRACE")) {
 var s=System.getSecurityManager$();
 if (s != null ) {
-s.checkPermission$java_security_Permission(Clazz.new_($I$(1).c$$S,["allowHttpTrace"]));
+s.checkPermission$java_security_Permission(Clazz.new_($I$(1,1).c$$S,["allowHttpTrace"]));
 }}this.method=method;
 return;
 }}
@@ -159,6 +145,11 @@ Clazz.newMeth(C$, 'getErrorStream$', function () {
 return null;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.followRedirects=true;
+C$.methods=Clazz.array(String, -1, ["GET", "POST", "HEAD", "OPTIONS", "PUT", "DELETE", "TRACE"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

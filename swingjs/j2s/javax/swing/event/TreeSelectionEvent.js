@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing.event"),I$=[[0,'javax.swing.tree.TreePath']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TreeSelectionEvent", null, 'java.util.EventObject');
+(function(){var P$=Clazz.newPackage("javax.swing.event"),I$=[[0,'javax.swing.tree.TreePath']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TreeSelectionEvent", null, 'java.util.EventObject');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.paths=null;
-this.areNew=null;
-this.oldLeadSelectionPath=null;
-this.newLeadSelectionPath=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['paths','javax.swing.tree.TreePath[]','areNew','boolean[]','oldLeadSelectionPath','javax.swing.tree.TreePath','+newLeadSelectionPath']]]
 
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_TreePathA$ZA$javax_swing_tree_TreePath$javax_swing_tree_TreePath', function (source, paths, areNew, oldLeadSelectionPath, newLeadSelectionPath) {
-C$.superclazz.c$$O.apply(this, [source]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O.apply(this,[source]);C$.$init$.apply(this);
 this.paths=paths;
 this.areNew=areNew;
 this.oldLeadSelectionPath=oldLeadSelectionPath;
@@ -25,8 +17,7 @@ this.newLeadSelectionPath=newLeadSelectionPath;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_TreePath$Z$javax_swing_tree_TreePath$javax_swing_tree_TreePath', function (source, path, isNew, oldLeadSelectionPath, newLeadSelectionPath) {
-C$.superclazz.c$$O.apply(this, [source]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O.apply(this,[source]);C$.$init$.apply(this);
 this.paths=Clazz.array($I$(1), [1]);
 this.paths[0]=path;
 this.areNew=Clazz.array(Boolean.TYPE, [1]);
@@ -78,4 +69,4 @@ return Clazz.new_(C$.c$$O$javax_swing_tree_TreePathA$ZA$javax_swing_tree_TreePat
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

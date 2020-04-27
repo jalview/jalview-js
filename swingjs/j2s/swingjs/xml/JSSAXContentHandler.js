@@ -1,12 +1,13 @@
-(function(){var P$=Clazz.newPackage("swingjs.xml"),p$1={},I$=[[0,'swingjs.JSUtil','javajs.util.SB','swingjs.xml.JSSAXAttributes','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSSAXContentHandler", null, 'org.xml.sax.helpers.DefaultHandler');
-C$.debugging=false;
+(function(){var P$=Clazz.newPackage("swingjs.xml"),p$1={},I$=[[0,'swingjs.JSUtil','javajs.util.SB','swingjs.xml.JSSAXAttributes','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSSAXContentHandler", null, 'org.xml.sax.helpers.DefaultHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['Z',['debugging']]]
 
 Clazz.newMeth(C$, 'processingInstruction$S$S', function (target, data) {
 if (C$.debugging) System.out.println$S("JSSAX <?" + target + ' ' + data + "?>" );
@@ -19,9 +20,9 @@ if (C$.debugging) System.out.println$S("JSSAX Start document");
 
 Clazz.newMeth(C$, 'startElement$S$S$S$org_xml_sax_Attributes', function (uri, localName, nodeName, atts) {
 localName=p$1.fixXerces$S$S.apply(this, [localName, nodeName]);
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S("Start element: " + $I$(3).getFullName$S$S$S(uri, localName, nodeName));
-for (var i=0; i < atts.getLength$(); i++) sb.append$S("\n  " + $I$(3).getFullName$S$S$S(atts.getURI$I(i), atts.getLocalName$I(i), atts.getQName$I(i)) + " = \"" + atts.getValue$I(i) + "\"" );
+for (var i=0; i < atts.getLength$(); i++) sb.append$S("\n  " + $I$(3,"getFullName$S$S$S",[atts.getURI$I(i), atts.getLocalName$I(i), atts.getQName$I(i)]) + " = \"" + atts.getValue$I(i) + "\"" );
 
 if (C$.debugging) System.out.println$S("JSSAX " + sb.toString());
 });
@@ -50,4 +51,4 @@ return (pt < 0 ? nodeName : nodeName.substring$I$I(0, pt));
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:29:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,49 +1,28 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.jmol"),p$1={},I$=[[0,'java.util.Vector','StringBuffer','StringBuilder','jalview.datamodel.AlignmentI','jalview.datamodel.HiddenColumns','Thread','java.util.BitSet',['jalview.structures.models.AAStructureBindingModel','.SuperposeData'],'jalview.util.MessageManager','jalview.ext.jmol.JmolCommands','java.awt.Color','java.util.ArrayList','java.io.File','org.jmol.c.CBK','java.util.Hashtable','jalview.io.DataSourceType','jalview.schemes.ResidueProperties','org.jmol.api.JmolViewer','org.jmol.adapter.smarter.SmarterJmolAdapter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JalviewJmolBinding", null, 'jalview.structures.models.AAStructureBindingModel', ['org.jmol.api.JmolStatusListener', 'org.jmol.api.JmolSelectionListener', 'java.awt.event.ComponentListener']);
+(function(){var P$=Clazz.newPackage("jalview.ext.jmol"),p$1={},I$=[[0,'java.util.Vector','StringBuffer','StringBuilder','jalview.datamodel.AlignmentI','jalview.datamodel.HiddenColumns','Thread','java.util.BitSet',['jalview.structures.models.AAStructureBindingModel','.SuperposeData'],'jalview.util.MessageManager','jalview.ext.jmol.JmolCommands','java.awt.Color','java.util.ArrayList','java.io.File','java.util.StringTokenizer','org.jmol.c.CBK','java.util.Hashtable','jalview.io.DataSourceType','jalview.schemes.ResidueProperties','org.jmol.api.JmolViewer','org.jmol.adapter.smarter.SmarterJmolAdapter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JalviewJmolBinding", null, 'jalview.structures.models.AAStructureBindingModel', ['org.jmol.api.JmolStatusListener', 'org.jmol.api.JmolSelectionListener', 'java.awt.event.ComponentListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.allChainsSelected=false;
-this.associateNewStructs=false;
-this.atomsPicked=null;
-this.chainNames=null;
-this.chainFile=null;
-this.frameNo=0;
-this.lastCommand=null;
-this.lastMessage=null;
-this.loadedInline=false;
-this.resetLastRes=null;
-this.viewer=null;
-this.colourby=null;
-this._modelFileNameMap=null;
-this.debug=false;
-this.loadNotifiesHandled=0;
-this.console=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.allChainsSelected=false;
 this.associateNewStructs=false;
-this.atomsPicked=Clazz.new_($I$(1));
+this.atomsPicked=Clazz.new_($I$(1,1));
 this.frameNo=0;
-this.resetLastRes=Clazz.new_($I$(2));
+this.resetLastRes=Clazz.new_($I$(2,1));
 this.colourby=null;
 this.debug=true;
 this.loadNotifiesHandled=0;
 this.console=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['allChainsSelected','associateNewStructs','loadedInline','debug'],'I',['frameNo'],'J',['loadNotifiesHandled'],'S',['lastMessage','lastCommand'],'O',['atomsPicked','java.util.Vector','chainNames','java.util.List','chainFile','java.util.Hashtable','resetLastRes','StringBuffer','viewer','org.jmol.viewer.Viewer','colourby','Thread','_modelFileNameMap','int[]','console','org.jmol.api.JmolAppConsoleInterface']]]
 
 Clazz.newMeth(C$, 'c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType', function (ssm, pdbentry, sequenceIs, protocol) {
-C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType.apply(this, [ssm, pdbentry, sequenceIs, protocol]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType.apply(this,[ssm, pdbentry, sequenceIs, protocol]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_structure_StructureSelectionManager$jalview_datamodel_SequenceIAA$org_jmol_viewer_Viewer', function (ssm, seqs, theViewer) {
-C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_SequenceIAA.apply(this, [ssm, seqs]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_SequenceIAA.apply(this,[ssm, seqs]);C$.$init$.apply(this);
 this.viewer=theViewer;
 this.viewer.setJmolStatusListener$org_jmol_api_JmolStatusListener(this);
 this.viewer.addSelectionListener$org_jmol_api_JmolSelectionListener(this);
@@ -54,7 +33,7 @@ return this.getViewerTitle$S$Z("Jmol", true);
 });
 
 Clazz.newMeth(C$, 'centerViewer$java_util_Vector', function (chainList) {
-var cmd=Clazz.new_($I$(3).c$$I,[128]);
+var cmd=Clazz.new_($I$(3,1).c$$I,[128]);
 var mlength;
 var p;
 for (var lbl, $lbl = chainList.iterator$(); $lbl.hasNext$()&&((lbl=($lbl.next$())),1);) {
@@ -115,7 +94,7 @@ throw i;
 var files=this.getStructureFiles$();
 if (!this.waitForFileLoad$SA(files)) {
 return null;
-}var selectioncom=Clazz.new_($I$(3).c$$I,[256]);
+}var selectioncom=Clazz.new_($I$(3,1).c$$I,[256]);
 var nSeconds=" ";
 if (files.length > 10) {
 nSeconds=" 0.005 ";
@@ -130,14 +109,14 @@ selectioncom.append$S("|");
 }if (refStructure >= files.length) {
 System.err.println$S("Invalid reference structure value " + refStructure);
 refStructure=-1;
-}var matched=Clazz.new_($I$(7));
+}var matched=Clazz.new_($I$(7,1));
 for (var m=0; m < alignment.getWidth$(); m++) {
 if (hiddenCols == null  || hiddenCols.isVisible$I(m) ) {
 matched.set$I(m);
 }}
 var structures=Clazz.array($I$(8), [files.length]);
 for (var f=0; f < files.length; f++) {
-structures[f]=Clazz.new_($I$(8).c$$I, [this, null, alignment.getWidth$()]);
+structures[f]=Clazz.new_([this, null, alignment.getWidth$()],$I$(8,1).c$$I);
 }
 var candidateRefStructure=this.findSuperposableResidues$jalview_datamodel_AlignmentI$java_util_BitSet$jalview_structures_models_AAStructureBindingModel_SuperposeDataA(alignment, matched, structures);
 if (refStructure < 0) {
@@ -145,13 +124,13 @@ refStructure=candidateRefStructure;
 }var selcom=Clazz.array(String, [files.length]);
 var nmatched=matched.cardinality$();
 if (nmatched < 4) {
-return ($I$(9).formatMessage$S$OA("label.insufficient_residues", [new Integer(nmatched)]));
+return ($I$(9,"formatMessage$S$OA",["label.insufficient_residues", [new Integer(nmatched)]]));
 }{
 for (var pdbfnum=0; pdbfnum < files.length; pdbfnum++) {
 var chainCd=":" + structures[pdbfnum].chain;
 var lpos=-1;
 var run=false;
-var molsel=Clazz.new_($I$(3));
+var molsel=Clazz.new_($I$(3,1));
 molsel.append$S("{");
 var nextColumnMatch=matched.nextSetBit$I(0);
 while (nextColumnMatch != -1){
@@ -186,7 +165,7 @@ selectioncom.append$S("|");
 }} else {
 selcom[pdbfnum]=null;
 }}
-}var command=Clazz.new_($I$(3).c$$I,[256]);
+}var command=Clazz.new_($I$(3,1).c$$I,[256]);
 for (var pdbfnum=0; pdbfnum < files.length; pdbfnum++) {
 if (pdbfnum == refStructure || selcom[pdbfnum] == null   || selcom[refStructure] == null  ) {
 continue;
@@ -229,14 +208,13 @@ Clazz.newMeth(C$, 'colourBySequence$jalview_structure_StructureMappingcommandSet
 if (this.colourby != null ) {
 this.colourby.interrupt$();
 this.colourby=null;
-}var colourby=Clazz.new_($I$(6).c$$Runnable,[((P$.JalviewJmolBinding$1||
-(function(){var C$=Clazz.newClass(P$, "JalviewJmolBinding$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+}var colourby=Clazz.new_([((P$.JalviewJmolBinding$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewJmolBinding$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 for (var cpdbbyseq, $cpdbbyseq = 0, $$cpdbbyseq = this.$finals$.colourBySequenceCommands; $cpdbbyseq<$$cpdbbyseq.length&&((cpdbbyseq=($$cpdbbyseq[$cpdbbyseq])),1);$cpdbbyseq++) {
@@ -246,13 +224,13 @@ this.b$['jalview.ext.jmol.JalviewJmolBinding'].executeWhenReady$S.apply(this.b$[
 }
 });
 })()
-), Clazz.new_(P$.JalviewJmolBinding$1.$init$, [this, {colourBySequenceCommands: colourBySequenceCommands}]))]);
+), Clazz.new_(P$.JalviewJmolBinding$1.$init$,[this, {colourBySequenceCommands:colourBySequenceCommands}]))],$I$(6,1).c$$Runnable);
 colourby.start$();
 this.colourby=colourby;
 });
 
 Clazz.newMeth(C$, 'getColourBySequenceCommands$SA$jalview_api_SequenceRenderer$jalview_api_AlignmentViewPanel', function (files, sr, viewPanel) {
-return $I$(10).getColourBySequenceCommand$jalview_structure_StructureSelectionManager$SA$jalview_datamodel_SequenceIAA$jalview_api_SequenceRenderer$jalview_api_AlignmentViewPanel(this.getSsm$(), files, this.getSequence$(), sr, viewPanel);
+return $I$(10,"getColourBySequenceCommand$jalview_structure_StructureSelectionManager$SA$jalview_datamodel_SequenceIAA$jalview_api_SequenceRenderer$jalview_api_AlignmentViewPanel",[this.getSsm$(), files, this.getSequence$(), sr, viewPanel]);
 });
 
 Clazz.newMeth(C$, 'executeWhenReady$S', function (command) {
@@ -284,7 +262,7 @@ Clazz.newMeth(C$, 'getColour$I$I$S$S', function (atomIndex, pdbResNum, chain, pd
 if (p$1.getModelNum$S.apply(this, [pdbfile]) < 0) {
 return null;
 }var colour=this.viewer.ms.at[atomIndex].atomPropertyInt$I(1765808134);
-return Clazz.new_($I$(11).c$$I,[colour]);
+return Clazz.new_($I$(11,1).c$$I,[colour]);
 });
 
 Clazz.newMeth(C$, 'getModelNum$S', function (modelFileName) {
@@ -298,52 +276,8 @@ return i;
 return -1;
 }, p$1);
 
-Clazz.newMeth(C$, 'getPdbFilex$', function () {
-if (this.viewer == null ) {
-return Clazz.array(String, [0]);
-}if (this.modelFileNames == null ) {
-var mset=Clazz.new_($I$(12));
-this._modelFileNameMap=Clazz.array(Integer.TYPE, [this.viewer.ms.mc]);
-var m=this.viewer.ms.getModelFileName$I(0);
-if (m != null ) {
-var filePath=m;
-try {
-filePath=Clazz.new_($I$(13).c$$S,[m]).getAbsolutePath$();
-} catch (x) {
-if (Clazz.exceptionOf(x,"java.security.AccessControlException")){
-System.err.println$S("jmolBinding: Using local file string from Jmol: " + m);
-} else {
-throw x;
-}
-}
-if (filePath.indexOf$S("/file:") != -1) {
-filePath=m;
-}mset.add$TE(filePath);
-this._modelFileNameMap[0]=0;
-}var j=1;
-for (var i=1; i < this.viewer.ms.mc; i++) {
-m=this.viewer.ms.getModelFileName$I(i);
-var filePath=m;
-if (m != null ) {
-try {
-filePath=Clazz.new_($I$(13).c$$S,[m]).getAbsolutePath$();
-} catch (x) {
-if (Clazz.exceptionOf(x,"java.security.AccessControlException")){
-} else {
-throw x;
-}
-}
-}if (!mset.contains$O(filePath)) {
-mset.add$TE(filePath);
-this._modelFileNameMap[j]=i;
-j++;
-}}
-this.modelFileNames=mset.toArray$TTA(Clazz.array(String, [mset.size$()]));
-}return this.modelFileNames;
-});
-
 Clazz.newMeth(C$, 'getStructureFiles$', function () {
-var mset=Clazz.new_($I$(12));
+var mset=Clazz.new_($I$(12,1));
 if (this.viewer == null ) {
 return Clazz.array(String, [0]);
 }if (this.modelFileNames == null ) {
@@ -352,9 +286,9 @@ var filePath=null;
 for (var i=0; i < modelCount; ++i) {
 filePath=this.viewer.ms.getModelFileName$I(i);
 if (!mset.contains$O(filePath)) {
-mset.add$TE(filePath);
+mset.add$O(filePath);
 }}
-this.modelFileNames=mset.toArray$TTA(Clazz.array(String, [mset.size$()]));
+this.modelFileNames=mset.toArray$OA(Clazz.array(String, [mset.size$()]));
 }return this.modelFileNames;
 });
 
@@ -385,7 +319,7 @@ mdlNum++;
 if (mdlNum == this.modelFileNames.length) {
 return;
 }p$1.jmolHistory$Z.apply(this, [false]);
-var cmd=Clazz.new_($I$(3).c$$I,[64]);
+var cmd=Clazz.new_($I$(3,1).c$$I,[64]);
 cmd.append$S("select " + pdbResNum);
 this.resetLastRes.append$S("select " + pdbResNum);
 cmd.append$S(":");
@@ -438,7 +372,7 @@ if (chainSeparator1 == -1) {
 chainSeparator1=strInfo.indexOf$S$I(".", mdlSep);
 }var mdlId=(chainSeparator1 > -1) ? strInfo.substring$I$I(mdlSep + 1, chainSeparator1) : strInfo.substring$I(mdlSep + 1);
 try {
-var mnumber= new Integer(mdlId).intValue$() - 1;
+var mnumber=Integer.valueOf$S(mdlId).intValue$() - 1;
 if (this._modelFileNameMap != null ) {
 var _mp=this._modelFileNameMap.length - 1;
 while (mnumber < this._modelFileNameMap[_mp]){
@@ -449,19 +383,28 @@ pdbfilename=this.modelFileNames[_mp];
 if (mnumber >= 0 && mnumber < this.modelFileNames.length ) {
 pdbfilename=this.modelFileNames[mnumber];
 }if (pdbfilename == null ) {
-pdbfilename=Clazz.new_($I$(13).c$$S,[this.viewer.ms.getModelFileName$I(mnumber)]).getAbsolutePath$();
+pdbfilename=Clazz.new_([this.viewer.ms.getModelFileName$I(mnumber)],$I$(13,1).c$$S).getAbsolutePath$();
 }}} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
 throw e;
 }
 }
-;}if (this.lastMessage == null  || !this.lastMessage.equals$O(strInfo) ) {
-this.getSsm$().mouseOverStructure$I$S$S(pdbResNum, chainId, pdbfilename);
-}this.lastMessage=strInfo;
-});
+}var label=this.getSsm$().mouseOverStructure$I$S$S(pdbResNum, chainId, pdbfilename);
+if (label != null ) {
+label=label.replace$C$C(",", "|");
+var toks=Clazz.new_($I$(14,1).c$$S$S,[strInfo, " "]);
+var sb=Clazz.new_($I$(3,1));
+sb.append$S("select ").append$S(String.valueOf$I(pdbResNum)).append$S(":").append$S(chainId).append$S("/1");
+sb.append$S(";set hoverLabel \"").append$S(toks.nextToken$()).append$S(" ").append$S(toks.nextToken$());
+sb.append$S("|").append$S(label).append$S("\"");
+this.evalStateCommand$S(sb.toString());
+}});
 
 Clazz.newMeth(C$, 'notifyAtomHovered$I$S$S', function (atomIndex, strInfo, data) {
+if (strInfo.equals$O(this.lastMessage)) {
+return;
+}this.lastMessage=strInfo;
 if (data != null ) {
 System.err.println$S("Ignoring additional hover info: " + data + " (other info: '" + strInfo + "' pos " + atomIndex + ")" );
 }this.mouseOverStructure$I$S(atomIndex, strInfo);
@@ -484,7 +427,7 @@ mdlString += strInfo.substring$I$I(p, strInfo.indexOf$S(" #"));
 p$1.jmolHistory$Z.apply(this, [false]);
 if (!this.atomsPicked.contains$O(picked)) {
 p$1.jmolScript$S.apply(this, ["select " + picked + ";label %n %r:%c" ]);
-this.atomsPicked.addElement$TE(picked);
+this.atomsPicked.addElement$O(picked);
 } else {
 this.viewer.evalString$S("select " + picked + ";label off" );
 this.atomsPicked.removeElement$O(picked);
@@ -494,31 +437,31 @@ this.atomsPicked.removeElement$O(picked);
 Clazz.newMeth(C$, 'notifyCallback$org_jmol_c_CBK$OA', function (type, data) {
 try {
 switch (type) {
-case $I$(14).LOADSTRUCT:
+case $I$(15).LOADSTRUCT:
 this.notifyFileLoaded$S$S$S$S$I(data[1], data[2], data[3], data[4], (data[5]).intValue$());
 break;
-case $I$(14).PICK:
+case $I$(15).PICK:
 this.notifyAtomPicked$I$S$S((data[2]).intValue$(), data[1], data[0]);
-case $I$(14).HOVER:
+case $I$(15).HOVER:
 this.notifyAtomHovered$I$S$S((data[2]).intValue$(), data[1], data[0]);
 break;
-case $I$(14).SCRIPT:
+case $I$(15).SCRIPT:
 this.notifyScriptTermination$S$I(data[2], (data[3]).intValue$());
 break;
-case $I$(14).ECHO:
+case $I$(15).ECHO:
 this.sendConsoleEcho$S(data[1]);
 break;
-case $I$(14).MESSAGE:
+case $I$(15).MESSAGE:
 this.sendConsoleMessage$S((data == null ) ? (null) : data[1]);
 break;
-case $I$(14).ERROR:
+case $I$(15).ERROR:
 break;
-case $I$(14).SYNC:
-case $I$(14).RESIZE:
+case $I$(15).SYNC:
+case $I$(15).RESIZE:
 this.refreshGUI$();
 break;
-case $I$(14).MEASURE:
-case $I$(14).CLICK:
+case $I$(15).MEASURE:
+case $I$(15).CLICK:
 default:
 System.err.println$S("Unhandled callback " + type + " " + data[1].toString() );
 break;
@@ -535,14 +478,14 @@ throw e;
 
 Clazz.newMeth(C$, 'notifyEnabled$org_jmol_c_CBK', function (callbackPick) {
 switch (callbackPick) {
-case $I$(14).ECHO:
-case $I$(14).LOADSTRUCT:
-case $I$(14).MEASURE:
-case $I$(14).MESSAGE:
-case $I$(14).PICK:
-case $I$(14).SCRIPT:
-case $I$(14).HOVER:
-case $I$(14).ERROR:
+case $I$(15).ECHO:
+case $I$(15).LOADSTRUCT:
+case $I$(15).MEASURE:
+case $I$(15).MESSAGE:
+case $I$(15).PICK:
+case $I$(15).SCRIPT:
+case $I$(15).HOVER:
+case $I$(15).ERROR:
 return true;
 default:
 return false;
@@ -561,8 +504,8 @@ return;
 }this.fileLoadingError=null;
 var oldmodels=this.modelFileNames;
 this.modelFileNames=null;
-this.chainNames=Clazz.new_($I$(12));
-this.chainFile=Clazz.new_($I$(15));
+this.chainNames=Clazz.new_($I$(12,1));
+this.chainFile=Clazz.new_($I$(16,1));
 var notifyLoaded=false;
 var modelfilenames=this.getStructureFiles$();
 if (oldmodels != null  && oldmodels.length > 0 ) {
@@ -597,19 +540,19 @@ var matches=false;
 this.addSequence$I$jalview_datamodel_SequenceIA(pe, this.getSequence$()[pe]);
 if (fileName == null ) {
 if (false) {
-pdb=this.getSsm$().setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(this.getSequence$()[pe], this.getChains$()[pe], pdbfile, $I$(16).PASTE, this.getIProgressIndicator$());
+pdb=this.getSsm$().setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(this.getSequence$()[pe], this.getChains$()[pe], pdbfile, $I$(17).PASTE, this.getIProgressIndicator$());
 this.getPdbEntry$I(modelnum).setFile$S("INLINE" + pdb.getId$());
 matches=true;
 foundEntry=true;
 }} else {
-var fl=Clazz.new_($I$(13).c$$S,[this.getPdbEntry$I(pe).getFile$()]);
-matches=fl.equals$O(Clazz.new_($I$(13).c$$S,[fileName]));
+var fl=Clazz.new_([this.getPdbEntry$I(pe).getFile$()],$I$(13,1).c$$S);
+matches=fl.equals$O(Clazz.new_($I$(13,1).c$$S,[fileName]));
 if (matches) {
 foundEntry=true;
-var protocol=$I$(16).URL;
+var protocol=$I$(17).URL;
 try {
 if (fl.exists$()) {
-protocol=$I$(16).FILE;
+protocol=$I$(17).FILE;
 }} catch (e$$) {
 if (Clazz.exceptionOf(e$$,"Exception")){
 var e = e$$;
@@ -627,8 +570,8 @@ pdb=this.getSsm$().setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataS
 }}if (matches) {
 for (var i=0; i < pdb.getChains$().size$(); i++) {
 var chid= String.instantialize(pdb.getId$() + ":" + pdb.getChains$().elementAt$I(i).id );
-this.chainFile.put$TK$TV(chid, fileName);
-this.chainNames.add$TE(chid);
+this.chainFile.put$O$O(chid, fileName);
+this.chainNames.add$O(chid);
 }
 notifyLoaded=true;
 }}
@@ -669,11 +612,11 @@ this.colourBySequence=false;
 if (cs == null ) {
 return;
 }p$1.jmolHistory$Z.apply(this, [false]);
-var command=Clazz.new_($I$(3).c$$I,[128]);
+var command=Clazz.new_($I$(3,1).c$$I,[128]);
 command.append$S("select *;color white;");
-var residueSet=$I$(17).getResidues$Z$Z(this.isNucleotide$(), false);
+var residueSet=$I$(18,"getResidues$Z$Z",[this.isNucleotide$(), false]);
 for (var resName, $resName = residueSet.iterator$(); $resName.hasNext$()&&((resName=($resName.next$())),1);) {
-var res=resName.length$() == 3 ? $I$(17).getSingleCharacterCode$S(resName) : resName.charAt$I(0);
+var res=resName.length$() == 3 ? $I$(18).getSingleCharacterCode$S(resName) : resName.charAt$I(0);
 var col=cs.findColour$C$I$jalview_datamodel_SequenceI$S$F(res, 0, null, null, 0.0);
 command.append$S("select " + resName + ";color[" + col.getRed$() + "," + col.getGreen$() + "," + col.getBlue$() + "];" );
 }
@@ -686,7 +629,7 @@ this.showUrl$S$S("http://wiki.jmol.org", "jmolHelp");
 });
 
 Clazz.newMeth(C$, 'getJmolData$jalview_ext_jmol_JmolParser', function (jmolParser) {
-return $I$(18).allocateViewer$O$org_jmol_api_JmolAdapter$S$java_net_URL$java_net_URL$S$org_jmol_api_JmolStatusListener(null, null, null, null, null, "-x -o -n", jmolParser);
+return $I$(19).allocateViewer$O$org_jmol_api_JmolAdapter$S$java_net_URL$java_net_URL$S$org_jmol_api_JmolStatusListener(null, null, null, null, null, "-x -o -n", jmolParser);
 }, 1);
 
 Clazz.newMeth(C$, 'allocateViewer$java_awt_Container$Z$S$java_net_URL$java_net_URL$S', function (renderPanel, jmolfileio, htmlName, documentBase, codeBase, commandOptions) {
@@ -697,7 +640,7 @@ Clazz.newMeth(C$, 'allocateViewer$java_awt_Container$Z$S$java_net_URL$java_net_U
 System.err.println$S("Allocating Jmol Viewer: " + commandOptions);
 if (commandOptions == null ) {
 commandOptions="";
-}this.viewer=$I$(18).allocateViewer$O$org_jmol_api_JmolAdapter$S$java_net_URL$java_net_URL$S$org_jmol_api_JmolStatusListener(renderPanel, (jmolfileio ? Clazz.new_($I$(19)) : null), htmlName + (this).toString(), documentBase, codeBase, commandOptions, this);
+}this.viewer=$I$(19,"allocateViewer$O$org_jmol_api_JmolAdapter$S$java_net_URL$java_net_URL$S$org_jmol_api_JmolStatusListener",[renderPanel, (jmolfileio ? Clazz.new_($I$(20,1)) : null), htmlName + (this).toString(), documentBase, codeBase, commandOptions, this]);
 this.viewer.setJmolStatusListener$org_jmol_api_JmolStatusListener(this);
 try {
 this.console=this.createJmolConsole$java_awt_Container$S(consolePanel, buttonsToShow);
@@ -762,4 +705,4 @@ this.showConsole$Z(false);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

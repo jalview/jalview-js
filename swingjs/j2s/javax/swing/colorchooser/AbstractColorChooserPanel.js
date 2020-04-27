@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),I$=[[0,['javax.swing.colorchooser.AbstractColorChooserPanel','.ModelListener'],'javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractColorChooserPanel", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),I$=[[0,['javax.swing.colorchooser.AbstractColorChooserPanel','.ModelListener'],'javax.swing.UIManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractColorChooserPanel", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JPanel');
+C$.$classes$=[['ModelListener',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.chooser=null;
-this.colorListener=null;
-this.dirty=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dirty=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['dirty'],'O',['chooser','javax.swing.JColorChooser','colorListener','javax.swing.event.ChangeListener']]]
 
 Clazz.newMeth(C$, 'getMnemonic$', function () {
 return 0;
@@ -31,7 +26,7 @@ throw Clazz.new_(Clazz.load('RuntimeException').c$$S,["This chooser panel is alr
 }this.chooser=enclosingChooser;
 this.buildChooser$();
 this.updateChooser$();
-this.colorListener=Clazz.new_($I$(1), [this, null]);
+this.colorListener=Clazz.new_($I$(1,1),[this, null]);
 this.getColorSelectionModel$().addChangeListener$javax_swing_event_ChangeListener(this.colorListener);
 });
 
@@ -71,17 +66,16 @@ throw nfe;
 }return defaultValue;
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractColorChooserPanel, "ModelListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractColorChooserPanel, "ModelListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 if (this.b$['java.awt.Component'].isShowing$.apply(this.b$['java.awt.Component'], [])) {
 this.this$0.updateChooser$.apply(this.this$0, []);
 this.this$0.dirty=false;
@@ -94,4 +88,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,17 +1,13 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultListModel", null, 'javax.swing.AbstractListModel');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultListModel", null, 'javax.swing.AbstractListModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.delegate=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.delegate=Clazz.new_($I$(1));
-}, 1);
+this.delegate=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['delegate','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'getSize$', function () {
 return this.delegate.size$();
@@ -90,8 +86,8 @@ Clazz.newMeth(C$, 'lastElement$', function () {
 return this.delegate.lastElement$();
 });
 
-Clazz.newMeth(C$, ['setElementAt$TE$I'], function (obj, index) {
-this.delegate.setElementAt$TE$I(obj, index);
+Clazz.newMeth(C$, 'setElementAt$O$I', function (obj, index) {
+this.delegate.setElementAt$O$I(obj, index);
 this.fireContentsChanged$O$I$I(this, index, index);
 });
 
@@ -100,14 +96,14 @@ this.delegate.removeElementAt$I(index);
 this.fireIntervalRemoved$O$I$I(this, index, index);
 });
 
-Clazz.newMeth(C$, ['insertElementAt$TE$I'], function (obj, index) {
-this.delegate.insertElementAt$TE$I(obj, index);
+Clazz.newMeth(C$, 'insertElementAt$O$I', function (obj, index) {
+this.delegate.insertElementAt$O$I(obj, index);
 this.fireIntervalAdded$O$I$I(this, index, index);
 });
 
-Clazz.newMeth(C$, ['addElement$TE'], function (obj) {
+Clazz.newMeth(C$, 'addElement$O', function (obj) {
 var index=this.delegate.size$();
-this.delegate.addElement$TE(obj);
+this.delegate.addElement$O(obj);
 this.fireIntervalAdded$O$I$I(this, index, index);
 });
 
@@ -140,15 +136,15 @@ Clazz.newMeth(C$, 'get$I', function (index) {
 return this.delegate.elementAt$I(index);
 });
 
-Clazz.newMeth(C$, 'set$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'set$I$O', function (index, element) {
 var rv=this.delegate.elementAt$I(index);
-this.delegate.setElementAt$TE$I(element, index);
+this.delegate.setElementAt$O$I(element, index);
 this.fireContentsChanged$O$I$I(this, index, index);
 return rv;
 });
 
-Clazz.newMeth(C$, 'add$I$TE', function (index, element) {
-this.delegate.insertElementAt$TE$I(element, index);
+Clazz.newMeth(C$, 'add$I$O', function (index, element) {
+this.delegate.insertElementAt$O$I(element, index);
 this.fireIntervalAdded$O$I$I(this, index, index);
 });
 
@@ -177,4 +173,4 @@ this.fireIntervalRemoved$O$I$I(this, fromIndex, toIndex);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,34 +1,16 @@
 (function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),I$=[];
-var C$=Clazz.newClass(P$, "SimilarityParams", null, null, 'jalview.api.analysis.SimilarityParamsI');
-C$.Jalview=null;
-C$.SeqSpace=null;
-C$.PID1=null;
-C$.PID2=null;
-C$.PID3=null;
-C$.PID4=null;
+/*c*/var C$=Clazz.newClass(P$, "SimilarityParams", null, null, 'jalview.api.analysis.SimilarityParamsI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.Jalview=Clazz.new_(C$.c$$Z$Z$Z$Z,[true, true, true, true]);
-C$.SeqSpace=Clazz.new_(C$.c$$Z$Z$Z$Z,[true, false, true, true]);
-C$.PID1=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, true, false]);
-C$.PID2=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, false, false]);
-C$.PID3=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, false, true]);
-C$.PID4=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, true, true]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.includeGappedColumns=false;
-this.matchGaps=false;
-this.includeGaps=false;
-this.denominateByShortestLength=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['includeGappedColumns','matchGaps','includeGaps','denominateByShortestLength']]
+,['O',['Jalview','jalview.api.analysis.SimilarityParamsI','+SeqSpace','+PID1','+PID2','+PID3','+PID4']]]
 
 Clazz.newMeth(C$, 'c$$Z$Z$Z$Z', function (includeGapGap, matchGapResidue, includeGapResidue, shortestLength) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.includeGappedColumns=includeGapGap;
 this.matchGaps=matchGapResidue;
 this.includeGaps=includeGapResidue;
@@ -80,6 +62,15 @@ return false;
 }return true;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.Jalview=Clazz.new_(C$.c$$Z$Z$Z$Z,[true, true, true, true]);
+C$.SeqSpace=Clazz.new_(C$.c$$Z$Z$Z$Z,[true, false, true, true]);
+C$.PID1=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, true, false]);
+C$.PID2=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, false, false]);
+C$.PID3=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, false, true]);
+C$.PID4=Clazz.new_(C$.c$$Z$Z$Z$Z,[false, false, true, true]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

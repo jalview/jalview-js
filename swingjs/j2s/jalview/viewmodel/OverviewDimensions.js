@@ -1,23 +1,7 @@
 (function(){var P$=Clazz.newPackage("jalview.viewmodel"),I$=[];
-var C$=Clazz.newClass(P$, "OverviewDimensions");
+/*c*/var C$=Clazz.newClass(P$, "OverviewDimensions");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.sequencesHeight=0;
-this.graphHeight=0;
-this.boxX=0;
-this.boxY=0;
-this.boxWidth=0;
-this.boxHeight=0;
-this.alwidth=0;
-this.alheight=0;
-this.widthRatio=0;
-this.heightRatio=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.graphHeight=20;
@@ -25,10 +9,12 @@ this.boxX=-1;
 this.boxY=-1;
 this.boxWidth=-1;
 this.boxHeight=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['widthRatio','heightRatio'],'I',['width','sequencesHeight','graphHeight','boxX','boxY','boxWidth','boxHeight','alwidth','alheight']]]
 
 Clazz.newMeth(C$, 'c$$jalview_viewmodel_ViewportRanges$Z', function (ranges, showAnnotationPanel) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var initialScale=ranges.getAbsoluteAlignmentWidth$() / ranges.getAbsoluteAlignmentHeight$();
 if (!showAnnotationPanel) {
 this.graphHeight=0;
@@ -116,4 +102,4 @@ return (x > this.boxX && y > this.boxY  && x < this.boxX + this.boxWidth  && y <
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

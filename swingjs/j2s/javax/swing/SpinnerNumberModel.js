@@ -1,25 +1,18 @@
 (function(){var P$=Clazz.newPackage("javax.swing"),p$1={};
-var C$=Clazz.newClass(P$, "SpinnerNumberModel", null, 'javax.swing.AbstractSpinnerModel');
+/*c*/var C$=Clazz.newClass(P$, "SpinnerNumberModel", null, 'javax.swing.AbstractSpinnerModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.stepSize=null;
-this.value=null;
-this.minimum=null;
-this.maximum=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['stepSize','Number','+value','minimum','Comparable','+maximum']]]
 
 Clazz.newMeth(C$, 'c$$Number$Comparable$Comparable$Number', function (value, minimum, maximum, stepSize) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if ((value == null ) || (stepSize == null ) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["value and stepSize must be non-null"]);
-}if (!(((minimum == null ) || (minimum.compareTo$(value) <= 0) ) && ((maximum == null ) || (maximum.compareTo$(value) >= 0) ) )) {
+}if (!(((minimum == null ) || (minimum.compareTo$O(value) <= 0) ) && ((maximum == null ) || (maximum.compareTo$O(value) >= 0) ) )) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["(minimum <= value <= maximum) is false"]);
 }this.value=value;
 this.minimum=minimum;
@@ -88,10 +81,10 @@ newValue= new Integer((v|0));
 } else if (Clazz.instanceOf(this.value, "java.lang.Short")) {
 newValue= new Short(($s$[0] = v, $s$[0]));
 } else {
-newValue= new Byte(($b$[0] = (v|0), $b$[0]));
-}}if ((this.maximum != null ) && (this.maximum.compareTo$(newValue) < 0) ) {
+newValue= new Byte(($b$[0] = v, $b$[0]));
+}}if ((this.maximum != null ) && (this.maximum.compareTo$O(newValue) < 0) ) {
 return null;
-}if ((this.minimum != null ) && (this.minimum.compareTo$(newValue) > 0) ) {
+}if ((this.minimum != null ) && (this.minimum.compareTo$O(newValue) > 0) ) {
 return null;
 } else {
 return newValue;
@@ -123,4 +116,4 @@ this.fireStateChanged$();
 var $s$ = new Int16Array(1);
 var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Color','java.awt.Toolkit','java.util.StringTokenizer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Tooltip", null, 'java.awt.Canvas', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Color','java.awt.Toolkit','java.util.StringTokenizer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Tooltip", null, 'java.awt.Canvas', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tip=null;
-this.lastTip=null;
-this.setPosition=false;
-this.owner=null;
-this.mainContainer=null;
-this.mainLayout=null;
-this.shown=false;
-this.VERTICAL_OFFSET=0;
-this.HORIZONTAL_ENLARGE=0;
-this.fontHeight=0;
-this.linkImage=null;
-this.fm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.lastTip="";
@@ -26,14 +9,16 @@ this.setPosition=false;
 this.VERTICAL_OFFSET=20;
 this.HORIZONTAL_ENLARGE=10;
 this.fontHeight=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['setPosition','shown'],'I',['VERTICAL_OFFSET','HORIZONTAL_ENLARGE','fontHeight'],'S',['lastTip'],'O',['tip','String[]','owner','java.awt.Component','mainContainer','java.awt.Container','mainLayout','java.awt.LayoutManager','linkImage','java.awt.Image','fm','java.awt.FontMetrics']]]
 
 Clazz.newMeth(C$, 'c$$S$java_awt_Component', function (tip, owner) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.owner=owner;
 owner.addMouseListener$java_awt_event_MouseListener(this);
 owner.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
-this.setBackground$java_awt_Color(Clazz.new_($I$(1).c$$I$I$I,[255, 255, 220]));
+this.setBackground$java_awt_Color(Clazz.new_($I$(1,1).c$$I$I$I,[255, 255, 220]));
 this.setTip$S(tip);
 var url=this.getClass$().getResource$S("/images/link.gif");
 if (url != null ) {
@@ -72,7 +57,7 @@ this.setPosition=true;
 this.fm=this.getFontMetrics$java_awt_Font(this.owner.getFont$());
 this.fontHeight=this.fm.getHeight$();
 var longestLine=0;
-var st=Clazz.new_($I$(3).c$$S$S,[tip, "\n"]);
+var st=Clazz.new_($I$(3,1).c$$S$S,[tip, "\n"]);
 this.tip=Clazz.array(String, [st.countTokens$()]);
 var index=0;
 while (st.hasMoreElements$()){
@@ -149,4 +134,4 @@ Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (me) {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:46 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,17 +1,12 @@
 (function(){var P$=java.lang,I$=[];
-var C$=Clazz.newClass(P$, "Enum", null, null, ['Comparable', 'java.io.Serializable']);
+/*c*/var C$=Clazz.newClass(P$, "Enum", null, null, ['Comparable', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.ordinal=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['ordinal'],'S',['name']]]
 
 Clazz.newMeth(C$, 'name$', function () {
 return this.name;
@@ -22,7 +17,7 @@ return this.ordinal;
 });
 
 Clazz.newMeth(C$, 'c$$S$I', function (name, ordinal) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 this.ordinal=ordinal;
 }, 1);
@@ -43,7 +38,7 @@ Clazz.newMeth(C$, 'clone$', function () {
 throw Clazz.new_(Clazz.load('CloneNotSupportedException'));
 });
 
-Clazz.newMeth(C$, ['compareTo$TE','compareTo$','compareTo$TT'], function (o) {
+Clazz.newMeth(C$, ['compareTo$Enum','compareTo$O'], function (o) {
 var other=o;
 var self=this;
 if (self.getClass$() !== other.getClass$()  && self.getDeclaringClass$() !== other.getDeclaringClass$()  ) throw Clazz.new_(Clazz.load('ClassCastException'));
@@ -71,4 +66,4 @@ Clazz.newMeth(C$, 'finalize$', function () {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

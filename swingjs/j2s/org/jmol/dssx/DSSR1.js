@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.dssx"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Lst','javajs.util.BS','org.jmol.modelsetbio.BasePair','org.jmol.modelset.HBond','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DSSR1", null, 'org.jmol.dssx.AnnotationParser');
+(function(){var P$=Clazz.newPackage("org.jmol.dssx"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Lst','javajs.util.BS','org.jmol.modelsetbio.BasePair','org.jmol.modelset.HBond','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "DSSR1", null, 'org.jmol.dssx.AnnotationParser');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'calculateDSSRStructure$org_jmol_viewer_Viewer$javajs_util_BS', function (vwr, bsAtoms) {
@@ -42,7 +41,7 @@ data="MODEL" + s.substring$I(s.length$() - 9) + "\n" + data + "ENDMDL\n" ;
 data=vwr.getFileAsString3$S$Z$S(name + data, false, null);
 var x=vwr.parseJSONMap$S(data);
 if (x != null ) {
-info.put$TK$TV("dssr", x);
+info.put$O$O("dssr", x);
 this.setGroup1$org_jmol_modelset_ModelSet$I(vwr.ms, modelIndex);
 this.fixDSSRJSONMap$java_util_Map(x);
 p$1.setBioPolymers$org_jmol_modelsetbio_BioModel$Z.apply(this, [vwr.ms.am[modelIndex], false]);
@@ -52,7 +51,7 @@ out="" + e;
 }
 break;
 }
-return (info != null  ? $I$(1).rep$S$S$S($I$(3).escapeMap$java_util_Map((info.get$O("dssr")).get$O("counts")), ",", ",\n") : out == null  ? "model has no nucleotides" : out);
+return (info != null  ? (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([(info.get$O("dssr")).get$O("counts")],$I$(3).escapeMap$java_util_Map), ",", ",\n"],$I$(1).rep$S$S$S) : out == null  ? "model has no nucleotides" : out);
 }, p$1);
 
 Clazz.newMeth(C$, 'fixDSSRJSONMap$java_util_Map', function (map) {
@@ -78,9 +77,9 @@ var kmap=lst.get$I(i);
 var khlist=kmap.get$O(indices);
 var n=khlist.size$();
 if (n > 0) {
-var khpins=Clazz.new_($I$(4));
-kmap.put$TK$TV(original, khpins);
-for (var j=n; --j >= 0; ) khpins.addLast$TV(hpins.get$I((khlist.get$I(j)).intValue$() - 1));
+var khpins=Clazz.new_($I$(4,1));
+kmap.put$O$O(original, khpins);
+for (var j=n; --j >= 0; ) khpins.addLast$O(hpins.get$I((khlist.get$I(j)).intValue$() - 1));
 
 }}
 }}, p$1);
@@ -95,7 +94,7 @@ p$1.setBioPolymers$org_jmol_modelsetbio_BioModel$Z.apply(this, [vwr.ms.am[modelI
 return;
 }var bsAtoms=ms.am[modelIndex].bsAtoms;
 try {
-var bs=Clazz.new_($I$(5));
+var bs=Clazz.new_($I$(5,1));
 var atoms=ms.at;
 if (pairs != null ) for (var i=pairs.size$(); --i >= 0; ) {
 var map=pairs.get$I(i);
@@ -105,7 +104,7 @@ var a1=ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(unit1, bsAtoms, bs).ne
 bs.clearAll$();
 var a2=ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(unit2, bsAtoms, bs).nextSetBit$I(0);
 bs.clearAll$();
-$I$(6).add$java_util_Map$org_jmol_modelsetbio_NucleicMonomer$org_jmol_modelsetbio_NucleicMonomer(map, p$1.setRes$org_jmol_modelset_Atom.apply(this, [atoms[a1]]), p$1.setRes$org_jmol_modelset_Atom.apply(this, [atoms[a2]]));
+(function(a,f){return f.apply(null,a)})([map, p$1.setRes$org_jmol_modelset_Atom.apply(this, [atoms[a1]]), p$1.setRes$org_jmol_modelset_Atom.apply(this, [atoms[a2]])],$I$(6).add$java_util_Map$org_jmol_modelsetbio_NucleicMonomer$org_jmol_modelsetbio_NucleicMonomer);
 }
 if (singles != null ) for (var i=singles.size$(); --i >= 0; ) {
 var map=singles.get$I(i);
@@ -135,13 +134,13 @@ return m;
 }, p$1);
 
 Clazz.newMeth(C$, 'getAtomBits$org_jmol_viewer_Viewer$S$O$java_util_Map$I$I$javajs_util_BS', function (vwr, key, dbObj, annotationCache, type, modelIndex, bsModel) {
-if (dbObj == null ) return Clazz.new_($I$(5));
+if (dbObj == null ) return Clazz.new_($I$(5,1));
 var doCache=!key.contains$CharSequence("NOCACHE");
 if (!doCache) {
 key=$I$(1).rep$S$S$S(key, "NOCACHE", "").trim$();
 }var bs=null;
-bs=Clazz.new_($I$(5));
-if (doCache) annotationCache.put$TK$TV(key, bs);
+bs=Clazz.new_($I$(5,1));
+if (doCache) annotationCache.put$O$O(key, bs);
 try {
 key=$I$(1).rep$S$S$S(key, "[where", "[select * where");
 key=$I$(1).rep$S$S$S(key, "[WHERE", "[select * where");
@@ -152,13 +151,13 @@ if (pt >= 0) {
 ext=key.substring$I(pt);
 key=key.substring$I$I(0, pt);
 pt=ext.lastIndexOf$S("]..");
-if (pt >= 0 && (n=$I$(1).parseInt$S(ext.substring$I(pt + 3))) != -2147483648 ) ext=ext.substring$I$I(0, pt + 1);
+if (pt >= 0 && (n=(function(a,f){return f.apply(null,a)})([ext.substring$I(pt + 3)],$I$(1).parseInt$S)) != -2147483648 ) ext=ext.substring$I$I(0, pt + 1);
 }pt=key.toLowerCase$().indexOf$S(" where ");
 if (pt < 0) {
 key=key.toLowerCase$();
 pt=(n == -2147483648 ? key.lastIndexOf$I(".") : -1);
 var haveIndex=false;
-if (pt >= 0 && (haveIndex=(n=$I$(1).parseInt$S(key.substring$I(pt + 1))) != -2147483648) ) key=key.substring$I$I(0, pt);
+if (pt >= 0 && (haveIndex=(n=(function(a,f){return f.apply(null,a)})([key.substring$I(pt + 1)],$I$(1).parseInt$S)) != -2147483648) ) key=key.substring$I$I(0, pt);
 pt="..bulges.nts_long..coaxstacks.stems.pairs.nt*..hairpins.nts_long..hbonds.atom1_id;atom2_id..helices.pairs.nt*..iloops.nts_long..isocanonpairs.nt*..junctions.nts_long..kissingloops.hairpins.nts_long..multiplets.nts_long..nonstack.nts_long..nts.nt_id..pairs.nt*..sssegments.nts_long..stacks.nts_long..stems.pairs.nt*..".indexOf$S(".." + key) + 2;
 var len=key.length$();
 if (pt < 2) return bs;
@@ -200,7 +199,7 @@ var unit2=null;
 var a1=0;
 var a2=0;
 try {
-var bs=Clazz.new_($I$(5));
+var bs=Clazz.new_($I$(5,1));
 for (var i=list.size$(); --i >= 0; ) {
 var map=list.get$I(i);
 unit1=map.get$O("atom1_id");
@@ -216,7 +215,7 @@ $I$(2).error$S("Atom " + unit2 + " was not found" );
 continue;
 }bs.clearAll$();
 var energy=0;
-vHBonds.addLast$TV(Clazz.new_($I$(7).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[ms.at[a1], ms.at[a2], 2048, 1, 0, energy]));
+vHBonds.addLast$O(Clazz.new_($I$(7,1).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[ms.at[a1], ms.at[a2], 2048, 1, 0, energy]));
 }
 } catch (e) {
 }
@@ -230,7 +229,7 @@ if (info == null  || (list=info.get$O("nts")) == null  ) return;
 var m=ms.am[modelIndex];
 var bsAtoms=m.bsAtoms;
 var atoms=ms.at;
-var bs=Clazz.new_($I$(5));
+var bs=Clazz.new_($I$(5,1));
 for (var i=list.size$(); --i >= 0; ) {
 var map=list.get$I(i);
 var ch=(map.get$O("nt_code")).charAt$I(0);
@@ -250,7 +249,7 @@ var list;
 if (info == null  || (list=info.get$O(dataType)) == null  ) return;
 var bsAtoms=ms.am[modelIndex].bsAtoms;
 try {
-var bs=Clazz.new_($I$(5));
+var bs=Clazz.new_($I$(5,1));
 for (var i=list.size$(); --i >= 0; ) {
 var map=list.get$I(i);
 bs.clearAll$();
@@ -266,7 +265,7 @@ Clazz.newMeth(C$, 'getDSSRFrame$java_util_Map', function (nt) {
 var frame=nt.get$O("frame");
 if (frame == null ) return null;
 var oxyz=Clazz.array($I$(8), [4]);
-for (var i=4; --i >= 0; ) oxyz[i]=Clazz.new_($I$(8));
+for (var i=4; --i >= 0; ) oxyz[i]=Clazz.new_($I$(8,1));
 
 p$1.getPoint$java_util_Map$S$javajs_util_P3.apply(this, [frame, "origin", oxyz[0]]);
 p$1.getPoint$java_util_Map$S$javajs_util_P3.apply(this, [frame, "x_axis", oxyz[1]]);
@@ -282,4 +281,4 @@ pt.y=xyz.get$I(1).floatValue$();
 pt.z=xyz.get$I(2).floatValue$();
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

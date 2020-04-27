@@ -1,26 +1,17 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.AbstractAction','javax.swing.Action',['javax.swing.JTextField','.NotifyAction'],'Boolean','swingjs.JSToolkit','java.awt.event.ActionListener','java.awt.EventQueue','java.awt.event.ActionEvent',['javax.swing.JTextField','.TextFieldActionPropertyChangeListener'],'javax.swing.text.TextAction']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JTextField", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.AbstractAction','javax.swing.Action',['javax.swing.JTextField','.NotifyAction'],['javax.swing.text.JTextComponent','.JSPlainDocument'],'javax.swing.text.PlainDocument','java.awt.event.ActionListener','java.awt.EventQueue','java.awt.event.ActionEvent',['javax.swing.JTextField','.TextFieldActionPropertyChangeListener'],'javax.swing.text.TextAction']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JTextField", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.JTextComponent', 'javax.swing.SwingConstants');
-C$.defaultActions=null;
+C$.$classes$=[['TextFieldActionPropertyChangeListener',10],['NotifyAction',8],['ScrollRepainter',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultActions=Clazz.array($I$(2), -1, [Clazz.new_($I$(3))]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.action=null;
-this.actionPropertyChangeListener=null;
-this.horizontalAlignment=0;
-this.columns=0;
-this.columnWidth=0;
-this.command=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.horizontalAlignment=10;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['horizontalAlignment','columns','columnWidth'],'S',['command'],'O',['action','javax.swing.Action','actionPropertyChangeListener','java.beans.PropertyChangeListener']]
+,['O',['defaultActions','javax.swing.Action[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$javax_swing_text_Document$S$I.apply(this, [null, null, 0]);
@@ -39,12 +30,14 @@ C$.c$$javax_swing_text_Document$S$I.apply(this, [null, text, columns]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Document$S$I', function (doc, text, columns) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (columns < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["columns less than zero."]);
 }this.columns=columns;
 if (doc == null ) {
 doc=this.createDefaultModel$();
+} else if (doc === "null" ) {
+doc=Clazz.new_($I$(4,1),[this, null]);
 }this.setDocument$javax_swing_text_Document(doc);
 if (text != null ) {
 this.setText$S(text);
@@ -56,7 +49,7 @@ return "TextFieldUI";
 
 Clazz.newMeth(C$, 'setDocument$javax_swing_text_Document', function (doc) {
 if (doc != null ) {
-doc.putProperty$O$O("filterNewlines", $I$(4).TRUE);
+doc.putProperty$O$O("filterNewlines", Boolean.TRUE);
 }C$.superclazz.prototype.setDocument$javax_swing_text_Document.apply(this, [doc]);
 });
 
@@ -80,11 +73,11 @@ this.horizontalAlignment=alignment;
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["horizontalAlignment"]);
 }this.firePropertyChange$S$I$I("horizontalAlignment", oldValue, this.horizontalAlignment);
 this.invalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'createDefaultModel$', function () {
-return $I$(5).getPlainDocument$();
+return Clazz.new_($I$(5,1));
 });
 
 Clazz.newMeth(C$, 'getColumns$', function () {
@@ -141,14 +134,14 @@ this.columnWidth=0;
 });
 
 Clazz.newMeth(C$, 'addActionListener$java_awt_event_ActionListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(6),['actionPerformed$java_awt_event_ActionEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(6),['actionPerformed$java_awt_event_ActionEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeActionListener$java_awt_event_ActionListener', function (l) {
 if ((l != null ) && (this.getAction$() === l ) ) {
 this.setAction$javax_swing_Action(null);
 } else {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(6),['actionPerformed$java_awt_event_ActionEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(6),['actionPerformed$java_awt_event_ActionEvent']), l);
 }});
 
 Clazz.newMeth(C$, 'getActionListeners$', function () {
@@ -163,10 +156,10 @@ if (Clazz.instanceOf(currentEvent, "java.awt.event.InputEvent")) {
 modifiers=(currentEvent).getModifiers$();
 } else if (Clazz.instanceOf(currentEvent, "java.awt.event.ActionEvent")) {
 modifiers=(currentEvent).getModifiers$();
-}var e=Clazz.new_($I$(8).c$$O$I$S$J$I,[this, 1001, (this.command != null ) ? this.command : this.getText$(), $I$(7).getMostRecentEventTime$(), modifiers]);
+}var e=Clazz.new_([this, 1001, (this.command != null ) ? this.command : this.getText$(), $I$(7).getMostRecentEventTime$(), modifiers],$I$(8,1).c$$O$I$S$J$I);
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(6),['actionPerformed$java_awt_event_ActionEvent']) ) {
-(listeners[i + 1]).actionPerformed$(e);
+(listeners[i + 1]).actionPerformed$java_awt_event_ActionEvent(e);
 }}
 });
 
@@ -214,7 +207,7 @@ p$1.setActionCommandFromAction$javax_swing_Action.apply(this, [a]);
 Clazz.newMeth(C$, 'actionPropertyChanged$javax_swing_Action$S', function (action, propertyName) {
 if (propertyName == "ActionCommandKey") {
 p$1.setActionCommandFromAction$javax_swing_Action.apply(this, [action]);
-} else if (propertyName == "enabled") {
+} else if (propertyName === "enabled" ) {
 $I$(1).setEnabledFromAction$javax_swing_JComponent$javax_swing_Action(this, action);
 } else if (propertyName == "ShortDescription") {
 $I$(1).setToolTipTextFromAction$javax_swing_JComponent$javax_swing_Action(this, action);
@@ -225,11 +218,11 @@ this.setActionCommand$S((action == null ) ? null : action.getValue$S("ActionComm
 }, p$1);
 
 Clazz.newMeth(C$, 'createActionPropertyChangeListener$javax_swing_Action', function (a) {
-return Clazz.new_($I$(9).c$$javax_swing_JTextField$javax_swing_Action,[this, a]);
+return Clazz.new_($I$(9,1).c$$javax_swing_JTextField$javax_swing_Action,[this, a]);
 });
 
 Clazz.newMeth(C$, 'getActions$', function () {
-return $I$(10).augmentList$javax_swing_ActionA$javax_swing_ActionA(C$.superclazz.prototype.getActions$.apply(this, []), C$.defaultActions);
+return $I$(10,"augmentList$javax_swing_ActionA$javax_swing_ActionA",[C$.superclazz.prototype.getActions$.apply(this, []), C$.defaultActions]);
 });
 
 Clazz.newMeth(C$, 'postActionEvent$', function () {
@@ -261,23 +254,25 @@ horizontalAlignmentString="TRAILING";
 var commandString=(this.command != null  ? this.command : "");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",columns=" + this.columns + ",columnWidth=" + this.columnWidth + ",command=" + commandString + ",horizontalAlignment=" + horizontalAlignmentString ;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultActions=Clazz.array($I$(2), -1, [Clazz.new_($I$(3,1))]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JTextField, "TextFieldActionPropertyChangeListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JTextField, "TextFieldActionPropertyChangeListener", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.ActionPropertyChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTextField$javax_swing_Action', function (tf, a) {
-C$.superclazz.c$$TT$javax_swing_Action.apply(this, [tf, a]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_JComponent$javax_swing_Action.apply(this,[tf, a]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPropertyChanged$javax_swing_JTextField$javax_swing_Action$java_beans_PropertyChangeEvent','actionPropertyChanged$TT$javax_swing_Action$java_beans_PropertyChangeEvent'], function (textField, action, e) {
+Clazz.newMeth(C$, ['actionPropertyChanged$javax_swing_JTextField$javax_swing_Action$java_beans_PropertyChangeEvent','actionPropertyChanged$javax_swing_JComponent$javax_swing_Action$java_beans_PropertyChangeEvent'], function (textField, action, e) {
 if ($I$(1).shouldReconfigure$java_beans_PropertyChangeEvent(e)) {
 textField.configurePropertiesFromAction$javax_swing_Action(action);
 } else {
@@ -287,22 +282,20 @@ textField.actionPropertyChanged$javax_swing_Action$S(action, e.getPropertyName$(
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JTextField, "NotifyAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JTextField, "NotifyAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["notify-field-accept"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["notify-field-accept"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=e.getSource$();
 if (Clazz.instanceOf(target, "javax.swing.JTextField")) {
 var field=target;
@@ -317,21 +310,20 @@ return (target).hasActionListener$();
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JTextField, "ScrollRepainter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JTextField, "ScrollRepainter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
-this.b$['java.awt.Component'].repaint$.apply(this.b$['java.awt.Component'], []);
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
+this.b$['java.awt.JSComponent'].秘repaint$.apply(this.b$['java.awt.JSComponent'], []);
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

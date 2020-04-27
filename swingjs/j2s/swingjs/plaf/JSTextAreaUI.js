@@ -1,44 +1,56 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'java.awt.Insets','java.awt.Color','swingjs.api.js.DOMNode','javax.swing.text.WrappedPlainView','javax.swing.text.PlainView']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSTextAreaUI", null, 'swingjs.plaf.JSTextViewUI');
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode','javax.swing.text.WrappedPlainView','javax.swing.text.PlainView','java.awt.Point']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSTextAreaUI", null, 'swingjs.plaf.JSTextUI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myInsets=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.myInsets=Clazz.new_($I$(1).c$$I$I$I$I,[0, 0, 0, 0]);
+},1);
+
+Clazz.newMeth(C$, 'c$', function () {
+Clazz.super_(C$, this);
+this.isTextView=true;
+this.setDoPropagate$();
 }, 1);
 
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
 if (this.domNode == null ) {
-this.valueNode=this.domNode=P$.JSComponentUI.newDOMObject$S$S$SA("textarea", this.id, ["spellcheck", "FALSE", "autocomplete", "off"]);
-this.setupViewNode$();
+this.valueNode=this.domNode=$I$(1).newDOMObject$S$S$SA("textarea", this.id, ["spellcheck", "\u79d8FALSE", "autocomplete", "off"]);
+this.allowPaintedBackground=false;
+this.focusNode=this.enableNode=this.textNode=this.domNode;
+$I$(2).setStyles(this.domNode, ["resize", "none", "border", "none", "margin", "0px", "padding", "0px", "scrollbar-width", "thin"]);
+$I$(2).setStyles(this.domNode, ["box-sizing", "border-box"]);
+this.bindJSKeyEvents$swingjs_api_js_DOMNode$Z(this.focusNode, true);
 }var area=this.jc;
-if (this.isAWT && !area.isBackgroundSet$() ) area.setBackground$java_awt_Color(Clazz.new_($I$(2).c$$I$I$I,[240, 240, 240]));
-$I$(3).setStyles(this.domNode, ["white-space", null, "overflow-wrap", null]);
+$I$(2).setStyles(this.domNode, ["white-space", null, "overflow-wrap", null]);
 if (area.getLineWrap$()) {
-$I$(3).setStyles(this.domNode, ["overflow-wrap", area.getWrapStyleWord$() ? null : "anywhere"]);
+$I$(2,"setStyles",[this.domNode, ["overflow-wrap", area.getWrapStyleWord$() ? null : "anywhere"]]);
 } else {
-$I$(3).setStyles(this.domNode, ["white-space", "pre"]);
+$I$(2).setStyles(this.domNode, ["white-space", "pre"]);
 }this.textListener.checkDocument$();
-this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font($I$(3).setAttr(this.domNode, "value", this.setCurrentText$()), this.c.getFont$());
-this.updateJSCursor$S("rewrite");
+this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font($I$(2,"setAttr",[this.domNode, "value", this.setCurrentText$()]), this.c.getFont$());
+this.updateJSCursor$S("areaupdate");
 return C$.superclazz.prototype.updateDOMNode$.apply(this, []);
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var prop=e.getPropertyName$();
 switch (prop) {
 case "ancestor":
 this.setJ2sMouseHandler$();
 break;
+case "JSToEnd":
+p$1.toEnd.apply(this, []);
+break;
 }
 C$.superclazz.prototype.propertyChange$java_beans_PropertyChangeEvent.apply(this, [e]);
 });
+
+Clazz.newMeth(C$, 'toEnd', function () {
+var node=this.domNode;
+if (node == null ) return;
+
+node.scrollTop = node.scrollHeight;
+}, p$1);
 
 Clazz.newMeth(C$, 'updateRootView$', function () {
 this.useRootView=true;
@@ -62,28 +74,52 @@ d.width=sw;
 d.height=sh;
 });
 
-Clazz.newMeth(C$, 'getInsets$', function () {
-return this.myInsets;
-});
-
 Clazz.newMeth(C$, 'getPropertyPrefix$', function () {
 return "TextArea";
 });
 
 Clazz.newMeth(C$, 'setHTMLElement$', function () {
-return $I$(3).setStyles(this.setHTMLElementCUI$(), ["position", "absolute"]);
+return $I$(2,"setStyles",[this.setHTMLElementCUI$(), ["position", "absolute"]]);
 });
 
 Clazz.newMeth(C$, 'create$javax_swing_text_Element', function (elem) {
 var area=this.c;
 var v;
 if (area.getLineWrap$()) {
-v=Clazz.new_($I$(4).c$$javax_swing_text_Element$Z,[elem, area.getWrapStyleWord$()]);
+v=Clazz.new_([elem, area.getWrapStyleWord$()],$I$(3,1).c$$javax_swing_text_Element$Z);
 } else {
-v=Clazz.new_($I$(5).c$$javax_swing_text_Element,[elem]);
+v=Clazz.new_($I$(4,1).c$$javax_swing_text_Element,[elem]);
 }return v;
 });
 
-Clazz.newMeth(C$);
+Clazz.newMeth(C$, 'isFocusable$', function () {
+return false;
+});
+
+Clazz.newMeth(C$, 'getMaximumSize$javax_swing_JComponent', function (jc) {
+return $I$(1).ANY_SIZE;
+});
+
+Clazz.newMeth(C$, 'handleTab$O', function (jqEvent) {
+var val=this.getJSTextValue$();
+var pt=Clazz.new_($I$(5,1));
+this.getJSMarkAndDot$java_awt_Point$I(pt, 0);
+var x=Math.min(pt.x, pt.y);
+var y=Math.max(pt.x, pt.y);
+val=val.substring$I$I(0, x) + "\t" + val.substring$I(y) ;
+this.editor.setTextFromUI$S(val);
+pt.x=pt.y=++x;
+this.setJSMarkAndDot$I$I$Z(x, x, false);
+this.checkNewEditorTextValue$();
+this.setJavaMarkAndDot$java_awt_Point(pt);
+return false;
+});
+
+Clazz.newMeth(C$, 'caretUpdatedByProgram$javax_swing_event_CaretEvent', function (e) {
+if (!this.jc.isVisible$() || !this.isAWT || this.domNode == null   ) return;
+var pt=e.getDot$();
+
+this.domNode.scrollTo && this.domNode.scrollTo(0, pt);
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

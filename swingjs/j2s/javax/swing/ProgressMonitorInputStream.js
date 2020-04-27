@@ -1,24 +1,17 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.ProgressMonitor']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ProgressMonitorInputStream", null, 'java.io.FilterInputStream');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.ProgressMonitor']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ProgressMonitorInputStream", null, 'java.io.FilterInputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.monitor=null;
-this.nread=0;
-this.size=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nread=0;
 this.size=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nread','size'],'O',['monitor','javax.swing.ProgressMonitor']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$O$java_io_InputStream', function (parentComponent, message, $in) {
-C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_InputStream.apply(this,[$in]);C$.$init$.apply(this);
 try {
 this.size=$in.available$();
 } catch (ioe) {
@@ -28,7 +21,7 @@ this.size=0;
 throw ioe;
 }
 }
-this.monitor=Clazz.new_($I$(1).c$$java_awt_Component$O$S$I$I,[parentComponent, message, null, 0, this.size]);
+this.monitor=Clazz.new_($I$(1,1).c$$java_awt_Component$O$S$I$I,[parentComponent, message, null, 0, this.size]);
 }, 1);
 
 Clazz.newMeth(C$, 'getProgressMonitor$', function () {
@@ -84,4 +77,4 @@ this.monitor.setProgress$I(this.nread);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

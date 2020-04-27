@@ -1,37 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'java.awt.geom.QuadCurve2D','java.awt.geom.CubicCurve2D']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FlatteningPathIterator", null, null, 'java.awt.geom.PathIterator');
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'java.awt.geom.QuadCurve2D','java.awt.geom.CubicCurve2D']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FlatteningPathIterator", null, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.src=null;
-this.squareflat=0;
-this.limit=0;
-this.hold=null;
-this.curx=0;
-this.cury=0;
-this.movx=0;
-this.movy=0;
-this.holdType=0;
-this.holdEnd=0;
-this.holdIndex=0;
-this.levels=null;
-this.levelIndex=0;
-this.done=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.hold=Clazz.array(Double.TYPE, [14]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['done'],'D',['squareflat','curx','cury','movx','movy'],'I',['limit','holdType','holdEnd','holdIndex','levelIndex'],'O',['src','java.awt.geom.PathIterator','hold','double[]','levels','int[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_PathIterator$D', function (src, flatness) {
 C$.c$$java_awt_geom_PathIterator$D$I.apply(this, [src, flatness, 10]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_PathIterator$D$I', function (src, flatness, limit) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (flatness < 0.0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["flatness must be >= 0"]);
 }if (limit < 0) {
@@ -183,4 +166,4 @@ type=1;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,23 +1,15 @@
 (function(){var P$=Clazz.newPackage("jalview.ext.varna"),I$=[];
-var C$=Clazz.newClass(P$, "RnaModel");
+/*c*/var C$=Clazz.newClass(P$, "RnaModel");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.title=null;
-this.ann=null;
-this.seq=null;
-this.gapped=false;
-this.rna=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['gapped'],'S',['title'],'O',['ann','jalview.datamodel.AlignmentAnnotation','seq','jalview.datamodel.SequenceI','rna','fr.orsay.lri.varna.models.rna.RNA']]]
 
 Clazz.newMeth(C$, 'c$$S$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_SequenceI$fr_orsay_lri_varna_models_rna_RNA$Z', function (t, aa, s, r, g) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.title=t;
 this.ann=aa;
 this.seq=s;
@@ -27,4 +19,4 @@ this.gapped=g;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

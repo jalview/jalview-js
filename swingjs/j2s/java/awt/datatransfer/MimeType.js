@@ -1,34 +1,28 @@
-(function(){var P$=Clazz.newPackage("java.awt.datatransfer"),p$1={},I$=[[0,'java.awt.datatransfer.MimeTypeParameterList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MimeType", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("java.awt.datatransfer"),p$1={},I$=[[0,'java.awt.datatransfer.MimeTypeParameterList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MimeType", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.primaryType=null;
-this.subType=null;
-this.parameters=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['primaryType','subType'],'O',['parameters','java.awt.datatransfer.MimeTypeParameterList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (rawdata) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.parse$S.apply(this, [rawdata]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (primary, sub) {
-C$.c$$S$S$java_awt_datatransfer_MimeTypeParameterList.apply(this, [primary, sub, Clazz.new_($I$(1))]);
+C$.c$$S$S$java_awt_datatransfer_MimeTypeParameterList.apply(this, [primary, sub, Clazz.new_($I$(1,1))]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$java_awt_datatransfer_MimeTypeParameterList', function (primary, sub, mtpl) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (p$1.isValidToken$S.apply(this, [primary])) {
 this.primaryType=primary.toLowerCase$();
 } else {
@@ -66,11 +60,11 @@ throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S
 } else if ((slashIndex >= 0) && (semIndex < 0) ) {
 this.primaryType=rawdata.substring$I$I(0, slashIndex).trim$().toLowerCase$();
 this.subType=rawdata.substring$I(slashIndex + 1).trim$().toLowerCase$();
-this.parameters=Clazz.new_($I$(1));
+this.parameters=Clazz.new_($I$(1,1));
 } else if (slashIndex < semIndex) {
 this.primaryType=rawdata.substring$I$I(0, slashIndex).trim$().toLowerCase$();
 this.subType=rawdata.substring$I$I(slashIndex + 1, semIndex).trim$().toLowerCase$();
-this.parameters=Clazz.new_($I$(1).c$$S,[rawdata.substring$I(semIndex)]);
+this.parameters=Clazz.new_([rawdata.substring$I(semIndex)],$I$(1,1).c$$S);
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.MimeTypeParseException').c$$S,["Unable to find a sub type."]);
 }if (!p$1.isValidToken$S.apply(this, [this.primaryType])) {
@@ -152,4 +146,4 @@ return true;
 return false;
 }}, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

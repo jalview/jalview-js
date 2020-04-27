@@ -1,25 +1,19 @@
 (function(){var P$=Clazz.newPackage("org.xml.sax.ext"),I$=[];
-var C$=Clazz.newClass(P$, "Attributes2Impl", null, 'org.xml.sax.helpers.AttributesImpl', 'org.xml.sax.ext.Attributes2');
+/*c*/var C$=Clazz.newClass(P$, "Attributes2Impl", null, 'org.xml.sax.helpers.AttributesImpl', 'org.xml.sax.ext.Attributes2');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.declared=null;
-this.specified=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['declared','boolean[]','+specified']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_xml_sax_Attributes', function (atts) {
-C$.superclazz.c$$org_xml_sax_Attributes.apply(this, [atts]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$org_xml_sax_Attributes.apply(this,[atts]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'isDeclared$I', function (index) {
@@ -107,4 +101,4 @@ if (index < 0 || index >= this.getLength$() ) throw Clazz.new_(Clazz.load('Array
 this.specified[index]=value;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

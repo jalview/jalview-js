@@ -1,23 +1,16 @@
 (function(){var P$=Clazz.newPackage("jalview.javascript"),I$=[];
-var C$=Clazz.newClass(P$, "MouseOverListener", null, 'jalview.javascript.JSFunctionExec', ['jalview.structure.VamsasListener', 'jalview.javascript.JsCallBack']);
+/*c*/var C$=Clazz.newClass(P$, "MouseOverListener", null, 'jalview.javascript.JSFunctionExec', ['jalview.structure.VamsasListener', 'jalview.javascript.JsCallBack']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._af=null;
-this._listener=null;
-this.last=null;
-this.i=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.last=null;
 this.i=-1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['mouseOverSequence$jalview_datamodel_SequenceI$I$jalview_structure_VamsasSource','mouseOverSequence$'], function (seq, index, source) {
+C$.$fields$=[['I',['i'],'S',['_listener'],'O',['_af','jalview.appletgui.AlignFrame','last','jalview.datamodel.SequenceI']]]
+
+Clazz.newMeth(C$, 'mouseOverSequence$jalview_datamodel_SequenceI$I$jalview_structure_VamsasSource', function (seq, index, source) {
 if (seq !== this.last  || this.i != index ) {
 this.last=seq;
 this.i=index;
@@ -40,8 +33,7 @@ throw ex;
 }});
 
 Clazz.newMeth(C$, 'c$$jalview_bin_JalviewLite$jalview_appletgui_AlignFrame$S', function (applet, af, listener) {
-C$.superclazz.c$$jalview_bin_JalviewLite.apply(this, [applet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_bin_JalviewLite.apply(this,[applet]);C$.$init$.apply(this);
 this._af=af;
 this._listener=listener;
 }, 1);
@@ -56,4 +48,4 @@ return this._listener;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

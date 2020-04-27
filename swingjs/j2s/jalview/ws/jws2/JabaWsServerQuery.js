@@ -1,18 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.jws2"),p$1={},I$=[[0,'compbio.ws.client.Services','java.util.HashSet','compbio.data.msa.Category','compbio.ws.client.Jws2Client','jalview.ws.jws2.jabaws2.Jws2InstanceFactory','jalview.bin.Cache','java.net.URL']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JabaWsServerQuery", null, null, 'Runnable');
+(function(){var P$=Clazz.newPackage("jalview.ws.jws2"),p$1={},I$=[[0,'compbio.ws.client.Services','java.util.HashSet','compbio.data.msa.Category','compbio.ws.client.Jws2Client','jalview.ws.jws2.jabaws2.Jws2InstanceFactory','jalview.bin.Cache','java.net.URL']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JabaWsServerQuery", null, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jws2Discoverer=null;
-this.jwsserver=null;
-this.quit=false;
-this.running=false;
-this.JABAWS1SERVERS=null;
-this.JABAWS2SERVERS=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.jws2Discoverer=null;
@@ -21,7 +10,9 @@ this.quit=false;
 this.running=false;
 this.JABAWS1SERVERS=Clazz.array($I$(1), -1, [$I$(1).ClustalWS, $I$(1).MuscleWS, $I$(1).MafftWS, $I$(1).ProbconsWS, $I$(1).TcoffeeWS]);
 this.JABAWS2SERVERS=Clazz.array($I$(1), -1, [$I$(1).ClustalWS, $I$(1).MuscleWS, $I$(1).MafftWS, $I$(1).ProbconsWS, $I$(1).TcoffeeWS, $I$(1).AAConWS, $I$(1).DisemblWS, $I$(1).GlobPlotWS, $I$(1).IUPredWS, $I$(1).JronnWS, $I$(1).RNAalifoldWS]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['quit','running'],'S',['jwsserver'],'O',['jws2Discoverer','jalview.ws.jws2.Jws2Discoverer','JABAWS1SERVERS','compbio.ws.client.Services[]','+JABAWS2SERVERS']]]
 
 Clazz.newMeth(C$, 'isRunning$', function () {
 return this.running;
@@ -32,7 +23,7 @@ this.quit=quit;
 });
 
 Clazz.newMeth(C$, 'c$$jalview_ws_jws2_Jws2Discoverer$S', function (jws2Discoverer, server) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.jws2Discoverer=jws2Discoverer;
 this.jwsserver=server;
 }, 1);
@@ -45,7 +36,7 @@ var registry=null;
 var svccategories=null;
 var noservices=true;
 var jabasws2=false;
-var srv_set=Clazz.new_($I$(2));
+var srv_set=Clazz.new_($I$(2,1));
 var categories=$I$(3).getCategories$();
 var svc_cat;
 try {
@@ -61,7 +52,7 @@ System.err.println$S("Exception whilst trying to get at registry:");
 ex.printStackTrace$();
 System.err.println$S("JWS2 Discoverer: " + this.jwsserver + " is a JABAWS1 server. Using hardwired list." );
 for (var srv, $srv = 0, $$srv = this.JABAWS1SERVERS; $srv<$$srv.length&&((srv=($$srv[$srv])),1);$srv++) {
-srv_set.add$TE(srv);
+srv_set.add$O(srv);
 }
 } else {
 throw ex;
@@ -87,14 +78,14 @@ e.printStackTrace$();
 throw e;
 }
 }
-;if (service != null  && !$I$(5).ignoreService$S(srv.toString()) ) {
+;if (service != null  && !$I$(5,"ignoreService$S",[srv.toString()]) ) {
 noservices=false;
 var svc=null;
 if (registry != null ) {
 var description=registry.getServiceDescription$compbio_ws_client_Services(srv);
-svc=$I$(5).newJws2Instance$S$S$S$S$compbio_data_msa_JABAService(this.jwsserver, srv.toString(), cat.name, description, service);
+svc=$I$(5,"newJws2Instance$S$S$S$S$compbio_data_msa_JABAService",[this.jwsserver, srv.toString(), cat.name, description, service]);
 }if (svc == null ) {
-svc=$I$(5).newJws2Instance$S$S$S$S$compbio_data_msa_JABAService(this.jwsserver, srv.toString(), cat.name, "JABAWS 1 Alignment Service", service);
+svc=$I$(5,"newJws2Instance$S$S$S$S$compbio_data_msa_JABAService",[this.jwsserver, srv.toString(), cat.name, "JABAWS 1 Alignment Service", service]);
 }this.jws2Discoverer.addService$S$jalview_ws_jws2_jabaws2_Jws2Instance(this.jwsserver, svc);
 }}
 }
@@ -128,7 +119,7 @@ Clazz.newMeth(C$, 'isValidUrl$S', function (server) {
 var result=false;
 if (server != null ) {
 try {
-var url=Clazz.new_($I$(7).c$$S,[server]);
+var url=Clazz.new_($I$(7,1).c$$S,[server]);
 url.openStream$().close$();
 result=true;
 } catch (e$$) {
@@ -153,4 +144,4 @@ throw e$$;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("sun.awt"),p$1={},I$=[[0,'java.util.EventListener','java.lang.reflect.Array']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EventListenerAggregate");
+(function(){var P$=Clazz.newPackage("sun.awt"),p$1={},I$=[[0,'java.util.EventListener','java.lang.reflect.Array']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EventListenerAggregate");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.listenerList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['listenerList','java.util.EventListener[]']]]
 
 Clazz.newMeth(C$, 'c$$Class', function (listenerClass) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (listenerClass == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["listener class is null"]);
 }if (!Clazz.getClass($I$(1),[]).isAssignableFrom$Class(listenerClass)) {
@@ -68,4 +64,4 @@ return this.listenerList.length == 0;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

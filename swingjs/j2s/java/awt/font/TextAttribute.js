@@ -1,68 +1,32 @@
-(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,'java.util.HashMap','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TextAttribute", null, ['java.text.AttributedCharacterIterator','.Attribute']);
-C$.$instanceMap=null;
-C$.FAMILY=null;
-C$.WEIGHT=null;
-C$.WEIGHT_EXTRA_LIGHT=null;
-C$.WEIGHT_LIGHT=null;
-C$.WEIGHT_DEMILIGHT=null;
-C$.WEIGHT_REGULAR=null;
-C$.WEIGHT_SEMIBOLD=null;
-C$.WEIGHT_MEDIUM=null;
-C$.WEIGHT_DEMIBOLD=null;
-C$.WEIGHT_BOLD=null;
-C$.WEIGHT_HEAVY=null;
-C$.WEIGHT_EXTRABOLD=null;
-C$.WEIGHT_ULTRABOLD=null;
-C$.WIDTH=null;
-C$.WIDTH_CONDENSED=null;
-C$.WIDTH_SEMI_CONDENSED=null;
-C$.WIDTH_REGULAR=null;
-C$.WIDTH_SEMI_EXTENDED=null;
-C$.WIDTH_EXTENDED=null;
-C$.POSTURE=null;
-C$.POSTURE_REGULAR=null;
-C$.POSTURE_OBLIQUE=null;
-C$.SIZE=null;
-C$.TRANSFORM=null;
-C$.SUPERSCRIPT=null;
-C$.SUPERSCRIPT_SUPER=null;
-C$.SUPERSCRIPT_SUB=null;
-C$.FONT=null;
-C$.CHAR_REPLACEMENT=null;
-C$.FOREGROUND=null;
-C$.BACKGROUND=null;
-C$.UNDERLINE=null;
-C$.UNDERLINE_ON=null;
-C$.STRIKETHROUGH=null;
-C$.STRIKETHROUGH_ON=null;
-C$.RUN_DIRECTION=null;
-C$.RUN_DIRECTION_LTR=null;
-C$.RUN_DIRECTION_RTL=null;
-C$.BIDI_EMBEDDING=null;
-C$.JUSTIFICATION=null;
-C$.JUSTIFICATION_FULL=null;
-C$.JUSTIFICATION_NONE=null;
-C$.INPUT_METHOD_HIGHLIGHT=null;
-C$.INPUT_METHOD_UNDERLINE=null;
-C$.UNDERLINE_LOW_ONE_PIXEL=null;
-C$.UNDERLINE_LOW_TWO_PIXEL=null;
-C$.UNDERLINE_LOW_DOTTED=null;
-C$.UNDERLINE_LOW_GRAY=null;
-C$.UNDERLINE_LOW_DASHED=null;
-C$.SWAP_COLORS=null;
-C$.SWAP_COLORS_ON=null;
-C$.NUMERIC_SHAPING=null;
-C$.KERNING=null;
-C$.KERNING_ON=null;
-C$.LIGATURES=null;
-C$.LIGATURES_ON=null;
-C$.TRACKING=null;
-C$.TRACKING_TIGHT=null;
-C$.TRACKING_LOOSE=null;
+(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,'java.util.HashMap']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TextAttribute", null, ['java.text.AttributedCharacterIterator','.Attribute']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instanceMap=Clazz.new_($I$(1).c$$I,[29]);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['$instanceMap','java.util.Map','FAMILY','java.awt.font.TextAttribute','+WEIGHT','WEIGHT_EXTRA_LIGHT','Float','+WEIGHT_LIGHT','+WEIGHT_DEMILIGHT','+WEIGHT_REGULAR','+WEIGHT_SEMIBOLD','+WEIGHT_MEDIUM','+WEIGHT_DEMIBOLD','+WEIGHT_BOLD','+WEIGHT_HEAVY','+WEIGHT_EXTRABOLD','+WEIGHT_ULTRABOLD','WIDTH','java.awt.font.TextAttribute','WIDTH_CONDENSED','Float','+WIDTH_SEMI_CONDENSED','+WIDTH_REGULAR','+WIDTH_SEMI_EXTENDED','+WIDTH_EXTENDED','POSTURE','java.awt.font.TextAttribute','POSTURE_REGULAR','Float','+POSTURE_OBLIQUE','SIZE','java.awt.font.TextAttribute','+TRANSFORM','+SUPERSCRIPT','SUPERSCRIPT_SUPER','Integer','+SUPERSCRIPT_SUB','FONT','java.awt.font.TextAttribute','+CHAR_REPLACEMENT','+FOREGROUND','+BACKGROUND','+UNDERLINE','UNDERLINE_ON','Integer','STRIKETHROUGH','java.awt.font.TextAttribute','STRIKETHROUGH_ON','Boolean','RUN_DIRECTION','java.awt.font.TextAttribute','RUN_DIRECTION_LTR','Boolean','+RUN_DIRECTION_RTL','BIDI_EMBEDDING','java.awt.font.TextAttribute','+JUSTIFICATION','JUSTIFICATION_FULL','Float','+JUSTIFICATION_NONE','INPUT_METHOD_HIGHLIGHT','java.awt.font.TextAttribute','+INPUT_METHOD_UNDERLINE','UNDERLINE_LOW_ONE_PIXEL','Integer','+UNDERLINE_LOW_TWO_PIXEL','+UNDERLINE_LOW_DOTTED','+UNDERLINE_LOW_GRAY','+UNDERLINE_LOW_DASHED','SWAP_COLORS','java.awt.font.TextAttribute','SWAP_COLORS_ON','Boolean','NUMERIC_SHAPING','java.awt.font.TextAttribute','+KERNING','KERNING_ON','Integer','LIGATURES','java.awt.font.TextAttribute','LIGATURES_ON','Integer','TRACKING','java.awt.font.TextAttribute','TRACKING_TIGHT','Float','+TRACKING_LOOSE']]]
+
+Clazz.newMeth(C$, 'c$$S', function (name) {
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
+if (this.getClass$() === Clazz.getClass(C$) ) {
+C$.$instanceMap.put$O$O(name, this);
+}}, 1);
+
+Clazz.newMeth(C$, 'readResolve$', function () {
+if (this.getClass$() !== Clazz.getClass(C$) ) {
+throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["subclass didn\'t correctly implement readResolve"]);
+}var instance=C$.$instanceMap.get$O(this.getName$());
+if (instance != null ) {
+return instance;
+} else {
+throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["unknown attribute name"]);
+}});
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instanceMap=Clazz.new_($I$(1,1).c$$I,[29]);
 C$.FAMILY=Clazz.new_(C$.c$$S,["family"]);
 C$.WEIGHT=Clazz.new_(C$.c$$S,["weight"]);
 C$.WEIGHT_EXTRA_LIGHT=Float.valueOf$F(0.5);
@@ -97,10 +61,10 @@ C$.BACKGROUND=Clazz.new_(C$.c$$S,["background"]);
 C$.UNDERLINE=Clazz.new_(C$.c$$S,["underline"]);
 C$.UNDERLINE_ON=Integer.valueOf$I(0);
 C$.STRIKETHROUGH=Clazz.new_(C$.c$$S,["strikethrough"]);
-C$.STRIKETHROUGH_ON=$I$(2).TRUE;
+C$.STRIKETHROUGH_ON=Boolean.TRUE;
 C$.RUN_DIRECTION=Clazz.new_(C$.c$$S,["run_direction"]);
-C$.RUN_DIRECTION_LTR=$I$(2).FALSE;
-C$.RUN_DIRECTION_RTL=$I$(2).TRUE;
+C$.RUN_DIRECTION_LTR=Boolean.FALSE;
+C$.RUN_DIRECTION_RTL=Boolean.TRUE;
 C$.BIDI_EMBEDDING=Clazz.new_(C$.c$$S,["bidi_embedding"]);
 C$.JUSTIFICATION=Clazz.new_(C$.c$$S,["justification"]);
 C$.JUSTIFICATION_FULL=Float.valueOf$F(1.0);
@@ -113,7 +77,7 @@ C$.UNDERLINE_LOW_DOTTED=Integer.valueOf$I(3);
 C$.UNDERLINE_LOW_GRAY=Integer.valueOf$I(4);
 C$.UNDERLINE_LOW_DASHED=Integer.valueOf$I(5);
 C$.SWAP_COLORS=Clazz.new_(C$.c$$S,["swap_colors"]);
-C$.SWAP_COLORS_ON=$I$(2).TRUE;
+C$.SWAP_COLORS_ON=Boolean.TRUE;
 C$.NUMERIC_SHAPING=Clazz.new_(C$.c$$S,["numeric_shaping"]);
 C$.KERNING=Clazz.new_(C$.c$$S,["kerning"]);
 C$.KERNING_ON=Integer.valueOf$I(1);
@@ -122,28 +86,8 @@ C$.LIGATURES_ON=Integer.valueOf$I(1);
 C$.TRACKING=Clazz.new_(C$.c$$S,["tracking"]);
 C$.TRACKING_TIGHT=Float.valueOf$F(-0.04);
 C$.TRACKING_LOOSE=Float.valueOf$F(0.04);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
-if (this.getClass$() === Clazz.getClass(C$) ) {
-C$.$instanceMap.put$TK$TV(name, this);
-}}, 1);
-
-Clazz.newMeth(C$, 'readResolve$', function () {
-if (this.getClass$() !== Clazz.getClass(C$) ) {
-throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["subclass didn\'t correctly implement readResolve"]);
-}var instance=C$.$instanceMap.get$O(this.getName$());
-if (instance != null ) {
-return instance;
-} else {
-throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["unknown attribute name"]);
-}});
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.spartan"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.adapter.readers.spartan.SpartanArchive']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SpartanReader", null, 'org.jmol.adapter.readers.quantum.BasisFunctionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.spartan"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.adapter.readers.spartan.SpartanArchive']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SpartanReader", null, 'org.jmol.adapter.readers.quantum.BasisFunctionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 var cartesianHeader="Cartesian Coordinates (Ang";
 if (p$1.isSpartanArchive$S.apply(this, [cartesianHeader])) {
-this.moData=Clazz.new_($I$(1));
-var spartanArchive=Clazz.new_($I$(2).c$$org_jmol_adapter_readers_quantum_BasisFunctionReader$S$S$I,[this, "", null, 0]);
+this.moData=Clazz.new_($I$(1,1));
+var spartanArchive=Clazz.new_($I$(2,1).c$$org_jmol_adapter_readers_quantum_BasisFunctionReader$S$S$I,[this, "", null, 0]);
 var ac=spartanArchive.readArchive$S$Z$I$Z(this.line, true, 0, true);
 if (ac > 0) this.asc.setAtomSetName$S("Spartan file");
 } else if (this.line.indexOf$S(cartesianHeader) >= 0) {
@@ -76,4 +75,4 @@ if (!ignore[j]) this.asc.addVibrationVector$I$F$F$F(i + (lineBaseFreqCount + j) 
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

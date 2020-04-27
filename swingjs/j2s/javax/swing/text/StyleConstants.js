@@ -1,76 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.StyleConstants','.CharacterConstants'],['javax.swing.text.StyleConstants','.FontConstants'],['javax.swing.text.StyleConstants','.ColorConstants'],['javax.swing.text.StyleConstants','.ParagraphConstants'],'Boolean','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StyleConstants", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.StyleConstants','.CharacterConstants'],['javax.swing.text.StyleConstants','.FontConstants'],['javax.swing.text.StyleConstants','.ColorConstants'],['javax.swing.text.StyleConstants','.ParagraphConstants'],'java.awt.Color']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StyleConstants", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.NameAttribute=null;
-C$.ResolveAttribute=null;
-C$.ModelAttribute=null;
-C$.BidiLevel=null;
-C$.FontFamily=null;
-C$.Family=null;
-C$.FontSize=null;
-C$.Size=null;
-C$.Bold=null;
-C$.Italic=null;
-C$.Underline=null;
-C$.StrikeThrough=null;
-C$.Superscript=null;
-C$.Subscript=null;
-C$.Foreground=null;
-C$.Background=null;
-C$.ComponentAttribute=null;
-C$.IconAttribute=null;
-C$.ComposedTextAttribute=null;
-C$.FirstLineIndent=null;
-C$.LeftIndent=null;
-C$.RightIndent=null;
-C$.LineSpacing=null;
-C$.SpaceAbove=null;
-C$.SpaceBelow=null;
-C$.Alignment=null;
-C$.TabSet=null;
-C$.Orientation=null;
-C$.keys=null;
+C$.$classes$=[['ParagraphConstants',9],['CharacterConstants',9],['ColorConstants',9],['FontConstants',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NameAttribute=Clazz.new_(C$.c$$S,["name"]);
-C$.ResolveAttribute=Clazz.new_(C$.c$$S,["resolver"]);
-C$.ModelAttribute=Clazz.new_(C$.c$$S,["model"]);
-C$.BidiLevel=Clazz.new_($I$(1).c$$S,["bidiLevel"]);
-C$.FontFamily=Clazz.new_($I$(2).c$$S,["family"]);
-C$.Family=C$.FontFamily;
-C$.FontSize=Clazz.new_($I$(2).c$$S,["size"]);
-C$.Size=C$.FontSize;
-C$.Bold=Clazz.new_($I$(2).c$$S,["bold"]);
-C$.Italic=Clazz.new_($I$(2).c$$S,["italic"]);
-C$.Underline=Clazz.new_($I$(1).c$$S,["underline"]);
-C$.StrikeThrough=Clazz.new_($I$(1).c$$S,["strikethrough"]);
-C$.Superscript=Clazz.new_($I$(1).c$$S,["superscript"]);
-C$.Subscript=Clazz.new_($I$(1).c$$S,["subscript"]);
-C$.Foreground=Clazz.new_($I$(3).c$$S,["foreground"]);
-C$.Background=Clazz.new_($I$(3).c$$S,["background"]);
-C$.ComponentAttribute=Clazz.new_($I$(1).c$$S,["component"]);
-C$.IconAttribute=Clazz.new_($I$(1).c$$S,["icon"]);
-C$.ComposedTextAttribute=Clazz.new_(C$.c$$S,["composed text"]);
-C$.FirstLineIndent=Clazz.new_($I$(4).c$$S,["FirstLineIndent"]);
-C$.LeftIndent=Clazz.new_($I$(4).c$$S,["LeftIndent"]);
-C$.RightIndent=Clazz.new_($I$(4).c$$S,["RightIndent"]);
-C$.LineSpacing=Clazz.new_($I$(4).c$$S,["LineSpacing"]);
-C$.SpaceAbove=Clazz.new_($I$(4).c$$S,["SpaceAbove"]);
-C$.SpaceBelow=Clazz.new_($I$(4).c$$S,["SpaceBelow"]);
-C$.Alignment=Clazz.new_($I$(4).c$$S,["Alignment"]);
-C$.TabSet=Clazz.new_($I$(4).c$$S,["TabSet"]);
-C$.Orientation=Clazz.new_($I$(4).c$$S,["Orientation"]);
-C$.keys=Clazz.array(java.lang.Object, -1, [C$.NameAttribute, C$.ResolveAttribute, C$.BidiLevel, C$.FontFamily, C$.FontSize, C$.Bold, C$.Italic, C$.Underline, C$.StrikeThrough, C$.Superscript, C$.Subscript, C$.Foreground, C$.Background, C$.ComponentAttribute, C$.IconAttribute, C$.FirstLineIndent, C$.LeftIndent, C$.RightIndent, C$.LineSpacing, C$.SpaceAbove, C$.SpaceBelow, C$.Alignment, C$.TabSet, C$.Orientation, C$.ModelAttribute, C$.ComposedTextAttribute]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.representation=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['representation']]
+,['O',['NameAttribute','java.lang.Object','+ResolveAttribute','+ModelAttribute','+BidiLevel','+FontFamily','+Family','+FontSize','+Size','+Bold','+Italic','+Underline','+StrikeThrough','+Superscript','+Subscript','+Foreground','+Background','+ComponentAttribute','+IconAttribute','+ComposedTextAttribute','+FirstLineIndent','+LeftIndent','+RightIndent','+LineSpacing','+SpaceAbove','+SpaceBelow','+Alignment','+TabSet','+Orientation','keys','Object[]']]]
 
 Clazz.newMeth(C$, 'toString', function () {
 return this.representation;
@@ -135,7 +75,7 @@ return bold.booleanValue$();
 }, 1);
 
 Clazz.newMeth(C$, 'setBold$javax_swing_text_MutableAttributeSet$Z', function (a, b) {
-a.addAttribute$O$O(C$.Bold, $I$(5).valueOf$Z(b));
+a.addAttribute$O$O(C$.Bold, Boolean.valueOf$Z(b));
 }, 1);
 
 Clazz.newMeth(C$, 'isItalic$javax_swing_text_AttributeSet', function (a) {
@@ -146,7 +86,7 @@ return italic.booleanValue$();
 }, 1);
 
 Clazz.newMeth(C$, 'setItalic$javax_swing_text_MutableAttributeSet$Z', function (a, b) {
-a.addAttribute$O$O(C$.Italic, $I$(5).valueOf$Z(b));
+a.addAttribute$O$O(C$.Italic, Boolean.valueOf$Z(b));
 }, 1);
 
 Clazz.newMeth(C$, 'isUnderline$javax_swing_text_AttributeSet', function (a) {
@@ -178,25 +118,25 @@ return subscript.booleanValue$();
 }, 1);
 
 Clazz.newMeth(C$, 'setUnderline$javax_swing_text_MutableAttributeSet$Z', function (a, b) {
-a.addAttribute$O$O(C$.Underline, $I$(5).valueOf$Z(b));
+a.addAttribute$O$O(C$.Underline, Boolean.valueOf$Z(b));
 }, 1);
 
 Clazz.newMeth(C$, 'setStrikeThrough$javax_swing_text_MutableAttributeSet$Z', function (a, b) {
-a.addAttribute$O$O(C$.StrikeThrough, $I$(5).valueOf$Z(b));
+a.addAttribute$O$O(C$.StrikeThrough, Boolean.valueOf$Z(b));
 }, 1);
 
 Clazz.newMeth(C$, 'setSuperscript$javax_swing_text_MutableAttributeSet$Z', function (a, b) {
-a.addAttribute$O$O(C$.Superscript, $I$(5).valueOf$Z(b));
+a.addAttribute$O$O(C$.Superscript, Boolean.valueOf$Z(b));
 }, 1);
 
 Clazz.newMeth(C$, 'setSubscript$javax_swing_text_MutableAttributeSet$Z', function (a, b) {
-a.addAttribute$O$O(C$.Subscript, $I$(5).valueOf$Z(b));
+a.addAttribute$O$O(C$.Subscript, Boolean.valueOf$Z(b));
 }, 1);
 
 Clazz.newMeth(C$, 'getForeground$javax_swing_text_AttributeSet', function (a) {
 var fg=a.getAttribute$O(C$.Foreground);
 if (fg == null ) {
-fg=$I$(6).none;
+fg=$I$(5).none;
 }return fg;
 }, 1);
 
@@ -207,7 +147,7 @@ a.addAttribute$O$O(C$.Foreground, fg);
 Clazz.newMeth(C$, 'getBackground$javax_swing_text_AttributeSet', function (a) {
 var fg=a.getAttribute$O(C$.Background);
 if (fg == null ) {
-fg=$I$(6).none;
+fg=$I$(5).none;
 }return fg;
 }, 1);
 
@@ -302,77 +242,101 @@ a.addAttribute$O$O(C$.TabSet, tabs);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (representation) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.representation=representation;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.NameAttribute=Clazz.new_(C$.c$$S,["name"]);
+C$.ResolveAttribute=Clazz.new_(C$.c$$S,["resolver"]);
+C$.ModelAttribute=Clazz.new_(C$.c$$S,["model"]);
+C$.BidiLevel=Clazz.new_($I$(1,1).c$$S,["bidiLevel"]);
+C$.FontFamily=Clazz.new_($I$(2,1).c$$S,["family"]);
+C$.Family=C$.FontFamily;
+C$.FontSize=Clazz.new_($I$(2,1).c$$S,["size"]);
+C$.Size=C$.FontSize;
+C$.Bold=Clazz.new_($I$(2,1).c$$S,["bold"]);
+C$.Italic=Clazz.new_($I$(2,1).c$$S,["italic"]);
+C$.Underline=Clazz.new_($I$(1,1).c$$S,["underline"]);
+C$.StrikeThrough=Clazz.new_($I$(1,1).c$$S,["strikethrough"]);
+C$.Superscript=Clazz.new_($I$(1,1).c$$S,["superscript"]);
+C$.Subscript=Clazz.new_($I$(1,1).c$$S,["subscript"]);
+C$.Foreground=Clazz.new_($I$(3,1).c$$S,["foreground"]);
+C$.Background=Clazz.new_($I$(3,1).c$$S,["background"]);
+C$.ComponentAttribute=Clazz.new_($I$(1,1).c$$S,["component"]);
+C$.IconAttribute=Clazz.new_($I$(1,1).c$$S,["icon"]);
+C$.ComposedTextAttribute=Clazz.new_(C$.c$$S,["composed text"]);
+C$.FirstLineIndent=Clazz.new_($I$(4,1).c$$S,["FirstLineIndent"]);
+C$.LeftIndent=Clazz.new_($I$(4,1).c$$S,["LeftIndent"]);
+C$.RightIndent=Clazz.new_($I$(4,1).c$$S,["RightIndent"]);
+C$.LineSpacing=Clazz.new_($I$(4,1).c$$S,["LineSpacing"]);
+C$.SpaceAbove=Clazz.new_($I$(4,1).c$$S,["SpaceAbove"]);
+C$.SpaceBelow=Clazz.new_($I$(4,1).c$$S,["SpaceBelow"]);
+C$.Alignment=Clazz.new_($I$(4,1).c$$S,["Alignment"]);
+C$.TabSet=Clazz.new_($I$(4,1).c$$S,["TabSet"]);
+C$.Orientation=Clazz.new_($I$(4,1).c$$S,["Orientation"]);
+C$.keys=Clazz.array(java.lang.Object, -1, [C$.NameAttribute, C$.ResolveAttribute, C$.BidiLevel, C$.FontFamily, C$.FontSize, C$.Bold, C$.Italic, C$.Underline, C$.StrikeThrough, C$.Superscript, C$.Subscript, C$.Foreground, C$.Background, C$.ComponentAttribute, C$.IconAttribute, C$.FirstLineIndent, C$.LeftIndent, C$.RightIndent, C$.LineSpacing, C$.SpaceAbove, C$.SpaceBelow, C$.Alignment, C$.TabSet, C$.Orientation, C$.ModelAttribute, C$.ComposedTextAttribute]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.StyleConstants, "ParagraphConstants", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleConstants, "ParagraphConstants", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.StyleConstants', [['javax.swing.text.AttributeSet','javax.swing.text.AttributeSet.ParagraphAttribute']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S', function (representation) {
-C$.superclazz.c$$S.apply(this, [representation]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[representation]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StyleConstants, "CharacterConstants", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleConstants, "CharacterConstants", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.StyleConstants', [['javax.swing.text.AttributeSet','javax.swing.text.AttributeSet.CharacterAttribute']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S', function (representation) {
-C$.superclazz.c$$S.apply(this, [representation]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[representation]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StyleConstants, "ColorConstants", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleConstants, "ColorConstants", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.StyleConstants', [['javax.swing.text.AttributeSet','javax.swing.text.AttributeSet.ColorAttribute'], ['javax.swing.text.AttributeSet','javax.swing.text.AttributeSet.CharacterAttribute']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S', function (representation) {
-C$.superclazz.c$$S.apply(this, [representation]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[representation]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StyleConstants, "FontConstants", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StyleConstants, "FontConstants", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.StyleConstants', [['javax.swing.text.AttributeSet','javax.swing.text.AttributeSet.FontAttribute'], ['javax.swing.text.AttributeSet','javax.swing.text.AttributeSet.CharacterAttribute']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S', function (representation) {
-C$.superclazz.c$$S.apply(this, [representation]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[representation]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
@@ -380,4 +344,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

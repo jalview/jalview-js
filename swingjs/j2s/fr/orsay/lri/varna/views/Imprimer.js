@@ -1,27 +1,23 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.views"),I$=[[0,'java.awt.Color','java.awt.Font','java.awt.print.PrinterJob']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Imprimer", null, null, 'java.awt.print.Printable');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.views"),I$=[[0,'java.awt.Color','java.awt.Font','java.awt.print.PrinterJob']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Imprimer", null, null, 'java.awt.print.Printable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.phrase=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['phrase']]]
 
 Clazz.newMeth(C$, 'c$$S', function (phrase) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.phrase=phrase;
 }, 1);
 
-Clazz.newMeth(C$, ['print$java_awt_Graphics$java_awt_print_PageFormat$I','print$'], function (g, pf, indexPage) {
+Clazz.newMeth(C$, 'print$java_awt_Graphics$java_awt_print_PageFormat$I', function (g, pf, indexPage) {
 if (indexPage > 0) return 1;
 var g2=g;
 g2.setPaint$java_awt_Paint($I$(1).blue);
-g2.setFont$java_awt_Font(Clazz.new_($I$(2).c$$S$I$I,["Serif", 0, 64]));
+g2.setFont$java_awt_Font(Clazz.new_($I$(2,1).c$$S$I$I,["Serif", 0, 64]));
 g2.drawString$S$I$I(this.phrase, 96, 144);
 return 0;
 });
@@ -43,4 +39,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

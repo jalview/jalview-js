@@ -1,34 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.smiles"),p$1={},I$=[[0,'java.util.Arrays','org.jmol.smiles.PolyhedronStereoSorter','javajs.util.Measure','org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.util.Node','org.jmol.smiles.SmilesAtom','javajs.util.V3','javajs.util.PT','org.jmol.smiles.SmilesParser','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmilesStereo");
-C$.PERM_TB=null;
-C$.PERM_OCT=null;
-C$.PERM_SS=null;
+(function(){var P$=Clazz.newPackage("org.jmol.smiles"),p$1={},I$=[[0,'java.util.Arrays','org.jmol.smiles.PolyhedronStereoSorter','javajs.util.Measure','org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.util.Node','org.jmol.smiles.SmilesAtom','javajs.util.V3','javajs.util.PT','org.jmol.smiles.SmilesParser','javajs.util.AU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SmilesStereo");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.PERM_TB=Clazz.array(Integer.TYPE, -1, [0, 1, 4, 0, -1, 4, 0, 1, 3, 0, -1, 3, 0, 1, 2, 0, -1, 2, 0, 1, 1, 0, -1, 1, 1, 1, 4, 1, 1, 3, 1, -1, 4, 1, -1, 3, 1, 1, 2, 1, -1, 2, 2, 1, 4, 2, 1, 3, 3, 1, 4, 3, -1, 4, 2, -1, 3, 2, -1, 4]);
-C$.PERM_OCT=Clazz.array(Integer.TYPE, -1, [0, 1, 5, 0, -1, 5, 0, 1, 4, 0, 3, 5, 0, 3, 4, 0, 1, 3, 0, 3, 3, 0, 2, 5, 0, 2, 4, 0, -2, 5, 0, -2, 4, 0, 2, 3, 0, -2, 3, 0, -3, 5, 0, -3, 4, 0, -1, 4, 0, -3, 3, 0, -1, 3, 0, 1, 2, 0, 3, 2, 0, 2, 2, 0, -2, 2, 0, -3, 2, 0, -1, 2, 0, 1, 1, 0, 3, 1, 0, 2, 1, 0, -2, 1, 0, -3, 1, 0, -1, 1]);
-C$.PERM_SS=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 0, -1, 3, 0, 1, 2, 0, -1, 2, 0, 1, 1, 0, -1, 1, 1, 1, 3, 1, -1, 3, 1, 1, 2, 1, -1, 2, 2, 1, 3, 2, -1, 3]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.chiralClass=0;
-this.chiralOrder=0;
-this.atomCount=0;
-this.details=null;
-this.search=null;
-this.jmolAtoms=null;
-this.directives=null;
-this.v=null;
-this.polyhedralOrders=null;
-this.isNot=false;
-this.sorter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.chiralClass=-2147483648;
 this.chiralOrder=-2147483648;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNot'],'I',['chiralClass','chiralOrder','atomCount'],'S',['details','directives'],'O',['search','org.jmol.smiles.SmilesSearch','jmolAtoms','org.jmol.util.Node[]','v','org.jmol.smiles.VTemp','polyhedralOrders','int[][]','sorter','org.jmol.smiles.PolyhedronStereoSorter']]
+,['O',['PERM_TB','int[]','+PERM_OCT','+PERM_SS']]]
 
 Clazz.newMeth(C$, 'getChiralityClass$S', function (xx) {
 return (("0;PH;AL;TP;TH;TB;OH;SP;TS;SS;".indexOf$S(xx) + 1)/3|0);
@@ -41,7 +22,7 @@ return stereo;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$S$S', function (chiralClass, chiralOrder, atomCount, details, directives) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.chiralClass=chiralClass;
 this.chiralOrder=chiralOrder;
 this.atomCount=atomCount;
@@ -299,7 +280,7 @@ Clazz.newMeth(C$, 'sortBondsByStereo$org_jmol_util_SimpleNode$org_jmol_util_Simp
 if (bonds.length < 2 || !(Clazz.instanceOf(atom, "javajs.util.T3")) ) return;
 if (atomPrev == null ) atomPrev=bonds[0].getOtherNode$org_jmol_util_SimpleNode(atom);
 var aTemp=Clazz.array(java.lang.Object, [bonds.length, 0]);
-if (this.sorter == null ) this.sorter=Clazz.new_($I$(2));
+if (this.sorter == null ) this.sorter=Clazz.new_($I$(2,1));
 vTemp.sub2$javajs_util_T3$javajs_util_T3(atomPrev, ref);
 this.sorter.setRef$javajs_util_V3(vTemp);
 for (var i=bonds.length; --i >= 0; ) {
@@ -308,8 +289,8 @@ var f=(a === atomPrev  ? 0 : this.sorter.isAligned$javajs_util_T3$javajs_util_T3
 if (bonds.length > 2) f += 360;
 aTemp[i]=Clazz.array(java.lang.Object, -1, [bonds[i], Float.valueOf$F(f), a]);
 }
-$I$(1).sort$TTA$java_util_Comparator(aTemp, this.sorter);
-if ($I$(4).debugging) $I$(4).info$S($I$(5).e$O(aTemp));
+$I$(1).sort$OA$java_util_Comparator(aTemp, this.sorter);
+if ($I$(4).debugging) (function(a,f){return f.apply(null,a)})([$I$(5).e$O(aTemp)],$I$(4).info$S);
 for (var i=bonds.length; --i >= 0; ) bonds[i]=aTemp[i][0];
 
 });
@@ -456,7 +437,7 @@ pAtom2=b.getOtherAtom$org_jmol_smiles_SmilesAtom(pAtom2);
 }
 pAtom=pAtom1;
 var jn=Clazz.array($I$(6), [6]);
-jn[4]=Clazz.new_($I$(7)).setIndex$I(60004);
+jn[4]=Clazz.new_($I$(7,1)).setIndex$I(60004);
 var nBonds=pAtom.getBondCount$();
 if (nBonds != 2 && nBonds != 3 ) return null;
 for (var k=0, p=0; k < nBonds; k++) {
@@ -498,14 +479,14 @@ Clazz.newMeth(C$, 'addAlleneLonePair$org_jmol_smiles_SmilesAtom$org_jmol_util_No
 var atom=pAtom.getMatchingAtom$();
 jn[k]=this.search.findImplicitHydrogen$org_jmol_util_Node(atom);
 if (jn[k] != null ) return;
-var v=Clazz.new_($I$(8));
+var v=Clazz.new_($I$(8,1));
 for (var i=0; i < 4; i++) if (jn[i] != null ) v.sub$javajs_util_T3(jn[i]);
 
 if (v.length$() == 0 ) {
 v.setT$javajs_util_T3((jn[4]));
 } else {
 v.scaleAdd2$F$javajs_util_T3$javajs_util_T3(2, pAtom.getMatchingAtom$(), v);
-}jn[k]=Clazz.new_($I$(7)).setIndex$I(-2147483648);
+}jn[k]=Clazz.new_($I$(7,1)).setIndex$I(-2147483648);
 (jn[k]).setT$javajs_util_T3(v);
 }, p$1);
 
@@ -633,7 +614,7 @@ order=($I$(9).isDigit$C(ch) ? 1 : -1);
 }
 var pt=index;
 if (order == 1 || isPoly ) {
-while (pt < len && $I$(9).isDigit$C(pattern.charAt$I(pt)) )pt++;
+while (pt < len && (function(a,f){return f.apply(null,a)})([pattern.charAt$I(pt)],$I$(9).isDigit$C) )pt++;
 
 if (pt > index) {
 try {
@@ -641,7 +622,7 @@ var n=Integer.parseInt$S(pattern.substring$I$I(index, pt));
 if (isPoly) {
 atomCount=n;
 if (pt < len && pattern.charAt$I(pt) == "(" ) {
-details=$I$(10).getSubPattern$S$I$C(pattern, pt, "(");
+details=(function(a,f){return f.apply(null,a)})([pattern, pt, "("],$I$(10).getSubPattern$S$I$C);
 pt+=details.length$() + 2;
 }if (pt < len && pattern.charAt$I(pt) == "/" ) {
 directives=$I$(10).getSubPattern$S$I$C(pattern, pt, "/");
@@ -693,7 +674,7 @@ break;
 for (; --n >= 0; ) a[n]=temp[n];
 
 n=0;
-if ($I$(4).debugging) $I$(4).info$S($I$(9).toJSON$S$O("@PH" + this.atomCount + "[" + atomPt + "]" , a));
+if ($I$(4).debugging) (function(a,f){return f.apply(null,a)})([$I$(9).toJSON$S$O("@PH" + this.atomCount + "[" + atomPt + "]" , a)],$I$(4).info$S);
 if (ch == "/") index=2147483647;
  else index++;
 atomPt++;
@@ -711,6 +692,12 @@ throw Clazz.new_(Clazz.load('org.jmol.smiles.InvalidSmilesException').c$$S,[msg]
 }} while (index < len);
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.PERM_TB=Clazz.array(Integer.TYPE, -1, [0, 1, 4, 0, -1, 4, 0, 1, 3, 0, -1, 3, 0, 1, 2, 0, -1, 2, 0, 1, 1, 0, -1, 1, 1, 1, 4, 1, 1, 3, 1, -1, 4, 1, -1, 3, 1, 1, 2, 1, -1, 2, 2, 1, 4, 2, 1, 3, 3, 1, 4, 3, -1, 4, 2, -1, 3, 2, -1, 4]);
+C$.PERM_OCT=Clazz.array(Integer.TYPE, -1, [0, 1, 5, 0, -1, 5, 0, 1, 4, 0, 3, 5, 0, 3, 4, 0, 1, 3, 0, 3, 3, 0, 2, 5, 0, 2, 4, 0, -2, 5, 0, -2, 4, 0, 2, 3, 0, -2, 3, 0, -3, 5, 0, -3, 4, 0, -1, 4, 0, -3, 3, 0, -1, 3, 0, 1, 2, 0, 3, 2, 0, 2, 2, 0, -2, 2, 0, -3, 2, 0, -1, 2, 0, 1, 1, 0, 3, 1, 0, 2, 1, 0, -2, 1, 0, -3, 1, 0, -1, 1]);
+C$.PERM_SS=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 0, -1, 3, 0, 1, 2, 0, -1, 2, 0, 1, 1, 0, -1, 1, 1, 1, 3, 1, -1, 3, 1, 1, 2, 1, -1, 2, 2, 1, 3, 2, -1, 3]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

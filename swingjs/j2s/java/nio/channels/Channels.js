@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.nio.channels"),I$=[[0,'java.nio.ByteBuffer','java.io.OutputStream','Thread','java.io.InputStream','java.io.FileInputStream',['java.nio.channels.Channels','.ReadableByteChannelImpl'],'java.io.FileOutputStream',['java.nio.channels.Channels','.WritableByteChannelImpl'],'sun.nio.cs.StreamDecoder','java.nio.charset.Charset','sun.nio.cs.StreamEncoder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Channels", function(){
+(function(){var P$=Clazz.newPackage("java.nio.channels"),I$=[[0,'java.nio.ByteBuffer','java.nio.channels.Channels','java.io.OutputStream','Thread','java.io.InputStream','java.io.FileInputStream',['java.nio.channels.Channels','.ReadableByteChannelImpl'],'java.io.FileOutputStream',['java.nio.channels.Channels','.WritableByteChannelImpl'],'sun.nio.cs.StreamDecoder','java.nio.charset.Charset','sun.nio.cs.StreamEncoder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Channels", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['ReadableByteChannelImpl',10],['WritableByteChannelImpl',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'checkNotNull$O$S', function (o, name) {
@@ -43,27 +43,21 @@ return (ch).getInputStream$();
 Clazz.newMeth(C$, 'newOutputStream$java_nio_channels_WritableByteChannel', function (ch) {
 C$.checkNotNull$O$S(ch, "ch");
 return ((P$.Channels$1||
-(function(){var C$=Clazz.newClass(P$, "Channels$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.OutputStream'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Channels$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.OutputStream'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bb=null;
-this.bs=null;
-this.b1=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bb=null;
 this.bs=null;
 this.b1=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['bb','java.nio.ByteBuffer','bs','byte[]','+b1']]]
 
 Clazz.newMeth(C$, 'write$I', function (b) {
 if (this.b1 == null ) this.b1=Clazz.array(Byte.TYPE, [1]);
-this.b1[0]=((b|0)|0);
+this.b1[0]=(b|0);
 this.write$BA(this.b1);
 });
 
@@ -77,36 +71,30 @@ bb.limit$I(Math.min(off + len, bb.capacity$()));
 bb.position$I(off);
 this.bb=bb;
 this.bs=bs;
-P$.Channels.writeFully$java_nio_channels_WritableByteChannel$java_nio_ByteBuffer(this.$finals$.ch, bb);
+$I$(2).writeFully$java_nio_channels_WritableByteChannel$java_nio_ByteBuffer(this.$finals$.ch, bb);
 });
 
 Clazz.newMeth(C$, 'close$', function () {
 this.$finals$.ch.close$();
 });
 })()
-), Clazz.new_($I$(2), [this, {ch: ch}],P$.Channels$1));
+), Clazz.new_($I$(3,1),[this, {ch:ch}],P$.Channels$1));
 }, 1);
 
 Clazz.newMeth(C$, 'newInputStream$java_nio_channels_AsynchronousByteChannel', function (ch) {
 C$.checkNotNull$O$S(ch, "ch");
 return ((P$.Channels$2||
-(function(){var C$=Clazz.newClass(P$, "Channels$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.InputStream'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Channels$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.InputStream'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bb=null;
-this.bs=null;
-this.b1=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bb=null;
 this.bs=null;
 this.b1=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['bb','java.nio.ByteBuffer','bs','byte[]','+b1']]]
 
 Clazz.newMeth(C$, 'read$', function () {
 if (this.b1 == null ) this.b1=Clazz.array(Byte.TYPE, [1]);
@@ -128,7 +116,7 @@ var interrupted=false;
 try {
 for (; ; ) {
 try {
-return (this.$finals$.ch.read$java_nio_ByteBuffer(bb).get$()).intValue$();
+return (this.$finals$.ch.read$java_nio_ByteBuffer(bb).get$()).valueOf();
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.util.concurrent.ExecutionException")){
 var ee = e$$;
@@ -146,7 +134,7 @@ throw e$$;
 }
 }
 } finally {
-if (interrupted) $I$(3).currentThread$().interrupt$();
+if (interrupted) $I$(4).currentThread$().interrupt$();
 }
 });
 
@@ -154,33 +142,27 @@ Clazz.newMeth(C$, 'close$', function () {
 this.$finals$.ch.close$();
 });
 })()
-), Clazz.new_($I$(4), [this, {ch: ch}],P$.Channels$2));
+), Clazz.new_($I$(5,1),[this, {ch:ch}],P$.Channels$2));
 }, 1);
 
 Clazz.newMeth(C$, 'newOutputStream$java_nio_channels_AsynchronousByteChannel', function (ch) {
 C$.checkNotNull$O$S(ch, "ch");
 return ((P$.Channels$3||
-(function(){var C$=Clazz.newClass(P$, "Channels$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.OutputStream'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Channels$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.OutputStream'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bb=null;
-this.bs=null;
-this.b1=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bb=null;
 this.bs=null;
 this.b1=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['bb','java.nio.ByteBuffer','bs','byte[]','+b1']]]
 
 Clazz.newMeth(C$, 'write$I', function (b) {
 if (this.b1 == null ) this.b1=Clazz.array(Byte.TYPE, [1]);
-this.b1[0]=((b|0)|0);
+this.b1[0]=(b|0);
 this.write$BA(this.b1);
 });
 
@@ -216,7 +198,7 @@ throw e$$;
 }
 }
 } finally {
-if (interrupted) $I$(3).currentThread$().interrupt$();
+if (interrupted) $I$(4).currentThread$().interrupt$();
 }
 });
 
@@ -224,66 +206,59 @@ Clazz.newMeth(C$, 'close$', function () {
 this.$finals$.ch.close$();
 });
 })()
-), Clazz.new_($I$(2), [this, {ch: ch}],P$.Channels$3));
+), Clazz.new_($I$(3,1),[this, {ch:ch}],P$.Channels$3));
 }, 1);
 
 Clazz.newMeth(C$, 'newChannel$java_io_InputStream', function ($in) {
 C$.checkNotNull$O$S($in, "in");
-if (Clazz.instanceOf($in, "java.io.FileInputStream") && Clazz.getClass($I$(5)).equals$O($in.getClass$()) ) {
+if (Clazz.instanceOf($in, "java.io.FileInputStream") && Clazz.getClass($I$(6)).equals$O($in.getClass$()) ) {
 return ($in).getChannel$();
-}return Clazz.new_($I$(6).c$$java_io_InputStream,[$in]);
+}return Clazz.new_($I$(7,1).c$$java_io_InputStream,[$in]);
 }, 1);
 
 Clazz.newMeth(C$, 'newChannel$java_io_OutputStream', function (out) {
 C$.checkNotNull$O$S(out, "out");
-if (Clazz.instanceOf(out, "java.io.FileOutputStream") && Clazz.getClass($I$(7)).equals$O(out.getClass$()) ) {
+if (Clazz.instanceOf(out, "java.io.FileOutputStream") && Clazz.getClass($I$(8)).equals$O(out.getClass$()) ) {
 return (out).getChannel$();
-}return Clazz.new_($I$(8).c$$java_io_OutputStream,[out]);
+}return Clazz.new_($I$(9,1).c$$java_io_OutputStream,[out]);
 }, 1);
 
 Clazz.newMeth(C$, 'newReader$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I', function (ch, dec, minBufferCap) {
 C$.checkNotNull$O$S(ch, "ch");
-return $I$(9).forDecoder$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I(ch, dec.reset$(), minBufferCap);
+return $I$(10,"forDecoder$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I",[ch, dec.reset$(), minBufferCap]);
 }, 1);
 
 Clazz.newMeth(C$, 'newReader$java_nio_channels_ReadableByteChannel$S', function (ch, csName) {
 C$.checkNotNull$O$S(csName, "csName");
-return C$.newReader$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I(ch, $I$(10).forName$S(csName).newDecoder$(), -1);
+return C$.newReader$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I(ch, $I$(11).forName$S(csName).newDecoder$(), -1);
 }, 1);
 
 Clazz.newMeth(C$, 'newWriter$java_nio_channels_WritableByteChannel$java_nio_charset_CharsetEncoder$I', function (ch, enc, minBufferCap) {
 C$.checkNotNull$O$S(ch, "ch");
-return $I$(11).forEncoder$java_nio_channels_WritableByteChannel$java_nio_charset_CharsetEncoder$I(ch, enc.reset$(), minBufferCap);
+return $I$(12,"forEncoder$java_nio_channels_WritableByteChannel$java_nio_charset_CharsetEncoder$I",[ch, enc.reset$(), minBufferCap]);
 }, 1);
 
 Clazz.newMeth(C$, 'newWriter$java_nio_channels_WritableByteChannel$S', function (ch, csName) {
 C$.checkNotNull$O$S(csName, "csName");
-return C$.newWriter$java_nio_channels_WritableByteChannel$java_nio_charset_CharsetEncoder$I(ch, $I$(10).forName$S(csName).newEncoder$(), -1);
+return C$.newWriter$java_nio_channels_WritableByteChannel$java_nio_charset_CharsetEncoder$I(ch, $I$(11).forName$S(csName).newEncoder$(), -1);
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.Channels, "ReadableByteChannelImpl", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Channels, "ReadableByteChannelImpl", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.nio.channels.spi.AbstractInterruptibleChannel', 'java.nio.channels.ReadableByteChannel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$in=null;
-this.buf=null;
-this.$open=false;
-this.readLock=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.buf=Clazz.array(Byte.TYPE, [0]);
 this.$open=true;
 this.readLock= Clazz.new_();
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['$open'],'O',['$in','java.io.InputStream','buf','byte[]','readLock','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.$in=$in;
 }, 1);
 
@@ -318,29 +293,22 @@ this.$open=false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Channels, "WritableByteChannelImpl", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Channels, "WritableByteChannelImpl", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.nio.channels.spi.AbstractInterruptibleChannel', 'java.nio.channels.WritableByteChannel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.out=null;
-this.buf=null;
-this.$open=false;
-this.writeLock=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.buf=Clazz.array(Byte.TYPE, [0]);
 this.$open=true;
 this.writeLock= Clazz.new_();
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['$open'],'O',['out','java.io.OutputStream','buf','byte[]','writeLock','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.out=out;
 }, 1);
 
@@ -371,4 +339,4 @@ this.$open=false;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,30 +1,21 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.locks.ReentrantLock','java.lang.reflect.Array',['java.util.concurrent.ArrayBlockingQueue','.Itr']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ArrayBlockingQueue", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.locks.ReentrantLock','java.lang.reflect.Array',['java.util.concurrent.ArrayBlockingQueue','.Itr']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ArrayBlockingQueue", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractQueue', ['java.util.concurrent.BlockingQueue', 'java.io.Serializable']);
+C$.$classes$=[['Itr',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.items=null;
-this.takeIndex=0;
-this.putIndex=0;
-this.count=0;
-this.lock=null;
-this.notEmpty=null;
-this.notFull=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['takeIndex','putIndex','count'],'O',['items','_.E[]','lock','java.util.concurrent.locks.ReentrantLock','notEmpty','java.util.concurrent.locks.Condition','+notFull']]]
 
 Clazz.newMeth(C$, 'inc$I', function (i) {
 return (++i == this.items.length) ? 0 : i;
 });
 
-Clazz.newMeth(C$, ['insert$TE'], function (x) {
+Clazz.newMeth(C$, 'insert$O', function (x) {
 this.items[this.putIndex]=x;
 this.putIndex=this.inc$I(this.putIndex);
 ++this.count;
@@ -66,10 +57,10 @@ C$.c$$I$Z.apply(this, [capacity, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$Z', function (capacity, fair) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (capacity <= 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 this.items=Clazz.array(java.lang.Object, [capacity]);
-this.lock=Clazz.new_($I$(1).c$$Z,[fair]);
+this.lock=Clazz.new_($I$(1,1).c$$Z,[fair]);
 this.notEmpty=this.lock.newCondition$();
 this.notFull=this.lock.newCondition$();
 }, 1);
@@ -77,29 +68,29 @@ this.notFull=this.lock.newCondition$();
 Clazz.newMeth(C$, 'c$$I$Z$java_util_Collection', function (capacity, fair, c) {
 C$.c$$I$Z.apply(this, [capacity, fair]);
 if (capacity < c.size$()) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-for (var it=c.iterator$(); it.hasNext$(); ) this.add$TE(it.next$());
+for (var it=c.iterator$(); it.hasNext$(); ) this.add$O(it.next$());
 
 }, 1);
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-return C$.superclazz.prototype.add$TE.apply(this, [e]);
+Clazz.newMeth(C$, 'add$O', function (e) {
+return C$.superclazz.prototype.add$O.apply(this, [e]);
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
+Clazz.newMeth(C$, 'offer$O', function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var lock=this.lock;
 lock.lock$();
 try {
 if (this.count == this.items.length) return false;
  else {
-p$1.insert$TE.apply(this, [e]);
+p$1.insert$O.apply(this, [e]);
 return true;
 }} finally {
 lock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, ['put$TE'], function (e) {
+Clazz.newMeth(C$, 'put$O', function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var items=this.items;
 var lock=this.lock;
@@ -116,13 +107,13 @@ throw ie;
 throw ie;
 }
 }
-p$1.insert$TE.apply(this, [e]);
+p$1.insert$O.apply(this, [e]);
 } finally {
 lock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, ['offer$TE$J$java_util_concurrent_TimeUnit'], function (e, timeout, unit) {
+Clazz.newMeth(C$, 'offer$O$J$java_util_concurrent_TimeUnit', function (e, timeout, unit) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var nanos=unit.toNanos$J(timeout);
 var lock=this.lock;
@@ -130,7 +121,7 @@ lock.lockInterruptibly$();
 try {
 for (; ; ) {
 if (this.count != this.items.length) {
-p$1.insert$TE.apply(this, [e]);
+p$1.insert$O.apply(this, [e]);
 return true;
 }if (nanos <= 0) return false;
 try {
@@ -295,7 +286,7 @@ lock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 var items=this.items;
 var lock=this.lock;
 lock.lock$();
@@ -355,7 +346,7 @@ var i=this.takeIndex;
 var n=0;
 var max=this.count;
 while (n < max){
-c.add$TE(items[i]);
+c.add$O(items[i]);
 items[i]=null;
 i=this.inc$I(i);
 ++n;
@@ -384,7 +375,7 @@ var n=0;
 var sz=this.count;
 var max=(maxElements < this.count) ? maxElements : this.count;
 while (n < max){
-c.add$TE(items[i]);
+c.add$O(items[i]);
 items[i]=null;
 i=this.inc$I(i);
 ++n;
@@ -403,31 +394,25 @@ Clazz.newMeth(C$, 'iterator$', function () {
 var lock=this.lock;
 lock.lock$();
 try {
-return Clazz.new_($I$(3), [this, null]);
+return Clazz.new_($I$(3,1),[this, null]);
 } finally {
 lock.unlock$();
 }
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ArrayBlockingQueue, "Itr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ArrayBlockingQueue, "Itr", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextIndex=0;
-this.nextItem=null;
-this.lastRet=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nextIndex','lastRet'],'O',['nextItem','<E>']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.lastRet=-1;
 if (this.this$0.count == 0) this.nextIndex=-1;
  else {
@@ -449,13 +434,13 @@ if (this.nextItem == null ) this.nextIndex=-1;
 }}, p$1);
 
 Clazz.newMeth(C$, 'next$', function () {
-var lock=this.b$['java.util.concurrent.ArrayBlockingQueue'].lock;
+var lock=this.this$0.lock;
 lock.lock$();
 try {
 if (this.nextIndex < 0) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 this.lastRet=this.nextIndex;
 var x=this.nextItem;
-this.nextIndex=this.b$['java.util.concurrent.ArrayBlockingQueue'].inc$I.apply(this.b$['java.util.concurrent.ArrayBlockingQueue'], [this.nextIndex]);
+this.nextIndex=this.this$0.inc$I.apply(this.this$0, [this.nextIndex]);
 p$1.checkNext.apply(this, []);
 return x;
 } finally {
@@ -464,14 +449,14 @@ lock.unlock$();
 });
 
 Clazz.newMeth(C$, 'remove$', function () {
-var lock=this.b$['java.util.concurrent.ArrayBlockingQueue'].lock;
+var lock=this.this$0.lock;
 lock.lock$();
 try {
 var i=this.lastRet;
 if (i == -1) throw Clazz.new_(Clazz.load('IllegalStateException'));
 this.lastRet=-1;
 var ti=this.this$0.takeIndex;
-this.b$['java.util.concurrent.ArrayBlockingQueue'].removeAt$I.apply(this.b$['java.util.concurrent.ArrayBlockingQueue'], [i]);
+this.this$0.removeAt$I.apply(this.this$0, [i]);
 this.nextIndex=(i == ti) ? this.this$0.takeIndex : i;
 p$1.checkNext.apply(this, []);
 } finally {
@@ -482,4 +467,4 @@ lock.unlock$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:50 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

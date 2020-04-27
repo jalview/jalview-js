@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing.undo"),I$=[[0,'javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractUndoableEdit", null, null, 'javax.swing.undo.UndoableEdit');
+(function(){var P$=Clazz.newPackage("javax.swing.undo"),I$=[[0,'javax.swing.UIManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractUndoableEdit", null, null, 'javax.swing.undo.UndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.hasBeenDone=false;
-this.alive=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['hasBeenDone','alive']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.hasBeenDone=true;
 this.alive=true;
 }, 1);
@@ -81,4 +76,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + " hasBeenDone: " + this.hasBeenDone + " alive: " + this.alive ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

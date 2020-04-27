@@ -1,97 +1,53 @@
-(function(){var P$=java.io,p$1={},I$=[[0,'org.apache.harmony.luni.util.Msg']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CharArrayWriter", null, 'java.io.Writer');
+(function(){var P$=java.io,I$=[[0,'java.util.Arrays']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CharArrayWriter", null, 'java.io.Writer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.buf=null;
-this.count=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['count'],'O',['buf','char[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.buf=Clazz.array(Character.TYPE, [32]);
-this.lock=this.buf;
+C$.c$$I.apply(this, [32]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialSize) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-if (initialSize >= 0) {
-this.buf=Clazz.array(Character.TYPE, [initialSize]);
-this.lock=this.buf;
-} else {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(1).getString$S("K005e")]);
-}}, 1);
+Clazz.super_(C$, this);
+if (initialSize < 0) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Negative initial size: " + initialSize]);
+}this.buf=Clazz.array(Character.TYPE, [initialSize]);
+}, 1);
 
-Clazz.newMeth(C$, 'close$', function () {
-});
-
-Clazz.newMeth(C$, 'expand$I', function (i) {
-if (this.count + i <= this.buf.length) {
-return;
-}var newbuf=Clazz.array(Character.TYPE, [this.buf.length + (2 * i)]);
-System.arraycopy$O$I$O$I$I(this.buf, 0, newbuf, 0, this.count);
-this.buf=newbuf;
-}, p$1);
-
-Clazz.newMeth(C$, 'flush$', function () {
-});
-
-Clazz.newMeth(C$, 'reset$', function () {
+Clazz.newMeth(C$, 'write$I', function (c) {
 {
-this.count=0;
+var newcount=this.count + 1;
+if (newcount > this.buf.length) {
+this.buf=$I$(1,"copyOf$CA$I",[this.buf, Math.max(this.buf.length << 1, newcount)]);
+}this.buf[this.count]=String.fromCharCode(c);
+this.count=newcount;
 }});
 
-Clazz.newMeth(C$, 'size$', function () {
-{
-return this.count;
-}});
-
-Clazz.newMeth(C$, 'toCharArray$', function () {
-{
-var result=Clazz.array(Character.TYPE, [this.count]);
-System.arraycopy$O$I$O$I$I(this.buf, 0, result, 0, this.count);
-return result;
-}});
-
-Clazz.newMeth(C$, 'toString', function () {
-{
-return  String.instantialize(this.buf, 0, this.count);
-}});
-
-Clazz.newMeth(C$, 'write$CA$I$I', function (c, offset, len) {
-if (0 <= offset && offset <= c.length  && 0 <= len  && len <= c.length - offset ) {
-{
-p$1.expand$I.apply(this, [len]);
-System.arraycopy$O$I$O$I$I(c, offset, this.buf, this.count, len);
-this.count+=len;
-}} else {
+Clazz.newMeth(C$, 'write$CA$I$I', function (c, off, len) {
+if ((off < 0) || (off > c.length) || (len < 0) || ((off + len) > c.length) || ((off + len) < 0)  ) {
 throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
+} else if (len == 0) {
+return;
+}{
+var newcount=this.count + len;
+if (newcount > this.buf.length) {
+this.buf=$I$(1,"copyOf$CA$I",[this.buf, Math.max(this.buf.length << 1, newcount)]);
+}System.arraycopy$O$I$O$I$I(c, off, this.buf, this.count, len);
+this.count=newcount;
 }});
 
-Clazz.newMeth(C$, 'write$I', function (oneChar) {
+Clazz.newMeth(C$, 'write$S$I$I', function (str, off, len) {
 {
-p$1.expand$I.apply(this, [1]);
-this.buf[this.count++]=String.fromCharCode(oneChar);
-}});
-
-Clazz.newMeth(C$, 'write$S$I$I', function (str, offset, len) {
-if (str == null ) {
-throw Clazz.new_(Clazz.load('NullPointerException').c$$S,[$I$(1).getString$S("K0047")]);
-}if (0 <= offset && offset <= str.length$()  && 0 <= len  && len <= str.length$() - offset ) {
-{
-p$1.expand$I.apply(this, [len]);
-str.getChars$I$I$CA$I(offset, offset + len, this.buf, this.count);
-this.count+=len;
-}} else {
-throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException'));
+var newcount=this.count + len;
+if (newcount > this.buf.length) {
+this.buf=$I$(1,"copyOf$CA$I",[this.buf, Math.max(this.buf.length << 1, newcount)]);
+}str.getChars$I$I$CA$I(off, off + len, this.buf, this.count);
+this.count=newcount;
 }});
 
 Clazz.newMeth(C$, 'writeTo$java_io_Writer', function (out) {
@@ -99,25 +55,45 @@ Clazz.newMeth(C$, 'writeTo$java_io_Writer', function (out) {
 out.write$CA$I$I(this.buf, 0, this.count);
 }});
 
+Clazz.newMeth(C$, 'append$CharSequence', function (csq) {
+var s=(csq == null  ? "null" : csq.toString());
+this.write$S$I$I(s, 0, s.length$());
+return this;
+});
+
+Clazz.newMeth(C$, 'append$CharSequence$I$I', function (csq, start, end) {
+var s=(csq == null  ? "null" : csq).subSequence$I$I(start, end).toString();
+this.write$S$I$I(s, 0, s.length$());
+return this;
+});
+
 Clazz.newMeth(C$, 'append$C', function (c) {
 this.write$I(c.$c());
 return this;
 });
 
-Clazz.newMeth(C$, 'append$CharSequence', function (csq) {
-if (null == csq ) {
-this.append$CharSequence$I$I("null", 0, "null".length$());
-} else {
-this.append$CharSequence$I$I(csq, 0, csq.length$());
-}return this;
+Clazz.newMeth(C$, 'reset$', function () {
+this.count=0;
 });
 
-Clazz.newMeth(C$, 'append$CharSequence$I$I', function (csq, start, end) {
-if (null == csq ) {
-csq="null";
-}var output=csq.subSequence$I$I(start, end).toString();
-this.write$S$I$I(output, 0, output.length$());
-return this;
+Clazz.newMeth(C$, 'toCharArray$', function () {
+{
+return $I$(1).copyOf$CA$I(this.buf, this.count);
+}});
+
+Clazz.newMeth(C$, 'size$', function () {
+return this.count;
+});
+
+Clazz.newMeth(C$, 'toString', function () {
+{
+return  String.instantialize(this.buf, 0, this.count);
+}});
+
+Clazz.newMeth(C$, 'flush$', function () {
+});
+
+Clazz.newMeth(C$, 'close$', function () {
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

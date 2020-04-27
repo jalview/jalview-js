@@ -1,38 +1,27 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'Thread','jalview.gui.IdCanvas','jalview.io.SequenceAnnotationReport','java.awt.BorderLayout','javax.swing.ToolTipManager','jalview.gui.AnnotationLabels','StringBuilder','jalview.gui.JvSwingUtils','javax.swing.SwingUtilities','jalview.gui.Preferences','jalview.util.BrowserLauncher','jalview.gui.JvOptionPane','jalview.gui.Desktop','jalview.util.MessageManager',['jalview.gui.IdPanel','.ScrollThread'],'jalview.util.Platform','javax.swing.Timer','jalview.datamodel.SequenceGroup','jalview.gui.PopupMenu','javax.swing.JPopupMenu','jalview.gui.PaintRefresher']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IdPanel", function(){
+(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'Thread','jalview.gui.IdCanvas','jalview.io.SequenceAnnotationReport','java.awt.BorderLayout','javax.swing.ToolTipManager','jalview.gui.AnnotationLabels','StringBuilder','jalview.gui.JvSwingUtils','javax.swing.SwingUtilities','jalview.gui.Preferences','jalview.util.BrowserLauncher','jalview.gui.JvOptionPane','jalview.gui.Desktop','jalview.util.MessageManager',['jalview.gui.IdPanel','.ScrollThread'],'jalview.util.Platform','javax.swing.Timer','jalview.datamodel.SequenceGroup','jalview.gui.PopupMenu','javax.swing.JPopupMenu','jalview.gui.PaintRefresher']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IdPanel", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JPanel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.MouseWheelListener']);
+C$.$classes$=[['ScrollThread',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.idCanvas=null;
-this.av=null;
-this.alignPanel=null;
-this.scrollThread=null;
-this.linkImageURL=null;
-this.offy=0;
-this.lastid=0;
-this.mouseDragging=false;
-this.seqAnnotReport=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.scrollThread=null;
 this.lastid=-1;
 this.mouseDragging=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['mouseDragging'],'I',['offy','lastid'],'S',['linkImageURL'],'O',['idCanvas','jalview.gui.IdCanvas','av','jalview.viewmodel.AlignmentViewport','alignPanel','jalview.gui.AlignmentPanel','scrollThread','jalview.gui.IdPanel.ScrollThread','seqAnnotReport','jalview.io.SequenceAnnotationReport']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel', function (av, parent) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=av;
 this.alignPanel=parent;
-this.setIdCanvas$jalview_gui_IdCanvas(Clazz.new_($I$(2).c$$jalview_gui_AlignViewport,[av]));
+this.setIdCanvas$jalview_gui_IdCanvas(Clazz.new_($I$(2,1).c$$jalview_gui_AlignViewport,[av]));
 this.linkImageURL=this.getClass$().getResource$S("/images/link.gif").toString();
-this.seqAnnotReport=Clazz.new_($I$(3).c$$S,[this.linkImageURL]);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(4)));
+this.seqAnnotReport=Clazz.new_($I$(3,1).c$$S,[this.linkImageURL]);
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(4,1)));
 this.add$java_awt_Component$O(this.getIdCanvas$(), "Center");
 this.addMouseListener$java_awt_event_MouseListener(this);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
@@ -52,11 +41,11 @@ this.alignPanel.alignFrame.setStatus$S($I$(6).getStatusMessage$jalview_datamodel
 var seq=Math.max(0, pos.seqIndex);
 if (seq < this.av.getAlignment$().getHeight$()) {
 var sequence=this.av.getAlignment$().getSequenceAt$I(seq);
-var tip=Clazz.new_($I$(7).c$$I,[64]);
+var tip=Clazz.new_($I$(7,1).c$$I,[64]);
 tip.append$S(sequence.getDisplayId$Z(true)).append$S(" ");
 this.seqAnnotReport.createTooltipAnnotationReport$StringBuilder$jalview_datamodel_SequenceI$Z$Z$jalview_viewmodel_seqfeatures_FeatureRendererModel(tip, sequence, this.av.isShowDBRefs$(), this.av.isShowNPFeats$(), sp.seqCanvas.fr);
-this.setToolTipText$S($I$(8).wrapTooltip$Z$S(true, tip.toString()));
-var text=Clazz.new_($I$(7));
+this.setToolTipText$S($I$(8,"wrapTooltip$Z$S",[true, tip.toString()]));
+var text=Clazz.new_($I$(7,1));
 text.append$S("Sequence ").append$S(String.valueOf$I(seq + 1)).append$S(" ID: ").append$S(sequence.getName$());
 this.alignPanel.alignFrame.setStatus$S(text.toString());
 }}});
@@ -75,7 +64,7 @@ this.selectSeqs$I$I(this.lastid + 1, seq);
 this.alignPanel.paintAlignment$Z$Z(false, false);
 });
 
-Clazz.newMeth(C$, ['mouseWheelMoved$java_awt_event_MouseWheelEvent','mouseWheelMoved$'], function (e) {
+Clazz.newMeth(C$, 'mouseWheelMoved$java_awt_event_MouseWheelEvent', function (e) {
 e.consume$();
 var wheelRotation=e.getPreciseWheelRotation$();
 if (wheelRotation > 0 ) {
@@ -103,7 +92,7 @@ try {
 $I$(11).openURL$S(url);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
-$I$(12).showInternalMessageDialog$java_awt_Component$S$S$I($I$(13).desktop, $I$(14).getString$S("label.web_browser_not_found_unix"), $I$(14).getString$S("label.web_browser_not_found"), 2);
+$I$(12,"showInternalMessageDialog$java_awt_Component$S$S$I",[$I$(13).desktop, $I$(14).getString$S("label.web_browser_not_found_unix"), $I$(14).getString$S("label.web_browser_not_found"), 2]);
 ex.printStackTrace$();
 } else {
 throw ex;
@@ -133,38 +122,36 @@ this.startScrolling$Z(false);
 }}});
 
 Clazz.newMeth(C$, 'startScrolling$Z', function (up) {
-this.scrollThread=Clazz.new_($I$(15).c$$Z, [this, null, up]);
+this.scrollThread=Clazz.new_($I$(15,1).c$$Z,[this, null, up]);
 if ($I$(16).isJS$()) {
-var t=Clazz.new_($I$(17).c$$I$java_awt_event_ActionListener,[20, ((P$.IdPanel$1||
-(function(){var C$=Clazz.newClass(P$, "IdPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+var t=Clazz.new_([20, ((P$.IdPanel$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "IdPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (this.b$['jalview.gui.IdPanel'].scrollThread != null ) {
 this.b$['jalview.gui.IdPanel'].scrollThread.scrollOnce$();
 }});
 })()
-), Clazz.new_(P$.IdPanel$1.$init$, [this, null]))]);
+), Clazz.new_(P$.IdPanel$1.$init$,[this, null]))],$I$(17,1).c$$I$java_awt_event_ActionListener);
 t.addActionListener$java_awt_event_ActionListener(((P$.IdPanel$2||
-(function(){var C$=Clazz.newClass(P$, "IdPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "IdPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (this.b$['jalview.gui.IdPanel'].scrollThread == null ) {
 this.$finals$.t.stop$();
 }});
 })()
-), Clazz.new_(P$.IdPanel$2.$init$, [this, {t: t}])));
+), Clazz.new_(P$.IdPanel$2.$init$,[this, {t:t}])));
 t.start$();
 } else 
 {}
@@ -180,7 +167,7 @@ return;
 }if ($I$(16).isWinRightButton$java_awt_event_MouseEvent(e)) {
 return;
 }if ((this.av.getSelectionGroup$() == null ) || (!$I$(16).isControlDown$java_awt_event_MouseEvent(e) && !e.isShiftDown$() && this.av.getSelectionGroup$() != null   ) ) {
-this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(18)));
+this.av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(18,1)));
 this.av.getSelectionGroup$().setStartRes$I(0);
 this.av.getSelectionGroup$().setEndRes$I(this.av.getAlignment$().getWidth$() - 1);
 }if (e.isShiftDown$() && (this.lastid != -1) ) {
@@ -196,17 +183,10 @@ if (pos.isOverAnnotation$()) {
 this.showAnnotationMenu$java_awt_event_MouseEvent$jalview_gui_SeqPanel_MousePos(e, pos);
 return;
 }var sq=this.av.getAlignment$().getSequenceAt$I(pos.seqIndex);
-var features=null;
 if (sq != null ) {
-var nlinks=$I$(10).sequenceUrlLinks.getLinksForMenu$();
-features=sq.getFeatures$().getNonPositionalFeatures$SA([]);
-for (var sf, $sf = features.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
-if (sf.links != null ) {
-nlinks.addAll$java_util_Collection(sf.links);
-}}
-}var pop=Clazz.new_($I$(19).c$$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceI$java_util_List$java_util_List,[this.alignPanel, sq, features, $I$(10).getGroupURLLinks$()]);
+var pop=Clazz.new_([this.alignPanel, sq, $I$(10).getGroupURLLinks$()],$I$(19,1).c$$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceI$java_util_List);
 pop.show$java_awt_Component$I$I(this, e.getX$(), e.getY$());
-});
+}});
 
 Clazz.newMeth(C$, 'showAnnotationMenu$java_awt_event_MouseEvent$jalview_gui_SeqPanel_MousePos', function (e, pos) {
 if (pos.annotationIndex == -1) {
@@ -217,7 +197,7 @@ return;
 }var ann=anns[pos.annotationIndex];
 if (!ann.label.contains$CharSequence("Consensus")) {
 return;
-}var pop=Clazz.new_($I$(20).c$$S,[$I$(14).getString$S("label.annotations")]);
+}var pop=Clazz.new_([$I$(14).getString$S("label.annotations")],$I$(20,1).c$$S);
 $I$(6).addConsensusMenuOptions$jalview_gui_AlignmentPanel$jalview_datamodel_AlignmentAnnotation$javax_swing_JPopupMenu(this.alignPanel, ann, pop);
 pop.show$java_awt_Component$I$I(this, e.getX$(), e.getY$());
 });
@@ -249,7 +229,7 @@ if (this.scrollThread != null ) {
 this.stopScrolling$();
 }var pos=this.alignPanel.getSeqPanel$().findMousePosition$java_awt_event_MouseEvent(e);
 this.mouseDragging=false;
-$I$(21).Refresh$java_awt_Component$S(this, this.av.getSequenceSetId$());
+$I$(21,"Refresh$java_awt_Component$S",[this, this.av.getSequenceSetId$()]);
 this.av.sendSelection$();
 if (e.isPopupTrigger$()) {
 this.showPopupMenu$java_awt_event_MouseEvent$jalview_gui_SeqPanel_MousePos(e, pos);
@@ -272,25 +252,20 @@ Clazz.newMeth(C$, 'setIdCanvas$jalview_gui_IdCanvas', function (idCanvas) {
 this.idCanvas=idCanvas;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.IdPanel, "ScrollThread", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.IdPanel, "ScrollThread", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'Thread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.running=false;
-this.up=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.running=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['running','up']]]
 
 Clazz.newMeth(C$, 'c$$Z', function (up) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.up=up;
 this.setName$S("IdPanel$ScrollThread$" + String.valueOf$Z(up));
 }, 1);
@@ -332,4 +307,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

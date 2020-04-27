@@ -1,19 +1,12 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Calendar','java.util.Date']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SpinnerDateModel", null, 'javax.swing.AbstractSpinnerModel');
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Calendar']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SpinnerDateModel", null, 'javax.swing.AbstractSpinnerModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.start=null;
-this.end=null;
-this.value=null;
-this.calendarField=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['calendarField'],'O',['start','Comparable','+end','value','java.util.Calendar']]]
 
 Clazz.newMeth(C$, 'calendarFieldOK$I', function (calendarField) {
 switch (calendarField) {
@@ -39,12 +32,12 @@ return false;
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$java_util_Date$Comparable$Comparable$I', function (value, start, end, calendarField) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (value == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["value is null"]);
 }if (!p$1.calendarFieldOK$I.apply(this, [calendarField])) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["invalid calendarField"]);
-}if (!(((start == null ) || (start.compareTo$(value) <= 0) ) && ((end == null ) || (end.compareTo$(value) >= 0) ) )) {
+}if (!(((start == null ) || (start.compareTo$O(value) <= 0) ) && ((end == null ) || (end.compareTo$O(value) >= 0) ) )) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["(start <= value <= end) is false"]);
 }this.value=$I$(1).getInstance$();
 this.start=start;
@@ -54,7 +47,7 @@ this.value.setTime$java_util_Date(value);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.c$$java_util_Date$Comparable$Comparable$I.apply(this, [Clazz.new_($I$(2)), null, null, 5]);
+C$.c$$java_util_Date$Comparable$Comparable$I.apply(this, [Clazz.new_(java.util.Date), null, null, 5]);
 }, 1);
 
 Clazz.newMeth(C$, 'setStart$Comparable', function (start) {
@@ -94,7 +87,7 @@ var cal=$I$(1).getInstance$();
 cal.setTime$java_util_Date(this.value.getTime$());
 cal.add$I$I(this.calendarField, 1);
 var next=cal.getTime$();
-return ((this.end == null ) || (this.end.compareTo$(next) >= 0) ) ? next : null;
+return ((this.end == null ) || (this.end.compareTo$O(next) >= 0) ) ? next : null;
 });
 
 Clazz.newMeth(C$, 'getPreviousValue$', function () {
@@ -102,7 +95,7 @@ var cal=$I$(1).getInstance$();
 cal.setTime$java_util_Date(this.value.getTime$());
 cal.add$I$I(this.calendarField, -1);
 var prev=cal.getTime$();
-return ((this.start == null ) || (this.start.compareTo$(prev) <= 0) ) ? prev : null;
+return ((this.start == null ) || (this.start.compareTo$O(prev) <= 0) ) ? prev : null;
 });
 
 Clazz.newMeth(C$, 'getDate$', function () {
@@ -121,4 +114,4 @@ this.value.setTime$java_util_Date(value);
 this.fireStateChanged$();
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

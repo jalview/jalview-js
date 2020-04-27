@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteBufferAsIntBufferRB','java.nio.Bits','java.nio.ByteOrder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ByteBufferAsIntBufferB", null, 'java.nio.IntBuffer');
+(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteBufferAsIntBufferRB','java.nio.Bits','java.nio.ByteOrder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ByteBufferAsIntBufferB", null, 'java.nio.IntBuffer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bb=null;
-this.$offset=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['$offset'],'O',['bb','java.nio.ByteBuffer']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer', function (paramByteBuffer) {
-C$.superclazz.c$$I$I$I$I.apply(this, [-1, 0, paramByteBuffer.remaining$() >> 2, paramByteBuffer.remaining$() >> 2]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$I$I.apply(this,[-1, 0, paramByteBuffer.remaining$() >> 2, paramByteBuffer.remaining$() >> 2]);C$.$init$.apply(this);
 this.bb=paramByteBuffer;
 var i=this.capacity$();
 this.limit$I(i);
@@ -25,8 +19,7 @@ this.$offset=j;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer$I$I$I$I$I', function (paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5) {
-C$.superclazz.c$$I$I$I$I.apply(this, [paramInt1, paramInt2, paramInt3, paramInt4]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$I$I.apply(this,[paramInt1, paramInt2, paramInt3, paramInt4]);C$.$init$.apply(this);
 this.bb=paramByteBuffer;
 this.$offset=paramInt5;
 }, 1);
@@ -46,7 +39,7 @@ return Clazz.new_(C$.c$$java_nio_ByteBuffer$I$I$I$I$I,[this.bb, this.markValue$(
 });
 
 Clazz.newMeth(C$, 'asReadOnlyBuffer$', function () {
-return Clazz.new_($I$(1).c$$java_nio_ByteBuffer$I$I$I$I$I,[this.bb, this.markValue$(), this.position$(), this.limit$(), this.capacity$(), this.$offset]);
+return Clazz.new_([this.bb, this.markValue$(), this.position$(), this.limit$(), this.capacity$(), this.$offset],$I$(1,1).c$$java_nio_ByteBuffer$I$I$I$I$I);
 });
 
 Clazz.newMeth(C$, 'ix$I', function (paramInt) {
@@ -54,20 +47,20 @@ return (paramInt << 2) + this.$offset;
 });
 
 Clazz.newMeth(C$, 'get$', function () {
-return $I$(2).getIntB$java_nio_ByteBuffer$I(this.bb, this.ix$I(this.nextGetIndex$()));
+return $I$(2,"getIntB$java_nio_ByteBuffer$I",[this.bb, this.ix$I(this.nextGetIndex$())]);
 });
 
 Clazz.newMeth(C$, 'get$I', function (paramInt) {
-return $I$(2).getIntB$java_nio_ByteBuffer$I(this.bb, this.ix$I(this.checkIndex$I(paramInt)));
+return $I$(2,"getIntB$java_nio_ByteBuffer$I",[this.bb, this.ix$I(this.checkIndex$I(paramInt))]);
 });
 
 Clazz.newMeth(C$, 'put$I', function (paramInt) {
-$I$(2).putIntB$java_nio_ByteBuffer$I$I(this.bb, this.ix$I(this.nextPutIndex$()), paramInt);
+$I$(2,"putIntB$java_nio_ByteBuffer$I$I",[this.bb, this.ix$I(this.nextPutIndex$()), paramInt]);
 return this;
 });
 
 Clazz.newMeth(C$, 'put$I$I', function (paramInt1, paramInt2) {
-$I$(2).putIntB$java_nio_ByteBuffer$I$I(this.bb, this.ix$I(this.checkIndex$I(paramInt1)), paramInt2);
+$I$(2,"putIntB$java_nio_ByteBuffer$I$I",[this.bb, this.ix$I(this.checkIndex$I(paramInt1)), paramInt2]);
 return this;
 });
 
@@ -99,8 +92,11 @@ return false;
 Clazz.newMeth(C$, 'order$', function () {
 return $I$(3).BIG_ENDIAN;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

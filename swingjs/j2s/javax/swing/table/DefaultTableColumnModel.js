@@ -1,28 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'javax.swing.event.EventListenerList','java.util.Vector','javax.swing.event.TableColumnModelEvent','javax.swing.event.TableColumnModelListener','javax.swing.event.ChangeEvent','javax.swing.DefaultListSelectionModel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultTableColumnModel", null, null, ['javax.swing.table.TableColumnModel', 'java.beans.PropertyChangeListener', 'javax.swing.event.ListSelectionListener']);
+(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'javax.swing.event.EventListenerList','java.util.Vector','javax.swing.event.TableColumnModelEvent','javax.swing.event.TableColumnModelListener','javax.swing.event.ChangeEvent','javax.swing.DefaultListSelectionModel']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultTableColumnModel", null, null, ['javax.swing.table.TableColumnModel', 'java.beans.PropertyChangeListener', 'javax.swing.event.ListSelectionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tableColumns=null;
-this.selectionModel=null;
-this.columnMargin=0;
-this.listenerList=null;
-this.changeEvent=null;
-this.columnSelectionAllowed=false;
-this.totalColumnWidth=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.listenerList=Clazz.new_($I$(1));
+this.listenerList=Clazz.new_($I$(1,1));
 this.changeEvent=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['columnSelectionAllowed'],'I',['columnMargin','totalColumnWidth'],'O',['tableColumns','java.util.Vector','selectionModel','javax.swing.ListSelectionModel','listenerList','javax.swing.event.EventListenerList','changeEvent','javax.swing.event.ChangeEvent']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.tableColumns=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.tableColumns=Clazz.new_($I$(2,1));
 this.setSelectionModel$javax_swing_ListSelectionModel(this.createSelectionModel$());
 this.setColumnMargin$I(1);
 p$1.invalidateWidthCache.apply(this, []);
@@ -32,10 +22,10 @@ this.setColumnSelectionAllowed$Z(false);
 Clazz.newMeth(C$, 'addColumn$javax_swing_table_TableColumn', function (aColumn) {
 if (aColumn == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Object is null"]);
-}this.tableColumns.addElement$TE(aColumn);
+}this.tableColumns.addElement$O(aColumn);
 aColumn.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
 p$1.invalidateWidthCache.apply(this, []);
-this.fireColumnAdded$javax_swing_event_TableColumnModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableColumnModel$I$I,[this, 0, this.getColumnCount$() - 1]));
+this.fireColumnAdded$javax_swing_event_TableColumnModelEvent(Clazz.new_([this, 0, this.getColumnCount$() - 1],$I$(3,1).c$$javax_swing_table_TableColumnModel$I$I));
 });
 
 Clazz.newMeth(C$, 'removeColumn$javax_swing_table_TableColumn', function (column) {
@@ -46,26 +36,26 @@ this.selectionModel.removeIndexInterval$I$I(columnIndex, columnIndex);
 }column.removePropertyChangeListener$java_beans_PropertyChangeListener(this);
 this.tableColumns.removeElementAt$I(columnIndex);
 p$1.invalidateWidthCache.apply(this, []);
-this.fireColumnRemoved$javax_swing_event_TableColumnModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableColumnModel$I$I,[this, columnIndex, 0]));
+this.fireColumnRemoved$javax_swing_event_TableColumnModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableColumnModel$I$I,[this, columnIndex, 0]));
 }});
 
 Clazz.newMeth(C$, 'moveColumn$I$I', function (columnIndex, newIndex) {
 if ((columnIndex < 0) || (columnIndex >= this.getColumnCount$()) || (newIndex < 0) || (newIndex >= this.getColumnCount$())  ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["moveColumn() - Index out of range"]);
 var aColumn;
 if (columnIndex == newIndex) {
-this.fireColumnMoved$javax_swing_event_TableColumnModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableColumnModel$I$I,[this, columnIndex, newIndex]));
+this.fireColumnMoved$javax_swing_event_TableColumnModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableColumnModel$I$I,[this, columnIndex, newIndex]));
 return;
 }aColumn=this.tableColumns.elementAt$I(columnIndex);
 this.tableColumns.removeElementAt$I(columnIndex);
 var selected=this.selectionModel.isSelectedIndex$I(columnIndex);
 this.selectionModel.removeIndexInterval$I$I(columnIndex, columnIndex);
-this.tableColumns.insertElementAt$TE$I(aColumn, newIndex);
+this.tableColumns.insertElementAt$O$I(aColumn, newIndex);
 this.selectionModel.insertIndexInterval$I$I$Z(newIndex, 1, true);
 if (selected) {
 this.selectionModel.addSelectionInterval$I$I(newIndex, newIndex);
 } else {
 this.selectionModel.removeSelectionInterval$I$I(newIndex, newIndex);
-}this.fireColumnMoved$javax_swing_event_TableColumnModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableColumnModel$I$I,[this, columnIndex, newIndex]));
+}this.fireColumnMoved$javax_swing_event_TableColumnModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableColumnModel$I$I,[this, columnIndex, newIndex]));
 });
 
 Clazz.newMeth(C$, 'setColumnMargin$I', function (newMargin) {
@@ -177,11 +167,11 @@ return count;
 });
 
 Clazz.newMeth(C$, 'addColumnModelListener$javax_swing_event_TableColumnModelListener', function (x) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(4),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']), x);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(4),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']), x);
 });
 
 Clazz.newMeth(C$, 'removeColumnModelListener$javax_swing_event_TableColumnModelListener', function (x) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(4),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']), x);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(4),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']), x);
 });
 
 Clazz.newMeth(C$, 'getColumnModelListeners$', function () {
@@ -224,7 +214,7 @@ Clazz.newMeth(C$, 'fireColumnMarginChanged$', function () {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(4),['columnAdded$javax_swing_event_TableColumnModelEvent','columnMarginChanged$javax_swing_event_ChangeEvent','columnMoved$javax_swing_event_TableColumnModelEvent','columnRemoved$javax_swing_event_TableColumnModelEvent','columnSelectionChanged$javax_swing_event_ListSelectionEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(5).c$$O,[this]);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(5,1).c$$O,[this]);
 (listeners[i + 1]).columnMarginChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
@@ -233,19 +223,19 @@ Clazz.newMeth(C$, 'getListeners$Class', function (listenerType) {
 return this.listenerList.getListeners$Class(listenerType);
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 var name=evt.getPropertyName$();
-if (name == "width" || name == "preferredWidth" ) {
+if (name === "width"  || name === "preferredWidth"  ) {
 p$1.invalidateWidthCache.apply(this, []);
 this.fireColumnMarginChanged$();
 }});
 
-Clazz.newMeth(C$, ['valueChanged$javax_swing_event_ListSelectionEvent','valueChanged$'], function (e) {
+Clazz.newMeth(C$, 'valueChanged$javax_swing_event_ListSelectionEvent', function (e) {
 this.fireColumnSelectionChanged$javax_swing_event_ListSelectionEvent(e);
 });
 
 Clazz.newMeth(C$, 'createSelectionModel$', function () {
-return Clazz.new_($I$(6));
+return Clazz.new_($I$(6,1));
 });
 
 Clazz.newMeth(C$, 'recalcWidthCache$', function () {
@@ -260,4 +250,4 @@ Clazz.newMeth(C$, 'invalidateWidthCache', function () {
 this.totalColumnWidth=-1;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

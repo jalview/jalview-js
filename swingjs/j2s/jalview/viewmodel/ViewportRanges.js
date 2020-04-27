@@ -1,25 +1,16 @@
 (function(){var P$=Clazz.newPackage("jalview.viewmodel"),p$1={};
-var C$=Clazz.newClass(P$, "ViewportRanges", null, 'jalview.viewmodel.ViewportProperties');
+/*c*/var C$=Clazz.newClass(P$, "ViewportRanges", null, 'jalview.viewmodel.ViewportProperties');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.wrappedMode=false;
-this.startRes=0;
-this.endRes=0;
-this.startSeq=0;
-this.endSeq=0;
-this.al=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.wrappedMode=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['wrappedMode'],'I',['startRes','endRes','startSeq','endSeq'],'O',['al','jalview.datamodel.AlignmentI']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI', function (alignment) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.startRes=0;
 this.endRes=alignment.getWidth$() - 1;
 this.startSeq=0;
@@ -321,4 +312,4 @@ return maxScroll;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

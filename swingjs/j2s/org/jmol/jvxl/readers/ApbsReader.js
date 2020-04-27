@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.SB','javajs.util.PT','org.jmol.jvxl.readers.VolumeFileReader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ApbsReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.SB','javajs.util.PT','org.jmol.jvxl.readers.VolumeFileReader']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ApbsReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -19,7 +18,7 @@ this.nSurfaces=1;
 });
 
 Clazz.newMeth(C$, 'readParameters$', function () {
-this.jvxlFileHeaderBuffer=$I$(1).newS$S(this.skipComments$Z(false));
+this.jvxlFileHeaderBuffer=(function(a,f){return f.apply(null,a)})([this.skipComments$Z(false)],$I$(1).newS$S);
 while (this.line != null  && this.line.length$() == 0 )this.rd$();
 
 this.jvxlFileHeaderBuffer.append$S("APBS OpenDx DATA ").append$S(this.line).append$S("\n");
@@ -39,4 +38,4 @@ for (var i=0; i < 3; i++) this.voxelCounts[i]=this.parseIntStr$S(tokens[i + 5]);
 this.rd$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

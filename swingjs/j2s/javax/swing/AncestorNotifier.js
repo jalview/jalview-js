@@ -1,32 +1,26 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.event.EventListenerList','javax.swing.event.AncestorListener','javax.swing.event.AncestorEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AncestorNotifier", null, null, ['java.awt.event.ComponentListener', 'java.beans.PropertyChangeListener']);
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.event.EventListenerList','javax.swing.event.AncestorListener','javax.swing.event.AncestorEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AncestorNotifier", null, null, ['java.awt.event.ComponentListener', 'java.beans.PropertyChangeListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.firstInvisibleAncestor=null;
-this.listenerList=null;
-this.root=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.listenerList=Clazz.new_($I$(1));
-}, 1);
+this.listenerList=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['firstInvisibleAncestor','java.awt.Component','listenerList','javax.swing.event.EventListenerList','root','javax.swing.JComponent']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_JComponent', function (root) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.root=root;
 this.addListeners$java_awt_Component$Z(root, true);
 }, 1);
 
 Clazz.newMeth(C$, 'addAncestorListener$javax_swing_event_AncestorListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(2),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(2),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeAncestorListener$javax_swing_event_AncestorListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(2),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(2),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getAncestorListeners$', function () {
@@ -37,7 +31,7 @@ Clazz.newMeth(C$, 'fireAncestorAdded$javax_swing_JComponent$I$java_awt_Container
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(2),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
-var ancestorEvent=Clazz.new_($I$(3).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
+var ancestorEvent=Clazz.new_($I$(3,1).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorAdded$javax_swing_event_AncestorEvent(ancestorEvent);
 }}
 });
@@ -46,7 +40,7 @@ Clazz.newMeth(C$, 'fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Contain
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(2),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
-var ancestorEvent=Clazz.new_($I$(3).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
+var ancestorEvent=Clazz.new_($I$(3,1).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorRemoved$javax_swing_event_AncestorEvent(ancestorEvent);
 }}
 });
@@ -55,7 +49,7 @@ Clazz.newMeth(C$, 'fireAncestorMoved$javax_swing_JComponent$I$java_awt_Container
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(2),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
-var ancestorEvent=Clazz.new_($I$(3).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
+var ancestorEvent=Clazz.new_($I$(3,1).c$$javax_swing_JComponent$I$java_awt_Container$java_awt_Container,[source, id, ancestor, ancestorParent]);
 (listeners[i + 1]).ancestorMoved$javax_swing_event_AncestorEvent(ancestorEvent);
 }}
 });
@@ -118,7 +112,7 @@ if (needsNotify) {
 this.fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Container(this.root, 2, ancestor, ancestor.getParent$());
 }});
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 var s=evt.getPropertyName$();
 if (s != null  && (s.equals$O("parent") || s.equals$O("ancestor") ) ) {
 var component=evt.getSource$();
@@ -138,4 +132,4 @@ this.fireAncestorRemoved$javax_swing_JComponent$I$java_awt_Container$java_awt_Co
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

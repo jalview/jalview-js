@@ -1,16 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
-var C$=Clazz.newClass(P$, "EventType");
+/*c*/var C$=Clazz.newClass(P$, "EventType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['type']]]
 
 Clazz.newMeth(C$, 'getType$', function () {
 return this.type;
@@ -19,9 +15,10 @@ return this.type;
 Clazz.newMeth(C$, 'setType$S', function (value) {
 this.type=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.EventType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="eventType" )']],
-  [['type','String'],['@XmlAttribute(name="type" required="true" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.EventType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="eventType" ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" required="true" ']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

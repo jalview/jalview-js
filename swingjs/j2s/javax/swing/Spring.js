@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,['javax.swing.Spring','.StaticSpring'],['javax.swing.Spring','.NegativeSpring'],['javax.swing.Spring','.SumSpring'],['javax.swing.Spring','.MaxSpring'],['javax.swing.Spring','.ScaleSpring'],['javax.swing.Spring','.WidthSpring'],['javax.swing.Spring','.HeightSpring']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Spring", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,['javax.swing.Spring','.StaticSpring'],['javax.swing.Spring','.NegativeSpring'],['javax.swing.Spring','.SumSpring'],['javax.swing.Spring','.MaxSpring'],['javax.swing.Spring','.ScaleSpring'],['javax.swing.Spring','.WidthSpring'],['javax.swing.Spring','.HeightSpring']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Spring", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['AbstractSpring',1032],['StaticSpring',10],['NegativeSpring',10],['ScaleSpring',10],['WidthSpring',8],['HeightSpring',8],['SpringMap',1032],['CompoundSpring',1032],['SumSpring',10],['MaxSpring',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'range$Z', function (contract) {
@@ -35,19 +35,19 @@ return C$.constant$I$I$I(pref, pref, pref);
 }, 1);
 
 Clazz.newMeth(C$, 'constant$I$I$I', function (min, pref, max) {
-return Clazz.new_($I$(1).c$$I$I$I,[min, pref, max]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[min, pref, max]);
 }, 1);
 
 Clazz.newMeth(C$, 'minus$javax_swing_Spring', function (s) {
-return Clazz.new_($I$(2).c$$javax_swing_Spring,[s]);
+return Clazz.new_($I$(2,1).c$$javax_swing_Spring,[s]);
 }, 1);
 
 Clazz.newMeth(C$, 'sum$javax_swing_Spring$javax_swing_Spring', function (s1, s2) {
-return Clazz.new_($I$(3).c$$javax_swing_Spring$javax_swing_Spring,[s1, s2]);
+return Clazz.new_($I$(3,1).c$$javax_swing_Spring$javax_swing_Spring,[s1, s2]);
 }, 1);
 
 Clazz.newMeth(C$, 'max$javax_swing_Spring$javax_swing_Spring', function (s1, s2) {
-return Clazz.new_($I$(4).c$$javax_swing_Spring$javax_swing_Spring,[s1, s2]);
+return Clazz.new_($I$(4,1).c$$javax_swing_Spring$javax_swing_Spring,[s1, s2]);
 }, 1);
 
 Clazz.newMeth(C$, 'difference$javax_swing_Spring$javax_swing_Spring', function (s1, s2) {
@@ -56,17 +56,17 @@ return C$.sum$javax_swing_Spring$javax_swing_Spring(s1, C$.minus$javax_swing_Spr
 
 Clazz.newMeth(C$, 'scale$javax_swing_Spring$F', function (s, factor) {
 C$.checkArg$O(s);
-return Clazz.new_($I$(5).c$$javax_swing_Spring$F,[s, factor]);
+return Clazz.new_($I$(5,1).c$$javax_swing_Spring$F,[s, factor]);
 }, 1);
 
 Clazz.newMeth(C$, 'width$java_awt_Component', function (c) {
 C$.checkArg$O(c);
-return Clazz.new_($I$(6).c$$java_awt_Component,[c]);
+return Clazz.new_($I$(6,1).c$$java_awt_Component,[c]);
 }, 1);
 
 Clazz.newMeth(C$, 'height$java_awt_Component', function (c) {
 C$.checkArg$O(c);
-return Clazz.new_($I$(7).c$$java_awt_Component,[c]);
+return Clazz.new_($I$(7,1).c$$java_awt_Component,[c]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkArg$O', function (s) {
@@ -74,21 +74,17 @@ if (s == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Argument must not be null"]);
 }}, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "AbstractSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "AbstractSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.Spring');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.size=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.size=-2147483648;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['size']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.size != -2147483648 ? this.size : this.getPreferredValue$();
@@ -114,29 +110,23 @@ this.size=size;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "StaticSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "StaticSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.Spring','.AbstractSpring']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.min=0;
-this.pref=0;
-this.max=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['min','pref','max']]]
 
 Clazz.newMeth(C$, 'c$$I', function (pref) {
 C$.c$$I$I$I.apply(this, [pref, pref, pref]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (min, pref, max) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.min=min;
 this.pref=pref;
 this.max=max;
@@ -161,23 +151,19 @@ return this.max;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "NegativeSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "NegativeSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.Spring');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['s','javax.swing.Spring']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring', function (s) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.s=s;
 }, 1);
 
@@ -208,24 +194,19 @@ return this.s.isCyclic$javax_swing_SpringLayout(l);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "ScaleSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "ScaleSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.Spring');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s=null;
-this.factor=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['factor'],'O',['s','javax.swing.Spring']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring$F', function (s, factor) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.s=s;
 this.factor=factor;
 }, 1);
@@ -260,23 +241,19 @@ return this.s.isCyclic$javax_swing_SpringLayout(l);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "WidthSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "WidthSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.Spring','.AbstractSpring']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.c=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['c','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (c) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.c=c;
 }, 1);
 
@@ -295,23 +272,19 @@ return Math.min(32767, this.c.getMaximumSize$().width);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "HeightSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "HeightSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.Spring','.AbstractSpring']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.c=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['c','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (c) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.c=c;
 }, 1);
 
@@ -330,23 +303,19 @@ return Math.min(32767, this.c.getMaximumSize$().height);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "SpringMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "SpringMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.Spring');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['s','javax.swing.Spring']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring', function (s) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.s=s;
 }, 1);
 
@@ -380,25 +349,19 @@ return this.s.isCyclic$javax_swing_SpringLayout(l);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "CompoundSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "CompoundSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.Spring','.StaticSpring']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s1=null;
-this.s2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['s1','javax.swing.Spring','+s2']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring$javax_swing_Spring', function (s1, s2) {
-C$.superclazz.c$$I.apply(this, [-2147483648]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[-2147483648]);C$.$init$.apply(this);
 this.s1=s1;
 this.s2=s2;
 }, 1);
@@ -445,19 +408,17 @@ return l.isCyclic$javax_swing_Spring(this.s1) || l.isCyclic$javax_swing_Spring(t
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "SumSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "SumSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.Spring','.CompoundSpring']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring$javax_swing_Spring', function (s1, s2) {
-C$.superclazz.c$$javax_swing_Spring$javax_swing_Spring.apply(this, [s1, s2]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_Spring$javax_swing_Spring.apply(this,[s1, s2]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'op$I$I', function (x, y) {
@@ -473,19 +434,17 @@ this.s2.setValue$I(size - this.s1.getValue$());
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Spring, "MaxSpring", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Spring, "MaxSpring", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.Spring','.CompoundSpring']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_Spring$javax_swing_Spring', function (s1, s2) {
-C$.superclazz.c$$javax_swing_Spring$javax_swing_Spring.apply(this, [s1, s2]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_Spring$javax_swing_Spring.apply(this,[s1, s2]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'op$I$I', function (x, y) {
@@ -501,4 +460,4 @@ this.s2.setValue$I(size);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

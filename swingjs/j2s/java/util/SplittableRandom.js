@@ -1,24 +1,19 @@
-(function(){var P$=java.util,p$1={},I$=[[0,'java.util.concurrent.atomic.AtomicLong','java.util.stream.StreamSupport',['java.util.SplittableRandom','.RandomIntsSpliterator'],['java.util.SplittableRandom','.RandomLongsSpliterator'],['java.util.SplittableRandom','.RandomDoublesSpliterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SplittableRandom", function(){
+(function(){var P$=java.util,p$1={},I$=[[0,'java.util.concurrent.atomic.AtomicLong','java.util.stream.StreamSupport',['java.util.SplittableRandom','.RandomIntsSpliterator'],['java.util.SplittableRandom','.RandomLongsSpliterator'],['java.util.SplittableRandom','.RandomDoublesSpliterator']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SplittableRandom", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.defaultGen=null;
+C$.$classes$=[['RandomIntsSpliterator',24],['RandomLongsSpliterator',24],['RandomDoublesSpliterator',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultGen=Clazz.new_($I$(1).c$$J,[C$.initialSeed$()]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seed=0;
-this.gamma=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['seed','gamma']]
+,['O',['defaultGen','java.util.concurrent.atomic.AtomicLong']]]
 
 Clazz.newMeth(C$, 'c$$J$J', function (seed, gamma) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.seed=seed;
 this.gamma=gamma;
 }, 1);
@@ -93,7 +88,7 @@ C$.c$$J$J.apply(this, [seed, -7046029254386353131]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var s=C$.defaultGen.getAndAdd$J(4354685564936845354);
 this.seed=C$.mix64$J(s);
 this.gamma=C$.mixGamma$J(s + -7046029254386353131);
@@ -162,85 +157,81 @@ return C$.mix32$J(p$1.nextSeed.apply(this, [])) < 0;
 
 Clazz.newMeth(C$, 'ints$J', function (streamSize) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
-return $I$(2).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(3).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, streamSize, 2147483647, 0]), false);
+return $I$(2,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(3,1).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, streamSize, 2147483647, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'ints$', function () {
-return $I$(2).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(3).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, 9223372036854775807, 2147483647, 0]), false);
+return $I$(2,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(3,1).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, 9223372036854775807, 2147483647, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'ints$J$I$I', function (streamSize, randomNumberOrigin, randomNumberBound) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(2).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(3).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, streamSize, randomNumberOrigin, randomNumberBound]), false);
+return $I$(2,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(3,1).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, streamSize, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'ints$I$I', function (randomNumberOrigin, randomNumberBound) {
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(2).intStream$java_util_Spliterator_OfInt$Z(Clazz.new_($I$(3).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false);
+return $I$(2,"intStream$java_util_Spliterator_OfInt$Z",[Clazz.new_($I$(3,1).c$$java_util_SplittableRandom$J$J$I$I,[this, 0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$J', function (streamSize) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
-return $I$(2).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(4).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, streamSize, 9223372036854775807, 0]), false);
+return $I$(2,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(4,1).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, streamSize, 9223372036854775807, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$', function () {
-return $I$(2).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(4).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, 9223372036854775807, 9223372036854775807, 0]), false);
+return $I$(2,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(4,1).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, 9223372036854775807, 9223372036854775807, 0]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$J$J$J', function (streamSize, randomNumberOrigin, randomNumberBound) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(2).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(4).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, streamSize, randomNumberOrigin, randomNumberBound]), false);
+return $I$(2,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(4,1).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, streamSize, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'longs$J$J', function (randomNumberOrigin, randomNumberBound) {
 if (randomNumberOrigin >= randomNumberBound) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(2).longStream$java_util_Spliterator_OfLong$Z(Clazz.new_($I$(4).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false);
+return $I$(2,"longStream$java_util_Spliterator_OfLong$Z",[Clazz.new_($I$(4,1).c$$java_util_SplittableRandom$J$J$J$J,[this, 0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$J', function (streamSize) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
-return $I$(2).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(5).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, streamSize, 1.7976931348623157E308, 0.0]), false);
+return $I$(2,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(5,1).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, streamSize, 1.7976931348623157E308, 0.0]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$', function () {
-return $I$(2).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(5).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, 9223372036854775807, 1.7976931348623157E308, 0.0]), false);
+return $I$(2,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(5,1).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, 9223372036854775807, 1.7976931348623157E308, 0.0]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$J$D$D', function (streamSize, randomNumberOrigin, randomNumberBound) {
 if (streamSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["size must be non-negative"]);
 if (!(randomNumberOrigin < randomNumberBound )) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(2).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(5).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, streamSize, randomNumberOrigin, randomNumberBound]), false);
+return $I$(2,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(5,1).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, streamSize, randomNumberOrigin, randomNumberBound]), false]);
 });
 
 Clazz.newMeth(C$, 'doubles$D$D', function (randomNumberOrigin, randomNumberBound) {
 if (!(randomNumberOrigin < randomNumberBound )) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["bound must be greater than origin"]);
-return $I$(2).doubleStream$java_util_Spliterator_OfDouble$Z(Clazz.new_($I$(5).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false);
+return $I$(2,"doubleStream$java_util_Spliterator_OfDouble$Z",[Clazz.new_($I$(5,1).c$$java_util_SplittableRandom$J$J$D$D,[this, 0, 9223372036854775807, randomNumberOrigin, randomNumberBound]), false]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultGen=Clazz.new_([C$.initialSeed$()],$I$(1,1).c$$J);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SplittableRandom, "RandomIntsSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SplittableRandom, "RandomIntsSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Spliterator','java.util.Spliterator.OfInt']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rng=null;
-this.index=0;
-this.fence=0;
-this.origin=0;
-this.bound=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['origin','bound'],'J',['index','fence'],'O',['rng','java.util.SplittableRandom']]]
 
 Clazz.newMeth(C$, 'c$$java_util_SplittableRandom$J$J$I$I', function (rng, index, fence, origin, bound) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rng=rng;
 this.index=index;
 this.fence=fence;
@@ -262,18 +253,18 @@ Clazz.newMeth(C$, 'characteristics$', function () {
 return (17728);
 });
 
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_IntConsumer','tryAdvance$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['tryAdvance$java_util_function_IntConsumer','tryAdvance$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
 if (i < f) {
-consumer.accept$(this.rng.internalNextInt$I$I(this.origin, this.bound));
+consumer.accept$I(this.rng.internalNextInt$I$I(this.origin, this.bound));
 this.index=i + 1;
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_IntConsumer','forEachRemaining$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['forEachRemaining$java_util_function_IntConsumer','forEachRemaining$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
@@ -283,34 +274,26 @@ var r=this.rng;
 var o=this.origin;
 var b=this.bound;
 do {
-consumer.accept$(r.internalNextInt$I$I(o, b));
+consumer.accept$I(r.internalNextInt$I$I(o, b));
 } while (++i < f);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SplittableRandom, "RandomLongsSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SplittableRandom, "RandomLongsSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Spliterator','java.util.Spliterator.OfLong']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rng=null;
-this.index=0;
-this.fence=0;
-this.origin=0;
-this.bound=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['index','fence','origin','bound'],'O',['rng','java.util.SplittableRandom']]]
 
 Clazz.newMeth(C$, 'c$$java_util_SplittableRandom$J$J$J$J', function (rng, index, fence, origin, bound) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rng=rng;
 this.index=index;
 this.fence=fence;
@@ -332,18 +315,18 @@ Clazz.newMeth(C$, 'characteristics$', function () {
 return (17728);
 });
 
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_LongConsumer','tryAdvance$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['tryAdvance$java_util_function_LongConsumer','tryAdvance$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
 if (i < f) {
-consumer.accept$(this.rng.internalNextLong$J$J(this.origin, this.bound));
+consumer.accept$J(this.rng.internalNextLong$J$J(this.origin, this.bound));
 this.index=i + 1;
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_LongConsumer','forEachRemaining$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['forEachRemaining$java_util_function_LongConsumer','forEachRemaining$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
@@ -353,34 +336,26 @@ var r=this.rng;
 var o=this.origin;
 var b=this.bound;
 do {
-consumer.accept$(r.internalNextLong$J$J(o, b));
+consumer.accept$J(r.internalNextLong$J$J(o, b));
 } while (++i < f);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SplittableRandom, "RandomDoublesSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SplittableRandom, "RandomDoublesSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Spliterator','java.util.Spliterator.OfDouble']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rng=null;
-this.index=0;
-this.fence=0;
-this.origin=0;
-this.bound=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['origin','bound'],'J',['index','fence'],'O',['rng','java.util.SplittableRandom']]]
 
 Clazz.newMeth(C$, 'c$$java_util_SplittableRandom$J$J$D$D', function (rng, index, fence, origin, bound) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rng=rng;
 this.index=index;
 this.fence=fence;
@@ -402,18 +377,18 @@ Clazz.newMeth(C$, 'characteristics$', function () {
 return (17728);
 });
 
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_DoubleConsumer','tryAdvance$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['tryAdvance$java_util_function_DoubleConsumer','tryAdvance$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
 if (i < f) {
-consumer.accept$(this.rng.internalNextDouble$D$D(this.origin, this.bound));
+consumer.accept$D(this.rng.internalNextDouble$D$D(this.origin, this.bound));
 this.index=i + 1;
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_DoubleConsumer','forEachRemaining$TT_CONS'], function (consumer) {
+Clazz.newMeth(C$, ['forEachRemaining$java_util_function_DoubleConsumer','forEachRemaining$O'], function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var i=this.index;
 var f=this.fence;
@@ -423,11 +398,11 @@ var r=this.rng;
 var o=this.origin;
 var b=this.bound;
 do {
-consumer.accept$(r.internalNextDouble$D$D(o, b));
+consumer.accept$D(r.internalNextDouble$D$D(o, b));
 } while (++i < f);
 }});
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

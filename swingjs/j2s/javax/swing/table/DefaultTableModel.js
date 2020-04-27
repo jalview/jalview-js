@@ -1,24 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultTableModel", null, 'javax.swing.table.AbstractTableModel');
+(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultTableModel", null, 'javax.swing.table.AbstractTableModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dataVector=null;
-this.columnIdentifiers=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['dataVector','java.util.Vector','+columnIdentifiers']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'newVector$I', function (size) {
-var v=Clazz.new_($I$(1).c$$I,[size]);
+var v=Clazz.new_($I$(1,1).c$$I,[size]);
 v.setSize$I(size);
 return v;
 }, 1);
@@ -28,7 +23,7 @@ C$.c$$java_util_Vector$I.apply(this, [C$.newVector$I(columnCount), rowCount]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Vector$I', function (columnNames, rowCount) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setDataVector$java_util_Vector$java_util_Vector(C$.newVector$I(rowCount), columnNames);
 }, 1);
 
@@ -37,12 +32,12 @@ C$.c$$java_util_Vector$I.apply(this, [C$.convertToVector$OA(columnNames), rowCou
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Vector$java_util_Vector', function (data, columnNames) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setDataVector$java_util_Vector$java_util_Vector(data, columnNames);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$OAA$OA', function (data, columnNames) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setDataVector$OAA$OA(data, columnNames);
 }, 1);
 
@@ -51,7 +46,7 @@ return this.dataVector;
 });
 
 Clazz.newMeth(C$, 'nonNullVector$java_util_Vector', function (v) {
-return (v != null ) ? v : Clazz.new_($I$(1));
+return (v != null ) ? v : Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'setDataVector$java_util_Vector$java_util_Vector', function (dataVector, columnIdentifiers) {
@@ -73,7 +68,7 @@ Clazz.newMeth(C$, 'justifyRows$I$I', function (from, to) {
 this.dataVector.setSize$I(this.getRowCount$());
 for (var i=from; i < to; i++) {
 if (this.dataVector.elementAt$I(i) == null ) {
-this.dataVector.setElementAt$TE$I(Clazz.new_($I$(1)), i);
+this.dataVector.setElementAt$O$I(Clazz.new_($I$(1,1)), i);
 }(this.dataVector.elementAt$I(i)).setSize$I(this.getColumnCount$());
 }
 }, p$1);
@@ -112,7 +107,7 @@ this.addRow$java_util_Vector(C$.convertToVector$OA(rowData));
 });
 
 Clazz.newMeth(C$, 'insertRow$I$java_util_Vector', function (row, rowData) {
-this.dataVector.insertElementAt$TE$I(rowData, row);
+this.dataVector.insertElementAt$O$I(rowData, row);
 p$1.justifyRows$I$I.apply(this, [row, row + 1]);
 this.fireTableRowsInserted$I$I(row, row);
 });
@@ -133,10 +128,10 @@ for (var i=0; i < g; i++) {
 var to=i;
 var tmp=v.elementAt$I(a + to);
 for (var from=(to + r) % size; from != i; from=(to + r) % size) {
-v.setElementAt$TE$I(v.elementAt$I(a + from), a + to);
+v.setElementAt$O$I(v.elementAt$I(a + from), a + to);
 to=from;
 }
-v.setElementAt$TE$I(tmp, a + to);
+v.setElementAt$O$I(tmp, a + to);
 }
 }, 1);
 
@@ -178,7 +173,7 @@ this.addColumn$O$java_util_Vector(columnName, null);
 });
 
 Clazz.newMeth(C$, 'addColumn$O$java_util_Vector', function (columnName, columnData) {
-this.columnIdentifiers.addElement$TE(columnName);
+this.columnIdentifiers.addElement$O(columnName);
 if (columnData != null ) {
 var columnSize=columnData.size$();
 if (columnSize > this.getRowCount$()) {
@@ -187,7 +182,7 @@ this.dataVector.setSize$I(columnSize);
 var newColumn=this.getColumnCount$() - 1;
 for (var i=0; i < columnSize; i++) {
 var row=this.dataVector.elementAt$I(i);
-row.setElementAt$TE$I(columnData.elementAt$I(i), newColumn);
+row.setElementAt$O$I(columnData.elementAt$I(i), newColumn);
 }
 } else {
 p$1.justifyRows$I$I.apply(this, [0, this.getRowCount$()]);
@@ -224,16 +219,16 @@ return rowVector.elementAt$I(column);
 
 Clazz.newMeth(C$, 'setValueAt$O$I$I', function (aValue, row, column) {
 var rowVector=this.dataVector.elementAt$I(row);
-rowVector.setElementAt$TE$I(aValue, column);
+rowVector.setElementAt$O$I(aValue, column);
 this.fireTableCellUpdated$I$I(row, column);
 });
 
 Clazz.newMeth(C$, 'convertToVector$OA', function (anArray) {
 if (anArray == null ) {
 return null;
-}var v=Clazz.new_($I$(1).c$$I,[anArray.length]);
+}var v=Clazz.new_($I$(1,1).c$$I,[anArray.length]);
 for (var i=0; i < anArray.length; i++) {
-v.addElement$TE(anArray[i]);
+v.addElement$O(anArray[i]);
 }
 return v;
 }, 1);
@@ -241,11 +236,11 @@ return v;
 Clazz.newMeth(C$, 'convertToVector$OAA', function (anArray) {
 if (anArray == null ) {
 return null;
-}var v=Clazz.new_($I$(1).c$$I,[anArray.length]);
+}var v=Clazz.new_($I$(1,1).c$$I,[anArray.length]);
 for (var i=0; i < anArray.length; i++) {
-v.addElement$TE(C$.convertToVector$OA(anArray[i]));
+v.addElement$O(C$.convertToVector$OA(anArray[i]));
 }
 return v;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

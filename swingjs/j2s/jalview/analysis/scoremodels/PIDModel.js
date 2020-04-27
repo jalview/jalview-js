@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),I$=[[0,'jalview.util.Comparison','jalview.math.Matrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PIDModel", null, 'jalview.analysis.scoremodels.SimilarityScoreModel', 'jalview.api.analysis.PairwiseScoreModelI');
+(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),I$=[[0,'jalview.util.Comparison','jalview.math.Matrix']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PIDModel", null, 'jalview.analysis.scoremodels.SimilarityScoreModel', 'jalview.api.analysis.PairwiseScoreModelI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getName$', function () {
@@ -27,7 +26,7 @@ Clazz.newMeth(C$, 'isProtein$', function () {
 return true;
 });
 
-Clazz.newMeth(C$, ['getPairwiseScore$C$C','getPairwiseScore$'], function (c, d) {
+Clazz.newMeth(C$, 'getPairwiseScore$C$C', function (c, d) {
 c=C$.toUpper$C(c);
 d=C$.toUpper$C(d);
 if (c == d && !$I$(1).isGap$C(c) ) {
@@ -64,7 +63,7 @@ values[row][col]=total;
 values[col][row]=total;
 }
 }
-return Clazz.new_($I$(2).c$$DAA,[values]);
+return Clazz.new_($I$(2,1).c$$DAA,[values]);
 });
 
 Clazz.newMeth(C$, 'computePID$S$S$jalview_api_analysis_SimilarityParamsI', function (seq1, seq2, options) {
@@ -108,4 +107,4 @@ Clazz.newMeth(C$, 'getInstance$jalview_api_AlignmentViewPanel', function (avp) {
 return this;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

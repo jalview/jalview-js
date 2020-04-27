@@ -1,44 +1,17 @@
-(function(){var P$=java.util,p$1={},I$=[[0,['java.util.EnumMap','.KeyIterator'],['java.util.EnumMap','.ValueIterator'],['java.util.EnumMap','.EntryIterator'],'java.lang.reflect.Array',['java.util.AbstractMap','.SimpleEntry'],['java.util.EnumMap','.EntryIterator','.Entry'],'Enum','java.util.Arrays',['java.util.EnumMap','.KeySet'],['java.util.EnumMap','.Values'],['java.util.EnumMap','.EntrySet'],'AssertionError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EnumMap", function(){
+(function(){var P$=java.util,p$1={},I$=[[0,['java.util.EnumMap','.KeyIterator'],['java.util.EnumMap','.ValueIterator'],['java.util.EnumMap','.EntryIterator'],'java.lang.reflect.Array',['java.util.AbstractMap','.SimpleEntry'],['java.util.EnumMap','.EntryIterator','.Entry'],'Enum','java.util.Arrays',['java.util.EnumMap','.KeySet'],['java.util.EnumMap','.Values'],['java.util.EnumMap','.EntrySet'],'AssertionError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EnumMap", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractMap', ['java.io.Serializable', 'Cloneable']);
-C$.NULL=null;
-C$.ZERO_LENGTH_ENUM_ARRAY=null;
+C$.$classes$=[['KeySet',2],['Values',2],['EntrySet',2],['EnumMapIterator',1026],['KeyIterator',2],['ValueIterator',2],['EntryIterator',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NULL=((P$.EnumMap$1||
-(function(){var C$=Clazz.newClass(P$, "EnumMap$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, null, 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'hashCode$', function () {
-return 0;
-});
-
-Clazz.newMeth(C$, 'toString', function () {
-return "java.util.EnumMap.NULL";
-});
-})()
-), Clazz.new_(P$.EnumMap$1.$init$, [this, null]));
-C$.ZERO_LENGTH_ENUM_ARRAY=Clazz.array($I$(7), [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.keyType=null;
-this.keyUniverse=null;
-this.vals=null;
-this.size=0;
-this.entrySet=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.size=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['size'],'O',['keyType','Class','keyUniverse','_.K[]','vals','Object[]','entrySet','java.util.Set']]
+,['O',['NULL','java.lang.Object','ZERO_LENGTH_ENUM_ARRAY','Enum[]']]]
 
 Clazz.newMeth(C$, 'maskNull$O', function (value) {
 return (value == null  ? C$.NULL : value);
@@ -49,14 +22,14 @@ return (value === C$.NULL  ? null : value);
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$Class', function (keyType) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.keyType=keyType;
 this.keyUniverse=C$.getKeyUniverse$Class(keyType);
 this.vals=Clazz.array(java.lang.Object, [this.keyUniverse.length]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_EnumMap', function (m) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.keyType=m.keyType;
 this.keyUniverse=m.keyUniverse;
 this.vals=m.vals.clone$();
@@ -64,7 +37,7 @@ this.size=m.size;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (m) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (Clazz.instanceOf(m, "java.util.EnumMap")) {
 var em=m;
 this.keyType=em.keyType;
@@ -102,8 +75,8 @@ Clazz.newMeth(C$, 'get$O', function (key) {
 return (p$1.isValidKey$O.apply(this, [key]) ? p$1.unmaskNull$O.apply(this, [this.vals[(key).ordinal$()]]) : null);
 });
 
-Clazz.newMeth(C$, ['put$TK$TV'], function (key, value) {
-p$1.typeCheck$TK.apply(this, [key]);
+Clazz.newMeth(C$, ['put$Enum$O','put$O$O'], function (key, value) {
+p$1.typeCheck$Enum.apply(this, [key]);
 var index=key.ordinal$();
 var oldValue=this.vals[index];
 this.vals[index]=p$1.maskNull$O.apply(this, [value]);
@@ -160,19 +133,19 @@ this.size=0;
 Clazz.newMeth(C$, 'keySet$', function () {
 var ks=this.keySet;
 if (ks != null ) return ks;
- else return this.keySet=Clazz.new_($I$(9), [this, null]);
+ else return this.keySet=Clazz.new_($I$(9,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'values$', function () {
 var vs=this.values;
 if (vs != null ) return vs;
- else return this.values=Clazz.new_($I$(10), [this, null]);
+ else return this.values=Clazz.new_($I$(10,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'entrySet$', function () {
 var es=this.entrySet;
 if (es != null ) return es;
- else return this.entrySet=Clazz.new_($I$(11), [this, null]);
+ else return this.entrySet=Clazz.new_($I$(11,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -222,7 +195,7 @@ try {
 result=C$.superclazz.prototype.clone$.apply(this, []);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(12));
+throw Clazz.new_($I$(12,1));
 } else {
 throw e;
 }
@@ -232,7 +205,7 @@ result.entrySet=null;
 return result;
 });
 
-Clazz.newMeth(C$, ['typeCheck$TK'], function (key) {
+Clazz.newMeth(C$, 'typeCheck$Enum', function (key) {
 var keyClass=key.getClass$();
 if (keyClass !== this.keyType  && keyClass.getSuperclass$() !== this.keyType  ) throw Clazz.new_(Clazz.load('ClassCastException').c$$S,[keyClass + " != " + this.keyType ]);
 }, p$1);
@@ -261,22 +234,42 @@ var size=s.readInt$();
 for (var i=0; i < size; i++) {
 var key=s.readObject$();
 var value=s.readObject$();
-this.put$TK$TV(key, value);
+this.put$Enum$O(key, value);
 }
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.NULL=((P$.EnumMap$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "EnumMap$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'hashCode$', function () {
+return 0;
+});
+
+Clazz.newMeth(C$, 'toString', function () {
+return "java.util.EnumMap.NULL";
+});
+})()
+), Clazz.new_(P$.EnumMap$1.$init$,[this, null]));
+C$.ZERO_LENGTH_ENUM_ARRAY=Clazz.array($I$(7), [0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap, "KeySet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap, "KeySet", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.AbstractSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(1), [this, null]);
+return Clazz.new_($I$(1,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -284,34 +277,33 @@ return this.this$0.size;
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
-return this.b$['java.util.EnumMap'].containsKey$O.apply(this.b$['java.util.EnumMap'], [o]);
+return this.this$0.containsKey$O.apply(this.this$0, [o]);
 });
 
 Clazz.newMeth(C$, 'remove$O', function (o) {
 var oldSize=this.this$0.size;
-this.b$['java.util.EnumMap'].remove$O.apply(this.b$['java.util.EnumMap'], [o]);
+this.this$0.remove$O.apply(this.this$0, [o]);
 return this.this$0.size != oldSize;
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-this.b$['java.util.EnumMap'].clear$.apply(this.b$['java.util.EnumMap'], []);
+this.this$0.clear$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap, "Values", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap, "Values", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.AbstractCollection');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(2), [this, null]);
+return Clazz.new_($I$(2,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -319,11 +311,11 @@ return this.this$0.size;
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
-return this.b$['java.util.EnumMap'].containsValue$O.apply(this.b$['java.util.EnumMap'], [o]);
+return this.this$0.containsValue$O.apply(this.this$0, [o]);
 });
 
 Clazz.newMeth(C$, 'remove$O', function (o) {
-o=p$1.maskNull$O.apply(this.b$['java.util.EnumMap'], [o]);
+o=p$1.maskNull$O.apply(this.this$0, [o]);
 for (var i=0; i < this.this$0.vals.length; i++) {
 if (o.equals$O(this.this$0.vals[i])) {
 this.this$0.vals[i]=null;
@@ -334,36 +326,35 @@ return false;
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-this.b$['java.util.EnumMap'].clear$.apply(this.b$['java.util.EnumMap'], []);
+this.this$0.clear$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap, "EntrySet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap, "EntrySet", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.AbstractSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(3), [this, null]);
+return Clazz.new_($I$(3,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
 if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) return false;
 var entry=o;
-return p$1.containsMapping$O$O.apply(this.b$['java.util.EnumMap'], [entry.getKey$(), entry.getValue$()]);
+return p$1.containsMapping$O$O.apply(this.this$0, [entry.getKey$(), entry.getValue$()]);
 });
 
 Clazz.newMeth(C$, 'remove$O', function (o) {
 if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) return false;
 var entry=o;
-return p$1.removeMapping$O$O.apply(this.b$['java.util.EnumMap'], [entry.getKey$(), entry.getValue$()]);
+return p$1.removeMapping$O$O.apply(this.this$0, [entry.getKey$(), entry.getValue$()]);
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -371,14 +362,14 @@ return this.this$0.size;
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-this.b$['java.util.EnumMap'].clear$.apply(this.b$['java.util.EnumMap'], []);
+this.this$0.clear$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$, 'toArray$', function () {
 return p$1.fillEntryArray$OA.apply(this, [Clazz.array(java.lang.Object, [this.this$0.size])]);
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 var size=this.size$();
 if (a.length < size) a=Clazz.array(a.getClass$().getComponentType$(), size);
 if (a.length > size) a[size]=null;
@@ -387,7 +378,7 @@ return p$1.fillEntryArray$OA.apply(this, [a]);
 
 Clazz.newMeth(C$, 'fillEntryArray$OA', function (a) {
 var j=0;
-for (var i=0; i < this.this$0.vals.length; i++) if (this.this$0.vals[i] != null ) a[j++]=Clazz.new_($I$(5).c$$TK$TV,[this.this$0.keyUniverse[i], p$1.unmaskNull$O.apply(this.b$['java.util.EnumMap'], [this.this$0.vals[i]])]);
+for (var i=0; i < this.this$0.vals.length; i++) if (this.this$0.vals[i] != null ) a[j++]=Clazz.new_([this.this$0.keyUniverse[i], p$1.unmaskNull$O.apply(this.this$0, [this.this$0.vals[i]])],$I$(5,1).c$$O$O);
 
 return a;
 }, p$1);
@@ -395,23 +386,18 @@ return a;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap, "EnumMapIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap, "EnumMapIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.lastReturnedIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.index=0;
 this.lastReturnedIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index','lastReturnedIndex']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 while (this.index < this.this$0.vals.length && this.this$0.vals[this.index] == null  )this.index++;
@@ -434,15 +420,14 @@ if (this.lastReturnedIndex < 0) throw Clazz.new_(Clazz.load('IllegalStateExcepti
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap, "KeyIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap, "KeyIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.EnumMap','.EnumMapIterator']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'next$', function () {
 if (!this.hasNext$()) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
@@ -453,43 +438,39 @@ return this.this$0.keyUniverse[this.lastReturnedIndex];
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap, "ValueIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap, "ValueIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.EnumMap','.EnumMapIterator']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'next$', function () {
 if (!this.hasNext$()) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 this.lastReturnedIndex=this.index++;
-return p$1.unmaskNull$O.apply(this.b$['java.util.EnumMap'], [this.this$0.vals[this.lastReturnedIndex]]);
+return p$1.unmaskNull$O.apply(this.this$0, [this.this$0.vals[this.lastReturnedIndex]]);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap, "EntryIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap, "EntryIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.EnumMap','.EnumMapIterator']);
+C$.$classes$=[['Entry',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lastReturnedEntry=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['lastReturnedEntry','java.util.EnumMap.EntryIterator.Entry']]]
 
 Clazz.newMeth(C$, 'next$', function () {
 if (!this.hasNext$()) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
-this.lastReturnedEntry=Clazz.new_($I$(6).c$$I, [this, null, this.index++]);
+this.lastReturnedEntry=Clazz.new_($I$(6,1).c$$I,[this, null, this.index++]);
 return this.lastReturnedEntry;
 });
 
@@ -500,23 +481,19 @@ this.lastReturnedEntry.index=this.lastReturnedIndex;
 this.lastReturnedEntry=null;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.EnumMap.EntryIterator, "Entry", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EnumMap.EntryIterator, "Entry", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, [['java.util.Map','java.util.Map.Entry']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index']]]
 
 Clazz.newMeth(C$, 'c$$I', function (index) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.index=index;
 }, 1);
 
@@ -530,7 +507,7 @@ p$1.checkIndexForEntryUse.apply(this, []);
 return p$1.unmaskNull$O.apply(this.b$['java.util.EnumMap'], [this.b$['java.util.EnumMap'].vals[this.index]]);
 });
 
-Clazz.newMeth(C$, ['setValue$TV'], function (value) {
+Clazz.newMeth(C$, 'setValue$O', function (value) {
 p$1.checkIndexForEntryUse.apply(this, []);
 var oldValue=p$1.unmaskNull$O.apply(this.b$['java.util.EnumMap'], [this.b$['java.util.EnumMap'].vals[this.index]]);
 this.b$['java.util.EnumMap'].vals[this.index]=p$1.maskNull$O.apply(this.b$['java.util.EnumMap'], [value]);
@@ -568,4 +545,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

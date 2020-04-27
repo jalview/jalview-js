@@ -1,40 +1,34 @@
 (function(){var P$=Clazz.newPackage("swingjs.xml"),I$=[];
-var C$=Clazz.newClass(P$, "JSXMLStreamResult");
+/*c*/var C$=Clazz.newClass(P$, "JSXMLStreamResult");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.systemId=null;
-this.outputStream=null;
-this.writer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['systemId'],'O',['outputStream','java.io.OutputStream','writer','java.io.Writer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (os) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setOutputStream$java_io_OutputStream(os);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Writer', function (writer) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setWriter$java_io_Writer(writer);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (id) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.systemId=id;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (f) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setSystemId$S(f.toURI$().toASCIIString$());
 }, 1);
 
@@ -66,4 +60,4 @@ Clazz.newMeth(C$, 'getSystemId$', function () {
 return this.systemId;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:29:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

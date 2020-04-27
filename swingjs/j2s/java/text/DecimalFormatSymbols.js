@@ -1,43 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable','java.util.Locale','InternalError','sun.util.resources.LocaleData']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DecimalFormatSymbols", null, null, 'Cloneable');
-C$.cachedLocaleData=null;
+(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable','java.util.Locale','java.util.Currency','InternalError','sun.util.resources.LocaleData']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DecimalFormatSymbols", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.cachedLocaleData=Clazz.new_($I$(1).c$$I,[3]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.zeroDigit='\0';
-this.groupingSeparator='\0';
-this.decimalSeparator='\0';
-this.perMill='\0';
-this.percent='\0';
-this.digit='\0';
-this.patternSeparator='\0';
-this.infinity=null;
-this.NaN=null;
-this.minusSign='\0';
-this.currencySymbol=null;
-this.intlCurrencySymbol=null;
-this.monetarySeparator='\0';
-this.exponential='\0';
-this.exponentialSeparator=null;
-this.locale=null;
-this.serialVersionOnStream=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.serialVersionOnStream=3;
-}, 1);
+},1);
+
+C$.$fields$=[['C',['zeroDigit','groupingSeparator','decimalSeparator','perMill','percent','digit','patternSeparator','minusSign','monetarySeparator','exponential'],'I',['serialVersionOnStream'],'S',['infinity','NaN','currencySymbol','intlCurrencySymbol','exponentialSeparator'],'O',['currency','java.util.Currency','locale','java.util.Locale']]
+,['O',['cachedLocaleData','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.initialize$java_util_Locale.apply(this, [$I$(2).getDefault$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Locale', function (locale) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.initialize$java_util_Locale.apply(this, [locale]);
 }, 1);
 
@@ -143,6 +122,29 @@ return this.intlCurrencySymbol;
 
 Clazz.newMeth(C$, 'setInternationalCurrencySymbol$S', function (currencyCode) {
 this.intlCurrencySymbol=currencyCode;
+this.currency=null;
+if (currencyCode != null ) {
+try {
+this.currency=$I$(3).getInstance$S(currencyCode);
+this.currencySymbol=this.currency.getSymbol$();
+} catch (e) {
+if (Clazz.exceptionOf(e,"IllegalArgumentException")){
+} else {
+throw e;
+}
+}
+}});
+
+Clazz.newMeth(C$, 'getCurrency$', function () {
+return this.currency;
+});
+
+Clazz.newMeth(C$, 'setCurrency$java_util_Currency', function (currency) {
+if (currency == null ) {
+throw Clazz.new_(Clazz.load('NullPointerException'));
+}this.currency=currency;
+this.intlCurrencySymbol=currency.getCurrencyCode$();
+this.currencySymbol=currency.getSymbol$java_util_Locale(this.locale);
 });
 
 Clazz.newMeth(C$, 'getMonetaryDecimalSeparator$', function () {
@@ -176,7 +178,7 @@ try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(4,1));
 } else {
 throw e;
 }
@@ -201,10 +203,10 @@ return result;
 Clazz.newMeth(C$, 'initialize$java_util_Locale', function (locale) {
 this.locale=locale;
 var needCacheUpdate=false;
-var data=C$.cachedLocaleData.get$O(locale);
+var data=C$.cachedLocaleData.get$O(locale.toString());
 if (data == null ) {
 data=Clazz.array(java.lang.Object, [3]);
-var rb=$I$(4).getNumberFormatData$java_util_Locale(locale);
+var rb=$I$(5).getNumberFormatData$java_util_Locale(locale);
 data[0]=rb.getStringArray$S("NumberElements");
 needCacheUpdate=true;
 }var numberElements=data[0];
@@ -224,7 +226,11 @@ this.intlCurrencySymbol="\u00a4";
 this.currencySymbol="$";
 this.monetarySeparator=this.decimalSeparator;
 if (needCacheUpdate) {
-C$.cachedLocaleData.put$TK$TV(locale, data);
+C$.cachedLocaleData.put$O$O(locale.toString(), data);
 }}, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.cachedLocaleData=Clazz.new_($I$(1,1).c$$I,[3]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

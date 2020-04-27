@@ -1,36 +1,22 @@
-(function(){var P$=Clazz.newPackage("javax.swing.tree"),p$1={},p$2={},I$=[[0,'java.awt.Dimension','javax.swing.UIManager','javax.swing.SwingUtilities',['javax.swing.tree.DefaultTreeCellEditor','.EditorContainer'],'javax.swing.DefaultCellEditor',['javax.swing.tree.DefaultTreeCellEditor','.DefaultTextField']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultTreeCellEditor", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.tree"),p$1={},p$2={},I$=[[0,'java.awt.Dimension','javax.swing.UIManager','javax.swing.SwingUtilities',['javax.swing.tree.DefaultTreeCellEditor','.EditorContainer'],'javax.swing.DefaultCellEditor',['javax.swing.tree.DefaultTreeCellEditor','.DefaultTextField']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultTreeCellEditor", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.awt.event.ActionListener', 'javax.swing.tree.TreeCellEditor', 'javax.swing.event.TreeSelectionListener']);
+C$.$classes$=[['DefaultTextField',1],['EditorContainer',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.realEditor=null;
-this.renderer=null;
-this.editingContainer=null;
-this.editingComponent=null;
-this.canEdit=false;
-this.offset=0;
-this.tree=null;
-this.lastPath=null;
-this.lastRow=0;
-this.borderSelectionColor=null;
-this.editingIcon=null;
-this.font=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['canEdit'],'I',['offset','lastRow'],'O',['realEditor','javax.swing.tree.TreeCellEditor','renderer','javax.swing.tree.DefaultTreeCellRenderer','editingContainer','java.awt.Container','editingComponent','java.awt.Component','tree','javax.swing.JTree','lastPath','javax.swing.tree.TreePath','borderSelectionColor','java.awt.Color','editingIcon','javax.swing.Icon','font','java.awt.Font']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTree$javax_swing_tree_DefaultTreeCellRenderer', function (tree, renderer) {
 C$.c$$javax_swing_JTree$javax_swing_tree_DefaultTreeCellRenderer$javax_swing_tree_TreeCellEditor.apply(this, [tree, renderer, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTree$javax_swing_tree_DefaultTreeCellRenderer$javax_swing_tree_TreeCellEditor', function (tree, renderer, editor) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.renderer=renderer;
 this.realEditor=editor;
 if (this.realEditor == null ) this.realEditor=this.createTreeCellEditor$();
@@ -130,13 +116,13 @@ Clazz.newMeth(C$, 'getCellEditorListeners$', function () {
 return (this.realEditor).getCellEditorListeners$();
 });
 
-Clazz.newMeth(C$, ['valueChanged$javax_swing_event_TreeSelectionEvent','valueChanged$'], function (e) {
+Clazz.newMeth(C$, 'valueChanged$javax_swing_event_TreeSelectionEvent', function (e) {
 if (this.tree != null ) {
 if (this.tree.getSelectionCount$() == 1) this.lastPath=this.tree.getSelectionPath$();
  else this.lastPath=null;
 }});
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (this.tree != null  && this.lastPath != null  ) {
 this.tree.startEditingAtPath$javax_swing_tree_TreePath(this.lastPath);
 }});
@@ -195,26 +181,25 @@ this.editingContainer.add$java_awt_Component(this.editingComponent);
 }});
 
 Clazz.newMeth(C$, 'createContainer$', function () {
-return Clazz.new_($I$(4), [this, null]);
+return Clazz.new_($I$(4,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'createTreeCellEditor$', function () {
 var aBorder=$I$(2).getBorder$O("Tree.editorBorder");
 var editor=((P$.DefaultTreeCellEditor$1||
-(function(){var C$=Clazz.newClass(P$, "DefaultTreeCellEditor$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.DefaultCellEditor'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "DefaultTreeCellEditor$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.DefaultCellEditor'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'shouldSelectCell$java_util_EventObject', function (event) {
 var retValue=C$.superclazz.prototype.shouldSelectCell$java_util_EventObject.apply(this, [event]);
 return retValue;
 });
 })()
-), Clazz.new_($I$(5).c$$javax_swing_JTextField, [this, null, Clazz.new_($I$(6).c$$javax_swing_border_Border, [this, null, aBorder])],P$.DefaultTreeCellEditor$1));
+), Clazz.new_([this, null, Clazz.new_($I$(6,1).c$$javax_swing_border_Border,[this, null, aBorder])],$I$(5,1).c$$javax_swing_JTextField,P$.DefaultTreeCellEditor$1));
 editor.setClickCountToStart$I(1);
 return editor;
 });
@@ -225,24 +210,19 @@ this.editingContainer.remove$java_awt_Component(this.editingComponent);
 }this.editingComponent=null;
 }, p$2);
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultTreeCellEditor, "DefaultTextField", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultTreeCellEditor, "DefaultTextField", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JTextField');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.border=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['border','javax.swing.border.Border']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_border_Border', function (border) {
-C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this, [null, null, 0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this,[null, null, 0]);C$.$init$.apply(this);
 this.setBorder$javax_swing_border_Border(border);
 }, 1);
 
@@ -274,18 +254,17 @@ size.height=rSize.height;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultTreeCellEditor, "EditorContainer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultTreeCellEditor, "EditorContainer", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.awt.Container');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setLayout$java_awt_LayoutManager(null);
 }, 1);
 
@@ -298,11 +277,7 @@ if (this.getComponentOrientation$().isLeftToRight$()) {
 this.this$0.editingIcon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(this, g, 0, yLoc);
 } else {
 this.this$0.editingIcon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(this, g, width - this.this$0.editingIcon.getIconWidth$(), yLoc);
-}}var background=this.this$0.getBorderSelectionColor$.apply(this.this$0, []);
-if (background != null ) {
-g.setColor$java_awt_Color(background);
-g.drawRect$I$I$I$I(0, 0, width - 1, height - 1);
-}C$.superclazz.prototype.paint$java_awt_Graphics.apply(this, [g]);
+}}C$.superclazz.prototype.paint$java_awt_Graphics.apply(this, [g]);
 });
 
 Clazz.newMeth(C$, 'doLayout$', function () {
@@ -333,10 +308,10 @@ if (rSize != null ) pSize.height=Math.max(pSize.height, rSize.height);
 if (this.this$0.editingIcon != null ) pSize.height=Math.max(pSize.height, this.this$0.editingIcon.getIconHeight$());
 pSize.width=Math.max(pSize.width, 100);
 return pSize;
-}return Clazz.new_($I$(1).c$$I$I,[0, 0]);
+}return Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

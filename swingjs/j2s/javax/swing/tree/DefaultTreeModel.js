@@ -1,26 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing.tree"),p$1={},I$=[[0,'javax.swing.event.EventListenerList','javax.swing.tree.TreeNode','javax.swing.event.TreeModelListener','javax.swing.event.TreeModelEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultTreeModel", null, null, 'javax.swing.tree.TreeModel');
+(function(){var P$=Clazz.newPackage("javax.swing.tree"),p$1={},I$=[[0,'javax.swing.event.EventListenerList','javax.swing.tree.TreeNode','javax.swing.event.TreeModelListener','javax.swing.event.TreeModelEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultTreeModel", null, null, 'javax.swing.tree.TreeModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.root=null;
-this.listenerList=null;
-this.asksAllowsChildren=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.listenerList=Clazz.new_($I$(1));
-}, 1);
+this.listenerList=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['asksAllowsChildren'],'O',['root','javax.swing.tree.TreeNode','listenerList','javax.swing.event.EventListenerList']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode', function (root) {
 C$.c$$javax_swing_tree_TreeNode$Z.apply(this, [root, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode$Z', function (root, asksAllowsChildren) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.root=root;
 this.asksAllowsChildren=asksAllowsChildren;
 }, 1);
@@ -160,11 +154,11 @@ retNodes[retNodes.length - depth]=aNode;
 });
 
 Clazz.newMeth(C$, 'addTreeModelListener$javax_swing_event_TreeModelListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeTreeModelListener$javax_swing_event_TreeModelListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getTreeModelListeners$', function () {
@@ -176,7 +170,7 @@ var listeners=this.listenerList.getListenerList$();
 var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e=Clazz.new_($I$(4).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_($I$(4,1).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeNodesChanged$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -186,7 +180,7 @@ var listeners=this.listenerList.getListenerList$();
 var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e=Clazz.new_($I$(4).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_($I$(4,1).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeNodesInserted$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -196,7 +190,7 @@ var listeners=this.listenerList.getListenerList$();
 var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e=Clazz.new_($I$(4).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_($I$(4,1).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeNodesRemoved$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -206,7 +200,7 @@ var listeners=this.listenerList.getListenerList$();
 var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e=Clazz.new_($I$(4).c$$O$OA$IA$OA,[source, path, childIndices, children]);
+if (e == null ) e=Clazz.new_($I$(4,1).c$$O$OA$IA$OA,[source, path, childIndices, children]);
 (listeners[i + 1]).treeStructureChanged$javax_swing_event_TreeModelEvent(e);
 }}
 });
@@ -216,7 +210,7 @@ var listeners=this.listenerList.getListenerList$();
 var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(3),['treeNodesChanged$javax_swing_event_TreeModelEvent','treeNodesInserted$javax_swing_event_TreeModelEvent','treeNodesRemoved$javax_swing_event_TreeModelEvent','treeStructureChanged$javax_swing_event_TreeModelEvent']) ) {
-if (e == null ) e=Clazz.new_($I$(4).c$$O$javax_swing_tree_TreePath,[source, path]);
+if (e == null ) e=Clazz.new_($I$(4,1).c$$O$javax_swing_tree_TreePath,[source, path]);
 (listeners[i + 1]).treeStructureChanged$javax_swing_event_TreeModelEvent(e);
 }}
 }, p$1);
@@ -227,4 +221,4 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

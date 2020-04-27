@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "ImageMediaEntry", null, 'java.awt.MediaEntry', ['java.awt.image.ImageObserver', 'java.io.Serializable']);
+/*c*/var C$=Clazz.newClass(P$, "ImageMediaEntry", null, 'java.awt.MediaEntry', ['java.awt.image.ImageObserver', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.image=null;
-this.width=0;
-this.height=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['width','height'],'O',['image','java.awt.Image']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_MediaTracker$java_awt_Image$I$I$I', function (mt, img, c, w, h) {
-C$.superclazz.c$$java_awt_MediaTracker$I.apply(this, [mt, c]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_MediaTracker$I.apply(this,[mt, c]);C$.$init$.apply(this);
 this.image=img;
 this.width=w;
 this.height=h;
@@ -56,7 +49,7 @@ return 8;
 }return 0;
 });
 
-Clazz.newMeth(C$, ['imageUpdate$java_awt_Image$I$I$I$I$I','imageUpdate$'], function (img, infoflags, x, y, w, h) {
+Clazz.newMeth(C$, 'imageUpdate$java_awt_Image$I$I$I$I$I', function (img, infoflags, x, y, w, h) {
 if (this.cancelled) {
 return false;
 }var s=this.parseflags$I(infoflags);
@@ -67,4 +60,4 @@ this.setStatus$I(s);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

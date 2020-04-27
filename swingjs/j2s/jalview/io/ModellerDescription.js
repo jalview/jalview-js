@@ -1,29 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.util.Hashtable','com.stevesoft.pat.Regex',['jalview.io.ModellerDescription','.resCode'],'java.util.StringTokenizer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ModellerDescription", function(){
+(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.util.Hashtable','com.stevesoft.pat.Regex',['jalview.io.ModellerDescription','.resCode'],'java.util.StringTokenizer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ModellerDescription", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['resCode',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seqTypes=null;
-this.Fields=null;
-this.TYPE=0;
-this.LOCALID=0;
-this.START=0;
-this.START_CHAIN=0;
-this.END=0;
-this.END_CHAIN=0;
-this.DESCRIPTION1=0;
-this.DESCRIPTION2=0;
-this.RESOLUTION=0;
-this.TAIL=0;
-this.Types=null;
-this.Padding=null;
-this.fields=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.seqTypes=Clazz.array(String, -1, ["sequence", "structure", "structureX", "structureN"]);
@@ -40,17 +21,19 @@ this.RESOLUTION=8;
 this.TAIL=9;
 this.Types=Clazz.array(Integer.TYPE, -1, [0, 0, 1, 0, 1, 0, 0, 0, 0, 0]);
 this.Padding=Clazz.array(Character.TYPE, -1, [" ", " ", " ", ".", " ", ".", ".", ".", ".", "."]);
-this.fields=Clazz.new_($I$(1));
-}, 1);
+this.fields=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['I',['TYPE','LOCALID','START','START_CHAIN','END','END_CHAIN','DESCRIPTION1','DESCRIPTION2','RESOLUTION','TAIL'],'O',['seqTypes','String[]','+Fields','Types','int[]','Padding','char[]','fields','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.fields.put$TK$TV(this.Fields[9], "");
+;C$.$init$.apply(this);
+this.fields.put$O$O(this.Fields[9], "");
 }, 1);
 
 Clazz.newMeth(C$, 'validResidueCode$S', function (field) {
 var val=null;
-var r=Clazz.new_($I$(2).c$$S,["\\s*((([-0-9]+).?)|FIRST|LAST|@)"]);
+var r=Clazz.new_(["\\s*((([-0-9]+).?)|FIRST|LAST|@)"],$I$(2,1).c$$S);
 if (!r.search$S(field)) {
 return null;
 }var value=r.stringMatched$I(3);
@@ -58,19 +41,19 @@ if (value == null ) {
 value=r.stringMatched$I(1);
 }try {
 val=Integer.valueOf$S(value);
-return Clazz.new_($I$(3).c$$S$Integer, [this, null, field, val]);
+return Clazz.new_($I$(3,1).c$$S$Integer,[this, null, field, val]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
 throw e;
 }
 }
-return Clazz.new_($I$(3).c$$S$Integer, [this, null, field, null]);
+return Clazz.new_($I$(3,1).c$$S$Integer,[this, null, field, null]);
 }, p$1);
 
 Clazz.newMeth(C$, 'parseDescription$S', function (desc) {
-var fields=Clazz.new_($I$(1));
-var st=Clazz.new_($I$(4).c$$S$S$Z,[desc, ":", true]);
+var fields=Clazz.new_($I$(1,1));
+var st=Clazz.new_($I$(4,1).c$$S$S$Z,[desc, ":", true]);
 var field;
 var type=-1;
 if (st.countTokens$() > 0) {
@@ -90,10 +73,10 @@ if (!field.equals$O(":")) {
 if (this.Types[i] == 1) {
 var val=p$1.validResidueCode$S.apply(this, [field]);
 if (val != null ) {
-fields.put$TK$TV( String.instantialize(this.Fields[i] + "num"), val);
+fields.put$O$O( String.instantialize(this.Fields[i] + "num"), val);
 } else {
 type=-1;
-};}fields.put$TK$TV(this.Fields[i++], field);
+};}fields.put$O$O(this.Fields[i++], field);
 if (st.hasMoreTokens$()) {
 st.nextToken$();
 }} else {
@@ -104,17 +87,17 @@ while (st.hasMoreTokens$()){
 var tl=st.nextToken$S(":");
 field += tl.equals$O(":") ? tl : (":" + tl);
 }
-fields.put$TK$TV(this.Fields[9], field);
+fields.put$O$O(this.Fields[9], field);
 }}}if (type == -1) {
-fields=Clazz.new_($I$(1));
-fields.put$TK$TV(this.Fields[9],  String.instantialize(desc));
+fields=Clazz.new_($I$(1,1));
+fields.put$O$O(this.Fields[9],  String.instantialize(desc));
 } else {
-fields.put$TK$TV(this.Fields[0], this.seqTypes[type]);
+fields.put$O$O(this.Fields[0], this.seqTypes[type]);
 }return fields;
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$S', function (desc) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (desc == null ) {
 desc="";
 }this.fields=p$1.parseDescription$S.apply(this, [desc]);
@@ -122,18 +105,18 @@ desc="";
 
 Clazz.newMeth(C$, 'setStartCode$I', function (v) {
 var r;
-this.fields.put$TK$TV(this.Fields[2] + "num", r=Clazz.new_($I$(3).c$$I, [this, null, v]));
-this.fields.put$TK$TV(this.Fields[2], r.field);
+this.fields.put$O$O(this.Fields[2] + "num", r=Clazz.new_($I$(3,1).c$$I,[this, null, v]));
+this.fields.put$O$O(this.Fields[2], r.field);
 });
 
 Clazz.newMeth(C$, 'setEndCode$I', function (v) {
 var r;
-this.fields.put$TK$TV(this.Fields[4] + "num", r=Clazz.new_($I$(3).c$$I, [this, null, v]));
-this.fields.put$TK$TV(this.Fields[4], r.field);
+this.fields.put$O$O(this.Fields[4] + "num", r=Clazz.new_($I$(3,1).c$$I,[this, null, v]));
+this.fields.put$O$O(this.Fields[4], r.field);
 });
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI', function (seq) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (seq.getDescription$() != null ) {
 this.fields=p$1.parseDescription$S.apply(this, [seq.getDescription$()]);
 }if (this.isModellerFieldset$()) {
@@ -144,7 +127,7 @@ this.setEndCode$I(seq.getEnd$());
 }} else {
 this.setStartCode$I(seq.getStart$());
 this.setEndCode$I(seq.getEnd$());
-this.fields.put$TK$TV(this.Fields[1], seq.getName$());
+this.fields.put$O$O(this.Fields[1], seq.getName$());
 var t=0;
 if (seq.getDatasetSequence$() != null  && seq.getDatasetSequence$().getDBRefs$() != null  ) {
 var dbr=seq.getDatasetSequence$().getDBRefs$();
@@ -152,11 +135,11 @@ for (var i=0, ni=dbr.size$(); i < ni; i++) {
 var dbri=dbr.get$I(i);
 if (dbri != null ) {
 if (dbri.getSource$().equals$O("PDB")) {
-this.fields.put$TK$TV(this.Fields[1], dbri.getAccessionId$());
+this.fields.put$O$O(this.Fields[1], dbri.getAccessionId$());
 t=2;
 break;
 }}}
-}this.fields.put$TK$TV(this.Fields[0], this.seqTypes[t]);
+}this.fields.put$O$O(this.Fields[0], this.seqTypes[t]);
 }}, 1);
 
 Clazz.newMeth(C$, 'isModellerFieldset$', function () {
@@ -230,35 +213,30 @@ newSeq.setEnd$I(newSeq.getStart$() + newSeq.getLength$());
 }return false;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ModellerDescription, "resCode", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ModellerDescription, "resCode", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.val=null;
-this.field=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['field'],'O',['val','Integer']]]
 
 Clazz.newMeth(C$, 'c$$S$Integer', function (f, v) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.val=v;
 this.field=f;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (v) {
-C$.$init$.apply(this);
-this.val= new Integer(v);
+;C$.$init$.apply(this);
+this.val=Integer.valueOf$I(v);
 this.field=this.val.toString();
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

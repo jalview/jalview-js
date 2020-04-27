@@ -1,29 +1,19 @@
-(function(){var P$=Clazz.newPackage("javajs.img"),I$=[[0,'java.util.zip.CRC32','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CRCEncoder", null, 'javajs.img.ImageEncoder');
+(function(){var P$=Clazz.newPackage("javajs.img"),I$=[[0,'java.util.zip.CRC32','javajs.util.AU']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CRCEncoder", null, 'javajs.img.ImageEncoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.startPos=0;
-this.bytePos=0;
-this.crc=null;
-this.pngBytes=null;
-this.dataLen=0;
-this.int2=null;
-this.int4=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.int2=Clazz.array(Byte.TYPE, [2]);
 this.int4=Clazz.array(Byte.TYPE, [4]);
-}, 1);
+},1);
+
+C$.$fields$=[['I',['startPos','bytePos','dataLen'],'O',['crc','java.util.zip.CRC32','pngBytes','byte[]','+int2','+int4']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.pngBytes=Clazz.array(Byte.TYPE, [250]);
-this.crc=Clazz.new_($I$(1));
+this.crc=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'setData$BA$I', function (b, pt) {
@@ -43,8 +33,8 @@ this.writeInt4$I((this.crc.getValue$()|0));
 });
 
 Clazz.newMeth(C$, 'writeInt2$I', function (n) {
-this.int2[0]=((((n >> 8) & 255)|0)|0);
-this.int2[1]=(((n & 255)|0)|0);
+this.int2[0]=(((n >> 8) & 255)|0);
+this.int2[1]=((n & 255)|0);
 this.writeBytes$BA(this.int2);
 });
 
@@ -54,10 +44,10 @@ this.writeBytes$BA(this.int4);
 });
 
 Clazz.newMeth(C$, 'getInt4$I$BA', function (n, int4) {
-int4[0]=((((n >> 24) & 255)|0)|0);
-int4[1]=((((n >> 16) & 255)|0)|0);
-int4[2]=((((n >> 8) & 255)|0)|0);
-int4[3]=(((n & 255)|0)|0);
+int4[0]=(((n >> 24) & 255)|0);
+int4[1]=(((n >> 16) & 255)|0);
+int4[2]=(((n >> 8) & 255)|0);
+int4[3]=((n & 255)|0);
 }, 1);
 
 Clazz.newMeth(C$, 'writeByte$I', function (b) {
@@ -78,4 +68,4 @@ this.bytePos=newPos;
 });
 var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

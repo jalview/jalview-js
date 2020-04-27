@@ -1,30 +1,18 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'jalview.util.Platform','javax.swing.JPopupMenu','javax.swing.JMenuItem','jalview.util.MessageManager','jalview.datamodel.SequenceGroup','java.awt.Point','javax.swing.ToolTipManager','java.awt.RenderingHints','java.awt.Color','jalview.renderer.ScaleRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScalePanel", null, 'javax.swing.JPanel', ['java.awt.event.MouseMotionListener', 'java.awt.event.MouseListener', 'jalview.viewmodel.ViewportListenerI']);
+(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'jalview.util.Platform','javax.swing.JPopupMenu','javax.swing.JMenuItem','jalview.util.MessageManager','jalview.datamodel.SequenceGroup','java.awt.Point','javax.swing.ToolTipManager','java.awt.RenderingHints','java.awt.Color','jalview.renderer.ScaleRenderer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScalePanel", null, 'javax.swing.JPanel', ['java.awt.event.MouseMotionListener', 'java.awt.event.MouseListener', 'jalview.viewmodel.ViewportListenerI']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offy=0;
-this.$width=0;
-this.av=null;
-this.ap=null;
-this.stretchingGroup=false;
-this.min=0;
-this.max=0;
-this.mouseDragging=false;
-this.reveal=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.offy=4;
 this.stretchingGroup=false;
 this.mouseDragging=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['stretchingGroup','mouseDragging'],'I',['offy','$width','min','max'],'O',['av','jalview.gui.AlignViewport','ap','jalview.gui.AlignmentPanel','reveal','int[]']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel', function (av, ap) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=av;
 this.ap=ap;
 this.addMouseListener$java_awt_event_MouseListener(this);
@@ -55,20 +43,19 @@ pop.show$java_awt_Component$I$I(this, evt.getX$(), evt.getY$());
 }});
 
 Clazz.newMeth(C$, 'buildPopupMenu$I', function (res) {
-var pop=Clazz.new_($I$(2));
+var pop=Clazz.new_($I$(2,1));
 var hiddenRange=this.reveal;
 if (hiddenRange != null ) {
-var item=Clazz.new_($I$(3).c$$S,[$I$(4).getString$S("label.reveal")]);
+var item=Clazz.new_([$I$(4).getString$S("label.reveal")],$I$(3,1).c$$S);
 item.addActionListener$java_awt_event_ActionListener(((P$.ScalePanel$1||
-(function(){var C$=Clazz.newClass(P$, "ScalePanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ScalePanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.gui.ScalePanel'].av.showColumn$I(this.$finals$.hiddenRange[0]);
 this.b$['jalview.gui.ScalePanel'].reveal=null;
 this.b$['jalview.gui.ScalePanel'].ap.updateLayout$();
@@ -76,20 +63,19 @@ this.b$['jalview.gui.ScalePanel'].ap.paintAlignment$Z$Z(true, true);
 this.b$['jalview.gui.ScalePanel'].av.sendSelection$();
 });
 })()
-), Clazz.new_(P$.ScalePanel$1.$init$, [this, {hiddenRange: hiddenRange}])));
+), Clazz.new_(P$.ScalePanel$1.$init$,[this, {hiddenRange:hiddenRange}])));
 pop.add$javax_swing_JMenuItem(item);
 if (this.av.getAlignment$().getHiddenColumns$().hasMultiHiddenColumnRegions$()) {
-item=Clazz.new_($I$(3).c$$S,[$I$(4).getString$S("action.reveal_all")]);
+item=Clazz.new_([$I$(4).getString$S("action.reveal_all")],$I$(3,1).c$$S);
 item.addActionListener$java_awt_event_ActionListener(((P$.ScalePanel$2||
-(function(){var C$=Clazz.newClass(P$, "ScalePanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ScalePanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.gui.ScalePanel'].av.showAllHiddenColumns$();
 this.b$['jalview.gui.ScalePanel'].reveal=null;
 this.b$['jalview.gui.ScalePanel'].ap.updateLayout$();
@@ -97,20 +83,19 @@ this.b$['jalview.gui.ScalePanel'].ap.paintAlignment$Z$Z(true, true);
 this.b$['jalview.gui.ScalePanel'].av.sendSelection$();
 });
 })()
-), Clazz.new_(P$.ScalePanel$2.$init$, [this, null])));
+), Clazz.new_(P$.ScalePanel$2.$init$,[this, null])));
 pop.add$javax_swing_JMenuItem(item);
 }}if (this.av.getColumnSelection$().contains$I(res)) {
-var item=Clazz.new_($I$(3).c$$S,[$I$(4).getString$S("label.hide_columns")]);
+var item=Clazz.new_([$I$(4).getString$S("label.hide_columns")],$I$(3,1).c$$S);
 item.addActionListener$java_awt_event_ActionListener(((P$.ScalePanel$3||
-(function(){var C$=Clazz.newClass(P$, "ScalePanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ScalePanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.gui.ScalePanel'].av.hideColumns$I$I(this.$finals$.res, this.$finals$.res);
 if (this.b$['jalview.gui.ScalePanel'].av.getSelectionGroup$() != null  && this.b$['jalview.gui.ScalePanel'].av.getSelectionGroup$().getSize$() == this.b$['jalview.gui.ScalePanel'].av.getAlignment$().getHeight$() ) {
 this.b$['jalview.gui.ScalePanel'].av.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
@@ -119,7 +104,7 @@ this.b$['jalview.gui.ScalePanel'].ap.paintAlignment$Z$Z(true, true);
 this.b$['jalview.gui.ScalePanel'].av.sendSelection$();
 });
 })()
-), Clazz.new_(P$.ScalePanel$3.$init$, [this, {res: res}])));
+), Clazz.new_(P$.ScalePanel$3.$init$,[this, {res:res}])));
 pop.add$javax_swing_JMenuItem(item);
 }return pop;
 });
@@ -128,7 +113,7 @@ Clazz.newMeth(C$, 'leftMouseButtonPressed$java_awt_event_MouseEvent$I', function
 if (!$I$(1).isControlDown$java_awt_event_MouseEvent(evt) && !evt.isShiftDown$() ) {
 this.av.getColumnSelection$().clear$();
 }this.av.getColumnSelection$().addElement$I(res);
-var sg=Clazz.new_($I$(5).c$$java_util_List,[this.av.getAlignment$().getSequences$()]);
+var sg=Clazz.new_([this.av.getAlignment$().getSequences$()],$I$(5,1).c$$java_util_List);
 sg.setStartRes$I(res);
 sg.setEndRes$I(res);
 if (evt.isShiftDown$()) {
@@ -203,7 +188,7 @@ this.ap.getSeqPanel$().stopScrolling$();
 
 Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (evt) {
 if (this.mouseDragging) {
-this.ap.getSeqPanel$().startScrolling$java_awt_Point(Clazz.new_($I$(6).c$$I$I,[evt.getX$(), 0]));
+this.ap.getSeqPanel$().startScrolling$java_awt_Point(Clazz.new_([evt.getX$(), 0],$I$(6,1).c$$I$I));
 }});
 
 Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (evt) {
@@ -240,7 +225,7 @@ var hidden=this.av.getAlignment$().getHiddenColumns$();
 var avCharWidth=this.av.getCharWidth$();
 var avCharHeight=this.av.getCharHeight$();
 if (cs != null ) {
-gg.setColor$java_awt_Color(Clazz.new_($I$(9).c$$I$I$I,[220, 0, 0]));
+gg.setColor$java_awt_Color(Clazz.new_($I$(9,1).c$$I$I$I,[220, 0, 0]));
 for (var sel, $sel = cs.getSelected$().iterator$(); $sel.hasNext$()&&((sel=($sel.next$()).intValue$()),1);) {
 if (this.av.hasHiddenColumns$()) {
 if (hidden.isVisible$I(sel)) {
@@ -261,12 +246,12 @@ var res;
 if (this.av.getShowHiddenMarkers$()) {
 var it=hidden.getStartRegionIterator$I$I(startx, startx + widthx + 1 );
 while (it.hasNext$()){
-res=(it.next$()).intValue$() - startx;
+res=(it.next$()).valueOf() - startx;
 gg.fillPolygon$IA$IA$I(Clazz.array(Integer.TYPE, -1, [-1 + res * avCharWidth - (avCharHeight/4|0), -1 + res * avCharWidth + (avCharHeight/4|0), -1 + res * avCharWidth]), Clazz.array(Integer.TYPE, -1, [y, y, y + 2 * yOf]), 3);
 }
 }}gg.setColor$java_awt_Color($I$(9).black);
 var maxX=0;
-var marks=Clazz.new_($I$(10)).calculateMarks$jalview_api_AlignViewportI$I$I(this.av, startx, endx);
+var marks=Clazz.new_($I$(10,1)).calculateMarks$jalview_api_AlignViewportI$I$I(this.av, startx, endx);
 for (var mark, $mark = marks.iterator$(); $mark.hasNext$()&&((mark=($mark.next$())),1);) {
 var major=mark.major;
 var mpos=mark.column;
@@ -282,11 +267,11 @@ gg.drawLine$I$I$I$I((mpos * avCharWidth) + ((avCharWidth/2|0)), y + yOf, (mpos *
 }}
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 if (evt.getPropertyName$().equals$O("startres") || evt.getPropertyName$().equals$O("startresandseq") || evt.getPropertyName$().equals$O("move_viewport")  ) {
 this.av.getAlignPanel$().repaint$();
 }});
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

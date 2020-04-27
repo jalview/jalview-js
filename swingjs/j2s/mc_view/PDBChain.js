@@ -1,33 +1,12 @@
-(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'java.util.Vector','StringBuilder','jalview.util.Comparison','jalview.datamodel.SequenceFeature','mc_view.Bond','mc_view.Residue','jalview.datamodel.Annotation','jalview.schemes.ResidueProperties','jalview.datamodel.Sequence','jalview.structure.StructureImportSettings','jalview.datamodel.AlignmentAnnotation','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDBChain");
+(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'java.util.Vector','StringBuilder','jalview.util.Comparison','jalview.datamodel.SequenceFeature','mc_view.Bond','mc_view.Residue','jalview.datamodel.Annotation','jalview.schemes.ResidueProperties','jalview.datamodel.Sequence','jalview.structure.StructureImportSettings','jalview.datamodel.AlignmentAnnotation','java.awt.Color']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDBChain");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=null;
-this.bonds=null;
-this.atoms=null;
-this.residues=null;
-this.offset=0;
-this.sequence=null;
-this.shadow=null;
-this.isNa=false;
-this.isVisible=false;
-this.pdbstart=0;
-this.pdbend=0;
-this.seqstart=0;
-this.seqend=0;
-this.pdbid=null;
-this.newline=null;
-this.shadowMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.bonds=Clazz.new_($I$(1));
-this.atoms=Clazz.new_($I$(1));
-this.residues=Clazz.new_($I$(1));
+this.bonds=Clazz.new_($I$(1,1));
+this.atoms=Clazz.new_($I$(1,1));
+this.residues=Clazz.new_($I$(1,1));
 this.shadow=null;
 this.isNa=false;
 this.isVisible=true;
@@ -37,10 +16,12 @@ this.seqstart=0;
 this.seqend=0;
 this.pdbid="";
 this.newline=System.getProperty$S("line.separator");
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNa','isVisible'],'I',['offset','pdbstart','pdbend','seqstart','seqend'],'S',['id','pdbid','newline'],'O',['bonds','java.util.Vector','+atoms','+residues','sequence','jalview.datamodel.SequenceI','+shadow','shadowMap','jalview.datamodel.Mapping']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (thePdbid, theId) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.pdbid=thePdbid == null  ? thePdbid : thePdbid.toLowerCase$();
 this.id=theId;
 }, 1);
@@ -54,7 +35,7 @@ return this.newline;
 });
 
 Clazz.newMeth(C$, 'print$', function () {
-var tmp=Clazz.new_($I$(2).c$$I,[256]);
+var tmp=Clazz.new_($I$(2,1).c$$I,[256]);
 for (var b, $b = this.bonds.iterator$(); $b.hasNext$()&&((b=($b.next$())),1);) {
 tmp.append$S(b.at1.resName).append$S(" ").append$I(b.at1.resNumber).append$S(" ").append$I(this.offset).append$S(this.newline);
 }
@@ -72,7 +53,7 @@ if (as.astr1.charAt$I(i) != "-") {
 alignpos++;
 }if (as.astr2.charAt$I(i) != "-") {
 pdbpos++;
-}var sameResidue=$I$(3).isSameResidue$C$C$Z(as.astr1.charAt$I(i), as.astr2.charAt$I(i), false);
+}var sameResidue=$I$(3,"isSameResidue$C$C$Z",[as.astr1.charAt$I(i), as.astr2.charAt$I(i), false]);
 if (sameResidue) {
 if (pdbpos >= this.residues.size$()) {
 continue;
@@ -120,7 +101,7 @@ for (var feature, $feature = features.iterator$(); $feature.hasNext$()&&((featur
 if (feature.getFeatureGroup$() != null  && feature.getFeatureGroup$().equals$O(this.pdbid) ) {
 var newBegin=1 + this.residues.elementAt$I(feature.getBegin$() - this.offset).atoms.elementAt$I(0).alignmentMapping;
 var newEnd=1 + this.residues.elementAt$I(feature.getEnd$() - this.offset).atoms.elementAt$I(0).alignmentMapping;
-var tx=Clazz.new_($I$(4).c$$jalview_datamodel_SequenceFeature$I$I$S$F,[feature, newBegin, newEnd, feature.getFeatureGroup$(), feature.getScore$()]);
+var tx=Clazz.new_([feature, newBegin, newEnd, feature.getFeatureGroup$(), feature.getScore$()],$I$(4,1).c$$jalview_datamodel_SequenceFeature$I$I$S$F);
 tx.setStatus$S(status + ((tx.getStatus$() == null  || tx.getStatus$().length$() == 0 ) ? "" : ":" + tx.getStatus$()));
 if (tx.begin != 0 && tx.end != 0 ) {
 sq.addSequenceFeature$jalview_datamodel_SequenceFeature(tx);
@@ -153,7 +134,7 @@ this.isNa=true;
 }});
 
 Clazz.newMeth(C$, 'makeBond$mc_view_Atom$mc_view_Atom', function (at1, at2) {
-this.bonds.addElement$TE(Clazz.new_($I$(5).c$$mc_view_Atom$mc_view_Atom,[at1, at2]));
+this.bonds.addElement$O(Clazz.new_($I$(5,1).c$$mc_view_Atom$mc_view_Atom,[at1, at2]));
 });
 
 Clazz.newMeth(C$, 'makeResidueList$Z', function (visibleChainAnnotation) {
@@ -161,9 +142,9 @@ var count=0;
 var symbol;
 var deoxyn=false;
 var nucleotide=false;
-var seq=Clazz.new_($I$(2).c$$I,[256]);
-var resFeatures=Clazz.new_($I$(1));
-var resAnnotation=Clazz.new_($I$(1));
+var seq=Clazz.new_($I$(2,1).c$$I,[256]);
+var resFeatures=Clazz.new_($I$(1,1));
+var resAnnotation=Clazz.new_($I$(1,1));
 var iSize=this.atoms.size$() - 1;
 var resNumber=-1;
 var insCode=" ";
@@ -175,9 +156,9 @@ var res=resNumber;
 var ins=insCode;
 if (i == 0) {
 this.offset=resNumber;
-}var resAtoms=Clazz.new_($I$(1));
+}var resAtoms=Clazz.new_($I$(1,1));
 while ((resNumber == res) && (ins == insCode) && (i < this.atoms.size$())  ){
-resAtoms.add$TE(this.atoms.elementAt$I(i));
+resAtoms.add$O(this.atoms.elementAt$I(i));
 i++;
 if (i < this.atoms.size$()) {
 resNumber=this.atoms.elementAt$I(i).resNumber;
@@ -189,22 +170,22 @@ i--;
 var currAtom=resAtoms.get$I(0);
 if (currAtom.insCode != " " && !this.residues.isEmpty$()  && this.residues.lastElement$().atoms.get$I(0).resNumber == currAtom.resNumber ) {
 var desc=currAtom.resName + ":" + currAtom.resNumIns + " " + this.pdbid + this.id ;
-var sf=Clazz.new_($I$(4).c$$S$S$I$I$S,["INSERTION", desc, this.offset + count - 1, this.offset + count - 1, "PDB_INS"]);
-resFeatures.addElement$TE(sf);
+var sf=Clazz.new_($I$(4,1).c$$S$S$I$I$S,["INSERTION", desc, this.offset + count - 1, this.offset + count - 1, "PDB_INS"]);
+resFeatures.addElement$O(sf);
 this.residues.lastElement$().atoms.addAll$java_util_Collection(resAtoms);
 } else {
-this.residues.addElement$TE(Clazz.new_($I$(6).c$$java_util_Vector$I$I,[resAtoms, resNumber - 1, count]));
+this.residues.addElement$O(Clazz.new_($I$(6,1).c$$java_util_Vector$I$I,[resAtoms, resNumber - 1, count]));
 var tmpres=this.residues.lastElement$();
 var tmpat=tmpres.atoms.get$I(0);
 var desc=tmpat.resName + ":" + tmpat.resNumIns + " " + this.pdbid + this.id ;
-var sf=Clazz.new_($I$(4).c$$S$S$I$I$S,["RESNUM", desc, this.offset + count, this.offset + count, this.pdbid]);
-resFeatures.addElement$TE(sf);
-resAnnotation.addElement$TE(Clazz.new_($I$(7).c$$F,[tmpat.tfactor]));
+var sf=Clazz.new_($I$(4,1).c$$S$S$I$I$S,["RESNUM", desc, this.offset + count, this.offset + count, this.pdbid]);
+resFeatures.addElement$O(sf);
+resAnnotation.addElement$O(Clazz.new_($I$(7,1).c$$F,[tmpat.tfactor]));
 if ((symbol=$I$(8).getAA3Hash$().get$O(tmpat.resName)) == null ) {
 var nucname=tmpat.resName.trim$();
 deoxyn=nucname.length$() == 2 && $I$(8).aaIndex[(nucname.charCodeAt$I(0))] == $I$(8).aaIndex[68] ;
 if (tmpat.name.equalsIgnoreCase$S("CA") || $I$(8).nucleotideIndex[(nucname.charCodeAt$I((deoxyn ? 1 : 0)))] == -1 ) {
-var r=$I$(8).getSingleCharacterCode$S($I$(8).getCanonicalAminoAcid$S(tmpat.resName));
+var r=$I$(8,"getSingleCharacterCode$S",[$I$(8).getCanonicalAminoAcid$S(tmpat.resName)]);
 seq.append$C(r == "0" ? "X" : r);
 } else {
 nucleotide=true;
@@ -218,12 +199,12 @@ System.err.println$S("Warning: mixed nucleotide and amino acid chain.. its gonna
 if (this.id.length$() < 1) {
 this.id=" ";
 }this.isNa=nucleotide;
-this.sequence=Clazz.new_($I$(9).c$$S$S$I$I,[this.id, seq.toString(), this.offset, resNumber - 1]);
+this.sequence=Clazz.new_([this.id, seq.toString(), this.offset, resNumber - 1],$I$(9,1).c$$S$S$I$I);
 if ($I$(10).isShowSeqFeatures$()) {
 iSize=resFeatures.size$();
 for (var i=0; i < iSize; i++) {
 this.sequence.addSequenceFeature$jalview_datamodel_SequenceFeature(resFeatures.elementAt$I(i));
-resFeatures.setElementAt$TE$I(null, i);
+resFeatures.setElementAt$O$I(null, i);
 }
 }if (visibleChainAnnotation) {
 var annots=Clazz.array($I$(7), [resAnnotation.size$()]);
@@ -234,9 +215,9 @@ for (var i=0; i < iSize; i++) {
 annots[i]=resAnnotation.elementAt$I(i);
 max=Math.max(max, annots[i].value);
 min=Math.min(min, annots[i].value);
-resAnnotation.setElementAt$TE$I(null, i);
+resAnnotation.setElementAt$O$I(null, i);
 }
-var tfactorann=Clazz.new_($I$(11).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["Temperature Factor", "Temperature Factor for " + this.pdbid + this.id , annots, min, max, 2]);
+var tfactorann=Clazz.new_($I$(11,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["Temperature Factor", "Temperature Factor for " + this.pdbid + this.id , annots, min, max, 2]);
 tfactorann.setSequenceRef$jalview_datamodel_SequenceI(this.sequence);
 this.sequence.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(tfactorann);
 }});
@@ -302,7 +283,7 @@ if (this.shadow != null  && this.shadow.getAnnotation$() != null  ) {
 for (var ana, $ana = 0, $$ana = this.shadow.getAnnotation$(); $ana<$$ana.length&&((ana=($$ana[$ana])),1);$ana++) {
 var transfer=sq.getAlignmentAnnotations$S$S(ana.getCalcId$(), ana.label);
 if (transfer == null  || transfer.size$() == 0 ) {
-ana=Clazz.new_($I$(11).c$$jalview_datamodel_AlignmentAnnotation,[ana]);
+ana=Clazz.new_($I$(11,1).c$$jalview_datamodel_AlignmentAnnotation,[ana]);
 ana.liftOver$jalview_datamodel_SequenceI$jalview_datamodel_Mapping(this.sequence, this.shadowMap);
 ana.liftOver$jalview_datamodel_SequenceI$jalview_datamodel_Mapping(dsq, sqmpping);
 dsq.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(ana);
@@ -314,7 +295,7 @@ if (this.sequence != null  && this.sequence.getAnnotation$() != null  ) {
 for (var ana, $ana = 0, $$ana = this.sequence.getAnnotation$(); $ana<$$ana.length&&((ana=($$ana[$ana])),1);$ana++) {
 var transfer=dsq.getAlignmentAnnotations$S$S(ana.getCalcId$(), ana.label);
 if (transfer == null  || transfer.size$() == 0 ) {
-ana=Clazz.new_($I$(11).c$$jalview_datamodel_AlignmentAnnotation,[ana]);
+ana=Clazz.new_($I$(11,1).c$$jalview_datamodel_AlignmentAnnotation,[ana]);
 ana.liftOver$jalview_datamodel_SequenceI$jalview_datamodel_Mapping(dsq, sqmpping);
 dsq.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(ana);
 } else {
@@ -326,7 +307,7 @@ var max=0;
 var an=Clazz.array($I$(7), [sq.getEnd$() - sq.getStart$() + 1]);
 for (var i=sq.getStart$(), j=sq.getEnd$(), k=0; i <= j; i++, k++) {
 var prn=mapping.getPDBResNum$I(k + 1);
-an[k]=Clazz.new_($I$(7).c$$F,[prn]);
+an[k]=Clazz.new_($I$(7,1).c$$F,[prn]);
 if (min == -1 ) {
 min=k;
 max=k;
@@ -336,9 +317,9 @@ min=k;
 } else if (max < k ) {
 max=k;
 }}}
-sq.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(Clazz.new_($I$(11).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["PDB.RESNUM", "PDB Residue Numbering for " + this.pdbid + ":" + this.id , an, min, max, 2]));
+sq.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(Clazz.new_($I$(11,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,["PDB.RESNUM", "PDB Residue Numbering for " + this.pdbid + ":" + this.id , an, min, max, 2]));
 }}});
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

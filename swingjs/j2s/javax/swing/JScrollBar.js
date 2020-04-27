@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.DefaultBoundedRangeModel',['javax.swing.JScrollBar','.ModelListener'],'java.awt.event.AdjustmentListener','java.awt.event.AdjustmentEvent','java.awt.Dimension','java.awt.JSComponent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JScrollBar", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.DefaultBoundedRangeModel',['javax.swing.JScrollBar','.ModelListener'],'java.awt.event.AdjustmentListener','java.awt.event.AdjustmentEvent','java.awt.Dimension','java.awt.JSComponent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JScrollBar", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JComponent', 'java.awt.Adjustable');
+C$.$classes$=[['ModelListener',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fwdAdjustmentEvents=null;
-this.model=null;
-this.orientation=0;
-this.unitIncrement=0;
-this.blockIncrement=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['orientation','unitIncrement','blockIncrement'],'O',['fwdAdjustmentEvents','javax.swing.event.ChangeListener','model','javax.swing.BoundedRangeModel']]]
 
 Clazz.newMeth(C$, 'checkOrientation$I', function (orientation) {
 switch (orientation) {
@@ -29,13 +22,13 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["orientation must 
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$I', function (orientation, value, extent, min, max) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.checkOrientation$I.apply(this, [orientation]);
 this.unitIncrement=1;
 this.blockIncrement=(extent == 0) ? 1 : extent;
 this.orientation=orientation;
-this.model=Clazz.new_($I$(1).c$$I$I$I$I,[value, extent, min, max]);
-this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents=Clazz.new_($I$(2), [this, null]));
+this.model=Clazz.new_($I$(1,1).c$$I$I$I$I,[value, extent, min, max]);
+this.model.addChangeListener$javax_swing_event_ChangeListener(this.fwdAdjustmentEvents=Clazz.new_($I$(2,1),[this, null]));
 this.setRequestFocusEnabled$Z(false);
 this.updateUI$();
 }, 1);
@@ -163,11 +156,11 @@ m.setRangeProperties$I$I$I$I$Z(newValue, newExtent, newMin, newMax, m.getValueIs
 });
 
 Clazz.newMeth(C$, 'addAdjustmentListener$java_awt_event_AdjustmentListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(3),['adjustmentValueChanged$java_awt_event_AdjustmentEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(3),['adjustmentValueChanged$java_awt_event_AdjustmentEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeAdjustmentListener$java_awt_event_AdjustmentListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(3),['adjustmentValueChanged$java_awt_event_AdjustmentEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(3),['adjustmentValueChanged$java_awt_event_AdjustmentEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getAdjustmentListeners$', function () {
@@ -184,31 +177,31 @@ var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(3),['adjustmentValueChanged$java_awt_event_AdjustmentEvent']) ) {
 if (e == null ) {
-e=Clazz.new_($I$(4).c$$java_awt_Adjustable$I$I$I$Z,[this, id, type, value, isAdjusting]);
-}(listeners[i + 1]).adjustmentValueChanged$(e);
+e=Clazz.new_($I$(4,1).c$$java_awt_Adjustable$I$I$I$Z,[this, id, type, value, isAdjusting]);
+}(listeners[i + 1]).adjustmentValueChanged$java_awt_event_AdjustmentEvent(e);
 }}
 });
 
 Clazz.newMeth(C$, 'getMinimumSize$', function () {
 var pref=this.getPreferredSize$();
 if (this.orientation == 1) {
-return Clazz.new_($I$(5).c$$I$I,[pref.width, 5]);
+return Clazz.new_($I$(5,1).c$$I$I,[pref.width, 5]);
 } else {
-return Clazz.new_($I$(5).c$$I$I,[5, pref.height]);
+return Clazz.new_($I$(5,1).c$$I$I,[5, pref.height]);
 }});
 
 Clazz.newMeth(C$, 'getMaximumSize$', function () {
 var pref=this.getPreferredSize$();
 if (this.getOrientation$() == 1) {
-return Clazz.new_($I$(5).c$$I$I,[pref.width, 32767]);
+return Clazz.new_($I$(5,1).c$$I$I,[pref.width, 32767]);
 } else {
-return Clazz.new_($I$(5).c$$I$I,[32767, pref.height]);
+return Clazz.new_($I$(5,1).c$$I$I,[32767, pref.height]);
 }});
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (x) {
 C$.superclazz.prototype.setEnabled$Z.apply(this, [x]);
 var n=this.getComponentCount$();
-var components=$I$(6).getChildArray$java_awt_Container(this);
+var components=$I$(6).秘getChildArray$java_awt_Container(this);
 for (var i=0; i < n; i++) {
 components[i].setEnabled$Z(x);
 }
@@ -219,17 +212,16 @@ var orientationString=(this.orientation == 0 ? "HORIZONTAL" : "VERTICAL");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",blockIncrement=" + this.blockIncrement + ",orientation=" + orientationString + ",unitIncrement=" + this.unitIncrement ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JScrollBar, "ModelListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JScrollBar, "ModelListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 var obj=e.getSource$();
 if (Clazz.instanceOf(obj, "javax.swing.BoundedRangeModel")) {
 var id=601;
@@ -243,4 +235,4 @@ this.this$0.fireAdjustmentValueChanged$I$I$I$Z.apply(this.this$0, [id, type, val
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

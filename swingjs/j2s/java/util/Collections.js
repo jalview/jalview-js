@@ -1,23 +1,19 @@
-(function(){var P$=java.util,p$1={},p$2={},p$3={},p$4={},p$5={},p$6={},p$7={},p$8={},p$9={},p$10={},p$11={},p$12={},p$13={},p$14={},p$15={},p$16={},p$17={},I$=[[0,'java.util.TreeSet',['java.util.Collections','.UnmodifiableNavigableSet'],['java.util.Collections','.UnmodifiableNavigableSet','.EmptyNavigableSet'],['java.util.Collections','.UnmodifiableRandomAccessList'],['java.util.Collections','.UnmodifiableList'],'java.util.Objects',['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet','.UnmodifiableEntry'],['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet','.UnmodifiableEntrySetSpliterator'],'java.util.stream.StreamSupport','java.util.Arrays',['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet'],'java.util.TreeMap',['java.util.Collections','.UnmodifiableNavigableMap'],['java.util.Collections','.UnmodifiableNavigableMap','.EmptyNavigableMap'],['java.util.Collections','.SynchronizedRandomAccessList'],['java.util.Collections','.SynchronizedList'],['java.util.Collections','.SynchronizedSet'],['java.util.Collections','.SynchronizedCollection'],['java.util.Collections','.SynchronizedNavigableSet'],['java.util.AbstractMap','.SimpleImmutableEntry'],['java.util.Collections','.CheckedMap','.CheckedEntrySet','.CheckedEntry'],'java.util.ArrayList',['java.util.Collections','.CheckedMap','.CheckedEntrySet'],'java.util.Spliterators','java.util.Collections','java.lang.reflect.Array','java.util.stream.IntStream','java.util.Comparator','Boolean',['java.util.Collections','.EmptySet'],['java.util.Collections','.EmptyList'],['java.util.Collections','.EmptyMap'],'java.util.Random',['java.util.Collections','.UnmodifiableCollection'],['java.util.Collections','.UnmodifiableSet'],['java.util.Collections','.UnmodifiableSortedSet'],['java.util.Collections','.UnmodifiableMap'],['java.util.Collections','.UnmodifiableSortedMap'],['java.util.Collections','.SynchronizedSortedSet'],['java.util.Collections','.SynchronizedMap'],['java.util.Collections','.SynchronizedSortedMap'],['java.util.Collections','.SynchronizedNavigableMap'],['java.util.Collections','.CheckedCollection'],['java.util.Collections','.CheckedQueue'],['java.util.Collections','.CheckedSet'],['java.util.Collections','.CheckedSortedSet'],['java.util.Collections','.CheckedNavigableSet'],['java.util.Collections','.CheckedRandomAccessList'],['java.util.Collections','.CheckedList'],['java.util.Collections','.CheckedMap'],['java.util.Collections','.CheckedSortedMap'],['java.util.Collections','.CheckedNavigableMap'],['java.util.Collections','.EmptyIterator'],['java.util.Collections','.EmptyListIterator'],['java.util.Collections','.EmptyEnumeration'],['java.util.Collections','.SingletonSet'],['java.util.Collections','.SingletonList'],['java.util.Collections','.SingletonMap'],['java.util.Collections','.CopiesList'],['java.util.Collections','.ReverseComparator'],['java.util.Collections','.ReverseComparator2'],['java.util.Collections','.SetFromMap'],['java.util.Collections','.AsLIFOQueue']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Collections", function(){
+(function(){var P$=java.util,p$1={},p$2={},p$3={},p$4={},p$5={},p$6={},p$7={},p$8={},p$9={},p$10={},p$11={},p$12={},p$13={},p$14={},p$15={},p$16={},p$17={},I$=[[0,'java.util.TreeSet',['java.util.Collections','.UnmodifiableNavigableSet'],['java.util.Collections','.UnmodifiableNavigableSet','.EmptyNavigableSet'],['java.util.Collections','.UnmodifiableRandomAccessList'],['java.util.Collections','.UnmodifiableList'],'java.util.Objects',['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet'],'java.util.Collections',['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet','.UnmodifiableEntry'],['java.util.Collections','.UnmodifiableMap','.UnmodifiableEntrySet','.UnmodifiableEntrySetSpliterator'],'java.util.stream.StreamSupport','java.util.Arrays','java.util.TreeMap',['java.util.Collections','.UnmodifiableNavigableMap'],['java.util.Collections','.UnmodifiableNavigableMap','.EmptyNavigableMap'],['java.util.Collections','.SynchronizedRandomAccessList'],['java.util.Collections','.SynchronizedList'],['java.util.Collections','.SynchronizedSet'],['java.util.Collections','.SynchronizedCollection'],['java.util.Collections','.SynchronizedNavigableSet'],['java.util.AbstractMap','.SimpleImmutableEntry'],['java.util.Collections','.CheckedMap','.CheckedEntrySet'],['java.util.Collections','.CheckedMap','.CheckedEntrySet','.CheckedEntry'],'java.util.ArrayList','java.util.Spliterators','java.lang.reflect.Array','java.util.stream.IntStream','java.util.Comparator',['java.util.Collections','.EmptySet'],['java.util.Collections','.EmptyList'],['java.util.Collections','.EmptyMap'],'java.util.Random',['java.util.Collections','.UnmodifiableCollection'],['java.util.Collections','.UnmodifiableSet'],['java.util.Collections','.UnmodifiableSortedSet'],['java.util.Collections','.UnmodifiableMap'],['java.util.Collections','.UnmodifiableSortedMap'],['java.util.Collections','.SynchronizedSortedSet'],['java.util.Collections','.SynchronizedMap'],['java.util.Collections','.SynchronizedSortedMap'],['java.util.Collections','.SynchronizedNavigableMap'],['java.util.Collections','.CheckedCollection'],['java.util.Collections','.CheckedQueue'],['java.util.Collections','.CheckedSet'],['java.util.Collections','.CheckedSortedSet'],['java.util.Collections','.CheckedNavigableSet'],['java.util.Collections','.CheckedRandomAccessList'],['java.util.Collections','.CheckedList'],['java.util.Collections','.CheckedMap'],['java.util.Collections','.CheckedSortedMap'],['java.util.Collections','.CheckedNavigableMap'],['java.util.Collections','.EmptyIterator'],['java.util.Collections','.EmptyListIterator'],['java.util.Collections','.EmptyEnumeration'],['java.util.Collections','.SingletonSet'],['java.util.Collections','.SingletonList'],['java.util.Collections','.SingletonMap'],['java.util.Collections','.CopiesList'],['java.util.Collections','.ReverseComparator'],['java.util.Collections','.ReverseComparator2'],['java.util.Collections','.SetFromMap'],['java.util.Collections','.AsLIFOQueue']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Collections", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.r=null;
-C$.EMPTY_SET=null;
-C$.EMPTY_LIST=null;
-C$.EMPTY_MAP=null;
+C$.$classes$=[['UnmodifiableCollection',8],['UnmodifiableSet',8],['UnmodifiableSortedSet',8],['UnmodifiableNavigableSet',8],['UnmodifiableList',8],['UnmodifiableRandomAccessList',8],['UnmodifiableMap',10],['UnmodifiableSortedMap',8],['UnmodifiableNavigableMap',8],['SynchronizedCollection',8],['SynchronizedSet',8],['SynchronizedSortedSet',8],['SynchronizedNavigableSet',8],['SynchronizedList',8],['SynchronizedRandomAccessList',8],['SynchronizedMap',10],['SynchronizedSortedMap',8],['SynchronizedNavigableMap',8],['CheckedCollection',8],['CheckedQueue',8],['CheckedSet',8],['CheckedSortedSet',8],['CheckedNavigableSet',8],['CheckedList',8],['CheckedRandomAccessList',8],['CheckedMap',10],['CheckedSortedMap',8],['CheckedNavigableMap',8],['EmptyIterator',10],['EmptyListIterator',10],['EmptyEnumeration',10],['EmptySet',10],['EmptyList',10],['EmptyMap',10],['SingletonSet',10],['SingletonList',10],['SingletonMap',10],['CopiesList',10],['ReverseComparator',10],['ReverseComparator2',10],['SetFromMap',10],['AsLIFOQueue',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_SET=Clazz.new_($I$(30));
-C$.EMPTY_LIST=Clazz.new_($I$(31));
-C$.EMPTY_MAP=Clazz.new_($I$(32));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['r','java.util.Random','EMPTY_SET','java.util.Set','EMPTY_LIST','java.util.List','EMPTY_MAP','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'sort$java_util_List', function (list) {
@@ -28,18 +24,18 @@ Clazz.newMeth(C$, 'sort$java_util_List$java_util_Comparator', function (list, c)
 list.sort$java_util_Comparator(c);
 }, 1);
 
-Clazz.newMeth(C$, 'binarySearch$java_util_List$TT', function (list, key) {
-if (Clazz.instanceOf(list, "java.util.RandomAccess") || list.size$() < 5000 ) return C$.indexedBinarySearch$java_util_List$TT(list, key);
- else return C$.iteratorBinarySearch$java_util_List$TT(list, key);
+Clazz.newMeth(C$, 'binarySearch$java_util_List$O', function (list, key) {
+if (Clazz.instanceOf(list, "java.util.RandomAccess") || list.size$() < 5000 ) return C$.indexedBinarySearch$java_util_List$O(list, key);
+ else return C$.iteratorBinarySearch$java_util_List$O(list, key);
 }, 1);
 
-Clazz.newMeth(C$, 'indexedBinarySearch$java_util_List$TT', function (list, key) {
+Clazz.newMeth(C$, 'indexedBinarySearch$java_util_List$O', function (list, key) {
 var low=0;
 var high=list.size$() - 1;
 while (low <= high){
 var mid=(low + high) >>> 1;
 var midVal=list.get$I(mid);
-var cmp=midVal.compareTo$(key);
+var cmp=midVal.compareTo$O(key);
 if (cmp < 0) low=mid + 1;
  else if (cmp > 0) high=mid - 1;
  else return mid;
@@ -47,14 +43,14 @@ if (cmp < 0) low=mid + 1;
 return -(low + 1);
 }, 1);
 
-Clazz.newMeth(C$, 'iteratorBinarySearch$java_util_List$TT', function (list, key) {
+Clazz.newMeth(C$, 'iteratorBinarySearch$java_util_List$O', function (list, key) {
 var low=0;
 var high=list.size$() - 1;
 var i=list.listIterator$();
 while (low <= high){
 var mid=(low + high) >>> 1;
 var midVal=C$.get$java_util_ListIterator$I(i, mid);
-var cmp=midVal.compareTo$(key);
+var cmp=midVal.compareTo$O(key);
 if (cmp < 0) low=mid + 1;
  else if (cmp > 0) high=mid - 1;
  else return mid;
@@ -76,19 +72,19 @@ obj=i.previous$();
 }return obj;
 }, 1);
 
-Clazz.newMeth(C$, 'binarySearch$java_util_List$TT$java_util_Comparator', function (list, key, c) {
-if (c == null ) return C$.binarySearch$java_util_List$TT(list, key);
-if (Clazz.instanceOf(list, "java.util.RandomAccess") || list.size$() < 5000 ) return C$.indexedBinarySearch$java_util_List$TT$java_util_Comparator(list, key, c);
- else return C$.iteratorBinarySearch$java_util_List$TT$java_util_Comparator(list, key, c);
+Clazz.newMeth(C$, 'binarySearch$java_util_List$O$java_util_Comparator', function (list, key, c) {
+if (c == null ) return C$.binarySearch$java_util_List$O(list, key);
+if (Clazz.instanceOf(list, "java.util.RandomAccess") || list.size$() < 5000 ) return C$.indexedBinarySearch$java_util_List$O$java_util_Comparator(list, key, c);
+ else return C$.iteratorBinarySearch$java_util_List$O$java_util_Comparator(list, key, c);
 }, 1);
 
-Clazz.newMeth(C$, 'indexedBinarySearch$java_util_List$TT$java_util_Comparator', function (l, key, c) {
+Clazz.newMeth(C$, 'indexedBinarySearch$java_util_List$O$java_util_Comparator', function (l, key, c) {
 var low=0;
 var high=l.size$() - 1;
 while (low <= high){
 var mid=(low + high) >>> 1;
 var midVal=l.get$I(mid);
-var cmp=c.compare$(midVal, key);
+var cmp=c.compare$O$O(midVal, key);
 if (cmp < 0) low=mid + 1;
  else if (cmp > 0) high=mid - 1;
  else return mid;
@@ -96,14 +92,14 @@ if (cmp < 0) low=mid + 1;
 return -(low + 1);
 }, 1);
 
-Clazz.newMeth(C$, 'iteratorBinarySearch$java_util_List$TT$java_util_Comparator', function (l, key, c) {
+Clazz.newMeth(C$, 'iteratorBinarySearch$java_util_List$O$java_util_Comparator', function (l, key, c) {
 var low=0;
 var high=l.size$() - 1;
 var i=l.listIterator$();
 while (low <= high){
 var mid=(low + high) >>> 1;
 var midVal=C$.get$java_util_ListIterator$I(i, mid);
-var cmp=c.compare$(midVal, key);
+var cmp=c.compare$O$O(midVal, key);
 if (cmp < 0) low=mid + 1;
  else if (cmp > 0) high=mid - 1;
  else return mid;
@@ -121,14 +117,14 @@ var fwd=list.listIterator$();
 var rev=list.listIterator$I(size);
 for (var i=0, mid=list.size$() >> 1; i < mid; i++) {
 var tmp=fwd.next$();
-fwd.set$TE(rev.previous$());
-rev.set$TE(tmp);
+fwd.set$O(rev.previous$());
+rev.set$O(tmp);
 }
 }}, 1);
 
 Clazz.newMeth(C$, 'shuffle$java_util_List', function (list) {
 var rnd=C$.r;
-if (rnd == null ) C$.r=rnd=Clazz.new_($I$(33));
+if (rnd == null ) C$.r=rnd=Clazz.new_($I$(32,1));
 C$.shuffle$java_util_List$java_util_Random(list, rnd);
 }, 1);
 
@@ -144,13 +140,13 @@ for (var i=size; i > 1; i--) C$.swap$OA$I$I(arr, i - 1, rnd.nextInt$I(i));
 var it=list.listIterator$();
 for (var i=0; i < arr.length; i++) {
 it.next$();
-it.set$TE(arr[i]);
+it.set$O(arr[i]);
 }
 }}, 1);
 
 Clazz.newMeth(C$, 'swap$java_util_List$I$I', function (list, i, j) {
 var l=list;
-l.set$I$TE(i, l.set$I$TE(j, l.get$I(i)));
+l.set$I$O(i, l.set$I$O(j, l.get$I(i)));
 }, 1);
 
 Clazz.newMeth(C$, 'swap$OA$I$I', function (arr, i, j) {
@@ -159,16 +155,16 @@ arr[i]=arr[j];
 arr[j]=tmp;
 }, 1);
 
-Clazz.newMeth(C$, 'fill$java_util_List$TT', function (list, obj) {
+Clazz.newMeth(C$, 'fill$java_util_List$O', function (list, obj) {
 var size=list.size$();
 if (size < 25 || Clazz.instanceOf(list, "java.util.RandomAccess") ) {
-for (var i=0; i < size; i++) list.set$I$TE(i, obj);
+for (var i=0; i < size; i++) list.set$I$O(i, obj);
 
 } else {
 var itr=list.listIterator$();
 for (var i=0; i < size; i++) {
 itr.next$();
-itr.set$TE(obj);
+itr.set$O(obj);
 }
 }}, 1);
 
@@ -176,14 +172,14 @@ Clazz.newMeth(C$, 'copy$java_util_List$java_util_List', function (dest, src) {
 var srcSize=src.size$();
 if (srcSize > dest.size$()) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["Source does not fit in dest"]);
 if (srcSize < 10 || (Clazz.instanceOf(src, "java.util.RandomAccess") && Clazz.instanceOf(dest, "java.util.RandomAccess") ) ) {
-for (var i=0; i < srcSize; i++) dest.set$I$TE(i, src.get$I(i));
+for (var i=0; i < srcSize; i++) dest.set$I$O(i, src.get$I(i));
 
 } else {
 var di=dest.listIterator$();
 var si=src.listIterator$();
 for (var i=0; i < srcSize; i++) {
 di.next$();
-di.set$TE(si.next$());
+di.set$O(si.next$());
 }
 }}, 1);
 
@@ -192,7 +188,7 @@ var i=coll.iterator$();
 var candidate=i.next$();
 while (i.hasNext$()){
 var next=i.next$();
-if (next.compareTo$(candidate) < 0) candidate=next;
+if (next.compareTo$O(candidate) < 0) candidate=next;
 }
 return candidate;
 }, 1);
@@ -203,7 +199,7 @@ var i=coll.iterator$();
 var candidate=i.next$();
 while (i.hasNext$()){
 var next=i.next$();
-if (comp.compare$(next, candidate) < 0) candidate=next;
+if (comp.compare$O$O(next, candidate) < 0) candidate=next;
 }
 return candidate;
 }, 1);
@@ -213,7 +209,7 @@ var i=coll.iterator$();
 var candidate=i.next$();
 while (i.hasNext$()){
 var next=i.next$();
-if (next.compareTo$(candidate) > 0) candidate=next;
+if (next.compareTo$O(candidate) > 0) candidate=next;
 }
 return candidate;
 }, 1);
@@ -224,7 +220,7 @@ var i=coll.iterator$();
 var candidate=i.next$();
 while (i.hasNext$()){
 var next=i.next$();
-if (comp.compare$(next, candidate) > 0) candidate=next;
+if (comp.compare$O$O(next, candidate) > 0) candidate=next;
 }
 return candidate;
 }, 1);
@@ -246,7 +242,7 @@ var i=cycleStart;
 do {
 i+=distance;
 if (i >= size) i-=size;
-displaced=list.set$I$TE(i, displaced);
+displaced=list.set$I$O(i, displaced);
 nMoved++;
 } while (i != cycleStart);
 }
@@ -263,20 +259,20 @@ C$.reverse$java_util_List(list.subList$I$I(mid, size));
 C$.reverse$java_util_List(list);
 }, 1);
 
-Clazz.newMeth(C$, 'replaceAll$java_util_List$TT$TT', function (list, oldVal, newVal) {
+Clazz.newMeth(C$, 'replaceAll$java_util_List$O$O', function (list, oldVal, newVal) {
 var result=false;
 var size=list.size$();
 if (size < 11 || Clazz.instanceOf(list, "java.util.RandomAccess") ) {
 if (oldVal == null ) {
 for (var i=0; i < size; i++) {
 if (list.get$I(i) == null ) {
-list.set$I$TE(i, newVal);
+list.set$I$O(i, newVal);
 result=true;
 }}
 } else {
 for (var i=0; i < size; i++) {
 if (oldVal.equals$O(list.get$I(i))) {
-list.set$I$TE(i, newVal);
+list.set$I$O(i, newVal);
 result=true;
 }}
 }} else {
@@ -284,13 +280,13 @@ var itr=list.listIterator$();
 if (oldVal == null ) {
 for (var i=0; i < size; i++) {
 if (itr.next$() == null ) {
-itr.set$TE(newVal);
+itr.set$O(newVal);
 result=true;
 }}
 } else {
 for (var i=0; i < size; i++) {
 if (oldVal.equals$O(itr.next$())) {
-itr.set$TE(newVal);
+itr.set$O(newVal);
 result=true;
 }}
 }}return result;
@@ -349,83 +345,83 @@ return candidate;
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableCollection$java_util_Collection', function (c) {
-return Clazz.new_($I$(34).c$$java_util_Collection,[c]);
+return Clazz.new_($I$(33,1).c$$java_util_Collection,[c]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableSet$java_util_Set', function (s) {
-return Clazz.new_($I$(35).c$$java_util_Set,[s]);
+return Clazz.new_($I$(34,1).c$$java_util_Set,[s]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableSortedSet$java_util_SortedSet', function (s) {
-return Clazz.new_($I$(36).c$$java_util_SortedSet,[s]);
+return Clazz.new_($I$(35,1).c$$java_util_SortedSet,[s]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableNavigableSet$java_util_NavigableSet', function (s) {
-return Clazz.new_($I$(2).c$$java_util_NavigableSet,[s]);
+return Clazz.new_($I$(2,1).c$$java_util_NavigableSet,[s]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableList$java_util_List', function (list) {
-return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(4).c$$java_util_List,[list]) : Clazz.new_($I$(5).c$$java_util_List,[list]));
+return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(4,1).c$$java_util_List,[list]) : Clazz.new_($I$(5,1).c$$java_util_List,[list]));
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableMap$java_util_Map', function (m) {
-return Clazz.new_($I$(37).c$$java_util_Map,[m]);
+return Clazz.new_($I$(36,1).c$$java_util_Map,[m]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableSortedMap$java_util_SortedMap', function (m) {
-return Clazz.new_($I$(38).c$$java_util_SortedMap,[m]);
+return Clazz.new_($I$(37,1).c$$java_util_SortedMap,[m]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableNavigableMap$java_util_NavigableMap', function (m) {
-return Clazz.new_($I$(13).c$$java_util_NavigableMap,[m]);
+return Clazz.new_($I$(14,1).c$$java_util_NavigableMap,[m]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedCollection$java_util_Collection', function (c) {
-return Clazz.new_($I$(18).c$$java_util_Collection,[c]);
+return Clazz.new_($I$(19,1).c$$java_util_Collection,[c]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedCollection$java_util_Collection$O', function (c, mutex) {
-return Clazz.new_($I$(18).c$$java_util_Collection$O,[c, mutex]);
+return Clazz.new_($I$(19,1).c$$java_util_Collection$O,[c, mutex]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedSet$java_util_Set', function (s) {
-return Clazz.new_($I$(17).c$$java_util_Set,[s]);
+return Clazz.new_($I$(18,1).c$$java_util_Set,[s]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedSet$java_util_Set$O', function (s, mutex) {
-return Clazz.new_($I$(17).c$$java_util_Set$O,[s, mutex]);
+return Clazz.new_($I$(18,1).c$$java_util_Set$O,[s, mutex]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedSortedSet$java_util_SortedSet', function (s) {
-return Clazz.new_($I$(39).c$$java_util_SortedSet,[s]);
+return Clazz.new_($I$(38,1).c$$java_util_SortedSet,[s]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedNavigableSet$java_util_NavigableSet', function (s) {
-return Clazz.new_($I$(19).c$$java_util_NavigableSet,[s]);
+return Clazz.new_($I$(20,1).c$$java_util_NavigableSet,[s]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedList$java_util_List', function (list) {
-return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(15).c$$java_util_List,[list]) : Clazz.new_($I$(16).c$$java_util_List,[list]));
+return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(16,1).c$$java_util_List,[list]) : Clazz.new_($I$(17,1).c$$java_util_List,[list]));
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedList$java_util_List$O', function (list, mutex) {
-return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(15).c$$java_util_List$O,[list, mutex]) : Clazz.new_($I$(16).c$$java_util_List$O,[list, mutex]));
+return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(16,1).c$$java_util_List$O,[list, mutex]) : Clazz.new_($I$(17,1).c$$java_util_List$O,[list, mutex]));
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedMap$java_util_Map', function (m) {
-return Clazz.new_($I$(40).c$$java_util_Map,[m]);
+return Clazz.new_($I$(39,1).c$$java_util_Map,[m]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedSortedMap$java_util_SortedMap', function (m) {
-return Clazz.new_($I$(41).c$$java_util_SortedMap,[m]);
+return Clazz.new_($I$(40,1).c$$java_util_SortedMap,[m]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedNavigableMap$java_util_NavigableMap', function (m) {
-return Clazz.new_($I$(42).c$$java_util_NavigableMap,[m]);
+return Clazz.new_($I$(41,1).c$$java_util_NavigableMap,[m]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedCollection$java_util_Collection$Class', function (c, type) {
-return Clazz.new_($I$(43).c$$java_util_Collection$Class,[c, type]);
+return Clazz.new_($I$(42,1).c$$java_util_Collection$Class,[c, type]);
 }, 1);
 
 Clazz.newMeth(C$, 'zeroLengthArray$Class', function (type) {
@@ -433,47 +429,47 @@ return Clazz.array(type, 0);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedQueue$java_util_Queue$Class', function (queue, type) {
-return Clazz.new_($I$(44).c$$java_util_Queue$Class,[queue, type]);
+return Clazz.new_($I$(43,1).c$$java_util_Queue$Class,[queue, type]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedSet$java_util_Set$Class', function (s, type) {
-return Clazz.new_($I$(45).c$$java_util_Set$Class,[s, type]);
+return Clazz.new_($I$(44,1).c$$java_util_Set$Class,[s, type]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedSortedSet$java_util_SortedSet$Class', function (s, type) {
-return Clazz.new_($I$(46).c$$java_util_SortedSet$Class,[s, type]);
+return Clazz.new_($I$(45,1).c$$java_util_SortedSet$Class,[s, type]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedNavigableSet$java_util_NavigableSet$Class', function (s, type) {
-return Clazz.new_($I$(47).c$$java_util_NavigableSet$Class,[s, type]);
+return Clazz.new_($I$(46,1).c$$java_util_NavigableSet$Class,[s, type]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedList$java_util_List$Class', function (list, type) {
-return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(48).c$$java_util_List$Class,[list, type]) : Clazz.new_($I$(49).c$$java_util_List$Class,[list, type]));
+return (Clazz.instanceOf(list, "java.util.RandomAccess") ? Clazz.new_($I$(47,1).c$$java_util_List$Class,[list, type]) : Clazz.new_($I$(48,1).c$$java_util_List$Class,[list, type]));
 }, 1);
 
 Clazz.newMeth(C$, 'checkedMap$java_util_Map$Class$Class', function (m, keyType, valueType) {
-return Clazz.new_($I$(50).c$$java_util_Map$Class$Class,[m, keyType, valueType]);
+return Clazz.new_($I$(49,1).c$$java_util_Map$Class$Class,[m, keyType, valueType]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedSortedMap$java_util_SortedMap$Class$Class', function (m, keyType, valueType) {
-return Clazz.new_($I$(51).c$$java_util_SortedMap$Class$Class,[m, keyType, valueType]);
+return Clazz.new_($I$(50,1).c$$java_util_SortedMap$Class$Class,[m, keyType, valueType]);
 }, 1);
 
 Clazz.newMeth(C$, 'checkedNavigableMap$java_util_NavigableMap$Class$Class', function (m, keyType, valueType) {
-return Clazz.new_($I$(52).c$$java_util_NavigableMap$Class$Class,[m, keyType, valueType]);
+return Clazz.new_($I$(51,1).c$$java_util_NavigableMap$Class$Class,[m, keyType, valueType]);
 }, 1);
 
 Clazz.newMeth(C$, 'emptyIterator$', function () {
-return $I$(53).EMPTY_ITERATOR;
+return $I$(52).EMPTY_ITERATOR;
 }, 1);
 
 Clazz.newMeth(C$, 'emptyListIterator$', function () {
-return $I$(54).$EMPTY_ITERATOR;
+return $I$(53).$EMPTY_ITERATOR;
 }, 1);
 
 Clazz.newMeth(C$, 'emptyEnumeration$', function () {
-return $I$(55).EMPTY_ENUMERATION;
+return $I$(54).EMPTY_ENUMERATION;
 }, 1);
 
 Clazz.newMeth(C$, 'emptySet$', function () {
@@ -497,32 +493,28 @@ return C$.EMPTY_MAP;
 }, 1);
 
 Clazz.newMeth(C$, 'emptySortedMap$', function () {
-return $I$(13).EMPTY_NAVIGABLE_MAP;
+return $I$(14).EMPTY_NAVIGABLE_MAP;
 }, 1);
 
 Clazz.newMeth(C$, 'emptyNavigableMap$', function () {
-return $I$(13).EMPTY_NAVIGABLE_MAP;
+return $I$(14).EMPTY_NAVIGABLE_MAP;
 }, 1);
 
-Clazz.newMeth(C$, 'singleton$TT', function (o) {
-return Clazz.new_($I$(56).c$$TE,[o]);
+Clazz.newMeth(C$, 'singleton$O', function (o) {
+return Clazz.new_($I$(55,1).c$$O,[o]);
 }, 1);
 
-Clazz.newMeth(C$, 'singletonIterator$TE', function (e) {
+Clazz.newMeth(C$, 'singletonIterator$O', function (e) {
 return ((P$.Collections$1||
-(function(){var C$=Clazz.newClass(P$, "Collections$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.hasNext=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.hasNext=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['hasNext']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.hasNext;
@@ -540,40 +532,36 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
 Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
-$I$(6).requireNonNull$TT(action);
+$I$(6).requireNonNull$O(action);
 if (this.hasNext) {
-action.accept$(this.$finals$.e);
+action.accept$O(this.$finals$.e);
 this.hasNext=false;
 }});
 })()
-), Clazz.new_(P$.Collections$1.$init$, [this, {e: e}]));
+), Clazz.new_(P$.Collections$1.$init$,[this, {e:e}]));
 }, 1);
 
-Clazz.newMeth(C$, 'singletonSpliterator$TT', function (element) {
+Clazz.newMeth(C$, 'singletonSpliterator$O', function (element) {
 return ((P$.Collections$2||
-(function(){var C$=Clazz.newClass(P$, "Collections$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Spliterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Spliterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.est=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.est=1;
-}, 1);
+},1);
+
+C$.$fields$=[['J',['est']]]
 
 Clazz.newMeth(C$, 'trySplit$', function () {
 return null;
 });
 
 Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (consumer) {
-$I$(6).requireNonNull$TT(consumer);
+$I$(6).requireNonNull$O(consumer);
 if (this.est > 0) {
 this.est--;
-consumer.accept$(this.$finals$.element);
+consumer.accept$O(this.$finals$.element);
 return true;
 }return false;
 });
@@ -591,47 +579,43 @@ var value=(this.$finals$.element != null ) ? 256 : 0;
 return value | 64 | 16384 | 1024 | 1 | 16 ;
 });
 })()
-), Clazz.new_(P$.Collections$2.$init$, [this, {element: element}]));
+), Clazz.new_(P$.Collections$2.$init$,[this, {element:element}]));
 }, 1);
 
-Clazz.newMeth(C$, 'singletonList$TT', function (o) {
-return Clazz.new_($I$(57).c$$TE,[o]);
+Clazz.newMeth(C$, 'singletonList$O', function (o) {
+return Clazz.new_($I$(56,1).c$$O,[o]);
 }, 1);
 
-Clazz.newMeth(C$, 'singletonMap$TK$TV', function (key, value) {
-return Clazz.new_($I$(58).c$$TK$TV,[key, value]);
+Clazz.newMeth(C$, 'singletonMap$O$O', function (key, value) {
+return Clazz.new_($I$(57,1).c$$O$O,[key, value]);
 }, 1);
 
-Clazz.newMeth(C$, 'nCopies$I$TT', function (n, o) {
+Clazz.newMeth(C$, 'nCopies$I$O', function (n, o) {
 if (n < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["List length = " + n]);
-return Clazz.new_($I$(59).c$$I$TE,[n, o]);
+return Clazz.new_($I$(58,1).c$$I$O,[n, o]);
 }, 1);
 
 Clazz.newMeth(C$, 'reverseOrder$', function () {
-return $I$(60).REVERSE_ORDER;
+return $I$(59).REVERSE_ORDER;
 }, 1);
 
 Clazz.newMeth(C$, 'reverseOrder$java_util_Comparator', function (cmp) {
 if (cmp == null ) return C$.reverseOrder$();
 if (Clazz.instanceOf(cmp, "java.util.Collections.ReverseComparator2")) return (cmp).cmp;
-return Clazz.new_($I$(61).c$$java_util_Comparator,[cmp]);
+return Clazz.new_($I$(60,1).c$$java_util_Comparator,[cmp]);
 }, 1);
 
 Clazz.newMeth(C$, 'enumeration$java_util_Collection', function (c) {
 return ((P$.Collections$3||
-(function(){var C$=Clazz.newClass(P$, "Collections$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.i=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.i=this.$finals$.c.iterator$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['i','java.util.Iterator']]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 return this.i.hasNext$();
@@ -641,12 +625,12 @@ Clazz.newMeth(C$, 'nextElement$', function () {
 return this.i.next$();
 });
 })()
-), Clazz.new_(P$.Collections$3.$init$, [this, {c: c}]));
+), Clazz.new_(P$.Collections$3.$init$,[this, {c:c}]));
 }, 1);
 
 Clazz.newMeth(C$, 'list$java_util_Enumeration', function (e) {
-var l=Clazz.new_($I$(22));
-while (e.hasMoreElements$())l.add$TE(e.nextElement$());
+var l=Clazz.new_($I$(24,1));
+while (e.hasMoreElements$())l.add$O(e.nextElement$());
 
 return l;
 }, 1);
@@ -687,38 +671,40 @@ return false;
 return true;
 }, 1);
 
-Clazz.newMeth(C$, 'addAll$java_util_Collection$TTA', function (c, elements) {
+Clazz.newMeth(C$, 'addAll$java_util_Collection$OA', function (c, elements) {
 var result=false;
-for (var element, $element = 0, $$element = elements; $element<$$element.length&&((element=($$element[$element])),1);$element++) result|=c.add$TE(element);
+for (var element, $element = 0, $$element = elements; $element<$$element.length&&((element=($$element[$element])),1);$element++) result|=c.add$O(element);
 
 return result;
 }, 1);
 
 Clazz.newMeth(C$, 'newSetFromMap$java_util_Map', function (map) {
-return Clazz.new_($I$(62).c$$java_util_Map,[map]);
+return Clazz.new_($I$(61,1).c$$java_util_Map,[map]);
 }, 1);
 
 Clazz.newMeth(C$, 'asLifoQueue$java_util_Deque', function (deque) {
-return Clazz.new_($I$(63).c$$java_util_Deque,[deque]);
+return Clazz.new_($I$(62,1).c$$java_util_Deque,[deque]);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_SET=Clazz.new_($I$(29,1));
+C$.EMPTY_LIST=Clazz.new_($I$(30,1));
+C$.EMPTY_MAP=Clazz.new_($I$(31,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableCollection", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableCollection", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Collection', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.c=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['c','java.util.Collection']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (c == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.c=c;
 }, 1);
@@ -739,8 +725,8 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return this.c.toArray$();
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
-return this.c.toArray$TTA(a);
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
+return this.c.toArray$OA(a);
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -749,19 +735,15 @@ return this.c.toString();
 
 Clazz.newMeth(C$, 'iterator$', function () {
 return ((P$.Collections$UnmodifiableCollection$1||
-(function(){var C$=Clazz.newClass(P$, "Collections$UnmodifiableCollection$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$UnmodifiableCollection$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.i=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.i=this.b$['java.util.Collections.UnmodifiableCollection'].c.iterator$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['i','java.util.Iterator']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.i.hasNext$();
@@ -775,14 +757,14 @@ Clazz.newMeth(C$, 'remove$', function () {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_Consumer','forEachRemaining$'], function (action) {
+Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
 this.i.forEachRemaining$java_util_function_Consumer(action);
 });
 })()
-), Clazz.new_(P$.Collections$UnmodifiableCollection$1.$init$, [this, null]));
+), Clazz.new_(P$.Collections$UnmodifiableCollection$1.$init$,[this, null]));
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
+Clazz.newMeth(C$, 'add$O', function (e) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -833,19 +815,17 @@ return this.c.parallelStream$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableCollection'], ['java.util.Set', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_Set', function (s) {
-C$.superclazz.c$$java_util_Collection.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection.apply(this,[s]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -859,24 +839,19 @@ return this.c.hashCode$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableSortedSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableSortedSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableSet'], ['java.util.SortedSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ss=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ss','java.util.SortedSet']]]
 
 Clazz.newMeth(C$, 'c$$java_util_SortedSet', function (s) {
-C$.superclazz.c$$java_util_Set.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Set.apply(this,[s]);C$.$init$.apply(this);
 this.ss=s;
 }, 1);
 
@@ -884,16 +859,16 @@ Clazz.newMeth(C$, 'comparator$', function () {
 return this.ss.comparator$();
 });
 
-Clazz.newMeth(C$, ['subSet$TE$TE'], function (fromElement, toElement) {
-return Clazz.new_(C$.c$$java_util_SortedSet,[this.ss.subSet$TE$TE(fromElement, toElement)]);
+Clazz.newMeth(C$, 'subSet$O$O', function (fromElement, toElement) {
+return Clazz.new_(C$.c$$java_util_SortedSet,[this.ss.subSet$O$O(fromElement, toElement)]);
 });
 
-Clazz.newMeth(C$, ['headSet$TE'], function (toElement) {
-return Clazz.new_(C$.c$$java_util_SortedSet,[this.ss.headSet$TE(toElement)]);
+Clazz.newMeth(C$, 'headSet$O', function (toElement) {
+return Clazz.new_(C$.c$$java_util_SortedSet,[this.ss.headSet$O(toElement)]);
 });
 
-Clazz.newMeth(C$, ['tailSet$TE'], function (fromElement) {
-return Clazz.new_(C$.c$$java_util_SortedSet,[this.ss.tailSet$TE(fromElement)]);
+Clazz.newMeth(C$, 'tailSet$O', function (fromElement) {
+return Clazz.new_(C$.c$$java_util_SortedSet,[this.ss.tailSet$O(fromElement)]);
 });
 
 Clazz.newMeth(C$, 'first$', function () {
@@ -907,43 +882,38 @@ return this.ss.last$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableNavigableSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableNavigableSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableSortedSet'], ['java.util.NavigableSet', 'java.io.Serializable']);
-C$.EMPTY_NAVIGABLE_SET=null;
+C$.$classes$=[['EmptyNavigableSet',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_NAVIGABLE_SET=Clazz.new_($I$(3));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ns=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['+ns']]
+,['O',['EMPTY_NAVIGABLE_SET','java.util.NavigableSet']]]
 
 Clazz.newMeth(C$, 'c$$java_util_NavigableSet', function (s) {
-C$.superclazz.c$$java_util_SortedSet.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_SortedSet.apply(this,[s]);C$.$init$.apply(this);
 this.ns=s;
 }, 1);
 
-Clazz.newMeth(C$, ['lower$TE'], function (e) {
-return this.ns.lower$TE(e);
+Clazz.newMeth(C$, 'lower$O', function (e) {
+return this.ns.lower$O(e);
 });
 
-Clazz.newMeth(C$, ['floor$TE'], function (e) {
-return this.ns.floor$TE(e);
+Clazz.newMeth(C$, 'floor$O', function (e) {
+return this.ns.floor$O(e);
 });
 
-Clazz.newMeth(C$, ['ceiling$TE'], function (e) {
-return this.ns.ceiling$TE(e);
+Clazz.newMeth(C$, 'ceiling$O', function (e) {
+return this.ns.ceiling$O(e);
 });
 
-Clazz.newMeth(C$, ['higher$TE'], function (e) {
-return this.ns.higher$TE(e);
+Clazz.newMeth(C$, 'higher$O', function (e) {
+return this.ns.higher$O(e);
 });
 
 Clazz.newMeth(C$, 'pollFirst$', function () {
@@ -962,31 +932,33 @@ Clazz.newMeth(C$, 'descendingIterator$', function () {
 return this.descendingSet$().iterator$();
 });
 
-Clazz.newMeth(C$, ['subSet$TE$Z$TE$Z'], function (fromElement, fromInclusive, toElement, toInclusive) {
-return Clazz.new_(C$.c$$java_util_NavigableSet,[this.ns.subSet$TE$Z$TE$Z(fromElement, fromInclusive, toElement, toInclusive)]);
+Clazz.newMeth(C$, 'subSet$O$Z$O$Z', function (fromElement, fromInclusive, toElement, toInclusive) {
+return Clazz.new_(C$.c$$java_util_NavigableSet,[this.ns.subSet$O$Z$O$Z(fromElement, fromInclusive, toElement, toInclusive)]);
 });
 
-Clazz.newMeth(C$, ['headSet$TE$Z'], function (toElement, inclusive) {
-return Clazz.new_(C$.c$$java_util_NavigableSet,[this.ns.headSet$TE$Z(toElement, inclusive)]);
+Clazz.newMeth(C$, 'headSet$O$Z', function (toElement, inclusive) {
+return Clazz.new_(C$.c$$java_util_NavigableSet,[this.ns.headSet$O$Z(toElement, inclusive)]);
 });
 
-Clazz.newMeth(C$, ['tailSet$TE$Z'], function (fromElement, inclusive) {
-return Clazz.new_(C$.c$$java_util_NavigableSet,[this.ns.tailSet$TE$Z(fromElement, inclusive)]);
+Clazz.newMeth(C$, 'tailSet$O$Z', function (fromElement, inclusive) {
+return Clazz.new_(C$.c$$java_util_NavigableSet,[this.ns.tailSet$O$Z(fromElement, inclusive)]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_NAVIGABLE_SET=Clazz.new_($I$(3,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Collections.UnmodifiableNavigableSet, "EmptyNavigableSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections.UnmodifiableNavigableSet, "EmptyNavigableSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableNavigableSet'], 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$java_util_NavigableSet.apply(this, [Clazz.new_($I$(1))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_NavigableSet.apply(this,[Clazz.new_($I$(1,1))]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'readResolve', function () {
@@ -997,24 +969,19 @@ return $I$(2).EMPTY_NAVIGABLE_SET;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableCollection'], 'java.util.List');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.list=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['list','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (list) {
-C$.superclazz.c$$java_util_Collection.apply(this, [list]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection.apply(this,[list]);C$.$init$.apply(this);
 this.list=list;
 }, 1);
 
@@ -1030,11 +997,11 @@ Clazz.newMeth(C$, 'get$I', function (index) {
 return this.list.get$I(index);
 });
 
-Clazz.newMeth(C$, 'set$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'set$I$O', function (index, element) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, 'add$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'add$I$O', function (index, element) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -1068,19 +1035,15 @@ return this.listIterator$I(0);
 
 Clazz.newMeth(C$, 'listIterator$I', function (index) {
 return ((P$.Collections$UnmodifiableList$1||
-(function(){var C$=Clazz.newClass(P$, "Collections$UnmodifiableList$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.ListIterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$UnmodifiableList$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.ListIterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.i=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.i=this.b$['java.util.Collections.UnmodifiableList'].list.listIterator$I(this.$finals$.index);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['i','java.util.ListIterator']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.i.hasNext$();
@@ -1110,11 +1073,11 @@ Clazz.newMeth(C$, 'remove$', function () {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['set$TE'], function (e) {
+Clazz.newMeth(C$, 'set$O', function (e) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
+Clazz.newMeth(C$, 'add$O', function (e) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -1122,7 +1085,7 @@ Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (acti
 this.i.forEachRemaining$java_util_function_Consumer(action);
 });
 })()
-), Clazz.new_(P$.Collections$UnmodifiableList$1.$init$, [this, {index: index}]));
+), Clazz.new_(P$.Collections$UnmodifiableList$1.$init$,[this, {index:index}]));
 });
 
 Clazz.newMeth(C$, 'subList$I$I', function (fromIndex, toIndex) {
@@ -1130,25 +1093,23 @@ return Clazz.new_(C$.c$$java_util_List,[this.list.subList$I$I(fromIndex, toIndex
 });
 
 Clazz.newMeth(C$, 'readResolve', function () {
-return (Clazz.instanceOf(this.list, "java.util.RandomAccess") ? Clazz.new_($I$(4).c$$java_util_List,[this.list]) : this);
+return (Clazz.instanceOf(this.list, "java.util.RandomAccess") ? Clazz.new_($I$(4,1).c$$java_util_List,[this.list]) : this);
 }, p$2);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableRandomAccessList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableRandomAccessList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableList'], 'java.util.RandomAccess');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (list) {
-C$.superclazz.c$$java_util_List.apply(this, [list]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_List.apply(this,[list]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'subList$I$I', function (fromIndex, toIndex) {
@@ -1156,32 +1117,26 @@ return Clazz.new_(C$.c$$java_util_List,[this.list.subList$I$I(fromIndex, toIndex
 });
 
 Clazz.newMeth(C$, 'writeReplace', function () {
-return Clazz.new_($I$(5).c$$java_util_List,[this.list]);
+return Clazz.new_($I$(5,1).c$$java_util_List,[this.list]);
 }, p$3);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Map', 'java.io.Serializable']);
+C$.$classes$=[['UnmodifiableEntrySet',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m=null;
-this.keySet=null;
-this.entrySet=null;
-this.values=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['m','java.util.Map','keySet','java.util.Set','+entrySet','values','java.util.Collection']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (m) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (m == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.m=m;
 }, 1);
@@ -1206,7 +1161,7 @@ Clazz.newMeth(C$, 'get$O', function (key) {
 return this.m.get$O(key);
 });
 
-Clazz.newMeth(C$, ['put$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'put$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -1223,17 +1178,17 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
 Clazz.newMeth(C$, 'keySet$', function () {
-if (this.keySet == null ) this.keySet=P$.Collections.unmodifiableSet$java_util_Set(this.m.keySet$());
+if (this.keySet == null ) this.keySet=$I$(8,"unmodifiableSet$java_util_Set",[this.m.keySet$()]);
 return this.keySet;
 });
 
 Clazz.newMeth(C$, 'entrySet$', function () {
-if (this.entrySet == null ) this.entrySet=Clazz.new_($I$(11).c$$java_util_Set,[this.m.entrySet$()]);
+if (this.entrySet == null ) this.entrySet=Clazz.new_([this.m.entrySet$()],$I$(7,1).c$$java_util_Set);
 return this.entrySet;
 });
 
 Clazz.newMeth(C$, 'values$', function () {
-if (this.values == null ) this.values=P$.Collections.unmodifiableCollection$java_util_Collection(this.m.values$());
+if (this.values == null ) this.values=$I$(8,"unmodifiableCollection$java_util_Collection",[this.m.values$()]);
 return this.values;
 });
 
@@ -1249,8 +1204,8 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.m.toString();
 });
 
-Clazz.newMeth(C$, ['getOrDefault$O$TV'], function (k, defaultValue) {
-return (this.m).getOrDefault$O$TV(k, defaultValue);
+Clazz.newMeth(C$, 'getOrDefault$O$O', function (k, defaultValue) {
+return (this.m).getOrDefault$O$O(k, defaultValue);
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_BiConsumer', function (action) {
@@ -1261,7 +1216,7 @@ Clazz.newMeth(C$, 'replaceAll$java_util_function_BiFunction', function ($functio
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['putIfAbsent$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'putIfAbsent$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -1269,118 +1224,112 @@ Clazz.newMeth(C$, 'remove$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV$TV'], function (key, oldValue, newValue) {
+Clazz.newMeth(C$, 'replace$O$O$O', function (key, oldValue, newValue) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'replace$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['computeIfAbsent$TK$java_util_function_Function'], function (key, mappingFunction) {
+Clazz.newMeth(C$, 'computeIfAbsent$O$java_util_function_Function', function (key, mappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['computeIfPresent$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'computeIfPresent$O$java_util_function_BiFunction', function (key, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['compute$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'compute$O$java_util_function_BiFunction', function (key, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['merge$TK$TV$java_util_function_BiFunction'], function (key, value, remappingFunction) {
+Clazz.newMeth(C$, 'merge$O$O$java_util_function_BiFunction', function (key, value, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Collections.UnmodifiableMap, "UnmodifiableEntrySet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections.UnmodifiableMap, "UnmodifiableEntrySet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableSet']);
+C$.$classes$=[['UnmodifiableEntrySetSpliterator',24],['UnmodifiableEntry',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_Set', function (s) {
-C$.superclazz.c$$java_util_Set.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Set.apply(this,[s]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['entryConsumer$java_util_function_Consumer'], function (action) {
+Clazz.newMeth(C$, 'entryConsumer$java_util_function_Consumer', function (action) {
 return ((P$.Collections$UnmodifiableMap$UnmodifiableEntrySet$lambda1||
-(function(){var C$=Clazz.newClass(P$, "Collections$UnmodifiableMap$UnmodifiableEntrySet$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Consumer', 1);
+(function(){/*m*/var C$=Clazz.newClass(P$, "Collections$UnmodifiableMap$UnmodifiableEntrySet$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Consumer', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, ['accept$'], function (e) { return (this.$finals$.action.accept$(Clazz.new_($I$(7).c$$java_util_Map_Entry,[e])));});
+Clazz.newMeth(C$, ['accept$java_util_Map_Entry','accept$O'], function (e) { return (this.$finals$.action.accept$O(Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[e])));});
 })()
-), Clazz.new_(P$.Collections$UnmodifiableMap$UnmodifiableEntrySet$lambda1.$init$, [this, {action: action}]));
+), Clazz.new_(P$.Collections$UnmodifiableMap$UnmodifiableEntrySet$lambda1.$init$,[this, {action:action}]));
 }, 1);
 
-Clazz.newMeth(C$, ['forEach$java_util_function_Consumer'], function (action) {
-$I$(6).requireNonNull$TT(action);
+Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
+$I$(6).requireNonNull$O(action);
 this.c.forEach$java_util_function_Consumer(C$.entryConsumer$java_util_function_Consumer(action));
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(8).c$$java_util_Spliterator,[this.c.spliterator$()]);
+return Clazz.new_([this.c.spliterator$()],$I$(10,1).c$$java_util_Spliterator);
 });
 
 Clazz.newMeth(C$, 'stream$', function () {
-return $I$(9).stream$java_util_Spliterator$Z(this.spliterator$(), false);
+return $I$(11,"stream$java_util_Spliterator$Z",[this.spliterator$(), false]);
 });
 
 Clazz.newMeth(C$, 'parallelStream$', function () {
-return $I$(9).stream$java_util_Spliterator$Z(this.spliterator$(), true);
+return $I$(11,"stream$java_util_Spliterator$Z",[this.spliterator$(), true]);
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
 return ((P$.Collections$UnmodifiableMap$UnmodifiableEntrySet$1||
-(function(){var C$=Clazz.newClass(P$, "Collections$UnmodifiableMap$UnmodifiableEntrySet$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$UnmodifiableMap$UnmodifiableEntrySet$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.i=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.i=this.b$['java.util.Collections.UnmodifiableMap.UnmodifiableEntrySet'].c.iterator$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['i','java.util.Iterator']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.i.hasNext$();
 });
 
 Clazz.newMeth(C$, 'next$', function () {
-return Clazz.new_($I$(7).c$$java_util_Map_Entry,[this.i.next$()]);
+return Clazz.new_([this.i.next$()],$I$(9,1).c$$java_util_Map_Entry);
 });
 
 Clazz.newMeth(C$, 'remove$', function () {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 })()
-), Clazz.new_(P$.Collections$UnmodifiableMap$UnmodifiableEntrySet$1.$init$, [this, null]));
+), Clazz.new_(P$.Collections$UnmodifiableMap$UnmodifiableEntrySet$1.$init$,[this, null]));
 });
 
 Clazz.newMeth(C$, 'toArray$', function () {
 var a=this.c.toArray$();
-for (var i=0; i < a.length; i++) a[i]=Clazz.new_($I$(7).c$$java_util_Map_Entry,[a[i]]);
+for (var i=0; i < a.length; i++) a[i]=Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[a[i]]);
 
 return a;
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
-var arr=this.c.toArray$TTA(a.length == 0 ? a : $I$(10).copyOf$TTA$I(a, 0));
-for (var i=0; i < arr.length; i++) arr[i]=Clazz.new_($I$(7).c$$java_util_Map_Entry,[arr[i]]);
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
+var arr=this.c.toArray$OA(a.length == 0 ? a : $I$(12).copyOf$OA$I(a, 0));
+for (var i=0; i < arr.length; i++) arr[i]=Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[arr[i]]);
 
 if (arr.length > a.length) return arr;
 System.arraycopy$O$I$O$I$I(arr, 0, a, 0, arr.length);
@@ -1390,7 +1339,7 @@ return a;
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
 if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) return false;
-return this.c.contains$O(Clazz.new_($I$(7).c$$java_util_Map_Entry,[o]));
+return this.c.contains$O(Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[o]));
 });
 
 Clazz.newMeth(C$, 'containsAll$java_util_Collection', function (coll) {
@@ -1408,34 +1357,30 @@ if (s.size$() != this.c.size$()) return false;
 return this.containsAll$java_util_Collection(s);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Collections.UnmodifiableMap.UnmodifiableEntrySet, "UnmodifiableEntrySetSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections.UnmodifiableMap.UnmodifiableEntrySet, "UnmodifiableEntrySetSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Spliterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_Spliterator'], function (s) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['s','java.util.Spliterator']]]
+
+Clazz.newMeth(C$, 'c$$java_util_Spliterator', function (s) {
+;C$.$init$.apply(this);
 this.s=s;
 }, 1);
 
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_Consumer'], function (action) {
-$I$(6).requireNonNull$TT(action);
-return this.s.tryAdvance$java_util_function_Consumer(P$.Collections.UnmodifiableMap.UnmodifiableEntrySet.entryConsumer$java_util_function_Consumer(action));
+Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (action) {
+$I$(6).requireNonNull$O(action);
+return this.s.tryAdvance$java_util_function_Consumer($I$(7).entryConsumer$java_util_function_Consumer(action));
 });
 
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_Consumer'], function (action) {
-$I$(6).requireNonNull$TT(action);
-this.s.forEachRemaining$java_util_function_Consumer(P$.Collections.UnmodifiableMap.UnmodifiableEntrySet.entryConsumer$java_util_function_Consumer(action));
+Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
+$I$(6).requireNonNull$O(action);
+this.s.forEachRemaining$java_util_function_Consumer($I$(7).entryConsumer$java_util_function_Consumer(action));
 });
 
 Clazz.newMeth(C$, 'trySplit$', function () {
@@ -1466,24 +1411,20 @@ return this.s.getComparator$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections.UnmodifiableMap.UnmodifiableEntrySet, "UnmodifiableEntry", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections.UnmodifiableMap.UnmodifiableEntrySet, "UnmodifiableEntry", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Map','java.util.Map.Entry']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.e=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['e','java.util.Map.Entry']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Map_Entry', function (e) {
-C$.$init$.apply(this);
-this.e=$I$(6).requireNonNull$TT(e);
+;C$.$init$.apply(this);
+this.e=$I$(6).requireNonNull$O(e);
 }, 1);
 
 Clazz.newMeth(C$, 'getKey$', function () {
@@ -1494,7 +1435,7 @@ Clazz.newMeth(C$, 'getValue$', function () {
 return this.e.getValue$();
 });
 
-Clazz.newMeth(C$, ['setValue$TV'], function (value) {
+Clazz.newMeth(C$, 'setValue$O', function (value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -1506,7 +1447,7 @@ Clazz.newMeth(C$, 'equals$O', function (o) {
 if (this === o ) return true;
 if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) return false;
 var t=o;
-return P$.Collections.eq$O$O(this.e.getKey$(), t.getKey$()) && P$.Collections.eq$O$O(this.e.getValue$(), t.getValue$()) ;
+return $I$(8,"eq$O$O",[this.e.getKey$(), t.getKey$()]) && $I$(8,"eq$O$O",[this.e.getValue$(), t.getValue$()]) ;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -1522,24 +1463,19 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableSortedMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableSortedMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableMap'], ['java.util.SortedMap', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sm','java.util.SortedMap']]]
 
 Clazz.newMeth(C$, 'c$$java_util_SortedMap', function (m) {
-C$.superclazz.c$$java_util_Map.apply(this, [m]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Map.apply(this,[m]);C$.$init$.apply(this);
 this.sm=m;
 }, 1);
 
@@ -1547,16 +1483,16 @@ Clazz.newMeth(C$, 'comparator$', function () {
 return this.sm.comparator$();
 });
 
-Clazz.newMeth(C$, ['subMap$TK$TK'], function (fromKey, toKey) {
-return Clazz.new_(C$.c$$java_util_SortedMap,[this.sm.subMap$TK$TK(fromKey, toKey)]);
+Clazz.newMeth(C$, 'subMap$O$O', function (fromKey, toKey) {
+return Clazz.new_(C$.c$$java_util_SortedMap,[this.sm.subMap$O$O(fromKey, toKey)]);
 });
 
-Clazz.newMeth(C$, ['headMap$TK'], function (toKey) {
-return Clazz.new_(C$.c$$java_util_SortedMap,[this.sm.headMap$TK(toKey)]);
+Clazz.newMeth(C$, 'headMap$O', function (toKey) {
+return Clazz.new_(C$.c$$java_util_SortedMap,[this.sm.headMap$O(toKey)]);
 });
 
-Clazz.newMeth(C$, ['tailMap$TK'], function (fromKey) {
-return Clazz.new_(C$.c$$java_util_SortedMap,[this.sm.tailMap$TK(fromKey)]);
+Clazz.newMeth(C$, 'tailMap$O', function (fromKey) {
+return Clazz.new_(C$.c$$java_util_SortedMap,[this.sm.tailMap$O(fromKey)]);
 });
 
 Clazz.newMeth(C$, 'firstKey$', function () {
@@ -1570,73 +1506,68 @@ return this.sm.lastKey$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "UnmodifiableNavigableMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "UnmodifiableNavigableMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableSortedMap'], ['java.util.NavigableMap', 'java.io.Serializable']);
-C$.EMPTY_NAVIGABLE_MAP=null;
+C$.$classes$=[['EmptyNavigableMap',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_NAVIGABLE_MAP=Clazz.new_($I$(14));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['nm','java.util.NavigableMap']]
+,['O',['EMPTY_NAVIGABLE_MAP','java.util.Collections.UnmodifiableNavigableMap.EmptyNavigableMap']]]
 
 Clazz.newMeth(C$, 'c$$java_util_NavigableMap', function (m) {
-C$.superclazz.c$$java_util_SortedMap.apply(this, [m]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_SortedMap.apply(this,[m]);C$.$init$.apply(this);
 this.nm=m;
 }, 1);
 
-Clazz.newMeth(C$, ['lowerKey$TK'], function (key) {
-return this.nm.lowerKey$TK(key);
+Clazz.newMeth(C$, 'lowerKey$O', function (key) {
+return this.nm.lowerKey$O(key);
 });
 
-Clazz.newMeth(C$, ['floorKey$TK'], function (key) {
-return this.nm.floorKey$TK(key);
+Clazz.newMeth(C$, 'floorKey$O', function (key) {
+return this.nm.floorKey$O(key);
 });
 
-Clazz.newMeth(C$, ['ceilingKey$TK'], function (key) {
-return this.nm.ceilingKey$TK(key);
+Clazz.newMeth(C$, 'ceilingKey$O', function (key) {
+return this.nm.ceilingKey$O(key);
 });
 
-Clazz.newMeth(C$, ['higherKey$TK'], function (key) {
-return this.nm.higherKey$TK(key);
+Clazz.newMeth(C$, 'higherKey$O', function (key) {
+return this.nm.higherKey$O(key);
 });
 
-Clazz.newMeth(C$, ['lowerEntry$TK'], function (key) {
-var lower=this.nm.lowerEntry$TK(key);
-return (null != lower ) ? Clazz.new_($I$(7).c$$java_util_Map_Entry,[lower]) : null;
+Clazz.newMeth(C$, 'lowerEntry$O', function (key) {
+var lower=this.nm.lowerEntry$O(key);
+return (null != lower ) ? Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[lower]) : null;
 });
 
-Clazz.newMeth(C$, ['floorEntry$TK'], function (key) {
-var floor=this.nm.floorEntry$TK(key);
-return (null != floor ) ? Clazz.new_($I$(7).c$$java_util_Map_Entry,[floor]) : null;
+Clazz.newMeth(C$, 'floorEntry$O', function (key) {
+var floor=this.nm.floorEntry$O(key);
+return (null != floor ) ? Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[floor]) : null;
 });
 
-Clazz.newMeth(C$, ['ceilingEntry$TK'], function (key) {
-var ceiling=this.nm.ceilingEntry$TK(key);
-return (null != ceiling ) ? Clazz.new_($I$(7).c$$java_util_Map_Entry,[ceiling]) : null;
+Clazz.newMeth(C$, 'ceilingEntry$O', function (key) {
+var ceiling=this.nm.ceilingEntry$O(key);
+return (null != ceiling ) ? Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[ceiling]) : null;
 });
 
-Clazz.newMeth(C$, ['higherEntry$TK'], function (key) {
-var higher=this.nm.higherEntry$TK(key);
-return (null != higher ) ? Clazz.new_($I$(7).c$$java_util_Map_Entry,[higher]) : null;
+Clazz.newMeth(C$, 'higherEntry$O', function (key) {
+var higher=this.nm.higherEntry$O(key);
+return (null != higher ) ? Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[higher]) : null;
 });
 
 Clazz.newMeth(C$, 'firstEntry$', function () {
 var first=this.nm.firstEntry$();
-return (null != first ) ? Clazz.new_($I$(7).c$$java_util_Map_Entry,[first]) : null;
+return (null != first ) ? Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[first]) : null;
 });
 
 Clazz.newMeth(C$, 'lastEntry$', function () {
 var last=this.nm.lastEntry$();
-return (null != last ) ? Clazz.new_($I$(7).c$$java_util_Map_Entry,[last]) : null;
+return (null != last ) ? Clazz.new_($I$(9,1).c$$java_util_Map_Entry,[last]) : null;
 });
 
 Clazz.newMeth(C$, 'pollFirstEntry$', function () {
@@ -1648,82 +1579,79 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
 Clazz.newMeth(C$, 'descendingMap$', function () {
-return P$.Collections.unmodifiableNavigableMap$java_util_NavigableMap(this.nm.descendingMap$());
+return $I$(8,"unmodifiableNavigableMap$java_util_NavigableMap",[this.nm.descendingMap$()]);
 });
 
 Clazz.newMeth(C$, 'navigableKeySet$', function () {
-return P$.Collections.unmodifiableNavigableSet$java_util_NavigableSet(this.nm.navigableKeySet$());
+return $I$(8,"unmodifiableNavigableSet$java_util_NavigableSet",[this.nm.navigableKeySet$()]);
 });
 
 Clazz.newMeth(C$, 'descendingKeySet$', function () {
-return P$.Collections.unmodifiableNavigableSet$java_util_NavigableSet(this.nm.descendingKeySet$());
+return $I$(8,"unmodifiableNavigableSet$java_util_NavigableSet",[this.nm.descendingKeySet$()]);
 });
 
-Clazz.newMeth(C$, ['subMap$TK$Z$TK$Z'], function (fromKey, fromInclusive, toKey, toInclusive) {
-return P$.Collections.unmodifiableNavigableMap$java_util_NavigableMap(this.nm.subMap$TK$Z$TK$Z(fromKey, fromInclusive, toKey, toInclusive));
+Clazz.newMeth(C$, 'subMap$O$Z$O$Z', function (fromKey, fromInclusive, toKey, toInclusive) {
+return $I$(8,"unmodifiableNavigableMap$java_util_NavigableMap",[this.nm.subMap$O$Z$O$Z(fromKey, fromInclusive, toKey, toInclusive)]);
 });
 
-Clazz.newMeth(C$, ['headMap$TK$Z'], function (toKey, inclusive) {
-return P$.Collections.unmodifiableNavigableMap$java_util_NavigableMap(this.nm.headMap$TK$Z(toKey, inclusive));
+Clazz.newMeth(C$, 'headMap$O$Z', function (toKey, inclusive) {
+return $I$(8,"unmodifiableNavigableMap$java_util_NavigableMap",[this.nm.headMap$O$Z(toKey, inclusive)]);
 });
 
-Clazz.newMeth(C$, ['tailMap$TK$Z'], function (fromKey, inclusive) {
-return P$.Collections.unmodifiableNavigableMap$java_util_NavigableMap(this.nm.tailMap$TK$Z(fromKey, inclusive));
+Clazz.newMeth(C$, 'tailMap$O$Z', function (fromKey, inclusive) {
+return $I$(8,"unmodifiableNavigableMap$java_util_NavigableMap",[this.nm.tailMap$O$Z(fromKey, inclusive)]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_NAVIGABLE_MAP=Clazz.new_($I$(15,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Collections.UnmodifiableNavigableMap, "EmptyNavigableMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections.UnmodifiableNavigableMap, "EmptyNavigableMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.UnmodifiableNavigableMap'], 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$java_util_NavigableMap.apply(this, [Clazz.new_($I$(12))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_NavigableMap.apply(this,[Clazz.new_($I$(13,1))]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'navigableKeySet$', function () {
-return P$.Collections.emptyNavigableSet$();
+return $I$(8).emptyNavigableSet$();
 });
 
 Clazz.newMeth(C$, 'readResolve', function () {
-return $I$(13).EMPTY_NAVIGABLE_MAP;
+return $I$(14).EMPTY_NAVIGABLE_MAP;
 }, p$4);
 })()
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedCollection", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedCollection", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Collection', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.c=null;
-this.mutex=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['c','java.util.Collection','mutex','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-C$.$init$.apply(this);
-this.c=$I$(6).requireNonNull$TT(c);
+;C$.$init$.apply(this);
+this.c=$I$(6).requireNonNull$O(c);
 this.mutex=this;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection$O', function (c, mutex) {
-C$.$init$.apply(this);
-this.c=$I$(6).requireNonNull$TT(c);
-this.mutex=$I$(6).requireNonNull$TT(mutex);
+;C$.$init$.apply(this);
+this.c=$I$(6).requireNonNull$O(c);
+this.mutex=$I$(6).requireNonNull$O(mutex);
 }, 1);
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -1746,18 +1674,18 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return this.c.toArray$();
 }});
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 {
-return this.c.toArray$TTA(a);
+return this.c.toArray$OA(a);
 }});
 
 Clazz.newMeth(C$, 'iterator$', function () {
 return this.c.iterator$();
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
+Clazz.newMeth(C$, 'add$O', function (e) {
 {
-return this.c.add$TE(e);
+return this.c.add$O(e);
 }});
 
 Clazz.newMeth(C$, 'remove$O', function (o) {
@@ -1825,24 +1753,21 @@ s.defaultWriteObject$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.SynchronizedCollection'], 'java.util.Set');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_Set', function (s) {
-C$.superclazz.c$$java_util_Collection.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection.apply(this,[s]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Set$O', function (s, mutex) {
-C$.superclazz.c$$java_util_Collection$O.apply(this, [s, mutex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection$O.apply(this,[s, mutex]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -1859,30 +1784,24 @@ return this.c.hashCode$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedSortedSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedSortedSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.SynchronizedSet'], 'java.util.SortedSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ss=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ss','java.util.SortedSet']]]
 
 Clazz.newMeth(C$, 'c$$java_util_SortedSet', function (s) {
-C$.superclazz.c$$java_util_Set.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Set.apply(this,[s]);C$.$init$.apply(this);
 this.ss=s;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_SortedSet$O', function (s, mutex) {
-C$.superclazz.c$$java_util_Set$O.apply(this, [s, mutex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Set$O.apply(this,[s, mutex]);C$.$init$.apply(this);
 this.ss=s;
 }, 1);
 
@@ -1891,19 +1810,19 @@ Clazz.newMeth(C$, 'comparator$', function () {
 return this.ss.comparator$();
 }});
 
-Clazz.newMeth(C$, ['subSet$TE$TE'], function (fromElement, toElement) {
+Clazz.newMeth(C$, 'subSet$O$O', function (fromElement, toElement) {
 {
-return Clazz.new_(C$.c$$java_util_SortedSet$O,[this.ss.subSet$TE$TE(fromElement, toElement), this.mutex]);
+return Clazz.new_(C$.c$$java_util_SortedSet$O,[this.ss.subSet$O$O(fromElement, toElement), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['headSet$TE'], function (toElement) {
+Clazz.newMeth(C$, 'headSet$O', function (toElement) {
 {
-return Clazz.new_(C$.c$$java_util_SortedSet$O,[this.ss.headSet$TE(toElement), this.mutex]);
+return Clazz.new_(C$.c$$java_util_SortedSet$O,[this.ss.headSet$O(toElement), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['tailSet$TE'], function (fromElement) {
+Clazz.newMeth(C$, 'tailSet$O', function (fromElement) {
 {
-return Clazz.new_(C$.c$$java_util_SortedSet$O,[this.ss.tailSet$TE(fromElement), this.mutex]);
+return Clazz.new_(C$.c$$java_util_SortedSet$O,[this.ss.tailSet$O(fromElement), this.mutex]);
 }});
 
 Clazz.newMeth(C$, 'first$', function () {
@@ -1919,51 +1838,45 @@ return this.ss.last$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedNavigableSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedNavigableSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.SynchronizedSortedSet'], 'java.util.NavigableSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ns=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ns','java.util.NavigableSet']]]
 
 Clazz.newMeth(C$, 'c$$java_util_NavigableSet', function (s) {
-C$.superclazz.c$$java_util_SortedSet.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_SortedSet.apply(this,[s]);C$.$init$.apply(this);
 this.ns=s;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_NavigableSet$O', function (s, mutex) {
-C$.superclazz.c$$java_util_SortedSet$O.apply(this, [s, mutex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_SortedSet$O.apply(this,[s, mutex]);C$.$init$.apply(this);
 this.ns=s;
 }, 1);
 
-Clazz.newMeth(C$, ['lower$TE'], function (e) {
+Clazz.newMeth(C$, 'lower$O', function (e) {
 {
-return this.ns.lower$TE(e);
+return this.ns.lower$O(e);
 }});
 
-Clazz.newMeth(C$, ['floor$TE'], function (e) {
+Clazz.newMeth(C$, 'floor$O', function (e) {
 {
-return this.ns.floor$TE(e);
+return this.ns.floor$O(e);
 }});
 
-Clazz.newMeth(C$, ['ceiling$TE'], function (e) {
+Clazz.newMeth(C$, 'ceiling$O', function (e) {
 {
-return this.ns.ceiling$TE(e);
+return this.ns.ceiling$O(e);
 }});
 
-Clazz.newMeth(C$, ['higher$TE'], function (e) {
+Clazz.newMeth(C$, 'higher$O', function (e) {
 {
-return this.ns.higher$TE(e);
+return this.ns.higher$O(e);
 }});
 
 Clazz.newMeth(C$, 'pollFirst$', function () {
@@ -1986,63 +1899,57 @@ Clazz.newMeth(C$, 'descendingIterator$', function () {
 return this.descendingSet$().iterator$();
 }});
 
-Clazz.newMeth(C$, ['subSet$TE$TE'], function (fromElement, toElement) {
+Clazz.newMeth(C$, 'subSet$O$O', function (fromElement, toElement) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.subSet$TE$Z$TE$Z(fromElement, true, toElement, false), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.subSet$O$Z$O$Z(fromElement, true, toElement, false), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['headSet$TE'], function (toElement) {
+Clazz.newMeth(C$, 'headSet$O', function (toElement) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.headSet$TE$Z(toElement, false), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.headSet$O$Z(toElement, false), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['tailSet$TE'], function (fromElement) {
+Clazz.newMeth(C$, 'tailSet$O', function (fromElement) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.tailSet$TE$Z(fromElement, true), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.tailSet$O$Z(fromElement, true), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['subSet$TE$Z$TE$Z'], function (fromElement, fromInclusive, toElement, toInclusive) {
+Clazz.newMeth(C$, 'subSet$O$Z$O$Z', function (fromElement, fromInclusive, toElement, toInclusive) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.subSet$TE$Z$TE$Z(fromElement, fromInclusive, toElement, toInclusive), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.subSet$O$Z$O$Z(fromElement, fromInclusive, toElement, toInclusive), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['headSet$TE$Z'], function (toElement, inclusive) {
+Clazz.newMeth(C$, 'headSet$O$Z', function (toElement, inclusive) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.headSet$TE$Z(toElement, inclusive), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.headSet$O$Z(toElement, inclusive), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['tailSet$TE$Z'], function (fromElement, inclusive) {
+Clazz.newMeth(C$, 'tailSet$O$Z', function (fromElement, inclusive) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.tailSet$TE$Z(fromElement, inclusive), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableSet$O,[this.ns.tailSet$O$Z(fromElement, inclusive), this.mutex]);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.SynchronizedCollection'], 'java.util.List');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.list=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['list','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (list) {
-C$.superclazz.c$$java_util_Collection.apply(this, [list]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection.apply(this,[list]);C$.$init$.apply(this);
 this.list=list;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_List$O', function (list, mutex) {
-C$.superclazz.c$$java_util_Collection$O.apply(this, [list, mutex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection$O.apply(this,[list, mutex]);C$.$init$.apply(this);
 this.list=list;
 }, 1);
 
@@ -2062,14 +1969,14 @@ Clazz.newMeth(C$, 'get$I', function (index) {
 return this.list.get$I(index);
 }});
 
-Clazz.newMeth(C$, 'set$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'set$I$O', function (index, element) {
 {
-return this.list.set$I$TE(index, element);
+return this.list.set$I$O(index, element);
 }});
 
-Clazz.newMeth(C$, 'add$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'add$I$O', function (index, element) {
 {
-this.list.add$I$TE(index, element);
+this.list.add$I$O(index, element);
 }});
 
 Clazz.newMeth(C$, 'remove$I', function (index) {
@@ -2116,30 +2023,27 @@ this.list.sort$java_util_Comparator(c);
 }});
 
 Clazz.newMeth(C$, 'readResolve', function () {
-return (Clazz.instanceOf(this.list, "java.util.RandomAccess") ? Clazz.new_($I$(15).c$$java_util_List,[this.list]) : this);
+return (Clazz.instanceOf(this.list, "java.util.RandomAccess") ? Clazz.new_($I$(16,1).c$$java_util_List,[this.list]) : this);
 }, p$6);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedRandomAccessList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedRandomAccessList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.SynchronizedList'], 'java.util.RandomAccess');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (list) {
-C$.superclazz.c$$java_util_List.apply(this, [list]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_List.apply(this,[list]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_List$O', function (list, mutex) {
-C$.superclazz.c$$java_util_List$O.apply(this, [list, mutex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_List$O.apply(this,[list, mutex]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'subList$I$I', function (fromIndex, toIndex) {
@@ -2148,39 +2052,31 @@ return Clazz.new_(C$.c$$java_util_List$O,[this.list.subList$I$I(fromIndex, toInd
 }});
 
 Clazz.newMeth(C$, 'writeReplace', function () {
-return Clazz.new_($I$(16).c$$java_util_List,[this.list]);
+return Clazz.new_($I$(17,1).c$$java_util_List,[this.list]);
 }, p$7);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Map', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m=null;
-this.mutex=null;
-this.keySet=null;
-this.entrySet=null;
-this.values=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_Map'], function (m) {
-C$.$init$.apply(this);
-this.m=$I$(6).requireNonNull$TT(m);
+C$.$fields$=[['O',['m','java.util.Map','mutex','java.lang.Object','keySet','java.util.Set','+entrySet','values','java.util.Collection']]]
+
+Clazz.newMeth(C$, 'c$$java_util_Map', function (m) {
+;C$.$init$.apply(this);
+this.m=$I$(6).requireNonNull$O(m);
 this.mutex=this;
 }, 1);
 
-Clazz.newMeth(C$, ['c$$java_util_Map$O'], function (m, mutex) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_Map$O', function (m, mutex) {
+;C$.$init$.apply(this);
 this.m=m;
 this.mutex=mutex;
 }, 1);
@@ -2210,9 +2106,9 @@ Clazz.newMeth(C$, 'get$O', function (key) {
 return this.m.get$O(key);
 }});
 
-Clazz.newMeth(C$, ['put$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'put$O$O', function (key, value) {
 {
-return this.m.put$TK$TV(key, value);
+return this.m.put$O$O(key, value);
 }});
 
 Clazz.newMeth(C$, 'remove$O', function (key) {
@@ -2232,19 +2128,19 @@ this.m.clear$();
 
 Clazz.newMeth(C$, 'keySet$', function () {
 {
-if (this.keySet == null ) this.keySet=Clazz.new_($I$(17).c$$java_util_Set$O,[this.m.keySet$(), this.mutex]);
+if (this.keySet == null ) this.keySet=Clazz.new_([this.m.keySet$(), this.mutex],$I$(18,1).c$$java_util_Set$O);
 return this.keySet;
 }});
 
 Clazz.newMeth(C$, 'entrySet$', function () {
 {
-if (this.entrySet == null ) this.entrySet=Clazz.new_($I$(17).c$$java_util_Set$O,[this.m.entrySet$(), this.mutex]);
+if (this.entrySet == null ) this.entrySet=Clazz.new_([this.m.entrySet$(), this.mutex],$I$(18,1).c$$java_util_Set$O);
 return this.entrySet;
 }});
 
 Clazz.newMeth(C$, 'values$', function () {
 {
-if (this.values == null ) this.values=Clazz.new_($I$(18).c$$java_util_Collection$O,[this.m.values$(), this.mutex]);
+if (this.values == null ) this.values=Clazz.new_([this.m.values$(), this.mutex],$I$(19,1).c$$java_util_Collection$O);
 return this.values;
 }});
 
@@ -2264,9 +2160,9 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.m.toString();
 }});
 
-Clazz.newMeth(C$, ['getOrDefault$O$TV'], function (k, defaultValue) {
+Clazz.newMeth(C$, 'getOrDefault$O$O', function (k, defaultValue) {
 {
-return this.m.getOrDefault$O$TV(k, defaultValue);
+return this.m.getOrDefault$O$O(k, defaultValue);
 }});
 
 Clazz.newMeth(C$, 'forEach$java_util_function_BiConsumer', function (action) {
@@ -2279,9 +2175,9 @@ Clazz.newMeth(C$, 'replaceAll$java_util_function_BiFunction', function ($functio
 this.m.replaceAll$java_util_function_BiFunction($function);
 }});
 
-Clazz.newMeth(C$, ['putIfAbsent$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'putIfAbsent$O$O', function (key, value) {
 {
-return this.m.putIfAbsent$TK$TV(key, value);
+return this.m.putIfAbsent$O$O(key, value);
 }});
 
 Clazz.newMeth(C$, 'remove$O$O', function (key, value) {
@@ -2289,34 +2185,34 @@ Clazz.newMeth(C$, 'remove$O$O', function (key, value) {
 return this.m.remove$O$O(key, value);
 }});
 
-Clazz.newMeth(C$, ['replace$TK$TV$TV'], function (key, oldValue, newValue) {
+Clazz.newMeth(C$, 'replace$O$O$O', function (key, oldValue, newValue) {
 {
-return this.m.replace$TK$TV$TV(key, oldValue, newValue);
+return this.m.replace$O$O$O(key, oldValue, newValue);
 }});
 
-Clazz.newMeth(C$, ['replace$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'replace$O$O', function (key, value) {
 {
-return this.m.replace$TK$TV(key, value);
+return this.m.replace$O$O(key, value);
 }});
 
-Clazz.newMeth(C$, ['computeIfAbsent$TK$java_util_function_Function'], function (key, mappingFunction) {
+Clazz.newMeth(C$, 'computeIfAbsent$O$java_util_function_Function', function (key, mappingFunction) {
 {
-return this.m.computeIfAbsent$TK$java_util_function_Function(key, mappingFunction);
+return this.m.computeIfAbsent$O$java_util_function_Function(key, mappingFunction);
 }});
 
-Clazz.newMeth(C$, ['computeIfPresent$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'computeIfPresent$O$java_util_function_BiFunction', function (key, remappingFunction) {
 {
-return this.m.computeIfPresent$TK$java_util_function_BiFunction(key, remappingFunction);
+return this.m.computeIfPresent$O$java_util_function_BiFunction(key, remappingFunction);
 }});
 
-Clazz.newMeth(C$, ['compute$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'compute$O$java_util_function_BiFunction', function (key, remappingFunction) {
 {
-return this.m.compute$TK$java_util_function_BiFunction(key, remappingFunction);
+return this.m.compute$O$java_util_function_BiFunction(key, remappingFunction);
 }});
 
-Clazz.newMeth(C$, ['merge$TK$TV$java_util_function_BiFunction'], function (key, value, remappingFunction) {
+Clazz.newMeth(C$, 'merge$O$O$java_util_function_BiFunction', function (key, value, remappingFunction) {
 {
-return this.m.merge$TK$TV$java_util_function_BiFunction(key, value, remappingFunction);
+return this.m.merge$O$O$java_util_function_BiFunction(key, value, remappingFunction);
 }});
 
 Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
@@ -2327,30 +2223,24 @@ s.defaultWriteObject$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedSortedMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedSortedMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.SynchronizedMap'], 'java.util.SortedMap');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_SortedMap'], function (m) {
-C$.superclazz.c$$java_util_Map.apply(this, [m]);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['sm','java.util.SortedMap']]]
+
+Clazz.newMeth(C$, 'c$$java_util_SortedMap', function (m) {
+;C$.superclazz.c$$java_util_Map.apply(this,[m]);C$.$init$.apply(this);
 this.sm=m;
 }, 1);
 
-Clazz.newMeth(C$, ['c$$java_util_SortedMap$O'], function (m, mutex) {
-C$.superclazz.c$$java_util_Map$O.apply(this, [m, mutex]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_SortedMap$O', function (m, mutex) {
+;C$.superclazz.c$$java_util_Map$O.apply(this,[m, mutex]);C$.$init$.apply(this);
 this.sm=m;
 }, 1);
 
@@ -2359,19 +2249,19 @@ Clazz.newMeth(C$, 'comparator$', function () {
 return this.sm.comparator$();
 }});
 
-Clazz.newMeth(C$, ['subMap$TK$TK'], function (fromKey, toKey) {
+Clazz.newMeth(C$, 'subMap$O$O', function (fromKey, toKey) {
 {
-return Clazz.new_(C$.c$$java_util_SortedMap$O,[this.sm.subMap$TK$TK(fromKey, toKey), this.mutex]);
+return Clazz.new_(C$.c$$java_util_SortedMap$O,[this.sm.subMap$O$O(fromKey, toKey), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['headMap$TK'], function (toKey) {
+Clazz.newMeth(C$, 'headMap$O', function (toKey) {
 {
-return Clazz.new_(C$.c$$java_util_SortedMap$O,[this.sm.headMap$TK(toKey), this.mutex]);
+return Clazz.new_(C$.c$$java_util_SortedMap$O,[this.sm.headMap$O(toKey), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['tailMap$TK'], function (fromKey) {
+Clazz.newMeth(C$, 'tailMap$O', function (fromKey) {
 {
-return Clazz.new_(C$.c$$java_util_SortedMap$O,[this.sm.tailMap$TK(fromKey), this.mutex]);
+return Clazz.new_(C$.c$$java_util_SortedMap$O,[this.sm.tailMap$O(fromKey), this.mutex]);
 }});
 
 Clazz.newMeth(C$, 'firstKey$', function () {
@@ -2387,71 +2277,65 @@ return this.sm.lastKey$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SynchronizedNavigableMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SynchronizedNavigableMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.SynchronizedSortedMap'], 'java.util.NavigableMap');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_NavigableMap'], function (m) {
-C$.superclazz.c$$java_util_SortedMap.apply(this, [m]);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['nm','java.util.NavigableMap']]]
+
+Clazz.newMeth(C$, 'c$$java_util_NavigableMap', function (m) {
+;C$.superclazz.c$$java_util_SortedMap.apply(this,[m]);C$.$init$.apply(this);
 this.nm=m;
 }, 1);
 
-Clazz.newMeth(C$, ['c$$java_util_NavigableMap$O'], function (m, mutex) {
-C$.superclazz.c$$java_util_SortedMap$O.apply(this, [m, mutex]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_NavigableMap$O', function (m, mutex) {
+;C$.superclazz.c$$java_util_SortedMap$O.apply(this,[m, mutex]);C$.$init$.apply(this);
 this.nm=m;
 }, 1);
 
-Clazz.newMeth(C$, ['lowerEntry$TK'], function (key) {
+Clazz.newMeth(C$, 'lowerEntry$O', function (key) {
 {
-return this.nm.lowerEntry$TK(key);
+return this.nm.lowerEntry$O(key);
 }});
 
-Clazz.newMeth(C$, ['lowerKey$TK'], function (key) {
+Clazz.newMeth(C$, 'lowerKey$O', function (key) {
 {
-return this.nm.lowerKey$TK(key);
+return this.nm.lowerKey$O(key);
 }});
 
-Clazz.newMeth(C$, ['floorEntry$TK'], function (key) {
+Clazz.newMeth(C$, 'floorEntry$O', function (key) {
 {
-return this.nm.floorEntry$TK(key);
+return this.nm.floorEntry$O(key);
 }});
 
-Clazz.newMeth(C$, ['floorKey$TK'], function (key) {
+Clazz.newMeth(C$, 'floorKey$O', function (key) {
 {
-return this.nm.floorKey$TK(key);
+return this.nm.floorKey$O(key);
 }});
 
-Clazz.newMeth(C$, ['ceilingEntry$TK'], function (key) {
+Clazz.newMeth(C$, 'ceilingEntry$O', function (key) {
 {
-return this.nm.ceilingEntry$TK(key);
+return this.nm.ceilingEntry$O(key);
 }});
 
-Clazz.newMeth(C$, ['ceilingKey$TK'], function (key) {
+Clazz.newMeth(C$, 'ceilingKey$O', function (key) {
 {
-return this.nm.ceilingKey$TK(key);
+return this.nm.ceilingKey$O(key);
 }});
 
-Clazz.newMeth(C$, ['higherEntry$TK'], function (key) {
+Clazz.newMeth(C$, 'higherEntry$O', function (key) {
 {
-return this.nm.higherEntry$TK(key);
+return this.nm.higherEntry$O(key);
 }});
 
-Clazz.newMeth(C$, ['higherKey$TK'], function (key) {
+Clazz.newMeth(C$, 'higherKey$O', function (key) {
 {
-return this.nm.higherKey$TK(key);
+return this.nm.higherKey$O(key);
 }});
 
 Clazz.newMeth(C$, 'firstEntry$', function () {
@@ -2485,63 +2369,57 @@ return this.navigableKeySet$();
 
 Clazz.newMeth(C$, 'navigableKeySet$', function () {
 {
-return Clazz.new_($I$(19).c$$java_util_NavigableSet$O,[this.nm.navigableKeySet$(), this.mutex]);
+return Clazz.new_([this.nm.navigableKeySet$(), this.mutex],$I$(20,1).c$$java_util_NavigableSet$O);
 }});
 
 Clazz.newMeth(C$, 'descendingKeySet$', function () {
 {
-return Clazz.new_($I$(19).c$$java_util_NavigableSet$O,[this.nm.descendingKeySet$(), this.mutex]);
+return Clazz.new_([this.nm.descendingKeySet$(), this.mutex],$I$(20,1).c$$java_util_NavigableSet$O);
 }});
 
-Clazz.newMeth(C$, ['subMap$TK$TK'], function (fromKey, toKey) {
+Clazz.newMeth(C$, 'subMap$O$O', function (fromKey, toKey) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.subMap$TK$Z$TK$Z(fromKey, true, toKey, false), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.subMap$O$Z$O$Z(fromKey, true, toKey, false), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['headMap$TK'], function (toKey) {
+Clazz.newMeth(C$, 'headMap$O', function (toKey) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.headMap$TK$Z(toKey, false), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.headMap$O$Z(toKey, false), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['tailMap$TK'], function (fromKey) {
+Clazz.newMeth(C$, 'tailMap$O', function (fromKey) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.tailMap$TK$Z(fromKey, true), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.tailMap$O$Z(fromKey, true), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['subMap$TK$Z$TK$Z'], function (fromKey, fromInclusive, toKey, toInclusive) {
+Clazz.newMeth(C$, 'subMap$O$Z$O$Z', function (fromKey, fromInclusive, toKey, toInclusive) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.subMap$TK$Z$TK$Z(fromKey, fromInclusive, toKey, toInclusive), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.subMap$O$Z$O$Z(fromKey, fromInclusive, toKey, toInclusive), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['headMap$TK$Z'], function (toKey, inclusive) {
+Clazz.newMeth(C$, 'headMap$O$Z', function (toKey, inclusive) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.headMap$TK$Z(toKey, inclusive), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.headMap$O$Z(toKey, inclusive), this.mutex]);
 }});
 
-Clazz.newMeth(C$, ['tailMap$TK$Z'], function (fromKey, inclusive) {
+Clazz.newMeth(C$, 'tailMap$O$Z', function (fromKey, inclusive) {
 {
-return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.tailMap$TK$Z(fromKey, inclusive), this.mutex]);
+return Clazz.new_(C$.c$$java_util_NavigableMap$O,[this.nm.tailMap$O$Z(fromKey, inclusive), this.mutex]);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedCollection", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedCollection", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Collection', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.c=null;
-this.type=null;
-this.zeroLengthElementArray=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['c','java.util.Collection','type','Class','zeroLengthElementArray','_.E[]']]]
 
 Clazz.newMeth(C$, 'typeCheck$O', function (o) {
 if (o != null  && !this.type.isInstance$O(o) ) throw Clazz.new_(Clazz.load('ClassCastException').c$$S,[p$9.badElementMsg$O.apply(this, [o])]);
@@ -2553,9 +2431,9 @@ return "Attempt to insert " + o.getClass$() + " element into collection with ele
 }, p$9);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection$Class', function (c, type) {
-C$.$init$.apply(this);
-this.c=$I$(6).requireNonNull$TT$S(c, "c");
-this.type=$I$(6).requireNonNull$TT$S(type, "type");
+;C$.$init$.apply(this);
+this.c=$I$(6).requireNonNull$O$S(c, "c");
+this.type=$I$(6).requireNonNull$O$S(type, "type");
 }, 1);
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -2574,8 +2452,8 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return this.c.toArray$();
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
-return this.c.toArray$TTA(a);
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
+return this.c.toArray$OA(a);
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -2605,13 +2483,12 @@ return this.c.retainAll$java_util_Collection(coll);
 Clazz.newMeth(C$, 'iterator$', function () {
 var it=this.c.iterator$();
 return ((P$.Collections$CheckedCollection$1||
-(function(){var C$=Clazz.newClass(P$, "Collections$CheckedCollection$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$CheckedCollection$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.$finals$.it.hasNext$();
@@ -2625,23 +2502,23 @@ Clazz.newMeth(C$, 'remove$', function () {
 this.$finals$.it.remove$();
 });
 })()
-), Clazz.new_(P$.Collections$CheckedCollection$1.$init$, [this, {it: it}]));
+), Clazz.new_(P$.Collections$CheckedCollection$1.$init$,[this, {it:it}]));
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-return this.c.add$TE(this.typeCheck$O(e));
+Clazz.newMeth(C$, 'add$O', function (e) {
+return this.c.add$O(this.typeCheck$O(e));
 });
 
 Clazz.newMeth(C$, 'zeroLengthElementArray', function () {
-return this.zeroLengthElementArray != null  ? this.zeroLengthElementArray : (this.zeroLengthElementArray=P$.Collections.zeroLengthArray$Class(this.type));
+return this.zeroLengthElementArray != null  ? this.zeroLengthElementArray : (this.zeroLengthElementArray=$I$(8).zeroLengthArray$Class(this.type));
 }, p$9);
 
 Clazz.newMeth(C$, 'checkedCopyOf$java_util_Collection', function (coll) {
 var a;
 try {
 var z=p$9.zeroLengthElementArray.apply(this, []);
-a=coll.toArray$TTA(z);
-if (a.getClass$() !== z.getClass$() ) a=$I$(10).copyOf$TUA$I$Class(a, a.length, z.getClass$());
+a=coll.toArray$OA(z);
+if (a.getClass$() !== z.getClass$() ) a=$I$(12,"copyOf$OA$I$Class",[a, a.length, z.getClass$()]);
 } catch (ignore) {
 if (Clazz.exceptionOf(ignore,"ArrayStoreException")){
 a=coll.toArray$().clone$();
@@ -2651,7 +2528,7 @@ for (var o, $o = 0, $$o = a; $o<$$o.length&&((o=($$o[$o])),1);$o++) this.typeChe
 throw ignore;
 }
 }
-return $I$(10).asList$TTA(a);
+return $I$(12).asList$OA(a);
 });
 
 Clazz.newMeth(C$, 'addAll$java_util_Collection', function (coll) {
@@ -2681,24 +2558,19 @@ return this.c.parallelStream$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedQueue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedQueue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedCollection'], ['java.util.Queue', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queue=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['queue','java.util.Queue']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Queue$Class', function (queue, elementType) {
-C$.superclazz.c$$java_util_Collection$Class.apply(this, [queue, elementType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection$Class.apply(this,[queue, elementType]);C$.$init$.apply(this);
 this.queue=queue;
 }, 1);
 
@@ -2726,26 +2598,24 @@ Clazz.newMeth(C$, 'remove$', function () {
 return this.queue.remove$();
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
-return this.queue.offer$TE(this.typeCheck$O(e));
+Clazz.newMeth(C$, 'offer$O', function (e) {
+return this.queue.offer$O(this.typeCheck$O(e));
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedCollection'], ['java.util.Set', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_Set$Class', function (s, elementType) {
-C$.superclazz.c$$java_util_Collection$Class.apply(this, [s, elementType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection$Class.apply(this,[s, elementType]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -2759,24 +2629,19 @@ return this.c.hashCode$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedSortedSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedSortedSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedSet'], ['java.util.SortedSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ss=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ss','java.util.SortedSet']]]
 
 Clazz.newMeth(C$, 'c$$java_util_SortedSet$Class', function (s, type) {
-C$.superclazz.c$$java_util_Set$Class.apply(this, [s, type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Set$Class.apply(this,[s, type]);C$.$init$.apply(this);
 this.ss=s;
 }, 1);
 
@@ -2792,56 +2657,51 @@ Clazz.newMeth(C$, 'last$', function () {
 return this.ss.last$();
 });
 
-Clazz.newMeth(C$, ['subSet$TE$TE'], function (fromElement, toElement) {
-return P$.Collections.checkedSortedSet$java_util_SortedSet$Class(this.ss.subSet$TE$TE(fromElement, toElement), this.type);
+Clazz.newMeth(C$, 'subSet$O$O', function (fromElement, toElement) {
+return $I$(8,"checkedSortedSet$java_util_SortedSet$Class",[this.ss.subSet$O$O(fromElement, toElement), this.type]);
 });
 
-Clazz.newMeth(C$, ['headSet$TE'], function (toElement) {
-return P$.Collections.checkedSortedSet$java_util_SortedSet$Class(this.ss.headSet$TE(toElement), this.type);
+Clazz.newMeth(C$, 'headSet$O', function (toElement) {
+return $I$(8,"checkedSortedSet$java_util_SortedSet$Class",[this.ss.headSet$O(toElement), this.type]);
 });
 
-Clazz.newMeth(C$, ['tailSet$TE'], function (fromElement) {
-return P$.Collections.checkedSortedSet$java_util_SortedSet$Class(this.ss.tailSet$TE(fromElement), this.type);
+Clazz.newMeth(C$, 'tailSet$O', function (fromElement) {
+return $I$(8,"checkedSortedSet$java_util_SortedSet$Class",[this.ss.tailSet$O(fromElement), this.type]);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedNavigableSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedNavigableSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedSortedSet'], ['java.util.NavigableSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ns=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ns','java.util.NavigableSet']]]
 
 Clazz.newMeth(C$, 'c$$java_util_NavigableSet$Class', function (s, type) {
-C$.superclazz.c$$java_util_SortedSet$Class.apply(this, [s, type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_SortedSet$Class.apply(this,[s, type]);C$.$init$.apply(this);
 this.ns=s;
 }, 1);
 
-Clazz.newMeth(C$, ['lower$TE'], function (e) {
-return this.ns.lower$TE(e);
+Clazz.newMeth(C$, 'lower$O', function (e) {
+return this.ns.lower$O(e);
 });
 
-Clazz.newMeth(C$, ['floor$TE'], function (e) {
-return this.ns.floor$TE(e);
+Clazz.newMeth(C$, 'floor$O', function (e) {
+return this.ns.floor$O(e);
 });
 
-Clazz.newMeth(C$, ['ceiling$TE'], function (e) {
-return this.ns.ceiling$TE(e);
+Clazz.newMeth(C$, 'ceiling$O', function (e) {
+return this.ns.ceiling$O(e);
 });
 
-Clazz.newMeth(C$, ['higher$TE'], function (e) {
-return this.ns.higher$TE(e);
+Clazz.newMeth(C$, 'higher$O', function (e) {
+return this.ns.higher$O(e);
 });
 
 Clazz.newMeth(C$, 'pollFirst$', function () {
@@ -2853,58 +2713,53 @@ return this.ns.pollLast$();
 });
 
 Clazz.newMeth(C$, 'descendingSet$', function () {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.descendingSet$(), this.type);
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.descendingSet$(), this.type]);
 });
 
 Clazz.newMeth(C$, 'descendingIterator$', function () {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.descendingSet$(), this.type).iterator$();
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.descendingSet$(), this.type]).iterator$();
 });
 
-Clazz.newMeth(C$, ['subSet$TE$TE'], function (fromElement, toElement) {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.subSet$TE$Z$TE$Z(fromElement, true, toElement, false), this.type);
+Clazz.newMeth(C$, 'subSet$O$O', function (fromElement, toElement) {
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.subSet$O$Z$O$Z(fromElement, true, toElement, false), this.type]);
 });
 
-Clazz.newMeth(C$, ['headSet$TE'], function (toElement) {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.headSet$TE$Z(toElement, false), this.type);
+Clazz.newMeth(C$, 'headSet$O', function (toElement) {
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.headSet$O$Z(toElement, false), this.type]);
 });
 
-Clazz.newMeth(C$, ['tailSet$TE'], function (fromElement) {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.tailSet$TE$Z(fromElement, true), this.type);
+Clazz.newMeth(C$, 'tailSet$O', function (fromElement) {
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.tailSet$O$Z(fromElement, true), this.type]);
 });
 
-Clazz.newMeth(C$, ['subSet$TE$Z$TE$Z'], function (fromElement, fromInclusive, toElement, toInclusive) {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.subSet$TE$Z$TE$Z(fromElement, fromInclusive, toElement, toInclusive), this.type);
+Clazz.newMeth(C$, 'subSet$O$Z$O$Z', function (fromElement, fromInclusive, toElement, toInclusive) {
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.subSet$O$Z$O$Z(fromElement, fromInclusive, toElement, toInclusive), this.type]);
 });
 
-Clazz.newMeth(C$, ['headSet$TE$Z'], function (toElement, inclusive) {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.headSet$TE$Z(toElement, inclusive), this.type);
+Clazz.newMeth(C$, 'headSet$O$Z', function (toElement, inclusive) {
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.headSet$O$Z(toElement, inclusive), this.type]);
 });
 
-Clazz.newMeth(C$, ['tailSet$TE$Z'], function (fromElement, inclusive) {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.ns.tailSet$TE$Z(fromElement, inclusive), this.type);
+Clazz.newMeth(C$, 'tailSet$O$Z', function (fromElement, inclusive) {
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.ns.tailSet$O$Z(fromElement, inclusive), this.type]);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedCollection'], 'java.util.List');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.list=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['list','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$java_util_List$Class', function (list, type) {
-C$.superclazz.c$$java_util_Collection$Class.apply(this, [list, type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_Collection$Class.apply(this,[list, type]);C$.$init$.apply(this);
 this.list=list;
 }, 1);
 
@@ -2932,12 +2787,12 @@ Clazz.newMeth(C$, 'lastIndexOf$O', function (o) {
 return this.list.lastIndexOf$O(o);
 });
 
-Clazz.newMeth(C$, 'set$I$TE', function (index, element) {
-return this.list.set$I$TE(index, this.typeCheck$O(element));
+Clazz.newMeth(C$, 'set$I$O', function (index, element) {
+return this.list.set$I$O(index, this.typeCheck$O(element));
 });
 
-Clazz.newMeth(C$, 'add$I$TE', function (index, element) {
-this.list.add$I$TE(index, this.typeCheck$O(element));
+Clazz.newMeth(C$, 'add$I$O', function (index, element) {
+this.list.add$I$O(index, this.typeCheck$O(element));
 });
 
 Clazz.newMeth(C$, 'addAll$I$java_util_Collection', function (index, c) {
@@ -2951,13 +2806,12 @@ return this.listIterator$I(0);
 Clazz.newMeth(C$, 'listIterator$I', function (index) {
 var i=this.list.listIterator$I(index);
 return ((P$.Collections$CheckedList$1||
-(function(){var C$=Clazz.newClass(P$, "Collections$CheckedList$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.ListIterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$CheckedList$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.ListIterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.$finals$.i.hasNext$();
@@ -2987,19 +2841,19 @@ Clazz.newMeth(C$, 'remove$', function () {
 this.$finals$.i.remove$();
 });
 
-Clazz.newMeth(C$, ['set$TE'], function (e) {
-this.$finals$.i.set$TE(this.b$['java.util.Collections.CheckedCollection'].typeCheck$O.apply(this.b$['java.util.Collections.CheckedCollection'], [e]));
+Clazz.newMeth(C$, 'set$O', function (e) {
+this.$finals$.i.set$O(this.b$['java.util.Collections.CheckedCollection'].typeCheck$O.apply(this.b$['java.util.Collections.CheckedCollection'], [e]));
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.$finals$.i.add$TE(this.b$['java.util.Collections.CheckedCollection'].typeCheck$O.apply(this.b$['java.util.Collections.CheckedCollection'], [e]));
+Clazz.newMeth(C$, 'add$O', function (e) {
+this.$finals$.i.add$O(this.b$['java.util.Collections.CheckedCollection'].typeCheck$O.apply(this.b$['java.util.Collections.CheckedCollection'], [e]));
 });
 
 Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
 this.$finals$.i.forEachRemaining$java_util_function_Consumer(action);
 });
 })()
-), Clazz.new_(P$.Collections$CheckedList$1.$init$, [this, {i: i}]));
+), Clazz.new_(P$.Collections$CheckedList$1.$init$,[this, {i:i}]));
 });
 
 Clazz.newMeth(C$, 'subList$I$I', function (fromIndex, toIndex) {
@@ -3007,19 +2861,18 @@ return Clazz.new_(C$.c$$java_util_List$Class,[this.list.subList$I$I(fromIndex, t
 });
 
 Clazz.newMeth(C$, 'replaceAll$java_util_function_UnaryOperator', function (operator) {
-$I$(6).requireNonNull$TT(operator);
+$I$(6).requireNonNull$O(operator);
 this.list.replaceAll$java_util_function_UnaryOperator(((P$.Collections$CheckedList$lambda1||
-(function(){var C$=Clazz.newClass(P$, "Collections$CheckedList$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.UnaryOperator', 1);
+(function(){/*m*/var C$=Clazz.newClass(P$, "Collections$CheckedList$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.UnaryOperator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, ['apply$'], function (e) { return (this.b$['java.util.Collections.CheckedCollection'].typeCheck$O.apply(this.b$['java.util.Collections.CheckedCollection'], [this.$finals$.operator.apply$(e)]));});
+Clazz.newMeth(C$, 'apply$O', function (e) { return (this.b$['java.util.Collections.CheckedCollection'].typeCheck$O.apply(this.b$['java.util.Collections.CheckedCollection'], [this.$finals$.operator.apply$O(e)]));});
 })()
-), Clazz.new_(P$.Collections$CheckedList$lambda1.$init$, [this, {operator: operator}])));
+), Clazz.new_(P$.Collections$CheckedList$lambda1.$init$,[this, {operator:operator}])));
 });
 
 Clazz.newMeth(C$, 'sort$java_util_Comparator', function (c) {
@@ -3029,19 +2882,17 @@ this.list.sort$java_util_Comparator(c);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedRandomAccessList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedRandomAccessList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedList'], 'java.util.RandomAccess');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_List$Class', function (list, type) {
-C$.superclazz.c$$java_util_List$Class.apply(this, [list, type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_List$Class.apply(this,[list, type]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'subList$I$I', function (fromIndex, toIndex) {
@@ -3051,23 +2902,17 @@ return Clazz.new_(C$.c$$java_util_List$Class,[this.list.subList$I$I(fromIndex, t
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Map', 'java.io.Serializable']);
+C$.$classes$=[['CheckedEntrySet',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m=null;
-this.keyType=null;
-this.valueType=null;
-this.entrySet=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['m','java.util.Map','keyType','Class','+valueType','entrySet','java.util.Set']]]
 
 Clazz.newMeth(C$, 'typeCheck$O$O', function (key, value) {
 if (key != null  && !this.keyType.isInstance$O(key) ) throw Clazz.new_(Clazz.load('ClassCastException').c$$S,[p$12.badKeyMsg$O.apply(this, [key])]);
@@ -3075,23 +2920,22 @@ if (value != null  && !this.valueType.isInstance$O(value) ) throw Clazz.new_(Cla
 }, p$12);
 
 Clazz.newMeth(C$, 'typeCheck$java_util_function_BiFunction', function (func) {
-$I$(6).requireNonNull$TT(func);
+$I$(6).requireNonNull$O(func);
 return ((P$.Collections$CheckedMap$lambda1||
-(function(){var C$=Clazz.newClass(P$, "Collections$CheckedMap$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.BiFunction', 1);
+(function(){/*m*/var C$=Clazz.newClass(P$, "Collections$CheckedMap$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.BiFunction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, 'apply$', function (k, v) {
-var newValue=this.$finals$.func.apply$(k, v);
+Clazz.newMeth(C$, 'apply$O$O', function (k, v) {
+var newValue=this.$finals$.func.apply$O$O(k, v);
 p$12.typeCheck$O$O.apply(this.b$['java.util.Collections.CheckedMap'], [k, newValue]);
 return newValue;
 });
 })()
-), Clazz.new_(P$.Collections$CheckedMap$lambda1.$init$, [this, {func: func}]));
+), Clazz.new_(P$.Collections$CheckedMap$lambda1.$init$,[this, {func:func}]));
 }, p$12);
 
 Clazz.newMeth(C$, 'badKeyMsg$O', function (key) {
@@ -3102,11 +2946,11 @@ Clazz.newMeth(C$, 'badValueMsg$O', function (value) {
 return "Attempt to insert " + value.getClass$() + " value into map with value type " + this.valueType ;
 }, p$12);
 
-Clazz.newMeth(C$, ['c$$java_util_Map$Class$Class'], function (m, keyType, valueType) {
-C$.$init$.apply(this);
-this.m=$I$(6).requireNonNull$TT(m);
-this.keyType=$I$(6).requireNonNull$TT(keyType);
-this.valueType=$I$(6).requireNonNull$TT(valueType);
+Clazz.newMeth(C$, 'c$$java_util_Map$Class$Class', function (m, keyType, valueType) {
+;C$.$init$.apply(this);
+this.m=$I$(6).requireNonNull$O(m);
+this.keyType=$I$(6).requireNonNull$O(keyType);
+this.valueType=$I$(6).requireNonNull$O(valueType);
 }, 1);
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -3157,27 +3001,27 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.m.toString();
 });
 
-Clazz.newMeth(C$, ['put$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'put$O$O', function (key, value) {
 p$12.typeCheck$O$O.apply(this, [key, value]);
-return this.m.put$TK$TV(key, value);
+return this.m.put$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'putAll$java_util_Map', function (t) {
 var entries=t.entrySet$().toArray$();
-var checked=Clazz.new_($I$(22).c$$I,[entries.length]);
+var checked=Clazz.new_($I$(24,1).c$$I,[entries.length]);
 for (var o, $o = 0, $$o = entries; $o<$$o.length&&((o=($$o[$o])),1);$o++) {
 var e=o;
 var k=e.getKey$();
 var v=e.getValue$();
 p$12.typeCheck$O$O.apply(this, [k, v]);
-checked.add$TE(Clazz.new_($I$(20).c$$TK$TV,[k, v]));
+checked.add$O(Clazz.new_($I$(21,1).c$$O$O,[k, v]));
 }
-for (var e, $e = checked.iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) this.m.put$TK$TV(e.getKey$(), e.getValue$());
+for (var e, $e = checked.iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) this.m.put$O$O(e.getKey$(), e.getValue$());
 
 });
 
 Clazz.newMeth(C$, 'entrySet$', function () {
-if (this.entrySet == null ) this.entrySet=Clazz.new_($I$(23).c$$java_util_Set$Class,[this.m.entrySet$(), this.valueType]);
+if (this.entrySet == null ) this.entrySet=Clazz.new_([this.m.entrySet$(), this.valueType],$I$(22,1).c$$java_util_Set$Class);
 return this.entrySet;
 });
 
@@ -3189,91 +3033,85 @@ Clazz.newMeth(C$, 'replaceAll$java_util_function_BiFunction', function ($functio
 this.m.replaceAll$java_util_function_BiFunction(p$12.typeCheck$java_util_function_BiFunction.apply(this, [$function]));
 });
 
-Clazz.newMeth(C$, ['putIfAbsent$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'putIfAbsent$O$O', function (key, value) {
 p$12.typeCheck$O$O.apply(this, [key, value]);
-return this.m.putIfAbsent$TK$TV(key, value);
+return this.m.putIfAbsent$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'remove$O$O', function (key, value) {
 return this.m.remove$O$O(key, value);
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV$TV'], function (key, oldValue, newValue) {
+Clazz.newMeth(C$, 'replace$O$O$O', function (key, oldValue, newValue) {
 p$12.typeCheck$O$O.apply(this, [key, newValue]);
-return this.m.replace$TK$TV$TV(key, oldValue, newValue);
+return this.m.replace$O$O$O(key, oldValue, newValue);
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'replace$O$O', function (key, value) {
 p$12.typeCheck$O$O.apply(this, [key, value]);
-return this.m.replace$TK$TV(key, value);
+return this.m.replace$O$O(key, value);
 });
 
-Clazz.newMeth(C$, ['computeIfAbsent$TK$java_util_function_Function'], function (key, mappingFunction) {
-$I$(6).requireNonNull$TT(mappingFunction);
-return this.m.computeIfAbsent$TK$java_util_function_Function(key, ((P$.Collections$CheckedMap$lambda2||
-(function(){var C$=Clazz.newClass(P$, "Collections$CheckedMap$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Function', 1);
+Clazz.newMeth(C$, 'computeIfAbsent$O$java_util_function_Function', function (key, mappingFunction) {
+$I$(6).requireNonNull$O(mappingFunction);
+return this.m.computeIfAbsent$O$java_util_function_Function(key, ((P$.Collections$CheckedMap$lambda2||
+(function(){/*m*/var C$=Clazz.newClass(P$, "Collections$CheckedMap$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Function', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, 'apply$', function (k) {
-var value=this.$finals$.mappingFunction.apply$(k);
+Clazz.newMeth(C$, 'apply$O', function (k) {
+var value=this.$finals$.mappingFunction.apply$O(k);
 p$12.typeCheck$O$O.apply(this.b$['java.util.Collections.CheckedMap'], [k, value]);
 return value;
 });
 })()
-), Clazz.new_(P$.Collections$CheckedMap$lambda2.$init$, [this, {mappingFunction: mappingFunction}])));
+), Clazz.new_(P$.Collections$CheckedMap$lambda2.$init$,[this, {mappingFunction:mappingFunction}])));
 });
 
-Clazz.newMeth(C$, ['computeIfPresent$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
-return this.m.computeIfPresent$TK$java_util_function_BiFunction(key, p$12.typeCheck$java_util_function_BiFunction.apply(this, [remappingFunction]));
+Clazz.newMeth(C$, 'computeIfPresent$O$java_util_function_BiFunction', function (key, remappingFunction) {
+return this.m.computeIfPresent$O$java_util_function_BiFunction(key, p$12.typeCheck$java_util_function_BiFunction.apply(this, [remappingFunction]));
 });
 
-Clazz.newMeth(C$, ['compute$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
-return this.m.compute$TK$java_util_function_BiFunction(key, p$12.typeCheck$java_util_function_BiFunction.apply(this, [remappingFunction]));
+Clazz.newMeth(C$, 'compute$O$java_util_function_BiFunction', function (key, remappingFunction) {
+return this.m.compute$O$java_util_function_BiFunction(key, p$12.typeCheck$java_util_function_BiFunction.apply(this, [remappingFunction]));
 });
 
-Clazz.newMeth(C$, ['merge$TK$TV$java_util_function_BiFunction'], function (key, value, remappingFunction) {
-$I$(6).requireNonNull$TT(remappingFunction);
-return this.m.merge$TK$TV$java_util_function_BiFunction(key, value, ((P$.Collections$CheckedMap$lambda3||
-(function(){var C$=Clazz.newClass(P$, "Collections$CheckedMap$lambda3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.BiFunction', 1);
+Clazz.newMeth(C$, 'merge$O$O$java_util_function_BiFunction', function (key, value, remappingFunction) {
+$I$(6).requireNonNull$O(remappingFunction);
+return this.m.merge$O$O$java_util_function_BiFunction(key, value, ((P$.Collections$CheckedMap$lambda3||
+(function(){/*m*/var C$=Clazz.newClass(P$, "Collections$CheckedMap$lambda3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.BiFunction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, 'apply$', function (v1, v2) {
-var newValue=this.$finals$.remappingFunction.apply$(v1, v2);
+Clazz.newMeth(C$, 'apply$O$O', function (v1, v2) {
+var newValue=this.$finals$.remappingFunction.apply$O$O(v1, v2);
 p$12.typeCheck$O$O.apply(this.b$['java.util.Collections.CheckedMap'], [null, newValue]);
 return newValue;
 });
 })()
-), Clazz.new_(P$.Collections$CheckedMap$lambda3.$init$, [this, {remappingFunction: remappingFunction}])));
+), Clazz.new_(P$.Collections$CheckedMap$lambda3.$init$,[this, {remappingFunction:remappingFunction}])));
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Collections.CheckedMap, "CheckedEntrySet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections.CheckedMap, "CheckedEntrySet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Set');
+C$.$classes$=[['CheckedEntry',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s=null;
-this.valueType=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_Set$Class'], function (s, valueType) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['s','java.util.Set','valueType','Class']]]
+
+Clazz.newMeth(C$, 'c$$java_util_Set$Class', function (s, valueType) {
+;C$.$init$.apply(this);
 this.s=s;
 this.valueType=valueType;
 }, 1);
@@ -3298,11 +3136,11 @@ Clazz.newMeth(C$, 'clear$', function () {
 this.s.clear$();
 });
 
-Clazz.newMeth(C$, ['add$java_util_Map_Entry','add$TE'], function (e) {
+Clazz.newMeth(C$, ['add$java_util_Map_Entry','add$O'], function (e) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['addAll$java_util_Collection'], function (coll) {
+Clazz.newMeth(C$, 'addAll$java_util_Collection', function (coll) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -3310,13 +3148,12 @@ Clazz.newMeth(C$, 'iterator$', function () {
 var i=this.s.iterator$();
 var valueType=this.valueType;
 return ((P$.Collections$CheckedMap$CheckedEntrySet$1||
-(function(){var C$=Clazz.newClass(P$, "Collections$CheckedMap$CheckedEntrySet$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Collections$CheckedMap$CheckedEntrySet$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.$finals$.i.hasNext$();
@@ -3327,22 +3164,22 @@ this.$finals$.i.remove$();
 });
 
 Clazz.newMeth(C$, 'next$', function () {
-return P$.Collections.CheckedMap.CheckedEntrySet.checkedEntry$java_util_Map_Entry$Class(this.$finals$.i.next$(), this.$finals$.valueType);
+return $I$(22,"checkedEntry$java_util_Map_Entry$Class",[this.$finals$.i.next$(), this.$finals$.valueType]);
 });
 })()
-), Clazz.new_(P$.Collections$CheckedMap$CheckedEntrySet$1.$init$, [this, {i: i, valueType: valueType}]));
+), Clazz.new_(P$.Collections$CheckedMap$CheckedEntrySet$1.$init$,[this, {valueType:valueType,i:i}]));
 });
 
 Clazz.newMeth(C$, 'toArray$', function () {
 var source=this.s.toArray$();
-var dest=(Clazz.getClass($I$(21)).isInstance$O(source.getClass$().getComponentType$()) ? source : Clazz.array(java.lang.Object, [source.length]));
+var dest=(Clazz.getClass($I$(23)).isInstance$O(source.getClass$().getComponentType$()) ? source : Clazz.array(java.lang.Object, [source.length]));
 for (var i=0; i < source.length; i++) dest[i]=C$.checkedEntry$java_util_Map_Entry$Class(source[i], this.valueType);
 
 return dest;
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
-var arr=this.s.toArray$TTA(a.length == 0 ? a : $I$(10).copyOf$TTA$I(a, 0));
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
+var arr=this.s.toArray$OA(a.length == 0 ? a : $I$(12).copyOf$OA$I(a, 0));
 for (var i=0; i < arr.length; i++) arr[i]=C$.checkedEntry$java_util_Map_Entry$Class(arr[i], this.valueType);
 
 if (arr.length > a.length) return arr;
@@ -3365,7 +3202,7 @@ return true;
 
 Clazz.newMeth(C$, 'remove$O', function (o) {
 if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) return false;
-return this.s.remove$O(Clazz.new_($I$(20).c$$java_util_Map_Entry,[o]));
+return this.s.remove$O(Clazz.new_($I$(21,1).c$$java_util_Map_Entry,[o]));
 });
 
 Clazz.newMeth(C$, 'removeAll$java_util_Collection', function (c) {
@@ -3377,7 +3214,7 @@ return p$11.batchRemove$java_util_Collection$Z.apply(this, [c, true]);
 });
 
 Clazz.newMeth(C$, 'batchRemove$java_util_Collection$Z', function (c, complement) {
-$I$(6).requireNonNull$TT(c);
+$I$(6).requireNonNull$O(c);
 var modified=false;
 var it=this.iterator$();
 while (it.hasNext$()){
@@ -3395,30 +3232,25 @@ var that=o;
 return that.size$() == this.s.size$() && this.containsAll$java_util_Collection(that) ;
 });
 
-Clazz.newMeth(C$, ['checkedEntry$java_util_Map_Entry$Class'], function (e, valueType) {
-return Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[e, valueType]);
+Clazz.newMeth(C$, 'checkedEntry$java_util_Map_Entry$Class', function (e, valueType) {
+return Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[e, valueType]);
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.Collections.CheckedMap.CheckedEntrySet, "CheckedEntry", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections.CheckedMap.CheckedEntrySet, "CheckedEntry", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Map','java.util.Map.Entry']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.e=null;
-this.valueType=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_Map_Entry$Class'], function (e, valueType) {
-C$.$init$.apply(this);
-this.e=$I$(6).requireNonNull$TT(e);
-this.valueType=$I$(6).requireNonNull$TT(valueType);
+C$.$fields$=[['O',['e','java.util.Map.Entry','valueType','Class']]]
+
+Clazz.newMeth(C$, 'c$$java_util_Map_Entry$Class', function (e, valueType) {
+;C$.$init$.apply(this);
+this.e=$I$(6).requireNonNull$O(e);
+this.valueType=$I$(6).requireNonNull$O(valueType);
 }, 1);
 
 Clazz.newMeth(C$, 'getKey$', function () {
@@ -3437,9 +3269,9 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.e.toString();
 });
 
-Clazz.newMeth(C$, ['setValue$TV'], function (value) {
+Clazz.newMeth(C$, 'setValue$O', function (value) {
 if (value != null  && !this.valueType.isInstance$O(value) ) throw Clazz.new_(Clazz.load('ClassCastException').c$$S,[p$10.badValueMsg$O.apply(this, [value])]);
-return this.e.setValue$TV(value);
+return this.e.setValue$O(value);
 });
 
 Clazz.newMeth(C$, 'badValueMsg$O', function (value) {
@@ -3449,7 +3281,7 @@ return "Attempt to insert " + value.getClass$() + " value into map with value ty
 Clazz.newMeth(C$, 'equals$O', function (o) {
 if (o === this ) return true;
 if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) return false;
-return this.e.equals$O(Clazz.new_($I$(20).c$$java_util_Map_Entry,[o]));
+return this.e.equals$O(Clazz.new_($I$(21,1).c$$java_util_Map_Entry,[o]));
 });
 
 Clazz.newMeth(C$);
@@ -3461,24 +3293,19 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedSortedMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedSortedMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedMap'], ['java.util.SortedMap', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_SortedMap$Class$Class'], function (m, keyType, valueType) {
-C$.superclazz.c$$java_util_Map$Class$Class.apply(this, [m, keyType, valueType]);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['sm','java.util.SortedMap']]]
+
+Clazz.newMeth(C$, 'c$$java_util_SortedMap$Class$Class', function (m, keyType, valueType) {
+;C$.superclazz.c$$java_util_Map$Class$Class.apply(this,[m, keyType, valueType]);C$.$init$.apply(this);
 this.sm=m;
 }, 1);
 
@@ -3494,39 +3321,34 @@ Clazz.newMeth(C$, 'lastKey$', function () {
 return this.sm.lastKey$();
 });
 
-Clazz.newMeth(C$, ['subMap$TK$TK'], function (fromKey, toKey) {
-return P$.Collections.checkedSortedMap$java_util_SortedMap$Class$Class(this.sm.subMap$TK$TK(fromKey, toKey), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'subMap$O$O', function (fromKey, toKey) {
+return $I$(8,"checkedSortedMap$java_util_SortedMap$Class$Class",[this.sm.subMap$O$O(fromKey, toKey), this.keyType, this.valueType]);
 });
 
-Clazz.newMeth(C$, ['headMap$TK'], function (toKey) {
-return P$.Collections.checkedSortedMap$java_util_SortedMap$Class$Class(this.sm.headMap$TK(toKey), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'headMap$O', function (toKey) {
+return $I$(8,"checkedSortedMap$java_util_SortedMap$Class$Class",[this.sm.headMap$O(toKey), this.keyType, this.valueType]);
 });
 
-Clazz.newMeth(C$, ['tailMap$TK'], function (fromKey) {
-return P$.Collections.checkedSortedMap$java_util_SortedMap$Class$Class(this.sm.tailMap$TK(fromKey), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'tailMap$O', function (fromKey) {
+return $I$(8,"checkedSortedMap$java_util_SortedMap$Class$Class",[this.sm.tailMap$O(fromKey), this.keyType, this.valueType]);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CheckedNavigableMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CheckedNavigableMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.CheckedSortedMap'], ['java.util.NavigableMap', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_NavigableMap$Class$Class'], function (m, keyType, valueType) {
-C$.superclazz.c$$java_util_SortedMap$Class$Class.apply(this, [m, keyType, valueType]);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['nm','java.util.NavigableMap']]]
+
+Clazz.newMeth(C$, 'c$$java_util_NavigableMap$Class$Class', function (m, keyType, valueType) {
+;C$.superclazz.c$$java_util_SortedMap$Class$Class.apply(this,[m, keyType, valueType]);C$.$init$.apply(this);
 this.nm=m;
 }, 1);
 
@@ -3542,64 +3364,64 @@ Clazz.newMeth(C$, 'lastKey$', function () {
 return this.nm.lastKey$();
 });
 
-Clazz.newMeth(C$, ['lowerEntry$TK'], function (key) {
-var lower=this.nm.lowerEntry$TK(key);
-return (null != lower ) ? Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[lower, this.valueType]) : null;
+Clazz.newMeth(C$, 'lowerEntry$O', function (key) {
+var lower=this.nm.lowerEntry$O(key);
+return (null != lower ) ? Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[lower, this.valueType]) : null;
 });
 
-Clazz.newMeth(C$, ['lowerKey$TK'], function (key) {
-return this.nm.lowerKey$TK(key);
+Clazz.newMeth(C$, 'lowerKey$O', function (key) {
+return this.nm.lowerKey$O(key);
 });
 
-Clazz.newMeth(C$, ['floorEntry$TK'], function (key) {
-var floor=this.nm.floorEntry$TK(key);
-return (null != floor ) ? Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[floor, this.valueType]) : null;
+Clazz.newMeth(C$, 'floorEntry$O', function (key) {
+var floor=this.nm.floorEntry$O(key);
+return (null != floor ) ? Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[floor, this.valueType]) : null;
 });
 
-Clazz.newMeth(C$, ['floorKey$TK'], function (key) {
-return this.nm.floorKey$TK(key);
+Clazz.newMeth(C$, 'floorKey$O', function (key) {
+return this.nm.floorKey$O(key);
 });
 
-Clazz.newMeth(C$, ['ceilingEntry$TK'], function (key) {
-var ceiling=this.nm.ceilingEntry$TK(key);
-return (null != ceiling ) ? Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[ceiling, this.valueType]) : null;
+Clazz.newMeth(C$, 'ceilingEntry$O', function (key) {
+var ceiling=this.nm.ceilingEntry$O(key);
+return (null != ceiling ) ? Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[ceiling, this.valueType]) : null;
 });
 
-Clazz.newMeth(C$, ['ceilingKey$TK'], function (key) {
-return this.nm.ceilingKey$TK(key);
+Clazz.newMeth(C$, 'ceilingKey$O', function (key) {
+return this.nm.ceilingKey$O(key);
 });
 
-Clazz.newMeth(C$, ['higherEntry$TK'], function (key) {
-var higher=this.nm.higherEntry$TK(key);
-return (null != higher ) ? Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[higher, this.valueType]) : null;
+Clazz.newMeth(C$, 'higherEntry$O', function (key) {
+var higher=this.nm.higherEntry$O(key);
+return (null != higher ) ? Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[higher, this.valueType]) : null;
 });
 
-Clazz.newMeth(C$, ['higherKey$TK'], function (key) {
-return this.nm.higherKey$TK(key);
+Clazz.newMeth(C$, 'higherKey$O', function (key) {
+return this.nm.higherKey$O(key);
 });
 
 Clazz.newMeth(C$, 'firstEntry$', function () {
 var first=this.nm.firstEntry$();
-return (null != first ) ? Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[first, this.valueType]) : null;
+return (null != first ) ? Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[first, this.valueType]) : null;
 });
 
 Clazz.newMeth(C$, 'lastEntry$', function () {
 var last=this.nm.lastEntry$();
-return (null != last ) ? Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[last, this.valueType]) : null;
+return (null != last ) ? Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[last, this.valueType]) : null;
 });
 
 Clazz.newMeth(C$, 'pollFirstEntry$', function () {
 var entry=this.nm.pollFirstEntry$();
-return (null == entry ) ? null : Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[entry, this.valueType]);
+return (null == entry ) ? null : Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[entry, this.valueType]);
 });
 
 Clazz.newMeth(C$, 'pollLastEntry$', function () {
 var entry=this.nm.pollLastEntry$();
-return (null == entry ) ? null : Clazz.new_($I$(21).c$$java_util_Map_Entry$Class,[entry, this.valueType]);
+return (null == entry ) ? null : Clazz.new_($I$(23,1).c$$java_util_Map_Entry$Class,[entry, this.valueType]);
 });
 
 Clazz.newMeth(C$, 'descendingMap$', function () {
-return P$.Collections.checkedNavigableMap$java_util_NavigableMap$Class$Class(this.nm.descendingMap$(), this.keyType, this.valueType);
+return $I$(8,"checkedNavigableMap$java_util_NavigableMap$Class$Class",[this.nm.descendingMap$(), this.keyType, this.valueType]);
 });
 
 Clazz.newMeth(C$, 'keySet$', function () {
@@ -3607,51 +3429,51 @@ return this.navigableKeySet$();
 });
 
 Clazz.newMeth(C$, 'navigableKeySet$', function () {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.nm.navigableKeySet$(), this.keyType);
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.nm.navigableKeySet$(), this.keyType]);
 });
 
 Clazz.newMeth(C$, 'descendingKeySet$', function () {
-return P$.Collections.checkedNavigableSet$java_util_NavigableSet$Class(this.nm.descendingKeySet$(), this.keyType);
+return $I$(8,"checkedNavigableSet$java_util_NavigableSet$Class",[this.nm.descendingKeySet$(), this.keyType]);
 });
 
-Clazz.newMeth(C$, ['subMap$TK$TK'], function (fromKey, toKey) {
-return P$.Collections.checkedNavigableMap$java_util_NavigableMap$Class$Class(this.nm.subMap$TK$Z$TK$Z(fromKey, true, toKey, false), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'subMap$O$O', function (fromKey, toKey) {
+return $I$(8,"checkedNavigableMap$java_util_NavigableMap$Class$Class",[this.nm.subMap$O$Z$O$Z(fromKey, true, toKey, false), this.keyType, this.valueType]);
 });
 
-Clazz.newMeth(C$, ['headMap$TK'], function (toKey) {
-return P$.Collections.checkedNavigableMap$java_util_NavigableMap$Class$Class(this.nm.headMap$TK$Z(toKey, false), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'headMap$O', function (toKey) {
+return $I$(8,"checkedNavigableMap$java_util_NavigableMap$Class$Class",[this.nm.headMap$O$Z(toKey, false), this.keyType, this.valueType]);
 });
 
-Clazz.newMeth(C$, ['tailMap$TK'], function (fromKey) {
-return P$.Collections.checkedNavigableMap$java_util_NavigableMap$Class$Class(this.nm.tailMap$TK$Z(fromKey, true), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'tailMap$O', function (fromKey) {
+return $I$(8,"checkedNavigableMap$java_util_NavigableMap$Class$Class",[this.nm.tailMap$O$Z(fromKey, true), this.keyType, this.valueType]);
 });
 
-Clazz.newMeth(C$, ['subMap$TK$Z$TK$Z'], function (fromKey, fromInclusive, toKey, toInclusive) {
-return P$.Collections.checkedNavigableMap$java_util_NavigableMap$Class$Class(this.nm.subMap$TK$Z$TK$Z(fromKey, fromInclusive, toKey, toInclusive), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'subMap$O$Z$O$Z', function (fromKey, fromInclusive, toKey, toInclusive) {
+return $I$(8,"checkedNavigableMap$java_util_NavigableMap$Class$Class",[this.nm.subMap$O$Z$O$Z(fromKey, fromInclusive, toKey, toInclusive), this.keyType, this.valueType]);
 });
 
-Clazz.newMeth(C$, ['headMap$TK$Z'], function (toKey, inclusive) {
-return P$.Collections.checkedNavigableMap$java_util_NavigableMap$Class$Class(this.nm.headMap$TK$Z(toKey, inclusive), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'headMap$O$Z', function (toKey, inclusive) {
+return $I$(8,"checkedNavigableMap$java_util_NavigableMap$Class$Class",[this.nm.headMap$O$Z(toKey, inclusive), this.keyType, this.valueType]);
 });
 
-Clazz.newMeth(C$, ['tailMap$TK$Z'], function (fromKey, inclusive) {
-return P$.Collections.checkedNavigableMap$java_util_NavigableMap$Class$Class(this.nm.tailMap$TK$Z(fromKey, inclusive), this.keyType, this.valueType);
+Clazz.newMeth(C$, 'tailMap$O$Z', function (fromKey, inclusive) {
+return $I$(8,"checkedNavigableMap$java_util_NavigableMap$Class$Class",[this.nm.tailMap$O$Z(fromKey, inclusive), this.keyType, this.valueType]);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "EmptyIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "EmptyIterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Iterator');
-C$.EMPTY_ITERATOR=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_ITERATOR=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['EMPTY_ITERATOR','java.util.Collections.EmptyIterator']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return false;
@@ -3666,23 +3488,27 @@ throw Clazz.new_(Clazz.load('IllegalStateException'));
 });
 
 Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
-$I$(6).requireNonNull$TT(action);
+$I$(6).requireNonNull$O(action);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_ITERATOR=Clazz.new_(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "EmptyListIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "EmptyListIterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.Collections','.EmptyIterator'], 'java.util.ListIterator');
-C$.$EMPTY_ITERATOR=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$EMPTY_ITERATOR=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$EMPTY_ITERATOR','java.util.Collections.EmptyListIterator']]]
 
 Clazz.newMeth(C$, 'hasPrevious$', function () {
 return false;
@@ -3700,28 +3526,32 @@ Clazz.newMeth(C$, 'previousIndex$', function () {
 return -1;
 });
 
-Clazz.newMeth(C$, ['set$TE'], function (e) {
+Clazz.newMeth(C$, 'set$O', function (e) {
 throw Clazz.new_(Clazz.load('IllegalStateException'));
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
+Clazz.newMeth(C$, 'add$O', function (e) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$EMPTY_ITERATOR=Clazz.new_(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "EmptyEnumeration", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "EmptyEnumeration", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Enumeration');
-C$.EMPTY_ENUMERATION=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_ENUMERATION=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['EMPTY_ENUMERATION','java.util.Collections.EmptyEnumeration']]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 return false;
@@ -3731,21 +3561,24 @@ Clazz.newMeth(C$, 'nextElement$', function () {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_ENUMERATION=Clazz.new_(C$);
+};
+
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "EmptySet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "EmptySet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractSet', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return P$.Collections.emptyIterator$();
+return $I$(8).emptyIterator$();
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -3768,47 +3601,46 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return Clazz.array(java.lang.Object, [0]);
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 if (a.length > 0) a[0]=null;
 return a;
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
-$I$(6).requireNonNull$TT(action);
+$I$(6).requireNonNull$O(action);
 });
 
 Clazz.newMeth(C$, 'removeIf$java_util_function_Predicate', function (filter) {
-$I$(6).requireNonNull$TT(filter);
+$I$(6).requireNonNull$O(filter);
 return false;
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return $I$(24).emptySpliterator$();
+return $I$(25).emptySpliterator$();
 });
 
 Clazz.newMeth(C$, 'readResolve', function () {
-return $I$(25).EMPTY_SET;
+return $I$(8).EMPTY_SET;
 }, p$13);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "EmptyList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "EmptyList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractList', ['java.util.RandomAccess', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return P$.Collections.emptyIterator$();
+return $I$(8).emptyIterator$();
 });
 
 Clazz.newMeth(C$, 'listIterator$', function () {
-return P$.Collections.emptyListIterator$();
+return $I$(8).emptyListIterator$();
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -3831,7 +3663,7 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return Clazz.array(java.lang.Object, [0]);
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 if (a.length > 0) a[0]=null;
 return a;
 });
@@ -3849,41 +3681,40 @@ return 1;
 });
 
 Clazz.newMeth(C$, 'removeIf$java_util_function_Predicate', function (filter) {
-$I$(6).requireNonNull$TT(filter);
+$I$(6).requireNonNull$O(filter);
 return false;
 });
 
 Clazz.newMeth(C$, 'replaceAll$java_util_function_UnaryOperator', function (operator) {
-$I$(6).requireNonNull$TT(operator);
+$I$(6).requireNonNull$O(operator);
 });
 
 Clazz.newMeth(C$, 'sort$java_util_Comparator', function (c) {
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
-$I$(6).requireNonNull$TT(action);
+$I$(6).requireNonNull$O(action);
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return $I$(24).emptySpliterator$();
+return $I$(25).emptySpliterator$();
 });
 
 Clazz.newMeth(C$, 'readResolve', function () {
-return $I$(25).EMPTY_LIST;
+return $I$(8).EMPTY_LIST;
 }, p$14);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "EmptyMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "EmptyMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractMap', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'size$', function () {
 return 0;
@@ -3906,15 +3737,15 @@ return null;
 });
 
 Clazz.newMeth(C$, 'keySet$', function () {
-return P$.Collections.emptySet$();
+return $I$(8).emptySet$();
 });
 
 Clazz.newMeth(C$, 'values$', function () {
-return P$.Collections.emptySet$();
+return $I$(8).emptySet$();
 });
 
 Clazz.newMeth(C$, 'entrySet$', function () {
-return P$.Collections.emptySet$();
+return $I$(8).emptySet$();
 });
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -3925,19 +3756,19 @@ Clazz.newMeth(C$, 'hashCode$', function () {
 return 0;
 });
 
-Clazz.newMeth(C$, ['getOrDefault$O$TV'], function (k, defaultValue) {
+Clazz.newMeth(C$, 'getOrDefault$O$O', function (k, defaultValue) {
 return defaultValue;
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_BiConsumer', function (action) {
-$I$(6).requireNonNull$TT(action);
+$I$(6).requireNonNull$O(action);
 });
 
 Clazz.newMeth(C$, 'replaceAll$java_util_function_BiFunction', function ($function) {
-$I$(6).requireNonNull$TT($function);
+$I$(6).requireNonNull$O($function);
 });
 
-Clazz.newMeth(C$, ['putIfAbsent$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'putIfAbsent$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -3945,59 +3776,55 @@ Clazz.newMeth(C$, 'remove$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV$TV'], function (key, oldValue, newValue) {
+Clazz.newMeth(C$, 'replace$O$O$O', function (key, oldValue, newValue) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'replace$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['computeIfAbsent$TK$java_util_function_Function'], function (key, mappingFunction) {
+Clazz.newMeth(C$, 'computeIfAbsent$O$java_util_function_Function', function (key, mappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['computeIfPresent$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'computeIfPresent$O$java_util_function_BiFunction', function (key, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['compute$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'compute$O$java_util_function_BiFunction', function (key, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['merge$TK$TV$java_util_function_BiFunction'], function (key, value, remappingFunction) {
+Clazz.newMeth(C$, 'merge$O$O$java_util_function_BiFunction', function (key, value, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
 Clazz.newMeth(C$, 'readResolve', function () {
-return $I$(25).EMPTY_MAP;
+return $I$(8).EMPTY_MAP;
 }, p$15);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SingletonSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SingletonSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractSet', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.element=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$TE'], function (e) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['O',['element','<E>']]]
+
+Clazz.newMeth(C$, 'c$$O', function (e) {
+Clazz.super_(C$, this);
 this.element=e;
 }, 1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return P$.Collections.singletonIterator$TE(this.element);
+return $I$(8).singletonIterator$O(this.element);
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -4005,15 +3832,15 @@ return 1;
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
-return P$.Collections.eq$O$O(o, this.element);
+return $I$(8).eq$O$O(o, this.element);
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
-action.accept$(this.element);
+action.accept$O(this.element);
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return P$.Collections.singletonSpliterator$TT(this.element);
+return $I$(8).singletonSpliterator$O(this.element);
 });
 
 Clazz.newMeth(C$, 'removeIf$java_util_function_Predicate', function (filter) {
@@ -4023,28 +3850,24 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SingletonList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SingletonList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractList', ['java.util.RandomAccess', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.element=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$TE'], function (obj) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['O',['element','<E>']]]
+
+Clazz.newMeth(C$, 'c$$O', function (obj) {
+Clazz.super_(C$, this);
 this.element=obj;
 }, 1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return P$.Collections.singletonIterator$TE(this.element);
+return $I$(8).singletonIterator$O(this.element);
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -4052,7 +3875,7 @@ return 1;
 });
 
 Clazz.newMeth(C$, 'contains$O', function (obj) {
-return P$.Collections.eq$O$O(obj, this.element);
+return $I$(8).eq$O$O(obj, this.element);
 });
 
 Clazz.newMeth(C$, 'get$I', function (index) {
@@ -4061,7 +3884,7 @@ return this.element;
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
-action.accept$(this.element);
+action.accept$O(this.element);
 });
 
 Clazz.newMeth(C$, 'removeIf$java_util_function_Predicate', function (filter) {
@@ -4076,33 +3899,25 @@ Clazz.newMeth(C$, 'sort$java_util_Comparator', function (c) {
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return P$.Collections.singletonSpliterator$TT(this.element);
+return $I$(8).singletonSpliterator$O(this.element);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SingletonMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SingletonMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractMap', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.k=null;
-this.v=null;
-this.$keySet=null;
-this.entrySet=null;
-this.$values=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$TK$TV'], function (key, value) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['O',['k','<K>','v','<V>','$keySet','java.util.Set','+entrySet','$values','java.util.Collection']]]
+
+Clazz.newMeth(C$, 'c$$O$O', function (key, value) {
+Clazz.super_(C$, this);
 this.k=key;
 this.v=value;
 }, 1);
@@ -4116,45 +3931,45 @@ return false;
 });
 
 Clazz.newMeth(C$, 'containsKey$O', function (key) {
-return P$.Collections.eq$O$O(key, this.k);
+return $I$(8).eq$O$O(key, this.k);
 });
 
 Clazz.newMeth(C$, 'containsValue$O', function (value) {
-return P$.Collections.eq$O$O(value, this.v);
+return $I$(8).eq$O$O(value, this.v);
 });
 
 Clazz.newMeth(C$, 'get$O', function (key) {
-return (P$.Collections.eq$O$O(key, this.k) ? this.v : null);
+return ($I$(8).eq$O$O(key, this.k) ? this.v : null);
 });
 
 Clazz.newMeth(C$, 'keySet$', function () {
-if (this.$keySet == null ) this.$keySet=P$.Collections.singleton$TT(this.k);
+if (this.$keySet == null ) this.$keySet=$I$(8).singleton$O(this.k);
 return this.$keySet;
 });
 
 Clazz.newMeth(C$, 'entrySet$', function () {
-if (this.entrySet == null ) this.entrySet=$I$(25).singleton$TT(Clazz.new_($I$(20).c$$TK$TV,[this.k, this.v]));
+if (this.entrySet == null ) this.entrySet=$I$(8,"singleton$O",[Clazz.new_($I$(21,1).c$$O$O,[this.k, this.v])]);
 return this.entrySet;
 });
 
 Clazz.newMeth(C$, 'values$', function () {
-if (this.$values == null ) this.$values=P$.Collections.singleton$TT(this.v);
+if (this.$values == null ) this.$values=$I$(8).singleton$O(this.v);
 return this.$values;
 });
 
-Clazz.newMeth(C$, ['getOrDefault$O$TV'], function (key, defaultValue) {
-return P$.Collections.eq$O$O(key, this.k) ? this.v : defaultValue;
+Clazz.newMeth(C$, 'getOrDefault$O$O', function (key, defaultValue) {
+return $I$(8).eq$O$O(key, this.k) ? this.v : defaultValue;
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_BiConsumer', function (action) {
-action.accept$(this.k, this.v);
+action.accept$O$O(this.k, this.v);
 });
 
 Clazz.newMeth(C$, 'replaceAll$java_util_function_BiFunction', function ($function) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['putIfAbsent$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'putIfAbsent$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -4162,51 +3977,46 @@ Clazz.newMeth(C$, 'remove$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV$TV'], function (key, oldValue, newValue) {
+Clazz.newMeth(C$, 'replace$O$O$O', function (key, oldValue, newValue) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'replace$O$O', function (key, value) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['computeIfAbsent$TK$java_util_function_Function'], function (key, mappingFunction) {
+Clazz.newMeth(C$, 'computeIfAbsent$O$java_util_function_Function', function (key, mappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['computeIfPresent$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'computeIfPresent$O$java_util_function_BiFunction', function (key, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['compute$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'compute$O$java_util_function_BiFunction', function (key, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
-Clazz.newMeth(C$, ['merge$TK$TV$java_util_function_BiFunction'], function (key, value, remappingFunction) {
+Clazz.newMeth(C$, 'merge$O$O$java_util_function_BiFunction', function (key, value, remappingFunction) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "CopiesList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "CopiesList", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractList', ['java.util.RandomAccess', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.n=0;
-this.element=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I$TE', function (n, e) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['I',['n'],'O',['element','<E>']]]
+
+Clazz.newMeth(C$, 'c$$I$O', function (n, e) {
+Clazz.super_(C$, this);
 Clazz.assert(C$, this, function(){return n >= 0});
 this.n=n;
 this.element=e;
@@ -4217,7 +4027,7 @@ return this.n;
 });
 
 Clazz.newMeth(C$, 'contains$O', function (obj) {
-return this.n != 0 && P$.Collections.eq$O$O(obj, this.element) ;
+return this.n != 0 && $I$(8).eq$O$O(obj, this.element) ;
 });
 
 Clazz.newMeth(C$, 'indexOf$O', function (o) {
@@ -4235,17 +4045,17 @@ return this.element;
 
 Clazz.newMeth(C$, 'toArray$', function () {
 var a=Clazz.array(java.lang.Object, [this.n]);
-if (this.element != null ) $I$(10).fill$OA$I$I$O(a, 0, this.n, this.element);
+if (this.element != null ) $I$(12).fill$OA$I$I$O(a, 0, this.n, this.element);
 return a;
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 var n=this.n;
 if (a.length < n) {
 a=Clazz.array(a.getClass$().getComponentType$(), n);
-if (this.element != null ) $I$(10).fill$OA$I$I$O(a, 0, n, this.element);
+if (this.element != null ) $I$(12).fill$OA$I$I$O(a, 0, n, this.element);
 } else {
-$I$(10).fill$OA$I$I$O(a, 0, n, this.element);
+$I$(12).fill$OA$I$I$O(a, 0, n, this.element);
 if (a.length > n) a[n]=null;
 }return a;
 });
@@ -4254,97 +4064,98 @@ Clazz.newMeth(C$, 'subList$I$I', function (fromIndex, toIndex) {
 if (fromIndex < 0) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["fromIndex = " + fromIndex]);
 if (toIndex > this.n) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["toIndex = " + toIndex]);
 if (fromIndex > toIndex) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["fromIndex(" + fromIndex + ") > toIndex(" + toIndex + ")" ]);
-return Clazz.new_(C$.c$$I$TE,[toIndex - fromIndex, this.element]);
+return Clazz.new_(C$.c$$I$O,[toIndex - fromIndex, this.element]);
 });
 
 Clazz.newMeth(C$, 'stream$', function () {
-return $I$(27).range$I$I(0, this.n).mapToObj$java_util_function_IntFunction(((P$.Collections$CopiesList$lambda1||
-(function(){var C$=Clazz.newClass(P$, "Collections$CopiesList$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.IntFunction', 1);
+return $I$(27).range$I$I(0, this.n).mapToObj$java_util_function_IntFunction((P$.Collections$CopiesList$lambda1$||(P$.Collections$CopiesList$lambda1$=(((P$.Collections$CopiesList$lambda1||
+(function(){/*m*/var C$=Clazz.newClass(P$, "Collections$CopiesList$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.IntFunction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, 'apply$', function (i) { return (this.element);});
+Clazz.newMeth(C$, ['apply$I','apply$O'], function (i) { return (this.b$['java.util.Collections.CopiesList'].element);});
 })()
-), Clazz.new_(P$.Collections$CopiesList$lambda1.$init$, [this, null])));
+), Clazz.new_(P$.Collections$CopiesList$lambda1.$init$,[this, null]))))));
 });
 
 Clazz.newMeth(C$, 'parallelStream$', function () {
-return $I$(27).range$I$I(0, this.n).parallel$().mapToObj$java_util_function_IntFunction(((P$.Collections$CopiesList$lambda2||
-(function(){var C$=Clazz.newClass(P$, "Collections$CopiesList$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.IntFunction', 1);
+return $I$(27).range$I$I(0, this.n).parallel$().mapToObj$java_util_function_IntFunction((P$.Collections$CopiesList$lambda2$||(P$.Collections$CopiesList$lambda2$=(((P$.Collections$CopiesList$lambda2||
+(function(){/*m*/var C$=Clazz.newClass(P$, "Collections$CopiesList$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.IntFunction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 /*lambda_E*/
-Clazz.newMeth(C$, 'apply$', function (i) { return (this.element);});
+Clazz.newMeth(C$, ['apply$I','apply$O'], function (i) { return (this.b$['java.util.Collections.CopiesList'].element);});
 })()
-), Clazz.new_(P$.Collections$CopiesList$lambda2.$init$, [this, null])));
+), Clazz.new_(P$.Collections$CopiesList$lambda2.$init$,[this, null]))))));
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
 return this.stream$().spliterator$();
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "ReverseComparator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "ReverseComparator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Comparator', 'java.io.Serializable']);
-C$.REVERSE_ORDER=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.REVERSE_ORDER=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['compare$Comparable$Comparable','compare$','compare$TT$TT'], function (c1, c2) {
-return c2.compareTo$(c1);
+C$.$fields$=[[]
+,['O',['REVERSE_ORDER','java.util.Collections.ReverseComparator']]]
+
+Clazz.newMeth(C$, ['compare$Comparable$Comparable','compare$O$O'], function (c1, c2) {
+return c2.compareTo$O(c1);
 });
 
 Clazz.newMeth(C$, 'readResolve', function () {
-return $I$(25).reverseOrder$();
+return $I$(8).reverseOrder$();
 }, p$16);
 
 Clazz.newMeth(C$, 'reversed$', function () {
 return $I$(28).naturalOrder$();
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.REVERSE_ORDER=Clazz.new_(C$);
+};
+
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "ReverseComparator2", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "ReverseComparator2", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.Comparator', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cmp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['cmp','java.util.Comparator']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Comparator', function (cmp) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 Clazz.assert(C$, this, function(){return cmp != null });
 this.cmp=cmp;
 }, 1);
 
-Clazz.newMeth(C$, ['compare$TT$TT','compare$'], function (t1, t2) {
-return this.cmp.compare$(t2, t1);
+Clazz.newMeth(C$, 'compare$O$O', function (t1, t2) {
+return this.cmp.compare$O$O(t2, t1);
 });
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -4358,29 +4169,27 @@ return this.cmp.hashCode$() ^ -2147483648;
 Clazz.newMeth(C$, 'reversed$', function () {
 return this.cmp;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "SetFromMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "SetFromMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractSet', ['java.util.Set', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m=null;
-this.s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['m','java.util.Map','s','java.util.Set']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (map) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (!map.isEmpty$()) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Map is non-empty"]);
 this.m=map;
 this.s=map.keySet$();
@@ -4406,8 +4215,8 @@ Clazz.newMeth(C$, 'remove$O', function (o) {
 return this.m.remove$O(o) != null ;
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-return this.m.put$TK$TV(e, $I$(29).TRUE) == null ;
+Clazz.newMeth(C$, 'add$O', function (e) {
+return this.m.put$O$O(e, Boolean.TRUE) == null ;
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
@@ -4418,8 +4227,8 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return this.s.toArray$();
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
-return this.s.toArray$TTA(a);
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
+return this.s.toArray$OA(a);
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -4474,33 +4283,29 @@ this.s=this.m.keySet$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Collections, "AsLIFOQueue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Collections, "AsLIFOQueue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.AbstractQueue', ['java.util.Queue', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.q=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['q','java.util.Deque']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Deque', function (q) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.q=q;
 }, 1);
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.q.addFirst$TE(e);
+Clazz.newMeth(C$, 'add$O', function (e) {
+this.q.addFirst$O(e);
 return true;
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
-return this.q.offerFirst$TE(e);
+Clazz.newMeth(C$, 'offer$O', function (e) {
+return this.q.offerFirst$O(e);
 });
 
 Clazz.newMeth(C$, 'poll$', function () {
@@ -4547,8 +4352,8 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return this.q.toArray$();
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
-return this.q.toArray$TTA(a);
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
+return this.q.toArray$OA(a);
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -4590,4 +4395,4 @@ return this.q.parallelStream$();
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:45 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

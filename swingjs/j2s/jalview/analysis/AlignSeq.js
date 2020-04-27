@@ -1,55 +1,25 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),p$1={},I$=[[0,'StringBuffer','jalview.datamodel.Sequence','jalview.util.Comparison','Error','jalview.util.MessageManager','jalview.analysis.scoremodels.ScoreModels','StringBuilder','jalview.util.Format','java.util.StringTokenizer','java.awt.Color','java.util.ArrayList','jalview.util.MapList','jalview.datamodel.Mapping','java.util.Arrays','jalview.analysis.scoremodels.SimilarityParams','jalview.analysis.scoremodels.PIDModel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignSeq");
-C$.NEWLINE=null;
+(function(){var P$=Clazz.newPackage("jalview.analysis"),p$1={},I$=[[0,'StringBuffer','jalview.datamodel.Sequence','jalview.util.Comparison','Error','jalview.util.MessageManager','jalview.analysis.scoremodels.ScoreModels','StringBuilder','jalview.util.Format','java.util.StringTokenizer','java.awt.Color','java.util.ArrayList','jalview.util.MapList','jalview.datamodel.Mapping','java.util.Arrays','jalview.analysis.scoremodels.SimilarityParams','jalview.analysis.scoremodels.PIDModel']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignSeq");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NEWLINE=System.lineSeparator$();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.score=null;
-this.E=null;
-this.F=null;
-this.traceback=null;
-this.seq1=null;
-this.seq2=null;
-this.s1=null;
-this.s2=null;
-this.s1str=null;
-this.s2str=null;
-this.maxi=0;
-this.maxj=0;
-this.aseq1=null;
-this.aseq2=null;
-this.astr1=null;
-this.astr2=null;
-this.seq1start=0;
-this.seq1end=0;
-this.seq2start=0;
-this.seq2end=0;
-this.count=0;
-this.maxscore=0;
-this.prev=0;
-this.output=null;
-this.type=null;
-this.scoreMatrix=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.astr1="";
 this.astr2="";
 this.prev=0;
-this.output=Clazz.new_($I$(1));
-}, 1);
+this.output=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['F',['maxscore'],'I',['maxi','maxj','seq1start','seq1end','seq2start','seq2end','count','prev'],'S',['s1str','s2str','astr1','astr2','type'],'O',['score','float[][]','+E','+F','traceback','int[][]','seq1','int[]','+seq2','s1','jalview.datamodel.SequenceI','+s2','aseq1','int[]','+aseq2','output','StringBuffer','scoreMatrix','jalview.analysis.scoremodels.ScoreMatrix']]
+,['S',['NEWLINE']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$S', function (s1, s2, type) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.seqInit$jalview_datamodel_SequenceI$S$jalview_datamodel_SequenceI$S$S(s1, s1.getSequenceAsString$(), s2, s2.getSequenceAsString$(), type);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$S$jalview_datamodel_SequenceI$S$S', function (s1, string1, s2, string2, type) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.seqInit$jalview_datamodel_SequenceI$S$jalview_datamodel_SequenceI$S$S(s1, string1.toUpperCase$(), s2, string2.toUpperCase$(), type);
 }, 1);
 
@@ -94,7 +64,7 @@ return this.aseq2;
 });
 
 Clazz.newMeth(C$, 'getAlignedSeq1$', function () {
-var alSeq1=Clazz.new_($I$(2).c$$S$S,[this.s1.getName$(), this.getAStr1$()]);
+var alSeq1=Clazz.new_([this.s1.getName$(), this.getAStr1$()],$I$(2,1).c$$S$S);
 alSeq1.setStart$I(this.s1.getStart$() + this.getSeq1Start$() - 1);
 alSeq1.setEnd$I(this.s1.getStart$() + this.getSeq1End$() - 1);
 alSeq1.setDatasetSequence$jalview_datamodel_SequenceI(this.s1.getDatasetSequence$() == null  ? this.s1 : this.s1.getDatasetSequence$());
@@ -102,7 +72,7 @@ return alSeq1;
 });
 
 Clazz.newMeth(C$, 'getAlignedSeq2$', function () {
-var alSeq2=Clazz.new_($I$(2).c$$S$S,[this.s2.getName$(), this.getAStr2$()]);
+var alSeq2=Clazz.new_([this.s2.getName$(), this.getAStr2$()],$I$(2,1).c$$S$S);
 alSeq2.setStart$I(this.s2.getStart$() + this.getSeq2Start$() - 1);
 alSeq2.setEnd$I(this.s2.getStart$() + this.getSeq2End$() - 1);
 alSeq2.setDatasetSequence$jalview_datamodel_SequenceI(this.s2.getDatasetSequence$() == null  ? this.s2 : this.s2.getDatasetSequence$());
@@ -133,7 +103,7 @@ this.seq2=this.indexEncode$S(this.s2str);
 Clazz.newMeth(C$, 'setDefaultParams$S', function (moleculeType) {
 if (!"pep".equals$O(moleculeType) && !"dna".equals$O(moleculeType) ) {
 this.output.append$S("Wrong type = dna or pep only");
-throw Clazz.new_($I$(4).c$$S,[$I$(5).formatMessage$S$SA("error.unknown_type_dna_or_pep", Clazz.array(String, -1, [moleculeType]))]);
+throw Clazz.new_([$I$(5,"formatMessage$S$SA",["error.unknown_type_dna_or_pep", Clazz.array(String, -1, [moleculeType])])],$I$(4,1).c$$S);
 }this.type=moleculeType;
 this.scoreMatrix=$I$(6).getInstance$().getDefaultModel$Z("pep".equals$O(this.type));
 }, p$1);
@@ -160,8 +130,8 @@ this.seq1end=this.maxi + 1;
 this.seq2end=this.maxj + 1;
 this.aseq1=Clazz.array(Integer.TYPE, [this.seq1.length + this.seq2.length]);
 this.aseq2=Clazz.array(Integer.TYPE, [this.seq1.length + this.seq2.length]);
-var sb1=Clazz.new_($I$(7).c$$I,[this.aseq1.length]);
-var sb2=Clazz.new_($I$(7).c$$I,[this.aseq2.length]);
+var sb1=Clazz.new_($I$(7,1).c$$I,[this.aseq1.length]);
+var sb2=Clazz.new_($I$(7,1).c$$I,[this.aseq2.length]);
 this.count=(this.seq1.length + this.seq2.length) - 1;
 while (i > 0 && j > 0 ){
 this.aseq1[this.count]=this.seq1[i];
@@ -213,7 +183,7 @@ var pid=0.0;
 this.output.append$S("Score = ").append$F(this.score[this.maxi][this.maxj]).append$S(C$.NEWLINE);
 this.output.append$S("Length of alignment = ").append$S(String.valueOf$I(this.aseq1.length - this.count)).append$S(C$.NEWLINE);
 this.output.append$S("Sequence ");
-var nameFormat=Clazz.new_($I$(8).c$$S,["%" + nameLength + "s" ]);
+var nameFormat=Clazz.new_($I$(8,1).c$$S,["%" + nameLength + "s" ]);
 this.output.append$S(nameFormat.form$S(s1id));
 this.output.append$S(" (Sequence length = ").append$S(String.valueOf$I(this.s1str.length$())).append$S(")").append$S(C$.NEWLINE);
 this.output.append$S("Sequence ");
@@ -253,7 +223,7 @@ this.output.append$C(this.astr2.charAt$I(i + (j * len)));
 this.output.append$S(C$.NEWLINE).append$S(C$.NEWLINE);
 }
 pid=pid / (this.aseq1.length - this.count) * 100;
-this.output.append$S(Clazz.new_($I$(8).c$$S,["Percentage ID = %3.2f\n"]).form$D(pid));
+this.output.append$S(Clazz.new_(["Percentage ID = %3.2f\n"],$I$(8,1).c$$S).form$D(pid));
 this.output.append$S(C$.NEWLINE);
 try {
 os.print$S(this.output.toString());
@@ -321,8 +291,8 @@ this.traceback[i][j]=this.findTrace$I$I(i, j);
 Clazz.newMeth(C$, 'extractGaps$S$S', function (gapChars, seq) {
 if (gapChars == null  || seq == null  ) {
 return null;
-}var str=Clazz.new_($I$(9).c$$S$S,[seq, gapChars]);
-var newString=Clazz.new_($I$(7).c$$I,[seq.length$()]);
+}var str=Clazz.new_($I$(9,1).c$$S$S,[seq, gapChars]);
+var newString=Clazz.new_([seq.length$()],$I$(7,1).c$$I);
 while (str.hasMoreTokens$()){
 newString.append$S(str.nextToken$());
 }
@@ -371,7 +341,7 @@ for (var j=0; j < m; j++) {
 var x=psize * i;
 var y=psize * j;
 var score=(mat[i][j] - min) / (max - min);
-g.setColor$java_awt_Color(Clazz.new_($I$(10).c$$F$F$F,[score, 0, 0]));
+g.setColor$java_awt_Color(Clazz.new_($I$(10,1).c$$F$F$F,[score, 0, 0]));
 g.fillRect$I$I$I$I(x, y, psize, psize);
 }
 }
@@ -385,8 +355,8 @@ return as;
 }, 1);
 
 Clazz.newMeth(C$, 'getMappingFromS1$Z', function (allowmismatch) {
-var as1=Clazz.new_($I$(11));
-var as2=Clazz.new_($I$(11));
+var as1=Clazz.new_($I$(11,1));
+var as2=Clazz.new_($I$(11,1));
 var pdbpos=this.s2.getStart$() + this.getSeq2Start$() - 2;
 var alignpos=this.s1.getStart$() + this.getSeq1Start$() - 2;
 var lp2=pdbpos - 3;
@@ -401,43 +371,43 @@ alignpos++;
 pdbpos++;
 }if (allowmismatch || c1 == c2 ) {
 if (lp1 + 1 != alignpos || lp2 + 1 != pdbpos ) {
-as1.add$TE(Integer.valueOf$I(alignpos));
-as2.add$TE(Integer.valueOf$I(pdbpos));
+as1.add$O(Integer.valueOf$I(alignpos));
+as2.add$O(Integer.valueOf$I(pdbpos));
 }lastmatch=true;
 lp1=alignpos;
 lp2=pdbpos;
 } else {
 if (lastmatch) {
-as1.add$TE(Integer.valueOf$I(lp1));
-as2.add$TE(Integer.valueOf$I(lp2));
+as1.add$O(Integer.valueOf$I(lp1));
+as2.add$O(Integer.valueOf$I(lp2));
 }lastmatch=false;
 }}
 var mapseq1=Clazz.array(Integer.TYPE, [as1.size$() + (lastmatch ? 1 : 0)]);
 var mapseq2=Clazz.array(Integer.TYPE, [as2.size$() + (lastmatch ? 1 : 0)]);
 var i=0;
 for (var ip, $ip = as1.iterator$(); $ip.hasNext$()&&((ip=($ip.next$())),1);) {
-mapseq1[i++]=(ip).intValue$();
+mapseq1[i++]=(ip).valueOf();
 }
 ;i=0;
 for (var ip, $ip = as2.iterator$(); $ip.hasNext$()&&((ip=($ip.next$())),1);) {
-mapseq2[i++]=(ip).intValue$();
+mapseq2[i++]=(ip).valueOf();
 }
 ;if (lastmatch) {
 mapseq1[mapseq1.length - 1]=alignpos;
 mapseq2[mapseq2.length - 1]=pdbpos;
-}var map=Clazz.new_($I$(12).c$$IA$IA$I$I,[mapseq1, mapseq2, 1, 1]);
-var mapping=Clazz.new_($I$(13).c$$jalview_util_MapList,[map]);
+}var map=Clazz.new_($I$(12,1).c$$IA$IA$I$I,[mapseq1, mapseq2, 1, 1]);
+var mapping=Clazz.new_($I$(13,1).c$$jalview_util_MapList,[map]);
 mapping.setTo$jalview_datamodel_SequenceI(this.s2);
 return mapping;
 });
 
 Clazz.newMeth(C$, 'replaceMatchingSeqsWith$java_util_List$java_util_List$java_util_List$jalview_datamodel_AlignmentI$S$Z', function (seqs, annotations, ochains, al, dnaOrProtein, removeOldAnnots) {
-var orig=Clazz.new_($I$(11));
-var repl=Clazz.new_($I$(11));
-var aligs=Clazz.new_($I$(11));
+var orig=Clazz.new_($I$(11,1));
+var repl=Clazz.new_($I$(11,1));
+var aligs=Clazz.new_($I$(11,1));
 if (al != null  && al.getHeight$() > 0 ) {
-var matches=Clazz.new_($I$(11));
-var aligns=Clazz.new_($I$(11));
+var matches=Clazz.new_($I$(11,1));
+var aligns=Clazz.new_($I$(11,1));
 for (var sq, $sq = ochains.iterator$(); $sq.hasNext$()&&((sq=($sq.next$())),1);) {
 var bestm=null;
 var bestaseq=null;
@@ -449,8 +419,8 @@ bestscore=aseq.getMaxScore$();
 bestaseq=aseq;
 bestm=msq;
 }}
-matches.add$TE(bestm);
-aligns.add$TE(bestaseq);
+matches.add$O(bestm);
+aligns.add$O(bestaseq);
 al.deleteSequence$jalview_datamodel_SequenceI(bestm);
 }
 for (var p=0, pSize=seqs.size$(); p < pSize; p++) {
@@ -458,14 +428,14 @@ var sq;
 var sp=seqs.get$I(p);
 var q;
 if ((q=ochains.indexOf$O(sp)) > -1) {
-seqs.set$I$TE(p, sq=matches.get$I(q));
-orig.add$TE(sp);
-repl.add$TE(sq);
+seqs.set$I$O(p, sq=matches.get$I(q));
+orig.add$O(sp);
+repl.add$O(sq);
 sq.setName$S(sp.getName$());
 sq.setDescription$S(sp.getDescription$());
 var sp2sq;
 sq.transferAnnotation$jalview_datamodel_SequenceI$jalview_datamodel_Mapping(sp, sp2sq=aligns.get$I(q).getMappingFromS1$Z(false));
-aligs.add$TE(aligns.get$I(q));
+aligs.add$O(aligns.get$I(q));
 var inspos=-1;
 for (var ap=0; ap < annotations.size$(); ) {
 if (annotations.get$I(ap).sequenceRef === sp ) {
@@ -482,9 +452,9 @@ sq.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(alan);
 ap++;
 }}
 if (sq.getAnnotation$() != null  && sq.getAnnotation$().length > 0 ) {
-annotations.addAll$I$java_util_Collection(inspos == -1 ? annotations.size$() : inspos, $I$(14).asList$TTA(sq.getAnnotation$()));
+annotations.addAll$I$java_util_Collection(inspos == -1 ? annotations.size$() : inspos, $I$(14,"asList$OA",[sq.getAnnotation$()]));
 }}}
-}return $I$(14).asList$TTA([orig, repl, aligs]);
+}return $I$(14).asList$OA([orig, repl, aligs]);
 }, 1);
 
 Clazz.newMeth(C$, 'computeRedundancyMatrix$jalview_datamodel_SequenceIA$SA$I$I$Z', function (originalSequences, omitHidden, start, end, ungapped) {
@@ -495,7 +465,7 @@ for (var i=0; i < height; i++) {
 redundancy[i]=0.0;
 lngth[i]=-1;
 }
-var pidParams=Clazz.new_($I$(15).c$$Z$Z$Z$Z,[true, true, true, true]);
+var pidParams=Clazz.new_($I$(15,1).c$$Z$Z$Z$Z,[true, true, true, true]);
 var pid;
 var seqi;
 var seqj;
@@ -529,6 +499,10 @@ redundancy[i]=Math.max(pid, redundancy[i]);
 return redundancy;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.NEWLINE=System.lineSeparator$();
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

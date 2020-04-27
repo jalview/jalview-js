@@ -1,101 +1,88 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'java.util.HashMap','org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.models.rna.ModeleBase','fr.orsay.lri.varna.utils.XMLUtils','fr.orsay.lri.varna.models.rna.ModelBaseStyle',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.models.rna.VARNAPoint',['fr.orsay.lri.varna.models.rna.ModeleBaseNucleotide','.STATE_SPECIAL_CHARS_STATES']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ModeleBaseNucleotide", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'java.util.HashMap','org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.models.rna.ModeleBase','fr.orsay.lri.varna.utils.XMLUtils','fr.orsay.lri.varna.models.rna.ModelBaseStyle',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.models.rna.VARNAPoint',['fr.orsay.lri.varna.models.rna.ModeleBaseNucleotide','.STATE_SPECIAL_CHARS_STATES']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ModeleBaseNucleotide", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'fr.orsay.lri.varna.models.rna.ModeleBase');
-C$.XML_ELEMENT_NAME=null;
-C$.XML_VAR_CONTENT_NAME=null;
-C$._subscripts=null;
-C$._superscripts=null;
-C$._commands=null;
+C$.$classes$=[['STATE_SPECIAL_CHARS_STATES',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.XML_ELEMENT_NAME="nt";
-C$.XML_VAR_CONTENT_NAME="base";
-C$._subscripts=Clazz.new_($I$(1));
-C$._superscripts=Clazz.new_($I$(1));
-C$._commands=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._c=null;
-this._index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 {
-C$._subscripts.put$TK$TV(new Character('0'), new Character('\u2080'));
-C$._subscripts.put$TK$TV(new Character('1'), new Character('\u2081'));
-C$._subscripts.put$TK$TV(new Character('2'), new Character('\u2082'));
-C$._subscripts.put$TK$TV(new Character('3'), new Character('\u2083'));
-C$._subscripts.put$TK$TV(new Character('4'), new Character('\u2084'));
-C$._subscripts.put$TK$TV(new Character('5'), new Character('\u2085'));
-C$._subscripts.put$TK$TV(new Character('6'), new Character('\u2086'));
-C$._subscripts.put$TK$TV(new Character('7'), new Character('\u2087'));
-C$._subscripts.put$TK$TV(new Character('8'), new Character('\u2088'));
-C$._subscripts.put$TK$TV(new Character('9'), new Character('\u2089'));
-C$._subscripts.put$TK$TV(new Character('+'), new Character('\u208A'));
-C$._subscripts.put$TK$TV(new Character('-'), new Character('\u208B'));
-C$._subscripts.put$TK$TV(new Character('a'), new Character('\u2090'));
-C$._subscripts.put$TK$TV(new Character('e'), new Character('\u2091'));
-C$._subscripts.put$TK$TV(new Character('o'), new Character('\u2092'));
-C$._subscripts.put$TK$TV(new Character('i'), new Character('\u1D62'));
-C$._subscripts.put$TK$TV(new Character('r'), new Character('\u1D63'));
-C$._subscripts.put$TK$TV(new Character('u'), new Character('\u1D64'));
-C$._subscripts.put$TK$TV(new Character('v'), new Character('\u1D65'));
-C$._subscripts.put$TK$TV(new Character('x'), new Character('\u2093'));
-C$._superscripts.put$TK$TV(new Character('0'), new Character('\u2070'));
-C$._superscripts.put$TK$TV(new Character('1'), new Character('\u00B9'));
-C$._superscripts.put$TK$TV(new Character('2'), new Character('\u00B2'));
-C$._superscripts.put$TK$TV(new Character('3'), new Character('\u00B3'));
-C$._superscripts.put$TK$TV(new Character('4'), new Character('\u2074'));
-C$._superscripts.put$TK$TV(new Character('5'), new Character('\u2075'));
-C$._superscripts.put$TK$TV(new Character('6'), new Character('\u2076'));
-C$._superscripts.put$TK$TV(new Character('7'), new Character('\u2077'));
-C$._superscripts.put$TK$TV(new Character('8'), new Character('\u2078'));
-C$._superscripts.put$TK$TV(new Character('9'), new Character('\u2079'));
-C$._superscripts.put$TK$TV(new Character('+'), new Character('\u207A'));
-C$._superscripts.put$TK$TV(new Character('-'), new Character('\u207B'));
-C$._superscripts.put$TK$TV(new Character('i'), new Character('\u2071'));
-C$._superscripts.put$TK$TV(new Character('n'), new Character('\u207F'));
-C$._commands.put$TK$TV("alpha", new Character('\u03B1'));
-C$._commands.put$TK$TV("beta", new Character('\u03B2'));
-C$._commands.put$TK$TV("gamma", new Character('\u03B3'));
-C$._commands.put$TK$TV("delta", new Character('\u03B4'));
-C$._commands.put$TK$TV("epsilon", new Character('\u03B5'));
-C$._commands.put$TK$TV("zeta", new Character('\u03B6'));
-C$._commands.put$TK$TV("eta", new Character('\u03B7'));
-C$._commands.put$TK$TV("theta", new Character('\u03B8'));
-C$._commands.put$TK$TV("iota", new Character('\u03B9'));
-C$._commands.put$TK$TV("kappa", new Character('\u03BA'));
-C$._commands.put$TK$TV("lambda", new Character('\u03BB'));
-C$._commands.put$TK$TV("mu", new Character('\u03BC'));
-C$._commands.put$TK$TV("nu", new Character('\u03BD'));
-C$._commands.put$TK$TV("xi", new Character('\u03BE'));
-C$._commands.put$TK$TV("omicron", new Character('\u03BF'));
-C$._commands.put$TK$TV("pi", new Character('\u03C1'));
-C$._commands.put$TK$TV("rho", new Character('\u03C2'));
-C$._commands.put$TK$TV("sigma", new Character('\u03C3'));
-C$._commands.put$TK$TV("tau", new Character('\u03C4'));
-C$._commands.put$TK$TV("upsilon", new Character('\u03C5'));
-C$._commands.put$TK$TV("phi", new Character('\u03C6'));
-C$._commands.put$TK$TV("chi", new Character('\u03C7'));
-C$._commands.put$TK$TV("psi", new Character('\u03C8'));
-C$._commands.put$TK$TV("omega", new Character('\u03C9'));
-C$._commands.put$TK$TV("Psi", new Character('\u03A8'));
-C$._commands.put$TK$TV("Phi", new Character('\u03A6'));
-C$._commands.put$TK$TV("Sigma", new Character('\u03A3'));
-C$._commands.put$TK$TV("Pi", new Character('\u03A0'));
-C$._commands.put$TK$TV("Theta", new Character('\u0398'));
-C$._commands.put$TK$TV("Omega", new Character('\u03A9'));
-C$._commands.put$TK$TV("Gamma", new Character('\u0393'));
-C$._commands.put$TK$TV("Delta", new Character('\u0394'));
-C$._commands.put$TK$TV("Lambda", new Character('\u039B'));
+C$._subscripts.put$O$O(new Character('0'), new Character('\u2080'));
+C$._subscripts.put$O$O(new Character('1'), new Character('\u2081'));
+C$._subscripts.put$O$O(new Character('2'), new Character('\u2082'));
+C$._subscripts.put$O$O(new Character('3'), new Character('\u2083'));
+C$._subscripts.put$O$O(new Character('4'), new Character('\u2084'));
+C$._subscripts.put$O$O(new Character('5'), new Character('\u2085'));
+C$._subscripts.put$O$O(new Character('6'), new Character('\u2086'));
+C$._subscripts.put$O$O(new Character('7'), new Character('\u2087'));
+C$._subscripts.put$O$O(new Character('8'), new Character('\u2088'));
+C$._subscripts.put$O$O(new Character('9'), new Character('\u2089'));
+C$._subscripts.put$O$O(new Character('+'), new Character('\u208a'));
+C$._subscripts.put$O$O(new Character('-'), new Character('\u208b'));
+C$._subscripts.put$O$O(new Character('a'), new Character('\u2090'));
+C$._subscripts.put$O$O(new Character('e'), new Character('\u2091'));
+C$._subscripts.put$O$O(new Character('o'), new Character('\u2092'));
+C$._subscripts.put$O$O(new Character('i'), new Character('\u1d62'));
+C$._subscripts.put$O$O(new Character('r'), new Character('\u1d63'));
+C$._subscripts.put$O$O(new Character('u'), new Character('\u1d64'));
+C$._subscripts.put$O$O(new Character('v'), new Character('\u1d65'));
+C$._subscripts.put$O$O(new Character('x'), new Character('\u2093'));
+C$._superscripts.put$O$O(new Character('0'), new Character('\u2070'));
+C$._superscripts.put$O$O(new Character('1'), new Character('\u00b9'));
+C$._superscripts.put$O$O(new Character('2'), new Character('\u00b2'));
+C$._superscripts.put$O$O(new Character('3'), new Character('\u00b3'));
+C$._superscripts.put$O$O(new Character('4'), new Character('\u2074'));
+C$._superscripts.put$O$O(new Character('5'), new Character('\u2075'));
+C$._superscripts.put$O$O(new Character('6'), new Character('\u2076'));
+C$._superscripts.put$O$O(new Character('7'), new Character('\u2077'));
+C$._superscripts.put$O$O(new Character('8'), new Character('\u2078'));
+C$._superscripts.put$O$O(new Character('9'), new Character('\u2079'));
+C$._superscripts.put$O$O(new Character('+'), new Character('\u207a'));
+C$._superscripts.put$O$O(new Character('-'), new Character('\u207b'));
+C$._superscripts.put$O$O(new Character('i'), new Character('\u2071'));
+C$._superscripts.put$O$O(new Character('n'), new Character('\u207f'));
+C$._commands.put$O$O("alpha", new Character('\u03b1'));
+C$._commands.put$O$O("beta", new Character('\u03b2'));
+C$._commands.put$O$O("gamma", new Character('\u03b3'));
+C$._commands.put$O$O("delta", new Character('\u03b4'));
+C$._commands.put$O$O("epsilon", new Character('\u03b5'));
+C$._commands.put$O$O("zeta", new Character('\u03b6'));
+C$._commands.put$O$O("eta", new Character('\u03b7'));
+C$._commands.put$O$O("theta", new Character('\u03b8'));
+C$._commands.put$O$O("iota", new Character('\u03b9'));
+C$._commands.put$O$O("kappa", new Character('\u03ba'));
+C$._commands.put$O$O("lambda", new Character('\u03bb'));
+C$._commands.put$O$O("mu", new Character('\u03bc'));
+C$._commands.put$O$O("nu", new Character('\u03bd'));
+C$._commands.put$O$O("xi", new Character('\u03be'));
+C$._commands.put$O$O("omicron", new Character('\u03bf'));
+C$._commands.put$O$O("pi", new Character('\u03c1'));
+C$._commands.put$O$O("rho", new Character('\u03c2'));
+C$._commands.put$O$O("sigma", new Character('\u03c3'));
+C$._commands.put$O$O("tau", new Character('\u03c4'));
+C$._commands.put$O$O("upsilon", new Character('\u03c5'));
+C$._commands.put$O$O("phi", new Character('\u03c6'));
+C$._commands.put$O$O("chi", new Character('\u03c7'));
+C$._commands.put$O$O("psi", new Character('\u03c8'));
+C$._commands.put$O$O("omega", new Character('\u03c9'));
+C$._commands.put$O$O("Psi", new Character('\u03a8'));
+C$._commands.put$O$O("Phi", new Character('\u03a6'));
+C$._commands.put$O$O("Sigma", new Character('\u03a3'));
+C$._commands.put$O$O("Pi", new Character('\u03a0'));
+C$._commands.put$O$O("Theta", new Character('\u0398'));
+C$._commands.put$O$O("Omega", new Character('\u03a9'));
+C$._commands.put$O$O("Gamma", new Character('\u0393'));
+C$._commands.put$O$O("Delta", new Character('\u0394'));
+C$._commands.put$O$O("Lambda", new Character('\u039b'));
 }
-}, 1);
+},1);
+
+C$.$fields$=[['I',['_index'],'S',['_c']]
+,['S',['XML_ELEMENT_NAME','XML_VAR_CONTENT_NAME'],'O',['_subscripts','java.util.HashMap','+_superscripts','+_commands']]]
 
 Clazz.newMeth(C$, 'toXML$javax_xml_transform_sax_TransformerHandler', function (hd) {
-var atts=Clazz.new_($I$(2));
+var atts=Clazz.new_($I$(2,1));
 atts.addAttribute$S$S$S$S$S("", "", $I$(3).XML_VAR_INDEX_NAME, "CDATA", "" + this._index);
 atts.addAttribute$S$S$S$S$S("", "", $I$(3).XML_VAR_NUMBER_NAME, "CDATA", "" + this._realIndex);
 atts.addAttribute$S$S$S$S$S("", "", $I$(3).XML_VAR_CUSTOM_DRAWN_NAME, "CDATA", "" + this._colorie);
@@ -108,7 +95,7 @@ $I$(4).exportCDATAString$javax_xml_transform_sax_TransformerHandler$S(hd, this._
 hd.endElement$S$S$S("", "", C$.XML_VAR_CONTENT_NAME);
 this._coords.toXML$javax_xml_transform_sax_TransformerHandler$S(hd, $I$(3).XML_VAR_POSITION_NAME);
 this._center.toXML$javax_xml_transform_sax_TransformerHandler$S(hd, $I$(3).XML_VAR_CENTER_NAME);
-if ((this._colorie).booleanValue$()) {
+if ((this._colorie).valueOf()) {
 this._styleBase.toXML$javax_xml_transform_sax_TransformerHandler(hd);
 }hd.endElement$S$S$S("", "", C$.XML_ELEMENT_NAME);
 });
@@ -118,16 +105,16 @@ C$.c$$S$I.apply(this, [" ", index]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I', function (s, index) {
-C$.c$$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I.apply(this, [s, Clazz.new_($I$(5)), index]);
+C$.c$$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I.apply(this, [s, Clazz.new_($I$(5,1)), index]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I$I', function (s, index, baseNumber) {
-C$.c$$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I.apply(this, [s, Clazz.new_($I$(5)), index]);
+C$.c$$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I.apply(this, [s, Clazz.new_($I$(5,1)), index]);
 this._realIndex=baseNumber;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I', function (s, msb, index) {
-C$.c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$Z$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I.apply(this, [Clazz.new_($I$(6)), Clazz.new_($I$(6)), true, s, msb, -1, index]);
+C$.c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$Z$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I.apply(this, [Clazz.new_($I$(6,1)), Clazz.new_($I$(6,1)), true, s, msb, -1, index]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I', function (msb, index, baseNumber) {
@@ -136,28 +123,28 @@ this._realIndex=baseNumber;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Point2D_Double$I', function (coord, index) {
-C$.c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$Z$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I.apply(this, [Clazz.new_($I$(6).c$$D$D,[coord.getX$(), coord.getY$()]), Clazz.new_($I$(6)), true, "", Clazz.new_($I$(5)), -1, index]);
+C$.c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$Z$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I.apply(this, [Clazz.new_([coord.getX$(), coord.getY$()],$I$(6,1).c$$D$D), Clazz.new_($I$(6,1)), true, "", Clazz.new_($I$(5,1)), -1, index]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_ModeleBaseNucleotide$I', function (mb, index) {
-C$.c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$Z$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I.apply(this, [Clazz.new_($I$(6).c$$D$D,[mb.getCoords$().getX$(), mb.getCoords$().getY$()]), Clazz.new_($I$(6).c$$D$D,[mb.getCenter$().getX$(), mb.getCenter$().getY$()]), true, mb.getBase$(), mb.getStyleBase$(), mb.getElementStructure$(), index]);
+C$.c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$Z$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I.apply(this, [Clazz.new_([mb.getCoords$().getX$(), mb.getCoords$().getY$()],$I$(6,1).c$$D$D), Clazz.new_([mb.getCenter$().getX$(), mb.getCenter$().getY$()],$I$(6,1).c$$D$D), true, mb.getBase$(), mb.getStyleBase$(), mb.getElementStructure$(), index]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$Z$S$fr_orsay_lri_varna_models_rna_ModelBaseStyle$I$I', function (coords, center, colorie, label, mb, elementStruct, index) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._colorie=new Boolean(colorie);
 this._c=label;
 this._styleBase=mb;
-this._coords=Clazz.new_($I$(7).c$$java_awt_geom_Point2D_Double,[coords]);
-this._center=Clazz.new_($I$(7).c$$java_awt_geom_Point2D_Double,[center]);
+this._coords=Clazz.new_($I$(7,1).c$$java_awt_geom_Point2D_Double,[coords]);
+this._center=Clazz.new_($I$(7,1).c$$java_awt_geom_Point2D_Double,[center]);
 this._index=index;
 this._realIndex=index + 1;
 this._value=0.0;
 }, 1);
 
 Clazz.newMeth(C$, 'getStyleBase$', function () {
-if ((this._colorie).booleanValue$()) return this._styleBase;
-return Clazz.new_($I$(5));
+if ((this._colorie).valueOf()) return this._styleBase;
+return Clazz.new_($I$(5,1));
 });
 
 Clazz.newMeth(C$, 'getBase$', function () {
@@ -282,21 +269,31 @@ result += C$._commands.get$O(buffer);
 result += buffer;
 }return result;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.XML_ELEMENT_NAME="nt";
+C$.XML_VAR_CONTENT_NAME="base";
+C$._subscripts=Clazz.new_($I$(1,1));
+C$._superscripts=Clazz.new_($I$(1,1));
+C$._commands=Clazz.new_($I$(1,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ModeleBaseNucleotide, "STATE_SPECIAL_CHARS_STATES", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.ModeleBaseNucleotide, "STATE_SPECIAL_CHARS_STATES", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "NORMAL", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "SUBSCRIPT", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "SUPERSCRIPT", 2, []);
 Clazz.newEnumConst($vals, C$.c$, "COMMAND", 3, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -306,4 +303,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:58 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,34 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.BoxInfo','org.jmol.util.C','org.jmol.util.SimpleUnitCell','javajs.util.PT','javajs.util.DF']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UccageRenderer", null, 'org.jmol.render.CageRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.BoxInfo','org.jmol.util.C','org.jmol.util.SimpleUnitCell','javajs.util.PT','javajs.util.DF']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "UccageRenderer", null, 'org.jmol.render.CageRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.verticesT=null;
-this.fset0=null;
-this.cell0=null;
-this.cell1=null;
-this.offset=null;
-this.offsetT=null;
-this.unitcell=null;
-this.lineheight=0;
-this.xpos=0;
-this.ypos=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.verticesT=Clazz.array($I$(1), [8]);
 this.fset0=$I$(1).new3$F$F$F(555, 555, 1);
-this.cell0=Clazz.new_($I$(1));
-this.cell1=Clazz.new_($I$(1));
-this.offset=Clazz.new_($I$(1));
-this.offsetT=Clazz.new_($I$(1));
-}, 1);
+this.cell0=Clazz.new_($I$(1,1));
+this.cell1=Clazz.new_($I$(1,1));
+this.offset=Clazz.new_($I$(1,1));
+this.offsetT=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['I',['lineheight','xpos','ypos'],'O',['verticesT','javajs.util.P3[]','fset0','javajs.util.P3','+cell0','+cell1','+offset','+offsetT','unitcell','org.jmol.api.SymmetryInterface']]]
 
 Clazz.newMeth(C$, 'initRenderer$', function () {
-for (var i=8; --i >= 0; ) this.verticesT[i]=Clazz.new_($I$(1));
+for (var i=8; --i >= 0; ) this.verticesT[i]=Clazz.new_($I$(1,1));
 
 this.tickEdges=$I$(2).uccageTickEdges;
 this.draw000=false;
@@ -36,7 +23,7 @@ this.draw000=false;
 
 Clazz.newMeth(C$, 'render$', function () {
 this.imageFontScaling=this.vwr.imageFontScaling;
-this.font3d=this.vwr.gdata.getFont3DScaled$javajs_awt_Font$F((this.shape).font3d, this.imageFontScaling);
+this.font3d=this.vwr.gdata.getFont3DScaled$org_jmol_util_Font$F((this.shape).font3d, this.imageFontScaling);
 var mad10=this.vwr.getObjectMad10$I(5);
 if (mad10 == 0 || this.vwr.isJmolDataFrame$()  || this.tm.isNavigating$() && this.vwr.getBoolean$I(603979890)  ) return false;
 this.colix=this.vwr.getObjectColix$I(5);
@@ -62,8 +49,8 @@ var fset=this.unitcell.getUnitCellMultiplier$();
 var haveMultiple=(fset != null  && fset.distanceSquared$javajs_util_T3(this.fset0) != 0  );
 if (!haveMultiple) fset=this.fset0;
 var t3w=(Clazz.instanceOf(fset, "javajs.util.T4") ? ((fset).w|0) : 0);
-$I$(4).ijkToPoint3f$I$javajs_util_P3$I$I((fset.x|0), this.cell0, 0, t3w);
-$I$(4).ijkToPoint3f$I$javajs_util_P3$I$I((fset.y|0), this.cell1, 1, t3w);
+(function(a,f){return f.apply(null,a)})([(fset.x|0), this.cell0, 0, t3w],$I$(4).ijkToPoint3f$I$javajs_util_P3$I$I);
+(function(a,f){return f.apply(null,a)})([(fset.y|0), this.cell1, 1, t3w],$I$(4).ijkToPoint3f$I$javajs_util_P3$I$I);
 var firstLine;
 var allow0;
 var allow1;
@@ -87,7 +74,7 @@ allow0=255;
 allow1=255;
 var pts=$I$(2).unitCubePoints;
 for (var i=8; --i >= 0; ) {
-var v=$I$(1).new3$F$F$F(pts[i].x * (this.cell1.x - this.cell0.x), pts[i].y * (this.cell1.y - this.cell0.y), pts[i].z * (this.cell1.z - this.cell0.z));
+var v=(function(a,f){return f.apply(null,a)})([pts[i].x * (this.cell1.x - this.cell0.x), pts[i].y * (this.cell1.y - this.cell0.y), pts[i].z * (this.cell1.z - this.cell0.z)],$I$(1).new3$F$F$F);
 this.unitcell.toCartesian$javajs_util_T3$Z(v, true);
 this.verticesT[i].add2$javajs_util_T3$javajs_util_T3(v, this.offsetT);
 }
@@ -118,8 +105,8 @@ p$1.renderInfo.apply(this, []);
 
 Clazz.newMeth(C$, 'renderInfo', function () {
 if (this.isExport || !this.vwr.getBoolean$I(603979828) || this.unitcell.isSimple$() || this.vwr.isPreviewOnly || !this.vwr.gdata.setC$H(this.vwr.cm.colixBackgroundContrast) || this.vwr.gdata.getTextPosition$() != 0  ) return;
-this.vwr.gdata.setFontFid$B(($b$[0] = this.vwr.gdata.getFontFidFS$S$F("Monospaced", 14 * this.imageFontScaling), $b$[0]));
-this.xpos=(Math.floor(5 * this.imageFontScaling)|0);
+this.vwr.gdata.setFontFid$B(this.vwr.gdata.getFontFidFS$S$F("Monospaced", 14 * this.imageFontScaling));
+this.xpos=(Math.floor(10 * this.imageFontScaling)|0);
 this.ypos=this.lineheight=(Math.floor(15 * this.imageFontScaling)|0);
 var sgName=(this.isPolymer ? "polymer" : this.isSlab ? "slab" : this.unitcell.getSpaceGroupName$());
 if (sgName != null ) {
@@ -146,11 +133,10 @@ p$1.drawInfo$S$I$S.apply(this, ["\u03b2=", 4, "\u00b0"]);
 
 Clazz.newMeth(C$, 'drawInfo$S$I$S', function (s, type, post) {
 this.ypos+=this.lineheight;
-if (post != null ) s += $I$(6).formatDecimal$F$I(this.unitcell.getUnitCellInfoType$I(type), 3) + post;
-this.g3d.drawStringNoSlab$S$javajs_awt_Font$I$I$I$H(s, null, this.xpos, this.ypos, 0, 0);
+if (post != null ) s += (function(a,f){return f.apply(null,a)})([this.unitcell.getUnitCellInfoType$I(type), 3],$I$(6).formatDecimal$F$I) + post;
+this.g3d.drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H(s, null, this.xpos, this.ypos, 0, 0);
 }, p$1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

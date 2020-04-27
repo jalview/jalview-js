@@ -1,26 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.concurrent.locks.ReentrantReadWriteLock','jalview.datamodel.HiddenColumnsCursor','java.util.ArrayList','StringBuilder','java.util.Arrays','java.util.BitSet','jalview.datamodel.RangeIterator','jalview.datamodel.StartRegionIterator','jalview.datamodel.RangeElementsIterator','jalview.datamodel.VisibleContigsIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HiddenColumns");
-C$.LOCK=null;
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.concurrent.locks.ReentrantReadWriteLock','jalview.datamodel.HiddenColumnsCursor','java.util.ArrayList','StringBuilder','java.util.Arrays','java.util.BitSet','jalview.datamodel.RangeIterator','jalview.datamodel.StartRegionIterator','jalview.datamodel.RangeElementsIterator','jalview.datamodel.VisibleContigsIterator']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HiddenColumns");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LOCK=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cursor=null;
-this.numColumns=0;
-this.hiddenColumns=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.cursor=Clazz.new_($I$(2));
+this.cursor=Clazz.new_($I$(2,1));
 this.numColumns=0;
-this.hiddenColumns=Clazz.new_($I$(3));
-}, 1);
+this.hiddenColumns=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['I',['numColumns'],'O',['cursor','jalview.datamodel.HiddenColumnsCursor','hiddenColumns','java.util.List']]
+,['O',['LOCK','java.util.concurrent.locks.ReentrantReadWriteLock']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_HiddenColumns', function (copy) {
@@ -28,7 +21,7 @@ C$.c$$jalview_datamodel_HiddenColumns$I$I$I.apply(this, [copy, -2147483648, 2147
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_HiddenColumns$I$I$I', function (copy, start, end, offset) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 try {
 C$.LOCK.writeLock$().lock$();
 if (copy != null ) {
@@ -37,10 +30,10 @@ var it=copy.getBoundedIterator$I$I(start, end);
 while (it.hasNext$()){
 var region=it.next$();
 if (region[0] >= start && region[1] <= end ) {
-this.hiddenColumns.add$TE(Clazz.array(Integer.TYPE, -1, [region[0] - offset, region[1] - offset]));
+this.hiddenColumns.add$O(Clazz.array(Integer.TYPE, -1, [region[0] - offset, region[1] - offset]));
 this.numColumns+=region[1] - region[0] + 1;
 }}
-this.cursor=Clazz.new_($I$(2).c$$java_util_List,[this.hiddenColumns]);
+this.cursor=Clazz.new_($I$(2,1).c$$java_util_List,[this.hiddenColumns]);
 }} finally {
 C$.LOCK.writeLock$().unlock$();
 }
@@ -60,7 +53,7 @@ previndex=regionindex - 1;
 var prevRegion=this.hiddenColumns.get$I(previndex);
 prevHiddenCount=cursorPos.getHiddenSoFar$() - (prevRegion[1] - prevRegion[0] + 1);
 }}if (this.hiddenColumns.isEmpty$() || start > this.hiddenColumns.get$I(this.hiddenColumns.size$() - 1)[1] ) {
-this.hiddenColumns.add$TE(Clazz.array(Integer.TYPE, -1, [start, end]));
+this.hiddenColumns.add$O(Clazz.array(Integer.TYPE, -1, [start, end]));
 this.numColumns+=end - start + 1;
 } else {
 var added=false;
@@ -68,7 +61,7 @@ if (regionindex > 0) {
 added=p$1.insertRangeAtRegion$I$I$I.apply(this, [regionindex - 1, start, end]);
 }if (!added && regionindex < this.hiddenColumns.size$() ) {
 p$1.insertRangeAtRegion$I$I$I.apply(this, [regionindex, start, end]);
-}}this.cursor=Clazz.new_($I$(2).c$$java_util_List$I$I,[this.hiddenColumns, previndex, prevHiddenCount]);
+}}this.cursor=Clazz.new_($I$(2,1).c$$java_util_List$I$I,[this.hiddenColumns, previndex, prevHiddenCount]);
 } finally {
 C$.LOCK.writeLock$().unlock$();
 }
@@ -78,7 +71,7 @@ Clazz.newMeth(C$, 'insertRangeAtRegion$I$I$I', function (i, start, end) {
 var added=false;
 var region=this.hiddenColumns.get$I(i);
 if (end < region[0] - 1) {
-this.hiddenColumns.add$I$TE(i, Clazz.array(Integer.TYPE, -1, [start, end]));
+this.hiddenColumns.add$I$O(i, Clazz.array(Integer.TYPE, -1, [start, end]));
 this.numColumns+=end - start + 1;
 added=true;
 } else if (end <= region[1]) {
@@ -117,7 +110,7 @@ C$.LOCK.writeLock$().lock$();
 for (var r, $r = ranges.iterator$(); $r.hasNext$()&&((r=($r.next$())),1);) {
 this.hideColumns$I$I(r[0], r[1]);
 }
-this.cursor=Clazz.new_($I$(2).c$$java_util_List,[this.hiddenColumns]);
+this.cursor=Clazz.new_($I$(2,1).c$$java_util_List,[this.hiddenColumns]);
 } finally {
 C$.LOCK.writeLock$().unlock$();
 }
@@ -132,7 +125,7 @@ sel.addElement$I(j);
 }
 }
 this.hiddenColumns.clear$();
-this.cursor=Clazz.new_($I$(2).c$$java_util_List,[this.hiddenColumns]);
+this.cursor=Clazz.new_($I$(2,1).c$$java_util_List,[this.hiddenColumns]);
 this.numColumns=0;
 } finally {
 C$.LOCK.writeLock$().unlock$();
@@ -161,7 +154,7 @@ C$.LOCK.writeLock$().unlock$();
 Clazz.newMeth(C$, 'regionsToString$S$S', function (delimiter, between) {
 try {
 C$.LOCK.readLock$().lock$();
-var regionBuilder=Clazz.new_($I$(4));
+var regionBuilder=Clazz.new_($I$(4,1));
 var first=true;
 for (var range, $range = this.hiddenColumns.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
 if (!first) {
@@ -200,7 +193,7 @@ return false;
 }var it=this.iterator$();
 var thatit=that.iterator$();
 while (it.hasNext$()){
-if (!($I$(5).equals$IA$IA(it.next$(), thatit.next$()))) {
+if (!($I$(5,"equals$IA$IA",[it.next$(), thatit.next$()]))) {
 return false;
 }}
 return true;
@@ -335,7 +328,7 @@ this.hideColumns$I$I(firstSet, lastSet - 1);
 } else if (firstSet <= end) {
 this.hideColumns$I$I(firstSet, end);
 }}
-this.cursor=Clazz.new_($I$(2).c$$java_util_List,[this.hiddenColumns]);
+this.cursor=Clazz.new_($I$(2,1).c$$java_util_List,[this.hiddenColumns]);
 } finally {
 C$.LOCK.writeLock$().unlock$();
 }
@@ -370,7 +363,7 @@ region[0]=end + 1;
 endi++;
 }
 this.hiddenColumns.subList$I$I(index, endi).clear$();
-}this.cursor=Clazz.new_($I$(2).c$$java_util_List,[this.hiddenColumns]);
+}this.cursor=Clazz.new_($I$(2,1).c$$java_util_List,[this.hiddenColumns]);
 }} finally {
 C$.LOCK.writeLock$().unlock$();
 }
@@ -379,7 +372,7 @@ C$.LOCK.writeLock$().unlock$();
 Clazz.newMeth(C$, 'andNot$java_util_BitSet', function (updates) {
 try {
 C$.LOCK.writeLock$().lock$();
-var hiddenBitSet=Clazz.new_($I$(6));
+var hiddenBitSet=Clazz.new_($I$(6,1));
 for (var range, $range = this.hiddenColumns.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
 hiddenBitSet.set$I$I(range[0], range[1] + 1);
 }
@@ -427,7 +420,7 @@ C$.LOCK.readLock$().unlock$();
 Clazz.newMeth(C$, 'iterator$', function () {
 try {
 C$.LOCK.readLock$().lock$();
-return Clazz.new_($I$(7).c$$java_util_List,[this.hiddenColumns]);
+return Clazz.new_($I$(7,1).c$$java_util_List,[this.hiddenColumns]);
 } finally {
 C$.LOCK.readLock$().unlock$();
 }
@@ -436,7 +429,7 @@ C$.LOCK.readLock$().unlock$();
 Clazz.newMeth(C$, 'getBoundedIterator$I$I', function (start, end) {
 try {
 C$.LOCK.readLock$().lock$();
-return Clazz.new_($I$(7).c$$I$I$java_util_List,[start, end, this.hiddenColumns]);
+return Clazz.new_($I$(7,1).c$$I$I$java_util_List,[start, end, this.hiddenColumns]);
 } finally {
 C$.LOCK.readLock$().unlock$();
 }
@@ -447,7 +440,7 @@ try {
 C$.LOCK.readLock$().lock$();
 var absoluteStart=this.visibleToAbsoluteColumn$I(start);
 var pos=this.cursor.findRegionForColumn$I$Z(absoluteStart - 1, false);
-return Clazz.new_($I$(8).c$$jalview_datamodel_HiddenCursorPosition$I$I$java_util_List,[pos, start, end, this.hiddenColumns]);
+return Clazz.new_($I$(8,1).c$$jalview_datamodel_HiddenCursorPosition$I$I$java_util_List,[pos, start, end, this.hiddenColumns]);
 } finally {
 C$.LOCK.readLock$().unlock$();
 }
@@ -456,7 +449,7 @@ C$.LOCK.readLock$().unlock$();
 Clazz.newMeth(C$, 'getVisibleColsIterator$I$I', function (start, end) {
 try {
 C$.LOCK.readLock$().lock$();
-return Clazz.new_($I$(9).c$$java_util_Iterator,[Clazz.new_($I$(10).c$$I$I$java_util_List,[start, end + 1, this.hiddenColumns])]);
+return Clazz.new_([Clazz.new_($I$(10,1).c$$I$I$java_util_List,[start, end + 1, this.hiddenColumns])],$I$(9,1).c$$java_util_Iterator);
 } finally {
 C$.LOCK.readLock$().unlock$();
 }
@@ -470,10 +463,14 @@ adjstart=this.visibleToAbsoluteColumn$I(start);
 adjend=this.visibleToAbsoluteColumn$I(end);
 }try {
 C$.LOCK.readLock$().lock$();
-return Clazz.new_($I$(10).c$$I$I$java_util_List,[adjstart, adjend, this.hiddenColumns]);
+return Clazz.new_($I$(10,1).c$$I$I$java_util_List,[adjstart, adjend, this.hiddenColumns]);
 } finally {
 C$.LOCK.readLock$().unlock$();
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.LOCK=Clazz.new_($I$(1,1));
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,28 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,['java.awt.geom.Rectangle2D','.Float']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageGraphicAttribute", null, 'java.awt.font.GraphicAttribute');
+(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,['java.awt.geom.Rectangle2D','.Float']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ImageGraphicAttribute", null, 'java.awt.font.GraphicAttribute');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fImage=null;
-this.fImageWidth=0;
-this.fImageHeight=0;
-this.fOriginX=0;
-this.fOriginY=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['fImageWidth','fImageHeight','fOriginX','fOriginY'],'O',['fImage','java.awt.Image']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Image$I', function (image, alignment) {
 C$.c$$java_awt_Image$I$F$F.apply(this, [image, alignment, 0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Image$I$F$F', function (image, alignment, originX, originY) {
-C$.superclazz.c$$I.apply(this, [alignment]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[alignment]);C$.$init$.apply(this);
 this.fImage=image;
 this.fImageWidth=image.getWidth$java_awt_image_ImageObserver(null);
 this.fImageHeight=image.getHeight$java_awt_image_ImageObserver(null);
@@ -43,7 +34,7 @@ return Math.max(0, this.fImageWidth - this.fOriginX);
 });
 
 Clazz.newMeth(C$, 'getBounds$', function () {
-return Clazz.new_($I$(1).c$$F$F$F$F,[-this.fOriginX, -this.fOriginY, this.fImageWidth, this.fImageHeight]);
+return Clazz.new_($I$(1,1).c$$F$F$F$F,[-this.fOriginX, -this.fOriginY, this.fImageWidth, this.fImageHeight]);
 });
 
 Clazz.newMeth(C$, 'draw$java_awt_Graphics2D$F$F', function (graphics, x, y) {
@@ -82,4 +73,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

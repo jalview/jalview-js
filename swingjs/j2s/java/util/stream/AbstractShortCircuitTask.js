@@ -1,27 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.util.stream"),I$=[[0,'java.util.concurrent.atomic.AtomicReference']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractShortCircuitTask", null, 'java.util.stream.AbstractTask');
+(function(){var P$=Clazz.newPackage("java.util.stream"),I$=[[0,'java.util.concurrent.atomic.AtomicReference']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractShortCircuitTask", null, 'java.util.stream.AbstractTask');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sharedResult=null;
-this.canceled=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['Z',['canceled'],'O',['sharedResult','java.util.concurrent.atomic.AtomicReference']]]
+
+Clazz.newMeth(C$, 'c$$java_util_stream_PipelineHelper$java_util_Spliterator', function (helper, spliterator) {
+;C$.superclazz.c$$java_util_stream_PipelineHelper$java_util_Spliterator.apply(this,[helper, spliterator]);C$.$init$.apply(this);
+this.sharedResult=Clazz.new_($I$(1,1).c$$O,[null]);
 }, 1);
 
-Clazz.newMeth(C$, ['c$$java_util_stream_PipelineHelper$java_util_Spliterator','c$null'], function (helper, spliterator) {
-C$.superclazz.c$$java_util_stream_PipelineHelper$java_util_Spliterator.apply(this, [helper, spliterator]);
-C$.$init$.apply(this);
-this.sharedResult=Clazz.new_($I$(1).c$$TV,[null]);
-}, 1);
-
-Clazz.newMeth(C$, ['c$$TK$java_util_Spliterator'], function (parent, spliterator) {
-C$.superclazz.c$$TK$java_util_Spliterator.apply(this, [parent, spliterator]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_stream_AbstractShortCircuitTask$java_util_Spliterator', function (parent, spliterator) {
+;C$.superclazz.c$$java_util_stream_AbstractTask$java_util_Spliterator.apply(this,[parent, spliterator]);C$.$init$.apply(this);
 this.sharedResult=parent.sharedResult;
 }, 1);
 
@@ -59,18 +52,18 @@ taskToFork=leftChild;
 }taskToFork.fork$();
 sizeEstimate=rs.estimateSize$();
 }
-task.setLocalResult$TR(result);
+task.setLocalResult$O(result);
 task.tryComplete$();
 });
 
-Clazz.newMeth(C$, ['shortCircuit$TR'], function (result) {
-if (result != null ) this.sharedResult.compareAndSet$TV$TV(null, result);
+Clazz.newMeth(C$, 'shortCircuit$O', function (result) {
+if (result != null ) this.sharedResult.compareAndSet$O$O(null, result);
 });
 
-Clazz.newMeth(C$, ['setLocalResult$TR'], function (localResult) {
+Clazz.newMeth(C$, 'setLocalResult$O', function (localResult) {
 if (this.isRoot$()) {
-if (localResult != null ) this.sharedResult.compareAndSet$TV$TV(null, localResult);
-} else C$.superclazz.prototype.setLocalResult$TR.apply(this, [localResult]);
+if (localResult != null ) this.sharedResult.compareAndSet$O$O(null, localResult);
+} else C$.superclazz.prototype.setLocalResult$O.apply(this, [localResult]);
 });
 
 Clazz.newMeth(C$, 'getRawResult$', function () {
@@ -106,4 +99,4 @@ if (!rightSibling.canceled) rightSibling.cancel$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:46 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

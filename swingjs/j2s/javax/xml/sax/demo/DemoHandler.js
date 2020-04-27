@@ -1,36 +1,35 @@
 (function(){var P$=Clazz.newPackage("javax.xml.sax.demo"),I$=[];
-var C$=Clazz.newClass(P$, "DemoHandler", null, null, ['javax.xml.sax.EntityResolver', 'javax.xml.sax.DTDHandler', 'javax.xml.sax.DocumentHandler', 'javax.xml.sax.ErrorHandler']);
+/*c*/var C$=Clazz.newClass(P$, "DemoHandler", null, null, ['javax.xml.sax.EntityResolver', 'javax.xml.sax.DTDHandler', 'javax.xml.sax.DocumentHandler', 'javax.xml.sax.ErrorHandler']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['resolveEntity$S$S','resolveEntity$'], function (publicId, systemId) {
+Clazz.newMeth(C$, 'resolveEntity$S$S', function (publicId, systemId) {
 System.out.print$S("Resolve entity:");
 if (publicId != null ) {
-System.out.print$S(" publicId=\"" + publicId + '"' );
-}System.out.println$S(" systemId=\"" + systemId + '"' );
+System.out.print$S(" publicId=\"" + publicId + '\"' );
+}System.out.println$S(" systemId=\"" + systemId + '\"' );
 return null;
 });
 
 Clazz.newMeth(C$, 'notationDecl$S$S$S', function (name, publicId, systemId) {
 System.out.print$S("Notation declaration: " + name);
 if (publicId != null ) {
-System.out.print$S(" publicId=\"" + publicId + '"' );
+System.out.print$S(" publicId=\"" + publicId + '\"' );
 }if (systemId != null ) {
-System.out.print$S(" systemId=\"" + systemId + '"' );
+System.out.print$S(" systemId=\"" + systemId + '\"' );
 }System.out.print$C("\n");
 });
 
 Clazz.newMeth(C$, 'unparsedEntityDecl$S$S$S$S', function (name, publicId, systemId, notationName) {
 System.out.print$S("Unparsed Entity Declaration: " + name);
 if (publicId != null ) {
-System.out.print$S(" publicId=\"" + publicId + '"' );
+System.out.print$S(" publicId=\"" + publicId + '\"' );
 }if (systemId != null ) {
-System.out.print$S(" systemId=\"" + systemId + '"' );
-}System.out.println$S(" notationName=\"" + notationName + '"' );
+System.out.print$S(" systemId=\"" + systemId + '\"' );
+}System.out.println$S(" notationName=\"" + notationName + '\"' );
 });
 
 Clazz.newMeth(C$, 'setDocumentLocator$javax_xml_sax_Locator', function (locator) {
@@ -48,7 +47,7 @@ System.out.println$S("End document");
 Clazz.newMeth(C$, 'startElement$S$javax_xml_sax_AttributeList', function (name, attributes) {
 System.out.println$S("Start element: " + name);
 for (var i=0; i < attributes.getLength$(); i++) {
-System.out.println$S("  Attribute: " + attributes.getName$I(i) + ' ' + attributes.getType$I(i) + " \"" + attributes.getValue$I(i) + '"' );
+System.out.println$S("  Attribute: " + attributes.getName$I(i) + ' ' + attributes.getType$I(i) + " \"" + attributes.getValue$I(i) + '\"' );
 }
 });
 
@@ -101,4 +100,4 @@ System.out.print$S("\n");
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

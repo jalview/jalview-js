@@ -1,24 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.SwingUtilities','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JLabel", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.SwingUtilities','javax.swing.UIManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JLabel", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mnemonic=0;
-this.mnemonicIndex=0;
-this.text=null;
-this.defaultIcon=null;
-this.disabledIcon=null;
-this.disabledIconSet=false;
-this.verticalAlignment=0;
-this.horizontalAlignment=0;
-this.verticalTextPosition=0;
-this.horizontalTextPosition=0;
-this.iconTextGap=0;
-this.labelFor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.mnemonic="\u0000".$c();
@@ -33,10 +16,12 @@ this.verticalTextPosition=0;
 this.horizontalTextPosition=11;
 this.iconTextGap=4;
 this.labelFor=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['disabledIconSet'],'I',['mnemonic','mnemonicIndex','verticalAlignment','horizontalAlignment','verticalTextPosition','horizontalTextPosition','iconTextGap'],'S',['text'],'O',['defaultIcon','javax.swing.Icon','+disabledIcon','labelFor','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_Icon$I', function (text, icon, horizontalAlignment) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setText$S(text);
 this.setIcon$javax_swing_Icon(icon);
 this.setHorizontalAlignment$I(horizontalAlignment);
@@ -82,11 +67,14 @@ Clazz.newMeth(C$, 'setText$S', function (text) {
 var oldValue=this.text;
 this.text=text;
 this.firePropertyChange$S$O$O("text", oldValue, text);
-this.setDisplayedMnemonicIndex$I($I$(1).findDisplayedMnemonicIndex$S$I(text, this.getDisplayedMnemonic$()));
+this.setDisplayedMnemonicIndex$I($I$(1,"findDisplayedMnemonicIndex$S$I",[text, this.getDisplayedMnemonic$()]));
 if (text == null  || oldValue == null   || !text.equals$O(oldValue) ) {
+if (this.秘isAWT$()) {
+this.invalidateIfValid$();
+} else {
 this.revalidate$();
-this.repaint$();
-}});
+this.秘repaint$();
+}}});
 
 Clazz.newMeth(C$, 'getIcon$', function () {
 return this.defaultIcon;
@@ -95,13 +83,14 @@ return this.defaultIcon;
 Clazz.newMeth(C$, 'setIcon$javax_swing_Icon', function (icon) {
 var oldValue=this.defaultIcon;
 this.defaultIcon=icon;
+if (this.defaultIcon != null ) this.秘setPaintsSelf$I(2);
 if ((this.defaultIcon !== oldValue ) && !this.disabledIconSet ) {
 this.disabledIcon=null;
 }this.firePropertyChange$S$O$O("icon", oldValue, this.defaultIcon);
 if (this.defaultIcon !== oldValue ) {
 if ((this.defaultIcon == null ) || (oldValue == null ) || (this.defaultIcon.getIconWidth$() != oldValue.getIconWidth$()) || (this.defaultIcon.getIconHeight$() != oldValue.getIconHeight$())  ) {
 this.revalidate$();
-}this.repaint$();
+}this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getDisabledIcon$', function () {
@@ -121,17 +110,17 @@ if (disabledIcon !== oldValue ) {
 if (disabledIcon == null  || oldValue == null   || disabledIcon.getIconWidth$() != oldValue.getIconWidth$()  || disabledIcon.getIconHeight$() != oldValue.getIconHeight$() ) {
 this.revalidate$();
 }if (!this.isEnabled$()) {
-this.repaint$();
+this.秘repaint$();
 }}});
 
 Clazz.newMeth(C$, 'setDisplayedMnemonic$I', function (key) {
 var oldKey=this.mnemonic;
 this.mnemonic=key;
 this.firePropertyChange$S$I$I("displayedMnemonic", oldKey, this.mnemonic);
-this.setDisplayedMnemonicIndex$I($I$(1).findDisplayedMnemonicIndex$S$I(this.getText$(), this.mnemonic));
+this.setDisplayedMnemonicIndex$I($I$(1,"findDisplayedMnemonicIndex$S$I",[this.getText$(), this.mnemonic]));
 if (key != oldKey) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setDisplayedMnemonic$C', function (aChar) {
@@ -157,7 +146,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["index == " + inde
 this.firePropertyChange$S$I$I("displayedMnemonicIndex", oldValue, index);
 if (index != oldValue) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getDisplayedMnemonicIndex$', function () {
@@ -188,7 +177,7 @@ this.iconTextGap=iconTextGap;
 this.firePropertyChange$S$I$I("iconTextGap", oldValue, iconTextGap);
 if (iconTextGap != oldValue) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getVerticalAlignment$', function () {
@@ -200,7 +189,7 @@ if (alignment == this.verticalAlignment) return;
 var oldValue=this.verticalAlignment;
 this.verticalAlignment=this.checkVerticalKey$I$S(alignment, "verticalAlignment");
 this.firePropertyChange$S$I$I("verticalAlignment", oldValue, this.verticalAlignment);
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'getHorizontalAlignment$', function () {
@@ -212,7 +201,7 @@ if (alignment == this.horizontalAlignment) return;
 var oldValue=this.horizontalAlignment;
 this.horizontalAlignment=this.checkHorizontalKey$I$S(alignment, "horizontalAlignment");
 this.firePropertyChange$S$I$I("horizontalAlignment", oldValue, this.horizontalAlignment);
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'getVerticalTextPosition$', function () {
@@ -225,7 +214,7 @@ var old=this.verticalTextPosition;
 this.verticalTextPosition=this.checkVerticalKey$I$S(textPosition, "verticalTextPosition");
 this.firePropertyChange$S$I$I("verticalTextPosition", old, this.verticalTextPosition);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'getHorizontalTextPosition$', function () {
@@ -237,11 +226,11 @@ var old=this.horizontalTextPosition;
 this.horizontalTextPosition=this.checkHorizontalKey$I$S(textPosition, "horizontalTextPosition");
 this.firePropertyChange$S$I$I("horizontalTextPosition", old, this.horizontalTextPosition);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
-Clazz.newMeth(C$, ['imageUpdate$java_awt_Image$I$I$I$I$I','imageUpdate$'], function (img, infoflags, x, y, w, h) {
-if (!this.isShowing$() || !$I$(1).doesIconReferenceImage$javax_swing_Icon$java_awt_Image(this.getIcon$(), img) && !$I$(1).doesIconReferenceImage$javax_swing_Icon$java_awt_Image(this.disabledIcon, img)  ) {
+Clazz.newMeth(C$, 'imageUpdate$java_awt_Image$I$I$I$I$I', function (img, infoflags, x, y, w, h) {
+if (!this.isShowing$() || !$I$(1,"doesIconReferenceImage$javax_swing_Icon$java_awt_Image",[this.getIcon$(), img]) && !$I$(1).doesIconReferenceImage$javax_swing_Icon$java_awt_Image(this.disabledIcon, img)  ) {
 return false;
 }return C$.superclazz.prototype.imageUpdate$java_awt_Image$I$I$I$I$I.apply(this, [img, infoflags, x, y, w, h]);
 });
@@ -308,4 +297,4 @@ if (Clazz.instanceOf(oldC, "javax.swing.JComponent")) {
 (c).putClientProperty$O$O("labeledBy", this);
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,29 +1,25 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[[0,['sun.awt.image.ImageWatched','.Link'],['sun.awt.image.ImageWatched','.WeakLink']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageWatched", function(){
+(function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[[0,['sun.awt.image.ImageWatched','.Link'],['sun.awt.image.ImageWatched','.WeakLink']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ImageWatched", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.endlink=null;
+C$.$classes$=[['Link',9],['WeakLink',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.endlink=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.watcherList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['+watcherList']]
+,['O',['endlink','sun.awt.image.ImageWatched.Link']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.watcherList=C$.endlink;
 }, 1);
 
 Clazz.newMeth(C$, 'addWatcher$java_awt_image_ImageObserver', function (iw) {
 if (iw != null  && !this.isWatcher$java_awt_image_ImageObserver(iw) ) {
-this.watcherList=Clazz.new_($I$(2).c$$java_awt_image_ImageObserver$sun_awt_image_ImageWatched_Link,[iw, this.watcherList]);
+this.watcherList=Clazz.new_($I$(2,1).c$$java_awt_image_ImageObserver$sun_awt_image_ImageWatched_Link,[iw, this.watcherList]);
 }});
 
 Clazz.newMeth(C$, 'isWatcher$java_awt_image_ImageObserver', function (iw) {
@@ -47,16 +43,19 @@ Clazz.newMeth(C$, 'newInfo$java_awt_Image$I$I$I$I$I', function (img, info, x, y,
 if (this.watcherList.newInfo$java_awt_Image$I$I$I$I$I(img, info, x, y, w, h)) {
 this.removeWatcher$java_awt_image_ImageObserver(null);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.endlink=Clazz.new_($I$(1,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ImageWatched, "Link", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ImageWatched, "Link", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isWatcher$java_awt_image_ImageObserver', function (iw) {
 return false;
@@ -73,24 +72,19 @@ return false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ImageWatched, "WeakLink", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ImageWatched, "WeakLink", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['sun.awt.image.ImageWatched','.Link']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myref=null;
-this.next=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['myref','java.awt.image.ImageObserver','next','sun.awt.image.ImageWatched.Link']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_image_ImageObserver$sun_awt_image_ImageWatched_Link', function (obs, next) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.myref=obs;
 this.next=next;
 }, 1);
@@ -114,7 +108,7 @@ var ret=this.next.newInfo$java_awt_Image$I$I$I$I$I(img, info, x, y, w, h);
 var myiw=this.myref;
 if (myiw == null ) {
 ret=true;
-} else if (myiw.imageUpdate$(img, info, x, y, w, h) == false ) {
+} else if (myiw.imageUpdate$java_awt_Image$I$I$I$I$I(img, info, x, y, w, h) == false ) {
 this.myref=null;
 ret=true;
 }return ret;
@@ -123,4 +117,4 @@ ret=true;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

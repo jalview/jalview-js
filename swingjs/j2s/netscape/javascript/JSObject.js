@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("netscape.javascript"),p$1={},I$=[[0,'Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSObject");
+(function(){var P$=Clazz.newPackage("netscape.javascript"),p$1={};
+/*c*/var C$=Clazz.newClass(P$, "JSObject");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.obj=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['obj','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'call$S$OA', function (jsFuncName, params) {
@@ -55,7 +51,7 @@ switch (type) {
 case "number":
 return Double.valueOf$S("" + ret);
 case "boolean":
-return $I$(1).valueOf$S("" + ret);
+return Boolean.valueOf$S("" + ret);
 default:
 var jsobject=Clazz.new_(C$);
 jsobject.obj=ret;
@@ -137,4 +133,4 @@ jsobject.obj=context.html5Applet._window ||null;
 return jsobject;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:29 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

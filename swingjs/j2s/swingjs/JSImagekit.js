@@ -1,38 +1,20 @@
-(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'swingjs.JSImage','swingjs.JSUtil','swingjs.api.Interface','swingjs.api.js.DOMNode','swingjs.JSGraphics2D','java.awt.image.ColorModel','java.awt.image.BufferedImage','javax.swing.ImageIcon']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSImagekit", null, null, 'java.awt.image.ImageConsumer');
+(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'swingjs.JSImage','swingjs.JSUtil','swingjs.api.Interface','swingjs.api.js.DOMNode','java.awt.image.ColorModel','java.awt.image.BufferedImage','javax.swing.ImageIcon','swingjs.JSGraphics2D']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSImagekit", null, null, 'java.awt.image.ImageConsumer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.height=0;
-this.props=null;
-this.colorModel=null;
-this.hints=0;
-this.x=0;
-this.y=0;
-this.off=0;
-this.scansize=0;
-this.pixels=null;
-this.jsimage=null;
-this.pixelBytes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
+C$.$fields$=[['I',['width','height','hints','x','y','off','scansize'],'O',['props','java.util.Hashtable','colorModel','java.awt.image.ColorModel','pixels','int[]','jsimage','swingjs.JSImage','pixelBytes','byte[]']]]
 
 Clazz.newMeth(C$, 'createImageFromBytes$BA$I$I$S', function (data, imageoffset, imagelength, name) {
 return C$.createImageFromBytesStatic$BA$I$I$S(data, imageoffset, imagelength, name);
 });
 
 Clazz.newMeth(C$, 'imageComplete$I', function (status) {
-this.jsimage=Clazz.new_($I$(1).c$$IA$I$I$S,[this.pixels, this.width, this.height, null]);
+if (this.pixels != null ) this.jsimage=Clazz.new_($I$(1,1).c$$IA$I$I$S,[this.pixels, this.width, this.height, null]);
+ else this.jsimage=Clazz.new_($I$(1,1).c$$BA$I$I$S,[this.pixelBytes, this.width, this.height, null]);
 });
 
 Clazz.newMeth(C$, 'getCreatedImage$', function () {
@@ -57,6 +39,7 @@ this.hints=hintflags;
 });
 
 Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I', function (x, y, w, h, model, pixels, off, scansize) {
+this.pixelBytes=null;
 if (this.pixels == null ) {
 this.colorModel=model;
 this.pixels=Clazz.array(Integer.TYPE, [this.width * this.height]);
@@ -77,6 +60,7 @@ this.y=y;
 this.off=off;
 this.scansize=scansize;
 this.pixelBytes=pixels;
+this.pixels=null;
 $I$(2).notImplemented$S("byte-based image pixels");
 });
 
@@ -93,7 +77,7 @@ h=imagelength;
 if (imagelength < 0) imagelength=data.length;
 var n=imagelength - imageoffset;
 System.arraycopy$O$I$O$I$I(data, imageoffset, b=Clazz.array(Byte.TYPE, [n]), 0, n);
-if (b.length < 54) return null;
+if (b.length < 10) return null;
 switch (C$.getSourceType$BA(b)) {
 case 3:
 var ie=$I$(3).getInstance$S$Z("javajs.img.BMPDecoder", true);
@@ -135,7 +119,7 @@ data=null;
 break;
 }
 }if (w == 0 || h == 0 ) return null;
-var jsimage=Clazz.new_($I$(1).c$$IA$I$I$S,[argb, w, h, name]);
+var jsimage=Clazz.new_($I$(1,1).c$$IA$I$I$S,[argb, w, h, name]);
 if (data != null  && argb == null  ) jsimage.getDOMImage$BA$S(b, type);
 return jsimage;
 }, 1);
@@ -159,17 +143,34 @@ return (b == null  ? -1 : (b[0] & 255) == 137 && b[1] == 80   && b[2] == 78   &&
 Clazz.newMeth(C$, 'createImageIcon$java_awt_Component$javax_swing_Icon$S', function (c, icon, id) {
 var width=icon.getIconWidth$();
 var height=icon.getIconHeight$();
-var canvas=$I$(4).createElement("canvas", id + "");
+var canvas=$I$(4).getElement(id);
+var imgIcon;
+var img;
+var g;
+if (canvas != null  && (imgIcon=(icon).秘tempIcon) != null   && $I$(4).getAttrInt(canvas, "width") == width  && $I$(4).getAttrInt(canvas, "height") == height ) {
+img=imgIcon.getImage$();
+g=img.秘g;
+} else {
+g=C$.createCanvasGraphics$I$I$S(width, height, id);
+var cm=$I$(5).getRGBdefault$();
+img=Clazz.new_([cm, cm.createCompatibleWritableRaster$I$I(width, height), false, null],$I$(6,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
+imgIcon=Clazz.new_($I$(7,1).c$$java_awt_Image$S,[img, "paintedIcon"]);
+}icon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(c, g, 0, 0);
+img.setImageFromHTML5Canvas$swingjs_JSGraphics2D(g);
+g.dispose$();
+(icon).秘tempIcon=imgIcon;
+return imgIcon;
+}, 1);
+
+Clazz.newMeth(C$, 'createCanvasGraphics$I$I$S', function (width, height, id) {
+var canvas=$I$(4,"createElement",["canvas", (id == null  ? "img" + new Double(Math.random()).toString() : id + "")]);
 $I$(4).setStyles(canvas, ["width", width + "px", "height", height + "px"]);
 
 canvas.width = width;
 canvas.height = height;
-var g=Clazz.new_($I$(5).c$$O,[canvas]);
-icon.paintIcon$java_awt_Component$java_awt_Graphics$I$I(c, g, 0, 0);
-var cm=$I$(6).getRGBdefault$();
-var img=Clazz.new_($I$(7).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, cm.createCompatibleWritableRaster$I$I(width, height), false, null]);
-img.setImageFromHTML5Canvas$swingjs_JSGraphics2D(g);
-return Clazz.new_($I$(8).c$$java_awt_Image$S,[img, "paintedIcon"]);
+return Clazz.new_($I$(8,1).c$$O,[canvas]);
 }, 1);
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:42 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

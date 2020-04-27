@@ -1,180 +1,422 @@
-(function(){var P$=Clazz.newPackage("javax.imageio"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.OC','javax.imageio.IIOImage','swingjs.JSUtil','swingjs.JSToolkit','javajs.util.PT','swingjs.api.Interface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageWriter");
+(function(){var P$=Clazz.newPackage("javax.imageio"),p$1={},I$=[[0,'javax.imageio.ImageWriteParam','javax.imageio.IIOImage','javax.imageio.ImageReader','java.util.Locale','java.security.AccessController','Thread','java.util.ResourceBundle']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ImageWriter", null, null, 'javax.imageio.ImageTranscoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.params=null;
-this.locale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.params=Clazz.new_($I$(1));
+this.originatingProvider=null;
+this.output=null;
+this.availableLocales=null;
+this.locale=null;
+this.warningListeners=null;
+this.warningLocales=null;
+this.progressListeners=null;
+this.abortFlag=false;
+},1);
+
+C$.$fields$=[['Z',['abortFlag'],'O',['originatingProvider','javax.imageio.spi.ImageWriterSpi','output','java.lang.Object','availableLocales','java.util.Locale[]','locale','java.util.Locale','warningListeners','java.util.List','+warningLocales','+progressListeners']]]
+
+Clazz.newMeth(C$, 'c$$javax_imageio_spi_ImageWriterSpi', function (originatingProvider) {
+;C$.$init$.apply(this);
+this.originatingProvider=originatingProvider;
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'setImage$java_awt_image_RenderedImage', function (im) {
-this.params.put$TK$TV("image", im);
+Clazz.newMeth(C$, 'getOriginatingProvider$', function () {
+return this.originatingProvider;
 });
 
-Clazz.newMeth(C$, 'setMetaData$O', function (streamMetadata) {
+Clazz.newMeth(C$, 'setOutput$O', function (output) {
+if (output != null ) {
+var provider=this.getOriginatingProvider$();
+if (provider != null ) {
+var classes=provider.getOutputTypes$();
+var found=false;
+for (var i=0; i < classes.length; i++) {
+if (classes[i].isInstance$O(output)) {
+found=true;
+break;
+}}
+if (!found) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal output type!"]);
+}}}this.output=output;
 });
 
-Clazz.newMeth(C$, 'write$java_awt_image_RenderedImage$S$java_io_OutputStream', function (im, fileName, out) {
-try {
-if (out == null  && fileName != null  ) out=Clazz.new_($I$(2)).setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, fileName, false, null);
-this.setOutput$O(out);
-this.write$javax_imageio_metadata_IIOMetadata$javax_imageio_IIOImage$javax_imageio_ImageWriteParam(null, Clazz.new_($I$(3).c$$java_awt_image_RenderedImage$java_util_List$javax_imageio_metadata_IIOMetadata,[im, null, null]), null);
-} catch (e) {
-if (Clazz.exceptionOf(e,"java.io.IOException")){
-return false;
-} else {
-throw e;
-}
-}
-return true;
+Clazz.newMeth(C$, 'getOutput$', function () {
+return this.output;
 });
 
-Clazz.newMeth(C$, 'setOutput$O', function (out) {
-var outputChannel=null;
-if (Clazz.instanceOf(out, "javajs.util.OC")) {
-outputChannel=out;
-} else if (Clazz.instanceOf(out, "java.io.FileOutputStream")) {
-
-outputChannel = out.out;
-} else {
-outputChannel=Clazz.new_($I$(2)).setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, null, false, out);
-}this.params.put$TK$TV("outputChannel", outputChannel);
+Clazz.newMeth(C$, 'getAvailableLocales$', function () {
+return (this.availableLocales == null ) ? null : this.availableLocales.clone$();
 });
 
-Clazz.newMeth(C$, 'write$javax_imageio_IIOImage', function (image) {
-this.params.put$TK$TV("image", image.image);
-try {
-this.writeImage$java_util_Map(this.params);
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-if (Clazz.instanceOf(e, "java.io.IOException")) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[(e).getMessage$()]);
-e.printStackTrace$();
-} else {
-throw e;
-}
-}
+Clazz.newMeth(C$, 'setLocale$java_util_Locale', function (locale) {
+if (locale != null ) {
+var locales=this.getAvailableLocales$();
+var found=false;
+if (locales != null ) {
+for (var i=0; i < locales.length; i++) {
+if (locale.equals$O(locales[i])) {
+found=true;
+break;
+}}
+}if (!found) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid locale!"]);
+}}this.locale=locale;
 });
-
-Clazz.newMeth(C$, 'writeToFileOrStream$S$java_io_OutputStream', function (fileName, out) {
-var outputChannel=this.params.get$O("outputChannel");
-if (out != null ) {
-outputChannel=Clazz.new_($I$(2));
-outputChannel.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, fileName, false, out);
-this.params.put$TK$TV("outputChannel", outputChannel);
-}if (outputChannel != null ) fileName=outputChannel.getFileName$();
-try {
-var o=this.writeImage$java_util_Map(this.params);
-if (Clazz.instanceOf(o, "java.lang.String")) {
-System.out.println$S("ImageWriter: " + o);
-return false;
-}if (out == null  && o != null  ) $I$(4).saveFile$S$O$S$S(fileName, o, this.params.get$O("mimeType"), null);
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-return false;
-} else {
-throw e;
-}
-}
-return true;
-});
-
-Clazz.newMeth(C$, 'writeImage$java_util_Map', function (params) {
-var image=params.get$O("image");
-if (image == null  && !params.containsKey$O("rgbbuf") ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["image == null!"]);
-var bytes=null;
-var errMsg=null;
-var type=params.get$O("type");
-if (type == null ) type="png";
-type=type.toUpperCase$();
-var fileName=params.get$O("fileName");
-var software=params.get$O("software");
-if (software == null ) {
-software="SwingJS";
-}var comment=params.get$O("comment");
-if (comment == null ) params.put$TK$TV("comment", software);
-var out=params.get$O("outputChannel");
-var asBytes=(out == null  && fileName == null  );
-var closeChannel=(out == null  && fileName != null  );
-var isOK=false;
-try {
-if (out == null  && (out=this.getOutputChannel$S(fileName)) == null  ) return "ERROR: canceled";
-fileName=out.getFileName$();
-params.put$TK$TV("date", $I$(5).getDateFormat$S("8601"));
-if (type.startsWith$S("JP")) {
-type=$I$(6).rep$S$S$S(type, "E", "");
-if (type.equals$O("JPG64")) {
-params.put$TK$TV("outputChannelTemp", this.getOutputChannel$S(null));
-}} else if (type.equals$O("PDF")) {
-} else if (type.startsWith$S("PNG")) {
-}var errRet=Clazz.array(String, [1]);
-isOK=p$1.createTheImage$java_awt_image_BufferedImage$S$javajs_util_OC$java_util_Map$SA.apply(this, [image, type, out, params, errRet]);
-if (closeChannel) out.closeChannel$();
-if (isOK) {
-if (asBytes) bytes=out.toByteArray$();
-} else {
-errMsg=errRet[0];
-}} finally {
-if (bytes != null  || out != null  ) params.put$TK$TV("byteCount", Integer.valueOf$I(bytes != null  ? bytes.length : isOK ? out.getByteCount$() : -1));
-}
-return (errMsg == null  ? bytes : errMsg);
-});
-
-Clazz.newMeth(C$, 'getOutputChannel$S', function (fileName) {
-var outputChannel=Clazz.new_($I$(2));
-return outputChannel.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, fileName, false, null);
-});
-
-Clazz.newMeth(C$, 'createTheImage$java_awt_image_BufferedImage$S$javajs_util_OC$java_util_Map$SA', function (image, type, out, params, errRet) {
-params.put$TK$TV("mimeType", "image/" + type.toLowerCase$());
-type=type.substring$I$I(0, 1) + type.substring$I(1).toLowerCase$();
-var ie=$I$(7).getInstance$S$Z("javajs.img." + type + "Encoder" , true);
-if (ie == null ) {
-errRet[0]="Image encoder type " + type + " not available" ;
-return false;
-}var doClose=true;
-var pixels;
-var w;
-var h;
-try {
-if (image == null ) {
-w=(params.get$O("width")).intValue$();
-h=(params.get$O("height")).intValue$();
-pixels=params.get$O("rgbbuf");
-} else {
-w=image.getWidth$();
-h=image.getHeight$();
-pixels=image.getRangeRGB$I$I$I$I$IA$I$I(0, 0, w, h, Clazz.array(Integer.TYPE, [w * h]), 0, w);
-}params.put$TK$TV("imageWidth", Integer.valueOf$I(w));
-params.put$TK$TV("imageHeight", Integer.valueOf$I(h));
-params.put$TK$TV("imagePixels", pixels);
-doClose=ie.createImage$(type, out, params);
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-errRet[0]=e.toString();
-out.cancel$();
-doClose=true;
-} else {
-throw e;
-}
-} finally {
-if (doClose) out.closeChannel$();
-}
-return (errRet[0] == null );
-}, p$1);
 
 Clazz.newMeth(C$, 'getLocale$', function () {
 return this.locale;
 });
+
+Clazz.newMeth(C$, 'getDefaultWriteParam$', function () {
+return Clazz.new_([this.getLocale$()],$I$(1,1).c$$java_util_Locale);
+});
+
+Clazz.newMeth(C$, 'getNumThumbnailsSupported$javax_imageio_ImageTypeSpecifier$javax_imageio_ImageWriteParam$javax_imageio_metadata_IIOMetadata$javax_imageio_metadata_IIOMetadata', function (imageType, param, streamMetadata, imageMetadata) {
+return 0;
+});
+
+Clazz.newMeth(C$, 'getPreferredThumbnailSizes$javax_imageio_ImageTypeSpecifier$javax_imageio_ImageWriteParam$javax_imageio_metadata_IIOMetadata$javax_imageio_metadata_IIOMetadata', function (imageType, param, streamMetadata, imageMetadata) {
+return null;
+});
+
+Clazz.newMeth(C$, 'canWriteRasters$', function () {
+return false;
+});
+
+Clazz.newMeth(C$, 'write$javax_imageio_IIOImage', function (image) {
+this.write$javax_imageio_metadata_IIOMetadata$javax_imageio_IIOImage$javax_imageio_ImageWriteParam(null, image, null);
+});
+
+Clazz.newMeth(C$, 'write$java_awt_image_RenderedImage', function (image) {
+this.write$javax_imageio_metadata_IIOMetadata$javax_imageio_IIOImage$javax_imageio_ImageWriteParam(null, Clazz.new_($I$(2,1).c$$java_awt_image_RenderedImage$java_util_List$javax_imageio_metadata_IIOMetadata,[image, null, null]), null);
+});
+
+Clazz.newMeth(C$, 'unsupported', function () {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["Unsupported write variant!"]);
+}, p$1);
+
+Clazz.newMeth(C$, 'canWriteSequence$', function () {
+return false;
+});
+
+Clazz.newMeth(C$, 'prepareWriteSequence$javax_imageio_metadata_IIOMetadata', function (streamMetadata) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'writeToSequence$javax_imageio_IIOImage$javax_imageio_ImageWriteParam', function (image, param) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'endWriteSequence$', function () {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'canReplaceStreamMetadata$', function () {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}return false;
+});
+
+Clazz.newMeth(C$, 'replaceStreamMetadata$javax_imageio_metadata_IIOMetadata', function (streamMetadata) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'canReplaceImageMetadata$I', function (imageIndex) {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}return false;
+});
+
+Clazz.newMeth(C$, 'replaceImageMetadata$I$javax_imageio_metadata_IIOMetadata', function (imageIndex, imageMetadata) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'canInsertImage$I', function (imageIndex) {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}return false;
+});
+
+Clazz.newMeth(C$, 'writeInsert$I$javax_imageio_IIOImage$javax_imageio_ImageWriteParam', function (imageIndex, image, param) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'canRemoveImage$I', function (imageIndex) {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}return false;
+});
+
+Clazz.newMeth(C$, 'removeImage$I', function (imageIndex) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'canWriteEmpty$', function () {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}return false;
+});
+
+Clazz.newMeth(C$, 'prepareWriteEmpty$javax_imageio_metadata_IIOMetadata$javax_imageio_ImageTypeSpecifier$I$I$javax_imageio_metadata_IIOMetadata$java_util_List$javax_imageio_ImageWriteParam', function (streamMetadata, imageType, width, height, imageMetadata, thumbnails, param) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'endWriteEmpty$', function () {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No call to prepareWriteEmpty!"]);
+});
+
+Clazz.newMeth(C$, 'canInsertEmpty$I', function (imageIndex) {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}return false;
+});
+
+Clazz.newMeth(C$, 'prepareInsertEmpty$I$javax_imageio_ImageTypeSpecifier$I$I$javax_imageio_metadata_IIOMetadata$java_util_List$javax_imageio_ImageWriteParam', function (imageIndex, imageType, width, height, imageMetadata, thumbnails, param) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'endInsertEmpty$', function () {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'canReplacePixels$I', function (imageIndex) {
+if (this.getOutput$() == null ) {
+throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["getOutput() == null!"]);
+}return false;
+});
+
+Clazz.newMeth(C$, 'prepareReplacePixels$I$java_awt_Rectangle', function (imageIndex, region) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'replacePixels$java_awt_image_RenderedImage$javax_imageio_ImageWriteParam', function (image, param) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'replacePixels$java_awt_image_Raster$javax_imageio_ImageWriteParam', function (raster, param) {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'endReplacePixels$', function () {
+p$1.unsupported.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'abort$', function () {
+this.abortFlag=true;
+});
+
+Clazz.newMeth(C$, 'abortRequested$', function () {
+return this.abortFlag;
+});
+
+Clazz.newMeth(C$, 'clearAbortRequest$', function () {
+this.abortFlag=false;
+});
+
+Clazz.newMeth(C$, 'addIIOWriteWarningListener$javax_imageio_event_IIOWriteWarningListener', function (listener) {
+if (listener == null ) {
+return;
+}this.warningListeners=$I$(3).addToList$java_util_List$O(this.warningListeners, listener);
+this.warningLocales=$I$(3,"addToList$java_util_List$O",[this.warningLocales, this.getLocale$()]);
+});
+
+Clazz.newMeth(C$, 'removeIIOWriteWarningListener$javax_imageio_event_IIOWriteWarningListener', function (listener) {
+if (listener == null  || this.warningListeners == null  ) {
+return;
+}var index=this.warningListeners.indexOf$O(listener);
+if (index != -1) {
+this.warningListeners.remove$I(index);
+this.warningLocales.remove$I(index);
+if (this.warningListeners.size$() == 0) {
+this.warningListeners=null;
+this.warningLocales=null;
+}}});
+
+Clazz.newMeth(C$, 'removeAllIIOWriteWarningListeners$', function () {
+this.warningListeners=null;
+this.warningLocales=null;
+});
+
+Clazz.newMeth(C$, 'addIIOWriteProgressListener$javax_imageio_event_IIOWriteProgressListener', function (listener) {
+if (listener == null ) {
+return;
+}this.progressListeners=$I$(3).addToList$java_util_List$O(this.progressListeners, listener);
+});
+
+Clazz.newMeth(C$, 'removeIIOWriteProgressListener$javax_imageio_event_IIOWriteProgressListener', function (listener) {
+if (listener == null  || this.progressListeners == null  ) {
+return;
+}this.progressListeners=$I$(3).removeFromList$java_util_List$O(this.progressListeners, listener);
+});
+
+Clazz.newMeth(C$, 'removeAllIIOWriteProgressListeners$', function () {
+this.progressListeners=null;
+});
+
+Clazz.newMeth(C$, 'processImageStarted$I', function (imageIndex) {
+if (this.progressListeners == null ) {
+return;
+}var numListeners=this.progressListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.progressListeners.get$I(i);
+listener.imageStarted$javax_imageio_ImageWriter$I(this, imageIndex);
+}
+});
+
+Clazz.newMeth(C$, 'processImageProgress$F', function (percentageDone) {
+if (this.progressListeners == null ) {
+return;
+}var numListeners=this.progressListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.progressListeners.get$I(i);
+listener.imageProgress$javax_imageio_ImageWriter$F(this, percentageDone);
+}
+});
+
+Clazz.newMeth(C$, 'processImageComplete$', function () {
+if (this.progressListeners == null ) {
+return;
+}var numListeners=this.progressListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.progressListeners.get$I(i);
+listener.imageComplete$javax_imageio_ImageWriter(this);
+}
+});
+
+Clazz.newMeth(C$, 'processThumbnailStarted$I$I', function (imageIndex, thumbnailIndex) {
+if (this.progressListeners == null ) {
+return;
+}var numListeners=this.progressListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.progressListeners.get$I(i);
+listener.thumbnailStarted$javax_imageio_ImageWriter$I$I(this, imageIndex, thumbnailIndex);
+}
+});
+
+Clazz.newMeth(C$, 'processThumbnailProgress$F', function (percentageDone) {
+if (this.progressListeners == null ) {
+return;
+}var numListeners=this.progressListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.progressListeners.get$I(i);
+listener.thumbnailProgress$javax_imageio_ImageWriter$F(this, percentageDone);
+}
+});
+
+Clazz.newMeth(C$, 'processThumbnailComplete$', function () {
+if (this.progressListeners == null ) {
+return;
+}var numListeners=this.progressListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.progressListeners.get$I(i);
+listener.thumbnailComplete$javax_imageio_ImageWriter(this);
+}
+});
+
+Clazz.newMeth(C$, 'processWriteAborted$', function () {
+if (this.progressListeners == null ) {
+return;
+}var numListeners=this.progressListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.progressListeners.get$I(i);
+listener.writeAborted$javax_imageio_ImageWriter(this);
+}
+});
+
+Clazz.newMeth(C$, 'processWarningOccurred$I$S', function (imageIndex, warning) {
+if (this.warningListeners == null ) {
+return;
+}if (warning == null ) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["warning == null!"]);
+}var numListeners=this.warningListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.warningListeners.get$I(i);
+listener.warningOccurred$javax_imageio_ImageWriter$I$S(this, imageIndex, warning);
+}
+});
+
+Clazz.newMeth(C$, 'processWarningOccurred$I$S$S', function (imageIndex, baseName, keyword) {
+if (this.warningListeners == null ) {
+return;
+}if (baseName == null ) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["baseName == null!"]);
+}if (keyword == null ) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["keyword == null!"]);
+}var numListeners=this.warningListeners.size$();
+for (var i=0; i < numListeners; i++) {
+var listener=this.warningListeners.get$I(i);
+var locale=this.warningLocales.get$I(i);
+if (locale == null ) {
+locale=$I$(4).getDefault$();
+}var loader=$I$(5,"doPrivileged$java_security_PrivilegedAction",[((P$.ImageWriter$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "ImageWriter$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'run$', function () {
+return $I$(6).currentThread$().getContextClassLoader$();
+});
+})()
+), Clazz.new_(P$.ImageWriter$1.$init$,[this, null]))]);
+var bundle=null;
+try {
+bundle=$I$(7).getBundle$S$java_util_Locale$O(baseName, locale, loader);
+} catch (mre) {
+if (Clazz.exceptionOf(mre,"java.util.MissingResourceException")){
+try {
+bundle=$I$(7).getBundle$S$java_util_Locale(baseName, locale);
+} catch (mre1) {
+if (Clazz.exceptionOf(mre1,"java.util.MissingResourceException")){
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Bundle not found!"]);
+} else {
+throw mre1;
+}
+}
+} else {
+throw mre;
+}
+}
+var warning=null;
+try {
+warning=bundle.getString$S(keyword);
+} catch (e$$) {
+if (Clazz.exceptionOf(e$$,"ClassCastException")){
+var cce = e$$;
+{
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Resource is not a String!"]);
+}
+} else if (Clazz.exceptionOf(e$$,"java.util.MissingResourceException")){
+var mre = e$$;
+{
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Resource is missing!"]);
+}
+} else {
+throw e$$;
+}
+}
+listener.warningOccurred$javax_imageio_ImageWriter$I$S(this, imageIndex, warning);
+}
+});
+
+Clazz.newMeth(C$, 'reset$', function () {
+this.setOutput$O(null);
+this.setLocale$java_util_Locale(null);
+this.removeAllIIOWriteWarningListeners$();
+this.removeAllIIOWriteProgressListeners$();
+this.clearAbortRequest$();
+});
+
+Clazz.newMeth(C$, 'dispose$', function () {
+});
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

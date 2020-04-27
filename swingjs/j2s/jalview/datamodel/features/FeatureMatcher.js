@@ -1,21 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel.features"),I$=[[0,'jalview.util.matcher.Condition','jalview.util.matcher.Matcher','StringBuilder','jalview.util.MessageManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeatureMatcher", null, null, 'jalview.datamodel.features.FeatureMatcherI');
-C$.NULL_MATCHER=null;
+(function(){var P$=Clazz.newPackage("jalview.datamodel.features"),I$=[[0,'jalview.util.matcher.Condition','jalview.util.matcher.Matcher','StringBuilder','jalview.util.MessageManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeatureMatcher", null, null, 'jalview.datamodel.features.FeatureMatcherI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NULL_MATCHER=C$.byLabel$jalview_util_matcher_Condition$S($I$(1).values$()[0], "");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.byLabel=false;
-this.byScore=false;
-this.key=null;
-this.matcher=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['byLabel','byScore'],'O',['key','String[]','matcher','jalview.util.matcher.MatcherI']]
+,['O',['NULL_MATCHER','jalview.datamodel.features.FeatureMatcherI']]]
 
 Clazz.newMeth(C$, 'fromAttributeDisplayName$S', function (attribute) {
 return attribute == null  ? null : attribute.split$S(":");
@@ -62,7 +54,7 @@ if (cond == null  || cond.needsAPattern$() ) {
 System.err.println$S(invalidFormat);
 return null;
 }} else {
-cond=$I$(1).fromString$S(leftToParse.substring$I$I(0, nextSpacePos));
+cond=$I$(1,"fromString$S",[leftToParse.substring$I$I(0, nextSpacePos)]);
 leftToParse=leftToParse.substring$I(nextSpacePos + 1).trim$();
 if (leftToParse.startsWith$S("\'")) {
 if (leftToParse.endsWith$S("\'")) {
@@ -90,19 +82,19 @@ throw e;
 }, 1);
 
 Clazz.newMeth(C$, 'byLabel$jalview_util_matcher_Condition$S', function (cond, pattern) {
-return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2).c$$jalview_util_matcher_Condition$S,[cond, pattern]), true, false, null]);
+return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2,1).c$$jalview_util_matcher_Condition$S,[cond, pattern]), true, false, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'byScore$jalview_util_matcher_Condition$S', function (cond, pattern) {
-return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, true, null]);
+return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2,1).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, true, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'byAttribute$jalview_util_matcher_Condition$S$SA', function (cond, pattern, attName) {
-return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, false, attName]);
+return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2,1).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, false, attName]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_util_matcher_Matcher$Z$Z$SA', function (m, forLabel, forScore, theKey) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.key=theKey;
 this.matcher=m;
 this.byLabel=forLabel;
@@ -123,7 +115,7 @@ return this.matcher;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 if (this.byLabel) {
 sb.append$S($I$(4).getString$S("label.label"));
 } else if (this.byScore) {
@@ -152,7 +144,7 @@ return this.getAttribute$() != null ;
 });
 
 Clazz.newMeth(C$, 'toStableString$', function () {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 if (this.byLabel) {
 sb.append$S("Label");
 } else if (this.byScore) {
@@ -174,6 +166,10 @@ sb.append$S(" ").append$S(pattern);
 }}return sb.toString();
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.NULL_MATCHER=C$.byLabel$jalview_util_matcher_Condition$S($I$(1).values$()[0], "");
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

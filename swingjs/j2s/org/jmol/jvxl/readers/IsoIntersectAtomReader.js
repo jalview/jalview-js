@@ -1,30 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsoIntersectAtomReader", null, 'org.jmol.jvxl.readers.AtomDataReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.BS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "IsoIntersectAtomReader", null, 'org.jmol.jvxl.readers.AtomDataReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myBsA=null;
-this.myBsB=null;
-this.bsAtomMinMax=null;
-this.func=null;
-this.funcType=0;
-this.thisPlaneB=null;
-this.values=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.myBsA=Clazz.new_($I$(1));
-this.myBsB=Clazz.new_($I$(1));
+this.myBsA=Clazz.new_($I$(1,1));
+this.myBsB=Clazz.new_($I$(1,1));
 this.bsAtomMinMax=Clazz.array($I$(1), [2, null]);
 this.funcType=0;
 this.values=Clazz.array(Float.TYPE, [2]);
-}, 1);
+},1);
+
+C$.$fields$=[['I',['funcType'],'O',['myBsA','javajs.util.BS','+myBsB','bsAtomMinMax','javajs.util.BS[][]','func','Object[]','thisPlaneB','float[]','+values']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$org_jmol_jvxl_readers_SurfaceGenerator', function (sg) {
@@ -59,7 +49,7 @@ this.func=this.params.func;
 }if (this.contactPair == null ) {
 var bsA=this.params.intersection[0];
 var bsB=this.params.intersection[1];
-var bsSelected=Clazz.new_($I$(1));
+var bsSelected=Clazz.new_($I$(1,1));
 bsSelected.or$javajs_util_BS(bsA);
 bsSelected.or$javajs_util_BS(bsB);
 this.doUseIterator=true;
@@ -140,4 +130,4 @@ if (r < value ) value=r;
 return (value == 3.4028235E38  ? NaN : value);
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

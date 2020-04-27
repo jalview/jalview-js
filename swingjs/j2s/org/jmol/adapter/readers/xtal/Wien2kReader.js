@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Wien2kReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Wien2kReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isrhombohedral=false;
-this.latticeCode='\0';
-this.doSymmetry=false;
-this.cxyz=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.latticeCode="\u0000";
 this.doSymmetry=true;
 this.cxyz=" x y z";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isrhombohedral','doSymmetry'],'C',['latticeCode'],'S',['cxyz']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.doSymmetry=!this.sgName.equals$O("none");
@@ -71,7 +64,7 @@ if (!this.doSymmetry) p$1.addAtom.apply(this, []);
 }
 var atomName=this.line.substring$I$I(0, 10);
 var sym=atomName.substring$I$I(0, 2).trim$();
-if (sym.length$() == 2 && $I$(1).isDigit$C(sym.charAt$I(1)) ) sym=sym.substring$I$I(0, 1);
+if (sym.length$() == 2 && (function(a,f){return f.apply(null,a)})([sym.charAt$I(1)],$I$(1).isDigit$C) ) sym=sym.substring$I$I(0, 1);
 atomName=$I$(1).rep$S$S$S(atomName, " ", "");
 var n=0;
 for (var i=this.asc.ac; --i >= thisAtom; ) {
@@ -125,4 +118,4 @@ this.rd$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

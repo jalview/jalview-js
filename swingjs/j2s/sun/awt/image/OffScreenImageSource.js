@@ -1,28 +1,20 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.image.ColorModel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OffScreenImageSource", null, null, 'java.awt.image.ImageProducer');
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.image.ColorModel']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OffScreenImageSource", null, null, 'java.awt.image.ImageProducer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.image=null;
-this.width=0;
-this.height=0;
-this.properties=null;
-this.theConsumer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['width','height'],'O',['image','java.awt.image.BufferedImage','properties','java.util.Hashtable','theConsumer','java.awt.image.ImageConsumer']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_image_BufferedImage$java_util_Hashtable', function (image, properties) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.image=image;
 if (properties != null ) {
 this.properties=properties;
 } else {
-this.properties=Clazz.new_($I$(1));
+this.properties=Clazz.new_($I$(1,1));
 }this.width=image.getWidth$();
 this.height=image.getHeight$();
 }, 1);
@@ -54,7 +46,7 @@ Clazz.newMeth(C$, 'requestTopDownLeftRightResend$java_awt_image_ImageConsumer', 
 
 Clazz.newMeth(C$, 'sendPixels', function () {
 var cm=this.image.getColorModel$();
-this.image.checkHavePixels$();
+this.image.秘ensureHavePixels$Z(true);
 var raster=this.image.getRaster$();
 var numDataElements=raster.getNumDataElements$();
 var dataType=raster.getDataBuffer$().getDataType$();
@@ -74,7 +66,7 @@ needToCvt=false;
 for (var y=0; y < this.height; y++) {
 raster.getPixels$I$I$I$I$IA(0, y, this.width, 1, scanline);
 for (var x=0; x < this.width; x++) {
-pixels[x]=((scanline[x]|0)|0);
+pixels[x]=(scanline[x]|0);
 }
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I(0, y, this.width, 1, cm, pixels, 0, this.width);
 }
@@ -146,4 +138,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

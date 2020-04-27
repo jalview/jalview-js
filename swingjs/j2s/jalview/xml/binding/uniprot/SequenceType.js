@@ -1,23 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
-var C$=Clazz.newClass(P$, "SequenceType");
+/*c*/var C$=Clazz.newClass(P$, "SequenceType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.length=0;
-this.mass=0;
-this.checksum=null;
-this.modified=null;
-this.version=0;
-this.precursor=null;
-this.fragment=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['length','mass','version'],'S',['value','checksum','fragment'],'O',['modified','javax.xml.datatype.XMLGregorianCalendar','precursor','Boolean']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -82,16 +71,17 @@ return this.fragment;
 Clazz.newMeth(C$, 'setFragment$S', function (value) {
 this.fragment=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.SequenceType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="sequenceType" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['length','int'],['@XmlAttribute(name="length" required="true" )']],
-  [['mass','.'],['@XmlAttribute(name="mass" required="true" )']],
-  [['checksum','String'],['@XmlAttribute(name="checksum" required="true" )']],
-  [['modified','javax.xml.datatype.XMLGregorianCalendar'],['@XmlAttribute(name="modified" required="true" )','@XmlSchemaType(name="date" )']],
-  [['version','int'],['@XmlAttribute(name="version" required="true" )']],
-  [['precursor','Boolean'],['@XmlAttribute(name="precursor" )']],
-  [['fragment','String'],['@XmlAttribute(name="fragment" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.SequenceType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="sequenceType" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['length','int',null,['javax.xml.bind.annotation.XmlAttribute']],['name="length" required="true" ']],
+  [['mass','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="mass" required="true" ']],
+  [['checksum','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="checksum" required="true" ']],
+  [['modified','javax.xml.datatype.XMLGregorianCalendar',null,['javax.xml.bind.annotation.XmlAttribute','javax.xml.bind.annotation.XmlSchemaType']],['name="modified" required="true" ','name="date" ']],
+  [['version','int',null,['javax.xml.bind.annotation.XmlAttribute']],['name="version" required="true" ']],
+  [['precursor','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="precursor" ']],
+  [['fragment','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="fragment" ']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,25 +1,19 @@
 (function(){var P$=Clazz.newPackage("javax.swing.text");
-var C$=Clazz.newClass(P$, "GapVector");
+/*c*/var C$=Clazz.newClass(P$, "GapVector");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.array=null;
-this.g0=0;
-this.g1=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['g0','g1'],'O',['array','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [10]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialLength) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.array=this.allocateArray$I(initialLength);
 this.g0=0;
 this.g1=initialLength;
@@ -127,4 +121,4 @@ Clazz.newMeth(C$, 'shiftGapEndUp$I', function (newGapEnd) {
 this.g1=newGapEnd;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

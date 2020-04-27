@@ -1,18 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awtjs2d"),I$=[[0,'java.net.URL','javajs.util.AjaxURLStreamHandlerFactory','org.jmol.awtjs2d.Mouse','org.jmol.awtjs2d.Display','org.jmol.api.Interface','org.jmol.awtjs2d.Image','org.jmol.awtjs2d.JSFont','org.jmol.awtjs2d.JSFile','javajs.util.Rdr']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Platform", null, null, 'org.jmol.api.GenericPlatform');
+(function(){var P$=Clazz.newPackage("org.jmol.awtjs2d"),I$=[[0,'java.net.URL','javajs.util.AjaxURLStreamHandlerFactory','org.jmol.awtjs2d.Mouse','org.jmol.awtjs2d.Display','org.jmol.api.Interface','org.jmol.awtjs2d.Image','org.jmol.awtjs2d.JSFont','org.jmol.awtjs2d.JSFile','javajs.util.Rdr']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Platform", null, null, 'org.jmol.api.GenericPlatform');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.canvas=null;
-this.vwr=null;
-this.context=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['canvas','java.lang.Object','vwr','org.jmol.api.PlatformViewer','context','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_api_PlatformViewer$O', function (vwr, canvas) {
 {
@@ -26,7 +20,7 @@ canvas.buf8 = canvas.imgdata.data;
 }
 this.canvas=canvas;
 try {
-$I$(1).setURLStreamHandlerFactory$java_net_URLStreamHandlerFactory(Clazz.new_($I$(2)));
+(function(a,f){return f.apply(null,a)})([Clazz.new_($I$(2,1))],$I$(1).setURLStreamHandlerFactory$java_net_URLStreamHandlerFactory);
 } catch (e) {
 }
 });
@@ -46,7 +40,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'getMouseManager$D$O', function (privateKey, display) {
-return Clazz.new_($I$(3).c$$D$org_jmol_viewer_Viewer$O,[privateKey, this.vwr, display]);
+return Clazz.new_($I$(3,1).c$$D$org_jmol_viewer_Viewer$O,[privateKey, this.vwr, display]);
 });
 
 Clazz.newMeth(C$, 'convertPointFromScreen$O$javajs_util_P3', function (canvas, ptTemp) {
@@ -58,7 +52,7 @@ $I$(4).getFullScreenDimensions$O$IA(canvas, widthHeight);
 });
 
 Clazz.newMeth(C$, 'getMenuPopup$S$C', function (menuStructure, type) {
-var c=(type == "j" ? "awtjs2d.JmolJSPopup" : "awtjs2d.JSModelKitPopup");
+var c=(type == "j" ? "awtjs2d.JSJmolPopup" : "awtjs2d.JSModelKitPopup");
 var jmolpopup=$I$(5).getOption$S$org_jmol_viewer_Viewer$S(c, this.vwr, "popup");
 try {
 if (jmolpopup != null ) jmolpopup.jpiInitialize$org_jmol_api_PlatformViewer$S(this.vwr, menuStructure);
@@ -116,7 +110,7 @@ pBuffer=this.grabPixels$O$I$I$IA$I$I(null, 0, 0, null, 0, 0);
 windowWidth = this.canvas.width;
 windowHeight = this.canvas.height;
 }
-}return $I$(6).allocateRgbImage$I$I$IA$I$Z$O(windowWidth, windowHeight, pBuffer, windowSize, backgroundTransparent, (isImageWrite ? null : this.canvas));
+}return (function(a,f){return f.apply(null,a)})([windowWidth, windowHeight, pBuffer, windowSize, backgroundTransparent, (isImageWrite ? null : this.canvas)],$I$(6).allocateRgbImage$I$I$IA$I$Z$O);
 });
 
 Clazz.newMeth(C$, 'notifyEndOfRendering$', function () {
@@ -146,8 +140,8 @@ Clazz.newMeth(C$, 'drawImageToBuffer$O$O$O$I$I$I', function (gOffscreen, imageOf
 return this.grabPixels$O$I$I$IA$I$I(canvas, width, height, null, 0, 0);
 });
 
-Clazz.newMeth(C$, 'getTextPixels$S$javajs_awt_Font$O$O$I$I$I', function (text, font3d, context, image, width, height, ascent) {
-return $I$(6).getTextPixels$S$javajs_awt_Font$O$I$I$I(text, font3d, context, width, height, ascent);
+Clazz.newMeth(C$, 'getTextPixels$S$org_jmol_util_Font$O$O$I$I$I', function (text, font3d, context, image, width, height, ascent) {
+return $I$(6).getTextPixels$S$org_jmol_util_Font$O$I$I$I(text, font3d, context, width, height, ascent);
 });
 
 Clazz.newMeth(C$, 'flushImage$O', function (imagePixelBuffer) {
@@ -196,8 +190,8 @@ f = function(canvas, pathOrError) { vwr.loadImageData$O$S$S$O(canvas, pathOrErro
 return C$.Jmol$().loadImage(this, echoName, path, bytes, f);
 });
 
-Clazz.newMeth(C$, 'fontStringWidth$javajs_awt_Font$S', function (font, text) {
-return $I$(7).stringWidth$javajs_awt_Font$O$S(font, this.context, text);
+Clazz.newMeth(C$, 'fontStringWidth$org_jmol_util_Font$S', function (font, text) {
+return $I$(7).stringWidth$org_jmol_util_Font$O$S(font, this.context, text);
 });
 
 Clazz.newMeth(C$, 'getFontAscent$O', function (context) {
@@ -208,8 +202,8 @@ Clazz.newMeth(C$, 'getFontDescent$O', function (context) {
 return $I$(7).getDescent$O(context);
 });
 
-Clazz.newMeth(C$, 'getFontMetrics$javajs_awt_Font$O', function (font, context) {
-return $I$(7).getFontMetrics$javajs_awt_Font$O(font, context == null  ? this.context : context);
+Clazz.newMeth(C$, 'getFontMetrics$org_jmol_util_Font$O', function (font, context) {
+return (function(a,f){return f.apply(null,a)})([font, context == null  ? this.context : context],$I$(7).getFontMetrics$org_jmol_util_Font$O);
 });
 
 Clazz.newMeth(C$, 'newFont$S$Z$Z$F', function (fontFace, isBold, isItalic, fontSize) {
@@ -233,7 +227,7 @@ return x[3] + '-' + MM + '-' + dd + 'T' + x[4] } return ("" + (new Date())).spli
 });
 
 Clazz.newMeth(C$, 'newFile$S', function (name) {
-return Clazz.new_($I$(8).c$$S,[name]);
+return Clazz.new_($I$(8,1).c$$S,[name]);
 });
 
 Clazz.newMeth(C$, 'getBufferedFileInputStream$S', function (name) {
@@ -277,4 +271,4 @@ return C$.Jmol$().isBinaryUrl(filename);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,52 +1,41 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.atomic.AtomicReferenceFieldUpdater','java.util.concurrent.locks.LockSupport',['java.util.concurrent.SynchronousQueue','.TransferStack','.SNode'],'Thread','java.util.concurrent.SynchronousQueue',['java.util.concurrent.SynchronousQueue','.TransferQueue','.QNode'],'Runtime',['java.util.concurrent.SynchronousQueue','.TransferQueue'],['java.util.concurrent.SynchronousQueue','.TransferStack'],'java.util.Collections','java.util.concurrent.locks.ReentrantLock',['java.util.concurrent.SynchronousQueue','.FifoWaitQueue'],['java.util.concurrent.SynchronousQueue','.LifoWaitQueue']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SynchronousQueue", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.atomic.AtomicReferenceFieldUpdater','java.util.concurrent.locks.LockSupport',['java.util.concurrent.SynchronousQueue','.TransferStack','.SNode'],'Thread','java.util.concurrent.SynchronousQueue',['java.util.concurrent.SynchronousQueue','.TransferQueue','.QNode'],'Runtime',['java.util.concurrent.SynchronousQueue','.TransferQueue'],['java.util.concurrent.SynchronousQueue','.TransferStack'],'java.util.Collections','java.util.concurrent.locks.ReentrantLock',['java.util.concurrent.SynchronousQueue','.FifoWaitQueue'],['java.util.concurrent.SynchronousQueue','.LifoWaitQueue']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SynchronousQueue", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractQueue', ['java.util.concurrent.BlockingQueue', 'java.io.Serializable']);
-C$.NCPUS=0;
-C$.maxTimedSpins=0;
-C$.maxUntimedSpins=0;
+C$.$classes$=[['Transferer',1032],['TransferStack',24],['TransferQueue',24],['WaitQueue',8],['LifoWaitQueue',8],['FifoWaitQueue',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NCPUS=$I$(7).getRuntime$().availableProcessors$();
-C$.maxTimedSpins=(C$.NCPUS < 2) ? 0 : 32;
-C$.maxUntimedSpins=C$.maxTimedSpins * 16;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.transferer=null;
-this.qlock=null;
-this.waitingProducers=null;
-this.waitingConsumers=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['transferer','java.util.concurrent.SynchronousQueue.Transferer','qlock','java.util.concurrent.locks.ReentrantLock','waitingProducers','java.util.concurrent.SynchronousQueue.WaitQueue','+waitingConsumers']]
+,['I',['NCPUS','maxTimedSpins','maxUntimedSpins']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (fair) {
-Clazz.super_(C$, this,1);
-this.transferer=(fair) ? Clazz.new_($I$(8)) : Clazz.new_($I$(9));
+Clazz.super_(C$, this);
+this.transferer=(fair) ? Clazz.new_($I$(8,1)) : Clazz.new_($I$(9,1));
 }, 1);
 
-Clazz.newMeth(C$, ['put$TE'], function (o) {
+Clazz.newMeth(C$, 'put$O', function (o) {
 if (o == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 if (this.transferer.transfer$O$Z$J(o, false, 0) == null ) {
 $I$(4).interrupted$();
 throw Clazz.new_(Clazz.load('InterruptedException'));
 }});
 
-Clazz.newMeth(C$, ['offer$TE$J$java_util_concurrent_TimeUnit'], function (o, timeout, unit) {
+Clazz.newMeth(C$, 'offer$O$J$java_util_concurrent_TimeUnit', function (o, timeout, unit) {
 if (o == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 if (this.transferer.transfer$O$Z$J(o, true, unit.toNanos$J(timeout)) != null ) return true;
 if (!$I$(4).interrupted$()) return false;
 throw Clazz.new_(Clazz.load('InterruptedException'));
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
+Clazz.newMeth(C$, 'offer$O', function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 return this.transferer.transfer$O$Z$J(e, true, 0) != null ;
 });
@@ -115,7 +104,7 @@ Clazz.newMeth(C$, 'toArray$', function () {
 return Clazz.array(java.lang.Object, [0]);
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 if (a.length > 0) a[0]=null;
 return a;
 });
@@ -126,7 +115,7 @@ if (c === this ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 var n=0;
 var e;
 while ((e=this.poll$()) != null ){
-c.add$TE(e);
+c.add$O(e);
 ++n;
 }
 return n;
@@ -138,7 +127,7 @@ if (c === this ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 var n=0;
 var e;
 while (n < maxElements && (e=this.poll$()) != null  ){
-c.add$TE(e);
+c.add$O(e);
 ++n;
 }
 return n;
@@ -147,62 +136,63 @@ return n;
 Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
 var fair=Clazz.instanceOf(this.transferer, "java.util.concurrent.SynchronousQueue.TransferQueue");
 if (fair) {
-this.qlock=Clazz.new_($I$(11).c$$Z,[true]);
-this.waitingProducers=Clazz.new_($I$(12));
-this.waitingConsumers=Clazz.new_($I$(12));
+this.qlock=Clazz.new_($I$(11,1).c$$Z,[true]);
+this.waitingProducers=Clazz.new_($I$(12,1));
+this.waitingConsumers=Clazz.new_($I$(12,1));
 } else {
-this.qlock=Clazz.new_($I$(11));
-this.waitingProducers=Clazz.new_($I$(13));
-this.waitingConsumers=Clazz.new_($I$(13));
+this.qlock=Clazz.new_($I$(11,1));
+this.waitingProducers=Clazz.new_($I$(13,1));
+this.waitingConsumers=Clazz.new_($I$(13,1));
 }s.defaultWriteObject$();
 }, p$1);
 
 Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject$();
-if (Clazz.instanceOf(this.waitingProducers, "java.util.concurrent.SynchronousQueue.FifoWaitQueue")) this.transferer=Clazz.new_($I$(8));
- else this.transferer=Clazz.new_($I$(9));
+if (Clazz.instanceOf(this.waitingProducers, "java.util.concurrent.SynchronousQueue.FifoWaitQueue")) this.transferer=Clazz.new_($I$(8,1));
+ else this.transferer=Clazz.new_($I$(9,1));
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.NCPUS=$I$(7).getRuntime$().availableProcessors$();
+C$.maxTimedSpins=(C$.NCPUS < 2) ? 0 : 32;
+C$.maxUntimedSpins=C$.maxTimedSpins * 16;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue, "Transferer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue, "Transferer", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue, "TransferStack", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue, "TransferStack", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.SynchronousQueue','.Transferer']);
-C$.headUpdater=null;
+C$.$classes$=[['SNode',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.headUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass($I$(3)), "head");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.head=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['head','java.util.concurrent.SynchronousQueue.TransferStack.SNode']]
+,['O',['headUpdater','java.util.concurrent.atomic.AtomicReferenceFieldUpdater']]]
 
 Clazz.newMeth(C$, 'isFulfilling$I', function (m) {
 return (m & 2) != 0;
 }, 1);
 
 Clazz.newMeth(C$, 'casHead$java_util_concurrent_SynchronousQueue_TransferStack_SNode$java_util_concurrent_SynchronousQueue_TransferStack_SNode', function (h, nh) {
-return h === this.head  && C$.headUpdater.compareAndSet$TT$TV$TV(this, h, nh) ;
+return h === this.head  && C$.headUpdater.compareAndSet$O$O$O(this, h, nh) ;
 });
 
 Clazz.newMeth(C$, 'snode$java_util_concurrent_SynchronousQueue_TransferStack_SNode$O$java_util_concurrent_SynchronousQueue_TransferStack_SNode$I', function (s, e, next, mode) {
-if (s == null ) s=Clazz.new_($I$(3).c$$O,[e]);
+if (s == null ) s=Clazz.new_($I$(3,1).c$$O,[e]);
 s.mode=mode;
 s.next=next;
 return s;
@@ -291,41 +281,34 @@ if (n != null  && n.isCancelled$() ) p.casNext$java_util_concurrent_SynchronousQ
  else p=n;
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.headUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass($I$(3)), "head"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue.TransferStack, "SNode", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue.TransferStack, "SNode", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.nextUpdater=null;
-C$.matchUpdater=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nextUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass(C$), "next");
-C$.matchUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass(C$), "match");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.next=null;
-this.match=null;
-this.waiter=null;
-this.item=null;
-this.mode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mode'],'O',['next','java.util.concurrent.SynchronousQueue.TransferStack.SNode','+match','waiter','Thread','item','java.lang.Object']]
+,['O',['nextUpdater','java.util.concurrent.atomic.AtomicReferenceFieldUpdater','+matchUpdater']]]
 
 Clazz.newMeth(C$, 'c$$O', function (item) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.item=item;
 }, 1);
 
 Clazz.newMeth(C$, 'casNext$java_util_concurrent_SynchronousQueue_TransferStack_SNode$java_util_concurrent_SynchronousQueue_TransferStack_SNode', function (cmp, val) {
-return (cmp === this.next  && C$.nextUpdater.compareAndSet$TT$TV$TV(this, cmp, val) );
+return (cmp === this.next  && C$.nextUpdater.compareAndSet$O$O$O(this, cmp, val) );
 });
 
 Clazz.newMeth(C$, 'tryMatch$java_util_concurrent_SynchronousQueue_TransferStack_SNode', function (s) {
-if (this.match == null  && C$.matchUpdater.compareAndSet$TT$TV$TV(this, null, s) ) {
+if (this.match == null  && C$.matchUpdater.compareAndSet$O$O$O(this, null, s) ) {
 var w=this.waiter;
 if (w != null ) {
 this.waiter=null;
@@ -335,12 +318,17 @@ $I$(2).unpark$Thread(w);
 });
 
 Clazz.newMeth(C$, 'tryCancel$', function () {
-C$.matchUpdater.compareAndSet$TT$TV$TV(this, null, this);
+C$.matchUpdater.compareAndSet$O$O$O(this, null, this);
 });
 
 Clazz.newMeth(C$, 'isCancelled$', function () {
 return this.match === this ;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.nextUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass(C$), "next"]);
+C$.matchUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass(C$), "match"]);
+};
 
 Clazz.newMeth(C$);
 })()
@@ -348,46 +336,36 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue, "TransferQueue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue, "TransferQueue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.SynchronousQueue','.Transferer']);
-C$.headUpdater=null;
-C$.tailUpdater=null;
-C$.cleanMeUpdater=null;
+C$.$classes$=[['QNode',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.headUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass($I$(6)), "head");
-C$.tailUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass($I$(6)), "tail");
-C$.cleanMeUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass($I$(6)), "cleanMe");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.head=null;
-this.tail=null;
-this.cleanMe=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['head','java.util.concurrent.SynchronousQueue.TransferQueue.QNode','+tail','+cleanMe']]
+,['O',['headUpdater','java.util.concurrent.atomic.AtomicReferenceFieldUpdater','+tailUpdater','+cleanMeUpdater']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-var h=Clazz.new_($I$(6).c$$O$Z,[null, false]);
+Clazz.super_(C$, this);
+var h=Clazz.new_($I$(6,1).c$$O$Z,[null, false]);
 this.head=h;
 this.tail=h;
 }, 1);
 
 Clazz.newMeth(C$, 'advanceHead$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode', function (h, nh) {
-if (h === this.head  && C$.headUpdater.compareAndSet$TT$TV$TV(this, h, nh) ) h.next=h;
+if (h === this.head  && C$.headUpdater.compareAndSet$O$O$O(this, h, nh) ) h.next=h;
 });
 
 Clazz.newMeth(C$, 'advanceTail$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode', function (t, nt) {
-if (this.tail === t ) C$.tailUpdater.compareAndSet$TT$TV$TV(this, t, nt);
+if (this.tail === t ) C$.tailUpdater.compareAndSet$O$O$O(this, t, nt);
 });
 
 Clazz.newMeth(C$, 'casCleanMe$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode', function (cmp, val) {
-return (this.cleanMe === cmp  && C$.cleanMeUpdater.compareAndSet$TT$TV$TV(this, cmp, val) );
+return (this.cleanMe === cmp  && C$.cleanMeUpdater.compareAndSet$O$O$O(this, cmp, val) );
 });
 
 Clazz.newMeth(C$, 'transfer$O$Z$J', function (e, timed, nanos) {
@@ -404,7 +382,7 @@ if (tn != null ) {
 this.advanceTail$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode(t, tn);
 continue;
 }if (timed && nanos <= 0 ) return null;
-if (s == null ) s=Clazz.new_($I$(6).c$$O$Z,[e, isData]);
+if (s == null ) s=Clazz.new_($I$(6,1).c$$O$Z,[e, isData]);
 if (!t.casNext$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode(null, s)) continue;
 this.advanceTail$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode(t, s);
 var x=this.awaitFulfill$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$O$Z$J(s, e, timed, nanos);
@@ -478,45 +456,41 @@ if (dp === pred ) return;
 } else if (this.casCleanMe$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode(null, pred)) return;
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.headUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass($I$(6)), "head"]);
+C$.tailUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass($I$(6)), "tail"]);
+C$.cleanMeUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass($I$(6)), "cleanMe"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue.TransferQueue, "QNode", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue.TransferQueue, "QNode", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.nextUpdater=null;
-C$.itemUpdater=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nextUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass(C$), "next");
-C$.itemUpdater=$I$(1).newUpdater$Class$Class$S(Clazz.getClass(C$), Clazz.getClass(java.lang.Object), "item");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.next=null;
-this.item=null;
-this.waiter=null;
-this.isData=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isData'],'O',['next','java.util.concurrent.SynchronousQueue.TransferQueue.QNode','item','java.lang.Object','waiter','Thread']]
+,['O',['nextUpdater','java.util.concurrent.atomic.AtomicReferenceFieldUpdater','+itemUpdater']]]
 
 Clazz.newMeth(C$, 'c$$O$Z', function (item, isData) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.item=item;
 this.isData=isData;
 }, 1);
 
 Clazz.newMeth(C$, 'casNext$java_util_concurrent_SynchronousQueue_TransferQueue_QNode$java_util_concurrent_SynchronousQueue_TransferQueue_QNode', function (cmp, val) {
-return (this.next === cmp  && C$.nextUpdater.compareAndSet$TT$TV$TV(this, cmp, val) );
+return (this.next === cmp  && C$.nextUpdater.compareAndSet$O$O$O(this, cmp, val) );
 });
 
 Clazz.newMeth(C$, 'casItem$O$O', function (cmp, val) {
-return (this.item === cmp  && C$.itemUpdater.compareAndSet$TT$TV$TV(this, cmp, val) );
+return (this.item === cmp  && C$.itemUpdater.compareAndSet$O$O$O(this, cmp, val) );
 });
 
 Clazz.newMeth(C$, 'tryCancel$O', function (cmp) {
-C$.itemUpdater.compareAndSet$TT$TV$TV(this, cmp, this);
+C$.itemUpdater.compareAndSet$O$O$O(this, cmp, this);
 });
 
 Clazz.newMeth(C$, 'isCancelled$', function () {
@@ -527,47 +501,49 @@ Clazz.newMeth(C$, 'isOffList$', function () {
 return this.next === this ;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.nextUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass(C$), "next"]);
+C$.itemUpdater=$I$(1,"newUpdater$Class$Class$S",[Clazz.getClass(C$), Clazz.getClass(java.lang.Object), "item"]);
+};
+
 Clazz.newMeth(C$);
 })()
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue, "WaitQueue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue, "WaitQueue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue, "LifoWaitQueue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue, "LifoWaitQueue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.SynchronousQueue','.WaitQueue']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SynchronousQueue, "FifoWaitQueue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SynchronousQueue, "FifoWaitQueue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.SynchronousQueue','.WaitQueue']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

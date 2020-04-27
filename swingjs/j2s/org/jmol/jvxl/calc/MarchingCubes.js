@@ -1,104 +1,43 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.calc"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.SB','javajs.util.BS','javajs.util.P3','org.jmol.util.TriangleData','org.jmol.jvxl.data.JvxlCoder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MarchingCubes", null, 'org.jmol.util.TriangleData');
-C$.yzPlanePts=null;
-C$.edgeVertexPointersLowToHigh=null;
-C$.edgeVertexPointersHighToLow=null;
-C$.edgeVertexPlanesLowToHigh=null;
-C$.edgeVertexPlanesHighToLow=null;
-C$.cubeVertexVectors=null;
-C$.edgeTypeTable=null;
-C$.insideMaskTable=null;
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.calc"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.SB','javajs.util.BS','javajs.util.P3','org.jmol.util.TriangleData','org.jmol.jvxl.data.JvxlCoder']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MarchingCubes", null, 'org.jmol.util.TriangleData');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.yzPlanePts=Clazz.array(Integer.TYPE, -1, [0, 1, 1, 0, 0, 1, 1, 0]);
-C$.edgeVertexPointersLowToHigh=Clazz.array(Integer.TYPE, -1, [1, 1, 2, 0, 5, 5, 6, 4, 0, 1, 2, 3]);
-C$.edgeVertexPointersHighToLow=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 0, 4, 5, 7, 4, 0, 1, 2, 3]);
-C$.edgeVertexPlanesLowToHigh=Clazz.array(Integer.TYPE, -1, [1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0]);
-C$.edgeVertexPlanesHighToLow=Clazz.array(Integer.TYPE, -1, [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1]);
-C$.cubeVertexVectors=Clazz.array($I$(1), -1, [$I$(1).new3$F$F$F(0, 0, 0), $I$(1).new3$F$F$F(1, 0, 0), $I$(1).new3$F$F$F(1, 0, 1), $I$(1).new3$F$F$F(0, 0, 1), $I$(1).new3$F$F$F(0, 1, 0), $I$(1).new3$F$F$F(1, 1, 0), $I$(1).new3$F$F$F(1, 1, 1), $I$(1).new3$F$F$F(0, 1, 1)]);
-C$.edgeTypeTable=Clazz.array(Integer.TYPE, -1, [0, 2, 0, 2, 0, 2, 0, 2, 1, 1, 1, 1]);
-C$.insideMaskTable=Clazz.array(Short.TYPE, -1, [0, 265, 515, 778, 1030, 1295, 1541, 1804, 2060, 2309, 2575, 2822, 3082, 3331, 3593, 3840, 400, 153, 915, 666, 1430, 1183, 1941, 1692, 2460, 2197, 2975, 2710, 3482, 3219, 3993, 3728, 560, 825, 51, 314, 1590, 1855, 1077, 1340, 2620, 2869, 2111, 2358, 3642, 3891, 3129, 3376, 928, 681, 419, 170, 1958, 1711, 1445, 1196, 2988, 2725, 2479, 2214, 4010, 3747, 3497, 3232, 1120, 1385, 1635, 1898, 102, 367, 613, 876, 3180, 3429, 3695, 3942, 2154, 2403, 2665, 2912, 1520, 1273, 2035, 1786, 502, 255, 1013, 764, 3580, 3317, 4095, 3830, 2554, 2291, 3065, 2800, 1616, 1881, 1107, 1370, 598, 863, 85, 348, 3676, 3925, 3167, 3414, 2650, 2899, 2137, 2384, 1984, 1737, 1475, 1226, 966, 719, 453, 204, 4044, 3781, 3535, 3270, 3018, 2755, 2505, 2240, 2240, 2505, 2755, 3018, 3270, 3535, 3781, 4044, 204, 453, 719, 966, 1226, 1475, 1737, 1984, 2384, 2137, 2899, 2650, 3414, 3167, 3925, 3676, 348, 85, 863, 598, 1370, 1107, 1881, 1616, 2800, 3065, 2291, 2554, 3830, 4095, 3317, 3580, 764, 1013, 255, 502, 1786, 2035, 1273, 1520, 2912, 2665, 2403, 2154, 3942, 3695, 3429, 3180, 876, 613, 367, 102, 1898, 1635, 1385, 1120, 3232, 3497, 3747, 4010, 2214, 2479, 2725, 2988, 1196, 1445, 1711, 1958, 170, 419, 681, 928, 3376, 3129, 3891, 3642, 2358, 2111, 2869, 2620, 1340, 1077, 1855, 1590, 314, 51, 825, 560, 3728, 3993, 3219, 3482, 2710, 2975, 2197, 2460, 1692, 1941, 1183, 1430, 666, 915, 153, 400, 3840, 3593, 3331, 3082, 2822, 2575, 2309, 2060, 1804, 1541, 1295, 1030, 778, 515, 265, 0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.surfaceReader=null;
-this.volumeData=null;
-this.contourType=0;
-this.isContoured=false;
-this.cutoff=0;
-this.isCutoffAbsolute=false;
-this.isSquared=false;
-this.isXLowToHigh=false;
-this.cubeCountX=0;
-this.cubeCountY=0;
-this.cubeCountZ=0;
-this.nY=0;
-this.nZ=0;
-this.yzCount=0;
-this.colorDensity=false;
-this.integrateSquared=false;
-this.bsVoxels=null;
-this.bsExcludedVertices=null;
-this.bsExcludedTriangles=null;
-this.bsExcludedPlanes=null;
-this.edgeData=null;
-this.excludePartialCubes=false;
-this.mode=0;
-this.vertexValues=null;
-this.edgeCount=0;
-this.voxelVertexVectors=null;
-this.edgeVectors=null;
-this.edgePointIndexes=null;
-this.isoPointIndexPlanes=null;
-this.yzPlanes=null;
-this.mappingPlane=null;
-this.allInside=false;
-this.isInside=false;
-this.offset=null;
-this.voxelData=null;
-this.nTriangles=0;
-this.bsValues=null;
-this.pt0=null;
-this.pointA=null;
-this.edgeVertexPointers=null;
-this.edgeVertexPlanes=null;
-this.fReturn=null;
-this.linearOffsets=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.integrateSquared=true;
-this.edgeData=Clazz.new_($I$(2));
+this.edgeData=Clazz.new_($I$(2,1));
 this.excludePartialCubes=true;
 this.vertexValues=Clazz.array(Float.TYPE, [8]);
 this.voxelVertexVectors=Clazz.array($I$(1), [8]);
 this.edgeVectors=Clazz.array($I$(1), [12]);
 {
-for (var i=12; --i >= 0; ) this.edgeVectors[i]=Clazz.new_($I$(1));
+for (var i=12; --i >= 0; ) this.edgeVectors[i]=Clazz.new_($I$(1,1));
 
 }
 this.edgePointIndexes=Clazz.array(Integer.TYPE, [12]);
-this.bsValues=Clazz.new_($I$(3));
-this.pt0=Clazz.new_($I$(4));
-this.pointA=Clazz.new_($I$(4));
+this.bsValues=Clazz.new_($I$(3,1));
+this.pt0=Clazz.new_($I$(4,1));
+this.pointA=Clazz.new_($I$(4,1));
 this.fReturn=Clazz.array(Float.TYPE, [1]);
 this.linearOffsets=Clazz.array(Integer.TYPE, [8]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isContoured','isCutoffAbsolute','isSquared','isXLowToHigh','colorDensity','integrateSquared','excludePartialCubes','allInside','isInside'],'F',['cutoff'],'I',['contourType','cubeCountX','cubeCountY','cubeCountZ','nY','nZ','yzCount','mode','edgeCount','nTriangles'],'O',['surfaceReader','org.jmol.jvxl.api.VertexDataServer','volumeData','org.jmol.jvxl.data.VolumeData','bsVoxels','javajs.util.BS','+bsExcludedVertices','+bsExcludedTriangles','+bsExcludedPlanes','edgeData','javajs.util.SB','vertexValues','float[]','voxelVertexVectors','javajs.util.V3[]','+edgeVectors','edgePointIndexes','int[]','isoPointIndexPlanes','int[][][]','yzPlanes','float[][]','mappingPlane','javajs.util.P4','offset','javajs.util.P3i','voxelData','float[][][]','bsValues','javajs.util.BS','pt0','javajs.util.P3','+pointA','edgeVertexPointers','int[]','+edgeVertexPlanes','fReturn','float[]','linearOffsets','int[]']]
+,['O',['yzPlanePts','int[]','+edgeVertexPointersLowToHigh','+edgeVertexPointersHighToLow','+edgeVertexPlanesLowToHigh','+edgeVertexPlanesHighToLow','cubeVertexVectors','javajs.util.V3[]','edgeTypeTable','int[]','insideMaskTable','short[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_jmol_jvxl_api_VertexDataServer$org_jmol_jvxl_data_VolumeData$org_jmol_jvxl_readers_Parameters$javajs_util_BS', function (surfaceReader, volumeData, params, bsVoxels) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.excludePartialCubes=true;
 this.surfaceReader=surfaceReader;
 this.bsVoxels=bsVoxels;
 var bsExcluded=params.bsExcluded;
-this.bsExcludedVertices=(bsExcluded[0] == null  ? bsExcluded[0]=Clazz.new_($I$(3)) : bsExcluded[0]);
-this.bsExcludedPlanes=(bsExcluded[2] == null  ? bsExcluded[2]=Clazz.new_($I$(3)) : bsExcluded[2]);
-this.bsExcludedTriangles=(bsExcluded[3] == null  ? bsExcluded[3]=Clazz.new_($I$(3)) : bsExcluded[3]);
+this.bsExcludedVertices=(bsExcluded[0] == null  ? bsExcluded[0]=Clazz.new_($I$(3,1)) : bsExcluded[0]);
+this.bsExcludedPlanes=(bsExcluded[2] == null  ? bsExcluded[2]=Clazz.new_($I$(3,1)) : bsExcluded[2]);
+this.bsExcludedTriangles=(bsExcluded[3] == null  ? bsExcluded[3]=Clazz.new_($I$(3,1)) : bsExcluded[3]);
 this.mode=(volumeData.getVoxelData$() != null  || volumeData.mappingPlane != null   ? 1 : bsVoxels != null  ? 2 : 3);
 this.setParameters$org_jmol_jvxl_data_VolumeData$org_jmol_jvxl_readers_Parameters(volumeData, params);
 }, 1);
@@ -123,7 +62,7 @@ this.cubeCountZ=(this.cubeCountZ*(Math.abs(params.mapLattice.z))|0);
 }this.nY=this.cubeCountY + 1;
 this.nZ=this.cubeCountZ + 1;
 this.yzCount=this.nY * this.nZ;
-if (this.bsVoxels == null ) this.bsVoxels=Clazz.new_($I$(3));
+if (this.bsVoxels == null ) this.bsVoxels=Clazz.new_($I$(3,1));
 this.edgeVertexPointers=(this.isXLowToHigh ? C$.edgeVertexPointersLowToHigh : C$.edgeVertexPointersHighToLow);
 this.edgeVertexPlanes=(this.isXLowToHigh ? C$.edgeVertexPlanesLowToHigh : C$.edgeVertexPlanesHighToLow);
 this.isoPointIndexPlanes=Clazz.array(Integer.TYPE, [2, this.yzCount, 3]);
@@ -133,7 +72,7 @@ this.calcVoxelVertexVectors$();
 });
 
 Clazz.newMeth(C$, 'calcVoxelVertexVectors$', function () {
-for (var i=8; --i >= 0; ) this.volumeData.transform$javajs_util_V3$javajs_util_V3(C$.cubeVertexVectors[i], this.voxelVertexVectors[i]=Clazz.new_($I$(1)));
+for (var i=8; --i >= 0; ) this.volumeData.transform$javajs_util_V3$javajs_util_V3(C$.cubeVertexVectors[i], this.voxelVertexVectors[i]=Clazz.new_($I$(1,1)));
 
 for (var i=12; --i >= 0; ) this.edgeVectors[i].sub2$javajs_util_T3$javajs_util_T3(this.voxelVertexVectors[$I$(5).edgeVertexes[i + i + 1 ]], this.voxelVertexVectors[$I$(5).edgeVertexes[i + i]]);
 
@@ -348,5 +287,16 @@ this.linearOffsets[7]=this.nZ + 1;
 Clazz.newMeth(C$, 'getLinearOffset$I$I$I$I', function (x, y, z, offset) {
 return x * this.yzCount + y * this.nZ + z + this.linearOffsets[offset];
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.yzPlanePts=Clazz.array(Integer.TYPE, -1, [0, 1, 1, 0, 0, 1, 1, 0]);
+C$.edgeVertexPointersLowToHigh=Clazz.array(Integer.TYPE, -1, [1, 1, 2, 0, 5, 5, 6, 4, 0, 1, 2, 3]);
+C$.edgeVertexPointersHighToLow=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 0, 4, 5, 7, 4, 0, 1, 2, 3]);
+C$.edgeVertexPlanesLowToHigh=Clazz.array(Integer.TYPE, -1, [1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0]);
+C$.edgeVertexPlanesHighToLow=Clazz.array(Integer.TYPE, -1, [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1]);
+C$.cubeVertexVectors=Clazz.array($I$(1), -1, [$I$(1).new3$F$F$F(0, 0, 0), $I$(1).new3$F$F$F(1, 0, 0), $I$(1).new3$F$F$F(1, 0, 1), $I$(1).new3$F$F$F(0, 0, 1), $I$(1).new3$F$F$F(0, 1, 0), $I$(1).new3$F$F$F(1, 1, 0), $I$(1).new3$F$F$F(1, 1, 1), $I$(1).new3$F$F$F(0, 1, 1)]);
+C$.edgeTypeTable=Clazz.array(Integer.TYPE, -1, [0, 2, 0, 2, 0, 2, 0, 2, 1, 1, 1, 1]);
+C$.insideMaskTable=Clazz.array(Short.TYPE, -1, [0, 265, 515, 778, 1030, 1295, 1541, 1804, 2060, 2309, 2575, 2822, 3082, 3331, 3593, 3840, 400, 153, 915, 666, 1430, 1183, 1941, 1692, 2460, 2197, 2975, 2710, 3482, 3219, 3993, 3728, 560, 825, 51, 314, 1590, 1855, 1077, 1340, 2620, 2869, 2111, 2358, 3642, 3891, 3129, 3376, 928, 681, 419, 170, 1958, 1711, 1445, 1196, 2988, 2725, 2479, 2214, 4010, 3747, 3497, 3232, 1120, 1385, 1635, 1898, 102, 367, 613, 876, 3180, 3429, 3695, 3942, 2154, 2403, 2665, 2912, 1520, 1273, 2035, 1786, 502, 255, 1013, 764, 3580, 3317, 4095, 3830, 2554, 2291, 3065, 2800, 1616, 1881, 1107, 1370, 598, 863, 85, 348, 3676, 3925, 3167, 3414, 2650, 2899, 2137, 2384, 1984, 1737, 1475, 1226, 966, 719, 453, 204, 4044, 3781, 3535, 3270, 3018, 2755, 2505, 2240, 2240, 2505, 2755, 3018, 3270, 3535, 3781, 4044, 204, 453, 719, 966, 1226, 1475, 1737, 1984, 2384, 2137, 2899, 2650, 3414, 3167, 3925, 3676, 348, 85, 863, 598, 1370, 1107, 1881, 1616, 2800, 3065, 2291, 2554, 3830, 4095, 3317, 3580, 764, 1013, 255, 502, 1786, 2035, 1273, 1520, 2912, 2665, 2403, 2154, 3942, 3695, 3429, 3180, 876, 613, 367, 102, 1898, 1635, 1385, 1120, 3232, 3497, 3747, 4010, 2214, 2479, 2725, 2988, 1196, 1445, 1711, 1958, 170, 419, 681, 928, 3376, 3129, 3891, 3642, 2358, 2111, 2869, 2620, 1340, 1077, 1855, 1590, 314, 51, 825, 560, 3728, 3993, 3219, 3482, 2710, 2975, 2197, 2460, 1692, 1941, 1183, 1430, 666, 915, 153, 400, 3840, 3593, 3331, 3082, 2822, 2575, 2309, 2060, 1804, 1541, 1295, 1030, 778, 515, 265, 0]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,15 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),p$1={},I$=[[0,'jalview.bin.Cache','com.stevesoft.pat.Regex','java.net.URL','java.util.ArrayList','jalview.datamodel.Alignment','jalview.datamodel.SequenceI','jalview.datamodel.Sequence','jalview.datamodel.DBRefEntry','java.util.Vector','jalview.datamodel.PDBEntry','jalview.datamodel.SequenceFeature','StringBuilder','jalview.schemes.ResidueProperties','jalview.util.StringUtils','javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','jalview.xml.binding.uniprot.Uniprot']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Uniprot", null, 'jalview.ws.seqfetcher.DbSourceProxyImpl');
+(function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),p$1={},I$=[[0,'jalview.bin.Cache','com.stevesoft.pat.Regex','java.net.URL','java.util.ArrayList','jalview.datamodel.Alignment','jalview.datamodel.SequenceI','jalview.datamodel.Sequence','jalview.datamodel.DBRefEntry','java.util.Vector','jalview.datamodel.PDBEntry','jalview.datamodel.SequenceFeature','StringBuilder','jalview.schemes.ResidueProperties','jalview.util.StringUtils','javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','jalview.xml.binding.uniprot.Uniprot']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Uniprot", null, 'jalview.ws.seqfetcher.DbSourceProxyImpl');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getDomain', function () {
@@ -21,7 +19,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getAccessionValidator$', function () {
-return Clazz.new_($I$(2).c$$S,["([A-Z]+[0-9]+[A-Z0-9]+|[A-Z0-9]+_[A-Z0-9]+)"]);
+return Clazz.new_(["([A-Z]+[0-9]+[A-Z0-9]+|[A-Z0-9]+_[A-Z0-9]+)"],$I$(2,1).c$$S);
 });
 
 Clazz.newMeth(C$, 'getDbSource$', function () {
@@ -38,16 +36,16 @@ try {
 queries=queries.toUpperCase$().replaceAll$S$S("(UNIPROT\\|?|UNIPROT_|UNIREF\\d+_|UNIREF\\d+\\|?)", "");
 var al=null;
 var downloadstring=p$1.getDomain.apply(this, []) + "/uniprot/" + queries + ".xml" ;
-var url=Clazz.new_($I$(3).c$$S,[downloadstring]);
+var url=Clazz.new_($I$(3,1).c$$S,[downloadstring]);
 var urlconn=url.openConnection$();
 var istr=urlconn.getInputStream$();
 var entries=this.getUniprotEntries$java_io_InputStream(istr);
 if (entries != null ) {
-var seqs=Clazz.new_($I$(4));
+var seqs=Clazz.new_($I$(4,1));
 for (var entry, $entry = entries.iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
-seqs.add$TE(this.uniprotEntryToSequence$jalview_xml_binding_uniprot_Entry(entry));
+seqs.add$O(this.uniprotEntryToSequence$jalview_xml_binding_uniprot_Entry(entry));
 }
-al=Clazz.new_($I$(5).c$$jalview_datamodel_SequenceIA,[seqs.toArray$TTA(Clazz.array($I$(6), [seqs.size$()]))]);
+al=Clazz.new_([seqs.toArray$OA(Clazz.array($I$(6), [seqs.size$()]))],$I$(5,1).c$$jalview_datamodel_SequenceIA);
 }this.stopQuery$();
 return al;
 } catch (e) {
@@ -64,33 +62,33 @@ this.stopQuery$();
 Clazz.newMeth(C$, 'uniprotEntryToSequence$jalview_xml_binding_uniprot_Entry', function (entry) {
 var id=C$.getUniprotEntryId$jalview_xml_binding_uniprot_Entry(entry);
 var seqString=entry.getSequence$().getValue$().replaceAll$S$S("\\s*", "");
-var sequence=Clazz.new_($I$(7).c$$S$S,[id, seqString]);
+var sequence=Clazz.new_($I$(7,1).c$$S$S,[id, seqString]);
 sequence.setDescription$S(C$.getUniprotEntryDescription$jalview_xml_binding_uniprot_Entry(entry));
 var dbVersion=this.getDbVersion$();
-var dbRefs=Clazz.new_($I$(4));
+var dbRefs=Clazz.new_($I$(4,1));
 for (var accessionId, $accessionId = entry.getAccession$().iterator$(); $accessionId.hasNext$()&&((accessionId=($accessionId.next$())),1);) {
-var dbRef=Clazz.new_($I$(8).c$$S$S$S,["UNIPROT", dbVersion, accessionId]);
-dbRefs.add$TE(dbRef);
+var dbRef=Clazz.new_($I$(8,1).c$$S$S$S,["UNIPROT", dbVersion, accessionId]);
+dbRefs.add$O(dbRef);
 }
-var pdbRefs=Clazz.new_($I$(9));
+var pdbRefs=Clazz.new_($I$(9,1));
 for (var dbref, $dbref = entry.getDbReference$().iterator$(); $dbref.hasNext$()&&((dbref=($dbref.next$())),1);) {
 var type=dbref.getType$();
-var dbr=Clazz.new_($I$(8).c$$S$S$S,[type, "UNIPROT" + ":" + dbVersion , dbref.getId$()]);
-dbRefs.add$TE(dbr);
+var dbr=Clazz.new_([type, "UNIPROT" + ":" + dbVersion , dbref.getId$()],$I$(8,1).c$$S$S$S);
+dbRefs.add$O(dbr);
 if ("PDB".equals$O(type)) {
-pdbRefs.add$TE(Clazz.new_($I$(10).c$$jalview_datamodel_DBRefEntry,[dbr]));
+pdbRefs.add$O(Clazz.new_($I$(10,1).c$$jalview_datamodel_DBRefEntry,[dbr]));
 }if ("EMBL".equals$O(type)) {
 var cdsId=C$.getProperty$java_util_List$S(dbref.getProperty$(), "protein sequence ID");
 if (cdsId != null  && cdsId.trim$().length$() > 0 ) {
 var vrs=cdsId.split$S("\\.");
 var version=vrs.length > 1 ? vrs[1] : "UNIPROT" + ":" + dbVersion ;
-dbr=Clazz.new_($I$(8).c$$S$S$S,["EMBLCDS", version, vrs[0]]);
-dbRefs.add$TE(dbr);
+dbr=Clazz.new_($I$(8,1).c$$S$S$S,["EMBLCDS", version, vrs[0]]);
+dbRefs.add$O(dbr);
 }}if ("Ensembl".equals$O(type)) {
 var cdsId=C$.getProperty$java_util_List$S(dbref.getProperty$(), "protein sequence ID");
 if (cdsId != null  && cdsId.trim$().length$() > 0 ) {
-dbr=Clazz.new_($I$(8).c$$S$S$S,["ENSEMBL", "UNIPROT" + ":" + dbVersion , cdsId.trim$()]);
-dbRefs.add$TE(dbr);
+dbr=Clazz.new_(["ENSEMBL", "UNIPROT" + ":" + dbVersion , cdsId.trim$()],$I$(8,1).c$$S$S$S);
+dbRefs.add$O(dbr);
 }}}
 sequence.setPDBId$java_util_Vector(pdbRefs);
 if (entry.getFeature$() != null ) {
@@ -104,7 +102,7 @@ end=start;
 } else {
 start=location.getBegin$().getPosition$().intValue$();
 end=location.getEnd$().getPosition$().intValue$();
-}var sf=Clazz.new_($I$(11).c$$S$S$I$I$S,[uf.getType$(), C$.getDescription$jalview_xml_binding_uniprot_FeatureType(uf), start, end, "Uniprot"]);
+}var sf=Clazz.new_([uf.getType$(), C$.getDescription$jalview_xml_binding_uniprot_FeatureType(uf), start, end, "Uniprot"],$I$(11,1).c$$S$S$I$I$S);
 sf.setStatus$S(uf.getStatus$());
 sequence.addSequenceFeature$jalview_datamodel_SequenceFeature(sf);
 }
@@ -117,7 +115,7 @@ return sequence;
 Clazz.newMeth(C$, 'getDescription$jalview_xml_binding_uniprot_FeatureType', function (feature) {
 var orig=feature.getOriginal$();
 var variants=feature.getVariation$();
-var sb=Clazz.new_($I$(12));
+var sb=Clazz.new_($I$(12,1));
 var asHtml=false;
 if (orig != null  && !orig.isEmpty$()  && variants != null   && !variants.isEmpty$() ) {
 var p=0;
@@ -176,7 +174,7 @@ desc=entry.getProtein$().getRecommendedName$().getFullName$().getValue$();
 }, 1);
 
 Clazz.newMeth(C$, 'getUniprotEntryId$jalview_xml_binding_uniprot_Entry', function (entry) {
-var name=Clazz.new_($I$(12).c$$I,[32]);
+var name=Clazz.new_($I$(12,1).c$$I,[32]);
 for (var n, $n = entry.getName$().iterator$(); $n.hasNext$()&&((n=($n.next$())),1);) {
 if (name.length$() > 0) {
 name.append$S("|");
@@ -221,4 +219,4 @@ throw e;
 return entries;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

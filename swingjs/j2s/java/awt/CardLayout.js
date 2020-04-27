@@ -1,32 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.io.ObjectStreamField','java.util.Hashtable','java.util.Vector','javajs.util.Lst',['java.awt.CardLayout','.Card'],'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CardLayout", function(){
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'javajs.util.Lst',['java.awt.CardLayout','.Card'],'java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CardLayout", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
-C$.serialPersistentFields=null;
+C$.$classes$=[['Card',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.serialPersistentFields=Clazz.array($I$(1), -1, [Clazz.new_($I$(1).c$$S$Class,["tab", Clazz.getClass($I$(2))]), Clazz.new_($I$(1).c$$S$Class,["hgap", Integer.TYPE]), Clazz.new_($I$(1).c$$S$Class,["vgap", Integer.TYPE]), Clazz.new_($I$(1).c$$S$Class,["vector", Clazz.getClass($I$(3))]), Clazz.new_($I$(1).c$$S$Class,["currentCard", Integer.TYPE])]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vector=null;
-this.currentCard=0;
-this.hgap=0;
-this.vgap=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.vector=Clazz.new_($I$(4));
+this.vector=Clazz.new_($I$(1,1));
 this.currentCard=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['currentCard','hgap','vgap'],'O',['vector','javajs.util.Lst']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (hgap, vgap) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.hgap=hgap;
 this.vgap=vgap;
 }, 1);
@@ -68,7 +60,7 @@ if ((this.vector.get$I(i)).name.equals$O(name)) {
 (this.vector.get$I(i)).comp=comp;
 return;
 }}
-this.vector.add$TE(Clazz.new_($I$(5).c$$S$java_awt_Component, [this, null, name, comp]));
+this.vector.add$O(Clazz.new_($I$(2,1).c$$S$java_awt_Component,[this, null, name, comp]));
 }});
 
 Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
@@ -100,7 +92,7 @@ w=d.width;
 }if (d.height > h) {
 h=d.height;
 }}
-return Clazz.new_($I$(6).c$$I$I,[insets.left + insets.right + w + this.hgap * 2 , insets.top + insets.bottom + h + this.vgap * 2 ]);
+return Clazz.new_($I$(3,1).c$$I$I,[insets.left + insets.right + w + this.hgap * 2 , insets.top + insets.bottom + h + this.vgap * 2 ]);
 }});
 
 Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
@@ -118,11 +110,11 @@ w=d.width;
 }if (d.height > h) {
 h=d.height;
 }}
-return Clazz.new_($I$(6).c$$I$I,[insets.left + insets.right + w + this.hgap * 2 , insets.top + insets.bottom + h + this.vgap * 2 ]);
+return Clazz.new_($I$(3,1).c$$I$I,[insets.left + insets.right + w + this.hgap * 2 , insets.top + insets.bottom + h + this.vgap * 2 ]);
 }});
 
 Clazz.newMeth(C$, 'maximumLayoutSize$java_awt_Container', function (target) {
-return Clazz.new_($I$(6).c$$I$I,[2147483647, 2147483647]);
+return Clazz.new_($I$(3,1).c$$I$I,[2147483647, 2147483647]);
 });
 
 Clazz.newMeth(C$, 'getLayoutAlignmentX$java_awt_Container', function (parent) {
@@ -264,24 +256,19 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + "]" ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.CardLayout, "Card", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.CardLayout, "Card", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.comp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name'],'O',['comp','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$$S$java_awt_Component', function (cardName, cardComponent) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=cardName;
 this.comp=cardComponent;
 }, 1);
@@ -289,4 +276,4 @@ this.comp=cardComponent;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

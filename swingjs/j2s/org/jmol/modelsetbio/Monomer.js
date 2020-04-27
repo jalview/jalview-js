@@ -1,22 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'org.jmol.util.Logger','org.jmol.c.STR','javajs.util.Quat','org.jmol.viewer.JC','javajs.util.P3','org.jmol.util.Escape','javajs.util.Measure','org.jmol.modelsetbio.BioResolver']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Monomer", null, 'org.jmol.modelset.Group');
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'org.jmol.util.Logger','org.jmol.c.STR','javajs.util.Quat','org.jmol.viewer.JC','javajs.util.P3','org.jmol.util.Escape','javajs.util.Measure','org.jmol.modelsetbio.BioResolver']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Monomer", null, 'org.jmol.modelset.Group');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bioPolymer=null;
-this.offsets=null;
-this.monomerIndex=0;
-this.phi=0;
-this.psi=0;
-this.omega=0;
-this.straightness=0;
-this.mu=0;
-this.theta=0;
-this.backboneBlockVis=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.monomerIndex=-1;
@@ -26,10 +11,12 @@ this.omega=NaN;
 this.straightness=NaN;
 this.mu=NaN;
 this.theta=NaN;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['backboneBlockVis'],'F',['phi','psi','omega','straightness','mu','theta'],'I',['monomerIndex'],'O',['bioPolymer','org.jmol.modelsetbio.BioPolymer','offsets','byte[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'have$BA$B', function (offsets, n) {
@@ -76,7 +63,7 @@ var ipt=this.monomerIndex + offset;
 if (ipt >= 0 && ipt < groups.length ) {
 var m=groups[ipt];
 if (offset == 1 && !m.isConnectedPrevious$() ) return -1;
-if ("\0".equals$O(name)) return m.leadAtomIndex;
+if ("\u0000".equals$O(name)) return m.leadAtomIndex;
 var atoms=this.chain.model.ms.at;
 for (var i=m.firstAtomIndex; i <= m.lastAtomIndex; i++) if (name == null  || name.equalsIgnoreCase$S(atoms[i].getAtomName$()) ) return i;
 
@@ -103,11 +90,11 @@ if (atomIndex < 0) offset=255;
  else {
 offset=atomIndex - firstAtomIndex;
 if (offset < 0 || offset > 254 ) {
-$I$(1).warn$S("Monomer.scanForOffsets i=" + i + " atomID=" + atomID + " atomIndex:" + atomIndex + " firstAtomIndex:" + firstAtomIndex + " offset out of 0-254 range. Groups aren't organized correctly. Is this really a protein?: " + offset );
+(function(a,f){return f.apply(null,a)})(["Monomer.scanForOffsets i=" + i + " atomID=" + atomID + " atomIndex:" + atomIndex + " firstAtomIndex:" + firstAtomIndex + " offset out of 0-254 range. Groups aren't organized correctly. Is this really a protein?: " + offset ],$I$(1).warn$S);
 if (atomID < 0) {
 offset=255;
 } else {
-}}}offsets[i]=((offset|0)|0);
+}}}offsets[i]=(offset|0);
 }
 return offsets;
 }, 1);
@@ -180,24 +167,24 @@ Clazz.newMeth(C$, 'findNearestAtomIndex$I$I$org_jmol_modelset_AtomA$H$H', functi
 
 Clazz.newMeth(C$, 'getMyInfo$javajs_util_P3', function (ptTemp) {
 var info=this.getGroupInfo$I$javajs_util_P3(this.groupIndex, ptTemp);
-info.put$TK$TV("chain", this.chain.getIDStr$());
+info.put$O$O("chain", this.chain.getIDStr$());
 var seqNum=this.getResno$();
-if (seqNum > 0) info.put$TK$TV("sequenceNumber", Integer.valueOf$I(seqNum));
+if (seqNum > 0) info.put$O$O("sequenceNumber", Integer.valueOf$I(seqNum));
 var insCode=this.getInsertionCode$();
-if (insCode.$c() != 0 ) info.put$TK$TV("insertionCode", "" + insCode);
+if (insCode.$c() != 0 ) info.put$O$O("insertionCode", "" + insCode);
 var f=this.getGroupParameter$I(1111490569);
-if (!Float.isNaN$F(f)) info.put$TK$TV("phi", Float.valueOf$F(f));
+if (!Float.isNaN$F(f)) info.put$O$O("phi", Float.valueOf$F(f));
 f=this.getGroupParameter$I(1111490570);
-if (!Float.isNaN$F(f)) info.put$TK$TV("psi", Float.valueOf$F(f));
+if (!Float.isNaN$F(f)) info.put$O$O("psi", Float.valueOf$F(f));
 f=this.getGroupParameter$I(1111490565);
-if (!Float.isNaN$F(f)) info.put$TK$TV("mu", Float.valueOf$F(f));
+if (!Float.isNaN$F(f)) info.put$O$O("mu", Float.valueOf$F(f));
 f=this.getGroupParameter$I(1111490576);
-if (!Float.isNaN$F(f)) info.put$TK$TV("theta", Float.valueOf$F(f));
+if (!Float.isNaN$F(f)) info.put$O$O("theta", Float.valueOf$F(f));
 var structure=this.getStructure$();
 if (Clazz.instanceOf(structure, "org.jmol.modelsetbio.ProteinStructure")) {
-info.put$TK$TV("structureId", Integer.valueOf$I((structure).strucNo));
-info.put$TK$TV("structureType", (structure).type.getBioStructureTypeName$Z(false));
-}info.put$TK$TV("shapeVisibilityFlags", Integer.valueOf$I(this.shapeVisibilityFlags));
+info.put$O$O("structureId", Integer.valueOf$I((structure).strucNo));
+info.put$O$O("structureType", (structure).type.getBioStructureTypeName$Z(false));
+}info.put$O$O("shapeVisibilityFlags", Integer.valueOf$I(this.shapeVisibilityFlags));
 return info;
 });
 
@@ -212,7 +199,7 @@ var offset=this.offsets[offsetIndex] & 255;
 if (offset == 255) continue;
 var iThis=this.firstAtomIndex + offset;
 var atom=atoms[iThis];
-var thisID=($b$[0] = atom.atomID, $b$[0]);
+var thisID=atom.atomID;
 if (atom.altloc.$c() == 0 ) continue;
 var nScan=this.lastAtomIndex - this.firstAtomIndex;
 for (var i=1; i <= nScan; i++) {
@@ -220,9 +207,9 @@ var iNew=iThis + i;
 if (iNew > this.lastAtomIndex) iNew-=nScan + 1;
 var offsetNew=iNew - this.firstAtomIndex;
 if (offsetNew < 0 || offsetNew > 255  || iNew == iThis  || !bsSelected.get$I(iNew) ) continue;
-var atomID=($b$[0] = atoms[iNew].atomID, $b$[0]);
+var atomID=atoms[iNew].atomID;
 if (atomID != thisID || atomID == 0 && !atoms[iNew].getAtomName$().equals$O(atom.getAtomName$())  ) continue;
-this.offsets[offsetIndex]=((offsetNew|0)|0);
+this.offsets[offsetIndex]=(offsetNew|0);
 atoms[iNew].nBackbonesDisplayed=atom.nBackbonesDisplayed;
 break;
 }
@@ -236,9 +223,9 @@ bsResult.and$javajs_util_BS(bsInclude);
 });
 
 Clazz.newMeth(C$, 'checkOptional$BA$B$I$I', function (offsets, atom, firstAtomIndex, index) {
-if (C$.have$BA$B(offsets, ($b$[0] = atom, $b$[0]))) return true;
+if (C$.have$BA$B(offsets, atom)) return true;
 if (index < 0) return false;
-offsets[atom]=(((index - firstAtomIndex)|0)|0);
+offsets[atom]=((index - firstAtomIndex)|0);
 return true;
 }, 1);
 
@@ -251,11 +238,11 @@ if (this.monomerIndex < 0) return null;
 var iPrev=this.monomerIndex - mStep;
 var prev=(mStep < 1 || this.monomerIndex <= 0  ? null : this.bioPolymer.monomers[iPrev]);
 var q2=this.getQuaternion$C(qType);
-var q1=(mStep < 1 ? $I$(3).getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z($I$(4).axisX, $I$(4).axisY, $I$(4).axisZ, false) : prev == null  ? null : prev.getQuaternion$C(qType));
+var q1=(mStep < 1 ? (function(a,f){return f.apply(null,a)})([$I$(4).axisX, $I$(4).axisY, $I$(4).axisZ, false],$I$(3).getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z) : prev == null  ? null : prev.getQuaternion$C(qType));
 if (q1 == null  || q2 == null  ) return this.getHelixData$I$C$I(tokType, qType, mStep);
 var a=(mStep < 1 ? $I$(5).new3$F$F$F(0, 0, 0) : prev.getQuaternionFrameCenter$C(qType));
 var b=this.getQuaternionFrameCenter$C(qType);
-return (a == null  || b == null   ? this.getHelixData$I$C$I(tokType, qType, mStep) : $I$(6).escapeHelical$S$I$javajs_util_P3$javajs_util_P3$javajs_util_T3A((tokType == 135176 ? "helixaxis" + this.getUniqueID$() : null), tokType, a, b, $I$(7).computeHelicalAxis$javajs_util_P3$javajs_util_P3$javajs_util_Quat(a, b, q2.div$javajs_util_Quat(q1))));
+return (a == null  || b == null   ? this.getHelixData$I$C$I(tokType, qType, mStep) : (function(a,f){return f.apply(null,a)})([(tokType == 135176 ? "helixaxis" + this.getUniqueID$() : null), tokType, a, b, (function(a,f){return f.apply(null,a)})([a, b, q2.div$javajs_util_Quat(q1)],$I$(7).computeHelicalAxis$javajs_util_P3$javajs_util_P3$javajs_util_Quat)],$I$(6).escapeHelical$S$I$javajs_util_P3$javajs_util_P3$javajs_util_T3A));
 });
 
 Clazz.newMeth(C$, 'getUniqueID$', function () {
@@ -300,9 +287,9 @@ if (iPolymer == ibp && igroup == this.monomerIndex - 1 ) return true;
 } else if (iPolymer >= 0 && igroup >= 0  && (iPolymer != ibp || igroup < this.monomerIndex - 1  || igroup > this.monomerIndex + 1 ) ) {
 haveCrossLink=true;
 if (group != null  || vReturn == null  ) break;
-vReturn.addLast$TV(Integer.valueOf$I(i));
-vReturn.addLast$TV(Integer.valueOf$I(a.i));
-vReturn.addLast$TV(Integer.valueOf$I(g.leadAtomIndex));
+vReturn.addLast$O(Integer.valueOf$I(i));
+vReturn.addLast$O(Integer.valueOf$I(a.i));
+vReturn.addLast$O(Integer.valueOf$I(g.leadAtomIndex));
 }}
 return haveCrossLink;
 });
@@ -367,6 +354,5 @@ return "?";
 Clazz.newMeth(C$, 'setGroupID$S', function (group3) {
 this.groupID=$I$(8).getGroupIdFor$S(group3);
 });
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

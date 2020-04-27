@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'javax.swing.JButton']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ActionEditor", null, 'javax.swing.AbstractCellEditor', 'javax.swing.table.TableCellEditor');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'javax.swing.JButton']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ActionEditor", null, 'javax.swing.AbstractCellEditor', 'javax.swing.table.TableCellEditor');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._btn=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._btn=Clazz.new_($I$(1));
-}, 1);
+this._btn=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['_btn','javax.swing.JButton']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_event_ActionListener', function (a) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._btn.addActionListener$java_awt_event_ActionListener(a);
 }, 1);
 
@@ -42,4 +38,4 @@ return C$.superclazz.prototype.stopCellEditing$.apply(this, []);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

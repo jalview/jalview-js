@@ -1,8 +1,33 @@
-(function(){var P$=Clazz.newPackage("sun.font"),I$=[[0,'java.awt.font.TextAttribute']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EAttribute", null, 'Enum');
-C$.atts=null;
+(function(){var P$=Clazz.newPackage("sun.font"),I$=[[0,'java.awt.font.TextAttribute']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*e*/var C$=Clazz.newClass(P$, "EAttribute", null, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['I',['mask'],'O',['att','java.awt.font.TextAttribute']]
+,['O',['atts','sun.font.EAttribute[]']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_font_TextAttribute', function (ta) {
+;C$.$init$.apply(this);
+this.mask=1 << this.ordinal$();
+this.att=ta;
+}, 1);
+
+Clazz.newMeth(C$, 'forAttribute$java_text_AttributedCharacterIterator_Attribute', function (ta) {
+for (var ea, $ea = 0, $$ea = C$.atts; $ea<$$ea.length&&((ea=($$ea[$ea])),1);$ea++) {
+if (ea.att === ta ) {
+return ea;
+}}
+return null;
+}, 1);
+
+Clazz.newMeth(C$, 'toString', function () {
+return this.name$().substring$I(1).toLowerCase$();
+});
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$$java_awt_font_TextAttribute, "EFAMILY", 0, [$I$(1).FAMILY]);
 Clazz.newEnumConst($vals, C$.c$$java_awt_font_TextAttribute, "EWEIGHT", 1, [$I$(1).WEIGHT]);
@@ -29,38 +54,11 @@ Clazz.newEnumConst($vals, C$.c$$java_awt_font_TextAttribute, "ELIGATURES", 21, [
 Clazz.newEnumConst($vals, C$.c$$java_awt_font_TextAttribute, "ETRACKING", 22, [$I$(1).TRACKING]);
 Clazz.newEnumConst($vals, C$.c$$java_awt_font_TextAttribute, "EBASELINE_TRANSFORM", 23, [null]);
 C$.atts=Clazz.getClass(C$).getEnumConstants$();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mask=0;
-this.att=null;
-}, 1);
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$java_awt_font_TextAttribute', function (ta) {
-C$.$init$.apply(this);
-this.mask=1 << this.ordinal$();
-this.att=ta;
-}, 1);
-
-Clazz.newMeth(C$, 'forAttribute$java_text_AttributedCharacterIterator_Attribute', function (ta) {
-for (var ea, $ea = 0, $$ea = C$.atts; $ea<$$ea.length&&((ea=($$ea[$ea])),1);$ea++) {
-if (ea.att === ta ) {
-return ea;
-}}
-return null;
-}, 1);
-
-Clazz.newMeth(C$, 'toString', function () {
-return this.name$().substring$I(1).toLowerCase$();
-});
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,25 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Pdbentry", function(){
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Pdbentry", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Property',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.property=null;
-this.id=null;
-this.type=null;
-this.file=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['id','type','file'],'O',['property','java.util.List']]]
 
 Clazz.newMeth(C$, 'getProperty$', function () {
 if (this.property == null ) {
-this.property=Clazz.new_($I$(1));
+this.property=Clazz.new_($I$(1,1));
 }return this.property;
 });
 
@@ -46,28 +40,24 @@ return this.file;
 Clazz.newMeth(C$, 'setFile$S', function (value) {
 this.file=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.Pdbentry'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="pdbentry" namespace="www.jalview.org" propOrder={"property"  } )','@XmlSeeAlso("jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.class" )']],
-  [['id','String'],['@XmlAttribute(name="id" required="true" )']],
-  [['type','.'],['@XmlAttribute(name="type" )']],
-  [['file','.'],['@XmlAttribute(name="file" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.Pdbentry',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType','javax.xml.bind.annotation.XmlSeeAlso']],['XmlAccessType.FIELD','name="pdbentry" namespace="www.jalview.org" propOrder={"property"  } ','"jalview.xml.binding.jalview.JalviewModel.JSeq.Pdbids.class" ']],
+  [['id','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="id" required="true" ']],
+  [['type','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" ']],
+  [['file','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="file" ']],
   [['null','jalview.xml.binding.jalview.Pdbentry.Property'],['!XmlInner']],
-  [['property','java.util.List<jalview.xml.binding.jalview.Pdbentry.Property>'],['@XmlElement']]];
+  [['property','java.util.List<jalview.xml.binding.jalview.Pdbentry.Property>'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.Pdbentry, "Property", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Pdbentry, "Property", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.value=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name','value']]]
 
 Clazz.newMeth(C$, 'getName$', function () {
 return this.name;
@@ -84,13 +74,14 @@ return this.value;
 Clazz.newMeth(C$, 'setValue$S', function (value) {
 this.value=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.Pdbentry.Property'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['name','String'],['@XmlAttribute(name="name" required="true" )']],
-  [['value','.'],['@XmlAttribute(name="value" required="true" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.Pdbentry.Property',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['name','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" required="true" ']],
+  [['value','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="value" required="true" ']]]}
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

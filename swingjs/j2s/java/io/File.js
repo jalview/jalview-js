@@ -1,39 +1,30 @@
-(function(){var P$=java.io,p$1={},I$=[[0,'java.io.FileSystem','java.net.URI','Error','java.util.ArrayList','java.util.Random','swingjs.JSTempFile','java.nio.file.FileSystems']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "File", null, null, 'Comparable');
-C$.fs=null;
-C$.separatorChar='\0';
-C$.separator=null;
+(function(){var P$=java.io,p$1={},I$=[[0,'java.io.FileSystem','java.net.URI','Error','java.util.ArrayList','java.util.Random','swingjs.JSTempFile','java.nio.file.FileSystems']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "File", null, null, 'Comparable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.fs=$I$(1).getFileSystem$();
-C$.separatorChar=C$.fs.getSeparator$();
-C$.separator="" + C$.separatorChar;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._bytes=null;
-this.path=null;
-this.prefixLength=0;
-this.lastModified=0;
-this.filePath=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['prefixLength'],'J',['lastModified'],'S',['path'],'O',['秘bytes','byte[]','filePath','java.nio.file.Path']]
+,['C',['separatorChar'],'S',['separator'],'O',['fs','java.io.FileSystem']]]
 
 Clazz.newMeth(C$, 'getPrefixLength$', function () {
 return this.prefixLength;
 });
 
+Clazz.newMeth(C$, 'c$$S', function (pathname) {
+C$.c$$S$S.apply(this, ["", pathname]);
+}, 1);
+
 Clazz.newMeth(C$, 'c$$S$I', function (pathname, prefixLength) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.path=pathname;
 this.prefixLength=prefixLength;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_io_File', function (child, parent) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 Clazz.assert(C$, this, function(){return parent.path != null });
 Clazz.assert(C$, this, function(){return (!parent.path.equals$O(""))});
 this.path=p$1.resolve$S$S.apply(this, [parent.path, child]);
@@ -41,20 +32,17 @@ this.prefixLength=parent.prefixLength;
 }, 1);
 
 Clazz.newMeth(C$, 'resolve$S$S', function (path, child) {
-if (child.length$() > 0 && !path.endsWith$S("/") ) path += "/";
+if (path === "."  && child.startsWith$S("./") ) return child;
+if (child.length$() > 0 && !child.startsWith$S("/")  && !path.endsWith$S("/") ) path += "/";
 return path + child;
 }, p$1);
 
-Clazz.newMeth(C$, 'c$$S', function (pathname) {
-C$.c$$S$S.apply(this, [pathname, ""]);
-}, 1);
-
 Clazz.newMeth(C$, 'c$$S$S', function (parent, child) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (child == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }if (parent != null ) {
-if (parent.equals$O("")) {
+if (parent.equals$O("") && !child.startsWith$S("/") ) {
 this.path=p$1.resolve$S$S.apply(this, [".", child]);
 } else {
 this.path=p$1.resolve$S$S.apply(this, [parent, child]);
@@ -102,11 +90,12 @@ return false;
 });
 
 Clazz.newMeth(C$, 'getAbsolutePath$', function () {
-return this.path;
+return C$.fs.resolve$java_io_File(this);
 });
 
 Clazz.newMeth(C$, 'getAbsoluteFile$', function () {
-return this;
+var absPath=this.getAbsolutePath$();
+return Clazz.new_(C$.c$$S$I,[absPath, C$.fs.prefixLength$S(absPath)]);
 });
 
 Clazz.newMeth(C$, 'getCanonicalPath$', function () {
@@ -127,13 +116,14 @@ return p;
 
 Clazz.newMeth(C$, 'toURI$', function () {
 try {
-var f=this.getAbsoluteFile$();
-var sp=C$.slashify$S$Z(f.getPath$(), f.isDirectory$());
+var sp=C$.slashify$S$Z(this.getAbsoluteFile$().getPath$(), false);
 if (sp.startsWith$S("//")) sp="//" + sp;
-return Clazz.new_($I$(2).c$$S$S$S$S,["file", null, sp, null]);
+var uri=Clazz.new_($I$(2,1).c$$S$S$S$S,["file", null, sp, null]);
+uri.秘bytes=this.秘bytes;
+return uri;
 } catch (x) {
 if (Clazz.exceptionOf(x,"java.net.URISyntaxException")){
-throw Clazz.new_($I$(3).c$$Throwable,[x]);
+throw Clazz.new_($I$(3,1).c$$Throwable,[x]);
 } else {
 throw x;
 }
@@ -149,11 +139,11 @@ return true;
 });
 
 Clazz.newMeth(C$, 'exists$', function () {
-return true;
+return C$.fs._exists$java_io_File(this);
 });
 
 Clazz.newMeth(C$, 'isDirectory$', function () {
-return true;
+return C$.fs._isDir$java_io_File(this);
 });
 
 Clazz.newMeth(C$, 'isFile$', function () {
@@ -161,7 +151,7 @@ return true;
 });
 
 Clazz.newMeth(C$, 'length$', function () {
-return (this._bytes ? this._bytes.length :0);
+return (this.秘bytes ? this.秘bytes.length :0);
 });
 
 Clazz.newMeth(C$, 'createNewFile$', function () {
@@ -169,26 +159,27 @@ return true;
 });
 
 Clazz.newMeth(C$, 'delete$', function () {
-return true;
+return C$.fs.delete$java_io_File(this);
 });
 
 Clazz.newMeth(C$, 'deleteOnExit$', function () {
 });
 
 Clazz.newMeth(C$, 'list$', function () {
-throw Clazz.new_(Clazz.load('java.security.AccessControlException').c$$S,["access denied"]);
+if (C$.fs == null ) throw Clazz.new_(Clazz.load('java.security.AccessControlException').c$$S,["access denied"]);
+return C$.fs.list$java_io_File(this);
 });
 
 Clazz.newMeth(C$, 'list$java_io_FilenameFilter', function (filter) {
 var names=this.list$();
 if ((names == null ) || (filter == null ) ) {
 return names;
-}var v=Clazz.new_($I$(4));
+}var v=Clazz.new_($I$(4,1));
 for (var i=0; i < names.length; i++) {
-if (filter.accept$(this, names[i])) {
-v.add$TE(names[i]);
+if (filter.accept$java_io_File$S(this, names[i])) {
+v.add$O(names[i]);
 }}
-return (v.toArray$TTA(Clazz.array(String, [v.size$()])));
+return (v.toArray$OA(Clazz.array(String, [v.size$()])));
 });
 
 Clazz.newMeth(C$, 'listFiles$', function () {
@@ -253,12 +244,12 @@ return false;
 });
 
 Clazz.newMeth(C$, 'generateFile$S$S$java_io_File', function (prefix, suffix, dir) {
-var n=Clazz.new_($I$(5)).nextInt$();
+var n=Clazz.new_($I$(5,1)).nextInt$();
 if (n == -9223372036854775808) {
 n=0;
 } else {
 n=Math.abs(n);
-}return Clazz.new_($I$(6).c$$java_io_File$S,[dir, prefix + Long.toString$J(n) + suffix ]);
+}return Clazz.new_([dir, prefix + Long.toString$J(n) + suffix ],$I$(6,1).c$$java_io_File$S);
 }, 1);
 
 Clazz.newMeth(C$, 'createTempFile0$S$S$java_io_File$Z', function (prefix, suffix, directory, restrictive) {
@@ -279,7 +270,7 @@ Clazz.newMeth(C$, 'createTempFile$S$S', function (prefix, suffix) {
 return C$.createTempFile0$S$S$java_io_File$Z(prefix, suffix, null, false);
 }, 1);
 
-Clazz.newMeth(C$, ['compareTo$java_io_File','compareTo$','compareTo$TT'], function (pathname) {
+Clazz.newMeth(C$, ['compareTo$java_io_File','compareTo$O'], function (pathname) {
 return this.getPath$().compareTo$S(pathname.getPath$());
 });
 
@@ -312,12 +303,22 @@ if (result == null ) {
 result=this.filePath;
 if (result == null ) {
 result=$I$(7).getDefault$().getPath$S$SA(this.path, []);
-(result)._bytes=this._bytes;
+(result).set$BA$java_io_File(this.秘bytes, this);
 this.filePath=result;
 }}}return result;
 });
+
+Clazz.newMeth(C$, 'lastModified$', function () {
+return this.lastModified;
+});
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.fs=$I$(1).getFileSystem$();
+C$.separatorChar=C$.fs.getSeparator$();
+C$.separator="" + C$.separatorChar;
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

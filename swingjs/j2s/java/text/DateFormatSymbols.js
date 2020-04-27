@@ -1,24 +1,7 @@
-(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable','java.util.Locale','InternalError','java.util.Arrays','sun.util.resources.LocaleData']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DateFormatSymbols", null, null, 'Cloneable');
-C$.cachedLocaleData=null;
+(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable','java.util.Locale','InternalError','java.util.Arrays','sun.util.resources.LocaleData']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DateFormatSymbols", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.cachedLocaleData=Clazz.new_($I$(1).c$$I,[3]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.eras=null;
-this.months=null;
-this.shortMonths=null;
-this.weekdays=null;
-this.shortWeekdays=null;
-this.ampms=null;
-this.zoneStrings=null;
-this.isZoneStringsSet=false;
-this.localPatternChars=null;
-this.locale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.eras=null;
@@ -31,15 +14,18 @@ this.zoneStrings=null;
 this.isZoneStringsSet=false;
 this.localPatternChars=null;
 this.locale=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isZoneStringsSet'],'S',['localPatternChars'],'O',['eras','String[]','+months','+shortMonths','+weekdays','+shortWeekdays','+ampms','zoneStrings','String[][]','locale','java.util.Locale']]
+,['O',['cachedLocaleData','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.initializeData$java_util_Locale.apply(this, [$I$(2).getDefault$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Locale', function (locale) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.initializeData$java_util_Locale.apply(this, [locale]);
 }, 1);
 
@@ -125,7 +111,7 @@ p$1.copyMembers$java_text_DateFormatSymbols$java_text_DateFormatSymbols.apply(th
 return other;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(3,1));
 } else {
 throw e;
 }
@@ -148,7 +134,7 @@ Clazz.newMeth(C$, 'cacheLookup$java_util_Locale', function (desiredLocale) {
 var rb=C$.cachedLocaleData.get$O(desiredLocale);
 if (rb == null ) {
 rb=$I$(5).getDateFormatData$java_util_Locale(desiredLocale);
-C$.cachedLocaleData.put$TK$TV(desiredLocale, rb);
+C$.cachedLocaleData.put$O$O(desiredLocale, rb);
 }return rb;
 }, 1);
 
@@ -207,5 +193,9 @@ for (var i=0; i < count; ++i) if (!current[i].equals$O(other[i])) return false;
 
 return true;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.cachedLocaleData=Clazz.new_($I$(1,1).c$$I,[3]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

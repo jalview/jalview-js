@@ -1,24 +1,20 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'com.stevesoft.pat.Regex',['jalview.ext.ensembl.EnsemblSequenceFetcher','.EnsemblFeatureType'],['jalview.ext.ensembl.EnsemblSeqProxy','.EnsemblSeqType'],'jalview.ext.ensembl.EnsemblLookup','jalview.util.MapList','java.util.ArrayList','jalview.ext.ensembl.EnsemblSymbol','java.util.Arrays','jalview.datamodel.features.SequenceFeatures','jalview.datamodel.Sequence','java.net.URLDecoder','jalview.ext.ensembl.EnsemblCdna','jalview.util.Platform','jalview.io.gff.SequenceOntologyFactory','jalview.schemes.FeatureColour','java.awt.Color','jalview.schemes.FeatureSettingsAdapter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EnsemblGene", null, 'jalview.ext.ensembl.EnsemblSeqProxy');
-C$.$ACCESSION_REGEX=null;
-C$.FEATURES_TO_FETCH=null;
+(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'com.stevesoft.pat.Regex',['jalview.ext.ensembl.EnsemblSequenceFetcher','.EnsemblFeatureType'],['jalview.ext.ensembl.EnsemblSeqProxy','.EnsemblSeqType'],'jalview.ext.ensembl.EnsemblLookup','jalview.util.MapList','java.util.ArrayList','jalview.ext.ensembl.EnsemblSymbol','java.util.Arrays','jalview.datamodel.features.SequenceFeatures','jalview.datamodel.Sequence','java.net.URLDecoder','jalview.ext.ensembl.EnsemblCdna','jalview.util.Platform','jalview.io.gff.SequenceOntologyFactory','jalview.ext.ensembl.EnsemblSeqProxy','jalview.schemes.FeatureColour','java.awt.Color','jalview.schemes.FeatureSettingsAdapter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EnsemblGene", null, 'jalview.ext.ensembl.EnsemblSeqProxy');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$ACCESSION_REGEX=Clazz.new_($I$(1).c$$S,[".*"]);
-C$.FEATURES_TO_FETCH=Clazz.array($I$(2), -1, [$I$(2).gene, $I$(2).transcript, $I$(2).exon, $I$(2).cds, $I$(2).variation]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$ACCESSION_REGEX','com.stevesoft.pat.Regex','FEATURES_TO_FETCH','jalview.ext.ensembl.EnsemblSequenceFetcher.EnsemblFeatureType[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (d) {
-C$.superclazz.c$$S.apply(this, [d]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[d]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getDbName$', function () {
@@ -57,9 +53,9 @@ return al;
 });
 
 Clazz.newMeth(C$, 'findGeneLoci$jalview_datamodel_SequenceI$S', function (seq, geneId) {
-var geneLoci=Clazz.new_($I$(4).c$$S,[this.getDomain$()]).getGeneLoci$S(geneId);
+var geneLoci=Clazz.new_([this.getDomain$()],$I$(4,1).c$$S).getGeneLoci$S(geneId);
 if (geneLoci != null ) {
-seq.setGeneLoci$S$S$S$jalview_util_MapList(geneLoci.getSpeciesId$(), geneLoci.getAssemblyId$(), geneLoci.getChromosomeId$(), geneLoci.getMap$());
+seq.setGeneLoci$S$S$S$jalview_util_MapList(geneLoci.getSpeciesId$(), geneLoci.getAssemblyId$(), geneLoci.getChromosomeId$(), geneLoci.getMapping$());
 } else {
 this.parseChromosomeLocations$jalview_datamodel_SequenceI(seq);
 }});
@@ -79,7 +75,7 @@ var forwardStrand="1".equals$O(tokens[5]);
 var species="";
 var from=Clazz.array(Integer.TYPE, -1, [seq.getStart$(), seq.getEnd$()]);
 var to=Clazz.array(Integer.TYPE, -1, [forwardStrand ? chStart : chEnd, forwardStrand ? chEnd : chStart]);
-var map=Clazz.new_($I$(5).c$$IA$IA$I$I,[from, to, 1, 1]);
+var map=Clazz.new_($I$(5,1).c$$IA$IA$I$I,[from, to, 1, 1]);
 seq.setGeneLoci$S$S$S$jalview_util_MapList(species, ref, chrom, map);
 return true;
 } catch (e) {
@@ -93,17 +89,17 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'getGeneIds$S', function (accessions) {
-var geneIds=Clazz.new_($I$(6));
+var geneIds=Clazz.new_($I$(6,1));
 for (var acc, $acc = 0, $$acc = accessions.split$S(this.getAccessionSeparator$()); $acc<$$acc.length&&((acc=($$acc[$acc])),1);$acc++) {
-var geneId=Clazz.new_($I$(4).c$$S,[this.getDomain$()]).getGeneId$S(acc);
+var geneId=Clazz.new_([this.getDomain$()],$I$(4,1).c$$S).getGeneId$S(acc);
 if (geneId != null ) {
 if (!geneIds.contains$O(geneId)) {
-geneIds.add$TE(geneId);
+geneIds.add$O(geneId);
 }} else {
-var ids=Clazz.new_($I$(7).c$$S$S$S,[this.getDomain$(), this.getDbSource$(), this.getDbVersion$()]).getGeneIds$S(acc);
+var ids=Clazz.new_([this.getDomain$(), this.getDbSource$(), this.getDbVersion$()],$I$(7,1).c$$S$S$S).getGeneIds$S(acc);
 for (var id, $id = ids.iterator$(); $id.hasNext$()&&((id=($id.next$())),1);) {
 if (!geneIds.contains$O(id)) {
-geneIds.add$TE(id);
+geneIds.add$O(id);
 }}
 }}
 return geneIds;
@@ -131,7 +127,7 @@ var accId=this.getTranscriptId$jalview_datamodel_SequenceFeature(transcriptFeatu
 if (accId == null ) {
 return null;
 }var seqChars=Clazz.array(Character.TYPE, [gene.getLength$()]);
-$I$(8).fill$CA$C(seqChars, al.getGapCharacter$());
+$I$(8,"fill$CA$C",[seqChars, al.getGapCharacter$()]);
 var parentId=accId;
 var splices=this.findFeatures$jalview_datamodel_SequenceI$S$S(gene, "exon", parentId);
 if (splices.isEmpty$()) {
@@ -140,16 +136,16 @@ splices=this.findFeatures$jalview_datamodel_SequenceI$S$S(gene, "CDS", parentId)
 var transcriptLength=0;
 var geneChars=gene.getSequence$();
 var offset=gene.getStart$();
-var mappedFrom=Clazz.new_($I$(6));
+var mappedFrom=Clazz.new_($I$(6,1));
 for (var sf, $sf = splices.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
 var start=sf.getBegin$() - offset;
 var end=sf.getEnd$() - offset;
 var spliceLength=end - start + 1;
 System.arraycopy$O$I$O$I$I(geneChars, start, seqChars, start, spliceLength);
 transcriptLength+=spliceLength;
-mappedFrom.add$TE(Clazz.array(Integer.TYPE, -1, [sf.getBegin$(), sf.getEnd$()]));
+mappedFrom.add$O(Clazz.array(Integer.TYPE, -1, [sf.getBegin$(), sf.getEnd$()]));
 }
-var transcript=Clazz.new_($I$(10).c$$S$CA$I$I,[accId, seqChars, 1, transcriptLength]);
+var transcript=Clazz.new_($I$(10,1).c$$S$CA$I$I,[accId, seqChars, 1, transcriptLength]);
 var description=transcriptFeature.getDescription$();
 if (description == null ) {
 description=transcriptFeature.getValue$S("description");
@@ -165,10 +161,10 @@ throw e;
 }
 }transcript.createDatasetSequence$();
 al.addSequence$jalview_datamodel_SequenceI(transcript);
-var mapTo=Clazz.new_($I$(6));
-mapTo.add$TE(Clazz.array(Integer.TYPE, -1, [1, transcriptLength]));
-var mapping=Clazz.new_($I$(5).c$$java_util_List$java_util_List$I$I,[mappedFrom, mapTo, 1, 1]);
-var cdna=Clazz.new_($I$(12).c$$S,[this.getDomain$()]);
+var mapTo=Clazz.new_($I$(6,1));
+mapTo.add$O(Clazz.array(Integer.TYPE, -1, [1, transcriptLength]));
+var mapping=Clazz.new_($I$(5,1).c$$java_util_List$java_util_List$I$I,[mappedFrom, mapTo, 1, 1]);
+var cdna=Clazz.new_([this.getDomain$()],$I$(12,1).c$$S);
 cdna.transferFeatures$java_util_List$jalview_datamodel_SequenceI$jalview_util_MapList$S(gene.getFeatures$().getPositionalFeatures$SA([]), transcript.getDatasetSequence$(), mapping, parentId);
 this.mapTranscriptToChromosome$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList(transcript, gene, mapping);
 cdna.getCrossReferences$jalview_datamodel_SequenceI(transcript);
@@ -180,14 +176,14 @@ Clazz.newMeth(C$, 'mapTranscriptToChromosome$jalview_datamodel_SequenceI$jalview
 var loci=gene.getGeneLoci$();
 if (loci == null ) {
 return;
-}var geneMapping=loci.getMap$();
+}var geneMapping=loci.getMapping$();
 var exons=mapping.getFromRanges$();
-var transcriptLoci=Clazz.new_($I$(6));
+var transcriptLoci=Clazz.new_($I$(6,1));
 for (var exon, $exon = exons.iterator$(); $exon.hasNext$()&&((exon=($exon.next$())),1);) {
-transcriptLoci.add$TE(geneMapping.locateInTo$I$I(exon[0], exon[1]));
+transcriptLoci.add$O(geneMapping.locateInTo$I$I(exon[0], exon[1]));
 }
-var transcriptRange=$I$(8).asList$TTA([Clazz.array(Integer.TYPE, -1, [transcript.getStart$(), transcript.getEnd$()])]);
-var mapList=Clazz.new_($I$(5).c$$java_util_List$java_util_List$I$I,[transcriptRange, transcriptLoci, 1, 1]);
+var transcriptRange=$I$(8,"asList$OA",[[Clazz.array(Integer.TYPE, -1, [transcript.getStart$(), transcript.getEnd$()])]]);
+var mapList=Clazz.new_($I$(5,1).c$$java_util_List$java_util_List$I$I,[transcriptRange, transcriptLoci, 1, 1]);
 transcript.setGeneLoci$S$S$S$jalview_util_MapList(loci.getSpeciesId$(), loci.getAssemblyId$(), loci.getChromosomeId$(), mapList);
 });
 
@@ -196,14 +192,14 @@ return feature.getValue$S("id");
 });
 
 Clazz.newMeth(C$, 'getTranscriptFeatures$S$jalview_datamodel_SequenceI', function (accId, geneSequence) {
-var transcriptFeatures=Clazz.new_($I$(6));
+var transcriptFeatures=Clazz.new_($I$(6,1));
 var parentIdentifier=accId;
 var sfs=geneSequence.getFeatures$().getFeaturesByOntology$SA(["transcript"]);
 sfs.addAll$java_util_Collection(geneSequence.getFeatures$().getPositionalFeatures$SA(["NMD_transcript_variant"]));
 for (var sf, $sf = sfs.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
 var parent=sf.getValue$S("Parent");
 if (parentIdentifier.equalsIgnoreCase$S(parent)) {
-transcriptFeatures.add$TE(sf);
+transcriptFeatures.add$O(sf);
 }}
 return transcriptFeatures;
 });
@@ -217,12 +213,12 @@ return $I$(13).isJS$() ? "ENSG00000123569" : "ENSG00000157764";
 });
 
 Clazz.newMeth(C$, 'getIdentifyingFeatures$jalview_datamodel_SequenceI$S', function (seq, accId) {
-var result=Clazz.new_($I$(6));
+var result=Clazz.new_($I$(6,1));
 var sfs=seq.getFeatures$().getFeaturesByOntology$SA(["gene"]);
 for (var sf, $sf = sfs.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
 var id=sf.getValue$S("id");
 if (accId.equalsIgnoreCase$S(id)) {
-result.add$TE(sf);
+result.add$O(sf);
 }}
 return result;
 });
@@ -232,7 +228,7 @@ var so=$I$(14).getInstance$();
 var type=sf.getType$();
 if (so.isA$S$S(type, "gene")) {
 return false;
-}if (P$.EnsemblSeqProxy.isTranscript$S(type)) {
+}if ($I$(15).isTranscript$S(type)) {
 var parent=sf.getValue$S("Parent");
 if (!accessionId.equalsIgnoreCase$S(parent)) {
 return false;
@@ -248,19 +244,15 @@ return C$.$ACCESSION_REGEX;
 
 Clazz.newMeth(C$, 'getFeatureColourScheme$', function () {
 return ((P$.EnsemblGene$1||
-(function(){var C$=Clazz.newClass(P$, "EnsemblGene$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('jalview.schemes.FeatureSettingsAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EnsemblGene$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('jalview.schemes.FeatureSettingsAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.so=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.so=$I$(14).getInstance$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['so','jalview.io.gff.SequenceOntologyI']]]
 
 Clazz.newMeth(C$, 'isFeatureDisplayed$S', function (type) {
 return (this.so.isA$S$S(type, "exon") || this.so.isA$S$S(type, "sequence_variant") );
@@ -269,38 +261,36 @@ return (this.so.isA$S$S(type, "exon") || this.so.isA$S$S(type, "sequence_variant
 Clazz.newMeth(C$, 'getFeatureColour$S', function (type) {
 if (this.so.isA$S$S(type, "exon")) {
 return ((P$.EnsemblGene$1$1||
-(function(){var C$=Clazz.newClass(P$, "EnsemblGene$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('jalview.schemes.FeatureColour'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EnsemblGene$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('jalview.schemes.FeatureColour'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isColourByLabel$', function () {
 return true;
 });
 })()
-), Clazz.new_($I$(15), [this, null],P$.EnsemblGene$1$1));
+), Clazz.new_($I$(16,1),[this, null],P$.EnsemblGene$1$1));
 }if (this.so.isA$S$S(type, "sequence_variant")) {
 return ((P$.EnsemblGene$1$2||
-(function(){var C$=Clazz.newClass(P$, "EnsemblGene$1$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('jalview.schemes.FeatureColour'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EnsemblGene$1$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('jalview.schemes.FeatureColour'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getColour$', function () {
-return $I$(16).RED;
+return $I$(17).RED;
 });
 })()
-), Clazz.new_($I$(15), [this, null],P$.EnsemblGene$1$2));
+), Clazz.new_($I$(16,1),[this, null],P$.EnsemblGene$1$2));
 }return null;
 });
 
-Clazz.newMeth(C$, ['compare$S$S','compare$','compare$TT$TT'], function (feature1, feature2) {
+Clazz.newMeth(C$, ['compare$S$S','compare$O$O'], function (feature1, feature2) {
 if (this.so.isA$S$S(feature1, "sequence_variant")) {
 return +1;
 }if (this.so.isA$S$S(feature2, "sequence_variant")) {
@@ -312,7 +302,12 @@ return -1;
 }return 0;
 });
 })()
-), Clazz.new_($I$(17), [this, null],P$.EnsemblGene$1));
+), Clazz.new_($I$(18,1),[this, null],P$.EnsemblGene$1));
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$ACCESSION_REGEX=Clazz.new_($I$(1,1).c$$S,[".*"]);
+C$.FEATURES_TO_FETCH=Clazz.array($I$(2), -1, [$I$(2).gene, $I$(2).transcript, $I$(2).exon, $I$(2).cds, $I$(2).variation]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

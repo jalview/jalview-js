@@ -1,15 +1,13 @@
 (function(){var P$=Clazz.newPackage("sun.nio.cs"),I$=[];
-var C$=Clazz.newClass(P$, "Unicode", null, 'java.nio.charset.Charset', 'sun.nio.cs.HistoricallyNamedCharset');
+/*c*/var C$=Clazz.newClass(P$, "Unicode", null, 'java.nio.charset.Charset', 'sun.nio.cs.HistoricallyNamedCharset');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S$SA', function (name, aliases) {
-C$.superclazz.c$$S$SA.apply(this, [name, aliases]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$SA.apply(this,[name, aliases]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'contains$java_nio_charset_Charset', function (cs) {
@@ -18,4 +16,4 @@ return ((Clazz.instanceOf(cs, "sun.nio.cs.US_ASCII")) || (Clazz.instanceOf(cs, "
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

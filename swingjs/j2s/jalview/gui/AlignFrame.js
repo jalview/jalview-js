@@ -1,34 +1,18 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.ArrayList','jalview.gui.AlignViewport','jalview.gui.AlignmentPanel','jalview.bin.Jalview','jalview.gui.ProgressBar','jalview.controller.AlignViewController','jalview.bin.Cache','jalview.gui.Desktop','java.awt.dnd.DropTarget','jalview.util.Platform','jalview.util.MessageManager','jalview.gui.ViewSelectionMenu','java.util.Arrays','java.awt.event.FocusAdapter','jalview.gui.Help','java.awt.event.KeyAdapter','jalview.gui.PaintRefresher','javax.swing.SwingUtilities','javax.swing.event.InternalFrameAdapter','Thread','jalview.gui.ColourMenuHelper','jalview.gui.SequenceFetcher','jalview.io.FileFormat','jalview.io.FileLoader','jalview.io.DataSourceType','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.gui.JvOptionPane','java.io.File','jalview.project.Jalview2XML','jalview.datamodel.AlignExportSettingsAdapter','jalview.io.FormatAdapter','jalview.io.BackupFiles','java.io.PrintWriter','java.io.FileWriter','jalview.gui.AlignExportOptions','jalview.io.FileFormats','jalview.gui.CutAndPasteTransfer','jalview.gui.OOMWarning','jalview.io.HtmlSvgOutput','jalview.io.BioJsHTMLOutput',['jalview.util.ImageMaker','.TYPE'],'java.awt.print.PrinterJob','jalview.gui.PrintThread','jalview.gui.AnnotationExporter','jalview.datamodel.AlignmentI','jalview.datamodel.SequenceI','jalview.commands.SlideSequencesCommand','java.awt.datatransfer.StringSelection','java.awt.Toolkit','jalview.datamodel.HiddenColumns','java.awt.datatransfer.DataFlavor','jalview.io.IdentifyFile','jalview.datamodel.Sequence','jalview.datamodel.Alignment','java.util.Vector','jalview.datamodel.AlignmentAnnotation','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],'jalview.analysis.AlignmentUtils','jalview.datamodel.SequenceGroup','jalview.commands.TrimRegionCommand','jalview.commands.RemoveGapColCommand','jalview.commands.RemoveGapsCommand','jalview.gui.Finder','jalview.gui.FontChooser','jalview.gui.FeatureSettings','jalview.io.AlignmentProperties','javax.swing.JLabel','java.awt.Color','javax.swing.JPanel','java.awt.BorderLayout','javax.swing.JInternalFrame','javax.swing.JScrollPane','jalview.gui.OverviewPanel','javax.swing.JLayeredPane','jalview.gui.TextColourChooser','jalview.gui.AnnotationColourChooser','jalview.gui.AnnotationColumnChooser','jalview.gui.UserDefinedColours','jalview.schemes.ColourSchemes','jalview.gui.SliderPanel','jalview.analysis.AlignmentSorter','jalview.commands.OrderCommand','jalview.gui.RedundancyPanel','jalview.gui.PairwiseAlignPanel','jalview.gui.TreePanel','javax.swing.JMenuItem','java.util.Hashtable','jalview.datamodel.SeqCigar','jalview.io.NewickFile','jalview.io.FileParse','javax.swing.JMenu','jalview.ws.jws1.Discoverer','jalview.ws.jws2.Jws2Discoverer','jalview.ws.rest.RestClient','jalview.gui.JvSwingUtils','jalview.analysis.CrossRef','jalview.gui.CrossRefAction','jalview.analysis.Dna','jalview.analysis.SequenceIdMatcher','jalview.io.AppletFormatAdapter','java.net.URL','jalview.gui.AssociatePdbFileWithSeq','jalview.io.AnnotationFile','jalview.io.TCoffeeScoreFile','jalview.schemes.TCoffeeColourScheme','jalview.io.ScoreMatrixFile','jalview.io.JPredFile','jalview.io.JnetAnnotationMaker','jalview.analysis.ParseProperties','javax.swing.JCheckBoxMenuItem','Boolean','jalview.ws.DBRefFetcher','jalview.ws.seqfetcher.DbSourceProxy','Error','jalview.gui.CalculationChooser','jalview.io.vcf.VCFLoader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignFrame", null, 'jalview.jbgui.GAlignFrame', ['java.awt.dnd.DropTargetListener', 'jalview.gui.IProgressIndicator', 'jalview.api.AlignViewControllerGuiI', ['jalview.gui.ColourMenuHelper','jalview.gui.ColourMenuHelper.ColourChangeListener']]);
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.ArrayList','jalview.gui.AlignViewport','jalview.gui.AlignmentPanel','jalview.bin.Jalview','jalview.gui.ProgressBar','jalview.controller.AlignViewController','jalview.bin.Cache','jalview.gui.Desktop','java.awt.dnd.DropTarget','jalview.util.Platform','jalview.util.MessageManager','jalview.gui.ViewSelectionMenu','java.util.Arrays','java.awt.event.FocusAdapter','jalview.gui.Help','java.awt.event.KeyAdapter','jalview.gui.PaintRefresher','javax.swing.SwingUtilities','javax.swing.event.InternalFrameAdapter','Thread','jalview.gui.ColourMenuHelper','jalview.gui.SequenceFetcher','jalview.io.FileFormat','jalview.io.FileLoader','jalview.io.DataSourceType','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.gui.JvOptionPane','java.io.File','jalview.project.Jalview2XML','jalview.datamodel.AlignExportSettingsAdapter','jalview.io.FormatAdapter','jalview.io.BackupFiles','java.io.PrintWriter','java.io.FileWriter','jalview.gui.AlignExportOptions','jalview.io.FileFormats','jalview.gui.CutAndPasteTransfer','jalview.gui.OOMWarning','jalview.io.HtmlSvgOutput','jalview.io.BioJsHTMLOutput',['jalview.util.ImageMaker','.TYPE'],'java.awt.print.PrinterJob','jalview.gui.PrintThread','jalview.gui.AnnotationExporter','jalview.datamodel.AlignmentI','jalview.datamodel.SequenceI','jalview.commands.SlideSequencesCommand','java.awt.datatransfer.StringSelection','java.awt.Toolkit','jalview.datamodel.HiddenColumns','java.awt.datatransfer.DataFlavor','jalview.io.IdentifyFile','jalview.datamodel.Sequence','jalview.datamodel.Alignment','java.util.Vector','jalview.datamodel.AlignmentAnnotation','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],'jalview.analysis.AlignmentUtils','jalview.datamodel.SequenceGroup','jalview.commands.TrimRegionCommand','jalview.commands.RemoveGapColCommand','jalview.commands.RemoveGapsCommand','jalview.gui.Finder','jalview.gui.FontChooser','jalview.gui.FeatureSettings','jalview.io.AlignmentProperties','javax.swing.JLabel','java.awt.Color','javax.swing.JPanel','java.awt.BorderLayout','javax.swing.JInternalFrame','javax.swing.JScrollPane','jalview.gui.OverviewPanel','javax.swing.JLayeredPane','jalview.gui.TextColourChooser','jalview.gui.AnnotationColourChooser','jalview.gui.AnnotationColumnChooser','jalview.gui.UserDefinedColours','jalview.schemes.ColourSchemes','jalview.gui.SliderPanel','jalview.analysis.AlignmentSorter','jalview.commands.OrderCommand','jalview.gui.RedundancyPanel','jalview.gui.PairwiseAlignPanel','jalview.gui.TreePanel','javax.swing.JMenuItem','java.util.Hashtable','jalview.datamodel.SeqCigar','jalview.io.NewickFile','jalview.io.FileParse','javax.swing.JMenu','jalview.ws.jws1.Discoverer','jalview.ws.jws2.Jws2Discoverer','jalview.ws.rest.RestClient','jalview.gui.JvSwingUtils','jalview.analysis.CrossRef','jalview.gui.CrossRefAction','jalview.analysis.Dna','jalview.analysis.SequenceIdMatcher','jalview.io.AppletFormatAdapter','java.net.URL','jalview.gui.AssociatePdbFileWithSeq','jalview.io.AnnotationFile','jalview.io.TCoffeeScoreFile','jalview.schemes.TCoffeeColourScheme','jalview.io.ScoreMatrixFile','jalview.io.JPredFile','jalview.io.JnetAnnotationMaker','jalview.analysis.ParseProperties','javax.swing.JCheckBoxMenuItem','Boolean','jalview.ws.DBRefFetcher','jalview.ws.seqfetcher.DbSourceProxy','Error','jalview.gui.CalculationChooser','jalview.io.vcf.VCFLoader']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignFrame", null, 'jalview.jbgui.GAlignFrame', ['java.awt.dnd.DropTargetListener', 'jalview.gui.IProgressIndicator', 'jalview.api.AlignViewControllerGuiI', ['jalview.gui.ColourMenuHelper','jalview.gui.ColourMenuHelper.ColourChangeListener']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.alignPanel=null;
-this.viewport=null;
-this.avc=null;
-this.alignPanels=null;
-this.currentFileFormat=null;
-this.fileName=null;
-this.fileObject=null;
-this.progressBar=null;
-this.lastSaveSuccessful=false;
-this.lastFormatSaved=null;
-this.lastFilenameSaved=null;
-this.featureSettings=null;
-this._annotationScoreVectorHash=0;
-this.buildingMenu=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.alignPanels=Clazz.new_($I$(1));
+this.alignPanels=Clazz.new_($I$(1,1));
 this.currentFileFormat=null;
 this.fileName=null;
 this.lastSaveSuccessful=false;
 this.buildingMenu=false;
-}, 1);
+this.lastFeatureSettingsBounds=null;
+},1);
+
+C$.$fields$=[['Z',['lastSaveSuccessful','buildingMenu'],'I',['_annotationScoreVectorHash'],'S',['fileName','lastFilenameSaved'],'O',['alignPanel','jalview.gui.AlignmentPanel','viewport','jalview.gui.AlignViewport','avc','jalview.api.AlignViewControllerI','alignPanels','java.util.List','currentFileFormat','jalview.io.FileFormatI','fileObject','java.io.File','progressBar','jalview.gui.IProgressIndicator','lastFormatSaved','jalview.io.FileFormatI','featureSettings','jalview.gui.FeatureSettings','lastFeatureSettingsBounds','java.awt.Rectangle']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$I$I', function (al, width, height) {
 C$.c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$I$I.apply(this, [al, null, width, height]);
@@ -51,31 +35,31 @@ C$.c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$I$I$S$S.apply
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$I$I$S$S', function (al, hiddenColumns, width, height, sequenceSetId, viewId) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setSize$I$I(width, height);
 if (al.getDataset$() == null ) {
 al.setDataset$jalview_datamodel_AlignmentI(null);
-}this.viewport=Clazz.new_($I$(2).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$S$S,[al, hiddenColumns, sequenceSetId, viewId]);
-this.alignPanel=Clazz.new_($I$(3).c$$jalview_gui_AlignFrame$jalview_gui_AlignViewport,[this, this.viewport]);
+}this.viewport=Clazz.new_($I$(2,1).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$S$S,[al, hiddenColumns, sequenceSetId, viewId]);
+this.alignPanel=Clazz.new_($I$(3,1).c$$jalview_gui_AlignFrame$jalview_gui_AlignViewport,[this, this.viewport]);
 this.addAlignmentPanel$jalview_gui_AlignmentPanel$Z(this.alignPanel, true);
 this.init$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA$jalview_datamodel_HiddenColumns$I$I', function (al, hiddenSeqs, hiddenColumns, width, height) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setSize$I$I(width, height);
 if (al.getDataset$() == null ) {
 al.setDataset$jalview_datamodel_AlignmentI(null);
-}this.viewport=Clazz.new_($I$(2).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns,[al, hiddenColumns]);
+}this.viewport=Clazz.new_($I$(2,1).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns,[al, hiddenColumns]);
 if (hiddenSeqs != null  && hiddenSeqs.length > 0 ) {
 this.viewport.hideSequence$jalview_datamodel_SequenceIA(hiddenSeqs);
-}this.alignPanel=Clazz.new_($I$(3).c$$jalview_gui_AlignFrame$jalview_gui_AlignViewport,[this, this.viewport]);
+}this.alignPanel=Clazz.new_($I$(3,1).c$$jalview_gui_AlignFrame$jalview_gui_AlignViewport,[this, this.viewport]);
 this.addAlignmentPanel$jalview_gui_AlignmentPanel$Z(this.alignPanel, true);
 this.init$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel', function (ap) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.viewport=ap.av;
 this.alignPanel=ap;
 this.addAlignmentPanel$jalview_gui_AlignmentPanel$Z(ap, false);
@@ -84,8 +68,8 @@ this.init$();
 
 Clazz.newMeth(C$, 'init$', function () {
 if (!$I$(4).isHeadlessMode$()) {
-this.progressBar=Clazz.new_($I$(5).c$$javax_swing_JPanel$javax_swing_JLabel,[this.statusPanel, this.statusBar]);
-}this.avc=Clazz.new_($I$(6).c$$jalview_api_AlignViewControllerGuiI$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, this.viewport, this.alignPanel]);
+this.progressBar=Clazz.new_($I$(5,1).c$$javax_swing_JPanel$javax_swing_JLabel,[this.statusPanel, this.statusBar]);
+}this.avc=Clazz.new_($I$(6,1).c$$jalview_api_AlignViewControllerGuiI$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, this.viewport, this.alignPanel]);
 if (this.viewport.getAlignmentConservationAnnotation$() == null ) {
 this.conservationMenuItem.setEnabled$Z(false);
 this.modifyConservation.setEnabled$Z(false);
@@ -98,22 +82,21 @@ this.sortPairwiseMenuItem_actionPerformed$java_awt_event_ActionEvent(null);
 this.setMenusFromViewport$jalview_gui_AlignViewport(this.viewport);
 this.buildSortByAnnotationScoresMenu$();
 this.calculateTree.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.gui.AlignFrame'].openTreePcaDialog$.apply(this.b$['jalview.gui.AlignFrame'], []);
 });
 })()
-), Clazz.new_(P$.AlignFrame$1.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$1.$init$,[this, null])));
 this.buildColourMenu$();
 if ($I$(8).desktop != null ) {
-this.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_($I$(9).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this, this]));
+this.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_($I$(9,1).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this, this]));
 if (!$I$(10).isJS$()) {
 p$1.addServiceListeners.apply(this, []);
 }this.setGUINucleotide$();
@@ -122,36 +105,34 @@ this.wrapMenuItem_actionPerformed$java_awt_event_ActionEvent(null);
 }if ($I$(7).getDefault$S$Z("SHOW_OVERVIEW", false)) {
 this.overviewMenuItem_actionPerformed$java_awt_event_ActionEvent(null);
 }this.addKeyListener$();
-var selviews=Clazz.new_($I$(1));
-var origview=Clazz.new_($I$(1));
+var selviews=Clazz.new_($I$(1,1));
+var origview=Clazz.new_($I$(1,1));
 var menuLabel=$I$(11).getString$S("label.copy_format_from");
-var vsel=Clazz.new_($I$(12).c$$S$jalview_gui_ViewSelectionMenu_ViewSetProvider$java_util_List$java_awt_event_ItemListener,[menuLabel, ((P$.AlignFrame$2||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.gui.ViewSelectionMenu','jalview.gui.ViewSelectionMenu.ViewSetProvider']], 1);
+var vsel=Clazz.new_([menuLabel, ((P$.AlignFrame$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.gui.ViewSelectionMenu','jalview.gui.ViewSelectionMenu.ViewSetProvider']], 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getAllAlignmentPanels$', function () {
 this.$finals$.origview.clear$();
-this.$finals$.origview.add$TE(this.b$['jalview.gui.AlignFrame'].alignPanel);
-var aps=Clazz.new_($I$(1).c$$java_util_Collection,[$I$(13).asList$TTA($I$(8).getAlignmentPanels$S(null))]);
+this.$finals$.origview.add$O(this.b$['jalview.gui.AlignFrame'].alignPanel);
+var aps=Clazz.new_([$I$(13,"asList$OA",[$I$(8).getAlignmentPanels$S(null)])],$I$(1,1).c$$java_util_Collection);
 aps.remove$O(this.b$['jalview.gui.AlignFrame'].alignPanel);
-return aps.toArray$TTA(Clazz.array($I$(3), [aps.size$()]));
+return aps.toArray$OA(Clazz.array($I$(3), [aps.size$()]));
 });
 })()
-), Clazz.new_(P$.AlignFrame$2.$init$, [this, {origview: origview}])), selviews, ((P$.AlignFrame$3||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+), Clazz.new_(P$.AlignFrame$2.$init$,[this, {origview:origview}])), selviews, ((P$.AlignFrame$3||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 if (this.$finals$.origview.size$() > 0) {
 var ap=this.$finals$.origview.get$I(0);
 var vs=this.$finals$.selviews.get$I(0).getAlignViewport$().getViewStyle$();
@@ -169,23 +150,22 @@ ap.setSelected$Z(true);
 ap.alignFrame.setMenusForViewport$();
 }});
 })()
-), Clazz.new_(P$.AlignFrame$3.$init$, [this, {origview: origview, selviews: selviews}]))]);
+), Clazz.new_(P$.AlignFrame$3.$init$,[this, {origview:origview,selviews:selviews}]))],$I$(12,1).c$$S$jalview_gui_ViewSelectionMenu_ViewSetProvider$java_util_List$java_awt_event_ItemListener);
 if ($I$(7).getDefault$S$S("VERSION", "DEVELOPMENT").toLowerCase$().indexOf$S("devel") > -1 || $I$(7).getDefault$S$S("VERSION", "DEVELOPMENT").toLowerCase$().indexOf$S("test") > -1 ) {
 this.formatMenu.add$javax_swing_JMenuItem(vsel);
 }this.addFocusListener$java_awt_event_FocusListener(((P$.AlignFrame$4||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.FocusAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.FocusAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
 $I$(4).setCurrentAlignFrame$jalview_gui_AlignFrame(this.b$['jalview.gui.AlignFrame']);
 });
 })()
-), Clazz.new_($I$(14), [this, null],P$.AlignFrame$4)));
+), Clazz.new_($I$(14,1),[this, null],P$.AlignFrame$4)));
 });
 
 Clazz.newMeth(C$, 'setFileName$S$jalview_io_FileFormatI', function (file, format) {
@@ -200,13 +180,12 @@ this.fileObject=file;
 
 Clazz.newMeth(C$, 'addKeyListener$', function () {
 this.addKeyListener$java_awt_event_KeyListener(((P$.AlignFrame$5||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (evt) {
 if (this.b$['jalview.gui.AlignFrame'].viewport.cursorMode && ((evt.getKeyCode$() >= 48 && evt.getKeyCode$() <= 57 ) || (evt.getKeyCode$() >= 96 && evt.getKeyCode$() <= 105 ) ) && Character.isDigit$C(evt.getKeyChar$())  ) {
@@ -277,7 +256,7 @@ this.b$['jalview.gui.AlignFrame'].alignPanel.getSeqPanel$().setSelectionAreaAtCu
 }break;
 case 113:
 this.b$['jalview.gui.AlignFrame'].viewport.cursorMode=!this.b$['jalview.gui.AlignFrame'].viewport.cursorMode;
-this.b$['jalview.gui.AlignFrame'].setStatus$S.apply(this.b$['jalview.gui.AlignFrame'], [$I$(11).formatMessage$S$SA("label.keyboard_editing_mode", Clazz.array(String, -1, [(this.b$['jalview.gui.AlignFrame'].viewport.cursorMode ? "on" : "off")]))]);
+this.b$['jalview.gui.AlignFrame'].setStatus$S.apply(this.b$['jalview.gui.AlignFrame'], [$I$(11,"formatMessage$S$SA",["label.keyboard_editing_mode", Clazz.array(String, -1, [(this.b$['jalview.gui.AlignFrame'].viewport.cursorMode ? "on" : "off")])])]);
 if (this.b$['jalview.gui.AlignFrame'].viewport.cursorMode) {
 var ranges=this.b$['jalview.gui.AlignFrame'].viewport.getRanges$();
 this.b$['jalview.gui.AlignFrame'].alignPanel.getSeqPanel$().seqCanvas.cursorX=ranges.getStartRes$();
@@ -330,14 +309,14 @@ this.b$['jalview.gui.AlignFrame'].viewport.firePropertyChange$S$O$O("alignment",
 }
 });
 })()
-), Clazz.new_($I$(16), [this, null],P$.AlignFrame$5)));
+), Clazz.new_($I$(16,1),[this, null],P$.AlignFrame$5)));
 });
 
 Clazz.newMeth(C$, 'addAlignmentPanel$jalview_gui_AlignmentPanel$Z', function (ap, newPanel) {
 ap.alignFrame=this;
-this.avc=Clazz.new_($I$(6).c$$jalview_api_AlignViewControllerGuiI$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, this.viewport, this.alignPanel]);
-this.alignPanels.add$TE(ap);
-$I$(17).Register$java_awt_Component$S(ap, ap.av.getSequenceSetId$());
+this.avc=Clazz.new_($I$(6,1).c$$jalview_api_AlignViewControllerGuiI$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, this.viewport, this.alignPanel]);
+this.alignPanels.add$O(ap);
+$I$(17,"Register$java_awt_Component$S",[ap, ap.av.getSequenceSetId$()]);
 var aSize=this.alignPanels.size$();
 this.tabbedPane.setVisible$Z(aSize > 1 || ap.av.getViewName$() != null  );
 if (aSize == 1 && ap.av.getViewName$() == null  ) {
@@ -373,63 +352,59 @@ return this.viewport;
 Clazz.newMeth(C$, 'addServiceListeners', function () {
 var thisListener;
 $I$(8).instance.addJalviewPropertyChangeListener$S$java_beans_PropertyChangeListener("services", thisListener=((P$.AlignFrame$6||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 {
-$I$(18).invokeLater$Runnable(((P$.AlignFrame$6$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$6$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(18,"invokeLater$Runnable",[((P$.AlignFrame$6$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$6$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 System.err.println$S("Rebuild WS Menu for service change");
 this.b$['jalview.gui.AlignFrame'].BuildWebServiceMenu$.apply(this.b$['jalview.gui.AlignFrame'], []);
 });
 })()
-), Clazz.new_(P$.AlignFrame$6$1.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$6$1.$init$,[this, null]))]);
 }});
 })()
-), Clazz.new_(P$.AlignFrame$6.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$6.$init$,[this, null])));
 this.addInternalFrameListener$javax_swing_event_InternalFrameListener(((P$.AlignFrame$7||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$7", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.event.InternalFrameAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$7", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.event.InternalFrameAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'internalFrameClosed$javax_swing_event_InternalFrameEvent', function (evt) {
 $I$(8).instance.removeJalviewPropertyChangeListener$S$java_beans_PropertyChangeListener("services", this.$finals$.thisListener);
 this.b$['jalview.gui.AlignFrame'].closeMenuItem_actionPerformed$Z.apply(this.b$['jalview.gui.AlignFrame'], [true]);
 });
 })()
-), Clazz.new_($I$(19), [this, {thisListener: thisListener}],P$.AlignFrame$7)));
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$8||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+), Clazz.new_($I$(19,1),[this, {thisListener:thisListener}],P$.AlignFrame$7)));
+Clazz.new_([((P$.AlignFrame$8||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.gui.AlignFrame'].BuildWebServiceMenu$.apply(this.b$['jalview.gui.AlignFrame'], []);
 });
 })()
-), Clazz.new_(P$.AlignFrame$8.$init$, [this, null]))]).start$();
+), Clazz.new_(P$.AlignFrame$8.$init$,[this, null]))],$I$(20,1).c$$Runnable).start$();
 }, p$1);
 
 Clazz.newMeth(C$, 'setGUINucleotide$', function () {
@@ -477,7 +452,7 @@ this.showGroupConservation.setSelected$Z(av.isShowGroupConservation$());
 this.showConsensusHistogram.setSelected$Z(av.isShowConsensusHistogram$());
 this.showSequenceLogo.setSelected$Z(av.isShowSequenceLogo$());
 this.normaliseSequenceLogo.setSelected$Z(av.isNormaliseSequenceLogo$());
-$I$(21).setColourSelected$javax_swing_JMenu$jalview_schemes_ColourSchemeI(this.colourMenu, av.getGlobalColourScheme$());
+$I$(21,"setColourSelected$javax_swing_JMenu$jalview_schemes_ColourSchemeI",[this.colourMenu, av.getGlobalColourScheme$()]);
 this.showSeqFeatures.setSelected$Z(av.isShowSequenceFeatures$());
 this.hiddenMarkers.setState$Z(av.getShowHiddenMarkers$());
 this.applyToAllGroups.setState$Z(av.getColourAppliesToAllGroups$());
@@ -520,7 +495,7 @@ return this.alignPanel.getSeqPanel$().seqCanvas.getFeatureRenderer$();
 });
 
 Clazz.newMeth(C$, 'fetchSequence_actionPerformed$', function () {
-Clazz.new_($I$(22).c$$jalview_gui_IProgressIndicator,[this]);
+Clazz.new_($I$(22,1).c$$jalview_gui_IProgressIndicator,[this]);
 });
 
 Clazz.newMeth(C$, 'addFromFile_actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -544,12 +519,12 @@ throw ex;
 }
 }}
 $I$(8).instance.closeAssociatedWindows$();
-var loader=Clazz.new_($I$(24));
+var loader=Clazz.new_($I$(24,1));
 var protocol=this.fileName.startsWith$S("http:") ? $I$(25).URL : $I$(25).FILE;
 loader.LoadFile$jalview_gui_AlignViewport$O$jalview_io_DataSourceType$jalview_io_FileFormatI(this.viewport, this.fileName, protocol, this.currentFileFormat);
 } else {
 var bounds=this.getBounds$();
-var loader=Clazz.new_($I$(24));
+var loader=Clazz.new_($I$(24,1));
 var newframe=null;
 if (this.fileObject == null ) {
 var protocol=(this.fileName.startsWith$S("http:") ? $I$(25).URL : $I$(25).FILE);
@@ -561,20 +536,19 @@ if (this.featureSettings != null  && this.featureSettings.isShowing$() ) {
 var fspos=this.featureSettings.frame.getBounds$();
 newframe.featureSettings_actionPerformed$java_awt_event_ActionEvent(null);
 var nfs=newframe.featureSettings;
-$I$(18).invokeLater$Runnable(((P$.AlignFrame$9||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$9", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(18,"invokeLater$Runnable",[((P$.AlignFrame$9||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$9", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.$finals$.nfs.frame.setBounds$java_awt_Rectangle(this.$finals$.fspos);
 });
 })()
-), Clazz.new_(P$.AlignFrame$9.$init$, [this, {nfs: nfs, fspos: fspos}])));
+), Clazz.new_(P$.AlignFrame$9.$init$,[this, {nfs:nfs,fspos:fspos}]))]);
 this.featureSettings.close$();
 this.featureSettings=null;
 }this.closeMenuItem_actionPerformed$Z(true);
@@ -597,8 +571,8 @@ this.saveAlignment$S$jalview_io_FileFormatI(this.fileName, this.currentFileForma
 
 Clazz.newMeth(C$, 'saveAs_actionPerformed$', function () {
 var format=this.currentFileFormat == null  ? null : this.currentFileFormat.getName$();
-var chooser=$I$(26).forWrite$S$S($I$(7).getProperty$S("LAST_DIRECTORY"), format);
-chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27)));
+var chooser=$I$(26,"forWrite$S$S",[$I$(7).getProperty$S("LAST_DIRECTORY"), format]);
+chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27,1)));
 chooser.setDialogTitle$S($I$(11).getString$S("label.save_alignment_to_file"));
 chooser.setToolTipText$S($I$(11).getString$S("action.save"));
 var value=chooser.showSaveDialog$java_awt_Component(this);
@@ -606,23 +580,23 @@ if (value != 0) {
 return;
 }this.currentFileFormat=chooser.getSelectedFormat$();
 while (this.currentFileFormat == null ){
-$I$(28).showInternalMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, $I$(11).getString$S("label.select_file_format_before_saving"), $I$(11).getString$S("label.file_format_not_specified"), 2);
+$I$(28,"showInternalMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, $I$(11).getString$S("label.select_file_format_before_saving"), $I$(11).getString$S("label.file_format_not_specified"), 2]);
 this.currentFileFormat=chooser.getSelectedFormat$();
 value=chooser.showSaveDialog$java_awt_Component(this);
 if (value != 0) {
 return;
 }}
 this.fileName=chooser.getSelectedFile$().getPath$();
-$I$(7).setProperty$S$S("DEFAULT_FILE_FORMAT", this.currentFileFormat.getName$());
+$I$(7,"setProperty$S$S",["DEFAULT_FILE_FORMAT", this.currentFileFormat.getName$()]);
 $I$(7).setProperty$S$S("LAST_DIRECTORY", this.fileName);
 this.saveAlignment$S$jalview_io_FileFormatI(this.fileName, this.currentFileFormat);
 });
 
 Clazz.newMeth(C$, 'isSaveAlignmentSuccessful$', function () {
 if (!this.lastSaveSuccessful) {
-$I$(28).showInternalMessageDialog$java_awt_Component$S$S$I(this, $I$(11).formatMessage$S$OA("label.couldnt_save_file", Clazz.array(java.lang.Object, -1, [this.lastFilenameSaved])), $I$(11).getString$S("label.error_saving_file"), 2);
+$I$(28,"showInternalMessageDialog$java_awt_Component$S$S$I",[this, $I$(11,"formatMessage$S$OA",["label.couldnt_save_file", Clazz.array(java.lang.Object, -1, [this.lastFilenameSaved])]), $I$(11).getString$S("label.error_saving_file"), 2]);
 } else {
-this.setStatus$S($I$(11).formatMessage$S$OA("label.successfully_saved_to_file_in_format", Clazz.array(java.lang.Object, -1, [this.lastFilenameSaved, this.lastFormatSaved])));
+this.setStatus$S($I$(11,"formatMessage$S$OA",["label.successfully_saved_to_file_in_format", Clazz.array(java.lang.Object, -1, [this.lastFilenameSaved, this.lastFormatSaved])]));
 }return this.lastSaveSuccessful;
 });
 
@@ -634,48 +608,46 @@ if ($I$(23).Jalview.equals$O(format)) {
 var shortName=this.title;
 if (shortName.indexOf$I($I$(29).separatorChar) > -1) {
 shortName=shortName.substring$I(shortName.lastIndexOf$I($I$(29).separatorChar) + 1);
-}this.lastSaveSuccessful=Clazz.new_($I$(30)).saveAlignment$jalview_gui_AlignFrame$S$S(this, file, shortName);
-this.statusBar.setText$S($I$(11).formatMessage$S$OA("label.successfully_saved_to_file_in_format", Clazz.array(java.lang.Object, -1, [this.fileName, format])));
+}this.lastSaveSuccessful=Clazz.new_($I$(30,1)).saveAlignment$jalview_gui_AlignFrame$S$S(this, file, shortName);
+this.statusBar.setText$S($I$(11,"formatMessage$S$OA",["label.successfully_saved_to_file_in_format", Clazz.array(java.lang.Object, -1, [this.fileName, format])]));
 return;
-}var options=Clazz.new_($I$(31).c$$Z,[false]);
+}var options=Clazz.new_($I$(31,1).c$$Z,[false]);
 var cancelAction=((P$.AlignFrame$10||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$10", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$10", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.gui.AlignFrame'].lastSaveSuccessful=false;
 });
 })()
-), Clazz.new_(P$.AlignFrame$10.$init$, [this, null]));
+), Clazz.new_(P$.AlignFrame$10.$init$,[this, null]));
 var outputAction=((P$.AlignFrame$11||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$11", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$11", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var exportData=this.b$['jalview.gui.AlignFrame'].viewport.getAlignExportData$jalview_api_AlignExportSettingsI(this.$finals$.options);
-var output=Clazz.new_($I$(32).c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI,[this.b$['jalview.gui.AlignFrame'].alignPanel, this.$finals$.options]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$jalview_datamodel_HiddenColumns(this.$finals$.format, exportData.getAlignment$(), exportData.getOmitHidden$(), exportData.getStartEndPostions$(), this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getHiddenColumns$());
+var output=Clazz.new_($I$(32,1).c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI,[this.b$['jalview.gui.AlignFrame'].alignPanel, this.$finals$.options]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$jalview_datamodel_HiddenColumns(this.$finals$.format, exportData.getAlignment$(), exportData.getOmitHidden$(), exportData.getStartEndPostions$(), this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getHiddenColumns$());
 if (output == null ) {
 this.b$['jalview.gui.AlignFrame'].lastSaveSuccessful=false;
 } else {
 var doBackup=$I$(33).getEnabled$();
-var backupfiles=doBackup ? Clazz.new_($I$(33).c$$S,[this.$finals$.file]) : null;
+var backupfiles=doBackup ? Clazz.new_($I$(33,1).c$$S,[this.$finals$.file]) : null;
 try {
 var tempFilePath=doBackup ? backupfiles.getTempFilePath$() : this.$finals$.file;
-var out=Clazz.new_($I$(34).c$$java_io_Writer,[Clazz.new_($I$(35).c$$S,[tempFilePath])]);
+var out=Clazz.new_([Clazz.new_($I$(35,1).c$$S,[tempFilePath])],$I$(34,1).c$$java_io_Writer);
 out.print$S(output);
 out.close$();
 this.b$['jalview.gui.AlignFrame'].setTitle$S.apply(this.b$['jalview.gui.AlignFrame'], [this.$finals$.file]);
-this.b$['jalview.gui.AlignFrame'].statusBar.setText$S($I$(11).formatMessage$S$OA("label.successfully_saved_to_file_in_format", Clazz.array(java.lang.Object, -1, [this.b$['jalview.gui.AlignFrame'].fileName, this.$finals$.format.getName$()])));
+this.b$['jalview.gui.AlignFrame'].statusBar.setText$S($I$(11,"formatMessage$S$OA",["label.successfully_saved_to_file_in_format", Clazz.array(java.lang.Object, -1, [this.b$['jalview.gui.AlignFrame'].fileName, this.$finals$.format.getName$()])]));
 this.b$['jalview.gui.AlignFrame'].lastSaveSuccessful=true;
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
@@ -690,9 +662,9 @@ backupfiles.setWriteSuccess$Z(this.b$['jalview.gui.AlignFrame'].lastSaveSuccessf
 this.b$['jalview.gui.AlignFrame'].lastSaveSuccessful=backupfiles.rollBackupsAndRenameTempFile$();
 }}});
 })()
-), Clazz.new_(P$.AlignFrame$11.$init$, [this, {options: options, format: format, file: file}]));
+), Clazz.new_(P$.AlignFrame$11.$init$,[this, {file:file,format:format,options:options}]));
 if ($I$(36).isNeeded$jalview_api_AlignViewportI$jalview_io_FileFormatI(this.viewport, format)) {
-var choices=Clazz.new_($I$(36).c$$jalview_api_AlignViewportI$jalview_io_FileFormatI$jalview_api_AlignExportSettingsI,[this.alignPanel.getAlignViewport$(), format, options]);
+var choices=Clazz.new_([this.alignPanel.getAlignViewport$(), format, options],$I$(36,1).c$$jalview_api_AlignViewportI$jalview_io_FileFormatI$jalview_api_AlignExportSettingsI);
 choices.setResponseAction$O$Runnable(new Integer(0), outputAction);
 choices.setResponseAction$O$Runnable(new Integer(1), cancelAction);
 choices.showDialog$();
@@ -702,27 +674,26 @@ outputAction.run$();
 
 Clazz.newMeth(C$, 'outputText_actionPerformed$S', function (fileFormatName) {
 var fileFormat=$I$(37).getInstance$().forName$S(fileFormatName);
-var options=Clazz.new_($I$(31).c$$Z,[false]);
+var options=Clazz.new_($I$(31,1).c$$Z,[false]);
 var outputAction=((P$.AlignFrame$12||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$12", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$12", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var exportData=this.b$['jalview.gui.AlignFrame'].viewport.getAlignExportData$jalview_api_AlignExportSettingsI(this.$finals$.options);
-var cap=Clazz.new_($I$(38));
+var cap=Clazz.new_($I$(38,1));
 cap.setForInput$jalview_api_AlignmentViewPanel(null);
 try {
 var format=this.$finals$.fileFormat;
-cap.setText$S(Clazz.new_($I$(32).c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI,[this.b$['jalview.gui.AlignFrame'].alignPanel, this.$finals$.options]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$jalview_datamodel_HiddenColumns(format, exportData.getAlignment$(), exportData.getOmitHidden$(), exportData.getStartEndPostions$(), this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getHiddenColumns$()));
-$I$(8).addInternalFrame$javax_swing_JInternalFrame$S$I$I(cap, $I$(11).formatMessage$S$OA("label.alignment_output_command", Clazz.array(java.lang.Object, -1, [this.$finals$.fileFormat.getName$()])), 600, 500);
+cap.setText$S(Clazz.new_($I$(32,1).c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI,[this.b$['jalview.gui.AlignFrame'].alignPanel, this.$finals$.options]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$jalview_datamodel_HiddenColumns(format, exportData.getAlignment$(), exportData.getOmitHidden$(), exportData.getStartEndPostions$(), this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getHiddenColumns$()));
+$I$(8,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[cap, $I$(11,"formatMessage$S$OA",["label.alignment_output_command", Clazz.array(java.lang.Object, -1, [this.$finals$.fileFormat.getName$()])]), 600, 500]);
 } catch (oom) {
 if (Clazz.exceptionOf(oom,"OutOfMemoryError")){
-Clazz.new_($I$(39).c$$S$OutOfMemoryError,["Outputting alignment as " + this.$finals$.fileFormat.getName$(), oom]);
+Clazz.new_(["Outputting alignment as " + this.$finals$.fileFormat.getName$(), oom],$I$(39,1).c$$S$OutOfMemoryError);
 cap.dispose$();
 } else {
 throw oom;
@@ -730,9 +701,9 @@ throw oom;
 }
 });
 })()
-), Clazz.new_(P$.AlignFrame$12.$init$, [this, {options: options, fileFormat: fileFormat}]));
+), Clazz.new_(P$.AlignFrame$12.$init$,[this, {options:options,fileFormat:fileFormat}]));
 if ($I$(36).isNeeded$jalview_api_AlignViewportI$jalview_io_FileFormatI(this.viewport, fileFormat)) {
-var choices=Clazz.new_($I$(36).c$$jalview_api_AlignViewportI$jalview_io_FileFormatI$jalview_api_AlignExportSettingsI,[this.alignPanel.getAlignViewport$(), fileFormat, options]);
+var choices=Clazz.new_([this.alignPanel.getAlignViewport$(), fileFormat, options],$I$(36,1).c$$jalview_api_AlignViewportI$jalview_io_FileFormatI$jalview_api_AlignExportSettingsI);
 choices.setResponseAction$O$Runnable(new Integer(0), outputAction);
 choices.showDialog$();
 } else {
@@ -740,12 +711,12 @@ outputAction.run$();
 }});
 
 Clazz.newMeth(C$, 'htmlMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var htmlSVG=Clazz.new_($I$(40).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
+var htmlSVG=Clazz.new_($I$(40,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
 htmlSVG.exportHTML$S(null);
 });
 
 Clazz.newMeth(C$, 'bioJSMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var bjs=Clazz.new_($I$(41).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
+var bjs=Clazz.new_($I$(41,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
 bjs.exportHTML$S(null);
 });
 
@@ -771,31 +742,31 @@ $I$(44).pf=printJob.pageDialog$java_awt_print_PageFormat(printJob.defaultPage$()
 });
 
 Clazz.newMeth(C$, 'printMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var thread=Clazz.new_($I$(44).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
+var thread=Clazz.new_($I$(44,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
 thread.start$();
 });
 
 Clazz.newMeth(C$, 'exportFeatures_actionPerformed$java_awt_event_ActionEvent', function (e) {
-Clazz.new_($I$(45).c$$jalview_gui_AlignmentPanel,[this.alignPanel]).exportFeatures$();
+Clazz.new_($I$(45,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]).exportFeatures$();
 });
 
 Clazz.newMeth(C$, 'exportAnnotations_actionPerformed$java_awt_event_ActionEvent', function (e) {
-Clazz.new_($I$(45).c$$jalview_gui_AlignmentPanel,[this.alignPanel]).exportAnnotations$();
+Clazz.new_($I$(45,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]).exportAnnotations$();
 });
 
 Clazz.newMeth(C$, 'associatedData_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var chooser=Clazz.new_($I$(26).c$$S,[$I$(7).getProperty$S("LAST_DIRECTORY")]);
-chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27)));
-chooser.setDialogTitle$S($I$(11).getString$S("label.load_jalview_annotations"));
-chooser.setToolTipText$S($I$(11).getString$S("label.load_jalview_annotations"));
+var chooser=Clazz.new_([$I$(7).getProperty$S("LAST_DIRECTORY")],$I$(26,1).c$$S);
+chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27,1)));
+var tooltip=$I$(11).getString$S("label.load_jalview_annotations");
+chooser.setDialogTitle$S(tooltip);
+chooser.setToolTipText$S(tooltip);
 chooser.setResponseHandler$O$Runnable(new Integer(0), ((P$.AlignFrame$13||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$13", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$13", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var choice=this.$finals$.chooser.getSelectedFile$().getPath$();
@@ -803,7 +774,7 @@ $I$(7).setProperty$S$S("LAST_DIRECTORY", choice);
 this.b$['jalview.gui.AlignFrame'].loadJalviewDataFile$O$jalview_io_DataSourceType$jalview_io_FileFormatI$jalview_datamodel_SequenceI.apply(this.b$['jalview.gui.AlignFrame'], [this.$finals$.chooser.getSelectedFile$(), null, null, null]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$13.$init$, [this, {chooser: chooser}])));
+), Clazz.new_(P$.AlignFrame$13.$init$,[this, {chooser:chooser}])));
 chooser.showOpenDialog$java_awt_Component(this);
 });
 
@@ -821,7 +792,10 @@ ap.closePanel$();
 }} else {
 this.closeView$jalview_gui_AlignmentPanel(this.alignPanel);
 }}if (closeAllTabs) {
-this.setClosed$Z(true);
+if (this.featureSettings != null  && this.featureSettings.isOpen$() ) {
+this.featureSettings.close$();
+this.featureSettings=null;
+}this.setClosed$Z(true);
 }} catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 ex.printStackTrace$();
@@ -848,14 +822,14 @@ Clazz.newMeth(C$, 'updateEditMenuBar$', function () {
 if (this.viewport.getHistoryList$().size$() > 0) {
 this.undoMenuItem.setEnabled$Z(true);
 var command=this.viewport.getHistoryList$().peek$();
-this.undoMenuItem.setText$S($I$(11).formatMessage$S$OA("label.undo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])));
+this.undoMenuItem.setText$S($I$(11,"formatMessage$S$OA",["label.undo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])]));
 } else {
 this.undoMenuItem.setEnabled$Z(false);
 this.undoMenuItem.setText$S($I$(11).getString$S("action.undo"));
 }if (this.viewport.getRedoList$().size$() > 0) {
 this.redoMenuItem.setEnabled$Z(true);
 var command=this.viewport.getRedoList$().peek$();
-this.redoMenuItem.setText$S($I$(11).formatMessage$S$OA("label.redo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])));
+this.redoMenuItem.setText$S($I$(11,"formatMessage$S$OA",["label.redo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])]));
 } else {
 this.redoMenuItem.setEnabled$Z(false);
 this.redoMenuItem.setText$S($I$(11).getString$S("action.redo"));
@@ -927,7 +901,7 @@ break;
 }}}
 }if (originalSource == null ) {
 if (al != null ) {
-$I$(17).validateSequences$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentI(al, this.viewport.getAlignment$());
+$I$(17,"validateSequences$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentI",[al, this.viewport.getAlignment$()]);
 }originalSource=this.viewport;
 }return originalSource;
 });
@@ -941,28 +915,28 @@ this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'slideSequences$Z$I', function (right, size) {
-var sg=Clazz.new_($I$(1));
+var sg=Clazz.new_($I$(1,1));
 if (this.viewport.cursorMode) {
-sg.add$TE(this.viewport.getAlignment$().getSequenceAt$I(this.alignPanel.getSeqPanel$().seqCanvas.cursorY));
+sg.add$O(this.viewport.getAlignment$().getSequenceAt$I(this.alignPanel.getSeqPanel$().seqCanvas.cursorY));
 } else if (this.viewport.getSelectionGroup$() != null  && this.viewport.getSelectionGroup$().getSize$() != this.viewport.getAlignment$().getHeight$() ) {
 sg=this.viewport.getSelectionGroup$().getSequences$java_util_Map(this.viewport.getHiddenRepSequences$());
 }if (sg.size$() < 1) {
 return;
-}var invertGroup=Clazz.new_($I$(1));
+}var invertGroup=Clazz.new_($I$(1,1));
 for (var seq, $seq = this.viewport.getAlignment$().getSequences$().iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
 if (!sg.contains$O(seq)) {
-invertGroup.add$TE(seq);
+invertGroup.add$O(seq);
 }}
-var seqs1=sg.toArray$TTA(Clazz.array($I$(47), [0]));
+var seqs1=sg.toArray$OA(Clazz.array($I$(47), [0]));
 var seqs2=Clazz.array($I$(47), [invertGroup.size$()]);
 for (var i=0; i < invertGroup.size$(); i++) {
 seqs2[i]=invertGroup.get$I(i);
 }
 var ssc;
 if (right) {
-ssc=Clazz.new_($I$(48).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C,["Slide Sequences", seqs2, seqs1, size, this.viewport.getGapCharacter$()]);
+ssc=Clazz.new_(["Slide Sequences", seqs2, seqs1, size, this.viewport.getGapCharacter$()],$I$(48,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C);
 } else {
-ssc=Clazz.new_($I$(48).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C,["Slide Sequences", seqs1, seqs2, size, this.viewport.getGapCharacter$()]);
+ssc=Clazz.new_(["Slide Sequences", seqs1, seqs2, size, this.viewport.getGapCharacter$()],$I$(48,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C);
 }var groupAdjustment=0;
 if (ssc.getGapsInsertedBegin$() && right ) {
 if (this.viewport.cursorMode) {
@@ -994,15 +968,15 @@ return;
 var omitHidden=null;
 if (this.viewport.hasHiddenColumns$()) {
 omitHidden=this.viewport.getViewAsString$Z(true);
-}var output=Clazz.new_($I$(32)).formatSequences$jalview_io_FileFormatI$jalview_datamodel_SequenceIA$SA$IA($I$(23).Fasta, seqs, omitHidden, null);
-var ss=Clazz.new_($I$(49).c$$S,[output]);
+}var output=Clazz.new_($I$(32,1)).formatSequences$jalview_io_FileFormatI$jalview_datamodel_SequenceIA$SA$IA($I$(23).Fasta, seqs, omitHidden, null);
+var ss=Clazz.new_($I$(49,1).c$$S,[output]);
 try {
 $I$(8).internalCopy=true;
-$I$(50).getDefaultToolkit$().getSystemClipboard$().setContents$java_awt_datatransfer_Transferable$java_awt_datatransfer_ClipboardOwner(Clazz.new_($I$(49).c$$S,[""]), null);
+$I$(50).getDefaultToolkit$().getSystemClipboard$().setContents$java_awt_datatransfer_Transferable$java_awt_datatransfer_ClipboardOwner(Clazz.new_($I$(49,1).c$$S,[""]), null);
 $I$(50).getDefaultToolkit$().getSystemClipboard$().setContents$java_awt_datatransfer_Transferable$java_awt_datatransfer_ClipboardOwner(ss, $I$(8).instance);
 } catch (er) {
 if (Clazz.exceptionOf(er,"OutOfMemoryError")){
-Clazz.new_($I$(39).c$$S$OutOfMemoryError,["copying region", er]);
+Clazz.new_($I$(39,1).c$$S$OutOfMemoryError,["copying region", er]);
 return;
 } else {
 throw er;
@@ -1012,9 +986,9 @@ var hiddenColumns=null;
 if (this.viewport.hasHiddenColumns$()) {
 var hiddenOffset=this.viewport.getSelectionGroup$().getStartRes$();
 var hiddenCutoff=this.viewport.getSelectionGroup$().getEndRes$();
-hiddenColumns=Clazz.new_($I$(51).c$$jalview_datamodel_HiddenColumns$I$I$I,[this.viewport.getAlignment$().getHiddenColumns$(), hiddenOffset, hiddenCutoff, hiddenOffset]);
+hiddenColumns=Clazz.new_([this.viewport.getAlignment$().getHiddenColumns$(), hiddenOffset, hiddenCutoff, hiddenOffset],$I$(51,1).c$$jalview_datamodel_HiddenColumns$I$I$I);
 }$I$(8).jalviewClipboard=Clazz.array(java.lang.Object, -1, [seqs, this.viewport.getAlignment$().getDataset$(), hiddenColumns]);
-this.setStatus$S($I$(11).formatMessage$S$OA("label.copied_sequences_to_clipboard", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(seqs.length).toString()])));
+this.setStatus$S($I$(11,"formatMessage$S$OA",["label.copied_sequences_to_clipboard", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(seqs.length).toString()])]));
 });
 
 Clazz.newMeth(C$, 'pasteNew_actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1038,10 +1012,10 @@ try {
 str=contents.getTransferData$java_awt_datatransfer_DataFlavor($I$(52).stringFlavor);
 if (str.length$() < 1) {
 return;
-}format=Clazz.new_($I$(53)).identify$S$jalview_io_DataSourceType(str, $I$(25).PASTE);
+}format=Clazz.new_($I$(53,1)).identify$S$jalview_io_DataSourceType(str, $I$(25).PASTE);
 } catch (er) {
 if (Clazz.exceptionOf(er,"OutOfMemoryError")){
-Clazz.new_($I$(39).c$$S$OutOfMemoryError,["Out of memory pasting sequences!!", er]);
+Clazz.new_($I$(39,1).c$$S$OutOfMemoryError,["Out of memory pasting sequences!!", er]);
 return;
 } else {
 throw er;
@@ -1054,15 +1028,15 @@ if ($I$(8).jalviewClipboard != null ) {
 var newseq=$I$(8).jalviewClipboard[0];
 sequences=Clazz.array($I$(47), [newseq.length]);
 for (var i=0; i < newseq.length; i++) {
-sequences[i]=Clazz.new_($I$(54).c$$jalview_datamodel_SequenceI,[newseq[i]]);
+sequences[i]=Clazz.new_($I$(54,1).c$$jalview_datamodel_SequenceI,[newseq[i]]);
 }
-alignment=Clazz.new_($I$(55).c$$jalview_datamodel_SequenceIA,[sequences]);
+alignment=Clazz.new_($I$(55,1).c$$jalview_datamodel_SequenceIA,[sequences]);
 externalPaste=false;
 } else {
-alignment=Clazz.new_($I$(32)).readFile$S$jalview_io_DataSourceType$jalview_io_FileFormatI(str, $I$(25).PASTE, format);
+alignment=Clazz.new_($I$(32,1)).readFile$S$jalview_io_DataSourceType$jalview_io_FileFormatI(str, $I$(25).PASTE, format);
 sequences=alignment.getSequencesArray$();
 }var alwidth=0;
-var newGraphGroups=Clazz.new_($I$(1));
+var newGraphGroups=Clazz.new_($I$(1,1));
 var fgroup=-1;
 if (newAlignment) {
 if ($I$(8).jalviewClipboard != null ) {
@@ -1075,15 +1049,15 @@ var pastedal=alignment;
 alignment=this.viewport.getAlignment$();
 alwidth=alignment.getWidth$() + 1;
 var importDs=$I$(8).jalviewClipboard != null  && $I$(8).jalviewClipboard[1] !== alignment.getDataset$()  ;
-var newDs=(importDs) ? Clazz.new_($I$(56)) : null;
+var newDs=(importDs) ? Clazz.new_($I$(56,1)) : null;
 for (var i=0; i < sequences.length; i++) {
 if (importDs) {
-newDs.addElement$TE(null);
+newDs.addElement$O(null);
 }var ds=sequences[i].getDatasetSequence$();
 if (importDs && ds != null  ) {
 if (!newDs.contains$O(ds)) {
-newDs.setElementAt$TE$I(ds, i);
-ds=Clazz.new_($I$(54).c$$jalview_datamodel_SequenceI,[ds]);
+newDs.setElementAt$O$I(ds, i);
+ds=Clazz.new_($I$(54,1).c$$jalview_datamodel_SequenceI,[ds]);
 sequences[i].setDatasetSequence$jalview_datamodel_SequenceI(ds);
 } else {
 ds=sequences[newDs.indexOf$O(ds)].getDatasetSequence$();
@@ -1104,19 +1078,19 @@ var alann=pastedal.getAlignmentAnnotation$();
 for (var i=0; i < alann.length; i++) {
 annotationAdded=true;
 if (alann[i].sequenceRef == null  && !alann[i].autoCalculated ) {
-var newann=Clazz.new_($I$(57).c$$jalview_datamodel_AlignmentAnnotation,[alann[i]]);
+var newann=Clazz.new_($I$(57,1).c$$jalview_datamodel_AlignmentAnnotation,[alann[i]]);
 if (newann.graphGroup > -1) {
 if (newGraphGroups.size$() <= newann.graphGroup || newGraphGroups.get$I(newann.graphGroup) == null  ) {
 for (var q=newGraphGroups.size$(); q <= newann.graphGroup; q++) {
-newGraphGroups.add$I$TE(q, null);
+newGraphGroups.add$I$O(q, null);
 }
-newGraphGroups.set$I$TE(newann.graphGroup,  new Integer(++fgroup));
+newGraphGroups.set$I$O(newann.graphGroup, Integer.valueOf$I(++fgroup));
 }newann.graphGroup=newGraphGroups.get$I(newann.graphGroup).intValue$();
 }newann.padAnnotation$I(alwidth);
 alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(newann);
 }}
 }}if (!newAlignment) {
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(58).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,[$I$(11).getString$S("label.add_sequences"), $I$(59).PASTE, sequences, 0, alignment.getWidth$(), alignment]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_([$I$(11).getString$S("label.add_sequences"), $I$(59).PASTE, sequences, 0, alignment.getWidth$(), alignment],$I$(58,1).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI));
 }for (var i=0; i < sequences.length; i++) {
 if (sequences[i].getAnnotation$() != null ) {
 var newann;
@@ -1129,9 +1103,9 @@ if (newann.graphGroup > -1) {
 if (newann.graphGroup > -1) {
 if (newGraphGroups.size$() <= newann.graphGroup || newGraphGroups.get$I(newann.graphGroup) == null  ) {
 for (var q=newGraphGroups.size$(); q <= newann.graphGroup; q++) {
-newGraphGroups.add$I$TE(q, null);
+newGraphGroups.add$I$O(q, null);
 }
-newGraphGroups.set$I$TE(newann.graphGroup,  new Integer(++fgroup));
+newGraphGroups.set$I$O(newann.graphGroup, Integer.valueOf$I(++fgroup));
 }newann.graphGroup=newGraphGroups.get$I(newann.graphGroup).intValue$();
 }}alignment.addAnnotation$jalview_datamodel_AlignmentAnnotation(sequences[i].getAnnotation$()[a]);
 alignment.setAnnotationIndex$jalview_datamodel_AlignmentAnnotation$I(sequences[i].getAnnotation$()[a], a);
@@ -1149,7 +1123,7 @@ continue;
 if (alview[avnum] !== alignment ) {
 var avwidth=alview[avnum].getWidth$() + 1;
 for (var a=0; a < sann.length; a++) {
-var newann=Clazz.new_($I$(57).c$$jalview_datamodel_AlignmentAnnotation,[sann[a]]);
+var newann=Clazz.new_($I$(57,1).c$$jalview_datamodel_AlignmentAnnotation,[sann[a]]);
 sequences[i].addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(newann);
 newann.padAnnotation$I(avwidth);
 alview[avnum].addAnnotation$jalview_datamodel_AlignmentAnnotation(newann);
@@ -1192,7 +1166,7 @@ throw ex;
 
 Clazz.newMeth(C$, 'expand_newalign$java_awt_event_ActionEvent', function (e) {
 try {
-var alignment=$I$(60).expandContext$jalview_datamodel_AlignmentI$I(this.getViewport$().getAlignment$(), -1);
+var alignment=$I$(60,"expandContext$jalview_datamodel_AlignmentI$I",[this.getViewport$().getAlignment$(), -1]);
 var af=Clazz.new_(C$.c$$jalview_datamodel_AlignmentI$I$I,[alignment, 700, 500]);
 var newtitle= String.instantialize("Flanking alignment");
 if ($I$(8).jalviewClipboard != null  && $I$(8).jalviewClipboard[2] != null  ) {
@@ -1215,7 +1189,7 @@ System.out.println$S("Exception whilst pasting: " + ex);
 } else if (Clazz.exceptionOf(e$$,"OutOfMemoryError")){
 var oom = e$$;
 {
-Clazz.new_($I$(39).c$$S$OutOfMemoryError,["Viewing flanking region of alignment", oom]);
+Clazz.new_($I$(39,1).c$$S$OutOfMemoryError,["Viewing flanking region of alignment", oom]);
 }
 } else {
 throw e$$;
@@ -1233,17 +1207,16 @@ var sg=this.viewport.getSelectionGroup$();
 if (sg == null ) {
 return;
 }var okAction=((P$.AlignFrame$14||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$14", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$14", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-var cut=this.$finals$.sg.getSequences$().toArray$TTA(Clazz.array($I$(47), [this.$finals$.sg.getSize$()]));
-this.b$['jalview.gui.AlignFrame'].addHistoryItem$jalview_commands_CommandI.apply(this.b$['jalview.gui.AlignFrame'], [Clazz.new_($I$(58).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,[$I$(11).getString$S("label.cut_sequences"), $I$(59).CUT, cut, this.$finals$.sg.getStartRes$(), this.$finals$.sg.getEndRes$() - this.$finals$.sg.getStartRes$() + 1, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$()])]);
+var cut=this.$finals$.sg.getSequences$().toArray$OA(Clazz.array($I$(47), [this.$finals$.sg.getSize$()]));
+this.b$['jalview.gui.AlignFrame'].addHistoryItem$jalview_commands_CommandI.apply(this.b$['jalview.gui.AlignFrame'], [Clazz.new_([$I$(11).getString$S("label.cut_sequences"), $I$(59).CUT, cut, this.$finals$.sg.getStartRes$(), this.$finals$.sg.getEndRes$() - this.$finals$.sg.getStartRes$() + 1, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$()],$I$(58,1).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI)]);
 this.b$['jalview.gui.AlignFrame'].viewport.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
 this.b$['jalview.gui.AlignFrame'].viewport.sendSelection$();
 this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().deleteGroup$jalview_datamodel_SequenceGroup(this.$finals$.sg);
@@ -1259,11 +1232,11 @@ throw ex;
 }
 }});
 })()
-), Clazz.new_(P$.AlignFrame$14.$init$, [this, {sg: sg}]));
+), Clazz.new_(P$.AlignFrame$14.$init$,[this, {sg:sg}]));
 var wholeHeight=sg.getSize$() == this.viewport.getAlignment$().getHeight$();
 var wholeWidth=(((sg.getEndRes$() - sg.getStartRes$()) + 1) == this.viewport.getAlignment$().getWidth$()) ? true : false;
 if (wholeHeight && wholeWidth ) {
-var dialog=$I$(28).newOptionDialog$java_awt_Component($I$(8).desktop);
+var dialog=$I$(28,"newOptionDialog$java_awt_Component",[$I$(8).desktop]);
 dialog.setResponseHandler$O$Runnable(new Integer(0), okAction);
 var options=Clazz.array(java.lang.Object, -1, [$I$(11).getString$S("action.ok"), $I$(11).getString$S("action.cancel")]);
 dialog.showDialog$S$S$I$I$javax_swing_Icon$OA$O($I$(11).getString$S("warn.delete_all"), $I$(11).getString$S("label.delete_all"), -1, -1, null, options, options[0]);
@@ -1273,19 +1246,19 @@ okAction.run$();
 
 Clazz.newMeth(C$, 'deleteGroups_actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (this.avc.deleteGroups$()) {
-$I$(17).Refresh$java_awt_Component$S(this, this.viewport.getSequenceSetId$());
+$I$(17,"Refresh$java_awt_Component$S",[this, this.viewport.getSequenceSetId$()]);
 this.alignPanel.updateAnnotation$();
 this.alignPanel.paintAlignment$Z$Z(true, true);
 }});
 
 Clazz.newMeth(C$, 'selectAllSequenceMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var sg=Clazz.new_($I$(61).c$$java_util_List,[this.viewport.getAlignment$().getSequences$()]);
+var sg=Clazz.new_([this.viewport.getAlignment$().getSequences$()],$I$(61,1).c$$java_util_List);
 sg.setEndRes$I(this.viewport.getAlignment$().getWidth$() - 1);
 this.viewport.setSelectionGroup$jalview_datamodel_SequenceGroup(sg);
 this.viewport.isSelectionGroupChanged$Z(true);
 this.viewport.sendSelection$();
 this.alignPanel.paintAlignment$Z$Z(false, false);
-$I$(17).Refresh$java_awt_Component$S(this.alignPanel, this.viewport.getSequenceSetId$());
+$I$(17,"Refresh$java_awt_Component$S",[this.alignPanel, this.viewport.getSequenceSetId$()]);
 });
 
 Clazz.newMeth(C$, 'deselectAllSequenceMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1297,7 +1270,7 @@ this.viewport.getColumnSelection$().clear$();
 this.viewport.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
 this.alignPanel.getIdPanel$().getIdCanvas$().searchResults=null;
 this.alignPanel.paintAlignment$Z$Z(false, false);
-$I$(17).Refresh$java_awt_Component$S(this.alignPanel, this.viewport.getSequenceSetId$());
+$I$(17,"Refresh$java_awt_Component$S",[this.alignPanel, this.viewport.getSequenceSetId$()]);
 this.viewport.sendSelection$();
 });
 
@@ -1310,7 +1283,7 @@ return;
 sg.addOrRemove$jalview_datamodel_SequenceI$Z(this.viewport.getAlignment$().getSequenceAt$I(i), false);
 }
 this.alignPanel.paintAlignment$Z$Z(true, false);
-$I$(17).Refresh$java_awt_Component$S(this.alignPanel, this.viewport.getSequenceSetId$());
+$I$(17,"Refresh$java_awt_Component$S",[this.alignPanel, this.viewport.getSequenceSetId$()]);
 this.viewport.sendSelection$();
 });
 
@@ -1343,11 +1316,11 @@ seqs=this.viewport.getSelectionGroup$().getSequencesAsArray$java_util_Map(this.v
 seqs=this.viewport.getAlignment$().getSequencesArray$();
 }var trimRegion;
 if (trimLeft) {
-trimRegion=Clazz.new_($I$(62).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI,["Remove Left", true, seqs, column, this.viewport.getAlignment$()]);
+trimRegion=Clazz.new_(["Remove Left", true, seqs, column, this.viewport.getAlignment$()],$I$(62,1).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI);
 this.viewport.getRanges$().setStartRes$I(0);
 } else {
-trimRegion=Clazz.new_($I$(62).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI,["Remove Right", false, seqs, column, this.viewport.getAlignment$()]);
-}this.setStatus$S($I$(11).formatMessage$S$SA("label.removed_columns", Clazz.array(String, -1, [Integer.valueOf$I(trimRegion.getSize$()).toString()])));
+trimRegion=Clazz.new_(["Remove Right", false, seqs, column, this.viewport.getAlignment$()],$I$(62,1).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI);
+}this.setStatus$S($I$(11,"formatMessage$S$SA",["label.removed_columns", Clazz.array(String, -1, [Integer.valueOf$I(trimRegion.getSize$()).toString()])]));
 this.addHistoryItem$jalview_commands_CommandI(trimRegion);
 for (var sg, $sg = this.viewport.getAlignment$().getGroups$().iterator$(); $sg.hasNext$()&&((sg=($sg.next$())),1);) {
 if ((trimLeft && !sg.adjustForRemoveLeft$I(column) ) || (!trimLeft && !sg.adjustForRemoveRight$I(column) ) ) {
@@ -1366,9 +1339,9 @@ start=this.viewport.getSelectionGroup$().getStartRes$();
 end=this.viewport.getSelectionGroup$().getEndRes$();
 } else {
 seqs=this.viewport.getAlignment$().getSequencesArray$();
-}var removeGapCols=Clazz.new_($I$(63).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,["Remove Gapped Columns", seqs, start, end, this.viewport.getAlignment$()]);
+}var removeGapCols=Clazz.new_(["Remove Gapped Columns", seqs, start, end, this.viewport.getAlignment$()],$I$(63,1).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI);
 this.addHistoryItem$jalview_commands_CommandI(removeGapCols);
-this.setStatus$S($I$(11).formatMessage$S$OA("label.removed_empty_columns", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(removeGapCols.getSize$()).toString()])));
+this.setStatus$S($I$(11,"formatMessage$S$OA",["label.removed_empty_columns", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(removeGapCols.getSize$()).toString()])]));
 var seq=this.viewport.getAlignment$().getSequenceAt$I(0);
 var ranges=this.viewport.getRanges$();
 var startRes=seq.findPosition$I(ranges.getStartRes$());
@@ -1388,7 +1361,7 @@ end=this.viewport.getSelectionGroup$().getEndRes$();
 seqs=this.viewport.getAlignment$().getSequencesArray$();
 }var seq=this.viewport.getAlignment$().getSequenceAt$I(0);
 var startRes=seq.findPosition$I(this.viewport.getRanges$().getStartRes$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(64).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,["Remove Gaps", seqs, start, end, this.viewport.getAlignment$()]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["Remove Gaps", seqs, start, end, this.viewport.getAlignment$()],$I$(64,1).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI));
 this.viewport.getRanges$().setStartRes$I(seq.findIndex$I(startRes) - 1);
 this.viewport.firePropertyChange$S$O$O("alignment", null, this.viewport.getAlignment$().getSequences$());
 });
@@ -1399,7 +1372,7 @@ this.viewport.firePropertyChange$S$O$O("alignment", null, this.viewport.getAlign
 });
 
 Clazz.newMeth(C$, 'findMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
-Clazz.new_($I$(65));
+Clazz.new_($I$(65,1));
 });
 
 Clazz.newMeth(C$, 'newView_actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1407,7 +1380,7 @@ this.newView$S$Z(null, true);
 });
 
 Clazz.newMeth(C$, 'newView$S$Z', function (viewTitle, copyAnnotation) {
-var newap=Clazz.new_($I$(30)).copyAlignPanel$jalview_gui_AlignmentPanel(this.alignPanel);
+var newap=Clazz.new_($I$(30,1)).copyAlignPanel$jalview_gui_AlignmentPanel(this.alignPanel);
 if (!copyAnnotation) {
 newap.av.getAlignment$().deleteAllGroups$();
 newap.av.getAlignment$().deleteAllAnnotations$Z(false);
@@ -1430,7 +1403,7 @@ return newap;
 });
 
 Clazz.newMeth(C$, 'getNewViewName$S', function (viewTitle) {
-var index=$I$(8).getViewCount$S(this.viewport.getSequenceSetId$());
+var index=$I$(8,"getViewCount$S",[this.viewport.getSequenceSetId$()]);
 var addFirstIndex=false;
 if (viewTitle == null  || viewTitle.trim$().length$() == 0 ) {
 viewTitle=$I$(11).getString$S("action.view");
@@ -1447,12 +1420,12 @@ return newViewName;
 });
 
 Clazz.newMeth(C$, 'getExistingViewNames$java_util_List', function (comps) {
-var existingNames=Clazz.new_($I$(1));
+var existingNames=Clazz.new_($I$(1,1));
 for (var comp, $comp = comps.iterator$(); $comp.hasNext$()&&((comp=($comp.next$())),1);) {
 if (Clazz.instanceOf(comp, "jalview.gui.AlignmentPanel")) {
 var ap=comp;
 if (!existingNames.contains$O(ap.av.getViewName$())) {
-existingNames.add$TE(ap.av.getViewName$());
+existingNames.add$O(ap.av.getViewName$());
 }}}
 return existingNames;
 });
@@ -1466,7 +1439,7 @@ $I$(8).instance.gatherViews$jalview_gui_AlignFrame(this);
 });
 
 Clazz.newMeth(C$, 'font_actionPerformed$java_awt_event_ActionEvent', function (e) {
-Clazz.new_($I$(66).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
+Clazz.new_($I$(66,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
 });
 
 Clazz.newMeth(C$, 'seqLimit_actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1618,13 +1591,18 @@ return this.featureSettings;
 });
 
 Clazz.newMeth(C$, 'featureSettings_actionPerformed$java_awt_event_ActionEvent', function (e) {
+this.showFeatureSettingsUI$();
+});
+
+Clazz.newMeth(C$, 'showFeatureSettingsUI$', function () {
 if (this.featureSettings != null ) {
-this.featureSettings.close$();
+this.featureSettings.closeOldSettings$();
 this.featureSettings=null;
 }if (!this.showSeqFeatures.isSelected$()) {
 this.showSeqFeatures.setSelected$Z(true);
 this.showSeqFeatures_actionPerformed$java_awt_event_ActionEvent(null);
-}this.featureSettings=Clazz.new_($I$(67).c$$jalview_gui_AlignFrame,[this]);
+}this.featureSettings=Clazz.new_($I$(67,1).c$$jalview_gui_AlignFrame,[this]);
+return this.featureSettings;
 });
 
 Clazz.newMeth(C$, 'showSeqFeatures_actionPerformed$java_awt_event_ActionEvent', function (evt) {
@@ -1644,72 +1622,71 @@ this.alignPanel.updateLayout$();
 
 Clazz.newMeth(C$, 'alignmentProperties$', function () {
 var pane;
-var contents=Clazz.new_($I$(68).c$$jalview_datamodel_AlignmentI,[this.viewport.getAlignment$()]).formatAsHtml$();
-var content=$I$(11).formatMessage$S$OA("label.html_content", Clazz.array(java.lang.Object, -1, [contents.toString()]));
+var contents=Clazz.new_([this.viewport.getAlignment$()],$I$(68,1).c$$jalview_datamodel_AlignmentI).formatAsHtml$();
+var content=$I$(11,"formatMessage$S$OA",["label.html_content", Clazz.array(java.lang.Object, -1, [contents.toString()])]);
 contents=null;
 if ($I$(10).isJS$()) {
-var textLabel=Clazz.new_($I$(69));
+var textLabel=Clazz.new_($I$(69,1));
 textLabel.setText$S(content);
 textLabel.setBackground$java_awt_Color($I$(70).WHITE);
-pane=Clazz.new_($I$(71).c$$java_awt_LayoutManager,[Clazz.new_($I$(72))]);
+pane=Clazz.new_([Clazz.new_($I$(72,1))],$I$(71,1).c$$java_awt_LayoutManager);
 (pane).setOpaque$Z(true);
 pane.setBackground$java_awt_Color($I$(70).WHITE);
 (pane).add$java_awt_Component$O(textLabel, "North");
 } else 
 {}
-var frame=Clazz.new_($I$(73));
-frame.getContentPane$().add$java_awt_Component(Clazz.new_($I$(74).c$$java_awt_Component,[pane]));
-$I$(8).addInternalFrame$javax_swing_JInternalFrame$S$I$I(frame, $I$(11).formatMessage$S$OA("label.alignment_properties", Clazz.array(java.lang.Object, -1, [this.getTitle$()])), 500, 400);
+var frame=Clazz.new_($I$(73,1));
+frame.getContentPane$().add$java_awt_Component(Clazz.new_($I$(74,1).c$$java_awt_Component,[pane]));
+$I$(8,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[frame, $I$(11,"formatMessage$S$OA",["label.alignment_properties", Clazz.array(java.lang.Object, -1, [this.getTitle$()])]), 500, 400]);
 });
 
 Clazz.newMeth(C$, 'overviewMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (this.alignPanel.overviewPanel != null ) {
 return;
-}var frame=Clazz.new_($I$(73));
-var overview=Clazz.new_($I$(75).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
+}var frame=Clazz.new_($I$(73,1));
+var overview=Clazz.new_($I$(75,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
 frame.setContentPane$java_awt_Container(overview);
-$I$(8).addInternalFrame$javax_swing_JInternalFrame$S$Z$I$I$Z$Z(frame, $I$(11).formatMessage$S$OA("label.overview_params", Clazz.array(java.lang.Object, -1, [this.getTitle$()])), true, frame.getWidth$(), frame.getHeight$(), true, true);
+$I$(8,"addInternalFrame$javax_swing_JInternalFrame$S$Z$I$I$Z$Z",[frame, $I$(11,"formatMessage$S$OA",["label.overview_params", Clazz.array(java.lang.Object, -1, [this.getTitle$()])]), true, frame.getWidth$(), frame.getHeight$(), true, true]);
 frame.pack$();
 frame.setLayer$Integer($I$(76).PALETTE_LAYER);
 frame.addInternalFrameListener$javax_swing_event_InternalFrameListener(((P$.AlignFrame$15||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$15", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.event.InternalFrameAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$15", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.event.InternalFrameAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'internalFrameClosed$javax_swing_event_InternalFrameEvent', function (evt) {
 this.$finals$.overview.dispose$();
 this.b$['jalview.gui.AlignFrame'].alignPanel.setOverviewPanel$jalview_gui_OverviewPanel(null);
 });
 })()
-), Clazz.new_($I$(19), [this, {overview: overview}],P$.AlignFrame$15)));
+), Clazz.new_($I$(19,1),[this, {overview:overview}],P$.AlignFrame$15)));
 if (this.getKeyListeners$().length > 0) {
 frame.addKeyListener$java_awt_event_KeyListener(this.getKeyListeners$()[0]);
 }this.alignPanel.setOverviewPanel$jalview_gui_OverviewPanel(overview);
 });
 
 Clazz.newMeth(C$, 'textColour_actionPerformed$', function () {
-Clazz.new_($I$(77)).chooseColour$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceGroup(this.alignPanel, null);
+Clazz.new_($I$(77,1)).chooseColour$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceGroup(this.alignPanel, null);
 });
 
 Clazz.newMeth(C$, 'annotationColour_actionPerformed$', function () {
-Clazz.new_($I$(78).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[this.viewport, this.alignPanel]);
+Clazz.new_($I$(78,1).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[this.viewport, this.alignPanel]);
 });
 
 Clazz.newMeth(C$, 'annotationColumn_actionPerformed$java_awt_event_ActionEvent', function (e) {
-Clazz.new_($I$(79).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[this.viewport, this.alignPanel]);
+Clazz.new_($I$(79,1).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[this.viewport, this.alignPanel]);
 });
 
 Clazz.newMeth(C$, 'applyToAllGroups_actionPerformed$Z', function (selected) {
 this.viewport.setColourAppliesToAllGroups$Z(selected);
 });
 
-Clazz.newMeth(C$, ['changeColour_actionPerformed$S','changeColour_actionPerformed$'], function (name) {
+Clazz.newMeth(C$, 'changeColour_actionPerformed$S', function (name) {
 if ("*User Defined*".equals$O(name)) {
-Clazz.new_($I$(80).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
+Clazz.new_($I$(80,1).c$$jalview_gui_AlignmentPanel,[this.alignPanel]);
 return;
 }var cs=$I$(81).getInstance$().getColourScheme$S$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$java_util_Map(name, this.viewport, this.viewport.getAlignment$(), this.viewport.getHiddenRepSequences$());
 this.changeColour$jalview_schemes_ColourSchemeI(cs);
@@ -1722,12 +1699,12 @@ this.alignPanel.paintAlignment$Z$Z(true, true);
 });
 
 Clazz.newMeth(C$, 'modifyPID_actionPerformed$', function () {
-$I$(82).setPIDSliderSource$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$());
+$I$(82,"setPIDSliderSource$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$()]);
 $I$(82).showPIDSlider$();
 });
 
 Clazz.newMeth(C$, 'modifyConservation_actionPerformed$', function () {
-$I$(82).setConservationSlider$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$());
+$I$(82,"setConservationSlider$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$()]);
 $I$(82).showConservationSlider$();
 });
 
@@ -1756,43 +1733,43 @@ $I$(82).hidePIDSlider$();
 
 Clazz.newMeth(C$, 'sortPairwiseMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(83).sortByPID$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceI(this.viewport.getAlignment$(), this.viewport.getAlignment$().getSequenceAt$I(0));
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(84).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["Pairwise Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(83,"sortByPID$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceI",[this.viewport.getAlignment$(), this.viewport.getAlignment$().getSequenceAt$I(0)]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["Pairwise Sort", oldOrder, this.viewport.getAlignment$()],$I$(84,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'sortIDMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(83).sortByID$jalview_datamodel_AlignmentI(this.viewport.getAlignment$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(84).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["ID Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(83,"sortByID$jalview_datamodel_AlignmentI",[this.viewport.getAlignment$()]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["ID Sort", oldOrder, this.viewport.getAlignment$()],$I$(84,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'sortLengthMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(83).sortByLength$jalview_datamodel_AlignmentI(this.viewport.getAlignment$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(84).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["Length Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(83,"sortByLength$jalview_datamodel_AlignmentI",[this.viewport.getAlignment$()]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["Length Sort", oldOrder, this.viewport.getAlignment$()],$I$(84,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'sortGroupMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(83).sortByGroup$jalview_datamodel_AlignmentI(this.viewport.getAlignment$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(84).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["Group Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(83,"sortByGroup$jalview_datamodel_AlignmentI",[this.viewport.getAlignment$()]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["Group Sort", oldOrder, this.viewport.getAlignment$()],$I$(84,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'removeRedundancyMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
-Clazz.new_($I$(85).c$$jalview_gui_AlignmentPanel$jalview_gui_AlignFrame,[this.alignPanel, this]);
+Clazz.new_($I$(85,1).c$$jalview_gui_AlignmentPanel$jalview_gui_AlignFrame,[this.alignPanel, this]);
 });
 
 Clazz.newMeth(C$, 'pairwiseAlignmentMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
 if ((this.viewport.getSelectionGroup$() == null ) || (this.viewport.getSelectionGroup$().getSize$() < 2) ) {
-$I$(28).showInternalMessageDialog$java_awt_Component$S$S$I(this, $I$(11).getString$S("label.you_must_select_least_two_sequences"), $I$(11).getString$S("label.invalid_selection"), 2);
+$I$(28,"showInternalMessageDialog$java_awt_Component$S$S$I",[this, $I$(11).getString$S("label.you_must_select_least_two_sequences"), $I$(11).getString$S("label.invalid_selection"), 2]);
 } else {
-var frame=Clazz.new_($I$(73));
-frame.setContentPane$java_awt_Container(Clazz.new_($I$(86).c$$jalview_viewmodel_AlignmentViewport,[this.viewport]));
-$I$(8).addInternalFrame$javax_swing_JInternalFrame$S$I$I(frame, $I$(11).getString$S("action.pairwise_alignment"), 600, 500);
+var frame=Clazz.new_($I$(73,1));
+frame.setContentPane$java_awt_Container(Clazz.new_($I$(86,1).c$$jalview_viewmodel_AlignmentViewport,[this.viewport]));
+$I$(8,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[frame, $I$(11).getString$S("action.pairwise_alignment"), 600, 500]);
 }});
 
 Clazz.newMeth(C$, 'autoCalculate_actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -1817,14 +1794,14 @@ if (this.viewport.getSelectionGroup$() != null  && this.viewport.getSelectionGro
 var sg=this.viewport.getSelectionGroup$();
 for (var _s, $_s = sg.getSequences$().iterator$(); $_s.hasNext$()&&((_s=($_s.next$())),1);) {
 if (_s.getLength$() < sg.getEndRes$()) {
-$I$(28).showMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, $I$(11).getString$S("label.selected_region_to_tree_may_only_contain_residues_or_gaps"), $I$(11).getString$S("label.sequences_selection_not_aligned"), 2);
+$I$(28,"showMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, $I$(11).getString$S("label.selected_region_to_tree_may_only_contain_residues_or_gaps"), $I$(11).getString$S("label.sequences_selection_not_aligned"), 2]);
 return;
 }}
 onSelection=true;
 } else {
 if (this.viewport.getAlignment$().getHeight$() < 2) {
 return;
-}}tp=Clazz.new_($I$(87).c$$jalview_gui_AlignmentPanel$S$S$jalview_api_analysis_SimilarityParamsI,[this.alignPanel, type, modelName, options]);
+}}tp=Clazz.new_($I$(87,1).c$$jalview_gui_AlignmentPanel$S$S$jalview_api_analysis_SimilarityParamsI,[this.alignPanel, type, modelName, options]);
 frameTitle=tp.getPanelTitle$() + (onSelection ? " on region" : "");
 frameTitle += " from ";
 if (this.viewport.getViewName$() != null ) {
@@ -1834,47 +1811,45 @@ $I$(8).addInternalFrame$javax_swing_JInternalFrame$S$I$I(tp, frameTitle, 600, 50
 });
 
 Clazz.newMeth(C$, 'addSortByOrderMenuItem$S$jalview_datamodel_AlignmentOrder', function (title, order) {
-var item=Clazz.new_($I$(88).c$$S,[$I$(11).formatMessage$S$OA("action.by_title_param", Clazz.array(java.lang.Object, -1, [title]))]);
+var item=Clazz.new_([$I$(11,"formatMessage$S$OA",["action.by_title_param", Clazz.array(java.lang.Object, -1, [title])])],$I$(88,1).c$$S);
 this.sort.add$javax_swing_JMenuItem(item);
 item.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$16||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$16", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$16", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var oldOrder=this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getSequencesArray$();
-$I$(83).sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder(this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$(), this.$finals$.order);
-this.b$['jalview.gui.AlignFrame'].addHistoryItem$jalview_commands_CommandI.apply(this.b$['jalview.gui.AlignFrame'], [Clazz.new_($I$(84).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[this.$finals$.order.getName$(), oldOrder, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$()])]);
+$I$(83,"sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder",[this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$(), this.$finals$.order]);
+this.b$['jalview.gui.AlignFrame'].addHistoryItem$jalview_commands_CommandI.apply(this.b$['jalview.gui.AlignFrame'], [Clazz.new_([this.$finals$.order.getName$(), oldOrder, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$()],$I$(84,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI)]);
 this.b$['jalview.gui.AlignFrame'].alignPanel.paintAlignment$Z$Z(true, false);
 });
 })()
-), Clazz.new_(P$.AlignFrame$16.$init$, [this, {order: order}])));
+), Clazz.new_(P$.AlignFrame$16.$init$,[this, {order:order}])));
 });
 
 Clazz.newMeth(C$, 'addSortByAnnotScoreMenuItem$javax_swing_JMenu$S', function (sort, scoreLabel) {
-var item=Clazz.new_($I$(88).c$$S,[scoreLabel]);
+var item=Clazz.new_($I$(88,1).c$$S,[scoreLabel]);
 sort.add$javax_swing_JMenuItem(item);
 item.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$17||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$17", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$17", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var oldOrder=this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getSequencesArray$();
-$I$(83).sortByAnnotationScore$S$jalview_datamodel_AlignmentI(this.$finals$.scoreLabel, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$());
-this.b$['jalview.gui.AlignFrame'].addHistoryItem$jalview_commands_CommandI.apply(this.b$['jalview.gui.AlignFrame'], [Clazz.new_($I$(84).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["Sort by " + this.$finals$.scoreLabel, oldOrder, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$()])]);
+$I$(83,"sortByAnnotationScore$S$jalview_datamodel_AlignmentI",[this.$finals$.scoreLabel, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$()]);
+this.b$['jalview.gui.AlignFrame'].addHistoryItem$jalview_commands_CommandI.apply(this.b$['jalview.gui.AlignFrame'], [Clazz.new_(["Sort by " + this.$finals$.scoreLabel, oldOrder, this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$()],$I$(84,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI)]);
 this.b$['jalview.gui.AlignFrame'].alignPanel.paintAlignment$Z$Z(true, false);
 });
 })()
-), Clazz.new_(P$.AlignFrame$17.$init$, [this, {scoreLabel: scoreLabel}])));
+), Clazz.new_(P$.AlignFrame$17.$init$,[this, {scoreLabel:scoreLabel}])));
 });
 
 Clazz.newMeth(C$, 'buildSortByAnnotationScoresMenu$', function () {
@@ -1882,13 +1857,13 @@ if (this.viewport.getAlignment$().getAlignmentAnnotation$() == null ) {
 return;
 }if (this.viewport.getAlignment$().getAlignmentAnnotation$().hashCode$() != this._annotationScoreVectorHash) {
 this.sortByAnnotScore.removeAll$();
-var scoreSorts=Clazz.new_($I$(89));
+var scoreSorts=Clazz.new_($I$(89,1));
 var aann;
 for (var sqa, $sqa = this.viewport.getAlignment$().getSequences$().iterator$(); $sqa.hasNext$()&&((sqa=($sqa.next$())),1);) {
 aann=sqa.getAnnotation$();
 for (var i=0; aann != null  && i < aann.length ; i++) {
 if (aann[i].hasScore$() && aann[i].sequenceRef != null  ) {
-scoreSorts.put$TK$TV(aann[i].label, aann[i].label);
+scoreSorts.put$O$O(aann[i].label, aann[i].label);
 }}
 }
 var labels=scoreSorts.keys$();
@@ -1903,41 +1878,40 @@ this._annotationScoreVectorHash=this.viewport.getAlignment$().getAlignmentAnnota
 Clazz.newMeth(C$, 'buildTreeSortMenu$', function () {
 this.sortByTreeMenu.removeAll$();
 var comps=$I$(17).components.get$O(this.viewport.getSequenceSetId$());
-var treePanels=Clazz.new_($I$(1));
+var treePanels=Clazz.new_($I$(1,1));
 for (var comp, $comp = comps.iterator$(); $comp.hasNext$()&&((comp=($comp.next$())),1);) {
 if (Clazz.instanceOf(comp, "jalview.gui.TreePanel")) {
-treePanels.add$TE(comp);
+treePanels.add$O(comp);
 }}
 if (treePanels.size$() < 1) {
 this.sortByTreeMenu.setVisible$Z(false);
 return;
 }this.sortByTreeMenu.setVisible$Z(true);
 for (var tp, $tp = treePanels.iterator$(); $tp.hasNext$()&&((tp=($tp.next$())),1);) {
-var item=Clazz.new_($I$(88).c$$S,[tp.getTitle$()]);
+var item=Clazz.new_([tp.getTitle$()],$I$(88,1).c$$S);
 item.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$18||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$18", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$18", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.$finals$.tp.sortByTree_actionPerformed$();
 this.b$['jalview.gui.AlignFrame'].addHistoryItem$jalview_commands_CommandI.apply(this.b$['jalview.gui.AlignFrame'], [this.$finals$.tp.sortAlignmentIn$jalview_gui_AlignmentPanel(this.b$['jalview.gui.AlignFrame'].alignPanel)]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$18.$init$, [this, {tp: tp}])));
+), Clazz.new_(P$.AlignFrame$18.$init$,[this, {tp:tp}])));
 this.sortByTreeMenu.add$javax_swing_JMenuItem(item);
 }
 });
 
 Clazz.newMeth(C$, 'sortBy$jalview_datamodel_AlignmentOrder$S', function (alorder, undoname) {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(83).sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder(this.viewport.getAlignment$(), alorder);
+$I$(83,"sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder",[this.viewport.getAlignment$(), alorder]);
 if (undoname != null ) {
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(84).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[undoname, oldOrder, this.viewport.getAlignment$()]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_([undoname, oldOrder, this.viewport.getAlignment$()],$I$(84,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 }this.alignPanel.paintAlignment$Z$Z(true, false);
 return true;
 });
@@ -1947,7 +1921,7 @@ var msa=null;
 if ((this.viewport.getSelectionGroup$() != null ) && (this.viewport.getSelectionGroup$().getSize$() > 1) ) {
 msa=this.viewport.getAlignmentView$Z(true);
 } else if (this.viewport.getSelectionGroup$() != null  && this.viewport.getSelectionGroup$().getSize$() == 1 ) {
-var option=$I$(28).showConfirmDialog$java_awt_Component$O$S$I(this, $I$(11).getString$S("warn.oneseq_msainput_selection"), $I$(11).getString$S("label.invalid_selection"), 2);
+var option=$I$(28,"showConfirmDialog$java_awt_Component$O$S$I",[this, $I$(11).getString$S("warn.oneseq_msainput_selection"), $I$(11).getString$S("label.invalid_selection"), 2]);
 if (option == 0) {
 msa=this.viewport.getAlignmentView$Z(false);
 }} else {
@@ -1967,39 +1941,38 @@ seqs.setSequences$jalview_datamodel_SeqCigarA(Clazz.array($I$(90), -1, [seqs.get
 });
 
 Clazz.newMeth(C$, 'loadTreeMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var chooser=Clazz.new_($I$(26).c$$S,[$I$(7).getProperty$S("LAST_DIRECTORY")]);
-chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27)));
+var chooser=Clazz.new_([$I$(7).getProperty$S("LAST_DIRECTORY")],$I$(26,1).c$$S);
+chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27,1)));
 chooser.setDialogTitle$S($I$(11).getString$S("label.select_newick_like_tree_file"));
 chooser.setToolTipText$S($I$(11).getString$S("label.load_tree_file"));
 chooser.setResponseHandler$O$Runnable(new Integer(0), ((P$.AlignFrame$19||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$19", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$19", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var filePath=this.$finals$.chooser.getSelectedFile$().getPath$();
 $I$(7).setProperty$S$S("LAST_DIRECTORY", filePath);
 var fin=null;
 try {
-fin=Clazz.new_($I$(91).c$$jalview_io_FileParse,[Clazz.new_($I$(92).c$$O$jalview_io_DataSourceType,[this.$finals$.chooser.getSelectedFile$(), $I$(25).FILE])]);
+fin=Clazz.new_([Clazz.new_([this.$finals$.chooser.getSelectedFile$(), $I$(25).FILE],$I$(92,1).c$$O$jalview_io_DataSourceType)],$I$(91,1).c$$jalview_io_FileParse);
 this.b$['jalview.gui.AlignFrame'].viewport.setCurrentTree$jalview_analysis_TreeModel(this.b$['jalview.gui.AlignFrame'].showNewickTree$jalview_io_NewickFile$S.apply(this.b$['jalview.gui.AlignFrame'], [fin, filePath]).getTree$());
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
-$I$(28).showMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, ex.getMessage$(), $I$(11).getString$S("label.problem_reading_tree_file"), 2);
+$I$(28,"showMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, ex.getMessage$(), $I$(11).getString$S("label.problem_reading_tree_file"), 2]);
 ex.printStackTrace$();
 } else {
 throw ex;
 }
 }
 if (fin != null  && fin.hasWarningMessage$() ) {
-$I$(28).showMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, fin.getWarningMessage$(), $I$(11).getString$S("label.possible_problem_with_tree_file"), 2);
+$I$(28,"showMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, fin.getWarningMessage$(), $I$(11).getString$S("label.possible_problem_with_tree_file"), 2]);
 }});
 })()
-), Clazz.new_(P$.AlignFrame$19.$init$, [this, {chooser: chooser}])));
+), Clazz.new_(P$.AlignFrame$19.$init$,[this, {chooser:chooser}])));
 chooser.showOpenDialog$java_awt_Component(this);
 });
 
@@ -2016,7 +1989,7 @@ var tp=null;
 try {
 nf.parse$();
 if (nf.getTree$() != null ) {
-tp=Clazz.new_($I$(87).c$$jalview_gui_AlignmentPanel$jalview_io_NewickFile$S$jalview_datamodel_AlignmentView,[this.alignPanel, nf, treeTitle, input]);
+tp=Clazz.new_($I$(87,1).c$$jalview_gui_AlignmentPanel$jalview_io_NewickFile$S$jalview_datamodel_AlignmentView,[this.alignPanel, nf, treeTitle, input]);
 tp.setSize$I$I(w, h);
 if (x > 0 && y > 0 ) {
 tp.setLocation$I$I(x, y);
@@ -2045,25 +2018,24 @@ throw e;
 }
 var me=this;
 this.buildingMenu=true;
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$20||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$20", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+Clazz.new_([((P$.AlignFrame$20||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$20", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-var legacyItems=Clazz.new_($I$(1));
+var legacyItems=Clazz.new_($I$(1,1));
 try {
-var wsmenu=Clazz.new_($I$(56));
+var wsmenu=Clazz.new_($I$(56,1));
 var af=this.$finals$.me;
-var msawsmenu=Clazz.new_($I$(93).c$$S,["Alignment"]);
-var secstrmenu=Clazz.new_($I$(93).c$$S,["Secondary Structure Prediction"]);
-var seqsrchmenu=Clazz.new_($I$(93).c$$S,["Sequence Database Search"]);
-var analymenu=Clazz.new_($I$(93).c$$S,["Analysis"]);
-var dismenu=Clazz.new_($I$(93).c$$S,["Protein Disorder"]);
+var msawsmenu=Clazz.new_($I$(93,1).c$$S,["Alignment"]);
+var secstrmenu=Clazz.new_($I$(93,1).c$$S,["Secondary Structure Prediction"]);
+var seqsrchmenu=Clazz.new_($I$(93,1).c$$S,["Sequence Database Search"]);
+var analymenu=Clazz.new_($I$(93,1).c$$S,["Analysis"]);
+var dismenu=Clazz.new_($I$(93,1).c$$S,["Protein Disorder"]);
 if ($I$(94).services != null  && ($I$(94).services.size$() > 0) ) {
 var secstrpr=$I$(94).services.get$O("SecStrPred");
 if (secstrpr != null ) {
@@ -2071,24 +2043,23 @@ for (var i=0, j=secstrpr.size$(); i < j; i++) {
 var sh=secstrpr.get$I(i);
 var impl=$I$(94).getServiceClient$ext_vamsas_ServiceHandle(sh);
 var p=secstrmenu.getItemCount$();
-impl.attachWSMenuEntry$(secstrmenu, this.$finals$.me);
+impl.attachWSMenuEntry$javax_swing_JMenu$jalview_gui_AlignFrame(secstrmenu, this.$finals$.me);
 var q=secstrmenu.getItemCount$();
 for (var litm=p; litm < q; litm++) {
-legacyItems.add$TE(secstrmenu.getItem$I(litm));
+legacyItems.add$O(secstrmenu.getItem$I(litm));
 }
 }
-}}wsmenu.add$TE(msawsmenu);
-wsmenu.add$TE(secstrmenu);
-wsmenu.add$TE(dismenu);
-wsmenu.add$TE(analymenu);
-$I$(18).invokeLater$Runnable(((P$.AlignFrame$20$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$20$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+}}wsmenu.add$O(msawsmenu);
+wsmenu.add$O(secstrmenu);
+wsmenu.add$O(dismenu);
+wsmenu.add$O(analymenu);
+$I$(18,"invokeLater$Runnable",[((P$.AlignFrame$20$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$20$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 try {
@@ -2112,7 +2083,7 @@ jmi.setVisible$Z(false);
 }
 }}
 }if (jws2servs.isRunning$()) {
-var tm=Clazz.new_($I$(88).c$$S,["Still discovering JABA Services"]);
+var tm=Clazz.new_($I$(88,1).c$$S,["Still discovering JABA Services"]);
 tm.setEnabled$Z(false);
 this.b$['jalview.gui.AlignFrame'].webService.add$javax_swing_JMenuItem(tm);
 }}}this.b$['jalview.gui.AlignFrame'].build_urlServiceMenu$javax_swing_JMenu.apply(this.b$['jalview.gui.AlignFrame'], [this.$finals$.me.webService]);
@@ -2132,7 +2103,7 @@ throw e;
 }
 });
 })()
-), Clazz.new_(P$.AlignFrame$20$1.$init$, [this, {wsmenu: wsmenu, me: this.$finals$.me, legacyItems: legacyItems}])));
+), Clazz.new_(P$.AlignFrame$20$1.$init$,[this, {me:this.$finals$.me,wsmenu:wsmenu,legacyItems:legacyItems}]))]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -2142,12 +2113,12 @@ throw e;
 this.b$['jalview.gui.AlignFrame'].buildingMenu=false;
 });
 })()
-), Clazz.new_(P$.AlignFrame$20.$init$, [this, {me: me}]))]).start$();
+), Clazz.new_(P$.AlignFrame$20.$init$,[this, {me:me}]))],$I$(20,1).c$$Runnable).start$();
 });
 
 Clazz.newMeth(C$, 'build_urlServiceMenu$javax_swing_JMenu', function (webService) {
 for (var client, $client = 0, $$client = $I$(96).getRestClients$(); $client<$$client.length&&((client=($$client[$client])),1);$client++) {
-client.attachWSMenuEntry$javax_swing_JMenu$jalview_gui_AlignFrame($I$(97).findOrCreateMenu$javax_swing_JMenu$S(webService, client.getAction$()), this);
+client.attachWSMenuEntry$javax_swing_JMenu$jalview_gui_AlignFrame($I$(97,"findOrCreateMenu$javax_swing_JMenu$S",[webService, client.getAction$()]), this);
 }
 });
 
@@ -2160,25 +2131,24 @@ if (seqs == null  || seqs.length == 0 ) {
 return false;
 }var showp=false;
 try {
-var ptypes=Clazz.new_($I$(98).c$$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[seqs, dataset]).findXrefSourcesForSequences$Z(dna);
+var ptypes=Clazz.new_($I$(98,1).c$$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[seqs, dataset]).findXrefSourcesForSequences$Z(dna);
 for (var source, $source = ptypes.iterator$(); $source.hasNext$()&&((source=($source.next$())),1);) {
 showp=true;
 var af=this;
-var xtype=Clazz.new_($I$(88).c$$S,[source]);
+var xtype=Clazz.new_($I$(88,1).c$$S,[source]);
 xtype.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$21||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$21", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$21", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.gui.AlignFrame'].showProductsFor$jalview_datamodel_SequenceIA$Z$S.apply(this.b$['jalview.gui.AlignFrame'], [this.$finals$.af.viewport.getSequenceSelection$(), this.$finals$.dna, this.$finals$.source]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$21.$init$, [this, {af: af, dna: dna, source: source}])));
+), Clazz.new_(P$.AlignFrame$21.$init$,[this, {dna:dna,source:source,af:af}])));
 this.showProducts.add$javax_swing_JMenuItem(xtype);
 }
 this.showProducts.setVisible$Z(showp);
@@ -2195,20 +2165,20 @@ return showp;
 });
 
 Clazz.newMeth(C$, 'showProductsFor$jalview_datamodel_SequenceIA$Z$S', function (sel, _odna, source) {
-Clazz.new_($I$(20).c$$Runnable,[$I$(99).getHandlerFor$jalview_datamodel_SequenceIA$Z$S$jalview_gui_AlignFrame(sel, _odna, source, this)]).start$();
+Clazz.new_([$I$(99).getHandlerFor$jalview_datamodel_SequenceIA$Z$S$jalview_gui_AlignFrame(sel, _odna, source, this)],$I$(20,1).c$$Runnable).start$();
 });
 
 Clazz.newMeth(C$, 'showTranslation_actionPerformed$jalview_analysis_GeneticCodeI', function (codeTable) {
 var al=null;
 try {
-var dna=Clazz.new_($I$(100).c$$jalview_api_AlignViewportI$java_util_Iterator,[this.viewport, this.viewport.getViewAsVisibleContigs$Z(true)]);
+var dna=Clazz.new_([this.viewport, this.viewport.getViewAsVisibleContigs$Z(true)],$I$(100,1).c$$jalview_api_AlignViewportI$java_util_Iterator);
 al=dna.translateCdna$jalview_analysis_GeneticCodeI(codeTable);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 $I$(7).log.error$O$Throwable("Exception during translation. Please report this !", ex);
 var msg=$I$(11).getString$S("label.error_when_translating_sequences_submit_bug_report");
 var errorTitle=$I$(11).getString$S("label.implementation_error") + $I$(11).getString$S("label.translation_failed");
-$I$(28).showMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, msg, errorTitle, 0);
+$I$(28,"showMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, msg, errorTitle, 0]);
 return;
 } else {
 throw ex;
@@ -2217,15 +2187,15 @@ throw ex;
 if (al == null  || al.getHeight$() == 0 ) {
 var msg=$I$(11).getString$S("label.select_at_least_three_bases_in_at_least_one_sequence_to_cDNA_translation");
 var errorTitle=$I$(11).getString$S("label.translation_failed");
-$I$(28).showMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, msg, errorTitle, 2);
+$I$(28,"showMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, msg, errorTitle, 2]);
 } else {
 var af=Clazz.new_(C$.c$$jalview_datamodel_AlignmentI$I$I,[al, 700, 500]);
 af.setFileFormat$jalview_io_FileFormatI(this.currentFileFormat);
-var newTitle=$I$(11).formatMessage$S$OA("label.translation_of_params", Clazz.array(java.lang.Object, -1, [this.getTitle$(), codeTable.getId$()]));
+var newTitle=$I$(11,"formatMessage$S$OA",["label.translation_of_params", Clazz.array(java.lang.Object, -1, [this.getTitle$(), codeTable.getId$()])]);
 af.setTitle$S(newTitle);
 if ($I$(7).getDefault$S$Z("ENABLE_SPLIT_FRAME", true)) {
 var seqs=this.viewport.getSelectionAsNewSequence$();
-this.viewport.openSplitFrame$jalview_gui_AlignFrame$jalview_datamodel_AlignmentI(af, Clazz.new_($I$(55).c$$jalview_datamodel_SequenceIA,[seqs]));
+this.viewport.openSplitFrame$jalview_gui_AlignFrame$jalview_datamodel_AlignmentI(af, Clazz.new_($I$(55,1).c$$jalview_datamodel_SequenceIA,[seqs]));
 } else {
 $I$(8).addInternalFrame$javax_swing_JInternalFrame$S$I$I(af, newTitle, 700, 500);
 }}});
@@ -2260,8 +2230,8 @@ Clazz.newMeth(C$, 'drop$java_awt_dnd_DropTargetDropEvent', function (evt) {
 evt.acceptDrop$I(3);
 var t=evt.getTransferable$();
 var thisaf=this;
-var files=Clazz.new_($I$(1));
-var protocols=Clazz.new_($I$(1));
+var files=Clazz.new_($I$(1,1));
+var protocols=Clazz.new_($I$(1,1));
 try {
 $I$(8).transferFromDropTarget$java_util_List$java_util_List$java_awt_dnd_DropTargetDropEvent$java_awt_datatransfer_Transferable(files, protocols, evt, t);
 } catch (e) {
@@ -2272,20 +2242,19 @@ throw e;
 }
 }
 if (files != null ) {
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$22||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$22", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+Clazz.new_([((P$.AlignFrame$22||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$22", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 try {
-var idm=Clazz.new_($I$(101).c$$jalview_datamodel_SequenceIA,[this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getSequencesArray$()]);
-var filesmatched=Clazz.new_($I$(1));
-var filesnotmatched=Clazz.new_($I$(1));
+var idm=Clazz.new_([this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getSequencesArray$()],$I$(101,1).c$$jalview_datamodel_SequenceIA);
+var filesmatched=Clazz.new_($I$(1,1));
+var filesnotmatched=Clazz.new_($I$(1,1));
 for (var i=0; i < this.$finals$.files.size$(); i++) {
 var file=this.$finals$.files.get$I(i);
 var fileName=file.toString();
@@ -2297,10 +2266,10 @@ if (Clazz.instanceOf(file, "java.io.File")) {
 fl=file;
 $I$(10).cacheFileData$java_io_File(fl);
 } else {
-fl=Clazz.new_($I$(29).c$$S,[fileName]);
+fl=Clazz.new_($I$(29,1).c$$S,[fileName]);
 }pdbfn=fl.getName$();
 } else if (protocol === $I$(25).URL ) {
-var url=Clazz.new_($I$(103).c$$S,[fileName]);
+var url=Clazz.new_($I$(103,1).c$$S,[fileName]);
 pdbfn=url.getFile$();
 }if (pdbfn.length$() > 0) {
 var mtch=idm.findAllIdMatches$S(pdbfn);
@@ -2317,7 +2286,7 @@ pdbfn=pdbfn.substring$I$I(0, l);
 if (mtch != null ) {
 var type;
 try {
-type=Clazz.new_($I$(53)).identify$O$jalview_io_DataSourceType(file, protocol);
+type=Clazz.new_($I$(53,1)).identify$O$jalview_io_DataSourceType(file, protocol);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 type=null;
@@ -2326,22 +2295,22 @@ throw ex;
 }
 }
 if (type != null  && type.isStructureFile$() ) {
-filesmatched.add$TE(Clazz.array(java.lang.Object, -1, [file, protocol, mtch]));
+filesmatched.add$O(Clazz.array(java.lang.Object, -1, [file, protocol, mtch]));
 continue;
-}}filesnotmatched.add$TE(file);
+}}filesnotmatched.add$O(file);
 }}
 var assocfiles=0;
 if (filesmatched.size$() > 0) {
 var autoAssociate=$I$(7).getDefault$S$Z("AUTOASSOCIATE_PDBANDSEQS", false);
 if (!autoAssociate) {
-var msg=$I$(11).formatMessage$S$OA("label.automatically_associate_structure_files_with_sequences_same_name", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(filesmatched.size$()).toString()]));
+var msg=$I$(11,"formatMessage$S$OA",["label.automatically_associate_structure_files_with_sequences_same_name", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(filesmatched.size$()).toString()])]);
 var ttl=$I$(11).getString$S("label.automatically_associate_structure_files_by_name");
 var choice=$I$(28).showConfirmDialog$java_awt_Component$O$S$I(this.$finals$.thisaf, msg, ttl, 0);
 autoAssociate=choice == 0;
 }if (autoAssociate) {
 for (var fm, $fm = filesmatched.iterator$(); $fm.hasNext$()&&((fm=($fm.next$())),1);) {
 for (var toassoc, $toassoc = 0, $$toassoc = fm[2]; $toassoc<$$toassoc.length&&((toassoc=($$toassoc[$toassoc])),1);$toassoc++) {
-var pe=Clazz.new_($I$(104)).associatePdbWithSeq$S$jalview_io_DataSourceType$jalview_datamodel_SequenceI$Z$jalview_api_StructureSelectionManagerProvider(fm[0].toString(), fm[1], toassoc, false, $I$(8).instance);
+var pe=Clazz.new_($I$(104,1)).associatePdbWithSeq$S$jalview_io_DataSourceType$jalview_datamodel_SequenceI$Z$jalview_api_StructureSelectionManagerProvider(fm[0].toString(), fm[1], toassoc, false, $I$(8).instance);
 if (pe != null ) {
 System.err.println$S("Associated file : " + (fm[0].toString()) + " with " + toassoc.getDisplayId$Z(true) );
 assocfiles++;
@@ -2350,10 +2319,10 @@ this.b$['jalview.gui.AlignFrame'].alignPanel.paintAlignment$Z$Z(true, false);
 }
 } else {
 for (var o, $o = filesmatched.iterator$(); $o.hasNext$()&&((o=($o.next$())),1);) {
-filesnotmatched.add$TE(o[0]);
+filesnotmatched.add$O(o[0]);
 }
 }}if (filesnotmatched.size$() > 0) {
-if (assocfiles > 0 && ($I$(7).getDefault$S$Z("AUTOASSOCIATE_PDBANDSEQS_IGNOREOTHERS", false) || $I$(28).showConfirmDialog$java_awt_Component$O$S$I(this.$finals$.thisaf, "<html>" + $I$(11).formatMessage$S$OA("label.ignore_unmatched_dropped_files_info", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(filesnotmatched.size$()).toString()])) + "</html>" , $I$(11).getString$S("label.ignore_unmatched_dropped_files"), 0) == 0 ) ) {
+if (assocfiles > 0 && ($I$(7).getDefault$S$Z("AUTOASSOCIATE_PDBANDSEQS_IGNOREOTHERS", false) || $I$(28,"showConfirmDialog$java_awt_Component$O$S$I",[this.$finals$.thisaf, "<html>" + $I$(11,"formatMessage$S$OA",["label.ignore_unmatched_dropped_files_info", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(filesnotmatched.size$()).toString()])]) + "</html>" , $I$(11).getString$S("label.ignore_unmatched_dropped_files"), 0]) == 0 ) ) {
 return;
 }for (var fn, $fn = filesnotmatched.iterator$(); $fn.hasNext$()&&((fn=($fn.next$())),1);) {
 this.b$['jalview.gui.AlignFrame'].loadJalviewDataFile$O$jalview_io_DataSourceType$jalview_io_FileFormatI$jalview_datamodel_SequenceI.apply(this.b$['jalview.gui.AlignFrame'], [fn, null, null, null]);
@@ -2367,26 +2336,26 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.AlignFrame$22.$init$, [this, {files: files, thisaf: thisaf}]))]).start$();
+), Clazz.new_(P$.AlignFrame$22.$init$,[this, {files:files,thisaf:thisaf}]))],$I$(20,1).c$$Runnable).start$();
 }});
 
 Clazz.newMeth(C$, 'loadJalviewDataFile$O$jalview_io_DataSourceType$jalview_io_FileFormatI$jalview_datamodel_SequenceI', function (file, sourceType, format, assocSeq) {
 try {
 if (sourceType == null ) {
 sourceType=$I$(102).checkProtocol$O(file);
-}var isAnnotation=(format == null  || $I$(23).Pfam.equals$O(format) ) ? Clazz.new_($I$(105)).annotateAlignmentView$jalview_api_AlignViewportI$O$jalview_io_DataSourceType(this.viewport, file, sourceType) : false;
+}var isAnnotation=(format == null  || $I$(23).Pfam.equals$O(format) ) ? Clazz.new_($I$(105,1)).annotateAlignmentView$jalview_api_AlignViewportI$O$jalview_io_DataSourceType(this.viewport, file, sourceType) : false;
 if (!isAnnotation) {
 var tcf=null;
 try {
-tcf=Clazz.new_($I$(106).c$$O$jalview_io_DataSourceType,[file, sourceType]);
+tcf=Clazz.new_($I$(106,1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
 if (tcf.isValid$()) {
 if (tcf.annotateAlignment$jalview_datamodel_AlignmentI$Z(this.viewport.getAlignment$(), true)) {
 this.buildColourMenu$();
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(107).c$$jalview_datamodel_AnnotatedCollectionI,[this.viewport.getAlignment$()]));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_([this.viewport.getAlignment$()],$I$(107,1).c$$jalview_datamodel_AnnotatedCollectionI));
 isAnnotation=true;
 this.setStatus$S($I$(11).getString$S("label.successfully_pasted_tcoffee_scores_to_alignment"));
 } else {
-$I$(28).showMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, tcf.getWarningMessage$() == null  ? $I$(11).getString$S("label.check_file_matches_sequence_ids_alignment") : tcf.getWarningMessage$(), $I$(11).getString$S("label.problem_reading_tcoffee_score_file"), 2);
+$I$(28,"showMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, tcf.getWarningMessage$() == null  ? $I$(11).getString$S("label.check_file_matches_sequence_ids_alignment") : tcf.getWarningMessage$(), $I$(11).getString$S("label.problem_reading_tcoffee_score_file"), 2]);
 }} else {
 tcf=null;
 }} catch (x) {
@@ -2399,22 +2368,26 @@ throw x;
 }
 if (tcf == null ) {
 if (format == null ) {
-format=Clazz.new_($I$(53)).identify$O$jalview_io_DataSourceType(file, sourceType);
+format=Clazz.new_($I$(53,1)).identify$O$jalview_io_DataSourceType(file, sourceType);
 }if ($I$(23).ScoreMatrix === format ) {
-var sm=Clazz.new_($I$(108).c$$jalview_io_FileParse,[Clazz.new_($I$(92).c$$O$jalview_io_DataSourceType,[file, sourceType])]);
+var sm=Clazz.new_([Clazz.new_($I$(92,1).c$$O$jalview_io_DataSourceType,[file, sourceType])],$I$(108,1).c$$jalview_io_FileParse);
 sm.parse$();
-this.setStatus$S($I$(11).formatMessage$S$OA("label.successfully_loaded_matrix", [sm.getMatrixName$()]));
+this.setStatus$S($I$(11,"formatMessage$S$OA",["label.successfully_loaded_matrix", [sm.getMatrixName$()]]));
 } else if ($I$(23).Jnet.equals$O(format)) {
-var predictions=Clazz.new_($I$(109).c$$O$jalview_io_DataSourceType,[file, sourceType]);
-Clazz.new_($I$(110));
-$I$(110).add_annotation$jalview_io_JPredFile$jalview_datamodel_AlignmentI$I$Z(predictions, this.viewport.getAlignment$(), 0, false);
+var predictions=Clazz.new_($I$(109,1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
+Clazz.new_($I$(110,1));
+$I$(110,"add_annotation$jalview_io_JPredFile$jalview_datamodel_AlignmentI$I$Z",[predictions, this.viewport.getAlignment$(), 0, false]);
 this.viewport.getAlignment$().setupJPredAlignment$();
 isAnnotation=true;
 } else if ($I$(23).Features.equals$O(format)) {
 if (this.parseFeaturesFile$O$jalview_io_DataSourceType(file, sourceType)) {
+var splitFrame=this.getSplitViewContainer$();
+if (splitFrame != null ) {
+splitFrame.repaint$();
+} else {
 this.alignPanel.paintAlignment$Z$Z(true, true);
-}} else {
-Clazz.new_($I$(24)).LoadFile$jalview_gui_AlignViewport$O$jalview_io_DataSourceType$jalview_io_FileFormatI(this.viewport, file, sourceType, format);
+}}} else {
+Clazz.new_($I$(24,1)).LoadFile$jalview_gui_AlignViewport$O$jalview_io_DataSourceType$jalview_io_FileFormatI(this.viewport, file, sourceType, format);
 }}}if (isAnnotation) {
 this.alignPanel.adjustAnnotationHeight$();
 this.viewport.updateSequenceIdColours$();
@@ -2437,7 +2410,7 @@ if (Clazz.exceptionOf(x,"Exception")){
 throw x;
 }
 }
-Clazz.new_($I$(39).c$$S$OutOfMemoryError$java_awt_Component,["loading data " + (sourceType != null  ? (sourceType === $I$(25).PASTE  ? "from clipboard." : "using " + sourceType + " from " + file ) : ".") + (format != null  ? "(parsing as '" + format + "' file)"  : "") , oom, $I$(8).desktop]);
+Clazz.new_(["loading data " + (sourceType != null  ? (sourceType === $I$(25).PASTE  ? "from clipboard." : "using " + sourceType + " from " + file ) : ".") + (format != null  ? "(parsing as '" + format + "' file)"  : "") , oom, $I$(8).desktop],$I$(39,1).c$$S$OutOfMemoryError$java_awt_Component);
 }
 } else {
 throw e$$;
@@ -2451,12 +2424,17 @@ this.alignPanel=this.alignPanels.get$I(index);
 this.viewport=this.alignPanel.av;
 this.avc.setViewportAndAlignmentPanel$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel(this.viewport, this.alignPanel);
 this.setMenusFromViewport$jalview_gui_AlignViewport(this.viewport);
-}if (this.viewport.getConservationSelected$()) {
-$I$(82).setConservationSlider$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$());
+if (this.featureSettings != null  && this.featureSettings.isOpen$()  && this.featureSettings.fr.getViewport$() !== this.viewport  ) {
+if (this.viewport.isShowSequenceFeatures$()) {
+this.showFeatureSettingsUI$();
+} else {
+this.featureSettings.close$();
+}}}if (this.viewport.getConservationSelected$()) {
+$I$(82,"setConservationSlider$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$()]);
 } else {
 $I$(82).hideConservationSlider$();
 }if (this.viewport.getAbovePIDThreshold$()) {
-$I$(82).setPIDSliderSource$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$());
+$I$(82,"setPIDSliderSource$jalview_gui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$()]);
 } else {
 $I$(82).hidePIDSlider$();
 }var peer=this.viewport.getCodingComplement$();
@@ -2481,7 +2459,7 @@ return this.viewport;
 });
 
 Clazz.newMeth(C$, 'extractScores_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var pp=Clazz.new_($I$(111).c$$jalview_datamodel_AlignmentI,[this.viewport.getAlignment$()]);
+var pp=Clazz.new_([this.viewport.getAlignment$()],$I$(111,1).c$$jalview_datamodel_AlignmentI);
 if (pp.getScoresFromDescription$S$S$S$Z("description column", "score in description column ", "\\W*([-+eE0-9.]+)", true) > 0) {
 this.buildSortByAnnotationScoresMenu$();
 }});
@@ -2509,99 +2487,96 @@ return false;
 });
 
 Clazz.newMeth(C$, 'build_fetchdbmenu$javax_swing_JMenu', function (webService) {
-var rfetch=Clazz.new_($I$(93).c$$S,[$I$(11).getString$S("action.fetch_db_references")]);
+var rfetch=Clazz.new_([$I$(11).getString$S("action.fetch_db_references")],$I$(93,1).c$$S);
 rfetch.setToolTipText$S($I$(11).getString$S("label.retrieve_parse_sequence_database_records_alignment_or_selected_sequences"));
 webService.add$javax_swing_JMenuItem(rfetch);
-var trimrs=Clazz.new_($I$(112).c$$S,[$I$(11).getString$S("option.trim_retrieved_seqs")]);
+var trimrs=Clazz.new_([$I$(11).getString$S("option.trim_retrieved_seqs")],$I$(112,1).c$$S);
 trimrs.setToolTipText$S($I$(11).getString$S("label.trim_retrieved_sequences"));
 trimrs.setSelected$Z($I$(7).getDefault$S$Z("TRIM_FETCHED_DATASET_SEQS", true));
 trimrs.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$23||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$23", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$23", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.$finals$.trimrs.setSelected$Z(this.$finals$.trimrs.isSelected$());
-$I$(7).setProperty$S$S("TRIM_FETCHED_DATASET_SEQS", $I$(113).valueOf$Z(this.$finals$.trimrs.isSelected$()).toString());
+$I$(7,"setProperty$S$S",["TRIM_FETCHED_DATASET_SEQS", $I$(113,"valueOf$Z",[this.$finals$.trimrs.isSelected$()]).toString()]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$23.$init$, [this, {trimrs: trimrs}])));
+), Clazz.new_(P$.AlignFrame$23.$init$,[this, {trimrs:trimrs}])));
 rfetch.add$javax_swing_JMenuItem(trimrs);
-var fetchr=Clazz.new_($I$(88).c$$S,[$I$(11).getString$S("label.standard_databases")]);
+var fetchr=Clazz.new_([$I$(11).getString$S("label.standard_databases")],$I$(88,1).c$$S);
 fetchr.setToolTipText$S($I$(11).getString$S("label.fetch_embl_uniprot"));
 fetchr.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$24||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$24", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$24", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$24$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$24$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+Clazz.new_([((P$.AlignFrame$24$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$24$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var isNucleotide=this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.getViewport$().getAlignment$().isNucleotide$();
-var dbRefFetcher=Clazz.new_($I$(114).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z,[this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, null, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide]);
+var dbRefFetcher=Clazz.new_([this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, null, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide],$I$(114,1).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z);
 dbRefFetcher.addListener$jalview_ws_DBRefFetcher_FetchFinishedListenerI(((P$.AlignFrame$24$1$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$24$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$24$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'finished$', function () {
+for (var srcSettings, $srcSettings = this.$finals$.dbRefFetcher.getFeatureSettingsModels$().iterator$(); $srcSettings.hasNext$()&&((srcSettings=($srcSettings.next$())),1);) {
+this.b$['jalview.gui.AlignFrame'].alignPanel.av.mergeFeaturesStyle$jalview_api_FeatureSettingsModelI(srcSettings);
+}
 this.b$['jalview.gui.AlignFrame'].setMenusForViewport$.apply(this.b$['jalview.gui.AlignFrame'], []);
 });
 })()
-), Clazz.new_(P$.AlignFrame$24$1$1.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$24$1$1.$init$,[this, {dbRefFetcher:dbRefFetcher}])));
 dbRefFetcher.fetchDBRefs$Z(false);
 });
 })()
-), Clazz.new_(P$.AlignFrame$24$1.$init$, [this, null]))]).start$();
+), Clazz.new_(P$.AlignFrame$24$1.$init$,[this, null]))],$I$(20,1).c$$Runnable).start$();
 });
 })()
-), Clazz.new_(P$.AlignFrame$24.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$24.$init$,[this, null])));
 rfetch.add$javax_swing_JMenuItem(fetchr);
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$25||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+Clazz.new_([((P$.AlignFrame$25||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var sf=$I$(22).getSequenceFetcherSingleton$();
-$I$(18).invokeLater$Runnable(((P$.AlignFrame$25$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(18,"invokeLater$Runnable",[((P$.AlignFrame$25$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var dbclasses=this.$finals$.sf.getNonAlignmentSources$();
 var otherdb;
-var dfetch=Clazz.new_($I$(93));
-var ifetch=Clazz.new_($I$(93));
+var dfetch=Clazz.new_($I$(93,1));
+var ifetch=Clazz.new_($I$(93,1));
 var fetchr=null;
 var comp=0;
 var icomp=0;
@@ -2615,106 +2590,102 @@ continue;
 }if (mname == null ) {
 mname="From " + dbclass;
 }if (otherdb.size$() == 1) {
-var dassource=otherdb.toArray$TTA(Clazz.array($I$(115), [0]));
+var dassource=otherdb.toArray$OA(Clazz.array($I$(115), [0]));
 var src=otherdb.get$I(0);
-fetchr=Clazz.new_($I$(88).c$$S,[src.getDbSource$()]);
+fetchr=Clazz.new_([src.getDbSource$()],$I$(88,1).c$$S);
 fetchr.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$25$1$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$25$1$1$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+Clazz.new_([((P$.AlignFrame$25$1$1$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var isNucleotide=this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.getViewport$().getAlignment$().isNucleotide$();
-var dbRefFetcher=Clazz.new_($I$(114).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z,[this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, this.$finals$.dassource, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide]);
+var dbRefFetcher=Clazz.new_([this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, this.$finals$.dassource, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide],$I$(114,1).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z);
 dbRefFetcher.addListener$jalview_ws_DBRefFetcher_FetchFinishedListenerI(((P$.AlignFrame$25$1$1$1$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$1$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$1$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'finished$', function () {
+var srcSettings=this.$finals$.dassource[0].getFeatureColourScheme$();
+this.b$['jalview.gui.AlignFrame'].alignPanel.av.mergeFeaturesStyle$jalview_api_FeatureSettingsModelI(srcSettings);
 this.b$['jalview.gui.AlignFrame'].setMenusForViewport$.apply(this.b$['jalview.gui.AlignFrame'], []);
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$1$1$1.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$25$1$1$1$1.$init$,[this, {dassource:this.$finals$.dassource}])));
 dbRefFetcher.fetchDBRefs$Z(false);
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$1$1.$init$, [this, {dassource: this.$finals$.dassource}]))]).start$();
+), Clazz.new_(P$.AlignFrame$25$1$1$1.$init$,[this, {dassource:this.$finals$.dassource}]))],$I$(20,1).c$$Runnable).start$();
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$1.$init$, [this, {dassource: dassource}])));
-fetchr.setToolTipText$S($I$(97).wrapTooltip$Z$S(true, $I$(11).formatMessage$S$OA("label.fetch_retrieve_from", Clazz.array(java.lang.Object, -1, [src.getDbName$()]))));
+), Clazz.new_(P$.AlignFrame$25$1$1.$init$,[this, {dassource:dassource}])));
+fetchr.setToolTipText$S($I$(97,"wrapTooltip$Z$S",[true, $I$(11,"formatMessage$S$OA",["label.fetch_retrieve_from", Clazz.array(java.lang.Object, -1, [src.getDbName$()])])]));
 dfetch.add$javax_swing_JMenuItem(fetchr);
 comp++;
 } else {
-var dassource=otherdb.toArray$TTA(Clazz.array($I$(115), [0]));
+var dassource=otherdb.toArray$OA(Clazz.array($I$(115), [0]));
 var src=otherdb.get$I(0);
-fetchr=Clazz.new_($I$(88).c$$S,[$I$(11).formatMessage$S$OA("label.fetch_all_param", Clazz.array(java.lang.Object, -1, [src.getDbSource$()]))]);
+fetchr=Clazz.new_([$I$(11,"formatMessage$S$OA",["label.fetch_all_param", Clazz.array(java.lang.Object, -1, [src.getDbSource$()])])],$I$(88,1).c$$S);
 fetchr.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$25$1$2||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$25$1$2$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$2$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+Clazz.new_([((P$.AlignFrame$25$1$2$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$2$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var isNucleotide=this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.getViewport$().getAlignment$().isNucleotide$();
-var dbRefFetcher=Clazz.new_($I$(114).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z,[this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, this.$finals$.dassource, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide]);
+var dbRefFetcher=Clazz.new_([this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, this.$finals$.dassource, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide],$I$(114,1).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z);
 dbRefFetcher.addListener$jalview_ws_DBRefFetcher_FetchFinishedListenerI(((P$.AlignFrame$25$1$2$1$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$2$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$2$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'finished$', function () {
 this.b$['jalview.gui.AlignFrame'].setMenusForViewport$.apply(this.b$['jalview.gui.AlignFrame'], []);
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$2$1$1.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$25$1$2$1$1.$init$,[this, null])));
 dbRefFetcher.fetchDBRefs$Z(false);
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$2$1.$init$, [this, {dassource: this.$finals$.dassource}]))]).start$();
+), Clazz.new_(P$.AlignFrame$25$1$2$1.$init$,[this, {dassource:this.$finals$.dassource}]))],$I$(20,1).c$$Runnable).start$();
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$2.$init$, [this, {dassource: dassource}])));
-fetchr.setToolTipText$S($I$(97).wrapTooltip$Z$S(true, $I$(11).formatMessage$S$OA("label.fetch_retrieve_from_all_sources", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(otherdb.size$()).toString(), src.getDbSource$(), src.getDbName$()]))));
+), Clazz.new_(P$.AlignFrame$25$1$2.$init$,[this, {dassource:dassource}])));
+fetchr.setToolTipText$S($I$(97,"wrapTooltip$Z$S",[true, $I$(11,"formatMessage$S$OA",["label.fetch_retrieve_from_all_sources", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(otherdb.size$()).toString(), src.getDbSource$(), src.getDbName$()])])]));
 dfetch.add$javax_swing_JMenuItem(fetchr);
 comp++;
-ifetch=Clazz.new_($I$(93).c$$S,[$I$(11).formatMessage$S$OA("label.source_from_db_source", Clazz.array(java.lang.Object, -1, [src.getDbSource$()]))]);
+ifetch=Clazz.new_([$I$(11,"formatMessage$S$OA",["label.source_from_db_source", Clazz.array(java.lang.Object, -1, [src.getDbSource$()])])],$I$(93,1).c$$S);
 icomp=0;
 var imname=null;
 var i=0;
@@ -2723,59 +2694,56 @@ var dbname=sproxy.getDbName$();
 var sname=dbname.length$() > 5 ? dbname.substring$I$I(0, 5) + "..." : dbname;
 var msname=dbname.length$() > 10 ? dbname.substring$I$I(0, 10) + "..." : dbname;
 if (imname == null ) {
-imname=$I$(11).formatMessage$S$OA("label.from_msname", Clazz.array(java.lang.Object, -1, [sname]));
-}fetchr=Clazz.new_($I$(88).c$$S,[msname]);
+imname=$I$(11,"formatMessage$S$OA",["label.from_msname", Clazz.array(java.lang.Object, -1, [sname])]);
+}fetchr=Clazz.new_($I$(88,1).c$$S,[msname]);
 var dassrc=Clazz.array($I$(115), -1, [sproxy]);
 fetchr.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$25$1$3||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-Clazz.new_($I$(20).c$$Runnable,[((P$.AlignFrame$25$1$3$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$3$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+Clazz.new_([((P$.AlignFrame$25$1$3$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$3$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var isNucleotide=this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.getViewport$().getAlignment$().isNucleotide$();
-var dbRefFetcher=Clazz.new_($I$(114).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z,[this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, this.$finals$.dassrc, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide]);
+var dbRefFetcher=Clazz.new_([this.b$['jalview.gui.AlignFrame'].alignPanel.av.getSequenceSelection$(), this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame, this.$finals$.dassrc, this.b$['jalview.gui.AlignFrame'].alignPanel.alignFrame.featureSettings, isNucleotide],$I$(114,1).c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z);
 dbRefFetcher.addListener$jalview_ws_DBRefFetcher_FetchFinishedListenerI(((P$.AlignFrame$25$1$3$1$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$25$1$3$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$25$1$3$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.ws.DBRefFetcher','jalview.ws.DBRefFetcher.FetchFinishedListenerI']], 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'finished$', function () {
 this.b$['jalview.gui.AlignFrame'].setMenusForViewport$.apply(this.b$['jalview.gui.AlignFrame'], []);
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$3$1$1.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$25$1$3$1$1.$init$,[this, null])));
 dbRefFetcher.fetchDBRefs$Z(false);
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$3$1.$init$, [this, {dassrc: this.$finals$.dassrc}]))]).start$();
+), Clazz.new_(P$.AlignFrame$25$1$3$1.$init$,[this, {dassrc:this.$finals$.dassrc}]))],$I$(20,1).c$$Runnable).start$();
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1$3.$init$, [this, {dassrc: dassrc}])));
-fetchr.setToolTipText$S("<html>" + $I$(11).formatMessage$S$OA("label.fetch_retrieve_from", Clazz.array(java.lang.Object, -1, [dbname])));
+), Clazz.new_(P$.AlignFrame$25$1$3.$init$,[this, {dassrc:dassrc}])));
+fetchr.setToolTipText$S("<html>" + $I$(11,"formatMessage$S$OA",["label.fetch_retrieve_from", Clazz.array(java.lang.Object, -1, [dbname])]));
 ifetch.add$javax_swing_JMenuItem(fetchr);
 ++i;
 if (++icomp >= mcomp || i == (otherdb.size$()) ) {
 ifetch.setText$S($I$(11).formatMessage$S$OA("label.source_to_target", [imname, sname]));
 dfetch.add$javax_swing_JMenuItem(ifetch);
-ifetch=Clazz.new_($I$(93));
+ifetch=Clazz.new_($I$(93,1));
 imname=null;
 icomp=0;
 comp++;
@@ -2784,16 +2752,16 @@ comp++;
 if (comp >= mcomp || dbi >= (dbclasses.length) ) {
 dfetch.setText$S($I$(11).formatMessage$S$OA("label.source_to_target", [mname, dbclass]));
 this.$finals$.rfetch.add$javax_swing_JMenuItem(dfetch);
-dfetch=Clazz.new_($I$(93));
+dfetch=Clazz.new_($I$(93,1));
 mname=null;
 comp=0;
 }}
 });
 })()
-), Clazz.new_(P$.AlignFrame$25$1.$init$, [this, {sf: sf, rfetch: this.$finals$.rfetch}])));
+), Clazz.new_(P$.AlignFrame$25$1.$init$,[this, {sf:sf,rfetch:this.$finals$.rfetch}]))]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$25.$init$, [this, {rfetch: rfetch}]))]).start$();
+), Clazz.new_(P$.AlignFrame$25.$init$,[this, {rfetch:rfetch}]))],$I$(20,1).c$$Runnable).start$();
 });
 
 Clazz.newMeth(C$, 'justifyLeftMenuItem_actionPerformed$java_awt_event_ActionEvent', function (e) {
@@ -2851,7 +2819,7 @@ this.alignPanel.updateAnnotation$Z(this.applyAutoAnnotationSettings.getState$())
 
 Clazz.newMeth(C$, 'makeGrpsFromSelection_actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (this.avc.makeGroupsFromSelection$()) {
-$I$(17).Refresh$java_awt_Component$S(this, this.viewport.getSequenceSetId$());
+$I$(17,"Refresh$java_awt_Component$S",[this, this.viewport.getSequenceSetId$()]);
 this.alignPanel.updateAnnotation$();
 this.alignPanel.paintAlignment$Z$Z(true, this.viewport.needToUpdateStructureViews$());
 }});
@@ -2859,7 +2827,7 @@ this.alignPanel.paintAlignment$Z$Z(true, this.viewport.needToUpdateStructureView
 Clazz.newMeth(C$, 'clearAlignmentSeqRep$', function () {
 if (this.viewport.getAlignment$().hasSeqrep$()) {
 this.viewport.getAlignment$().setSeqrep$jalview_datamodel_SequenceI(null);
-$I$(17).Refresh$java_awt_Component$S(this, this.viewport.getSequenceSetId$());
+$I$(17,"Refresh$java_awt_Component$S",[this, this.viewport.getSequenceSetId$()]);
 this.alignPanel.updateAnnotation$();
 this.alignPanel.paintAlignment$Z$Z(true, true);
 }});
@@ -2878,7 +2846,7 @@ this.alignPanel.alignmentChanged$();
 
 Clazz.newMeth(C$, 'setDisplayedView$jalview_gui_AlignmentPanel', function (alignmentPanel) {
 if (!this.viewport.getSequenceSetId$().equals$O(alignmentPanel.av.getSequenceSetId$())) {
-throw Clazz.new_($I$(116).c$$S,[$I$(11).getString$S("error.implementation_error_cannot_show_view_alignment_frame")]);
+throw Clazz.new_([$I$(11).getString$S("error.implementation_error_cannot_show_view_alignment_frame")],$I$(116,1).c$$S);
 }if (this.tabbedPane != null  && this.tabbedPane.getTabCount$() > 0  && this.alignPanels.indexOf$O(alignmentPanel) != this.tabbedPane.getSelectedIndex$() ) {
 this.tabbedPane.setSelectedIndex$I(this.alignPanels.indexOf$O(alignmentPanel));
 }});
@@ -2913,19 +2881,19 @@ var alignment=this.getViewport$().getAlignment$();
 var mappings=alignment.getCodonFrames$();
 if (mappings == null ) {
 return;
-}var cdnaSeqs=Clazz.new_($I$(1));
+}var cdnaSeqs=Clazz.new_($I$(1,1));
 for (var aaSeq, $aaSeq = alignment.getSequences$().iterator$(); $aaSeq.hasNext$()&&((aaSeq=($aaSeq.next$())),1);) {
 for (var acf, $acf = mappings.iterator$(); $acf.hasNext$()&&((acf=($acf.next$())),1);) {
 var dnaSeq=acf.getDnaForAaSeq$jalview_datamodel_SequenceI(aaSeq.getDatasetSequence$());
 if (dnaSeq != null ) {
-var newSeq=Clazz.new_($I$(54).c$$jalview_datamodel_SequenceI,[dnaSeq]);
+var newSeq=Clazz.new_($I$(54,1).c$$jalview_datamodel_SequenceI,[dnaSeq]);
 newSeq.setDatasetSequence$jalview_datamodel_SequenceI(dnaSeq);
-cdnaSeqs.add$TE(newSeq);
+cdnaSeqs.add$O(newSeq);
 }}
 }
 if (cdnaSeqs.size$() == 0) {
 return;
-}var cdna=Clazz.new_($I$(55).c$$jalview_datamodel_SequenceIA,[cdnaSeqs.toArray$TTA(Clazz.array($I$(47), [cdnaSeqs.size$()]))]);
+}var cdna=Clazz.new_([cdnaSeqs.toArray$OA(Clazz.array($I$(47), [cdnaSeqs.size$()]))],$I$(55,1).c$$jalview_datamodel_SequenceIA);
 var alignFrame=Clazz.new_(C$.c$$jalview_datamodel_AlignmentI$I$I,[cdna, 700, 500]);
 cdna.alignAs$jalview_datamodel_AlignmentI(alignment);
 var newtitle="cDNA " + $I$(11).getString$S("label.for") + " " + this.title ;
@@ -2941,10 +2909,10 @@ sf.setComplementVisible$O$Z(this, show);
 Clazz.newMeth(C$, 'showReverse_actionPerformed$Z', function (complement) {
 var al=null;
 try {
-var dna=Clazz.new_($I$(100).c$$jalview_api_AlignViewportI$java_util_Iterator,[this.viewport, this.viewport.getViewAsVisibleContigs$Z(true)]);
+var dna=Clazz.new_([this.viewport, this.viewport.getViewAsVisibleContigs$Z(true)],$I$(100,1).c$$jalview_api_AlignViewportI$java_util_Iterator);
 al=dna.reverseCdna$Z(complement);
 this.viewport.addAlignment$jalview_datamodel_AlignmentI$S(al, "");
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(58).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,[$I$(11).getString$S("label.add_sequences"), $I$(59).PASTE, al.getSequencesArray$(), 0, al.getWidth$(), this.viewport.getAlignment$()]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_([$I$(11).getString$S("label.add_sequences"), $I$(59).PASTE, al.getSequencesArray$(), 0, al.getWidth$(), this.viewport.getAlignment$()],$I$(58,1).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI));
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 System.err.println$S(ex.getMessage$());
@@ -2964,7 +2932,7 @@ console.runScript$();
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 System.err.println$S((ex.toString()));
-$I$(28).showInternalMessageDialog$java_awt_Component$S$S$I($I$(8).desktop, $I$(11).getString$S("label.couldnt_run_groovy_script"), $I$(11).getString$S("label.groovy_support_failed"), 0);
+$I$(28,"showInternalMessageDialog$java_awt_Component$S$S$I",[$I$(8).desktop, $I$(11).getString$S("label.couldnt_run_groovy_script"), $I$(11).getString$S("label.groovy_support_failed"), 0]);
 } else {
 throw ex;
 }
@@ -2991,7 +2959,7 @@ this.colourMenu.removeAll$();
 this.colourMenu.add$javax_swing_JMenuItem(this.applyToAllGroups);
 this.colourMenu.add$javax_swing_JMenuItem(this.textColour);
 this.colourMenu.addSeparator$();
-var bg=$I$(21).addMenuItems$javax_swing_JMenu$jalview_gui_ColourMenuHelper_ColourChangeListener$jalview_datamodel_AnnotatedCollectionI$Z(this.colourMenu, this, this.viewport.getAlignment$(), false);
+var bg=$I$(21,"addMenuItems$javax_swing_JMenu$jalview_gui_ColourMenuHelper_ColourChangeListener$jalview_datamodel_AnnotatedCollectionI$Z",[this.colourMenu, this, this.viewport.getAlignment$(), false]);
 this.colourMenu.add$javax_swing_JMenuItem(this.annotationColour);
 bg.add$javax_swing_AbstractButton(this.annotationColour);
 this.colourMenu.addSeparator$();
@@ -3005,35 +2973,42 @@ $I$(21).setColourSelected$javax_swing_JMenu$jalview_schemes_ColourSchemeI(this.c
 
 Clazz.newMeth(C$, 'openTreePcaDialog$', function () {
 if (this.alignPanel.getCalculationDialog$() == null ) {
-Clazz.new_($I$(117).c$$jalview_gui_AlignFrame,[this]);
+Clazz.new_($I$(117,1).c$$jalview_gui_AlignFrame,[this]);
 }});
 
 Clazz.newMeth(C$, 'loadVcf_actionPerformed$', function () {
-var chooser=Clazz.new_($I$(26).c$$S,[$I$(7).getProperty$S("LAST_DIRECTORY")]);
-chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27)));
+var chooser=Clazz.new_([$I$(7).getProperty$S("LAST_DIRECTORY")],$I$(26,1).c$$S);
+chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(27,1)));
 chooser.setDialogTitle$S($I$(11).getString$S("label.load_vcf_file"));
 chooser.setToolTipText$S($I$(11).getString$S("label.load_vcf_file"));
 var us=this;
 chooser.setResponseHandler$O$Runnable(new Integer(0), ((P$.AlignFrame$26||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$26", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$26", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var choice=this.$finals$.chooser.getSelectedFile$().getPath$();
 $I$(7).setProperty$S$S("LAST_DIRECTORY", choice);
 var seqs=this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getSequencesArray$();
-Clazz.new_($I$(118).c$$S,[choice]).loadVCF$jalview_datamodel_SequenceIA$jalview_api_AlignViewControllerGuiI(seqs, this.$finals$.us);
+Clazz.new_($I$(118,1).c$$S,[choice]).loadVCF$jalview_datamodel_SequenceIA$jalview_api_AlignViewControllerGuiI(seqs, this.$finals$.us);
 });
 })()
-), Clazz.new_(P$.AlignFrame$26.$init$, [this, {chooser: chooser, us: us}])));
+), Clazz.new_(P$.AlignFrame$26.$init$,[this, {chooser:chooser,us:us}])));
 chooser.showOpenDialog$java_awt_Component(null);
+});
+
+Clazz.newMeth(C$, 'setFeatureSettingsGeometry$java_awt_Rectangle', function (bounds) {
+this.lastFeatureSettingsBounds=bounds;
+});
+
+Clazz.newMeth(C$, 'getFeatureSettingsGeometry$', function () {
+return this.lastFeatureSettingsBounds;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

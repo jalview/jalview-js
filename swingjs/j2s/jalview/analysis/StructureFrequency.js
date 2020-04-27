@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'jalview.analysis.Rna','jalview.util.Comparison','java.util.Hashtable','jalview.util.Format','jalview.util.QuickSort','jalview.datamodel.Annotation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StructureFrequency");
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'jalview.analysis.Rna','jalview.util.Comparison','java.util.Hashtable','jalview.util.Format','jalview.util.QuickSort','jalview.datamodel.Annotation']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StructureFrequency");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'findPair$jalview_datamodel_SequenceFeatureA$I', function (pairs, indice) {
 for (var i=0; i < pairs.length; i++) {
@@ -71,10 +70,10 @@ canonical++;
 otherPairCount++;
 }pairs[c.$c()][cEnd.$c()]++;
 }
-}}residueHash=Clazz.new_($I$(3));
+}}residueHash=Clazz.new_($I$(3,1));
 if (profile) {
-residueHash.put$TK$TV("P", Clazz.array(Integer.TYPE, -2, [values, Clazz.array(Integer.TYPE, -1, [jSize, (jSize - values[45])])]));
-residueHash.put$TK$TV("B", pairs);
+residueHash.put$O$O("P", Clazz.array(Integer.TYPE, -2, [values, Clazz.array(Integer.TYPE, -1, [jSize, (jSize - values[45])])]));
+residueHash.put$O$O("B", pairs);
 }values[40]=canonicalOrWobblePairCount;
 values[91]=canonical;
 values[123]=otherPairCount;
@@ -84,12 +83,12 @@ if (canonicalOrWobblePairCount >= otherPairCount) {
 maxResidue=(canonicalOrWobblePairCount - canonical) < canonical ? "(" : "[";
 } else {
 maxResidue="{";
-}}residueHash.put$TK$TV("C",  new Integer(count));
-residueHash.put$TK$TV("R", maxResidue);
+}}residueHash.put$O$O("C", Integer.valueOf$I(count));
+residueHash.put$O$O("R", maxResidue);
 percentage=(count * 100) / jSize;
-residueHash.put$TK$TV("G",  new Float(percentage));
+residueHash.put$O$O("G", Float.valueOf$F(percentage));
 percentage=(count * 100) / nongap;
-residueHash.put$TK$TV("N",  new Float(percentage));
+residueHash.put$O$O("N", Float.valueOf$F(percentage));
 if (result[i] == null ) {
 result[i]=residueHash;
 }if (bpEnd > 0) {
@@ -100,16 +99,16 @@ values[40]=0;
 values[91]=0;
 values[123]=0;
 maxResidue=maxResidue.equals$O("(") ? ")" : maxResidue.equals$O("[") ? "]" : "}";
-residueHash=Clazz.new_($I$(3));
+residueHash=Clazz.new_($I$(3,1));
 if (profile) {
-residueHash.put$TK$TV("P", Clazz.array(Integer.TYPE, -2, [values, Clazz.array(Integer.TYPE, -1, [jSize, (jSize - values[45])])]));
-residueHash.put$TK$TV("B", pairs);
-}residueHash.put$TK$TV("C",  new Integer(count));
-residueHash.put$TK$TV("R", maxResidue);
+residueHash.put$O$O("P", Clazz.array(Integer.TYPE, -2, [values, Clazz.array(Integer.TYPE, -1, [jSize, (jSize - values[45])])]));
+residueHash.put$O$O("B", pairs);
+}residueHash.put$O$O("C", Integer.valueOf$I(count));
+residueHash.put$O$O("R", maxResidue);
 percentage=(count * 100) / jSize;
-residueHash.put$TK$TV("G",  new Float(percentage));
+residueHash.put$O$O("G", Float.valueOf$F(percentage));
 percentage=(count * 100) / nongap;
-residueHash.put$TK$TV("N",  new Float(percentage));
+residueHash.put$O$O("N", Float.valueOf$F(percentage));
 result[bpEnd]=residueHash;
 }}
 }, 1);
@@ -127,7 +126,7 @@ nseq=(nseq/(10)|0);
 }
 if (precision > 2) {
 fmtstr="%" + (2 + precision) + "." + precision + "f" ;
-}var fmt=Clazz.new_($I$(4).c$$S,[fmtstr]);
+}var fmt=Clazz.new_($I$(4,1).c$$S,[fmtstr]);
 for (var i=iStart; i < width; i++) {
 var hci;
 if (i >= hconsensus.length || ((hci=hconsensus[i]) == null ) ) {
@@ -173,7 +172,7 @@ p++;
 }}
 } else {
 mouseOver += (fmt.form$D(value) + "%");
-}consensus.annotations[i]=Clazz.new_($I$(6).c$$S$S$C$F,[maxRes, mouseOver, " ", value]);
+}consensus.annotations[i]=Clazz.new_($I$(6,1).c$$S$S$C$F,[maxRes, mouseOver, " ", value]);
 }
 }, 1);
 
@@ -215,4 +214,4 @@ return result;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

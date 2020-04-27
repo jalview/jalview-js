@@ -1,46 +1,24 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,'javajs.util.M3','javajs.util.P3','org.jmol.util.Escape','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Orientation");
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,'javajs.util.M3','javajs.util.P3','org.jmol.util.Escape','javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Orientation");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.saveName=null;
-this.rotationMatrix=null;
-this.xTrans=0;
-this.yTrans=0;
-this.zoom=0;
-this.rotationRadius=0;
-this.center=null;
-this.navCenter=null;
-this.xNav=0;
-this.yNav=0;
-this.navDepth=0;
-this.cameraDepth=0;
-this.cameraX=0;
-this.cameraY=0;
-this.windowCenteredFlag=false;
-this.navigationMode=false;
-this.moveToText=null;
-this.pymolView=null;
-this.vwr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.rotationMatrix=Clazz.new_($I$(1));
-this.center=Clazz.new_($I$(2));
-this.navCenter=Clazz.new_($I$(2));
+this.rotationMatrix=Clazz.new_($I$(1,1));
+this.center=Clazz.new_($I$(2,1));
+this.navCenter=Clazz.new_($I$(2,1));
 this.xNav=NaN;
 this.yNav=NaN;
 this.navDepth=NaN;
 this.cameraDepth=NaN;
 this.cameraX=NaN;
 this.cameraY=NaN;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['windowCenteredFlag','navigationMode'],'F',['xTrans','yTrans','zoom','rotationRadius','xNav','yNav','navDepth','cameraDepth','cameraX','cameraY'],'S',['saveName','moveToText'],'O',['rotationMatrix','javajs.util.M3','center','javajs.util.P3','+navCenter','pymolView','float[]','vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$Z$FA', function (vwr, asDefault, pymolView) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 if (pymolView != null ) {
 this.pymolView=pymolView;
@@ -73,7 +51,7 @@ this.cameraY=vwr.tm.camera.y;
 }}, 1);
 
 Clazz.newMeth(C$, 'getMoveToText$Z', function (asCommand) {
-return (asCommand ? "   " + this.moveToText + "\n  save orientation " + $I$(4).esc$S(this.saveName.substring$I(12)) + ";\n"  : this.moveToText);
+return (asCommand ? "   " + this.moveToText + "\n  save orientation " + (function(a,f){return f.apply(null,a)})([this.saveName.substring$I(12)],$I$(4).esc$S) + ";\n"  : this.moveToText);
 });
 
 Clazz.newMeth(C$, 'restore$F$Z', function (timeSeconds, isAll) {
@@ -89,4 +67,4 @@ this.vwr.tm.setRotation$javajs_util_M3(this.rotationMatrix);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

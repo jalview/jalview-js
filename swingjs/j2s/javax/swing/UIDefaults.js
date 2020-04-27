@@ -1,38 +1,30 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.LookAndFeel','java.util.Locale','java.util.HashMap','javax.swing.SwingUtilities','Error','swingjs.JSToolkit','javax.swing.event.SwingPropertyChangeSupport','java.beans.PropertyChangeListener','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UIDefaults", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.LookAndFeel','java.util.Locale','java.util.HashMap','javax.swing.SwingUtilities','Error','swingjs.JSToolkit','javax.swing.event.SwingPropertyChangeSupport','java.beans.PropertyChangeListener','java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UIDefaults", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.Hashtable');
+C$.$classes$=[['LazyValue',9],['ActiveValue',9],['LazyInputMap',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.changeSupport=null;
-this.resourceBundles=null;
-this.defaultLocale=null;
-this.resourceCache=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultLocale=$I$(2).getDefault$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['changeSupport','javax.swing.event.SwingPropertyChangeSupport','resourceBundles','java.util.Vector','defaultLocale','java.util.Locale','resourceCache','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$F.apply(this, [700, 0.75]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
-C$.superclazz.c$$I$F.apply(this, [initialCapacity, loadFactor]);
-C$.$init$.apply(this);
-this.resourceCache=Clazz.new_($I$(3));
+;C$.superclazz.c$$I$F.apply(this,[initialCapacity, loadFactor]);C$.$init$.apply(this);
+this.resourceCache=Clazz.new_($I$(3,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$OA', function (keyValueList) {
-C$.superclazz.c$$I.apply(this, [(keyValueList.length/2|0)]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[(keyValueList.length/2|0)]);C$.$init$.apply(this);
 for (var i=0; i < keyValueList.length; i+=2) {
-C$.superclazz.prototype.put$TK$TV.apply(this, [keyValueList[i], keyValueList[i + 1]]);
+C$.superclazz.prototype.put$O$O.apply(this, [keyValueList[i], keyValueList[i + 1]]);
 }
 }, 1);
 
@@ -50,15 +42,15 @@ if (skey.endsWith$S(".font") || skey.endsWith$S(".background") || skey.endsWith$
 return value;
 }if (Clazz.instanceOf(value, "javax.swing.UIDefaults.LazyValue")) {
 try {
-value=(value).createValue$(this);
+value=(value).createValue$javax_swing_UIDefaults(this);
 } finally {
 if (value == null ) {
 C$.superclazz.prototype.remove$O.apply(this, [key]);
 } else {
-C$.superclazz.prototype.put$TK$TV.apply(this, [key, value]);
+C$.superclazz.prototype.put$O$O.apply(this, [key, value]);
 }}
 } else {
-value=(value).createValue$(this);
+value=(value).createValue$javax_swing_UIDefaults(this);
 }return value;
 }, p$1);
 
@@ -81,8 +73,8 @@ Clazz.newMeth(C$, 'getResourceCache$java_util_Locale', function (l) {
 return null;
 }, p$1);
 
-Clazz.newMeth(C$, ['put$O$O','put$TK$TV'], function (key, value) {
-var oldValue=(value == null ) ? C$.superclazz.prototype.remove$O.apply(this, [key]) : C$.superclazz.prototype.put$TK$TV.apply(this, [key, value]);
+Clazz.newMeth(C$, 'put$O$O', function (key, value) {
+var oldValue=(value == null ) ? C$.superclazz.prototype.remove$O.apply(this, [key]) : C$.superclazz.prototype.put$O$O.apply(this, [key, value]);
 if (Clazz.instanceOf(key, "java.lang.String")) {
 this.firePropertyChange$S$O$O(key, oldValue, value);
 }return oldValue;
@@ -94,7 +86,7 @@ var value=keyValueList[i + 1];
 if (value == null ) {
 C$.superclazz.prototype.remove$O.apply(this, [keyValueList[i]]);
 } else {
-C$.superclazz.prototype.put$TK$TV.apply(this, [keyValueList[i], value]);
+C$.superclazz.prototype.put$O$O.apply(this, [keyValueList[i], value]);
 }}
 this.firePropertyChange$S$O$O("UIDefaults", null, null);
 });
@@ -227,7 +219,7 @@ return this.getUIClass$S$ClassLoader(uiClassID, null);
 Clazz.newMeth(C$, 'getUIError$S', function (msg) {
 System.err.println$S("UIDefaults.getUI() failed: " + msg);
 try {
-throw Clazz.new_($I$(5));
+throw Clazz.new_($I$(5,1));
 } catch (e) {
 e.printStackTrace$();
 }
@@ -239,7 +231,7 @@ return $I$(6).getComponentUI$javax_swing_JComponent(target);
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 if (this.changeSupport == null ) {
-this.changeSupport=Clazz.new_($I$(7).c$$O,[this]);
+this.changeSupport=Clazz.new_($I$(7,1).c$$O,[this]);
 }this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
 });
 
@@ -263,9 +255,9 @@ Clazz.newMeth(C$, 'addResourceBundle$S', function (bundleName) {
 if (bundleName == null ) {
 return;
 }if (this.resourceBundles == null ) {
-this.resourceBundles=Clazz.new_($I$(9).c$$I,[5]);
+this.resourceBundles=Clazz.new_($I$(9,1).c$$I,[5]);
 }if (!this.resourceBundles.contains$O(bundleName)) {
-this.resourceBundles.add$TE(bundleName);
+this.resourceBundles.add$O(bundleName);
 this.resourceCache.clear$();
 }});
 
@@ -283,35 +275,31 @@ Clazz.newMeth(C$, 'getDefaultLocale$', function () {
 return this.defaultLocale;
 });
 ;
-(function(){var C$=Clazz.newInterface(P$.UIDefaults, "LazyValue", function(){
+(function(){/*i*/var C$=Clazz.newInterface(P$.UIDefaults, "LazyValue", function(){
 });
 })()
 ;
-(function(){var C$=Clazz.newInterface(P$.UIDefaults, "ActiveValue", function(){
+(function(){/*i*/var C$=Clazz.newInterface(P$.UIDefaults, "ActiveValue", function(){
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.UIDefaults, "LazyInputMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.UIDefaults, "LazyInputMap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['javax.swing.UIDefaults','javax.swing.UIDefaults.LazyValue']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bindings=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['bindings','Object[]']]]
 
 Clazz.newMeth(C$, 'c$$OA', function (bindings) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.bindings=bindings;
 }, 1);
 
-Clazz.newMeth(C$, ['createValue$javax_swing_UIDefaults','createValue$'], function (table) {
+Clazz.newMeth(C$, 'createValue$javax_swing_UIDefaults', function (table) {
 if (this.bindings != null ) {
 var km=$I$(1).makeInputMap$OA(this.bindings);
 return km;
@@ -321,4 +309,4 @@ return km;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

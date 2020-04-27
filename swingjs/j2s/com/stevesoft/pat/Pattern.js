@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'StringBuffer','com.stevesoft.pat.patInt','com.stevesoft.pat.patInf','Error','jalview.util.MessageManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Pattern");
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'StringBuffer','com.stevesoft.pat.patInt','com.stevesoft.pat.patInf','Error','jalview.util.MessageManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Pattern");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.next=null;
-this.parent=null;
-this.mfrom=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.next=null;
 this.parent=null;
 this.mfrom=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mfrom'],'O',['next','com.stevesoft.pat.Pattern','+parent']]]
 
 Clazz.newMeth(C$, 'getNext$', function () {
 return this.next != null  ? this.next : (this.parent == null  ? null : this.parent.getNext$());
@@ -50,7 +44,7 @@ return false;
 
 Clazz.newMeth(C$, 'protect$S$S$C', function (s, PROTECT_THESE, esc) {
 var i;
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 var p=PROTECT_THESE + esc;
 for (i=0; i < s.length$(); i++) {
 var c=s.charAt$I(i);
@@ -91,16 +85,16 @@ this.next.add$com_stevesoft_pat_Pattern(p);
 });
 
 Clazz.newMeth(C$, 'minChars$', function () {
-return Clazz.new_($I$(2).c$$I,[0]);
+return Clazz.new_($I$(2,1).c$$I,[0]);
 });
 
 Clazz.newMeth(C$, 'maxChars$', function () {
-return Clazz.new_($I$(3));
+return Clazz.new_($I$(3,1));
 });
 
 Clazz.newMeth(C$, 'countMinChars$', function () {
 var p=this;
-var sum=Clazz.new_($I$(2).c$$I,[0]);
+var sum=Clazz.new_($I$(2,1).c$$I,[0]);
 while (p != null ){
 sum.pluseq$com_stevesoft_pat_patInt(p.minChars$());
 p=p.next;
@@ -110,7 +104,7 @@ return sum;
 
 Clazz.newMeth(C$, 'countMaxChars$', function () {
 var p=this;
-var sum=Clazz.new_($I$(2).c$$I,[0]);
+var sum=Clazz.new_($I$(2,1).c$$I,[0]);
 while (p != null ){
 sum.pluseq$com_stevesoft_pat_patInt(p.maxChars$());
 p=p.next;
@@ -135,7 +129,7 @@ pt.marks=tab;
 });
 
 Clazz.newMeth(C$, 'clone1$java_util_Hashtable', function (h) {
-throw Clazz.new_($I$(4).c$$S,[$I$(5).formatMessage$S$SA("error.no_such_method_as_clone1_for", Clazz.array(String, -1, [this.getClass$().getName$()]))]);
+throw Clazz.new_([$I$(5,"formatMessage$S$SA",["error.no_such_method_as_clone1_for", Clazz.array(String, -1, [this.getClass$().getName$()])])],$I$(4,1).c$$S);
 });
 
 Clazz.newMeth(C$, 'clone$java_util_Hashtable', function (h) {
@@ -144,9 +138,9 @@ if (p != null ) {
 return p;
 }p=this.clone1$java_util_Hashtable(h);
 if (p == null ) {
-throw Clazz.new_($I$(4).c$$S,[$I$(5).getString$S("error.null_from_clone1")]);
-}h.put$TK$TV(this, p);
-h.put$TK$TV(p, p);
+throw Clazz.new_([$I$(5).getString$S("error.null_from_clone1")],$I$(4,1).c$$S);
+}h.put$O$O(this, p);
+h.put$O$O(p, p);
 if (this.next != null ) {
 p.next=this.next.clone$java_util_Hashtable(h);
 }if (this.parent != null ) {
@@ -160,4 +154,4 @@ return o === this ;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

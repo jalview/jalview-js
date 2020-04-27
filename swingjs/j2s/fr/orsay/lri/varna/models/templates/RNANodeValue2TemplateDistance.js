@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),I$=[[0,['fr.orsay.lri.varna.models.treealign.RNANodeValue','.Origin']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RNANodeValue2TemplateDistance", null, null, 'fr.orsay.lri.varna.models.treealign.TreeAlignLabelDistanceAsymmetric');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),I$=[[0,['fr.orsay.lri.varna.models.treealign.RNANodeValue','.Origin']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RNANodeValue2TemplateDistance", null, null, 'fr.orsay.lri.varna.models.treealign.TreeAlignLabelDistanceAsymmetric');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'delete$fr_orsay_lri_varna_models_treealign_RNANodeValue2', function (v) {
 if (v == null ) {
@@ -32,7 +31,7 @@ return 1;
 return 2;
 }}});
 
-Clazz.newMeth(C$, ['f$fr_orsay_lri_varna_models_treealign_RNANodeValue2$fr_orsay_lri_varna_models_templates_RNANodeValueTemplate','f$','f$TValueType1$TValueType2'], function (v1, v2) {
+Clazz.newMeth(C$, ['f$fr_orsay_lri_varna_models_treealign_RNANodeValue2$fr_orsay_lri_varna_models_templates_RNANodeValueTemplate','f$O$O'], function (v1, v2) {
 if (v1 == null ) {
 return this.insert$fr_orsay_lri_varna_models_templates_RNANodeValueTemplate(v2);
 } else if (v2 == null ) {
@@ -64,4 +63,4 @@ return Infinity;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

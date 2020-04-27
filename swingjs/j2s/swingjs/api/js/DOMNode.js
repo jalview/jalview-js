@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("swingjs.api.js"),I$=[[0,'swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DOMNode");
+(function(){var P$=Clazz.newPackage("swingjs.api.js"),I$=[[0,'swingjs.JSUtil','java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DOMNode");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'createElement', function (key, id) {
 var node=null;
@@ -69,7 +68,7 @@ r.height = parseInt(node.style.height.split("p")[0]);
 
 Clazz.newMeth(C$, 'setAttr', function (node, attr, val) {
 
-node[attr] = (val == "TRUE" ? true : val == "FALSE" ? false : val);
+attr && (node[attr] = (val == "秘TRUE" ? true : val == "秘FALSE" ? false : val));
 return node;
 }, 1);
 
@@ -80,18 +79,14 @@ node[attr] = val;
 
 Clazz.newMeth(C$, 'setAttrs', function (node, attr) {
 
-for (var i = 0; i < attr.length;) { var key = attr[i++];
-var val = attr[i++];
-key && (node[key] = val);
+for (var i = 0; i < attr.length;) { C$.setAttr(node, attr[i++],attr[i++]);
 }
 return node;
 }, 1);
 
 Clazz.newMeth(C$, 'setStyles', function (node, attr) {
 
-if (node) for (var i = 0; i < attr.length;) { //
-node.style[attr[i++]] = attr[i++];
-//
+if (node) for (var i = 0; i < attr.length;) { node.style[attr[i++]] = attr[i++];
 }
 return node;
 }, 1);
@@ -115,14 +110,10 @@ return C$.setStyles(node, ["position", "absolute"]);
 }, 1);
 
 Clazz.newMeth(C$, 'setCursor', function (c, comp) {
-var ui=(comp == null  ? null : (comp).getUI$());
+var ui=(comp == null  ? null : (comp).秘getUI$());
 var node=(ui == null  ? null : ui.getDOMNode$());
 
 if (node == null) {document.body.style.cursor = c} else {  node.style.cursor = c }
-}, 1);
-
-Clazz.newMeth(C$, 'getImageNode', function (img) {
-return (img._canvas || img._imgNode ||null);
 }, 1);
 
 Clazz.newMeth(C$, 'addHorizontalGap', function (domNode, gap) {
@@ -186,6 +177,19 @@ var ui=(node.ui || node["data-ui"] || node["data-component"] || node["data-textc
 return (ui == null  ? null : ui.jc);
 }, 1);
 
+Clazz.newMeth(C$, 'getEmbedded', function (name, type) {
+var node=C$.getElement(name + "-div");
+if (node == null ) return null;
+switch (type) {
+case "node":
+return node;
+case "dim":
+return Clazz.new_([C$.getWidth(node), C$.getHeight(node)],$I$(2,1).c$$I$I);
+default:
+return C$.getAttr(node, type);
+}
+}, 1);
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

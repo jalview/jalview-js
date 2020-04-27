@@ -1,56 +1,34 @@
-(function(){var P$=Clazz.newPackage("jalview.jbgui"),p$1={},I$=[[0,'java.awt.BorderLayout','javax.swing.JScrollPane','javax.swing.JMenuBar','javax.swing.JMenu','javax.swing.JMenuItem','javax.swing.JCheckBoxMenuItem','java.awt.Color','java.awt.Font','jalview.util.MessageManager',['jalview.util.ImageMaker','.TYPE']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GTreePanel", null, 'javax.swing.JInternalFrame');
+(function(){var P$=Clazz.newPackage("jalview.jbgui"),p$1={},I$=[[0,'java.awt.BorderLayout','javax.swing.JScrollPane','javax.swing.JMenuBar','javax.swing.JMenu','javax.swing.JMenuItem','javax.swing.JCheckBoxMenuItem','java.awt.Color','java.awt.Font','jalview.util.MessageManager',['jalview.util.ImageMaker','.TYPE']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GTreePanel", null, 'javax.swing.JInternalFrame');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.borderLayout1=null;
-this.scrollPane=null;
-this.jMenuBar1=null;
-this.fileMenu=null;
-this.saveAsNewick=null;
-this.printMenu=null;
-this.viewMenu=null;
-this.$font=null;
-this.sortAssocViews=null;
-this.bootstrapMenu=null;
-this.distanceMenu=null;
-this.fitToWindow=null;
-this.placeholdersMenu=null;
-this.pngTree=null;
-this.epsTree=null;
-this.saveAsMenu=null;
-this.textbox=null;
-this.originalSeqData=null;
-this.associateLeavesMenu=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.borderLayout1=Clazz.new_($I$(1));
-this.scrollPane=Clazz.new_($I$(2));
-this.jMenuBar1=Clazz.new_($I$(3));
-this.fileMenu=Clazz.new_($I$(4));
-this.saveAsNewick=Clazz.new_($I$(5));
-this.printMenu=Clazz.new_($I$(5));
-this.viewMenu=Clazz.new_($I$(4));
-this.$font=Clazz.new_($I$(5));
-this.sortAssocViews=Clazz.new_($I$(5));
-this.bootstrapMenu=Clazz.new_($I$(6));
-this.distanceMenu=Clazz.new_($I$(6));
-this.fitToWindow=Clazz.new_($I$(6));
-this.placeholdersMenu=Clazz.new_($I$(6));
-this.pngTree=Clazz.new_($I$(5));
-this.epsTree=Clazz.new_($I$(5));
-this.saveAsMenu=Clazz.new_($I$(4));
-this.textbox=Clazz.new_($I$(5));
-this.originalSeqData=Clazz.new_($I$(5));
-this.associateLeavesMenu=Clazz.new_($I$(4));
-}, 1);
+this.borderLayout1=Clazz.new_($I$(1,1));
+this.scrollPane=Clazz.new_($I$(2,1));
+this.jMenuBar1=Clazz.new_($I$(3,1));
+this.fileMenu=Clazz.new_($I$(4,1));
+this.saveAsNewick=Clazz.new_($I$(5,1));
+this.printMenu=Clazz.new_($I$(5,1));
+this.viewMenu=Clazz.new_($I$(4,1));
+this.$font=Clazz.new_($I$(5,1));
+this.sortAssocViews=Clazz.new_($I$(5,1));
+this.bootstrapMenu=Clazz.new_($I$(6,1));
+this.distanceMenu=Clazz.new_($I$(6,1));
+this.fitToWindow=Clazz.new_($I$(6,1));
+this.placeholdersMenu=Clazz.new_($I$(6,1));
+this.pngTree=Clazz.new_($I$(5,1));
+this.epsTree=Clazz.new_($I$(5,1));
+this.saveAsMenu=Clazz.new_($I$(4,1));
+this.textbox=Clazz.new_($I$(5,1));
+this.originalSeqData=Clazz.new_($I$(5,1));
+this.associateLeavesMenu=Clazz.new_($I$(4,1));
+},1);
+
+C$.$fields$=[['O',['borderLayout1','java.awt.BorderLayout','scrollPane','javax.swing.JScrollPane','jMenuBar1','javax.swing.JMenuBar','fileMenu','javax.swing.JMenu','saveAsNewick','javax.swing.JMenuItem','+printMenu','viewMenu','javax.swing.JMenu','$font','javax.swing.JMenuItem','+sortAssocViews','bootstrapMenu','javax.swing.JCheckBoxMenuItem','+distanceMenu','+fitToWindow','+placeholdersMenu','pngTree','javax.swing.JMenuItem','+epsTree','saveAsMenu','javax.swing.JMenu','textbox','javax.swing.JMenuItem','+originalSeqData','associateLeavesMenu','javax.swing.JMenu']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 try {
 p$1.jbInit.apply(this, []);
 this.setJMenuBar$javax_swing_JMenuBar(this.jMenuBar1);
@@ -67,48 +45,45 @@ Clazz.newMeth(C$, 'jbInit', function () {
 this.setName$S("jalview-tree");
 this.getContentPane$().setLayout$java_awt_LayoutManager(this.borderLayout1);
 this.setBackground$java_awt_Color($I$(7).white);
-this.setFont$java_awt_Font(Clazz.new_($I$(8).c$$S$I$I,["Verdana", 0, 12]));
+this.setFont$java_awt_Font(Clazz.new_($I$(8,1).c$$S$I$I,["Verdana", 0, 12]));
 this.scrollPane.setOpaque$Z(false);
 this.fileMenu.setText$S($I$(9).getString$S("action.file"));
 this.saveAsNewick.setText$S($I$(9).getString$S("label.newick_format"));
 this.saveAsNewick.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$1||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].saveAsNewick_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$1.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$1.$init$,[this, null])));
 this.printMenu.setText$S($I$(9).getString$S("action.print"));
 this.printMenu.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$2||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].printMenu_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$2.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$2.$init$,[this, null])));
 this.viewMenu.setText$S($I$(9).getString$S("action.view"));
 this.viewMenu.addMenuListener$javax_swing_event_MenuListener(((P$.GTreePanel$3||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.MenuListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.MenuListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'menuSelected$javax_swing_event_MenuEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].viewMenu_menuSelected$.apply(this.b$['jalview.jbgui.GTreePanel'], []);
@@ -120,160 +95,150 @@ Clazz.newMeth(C$, 'menuDeselected$javax_swing_event_MenuEvent', function (e) {
 Clazz.newMeth(C$, 'menuCanceled$javax_swing_event_MenuEvent', function (e) {
 });
 })()
-), Clazz.new_(P$.GTreePanel$3.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$3.$init$,[this, null])));
 this.sortAssocViews.setText$S($I$(9).getString$S("label.sort_alignment_by_tree"));
 this.sortAssocViews.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$4||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].sortByTree_actionPerformed$.apply(this.b$['jalview.jbgui.GTreePanel'], []);
 });
 })()
-), Clazz.new_(P$.GTreePanel$4.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$4.$init$,[this, null])));
 this.$font.setText$S($I$(9).getString$S("action.font"));
 this.$font.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$5||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].font_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$5.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$5.$init$,[this, null])));
 this.bootstrapMenu.setText$S($I$(9).getString$S("label.show_bootstrap_values"));
 this.bootstrapMenu.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$6||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].bootstrapMenu_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$6.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$6.$init$,[this, null])));
 this.distanceMenu.setText$S($I$(9).getString$S("label.show_distances"));
 this.distanceMenu.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$7||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$7", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$7", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].distanceMenu_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$7.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$7.$init$,[this, null])));
 this.fitToWindow.setSelected$Z(true);
 this.fitToWindow.setText$S($I$(9).getString$S("label.fit_to_window"));
 this.fitToWindow.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$8||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].fitToWindow_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$8.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$8.$init$,[this, null])));
 this.epsTree.setText$S("EPS");
 this.epsTree.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$9||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$9", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$9", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].writeTreeImage$jalview_util_ImageMaker_TYPE.apply(this.b$['jalview.jbgui.GTreePanel'], [$I$(10).EPS]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$9.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$9.$init$,[this, null])));
 this.pngTree.setText$S("PNG");
 this.pngTree.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$10||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$10", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$10", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].writeTreeImage$jalview_util_ImageMaker_TYPE.apply(this.b$['jalview.jbgui.GTreePanel'], [$I$(10).PNG]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$10.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$10.$init$,[this, null])));
 this.saveAsMenu.setText$S($I$(9).getString$S("action.save_as"));
 this.placeholdersMenu.setToolTipText$S($I$(9).getString$S("label.marks_leaves_tree_not_associated_with_sequence"));
 this.placeholdersMenu.setText$S($I$(9).getString$S("label.mark_unlinked_leaves"));
 this.placeholdersMenu.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$11||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$11", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$11", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].placeholdersMenu_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$11.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$11.$init$,[this, null])));
 this.textbox.setText$S($I$(9).getString$S("label.out_to_textbox"));
 this.textbox.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$12||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$12", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$12", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].textbox_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$12.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$12.$init$,[this, null])));
 this.originalSeqData.setText$S($I$(9).getString$S("label.input_data"));
 this.originalSeqData.addActionListener$java_awt_event_ActionListener(((P$.GTreePanel$13||
-(function(){var C$=Clazz.newClass(P$, "GTreePanel$13", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "GTreePanel$13", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.jbgui.GTreePanel'].originalSeqData_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.jbgui.GTreePanel'], [e]);
 });
 })()
-), Clazz.new_(P$.GTreePanel$13.$init$, [this, null])));
+), Clazz.new_(P$.GTreePanel$13.$init$,[this, null])));
 this.associateLeavesMenu.setText$S($I$(9).getString$S("label.associate_leaves_with"));
 this.getContentPane$().add$java_awt_Component$O(this.scrollPane, "Center");
 this.jMenuBar1.add$javax_swing_JMenu(this.fileMenu);
@@ -333,4 +298,4 @@ Clazz.newMeth(C$, 'viewMenu_menuSelected$', function () {
 Clazz.newMeth(C$, 'sortByTree_actionPerformed$', function () {
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt.dnd"),I$=[[0,'java.awt.datatransfer.DataFlavor','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DropTargetContext", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("java.awt.dnd"),I$=[[0,'java.awt.datatransfer.DataFlavor','java.util.Arrays']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DropTargetContext", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dropTarget=null;
-this.dropTargetContextPeer=null;
-this.transferable=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['dropTarget','java.awt.dnd.DropTarget','dropTargetContextPeer','java.awt.dnd.peer.DropTargetContextPeer','transferable','java.awt.datatransfer.Transferable']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DropTarget', function (dt) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.dropTarget=dt;
 }, 1);
 
@@ -87,7 +81,7 @@ return peer != null  ? peer.getTransferDataFlavors$() : Clazz.array($I$(1), [0])
 });
 
 Clazz.newMeth(C$, 'getCurrentDataFlavorsAsList$', function () {
-return $I$(2).asList$TTA(this.getCurrentDataFlavors$());
+return $I$(2,"asList$OA",[this.getCurrentDataFlavors$()]);
 });
 
 Clazz.newMeth(C$, 'isDataFlavorSupported$java_awt_datatransfer_DataFlavor', function (df) {
@@ -111,4 +105,4 @@ return this.dropTargetContextPeer;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

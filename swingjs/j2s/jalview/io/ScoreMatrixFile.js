@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.analysis.scoremodels.ScoreModels','java.util.StringTokenizer','jalview.analysis.scoremodels.ScoreMatrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScoreMatrixFile", null, 'jalview.io.AlignFile', 'jalview.io.AlignmentFileReaderI');
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.analysis.scoremodels.ScoreModels','java.util.StringTokenizer','jalview.analysis.scoremodels.ScoreMatrix']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScoreMatrixFile", null, 'jalview.io.AlignFile', 'jalview.io.AlignmentFileReaderI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.matrixName=null;
-this.isLowerDiagonalOnly=false;
-this.hasGuideColumn=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isLowerDiagonalOnly','hasGuideColumn'],'S',['matrixName']]]
 
 Clazz.newMeth(C$, 'c$$jalview_io_FileParse', function (source) {
-C$.superclazz.c$$Z$jalview_io_FileParse.apply(this, [false, source]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Z$jalview_io_FileParse.apply(this,[false, source]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'print$jalview_datamodel_SequenceIA$Z', function (sqs, jvsuffix) {
@@ -47,7 +40,7 @@ continue;
 }if (data.toUpperCase$().startsWith$S("SCOREMATRIX")) {
 if (name != null ) {
 throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,["Error: 'ScoreMatrix' repeated in file at line " + lineNo]);
-}var nameLine=Clazz.new_($I$(2).c$$S$S,[data, " ,\t"]);
+}var nameLine=Clazz.new_($I$(2,1).c$$S$S,[data, " ,\t"]);
 if (nameLine.countTokens$() < 2) {
 err="Format error: expected 'ScoreMatrix <name>', found '" + data + "' at line " + lineNo ;
 throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,[err]);
@@ -61,7 +54,7 @@ return this.parseAAIndexFormat$I$S(lineNo, data);
 err="Format error: \'ScoreMatrix <name>\' should be the first non-comment line";
 throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,[err]);
 }if (alphabet == null ) {
-var columnHeadings=Clazz.new_($I$(2).c$$S$S,[data, " ,\t"]);
+var columnHeadings=Clazz.new_($I$(2,1).c$$S$S,[data, " ,\t"]);
 size=columnHeadings.countTokens$();
 alphabet=Clazz.array(Character.TYPE, [size]);
 var col=0;
@@ -79,7 +72,7 @@ row++;
 if (row < size) {
 err=String.format$S$OA("Expected %d rows of score data in score matrix but only found %d", [new Integer(size), new Integer(row)]);
 throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,[err]);
-}sm=Clazz.new_($I$(3).c$$S$CA$FAA,[name, alphabet, scores]);
+}sm=Clazz.new_($I$(3,1).c$$S$CA$FAA,[name, alphabet, scores]);
 this.matrixName=name;
 return sm;
 });
@@ -110,7 +103,7 @@ throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,["Too many da
 this.parseValues$S$I$FAA$I$CA(data, lineNo, scores, row, alphabet);
 row++;
 }}
-var sm=Clazz.new_($I$(3).c$$S$S$CA$FAA,[name, description, alphabet, scores]);
+var sm=Clazz.new_($I$(3,1).c$$S$S$CA$FAA,[name, description, alphabet, scores]);
 this.matrixName=name;
 return sm;
 });
@@ -118,7 +111,7 @@ return sm;
 Clazz.newMeth(C$, 'parseValues$S$I$FAA$I$CA', function (data, lineNo, scores, row, alphabet) {
 var err;
 var size=alphabet.length;
-var scoreLine=Clazz.new_($I$(2).c$$S$S,[data, " ,\t"]);
+var scoreLine=Clazz.new_($I$(2,1).c$$S$S,[data, " ,\t"]);
 var tokenCount=scoreLine.countTokens$();
 if (row == 0) {
 if (data.startsWith$S(String.valueOf$C(alphabet[0]))) {
@@ -143,7 +136,7 @@ var value=null;
 while (scoreLine.hasMoreTokens$()){
 try {
 value=scoreLine.nextToken$();
-scores[row][col]=(Float.valueOf$S(value)).floatValue$();
+scores[row][col]=(Float.valueOf$S(value)).valueOf();
 if (this.isLowerDiagonalOnly) {
 scores[col][row]=scores[row][col];
 }col++;
@@ -186,4 +179,4 @@ return this.matrixName;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

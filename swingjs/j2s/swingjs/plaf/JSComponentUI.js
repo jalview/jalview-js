@@ -1,142 +1,42 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'java.awt.Color','swingjs.JSUtil','java.awt.Insets','swingjs.api.js.DOMNode','swingjs.JSToolkit','swingjs.plaf.JSPopupMenuUI','javax.swing.ToolTipManager','swingjs.JSFocusPeer','java.awt.JSComponent','java.awt.Dimension',['java.awt.Component','.BaselineResizeBehavior'],'javax.swing.UIManager','javajs.util.PT','java.awt.Rectangle','swingjs.plaf.HTML5LookAndFeel','java.awt.event.KeyEvent','java.awt.Point','java.awt.Toolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSComponentUI", null, 'javax.swing.plaf.ComponentUI', ['java.awt.peer.ContainerPeer', 'swingjs.plaf.JSEventHandler', 'java.beans.PropertyChangeListener', 'javax.swing.event.ChangeListener', 'java.awt.dnd.peer.DropTargetPeer']);
-C$.rootPaneColor=null;
-C$.incr=0;
-C$.borderTest=false;
-C$.debugging=false;
-C$.frameZ=0;
-C$.jquery=null;
-C$.isMenuOpen=false;
-C$.zeroInsets=null;
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'swingjs.JSUtil','java.awt.Dimension','java.awt.Insets','java.awt.Color','swingjs.api.js.DOMNode','swingjs.JSToolkit','swingjs.plaf.JSPopupMenuUI','javax.swing.ToolTipManager','swingjs.JSFocusPeer','java.awt.JSComponent','java.awt.Cursor',['java.awt.Component','.BaselineResizeBehavior'],'javax.swing.UIManager','javajs.util.PT','java.awt.Rectangle','swingjs.plaf.HTML5LookAndFeel','java.awt.event.KeyEvent','java.awt.Point','java.awt.Toolkit']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSComponentUI", function(){
+Clazz.newInstance(this, arguments,0,C$);
+}, 'javax.swing.plaf.ComponentUI', ['swingjs.plaf.JSEventHandler', 'java.beans.PropertyChangeListener', 'javax.swing.event.ChangeListener', 'java.awt.dnd.peer.DropTargetPeer']);
+C$.$classes$=[['Embeddable',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.rootPaneColor=Clazz.new_($I$(1).c$$I$I$I,[238, 238, 238]);
-C$.frameZ=19000;
-C$.jquery=$I$(2).getJQuery$();
-C$.zeroInsets=Clazz.new_($I$(3).c$$I$I$I$I,[0, 0, 0, 0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.J2S=null;
-this.isNull=false;
-this.id=null;
-this.c=null;
-this.jc=null;
-this.label=null;
-this.targetParent=null;
-this.menu=null;
-this.outerNode=null;
-this.innerNode=null;
-this.domNode=null;
-this.centeringNode=null;
-this.imageNode=null;
-this.actionNode=null;
-this.buttonNode=null;
-this.enableNode=null;
-this.enableNodes=null;
-this.iconNode=null;
-this.textNode=null;
-this.accelNode=null;
-this.valueNode=null;
-this.focusNode=null;
-this.itemNode=null;
-this.containerNode=null;
-this.textAlign=null;
-this.iconHeight=0;
-this.buttonListener=null;
-this.menuAnchorNode=null;
-this.draggable=false;
-this.num=0;
-this.isAWT=false;
-this.isDummyFrame=false;
-this.isTainted=false;
-this.isPaintedOnly=false;
-this.boundsSet=false;
-this.isMenuItem=false;
-this.isMenuSep=false;
-this.isMenu=false;
-this.isSimpleButton=false;
-this.isLabel=false;
-this.x=0;
-this.y=0;
-this.preferredSize=null;
-this.jsActualWidth=0;
-this.jsActualHeight=0;
-this.dropTarget=null;
-this.actionItemOffset=0;
-this.mnemonicIndex=0;
-this.isContainer=false;
-this.isWindow=false;
-this.isRootPane=false;
-this.isPopupMenu=false;
-this.isContentPane=false;
-this.isPanel=false;
-this.isDesktop=false;
-this.isTable=false;
-this.parent=null;
-this.currentText=null;
-this.currentIcon=null;
-this.currentGap=0;
-this.scrollPaneUI=null;
-this.classID=null;
-this.body=null;
-this.applet=null;
-this.needPreferred=false;
-this.width=0;
-this.height=0;
-this.waitImage=null;
-this.colorUNKNOWN=null;
-this.inactiveForeground=null;
-this.inactiveBackground=null;
-this.enabled=false;
-this.isHTML=false;
-this.allowTextAlignment=false;
-this.menuTimer=0;
-this.j2sDoPropagate=false;
-this.notImplemented=false;
-this.keysEnabled=false;
-this.mnemonic=0;
-this.awttop=null;
-this.awtPeerBG=null;
-this.awtPeerFG=null;
-this.layingOut=false;
-this.isDisposed=false;
-this.cellComponent=null;
-this.cellWidth=0;
-this.cellHeight=0;
-this.tableID=null;
-this.isUIDisabled=false;
-this.actualHeight=0;
-this.actualWidth=0;
-this.allowPaintedBackground=false;
-this.backgroundPainted=false;
-this.imagePersists=false;
-this.allowDivOverflow=false;
-this.ignoreFocus=false;
-this.embeddingNode=null;
-this.insets=null;
-this.icon=null;
-this.viewR=null;
-this.iconR=null;
-this.textR=null;
-this.preferredDim=null;
-this.isLaidOut=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.J2S=$I$(2).J2S;
+this.J2S=$I$(1).J2S;
 this.isTainted=true;
 this.dropTarget=this;
 this.mnemonicIndex=-1;
 this.currentGap=2147483647;
-this.colorUNKNOWN=Clazz.new_($I$(1));
+this.colorUNKNOWN=Clazz.new_($I$(4,1));
 this.inactiveForeground=this.colorUNKNOWN;
 this.inactiveBackground=this.colorUNKNOWN;
 this.enabled=true;
 this.allowTextAlignment=true;
+this.focusRunnable=((P$.JSComponentUI$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JSComponentUI$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, 'run$', function () {
+this.b$['swingjs.plaf.JSComponentUI'].focus$.apply(this.b$['swingjs.plaf.JSComponentUI'], []);
+});
+})()
+), Clazz.new_(P$.JSComponentUI$1.$init$,[this, null]));
 this.allowPaintedBackground=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNull','draggable','isAWT','isDummyFrame','isTainted','isPaintedOnly','inPaintPath','boundsSet','isMenuItem','isMenuSep','isMenu','isSimpleButton','isLabel','isContainer','isWindow','isRootPane','isPopupMenu','isContentPane','isLayeredPane','isPanel','isDesktop','isTable','needPreferred','enabled','isHTML','allowTextAlignment','j2sDoPropagate','notImplemented','keysEnabled','layingOut','isDisposed','isUIDisabled','allowPaintedBackground','imagePersists','allowDivOverflow','ignoreFocus','isSticky','isFullyCentered','alignmentDisabled','isLaidOut','modalBlocked','isTextView'],'I',['iconHeight','num','x','y','jsActualWidth','jsActualHeight','actionItemOffset','mnemonicIndex','currentGap','width','height','menuTimer','mnemonic','cellWidth','cellHeight','actualHeight','actualWidth'],'S',['id','textAlign','currentText','classID'],'O',['J2S','swingjs.api.js.J2SInterface','c','java.awt.JSComponent','jc','javax.swing.JComponent','label','javax.swing.JLabel','targetParent','javax.swing.JComponent','menu','javax.swing.JPopupMenu','outerNode','swingjs.api.js.DOMNode','+innerNode','+domNode','+centeringNode','+imageNode','+actionNode','+buttonNode','+enableNode','enableNodes','swingjs.api.js.DOMNode[]','iconNode','swingjs.api.js.DOMNode','+textNode','+accelNode','+valueNode','+focusNode','+itemNode','+containerNode','buttonListener','swingjs.plaf.ButtonListener','menuAnchorNode','swingjs.api.js.DOMNode','preferredSize','java.awt.Dimension','dropTarget','java.lang.Object','parent','swingjs.plaf.JSComponentUI','currentIcon','javax.swing.ImageIcon','scrollPaneUI','swingjs.plaf.JSScrollPaneUI','body','swingjs.api.js.DOMNode','applet','swingjs.api.js.HTML5Applet','waitImage','swingjs.api.js.DOMNode','colorUNKNOWN','java.awt.Color','+inactiveForeground','+inactiveBackground','focusRunnable','Runnable','awttop','java.awt.Container','awtPeerBG','java.awt.Color','+awtPeerFG','cellComponent','javax.swing.JComponent','embeddingNode','swingjs.api.js.DOMNode','insets','java.awt.Insets','icon','javax.swing.Icon','viewR','java.awt.Rectangle','+iconR','+textR','preferredDim','java.awt.Dimension','myCursor','java.awt.Cursor','backgroundColor','java.awt.Color']]
+,['Z',['debugging','isMenuOpen'],'I',['incr','frameZ'],'O',['jquery','swingjs.api.js.JQuery','tempDiv','swingjs.api.js.DOMNode','ANY_SIZE','java.awt.Dimension','zeroInsets','java.awt.Insets']]]
 
 Clazz.newMeth(C$, 'setTargetParent$javax_swing_JComponent', function (table) {
 this.targetParent=table;
@@ -146,22 +46,31 @@ Clazz.newMeth(C$, 'getTargetParent$', function () {
 return this.targetParent;
 });
 
-Clazz.newMeth(C$, 'saveCellNodes$swingjs_api_js_DOMNode', function (td) {
-var nodes=Clazz.array($I$(4), -1, [this.domNode, this.innerNode, this.centeringNode, this.iconNode, this.textNode, this.accelNode, this.buttonNode, this.enableNode, (this.enableNodes == null  ? null : this.enableNodes[0]), (this.enableNodes == null  ? null : this.enableNodes[1]), (this.enableNodes == null  ? null : this.enableNodes[2]), this.focusNode, this.actionNode, this.valueNode]);
-$I$(4).setAttr(td, "data-nodes", nodes);
-p$1.updateTableCell$swingjs_api_js_DOMNode.apply(this, [td]);
+Clazz.newMeth(C$, 'saveCellNodes$swingjs_api_js_DOMNode$Z', function (td, isHeader) {
+this.outerNode=null;
+this.reInit$Z(true);
+var nodes=Clazz.array($I$(5), -1, [this.domNode, this.innerNode, this.centeringNode, this.iconNode, this.textNode, this.accelNode, this.buttonNode, this.enableNode, (this.enableNodes == null  ? null : this.enableNodes[0]), (this.enableNodes == null  ? null : this.enableNodes[1]), (this.enableNodes == null  ? null : this.enableNodes[2]), this.focusNode, this.actionNode, this.valueNode]);
+$I$(5).setAttr(td, "data-nodes", nodes);
+p$1.updateTableCell$swingjs_api_js_DOMNode$Z.apply(this, [td, isHeader]);
 });
 
-Clazz.newMeth(C$, 'updateTableCell$swingjs_api_js_DOMNode', function (td) {
-var node=$I$(4).firstChild(td);
+Clazz.newMeth(C$, 'updateTableCell$swingjs_api_js_DOMNode$Z', function (td, andAdd) {
+var node=$I$(5).firstChild(td);
 if (node !== this.domNode ) {
+if (this.isLabel || this.buttonNode != null  ) {
 this.$$O(td).empty();
+} else {
+$I$(5).detachAll(td);
+this.setHTMLElement$();
+}node=null;
 td.appendChild(this.domNode);
+node=this.domNode;
+$I$(5).setAttr(td, "domNode", node);
 }this.domNode=this.outerNode=null;
 }, p$1);
 
 Clazz.newMeth(C$, 'restoreCellNodes$swingjs_api_js_DOMNode', function (td) {
-var nodes=$I$(4).getAttr(td, "data-nodes");
+var nodes=$I$(5).getAttr(td, "data-nodes");
 if (nodes == null ) return;
 this.domNode=nodes[0];
 this.innerNode=nodes[1];
@@ -190,15 +99,13 @@ this.j2sDoPropagate=true;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setDoc$();
 }, 1);
 
 Clazz.newMeth(C$, 'setDoc$', function () {
-{
-this.body = document.body;
-}
-C$.debugging=$I$(2).debugging;
+this.body=document.body ||null;
+C$.debugging=$I$(1).debugging;
 });
 
 Clazz.newMeth(C$, 'installJS$', function () {
@@ -213,12 +120,16 @@ Clazz.newMeth(C$, 'uninstallJS', function () {
 this.c && this.c.removeChangeListener$javax_swing_event_ChangeListener && this.c.removeChangeListener$javax_swing_event_ChangeListener(this);
 if (this.c != null ) this.c.removePropertyChangeListener$java_beans_PropertyChangeListener(this);
 if (this.outerNode != null ) {
-$I$(4).dispose(this.outerNode);
+$I$(5).dispose(this.outerNode);
 this.outerNode=null;
 }}, p$1);
 
 Clazz.newMeth(C$, '$$O', function (node) {
 return C$.jquery.$(node);
+});
+
+Clazz.newMeth(C$, '$data$swingjs_api_js_DOMNode$S', function (node, attr) {
+return (node == null  ? null : C$.jquery.data(node, attr));
 });
 
 Clazz.newMeth(C$, 'setComponent$javax_swing_JComponent', function (comp) {
@@ -228,9 +139,8 @@ this.setUIDisabled$Z(comp == null );
 
 Clazz.newMeth(C$, 'set$javax_swing_JComponent', function (target) {
 p$1.setComponent$javax_swing_JComponent.apply(this, [target]);
-
-this.isAWT = this.jc.isAWT$;
-this.applet=$I$(5).getHTML5Applet$java_awt_Component(this.c);
+this.isAWT=this.jc.秘isAWT$();
+this.applet=$I$(6).getHTML5Applet$java_awt_Component(this.c);
 this.newID$Z(false);
 this.installUI$javax_swing_JComponent(target);
 this.installJS$();
@@ -240,26 +150,42 @@ return this;
 
 Clazz.newMeth(C$, 'newID$Z', function (forceNew) {
 this.classID=this.c.getUIClassID$();
-this.notImplemented=(this.classID == "ComponentUI");
+this.notImplemented=(this.classID === "ComponentUI" );
 if (this.id == null  || forceNew ) {
 this.num=++C$.incr;
 this.id=this.c.getHTMLName$S(this.classID) + "_" + this.num ;
 }});
 
-Clazz.newMeth(C$, 'reInit$', function () {
+Clazz.newMeth(C$, 'getListNode$', function () {
+var node=this.reInit$Z(true);
+this.reInit$Z(false);
+return node;
+});
+
+Clazz.newMeth(C$, 'reInit$Z', function (getNew) {
 this.setTainted$();
-if (this.domNode != null ) $I$(4).dispose(this.domNode);
-this.domNode=null;
+if (this.domNode != null ) {
+$I$(5).dispose(this.domNode);
+}this.domNode=null;
 this.keysEnabled=false;
 this.newID$Z(true);
+return (getNew ? this.getDOMNode$() : null);
 });
 
 Clazz.newMeth(C$, 'setDataComponent$swingjs_api_js_DOMNode', function (button) {
-$I$(4).setAttr(button, "data-component", this.c);
+$I$(5).setAttr(button, "data-component", this.c);
 });
 
 Clazz.newMeth(C$, 'setDataKeyComponent$swingjs_api_js_DOMNode', function (node) {
-$I$(4).setAttr(node, "data-keycomponent", this.c);
+$I$(5).setAttr(node, "data-keycomponent", this.c);
+});
+
+Clazz.newMeth(C$, 'setDataShadowKeyComponent$swingjs_api_js_DOMNode$java_awt_Component', function (node, c) {
+$I$(5).setAttr(node, "data-shadowkeycomponent", c);
+});
+
+Clazz.newMeth(C$, 'setDataFocusComponent$swingjs_api_js_DOMNode', function (node) {
+$I$(5).setAttr(node, "data-focuscomponent", this.c);
 });
 
 Clazz.newMeth(C$, 'ignoreAllMouseEvents$swingjs_api_js_DOMNode', function (node) {
@@ -267,8 +193,8 @@ this.addClass$swingjs_api_js_DOMNode$S(node, "swingjs-ui");
 });
 
 Clazz.newMeth(C$, 'hideMenusAndToolTip$', function () {
-if (C$.isMenuOpen) $I$(6).closeAllMenus$();
-if (javax.swing.ToolTipManager ||false) $I$(7).j2sHideToolTip$();
+if (C$.isMenuOpen) $I$(7).closeAllMenus$();
+if (javax.swing.ToolTipManager ||false) $I$(8).j2sHideToolTip$();
 }, 1);
 
 Clazz.newMeth(C$, 'addClass$swingjs_api_js_DOMNode$S', function (node, cl) {
@@ -280,7 +206,7 @@ this.$$O(node).removeClass(cl);
 });
 
 Clazz.newMeth(C$, 'setDataUI$swingjs_api_js_DOMNode', function (node) {
-$I$(4).setAttr(node, "data-ui", this);
+$I$(5).setAttr(node, "data-ui", this);
 this.addClass$swingjs_api_js_DOMNode$S(node, "data-ui");
 });
 
@@ -292,12 +218,13 @@ this.setDataComponent$swingjs_api_js_DOMNode(node);
 
 Clazz.newMeth(C$, 'setJ2sMouseHandler$', function () {
 this.J2S.unsetMouse(this.domNode);
-$I$(4).setAttrs(this.domNode, ["applet", this.applet, "_frameViewer", this.jc.getFrameViewer$()]);
+if (this.domNode == null ) this.updateDOMNode$();
+$I$(5,"setAttrs",[this.domNode, ["applet", this.applet, "_frameViewer", this.jc.getFrameViewer$()]]);
 this.J2S.setMouse(this.domNode, true);
 });
 
 Clazz.newMeth(C$, 'enableJSKeys$Z', function (on) {
-if (this.getDOMNode$() == null ) return;
+if (this.isUIDisabled) return;
 if (!on) {
 p$1.setTabIndex$I.apply(this, [-2147483648]);
 } else if (this.keysEnabled) {
@@ -309,7 +236,7 @@ this.addFocusHandler$();
 Clazz.newMeth(C$, 'addFocusHandler$', function () {
 if (this.focusNode == null  && (this.focusNode=this.domNode) == null  ) return;
 this.keysEnabled=true;
-$I$(4).setAttrs(this.focusNode, ["applet", this.applet, "_frameViewer", this.jc.getFrameViewer$()]);
+$I$(5,"setAttrs",[this.focusNode, ["applet", this.applet, "_frameViewer", this.jc.getFrameViewer$()]]);
 this.setDataKeyComponent$swingjs_api_js_DOMNode(this.focusNode);
 this.J2S.setKeyListener(this.focusNode);
 p$1.setTabIndex$I.apply(this, [-1]);
@@ -319,33 +246,44 @@ Clazz.newMeth(C$, 'setTabIndex$I', function (i) {
 if (this.focusNode == null ) return;
 if (i == -2147483648) {
 this.focusNode.removeAttribute("tabindex");
-$I$(4).setAttr(this.focusNode, "ui", null);
+$I$(5).setAttr(this.focusNode, "ui", null);
 } else {
 this.focusNode.setAttribute("tabindex", "" + i);
-$I$(4).setAttr(this.focusNode, "ui", this);
+$I$(5).setAttr(this.focusNode, "ui", this);
 }}, p$1);
 
 Clazz.newMeth(C$, 'isFocusable$', function () {
-return (this.jc.isFocusable$() && p$1.setFocusable.apply(this, []) );
+return false;
 });
 
-Clazz.newMeth(C$, 'setFocusable', function () {
+Clazz.newMeth(C$, 'setFocusable$', function () {
 if (this.focusNode == null ) this.addFocusHandler$();
+if (this.focusNode != null ) this.addJQueryFocusCallbacks$();
 return (this.focusNode != null );
-}, p$1);
+});
 
 Clazz.newMeth(C$, 'hasFocus$', function () {
 return document.activeElement == this.focusNode||false;
 });
 
-Clazz.newMeth(C$, 'requestFocus$java_awt_Component$Z$Z$J$sun_awt_CausedFocusEvent_Cause', function (lightweightChild, temporary, focusedWindowChangeAllowed, time, cause) {
-if (lightweightChild == null ) return this.focus$();
-return $I$(5).requestFocus$java_awt_Component(lightweightChild);
-});
-
 Clazz.newMeth(C$, 'focus$', function () {
 if (this.focusNode == null  || this.isUIDisabled ) return false;
-$I$(8).focus$swingjs_api_js_DOMNode(this.focusNode);
+$I$(9).focus$swingjs_api_js_DOMNode(this.focusNode);
+return true;
+});
+
+Clazz.newMeth(C$, 'setComponentFocus$', function () {
+this.jc.requestFocus$();
+var c=this.jc.getFocusTraversalPolicy$().getDefaultComponent$java_awt_Container(this.jc);
+if (c != null ) c.requestFocus$();
+});
+
+Clazz.newMeth(C$, 'requestFocus$java_awt_Component$Z$Z$J$sun_awt_CausedFocusEvent_Cause', function (me, temporary, focusedWindowChangeAllowed, time, cause) {
+if (me == null ) return this.focus$();
+if (!me.isFocusable$()) return false;
+var ui=(me).秘getUI$();
+ui.setFocusable$();
+$I$(6).dispatch$O$I$I(ui.focusRunnable, 50, 0);
 return true;
 });
 
@@ -356,7 +294,7 @@ var node=this.$$O(this.focusNode);
 node.unbind("focus blur");
 var me=this;
 {
-node.focus(function(e) { //System.out.println("JSSCUI node.focus() callback " + me.id + "  " + document.activeElement.id);
+node.focus(function(e) { //System.out.println("JSSCUI node.focus() callback " + me.id + "  " + document.activeElement.id + " " + me.ignoreFocus);
 if (!me.ignoreFocus) me.handleJSFocus$O$O$Z(me.jc, e.relatedTarget, true);
 me.ignoreFocus = false;
 //System.out.println("JSSCUI focus " + me.id);
@@ -370,11 +308,12 @@ me.handleJSFocus$O$O$Z(me.jc, e.relatedTarget, false);
 });
 
 Clazz.newMeth(C$, 'handleJSFocus$O$O$Z', function (jco, related, focusGained) {
-$I$(8).handleJSFocus$O$O$Z(jco, related, focusGained);
+$I$(9).handleJSFocus$O$O$Z(jco, related, focusGained);
 });
 
 Clazz.newMeth(C$, 'abstractButtonFocusHack$', function () {
-var focused=$I$(5).getCurrentFocusOwner$O(null);
+if (this.jc == null ) return;
+var focused=$I$(6).getCurrentFocusOwner$O(null);
 var focusedUI=focused && focused.ui ||null;
 if (focusedUI != null  && focusedUI !== this  ) {
 focusedUI.handleJSFocus$O$O$Z(this.jc, null, false);
@@ -383,12 +322,16 @@ this.handleJSFocus$O$O$Z(this.jc, null, true);
 
 Clazz.newMeth(C$, 'bindJSKeyEvents$swingjs_api_js_DOMNode$Z', function (node, addFocus) {
 this.setDataUI$swingjs_api_js_DOMNode(node);
-this.addClass$swingjs_api_js_DOMNode$S(node, "ui-key");
 this.keysEnabled=true;
 this.bindJQueryEvents$swingjs_api_js_DOMNode$S$I(node, "keydown keypress keyup" + (addFocus ? " focusout" : ""), -2);
 if (addFocus) {
 this.addJQueryFocusCallbacks$();
 }});
+
+Clazz.newMeth(C$, 'setIgnoreEvent$O', function (jqevent) {
+
+jqevent.originalEvent.xhandled = true;
+});
 
 Clazz.newMeth(C$, 'bindJQueryEvents$swingjs_api_js_DOMNode$S$I', function (node, eventList, eventID) {
 var me=this;
@@ -401,7 +344,7 @@ f = function(jqevent) { return me.handleJSEvent$O$I$O(node, eventID, jqevent) }
 this.$$O(node).bind(eventList, f);
 });
 
-Clazz.newMeth(C$, ['handleJSEvent$O$I$O','handleJSEvent$'], function (target, eventType, jQueryEvent) {
+Clazz.newMeth(C$, 'handleJSEvent$O$I$O', function (target, eventType, jQueryEvent) {
 return true;
 });
 
@@ -410,27 +353,26 @@ this.jc.revalidate$();
 });
 
 Clazz.newMeth(C$, 'setTainted$', function () {
-this.isTainted=true;
+this.setTainted$Z(true);
 });
 
 Clazz.newMeth(C$, 'setTainted$Z', function (tf) {
 this.isTainted=tf;
 });
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
-if (C$.debugging) System.out.println$S(this.id + " stateChange " + this.dumpEvent$java_util_EventObject(e) );
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 });
 
-Clazz.newMeth(C$, 'updatePropertyAncestor$Z', function (fromButtonListener) {
-if (fromButtonListener) {
+Clazz.newMeth(C$, 'updatePropertyAncestor$Z', function (andSetHTML) {
 this.setTainted$();
+if (andSetHTML) {
 this.setHTMLElement$();
 }var p=this.jc.getParent$();
 while (p != null ){
-var parentui=(p == null  ? null : p.getUI$());
+var parentui=(p == null  ? null : p.秘getUI$());
 if (parentui != null ) {
 parentui.setTainted$();
-if (fromButtonListener) {
+if (andSetHTML) {
 parentui.setHTMLElement$();
 if (parentui.menu != null ) {
 (parentui).updateMenu$Z(false);
@@ -441,11 +383,11 @@ continue;
 }
 }, p$1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
-if (this.isUIDisabled) return;
-var value=e.getNewValue$();
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
+if (this.isUIDisabled || this.domNode == null  ) return;
 var prop=e.getPropertyName$();
-if (prop == "ancestor") {
+var value=e.getNewValue$();
+if (prop === "ancestor" ) {
 if (this.isAWT) p$1.setAWTFontAndColor$java_awt_Container.apply(this, [value]);
 if (this.cellComponent != null ) return;
 p$1.updatePropertyAncestor$Z.apply(this, [false]);
@@ -455,13 +397,13 @@ if (this.isDisposed && this.c.visible && e.getNewValue$() != null   ) this.setVi
 });
 
 Clazz.newMeth(C$, 'setAWTFontAndColor$java_awt_Container', function (value) {
-var top=$I$(9).getTopInvokableAncestor$java_awt_Component$Z(value, false);
+var top=$I$(10).秘getTopInvokableAncestor$java_awt_Component$Z(value, false);
 if (top === this.awttop  || (this.awttop=top) == null  ) {
 if (top == null ) {
 this.awtPeerBG=this.awtPeerFG=null;
 }return;
-}this.setBackgroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, this.awtPeerBG=this.getBackground$());
-p$1.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color.apply(this, [this.domNode, this.awtPeerFG=this.getForeground$()]);
+}this.setBackgroundImpl$java_awt_Color(this.awtPeerBG=this.getBackground$());
+this.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, this.awtPeerFG=this.getForeground$());
 this.setFont$java_awt_Font(this.c.getFont$());
 }, p$1);
 
@@ -469,19 +411,23 @@ Clazz.newMeth(C$, 'propertyChangedFromListener$java_beans_PropertyChangeEvent$S'
 if (this.isUIDisabled) return;
 switch (prop) {
 case "ancestor":
-if (this.cellComponent != null ) return;
-p$1.updatePropertyAncestor$Z.apply(this, [true]);
+if (this.cellComponent != null  || e.getNewValue$() == null  ) return;
+var anc=$I$(10).秘getTopInvokableAncestor$java_awt_Component$Z(this.c, false);
+p$1.updatePropertyAncestor$Z.apply(this, [anc != null  && anc.isVisible$() ]);
 break;
 }
 this.propertyChangedCUI$java_beans_PropertyChangeEvent$S(e, prop);
 });
 
 Clazz.newMeth(C$, 'propertyChangedCUI$java_beans_PropertyChangeEvent$S', function (e, prop) {
-if (!this.isMenu) this.getDOMNode$();
+if (!this.isMenu && this.cellComponent == null  ) this.getDOMNode$();
 switch (prop) {
+case "border":
+this.jc.秘setPaintsSelf$I(0);
+this.setTainted$();
+break;
 case "preferredSize":
-this.preferredSize=this.c.getPreferredSize$();
-this.getPreferredSize$javax_swing_JComponent(this.jc);
+this.preferredSize=e.getNewValue$();
 return;
 case "background":
 this.setBackground$java_awt_Color(this.c.getBackground$());
@@ -490,7 +436,7 @@ case "foreground":
 this.setForeground$java_awt_Color(this.c.getForeground$());
 return;
 case "focusable":
-p$1.setFocusable.apply(this, []);
+this.setFocusable$();
 return;
 case "opaque":
 this.setBackground$java_awt_Color(this.c.getBackground$());
@@ -545,10 +491,6 @@ var root=this.jc.getRootPane$();
 this.allowDivOverflow=(root != null  && "false".equals$O(root.getClientProperty$O("swingjs.overflow.hidden")) );
 });
 
-Clazz.newMeth(C$, 'setAllowPaintedBackground$Z', function (TF) {
-this.allowPaintedBackground=TF;
-});
-
 Clazz.newMeth(C$, 'getDOMNode$', function () {
 return (this.isUIDisabled ? null : this.updateDOMNode$());
 });
@@ -556,29 +498,58 @@ return (this.isUIDisabled ? null : this.updateDOMNode$());
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
 if (this.domNode == null ) {
 if (this.notImplemented) {
-var msg="Swingjs WARNING: default JSComponentUI.updateDOMNode() is being used for " + this.getClass$().getName$();
-System.out.println$S(msg);
-}this.domNode=$I$(4).createElement("div", this.id);
+this.notImplemented=false;
+var s=this.jc.getClass$().getName$();
+if (!s.equals$O("javax.swing.Box$Filler")) System.out.println$S("Swingjs WARNING: default JSComponentUI.updateDOMNode() is being used for " + s);
+}this.domNode=$I$(5).createElement("div", this.id);
 }return this.domNode;
 });
 
 Clazz.newMeth(C$, 'updateDOMNodeCUI$', function () {
-if (this.cellComponent != null ) p$1.updateCellNode.apply(this, []);
+if (this.myCursor !== p$1.getCursor.apply(this, []) ) this.setCursor$();
 return this.domNode;
+});
+
+Clazz.newMeth(C$, 'updateCursorImmediately$', function () {
+if (this.isUIDisabled) return;
+this.setHTMLElement$();
+this.setCursor$();
+});
+
+Clazz.newMeth(C$, 'setCursor$', function () {
+this.myCursor=p$1.getCursor.apply(this, []);
+var curs=$I$(6).getCursorName$java_awt_Cursor(this.myCursor);
+$I$(5).setStyles(this.outerNode, ["cursor", curs]);
+$I$(5).setStyles(this.domNode, ["cursor", curs]);
+this.setWaitImage$Z(curs === "wait" );
+});
+
+Clazz.newMeth(C$, 'getCursor', function () {
+var cur=this.c.getCursor$();
+return (cur === $I$(11).getDefaultCursor$()  ? null : cur);
+}, p$1);
+
+Clazz.newMeth(C$, 'setWaitImage$Z', function (doShow) {
+if (this.waitImage == null ) {
+if (!doShow) return;
+var path=(this.applet._j2sPath ||null) + "/img/cursor_wait.gif";
+this.waitImage=C$.newDOMObject$S$S$SA("image", this.id + "_waitImage", ["src", path]);
+}if (doShow) this.$$O(this.waitImage).show();
+ else this.$$O(this.waitImage).hide();
 });
 
 Clazz.newMeth(C$, 'setCssFont$swingjs_api_js_DOMNode$java_awt_Font', function (obj, font) {
 if (font != null ) {
 var istyle=font.getStyle$();
-$I$(4).setStyles(obj, ["font-family", $I$(5).getCSSFontFamilyName$S(font.getFamily$()), "font-size", font.getSize$() + "px", "font-style", ((istyle & 2) == 0 ? "normal" : "italic"), "font-weight", ((istyle & 1) == 0 ? "normal" : "bold")]);
+$I$(5,"setStyles",[obj, ["font-family", $I$(6,"getCSSFontFamilyName$S",[font.getFamily$()]), "font-size", font.getSize$() + "px", "font-style", ((istyle & 2) == 0 ? "normal" : "italic"), "font-weight", ((istyle & 1) == 0 ? "normal" : "bold")]]);
 }this.enabled=!this.c.isEnabled$();
 this.setEnabled$Z(this.c.isEnabled$());
 return obj;
 });
 
 Clazz.newMeth(C$, 'newDOMObject$S$S$SA', function (key, id, attr) {
-var obj=$I$(4).createElement(key, id);
-for (var i=0; i < attr.length; ) $I$(4).setAttr(obj, attr[i++], attr[i++]);
+var obj=$I$(5).createElement(key, id);
+for (var i=0; i < attr.length; ) $I$(5).setAttr(obj, attr[i++], attr[i++]);
 
 return obj;
 }, 1);
@@ -592,12 +563,8 @@ return obj;
 }, 1);
 
 Clazz.newMeth(C$, 'debugDump$swingjs_api_js_DOMNode', function (d) {
-System.out.println$O($I$(4).getAttr(d, "outerHTML"));
+System.out.println$O($I$(5).getAttr(d, "outerHTML"));
 });
-
-Clazz.newMeth(C$, 'vCenter$swingjs_api_js_DOMNode$I$F', function (obj, offset, scale) {
-$I$(4).setStyles(obj, ["top", "50%", "transform", (scale > 0  ? "scale(" + new Float(scale).toString() + "," + new Float(scale).toString() + ")"  : "") + "translateY(" + offset + "%)" ]);
-}, 1);
 
 Clazz.newMeth(C$, 'getHTMLSizePreferred$swingjs_api_js_DOMNode$Z', function (obj, addCSS) {
 return this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(this.centeringNode == null  || obj !== this.domNode   ? obj : this.centeringNode, addCSS, true);
@@ -613,9 +580,10 @@ return (this.iconNode == null  || this.imageNode == null   || b.getIcon$() == nu
 
 Clazz.newMeth(C$, 'getTextSize$javax_swing_AbstractButton', function (b) {
 if (this.textNode == null ) return null;
+$I$(5).setStyles(this.textNode, ["padding", "0"]);
 var t=b.getText$();
-if (this.isAWT && t == "" ) t="\u00a0";
-return (t == null  || t == ""  ? null : this.getHTMLSize$swingjs_api_js_DOMNode(this.textNode));
+if (this.isAWT && t === ""  ) t="\u00a0";
+return (t == null  || t === ""   ? null : this.getHTMLSize$swingjs_api_js_DOMNode(this.textNode));
 }, p$1);
 
 Clazz.newMeth(C$, 'setHTMLSize1$swingjs_api_js_DOMNode$Z$Z', function (node, addCSS, usePreferred) {
@@ -643,43 +611,45 @@ h=this.preferredDim.height;
 position=node.style.position ||null;
 } else {
 hasFocus=this.hasFocus$();
-parentNode=$I$(4).transferTo(node, null);
+if (!this.isMenuItem) {
 var simpleButton=this.isSimpleButton;
 var centerNode=this.centeringNode;
 var dnode=this.domNode;
-if (!this.isMenuItem) {
+{
 w0 = node.style.width; h0 = node.style.height; position = node.style.position;
-if (node == centerNode && simpleButton) { w0i = dNode.style.width; h0i = dNode.style.height; }
+if (node == centerNode && simpleButton) { w0i = dNode.style.width;
+h0i = dNode.style.height; }
 }
-$I$(4).setStyles(node, ["position", null, "width", null, "height", null]);
-if (this.innerNode != null ) $I$(4).setStyles(this.innerNode, ["width", null, "height", null]);
-var div;
-var s=$I$(4).getAttr(node, "tagName");
-if (s == "DIV" || s == "SPAN" ) div=node;
- else div=C$.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id + "_temp", [node]);
-$I$(4).setPositionAbsolute(div);
+}$I$(5).setStyles(node, ["position", null, "width", null, "height", null]);
+if (this.innerNode != null ) $I$(5).setStyles(this.innerNode, ["width", null, "height", null]);
 if (node === this.centeringNode ) {
-$I$(4).setStyles(node, ["position", null]);
-$I$(4).setStyles(this.textNode, ["position", null]);
-$I$(4).setStyles(this.iconNode, ["position", null]);
-}this.$$O(this.body).after(div);
-var r=div.getBoundingClientRect();
+if (!this.isHTML) {
+$I$(5).setStyles(node, ["position", null]);
+$I$(5).setStyles(this.textNode, ["position", null]);
+$I$(5).setStyles(this.iconNode, ["position", null]);
+}}if (C$.tempDiv == null ) {
+C$.tempDiv=$I$(5).createElement("div", "_temp");
+$I$(5).setTopLeftAbsolute(C$.tempDiv, 0, -100000);
+this.$$O(this.body).after(C$.tempDiv);
+}parentNode=$I$(5).transferTo(node, null);
+C$.tempDiv.appendChild(node);
+var r=C$.tempDiv.getBoundingClientRect();
+C$.tempDiv.removeChild(node);
 w=(Math.max(0, Math.ceil(r.width))|0);
 h=(Math.max(0, Math.ceil(r.height))|0);
 if (!usePreferred) {
 this.actualWidth=w;
 this.actualHeight=h;
-}this.$$O(div).detach();
-}var dim=this.getCSSAdjustment$Z(addCSS);
+}}var dim=this.getCSSAdjustment$Z(addCSS);
 dim.width+=w;
 dim.height+=h;
-$I$(4).setStyles(node, ["position", null]);
+$I$(5).setStyles(node, ["position", null]);
 if (w0 != null ) {
-$I$(4).setStyles(node, ["width", w0, "height", h0]);
+$I$(5,"setStyles",[node, ["width", (this.isHTML && this.isLabel  ? "inherit" : w0), "height", h0]]);
 }if (position != null ) {
-$I$(4).setStyles(node, ["position", position]);
+$I$(5).setStyles(node, ["position", position]);
 }if (w0i != null ) {
-$I$(4).setStyles(this.domNode, ["width", w0i, "height", h0i]);
+$I$(5).setStyles(this.domNode, ["width", w0i, "height", h0i]);
 }if (parentNode != null ) {
 parentNode.appendChild(node);
 if (hasFocus) {
@@ -689,7 +659,7 @@ node.focus();
 });
 
 Clazz.newMeth(C$, 'getCSSAdjustment$Z', function (addingCSS) {
-return Clazz.new_($I$(10).c$$I$I,[0, 0]);
+return Clazz.new_($I$(2,1).c$$I$I,[0, 0]);
 });
 
 Clazz.newMeth(C$, 'setHTMLElement$', function () {
@@ -700,66 +670,76 @@ Clazz.newMeth(C$, 'setHTMLElementCUI$', function () {
 if (this.isUIDisabled || !this.isTainted ) return this.outerNode;
 if (this.isDummyFrame) {
 this.isTainted=false;
-return (this.outerNode=$I$(4).createElement("div", "dummyFrame"));
+return (this.outerNode=$I$(5).createElement("div", "dummyFrame"));
 }this.updateDOMNode$();
-p$1.checkTransparent$swingjs_api_js_DOMNode.apply(this, [this.domNode]);
+p$1.checkTransparent.apply(this, []);
 var children=this.getChildren$();
 var n=this.getChildCount$();
 if (this.isMenuItem) {
 this.outerNode=this.domNode;
 if (n == 0) return this.outerNode;
-}if (this.outerNode == null ) this.outerNode=C$.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id, [this.domNode]);
-{
-this.outerNode.setAttribute("name", this.jc.__CLASS_NAME__);
-}
+}if (this.outerNode == null ) p$1.createOuterNode.apply(this, []);
 p$1.setOuterLocationFromComponent.apply(this, []);
 if (n > 0 && this.containerNode == null  ) this.containerNode=this.outerNode;
 if (this.isContainer || n > 0 ) {
 if (this.isContainer && !this.isMenuItem && !this.isTable  ) {
 var w=this.getContainerWidth$();
 var h=this.getContainerHeight$();
-$I$(4).setSize(this.outerNode, w, h);
+$I$(5).setSize(this.outerNode, w, h);
 if (this.isPanel || this.isContentPane || this.isRootPane  ) {
-$I$(4).setStyles(this.outerNode, ["overflow", this.allowDivOverflow ? "visible" : "hidden"]);
+$I$(5).setStyles(this.outerNode, ["overflow", this.allowDivOverflow ? "visible" : "hidden"]);
 if (this.isRootPane) {
 if (this.jc.getFrameViewer$().isApplet) {
-var cdiv=$I$(5).getHTML5Applet$java_awt_Component(this.jc)._getContentLayer();
-$I$(4).appendChildSafely(cdiv, this.outerNode);
+var cdiv=$I$(6).getHTML5Applet$java_awt_Component(this.jc)._getContentLayer();
+$I$(5).appendChildSafely(cdiv, this.outerNode);
 }}}}if (n > 0) this.addChildrenToDOM$java_awt_ComponentA$I(children, n);
-if (this.isWindow && this.jc.getUIClassID$() != "InternalFrameUI"  && this.jc.getWidth$() > 0 ) {
-$I$(4).transferTo(this.outerNode, this.body);
-}}this.isTainted=false;
-if (this.embeddingNode != null ) $I$(4).appendChildSafely(this.embeddingNode, this.outerNode);
-return this.outerNode;
+if (this.isWindow && this.jc.getWidth$() > 0  && this.isFrameIndependent$()  && !this.isSticky ) {
+$I$(5).transferTo(this.outerNode, this.body);
+$I$(5).setStyles(this.outerNode, ["position", "absolute"]);
+}} else {
+$I$(5).setStyles(this.outerNode, ["overflow", "hidden"]);
+}this.isTainted=false;
+if (this.embeddingNode != null ) {
+$I$(5).detachAll(this.embeddingNode);
+$I$(5).appendChildSafely(this.embeddingNode, this.outerNode);
+}return this.outerNode;
 });
 
-Clazz.newMeth(C$, 'setOuterLocationFromComponent', function () {
-if (this.outerNode != null  && !this.isMenuItem ) {
-if (this.parent == null  && this.jc.getParent$() != null   && (this.parent=this.jc.getParent$().getUI$()) != null   && this.parent.outerNode != null  ) $I$(4).appendChildSafely(this.parent.outerNode, this.outerNode);
-$I$(4).setPositionAbsolute(this.outerNode);
-$I$(4).setStyles(this.outerNode, ["left", (this.x=this.c.getX$()) + "px", "top", (this.y=this.c.getY$()) + "px"]);
-}}, p$1);
+Clazz.newMeth(C$, 'createOuterNode', function () {
+this.outerNode=C$.wrap$S$S$swingjs_api_js_DOMNodeA("div", this.id, [this.domNode]);
+var c=this.jc;
+var s=(c.__CLASS_NAME__||"");
+this.outerNode.setAttribute("name", s);
+}, p$1);
+
+Clazz.newMeth(C$, 'isFrameIndependent$', function () {
+return true;
+});
 
 Clazz.newMeth(C$, 'getChildren$', function () {
-return $I$(9).getChildArray$java_awt_Container(this.jc);
+return $I$(10).秘getChildArray$java_awt_Container(this.jc);
 });
 
 Clazz.newMeth(C$, 'getChildCount$', function () {
 return this.jc.getComponentCount$();
 });
 
+Clazz.newMeth(C$, 'getContainerNode$I', function (i) {
+return this.containerNode;
+});
+
 Clazz.newMeth(C$, 'addChildrenToDOM$java_awt_ComponentA$I', function (children, n) {
 for (var i=0; i < n; i++) {
 if (!this.isTable && children[i] == null  ) break;
-var ui=$I$(5).getUI$java_awt_Component$Z(children[i], false);
-if (ui == null  || ui.isNull  || ui.isPaintedOnly ) {
+var ui=$I$(6).getUI$java_awt_Component$Z(children[i], false);
+if (ui == null  || ui.jc == null   || ui.isNull  || ui.isPaintedOnly ) {
 continue;
 }ui.parent=this;
 if (ui.getOuterNode$() == null ) {
-System.out.println$S("JSCUI addChildren no outer node for " + ui.id);
+if (ui.domNode != null ) System.out.println$S("JSCUI addChildren no outer node for " + ui.id);
 } else {
-if (ui.domNode !== ui.outerNode  && $I$(4).getParent(ui.domNode) == null  ) ui.outerNode.appendChild(ui.domNode);
-if (ui.embeddingNode == null ) $I$(4).appendChildSafely(this.containerNode, ui.outerNode);
+if (ui.domNode !== ui.outerNode  && $I$(5).getParent(ui.domNode) == null  ) ui.outerNode.appendChild(ui.domNode);
+if (ui.embeddingNode == null  && (!ui.isWindow || !ui.isFrameIndependent$() ) ) $I$(5,"appendChildSafely",[this.getContainerNode$I(i), ui.outerNode]);
 }}
 });
 
@@ -773,51 +753,31 @@ return this.height=this.c.getHeight$();
 
 Clazz.newMeth(C$, 'update$java_awt_Graphics$javax_swing_JComponent', function (g, c) {
 if (this.isUIDisabled) return;
-if (C$.borderTest) {
-g.setColor$java_awt_Color($I$(1).red);
-g.drawRect$I$I$I$I(0, 0, c.getWidth$(), c.getHeight$());
-System.out.println$S("drawing " + c.getWidth$() + " " + c.getHeight$() );
-}this.setHTMLElement$();
-this.setAlignment$();
-this.paint$java_awt_Graphics$javax_swing_JComponent(g, c);
+if (this.cellComponent == null ) {
+this.setHTMLElement$();
+if (this.allowTextAlignment && this.centeringNode != null  ) this.setAlignments$javax_swing_AbstractButton$Z(this.jc, false);
+}this.paint$java_awt_Graphics$javax_swing_JComponent(g, c);
 });
-
-Clazz.newMeth(C$, 'doPaintBackground$', function () {
-return !this.backgroundPainted && this.c.isOpaque$() && this.allowPaintedBackground  ;
-});
-
-Clazz.newMeth(C$, 'setPainted$O', function (g) {
-if (g == null ) {
-this.backgroundPainted=false;
-if (this.allowPaintedBackground) $I$(4).setStyles(this.domNode, ["background", null]);
-} else {
-this.backgroundPainted=true;
-p$1.setTransparent$swingjs_api_js_DOMNode.apply(this, [this.domNode]);
-}});
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 this.update$java_awt_Graphics$javax_swing_JComponent(g, this.jc);
 });
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics$javax_swing_JComponent', function (g, c) {
-if (this.doPaintBackground$()) {
-g.setColor$java_awt_Color(this.getBackground$());
-g.fillRect$I$I$I$I(0, 0, c.getWidth$(), c.getHeight$());
-p$1.setTransparent$swingjs_api_js_DOMNode.apply(this, [this.domNode]);
-}this.setOverflow$();
+this.setOverflow$();
 if (this.imageNode != null  && !this.imagePersists ) {
-$I$(4).setStyles(this.imageNode, ["visibility", "hidden"]);
+$I$(5).setStyles(this.imageNode, ["visibility", "hidden"]);
 }});
 
 Clazz.newMeth(C$, 'setOverflow$', function () {
-if (this.textNode != null ) $I$(4).setStyles(this.textNode, ["overflow", "hidden"]);
+if (this.textNode != null ) $I$(5).setStyles(this.textNode, ["overflow", "hidden"]);
 });
 
 Clazz.newMeth(C$, 'repaint$J$I$I$I$I', function (tm, x, y, width, height) {
 });
 
 Clazz.newMeth(C$, 'print$java_awt_Graphics', function (g) {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 });
 
 Clazz.newMeth(C$, 'getMinimumSize$', function () {
@@ -851,11 +811,11 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Width and height 
 Clazz.newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent', function (c) {
 if (c == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Component must be non-null"]);
-}return $I$(11).OTHER;
+}return $I$(12).OTHER;
 });
 
 Clazz.newMeth(C$, 'getJSTextValue$', function () {
-return $I$(4).getAttr(this.domNode, this.valueNode == null  ? "innerText" : "value");
+return $I$(5,"getAttr",[this.domNode, this.valueNode == null  ? "innerText" : "value"]);
 });
 
 Clazz.newMeth(C$, 'getOuterNode$', function () {
@@ -863,16 +823,18 @@ return (this.outerNode == null  && !this.isUIDisabled  ? this.setHTMLElement$() 
 });
 
 Clazz.newMeth(C$, 'setJSText$swingjs_api_js_DOMNode$S$S', function (obj, prop, val) {
-return $I$(4).setAttr(obj, prop, val);
+
+obj[prop] = val;
+return obj;
 });
 
 Clazz.newMeth(C$, 'isObscured$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return false;
 });
 
 Clazz.newMeth(C$, 'canDetermineObscurity$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return false;
 });
 
@@ -884,14 +846,10 @@ Clazz.newMeth(C$, 'setVisible$swingjs_api_js_DOMNode$Z', function (node, b) {
 if (this.isPaintedOnly) b=false;
 if (!b && this.cellComponent != null  ) return;
 if (node == null ) node=this.domNode;
-$I$(4).setVisible(node, b);
+$I$(5).setVisible(node, b);
 if (b) {
 if (this.isDisposed) this.undisposeUI$swingjs_api_js_DOMNode(node);
-this.toFront$();
 }});
-
-Clazz.newMeth(C$, 'toFront$', function () {
-});
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (b) {
 if (b == this.enabled ) return;
@@ -903,13 +861,13 @@ if (this.enableNode != null ) this.enableNode$swingjs_api_js_DOMNode$Z(this.enab
 
 Clazz.newMeth(C$, 'enableNode$swingjs_api_js_DOMNode$Z', function (node, b) {
 if (node == null ) return;
-$I$(4).setAttr(node, "disabled", (b ? null : "TRUE"));
+$I$(5,"setAttr",[node, "disabled", (b ? "\u79d8FALSE" : "\u79d8TRUE")]);
 if (!b && this.inactiveForeground === this.colorUNKNOWN  ) this.getDisabledColors$S(this.buttonNode == null  ? this.getPropertyPrefix$() : "Button");
 if (this.jc.isOpaque$()) {
 var bg=this.getBackground$();
-this.setBackgroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, b || !(Clazz.instanceOf(bg, "javax.swing.plaf.UIResource")) || this.inactiveBackground == null    ? bg : this.inactiveBackground);
+this.setBackgroundImpl$java_awt_Color(b || !(Clazz.instanceOf(bg, "javax.swing.plaf.UIResource")) || this.inactiveBackground == null    ? bg : this.inactiveBackground);
 }var fg=this.getForeground$();
-p$1.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color.apply(this, [this.domNode, b ? fg : this.getInactiveTextColor$java_awt_Color(fg)]);
+this.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, b ? fg : this.getInactiveTextColor$java_awt_Color(fg));
 });
 
 Clazz.newMeth(C$, 'getBackground$', function () {
@@ -925,18 +883,17 @@ return (this.inactiveForeground == null  ? fg : this.inactiveForeground);
 });
 
 Clazz.newMeth(C$, 'getDisabledColors$S', function (pp) {
-this.inactiveBackground=$I$(12).getColor$O(pp + ".inactiveBackground");
-this.inactiveForeground=$I$(12).getColor$O(pp + ".inactiveForeground");
+this.inactiveBackground=$I$(13).getColor$O(pp + ".inactiveBackground");
+this.inactiveForeground=$I$(13).getColor$O(pp + ".inactiveForeground");
 });
 
 Clazz.newMeth(C$, 'setBounds$I$I$I$I$I', function (x, y, width, height, op) {
 if (this.isUIDisabled) return;
 var isBounded=(width > 0 && height > 0 );
 if (isBounded && !this.boundsSet ) {
-if (this.c.visible) this.setVisible$Z(true);
+if (this.c.visible && this.cellComponent == null  ) this.setVisible$Z(true);
 this.boundsSet=true;
-}if (C$.debugging) System.out.println$S("CUI << SetBounds >> [" + x + " " + y + " " + width + " " + height + "] op=" + op + " for " + this.id );
-switch (op) {
+}switch (op) {
 case 3:
 case 1:
 x=this.c.getX$();
@@ -956,37 +913,45 @@ break;
 }
 });
 
+Clazz.newMeth(C$, 'setOuterLocationFromComponent', function () {
+if (this.outerNode != null  && !this.isMenuItem ) {
+if (this.parent == null  && this.jc.getParent$() != null   && (this.parent=this.jc.getParent$().秘getUI$()) != null   && this.parent.outerNode != null  ) $I$(5).appendChildSafely(this.parent.outerNode, this.outerNode);
+$I$(5).setPositionAbsolute(this.outerNode);
+$I$(5,"setStyles",[this.outerNode, ["left", (this.x=this.c.getX$()) + "px", "top", (this.y=this.c.getY$()) + "px"]]);
+}}, p$1);
+
 Clazz.newMeth(C$, 'setSizeFromComponent$I$I$I', function (width, height, op) {
 var size=this.getCSSAdjustment$Z(true);
 this.width=width;
 this.height=height;
-if (C$.debugging) System.out.println$S(this.id + " setBounds " + this.x + " " + this.y + " " + this.width + " " + this.height + " op=" + op + " createDOM?" + (this.domNode == null ) );
-if (this.domNode == null ) this.updateDOMNode$();
-this.setJSDimensions$I$I(width + size.width, height + size.height);
+if (this.domNode == null ) {
+this.alignmentDisabled=true;
+this.updateDOMNode$();
+this.alignmentDisabled=false;
+}this.setJSDimensions$I$I(width + size.width, height + size.height);
 this.setInnerComponentBounds$I$I(width, height);
 }, p$1);
 
 Clazz.newMeth(C$, 'setJSDimensions$I$I', function (width, height) {
 if (this.jsActualWidth > 0) width=this.jsActualWidth;
 if (this.jsActualHeight > 0) height=this.jsActualHeight;
-$I$(4).setSize(this.domNode, width, height);
+$I$(5).setSize(this.domNode, width, height);
 if (this.outerNode != null ) {
-$I$(4).setSize(this.outerNode, width, height);
+$I$(5).setSize(this.outerNode, width, height);
 }});
 
 Clazz.newMeth(C$, 'setInnerComponentBounds$I$I', function (width, height) {
-if (C$.debugging) System.out.println$S("CUI reshapeMe: need to reshape " + this.id + " w:" + this.width + "->" + width + " h:" + this.height + "->" + height );
 });
 
 Clazz.newMeth(C$, 'getIcon$java_awt_JSComponent$javax_swing_Icon', function (c, icon) {
-return (c == null  || icon == null  && (icon=(c).getIcon$()) == null    ? null : icon.getIconWidth$() <= 0 || icon.getIconHeight$() <= 0  ? null : (Clazz.instanceOf(icon, "javax.swing.ImageIcon")) ? icon : $I$(5).createImageIcon$java_awt_Component$javax_swing_Icon$S(this.jc, icon, this.id + "tmpIcon"));
+return (c == null  || icon == null  && (icon=(c).getIcon$()) == null    ? null : icon.getIconWidth$() <= 0 || icon.getIconHeight$() <= 0  ? null : (Clazz.instanceOf(icon, "javax.swing.ImageIcon")) ? icon : $I$(6).createImageIcon$java_awt_Component$javax_swing_Icon$S(this.jc, icon, this.id + "tmpIcon"));
 }, p$1);
 
 Clazz.newMeth(C$, 'fixText$S', function (t) {
 if (t != null ) {
 if (this.isHTML) {
 } else if (this.valueNode == null ) {
-t=(t.indexOf$S("\u0000") >= 0 ? $I$(13).rep$S$S$S(t, "\u0000", "") : t).replace$C$C(" ", "\u00a0");
+t=(t.indexOf$S("\u0000") >= 0 ? $I$(14).rep$S$S$S(t, "\u0000", "") : t).replace$C$C(" ", "\u00a0");
 }}return t;
 });
 
@@ -1002,31 +967,31 @@ if (this.iconNode != null ) {
 icon=this.currentIcon=p$1.getIcon$java_awt_JSComponent$javax_swing_Icon.apply(this, [this.jc, icon]);
 this.$$O(this.iconNode).empty();
 if (this.currentIcon != null ) {
-this.imageNode=$I$(4).getImageNode(this.currentIcon.getImage$());
+this.imageNode=(this.currentIcon.getImage$()).秘getImageNode$I(2);
 this.iconNode.appendChild(this.imageNode);
 this.iconHeight=icon.getIconHeight$();
-$I$(4).setStyles(this.imageNode, ["visibility", (this.isLabel ? "hidden" : null)]);
-$I$(4).setStyles(this.iconNode, ["height", this.iconHeight + "px", "width", icon.getIconWidth$() + "px"]);
+$I$(5,"setStyles",[this.imageNode, ["visibility", (this.isLabel ? "hidden" : null)]]);
+$I$(5,"setStyles",[this.iconNode, ["height", this.iconHeight + "px", "width", icon.getIconWidth$() + "px"]]);
 }}if (text == null ) {
 text="";
-} else if (text == "") {
+} else if (text === "" ) {
 if (this.isAWT) text="\u00a0";
-}if (text != "") {
-if (text == "\u0000") {
+}if (text !== "" ) {
+if (text === "\u0000" ) {
 this.isPaintedOnly=true;
-}$I$(4).setStyles(this.textNode, ["white-space", "nowrap"]);
+}if (!this.isHTML || !this.isLabel ) $I$(5).setStyles(this.textNode, ["white-space", "nowrap"]);
 if (icon == null ) {
 if (this.iconNode != null  && this.allowTextAlignment  && this.isMenuItem  && this.actionNode == null   && text != null  ) {
-$I$(4).addHorizontalGap(this.iconNode, gap + 11);
+$I$(5).addHorizontalGap(this.iconNode, gap + 11);
 }} else {
 if (gap == 2147483647) gap=this.getDefaultIconTextGap$();
-if (gap != 0 && text != null  ) $I$(4).addHorizontalGap(this.iconNode, gap);
+if (gap != 0 && text != null  ) $I$(5).addHorizontalGap(this.iconNode, gap);
 }this.isHTML=false;
 if (text.indexOf$S("<html>") == 0) {
 this.isHTML=true;
-text=$I$(13).rep$S$S$S(text.substring$I(6), "</br>", "");
-text=$I$(13).rep$S$S$S(text, "</html>", "");
-text=$I$(13).rep$S$S$S(text, "href=", "target=_blank href=");
+text=$I$(14,"rep$S$S$S",[text.substring$I(6), "</br>", ""]);
+text=$I$(14).rep$S$S$S(text, "</html>", "");
+text=$I$(14,"rep$S$S$S",[text, "href=", "target=_blank href="]);
 } else if (this.jc.getClientProperty$O("html") != null ) {
 this.isHTML=true;
 } else if (this.mnemonicIndex >= 0) {
@@ -1037,33 +1002,33 @@ if (i < text.length$()) text=text.substring$I$I(0, i) + "<u>" + text.substring$I
 if (this.textNode != null ) {
 prop="innerHTML";
 obj=this.textNode;
+this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.domNode, this.getFont$());
 this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.textNode, this.getFont$());
-if (!this.isHTML) text=$I$(13).rep$S$S$S(text, "<", "&lt;");
+if (!this.isHTML) text=$I$(14).rep$S$S$S(text, "<", "&lt;").replace$C$C(" ", "\u00a0");
 } else if (this.valueNode != null ) {
 prop="value";
 obj=this.valueNode;
-if (this.iconNode != null ) $I$(4).setVisible(obj, text != null );
+if (this.iconNode != null ) $I$(5,"setVisible",[obj, text != null ]);
 }if (obj != null ) {
 this.setJSText$swingjs_api_js_DOMNode$S$S(obj, prop, text);
 }if (this.valueNode != null ) {
-this.setBackgroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.valueNode, this.c.getBackground$());
-}if (C$.debugging) System.out.println$S("JSComponentUI: setting " + this.id + " " + prop );
-});
+this.setBackgroundImpl$java_awt_Color(this.c.getBackground$());
+}});
 
 Clazz.newMeth(C$, 'getDefaultIconTextGap$', function () {
 return 0;
 });
 
 Clazz.newMeth(C$, 'getJSInsets$', function () {
-if (this.insets == null ) this.insets=Clazz.new_($I$(3).c$$I$I$I$I,[0, 0, 0, 0]);
+if (this.insets == null ) this.insets=Clazz.new_($I$(3,1).c$$I$I$I$I,[0, 0, 0, 0]);
 this.insets=this.jc.getInsets$java_awt_Insets(this.insets);
 });
 
 Clazz.newMeth(C$, 'setButtonRectangles$Z', function (isPreferred) {
 if (this.iconR == null ) {
-this.iconR=Clazz.new_($I$(14));
-this.textR=Clazz.new_($I$(14));
-this.viewR=Clazz.new_($I$(14));
+this.iconR=Clazz.new_($I$(15,1));
+this.textR=Clazz.new_($I$(15,1));
+this.viewR=Clazz.new_($I$(15,1));
 }this.getJSInsets$();
 if (isPreferred) {
 this.viewR.width=32767;
@@ -1083,10 +1048,6 @@ this.iconR.height=d.height;
 }this.iconR.x=this.iconR.y=this.textR.x=this.textR.y=0;
 });
 
-Clazz.newMeth(C$, 'setAlignment$', function () {
-if (this.allowTextAlignment && this.centeringNode != null  ) this.setAlignments$javax_swing_AbstractButton$Z(this.jc, false);
-});
-
 Clazz.newMeth(C$, 'addCentering$swingjs_api_js_DOMNode', function (node) {
 if (this.iconNode == null ) this.iconNode=C$.newDOMObject$S$S$SA("span", this.id + "_icon", []);
 this.textNode=C$.newDOMObject$S$S$SA("span", this.id + "_txt", []);
@@ -1097,9 +1058,14 @@ node.appendChild(this.centeringNode);
 });
 
 Clazz.newMeth(C$, 'updateCenteringNode$', function () {
-});
+if (this.jc.秘paintsSelfEntirely$()) {
+$I$(5).setStyles(this.centeringNode, ["visibility", "hidden"]);
+$I$(5).setStyles(this.domNode, ["border", "none"]);
+$I$(5).setStyles(this.domNode, ["background", "none"]);
+}});
 
 Clazz.newMeth(C$, 'setAlignments$javax_swing_AbstractButton$Z', function (b, justGetPreferred) {
+if (this.alignmentDisabled) return;
 var hTextPos=b.getHorizontalTextPosition$();
 var hAlign=b.getHorizontalAlignment$();
 var vAlign=b.getVerticalAlignment$();
@@ -1117,13 +1083,12 @@ w=wIcon + wText;
 }var alignVCenter=(vAlign == 0);
 var margins=(this.isLabel ? (this.isAWT ? b.getInsets$() : this.insets) : p$1.getButtonMargins$javax_swing_AbstractButton$Z.apply(this, [b, justGetPreferred]));
 if (margins == null ) margins=C$.zeroInsets;
-var insets=(this.isLabel || !this.isSimpleButton || justGetPreferred   ? C$.zeroInsets : this.getButtonOuterInsets$javax_swing_AbstractButton(b));
+var myInsets=(this.isLabel || !this.isSimpleButton || justGetPreferred   ? C$.zeroInsets : this.getButtonOuterInsets$javax_swing_AbstractButton(b));
 var h=(dimText == null  ? 0 : dimText.height);
-var ih=(dimIcon == null  ? 0 : dimIcon.height);
+var ih=(this.actionNode != null  ? 15 : dimIcon == null  ? 0 : dimIcon.height);
 var hCtr=Math.max(h, ih);
 var wCtr=wIcon + gap + wText ;
 var wAccel=0;
-var accel=null;
 var ltr=this.jc.getComponentOrientation$().isLeftToRight$();
 var alignLeft;
 var alignRight;
@@ -1139,24 +1104,25 @@ alignLeft=ltr;
 alignRight=!ltr;
 alignHCenter=false;
 textRight=ltr;
-accel=(Clazz.instanceOf(b, "javax.swing.JMenuItem") ? p$1.getAccelStr$javax_swing_JMenuItem.apply(this, [b]) : null);
+if (!this.isMenu) {
+var accel=p$1.getAccelStr$javax_swing_JMenuItem.apply(this, [b]);
 var accelNode=this.menuAnchorNode;
 accelNode=accelNode.children[1] ||null;
 if ((accelNode == null ) != (accel == null ) ) {
 if (accel == null ) {
-$I$(4).remove(accelNode);
+$I$(5).remove(accelNode);
 } else {
-this.menuAnchorNode.appendChild(accelNode=$I$(4).createElement("span", this.id + "_acc"));
+this.menuAnchorNode.appendChild(accelNode=$I$(5).createElement("span", this.id + "_acc"));
 this.addClass$swingjs_api_js_DOMNode$S(accelNode, "ui-j2smenu-accel");
-$I$(4).setAttr(accelNode, "role", "menuitem");
-$I$(4).setStyles(accelNode, ["font-size", "10px"]);
+$I$(5).setAttr(accelNode, "role", "menuitem");
+$I$(5).setStyles(accelNode, ["font-size", "10px"]);
 this.setMenuItem$swingjs_api_js_DOMNode(accelNode);
 }}if (accel != null ) {
-$I$(4).setStyles(accelNode, ["float", null]);
-$I$(4).setAttr(accelNode, "innerHTML", accel);
+$I$(5).setStyles(accelNode, ["float", null]);
+$I$(5).setAttr(accelNode, "innerHTML", accel);
 wAccel=this.getHTMLSize$swingjs_api_js_DOMNode(accelNode).width;
-$I$(4).setStyles(accelNode, ["float", ltr ? "right" : "left", "text-align", ltr ? "right" : "left", "margin", "0px 5px", "transform", "translateY(15%)"]);
-}$I$(4).setStyles(this.menuAnchorNode, ["width", "90%", "min-width", new Double(Math.max(75, (wCtr + wAccel + margins.left + margins.right ) * 1.1)).toString() + "px"]);
+$I$(5,"setStyles",[accelNode, ["float", ltr ? "right" : "left", "text-align", ltr ? "right" : "left", "margin", "0px 5px", "transform", "translateY(15%)"]]);
+}}if (!this.isMenu || this.isMenuItem ) $I$(5,"setStyles",[this.menuAnchorNode, ["width", "90%", "min-width", new Double(Math.max(75, (wCtr + wAccel + margins.left + margins.right ) * 1.1)).toString() + "px"]]);
 }if (alignHCenter) {
 switch (hTextPos) {
 case 1:
@@ -1168,20 +1134,23 @@ if (w0 > 0 && w0 < w ) w=w0;
 break;
 }
 }if (justGetPreferred) {
-if (this.preferredDim == null ) this.preferredDim=Clazz.new_($I$(10));
+if (this.preferredDim == null ) this.preferredDim=Clazz.new_($I$(2,1));
 this.preferredDim.width=wCtr + margins.left + margins.right ;
 this.preferredDim.height=hCtr + margins.top + margins.bottom ;
 return;
 }this.preferredDim=null;
-$I$(4).setStyles(this.centeringNode, ["position", "absolute", "top", null, "left", null, "transform", null]);
-$I$(4).setStyles(this.centeringNode, ["width", wCtr + "px", "height", hCtr + "px"]);
-if (alignHCenter && alignVCenter && wIcon == 0   || wText == 0 && margins.left == margins.right  && margins.top == margins.bottom  && insets.left == insets.right  && insets.top == insets.bottom  ) {
-$I$(4).setStyles(this.centeringNode, ["width", null, "top", "50%", "left", "50%", "transform", "translateX(-50%)translateY(-50%)", "position", "absolute"]);
-$I$(4).setStyles(this.iconNode, ["top", "50%", "left", "50%", "transform", "translateX(-50%)translateY(-50%)", "position", "absolute"]);
-$I$(4).setStyles(this.textNode, ["top", "50%", "left", "50%", "transform", "translateX(-50%)translateY(-50%)", "position", "absolute"]);
+var cssCtr=C$.getJSObject$();
+var cssTxt=C$.getJSObject$();
+var cssIcon=C$.getJSObject$();
+C$.addJSKeyVal$O$SA(cssCtr, ["position", "absolute", "top", null, "left", null, "transform", null, "width", (this.isHTML && this.isLabel  ? "inherit" : wCtr + "px"), "height", hCtr + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["position", "absolute", "top", null, "left", null, "transform", null]);
+C$.addJSKeyVal$O$SA(cssTxt, ["position", "absolute", "top", null, "left", null, "transform", null]);
+this.isFullyCentered=(alignHCenter && alignVCenter && wIcon == 0   || wText == 0 && (this.actionNode == null  || this.cellComponent != null   || this.isSimpleButton )  && margins.left == margins.right  && margins.top == margins.bottom  && myInsets.left == myInsets.right  && myInsets.top == myInsets.bottom  );
+if (this.isFullyCentered) {
+p$1.fullyCenter$O$Z.apply(this, [cssCtr, this.isSimpleButton || this.isLabel ]);
+p$1.fullyCenter$O$Z.apply(this, [cssIcon, this.isSimpleButton]);
+p$1.fullyCenter$O$Z.apply(this, [cssTxt, this.isSimpleButton]);
 } else {
-$I$(4).setStyles(this.iconNode, ["position", "absolute", "top", null, "left", null, "transform", null]);
-$I$(4).setStyles(this.textNode, ["position", "absolute", "top", null, "left", null, "transform", null]);
 var left=-1;
 if (this.menuAnchorNode == null ) {
 if (alignHCenter) {
@@ -1189,49 +1158,49 @@ switch (hTextPos) {
 case 1:
 case 3:
 case 0:
-$I$(4).setStyles(this.textNode, ["left", (((wCtr - wText)/2|0)) + "px"]);
-$I$(4).setStyles(this.iconNode, ["left", (((wCtr - wIcon)/2|0)) + "px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", (((wCtr - wText)/2|0)) + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", (((wCtr - wIcon)/2|0)) + "px"]);
 break;
 default:
 var off=(wCtr/2|0);
 if (textRight) {
-$I$(4).setStyles(this.iconNode, ["left", "0px"]);
-$I$(4).setStyles(this.textNode, ["left", (gap + wIcon) + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", "0px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", (gap + wIcon) + "px"]);
 } else {
-$I$(4).setStyles(this.textNode, ["left", off + "px"]);
-$I$(4).setStyles(this.iconNode, ["left", (gap + wText) + "px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", off + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", (gap + wText) + "px"]);
 }break;
 }
-left=((w - wCtr + margins.left - margins.right - insets.left - insets.right)/2|0);
+left=((w - wCtr + margins.left - margins.right + myInsets.left - myInsets.right)/2|0);
 } else if (alignRight) {
-left=w - wCtr - margins.right - insets.right - (this.cellComponent == null  ? 0 : 2) ;
+left=w - wCtr - margins.right - myInsets.right - (this.cellComponent == null  ? 0 : 2) ;
 if (textRight) {
-$I$(4).setStyles(this.textNode, ["left", (wCtr - wText) + "px"]);
-$I$(4).setStyles(this.iconNode, ["left", "0px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", (wCtr - wText) + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", "0px"]);
 } else {
-$I$(4).setStyles(this.textNode, ["left", "0px"]);
-$I$(4).setStyles(this.iconNode, ["left", (wCtr - wIcon) + "px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", "0px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", (wCtr - wIcon) + "px"]);
 }} else {
-left=margins.left + insets.left - (this.cellComponent == null  ? 0 : 1);
+left=margins.left + myInsets.left - (this.cellComponent == null  ? 0 : 1);
 if (textRight) {
 var off=(!this.isMenuItem || ltr || this.actionNode != null    ? 0 : this.actionItemOffset);
-$I$(4).setStyles(this.iconNode, ["left", off + "px"]);
-$I$(4).setStyles(this.textNode, ["left", (wIcon + gap) + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", off + "px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", (wIcon + gap) + "px"]);
 } else {
-$I$(4).setStyles(this.textNode, ["left", (!this.isMenuItem ? 0 : ltr ? this.actionItemOffset : -3) + "px"]);
-$I$(4).setStyles(this.iconNode, ["left", (wText + gap) + "px"]);
-}}$I$(4).setStyles(this.centeringNode, ["left", left + "px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", (!this.isMenuItem ? 0 : ltr ? this.actionItemOffset : -3) + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", (wText + gap) + "px"]);
+}}C$.addJSKeyVal$O$SA(cssCtr, ["left", left + "px"]);
 } else {
 if (alignRight) {
-$I$(4).setStyles(this.itemNode, ["text-align", "right"]);
-$I$(4).setStyles(this.centeringNode, ["right", "0px"]);
-$I$(4).setStyles(this.textNode, ["right", "23px"]);
-$I$(4).setStyles(this.iconNode, ["right", "0px"]);
+$I$(5).setStyles(this.itemNode, ["text-align", "right"]);
+C$.addJSKeyVal$O$SA(cssCtr, ["right", "0px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["right", "23px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["right", "0px"]);
 } else {
-$I$(4).setStyles(this.itemNode, ["text-align", "left"]);
-$I$(4).setStyles(this.centeringNode, ["left", "0px"]);
-$I$(4).setStyles(this.iconNode, ["left", "0px"]);
-$I$(4).setStyles(this.textNode, ["left", "23px"]);
+$I$(5).setStyles(this.itemNode, ["text-align", "left"]);
+C$.addJSKeyVal$O$SA(cssCtr, ["left", "0px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["left", "0px"]);
+C$.addJSKeyVal$O$SA(cssTxt, ["left", "23px"]);
 }}h=this.c.getHeight$();
 if (h == 0) {
 h=16;
@@ -1239,17 +1208,17 @@ h=16;
 var top;
 switch (vAlign) {
 case 1:
-top=margins.top + insets.top;
+top=margins.top + myInsets.top;
 break;
 case 3:
-top=h - margins.bottom - insets.bottom - hCtr ;
+top=h - margins.bottom - myInsets.bottom - hCtr ;
 break;
 default:
 case 0:
-top=((h - hCtr + margins.top - margins.bottom - insets.top - insets.bottom)/2|0);
+top=((h - hCtr + margins.top - margins.bottom + myInsets.top - myInsets.bottom)/2|0);
 break;
 }
-$I$(4).setStyles(this.centeringNode, ["top", top + "px"]);
+C$.addJSKeyVal$O$SA(cssCtr, ["top", top + "px"]);
 var itop;
 var yoff=null;
 var iscale=null;
@@ -1269,40 +1238,63 @@ iscale="scale(0.8,0.8)";
 }yoff="-50%";
 break;
 }
-$I$(4).setStyles(this.centeringNode, ["overflow", "none"]);
-$I$(4).setStyles(this.textNode, ["top", top + "%", "transform", "translateY(" + (yoff == null  ? "-" + top + "%"  : yoff + ")")]);
-$I$(4).setStyles(this.iconNode, ["top", top + "%", "transform", "translateY(-" + itop + "%)" + (iscale == null  ? "" : iscale) ]);
+C$.addJSKeyVal$O$SA(cssTxt, ["top", top + "%", "transform", "translateY(" + (yoff == null  ? "-" + top + "%"  : yoff + ")")]);
+C$.addJSKeyVal$O$SA(cssIcon, ["top", top + "%", "transform", "translateY(-" + itop + "%)" + (iscale == null  ? "" : iscale) ]);
 } else {
-$I$(4).setStyles(this.menuAnchorNode, ["height", h + "px"]);
-$I$(4).setStyles(this.textNode, ["top", "50%", "transform", "translateY(-50%)"]);
-$I$(4).setStyles(this.iconNode, ["top", "50%", "transform", "translateY(-65%) scale(0.6,0.6)"]);
-}}if (this.cellComponent != null ) p$1.updateCellNode.apply(this, []);
+$I$(5).setStyles(this.menuAnchorNode, ["height", h + "px"]);
+C$.addJSKeyVal$O$SA(cssIcon, ["top", "50%", "transform", "translateY(-80%) scale(0.6,0.6)"]);
+}}p$1.setCSS$O$swingjs_api_js_DOMNode.apply(this, [cssCtr, this.centeringNode]);
+p$1.setCSS$O$swingjs_api_js_DOMNode.apply(this, [cssIcon, this.iconNode]);
+p$1.setCSS$O$swingjs_api_js_DOMNode.apply(this, [cssTxt, this.textNode]);
+if (this.cellComponent != null ) this.updateCellNode$();
 });
 
-Clazz.newMeth(C$, 'updateCellNode', function () {
+Clazz.newMeth(C$, 'fullyCenter$O$Z', function (css, noOffsets) {
+if (noOffsets) C$.addJSKeyVal$O$SA(css, ["width", null, "position", null, "padding", "0", "margin", "0 auto"]);
+ else C$.addJSKeyVal$O$SA(css, ["width", null, "top", "50%", "left", "50%", "transform", "translateX(-50%)translateY(-50%)translateY(0.5px)translateX(0.5px)", "position", "absolute"]);
+}, p$1);
+
+Clazz.newMeth(C$, 'getJSObject$', function () {
+return {} ||null;
+}, 1);
+
+Clazz.newMeth(C$, 'addJSKeyVal$O$SA', function (o, kv) {
+for (var i=0, n=kv.length; i < n; i++) {
+
+o[kv[i++]] = kv[i];
+}
+}, 1);
+
+Clazz.newMeth(C$, 'setCSS$O$swingjs_api_js_DOMNode', function (css, node) {
+if (node == null ) return;
+
+for (var a in css)node.style[a] = css[a];
+}, p$1);
+
+Clazz.newMeth(C$, 'updateCellNode$', function () {
 if (this.cellWidth == 0 || this.cellHeight == 0 ) {
 return;
-}if (this.allowPaintedBackground) $I$(4).setStyles(this.domNode, ["background", "transparent"]);
+}if (this.allowPaintedBackground || this.isMenu && !this.isMenuItem  ) $I$(5).setStyles(this.domNode, ["background", "transparent"]);
 if (Clazz.instanceOf(this.cellComponent, "javax.swing.JTable.BooleanRenderer") || this.cellComponent.getClientProperty$O("_jsBooleanEditor") != null  ) {
-$I$(4).setStyles(this.centeringNode, ["width", "100%", "height", "100%"]);
-$I$(4).setStyles(this.buttonNode, ["width", "100%", "height", "100%"]);
-$I$(4).setStyles(this.actionNode, ["position", "absolute", "width", "14px", "height", "14px", "top", ((this.cellHeight/2|0)) + "px"]);
+$I$(5).setStyles(this.centeringNode, ["width", "100%", "height", "100%"]);
+$I$(5).setStyles(this.buttonNode, ["width", "100%", "height", "100%"]);
+$I$(5,"setStyles",[this.actionNode, ["position", "absolute", "width", "14px", "height", "14px", "top", ((this.cellHeight/2|0)) + "px"]]);
 var textAlign=(this.cellComponent).getHorizontalAlignment$();
 var width=this.cellWidth;
 switch (textAlign) {
 case 4:
 case 11:
-$I$(4).setStyles(this.actionNode, ["left", width + "px", "transform", "scale(0.75,0.75) translate(-25px,-20px)"]);
+$I$(5,"setStyles",[this.actionNode, ["left", width + "px", "transform", "scale(0.75,0.75) translate(-25px,-20px)"]]);
 break;
 case 2:
 case 10:
-$I$(4).setStyles(this.actionNode, ["left", "0px", "transform", "scale(0.75,0.75) translate(-5px,-20px)"]);
+$I$(5,"setStyles",[this.actionNode, ["left", "0px", "top", "50%", "transform", "scale(0.75,0.75) translateX(-50%) translateY(-50%) translate(-10px,-10px)"]]);
 break;
 case 0:
-$I$(4).setStyles(this.actionNode, ["left", ((width/2|0)) + "px", "transform", "scale(0.75,0.75) translate(-15px,-20px)"]);
+$I$(5,"setStyles",[this.actionNode, ["left", "50%", "top", "50%", "transform", "scale(0.75,0.75) translateX(-50%) translateY(-50%) translate(-10px,-10px)"]]);
 break;
 }
-}}, p$1);
+}});
 
 Clazz.newMeth(C$, 'getButtonMargins$javax_swing_AbstractButton$Z', function (b, includeOuter) {
 return (includeOuter ? b.getInsets$() : Clazz.instanceOf(b.getBorder$(), "javax.swing.border.CompoundBorder") ? (b.getBorder$()).getInsideBorder$().getBorderInsets$java_awt_Component(b) : null);
@@ -1316,16 +1308,16 @@ return (b.getBorder$()).getOutsideBorder$().getBorderInsets$java_awt_Component(b
 
 Clazz.newMeth(C$, 'getFont$', function () {
 var f=this.c.getFont$();
-return (f == null  ? $I$(15).dialogPlain12 : f);
+return (f == null  ? $I$(16).dialogPlain12 : f);
 });
 
 Clazz.newMeth(C$, 'getAccelStr$javax_swing_JMenuItem', function (b) {
 var ks=b.getAccelerator$();
 if (ks != null ) {
-var k=$I$(16).getKeyText$I(ks.getKeyCode$());
-if (k == "Escape") k="Esc";
-var s=$I$(16).getKeyModifiersText$I(ks.getModifiers$());
-return s + (s == "" ? "" : "-") + k ;
+var k=$I$(17,"getKeyText$I",[ks.getKeyCode$()]);
+if (k === "Escape" ) k="Esc";
+var s=$I$(17,"getKeyModifiersText$I",[ks.getModifiers$()]);
+return s + (s === ""  ? "" : "-") + k ;
 }return null;
 }, p$1);
 
@@ -1333,20 +1325,19 @@ Clazz.newMeth(C$, 'handleEvent$java_awt_AWTEvent', function (e) {
 });
 
 Clazz.newMeth(C$, 'coalescePaintEvent$java_awt_event_PaintEvent', function (e) {
-$I$(2).notImplemented$S("");
 });
 
 Clazz.newMeth(C$, 'getLocationOnScreen$', function () {
-var offset=this.$$O(this.outerNode).offset();
-return Clazz.new_($I$(17).c$$I$I,[offset.left, offset.top]);
+var offset=this.$$O(this.outerNode == null  ? this.jc.getParent$().秘getUI$().outerNode : this.outerNode).offset();
+return Clazz.new_($I$(18,1).c$$I$I,[offset.left, offset.top]);
 });
 
 Clazz.newMeth(C$, 'getColorModel$', function () {
-return $I$(18).getDefaultToolkit$().getColorModel$();
+return $I$(19).getDefaultToolkit$().getColorModel$();
 });
 
 Clazz.newMeth(C$, 'getToolkit$', function () {
-return $I$(18).getDefaultToolkit$();
+return $I$(19).getDefaultToolkit$();
 });
 
 Clazz.newMeth(C$, 'getGraphics$', function () {
@@ -1354,23 +1345,24 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getFontMetrics$java_awt_Font', function (font) {
-return this.c.getFontMetrics$java_awt_Font(font);
+return null;
 });
 
 Clazz.newMeth(C$, 'dispose$', function () {
 if (this.isUIDisabled) return;
 if (this.cellComponent != null ) {
-$I$(4).setVisible(this.domNode, false);
+$I$(5).setVisible(this.domNode, false);
 return;
 }this.isDisposed=true;
-$I$(4).dispose(this.domNode);
-if (this.domNode !== this.outerNode ) $I$(4).dispose(this.outerNode);
+$I$(5).dispose(this.domNode);
+if (this.domNode !== this.outerNode ) $I$(5).dispose(this.outerNode);
 });
 
 Clazz.newMeth(C$, 'undisposeUI$swingjs_api_js_DOMNode', function (node) {
+if (!this.isDisposed) return;
 var parent=this.c.getParent$();
 if (node != null  && parent != null  ) {
-var ui=this.c.getParent$().getUI$();
+var ui=this.c.getParent$().秘getUI$();
 if (ui.containerNode != null ) ui.containerNode.appendChild(node);
 }if (this.outerNode != null  && this.domNode != null   && this.domNode !== this.outerNode  ) {
 this.outerNode.appendChild(this.domNode);
@@ -1378,131 +1370,66 @@ this.outerNode.appendChild(this.domNode);
 });
 
 Clazz.newMeth(C$, 'setForegroundCUI$java_awt_Color', function (c) {
-p$1.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color.apply(this, [this.domNode, c]);
-});
-
-Clazz.newMeth(C$, 'setForeground$java_awt_Color', function (c) {
-this.awtPeerFG=null;
-p$1.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color.apply(this, [this.domNode, c]);
-});
-
-Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (c) {
-this.awtPeerBG=null;
-this.setBackgroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, c);
+this.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, c);
 });
 
 Clazz.newMeth(C$, 'setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color', function (node, color) {
-if (node != null ) $I$(4).setStyles(node, ["color", (color == null  ? "rgba(0,0,0,0)" : $I$(5).getCSSColor$java_awt_Color(color == null  ? $I$(1).black : color))]);
-}, p$1);
-
-Clazz.newMeth(C$, 'setBackgroundCUI$java_awt_Color', function (color) {
-this.setBackgroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, color);
+if (node != null ) $I$(5,"setStyles",[node, ["color", (color == null  ? "rgba(0,0,0,0)" : $I$(6,"getCSSColor$java_awt_Color",[color == null  ? $I$(4).black : color]))]]);
 });
-
-Clazz.newMeth(C$, 'setBackgroundFor$swingjs_api_js_DOMNode$java_awt_Color', function (node, color) {
-if (node == null  || this.isMenuItem  || this.isUIDisabled ) return;
-$I$(4).setStyles(node, ["background-color", color == null  ? null : $I$(5).getCSSColor$java_awt_Color(color == null  ? C$.rootPaneColor : color)]);
-if (this.allowPaintedBackground && this.selfOrParentBackgroundPainted$() ) p$1.setTransparent$swingjs_api_js_DOMNode.apply(this, [node]);
- else p$1.checkTransparent$swingjs_api_js_DOMNode.apply(this, [node]);
-if (this.jc._gtemp != null ) this.jc._gtemp.setBackground$java_awt_Color(color);
-});
-
-Clazz.newMeth(C$, 'selfOrParentBackgroundPainted$', function () {
-var c=this.jc;
-var p=this.targetParent;
-while (c != null ){
-if (c._isBackgroundPainted) return true;
-c=(p == null  ? c.getParent$() : p);
-p=null;
-}
-return false;
-});
-
-Clazz.newMeth(C$, 'checkTransparent$swingjs_api_js_DOMNode', function (node) {
-if (!this.c.isOpaque$() && node != null  ) p$1.setTransparent$swingjs_api_js_DOMNode.apply(this, [node]);
-}, p$1);
-
-Clazz.newMeth(C$, 'setTransparent$swingjs_api_js_DOMNode', function (node) {
-if (this.allowPaintedBackground) $I$(4).setStyles(node, ["background", "transparent"]);
-}, p$1);
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (f) {
-if (this.domNode != null  && !this.isUIDisabled ) this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font((this.textNode == null  ? this.domNode : this.textNode), f);
-});
-
-Clazz.newMeth(C$, 'updateCursorImmediately$', function () {
-if (this.isUIDisabled) return;
-this.setHTMLElement$();
-var curs=$I$(5).getCursorName$java_awt_Cursor(this.c.getCursor$());
-$I$(4).setStyles(this.outerNode, ["cursor", curs]);
-$I$(4).setStyles(this.domNode, ["cursor", curs]);
-this.setWaitImage$Z(curs == "wait");
-});
-
-Clazz.newMeth(C$, 'setWaitImage$Z', function (doShow) {
-if (this.waitImage != null ) {
-if (!doShow) return;
-var path="";
-{
-path = this.applet._j2sPath;
-}
-path += "/img/cursor_wait.gif";
-if (C$.debugging) System.out.println$S("loading wait cursor " + path);
-this.waitImage=C$.newDOMObject$S$S$SA("image", this.id + "_waitImage", ["src", path]);
-}if (doShow) this.$$O(this.waitImage).show();
- else this.$$O(this.waitImage).hide();
 });
 
 Clazz.newMeth(C$, 'createImage$java_awt_image_ImageProducer', function (producer) {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return null;
 });
 
 Clazz.newMeth(C$, 'createImage$I$I', function (width, height) {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return null;
 });
 
 Clazz.newMeth(C$, 'createVolatileImage$I$I', function (width, height) {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return null;
 });
 
 Clazz.newMeth(C$, 'prepareImage$java_awt_Image$I$I$java_awt_image_ImageObserver', function (img, w, h, o) {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return false;
 });
 
 Clazz.newMeth(C$, 'checkImage$java_awt_Image$I$I$java_awt_image_ImageObserver', function (img, w, h, o) {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return 0;
 });
 
 Clazz.newMeth(C$, 'getGraphicsConfiguration$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return null;
 });
 
 Clazz.newMeth(C$, 'handlesWheelScrolling$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return false;
 });
 
 Clazz.newMeth(C$, 'getBackBuffer$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return null;
 });
 
 Clazz.newMeth(C$, 'destroyBuffers$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 });
 
 Clazz.newMeth(C$, 'reparent$java_awt_peer_ContainerPeer', function (newContainer) {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 });
 
 Clazz.newMeth(C$, 'isReparentSupported$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return false;
 });
 
@@ -1510,19 +1437,35 @@ Clazz.newMeth(C$, 'layout$', function () {
 });
 
 Clazz.newMeth(C$, 'getBounds$', function () {
-$I$(2).notImplemented$S("");
+$I$(1).notImplemented$S("");
 return null;
 });
 
-Clazz.newMeth(C$, 'getZIndex$S', function (what) {
+Clazz.newMeth(C$, 'getInheritedZ$javax_swing_JComponent', function (c) {
+return c.秘getUI$().getInheritedZ$();
+}, 1);
+
+Clazz.newMeth(C$, 'getInheritedZ$', function () {
 var node=this.domNode;
+var base=9000;
 var z=0;
-{
-if (what) return this.applet._z[what];
+
 while (node && !node.style["z-index"]) node = node.parentElement;
-z = parseInt(node.style["z-index"]); return(!z || isNaN(z) ? 100000 : z);
-}
+!(z = +(node && node.style["z-index"])) && (z = base);
+return z;
 });
+
+Clazz.newMeth(C$, 'setZ$I', function (z) {
+$I$(5).setPositionAbsolute(this.domNode);
+$I$(5).setZ(this.domNode, z);
+$I$(5).setZ(this.outerNode, z);
+});
+
+Clazz.newMeth(C$, 'containerToFront$javax_swing_JComponent', function (c) {
+var root=c.getRootPane$();
+var w=(root == null  ? null : root.getParent$());
+if (Clazz.instanceOf(w, "java.awt.Window")) (w).toFront$();
+}, 1);
 
 Clazz.newMeth(C$, 'getInsets$', function () {
 return null;
@@ -1581,7 +1524,7 @@ x = g.$transform.m02; y = g.$transform.m12;
 if (x == node.lastSceneX && y == node.lastSceneY) return;
 node.lastSceneX = x; node.lastSceneY = y;
 }
-$I$(4).setStyles(node, ["left", x + "px", "top", y + "px"]);
+$I$(5).setStyles(node, ["left", x + "px", "top", y + "px"]);
 {
 if (node.parentElement == null) owner.ui.outerNode.appendChild(node);
 }
@@ -1593,7 +1536,7 @@ return (s == null  ? null : s.substring$I$I(0, s.length$() - 2));
 });
 
 Clazz.newMeth(C$, 'setPadding$java_awt_Insets', function (padding) {
-$I$(4).setStyles(this.domNode, ["padding", padding == null  ? "0px" : padding.top + "px " + padding.left + "px " + padding.bottom + "px " + padding.right + "px" ]);
+$I$(5,"setStyles",[this.domNode, ["padding", padding == null  ? "0px" : padding.top + "px " + padding.left + "px " + padding.bottom + "px " + padding.right + "px" ]]);
 });
 
 Clazz.newMeth(C$, 'addDropTarget$java_awt_dnd_DropTarget', function (t) {
@@ -1612,12 +1555,6 @@ Clazz.newMeth(C$, 'setDropTarget$Z', function (adding) {
 if (this.dropTarget === this ) return;
 this.J2S.setDragDropTarget(this.c, this.getDOMNode$(), this.dropTarget != null );
 }, p$1);
-
-Clazz.newMeth(C$, 'setZOrder$I', function (z) {
-$I$(4).setPositionAbsolute(this.domNode);
-$I$(4).setZ(this.domNode, z);
-$I$(4).setZ(this.outerNode, z);
-});
 
 Clazz.newMeth(C$, 'invalidate$', function () {
 this.setTainted$();
@@ -1647,10 +1584,9 @@ ui.menuTimer=0;
 Clazz.newMeth(C$, 'setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode', function (rendererComponent, width, height, td) {
 p$1.setComponent$javax_swing_JComponent.apply(this, [rendererComponent]);
 if (this.isUIDisabled) {
-p$1.updateTableCell$swingjs_api_js_DOMNode.apply(this, [td]);
+p$1.updateTableCell$swingjs_api_js_DOMNode$Z.apply(this, [td, true]);
 return;
 }this.cellComponent=rendererComponent;
-this.backgroundPainted=false;
 if (width == 0) return;
 this.cellWidth=width;
 this.cellHeight=height;
@@ -1665,8 +1601,83 @@ this.installJS$();
 this.installUI$javax_swing_JComponent(newC);
 }});
 
-Clazz.newMeth(C$, 'setPaintedOnly$', function () {
-this.isPaintedOnly=true;
+Clazz.newMeth(C$, 'setForeground$java_awt_Color', function (c) {
+this.awtPeerFG=null;
+this.setForegroundFor$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, c);
 });
+
+Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (c) {
+this.awtPeerBG=null;
+this.setBackgroundImpl$java_awt_Color(c);
+});
+
+Clazz.newMeth(C$, 'setBackgroundImpl$java_awt_Color', function (color) {
+if (this.domNode == null  || this.isMenuItem  || this.isUIDisabled ) return;
+this.backgroundColor=color;
+if ((this.jc.秘paintsSelf$() || (this.isContentPane || this.isLayeredPane ) && this.jc.秘setPaintsSelf$I(1) == 1  ) && this.jc.isOpaque$() ) {
+this.clearPaintPath$();
+}this.paintBackground$swingjs_JSGraphics2D(this.jc.秘gtemp);
+});
+
+Clazz.newMeth(C$, 'checkTransparent', function () {
+if (this.inPaintPath || this.domNode != null  && (this.cellComponent != null  || !this.c.isOpaque$() )  ) p$1.setTransparent.apply(this, []);
+}, p$1);
+
+Clazz.newMeth(C$, 'setTransparent', function () {
+if (this.allowPaintedBackground) $I$(5).setStyles(this.domNode, ["background", "transparent"]);
+}, p$1);
+
+Clazz.newMeth(C$, 'paintBackground$swingjs_JSGraphics2D', function (g) {
+var isOpaque=this.c.isOpaque$();
+var paintsSelf=this.jc.秘paintsSelf$();
+var color=(this.backgroundColor == null  ? this.getBackground$() : this.backgroundColor);
+if (g == null ) {
+if (!paintsSelf) this.setBackgroundDOM$swingjs_api_js_DOMNode$java_awt_Color(this.domNode, color);
+} else if (this.allowPaintedBackground && isOpaque ) {
+g.setBackground$java_awt_Color(color);
+g.clearRect$I$I$I$I(0, 0, this.c.getWidth$(), this.c.getHeight$());
+isOpaque=this.cellComponent == null  && !this.jc.秘paintsSelf$() ;
+if (!isOpaque && this.isWindow ) {
+var c=this.jc.getRootPane$().getContentPane$();
+c.秘setPaintsSelf$I(1);
+p$1.setTransparent.apply((c.ui), []);
+}}if (this.allowPaintedBackground && !isOpaque ) p$1.setTransparent.apply(this, []);
+ else p$1.checkTransparent.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'setBackgroundDOM$swingjs_api_js_DOMNode$java_awt_Color', function (node, color) {
+$I$(5,"setStyles",[node, ["background-color", color == null  ? null : $I$(6).getCSSColor$java_awt_Color(color)]]);
+});
+
+Clazz.newMeth(C$, 'clearPaintPath$', function () {
+var c=this.jc;
+while (c != null ){
+var ui=c.秘getUI$();
+if (ui == null ) return;
+ui.inPaintPath=true;
+c.秘setPaintsSelf$I(2);
+p$1.setTransparent.apply(ui, []);
+c=c.getParent$();
+}
+});
+
+Clazz.newMeth(C$, 'isModalBlocked$', function () {
+return $I$(10).秘getTopInvokableAncestor$java_awt_Component$Z(this.jc, false).秘getUI$().modalBlocked;
+});
+
+Clazz.newMeth(C$, 'isDisplayable$', function () {
+return this.domNode != null ;
+});
+
+C$.$static$=function(){C$.$static$=0;
+C$.frameZ=19000;
+C$.jquery=$I$(1).getJQuery$();
+C$.ANY_SIZE=Clazz.new_($I$(2,1).c$$I$I,[2147483647, 2147483647]);
+C$.zeroInsets=Clazz.new_($I$(3,1).c$$I$I$I$I,[0, 0, 0, 0]);
+};
+;
+(function(){/*i*/var C$=Clazz.newInterface(P$.JSComponentUI, "Embeddable", function(){
+});
+})()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:43:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

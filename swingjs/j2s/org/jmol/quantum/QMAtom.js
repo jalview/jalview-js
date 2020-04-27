@@ -1,28 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.quantum"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "QMAtom", null, 'javajs.util.P3');
+(function(){var P$=Clazz.newPackage("org.jmol.quantum"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "QMAtom", null, 'javajs.util.P3');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myX=null;
-this.myY=null;
-this.myZ=null;
-this.myX2=null;
-this.myY2=null;
-this.myZ2=null;
-this.atom=null;
-this.index=0;
-this.znuc=0;
-this.iMolecule=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index','znuc','iMolecule'],'O',['myX','float[]','+myY','+myZ','+myX2','+myY2','+myZ2','atom','org.jmol.modelset.Atom']]]
 
 Clazz.newMeth(C$, 'c$$I$javajs_util_T3$org_jmol_modelset_Atom$FA$FA$FA$FA$FA$FA$F', function (i, xyzAng, atom, X, Y, Z, X2, Y2, Z2, unitFactor) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.index=i;
 this.myX=X;
 this.myY=Y;
@@ -81,4 +68,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,15 @@
-(function(){var P$=Clazz.newPackage("javajs.export"),p$1={},I$=[[0,'java.util.Hashtable','java.util.zip.Deflater','java.io.ByteArrayOutputStream','java.util.zip.DeflaterOutputStream','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDFObject", null, 'javajs.util.SB');
+(function(){var P$=Clazz.newPackage("javajs.export"),p$1={},I$=[[0,'java.util.Hashtable','java.util.zip.Deflater','java.io.ByteArrayOutputStream','java.util.zip.DeflaterOutputStream','javajs.util.SB']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDFObject", null, 'javajs.util.SB');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dictionary=null;
-this.stream=null;
-this.index=0;
-this.type=null;
-this.len=0;
-this.pt=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index','len','pt'],'S',['type'],'O',['dictionary','java.util.Map','stream','byte[]']]]
 
 Clazz.newMeth(C$, 'c$$I', function (index) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.index=index;
 }, 1);
 
@@ -43,8 +34,8 @@ return this.dictionary.get$O(key);
 });
 
 Clazz.newMeth(C$, 'addDef$S$O', function (key, value) {
-if (this.dictionary == null ) this.dictionary=Clazz.new_($I$(1));
-this.dictionary.put$TK$TV(key, value);
+if (this.dictionary == null ) this.dictionary=Clazz.new_($I$(1,1));
+this.dictionary.put$O$O(key, value);
 if (key.equals$O("Type")) this.type=(value).substring$I(1);
 });
 
@@ -64,15 +55,15 @@ if (this.stream == null ) this.setAsStream$();
 streamLen=this.stream.length;
 var doDeflate=(streamLen > 1000);
 if (doDeflate) {
-var deflater=Clazz.new_($I$(2).c$$I,[9]);
-var outBytes=Clazz.new_($I$(3).c$$I,[1024]);
-var compBytes=Clazz.new_($I$(4).c$$java_io_ByteArrayOutputStream$java_util_zip_Deflater,[outBytes, deflater]);
+var deflater=Clazz.new_($I$(2,1).c$$I,[9]);
+var outBytes=Clazz.new_($I$(3,1).c$$I,[1024]);
+var compBytes=Clazz.new_($I$(4,1).c$$java_io_ByteArrayOutputStream$java_util_zip_Deflater,[outBytes, deflater]);
 compBytes.write$BA$I$I(this.stream, 0, streamLen);
 compBytes.finish$();
 this.stream=outBytes.toByteArray$();
-this.dictionary.put$TK$TV("Filter", "/FlateDecode");
+this.dictionary.put$O$O("Filter", "/FlateDecode");
 streamLen=this.stream.length;
-}this.dictionary.put$TK$TV("Length", "" + streamLen);
+}this.dictionary.put$O$O("Length", "" + streamLen);
 }p$1.write$java_io_OutputStream$BA$I.apply(this, [os, p$1.getDictionaryText$java_util_Map$S.apply(this, [this.dictionary, "\n"]).getBytes$(), 0]);
 }if (this.length$() > 0) p$1.write$java_io_OutputStream$BA$I.apply(this, [os, this.toString().getBytes$(), 0]);
 if (this.stream != null ) {
@@ -90,7 +81,7 @@ os.write$BA$I$I(bytes, 0, nBytes);
 }, p$1);
 
 Clazz.newMeth(C$, 'getDictionaryText$java_util_Map$S', function (d, nl) {
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(5,1));
 sb.append$S("<<");
 if (d.containsKey$O("Type")) sb.append$S("/Type").appendO$O(d.get$O("Type"));
 for (var e, $e = d.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
@@ -110,16 +101,16 @@ return (sb.length$() > 3 ? sb.append$S(">>").append$S(nl).toString() : "");
 
 Clazz.newMeth(C$, 'createSubdict$java_util_Map$S', function (d0, dict) {
 var d=d0.get$O(dict);
-if (d == null ) d0.put$TK$TV(dict, d=Clazz.new_($I$(1)));
+if (d == null ) d0.put$O$O(dict, d=Clazz.new_($I$(1,1)));
 return d;
 }, p$1);
 
 Clazz.newMeth(C$, 'addResource$S$S$S', function (type, key, value) {
 var r=p$1.createSubdict$java_util_Map$S.apply(this, [this.dictionary, "Resources"]);
 if (type != null ) r=p$1.createSubdict$java_util_Map$S.apply(this, [r, type]);
-r.put$TK$TV(key, value);
+r.put$O$O(key, value);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,14 +1,13 @@
 (function(){var P$=java.lang.reflect,I$=[];
-var C$=Clazz.newClass(P$, "Array");
+/*c*/var C$=Clazz.newClass(P$, "Array");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'newInstance$Class$I', function (componentType, length) {
@@ -59,13 +58,13 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 Clazz.newMeth(C$, 'getByte$O$I', function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
-var val=($b$[0] = 0, $b$[0]);
+var val=0;
 {
 type = array.__ARRAYTYPE; val = x;
 }
 switch (type) {
 case "BA":
-return $b$[0] = val, $b$[0];
+return val;
 }
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
@@ -178,7 +177,7 @@ type = array.__ARRAYTYPE;
 try {
 switch (type) {
 case "BA":
-(array)[index]=((value).byteValue$()|0);
+(array)[index]=(value).byteValue$();
 return;
 case "CA":
 (array)[index]=(value).charValue$();
@@ -236,7 +235,7 @@ case "IA":
 case "JA":
 case "FA":
 case "DA":
-(array)[index]=(b|0);
+(array)[index]=b;
 return;
 }
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
@@ -341,6 +340,5 @@ Clazz.newMeth(C$, 'multiNewArray$Class$IA', function (componentType, dimensions)
 return Clazz.array(componentType, dimensions);
 }
 }, 1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

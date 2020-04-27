@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JUnitLogger", null, null, 'org.jmol.util.LoggerInterface');
-C$.information=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JUnitLogger", null, null, 'org.jmol.util.LoggerInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.information=null;
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['S',['information']]]
 
 Clazz.newMeth(C$, 'activateLogger$', function () {
-$I$(1).setLogger$org_jmol_util_LoggerInterface(Clazz.new_(C$));
+(function(a,f){return f.apply(null,a)})([Clazz.new_(C$)],$I$(1).setLogger$org_jmol_util_LoggerInterface);
 }, 1);
 
 Clazz.newMeth(C$, 'setInformation$S', function (txt) {
@@ -18,7 +18,7 @@ C$.information=txt;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'logError$S$Throwable', function (txt, e) {
@@ -60,5 +60,9 @@ Clazz.newMeth(C$, 'fatal$S', function (txt) {
 Clazz.newMeth(C$, 'fatalEx$S$Throwable', function (txt, e) {
 p$1.logError$S$Throwable.apply(this, [txt, e]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.information=null;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

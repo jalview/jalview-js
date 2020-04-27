@@ -1,27 +1,19 @@
 (function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[];
-var C$=Clazz.newClass(P$, "Segment", null, null, ['Cloneable', 'java.text.CharacterIterator', 'CharSequence']);
+/*c*/var C$=Clazz.newClass(P$, "Segment", null, null, ['Cloneable', 'java.text.CharacterIterator', 'CharSequence']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.array=null;
-this.offset=0;
-this.count=0;
-this.partialReturn=false;
-this.pos=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['partialReturn'],'I',['offset','count','pos'],'O',['array','char[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$CA$I$I.apply(this, [null, 0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$CA$I$I', function (array, offset, count) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.array=array;
 this.offset=offset;
 this.count=count;
@@ -139,4 +131,4 @@ throw cnse;
 return o;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

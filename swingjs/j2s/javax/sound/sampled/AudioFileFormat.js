@@ -1,25 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.sound.sampled"),I$=[[0,'java.util.HashMap','java.util.Collections','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AudioFileFormat", function(){
+(function(){var P$=Clazz.newPackage("javax.sound.sampled"),I$=[[0,'java.util.HashMap','java.util.Collections','StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AudioFileFormat", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Type',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.byteLength=0;
-this.format=null;
-this.frameLength=0;
-this.properties=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['byteLength','frameLength'],'O',['type','javax.sound.sampled.AudioFileFormat.Type','format','javax.sound.sampled.AudioFormat','properties','java.util.HashMap']]]
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFileFormat_Type$I$javax_sound_sampled_AudioFormat$I', function (type, byteLength, format, frameLength) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.type=type;
 this.byteLength=byteLength;
 this.format=format;
@@ -33,7 +26,7 @@ C$.c$$javax_sound_sampled_AudioFileFormat_Type$I$javax_sound_sampled_AudioFormat
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_AudioFileFormat_Type$javax_sound_sampled_AudioFormat$I$java_util_Map', function (type, format, frameLength, properties) {
 C$.c$$javax_sound_sampled_AudioFileFormat_Type$I$javax_sound_sampled_AudioFormat$I.apply(this, [type, -1, format, frameLength]);
-this.properties=Clazz.new_($I$(1).c$$java_util_Map,[properties]);
+this.properties=Clazz.new_($I$(1,1).c$$java_util_Map,[properties]);
 }, 1);
 
 Clazz.newMeth(C$, 'getType$', function () {
@@ -55,7 +48,7 @@ return this.frameLength;
 Clazz.newMeth(C$, 'properties$', function () {
 var ret;
 if (this.properties == null ) {
-ret=Clazz.new_($I$(1).c$$I,[0]);
+ret=Clazz.new_($I$(1,1).c$$I,[0]);
 } else {
 ret=(this.properties.clone$());
 }return $I$(2).unmodifiableMap$java_util_Map(ret);
@@ -68,7 +61,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var buf=Clazz.new_($I$(3));
+var buf=Clazz.new_($I$(3,1));
 if (this.type != null ) {
 buf.append$S(this.type.toString() + " (." + this.type.getExtension$() + ") file" );
 } else {
@@ -81,38 +74,20 @@ buf.append$S(", frame length: " + this.frameLength);
 }return  String.instantialize(buf);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.AudioFileFormat, "Type", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AudioFileFormat, "Type", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.WAVE=null;
-C$.AU=null;
-C$.AIFF=null;
-C$.AIFC=null;
-C$.OGG=null;
-C$.MP3=null;
-C$.SND=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.WAVE=Clazz.new_(C$.c$$S$S,["WAVE", "wav"]);
-C$.AU=Clazz.new_(C$.c$$S$S,["AU", "au"]);
-C$.AIFF=Clazz.new_(C$.c$$S$S,["AIFF", "aif"]);
-C$.AIFC=Clazz.new_(C$.c$$S$S,["AIFF-C", "aifc"]);
-C$.OGG=Clazz.new_(C$.c$$S$S,["OGG", "ogg"]);
-C$.MP3=Clazz.new_(C$.c$$S$S,["MP3", "mp3"]);
-C$.SND=Clazz.new_(C$.c$$S$S,["SND", "snd"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.extension=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name','extension']]
+,['O',['WAVE','javax.sound.sampled.AudioFileFormat.Type','+AU','+AIFF','+AIFC','+OGG','+MP3','+SND']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (name, extension) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 this.extension=extension;
 }, 1);
@@ -141,15 +116,25 @@ return this.extension;
 
 Clazz.newMeth(C$, 'getType$javax_sound_sampled_AudioFormat', function (format) {
 var type=format.getProperty$S("fileFormat");
-if (type == "WAV") return C$.WAVE;
-if (type == "OGG") return C$.OGG;
-if (type == "MP3") return C$.MP3;
+if (type === "WAV" ) return C$.WAVE;
+if (type === "OGG" ) return C$.OGG;
+if (type === "MP3" ) return C$.MP3;
 return null;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.WAVE=Clazz.new_(C$.c$$S$S,["WAVE", "wav"]);
+C$.AU=Clazz.new_(C$.c$$S$S,["AU", "au"]);
+C$.AIFF=Clazz.new_(C$.c$$S$S,["AIFF", "aif"]);
+C$.AIFC=Clazz.new_(C$.c$$S$S,["AIFF-C", "aifc"]);
+C$.OGG=Clazz.new_(C$.c$$S$S,["OGG", "ogg"]);
+C$.MP3=Clazz.new_(C$.c$$S$S,["MP3", "mp3"]);
+C$.SND=Clazz.new_(C$.c$$S$S,["SND", "snd"]);
+};
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

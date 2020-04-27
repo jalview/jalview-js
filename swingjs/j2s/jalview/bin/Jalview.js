@@ -1,27 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.bin"),p$1={},I$=[[0,'Thread','jalview.util.MessageManager','jalview.util.Platform','java.util.logging.ConsoleHandler','java.util.logging.Level','java.util.logging.Logger','jalview.bin.ArgsParser','jalview.bin.Cache','javax.swing.UIManager','ch.randelshofer.quaqua.QuaquaManager','jalview.io.gff.SequenceOntologyFactory','jalview.ext.so.SequenceOntology','jalview.gui.Desktop','jalview.io.FileLoader','jalview.io.AppletFormatAdapter','jalview.io.DataSourceType','java.io.File','java.net.URL','jalview.io.IdentifyFile','jalview.schemes.ColourSchemeProperty','jalview.io.NewickFile','jalview.io.HtmlSvgOutput','jalview.io.BioJsHTMLOutput','jalview.gui.PromptUserConfig','java.io.PrintWriter','java.io.OutputStreamWriter','java.io.FileOutputStream','java.io.BufferedReader','java.io.InputStreamReader','java.net.URI','java.util.HashMap','groovy.lang.Binding','groovy.util.GroovyScriptEngine','jalview.gui.AlignFrame']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Jalview", function(){
+(function(){var P$=Clazz.newPackage("jalview.bin"),p$1={},I$=[[0,'Thread','jalview.util.MessageManager','jalview.util.Platform','java.util.logging.ConsoleHandler','java.util.logging.Level','java.util.logging.Logger','jalview.bin.Cache','jalview.bin.ArgsParser','javax.swing.UIManager','ch.randelshofer.quaqua.QuaquaManager','jalview.io.gff.SequenceOntologyFactory','jalview.ext.so.SequenceOntology','jalview.gui.Desktop','jalview.bin.JalviewTaskbar','java.io.File','com.threerings.getdown.util.LaunchUtil','jalview.io.FileLoader','jalview.io.AppletFormatAdapter','jalview.io.IdentifyFile','jalview.schemes.ColourSchemeProperty','jalview.io.NewickFile','jalview.io.HtmlSvgOutput','jalview.io.BioJsHTMLOutput','jalview.gui.PromptUserConfig','java.io.PrintWriter','java.io.OutputStreamWriter','java.io.FileOutputStream','java.io.BufferedReader','java.io.InputStreamReader','java.net.URI','java.util.HashMap','groovy.lang.Binding','groovy.util.GroovyScriptEngine','java.net.URL','jalview.gui.AlignFrame']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Jalview", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.instance=null;
-C$.currentAlignFrame=null;
+C$.$classes$=[['FeatureFetcher',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-$I$(3).getURLCommandArguments$();
-};
-{
-if (!$I$(3).isJS$()) 
-{}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.desktop=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['desktop','jalview.gui.Desktop']]
+,['O',['instance','jalview.bin.Jalview','currentAlignFrame','jalview.gui.AlignFrame']]]
 
 Clazz.newMeth(C$, 'getInstance$', function () {
 return C$.instance;
@@ -33,7 +22,7 @@ C$.instance.doMain$SA(args);
 }, 1);
 
 Clazz.newMeth(C$, 'logClass$S', function (name) {
-var consoleHandler=Clazz.new_($I$(4));
+var consoleHandler=Clazz.new_($I$(4,1));
 consoleHandler.setLevel$java_util_logging_Level($I$(5).ALL);
 var logger=$I$(6).getLogger$S(name);
 logger.setLevel$java_util_logging_Level($I$(5).ALL);
@@ -51,11 +40,22 @@ Clazz.newMeth(C$, 'doMain$SA', function (args) {
 if (!$I$(3).isJS$()) {
 System.setSecurityManager$SecurityManager(null);
 }System.out.println$S("Java version: " + System.getProperty$S("java.version"));
+System.out.println$S("Java Home: " + System.getProperty$S("java.home"));
 System.out.println$S(System.getProperty$S("os.arch") + " " + System.getProperty$S("os.name") + " " + System.getProperty$S("os.version") );
-var aparser=Clazz.new_($I$(7).c$$SA,[args]);
+var val=System.getProperty$S("sys.install4jVersion");
+if (val != null ) {
+System.out.println$S("Install4j version: " + val);
+}val=System.getProperty$S("installer_template_version");
+if (val != null ) {
+System.out.println$S("Install4j template version: " + val);
+}val=System.getProperty$S("launcher_version");
+if (val != null ) {
+System.out.println$S("Launcher version: " + val);
+}$I$(7).loadBuildProperties$Z(true);
+var aparser=Clazz.new_($I$(8,1).c$$SA,[args]);
 var headless=false;
 var usrPropsFile=aparser.getValue$S("props");
-$I$(8).loadProperties$S(usrPropsFile);
+$I$(7).loadProperties$S(usrPropsFile);
 if (usrPropsFile != null ) {
 System.out.println$S("CMD [-props " + usrPropsFile + "] executed successfully!" );
 }if (!$I$(3).isJS$()) 
@@ -68,14 +68,14 @@ System.err.println$S("Ignoring invalid setprop argument : " + defs);
 } else {
 System.out.println$S("Executing setprop argument: " + defs);
 if ($I$(3).isJS$()) {
-$I$(8).setProperty$S$S(defs.substring$I$I(0, p), defs.substring$I(p + 1));
+$I$(7,"setProperty$S$S",[defs.substring$I$I(0, p), defs.substring$I(p + 1)]);
 }}defs=aparser.getValue$S("setprop");
 }
 if (System.getProperty$S("java.awt.headless") != null  && System.getProperty$S("java.awt.headless").equals$O("true") ) {
 headless=true;
-}System.setProperty$S$S("http.agent", "Jalview Desktop/" + $I$(8).getDefault$S$S("VERSION", "Unknown"));
+}System.setProperty$S$S("http.agent", "Jalview Desktop/" + $I$(7).getDefault$S$S("VERSION", "Unknown"));
 try {
-$I$(8).initLogger$();
+$I$(7).initLogger$();
 } catch (error) {
 if (Clazz.exceptionOf(error,"NoClassDefFoundError")){
 error.printStackTrace$();
@@ -87,7 +87,7 @@ throw error;
 }
 this.desktop=null;
 try {
-$I$(9).setLookAndFeel$S($I$(9).getSystemLookAndFeelClassName$());
+$I$(9,"setLookAndFeel$S",[$I$(9).getSystemLookAndFeelClassName$()]);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 System.err.println$S("Unexpected Look and Feel Exception");
@@ -113,79 +113,57 @@ $I$(9).setLookAndFeel$S("org.violetlib.aqua.AquaLookAndFeel");
 } catch (e) {
 System.err.println$S("Failed to reset look and feel: " + e.toString());
 }
-}}if ($I$(8).getDefault$S$Z("USE_FULL_SO", false)) {
-$I$(11).setInstance$jalview_io_gff_SequenceOntologyI(Clazz.new_($I$(12)));
+}}var soDefault=!$I$(3).isJS$();
+if ($I$(7).getDefault$S$Z("USE_FULL_SO", soDefault)) {
+$I$(11,"setInstance$jalview_io_gff_SequenceOntologyI",[Clazz.new_($I$(12,1))]);
 }if (!headless) {
-this.desktop=Clazz.new_($I$(13));
+this.desktop=Clazz.new_($I$(13,1));
 this.desktop.setInBatchMode$Z(true);
+try {
+$I$(14).setTaskbar$jalview_bin_Jalview(this);
+} catch (t) {
+System.out.println$S("Error setting Taskbar: " + t.getMessage$());
+}
 this.desktop.setVisible$Z(true);
 if (!$I$(3).isJS$()) 
 {}
+}var appdirString=System.getProperty$S("getdownappdir");
+if (appdirString != null  && appdirString.length$() > 0 ) {
+var appdir=Clazz.new_($I$(15,1).c$$S,[appdirString]);
+((P$.Jalview$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'run$', function () {
+$I$(16,"upgradeGetdown$java_io_File$java_io_File$java_io_File",[Clazz.new_($I$(15,1).c$$java_io_File$S,[this.$finals$.appdir, "getdown-launcher-old.jar"]), Clazz.new_($I$(15,1).c$$java_io_File$S,[this.$finals$.appdir, "getdown-launcher.jar"]), Clazz.new_($I$(15,1).c$$java_io_File$S,[this.$finals$.appdir, "getdown-launcher-new.jar"])]);
+});
+})()
+), Clazz.new_($I$(1,1),[this, {appdir:appdir}],P$.Jalview$2)).start$();
 }var file=null;
 var data=null;
 var format=null;
 var protocol=null;
-var fileLoader=Clazz.new_($I$(14).c$$Z,[!headless]);
+var fileLoader=Clazz.new_($I$(17,1).c$$Z,[!headless]);
 var groovyscript=null;
 groovyscript=aparser.getValue$S$Z("groovy", true);
 file=aparser.getValue$S$Z("open", true);
 if (file == null  && this.desktop == null  ) {
 System.out.println$S("No files to open!");
 System.exit$I(1);
-}var vamsasImport=aparser.getValue$S("vdoc");
-var vamsasSession=aparser.getValue$S("vsess");
-if (vamsasImport != null  || vamsasSession != null  ) {
-if (this.desktop == null  || headless ) {
-System.out.println$S("Headless vamsas sessions not yet supported. Sorry.");
-System.exit$I(1);
-}var inSession=false;
-if (vamsasImport != null ) {
-try {
-var viprotocol=$I$(15).checkProtocol$O(vamsasImport);
-if (viprotocol === $I$(16).FILE ) {
-inSession=this.desktop.vamsasImport$java_io_File(Clazz.new_($I$(17).c$$S,[vamsasImport]));
-} else if (viprotocol === $I$(16).URL ) {
-inSession=this.desktop.vamsasImport$java_net_URL(Clazz.new_($I$(18).c$$S,[vamsasImport]));
-}} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-System.err.println$S("Exeption when importing " + vamsasImport + " as a vamsas document." );
-e.printStackTrace$();
-} else {
-throw e;
-}
-}
-if (!inSession) {
-System.err.println$S("Failed to import " + vamsasImport + " as a vamsas document." );
-} else {
-System.out.println$S("Imported Successfully into new session " + this.desktop.getVamsasApplication$().getCurrentSession$());
-}}if (vamsasSession != null ) {
-if (vamsasImport != null ) {
-this.desktop.vamsasStop_actionPerformed$java_awt_event_ActionEvent(null);
-}try {
-if (this.desktop.joinVamsasSession$S(vamsasSession)) {
-System.out.println$S("Successfully joined vamsas session " + vamsasSession);
-} else {
-System.err.println$S("WARNING: Failed to join vamsas session " + vamsasSession);
-}} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-System.err.println$S("ERROR: Failed to join vamsas session " + vamsasSession);
-e.printStackTrace$();
-} else {
-throw e;
-}
-}
-if (vamsasImport != null ) {
-$I$(8).log.info$O("Skipping Push for import of data into existing vamsas session.");
-}}}var progress=-1;
+}var progress=-1;
 if (file != null ) {
 if (!headless) {
 this.desktop.setProgressBar$S$J($I$(2).getString$S("status.processing_commandline_args"), progress=System.currentTimeMillis$());
 }System.out.println$S("CMD [-open " + file + "] executed successfully!" );
 if (!$I$(3).isJS$()) 
 {}
-protocol=$I$(15).checkProtocol$O(file);
+protocol=$I$(18).checkProtocol$O(file);
 try {
-format=Clazz.new_($I$(19)).identify$S$jalview_io_DataSourceType(file, protocol);
+format=Clazz.new_($I$(19,1)).identify$S$jalview_io_DataSourceType(file, protocol);
 } catch (e1) {
 if (Clazz.exceptionOf(e1,"jalview.io.FileFormatException")){
 } else {
@@ -200,17 +178,17 @@ C$.setCurrentAlignFrame$jalview_gui_AlignFrame(af);
 data=aparser.getValue$S$Z("colour", true);
 if (data != null ) {
 data.replaceAll$S$S("%20", " ");
-var cs=$I$(20).getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S(af.getViewport$(), af.getViewport$().getAlignment$(), data);
+var cs=$I$(20,"getColourScheme$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI$S",[af.getViewport$(), af.getViewport$().getAlignment$(), data]);
 if (cs != null ) {
 System.out.println$S("CMD [-color " + data + "] executed successfully!" );
 }af.changeColour$jalview_schemes_ColourSchemeI(cs);
 }data=aparser.getValue$S$Z("groups", true);
 if (data != null ) {
-af.parseFeaturesFile$O$jalview_io_DataSourceType(data, $I$(15).checkProtocol$O(data));
+af.parseFeaturesFile$O$jalview_io_DataSourceType(data, $I$(18).checkProtocol$O(data));
 System.out.println$S("CMD groups[-" + data + "]  executed successfully!" );
 }data=aparser.getValue$S$Z("features", true);
 if (data != null ) {
-af.parseFeaturesFile$O$jalview_io_DataSourceType(data, $I$(15).checkProtocol$O(data));
+af.parseFeaturesFile$O$jalview_io_DataSourceType(data, $I$(18).checkProtocol$O(data));
 System.out.println$S("CMD [-features " + data + "]  executed successfully!" );
 }data=aparser.getValue$S$Z("annotations", true);
 if (data != null ) {
@@ -232,7 +210,7 @@ System.out.println$S("CMD [-nosortbytree] executed successfully!");
 if (data != null ) {
 try {
 System.out.println$S("CMD [-tree " + data + "] executed successfully!" );
-var nf=Clazz.new_($I$(21).c$$S$jalview_io_DataSourceType,[data, $I$(15).checkProtocol$O(data)]);
+var nf=Clazz.new_([data, $I$(18).checkProtocol$O(data)],$I$(21,1).c$$S$jalview_io_DataSourceType);
 af.getViewport$().setCurrentTree$jalview_analysis_TreeModel(af.showNewickTree$jalview_io_NewickFile$S(nf, data).getTree$());
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"java.io.IOException")){
@@ -252,20 +230,20 @@ while (aparser.getSize$() > 1){
 var outputFormat=aparser.nextValue$();
 file=aparser.nextValue$();
 if (outputFormat.equalsIgnoreCase$S("png")) {
-af.createPNG$java_io_File(Clazz.new_($I$(17).c$$S,[file]));
-imageName=(Clazz.new_($I$(17).c$$S,[file])).getName$();
+af.createPNG$java_io_File(Clazz.new_($I$(15,1).c$$S,[file]));
+imageName=(Clazz.new_($I$(15,1).c$$S,[file])).getName$();
 System.out.println$S("Creating PNG image: " + file);
 continue;
 } else if (outputFormat.equalsIgnoreCase$S("svg")) {
-var imageFile=Clazz.new_($I$(17).c$$S,[file]);
+var imageFile=Clazz.new_($I$(15,1).c$$S,[file]);
 imageName=imageFile.getName$();
 af.createSVG$java_io_File(imageFile);
 System.out.println$S("Creating SVG image: " + file);
 continue;
 } else if (outputFormat.equalsIgnoreCase$S("html")) {
-var imageFile=Clazz.new_($I$(17).c$$S,[file]);
+var imageFile=Clazz.new_($I$(15,1).c$$S,[file]);
 imageName=imageFile.getName$();
-var htmlSVG=Clazz.new_($I$(22).c$$jalview_gui_AlignmentPanel,[af.alignPanel]);
+var htmlSVG=Clazz.new_($I$(22,1).c$$jalview_gui_AlignmentPanel,[af.alignPanel]);
 htmlSVG.exportHTML$S(file);
 System.out.println$S("Creating HTML image: " + file);
 continue;
@@ -274,7 +252,7 @@ if (file == null ) {
 System.err.println$S("The output html file must not be null");
 return;
 }try {
-$I$(23).refreshVersionInfo$S($I$(23).BJS_TEMPLATES_LOCAL_DIRECTORY);
+$I$(23,"refreshVersionInfo$S",[$I$(23).BJS_TEMPLATES_LOCAL_DIRECTORY]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.URISyntaxException")){
 e.printStackTrace$();
@@ -282,16 +260,16 @@ e.printStackTrace$();
 throw e;
 }
 }
-var bjs=Clazz.new_($I$(23).c$$jalview_gui_AlignmentPanel,[af.alignPanel]);
+var bjs=Clazz.new_($I$(23,1).c$$jalview_gui_AlignmentPanel,[af.alignPanel]);
 bjs.exportHTML$S(file);
 System.out.println$S("Creating BioJS MSA Viwer HTML file: " + file);
 continue;
 } else if (outputFormat.equalsIgnoreCase$S("imgMap")) {
-af.createImageMap$java_io_File$S(Clazz.new_($I$(17).c$$S,[file]), imageName);
+af.createImageMap$java_io_File$S(Clazz.new_($I$(15,1).c$$S,[file]), imageName);
 System.out.println$S("Creating image map: " + file);
 continue;
 } else if (outputFormat.equalsIgnoreCase$S("eps")) {
-var outputFile=Clazz.new_($I$(17).c$$S,[file]);
+var outputFile=Clazz.new_($I$(15,1).c$$S,[file]);
 System.out.println$S("Creating EPS file: " + outputFile.getAbsolutePath$());
 af.createEPS$java_io_File(outputFile);
 continue;
@@ -305,10 +283,10 @@ while (aparser.getSize$() > 0){
 System.out.println$S("Unknown arg: " + aparser.nextValue$());
 }
 }}var startUpAlframe=null;
-if (!$I$(3).isJS$() && !headless && file == null    && vamsasImport == null   && $I$(8).getDefault$S$Z("SHOW_STARTUP_FILE", true) ) 
+if (!$I$(3).isJS$() && !headless && file == null    && $I$(7).getDefault$S$Z("SHOW_STARTUP_FILE", true) ) 
 {}
 if (groovyscript != null ) {
-if ($I$(8).groovyJarsPresent$()) {
+if ($I$(7).groovyJarsPresent$()) {
 System.out.println$S("Executing script " + groovyscript);
 p$1.executeGroovyScript$S$jalview_gui_AlignFrame.apply(this, [groovyscript, startUpAlframe]);
 } else {
@@ -324,35 +302,33 @@ System.out.println$S("Usage: jalview -open [FILE] [OUTPUT_FORMAT] [OUTPUT_FILE]\
 }, 1);
 
 Clazz.newMeth(C$, 'startUsageStats$jalview_gui_Desktop', function (desktop) {
-var prompter=Clazz.new_($I$(24).c$$java_awt_Component$S$S$S$Runnable$Runnable$Runnable$Z,[$I$(13).desktop, "USAGESTATS", "Jalview Usage Statistics", "Do you want to help make Jalview better by enabling the collection of usage statistics with Google Analytics ?\n\n(you can enable or disable usage tracking in the preferences)", ((P$.Jalview$2||
-(function(){var C$=Clazz.newClass(P$, "Jalview$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+var prompter=Clazz.new_([$I$(13).desktop, "USAGESTATS", "Jalview Usage Statistics", "Do you want to help make Jalview better by enabling the collection of usage statistics with Google Analytics ?\n\n(you can enable or disable usage tracking in the preferences)", ((P$.Jalview$3||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'run$', function () {
-$I$(8).log.debug$O("Initialising googletracker for usage stats.");
-$I$(8).initGoogleTracker$();
-$I$(8).log.debug$O("Tracking enabled.");
-});
-})()
-), Clazz.new_(P$.Jalview$2.$init$, [this, null])), ((P$.Jalview$3||
-(function(){var C$=Clazz.newClass(P$, "Jalview$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-$I$(8).log.debug$O("Not enabling Google Tracking.");
+$I$(7).log.debug$O("Initialising googletracker for usage stats.");
+$I$(7).initGoogleTracker$();
+$I$(7).log.debug$O("Tracking enabled.");
 });
 })()
-), Clazz.new_(P$.Jalview$3.$init$, [this, null])), null, true]);
+), Clazz.new_(P$.Jalview$3.$init$,[this, null])), ((P$.Jalview$4||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'run$', function () {
+$I$(7).log.debug$O("Not enabling Google Tracking.");
+});
+})()
+), Clazz.new_(P$.Jalview$4.$init$,[this, null])), null, true],$I$(24,1).c$$java_awt_Component$S$S$S$Runnable$Runnable$Runnable$Z);
 desktop.addDialogThread$Runnable(prompter);
 }, 1);
 
@@ -361,9 +337,9 @@ var tfile=null;
 var sfile=null;
 if (groovyscript.trim$().equals$O("STDIN")) {
 try {
-tfile=$I$(17).createTempFile$S$S("jalview", "groovy");
-var outfile=Clazz.new_($I$(25).c$$java_io_Writer,[Clazz.new_($I$(26).c$$java_io_OutputStream,[Clazz.new_($I$(27).c$$java_io_File,[tfile])])]);
-var br=Clazz.new_($I$(28).c$$java_io_Reader,[Clazz.new_($I$(29).c$$java_io_InputStream,[System.$in])]);
+tfile=$I$(15).createTempFile$S$S("jalview", "groovy");
+var outfile=Clazz.new_([Clazz.new_([Clazz.new_($I$(27,1).c$$java_io_File,[tfile])],$I$(26,1).c$$java_io_OutputStream)],$I$(25,1).c$$java_io_Writer);
+var br=Clazz.new_([Clazz.new_($I$(29,1).c$$java_io_InputStream,[System.$in])],$I$(28,1).c$$java_io_Reader);
 var line=null;
 while ((line=br.readLine$()) != null ){
 outfile.write$S(line + "\n");
@@ -393,10 +369,10 @@ throw x;
 }
 } else {
 try {
-sfile=Clazz.new_($I$(30).c$$S,[groovyscript]).toURL$();
+sfile=Clazz.new_($I$(30,1).c$$S,[groovyscript]).toURL$();
 } catch (x) {
 if (Clazz.exceptionOf(x,"Exception")){
-tfile=Clazz.new_($I$(17).c$$S,[groovyscript]);
+tfile=Clazz.new_($I$(15,1).c$$S,[groovyscript]);
 if (!tfile.exists$()) {
 System.err.println$S("File '" + groovyscript + "' does not exist." );
 return;
@@ -421,12 +397,12 @@ throw x;
 }
 }
 }try {
-var vbinding=Clazz.new_($I$(31));
-vbinding.put$TK$TV("Jalview", this);
+var vbinding=Clazz.new_($I$(31,1));
+vbinding.put$O$O("Jalview", this);
 if (af != null ) {
-vbinding.put$TK$TV("currentAlFrame", af);
-}var gbinding=Clazz.new_($I$(32).c$$java_util_Map,[vbinding]);
-var gse=Clazz.new_($I$(33).c$$java_net_URLA,[Clazz.array($I$(18), -1, [sfile])]);
+vbinding.put$O$O("currentAlFrame", af);
+}var gbinding=Clazz.new_($I$(32,1).c$$java_util_Map,[vbinding]);
+var gse=Clazz.new_([Clazz.array($I$(34), -1, [sfile])],$I$(33,1).c$$java_net_URLA);
 gse.run$S$groovy_lang_Binding(sfile.toString(), gbinding);
 if ("STDIN".equals$O(groovyscript)) {
 tfile.delete$();
@@ -448,7 +424,7 @@ return true;
 }, 1);
 
 Clazz.newMeth(C$, 'getAlignFrames$', function () {
-return this.desktop == null  ? Clazz.array($I$(34), -1, [C$.getCurrentAlignFrame$()]) : $I$(13).getAlignFrames$();
+return this.desktop == null  ? Clazz.array($I$(35), -1, [C$.getCurrentAlignFrame$()]) : $I$(13).getAlignFrames$();
 });
 
 Clazz.newMeth(C$, 'quit$', function () {
@@ -465,41 +441,45 @@ return C$.currentAlignFrame;
 Clazz.newMeth(C$, 'setCurrentAlignFrame$jalview_gui_AlignFrame', function (currentAlignFrame) {
 C$.currentAlignFrame=currentAlignFrame;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+$I$(3).getURLCommandArguments$();
+};
+{
+if (!$I$(3).isJS$()) 
+{}
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Jalview, "FeatureFetcher", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Jalview, "FeatureFetcher", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queued=0;
-this.running=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.queued=0;
 this.running=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['queued','running']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'addFetcher$jalview_gui_AlignFrame$java_util_Vector', function (af, dasSources) {
 var id=System.currentTimeMillis$();
 this.queued++;
 var us=this;
-Clazz.new_($I$(1).c$$Runnable,[((P$.Jalview$FeatureFetcher$1||
-(function(){var C$=Clazz.newClass(P$, "Jalview$FeatureFetcher$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+Clazz.new_([((P$.Jalview$FeatureFetcher$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Jalview$FeatureFetcher$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 {
@@ -512,7 +492,7 @@ this.$finals$.af.setProgressBar$S$J(null, this.$finals$.id);
 this.b$['jalview.bin.Jalview.FeatureFetcher'].running--;
 }});
 })()
-), Clazz.new_(P$.Jalview$FeatureFetcher$1.$init$, [this, {af: af, id: id}]))]).start$();
+), Clazz.new_(P$.Jalview$FeatureFetcher$1.$init$,[this, {id:id,af:af}]))],$I$(1,1).c$$Runnable).start$();
 });
 
 Clazz.newMeth(C$, 'allFinished$', function () {
@@ -522,4 +502,4 @@ return this.queued == 0 && this.running == 0 ;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:46 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

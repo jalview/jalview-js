@@ -1,28 +1,17 @@
 (function(){var P$=java.util,p$1={};
-var C$=Clazz.newClass(P$, "ComparableTimSort");
+/*c*/var C$=Clazz.newClass(P$, "ComparableTimSort");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.a=null;
-this.minGallop=0;
-this.tmp=null;
-this.tmpBase=0;
-this.tmpLen=0;
-this.stackSize=0;
-this.runBase=null;
-this.runLen=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.minGallop=7;
 this.stackSize=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['minGallop','tmpBase','tmpLen','stackSize'],'O',['a','Object[]','+tmp','runBase','int[]','+runLen']]]
 
 Clazz.newMeth(C$, 'c$$OA$OA$I$I', function (a, work, workBase, workLen) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.a=a;
 var len=a.length;
 var tlen=(len < 512) ? len >>> 1 : 256;
@@ -75,7 +64,7 @@ var right=start;
 Clazz.assert(C$, this, function(){return left <= right});
 while (left < right){
 var mid=(left + right) >>> 1;
-if (pivot.compareTo$(a[mid]) < 0) right=mid;
+if (pivot.compareTo$O(a[mid]) < 0) right=mid;
  else left=mid + 1;
 }
 Clazz.assert(C$, this, function(){return left == right});
@@ -97,12 +86,12 @@ Clazz.newMeth(C$, 'countRunAndMakeAscending$OA$I$I', function (a, lo, hi) {
 Clazz.assert(C$, this, function(){return lo < hi});
 var runHi=lo + 1;
 if (runHi == hi) return 1;
-if ((a[runHi++]).compareTo$(a[lo]) < 0) {
-while (runHi < hi && (a[runHi]).compareTo$(a[runHi - 1]) < 0 )runHi++;
+if ((a[runHi++]).compareTo$O(a[lo]) < 0) {
+while (runHi < hi && (a[runHi]).compareTo$O(a[runHi - 1]) < 0 )runHi++;
 
 C$.reverseRange$OA$I$I(a, lo, runHi);
 } else {
-while (runHi < hi && (a[runHi]).compareTo$(a[runHi - 1]) >= 0 )runHi++;
+while (runHi < hi && (a[runHi]).compareTo$O(a[runHi - 1]) >= 0 )runHi++;
 
 }return runHi - lo;
 }, 1);
@@ -184,9 +173,9 @@ Clazz.newMeth(C$, 'gallopLeft$Comparable$OA$I$I$I', function (key, a, base, len,
 Clazz.assert(C$, this, function(){return len > 0 && hint >= 0  && hint < len });
 var lastOfs=0;
 var ofs=1;
-if (key.compareTo$(a[base + hint]) > 0) {
+if (key.compareTo$O(a[base + hint]) > 0) {
 var maxOfs=len - hint;
-while (ofs < maxOfs && key.compareTo$(a[base + hint + ofs ]) > 0 ){
+while (ofs < maxOfs && key.compareTo$O(a[base + hint + ofs ]) > 0 ){
 lastOfs=ofs;
 ofs=(ofs << 1) + 1;
 if (ofs <= 0) ofs=maxOfs;
@@ -196,7 +185,7 @@ lastOfs+=hint;
 ofs+=hint;
 } else {
 var maxOfs=hint + 1;
-while (ofs < maxOfs && key.compareTo$(a[base + hint - ofs]) <= 0 ){
+while (ofs < maxOfs && key.compareTo$O(a[base + hint - ofs]) <= 0 ){
 lastOfs=ofs;
 ofs=(ofs << 1) + 1;
 if (ofs <= 0) ofs=maxOfs;
@@ -209,7 +198,7 @@ ofs=hint - tmp;
 lastOfs++;
 while (lastOfs < ofs){
 var m=lastOfs + ((ofs - lastOfs) >>> 1);
-if (key.compareTo$(a[base + m]) > 0) lastOfs=m + 1;
+if (key.compareTo$O(a[base + m]) > 0) lastOfs=m + 1;
  else ofs=m;
 }
 Clazz.assert(C$, this, function(){return lastOfs == ofs});
@@ -220,9 +209,9 @@ Clazz.newMeth(C$, 'gallopRight$Comparable$OA$I$I$I', function (key, a, base, len
 Clazz.assert(C$, this, function(){return len > 0 && hint >= 0  && hint < len });
 var ofs=1;
 var lastOfs=0;
-if (key.compareTo$(a[base + hint]) < 0) {
+if (key.compareTo$O(a[base + hint]) < 0) {
 var maxOfs=hint + 1;
-while (ofs < maxOfs && key.compareTo$(a[base + hint - ofs]) < 0 ){
+while (ofs < maxOfs && key.compareTo$O(a[base + hint - ofs]) < 0 ){
 lastOfs=ofs;
 ofs=(ofs << 1) + 1;
 if (ofs <= 0) ofs=maxOfs;
@@ -233,7 +222,7 @@ lastOfs=hint - ofs;
 ofs=hint - tmp;
 } else {
 var maxOfs=len - hint;
-while (ofs < maxOfs && key.compareTo$(a[base + hint + ofs ]) >= 0 ){
+while (ofs < maxOfs && key.compareTo$O(a[base + hint + ofs ]) >= 0 ){
 lastOfs=ofs;
 ofs=(ofs << 1) + 1;
 if (ofs <= 0) ofs=maxOfs;
@@ -245,7 +234,7 @@ ofs+=hint;
 lastOfs++;
 while (lastOfs < ofs){
 var m=lastOfs + ((ofs - lastOfs) >>> 1);
-if (key.compareTo$(a[base + m]) < 0) ofs=m;
+if (key.compareTo$O(a[base + m]) < 0) ofs=m;
  else lastOfs=m + 1;
 }
 Clazz.assert(C$, this, function(){return lastOfs == ofs});
@@ -274,7 +263,7 @@ var count1=0;
 var count2=0;
 do {
 Clazz.assert(C$, this, function(){return len1 > 1 && len2 > 0 });
-if ((a[cursor2]).compareTo$(tmp[cursor1]) < 0) {
+if ((a[cursor2]).compareTo$O(tmp[cursor1]) < 0) {
 a[dest++]=a[cursor2++];
 count2++;
 count1=0;
@@ -348,7 +337,7 @@ var count1=0;
 var count2=0;
 do {
 Clazz.assert(C$, this, function(){return len1 > 0 && len2 > 1 });
-if ((tmp[cursor2]).compareTo$(a[cursor1]) < 0) {
+if ((tmp[cursor2]).compareTo$O(a[cursor1]) < 0) {
 a[dest--]=a[cursor1--];
 count1++;
 count2=0;
@@ -416,8 +405,11 @@ this.tmpLen=newSize;
 this.tmpBase=0;
 }return this.tmp;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:45 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

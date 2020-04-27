@@ -1,30 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),p$1={},I$=[[0,'org.jmol.minimize.forcefield.CalculationsMMFF','javajs.util.AU','java.util.Hashtable','org.jmol.util.Logger','org.jmol.minimize.MinObject','org.jmol.util.Escape','javajs.util.PT','javajs.util.Lst','org.jmol.minimize.forcefield.AtomType','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.minimize.MinAtom','org.jmol.util.Elements']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ForceFieldMMFF", null, 'org.jmol.minimize.forcefield.ForceField');
-C$.atomTypes=null;
-C$.ffParams=null;
-C$.types=null;
-C$.sbMap=null;
-C$.equivalentTypes=null;
+(function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),p$1={},I$=[[0,'org.jmol.minimize.forcefield.CalculationsMMFF','javajs.util.AU','java.util.Hashtable','org.jmol.util.Logger','org.jmol.minimize.MinObject','org.jmol.util.Escape','javajs.util.PT','javajs.util.Lst','org.jmol.minimize.forcefield.AtomType','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.minimize.MinAtom','org.jmol.util.Elements']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ForceFieldMMFF", null, 'org.jmol.minimize.forcefield.ForceField');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.types=Clazz.array(Integer.TYPE, -1, [0, 1, 34, 5, 546, 3, 13, 21, 37, 9, 17]);
-C$.sbMap=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 5, 4, 6, 8, 9, 11]);
-C$.equivalentTypes=Clazz.array(Integer.TYPE, -1, [1, 1, 2, 1, 3, 1, 4, 1, 5, 5, 6, 6, 7, 6, 8, 8, 9, 8, 10, 8, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 15, 17, 15, 18, 15, 19, 19, 1, 1, 21, 5, 22, 1, 23, 5, 24, 5, 25, 25, 26, 25, 28, 5, 28, 5, 29, 5, 2, 1, 31, 31, 7, 6, 21, 5, 8, 8, 6, 6, 36, 5, 2, 1, 9, 8, 10, 8, 10, 8, 3, 1, 42, 8, 10, 8, 16, 15, 10, 8, 9, 8, 42, 8, 9, 8, 6, 6, 21, 5, 7, 6, 21, 5, 42, 8, 9, 8, 10, 8, 10, 8, 2, 1, 10, 8, 6, 6, 4, 1, 42, 8, 10, 8, 2, 1, 2, 1, 9, 8, 9, 8, 9, 8, 8, 8, 9, 8, 70, 70, 5, 5, 16, 15, 18, 15, 17, 15, 26, 25, 9, 8, 12, 12, 2, 1, 9, 8, 2, 1, 10, 8, 9, 8]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rawAtomTypes=null;
-this.rawBondTypes=null;
-this.rawMMFF94Charges=null;
-this.vRings=null;
-this.line=null;
-this.typeData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.typeData=Clazz.array(Integer.TYPE, [4]);
-}, 1);
+},1);
+
+C$.$fields$=[['S',['line'],'O',['+rawAtomTypes','+rawBondTypes','rawMMFF94Charges','float[]','vRings','javajs.util.Lst[]','typeData','int[]']]
+,['O',['atomTypes','javajs.util.Lst','ffParams','java.util.Map','types','int[]','+sbMap','+equivalentTypes']]]
 
 Clazz.newMeth(C$, 'getAtomTypeDescriptions$', function () {
 return C$.getAtomTypeDescs$IA(this.rawAtomTypes);
@@ -35,7 +19,7 @@ return this.rawMMFF94Charges;
 });
 
 Clazz.newMeth(C$, 'c$$org_jmol_minimize_Minimizer', function (m) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.minimizer=m;
 this.name="MMFF";
 p$1.getParameters.apply(this, []);
@@ -49,7 +33,7 @@ var m=this.minimizer;
 if (!this.setArrays$org_jmol_modelset_AtomA$javajs_util_BS$org_jmol_modelset_BondA$I$Z$Z(m.atoms, m.bsAtoms, m.bonds, m.rawBondCount, false, false)) return false;
 this.setModelFields$();
 if (!p$1.fixTypes.apply(this, [])) return false;
-this.calc=Clazz.new_($I$(1).c$$org_jmol_minimize_forcefield_ForceField$java_util_Map$org_jmol_minimize_MinAtomA$org_jmol_minimize_MinBondA$org_jmol_minimize_MinAngleA$org_jmol_minimize_MinTorsionA$org_jmol_minimize_MinPositionA$javajs_util_Lst,[this, C$.ffParams, this.minAtoms, this.minBonds, this.minAngles, this.minTorsions, this.minPositions, this.minimizer.constraints]);
+this.calc=Clazz.new_($I$(1,1).c$$org_jmol_minimize_forcefield_ForceField$java_util_Map$org_jmol_minimize_MinAtomA$org_jmol_minimize_MinBondA$org_jmol_minimize_MinAngleA$org_jmol_minimize_MinTorsionA$org_jmol_minimize_MinPositionA$javajs_util_Lst,[this, C$.ffParams, this.minAtoms, this.minBonds, this.minAngles, this.minTorsions, this.minPositions, this.minimizer.constraints]);
 this.calc.setLoggingEnabled$Z(true);
 return this.calc.setupCalculations$();
 });
@@ -67,7 +51,7 @@ return true;
 Clazz.newMeth(C$, 'getParameters', function () {
 if (C$.ffParams != null ) return;
 p$1.getAtomTypes.apply(this, []);
-var data=Clazz.new_($I$(3));
+var data=Clazz.new_($I$(3,1));
 var resourceName="mmff94.par.txt";
 if ($I$(4).debugging) $I$(4).debug$S("reading data from " + resourceName);
 var br=null;
@@ -212,7 +196,7 @@ var v1=p$1.dval$I$I.apply(this, [19, 25]);
 var v2=p$1.dval$I$I.apply(this, [28, 35]);
 value=Clazz.array(Double.TYPE, -1, [v1, v2]);
 var key=$I$(5).getKey$I$I$I$I$I(type, a1, a2, a3, a4);
-data.put$TK$TV(key, value);
+data.put$O$O(key, value);
 value=Clazz.array(Double.TYPE, -1, [v2, v1]);
 var a=a1;
 a1=a3;
@@ -226,13 +210,13 @@ value=Clazz.array(Double.TYPE, -1, [p$1.dval$I$I.apply(this, [10, 15]), p$1.dval
 break;
 }
 var key=$I$(5).getKey$I$I$I$I$I(type, a1, a2, a3, a4);
-data.put$TK$TV(key, value);
-if ($I$(4).debugging) $I$(4).debug$S($I$(5).decodeKey$Integer(key) + " " + (Clazz.instanceOf(value, "java.lang.Float") ? value : $I$(6).eAD$DA(value)) );
+data.put$O$O(key, value);
+if ($I$(4).debugging) (function(a,f){return f.apply(null,a)})([$I$(5).decodeKey$Integer(key) + " " + (Clazz.instanceOf(value, "java.lang.Float") ? value : $I$(6).eAD$DA(value)) ],$I$(4).debug$S);
 } while (!(this.line=br.readLine$()).startsWith$S("$"));
 }, p$1);
 
 Clazz.newMeth(C$, 'ival$I$I', function (i, j) {
-return $I$(7).parseInt$S(this.line.substring$I$I(i, j).trim$());
+return (function(a,f){return f.apply(null,a)})([this.line.substring$I$I(i, j).trim$()],$I$(7).parseInt$S);
 }, p$1);
 
 Clazz.newMeth(C$, 'fval$I$I', function (i, j) {
@@ -245,11 +229,11 @@ return Double.valueOf$S(this.line.substring$I$I(i, j).trim$()).doubleValue$();
 
 Clazz.newMeth(C$, 'getAtomTypes', function () {
 var resourceName="MMFF94-smarts.txt";
-var types=Clazz.new_($I$(8));
+var types=Clazz.new_($I$(8,1));
 try {
 var br=this.getBufferedReader$S(resourceName);
 var at;
-types.addLast$TV(Clazz.new_($I$(9).c$$I$I$I$F$I$S$S,[0, 0, 0, 0, 1, "H or NOT FOUND", ""]));
+types.addLast$O(Clazz.new_($I$(9,1).c$$I$I$I$F$I$S$S,[0, 0, 0, 0, 1, "H or NOT FOUND", ""]));
 while ((this.line=br.readLine$()) != null ){
 if (this.line.length$() == 0 || this.line.startsWith$S("#") ) continue;
 var elemNo=p$1.ival$I$I.apply(this, [3, 5]);
@@ -259,7 +243,7 @@ var formalCharge=p$1.fval$I$I.apply(this, [12, 15]) / 12;
 var val=p$1.ival$I$I.apply(this, [16, 18]);
 var desc=this.line.substring$I$I(19, 44).trim$();
 var smarts=this.line.substring$I(45).trim$();
-types.addLast$TV(at=Clazz.new_($I$(9).c$$I$I$I$F$I$S$S,[elemNo, mmType, hType, formalCharge, val, desc, smarts]));
+types.addLast$O(at=Clazz.new_($I$(9,1).c$$I$I$I$F$I$S$S,[elemNo, mmType, hType, formalCharge, val, desc, smarts]));
 C$.setFlags$org_jmol_minimize_forcefield_AtomType(at);
 }
 br.close$();
@@ -278,7 +262,7 @@ System.err.println$S("Exception " + e.toString() + " in getResource " + resource
 throw e$$;
 }
 }
-$I$(4).info$S((types.size$() - 1) + " SMARTS-based atom types read");
+(function(a,f){return f.apply(null,a)})([(types.size$() - 1) + " SMARTS-based atom types read"],$I$(4).info$S);
 C$.atomTypes=types;
 }, p$1);
 
@@ -430,7 +414,7 @@ var dq;
 try {
 var bondType=bTypes[i];
 var bFactor=(type1 < type2 ? -1 : 1);
-var key=$I$(5).getKey$I$I$I$I$I(bondType, bFactor == 1  ? type2 : type1, bFactor == 1  ? type1 : type2, 127, 124);
+var key=(function(a,f){return f.apply(null,a)})([bondType, bFactor == 1  ? type2 : type1, bFactor == 1  ? type1 : type2, 127, 124],$I$(5).getKey$I$I$I$I$I);
 var bciValue=C$.ffParams.get$O(key);
 var bci;
 var msg=($I$(4).debugging ? a1 + "/" + a2 + " mmTypes=" + type1 + "/" + type2 + " formalCharges=" + new Float(at1.formalCharge).toString() + "/" + new Float(at2.formalCharge).toString() + " bci = "  : null);
@@ -491,11 +475,11 @@ return stypes;
 }, 1);
 
 Clazz.newMeth(C$, 'setAtomTypes$org_jmol_modelset_AtomA$javajs_util_BS$org_jmol_api_SmilesMatcherInterface$javajs_util_LstA$Z', function (atoms, bsAtoms, smartsMatcher, vRings, allowUnknowns) {
-var bitSets=Clazz.new_($I$(8));
+var bitSets=Clazz.new_($I$(8,1));
 var smarts=Clazz.array(String, [C$.atomTypes.size$()]);
 var types=Clazz.array(Integer.TYPE, [atoms.length]);
-var bsElements=Clazz.new_($I$(10));
-var bsHydrogen=Clazz.new_($I$(10));
+var bsElements=Clazz.new_($I$(10,1));
+var bsHydrogen=Clazz.new_($I$(10,1));
 var bsConnected=$I$(11).copy$javajs_util_BS(bsAtoms);
 for (var i=bsAtoms.nextSetBit$I(0); i >= 0; i=bsAtoms.nextSetBit$I(i + 1)) {
 var a=atoms[i];
@@ -525,12 +509,12 @@ try {
 smartsMatcher.getMMFF94AtomTypes$SA$org_jmol_util_NodeA$I$javajs_util_BS$javajs_util_Lst$javajs_util_LstA(smarts, atoms, atoms.length, bsConnected, bitSets, vRings);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(4).error$S(e.toString());
+(function(a,f){return f.apply(null,a)})([e.toString()],$I$(4).error$S);
 } else {
 throw e;
 }
 }
-var bsDone=Clazz.new_($I$(10));
+var bsDone=Clazz.new_($I$(10,1));
 for (var j=0; j < bitSets.size$(); j++) {
 var bs=bitSets.get$I(j);
 if (bs == null ) continue;
@@ -546,7 +530,7 @@ var j=types[bonds[0].getOtherAtom$org_jmol_modelset_Atom(atoms[i]).i];
 if (j != 0) bsDone.set$I(i);
 types[i]=-C$.atomTypes.get$I(j).hType;
 }}
-if ($I$(4).debugging) for (var i=bsConnected.nextSetBit$I(0); i >= 0; i=bsConnected.nextSetBit$I(i + 1)) $I$(4).debug$S("atom " + atoms[i] + "\ttype " + (types[i] < 0 ? "" + -types[i] : (C$.atomTypes.get$I(types[i]).mmType + "\t" + C$.atomTypes.get$I(types[i]).smartsCode + "\t" + C$.atomTypes.get$I(types[i]).descr )) );
+if ($I$(4).debugging) for (var i=bsConnected.nextSetBit$I(0); i >= 0; i=bsConnected.nextSetBit$I(i + 1)) (function(a,f){return f.apply(null,a)})(["atom " + atoms[i] + "\ttype " + (types[i] < 0 ? "" + -types[i] : (C$.atomTypes.get$I(types[i]).mmType + "\t" + C$.atomTypes.get$I(types[i]).smartsCode + "\t" + C$.atomTypes.get$I(types[i]).descr )) ],$I$(4).debug$S);
 
 if (!allowUnknowns && bsDone.cardinality$() != bsConnected.cardinality$() ) return null;
 return types;
@@ -737,7 +721,7 @@ return key;
 }, p$1);
 
 Clazz.newMeth(C$, 'getTorsionKey$I$I$I', function (type, i, j) {
-return $I$(5).getKey$I$I$I$I$I(type, C$.getEquivalentType$I$I(this.typeData[0], i), this.typeData[1], this.typeData[2], C$.getEquivalentType$I$I(this.typeData[3], j));
+return (function(a,f){return f.apply(null,a)})([type, C$.getEquivalentType$I$I(this.typeData[0], i), this.typeData[1], this.typeData[2], C$.getEquivalentType$I$I(this.typeData[3], j)],$I$(5).getKey$I$I$I$I$I);
 }, p$1);
 
 Clazz.newMeth(C$, 'applyEmpiricalRules$org_jmol_minimize_MinObject$DA$I', function (o, ddata, ktype) {
@@ -753,7 +737,7 @@ a=this.minAtoms[o.data[0]];
 b=this.minAtoms[o.data[1]];
 var elemno1=a.atom.getElementNumber$();
 var elemno2=b.atom.getElementNumber$();
-var key=$I$(5).getKey$I$I$I$I$I(0, Math.min(elemno1, elemno2), Math.max(elemno1, elemno2), 127, 123);
+var key=(function(a,f){return f.apply(null,a)})([0, Math.min(elemno1, elemno2), Math.max(elemno1, elemno2), 127, 123],$I$(5).getKey$I$I$I$I$I);
 ddata=C$.ffParams.get$O(key);
 if (ddata == null ) return null;
 var kbref=ddata[0];
@@ -888,18 +872,18 @@ break out;
 }pi_bc=0.15;
 break out;
 }switch (elemnoB << 8 + elemnoC) {
-case 0x808:
+case 2056:
 wb=wc=2;
 break out;
-case 0x810:
+case 2064:
 wb=2;
 wc=8;
 break out;
-case 0x1008:
+case 4104:
 wb=8;
 wc=2;
 break out;
-case 0x1010:
+case 4112:
 wb=wc=8;
 break out;
 }
@@ -1120,11 +1104,11 @@ var n=1.4;
 var r=r0a + r0b;
 if (isAromatic) boAB=(a.ffAtomType.pilp || b.ffAtomType.pilp  ? 5 : 4);
  else switch (a.ffAtomType.mltb << 4 + b.ffAtomType.mltb) {
-case 0x11:
+case 17:
 boAB=4;
 break;
-case 0x12:
-case 0x21:
+case 18:
+case 33:
 boAB=5;
 break;
 }
@@ -1156,6 +1140,12 @@ r -= c * Math.pow(Math.abs(Xa - Xb), n);
 return r;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.types=Clazz.array(Integer.TYPE, -1, [0, 1, 34, 5, 546, 3, 13, 21, 37, 9, 17]);
+C$.sbMap=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 5, 4, 6, 8, 9, 11]);
+C$.equivalentTypes=Clazz.array(Integer.TYPE, -1, [1, 1, 2, 1, 3, 1, 4, 1, 5, 5, 6, 6, 7, 6, 8, 8, 9, 8, 10, 8, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 15, 17, 15, 18, 15, 19, 19, 1, 1, 21, 5, 22, 1, 23, 5, 24, 5, 25, 25, 26, 25, 28, 5, 28, 5, 29, 5, 2, 1, 31, 31, 7, 6, 21, 5, 8, 8, 6, 6, 36, 5, 2, 1, 9, 8, 10, 8, 10, 8, 3, 1, 42, 8, 10, 8, 16, 15, 10, 8, 9, 8, 42, 8, 9, 8, 6, 6, 21, 5, 7, 6, 21, 5, 42, 8, 9, 8, 10, 8, 10, 8, 2, 1, 10, 8, 6, 6, 4, 1, 42, 8, 10, 8, 2, 1, 2, 1, 9, 8, 9, 8, 9, 8, 8, 8, 9, 8, 70, 70, 5, 5, 16, 15, 18, 15, 17, 15, 26, 25, 9, 8, 12, 12, 2, 1, 9, 8, 2, 1, 10, 8, 9, 8]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

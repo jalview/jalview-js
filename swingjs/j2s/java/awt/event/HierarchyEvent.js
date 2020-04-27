@@ -1,29 +1,21 @@
 (function(){var P$=Clazz.newPackage("java.awt.event"),I$=[];
-var C$=Clazz.newClass(P$, "HierarchyEvent", null, 'java.awt.AWTEvent');
+/*c*/var C$=Clazz.newClass(P$, "HierarchyEvent", null, 'java.awt.AWTEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.changed=null;
-this.changedParent=null;
-this.changeFlags=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['changeFlags'],'O',['changed','java.awt.Component','changedParent','java.awt.Container']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$java_awt_Component$java_awt_Container', function (source, id, changed, changedParent) {
-C$.superclazz.c$$O$I.apply(this, [source, id]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O$I.apply(this,[source, id]);C$.$init$.apply(this);
 this.changed=changed;
 this.changedParent=changedParent;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$java_awt_Component$java_awt_Container$J', function (source, id, changed, changedParent, changeFlags) {
-C$.superclazz.c$$O$I.apply(this, [source, id]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O$I.apply(this,[source, id]);C$.$init$.apply(this);
 this.changed=changed;
 this.changedParent=changedParent;
 this.changeFlags=changeFlags;
@@ -85,4 +77,4 @@ return typeStr;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

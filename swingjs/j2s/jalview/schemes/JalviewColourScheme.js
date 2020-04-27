@@ -1,7 +1,28 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.schemes.ClustalxColourScheme','jalview.schemes.Blosum62ColourScheme','jalview.schemes.PIDColourScheme','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.schemes.NucleotideColourScheme','jalview.schemes.PurinePyrimidineColourScheme','jalview.schemes.RNAHelicesColour','jalview.schemes.TCoffeeColourScheme','jalview.schemes.IdColourScheme']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JalviewColourScheme", null, 'Enum');
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.schemes.ClustalxColourScheme','jalview.schemes.Blosum62ColourScheme','jalview.schemes.PIDColourScheme','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.schemes.NucleotideColourScheme','jalview.schemes.PurinePyrimidineColourScheme','jalview.schemes.RNAHelicesColour','jalview.schemes.TCoffeeColourScheme','jalview.schemes.IdColourScheme']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*e*/var C$=Clazz.newClass(P$, "JalviewColourScheme", null, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['S',['$name'],'O',['myClass','Class']]]
+
+Clazz.newMeth(C$, 'c$$S$Class', function (s, cl) {
+;C$.$init$.apply(this);
+this.$name=s;
+this.myClass=cl;
+}, 1);
+
+Clazz.newMeth(C$, 'getSchemeClass$', function () {
+return this.myClass;
+});
+
+Clazz.newMeth(C$, 'toString', function () {
+return this.$name;
+});
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$$S$Class, "Clustal", 0, ["Clustal", Clazz.getClass($I$(1))]);
 Clazz.newEnumConst($vals, C$.c$$S$Class, "Blosum62", 1, ["Blosum62", Clazz.getClass($I$(2))]);
@@ -18,34 +39,11 @@ Clazz.newEnumConst($vals, C$.c$$S$Class, "PurinePyrimidine", 11, ["Purine/Pyrimi
 Clazz.newEnumConst($vals, C$.c$$S$Class, "RNAHelices", 12, ["RNA Helices", Clazz.getClass($I$(13))]);
 Clazz.newEnumConst($vals, C$.c$$S$Class, "TCoffee", 13, ["T-Coffee Scores", Clazz.getClass($I$(14))]);
 Clazz.newEnumConst($vals, C$.c$$S$Class, "IdColour", 14, ["Sequence ID", Clazz.getClass($I$(15))]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$name=null;
-this.myClass=null;
-}, 1);
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S$Class', function (s, cl) {
-C$.$init$.apply(this);
-this.$name=s;
-this.myClass=cl;
-}, 1);
-
-Clazz.newMeth(C$, 'getSchemeClass$', function () {
-return this.myClass;
-});
-
-Clazz.newMeth(C$, 'toString', function () {
-return this.$name;
-});
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

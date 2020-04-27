@@ -1,21 +1,7 @@
-(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.math.RoundingMode','InternalError','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DigitList", null, null, 'Cloneable');
-C$.LONG_MIN_REP=null;
+(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.math.RoundingMode','java.math.BigDecimal','InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DigitList", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LONG_MIN_REP="9223372036854775808".toCharArray$();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.decimalAt=0;
-this.count=0;
-this.digits=null;
-this.data=null;
-this.roundingMode=null;
-this.isNegative=false;
-this.tempBuffer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.decimalAt=0;
@@ -23,7 +9,10 @@ this.count=0;
 this.digits=Clazz.array(Character.TYPE, [19]);
 this.roundingMode=$I$(1).HALF_EVEN;
 this.isNegative=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNegative'],'I',['decimalAt','count'],'O',['+digits','+data','roundingMode','java.math.RoundingMode']]
+,['O',['LONG_MIN_REP','char[]']]]
 
 Clazz.newMeth(C$, 'isZero$', function () {
 for (var i=0; i < this.count; ++i) {
@@ -53,12 +42,7 @@ this.digits=data;
 Clazz.newMeth(C$, 'getDouble$', function () {
 if (this.count == 0) {
 return 0.0;
-}var temp=p$1.getStringBuffer.apply(this, []);
-temp.append$C(".");
-temp.append$CA$I$I(this.digits, 0, this.count);
-temp.append$C("E");
-temp.append$S("" + this.decimalAt);
-return Double.parseDouble$S(temp.toString());
+}return Double.parseDouble$S("." + p$1.秘join$CA$I$I.apply(this, [this.digits, 0, this.count]) + "E" + this.decimalAt );
 });
 
 Clazz.newMeth(C$, 'getLong$', function () {
@@ -66,13 +50,29 @@ if (this.count == 0) {
 return 0;
 }if (p$1.isLongMIN_VALUE.apply(this, [])) {
 return -9223372036854775808;
-}var temp=p$1.getStringBuffer.apply(this, []);
-temp.append$CA$I$I(this.digits, 0, this.count);
+}var temp="";
+temp += p$1.秘join$CA$I$I.apply(this, [this.digits, 0, this.count]);
 for (var i=this.count; i < this.decimalAt; ++i) {
-temp.append$C("0");
+temp += "0";
 }
-return Long.parseLong$S(temp.toString());
+return Long.parseLong$S(temp);
 });
+
+Clazz.newMeth(C$, '秘join$CA$I$I', function (digits, i, count) {
+return (digits.slice(i, i + count).join("") ||null);
+}, p$1);
+
+Clazz.newMeth(C$, 'getBigDecimal$', function () {
+if (this.count == 0) {
+if (this.decimalAt == 0) {
+return $I$(2).ZERO;
+} else {
+return Clazz.new_($I$(2,1).c$$S,["0E" + this.decimalAt]);
+}}if (this.decimalAt == this.count) {
+return Clazz.new_($I$(2,1).c$$CA$I$I,[this.digits, 0, this.count]);
+} else {
+return Clazz.new_($I$(2,1).c$$CA$I$I,[this.digits, 0, this.count]).scaleByPowerOfTen$I(this.decimalAt - this.count);
+}});
 
 Clazz.newMeth(C$, 'fitsIntoLong$Z$Z', function (isPositive, ignoreNegativeZero) {
 while (this.count > 0 && this.digits[this.count - 1] == "0" ){
@@ -245,11 +245,32 @@ this.digits[--left]=String.fromCharCode((48 + (source % 10)));
 source=(source/10|0);
 }
 this.decimalAt=19 - left;
-for (right=18; this.digits[right] == "0"; --right) ;
+for (right=18; this.digits[right] == "0"; --right) {
+}
 this.count=right - left + 1;
 System.arraycopy$O$I$O$I$I(this.digits, left, this.digits, 0, this.count);
 }if (maximumDigits > 0) p$1.round$I.apply(this, [maximumDigits]);
 });
+
+Clazz.newMeth(C$, 'set$Z$java_math_BigDecimal$I$Z', function (isNegative, source, maximumDigits, fixedPoint) {
+var s=source.toString();
+p$1.extendDigits$I.apply(this, [s.length$()]);
+this.set$Z$S$I$Z(isNegative, s, maximumDigits, fixedPoint);
+});
+
+Clazz.newMeth(C$, 'set$Z$java_math_BigInteger$I', function (isNegative, source, maximumDigits) {
+this.isNegative=isNegative;
+var s=source.toString();
+var len=s.length$();
+p$1.extendDigits$I.apply(this, [len]);
+s.getChars$I$I$CA$I(0, len, this.digits, 0);
+this.decimalAt=len;
+var right;
+for (right=len - 1; right >= 0 && this.digits[right] == "0" ; --right) ;
+this.count=right + 1;
+if (maximumDigits > 0) {
+p$1.round$I.apply(this, [maximumDigits]);
+}});
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
 if (this === obj ) return true;
@@ -275,11 +296,10 @@ var other=Clazz.clone(this);
 var newDigits=Clazz.array(Character.TYPE, [this.digits.length]);
 System.arraycopy$O$I$O$I$I(this.digits, 0, newDigits, 0, this.digits.length);
 other.digits=newDigits;
-other.tempBuffer=null;
 return other;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(2));
+throw Clazz.new_($I$(3,1));
 } else {
 throw e;
 }
@@ -317,29 +337,25 @@ return positive ? value : -value;
 Clazz.newMeth(C$, 'toString', function () {
 if (this.isZero$()) {
 return "0";
-}var buf=p$1.getStringBuffer.apply(this, []);
-buf.append$S("0.");
-buf.append$CA$I$I(this.digits, 0, this.count);
-buf.append$S("x10^");
-buf.append$S("" + this.decimalAt);
-return buf.toString();
+}return "0." + p$1.秘join$CA$I$I.apply(this, [this.digits, 0, this.count]) + "x10^" + this.decimalAt ;
 });
 
-Clazz.newMeth(C$, 'getStringBuffer', function () {
-if (this.tempBuffer == null ) {
-this.tempBuffer=Clazz.new_($I$(3).c$$I,[19]);
-} else {
-this.tempBuffer.setLength$I(0);
-}return this.tempBuffer;
-}, p$1);
+Clazz.newMeth(C$, 'extendDigits$I', function (len) {
+if (len > this.digits.length) {
+this.digits=Clazz.array(Character.TYPE, [len]);
+}}, p$1);
 
 Clazz.newMeth(C$, 'getDataChars$I', function (length) {
 if (this.data == null  || this.data.length < length ) {
 this.data=Clazz.array(Character.TYPE, [length]);
 }return this.data;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.LONG_MIN_REP="9223372036854775808".toCharArray$();
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

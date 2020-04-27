@@ -14,7 +14,7 @@ if(typeof(jQuery)=="undefined") alert ("Note -- jQuery is required for SwingJS, 
 
 if (typeof(SwingJS) == "undefined") {
 
-  SwingJS = {};
+  SwingJS = {eventID:0};
 
 (function (SwingJS, $, J2S) {
 
@@ -98,12 +98,15 @@ if (typeof(SwingJS) == "undefined") {
 			jarPath: "java",
 			jarFile: "[code].jar",
 			j2sPath: "j2s",
+			spinnerImage: "core/Spinner.gif",
 			disableJ2SLoadMonitor: false,
 			disableInitialConsole: false,
 			debug: false
 		};	 
     
 		J2S._addDefaultInfo(Info, DefaultInfo);
+		
+		
     Info.jarFile && Info.code && Info.jarFile.replace(/\[code\]/,Info.code);
 		J2S._debugAlert = Info.debug;
 		Info.serverURL && (J2S._serverUrl = Info.serverURL);

@@ -1,23 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.awt.Dimension','javax.swing.text.StyleConstants','javax.swing.SwingUtilities',['javax.swing.text.ComponentView','.Invalidator'],['javax.swing.text.Position','.Bias']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ComponentView", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.awt.Dimension','javax.swing.text.StyleConstants','javax.swing.SwingUtilities',['javax.swing.text.ComponentView','.Invalidator'],['javax.swing.text.Position','.Bias']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ComponentView", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.View');
+C$.$classes$=[['Invalidator',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.createdC=null;
-this.c=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['createdC','java.awt.Component','c','javax.swing.text.ComponentView.Invalidator']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element.apply(this,[elem]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'createComponent$', function () {
@@ -89,13 +84,12 @@ if ($I$(3).isEventDispatchThread$()) {
 this.setComponentParent$();
 } else {
 var callSetComponentParent=((P$.ComponentView$1||
-(function(){var C$=Clazz.newClass(P$, "ComponentView$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ComponentView$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var doc=this.b$['javax.swing.text.View'].getDocument$.apply(this.b$['javax.swing.text.View'], []);
@@ -106,14 +100,14 @@ if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
 var host=this.b$['javax.swing.text.View'].getContainer$.apply(this.b$['javax.swing.text.View'], []);
 if (host != null ) {
 this.b$['javax.swing.text.View'].preferenceChanged$javax_swing_text_View$Z$Z.apply(this.b$['javax.swing.text.View'], [null, true, true]);
-host.repaint$();
+host.秘repaint$();
 }} finally {
 if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
 (doc).readUnlock$();
 }}
 });
 })()
-), Clazz.new_(P$.ComponentView$1.$init$, [this, null]));
+), Clazz.new_(P$.ComponentView$1.$init$,[this, null]));
 $I$(3).invokeLater$Runnable(callSetComponentParent);
 }});
 
@@ -126,7 +120,7 @@ if (this.c == null ) {
 var comp=this.createComponent$();
 if (comp != null ) {
 this.createdC=comp;
-this.c=Clazz.new_($I$(4).c$$java_awt_Component, [this, null, comp]);
+this.c=Clazz.new_($I$(4,1).c$$java_awt_Component,[this, null, comp]);
 }}if (this.c != null ) {
 if (this.c.getParent$() == null ) {
 parent.add$java_awt_Component$O(this.c, this);
@@ -160,27 +154,19 @@ return this.getStartOffset$();
 return this.getEndOffset$();
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ComponentView, "Invalidator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ComponentView, "Invalidator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.awt.Container', 'java.beans.PropertyChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.min=null;
-this.pref=null;
-this.max=null;
-this.yalign=0;
-this.xalign=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['yalign','xalign'],'O',['min','java.awt.Dimension','+pref','+max']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (child) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setLayout$java_awt_LayoutManager(null);
 this.add$java_awt_Component(child);
 p$1.cacheChildSizes.apply(this, []);
@@ -217,7 +203,7 @@ this.max=child.getMaximumSize$();
 this.yalign=child.getAlignmentY$();
 this.xalign=child.getAlignmentX$();
 } else {
-this.min=this.pref=this.max=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+this.min=this.pref=this.max=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'setVisible$Z', function (b) {
@@ -255,10 +241,10 @@ this.validateIfNecessary$();
 return this.yalign;
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (ev) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (ev) {
 var enable=ev.getNewValue$();
 if (this.getComponentCount$() > 0) {
-this.getComponent$I(0).setEnabled$Z((enable).booleanValue$());
+this.getComponent$I(0).setEnabled$Z((enable).valueOf());
 }});
 
 Clazz.newMeth(C$);
@@ -266,4 +252,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

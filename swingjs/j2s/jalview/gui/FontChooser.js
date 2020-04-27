@@ -1,33 +1,18 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'javax.swing.JInternalFrame','jalview.gui.Desktop','jalview.util.MessageManager','javax.swing.JLayeredPane','java.awt.GraphicsEnvironment','java.awt.Font','jalview.gui.JvOptionPane','jalview.bin.Cache','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FontChooser", null, 'jalview.jbgui.GFontChooser');
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'javax.swing.JInternalFrame','jalview.gui.Desktop','jalview.util.MessageManager','javax.swing.JLayeredPane','java.awt.GraphicsEnvironment','java.awt.Font','jalview.gui.JvOptionPane','jalview.bin.Cache','Boolean']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FontChooser", null, 'jalview.jbgui.GFontChooser');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ap=null;
-this.tp=null;
-this.oldFont=null;
-this.oldComplementFont=null;
-this.oldProteinScale=false;
-this.oldMirrorFont=false;
-this.init=false;
-this.frame=null;
-this.lastSelected=null;
-this.lastSelMono=false;
-this.oldSmoothFont=false;
-this.oldComplementSmooth=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.init=true;
 this.lastSelected=null;
 this.lastSelMono=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['oldProteinScale','oldMirrorFont','init','lastSelMono','oldSmoothFont','oldComplementSmooth'],'O',['ap','jalview.gui.AlignmentPanel','tp','jalview.gui.TreePanel','oldFont','java.awt.Font','+oldComplementFont','frame','javax.swing.JInternalFrame','lastSelected','java.awt.Font']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_TreePanel', function (treePanel) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.tp=treePanel;
 this.ap=treePanel.getTreeCanvas$().getAssociatedPanel$();
 this.oldFont=treePanel.getTreeFont$();
@@ -37,7 +22,7 @@ this.init$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel', function (alignPanel) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.oldFont=alignPanel.av.getFont$();
 this.oldProteinScale=alignPanel.av.isScaleProteinAsCdna$();
 this.oldMirrorFont=alignPanel.av.isProteinFontAsCdna$();
@@ -47,7 +32,7 @@ this.init$();
 }, 1);
 
 Clazz.newMeth(C$, 'init$', function () {
-this.frame=Clazz.new_($I$(1));
+this.frame=Clazz.new_($I$(1,1));
 this.frame.setContentPane$java_awt_Container(this);
 this.smoothFont.setSelected$Z(this.ap.av.antiAlias);
 var inSplitFrame=this.ap.av.getCodingComplement$() != null ;
@@ -59,20 +44,20 @@ this.scaleAsCdna.setSelected$Z(this.ap.av.isScaleProteinAsCdna$());
 this.fontAsCdna.setVisible$Z(true);
 this.fontAsCdna.setSelected$Z(this.ap.av.isProteinFontAsCdna$());
 }if (p$1.isTreeFont.apply(this, [])) {
-$I$(2).addInternalFrame$javax_swing_JInternalFrame$S$I$I$Z(this.frame, $I$(3).getString$S("action.change_font_tree_panel"), 400, 200, false);
+$I$(2,"addInternalFrame$javax_swing_JInternalFrame$S$I$I$Z",[this.frame, $I$(3).getString$S("action.change_font_tree_panel"), 400, 200, false]);
 } else {
-$I$(2).addInternalFrame$javax_swing_JInternalFrame$S$I$I$Z(this.frame, $I$(3).getString$S("action.change_font"), 380, 220, false);
+$I$(2,"addInternalFrame$javax_swing_JInternalFrame$S$I$I$Z",[this.frame, $I$(3).getString$S("action.change_font"), 380, 220, false]);
 }this.frame.setLayer$Integer($I$(4).PALETTE_LAYER);
 var fonts=$I$(5).getLocalGraphicsEnvironment$().getAvailableFontFamilyNames$();
 for (var i=0; i < fonts.length; i++) {
-this.fontName.addItem$TE(fonts[i]);
+this.fontName.addItem$O(fonts[i]);
 }
 for (var i=1; i < 51; i++) {
-this.fontSize.addItem$TE(new Integer(i));
+this.fontSize.addItem$O(new Integer(i));
 }
-this.fontStyle.addItem$TE("plain");
-this.fontStyle.addItem$TE("bold");
-this.fontStyle.addItem$TE("italic");
+this.fontStyle.addItem$O("plain");
+this.fontStyle.addItem$O("bold");
+this.fontStyle.addItem$O("italic");
 this.fontName.setSelectedItem$O(this.oldFont.getName$());
 this.fontSize.setSelectedItem$O(new Integer(this.oldFont.getSize$()));
 this.fontStyle.setSelectedIndex$I(this.oldFont.getStyle$());
@@ -144,15 +129,15 @@ var fm=this.getGraphics$().getFontMetrics$java_awt_Font(this.oldFont);
 var mw=fm.getStringBounds$S$java_awt_Graphics("M", this.getGraphics$()).getWidth$();
 var iw=fm.getStringBounds$S$java_awt_Graphics("I", this.getGraphics$()).getWidth$();
 this.lastSelMono=(mw == iw );
-}var newFont=Clazz.new_($I$(6).c$$S$I$I,[this.fontName.getSelectedItem$().toString(), this.fontStyle.getSelectedIndex$(), (this.fontSize.getSelectedItem$()).intValue$()]);
+}var newFont=Clazz.new_([this.fontName.getSelectedItem$().toString(), this.fontStyle.getSelectedIndex$(), (this.fontSize.getSelectedItem$()).valueOf()],$I$(6,1).c$$S$I$I);
 var fm=this.getGraphics$().getFontMetrics$java_awt_Font(newFont);
 var mw=fm.getStringBounds$S$java_awt_Graphics("M", this.getGraphics$()).getWidth$();
 var iBounds=fm.getStringBounds$S$java_awt_Graphics("I", this.getGraphics$());
 var iw=iBounds.getWidth$();
 if (mw < 1  || iw < 1  ) {
 var message=iBounds.getHeight$() < 1  ? $I$(3).getString$S("label.font_doesnt_have_letters_defined") : $I$(3).getString$S("label.font_too_small");
-$I$(7).showInternalMessageDialog$java_awt_Component$S$S$I(this, message, $I$(3).getString$S("label.invalid_font"), 2);
-if (this.lastSelected.getSize$() != (this.fontSize.getSelectedItem$()).intValue$() ) {
+$I$(7,"showInternalMessageDialog$java_awt_Component$S$S$I",[this, message, $I$(3).getString$S("label.invalid_font"), 2]);
+if (this.lastSelected.getSize$() != (this.fontSize.getSelectedItem$()).valueOf() ) {
 this.fontSize.setSelectedItem$O(new Integer(this.lastSelected.getSize$()));
 }if (!this.lastSelected.getName$().equals$O(this.fontName.getSelectedItem$().toString())) {
 this.fontName.setSelectedItem$O(this.lastSelected.getName$());
@@ -195,11 +180,11 @@ return;
 });
 
 Clazz.newMeth(C$, 'defaultButton_actionPerformed$', function () {
-$I$(8).setProperty$S$S("FONT_NAME", this.fontName.getSelectedItem$().toString());
-$I$(8).setProperty$S$S("FONT_STYLE", this.fontStyle.getSelectedIndex$() + "");
-$I$(8).setProperty$S$S("FONT_SIZE", this.fontSize.getSelectedItem$().toString());
-$I$(8).setProperty$S$S("ANTI_ALIAS", $I$(9).toString$Z(this.smoothFont.isSelected$()));
-$I$(8).setProperty$S$S("SCALE_PROTEIN_TO_CDNA", $I$(9).toString$Z(this.scaleAsCdna.isSelected$()));
+$I$(8,"setProperty$S$S",["FONT_NAME", this.fontName.getSelectedItem$().toString()]);
+$I$(8,"setProperty$S$S",["FONT_STYLE", this.fontStyle.getSelectedIndex$() + ""]);
+$I$(8,"setProperty$S$S",["FONT_SIZE", this.fontSize.getSelectedItem$().toString()]);
+$I$(8,"setProperty$S$S",["ANTI_ALIAS", $I$(9,"toString$Z",[this.smoothFont.isSelected$()])]);
+$I$(8,"setProperty$S$S",["SCALE_PROTEIN_TO_CDNA", $I$(9,"toString$Z",[this.scaleAsCdna.isSelected$()])]);
 });
 
 Clazz.newMeth(C$, 'scaleAsCdna_actionPerformed$', function () {
@@ -221,4 +206,4 @@ this.ap.av.getCodingComplement$().setFont$java_awt_Font$Z(this.oldComplementFont
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,40 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.c.PAL','org.jmol.viewer.JC','javajs.util.PT','javajs.util.CU','org.jmol.util.Logger','javajs.util.AU','org.jmol.util.C','javajs.util.Lst','Boolean','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ColorEncoder");
-C$.colorSchemes=null;
-C$.rasmolScale=null;
-C$.argbsChainAtom=null;
-C$.argbsChainHetero=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.c.PAL','org.jmol.viewer.JC','javajs.util.PT','javajs.util.CU','org.jmol.util.Logger','javajs.util.AU','org.jmol.util.C','javajs.util.Lst','Boolean','org.jmol.util.Escape']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ColorEncoder");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.colorSchemes=Clazz.array(String, -1, ["roygb", "bgyor", "byelement_jmol", "byelement_rasmol", "byresidue_shapely", "byresidue_amino", "rwb", "bwr", "low", "high", "bw", "wb", "friendly", "user", "resu", "inherit", "rgb", "bgr", "jmol", "rasmol", "byresidue", "byresidue_nucleic"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.paletteBW=null;
-this.paletteWB=null;
-this.paletteFriendly=null;
-this.argbsCpk=null;
-this.argbsRoygb=null;
-this.argbsRwb=null;
-this.argbsShapely=null;
-this.argbsAmino=null;
-this.argbsNucleic=null;
-this.ihalf=0;
-this.schemes=null;
-this.currentPalette=0;
-this.currentSegmentCount=0;
-this.isTranslucent=false;
-this.lo=0;
-this.hi=0;
-this.isReversed=false;
-this.userScale=null;
-this.thisScale=null;
-this.thisName=null;
-this.isColorIndex=false;
-this.ce=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.currentPalette=0;
@@ -43,13 +10,16 @@ this.isTranslucent=false;
 this.userScale=Clazz.array(Integer.TYPE, -1, [-8355712]);
 this.thisScale=Clazz.array(Integer.TYPE, -1, [-8355712]);
 this.thisName="scheme";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isTranslucent','isReversed','isColorIndex'],'F',['lo','hi'],'I',['ihalf','currentPalette','currentSegmentCount'],'S',['thisName'],'O',['vwr','org.jmol.viewer.Viewer','paletteBW','int[]','+paletteWB','+paletteFriendly','+argbsCpk','+argbsRoygb','+argbsRwb','+argbsShapely','+argbsAmino','+argbsNucleic','schemes','java.util.Map','userScale','int[]','+thisScale','ce','org.jmol.util.ColorEncoder']]
+,['O',['colorSchemes','String[]','rasmolScale','int[]','+argbsChainAtom','+argbsChainHetero']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_util_ColorEncoder$org_jmol_viewer_Viewer', function (ce, vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (ce == null ) {
 this.vwr=vwr;
-this.schemes=Clazz.new_($I$(1));
+this.schemes=Clazz.new_($I$(1,1));
 this.argbsCpk=$I$(2).argbsCpk;
 this.argbsRoygb=$I$(3).argbsRoygbScale;
 this.argbsRwb=$I$(3).argbsRwbScale;
@@ -116,7 +86,7 @@ p$1.getShapely.apply(this, []);
 break;
 }
 return iScheme;
-}this.schemes.put$TK$TV(name, scale);
+}this.schemes.put$O$O(name, scale);
 p$1.setThisScheme$S$IA.apply(this, [name, scale]);
 var iScheme=this.createColorScheme$S$Z$Z(name, false, isOverloaded);
 if (isOverloaded) switch (iScheme) {
@@ -170,12 +140,12 @@ colorScheme=colorScheme.toLowerCase$();
 if (colorScheme.equals$O("inherit")) return 15;
 var pt=Math.max(colorScheme.indexOf$S("="), colorScheme.indexOf$S("["));
 if (pt >= 0) {
-var name=$I$(4).replaceAllCharacters$S$S$S(colorScheme.substring$I$I(0, pt), " =", "");
+var name=(function(a,f){return f.apply(null,a)})([colorScheme.substring$I$I(0, pt), " =", ""],$I$(4).replaceAllCharacters$S$S$S);
 if (name.length$() > 0) isOverloaded=true;
 var n=0;
 if (colorScheme.length$() > pt + 1 && !colorScheme.contains$CharSequence("[") ) {
 colorScheme="[" + colorScheme.substring$I(pt + 1).trim$() + "]" ;
-colorScheme=$I$(4).rep$S$S$S(colorScheme.replace$C$C("\n", " "), "  ", " ");
+colorScheme=(function(a,f){return f.apply(null,a)})([colorScheme.replace$C$C("\n", " "), "  ", " "],$I$(4).rep$S$S$S);
 colorScheme=$I$(4).rep$S$S$S(colorScheme, ", ", ",").replace$C$C(" ", ",");
 colorScheme=$I$(4).rep$S$S$S(colorScheme, ",", "][");
 }pt=-1;
@@ -187,10 +157,10 @@ n=0;
 while ((pt=colorScheme.indexOf$S$I("[", pt + 1)) >= 0){
 var pt2=colorScheme.indexOf$S$I("]", pt);
 if (pt2 < 0) pt2=colorScheme.length$() - 1;
-var c=$I$(5).getArgbFromString$S(colorScheme.substring$I$I(pt, pt2 + 1));
-if (c == 0) c=$I$(5).getArgbFromString$S(colorScheme.substring$I$I(pt + 1, pt2).trim$());
+var c=(function(a,f){return f.apply(null,a)})([colorScheme.substring$I$I(pt, pt2 + 1)],$I$(5).getArgbFromString$S);
+if (c == 0) c=(function(a,f){return f.apply(null,a)})([colorScheme.substring$I$I(pt + 1, pt2).trim$()],$I$(5).getArgbFromString$S);
 if (c == 0) {
-$I$(6).error$S("error in color value: " + colorScheme.substring$I$I(pt, pt2 + 1));
+(function(a,f){return f.apply(null,a)})(["error in color value: " + colorScheme.substring$I$I(pt, pt2 + 1)],$I$(6).error$S);
 return 0;
 }scale[n++]=c;
 }
@@ -258,7 +228,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getColorIndexFromPalette$F$F$F$I$Z', function (val, lo, hi, palette, isTranslucent) {
-var colix=$I$(8).getColix$I(this.getArgbFromPalette$F$F$F$I(val, lo, hi, palette));
+var colix=(function(a,f){return f.apply(null,a)})([this.getArgbFromPalette$F$F$F$I(val, lo, hi, palette)],$I$(8).getColix$I);
 if (isTranslucent) {
 var f=(hi - val) / (hi - lo);
 if (f > 1 ) f=1;
@@ -369,23 +339,23 @@ return (this.isReversed ? this.getColorIndexFromPalette$F$F$F$I$Z(-val, -this.hi
 });
 
 Clazz.newMeth(C$, 'getColorKey$', function () {
-var info=Clazz.new_($I$(1));
+var info=Clazz.new_($I$(1,1));
 var segmentCount=p$1.getPaletteColorCount$I.apply(this, [this.currentPalette]);
-var colors=Clazz.new_($I$(9));
+var colors=Clazz.new_($I$(9,1));
 var values=Clazz.array(Float.TYPE, [segmentCount + 1]);
 var quantum=(this.hi - this.lo) / segmentCount;
 var f=quantum * (this.isReversed ? -0.5 : 0.5);
 for (var i=0; i < segmentCount; i++) {
 values[i]=(this.isReversed ? this.hi - i * quantum : this.lo + i * quantum);
-colors.addLast$TV($I$(5).colorPtFromInt$I$javajs_util_P3(this.getArgb$F(values[i] + f), null));
+colors.addLast$O((function(a,f){return f.apply(null,a)})([this.getArgb$F(values[i] + f), null],$I$(5).colorPtFromInt$I$javajs_util_P3));
 }
 values[segmentCount]=(this.isReversed ? this.lo : this.hi);
-info.put$TK$TV("values", values);
-info.put$TK$TV("colors", colors);
-info.put$TK$TV("min", Float.valueOf$F(this.lo));
-info.put$TK$TV("max", Float.valueOf$F(this.hi));
-info.put$TK$TV("reversed", $I$(10).valueOf$Z(this.isReversed));
-info.put$TK$TV("name", this.getCurrentColorSchemeName$());
+info.put$O$O("values", values);
+info.put$O$O("colors", colors);
+info.put$O$O("min", Float.valueOf$F(this.lo));
+info.put$O$O("max", Float.valueOf$F(this.hi));
+info.put$O$O("reversed", $I$(10).valueOf$Z(this.isReversed));
+info.put$O$O("name", this.getCurrentColorSchemeName$());
 return info;
 });
 
@@ -502,6 +472,10 @@ var i=(Math.floor(q <= 0  ? 0 : q)|0);
 return i % segmentCount;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.colorSchemes=Clazz.array(String, -1, ["roygb", "bgyor", "byelement_jmol", "byelement_rasmol", "byresidue_shapely", "byresidue_amino", "rwb", "bwr", "low", "high", "bw", "wb", "friendly", "user", "resu", "inherit", "rgb", "bgr", "jmol", "rasmol", "byresidue", "byresidue_nucleic"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 23:56:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

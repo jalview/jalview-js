@@ -1,37 +1,21 @@
-(function(){var P$=Clazz.newPackage("vamsas.objects.simple"),I$=[[0,'Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Result", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("vamsas.objects.simple"),I$=[[0,'Boolean']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Result", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.broken=false;
-this.failed=false;
-this.finished=false;
-this.invalid=false;
-this.jobFailed=false;
-this.queued=false;
-this.running=false;
-this.serverError=false;
-this.state=0;
-this.status=null;
-this.suspended=false;
-this.__equalsCalc=null;
-this.__hashCodeCalc=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.__equalsCalc=null;
 this.__hashCodeCalc=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['broken','failed','finished','invalid','jobFailed','queued','running','serverError','suspended','__hashCodeCalc'],'I',['state'],'S',['status'],'O',['__equalsCalc','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$Z$Z$Z$Z$Z$Z$Z$I$S$Z', function (broken, failed, finished, invalid, jobFailed, queued, running, serverError, state, status, suspended) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.broken=broken;
 this.failed=failed;
 this.finished=finished;
@@ -171,4 +155,4 @@ this.__hashCodeCalc=false;
 return _hashCode;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

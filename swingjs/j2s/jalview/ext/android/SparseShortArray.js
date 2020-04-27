@@ -1,25 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.android"),I$=[[0,'jalview.ext.android.ContainerHelpers','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SparseShortArray", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("jalview.ext.android"),I$=[[0,'jalview.ext.android.ContainerHelpers','StringBuilder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SparseShortArray", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mKeys=null;
-this.mValues=null;
-this.mSize=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mSize'],'O',['mKeys','short[]','+mValues']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [10]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (initialCapacity == 0) {
 this.mKeys=Clazz.array(Short.TYPE, [0]);
 this.mValues=Clazz.array(Short.TYPE, [0]);
@@ -51,7 +45,7 @@ return this.get$I$I(key, 0);
 
 Clazz.newMeth(C$, 'get$I$I', function (key, valueIfKeyNotFound) {
 C$.checkOverflow$I(key);
-var i=$I$(1).binarySearch$HA$I$H(this.mKeys, this.mSize, ($s$[0] = key, $s$[0]));
+var i=$I$(1,"binarySearch$HA$I$H",[this.mKeys, this.mSize, ($s$[0] = key, $s$[0])]);
 if (i < 0) {
 return valueIfKeyNotFound;
 } else {
@@ -60,7 +54,7 @@ return this.mValues[i];
 
 Clazz.newMeth(C$, 'delete$I', function (key) {
 C$.checkOverflow$I(key);
-var i=$I$(1).binarySearch$HA$I$H(this.mKeys, this.mSize, ($s$[0] = key, $s$[0]));
+var i=$I$(1,"binarySearch$HA$I$H",[this.mKeys, this.mSize, ($s$[0] = key, $s$[0])]);
 if (i >= 0) {
 this.removeAt$I(i);
 }});
@@ -74,7 +68,7 @@ this.mSize--;
 Clazz.newMeth(C$, 'put$I$I', function (key, value) {
 C$.checkOverflow$I(key);
 C$.checkOverflow$I(value);
-var i=$I$(1).binarySearch$HA$I$H(this.mKeys, this.mSize, ($s$[0] = key, $s$[0]));
+var i=$I$(1,"binarySearch$HA$I$H",[this.mKeys, this.mSize, ($s$[0] = key, $s$[0])]);
 if (i >= 0) {
 this.mValues[i]=(value|0);
 } else {
@@ -109,7 +103,7 @@ return this.mValues[index];
 
 Clazz.newMeth(C$, 'indexOfKey$I', function (key) {
 C$.checkOverflow$I(key);
-return $I$(1).binarySearch$HA$I$H(this.mKeys, this.mSize, ($s$[0] = key, $s$[0]));
+return $I$(1,"binarySearch$HA$I$H",[this.mKeys, this.mSize, ($s$[0] = key, $s$[0])]);
 });
 
 Clazz.newMeth(C$, 'indexOfValue$I', function (value) {
@@ -164,7 +158,7 @@ return need;
 Clazz.newMeth(C$, 'toString', function () {
 if (this.size$() <= 0) {
 return "{}";
-}var buffer=Clazz.new_($I$(2).c$$I,[this.mSize * 28]);
+}var buffer=Clazz.new_($I$(2,1).c$$I,[this.mSize * 28]);
 buffer.append$C("{");
 for (var i=0; i < this.mSize; i++) {
 if (i > 0) {
@@ -182,7 +176,7 @@ return buffer.toString();
 Clazz.newMeth(C$, 'add$I$I', function (key, toAdd) {
 var newValue=toAdd;
 C$.checkOverflow$I(key);
-var i=$I$(1).binarySearch$HA$I$H(this.mKeys, this.mSize, ($s$[0] = key, $s$[0]));
+var i=$I$(1,"binarySearch$HA$I$H",[this.mKeys, this.mSize, ($s$[0] = key, $s$[0])]);
 if (i >= 0) {
 C$.checkOverflow$I(toAdd + this.mValues[i]);
 this.mValues[i]+=(toAdd|0);
@@ -208,4 +202,4 @@ this.mSize++;
 });
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

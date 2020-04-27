@@ -1,18 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'java.awt.Component','java.awt.Dimension','java.awt.JSComponent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmartGridLayout", null, null, 'java.awt.LayoutManager');
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'java.awt.Component','java.awt.Dimension','java.awt.JSComponent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SmartGridLayout", null, null, 'java.awt.LayoutManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rows=0;
-this.columns=0;
-this.xGap=0;
-this.yGap=0;
-this.componentCount=0;
-this.layoutGrid=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.rows=2;
@@ -20,10 +9,12 @@ this.columns=2;
 this.xGap=2;
 this.yGap=2;
 this.componentCount=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['rows','columns','xGap','yGap','componentCount'],'O',['layoutGrid','java.awt.Component[][]']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (numColumns, numRows) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rows=numRows;
 this.columns=numColumns;
 this.layoutGrid=Clazz.array($I$(1), [numColumns, numRows]);
@@ -78,7 +69,7 @@ width+=p$1.computeColumnWidth$I.apply(this, [column]);
 }
 height+=(this.yGap * (this.rows - 1)) + insets.top + insets.bottom ;
 width+=(this.xGap * (this.columns - 1)) + insets.right + insets.left ;
-return Clazz.new_($I$(2).c$$I$I,[width, height]);
+return Clazz.new_($I$(2,1).c$$I$I,[width, height]);
 });
 
 Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (c) {
@@ -92,7 +83,7 @@ Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (c) {
 });
 
 Clazz.newMeth(C$, 'buildLayoutGrid$java_awt_Container', function (c) {
-var children=$I$(3).getChildArray$java_awt_Container(c);
+var children=$I$(3).秘getChildArray$java_awt_Container(c);
 for (var i=0, n=c.getComponentCount$(); i < n; i++) {
 var row=0;
 var column=0;
@@ -125,4 +116,4 @@ return maxHeight;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

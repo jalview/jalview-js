@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.schemes.ResidueProperties']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Consensus");
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.schemes.ResidueProperties']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Consensus");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mask=null;
-this.threshold=0;
-this.maskstr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['threshold'],'S',['maskstr'],'O',['mask','int[]']]]
 
 Clazz.newMeth(C$, 'c$$S$D', function (mask, threshold) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.maskstr=mask;
 this.setMask$S(mask);
 this.threshold=threshold;
@@ -26,6 +20,7 @@ this.mask=this.setNums$S(s);
 });
 
 Clazz.newMeth(C$, 'isConserved$IAA$I$I', function (cons2, col, size) {
+System.out.println$S("DEPRECATED!!!!");
 return this.isConserved$IAA$I$I$Z(cons2, col, size, true);
 });
 
@@ -53,4 +48,4 @@ return out;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

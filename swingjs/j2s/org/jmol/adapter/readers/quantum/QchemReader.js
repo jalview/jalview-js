@@ -1,33 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.api.JmolAdapter','java.util.Hashtable','javajs.util.Lst','org.jmol.adapter.readers.quantum.BasisFunctionReader','javajs.util.PT','javajs.util.AU','org.jmol.util.Logger',['org.jmol.adapter.readers.quantum.QchemReader','.MOInfo'],'org.jmol.quantum.QS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "QchemReader", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.api.JmolAdapter','java.util.Hashtable','javajs.util.Lst','org.jmol.adapter.readers.quantum.BasisFunctionReader','javajs.util.PT','javajs.util.AU','org.jmol.util.Logger',['org.jmol.adapter.readers.quantum.QchemReader','.MOInfo'],'org.jmol.quantum.QS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "QchemReader", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.adapter.readers.quantum.MOReader');
-C$.$DC_LIST=null;
-C$.$DS_LIST=null;
-C$.$FC_LIST=null;
-C$.$FS_LIST=null;
+C$.$classes$=[['MOInfo',4]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$DC_LIST="DXX   DYY   DZZ   DXY   DXZ   DYZ";
-C$.$DS_LIST="D3    D4    D2    D5    D1";
-C$.$FC_LIST="XXX   YYY   ZZZ   XYY   XXY   XXZ   XZZ   YZZ   YYZ   XYZ";
-C$.$FS_LIST="F4    F5    F3    F6    F2    F7    F1";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.calculationNumber=0;
-this.isFirstJob=false;
-this.alphas=null;
-this.betas=null;
-this.nBasis=0;
-this.dFixed=false;
-this.fFixed=false;
-this.dList=null;
-this.fList=null;
-this.dSpherical=false;
-this.fSpherical=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.calculationNumber=1;
@@ -41,7 +18,10 @@ this.dList="";
 this.fList="";
 this.dSpherical=false;
 this.fSpherical=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isFirstJob','dFixed','fFixed','dSpherical','fSpherical'],'I',['calculationNumber','nBasis'],'S',['dList','fList'],'O',['alphas','org.jmol.adapter.readers.quantum.QchemReader.MOInfo[]','+betas']]
+,['S',['$DC_LIST','$DS_LIST','$FC_LIST','$FS_LIST']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.energyUnits="au";
@@ -145,12 +125,12 @@ this.asc.setModelInfoForSet$S$O$I("name", energyKey + " " + energyString , ac);
 }, p$1);
 
 Clazz.newMeth(C$, 'readBasis', function () {
-this.moData=Clazz.new_($I$(2));
+this.moData=Clazz.new_($I$(2,1));
 var ac=1;
 var shellCount=0;
 var gaussianCount=0;
-this.shells=Clazz.new_($I$(3));
-var gdata=Clazz.new_($I$(3));
+this.shells=Clazz.new_($I$(3,1));
+var gdata=Clazz.new_($I$(3,1));
 var tokens;
 this.discardLinesUntilStartsWith$S("$basis");
 this.rd$();
@@ -167,10 +147,10 @@ slater[1]=$I$(4).getQuantumShellTagID$S(tokens[0]);
 slater[2]=gaussianCount + 1;
 var nGaussians=this.parseIntStr$S(tokens[1]);
 slater[3]=nGaussians;
-this.shells.addLast$TV(slater);
+this.shells.addLast$O(slater);
 gaussianCount+=nGaussians;
 for (var i=0; i < nGaussians; i++) {
-gdata.addLast$TV($I$(5).getTokens$S(this.rd$()));
+gdata.addLast$O((function(a,f){return f.apply(null,a)})([this.rd$()],$I$(5).getTokens$S));
 }
 }
 this.gaussians=$I$(6).newFloat2$I(gaussianCount);
@@ -214,9 +194,9 @@ this.discardLinesUntilStartsWith$S(" Beta");
 readBetas=true;
 moInfos=this.betas;
 break;
-}if (haveSym) tokens=$I$(5).getTokens$S(this.rd$());
+}if (haveSym) tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(5).getTokens$S);
 for (var i=0, j=0; i < nOrbs; i++, j+=2) {
-var info=Clazz.new_($I$(8), [this, null]);
+var info=Clazz.new_($I$(8,1),[this, null]);
 info.ne=ne;
 if (haveSym) info.moSymmetry=tokens[j] + tokens[j + 1] + " " ;
 moInfos[nMO]=info;
@@ -240,13 +220,13 @@ if (this.dList.length$() > 0) {
 if (this.dSpherical) isOK=this.getDFMap$S$S$I$S$I("DS", this.dList, 3, C$.$DS_LIST, 2);
  else isOK=this.getDFMap$S$S$I$S$I("DC", this.dList, 4, C$.$DC_LIST, 3);
 if (!isOK) {
-$I$(7).error$S("atomic orbital order is unrecognized -- skipping reading of MOs. dList=" + this.dList);
+(function(a,f){return f.apply(null,a)})(["atomic orbital order is unrecognized -- skipping reading of MOs. dList=" + this.dList],$I$(7).error$S);
 this.shells=null;
 }}if (this.fList.length$() > 0) {
 if (this.fSpherical) isOK=this.getDFMap$S$S$I$S$I("FS", this.fList, 5, C$.$FS_LIST, 2);
  else isOK=this.getDFMap$S$S$I$S$I("FC", this.fList, 6, C$.$FC_LIST, 3);
 if (!isOK) {
-$I$(7).error$S("atomic orbital order is unrecognized -- skipping reading of MOs. fList=" + this.fList);
+(function(a,f){return f.apply(null,a)})(["atomic orbital order is unrecognized -- skipping reading of MOs. fList=" + this.fList],$I$(7).error$S);
 this.shells=null;
 }}this.setMOData$Z(this.shells == null );
 this.shells=null;
@@ -262,14 +242,14 @@ var nMOs=0;
 while (this.rd$().length$() > 2){
 tokens=this.getTokens$();
 var nMO=tokens.length;
-energy=$I$(5).getTokens$S(this.rd$().substring$I(13));
+energy=(function(a,f){return f.apply(null,a)})([this.rd$().substring$I(13)],$I$(5).getTokens$S);
 for (var i=0; i < nMO; i++) {
 moid[i]=this.parseIntStr$S(tokens[i]) - 1;
 mocoef[i]=Clazz.array(Float.TYPE, [this.nBasis]);
-mos[i]=Clazz.new_($I$(2));
+mos[i]=Clazz.new_($I$(2,1));
 }
 for (var i=0, pt=0; i < this.nBasis; i++) {
-tokens=$I$(5).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(5).getTokens$S);
 var s=this.line.substring$I$I(12, 17).trim$();
 var ch=s.charAt$I(0);
 switch (ch.$c()) {
@@ -301,12 +281,12 @@ pt++;
 }
 for (var i=0; i < nMO; i++) {
 var moInfo=moInfos[moid[i]];
-mos[i].put$TK$TV("energy", Float.valueOf$S(energy[i]));
-mos[i].put$TK$TV("coefficients", mocoef[i]);
+mos[i].put$O$O("energy", Float.valueOf$S(energy[i]));
+mos[i].put$O$O("coefficients", mocoef[i]);
 var label=this.alphaBeta;
 var ne=moInfo.ne;
 if (restricted) ne=this.alphas[moid[i]].ne + this.betas[moid[i]].ne;
-mos[i].put$TK$TV("occupancy", Float.valueOf$F(ne));
+mos[i].put$O$O("occupancy", Float.valueOf$F(ne));
 switch (ne) {
 case 2:
 label="AB";
@@ -318,35 +298,37 @@ if (restricted) label="V";
  else label="V" + label;
 break;
 }
-mos[i].put$TK$TV("symmetry", moInfo.moSymmetry + label + "(" + (moid[i] + 1) + ")" );
-this.orbitals.addLast$TV(mos[i]);
+mos[i].put$O$O("symmetry", moInfo.moSymmetry + label + "(" + (moid[i] + 1) + ")" );
+this.orbitals.addLast$O(mos[i]);
 }
 nMOs+=nMO;
 }
 return nMOs;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.$DC_LIST="DXX   DYY   DZZ   DXY   DXZ   DYZ";
+C$.$DS_LIST="D3    D4    D2    D5    D1";
+C$.$FC_LIST="XXX   YYY   ZZZ   XYY   XXY   XXZ   XZZ   YZZ   YYZ   XYZ";
+C$.$FS_LIST="F4    F5    F3    F6    F2    F7    F1";
+};
 ;
-(function(){var C$=Clazz.newClass(P$.QchemReader, "MOInfo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.QchemReader, "MOInfo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ne=0;
-this.moSymmetry=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.ne=0;
 this.moSymmetry="";
-}, 1);
+},1);
+
+C$.$fields$=[['I',['ne'],'S',['moSymmetry']]]
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

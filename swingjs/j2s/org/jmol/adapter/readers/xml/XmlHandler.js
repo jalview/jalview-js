@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),I$=[[0,'org.xml.sax.InputSource','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XmlHandler", null, 'org.xml.sax.helpers.DefaultHandler');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),I$=[[0,'org.xml.sax.InputSource','org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "XmlHandler", null, 'org.xml.sax.helpers.DefaultHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xmlReader=null;
-this.debugContext=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.debugContext="";
-}, 1);
+},1);
+
+C$.$fields$=[['S',['debugContext'],'O',['xmlReader','org.jmol.adapter.readers.xml.XmlReader']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'parseXML$org_jmol_adapter_readers_xml_XmlReader$O$java_io_BufferedReader', function (xmlReader, saxReaderObj, reader) {
@@ -26,7 +21,7 @@ saxReader.setFeature$S$Z("http://xml.org/sax/features/namespaces", true);
 saxReader.setEntityResolver$org_xml_sax_EntityResolver(this);
 saxReader.setContentHandler$org_xml_sax_ContentHandler(this);
 saxReader.setErrorHandler$org_xml_sax_ErrorHandler(this);
-var is=Clazz.new_($I$(1).c$$java_io_Reader,[reader]);
+var is=Clazz.new_($I$(1,1).c$$java_io_Reader,[reader]);
 is.setSystemId$S("foo");
 saxReader.parse$org_xml_sax_InputSource(is);
 });
@@ -40,7 +35,7 @@ this.xmlReader.endDocument$();
 
 Clazz.newMeth(C$, 'startElement$S$S$S$org_xml_sax_Attributes', function (namespaceURI, localName, nodeName, attributes) {
 this.xmlReader.atts.clear$();
-for (var i=attributes.getLength$(); --i >= 0; ) this.xmlReader.atts.put$TK$TV(attributes.getLocalName$I(i).toLowerCase$(), attributes.getValue$I(i));
+for (var i=attributes.getLength$(); --i >= 0; ) this.xmlReader.atts.put$O$O(attributes.getLocalName$I(i).toLowerCase$(), attributes.getValue$I(i));
 
 if ($I$(2).debugging) {
 this.debugContext += " " + localName;
@@ -67,15 +62,15 @@ $I$(2).debug$S("Not resolving this:\n      name: " + name + "\n  systemID: " + s
 });
 
 Clazz.newMeth(C$, 'error$org_xml_sax_SAXParseException', function (exception) {
-$I$(2).error$S("SAX ERROR:" + exception.getMessage$());
+(function(a,f){return f.apply(null,a)})(["SAX ERROR:" + exception.getMessage$()],$I$(2).error$S);
 });
 
 Clazz.newMeth(C$, 'fatalError$org_xml_sax_SAXParseException', function (exception) {
-$I$(2).error$S("SAX FATAL:" + exception.getMessage$());
+(function(a,f){return f.apply(null,a)})(["SAX FATAL:" + exception.getMessage$()],$I$(2).error$S);
 });
 
 Clazz.newMeth(C$, 'warning$org_xml_sax_SAXParseException', function (exception) {
-$I$(2).warn$S("SAX WARNING:" + exception.getMessage$());
+(function(a,f){return f.apply(null,a)})(["SAX WARNING:" + exception.getMessage$()],$I$(2).warn$S);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

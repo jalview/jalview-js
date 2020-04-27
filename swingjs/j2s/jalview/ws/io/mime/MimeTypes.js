@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.io.mime"),I$=[[0,['jalview.io.packed.DataProvider','.JvDataType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MimeTypes");
-C$.typemap=null;
+(function(){var P$=Clazz.newPackage("jalview.ws.io.mime"),I$=[[0,['jalview.io.packed.DataProvider','.JvDataType']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MimeTypes");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.typemap=Clazz.array(java.lang.Object, -1, ["application/x-align", $I$(1).ALIGNMENT, "application/x-jalview-annotation", $I$(1).ANNOTATION, "application/x-newick", $I$(1).TREE, "application/x-new-hampshire", $I$(1).TREE, "application/x-new-hampshire-extended", $I$(1).TREE, "application/x-nh", $I$(1).TREE, "application/x-nhx", $I$(1).TREE, "application/x-gff", $I$(1).FEATURES, "application/x-gff3", $I$(1).FEATURES, "application/x-jalview-feature-file", $I$(1).FEATURES, "application/x-pdb", $I$(1).SEQASSOCATED]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['typemap','Object[]']]]
 
 Clazz.newMeth(C$, 'getTypeOf$S', function (mimeType) {
 var mt=mimeType.toLowerCase$();
@@ -26,6 +26,10 @@ return C$.typemap[i - 1];
 return null;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.typemap=Clazz.array(java.lang.Object, -1, ["application/x-align", $I$(1).ALIGNMENT, "application/x-jalview-annotation", $I$(1).ANNOTATION, "application/x-newick", $I$(1).TREE, "application/x-new-hampshire", $I$(1).TREE, "application/x-new-hampshire-extended", $I$(1).TREE, "application/x-nh", $I$(1).TREE, "application/x-nhx", $I$(1).TREE, "application/x-gff", $I$(1).FEATURES, "application/x-gff3", $I$(1).FEATURES, "application/x-jalview-feature-file", $I$(1).FEATURES, "application/x-pdb", $I$(1).SEQASSOCATED]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

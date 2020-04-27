@@ -1,30 +1,20 @@
 (function(){var P$=java.io,p$1={};
-var C$=Clazz.newClass(P$, "BufferedWriter", null, 'java.io.Writer');
-C$.defaultCharBufferSize=0;
+/*c*/var C$=Clazz.newClass(P$, "BufferedWriter", null, 'java.io.Writer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultCharBufferSize=8192;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.out=null;
-this.cb=null;
-this.nChars=0;
-this.nextChar=0;
-this.lineSeparator=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nChars','nextChar'],'S',['lineSeparator'],'O',['out','java.io.Writer','cb','char[]']]
+,['I',['defaultCharBufferSize']]]
 
 Clazz.newMeth(C$, 'c$$java_io_Writer', function (out) {
 C$.c$$java_io_Writer$I.apply(this, [out, C$.defaultCharBufferSize]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$I', function (out, sz) {
-C$.superclazz.c$$O.apply(this, [out]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O.apply(this,[out]);C$.$init$.apply(this);
 if (sz <= 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Buffer size <= 0"]);
 this.out=out;
 this.cb=Clazz.array(Character.TYPE, [sz]);
@@ -116,6 +106,10 @@ this.cb=null;
 }
 }});
 
+C$.$static$=function(){C$.$static$=0;
+C$.defaultCharBufferSize=8192;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'javax.swing.text.StyleConstants',['javax.swing.text.Position','.Bias']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Utilities");
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'javax.swing.text.StyleConstants',['javax.swing.text.Position','.Bias']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Utilities");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getJComponent$javax_swing_text_View', function (view) {
 if (view != null ) {
@@ -44,7 +43,7 @@ nextX+=metrics.charsWidth$CA$I$I(txt, i - charCount, charCount);
 charCount=0;
 if (txt[i] == "\t") {
 if (e != null ) {
-nextX=(e.nextTabStop$(nextX, startOffset + i - txtOffset)|0);
+nextX=(e.nextTabStop$F$I(nextX, startOffset + i - txtOffset)|0);
 } else {
 nextX+=metrics.charWidth$C(" ");
 }} else if (txt[i] == " ") {
@@ -99,7 +98,7 @@ for (var i=s.offset; i < n; i++) {
 if (txt[i] == "\t" || ((spaceAddon != 0 || i <= spaceAddonLeftoverEnd ) && (txt[i] == " ") && startJustifiableContent <= i   && i <= endJustifiableContent ) ) {
 if (txt[i] == "\t") {
 if (e != null ) {
-nextX=(e.nextTabStop$(nextX, startOffset + i - txtOffset)|0);
+nextX=(e.nextTabStop$F$I(nextX, startOffset + i - txtOffset)|0);
 } else {
 nextX+=metrics.charWidth$C(" ");
 }} else if (txt[i] == " ") {
@@ -312,4 +311,4 @@ biasRet[0]=originalBias;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

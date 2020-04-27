@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'javajs.util.PT','org.jmol.modelset.Text','org.jmol.util.C','java.util.Hashtable','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Echo", null, 'org.jmol.shape.TextShape');
+(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'javajs.util.PT','org.jmol.modelset.Text','org.jmol.util.C','java.util.Hashtable','javajs.util.Lst']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Echo", null, 'org.jmol.shape.TextShape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initShape$', function () {
 this.setProperty$S$O$javajs_util_BS("target", "top", null);
@@ -49,7 +48,7 @@ var isHidden=(value).booleanValue$();
 if (this.currentObject != null ) {
 (this.currentObject).hidden=isHidden;
 } else if (this.isAll || this.thisID != null  ) {
-for (var t, $t = this.objects.values$().iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) if (this.isAll || $I$(1).isMatch$S$S$Z$Z(t.target.toUpperCase$(), this.thisID, true, true) ) t.hidden=isHidden;
+for (var t, $t = this.objects.values$().iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) if (this.isAll || (function(a,f){return f.apply(null,a)})([t.target.toUpperCase$(), this.thisID, true, true],$I$(1).isMatch$S$S$Z$Z) ) t.hidden=isHidden;
 
 }return;
 }if ("script" == propertyName) {
@@ -108,10 +107,10 @@ halign=8;
 valign=1;
 } else if ("error" == target) {
 valign=0;
-}text=$I$(2).newEcho$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$I$I$F(this.vwr, this.vwr.gdata.getFont3DFS$S$F("Serif", 20), target, 10, valign, halign, 0);
+}text=(function(a,f){return f.apply(null,a)})([this.vwr, this.vwr.gdata.getFont3DFS$S$F("Serif", 20), target, 10, valign, halign, 0],$I$(2).newEcho$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$I$I$F);
 text.adjustForWindow=true;
-this.objects.put$TK$TV(target, text);
-if (this.currentFont != null ) text.setFont$javajs_awt_Font$Z(this.currentFont, true);
+this.objects.put$O$O(target, text);
+if (this.currentFont != null ) text.setFont$org_jmol_util_Font$Z(this.currentFont, true);
 if (this.currentColor != null ) text.colix=$I$(3).getColixO$O(this.currentColor);
 if (this.currentBgColor != null ) text.bgcolix=$I$(3).getColixO$O(this.currentBgColor);
 if (this.currentTranslucentLevel != 0 ) text.setTranslucent$F$Z(this.currentTranslucentLevel, false);
@@ -129,7 +128,7 @@ var key=(data[0]).toUpperCase$();
 var isWild=$I$(1).isWild$S(key);
 for (var t, $t = this.objects.values$().iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) {
 var id=t.target;
-if (id.equalsIgnoreCase$S(key) || isWild && $I$(1).isMatch$S$S$Z$Z(id.toUpperCase$(), key, true, true)  ) {
+if (id.equalsIgnoreCase$S(key) || isWild && (function(a,f){return f.apply(null,a)})([id.toUpperCase$(), key, true, true],$I$(1).isMatch$S$S$Z$Z)  ) {
 data[1]=id;
 return true;
 }}
@@ -138,27 +137,27 @@ return false;
 });
 
 Clazz.newMeth(C$, 'getShapeDetail$', function () {
-var lst=Clazz.new_($I$(4));
+var lst=Clazz.new_($I$(4,1));
 for (var e, $e = this.objects.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
-var info=Clazz.new_($I$(4));
+var info=Clazz.new_($I$(4,1));
 var t=e.getValue$();
 var name=e.getKey$();
-info.put$TK$TV("boxXY", t.boxXY);
-if (t.xyz != null ) info.put$TK$TV("xyz", t.xyz);
+info.put$O$O("boxXY", t.boxXY);
+if (t.xyz != null ) info.put$O$O("xyz", t.xyz);
 var o=t.image;
 if (o == null ) {
-info.put$TK$TV("text", t.text == null  ? "" : t.text);
+info.put$O$O("text", t.text == null  ? "" : t.text);
 } else {
-info.put$TK$TV("imageFile", t.text);
-info.put$TK$TV("imageWidth", Integer.valueOf$I(this.vwr.apiPlatform.getImageWidth$O(o)));
-info.put$TK$TV("imageHeight", Integer.valueOf$I(this.vwr.apiPlatform.getImageHeight$O(o)));
-}lst.put$TK$TV(name, info);
+info.put$O$O("imageFile", t.text);
+info.put$O$O("imageWidth", Integer.valueOf$I(this.vwr.apiPlatform.getImageWidth$O(o)));
+info.put$O$O("imageHeight", Integer.valueOf$I(this.vwr.apiPlatform.getImageHeight$O(o)));
+}lst.put$O$O(name, info);
 }
-var lst2=Clazz.new_($I$(5));
-lst2.addLast$TV(lst);
+var lst2=Clazz.new_($I$(5,1));
+lst2.addLast$O(lst);
 return lst2;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

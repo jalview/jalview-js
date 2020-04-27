@@ -1,32 +1,20 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.sifts"),p$1={},I$=[[0,['jalview.ws.sifts.SiftsClient','.CoordinateSys'],'javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','java.io.FileInputStream','java.util.zip.GZIPInputStream','jalview.ws.sifts.SiftsSettings','java.io.File','java.nio.file.Files','java.nio.file.attribute.BasicFileAttributes','java.util.Date','java.net.URL','java.io.FileOutputStream','jalview.util.DBRefUtils','java.util.HashSet','StringBuilder','jalview.ws.sifts.SiftsClient','java.io.PrintStream','jalview.structure.StructureMapping','java.util.ArrayList','jalview.analysis.AlignSeq','jalview.util.Comparison','java.util.HashMap','java.util.TreeMap',['jalview.ws.sifts.SiftsClient','.SegmentHelperPojo'],'java.util.Arrays','jalview.datamodel.Mapping','jalview.ws.sifts.MappingOutputPojo','jalview.schemes.ResidueProperties',['jalview.ws.sifts.SiftsClient','.ResidueDetailType'],['jalview.ws.sifts.SiftsClient','.SiftsEntitySortPojo'],'java.util.Collections','jalview.util.Format','jalview.analysis.scoremodels.ScoreModels']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SiftsClient", function(){
+(function(){var P$=Clazz.newPackage("jalview.ws.sifts"),p$1={},I$=[[0,['jalview.ws.sifts.SiftsClient','.CoordinateSys'],'javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','java.io.FileInputStream','java.util.zip.GZIPInputStream','jalview.ws.sifts.SiftsSettings','java.io.File','java.nio.file.Files','java.nio.file.attribute.BasicFileAttributes','java.util.Date','java.net.URL','java.io.FileOutputStream','jalview.util.DBRefUtils','java.util.HashSet','StringBuilder','jalview.ws.sifts.SiftsClient','java.io.PrintStream','jalview.structure.StructureMapping','java.util.ArrayList','jalview.analysis.AlignSeq','jalview.util.Comparison','java.util.HashMap','java.util.TreeMap',['jalview.ws.sifts.SiftsClient','.SegmentHelperPojo'],'java.util.Arrays','jalview.datamodel.Mapping','jalview.ws.sifts.MappingOutputPojo','jalview.schemes.ResidueProperties',['jalview.ws.sifts.SiftsClient','.ResidueDetailType'],['jalview.ws.sifts.SiftsClient','.SiftsEntitySortPojo'],'java.util.Collections','jalview.util.Format','jalview.analysis.scoremodels.ScoreModels']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SiftsClient", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'jalview.api.SiftsClientI');
-C$.mockSiftsFile=null;
-C$.NEWLINE=null;
+C$.$classes$=[['CoordinateSys',26],['ResidueDetailType',26],['SiftsEntitySortPojo',2],['SegmentHelperPojo',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NEWLINE=System.lineSeparator$();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.siftsEntry=null;
-this.pdb=null;
-this.pdbId=null;
-this.structId=null;
-this.seqCoordSys=null;
-this.seqFromPdbMapping=null;
-this.curSourceDBRef=null;
-this.curDBRefAccessionIdsString=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.seqCoordSys=$I$(1).UNIPROT;
-}, 1);
+},1);
+
+C$.$fields$=[['S',['pdbId','structId','curSourceDBRef'],'O',['siftsEntry','jalview.xml.binding.sifts.Entry','pdb','jalview.io.StructureFile','seqCoordSys','jalview.ws.sifts.SiftsClient.CoordinateSys','seqFromPdbMapping','jalview.datamodel.Mapping','curDBRefAccessionIdsString','java.util.HashSet']]
+,['S',['NEWLINE'],'O',['mockSiftsFile','java.io.File']]]
 
 Clazz.newMeth(C$, 'c$$jalview_io_StructureFile', function (pdb) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.pdb=pdb;
 this.pdbId=pdb.getId$();
 var siftsFile=C$.getSiftsFile$S(this.pdbId);
@@ -34,7 +22,10 @@ this.siftsEntry=p$1.parseSIFTs$java_io_File.apply(this, [siftsFile]);
 }, 1);
 
 Clazz.newMeth(C$, 'parseSIFTs$java_io_File', function (siftFile) {
-try {var $in=Clazz.new_($I$(4).c$$java_io_File,[siftFile]);var gzis=Clazz.new_($I$(5).c$$java_io_InputStream,[$in]);
+try {
+var $in=Clazz.new_($I$(4,1).c$$java_io_File,[siftFile]);
+var gzis=Clazz.new_($I$(5,1).c$$java_io_InputStream,[$in]);
+try {
 var jc=$I$(2).newInstance$S("jalview.xml.binding.sifts");
 var streamReader=$I$(3).newInstance$().createXMLStreamReader$java_io_InputStream(gzis);
 var um=jc.createUnmarshaller$();
@@ -47,17 +38,20 @@ throw Clazz.new_(Clazz.load('jalview.ws.sifts.SiftsException').c$$S,[e.getMessag
 throw e;
 }
 }
+}finally{/*res*/
+try{gzis&&gzis.close$&&gzis.close$()}catch(_){}
+try{$in&&$in.close$&&$in.close$()}catch(_){}}
 }, p$1);
 
 Clazz.newMeth(C$, 'getSiftsFile$S', function (pdbId) {
 if (C$.mockSiftsFile != null ) {
 return C$.mockSiftsFile;
 }var siftsFileName=$I$(6).getSiftDownloadDirectory$() + pdbId.toLowerCase$() + ".xml.gz" ;
-var siftsFile=Clazz.new_($I$(7).c$$S,[siftsFileName]);
+var siftsFile=Clazz.new_($I$(7,1).c$$S,[siftsFileName]);
 if (siftsFile.exists$()) {
 System.out.println$S(">>> SIFTS File already downloaded for " + pdbId);
 if (C$.isFileOlderThanThreshold$java_io_File$I(siftsFile, $I$(6).getCacheThresholdInDays$())) {
-var oldSiftsFile=Clazz.new_($I$(7).c$$S,[siftsFileName + "_old"]);
+var oldSiftsFile=Clazz.new_($I$(7,1).c$$S,[siftsFileName + "_old"]);
 siftsFile.renameTo$java_io_File(oldSiftsFile);
 try {
 siftsFile=C$.downloadSiftsFile$S(pdbId.toLowerCase$());
@@ -67,7 +61,7 @@ return siftsFile;
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 e.printStackTrace$();
 oldSiftsFile.renameTo$java_io_File(siftsFile);
-return Clazz.new_($I$(7).c$$S,[siftsFileName]);
+return Clazz.new_($I$(7,1).c$$S,[siftsFileName]);
 } else {
 throw e;
 }
@@ -91,8 +85,8 @@ var filePath=file.toPath$();
 var attr;
 var diffInDays=0;
 try {
-attr=$I$(8).readAttributes$java_nio_file_Path$Class$java_nio_file_LinkOptionA(filePath, Clazz.getClass($I$(9),['creationTime$','fileKey$','isDirectory$','isOther$','isRegularFile$','isSymbolicLink$','lastAccessTime$','lastModifiedTime$','size$']), []);
-diffInDays=((((Clazz.new_($I$(10)).getTime$() - attr.lastModifiedTime$().toMillis$())/(86400000)|0))|0);
+attr=$I$(8,"readAttributes$java_nio_file_Path$Class$java_nio_file_LinkOptionA",[filePath, Clazz.getClass($I$(9),['creationTime$','fileKey$','isDirectory$','isOther$','isRegularFile$','isSymbolicLink$','lastAccessTime$','lastModifiedTime$','size$']), []]);
+diffInDays=((((Clazz.new_($I$(10,1)).getTime$() - attr.lastModifiedTime$().toMillis$())/(86400000)|0))|0);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 e.printStackTrace$();
@@ -109,13 +103,13 @@ pdbId=pdbId.replace$CharSequence$CharSequence(".cif", "");
 }var siftFile=pdbId + ".xml.gz";
 var siftsFileFTPURL="http://ftp.ebi.ac.uk/pub/databases/msd/sifts/xml/" + siftFile;
 var downloadedSiftsFile=$I$(6).getSiftDownloadDirectory$() + siftFile;
-var siftsDownloadDir=Clazz.new_($I$(7).c$$S,[$I$(6).getSiftDownloadDirectory$()]);
+var siftsDownloadDir=Clazz.new_([$I$(6).getSiftDownloadDirectory$()],$I$(7,1).c$$S);
 if (!siftsDownloadDir.exists$()) {
 siftsDownloadDir.mkdirs$();
-}var url=Clazz.new_($I$(11).c$$S,[siftsFileFTPURL]);
+}var url=Clazz.new_($I$(11,1).c$$S,[siftsFileFTPURL]);
 var conn=url.openConnection$();
 var inputStream=conn.getInputStream$();
-var outputStream=Clazz.new_($I$(12).c$$S,[downloadedSiftsFile]);
+var outputStream=Clazz.new_($I$(12,1).c$$S,[downloadedSiftsFile]);
 var buffer=Clazz.array(Byte.TYPE, [4096]);
 var bytesRead=-1;
 while ((bytesRead=inputStream.read$BA(buffer)) != -1){
@@ -123,11 +117,11 @@ outputStream.write$BA$I$I(buffer, 0, bytesRead);
 }
 outputStream.close$();
 inputStream.close$();
-return Clazz.new_($I$(7).c$$S,[downloadedSiftsFile]);
+return Clazz.new_($I$(7,1).c$$S,[downloadedSiftsFile]);
 }, 1);
 
 Clazz.newMeth(C$, 'deleteSiftsFileByPDBId$S', function (pdbId) {
-var siftsFile=Clazz.new_($I$(7).c$$S,[$I$(6).getSiftDownloadDirectory$() + pdbId.toLowerCase$() + ".xml.gz" ]);
+var siftsFile=Clazz.new_([$I$(6).getSiftDownloadDirectory$() + pdbId.toLowerCase$() + ".xml.gz" ],$I$(7,1).c$$S);
 if (siftsFile.exists$()) {
 return siftsFile.delete$();
 }return true;
@@ -140,7 +134,7 @@ throw Clazz.new_(Clazz.load('jalview.ws.sifts.SiftsException').c$$S,["Source DBR
 }for (var dbRef, $dbRef = dbRefs.iterator$(); $dbRef.hasNext$()&&((dbRef=($dbRef.next$())),1);) {
 if (dbRef == null  || dbRef.getAccessionId$() == null   || dbRef.getSource$() == null  ) {
 continue;
-}var canonicalSource=$I$(13).getCanonicalName$S(dbRef.getSource$());
+}var canonicalSource=$I$(13,"getCanonicalName$S",[dbRef.getSource$()]);
 if (this.isValidDBRefEntry$jalview_api_DBRefEntryI(dbRef) && (canonicalSource.equalsIgnoreCase$S("UNIPROT") || canonicalSource.equalsIgnoreCase$S("PDB") ) ) {
 return dbRef;
 }}
@@ -152,14 +146,14 @@ return entry != null  && entry.getAccessionId$() != null   && p$1.isFoundInSifts
 });
 
 Clazz.newMeth(C$, 'getAllMappingAccession$', function () {
-var accessions=Clazz.new_($I$(14));
+var accessions=Clazz.new_($I$(14,1));
 var entities=this.siftsEntry.getEntity$();
 for (var entity, $entity = entities.iterator$(); $entity.hasNext$()&&((entity=($entity.next$())),1);) {
 var segments=entity.getSegment$();
 for (var segment, $segment = segments.iterator$(); $segment.hasNext$()&&((segment=($segment.next$())),1);) {
 var mapRegions=segment.getListMapRegion$().getMapRegion$();
 for (var mapRegion, $mapRegion = mapRegions.iterator$(); $mapRegion.hasNext$()&&((mapRegion=($mapRegion.next$())),1);) {
-accessions.add$TE(mapRegion.getDb$().getDbAccessionId$().toLowerCase$());
+accessions.add$O(mapRegion.getDb$().getDbAccessionId$().toLowerCase$());
 }
 }
 }
@@ -173,15 +167,14 @@ seq=seq.getDatasetSequence$();
 }
 this.structId=(chain == null ) ? this.pdbId : this.pdbId + "|" + chain ;
 System.out.println$S("Getting SIFTS mapping for " + this.structId + ": seq " + seq.getName$() );
-var mappingDetails=Clazz.new_($I$(15).c$$I,[128]);
+var mappingDetails=Clazz.new_($I$(15,1).c$$I,[128]);
 var ps=((P$.SiftsClient$1||
-(function(){var C$=Clazz.newClass(P$, "SiftsClient$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "SiftsClient$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'print$S', function (x) {
 this.$finals$.mappingDetails.append$S(x);
@@ -191,35 +184,35 @@ Clazz.newMeth(C$, 'println$', function () {
 this.$finals$.mappingDetails.append$S($I$(16).NEWLINE);
 });
 })()
-), Clazz.new_($I$(17).c$$java_io_OutputStream, [this, {mappingDetails: mappingDetails}, System.out],P$.SiftsClient$1));
+), Clazz.new_($I$(17,1).c$$java_io_OutputStream,[this, {mappingDetails:mappingDetails}, System.out],P$.SiftsClient$1));
 var mapping=this.getGreedyMapping$S$jalview_datamodel_SequenceI$java_io_PrintStream(chain, seq, ps);
 var mappingOutput=mappingDetails.toString();
-var siftsMapping=Clazz.new_($I$(18).c$$jalview_datamodel_SequenceI$S$S$S$java_util_HashMap$S$jalview_datamodel_Mapping,[aseq, pdbFile, this.pdbId, chain, mapping, mappingOutput, this.seqFromPdbMapping]);
+var siftsMapping=Clazz.new_($I$(18,1).c$$jalview_datamodel_SequenceI$S$S$S$java_util_HashMap$S$jalview_datamodel_Mapping,[aseq, pdbFile, this.pdbId, chain, mapping, mappingOutput, this.seqFromPdbMapping]);
 return siftsMapping;
 });
 
 Clazz.newMeth(C$, 'getGreedyMapping$S$jalview_datamodel_SequenceI$java_io_PrintStream', function (entityId, seq, os) {
-var omitNonObserved=Clazz.new_($I$(19));
+var omitNonObserved=Clazz.new_($I$(19,1));
 var nonObservedShiftIndex=0;
 var pdbeNonObserved=0;
 var entity=null;
 entity=this.getEntityById$S(entityId);
-var originalSeq=$I$(20).extractGaps$S$S($I$(21).GapChars, seq.getSequenceAsString$());
-var mapping=Clazz.new_($I$(22));
+var originalSeq=$I$(20,"extractGaps$S$S",[$I$(21).GapChars, seq.getSequenceAsString$()]);
+var mapping=Clazz.new_($I$(22,1));
 var sourceDBRef;
 sourceDBRef=this.getValidSourceDBRef$jalview_datamodel_SequenceI(seq);
 if (sourceDBRef.getSource$().equalsIgnoreCase$S("PDB")) {
 this.seqCoordSys=$I$(1).PDB;
-}var dbRefAccessionIdsString=Clazz.new_($I$(14));
+}var dbRefAccessionIdsString=Clazz.new_($I$(14,1));
 for (var dbref, $dbref = seq.getDBRefs$().iterator$(); $dbref.hasNext$()&&((dbref=($dbref.next$())),1);) {
-dbRefAccessionIdsString.add$TE(dbref.getAccessionId$().toLowerCase$());
+dbRefAccessionIdsString.add$O(dbref.getAccessionId$().toLowerCase$());
 }
-dbRefAccessionIdsString.add$TE(sourceDBRef.getAccessionId$().toLowerCase$());
+dbRefAccessionIdsString.add$O(sourceDBRef.getAccessionId$().toLowerCase$());
 this.curDBRefAccessionIdsString=dbRefAccessionIdsString;
 this.curSourceDBRef=sourceDBRef.getAccessionId$();
-var resNumMap=Clazz.new_($I$(23));
+var resNumMap=Clazz.new_($I$(23,1));
 var segments=entity.getSegment$();
-var shp=Clazz.new_($I$(24).c$$jalview_datamodel_SequenceI$java_util_HashMap$java_util_TreeMap$java_util_List$I$I, [this, null, seq, mapping, resNumMap, omitNonObserved, nonObservedShiftIndex, pdbeNonObserved]);
+var shp=Clazz.new_($I$(24,1).c$$jalview_datamodel_SequenceI$java_util_HashMap$java_util_TreeMap$java_util_List$I$I,[this, null, seq, mapping, resNumMap, omitNonObserved, nonObservedShiftIndex, pdbeNonObserved]);
 this.processSegments$java_util_List$jalview_ws_sifts_SiftsClient_SegmentHelperPojo(segments, shp);
 try {
 this.populateAtomPositions$S$java_util_Map(entityId, mapping);
@@ -238,12 +231,12 @@ var pdbStart=-2147483648;
 var pdbEnd=-2147483648;
 if (mapping.isEmpty$()) {
 throw Clazz.new_(Clazz.load('jalview.ws.sifts.SiftsException').c$$S,["SIFTS mapping failed"]);
-}var keys=mapping.keySet$().toArray$TTA(Clazz.array(Integer, [0]));
+}var keys=mapping.keySet$().toArray$OA(Clazz.array(Integer, [0]));
 $I$(25).sort$OA(keys);
-seqStart=(keys[0]).intValue$();
-seqEnd=(keys[keys.length - 1]).intValue$();
-var from=Clazz.new_($I$(19));
-var to=Clazz.new_($I$(19));
+seqStart=(keys[0]).valueOf();
+seqEnd=(keys[keys.length - 1]).valueOf();
+var from=Clazz.new_($I$(19,1));
+var to=Clazz.new_($I$(19,1));
 var _cfrom=null;
 var _cto=null;
 var matchedSeq=originalSeq;
@@ -254,13 +247,13 @@ if (pdbpos == -2147483648) {
 continue;
 }if (_cfrom == null  || seqps != _cfrom[1] + 1 ) {
 _cfrom=Clazz.array(Integer.TYPE, -1, [seqps, seqps]);
-from.add$TE(_cfrom);
+from.add$O(_cfrom);
 _cto=null;
 } else {
 _cfrom[1]=seqps;
 }if (_cto == null  || pdbpos != 1 + _cto[1] ) {
 _cto=Clazz.array(Integer.TYPE, -1, [pdbpos, pdbpos]);
-to.add$TE(_cto);
+to.add$O(_cto);
 } else {
 _cto[1]=pdbpos;
 }}
@@ -276,7 +269,7 @@ for (var range, $range = to.iterator$(); $range.hasNext$()&&((range=($range.next
 _cto[p++]=range[0];
 _cto[p++]=range[1];
 }
-;this.seqFromPdbMapping=Clazz.new_($I$(26).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[null, _cto, _cfrom, 1, 1]);
+;this.seqFromPdbMapping=Clazz.new_($I$(26,1).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[null, _cto, _cfrom, 1, 1]);
 pdbStart=mapping.get$O(new Integer(seqStart))[0];
 pdbEnd=mapping.get$O(new Integer(seqEnd))[0];
 var orignalSeqStart=seq.getStart$();
@@ -287,12 +280,12 @@ subSeqEnd=originalSeq.length$() < subSeqEnd ? originalSeq.length$() : subSeqEnd;
 matchedSeq=originalSeq.substring$I$I(subSeqStart, subSeqEnd);
 } else {
 matchedSeq=originalSeq.substring$I$I(1, originalSeq.length$());
-}}var targetStrucSeqs=Clazz.new_($I$(15));
+}}var targetStrucSeqs=Clazz.new_($I$(15,1));
 for (var res, $res = resNumMap.values$().iterator$(); $res.hasNext$()&&((res=($res.next$())),1);) {
 targetStrucSeqs.append$S(res);
 }
 if (os != null ) {
-var mop=Clazz.new_($I$(27));
+var mop=Clazz.new_($I$(27,1));
 mop.setSeqStart$I(seqStart);
 mop.setSeqEnd$I(seqEnd);
 mop.setSeqName$S(seq.getName$());
@@ -342,17 +335,17 @@ if (!isObserved) {
 currSeqIndex=seq.getStart$() - 1 + pdbeIndex;
 }if (!isObserved) {
 if (this.seqCoordSys !== $I$(1).UNIPROT ) {
-omitNonObserved.add$TE(new Integer(currSeqIndex));
+omitNonObserved.add$O(new Integer(currSeqIndex));
 ++nonObservedShiftIndex;
 }}if (currSeqIndex == -2147483648) {
 continue;
 }{
 var resNum=(pdbRefDb == null ) ? C$.getLeadingIntegerValue$S$I(residue.getDbResNum$(), -2147483648) : C$.getLeadingIntegerValue$S$I(pdbRefDb.getDbResNum$(), -2147483648);
 if (isObserved) {
-var resCharCode=$I$(28).getSingleCharacterCode$S($I$(28).getCanonicalAminoAcid$S(residue.getDbResName$()));
-resNumMap.put$TK$TV(new Integer(currSeqIndex), String.valueOf$C(resCharCode));
-var mappingcols=Clazz.array(Integer.TYPE, -1, [(Integer.valueOf$I(resNum)).intValue$(), -2147483648, isObserved ? firstPDBResNum : -2147483648]);
-mapping.put$TK$TV(new Integer(currSeqIndex - nonObservedShiftIndex), mappingcols);
+var resCharCode=$I$(28,"getSingleCharacterCode$S",[$I$(28,"getCanonicalAminoAcid$S",[residue.getDbResName$()])]);
+resNumMap.put$O$O(new Integer(currSeqIndex), String.valueOf$C(resCharCode));
+var mappingcols=Clazz.array(Integer.TYPE, -1, [(Integer.valueOf$I(resNum)).valueOf(), -2147483648, isObserved ? firstPDBResNum : -2147483648]);
+mapping.put$O$O(new Integer(currSeqIndex - nonObservedShiftIndex), mappingcols);
 }}}
 }
 });
@@ -362,7 +355,7 @@ if (input == null ) {
 return failValue;
 }var parts=input.split$S("(?=\\D)(?<=\\d)");
 if (parts != null  && parts.length > 0  && parts[0].matches$S("[0-9]+") ) {
-return (Integer.valueOf$S(parts[0])).intValue$();
+return (Integer.valueOf$S(parts[0])).valueOf();
 }return failValue;
 }, 1);
 
@@ -414,11 +407,11 @@ return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'getResidueAnnotaitons$jalview_xml_binding_sifts_Entry_Entity_Segment_ListResidue_Residue$jalview_ws_sifts_SiftsClient_ResidueDetailType', function (residue, type) {
-var foundAnnotations=Clazz.new_($I$(14));
+var foundAnnotations=Clazz.new_($I$(14,1));
 var resDetails=residue.getResidueDetail$();
 for (var resDetail, $resDetail = resDetails.iterator$(); $resDetail.hasNext$()&&((resDetail=($resDetail.next$())),1);) {
 if (resDetail.getProperty$().equalsIgnoreCase$S(type.getCode$())) {
-foundAnnotations.add$TE(resDetail.getContent$());
+foundAnnotations.add$O(resDetail.getContent$());
 }}
 return foundAnnotations;
 }, p$1);
@@ -436,12 +429,12 @@ return accessionId != null  && siftsDBRefs.contains$O(accessionId.toLowerCase$()
 Clazz.newMeth(C$, 'padWithGaps$java_util_Map$java_util_List', function (resNumMap, omitNonObserved) {
 if (resNumMap == null  || resNumMap.isEmpty$() ) {
 return;
-}var keys=resNumMap.keySet$().toArray$TTA(Clazz.array(Integer, [0]));
-var firstIndex=(keys[0]).intValue$();
-var lastIndex=(keys[keys.length - 1]).intValue$();
+}var keys=resNumMap.keySet$().toArray$OA(Clazz.array(Integer, [0]));
+var firstIndex=(keys[0]).valueOf();
+var lastIndex=(keys[keys.length - 1]).valueOf();
 for (var x=firstIndex; x <= lastIndex; x++) {
 if (!resNumMap.containsKey$O(new Integer(x)) && !omitNonObserved.contains$O(new Integer(x)) ) {
-resNumMap.put$TK$TV(new Integer(x), "-");
+resNumMap.put$O$O(new Integer(x), "-");
 }}
 });
 
@@ -457,7 +450,7 @@ var entities=this.siftsEntry.getEntity$();
 var sPojo=Clazz.array($I$(30), [entities.size$()]);
 var count=0;
 for (var entity, $entity = entities.iterator$(); $entity.hasNext$()&&((entity=($entity.next$())),1);) {
-sPojo[count]=Clazz.new_($I$(30), [this, null]);
+sPojo[count]=Clazz.new_($I$(30,1),[this, null]);
 sPojo[count].entityId=entity.getEntityId$();
 var segments=entity.getSegment$();
 for (var segment, $segment = segments.iterator$(); $segment.hasNext$()&&((segment=($segment.next$())),1);) {
@@ -476,7 +469,7 @@ if (cRefDb.getDbChainId$().equalsIgnoreCase$S(chainId)) {
 sPojo[count].pid=((100 * sPojo[count].chainIdFreq)/sPojo[count].resCount|0);
 ++count;
 }
-$I$(25).sort$TTA$java_util_Comparator(sPojo, $I$(31).reverseOrder$());
+$I$(25,"sort$OA$java_util_Comparator",[sPojo, $I$(31).reverseOrder$()]);
 if (sPojo[0].entityId != null ) {
 if (sPojo[0].pid < 1) {
 return null;
@@ -501,19 +494,19 @@ var type=mp.getType$();
 var maxid=(seqName.length$() >= strName.length$()) ? seqName.length$() : strName.length$();
 var len=72 - maxid - 1 ;
 var nochunks=(((seqRes.length$())/len|0)) + ((seqRes.length$()) % len > 0 ? 1 : 0);
-var output=Clazz.new_($I$(15).c$$I,[512]);
+var output=Clazz.new_($I$(15,1).c$$I,[512]);
 output.append$S(C$.NEWLINE);
 output.append$S("Sequence \u27f7 Structure mapping details").append$S(C$.NEWLINE);
 output.append$S("Method: SIFTS");
 output.append$S(C$.NEWLINE).append$S(C$.NEWLINE);
-output.append$S(Clazz.new_($I$(32).c$$S,["%" + maxid + "s" ]).form$S(seqName));
+output.append$S(Clazz.new_($I$(32,1).c$$S,["%" + maxid + "s" ]).form$S(seqName));
 output.append$S(" :  ");
 output.append$S(String.valueOf$I(sStart));
 output.append$S(" - ");
 output.append$S(String.valueOf$I(sEnd));
 output.append$S(" Maps to ");
 output.append$S(C$.NEWLINE);
-output.append$S(Clazz.new_($I$(32).c$$S,["%" + maxid + "s" ]).form$S(this.structId));
+output.append$S(Clazz.new_($I$(32,1).c$$S,["%" + maxid + "s" ]).form$S(this.structId));
 output.append$S(" :  ");
 output.append$S(String.valueOf$I(pdbStart));
 output.append$S(" - ");
@@ -522,13 +515,13 @@ output.append$S(C$.NEWLINE).append$S(C$.NEWLINE);
 var pam250=$I$(33).getInstance$().getPam250$();
 var matchedSeqCount=0;
 for (var j=0; j < nochunks; j++) {
-output.append$S(Clazz.new_($I$(32).c$$S,["%" + (maxid) + "s" ]).form$S(seqName)).append$S(" ");
+output.append$S(Clazz.new_(["%" + (maxid) + "s" ],$I$(32,1).c$$S).form$S(seqName)).append$S(" ");
 for (var i=0; i < len; i++) {
 if ((i + (j * len)) < seqRes.length$()) {
 output.append$C(seqRes.charAt$I(i + (j * len)));
 }}
 output.append$S(C$.NEWLINE);
-output.append$S(Clazz.new_($I$(32).c$$S,["%" + (maxid) + "s" ]).form$S(" ")).append$S(" ");
+output.append$S(Clazz.new_(["%" + (maxid) + "s" ],$I$(32,1).c$$S).form$S(" ")).append$S(" ");
 for (var i=0; i < len; i++) {
 try {
 if ((i + (j * len)) < seqRes.length$()) {
@@ -554,7 +547,7 @@ throw e;
 }
 }
 output=output.append$S(C$.NEWLINE);
-output=output.append$S(Clazz.new_($I$(32).c$$S,["%" + (maxid) + "s" ]).form$S(strName)).append$S(" ");
+output=output.append$S(Clazz.new_(["%" + (maxid) + "s" ],$I$(32,1).c$$S).form$S(strName)).append$S(" ");
 for (var i=0; i < len; i++) {
 if ((i + (j * len)) < strRes.length$()) {
 output.append$C(strRes.charAt$I(i + (j * len)));
@@ -565,7 +558,7 @@ var pid=matchedSeqCount / seqRes.length$() * 100;
 if (pid < $I$(6).getFailSafePIDThreshold$() ) {
 throw Clazz.new_(Clazz.load('jalview.ws.sifts.SiftsException').c$$S,[">>> Low PID detected for SIFTs mapping..."]);
 }output.append$S("Length of alignment = " + seqRes.length$()).append$S(C$.NEWLINE);
-output.append$S(Clazz.new_($I$(32).c$$S,["Percentage ID = %2.2f"]).form$D(pid));
+output.append$S(Clazz.new_(["Percentage ID = %2.2f"],$I$(32,1).c$$S).form$D(pid));
 return output;
 });
 
@@ -592,28 +585,24 @@ return this.siftsEntry.getDbVersion$();
 Clazz.newMeth(C$, 'setMockSiftsFile$java_io_File', function (file) {
 C$.mockSiftsFile=file;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.NEWLINE=System.lineSeparator$();
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SiftsClient, "CoordinateSys", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.SiftsClient, "CoordinateSys", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-$vals=Clazz.array(C$,[0]);
-Clazz.newEnumConst($vals, C$.c$$S, "UNIPROT", 0, ["UniProt"]);
-Clazz.newEnumConst($vals, C$.c$$S, "PDB", 1, ["PDBresnum"]);
-Clazz.newEnumConst($vals, C$.c$$S, "PDBe", 2, ["PDBe"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['$name']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.$name=name;
 }, 1);
 
@@ -621,33 +610,32 @@ Clazz.newMeth(C$, 'getName$', function () {
 return this.$name;
 });
 
+C$.$static$=function(){C$.$static$=0;
+$vals=Clazz.array(C$,[0]);
+Clazz.newEnumConst($vals, C$.c$$S, "UNIPROT", 0, ["UniProt"]);
+Clazz.newEnumConst($vals, C$.c$$S, "PDB", 1, ["PDBresnum"]);
+Clazz.newEnumConst($vals, C$.c$$S, "PDBe", 2, ["PDBe"]);
+};
+
 Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SiftsClient, "ResidueDetailType", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.SiftsClient, "ResidueDetailType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-$vals=Clazz.array(C$,[0]);
-Clazz.newEnumConst($vals, C$.c$$S, "NAME_SEC_STRUCTURE", 0, ["nameSecondaryStructure"]);
-Clazz.newEnumConst($vals, C$.c$$S, "CODE_SEC_STRUCTURE", 1, ["codeSecondaryStructure"]);
-Clazz.newEnumConst($vals, C$.c$$S, "ANNOTATION", 2, ["Annotation"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.code=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['code']]]
 
 Clazz.newMeth(C$, 'c$$S', function (code) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.code=code;
 }, 1);
 
@@ -655,59 +643,50 @@ Clazz.newMeth(C$, 'getCode$', function () {
 return this.code;
 });
 
+C$.$static$=function(){C$.$static$=0;
+$vals=Clazz.array(C$,[0]);
+Clazz.newEnumConst($vals, C$.c$$S, "NAME_SEC_STRUCTURE", 0, ["nameSecondaryStructure"]);
+Clazz.newEnumConst($vals, C$.c$$S, "CODE_SEC_STRUCTURE", 1, ["codeSecondaryStructure"]);
+Clazz.newEnumConst($vals, C$.c$$S, "ANNOTATION", 2, ["Annotation"]);
+};
+
 Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SiftsClient, "SiftsEntitySortPojo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SiftsClient, "SiftsEntitySortPojo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'Comparable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.entityId=null;
-this.chainIdFreq=0;
-this.pid=0;
-this.resCount=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['compareTo$jalview_ws_sifts_SiftsClient_SiftsEntitySortPojo','compareTo$','compareTo$TT'], function (o) {
+C$.$fields$=[['I',['chainIdFreq','pid','resCount'],'S',['entityId']]]
+
+Clazz.newMeth(C$, ['compareTo$jalview_ws_sifts_SiftsClient_SiftsEntitySortPojo','compareTo$O'], function (o) {
 return this.pid - o.pid;
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SiftsClient, "SegmentHelperPojo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SiftsClient, "SegmentHelperPojo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seq=null;
-this.mapping=null;
-this.resNumMap=null;
-this.omitNonObserved=null;
-this.nonObservedShiftIndex=0;
-this.pdbeNonObserved=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nonObservedShiftIndex','pdbeNonObserved'],'O',['seq','jalview.datamodel.SequenceI','mapping','java.util.HashMap','resNumMap','java.util.TreeMap','omitNonObserved','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$java_util_HashMap$java_util_TreeMap$java_util_List$I$I', function (seq, mapping, resNumMap, omitNonObserved, nonObservedShiftIndex, pdbeNonObserved) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setSeq$jalview_datamodel_SequenceI(seq);
 this.setMapping$java_util_HashMap(mapping);
 this.setResNumMap$java_util_TreeMap(resNumMap);
@@ -769,4 +748,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

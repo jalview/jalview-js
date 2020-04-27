@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSDocumentEvent", null, null, 'javax.swing.event.DocumentEvent');
+(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'swingjs.JSUtil']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSDocumentEvent", null, null, 'javax.swing.event.DocumentEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.off=0;
-this.len=0;
-this.type=null;
-this.doc=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['off','len'],'O',['type','javax.swing.event.DocumentEvent.EventType','doc','swingjs.JSAbstractDocument']]]
 
 Clazz.newMeth(C$, 'c$$swingjs_JSAbstractDocument$I$I$javax_swing_event_DocumentEvent_EventType', function (doc, offs, len, eventType) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.off=offs;
 this.len=len;
 this.type=eventType;
@@ -46,4 +39,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:42 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-27 13:55:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

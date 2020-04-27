@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'com.stevesoft.pat.Regex','jalview.datamodel.AlignmentAnnotation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ParseProperties");
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'com.stevesoft.pat.Regex','jalview.datamodel.AlignmentAnnotation']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ParseProperties");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.al=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.al=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['al','jalview.datamodel.AlignmentI']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI', function (al) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.al=al;
 }, 1);
 
@@ -28,7 +24,7 @@ return this.getScoresFromDescription$jalview_datamodel_SequenceIA$SA$SA$S$Z(this
 
 Clazz.newMeth(C$, 'getScoresFromDescription$jalview_datamodel_SequenceIA$SA$SA$S$Z', function (seqs, ScoreNames, ScoreDescriptions, regex, repeat) {
 var count=0;
-var pattern=Clazz.new_($I$(1).c$$S,[regex]);
+var pattern=Clazz.new_($I$(1,1).c$$S,[regex]);
 if (pattern.numSubs$() > ScoreNames.length) {
 var onamelen=ScoreNames.length;
 var tnames=Clazz.array(String, [pattern.numSubs$() + 1]);
@@ -58,7 +54,7 @@ for (var cols=0; cols < pattern.numSubs$(); cols++) {
 var sstring=pattern.stringMatched$I(cols + 1);
 var score=NaN;
 try {
-score= new Double(sstring).doubleValue$();
+score=Double.valueOf$S(sstring).doubleValue$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 continue;
@@ -66,7 +62,7 @@ continue;
 throw e;
 }
 }
-var an=Clazz.new_($I$(2).c$$S$S$jalview_datamodel_AnnotationA,[ScoreNames[cols] + ((reps > 0) ? "_" + reps : ""), ScoreDescriptions[cols], null]);
+var an=Clazz.new_([ScoreNames[cols] + ((reps > 0) ? "_" + reps : ""), ScoreDescriptions[cols], null],$I$(2,1).c$$S$S$jalview_datamodel_AnnotationA);
 an.setScore$D(score);
 System.out.println$S(seqs[i].getName$() + " score: '" + ScoreNames[cols] + "' = " + new Double(score).toString() );
 an.setSequenceRef$jalview_datamodel_SequenceI(seqs[i]);
@@ -84,4 +80,4 @@ return count;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,58 +1,19 @@
-(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},I$=[[0,'java.awt.geom.AffineTransform','java.awt.BasicStroke','java.text.DecimalFormat','java.awt.image.BufferedImage','java.awt.RenderingHints','java.awt.geom.Area','java.awt.Rectangle',['java.awt.geom.Point2D','.Double'],'gnu.jpdf.PDFImage','java.util.Hashtable','gnu.jpdf.PDFStringHelper','java.awt.Color','java.awt.Font','java.awt.font.FontRenderContext','gnu.jpdf.PDFStream',['java.awt.geom.Point2D','.Float']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDFGraphics", null, 'java.awt.Graphics2D', 'java.io.Serializable');
-C$.IDENTITY=null;
-C$.DEF_STROKE=null;
-C$.df=null;
+(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},I$=[[0,'java.awt.geom.AffineTransform','java.awt.BasicStroke','java.text.DecimalFormat','java.awt.image.BufferedImage','java.awt.RenderingHints','java.awt.geom.Area','java.awt.Rectangle',['java.awt.geom.Point2D','.Double'],'gnu.jpdf.PDFImage','java.util.Hashtable','gnu.jpdf.PDFStringHelper','java.awt.Color','java.awt.Font','java.awt.font.FontRenderContext','gnu.jpdf.PDFStream',['java.awt.geom.Point2D','.Float'],'swingjs.JSUtil']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDFGraphics", null, 'java.awt.Graphics2D', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.IDENTITY=Clazz.new_($I$(1));
-C$.DEF_STROKE=Clazz.new_($I$(2));
-C$.df=Clazz.new_($I$(3).c$$S,["#.###"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.background=null;
-this.child=false;
-this.clip=null;
-this.clipRectangle=null;
-this.composite=null;
-this.dg2=null;
-this.font=null;
-this.inStroke=false;
-this.inText=false;
-this.lineCap=0;
-this.lineJoin=0;
-this.lineWidth=0;
-this.lx=0;
-this.ly=0;
-this.miterLimit=0;
-this.newFont=false;
-this.originalStroke=null;
-this.oTransform=null;
-this.page=null;
-this.paint=null;
-this.pdffont=null;
-this.pre_np=null;
-this.pTransform=null;
-this.pw=null;
-this.rhints=null;
-this.stroke=null;
-this.transform=null;
-this.trax=0;
-this.tray=0;
-this.tx=0;
-this.ty=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.dg2=Clazz.new_($I$(4).c$$I$I$I,[2, 2, 1]).createGraphics$();
+this.dg2=Clazz.new_($I$(4,1).c$$I$I$I,[2, 2, 1]).createGraphics$();
 this.lineCap=0;
 this.lineJoin=0;
 this.lineWidth=1.0;
 this.miterLimit=10.0;
-this.rhints=Clazz.new_($I$(5).c$$java_util_Map,[null]);
-}, 1);
+this.rhints=Clazz.new_($I$(5,1).c$$java_util_Map,[null]);
+},1);
+
+C$.$fields$=[['Z',['child','inStroke','inText','newFont'],'F',['lineWidth','lx','ly','miterLimit','trax','tray','tx','ty'],'I',['lineCap','lineJoin'],'S',['pre_np'],'O',['background','java.awt.Color','clip','java.awt.geom.Area','clipRectangle','java.awt.Rectangle','composite','java.awt.Composite','dg2','java.awt.Graphics2D','font','java.awt.Font','originalStroke','java.awt.Stroke','oTransform','java.awt.geom.AffineTransform','page','gnu.jpdf.PDFPage','paint','java.awt.Paint','pdffont','gnu.jpdf.PDFFont','pTransform','java.awt.geom.AffineTransform','pw','java.io.PrintWriter','rhints','java.awt.RenderingHints','stroke','java.awt.Stroke','transform','java.awt.geom.AffineTransform']]
+,['O',['IDENTITY','java.awt.geom.AffineTransform','DEF_STROKE','java.awt.Stroke','df','java.text.DecimalFormat']]]
 
 Clazz.newMeth(C$, 'addRenderingHints$java_util_Map', function (hints) {
 this.rhints.putAll$java_util_Map(hints);
@@ -139,8 +100,8 @@ if (s == null ) {
 this.setClip$java_awt_Shape(null);
 return;
 }s=this.transform.createTransformedShape$java_awt_Shape(s);
-if (this.clip == null ) this.clip=Clazz.new_($I$(6).c$$java_awt_Shape,[s]);
- else this.clip.intersect$java_awt_geom_Area(Clazz.new_($I$(6).c$$java_awt_Shape,[s]));
+if (this.clip == null ) this.clip=Clazz.new_($I$(6,1).c$$java_awt_Shape,[s]);
+ else this.clip.intersect$java_awt_geom_Area(Clazz.new_($I$(6,1).c$$java_awt_Shape,[s]));
 });
 
 Clazz.newMeth(C$, 'clipPolygon$java_awt_Polygon', function (p) {
@@ -174,7 +135,7 @@ this.closeBlock$();
 var g=this.createGraphic$gnu_jpdf_PDFPage$java_io_PrintWriter(this.page, this.pw);
 g.trax=this.trax;
 g.tray=this.tray;
-g.clipRectangle=Clazz.new_($I$(7).c$$java_awt_Rectangle,[this.clipRectangle]);
+g.clipRectangle=Clazz.new_($I$(7,1).c$$java_awt_Rectangle,[this.clipRectangle]);
 return g;
 });
 
@@ -234,8 +195,8 @@ return "" + C$.df.format$D(nw) + " " + C$.df.format$D(nh) + " " ;
 }, p$1);
 
 Clazz.newMeth(C$, 'cxy$D$D', function (x, y) {
-var ptSrc=Clazz.new_($I$(8).c$$D$D,[x, y]);
-var ptDst=Clazz.new_($I$(8));
+var ptSrc=Clazz.new_($I$(8,1).c$$D$D,[x, y]);
+var ptDst=Clazz.new_($I$(8,1));
 this.transform.transform$java_awt_geom_Point2D$java_awt_geom_Point2D(ptSrc, ptDst);
 return "" + C$.df.format$D(ptDst.getX$()) + " " + C$.df.format$D(ptDst.getY$()) + " " ;
 }, p$1);
@@ -299,7 +260,7 @@ return this.drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver(img, x
 
 Clazz.newMeth(C$, 'drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver', function (img, x, y, w, h, obs) {
 this.closeBlock$();
-var image=Clazz.new_($I$(9).c$$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver,[img, x, y, w, h, obs]);
+var image=Clazz.new_($I$(9,1).c$$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver,[img, x, y, w, h, obs]);
 this.page.getPDFDocument$().setImageName$gnu_jpdf_PDFImage(image);
 this.page.getPDFDocument$().add$gnu_jpdf_PDFObject(image);
 this.page.addToProcset$S("/ImageC");
@@ -355,13 +316,13 @@ var width=img.getWidth$();
 var height=img.getHeight$();
 var raster=cm.createCompatibleWritableRaster$I$I(width, height);
 var isAlphaPremultiplied=cm.isAlphaPremultiplied$();
-var properties=Clazz.new_($I$(10));
+var properties=Clazz.new_($I$(10,1));
 var keys=img.getPropertyNames$();
 if (keys != null ) {
 for (var i=0; i < keys.length; i++) {
-properties.put$TK$TV(keys[i], img.getProperty$S(keys[i]));
+properties.put$O$O(keys[i], img.getProperty$S(keys[i]));
 }
-}var result=Clazz.new_($I$(4).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, raster, isAlphaPremultiplied, properties]);
+}var result=Clazz.new_($I$(4,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, raster, isAlphaPremultiplied, properties]);
 img.copyData$java_awt_image_WritableRaster(raster);
 image=result;
 }this.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(image, xform, null);
@@ -424,7 +385,7 @@ var points;
 if (s == null ) return;
 if (drawType == 2) {
 if (!(Clazz.instanceOf(this.stroke, "java.awt.BasicStroke"))) {
-s=this.stroke.createStrokedShape$(s);
+s=this.stroke.createStrokedShape$java_awt_Shape(s);
 p$1.followPath$java_awt_Shape$I.apply(this, [s, 1]);
 return;
 }}points=s.getPathIterator$java_awt_geom_AffineTransform(C$.IDENTITY);
@@ -490,7 +451,7 @@ return this.dg2.getDeviceConfiguration$();
 });
 
 Clazz.newMeth(C$, 'getFont$', function () {
-if (this.font == null ) this.setFont$java_awt_Font(Clazz.new_($I$(13).c$$S$I$I,["SansSerif", 0, 12]));
+if (this.font == null ) this.setFont$java_awt_Font(Clazz.new_($I$(13,1).c$$S$I$I,["SansSerif", 0, 12]));
 return this.font;
 });
 
@@ -501,7 +462,7 @@ return font.getFontMetrics$();
 Clazz.newMeth(C$, 'getFontRenderContext$', function () {
 var antialias=$I$(5).VALUE_TEXT_ANTIALIAS_ON.equals$O(this.getRenderingHint$java_awt_RenderingHints_Key($I$(5).KEY_TEXT_ANTIALIASING));
 var fractions=$I$(5).VALUE_FRACTIONALMETRICS_ON.equals$O(this.getRenderingHint$java_awt_RenderingHints_Key($I$(5).KEY_FRACTIONALMETRICS));
-return Clazz.new_($I$(14).c$$java_awt_geom_AffineTransform$Z$Z,[Clazz.new_($I$(1)), antialias, fractions]);
+return Clazz.new_([Clazz.new_($I$(1,1)), antialias, fractions],$I$(14,1).c$$java_awt_geom_AffineTransform$Z$Z);
 });
 
 Clazz.newMeth(C$, 'getPage$', function () {
@@ -525,7 +486,7 @@ return this.originalStroke;
 });
 
 Clazz.newMeth(C$, 'getTransform$', function () {
-return Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform,[this.oTransform]);
+return Clazz.new_($I$(1,1).c$$java_awt_geom_AffineTransform,[this.oTransform]);
 });
 
 Clazz.newMeth(C$, 'getWriter$', function () {
@@ -534,9 +495,9 @@ return this.pw;
 
 Clazz.newMeth(C$, 'hit$java_awt_Rectangle$java_awt_Shape$Z', function (rect, s, onStroke) {
 if (onStroke) {
-s=this.stroke.createStrokedShape$(s);
+s=this.stroke.createStrokedShape$java_awt_Shape(s);
 }s=this.transform.createTransformedShape$java_awt_Shape(s);
-var area=Clazz.new_($I$(6).c$$java_awt_Shape,[s]);
+var area=Clazz.new_($I$(6,1).c$$java_awt_Shape,[s]);
 if (this.clip != null ) area.intersect$java_awt_geom_Area(this.clip);
 return area.intersects$D$D$D$D(rect.x, rect.y, rect.width, rect.height);
 });
@@ -546,11 +507,11 @@ var pf=this.page.getPageFormat$();
 if (this.child) {
 this.pw.print$S("q ");
 }this.paint=$I$(12).black;
-this.oTransform=Clazz.new_($I$(1));
-this.pTransform=Clazz.new_($I$(1));
+this.oTransform=Clazz.new_($I$(1,1));
+this.pTransform=Clazz.new_($I$(1,1));
 this.pTransform.translate$D$D(0, pf.getHeight$());
 this.pTransform.scale$D$D(1.0, -1.0);
-this.transform=Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform,[this.oTransform]);
+this.transform=Clazz.new_($I$(1,1).c$$java_awt_geom_AffineTransform,[this.oTransform]);
 this.transform.concatenate$java_awt_geom_AffineTransform(this.pTransform);
 this.setStroke$java_awt_Stroke(C$.DEF_STROKE);
 }, p$1);
@@ -558,7 +519,7 @@ this.setStroke$java_awt_Stroke(C$.DEF_STROKE);
 Clazz.newMeth(C$, 'init$gnu_jpdf_PDFPage', function (page) {
 this.page=page;
 this.child=false;
-var stream=Clazz.new_($I$(15));
+var stream=Clazz.new_($I$(15,1));
 stream.setDeflate$Z(true);
 page.getPDFDocument$().add$gnu_jpdf_PDFObject(stream);
 page.add$gnu_jpdf_PDFObject(stream);
@@ -642,7 +603,7 @@ this.background=color;
 });
 
 Clazz.newMeth(C$, 'setClip$I$I$I$I', function (x, y, w, h) {
-this.clipRectangle=Clazz.new_($I$(7).c$$I$I$I$I,[x, y, w, h]);
+this.clipRectangle=Clazz.new_($I$(7,1).c$$I$I$I$I,[x, y, w, h]);
 this.closeBlock$();
 this.drawRect$I$I$I$I(x, y, w, h);
 this.closeBlock$S("W n");
@@ -764,7 +725,7 @@ p$1.setMiterLimit$F.apply(this, [bs.getMiterLimit$()]);
 
 Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (t) {
 this.oTransform=t;
-this.transform=Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform,[t]);
+this.transform=Clazz.new_($I$(1,1).c$$java_awt_geom_AffineTransform,[t]);
 this.transform.concatenate$java_awt_geom_AffineTransform(this.pTransform);
 this.stroke=p$1.transformStroke$java_awt_Stroke.apply(this, [this.originalStroke]);
 });
@@ -789,7 +750,7 @@ var dash=st.getDashArray$();
 if (dash != null ) {
 for (var k=0; k < dash.length; ++k) dash[k] *= scale;
 
-}return Clazz.new_($I$(2).c$$F$I$I$F$FA$F,[st.getLineWidth$() * scale, st.getEndCap$(), st.getLineJoin$(), st.getMiterLimit$(), dash, st.getDashPhase$() * scale]);
+}return Clazz.new_([st.getLineWidth$() * scale, st.getEndCap$(), st.getLineJoin$(), st.getMiterLimit$(), dash, st.getDashPhase$() * scale],$I$(2,1).c$$F$I$I$F$FA$F);
 }, p$1);
 
 Clazz.newMeth(C$, 'translate$D$D', function (tx, ty) {
@@ -818,12 +779,22 @@ return "" + C$.df.format$D(nx) + " " + C$.df.format$D(ny) + " " ;
 }, p$1);
 
 Clazz.newMeth(C$, 'txy$F$F', function (x, y) {
-var ptSrc=Clazz.new_($I$(16).c$$F$F,[x, y]);
-var ptDst=Clazz.new_($I$(16));
+var ptSrc=Clazz.new_($I$(16,1).c$$F$F,[x, y]);
+var ptDst=Clazz.new_($I$(16,1));
 this.transform.transform$java_awt_geom_Point2D$java_awt_geom_Point2D(ptSrc, ptDst);
 return "" + C$.df.format$D(ptDst.getX$()) + " " + C$.df.format$D(ptDst.getY$()) + " " ;
 }, p$1);
 
+Clazz.newMeth(C$, 'drawGlyphVector$java_awt_font_GlyphVector$F$F', function (g, x, y) {
+$I$(17).notImplemented$S(null);
+});
+
+C$.$static$=function(){C$.$static$=0;
+C$.IDENTITY=Clazz.new_($I$(1,1));
+C$.DEF_STROKE=Clazz.new_($I$(2,1));
+C$.df=Clazz.new_($I$(3,1).c$$S,["#.###"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

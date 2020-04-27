@@ -1,8 +1,10 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),I$=[[0,'fr.orsay.lri.varna.models.templates.RNATemplateMapping','java.util.LinkedList','java.util.ArrayList','java.util.HashSet','fr.orsay.lri.varna.models.treealign.RNATree2','fr.orsay.lri.varna.models.treealign.TreeAlign','fr.orsay.lri.varna.models.templates.RNANodeValue2TemplateDistance']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RNATemplateAlign");
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),I$=[[0,'fr.orsay.lri.varna.models.templates.RNATemplateMapping','java.util.LinkedList','java.util.ArrayList','java.util.HashSet','fr.orsay.lri.varna.models.treealign.RNATree2','fr.orsay.lri.varna.models.treealign.TreeAlign','fr.orsay.lri.varna.models.templates.RNANodeValue2TemplateDistance']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RNATemplateAlign");
+
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'canBePartOfAnHelix$fr_orsay_lri_varna_models_treealign_RNANodeValue2', function (leftNodeValue) {
 return (leftNodeValue != null ) && leftNodeValue.isSingleNode$() && leftNodeValue.getNode$().getRightBasePosition$() > 0  ;
@@ -17,14 +19,14 @@ return (leftNodeValue != null ) && leftNodeValue.isSingleNode$() && leftNodeValu
 }, 1);
 
 Clazz.newMeth(C$, 'makeTemplateMapping$fr_orsay_lri_varna_models_treealign_TreeAlignResult$fr_orsay_lri_varna_models_rna_RNA', function (alignResult, rna) {
-var mapping=Clazz.new_($I$(1));
+var mapping=Clazz.new_($I$(1,1));
 var alignment=alignResult.getAlignment$();
 mapping.setDistance$D(alignResult.getDistance$());
 {
 var currentHelix=null;
-var remainingNodes=Clazz.new_($I$(2));
-var nodesInSameHelix=Clazz.new_($I$(2));
-remainingNodes.add$TE(alignment);
+var remainingNodes=Clazz.new_($I$(2,1));
+var nodesInSameHelix=Clazz.new_($I$(2,1));
+remainingNodes.add$O(alignment);
 while (!remainingNodes.isEmpty$()){
 var node=remainingNodes.getLast$();
 remainingNodes.removeLast$();
@@ -77,35 +79,35 @@ if (validExtension) {
 mapping.addCouple$I$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(i, currentHelix);
 mapping.addCouple$I$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(j, currentHelix);
 }} else {
-nodesInSameHelix.add$TE(leftNodeValue);
+nodesInSameHelix.add$O(leftNodeValue);
 }}}}var children=node.getChildren$();
 var n=children.size$();
 if (n > 0) {
 var helixChildren=0;
-var addToStack1=Clazz.new_($I$(3));
-var addToStack2=Clazz.new_($I$(3));
+var addToStack1=Clazz.new_($I$(3,1));
+var addToStack2=Clazz.new_($I$(3,1));
 for (var i=0; i < n; i++) {
 var child=children.get$I(i);
 var RNAchild=child.getValue$().getLeftNode$();
 if (RNAchild != null  && RNAchild.getValue$() != null   && (C$.canBePartOfAnHelix$fr_orsay_lri_varna_models_treealign_RNANodeValue2(RNAchild.getValue$()) || C$.canBePartOfABrokenHelix$fr_orsay_lri_varna_models_treealign_RNANodeValue2(RNAchild.getValue$()) ) ) {
 helixChildren++;
-addToStack2.add$TE(child);
+addToStack2.add$O(child);
 } else {
-addToStack1.add$TE(child);
+addToStack1.add$O(child);
 }}
 for (var i=addToStack2.size$() - 1; i >= 0; i--) {
-remainingNodes.add$TE(addToStack2.get$I(i));
+remainingNodes.add$O(addToStack2.get$I(i));
 }
 for (var i=addToStack1.size$() - 1; i >= 0; i--) {
-remainingNodes.add$TE(addToStack1.get$I(i));
+remainingNodes.add$O(addToStack1.get$I(i));
 }
 if (helixChildren >= 2) {
 currentHelix=null;
 }}}
 }{
-var remainingNodes=Clazz.new_($I$(2));
-remainingNodes.add$TE(alignment);
-var tempPKMapping=Clazz.new_($I$(1));
+var remainingNodes=Clazz.new_($I$(2,1));
+remainingNodes.add$O(alignment);
+var tempPKMapping=Clazz.new_($I$(1,1));
 while (!remainingNodes.isEmpty$()){
 var node=remainingNodes.getLast$();
 remainingNodes.removeLast$();
@@ -113,9 +115,9 @@ var children=node.getChildren$();
 var n=children.size$();
 if (n > 0) {
 for (var i=n - 1; i >= 0; i--) {
-remainingNodes.add$TE(children.get$I(i));
+remainingNodes.add$O(children.get$I(i));
 }
-var nodesInSameHelix=Clazz.new_($I$(2));
+var nodesInSameHelix=Clazz.new_($I$(2,1));
 var currentHelix=null;
 for (var child, $child = node.getChildren$().iterator$(); $child.hasNext$()&&((child=($child.next$())),1);) {
 var leftNode=child.getValue$().getLeftNode$();
@@ -140,7 +142,7 @@ if (C$.canBePartOfABrokenHelix$fr_orsay_lri_varna_models_treealign_RNANodeValue2
 if (currentHelix != null ) {
 tempPKMapping.addCouple$I$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(leftNodeValue.getNode$().getLeftBasePosition$(), currentHelix);
 } else {
-nodesInSameHelix.add$TE(leftNodeValue);
+nodesInSameHelix.add$O(leftNodeValue);
 }} else {
 currentHelix=null;
 nodesInSameHelix.clear$();
@@ -151,7 +153,7 @@ nodesInSameHelix.clear$();
 }}
 for (var element, $element = tempPKMapping.getTargetElemsAsSet$().iterator$(); $element.hasNext$()&&((element=($element.next$())),1);) {
 var helix=element;
-var basesInHelix=Clazz.new_($I$(4).c$$java_util_Collection,[tempPKMapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix)]);
+var basesInHelix=Clazz.new_([tempPKMapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix)],$I$(4,1).c$$java_util_Collection);
 for (var baseIndex, $baseIndex = basesInHelix.iterator$(); $baseIndex.hasNext$()&&((baseIndex=($baseIndex.next$()).intValue$()),1);) {
 System.out.println$S("PK: " + helix + " aligned with " + baseIndex );
 var baseOK=false;
@@ -184,7 +186,7 @@ var A=mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATem
 if (A != null ) {
 C$.printIntArrayList$java_util_ArrayList(A);
 for (var n=A.size$(), i=0; i < n; i++) {
-System.out.print$S("\t" + sequence.charAt$I((A.get$I(i)).intValue$()));
+System.out.print$S("\t" + sequence.charAt$I((A.get$I(i)).valueOf()));
 }
 System.out.println$S("");
 } else {
@@ -196,7 +198,7 @@ Clazz.newMeth(C$, 'alignRNAWithTemplate$fr_orsay_lri_varna_models_rna_RNA$fr_ors
 try {
 var rnaAsTree=$I$(5).RNATree2FromRNA$fr_orsay_lri_varna_models_rna_RNA(rna);
 var templateAsTree=template.toTree$();
-var treeAlign=Clazz.new_($I$(6).c$$fr_orsay_lri_varna_models_treealign_TreeAlignLabelDistanceAsymmetric,[Clazz.new_($I$(7))]);
+var treeAlign=Clazz.new_([Clazz.new_($I$(7,1))],$I$(6,1).c$$fr_orsay_lri_varna_models_treealign_TreeAlignLabelDistanceAsymmetric);
 var result=treeAlign.align$fr_orsay_lri_varna_models_treealign_Tree$fr_orsay_lri_varna_models_treealign_Tree(rnaAsTree, templateAsTree);
 return result;
 } catch (e$$) {
@@ -266,7 +268,7 @@ if (l != null ) {
 var n=l.size$();
 var result=Clazz.array(Integer.TYPE, [n]);
 for (var i=0; i < n; i++) {
-result[i]=(l.get$I(i)).intValue$();
+result[i]=(l.get$I(i)).valueOf();
 }
 return result;
 } else {
@@ -275,4 +277,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,10 @@
-(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'org.slf4j.LoggerFactory','ext.edu.ucsf.rbvi.strucviz2.ChimeraManager','java.util.ArrayList','java.util.Properties','java.util.HashMap','java.io.File',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'java.util.Arrays','jalview.bin.Cache']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StructureManager", function(){
+(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'org.slf4j.LoggerFactory','ext.edu.ucsf.rbvi.strucviz2.ChimeraManager','java.util.ArrayList','java.util.Properties','java.util.HashMap','java.io.File',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'java.util.Arrays','jalview.bin.Cache']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StructureManager", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.defaultStructureKeys=null;
-C$.defaultChemStructKeys=null;
-C$.defaultResidueKeys=null;
-C$.pathProps=null;
-C$.chimSelectionList=null;
-C$.logger=null;
+C$.$classes$=[['ModelType',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultStructureKeys=Clazz.array(String, -1, ["Structure", "pdb", "pdbFileName", "PDB ID", "structure", "biopax.xref.PDB", "pdb_ids", "ModelName", "ModelNumber"]);
-C$.defaultChemStructKeys=Clazz.array(String, -1, ["Smiles", "smiles", "SMILES"]);
-C$.defaultResidueKeys=Clazz.array(String, -1, ["FunctionalResidues", "ResidueList", "Residues"]);
-C$.logger=$I$(1).getLogger$Class(Clazz.getClass(C$));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.chimeraCommandAttr=null;
-this.chimeraOutputTable=null;
-this.chimeraOutputAttr=null;
-this.haveGUI=false;
-this.chimeraManager=null;
-this.ignoreCySelection=false;
-this.configurationDirectory=null;
-this.defaultSettings=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.chimeraCommandAttr="ChimeraCommand";
@@ -37,14 +15,17 @@ this.chimeraManager=null;
 this.ignoreCySelection=false;
 this.configurationDirectory=null;
 this.defaultSettings=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveGUI','ignoreCySelection'],'S',['chimeraCommandAttr','chimeraOutputTable','chimeraOutputAttr'],'O',['chimeraManager','ext.edu.ucsf.rbvi.strucviz2.ChimeraManager','configurationDirectory','java.io.File','defaultSettings','ext.edu.ucsf.rbvi.strucviz2.StructureSettings']]
+,['O',['defaultStructureKeys','String[]','+defaultChemStructKeys','+defaultResidueKeys','pathProps','java.util.Properties','chimSelectionList','java.util.List','logger','org.slf4j.Logger']]]
 
 Clazz.newMeth(C$, 'c$$Z', function (haveGUI) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.haveGUI=haveGUI;
-this.chimeraManager=Clazz.new_($I$(2).c$$ext_edu_ucsf_rbvi_strucviz2_StructureManager,[this]);
-C$.chimSelectionList=Clazz.new_($I$(3));
-C$.pathProps=Clazz.new_($I$(4));
+this.chimeraManager=Clazz.new_($I$(2,1).c$$ext_edu_ucsf_rbvi_strucviz2_StructureManager,[this]);
+C$.chimSelectionList=Clazz.new_($I$(3,1));
+C$.pathProps=Clazz.new_($I$(4,1));
 }, 1);
 
 Clazz.newMeth(C$, 'getChimeraManager$', function () {
@@ -52,7 +33,7 @@ return this.chimeraManager;
 });
 
 Clazz.newMeth(C$, 'openStructures$java_util_Collection$ext_edu_ucsf_rbvi_strucviz2_StructureManager_ModelType', function (chimObjNames, type) {
-var newModels=Clazz.new_($I$(5));
+var newModels=Clazz.new_($I$(5,1));
 if (chimObjNames.size$() > 0) {
 var names=chimObjNames.iterator$().next$();
 if (names == null ) {
@@ -63,7 +44,7 @@ if (currentModels.size$() == 0) {
 currentModels=this.chimeraManager.openModel$S$ext_edu_ucsf_rbvi_strucviz2_StructureManager_ModelType(chimObjName, type);
 if (currentModels == null ) {
 continue;
-}newModels.put$TK$TV(chimObjName, currentModels);
+}newModels.put$O$O(chimObjName, currentModels);
 for (var currentModel, $currentModel = currentModels.iterator$(); $currentModel.hasNext$()&&((currentModel=($currentModel.next$())),1);) {
 }
 }}
@@ -193,7 +174,7 @@ return C$.chimSelectionList.size$();
 
 Clazz.newMeth(C$, 'addChimSelection$ext_edu_ucsf_rbvi_strucviz2_ChimeraStructuralObject', function (selectionToAdd) {
 if (selectionToAdd != null  && !C$.chimSelectionList.contains$O(selectionToAdd) ) {
-C$.chimSelectionList.add$TE(selectionToAdd);
+C$.chimSelectionList.add$O(selectionToAdd);
 selectionToAdd.setSelected$Z(true);
 }});
 
@@ -245,54 +226,55 @@ Clazz.newMeth(C$, 'selectionChanged$', function () {
 });
 
 Clazz.newMeth(C$, 'launchAlignDialog$Z', function (useChains) {
-var chimObjectList=Clazz.new_($I$(3));
+var chimObjectList=Clazz.new_($I$(3,1));
 for (var model, $model = this.chimeraManager.getChimeraModels$().iterator$(); $model.hasNext$()&&((model=($model.next$())),1);) {
 if (useChains) {
 for (var chain, $chain = model.getChains$().iterator$(); $chain.hasNext$()&&((chain=($chain.next$())),1);) {
-chimObjectList.add$TE(chain);
+chimObjectList.add$O(chain);
 }
 } else {
-chimObjectList.add$TE(model);
+chimObjectList.add$O(model);
 }}
 });
 
 Clazz.newMeth(C$, 'getAllStructureKeys$', function () {
-return $I$(8).asList$TTA(C$.defaultStructureKeys);
+return $I$(8).asList$OA(C$.defaultStructureKeys);
 });
 
 Clazz.newMeth(C$, 'getAllChemStructKeys$', function () {
-return $I$(8).asList$TTA(C$.defaultChemStructKeys);
+return $I$(8).asList$OA(C$.defaultChemStructKeys);
 });
 
 Clazz.newMeth(C$, 'getAllResidueKeys$', function () {
-return $I$(8).asList$TTA(C$.defaultResidueKeys);
+return $I$(8).asList$OA(C$.defaultResidueKeys);
 });
 
 Clazz.newMeth(C$, 'getAllChimeraResidueAttributes$', function () {
-var attributes=Clazz.new_($I$(3));
+var attributes=Clazz.new_($I$(3,1));
 attributes.addAll$java_util_Collection(this.chimeraManager.getAttrList$());
 return attributes;
 });
 
 Clazz.newMeth(C$, 'getChimeraPaths$', function () {
-var pathList=Clazz.new_($I$(3));
+var pathList=Clazz.new_($I$(3,1));
 var userPath=$I$(9).getDefault$S$S("CHIMERA_PATH", null);
 if (userPath != null ) {
-pathList.add$I$TE(0, userPath);
+pathList.add$I$O(0, userPath);
 }var os=System.getProperty$S("os.name");
 if (os.startsWith$S("Linux")) {
-pathList.add$TE("/usr/local/chimera/bin/chimera");
-pathList.add$TE("/usr/local/bin/chimera");
-pathList.add$TE("/usr/bin/chimera");
+pathList.add$O("/usr/local/chimera/bin/chimera");
+pathList.add$O("/usr/local/bin/chimera");
+pathList.add$O("/usr/bin/chimera");
+pathList.add$O(System.getProperty$S("user.home") + "/opt/bin/chimera");
 } else if (os.startsWith$S("Windows")) {
 for (var root, $root = 0, $$root = Clazz.array(String, -1, ["\\Program Files", "C:\\Program Files", "\\Program Files (x86)", "C:\\Program Files (x86)"]); $root<$$root.length&&((root=($$root[$root])),1);$root++) {
 for (var version, $version = 0, $$version = Clazz.array(String, -1, ["1.11", "1.11.1", "1.11.2", "1.12", "1.12.1", "1.12.2", "1.13"]); $version<$$version.length&&((version=($$version[$version])),1);$version++) {
-pathList.add$TE(root + "\\Chimera " + version + "\\bin\\chimera" );
-pathList.add$TE(root + "\\Chimera " + version + "\\bin\\chimera.exe" );
+pathList.add$O(root + "\\Chimera " + version + "\\bin\\chimera" );
+pathList.add$O(root + "\\Chimera " + version + "\\bin\\chimera.exe" );
 }
 }
 } else if (os.startsWith$S("Mac")) {
-pathList.add$TE("/Applications/Chimera.app/Contents/MacOS/chimera");
+pathList.add$O("/Applications/Chimera.app/Contents/MacOS/chimera");
 }return pathList;
 }, 1);
 
@@ -309,20 +291,29 @@ return this.defaultSettings.getChimeraPath$();
 } else {
 return "";
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultStructureKeys=Clazz.array(String, -1, ["Structure", "pdb", "pdbFileName", "PDB ID", "structure", "biopax.xref.PDB", "pdb_ids", "ModelName", "ModelNumber"]);
+C$.defaultChemStructKeys=Clazz.array(String, -1, ["Smiles", "smiles", "SMILES"]);
+C$.defaultResidueKeys=Clazz.array(String, -1, ["FunctionalResidues", "ResidueList", "Residues"]);
+C$.logger=$I$(1,"getLogger$Class",[Clazz.getClass(C$)]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.StructureManager, "ModelType", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.StructureManager, "ModelType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "PDB_MODEL", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "MODBASE_MODEL", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "SMILES", 2, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -332,4 +323,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

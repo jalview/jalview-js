@@ -1,24 +1,21 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'java.util.HashMap','java.util.ArrayList','StringBuffer','jalview.util.MessageManager','jalview.util.Format']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PfamFile", null, 'jalview.io.AlignFile');
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'java.util.HashMap','java.util.ArrayList','StringBuffer','jalview.util.MessageManager','jalview.util.Format']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PfamFile", null, 'jalview.io.AlignFile');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$jalview_io_DataSourceType', function (inFile, sourceType) {
-C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this, [inFile, sourceType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this,[inFile, sourceType]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_FileParse', function (source) {
-C$.superclazz.c$$jalview_io_FileParse.apply(this, [source]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_FileParse.apply(this,[source]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'initData$', function () {
@@ -28,8 +25,8 @@ C$.superclazz.prototype.initData$.apply(this, []);
 Clazz.newMeth(C$, 'parse$', function () {
 var i=0;
 var line;
-var seqhash=Clazz.new_($I$(1));
-var headers=Clazz.new_($I$(2));
+var seqhash=Clazz.new_($I$(1,1));
+var headers=Clazz.new_($I$(2,1));
 var useTabs=false;
 var spces;
 while ((line=this.nextLine$()) != null ){
@@ -49,10 +46,10 @@ var tempseq;
 if (seqhash.containsKey$O(id)) {
 tempseq=seqhash.get$O(id);
 } else {
-tempseq=Clazz.new_($I$(3));
-seqhash.put$TK$TV(id, tempseq);
+tempseq=Clazz.new_($I$(3,1));
+seqhash.put$O$O(id, tempseq);
 }if (!(headers.contains$O(id))) {
-headers.add$TE(id);
+headers.add$O(id);
 }if (spces + 1 < line.length$()) {
 tempseq.append$S(line.substring$I(spces + 1).trim$());
 }}
@@ -65,14 +62,14 @@ if (this.maxLength < seqhash.get$O(headers.get$I(i)).toString().length$()) {
 this.maxLength=seqhash.get$O(headers.get$I(i)).toString().length$();
 }var newSeq=this.parseId$S(headers.get$I(i).toString());
 newSeq.setSequence$S(seqhash.get$O(headers.get$I(i).toString()).toString());
-this.seqs.addElement$TE(newSeq);
+this.seqs.addElement$O(newSeq);
 } else {
 System.err.println$S("PFAM File reader: Can't find sequence for " + headers.get$I(i));
 }}
 });
 
 Clazz.newMeth(C$, 'print$jalview_datamodel_SequenceIA$Z', function (s, jvsuffix) {
-var out=Clazz.new_($I$(3).c$$S,[""]);
+var out=Clazz.new_($I$(3,1).c$$S,[""]);
 var max=0;
 var maxid=0;
 var i=0;
@@ -87,7 +84,7 @@ if (maxid < 15) {
 maxid=15;
 }var j=0;
 while ((j < s.length) && (s[j] != null ) ){
-out.append$S(Clazz.new_($I$(5).c$$S,["%-" + maxid + "s" ]).form$S(this.printId$jalview_datamodel_SequenceI$Z(s[j], jvsuffix) + " "));
+out.append$S(Clazz.new_($I$(5,1).c$$S,["%-" + maxid + "s" ]).form$S(this.printId$jalview_datamodel_SequenceI$Z(s[j], jvsuffix) + " "));
 out.append$S(s[j].getSequenceAsString$());
 out.append$S(this.newline);
 j++;
@@ -96,4 +93,4 @@ out.append$S(this.newline);
 return out.toString();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

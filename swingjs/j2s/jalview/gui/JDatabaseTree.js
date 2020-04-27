@@ -1,77 +1,60 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},p$2={},I$=[[0,'javax.swing.ToolTipManager','javax.swing.JLabel','jalview.gui.JvSwingUtils','javax.swing.JPanel','java.awt.BorderLayout','java.util.Vector','javax.swing.JButton','jalview.util.MessageManager','javax.swing.tree.DefaultMutableTreeNode','java.util.Hashtable','javax.swing.JTree','javax.swing.tree.DefaultTreeModel',['jalview.gui.JDatabaseTree','.DbTreeRenderer'],'javax.swing.JScrollPane','java.awt.Dimension','java.awt.event.MouseAdapter','java.awt.FlowLayout','java.awt.GridLayout','Error','jalview.util.QuickSort','java.util.ArrayList','StringBuffer','java.util.HashSet']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JDatabaseTree", function(){
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},p$2={},I$=[[0,'javax.swing.ToolTipManager','javax.swing.JLabel','jalview.gui.JvSwingUtils','javax.swing.JPanel','java.awt.BorderLayout','java.util.Vector','javax.swing.JButton','jalview.util.MessageManager','javax.swing.tree.DefaultMutableTreeNode','java.util.Hashtable','javax.swing.JTree','javax.swing.tree.DefaultTreeModel',['jalview.gui.JDatabaseTree','.DbTreeRenderer'],'javax.swing.JScrollPane','java.awt.Dimension','java.awt.event.MouseAdapter','java.awt.FlowLayout','java.awt.GridLayout','Error','jalview.util.QuickSort','java.util.ArrayList','StringBuffer','java.util.HashSet']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JDatabaseTree", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'jalview.gui.JalviewDialog', 'java.awt.event.KeyListener');
+C$.$classes$=[['DbTreeRenderer',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.allowMultiSelections=false;
-this.action=0;
-this.svp=null;
-this.dbviews=null;
-this.sfetcher=null;
-this.dbstatus=null;
-this.dbstatex=null;
-this.mainPanel=null;
-this.oldselection=null;
-this.selection=null;
-this.tsel=null;
-this.oldtsel=null;
-this.handleSelections=false;
-this.lstners=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.allowMultiSelections=false;
-this.mainPanel=Clazz.new_($I$(4).c$$java_awt_LayoutManager,[Clazz.new_($I$(5))]);
+this.mainPanel=Clazz.new_([Clazz.new_($I$(5,1))],$I$(4,1).c$$java_awt_LayoutManager);
 this.selection=null;
 this.tsel=null;
 this.oldtsel=null;
 this.handleSelections=true;
-this.lstners=Clazz.new_($I$(6));
-}, 1);
+this.lstners=Clazz.new_($I$(6,1));
+},1);
+
+C$.$fields$=[['Z',['allowMultiSelections','handleSelections'],'I',['action'],'O',['svp','javax.swing.JScrollPane','dbviews','javax.swing.JTree','sfetcher','jalview.ws.SequenceFetcher','dbstatus','javax.swing.JLabel','+dbstatex','mainPanel','javax.swing.JPanel','oldselection','java.util.List','+selection','tsel','javax.swing.tree.TreePath[]','+oldtsel','lstners','java.util.List']]]
 
 Clazz.newMeth(C$, 'getDatabaseSelectorButton$', function () {
-var viewdbs=Clazz.new_($I$(7).c$$S,[$I$(8).getString$S("action.select_ddbb")]);
+var viewdbs=Clazz.new_([$I$(8).getString$S("action.select_ddbb")],$I$(7,1).c$$S);
 viewdbs.addActionListener$java_awt_event_ActionListener(((P$.JDatabaseTree$1||
-(function(){var C$=Clazz.newClass(P$, "JDatabaseTree$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JDatabaseTree$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (arg0) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (arg0) {
 this.b$['jalview.gui.JDatabaseTree'].showDialog$.apply(this.b$['jalview.gui.JDatabaseTree'], []);
 });
 })()
-), Clazz.new_(P$.JDatabaseTree$1.$init$, [this, null])));
+), Clazz.new_(P$.JDatabaseTree$1.$init$,[this, null])));
 return viewdbs;
 });
 
 Clazz.newMeth(C$, 'c$$jalview_ws_SequenceFetcher', function (sfetch) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.mainPanel.add$java_awt_Component(this);
 this.initDialogFrame$java_awt_Container$Z$Z$S$I$I(this.mainPanel, true, false, $I$(8).getString$S("label.select_database_retrieval_source"), 650, 490);
 var tn=null;
-var root=Clazz.new_($I$(9));
-var source=Clazz.new_($I$(10));
+var root=Clazz.new_($I$(9,1));
+var source=Clazz.new_($I$(10,1));
 this.sfetcher=sfetch;
 var dbs=sfetch.getSupportedDb$();
-var ht=Clazz.new_($I$(10));
+var ht=Clazz.new_($I$(10,1));
 for (var i=0; i < dbs.length; i++) {
 tn=source.get$O(dbs[i]);
 var srcs=sfetch.getSourceProxy$S(dbs[i]);
 if (tn == null ) {
-source.put$TK$TV(dbs[i], tn=Clazz.new_($I$(9).c$$O$Z,[dbs[i], true]));
+source.put$O$O(dbs[i], tn=Clazz.new_($I$(9,1).c$$O$Z,[dbs[i], true]));
 }for (var dbp, $dbp = srcs.iterator$(); $dbp.hasNext$()&&((dbp=($dbp.next$())),1);) {
 if (ht.get$O(dbp.getDbName$()) == null ) {
-tn.add$javax_swing_tree_MutableTreeNode(Clazz.new_($I$(9).c$$O$Z,[dbp, false]));
-ht.put$TK$TV(dbp.getDbName$(), dbp.getDbName$());
+tn.add$javax_swing_tree_MutableTreeNode(Clazz.new_($I$(9,1).c$$O$Z,[dbp, false]));
+ht.put$O$O(dbp.getDbName$(), dbp.getDbName$());
 } else {
 System.err.println$S("dupe ig for : " + dbs[i] + " \t" + dbp.getDbName$() + " (" + dbp.getDbSource$() + ")" );
 source.remove$O(tn);
@@ -85,43 +68,41 @@ continue;
 var ttn=tn.getChildAt$I(0);
 tn.setUserObject$O(ttn.getUserObject$());
 tn.removeAllChildren$();
-source.put$TK$TV(dbs[i], tn);
+source.put$O$O(dbs[i], tn);
 tn.setAllowsChildren$Z(false);
 }root.add$javax_swing_tree_MutableTreeNode(tn);
 }
 p$2.sortTreeNodes$javax_swing_tree_DefaultMutableTreeNode.apply(this, [root]);
-this.dbviews=Clazz.new_($I$(11).c$$javax_swing_tree_TreeModel,[Clazz.new_($I$(12).c$$javax_swing_tree_TreeNode$Z,[root, false])]);
-this.dbviews.setCellRenderer$javax_swing_tree_TreeCellRenderer(Clazz.new_($I$(13).c$$jalview_gui_JDatabaseTree, [this, null, this]));
+this.dbviews=Clazz.new_([Clazz.new_($I$(12,1).c$$javax_swing_tree_TreeNode$Z,[root, false])],$I$(11,1).c$$javax_swing_tree_TreeModel);
+this.dbviews.setCellRenderer$javax_swing_tree_TreeCellRenderer(Clazz.new_($I$(13,1).c$$jalview_gui_JDatabaseTree,[this, null, this]));
 this.dbviews.getSelectionModel$().setSelectionMode$I(1);
-this.svp=Clazz.new_($I$(14).c$$java_awt_Component,[this.dbviews]);
-this.svp.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(15).c$$I$I,[100, 200]));
-this.svp.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(15).c$$I$I,[200, 400]));
-this.svp.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(15).c$$I$I,[300, 600]));
-var panel=Clazz.new_($I$(4).c$$java_awt_LayoutManager,[Clazz.new_($I$(5))]);
-panel.setSize$java_awt_Dimension(Clazz.new_($I$(15).c$$I$I,[350, 220]));
+this.svp=Clazz.new_($I$(14,1).c$$java_awt_Component,[this.dbviews]);
+this.svp.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(15,1).c$$I$I,[100, 200]));
+this.svp.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(15,1).c$$I$I,[200, 400]));
+this.svp.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(15,1).c$$I$I,[300, 600]));
+var panel=Clazz.new_([Clazz.new_($I$(5,1))],$I$(4,1).c$$java_awt_LayoutManager);
+panel.setSize$java_awt_Dimension(Clazz.new_($I$(15,1).c$$I$I,[350, 220]));
 panel.add$java_awt_Component(this.svp);
 this.dbviews.addTreeSelectionListener$javax_swing_event_TreeSelectionListener(((P$.JDatabaseTree$2||
-(function(){var C$=Clazz.newClass(P$, "JDatabaseTree$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.TreeSelectionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JDatabaseTree$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.TreeSelectionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['valueChanged$javax_swing_event_TreeSelectionEvent','valueChanged$'], function (arg0) {
+Clazz.newMeth(C$, 'valueChanged$javax_swing_event_TreeSelectionEvent', function (arg0) {
 p$2._setSelectionState.apply(this.b$['jalview.gui.JDatabaseTree'], []);
 });
 })()
-), Clazz.new_(P$.JDatabaseTree$2.$init$, [this, null])));
+), Clazz.new_(P$.JDatabaseTree$2.$init$,[this, null])));
 this.dbviews.addMouseListener$java_awt_event_MouseListener(((P$.JDatabaseTree$3||
-(function(){var C$=Clazz.newClass(P$, "JDatabaseTree$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JDatabaseTree$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
 if (e.getClickCount$() == 2) {
@@ -129,18 +110,18 @@ this.b$['jalview.gui.JDatabaseTree'].okPressed$.apply(this.b$['jalview.gui.JData
 this.b$['jalview.gui.JalviewDialog'].closeDialog$.apply(this.b$['jalview.gui.JalviewDialog'], []);
 }});
 })()
-), Clazz.new_($I$(16), [this, null],P$.JDatabaseTree$3)));
-var jc=Clazz.new_($I$(4).c$$java_awt_LayoutManager,[Clazz.new_($I$(5))]);
-var j=Clazz.new_($I$(4).c$$java_awt_LayoutManager,[Clazz.new_($I$(17))]);
+), Clazz.new_($I$(16,1),[this, null],P$.JDatabaseTree$3)));
+var jc=Clazz.new_([Clazz.new_($I$(5,1))],$I$(4,1).c$$java_awt_LayoutManager);
+var j=Clazz.new_([Clazz.new_($I$(17,1))],$I$(4,1).c$$java_awt_LayoutManager);
 jc.add$java_awt_Component$O(this.svp, "Center");
 var f;
-var dbstat=Clazz.new_($I$(4).c$$java_awt_LayoutManager,[Clazz.new_($I$(18).c$$I$I,[2, 1])]);
-this.dbstatus=Clazz.new_($I$(2).c$$S,[" "]);
+var dbstat=Clazz.new_([Clazz.new_($I$(18,1).c$$I$I,[2, 1])],$I$(4,1).c$$java_awt_LayoutManager);
+this.dbstatus=Clazz.new_($I$(2,1).c$$S,[" "]);
 this.dbstatus.setFont$java_awt_Font(f=$I$(3).getLabelFont$Z$Z(false, true));
-this.dbstatus.setSize$java_awt_Dimension(Clazz.new_($I$(15).c$$I$I,[290, 50]));
-this.dbstatex=Clazz.new_($I$(2).c$$S,[" "]);
+this.dbstatus.setSize$java_awt_Dimension(Clazz.new_($I$(15,1).c$$I$I,[290, 50]));
+this.dbstatex=Clazz.new_($I$(2,1).c$$S,[" "]);
 this.dbstatex.setFont$java_awt_Font(f);
-this.dbstatex.setSize$java_awt_Dimension(Clazz.new_($I$(15).c$$I$I,[290, 50]));
+this.dbstatex.setSize$java_awt_Dimension(Clazz.new_($I$(15,1).c$$I$I,[290, 50]));
 dbstat.add$java_awt_Component(this.dbstatus);
 dbstat.add$java_awt_Component(this.dbstatex);
 jc.add$java_awt_Component$O(dbstat, "South");
@@ -171,7 +152,7 @@ names[i]=(child.getUserObject$()).getDbName$().toLowerCase$();
 names[i]=(child.getUserObject$()).toLowerCase$();
 p$2.sortTreeNodes$javax_swing_tree_DefaultMutableTreeNode.apply(this, [child]);
 }} else {
-throw Clazz.new_($I$(19).c$$S,[$I$(8).getString$S("error.implementation_error_cant_reorder_tree")]);
+throw Clazz.new_([$I$(8).getString$S("error.implementation_error_cant_reorder_tree")],$I$(19,1).c$$S);
 }}
 $I$(20).sort$SA$OA(names, nodes);
 root.removeAllChildren$();
@@ -182,7 +163,7 @@ root.add$javax_swing_tree_MutableTreeNode(nodes[i]);
 
 Clazz.newMeth(C$, 'raiseClosed$', function () {
 for (var al, $al = this.lstners.iterator$(); $al.hasNext$()&&((al=($al.next$())),1);) {
-al.actionPerformed$(null);
+al.actionPerformed$java_awt_event_ActionEvent(null);
 }
 });
 
@@ -220,7 +201,7 @@ if (this.dbviews.getSelectionCount$() == 0) {
 this.selection=null;
 }this.tsel=this.dbviews.getSelectionPaths$();
 var forcedFirstChild=false;
-var srcs=Clazz.new_($I$(21));
+var srcs=Clazz.new_($I$(21,1));
 if (this.tsel != null ) {
 for (var tp, $tp = 0, $$tp = this.tsel; $tp<$$tp.length&&((tp=($$tp[$tp])),1);$tp++) {
 var admt;
@@ -228,12 +209,12 @@ var dmt=tp.getLastPathComponent$();
 if (dmt.getUserObject$() != null ) {
 this.ok.setEnabled$Z(true);
 if (Clazz.instanceOf(dmt.getUserObject$(), "jalview.ws.seqfetcher.DbSourceProxy")) {
-srcs.add$TE(dmt.getUserObject$());
+srcs.add$O(dmt.getUserObject$());
 } else {
 if (this.allowMultiSelections) {
 srcs.addAll$java_util_Collection(this.sfetcher.getSourceProxy$S(dmt.getUserObject$()));
 } else {
-srcs.add$TE(this.sfetcher.getSourceProxy$S(dmt.getUserObject$()).get$I(0));
+srcs.add$O(this.sfetcher.getSourceProxy$S(dmt.getUserObject$()).get$I(0));
 forcedFirstChild=true;
 }}}}
 }p$2.updateDbStatus$java_util_List$Z.apply(this, [srcs, forcedFirstChild]);
@@ -262,12 +243,12 @@ x++;
 }}
 this.dbstatex.setText$S(" ");
 if (this.allowMultiSelections) {
-this.dbstatus.setText$S($I$(8).formatMessage$S$SA("label.selected_database_to_fetch_from", Clazz.array(String, -1, [Integer.valueOf$I(srcs.size$()).toString(), (srcs.size$() == 1 ? "" : "s"), (srcs.size$() > 0 ? " with " + x + " test quer" + (x == 1 ? "y" : "ies")  : ".")])));
+this.dbstatus.setText$S($I$(8,"formatMessage$S$SA",["label.selected_database_to_fetch_from", Clazz.array(String, -1, [Integer.valueOf$I(srcs.size$()).toString(), (srcs.size$() == 1 ? "" : "s"), (srcs.size$() > 0 ? " with " + x + " test quer" + (x == 1 ? "y" : "ies")  : ".")])]));
 } else {
 if (nm.length$() > 0) {
-this.dbstatus.setText$S($I$(8).formatMessage$S$SA("label.database_param", Clazz.array(String, -1, [nm])));
+this.dbstatus.setText$S($I$(8,"formatMessage$S$SA",["label.database_param", Clazz.array(String, -1, [nm])]));
 if (qr.length$() > 0) {
-this.dbstatex.setText$S($I$(8).formatMessage$S$SA("label.example_param", Clazz.array(String, -1, [qr])));
+this.dbstatex.setText$S($I$(8,"formatMessage$S$SA",["label.example_param", Clazz.array(String, -1, [qr])]));
 }} else {
 this.dbstatus.setText$S(" ");
 }}this.dbstatus.invalidate$();
@@ -283,11 +264,11 @@ return this.getSelectedSources$().get$I(0).getDbName$();
 Clazz.newMeth(C$, 'getExampleQueries$', function () {
 if (!this.hasSelection$()) {
 return null;
-}var sb=Clazz.new_($I$(22));
-var hs=Clazz.new_($I$(23));
+}var sb=Clazz.new_($I$(22,1));
+var hs=Clazz.new_($I$(23,1));
 for (var dbs, $dbs = this.getSelectedSources$().iterator$(); $dbs.hasNext$()&&((dbs=($dbs.next$())),1);) {
 var tq=dbs.getTestQuery$();
-;if (hs.add$TE(tq)) {
+;if (hs.add$O(tq)) {
 if (sb.length$() > 0) {
 sb.append$S(";");
 }sb.append$S(tq);
@@ -296,7 +277,7 @@ return sb.toString();
 });
 
 Clazz.newMeth(C$, 'addActionListener$java_awt_event_ActionListener', function (actionListener) {
-this.lstners.add$TE(actionListener);
+this.lstners.add$O(actionListener);
 });
 
 Clazz.newMeth(C$, 'removeActionListener$java_awt_event_ActionListener', function (actionListener) {
@@ -324,34 +305,30 @@ System.out.println$S("setVisible: " + arg0);
 C$.superclazz.prototype.setVisible$Z.apply(this, [arg0]);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JDatabaseTree, "DbTreeRenderer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JDatabaseTree, "DbTreeRenderer", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.tree.DefaultTreeCellRenderer', 'javax.swing.tree.TreeCellRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.us=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['us','jalview.gui.JDatabaseTree']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_JDatabaseTree', function (me) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.us=me;
 $I$(1).sharedInstance$().registerComponent$javax_swing_JComponent(this.this$0.dbviews);
 }, 1);
 
 Clazz.newMeth(C$, 'returnLabel$S', function (txt) {
-var jl=Clazz.new_($I$(2).c$$S,[txt]);
+var jl=Clazz.new_($I$(2,1).c$$S,[txt]);
 jl.setFont$java_awt_Font($I$(3).getLabelFont$());
 return jl;
 }, p$1);
 
-Clazz.newMeth(C$, ['getTreeCellRendererComponent$javax_swing_JTree$O$Z$Z$Z$I$Z','getTreeCellRendererComponent$'], function (tree, value, selected, expanded, leaf, row, hasFocus) {
+Clazz.newMeth(C$, 'getTreeCellRendererComponent$javax_swing_JTree$O$Z$Z$Z$I$Z', function (tree, value, selected, expanded, leaf, row, hasFocus) {
 var val="";
 if (value != null  && Clazz.instanceOf(value, "javax.swing.tree.DefaultMutableTreeNode") ) {
 var vl=value;
@@ -373,4 +350,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

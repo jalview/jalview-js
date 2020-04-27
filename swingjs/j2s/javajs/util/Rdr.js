@@ -1,21 +1,18 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'java.io.InputStreamReader','java.io.BufferedInputStream','java.io.ByteArrayInputStream','javajs.util.Encoding',['javajs.util.Rdr','.StreamReader'],'java.io.BufferedReader','java.io.StringReader','javajs.util.AU','javajs.util.Base64','javajs.util.SB','javajs.api.Interface','java.io.OutputStream','java.io.BufferedWriter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Rdr", function(){
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'java.io.InputStreamReader','java.io.BufferedInputStream','java.io.ByteArrayInputStream','javajs.util.Encoding',['javajs.util.Rdr','.StreamReader'],'java.io.BufferedReader','java.io.StringReader','javajs.util.AU','javajs.util.Base64','javajs.util.SB','javajs.api.Interface','java.io.OutputStream','java.io.BufferedWriter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Rdr", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'javajs.api.GenericLineReader');
+C$.$classes$=[['StreamReader',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.reader=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['reader','java.io.BufferedReader']]]
 
 Clazz.newMeth(C$, 'c$$java_io_BufferedReader', function (reader) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.reader=reader;
 }, 1);
 
@@ -28,7 +25,7 @@ return parser.set$javajs_api_GenericLineReader$java_io_BufferedReader$Z(null, br
 }, 1);
 
 Clazz.newMeth(C$, 'bytesToUTF8String$BA', function (bytes) {
-return C$.streamToUTF8String$java_io_BufferedInputStream(Clazz.new_($I$(2).c$$java_io_InputStream,[Clazz.new_($I$(3).c$$BA,[bytes])]));
+return C$.streamToUTF8String$java_io_BufferedInputStream(Clazz.new_([Clazz.new_($I$(3,1).c$$BA,[bytes])],$I$(2,1).c$$java_io_InputStream));
 }, 1);
 
 Clazz.newMeth(C$, 'streamToUTF8String$java_io_BufferedInputStream', function (bis) {
@@ -45,7 +42,7 @@ return data[0];
 }, 1);
 
 Clazz.newMeth(C$, 'getBufferedReader$java_io_BufferedInputStream$S', function (bis, charSet) {
-if (C$.getUTFEncodingForStream$java_io_BufferedInputStream(bis) === $I$(4).NONE ) return Clazz.new_($I$(5).c$$java_io_BufferedInputStream$S,[bis, (charSet == null  ? "UTF-8" : charSet)]);
+if (C$.getUTFEncodingForStream$java_io_BufferedInputStream(bis) === $I$(4).NONE ) return Clazz.new_([bis, (charSet == null  ? "UTF-8" : charSet)],$I$(5,1).c$$java_io_BufferedInputStream$S);
 var bytes=C$.getLimitedStreamBytes$java_io_InputStream$J(bis, -1);
 bis.close$();
 return C$.getBR$S(charSet == null  ? C$.fixUTF$BA(bytes) :  String.instantialize(bytes, charSet));
@@ -185,14 +182,14 @@ return abMagic;
 }, 1);
 
 Clazz.newMeth(C$, 'guessMimeTypeForBytes$BA', function (bytes) {
-switch (bytes.length < 2 ? ($b$[0] = -1, $b$[0]) : ($b$[0] = bytes[1], $b$[0])) {
+switch (bytes.length < 2 ? ($b$[0] = -1, $b$[0]) : bytes[1]) {
 case 0:
 return "image/jpg";
-case 0x49:
+case 73:
 return "image/gif";
-case 0x4D:
+case 77:
 return "image/BMP";
-case 0x50:
+case 80:
 return "image/png";
 default:
 return "image/unknown";
@@ -200,11 +197,11 @@ return "image/unknown";
 }, 1);
 
 Clazz.newMeth(C$, 'getBIS$BA', function (bytes) {
-return Clazz.new_($I$(2).c$$java_io_InputStream,[Clazz.new_($I$(3).c$$BA,[bytes])]);
+return Clazz.new_([Clazz.new_($I$(3,1).c$$BA,[bytes])],$I$(2,1).c$$java_io_InputStream);
 }, 1);
 
 Clazz.newMeth(C$, 'getBR$S', function (string) {
-return Clazz.new_($I$(6).c$$java_io_Reader,[Clazz.new_($I$(7).c$$S,[string])]);
+return Clazz.new_([Clazz.new_($I$(7,1).c$$S,[string])],$I$(6,1).c$$java_io_Reader);
 }, 1);
 
 Clazz.newMeth(C$, 'toBIS$O', function (o) {
@@ -212,7 +209,7 @@ return ($I$(8).isAB$O(o) ? C$.getBIS$BA(o) : Clazz.instanceOf(o, "javajs.util.SB
 }, 1);
 
 Clazz.newMeth(C$, 'getBytesFromSB$javajs_util_SB', function (sb) {
-return (C$.isBase64$javajs_util_SB(sb) ? $I$(9).decodeBase64$S(sb.substring$I(8)) : sb.toBytes$I$I(0, -1));
+return (C$.isBase64$javajs_util_SB(sb) ? $I$(9,"decodeBase64$S",[sb.substring$I(8)]) : sb.toBytes$I$I(0, -1));
 }, 1);
 
 Clazz.newMeth(C$, 'getStreamAsBytes$java_io_BufferedInputStream$javajs_util_OC', function (bis, out) {
@@ -290,29 +287,24 @@ return (pt < 0 ? fileName : fileName.substring$I$I(0, pt));
 }, 1);
 
 Clazz.newMeth(C$, 'getBufferedWriter$java_io_OutputStream$S', function (os, charSetName) {
-var osw=$I$(11).getInstanceWithParams$S$ClassA$OA("java.io.OutputStreamWriter", Clazz.array(Class, -1, [Clazz.getClass($I$(12)), Clazz.getClass(String)]), Clazz.array(java.lang.Object, -1, [os, charSetName == null  ? "UTF-8" : charSetName]));
-return Clazz.new_($I$(13).c$$java_io_Writer,[osw]);
+var osw=$I$(11,"getInstanceWithParams$S$ClassA$OA",["java.io.OutputStreamWriter", Clazz.array(Class, -1, [Clazz.getClass($I$(12)), Clazz.getClass(String)]), Clazz.array(java.lang.Object, -1, [os, charSetName == null  ? "UTF-8" : charSetName])]);
+return Clazz.new_($I$(13,1).c$$java_io_Writer,[osw]);
 }, 1);
 var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.Rdr, "StreamReader", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Rdr, "StreamReader", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.io.BufferedReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.stream=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['stream','java.io.BufferedInputStream']]]
 
 Clazz.newMeth(C$, 'c$$java_io_BufferedInputStream$S', function (bis, charSet) {
-C$.superclazz.c$$java_io_Reader.apply(this, [Clazz.new_($I$(1).c$$java_io_InputStream$S,[bis, (charSet == null  ? "UTF-8" : charSet)])]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_Reader.apply(this,[Clazz.new_([bis, (charSet == null  ? "UTF-8" : charSet)],$I$(1,1).c$$java_io_InputStream$S)]);C$.$init$.apply(this);
 this.stream=bis;
 }, 1);
 
@@ -333,4 +325,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

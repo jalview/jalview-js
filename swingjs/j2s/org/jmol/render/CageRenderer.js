@@ -1,33 +1,25 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'javajs.util.P3','javajs.util.BS','javajs.util.Measure','org.jmol.util.BoxInfo']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CageRenderer", null, 'org.jmol.render.FontLineShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'javajs.util.P3','javajs.util.BS','javajs.util.Measure','org.jmol.util.BoxInfo']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CageRenderer", null, 'org.jmol.render.FontLineShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.p3Screens=null;
-this.tickEdges=null;
-this.isSlab=false;
-this.isPolymer=false;
-this.pt=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.p3Screens=Clazz.array($I$(1), [8]);
 {
-for (var i=8; --i >= 0; ) this.p3Screens[i]=Clazz.new_($I$(1));
+for (var i=8; --i >= 0; ) this.p3Screens[i]=Clazz.new_($I$(1,1));
 
 }
-this.pt=Clazz.new_($I$(1));
-}, 1);
+this.pt=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['isSlab','isPolymer'],'O',['p3Screens','javajs.util.P3[]','tickEdges','char[]','pt','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'renderCage$I$javajs_util_P3A$IAA$javajs_util_P3A$I$I$I$F', function (mad, vertices, faces, axisPoints, firstLine, allowedEdges0, allowedEdges1, scale) {
 this.g3d.setC$H(this.colix);
 var fls=this.shape;
 var hiddenLines=(faces != null );
 this.imageFontScaling=this.vwr.imageFontScaling;
-this.font3d=this.vwr.gdata.getFont3DScaled$javajs_awt_Font$F(fls.font3d, this.imageFontScaling);
+this.font3d=this.vwr.gdata.getFont3DScaled$org_jmol_util_Font$F(fls.font3d, this.imageFontScaling);
 var zSum=0;
 for (var i=8; --i >= 0; ) {
 this.pt.setT$javajs_util_T3(vertices[i]);
@@ -39,7 +31,7 @@ zSum += this.p3Screens[i].z;
 }
 var bsSolid=null;
 if (hiddenLines) {
-bsSolid=Clazz.new_($I$(2));
+bsSolid=Clazz.new_($I$(2,1));
 for (var i=12; --i >= 0; ) {
 var face=faces[i];
 $I$(3).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(this.p3Screens[face[0]], this.p3Screens[face[1]], this.p3Screens[face[2]], this.pt1, this.pt);
@@ -87,4 +79,4 @@ if (this.tickInfo == null ) drawTicks=false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

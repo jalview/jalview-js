@@ -1,34 +1,29 @@
-(function(){var P$=Clazz.newPackage("javax.swing.table"),I$=[[0,['javax.swing.table.TableRowSorter','.TableRowSorterModelWrapper'],['javax.swing.table.TableRowSorter','.StringComparator'],['javax.swing.table.TableRowSorter','.ComparableComparator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TableRowSorter", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.table"),I$=[[0,['javax.swing.table.TableRowSorter','.TableRowSorterModelWrapper'],['javax.swing.table.TableRowSorter','.StringComparator'],['javax.swing.table.TableRowSorter','.ComparableComparator']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TableRowSorter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.DefaultRowSorter');
-C$.COMPARABLE_COMPARATOR=null;
-C$.STRING_COMPARATOR=null;
+C$.$classes$=[['TableRowSorterModelWrapper',2],['StringComparator',10],['ComparableComparator',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tableModel=null;
-this.stringConverter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['tableModel','<M extends javax.swing.table.TableModel>','stringConverter','javax.swing.table.TableStringConverter']]
+,['O',['COMPARABLE_COMPARATOR','java.util.Comparator','+STRING_COMPARATOR']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.c$$TM.apply(this, [null]);
+C$.c$$javax_swing_table_TableModel.apply(this, [null]);
 }, 1);
 
-Clazz.newMeth(C$, ['c$$TM'], function (model) {
-Clazz.super_(C$, this,1);
-this.setModel$TM(model);
+Clazz.newMeth(C$, 'c$$javax_swing_table_TableModel', function (model) {
+Clazz.super_(C$, this);
+this.setModel$javax_swing_table_TableModel(model);
 }, 1);
 
-Clazz.newMeth(C$, ['setModel$TM'], function (model) {
+Clazz.newMeth(C$, 'setModel$javax_swing_table_TableModel', function (model) {
 this.tableModel=model;
-this.setModelWrapper$javax_swing_DefaultRowSorter_ModelWrapper(Clazz.new_($I$(1), [this, null]));
+this.setModelWrapper$javax_swing_DefaultRowSorter_ModelWrapper(Clazz.new_($I$(1,1),[this, null]));
 });
 
 Clazz.newMeth(C$, 'setStringConverter$javax_swing_table_TableStringConverter', function (stringConverter) {
@@ -45,10 +40,10 @@ if (comparator != null ) {
 return comparator;
 }var columnClass=this.getModel$().getColumnClass$I(column);
 if (columnClass === Clazz.getClass(String) ) {
-if (C$.STRING_COMPARATOR == null ) C$.STRING_COMPARATOR=Clazz.new_($I$(2));
+if (C$.STRING_COMPARATOR == null ) C$.STRING_COMPARATOR=Clazz.new_($I$(2,1));
 return C$.STRING_COMPARATOR;
-}if (Clazz.getClass(Comparable,['compareTo$TT']).isAssignableFrom$Class(columnClass)) {
-if (C$.COMPARABLE_COMPARATOR == null ) C$.COMPARABLE_COMPARATOR=Clazz.new_($I$(3));
+}if (Clazz.getClass(Comparable,['compareTo$O']).isAssignableFrom$Class(columnClass)) {
+if (C$.COMPARABLE_COMPARATOR == null ) C$.COMPARABLE_COMPARATOR=Clazz.new_($I$(3,1));
 return C$.COMPARABLE_COMPARATOR;
 }return null;
 });
@@ -60,20 +55,19 @@ return false;
 }var columnClass=this.getModel$().getColumnClass$I(column);
 if (columnClass === Clazz.getClass(String) ) {
 return false;
-}if (Clazz.getClass(Comparable,['compareTo$TT']).isAssignableFrom$Class(columnClass)) {
+}if (Clazz.getClass(Comparable,['compareTo$O']).isAssignableFrom$Class(columnClass)) {
 return false;
 }return true;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.TableRowSorter, "TableRowSorterModelWrapper", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TableRowSorter, "TableRowSorterModelWrapper", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.DefaultRowSorter','.ModelWrapper']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getModel$', function () {
 return this.this$0.tableModel;
@@ -92,7 +86,7 @@ return this.this$0.tableModel.getValueAt$I$I(row, column);
 });
 
 Clazz.newMeth(C$, 'getStringValueAt$I$I', function (row, column) {
-var converter=this.b$['javax.swing.table.TableRowSorter'].getStringConverter$.apply(this.b$['javax.swing.table.TableRowSorter'], []);
+var converter=this.this$0.getStringConverter$.apply(this.this$0, []);
 if (converter != null ) {
 var value=converter.toString$javax_swing_table_TableModel$I$I(this.this$0.tableModel, row, column);
 if (value != null ) {
@@ -114,38 +108,36 @@ return new Integer(index);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.TableRowSorter, "StringComparator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TableRowSorter, "StringComparator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Comparator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['compare$O$O','compare$','compare$TT$TT'], function (o1, o2) {
+Clazz.newMeth(C$, 'compare$O$O', function (o1, o2) {
 return (o1).compareTo$S(o2);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.TableRowSorter, "ComparableComparator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TableRowSorter, "ComparableComparator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Comparator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['compare$O$O','compare$','compare$TT$TT'], function (o1, o2) {
-return (o1).compareTo$(o2);
+Clazz.newMeth(C$, 'compare$O$O', function (o1, o2) {
+return (o1).compareTo$O(o2);
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

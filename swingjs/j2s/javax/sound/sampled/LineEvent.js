@@ -1,23 +1,18 @@
 (function(){var P$=Clazz.newPackage("javax.sound.sampled"),I$=[];
-var C$=Clazz.newClass(P$, "LineEvent", function(){
+/*c*/var C$=Clazz.newClass(P$, "LineEvent", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.EventObject');
+C$.$classes$=[['Type',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.position=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['position'],'O',['type','javax.sound.sampled.LineEvent.Type']]]
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_Line$javax_sound_sampled_LineEvent_Type$J', function (line, type, position) {
-C$.superclazz.c$$O.apply(this, [line]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O.apply(this,[line]);C$.$init$.apply(this);
 this.type=type;
 this.position=position;
 }, 1);
@@ -45,31 +40,20 @@ sLine=this.getLine$().toString();
 }return  String.instantialize(sType + "event from line " + sLine );
 });
 ;
-(function(){var C$=Clazz.newClass(P$.LineEvent, "Type", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.LineEvent, "Type", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.OPEN=null;
-C$.CLOSE=null;
-C$.START=null;
-C$.STOP=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.OPEN=Clazz.new_(C$.c$$S,["Open"]);
-C$.CLOSE=Clazz.new_(C$.c$$S,["Close"]);
-C$.START=Clazz.new_(C$.c$$S,["Start"]);
-C$.STOP=Clazz.new_(C$.c$$S,["Stop"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name']]
+,['O',['OPEN','javax.sound.sampled.LineEvent.Type','+CLOSE','+START','+STOP']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 }, 1);
 
@@ -85,9 +69,16 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.name;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.OPEN=Clazz.new_(C$.c$$S,["Open"]);
+C$.CLOSE=Clazz.new_(C$.c$$S,["Close"]);
+C$.START=Clazz.new_(C$.c$$S,["Start"]);
+C$.STOP=Clazz.new_(C$.c$$S,["Stop"]);
+};
+
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

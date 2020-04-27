@@ -1,7 +1,107 @@
-(function(){var P$=java.util,I$=[[0,'swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Random", null, null, 'java.io.Serializable');
+(function(){var P$=java.util,I$=[[0,'swingjs.JSUtil']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Random", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+this.haveNextNextGaussian=false;
+this.nextNextGaussian=0;
+},1);
+
+C$.$fields$=[['Z',['haveNextNextGaussian'],'D',['nextNextGaussian'],'J',['seed']]]
+
+Clazz.newMeth(C$, 'c$', function () {
+;C$.$init$.apply(this);
+this.setSeed$J(System.currentTimeMillis$());
+}, 1);
+
+Clazz.newMeth(C$, 'c$$J', function (seed) {
+;C$.$init$.apply(this);
+this.setSeed$J(seed);
+}, 1);
+
+Clazz.newMeth(C$, 'next$I', function (bits) {
+this.seed=(this.seed * 25214903917 + 11) & (281474976710655);
+return ((this.seed >>> (48 - bits))|0);
+});
+
+Clazz.newMeth(C$, 'nextBoolean$', function () {
+{
+return Math.random () > 0.5;
+}
+});
+
+Clazz.newMeth(C$, 'nextBytes$BA', function (buf) {
+{
+var rand=0;
+var count=0;
+var loop=0;
+while (count < buf.length){
+if (loop == 0) {
+rand=this.nextInt$();
+loop=3;
+} else {
+loop--;
+}buf[count++]=(rand|0);
+rand>>=8;
+}
+}});
+
+Clazz.newMeth(C$, 'nextDouble$', function () {
+{
+return Math.random ();
+}
+});
+
+Clazz.newMeth(C$, 'nextFloat$', function () {
+{
+return Math.random ();
+}
+});
+
+Clazz.newMeth(C$, 'nextGaussian$', function () {
+if (this.haveNextNextGaussian) {
+this.haveNextNextGaussian=false;
+return this.nextNextGaussian;
+}var v1;
+var v2;
+var s;
+do {
+v1=2 * this.nextDouble$() - 1;
+v2=2 * this.nextDouble$() - 1;
+s=v1 * v1 + v2 * v2;
+} while (s >= 1 );
+var norm=Math.sqrt(-2 * Math.log(s) / s);
+this.nextNextGaussian=v2 * norm;
+this.haveNextNextGaussian=true;
+return v1 * norm;
+});
+
+Clazz.newMeth(C$, 'nextInt$', function () {
+{
+return Math.random()*0x100000000 | 0;
+}
+});
+
+Clazz.newMeth(C$, 'nextInt$I', function (n) {
+if (n > 0) {
+{
+return Math.random() * n|0
+}
+}throw Clazz.new_(Clazz.load('IllegalArgumentException'));
+});
+
+Clazz.newMeth(C$, 'nextLong$', function () {
+$I$(1).notImplemented$S(null);
+return this.nextInt$();
+});
+
+Clazz.newMeth(C$, 'setSeed$J', function (seed) {
+
+Math.seedrandom(seed);
+});
+
+C$.$static$=function(){C$.$static$=0;
 {
 
 (function (pool, math, width, chunks, significance, overflow, startdenom) { var copyright = "Copyright 2010 David Bau, all rights reserved. (BSD)" //
@@ -119,109 +219,6 @@ Math, // math: package containing random, pow, and seedrandom
 52    // significance: there are 52 significant digits in a double
 );
 };
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.haveNextNextGaussian=false;
-this.seed=0;
-this.nextNextGaussian=0;
-}, 1);
-
-Clazz.newMeth(C$, '$init$', function () {
-this.haveNextNextGaussian=false;
-this.nextNextGaussian=0;
-}, 1);
-
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.setSeed$J(System.currentTimeMillis$());
-}, 1);
-
-Clazz.newMeth(C$, 'c$$J', function (seed) {
-C$.$init$.apply(this);
-this.setSeed$J(seed);
-}, 1);
-
-Clazz.newMeth(C$, 'next$I', function (bits) {
-this.seed=(this.seed * 25214903917 + 11) & (281474976710655);
-return ((this.seed >>> (48 - bits))|0);
-});
-
-Clazz.newMeth(C$, 'nextBoolean$', function () {
-{
-return Math.random () > 0.5;
-}
-});
-
-Clazz.newMeth(C$, 'nextBytes$BA', function (buf) {
-{
-var rand=0;
-var count=0;
-var loop=0;
-while (count < buf.length){
-if (loop == 0) {
-rand=this.nextInt$();
-loop=3;
-} else {
-loop--;
-}buf[count++]=((rand|0)|0);
-rand>>=8;
-}
-}});
-
-Clazz.newMeth(C$, 'nextDouble$', function () {
-{
-return Math.random ();
-}
-});
-
-Clazz.newMeth(C$, 'nextFloat$', function () {
-{
-return Math.random ();
-}
-});
-
-Clazz.newMeth(C$, 'nextGaussian$', function () {
-if (this.haveNextNextGaussian) {
-this.haveNextNextGaussian=false;
-return this.nextNextGaussian;
-}var v1;
-var v2;
-var s;
-do {
-v1=2 * this.nextDouble$() - 1;
-v2=2 * this.nextDouble$() - 1;
-s=v1 * v1 + v2 * v2;
-} while (s >= 1 );
-var norm=Math.sqrt(-2 * Math.log(s) / s);
-this.nextNextGaussian=v2 * norm;
-this.haveNextNextGaussian=true;
-return v1 * norm;
-});
-
-Clazz.newMeth(C$, 'nextInt$', function () {
-{
-return Math.random()*0x100000000 | 0;
-}
-});
-
-Clazz.newMeth(C$, 'nextInt$I', function (n) {
-if (n > 0) {
-{
-return Math.random() * n|0
-}
-}throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-});
-
-Clazz.newMeth(C$, 'nextLong$', function () {
-$I$(1).notImplemented$S(null);
-return this.nextInt$();
-});
-
-Clazz.newMeth(C$, 'setSeed$J', function (seed) {
-
-Math.seedrandom(seed);
-});
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

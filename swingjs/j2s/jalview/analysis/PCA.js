@@ -1,24 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'jalview.datamodel.Point','StringBuilder','jalview.bin.Cache','java.io.PrintStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PCA", null, null, 'Runnable');
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'jalview.datamodel.Point','StringBuilder','jalview.bin.Cache','java.io.PrintStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PCA", null, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seqs=null;
-this.scoreModel=null;
-this.similarityParams=null;
-this.pairwiseScores=null;
-this.tridiagonal=null;
-this.eigenMatrix=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['seqs','jalview.datamodel.AlignmentView','scoreModel','jalview.api.analysis.ScoreModelI','similarityParams','jalview.api.analysis.SimilarityParamsI','pairwiseScores','jalview.math.MatrixI','+tridiagonal','+eigenMatrix']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentView$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI', function (sequences, sm, options) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.seqs=sequences;
 this.scoreModel=sm;
 this.similarityParams=options;
@@ -34,7 +25,7 @@ for (var i=0; i < this.getHeight$(); i++) {
 var x=this.component$I$I(i, l) * factor;
 var y=this.component$I$I(i, n) * factor;
 var z=this.component$I$I(i, mm) * factor;
-out[i]=Clazz.new_($I$(1).c$$F$F$F,[x, y, z]);
+out[i]=Clazz.new_($I$(1,1).c$$F$F$F,[x, y, z]);
 }
 return out;
 });
@@ -56,7 +47,7 @@ return out / this.eigenMatrix.getD$()[n];
 });
 
 Clazz.newMeth(C$, 'getDetails$', function () {
-var sb=Clazz.new_($I$(2).c$$I,[1024]);
+var sb=Clazz.new_($I$(2,1).c$$I,[1024]);
 sb.append$S("PCA calculation using ").append$S(this.scoreModel.getName$()).append$S(" sequence similarity matrix\n========\n\n");
 var ps=this.wrapOutputBuffer$StringBuilder(sb);
 sb.append$S(" --- OrigT * Orig ---- \n");
@@ -95,13 +86,12 @@ throw q;
 
 Clazz.newMeth(C$, 'wrapOutputBuffer$StringBuilder', function (sb) {
 var ps=((P$.PCA$1||
-(function(){var C$=Clazz.newClass(P$, "PCA$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "PCA$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'print$S', function (x) {
 this.$finals$.sb.append$S(x);
@@ -111,7 +101,7 @@ Clazz.newMeth(C$, 'println$', function () {
 this.$finals$.sb.append$S("\n");
 });
 })()
-), Clazz.new_($I$(4).c$$java_io_OutputStream, [this, {sb: sb}, System.out],P$.PCA$1));
+), Clazz.new_($I$(4,1).c$$java_io_OutputStream,[this, {sb:sb}, System.out],P$.PCA$1));
 return ps;
 });
 
@@ -145,4 +135,4 @@ this.tridiagonal=tridiagonal;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

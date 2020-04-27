@@ -1,44 +1,22 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Entry");
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Entry");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.accession=null;
-this.name=null;
-this.protein=null;
-this.gene=null;
-this.organism=null;
-this.organismHost=null;
-this.geneLocation=null;
-this.reference=null;
-this.comment=null;
-this.dbReference=null;
-this.proteinExistence=null;
-this.keyword=null;
-this.feature=null;
-this.evidence=null;
-this.sequence=null;
-this.dataset=null;
-this.created=null;
-this.modified=null;
-this.version=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['version'],'S',['dataset'],'O',['accession','java.util.List','+name','protein','jalview.xml.binding.uniprot.ProteinType','gene','java.util.List','organism','jalview.xml.binding.uniprot.OrganismType','organismHost','java.util.List','+geneLocation','+reference','+comment','+dbReference','proteinExistence','jalview.xml.binding.uniprot.ProteinExistenceType','keyword','java.util.List','+feature','+evidence','sequence','jalview.xml.binding.uniprot.SequenceType','created','javax.xml.datatype.XMLGregorianCalendar','+modified']]]
 
 Clazz.newMeth(C$, 'getAccession$', function () {
 if (this.accession == null ) {
-this.accession=Clazz.new_($I$(1));
+this.accession=Clazz.new_($I$(1,1));
 }return this.accession;
 });
 
 Clazz.newMeth(C$, 'getName$', function () {
 if (this.name == null ) {
-this.name=Clazz.new_($I$(1));
+this.name=Clazz.new_($I$(1,1));
 }return this.name;
 });
 
@@ -52,7 +30,7 @@ this.protein=value;
 
 Clazz.newMeth(C$, 'getGene$', function () {
 if (this.gene == null ) {
-this.gene=Clazz.new_($I$(1));
+this.gene=Clazz.new_($I$(1,1));
 }return this.gene;
 });
 
@@ -66,31 +44,31 @@ this.organism=value;
 
 Clazz.newMeth(C$, 'getOrganismHost$', function () {
 if (this.organismHost == null ) {
-this.organismHost=Clazz.new_($I$(1));
+this.organismHost=Clazz.new_($I$(1,1));
 }return this.organismHost;
 });
 
 Clazz.newMeth(C$, 'getGeneLocation$', function () {
 if (this.geneLocation == null ) {
-this.geneLocation=Clazz.new_($I$(1));
+this.geneLocation=Clazz.new_($I$(1,1));
 }return this.geneLocation;
 });
 
 Clazz.newMeth(C$, 'getReference$', function () {
 if (this.reference == null ) {
-this.reference=Clazz.new_($I$(1));
+this.reference=Clazz.new_($I$(1,1));
 }return this.reference;
 });
 
 Clazz.newMeth(C$, 'getComment$', function () {
 if (this.comment == null ) {
-this.comment=Clazz.new_($I$(1));
+this.comment=Clazz.new_($I$(1,1));
 }return this.comment;
 });
 
 Clazz.newMeth(C$, 'getDbReference$', function () {
 if (this.dbReference == null ) {
-this.dbReference=Clazz.new_($I$(1));
+this.dbReference=Clazz.new_($I$(1,1));
 }return this.dbReference;
 });
 
@@ -104,19 +82,19 @@ this.proteinExistence=value;
 
 Clazz.newMeth(C$, 'getKeyword$', function () {
 if (this.keyword == null ) {
-this.keyword=Clazz.new_($I$(1));
+this.keyword=Clazz.new_($I$(1,1));
 }return this.keyword;
 });
 
 Clazz.newMeth(C$, 'getFeature$', function () {
 if (this.feature == null ) {
-this.feature=Clazz.new_($I$(1));
+this.feature=Clazz.new_($I$(1,1));
 }return this.feature;
 });
 
 Clazz.newMeth(C$, 'getEvidence$', function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
 
@@ -159,27 +137,28 @@ return this.version;
 Clazz.newMeth(C$, 'setVersion$I', function (value) {
 this.version=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.Entry'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"accession"  "name"  "protein"  "gene"  "organism"  "organismHost"  "geneLocation"  "reference"  "comment"  "dbReference"  "proteinExistence"  "keyword"  "feature"  "evidence"  "sequence"  } )','@XmlRootElement(name="entry" )']],
-  [['accession','java.util.List<java.lang.String>'],['@XmlElement(required="true" )']],
-  [['name','.'],['@XmlElement(required="true" )']],
-  [['protein','jalview.xml.binding.uniprot.ProteinType'],['@XmlElement(required="true" )']],
-  [['organism','jalview.xml.binding.uniprot.OrganismType'],['@XmlElement(required="true" )']],
-  [['reference','java.util.List<jalview.xml.binding.uniprot.ReferenceType>'],['@XmlElement(required="true" )']],
-  [['comment','java.util.List<jalview.xml.binding.uniprot.CommentType>'],['@XmlElement(nillable="true" )']],
-  [['proteinExistence','jalview.xml.binding.uniprot.ProteinExistenceType'],['@XmlElement(required="true" )']],
-  [['sequence','jalview.xml.binding.uniprot.SequenceType'],['@XmlElement(required="true" )']],
-  [['dataset','String'],['@XmlAttribute(name="dataset" required="true" )']],
-  [['created','javax.xml.datatype.XMLGregorianCalendar'],['@XmlAttribute(name="created" required="true" )','@XmlSchemaType(name="date" )']],
-  [['modified','.'],['@XmlAttribute(name="modified" required="true" )','@XmlSchemaType(name="date" )']],
-  [['version','int'],['@XmlAttribute(name="version" required="true" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.Entry',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType','javax.xml.bind.annotation.XmlRootElement']],['XmlAccessType.FIELD','name="" propOrder={"accession"  "name"  "protein"  "gene"  "organism"  "organismHost"  "geneLocation"  "reference"  "comment"  "dbReference"  "proteinExistence"  "keyword"  "feature"  "evidence"  "sequence"  } ','name="entry" ']],
+  [['accession','java.util.List<java.lang.String>',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['name','.',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['protein','jalview.xml.binding.uniprot.ProteinType',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['organism','jalview.xml.binding.uniprot.OrganismType',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['reference','java.util.List<jalview.xml.binding.uniprot.ReferenceType>',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['comment','java.util.List<jalview.xml.binding.uniprot.CommentType>',null,['javax.xml.bind.annotation.XmlElement']],['nillable="true" ']],
+  [['proteinExistence','jalview.xml.binding.uniprot.ProteinExistenceType',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['sequence','jalview.xml.binding.uniprot.SequenceType',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['dataset','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="dataset" required="true" ']],
+  [['created','javax.xml.datatype.XMLGregorianCalendar',null,['javax.xml.bind.annotation.XmlAttribute','javax.xml.bind.annotation.XmlSchemaType']],['name="created" required="true" ','name="date" ']],
+  [['modified','.',null,['javax.xml.bind.annotation.XmlAttribute','javax.xml.bind.annotation.XmlSchemaType']],['name="modified" required="true" ','name="date" ']],
+  [['version','int',null,['javax.xml.bind.annotation.XmlAttribute']],['name="version" required="true" ']],
   [['gene','java.util.List<jalview.xml.binding.uniprot.GeneType>'],['@XmlElement']],
   [['organismHost','java.util.List<jalview.xml.binding.uniprot.OrganismType>'],['@XmlElement']],
   [['geneLocation','java.util.List<jalview.xml.binding.uniprot.GeneLocationType>'],['@XmlElement']],
   [['dbReference','java.util.List<jalview.xml.binding.uniprot.DbReferenceType>'],['@XmlElement']],
   [['keyword','java.util.List<jalview.xml.binding.uniprot.KeywordType>'],['@XmlElement']],
   [['feature','java.util.List<jalview.xml.binding.uniprot.FeatureType>'],['@XmlElement']],
-  [['evidence','java.util.List<jalview.xml.binding.uniprot.EvidenceType>'],['@XmlElement']]];
+  [['evidence','java.util.List<jalview.xml.binding.uniprot.EvidenceType>'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

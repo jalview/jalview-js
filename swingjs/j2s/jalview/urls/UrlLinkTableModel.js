@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.urls"),I$=[[0,'jalview.urls.UrlLinkDisplay','jalview.bin.Cache','jalview.util.UrlLink']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UrlLinkTableModel", null, 'javax.swing.table.AbstractTableModel');
+(function(){var P$=Clazz.newPackage("jalview.urls"),I$=[[0,'jalview.urls.UrlLinkDisplay','jalview.bin.Cache','jalview.util.UrlLink']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UrlLinkTableModel", null, 'javax.swing.table.AbstractTableModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.data=null;
-this.dataProvider=null;
-this.displayColumns=null;
-this.primaryRow=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['primaryRow'],'O',['data','java.util.List','dataProvider','jalview.urls.api.UrlProviderI','displayColumns','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$jalview_urls_api_UrlProviderI', function (baseData) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.dataProvider=baseData;
 this.data=baseData.getLinksForTable$();
 this.displayColumns=$I$(1).getDisplayColumnNames$();
@@ -29,15 +22,14 @@ break;
 this.primaryRow++;
 }}
 this.addTableModelListener$javax_swing_event_TableModelListener(((P$.UrlLinkTableModel$1||
-(function(){var C$=Clazz.newClass(P$, "UrlLinkTableModel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.TableModelListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "UrlLinkTableModel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.TableModelListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['tableChanged$javax_swing_event_TableModelEvent','tableChanged$'], function (e) {
+Clazz.newMeth(C$, 'tableChanged$javax_swing_event_TableModelEvent', function (e) {
 try {
 this.b$['jalview.urls.UrlLinkTableModel'].dataProvider.setUrlData$java_util_List(this.b$['jalview.urls.UrlLinkTableModel'].data);
 } catch (ex) {
@@ -49,7 +41,7 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.UrlLinkTableModel$1.$init$, [this, null])));
+), Clazz.new_(P$.UrlLinkTableModel$1.$init$,[this, null])));
 }, 1);
 
 Clazz.newMeth(C$, 'getRowCount$', function () {
@@ -108,10 +100,10 @@ this.primaryRow--;
 });
 
 Clazz.newMeth(C$, 'insertRow$S$S', function (name, url) {
-var link=Clazz.new_($I$(3).c$$S$S$S,[name, url, name]);
-var u=Clazz.new_($I$(1).c$$S$jalview_util_UrlLink$Z$Z,[name, link, true, false]);
+var link=Clazz.new_($I$(3,1).c$$S$S$S,[name, url, name]);
+var u=Clazz.new_($I$(1,1).c$$S$jalview_util_UrlLink$Z$Z,[name, link, true, false]);
 var index=this.data.size$();
-this.data.add$TE(u);
+this.data.add$O(u);
 this.fireTableRowsInserted$I$I(index, index);
 return index;
 });
@@ -150,4 +142,4 @@ return !this.dataProvider.contains$S(name);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

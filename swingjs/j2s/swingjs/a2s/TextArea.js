@@ -1,18 +1,12 @@
-(function(){var P$=Clazz.newPackage("swingjs.a2s"),p$1={},I$=[[0,'java.awt.AWTEventMulticaster','java.awt.event.TextListener']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TextArea", null, 'javax.swing.JTextArea');
+(function(){var P$=Clazz.newPackage("swingjs.a2s"),p$1={},I$=[[0,'java.awt.AWTEventMulticaster','java.awt.event.TextListener']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TextArea", null, 'javax.swing.JTextArea');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.textListener=null;
-this.horizontalScrollBarPolicy=0;
-this.verticalScrollBarPolicy=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['horizontalScrollBarPolicy','verticalScrollBarPolicy'],'O',['textListener','java.awt.event.TextListener']]]
 
 Clazz.newMeth(C$, 'isAWT$', function () {
 });
@@ -34,8 +28,7 @@ C$.c$$S$I$I$I.apply(this, [text, rows, cols, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I$I$I', function (text, rows, columns, scrollbars) {
-C$.superclazz.c$$S$I$I.apply(this, [text, rows < 0 ? 0 : rows, columns < 0 ? 0 : columns]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$I$I.apply(this,[text, rows < 0 ? 0 : rows, columns < 0 ? 0 : columns]);C$.$init$.apply(this);
 this.setWrapStyleWord$Z(false);
 this.setLineWrap$Z(false);
 switch (scrollbars) {
@@ -45,6 +38,7 @@ p$1.setHorizontalScrollBarPolicy$I.apply(this, [30]);
 break;
 case 1:
 this.setLineWrap$Z(true);
+this.setWrapStyleWord$Z(true);
 p$1.setVerticalScrollBarPolicy$I.apply(this, [20]);
 p$1.setHorizontalScrollBarPolicy$I.apply(this, [31]);
 break;
@@ -53,6 +47,8 @@ p$1.setVerticalScrollBarPolicy$I.apply(this, [21]);
 p$1.setHorizontalScrollBarPolicy$I.apply(this, [30]);
 break;
 case 3:
+this.setLineWrap$Z(true);
+this.setWrapStyleWord$Z(true);
 p$1.setVerticalScrollBarPolicy$I.apply(this, [21]);
 p$1.setHorizontalScrollBarPolicy$I.apply(this, [31]);
 break;
@@ -68,7 +64,7 @@ var old=this.verticalScrollBarPolicy;
 this.verticalScrollBarPolicy=policy;
 this.firePropertyChange$S$I$I("verticalScrollBarPolicy", old, policy);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }, p$1);
 
 Clazz.newMeth(C$, 'getHorizontalScrollBarPolicy$', function () {
@@ -80,7 +76,7 @@ var old=this.horizontalScrollBarPolicy;
 this.horizontalScrollBarPolicy=policy;
 this.firePropertyChange$S$I$I("horizontalScrollBarPolicy", old, policy);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }, p$1);
 
 Clazz.newMeth(C$, 'getScrollbarVisibility$', function () {
@@ -167,14 +163,12 @@ Clazz.newMeth(C$, 'setTextFromUI$S', function (t) {
 C$.superclazz.prototype.setText$S.apply(this, [t]);
 });
 
-Clazz.newMeth(C$, 'setText$S', function (t) {
-var top=this.ui.domNode.scrollTop ||0;
-C$.superclazz.prototype.setText$S.apply(this, [t]);
-
-this.ui.domNode.scrollTop = top
+Clazz.newMeth(C$, 'appendText$S', function (str) {
+C$.superclazz.prototype.append$S.apply(this, [str]);
+p$1.toEnd.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'appendText$S', function (str) {
+Clazz.newMeth(C$, 'append$S', function (str) {
 C$.superclazz.prototype.append$S.apply(this, [str]);
 p$1.toEnd.apply(this, []);
 });
@@ -182,15 +176,11 @@ p$1.toEnd.apply(this, []);
 Clazz.newMeth(C$, 'toEnd', function () {
 C$.superclazz.prototype.setCaretPosition$I.apply(this, [C$.superclazz.prototype.getText$.apply(this, []).length$()]);
 C$.superclazz.prototype.requestFocusInWindow$.apply(this, []);
+this.firePropertyChange$S$O$O("JSToEnd", null, "JSToEnd");
 }, p$1);
-
-Clazz.newMeth(C$, 'append$S', function (str) {
-C$.superclazz.prototype.append$S.apply(this, [str]);
-p$1.toEnd.apply(this, []);
-});
 
 Clazz.newMeth(C$, 'replaceText$S$I$I', function (str, start, end) {
 C$.superclazz.prototype.replaceRange$S$I$I.apply(this, [str, start, end]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

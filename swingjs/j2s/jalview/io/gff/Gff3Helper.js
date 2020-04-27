@@ -1,23 +1,22 @@
-(function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[[0,'jalview.io.gff.SequenceOntologyFactory','jalview.datamodel.MappingType','jalview.datamodel.SequenceFeature','jalview.util.StringUtils','jalview.util.MapList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Gff3Helper", null, 'jalview.io.gff.GffHelperBase');
+(function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[[0,'jalview.io.gff.GffHelperBase','jalview.io.gff.SequenceOntologyFactory','jalview.datamodel.MappingType','jalview.datamodel.SequenceFeature','jalview.util.StringUtils','jalview.util.MapList']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Gff3Helper", null, 'jalview.io.gff.GffHelperBase');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'parseNameValuePairs$S', function (text) {
-return P$.GffHelperBase.parseNameValuePairs$S$S$C$S(text, ";", "=", ",");
+return $I$(1,"parseNameValuePairs$S$S$C$S",[text, ";", "=", ","]);
 }, 1);
 
-Clazz.newMeth(C$, ['processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z','processGff$'], function (seq, gff, align, newseqs, relaxedIdMatching) {
+Clazz.newMeth(C$, 'processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z', function (seq, gff, align, newseqs, relaxedIdMatching) {
 var sf=null;
 if (gff.length == 9) {
 var soTerm=gff[2];
 var atts=gff[8];
 var attributes=C$.parseNameValuePairs$S(atts);
-var so=$I$(1).getInstance$();
+var so=$I$(2).getInstance$();
 if (so.isA$S$S(soTerm, "protein_match")) {
 sf=this.processProteinMatch$java_util_Map$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z(attributes, seq, gff, align, newseqs, relaxedIdMatching);
 } else if (so.isA$S$S(soTerm, "nucleotide_match")) {
@@ -58,7 +57,7 @@ toStart=toEnd;
 toEnd=temp;
 }var fromStart=Integer.parseInt$S(gffColumns[3]);
 var fromEnd=Integer.parseInt$S(gffColumns[4]);
-var mapping=this.constructMappingFromAlign$I$I$I$I$jalview_datamodel_MappingType(fromStart, fromEnd, toStart, toEnd, $I$(2).NucleotideToNucleotide);
+var mapping=this.constructMappingFromAlign$I$I$I$I$jalview_datamodel_MappingType(fromStart, fromEnd, toStart, toEnd, $I$(3).NucleotideToNucleotide);
 if (mapping != null ) {
 acf.addMap$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList(seq, mappedSequence, mapping);
 align.addCodonFrame$jalview_datamodel_AlignedCodonFrame(acf);
@@ -88,9 +87,9 @@ var mappedSequence=mappedSequence1;
 if (mappedSequence == null ) {
 continue;
 }var sequenceFeatureLength=1 + sf.getEnd$() - sf.getBegin$();
-var sf2=Clazz.new_($I$(3).c$$jalview_datamodel_SequenceFeature$I$I$S$F,[sf, 1, sequenceFeatureLength, sf.getFeatureGroup$(), sf.getScore$()]);
+var sf2=Clazz.new_([sf, 1, sequenceFeatureLength, sf.getFeatureGroup$(), sf.getScore$()],$I$(4,1).c$$jalview_datamodel_SequenceFeature$I$I$S$F);
 mappedSequence.addSequenceFeature$jalview_datamodel_SequenceFeature(sf2);
-var accessionId=$I$(4).listToDelimitedString$java_util_List$S(set.get$O("Name"), ",");
+var accessionId=$I$(5,"listToDelimitedString$java_util_List$S",[set.get$O("Name"), ","]);
 if (accessionId.length$() > 0) {
 var database=sf.getType$();
 var qualifiedAccId=database + "|" + accessionId ;
@@ -98,15 +97,11 @@ sf2.setValue$S$O("$RENAME_TO$", qualifiedAccId);
 }var alco=this.getMapping$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI(align, seq, mappedSequence);
 var from=Clazz.array(Integer.TYPE, -1, [sf.getBegin$(), sf.getEnd$()]);
 var to=Clazz.array(Integer.TYPE, -1, [1, sequenceFeatureLength]);
-var mapping=Clazz.new_($I$(5).c$$IA$IA$I$I,[from, to, 1, 1]);
+var mapping=Clazz.new_($I$(6,1).c$$IA$IA$I$I,[from, to, 1, 1]);
 alco.addMap$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList(seq, mappedSequence, mapping);
 align.addCodonFrame$jalview_datamodel_AlignedCodonFrame(alco);
 }
 }return sf;
-});
-
-Clazz.newMeth(C$, 'getNameValueSeparator$', function () {
-return "=";
 });
 
 Clazz.newMeth(C$, 'buildSequenceFeature$SA$I$S$java_util_Map', function (gff, typeColumn, group, attributes) {
@@ -122,17 +117,18 @@ var desc=null;
 var target=sf.getValue$S("Target");
 if (target != null ) {
 desc=target.split$S(" ")[0];
-}var so=$I$(1).getInstance$();
+}var so=$I$(2).getInstance$();
 var type=sf.getType$();
 if (so.isA$S$S(type, "sequence_variant")) {
-desc=$I$(4).listToDelimitedString$java_util_List$S(attributes.get$O("alleles"), ",");
+desc=$I$(5,"listToDelimitedString$java_util_List$S",[attributes.get$O("alleles"), ","]);
 }if ("NMD_transcript_variant".equals$O(type) || so.isA$S$S(type, "transcript") || so.isA$S$S(type, "exon")  ) {
-desc=$I$(4).listToDelimitedString$java_util_List$S(attributes.get$O("Name"), ",");
+desc=$I$(5,"listToDelimitedString$java_util_List$S",[attributes.get$O("Name"), ","]);
 }if (desc == null ) {
 desc=sf.getValue$S("ID");
-}return desc;
+}desc=$I$(5,"urlDecode$S$S",[desc, ",=;\t%"]);
+return desc;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.SB','org.jmol.util.BSUtil','javajs.util.BS','org.jmol.util.C','org.jmol.util.Escape','javajs.util.P4','javajs.util.V3','javajs.util.P3','org.jmol.util.BoxInfo','javajs.util.Measure','org.jmol.api.Interface','java.util.Hashtable','javajs.util.AU','org.jmol.util.MeshSurface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeshSlicer");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.SB','org.jmol.util.BSUtil','javajs.util.BS','org.jmol.util.C','org.jmol.util.Escape','javajs.util.P4','javajs.util.V3','javajs.util.P3','org.jmol.util.BoxInfo','javajs.util.Measure','org.jmol.api.Interface','java.util.Hashtable','javajs.util.AU','org.jmol.util.MeshSurface']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MeshSlicer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m=null;
-this.doCap=false;
-this.doClear=false;
-this.doGhost=false;
-this.iD=0;
-this.iE=0;
-this.sources=null;
-this.pts=null;
-this.norm=null;
-this.dPlane=0;
-this.values=null;
-this.fracs=null;
-this.capper=null;
-this.wPlane=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doCap','doClear','doGhost'],'F',['dPlane','wPlane'],'I',['iD','iE'],'O',['m','org.jmol.util.MeshSurface','sources','int[]','pts','javajs.util.P3[]','norm','javajs.util.V3','values','float[]','+fracs','capper','org.jmol.util.MeshCapper']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_util_MeshSurface', function (meshSurface) {
@@ -48,7 +31,7 @@ m.vc=m.vertexCount0;
 m.polygonCount0=m.vertexCount0=0;
 m.normixCount=(m.isDrawPolygon ? m.pc : m.vc);
 m.bsSlabDisplay.setBits$I$I(0, (m.pc == 0 ? m.vc : m.pc));
-m.slabOptions=Clazz.new_($I$(1)).append$S(m.meshType + " slab none");
+m.slabOptions=Clazz.new_($I$(1,1)).append$S(m.meshType + " slab none");
 m.bsSlabGhost=null;
 m.slabMeshType=1073742333;
 }if (slabType == 1073742333) {
@@ -61,19 +44,19 @@ var isGhost=(colorData != null );
 if (m.bsSlabDisplay == null  || m.polygonCount0 == 0 && m.vertexCount0 == 0  ) {
 m.polygonCount0=m.pc;
 m.vertexCount0=m.vc;
-m.bsSlabDisplay=$I$(2).setAll$I(m.pc == 0 ? m.vc : m.pc);
+m.bsSlabDisplay=(function(a,f){return f.apply(null,a)})([m.pc == 0 ? m.vc : m.pc],$I$(2).setAll$I);
 m.bsSlabGhost=null;
 if (m.pc == 0 && m.vc == 0 ) return false;
 } else if (m.isMerged) {
 if (m.pc == 0) m.bsSlabDisplay.setBits$I$I(m.mergeVertexCount0, m.vc);
  else m.bsSlabDisplay.setBits$I$I(m.mergePolygonCount0, m.pc);
 }if (isGhost) {
-if (m.bsSlabGhost == null ) m.bsSlabGhost=Clazz.new_($I$(3));
+if (m.bsSlabGhost == null ) m.bsSlabGhost=Clazz.new_($I$(3,1));
 m.slabMeshType=(colorData[0]).intValue$();
 m.slabColix=(colorData[1]).shortValue$();
 andCap=false;
 m.colix=$I$(4).getColixTranslucent3$H$Z$F(m.colix, false, 0);
-}var sb=Clazz.new_($I$(1));
+}var sb=Clazz.new_($I$(1,1));
 sb.append$S(andCap ? " cap " : " slab ");
 if (isGhost) {
 sb.append$S($I$(4).getColixTranslucencyLabel$H(m.slabColix)).append$S(" ");
@@ -136,24 +119,24 @@ break;
 break;
 }
 var newOptions=sb.toString();
-if (m.slabOptions == null ) m.slabOptions=Clazz.new_($I$(1));
+if (m.slabOptions == null ) m.slabOptions=Clazz.new_($I$(1,1));
 if (m.slabOptions.indexOf$S(newOptions) < 0) m.slabOptions.append$S(m.slabOptions.length$() > 0 ? "; " : "").append$S(m.meshType).append$S(newOptions);
 return true;
 });
 
 Clazz.newMeth(C$, 'getBoxFacesFromOABC$javajs_util_P3A', function (oabc) {
 var faces=Clazz.array($I$(6), [6]);
-var vNorm=Clazz.new_($I$(7));
-var vAB=Clazz.new_($I$(7));
-var pta=Clazz.new_($I$(8));
-var ptb=Clazz.new_($I$(8));
-var ptc=Clazz.new_($I$(8));
+var vNorm=Clazz.new_($I$(7,1));
+var vAB=Clazz.new_($I$(7,1));
+var pta=Clazz.new_($I$(8,1));
+var ptb=Clazz.new_($I$(8,1));
+var ptc=Clazz.new_($I$(8,1));
 var vertices=$I$(9).getVerticesFromOABC$javajs_util_P3A(oabc);
 for (var i=0; i < 6; i++) {
 pta.setT$javajs_util_T3(vertices[$I$(9).facePoints[i][0]]);
 ptb.setT$javajs_util_T3(vertices[$I$(9).facePoints[i][1]]);
 ptc.setT$javajs_util_T3(vertices[$I$(9).facePoints[i][2]]);
-faces[i]=$I$(10).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(pta, ptb, ptc, vNorm, vAB, Clazz.new_($I$(6)));
+faces[i]=(function(a,f){return f.apply(null,a)})([pta, ptb, ptc, vNorm, vAB, Clazz.new_($I$(6,1))],$I$(10).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4);
 }
 return faces;
 }, p$1);
@@ -189,7 +172,7 @@ return;
 if (andCap && this.capper == null  ) this.capper=($I$(11).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.util.MeshCapper", m.vwr, "script")).set$org_jmol_util_MeshSlicer(this);
 if (this.capper != null ) this.capper.clear$();
 var absD=Math.abs(distance);
-var mapEdge=Clazz.new_($I$(12));
+var mapEdge=Clazz.new_($I$(12,1));
 var bsD=$I$(3).newN$I(m.vc);
 var d=Clazz.array(Float.TYPE, [m.vc]);
 var d1=0;
@@ -326,12 +309,12 @@ bsSlab.clear$I(i);
 if (this.doGhost) m.bsSlabGhost.set$I(i);
 }if (this.doCap) this.capper.addEdge$I$I$I(this.iE, this.iD, thisSet);
 } else if (p != null ) {
-vData.addLast$TV(p);
+vData.addLast$O(p);
 }}
 if (andCap) this.capper.createCap$javajs_util_V3(this.norm);
 if (!doClean) return;
-var bsv=Clazz.new_($I$(3));
-var bsp=Clazz.new_($I$(3));
+var bsv=Clazz.new_($I$(3,1));
+var bsp=Clazz.new_($I$(3,1));
 for (var i=0; i < m.pc; i++) {
 if (m.pis[i] == null ) continue;
 bsp.set$I(i);
@@ -413,7 +396,7 @@ return (Math.abs(d) < 1.0E-4  ? 0 : d);
 }, p$1);
 
 Clazz.newMeth(C$, 'interpolateSphere$javajs_util_T3$javajs_util_T3$F$F$D$F$F$I', function (v1, v2, d1, d2, absD, val1, val2, i) {
-return p$1.interpolateFraction$javajs_util_T3$javajs_util_T3$F$F$F$I.apply(this, [v1, v2, $I$(14).getSphericalInterpolationFraction$D$D$D$D(absD, d1, d2, v1.distance$javajs_util_T3(v2)), val1, val2, i]);
+return p$1.interpolateFraction$javajs_util_T3$javajs_util_T3$F$F$F$I.apply(this, [v1, v2, (function(a,f){return f.apply(null,a)})([absD, d1, d2, v1.distance$javajs_util_T3(v2)],$I$(14).getSphericalInterpolationFraction$D$D$D$D), val1, val2, i]);
 }, p$1);
 
 Clazz.newMeth(C$, 'interpolatePoint$javajs_util_T3$javajs_util_T3$F$F$F$F$I', function (v1, v2, d1, d2, val1, val2, i) {
@@ -425,7 +408,7 @@ if (f < 1.0E-4 ) f=0;
  else if (f > 0.9999 ) f=1;
 this.fracs[i]=f;
 this.values[i]=(val2 - val1) * f + val1;
-return $I$(8).new3$F$F$F(v1.x + (v2.x - v1.x) * f, v1.y + (v2.y - v1.y) * f, v1.z + (v2.z - v1.z) * f);
+return (function(a,f){return f.apply(null,a)})([v1.x + (v2.x - v1.x) * f, v1.y + (v2.y - v1.y) * f, v1.z + (v2.z - v1.z) * f],$I$(8).new3$F$F$F);
 }, p$1);
 
 Clazz.newMeth(C$, 'slabBrillouin$javajs_util_P3A', function (unitCellPoints) {
@@ -443,13 +426,13 @@ pts[pt].scaleAdd2$F$javajs_util_T3$javajs_util_T3(k, vectors[3], pts[pt]);
 }
 
 
-var ptTemp=Clazz.new_($I$(8));
-var planeGammaK=Clazz.new_($I$(6));
-var vGammaToKPoint=Clazz.new_($I$(7));
-var vTemp=Clazz.new_($I$(7));
-var bsMoved=Clazz.new_($I$(3));
-var mapEdge=Clazz.new_($I$(12));
-m.bsSlabGhost=Clazz.new_($I$(3));
+var ptTemp=Clazz.new_($I$(8,1));
+var planeGammaK=Clazz.new_($I$(6,1));
+var vGammaToKPoint=Clazz.new_($I$(7,1));
+var vTemp=Clazz.new_($I$(7,1));
+var bsMoved=Clazz.new_($I$(3,1));
+var mapEdge=Clazz.new_($I$(12,1));
+m.bsSlabGhost=Clazz.new_($I$(3,1));
 for (var i=1; i < 27; i++) {
 vGammaToKPoint.setT$javajs_util_T3(pts[i]);
 $I$(10).getBisectingPlane$javajs_util_P3$javajs_util_V3$javajs_util_T3$javajs_util_V3$javajs_util_P4(pts[0], vGammaToKPoint, ptTemp, vTemp, planeGammaK);
@@ -475,12 +458,12 @@ m.bsSlabGhost.clearAll$();
 i=0;
 }}
 m.bsSlabGhost=null;
-var bi=Clazz.new_($I$(9));
+var bi=Clazz.new_($I$(9,1));
 if (m.pc == 0) {
 for (var i=m.vc; --i >= 0; ) bi.addBoundBoxPoint$javajs_util_T3(m.vs[i]);
 
 } else {
-var bsDone=Clazz.new_($I$(3));
+var bsDone=Clazz.new_($I$(3,1));
 for (var i=m.pc; --i >= 0; ) {
 var f=m.setABC$I(i);
 if (f != null ) for (var j=3; --j >= 0; ) if (!bsDone.get$I(f[j])) {
@@ -503,7 +486,7 @@ this.m.vertexSource[this.m.vc]=source;
 if (this.m.vc >= this.m.vertexSets.length) this.m.vertexSets=$I$(13).doubleLengthI$IA(this.m.vertexSets);
 this.m.vertexSets[this.m.vc]=set;
 }var i=this.m.addVCVal$javajs_util_T3$F$Z(vertex, value, true);
-if (key.length$() > 0) mapEdge.put$TK$TV(key, Integer.valueOf$I(i));
+if (key.length$() > 0) mapEdge.put$O$O(key, Integer.valueOf$I(i));
 return i;
 });
 
@@ -515,4 +498,4 @@ Clazz.newMeth(C$, 'addTriangle$I$I$I', function (ipt1, ipt2, ipt3) {
 this.m.addPolygonV3$I$I$I$I$I$I$javajs_util_BS(ipt1, ipt2, ipt3, 0, 0, 0, this.m.bsSlabDisplay);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

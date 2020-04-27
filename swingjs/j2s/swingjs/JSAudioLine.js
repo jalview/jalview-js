@@ -1,29 +1,15 @@
-(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,['javax.sound.sampled.AudioFormat','.Encoding'],'swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSAudioLine", null, null, 'javax.sound.sampled.SourceDataLine');
+(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,['javax.sound.sampled.AudioFormat','.Encoding'],'swingjs.JSUtil']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSAudioLine", null, null, 'javax.sound.sampled.SourceDataLine');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.info=null;
-this.bOpen=false;
-this.auctx=null;
-this.audioBuffer=null;
-this.nChannels=0;
-this.sampleRate=0;
-this.sampleSizeInBytes=0;
-this.isBigEndian=false;
-this.isUnsignedPCM=false;
-this.startTime=0;
-this.bStopped=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['bOpen','isBigEndian','isUnsignedPCM','bStopped'],'I',['nChannels','sampleRate','sampleSizeInBytes','startTime'],'O',['info','javax.sound.sampled.DataLine.Info','auctx','swingjs.api.js.HTML5AudioContext','audioBuffer','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$javax_sound_sampled_Line_Info', function (info) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.info=info;
 }, 1);
 
@@ -205,4 +191,4 @@ data[pt++]=(unsigned ? f - 1 : f);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

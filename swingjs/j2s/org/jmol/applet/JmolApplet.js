@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.applet"),I$=[[0,'javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JmolApplet", null, 'org.jmol.applet.AppletWrapper', 'org.jmol.api.JmolAppletInterface');
-C$.preloadClasses=null;
+(function(){var P$=Clazz.newPackage("org.jmol.applet"),I$=[[0,'javajs.util.SB']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JmolApplet", null, 'org.jmol.applet.AppletWrapper', 'org.jmol.api.JmolAppletInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.preloadClasses=Clazz.array(String, -1, []);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['preloadClasses','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S$I$SA.apply(this, ["jmol75x29x8.gif", 3, C$.preloadClasses]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$I$SA.apply(this,["jmol75x29x8.gif", 3, C$.preloadClasses]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, ['getPropertyAsString$S','getPropertyAsString'], function (infoType) {
@@ -50,7 +49,7 @@ var converted=Clazz.array(String, [strModels.length]);
 for (var i=0; i < strModels.length; ++i) converted[i]="" + strModels[i];
 
 return (this.wrappedApplet).loadInlineArray$SA$S$Z(converted, "" + script, isAppend);
-}var sb=Clazz.new_($I$(1));
+}var sb=Clazz.new_($I$(1,1));
 for (var i=0; i < strModels.length; ++i) sb.append$S(strModels[i]).appendC$C("\n");
 
 return (this.wrappedApplet).loadInlineString$S$S$Z(sb.toString(), "" + script, isAppend);
@@ -135,5 +134,9 @@ return (this.wrappedApplet == null  ? -2147483648 : (this.wrappedApplet).getMode
 Clazz.newMeth(C$, ['notifyAudioEnded$O','notifyAudioEnded'], function (htParams) {
 if (this.wrappedApplet != null ) (this.wrappedApplet).notifyAudioEnded$O(htParams);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.preloadClasses=Clazz.array(String, -1, []);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

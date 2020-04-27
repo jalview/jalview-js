@@ -1,20 +1,12 @@
 (function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[];
-var C$=Clazz.newClass(P$, "ImageConsumerQueue");
+/*c*/var C$=Clazz.newClass(P$, "ImageConsumerQueue");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.next=null;
-this.consumer=null;
-this.interested=false;
-this.securityContext=null;
-this.secure=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['interested','secure'],'O',['next','sun.awt.image.ImageConsumerQueue','consumer','java.awt.image.ImageConsumer','securityContext','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'removeConsumer$sun_awt_image_ImageConsumerQueue$java_awt_image_ImageConsumer$Z', function (cqbase, ic, stillinterested) {
 var cqprev=null;
@@ -40,7 +32,7 @@ return false;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$sun_awt_image_InputStreamImageSource$java_awt_image_ImageConsumer', function (src, ic) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.consumer=ic;
 this.interested=true;
 this.secure=true;
@@ -52,4 +44,4 @@ return ("[" + this.consumer + ", " + (this.interested ? "" : "not ") + "interest
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

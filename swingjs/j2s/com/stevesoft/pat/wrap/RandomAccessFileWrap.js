@@ -1,24 +1,16 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat.wrap"),I$=[[0,'java.io.RandomAccessFile','jalview.util.MessageManager','Error','StringBuffer','com.stevesoft.pat.wrap.StringBufferWrap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RandomAccessFileWrap", null, null, 'com.stevesoft.pat.StringLike');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat.wrap"),I$=[[0,'java.io.RandomAccessFile','jalview.util.MessageManager','Error','StringBuffer','com.stevesoft.pat.wrap.StringBufferWrap']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RandomAccessFileWrap", null, null, 'com.stevesoft.pat.StringLike');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.raf=null;
-this.i0=0;
-this.iend=0;
-this.buf=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.offset=0;
 this.i0=0;
 this.iend=0;
 this.buf=Clazz.array(Byte.TYPE, [1024]);
-}, 1);
+},1);
+
+C$.$fields$=[['I',['i0','iend'],'J',['offset'],'O',['raf','java.io.RandomAccessFile','buf','byte[]']]]
 
 Clazz.newMeth(C$, 'setOffset$J', function (o) {
 this.offset=o;
@@ -39,12 +31,12 @@ this.i0=this.iend=0;
 });
 
 Clazz.newMeth(C$, 'c$$S', function (file) {
-C$.$init$.apply(this);
-this.raf=Clazz.new_($I$(1).c$$S$S,[file, "r"]);
+;C$.$init$.apply(this);
+this.raf=Clazz.new_($I$(1,1).c$$S$S,[file, "r"]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_RandomAccessFile', function (raf) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.raf=raf;
 }, 1);
 
@@ -61,11 +53,11 @@ if (i >= this.i0 && i < this.iend ) {
 return String.fromCharCode(this.buf[i - this.i0]);
 }} catch (t) {
 }
-throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,[$I$(2).formatMessage$S$SA("exception.out_of_bounds_for_file", Clazz.array(String, -1, [Integer.valueOf$I(i).toString(), Integer.valueOf$I(this.i0).toString(), Integer.valueOf$I(this.iend).toString()]))]);
+throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,[$I$(2,"formatMessage$S$SA",["exception.out_of_bounds_for_file", Clazz.array(String, -1, [Integer.valueOf$I(i).toString(), Integer.valueOf$I(this.i0).toString(), Integer.valueOf$I(this.iend).toString()])])]);
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-throw Clazz.new_($I$(3).c$$S,[$I$(2).getString$S("error.not_implemented")]);
+throw Clazz.new_([$I$(2).getString$S("error.not_implemented")],$I$(3,1).c$$S);
 });
 
 Clazz.newMeth(C$, 'length$', function () {
@@ -84,7 +76,7 @@ throw ioe;
 });
 
 Clazz.newMeth(C$, 'substring$I$I', function (i1, i2) {
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 for (var i=i1; i < i2; i++) {
 sb.append$C(this.charAt$I(i));
 }
@@ -96,7 +88,7 @@ return this.raf;
 });
 
 Clazz.newMeth(C$, 'newStringBufferLike$', function () {
-return Clazz.new_($I$(5));
+return Clazz.new_($I$(5,1));
 });
 
 Clazz.newMeth(C$, 'indexOf$C', function (c) {
@@ -109,4 +101,4 @@ return -1;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

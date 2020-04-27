@@ -1,95 +1,17 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.util.Arrays','java.security.AccessController','sun.nio.cs.CharsetMapping',['sun.nio.cs.CharsetMapping','.Entry']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CharsetMapping", function(){
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.util.Arrays','java.security.AccessController','sun.nio.cs.CharsetMapping',['sun.nio.cs.CharsetMapping','.Entry']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CharsetMapping", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.comparatorBytes=null;
-C$.comparatorCP=null;
-C$.comparatorComp=null;
+C$.$classes$=[['Entry',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.comparatorBytes=((P$.CharsetMapping$1||
-(function(){var C$=Clazz.newClass(P$, "CharsetMapping$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['compare$sun_nio_cs_CharsetMapping_Entry$sun_nio_cs_CharsetMapping_Entry','compare$','compare$TT$TT'], function (m1, m2) {
-return m1.bs - m2.bs;
-});
-
-Clazz.newMeth(C$, 'equals$O', function (obj) {
-return this === obj ;
-});
-})()
-), Clazz.new_(P$.CharsetMapping$1.$init$, [this, null]));
-C$.comparatorCP=((P$.CharsetMapping$2||
-(function(){var C$=Clazz.newClass(P$, "CharsetMapping$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['compare$sun_nio_cs_CharsetMapping_Entry$sun_nio_cs_CharsetMapping_Entry','compare$','compare$TT$TT'], function (m1, m2) {
-return m1.cp - m2.cp;
-});
-
-Clazz.newMeth(C$, 'equals$O', function (obj) {
-return this === obj ;
-});
-})()
-), Clazz.new_(P$.CharsetMapping$2.$init$, [this, null]));
-C$.comparatorComp=((P$.CharsetMapping$3||
-(function(){var C$=Clazz.newClass(P$, "CharsetMapping$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['compare$sun_nio_cs_CharsetMapping_Entry$sun_nio_cs_CharsetMapping_Entry','compare$','compare$TT$TT'], function (m1, m2) {
-var v=m1.cp - m2.cp;
-if (v == 0) v=m1.cp2 - m2.cp2;
-return v;
-});
-
-Clazz.newMeth(C$, 'equals$O', function (obj) {
-return this === obj ;
-});
-})()
-), Clazz.new_(P$.CharsetMapping$3.$init$, [this, null]));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.b2cSB=null;
-this.b2cDB1=null;
-this.b2cDB2=null;
-this.b2Min=0;
-this.b2Max=0;
-this.b1MinDB1=0;
-this.b1MaxDB1=0;
-this.b1MinDB2=0;
-this.b1MaxDB2=0;
-this.dbSegSize=0;
-this.c2b=null;
-this.c2bIndex=null;
-this.b2cSupp=null;
-this.c2bSupp=null;
-this.b2cComp=null;
-this.c2bComp=null;
-this.off=0;
-this.bb=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.off=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['b2Min','b2Max','b1MinDB1','b1MaxDB1','b1MinDB2','b1MaxDB2','dbSegSize','off'],'O',['b2cSB','char[]','+b2cDB1','+b2cDB2','+c2b','+c2bIndex','+b2cSupp','+c2bSupp','b2cComp','sun.nio.cs.CharsetMapping.Entry[]','+c2bComp','bb','byte[]']]
+,['O',['comparatorBytes','java.util.Comparator','+comparatorCP','+comparatorComp']]]
 
 Clazz.newMeth(C$, 'decodeSingle$I', function (b) {
 return this.b2cSB[b];
@@ -109,7 +31,7 @@ return this.b2cDB2[b1 * this.dbSegSize + b2];
 
 Clazz.newMeth(C$, 'decodeSurrogate$I$CA', function (db, cc) {
 var end=(this.b2cSupp.length/2|0);
-var i=$I$(1).binarySearch$CA$I$I$C(this.b2cSupp, 0, end, String.fromCharCode(db));
+var i=$I$(1,"binarySearch$CA$I$I$C",[this.b2cSupp, 0, end, String.fromCharCode(db)]);
 if (i >= 0) {
 Character.toChars$I$CA$I((this.b2cSupp[end + i]).$c() + 131072, cc, 0);
 return cc;
@@ -135,7 +57,7 @@ Clazz.newMeth(C$, 'encodeSurrogate$C$C', function (hi, lo) {
 var cp=Character.toCodePoint$C$C(hi, lo);
 if (cp < 131072 || cp >= 196608 ) return 65533;
 var end=(this.c2bSupp.length/2|0);
-var i=$I$(1).binarySearch$CA$I$I$C(this.c2bSupp, 0, end, String.fromCharCode(cp));
+var i=$I$(1,"binarySearch$CA$I$I$C",[this.c2bSupp, 0, end, String.fromCharCode(cp)]);
 if (i >= 0) return this.c2bSupp[end + i].$c();
 return 65533;
 });
@@ -153,32 +75,31 @@ return 65533;
 });
 
 Clazz.newMeth(C$, 'get$java_io_InputStream', function (is) {
-return $I$(2).doPrivileged$java_security_PrivilegedAction(((P$.CharsetMapping$4||
-(function(){var C$=Clazz.newClass(P$, "CharsetMapping$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+return $I$(2,"doPrivileged$java_security_PrivilegedAction",[((P$.CharsetMapping$4||
+(function(){/*a*/var C$=Clazz.newClass(P$, "CharsetMapping$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-return Clazz.new_($I$(3)).load$java_io_InputStream(this.$finals$.is);
+return Clazz.new_($I$(3,1)).load$java_io_InputStream(this.$finals$.is);
 });
 })()
-), Clazz.new_(P$.CharsetMapping$4.$init$, [this, {is: is}])));
+), Clazz.new_(P$.CharsetMapping$4.$init$,[this, {is:is}]))]);
 }, 1);
 
 Clazz.newMeth(C$, 'findBytes$sun_nio_cs_CharsetMapping_EntryA$sun_nio_cs_CharsetMapping_Entry', function (a, k) {
-return $I$(1).binarySearch$TTA$I$I$TT$java_util_Comparator(a, 0, a.length, k, C$.comparatorBytes);
+return $I$(1).binarySearch$OA$I$I$O$java_util_Comparator(a, 0, a.length, k, C$.comparatorBytes);
 }, 1);
 
 Clazz.newMeth(C$, 'findCP$sun_nio_cs_CharsetMapping_EntryA$sun_nio_cs_CharsetMapping_Entry', function (a, k) {
-return $I$(1).binarySearch$TTA$I$I$TT$java_util_Comparator(a, 0, a.length, k, C$.comparatorCP);
+return $I$(1).binarySearch$OA$I$I$O$java_util_Comparator(a, 0, a.length, k, C$.comparatorCP);
 }, 1);
 
 Clazz.newMeth(C$, 'findComp$sun_nio_cs_CharsetMapping_EntryA$sun_nio_cs_CharsetMapping_Entry', function (a, k) {
-return $I$(1).binarySearch$TTA$I$I$TT$java_util_Comparator(a, 0, a.length, k, C$.comparatorComp);
+return $I$(1).binarySearch$OA$I$I$O$java_util_Comparator(a, 0, a.length, k, C$.comparatorComp);
 }, 1);
 
 Clazz.newMeth(C$, 'readNBytes$java_io_InputStream$BA$I', function ($in, bb, N) {
@@ -259,14 +180,14 @@ var mLen=(map.length/3|0);
 this.b2cComp=Clazz.array($I$(4), [mLen]);
 this.c2bComp=Clazz.array($I$(4), [mLen]);
 for (var i=0, j=0; i < mLen; i++) {
-var m=Clazz.new_($I$(4));
+var m=Clazz.new_($I$(4,1));
 m.bs=map[j++].$c();
 m.cp=map[j++].$c();
 m.cp2=map[j++].$c();
 this.b2cComp[i]=m;
 this.c2bComp[i]=m;
 }
-$I$(1).sort$TTA$I$I$java_util_Comparator(this.c2bComp, 0, this.c2bComp.length, C$.comparatorComp);
+$I$(1).sort$OA$I$I$java_util_Comparator(this.c2bComp, 0, this.c2bComp.length, C$.comparatorComp);
 });
 
 Clazz.newMeth(C$, 'load$java_io_InputStream', function ($in) {
@@ -315,27 +236,81 @@ throw x;
 }
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.comparatorBytes=((P$.CharsetMapping$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "CharsetMapping$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, ['compare$sun_nio_cs_CharsetMapping_Entry$sun_nio_cs_CharsetMapping_Entry','compare$O$O'], function (m1, m2) {
+return m1.bs - m2.bs;
+});
+
+Clazz.newMeth(C$, 'equals$O', function (obj) {
+return this === obj ;
+});
+})()
+), Clazz.new_(P$.CharsetMapping$1.$init$,[this, null]));
+C$.comparatorCP=((P$.CharsetMapping$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "CharsetMapping$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, ['compare$sun_nio_cs_CharsetMapping_Entry$sun_nio_cs_CharsetMapping_Entry','compare$O$O'], function (m1, m2) {
+return m1.cp - m2.cp;
+});
+
+Clazz.newMeth(C$, 'equals$O', function (obj) {
+return this === obj ;
+});
+})()
+), Clazz.new_(P$.CharsetMapping$2.$init$,[this, null]));
+C$.comparatorComp=((P$.CharsetMapping$3||
+(function(){/*a*/var C$=Clazz.newClass(P$, "CharsetMapping$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, ['compare$sun_nio_cs_CharsetMapping_Entry$sun_nio_cs_CharsetMapping_Entry','compare$O$O'], function (m1, m2) {
+var v=m1.cp - m2.cp;
+if (v == 0) v=m1.cp2 - m2.cp2;
+return v;
+});
+
+Clazz.newMeth(C$, 'equals$O', function (obj) {
+return this === obj ;
+});
+})()
+), Clazz.new_(P$.CharsetMapping$3.$init$,[this, null]));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.CharsetMapping, "Entry", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.CharsetMapping, "Entry", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bs=0;
-this.cp=0;
-this.cp2=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['bs','cp','cp2']]]
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

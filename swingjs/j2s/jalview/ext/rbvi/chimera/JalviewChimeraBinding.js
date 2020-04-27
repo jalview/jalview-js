@@ -1,54 +1,39 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.rbvi.chimera"),p$1={},I$=[[0,'jalview.util.MessageManager','java.util.ArrayList','java.util.Hashtable','java.util.LinkedHashMap',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'ext.edu.ucsf.rbvi.strucviz2.ChimeraManager','ext.edu.ucsf.rbvi.strucviz2.StructureManager','Thread','jalview.ext.rbvi.chimera.ChimeraListener','StringBuilder','java.util.BitSet',['jalview.structures.models.AAStructureBindingModel','.SuperposeData'],'jalview.ext.rbvi.chimera.ChimeraCommands','jalview.structure.AtomSpec','jalview.schemes.ResidueProperties','jalview.bin.Cache','java.io.File','java.io.PrintWriter','java.io.FileOutputStream','java.util.Collections','jalview.datamodel.SequenceFeature']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JalviewChimeraBinding", null, 'jalview.structures.models.AAStructureBindingModel');
-C$.COLOURING_CHIMERA=null;
+(function(){var P$=Clazz.newPackage("jalview.ext.rbvi.chimera"),p$1={},I$=[[0,'jalview.util.MessageManager','java.util.ArrayList','java.util.Hashtable','java.util.LinkedHashMap',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'ext.edu.ucsf.rbvi.strucviz2.ChimeraManager','ext.edu.ucsf.rbvi.strucviz2.StructureManager','Thread','jalview.ext.rbvi.chimera.ChimeraListener','StringBuilder','java.util.BitSet',['jalview.structures.models.AAStructureBindingModel','.SuperposeData'],'jalview.ext.rbvi.chimera.ChimeraCommands','jalview.structure.AtomSpec','jalview.schemes.ResidueProperties','jalview.bin.Cache','java.io.File','java.io.PrintWriter','java.io.FileOutputStream','java.util.Collections','jalview.datamodel.SequenceFeature']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JalviewChimeraBinding", null, 'jalview.structures.models.AAStructureBindingModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.COLOURING_CHIMERA=$I$(1).getString$S("status.colouring_chimera");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.chainNames=null;
-this.chainFile=null;
-this.viewer=null;
-this.chimeraListener=null;
-this.$loadingFromArchive=false;
-this.$loadingFinished=false;
-this.chimeraMaps=null;
-this.lastHighlightCommand=null;
-this.loadNotifiesHandled=0;
-this.chimeraMonitor=null;
-this._modelFileNameMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.chainNames=Clazz.new_($I$(2));
-this.chainFile=Clazz.new_($I$(3));
+this.chainNames=Clazz.new_($I$(2,1));
+this.chainFile=Clazz.new_($I$(3,1));
 this.$loadingFromArchive=false;
 this.$loadingFinished=true;
-this.chimeraMaps=Clazz.new_($I$(4));
+this.chimeraMaps=Clazz.new_($I$(4,1));
 this.loadNotifiesHandled=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['$loadingFromArchive','$loadingFinished'],'J',['loadNotifiesHandled'],'S',['lastHighlightCommand'],'O',['chainNames','java.util.List','chainFile','java.util.Hashtable','viewer','ext.edu.ucsf.rbvi.strucviz2.ChimeraManager','chimeraListener','jalview.httpserver.AbstractRequestHandler','chimeraMaps','java.util.Map','chimeraMonitor','Thread','_modelFileNameMap','int[]']]
+,['S',['COLOURING_CHIMERA']]]
 
 Clazz.newMeth(C$, 'openFile$jalview_datamodel_PDBEntry', function (pe) {
 var file=pe.getFile$();
 try {
-var modelsToMap=Clazz.new_($I$(2));
+var modelsToMap=Clazz.new_($I$(2,1));
 var oldList=this.viewer.getModelList$();
 var alreadyOpen=false;
 for (var open, $open = oldList.iterator$(); $open.hasNext$()&&((open=($open.next$())),1);) {
 if (open.getModelName$().equals$O(pe.getId$())) {
 alreadyOpen=true;
-modelsToMap.add$TE(open);
+modelsToMap.add$O(open);
 }}
 if (!alreadyOpen) {
 this.viewer.openModel$S$S$ext_edu_ucsf_rbvi_strucviz2_StructureManager_ModelType(file, pe.getId$(), $I$(5).PDB_MODEL);
 var newList=this.viewer.getModelList$();
 for (var cm, $cm = newList.iterator$(); $cm.hasNext$()&&((cm=($cm.next$())),1);) {
 if (cm.getModelName$().equals$O(pe.getId$())) {
-modelsToMap.add$TE(cm);
+modelsToMap.add$O(cm);
 }}
-}this.chimeraMaps.put$TK$TV(file, modelsToMap);
+}this.chimeraMaps.put$O$O(file, modelsToMap);
 if (this.getSsm$() != null ) {
 this.getSsm$().addStructureViewerListener$O(this);
 }return true;
@@ -64,21 +49,19 @@ return false;
 });
 
 Clazz.newMeth(C$, 'c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType', function (ssm, pdbentry, sequenceIs, protocol) {
-C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType.apply(this, [ssm, pdbentry, sequenceIs, protocol]);
-C$.$init$.apply(this);
-this.viewer=Clazz.new_($I$(6).c$$ext_edu_ucsf_rbvi_strucviz2_StructureManager,[Clazz.new_($I$(7).c$$Z,[true])]);
+;C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType.apply(this,[ssm, pdbentry, sequenceIs, protocol]);C$.$init$.apply(this);
+this.viewer=Clazz.new_([Clazz.new_($I$(7,1).c$$Z,[true])],$I$(6,1).c$$ext_edu_ucsf_rbvi_strucviz2_StructureManager);
 }, 1);
 
 Clazz.newMeth(C$, 'startChimeraProcessMonitor$', function () {
 var p=this.viewer.getChimeraProcess$();
-this.chimeraMonitor=Clazz.new_($I$(8).c$$Runnable,[((P$.JalviewChimeraBinding$1||
-(function(){var C$=Clazz.newClass(P$, "JalviewChimeraBinding$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+this.chimeraMonitor=Clazz.new_([((P$.JalviewChimeraBinding$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewChimeraBinding$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 try {
@@ -94,13 +77,13 @@ throw e;
 }
 });
 })()
-), Clazz.new_(P$.JalviewChimeraBinding$1.$init$, [this, {p: p}]))]);
+), Clazz.new_(P$.JalviewChimeraBinding$1.$init$,[this, {p:p}]))],$I$(8,1).c$$Runnable);
 this.chimeraMonitor.start$();
 });
 
 Clazz.newMeth(C$, 'startChimeraListener$', function () {
 try {
-this.chimeraListener=Clazz.new_($I$(9).c$$jalview_ext_rbvi_chimera_JalviewChimeraBinding,[this]);
+this.chimeraListener=Clazz.new_($I$(9,1).c$$jalview_ext_rbvi_chimera_JalviewChimeraBinding,[this]);
 this.viewer.startListening$S(this.chimeraListener.getUri$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.BindException")){
@@ -112,7 +95,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'showChains$java_util_List', function (toshow) {
-var cmd=Clazz.new_($I$(10).c$$I,[64]);
+var cmd=Clazz.new_($I$(10,1).c$$I,[64]);
 var first=true;
 for (var chain, $chain = toshow.iterator$(); $chain.hasNext$()&&((chain=($chain.next$())),1);) {
 var modelNumber=this.getModelNoForChain$S(chain);
@@ -151,12 +134,12 @@ this.sendAsynchronousCommand$S$S(command, C$.COLOURING_CHIMERA);
 });
 
 Clazz.newMeth(C$, 'superposeStructures$jalview_datamodel_AlignmentIA$IA$jalview_datamodel_HiddenColumnsA', function (_alignment, _refStructure, _hiddenCols) {
-var allComs=Clazz.new_($I$(10).c$$I,[128]);
+var allComs=Clazz.new_($I$(10,1).c$$I,[128]);
 var files=this.getStructureFiles$();
 if (!this.waitForFileLoad$SA(files)) {
 return null;
 }this.refreshPdbEntries$();
-var selectioncom=Clazz.new_($I$(10).c$$I,[256]);
+var selectioncom=Clazz.new_($I$(10,1).c$$I,[256]);
 for (var a=0; a < _alignment.length; a++) {
 var refStructure=_refStructure[a];
 var alignment=_alignment[a];
@@ -164,27 +147,27 @@ var hiddenCols=_hiddenCols[a];
 if (refStructure >= files.length) {
 System.err.println$S("Ignoring invalid reference structure value " + refStructure);
 refStructure=-1;
-}var matched=Clazz.new_($I$(11));
+}var matched=Clazz.new_($I$(11,1));
 for (var m=0; m < alignment.getWidth$(); m++) {
 if (hiddenCols == null  || hiddenCols.isVisible$I(m) ) {
 matched.set$I(m);
 }}
 var structures=Clazz.array($I$(12), [files.length]);
 for (var f=0; f < files.length; f++) {
-structures[f]=Clazz.new_($I$(12).c$$I, [this, null, alignment.getWidth$()]);
+structures[f]=Clazz.new_([this, null, alignment.getWidth$()],$I$(12,1).c$$I);
 }
 var candidateRefStructure=this.findSuperposableResidues$jalview_datamodel_AlignmentI$java_util_BitSet$jalview_structures_models_AAStructureBindingModel_SuperposeDataA(alignment, matched, structures);
 if (refStructure < 0) {
 refStructure=candidateRefStructure;
 }var nmatched=matched.cardinality$();
 if (nmatched < 4) {
-return $I$(1).formatMessage$S$OA("label.insufficient_residues", [new Integer(nmatched)]);
+return $I$(1,"formatMessage$S$OA",["label.insufficient_residues", [new Integer(nmatched)]]);
 }var selcom=Clazz.array(String, [files.length]);
 for (var pdbfnum=0; pdbfnum < files.length; pdbfnum++) {
 var chainCd="." + structures[pdbfnum].chain;
 var lpos=-1;
 var run=false;
-var molsel=Clazz.new_($I$(10));
+var molsel=Clazz.new_($I$(10,1));
 var nextColumnMatch=matched.nextSetBit$I(0);
 while (nextColumnMatch != -1){
 var pdbResNum=structures[pdbfnum].pdbResNo[nextColumnMatch];
@@ -215,7 +198,7 @@ selectioncom.append$S("| ");
 }} else {
 selcom[pdbfnum]=null;
 }}
-var command=Clazz.new_($I$(10).c$$I,[256]);
+var command=Clazz.new_($I$(10,1).c$$I,[256]);
 for (var pdbfnum=0; pdbfnum < files.length; pdbfnum++) {
 if (pdbfnum == refStructure || selcom[pdbfnum] == null   || selcom[refStructure] == null  ) {
 continue;
@@ -298,7 +281,7 @@ this.sendAsynchronousCommand$S$S(command, C$.COLOURING_CHIMERA);
 });
 
 Clazz.newMeth(C$, 'getColourBySequenceCommands$SA$jalview_api_SequenceRenderer$jalview_api_AlignmentViewPanel', function (files, sr, viewPanel) {
-return $I$(13).getColourBySequenceCommand$jalview_structure_StructureSelectionManager$SA$jalview_datamodel_SequenceIAA$jalview_api_SequenceRenderer$jalview_api_AlignmentViewPanel(this.getSsm$(), files, this.getSequence$(), sr, viewPanel);
+return $I$(13,"getColourBySequenceCommand$jalview_structure_StructureSelectionManager$SA$jalview_datamodel_SequenceIAA$jalview_api_SequenceRenderer$jalview_api_AlignmentViewPanel",[this.getSsm$(), files, this.getSequence$(), sr, viewPanel]);
 });
 
 Clazz.newMeth(C$, 'executeWhenReady$S', function (command) {
@@ -323,13 +306,13 @@ throw q;
 Clazz.newMeth(C$, 'getStructureFiles$', function () {
 if (this.viewer == null ) {
 return Clazz.array(String, [0]);
-}return this.chimeraMaps.keySet$().toArray$TTA(this.modelFileNames=Clazz.array(String, [this.chimeraMaps.size$()]));
+}return this.chimeraMaps.keySet$().toArray$OA(this.modelFileNames=Clazz.array(String, [this.chimeraMaps.size$()]));
 });
 
 Clazz.newMeth(C$, 'highlightAtoms$java_util_List', function (atoms) {
 if (atoms == null  || atoms.size$() == 0 ) {
 return;
-}var cmd=Clazz.new_($I$(10).c$$I,[128]);
+}var cmd=Clazz.new_($I$(10,1).c$$I,[128]);
 var first=true;
 var found=false;
 for (var atom, $atom = atoms.iterator$(); $atom.hasNext$()&&((atom=($atom.next$())),1);) {
@@ -365,13 +348,13 @@ this.getSsm$().mouseOverStructure$java_util_List(atomSpecs);
 });
 
 Clazz.newMeth(C$, 'convertStructureResiduesToAlignment$java_util_List', function (structureSelection) {
-var atomSpecs=Clazz.new_($I$(2));
+var atomSpecs=Clazz.new_($I$(2,1));
 for (var atomSpec, $atomSpec = structureSelection.iterator$(); $atomSpec.hasNext$()&&((atomSpec=($atomSpec.next$())),1);) {
 try {
 var spec=$I$(14).fromChimeraAtomspec$S(atomSpec);
 var pdbfilename=this.getPdbFileForModel$I(spec.getModelNumber$());
 spec.setPdbFile$S(pdbfilename);
-atomSpecs.add$TE(spec);
+atomSpecs.add$O(spec);
 } catch (e) {
 if (Clazz.exceptionOf(e,"IllegalArgumentException")){
 System.err.println$S("Failed to parse atomspec: " + atomSpec);
@@ -412,8 +395,8 @@ if (cs == null ) {
 return;
 }var normalise=255.0;
 p$1.viewerCommandHistory$Z.apply(this, [false]);
-var command=Clazz.new_($I$(10).c$$I,[128]);
-var residueSet=$I$(15).getResidues$Z$Z(this.isNucleotide$(), false);
+var command=Clazz.new_($I$(10,1).c$$I,[128]);
+var residueSet=$I$(15,"getResidues$Z$Z",[this.isNucleotide$(), false]);
 for (var resName, $resName = residueSet.iterator$(); $resName.hasNext$()&&((resName=($resName.next$())),1);) {
 var res=resName.length$() == 3 ? $I$(15).getSingleCharacterCode$S(resName) : resName.charAt$I(0);
 var col=cs.findColour$C$I$jalview_datamodel_SequenceI$S$F(res, 0, null, null, 0.0);
@@ -474,7 +457,7 @@ for (var seq, $seq = alignment.getSequences$().iterator$(); $seq.hasNext$()&&((s
 var positions=Clazz.array(Integer.TYPE, [cols.size$()]);
 var i=0;
 for (var col, $col = cols.iterator$(); $col.hasNext$()&&((col=($col.next$())),1);) {
-positions[i++]=seq.findPosition$I((col).intValue$());
+positions[i++]=seq.findPosition$I((col).valueOf());
 }
 sm.highlightStructure$jalview_structure_StructureListener$jalview_datamodel_SequenceI$IA(this, seq, positions);
 }
@@ -485,7 +468,7 @@ var alignment=avp.getAlignment$();
 var files=this.getStructureFiles$();
 if (files == null ) {
 return 0;
-}var commandSet=$I$(13).getSetAttributeCommandsForFeatures$jalview_structure_StructureSelectionManager$SA$jalview_datamodel_SequenceIAA$jalview_api_AlignmentViewPanel(this.getSsm$(), files, this.getSequence$(), avp);
+}var commandSet=$I$(13,"getSetAttributeCommandsForFeatures$jalview_structure_StructureSelectionManager$SA$jalview_datamodel_SequenceIAA$jalview_api_AlignmentViewPanel",[this.getSsm$(), files, this.getSequence$(), avp]);
 var commands=commandSet.commands;
 if (commands.length > 10) {
 this.sendCommandsByFile$SA(commands);
@@ -500,7 +483,7 @@ Clazz.newMeth(C$, 'sendCommandsByFile$SA', function (commands) {
 try {
 var tmp=$I$(17).createTempFile$S$S("chim", ".com");
 tmp.deleteOnExit$();
-var out=Clazz.new_($I$(18).c$$java_io_OutputStream,[Clazz.new_($I$(19).c$$java_io_File,[tmp])]);
+var out=Clazz.new_([Clazz.new_($I$(19,1).c$$java_io_File,[tmp])],$I$(18,1).c$$java_io_OutputStream);
 for (var command, $command = 0, $$command = commands; $command<$$command.length&&((command=($$command[$command])),1);$command++) {
 out.println$S(command);
 }
@@ -551,7 +534,7 @@ var chainId=spec.getChain$();
 var description=attValue;
 var score=NaN;
 try {
-score=(Float.valueOf$S(attValue)).floatValue$();
+score=(Float.valueOf$S(attValue)).valueOf();
 description=chainId;
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
@@ -561,13 +544,13 @@ throw e;
 }
 var pdbFile=this.getPdbFileForModel$I(spec.getModelNumber$());
 spec.setPdbFile$S(pdbFile);
-var atoms=$I$(20).singletonList$TT(spec);
+var atoms=$I$(20).singletonList$O(spec);
 var sr=this.getSsm$().findAlignmentPositionsForStructurePositions$java_util_List(atoms);
 for (var m, $m = sr.getResults$().iterator$(); $m.hasNext$()&&((m=($m.next$())),1);) {
 var seq=m.getSequence$();
 var start=m.getStart$();
 var end=m.getEnd$();
-var sf=Clazz.new_($I$(21).c$$S$S$I$I$F$S,[attName, description, start, end, score, featureGroup]);
+var sf=Clazz.new_($I$(21,1).c$$S$S$I$I$F$S,[attName, description, start, end, score, featureGroup]);
 featureAdded|=seq.addSequenceFeature$jalview_datamodel_SequenceFeature(sf);
 }
 }
@@ -593,6 +576,10 @@ return foundModels.get$I(0).getModelNumber$();
 }return -1;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.COLOURING_CHIMERA=$I$(1).getString$S("status.colouring_chimera");
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

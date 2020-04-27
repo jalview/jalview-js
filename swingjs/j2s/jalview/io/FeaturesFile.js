@@ -1,39 +1,29 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.util.HashMap','java.util.ArrayList','jalview.schemes.FeatureColour','jalview.datamodel.features.FeatureMatcherSet','jalview.util.ColorUtils','jalview.datamodel.SequenceFeature','jalview.analysis.SequenceIdMatcher','jalview.datamodel.SequenceDummy','java.util.Arrays','jalview.datamodel.SequenceI','jalview.util.ParseHtmlBodyAndLinks','StringBuilder','java.util.Collections','jalview.datamodel.Alignment','jalview.util.MapList','jalview.io.gff.GffHelperFactory','jalview.io.gff.GffHelperBase','jalview.util.StringUtils','jalview.io.FastaFile','jalview.analysis.AlignmentUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeaturesFile", null, 'jalview.io.AlignFile', 'jalview.api.FeaturesSourceI');
+(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.util.HashMap','java.util.ArrayList','jalview.schemes.FeatureColour','jalview.datamodel.features.FeatureMatcherSet','jalview.util.ColorUtils','jalview.datamodel.SequenceFeature','jalview.analysis.SequenceIdMatcher','jalview.datamodel.SequenceDummy','java.util.Arrays','jalview.datamodel.SequenceI','jalview.util.ParseHtmlBodyAndLinks','StringBuilder','jalview.gui.Desktop','java.util.TreeMap','java.util.LinkedHashMap','java.util.Collections','jalview.datamodel.Alignment','jalview.util.StringUtils','jalview.util.MapList','jalview.io.gff.GffHelperFactory','jalview.io.FastaFile','jalview.analysis.AlignmentUtils']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeaturesFile", null, 'jalview.io.AlignFile', 'jalview.api.FeaturesSourceI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lastmatchedAl=null;
-this.matcher=null;
-this.dataset=null;
-this.gffVersion=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.lastmatchedAl=null;
 this.matcher=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['gffVersion'],'O',['lastmatchedAl','jalview.datamodel.AlignmentI','matcher','jalview.analysis.SequenceIdMatcher','dataset','jalview.datamodel.AlignmentI']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$jalview_io_DataSourceType', function (file, paste) {
-C$.superclazz.c$$Z$O$jalview_io_DataSourceType.apply(this, [false, file, paste]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Z$O$jalview_io_DataSourceType.apply(this,[false, file, paste]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_FileParse', function (source) {
-C$.superclazz.c$$jalview_io_FileParse.apply(this, [source]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_FileParse.apply(this,[source]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$O$jalview_io_DataSourceType', function (parseImmediately, file, type) {
-C$.superclazz.c$$Z$O$jalview_io_DataSourceType.apply(this, [parseImmediately, file, type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Z$O$jalview_io_DataSourceType.apply(this,[parseImmediately, file, type]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'parse$jalview_datamodel_AlignmentI$java_util_Map$Z', function (align, colours, removeHTML) {
@@ -54,8 +44,8 @@ return this.parse$jalview_datamodel_AlignmentI$java_util_Map$java_util_Map$Z$Z(a
 });
 
 Clazz.newMeth(C$, 'parse$jalview_datamodel_AlignmentI$java_util_Map$java_util_Map$Z$Z', function (align, colours, filters, removeHTML, relaxedIdmatching) {
-var gffProps=Clazz.new_($I$(1));
-var newseqs=Clazz.new_($I$(2));
+var gffProps=Clazz.new_($I$(1,1));
+var newseqs=Clazz.new_($I$(2,1));
 var line=null;
 try {
 var gffColumns;
@@ -83,7 +73,7 @@ featureGroup=null;
 var colscheme=gffColumns[1];
 var colour=$I$(3).parseJalviewFeatureColour$S(colscheme);
 if (colour != null ) {
-colours.put$TK$TV(ft, colour);
+colours.put$O$O(ft, colour);
 }}continue;
 }if (this.gffVersion == 0) {
 this.parseJalviewFeature$S$SA$jalview_datamodel_AlignmentI$java_util_Map$Z$Z$S(line, gffColumns, align, colours, removeHTML, relaxedIdmatching, featureGroup);
@@ -121,7 +111,7 @@ System.err.println$S(String.format$S$OA("Invalid token count %d for %d", [new In
 var featureType=tokens[0];
 var fm=$I$(4).fromString$S(tokens[1]);
 if (fm != null  && filters != null  ) {
-filters.put$TK$TV(featureType, fm);
+filters.put$O$O(featureType, fm);
 }}}
 });
 
@@ -156,26 +146,26 @@ var endPos=Integer.parseInt$S(gffColumns[4]);
 var ft=gffColumns[5];
 if (!featureColours.containsKey$O(ft)) {
 var colour=$I$(5).createColourFromName$S(ft);
-featureColours.put$TK$TV(ft, Clazz.new_($I$(3).c$$java_awt_Color,[colour]));
+featureColours.put$O$O(ft, Clazz.new_($I$(3,1).c$$java_awt_Color,[colour]));
 }var sf=null;
 if (gffColumns.length > 6) {
 var score=NaN;
 try {
-score= new Float(gffColumns[6]).floatValue$();
+score=Float.valueOf$S(gffColumns[6]).floatValue$();
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"NumberFormatException")){
-sf=Clazz.new_($I$(6).c$$S$S$I$I$S,[ft, desc, startPos, endPos, featureGroup]);
+sf=Clazz.new_($I$(6,1).c$$S$S$I$I$S,[ft, desc, startPos, endPos, featureGroup]);
 } else {
 throw ex;
 }
 }
-sf=Clazz.new_($I$(6).c$$S$S$I$I$F$S,[ft, desc, startPos, endPos, score, featureGroup]);
+sf=Clazz.new_($I$(6,1).c$$S$S$I$I$F$S,[ft, desc, startPos, endPos, score, featureGroup]);
 } else {
-sf=Clazz.new_($I$(6).c$$S$S$I$I$S,[ft, desc, startPos, endPos, featureGroup]);
+sf=Clazz.new_($I$(6,1).c$$S$S$I$I$S,[ft, desc, startPos, endPos, featureGroup]);
 }this.parseDescriptionHTML$jalview_datamodel_SequenceFeature$Z(sf, removeHTML);
 seq.addSequenceFeature$jalview_datamodel_SequenceFeature(sf);
 while (seqId != null  && (seq=alignment.findName$jalview_datamodel_SequenceI$S$Z(seq, seqId, false)) != null  ){
-seq.addSequenceFeature$jalview_datamodel_SequenceFeature(Clazz.new_($I$(6).c$$jalview_datamodel_SequenceFeature,[sf]));
+seq.addSequenceFeature$jalview_datamodel_SequenceFeature(Clazz.new_($I$(6,1).c$$jalview_datamodel_SequenceFeature,[sf]));
 }
 return true;
 });
@@ -190,7 +180,7 @@ var match=null;
 if (relaxedIdMatching) {
 if (this.lastmatchedAl !== align ) {
 this.lastmatchedAl=align;
-this.matcher=Clazz.new_($I$(7).c$$jalview_datamodel_SequenceIA,[align.getSequencesArray$()]);
+this.matcher=Clazz.new_([align.getSequencesArray$()],$I$(7,1).c$$jalview_datamodel_SequenceIA);
 if (newseqs != null ) {
 this.matcher.addAll$java_util_List(newseqs);
 }}match=this.matcher.findIdMatch$S(seqId);
@@ -202,17 +192,17 @@ if (seqId.equals$O(m.getName$())) {
 return m;
 }}
 }}if (match == null  && newseqs != null  ) {
-match=Clazz.new_($I$(8).c$$S,[seqId]);
+match=Clazz.new_($I$(8,1).c$$S,[seqId]);
 if (relaxedIdMatching) {
-this.matcher.addAll$java_util_List($I$(9).asList$TTA(Clazz.array($I$(10), -1, [match])));
-}newseqs.add$TE(match);
+this.matcher.addAll$java_util_List($I$(9,"asList$OA",[Clazz.array($I$(10), -1, [match])]));
+}newseqs.add$O(match);
 }return match;
 });
 
 Clazz.newMeth(C$, 'parseDescriptionHTML$jalview_datamodel_SequenceFeature$Z', function (sf, removeHTML) {
 if (sf.getDescription$() == null ) {
 return;
-}var parsed=Clazz.new_($I$(11).c$$S$Z$S,[sf.getDescription$(), removeHTML, this.newline]);
+}var parsed=Clazz.new_([sf.getDescription$(), removeHTML, this.newline],$I$(11,1).c$$S$Z$S);
 if (removeHTML) {
 sf.setDescription$S(parsed.getNonHtmlContent$());
 }for (var link, $link = parsed.getLinks$().iterator$(); $link.hasNext$()&&((link=($link.next$())),1);) {
@@ -220,21 +210,82 @@ sf.addLink$S(link);
 }
 });
 
-Clazz.newMeth(C$, 'printJalviewFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z', function (sequences, fr, includeNonPositional) {
+Clazz.newMeth(C$, 'printJalviewFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z$Z', function (sequences, fr, includeNonPositional, includeComplement) {
 var visibleColours=fr.getDisplayedFeatureCols$();
 var featureFilters=fr.getFeatureFilters$();
-if (!includeNonPositional && (visibleColours == null  || visibleColours.isEmpty$() ) ) {
-return "No Features Visible";
-}var out=Clazz.new_($I$(12).c$$I,[256]);
+var out=Clazz.new_($I$(12,1).c$$I,[256]);
 if (visibleColours != null ) {
 for (var featureColour, $featureColour = visibleColours.entrySet$().iterator$(); $featureColour.hasNext$()&&((featureColour=($featureColour.next$())),1);) {
 var colour=featureColour.getValue$();
 out.append$S(colour.toJalviewFormat$S(featureColour.getKey$())).append$S(this.newline);
 }
-}var types=visibleColours == null  ? Clazz.array(String, [0]) : visibleColours.keySet$().toArray$TTA(Clazz.array(String, [visibleColours.keySet$().size$()]));
+}var types=visibleColours == null  ? Clazz.array(String, [0]) : visibleColours.keySet$().toArray$OA(Clazz.array(String, [visibleColours.keySet$().size$()]));
 this.outputFeatureFilters$StringBuilder$java_util_Map$java_util_Map(out, visibleColours, featureFilters);
 var count=p$1.outputFeaturesByGroup$StringBuilder$jalview_api_FeatureRenderer$SA$jalview_datamodel_SequenceIA$Z.apply(this, [out, fr, types, sequences, includeNonPositional]);
-return count > 0 ? out.toString() : "No Features Visible";
+if (includeComplement) {
+count+=p$1.outputComplementFeatures$StringBuilder$jalview_api_FeatureRenderer$jalview_datamodel_SequenceIA.apply(this, [out, fr, sequences]);
+}return count > 0 ? out.toString() : "No Features Visible";
+});
+
+Clazz.newMeth(C$, 'outputComplementFeatures$StringBuilder$jalview_api_FeatureRenderer$jalview_datamodel_SequenceIA', function (out, fr, sequences) {
+var comp=fr.getViewport$().getCodingComplement$();
+var fr2=$I$(13).getAlignFrameFor$jalview_api_AlignViewportI(comp).getFeatureRenderer$();
+var map=Clazz.new_($I$(14,1).c$$java_util_Comparator,[String.CASE_INSENSITIVE_ORDER]);
+var count=0;
+for (var seq, $seq = 0, $$seq = sequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
+var complementary=this.findComplementaryFeatures$jalview_datamodel_SequenceI$jalview_api_FeatureRenderer(seq, fr2);
+var seqName=seq.getName$();
+for (var sf, $sf = complementary.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
+var group=sf.getFeatureGroup$();
+if (!map.containsKey$O(group)) {
+map.put$O$O(group, Clazz.new_($I$(15,1)));
+}var groupFeatures=map.get$O(group);
+if (!groupFeatures.containsKey$O(seqName)) {
+groupFeatures.put$O$O(seqName, Clazz.new_($I$(2,1)));
+}var foundFeatures=groupFeatures.get$O(seqName);
+foundFeatures.add$O(sf);
+count++;
+}
+}
+for (var groupFeatures, $groupFeatures = map.entrySet$().iterator$(); $groupFeatures.hasNext$()&&((groupFeatures=($groupFeatures.next$())),1);) {
+out.append$S(this.newline);
+var group=groupFeatures.getKey$();
+if (!"".equals$O(group)) {
+out.append$S("STARTGROUP").append$S("\t").append$S(group).append$S(this.newline);
+}var seqFeaturesMap=groupFeatures.getValue$();
+for (var seqFeatures, $seqFeatures = seqFeaturesMap.entrySet$().iterator$(); $seqFeatures.hasNext$()&&((seqFeatures=($seqFeatures.next$())),1);) {
+var sequenceName=seqFeatures.getKey$();
+for (var sf, $sf = seqFeatures.getValue$().iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
+this.formatJalviewFeature$StringBuilder$S$jalview_datamodel_SequenceFeature(out, sequenceName, sf);
+}
+}
+if (!"".equals$O(group)) {
+out.append$S("ENDGROUP").append$S("\t").append$S(group).append$S(this.newline);
+}}
+return count;
+}, p$1);
+
+Clazz.newMeth(C$, 'findComplementaryFeatures$jalview_datamodel_SequenceI$jalview_api_FeatureRenderer', function (seq, fr2) {
+var found=Clazz.new_($I$(2,1));
+var complementary=Clazz.new_($I$(2,1));
+for (var pos=seq.getStart$(); pos <= seq.getEnd$(); pos++) {
+var mf=fr2.findComplementFeaturesAtResidue$jalview_datamodel_SequenceI$I(seq, pos);
+if (mf != null ) {
+var mapping=mf.mapping.getMap$();
+for (var sf, $sf = mf.features.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
+if (!found.contains$O(sf)) {
+var group=sf.getFeatureGroup$();
+if (group == null ) {
+group="";
+}found.add$O(sf);
+var begin=sf.getBegin$();
+var end=sf.getEnd$();
+var range=mf.mapping.getTo$() === seq.getDatasetSequence$()  ? mapping.locateInTo$I$I(begin, end) : mapping.locateInFrom$I$I(begin, end);
+var sf2=Clazz.new_([sf, range[0], range[1], group, sf.getScore$()],$I$(6,1).c$$jalview_datamodel_SequenceFeature$I$I$S$F);
+complementary.add$O(sf2);
+}}
+}}
+return complementary;
 });
 
 Clazz.newMeth(C$, 'outputFeatureFilters$StringBuilder$java_util_Map$java_util_Map', function (out, visible, featureFilters) {
@@ -255,12 +306,12 @@ out.append$S("ENDFILTERS").append$S(this.newline);
 
 Clazz.newMeth(C$, 'outputFeaturesByGroup$StringBuilder$jalview_api_FeatureRenderer$SA$jalview_datamodel_SequenceIA$Z', function (out, fr, featureTypes, sequences, includeNonPositional) {
 var featureGroups=fr.getFeatureGroups$();
-var sortedGroups=Clazz.new_($I$(2).c$$java_util_Collection,[featureGroups]);
+var sortedGroups=Clazz.new_($I$(2,1).c$$java_util_Collection,[featureGroups]);
 sortedGroups.remove$O(null);
 sortedGroups.remove$O("");
-$I$(13).sort$java_util_List(sortedGroups);
-sortedGroups.add$TE(null);
-sortedGroups.add$TE("");
+$I$(16).sort$java_util_List(sortedGroups);
+sortedGroups.add$O(null);
+sortedGroups.add$O("");
 var count=0;
 var visibleGroups=fr.getDisplayedFeatureGroups$();
 for (var group, $group = sortedGroups.iterator$(); $group.hasNext$()&&((group=($group.next$())),1);) {
@@ -268,7 +319,7 @@ var firstInGroup=true;
 var isNullGroup=group == null  || "".equals$O(group) ;
 for (var i=0; i < sequences.length; i++) {
 var sequenceName=sequences[i].getName$();
-var features=Clazz.new_($I$(2));
+var features=Clazz.new_($I$(2,1));
 if (includeNonPositional) {
 features.addAll$java_util_Collection(sequences[i].getFeatures$().getFeaturesForGroup$Z$S$SA(false, group, []));
 }if (featureTypes.length > 0 && (isNullGroup || visibleGroups.contains$O(group) ) ) {
@@ -281,7 +332,7 @@ out.append$S(this.newline);
 if (!isNullGroup) {
 out.append$S("STARTGROUP").append$S("\t").append$S(group).append$S(this.newline);
 }}firstInGroup=false;
-out.append$S(this.formatJalviewFeature$S$jalview_datamodel_SequenceFeature(sequenceName, sf));
+this.formatJalviewFeature$StringBuilder$S$jalview_datamodel_SequenceFeature(out, sequenceName, sf);
 }}
 }
 if (!isNullGroup && !firstInGroup ) {
@@ -290,8 +341,7 @@ out.append$S("ENDGROUP").append$S("\t").append$S(group).append$S(this.newline);
 return count;
 }, p$1);
 
-Clazz.newMeth(C$, 'formatJalviewFeature$S$jalview_datamodel_SequenceFeature', function (sequenceName, sequenceFeature) {
-var out=Clazz.new_($I$(12).c$$I,[64]);
+Clazz.newMeth(C$, 'formatJalviewFeature$StringBuilder$S$jalview_datamodel_SequenceFeature', function (out, sequenceName, sequenceFeature) {
 if (sequenceFeature.description == null  || sequenceFeature.description.equals$O("") ) {
 out.append$S(sequenceFeature.type).append$S("\t");
 } else {
@@ -304,7 +354,7 @@ var label=sequenceFeature.links.elementAt$I(l);
 var href=label.substring$I(label.indexOf$S("|") + 1);
 label=label.substring$I$I(0, label.indexOf$S("|"));
 if (sequenceFeature.description.indexOf$S(href) == -1) {
-out.append$S(" <a href=\"" + href + "\">" + label + "</a>" );
+out.append$S(" <a href=\"").append$S(href).append$S("\">").append$S(label).append$S("</a>");
 }}
 if (sequenceFeature.getDescription$().indexOf$S("</html>") == -1) {
 out.append$S("</html>");
@@ -320,7 +370,6 @@ if (!Float.isNaN$F(sequenceFeature.score)) {
 out.append$S("\t");
 out.append$F(sequenceFeature.score);
 }out.append$S(this.newline);
-return out.toString();
 });
 
 Clazz.newMeth(C$, 'parse$', function () {
@@ -331,8 +380,8 @@ this.dataset=av.getAlignment$().getDataset$();
 }if (this.dataset == null ) {
 this.dataset=av.getAlignment$();
 }} else {
-this.dataset=Clazz.new_($I$(14).c$$jalview_datamodel_SequenceIA,[Clazz.array($I$(10), -1, [])]);
-}var featureColours=Clazz.new_($I$(1));
+this.dataset=Clazz.new_([Clazz.array($I$(10), -1, [])],$I$(17,1).c$$jalview_datamodel_SequenceIA);
+}var featureColours=Clazz.new_($I$(1,1));
 var parseResult=this.parse$jalview_datamodel_AlignmentI$java_util_Map$Z$Z(this.dataset, featureColours, false, true);
 if (!parseResult) {
 }if (av != null ) {
@@ -345,23 +394,38 @@ System.out.println$S("Use printGffFormat() or printJalviewFormat()");
 return null;
 });
 
-Clazz.newMeth(C$, 'printGffFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z', function (sequences, fr, includeNonPositionalFeatures) {
-var visibleColours=fr.getDisplayedFeatureCols$();
-var out=Clazz.new_($I$(12).c$$I,[256]);
+Clazz.newMeth(C$, 'printGffFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z$Z', function (sequences, fr, includeNonPositionalFeatures, includeComplement) {
+var fr2=null;
+if (includeComplement) {
+var comp=fr.getViewport$().getCodingComplement$();
+fr2=$I$(13).getAlignFrameFor$jalview_api_AlignViewportI(comp).getFeatureRenderer$();
+}var visibleColours=fr.getDisplayedFeatureCols$();
+var out=Clazz.new_($I$(12,1).c$$I,[256]);
 out.append$S(String.format$S$OA("%s %d\n", ["##gff-version", new Integer(this.gffVersion == 0 ? 2 : this.gffVersion)]));
-if (!includeNonPositionalFeatures && (visibleColours == null  || visibleColours.isEmpty$() ) ) {
-return out.toString();
-}var types=visibleColours == null  ? Clazz.array(String, [0]) : visibleColours.keySet$().toArray$TTA(Clazz.array(String, [visibleColours.keySet$().size$()]));
+var types=visibleColours == null  ? Clazz.array(String, [0]) : visibleColours.keySet$().toArray$OA(Clazz.array(String, [visibleColours.keySet$().size$()]));
 for (var seq, $seq = 0, $$seq = sequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
-var features=Clazz.new_($I$(2));
+var seqFeatures=Clazz.new_($I$(2,1));
+var features=Clazz.new_($I$(2,1));
 if (includeNonPositionalFeatures) {
 features.addAll$java_util_Collection(seq.getFeatures$().getNonPositionalFeatures$SA([]));
 }if (visibleColours != null  && !visibleColours.isEmpty$() ) {
 features.addAll$java_util_Collection(seq.getFeatures$().getPositionalFeatures$SA(types));
 }for (var sf, $sf = features.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
-if (!sf.isNonPositional$() && !fr.isVisible$jalview_datamodel_SequenceFeature(sf) ) {
-continue;
-}var source=sf.featureGroup;
+if (sf.isNonPositional$() || fr.isVisible$jalview_datamodel_SequenceFeature(sf) ) {
+seqFeatures.add$O(sf);
+}}
+if (includeComplement) {
+seqFeatures.addAll$java_util_Collection(this.findComplementaryFeatures$jalview_datamodel_SequenceI$jalview_api_FeatureRenderer(seq, fr2));
+}for (var sf, $sf = seqFeatures.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
+p$1.formatGffFeature$StringBuilder$jalview_datamodel_SequenceI$jalview_datamodel_SequenceFeature.apply(this, [out, seq, sf]);
+out.append$S(this.newline);
+}
+}
+return out.toString();
+});
+
+Clazz.newMeth(C$, 'formatGffFeature$StringBuilder$jalview_datamodel_SequenceI$jalview_datamodel_SequenceFeature', function (out, seq, sf) {
+var source=sf.featureGroup;
 if (source == null ) {
 source=sf.getDescription$();
 }out.append$S(seq.getName$());
@@ -381,14 +445,44 @@ out.append$S(strand == 1 ? "+" : (strand == -1 ? "-" : "."));
 out.append$S("\t");
 var phase=sf.getPhase$();
 out.append$S(phase == null  ? "." : phase);
-var attributes=sf.getAttributes$();
-if (attributes != null ) {
-out.append$S("\t").append$S(attributes);
-}out.append$S(this.newline);
-}
-}
-return out.toString();
+if (sf.otherDetails != null  && !sf.otherDetails.isEmpty$() ) {
+var map=sf.otherDetails;
+this.formatAttributes$StringBuilder$java_util_Map(out, map);
+}}, p$1);
+
+Clazz.newMeth(C$, 'formatAttributes$StringBuilder$java_util_Map', function (sb, map) {
+sb.append$S("\t");
+var first=true;
+for (var key, $key = map.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) {
+if ("STRAND".equals$O(key) || "!Phase".equals$O(key) ) {
+continue;
+}{
+if (!first) {
+sb.append$S(";");
+}}first=false;
+var value=map.get$O(key);
+if (Clazz.instanceOf(value, "java.util.Map")) {
+p$1.formatMapAttribute$StringBuilder$S$java_util_Map.apply(this, [sb, key, value]);
+} else {
+var formatted=$I$(18,"urlEncode$S$S",[value.toString(), ",=;\t%"]);
+sb.append$S(key).append$S("=").append$S(formatted);
+}}
 });
+
+Clazz.newMeth(C$, 'formatMapAttribute$StringBuilder$S$java_util_Map', function (sb, key, map) {
+if (map == null  || map.isEmpty$() ) {
+return;
+}sb.append$S(key).append$S("=");
+var first=true;
+for (var entry, $entry = map.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
+if (!first) {
+sb.append$S(",");
+}first=false;
+sb.append$S(entry.getKey$().toString()).append$S("=");
+var formatted=$I$(18,"urlEncode$S$S",[entry.getValue$().toString(), ",=;\t%"]);
+sb.append$S(formatted);
+}
+}, p$1);
 
 Clazz.newMeth(C$, 'constructCodonMappingFromAlign$java_util_List$Z$I', function (alignedRegions, mapIsFromCdna, strand) {
 if (strand == 0) {
@@ -426,7 +520,7 @@ fromRanges[fromRangesIndex++]=fromStart + strand * (fromCount - 1);
 toRanges[toRangesIndex++]=toStart;
 toRanges[toRangesIndex++]=toStart + ((fromCount - 1)/3|0);
 }
-return Clazz.new_($I$(15).c$$IA$IA$I$I,[fromRanges, toRanges, 3, 1]);
+return Clazz.new_($I$(19,1).c$$IA$IA$I$I,[fromRanges, toRanges, 3, 1]);
 });
 
 Clazz.newMeth(C$, 'parseGff$SA$jalview_datamodel_AlignmentI$Z$java_util_List', function (gffColumns, alignment, relaxedIdMatching, newseqs) {
@@ -436,14 +530,14 @@ return null;
 }var seqId=gffColumns[0];
 var seq=this.findSequence$S$jalview_datamodel_AlignmentI$java_util_List$Z(seqId, alignment, newseqs, relaxedIdMatching);
 var sf=null;
-var helper=$I$(16).getHelper$SA(gffColumns);
+var helper=$I$(20).getHelper$SA(gffColumns);
 if (helper != null ) {
 try {
-sf=helper.processGff$(seq, gffColumns, alignment, newseqs, relaxedIdMatching);
+sf=helper.processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z(seq, gffColumns, alignment, newseqs, relaxedIdMatching);
 if (sf != null ) {
 seq.addSequenceFeature$jalview_datamodel_SequenceFeature(sf);
 while ((seq=alignment.findName$jalview_datamodel_SequenceI$S$Z(seq, seqId, true)) != null ){
-seq.addSequenceFeature$jalview_datamodel_SequenceFeature(Clazz.new_($I$(6).c$$jalview_datamodel_SequenceFeature,[sf]));
+seq.addSequenceFeature$jalview_datamodel_SequenceFeature(Clazz.new_($I$(6,1).c$$jalview_datamodel_SequenceFeature,[sf]));
 }
 }} catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
@@ -456,18 +550,6 @@ throw e;
 }return seq;
 });
 
-Clazz.newMeth(C$, 'processGffColumnNine$S$jalview_datamodel_SequenceFeature', function (attributes, sf) {
-sf.setAttributes$S(attributes);
-var nameValueSeparator=this.gffVersion == 3 ? "=" : " ";
-var nameValues=$I$(17).parseNameValuePairs$S$S$C$S(attributes, ";", nameValueSeparator, ",");
-for (var attr, $attr = nameValues.entrySet$().iterator$(); $attr.hasNext$()&&((attr=($attr.next$())),1);) {
-var values=$I$(18).listToDelimitedString$java_util_List$S(attr.getValue$(), "; ");
-sf.setValue$S$O(attr.getKey$(), values);
-if ("Note".equals$O(attr.getKey$())) {
-sf.setDescription$S(values);
-}}
-});
-
 Clazz.newMeth(C$, 'processAsFasta$jalview_datamodel_AlignmentI$java_util_List', function (align, newseqs) {
 try {
 this.mark$();
@@ -477,9 +559,9 @@ if (Clazz.exceptionOf(q,"java.io.IOException")){
 throw q;
 }
 }
-var parser=Clazz.new_($I$(19).c$$jalview_io_FileParse,[this]);
+var parser=Clazz.new_($I$(21,1).c$$jalview_io_FileParse,[this]);
 var includedseqs=parser.getSeqs$();
-var smatcher=Clazz.new_($I$(7).c$$java_util_List,[newseqs]);
+var smatcher=Clazz.new_($I$(7,1).c$$java_util_List,[newseqs]);
 for (var p=0, pSize=includedseqs.size$(); p < pSize; p++) {
 var includedSeq=includedseqs.get$I(p);
 var dummyseq=smatcher.findIdMatch$jalview_datamodel_SequenceI(includedSeq);
@@ -489,11 +571,11 @@ dummyseq.createDatasetSequence$();
 for (var mapping, $mapping = align.getCodonFrames$().iterator$(); $mapping.hasNext$()&&((mapping=($mapping.next$())),1);) {
 mapping.updateToDataset$jalview_datamodel_SequenceI(dummyseq);
 }
-includedseqs.set$I$TE(p, dummyseq);
+includedseqs.set$I$O(p, dummyseq);
 newseqs.remove$O(dummyseq);
 }}
 for (var seq, $seq = includedseqs.iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
-$I$(20).alignSequenceAs$jalview_datamodel_SequenceI$jalview_datamodel_AlignmentI$S$Z$Z(seq, align, String.valueOf$C(align.getGapCharacter$()), false, true);
+$I$(22,"alignSequenceAs$jalview_datamodel_SequenceI$jalview_datamodel_AlignmentI$S$Z$Z",[seq, align, String.valueOf$C(align.getGapCharacter$()), false, true]);
 var sfs=seq.getFeatures$().getPositionalFeatures$SA([]);
 if (!sfs.isEmpty$()) {
 var newName=sfs.get$I(0).getValue$S("$RENAME_TO$");
@@ -525,11 +607,11 @@ throw e;
 } else if ("attribute-ontology".equalsIgnoreCase$S(pragma)) {
 } else if ("source-ontology".equalsIgnoreCase$S(pragma)) {
 } else if ("species-build".equalsIgnoreCase$S(pragma)) {
-gffProps.put$TK$TV("species-build", value);
+gffProps.put$O$O("species-build", value);
 } else if ("fasta".equalsIgnoreCase$S(pragma)) {
 this.processAsFasta$jalview_datamodel_AlignmentI$java_util_List(align, newseqs);
 } else {
 System.err.println$S("Ignoring unknown pragma: " + line);
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

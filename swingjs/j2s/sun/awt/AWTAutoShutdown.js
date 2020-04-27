@@ -1,25 +1,19 @@
-(function(){var P$=Clazz.newPackage("sun.awt"),p$1={},I$=[[0,'java.util.HashSet','java.util.IdentityHashMap','java.awt.AWTEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AWTAutoShutdown", null, null, 'Runnable');
-C$.theInstance=null;
+(function(){var P$=Clazz.newPackage("sun.awt"),p$1={},I$=[[0,'java.util.HashSet','java.util.IdentityHashMap','java.awt.AWTEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AWTAutoShutdown", null, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.busyThreadSet=null;
-this.toolkitThreadBusy=false;
-this.peerMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.busyThreadSet=Clazz.new_($I$(1).c$$I,[7]);
+this.busyThreadSet=Clazz.new_($I$(1,1).c$$I,[7]);
 this.toolkitThreadBusy=false;
-this.peerMap=Clazz.new_($I$(2));
-}, 1);
+this.peerMap=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['toolkitThreadBusy'],'O',['busyThreadSet','java.util.HashSet','peerMap','java.util.Map']]
+,['O',['theInstance','sun.awt.AWTAutoShutdown']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getInstance$', function () {
@@ -35,7 +29,7 @@ p$1.setToolkitBusy$Z.apply(C$.getInstance$(), [false]);
 }, 1);
 
 Clazz.newMeth(C$, 'notifyThreadBusy$Thread', function (thread) {
-this.busyThreadSet.add$TE(thread);
+this.busyThreadSet.add$O(thread);
 });
 
 Clazz.newMeth(C$, 'notifyThreadFree$Thread', function (thread) {
@@ -65,22 +59,21 @@ Clazz.newMeth(C$, 'run$', function () {
 
 Clazz.newMeth(C$, 'getShutdownEvent$', function () {
 return ((P$.AWTAutoShutdown$1||
-(function(){var C$=Clazz.newClass(P$, "AWTAutoShutdown$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.AWTEvent'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AWTAutoShutdown$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.AWTEvent'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 })()
-), Clazz.new_($I$(3).c$$O$I, [this, null, C$.getInstance$(), 0],P$.AWTAutoShutdown$1));
+), Clazz.new_([this, null, C$.getInstance$(), 0],$I$(3,1).c$$O$I,P$.AWTAutoShutdown$1));
 }, 1);
 
 Clazz.newMeth(C$, 'activateBlockerThread', function () {
 }, p$1);
 
 Clazz.newMeth(C$, 'registerPeer$O$O', function (target, peer) {
-this.peerMap.put$TK$TV(target, peer);
+this.peerMap.put$O$O(target, peer);
 this.notifyPeerMapUpdated$();
 });
 
@@ -100,4 +93,4 @@ aLog.fine$S(key + "->" + this.peerMap.get$O(key) );
 }
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

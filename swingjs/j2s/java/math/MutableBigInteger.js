@@ -1,51 +1,43 @@
-(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.util.Arrays','java.math.BigInteger','java.math.BigDecimal','java.math.SignedMutableBigInteger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MutableBigInteger");
-C$.ONE=null;
+(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.util.Arrays','java.math.BigInteger','java.math.BigDecimal','java.math.SignedMutableBigInteger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MutableBigInteger");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.ONE=Clazz.new_(C$.c$$I,[1]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.intLen=0;
-this.offset=0;
-this.src=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.offset=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['intLen','offset'],'O',['value','int[]','src','java.math.BigInteger']]
+,['O',['ONE','java.math.MutableBigInteger']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.value=Clazz.array(Integer.TYPE, [1]);
 this.intLen=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (val) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.value=Clazz.array(Integer.TYPE, [1]);
 this.intLen=1;
 this.value[0]=val;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$IA', function (val) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.value=val;
 this.intLen=val.length;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_math_BigInteger', function (b) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.src=b;
 this.intLen=b.mag.length;
 this.value=$I$(1).copyOf$IA$I(b.mag, this.intLen);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_math_MutableBigInteger', function (val) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.intLen=val.intLen;
 this.value=$I$(1).copyOfRange$IA$I$I(val.value, val.offset, val.offset + this.intLen);
 }, 1);
@@ -71,7 +63,7 @@ return (this.intLen == 2 ? $I$(2).toLongBits$J$J(d, this.value[this.offset + 1])
 
 Clazz.newMeth(C$, 'toBigInteger$I', function (sign) {
 if (this.intLen == 0 || sign == 0 ) return $I$(2).ZERO;
-return Clazz.new_($I$(2).c$$IA$I,[p$1.getMagnitudeArray.apply(this, []), sign]);
+return Clazz.new_([p$1.getMagnitudeArray.apply(this, []), sign],$I$(2,1).c$$IA$I);
 });
 
 Clazz.newMeth(C$, 'toBigInteger$', function () {
@@ -84,9 +76,9 @@ if (this.intLen == 0 || sign == 0 ) return $I$(3).zeroValueOf$I(scale);
 var mag=p$1.getMagnitudeArray.apply(this, []);
 var len=mag.length;
 var d=mag[0];
-if (len > 2 || (d < 0 && len == 2 ) ) return Clazz.new_($I$(3).c$$java_math_BigInteger$J$I$I,[Clazz.new_($I$(2).c$$IA$I,[mag, sign]), -281474976710656, scale, 0]);
+if (len > 2 || (d < 0 && len == 2 ) ) return Clazz.new_([Clazz.new_($I$(2,1).c$$IA$I,[mag, sign]), -281474976710656, scale, 0],$I$(3,1).c$$java_math_BigInteger$J$I$I);
 var v=(len == 2 ? $I$(2).toLongBits$J$J(d, mag[1]) : $I$(2).getLowBits$J(d));
-return $I$(3).valueOf$J$I(sign == -1 ? -v : v, scale);
+return $I$(3,"valueOf$J$I",[sign == -1 ? -v : v, scale]);
 });
 
 Clazz.newMeth(C$, 'toCompactValue$I', function (sign) {
@@ -155,7 +147,7 @@ carry=8388608;
 }var val=this.value;
 for (var i=this.offset, j=bstart; i < len + this.offset; ) {
 var bv=bval[j++];
-var hb=$I$(2).getLowBits$J((bv >>> 1) + carry);
+var hb=$I$(2,"getLowBits$J",[(bv >>> 1) + carry]);
 var v=$I$(2).getLowBits$J(val[i++]);
 if (v != hb) return v < hb ? -1 : 1;
 carry=((bv & 1) == 1 ? 8388608 : 0);
@@ -322,7 +314,7 @@ for (var j=len - 1; j >= 0; j--) {
 var product=$I$(2).getLowBits$J(a[j]) * xLong + carry;
 var difference=q[offset] - product;
 q[offset--]=$I$(2).getLowBits$J(difference);
-carry=($I$(2).getHighBits$J(product)) + (($I$(2).getLowBits$J(difference) > (($I$(2).getLowBits$J(~(product|0))))) ? 1 : 0);
+carry=($I$(2).getHighBits$J(product)) + (($I$(2).getLowBits$J(difference) > (($I$(2,"getLowBits$J",[~(product|0)])))) ? 1 : 0);
 }
 return (carry|0);
 }, p$1);
@@ -334,7 +326,7 @@ offset+=len;
 for (var j=len - 1; j >= 0; j--) {
 var product=$I$(2).getLowBits$J(a[j]) * xLong + carry;
 var difference=q[offset--] - product;
-carry=($I$(2).getHighBits$J(product)) + ($I$(2).getLowBits$J(difference) > $I$(2).getLowBits$J(~(product|0)) ? 1 : 0);
+carry=($I$(2).getHighBits$J(product)) + ($I$(2).getLowBits$J(difference) > $I$(2,"getLowBits$J",[~(product|0)]) ? 1 : 0);
 }
 return (carry|0);
 }, p$1);
@@ -356,7 +348,7 @@ var n2=24 - n;
 for (var i=this.offset, c=val[i], m=i + this.intLen - 1; i < m; i++) {
 var b=c;
 c=val[i + 1];
-val[i]=$I$(2).getLowBits$J((b << n) | (c >>> n2));
+val[i]=$I$(2,"getLowBits$J",[(b << n) | (c >>> n2)]);
 }
 val[this.offset + this.intLen - 1]=$I$(2).getLowBits$J(val[this.offset + this.intLen - 1] << n);
 }, p$1);
@@ -371,7 +363,7 @@ var len=n;
 while (len > 0 && this.value[this.offset + this.intLen - len] == 0 )len--;
 
 var sign=len > 0 ? 1 : 0;
-return Clazz.new_($I$(2).c$$IA$I,[$I$(1).copyOfRange$IA$I$I(this.value, this.offset + this.intLen - len, this.offset + this.intLen), sign]);
+return Clazz.new_([$I$(1).copyOfRange$IA$I$I(this.value, this.offset + this.intLen - len, this.offset + this.intLen), sign],$I$(2,1).c$$IA$I);
 }}, p$1);
 
 Clazz.newMeth(C$, 'keepLower$I', function (n) {
@@ -617,7 +609,7 @@ Clazz.newMeth(C$, 'divideOneWord$I$java_math_MutableBigInteger', function (divis
 var divisorLong=$I$(2).getLowBits$J(divisor);
 if (this.intLen == 1) {
 var dividendValue=$I$(2).getLowBits$J(this.value[this.offset]);
-var q=$I$(2).getLowBits$J((dividendValue/divisorLong|0));
+var q=$I$(2,"getLowBits$J",[(dividendValue/divisorLong|0)]);
 var r=$I$(2).getLowBits$J(dividendValue - q * divisorLong);
 quotient.value[0]=q;
 quotient.intLen=(q == 0) ? 0 : 1;
@@ -632,7 +624,7 @@ var remLong=$I$(2).getLowBits$J(rem);
 if (remLong < divisorLong) {
 quotient.value[0]=0;
 } else {
-quotient.value[0]=$I$(2).getLowBits$J((remLong/divisorLong|0));
+quotient.value[0]=$I$(2,"getLowBits$J",[(remLong/divisorLong|0)]);
 rem=((remLong - (quotient.value[0] * divisorLong))|0);
 remLong=(rem);
 }var xlen=this.intLen;
@@ -813,7 +805,7 @@ return 0;
 }if (v < 0) v=-v;
 var d=$I$(2).getHighBits$J(v);
 quotient.clear$();
-if (d == 0) return $I$(2).getLowBits$J(this.divideOneWord$I$java_math_MutableBigInteger((v|0), quotient));
+if (d == 0) return $I$(2,"getLowBits$J",[this.divideOneWord$I$java_math_MutableBigInteger((v|0), quotient)]);
  else {
 return p$1.toLong.apply(p$1.divideLongMagnitude$J$java_math_MutableBigInteger.apply(this, [v, quotient]), []);
 }});
@@ -929,8 +921,8 @@ skipCorrection=qrem + -2147483648 < nh2;
 } else {
 var nChunk=$I$(2).toLongBits$J$J(nh, nm);
 if (nChunk >= 0) {
-qhat=$I$(2).getLowBits$J((nChunk/dhLong|0));
-qrem=$I$(2).getLowBits$J(nChunk - (qhat * dhLong));
+qhat=$I$(2,"getLowBits$J",[(nChunk/dhLong|0)]);
+qrem=$I$(2,"getLowBits$J",[nChunk - (qhat * dhLong)]);
 } else {
 var tmp=C$.divWord$J$I(nChunk, dh);
 qhat=$I$(2).getLowBits$J(tmp);
@@ -999,8 +991,8 @@ skipCorrection=qrem + -2147483648 < nh2;
 } else {
 var nChunk=$I$(2).toLongBits$J$J(nh, nm);
 if (nChunk >= 0) {
-qhat=$I$(2).getLowBits$J((nChunk/dhLong|0));
-qrem=$I$(2).getLowBits$J(nChunk - (qhat * dhLong));
+qhat=$I$(2,"getLowBits$J",[(nChunk/dhLong|0)]);
+qrem=$I$(2,"getLowBits$J",[nChunk - (qhat * dhLong)]);
 } else {
 var tmp=C$.divWord$J$I(nChunk, dh);
 qhat=$I$(2).getLowBits$J(tmp);
@@ -1046,11 +1038,11 @@ offset+=2;
 var product=$I$(2).getLowBits$J(dl) * xLong;
 var difference=q[offset] - product;
 q[offset--]=$I$(2).getLowBits$J(difference);
-var carry=($I$(2).getHighBits$J(product)) + (($I$(2).getLowBits$J(difference) > ($I$(2).getLowBits$J((~(product|0))))) ? 1 : 0);
+var carry=($I$(2).getHighBits$J(product)) + (($I$(2).getLowBits$J(difference) > ($I$(2,"getLowBits$J",[(~(product|0))]))) ? 1 : 0);
 product=$I$(2).getLowBits$J(dh) * xLong + carry;
 difference=q[offset] - product;
 q[offset--]=$I$(2).getLowBits$J(difference);
-carry=($I$(2).getHighBits$J(product)) + (($I$(2).getLowBits$J(difference) > (($I$(2).getLowBits$J(~(product|0))))) ? 1 : 0);
+carry=($I$(2).getHighBits$J(product)) + (($I$(2).getLowBits$J(difference) > (($I$(2,"getLowBits$J",[~(product|0)])))) ? 1 : 0);
 return (carry|0);
 }, p$1);
 
@@ -1200,8 +1192,8 @@ Clazz.newMeth(C$, 'modInverse$java_math_MutableBigInteger', function (mod) {
 var p=Clazz.new_(C$.c$$java_math_MutableBigInteger,[mod]);
 var f=Clazz.new_(C$.c$$java_math_MutableBigInteger,[this]);
 var g=Clazz.new_(C$.c$$java_math_MutableBigInteger,[p]);
-var c=Clazz.new_($I$(4).c$$I,[1]);
-var d=Clazz.new_($I$(4));
+var c=Clazz.new_($I$(4,1).c$$I,[1]);
+var d=Clazz.new_($I$(4,1));
 var temp=null;
 var sTemp=null;
 var k=0;
@@ -1295,6 +1287,10 @@ t1.add$java_math_MutableBigInteger(q);
 mod.subtract$java_math_MutableBigInteger(t1);
 return mod;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.ONE=Clazz.new_(C$.c$$I,[1]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

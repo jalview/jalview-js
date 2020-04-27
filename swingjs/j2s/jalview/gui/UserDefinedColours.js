@@ -1,23 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.awt.Font','java.util.ArrayList','javax.swing.JInternalFrame','jalview.gui.Desktop','jalview.util.MessageManager','jalview.schemes.ResidueProperties','jalview.util.ColorUtils','javax.swing.JButton','java.awt.event.MouseAdapter','java.awt.Color','java.awt.Insets','jalview.gui.JvOptionPane','jalview.util.Platform','jalview.schemes.UserColourScheme','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.bin.Cache','jalview.schemes.ColourSchemeLoader','jalview.schemes.ColourSchemes','jalview.xml.binding.jalview.JalviewUserColours','java.io.PrintWriter','java.io.OutputStreamWriter','java.io.FileOutputStream',['jalview.xml.binding.jalview.JalviewUserColours','.Colour'],'jalview.util.Format','javax.xml.bind.JAXBContext','jalview.xml.binding.jalview.ObjectFactory']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UserDefinedColours", null, 'jalview.jbgui.GUserDefinedColours', 'javax.swing.event.ChangeListener');
-C$.VERDANA_BOLD_10=null;
+(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.awt.Font','java.util.ArrayList','javax.swing.JInternalFrame','jalview.gui.Desktop','jalview.util.MessageManager','jalview.schemes.ResidueProperties','jalview.util.ColorUtils','javax.swing.JButton','java.awt.event.MouseAdapter','java.awt.Color','java.awt.Insets','jalview.gui.JvOptionPane','jalview.util.Platform','jalview.schemes.UserColourScheme','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.bin.Cache','jalview.schemes.ColourSchemeLoader','jalview.schemes.ColourSchemes','jalview.xml.binding.jalview.JalviewUserColours','java.io.PrintWriter','java.io.OutputStreamWriter','java.io.FileOutputStream',['jalview.xml.binding.jalview.JalviewUserColours','.Colour'],'jalview.util.Format','javax.xml.bind.JAXBContext','jalview.xml.binding.jalview.ObjectFactory']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UserDefinedColours", null, 'jalview.jbgui.GUserDefinedColours', 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.VERDANA_BOLD_10=Clazz.new_($I$(1).c$$S$I$I,["Verdana", 1, 10]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ap=null;
-this.oldColourScheme=null;
-this.changedButNotSaved=false;
-this.frame=null;
-this.upperCaseButtons=null;
-this.lowerCaseButtons=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['changedButNotSaved'],'O',['ap','jalview.gui.AlignmentPanel','oldColourScheme','jalview.schemes.ColourSchemeI','frame','javax.swing.JInternalFrame','upperCaseButtons','java.util.List','+lowerCaseButtons']]
+,['O',['VERDANA_BOLD_10','java.awt.Font']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel', function (alignPanel) {
 C$.c$.apply(this, []);
@@ -38,22 +28,21 @@ this.resetButtonPanel$Z(false);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.selectedButtons=Clazz.new_($I$(2));
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.selectedButtons=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'showFrame$', function () {
 this.colorChooser.getSelectionModel$().addChangeListener$javax_swing_event_ChangeListener(this);
-this.frame=Clazz.new_($I$(3));
+this.frame=Clazz.new_($I$(3,1));
 this.frame.setContentPane$java_awt_Container(this);
-$I$(4).addInternalFrame$javax_swing_JInternalFrame$S$I$I$Z(this.frame, $I$(5).getString$S("label.user_defined_colours"), 810, 440, true);
+$I$(4,"addInternalFrame$javax_swing_JInternalFrame$S$I$I$Z",[this.frame, $I$(5).getString$S("label.user_defined_colours"), 810, 440, true]);
 });
 
 Clazz.newMeth(C$, 'resetButtonPanel$Z', function (isCaseSensitive) {
 this.buttonPanel.removeAll$();
 if (this.upperCaseButtons == null ) {
-this.upperCaseButtons=Clazz.new_($I$(2));
+this.upperCaseButtons=Clazz.new_($I$(2,1));
 }for (var i=0; i < 20; i++) {
 var label=isCaseSensitive ? $I$(6).aa[i] : $I$(6).aa2Triplet.get$O($I$(6).aa[i]).toString();
 var button=this.makeButton$S$S$java_util_List$I(label, $I$(6).aa[i], this.upperCaseButtons, i);
@@ -71,7 +60,7 @@ this.gridLayout.setRows$I(7);
 var cols=7;
 this.gridLayout.setColumns$I(cols + 1);
 if (this.lowerCaseButtons == null ) {
-this.lowerCaseButtons=Clazz.new_($I$(2));
+this.lowerCaseButtons=Clazz.new_($I$(2,1));
 }for (var i=0; i < 20; i++) {
 var row=(i/cols|0) + 1;
 var index=(row * cols) + i;
@@ -89,7 +78,7 @@ this.frame.setSize$I$I(newWidth, this.frame.getHeight$());
 this.validate$();
 });
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (evt) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (evt) {
 var button=null;
 var newColour=this.colorChooser.getColor$();
 if (this.lcaseColour.isSelected$()) {
@@ -97,7 +86,7 @@ this.selectedButtons.clear$();
 for (var i=0; i < this.lowerCaseButtons.size$(); i++) {
 button=this.lowerCaseButtons.get$I(i);
 button.setBackground$java_awt_Color(newColour);
-button.setForeground$java_awt_Color($I$(7).brighterThan$java_awt_Color(button.getBackground$()));
+button.setForeground$java_awt_Color($I$(7,"brighterThan$java_awt_Color",[button.getBackground$()]));
 }
 }for (var i=0; i < this.selectedButtons.size$(); i++) {
 button=this.selectedButtons.get$I(i);
@@ -131,24 +120,24 @@ endIndex=temp;
 }for (var b=startIndex; b <= endIndex; b++) {
 var button=this.buttonPanel.getComponent$I(b);
 if (!this.selectedButtons.contains$O(button)) {
-button.setForeground$java_awt_Color($I$(7).brighterThan$java_awt_Color(button.getBackground$()));
-this.selectedButtons.add$TE(button);
+button.setForeground$java_awt_Color($I$(7,"brighterThan$java_awt_Color",[button.getBackground$()]));
+this.selectedButtons.add$O(button);
 }}
 } else if (!e.isControlDown$()) {
 for (var b=0; b < this.selectedButtons.size$(); b++) {
 var button=this.selectedButtons.get$I(b);
-button.setForeground$java_awt_Color($I$(7).darkerThan$java_awt_Color(button.getBackground$()));
+button.setForeground$java_awt_Color($I$(7,"darkerThan$java_awt_Color",[button.getBackground$()]));
 }
 this.selectedButtons.clear$();
-pressed.setForeground$java_awt_Color($I$(7).brighterThan$java_awt_Color(pressed.getBackground$()));
-this.selectedButtons.add$TE(pressed);
+pressed.setForeground$java_awt_Color($I$(7,"brighterThan$java_awt_Color",[pressed.getBackground$()]));
+this.selectedButtons.add$O(pressed);
 } else if (e.isControlDown$()) {
 if (this.selectedButtons.contains$O(pressed)) {
-pressed.setForeground$java_awt_Color($I$(7).darkerThan$java_awt_Color(pressed.getBackground$()));
+pressed.setForeground$java_awt_Color($I$(7,"darkerThan$java_awt_Color",[pressed.getBackground$()]));
 this.selectedButtons.remove$O(pressed);
 } else {
-pressed.setForeground$java_awt_Color($I$(7).brighterThan$java_awt_Color(pressed.getBackground$()));
-this.selectedButtons.add$TE(pressed);
+pressed.setForeground$java_awt_Color($I$(7,"brighterThan$java_awt_Color",[pressed.getBackground$()]));
+this.selectedButtons.add$O(pressed);
 }}if (this.selectedButtons.size$() > 0) {
 this.colorChooser.setColor$java_awt_Color((this.selectedButtons.get$I(0)).getBackground$());
 }});
@@ -160,29 +149,28 @@ if (buttonIndex < buttons.size$()) {
 button=buttons.get$I(buttonIndex);
 col=button.getBackground$();
 } else {
-button=Clazz.new_($I$(8));
+button=Clazz.new_($I$(8,1));
 button.addMouseListener$java_awt_event_MouseListener(((P$.UserDefinedColours$1||
-(function(){var C$=Clazz.newClass(P$, "UserDefinedColours$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "UserDefinedColours$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
 this.b$['jalview.gui.UserDefinedColours'].colourButtonPressed$java_awt_event_MouseEvent.apply(this.b$['jalview.gui.UserDefinedColours'], [e]);
 });
 })()
-), Clazz.new_($I$(9), [this, null],P$.UserDefinedColours$1)));
-buttons.add$TE(button);
+), Clazz.new_($I$(9,1),[this, null],P$.UserDefinedColours$1)));
+buttons.add$O(button);
 col=$I$(10).white;
 if (this.oldColourScheme != null  && this.oldColourScheme.isSimple$() ) {
 col=this.oldColourScheme.findColour$C$I$jalview_datamodel_SequenceI$S$F(residue.charAt$I(0), 0, null, null, 0.0);
 }}if (this.caseSensitive.isSelected$()) {
-button.setMargin$java_awt_Insets(Clazz.new_($I$(11).c$$I$I$I$I,[2, 2, 2, 2]));
+button.setMargin$java_awt_Insets(Clazz.new_($I$(11,1).c$$I$I$I$I,[2, 2, 2, 2]));
 } else {
-button.setMargin$java_awt_Insets(Clazz.new_($I$(11).c$$I$I$I$I,[2, 14, 2, 14]));
+button.setMargin$java_awt_Insets(Clazz.new_($I$(11,1).c$$I$I$I$I,[2, 14, 2, 14]));
 }button.setOpaque$Z(true);
 button.setBackground$java_awt_Color(col);
 button.setText$S(label);
@@ -193,7 +181,7 @@ return button;
 
 Clazz.newMeth(C$, 'okButton_actionPerformed$', function () {
 if (this.isNoSelectionMade$()) {
-$I$(12).showMessageDialog$java_awt_Component$S$S$I($I$(4).desktop, $I$(5).getString$S("label.no_colour_selection_in_scheme"), $I$(5).getString$S("label.no_colour_selection_warn"), 2);
+$I$(12,"showMessageDialog$java_awt_Component$S$S$I",[$I$(4).desktop, $I$(5).getString$S("label.no_colour_selection_in_scheme"), $I$(5).getString$S("label.no_colour_selection_warn"), 2]);
 } else {
 this.applyButton_actionPerformed$();
 this.warnIfUnsavedChanges$();
@@ -221,7 +209,7 @@ return noSelectionMade;
 
 Clazz.newMeth(C$, 'applyButton_actionPerformed$', function () {
 if (this.isNoSelectionMade$()) {
-$I$(12).showMessageDialog$java_awt_Component$S$S$I($I$(4).desktop, $I$(5).getString$S("label.no_colour_selection_in_scheme"), $I$(5).getString$S("label.no_colour_selection_warn"), 2);
+$I$(12,"showMessageDialog$java_awt_Component$S$S$I",[$I$(4).desktop, $I$(5).getString$S("label.no_colour_selection_in_scheme"), $I$(5).getString$S("label.no_colour_selection_warn"), 2]);
 }var ucs=this.getSchemeFromButtons$();
 this.ap.alignFrame.changeColour$jalview_schemes_ColourSchemeI(ucs);
 });
@@ -240,7 +228,7 @@ for (var i=0; i < 24; i++) {
 var button=this.upperCaseButtons.get$I(i);
 newColours[i]=button.getBackground$();
 }
-}var ucs=Clazz.new_($I$(14).c$$java_awt_ColorA,[newColours]);
+}var ucs=Clazz.new_($I$(14,1).c$$java_awt_ColorA,[newColours]);
 ucs.setName$S(this.schemeName.getText$());
 if (this.caseSensitive.isSelected$()) {
 newColours=Clazz.array($I$(10), [23]);
@@ -261,25 +249,24 @@ newColours[i]=button.getBackground$();
 });
 
 Clazz.newMeth(C$, 'loadbutton_actionPerformed$', function () {
-this.upperCaseButtons=Clazz.new_($I$(2));
-this.lowerCaseButtons=Clazz.new_($I$(2));
-var chooser=Clazz.new_($I$(15).c$$S$S,["jc", "Jalview User Colours"]);
-chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(16)));
+this.upperCaseButtons=Clazz.new_($I$(2,1));
+this.lowerCaseButtons=Clazz.new_($I$(2,1));
+var chooser=Clazz.new_($I$(15,1).c$$S$S,["jc", "Jalview User Colours"]);
+chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(16,1)));
 chooser.setDialogTitle$S($I$(5).getString$S("label.load_colour_scheme"));
 chooser.setToolTipText$S($I$(5).getString$S("action.load"));
 chooser.setResponseHandler$O$Runnable(new Integer(0), ((P$.UserDefinedColours$2||
-(function(){var C$=Clazz.newClass(P$, "UserDefinedColours$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "UserDefinedColours$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var choice=this.$finals$.chooser.getSelectedFile$();
-$I$(17).setProperty$S$S("LAST_DIRECTORY", choice.getParent$());
-var ucs=$I$(18).loadColourScheme$S(choice.getAbsolutePath$());
+$I$(17,"setProperty$S$S",["LAST_DIRECTORY", choice.getParent$()]);
+var ucs=$I$(18,"loadColourScheme$S",[choice.getAbsolutePath$()]);
 var colors=ucs.getColours$();
 this.b$['jalview.gui.UserDefinedColours'].schemeName.setText$S(ucs.getSchemeName$());
 if (ucs.getLowerCaseColours$() != null ) {
@@ -301,7 +288,7 @@ button.setBackground$java_awt_Color(colors[i]);
 this.b$['jalview.gui.UserDefinedColours'].addNewColourScheme$S.apply(this.b$['jalview.gui.UserDefinedColours'], [choice.getPath$()]);
 });
 })()
-), Clazz.new_(P$.UserDefinedColours$2.$init$, [this, {chooser: chooser}])));
+), Clazz.new_(P$.UserDefinedColours$2.$init$,[this, {chooser:chooser}])));
 chooser.showOpenDialog$java_awt_Component(this);
 });
 
@@ -313,19 +300,19 @@ if (colours.indexOf$S("|") > -1) {
 colours=colours.substring$I$I(0, colours.indexOf$S("|"));
 }ret=$I$(18).loadColourScheme$S(colours);
 }if (ret == null ) {
-ret=Clazz.new_($I$(14).c$$S,["white"]);
+ret=Clazz.new_($I$(14,1).c$$S,["white"]);
 }return ret;
 }, 1);
 
 Clazz.newMeth(C$, 'savebutton_actionPerformed$', function () {
 var name=this.schemeName.getText$().trim$();
 if (name.length$() < 1) {
-$I$(12).showInternalMessageDialog$java_awt_Component$S$S$I($I$(4).desktop, $I$(5).getString$S("label.user_colour_scheme_must_have_name"), $I$(5).getString$S("label.no_name_colour_scheme"), 2);
+$I$(12,"showInternalMessageDialog$java_awt_Component$S$S$I",[$I$(4).desktop, $I$(5).getString$S("label.user_colour_scheme_must_have_name"), $I$(5).getString$S("label.no_name_colour_scheme"), 2]);
 }if (!$I$(13).isJS$() && $I$(19).getInstance$().nameExists$S(name) ) {
 
 {}
-}var chooser=Clazz.new_($I$(15).c$$S$S,["jc", "Jalview User Colours"]);
-var fileView=Clazz.new_($I$(16));
+}var chooser=Clazz.new_($I$(15,1).c$$S$S,["jc", "Jalview User Colours"]);
+var fileView=Clazz.new_($I$(16,1));
 chooser.setFileView$javax_swing_filechooser_FileView(fileView);
 chooser.setDialogTitle$S($I$(5).getString$S("label.save_colour_scheme"));
 chooser.setToolTipText$S($I$(5).getString$S("action.save"));
@@ -355,21 +342,21 @@ this.ap.alignFrame.buildColourMenu$();
 });
 
 Clazz.newMeth(C$, 'saveToFile$java_io_File', function (toFile) {
-var ucs=Clazz.new_($I$(20));
+var ucs=Clazz.new_($I$(20,1));
 var name=this.schemeName.getText$();
 ucs.setSchemeName$S(name);
 try {
-var out=Clazz.new_($I$(21).c$$java_io_Writer,[Clazz.new_($I$(22).c$$java_io_OutputStream$S,[Clazz.new_($I$(23).c$$java_io_File,[toFile]), "UTF-8"])]);
+var out=Clazz.new_([Clazz.new_([Clazz.new_($I$(23,1).c$$java_io_File,[toFile]), "UTF-8"],$I$(22,1).c$$java_io_OutputStream$S)],$I$(21,1).c$$java_io_Writer);
 for (var i=0; i < this.buttonPanel.getComponentCount$(); i++) {
 var button=this.buttonPanel.getComponent$I(i);
-var col=Clazz.new_($I$(24));
+var col=Clazz.new_($I$(24,1));
 col.setName$S(button.getText$());
-col.setRGB$S($I$(25).getHexString$java_awt_Color(button.getBackground$()));
-ucs.getColour$().add$TE(col);
+col.setRGB$S($I$(25,"getHexString$java_awt_Color",[button.getBackground$()]));
+ucs.getColour$().add$O(col);
 }
-var jaxbContext=$I$(26).newInstance$ClassA([Clazz.getClass($I$(20))]);
+var jaxbContext=$I$(26,"newInstance$ClassA",[[Clazz.getClass($I$(20))]]);
 var jaxbMarshaller=jaxbContext.createMarshaller$();
-jaxbMarshaller.marshal$O$java_io_Writer(Clazz.new_($I$(27)).createJalviewUserColours$jalview_xml_binding_jalview_JalviewUserColours(ucs), out);
+jaxbMarshaller.marshal$O$java_io_Writer(Clazz.new_($I$(27,1)).createJalviewUserColours$jalview_xml_binding_jalview_JalviewUserColours(ucs), out);
 out.close$();
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
@@ -398,5 +385,9 @@ var selected=this.caseSensitive.isSelected$();
 this.resetButtonPanel$Z(selected);
 this.lcaseColour.setEnabled$Z(selected);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.VERDANA_BOLD_10=Clazz.new_($I$(1,1).c$$S$I$I,["Verdana", 1, 10]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

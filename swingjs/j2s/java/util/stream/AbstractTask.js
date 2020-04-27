@@ -1,35 +1,23 @@
-(function(){var P$=Clazz.newPackage("java.util.stream"),I$=[[0,'java.util.concurrent.ForkJoinPool']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractTask", null, 'java.util.concurrent.CountedCompleter');
-C$.LEAF_TARGET=0;
+(function(){var P$=Clazz.newPackage("java.util.stream"),I$=[[0,'java.util.concurrent.ForkJoinPool']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractTask", null, 'java.util.concurrent.CountedCompleter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LEAF_TARGET=$I$(1).getCommonPoolParallelism$() << 2;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.helper=null;
-this.spliterator=null;
-this.targetSize=0;
-this.leftChild=null;
-this.rightChild=null;
-this.localResult=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_stream_PipelineHelper$java_util_Spliterator','c$null'], function (helper, spliterator) {
-C$.superclazz.c$$java_util_concurrent_CountedCompleter.apply(this, [null]);
-C$.$init$.apply(this);
+C$.$fields$=[['J',['targetSize'],'O',['helper','java.util.stream.PipelineHelper','spliterator','java.util.Spliterator','leftChild','<K extends AbstractTask<P_IN,P_OUT,R,K>>','+rightChild','localResult','<R>']]
+,['I',['LEAF_TARGET']]]
+
+Clazz.newMeth(C$, 'c$$java_util_stream_PipelineHelper$java_util_Spliterator', function (helper, spliterator) {
+;C$.superclazz.c$$java_util_concurrent_CountedCompleter.apply(this,[null]);C$.$init$.apply(this);
 this.helper=helper;
 this.spliterator=spliterator;
 this.targetSize=0;
 }, 1);
 
-Clazz.newMeth(C$, ['c$$TK$java_util_Spliterator'], function (parent, spliterator) {
-C$.superclazz.c$$java_util_concurrent_CountedCompleter.apply(this, [parent]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_stream_AbstractTask$java_util_Spliterator', function (parent, spliterator) {
+;C$.superclazz.c$$java_util_concurrent_CountedCompleter.apply(this,[parent]);C$.$init$.apply(this);
 this.spliterator=spliterator;
 this.helper=parent.helper;
 this.targetSize=parent.targetSize;
@@ -49,7 +37,7 @@ Clazz.newMeth(C$, 'getRawResult$', function () {
 return this.localResult;
 });
 
-Clazz.newMeth(C$, ['setRawResult$TR','setRawResult$TV','setRawResult$TT'], function (result) {
+Clazz.newMeth(C$, 'setRawResult$O', function (result) {
 if (result != null ) throw Clazz.new_(Clazz.load('IllegalStateException'));
 });
 
@@ -57,7 +45,7 @@ Clazz.newMeth(C$, 'getLocalResult$', function () {
 return this.localResult;
 });
 
-Clazz.newMeth(C$, ['setLocalResult$TR'], function (localResult) {
+Clazz.newMeth(C$, 'setLocalResult$O', function (localResult) {
 this.localResult=localResult;
 });
 
@@ -99,7 +87,7 @@ taskToFork=leftChild;
 }taskToFork.fork$();
 sizeEstimate=rs.estimateSize$();
 }
-task.setLocalResult$TR(task.doLeaf$());
+task.setLocalResult$O(task.doLeaf$());
 task.tryComplete$();
 });
 
@@ -118,6 +106,10 @@ node=parent;
 return true;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.LEAF_TARGET=$I$(1).getCommonPoolParallelism$() << 2;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:46 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

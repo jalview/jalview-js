@@ -1,27 +1,19 @@
 (function(){var P$=Clazz.newPackage("java.util.jar"),I$=[];
-var C$=Clazz.newClass(P$, "JarEntry", null, 'java.util.zip.ZipEntry');
+/*c*/var C$=Clazz.newClass(P$, "JarEntry", null, 'java.util.zip.ZipEntry');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attr=null;
-this.certs=null;
-this.signers=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['attr','java.util.jar.Attributes','certs','java.security.cert.Certificate[]','signers','java.security.CodeSigner[]']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_zip_ZipEntry', function (ze) {
-C$.superclazz.c$$java_util_zip_ZipEntry.apply(this, [ze]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_zip_ZipEntry.apply(this,[ze]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_jar_JarEntry', function (je) {
@@ -45,4 +37,4 @@ return this.signers == null  ? null : this.signers.clone$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

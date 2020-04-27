@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CaseMgr");
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CaseMgr");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'toUpperCase$C', function (c) {
 if (false) {
@@ -4157,7 +4156,7 @@ return String.fromCharCode(ret);
 }, 1);
 
 Clazz.newMeth(C$, 'toTitleCase$S', function (s) {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 for (var i=0; i < s.length$(); i++) {
 sb.append$C(C$.toTitleCase$C(s.charAt$I(i)));
 }
@@ -4165,7 +4164,7 @@ return sb.toString();
 }, 1);
 
 Clazz.newMeth(C$, 'toUpperCase$S', function (s) {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 for (var i=0; i < s.length$(); i++) {
 sb.append$C(C$.toUpperCase$C(s.charAt$I(i)));
 }
@@ -4173,7 +4172,7 @@ return sb.toString();
 }, 1);
 
 Clazz.newMeth(C$, 'toLowerCase$S', function (s) {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 for (var i=0; i < s.length$(); i++) {
 sb.append$C(C$.toLowerCase$C(s.charAt$I(i)));
 }
@@ -4295,4 +4294,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

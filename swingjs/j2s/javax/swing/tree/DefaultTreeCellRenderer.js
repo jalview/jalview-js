@@ -1,36 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing.tree"),p$1={},I$=[[0,'sun.swing.DefaultLookup','javax.swing.border.EmptyBorder','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultTreeCellRenderer", null, 'javax.swing.JLabel', 'javax.swing.tree.TreeCellRenderer');
+(function(){var P$=Clazz.newPackage("javax.swing.tree"),p$1={},I$=[[0,'sun.swing.DefaultLookup','javax.swing.border.EmptyBorder','javax.swing.ImageIcon','java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultTreeCellRenderer", null, 'javax.swing.JLabel', 'javax.swing.tree.TreeCellRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tree=null;
-this.selected=false;
-this.hasFocus=false;
-this.drawsFocusBorderAroundIcon=false;
-this.drawDashedFocusIndicator=false;
-this.treeBGColor=null;
-this.focusBGColor=null;
-this.closedIcon=null;
-this.leafIcon=null;
-this.openIcon=null;
-this.textSelectionColor=null;
-this.textNonSelectionColor=null;
-this.backgroundSelectionColor=null;
-this.backgroundNonSelectionColor=null;
-this.borderSelectionColor=null;
-this.isDropCell=false;
-this.fillBackground=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.fillBackground=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['selected','hasFocus','drawsFocusBorderAroundIcon','drawDashedFocusIndicator','isDropCell','fillBackground'],'O',['tree','javax.swing.JTree','treeBGColor','java.awt.Color','+focusBGColor','closedIcon','javax.swing.Icon','+leafIcon','+openIcon','textSelectionColor','java.awt.Color','+textNonSelectionColor','+backgroundSelectionColor','+backgroundNonSelectionColor','+borderSelectionColor']]
+,['O',['defOpenIcon','javax.swing.Icon','+defClosedIcon','+defLeafIcon']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
+this.秘paintClass=C$ ||null;
 this.setLeafIcon$javax_swing_Icon($I$(1).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.leafIcon"));
 this.setClosedIcon$javax_swing_Icon($I$(1).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.closedIcon"));
 this.setOpenIcon$javax_swing_Icon($I$(1).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.openIcon"));
@@ -41,23 +23,40 @@ this.setBackgroundNonSelectionColor$java_awt_Color($I$(1).getColor$javax_swing_J
 this.setBorderSelectionColor$java_awt_Color($I$(1).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.selectionBorderColor"));
 this.drawsFocusBorderAroundIcon=$I$(1).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.drawsFocusBorderAroundIcon", false);
 this.drawDashedFocusIndicator=$I$(1).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.drawDashedFocusIndicator", false);
-this.fillBackground=$I$(1).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this, this.ui, "Tree.rendererFillBackground", true);
+this.fillBackground=false;
 var margins=$I$(1).getInsets$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.rendererMargins");
 if (margins != null ) {
-this.setBorder$javax_swing_border_Border(Clazz.new_($I$(2).c$$I$I$I$I,[margins.top, margins.left, margins.bottom, margins.right]));
+this.setBorder$javax_swing_border_Border(Clazz.new_($I$(2,1).c$$I$I$I$I,[margins.top, margins.left, margins.bottom, margins.right]));
 }this.setName$S("Tree.cellRenderer");
 }, 1);
 
 Clazz.newMeth(C$, 'getDefaultOpenIcon$', function () {
-return $I$(1).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.openIcon");
+return (C$.defOpenIcon == null  ? (C$.defOpenIcon=p$1.newImageIcon$S.apply(this, ["open"])) : C$.defOpenIcon);
 });
 
+Clazz.newMeth(C$, 'newImageIcon$S', function (type) {
+var f=null;
+switch (type) {
+case "open":
+f="TreeOpen.gif";
+break;
+case "closed":
+f="TreeClosed.gif";
+break;
+case "leaf":
+f="TreeLeaf.gif";
+break;
+}
+var resource=this.ui.getClass$().getResource$S(f);
+return Clazz.new_($I$(3,1).c$$java_net_URL$S,[resource, type]);
+}, p$1);
+
 Clazz.newMeth(C$, 'getDefaultClosedIcon$', function () {
-return $I$(1).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.closedIcon");
+return (C$.defClosedIcon == null  ? (C$.defClosedIcon=p$1.newImageIcon$S.apply(this, ["closed"])) : C$.defClosedIcon);
 });
 
 Clazz.newMeth(C$, 'getDefaultLeafIcon$', function () {
-return $I$(1).getIcon$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "Tree.leafIcon");
+return null;
 });
 
 Clazz.newMeth(C$, 'setOpenIcon$javax_swing_Icon', function (newIcon) {
@@ -141,7 +140,7 @@ if (Clazz.instanceOf(color, "javax.swing.plaf.ColorUIResource")) color=null;
 C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [color]);
 });
 
-Clazz.newMeth(C$, ['getTreeCellRendererComponent$javax_swing_JTree$O$Z$Z$Z$I$Z','getTreeCellRendererComponent$'], function (tree, value, sel, expanded, leaf, row, hasFocus) {
+Clazz.newMeth(C$, 'getTreeCellRendererComponent$javax_swing_JTree$O$Z$Z$Z$I$Z', function (tree, value, sel, expanded, leaf, row, hasFocus) {
 var stringValue=tree.convertValueToText$O$Z$Z$Z$I$Z(value, sel, expanded, leaf, row, hasFocus);
 this.tree=tree;
 this.hasFocus=hasFocus;
@@ -204,6 +203,7 @@ p$1.paintFocus$java_awt_Graphics$I$I$I$I$java_awt_Color.apply(this, [g, 0, 0, th
 });
 
 Clazz.newMeth(C$, 'paintFocus$java_awt_Graphics$I$I$I$I$java_awt_Color', function (g, x, y, w, h, notColor) {
+if (true) return;
 var bsColor=this.getBorderSelectionColor$();
 if (bsColor != null  && (this.selected || !this.drawDashedFocusIndicator ) ) {
 g.setColor$java_awt_Color(bsColor);
@@ -219,7 +219,7 @@ return currentI.getIconWidth$() + Math.max(0, this.getIconTextGap$() - 1);
 
 Clazz.newMeth(C$, 'getPreferredSize$', function () {
 var retDimension=this.getPrefSizeJComp$();
-return (retDimension == null  ? null : Clazz.new_($I$(3).c$$I$I,[retDimension.width + 3, retDimension.height]));
+return (retDimension == null  ? null : Clazz.new_($I$(4,1).c$$I$I,[retDimension.width + 3, retDimension.height]));
 });
 
 Clazz.newMeth(C$, 'validate$', function () {
@@ -267,4 +267,4 @@ Clazz.newMeth(C$, 'firePropertyChange$S$D$D', function (propertyName, oldValue, 
 Clazz.newMeth(C$, 'firePropertyChange$S$Z$Z', function (propertyName, oldValue, newValue) {
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

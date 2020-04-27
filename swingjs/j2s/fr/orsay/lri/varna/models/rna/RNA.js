@@ -1,69 +1,7 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),p$1={},I$=[[0,'java.util.ArrayList','fr.orsay.lri.varna.models.rna.StructureTemp','fr.orsay.lri.varna.models.rna.ModeleBackbone','org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.utils.XMLUtils','java.io.FileWriter','fr.orsay.lri.varna.exceptions.ExceptionWritingForbidden','java.awt.Color',['fr.orsay.lri.varna.models.rna.ModeleBP','.Edge'],['java.awt.geom.Point2D','.Double'],['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],'fr.orsay.lri.varna.models.VARNAConfig',['fr.orsay.lri.varna.models.rna.ModeleBackboneElement','.BackboneType'],'fr.orsay.lri.varna.VARNAPanel','java.io.OutputStreamWriter','java.io.FileOutputStream',['fr.orsay.lri.varna.models.annotations.ChemProbAnnotation','.ChemProbAnnotationType'],'java.awt.geom.GeneralPath',['fr.orsay.lri.varna.models.annotations.TextAnnotation','.AnchorType'],'fr.orsay.lri.varna.models.export.PSExport','fr.orsay.lri.varna.models.export.XFIGExport','fr.orsay.lri.varna.models.export.TikzExport','fr.orsay.lri.varna.models.export.SVGExport',['java.awt.geom.Rectangle2D','.Double'],'fr.orsay.lri.varna.models.rna.VARNASecDraw','fr.orsay.lri.varna.models.templates.DrawRNATemplateMethod','fr.orsay.lri.varna.models.templates.DrawRNATemplateCurveMethod','fr.orsay.lri.varna.models.rna.DrawRNATemplate','java.util.Vector','fr.orsay.lri.varna.applications.templateEditor.Couple','fr.orsay.lri.varna.models.naView.NAView','java.util.HashSet','fr.orsay.lri.varna.models.rna.ModeleBackboneElement','fr.orsay.lri.varna.models.rna.ModeleBaseNucleotide','fr.orsay.lri.varna.models.rna.ModeleBasesComparison','fr.orsay.lri.varna.factories.RNAFactory','java.util.Stack','fr.orsay.lri.varna.exceptions.ExceptionUnmatchedClosingParentheses','java.awt.Point','fr.orsay.lri.varna.models.rna.ModeleBP','java.util.Arrays','fr.orsay.lri.varna.exceptions.ExceptionExportFailed','fr.orsay.lri.varna.utils.RNAMLParser','fr.orsay.lri.varna.models.annotations.TextAnnotation','java.util.Hashtable','java.io.StreamTokenizer','java.io.ByteArrayOutputStream','java.io.ObjectOutputStream','java.io.ObjectInputStream','java.io.ByteArrayInputStream','fr.orsay.lri.varna.models.annotations.HighlightRegionAnnotation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RNA", null, 'fr.orsay.lri.varna.interfaces.InterfaceVARNAObservable', 'java.io.Serializable');
-C$.CHEM_PROB_ARROW_THICKNESS=0;
-C$.NormalBases=null;
-C$.XML_ELEMENT_NAME=null;
-C$.XML_VAR_BASE_SPACING_NAME=null;
-C$.XML_VAR_DRAWN_NAME=null;
-C$.XML_VAR_NAME_NAME=null;
-C$.XML_VAR_DRAWN_MODE_NAME=null;
-C$.XML_VAR_ID_NAME=null;
-C$.XML_VAR_BP_HEIGHT_NAME=null;
-C$.XML_VAR_BASES_NAME=null;
-C$.XML_VAR_BASEPAIRS_NAME=null;
-C$.XML_VAR_ANNOTATIONS_NAME=null;
-C$.XML_VAR_BACKBONE_NAME=null;
-C$.HYSTERESIS_EPSILON=0;
-C$.HYSTERESIS_ATTRACTORS=null;
-C$.DBNStrandSep=null;
-C$.MIN_DISTANCE=0;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),p$1={},I$=[[0,'java.util.ArrayList','fr.orsay.lri.varna.models.rna.StructureTemp','fr.orsay.lri.varna.models.rna.ModeleBackbone','org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.utils.XMLUtils','java.io.FileWriter','fr.orsay.lri.varna.exceptions.ExceptionWritingForbidden','java.awt.Color',['fr.orsay.lri.varna.models.rna.ModeleBP','.Edge'],['java.awt.geom.Point2D','.Double'],['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],'fr.orsay.lri.varna.models.VARNAConfig',['fr.orsay.lri.varna.models.rna.ModeleBackboneElement','.BackboneType'],'fr.orsay.lri.varna.VARNAPanel','java.io.OutputStreamWriter','java.io.FileOutputStream',['fr.orsay.lri.varna.models.annotations.ChemProbAnnotation','.ChemProbAnnotationType'],'java.awt.geom.GeneralPath',['fr.orsay.lri.varna.models.annotations.TextAnnotation','.AnchorType'],'fr.orsay.lri.varna.models.export.PSExport','fr.orsay.lri.varna.models.export.XFIGExport','fr.orsay.lri.varna.models.export.TikzExport','fr.orsay.lri.varna.models.export.SVGExport',['java.awt.geom.Rectangle2D','.Double'],'fr.orsay.lri.varna.models.rna.VARNASecDraw','fr.orsay.lri.varna.models.templates.DrawRNATemplateMethod','fr.orsay.lri.varna.models.templates.DrawRNATemplateCurveMethod','fr.orsay.lri.varna.models.rna.DrawRNATemplate','java.util.Vector','fr.orsay.lri.varna.applications.templateEditor.Couple','fr.orsay.lri.varna.models.naView.NAView','java.util.HashSet','fr.orsay.lri.varna.models.rna.ModeleBackboneElement','fr.orsay.lri.varna.models.rna.ModeleBaseNucleotide','fr.orsay.lri.varna.models.rna.ModeleBasesComparison','fr.orsay.lri.varna.factories.RNAFactory','java.util.Stack','fr.orsay.lri.varna.exceptions.ExceptionUnmatchedClosingParentheses','java.awt.Point','fr.orsay.lri.varna.models.rna.ModeleBP','java.util.Arrays','fr.orsay.lri.varna.exceptions.ExceptionExportFailed','fr.orsay.lri.varna.utils.RNAMLParser','fr.orsay.lri.varna.models.annotations.TextAnnotation','java.util.Hashtable','java.io.StreamTokenizer','java.io.ByteArrayOutputStream','java.io.ObjectOutputStream','java.io.ObjectInputStream','java.io.ByteArrayInputStream','fr.orsay.lri.varna.models.annotations.HighlightRegionAnnotation']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RNA", null, 'fr.orsay.lri.varna.interfaces.InterfaceVARNAObservable', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.CHEM_PROB_ARROW_THICKNESS=2.0;
-C$.NormalBases=Clazz.new_($I$(1));
-C$.XML_ELEMENT_NAME="RNA";
-C$.XML_VAR_BASE_SPACING_NAME="spacing";
-C$.XML_VAR_DRAWN_NAME="drawn";
-C$.XML_VAR_NAME_NAME="name";
-C$.XML_VAR_DRAWN_MODE_NAME="mode";
-C$.XML_VAR_ID_NAME="id";
-C$.XML_VAR_BP_HEIGHT_NAME="delta";
-C$.XML_VAR_BASES_NAME="bases";
-C$.XML_VAR_BASEPAIRS_NAME="BPs";
-C$.XML_VAR_ANNOTATIONS_NAME="annotations";
-C$.XML_VAR_BACKBONE_NAME="backbone";
-C$.HYSTERESIS_EPSILON=0.15;
-C$.HYSTERESIS_ATTRACTORS=Clazz.array(Double.TYPE, -1, [0.0, 0.7853981633974483, 1.5707963267948966, 2.356194490192345, 3.141592653589793, 3.9269908169872414, 4.71238898038469, 5.497787143782138]);
-C$.DBNStrandSep="&";
-C$.MIN_DISTANCE=10.0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.BASE_RADIUS=0;
-this.CHEM_PROB_DIST=0;
-this.CHEM_PROB_BASE_LENGTH=0;
-this.CHEM_PROB_ARROW_HEIGHT=0;
-this.CHEM_PROB_ARROW_WIDTH=0;
-this.CHEM_PROB_TRIANGLE_WIDTH=0;
-this.CHEM_PROB_PIN_SEMIDIAG=0;
-this.CHEM_PROB_DOT_RADIUS=0;
-this._debugShape=null;
-this._drawMode=0;
-this._drawn=false;
-this._name=null;
-this._id=null;
-this._bpHeightIncrement=0;
-this._listeBases=null;
-this._listStrands=null;
-this._structureAux=null;
-this._listeAnnotations=null;
-this._listeRegionHighlights=null;
-this._chemProbAnnotations=null;
-this._backbone=null;
-this._listeVARNAListener=null;
-this._strandEndsAnnotated=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.BASE_RADIUS=10;
@@ -75,11 +13,11 @@ this.CHEM_PROB_TRIANGLE_WIDTH=2.5;
 this.CHEM_PROB_PIN_SEMIDIAG=6;
 this.CHEM_PROB_DOT_RADIUS=6.0;
 {
-C$.NormalBases.add$TE("a");
-C$.NormalBases.add$TE("c");
-C$.NormalBases.add$TE("g");
-C$.NormalBases.add$TE("u");
-C$.NormalBases.add$TE("t");
+C$.NormalBases.add$O("a");
+C$.NormalBases.add$O("c");
+C$.NormalBases.add$O("g");
+C$.NormalBases.add$O("u");
+C$.NormalBases.add$O("t");
 }
 this._debugShape=null;
 this._drawMode=2;
@@ -87,18 +25,21 @@ this._drawn=false;
 this._name="";
 this._id="";
 this._bpHeightIncrement=0.65;
-this._listStrands=Clazz.new_($I$(2));
-this._structureAux=Clazz.new_($I$(1));
-this._listeAnnotations=Clazz.new_($I$(1));
-this._listeRegionHighlights=Clazz.new_($I$(1));
-this._chemProbAnnotations=Clazz.new_($I$(1));
-this._backbone=Clazz.new_($I$(3));
-this._listeVARNAListener=Clazz.new_($I$(1));
+this._listStrands=Clazz.new_($I$(2,1));
+this._structureAux=Clazz.new_($I$(1,1));
+this._listeAnnotations=Clazz.new_($I$(1,1));
+this._listeRegionHighlights=Clazz.new_($I$(1,1));
+this._chemProbAnnotations=Clazz.new_($I$(1,1));
+this._backbone=Clazz.new_($I$(3,1));
+this._listeVARNAListener=Clazz.new_($I$(1,1));
 this._strandEndsAnnotated=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_drawn','_strandEndsAnnotated'],'D',['CHEM_PROB_DIST','CHEM_PROB_BASE_LENGTH','CHEM_PROB_ARROW_HEIGHT','CHEM_PROB_ARROW_WIDTH','CHEM_PROB_TRIANGLE_WIDTH','CHEM_PROB_PIN_SEMIDIAG','CHEM_PROB_DOT_RADIUS','_bpHeightIncrement'],'I',['BASE_RADIUS','_drawMode'],'S',['_name','_id'],'O',['_debugShape','java.awt.geom.GeneralPath','_listeBases','java.util.ArrayList','_listStrands','fr.orsay.lri.varna.models.rna.StructureTemp','_structureAux','java.util.ArrayList','+_listeAnnotations','+_listeRegionHighlights','+_chemProbAnnotations','_backbone','fr.orsay.lri.varna.models.rna.ModeleBackbone','_listeVARNAListener','java.util.ArrayList']]
+,['D',['CHEM_PROB_ARROW_THICKNESS','HYSTERESIS_EPSILON','MIN_DISTANCE'],'S',['XML_ELEMENT_NAME','XML_VAR_BASE_SPACING_NAME','XML_VAR_DRAWN_NAME','XML_VAR_NAME_NAME','XML_VAR_DRAWN_MODE_NAME','XML_VAR_ID_NAME','XML_VAR_BP_HEIGHT_NAME','XML_VAR_BASES_NAME','XML_VAR_BASEPAIRS_NAME','XML_VAR_ANNOTATIONS_NAME','XML_VAR_BACKBONE_NAME','DBNStrandSep'],'O',['NormalBases','java.util.ArrayList','HYSTERESIS_ATTRACTORS','double[]']]]
 
 Clazz.newMeth(C$, 'toXML$javax_xml_transform_sax_TransformerHandler', function (hd) {
-var atts=Clazz.new_($I$(4));
+var atts=Clazz.new_($I$(4,1));
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_DRAWN_NAME, "CDATA", "" + this._drawn);
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_DRAWN_MODE_NAME, "CDATA", "" + this._drawMode);
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_ID_NAME, "CDATA", "" + this._id);
@@ -153,9 +94,9 @@ C$.c$$S.apply(this, [""]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._name=name;
-this._listeBases=Clazz.new_($I$(1));
+this._listeBases=Clazz.new_($I$(1,1));
 this._drawn=false;
 this.init$();
 }, 1);
@@ -168,7 +109,7 @@ return this._name;
 }});
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_RNA', function (r) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._drawMode=r._drawMode;
 this._listeBases.addAll$java_util_Collection(r._listeBases);
 this._listeVARNAListener=r._listeVARNAListener;
@@ -181,7 +122,7 @@ Clazz.newMeth(C$, 'init$', function () {
 
 Clazz.newMeth(C$, 'saveRNADBN$S$S', function (path, title) {
 try {
-var out=Clazz.new_($I$(6).c$$S,[path]);
+var out=Clazz.new_($I$(6,1).c$$S,[path]);
 if (!title.equals$O("")) {
 out.write$S("> " + title + "\n" );
 }out.write$S(this.getListeBasesToString$());
@@ -201,7 +142,7 @@ out.write$I("\n".$c());
 out.close$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-throw Clazz.new_($I$(7).c$$S,[e.getMessage$()]);
+throw Clazz.new_([e.getMessage$()],$I$(7,1).c$$S);
 } else {
 throw e;
 }
@@ -320,7 +261,7 @@ out.setColor$java_awt_Color(bck);
 Clazz.newMeth(C$, 'drawBasePairArc$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig', function (out, i, j, orig, dest, style, conf) {
 var coef;
 var distance;
-var center=Clazz.new_($I$(10).c$$D$D,[(orig.x + dest.x) / 2.0, (orig.y + dest.y) / 2.0 + this.BASE_RADIUS]);
+var center=Clazz.new_([(orig.x + dest.x) / 2.0, (orig.y + dest.y) / 2.0 + this.BASE_RADIUS],$I$(10,1).c$$D$D);
 if (j - i == 1) coef=this._bpHeightIncrement * 2;
  else coef=this._bpHeightIncrement * 1;
 distance=(Math.round(dest.x - orig.x)|0);
@@ -358,8 +299,8 @@ dx /= dist;
 dy /= dist;
 var nx=-dy;
 var ny=dx;
-orig=Clazz.new_($I$(10).c$$D$D,[orig.x + this.BASE_RADIUS * dx, orig.y + this.BASE_RADIUS * dy]);
-dest=Clazz.new_($I$(10).c$$D$D,[dest.x - this.BASE_RADIUS * dx, dest.y - this.BASE_RADIUS * dy]);
+orig=Clazz.new_($I$(10,1).c$$D$D,[orig.x + this.BASE_RADIUS * dx, orig.y + this.BASE_RADIUS * dy]);
+dest=Clazz.new_($I$(10,1).c$$D$D,[dest.x - this.BASE_RADIUS * dx, dest.y - this.BASE_RADIUS * dy]);
 if (conf._mainBPStyle === $I$(11).LW ) {
 var thickness=this.getBasePairThickness$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig(style, conf);
 var radiusCircle=((65.0 - this.BASE_RADIUS) / 5.0);
@@ -472,7 +413,7 @@ var centers=Clazz.array($I$(10), [this._listeBases.size$()]);
 for (var i=0; i < this._listeBases.size$(); i++) {
 xp=(this._listeBases.get$I(i).getCoords$().getX$() - minX);
 yp=-(this._listeBases.get$I(i).getCoords$().getY$() - minY);
-coords[i]=Clazz.new_($I$(10).c$$D$D,[xp, yp]);
+coords[i]=Clazz.new_($I$(10,1).c$$D$D,[xp, yp]);
 var centerBck=this.getCenter$I(i);
 if (this.get_drawMode$() == 3 || this.get_drawMode$() == 2 ) {
 if ((this._listeBases.get$I(i).getElementStructure$() != -1) && i < this._listeBases.size$() - 1  && i > 1 ) {
@@ -489,7 +430,7 @@ centerBck.x=this._listeBases.get$I(i).getCoords$().x + (c1.x - a1.x) / c1.distan
 centerBck.y=this._listeBases.get$I(i).getCoords$().y + (c1.y - a1.y) / c1.distance$java_awt_geom_Point2D(a1) + (c2.y - a2.y) / c2.distance$java_awt_geom_Point2D(a2);
 }}}xc=(centerBck.getX$() - minX);
 yc=-(centerBck.getY$() - minY);
-centers[i]=Clazz.new_($I$(10).c$$D$D,[xc, yc]);
+centers[i]=Clazz.new_($I$(10,1).c$$D$D,[xc, yc]);
 }
 if (conf._drawBackground) out.setBackgroundColor$java_awt_Color(conf._backgroundColor);
 p$1.renderRegionHighlights$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA.apply(this, [out, coords, centers]);
@@ -501,7 +442,7 @@ x0=p1.x;
 y0=p1.y;
 x1=p2.x;
 y1=p2.y;
-var vn=Clazz.new_($I$(10));
+var vn=Clazz.new_($I$(10,1));
 var dist=p1.distance$java_awt_geom_Point2D(p2);
 var a=this._listeBases.get$I(i - 1).getElementStructure$();
 var b=this._listeBases.get$I(i).getElementStructure$();
@@ -521,9 +462,9 @@ if (i + 1 < coords.length) {
 dir=(this.testDirectionality$I$I$I(i - 1, i, i + 1) ? 1 : -1);
 } else if (i - 2 >= 0) {
 dir=(this.testDirectionality$I$I$I(i - 2, i - 1, i) ? 1 : -1);
-}var centerSeg=Clazz.new_($I$(10).c$$D$D,[(p1.x + p2.x) / 2.0, (p1.y + p2.y) / 2.0]);
+}var centerSeg=Clazz.new_([(p1.x + p2.x) / 2.0, (p1.y + p2.y) / 2.0],$I$(10,1).c$$D$D);
 var centerDist=40.0 * scale;
-var centerLoop=Clazz.new_($I$(10).c$$D$D,[centerSeg.x + centerDist * dir * vn.y , centerSeg.y - centerDist * dir * vn.x ]);
+var centerLoop=Clazz.new_($I$(10,1).c$$D$D,[centerSeg.x + centerDist * dir * vn.y , centerSeg.y - centerDist * dir * vn.x ]);
 var radius=centerLoop.distance$java_awt_geom_Point2D(p1);
 var a1=360.0 * (Math.atan2(p1.y - centerLoop.y, p1.x - centerLoop.x)) / (6.283185307179586);
 var a2=360.0 * (Math.atan2(p2.y - centerLoop.y, p2.x - centerLoop.x)) / (6.283185307179586);
@@ -556,9 +497,9 @@ norm=Math.sqrt(dx * dx + dy * dy);
 dx /= norm;
 dy /= norm;
 if (this._drawMode == 1 || this._drawMode == 2  || this._drawMode == 3 ) {
-p$1.drawBasePair$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, Clazz.new_($I$(10).c$$D$D,[x0, y0]), Clazz.new_($I$(10).c$$D$D,[x1, y1]), style, conf]);
+p$1.drawBasePair$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, Clazz.new_($I$(10,1).c$$D$D,[x0, y0]), Clazz.new_($I$(10,1).c$$D$D,[x1, y1]), style, conf]);
 } else if (this._drawMode == 4) {
-p$1.drawBasePairArc$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, i, j, Clazz.new_($I$(10).c$$D$D,[x0, y0]), Clazz.new_($I$(10).c$$D$D,[x1, y1]), style, conf]);
+p$1.drawBasePairArc$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, i, j, Clazz.new_($I$(10,1).c$$D$D,[x0, y0]), Clazz.new_($I$(10,1).c$$D$D,[x1, y1]), style, conf]);
 }}}}
 if (conf._drawnNonPlanarBP) {
 for (var i=0; i < this._structureAux.size$(); i++) {
@@ -577,9 +518,9 @@ norm=Math.sqrt(dx * dx + dy * dy);
 dx /= norm;
 dy /= norm;
 if ((this._drawMode == 1) || (this._drawMode == 2) || this._drawMode == 3  ) {
-p$1.drawBasePair$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, Clazz.new_($I$(10).c$$D$D,[x0, y0]), Clazz.new_($I$(10).c$$D$D,[x1, y1]), bp, conf]);
+p$1.drawBasePair$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, Clazz.new_($I$(10,1).c$$D$D,[x0, y0]), Clazz.new_($I$(10,1).c$$D$D,[x1, y1]), bp, conf]);
 } else if (this._drawMode == 4) {
-p$1.drawBasePairArc$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, a, b, Clazz.new_($I$(10).c$$D$D,[x0, y0]), Clazz.new_($I$(10).c$$D$D,[x1, y1]), bp, conf]);
+p$1.drawBasePairArc$fr_orsay_lri_varna_models_export_SecStrDrawingProducer$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_VARNAConfig.apply(this, [out, a, b, Clazz.new_($I$(10,1).c$$D$D,[x0, y0]), Clazz.new_($I$(10,1).c$$D$D,[x1, y1]), bp, conf]);
 }}}
 }var baseFontSize=(1.5 * this.BASE_RADIUS);
 out.setFont$I$D(18, baseFontSize);
@@ -645,12 +586,12 @@ if (!this.getName$().equals$O("")) {
 out.drawText$D$D$S((maxX - minX) / 2.0, yTitle, this.getName$());
 }var fout;
 try {
-fout=Clazz.new_($I$(15).c$$java_io_OutputStream$S,[Clazz.new_($I$(16).c$$S,[path]), "UTF-8"]);
+fout=Clazz.new_([Clazz.new_($I$(16,1).c$$S,[path]), "UTF-8"],$I$(15,1).c$$java_io_OutputStream$S);
 fout.write$S(out.export$());
 fout.close$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-throw Clazz.new_($I$(7).c$$S,[e.getMessage$()]);
+throw Clazz.new_([e.getMessage$()],$I$(7,1).c$$S);
 } else {
 throw e;
 }
@@ -664,7 +605,7 @@ radius += (conf._distNumbers + 1.0);
 }var center=mb.getCenter$();
 var p=mb.getCoords$();
 var realDistance=this.BASE_RADIUS * radius + heightEstimate;
-return Clazz.new_($I$(10).c$$D$D,[center.getX$() + (p.getX$() - center.getX$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center)), center.getY$() + (p.getY$() - center.getY$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center))]);
+return Clazz.new_([center.getX$() + (p.getX$() - center.getX$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center)), center.getY$() + (p.getY$() - center.getY$()) * ((p.distance$java_awt_geom_Point2D(center) + realDistance) / p.distance$java_awt_geom_Point2D(center))],$I$(10,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'getBPHeightIncrement$', function () {
@@ -679,25 +620,25 @@ Clazz.newMeth(C$, 'drawChemProbAnnotation$fr_orsay_lri_varna_models_export_SecSt
 out.setColor$java_awt_Color(cpa.getColor$());
 var v=cpa.getDirVector$();
 var vn=cpa.getNormalVector$();
-var base=Clazz.new_($I$(10).c$$D$D,[(anchor.x + this.CHEM_PROB_DIST * v.x), (anchor.y + this.CHEM_PROB_DIST * v.y)]);
-var edge=Clazz.new_($I$(10).c$$D$D,[(base.x + this.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * v.x ), (base.y + this.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * v.y )]);
+var base=Clazz.new_([(anchor.x + this.CHEM_PROB_DIST * v.x), (anchor.y + this.CHEM_PROB_DIST * v.y)],$I$(10,1).c$$D$D);
+var edge=Clazz.new_([(base.x + this.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * v.x ), (base.y + this.CHEM_PROB_BASE_LENGTH * cpa.getIntensity$() * v.y )],$I$(10,1).c$$D$D);
 var thickness=C$.CHEM_PROB_ARROW_THICKNESS * cpa.getIntensity$();
 switch (cpa.getType$()) {
 case $I$(17).ARROW:
 {
-var arrowTip1=Clazz.new_($I$(10).c$$D$D,[(base.x + cpa.getIntensity$() * (this.CHEM_PROB_ARROW_WIDTH * vn.x + this.CHEM_PROB_ARROW_HEIGHT * v.x)), (base.y + cpa.getIntensity$() * (this.CHEM_PROB_ARROW_WIDTH * vn.y + this.CHEM_PROB_ARROW_HEIGHT * v.y))]);
-var arrowTip2=Clazz.new_($I$(10).c$$D$D,[(base.x + cpa.getIntensity$() * (-this.CHEM_PROB_ARROW_WIDTH * vn.x + this.CHEM_PROB_ARROW_HEIGHT * v.x)), (base.y + cpa.getIntensity$() * (-this.CHEM_PROB_ARROW_WIDTH * vn.y + this.CHEM_PROB_ARROW_HEIGHT * v.y))]);
+var arrowTip1=Clazz.new_([(base.x + cpa.getIntensity$() * (this.CHEM_PROB_ARROW_WIDTH * vn.x + this.CHEM_PROB_ARROW_HEIGHT * v.x)), (base.y + cpa.getIntensity$() * (this.CHEM_PROB_ARROW_WIDTH * vn.y + this.CHEM_PROB_ARROW_HEIGHT * v.y))],$I$(10,1).c$$D$D);
+var arrowTip2=Clazz.new_([(base.x + cpa.getIntensity$() * (-this.CHEM_PROB_ARROW_WIDTH * vn.x + this.CHEM_PROB_ARROW_HEIGHT * v.x)), (base.y + cpa.getIntensity$() * (-this.CHEM_PROB_ARROW_WIDTH * vn.y + this.CHEM_PROB_ARROW_HEIGHT * v.y))],$I$(10,1).c$$D$D);
 out.drawLine$D$D$D$D$D(base.x - minX, minY - base.y, edge.x - minX, minY - edge.y, thickness);
 out.drawLine$D$D$D$D$D(base.x - minX, minY - base.y, arrowTip1.x - minX, minY - arrowTip1.y, thickness);
 out.drawLine$D$D$D$D$D(base.x - minX, minY - base.y, arrowTip2.x - minX, minY - arrowTip2.y, thickness);
 }break;
 case $I$(17).PIN:
 {
-var side1=Clazz.new_($I$(10).c$$D$D,[(edge.x - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.x)), (edge.y - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.y))]);
-var side2=Clazz.new_($I$(10).c$$D$D,[(edge.x - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.x)), (edge.y - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.y))]);
-var side3=Clazz.new_($I$(10).c$$D$D,[(edge.x + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.x)), (edge.y + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.y))]);
-var side4=Clazz.new_($I$(10).c$$D$D,[(edge.x + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.x)), (edge.y + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.y))]);
-var p2=Clazz.new_($I$(18));
+var side1=Clazz.new_([(edge.x - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.x)), (edge.y - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.y))],$I$(10,1).c$$D$D);
+var side2=Clazz.new_([(edge.x - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.x)), (edge.y - cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.y))],$I$(10,1).c$$D$D);
+var side3=Clazz.new_([(edge.x + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.x)), (edge.y + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * v.y))],$I$(10,1).c$$D$D);
+var side4=Clazz.new_([(edge.x + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.x)), (edge.y + cpa.getIntensity$() * (this.CHEM_PROB_PIN_SEMIDIAG * vn.y))],$I$(10,1).c$$D$D);
+var p2=Clazz.new_($I$(18,1));
 p2.moveTo$F$F((side1.x - minX), (minY - side1.y));
 p2.lineTo$F$F((side2.x - minX), (minY - side2.y));
 p2.lineTo$F$F((side3.x - minX), (minY - side3.y));
@@ -708,9 +649,9 @@ out.drawLine$D$D$D$D$D(base.x - minX, minY - base.y, edge.x - minX, minY - edge.
 }break;
 case $I$(17).TRIANGLE:
 {
-var arrowTip1=Clazz.new_($I$(10).c$$D$D,[(edge.x + cpa.getIntensity$() * (this.CHEM_PROB_TRIANGLE_WIDTH * vn.x)), (edge.y + cpa.getIntensity$() * (this.CHEM_PROB_TRIANGLE_WIDTH * vn.y))]);
-var arrowTip2=Clazz.new_($I$(10).c$$D$D,[(edge.x + cpa.getIntensity$() * (-this.CHEM_PROB_TRIANGLE_WIDTH * vn.x)), (edge.y + cpa.getIntensity$() * (-this.CHEM_PROB_TRIANGLE_WIDTH * vn.y))]);
-var p2=Clazz.new_($I$(18));
+var arrowTip1=Clazz.new_([(edge.x + cpa.getIntensity$() * (this.CHEM_PROB_TRIANGLE_WIDTH * vn.x)), (edge.y + cpa.getIntensity$() * (this.CHEM_PROB_TRIANGLE_WIDTH * vn.y))],$I$(10,1).c$$D$D);
+var arrowTip2=Clazz.new_([(edge.x + cpa.getIntensity$() * (-this.CHEM_PROB_TRIANGLE_WIDTH * vn.x)), (edge.y + cpa.getIntensity$() * (-this.CHEM_PROB_TRIANGLE_WIDTH * vn.y))],$I$(10,1).c$$D$D);
+var p2=Clazz.new_($I$(18,1));
 p2.moveTo$F$F((base.x - minX), (minY - base.y));
 p2.lineTo$F$F((arrowTip1.x - minX), (minY - arrowTip1.y));
 p2.lineTo$F$F((arrowTip2.x - minX), (minY - arrowTip2.y));
@@ -720,8 +661,8 @@ out.fillPolygon$java_awt_geom_GeneralPath$java_awt_Color(p2, cpa.getColor$());
 case $I$(17).DOT:
 {
 var radius=new Double(this.CHEM_PROB_DOT_RADIUS * cpa.getIntensity$());
-var center=Clazz.new_($I$(10).c$$D$D,[(base.x + (radius).doubleValue$() * v.x) - minX, minY - (base.y + (radius).doubleValue$() * v.y)]);
-out.fillCircle$D$D$D$D$java_awt_Color(center.x, center.y, (radius).doubleValue$(), thickness, cpa.getColor$());
+var center=Clazz.new_([(base.x + (radius).valueOf() * v.x) - minX, minY - (base.y + (radius).valueOf() * v.y)],$I$(10,1).c$$D$D);
+out.fillCircle$D$D$D$D$java_awt_Color(center.x, center.y, (radius).valueOf(), thickness, cpa.getColor$());
 }break;
 }
 }, p$1);
@@ -749,27 +690,27 @@ return ((mb.getIndex$() == 0) || ((mb.getBaseNumber$()) % numPeriod == 0) || (mb
 });
 
 Clazz.newMeth(C$, 'saveRNAEPS$S$fr_orsay_lri_varna_models_VARNAConfig', function (path, conf) {
-var out=Clazz.new_($I$(20));
+var out=Clazz.new_($I$(20,1));
 p$1.saveRNA$S$fr_orsay_lri_varna_models_VARNAConfig$D$fr_orsay_lri_varna_models_export_SecStrDrawingProducer.apply(this, [path, conf, 0.4, out]);
 });
 
 Clazz.newMeth(C$, 'saveRNAXFIG$S$fr_orsay_lri_varna_models_VARNAConfig', function (path, conf) {
-var out=Clazz.new_($I$(21));
+var out=Clazz.new_($I$(21,1));
 p$1.saveRNA$S$fr_orsay_lri_varna_models_VARNAConfig$D$fr_orsay_lri_varna_models_export_SecStrDrawingProducer.apply(this, [path, conf, 20, out]);
 });
 
 Clazz.newMeth(C$, 'saveRNATIKZ$S$fr_orsay_lri_varna_models_VARNAConfig', function (path, conf) {
-var out=Clazz.new_($I$(22));
+var out=Clazz.new_($I$(22,1));
 p$1.saveRNA$S$fr_orsay_lri_varna_models_VARNAConfig$D$fr_orsay_lri_varna_models_export_SecStrDrawingProducer.apply(this, [path, conf, 0.15, out]);
 });
 
 Clazz.newMeth(C$, 'saveRNASVG$S$fr_orsay_lri_varna_models_VARNAConfig', function (path, conf) {
-var out=Clazz.new_($I$(23));
+var out=Clazz.new_($I$(23,1));
 p$1.saveRNA$S$fr_orsay_lri_varna_models_VARNAConfig$D$fr_orsay_lri_varna_models_export_SecStrDrawingProducer.apply(this, [path, conf, 0.5, out]);
 });
 
 Clazz.newMeth(C$, 'getBBox$', function () {
-var result=Clazz.new_($I$(24).c$$D$D$D$D,[10, 10, 10, 10]);
+var result=Clazz.new_($I$(24,1).c$$D$D$D$D,[10, 10, 10, 10]);
 var minx;
 var maxx;
 var miny;
@@ -801,13 +742,13 @@ this.setCoord$I$D$D(index, p.x, p.y);
 
 Clazz.newMeth(C$, 'setCoord$I$D$D', function (index, x, y) {
 if (index < this._listeBases.size$()) {
-this._listeBases.get$I(index).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[x, y]));
+this._listeBases.get$I(index).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10,1).c$$D$D,[x, y]));
 }});
 
 Clazz.newMeth(C$, 'getCoords$I', function (i) {
 if (i < this._listeBases.size$() && i >= 0 ) {
 return this._listeBases.get$I(i).getCoords$();
-}return Clazz.new_($I$(10));
+}return Clazz.new_($I$(10,1));
 });
 
 Clazz.newMeth(C$, 'getBaseContent$I', function (i) {
@@ -825,11 +766,11 @@ return this._listeBases.get$I(i).getBaseNumber$();
 Clazz.newMeth(C$, 'getCenter$I', function (i) {
 if (i < this._listeBases.size$()) {
 return this._listeBases.get$I(i).getCenter$();
-}return Clazz.new_($I$(10));
+}return Clazz.new_($I$(10,1));
 });
 
 Clazz.newMeth(C$, 'setCenter$I$D$D', function (i, x, y) {
-this.setCenter$I$java_awt_geom_Point2D_Double(i, Clazz.new_($I$(10).c$$D$D,[x, y]));
+this.setCenter$I$java_awt_geom_Point2D_Double(i, Clazz.new_($I$(10,1).c$$D$D,[x, y]));
 });
 
 Clazz.newMeth(C$, 'setCenter$I$java_awt_geom_Point2D_Double', function (i, p) {
@@ -844,15 +785,15 @@ var radius=(((3 * (this._listeBases.size$() + 1) * this.BASE_RADIUS ) / (6.28318
 var angle;
 for (var i=0; i < this._listeBases.size$(); i++) {
 angle=-(((-(i + 1)) * 2.0 * 3.141592653589793 ) / ((this._listeBases.size$() + 1)) - 1.5707963267948966);
-this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[(radius * Math.cos(angle) * conf._spaceBetweenBases ), (radius * Math.sin(angle) * conf._spaceBetweenBases )]));
-this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[0, 0]));
+this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_([(radius * Math.cos(angle) * conf._spaceBetweenBases ), (radius * Math.sin(angle) * conf._spaceBetweenBases )],$I$(10,1).c$$D$D));
+this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10,1).c$$D$D,[0, 0]));
 }
 });
 
 Clazz.newMeth(C$, 'drawRNAVARNAView$fr_orsay_lri_varna_models_VARNAConfig', function (conf) {
 this._drawn=true;
 this._drawMode=5;
-var vs=Clazz.new_($I$(25));
+var vs=Clazz.new_($I$(25,1));
 vs.drawRNA$D$fr_orsay_lri_varna_models_rna_RNA(1, this);
 });
 
@@ -860,8 +801,8 @@ Clazz.newMeth(C$, 'drawRNALine$fr_orsay_lri_varna_models_VARNAConfig', function 
 this._drawn=true;
 this._drawMode=4;
 for (var i=0; i < this.get_listeBases$().size$(); i++) {
-this.get_listeBases$().get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[i * conf._spaceBetweenBases * 20 , 0]));
-this.get_listeBases$().get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[i * conf._spaceBetweenBases * 20 , -10]));
+this.get_listeBases$().get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10,1).c$$D$D,[i * conf._spaceBetweenBases * 20 , 0]));
+this.get_listeBases$().get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10,1).c$$D$D,[i * conf._spaceBetweenBases * 20 , -10]));
 }
 });
 
@@ -876,7 +817,7 @@ return this.drawRNATemplate$fr_orsay_lri_varna_models_templates_RNATemplate$fr_o
 Clazz.newMeth(C$, 'drawRNATemplate$fr_orsay_lri_varna_models_templates_RNATemplate$fr_orsay_lri_varna_models_VARNAConfig$fr_orsay_lri_varna_models_templates_DrawRNATemplateMethod$fr_orsay_lri_varna_models_templates_DrawRNATemplateCurveMethod$Z', function (template, conf, helixLengthAdjustmentMethod, curveMethod, straightBulges) {
 this._drawn=true;
 this._drawMode=7;
-var drawRNATemplate=Clazz.new_($I$(28).c$$fr_orsay_lri_varna_models_rna_RNA,[this]);
+var drawRNATemplate=Clazz.new_($I$(28,1).c$$fr_orsay_lri_varna_models_rna_RNA,[this]);
 drawRNATemplate.drawRNATemplate$fr_orsay_lri_varna_models_templates_RNATemplate$fr_orsay_lri_varna_models_VARNAConfig$fr_orsay_lri_varna_models_templates_DrawRNATemplateMethod$fr_orsay_lri_varna_models_templates_DrawRNATemplateCurveMethod$Z(template, conf, helixLengthAdjustmentMethod, curveMethod, straightBulges);
 return drawRNATemplate.getMapping$();
 });
@@ -977,15 +918,15 @@ return result;
 Clazz.newMeth(C$, 'distributeUnpaired$D$D$D$D$java_awt_geom_Point2D_Double$java_util_Vector', function (radius, angle, pHel, base, center, bases) {
 var mydist=Math.abs(radius * (angle / (bases.size$() + 1)));
 var addedRadius=0.0;
-var PA=Clazz.new_($I$(10).c$$D$D,[center.x + radius * Math.cos(base + pHel), center.y + radius * Math.sin(base + pHel)]);
-var PB=Clazz.new_($I$(10).c$$D$D,[center.x + radius * Math.cos(base + pHel + angle ), center.y + radius * Math.sin(base + pHel + angle )]);
+var PA=Clazz.new_([center.x + radius * Math.cos(base + pHel), center.y + radius * Math.sin(base + pHel)],$I$(10,1).c$$D$D);
+var PB=Clazz.new_([center.x + radius * Math.cos(base + pHel + angle ), center.y + radius * Math.sin(base + pHel + angle )],$I$(10,1).c$$D$D);
 var dist=PA.distance$java_awt_geom_Point2D(PB);
-var VN=Clazz.new_($I$(10).c$$D$D,[(PB.y - PA.y) / dist, (-PB.x + PA.x) / dist]);
+var VN=Clazz.new_([(PB.y - PA.y) / dist, (-PB.x + PA.x) / dist],$I$(10,1).c$$D$D);
 if (mydist < 2 * this.BASE_RADIUS ) {
 addedRadius=Math.min(1.0, (2 * this.BASE_RADIUS - mydist) / 4) * p$1.computeRadius$D$D.apply(this, [mydist, 2.29 * (bases.size$() + 1) * this.BASE_RADIUS  - mydist]);
 }var pos=p$1.computeNewAngles$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D$D.apply(this, [bases.size$(), center, VN, angle, base + pHel, radius, addedRadius]);
 for (var i=0; i < bases.size$(); i++) {
-var k=(bases.get$I(i)).intValue$();
+var k=(bases.get$I(i)).valueOf();
 this.setCoord$I$java_awt_geom_Point2D_Double(k, pos.get$I(i));
 }
 }, p$1);
@@ -1029,7 +970,7 @@ if (p.x - center.x < 0 ) {
 oldAngle=3.141592653589793 - oldAngle;
 }var newX=(center.x + dist * Math.cos(oldAngle + angle));
 var newY=(center.y + dist * Math.sin(oldAngle + angle));
-return Clazz.new_($I$(10).c$$D$D,[newX, newY]);
+return Clazz.new_($I$(10,1).c$$D$D,[newX, newY]);
 }, p$1);
 
 Clazz.newMeth(C$, 'rotateHelix$java_awt_geom_Point2D_Double$I$I$D', function (center, i, j, angle) {
@@ -1058,14 +999,14 @@ p$1.distributeUnpaired$D$D$D$D$java_awt_geom_Point2D_Double$java_util_Vector.app
 }}, p$1);
 
 Clazz.newMeth(C$, 'getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D', function (angleLine, angleBulge, center, VN, radius, addedRadius, dirBulge) {
-return Clazz.new_($I$(10).c$$D$D,[center.x + radius * Math.cos(angleLine) + dirBulge * addedRadius * Math.sin(angleBulge) * VN.x , center.y + radius * Math.sin(angleLine) + dirBulge * addedRadius * Math.sin(angleBulge) * VN.y ]);
+return Clazz.new_([center.x + radius * Math.cos(angleLine) + dirBulge * addedRadius * Math.sin(angleBulge) * VN.x , center.y + radius * Math.sin(angleLine) + dirBulge * addedRadius * Math.sin(angleBulge) * VN.y ],$I$(10,1).c$$D$D);
 }, 1);
 
 Clazz.newMeth(C$, 'computeNewAngles$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D$D', function (numPoints, center, VN, angle, angleBase, radius, addedRadius) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 if (numPoints > 0) {
-var factors=Clazz.new_($I$(1));
-var prevP=Clazz.new_($I$(10).c$$D$D,[center.x + radius * Math.cos(angleBase), center.y + radius * Math.sin(angleBase)]);
+var factors=Clazz.new_($I$(1,1));
+var prevP=Clazz.new_([center.x + radius * Math.cos(angleBase), center.y + radius * Math.sin(angleBase)],$I$(10,1).c$$D$D);
 var fact=0.0;
 var angleBulge=0.0;
 var dirBulge=(angle < 0 ) ? -1.0 : 1.0;
@@ -1089,18 +1030,18 @@ angleBulge=3.141592653589793 * fact;
 currP=C$.getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D(angleLine, angleBulge, center, VN, radius, addedRadius, dirBulge);
 numIter++;
 }
-factors.add$TE(new Double(fact));
+factors.add$O(new Double(fact));
 prevP=currP;
 }
-var rescale=1.0 / ((factors.get$I(factors.size$() - 1)).doubleValue$() + (factors.get$I(0)).doubleValue$());
+var rescale=1.0 / ((factors.get$I(factors.size$() - 1)).valueOf() + (factors.get$I(0)).valueOf());
 for (var j=0; j < factors.size$(); j++) {
-factors.set$I$TE(j, new Double((factors.get$I(j)).doubleValue$() * rescale));
+factors.set$I$O(j, new Double((factors.get$I(j)).valueOf() * rescale));
 }
 if (addedRadius > 0 ) {
 prevP=C$.getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D(angleBase, 0, center, VN, radius, addedRadius, dirBulge);
 var totDist=0.0;
 for (var j=0; j < factors.size$(); j++) {
-var newfact=(factors.get$I(j)).doubleValue$();
+var newfact=(factors.get$I(j)).valueOf();
 var angleLine=angleBase + angle * newfact;
 angleBulge=3.141592653589793 * newfact;
 var currP=C$.getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D(angleLine, angleBulge, center, VN, radius, addedRadius, dirBulge);
@@ -1110,8 +1051,8 @@ prevP=currP;
 totDist += C$.getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D(angleBase + angle, 3.141592653589793, center, VN, radius, addedRadius, dirBulge).distance$java_awt_geom_Point2D(prevP);
 dtarget=totDist / (numPoints + 1);
 fact=0.0;
-factors=Clazz.new_($I$(1));
-prevP=Clazz.new_($I$(10).c$$D$D,[center.x + radius * Math.cos(angleBase), center.y + radius * Math.sin(angleBase)]);
+factors=Clazz.new_($I$(1,1));
+prevP=Clazz.new_([center.x + radius * Math.cos(angleBase), center.y + radius * Math.sin(angleBase)],$I$(10,1).c$$D$D);
 for (var i=0; i < numPoints; i++) {
 var lbound=fact;
 var ubound=1.5;
@@ -1131,18 +1072,18 @@ angleBulge=3.141592653589793 * fact;
 currP=C$.getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D(angleLine, angleBulge, center, VN, radius, addedRadius, dirBulge);
 numIter++;
 }
-factors.add$TE(new Double(fact));
+factors.add$O(new Double(fact));
 prevP=currP;
 }
-rescale=1.0 / ((factors.get$I(factors.size$() - 1)).doubleValue$() + (factors.get$I(0)).doubleValue$());
+rescale=1.0 / ((factors.get$I(factors.size$() - 1)).valueOf() + (factors.get$I(0)).valueOf());
 for (var j=0; j < factors.size$(); j++) {
-factors.set$I$TE(j, new Double((factors.get$I(j)).doubleValue$() * rescale));
+factors.set$I$O(j, new Double((factors.get$I(j)).valueOf() * rescale));
 }
 }for (var j=0; j < factors.size$(); j++) {
-var newfact=(factors.get$I(j)).doubleValue$();
+var newfact=(factors.get$I(j)).valueOf();
 var angleLine=angleBase + angle * newfact;
 angleBulge=3.141592653589793 * newfact;
-result.add$TE(C$.getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D(angleLine, angleBulge, center, VN, radius, addedRadius, dirBulge));
+result.add$O(C$.getPoint$D$D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D$D$D(angleLine, angleBulge, center, VN, radius, addedRadius, dirBulge));
 }
 }return result;
 }, p$1);
@@ -1152,8 +1093,8 @@ if (i > j) {
 return;
 }if (this._listeBases.get$I(i).getElementStructure$() == j) {
 var normalAngle=1.5707963267948966;
-centers[i]=Clazz.new_($I$(10).c$$D$D,[x, y]);
-centers[j]=Clazz.new_($I$(10).c$$D$D,[x, y]);
+centers[i]=Clazz.new_($I$(10,1).c$$D$D,[x, y]);
+centers[j]=Clazz.new_($I$(10,1).c$$D$D,[x, y]);
 coords[i].x=(x + 65.0 * Math.cos(dirAngle - normalAngle) / 2.0);
 coords[i].y=(y + 65.0 * Math.sin(dirAngle - normalAngle) / 2.0);
 coords[j].x=(x + 65.0 * Math.cos(dirAngle + normalAngle) / 2.0);
@@ -1161,18 +1102,18 @@ coords[j].y=(y + 65.0 * Math.sin(dirAngle + normalAngle) / 2.0);
 this.drawLoop$I$I$D$D$D$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$Z(i + 1, j - 1, x + 40.0 * Math.cos(dirAngle), y + 40.0 * Math.sin(dirAngle), dirAngle, coords, centers, angles, straightBulges);
 } else {
 var k=i;
-var basesMultiLoop=Clazz.new_($I$(29));
-var helices=Clazz.new_($I$(29));
+var basesMultiLoop=Clazz.new_($I$(29,1));
+var helices=Clazz.new_($I$(29,1));
 var l;
 while (k <= j){
 l=this._listeBases.get$I(k).getElementStructure$();
 if (l > k) {
-basesMultiLoop.add$TE( new Integer(k));
-basesMultiLoop.add$TE( new Integer(l));
-helices.add$TE( new Integer(k));
+basesMultiLoop.add$O( new Integer(k));
+basesMultiLoop.add$O( new Integer(l));
+helices.add$O( new Integer(k));
 k=l + 1;
 } else {
-basesMultiLoop.add$TE( new Integer(k));
+basesMultiLoop.add$O( new Integer(k));
 k++;
 }}
 var mlSize=basesMultiLoop.size$() + 2;
@@ -1190,11 +1131,11 @@ multiLoopRadius=35.0;
 angleIncrementBP=-2.0 * Math.asin((65.0) / (2.0 * multiLoopRadius));
 angleIncrementML=(-6.283185307179586 - angleIncrementBP) / 2.0;
 }var centerDist=Math.sqrt(Math.max(Math.pow(multiLoopRadius, 2) - Math.pow(32.5, 2), 0.0)) - 40.0;
-var mlCenter=Clazz.new_($I$(10).c$$D$D,[(x + (centerDist * Math.cos(dirAngle))), (y + (centerDist * Math.sin(dirAngle)))]);
+var mlCenter=Clazz.new_([(x + (centerDist * Math.cos(dirAngle))), (y + (centerDist * Math.sin(dirAngle)))],$I$(10,1).c$$D$D);
 var baseAngle=dirAngle + 3.141592653589793 + 0.5 * angleIncrementBP  + 1.0 * angleIncrementML;
-var currUnpaired=Clazz.new_($I$(1));
-var currInterval=Clazz.new_($I$(30).c$$TT$TU,[new Double(0.), new Double(baseAngle - 1.0 * angleIncrementML)]);
-var intervals=Clazz.new_($I$(1));
+var currUnpaired=Clazz.new_($I$(1,1));
+var currInterval=Clazz.new_([new Double(0.0), new Double(baseAngle - 1.0 * angleIncrementML)],$I$(30,1).c$$O$O);
+var intervals=Clazz.new_($I$(1,1));
 for (k=basesMultiLoop.size$() - 1; k >= 0; k--) {
 l=basesMultiLoop.get$I(k).intValue$();
 centers[l]=mlCenter;
@@ -1207,13 +1148,13 @@ baseAngle=dirAngle - angleIncrementBP / 2.0;
 } else {
 baseAngle=C$.correctHysteresis$D(baseAngle + angleIncrementBP / 2.0) - angleIncrementBP / 2.0;
 }currInterval.first=new Double(baseAngle);
-intervals.add$TE(Clazz.new_($I$(30).c$$TT$TU,[currUnpaired, currInterval]));
-currInterval=Clazz.new_($I$(30).c$$TT$TU,[new Double(-1.0), new Double(-1.0)]);
-currUnpaired=Clazz.new_($I$(1));
+intervals.add$O(Clazz.new_($I$(30,1).c$$O$O,[currUnpaired, currInterval]));
+currInterval=Clazz.new_([new Double(-1.0), new Double(-1.0)],$I$(30,1).c$$O$O);
+currUnpaired=Clazz.new_($I$(1,1));
 } else if (isPaired5) {
 currInterval.second=new Double(baseAngle);
 } else {
-currUnpaired.add$TE(new Integer(l));
+currUnpaired.add$O(new Integer(l));
 }angles[l]=baseAngle;
 if (isPaired3) {
 baseAngle += angleIncrementBP;
@@ -1221,13 +1162,13 @@ baseAngle += angleIncrementBP;
 baseAngle += angleIncrementML;
 }}
 currInterval.first=new Double(dirAngle - 3.141592653589793 - 0.5 * angleIncrementBP );
-intervals.add$TE(Clazz.new_($I$(30).c$$TT$TU,[currUnpaired, currInterval]));
+intervals.add$O(Clazz.new_($I$(30,1).c$$O$O,[currUnpaired, currInterval]));
 for (var inter, $inter = intervals.iterator$(); $inter.hasNext$()&&((inter=($inter.next$())),1);) {
-var mina=(inter.second.first).doubleValue$();
-var maxa=C$.normalizeAngle$D$D((inter.second.second).doubleValue$(), mina);
+var mina=(inter.second.first).valueOf();
+var maxa=C$.normalizeAngle$D$D((inter.second.second).valueOf(), mina);
 for (var n=0; n < inter.first.size$(); n++) {
 var ratio=(1.0 + n) / (1.0 + inter.first.size$());
-var b=(inter.first.get$I(n)).intValue$();
+var b=(inter.first.get$I(n)).valueOf();
 angles[b]=mina + (1.0 - ratio) * (maxa - mina);
 }
 }
@@ -1248,7 +1189,7 @@ this.drawLoop$I$I$D$D$D$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_Doub
 }});
 
 Clazz.newMeth(C$, 'getPreviousUnpaired$java_awt_Point', function (h) {
-var prevBases=Clazz.new_($I$(29));
+var prevBases=Clazz.new_($I$(29,1));
 var over=false;
 var i=h.y + 1;
 while (!over){
@@ -1256,7 +1197,7 @@ if (i >= this.get_listeBases$().size$()) {
 over=true;
 } else {
 if (this.get_listeBases$().get$I(i).getElementStructure$() == -1) {
-prevBases.add$TE( new Integer(i));
+prevBases.add$O( new Integer(i));
 } else {
 over=true;
 }}i++;
@@ -1267,13 +1208,13 @@ return prevBases;
 Clazz.newMeth(C$, 'getNextUnpaired$java_awt_Point', function (h) {
 var over=false;
 var i=h.x - 1;
-var nextBases=Clazz.new_($I$(29));
+var nextBases=Clazz.new_($I$(29,1));
 while (!over){
 if (i < 0) {
 over=true;
 } else {
 if (this.get_listeBases$().get$I(i).getElementStructure$() == -1) {
-nextBases.add$TE( new Integer(i));
+nextBases.add$O( new Integer(i));
 } else {
 over=true;
 }}i--;
@@ -1285,7 +1226,7 @@ Clazz.newMeth(C$, 'rotateEverything$D$D$D$D$java_awt_Point$java_awt_Point$java_u
 var isDirect=this.testDirectionality$I$I$I(ml.x, ml.y, h.x);
 var center=this.get_listeBases$().get$I(h.x).getCenter$();
 for (var k=h.x; k <= h.y; k++) {
-backupPos.put$TK$TV(new Integer(k), this.getBaseAt$I(k).getCoords$());
+backupPos.put$O$O(new Integer(k), this.getBaseAt$I(k).getCoords$());
 }
 p$1.rotateHelix$java_awt_geom_Point2D_Double$I$I$D.apply(this, [center, h.x, h.y, delta]);
 var helixStart=this.getCoords$I(h.x);
@@ -1302,12 +1243,12 @@ pHelR=C$.computeAngle$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double(
 var nextBases=p$1.getNextUnpaired$java_awt_Point.apply(this, [h]);
 var radius=center.distance$java_awt_geom_Point2D(helixStart);
 for (var j=0; j < prevBases.size$(); j++) {
-var k=(prevBases.get$I(j)).intValue$();
-backupPos.put$TK$TV(new Integer(k), this.getCoords$I(k));
+var k=(prevBases.get$I(j)).valueOf();
+backupPos.put$O$O(new Integer(k), this.getCoords$I(k));
 }
 for (var j=0; j < nextBases.size$(); j++) {
-var k=(nextBases.get$I(j)).intValue$();
-backupPos.put$TK$TV(new Integer(k), this.getCoords$I(k));
+var k=(nextBases.get$I(j)).valueOf();
+backupPos.put$O$O(new Integer(k), this.getCoords$I(k));
 }
 p$1.fixUnpairedPositions$Z$D$D$D$D$D$D$java_awt_geom_Point2D_Double$java_util_Vector$java_util_Vector.apply(this, [isDirect, pHelR, pLimL, pLimR, pHelL, radius, base, center, prevBases, nextBases]);
 });
@@ -1328,8 +1269,8 @@ var coords=Clazz.array($I$(10), [this._listeBases.size$()]);
 var centers=Clazz.array($I$(10), [this._listeBases.size$()]);
 var angles=Clazz.array(Double.TYPE, [this._listeBases.size$()]);
 for (var i=0; i < this._listeBases.size$(); i++) {
-coords[i]=Clazz.new_($I$(10).c$$D$D,[0, 0]);
-centers[i]=Clazz.new_($I$(10).c$$D$D,[0, 0]);
+coords[i]=Clazz.new_($I$(10,1).c$$D$D,[0, 0]);
+centers[i]=Clazz.new_($I$(10,1).c$$D$D,[0, 0]);
 }
 if (flatExteriorLoop) {
 dirAngle += -0.5707963267948966;
@@ -1363,54 +1304,54 @@ i+=1;
 } else {
 this.drawLoop$I$I$D$D$D$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$Z(0, this._listeBases.size$() - 1, 0, 0, dirAngle, coords, centers, angles, straightBulges);
 }for (var i=0; i < this._listeBases.size$(); i++) {
-this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[coords[i].x * _spaceBetweenBases, coords[i].y * _spaceBetweenBases]));
-this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[centers[i].x * _spaceBetweenBases, centers[i].y * _spaceBetweenBases]));
+this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10,1).c$$D$D,[coords[i].x * _spaceBetweenBases, coords[i].y * _spaceBetweenBases]));
+this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10,1).c$$D$D,[centers[i].x * _spaceBetweenBases, centers[i].y * _spaceBetweenBases]));
 }
 });
 
 Clazz.newMeth(C$, 'drawRNANAView$fr_orsay_lri_varna_models_VARNAConfig', function (conf) {
 this._drawMode=3;
 this._drawn=true;
-var X=Clazz.new_($I$(1).c$$I,[this._listeBases.size$()]);
-var Y=Clazz.new_($I$(1).c$$I,[this._listeBases.size$()]);
-var pair_table=Clazz.new_($I$(1).c$$I,[this._listeBases.size$()]);
+var X=Clazz.new_([this._listeBases.size$()],$I$(1,1).c$$I);
+var Y=Clazz.new_([this._listeBases.size$()],$I$(1,1).c$$I);
+var pair_table=Clazz.new_([this._listeBases.size$()],$I$(1,1).c$$I);
 for (var i=0; i < this._listeBases.size$(); i++) {
-pair_table.add$TE(Short.valueOf$S(String.valueOf$I(this._listeBases.get$I(i).getElementStructure$())));
+pair_table.add$O(Short.valueOf$S(String.valueOf$I(this._listeBases.get$I(i).getElementStructure$())));
 }
-var naView=Clazz.new_($I$(31));
+var naView=Clazz.new_($I$(31,1));
 naView.naview_xy_coordinates$java_util_ArrayList$java_util_ArrayList$java_util_ArrayList(pair_table, X, Y);
 for (var i=0; i < this._listeBases.size$(); i++) {
-this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[(X.get$I(i)).doubleValue$() * 2.5 * conf._spaceBetweenBases , (Y.get$I(i)).doubleValue$() * 2.5 * conf._spaceBetweenBases ]));
+this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_([(X.get$I(i)).valueOf() * 2.5 * conf._spaceBetweenBases , (Y.get$I(i)).valueOf() * 2.5 * conf._spaceBetweenBases ],$I$(10,1).c$$D$D));
 }
 for (var i=0; i < this._listeBases.size$(); i++) {
 var indicePartner=this._listeBases.get$I(i).getElementStructure$();
 if (indicePartner != -1) {
 var base=this._listeBases.get$I(i).getCoords$();
 var partner=this._listeBases.get$I(indicePartner).getCoords$();
-this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[(base.x + partner.x) / 2.0, (base.y + partner.y) / 2.0]));
+this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_([(base.x + partner.x) / 2.0, (base.y + partner.y) / 2.0],$I$(10,1).c$$D$D));
 } else {
 var loop=this.getLoopBases$I(i);
 var tmpx=0.0;
 var tmpy=0.0;
 for (var j=0; j < loop.size$(); j++) {
-var partner=(loop.elementAt$I(j)).intValue$();
+var partner=(loop.elementAt$I(j)).valueOf();
 var loopmember=this._listeBases.get$I(partner).getCoords$();
 tmpx += loopmember.x;
 tmpy += loopmember.y;
 }
-this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[tmpx / loop.size$(), tmpy / loop.size$()]));
+this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_([tmpx / loop.size$(), tmpy / loop.size$()],$I$(10,1).c$$D$D));
 }}
 });
 
 Clazz.newMeth(C$, 'getAllPartners$I', function (indice) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 var me=this.getBaseAt$I(indice);
 var i=me.getElementStructure$();
 if (i != -1) {
-result.add$TE(this.getBaseAt$I(i));
+result.add$O(this.getBaseAt$I(i));
 }var msbps=this.getAuxBPs$I(indice);
 for (var m, $m = msbps.iterator$(); $m.hasNext$()&&((m=($m.next$())),1);) {
-result.add$TE(m.getPartner$fr_orsay_lri_varna_models_rna_ModeleBase(me));
+result.add$O(m.getPartner$fr_orsay_lri_varna_models_rna_ModeleBase(me));
 }
 return result;
 });
@@ -1424,10 +1365,10 @@ this._drawMode=drawMode;
 });
 
 Clazz.newMeth(C$, 'getSeparatorPositions$S', function (s) {
-var result=Clazz.new_($I$(32));
+var result=Clazz.new_($I$(32,1));
 var index=s.indexOf$S(C$.DBNStrandSep);
 while (index >= 0){
-result.add$TE(new Integer(index));
+result.add$O(new Integer(index));
 index=s.indexOf$S$I(C$.DBNStrandSep, index + 1);
 }
 return result;
@@ -1436,26 +1377,26 @@ return result;
 Clazz.newMeth(C$, 'setRNA$S$S', function (seq, str) {
 var al=C$.explodeSequence$S(seq);
 var sepPos=this.getSeparatorPositions$S(str);
-var alRes=Clazz.new_($I$(1));
-var resSepPos=Clazz.new_($I$(32));
+var alRes=Clazz.new_($I$(1,1));
+var resSepPos=Clazz.new_($I$(32,1));
 var strRes="";
 for (var i=0; i < al.size$(); i++) {
 if (sepPos.contains$O(new Integer(i)) && al.get$I(i).equals$O(C$.DBNStrandSep) ) {
-resSepPos.add$TE(new Integer(alRes.size$() - 1));
+resSepPos.add$O(new Integer(alRes.size$() - 1));
 } else {
-alRes.add$TE(al.get$I(i));
+alRes.add$O(al.get$I(i));
 if (i < str.length$()) {
 strRes += str.charAt$I(i);
 } else {
 strRes += ".";
 }}}
 for (var i=al.size$(); i < str.length$(); i++) {
-alRes.add$TE(" ");
+alRes.add$O(" ");
 strRes += str.charAt$I(i);
 }
 this.setRNA$java_util_List$S(alRes, strRes);
 for (var i, $i = resSepPos.iterator$(); $i.hasNext$()&&((i=($i.next$()).intValue$()),1);) {
-this._backbone.addElement$fr_orsay_lri_varna_models_rna_ModeleBackboneElement(Clazz.new_($I$(33).c$$I$fr_orsay_lri_varna_models_rna_ModeleBackboneElement_BackboneType,[i, $I$(13).DISCONTINUOUS_TYPE]));
+this._backbone.addElement$fr_orsay_lri_varna_models_rna_ModeleBackboneElement(Clazz.new_([i, $I$(13).DISCONTINUOUS_TYPE],$I$(33,1).c$$I$fr_orsay_lri_varna_models_rna_ModeleBackboneElement_BackboneType));
 }
 });
 
@@ -1485,16 +1426,16 @@ this.setRNA$SA$IA$I(seq, str, 1);
 });
 
 Clazz.newMeth(C$, 'setRNA$java_util_List$IA', function (seq, str) {
-this.setRNA$SA$IA$I(seq.toArray$TTA(Clazz.array(String, [seq.size$()])), str, 1);
+this.setRNA$SA$IA$I(seq.toArray$OA(Clazz.array(String, [seq.size$()])), str, 1);
 });
 
 Clazz.newMeth(C$, 'setRNA$java_util_List$IA$I', function (seq, str, baseIndex) {
-this.setRNA$SA$IA$I(seq.toArray$TTA(Clazz.array(String, [seq.size$()])), str, baseIndex);
+this.setRNA$SA$IA$I(seq.toArray$OA(Clazz.array(String, [seq.size$()])), str, baseIndex);
 });
 
 Clazz.newMeth(C$, 'setRNA$SA$IA$I', function (seq, str, baseIndex) {
 this.clearAnnotations$();
-this._listeBases=Clazz.new_($I$(1));
+this._listeBases=Clazz.new_($I$(1,1));
 if (seq.length != str.length) {
 this.warningEmition$S("Sequence length " + seq.length + " differs from that of secondary structure " + str.length + ". \nAdapting sequence length ..." );
 if (seq.length < str.length) {
@@ -1513,27 +1454,27 @@ seqTmp[i]=seq[i];
 }
 seq=seqTmp;
 }}for (var i=0; i < str.length; i++) {
-this._listeBases.add$TE(Clazz.new_($I$(34).c$$S$I$I,[seq[i], i, baseIndex + i]));
+this._listeBases.add$O(Clazz.new_($I$(34,1).c$$S$I$I,[seq[i], i, baseIndex + i]));
 }
 p$1.applyStruct$IA.apply(this, [str]);
 });
 
 Clazz.newMeth(C$, 'setRNA$S$S$java_util_ArrayList', function (seq, struct, basesOwn) {
 this.clearAnnotations$();
-this._listeBases=Clazz.new_($I$(1));
+this._listeBases=Clazz.new_($I$(1,1));
 var array_struct=this.parseStruct$S(struct);
 var size=struct.length$();
 var j=0;
 for (var i=0; i < size; i++) {
 var mb;
 if (seq.charAt$I(j) != seq.charAt$I(j + 1)) {
-var mbc=Clazz.new_($I$(35).c$$C$C$I,[seq.charAt$I(j), seq.charAt$I(j + 1), i]);
-mbc.set_appartenance$I((basesOwn.get$I(i)).intValue$());
+var mbc=Clazz.new_([seq.charAt$I(j), seq.charAt$I(j + 1), i],$I$(35,1).c$$C$C$I);
+mbc.set_appartenance$I((basesOwn.get$I(i)).valueOf());
 mbc.setBaseNumber$I(i + 1);
 mb=mbc;
 } else {
-mb=Clazz.new_($I$(34).c$$S$I$I,["" + seq.charAt$I(j), i, i + 1]);
-}this._listeBases.add$TE(mb);
+mb=Clazz.new_(["" + seq.charAt$I(j), i, i + 1],$I$(34,1).c$$S$I$I);
+}this._listeBases.add$O(mb);
 j+=2;
 }
 for (var i=0; i < size; i++) {
@@ -1550,7 +1491,7 @@ this.setRNA$java_util_List$IA(seq, finStr);
 });
 
 Clazz.newMeth(C$, 'explodeSequence$S', function (seq) {
-var analyzedSeq=Clazz.new_($I$(1));
+var analyzedSeq=Clazz.new_($I$(1,1));
 var i=0;
 while (i < seq.length$()){
 if (seq.charAt$I(i) == "{") {
@@ -1564,9 +1505,9 @@ i++;
 } else {
 found=true;
 }}
-analyzedSeq.add$TE(buf);
+analyzedSeq.add$O(buf);
 } else {
-analyzedSeq.add$TE("" + seq.charAt$I(i));
+analyzedSeq.add$O("" + seq.charAt$I(i));
 }i++;
 }
 return analyzedSeq;
@@ -1575,16 +1516,16 @@ return analyzedSeq;
 Clazz.newMeth(C$, 'parseStruct$S', function (str) {
 var result=Clazz.array(Integer.TYPE, [str.length$()]);
 var unexpectedChar=-1;
-var p=Clazz.new_($I$(37));
+var p=Clazz.new_($I$(37,1));
 for (var i=0; i < str.length$(); i++) {
 var c=str.charAt$I(i);
 if (c == "(") {
-p.push$TE( new Integer(i));
+p.push$O( new Integer(i));
 } else if (c == "." || c == "-"  || c == ":" ) {
 result[i]=-1;
 } else if (c == ")") {
 if (p.size$() == 0) {
-throw Clazz.new_($I$(38).c$$I,[i + 1]);
+throw Clazz.new_($I$(38,1).c$$I,[i + 1]);
 }var j=p.pop$().intValue$();
 result[i]=j;
 result[j]=i;
@@ -1594,13 +1535,13 @@ break;
 }}
 if (unexpectedChar != -1) {
 }if (p.size$() != 0) {
-throw Clazz.new_($I$(38).c$$I,[p.pop$().intValue$() + 1]);
+throw Clazz.new_([p.pop$().intValue$() + 1],$I$(38,1).c$$I);
 }return result;
 });
 
 Clazz.newMeth(C$, 'getHelixInterval$I', function (index) {
 if ((index < 0) || (index >= this._listeBases.size$()) ) {
-return Clazz.new_($I$(39).c$$I$I,[index, index]);
+return Clazz.new_($I$(39,1).c$$I$I,[index, index]);
 }var j=this._listeBases.get$I(index).getElementStructure$();
 if (j != -1) {
 var minH=index;
@@ -1622,8 +1563,8 @@ over=true;
 }}}
 minH++;
 maxH--;
-return Clazz.new_($I$(39).c$$I$I,[minH, maxH]);
-}return Clazz.new_($I$(39).c$$I$I,[0, 0]);
+return Clazz.new_($I$(39,1).c$$I$I,[minH, maxH]);
+}return Clazz.new_($I$(39,1).c$$I$I,[0, 0]);
 });
 
 Clazz.newMeth(C$, 'getExteriorHelix$I', function (index) {
@@ -1635,24 +1576,24 @@ a=h.x;
 b=h.y;
 h=this.getHelixInterval$I(a - 1);
 }
-return Clazz.new_($I$(39).c$$I$I,[a, b]);
+return Clazz.new_($I$(39,1).c$$I$I,[a, b]);
 });
 
 Clazz.newMeth(C$, 'getHelix$I', function (index) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 if ((index < 0) || (index >= this._listeBases.size$()) ) {
 return result;
 }var p=this.getHelixInterval$I(index);
 for (var i=p.x; i <= p.y; i++) {
-result.add$TE(new Integer(i));
-result.add$TE(new Integer(this._listeBases.get$I(i).getElementStructure$()));
+result.add$O(new Integer(i));
+result.add$O(new Integer(this._listeBases.get$I(i).getElementStructure$()));
 }
 return result;
 });
 
 Clazz.newMeth(C$, 'getMultiLoop$I', function (index) {
 if ((index < 0) || (index >= this._listeBases.size$()) ) {
-return Clazz.new_($I$(39).c$$I$I,[index, index]);
+return Clazz.new_($I$(39,1).c$$I$I,[index, index]);
 }var h=this.getHelixInterval$I(index);
 var minH=h.x - 1;
 var maxH=h.y + 1;
@@ -1682,28 +1623,28 @@ maxH=this._listeBases.get$I(maxH).getElementStructure$() + 1;
 } else {
 over=true;
 }}}
-return Clazz.new_($I$(39).c$$I$I,[minH, maxH]);
+return Clazz.new_($I$(39,1).c$$I$I,[minH, maxH]);
 });
 
 Clazz.newMeth(C$, 'getLoopBases$I', function (startIndex) {
-var result=Clazz.new_($I$(29));
+var result=Clazz.new_($I$(29,1));
 if ((startIndex < 0) || (startIndex >= this._listeBases.size$()) ) {
 return result;
 }var index=startIndex;
-result.add$TE(new Integer(startIndex));
+result.add$O(new Integer(startIndex));
 if (this._listeBases.get$I(index).getElementStructure$() <= index) {
 index=(index + 1) % this._listeBases.size$();
 } else {
 index=this._listeBases.get$I(index).getElementStructure$();
-result.add$TE(new Integer(index));
+result.add$O(new Integer(index));
 index=(index + 1) % this._listeBases.size$();
 }while (index != startIndex){
-result.add$TE(new Integer(index));
+result.add$O(new Integer(index));
 if (this._listeBases.get$I(index).getElementStructure$() == -1) {
 index=(index + 1) % this._listeBases.size$();
 } else {
 index=this._listeBases.get$I(index).getElementStructure$();
-result.add$TE(new Integer(index));
+result.add$O(new Integer(index));
 index=(index + 1) % this._listeBases.size$();
 }}
 return result;
@@ -1724,53 +1665,52 @@ return this.addStrandSeparators$S(result);
 });
 
 Clazz.newMeth(C$, 'getNonCrossingSubset$java_util_ArrayList', function (rankedBPs) {
-var currentBPs=Clazz.new_($I$(1));
-var pile=Clazz.new_($I$(37));
+var currentBPs=Clazz.new_($I$(1,1));
+var pile=Clazz.new_($I$(37,1));
 for (var i=0; i < rankedBPs.size$(); i++) {
 var lbp=rankedBPs.get$I(i);
 if (!lbp.isEmpty$()) {
 var bp=lbp.get$I(0);
 var ok=true;
 if (!pile.empty$()) {
-var x=(pile.peek$()).intValue$();
+var x=(pile.peek$()).valueOf();
 if ((bp.getIndex3$() >= x)) {
 ok=false;
 }}if (ok) {
 lbp.remove$I(0);
-currentBPs.add$TE(bp);
-pile.add$TE(new Integer(bp.getIndex3$()));
-}}if (!pile.empty$() && (i == (pile.peek$()).intValue$() ) ) {
+currentBPs.add$O(bp);
+pile.add$O(new Integer(bp.getIndex3$()));
+}}if (!pile.empty$() && (i == (pile.peek$()).valueOf() ) ) {
 pile.pop$();
 }}
 return currentBPs;
 }, p$1);
 
 Clazz.newMeth(C$, 'paginateStructure$', function () {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 var bps=this.getAllBPs$();
 var mt=Clazz.array($I$(40), [bps.size$()]);
-bps.toArray$TTA(mt);
-$I$(41).sort$TTA$java_util_Comparator(mt, ((P$.RNA$1||
-(function(){var C$=Clazz.newClass(P$, "RNA$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
+bps.toArray$OA(mt);
+$I$(41,"sort$OA$java_util_Comparator",[mt, ((P$.RNA$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "RNA$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['compare$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_rna_ModeleBP','compare$','compare$TT$TT'], function (arg0, arg1) {
+Clazz.newMeth(C$, ['compare$fr_orsay_lri_varna_models_rna_ModeleBP$fr_orsay_lri_varna_models_rna_ModeleBP','compare$O$O'], function (arg0, arg1) {
 if (arg0.getIndex5$() != arg1.getIndex5$()) return arg0.getIndex5$() - arg1.getIndex5$();
  else return arg0.getIndex3$() - arg1.getIndex3$();
 });
 })()
-), Clazz.new_(P$.RNA$1.$init$, [this, null])));
-var rankedBps=Clazz.new_($I$(1));
+), Clazz.new_(P$.RNA$1.$init$,[this, null]))]);
+var rankedBps=Clazz.new_($I$(1,1));
 for (var i=0; i < this.getSize$(); i++) {
-rankedBps.add$TE(Clazz.new_($I$(1)));
+rankedBps.add$O(Clazz.new_($I$(1,1)));
 }
 for (var i=0; i < mt.length; i++) {
-rankedBps.get$I(mt[i].getIndex5$()).add$TE(mt[i]);
+rankedBps.get$I(mt[i].getIndex5$()).add$O(mt[i]);
 }
 while (!bps.isEmpty$()){
 var currentBPs=p$1.getNonCrossingSubset$java_util_ArrayList.apply(this, [rankedBps]);
@@ -1784,7 +1724,7 @@ ss[mbp.getIndex3$()]=mbp.getIndex5$();
 ss[mbp.getIndex5$()]=mbp.getIndex3$();
 }
 bps.removeAll$java_util_Collection(currentBPs);
-result.add$TE(ss);
+result.add$O(ss);
 }
 return result;
 });
@@ -1912,13 +1852,13 @@ return result;
 
 Clazz.newMeth(C$, 'saveAsBPSEQ$S$S', function (path, title) {
 try {
-var f=Clazz.new_($I$(6).c$$S,[path]);
+var f=Clazz.new_($I$(6,1).c$$S,[path]);
 f.write$S("# " + title + "\n" );
 f.write$S(this.getStructBPSEQ$() + "\n");
 f.close$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-throw Clazz.new_($I$(42).c$$S$S,[e.getMessage$(), path]);
+throw Clazz.new_([e.getMessage$(), path],$I$(42,1).c$$S$S);
 } else {
 throw e;
 }
@@ -1927,13 +1867,13 @@ throw e;
 
 Clazz.newMeth(C$, 'saveAsCT$S$S', function (path, title) {
 try {
-var f=Clazz.new_($I$(6).c$$S,[path]);
+var f=Clazz.new_($I$(6,1).c$$S,[path]);
 f.write$S("" + this._listeBases.size$() + " " + title + "\n" );
 f.write$S(this.getStructCT$() + "\n");
 f.close$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-throw Clazz.new_($I$(42).c$$S$S,[e.getMessage$(), path]);
+throw Clazz.new_([e.getMessage$(), path],$I$(42,1).c$$S$S);
 } else {
 throw e;
 }
@@ -1942,14 +1882,14 @@ throw e;
 
 Clazz.newMeth(C$, 'saveAsDBN$S$S', function (path, title) {
 try {
-var f=Clazz.new_($I$(6).c$$S,[path]);
+var f=Clazz.new_($I$(6,1).c$$S,[path]);
 f.write$S("> " + title + "\n" );
 f.write$S(this.getListeBasesToString$() + "\n");
 f.write$S(this.getStructDBN$() + "\n");
 f.close$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-throw Clazz.new_($I$(42).c$$S$S,[e.getMessage$(), path]);
+throw Clazz.new_([e.getMessage$(), path],$I$(42,1).c$$S$S);
 } else {
 throw e;
 }
@@ -1965,9 +1905,9 @@ return this.addStrandSeparators$S(s);
 });
 
 Clazz.newMeth(C$, 'applyBPs$java_util_ArrayList', function (allbps) {
-var planar=Clazz.new_($I$(1));
-var others=Clazz.new_($I$(1));
-$I$(43).planarize$java_util_ArrayList$java_util_ArrayList$java_util_ArrayList$I(allbps, planar, others, this.getSize$());
+var planar=Clazz.new_($I$(1,1));
+var others=Clazz.new_($I$(1,1));
+$I$(43,"planarize$java_util_ArrayList$java_util_ArrayList$java_util_ArrayList$I",[allbps, planar, others, this.getSize$()]);
 for (var mb, $mb = planar.iterator$(); $mb.hasNext$()&&((mb=($mb.next$())),1);) {
 p$1.addBPnow$I$I$fr_orsay_lri_varna_models_rna_ModeleBP.apply(this, [mb.getPartner5$().getIndex$(), mb.getPartner3$().getIndex$(), mb]);
 }
@@ -1981,7 +1921,7 @@ this._listeBases=_liste;
 });
 
 Clazz.newMeth(C$, 'addVARNAListener$fr_orsay_lri_varna_interfaces_InterfaceVARNAListener', function (rl) {
-this._listeVARNAListener.add$TE(rl);
+this._listeVARNAListener.add$O(rl);
 });
 
 Clazz.newMeth(C$, 'warningEmition$S', function (warningMessage) {
@@ -1992,7 +1932,7 @@ this._listeVARNAListener.get$I(i).onWarningEmitted$S(warningMessage);
 
 Clazz.newMeth(C$, 'applyStyleOnBases$java_util_ArrayList$fr_orsay_lri_varna_models_rna_ModelBaseStyle', function (basesList, style) {
 for (var i=1; i < basesList.size$(); i++) {
-this._listeBases.get$I((basesList.get$I(i)).intValue$()).setStyleBase$fr_orsay_lri_varna_models_rna_ModelBaseStyle(style);
+this._listeBases.get$I((basesList.get$I(i)).valueOf()).setStyleBase$fr_orsay_lri_varna_models_rna_ModelBaseStyle(style);
 }
 });
 
@@ -2032,22 +1972,22 @@ return this._listeBases.size$();
 });
 
 Clazz.newMeth(C$, 'findAll$', function () {
-var listAll=Clazz.new_($I$(1));
+var listAll=Clazz.new_($I$(1,1));
 for (var i=0; i < this.get_listeBases$().size$(); i++) {
-listAll.add$TE(new Integer(i));
+listAll.add$O(new Integer(i));
 }
 return listAll;
 });
 
 Clazz.newMeth(C$, 'findBulge$I', function (index) {
-var listUp=Clazz.new_($I$(1));
+var listUp=Clazz.new_($I$(1,1));
 if (this.get_listeBases$().get$I(index).getElementStructure$() == -1) {
 var i=index;
 var over=false;
 while ((i < this.get_listeBases$().size$()) && !over ){
 var j=this.get_listeBases$().get$I(i).getElementStructure$();
 if (j == -1) {
-listUp.add$TE(new Integer(i));
+listUp.add$O(new Integer(i));
 i++;
 } else {
 over=true;
@@ -2057,7 +1997,7 @@ over=false;
 while ((i >= 0) && !over ){
 var j=this.get_listeBases$().get$I(i).getElementStructure$();
 if (j == -1) {
-listUp.add$TE(new Integer(i));
+listUp.add$O(new Integer(i));
 i--;
 } else {
 over=true;
@@ -2066,10 +2006,10 @@ over=true;
 });
 
 Clazz.newMeth(C$, 'findStem$I', function (index) {
-var listUp=Clazz.new_($I$(1));
+var listUp=Clazz.new_($I$(1,1));
 var i=index;
 do {
-listUp.add$TE(new Integer(i));
+listUp.add$O(new Integer(i));
 var j=this.get_listeBases$().get$I(i).getElementStructure$();
 if (j == -1) {
 i=(i + 1) % this.getSize$();
@@ -2109,7 +2049,7 @@ return this.findLoopForward$I(indice);
 });
 
 Clazz.newMeth(C$, 'findLoopForward$I', function (indice) {
-var base=Clazz.new_($I$(1));
+var base=Clazz.new_($I$(1,1));
 if (indice < 0 || indice >= this.get_listeBases$().size$() ) return base;
 var i=indice;
 var j=this.get_listeBases$().get$I(i).getElementStructure$();
@@ -2118,7 +2058,7 @@ if (j != -1) {
 i=Math.min(i, j) + 1;
 indice=i;
 }do {
-base.add$TE(new Integer(i));
+base.add$O(new Integer(i));
 j=this.get_listeBases$().get$I(i).getElementStructure$();
 if ((j != -1) && (!justJumped) ) {
 i=j;
@@ -2131,16 +2071,16 @@ return base;
 });
 
 Clazz.newMeth(C$, 'findPair$I', function (indice) {
-var base=Clazz.new_($I$(1));
+var base=Clazz.new_($I$(1,1));
 var j=this.get_listeBases$().get$I(indice).getElementStructure$();
 if (j != -1) {
-base.add$TE(new Integer(Math.min(indice, j)));
-base.add$TE(new Integer(Math.max(indice, j)));
+base.add$O(new Integer(Math.min(indice, j)));
+base.add$O(new Integer(Math.max(indice, j)));
 }return base;
 });
 
 Clazz.newMeth(C$, 'findLoopBackward$I', function (indice) {
-var base=Clazz.new_($I$(1));
+var base=Clazz.new_($I$(1,1));
 if (indice < 0 || indice >= this.get_listeBases$().size$() ) return base;
 var i=indice;
 var j=this.get_listeBases$().get$I(i).getElementStructure$();
@@ -2151,7 +2091,7 @@ indice=i;
 }if (i < 0) {
 return base;
 }do {
-base.add$TE(new Integer(i));
+base.add$O(new Integer(i));
 j=this.get_listeBases$().get$I(i).getElementStructure$();
 if ((j != -1) && (!justJumped) ) {
 i=j;
@@ -2164,23 +2104,23 @@ return base;
 });
 
 Clazz.newMeth(C$, 'findHelix$I', function (indice) {
-var list=Clazz.new_($I$(1));
+var list=Clazz.new_($I$(1,1));
 if (this.get_listeBases$().get$I(indice).getElementStructure$() != -1) {
-list.add$TE(new Integer(indice));
-list.add$TE(new Integer(this.get_listeBases$().get$I(indice).getElementStructure$()));
+list.add$O(new Integer(indice));
+list.add$O(new Integer(this.get_listeBases$().get$I(indice).getElementStructure$()));
 var i=1;
 var prec=this.get_listeBases$().get$I(indice).getElementStructure$();
 while (indice + i < this.get_listeBases$().size$() && this.get_listeBases$().get$I(indice + i).getElementStructure$() != -1  && this.get_listeBases$().get$I(indice + i).getElementStructure$() == prec - 1 ){
-list.add$TE(new Integer(indice + i));
-list.add$TE(new Integer(this.get_listeBases$().get$I(indice + i).getElementStructure$()));
+list.add$O(new Integer(indice + i));
+list.add$O(new Integer(this.get_listeBases$().get$I(indice + i).getElementStructure$()));
 prec=this.get_listeBases$().get$I(indice + i).getElementStructure$();
 i++;
 }
 i=-1;
 prec=this.get_listeBases$().get$I(indice).getElementStructure$();
 while (indice + i >= 0 && this.get_listeBases$().get$I(indice + i).getElementStructure$() != -1  && this.get_listeBases$().get$I(indice + i).getElementStructure$() == prec + 1 ){
-list.add$TE(new Integer(indice + i));
-list.add$TE(new Integer(this.get_listeBases$().get$I(indice + i).getElementStructure$()));
+list.add$O(new Integer(indice + i));
+list.add$O(new Integer(this.get_listeBases$().get$I(indice + i).getElementStructure$()));
 prec=this.get_listeBases$().get$I(indice + i).getElementStructure$();
 i--;
 }
@@ -2188,7 +2128,7 @@ i--;
 });
 
 Clazz.newMeth(C$, 'find3Prime$I', function (indice) {
-var list=Clazz.new_($I$(1));
+var list=Clazz.new_($I$(1,1));
 var over=false;
 while ((indice >= 0) && !over ){
 over=(this.get_listeBases$().get$I(indice).getElementStructure$() != -1);
@@ -2198,19 +2138,19 @@ indice++;
 if (over) {
 indice++;
 }for (var i=indice; i < this.get_listeBases$().size$(); i++) {
-list.add$TE(new Integer(i));
+list.add$O(new Integer(i));
 if (this.get_listeBases$().get$I(i).getElementStructure$() != -1) {
-return Clazz.new_($I$(1));
+return Clazz.new_($I$(1,1));
 }}
 return list;
 });
 
 Clazz.newMeth(C$, 'find5Prime$I', function (indice) {
-var list=Clazz.new_($I$(1));
+var list=Clazz.new_($I$(1,1));
 for (var i=0; i <= indice; i++) {
-list.add$TE(new Integer(i));
+list.add$O(new Integer(i));
 if (this.get_listeBases$().get$I(i).getElementStructure$() != -1) {
-return Clazz.new_($I$(1));
+return Clazz.new_($I$(1,1));
 }}
 return list;
 });
@@ -2218,30 +2158,30 @@ return list;
 Clazz.newMeth(C$, 'angle$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double', function (p1, p2, p3) {
 var alpha=new Double(Math.atan2(p1.y - p2.y, p1.x - p2.x));
 var beta=new Double(Math.atan2(p3.y - p2.y, p3.x - p2.x));
-var angle=new Double(((beta).doubleValue$() - (alpha).doubleValue$()));
-while ((angle).doubleValue$() < 0.0  || (angle).doubleValue$() > 6.283185307179586  ){
-if ((angle).doubleValue$() < 0.0 ) angle += 6.283185307179586;
- else if ((angle).doubleValue$() > 6.283185307179586 ) angle -= 6.283185307179586;
+var angle=new Double(((beta).valueOf() - (alpha).valueOf()));
+while ((angle).valueOf() < 0.0  || (angle).valueOf() > 6.283185307179586  ){
+if ((angle).valueOf() < 0.0 ) angle += 6.283185307179586;
+ else if ((angle).valueOf() > 6.283185307179586 ) angle -= 6.283185307179586;
 }
 return angle;
 }, 1);
 
 Clazz.newMeth(C$, 'findNonPairedBaseGroup$Integer', function (get_nearestBase) {
-var list=Clazz.new_($I$(1));
-var indice=(get_nearestBase).intValue$();
+var list=Clazz.new_($I$(1,1));
+var indice=(get_nearestBase).valueOf();
 var nonpairedUp=true;
 var nonpairedDown=true;
 while (indice < this.get_listeBases$().size$() && nonpairedUp ){
 if (this.get_listeBases$().get$I(indice).getElementStructure$() == -1) {
-list.add$TE(new Integer(indice));
+list.add$O(new Integer(indice));
 indice++;
 } else {
 nonpairedUp=false;
 }}
-indice=(get_nearestBase).intValue$() - 1;
+indice=(get_nearestBase).valueOf() - 1;
 while (indice >= 0 && nonpairedDown ){
 if (this.get_listeBases$().get$I(indice).getElementStructure$() == -1) {
-list.add$TE(new Integer(indice));
+list.add$O(new Integer(indice));
 indice--;
 } else {
 nonpairedDown=false;
@@ -2276,7 +2216,7 @@ var i=index5;
 var j=index3;
 var part5=this._listeBases.get$I(i);
 var part3=this._listeBases.get$I(j);
-var msbp=Clazz.new_($I$(40).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase,[part5, part3]);
+var msbp=Clazz.new_($I$(40,1).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase,[part5, part3]);
 this.addBP$I$I$fr_orsay_lri_varna_models_rna_ModeleBP(i, j, msbp);
 });
 
@@ -2319,7 +2259,7 @@ j=i;
 i=k;
 }var part5=this._listeBases.get$I(i);
 var part3=this._listeBases.get$I(j);
-var msbp=Clazz.new_($I$(40).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase,[part5, part3]);
+var msbp=Clazz.new_($I$(40,1).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase,[part5, part3]);
 p$1.addBPnow$I$I$fr_orsay_lri_varna_models_rna_ModeleBP.apply(this, [i, j, msbp]);
 }, p$1);
 
@@ -2339,7 +2279,7 @@ part3.setElementStructure$I$fr_orsay_lri_varna_models_rna_ModeleBP(i, msbp);
 Clazz.newMeth(C$, 'addBPAux$I$I', function (i, j) {
 var part5=this._listeBases.get$I(i);
 var part3=this._listeBases.get$I(j);
-var msbp=Clazz.new_($I$(40).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase,[part5, part3]);
+var msbp=Clazz.new_($I$(40,1).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase,[part5, part3]);
 this.addBPAux$I$I$fr_orsay_lri_varna_models_rna_ModeleBP(i, j, msbp);
 });
 
@@ -2352,17 +2292,17 @@ i=k;
 var part3=this._listeBases.get$I(j);
 msbp.setPartner5$fr_orsay_lri_varna_models_rna_ModeleBase(part5);
 msbp.setPartner3$fr_orsay_lri_varna_models_rna_ModeleBase(part3);
-this._structureAux.add$TE(msbp);
+this._structureAux.add$O(msbp);
 });
 
 Clazz.newMeth(C$, 'getBPsAt$I', function (i) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 if (this._listeBases.get$I(i).getElementStructure$() != -1) {
-result.add$TE(this._listeBases.get$I(i).getStyleBP$());
+result.add$O(this._listeBases.get$I(i).getStyleBP$());
 }for (var k=0; k < this._structureAux.size$(); k++) {
 var bp=this._structureAux.get$I(k);
 if ((bp.getPartner5$().getIndex$() == i) || (bp.getPartner3$().getIndex$() == i) ) {
-result.add$TE(bp);
+result.add$O(bp);
 }}
 return result;
 });
@@ -2384,36 +2324,36 @@ return result;
 });
 
 Clazz.newMeth(C$, 'getSecStrBPs$', function () {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 for (var i=0; i < this.getSize$(); i++) {
 var mb=this._listeBases.get$I(i);
 var k=mb.getElementStructure$();
 if ((k != -1) && (k > i) ) {
-result.add$TE(mb.getStyleBP$());
+result.add$O(mb.getStyleBP$());
 }}
 return result;
 });
 
 Clazz.newMeth(C$, 'getAuxBPs$', function () {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 for (var bp, $bp = this._structureAux.iterator$(); $bp.hasNext$()&&((bp=($bp.next$())),1);) {
-result.add$TE(bp);
+result.add$O(bp);
 }
 return result;
 });
 
 Clazz.newMeth(C$, 'getAllBPs$', function () {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 result.addAll$java_util_Collection(this.getSecStrBPs$());
 result.addAll$java_util_Collection(this.getAuxBPs$());
 return result;
 });
 
 Clazz.newMeth(C$, 'getAuxBPs$I', function (i) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 for (var bp, $bp = this._structureAux.iterator$(); $bp.hasNext$()&&((bp=($bp.next$())),1);) {
 if ((bp.getPartner5$().getIndex$() == i) || (bp.getPartner3$().getIndex$() == i) ) {
-result.add$TE(bp);
+result.add$O(bp);
 }}
 return result;
 });
@@ -2463,14 +2403,14 @@ return this._listeAnnotations.remove$O(t);
 });
 
 Clazz.newMeth(C$, 'addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation', function (t) {
-this._listeAnnotations.add$TE(t);
+this._listeAnnotations.add$O(t);
 });
 
 Clazz.newMeth(C$, 'removeAnnotation$S', function (filter) {
-var condamne=Clazz.new_($I$(1));
+var condamne=Clazz.new_($I$(1,1));
 for (var t, $t = this._listeAnnotations.iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) {
 if (t.getTexte$().contains$CharSequence(filter)) {
-condamne.add$TE(t);
+condamne.add$O(t);
 }}
 for (var t, $t = condamne.iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) {
 this._listeAnnotations.remove$O(t);
@@ -2485,18 +2425,18 @@ Clazz.newMeth(C$, 'autoAnnotateStrandEnds$', function () {
 if (!this._strandEndsAnnotated) {
 var tailleListBases=this._listeBases.size$();
 var endAnnotate=false;
-this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_($I$(44).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase,["5\'", this._listeBases.get$I(0)]));
+this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_(["5\'", this._listeBases.get$I(0)],$I$(44,1).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase));
 for (var i=0; i < this._listeBases.size$() - 1; i++) {
 var realposA=this._listeBases.get$I(i).getBaseNumber$();
 var realposB=this._listeBases.get$I(i + 1).getBaseNumber$();
 if (realposB - realposA != 1) {
-this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_($I$(44).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase,["3\'", this._listeBases.get$I(i)]));
-this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_($I$(44).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase,["5\'", this._listeBases.get$I(i + 1)]));
+this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_(["3\'", this._listeBases.get$I(i)],$I$(44,1).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase));
+this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_(["5\'", this._listeBases.get$I(i + 1)],$I$(44,1).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase));
 if (i + 1 == this._listeBases.size$() - 1) {
 endAnnotate=true;
 }}}
 if (!endAnnotate) {
-this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_($I$(44).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase,["3\'", this._listeBases.get$I(tailleListBases - 1)]));
+this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_(["3\'", this._listeBases.get$I(tailleListBases - 1)],$I$(44,1).c$$S$fr_orsay_lri_varna_models_rna_ModeleBase));
 }this._strandEndsAnnotated=true;
 } else {
 this.removeAnnotation$S("3\'");
@@ -2505,31 +2445,31 @@ this._strandEndsAnnotated=false;
 }});
 
 Clazz.newMeth(C$, 'autoAnnotateHelices$', function () {
-var p=Clazz.new_($I$(37));
-p.push$TE(new Integer(0));
+var p=Clazz.new_($I$(37,1));
+p.push$O(new Integer(0));
 var nbH=1;
 while (!p.empty$()){
-var i=(p.pop$()).intValue$();
+var i=(p.pop$()).valueOf();
 if (i < this._listeBases.size$()) {
 var mb=this._listeBases.get$I(i);
 var j=mb.getElementStructure$();
 if (j == -1) {
-p.push$TE(new Integer(i + 1));
+p.push$O(new Integer(i + 1));
 } else {
 if (j > i) {
 var mbp=this._listeBases.get$I(j);
-p.push$TE(new Integer(j + 1));
-var h=Clazz.new_($I$(1));
+p.push$O(new Integer(j + 1));
+var h=Clazz.new_($I$(1,1));
 var k=1;
 while (mb.getElementStructure$() == mbp.getIndex$()){
-h.add$TE(mb);
-h.add$TE(mbp);
+h.add$O(mb);
+h.add$O(mbp);
 mb=this._listeBases.get$I(i + k);
 mbp=this._listeBases.get$I(j - k);
 k++;
 }
 try {
-this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_($I$(44).c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType,["H" + nbH++, h, $I$(19).HELIX]));
+this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_(["H" + nbH++, h, $I$(19).HELIX],$I$(44,1).c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 e.printStackTrace$();
@@ -2537,33 +2477,33 @@ e.printStackTrace$();
 throw e;
 }
 }
-p.push$TE(new Integer(i + k));
+p.push$O(new Integer(i + k));
 }}}}
 });
 
 Clazz.newMeth(C$, 'autoAnnotateTerminalLoops$', function () {
-var p=Clazz.new_($I$(37));
-p.push$TE(new Integer(0));
+var p=Clazz.new_($I$(37,1));
+p.push$O(new Integer(0));
 var nbT=1;
 while (!p.empty$()){
-var i=(p.pop$()).intValue$();
+var i=(p.pop$()).valueOf();
 if (i < this._listeBases.size$()) {
 var mb=this._listeBases.get$I(i);
 var j=mb.getElementStructure$();
 if (j == -1) {
 var k=1;
-var t=Clazz.new_($I$(1));
+var t=Clazz.new_($I$(1,1));
 while ((i + k < this.getSize$()) && (mb.getElementStructure$() == -1) ){
-t.add$TE(mb);
+t.add$O(mb);
 mb=this._listeBases.get$I(i + k);
 k++;
 }
 if (mb.getElementStructure$() != -1) {
 if (mb.getElementStructure$() == i - 1) {
 try {
-t.add$TE(this._listeBases.get$I(i - 1));
-t.add$TE(this._listeBases.get$I(i + k - 1));
-this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_($I$(44).c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType,["T" + nbT++, t, $I$(19).LOOP]));
+t.add$O(this._listeBases.get$I(i - 1));
+t.add$O(this._listeBases.get$I(i + k - 1));
+this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_(["T" + nbT++, t, $I$(19).LOOP],$I$(44,1).c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 e.printStackTrace$();
@@ -2571,42 +2511,42 @@ e.printStackTrace$();
 throw e;
 }
 }
-}p.push$TE(new Integer(i + k - 1));
+}p.push$O(new Integer(i + k - 1));
 }} else {
 if (j > i) {
-p.push$TE(new Integer(j + 1));
-p.push$TE(new Integer(i + 1));
+p.push$O(new Integer(j + 1));
+p.push$O(new Integer(i + 1));
 }}}}
 });
 
 Clazz.newMeth(C$, 'autoAnnotateInteriorLoops$', function () {
-var p=Clazz.new_($I$(37));
-p.push$TE(new Integer(0));
+var p=Clazz.new_($I$(37,1));
+p.push$O(new Integer(0));
 var nbT=1;
 while (!p.empty$()){
-var i=(p.pop$()).intValue$();
+var i=(p.pop$()).valueOf();
 if (i < this._listeBases.size$()) {
 var mb=this._listeBases.get$I(i);
 var j=mb.getElementStructure$();
 if (j == -1) {
 var k=i + 1;
-var t=Clazz.new_($I$(1));
+var t=Clazz.new_($I$(1,1));
 var terminal=true;
 while ((k < this.getSize$()) && ((mb.getElementStructure$() >= i) || (mb.getElementStructure$() == -1) ) ){
-t.add$TE(mb);
+t.add$O(mb);
 mb=this._listeBases.get$I(k);
 if ((mb.getElementStructure$() == -1) || (mb.getElementStructure$() < k) ) k++;
  else {
-p.push$TE(new Integer(k));
+p.push$O(new Integer(k));
 terminal=false;
 k=mb.getElementStructure$();
 }}
 if (mb.getElementStructure$() != -1) {
 if ((mb.getElementStructure$() == i - 1) && !terminal ) {
 try {
-t.add$TE(this._listeBases.get$I(i - 1));
-t.add$TE(this._listeBases.get$I(k - 1));
-this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_($I$(44).c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType,["I" + nbT++, t, $I$(19).LOOP]));
+t.add$O(this._listeBases.get$I(i - 1));
+t.add$O(this._listeBases.get$I(k - 1));
+this.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(Clazz.new_(["I" + nbT++, t, $I$(19).LOOP],$I$(44,1).c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 e.printStackTrace$();
@@ -2614,10 +2554,10 @@ e.printStackTrace$();
 throw e;
 }
 }
-p.push$TE(new Integer(k - 1));
+p.push$O(new Integer(k - 1));
 }}} else {
 if (j > i) {
-p.push$TE(new Integer(i + 1));
+p.push$O(new Integer(i + 1));
 }}}}
 });
 
@@ -2641,7 +2581,7 @@ return result;
 });
 
 Clazz.newMeth(C$, 'addChemProbAnnotation$fr_orsay_lri_varna_models_annotations_ChemProbAnnotation', function (cpa) {
-this._chemProbAnnotations.add$TE(cpa);
+this._chemProbAnnotations.add$O(cpa);
 });
 
 Clazz.newMeth(C$, 'getChemProbAnnotations$', function () {
@@ -2664,17 +2604,17 @@ cm.rescale$D$D(min, max);
 });
 
 Clazz.newMeth(C$, 'loadDotPlot$java_io_StreamTokenizer', function (st) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 try {
 var inSeq=false;
 var sequence="";
-var accumulator=Clazz.new_($I$(1));
+var accumulator=Clazz.new_($I$(1,1));
 var type=st.nextToken$();
-var BP=Clazz.new_($I$(45));
+var BP=Clazz.new_($I$(45,1));
 while (type != -1){
 switch (type) {
 case (-2):
-accumulator.add$TE(new Double(st.nval));
+accumulator.add$O(new Double(st.nval));
 break;
 case (10):
 break;
@@ -2684,8 +2624,8 @@ inSeq=true;
 } else if (st.sval.equals$O("ubox")) {
 var i=accumulator.get$I(accumulator.size$() - 3).intValue$() - 1;
 var j=accumulator.get$I(accumulator.size$() - 2).intValue$() - 1;
-var val=(accumulator.get$I(accumulator.size$() - 1)).doubleValue$();
-BP.put$TK$TV(Clazz.new_($I$(30).c$$TT$TU,[new Integer(Math.min(i, j)), new Integer(Math.max(i, j))]), new Double(val * val));
+var val=(accumulator.get$I(accumulator.size$() - 1)).valueOf();
+BP.put$O$O(Clazz.new_([new Integer(Math.min(i, j)), new Integer(Math.max(i, j))],$I$(30,1).c$$O$O), new Double(val * val));
 accumulator.clear$();
 } else if (inSeq) {
 sequence += st.sval;
@@ -2699,19 +2639,19 @@ type=st.nextToken$();
 for (var i=0; i < this.getSize$(); i++) {
 var j=this.getBaseAt$I(i).getElementStructure$();
 if (j != -1) {
-var coor=Clazz.new_($I$(30).c$$TT$TU,[new Integer(Math.min(i, j)), new Integer(Math.max(i, j))]);
+var coor=Clazz.new_([new Integer(Math.min(i, j)), new Integer(Math.max(i, j))],$I$(30,1).c$$O$O);
 if (BP.containsKey$O(coor)) {
-result.add$TE(BP.get$O(coor));
+result.add$O(BP.get$O(coor));
 } else {
-result.add$TE(new Double(0.));
+result.add$O(new Double(0.0));
 }} else {
 var acc=1.0;
 for (var k=0; k < this.getSize$(); k++) {
-var coor=Clazz.new_($I$(30).c$$TT$TU,[new Integer(Math.min(i, k)), new Integer(Math.max(i, k))]);
+var coor=Clazz.new_([new Integer(Math.min(i, k)), new Integer(Math.max(i, k))],$I$(30,1).c$$O$O);
 if (BP.containsKey$O(coor)) {
-acc -= (BP.get$O(coor)).doubleValue$();
+acc -= (BP.get$O(coor)).valueOf();
 }}
-result.add$TE(new Double(acc));
+result.add$O(new Double(acc));
 }}
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
@@ -2725,12 +2665,12 @@ return result;
 
 Clazz.newMeth(C$, 'readValues$java_io_Reader$fr_orsay_lri_varna_models_rna_ModeleColorMap', function (r, cm) {
 try {
-var st=Clazz.new_($I$(46).c$$java_io_Reader,[r]);
+var st=Clazz.new_($I$(46,1).c$$java_io_Reader,[r]);
 st.eolIsSignificant$Z(true);
 st.wordChars$I$I("/".$c(), "/".$c());
 st.parseNumbers$();
-var vals=Clazz.new_($I$(1));
-var curVals=Clazz.new_($I$(1));
+var vals=Clazz.new_($I$(1,1));
+var curVals=Clazz.new_($I$(1,1));
 var type=st.nextToken$();
 var isDotPlot=false;
 if (type == 37 ) {
@@ -2740,17 +2680,17 @@ isDotPlot=true;
 while (type != -1){
 switch (type) {
 case (-2):
-curVals.add$TE(new Double(st.nval));
+curVals.add$O(new Double(st.nval));
 break;
 case (10):
 if (curVals.size$() > 0) {
-vals.add$TE(curVals.get$I(curVals.size$() - 1));
-curVals=Clazz.new_($I$(1));
+vals.add$O(curVals.get$I(curVals.size$() - 1));
+curVals=Clazz.new_($I$(1,1));
 }break;
 }
 type=st.nextToken$();
 }
-if (curVals.size$() > 0) vals.add$TE(curVals.get$I(curVals.size$() - 1));
+if (curVals.size$() > 0) vals.add$O(curVals.get$I(curVals.size$() - 1));
 }var v=Clazz.array(Double, [vals.size$()]);
 for (var i=0; i < Math.min(vals.size$(), this.getSize$()); i++) {
 v[i]=vals.get$I(i);
@@ -2772,7 +2712,7 @@ Clazz.newMeth(C$, 'setColorMapValues$DoubleA$fr_orsay_lri_varna_models_rna_Model
 if (values.length > 0) {
 for (var i=0; i < Math.min(values.length, this._listeBases.size$()); i++) {
 var mb=this._listeBases.get$I(i);
-mb.setValue$D((values[i]).doubleValue$());
+mb.setValue$D((values[i]).valueOf());
 }
 if (rescaleColorMap) {
 this.adaptColorMapToValues$fr_orsay_lri_varna_models_rna_ModeleColorMap(cm);
@@ -2791,14 +2731,14 @@ var max=new Double(4.9E-324);
 var min=new Double(1.7976931348623157E308);
 for (var i=0; i < this._listeBases.size$(); i++) {
 var value=new Double(this._listeBases.get$I(i).getValue$());
-max=new Double(Math.max((max).doubleValue$(), (value).doubleValue$()));
-min=new Double(Math.min((min).doubleValue$(), (value).doubleValue$()));
+max=new Double(Math.max((max).valueOf(), (value).valueOf()));
+min=new Double(Math.min((min).valueOf(), (value).valueOf()));
 }
-cm.rescale$D$D((min).doubleValue$(), (max).doubleValue$());
+cm.rescale$D$D((min).valueOf(), (max).valueOf());
 });
 
 Clazz.newMeth(C$, 'addBase$fr_orsay_lri_varna_models_rna_ModeleBase', function (mb) {
-this._listeBases.add$TE(mb);
+this._listeBases.add$O(mb);
 });
 
 Clazz.newMeth(C$, 'setSequence$S', function (s) {
@@ -2822,7 +2762,7 @@ j++;
 } else j++;
 }
 for (i=this._listeBases.size$(); i < s.size$(); i++) {
-this._listeBases.add$TE(Clazz.new_($I$(34).c$$S$I,[s.get$I(i), i]));
+this._listeBases.add$O(Clazz.new_([s.get$I(i), i],$I$(34,1).c$$S$I));
 }
 });
 
@@ -2843,10 +2783,10 @@ j++;
 
 Clazz.newMeth(C$, 'clone$', function () {
 try {
-var out=Clazz.new_($I$(47));
-var oout=Clazz.new_($I$(48).c$$java_io_OutputStream,[out]);
+var out=Clazz.new_($I$(47,1));
+var oout=Clazz.new_($I$(48,1).c$$java_io_OutputStream,[out]);
 oout.writeObject$O(this);
-var $in=Clazz.new_($I$(49).c$$java_io_InputStream,[Clazz.new_($I$(50).c$$BA,[out.toByteArray$()])]);
+var $in=Clazz.new_([Clazz.new_([out.toByteArray$()],$I$(50,1).c$$BA)],$I$(49,1).c$$java_io_InputStream);
 return $in.readObject$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -2862,26 +2802,26 @@ return this._listeBases.get$I(index);
 });
 
 Clazz.newMeth(C$, 'getBasesAt$java_util_Collection', function (indices) {
-var mbs=Clazz.new_($I$(1));
+var mbs=Clazz.new_($I$(1,1));
 for (var i, $i = indices.iterator$(); $i.hasNext$()&&((i=($i.next$()).intValue$()),1);) {
-mbs.add$TE(this.getBaseAt$I(i));
+mbs.add$O(this.getBaseAt$I(i));
 }
 return mbs;
 });
 
 Clazz.newMeth(C$, 'getBasesBetween$I$I', function (from, to) {
-var mbs=Clazz.new_($I$(1));
+var mbs=Clazz.new_($I$(1,1));
 var bck=Math.min(from, to);
 to=Math.max(from, to);
 from=bck;
 for (var i=from; i <= to; i++) {
-mbs.add$TE(this.getBaseAt$I(i));
+mbs.add$O(this.getBaseAt$I(i));
 }
 return mbs;
 });
 
 Clazz.newMeth(C$, 'addHighlightRegion$fr_orsay_lri_varna_models_annotations_HighlightRegionAnnotation', function (n) {
-this._listeRegionHighlights.add$TE(n);
+this._listeRegionHighlights.add$O(n);
 });
 
 Clazz.newMeth(C$, 'removeHighlightRegion$fr_orsay_lri_varna_models_annotations_HighlightRegionAnnotation', function (n) {
@@ -2897,11 +2837,11 @@ this._chemProbAnnotations.clear$();
 });
 
 Clazz.newMeth(C$, 'addHighlightRegion$I$I$java_awt_Color$java_awt_Color$D', function (from, to, fill, outline, radius) {
-this._listeRegionHighlights.add$TE(Clazz.new_($I$(51).c$$java_util_ArrayList$java_awt_Color$java_awt_Color$D,[this.getBasesBetween$I$I(from, to), fill, outline, radius]));
+this._listeRegionHighlights.add$O(Clazz.new_([this.getBasesBetween$I$I(from, to), fill, outline, radius],$I$(51,1).c$$java_util_ArrayList$java_awt_Color$java_awt_Color$D));
 });
 
 Clazz.newMeth(C$, 'addHighlightRegion$I$I', function (from, to) {
-this._listeRegionHighlights.add$TE(Clazz.new_($I$(51).c$$java_util_ArrayList,[this.getBasesBetween$I$I(from, to)]));
+this._listeRegionHighlights.add$O(Clazz.new_([this.getBasesBetween$I$I(from, to)],$I$(51,1).c$$java_util_ArrayList));
 });
 
 Clazz.newMeth(C$, 'getHighlightRegion$', function () {
@@ -2910,27 +2850,27 @@ return this._listeRegionHighlights;
 
 Clazz.newMeth(C$, 'globalRotation$Double', function (angleDegres) {
 if (this._listeBases.size$() > 0) {
-var angle=new Double((angleDegres).doubleValue$() * 3.141592653589793 / 180);
+var angle=new Double((angleDegres).valueOf() * 3.141592653589793 / 180);
 var maxX=new Double(this._listeBases.get$I(0).getCoords$().x);
 var maxY=new Double(this._listeBases.get$I(0).getCoords$().y);
 var minX=new Double(this._listeBases.get$I(0).getCoords$().x);
 var minY=new Double(this._listeBases.get$I(0).getCoords$().y);
 for (var i=0; i < this._listeBases.size$(); i++) {
-if (this._listeBases.get$I(i).getCoords$().getX$() < (minX).doubleValue$() ) minX=new Double(this._listeBases.get$I(i).getCoords$().getX$());
-if (this._listeBases.get$I(i).getCoords$().getY$() < (minY).doubleValue$() ) minY=new Double(this._listeBases.get$I(i).getCoords$().getY$());
-if (this._listeBases.get$I(i).getCoords$().getX$() > (maxX).doubleValue$() ) maxX=new Double(this._listeBases.get$I(i).getCoords$().getX$());
-if (this._listeBases.get$I(i).getCoords$().getX$() > (maxY).doubleValue$() ) maxY=new Double(this._listeBases.get$I(i).getCoords$().getY$());
+if (this._listeBases.get$I(i).getCoords$().getX$() < (minX).valueOf() ) minX=new Double(this._listeBases.get$I(i).getCoords$().getX$());
+if (this._listeBases.get$I(i).getCoords$().getY$() < (minY).valueOf() ) minY=new Double(this._listeBases.get$I(i).getCoords$().getY$());
+if (this._listeBases.get$I(i).getCoords$().getX$() > (maxX).valueOf() ) maxX=new Double(this._listeBases.get$I(i).getCoords$().getX$());
+if (this._listeBases.get$I(i).getCoords$().getX$() > (maxY).valueOf() ) maxY=new Double(this._listeBases.get$I(i).getCoords$().getY$());
 }
-var centre=Clazz.new_($I$(10).c$$D$D,[((maxX).doubleValue$() - (minX).doubleValue$()) / 2, ((maxY).doubleValue$() - (minY).doubleValue$()) / 2]);
+var centre=Clazz.new_([((maxX).valueOf() - (minX).valueOf()) / 2, ((maxY).valueOf() - (minY).valueOf()) / 2],$I$(10,1).c$$D$D);
 var x;
 var y;
 for (var i=0; i < this._listeBases.size$(); i++) {
-x=new Double(Math.cos((angle).doubleValue$()) * (this._listeBases.get$I(i).getCenter$().getX$() - centre.x) - Math.sin((angle).doubleValue$()) * (this._listeBases.get$I(i).getCenter$().getY$() - centre.y) + centre.x);
-y=new Double(Math.sin((angle).doubleValue$()) * (this._listeBases.get$I(i).getCenter$().getX$() - centre.x) + Math.cos((angle).doubleValue$()) * (this._listeBases.get$I(i).getCenter$().getY$() - centre.y) + centre.y);
-this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[(x).doubleValue$(), (y).doubleValue$()]));
-x=new Double(Math.cos((angle).doubleValue$()) * (this._listeBases.get$I(i).getCoords$().getX$() - centre.x) - Math.sin((angle).doubleValue$()) * (this._listeBases.get$I(i).getCoords$().getY$() - centre.y) + centre.x);
-y=new Double(Math.sin((angle).doubleValue$()) * (this._listeBases.get$I(i).getCoords$().getX$() - centre.x) + Math.cos((angle).doubleValue$()) * (this._listeBases.get$I(i).getCoords$().getY$() - centre.y) + centre.y);
-this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(10).c$$D$D,[(x).doubleValue$(), (y).doubleValue$()]));
+x=new Double(Math.cos((angle).valueOf()) * (this._listeBases.get$I(i).getCenter$().getX$() - centre.x) - Math.sin((angle).valueOf()) * (this._listeBases.get$I(i).getCenter$().getY$() - centre.y) + centre.x);
+y=new Double(Math.sin((angle).valueOf()) * (this._listeBases.get$I(i).getCenter$().getX$() - centre.x) + Math.cos((angle).valueOf()) * (this._listeBases.get$I(i).getCenter$().getY$() - centre.y) + centre.y);
+this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_([(x).valueOf(), (y).valueOf()],$I$(10,1).c$$D$D));
+x=new Double(Math.cos((angle).valueOf()) * (this._listeBases.get$I(i).getCoords$().getX$() - centre.x) - Math.sin((angle).valueOf()) * (this._listeBases.get$I(i).getCoords$().getY$() - centre.y) + centre.x);
+y=new Double(Math.sin((angle).valueOf()) * (this._listeBases.get$I(i).getCoords$().getX$() - centre.x) + Math.cos((angle).valueOf()) * (this._listeBases.get$I(i).getCoords$().getY$() - centre.y) + centre.y);
+this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_([(x).valueOf(), (y).valueOf()],$I$(10,1).c$$D$D));
 }
 }});
 
@@ -2940,15 +2880,15 @@ var hBeg=h.x;
 var hEnd=h.y;
 var A=this.getCoords$I(hBeg);
 var B=this.getCoords$I(hEnd);
-var AB=Clazz.new_($I$(10).c$$D$D,[B.x - A.x, B.y - A.y]);
+var AB=Clazz.new_($I$(10,1).c$$D$D,[B.x - A.x, B.y - A.y]);
 var normAB=Math.sqrt(AB.x * AB.x + AB.y * AB.y);
 var O=A;
-var Ox=Clazz.new_($I$(10).c$$D$D,[AB.x / normAB, AB.y / normAB]);
-var old=Clazz.new_($I$(45));
+var Ox=Clazz.new_($I$(10,1).c$$D$D,[AB.x / normAB, AB.y / normAB]);
+var old=Clazz.new_($I$(45,1));
 for (var i=hBeg + 1; i < hEnd; i++) {
 var P=this.getCoords$I(i);
 var nP=C$.project$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double(O, Ox, P);
-old.put$TK$TV(new Integer(i), nP);
+old.put$O$O(new Integer(i), nP);
 this.setCoord$I$java_awt_geom_Point2D_Double(i, nP);
 var Center=this.getCenter$I(i);
 this.setCenter$I$java_awt_geom_Point2D_Double(i, C$.project$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double(O, Ox, Center));
@@ -2956,12 +2896,12 @@ this.setCenter$I$java_awt_geom_Point2D_Double(i, C$.project$java_awt_geom_Point2
 }});
 
 Clazz.newMeth(C$, 'project$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double', function (O, Ox, C) {
-var OC=Clazz.new_($I$(10).c$$D$D,[C.x - O.x, C.y - O.y]);
+var OC=Clazz.new_($I$(10,1).c$$D$D,[C.x - O.x, C.y - O.y]);
 var normOX=(Ox.x * OC.x + Ox.y * OC.y);
-var OX=Clazz.new_($I$(10).c$$D$D,[(normOX * Ox.x), (normOX * Ox.y)]);
-var XC=Clazz.new_($I$(10).c$$D$D,[OC.x - OX.x, OC.y - OX.y]);
-var OCP=Clazz.new_($I$(10).c$$D$D,[OX.x - XC.x, OX.y - XC.y]);
-var CP=Clazz.new_($I$(10).c$$D$D,[O.x + OCP.x, O.y + OCP.y]);
+var OX=Clazz.new_([(normOX * Ox.x), (normOX * Ox.y)],$I$(10,1).c$$D$D);
+var XC=Clazz.new_($I$(10,1).c$$D$D,[OC.x - OX.x, OC.y - OX.y]);
+var OCP=Clazz.new_($I$(10,1).c$$D$D,[OX.x - XC.x, OX.y - XC.y]);
+var CP=Clazz.new_($I$(10,1).c$$D$D,[O.x + OCP.x, O.y + OCP.y]);
 return CP;
 }, 1);
 
@@ -3022,11 +2962,11 @@ this._id=id;
 });
 
 Clazz.newMeth(C$, 'getGapPositions$S', function (gapString) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 for (var i=0; i < gapString.length$(); i++) {
 var c=gapString.charAt$I(i);
 if (c == "." || c == ":" ) {
-result.add$TE(new Integer(i));
+result.add$O(new Integer(i));
 }}
 return result;
 }, 1);
@@ -3039,7 +2979,7 @@ Clazz.newMeth(C$, 'restrictTo$java_util_ArrayList', function (positions) {
 var result=Clazz.new_(C$);
 var oldSeq=this.getSeq$();
 var newSeq="";
-var removedPos=Clazz.new_($I$(32).c$$java_util_Collection,[positions]);
+var removedPos=Clazz.new_($I$(32,1).c$$java_util_Collection,[positions]);
 var matching=Clazz.array(Integer.TYPE, [oldSeq.length$()]);
 var j=0;
 for (var i=0; i < oldSeq.length$(); i++) {
@@ -3053,7 +2993,7 @@ for (var m, $m = this.getAllBPs$().iterator$(); $m.hasNext$()&&((m=($m.next$()))
 if (removedPos.contains$O(new Integer(m.getIndex5$())) || removedPos.contains$O(new Integer(m.getIndex3$())) ) {
 var i5=matching[m.getIndex5$()];
 var i3=matching[m.getIndex3$()];
-var msbp=Clazz.new_($I$(40).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBP_Edge$fr_orsay_lri_varna_models_rna_ModeleBP_Edge$fr_orsay_lri_varna_models_rna_ModeleBP_Stericity,[result.getBaseAt$I(i5), result.getBaseAt$I(i3), m.getEdgePartner5$(), m.getEdgePartner3$(), m.getStericity$()]);
+var msbp=Clazz.new_([result.getBaseAt$I(i5), result.getBaseAt$I(i3), m.getEdgePartner5$(), m.getEdgePartner3$(), m.getStericity$()],$I$(40,1).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBP_Edge$fr_orsay_lri_varna_models_rna_ModeleBP_Edge$fr_orsay_lri_varna_models_rna_ModeleBP_Stericity);
 result.addBP$I$I$fr_orsay_lri_varna_models_rna_ModeleBP(i5, i3, msbp);
 }}
 return result;
@@ -3071,5 +3011,25 @@ mb._center.y *= d;
 Clazz.newMeth(C$, 'getListeBases$', function () {
 return this._listeBases;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.CHEM_PROB_ARROW_THICKNESS=2.0;
+C$.NormalBases=Clazz.new_($I$(1,1));
+C$.XML_ELEMENT_NAME="RNA";
+C$.XML_VAR_BASE_SPACING_NAME="spacing";
+C$.XML_VAR_DRAWN_NAME="drawn";
+C$.XML_VAR_NAME_NAME="name";
+C$.XML_VAR_DRAWN_MODE_NAME="mode";
+C$.XML_VAR_ID_NAME="id";
+C$.XML_VAR_BP_HEIGHT_NAME="delta";
+C$.XML_VAR_BASES_NAME="bases";
+C$.XML_VAR_BASEPAIRS_NAME="BPs";
+C$.XML_VAR_ANNOTATIONS_NAME="annotations";
+C$.XML_VAR_BACKBONE_NAME="backbone";
+C$.HYSTERESIS_EPSILON=0.15;
+C$.HYSTERESIS_ATTRACTORS=Clazz.array(Double.TYPE, -1, [0.0, 0.7853981633974483, 1.5707963267948966, 2.356194490192345, 3.141592653589793, 3.9269908169872414, 4.71238898038469, 5.497787143782138]);
+C$.DBNStrandSep="&";
+C$.MIN_DISTANCE=10.0;
+};
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:30:03 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

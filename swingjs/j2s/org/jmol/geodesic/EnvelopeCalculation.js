@@ -1,68 +1,29 @@
-(function(){var P$=Clazz.newPackage("org.jmol.geodesic"),p$1={},I$=[[0,'org.jmol.atomdata.AtomData','javajs.util.P3','org.jmol.util.Geodesic','javajs.util.BS','org.jmol.util.BSUtil','javajs.util.V3','org.jmol.util.Normix','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EnvelopeCalculation", null, null, 'org.jmol.api.JmolEnvCalc');
-C$.EMPTY_SET=null;
-C$.power4=null;
+(function(){var P$=Clazz.newPackage("org.jmol.geodesic"),p$1={},I$=[[0,'org.jmol.atomdata.AtomData','javajs.util.P3','org.jmol.util.Geodesic','javajs.util.BS','org.jmol.util.BSUtil','javajs.util.V3','org.jmol.util.Normix','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'javajs.util.AU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "EnvelopeCalculation", null, null, 'org.jmol.api.JmolEnvCalc');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.power4=Clazz.array(Integer.TYPE, -1, [1, 4, 16, 64, 256]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.geodesicMap=null;
-this.mapT=null;
-this.mads=null;
-this.atomData=null;
-this.vwr=null;
-this.ac=0;
-this.maxRadius=0;
-this.modelZeroBased=false;
-this.disregardNeighbors=false;
-this.bsMySelected=null;
-this.dotsConvexMaps=null;
-this.dotsConvexMax=0;
-this.geodesicCount=0;
-this.bsSurface=null;
-this.radiusP=0;
-this.diameterP=0;
-this.bsTemp=null;
-this.bsIgnore=null;
-this.onlySelectedDots=false;
-this.isSurface=false;
-this.multiModel=false;
-this.currentPoints=null;
-this.indexI=0;
-this.centerI=null;
-this.radiusI=0;
-this.radiiIP2=0;
-this.pointT=null;
-this.centerT=null;
-this.vertexTest=null;
-this.neighborCount=0;
-this.neighborIndices=null;
-this.neighborCenters=null;
-this.neighborPlusProbeRadii2=null;
-this.neighborRadii2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.atomData=Clazz.new_($I$(1));
+this.atomData=Clazz.new_($I$(1,1));
 this.maxRadius=0;
 this.disregardNeighbors=false;
-this.pointT=Clazz.new_($I$(2));
+this.pointT=Clazz.new_($I$(2,1));
 this.vertexTest=Clazz.array($I$(2), [12]);
 {
-for (var i=0; i < 12; i++) this.vertexTest[i]=Clazz.new_($I$(2));
+for (var i=0; i < 12; i++) this.vertexTest[i]=Clazz.new_($I$(2,1));
 
 }
 this.neighborIndices=Clazz.array(Integer.TYPE, [16]);
 this.neighborCenters=Clazz.array($I$(2), [16]);
 this.neighborPlusProbeRadii2=Clazz.array(Float.TYPE, [16]);
 this.neighborRadii2=Clazz.array(Float.TYPE, [16]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['modelZeroBased','disregardNeighbors','onlySelectedDots','isSurface','multiModel'],'F',['maxRadius','radiusP','diameterP','radiusI','radiiIP2'],'I',['ac','dotsConvexMax','geodesicCount','indexI','neighborCount'],'O',['geodesicMap','javajs.util.BS','+mapT','mads','short[]','atomData','org.jmol.atomdata.AtomData','vwr','org.jmol.atomdata.AtomDataServer','bsMySelected','javajs.util.BS','dotsConvexMaps','javajs.util.BS[]','bsSurface','javajs.util.BS','+bsTemp','+bsIgnore','currentPoints','javajs.util.P3[]','centerI','javajs.util.P3','+pointT','+centerT','vertexTest','javajs.util.P3[]','neighborIndices','int[]','neighborCenters','javajs.util.P3[]','neighborPlusProbeRadii2','float[]','+neighborRadii2']]
+,['O',['EMPTY_SET','javajs.util.BS','power4','int[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_atomdata_AtomDataServer$I$HA', function (vwr, ac, mads) {
@@ -123,13 +84,13 @@ if (this.atomData.radiusData != null ) {
 this.calculate$org_jmol_atomdata_RadiusData$F$javajs_util_BS$javajs_util_BS$Z$Z$Z$Z(null, this.maxRadius, bs, this.bsIgnore, this.disregardNeighbors, this.onlySelectedDots, this.isSurface, this.multiModel);
 return;
 }if (this.dotsConvexMaps == null  || this.dotsConvexMax == 0 ) return;
-var pt=Clazz.new_($I$(6));
+var pt=Clazz.new_($I$(6,1));
 if (this.bsTemp == null ) this.bsTemp=$I$(7).newVertexBitSet$();
 for (var i=bs.nextSetBit$I(0); i >= 0; i=bs.nextSetBit$I(i + 1)) {
 if (i >= this.dotsConvexMax) return;
 var map=this.dotsConvexMaps[i];
 if (map == null  || map.isEmpty$() ) continue;
-var bsNew=Clazz.new_($I$(4));
+var bsNew=Clazz.new_($I$(4,1));
 for (var j=map.nextSetBit$I(0); j >= 0; j=map.nextSetBit$I(j + 1)) {
 pt.setT$javajs_util_T3($I$(3).getVertexVector$I(j));
 m.rotate$javajs_util_T3(pt);
@@ -160,7 +121,7 @@ this.bsMySelected=(onlySelectedDots && bsSelected != null   ? $I$(5).copy$javajs
 $I$(5).andNot$javajs_util_BS$javajs_util_BS(this.bsMySelected, bsIgnore);
 this.disregardNeighbors=disregardNeighbors;
 this.maxRadius=maxRadius;
-this.bsSurface=Clazz.new_($I$(4));
+this.bsSurface=Clazz.new_($I$(4,1));
 var isAll=(bsSelected == null );
 var iter=this.vwr.getSelectedAtomIterator$javajs_util_BS$Z$Z$Z(this.bsMySelected, false, this.modelZeroBased, false);
 p$1.checkNewDotsArray.apply(this, []);
@@ -181,7 +142,7 @@ return this.atomData.atomRadius[atomIndex];
 
 Clazz.newMeth(C$, 'getPoints$', function () {
 if (this.dotsConvexMaps == null ) {
-this.calculate$org_jmol_atomdata_RadiusData$F$javajs_util_BS$javajs_util_BS$Z$Z$Z$Z(Clazz.new_($I$(8).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 3.0, $I$(9).ABSOLUTE, null]), 3.4028235E38, this.bsMySelected, null, false, false, false, false);
+this.calculate$org_jmol_atomdata_RadiusData$F$javajs_util_BS$javajs_util_BS$Z$Z$Z$Z(Clazz.new_([null, 3.0, $I$(9).ABSOLUTE, null],$I$(8,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW), 3.4028235E38, this.bsMySelected, null, false, false, false, false);
 }if (this.currentPoints != null ) return this.currentPoints;
 var nPoints=0;
 var dotCount=42;
@@ -194,7 +155,7 @@ for (var i=this.dotsConvexMax; --i >= 0; ) if (this.dotsConvexMaps[i] != null ) 
 var iDot=this.dotsConvexMaps[i].size$();
 if (iDot > dotCount) iDot=dotCount;
 while (--iDot >= 0)if (this.dotsConvexMaps[i].get$I(iDot)) {
-var pt=Clazz.new_($I$(2));
+var pt=Clazz.new_($I$(2,1));
 pt.scaleAdd2$F$javajs_util_T3$javajs_util_T3(this.atomData.atomRadius[i], $I$(3).getVertexVector$I(iDot), this.atomData.xyz[i]);
 points[nPoints++]=pt;
 }
@@ -366,5 +327,9 @@ this.atomData.xyz=$I$(10).deleteElements$O$I$I(this.atomData.xyz, firstAtomDelet
 this.atomData.ac-=nAtomsDeleted;
 this.ac=this.atomData.ac;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.power4=Clazz.array(Integer.TYPE, -1, [1, 4, 16, 64, 256]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,19 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'jalview.datamodel.Mapping','jalview.datamodel.DBRefSource','jalview.util.DBRefUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DBRefEntry", null, null, 'jalview.api.DBRefEntryI');
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'jalview.datamodel.Mapping','jalview.datamodel.DBRefSource','jalview.util.DBRefUtils']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DBRefEntry", null, null, 'jalview.api.DBRefEntryI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.source=null;
-this.version=null;
-this.ucversion=null;
-this.accessionId=null;
-this.sourceKey=0;
-this.canonicalSourceName=null;
-this.map=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.source="";
@@ -21,10 +9,12 @@ this.version="";
 this.accessionId="";
 this.sourceKey=-2147483648;
 this.map=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['sourceKey'],'S',['source','version','ucversion','accessionId','canonicalSourceName'],'O',['map','jalview.datamodel.Mapping']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S', function (source, version, accessionId) {
@@ -32,7 +22,7 @@ C$.c$$S$S$S$jalview_datamodel_Mapping.apply(this, [source, version, accessionId,
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S$jalview_datamodel_Mapping', function (source, version, accessionId, map) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.source=source.toUpperCase$();
 this.setVersion$S(version);
 this.accessionId=accessionId;
@@ -40,7 +30,7 @@ this.map=map;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_api_DBRefEntryI', function (entry) {
-C$.c$$S$S$S$jalview_datamodel_Mapping.apply(this, [(entry.getSource$() == null  ? "" :  String.instantialize(entry.getSource$())), (entry.getVersion$() == null  ? "" :  String.instantialize(entry.getVersion$())), (entry.getAccessionId$() == null  ? "" :  String.instantialize(entry.getAccessionId$())), (entry.getMap$() == null  ? null : Clazz.new_($I$(1).c$$jalview_datamodel_Mapping,[entry.getMap$()]))]);
+C$.c$$S$S$S$jalview_datamodel_Mapping.apply(this, [(entry.getSource$() == null  ? "" :  String.instantialize(entry.getSource$())), (entry.getVersion$() == null  ? "" :  String.instantialize(entry.getVersion$())), (entry.getAccessionId$() == null  ? "" :  String.instantialize(entry.getAccessionId$())), (entry.getMap$() == null  ? null : Clazz.new_([entry.getMap$()],$I$(1,1).c$$jalview_datamodel_Mapping))]);
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
@@ -83,7 +73,7 @@ return this.source;
 });
 
 Clazz.newMeth(C$, 'getSourceKey$', function () {
-return (this.sourceKey == -2147483648 ? (this.sourceKey=$I$(2).getSourceKey$S(this.getCanonicalSourceName$())) : this.sourceKey);
+return (this.sourceKey == -2147483648 ? (this.sourceKey=$I$(2,"getSourceKey$S",[this.getCanonicalSourceName$()])) : this.sourceKey);
 });
 
 Clazz.newMeth(C$, 'getVersion$', function () {
@@ -146,12 +136,8 @@ return false;
 }return $I$(2).isPrimaryCandidate$S(this.ucversion);
 });
 
-Clazz.newMeth(C$, 'isChromosome$', function () {
-return this.accessionId != null  && this.accessionId.startsWith$S("chromosome:") ;
-});
-
 Clazz.newMeth(C$, 'getCanonicalSourceName$', function () {
 return (this.canonicalSourceName == null  ? (this.canonicalSourceName=$I$(3).getCanonicalName$S(this.source)) : this.canonicalSourceName);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

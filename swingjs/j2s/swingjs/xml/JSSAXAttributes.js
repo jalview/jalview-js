@@ -1,29 +1,24 @@
-(function(){var P$=Clazz.newPackage("swingjs.xml"),p$1={},I$=[[0,'java.util.Hashtable','swingjs.api.js.DOMNode']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSSAXAttributes", null, null, ['org.xml.sax.ext.Attributes2', 'org.xml.sax.AttributeList']);
+(function(){var P$=Clazz.newPackage("swingjs.xml"),p$1={},I$=[[0,'java.util.Hashtable','swingjs.api.js.DOMNode']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSSAXAttributes", null, null, ['org.xml.sax.ext.Attributes2', 'org.xml.sax.AttributeList']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nodes=null;
-this.nameMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['nodes','swingjs.api.js.DOMNode[]','nameMap','java.util.Map']]]
 
 Clazz.newMeth(C$, 'createNameMap', function () {
-this.nameMap=Clazz.new_($I$(1));
+this.nameMap=Clazz.new_($I$(1,1));
 for (var i=this.nodes.length; --i >= 0; ) {
 var ii=Integer.valueOf$I(i);
-this.nameMap.put$TK$TV(C$.getFullName$S$S$S(this.getURI$I(i), this.getLocalName$I(i), null), ii);
-this.nameMap.put$TK$TV(this.getQName$I(i), ii);
+this.nameMap.put$O$O(C$.getFullName$S$S$S(this.getURI$I(i), this.getLocalName$I(i), null), ii);
+this.nameMap.put$O$O(this.getQName$I(i), ii);
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$swingjs_api_js_DOMNode', function (node) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.nodes=$I$(2).getAttr(node, "attributes");
 }, 1);
 
@@ -137,4 +132,4 @@ return (uri == null  || uri.length$() == 0  ? "" : uri + "#") + (qName == null  
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:29:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

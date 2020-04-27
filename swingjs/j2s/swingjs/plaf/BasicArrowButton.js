@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'javax.swing.UIManager','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BasicArrowButton", null, 'javax.swing.JButton', 'javax.swing.SwingConstants');
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'javax.swing.UIManager','java.awt.Dimension','swingjs.plaf.JSComponentUI']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BasicArrowButton", null, 'javax.swing.JButton', 'javax.swing.SwingConstants');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.direction=0;
-this.shadow=null;
-this.darkShadow=null;
-this.highlight=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['direction'],'O',['shadow','java.awt.Color','+darkShadow','+highlight']]]
 
 Clazz.newMeth(C$, 'c$$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (direction, background, shadow, darkShadow, highlight) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.setRequestFocusEnabled$Z(false);
 this.setDirection$I(direction);
 this.setBackground$java_awt_Color(background);
@@ -81,15 +73,15 @@ g.translate$I$I(-1, -1);
 });
 
 Clazz.newMeth(C$, 'getPreferredSize$', function () {
-return Clazz.new_($I$(2).c$$I$I,[16, 16]);
+return Clazz.new_($I$(2,1).c$$I$I,[16, 16]);
 });
 
 Clazz.newMeth(C$, 'getMinimumSize$', function () {
-return Clazz.new_($I$(2).c$$I$I,[5, 5]);
+return Clazz.new_($I$(2,1).c$$I$I,[5, 5]);
 });
 
 Clazz.newMeth(C$, 'getMaximumSize$', function () {
-return Clazz.new_($I$(2).c$$I$I,[2147483647, 2147483647]);
+return $I$(3).ANY_SIZE;
 });
 
 Clazz.newMeth(C$, 'isFocusTraversable$', function () {
@@ -163,4 +155,4 @@ g.setColor$java_awt_Color(oldColor);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

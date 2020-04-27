@@ -1,40 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing.tree"),I$=[[0,'java.util.Vector','java.util.Stack','javax.swing.tree.DefaultMutableTreeNode',['javax.swing.tree.DefaultMutableTreeNode','.BreadthFirstEnumeration','.Queue','.QNode'],['javax.swing.tree.DefaultMutableTreeNode','.BreadthFirstEnumeration','.Queue'],'Error','javax.swing.tree.TreeNode',['javax.swing.tree.DefaultMutableTreeNode','.PreorderEnumeration'],['javax.swing.tree.DefaultMutableTreeNode','.PostorderEnumeration'],['javax.swing.tree.DefaultMutableTreeNode','.BreadthFirstEnumeration'],['javax.swing.tree.DefaultMutableTreeNode','.PathBetweenNodesEnumeration']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultMutableTreeNode", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.tree"),I$=[[0,'java.util.Vector','java.util.Stack','javax.swing.tree.DefaultMutableTreeNode',['javax.swing.tree.DefaultMutableTreeNode','.BreadthFirstEnumeration','.Queue','.QNode'],['javax.swing.tree.DefaultMutableTreeNode','.BreadthFirstEnumeration','.Queue'],'Error','javax.swing.tree.TreeNode',['javax.swing.tree.DefaultMutableTreeNode','.PreorderEnumeration'],['javax.swing.tree.DefaultMutableTreeNode','.PostorderEnumeration'],['javax.swing.tree.DefaultMutableTreeNode','.BreadthFirstEnumeration'],['javax.swing.tree.DefaultMutableTreeNode','.PathBetweenNodesEnumeration']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultMutableTreeNode", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['Cloneable', 'javax.swing.tree.MutableTreeNode']);
-C$.EMPTY_ENUMERATION=null;
+C$.$classes$=[['PreorderEnumeration',16],['PostorderEnumeration',16],['BreadthFirstEnumeration',16],['PathBetweenNodesEnumeration',16]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_ENUMERATION=((P$.DefaultMutableTreeNode$1||
-(function(){var C$=Clazz.newClass(P$, "DefaultMutableTreeNode$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'hasMoreElements$', function () {
-return false;
-});
-
-Clazz.newMeth(C$, 'nextElement$', function () {
-throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["No more elements"]);
-});
-})()
-), Clazz.new_(P$.DefaultMutableTreeNode$1.$init$, [this, null]));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.children=null;
-this.userObject=null;
-this.allowsChildren=false;
-}, 1);
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+C$.$fields$=[['Z',['allowsChildren'],'O',['parent','javax.swing.tree.MutableTreeNode','children','java.util.Vector','userObject','java.lang.Object']]
+,['O',['EMPTY_ENUMERATION','java.util.Enumeration']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$O.apply(this, [null]);
@@ -45,7 +21,7 @@ C$.c$$O$Z.apply(this, [userObject, true]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$Z', function (userObject, allowsChildren) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.parent=null;
 this.allowsChildren=allowsChildren;
 this.userObject=userObject;
@@ -63,8 +39,8 @@ if (oldParent != null ) {
 oldParent.remove$javax_swing_tree_MutableTreeNode(newChild);
 }newChild.setParent$javax_swing_tree_MutableTreeNode(this);
 if (this.children == null ) {
-this.children=Clazz.new_($I$(1));
-}this.children.insertElementAt$TE$I(newChild, childIndex);
+this.children=Clazz.new_($I$(1,1));
+}this.children.insertElementAt$O$I(newChild, childIndex);
 });
 
 Clazz.newMeth(C$, 'remove$I', function (childIndex) {
@@ -200,7 +176,7 @@ return node1;
 node2=node2.getParent$();
 } while (node1 != null );
 if (node1 != null  || node2 != null  ) {
-throw Clazz.new_($I$(6).c$$S,["nodes should be null"]);
+throw Clazz.new_($I$(6,1).c$$S,["nodes should be null"]);
 }return null;
 });
 
@@ -215,7 +191,7 @@ while (enum_.hasMoreElements$()){
 last=enum_.nextElement$();
 }
 if (last == null ) {
-throw Clazz.new_($I$(6).c$$S,["nodes should be null"]);
+throw Clazz.new_($I$(6,1).c$$S,["nodes should be null"]);
 }return (last).getLevel$() - this.getLevel$();
 });
 
@@ -300,15 +276,15 @@ return myParent;
 }});
 
 Clazz.newMeth(C$, 'preorderEnumeration$', function () {
-return Clazz.new_($I$(8).c$$javax_swing_tree_TreeNode, [this, null, this]);
+return Clazz.new_($I$(8,1).c$$javax_swing_tree_TreeNode,[this, null, this]);
 });
 
 Clazz.newMeth(C$, 'postorderEnumeration$', function () {
-return Clazz.new_($I$(9).c$$javax_swing_tree_TreeNode, [this, null, this]);
+return Clazz.new_($I$(9,1).c$$javax_swing_tree_TreeNode,[this, null, this]);
 });
 
 Clazz.newMeth(C$, 'breadthFirstEnumeration$', function () {
-return Clazz.new_($I$(10).c$$javax_swing_tree_TreeNode, [this, null, this]);
+return Clazz.new_($I$(10,1).c$$javax_swing_tree_TreeNode,[this, null, this]);
 });
 
 Clazz.newMeth(C$, 'depthFirstEnumeration$', function () {
@@ -316,7 +292,7 @@ return this.postorderEnumeration$();
 });
 
 Clazz.newMeth(C$, 'pathFromAncestorEnumeration$javax_swing_tree_TreeNode', function (ancestor) {
-return Clazz.new_($I$(11).c$$javax_swing_tree_TreeNode$javax_swing_tree_TreeNode, [this, null, ancestor, this]);
+return Clazz.new_($I$(11,1).c$$javax_swing_tree_TreeNode$javax_swing_tree_TreeNode,[this, null, ancestor, this]);
 });
 
 Clazz.newMeth(C$, 'isNodeChild$javax_swing_tree_TreeNode', function (aNode) {
@@ -377,7 +353,7 @@ retval=true;
 var myParent=this.getParent$();
 retval=(myParent != null  && myParent === anotherNode.getParent$()  );
 if (retval && !(this.getParent$()).isNodeChild$javax_swing_tree_TreeNode(anotherNode) ) {
-throw Clazz.new_($I$(6).c$$S,["sibling has different parent"]);
+throw Clazz.new_($I$(6,1).c$$S,["sibling has different parent"]);
 }}return retval;
 });
 
@@ -397,7 +373,7 @@ retval=null;
 } else {
 retval=myParent.getChildAfter$javax_swing_tree_TreeNode(this);
 }if (retval != null  && !this.isNodeSibling$javax_swing_tree_TreeNode(retval) ) {
-throw Clazz.new_($I$(6).c$$S,["child of parent is not a sibling"]);
+throw Clazz.new_($I$(6,1).c$$S,["child of parent is not a sibling"]);
 }return retval;
 });
 
@@ -409,7 +385,7 @@ retval=null;
 } else {
 retval=myParent.getChildBefore$javax_swing_tree_TreeNode(this);
 }if (retval != null  && !this.isNodeSibling$javax_swing_tree_TreeNode(retval) ) {
-throw Clazz.new_($I$(6).c$$S,["child of parent is not a sibling"]);
+throw Clazz.new_($I$(6,1).c$$S,["child of parent is not a sibling"]);
 }return retval;
 });
 
@@ -461,7 +437,7 @@ if (node.isLeaf$()) {
 count++;
 }}
 if (count < 1) {
-throw Clazz.new_($I$(6).c$$S,["tree has zero leaves"]);
+throw Clazz.new_($I$(6,1).c$$S,["tree has zero leaves"]);
 }return count;
 });
 
@@ -480,35 +456,51 @@ newNode.children=null;
 newNode.parent=null;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(6).c$$S,[e.toString()]);
+throw Clazz.new_([e.toString()],$I$(6,1).c$$S);
 } else {
 throw e;
 }
 }
 return newNode;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_ENUMERATION=((P$.DefaultMutableTreeNode$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "DefaultMutableTreeNode$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'hasMoreElements$', function () {
+return false;
+});
+
+Clazz.newMeth(C$, 'nextElement$', function () {
+throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["No more elements"]);
+});
+})()
+), Clazz.new_(P$.DefaultMutableTreeNode$1.$init$,[this, null]));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "PreorderEnumeration", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "PreorderEnumeration", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Enumeration');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.stack=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['stack','java.util.Stack']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode', function (rootNode) {
-C$.$init$.apply(this);
-var v=Clazz.new_($I$(1).c$$I,[1]);
-v.addElement$TE(rootNode);
-this.stack=Clazz.new_($I$(2));
-this.stack.push$TE(v.elements$());
+;C$.$init$.apply(this);
+var v=Clazz.new_($I$(1,1).c$$I,[1]);
+v.addElement$O(rootNode);
+this.stack=Clazz.new_($I$(2,1));
+this.stack.push$O(v.elements$());
 }, 1);
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
@@ -522,32 +514,26 @@ var children=node.children$();
 if (!enumer.hasMoreElements$()) {
 this.stack.pop$();
 }if (children.hasMoreElements$()) {
-this.stack.push$TE(children);
+this.stack.push$O(children);
 }return node;
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "PostorderEnumeration", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "PostorderEnumeration", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Enumeration');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.root=null;
-this.children=null;
-this.subtree=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['root','javax.swing.tree.TreeNode','children','java.util.Enumeration','+subtree']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode', function (rootNode) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.root=rootNode;
 this.children=this.root.children$();
 this.subtree=$I$(3).EMPTY_ENUMERATION;
@@ -562,7 +548,7 @@ var retval;
 if (this.subtree.hasMoreElements$()) {
 retval=this.subtree.nextElement$();
 } else if (this.children.hasMoreElements$()) {
-this.subtree=Clazz.new_(C$.c$$javax_swing_tree_TreeNode, [this, null, this.children.nextElement$()]);
+this.subtree=Clazz.new_(C$.c$$javax_swing_tree_TreeNode,[this, null, this.children.nextElement$()]);
 retval=this.subtree.nextElement$();
 } else {
 retval=this.root;
@@ -573,26 +559,23 @@ this.root=null;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "BreadthFirstEnumeration", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "BreadthFirstEnumeration", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Enumeration');
+C$.$classes$=[['Queue',16]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queue=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['queue','javax.swing.tree.DefaultMutableTreeNode.BreadthFirstEnumeration.Queue']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode', function (rootNode) {
-C$.$init$.apply(this);
-var v=Clazz.new_($I$(1).c$$I,[1]);
-v.addElement$TE(rootNode);
-this.queue=Clazz.new_($I$(5), [this, null]);
+;C$.$init$.apply(this);
+var v=Clazz.new_($I$(1,1).c$$I,[1]);
+v.addElement$O(rootNode);
+this.queue=Clazz.new_($I$(5,1),[this, null]);
 this.queue.enqueue$O(v.elements$());
 }, 1);
 
@@ -611,27 +594,23 @@ this.queue.enqueue$O(children);
 }return node;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultMutableTreeNode.BreadthFirstEnumeration, "Queue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultMutableTreeNode.BreadthFirstEnumeration, "Queue", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
+C$.$classes$=[['QNode',16]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.head=null;
-this.tail=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['head','javax.swing.tree.DefaultMutableTreeNode.BreadthFirstEnumeration.Queue.QNode','+tail']]]
 
 Clazz.newMeth(C$, 'enqueue$O', function (anObject) {
 if (this.head == null ) {
-this.head=this.tail=Clazz.new_($I$(4).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode, [this, null, anObject, null]);
+this.head=this.tail=Clazz.new_($I$(4,1).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode,[this, null, anObject, null]);
 } else {
-this.tail.next=Clazz.new_($I$(4).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode, [this, null, anObject, null]);
+this.tail.next=Clazz.new_($I$(4,1).c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode,[this, null, anObject, null]);
 this.tail=this.tail.next;
 }});
 
@@ -658,24 +637,19 @@ Clazz.newMeth(C$, 'isEmpty$', function () {
 return this.head == null ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultMutableTreeNode.BreadthFirstEnumeration.Queue, "QNode", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultMutableTreeNode.BreadthFirstEnumeration.Queue, "QNode", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.object=null;
-this.next=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['object','java.lang.Object','next','javax.swing.tree.DefaultMutableTreeNode.BreadthFirstEnumeration.Queue.QNode']]]
 
 Clazz.newMeth(C$, 'c$$O$javax_swing_tree_DefaultMutableTreeNode_BreadthFirstEnumeration_Queue_QNode', function (object, next) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.object=object;
 this.next=next;
 }, 1);
@@ -689,34 +663,30 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "PathBetweenNodesEnumeration", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultMutableTreeNode, "PathBetweenNodesEnumeration", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Enumeration');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.stack=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['stack','java.util.Stack']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_tree_TreeNode$javax_swing_tree_TreeNode', function (ancestor, descendant) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (ancestor == null  || descendant == null  ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["argument is null"]);
 }var current;
-this.stack=Clazz.new_($I$(2));
-this.stack.push$TE(descendant);
+this.stack=Clazz.new_($I$(2,1));
+this.stack.push$O(descendant);
 current=descendant;
 while (current !== ancestor ){
 current=current.getParent$();
 if (current == null  && descendant !== ancestor  ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["node " + ancestor + " is not an ancestor of " + descendant ]);
-}this.stack.push$TE(current);
+}this.stack.push$O(current);
 }
 }, 1);
 
@@ -739,4 +709,4 @@ throw e;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

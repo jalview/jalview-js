@@ -1,31 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.HashMap','java.util.LinkedHashMap','java.io.BufferedReader','java.io.InputStreamReader','jalview.bin.Cache','java.util.StringTokenizer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GeneticCodes");
-C$.NUCS_COUNT=0;
-C$.NUCS_COUNT_SQUARED=0;
-C$.NUCS_COUNT_CUBED=0;
-C$.instance=null;
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'java.util.HashMap','java.util.LinkedHashMap','java.io.BufferedReader','java.io.InputStreamReader','jalview.bin.Cache','java.util.StringTokenizer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GeneticCodes");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NUCS_COUNT="TCAG".length$();
-C$.NUCS_COUNT_SQUARED=C$.NUCS_COUNT * C$.NUCS_COUNT;
-C$.NUCS_COUNT_CUBED=C$.NUCS_COUNT * C$.NUCS_COUNT * C$.NUCS_COUNT ;
-C$.instance=Clazz.new_(C$);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ambiguityCodes=null;
-this.codeTables=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ambiguityCodes','java.util.Map','+codeTables']]
+,['I',['NUCS_COUNT','NUCS_COUNT_SQUARED','NUCS_COUNT_CUBED'],'O',['instance','jalview.analysis.GeneticCodes']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (C$.instance == null ) {
-this.ambiguityCodes=Clazz.new_($I$(1));
-this.codeTables=Clazz.new_($I$(2));
+this.ambiguityCodes=Clazz.new_($I$(1,1));
+this.codeTables=Clazz.new_($I$(2,1));
 this.loadAmbiguityCodes$S("/AmbiguityCodes.dat");
 this.loadCodes$S("/GeneticCodes.dat");
 }}, 1);
@@ -52,7 +40,7 @@ var is=this.getClass$().getResourceAsStream$S(fileName);
 if (is == null ) {
 System.err.println$S("Resource file not found: " + fileName);
 return;
-}var dataIn=Clazz.new_($I$(3).c$$java_io_Reader,[Clazz.new_($I$(4).c$$java_io_InputStream,[is])]);
+}var dataIn=Clazz.new_([Clazz.new_($I$(4,1).c$$java_io_InputStream,[is])],$I$(3,1).c$$java_io_Reader);
 var line="";
 while (line != null  && !line.startsWith$S("Genetic-code-table") ){
 line=this.readLine$java_io_BufferedReader(dataIn);
@@ -78,14 +66,14 @@ var is=this.getClass$().getResourceAsStream$S(fileName);
 if (is == null ) {
 System.err.println$S("Resource file not found: " + fileName);
 return;
-}var dataIn=Clazz.new_($I$(3).c$$java_io_Reader,[Clazz.new_($I$(4).c$$java_io_InputStream,[is])]);
+}var dataIn=Clazz.new_([Clazz.new_($I$(4,1).c$$java_io_InputStream,[is])],$I$(3,1).c$$java_io_Reader);
 var line="";
 while (line != null ){
 line=this.readLine$java_io_BufferedReader(dataIn);
 if (line != null  && !"DNA".equals$O(line.toUpperCase$()) ) {
 var tokens=line.split$S("\\t");
 if (tokens.length == 2) {
-this.ambiguityCodes.put$TK$TV(tokens[0].toUpperCase$(), tokens[1].toUpperCase$());
+this.ambiguityCodes.put$O$O(tokens[0].toUpperCase$(), tokens[1].toUpperCase$());
 } else {
 System.err.println$S("Unexpected data in " + fileName + ": " + line );
 }}}
@@ -109,13 +97,13 @@ return line == null  ? null : line.trim$();
 Clazz.newMeth(C$, 'loadOneTable$java_io_BufferedReader', function (dataIn) {
 var name=null;
 var id=null;
-var codons=Clazz.new_($I$(1));
+var codons=Clazz.new_($I$(1,1));
 var line=this.readLine$java_io_BufferedReader(dataIn);
 while (line != null  && !line.startsWith$S("}") ){
 if (line.startsWith$S("name") && name == null  ) {
 name=line.substring$I$I(line.indexOf$S("\"") + 1, line.lastIndexOf$S("\""));
 } else if (line.startsWith$S("id")) {
-id=Clazz.new_($I$(6).c$$S,[line.substring$I(2)]).nextToken$();
+id=Clazz.new_([line.substring$I(2)],$I$(6,1).c$$S).nextToken$();
 } else if (line.startsWith$S("ncbieaa")) {
 var aminos=line.substring$I$I(line.indexOf$S("\"") + 1, line.lastIndexOf$S("\""));
 if (aminos.length$() != C$.NUCS_COUNT_CUBED) {
@@ -127,7 +115,7 @@ var codon1="TCAG".charAt$I((i/C$.NUCS_COUNT_SQUARED|0));
 var codon2="TCAG".charAt$I(((i % C$.NUCS_COUNT_SQUARED)/C$.NUCS_COUNT|0));
 var codon3="TCAG".charAt$I(i % C$.NUCS_COUNT);
 var codon= String.instantialize(Clazz.array(Character.TYPE, -1, [codon1, codon2, codon3]));
-codons.put$TK$TV(codon, peptide);
+codons.put$O$O(codon, peptide);
 }
 }}line=this.readLine$java_io_BufferedReader(dataIn);
 }
@@ -136,20 +124,16 @@ return this.readLine$java_io_BufferedReader(dataIn);
 });
 
 Clazz.newMeth(C$, 'registerCodeTable$S$S$java_util_Map', function (id, name, codons) {
-this.codeTables.put$TK$TV(id, ((P$.GeneticCodes$1||
-(function(){var C$=Clazz.newClass(P$, "GeneticCodes$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.analysis.GeneticCodeI', 1);
+this.codeTables.put$O$O(id, ((P$.GeneticCodes$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "GeneticCodes$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.analysis.GeneticCodeI', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ambiguous=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.ambiguous=Clazz.new_($I$(1));
-}, 1);
+this.ambiguous=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['ambiguous','java.util.Map']]]
 
 Clazz.newMeth(C$, 'translateCanonical$S', function (codon) {
 return this.$finals$.codons.get$O(codon.toUpperCase$());
@@ -171,7 +155,7 @@ Clazz.newMeth(C$, 'getName$', function () {
 return this.$finals$.name;
 });
 })()
-), Clazz.new_(P$.GeneticCodes$1.$init$, [this, {codons: codons, id: id, name: name}])));
+), Clazz.new_(P$.GeneticCodes$1.$init$,[this, {id:id,name:name,codons:codons}])));
 });
 
 Clazz.newMeth(C$, 'getAmbiguousTranslation$S$java_util_Map$jalview_analysis_GeneticCodeI', function (codon, ambiguous, codeTable) {
@@ -196,14 +180,21 @@ var cdn=Clazz.array(Character.TYPE, -1, [c1, c2, c3]);
 var possibleCodon=String.valueOf$CA(cdn);
 var pep=codeTable.translate$S(possibleCodon);
 if (pep == null  || (peptide != null  && !pep.equals$O(peptide) ) ) {
-ambiguous.put$TK$TV(codon, null);
+ambiguous.put$O$O(codon, null);
 return null;
 }peptide=pep;
 }
 }
 }
-ambiguous.put$TK$TV(codon, peptide);
+ambiguous.put$O$O(codon, peptide);
 return peptide;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.NUCS_COUNT="TCAG".length$();
+C$.NUCS_COUNT_SQUARED=C$.NUCS_COUNT * C$.NUCS_COUNT;
+C$.NUCS_COUNT_CUBED=C$.NUCS_COUNT * C$.NUCS_COUNT * C$.NUCS_COUNT ;
+C$.instance=Clazz.new_(C$);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

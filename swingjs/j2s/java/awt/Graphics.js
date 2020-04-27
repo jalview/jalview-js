@@ -1,14 +1,13 @@
 (function(){var P$=Clazz.newPackage("java.awt");
-var C$=Clazz.newClass(P$, "Graphics");
+/*c*/var C$=Clazz.newClass(P$, "Graphics");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'create$I$I$I$I', function (x, y, width, height) {
@@ -111,4 +110,4 @@ throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["null rectangle parame
 }return r;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

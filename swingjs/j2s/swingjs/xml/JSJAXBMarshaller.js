@@ -1,37 +1,16 @@
-(function(){var P$=Clazz.newPackage("swingjs.xml"),p$1={},I$=[[0,'java.util.Hashtable','javax.xml.namespace.QName','swingjs.xml.JSJAXBClass','swingjs.api.js.DOMNode','swingjs.JSUtil','javax.xml.bind.DatatypeConverter','swingjs.xml.JSJAXBField']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSJAXBMarshaller", null, 'javax.xml.bind.helpers.AbstractMarshallerImpl');
-C$.cantmarshall=null;
-C$.defaultNamespace=null;
-C$.mapQualifierLevel=null;
-C$.textarea=null;
-C$.xsi=null;
-C$.xs=null;
-C$.qnEntryKey=null;
-C$.qnEntryValue=null;
+(function(){var P$=Clazz.newPackage("swingjs.xml"),p$1={},I$=[[0,'java.util.Hashtable','javax.xml.namespace.QName','swingjs.xml.JSJAXBClass','swingjs.api.js.DOMNode','swingjs.JSUtil','javax.xml.bind.DatatypeConverter','swingjs.xml.JSJAXBField']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSJAXBMarshaller", null, 'javax.xml.bind.helpers.AbstractMarshallerImpl');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.cantmarshall="";
-C$.mapQualifierLevel=Clazz.new_($I$(1));
-C$.xsi=Clazz.new_($I$(2).c$$S$S$S,["http://www.w3.org/2001/XMLSchema-instance", "xs", "xsi"]);
-C$.xs=Clazz.new_($I$(2).c$$S$S$S,["http://www.w3.org/2001/XMLSchema", "_", "xs"]);
-C$.qnEntryKey=Clazz.new_($I$(2).c$$S$S$S,["", "key", ""]);
-C$.qnEntryValue=Clazz.new_($I$(2).c$$S$S$S,["", "value", ""]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.writer=null;
-this.outputStream=null;
-this.context=null;
-this.result=null;
-this.javaObject=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['writer','java.io.Writer','outputStream','java.io.OutputStream','context','javax.xml.bind.JAXBContext','result','javax.xml.transform.stream.StreamResult','javaObject','java.lang.Object']]
+,['S',['cantmarshall','defaultNamespace'],'O',['mapQualifierLevel','java.util.Map','textarea','swingjs.api.js.DOMNode','xsi','javax.xml.namespace.QName','+xs','+qnEntryKey','+qnEntryValue']]]
 
 Clazz.newMeth(C$, 'c$$javax_xml_bind_JAXBContext', function (context) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.context=context;
 }, 1);
 
@@ -55,7 +34,7 @@ $I$(3).clearStatics$();
 });
 
 Clazz.newMeth(C$, 'doMarshal$Class$O$javax_xml_namespace_QName$O$swingjs_xml_JSJAXBField$Z', function (javaClass, javaObject, qname, tagObject, tagField, addXsiType) {
-var jaxbClass=Clazz.new_($I$(3).c$$Class$O$Z$Z$javax_xml_namespace_QName,[javaClass, javaObject, tagField != null  && tagField.isXmlIDREF , true, qname]);
+var jaxbClass=Clazz.new_([javaClass, javaObject, tagField != null  && tagField.isXmlIDREF , true, qname],$I$(3,1).c$$Class$O$Z$Z$javax_xml_namespace_QName);
 jaxbClass.tagField=tagField;
 jaxbClass.tagObject=tagObject;
 var oldMap=null;
@@ -75,7 +54,7 @@ if (newMap != null ) {
 C$.mapQualifierLevel=newMap;
 return null;
 }var oldMap=C$.mapQualifierLevel;
-C$.mapQualifierLevel=Clazz.new_($I$(1).c$$java_util_Map,[oldMap]);
+C$.mapQualifierLevel=Clazz.new_($I$(1,1).c$$java_util_Map,[oldMap]);
 return oldMap;
 }, 1);
 
@@ -88,7 +67,7 @@ Clazz.newMeth(C$, 'getXmlnsIfUnusedYet$javax_xml_namespace_QName$Z', function (q
 var xmlns=qname.getNamespaceURI$();
 if (xmlns.length$() == 0) return null;
 if (!isRoot && !C$.mapQualifierLevel.containsKey$O(xmlns) ) {
-C$.mapQualifierLevel.put$TK$TV(xmlns, Integer.valueOf$I(1));
+C$.mapQualifierLevel.put$O$O(xmlns, Integer.valueOf$I(1));
 return xmlns;
 }return null;
 }, 1);
@@ -126,7 +105,7 @@ return str;
 }, 1);
 
 Clazz.newMeth(C$, 'writeXML$swingjs_xml_JSJAXBClass$Z$Z', function (jaxbClass, isRoot, addXsiType) {
-var qname=(jaxbClass.tagField == null  ? jaxbClass.getQName$() : jaxbClass.tagField.qualifiedName);
+var qname=(isRoot && jaxbClass.qualifiedRootName != null   ? jaxbClass.qualifiedRootName : jaxbClass.tagField == null  ? jaxbClass.getQName$() : jaxbClass.tagField.qualifiedName);
 if (isRoot) {
 p$1.outputHeader.apply(this, []);
 }C$.getXmlnsIfUnusedYet$javax_xml_namespace_QName$Z(qname, isRoot);
@@ -152,6 +131,7 @@ p$1.output$S.apply(this, [s]);
 p$1.addFields$swingjs_xml_JSJAXBClass$Z.apply(this, [jaxbClass, false]);
 }if (isRoot) p$1.output$S.apply(this, ["\n"]);
 p$1.writeTagClose$javax_xml_namespace_QName$Z.apply(this, [qname, true]);
+if (isRoot) p$1.output$S.apply(this, ["\n"]);
 }, p$1);
 
 Clazz.newMeth(C$, 'hasElements$java_util_List', function (fields) {
@@ -223,15 +203,15 @@ p$1.writeTagClose$javax_xml_namespace_QName$Z.apply(this, [field.qualifiedName, 
 Clazz.newMeth(C$, 'getEntryType$javax_xml_namespace_QName$O', function (qname, value) {
 var className=value.getClass$().getName$();
 switch (className) {
-case "Integer":
+case "java.lang.Integer":
 return "xs:int";
-case "Boolean":
-case "Byte":
-case "Short":
-case "Long":
-case "Float":
-case "Double":
-return "xs:" + className.toLowerCase$();
+case "java.lang.Boolean":
+case "java.lang.Byte":
+case "java.lang.Short":
+case "java.lang.Long":
+case "java.lang.Float":
+case "java.lang.Double":
+return "xs:" + className.substring$I(10).toLowerCase$();
 case "java.lang.String":
 return "xs:string";
 case "java.math.BigInteger":
@@ -246,7 +226,7 @@ return className.substring$I$I(0, 1).toLowerCase$() + className.substring$I(1);
 Clazz.newMeth(C$, 'writeAttribute$swingjs_xml_JSJAXBField$O', function (field, value) {
 if (value == null ) return;
 if (value.getClass$().isEnum$()) {
-var jjc=Clazz.new_($I$(3).c$$Class$O$Z$Z$javax_xml_namespace_QName,[value.getClass$(), null, false, true, null]);
+var jjc=Clazz.new_([value.getClass$(), null, false, true, null],$I$(3,1).c$$Class$O$Z$Z$javax_xml_namespace_QName);
 if (jjc.enumMap != null ) {
 var o=jjc.enumMap.get$O("/" + value.toString());
 if (o != null ) value=o;
@@ -299,7 +279,7 @@ if (adapter == null ) {
 p$1.writeValue$swingjs_xml_JSJAXBField$O.apply(this, [field, value]);
 } else {
 try {
-p$1.output$S.apply(this, [adapter.marshal$TBoundType(value)]);
+p$1.output$S.apply(this, [adapter.marshal$O(value)]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.out.println$S("JSJAXBMarshaller " + e + " trying to marshal " + field.text );
@@ -416,18 +396,19 @@ p$1.writeTagOpen$javax_xml_namespace_QName$Z.apply(this, [wrapName, true]);
 p$1.output$S.apply(this, [">\n"]);
 var qn=field.qualifiedName;
 var eval=field.mapEntryValue;
-var addXsiType=((field.holdsObjects & 4) != 0);
+var addXsiTypeKey=((field.holdsObjects & 4) != 0);
+var addXsiTypeVal=((field.holdsObjects & 8) != 0);
 for (var e, $e = map.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var key=e.getKey$();
 var value=e.getValue$();
 p$1.output$S.apply(this, ["<entry>"]);
 field.qualifiedName=C$.qnEntryKey;
 field.mapEntryValue=key;
-p$1.addFieldListable$swingjs_xml_JSJAXBClass$swingjs_xml_JSJAXBField$O$Z.apply(this, [jaxbClass, field, key, addXsiType]);
+p$1.addFieldListable$swingjs_xml_JSJAXBClass$swingjs_xml_JSJAXBField$O$Z.apply(this, [jaxbClass, field, key, addXsiTypeKey]);
 if (value != null  || isNillable ) {
 field.mapEntryValue=value;
 field.qualifiedName=C$.qnEntryValue;
-p$1.addFieldListable$swingjs_xml_JSJAXBClass$swingjs_xml_JSJAXBField$O$Z.apply(this, [jaxbClass, field, value, addXsiType]);
+p$1.addFieldListable$swingjs_xml_JSJAXBClass$swingjs_xml_JSJAXBField$O$Z.apply(this, [jaxbClass, field, value, addXsiTypeVal]);
 }p$1.output$S.apply(this, ["\n</entry>\n"]);
 }
 field.mapEntryValue=eval;
@@ -458,6 +439,7 @@ p$1.output$S.apply(this, [" xsi:type=\"" + type + "\"" ]);
 Clazz.newMeth(C$, 'output$S', function (s) {
 try {
 if (this.writer != null ) {
+System.out.println$S((s.startsWith$S("<") ? "\n" : "") + s);
 this.writer.write$S(s);
 } else if (this.outputStream != null ) {
 this.outputStream.write$BA(s.getBytes$());
@@ -470,6 +452,15 @@ throw e;
 }
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.cantmarshall="";
+C$.mapQualifierLevel=Clazz.new_($I$(1,1));
+C$.xsi=Clazz.new_($I$(2,1).c$$S$S$S,["http://www.w3.org/2001/XMLSchema-instance", "xs", "xsi"]);
+C$.xs=Clazz.new_($I$(2,1).c$$S$S$S,["http://www.w3.org/2001/XMLSchema", "_", "xs"]);
+C$.qnEntryKey=Clazz.new_($I$(2,1).c$$S$S$S,["", "key", ""]);
+C$.qnEntryValue=Clazz.new_($I$(2,1).c$$S$S$S,["", "value", ""]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:29:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

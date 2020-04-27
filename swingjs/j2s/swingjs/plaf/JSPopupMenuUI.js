@@ -1,34 +1,25 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.plaf.JSPopupMenuUI','javax.swing.MenuSelectionManager','swingjs.jquery.JQueryUI','swingjs.JSUtil','swingjs.api.js.DOMNode','javax.swing.LookAndFeel',['swingjs.plaf.JSPopupMenuUI','.JSMenuKeyListener'],'javax.swing.UIManager','swingjs.plaf.JSComponentUI']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSPopupMenuUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.plaf.JSPopupMenuUI','swingjs.plaf.JSComponentUI','javax.swing.MenuSelectionManager','swingjs.jquery.JQueryUI','swingjs.api.js.DOMNode','javax.swing.LookAndFeel',['swingjs.plaf.JSPopupMenuUI','.JSMenuKeyListener'],'javax.swing.UIManager','swingjs.JSMouse','swingjs.JSUtil']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSPopupMenuUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSPanelUI', 'java.awt.event.ContainerListener');
-C$.j2sSwingMenu=null;
-C$.np=0;
+C$.$classes$=[['JSMenuKeyListener',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-var jqueryui=Clazz.getClass($I$(3));
-};
-C$.np=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.popupMenu=null;
-this.menuKeyListener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+C$.$fields$=[['O',['popupMenu','javax.swing.JPopupMenu','menuKeyListener','swingjs.plaf.JSPopupMenuUI.JSMenuKeyListener']]
+,['O',['j2sSwingMenu','swingjs.api.js.JSSwingMenu','lastInvoker','java.awt.Component']]]
+
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
+var prop=e.getPropertyName$();
 C$.superclazz.prototype.propertyChange$java_beans_PropertyChangeEvent.apply(this, [e]);
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (C$.j2sSwingMenu == null ) {
-$I$(4).loadStaticResource$S("swingjs/jquery/j2sMenu.js");
 C$.j2sSwingMenu=this.J2S.getSwing();
 }this.isContainer=true;
 this.isMenuItem=true;
@@ -38,7 +29,7 @@ this.setDoc$();
 
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
 if (this.domNode == null ) {
-this.containerNode=this.domNode=P$.JSComponentUI.newDOMObject$S$S$SA("ul", this.id, []);
+this.containerNode=this.domNode=$I$(2).newDOMObject$S$S$SA("ul", this.id, []);
 this.bindJQueryEvents$swingjs_api_js_DOMNode$S$I(this.domNode, "mouseenter", -1);
 }return this.updateDOMNodeCUI$();
 });
@@ -59,7 +50,7 @@ var child=e.getChild$();
 if (Clazz.instanceOf(child, "javax.swing.JMenuItem")) (e.getChild$()).removeMenuKeyListener$javax_swing_event_MenuKeyListener(this.menuKeyListener);
 });
 
-Clazz.newMeth(C$, ['handleJSEvent$O$I$O','handleJSEvent$'], function (target, eventType, jQueryEvent) {
+Clazz.newMeth(C$, 'handleJSEvent$O$I$O', function (target, eventType, jQueryEvent) {
 this.checkStopPopupMenuTimer$O$I$O(target, eventType, jQueryEvent);
 return C$.superclazz.prototype.handleJSEvent$O$I$O.apply(this, [target, eventType, jQueryEvent]);
 });
@@ -86,7 +77,7 @@ this.popupMenu.removeMenuKeyListener$javax_swing_event_MenuKeyListener(this.menu
 }});
 
 Clazz.newMeth(C$, 'setVisible$Z', function (b) {
-C$.closeAllMenus$();
+$I$(2).hideMenusAndToolTip$();
 if (b) {
 if (this.isTainted || this.menu == null   || this.outerNode == null   || $I$(5).firstChild(this.outerNode) == null  ) {
 if (this.menu == null ) {
@@ -97,8 +88,10 @@ C$.j2sSwingMenu.setMenu(this.menu);
 this.isTainted=false;
 } else {
 this.updateMenu$Z(true);
-}}var x=this.menu.desiredLocationX ||0;
+}}C$.lastInvoker=this.menu.getInvoker$();
+var x=this.menu.desiredLocationX ||0;
 var y=this.menu.desiredLocationY ||0;
+this.setZ$I($I$(2,"getInheritedZ$javax_swing_JComponent",[this.menu.getInvoker$()]) + 2);
 C$.j2sSwingMenu.showMenu(this.menu, x, y);
 }});
 
@@ -120,14 +113,14 @@ C$.j2sSwingMenu.updateMenu(this.menu, andShow);
 
 Clazz.newMeth(C$, 'installListeners$', function () {
 if (this.menuKeyListener == null ) {
-this.menuKeyListener=Clazz.new_($I$(7), [this, null]);
+this.menuKeyListener=Clazz.new_($I$(7,1),[this, null]);
 }this.popupMenu.addMenuKeyListener$javax_swing_event_MenuKeyListener(this.menuKeyListener);
 if (Clazz.instanceOf(this.popupMenu.getInvoker$(), "javax.swing.JRootPane")) {
 this.popupMenu.getInvoker$().addKeyListener$java_awt_event_KeyListener(this.menuKeyListener);
 }});
 
 Clazz.newMeth(C$, 'getLastPopup$', function () {
-var msm=$I$(2).defaultManager$();
+var msm=$I$(3).defaultManager$();
 var p=msm.getSelectedPath$();
 var popup=null;
 for (var i=p.length - 1; popup == null  && i >= 0 ; i--) {
@@ -190,7 +183,7 @@ return null;
 }, 1);
 
 Clazz.newMeth(C$, 'isJSPopupVisible$', function () {
-return this.menu != null  && this.menu.haveLoc  && $I$(5).getStyle(this.domNode, "display") != "none" ;
+return this.menu != null  && this.menu.haveLoc  && $I$(5).getStyle(this.domNode, "display") !== "none"  ;
 });
 
 Clazz.newMeth(C$, 'processJ2SMenuCmd$OA', function (data) {
@@ -200,29 +193,15 @@ var e=data[2];
 var t=data[3];
 var n=data[4];
 var m=j2smenu.activeMenu;
-var mid=(m && m[0] && m[0].id ||null);
-var id=(t && t[0] && t[0].id ||null);
-var text=(t && t[0] && (t[0]["data-component"] && t[0]["data-component"].text || t[0]["data-ui"] && t[0]["data-ui"].jc.text) ||null);
+var mid=(m == null  ? null : m.attr("id"));
+var target=data[5];
+var base=(t == null  ? null : target != null  ? target : t === e  ? $I$(5).getAttr(e, "target") : t.get(0));
+var id=(base == null  ? null : $I$(5).getAttr(base, "id"));
+var c=(base == null  ? null : $I$(5).getAttr(base, "data-component"));
+var tui=(base == null  ? null : $I$(5).getAttr(base, "data-ui"));
 var menu=null;
-var ui;
-var mui=(m[0]["data-ui"] ||null);
-var debug=false;
+var eventID=0;
 switch (trigger) {
-case "_openSubmenu":
-C$.updateMenuSelection$O$Z(t, true);
-break;
-case "_closeSubmenus":
-C$.updateMenuSelection$O$Z(t, false);
-break;
-case "onover":
-case "onover1":
-case "onover2":
-case "onover3":
-case "_activate":
-case "_hide":
-case "_move":
-case "_show":
-case "_startOpening":
 case "clearOut":
 case "collapse":
 case "expand":
@@ -233,27 +212,57 @@ case "onclick":
 case "onclick_out":
 case "onfocus":
 case "onleave":
-case "blur":
+case "onmovep":
+case "onoutn":
+case "onovern":
+case "onoverp":
 case "onpress":
 case "onrelease":
 case "refresh":
 case "select":
-break;
-case "focus":
-$I$(9).isMenuOpen=true;
+case "_activate":
+case "_hide":
+case "_hidePopupMenu":
+case "_move":
+case "_show":
+case "_startOpening":
 break;
 case "collapseAll":
-C$.closeAllMenus$();
-$I$(9).isMenuOpen=false;
-j2smenu.options.jPopupMenu.visible=false;
-(j2smenu.options.jPopupMenu.getInvoker$()).getRootPane$().requestFocus$();
+$I$(2).hideMenusAndToolTip$();
+$I$(2).isMenuOpen=false;
+c=j2smenu.options.jPopupMenu;
+c.visible=false;
+var ui=c.getUI$();
+var invoker=((c).getInvoker$());
+if (Clazz.instanceOf(invoker, "javax.swing.JMenu")) invoker=invoker.getRootPane$();
+invoker.requestFocus$();
+break;
+case "setFocus":
+$I$(2).isMenuOpen=true;
+eventID=504;
+break;
+case "onmoven":
+eventID=503;
+break;
+case "unsetFocus":
+eventID=505;
+break;
+case "_openSubmenu":
+C$.updateMenuSelection$O$Z(t, true);
+break;
+case "_closeSubmenus":
+C$.updateMenuSelection$O$Z(t, false);
 break;
 case "_hideAllMenus":
 C$.updateMenuSelection$O$Z(t, false);
 break;
+default:
+System.err.println$S("JSPopupMenu not processing " + trigger);
+break;
 }
-if (debug) System.out.println$S("JSPopupMenuUI processing " + (C$.np++) + " " + trigger + " for " + id + " " + text );
-}, 1);
+if (e != null  && eventID != 0  && c != null  ) {
+$I$(9).retargetMouseEvent$O$swingjs_api_js_DOMNode$javax_swing_JComponent$javax_swing_JComponent$I(e, base, c, c, eventID);
+}}, 1);
 
 Clazz.newMeth(C$, 'updateMenuSelection$O$Z', function (t, isOpen) {
 for (var i=t.length ||0; --i >= 0; ) {
@@ -267,20 +276,27 @@ return e.isPopupTrigger$();
 });
 
 Clazz.newMeth(C$, 'closeAllMenus$', function () {
-if ($I$(9).isMenuOpen) {
-$I$(4).jQuery.$(".ui-j2smenu").hide();
-$I$(4).jQuery.$(".ui-j2smenu-node").removeClass("ui-state-active").removeClass("ui-state-focus");
-}}, 1);
+if (C$.lastInvoker != null ) {
+C$.lastInvoker.requestFocus$();
+C$.lastInvoker=null;
+}$I$(10).jQuery.$(".ui-j2smenu").hide();
+$I$(10).jQuery.$(".ui-j2smenu-node").removeClass("ui-state-active").removeClass("ui-state-focus");
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+$I$(4).loadJQMenu$();
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSPopupMenuUI, "JSMenuKeyListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSPopupMenuUI, "JSMenuKeyListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['javax.swing.event.MenuKeyListener', 'java.awt.event.KeyListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'menuKeyTyped$javax_swing_event_MenuKeyEvent', function (e) {
 });
@@ -294,7 +310,7 @@ e.consume$();
 } else if (Clazz.instanceOf(item, "javax.swing.JMenuItem")) {
 (item).doClick$();
 e.consume$();
-P$.JSComponentUI.hideMenusAndToolTip$();
+$I$(2).hideMenusAndToolTip$();
 }});
 
 Clazz.newMeth(C$, 'menuKeyReleased$javax_swing_event_MenuKeyEvent', function (e) {
@@ -304,7 +320,7 @@ Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent', function (e) {
 });
 
 Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (e) {
-$I$(2).defaultManager$().processKeyEvent$java_awt_event_KeyEvent(e);
+$I$(3).defaultManager$().processKeyEvent$java_awt_event_KeyEvent(e);
 });
 
 Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent', function (e) {
@@ -313,4 +329,4 @@ Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent', function (e) {
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

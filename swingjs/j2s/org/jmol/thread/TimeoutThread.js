@@ -1,22 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.thread"),p$1={},I$=[[0,'Thread','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TimeoutThread", null, 'org.jmol.thread.JmolThread');
+(function(){var P$=Clazz.newPackage("org.jmol.thread"),p$1={},I$=[[0,'Thread','javajs.util.SB']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "TimeoutThread", null, 'org.jmol.thread.JmolThread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.script=null;
-this.status=0;
-this.triggered=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.triggered=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['triggered'],'I',['status'],'S',['script']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$S$I$S', function (vwr, name, ms, script) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setViewer$org_jmol_viewer_Viewer$S(vwr, name);
 this.$name=name;
 p$1.set$I$S.apply(this, [ms, script]);
@@ -88,7 +82,7 @@ timeouts.remove$O(name);
 p$1.set$I$S.apply(t, [mSec, script]);
 return;
 }t=Clazz.new_(C$.c$$org_jmol_viewer_Viewer$S$I$S,[vwr, name, mSec, script]);
-timeouts.put$TK$TV(name, t);
+timeouts.put$O$O(name, t);
 t.start$();
 }, 1);
 
@@ -98,7 +92,7 @@ if (t != null ) t.triggered=(t.sleepTime < 0);
 }, 1);
 
 Clazz.newMeth(C$, 'showTimeout$java_util_Map$S', function (timeouts, name) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 if (timeouts != null ) {
 for (var o, $o = timeouts.values$().iterator$(); $o.hasNext$()&&((o=($o.next$())),1);) {
 var t=o;
@@ -109,4 +103,4 @@ if (name == null  || t.$name.equalsIgnoreCase$S(name) ) sb.append$S(t.toString()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

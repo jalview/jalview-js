@@ -1,28 +1,23 @@
-(function(){var P$=java.util,I$=[[0,'java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Observable");
+(function(){var P$=java.util,I$=[[0,'java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Observable");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.changed=false;
-this.obs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.changed=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['changed'],'O',['obs','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.obs=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.obs=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'addObserver$java_util_Observer', function (o) {
 if (o == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 if (!this.obs.contains$O(o)) {
-this.obs.addElement$TE(o);
+this.obs.addElement$O(o);
 }});
 
 Clazz.newMeth(C$, 'deleteObserver$java_util_Observer', function (o) {
@@ -39,7 +34,7 @@ var arrLocal;
 if (!this.changed) return;
 arrLocal=this.obs.toArray$();
 this.clearChanged$();
-}for (var i=arrLocal.length - 1; i >= 0; i--) (arrLocal[i]).update$(this, arg);
+}for (var i=arrLocal.length - 1; i >= 0; i--) (arrLocal[i]).update$java_util_Observable$O(this, arg);
 
 });
 
@@ -63,4 +58,4 @@ Clazz.newMeth(C$, 'countObservers$', function () {
 return this.obs.size$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

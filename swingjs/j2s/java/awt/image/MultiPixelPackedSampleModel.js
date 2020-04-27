@@ -1,32 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),I$=[[0,'java.awt.image.DataBuffer','java.awt.image.DataBufferByte','java.awt.image.DataBufferInt']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MultiPixelPackedSampleModel", null, 'java.awt.image.SampleModel');
+(function(){var P$=Clazz.newPackage("java.awt.image"),I$=[[0,'java.awt.image.DataBuffer','java.awt.image.DataBufferByte','java.awt.image.DataBufferUShort','java.awt.image.DataBufferInt']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MultiPixelPackedSampleModel", null, 'java.awt.image.SampleModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pixelBitStride=0;
-this.bitMask=0;
-this.pixelsPerDataElement=0;
-this.dataElementSize=0;
-this.dataBitOffset=0;
-this.scanlineStride=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pixelBitStride','bitMask','pixelsPerDataElement','dataElementSize','dataBitOffset','scanlineStride']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (dataType, w, h, numberOfBits) {
 C$.c$$I$I$I$I$I$I.apply(this, [dataType, w, h, numberOfBits, ((w * numberOfBits + $I$(1).getDataTypeSize$I(dataType) - 1)/$I$(1).getDataTypeSize$I(dataType)|0), 0]);
-if (dataType != 0 && dataType != 3 ) {
+if (dataType != 0 && dataType != 1  && dataType != 3 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$I$I', function (dataType, w, h, numberOfBits, scanlineStride, dataBitOffset) {
-C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, 1]);
-C$.$init$.apply(this);
-if (dataType != 0 && dataType != 3 ) {
+;C$.superclazz.c$$I$I$I$I.apply(this,[dataType, w, h, 1]);C$.$init$.apply(this);
+if (dataType != 0 && dataType != 1  && dataType != 3 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Unsupported data type " + dataType]);
 }this.dataType=dataType;
 this.pixelBitStride=numberOfBits;
@@ -49,10 +39,13 @@ var dataBuffer=null;
 var size=this.scanlineStride * this.height;
 switch (this.dataType) {
 case 0:
-dataBuffer=Clazz.new_($I$(2).c$$I,[size + ((this.dataBitOffset + 7)/8|0)]);
+dataBuffer=Clazz.new_([size + ((this.dataBitOffset + 7)/8|0)],$I$(2,1).c$$I);
+break;
+case 1:
+dataBuffer=Clazz.new_([size + ((this.dataBitOffset + 15)/16|0)],$I$(3,1).c$$I);
 break;
 case 3:
-dataBuffer=Clazz.new_($I$(3).c$$I,[size + ((this.dataBitOffset + 31)/32|0)]);
+dataBuffer=Clazz.new_([size + ((this.dataBitOffset + 31)/32|0)],$I$(4,1).c$$I);
 break;
 }
 return dataBuffer;
@@ -94,7 +87,9 @@ return this.dataBitOffset;
 });
 
 Clazz.newMeth(C$, 'getTransferType$', function () {
-return 3;
+if (this.pixelBitStride > 16) return 3;
+ else if (this.pixelBitStride > 8) return 1;
+ else return 0;
 });
 
 Clazz.newMeth(C$, 'createSubsetSampleModel$IA', function (bands) {
@@ -138,8 +133,16 @@ var bdata;
 if (obj == null ) bdata=Clazz.array(Byte.TYPE, [1]);
  else bdata=obj;
 element=data.getElem$I(y * this.scanlineStride + (bitnum/this.dataElementSize|0));
-bdata[0]=((((element >> shift) & this.bitMask)|0)|0);
+bdata[0]=(((element >> shift) & this.bitMask)|0);
 obj=bdata;
+break;
+case 1:
+var sdata;
+if (obj == null ) sdata=Clazz.array(Short.TYPE, [1]);
+ else sdata=obj;
+element=data.getElem$I(y * this.scanlineStride + (bitnum/this.dataElementSize|0));
+sdata[0]=(((element >> shift) & this.bitMask)|0);
+obj=sdata;
 break;
 case 3:
 var idata;
@@ -181,6 +184,11 @@ switch (type) {
 case 0:
 var barray=obj;
 element|=(((barray[0]) & 255) & this.bitMask) << shift;
+data.setElem$I$I(index, element);
+break;
+case 1:
+var sarray=obj;
+element|=(((sarray[0]) & 65535) & this.bitMask) << shift;
 data.setElem$I$I(index, element);
 break;
 case 3:
@@ -236,4 +244,4 @@ return hash;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

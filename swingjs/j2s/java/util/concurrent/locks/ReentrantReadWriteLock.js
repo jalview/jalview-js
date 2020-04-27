@@ -1,28 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent.locks"),I$=[[0,['java.util.concurrent.locks.ReentrantReadWriteLock','.ReadLock'],['java.util.concurrent.locks.ReentrantReadWriteLock','.WriteLock']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ReentrantReadWriteLock", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent.locks"),I$=[[0,['java.util.concurrent.locks.ReentrantReadWriteLock','.ReadLock'],['java.util.concurrent.locks.ReentrantReadWriteLock','.WriteLock']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ReentrantReadWriteLock", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.util.concurrent.locks.ReadWriteLock', 'java.io.Serializable']);
+C$.$classes$=[['ReadLock',9],['WriteLock',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.readerLock=null;
-this.writerLock=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['readerLock','java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock','writerLock','java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$Z.apply(this, [false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (fair) {
-C$.$init$.apply(this);
-this.readerLock=Clazz.new_($I$(1).c$$java_util_concurrent_locks_ReentrantReadWriteLock,[this]);
-this.writerLock=Clazz.new_($I$(2).c$$java_util_concurrent_locks_ReentrantReadWriteLock,[this]);
+;C$.$init$.apply(this);
+this.readerLock=Clazz.new_($I$(1,1).c$$java_util_concurrent_locks_ReentrantReadWriteLock,[this]);
+this.writerLock=Clazz.new_($I$(2,1).c$$java_util_concurrent_locks_ReentrantReadWriteLock,[this]);
 }, 1);
 
 Clazz.newMeth(C$, 'writeLock$', function () {
@@ -101,18 +97,17 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + "[Write locks, Read locks]";
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ReentrantReadWriteLock, "ReadLock", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ReentrantReadWriteLock, "ReadLock", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.concurrent.locks.Lock', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_locks_ReentrantReadWriteLock', function (lock) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'lock$', function () {
@@ -143,18 +138,17 @@ return C$.superclazz.prototype.toString.apply(this, []) + "[Read locks]";
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ReentrantReadWriteLock, "WriteLock", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ReentrantReadWriteLock, "WriteLock", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.util.concurrent.locks.Lock', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_locks_ReentrantReadWriteLock', function (lock) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'lock$', function () {
@@ -193,4 +187,4 @@ return 1;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

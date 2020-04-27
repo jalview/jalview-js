@@ -1,38 +1,21 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.ArrayList','jalview.datamodel.SequenceI','jalview.datamodel.PDBEntry','jalview.bin.Jalview','jalview.gui.ProgressBar','jalview.bin.Cache','Thread','jalview.util.MessageManager','jalview.gui.Desktop','jalview.gui.StructureViewer','jalview.fts.service.pdb.PDBFTSRestClient','java.util.LinkedHashSet','java.util.HashSet','jalview.fts.core.FTSRestRequest','jalview.fts.core.FTSRestResponse','StringBuilder','jalview.gui.JvOptionPane',['jalview.gui.StructureChooser','.CachedPDB'],['jalview.gui.StructureChooser','.PDBEntryTableModel'],'java.util.Objects','jalview.jbgui.GStructureChooser','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView',['jalview.jbgui.GStructureChooser','.FilterOption'],'jalview.gui.JvSwingUtils',['jalview.datamodel.PDBEntry','.Type'],'jalview.gui.AssociatePdbFileWithSeq','jalview.io.DataSourceType','javax.swing.SwingUtilities','Boolean','jalview.ws.sifts.SiftsSettings','jalview.ws.DBRefFetcher',['jalview.jbgui.GStructureChooser','.AssociateSeqOptions']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StructureChooser", function(){
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.ArrayList','jalview.datamodel.SequenceI','jalview.datamodel.PDBEntry','jalview.bin.Jalview','jalview.gui.ProgressBar','jalview.bin.Cache','Thread','jalview.util.MessageManager','jalview.gui.Desktop','jalview.gui.StructureViewer','jalview.fts.service.pdb.PDBFTSRestClient','java.util.LinkedHashSet','java.util.HashSet','jalview.fts.core.FTSRestRequest','jalview.fts.core.FTSRestResponse','StringBuilder','jalview.gui.JvOptionPane',['jalview.gui.StructureChooser','.CachedPDB'],['jalview.gui.StructureChooser','.PDBEntryTableModel'],'java.util.Objects','jalview.gui.StructureChooser','jalview.jbgui.GStructureChooser','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView',['jalview.jbgui.GStructureChooser','.FilterOption'],'jalview.gui.JvSwingUtils',['jalview.datamodel.PDBEntry','.Type'],'jalview.gui.AssociatePdbFileWithSeq','jalview.io.DataSourceType','javax.swing.SwingUtilities','Boolean','jalview.ws.sifts.SiftsSettings','jalview.ws.DBRefFetcher',['jalview.jbgui.GStructureChooser','.AssociateSeqOptions']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StructureChooser", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'jalview.jbgui.GStructureChooser', 'jalview.gui.IProgressIndicator');
-C$.MAX_QLENGTH=0;
-C$.lastTargetedView=null;
+C$.$classes$=[['PDBEntryTableModel',1],['CachedPDB',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.MAX_QLENGTH=7820;
-C$.lastTargetedView=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.selectedSequence=null;
-this.selectedSequences=null;
-this.progressIndicator=null;
-this.discoveredStructuresSet=null;
-this.lastPdbRequest=null;
-this.pdbRestClient=null;
-this.selectedPdbFileName=null;
-this.isValidPBDEntry=false;
-this.cachedPDBExists=false;
-this.sViewer=null;
-this.PDB_ID_MIN=0;
-this.progressBar=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.sViewer=null;
 this.PDB_ID_MIN=3;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isValidPBDEntry','cachedPDBExists'],'I',['PDB_ID_MIN'],'S',['selectedPdbFileName'],'O',['selectedSequence','jalview.datamodel.SequenceI','selectedSequences','jalview.datamodel.SequenceI[]','progressIndicator','jalview.gui.IProgressIndicator','discoveredStructuresSet','java.util.Collection','lastPdbRequest','jalview.fts.core.FTSRestRequest','pdbRestClient','jalview.fts.api.FTSRestClientI','sViewer','jalview.gui.StructureViewer','progressBar','jalview.gui.IProgressIndicator']]
+,['I',['MAX_QLENGTH'],'O',['lastTargetedView','jalview.gui.StructureViewer']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceI$jalview_gui_AlignmentPanel', function (selectedSeqs, selectedSeq, ap) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.ap=ap;
 this.selectedSequence=selectedSeq;
 this.selectedSequences=selectedSeqs;
@@ -42,17 +25,16 @@ this.init$();
 
 Clazz.newMeth(C$, 'init$', function () {
 if (!$I$(4).isHeadlessMode$()) {
-this.progressBar=Clazz.new_($I$(5).c$$javax_swing_JPanel$javax_swing_JLabel,[this.statusPanel, this.statusBar]);
+this.progressBar=Clazz.new_($I$(5,1).c$$javax_swing_JPanel$javax_swing_JLabel,[this.statusPanel, this.statusBar]);
 }this.chk_superpose.setSelected$Z($I$(6).getDefault$S$Z("AUTOSUPERIMPOSE", true));
 this.populateFilterComboBox$Z$Z(true, this.cachedPDBExists);
-var discoverPDBStructuresThread=Clazz.new_($I$(7).c$$Runnable,[((P$.StructureChooser$1||
-(function(){var C$=Clazz.newClass(P$, "StructureChooser$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+var discoverPDBStructuresThread=Clazz.new_([((P$.StructureChooser$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "StructureChooser$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var startTime=System.currentTimeMillis$();
@@ -68,7 +50,7 @@ this.b$['jalview.gui.StructureChooser'].mainFrame.setVisible$Z(true);
 this.b$['jalview.gui.StructureChooser'].updateCurrentView$.apply(this.b$['jalview.gui.StructureChooser'], []);
 });
 })()
-), Clazz.new_(P$.StructureChooser$1.$init$, [this, null]))]);
+), Clazz.new_(P$.StructureChooser$1.$init$,[this, null]))],$I$(7,1).c$$Runnable);
 discoverPDBStructuresThread.start$();
 });
 
@@ -81,9 +63,9 @@ C$.lastTargetedView=null;
 for (var view, $view = $I$(9).instance.getStructureViewers$jalview_gui_AlignmentPanel$Class(null, null).iterator$(); $view.hasNext$()&&((view=($view.next$())),1);) {
 var viewHandler=(C$.lastTargetedView != null  && C$.lastTargetedView.sview === view  ) ? C$.lastTargetedView : $I$(10).reconfigure$jalview_api_structures_JalviewStructureDisplayI(view);
 if (view.isLinkedWith$jalview_gui_AlignmentPanel(this.ap)) {
-this.targetView.insertItemAt$TE$I(viewHandler, linkedViewsAt++);
+this.targetView.insertItemAt$O$I(viewHandler, linkedViewsAt++);
 } else {
-this.targetView.addItem$TE(viewHandler);
+this.targetView.addItem$O(viewHandler);
 }}
 this.targetView.setVisible$Z(false);
 if (this.targetView.getItemCount$() > 0) {
@@ -104,10 +86,10 @@ Clazz.newMeth(C$, 'fetchStructuresMetaData$', function () {
 var startTime=System.currentTimeMillis$();
 this.pdbRestClient=$I$(11).getInstance$();
 var wantedFields=this.pdbDocFieldPrefs.getStructureSummaryFields$();
-this.discoveredStructuresSet=Clazz.new_($I$(12));
-var errors=Clazz.new_($I$(13));
+this.discoveredStructuresSet=Clazz.new_($I$(12,1));
+var errors=Clazz.new_($I$(13,1));
 for (var seq, $seq = 0, $$seq = this.selectedSequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
-var pdbRequest=Clazz.new_($I$(14));
+var pdbRequest=Clazz.new_($I$(14,1));
 pdbRequest.setAllowEmptySeq$Z(false);
 pdbRequest.setResponseSize$I(500);
 pdbRequest.setFieldToSearchBy$S("(");
@@ -122,7 +104,7 @@ resultList=this.pdbRestClient.executeRequest$jalview_fts_core_FTSRestRequest(pdb
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 e.printStackTrace$();
-errors.add$TE(e.getMessage$());
+errors.add$O(e.getMessage$());
 continue;
 } else {
 throw e;
@@ -137,41 +119,44 @@ var totalTime=(System.currentTimeMillis$() - startTime) + " milli secs";
 if (this.discoveredStructuresSet != null  && !this.discoveredStructuresSet.isEmpty$() ) {
 this.getResultTable$().setModel$javax_swing_table_TableModel($I$(15).getTableModel$jalview_fts_core_FTSRestRequest$java_util_Collection(this.lastPdbRequest, this.discoveredStructuresSet));
 noOfStructuresFound=this.discoveredStructuresSet.size$();
-this.mainFrame.setTitle$S($I$(8).formatMessage$S$OA("label.structure_chooser_no_of_structures", [new Integer(noOfStructuresFound), totalTime]));
+this.mainFrame.setTitle$S($I$(8,"formatMessage$S$OA",["label.structure_chooser_no_of_structures", [new Integer(noOfStructuresFound), totalTime]]));
 } else {
 this.mainFrame.setTitle$S($I$(8).getString$S("label.structure_chooser_manual_association"));
 if (errors.size$() > 0) {
-var errorMsg=Clazz.new_($I$(16));
+var errorMsg=Clazz.new_($I$(16,1));
 for (var error, $error = errors.iterator$(); $error.hasNext$()&&((error=($error.next$())),1);) {
 errorMsg.append$S(error).append$S("\n");
 }
-$I$(17).showMessageDialog$java_awt_Component$S$S$I(this, errorMsg.toString(), $I$(8).getString$S("label.pdb_web-service_error"), 0);
+$I$(17,"showMessageDialog$java_awt_Component$S$S$I",[this, errorMsg.toString(), $I$(8).getString$S("label.pdb_web-service_error"), 0]);
 }}});
 
 Clazz.newMeth(C$, 'loadLocalCachedPDBEntries$', function () {
-var entries=Clazz.new_($I$(1));
+var entries=Clazz.new_($I$(1,1));
 for (var seq, $seq = 0, $$seq = this.selectedSequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
 if (seq.getDatasetSequence$() != null  && seq.getDatasetSequence$().getAllPDBEntries$() != null  ) {
 for (var pdbEntry, $pdbEntry = seq.getDatasetSequence$().getAllPDBEntries$().iterator$(); $pdbEntry.hasNext$()&&((pdbEntry=($pdbEntry.next$())),1);) {
 if (pdbEntry.getFile$() != null ) {
-entries.add$TE(Clazz.new_($I$(18).c$$jalview_datamodel_SequenceI$jalview_datamodel_PDBEntry, [this, null, seq, pdbEntry]));
+entries.add$O(Clazz.new_($I$(18,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_PDBEntry,[this, null, seq, pdbEntry]));
 }}
 }}
 this.cachedPDBExists=!entries.isEmpty$();
-var tableModelx=Clazz.new_($I$(19).c$$java_util_List, [this, null, entries]);
+var tableModelx=Clazz.new_($I$(19,1).c$$java_util_List,[this, null, entries]);
 this.tbl_local_pdb.setModel$javax_swing_table_TableModel(tableModelx);
 });
 
 Clazz.newMeth(C$, 'buildQuery$jalview_datamodel_SequenceI', function (seq) {
 var isPDBRefsFound=false;
 var isUniProtRefsFound=false;
-var queryBuilder=Clazz.new_($I$(16));
-var seqRefs=Clazz.new_($I$(12));
+var queryBuilder=Clazz.new_($I$(16,1));
+var seqRefs=Clazz.new_($I$(12,1));
+var pdbids=Clazz.new_($I$(13,1));
 if (seq.getAllPDBEntries$() != null  && queryBuilder.length$() < C$.MAX_QLENGTH ) {
 for (var entry, $entry = seq.getAllPDBEntries$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 if (C$.isValidSeqName$S(entry.getId$())) {
-queryBuilder.append$S("pdb_id:").append$S(entry.getId$().toLowerCase$()).append$S(" OR ");
+var id=entry.getId$().toLowerCase$();
+queryBuilder.append$S("pdb_id:").append$S(id).append$S(" OR ");
 isPDBRefsFound=true;
+pdbids.add$O(id);
 }}
 }var refs=seq.getDBRefs$();
 if (refs != null  && refs.size$() != 0 ) {
@@ -183,10 +168,13 @@ queryBuilder.append$S("uniprot_accession:").append$S(C$.getDBRefId$jalview_datam
 queryBuilder.append$S("uniprot_id:").append$S(C$.getDBRefId$jalview_datamodel_DBRefEntry(dbRef)).append$S(" OR ");
 isUniProtRefsFound=true;
 } else if (dbRef.getSource$().equalsIgnoreCase$S("PDB")) {
-queryBuilder.append$S("pdb_id:").append$S(C$.getDBRefId$jalview_datamodel_DBRefEntry(dbRef).toLowerCase$()).append$S(" OR ");
+var id=C$.getDBRefId$jalview_datamodel_DBRefEntry(dbRef).toLowerCase$();
+if (!pdbids.contains$O(id)) {
+queryBuilder.append$S("pdb_id:").append$S(id).append$S(" OR ");
 isPDBRefsFound=true;
-} else {
-seqRefs.add$TE(C$.getDBRefId$jalview_datamodel_DBRefEntry(dbRef));
+pdbids.add$O(id);
+}} else {
+seqRefs.add$O(C$.getDBRefId$jalview_datamodel_DBRefEntry(dbRef));
 }}}
 }if (!isPDBRefsFound && !isUniProtRefsFound ) {
 var seqName=seq.getName$();
@@ -195,7 +183,7 @@ var names=seqName.toLowerCase$().split$S("\\|");
 for (var name, $name = 0, $$name = names; $name<$$name.length&&((name=($$name[$name])),1);$name++) {
 name.trim$();
 if (C$.isValidSeqName$S(name)) {
-seqRefs.add$TE(name);
+seqRefs.add$O(name);
 }}
 for (var seqRef, $seqRef = seqRefs.iterator$(); $seqRef.hasNext$()&&((seqRef=($seqRef.next$())),1);) {
 queryBuilder.append$S("text:").append$S(seqRef).append$S(" OR ");
@@ -208,7 +196,7 @@ return query;
 }, 1);
 
 Clazz.newMeth(C$, 'sanitizeSeqName$S', function (seqName) {
-$I$(20).requireNonNull$TT(seqName);
+$I$(20).requireNonNull$O(seqName);
 return seqName.replaceAll$S$S("\\[\\d*\\]", "").replaceAll$S$S("[^\\dA-Za-z|_]", "").replaceAll$S$S("\\s+", "+");
 }, 1);
 
@@ -232,29 +220,28 @@ return ref;
 }, 1);
 
 Clazz.newMeth(C$, 'filterResultSet$S', function (fieldToFilterBy) {
-var filterThread=Clazz.new_($I$(7).c$$Runnable,[((P$.StructureChooser$2||
-(function(){var C$=Clazz.newClass(P$, "StructureChooser$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+var filterThread=Clazz.new_([((P$.StructureChooser$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "StructureChooser$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var startTime=System.currentTimeMillis$();
 this.b$['jalview.gui.StructureChooser'].pdbRestClient=$I$(11).getInstance$();
 this.b$['jalview.gui.StructureChooser'].lbl_loading.setVisible$Z(true);
 var wantedFields=this.b$['jalview.gui.StructureChooser'].pdbDocFieldPrefs.getStructureSummaryFields$();
-var filteredResponse=Clazz.new_($I$(13));
-var errors=Clazz.new_($I$(13));
+var filteredResponse=Clazz.new_($I$(13,1));
+var errors=Clazz.new_($I$(13,1));
 for (var seq, $seq = 0, $$seq = this.b$['jalview.gui.StructureChooser'].selectedSequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
-var pdbRequest=Clazz.new_($I$(14));
+var pdbRequest=Clazz.new_($I$(14,1));
 if (this.$finals$.fieldToFilterBy.equalsIgnoreCase$S("uniprot_coverage")) {
 pdbRequest.setAllowEmptySeq$Z(false);
 pdbRequest.setResponseSize$I(1);
 pdbRequest.setFieldToSearchBy$S("(");
-pdbRequest.setSearchTerm$S(P$.StructureChooser.buildQuery$jalview_datamodel_SequenceI(seq) + ")");
+pdbRequest.setSearchTerm$S($I$(21).buildQuery$jalview_datamodel_SequenceI(seq) + ")");
 pdbRequest.setWantedFields$java_util_Collection(wantedFields);
 pdbRequest.setAssociatedSequence$jalview_datamodel_SequenceI(seq);
 pdbRequest.setFacet$Z(true);
@@ -265,7 +252,7 @@ pdbRequest.setAllowEmptySeq$Z(false);
 pdbRequest.setResponseSize$I(1);
 pdbRequest.setFieldToSearchBy$S("(");
 pdbRequest.setFieldToSortBy$S$Z(this.$finals$.fieldToFilterBy, !this.b$['jalview.gui.StructureChooser'].chk_invertFilter.isSelected$());
-pdbRequest.setSearchTerm$S(P$.StructureChooser.buildQuery$jalview_datamodel_SequenceI(seq) + ")");
+pdbRequest.setSearchTerm$S($I$(21).buildQuery$jalview_datamodel_SequenceI(seq) + ")");
 pdbRequest.setWantedFields$java_util_Collection(wantedFields);
 pdbRequest.setAssociatedSequence$jalview_datamodel_SequenceI(seq);
 }var resultList;
@@ -274,7 +261,7 @@ resultList=this.b$['jalview.gui.StructureChooser'].pdbRestClient.executeRequest$
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 e.printStackTrace$();
-errors.add$TE(e.getMessage$());
+errors.add$O(e.getMessage$());
 continue;
 } else {
 throw e;
@@ -287,11 +274,11 @@ filteredResponse.addAll$java_util_Collection(resultList.getSearchSummary$());
 var totalTime=(System.currentTimeMillis$() - startTime) + " milli secs";
 if (!filteredResponse.isEmpty$()) {
 var filterResponseCount=filteredResponse.size$();
-var reorderedStructuresSet=Clazz.new_($I$(12));
+var reorderedStructuresSet=Clazz.new_($I$(12,1));
 reorderedStructuresSet.addAll$java_util_Collection(filteredResponse);
 reorderedStructuresSet.addAll$java_util_Collection(this.b$['jalview.gui.StructureChooser'].discoveredStructuresSet);
 this.b$['jalview.jbgui.GStructureChooser'].getResultTable$.apply(this.b$['jalview.jbgui.GStructureChooser'], []).setModel$javax_swing_table_TableModel($I$(15).getTableModel$jalview_fts_core_FTSRestRequest$java_util_Collection(this.b$['jalview.gui.StructureChooser'].lastPdbRequest, reorderedStructuresSet));
-$I$(15).configureTableColumn$javax_swing_JTable$java_util_Collection$java_util_Map(this.b$['jalview.jbgui.GStructureChooser'].getResultTable$.apply(this.b$['jalview.jbgui.GStructureChooser'], []), wantedFields, $I$(21).tempUserPrefs);
+$I$(15,"configureTableColumn$javax_swing_JTable$java_util_Collection$java_util_Map",[this.b$['jalview.jbgui.GStructureChooser'].getResultTable$.apply(this.b$['jalview.jbgui.GStructureChooser'], []), wantedFields, $I$(22).tempUserPrefs]);
 this.b$['jalview.jbgui.GStructureChooser'].getResultTable$.apply(this.b$['jalview.jbgui.GStructureChooser'], []).getColumn$O("Ref Sequence").setPreferredWidth$I(120);
 this.b$['jalview.jbgui.GStructureChooser'].getResultTable$.apply(this.b$['jalview.jbgui.GStructureChooser'], []).getColumn$O("Ref Sequence").setMinWidth$I(100);
 this.b$['jalview.jbgui.GStructureChooser'].getResultTable$.apply(this.b$['jalview.jbgui.GStructureChooser'], []).getColumn$O("Ref Sequence").setMaxWidth$I(200);
@@ -300,24 +287,24 @@ this.b$['jalview.gui.StructureChooser'].mainFrame.setTitle$S($I$(8).formatMessag
 } else {
 this.b$['jalview.gui.StructureChooser'].mainFrame.setTitle$S($I$(8).formatMessage$S$OA("label.structure_chooser_filter_time", [totalTime]));
 if (errors.size$() > 0) {
-var errorMsg=Clazz.new_($I$(16));
+var errorMsg=Clazz.new_($I$(16,1));
 for (var error, $error = errors.iterator$(); $error.hasNext$()&&((error=($error.next$())),1);) {
 errorMsg.append$S(error).append$S("\n");
 }
-$I$(17).showMessageDialog$java_awt_Component$S$S$I(null, errorMsg.toString(), $I$(8).getString$S("label.pdb_web-service_error"), 0);
+$I$(17,"showMessageDialog$java_awt_Component$S$S$I",[null, errorMsg.toString(), $I$(8).getString$S("label.pdb_web-service_error"), 0]);
 }}this.b$['jalview.gui.StructureChooser'].lbl_loading.setVisible$Z(false);
 this.b$['jalview.gui.StructureChooser'].validateSelections$.apply(this.b$['jalview.gui.StructureChooser'], []);
 });
 })()
-), Clazz.new_(P$.StructureChooser$2.$init$, [this, {fieldToFilterBy: fieldToFilterBy}]))]);
+), Clazz.new_(P$.StructureChooser$2.$init$,[this, {fieldToFilterBy:fieldToFilterBy}]))],$I$(7,1).c$$Runnable);
 filterThread.start$();
 });
 
 Clazz.newMeth(C$, 'pdbFromFile_actionPerformed$', function () {
-var chooser=Clazz.new_($I$(22).c$$S,[$I$(6).getProperty$S("LAST_DIRECTORY")]);
-chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(23)));
-chooser.setDialogTitle$S($I$(8).formatMessage$S$OA("label.select_pdb_file_for", [this.selectedSequence.getDisplayId$Z(false)]));
-chooser.setToolTipText$S($I$(8).formatMessage$S$OA("label.load_pdb_file_associate_with_sequence", [this.selectedSequence.getDisplayId$Z(false)]));
+var chooser=Clazz.new_([$I$(6).getProperty$S("LAST_DIRECTORY")],$I$(23,1).c$$S);
+chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(24,1)));
+chooser.setDialogTitle$S($I$(8,"formatMessage$S$OA",["label.select_pdb_file_for", [this.selectedSequence.getDisplayId$Z(false)]]));
+chooser.setToolTipText$S($I$(8,"formatMessage$S$OA",["label.load_pdb_file_associate_with_sequence", [this.selectedSequence.getDisplayId$Z(false)]]));
 var value=chooser.showOpenDialog$java_awt_Component(null);
 if (value == 0) {
 this.selectedPdbFileName=chooser.getSelectedFile$().getPath$();
@@ -329,16 +316,16 @@ Clazz.newMeth(C$, 'populateFilterComboBox$Z$Z', function (haveData, cachedPDBExi
 this.cmb_filterOption.removeItemListener$java_awt_event_ItemListener(this);
 this.cmb_filterOption.removeAllItems$();
 if (haveData) {
-this.cmb_filterOption.addItem$TE(Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.best_quality"), "overall_quality", "VIEWS_FILTER", false]));
-this.cmb_filterOption.addItem$TE(Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.best_resolution"), "resolution", "VIEWS_FILTER", false]));
-this.cmb_filterOption.addItem$TE(Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.most_protein_chain"), "number_of_protein_chains", "VIEWS_FILTER", false]));
-this.cmb_filterOption.addItem$TE(Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.most_bound_molecules"), "number_of_bound_molecules", "VIEWS_FILTER", false]));
-this.cmb_filterOption.addItem$TE(Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.most_polymer_residues"), "number_of_polymer_residues", "VIEWS_FILTER", true]));
-}this.cmb_filterOption.addItem$TE(Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.enter_pdb_id"), "-", "VIEWS_ENTER_ID", false]));
-this.cmb_filterOption.addItem$TE(Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.from_file"), "-", "VIEWS_FROM_FILE", false]));
+this.cmb_filterOption.addItem$O(Clazz.new_([this, null, $I$(8).getString$S("label.best_quality"), "overall_quality", "VIEWS_FILTER", false],$I$(25,1).c$$S$S$S$Z));
+this.cmb_filterOption.addItem$O(Clazz.new_([this, null, $I$(8).getString$S("label.best_resolution"), "resolution", "VIEWS_FILTER", false],$I$(25,1).c$$S$S$S$Z));
+this.cmb_filterOption.addItem$O(Clazz.new_([this, null, $I$(8).getString$S("label.most_protein_chain"), "number_of_protein_chains", "VIEWS_FILTER", false],$I$(25,1).c$$S$S$S$Z));
+this.cmb_filterOption.addItem$O(Clazz.new_([this, null, $I$(8).getString$S("label.most_bound_molecules"), "number_of_bound_molecules", "VIEWS_FILTER", false],$I$(25,1).c$$S$S$S$Z));
+this.cmb_filterOption.addItem$O(Clazz.new_([this, null, $I$(8).getString$S("label.most_polymer_residues"), "number_of_polymer_residues", "VIEWS_FILTER", true],$I$(25,1).c$$S$S$S$Z));
+}this.cmb_filterOption.addItem$O(Clazz.new_([this, null, $I$(8).getString$S("label.enter_pdb_id"), "-", "VIEWS_ENTER_ID", false],$I$(25,1).c$$S$S$S$Z));
+this.cmb_filterOption.addItem$O(Clazz.new_([this, null, $I$(8).getString$S("label.from_file"), "-", "VIEWS_FROM_FILE", false],$I$(25,1).c$$S$S$S$Z));
 if (cachedPDBExist) {
-var cachedOption=Clazz.new_($I$(24).c$$S$S$S$Z, [this, null, $I$(8).getString$S("label.cached_structures"), "-", "VIEWS_LOCAL_PDB", false]);
-this.cmb_filterOption.addItem$TE(cachedOption);
+var cachedOption=Clazz.new_([this, null, $I$(8).getString$S("label.cached_structures"), "-", "VIEWS_LOCAL_PDB", false],$I$(25,1).c$$S$S$S$Z);
+this.cmb_filterOption.addItem$O(cachedOption);
 this.cmb_filterOption.setSelectedItem$O(cachedOption);
 }this.cmb_filterOption.addItemListener$java_awt_event_ItemListener(this);
 });
@@ -386,10 +373,10 @@ var assSeqOpt=this.idInputAssSeqPanel.getCmb_assSeq$().getSelectedItem$();
 this.lbl_pdbManualFetchStatus.setIcon$javax_swing_Icon(this.errorImage);
 this.lbl_pdbManualFetchStatus.setToolTipText$S("");
 if (this.txt_search.getText$().length$() > 0) {
-this.lbl_pdbManualFetchStatus.setToolTipText$S($I$(25).wrapTooltip$Z$S(true, $I$(8).formatMessage$S$OA("info.no_pdb_entry_found_for", [this.txt_search.getText$()])));
+this.lbl_pdbManualFetchStatus.setToolTipText$S($I$(26,"wrapTooltip$Z$S",[true, $I$(8,"formatMessage$S$OA",["info.no_pdb_entry_found_for", [this.txt_search.getText$()]])]));
 }if (this.errorWarning.length$() > 0) {
 this.lbl_pdbManualFetchStatus.setIcon$javax_swing_Icon(this.warningImage);
-this.lbl_pdbManualFetchStatus.setToolTipText$S($I$(25).wrapTooltip$Z$S(true, this.errorWarning.toString()));
+this.lbl_pdbManualFetchStatus.setToolTipText$S($I$(26,"wrapTooltip$Z$S",[true, this.errorWarning.toString()]));
 }if (this.selectedSequences.length == 1 || !assSeqOpt.getName$().equalsIgnoreCase$S("-Select Associated Seq-") ) {
 this.txt_search.setEnabled$Z(true);
 if (this.isValidPBDEntry) {
@@ -457,13 +444,12 @@ Clazz.newMeth(C$, 'showStructures$Z', function (waitUntilFinished) {
 var ssm=this.ap.getStructureSelectionManager$();
 var preferredHeight=this.pnl_filter.getHeight$();
 var viewStruc=((P$.StructureChooser$3||
-(function(){var C$=Clazz.newClass(P$, "StructureChooser$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "StructureChooser$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var selectedFilterOpt=(this.b$['jalview.gui.StructureChooser'].cmb_filterOption.getSelectedItem$());
@@ -475,22 +461,22 @@ var refSeqColIndex=restable.getColumn$O("Ref Sequence").getModelIndex$();
 var selectedRows=restable.getSelectedRows$();
 var pdbEntriesToView=Clazz.array($I$(3), [selectedRows.length]);
 var count=0;
-var selectedSeqsToView=Clazz.new_($I$(1));
+var selectedSeqsToView=Clazz.new_($I$(1,1));
 for (var row, $row = 0, $$row = selectedRows; $row<$$row.length&&((row=($$row[$row])),1);$row++) {
 var pdbIdStr=restable.getValueAt$I$I(row, pdbIdColIndex).toString();
 var selectedSeq=restable.getValueAt$I$I(row, refSeqColIndex);
-selectedSeqsToView.add$TE(selectedSeq);
+selectedSeqsToView.add$O(selectedSeq);
 var pdbEntry=selectedSeq.getPDBEntry$S(pdbIdStr);
 if (pdbEntry == null ) {
 pdbEntry=p$1.getFindEntry$S$java_util_Vector.apply(this.b$['jalview.gui.StructureChooser'], [pdbIdStr, selectedSeq.getAllPDBEntries$()]);
 }if (pdbEntry == null ) {
-pdbEntry=Clazz.new_($I$(3));
+pdbEntry=Clazz.new_($I$(3,1));
 pdbEntry.setId$S(pdbIdStr);
-pdbEntry.setType$jalview_datamodel_PDBEntry_Type($I$(26).PDB);
+pdbEntry.setType$jalview_datamodel_PDBEntry_Type($I$(27).PDB);
 selectedSeq.getDatasetSequence$().addPDBId$jalview_datamodel_PDBEntry(pdbEntry);
 }pdbEntriesToView[count++]=pdbEntry;
 }
-var selectedSeqs=selectedSeqsToView.toArray$TTA(Clazz.array($I$(2), [selectedSeqsToView.size$()]));
+var selectedSeqs=selectedSeqsToView.toArray$OA(Clazz.array($I$(2), [selectedSeqsToView.size$()]));
 this.b$['jalview.gui.StructureChooser'].sViewer=p$1.launchStructureViewer$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceIA.apply(this.b$['jalview.gui.StructureChooser'], [this.$finals$.ssm, pdbEntriesToView, this.b$['jalview.gui.StructureChooser'].ap, selectedSeqs]);
 } else if (currentView == "VIEWS_LOCAL_PDB") {
 var selectedRows=this.b$['jalview.gui.StructureChooser'].tbl_local_pdb.getSelectedRows$();
@@ -498,14 +484,14 @@ var pdbEntriesToView=Clazz.array($I$(3), [selectedRows.length]);
 var count=0;
 var pdbIdColIndex=this.b$['jalview.gui.StructureChooser'].tbl_local_pdb.getColumn$O("PDB Id").getModelIndex$();
 var refSeqColIndex=this.b$['jalview.gui.StructureChooser'].tbl_local_pdb.getColumn$O("Ref Sequence").getModelIndex$();
-var selectedSeqsToView=Clazz.new_($I$(1));
+var selectedSeqsToView=Clazz.new_($I$(1,1));
 for (var row, $row = 0, $$row = selectedRows; $row<$$row.length&&((row=($$row[$row])),1);$row++) {
 var pdbEntry=this.b$['jalview.gui.StructureChooser'].tbl_local_pdb.getValueAt$I$I(row, pdbIdColIndex);
 pdbEntriesToView[count++]=pdbEntry;
 var selectedSeq=this.b$['jalview.gui.StructureChooser'].tbl_local_pdb.getValueAt$I$I(row, refSeqColIndex);
-selectedSeqsToView.add$TE(selectedSeq);
+selectedSeqsToView.add$O(selectedSeq);
 }
-var selectedSeqs=selectedSeqsToView.toArray$TTA(Clazz.array($I$(2), [selectedSeqsToView.size$()]));
+var selectedSeqs=selectedSeqsToView.toArray$OA(Clazz.array($I$(2), [selectedSeqsToView.size$()]));
 this.b$['jalview.gui.StructureChooser'].sViewer=p$1.launchStructureViewer$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceIA.apply(this.b$['jalview.gui.StructureChooser'], [this.$finals$.ssm, pdbEntriesToView, this.b$['jalview.gui.StructureChooser'].ap, selectedSeqs]);
 } else if (currentView == "VIEWS_ENTER_ID") {
 var userSelectedSeq=(this.b$['jalview.gui.StructureChooser'].idInputAssSeqPanel.getCmb_assSeq$().getSelectedItem$()).getSequence$();
@@ -514,13 +500,13 @@ this.b$['jalview.gui.StructureChooser'].selectedSequence=userSelectedSeq;
 }var pdbIdStr=this.b$['jalview.gui.StructureChooser'].txt_search.getText$();
 var pdbEntry=this.b$['jalview.gui.StructureChooser'].selectedSequence.getPDBEntry$S(pdbIdStr);
 if (pdbEntry == null ) {
-pdbEntry=Clazz.new_($I$(3));
+pdbEntry=Clazz.new_($I$(3,1));
 if (pdbIdStr.split$S(":").length > 1) {
 pdbEntry.setId$S(pdbIdStr.split$S(":")[0]);
 pdbEntry.setChainCode$S(pdbIdStr.split$S(":")[1].toUpperCase$());
 } else {
 pdbEntry.setId$S(pdbIdStr);
-}pdbEntry.setType$jalview_datamodel_PDBEntry_Type($I$(26).PDB);
+}pdbEntry.setType$jalview_datamodel_PDBEntry_Type($I$(27).PDB);
 this.b$['jalview.gui.StructureChooser'].selectedSequence.getDatasetSequence$().addPDBId$jalview_datamodel_PDBEntry(pdbEntry);
 }var pdbEntriesToView=Clazz.array($I$(3), -1, [pdbEntry]);
 this.b$['jalview.gui.StructureChooser'].sViewer=p$1.launchStructureViewer$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceIA.apply(this.b$['jalview.gui.StructureChooser'], [this.$finals$.ssm, pdbEntriesToView, this.b$['jalview.gui.StructureChooser'].ap, Clazz.array($I$(2), -1, [this.b$['jalview.gui.StructureChooser'].selectedSequence])]);
@@ -528,27 +514,26 @@ this.b$['jalview.gui.StructureChooser'].sViewer=p$1.launchStructureViewer$jalvie
 var userSelectedSeq=(this.b$['jalview.gui.StructureChooser'].fileChooserAssSeqPanel.getCmb_assSeq$().getSelectedItem$()).getSequence$();
 if (userSelectedSeq != null ) {
 this.b$['jalview.gui.StructureChooser'].selectedSequence=userSelectedSeq;
-}var fileEntry=Clazz.new_($I$(27)).associatePdbWithSeq$S$jalview_io_DataSourceType$jalview_datamodel_SequenceI$Z$jalview_api_StructureSelectionManagerProvider(this.b$['jalview.gui.StructureChooser'].selectedPdbFileName, $I$(28).FILE, this.b$['jalview.gui.StructureChooser'].selectedSequence, true, $I$(9).instance);
+}var fileEntry=Clazz.new_($I$(28,1)).associatePdbWithSeq$S$jalview_io_DataSourceType$jalview_datamodel_SequenceI$Z$jalview_api_StructureSelectionManagerProvider(this.b$['jalview.gui.StructureChooser'].selectedPdbFileName, $I$(29).FILE, this.b$['jalview.gui.StructureChooser'].selectedSequence, true, $I$(9).instance);
 this.b$['jalview.gui.StructureChooser'].sViewer=p$1.launchStructureViewer$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceIA.apply(this.b$['jalview.gui.StructureChooser'], [this.$finals$.ssm, Clazz.array($I$(3), -1, [fileEntry]), this.b$['jalview.gui.StructureChooser'].ap, Clazz.array($I$(2), -1, [this.b$['jalview.gui.StructureChooser'].selectedSequence])]);
-}$I$(29).invokeLater$Runnable(((P$.StructureChooser$3$1||
-(function(){var C$=Clazz.newClass(P$, "StructureChooser$3$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+}$I$(30,"invokeLater$Runnable",[((P$.StructureChooser$3$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "StructureChooser$3$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.jbgui.GStructureChooser'].closeAction$I.apply(this.b$['jalview.jbgui.GStructureChooser'], [this.$finals$.preferredHeight]);
 this.b$['jalview.gui.StructureChooser'].mainFrame.dispose$();
 });
 })()
-), Clazz.new_(P$.StructureChooser$3$1.$init$, [this, {preferredHeight: this.$finals$.preferredHeight}])));
+), Clazz.new_(P$.StructureChooser$3$1.$init$,[this, {preferredHeight:this.$finals$.preferredHeight}]))]);
 });
 })()
-), Clazz.new_(P$.StructureChooser$3.$init$, [this, {ssm: ssm, preferredHeight: preferredHeight}]));
-var runner=Clazz.new_($I$(7).c$$Runnable,[viewStruc]);
+), Clazz.new_(P$.StructureChooser$3.$init$,[this, {preferredHeight:preferredHeight,ssm:ssm}]));
+var runner=Clazz.new_($I$(7,1).c$$Runnable,[viewStruc]);
 runner.start$();
 if (waitUntilFinished) {
 while (this.sViewer == null  ? runner.isAlive$() : (this.sViewer.sview == null  ? true : !this.sViewer.sview.hasMapping$())){
@@ -564,8 +549,8 @@ throw ie;
 }});
 
 Clazz.newMeth(C$, 'getFindEntry$S$java_util_Vector', function (id, pdbEntries) {
-$I$(20).requireNonNull$TT(id);
-$I$(20).requireNonNull$TT(pdbEntries);
+$I$(20).requireNonNull$O(id);
+$I$(20).requireNonNull$O(pdbEntries);
 var foundEntry=null;
 for (var entry, $entry = pdbEntries.iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 if (entry.getId$().equalsIgnoreCase$S(id)) {
@@ -576,7 +561,7 @@ return foundEntry;
 
 Clazz.newMeth(C$, 'getTargetedStructureViewer$jalview_structure_StructureSelectionManager', function (ssm) {
 var sv=this.targetView.getSelectedItem$();
-return sv == null  ? Clazz.new_($I$(10).c$$jalview_structure_StructureSelectionManager,[ssm]) : sv;
+return sv == null  ? Clazz.new_($I$(10,1).c$$jalview_structure_StructureSelectionManager,[ssm]) : sv;
 });
 
 Clazz.newMeth(C$, 'launchStructureViewer$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_gui_AlignmentPanel$jalview_datamodel_SequenceIA', function (ssm, pdbEntriesToView, alignPanel, sequences) {
@@ -585,10 +570,10 @@ this.setProgressBar$S$J($I$(8).getString$S("status.launching_3d_structure_viewer
 var theViewer=this.getTargetedStructureViewer$jalview_structure_StructureSelectionManager(ssm);
 var superimpose=this.chk_superpose.isSelected$();
 theViewer.setSuperpose$Z(superimpose);
-$I$(6).setProperty$S$S("AUTOSUPERIMPOSE", $I$(30).valueOf$Z(superimpose).toString());
+$I$(6,"setProperty$S$S",["AUTOSUPERIMPOSE", $I$(31).valueOf$Z(superimpose).toString()]);
 this.setProgressBar$S$J(null, progressId);
-if ($I$(31).isMapWithSifts$()) {
-var seqsWithoutSourceDBRef=Clazz.new_($I$(1));
+if ($I$(32).isMapWithSifts$()) {
+var seqsWithoutSourceDBRef=Clazz.new_($I$(1,1));
 var p=0;
 for (var seq, $seq = 0, $$seq = sequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
 var pdbe=pdbEntriesToView[p++];
@@ -600,21 +585,21 @@ if (sm.getSequence$() === seq ) {
 continue;
 }}
 }}if (seq.getPrimaryDBRefs$().isEmpty$()) {
-seqsWithoutSourceDBRef.add$TE(seq);
+seqsWithoutSourceDBRef.add$O(seq);
 continue;
 }}
 if (!seqsWithoutSourceDBRef.isEmpty$()) {
 var y=seqsWithoutSourceDBRef.size$();
-this.setProgressBar$S$J($I$(8).formatMessage$S$OA("status.fetching_dbrefs_for_sequences_without_valid_refs", [new Integer(y)]), progressId);
-var seqWithoutSrcDBRef=seqsWithoutSourceDBRef.toArray$TTA(Clazz.array($I$(2), [y]));
-var dbRefFetcher=Clazz.new_($I$(32).c$$jalview_datamodel_SequenceIA,[seqWithoutSrcDBRef]);
+this.setProgressBar$S$J($I$(8,"formatMessage$S$OA",["status.fetching_dbrefs_for_sequences_without_valid_refs", [new Integer(y)]]), progressId);
+var seqWithoutSrcDBRef=seqsWithoutSourceDBRef.toArray$OA(Clazz.array($I$(2), [y]));
+var dbRefFetcher=Clazz.new_($I$(33,1).c$$jalview_datamodel_SequenceIA,[seqWithoutSrcDBRef]);
 dbRefFetcher.fetchDBRefs$Z(true);
 this.setProgressBar$S$J("Fetch complete.", progressId);
 }}if (pdbEntriesToView.length > 1) {
 this.setProgressBar$S$J($I$(8).getString$S("status.fetching_3d_structures_for_selected_entries"), progressId);
 theViewer.viewStructures$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIA$jalview_gui_AlignmentPanel(pdbEntriesToView, sequences, alignPanel);
 } else {
-this.setProgressBar$S$J($I$(8).formatMessage$S$OA("status.fetching_3d_structures_for", [pdbEntriesToView[0].getId$()]), progressId);
+this.setProgressBar$S$J($I$(8,"formatMessage$S$OA",["status.fetching_3d_structures_for", [pdbEntriesToView[0].getId$()]]), progressId);
 theViewer.viewStructures$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$jalview_gui_AlignmentPanel(pdbEntriesToView[0], sequences, alignPanel);
 }this.setProgressBar$S$J(null, progressId);
 C$.lastTargetedView=theViewer;
@@ -623,11 +608,11 @@ return theViewer;
 
 Clazz.newMeth(C$, 'populateCmbAssociateSeqOptions$javax_swing_JComboBox$javax_swing_JLabel', function (cmb_assSeq, lbl_associateSeq) {
 cmb_assSeq.removeAllItems$();
-cmb_assSeq.addItem$TE(Clazz.new_($I$(33).c$$S$jalview_datamodel_SequenceI, [this, null, "-Select Associated Seq-", null]));
+cmb_assSeq.addItem$O(Clazz.new_($I$(34,1).c$$S$jalview_datamodel_SequenceI,[this, null, "-Select Associated Seq-", null]));
 lbl_associateSeq.setVisible$Z(false);
 if (this.selectedSequences.length > 1) {
 for (var seq, $seq = 0, $$seq = this.selectedSequences; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
-cmb_assSeq.addItem$TE(Clazz.new_($I$(33).c$$jalview_datamodel_SequenceI, [this, null, seq]));
+cmb_assSeq.addItem$O(Clazz.new_($I$(34,1).c$$jalview_datamodel_SequenceI,[this, null, seq]));
 }
 } else {
 var seqName=this.selectedSequence.getDisplayId$Z(false);
@@ -644,13 +629,12 @@ return this.discoveredStructuresSet != null  && !this.discoveredStructuresSet.is
 Clazz.newMeth(C$, 'txt_search_ActionPerformed$', function () {
 var text=this.txt_search.getText$().trim$();
 if (text.length$() >= this.PDB_ID_MIN) ((P$.StructureChooser$4||
-(function(){var C$=Clazz.newClass(P$, "StructureChooser$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "StructureChooser$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.gui.StructureChooser'].errorWarning.setLength$I(0);
@@ -658,8 +642,8 @@ this.b$['jalview.gui.StructureChooser'].isValidPBDEntry=false;
 if (this.$finals$.text.length$() > 0) {
 var searchTerm=this.$finals$.text.toLowerCase$();
 searchTerm=searchTerm.split$S(":")[0];
-var wantedFields=Clazz.new_($I$(1));
-var pdbRequest=Clazz.new_($I$(14));
+var wantedFields=Clazz.new_($I$(1,1));
+var pdbRequest=Clazz.new_($I$(14,1));
 pdbRequest.setAllowEmptySeq$Z(false);
 pdbRequest.setResponseSize$I(1);
 pdbRequest.setFieldToSearchBy$S("(pdb_id:");
@@ -667,7 +651,7 @@ pdbRequest.setWantedFields$java_util_Collection(wantedFields);
 pdbRequest.setSearchTerm$S(searchTerm + ")");
 pdbRequest.setAssociatedSequence$jalview_datamodel_SequenceI(this.b$['jalview.gui.StructureChooser'].selectedSequence);
 this.b$['jalview.gui.StructureChooser'].pdbRestClient=$I$(11).getInstance$();
-wantedFields.add$TE(this.b$['jalview.gui.StructureChooser'].pdbRestClient.getPrimaryKeyColumn$());
+wantedFields.add$O(this.b$['jalview.gui.StructureChooser'].pdbRestClient.getPrimaryKeyColumn$());
 var resultList;
 try {
 resultList=this.b$['jalview.gui.StructureChooser'].pdbRestClient.executeRequest$jalview_fts_core_FTSRestRequest(pdbRequest);
@@ -686,26 +670,25 @@ this.b$['jalview.gui.StructureChooser'].isValidPBDEntry=true;
 }}this.b$['jalview.gui.StructureChooser'].validateSelections$.apply(this.b$['jalview.gui.StructureChooser'], []);
 });
 })()
-), Clazz.new_($I$(7), [this, {text: text}],P$.StructureChooser$4)).start$();
+), Clazz.new_($I$(7,1),[this, {text:text}],P$.StructureChooser$4)).start$();
 });
 
 Clazz.newMeth(C$, 'tabRefresh$', function () {
 if (this.selectedSequences != null ) {
-var refreshThread=Clazz.new_($I$(7).c$$Runnable,[((P$.StructureChooser$5||
-(function(){var C$=Clazz.newClass(P$, "StructureChooser$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+var refreshThread=Clazz.new_([((P$.StructureChooser$5||
+(function(){/*a*/var C$=Clazz.newClass(P$, "StructureChooser$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.gui.StructureChooser'].fetchStructuresMetaData$.apply(this.b$['jalview.gui.StructureChooser'], []);
 this.b$['jalview.gui.StructureChooser'].filterResultSet$S.apply(this.b$['jalview.gui.StructureChooser'], [(this.b$['jalview.gui.StructureChooser'].cmb_filterOption.getSelectedItem$()).getValue$()]);
 });
 })()
-), Clazz.new_(P$.StructureChooser$5.$init$, [this, null]))]);
+), Clazz.new_(P$.StructureChooser$5.$init$,[this, null]))],$I$(7,1).c$$Runnable);
 refreshThread.start$();
 }});
 
@@ -724,27 +707,27 @@ return this.progressBar.operationInProgress$();
 Clazz.newMeth(C$, 'getOpenedStructureViewer$', function () {
 return this.sViewer == null  ? null : this.sViewer.sview;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.MAX_QLENGTH=7820;
+C$.lastTargetedView=null;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.StructureChooser, "PDBEntryTableModel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StructureChooser, "PDBEntryTableModel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.table.AbstractTableModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.columns=null;
-this.pdbEntries=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.columns=Clazz.array(String, -1, ["Ref Sequence", "PDB Id", "Chain", "Type", "File"]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['columns','String[]','pdbEntries','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (pdbEntries) {
-Clazz.super_(C$, this,1);
-this.pdbEntries=Clazz.new_($I$(1).c$$java_util_Collection,[pdbEntries]);
+Clazz.super_(C$, this);
+this.pdbEntries=Clazz.new_($I$(1,1).c$$java_util_Collection,[pdbEntries]);
 }, 1);
 
 Clazz.newMeth(C$, 'getColumnName$I', function (columnIndex) {
@@ -797,24 +780,19 @@ return this.pdbEntries.get$I(row);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.StructureChooser, "CachedPDB", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.StructureChooser, "CachedPDB", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequence=null;
-this.pdbEntry=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sequence','jalview.datamodel.SequenceI','pdbEntry','jalview.datamodel.PDBEntry']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$jalview_datamodel_PDBEntry', function (sequence, pdbEntry) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.sequence=sequence;
 this.pdbEntry=pdbEntry;
 }, 1);
@@ -829,5 +807,7 @@ return this.pdbEntry;
 
 Clazz.newMeth(C$);
 })()
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

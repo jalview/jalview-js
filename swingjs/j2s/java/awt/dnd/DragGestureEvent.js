@@ -1,24 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt.dnd"),I$=[];
-var C$=Clazz.newClass(P$, "DragGestureEvent", null, 'java.util.EventObject');
+/*c*/var C$=Clazz.newClass(P$, "DragGestureEvent", null, 'java.util.EventObject');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.events=null;
-this.dragSource=null;
-this.component=null;
-this.origin=null;
-this.action=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['action'],'O',['events','java.util.List','dragSource','java.awt.dnd.DragSource','component','java.awt.Component','origin','java.awt.Point']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_DragGestureRecognizer$I$java_awt_Point$java_util_List', function (dgr, act, ori, evs) {
-C$.superclazz.c$$O.apply(this, [dgr]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O.apply(this,[dgr]);C$.$init$.apply(this);
 if ((this.component=dgr.getComponent$()) == null ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["null component"]);
 if ((this.dragSource=dgr.getDragSource$()) == null ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["null DragSource"]);
 if (evs == null  || evs.isEmpty$() ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["null or empty list of events"]);
@@ -54,7 +45,7 @@ return this.events.toArray$();
 });
 
 Clazz.newMeth(C$, 'toArray$OA', function (array) {
-return this.events.toArray$TTA(array);
+return this.events.toArray$OA(array);
 });
 
 Clazz.newMeth(C$, 'getDragAction$', function () {
@@ -79,4 +70,4 @@ this.dragSource.startDrag$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,33 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.util.Escape','java.util.Hashtable','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Modulation");
-C$.legendre=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.util.Escape','java.util.Hashtable','javajs.util.AU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Modulation");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.legendre=Clazz.array(Double.TYPE, -2, [Clazz.array(Double.TYPE, -1, [1]), Clazz.array(Double.TYPE, -1, [0, 1])]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.qCoefs=null;
-this.a1=0;
-this.a2=0;
-this.center=0;
-this.left=0;
-this.right=0;
-this.order=0;
-this.axis='\0';
-this.type='\0';
-this.params=null;
-this.utens=null;
-this.delta2=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['C',['axis','type'],'D',['a1','a2','center','left','right','delta2'],'I',['order'],'S',['utens'],'O',['qCoefs','double[]','+params']]
+,['O',['legendre','double[][]']]]
 
 Clazz.newMeth(C$, 'c$$C$C$DA$S$DA', function (axis, type, params, utens, qCoefs) {
-C$.$init$.apply(this);
-$I$(1).info$S("MOD create " + $I$(2).e$O(qCoefs) + " axis=" + axis + " type=" + type + " params=" + $I$(2).e$O(params) + " utens=" + utens );
+;C$.$init$.apply(this);
+(function(a,f){return f.apply(null,a)})(["MOD create " + $I$(2).e$O(qCoefs) + " axis=" + axis + " type=" + type + " params=" + $I$(2).e$O(params) + " utens=" + utens ],$I$(1).info$S);
 this.axis=axis;
 this.type=type;
 this.utens=utens;
@@ -78,7 +62,7 @@ case 117:
 var theta=6.283185307179586 * nt;
 if (this.a1 != 0 ) v += this.a1 * Math.sin(theta);
 if (this.a2 != 0 ) v += this.a2 * Math.cos(theta);
-if ($I$(1).debuggingHigh) $I$(1).info$S("MOD " + ms.id + " " + $I$(2).e$O(this.qCoefs) + " axis=" + this.axis + " v=" + new Double(v).toString() + " csin,ccos=" + new Double(this.a1).toString() + "," + new Double(this.a2).toString() + " / theta=" + new Double(theta).toString() );
+if ($I$(1).debuggingHigh) (function(a,f){return f.apply(null,a)})(["MOD " + ms.id + " " + $I$(2).e$O(this.qCoefs) + " axis=" + this.axis + " v=" + new Double(v).toString() + " csin,ccos=" + new Double(this.a1).toString() + "," + new Double(this.a2).toString() + " / theta=" + new Double(theta).toString() ],$I$(1).info$S);
 break;
 case 76:
 case 108:
@@ -159,11 +143,11 @@ return (this.left < this.right  ? this.left <= x4  && x4 <= this.right   : this.
 }, p$1);
 
 Clazz.newMeth(C$, 'getInfo$', function () {
-var info=Clazz.new_($I$(3));
-info.put$TK$TV("type", "" + this.type + this.axis );
-info.put$TK$TV("params", this.params);
-info.put$TK$TV("qCoefs", this.qCoefs);
-if (this.utens != null ) info.put$TK$TV("Utens", this.utens);
+var info=Clazz.new_($I$(3,1));
+info.put$O$O("type", "" + this.type + this.axis );
+info.put$O$O("params", this.params);
+info.put$O$O("qCoefs", this.qCoefs);
+if (this.utens != null ) info.put$O$O("Utens", this.utens);
 return info;
 });
 
@@ -184,6 +168,10 @@ if (i < n - 1) p[i] += (1 - n) * l[n - 2][i] / n;
 C$.legendre=l;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.legendre=Clazz.array(Double.TYPE, -2, [Clazz.array(Double.TYPE, -1, [1]), Clazz.array(Double.TYPE, -1, [0, 1])]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

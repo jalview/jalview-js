@@ -1,24 +1,23 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},p$2={},I$=[[0,'java.awt.GridBagLayout','java.awt.GridBagConstraints','javax.swing.JPanel','javax.swing.colorchooser.MainSwatchPanel','javax.swing.colorchooser.RecentSwatchPanel',['javax.swing.colorchooser.DefaultSwatchChooserPanel','.MainSwatchListener'],['javax.swing.colorchooser.DefaultSwatchChooserPanel','.RecentSwatchListener'],'java.awt.BorderLayout','javax.swing.border.CompoundBorder','javax.swing.border.LineBorder','java.awt.Color','java.awt.Insets','javax.swing.JLabel','java.awt.Dimension','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MainSwatchPanel", null, 'javax.swing.colorchooser.SwatchPanel');
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},p$2={},I$=[[0,'javax.swing.colorchooser.AbstractColorChooserPanel','java.awt.GridBagLayout','java.awt.GridBagConstraints','javax.swing.JPanel','javax.swing.colorchooser.MainSwatchPanel','javax.swing.colorchooser.RecentSwatchPanel',['javax.swing.colorchooser.DefaultSwatchChooserPanel','.MainSwatchListener'],['javax.swing.colorchooser.DefaultSwatchChooserPanel','.RecentSwatchListener'],'java.awt.BorderLayout','javax.swing.border.CompoundBorder','javax.swing.border.LineBorder','java.awt.Color','java.awt.Insets','javax.swing.JLabel','java.awt.Dimension','javax.swing.UIManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MainSwatchPanel", null, 'javax.swing.colorchooser.SwatchPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initValues$', function () {
-this.swatchSize=$I$(15).getDimension$O("ColorChooser.swatchesSwatchSize");
-this.numSwatches=Clazz.new_($I$(14).c$$I$I,[31, 9]);
-this.gap=Clazz.new_($I$(14).c$$I$I,[1, 1]);
+this.swatchSize=$I$(16).getDimension$O("ColorChooser.swatchesSwatchSize");
+this.numSwatches=Clazz.new_($I$(15,1).c$$I$I,[31, 9]);
+this.gap=Clazz.new_($I$(15,1).c$$I$I,[1, 1]);
 });
 
 Clazz.newMeth(C$, 'initColors$', function () {
 var rawValues=p$2.initRawValues.apply(this, []);
 var numColors=(rawValues.length/3|0);
-this.colors=Clazz.array($I$(11), [numColors]);
+this.colors=Clazz.array($I$(12), [numColors]);
 for (var i=0; i < numColors; i++) {
-this.colors[i]=Clazz.new_($I$(11).c$$I$I$I,[rawValues[(i * 3)], rawValues[(i * 3) + 1], rawValues[(i * 3) + 2]]);
+this.colors[i]=Clazz.new_([rawValues[(i * 3)], rawValues[(i * 3) + 1], rawValues[(i * 3) + 2]],$I$(12,1).c$$I$I$I);
 }
 });
 
@@ -29,4 +28,4 @@ return rawValues;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

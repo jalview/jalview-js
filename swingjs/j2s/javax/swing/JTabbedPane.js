@@ -1,29 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.SwingUtilities','java.awt.Point','java.awt.Dimension','java.util.ArrayList','javax.swing.DefaultSingleSelectionModel',['javax.swing.JTabbedPane','.ModelListener'],'javax.swing.event.ChangeListener','sun.swing.SwingUtilities2','javax.swing.event.ChangeEvent',['javax.swing.JTabbedPane','.Page'],'javax.swing.ToolTipManager','java.awt.JSComponent','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JTabbedPane", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.SwingUtilities','java.awt.Point','java.awt.Dimension','java.util.ArrayList','javax.swing.DefaultSingleSelectionModel',['javax.swing.JTabbedPane','.ModelListener'],'javax.swing.event.ChangeListener','sun.swing.SwingUtilities2','javax.swing.event.ChangeEvent',['javax.swing.JTabbedPane','.Page'],'javax.swing.ToolTipManager','java.awt.JSComponent','javax.swing.UIManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JTabbedPane", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
+C$.$classes$=[['ModelListener',4],['Page',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tabPlacement=0;
-this.tabLayoutPolicy=0;
-this.model=null;
-this.haveRegistered=false;
-this.changeListener=null;
-this.pages=null;
-this.visComp=null;
-this.changeEvent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tabPlacement=1;
 this.changeListener=null;
 this.visComp=null;
 this.changeEvent=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveRegistered'],'I',['tabPlacement','tabLayoutPolicy'],'O',['model','javax.swing.SingleSelectionModel','changeListener','javax.swing.event.ChangeListener','pages','java.util.List','visComp','java.awt.Component','changeEvent','javax.swing.event.ChangeEvent']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [1, 0]);
@@ -34,11 +24,11 @@ C$.c$$I$I.apply(this, [tabPlacement, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (tabPlacement, tabLayoutPolicy) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setTabPlacement$I(tabPlacement);
 this.setTabLayoutPolicy$I(tabLayoutPolicy);
-this.pages=Clazz.new_($I$(4).c$$I,[1]);
-this.setModel$javax_swing_SingleSelectionModel(Clazz.new_($I$(5)));
+this.pages=Clazz.new_($I$(4,1).c$$I,[1]);
+this.setModel$javax_swing_SingleSelectionModel(Clazz.new_($I$(5,1)));
 this.updateUI$();
 }, 1);
 
@@ -56,15 +46,15 @@ this.setDisabledIconAt$I$javax_swing_Icon(i, null);
 });
 
 Clazz.newMeth(C$, 'createChangeListener$', function () {
-return Clazz.new_($I$(6), [this, null]);
+return Clazz.new_($I$(6,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getChangeListeners$', function () {
@@ -93,8 +83,8 @@ $I$(8).tabbedPaneChangeFocusTo$java_awt_Component(newComp);
 }}var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(7),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(9).c$$O,[this]);
-(listeners[i + 1]).stateChanged$(this.changeEvent);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(9,1).c$$O,[this]);
+(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
 
@@ -112,7 +102,7 @@ if (model != null ) {
 this.changeListener=this.createChangeListener$();
 model.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 }this.firePropertyChange$S$O$O("model", oldModel, model);
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'getTabPlacement$', function () {
@@ -127,7 +117,7 @@ var oldValue=this.tabPlacement;
 this.tabPlacement=tabPlacement;
 this.firePropertyChange$S$I$I("tabPlacement", oldValue, tabPlacement);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getTabLayoutPolicy$', function () {
@@ -142,7 +132,7 @@ var oldValue=this.tabLayoutPolicy;
 this.tabLayoutPolicy=tabLayoutPolicy;
 this.firePropertyChange$S$I$I("tabLayoutPolicy", oldValue, tabLayoutPolicy);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getSelectedIndex$', function () {
@@ -182,7 +172,7 @@ this.removeTabAt$I(removeIndex);
 if (newIndex > removeIndex) {
 newIndex--;
 }}var selectedIndex=this.getSelectedIndex$();
-this.pages.add$I$TE(newIndex, Clazz.new_($I$(10).c$$javax_swing_JTabbedPane$S$javax_swing_Icon$javax_swing_Icon$java_awt_Component$S, [this, null, this, title != null  ? title : "", icon, null, component, tip]));
+this.pages.add$I$O(newIndex, Clazz.new_([this, null, this, title != null  ? title : "", icon, null, component, tip],$I$(10,1).c$$javax_swing_JTabbedPane$S$javax_swing_Icon$javax_swing_Icon$java_awt_Component$S));
 if (component != null ) {
 this.addImplCont$java_awt_Component$O$I(component, null, -1);
 component.setVisible$Z(false);
@@ -196,7 +186,7 @@ p$1.setSelectedIndexImpl$I$Z.apply(this, [selectedIndex + 1, false]);
 $I$(11).sharedInstance$().registerComponent$javax_swing_JComponent(this);
 this.haveRegistered=true;
 }this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'addTab$S$javax_swing_Icon$java_awt_Component$S', function (title, icon, component, tip) {
@@ -278,7 +268,7 @@ var newSelected=(selected != 0) ? this.pages.get$I(selected - 1) : null;
 this.fireStateChanged$();
 }if (component != null ) {
 var n=this.getComponentCount$();
-var components=$I$(12).getChildArray$java_awt_Container(this);
+var components=$I$(12).秘getChildArray$java_awt_Container(this);
 for (var i=n; --i >= 0; ) {
 if (components[i] === component ) {
 C$.superclazz.prototype.remove$I.apply(this, [i]);
@@ -286,9 +276,9 @@ component.setVisible$Z(true);
 break;
 }}
 }if (shouldChangeFocus) {
-$I$(8).tabbedPaneChangeFocusTo$java_awt_Component(this.getSelectedComponent$());
+$I$(8,"tabbedPaneChangeFocusTo$java_awt_Component",[this.getSelectedComponent$()]);
 }this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'remove$java_awt_Component', function (component) {
@@ -297,7 +287,7 @@ if (index != -1) {
 this.removeTabAt$I(index);
 } else {
 var n=this.getComponentCount$();
-var components=$I$(12).getChildArray$java_awt_Container(this);
+var components=$I$(12).秘getChildArray$java_awt_Container(this);
 for (var i=0; i < n; i++) {
 if (component === components[i] ) {
 C$.superclazz.prototype.remove$I.apply(this, [i]);
@@ -390,7 +380,7 @@ this.firePropertyChange$S$I$I("indexForTitle", -1, index);
 }page.updateDisplayedMnemonicIndex$();
 if (title == null  || oldTitle == null   || !title.equals$O(oldTitle) ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setIconAt$I$javax_swing_Icon', function (index, icon) {
@@ -401,7 +391,7 @@ page.icon=icon;
 if (Clazz.instanceOf(page.disabledIcon, "javax.swing.plaf.UIResource")) {
 page.disabledIcon=null;
 }this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setDisabledIconAt$I$javax_swing_Icon', function (index, disabledIcon) {
@@ -409,7 +399,7 @@ var oldIcon=this.pages.get$I(index).disabledIcon;
 this.pages.get$I(index).disabledIcon=disabledIcon;
 if (disabledIcon !== oldIcon  && !this.isEnabledAt$I(index) ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setToolTipTextAt$I$S', function (index, toolTipText) {
@@ -443,7 +433,7 @@ var oldEnabled=this.pages.get$I(index).isEnabled$();
 this.pages.get$I(index).setEnabled$Z(enabled);
 if (enabled != oldEnabled ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setComponentAt$I$java_awt_Component', function (index, component) {
@@ -455,7 +445,7 @@ shouldChangeFocus=($I$(1).findFocusOwner$java_awt_Component(page.component) != n
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(this.getTreeLock$());
 {
 var count=this.getComponentCount$();
-var components=$I$(12).getChildArray$java_awt_Container(this);
+var components=$I$(12).秘getChildArray$java_awt_Container(this);
 for (var i=0; i < count; i++) {
 if (components[i] === page.component ) {
 C$.superclazz.prototype.remove$I.apply(this, [i]);
@@ -470,7 +460,7 @@ this.addImplCont$java_awt_Component$O$I(component, null, -1);
 if (shouldChangeFocus) {
 $I$(8).tabbedPaneChangeFocusTo$java_awt_Component(component);
 }} else {
-this.repaint$();
+this.秘repaint$();
 }this.revalidate$();
 }});
 
@@ -571,56 +561,49 @@ return i;
 }}
 return -1;
 });
+
+Clazz.newMeth(C$, 'addNotify$', function () {
+for (var i=0; i < this.getTabCount$(); i++) {
+var c=this.getTabComponentAt$I(i);
+if (c != null ) c.addNotify$();
+this.getComponentAt$I(i).addNotify$();
+}
+});
+C$.$getAnn$ = function(){ return [
+[['M:getSelectedIndex','int','getSelectedIndex$',['java.beans.Transient']],['']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.JTabbedPane, "ModelListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JTabbedPane, "ModelListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['javax.swing.event.ChangeListener', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 this.this$0.fireStateChanged$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JTabbedPane, "Page", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JTabbedPane, "Page", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.title=null;
-this.background=null;
-this.foreground=null;
-this.icon=null;
-this.disabledIcon=null;
-this.parent=null;
-this.component=null;
-this.tip=null;
-this.enabled=false;
-this.needsUIUpdate=false;
-this.mnemonic=0;
-this.mnemonicIndex=0;
-this.tabComponent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.enabled=true;
 this.mnemonic=-1;
 this.mnemonicIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['enabled','needsUIUpdate'],'I',['mnemonic','mnemonicIndex'],'S',['title','tip'],'O',['background','java.awt.Color','+foreground','icon','javax.swing.Icon','+disabledIcon','parent','javax.swing.JTabbedPane','component','java.awt.Component','+tabComponent']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTabbedPane$S$javax_swing_Icon$javax_swing_Icon$java_awt_Component$S', function (parent, title, icon, disabledIcon, component, tip) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.title=title;
 this.icon=icon;
 this.disabledIcon=disabledIcon;
@@ -728,7 +711,7 @@ return componentLocation;
 
 Clazz.newMeth(C$, 'getLocation$', function () {
 var r=this.getBounds$();
-return Clazz.new_($I$(2).c$$I$I,[r.x, r.y]);
+return Clazz.new_($I$(2,1).c$$I$I,[r.x, r.y]);
 });
 
 Clazz.newMeth(C$, 'setLocation$java_awt_Point', function (p) {
@@ -743,7 +726,7 @@ Clazz.newMeth(C$, 'setBounds$java_awt_Rectangle', function (r) {
 
 Clazz.newMeth(C$, 'getSize$', function () {
 var r=this.getBounds$();
-return Clazz.new_($I$(3).c$$I$I,[r.width, r.height]);
+return Clazz.new_($I$(3,1).c$$I$I,[r.width, r.height]);
 });
 
 Clazz.newMeth(C$, 'setSize$java_awt_Dimension', function (d) {
@@ -772,4 +755,4 @@ Clazz.newMeth(C$, 'removeFocusListener$java_awt_event_FocusListener', function (
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

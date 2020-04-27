@@ -1,27 +1,23 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'jalview.bin.Cache','jalview.datamodel.SequenceI','jalview.util.Comparison','jalview.datamodel.Sequence','jalview.datamodel.Alignment','jalview.datamodel.AlignmentAnnotation','jalview.io.FileParse']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FormatAdapter", null, 'jalview.io.AppletFormatAdapter');
+(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'jalview.bin.Cache','jalview.datamodel.SequenceI','jalview.util.Comparison','jalview.datamodel.Sequence','jalview.datamodel.Alignment','jalview.datamodel.AlignmentAnnotation','jalview.io.FileParse']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FormatAdapter", null, 'jalview.io.AppletFormatAdapter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$jalview_api_AlignmentViewPanel', function (viewpanel) {
-C$.superclazz.c$$jalview_api_AlignmentViewPanel.apply(this, [viewpanel]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_api_AlignmentViewPanel.apply(this,[viewpanel]);C$.$init$.apply(this);
 p$1.init.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 p$1.init.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI', function (alignPanel, settings) {
-C$.superclazz.c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI.apply(this, [alignPanel, settings]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_api_AlignmentViewPanel$jalview_api_AlignExportSettingsI.apply(this,[alignPanel, settings]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'init', function () {
@@ -52,15 +48,15 @@ endRes=seqs[i].getEnd$();
 if (startEnd != null ) {
 startIndex=startEnd[0];
 endIndex=startEnd[1];
-while ($I$(3).isGap$C(seqs[i].getCharAt$I(startIndex)) && startIndex < endIndex ){
+while ($I$(3,"isGap$C",[seqs[i].getCharAt$I(startIndex)]) && startIndex < endIndex ){
 startIndex++;
 }
-while ($I$(3).isGap$C(seqs[i].getCharAt$I(endIndex)) && endIndex > startIndex ){
+while ($I$(3,"isGap$C",[seqs[i].getCharAt$I(endIndex)]) && endIndex > startIndex ){
 endIndex--;
 }
 startRes=seqs[i].findPosition$I(startIndex);
 endRes=seqs[i].findPosition$I(endIndex);
-}tmp[i]=Clazz.new_($I$(4).c$$S$S$I$I,[seqs[i].getName$(), omitHiddenColumns[i], startRes, endRes]);
+}tmp[i]=Clazz.new_([seqs[i].getName$(), omitHiddenColumns[i], startRes, endRes],$I$(4,1).c$$S$S$I$I);
 tmp[i].setDescription$S(seqs[i].getDescription$());
 }
 seqs=tmp;
@@ -73,7 +69,7 @@ return format.getWriter$jalview_datamodel_AlignmentI(null).print$jalview_datamod
 });
 
 Clazz.newMeth(C$, 'getCacheSuffixDefault$jalview_io_FileFormatI', function (format) {
-return $I$(1).getDefault$S$Z(format.getName$().toUpperCase$() + "_JVSUFFIX", true);
+return $I$(1,"getDefault$S$Z",[format.getName$().toUpperCase$() + "_JVSUFFIX", true]);
 });
 
 Clazz.newMeth(C$, 'formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$jalview_datamodel_HiddenColumns', function (format, alignment, omitHidden, exportRange, hidden) {
@@ -86,11 +82,11 @@ return this.formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$
 
 Clazz.newMeth(C$, 'formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$SA$IA$Z$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup', function (format, alignment, omitHidden, exportRange, suffix, hidden, selgp) {
 if (omitHidden != null ) {
-var alv=Clazz.new_($I$(5).c$$jalview_datamodel_SequenceIA,[this.replaceStrings$jalview_datamodel_SequenceIA$SA$IA(alignment.getSequencesArray$(), omitHidden, exportRange)]);
+var alv=Clazz.new_([this.replaceStrings$jalview_datamodel_SequenceIA$SA$IA(alignment.getSequencesArray$(), omitHidden, exportRange)],$I$(5,1).c$$jalview_datamodel_SequenceIA);
 var ala=alignment.getAlignmentAnnotation$();
 if (ala != null ) {
 for (var i=0; i < ala.length; i++) {
-var na=Clazz.new_($I$(6).c$$jalview_datamodel_AlignmentAnnotation,[ala[i]]);
+var na=Clazz.new_($I$(6,1).c$$jalview_datamodel_AlignmentAnnotation,[ala[i]]);
 if (selgp != null ) {
 na.makeVisibleAnnotation$I$I$jalview_datamodel_HiddenColumns(selgp.getStartRes$(), selgp.getEndRes$(), hidden);
 } else {
@@ -121,8 +117,8 @@ return this.formatSequences$jalview_io_FileFormatI$Z$jalview_api_AlignmentViewPa
 });
 
 Clazz.newMeth(C$, 'readFromFile$jalview_io_AlignmentFileReaderI$jalview_io_FileFormatI', function (source, format) {
-var fp=Clazz.new_($I$(7).c$$O$jalview_io_DataSourceType,[source.getInFile$(), source.getDataSourceType$()]);
+var fp=Clazz.new_([source.getInFile$(), source.getDataSourceType$()],$I$(7,1).c$$O$jalview_io_DataSourceType);
 return this.readFromFile$jalview_io_FileParse$jalview_io_FileFormatI(fp, format);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

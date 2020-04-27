@@ -1,35 +1,22 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},p$2={},I$=[[0,['javax.swing.text.Position','.Bias'],'javax.swing.text.SegmentCache','javax.swing.text.Utilities','javax.swing.text.StateInvariantError','javax.swing.text.Segment','javax.swing.text.View',['javax.swing.text.WrappedPlainView','.WrappedLine']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "WrappedPlainView", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},p$2={},I$=[[0,['javax.swing.text.Position','.Bias'],'javax.swing.text.SegmentCache','javax.swing.text.Utilities','javax.swing.text.StateInvariantError','javax.swing.text.Segment','javax.swing.text.View',['javax.swing.text.WrappedPlainView','.WrappedLine']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "WrappedPlainView", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.BoxView', 'javax.swing.text.TabExpander');
+C$.$classes$=[['WrappedLine',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.metrics=null;
-this.lineBuffer=null;
-this.widthChanging=false;
-this.tabBase=0;
-this.tabSize=0;
-this.wordWrap=false;
-this.sel0=0;
-this.sel1=0;
-this.unselected=null;
-this.selected=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['widthChanging','wordWrap'],'I',['tabBase','tabSize','sel0','sel1'],'O',['metrics','java.awt.FontMetrics','lineBuffer','javax.swing.text.Segment','unselected','java.awt.Color','+selected']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
 C$.c$$javax_swing_text_Element$Z.apply(this, [elem, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$Z', function (elem, wordWrap) {
-C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, 1]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element$I.apply(this,[elem, 1]);C$.$init$.apply(this);
 this.wordWrap=wordWrap;
 }, 1);
 
@@ -57,7 +44,7 @@ x=p$1.drawText$javax_swing_text_Element$I$I$java_awt_Graphics$I$I.apply(this, [e
 }
 }} catch (e) {
 if (Clazz.exceptionOf(e,"javax.swing.text.BadLocationException")){
-throw Clazz.new_($I$(4).c$$S,["Can't render: " + p0 + "," + p1 ]);
+throw Clazz.new_($I$(4,1).c$$S,["Can't render: " + p0 + "," + p1 ]);
 } else {
 throw e;
 }
@@ -70,7 +57,7 @@ return x;
 
 Clazz.newMeth(C$, 'getLineBuffer$', function () {
 if (this.lineBuffer == null ) {
-this.lineBuffer=Clazz.new_($I$(5));
+this.lineBuffer=Clazz.new_($I$(5,1));
 }return this.lineBuffer;
 });
 
@@ -95,7 +82,7 @@ var n=e.getElementCount$();
 if (n > 0) {
 var added=Clazz.array($I$(6), [n]);
 for (var i=0; i < n; i++) {
-added[i]=Clazz.new_($I$(7).c$$javax_swing_text_Element, [this, null, e.getElement$I(i)]);
+added[i]=Clazz.new_([this, null, e.getElement$I(i)],$I$(7,1).c$$javax_swing_text_Element);
 }
 this.replace$I$I$javax_swing_text_ViewA(0, 0, added);
 }});
@@ -108,12 +95,12 @@ var removedElems=ec.getChildrenRemoved$();
 var addedElems=ec.getChildrenAdded$();
 var added=Clazz.array($I$(6), [addedElems.length]);
 for (var i=0; i < addedElems.length; i++) {
-added[i]=Clazz.new_($I$(7).c$$javax_swing_text_Element, [this, null, addedElems[i]]);
+added[i]=Clazz.new_($I$(7,1).c$$javax_swing_text_Element,[this, null, addedElems[i]]);
 }
 this.replace$I$I$javax_swing_text_ViewA(ec.getIndex$(), removedElems.length, added);
 if (a != null ) {
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, true);
-this.getContainer$().repaint$();
+this.getContainer$().秘repaint$();
 }}this.updateMetrics$();
 });
 
@@ -123,7 +110,7 @@ var doc=this.getDocument$();
 doc.getText$I$I$javax_swing_text_Segment(p0, p1 - p0, segment);
 } catch (bl) {
 if (Clazz.exceptionOf(bl,"javax.swing.text.BadLocationException")){
-throw Clazz.new_($I$(4).c$$S,["Can\'t get line text"]);
+throw Clazz.new_($I$(4,1).c$$S,["Can\'t get line text"]);
 } else {
 throw bl;
 }
@@ -164,7 +151,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid axis: " +
 }
 }, p$1);
 
-Clazz.newMeth(C$, ['nextTabStop$F$I','nextTabStop$'], function (x, tabOffset) {
+Clazz.newMeth(C$, 'nextTabStop$F$I', function (x, tabOffset) {
 if (this.tabSize == 0) return x;
 var ntabs=(((x|0) - this.tabBase)/this.tabSize|0);
 return this.tabBase + ((ntabs + 1) * this.tabSize);
@@ -229,24 +216,19 @@ Clazz.newMeth(C$, 'changedUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$
 this.updateChildren$javax_swing_event_DocumentEvent$java_awt_Shape(e, a);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.WrappedPlainView, "WrappedLine", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.WrappedPlainView, "WrappedLine", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.View');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lineCount=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['lineCount']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element.apply(this,[elem]);C$.$init$.apply(this);
 this.lineCount=-1;
 }, 1);
 
@@ -363,7 +345,7 @@ var oldCount=this.lineCount;
 this.breakLines$I(ev.getOffset$());
 if (oldCount != this.lineCount) {
 this.this$0.preferenceChanged$javax_swing_text_View$Z$Z.apply(this.this$0, [this, false, true]);
-this.getContainer$().repaint$();
+this.getContainer$().秘repaint$();
 } else if (a != null ) {
 var c=this.getContainer$();
 var alloc=a;
@@ -388,4 +370,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

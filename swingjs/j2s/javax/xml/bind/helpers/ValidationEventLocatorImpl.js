@@ -1,18 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),I$=[[0,'javax.xml.bind.helpers.Messages','java.net.URL']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ValidationEventLocatorImpl", null, null, 'javax.xml.bind.ValidationEventLocator');
+(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),I$=[[0,'javax.xml.bind.helpers.Messages','java.net.URL']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ValidationEventLocatorImpl", null, null, 'javax.xml.bind.ValidationEventLocator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.url=null;
-this.offset=0;
-this.lineNumber=0;
-this.columnNumber=0;
-this.object=null;
-this.node=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.url=null;
@@ -21,14 +10,16 @@ this.lineNumber=-1;
 this.columnNumber=-1;
 this.object=null;
 this.node=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offset','lineNumber','columnNumber'],'O',['url','java.net.URL','object','java.lang.Object','node','org.w3c.dom.Node']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_xml_sax_Locator', function (loc) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (loc == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(1).format$S$O("Shared.MustNotBeNull", "loc")]);
 }this.url=C$.toURL$S(loc.getSystemId$());
@@ -37,7 +28,7 @@ this.lineNumber=loc.getLineNumber$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_xml_sax_SAXParseException', function (e) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (e == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(1).format$S$O("Shared.MustNotBeNull", "e")]);
 }this.url=C$.toURL$S(e.getSystemId$());
@@ -46,14 +37,14 @@ this.lineNumber=e.getLineNumber$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_w3c_dom_Node', function (_node) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (_node == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(1).format$S$O("Shared.MustNotBeNull", "_node")]);
 }this.node=_node;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O', function (_object) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (_object == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(1).format$S$O("Shared.MustNotBeNull", "_object")]);
 }this.object=_object;
@@ -61,7 +52,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(1).format$S$O(
 
 Clazz.newMeth(C$, 'toURL$S', function (systemId) {
 try {
-return Clazz.new_($I$(2).c$$S,[systemId]);
+return Clazz.new_($I$(2,1).c$$S,[systemId]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return null;
@@ -119,4 +110,4 @@ Clazz.newMeth(C$, 'setNode$org_w3c_dom_Node', function (_node) {
 this.node=_node;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

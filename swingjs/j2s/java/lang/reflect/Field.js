@@ -1,39 +1,20 @@
-(function(){var P$=java.lang.reflect,I$=[];
-var C$=Clazz.newClass(P$, "Field", null, 'java.lang.reflect.AccessibleObject', 'java.lang.reflect.Member');
+(function(){var P$=java.lang.reflect,p$1={},I$=[[0,['sun.reflect.annotation.AnnotationParser','.JSAnnotationObject'],'sun.reflect.annotation.AnnotationParser']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Field", null, 'java.lang.reflect.AccessibleObject', 'java.lang.reflect.Member');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jsName=null;
-this.Class_=null;
-this.modifiers=0;
-this.isStatic=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isStatic'],'I',['modifiers'],'S',['jsName'],'O',['Class_','Class','myType','java.lang.Object','declaredAnnotations','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$$Class$S$I', function (cl, name, modifiers) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.jsName=name;
 this.Class_=cl;
 this.modifiers=modifiers;
 this.isStatic=(modifiers == 8);
 }, 1);
-
-Clazz.newMeth(C$, 'isAccessible$', function () {
-return true;
-});
-
-Clazz.newMeth(C$, 'isSynthetic$', function () {
-return false;
-});
-
-Clazz.newMeth(C$, 'toGenericString$', function () {
-return null;
-});
 
 Clazz.newMeth(C$, 'isEnumConstant$', function () {
 return false;
@@ -47,17 +28,14 @@ Clazz.newMeth(C$, 'equals$O', function (object) {
 if (object == null ) return false;
 var o=this.getObj$O(object);
 ;
-o = o[this.jsName];
-if (typeof o == "number" || typeof o == "boolean") return false;
+o = o[this.jsName]; if (typeof o == "number" || typeof o == "boolean") return false;
 return object.equals$O(o);
 });
 
 Clazz.newMeth(C$, 'get$O', function (object) {
 object=this.getObj$O(object);
 
-object = object[this.jsName];
-if (typeof object == "number") return (object == object|0 ?  new Integer(object) : new Double(object));
-if (typeof object == "boolean") return new Boolean(object);
+object = object[this.jsName]; if (typeof object == "number") return (object == object|0 ? new Integer(object) : new Double(object)); if (typeof object == "boolean") return new Boolean(object);
 if (typeof object != "undefined") return object;
 throw Clazz.new_(Clazz.load('NullPointerException'));
 });
@@ -141,7 +119,8 @@ return this.jsName;
 });
 
 Clazz.newMeth(C$, 'getType$', function () {
-return null;
+if (this.myType == null  || Clazz.instanceOf(this.myType, "java.lang.Class") ) return this.myType;
+return (this.myType=$I$(1,"typeForString$S$Z",[this.myType.toString(), false]));
 });
 
 Clazz.newMeth(C$, 'hashCode$', function () {
@@ -206,6 +185,29 @@ Clazz.newMeth(C$, 'toString', function () {
 return "[field: " + this.jsName + "]" ;
 });
 
+Clazz.newMeth(C$, 'getDeclaredAnnotations$', function () {
+return $I$(2,"toArray$java_util_Map",[p$1.declaredAnnotations.apply(this, [])]);
+});
+
+Clazz.newMeth(C$, 'declaredAnnotations', function () {
+if (this.declaredAnnotations == null ) {
+{
+this.declaredAnnotations=$I$(2,"parseAnnotations$S$Class$Z",[this.getName$(), this.getDeclaringClass$(), false]);
+}}return this.declaredAnnotations;
+}, p$1);
+
+Clazz.newMeth(C$, 'getAnnotation$Class', function (annotationClass) {
+return p$1.declaredAnnotations.apply(this, []).get$O(annotationClass);
+});
+
+Clazz.newMeth(C$, 'getAnnotationsByType$Class', function (annotationClass) {
+return this.getDeclaredAnnotationsByType$Class(annotationClass);
+});
+
+Clazz.newMeth(C$, '_setTypeString$S', function (type) {
+this.myType=type;
+});
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

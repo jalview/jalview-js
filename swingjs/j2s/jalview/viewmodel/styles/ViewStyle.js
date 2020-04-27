@@ -1,51 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.viewmodel.styles"),I$=[[0,'java.awt.Color','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ViewStyle", null, null, 'jalview.api.ViewStyleI');
+(function(){var P$=Clazz.newPackage("jalview.viewmodel.styles"),I$=[[0,'java.awt.Color','Boolean']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ViewStyle", null, null, 'jalview.api.ViewStyleI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.abovePIDThreshold=false;
-this.charHeight=0;
-this.charWidth=0;
-this.idWidth=0;
-this.colourAppliesToAllGroups=false;
-this.centreColumnLabels=false;
-this.showdbrefs=false;
-this.shownpfeats=false;
-this.colourByReferenceSeq=false;
-this.conservationColourSelected=false;
-this.displayReferenceSeq=false;
-this.increment=0;
-this.renderGaps=false;
-this.rightAlignIds=false;
-this.scaleAboveWrapped=false;
-this.scaleLeftWrapped=false;
-this.scaleRightWrapped=false;
-this.seqNameItalics=false;
-this.showAnnotation=false;
-this.showBoxes=false;
-this.showColourText=false;
-this.showHiddenMarkers=false;
-this.showJVSuffix=false;
-this.showSeqFeaturesHeight=false;
-this.showSequenceFeatures=false;
-this.showText=false;
-this.showUnconserved=false;
-this.textColour=null;
-this.textColour2=null;
-this.threshold=0;
-this.thresholdTextColour=0;
-this.upperCasebold=false;
-this.fontName=null;
-this.fontSize=0;
-this.scaleProteinAsCdna=false;
-this.proteinFontAsCdna=false;
-this.wrapAlignment=false;
-this.wrappedWidth=0;
-this.fontStyle=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.abovePIDThreshold=false;
@@ -74,10 +30,12 @@ this.upperCasebold=false;
 this.scaleProteinAsCdna=true;
 this.proteinFontAsCdna=true;
 this.wrapAlignment=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['abovePIDThreshold','colourAppliesToAllGroups','centreColumnLabels','showdbrefs','shownpfeats','colourByReferenceSeq','conservationColourSelected','displayReferenceSeq','renderGaps','rightAlignIds','scaleAboveWrapped','scaleLeftWrapped','scaleRightWrapped','seqNameItalics','showAnnotation','showBoxes','showColourText','showHiddenMarkers','showJVSuffix','showSeqFeaturesHeight','showSequenceFeatures','showText','showUnconserved','upperCasebold','scaleProteinAsCdna','proteinFontAsCdna','wrapAlignment','showComplementFeatures','showComplementFeaturesOnTop'],'I',['charHeight','charWidth','idWidth','increment','threshold','thresholdTextColour','fontSize','wrappedWidth','fontStyle'],'S',['fontName'],'O',['textColour','java.awt.Color','+textColour2']]]
 
 Clazz.newMeth(C$, 'c$$jalview_api_ViewStyleI', function (vs) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setAbovePIDThreshold$Z(vs.getAbovePIDThreshold$());
 this.setCentreColumnLabels$Z(vs.isCentreColumnLabels$());
 this.setCharHeight$I(vs.getCharHeight$());
@@ -110,6 +68,8 @@ this.setShowJVSuffix$Z(vs.getShowJVSuffix$());
 this.setShowNPFeats$Z(vs.isShowNPFeats$());
 this.setShowSequenceFeaturesHeight$Z(vs.isShowSequenceFeaturesHeight$());
 this.setShowSequenceFeatures$Z(vs.isShowSequenceFeatures$());
+this.setShowComplementFeatures$Z(vs.isShowComplementFeatures$());
+this.setShowComplementFeaturesOnTop$Z(vs.isShowComplementFeaturesOnTop$());
 this.setShowText$Z(vs.getShowText$());
 this.setShowUnconserved$Z(vs.getShowUnconserved$());
 this.setTextColour$java_awt_Color(vs.getTextColour$());
@@ -122,14 +82,14 @@ this.setWrappedWidth$I(vs.getWrappedWidth$());
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (other) {
 if (other == null  || !(Clazz.instanceOf(other, "jalview.viewmodel.styles.ViewStyle")) ) {
 return false;
 }var vs=other;
-var match=(this.getAbovePIDThreshold$() == vs.getAbovePIDThreshold$()  && this.isCentreColumnLabels$() == vs.isCentreColumnLabels$()   && this.getCharHeight$() == vs.getCharHeight$()  && this.getCharWidth$() == vs.getCharWidth$()  && this.getColourAppliesToAllGroups$() == vs.getColourAppliesToAllGroups$()   && this.isColourByReferenceSeq$() == vs.isColourByReferenceSeq$()   && this.getColourText$() == vs.getColourText$()   && this.isConservationColourSelected$() == vs.isConservationColourSelected$()   && this.getConservationSelected$() == vs.getConservationSelected$()   && this.isDisplayReferenceSeq$() == vs.isDisplayReferenceSeq$()   && this.getFontSize$() == vs.getFontSize$()  && this.getFontStyle$() == vs.getFontStyle$()  && this.getIdWidth$() == vs.getIdWidth$()  && this.getIncrement$() == vs.getIncrement$()  && this.isRenderGaps$() == vs.isRenderGaps$()   && this.isRightAlignIds$() == vs.isRightAlignIds$()   && this.getScaleAboveWrapped$() == vs.getScaleAboveWrapped$()   && this.getScaleLeftWrapped$() == vs.getScaleLeftWrapped$()   && this.isScaleProteinAsCdna$() == vs.isScaleProteinAsCdna$()   && this.isProteinFontAsCdna$() == vs.isProteinFontAsCdna$()   && this.getScaleRightWrapped$() == vs.getScaleRightWrapped$()   && this.isSeqNameItalics$() == vs.isSeqNameItalics$()   && this.isShowAnnotation$() == vs.isShowAnnotation$()   && this.getShowBoxes$() == vs.getShowBoxes$()   && this.isShowColourText$() == vs.isShowColourText$()   && this.isShowDBRefs$() == vs.isShowDBRefs$()   && this.getShowHiddenMarkers$() == vs.getShowHiddenMarkers$()   && this.getShowJVSuffix$() == vs.getShowJVSuffix$()   && this.isShowNPFeats$() == vs.isShowNPFeats$()   && this.isShowSequenceFeaturesHeight$() == vs.isShowSequenceFeaturesHeight$()   && this.isShowSequenceFeatures$() == vs.isShowSequenceFeatures$()   && this.getShowText$() == vs.getShowText$()   && this.getShowUnconserved$() == vs.getShowUnconserved$()   && this.getThreshold$() == vs.getThreshold$()  && this.getThresholdTextColour$() == vs.getThresholdTextColour$()  && this.isUpperCasebold$() == vs.isUpperCasebold$()   && this.getWrapAlignment$() == vs.getWrapAlignment$()   && this.getWrappedWidth$() == vs.getWrappedWidth$() );
+var match=(this.getAbovePIDThreshold$() == vs.getAbovePIDThreshold$()  && this.isCentreColumnLabels$() == vs.isCentreColumnLabels$()   && this.getCharHeight$() == vs.getCharHeight$()  && this.getCharWidth$() == vs.getCharWidth$()  && this.getColourAppliesToAllGroups$() == vs.getColourAppliesToAllGroups$()   && this.isColourByReferenceSeq$() == vs.isColourByReferenceSeq$()   && this.getColourText$() == vs.getColourText$()   && this.isConservationColourSelected$() == vs.isConservationColourSelected$()   && this.getConservationSelected$() == vs.getConservationSelected$()   && this.isDisplayReferenceSeq$() == vs.isDisplayReferenceSeq$()   && this.getFontSize$() == vs.getFontSize$()  && this.getFontStyle$() == vs.getFontStyle$()  && this.getIdWidth$() == vs.getIdWidth$()  && this.getIncrement$() == vs.getIncrement$()  && this.isRenderGaps$() == vs.isRenderGaps$()   && this.isRightAlignIds$() == vs.isRightAlignIds$()   && this.getScaleAboveWrapped$() == vs.getScaleAboveWrapped$()   && this.getScaleLeftWrapped$() == vs.getScaleLeftWrapped$()   && this.isScaleProteinAsCdna$() == vs.isScaleProteinAsCdna$()   && this.isProteinFontAsCdna$() == vs.isProteinFontAsCdna$()   && this.getScaleRightWrapped$() == vs.getScaleRightWrapped$()   && this.isSeqNameItalics$() == vs.isSeqNameItalics$()   && this.isShowAnnotation$() == vs.isShowAnnotation$()   && this.getShowBoxes$() == vs.getShowBoxes$()   && this.isShowColourText$() == vs.isShowColourText$()   && this.isShowDBRefs$() == vs.isShowDBRefs$()   && this.getShowHiddenMarkers$() == vs.getShowHiddenMarkers$()   && this.getShowJVSuffix$() == vs.getShowJVSuffix$()   && this.isShowNPFeats$() == vs.isShowNPFeats$()   && this.isShowSequenceFeaturesHeight$() == vs.isShowSequenceFeaturesHeight$()   && this.isShowSequenceFeatures$() == vs.isShowSequenceFeatures$()   && this.isShowComplementFeatures$() == vs.isShowComplementFeatures$()   && this.isShowComplementFeaturesOnTop$() == vs.isShowComplementFeaturesOnTop$()   && this.getShowText$() == vs.getShowText$()   && this.getShowUnconserved$() == vs.getShowUnconserved$()   && this.getThreshold$() == vs.getThreshold$()  && this.getThresholdTextColour$() == vs.getThresholdTextColour$()  && this.isUpperCasebold$() == vs.isUpperCasebold$()   && this.getWrapAlignment$() == vs.getWrapAlignment$()   && this.getWrappedWidth$() == vs.getWrappedWidth$() );
 match=match && String.valueOf$O(this.getFontName$()).equals$O(String.valueOf$O(vs.getFontName$())) ;
 match=match && String.valueOf$O(this.getTextColour$()).equals$O(String.valueOf$O(vs.getTextColour$())) ;
 match=match && String.valueOf$O(this.getTextColour2$()).equals$O(String.valueOf$O(vs.getTextColour2$())) ;
@@ -495,5 +455,21 @@ return this.proteinFontAsCdna;
 Clazz.newMeth(C$, 'setProteinFontAsCdna$Z', function (b) {
 this.proteinFontAsCdna=b;
 });
+
+Clazz.newMeth(C$, 'setShowComplementFeatures$Z', function (b) {
+this.showComplementFeatures=b;
+});
+
+Clazz.newMeth(C$, 'isShowComplementFeatures$', function () {
+return this.showComplementFeatures;
+});
+
+Clazz.newMeth(C$, 'setShowComplementFeaturesOnTop$Z', function (b) {
+this.showComplementFeaturesOnTop=b;
+});
+
+Clazz.newMeth(C$, 'isShowComplementFeaturesOnTop$', function () {
+return this.showComplementFeaturesOnTop;
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

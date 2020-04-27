@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'jalview.datamodel.SequenceI','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Comparison");
-C$.GapChars=null;
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'jalview.datamodel.SequenceI','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Comparison");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.GapChars= String.instantialize(Clazz.array(Character.TYPE, -1, [" ", ".", "-"]));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['S',['GapChars']]]
 
 Clazz.newMeth(C$, 'compare$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI', function (ii, jj) {
 return C$.compare$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$I$I(ii, jj, 0, ii.getLength$() - 1);
@@ -147,13 +147,13 @@ return true;
 Clazz.newMeth(C$, 'isNucleotide$jalview_datamodel_SequenceIAA', function (seqs) {
 if (seqs == null ) {
 return false;
-}var flattened=Clazz.new_($I$(2));
+}var flattened=Clazz.new_($I$(2,1));
 for (var ss, $ss = 0, $$ss = seqs; $ss<$$ss.length&&((ss=($$ss[$ss])),1);$ss++) {
 for (var s, $s = 0, $$s = ss; $s<$$s.length&&((s=($$s[$s])),1);$s++) {
-flattened.add$TE(s);
+flattened.add$O(s);
 }
 }
-var oneDArray=flattened.toArray$TTA(Clazz.array($I$(1), [flattened.size$()]));
+var oneDArray=flattened.toArray$OA(Clazz.array($I$(1), [flattened.size$()]));
 return C$.isNucleotide$jalview_datamodel_SequenceIA(oneDArray);
 }, 1);
 
@@ -164,6 +164,10 @@ return (c1 == c2);
 return Character.toUpperCase$C(c1) == Character.toUpperCase$C(c2);
 }}, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.GapChars= String.instantialize(Clazz.array(Character.TYPE, -1, [" ", ".", "-"]));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

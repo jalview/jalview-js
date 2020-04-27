@@ -1,17 +1,15 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),I$=[];
-var C$=Clazz.newClass(P$, "Couple");
+/*c*/var C$=Clazz.newClass(P$, "Couple");
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.first=null;
-this.second=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$TT$TU', function (a, b) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['first','<T>','second','<U>']]]
+
+Clazz.newMeth(C$, 'c$$O$O', function (a, b) {
+;C$.$init$.apply(this);
 this.first=a;
 this.second=b;
 }, 1);
@@ -33,4 +31,4 @@ return "(" + this.first + "," + this.second + ")" ;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

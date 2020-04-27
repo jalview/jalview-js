@@ -1,28 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.math"),I$=[];
-var C$=Clazz.newClass(P$, "RoundingMode", null, 'Enum');
+/*e*/var C$=Clazz.newClass(P$, "RoundingMode", null, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-$vals=Clazz.array(C$,[0]);
-Clazz.newEnumConst($vals, C$.c$$I, "UP", 0, [0]);
-Clazz.newEnumConst($vals, C$.c$$I, "DOWN", 1, [1]);
-Clazz.newEnumConst($vals, C$.c$$I, "CEILING", 2, [2]);
-Clazz.newEnumConst($vals, C$.c$$I, "FLOOR", 3, [3]);
-Clazz.newEnumConst($vals, C$.c$$I, "HALF_UP", 4, [4]);
-Clazz.newEnumConst($vals, C$.c$$I, "HALF_DOWN", 5, [5]);
-Clazz.newEnumConst($vals, C$.c$$I, "HALF_EVEN", 6, [6]);
-Clazz.newEnumConst($vals, C$.c$$I, "UNNECESSARY", 7, [7]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.oldMode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['oldMode']]]
 
 Clazz.newMeth(C$, 'c$$I', function (oldMode) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.oldMode=oldMode;
 }, 1);
 
@@ -49,9 +36,21 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["argument out of r
 }
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+$vals=Clazz.array(C$,[0]);
+Clazz.newEnumConst($vals, C$.c$$I, "UP", 0, [0]);
+Clazz.newEnumConst($vals, C$.c$$I, "DOWN", 1, [1]);
+Clazz.newEnumConst($vals, C$.c$$I, "CEILING", 2, [2]);
+Clazz.newEnumConst($vals, C$.c$$I, "FLOOR", 3, [3]);
+Clazz.newEnumConst($vals, C$.c$$I, "HALF_UP", 4, [4]);
+Clazz.newEnumConst($vals, C$.c$$I, "HALF_DOWN", 5, [5]);
+Clazz.newEnumConst($vals, C$.c$$I, "HALF_EVEN", 6, [6]);
+Clazz.newEnumConst($vals, C$.c$$I, "UNNECESSARY", 7, [7]);
+};
+
 Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

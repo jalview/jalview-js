@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.Hashtable','java.util.Collections','jalview.util.CaseInsensitiveString']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDBEntry", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.Hashtable','java.util.Collections','jalview.util.CaseInsensitiveString']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDBEntry", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Type',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.properties=null;
-this.file=null;
-this.type=null;
-this.id=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['file','type','id'],'O',['properties','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
 if (obj == null  || !(Clazz.instanceOf(obj, "jalview.datamodel.PDBEntry")) ) {
@@ -32,11 +26,11 @@ return this.properties === o.properties  || (this.properties != null  && this.pr
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$jalview_datamodel_PDBEntry_Type$S', function (pdbId, chain, type, filePath) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.init$S$S$jalview_datamodel_PDBEntry_Type$S(pdbId, chain, type, filePath);
 }, 1);
 
@@ -48,7 +42,7 @@ this.setChainCode$S(chain);
 });
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry', function (entry) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.file=entry.file;
 this.type=entry.type;
 this.id=entry.id;
@@ -57,7 +51,7 @@ this.properties=entry.properties.clone$();
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_DBRefEntry', function (dbr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (!"PDB".equals$O(dbr.getSource$())) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid source: " + dbr.getSource$()]);
 }var pdbId=dbr.getAccessionId$();
@@ -100,8 +94,8 @@ return this.id;
 
 Clazz.newMeth(C$, 'setProperty$S$O', function (key, value) {
 if (this.properties == null ) {
-this.properties=Clazz.new_($I$(1));
-}this.properties.put$TK$TV(key, value);
+this.properties=Clazz.new_($I$(1,1));
+}this.properties.put$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'getProperty$S', function (key) {
@@ -122,7 +116,7 @@ Clazz.newMeth(C$, 'setChainCode$S', function (chainCode) {
 if (chainCode == null ) {
 this.deleteProperty$S("chain_code");
 } else {
-this.setProperty$S$O("chain_code", Clazz.new_($I$(3).c$$S,[chainCode]));
+this.setProperty$S$O("chain_code", Clazz.new_($I$(3,1).c$$S,[chainCode]));
 }});
 
 Clazz.newMeth(C$, 'deleteProperty$S', function (key) {
@@ -176,28 +170,19 @@ this.setProperty$S$O(key, value);
 return true;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.PDBEntry, "Type", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.PDBEntry, "Type", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-$vals=Clazz.array(C$,[0]);
-Clazz.newEnumConst($vals, C$.c$$S$S, "PDB", 0, ["pdb", "pdb"]);
-Clazz.newEnumConst($vals, C$.c$$S$S, "MMCIF", 1, ["mmcif", "cif"]);
-Clazz.newEnumConst($vals, C$.c$$S$S, "FILE", 2, ["?", "?"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ext=null;
-this.format=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['ext','format']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (fmt, ex) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.format=fmt;
 this.ext=ex;
 }, 1);
@@ -222,10 +207,17 @@ Clazz.newMeth(C$, 'matches$S', function (t) {
 return (this.toString().equalsIgnoreCase$S(t));
 });
 
+C$.$static$=function(){C$.$static$=0;
+$vals=Clazz.array(C$,[0]);
+Clazz.newEnumConst($vals, C$.c$$S$S, "PDB", 0, ["pdb", "pdb"]);
+Clazz.newEnumConst($vals, C$.c$$S$S, "MMCIF", 1, ["mmcif", "cif"]);
+Clazz.newEnumConst($vals, C$.c$$S$S, "FILE", 2, ["?", "?"]);
+};
+
 Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

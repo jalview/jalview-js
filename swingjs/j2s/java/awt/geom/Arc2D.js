@@ -1,25 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Rectangle2D','.Double'],['java.awt.geom.Point2D','.Double'],'java.awt.geom.Line2D','java.awt.geom.ArcIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Arc2D", function(){
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Rectangle2D','.Double'],['java.awt.geom.Point2D','.Double'],'java.awt.geom.Line2D','java.awt.geom.ArcIterator']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Arc2D", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.geom.RectangularShape');
+C$.$classes$=[['Float',9],['Double',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['type']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (type) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setArcType$I(type);
 }, 1);
 
@@ -31,14 +28,14 @@ Clazz.newMeth(C$, 'getStartPoint$', function () {
 var angle=Math.toRadians(-this.getAngleStart$());
 var x=this.getX$() + (Math.cos(angle) * 0.5 + 0.5) * this.getWidth$();
 var y=this.getY$() + (Math.sin(angle) * 0.5 + 0.5) * this.getHeight$();
-return Clazz.new_($I$(3).c$$D$D,[x, y]);
+return Clazz.new_($I$(3,1).c$$D$D,[x, y]);
 });
 
 Clazz.newMeth(C$, 'getEndPoint$', function () {
 var angle=Math.toRadians(-this.getAngleStart$() - this.getAngleExtent$());
 var x=this.getX$() + (Math.cos(angle) * 0.5 + 0.5) * this.getWidth$();
 var y=this.getY$() + (Math.sin(angle) * 0.5 + 0.5) * this.getHeight$();
-return Clazz.new_($I$(3).c$$D$D,[x, y]);
+return Clazz.new_($I$(3,1).c$$D$D,[x, y]);
 });
 
 Clazz.newMeth(C$, 'setArc$java_awt_geom_Point2D$java_awt_geom_Dimension2D$D$D$I', function (loc, size, angSt, angExt, closure) {
@@ -256,7 +253,7 @@ return true;
 }}if (axc >= x  && axc <= xw  ) {
 if ((sy > y  && ey > y   && ayc > y   && ay < yh   && this.containsAngle$D(90) ) || (sy < yh  && ey < yh   && ayc < yh   && ayh > y   && this.containsAngle$D(270) ) ) {
 return true;
-}}var rect=Clazz.new_($I$(2).c$$D$D$D$D,[x, y, w, h]);
+}}var rect=Clazz.new_($I$(2,1).c$$D$D$D$D,[x, y, w, h]);
 if (this.type == 2 || Math.abs(ext) > 180  ) {
 if (rect.intersectsLine$D$D$D$D(axc, ayc, sx, sy) || rect.intersectsLine$D$D$D$D(axc, ayc, ex, ey) ) {
 return true;
@@ -282,7 +279,7 @@ return false;
 }if (this.type != 2 || Math.abs(this.getAngleExtent$()) <= 180.0  ) {
 return true;
 }if (origrect == null ) {
-origrect=Clazz.new_($I$(2).c$$D$D$D$D,[x, y, w, h]);
+origrect=Clazz.new_($I$(2,1).c$$D$D$D$D,[x, y, w, h]);
 }var halfW=this.getWidth$() / 2.0;
 var halfH=this.getHeight$() / 2.0;
 var xc=this.getX$() + halfW;
@@ -299,7 +296,7 @@ return !origrect.intersectsLine$D$D$D$D(xc, yc, xe, ye);
 }, p$1);
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return Clazz.new_($I$(5).c$$java_awt_geom_Arc2D$java_awt_geom_AffineTransform,[this, at]);
+return Clazz.new_($I$(5,1).c$$java_awt_geom_Arc2D$java_awt_geom_AffineTransform,[this, at]);
 });
 
 Clazz.newMeth(C$, 'hashCode$', function () {
@@ -322,39 +319,27 @@ return ((this.getX$() == a2d.getX$() ) && (this.getY$() == a2d.getY$() ) && (thi
 }return false;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Arc2D, "Float", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Arc2D, "Float", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.Arc2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-this.start=0;
-this.extent=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['x','y','width','height','start','extent']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$I.apply(this, [0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[0]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[type]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$F$F$F$F$I', function (x, y, w, h, start, extent, type) {
-C$.superclazz.c$$I.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[type]);C$.$init$.apply(this);
 this.x=x;
 this.y=y;
 this.width=w;
@@ -364,8 +349,7 @@ this.extent=extent;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Rectangle2D$F$F$I', function (ellipseBounds, start, extent, type) {
-C$.superclazz.c$$I.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[type]);C$.$init$.apply(this);
 this.x=ellipseBounds.getX$();
 this.y=ellipseBounds.getY$();
 this.width=ellipseBounds.getWidth$();
@@ -421,43 +405,31 @@ this.extent=angExt;
 });
 
 Clazz.newMeth(C$, 'makeBounds$D$D$D$D', function (x, y, w, h) {
-return Clazz.new_($I$(1).c$$F$F$F$F,[x, y, w, h]);
+return Clazz.new_($I$(1,1).c$$F$F$F$F,[x, y, w, h]);
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Arc2D, "Double", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Arc2D, "Double", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.Arc2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-this.start=0;
-this.extent=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['x','y','width','height','start','extent']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$I.apply(this, [0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[0]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[type]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (x, y, w, h, start, extent, type) {
-C$.superclazz.c$$I.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[type]);C$.$init$.apply(this);
 this.x=x;
 this.y=y;
 this.width=w;
@@ -467,8 +439,7 @@ this.extent=extent;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_Rectangle2D$D$D$I', function (ellipseBounds, start, extent, type) {
-C$.superclazz.c$$I.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[type]);C$.$init$.apply(this);
 this.x=ellipseBounds.getX$();
 this.y=ellipseBounds.getY$();
 this.width=ellipseBounds.getWidth$();
@@ -524,8 +495,8 @@ this.extent=angExt;
 });
 
 Clazz.newMeth(C$, 'makeBounds$D$D$D$D', function (x, y, w, h) {
-return Clazz.new_($I$(2).c$$D$D$D$D,[x, y, w, h]);
+return Clazz.new_($I$(2,1).c$$D$D$D$D,[x, y, w, h]);
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

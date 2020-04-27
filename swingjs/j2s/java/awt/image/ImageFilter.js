@@ -1,16 +1,12 @@
 (function(){var P$=Clazz.newPackage("java.awt.image"),I$=[];
-var C$=Clazz.newClass(P$, "ImageFilter", null, null, ['java.awt.image.ImageConsumer', 'Cloneable']);
+/*c*/var C$=Clazz.newClass(P$, "ImageFilter", null, null, ['java.awt.image.ImageConsumer', 'Cloneable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.consumer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['consumer','java.awt.image.ImageConsumer']]]
 
 Clazz.newMeth(C$, 'getFilterInstance$java_awt_image_ImageConsumer', function (ic) {
 var instance=this.clone$();
@@ -26,9 +22,9 @@ Clazz.newMeth(C$, 'setProperties$java_util_Hashtable', function (props) {
 var p=props.clone$();
 var o=p.get$O("filters");
 if (o == null ) {
-p.put$TK$TV("filters", this.toString());
+p.put$O$O("filters", this.toString());
 } else if (Clazz.instanceOf(o, "java.lang.String")) {
-p.put$TK$TV("filters", (o) + this.toString());
+p.put$O$O("filters", (o) + this.toString());
 }this.consumer.setProperties$java_util_Hashtable(p);
 });
 
@@ -70,4 +66,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

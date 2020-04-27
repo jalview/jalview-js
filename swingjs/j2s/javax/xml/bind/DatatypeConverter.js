@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind"),I$=[[0,'javax.xml.bind.Messages','javax.xml.bind.DatatypeConverterImpl']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DatatypeConverter");
-C$.theConverter=null;
+(function(){var P$=Clazz.newPackage("javax.xml.bind"),I$=[[0,'javax.xml.bind.Messages','javax.xml.bind.DatatypeConverterImpl']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DatatypeConverter");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.theConverter=null;
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['theConverter','javax.xml.bind.DatatypeConverterInterface']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setDatatypeConverter$javax_xml_bind_DatatypeConverterInterface', function (converter) {
@@ -21,7 +21,7 @@ C$.theConverter=converter;
 }}, 1);
 
 Clazz.newMeth(C$, 'initConverter$', function () {
-C$.theConverter=Clazz.new_($I$(2));
+C$.theConverter=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'parseString$S', function (lexicalXSDString) {
@@ -71,7 +71,7 @@ return C$.theConverter.parseBoolean$S(lexicalXSDBoolean);
 
 Clazz.newMeth(C$, 'parseByte$S', function (lexicalXSDByte) {
 if (C$.theConverter == null ) C$.initConverter$();
-return $b$[0] = C$.theConverter.parseByte$S(lexicalXSDByte), $b$[0];
+return C$.theConverter.parseByte$S(lexicalXSDByte);
 }, 1);
 
 Clazz.newMeth(C$, 'parseQName$S$javax_xml_namespace_NamespaceContext', function (lexicalXSDQName, nsc) {
@@ -166,7 +166,7 @@ return C$.theConverter.printBoolean$Z(val);
 
 Clazz.newMeth(C$, 'printByte$B', function (val) {
 if (C$.theConverter == null ) C$.initConverter$();
-return C$.theConverter.printByte$B(($b$[0] = val, $b$[0]));
+return C$.theConverter.printByte$B(val);
 }, 1);
 
 Clazz.newMeth(C$, 'printQName$javax_xml_namespace_QName$javax_xml_namespace_NamespaceContext', function (val, nsc) {
@@ -213,6 +213,9 @@ Clazz.newMeth(C$, 'printAnySimpleType$S', function (val) {
 if (C$.theConverter == null ) C$.initConverter$();
 return C$.theConverter.printAnySimpleType$S(val);
 }, 1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.theConverter=null;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

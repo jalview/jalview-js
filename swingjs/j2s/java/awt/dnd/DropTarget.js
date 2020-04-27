@@ -1,33 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.awt.dnd"),p$1={},I$=[[0,'java.awt.Rectangle','java.awt.Toolkit','javax.swing.Timer','java.awt.datatransfer.SystemFlavorMap','java.awt.dnd.DropTargetContext',['java.awt.dnd.DropTarget','.DropTargetAutoScroller']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DropTarget", function(){
+(function(){var P$=Clazz.newPackage("java.awt.dnd"),p$1={},I$=[[0,'java.awt.Rectangle','java.awt.Toolkit','javax.swing.Timer','java.awt.datatransfer.SystemFlavorMap','java.awt.dnd.DropTargetContext',['java.awt.dnd.DropTarget','.DropTargetAutoScroller']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DropTarget", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.awt.dnd.DropTargetListener', 'java.io.Serializable']);
+C$.$classes$=[['DropTargetAutoScroller',12]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dropTargetContext=null;
-this.component=null;
-this.componentPeer=null;
-this.nativePeer=null;
-this.actions=0;
-this.active=false;
-this.autoScroller=null;
-this.dtListener=null;
-this.flavorMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dropTargetContext=this.createDropTargetContext$();
 this.actions=3;
 this.active=true;
 this.flavorMap=$I$(4).getDefaultFlavorMap$();
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['active'],'I',['actions'],'O',['dropTargetContext','java.awt.dnd.DropTargetContext','component','java.awt.Component','componentPeer','java.awt.peer.ComponentPeer','+nativePeer','autoScroller','java.awt.dnd.DropTarget.DropTargetAutoScroller','dtListener','java.awt.dnd.DropTargetListener','flavorMap','java.awt.datatransfer.FlavorMap']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$java_awt_dnd_DropTargetListener$Z$java_awt_datatransfer_FlavorMap', function (c, ops, dtl, act, fm) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.component=c;
 this.setDefaultActions$I(ops);
 if (dtl != null ) try {
@@ -168,7 +157,7 @@ Clazz.newMeth(C$, 'addNotify$java_awt_peer_ComponentPeer', function (peer) {
 if (peer === this.componentPeer ) return;
 this.componentPeer=peer;
 for (var c=this.component; c != null  && Clazz.instanceOf(peer, "java.awt.peer.LightweightPeer") ; c=c.getParent$()) {
-peer=c.getPeer$();
+peer=c.peer ||null;
 }
 if (peer == null ) peer=this.componentPeer;
 this.nativePeer=peer;
@@ -185,11 +174,11 @@ return this.dropTargetContext;
 });
 
 Clazz.newMeth(C$, 'createDropTargetContext$', function () {
-return Clazz.new_($I$(5).c$$java_awt_dnd_DropTarget,[this]);
+return Clazz.new_($I$(5,1).c$$java_awt_dnd_DropTarget,[this]);
 });
 
 Clazz.newMeth(C$, 'createDropTargetAutoScroller$java_awt_Component$java_awt_Point', function (c, p) {
-return Clazz.new_($I$(6).c$$java_awt_Component$java_awt_Point,[c, p]);
+return Clazz.new_($I$(6,1).c$$java_awt_Component$java_awt_Point,[c, p]);
 });
 
 Clazz.newMeth(C$, 'initializeAutoscrolling$java_awt_Point', function (p) {
@@ -207,33 +196,22 @@ this.autoScroller.stop$();
 this.autoScroller=null;
 }});
 ;
-(function(){var C$=Clazz.newClass(P$.DropTarget, "DropTargetAutoScroller", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DropTarget, "DropTargetAutoScroller", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.awt.event.ActionListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.component=null;
-this.autoScroll=null;
-this.timer=null;
-this.locn=null;
-this.prev=null;
-this.outer=null;
-this.inner=null;
-this.hysteresis=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.outer=Clazz.new_($I$(1));
-this.inner=Clazz.new_($I$(1));
+this.outer=Clazz.new_($I$(1,1));
+this.inner=Clazz.new_($I$(1,1));
 this.hysteresis=10;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['hysteresis'],'O',['component','java.awt.Component','autoScroll','java.awt.dnd.Autoscroll','timer','javax.swing.Timer','locn','java.awt.Point','+prev','outer','java.awt.Rectangle','+inner']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$java_awt_Point', function (c, p) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.component=c;
 this.autoScroll=this.component;
 var t=$I$(2).getDefaultToolkit$();
@@ -255,7 +233,7 @@ if (Clazz.exceptionOf(e,"Exception")){
 throw e;
 }
 }
-this.timer=Clazz.new_($I$(3).c$$I$java_awt_event_ActionListener,[interval.intValue$(), this]);
+this.timer=Clazz.new_([interval.intValue$(), this],$I$(3,1).c$$I$java_awt_event_ActionListener);
 this.timer.setCoalesce$Z(true);
 this.timer.setInitialDelay$I(initial.intValue$());
 this.locn=p;
@@ -294,7 +272,7 @@ Clazz.newMeth(C$, 'stop$', function () {
 this.timer.stop$();
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 p$1.updateRegion.apply(this, []);
 if (this.outer.contains$java_awt_Point(this.locn) && !this.inner.contains$java_awt_Point(this.locn) ) this.autoScroll.autoscroll$java_awt_Point(this.locn);
 });
@@ -302,4 +280,4 @@ if (this.outer.contains$java_awt_Point(this.locn) && !this.inner.contains$java_a
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

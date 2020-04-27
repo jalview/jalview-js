@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.data"),I$=[[0,'javajs.util.SB','javajs.util.XmlUtil','org.jmol.jvxl.data.VolumeData','org.jmol.util.Escape','org.jmol.util.BSUtil','javajs.util.PT','javajs.util.Lst','org.jmol.util.C','javajs.util.P3','javajs.util.BS','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JvxlCoder");
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.data"),I$=[[0,'javajs.util.SB','javajs.util.XmlUtil','org.jmol.jvxl.data.VolumeData','org.jmol.util.Escape','org.jmol.util.BSUtil','javajs.util.PT','javajs.util.Lst','org.jmol.util.C','javajs.util.P3','javajs.util.BS','org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JvxlCoder");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'jvxlGetFile$org_jmol_jvxl_data_VolumeData$org_jmol_jvxl_data_JvxlData$SA', function (volumeData, jvxlData, title) {
 var counts=volumeData.getVoxelCounts$();
@@ -17,7 +16,7 @@ return C$.jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA
 }, 1);
 
 Clazz.newMeth(C$, 'jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S', function (jvxlData, meshData, title, msg, includeHeader, nSurfaces, state, comment) {
-var data=Clazz.new_($I$(1));
+var data=Clazz.new_($I$(1,1));
 if ("TRAILERONLY".equals$O(msg)) {
 $I$(2).closeTag$javajs_util_SB$S(data, "jvxlSurfaceSet");
 $I$(2).closeTag$javajs_util_SB$S(data, "jvxl");
@@ -26,28 +25,28 @@ return data.toString();
 var isHeaderOnly=("HEADERONLY".equals$O(msg));
 if (includeHeader) {
 $I$(2).openDocument$javajs_util_SB(data);
-$I$(2).openTagAttr$javajs_util_SB$S$OA(data, "jvxl", Clazz.array(String, -1, ["version", "2.3", "jmolVersion", jvxlData.version, "xmlns", "http://jmol.org/jvxl_schema", "xmlns:cml", "http://www.xml-cml.org/schema"]));
-$I$(2).appendCdata$javajs_util_SB$S$OA$S(data, "jvxlFileTitle", null, jvxlData.jvxlFileTitle == null  ? "\n" : "\n" + jvxlData.jvxlFileTitle);
+(function(a,f){return f.apply(null,a)})([data, "jvxl", Clazz.array(String, -1, ["version", "2.3", "jmolVersion", jvxlData.version, "xmlns", "http://jmol.org/jvxl_schema", "xmlns:cml", "http://www.xml-cml.org/schema"])],$I$(2).openTagAttr$javajs_util_SB$S$OA);
+(function(a,f){return f.apply(null,a)})([data, "jvxlFileTitle", null, jvxlData.jvxlFileTitle == null  ? "\n" : "\n" + jvxlData.jvxlFileTitle],$I$(2).appendCdata$javajs_util_SB$S$OA$S);
 if (jvxlData.moleculeXml != null ) data.append$S(jvxlData.moleculeXml);
 var volumeDataXml=(vertexDataOnly ? null : jvxlData.jvxlVolumeDataXml);
-if (volumeDataXml == null ) volumeDataXml=(Clazz.new_($I$(3))).setVolumetricXml$();
+if (volumeDataXml == null ) volumeDataXml=(Clazz.new_($I$(3,1))).setVolumetricXml$();
 data.append$S(volumeDataXml);
-$I$(2).openTagAttr$javajs_util_SB$S$OA(data, "jvxlSurfaceSet", Clazz.array(String, -1, ["count", "" + (nSurfaces > 0 ? nSurfaces : 1)]));
+(function(a,f){return f.apply(null,a)})([data, "jvxlSurfaceSet", Clazz.array(String, -1, ["count", "" + (nSurfaces > 0 ? nSurfaces : 1)])],$I$(2).openTagAttr$javajs_util_SB$S$OA);
 if (isHeaderOnly) return data.toString();
 }var sb;
 var type=(vertexDataOnly ? "pmesh" : jvxlData.jvxlPlane == null  ? "isosurface" : "plane");
 if (jvxlData.jvxlColorData != null  && jvxlData.jvxlColorData.length$() > 0 ) type="mapped " + type;
-$I$(2).openTagAttr$javajs_util_SB$S$OA(data, "jvxlSurface", Clazz.array(String, -1, ["type", type]));
+(function(a,f){return f.apply(null,a)})([data, "jvxlSurface", Clazz.array(String, -1, ["type", type])],$I$(2).openTagAttr$javajs_util_SB$S$OA);
 data.append$S(C$.jvxlGetInfoData$org_jmol_jvxl_data_JvxlData$Z(jvxlData, vertexDataOnly));
 C$.jvxlAppendCommandState$javajs_util_SB$S$S(data, comment, state);
 if (title != null  || msg != null  && msg.length$() > 0  ) {
-sb=Clazz.new_($I$(1));
+sb=Clazz.new_($I$(1,1));
 if (msg != null  && msg.length$() > 0 ) sb.append$S(msg).append$S("\n");
 if (title != null ) for (var i=0; i < title.length; i++) sb.append$S(title[i]).appendC$C("\n");
 
-$I$(2).appendCdata$javajs_util_SB$S$OA$S(data, "jvxlSurfaceTitle", null, sb.toString());
-}sb=Clazz.new_($I$(1));
-$I$(2).openTagAttr$javajs_util_SB$S$OA(sb, "jvxlSurfaceData", (vertexDataOnly || jvxlData.jvxlPlane == null   ? null : jvxlData.mapLattice == null  ? Clazz.array(String, -1, ["plane", $I$(4).eP4$javajs_util_P4(jvxlData.jvxlPlane)]) : Clazz.array(String, -1, ["plane", $I$(4).eP4$javajs_util_P4(jvxlData.jvxlPlane), "maplattice", $I$(4).eP$javajs_util_T3(jvxlData.mapLattice)])));
+(function(a,f){return f.apply(null,a)})([data, "jvxlSurfaceTitle", null, sb.toString()],$I$(2).appendCdata$javajs_util_SB$S$OA$S);
+}sb=Clazz.new_($I$(1,1));
+(function(a,f){return f.apply(null,a)})([sb, "jvxlSurfaceData", (vertexDataOnly || jvxlData.jvxlPlane == null   ? null : jvxlData.mapLattice == null  ? Clazz.array(String, -1, ["plane", $I$(4).eP4$javajs_util_P4(jvxlData.jvxlPlane)]) : Clazz.array(String, -1, ["plane", $I$(4).eP4$javajs_util_P4(jvxlData.jvxlPlane), "maplattice", $I$(4).eP$javajs_util_T3(jvxlData.mapLattice)]))],$I$(2).openTagAttr$javajs_util_SB$S$OA);
 if (vertexDataOnly) {
 C$.appendXmlVertexOnlyData$javajs_util_SB$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$Z(sb, jvxlData, meshData, true);
 } else if (jvxlData.jvxlPlane == null ) {
@@ -68,7 +67,7 @@ if (jvxlData.vContours != null  && jvxlData.vContours.length > 0 ) {
 C$.jvxlEncodeContourData$javajs_util_LstA$javajs_util_SB(jvxlData.vContours, data);
 }if (jvxlData.vertexColorMap != null ) {
 if (jvxlData.baseColor == null ) $I$(2).openTag$javajs_util_SB$S(data, "jvxlVertexColorData");
- else $I$(2).openTagAttr$javajs_util_SB$S$OA(data, "jvxlVertexColorData", Clazz.array(String, -1, ["baseColor", jvxlData.baseColor]));
+ else (function(a,f){return f.apply(null,a)})([data, "jvxlVertexColorData", Clazz.array(String, -1, ["baseColor", jvxlData.baseColor])],$I$(2).openTagAttr$javajs_util_SB$S$OA);
 for (var entry, $entry = jvxlData.vertexColorMap.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) C$.appendEncodedBitSetTag$javajs_util_SB$S$javajs_util_BS$I$OA(data, "jvxlColorMap", entry.getValue$(), -1, Clazz.array(java.lang.Object, -1, ["color", entry.getKey$()]));
 
 jvxlData.vertexColorMap=null;
@@ -83,24 +82,24 @@ $I$(2).closeTag$javajs_util_SB$S(data, "jvxl");
 Clazz.newMeth(C$, 'appendEncodedBitSetTag$javajs_util_SB$S$javajs_util_BS$I$OA', function (sb, name, bs, count, attribs) {
 if (count < 0) count=$I$(5).cardinalityOf$javajs_util_BS(bs);
 if (count == 0) return;
-var sb1=Clazz.new_($I$(1));
+var sb1=Clazz.new_($I$(1,1));
 sb1.append$S("\n ");
 C$.jvxlEncodeBitSetBuffer$javajs_util_BS$I$javajs_util_SB(bs, -1, sb1);
-$I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, name, Clazz.array(java.lang.Object, -1, [attribs, "bsEncoding", "base90+35", "count", "" + count, "len", "" + bs.length$()]), C$.jvxlCompressString$S$Z(sb1.toString(), true));
+(function(a,f){return f.apply(null,a)})([sb, name, Clazz.array(java.lang.Object, -1, [attribs, "bsEncoding", "base90+35", "count", "" + count, "len", "" + bs.length$()]), C$.jvxlCompressString$S$Z(sb1.toString(), true)],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
 }, 1);
 
 Clazz.newMeth(C$, 'jvxlSetCompressionRatio$javajs_util_SB$org_jmol_jvxl_data_JvxlData$I', function (data, jvxlData, len) {
 var s=data.toString();
 var r=((jvxlData.nBytes > 0 ? (jvxlData.nBytes) / len : ((jvxlData.nPointsX * jvxlData.nPointsY * jvxlData.nPointsZ * 13 )) / len)|0);
-return $I$(6).rep$S$S$S(s, "\"not calculated\"", (r > 0 ? "\"" + r + ":1\""  : "\"?\""));
+return (function(a,f){return f.apply(null,a)})([s, "\"not calculated\"", (r > 0 ? "\"" + r + ":1\""  : "\"?\"")],$I$(6).rep$S$S$S);
 }, 1);
 
 Clazz.newMeth(C$, 'appendXmlEdgeData$javajs_util_SB$org_jmol_jvxl_data_JvxlData', function (sb, jvxlData) {
-$I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, "jvxlEdgeData", Clazz.array(String, -1, ["count", "" + (jvxlData.jvxlEdgeData.length$() - 1), "encoding", "base90f1", "bsEncoding", "base90+35c", "isXLowToHigh", "" + jvxlData.isXLowToHigh, "data", C$.jvxlCompressString$S$Z(jvxlData.jvxlEdgeData, true)]), "\n" + C$.jvxlCompressString$S$Z(jvxlData.jvxlSurfaceData, true));
+(function(a,f){return f.apply(null,a)})([sb, "jvxlEdgeData", Clazz.array(String, -1, ["count", "" + (jvxlData.jvxlEdgeData.length$() - 1), "encoding", "base90f1", "bsEncoding", "base90+35c", "isXLowToHigh", "" + jvxlData.isXLowToHigh, "data", C$.jvxlCompressString$S$Z(jvxlData.jvxlEdgeData, true)]), "\n" + C$.jvxlCompressString$S$Z(jvxlData.jvxlSurfaceData, true)],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
 }, 1);
 
 Clazz.newMeth(C$, 'jvxlAppendCommandState$javajs_util_SB$S$S', function (data, cmd, state) {
-if (cmd != null ) $I$(2).appendCdata$javajs_util_SB$S$OA$S(data, "jvxlIsosurfaceCommand", null, "\n" + (cmd.indexOf$S("#") < 0 ? cmd : cmd.substring$I$I(0, cmd.indexOf$S("#"))) + "\n" );
+if (cmd != null ) (function(a,f){return f.apply(null,a)})([data, "jvxlIsosurfaceCommand", null, "\n" + (cmd.indexOf$S("#") < 0 ? cmd : cmd.substring$I$I(0, cmd.indexOf$S("#"))) + "\n" ],$I$(2).appendCdata$javajs_util_SB$S$OA$S);
 if (state != null ) {
 if (state.indexOf$S("** XML ** ") >= 0) {
 state=$I$(6).split$S$S(state, "** XML **")[1].trim$();
@@ -113,7 +112,7 @@ Clazz.newMeth(C$, 'appendXmlColorData$javajs_util_SB$S$Z$Z$F$F', function (sb, d
 var n;
 if (data == null  || (n=data.length$() - 1) < 0 ) return;
 if (isPrecisionColor) n=(n/(2)|0);
-$I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, "jvxlColorData", Clazz.array(String, -1, ["count", "" + n, "encoding", (isEncoded ? "base90f" + (isPrecisionColor ? "2" : "1") : "none"), "min", "" + new Float(value1).toString(), "max", "" + new Float(value2).toString(), "data", C$.jvxlCompressString$S$Z(data, true)]), null);
+(function(a,f){return f.apply(null,a)})([sb, "jvxlColorData", Clazz.array(String, -1, ["count", "" + n, "encoding", (isEncoded ? "base90f" + (isPrecisionColor ? "2" : "1") : "none"), "min", "" + new Float(value1).toString(), "max", "" + new Float(value2).toString(), "data", C$.jvxlCompressString$S$Z(data, true)]), null],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
 }, 1);
 
 Clazz.newMeth(C$, 'jvxlGetInfo$org_jmol_jvxl_data_JvxlData', function (jvxlData) {
@@ -122,7 +121,7 @@ return C$.jvxlGetInfoData$org_jmol_jvxl_data_JvxlData$Z(jvxlData, jvxlData.verte
 
 Clazz.newMeth(C$, 'jvxlGetInfoData$org_jmol_jvxl_data_JvxlData$Z', function (jvxlData, vertexDataOnly) {
 if (jvxlData.jvxlSurfaceData == null ) return "";
-var attribs=Clazz.new_($I$(7));
+var attribs=Clazz.new_($I$(7,1));
 var nSurfaceInts=jvxlData.nSurfaceInts;
 var bytesUncompressedEdgeData=(vertexDataOnly ? 0 : jvxlData.jvxlEdgeData.length$() - 1);
 var nColorData=(jvxlData.jvxlColorData == null  ? -1 : (jvxlData.jvxlColorData.length$() - 1));
@@ -190,7 +189,7 @@ if (jvxlData.vContours == null ) C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  
 } else {
 if (jvxlData.jvxlPlane != null ) C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  contoured", "true");
 C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  nContours", "" + jvxlData.contourValues.length);
-C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  contourValues", $I$(4).eAF$FA(jvxlData.contourValuesUsed == null  ? jvxlData.contourValues : jvxlData.contourValuesUsed));
+C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  contourValues", (function(a,f){return f.apply(null,a)})([jvxlData.contourValuesUsed == null  ? jvxlData.contourValues : jvxlData.contourValuesUsed],$I$(4).eAF$FA));
 C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  contourColors", jvxlData.contourColors);
 }if (jvxlData.thisContour > 0) C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  thisContour", "" + jvxlData.thisContour);
 }if (jvxlData.insideOut) C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  insideOut", "true");
@@ -200,27 +199,27 @@ C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  xyzMin", $I$(4).eP$javajs_util_T3
 C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  xyzMax", $I$(4).eP$javajs_util_T3(jvxlData.boundingBox[1]));
 C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  approximateCompressionRatio", "not calculated");
 C$.addAttrib$javajs_util_Lst$S$S(attribs, "\n  jmolVersion", jvxlData.version);
-var info=Clazz.new_($I$(1));
-$I$(2).openTagAttr$javajs_util_SB$S$OA(info, "jvxlSurfaceInfo", attribs.toArray$TTA(Clazz.array(java.lang.Object, [attribs.size$()])));
+var info=Clazz.new_($I$(1,1));
+(function(a,f){return f.apply(null,a)})([info, "jvxlSurfaceInfo", attribs.toArray$OA(Clazz.array(java.lang.Object, [attribs.size$()]))],$I$(2).openTagAttr$javajs_util_SB$S$OA);
 $I$(2).closeTag$javajs_util_SB$S(info, "jvxlSurfaceInfo");
 return info.toString();
 }, 1);
 
 Clazz.newMeth(C$, 'addAttrib$javajs_util_Lst$S$S', function (attribs, name, value) {
-attribs.addLast$TV(Clazz.array(String, -1, [name, value]));
+attribs.addLast$O(Clazz.array(String, -1, [name, value]));
 }, 1);
 
 Clazz.newMeth(C$, 'jvxlEncodeContourData$javajs_util_LstA$javajs_util_SB', function (contours, sb) {
-$I$(2).openTagAttr$javajs_util_SB$S$OA(sb, "jvxlContourData", Clazz.array(String, -1, ["count", "" + contours.length]));
+(function(a,f){return f.apply(null,a)})([sb, "jvxlContourData", Clazz.array(String, -1, ["count", "" + contours.length])],$I$(2).openTagAttr$javajs_util_SB$S$OA);
 for (var i=0; i < contours.length; i++) {
 if (contours[i].size$() < 6) {
 continue;
 }var nPolygons=(contours[i].get$I(0)).intValue$();
-var sb1=Clazz.new_($I$(1));
+var sb1=Clazz.new_($I$(1,1));
 sb1.append$S("\n");
 var bs=contours[i].get$I(1);
 C$.jvxlEncodeBitSetBuffer$javajs_util_BS$I$javajs_util_SB(bs, nPolygons, sb1);
-$I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, "jvxlContour", Clazz.array(String, -1, ["index", "" + i, "value", "" + contours[i].get$I(2), "color", $I$(4).escapeColor$I((contours[i].get$I(4))[0]), "count", "" + bs.length$(), "encoding", "base90iff1", "bsEncoding", "base90+35c", "data", C$.jvxlCompressString$S$Z(contours[i].get$I(5).toString(), true)]), C$.jvxlCompressString$S$Z(sb1.toString(), true));
+(function(a,f){return f.apply(null,a)})([sb, "jvxlContour", Clazz.array(String, -1, ["index", "" + i, "value", "" + contours[i].get$I(2), "color", (function(a,f){return f.apply(null,a)})([(contours[i].get$I(4))[0]],$I$(4).escapeColor$I), "count", "" + bs.length$(), "encoding", "base90iff1", "bsEncoding", "base90+35c", "data", C$.jvxlCompressString$S$Z(contours[i].get$I(5).toString(), true)]), C$.jvxlCompressString$S$Z(sb1.toString(), true)],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
 }
 $I$(2).closeTag$javajs_util_SB$S(sb, "jvxlContourData");
 }, 1);
@@ -236,12 +235,12 @@ var c1=" ";
 var c2=" ";
 for (var i=bs.nextSetBit$I(0); i >= 0; i=bs.nextSetBit$I(i + 1)) {
 var vertexIndexes=polygonIndexes[i];
-while (pt < nBuf && !$I$(6).isDigit$C(c1=fData.charAt$I(pt++)) ){
+while (pt < nBuf && !(function(a,f){return f.apply(null,a)})([c1=fData.charAt$I(pt++)],$I$(6).isDigit$C) ){
 }
 type=c1.$c() - 48;
-while (pt < nBuf && $I$(6).isWhitespace$C(c1=fData.charAt$I(pt++)) ){
+while (pt < nBuf && (function(a,f){return f.apply(null,a)})([c1=fData.charAt$I(pt++)],$I$(6).isWhitespace$C) ){
 }
-while (pt < nBuf && $I$(6).isWhitespace$C(c2=fData.charAt$I(pt++)) ){
+while (pt < nBuf && (function(a,f){return f.apply(null,a)})([c2=fData.charAt$I(pt++)],$I$(6).isWhitespace$C) ){
 }
 var f1=C$.jvxlFractionFromCharacter$I$I$I$F(c1.$c(), 35, 90, 0);
 var f2=C$.jvxlFractionFromCharacter$I$I$I$F(c2.$c(), 35, 90, 0);
@@ -262,13 +261,13 @@ i4=vertexIndexes[2];
 } else {
 i3=vertexIndexes[2];
 i4=i1;
-}}v.addLast$TV(C$.getContourPoint$javajs_util_T3A$I$I$F(vertices, i1, i2, f1));
-v.addLast$TV(C$.getContourPoint$javajs_util_T3A$I$I$F(vertices, i3, i4, f2));
+}}v.addLast$O(C$.getContourPoint$javajs_util_T3A$I$I$F(vertices, i1, i2, f1));
+v.addLast$O(C$.getContourPoint$javajs_util_T3A$I$I$F(vertices, i3, i4, f2));
 }
 }, 1);
 
 Clazz.newMeth(C$, 'getContourPoint$javajs_util_T3A$I$I$F', function (vertices, i, j, f) {
-var pt=Clazz.new_($I$(9));
+var pt=Clazz.new_($I$(9,1));
 pt.sub2$javajs_util_T3$javajs_util_T3(vertices[j], vertices[i]);
 pt.scaleAdd2$F$javajs_util_T3$javajs_util_T3(f, pt, vertices[i]);
 return pt;
@@ -294,8 +293,8 @@ var vertexCount=(jvxlData.saveVertexCount > 0 ? jvxlData.saveVertexCount : jvxlD
 if (vertexCount > vertexValues.length) System.out.println$S("JVXLCODER ERROR");
 var min=jvxlData.mappedDataMin;
 var max=jvxlData.mappedDataMax;
-var list1=Clazz.new_($I$(1));
-var list2=Clazz.new_($I$(1));
+var list1=Clazz.new_($I$(1,1));
+var list2=Clazz.new_($I$(1,1));
 if (vertexValues.length < vertexCount) System.out.println$S("JVXLCOLOR OHOHO");
 for (var i=0; i < vertexCount; i++) {
 var value=vertexValues[i];
@@ -313,8 +312,8 @@ if (C$.appendXmlTriangleData$javajs_util_SB$IAA$I$javajs_util_BS$IA$Z(sb, meshDa
 }, 1);
 
 Clazz.newMeth(C$, 'appendXmlTriangleData$javajs_util_SB$IAA$I$javajs_util_BS$IA$Z', function (sb, triangles, nData, bsSlabDisplay, vertexIdNew, escapeXml) {
-var list1=Clazz.new_($I$(1));
-var list2=Clazz.new_($I$(1));
+var list1=Clazz.new_($I$(1,1));
+var list2=Clazz.new_($I$(1,1));
 var ilast=1;
 var p=0;
 var inew=0;
@@ -352,8 +351,8 @@ i++;
 nTri++;
 }}
 if (list1.length$() == 0) return true;
-$I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, "jvxlTriangleData", Clazz.array(String, -1, ["count", "" + nTri, "encoding", "jvxltdiff", "data", C$.jvxlCompressString$S$Z(list1.toString(), escapeXml)]), null);
-$I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, "jvxlTriangleEdgeData", Clazz.array(String, -1, ["count", "" + nTri, "encoding", "jvxlsc", "data", C$.jvxlCompressString$S$Z(list2.toString(), escapeXml)]), null);
+(function(a,f){return f.apply(null,a)})([sb, "jvxlTriangleData", Clazz.array(String, -1, ["count", "" + nTri, "encoding", "jvxltdiff", "data", C$.jvxlCompressString$S$Z(list1.toString(), escapeXml)]), null],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
+(function(a,f){return f.apply(null,a)})([sb, "jvxlTriangleEdgeData", Clazz.array(String, -1, ["count", "" + nTri, "encoding", "jvxlsc", "data", C$.jvxlCompressString$S$Z(list2.toString(), escapeXml)]), null],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
 return true;
 }, 1);
 
@@ -363,8 +362,8 @@ var colorFractionRange=jvxlData.colorFractionRange;
 var p;
 var min=jvxlData.boundingBox[0];
 var max=jvxlData.boundingBox[1];
-var list1=Clazz.new_($I$(1));
-var list2=Clazz.new_($I$(1));
+var list1=Clazz.new_($I$(1,1));
+var list2=Clazz.new_($I$(1,1));
 var vertexIdOld=null;
 var removeSlabbed=(bsSlabDisplay != null );
 if (polygonCount > 0) {
@@ -382,11 +381,11 @@ C$.jvxlAppendCharacter2$F$F$F$I$I$javajs_util_SB$javajs_util_SB(p.y, min.y, max.
 C$.jvxlAppendCharacter2$F$F$F$I$I$javajs_util_SB$javajs_util_SB(p.z, min.z, max.z, colorFractionBase, colorFractionRange, list1, list2);
 }
 list1.appendSB$javajs_util_SB(list2);
-$I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, "jvxlVertexData", Clazz.array(String, -1, ["count", "" + n, "min", $I$(4).eP$javajs_util_T3(min), "max", $I$(4).eP$javajs_util_T3(max), "encoding", "base90xyz2", "data", C$.jvxlCompressString$S$Z(list1.toString(), escapeXml)]), null);
-if (polygonColorData != null ) $I$(2).appendTagObj$javajs_util_SB$S$OA$O(sb, "jvxlPolygonColorData", Clazz.array(String, -1, ["encoding", "jvxlnc", "count", "" + polygonCount]), "\n" + polygonColorData);
+(function(a,f){return f.apply(null,a)})([sb, "jvxlVertexData", Clazz.array(String, -1, ["count", "" + n, "min", $I$(4).eP$javajs_util_T3(min), "max", $I$(4).eP$javajs_util_T3(max), "encoding", "base90xyz2", "data", C$.jvxlCompressString$S$Z(list1.toString(), escapeXml)]), null],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
+if (polygonColorData != null ) (function(a,f){return f.apply(null,a)})([sb, "jvxlPolygonColorData", Clazz.array(String, -1, ["encoding", "jvxlnc", "count", "" + polygonCount]), "\n" + polygonColorData],$I$(2).appendTagObj$javajs_util_SB$S$OA$O);
 if (!addColorData) return;
-list1=Clazz.new_($I$(1));
-list2=Clazz.new_($I$(1));
+list1=Clazz.new_($I$(1,1));
+list2=Clazz.new_($I$(1,1));
 if (vertexColors == null ) {
 for (var i=0; i < vertexCount; i++) if (!removeSlabbed || bsSlabDisplay.get$I(i) ) {
 var value=vertexValues[polygonCount == 0 ? i : vertexIdOld[i]];
@@ -481,7 +480,7 @@ return n;
 }, 1);
 
 Clazz.newMeth(C$, 'jvxlEncodeBitSet$javajs_util_BS', function (bs) {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 C$.jvxlEncodeBitSetBuffer$javajs_util_BS$I$javajs_util_SB(bs, -1, sb);
 return sb.toString();
 }, 1);
@@ -522,7 +521,7 @@ if (!isInRange) sb.append$S(" ");
 }, 1);
 
 Clazz.newMeth(C$, 'jvxlDecodeBitSetRange$S$I$I', function (data, base, range) {
-var bs=Clazz.new_($I$(10));
+var bs=Clazz.new_($I$(10,1));
 var dataCount=0;
 var ptr=0;
 var isset=false;
@@ -541,13 +540,13 @@ var value=0;
 var ich=next[0];
 var ichMax=str.length$();
 if (ich < 0) return -2147483648;
-while (ich < ichMax && $I$(6).isWhitespace$C(str.charAt$I(ich)) )++ich;
+while (ich < ichMax && (function(a,f){return f.apply(null,a)})([str.charAt$I(ich)],$I$(6).isWhitespace$C) )++ich;
 
 if (ich >= ichMax) return -2147483648;
 var factor=1;
 var isLong=((str.charCodeAt$I(ich)) == (offset + base) );
 if (isLong) ich++;
-while (ich < ichMax && !$I$(6).isWhitespace$C(str.charAt$I(ich)) ){
+while (ich < ichMax && !(function(a,f){return f.apply(null,a)})([str.charAt$I(ich)],$I$(6).isWhitespace$C) ){
 var i=str.charAt$I(ich).$c();
 if (i < offset) i=92;
 value+=(i - offset) * factor;
@@ -563,7 +562,7 @@ return value;
 
 Clazz.newMeth(C$, 'jvxlDecodeBitSet$S', function (data) {
 if (data.startsWith$S("-")) return C$.jvxlDecodeBitSetRange$S$I$I(C$.jvxlDecompressString$S(data.substring$I(1)), 35, 90);
-var bs=Clazz.new_($I$(10));
+var bs=Clazz.new_($I$(10,1));
 var dataCount=0;
 var lastCount=0;
 var nPrev=0;
@@ -587,7 +586,7 @@ return bs;
 
 Clazz.newMeth(C$, 'jvxlCompressString$S$Z', function (data, escapeXml) {
 if (data.indexOf$S("~") >= 0) return data;
-var dataOut=Clazz.new_($I$(1));
+var dataOut=Clazz.new_($I$(1,1));
 var chLast="\u0000";
 var escaped=false;
 var lastEscaped=false;
@@ -635,7 +634,7 @@ return dataOut.toString();
 
 Clazz.newMeth(C$, 'jvxlDecompressString$S', function (data) {
 if (data.indexOf$S("~") < 0) return data;
-var dataOut=Clazz.new_($I$(1));
+var dataOut=Clazz.new_($I$(1,1));
 var chLast="\u0000";
 var next=Clazz.array(Integer.TYPE, [1]);
 for (var i=0; i < data.length$(); i++) {
@@ -665,7 +664,7 @@ case 126:
 --i;
 break;
 default:
-$I$(11).error$S("Error uncompressing string " + data.substring$I$I(0, i) + "?" );
+(function(a,f){return f.apply(null,a)})(["Error uncompressing string " + data.substring$I$I(0, i) + "?" ],$I$(11).error$S);
 }
 }dataOut.appendC$C(ch);
 chLast=ch;
@@ -684,4 +683,4 @@ if (sb.length$() == 0) sb.append$S("Line 1\nLine 2\n");
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,23 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[];
-var C$=Clazz.newClass(P$, "AnnotationColourScheme");
+/*c*/var C$=Clazz.newClass(P$, "AnnotationColourScheme");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.aboveThreshold=null;
-this.annotation=null;
-this.minColour=null;
-this.maxColour=null;
-this.colourScheme=null;
-this.threshold=null;
-this.perSequence=null;
-this.predefinedColours=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['annotation','colourScheme'],'O',['aboveThreshold','Integer','+minColour','+maxColour','threshold','Float','perSequence','Boolean','+predefinedColours']]]
 
 Clazz.newMeth(C$, 'getAboveThreshold$', function () {
 return this.aboveThreshold;
@@ -82,16 +71,17 @@ return this.predefinedColours;
 Clazz.newMeth(C$, 'setPredefinedColours$Boolean', function (value) {
 this.predefinedColours=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.AnnotationColourScheme'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="AnnotationColourScheme" namespace="www.jalview.org" )']],
-  [['aboveThreshold','Integer'],['@XmlAttribute(name="aboveThreshold" )']],
-  [['annotation','String'],['@XmlAttribute(name="annotation" )']],
-  [['minColour','Integer'],['@XmlAttribute(name="minColour" )']],
-  [['maxColour','.'],['@XmlAttribute(name="maxColour" )']],
-  [['colourScheme','String'],['@XmlAttribute(name="colourScheme" )']],
-  [['threshold','Float'],['@XmlAttribute(name="threshold" )']],
-  [['perSequence','Boolean'],['@XmlAttribute(name="perSequence" )']],
-  [['predefinedColours','.'],['@XmlAttribute(name="predefinedColours" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.AnnotationColourScheme',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="AnnotationColourScheme" namespace="www.jalview.org" ']],
+  [['aboveThreshold','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="aboveThreshold" ']],
+  [['annotation','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="annotation" ']],
+  [['minColour','Integer',null,['javax.xml.bind.annotation.XmlAttribute']],['name="minColour" ']],
+  [['maxColour','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="maxColour" ']],
+  [['colourScheme','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="colourScheme" ']],
+  [['threshold','Float',null,['javax.xml.bind.annotation.XmlAttribute']],['name="threshold" ']],
+  [['perSequence','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="perSequence" ']],
+  [['predefinedColours','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="predefinedColours" ']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

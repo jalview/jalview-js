@@ -1,15 +1,13 @@
-(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'java.awt.Color','swingjs.a2s.A2SEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Choice", null, 'javax.swing.JComboBox');
+(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'java.awt.Color','swingjs.a2s.A2SEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Choice", null, 'javax.swing.JComboBox');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.setBackground$java_awt_Color($I$(1).white);
 }, 1);
 
@@ -58,7 +56,7 @@ C$.superclazz.prototype.fireActionEvent$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'fireItemStateChanged$java_awt_event_ItemEvent', function (event) {
-if (!this._trigger) return;
+if (!this.秘trigger) return;
 $I$(2).addListener$java_awt_Component(this);
 C$.superclazz.prototype.fireItemStateChanged$java_awt_event_ItemEvent.apply(this, [event]);
 });
@@ -67,4 +65,4 @@ Clazz.newMeth(C$, 'getActionCommand$', function () {
 return this.getSelectedItem$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:44 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

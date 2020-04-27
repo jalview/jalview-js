@@ -1,110 +1,40 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},p$2={},I$=[[0,'org.jmol.viewer.MouseState','org.jmol.util.Rectangle','org.jmol.viewer.Viewer','org.jmol.viewer.binding.JmolBinding','org.jmol.viewer.binding.Binding','org.jmol.viewer.Gesture','org.jmol.i18n.GT','org.jmol.util.BSUtil','org.jmol.thread.HoverWatcherThread','org.jmol.util.Logger','javajs.util.AU','javajs.util.PT','org.jmol.util.Escape','org.jmol.util.Point3fi','org.jmol.api.Interface','javajs.util.P3','org.jmol.script.ScriptEval','org.jmol.script.SV','org.jmol.viewer.MotionPoint']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ActionManager", null, null, 'org.jmol.api.EventManager');
-C$.actionInfo=null;
-C$.actionNames=null;
-C$.pickingModeNames=null;
-C$.pickingStyleNames=null;
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},p$2={},I$=[[0,'org.jmol.viewer.MouseState','org.jmol.util.Rectangle','org.jmol.viewer.Viewer','org.jmol.viewer.binding.JmolBinding','org.jmol.viewer.binding.Binding','org.jmol.viewer.Gesture','org.jmol.i18n.GT','org.jmol.util.BSUtil','org.jmol.thread.HoverWatcherThread','org.jmol.util.Logger','javajs.util.AU','javajs.util.PT','org.jmol.util.Escape','org.jmol.util.Point3fi','org.jmol.api.Interface','org.jmol.script.ScriptEval','org.jmol.script.SV','org.jmol.viewer.MotionPoint']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ActionManager", null, null, 'org.jmol.api.EventManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.actionInfo=Clazz.array(String, [47]);
-C$.actionNames=Clazz.array(String, [47]);
-{
-C$.pickingModeNames="off identify label center draw spin symmetry deleteatom deletebond atom group chain molecule polymer structure site model element measure distance angle torsion sequence navigate connect struts dragselected dragmolecule dragatom dragminimize dragminimizemolecule invertstereo assignatom assignbond rotatebond identifybond dragligand".split$S(" ");
-};
-{
-C$.pickingStyleNames="toggle selectOrToggle extendedSelect drag measure measureoff".split$S(" ");
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.haveMultiTouchInput=false;
-this.isMultiTouch=false;
-this.b=null;
-this.jmolBinding=null;
-this.pfaatBinding=null;
-this.dragBinding=null;
-this.rasmolBinding=null;
-this.predragBinding=null;
-this.LEFT_CLICKED=0;
-this.LEFT_DRAGGED=0;
-this.hoverWatcherThread=null;
-this.dragGesture=null;
-this.apm=0;
-this.bondPickingMode=0;
-this.pickingStyle=0;
-this.pickingStyleSelect=0;
-this.pickingStyleMeasure=0;
-this.rootPickingStyle=0;
-this.pickAtomAssignType=null;
-this.pickBondAssignType='\0';
-this.isPickAtomAssignCharge=false;
-this.xyRange=0;
-this.gestureSwipeFactor=0;
-this.mouseDragFactor=0;
-this.mouseWheelFactor=0;
-this.current=null;
-this.moved=null;
-this.clicked=null;
-this.pressed=null;
-this.dragged=null;
-this.pressedCount=0;
-this.clickedCount=0;
-this.drawMode=false;
-this.labelMode=false;
-this.dragSelectedMode=false;
-this.measuresEnabled=false;
-this.haveSelection=false;
-this.hoverActive=false;
-this.mp=null;
-this.dragAtomIndex=0;
-this.rubberbandSelectionMode=false;
-this.rectRubber=null;
-this.isAltKeyReleased=false;
-this.keyProcessing=false;
-this.isMultiTouchClient=false;
-this.isMultiTouchServer=false;
-this.pressAction=0;
-this.dragAction=0;
-this.clickAction=0;
-this.measurementQueued=null;
-this.zoomTrigger=false;
-this.selectionWorking=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.apm=1;
 this.pickingStyleSelect=0;
 this.pickingStyleMeasure=5;
 this.rootPickingStyle=0;
-this.pickAtomAssignType="C";
-this.pickBondAssignType="p";
-this.xyRange=0;
 this.gestureSwipeFactor=1.0;
 this.mouseDragFactor=1.0;
 this.mouseWheelFactor=1.15;
-this.current=Clazz.new_($I$(1).c$$S,["current"]);
-this.moved=Clazz.new_($I$(1).c$$S,["moved"]);
-this.clicked=Clazz.new_($I$(1).c$$S,["clicked"]);
-this.pressed=Clazz.new_($I$(1).c$$S,["pressed"]);
-this.dragged=Clazz.new_($I$(1).c$$S,["dragged"]);
+this.current=Clazz.new_($I$(1,1).c$$S,["current"]);
+this.moved=Clazz.new_($I$(1,1).c$$S,["moved"]);
+this.clicked=Clazz.new_($I$(1,1).c$$S,["clicked"]);
+this.pressed=Clazz.new_($I$(1,1).c$$S,["pressed"]);
+this.dragged=Clazz.new_($I$(1,1).c$$S,["dragged"]);
 this.measuresEnabled=true;
 this.hoverActive=false;
 this.dragAtomIndex=-1;
 this.rubberbandSelectionMode=false;
-this.rectRubber=Clazz.new_($I$(2));
+this.rectRubber=Clazz.new_($I$(2,1));
 this.isAltKeyReleased=true;
 this.selectionWorking=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveMultiTouchInput','isMultiTouch','drawMode','labelMode','dragSelectedMode','measuresEnabled','haveSelection','hoverActive','mkBondPressed','rubberbandSelectionMode','isAltKeyReleased','keyProcessing','isMultiTouchClient','isMultiTouchServer','zoomTrigger','selectionWorking'],'F',['gestureSwipeFactor','mouseDragFactor','mouseWheelFactor'],'I',['LEFT_CLICKED','LEFT_DRAGGED','apm','bondPickingMode','pickingStyle','pickingStyleSelect','pickingStyleMeasure','rootPickingStyle','pressedCount','clickedCount','dragAtomIndex','pressAction','dragAction','clickAction'],'O',['vwr','org.jmol.viewer.Viewer','b','org.jmol.viewer.binding.Binding','+jmolBinding','+pfaatBinding','+dragBinding','+rasmolBinding','+predragBinding','hoverWatcherThread','Thread','dragGesture','org.jmol.viewer.Gesture','current','org.jmol.viewer.MouseState','+moved','+clicked','+pressed','+dragged','mp','org.jmol.modelset.MeasurementPending','rectRubber','org.jmol.util.Rectangle','measurementQueued','org.jmol.modelset.MeasurementPending']]
+,['O',['actionInfo','String[]','+actionNames','+pickingModeNames','+pickingStyleNames']]]
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_viewer_Viewer$S', function (vwr, commandOptions) {
 this.vwr=vwr;
 if (!$I$(3).isJS) this.createActions$();
-this.setBinding$org_jmol_viewer_binding_Binding(this.jmolBinding=Clazz.new_($I$(4)));
+this.setBinding$org_jmol_viewer_binding_Binding(this.jmolBinding=Clazz.new_($I$(4,1)));
 this.LEFT_CLICKED=$I$(5).getMouseAction$I$I$I(1, 16, 2);
 this.LEFT_DRAGGED=$I$(5).getMouseAction$I$I$I(1, 16, 1);
-this.dragGesture=Clazz.new_($I$(6).c$$I$org_jmol_viewer_Viewer,[20, vwr]);
+this.dragGesture=Clazz.new_($I$(6,1).c$$I$org_jmol_viewer_Viewer,[20, vwr]);
 });
 
 Clazz.newMeth(C$, 'checkHover$', function () {
@@ -134,7 +64,7 @@ this.b.bindName$I$S(mouseAction, name);
 }});
 
 Clazz.newMeth(C$, 'clearBindings$', function () {
-this.setBinding$org_jmol_viewer_binding_Binding(this.jmolBinding=Clazz.new_($I$(4)));
+this.setBinding$org_jmol_viewer_binding_Binding(this.jmolBinding=Clazz.new_($I$(4,1)));
 this.pfaatBinding=null;
 this.dragBinding=null;
 this.rasmolBinding=null;
@@ -158,51 +88,51 @@ C$.actionNames[i]=name;
 
 Clazz.newMeth(C$, 'createActions$', function () {
 if (C$.actionInfo[0] != null ) return;
-C$.newAction$I$S$S(0, "_assignNew", $I$(7).o$S$O($I$(7).$$S("assign/new atom or bond (requires {0})"), "set picking assignAtom_??/assignBond_?"));
+C$.newAction$I$S$S(0, "_assignNew", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["assign/new atom or bond (requires {0})"],$I$(7).$$S), "set picking assignAtom_??/assignBond_?"],$I$(7).o$S$O));
 C$.newAction$I$S$S(1, "_center", $I$(7).$$S("center"));
-C$.newAction$I$S$S(2, "_clickFrank", $I$(7).$$S("pop up recent context menu (click on Jmol frank)"));
-C$.newAction$I$S$S(4, "_deleteAtom", $I$(7).o$S$O($I$(7).$$S("delete atom (requires {0})"), "set picking DELETE ATOM"));
-C$.newAction$I$S$S(5, "_deleteBond", $I$(7).o$S$O($I$(7).$$S("delete bond (requires {0})"), "set picking DELETE BOND"));
-C$.newAction$I$S$S(6, "_depth", $I$(7).o$S$O($I$(7).$$S("adjust depth (back plane; requires {0})"), "SLAB ON"));
-C$.newAction$I$S$S(7, "_dragAtom", $I$(7).o$S$O($I$(7).$$S("move atom (requires {0})"), "set picking DRAGATOM"));
-C$.newAction$I$S$S(8, "_dragDrawObject", $I$(7).o$S$O($I$(7).$$S("move whole DRAW object (requires {0})"), "set picking DRAW"));
-C$.newAction$I$S$S(9, "_dragDrawPoint", $I$(7).o$S$O($I$(7).$$S("move specific DRAW point (requires {0})"), "set picking DRAW"));
-C$.newAction$I$S$S(10, "_dragLabel", $I$(7).o$S$O($I$(7).$$S("move label (requires {0})"), "set picking LABEL"));
-C$.newAction$I$S$S(11, "_dragMinimize", $I$(7).o$S$O($I$(7).$$S("move atom and minimize molecule (requires {0})"), "set picking DRAGMINIMIZE"));
-C$.newAction$I$S$S(12, "_dragMinimizeMolecule", $I$(7).o$S$O($I$(7).$$S("move and minimize molecule (requires {0})"), "set picking DRAGMINIMIZEMOLECULE"));
-C$.newAction$I$S$S(13, "_dragSelected", $I$(7).o$S$O($I$(7).$$S("move selected atoms (requires {0})"), "set DRAGSELECTED"));
-C$.newAction$I$S$S(14, "_dragZ", $I$(7).o$S$O($I$(7).$$S("drag atoms in Z direction (requires {0})"), "set DRAGSELECTED"));
+C$.newAction$I$S$S(2, "_clickFrank", (function(a,f){return f.apply(null,a)})(["pop up recent context menu (click on Jmol frank)"],$I$(7).$$S));
+C$.newAction$I$S$S(4, "_deleteAtom", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["delete atom (requires {0})"],$I$(7).$$S), "set picking DELETE ATOM"],$I$(7).o$S$O));
+C$.newAction$I$S$S(5, "_deleteBond", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["delete bond (requires {0})"],$I$(7).$$S), "set picking DELETE BOND"],$I$(7).o$S$O));
+C$.newAction$I$S$S(6, "_depth", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["adjust depth (back plane; requires {0})"],$I$(7).$$S), "SLAB ON"],$I$(7).o$S$O));
+C$.newAction$I$S$S(7, "_dragAtom", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move atom (requires {0})"],$I$(7).$$S), "set picking DRAGATOM"],$I$(7).o$S$O));
+C$.newAction$I$S$S(8, "_dragDrawObject", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move whole DRAW object (requires {0})"],$I$(7).$$S), "set picking DRAW"],$I$(7).o$S$O));
+C$.newAction$I$S$S(9, "_dragDrawPoint", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move specific DRAW point (requires {0})"],$I$(7).$$S), "set picking DRAW"],$I$(7).o$S$O));
+C$.newAction$I$S$S(10, "_dragLabel", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move label (requires {0})"],$I$(7).$$S), "set picking LABEL"],$I$(7).o$S$O));
+C$.newAction$I$S$S(11, "_dragMinimize", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move atom and minimize molecule (requires {0})"],$I$(7).$$S), "set picking DRAGMINIMIZE"],$I$(7).o$S$O));
+C$.newAction$I$S$S(12, "_dragMinimizeMolecule", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move and minimize molecule (requires {0})"],$I$(7).$$S), "set picking DRAGMINIMIZEMOLECULE"],$I$(7).o$S$O));
+C$.newAction$I$S$S(13, "_dragSelected", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move selected atoms (requires {0})"],$I$(7).$$S), "set DRAGSELECTED"],$I$(7).o$S$O));
+C$.newAction$I$S$S(14, "_dragZ", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["drag atoms in Z direction (requires {0})"],$I$(7).$$S), "set DRAGSELECTED"],$I$(7).o$S$O));
 C$.newAction$I$S$S(15, "_multiTouchSimulation", $I$(7).$$S("simulate multi-touch using the mouse)"));
-C$.newAction$I$S$S(16, "_navTranslate", $I$(7).o$S$O($I$(7).$$S("translate navigation point (requires {0} and {1})"), Clazz.array(String, -1, ["set NAVIGATIONMODE", "set picking NAVIGATE"])));
+C$.newAction$I$S$S(16, "_navTranslate", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["translate navigation point (requires {0} and {1})"],$I$(7).$$S), Clazz.array(String, -1, ["set NAVIGATIONMODE", "set picking NAVIGATE"])],$I$(7).o$S$O));
 C$.newAction$I$S$S(17, "_pickAtom", $I$(7).$$S("pick an atom"));
-C$.newAction$I$S$S(3, "_pickConnect", $I$(7).o$S$O($I$(7).$$S("connect atoms (requires {0})"), "set picking CONNECT"));
-C$.newAction$I$S$S(18, "_pickIsosurface", $I$(7).o$S$O($I$(7).$$S("pick an ISOSURFACE point (requires {0}"), "set DRAWPICKING"));
-C$.newAction$I$S$S(19, "_pickLabel", $I$(7).o$S$O($I$(7).$$S("pick a label to toggle it hidden/displayed (requires {0})"), "set picking LABEL"));
-C$.newAction$I$S$S(20, "_pickMeasure", $I$(7).o$S$O($I$(7).$$S("pick an atom to include it in a measurement (after starting a measurement or after {0})"), "set picking DISTANCE/ANGLE/TORSION"));
-C$.newAction$I$S$S(21, "_pickNavigate", $I$(7).o$S$O($I$(7).$$S("pick a point or atom to navigate to (requires {0})"), "set NAVIGATIONMODE"));
-C$.newAction$I$S$S(22, "_pickPoint", $I$(7).o$S$O($I$(7).$$S("pick a DRAW point (for measurements) (requires {0}"), "set DRAWPICKING"));
+C$.newAction$I$S$S(3, "_pickConnect", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["connect atoms (requires {0})"],$I$(7).$$S), "set picking CONNECT"],$I$(7).o$S$O));
+C$.newAction$I$S$S(18, "_pickIsosurface", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["pick an ISOSURFACE point (requires {0}"],$I$(7).$$S), "set DRAWPICKING"],$I$(7).o$S$O));
+C$.newAction$I$S$S(19, "_pickLabel", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["pick a label to toggle it hidden/displayed (requires {0})"],$I$(7).$$S), "set picking LABEL"],$I$(7).o$S$O));
+C$.newAction$I$S$S(20, "_pickMeasure", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["pick an atom to include it in a measurement (after starting a measurement or after {0})"],$I$(7).$$S), "set picking DISTANCE/ANGLE/TORSION"],$I$(7).o$S$O));
+C$.newAction$I$S$S(21, "_pickNavigate", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["pick a point or atom to navigate to (requires {0})"],$I$(7).$$S), "set NAVIGATIONMODE"],$I$(7).o$S$O));
+C$.newAction$I$S$S(22, "_pickPoint", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["pick a DRAW point (for measurements) (requires {0}"],$I$(7).$$S), "set DRAWPICKING"],$I$(7).o$S$O));
 C$.newAction$I$S$S(23, "_popupMenu", $I$(7).$$S("pop up the full context menu"));
-C$.newAction$I$S$S(24, "_reset", $I$(7).$$S("reset (when clicked off the model)"));
+C$.newAction$I$S$S(24, "_reset", (function(a,f){return f.apply(null,a)})(["reset (when clicked off the model)"],$I$(7).$$S));
 C$.newAction$I$S$S(25, "_rotate", $I$(7).$$S("rotate"));
-C$.newAction$I$S$S(26, "_rotateBranch", $I$(7).o$S$O($I$(7).$$S("rotate branch around bond (requires {0})"), "set picking ROTATEBOND"));
-C$.newAction$I$S$S(27, "_rotateSelected", $I$(7).o$S$O($I$(7).$$S("rotate selected atoms (requires {0})"), "set DRAGSELECTED"));
+C$.newAction$I$S$S(26, "_rotateBranch", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["rotate branch around bond (requires {0})"],$I$(7).$$S), "set picking ROTATEBOND"],$I$(7).o$S$O));
+C$.newAction$I$S$S(27, "_rotateSelected", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["rotate selected atoms (requires {0})"],$I$(7).$$S), "set DRAGSELECTED"],$I$(7).o$S$O));
 C$.newAction$I$S$S(28, "_rotateZ", $I$(7).$$S("rotate Z"));
-C$.newAction$I$S$S(29, "_rotateZorZoom", $I$(7).$$S("rotate Z (horizontal motion of mouse) or zoom (vertical motion of mouse)"));
-C$.newAction$I$S$S(30, "_select", $I$(7).o$S$O($I$(7).$$S("select an atom (requires {0})"), "set pickingStyle EXTENDEDSELECT"));
-C$.newAction$I$S$S(31, "_selectAndDrag", $I$(7).o$S$O($I$(7).$$S("select and drag atoms (requires {0})"), "set DRAGSELECTED"));
-C$.newAction$I$S$S(32, "_selectAndNot", $I$(7).o$S$O($I$(7).$$S("unselect this group of atoms (requires {0})"), "set pickingStyle DRAG/EXTENDEDSELECT"));
-C$.newAction$I$S$S(33, "_selectNone", $I$(7).o$S$O($I$(7).$$S("select NONE (requires {0})"), "set pickingStyle EXTENDEDSELECT"));
-C$.newAction$I$S$S(34, "_selectOr", $I$(7).o$S$O($I$(7).$$S("add this group of atoms to the set of selected atoms (requires {0})"), "set pickingStyle DRAG/EXTENDEDSELECT"));
-C$.newAction$I$S$S(35, "_selectToggle", $I$(7).o$S$O($I$(7).$$S("toggle selection (requires {0})"), "set pickingStyle DRAG/EXTENDEDSELECT/RASMOL"));
-C$.newAction$I$S$S(36, "_selectToggleOr", $I$(7).o$S$O($I$(7).$$S("if all are selected, unselect all, otherwise add this group of atoms to the set of selected atoms (requires {0})"), "set pickingStyle DRAG"));
+C$.newAction$I$S$S(29, "_rotateZorZoom", (function(a,f){return f.apply(null,a)})(["rotate Z (horizontal motion of mouse) or zoom (vertical motion of mouse)"],$I$(7).$$S));
+C$.newAction$I$S$S(30, "_select", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["select an atom (requires {0})"],$I$(7).$$S), "set pickingStyle EXTENDEDSELECT"],$I$(7).o$S$O));
+C$.newAction$I$S$S(31, "_selectAndDrag", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["select and drag atoms (requires {0})"],$I$(7).$$S), "set DRAGSELECTED"],$I$(7).o$S$O));
+C$.newAction$I$S$S(32, "_selectAndNot", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["unselect this group of atoms (requires {0})"],$I$(7).$$S), "set pickingStyle DRAG/EXTENDEDSELECT"],$I$(7).o$S$O));
+C$.newAction$I$S$S(33, "_selectNone", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["select NONE (requires {0})"],$I$(7).$$S), "set pickingStyle EXTENDEDSELECT"],$I$(7).o$S$O));
+C$.newAction$I$S$S(34, "_selectOr", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["add this group of atoms to the set of selected atoms (requires {0})"],$I$(7).$$S), "set pickingStyle DRAG/EXTENDEDSELECT"],$I$(7).o$S$O));
+C$.newAction$I$S$S(35, "_selectToggle", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["toggle selection (requires {0})"],$I$(7).$$S), "set pickingStyle DRAG/EXTENDEDSELECT/RASMOL"],$I$(7).o$S$O));
+C$.newAction$I$S$S(36, "_selectToggleOr", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["if all are selected, unselect all, otherwise add this group of atoms to the set of selected atoms (requires {0})"],$I$(7).$$S), "set pickingStyle DRAG"],$I$(7).o$S$O));
 C$.newAction$I$S$S(37, "_setMeasure", $I$(7).$$S("pick an atom to initiate or conclude a measurement"));
-C$.newAction$I$S$S(38, "_slab", $I$(7).o$S$O($I$(7).$$S("adjust slab (front plane; requires {0})"), "SLAB ON"));
-C$.newAction$I$S$S(39, "_slabAndDepth", $I$(7).o$S$O($I$(7).$$S("move slab/depth window (both planes; requires {0})"), "SLAB ON"));
-C$.newAction$I$S$S(40, "_slideZoom", $I$(7).$$S("zoom (along right edge of window)"));
-C$.newAction$I$S$S(41, "_spinDrawObjectCCW", $I$(7).o$S$O($I$(7).$$S("click on two points to spin around axis counterclockwise (requires {0})"), "set picking SPIN"));
-C$.newAction$I$S$S(42, "_spinDrawObjectCW", $I$(7).o$S$O($I$(7).$$S("click on two points to spin around axis clockwise (requires {0})"), "set picking SPIN"));
-C$.newAction$I$S$S(43, "_stopMotion", $I$(7).o$S$O($I$(7).$$S("stop motion (requires {0})"), "set waitForMoveTo FALSE"));
-C$.newAction$I$S$S(44, "_swipe", $I$(7).$$S("spin model (swipe and release button and stop motion simultaneously)"));
+C$.newAction$I$S$S(38, "_slab", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["adjust slab (front plane; requires {0})"],$I$(7).$$S), "SLAB ON"],$I$(7).o$S$O));
+C$.newAction$I$S$S(39, "_slabAndDepth", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["move slab/depth window (both planes; requires {0})"],$I$(7).$$S), "SLAB ON"],$I$(7).o$S$O));
+C$.newAction$I$S$S(40, "_slideZoom", (function(a,f){return f.apply(null,a)})(["zoom (along right edge of window)"],$I$(7).$$S));
+C$.newAction$I$S$S(41, "_spinDrawObjectCCW", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["click on two points to spin around axis counterclockwise (requires {0})"],$I$(7).$$S), "set picking SPIN"],$I$(7).o$S$O));
+C$.newAction$I$S$S(42, "_spinDrawObjectCW", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["click on two points to spin around axis clockwise (requires {0})"],$I$(7).$$S), "set picking SPIN"],$I$(7).o$S$O));
+C$.newAction$I$S$S(43, "_stopMotion", (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})(["stop motion (requires {0})"],$I$(7).$$S), "set waitForMoveTo FALSE"],$I$(7).o$S$O));
+C$.newAction$I$S$S(44, "_swipe", (function(a,f){return f.apply(null,a)})(["spin model (swipe and release button and stop motion simultaneously)"],$I$(7).$$S));
 C$.newAction$I$S$S(45, "_translate", $I$(7).$$S("translate"));
 C$.newAction$I$S$S(46, "_wheelZoom", $I$(7).$$S("zoom"));
 });
@@ -235,6 +165,10 @@ Clazz.newMeth(C$, 'isDrawOrLabelAction$I', function (a) {
 return (this.drawMode && this.bnd$I$IA(a, [8, 9])  || this.labelMode && this.bnd$I$IA(a, [10])  );
 }, p$1);
 
+Clazz.newMeth(C$, 'getBondPickingMode$', function () {
+return this.bondPickingMode;
+});
+
 Clazz.newMeth(C$, 'getPickingModeName$I', function (pickingMode) {
 return (pickingMode < 0 || pickingMode >= C$.pickingModeNames.length  ? "off" : C$.pickingModeNames[pickingMode]);
 }, 1);
@@ -266,47 +200,29 @@ case -1:
 isNew=true;
 this.bondPickingMode=35;
 pickingMode=1;
+this.vwr.setStringProperty$S$S("pickingStyle", "toggle");
+this.vwr.setBooleanProperty$S$Z("bondPicking", false);
 break;
 case 35:
 case 34:
 case 33:
+case 8:
 this.vwr.setBooleanProperty$S$Z("bondPicking", true);
 this.bondPickingMode=pickingMode;
+p$1.resetMeasurement.apply(this, []);
 return;
-case 8:
-this.bondPickingMode=pickingMode;
-if (this.vwr.getBondPicking$()) return;
-isNew=true;
-break;
 }
 isNew|=(this.apm != pickingMode);
 this.apm=pickingMode;
 if (isNew) p$1.resetMeasurement.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'setAtomPickingOption$S', function (option) {
-switch (this.apm) {
-case 32:
-this.pickAtomAssignType=option;
-this.isPickAtomAssignCharge=(this.pickAtomAssignType.equals$O("Pl") || this.pickAtomAssignType.equals$O("Mi") );
-break;
-}
-});
-
-Clazz.newMeth(C$, 'setBondPickingOption$S', function (option) {
-switch (this.bondPickingMode) {
-case 33:
-this.pickBondAssignType=Character.toLowerCase$C(option.charAt$I(0));
-break;
-}
-});
-
 Clazz.newMeth(C$, 'getPickingState$', function () {
-var script=";set modelkitMode " + this.vwr.getBoolean$I(603979883) + ";set picking " + C$.getPickingModeName$I(this.apm) ;
-if (this.apm == 32) script += "_" + this.pickAtomAssignType;
+var script=";set modelkitMode " + this.vwr.getBoolean$I(603983903) + ";set picking " + C$.getPickingModeName$I(this.apm) ;
+if (this.apm == 32) script += "_" + this.vwr.getModelkitProperty$O("atomType");
 script += ";";
 if (this.bondPickingMode != 0) script += "set picking " + C$.getPickingModeName$I(this.bondPickingMode);
-if (this.bondPickingMode == 33) script += "_" + this.pickBondAssignType;
+if (this.bondPickingMode == 33) script += "_" + this.vwr.getModelkitProperty$O("bondType");
 script += ";";
 return script;
 });
@@ -353,6 +269,10 @@ Clazz.newMeth(C$, 'setMouseWheelFactor$F', function (factor) {
 this.mouseWheelFactor=factor;
 });
 
+Clazz.newMeth(C$, 'isDraggedIsShiftDown$', function () {
+return (this.dragged.modifiers & 1) != 0;
+});
+
 Clazz.newMeth(C$, 'setCurrent$J$I$I$I', function (time, x, y, mods) {
 this.vwr.hoverOff$();
 this.current.set$J$I$I$I(time, x, y, mods);
@@ -374,7 +294,7 @@ if (!this.dragSelectedMode) switch (this.apm) {
 default:
 return;
 case 32:
-this.measuresEnabled=!this.isPickAtomAssignCharge;
+this.measuresEnabled=!this.vwr.getModelkit$Z(false).isPickAtomAssignCharge$();
 return;
 case 4:
 this.drawMode=true;
@@ -434,7 +354,7 @@ try {
 if (isStart) {
 if (this.hoverWatcherThread != null ) return;
 this.current.time=-1;
-this.hoverWatcherThread=Clazz.new_($I$(9).c$$org_jmol_viewer_ActionManager$org_jmol_viewer_MouseState$org_jmol_viewer_MouseState$org_jmol_viewer_Viewer,[this, this.current, this.moved, this.vwr]);
+this.hoverWatcherThread=Clazz.new_($I$(9,1).c$$org_jmol_viewer_ActionManager$org_jmol_viewer_MouseState$org_jmol_viewer_MouseState$org_jmol_viewer_Viewer,[this, this.current, this.moved, this.vwr]);
 } else {
 if (this.hoverWatcherThread == null ) return;
 this.current.time=-1;
@@ -455,11 +375,10 @@ this.startHoverWatcher$Z(false);
 
 Clazz.newMeth(C$, 'keyPressed$I$I', function (key, modifiers) {
 if (this.keyProcessing) return false;
-this.vwr.hoverOff$();
 this.keyProcessing=true;
 switch (key) {
 case 18:
-if (this.dragSelectedMode && this.isAltKeyReleased ) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z(-2147483648, 0, -2147483648, -2147483648, -2147483648, null, false, false);
+if (this.dragSelectedMode && this.isAltKeyReleased ) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z$I(-2147483648, 0, -2147483648, -2147483648, -2147483648, null, false, false, modifiers);
 this.isAltKeyReleased=false;
 this.moved.modifiers|=8;
 break;
@@ -471,12 +390,17 @@ case 17:
 this.moved.modifiers|=2;
 break;
 case 27:
+this.vwr.hoverOff$();
 this.exitMeasurementMode$S("escape");
+break;
+default:
+this.vwr.hoverOff$();
 break;
 }
 var action=16 | 256 | 8192 | this.moved.modifiers ;
-if (!this.labelMode && !this.b.isUserAction$I(action) ) p$1.checkMotionRotateZoom$I$I$I$I$Z.apply(this, [action, this.current.x, 0, 0, false]);
-if (this.vwr.getBoolean$I(603979889)) {
+if (!this.labelMode && !this.b.isUserAction$I(action) ) {
+p$1.checkMotionRotateZoom$I$I$I$I$Z.apply(this, [action, this.current.x, 0, 0, false]);
+}if (this.vwr.getBoolean$I(603979889)) {
 switch (key) {
 case 38:
 case 40:
@@ -491,12 +415,16 @@ break;
 return true;
 });
 
+Clazz.newMeth(C$, 'keyTyped$I$I', function (keyChar, modifiers) {
+return false;
+});
+
 Clazz.newMeth(C$, 'keyReleased$I', function (key) {
 switch (key) {
 case 18:
-if (this.dragSelectedMode) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z(2147483647, 0, -2147483648, -2147483648, -2147483648, null, false, false);
-this.isAltKeyReleased=true;
 this.moved.modifiers&=~8;
+if (this.dragSelectedMode) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z$I(2147483647, 0, -2147483648, -2147483648, -2147483648, null, false, false, this.moved.modifiers);
+this.isAltKeyReleased=true;
 break;
 case 16:
 this.moved.modifiers&=~1;
@@ -530,7 +458,7 @@ this.clickAction=$I$(5).getMouseAction$I$I$I(count, buttonMods, 2);
 
 Clazz.newMeth(C$, 'mouseAction$I$J$I$I$I$I', function (mode, time, x, y, count, buttonMods) {
 if (!this.vwr.getMouseEnabled$()) return;
-if ($I$(10).debuggingHigh && mode != 0  && this.vwr.getBoolean$I(603979960) ) this.vwr.showString$S$Z("mouse action: " + mode + " " + buttonMods + " " + $I$(5).getMouseActionName$I$Z($I$(5).getMouseAction$I$I$I(count, buttonMods, mode), false) , false);
+if ($I$(10).debuggingHigh && mode != 0  && this.vwr.getBoolean$I(603979960) ) this.vwr.showString$S$Z("mouse action: " + mode + " " + buttonMods + " " + (function(a,f){return f.apply(null,a)})([$I$(5).getMouseAction$I$I$I(count, buttonMods, mode), false],$I$(5).getMouseActionName$I$Z) , false);
 if (this.vwr.tm.stereoDoubleDTI) x=x << 1;
 switch (mode) {
 case 0:
@@ -573,7 +501,7 @@ case 5:
 p$1.setMouseActions$I$I$Z.apply(this, [this.pressedCount, buttonMods, true]);
 this.setCurrent$J$I$I$I(time, x, y, buttonMods);
 this.vwr.spinXYBy$I$I$F(0, 0, 0);
-var dragRelease=!this.pressed.check$I$I$I$I$J$J(this.xyRange, x, y, buttonMods, time, 9223372036854775807);
+var dragRelease=!this.pressed.check$I$I$I$I$J$J(10, x, y, buttonMods, time, 9223372036854775807);
 p$1.checkReleaseAction$I$I$J$Z.apply(this, [x, y, time, dragRelease]);
 return;
 case 3:
@@ -583,7 +511,7 @@ p$1.checkDragWheelAction$I$I$I$I$I$J$I.apply(this, [$I$(5).getMouseAction$I$I$I(
 return;
 case 2:
 this.setMouseMode$();
-this.clickedCount=(count > 1 ? count : this.clicked.check$I$I$I$I$J$J(0, 0, 0, buttonMods, time, 700) ? this.clickedCount + 1 : 1);
+this.clickedCount=(count > 1 ? count : this.clicked.check$I$I$I$I$J$J(10, 0, 0, buttonMods, time, 700) ? this.clickedCount + 1 : 1);
 if (this.clickedCount == 1) {
 this.setCurrent$J$I$I$I(time, x, y, buttonMods);
 }p$1.setMouseActions$I$I$Z.apply(this, [this.clickedCount, buttonMods, false]);
@@ -604,7 +532,7 @@ this.pressAction=this.vwr.notifyMouseClicked$I$I$I$I(x, y, this.pressAction, 4);
 if (this.pressAction == 0) return;
 buttonMods=$I$(5).getButtonMods$I(this.pressAction);
 }p$1.setMouseActions$I$I$Z.apply(this, [this.pressedCount, buttonMods, false]);
-if ($I$(10).debuggingHigh && this.vwr.getBoolean$I(603979960) ) $I$(10).debug$S($I$(5).getMouseActionName$I$Z(this.pressAction, false));
+if ($I$(10).debuggingHigh && this.vwr.getBoolean$I(603979960) ) (function(a,f){return f.apply(null,a)})([$I$(5).getMouseActionName$I$Z(this.pressAction, false)],$I$(10).debug$S);
 if (p$1.isDrawOrLabelAction$I.apply(this, [this.dragAction]) && this.vwr.checkObjectDragged$I$I$I$I$I(-2147483648, 0, x, y, this.dragAction) ) return;
 p$1.checkUserAction$I$I$I$I$I$J$I.apply(this, [this.pressAction, x, y, 0, 0, time, 4]);
 var isBound=false;
@@ -617,6 +545,7 @@ isBound=this.bnd$I$IA(this.dragAction, [7, 14]);
 break;
 case 26:
 case 36:
+case 37:
 case 27:
 isBound=this.bnd$I$IA(this.dragAction, [7, 14, 27]);
 break;
@@ -629,20 +558,24 @@ break;
 }
 if (isBound) {
 this.dragAtomIndex=this.vwr.findNearestAtomIndexMovable$I$I$Z(x, y, true);
-if (this.dragAtomIndex >= 0 && (this.apm == 32 || this.apm == 31 )  && this.vwr.ms.isAtomAssignable$I(this.dragAtomIndex) ) {
-p$1.enterMeasurementMode$I.apply(this, [this.dragAtomIndex]);
+if (this.dragAtomIndex >= 0 && (this.apm == 32 || this.apm == 31 )  && this.vwr.ms.isAtomInLastModel$I(this.dragAtomIndex) ) {
+if (this.bondPickingMode == 34) {
+this.vwr.setModelkitProperty$S$O("bondAtomIndex", Integer.valueOf$I(this.dragAtomIndex));
+}p$1.enterMeasurementMode$I.apply(this, [this.dragAtomIndex]);
 this.mp.addPoint$I$org_jmol_util_Point3fi$Z(this.dragAtomIndex, null, false);
-}return;
+}var xy=this.vwr.getModelkitProperty$O("screenXY");
+this.mkBondPressed=(xy != null  && this.pressed.inRange$I$I$I(10, xy[0], xy[1]) );
+return;
 }if (this.bnd$I$IA(this.pressAction, [23])) {
 var type="j";
-if (this.vwr.getBoolean$I(603979883)) {
+if (this.vwr.getBoolean$I(603983903)) {
 var t=this.vwr.checkObjectClicked$I$I$I(x, y, this.LEFT_CLICKED);
-type=(t != null  && "bond".equals$O(t.get$O("type"))  ? "b" : this.vwr.findNearestAtomIndex$I$I(x, y) >= 0 ? "a" : "m");
+type=('m');
 }this.vwr.popupMenu$I$I$C(x, y, type);
 return;
 }if (this.dragSelectedMode) {
 this.haveSelection=(!isDragSelectedAction || this.vwr.findNearestAtomIndexMovable$I$I$Z(x, y, true) >= 0 );
-if (this.haveSelection && this.bnd$I$IA(this.dragAction, [13, 14]) ) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z(-2147483648, 0, -2147483648, -2147483648, -2147483648, null, false, false);
+if (this.haveSelection && this.bnd$I$IA(this.dragAction, [13, 14]) ) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z$I(-2147483648, 0, -2147483648, -2147483648, -2147483648, null, false, false, buttonMods);
 return;
 }p$1.checkMotionRotateZoom$I$I$I$I$Z.apply(this, [this.dragAction, x, 0, 0, true]);
 }, p$1);
@@ -658,21 +591,21 @@ p$1.calcRectRubberBand.apply(this, []);
 this.vwr.refresh$I$S(3, "rubberBand selection");
 return;
 }if (p$1.checkUserAction$I$I$I$I$I$J$I.apply(this, [dragWheelAction, x, y, deltaX, deltaY, time, mode])) return;
-if (this.vwr.getRotateBondIndex$() >= 0) {
-if (this.bnd$I$IA(dragWheelAction, [26])) {
-this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z(deltaX, deltaY, -2147483648, x, y, null, false, false);
+if (this.vwr.g.modelKitMode && this.vwr.getModelkit$Z(false).getRotateBondIndex$() >= 0 ) {
+if (this.dragAtomIndex >= 0 || this.mkBondPressed  || this.bnd$I$IA(dragWheelAction, [26]) ) {
+this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z$I(deltaX, deltaY, -2147483648, x, y, null, false, false, this.dragAtomIndex >= 0 ? 0 : 16);
 return;
-}if (!this.bnd$I$IA(dragWheelAction, [25])) this.vwr.setRotateBondIndex$I(-1);
-}var bs=null;
+}}var bs=null;
 if (this.dragAtomIndex >= 0 && this.apm != 2 ) {
 switch (this.apm) {
 case 26:
 p$1.dragSelected$I$I$I$Z.apply(this, [dragWheelAction, deltaX, deltaY, true]);
 return;
 case 36:
+case 37:
 case 27:
 case 30:
-bs=this.vwr.ms.getAtoms$I$O(1094713360, $I$(8).newAndSetBit$I(this.dragAtomIndex));
+bs=this.vwr.ms.getAtoms$I$O((this.apm == 37 ? 1094717454 : 1094713360), $I$(8).newAndSetBit$I(this.dragAtomIndex));
 if (this.apm == 36) bs.and$javajs_util_BS(this.vwr.getAtomBitSet$O("ligand"));
 case 28:
 case 29:
@@ -683,6 +616,7 @@ this.vwr.rotateSelected$F$F$javajs_util_BS(this.getDegrees$F$Z(deltaX, true), th
 } else {
 switch (this.apm) {
 case 36:
+case 37:
 case 27:
 case 30:
 this.vwr.select$javajs_util_BS$Z$I$Z(bs, false, 0, true);
@@ -704,7 +638,10 @@ this.mp.colix=20;
 this.mp.setCount$I(1);
 this.mp.colix=23;
 }if (this.mp == null ) return;
-this.mp.traceX=x;
+if (this.vwr.antialiased) {
+x<<=1;
+y<<=1;
+}this.mp.traceX=x;
 this.mp.traceY=y;
 this.vwr.refresh$I$S(3, "assignNew");
 return;
@@ -715,7 +652,7 @@ return;
 var iatom=this.vwr.bsA$().nextSetBit$I(0);
 if (iatom < 0) return;
 if (this.dragGesture.getPointCount$() == 1) this.vwr.undoMoveActionClear$I$I$Z(iatom, 2, true);
- else this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z(2147483647, 0, -2147483648, -2147483648, -2147483648, null, false, false);
+ else this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z$I(2147483647, 0, -2147483648, -2147483648, -2147483648, null, false, false, buttonmods);
 p$1.dragSelected$I$I$I$Z.apply(this, [dragWheelAction, deltaX, deltaY, false]);
 return;
 }if (p$1.isDrawOrLabelAction$I.apply(this, [dragWheelAction])) {
@@ -759,23 +696,29 @@ return;
 Clazz.newMeth(C$, 'dragSelected$I$I$I$Z', function (a, deltaX, deltaY, isPickingDrag) {
 this.setMotion$I$Z(13, true);
 if (this.bnd$I$IA(a, [27]) && this.vwr.getBoolean$I(603979785) ) this.vwr.rotateSelected$F$F$javajs_util_BS(this.getDegrees$F$Z(deltaX, true), this.getDegrees$F$Z(deltaY, false), null);
- else this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z(deltaX, deltaY, (isPickingDrag && this.bnd$I$IA(a, [14])  ? -deltaY : -2147483648), -2147483648, -2147483648, null, true, false);
+ else this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z$I(deltaX, deltaY, (isPickingDrag && this.bnd$I$IA(a, [14])  ? -deltaY : -2147483648), -2147483648, -2147483648, null, true, false, this.dragged.modifiers);
 }, p$1);
 
 Clazz.newMeth(C$, 'checkReleaseAction$I$I$J$Z', function (x, y, time, dragRelease) {
-if ($I$(10).debuggingHigh && this.vwr.getBoolean$I(603979960) ) $I$(10).debug$S($I$(5).getMouseActionName$I$Z(this.pressAction, false));
+if ($I$(10).debuggingHigh && this.vwr.getBoolean$I(603979960) ) (function(a,f){return f.apply(null,a)})([$I$(5).getMouseActionName$I$Z(this.pressAction, false)],$I$(10).debug$S);
 this.vwr.checkInMotion$I(0);
 this.vwr.setInMotion$Z(false);
 this.vwr.setCursor$I(0);
 this.dragGesture.add$I$I$I$J(this.dragAction, x, y, time);
-if (dragRelease) this.vwr.setRotateBondIndex$I(-2147483648);
 if (this.dragAtomIndex >= 0) {
 if (this.apm == 29 || this.apm == 30 ) p$1.minimize$Z.apply(this, [true]);
 }if (this.apm == 32 && this.bnd$I$IA(this.clickAction, [0]) ) {
-if (this.mp == null  || this.dragAtomIndex < 0 ) return;
-p$1.assignNew$I$I.apply(this, [x, y]);
+if (this.mp == null  || this.dragAtomIndex < 0 ) {
+this.exitMeasurementMode$S(null);
+return;
+} else if (this.bondPickingMode == 34) {
+this.vwr.setModelkitProperty$S$O("bondAtomIndex", Integer.valueOf$I(this.dragAtomIndex));
+this.exitMeasurementMode$S(null);
+return;
+}p$1.assignNew$I$I.apply(this, [x, y]);
 return;
 }this.dragAtomIndex=-1;
+this.mkBondPressed=false;
 var isRbAction=p$1.isRubberBandSelect$I.apply(this, [this.dragAction]);
 if (isRbAction) p$1.selectRb$I.apply(this, [this.clickAction]);
 this.rubberbandSelectionMode=(this.b.name.equals$O("drag"));
@@ -785,7 +728,7 @@ this.vwr.notifyMouseClicked$I$I$I$I(x, y, $I$(5).getMouseAction$I$I$I(this.press
 }if (p$1.isDrawOrLabelAction$I.apply(this, [this.dragAction])) {
 this.vwr.checkObjectDragged$I$I$I$I$I(2147483647, 0, x, y, this.dragAction);
 return;
-}if (this.haveSelection && this.dragSelectedMode && this.bnd$I$IA(this.dragAction, [13])  ) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z(2147483647, 0, -2147483648, -2147483648, -2147483648, null, false, false);
+}if (this.haveSelection && this.dragSelectedMode && this.bnd$I$IA(this.dragAction, [13])  ) this.vwr.moveSelected$I$I$I$I$I$javajs_util_BS$Z$Z$I(2147483647, 0, -2147483648, -2147483648, -2147483648, null, false, false, this.dragged.modifiers);
 if (dragRelease && p$1.checkUserAction$I$I$I$I$I$J$I.apply(this, [this.pressAction, x, y, 0, 0, time, 5]) ) return;
 if (this.vwr.getBoolean$I(603979780)) {
 if (this.bnd$I$IA(this.dragAction, [44])) {
@@ -800,13 +743,13 @@ if (clickedCount > 0) {
 if (p$1.checkUserAction$I$I$I$I$I$J$I.apply(this, [this.clickAction, x, y, 0, 0, time, 32768])) return;
 this.clickAction=this.vwr.notifyMouseClicked$I$I$I$I(x, y, this.clickAction, 32768);
 if (this.clickAction == 0) return;
-}if ($I$(10).debuggingHigh && this.vwr.getBoolean$I(603979960) ) $I$(10).debug$S($I$(5).getMouseActionName$I$Z(this.clickAction, false));
+}if ($I$(10).debuggingHigh && this.vwr.getBoolean$I(603979960) ) (function(a,f){return f.apply(null,a)})([$I$(5).getMouseActionName$I$Z(this.clickAction, false)],$I$(10).debug$S);
 if (this.bnd$I$IA(this.clickAction, [2])) {
 if (this.vwr.frankClicked$I$I(x, y)) {
 this.vwr.popupMenu$I$I$C(-x, y, "j");
 return;
 }if (this.vwr.frankClickedModelKit$I$I(x, y)) {
-this.vwr.popupMenu$I$I$C(0, 0, "m");
+this.vwr.popupMenu$I$I$C(10, 0, "m");
 return;
 }}var nearestPoint=null;
 var isBond=false;
@@ -882,26 +825,26 @@ var obj;
 var ht=this.b.getBindings$();
 var mkey=mouseAction + "\t";
 for (var key, $key = ht.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) {
-if (key.indexOf$S(mkey) != 0 || !$I$(11).isAS$O(obj=ht.get$O(key)) ) continue;
+if (key.indexOf$S(mkey) != 0 || !(function(a,f){return f.apply(null,a)})([obj=ht.get$O(key)],$I$(11).isAS$O) ) continue;
 var script=(obj)[1];
 var nearestPoint=null;
 if (script.indexOf$S("_ATOM") >= 0) {
 var iatom=p$1.findNearestAtom$I$I$org_jmol_util_Point3fi$Z.apply(this, [x, y, null, true]);
-script=$I$(12).rep$S$S$S(script, "_ATOM", "({" + (iatom >= 0 ? "" + iatom : "") + "})" );
-if (iatom >= 0) script=$I$(12).rep$S$S$S(script, "_POINT", $I$(13).eP$javajs_util_T3(this.vwr.ms.at[iatom]));
+script=(function(a,f){return f.apply(null,a)})([script, "_ATOM", "({" + (iatom >= 0 ? "" + iatom : "") + "})" ],$I$(12).rep$S$S$S);
+if (iatom >= 0) script=(function(a,f){return f.apply(null,a)})([script, "_POINT", $I$(13).eP$javajs_util_T3(this.vwr.ms.at[iatom])],$I$(12).rep$S$S$S);
 }if (!this.drawMode && (script.indexOf$S("_POINT") >= 0 || script.indexOf$S("_OBJECT") >= 0  || script.indexOf$S("_BOND") >= 0 ) ) {
 var t=this.vwr.checkObjectClicked$I$I$I(x, y, mouseAction);
 if (t != null  && (nearestPoint=t.get$O("pt")) != null  ) {
 var isBond=t.get$O("type").equals$O("bond");
-if (isBond) script=$I$(12).rep$S$S$S(script, "_BOND", "[{" + t.get$O("index") + "}]" );
-script=$I$(12).rep$S$S$S(script, "_POINT", $I$(13).eP$javajs_util_T3(nearestPoint));
-script=$I$(12).rep$S$S$S(script, "_OBJECT", $I$(13).escapeMap$java_util_Map(t));
+if (isBond) script=(function(a,f){return f.apply(null,a)})([script, "_BOND", "[{" + t.get$O("index") + "}]" ],$I$(12).rep$S$S$S);
+script=(function(a,f){return f.apply(null,a)})([script, "_POINT", $I$(13).eP$javajs_util_T3(nearestPoint)],$I$(12).rep$S$S$S);
+script=(function(a,f){return f.apply(null,a)})([script, "_OBJECT", $I$(13).escapeMap$java_util_Map(t)],$I$(12).rep$S$S$S);
 }script=$I$(12).rep$S$S$S(script, "_BOND", "[{}]");
 script=$I$(12).rep$S$S$S(script, "_OBJECT", "{}");
 }script=$I$(12).rep$S$S$S(script, "_POINT", "{}");
 script=$I$(12).rep$S$S$S(script, "_ACTION", "" + mouseAction);
 script=$I$(12).rep$S$S$S(script, "_X", "" + x);
-script=$I$(12).rep$S$S$S(script, "_Y", "" + (this.vwr.getScreenHeight$() - y));
+script=(function(a,f){return f.apply(null,a)})([script, "_Y", "" + (this.vwr.getScreenHeight$() - y)],$I$(12).rep$S$S$S);
 script=$I$(12).rep$S$S$S(script, "_DELTAX", "" + deltaX);
 script=$I$(12).rep$S$S$S(script, "_DELTAY", "" + deltaY);
 script=$I$(12).rep$S$S$S(script, "_TIME", "" + time);
@@ -964,7 +907,7 @@ return x > this.vwr.getScreenWidth$() * (this.vwr.tm.stereoDoubleFull || this.vw
 }, p$1);
 
 Clazz.newMeth(C$, 'getPoint$java_util_Map', function (t) {
-var pt=Clazz.new_($I$(14));
+var pt=Clazz.new_($I$(14,1));
 pt.setT$javajs_util_T3(t.get$O("pt"));
 pt.mi=($s$[0] = (t.get$O("modelIndex")).intValue$(), $s$[0]);
 return pt;
@@ -1020,7 +963,7 @@ var sequence=this.vwr.getSmilesOpt$javajs_util_BS$I$I$I$S(null, a1, a2, 1048576,
 this.vwr.setStatusMeasuring$S$I$S$F("measureSequence", -2, sequence, 0);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(10).error$S(e.toString());
+(function(a,f){return f.apply(null,a)})([e.toString()],$I$(10).error$S);
 } else {
 throw e;
 }
@@ -1029,8 +972,10 @@ throw e;
 
 Clazz.newMeth(C$, 'minimize$Z', function (dragDone) {
 var iAtom=this.dragAtomIndex;
-if (dragDone) this.dragAtomIndex=-1;
-this.vwr.dragMinimizeAtom$I(iAtom);
+if (dragDone) {
+this.dragAtomIndex=-1;
+this.mkBondPressed=false;
+}this.vwr.dragMinimizeAtom$I(iAtom);
 }, p$1);
 
 Clazz.newMeth(C$, 'queueAtom$I$org_jmol_util_Point3fi', function (atomIndex, ptClicked) {
@@ -1191,40 +1136,19 @@ this.vwr.setStatusAtomPicked$I$S$java_util_Map$Z(atomIndex, null, null, false);
 }, p$1);
 
 Clazz.newMeth(C$, 'assignNew$I$I', function (x, y) {
-if (this.mp.count == 2) {
-this.vwr.undoMoveActionClear$I$I$Z(-1, 4146, true);
-p$1.runScript$S.apply(this, ["assign connect " + this.mp.getMeasurementScript$S$Z(" ", false)]);
-} else if (this.pickAtomAssignType.equals$O("Xx")) {
+if (!this.vwr.getModelkit$Z(false).handleAssignNew$org_jmol_viewer_MouseState$org_jmol_viewer_MouseState$org_jmol_modelset_MeasurementPending$I(this.pressed, this.dragged, this.mp, this.dragAtomIndex)) {
 this.exitMeasurementMode$S("bond dropped");
-} else {
-if (this.pressed.inRange$I$I$I(this.xyRange, this.dragged.x, this.dragged.y)) {
-var s="assign atom ({" + this.dragAtomIndex + "}) \"" + this.pickAtomAssignType + "\"" ;
-if (this.isPickAtomAssignCharge) {
-s += ";{atomindex=" + this.dragAtomIndex + "}.label='%C'; " ;
-this.vwr.undoMoveActionClear$I$I$Z(this.dragAtomIndex, 4, true);
-} else {
-this.vwr.undoMoveActionClear$I$I$Z(-1, 4146, true);
-}p$1.runScript$S.apply(this, [s]);
-} else if (!this.isPickAtomAssignCharge) {
-this.vwr.undoMoveActionClear$I$I$Z(-1, 4146, true);
-var a=this.vwr.ms.at[this.dragAtomIndex];
-if (a.getElementNumber$() == 1) {
-p$1.runScript$S.apply(this, ["assign atom ({" + this.dragAtomIndex + "}) \"X\"" ]);
-} else {
-var ptNew=$I$(16).new3$F$F$F(x, y, a.sZ);
-this.vwr.tm.unTransformPoint$javajs_util_T3$javajs_util_T3(ptNew, ptNew);
-p$1.runScript$S.apply(this, ["assign atom ({" + this.dragAtomIndex + "}) \"" + this.pickAtomAssignType + "\" " + $I$(13).eP$javajs_util_T3(ptNew) ]);
-}}}this.exitMeasurementMode$S(null);
+}this.exitMeasurementMode$S(null);
 }, p$1);
 
 Clazz.newMeth(C$, 'bondPicked$I', function (index) {
-if (this.bondPickingMode == 33) this.vwr.undoMoveActionClear$I$I$Z(-1, 4146, true);
-switch (this.bondPickingMode) {
+if (this.bondPickingMode == 33) {
+this.vwr.undoMoveActionClear$I$I$Z(-1, 4146, true);
+}switch (this.bondPickingMode) {
 case 33:
-p$1.runScript$S.apply(this, ["assign bond [{" + index + "}] \"" + this.pickBondAssignType + "\"" ]);
+this.vwr.setModelkitProperty$S$O("scriptAssignBond", Integer.valueOf$I(index));
 break;
 case 34:
-this.vwr.setRotateBondIndex$I(index);
 break;
 case 8:
 this.vwr.deleteBonds$javajs_util_BS($I$(8).newAndSetBit$I(index));
@@ -1304,21 +1228,28 @@ p$1.runScript$S.apply(this, ["zoomTo (atomindex=" + atomIndex + ")" ]);
 this.vwr.setStatusAtomPicked$I$S$java_util_Map$Z(atomIndex, null, null, false);
 }, p$1);
 
-Clazz.newMeth(C$, 'keyTyped$I$I', function (keyChar, modifiers) {
-return false;
-});
-
 Clazz.newMeth(C$, 'userActionEnabled$I', function (action) {
-return this.vwr.isFunction$S(C$.getActionName$I(action));
+return this.vwr.isFunction$S(C$.getActionName$I(action).toLowerCase$());
 });
 
 Clazz.newMeth(C$, 'userAction$I$OA', function (action, params) {
 if (!this.userActionEnabled$I(action)) return false;
-var result=$I$(17).runUserAction$S$OA$org_jmol_viewer_Viewer(C$.getActionName$I(action), params, this.vwr);
-return result !== $I$(18).vF ;
+var result=(function(a,f){return f.apply(null,a)})([C$.getActionName$I(action), params, this.vwr],$I$(16).runUserAction$S$OA$org_jmol_viewer_Viewer);
+return !$I$(17).vF.equals$O(result);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.actionInfo=Clazz.array(String, [47]);
+C$.actionNames=Clazz.array(String, [47]);
+{
+C$.pickingModeNames="off identify label center draw spin symmetry deleteatom deletebond atom group chain molecule polymer structure site model element measure distance angle torsion sequence navigate connect struts dragselected dragmolecule dragatom dragminimize dragminimizemolecule invertstereo assignatom assignbond rotatebond identifybond dragligand dragmodel".split$S(" ");
+};
+{
+C$.pickingStyleNames="toggle selectOrToggle extendedSelect drag measure measureoff".split$S(" ");
+};
+};
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:23:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

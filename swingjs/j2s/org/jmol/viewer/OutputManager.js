@@ -1,17 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'org.jmol.util.Logger','java.util.Hashtable','javajs.util.PT','org.jmol.viewer.Viewer','org.jmol.viewer.JC','org.jmol.viewer.FileManager','org.jmol.api.Interface','Boolean','javajs.util.AU',['org.jmol.viewer.Viewer','.ACCESS'],'javajs.util.OC','javajs.util.SB','org.jmol.i18n.GT','javajs.util.Lst','java.util.Date','javajs.util.ZipTools']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OutputManager");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'org.jmol.util.Logger','java.util.Hashtable','javajs.util.PT','org.jmol.viewer.Viewer','org.jmol.viewer.JC','org.jmol.viewer.FileManager','org.jmol.api.Interface','Boolean','javajs.util.AU',['org.jmol.viewer.Viewer','.ACCESS'],'javajs.util.OC','javajs.util.SB','org.jmol.i18n.GT','javajs.util.Lst','java.util.Date','javajs.util.ZipTools']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "OutputManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.privateKey=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['privateKey'],'O',['vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_viewer_Viewer$D', function (vwr, privateKey) {
 this.vwr=vwr;
@@ -70,14 +65,14 @@ var out=params.get$O("outputChannel");
 var asBytes=(out == null  && fileName == null  );
 var closeChannel=(out == null  && fileName != null  );
 var releaseImage=(objImage == null );
-var image=(type.equals$O("BINARY") || type.equals$O("ZIPDATA")  ? "" : rgbbuf != null  ? rgbbuf : objImage != null  ? objImage : this.vwr.getScreenImageBuffer$());
+var image=(type.equals$O("BINARY") || type.equals$O("ZIPDATA")  ? "" : rgbbuf != null  ? rgbbuf : objImage != null  ? objImage : this.vwr.getScreenImage$());
 var isOK=false;
 try {
 if (image == null ) return errMsg=this.vwr.getErrorMessage$();
 if (fileName != null  && fileName.startsWith$S("\u0001") ) {
 isOK=true;
-var info=Clazz.new_($I$(2));
-info.put$TK$TV("_IMAGE_", image);
+var info=Clazz.new_($I$(2,1));
+info.put$O$O("_IMAGE_", image);
 this.vwr.fm.loadImage$O$S$Z(info, fileName, false);
 return errMsg="OK - viewing " + fileName.substring$I(1);
 }var isPngj=type.equals$O("PNGJ");
@@ -86,15 +81,15 @@ if (out == null  && (out=this.openOutputChannel$D$S$Z$Z(this.privateKey, fileNam
 fileName=out.getFileName$();
 }var comment=null;
 var stateData=null;
-params.put$TK$TV("date", this.vwr.apiPlatform.getDateFormat$S("8601"));
+params.put$O$O("date", this.vwr.apiPlatform.getDateFormat$S("8601"));
 if (type.startsWith$S("JP")) {
 type=$I$(3).rep$S$S$S(type, "E", "");
 if (type.equals$O("JPG64")) {
-params.put$TK$TV("outputChannelTemp", this.getOutputChannel$S$SA(null, null));
+params.put$O$O("outputChannelTemp", this.getOutputChannel$S$SA(null, null));
 comment="";
 } else {
 comment=(!asBytes ? this.getWrappedState$S$SA$O$javajs_util_OC(null, null, image, null) : "");
-}params.put$TK$TV("jpgAppTag", " #Jmol...\u0000");
+}params.put$O$O("jpgAppTag", " #Jmol...\u0000");
 } else if (type.equals$O("PDF")) {
 comment="";
 } else if (type.startsWith$S("PNG")) {
@@ -107,11 +102,11 @@ if (out == null  && (out=this.openOutputChannel$D$S$Z$Z(this.privateKey, fileNam
 } else if (rgbbuf == null  && !asBytes  && !params.containsKey$O("captureMode") ) {
 stateData=(this.getWrappedState$S$SA$O$javajs_util_OC(null, scripts, image, null)).getBytes$();
 }if (stateData != null ) {
-params.put$TK$TV("pngAppData", stateData);
-params.put$TK$TV("pngAppPrefix", "Jmol Type");
-}}if (type.equals$O("PNGT") || type.equals$O("GIFT") ) params.put$TK$TV("transparentColor", Integer.valueOf$I(this.vwr.getBackgroundArgb$()));
+params.put$O$O("pngAppData", stateData);
+params.put$O$O("pngAppPrefix", "Jmol Type");
+}}if (type.equals$O("PNGT") || type.equals$O("GIFT") ) params.put$O$O("transparentColor", Integer.valueOf$I(this.vwr.getBackgroundArgb$()));
 if (type.length$() == 4) type=type.substring$I$I(0, 3);
-if (comment != null ) params.put$TK$TV("comment", comment.length$() == 0 ? $I$(4).getJmolVersion$() : comment);
+if (comment != null ) params.put$O$O("comment", comment.length$() == 0 ? $I$(4).getJmolVersion$() : comment);
 var errRet=Clazz.array(String, [1]);
 isOK=p$1.createTheImage$O$S$javajs_util_OC$java_util_Map$SA.apply(this, [image, type, out, params, errRet]);
 if (closeChannel) out.closeChannel$();
@@ -123,7 +118,7 @@ if (asBytes) bytes=out.toByteArray$();
 errMsg=errRet[0];
 }} finally {
 if (releaseImage) this.vwr.releaseScreenImage$();
-if (bytes != null  || out != null  ) params.put$TK$TV("byteCount", Integer.valueOf$I(bytes != null  ? bytes.length : isOK ? out.getByteCount$() : -1));
+if (bytes != null  || out != null  ) params.put$O$O("byteCount", Integer.valueOf$I(bytes != null  ? bytes.length : isOK ? out.getByteCount$() : -1));
 if (objImage != null ) {
 return fileName;
 }}
@@ -138,9 +133,9 @@ var s=this.vwr.getStateInfo3$S$I$I(null, width, height);
 if (pgjOut != null ) {
 return p$1.createZipSet$S$SA$Z$javajs_util_OC$S.apply(this, [s, scripts, true, pgjOut, pngjName]);
 }try {
-s=$I$(5).embedScript$S($I$(6).setScriptFileReferences$S$S$S$S(s, ".", null, null));
+s=(function(a,f){return f.apply(null,a)})([$I$(6).setScriptFileReferences$S$S$S$S(s, ".", null, null)],$I$(5).embedScript$S);
 } catch (e) {
-$I$(1).error$S("state could not be saved: " + e.toString());
+(function(a,f){return f.apply(null,a)})(["state could not be saved: " + e.toString()],$I$(1).error$S);
 s="Jmol " + $I$(4).getJmolVersion$();
 }
 return s;
@@ -158,13 +153,13 @@ return true;
 }objImage=null;
 v.removeItemAt$I(0);
 v.removeItemAt$I(0);
-params.put$TK$TV("pngImgData", v.removeItemAt$I(0));
+params.put$O$O("pngImgData", v.removeItemAt$I(0));
 var oz=this.getOutputChannel$S$SA(null, null);
 errRet[0]=p$1.writeZipFile$javajs_util_OC$javajs_util_Lst$S$S.apply(this, [oz, v, "OK JMOL", null]);
-params.put$TK$TV("type", "PNGJ");
+params.put$O$O("type", "PNGJ");
 type="Png";
-params.put$TK$TV("pngAppPrefix", "Jmol Type");
-params.put$TK$TV("pngAppData", oz.toByteArray$());
+params.put$O$O("pngAppPrefix", "Jmol Type");
+params.put$O$O("pngAppData", oz.toByteArray$());
 } else if (v.size$() == 1) {
 var b=v.removeItemAt$I(0);
 out.write$BA$I$I(b, 0, b.length);
@@ -178,15 +173,15 @@ errRet[0]="Image encoder type " + type + " not available" ;
 return false;
 }var doClose=true;
 try {
-if (type.equals$O("Gif") && this.vwr.getBoolean$I(603979962) ) params.put$TK$TV("reducedColors", $I$(8).TRUE);
+if (type.equals$O("Gif") && this.vwr.getBoolean$I(603979962) ) params.put$O$O("reducedColors", $I$(8).TRUE);
 var w=objImage == null  ? -1 : $I$(9).isAI$O(objImage) ? (params.get$O("width")).intValue$() : this.vwr.apiPlatform.getImageWidth$O(objImage);
 var h=objImage == null  ? -1 : $I$(9).isAI$O(objImage) ? (params.get$O("height")).intValue$() : this.vwr.apiPlatform.getImageHeight$O(objImage);
-params.put$TK$TV("imageWidth", Integer.valueOf$I(w));
-params.put$TK$TV("imageHeight", Integer.valueOf$I(h));
+params.put$O$O("imageWidth", Integer.valueOf$I(w));
+params.put$O$O("imageHeight", Integer.valueOf$I(h));
 var pixels=p$1.encodeImage$I$I$O.apply(this, [w, h, objImage]);
-if (pixels != null ) params.put$TK$TV("imagePixels", pixels);
-params.put$TK$TV("logging", $I$(8).valueOf$Z($I$(1).debugging));
-doClose=ie.createImage$(type, out, params);
+if (pixels != null ) params.put$O$O("imagePixels", pixels);
+params.put$O$O("logging", (function(a,f){return f.apply(null,a)})([$I$(1).debugging],$I$(8).valueOf$Z));
+doClose=ie.createImage$S$javajs_util_OC$java_util_Map(type, out, params);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 errRet[0]=e.toString();
@@ -221,16 +216,17 @@ return this.handleOutputToFile$java_util_Map$Z(params, true);
 Clazz.newMeth(C$, 'getOutputChannel$S$SA', function (fileName, fullPath) {
 if (!this.vwr.haveAccess$org_jmol_viewer_Viewer_ACCESS($I$(10).ALL)) return null;
 var isCache=(fileName != null  && fileName.startsWith$S("cache://") );
-if (fileName != null  && !isCache ) {
+var isRemote=(fileName != null  && (fileName.startsWith$S("http://") || fileName.startsWith$S("https://") ) );
+if (fileName != null  && !isCache  && !isRemote ) {
 fileName=p$1.getOutputFileNameFromDialog$S$I$java_util_Map.apply(this, [fileName, -2147483648, null]);
 if (fileName == null ) return null;
 }if (fullPath != null ) fullPath[0]=fileName;
-var localName=($I$(11).isLocal$S(fileName) || isCache  ? fileName : null);
+var localName=(isCache || isRemote || $I$(11).isLocal$S(fileName)   ? fileName : null);
 try {
 return this.openOutputChannel$D$S$Z$Z(this.privateKey, localName, false, false);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-$I$(1).info$S(e.toString());
+(function(a,f){return f.apply(null,a)})([e.toString()],$I$(1).info$S);
 return null;
 } else {
 throw e;
@@ -259,10 +255,10 @@ fileName=p$1.setFullPath$java_util_Map$S.apply(this, [params, p$1.getOutputFileN
 if (fileName == null ) return null;
 var rootExt=Clazz.array(String, [2]);
 C$.getRootExt$S$SA$I(fileName, rootExt, 0);
-var sb=Clazz.new_($I$(12));
+var sb=Clazz.new_($I$(12,1));
 if (bsFrames == null ) {
 this.vwr.tm.vibrationOn=true;
-sb=Clazz.new_($I$(12));
+sb=Clazz.new_($I$(12,1));
 for (var i=0; i < nVibes; i++) {
 for (var j=0; j < 20; j++) {
 this.vwr.tm.setVibrationT$F(j / 20.0 + 0.2501);
@@ -296,7 +292,7 @@ Clazz.newMeth(C$, 'setFullPath$java_util_Map$S', function (params, fileName) {
 var fullPath=params.get$O("fullPath");
 if (fullPath != null ) fullPath[0]=fileName;
 if (fileName == null ) return null;
-params.put$TK$TV("fileName", fileName);
+params.put$O$O("fileName", fileName);
 return fileName;
 }, p$1);
 
@@ -326,9 +322,9 @@ this.vwr.setModelVisibility$();
 this.vwr.creatingImage=true;
 var bytes=null;
 try {
-var params=Clazz.new_($I$(2));
-params.put$TK$TV("type", type);
-if (quality > 0) params.put$TK$TV("quality", Integer.valueOf$I(quality));
+var params=Clazz.new_($I$(2,1));
+params.put$O$O("type", type);
+if (quality > 0) params.put$O$O("quality", Integer.valueOf$I(quality));
 var bytesOrError=p$1.getOrSaveImage$java_util_Map.apply(this, [params]);
 if (Clazz.instanceOf(bytesOrError, "java.lang.String")) errMsg[0]=bytesOrError;
  else bytes=bytesOrError;
@@ -387,7 +383,7 @@ Clazz.newMeth(C$, 'getOutputFileNameFromDialog$S$I$java_util_Map', function (fil
 if (fileName == null  || this.vwr.isKiosk ) return null;
 var useDialog=fileName.startsWith$S("?");
 if (useDialog) fileName=fileName.substring$I(1);
-useDialog|=this.vwr.isApplet && (fileName.indexOf$S("http:") < 0) ;
+useDialog|=(this.vwr.isApplet && fileName.indexOf$S("http:") != 0  && fileName.indexOf$S("https:") != 0 );
 fileName=$I$(6).getLocalPathForWritingFile$org_jmol_viewer_Viewer$S(this.vwr, fileName);
 if (useDialog) fileName=this.vwr.dialogAsk$S$S$java_util_Map(quality == -2147483648 ? "Save" : "Save Image", fileName, params);
 return fileName;
@@ -406,9 +402,10 @@ var saveWidth=0;
 var saveHeight=0;
 var quality=C$.getInt$java_util_Map$S$I(params, "quality", -2147483648);
 var captureMode=params.get$O("captureMode");
+var is2D=params.get$O("is2D") === $I$(8).TRUE ;
 var localName=null;
 if (captureMode != null  && !this.vwr.allowCapture$() ) return "ERROR: Cannot capture on this platform.";
-var mustRender=(quality != -2147483648);
+var mustRender=(!is2D && quality != -2147483648 );
 if (captureMode != null ) {
 doCheck=false;
 mustRender=false;
@@ -417,7 +414,7 @@ if (!fileName.startsWith$S("\u0001")) {
 if (doCheck) fileName=p$1.getOutputFileNameFromDialog$S$I$java_util_Map.apply(this, [fileName, quality, params]);
 fileName=p$1.setFullPath$java_util_Map$S.apply(this, [params, fileName]);
 }if (fileName == null ) return null;
-params.put$TK$TV("fileName", fileName);
+params.put$O$O("fileName", fileName);
 if ($I$(11).isLocal$S(fileName)) localName=fileName;
 saveWidth=this.vwr.dimScreen.width;
 saveHeight=this.vwr.dimScreen.height;
@@ -457,18 +454,18 @@ if (params.containsKey$O("captureRootExt")) {
 imode=0;
 } else {
 if (out != null ) localName=out.getFileName$();
-params.put$TK$TV("captureFileName", localName);
+params.put$O$O("captureFileName", localName);
 if (streaming) {
 captureMsg=type + "_STREAM_OPEN " + localName ;
-params.put$TK$TV("captureMode", "movie");
+params.put$O$O("captureMode", "movie");
 } else {
 rootExt=Clazz.array(String, [2]);
-params.put$TK$TV("captureRootExt", C$.getRootExt$S$SA$I(localName, rootExt, 0));
+params.put$O$O("captureRootExt", C$.getRootExt$S$SA$I(localName, rootExt, 0));
 localName=C$.getRootExt$S$SA$I(null, rootExt, 1);
 imode=-1;
 cparams=params;
 createImage=false;
-}}if (!params.containsKey$O("captureCount")) params.put$TK$TV("captureCount", Integer.valueOf$I(0));
+}}if (!params.containsKey$O("captureCount")) params.put$O$O("captureCount", Integer.valueOf$I(0));
 }}if (imode >= 0 && imode != 15 ) {
 if (cparams == null ) {
 sret=captureMsg="ERROR: capture not active";
@@ -483,7 +480,7 @@ if ($I$(8).FALSE === params.get$O("captureEnabled") ) {
 sret=captureMsg="capturing OFF; use CAPTURE ON/END/CANCEL to continue";
 } else {
 var count=C$.getInt$java_util_Map$S$I(params, "captureCount", 0);
-params.put$TK$TV("captureCount", Integer.valueOf$I(++count));
+params.put$O$O("captureCount", Integer.valueOf$I(++count));
 if ((rootExt=params.get$O("captureRootExt")) != null ) {
 localName=C$.getRootExt$S$SA$I(null, rootExt, count);
 captureMsg=null;
@@ -494,34 +491,35 @@ captureMsg=type + "_STREAM_ADD " + count ;
 case 3:
 case 6:
 params=cparams;
-params.put$TK$TV("captureEnabled", (captureMode.equals$O("on") ? $I$(8).TRUE : $I$(8).FALSE));
+params.put$O$O("captureEnabled", (captureMode.equals$O("on") ? $I$(8).TRUE : $I$(8).FALSE));
 sret=type + "_STREAM_" + (captureMode.equals$O("on") ? "ON" : "OFF") ;
-params.put$TK$TV("captureMode", "add");
+params.put$O$O("captureMode", "add");
 break;
 case 9:
 case 12:
 params=cparams;
-params.put$TK$TV("captureMode", captureMode);
+params.put$O$O("captureMode", captureMode);
 fileName=params.get$O("captureFileName");
 captureMsg=type + "_STREAM_" + (captureMode.equals$O("end") ? "CLOSE " : "CANCEL ") + fileName ;
 this.vwr.captureParams=null;
-params.put$TK$TV("captureMsg", $I$(13).$$S("Capture") + ": " + (captureMode.equals$O("cancel") ? $I$(13).$$S("canceled") : $I$(13).o$S$O($I$(13).$$S("{0} saved"), fileName)) );
+params.put$O$O("captureMsg", $I$(13).$$S("Capture") + ": " + (captureMode.equals$O("cancel") ? $I$(13).$$S("canceled") : (function(a,f){return f.apply(null,a)})([$I$(13).$$S("{0} saved"), fileName],$I$(13).o$S$O)) );
 if (params.containsKey$O("captureRootExt")) createImage=false;
 break;
 }
-}}if (createImage && out != null  ) params.put$TK$TV("outputChannel", out);
+}}if (createImage && out != null  ) params.put$O$O("outputChannel", out);
 }if (createImage) {
-if (localName != null ) params.put$TK$TV("fileName", localName);
+if (localName != null ) params.put$O$O("fileName", localName);
 if (sret == null ) sret=p$1.writeToOutputChannel$java_util_Map.apply(this, [params]);
+if (!is2D) {
 this.vwr.sm.createImage$S$S$S$BA$I(sret, type, null, null, quality);
 if (captureMode != null ) {
 if (captureMsg == null ) captureMsg=sret;
  else captureMsg += " (" + params.get$O(params.containsKey$O("captureByteCount") ? "captureByteCount" : "byteCount") + " bytes)" ;
-}}if (captureMsg != null ) {
+}if (captureMsg != null ) {
 this.vwr.showString$S$Z(captureMsg, false);
-}}}} catch (er) {
+}}}}}} catch (er) {
 er.printStackTrace$();
-$I$(1).error$S(this.vwr.setErrorMessage$S$S(sret="ERROR creating image??: " + er, null));
+(function(a,f){return f.apply(null,a)})([this.vwr.setErrorMessage$S$S(sret="ERROR creating image??: " + er, null)],$I$(1).error$S);
 } finally {
 this.vwr.creatingImage=false;
 if (quality != -2147483648 && saveWidth > 0 ) this.vwr.resizeImage$I$I$Z$Z$Z(saveWidth, saveHeight, true, false, true);
@@ -543,9 +541,9 @@ value=null;
 if (!value.startsWith$S("JmolLog_")) value="JmolLog_" + value;
 path=this.getLogPath$S(this.vwr.logFilePath + value);
 }if (path == null ) value=null;
- else $I$(1).info$S($I$(13).o$S$O($I$(13).$$S("Setting log file to {0}"), path));
+ else (function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([$I$(13).$$S("Setting log file to {0}"), path],$I$(13).o$S$O)],$I$(1).info$S);
 if (value == null  || !this.vwr.haveAccess$org_jmol_viewer_Viewer_ACCESS($I$(10).ALL) ) {
-$I$(1).info$S($I$(13).$$S("Cannot set log file path."));
+(function(a,f){return f.apply(null,a)})([$I$(13).$$S("Cannot set log file path.")],$I$(1).info$S);
 value=null;
 } else {
 this.vwr.logFileName=path;
@@ -556,7 +554,7 @@ this.vwr.g.setO$S$O("_logFile", this.vwr.isApplet ? value : path);
 Clazz.newMeth(C$, 'logToFile$S', function (data) {
 try {
 var doClear=(data.equals$O("$CLEAR$"));
-if (data.indexOf$S("$NOW$") >= 0) data=$I$(3).rep$S$S$S(data, "$NOW$", this.vwr.apiPlatform.getDateFormat$S(null));
+if (data.indexOf$S("$NOW$") >= 0) data=(function(a,f){return f.apply(null,a)})([data, "$NOW$", this.vwr.apiPlatform.getDateFormat$S(null)],$I$(3).rep$S$S$S);
 if (this.vwr.logFileName == null ) {
 $I$(1).info$S(data);
 return;
@@ -578,10 +576,10 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'createZipSet$S$SA$Z$javajs_util_OC$S', function (script, scripts, includeRemoteFiles, out, pngjName) {
-var v=Clazz.new_($I$(14));
+var v=Clazz.new_($I$(14,1));
 var fm=this.vwr.fm;
-var fileNames=Clazz.new_($I$(14));
-var crcMap=Clazz.new_($I$(2));
+var fileNames=Clazz.new_($I$(14,1));
+var crcMap=Clazz.new_($I$(2,1));
 var haveSceneScript=(scripts != null  && scripts.length == 3  && scripts[1].startsWith$S("###scene.spt###") );
 var sceneScriptOnly=(haveSceneScript && scripts[2].equals$O("min") );
 if (!sceneScriptOnly) {
@@ -590,60 +588,60 @@ if (haveSceneScript) $I$(6).getFileReferences$S$javajs_util_Lst(scripts[1], file
 }var haveScripts=(!haveSceneScript && scripts != null   && scripts.length > 0 );
 if (haveScripts) {
 script=this.wrapPathForAllFiles$S$S("script " + $I$(3).esc$S(scripts[0]), "");
-for (var i=0; i < scripts.length; i++) fileNames.addLast$TV(scripts[i]);
+for (var i=0; i < scripts.length; i++) fileNames.addLast$O(scripts[i]);
 
 }var nFiles=fileNames.size$();
-var newFileNames=Clazz.new_($I$(14));
+var newFileNames=Clazz.new_($I$(14,1));
 for (var iFile=0; iFile < nFiles; iFile++) {
 var name=fileNames.get$I(iFile);
 var isLocal=!$I$(4).isJS && $I$(11).isLocal$S(name) ;
 var newName=name;
 if (isLocal || includeRemoteFiles ) {
 var ptSlash=name.lastIndexOf$S("/");
-newName=(name.indexOf$S("?") > 0 && name.indexOf$S("|") < 0  ? $I$(3).replaceAllCharacters$S$S$S(name, "/:?\"\'=&", "_") : $I$(6).stripPath$S(name));
+newName=(name.indexOf$S("?") > 0 && name.indexOf$S("|") < 0  ? (function(a,f){return f.apply(null,a)})([name, "/:?\"\'=&", "_"],$I$(3).replaceAllCharacters$S$S$S) : $I$(6).stripPath$S(name));
 newName=$I$(3).replaceAllCharacters$S$S$S(newName, "[]", "_");
 newName=$I$(3).rep$S$S$S(newName, "#_DOCACHE_", "");
 var isSparDir=(fm.spardirCache != null  && fm.spardirCache.containsKey$O(name) );
 if (isLocal && name.indexOf$S("|") < 0  && !isSparDir ) {
-v.addLast$TV(name);
-v.addLast$TV(newName);
-v.addLast$TV(null);
+v.addLast$O(name);
+v.addLast$O(newName);
+v.addLast$O(null);
 } else {
 var ret=(isSparDir ? fm.spardirCache.get$O(name) : fm.getFileAsBytes$S$javajs_util_OC(name, null));
 if (!$I$(9).isAB$O(ret)) return "ERROR: " + ret;
 newName=p$1.addPngFileBytes$S$BA$I$java_util_Hashtable$Z$S$I$javajs_util_Lst.apply(this, [name, ret, iFile, crcMap, isSparDir, newName, ptSlash, v]);
 }name="$SCRIPT_PATH$" + newName;
-}crcMap.put$TK$TV(newName, newName);
-newFileNames.addLast$TV(name);
+}crcMap.put$O$O(newName, newName);
+newFileNames.addLast$O(name);
 }
 if (!sceneScriptOnly) {
 script=$I$(3).replaceQuotedStrings$S$javajs_util_Lst$javajs_util_Lst(script, fileNames, newFileNames);
-v.addLast$TV("state.spt");
-v.addLast$TV(null);
-v.addLast$TV(script.getBytes$());
+v.addLast$O("state.spt");
+v.addLast$O(null);
+v.addLast$O(script.getBytes$());
 }if (haveSceneScript) {
 if (scripts[0] != null ) {
-v.addLast$TV("animate.spt");
-v.addLast$TV(null);
-v.addLast$TV(scripts[0].getBytes$());
-}v.addLast$TV("scene.spt");
-v.addLast$TV(null);
+v.addLast$O("animate.spt");
+v.addLast$O(null);
+v.addLast$O(scripts[0].getBytes$());
+}v.addLast$O("scene.spt");
+v.addLast$O(null);
 script=$I$(3).replaceQuotedStrings$S$javajs_util_Lst$javajs_util_Lst(scripts[1], fileNames, newFileNames);
-v.addLast$TV(script.getBytes$());
+v.addLast$O(script.getBytes$());
 }var sname=(haveSceneScript ? "scene.spt" : "state.spt");
-v.addLast$TV("JmolManifest.txt");
-v.addLast$TV(null);
-var sinfo="# Jmol Manifest Zip Format 1.1\n# Created " + (Clazz.new_($I$(15))) + "\n" + "# JmolVersion " + $I$(4).getJmolVersion$() + "\n" + sname ;
-v.addLast$TV(sinfo.getBytes$());
-v.addLast$TV("Jmol_version_" + $I$(4).getJmolVersion$().replace$C$C(" ", "_").replace$C$C(":", "."));
-v.addLast$TV(null);
-v.addLast$TV(Clazz.array(Byte.TYPE, [0]));
+v.addLast$O("JmolManifest.txt");
+v.addLast$O(null);
+var sinfo="# Jmol Manifest Zip Format 1.1\n# Created " + (Clazz.new_($I$(15,1))) + "\n" + "# JmolVersion " + $I$(4).getJmolVersion$() + "\n" + sname ;
+v.addLast$O(sinfo.getBytes$());
+v.addLast$O("Jmol_version_" + $I$(4).getJmolVersion$().replace$C$C(" ", "_").replace$C$C(":", "."));
+v.addLast$O(null);
+v.addLast$O(Clazz.array(Byte.TYPE, [0]));
 if (out.getFileName$() != null ) {
 var bytes=this.vwr.getImageAsBytes$S$I$I$I$SA("PNG", 0, 0, -1, null);
 if (bytes != null ) {
-v.addLast$TV("preview.png");
-v.addLast$TV(null);
-v.addLast$TV(bytes);
+v.addLast$O("preview.png");
+v.addLast$O(null);
+v.addLast$O(bytes);
 }}return p$1.writeZipFile$javajs_util_OC$javajs_util_Lst$S$S.apply(this, [out, v, "OK JMOL", pngjName]);
 }, p$1);
 
@@ -657,10 +655,10 @@ if (crcMap.containsKey$O(newName)) {
 var pt=newName.lastIndexOf$S(".");
 if (pt > ptSlash) newName=newName.substring$I$I(0, pt) + "[" + iFile + "]" + newName.substring$I(pt) ;
  else newName=newName + "[" + iFile + "]" ;
-}v.addLast$TV(name);
-v.addLast$TV(newName);
-v.addLast$TV(ret);
-crcMap.put$TK$TV(crcValue, newName);
+}v.addLast$O(name);
+v.addLast$O(newName);
+v.addLast$O(ret);
+crcMap.put$O$O(crcValue, newName);
 }return newName;
 }, p$1);
 
@@ -670,7 +668,7 @@ var nBytesOut=0;
 var nBytes=0;
 var outFileName=out.getFileName$();
 if (pngjName != null  && pngjName.startsWith$S("//") ) pngjName="file:" + pngjName.substring$I(1);
-$I$(1).info$S("creating zip file " + (outFileName == null  ? "" : outFileName) + "..." );
+(function(a,f){return f.apply(null,a)})(["creating zip file " + (outFileName == null  ? "" : outFileName) + "..." ],$I$(1).info$S);
 var fileList="";
 try {
 var bos;
@@ -714,7 +712,7 @@ if (pngjName != null ) this.vwr.fm.recachePngjBytes$S$BA(pngjName + "|" + fnameS
 nOut+=bytes.length;
 }nBytesOut+=nOut;
 $I$(16).closeZipEntry$O(zos);
-$I$(1).info$S("...added " + fname + " (" + nOut + " bytes)" );
+(function(a,f){return f.apply(null,a)})(["...added " + fname + " (" + nOut + " bytes)" ],$I$(1).info$S);
 }
 zos.flush$();
 zos.close$();
@@ -726,7 +724,7 @@ msg += " " + ret;
 }nBytes=out.getByteCount$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-$I$(1).info$S(e.toString());
+(function(a,f){return f.apply(null,a)})([e.toString()],$I$(1).info$S);
 return e.toString();
 } else {
 throw e;
@@ -743,4 +741,4 @@ return "# Jmol script\n{\n\tVar " + vname + " = pathForAllFiles\n\tpathForAllFil
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1
