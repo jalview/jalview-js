@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.V3','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Vibration", null, 'javajs.util.V3');
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.V3','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Vibration", null, 'javajs.util.V3');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.modDim=0;
-this.modScale=0;
-this.showTrace=false;
-this.trace=null;
-this.tracePt=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.modDim=-1;
 this.modScale=NaN;
 this.trace=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['showTrace'],'F',['modScale'],'I',['modDim','tracePt'],'O',['trace','javajs.util.P3[]']]]
 
 Clazz.newMeth(C$, 'setCalcPoint$javajs_util_T3$javajs_util_T3$F$F', function (pt, t456, scale, modulationScale) {
 switch (this.modDim) {
@@ -31,8 +23,8 @@ return pt;
 });
 
 Clazz.newMeth(C$, 'getInfo$java_util_Map', function (info) {
-info.put$TK$TV("vibVector", $I$(1).newV$javajs_util_T3(this));
-info.put$TK$TV("vibType", (this.modDim == -2 ? "spin" : this.modDim == -1 ? "vib" : "mod"));
+info.put$O$O("vibVector", $I$(1).newV$javajs_util_T3(this));
+info.put$O$O("vibType", (this.modDim == -2 ? "spin" : this.modDim == -1 ? "vib" : "mod"));
 });
 
 Clazz.newMeth(C$, 'clone$', function () {
@@ -74,11 +66,11 @@ for (var i=this.trace.length; --i >= 1; ) this.trace[i]=this.trace[i - 1];
 this.trace[1]=p0;
 this.tracePt=1;
 }var p=this.trace[this.tracePt];
-if (p == null ) p=this.trace[this.tracePt]=Clazz.new_($I$(2));
+if (p == null ) p=this.trace[this.tracePt]=Clazz.new_($I$(2,1));
 p.setT$javajs_util_T3(ptNew);
 }return this.trace;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

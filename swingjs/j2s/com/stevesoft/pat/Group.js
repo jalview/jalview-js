@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInt']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Group", null, 'com.stevesoft.pat.Pattern');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInt']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Group", null, 'com.stevesoft.pat.Pattern');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.op='\0';
-this.cl='\0';
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['C',['op','cl']]]
 
 Clazz.newMeth(C$, 'c$$C$C', function (opi, cli) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.op=opi;
 this.cl=cli;
 }, 1);
@@ -46,7 +41,7 @@ return "(?@" + this.op + this.cl + ")" + this.nextString$() ;
 });
 
 Clazz.newMeth(C$, 'minChars$', function () {
-return Clazz.new_($I$(1).c$$I,[2]);
+return Clazz.new_($I$(1,1).c$$I,[2]);
 });
 
 Clazz.newMeth(C$, 'clone1$java_util_Hashtable', function (h) {
@@ -55,4 +50,4 @@ return Clazz.new_(C$.c$$C$C,[this.op, this.cl]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

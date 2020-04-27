@@ -1,61 +1,27 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.P4','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.util.MeshSurface','org.jmol.jvxl.data.MeshData','org.jmol.util.TempArray','org.jmol.util.Logger','javajs.util.Lst','java.util.Hashtable',['org.jmol.jvxl.readers.IsoSolventReader','.Edge'],['org.jmol.jvxl.readers.IsoSolventReader','.Face'],'javajs.util.Measure']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsoSolventReader", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.P4','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.util.MeshSurface','org.jmol.jvxl.data.MeshData','org.jmol.util.TempArray','org.jmol.util.Logger','javajs.util.Lst','java.util.Hashtable',['org.jmol.jvxl.readers.IsoSolventReader','.Edge'],['org.jmol.jvxl.readers.IsoSolventReader','.Face'],'javajs.util.Measure']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "IsoSolventReader", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.jvxl.readers.AtomDataReader');
-C$.testLinear=false;
+C$.$classes$=[['Edge',2],['Face',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.testLinear=false;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cavityRadius=0;
-this.envelopeRadius=0;
-this.dots=null;
-this.doCalculateTroughs=false;
-this.isCavity=false;
-this.isPocket=false;
-this.iter=null;
-this.bsSurfacePoints=null;
-this.bsSurfaceDone=null;
-this.bsLocale=null;
-this.htEdges=null;
-this.vEdges=null;
-this.vFaces=null;
-this.ptS1=null;
-this.ptS2=null;
-this.vTemp=null;
-this.plane=null;
-this.ptTemp2=null;
-this.vTemp2=null;
-this.p=null;
-this.bsAtomMinMax=null;
-this.isSurfacePoint=false;
-this.iAtomSurface=0;
-this.nTest=0;
-this.rAS=0;
-this.rBS=0;
-this.rAS2=0;
-this.rBS2=0;
-this.dAB=0;
-this.dAB2=0;
-this.ecosASB2=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.ptS1=Clazz.new_($I$(2));
-this.ptS2=Clazz.new_($I$(2));
-this.vTemp=Clazz.new_($I$(1));
-this.plane=Clazz.new_($I$(3));
-this.ptTemp2=Clazz.new_($I$(2));
-this.vTemp2=Clazz.new_($I$(1));
-this.p=Clazz.new_($I$(2));
+this.ptS1=Clazz.new_($I$(2,1));
+this.ptS2=Clazz.new_($I$(2,1));
+this.vTemp=Clazz.new_($I$(1,1));
+this.plane=Clazz.new_($I$(3,1));
+this.ptTemp2=Clazz.new_($I$(2,1));
+this.vTemp2=Clazz.new_($I$(1,1));
+this.p=Clazz.new_($I$(2,1));
 this.nTest=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doCalculateTroughs','isCavity','isPocket','isSurfacePoint'],'F',['cavityRadius','envelopeRadius','rAS','rBS','rAS2','rBS2','dAB','dAB2','ecosASB2'],'I',['iAtomSurface','nTest'],'O',['dots','javajs.util.P3[]','iter','org.jmol.api.AtomIndexIterator','bsSurfacePoints','javajs.util.BS','+bsSurfaceDone','bsLocale','javajs.util.BS[]','htEdges','java.util.Map','vEdges','javajs.util.Lst','+vFaces','ptS1','javajs.util.P3','+ptS2','vTemp','javajs.util.V3','plane','javajs.util.P4','ptTemp2','javajs.util.P3','vTemp2','javajs.util.V3','p','javajs.util.P3','bsAtomMinMax','javajs.util.BS[]']]
+,['Z',['testLinear']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$org_jmol_jvxl_readers_SurfaceGenerator', function (sg) {
@@ -137,7 +103,7 @@ if (this.voxelSource != null ) {
 var vs=Math.abs(Float.isNaN$F(valueB) || valueA < valueB   ? this.voxelSource[vA] : this.voxelSource[vB]);
 if (vs > 0) this.iAtomSurface=this.atomIndex[vs - 1];
 }if (C$.testLinear || this.voxelSource == null   || this.voxelSource[vA] == 0  || this.voxelSource[vA] != this.voxelSource[vB] ) return this.getSPF$F$Z$F$F$javajs_util_T3$javajs_util_V3$I$I$I$I$I$FA$javajs_util_T3(cutoff, isCutoffAbsolute, valueA, valueB, pointA, edgeVector, x, y, z, vA, vB, fReturn, ptReturn);
-var fraction=fReturn[0]=$I$(6).getSphericalInterpolationFraction$D$D$D$D((this.voxelSource[vA] < 0 ? this.sr : this.atomRadius[this.voxelSource[vA] - 1]), valueA, valueB, edgeVector.length$());
+var fraction=fReturn[0]=(function(a,f){return f.apply(null,a)})([(this.voxelSource[vA] < 0 ? this.sr : this.atomRadius[this.voxelSource[vA] - 1]), valueA, valueB, edgeVector.length$()],$I$(6).getSphericalInterpolationFraction$D$D$D$D);
 ptReturn.scaleAdd2$F$javajs_util_T3$javajs_util_T3(fraction, edgeVector, pointA);
 var diff=valueB - valueA;
 return valueA + fraction * diff;
@@ -179,13 +145,13 @@ this.updateSurfaceData$();
 if (!doExclude) this.meshData.surfaceSet=null;
 if (this.meshDataServer != null ) {
 this.meshDataServer.fillMeshData$org_jmol_jvxl_data_MeshData$I$org_jmol_shapesurface_IsosurfaceMesh(this.meshData, 3, null);
-this.meshData=Clazz.new_($I$(7));
+this.meshData=Clazz.new_($I$(7,1));
 }});
 
 Clazz.newMeth(C$, 'postProcessVertices$', function () {
 this.setVertexSource$();
 if (this.doCalculateTroughs && this.bsSurfacePoints != null  ) {
-var bsAll=Clazz.new_($I$(4));
+var bsAll=Clazz.new_($I$(4,1));
 var bsSurfaces=this.meshData.getSurfaceSet$();
 var bsSources=null;
 var volumes=(this.isPocket ? null : $I$(7).calculateVolumeOrArea$org_jmol_jvxl_data_MeshData$I$Z$Z(this.meshData, -2147483648, false, false));
@@ -203,7 +169,7 @@ for (var i=0; i < this.meshData.nSets; i++) {
 var bss=bsSurfaces[i];
 if (bss.intersects$javajs_util_BS(this.bsSurfacePoints)) {
 if (volumes == null  || volumes[i] * factor > minVolume  ) if (this.params.vertexSource != null ) {
-var bs=Clazz.new_($I$(4));
+var bs=Clazz.new_($I$(4,1));
 if (bsSources == null ) bsSources=Clazz.array($I$(4), [bsSurfaces.length]);
 for (var j=bss.nextSetBit$I(0); j >= 0; j=bss.nextSetBit$I(j + 1)) {
 var iatom=this.params.vertexSource[j];
@@ -220,7 +186,7 @@ continue;
 this.updateSurfaceData$();
 if (this.meshDataServer != null ) {
 this.meshDataServer.fillMeshData$org_jmol_jvxl_data_MeshData$I$org_jmol_shapesurface_IsosurfaceMesh(this.meshData, 3, null);
-this.meshData=Clazz.new_($I$(7));
+this.meshData=Clazz.new_($I$(7,1));
 }}if (this.params.thePlane != null  && this.params.slabInfo == null  ) this.params.addSlabInfo$OA($I$(8).getSlabWithinRange$F$F(-100, 0));
 });
 
@@ -246,7 +212,7 @@ $I$(9).info$S("cavities include " + n + " voxel points" );
 this.atomRadius=Clazz.array(Float.TYPE, [n]);
 this.atomXyzTruncated=Clazz.array($I$(2), [n]);
 for (var x=0, ipt=0, apt=0; x < this.nPointsX; ++x) for (var y=0; y < this.nPointsY; ++y) for (var z=0; z < this.nPointsZ; ++z) if (bs.get$I(ipt++)) {
-this.volumeData.voxelPtToXYZ$I$I$I$javajs_util_T3(x, y, z, (this.atomXyzTruncated[apt]=Clazz.new_($I$(2))));
+this.volumeData.voxelPtToXYZ$I$I$I$javajs_util_T3(x, y, z, (this.atomXyzTruncated[apt]=Clazz.new_($I$(2,1))));
 this.atomRadius[apt++]=this.voxelData[x][y][z];
 }
 
@@ -260,19 +226,19 @@ this.setRadii$();
 Clazz.newMeth(C$, 'generateSolventCube', function () {
 if (this.dataType == 1207) return;
 this.params.vertexSource=Clazz.array(Integer.TYPE, [this.volumeData.nPoints]);
-this.bsSurfaceDone=Clazz.new_($I$(4));
-this.bsSurfaceVoxels=Clazz.new_($I$(4));
-this.bsSurfacePoints=Clazz.new_($I$(4));
+this.bsSurfaceDone=Clazz.new_($I$(4,1));
+this.bsSurfaceVoxels=Clazz.new_($I$(4,1));
+this.bsSurfacePoints=Clazz.new_($I$(4,1));
 if (this.doCalculateTroughs) {
 this.iter=this.sg.atomDataServer.getSelectedAtomIterator$javajs_util_BS$Z$Z$Z(this.bsMySelected, true, false, false);
-this.vEdges=Clazz.new_($I$(10));
+this.vEdges=Clazz.new_($I$(10,1));
 this.bsLocale=Clazz.array($I$(4), [this.myAtomCount]);
-this.htEdges=Clazz.new_($I$(11));
+this.htEdges=Clazz.new_($I$(11,1));
 p$1.getEdges.apply(this, []);
-$I$(9).info$S(this.vEdges.size$() + " edges");
-this.vFaces=Clazz.new_($I$(10));
+(function(a,f){return f.apply(null,a)})([this.vEdges.size$() + " edges"],$I$(9).info$S);
+this.vFaces=Clazz.new_($I$(10,1));
 p$1.getFaces.apply(this, []);
-$I$(9).info$S(this.vFaces.size$() + " faces");
+(function(a,f){return f.apply(null,a)})([this.vFaces.size$() + " faces"],$I$(9).info$S);
 this.bsLocale=null;
 this.htEdges=null;
 this.iter.release$();
@@ -294,7 +260,7 @@ this.validSpheres=null;
 }, p$1);
 
 Clazz.newMeth(C$, 'getEdges', function () {
-for (var iatomA=0; iatomA < this.myAtomCount; iatomA++) this.bsLocale[iatomA]=Clazz.new_($I$(4));
+for (var iatomA=0; iatomA < this.myAtomCount; iatomA++) this.bsLocale[iatomA]=Clazz.new_($I$(4,1));
 
 for (var iatomA=0; iatomA < this.myAtomCount; iatomA++) {
 var ptA=this.atomXyzTruncated[iatomA];
@@ -308,11 +274,11 @@ var ptB=this.atomXyzTruncated[iatomB];
 var rB=this.rs[iatomB];
 var dAB=ptA.distance$javajs_util_T3(ptB);
 if (dAB >= rA + rB ) continue;
-var edge=Clazz.new_($I$(12).c$$org_jmol_jvxl_readers_IsoSolventReader$I$I$F, [this, null, this, iatomA, iatomB, dAB]);
-this.vEdges.addLast$TV(edge);
+var edge=Clazz.new_($I$(12,1).c$$org_jmol_jvxl_readers_IsoSolventReader$I$I$F,[this, null, this, iatomA, iatomB, dAB]);
+this.vEdges.addLast$O(edge);
 this.bsLocale[iatomA].set$I(iatomB);
 this.bsLocale[iatomB].set$I(iatomA);
-this.htEdges.put$TK$TV(edge.toString(), edge);
+this.htEdges.put$O$O(edge.toString(), edge);
 }
 }
 }, p$1);
@@ -322,8 +288,8 @@ return this.htEdges.get$O(i < j ? i + "_" + j  : j + "_" + i );
 });
 
 Clazz.newMeth(C$, 'getFaces', function () {
-var bs=Clazz.new_($I$(4));
-this.params.surfaceAtoms=this.validSpheres=Clazz.new_($I$(4));
+var bs=Clazz.new_($I$(4,1));
+this.params.surfaceAtoms=this.validSpheres=Clazz.new_($I$(4,1));
 this.noFaceSpheres=$I$(5).setAll$I(this.myAtomCount);
 for (var i=this.vEdges.size$(); --i >= 0; ) {
 var edge=this.vEdges.get$I(i);
@@ -337,10 +303,10 @@ if (p$1.getSolventPoints$org_jmol_jvxl_readers_IsoSolventReader_Edge$I$I$I.apply
 var f;
 var isOK=false;
 if ((f=p$1.validateFace$I$I$I$org_jmol_jvxl_readers_IsoSolventReader_Edge$javajs_util_P3.apply(this, [ia, ib, ic, edge, this.ptS1])) != null ) {
-this.vFaces.addLast$TV(f);
+this.vFaces.addLast$O(f);
 isOK=true;
 }if ((f=p$1.validateFace$I$I$I$org_jmol_jvxl_readers_IsoSolventReader_Edge$javajs_util_P3.apply(this, [ia, ib, ic, edge, this.ptS2])) != null ) {
-this.vFaces.addLast$TV(f);
+this.vFaces.addLast$O(f);
 isOK=true;
 }if (isOK) {
 this.noFaceSpheres.clear$I(ia);
@@ -364,7 +330,7 @@ break;
 }}
 var bc=this.findEdge$I$I(ib, ic);
 var ca=this.findEdge$I$I(ia, ic);
-var f=(isValid ? Clazz.new_($I$(13).c$$I$I$I$javajs_util_P3, [this, null, ia, ib, ic, ptS]) : null);
+var f=(isValid ? Clazz.new_($I$(13,1).c$$I$I$I$javajs_util_P3,[this, null, ia, ib, ic, ptS]) : null);
 edge.addFace$org_jmol_jvxl_readers_IsoSolventReader_Face(f);
 bc.addFace$org_jmol_jvxl_readers_IsoSolventReader_Face(f);
 ca.addFace$org_jmol_jvxl_readers_IsoSolventReader_Face(f);
@@ -376,7 +342,7 @@ return f;
 }, p$1);
 
 Clazz.newMeth(C$, 'markFaceVoxels$Z', function (firstPass) {
-var bsThisPass=Clazz.new_($I$(4));
+var bsThisPass=Clazz.new_($I$(4,1));
 var v0=this.volumetricVectors[0];
 var v1=this.volumetricVectors[1];
 var v2=this.volumetricVectors[2];
@@ -522,7 +488,7 @@ this.sg.log$S("draw ID \"x" + label + (this.nTest++) + "\" " + $I$(2).newP$javaj
 });
 
 Clazz.newMeth(C$, 'dumpLine2$javajs_util_P3$javajs_util_P3$S$F$S$S', function (pt1, pt2, label, d, color1, color2) {
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(1,1));
 pt.setT$javajs_util_T3(pt2);
 pt.sub$javajs_util_T3(pt1);
 pt.normalize$();
@@ -566,32 +532,24 @@ this.unsetVoxelData$();
 this.markPlaneVoxels$javajs_util_P3$F(this.contactPair.myAtoms[0], this.contactPair.radii[0]);
 }return this.thisPlane;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.testLinear=false;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.IsoSolventReader, "Edge", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.IsoSolventReader, "Edge", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javajs.util.P3');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ia=0;
-this.ib=0;
-this.nFaces=0;
-this.nInvalid=0;
-this.d=0;
-this.d2=0;
-this.maxr=0;
-this.cosASB2=0;
-this.v=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['d','d2','maxr','cosASB2'],'I',['ia','ib','nFaces','nInvalid'],'O',['v','javajs.util.V3']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_jvxl_readers_IsoSolventReader$I$I$F', function (r, ia, ib, d) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.ia=Math.min(ia, ib);
 this.ib=Math.max(ia, ib);
 this.d=d;
@@ -621,26 +579,19 @@ return this.ia + "_" + this.ib ;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.IsoSolventReader, "Face", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.IsoSolventReader, "Face", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ia=0;
-this.ib=0;
-this.ic=0;
-this.pS=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['ia','ib','ic'],'O',['pS','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$javajs_util_P3', function (ia, ib, ic, pS) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.ia=ia;
 this.ib=ib;
 this.ic=ic;
@@ -654,4 +605,4 @@ return this.ia + "_" + this.ib + "_" + this.ic + "_" + this.pS ;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

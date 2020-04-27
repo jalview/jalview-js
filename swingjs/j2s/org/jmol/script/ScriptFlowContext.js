@@ -1,36 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[[0,'org.jmol.script.ScriptCompiler']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptFlowContext");
+(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[[0,'org.jmol.script.ScriptCompiler']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptFlowContext");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.compiler=null;
-this.token=null;
-this.pt0=0;
-this.ptDefault=0;
-this.$function=null;
-this.$var=null;
-this.parent=null;
-this.lineStart=0;
-this.commandStart=0;
-this.ptLine=0;
-this.ptCommand=0;
-this.forceEndIf=false;
-this.ident=null;
-this.addLine=0;
-this.tok0=0;
-this.ichCommand=0;
-this.line0=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.forceEndIf=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['forceEndIf'],'I',['pt0','ptDefault','lineStart','commandStart','ptLine','ptCommand','addLine','tok0','ichCommand'],'H',['line0'],'S',['ident'],'O',['compiler','org.jmol.script.ScriptCompiler','token','org.jmol.script.ContextToken','$function','org.jmol.script.ScriptFunction','$var','org.jmol.script.SV','parent','org.jmol.script.ScriptFlowContext']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_script_ScriptCompiler$org_jmol_script_ContextToken$I$org_jmol_script_ScriptFlowContext$I$H', function (compiler, token, pt0, parent, ich, line0) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.compiler=compiler;
 this.token=token;
 this.tok0=token.tok;
@@ -89,4 +69,4 @@ this.$function=$function;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

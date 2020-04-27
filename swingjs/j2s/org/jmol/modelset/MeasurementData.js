@@ -1,45 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'org.jmol.util.BSUtil','javajs.util.Lst','org.jmol.util.Point3fi','org.jmol.modelset.Measurement']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeasurementData", null, null, 'org.jmol.api.JmolMeasurementClient');
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'org.jmol.util.BSUtil','javajs.util.Lst','org.jmol.util.Point3fi','org.jmol.modelset.Measurement']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MeasurementData", null, null, 'org.jmol.api.JmolMeasurementClient');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.client=null;
-this.measurementStrings=null;
-this.measurements=null;
-this.points=null;
-this.mustBeConnected=false;
-this.mustNotBeConnected=false;
-this.tickInfo=null;
-this.tokAction=0;
-this.radiusData=null;
-this.strFormat=null;
-this.note=null;
-this.isAll=false;
-this.colix=0;
-this.intramolecular=null;
-this.mad=0;
-this.thisID=null;
-this.text=null;
-this.atoms=null;
-this.units=null;
-this.minArray=null;
-this.ms=null;
-this.vwr=null;
-this.iFirstAtom=0;
-this.justOneModel=false;
-this.htMin=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tokAction=12290;
 this.justOneModel=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['mustBeConnected','mustNotBeConnected','isAll','justOneModel'],'I',['tokAction','mad','iFirstAtom'],'H',['colix'],'S',['strFormat','note','thisID','units'],'O',['client','org.jmol.api.JmolMeasurementClient','measurementStrings','javajs.util.Lst','+measurements','+points','tickInfo','org.jmol.modelset.TickInfo','radiusData','org.jmol.atomdata.RadiusData','intramolecular','Boolean','text','org.jmol.modelset.Text','atoms','org.jmol.modelset.Atom[]','minArray','float[]','ms','org.jmol.modelset.ModelSet','vwr','org.jmol.viewer.Viewer','htMin','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$S$org_jmol_viewer_Viewer$javajs_util_Lst', function (id, vwr, points) {
@@ -58,7 +30,7 @@ Clazz.newMeth(C$, 'set$I$java_util_Map$org_jmol_atomdata_RadiusData$S$S$org_jmol
 this.ms=this.vwr.ms;
 this.tokAction=tokAction;
 if (this.points.size$() >= 2 && Clazz.instanceOf(this.points.get$I(0), "javajs.util.BS")  && Clazz.instanceOf(this.points.get$I(1), "javajs.util.BS") ) {
-this.justOneModel=$I$(1).haveCommon$javajs_util_BS$javajs_util_BS(this.vwr.ms.getModelBS$javajs_util_BS$Z(this.points.get$I(0), false), this.vwr.ms.getModelBS$javajs_util_BS$Z(this.points.get$I(1), false));
+this.justOneModel=(function(a,f){return f.apply(null,a)})([this.vwr.ms.getModelBS$javajs_util_BS$Z(this.points.get$I(0), false), this.vwr.ms.getModelBS$javajs_util_BS$Z(this.points.get$I(1), false)],$I$(1).haveCommon$javajs_util_BS$javajs_util_BS);
 }this.htMin=htMin;
 this.radiusData=radiusData;
 this.strFormat=strFormat;
@@ -74,7 +46,7 @@ this.text=text;
 return this;
 });
 
-Clazz.newMeth(C$, ['processNextMeasure$org_jmol_modelset_Measurement','processNextMeasure$'], function (m) {
+Clazz.newMeth(C$, 'processNextMeasure$org_jmol_modelset_Measurement', function (m) {
 var value=m.getMeasurement$org_jmol_util_Point3fiA(null);
 if (this.htMin != null  && !m.isMin$java_util_Map(this.htMin)  || this.radiusData != null  && !m.isInRange$org_jmol_atomdata_RadiusData$F(this.radiusData, value)  ) return;
 if (this.measurementStrings == null  && this.measurements == null  ) {
@@ -83,8 +55,8 @@ m.value=value;
 value=m.fixValue$S$Z(this.units, false);
 this.minArray[this.iFirstAtom]=(1 / f == -Infinity  ? value : Math.min(f, value));
 return;
-}if (this.measurementStrings != null ) this.measurementStrings.addLast$TV(m.getStringUsing$org_jmol_viewer_Viewer$S$S(this.vwr, this.strFormat, this.units));
- else this.measurements.addLast$TV(Float.valueOf$F(m.getMeasurement$org_jmol_util_Point3fiA(null)));
+}if (this.measurementStrings != null ) this.measurementStrings.addLast$O(m.getStringUsing$org_jmol_viewer_Viewer$S$S(this.vwr, this.strFormat, this.units));
+ else this.measurements.addLast$O(Float.valueOf$F(m.getMeasurement$org_jmol_util_Point3fiA(null)));
 });
 
 Clazz.newMeth(C$, 'getMeasurements$Z$Z', function (asArray, asMinArray) {
@@ -95,10 +67,10 @@ for (var i=0; i < this.minArray.length; i++) this.minArray[i]=-0.0;
 this.define$org_jmol_api_JmolMeasurementClient$org_jmol_modelset_ModelSet(null, this.ms);
 return this.minArray;
 }if (asArray) {
-this.measurements=Clazz.new_($I$(2));
+this.measurements=Clazz.new_($I$(2,1));
 this.define$org_jmol_api_JmolMeasurementClient$org_jmol_modelset_ModelSet(null, this.ms);
 return this.measurements;
-}this.measurementStrings=Clazz.new_($I$(2));
+}this.measurementStrings=Clazz.new_($I$(2,1));
 this.define$org_jmol_api_JmolMeasurementClient$org_jmol_modelset_ModelSet(null, this.ms);
 return this.measurementStrings;
 });
@@ -111,7 +83,7 @@ if (nPoints < 2) return;
 var modelIndex=-1;
 var pts=Clazz.array($I$(3), [4]);
 var indices=Clazz.array(Integer.TYPE, [5]);
-var m=Clazz.new_($I$(4)).setPoints$org_jmol_modelset_ModelSet$IA$org_jmol_util_Point3fiA$org_jmol_modelset_TickInfo(modelSet, indices, pts, null);
+var m=Clazz.new_($I$(4,1)).setPoints$org_jmol_modelset_ModelSet$IA$org_jmol_util_Point3fiA$org_jmol_modelset_TickInfo(modelSet, indices, pts, null);
 m.setCount$I(nPoints);
 var ptLastAtom=-1;
 for (var i=0; i < nPoints; i++) {
@@ -133,7 +105,7 @@ p$1.nextMeasure$I$I$org_jmol_modelset_Measurement$I.apply(this, [0, ptLastAtom, 
 
 Clazz.newMeth(C$, 'nextMeasure$I$I$org_jmol_modelset_Measurement$I', function (thispt, ptLastAtom, m, thisModel) {
 if (thispt > ptLastAtom) {
-if (m.isValid$() && (!this.mustBeConnected || m.isConnected$org_jmol_modelset_AtomA$I(this.atoms, thispt) ) && (!this.mustNotBeConnected || !m.isConnected$org_jmol_modelset_AtomA$I(this.atoms, thispt) ) && (this.intramolecular == null  || m.isIntramolecular$org_jmol_modelset_AtomA$I(this.atoms, thispt) == this.intramolecular.booleanValue$()  )  ) this.client.processNextMeasure$(m);
+if (m.isValid$() && (!this.mustBeConnected || m.isConnected$org_jmol_modelset_AtomA$I(this.atoms, thispt) ) && (!this.mustNotBeConnected || !m.isConnected$org_jmol_modelset_AtomA$I(this.atoms, thispt) ) && (this.intramolecular == null  || m.isIntramolecular$org_jmol_modelset_AtomA$I(this.atoms, thispt) == this.intramolecular.booleanValue$()  )  ) this.client.processNextMeasure$org_jmol_modelset_Measurement(m);
 return;
 }var bs=this.points.get$I(thispt);
 var indices=m.countPlusIndices;
@@ -156,4 +128,4 @@ p$1.nextMeasure$I$I$org_jmol_modelset_Measurement$I.apply(this, [thispt + 1, ptL
 if (!haveNext) p$1.nextMeasure$I$I$org_jmol_modelset_Measurement$I.apply(this, [thispt + 1, ptLastAtom, m, thisModel]);
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

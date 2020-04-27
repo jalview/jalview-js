@@ -1,18 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer.binding"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','Boolean','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Lst','javajs.util.AU','java.util.Arrays','javajs.util.PT','org.jmol.api.Interface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Binding");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer.binding"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','Boolean','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Lst','javajs.util.AU','java.util.Arrays','javajs.util.PT','org.jmol.api.Interface']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Binding");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.bindings=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.bindings=Clazz.new_($I$(1));
-}, 1);
+this.bindings=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['S',['name'],'O',['bindings','java.util.Map']]]
 
 Clazz.newMeth(C$, 'getMouseAction$I$I$I', function (clickCount, modifiers, mode) {
 if (clickCount > 2) clickCount=2;
@@ -73,7 +68,7 @@ return (mouseAction & 768) >> 8;
 }, 1);
 
 Clazz.newMeth(C$, 'getMouseActionName$I$Z', function (mouseAction, addSortCode) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 if (mouseAction == 0) return "";
 var isMiddle=(C$.includes$I$I(mouseAction, 8) && !C$.includes$I$I(mouseAction, 16) && !C$.includes$I$I(mouseAction, 4)  );
 var code="      ".toCharArray$();
@@ -121,7 +116,7 @@ return this.bindings;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'bindAction$I$I', function (mouseAction, jmolAction) {
@@ -153,8 +148,8 @@ if (key.endsWith$S(skey)) p$1.removeBinding$java_util_Iterator$S.apply(this, [e,
 });
 
 Clazz.newMeth(C$, 'addBinding$S$O', function (key, value) {
-if ($I$(4).debugging) $I$(4).debug$S("adding binding " + key + "\t==\t" + $I$(5).e$O(value) );
-this.bindings.put$TK$TV(key, value);
+if ($I$(4).debugging) (function(a,f){return f.apply(null,a)})(["adding binding " + key + "\t==\t" + $I$(5).e$O(value) ],$I$(4).debug$S);
+this.bindings.put$O$O(key, value);
 }, p$1);
 
 Clazz.newMeth(C$, 'removeBinding$java_util_Iterator$S', function (e, key) {
@@ -190,27 +185,27 @@ return this.bindings.containsKey$O(mouseAction + "\t");
 });
 
 Clazz.newMeth(C$, 'getBindingInfo$SA$SA$S', function (actionInfo, actionNames, qualifiers) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 var qlow=(qualifiers == null  || qualifiers.equalsIgnoreCase$S("all")  ? null : qualifiers.toLowerCase$());
 var names=Clazz.array($I$(6), [actionInfo.length]);
-var user=Clazz.new_($I$(6));
+var user=Clazz.new_($I$(6,1));
 for (var obj, $obj = this.bindings.values$().iterator$(); $obj.hasNext$()&&((obj=($obj.next$())),1);) {
 if (Clazz.instanceOf(obj, "java.lang.Boolean")) {
 } else if ($I$(7).isAS$O(obj)) {
 var action=(obj)[0];
 var script=(obj)[1];
-if (qlow == null  || qlow.indexOf$S("user") >= 0  || action.indexOf$S(qlow) >= 0  || script.indexOf$S(qlow) >= 0 ) user.addLast$TV(obj);
+if (qlow == null  || qlow.indexOf$S("user") >= 0  || action.indexOf$S(qlow) >= 0  || script.indexOf$S(qlow) >= 0 ) user.addLast$O(obj);
 } else {
 var info=obj;
 var i=info[1];
-if (names[i] == null ) names[i]=Clazz.new_($I$(6));
+if (names[i] == null ) names[i]=Clazz.new_($I$(6,1));
 var name=C$.getMouseActionName$I$Z(info[0], true);
-if (qlow == null  || (actionNames[i] + ";" + actionInfo[i] + ";" + name ).toLowerCase$().indexOf$S(qlow) >= 0 ) names[i].addLast$TV(name);
+if (qlow == null  || (actionNames[i] + ";" + actionInfo[i] + ";" + name ).toLowerCase$().indexOf$S(qlow) >= 0 ) names[i].addLast$O(name);
 }}
 for (var i=0; i < actionInfo.length; i++) {
 var n;
 if (names[i] == null  || (n=names[i].size$()) == 0 ) continue;
-p$1.addInfo$javajs_util_SB$SA$S$S.apply(this, [sb, names[i].toArray$TTA(Clazz.array(String, [n])), actionNames[i], actionInfo[i]]);
+p$1.addInfo$javajs_util_SB$SA$S$S.apply(this, [sb, names[i].toArray$OA(Clazz.array(String, [n])), actionNames[i], actionInfo[i]]);
 }
 for (var i=0; i < user.size$(); i++) {
 var info=user.get$I(i);
@@ -242,4 +237,4 @@ Clazz.newMeth(C$, 'newBinding$org_jmol_viewer_Viewer$S', function (vwr, name) {
 return $I$(10).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.viewer.binding." + name + "Binding" , vwr, "script");
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

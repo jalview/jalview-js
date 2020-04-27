@@ -1,18 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.json.simple.parser"),I$=[[0,'StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ParseException", null, 'Exception');
+(function(){var P$=Clazz.newPackage("org.json.simple.parser"),I$=[[0,'StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ParseException", null, 'Exception');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.errorType=0;
-this.unexpectedObject=null;
-this.position=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['errorType','position'],'O',['unexpectedObject','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$I', function (errorType) {
 C$.c$$I$I$O.apply(this, [-1, errorType, null]);
@@ -23,7 +17,7 @@ C$.c$$I$I$O.apply(this, [-1, errorType, unexpectedObject]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$O', function (position, errorType, unexpectedObject) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.position=position;
 this.errorType=errorType;
 this.unexpectedObject=unexpectedObject;
@@ -54,7 +48,7 @@ this.unexpectedObject=unexpectedObject;
 });
 
 Clazz.newMeth(C$, 'getMessage$', function () {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 switch (this.errorType) {
 case 0:
 sb.append$S("Unexpected character (").append$O(this.unexpectedObject).append$S(") at position ").append$I(this.position).append$S(".");
@@ -74,4 +68,4 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

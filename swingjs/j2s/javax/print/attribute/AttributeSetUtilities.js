@@ -1,76 +1,76 @@
-(function(){var P$=Clazz.newPackage("javax.print.attribute"),I$=[[0,['javax.print.attribute.AttributeSetUtilities','.UnmodifiableAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiableDocAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiablePrintRequestAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiablePrintJobAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiablePrintServiceAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedDocAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedPrintRequestAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedPrintJobAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedPrintServiceAttributeSet']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AttributeSetUtilities", function(){
+(function(){var P$=Clazz.newPackage("javax.print.attribute"),I$=[[0,['javax.print.attribute.AttributeSetUtilities','.UnmodifiableAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiableDocAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiablePrintRequestAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiablePrintJobAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.UnmodifiablePrintServiceAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedDocAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedPrintRequestAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedPrintJobAttributeSet'],['javax.print.attribute.AttributeSetUtilities','.SynchronizedPrintServiceAttributeSet']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AttributeSetUtilities", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['UnmodifiableAttributeSet',10],['UnmodifiableDocAttributeSet',10],['UnmodifiablePrintRequestAttributeSet',10],['UnmodifiablePrintJobAttributeSet',10],['UnmodifiablePrintServiceAttributeSet',10],['SynchronizedAttributeSet',10],['SynchronizedDocAttributeSet',10],['SynchronizedPrintRequestAttributeSet',10],['SynchronizedPrintJobAttributeSet',10],['SynchronizedPrintServiceAttributeSet',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableView$javax_print_attribute_AttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(1).c$$javax_print_attribute_AttributeSet,[attributeSet]);
+}return Clazz.new_($I$(1,1).c$$javax_print_attribute_AttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableView$javax_print_attribute_DocAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(2).c$$javax_print_attribute_DocAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(2,1).c$$javax_print_attribute_DocAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableView$javax_print_attribute_PrintRequestAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(3).c$$javax_print_attribute_PrintRequestAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(3,1).c$$javax_print_attribute_PrintRequestAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableView$javax_print_attribute_PrintJobAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(4).c$$javax_print_attribute_PrintJobAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(4,1).c$$javax_print_attribute_PrintJobAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'unmodifiableView$javax_print_attribute_PrintServiceAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(5).c$$javax_print_attribute_PrintServiceAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(5,1).c$$javax_print_attribute_PrintServiceAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedView$javax_print_attribute_AttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(6).c$$javax_print_attribute_AttributeSet,[attributeSet]);
+}return Clazz.new_($I$(6,1).c$$javax_print_attribute_AttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedView$javax_print_attribute_DocAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(7).c$$javax_print_attribute_DocAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(7,1).c$$javax_print_attribute_DocAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedView$javax_print_attribute_PrintRequestAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(8).c$$javax_print_attribute_PrintRequestAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(8,1).c$$javax_print_attribute_PrintRequestAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedView$javax_print_attribute_PrintJobAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(9).c$$javax_print_attribute_PrintJobAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(9,1).c$$javax_print_attribute_PrintJobAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'synchronizedView$javax_print_attribute_PrintServiceAttributeSet', function (attributeSet) {
 if (attributeSet == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}return Clazz.new_($I$(10).c$$javax_print_attribute_PrintServiceAttributeSet,[attributeSet]);
+}return Clazz.new_($I$(10,1).c$$javax_print_attribute_PrintServiceAttributeSet,[attributeSet]);
 }, 1);
 
 Clazz.newMeth(C$, 'verifyAttributeCategory$O$Class', function (object, interfaceName) {
@@ -95,23 +95,19 @@ if (!category.equals$O(attribute.getCategory$())) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }}, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiableAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiableAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['javax.print.attribute.AttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attrset=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['attrset','javax.print.attribute.AttributeSet']]]
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_AttributeSet', function (attributeSet) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.attrset=attributeSet;
 }, 1);
 
@@ -170,95 +166,83 @@ return this.attrset.hashCode$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiableDocAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiableDocAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.UnmodifiableAttributeSet'], ['javax.print.attribute.DocAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_DocAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiablePrintRequestAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiablePrintRequestAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.UnmodifiableAttributeSet'], ['javax.print.attribute.PrintRequestAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_PrintRequestAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiablePrintJobAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiablePrintJobAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.UnmodifiableAttributeSet'], ['javax.print.attribute.PrintJobAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_PrintJobAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiablePrintServiceAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "UnmodifiablePrintServiceAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.UnmodifiableAttributeSet'], ['javax.print.attribute.PrintServiceAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_PrintServiceAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['javax.print.attribute.AttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attrset=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['attrset','javax.print.attribute.AttributeSet']]]
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_AttributeSet', function (attributeSet) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.attrset=attributeSet;
 }, 1);
 
@@ -317,76 +301,68 @@ return this.attrset.hashCode$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedDocAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedDocAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.SynchronizedAttributeSet'], ['javax.print.attribute.DocAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_DocAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedPrintRequestAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedPrintRequestAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.SynchronizedAttributeSet'], ['javax.print.attribute.PrintRequestAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_PrintRequestAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedPrintJobAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedPrintJobAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.SynchronizedAttributeSet'], ['javax.print.attribute.PrintJobAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_PrintJobAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedPrintServiceAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributeSetUtilities, "SynchronizedPrintServiceAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.print.attribute.AttributeSetUtilities','.SynchronizedAttributeSet'], ['javax.print.attribute.PrintServiceAttributeSet', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_print_attribute_PrintServiceAttributeSet', function (attributeSet) {
-C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this, [attributeSet]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_print_attribute_AttributeSet.apply(this,[attributeSet]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

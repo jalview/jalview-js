@@ -1,37 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),p$1={},I$=[[0,'org.jmol.modelset.Atom','javajs.util.P3','org.jmol.util.C','javajs.util.V3','javajs.util.SB','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Dipole");
+(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),p$1={},I$=[[0,'org.jmol.modelset.Atom','javajs.util.P3','org.jmol.util.C','javajs.util.V3','javajs.util.SB','org.jmol.util.Escape']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Dipole");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.thisID=null;
-this.mad=0;
-this.colix=0;
-this.type=0;
-this.origin=null;
-this.center=null;
-this.vector=null;
-this.dipoleInfo=null;
-this.dipoleValue=0;
-this.isUserValue=false;
-this.offsetSide=0;
-this.offsetAngstroms=0;
-this.offsetPt=null;
-this.offsetPercent=0;
-this.visibilityFlags=0;
-this.modelIndex=0;
-this.visible=false;
-this.noCross=false;
-this.haveAtoms=false;
-this.isValid=false;
-this.atoms=null;
-this.coords=null;
-this.bond=null;
-this.bsMolecule=null;
-this.lstDipoles=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.thisID="";
@@ -39,7 +9,9 @@ this.colix=($s$[0] = 0, $s$[0]);
 this.dipoleInfo="";
 this.atoms=Clazz.array($I$(1), [2]);
 this.coords=Clazz.array($I$(2), [2]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isUserValue','visible','noCross','haveAtoms','isValid'],'F',['dipoleValue','offsetSide','offsetAngstroms'],'I',['offsetPercent','visibilityFlags','modelIndex'],'H',['mad','colix','type'],'S',['thisID','dipoleInfo'],'O',['origin','javajs.util.P3','+center','vector','javajs.util.V3','offsetPt','javajs.util.P3','atoms','org.jmol.modelset.Atom[]','coords','javajs.util.P3[]','bond','org.jmol.modelset.Bond','bsMolecule','javajs.util.BS','lstDipoles','javajs.util.Lst']]]
 
 Clazz.newMeth(C$, 'init$I$S$S$H$H$Z', function (modelIndex, thisID, dipoleInfo, colix, mad, visible) {
 this.modelIndex=modelIndex;
@@ -138,7 +110,7 @@ this.isValid=(this.atoms[0] !== this.atoms[1]  && this.dipoleValue != 0  );
 if (!this.isValid) return;
 var f=this.atoms[0].distance$javajs_util_T3(this.atoms[1]) / (2 * this.dipoleValue) - 0.5;
 this.origin.scaleAdd2$F$javajs_util_T3$javajs_util_T3(f, this.vector, this.atoms[0]);
-this.center=Clazz.new_($I$(2));
+this.center=Clazz.new_($I$(2,1));
 this.center.scaleAdd2$F$javajs_util_T3$javajs_util_T3(0.5, this.vector, this.origin);
 this.bond=this.atoms[0].getBond$org_jmol_modelset_Atom(this.atoms[1]);
 this.type=(this.bond == null  ? 2 : 3);
@@ -150,7 +122,7 @@ return (this.type == 2 || this.type == 3 );
 
 Clazz.newMeth(C$, 'getShapeState$', function () {
 if (!this.isValid) return "";
-var s=Clazz.new_($I$(5));
+var s=Clazz.new_($I$(5,1));
 s.append$S("dipole ID ").append$S(this.thisID);
 if (this.lstDipoles != null ) s.append$S(" all ").append$S($I$(6).eBS$javajs_util_BS(this.bsMolecule));
  else if (this.haveAtoms) s.append$S(" ({").appendI$I(this.atoms[0].i).append$S("}) ({").appendI$I(this.atoms[1].i).append$S("})");
@@ -177,4 +149,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

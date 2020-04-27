@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),I$=[[0,'java.nio.charset.CoderResult']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Surrogate", function(){
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),I$=[[0,'java.nio.charset.CoderResult']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Surrogate", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Parser',9],['Generator',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'isHigh$I', function (c) {
@@ -43,28 +43,25 @@ Clazz.newMeth(C$, 'toUCS4$C$C', function (c, d) {
 Clazz.assert(C$, this, function(){return Character.isHighSurrogate$C(c) && Character.isLowSurrogate$C(d) });
 return Character.toCodePoint$C$C(c, d);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Surrogate, "Parser", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Surrogate, "Parser", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.character=0;
-this.error=null;
-this.isPair=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.error=$I$(1).UNDERFLOW;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isPair'],'I',['character'],'O',['error','java.nio.charset.CoderResult']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'character$', function () {
@@ -136,27 +133,26 @@ this.isPair=false;
 this.error=null;
 return this.character;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Surrogate, "Generator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Surrogate, "Generator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.error=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.error=$I$(1).OVERFLOW;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['error','java.nio.charset.CoderResult']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'error$', function () {
@@ -213,7 +209,10 @@ return 2;
 this.error=$I$(1).unmappableForLength$I(len);
 return -1;
 }});
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

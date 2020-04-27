@@ -1,45 +1,24 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),p$1={},I$=[[0,'jalview.util.Format','jalview.datamodel.SequenceI','jalview.util.Comparison','java.util.Map','java.util.TreeMap','jalview.schemes.ResidueProperties','jalview.datamodel.ResidueCount','StringBuilder','jalview.datamodel.Sequence','jalview.analysis.scoremodels.ScoreModels','java.util.Vector','jalview.datamodel.Annotation','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Conservation");
-C$.FORMAT_3DP=null;
+(function(){var P$=Clazz.newPackage("jalview.analysis"),p$1={},I$=[[0,'jalview.util.Format','jalview.datamodel.SequenceI','jalview.util.Comparison','java.util.Map','java.util.TreeMap','jalview.schemes.ResidueProperties','jalview.datamodel.ResidueCount','StringBuilder','jalview.datamodel.Sequence','jalview.analysis.scoremodels.ScoreModels','java.util.Vector','jalview.datamodel.Annotation','java.awt.Color']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Conservation");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.FORMAT_3DP=Clazz.new_($I$(1).c$$S,["%2.5f"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequences=null;
-this.start=0;
-this.end=0;
-this.seqNums=null;
-this.maxLength=0;
-this.seqNumsChanged=false;
-this.total=null;
-this.canonicaliseAa=false;
-this.quality=null;
-this.qualityMinimum=0;
-this.qualityMaximum=0;
-this.consSequence=null;
-this.threshold=0;
-this.name=null;
-this.cons2=null;
-this.cons2GapCounts=null;
-this.consSymbs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.maxLength=0;
 this.seqNumsChanged=false;
 this.canonicaliseAa=true;
 this.name="";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['seqNumsChanged','canonicaliseAa'],'D',['qualityMinimum','qualityMaximum'],'I',['start','end','maxLength','threshold'],'S',['name'],'O',['sequences','jalview.datamodel.SequenceI[]','seqNums','java.util.Vector','total','java.util.Map[]','quality','java.util.Vector','consSequence','jalview.datamodel.Sequence','cons2','int[][]','cons2GapCounts','int[]','consSymbs','String[]']]
+,['O',['FORMAT_3DP','jalview.util.Format']]]
 
 Clazz.newMeth(C$, 'c$$S$java_util_List$I$I', function (name, sequences, start, end) {
 C$.c$$S$I$java_util_List$I$I.apply(this, [name, 3, sequences, start, end]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I$java_util_List$I$I', function (name, threshold, sequences, start, end) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 this.threshold=threshold;
 this.start=start;
@@ -70,7 +49,7 @@ var sSize=this.sequences.length;
 if ((i > -1) && (i < sSize) ) {
 var sq=this.sequences[i].getSequenceAsString$();
 if (this.seqNums.size$() <= i) {
-this.seqNums.addElement$TE(Clazz.array(Integer.TYPE, [sq.length$() + 1]));
+this.seqNums.addElement$O(Clazz.array(Integer.TYPE, [sq.length$() + 1]));
 }if (sq.hashCode$() != this.seqNums.elementAt$I(i)[0]) {
 var j;
 var len;
@@ -89,7 +68,7 @@ sqnum[j]=sm.getMatrixIndex$C(residue);
 if (sqnum[j] == -1) {
 sqnum[j]=-1;
 }}}
-this.seqNums.setElementAt$TE$I(sqnum, i);
+this.seqNums.setElementAt$O$I(sqnum, i);
 } else {
 System.out.println$S("SEQUENCE HAS BEEN DELETED!!!");
 }} else {
@@ -102,7 +81,7 @@ this.total=Clazz.array($I$(4), [this.maxLength]);
 for (var column=this.start; column <= this.end; column++) {
 var values=this.countResidues$I(column);
 var thresh=((this.threshold * height)/100|0);
-var resultHash=Clazz.new_($I$(5));
+var resultHash=Clazz.new_($I$(5,1));
 var symbolCounts=values.getSymbolCounts$();
 var symbols=symbolCounts.symbols;
 var counts=symbolCounts.values;
@@ -125,18 +104,18 @@ var propertyName=property.getKey$();
 var residuePropertyValue=property.getValue$().get$O(res);
 if (!resultMap.containsKey$O(propertyName)) {
 if (residuePropertyValue != null ) {
-resultMap.put$TK$TV(propertyName, residuePropertyValue);
+resultMap.put$O$O(propertyName, residuePropertyValue);
 } else {
-resultMap.put$TK$TV(propertyName, property.getValue$().get$O("-"));
+resultMap.put$O$O(propertyName, property.getValue$().get$O("-"));
 }} else {
 var currentResult=resultMap.get$O(propertyName);
 if (currentResult.intValue$() != -1 && !currentResult.equals$O(residuePropertyValue) ) {
-resultMap.put$TK$TV(propertyName, Integer.valueOf$I(-1));
+resultMap.put$O$O(propertyName, Integer.valueOf$I(-1));
 }}}
 }, 1);
 
 Clazz.newMeth(C$, 'countResidues$I', function (column) {
-var values=Clazz.new_($I$(7).c$$Z,[false]);
+var values=Clazz.new_($I$(7,1).c$$Z,[false]);
 for (var row=0; row < this.sequences.length; row++) {
 if (this.sequences[row].getLength$() > column) {
 var c=this.sequences[row].getCharAt$I(column);
@@ -167,7 +146,7 @@ if (column >= this.sequences[i].getLength$()) {
 gapCount++;
 continue;
 }var c=this.sequences[i].getCharAt$I(column);
-if ($I$(3).isGap$C((c))) {
+if ($I$(3,"isGap$C",[(c)])) {
 gapCount++;
 } else {
 c=this.toUpperCase$C(c);
@@ -187,7 +166,7 @@ c = String.fromCharCode(c.$c()- 32);
 });
 
 Clazz.newMeth(C$, 'verdict$Z$F', function (positiveOnly, maxPercentageGaps) {
-var consString=Clazz.new_($I$(8).c$$I,[this.end]);
+var consString=Clazz.new_($I$(8,1).c$$I,[this.end]);
 for (var i=0; i < this.start; i++) {
 consString.append$C("-");
 }
@@ -200,8 +179,8 @@ var pgaps=(totGaps * 100.0) / this.sequences.length;
 if (maxPercentageGaps > pgaps ) {
 var resultHash=this.total[i - this.start];
 var count=0;
-var positives=Clazz.new_($I$(8).c$$I,[64]);
-var negatives=Clazz.new_($I$(8).c$$I,[32]);
+var positives=Clazz.new_($I$(8,1).c$$I,[64]);
+var negatives=Clazz.new_($I$(8,1).c$$I,[32]);
 for (var type, $type = resultHash.keySet$().iterator$(); $type.hasNext$()&&((type=($type.next$())),1);) {
 var result=resultHash.get$O(type).intValue$();
 if (result == -1) {
@@ -224,7 +203,7 @@ consString.append$S(fullyConserved ? "*" : "+");
 }} else {
 consString.append$C("-");
 }}
-this.consSequence=Clazz.new_($I$(9).c$$S$S$I$I,[this.name, consString.toString(), this.start, this.end]);
+this.consSequence=Clazz.new_([this.name, consString.toString(), this.start, this.end],$I$(9,1).c$$S$S$I$I);
 });
 
 Clazz.newMeth(C$, 'getConsSequence$', function () {
@@ -236,7 +215,7 @@ this.findQuality$I$I$jalview_analysis_scoremodels_ScoreMatrix(0, this.maxLength 
 });
 
 Clazz.newMeth(C$, 'percentIdentity$jalview_analysis_scoremodels_ScoreMatrix', function (sm) {
-this.seqNums=Clazz.new_($I$(11));
+this.seqNums=Clazz.new_($I$(11,1));
 var i=0;
 var iSize=this.sequences.length;
 for (i=0; i < iSize; i++) {
@@ -263,7 +242,7 @@ j++;
 }}, p$1);
 
 Clazz.newMeth(C$, 'findQuality$I$I$jalview_analysis_scoremodels_ScoreMatrix', function (startCol, endCol, scoreMatrix) {
-this.quality=Clazz.new_($I$(11));
+this.quality=Clazz.new_($I$(11,1));
 var max=-1.7976931348623157E308;
 var scores=scoreMatrix.getMatrix$();
 p$1.percentIdentity$jalview_analysis_scoremodels_ScoreMatrix.apply(this, [scoreMatrix]);
@@ -300,13 +279,13 @@ tot += (xx[i] * xx[i]);
 bigtot += Math.sqrt(tot);
 }
 max=Math.max(max, bigtot);
-this.quality.addElement$TE( new Double(bigtot));
+this.quality.addElement$O(Double.valueOf$D(bigtot));
 }
 var newmax=-1.7976931348623157E308;
 for (var j=startCol; j <= endCol; j++) {
 var tmp=this.quality.elementAt$I(j).doubleValue$();
 tmp=((max - tmp) * (size - this.cons2GapCounts[j])) / size;
-this.quality.setElementAt$TE$I( new Double(tmp), j);
+this.quality.setElementAt$O$I(Double.valueOf$D(tmp), j);
 if (tmp > newmax ) {
 newmax=tmp;
 }}
@@ -348,13 +327,13 @@ var vprop=value - min;
 vprop /= max;
 var consp=i - this.start;
 var conssym=(value > 0  && consp > -1  && consp < this.consSymbs.length ) ? this.consSymbs[consp] : "";
-conservation.annotations[i]=Clazz.new_($I$(12).c$$S$S$C$F$java_awt_Color,[String.valueOf$C(c), conssym, " ", value, Clazz.new_($I$(13).c$$F$F$F,[minR + (maxR * vprop), minG + (maxG * vprop), minB + (maxB * vprop)])]);
+conservation.annotations[i]=Clazz.new_([String.valueOf$C(c), conssym, " ", value, Clazz.new_([minR + (maxR * vprop), minG + (maxG * vprop), minB + (maxB * vprop)],$I$(13,1).c$$F$F$F)],$I$(12,1).c$$S$S$C$F$java_awt_Color);
 }if (quality2 != null ) {
 value=this.quality.elementAt$I(i).floatValue$();
 var vprop=value - qmin;
 vprop /= qmax;
 var description=C$.FORMAT_3DP.form$D(value);
-quality2.annotations[i]=Clazz.new_($I$(12).c$$S$S$C$F$java_awt_Color,[" ", description, " ", value, Clazz.new_($I$(13).c$$F$F$F,[minR + (maxR * vprop), minG + (maxG * vprop), minB + (maxB * vprop)])]);
+quality2.annotations[i]=Clazz.new_([" ", description, " ", value, Clazz.new_([minR + (maxR * vprop), minG + (maxG * vprop), minB + (maxB * vprop)],$I$(13,1).c$$F$F$F)],$I$(12,1).c$$S$S$C$F$java_awt_Color);
 }}
 });
 
@@ -376,6 +355,10 @@ var tip=(hasConservation && consp > -1  && consp < this.consSymbs.length ) ? thi
 return tip;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.FORMAT_3DP=Clazz.new_($I$(1,1).c$$S,["%2.5f"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

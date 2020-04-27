@@ -1,35 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.ArrayList','java.awt.Dialog',['java.awt.Dialog','.ModalityType'],'java.awt.Toolkit','java.awt.Window','java.awt.event.ComponentEvent',['java.awt.Dialog','.ModalExclusionType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSDialog", null, 'java.awt.Window');
-C$.modalDialogs=null;
-C$.$nameCounter=0;
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.ArrayList','java.awt.Dialog',['java.awt.Dialog','.ModalityType'],'java.awt.Toolkit','java.awt.Window','java.awt.event.ComponentEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSDialog", null, 'java.awt.Window');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.modalDialogs=Clazz.new_($I$(1));
-C$.$nameCounter=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.blockedWindows=null;
-this.resizable=false;
-this.undecorated=false;
-this.initialized=false;
-this.modal=false;
-this.modalityType=null;
-this.title=null;
-this.modalFilter=null;
-this.isInHide=false;
-this.isInDispose=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.blockedWindows=Clazz.new_($I$(1));
+this.blockedWindows=Clazz.new_($I$(1,1));
 this.resizable=true;
 this.undecorated=false;
 this.initialized=false;
 this.isInHide=false;
 this.isInDispose=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['resizable','undecorated','initialized','modal','isInHide','isInDispose'],'S',['title'],'O',['+blockedWindows','modalityType','java.awt.Dialog.ModalityType','modalFilter','java.awt.ModalEventFilter']]
+,['I',['$nameCounter'],'O',['modalDialogs','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_JSFrame', function (owner) {
 C$.c$$java_awt_JSFrame$S$Z.apply(this, [owner, "", false]);
@@ -116,8 +100,7 @@ C$.c$$java_awt_Window$S$java_awt_Dialog_ModalityType.apply(this, [owner, null, m
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Window$S$java_awt_Dialog_ModalityType', function (owner, title, modalityType) {
-C$.superclazz.c$$java_awt_Window.apply(this, [owner]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window.apply(this,[owner]);C$.$init$.apply(this);
 if ((owner != null ) && !(Clazz.instanceOf(owner, "java.awt.JSFrame")) && !(Clazz.instanceOf(owner, "java.awt.JSDialog"))  ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Wrong parent window"]);
 }this.title=title;
@@ -126,8 +109,7 @@ this.initialized=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Window$S$java_awt_Dialog_ModalityType$java_awt_GraphicsConfiguration', function (owner, title, modalityType, gc) {
-C$.superclazz.c$$java_awt_Window$java_awt_GraphicsConfiguration.apply(this, [owner, gc]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window$java_awt_GraphicsConfiguration.apply(this,[owner, gc]);C$.$init$.apply(this);
 if ((owner != null ) && !(Clazz.instanceOf(owner, "java.awt.JSFrame")) && !(Clazz.instanceOf(owner, "java.awt.JSDialog"))  ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["wrong owner window"]);
 }this.title=title;
@@ -143,9 +125,8 @@ Clazz.newMeth(C$, 'addNotify$', function () {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(this.getTreeLock$());
 {
 this.getOrCreatePeer$();
-if (this.parent != null ) {
-this.parent.addNotify$();
-}C$.superclazz.prototype.addNotify$.apply(this, []);
+if (this.parent != null  && this.parent.getPeer$() == null  ) this.parent.addNotify$();
+C$.superclazz.prototype.addNotify$.apply(this, []);
 }});
 
 Clazz.newMeth(C$, 'getOrCreatePeer$', function () {
@@ -176,8 +157,7 @@ type=$I$(3).MODELESS;
 type=$I$(3).MODELESS;
 }if (this.modalityType === type ) {
 return;
-}p$1.checkModalityPermission$java_awt_Dialog_ModalityType.apply(this, [type]);
-this.modalityType=type;
+}this.modalityType=type;
 this.modal=(this.modalityType !== $I$(3).MODELESS );
 });
 
@@ -197,7 +177,7 @@ peer.setTitle$S(title);
 
 Clazz.newMeth(C$, 'conditionalShow$java_awt_Component$Long', function (toFocus, time) {
 var retval;
-P$.Window.closeSplashScreen$();
+$I$(5).closeSplashScreen$();
 if (this.ui != null  && (this.ui).isDisposed ) this.addNotify$();
 this.validate$();
 if (this.visible) {
@@ -218,7 +198,7 @@ child.showWithParent=false;
 $I$(5).updateChildFocusableWindowState$java_awt_Window(this);
 this.createHierarchyEvents$I$java_awt_Component$java_awt_Container$J$Z(1400, this, this.parent, 4, $I$(4).enabledOnToolkit$J(32768));
 if (this.componentListener != null  || (this.eventMask & 1) != 0  || $I$(4).enabledOnToolkit$J(1) ) {
-var e=Clazz.new_($I$(6).c$$java_awt_Component$I,[this, 102]);
+var e=Clazz.new_($I$(6,1).c$$java_awt_Component$I,[this, 102]);
 $I$(4).getEventQueue$().postEvent$java_awt_AWTEvent(e);
 }}if (retval && (this.state & 1) == 0 ) {
 this.postWindowEvent$I(200);
@@ -240,12 +220,6 @@ p$1.conditionalShow$java_awt_Component$Long.apply(this, [null, null]);
 p$1.conditionalShow$java_awt_Component$Long.apply(this, [null, null]);
 }});
 
-Clazz.newMeth(C$, 'modalityPushed$', function () {
-});
-
-Clazz.newMeth(C$, 'modalityPopped$', function () {
-});
-
 Clazz.newMeth(C$, 'interruptBlocking$', function () {
 if (this.isModal$()) {
 this.disposeImpl$();
@@ -254,36 +228,6 @@ this.windowClosingException.fillInStackTrace$();
 this.windowClosingException.printStackTrace$();
 this.windowClosingException=null;
 }});
-
-Clazz.newMeth(C$, 'hideAndDisposePreHandler', function () {
-this.isInHide=true;
-this.modalHide$();
-if (this.modalFilter != null ) {
-this.modalFilter.disable$();
-}C$.modalDialogs.remove$O(this);
-}, p$1);
-
-Clazz.newMeth(C$, 'hideAndDisposeHandler', function () {
-this.isInHide=false;
-}, p$1);
-
-Clazz.newMeth(C$, 'hide$', function () {
-p$1.hideAndDisposePreHandler.apply(this, []);
-C$.superclazz.prototype.hide$.apply(this, []);
-if (!this.isInDispose) {
-p$1.hideAndDisposeHandler.apply(this, []);
-}});
-
-Clazz.newMeth(C$, 'doDispose$', function () {
-this.isInDispose=true;
-C$.superclazz.prototype.doDispose$.apply(this, []);
-p$1.hideAndDisposeHandler.apply(this, []);
-this.isInDispose=false;
-});
-
-Clazz.newMeth(C$, 'toBack$', function () {
-C$.superclazz.prototype.toBack$.apply(this, []);
-});
 
 Clazz.newMeth(C$, 'isResizable$', function () {
 return this.resizable;
@@ -320,104 +264,11 @@ str += ",title=" + this.title;
 }return str;
 });
 
-Clazz.newMeth(C$, 'modalShow$', function () {
-});
-
-Clazz.newMeth(C$, 'modalHide$', function () {
-var save=Clazz.new_($I$(1));
-var blockedWindowsCount=this.blockedWindows.size$();
-for (var i=0; i < blockedWindowsCount; i++) {
-var w=this.blockedWindows.get$I(0);
-save.add$TE(w);
-this.unblockWindow$java_awt_Window(w);
-}
-for (var i=0; i < blockedWindowsCount; i++) {
-var w=save.get$I(i);
-if ((Clazz.instanceOf(w, "java.awt.JSDialog")) && (w).isModal_NoClientCode$() ) {
-var d=w;
-d.modalShow$();
-} else {
-C$.checkShouldBeBlocked$java_awt_Window(w);
-}}
-});
-
-Clazz.newMeth(C$, 'shouldBlock$java_awt_Window', function (w) {
-if (!this.isVisible_NoClientCode$() || (!w.isVisible_NoClientCode$() && !w.isInShow ) || this.isInHide || (w === this ) || !this.isModal_NoClientCode$()  ) {
-return false;
-}if ((Clazz.instanceOf(w, "java.awt.JSDialog")) && (w).isInHide ) {
-return false;
-}var blockerToCheck=this;
-while (blockerToCheck != null ){
-var c=w;
-while ((c != null ) && (c !== blockerToCheck ) ){
-c=c.getParent_NoClientCode$();
-}
-if (c === blockerToCheck ) {
-return false;
-}blockerToCheck=blockerToCheck.getModalBlocker$();
-}
-switch (this.modalityType) {
-case $I$(3).MODELESS:
-return false;
-case $I$(3).DOCUMENT_MODAL:
-if (w.isModalExcluded$java_awt_Dialog_ModalExclusionType($I$(7).APPLICATION_EXCLUDE)) {
-var c=this;
-while ((c != null ) && (c !== w ) ){
-c=c.getParent_NoClientCode$();
-}
-return c === w ;
-} else {
-return this.getDocumentRoot$() === w.getDocumentRoot$() ;
-}case $I$(3).APPLICATION_MODAL:
-return !w.isModalExcluded$java_awt_Dialog_ModalExclusionType($I$(7).APPLICATION_EXCLUDE) && (this.appContext === w.appContext ) ;
-case $I$(3).TOOLKIT_MODAL:
-return !w.isModalExcluded$java_awt_Dialog_ModalExclusionType($I$(7).TOOLKIT_EXCLUDE);
-}
-return false;
-});
-
-Clazz.newMeth(C$, 'blockWindow$java_awt_Window', function (w) {
-if (!w.isModalBlocked$()) {
-w.setModalBlocked$java_awt_JSDialog$Z$Z(this, true, true);
-this.blockedWindows.add$TE(w);
-}});
-
-Clazz.newMeth(C$, 'blockWindows$java_util_List', function (toBlock) {
-var dpeer=this.peer;
-if (dpeer == null ) {
-return;
-}var it=toBlock.iterator$();
-while (it.hasNext$()){
-var w=it.next$();
-if (!w.isModalBlocked$()) {
-w.setModalBlocked$java_awt_JSDialog$Z$Z(this, true, false);
-} else {
-it.remove$();
-}}
-dpeer.blockWindows$java_util_List(toBlock);
-this.blockedWindows.addAll$java_util_Collection(toBlock);
-});
-
-Clazz.newMeth(C$, 'unblockWindow$java_awt_Window', function (w) {
-if (w.isModalBlocked$() && this.blockedWindows.contains$O(w) ) {
-this.blockedWindows.remove$O(w);
-w.setModalBlocked$java_awt_JSDialog$Z$Z(this, false, true);
-}});
-
-Clazz.newMeth(C$, 'checkShouldBeBlocked$java_awt_Window', function (w) {
-/*sync org.eclipse.jdt.core.dom.MethodInvocation*/(w.getTreeLock$());
-{
-for (var i=0; i < C$.modalDialogs.size$(); i++) {
-var modalDialog=C$.modalDialogs.get$I(i);
-if (modalDialog.shouldBlock$java_awt_Window(w)) {
-modalDialog.blockWindow$java_awt_Window(w);
-break;
-}}
-}}, 1);
-
-Clazz.newMeth(C$, 'checkModalityPermission$java_awt_Dialog_ModalityType', function (mt) {
-}, p$1);
+C$.$static$=function(){C$.$static$=0;
+C$.modalDialogs=Clazz.new_($I$(1,1));
+C$.$nameCounter=0;
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

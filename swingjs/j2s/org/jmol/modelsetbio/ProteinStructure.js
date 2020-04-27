@@ -1,43 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.V3','org.jmol.util.Logger','java.util.Hashtable','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ProteinStructure", null, null, 'org.jmol.modelset.Structure');
-C$.globalStrucNo=0;
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.V3','org.jmol.util.Logger','java.util.Hashtable','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ProteinStructure", null, null, 'org.jmol.modelset.Structure');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.globalStrucNo=1000;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.subtype=null;
-this.structureID=null;
-this.strucNo=0;
-this.serialID=0;
-this.strandCount=0;
-this.nRes=0;
-this.apolymer=null;
-this.monomerIndexFirst=0;
-this.monomerIndexLast=0;
-this.axisA=null;
-this.axisB=null;
-this.axisUnitVector=null;
-this.vectorProjection=null;
-this.segments=null;
-this.resMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.strandCount=1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['strucNo','serialID','strandCount','nRes','monomerIndexFirst','monomerIndexLast'],'S',['structureID'],'O',['type','org.jmol.c.STR','+subtype','apolymer','org.jmol.modelsetbio.AlphaPolymer','axisA','javajs.util.P3','+axisB','axisUnitVector','javajs.util.V3','+vectorProjection','segments','javajs.util.P3[]','resMap','java.util.Map']]
+,['I',['globalStrucNo']]]
 
 Clazz.newMeth(C$, 'setupPS$org_jmol_modelsetbio_AlphaPolymer$org_jmol_c_STR$I$I', function (apolymer, type, monomerIndex, monomerCount) {
 this.strucNo=++C$.globalStrucNo;
 this.apolymer=apolymer;
 this.type=type;
-this.vectorProjection=Clazz.new_($I$(1));
+this.vectorProjection=Clazz.new_($I$(1,1));
 this.monomerIndexFirst=monomerIndex;
 this.addMonomer$I(monomerIndex + monomerCount - 1);
-if ($I$(2).debugging) $I$(2).info$S("Creating ProteinStructure " + this.strucNo + " " + type.getBioStructureTypeName$Z(false) + " from " + this.monomerIndexFirst + " through " + this.monomerIndexLast + " in polymer " + apolymer );
+if ($I$(2).debugging) (function(a,f){return f.apply(null,a)})(["Creating ProteinStructure " + this.strucNo + " " + type.getBioStructureTypeName$Z(false) + " from " + this.monomerIndexFirst + " through " + this.monomerIndexLast + " in polymer " + apolymer ],$I$(2).info$S);
 });
 
 Clazz.newMeth(C$, 'addMonomer$I', function (index) {
@@ -80,8 +60,8 @@ return (monomerIndex > this.monomerIndexFirst && monomerIndex < this.monomerInde
 
 Clazz.newMeth(C$, 'getIndex$org_jmol_modelsetbio_Monomer', function (monomer) {
 if (this.resMap == null ) {
-this.resMap=Clazz.new_($I$(3));
-for (var i=this.nRes; --i >= 0; ) this.resMap.put$TK$TV(this.apolymer.monomers[this.monomerIndexFirst + i], Integer.valueOf$I(i));
+this.resMap=Clazz.new_($I$(3,1));
+for (var i=this.nRes; --i >= 0; ) this.resMap.put$O$O(this.apolymer.monomers[this.monomerIndexFirst + i], Integer.valueOf$I(i));
 
 }var ii=this.resMap.get$O(monomer);
 return (ii == null  ? -1 : ii.intValue$());
@@ -106,7 +86,7 @@ this.segments[0]=this.axisA;
 var axis=$I$(1).newV$javajs_util_T3(this.axisUnitVector);
 axis.scale$F(this.axisB.distance$javajs_util_T3(this.axisA) / this.nRes);
 for (var i=1; i < this.nRes; i++) {
-var point=this.segments[i]=Clazz.new_($I$(4));
+var point=this.segments[i]=Clazz.new_($I$(4,1));
 point.add2$javajs_util_T3$javajs_util_T3(this.segments[i - 1], axis);
 }
 }, p$1);
@@ -149,6 +129,10 @@ for (var i=this.monomerIndexLast; i >= this.monomerIndexFirst; --i) if (bsAtoms 
 }return null;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.globalStrucNo=1000;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

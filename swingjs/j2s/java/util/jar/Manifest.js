@@ -1,33 +1,29 @@
-(function(){var P$=Clazz.newPackage("java.util.jar"),p$1={},p$2={},I$=[[0,'java.util.jar.Attributes','java.util.HashMap','java.io.DataOutputStream','StringBuffer',['java.util.jar.Manifest','.FastInputStream']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Manifest", function(){
+(function(){var P$=Clazz.newPackage("java.util.jar"),p$1={},p$2={},I$=[[0,'java.util.jar.Attributes','java.util.HashMap','java.io.DataOutputStream','StringBuffer',['java.util.jar.Manifest','.FastInputStream']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Manifest", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Cloneable');
+C$.$classes$=[['FastInputStream',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attr=null;
-this.entries=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.attr=Clazz.new_($I$(1));
-this.entries=Clazz.new_($I$(2));
-}, 1);
+this.attr=Clazz.new_($I$(1,1));
+this.entries=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['O',['attr','java.util.jar.Attributes','entries','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function (is) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.read$java_io_InputStream(is);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_jar_Manifest', function (man) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.attr.putAll$java_util_Map(man.getMainAttributes$());
 this.entries.putAll$java_util_Map(man.getEntries$());
 }, 1);
@@ -50,12 +46,12 @@ this.entries.clear$();
 });
 
 Clazz.newMeth(C$, 'write$java_io_OutputStream', function (out) {
-var dos=Clazz.new_($I$(3).c$$java_io_OutputStream,[out]);
+var dos=Clazz.new_($I$(3,1).c$$java_io_OutputStream,[out]);
 this.attr.writeMain$java_io_DataOutputStream(dos);
 var it=this.entries.entrySet$().iterator$();
 while (it.hasNext$()){
 var e=it.next$();
-var buffer=Clazz.new_($I$(4).c$$S,["Name: "]);
+var buffer=Clazz.new_($I$(4,1).c$$S,["Name: "]);
 var value=e.getKey$();
 if (value != null ) {
 var vb=value.getBytes$S("UTF8");
@@ -82,7 +78,7 @@ length+=3;
 }, 1);
 
 Clazz.newMeth(C$, 'read$java_io_InputStream', function (is) {
-var fis=Clazz.new_($I$(5).c$$java_io_InputStream,[is]);
+var fis=Clazz.new_($I$(5,1).c$$java_io_InputStream,[is]);
 var lbuf=Clazz.array(Byte.TYPE, [512]);
 this.attr.read$java_util_jar_Manifest_FastInputStream$BA(fis, lbuf);
 var ecount=0;
@@ -119,8 +115,8 @@ continue;
 lastline=null;
 }var attr=this.getAttributes$S(name);
 if (attr == null ) {
-attr=Clazz.new_($I$(1).c$$I,[asize]);
-this.entries.put$TK$TV(name, attr);
+attr=Clazz.new_($I$(1,1).c$$I,[asize]);
+this.entries.put$O$O(name, attr);
 }attr.read$java_util_jar_Manifest_FastInputStream$BA(fis, lbuf);
 ecount++;
 acount+=attr.size$();
@@ -163,32 +159,25 @@ Clazz.newMeth(C$, 'clone$', function () {
 return Clazz.new_(C$.c$$java_util_jar_Manifest,[this]);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Manifest, "FastInputStream", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Manifest, "FastInputStream", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.io.FilterInputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.buf=null;
-this.count=0;
-this.pos=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.count=0;
 this.pos=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['count','pos'],'O',['buf','byte[]']]]
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
 C$.c$$java_io_InputStream$I.apply(this, [$in, 8192]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream$I', function ($in, size) {
-C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_InputStream.apply(this,[$in]);C$.$init$.apply(this);
 this.buf=Clazz.array(Byte.TYPE, [size]);
 }, 1);
 
@@ -197,7 +186,7 @@ if (this.pos >= this.count) {
 p$1.fill.apply(this, []);
 if (this.pos >= this.count) {
 return -1;
-}}return Byte.toUnsignedInt$B(($b$[0] = this.buf[this.pos++], $b$[0]));
+}}return Byte.toUnsignedInt$B(this.buf[this.pos++]);
 });
 
 Clazz.newMeth(C$, 'read$BA$I$I', function (b, off, len) {
@@ -246,7 +235,7 @@ return total;
 Clazz.newMeth(C$, 'peek$', function () {
 if (this.pos == this.count) p$1.fill.apply(this, []);
 if (this.pos == this.count) return $b$[0] = -1, $b$[0];
-return $b$[0] = this.buf[this.pos], $b$[0];
+return this.buf[this.pos];
 });
 
 Clazz.newMeth(C$, 'readLine$BA', function (b) {
@@ -287,4 +276,4 @@ var $b$ = new Int8Array(1);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:45 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,23 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[];
-var C$=Clazz.newClass(P$, "AreaIterator", null, null, 'java.awt.geom.PathIterator');
+/*c*/var C$=Clazz.newClass(P$, "AreaIterator", null, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.transform=null;
-this.curves=null;
-this.index=0;
-this.prevcurve=null;
-this.thiscurve=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index'],'O',['transform','java.awt.geom.AffineTransform','curves','java.util.Vector','prevcurve','sun.awt.geom.Curve','+thiscurve']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Vector$java_awt_geom_AffineTransform', function (curves, at) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.curves=curves;
 this.transform=at;
 if (curves.size$() >= 1) {
@@ -80,4 +72,4 @@ this.transform.transform$DA$I$DA$I$I(coords, 0, coords, 0, numpoints);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

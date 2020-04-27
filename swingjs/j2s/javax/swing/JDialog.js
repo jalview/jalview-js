@@ -1,33 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,['javax.swing.JDialog','.AsynchronousObject'],'javax.swing.SwingUtilities',['java.awt.Dialog','.ModalityType'],'javax.swing.JComponent','javax.swing.UIManager','javax.swing.JRootPane','javax.swing.RepaintManager','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JDialog", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,['javax.swing.JDialog','.AsynchronousObject'],'javax.swing.SwingUtilities',['java.awt.Dialog','.ModalityType'],'javax.swing.JComponent','javax.swing.UIManager','javax.swing.JRootPane','javax.swing.RepaintManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JDialog", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.JSDialog', ['javax.swing.WindowConstants', 'javax.swing.RootPaneContainer']);
-C$.defaultLookAndFeelDecoratedKey=null;
-C$.ASYNCHRONOUS_INTEGER=0;
-C$.ASYNCHRONOUS_OBJECT=null;
-C$.dialogCount=0;
+C$.$classes$=[['AsynchronousObject',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultLookAndFeelDecoratedKey= Clazz.new_();
-{
-
-C$.ASYNCHRONOUS_INTEGER = NaN;
-};
-C$.ASYNCHRONOUS_OBJECT=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.defaultCloseOperation=0;
-this.rootPane=null;
-this.rootPaneCheckingEnabled=false;
-this.transferHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultCloseOperation=1;
 this.rootPaneCheckingEnabled=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['rootPaneCheckingEnabled'],'I',['defaultCloseOperation'],'O',['rootPane','javax.swing.JRootPane','transferHandler','javax.swing.TransferHandler']]
+,['I',['ASYNCHRONOUS_INTEGER','dialogCount'],'O',['defaultLookAndFeelDecoratedKey','java.lang.Object','+ASYNCHRONOUS_OBJECT']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$java_awt_JSFrame$Z.apply(this, [null, false]);
@@ -45,6 +30,10 @@ Clazz.newMeth(C$, 'c$$java_awt_JSFrame$Z', function (owner, modal) {
 C$.c$$java_awt_JSFrame$S$Z.apply(this, [owner, null, modal]);
 }, 1);
 
+Clazz.newMeth(C$, 'c$$javax_swing_JFrame$Z', function (owner, modal) {
+C$.c$$java_awt_JSFrame$S$Z.apply(this, [owner, null, modal]);
+}, 1);
+
 Clazz.newMeth(C$, 'c$$java_awt_Frame$Z', function (owner, modal) {
 C$.c$$java_awt_Frame$S$Z.apply(this, [owner, null, modal]);
 }, 1);
@@ -58,8 +47,7 @@ C$.c$$java_awt_Frame$S$Z.apply(this, [owner, title, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_JSFrame$S$Z', function (owner, title, modal) {
-C$.superclazz.c$$java_awt_JSFrame$S$Z.apply(this, [owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_JSFrame$S$Z.apply(this,[owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(2).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -67,8 +55,7 @@ this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Frame$S$Z', function (owner, title, modal) {
-C$.superclazz.c$$java_awt_JSFrame$S$Z.apply(this, [owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_JSFrame$S$Z.apply(this,[owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(2).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -76,8 +63,7 @@ this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_JSFrame$S$Z$java_awt_GraphicsConfiguration', function (owner, title, modal, gc) {
-C$.superclazz.c$$java_awt_JSFrame$S$Z$java_awt_GraphicsConfiguration.apply(this, [owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal, gc]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_JSFrame$S$Z$java_awt_GraphicsConfiguration.apply(this,[owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal, gc]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(2).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -85,8 +71,7 @@ this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Frame$S$Z$java_awt_GraphicsConfiguration', function (owner, title, modal, gc) {
-C$.superclazz.c$$java_awt_JSFrame$S$Z$java_awt_GraphicsConfiguration.apply(this, [owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal, gc]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_JSFrame$S$Z$java_awt_GraphicsConfiguration.apply(this,[owner == null  ? $I$(2).getSharedOwnerFrame$() : owner, title, modal, gc]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(2).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -118,8 +103,7 @@ C$.c$$java_awt_JSDialog$S.apply(this, [owner, title]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_JSDialog$S$Z', function (owner, title, modal) {
-C$.superclazz.c$$java_awt_JSDialog$S$Z.apply(this, [owner, title, modal]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_JSDialog$S$Z.apply(this,[owner, title, modal]);C$.$init$.apply(this);
 this.dialogInit$();
 }, 1);
 
@@ -128,8 +112,7 @@ C$.c$$java_awt_JSDialog$S$Z.apply(this, [owner, title, modal]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_JSDialog$S$Z$java_awt_GraphicsConfiguration', function (owner, title, modal, gc) {
-C$.superclazz.c$$java_awt_JSDialog$S$Z$java_awt_GraphicsConfiguration.apply(this, [owner, title, modal, gc]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_JSDialog$S$Z$java_awt_GraphicsConfiguration.apply(this,[owner, title, modal, gc]);C$.$init$.apply(this);
 this.dialogInit$();
 }, 1);
 
@@ -150,14 +133,12 @@ C$.c$$java_awt_Window$S$java_awt_Dialog_ModalityType.apply(this, [owner, title, 
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Window$S$java_awt_Dialog_ModalityType', function (owner, title, modalityType) {
-C$.superclazz.c$$java_awt_Window$S$java_awt_Dialog_ModalityType.apply(this, [owner, title, modalityType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window$S$java_awt_Dialog_ModalityType.apply(this,[owner, title, modalityType]);C$.$init$.apply(this);
 this.dialogInit$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Window$S$java_awt_Dialog_ModalityType$java_awt_GraphicsConfiguration', function (owner, title, modalityType, gc) {
-C$.superclazz.c$$java_awt_Window$S$java_awt_Dialog_ModalityType$java_awt_GraphicsConfiguration.apply(this, [owner, title, modalityType, gc]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window$S$java_awt_Dialog_ModalityType$java_awt_GraphicsConfiguration.apply(this,[owner, title, modalityType, gc]);C$.$init$.apply(this);
 this.dialogInit$();
 }, 1);
 
@@ -182,7 +163,7 @@ return "DialogUI";
 });
 
 Clazz.newMeth(C$, 'createRootPane$', function () {
-var rp=Clazz.new_($I$(6).c$$S$Z$java_awt_Container,["_Dialog" + (++C$.dialogCount), false, this]);
+var rp=Clazz.new_(["_Dialog" + (++C$.dialogCount), false, this],$I$(6,1).c$$S$Z$java_awt_Container);
 rp.setOpaque$Z(true);
 return rp;
 });
@@ -323,15 +304,15 @@ C$.superclazz.prototype.repaint$J$I$I$I$I.apply(this, [time, x, y, width, height
 
 Clazz.newMeth(C$, 'setDefaultLookAndFeelDecorated$Z', function (defaultLookAndFeelDecorated) {
 if (defaultLookAndFeelDecorated) {
-$I$(2).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, $I$(8).TRUE);
+$I$(2).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, Boolean.TRUE);
 } else {
-$I$(2).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, $I$(8).FALSE);
+$I$(2).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, Boolean.FALSE);
 }}, 1);
 
 Clazz.newMeth(C$, 'isDefaultLookAndFeelDecorated$', function () {
 var defaultLookAndFeelDecorated=$I$(2).appContextGet$O(C$.defaultLookAndFeelDecoratedKey);
 if (defaultLookAndFeelDecorated == null ) {
-defaultLookAndFeelDecorated=$I$(8).FALSE;
+defaultLookAndFeelDecorated=Boolean.FALSE;
 }return defaultLookAndFeelDecorated.booleanValue$();
 }, 1);
 
@@ -348,18 +329,26 @@ var rootPaneString=(this.rootPane != null  ? this.rootPane.toString() : "");
 var rootPaneCheckingEnabledString=(this.rootPaneCheckingEnabled ? "true" : "false");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",defaultCloseOperation=" + defaultCloseOperationString + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultLookAndFeelDecoratedKey= Clazz.new_();
+{
+
+C$.ASYNCHRONOUS_INTEGER = NaN;
+};
+C$.ASYNCHRONOUS_OBJECT=Clazz.new_($I$(1,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JDialog, "AsynchronousObject", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JDialog, "AsynchronousObject", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

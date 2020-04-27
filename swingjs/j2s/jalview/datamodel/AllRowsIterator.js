@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[];
-var C$=Clazz.newClass(P$, "AllRowsIterator", null, null, 'java.util.Iterator');
+/*c*/var C$=Clazz.newClass(P$, "AllRowsIterator", null, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.last=0;
-this.next=0;
-this.current=0;
-this.al=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['last','next','current'],'O',['al','jalview.datamodel.AlignmentI']]]
 
 Clazz.newMeth(C$, 'c$$I$I$jalview_datamodel_AlignmentI', function (firstrow, lastrow, alignment) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.last=lastrow;
 this.current=firstrow;
 this.next=firstrow;
@@ -41,4 +34,4 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

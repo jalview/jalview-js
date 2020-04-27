@@ -1,59 +1,44 @@
-(function(){var P$=Clazz.newPackage("org.jibble.epsgraphics"),p$1={},I$=[[0,'java.awt.font.FontRenderContext','org.jibble.epsgraphics.EpsDocument','java.awt.Color','java.awt.geom.AffineTransform','java.awt.AlphaComposite','java.awt.Font','java.awt.BasicStroke','java.io.FileOutputStream','jalview.util.MessageManager',['java.awt.geom.Point2D','.Float'],'java.awt.Rectangle','java.util.Hashtable','java.awt.image.BufferedImage','java.text.AttributedString','java.awt.font.TextAttribute','java.awt.font.TextLayout','StringBuffer','java.awt.GraphicsEnvironment','java.awt.RenderingHints','java.awt.geom.Area',['java.awt.geom.Line2D','.Float'],['java.awt.geom.RoundRectangle2D','.Float'],['java.awt.geom.Ellipse2D','.Float'],['java.awt.geom.Arc2D','.Float'],'java.awt.geom.GeneralPath','java.awt.Polygon','java.awt.image.PixelGrabber','java.io.StringWriter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EpsGraphics2D", null, 'java.awt.Graphics2D');
-C$._fontRenderContext=null;
+(function(){var P$=Clazz.newPackage("org.jibble.epsgraphics"),p$1={},I$=[[0,'java.awt.font.FontRenderContext','org.jibble.epsgraphics.EpsDocument','java.awt.Color','java.awt.geom.AffineTransform','java.awt.AlphaComposite','java.awt.Font','java.awt.BasicStroke','java.io.FileOutputStream','jalview.util.MessageManager',['java.awt.geom.Point2D','.Float'],'java.awt.Rectangle','java.util.Hashtable','java.awt.image.BufferedImage','java.text.AttributedString','java.awt.font.TextAttribute','java.awt.font.TextLayout','StringBuffer','java.awt.GraphicsEnvironment','java.awt.RenderingHints','java.awt.geom.Area',['java.awt.geom.Line2D','.Float'],['java.awt.geom.RoundRectangle2D','.Float'],['java.awt.geom.Ellipse2D','.Float'],['java.awt.geom.Arc2D','.Float'],'java.awt.geom.GeneralPath','java.awt.Polygon','java.awt.image.PixelGrabber','java.io.StringWriter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EpsGraphics2D", null, 'java.awt.Graphics2D', 'AutoCloseable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$._fontRenderContext=Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform$Z$Z,[null, false, true]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._color=null;
-this._backgroundColor=null;
-this._paint=null;
-this._composite=null;
-this._stroke=null;
-this._font=null;
-this._clip=null;
-this._clipTransform=null;
-this._transform=null;
-this._accurateTextMode=false;
-this._document=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_accurateTextMode'],'O',['_color','java.awt.Color','+_backgroundColor','_paint','java.awt.Paint','_composite','java.awt.Composite','_stroke','java.awt.BasicStroke','_font','java.awt.Font','_clip','java.awt.Shape','_clipTransform','java.awt.geom.AffineTransform','+_transform','_document','org.jibble.epsgraphics.EpsDocument']]
+,['O',['_fontRenderContext','java.awt.font.FontRenderContext']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$S.apply(this, ["Untitled"]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (title) {
-Clazz.super_(C$, this,1);
-this._document=Clazz.new_($I$(2).c$$S,[title]);
+Clazz.super_(C$, this);
+this._document=Clazz.new_($I$(2,1).c$$S,[title]);
 this._backgroundColor=$I$(3).white;
 this._clip=null;
-this._transform=Clazz.new_($I$(4));
-this._clipTransform=Clazz.new_($I$(4));
+this._transform=Clazz.new_($I$(4,1));
+this._clipTransform=Clazz.new_($I$(4,1));
 this._accurateTextMode=true;
 this.setColor$java_awt_Color($I$(3).black);
 this.setPaint$java_awt_Paint($I$(3).black);
 this.setComposite$java_awt_Composite($I$(5).getInstance$I(1));
 this.setFont$java_awt_Font($I$(6).decode$S(null));
-this.setStroke$java_awt_Stroke(Clazz.new_($I$(7)));
+this.setStroke$java_awt_Stroke(Clazz.new_($I$(7,1)));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_io_File$I$I$I$I', function (title, file, minX, minY, maxX, maxY) {
-C$.c$$S$java_io_OutputStream$I$I$I$I.apply(this, [title, Clazz.new_($I$(8).c$$java_io_File,[file]), minX, minY, maxX, maxY]);
+C$.c$$S$java_io_OutputStream$I$I$I$I.apply(this, [title, Clazz.new_($I$(8,1).c$$java_io_File,[file]), minX, minY, maxX, maxY]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_io_OutputStream$I$I$I$I', function (title, outputStream, minX, minY, maxX, maxY) {
 C$.c$$S.apply(this, [title]);
-this._document=Clazz.new_($I$(2).c$$S$java_io_OutputStream$I$I$I$I,[title, outputStream, minX, minY, maxX, maxY]);
+this._document=Clazz.new_($I$(2,1).c$$S$java_io_OutputStream$I$I$I$I,[title, outputStream, minX, minY, maxX, maxY]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_jibble_epsgraphics_EpsGraphics2D', function (g) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._document=g._document;
 this._backgroundColor=g._backgroundColor;
 this._clip=g._clip;
@@ -68,7 +53,7 @@ this._accurateTextMode=g._accurateTextMode;
 }, 1);
 
 Clazz.newMeth(C$, 'methodNotSupported', function () {
-var e=Clazz.new_(Clazz.load('org.jibble.epsgraphics.EpsException').c$$S,[$I$(9).formatMessage$S$SA("exception.eps_method_not_supported", Clazz.array(String, -1, ["0.8.8"]))]);
+var e=Clazz.new_(Clazz.load('org.jibble.epsgraphics.EpsException').c$$S,[$I$(9,"formatMessage$S$SA",["exception.eps_method_not_supported", Clazz.array(String, -1, ["0.8.8"])])]);
 e.printStackTrace$java_io_PrintStream(System.err);
 }, p$1);
 
@@ -94,7 +79,7 @@ this._document.append$org_jibble_epsgraphics_EpsGraphics2D$S(this, line);
 }, p$1);
 
 Clazz.newMeth(C$, 'transform$F$F', function (x, y) {
-var result=Clazz.new_($I$(10).c$$F$F,[x, y]);
+var result=Clazz.new_($I$(10,1).c$$F$F,[x, y]);
 result=this._transform.transform$java_awt_geom_Point2D$java_awt_geom_Point2D(result, result);
 result.setLocation$D$D(result.getX$(), -result.getY$());
 return result;
@@ -180,7 +165,7 @@ return result;
 Clazz.newMeth(C$, 'draw3DRect$I$I$I$I$Z', function (x, y, width, height, raised) {
 var originalColor=this.getColor$();
 var originalStroke=this.getStroke$();
-this.setStroke$java_awt_Stroke(Clazz.new_($I$(7).c$$F,[1.0]));
+this.setStroke$java_awt_Stroke(Clazz.new_($I$(7,1).c$$F,[1.0]));
 if (raised) {
 this.setColor$java_awt_Color(originalColor.brighter$());
 } else {
@@ -203,7 +188,7 @@ if (raised) {
 this.setColor$java_awt_Color(originalColor.brighter$());
 } else {
 this.setColor$java_awt_Color(originalColor.darker$());
-}p$1.draw$java_awt_Shape$S.apply(this, [Clazz.new_($I$(11).c$$I$I$I$I,[x, y, width, height]), "fill"]);
+}p$1.draw$java_awt_Shape$S.apply(this, [Clazz.new_($I$(11,1).c$$I$I$I$I,[x, y, width, height]), "fill"]);
 this.setColor$java_awt_Color(originalColor);
 this.draw3DRect$I$I$I$I$Z(x, y, width, height, raised);
 });
@@ -222,19 +207,19 @@ return st;
 
 Clazz.newMeth(C$, 'drawImage$java_awt_image_BufferedImage$java_awt_image_BufferedImageOp$I$I', function (img, op, x, y) {
 var img1=op.filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage(img, null);
-this.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(img1, Clazz.new_($I$(4).c$$F$F$F$F$F$F,[1.0, 0.0, 0.0, 1.0, x, y]), null);
+this.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(img1, Clazz.new_($I$(4,1).c$$F$F$F$F$F$F,[1.0, 0.0, 0.0, 1.0, x, y]), null);
 });
 
 Clazz.newMeth(C$, 'drawRenderedImage$java_awt_image_RenderedImage$java_awt_geom_AffineTransform', function (img, xform) {
-var properties=Clazz.new_($I$(12));
+var properties=Clazz.new_($I$(12,1));
 var names=img.getPropertyNames$();
 for (var i=0; i < names.length; i++) {
-properties.put$TK$TV(names[i], img.getProperty$S(names[i]));
+properties.put$O$O(names[i], img.getProperty$S(names[i]));
 }
 var cm=img.getColorModel$();
 var wr=img.copyData$java_awt_image_WritableRaster(null);
-var img1=Clazz.new_($I$(13).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, wr, cm.isAlphaPremultiplied$(), properties]);
-var at=$I$(4).getTranslateInstance$D$D(img.getMinX$(), img.getMinY$());
+var img1=Clazz.new_([cm, wr, cm.isAlphaPremultiplied$(), properties],$I$(13,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
+var at=$I$(4,"getTranslateInstance$D$D",[img.getMinX$(), img.getMinY$()]);
 at.preConcatenate$java_awt_geom_AffineTransform(xform);
 this.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(img1, at, null);
 });
@@ -249,7 +234,7 @@ this.drawString$S$F$F(str, x, y);
 
 Clazz.newMeth(C$, 'drawString$S$F$F', function (s, x, y) {
 if (s != null  && s.length$() > 0 ) {
-var as=Clazz.new_($I$(14).c$$S,[s]);
+var as=Clazz.new_($I$(14,1).c$$S,[s]);
 as.addAttribute$java_text_AttributedCharacterIterator_Attribute$O($I$(15).FONT, this.getFont$());
 this.drawString$java_text_AttributedCharacterIterator$F$F(as.getIterator$(), x, y);
 }});
@@ -260,14 +245,14 @@ this.drawString$java_text_AttributedCharacterIterator$F$F(iterator, x, y);
 
 Clazz.newMeth(C$, 'drawString$java_text_AttributedCharacterIterator$F$F', function (iterator, x, y) {
 if (this.getAccurateTextMode$()) {
-var layout=Clazz.new_($I$(16).c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext,[iterator, this.getFontRenderContext$()]);
+var layout=Clazz.new_([iterator, this.getFontRenderContext$()],$I$(16,1).c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext);
 var shape=layout.getOutline$java_awt_geom_AffineTransform($I$(4).getTranslateInstance$D$D(x, y));
 p$1.draw$java_awt_Shape$S.apply(this, [shape, "fill"]);
 } else {
 p$1.append$S.apply(this, ["newpath"]);
 var location=p$1.transform$F$F.apply(this, [x, y]);
 p$1.append$S.apply(this, [new Double(location.getX$()).toString() + " " + new Double(location.getY$()).toString() + " moveto" ]);
-var buffer=Clazz.new_($I$(17));
+var buffer=Clazz.new_($I$(17,1));
 for (var ch=iterator.first$(); ch != "\uffff"; ch=iterator.next$()) {
 if (ch == "(" || ch == ")" ) {
 buffer.append$C("\\");
@@ -322,7 +307,7 @@ miterLimit=1;
 }p$1.append$S.apply(this, [new Float(miterLimit).toString() + " setmiterlimit"]);
 p$1.append$S.apply(this, [this._stroke.getLineJoin$() + " setlinejoin"]);
 p$1.append$S.apply(this, [this._stroke.getEndCap$() + " setlinecap"]);
-var dashes=Clazz.new_($I$(17));
+var dashes=Clazz.new_($I$(17,1));
 dashes.append$S("[ ");
 var dashArray=this._stroke.getDashArray$();
 if (dashArray != null ) {
@@ -347,7 +332,7 @@ Clazz.newMeth(C$, 'addRenderingHints$java_util_Map', function (hints) {
 });
 
 Clazz.newMeth(C$, 'getRenderingHints$', function () {
-return Clazz.new_($I$(19).c$$java_util_Map,[null]);
+return Clazz.new_($I$(19,1).c$$java_util_Map,[null]);
 });
 
 Clazz.newMeth(C$, 'translate$I$I', function (x, y) {
@@ -381,15 +366,15 @@ this.setTransform$java_awt_geom_AffineTransform(this.getTransform$());
 
 Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (Tx) {
 if (Tx == null ) {
-this._transform=Clazz.new_($I$(4));
+this._transform=Clazz.new_($I$(4,1));
 } else {
-this._transform=Clazz.new_($I$(4).c$$java_awt_geom_AffineTransform,[Tx]);
+this._transform=Clazz.new_($I$(4,1).c$$java_awt_geom_AffineTransform,[Tx]);
 }this.setStroke$java_awt_Stroke(this.getStroke$());
 this.setFont$java_awt_Font(this.getFont$());
 });
 
 Clazz.newMeth(C$, 'getTransform$', function () {
-return Clazz.new_($I$(4).c$$java_awt_geom_AffineTransform,[this._transform]);
+return Clazz.new_($I$(4,1).c$$java_awt_geom_AffineTransform,[this._transform]);
 });
 
 Clazz.newMeth(C$, 'getPaint$', function () {
@@ -418,8 +403,8 @@ Clazz.newMeth(C$, 'clip$java_awt_Shape', function (s) {
 if (this._clip == null ) {
 this.setClip$java_awt_Shape(s);
 } else {
-var area=Clazz.new_($I$(20).c$$java_awt_Shape,[this._clip]);
-area.intersect$java_awt_geom_Area(Clazz.new_($I$(20).c$$java_awt_Shape,[s]));
+var area=Clazz.new_($I$(20,1).c$$java_awt_Shape,[this._clip]);
+area.intersect$java_awt_geom_Area(Clazz.new_($I$(20,1).c$$java_awt_Shape,[s]));
 this.setClip$java_awt_Shape(area);
 }});
 
@@ -472,7 +457,7 @@ return this.getFontMetrics$java_awt_Font(this.getFont$());
 });
 
 Clazz.newMeth(C$, 'getFontMetrics$java_awt_Font', function (f) {
-var image=Clazz.new_($I$(13).c$$I$I$I,[1, 1, 1]);
+var image=Clazz.new_($I$(13,1).c$$I$I$I,[1, 1, 1]);
 var g=image.getGraphics$();
 return g.getFontMetrics$java_awt_Font(f);
 });
@@ -485,11 +470,11 @@ return rect;
 });
 
 Clazz.newMeth(C$, 'clipRect$I$I$I$I', function (x, y, width, height) {
-this.clip$java_awt_Shape(Clazz.new_($I$(11).c$$I$I$I$I,[x, y, width, height]));
+this.clip$java_awt_Shape(Clazz.new_($I$(11,1).c$$I$I$I$I,[x, y, width, height]));
 });
 
 Clazz.newMeth(C$, 'setClip$I$I$I$I', function (x, y, width, height) {
-this.setClip$java_awt_Shape(Clazz.new_($I$(11).c$$I$I$I$I,[x, y, width, height]));
+this.setClip$java_awt_Shape(Clazz.new_($I$(11,1).c$$I$I$I$I,[x, y, width, height]));
 });
 
 Clazz.newMeth(C$, 'getClip$', function () {
@@ -502,7 +487,7 @@ t.concatenate$java_awt_geom_AffineTransform(this._clipTransform);
 return t.createTransformedShape$java_awt_Shape(this._clip);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_(Clazz.load('org.jibble.epsgraphics.EpsException').c$$S,[$I$(9).formatMessage$S$SA("exception.eps_unable_to_get_inverse_matrix", Clazz.array(String, -1, [this._transform.toString()]))]);
+throw Clazz.new_(Clazz.load('org.jibble.epsgraphics.EpsException').c$$S,[$I$(9,"formatMessage$S$SA",["exception.eps_unable_to_get_inverse_matrix", Clazz.array(String, -1, [this._transform.toString()])])]);
 } else {
 throw e;
 }
@@ -532,61 +517,61 @@ p$1.methodNotSupported.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'drawLine$I$I$I$I', function (x1, y1, x2, y2) {
-var shape=Clazz.new_($I$(21).c$$F$F$F$F,[x1, y1, x2, y2]);
+var shape=Clazz.new_($I$(21,1).c$$F$F$F$F,[x1, y1, x2, y2]);
 this.draw$java_awt_Shape(shape);
 });
 
 Clazz.newMeth(C$, 'fillRect$I$I$I$I', function (x, y, width, height) {
-var shape=Clazz.new_($I$(11).c$$I$I$I$I,[x, y, width, height]);
+var shape=Clazz.new_($I$(11,1).c$$I$I$I$I,[x, y, width, height]);
 p$1.draw$java_awt_Shape$S.apply(this, [shape, "fill"]);
 });
 
 Clazz.newMeth(C$, 'drawRect$I$I$I$I', function (x, y, width, height) {
-var shape=Clazz.new_($I$(11).c$$I$I$I$I,[x, y, width, height]);
+var shape=Clazz.new_($I$(11,1).c$$I$I$I$I,[x, y, width, height]);
 this.draw$java_awt_Shape(shape);
 });
 
 Clazz.newMeth(C$, 'clearRect$I$I$I$I', function (x, y, width, height) {
 var originalColor=this.getColor$();
 this.setColor$java_awt_Color(this.getBackground$());
-var shape=Clazz.new_($I$(11).c$$I$I$I$I,[x, y, width, height]);
+var shape=Clazz.new_($I$(11,1).c$$I$I$I$I,[x, y, width, height]);
 p$1.draw$java_awt_Shape$S.apply(this, [shape, "fill"]);
 this.setColor$java_awt_Color(originalColor);
 });
 
 Clazz.newMeth(C$, 'drawRoundRect$I$I$I$I$I$I', function (x, y, width, height, arcWidth, arcHeight) {
-var shape=Clazz.new_($I$(22).c$$F$F$F$F$F$F,[x, y, width, height, arcWidth, arcHeight]);
+var shape=Clazz.new_($I$(22,1).c$$F$F$F$F$F$F,[x, y, width, height, arcWidth, arcHeight]);
 this.draw$java_awt_Shape(shape);
 });
 
 Clazz.newMeth(C$, 'fillRoundRect$I$I$I$I$I$I', function (x, y, width, height, arcWidth, arcHeight) {
-var shape=Clazz.new_($I$(22).c$$F$F$F$F$F$F,[x, y, width, height, arcWidth, arcHeight]);
+var shape=Clazz.new_($I$(22,1).c$$F$F$F$F$F$F,[x, y, width, height, arcWidth, arcHeight]);
 p$1.draw$java_awt_Shape$S.apply(this, [shape, "fill"]);
 });
 
 Clazz.newMeth(C$, 'drawOval$I$I$I$I', function (x, y, width, height) {
-var shape=Clazz.new_($I$(23).c$$F$F$F$F,[x, y, width, height]);
+var shape=Clazz.new_($I$(23,1).c$$F$F$F$F,[x, y, width, height]);
 this.draw$java_awt_Shape(shape);
 });
 
 Clazz.newMeth(C$, 'fillOval$I$I$I$I', function (x, y, width, height) {
-var shape=Clazz.new_($I$(23).c$$F$F$F$F,[x, y, width, height]);
+var shape=Clazz.new_($I$(23,1).c$$F$F$F$F,[x, y, width, height]);
 p$1.draw$java_awt_Shape$S.apply(this, [shape, "fill"]);
 });
 
 Clazz.newMeth(C$, 'drawArc$I$I$I$I$I$I', function (x, y, width, height, startAngle, arcAngle) {
-var shape=Clazz.new_($I$(24).c$$F$F$F$F$F$F$I,[x, y, width, height, startAngle, arcAngle, 0]);
+var shape=Clazz.new_($I$(24,1).c$$F$F$F$F$F$F$I,[x, y, width, height, startAngle, arcAngle, 0]);
 this.draw$java_awt_Shape(shape);
 });
 
 Clazz.newMeth(C$, 'fillArc$I$I$I$I$I$I', function (x, y, width, height, startAngle, arcAngle) {
-var shape=Clazz.new_($I$(24).c$$F$F$F$F$F$F$I,[x, y, width, height, startAngle, arcAngle, 2]);
+var shape=Clazz.new_($I$(24,1).c$$F$F$F$F$F$F$I,[x, y, width, height, startAngle, arcAngle, 2]);
 p$1.draw$java_awt_Shape$S.apply(this, [shape, "fill"]);
 });
 
 Clazz.newMeth(C$, 'drawPolyline$IA$IA$I', function (xPoints, yPoints, nPoints) {
 if (nPoints > 0) {
-var path=Clazz.new_($I$(25));
+var path=Clazz.new_($I$(25,1));
 path.moveTo$F$F(xPoints[0], yPoints[0]);
 for (var i=1; i < nPoints; i++) {
 path.lineTo$F$F(xPoints[i], yPoints[i]);
@@ -595,7 +580,7 @@ this.draw$java_awt_Shape(path);
 }});
 
 Clazz.newMeth(C$, 'drawPolygon$IA$IA$I', function (xPoints, yPoints, nPoints) {
-var shape=Clazz.new_($I$(26).c$$IA$IA$I,[xPoints, yPoints, nPoints]);
+var shape=Clazz.new_($I$(26,1).c$$IA$IA$I,[xPoints, yPoints, nPoints]);
 this.draw$java_awt_Shape(shape);
 });
 
@@ -604,7 +589,7 @@ this.draw$java_awt_Shape(p);
 });
 
 Clazz.newMeth(C$, 'fillPolygon$IA$IA$I', function (xPoints, yPoints, nPoints) {
-var shape=Clazz.new_($I$(26).c$$IA$IA$I,[xPoints, yPoints, nPoints]);
+var shape=Clazz.new_($I$(26,1).c$$IA$IA$I,[xPoints, yPoints, nPoints]);
 p$1.draw$java_awt_Shape$S.apply(this, [shape, "fill"]);
 });
 
@@ -659,7 +644,7 @@ var height=sy2 - sy1;
 var destWidth=dx2 - dx1;
 var destHeight=dy2 - dy1;
 var pixels=Clazz.array(Integer.TYPE, [width * height]);
-var pg=Clazz.new_($I$(27).c$$java_awt_Image$I$I$I$I$IA$I$I,[img, sx1, sy1, sx2 - sx1, sy2 - sy1, pixels, 0, width]);
+var pg=Clazz.new_($I$(27,1).c$$java_awt_Image$I$I$I$I$IA$I$I,[img, sx1, sy1, sx2 - sx1, sy2 - sy1, pixels, 0, width]);
 try {
 pg.grabPixels$();
 } catch (e) {
@@ -669,7 +654,7 @@ return false;
 throw e;
 }
 }
-var matrix=Clazz.new_($I$(4).c$$java_awt_geom_AffineTransform,[this._transform]);
+var matrix=Clazz.new_($I$(4,1).c$$java_awt_geom_AffineTransform,[this._transform]);
 matrix.translate$D$D(dx1, dy1);
 matrix.scale$D$D(destWidth / width, destHeight / height);
 var m=Clazz.array(Double.TYPE, [6]);
@@ -677,7 +662,7 @@ try {
 matrix=matrix.createInverse$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_(Clazz.load('org.jibble.epsgraphics.EpsException').c$$S,[$I$(9).formatMessage$S$SA("exception.eps_unable_to_get_inverse_matrix", Clazz.array(String, -1, [matrix.toString()]))]);
+throw Clazz.new_(Clazz.load('org.jibble.epsgraphics.EpsException').c$$S,[$I$(9,"formatMessage$S$SA",["exception.eps_unable_to_get_inverse_matrix", Clazz.array(String, -1, [matrix.toString()])])]);
 } else {
 throw e;
 }
@@ -691,14 +676,14 @@ this.fillRect$I$I$I$I(dx1, dy1, destWidth, destHeight);
 this.setColor$java_awt_Color(oldColor);
 p$1.append$S.apply(this, ["{currentfile 3 " + width + " mul string readhexstring pop} bind" ]);
 p$1.append$S.apply(this, ["false 3 colorimage"]);
-var line=Clazz.new_($I$(17));
+var line=Clazz.new_($I$(17,1));
 for (var y=0; y < height; y++) {
 for (var x=0; x < width; x++) {
-var color=Clazz.new_($I$(3).c$$I,[pixels[x + width * y]]);
+var color=Clazz.new_($I$(3,1).c$$I,[pixels[x + width * y]]);
 line.append$S(p$1.toHexString$I.apply(this, [color.getRed$()]) + p$1.toHexString$I.apply(this, [color.getGreen$()]) + p$1.toHexString$I.apply(this, [color.getBlue$()]) );
 if (line.length$() > 64) {
 p$1.append$S.apply(this, [line.toString()]);
-line=Clazz.new_($I$(17));
+line=Clazz.new_($I$(17,1));
 }}
 }
 if (line.length$() > 0) {
@@ -711,12 +696,8 @@ Clazz.newMeth(C$, 'dispose$', function () {
 this._document=null;
 });
 
-Clazz.newMeth(C$, 'finalize$', function () {
-C$.superclazz.prototype.finalize$.apply(this, []);
-});
-
 Clazz.newMeth(C$, 'toString', function () {
-var writer=Clazz.new_($I$(28));
+var writer=Clazz.new_($I$(28,1));
 try {
 this._document.write$java_io_Writer(writer);
 this._document.flush$();
@@ -734,7 +715,7 @@ return writer.toString();
 Clazz.newMeth(C$, 'hitClip$I$I$I$I', function (x, y, width, height) {
 if (this._clip == null ) {
 return true;
-}var rect=Clazz.new_($I$(11).c$$I$I$I$I,[x, y, width, height]);
+}var rect=Clazz.new_($I$(11,1).c$$I$I$I$I,[x, y, width, height]);
 return this.hit$java_awt_Rectangle$java_awt_Shape$Z(rect, this._clip, true);
 });
 
@@ -746,5 +727,9 @@ r.setLocation$I$I((rect.getX$()|0), (rect.getY$()|0));
 r.setSize$I$I((rect.getWidth$()|0), (rect.getHeight$()|0));
 return r;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$._fontRenderContext=Clazz.new_($I$(1,1).c$$java_awt_geom_AffineTransform$Z$Z,[null, false, true]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

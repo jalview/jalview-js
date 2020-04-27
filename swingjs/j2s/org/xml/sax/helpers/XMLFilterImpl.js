@@ -1,18 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.xml.sax.helpers"),p$1={},I$=[[0,'org.xml.sax.InputSource']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XMLFilterImpl", null, null, ['org.xml.sax.XMLFilter', 'org.xml.sax.EntityResolver', 'org.xml.sax.DTDHandler', 'org.xml.sax.ContentHandler', 'org.xml.sax.ErrorHandler']);
+(function(){var P$=Clazz.newPackage("org.xml.sax.helpers"),p$1={},I$=[[0,'org.xml.sax.InputSource']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XMLFilterImpl", null, null, ['org.xml.sax.XMLFilter', 'org.xml.sax.EntityResolver', 'org.xml.sax.DTDHandler', 'org.xml.sax.ContentHandler', 'org.xml.sax.ErrorHandler']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.locator=null;
-this.entityResolver=null;
-this.dtdHandler=null;
-this.contentHandler=null;
-this.errorHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.parent=null;
@@ -21,14 +10,16 @@ this.entityResolver=null;
 this.dtdHandler=null;
 this.contentHandler=null;
 this.errorHandler=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['parent','org.xml.sax.XMLReader','locator','org.xml.sax.Locator','entityResolver','org.xml.sax.EntityResolver','dtdHandler','org.xml.sax.DTDHandler','contentHandler','org.xml.sax.ContentHandler','errorHandler','org.xml.sax.ErrorHandler']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_xml_sax_XMLReader', function (parent) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setParent$org_xml_sax_XMLReader(parent);
 }, 1);
 
@@ -106,12 +97,12 @@ this.parent.parse$org_xml_sax_InputSource(input);
 });
 
 Clazz.newMeth(C$, 'parse$S', function (systemId) {
-this.parse$org_xml_sax_InputSource(Clazz.new_($I$(1).c$$S,[systemId]));
+this.parse$org_xml_sax_InputSource(Clazz.new_($I$(1,1).c$$S,[systemId]));
 });
 
-Clazz.newMeth(C$, ['resolveEntity$S$S','resolveEntity$'], function (publicId, systemId) {
+Clazz.newMeth(C$, 'resolveEntity$S$S', function (publicId, systemId) {
 if (this.entityResolver != null ) {
-return this.entityResolver.resolveEntity$(publicId, systemId);
+return this.entityResolver.resolveEntity$S$S(publicId, systemId);
 } else {
 return null;
 }});
@@ -206,4 +197,4 @@ this.parent.setContentHandler$org_xml_sax_ContentHandler(this);
 this.parent.setErrorHandler$org_xml_sax_ErrorHandler(this);
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

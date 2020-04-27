@@ -1,52 +1,47 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.locks.ReentrantLock','java.util.PriorityQueue',['java.util.concurrent.PriorityBlockingQueue','.Itr']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PriorityBlockingQueue", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.locks.ReentrantLock','java.util.PriorityQueue',['java.util.concurrent.PriorityBlockingQueue','.Itr']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PriorityBlockingQueue", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractQueue', ['java.util.concurrent.BlockingQueue', 'java.io.Serializable']);
+C$.$classes$=[['Itr',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.q=null;
-this.lock=null;
-this.notEmpty=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.lock=Clazz.new_($I$(1).c$$Z,[true]);
+this.lock=Clazz.new_($I$(1,1).c$$Z,[true]);
 this.notEmpty=this.lock.newCondition$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['q','java.util.PriorityQueue','lock','java.util.concurrent.locks.ReentrantLock','notEmpty','java.util.concurrent.locks.Condition']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.q=Clazz.new_($I$(2));
+Clazz.super_(C$, this);
+this.q=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
-Clazz.super_(C$, this,1);
-this.q=Clazz.new_($I$(2).c$$I$java_util_Comparator,[initialCapacity, null]);
+Clazz.super_(C$, this);
+this.q=Clazz.new_($I$(2,1).c$$I$java_util_Comparator,[initialCapacity, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$java_util_Comparator', function (initialCapacity, comparator) {
-Clazz.super_(C$, this,1);
-this.q=Clazz.new_($I$(2).c$$I$java_util_Comparator,[initialCapacity, comparator]);
+Clazz.super_(C$, this);
+this.q=Clazz.new_($I$(2,1).c$$I$java_util_Comparator,[initialCapacity, comparator]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-Clazz.super_(C$, this,1);
-this.q=Clazz.new_($I$(2).c$$java_util_Collection,[c]);
+Clazz.super_(C$, this);
+this.q=Clazz.new_($I$(2,1).c$$java_util_Collection,[c]);
 }, 1);
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-return this.offer$TE(e);
+Clazz.newMeth(C$, 'add$O', function (e) {
+return this.offer$O(e);
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
+Clazz.newMeth(C$, 'offer$O', function (e) {
 var lock=this.lock;
 lock.lock$();
 try {
-var ok=this.q.offer$TE(e);
+var ok=this.q.offer$O(e);
 Clazz.assert(C$, this, function(){return ok});
 this.notEmpty.signal$();
 return true;
@@ -55,12 +50,12 @@ lock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, ['put$TE'], function (e) {
-this.offer$TE(e);
+Clazz.newMeth(C$, 'put$O', function (e) {
+this.offer$O(e);
 });
 
-Clazz.newMeth(C$, ['offer$TE$J$java_util_concurrent_TimeUnit'], function (e, timeout, unit) {
-return this.offer$TE(e);
+Clazz.newMeth(C$, 'offer$O$J$java_util_concurrent_TimeUnit', function (e, timeout, unit) {
+return this.offer$O(e);
 });
 
 Clazz.newMeth(C$, 'poll$', function () {
@@ -198,7 +193,7 @@ try {
 var n=0;
 var e;
 while ((e=this.q.poll$()) != null ){
-c.add$TE(e);
+c.add$O(e);
 ++n;
 }
 return n;
@@ -217,7 +212,7 @@ try {
 var n=0;
 var e;
 while (n < maxElements && (e=this.q.poll$()) != null  ){
-c.add$TE(e);
+c.add$O(e);
 ++n;
 }
 return n;
@@ -236,18 +231,18 @@ lock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 var lock=this.lock;
 lock.lock$();
 try {
-return this.q.toArray$TTA(a);
+return this.q.toArray$OA(a);
 } finally {
 lock.unlock$();
 }
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(3).c$$OA, [this, null, this.toArray$()]);
+return Clazz.new_([this, null, this.toArray$()],$I$(3,1).c$$OA);
 });
 
 Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
@@ -258,27 +253,24 @@ s.defaultWriteObject$();
 this.lock.unlock$();
 }
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.PriorityBlockingQueue, "Itr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PriorityBlockingQueue, "Itr", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.array=null;
-this.cursor=0;
-this.lastRet=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['cursor','lastRet'],'O',['array','Object[]']]]
 
 Clazz.newMeth(C$, 'c$$OA', function (array) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.lastRet=-1;
 this.array=array;
 }, 1);
@@ -312,4 +304,4 @@ this.this$0.lock.unlock$();
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

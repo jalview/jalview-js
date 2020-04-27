@@ -1,20 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "AWTEventMulticaster", null, null, ['java.awt.event.ComponentListener', 'java.awt.event.ContainerListener', 'java.awt.event.FocusListener', 'java.awt.event.KeyListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.WindowListener', 'java.awt.event.WindowFocusListener', 'java.awt.event.WindowStateListener', 'java.awt.event.ActionListener', 'java.awt.event.ItemListener', 'java.awt.event.AdjustmentListener', 'java.awt.event.TextListener', 'java.awt.event.InputMethodListener', 'java.awt.event.HierarchyListener', 'java.awt.event.HierarchyBoundsListener', 'java.awt.event.MouseWheelListener']);
+/*c*/var C$=Clazz.newClass(P$, "AWTEventMulticaster", null, null, ['java.awt.event.ComponentListener', 'java.awt.event.ContainerListener', 'java.awt.event.FocusListener', 'java.awt.event.KeyListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.WindowListener', 'java.awt.event.WindowFocusListener', 'java.awt.event.WindowStateListener', 'java.awt.event.ActionListener', 'java.awt.event.ItemListener', 'java.awt.event.AdjustmentListener', 'java.awt.event.TextListener', 'java.awt.event.InputMethodListener', 'java.awt.event.HierarchyListener', 'java.awt.event.HierarchyBoundsListener', 'java.awt.event.MouseWheelListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.a=null;
-this.b=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['a','java.util.EventListener','+b']]]
 
 Clazz.newMeth(C$, 'c$$java_util_EventListener$java_util_EventListener', function (a, b) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.a=a;
 this.b=b;
 }, 1);
@@ -154,9 +149,9 @@ Clazz.newMeth(C$, 'windowDeactivated$java_awt_event_WindowEvent', function (e) {
 (this.b).windowDeactivated$java_awt_event_WindowEvent(e);
 });
 
-Clazz.newMeth(C$, ['windowStateChanged$java_awt_event_WindowEvent','windowStateChanged$'], function (e) {
-(this.a).windowStateChanged$(e);
-(this.b).windowStateChanged$(e);
+Clazz.newMeth(C$, 'windowStateChanged$java_awt_event_WindowEvent', function (e) {
+(this.a).windowStateChanged$java_awt_event_WindowEvent(e);
+(this.b).windowStateChanged$java_awt_event_WindowEvent(e);
 });
 
 Clazz.newMeth(C$, 'windowGainedFocus$java_awt_event_WindowEvent', function (e) {
@@ -169,24 +164,24 @@ Clazz.newMeth(C$, 'windowLostFocus$java_awt_event_WindowEvent', function (e) {
 (this.b).windowLostFocus$java_awt_event_WindowEvent(e);
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-(this.a).actionPerformed$(e);
-(this.b).actionPerformed$(e);
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+(this.a).actionPerformed$java_awt_event_ActionEvent(e);
+(this.b).actionPerformed$java_awt_event_ActionEvent(e);
 });
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
-(this.a).itemStateChanged$(e);
-(this.b).itemStateChanged$(e);
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
+(this.a).itemStateChanged$java_awt_event_ItemEvent(e);
+(this.b).itemStateChanged$java_awt_event_ItemEvent(e);
 });
 
-Clazz.newMeth(C$, ['adjustmentValueChanged$java_awt_event_AdjustmentEvent','adjustmentValueChanged$'], function (e) {
-(this.a).adjustmentValueChanged$(e);
-(this.b).adjustmentValueChanged$(e);
+Clazz.newMeth(C$, 'adjustmentValueChanged$java_awt_event_AdjustmentEvent', function (e) {
+(this.a).adjustmentValueChanged$java_awt_event_AdjustmentEvent(e);
+(this.b).adjustmentValueChanged$java_awt_event_AdjustmentEvent(e);
 });
 
-Clazz.newMeth(C$, ['textValueChanged$java_awt_event_TextEvent','textValueChanged$'], function (e) {
-(this.a).textValueChanged$(e);
-(this.b).textValueChanged$(e);
+Clazz.newMeth(C$, 'textValueChanged$java_awt_event_TextEvent', function (e) {
+(this.a).textValueChanged$java_awt_event_TextEvent(e);
+(this.b).textValueChanged$java_awt_event_TextEvent(e);
 });
 
 Clazz.newMeth(C$, 'inputMethodTextChanged$java_awt_event_InputMethodEvent', function (e) {
@@ -199,9 +194,9 @@ Clazz.newMeth(C$, 'caretPositionChanged$java_awt_event_InputMethodEvent', functi
 (this.b).caretPositionChanged$java_awt_event_InputMethodEvent(e);
 });
 
-Clazz.newMeth(C$, ['hierarchyChanged$java_awt_event_HierarchyEvent','hierarchyChanged$'], function (e) {
-(this.a).hierarchyChanged$(e);
-(this.b).hierarchyChanged$(e);
+Clazz.newMeth(C$, 'hierarchyChanged$java_awt_event_HierarchyEvent', function (e) {
+(this.a).hierarchyChanged$java_awt_event_HierarchyEvent(e);
+(this.b).hierarchyChanged$java_awt_event_HierarchyEvent(e);
 });
 
 Clazz.newMeth(C$, 'ancestorMoved$java_awt_event_HierarchyEvent', function (e) {
@@ -214,9 +209,9 @@ Clazz.newMeth(C$, 'ancestorResized$java_awt_event_HierarchyEvent', function (e) 
 (this.b).ancestorResized$java_awt_event_HierarchyEvent(e);
 });
 
-Clazz.newMeth(C$, ['mouseWheelMoved$java_awt_event_MouseWheelEvent','mouseWheelMoved$'], function (e) {
-(this.a).mouseWheelMoved$(e);
-(this.b).mouseWheelMoved$(e);
+Clazz.newMeth(C$, 'mouseWheelMoved$java_awt_event_MouseWheelEvent', function (e) {
+(this.a).mouseWheelMoved$java_awt_event_MouseWheelEvent(e);
+(this.b).mouseWheelMoved$java_awt_event_MouseWheelEvent(e);
 });
 
 Clazz.newMeth(C$, 'add$java_awt_event_ComponentListener$java_awt_event_ComponentListener', function (a, b) {
@@ -401,4 +396,4 @@ return result;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

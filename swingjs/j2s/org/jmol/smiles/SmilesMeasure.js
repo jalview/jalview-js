@@ -1,28 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'javajs.util.P3','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmilesMeasure");
+(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'javajs.util.P3','javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SmilesMeasure");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.search=null;
-this.nPoints=0;
-this.type=0;
-this.index=0;
-this.isNot=false;
-this.indices=null;
-this.minmax=null;
-this.points=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.indices=Clazz.array(Integer.TYPE, [4]);
 this.points=Clazz.array($I$(1), [4]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNot'],'I',['nPoints','type','index'],'O',['search','org.jmol.smiles.SmilesSearch','indices','int[]','minmax','float[]','points','javajs.util.P3[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_smiles_SmilesSearch$I$I$Z$FA', function (search, index, type, isNot, minmax) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.search=search;
 this.type=Math.min(4, Math.max(type, 2));
 this.index=index;
@@ -90,4 +79,4 @@ return s;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

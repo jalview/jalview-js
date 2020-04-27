@@ -1,23 +1,16 @@
 (function(){var P$=Clazz.newPackage("javax.imageio"),I$=[];
-var C$=Clazz.newClass(P$, "IIOImage");
+/*c*/var C$=Clazz.newClass(P$, "IIOImage");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.image=null;
-this.raster=null;
-this.thumbnails=null;
-this.metadata=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.thumbnails=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['image','java.awt.image.RenderedImage','raster','java.awt.image.Raster','thumbnails','java.util.List','metadata','javax.imageio.metadata.IIOMetadata']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_image_RenderedImage$java_util_List$javax_imageio_metadata_IIOMetadata', function (image, thumbnails, metadata) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (image == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["image == null!"]);
 }this.image=image;
@@ -27,7 +20,7 @@ this.metadata=metadata;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_Raster$java_util_List$javax_imageio_metadata_IIOMetadata', function (raster, thumbnails, metadata) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (raster == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["raster == null!"]);
 }this.raster=raster;
@@ -95,4 +88,4 @@ this.metadata=metadata;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

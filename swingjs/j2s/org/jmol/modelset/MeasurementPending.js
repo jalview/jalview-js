@@ -1,21 +1,14 @@
 (function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={};
-var C$=Clazz.newClass(P$, "MeasurementPending", null, 'org.jmol.modelset.Measurement');
+/*c*/var C$=Clazz.newClass(P$, "MeasurementPending", null, 'org.jmol.modelset.Measurement');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.haveTarget=false;
-this.haveModified=false;
-this.numSet=0;
-this.lastIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.numSet=0;
 this.lastIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveTarget','haveModified'],'I',['numSet','lastIndex']]]
 
 Clazz.newMeth(C$, 'set$org_jmol_modelset_ModelSet', function (modelSet) {
 return this.setM$org_jmol_modelset_ModelSet$org_jmol_modelset_Measurement$F$H$S$I(modelSet, null, NaN, 0, null, 0);
@@ -68,4 +61,4 @@ return this.count;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

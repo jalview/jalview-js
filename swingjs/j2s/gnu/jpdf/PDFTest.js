@@ -1,34 +1,22 @@
-(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},p$2={},I$=[[0,'javax.swing.JPanel','java.io.File','java.io.FileOutputStream','java.awt.event.WindowAdapter','java.awt.BorderLayout','gnu.jpdf.TestMenuBar','gnu.jpdf.PDFJob','gnu.jpdf.TestPanel','javax.swing.JScrollPane','java.awt.Dimension','java.awt.Toolkit','javax.swing.JOptionPane','gnu.jpdf.HelpFrame','java.awt.JobAttributes','java.awt.Color','java.awt.Point','java.awt.Font','gnu.jpdf.BoundingBox','java.awt.MediaTracker','javax.swing.JMenu','javax.swing.JMenuItem','javax.swing.KeyStroke','javax.swing.JTextArea','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDFTest", null, 'javax.swing.JFrame', 'java.awt.event.ActionListener');
-C$.outputPdfFile=null;
-C$.sampleImageFile=null;
-C$.noWindow=false;
+(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},p$2={},I$=[[0,'javax.swing.JPanel','java.io.File','java.io.FileOutputStream','java.awt.event.WindowAdapter','java.awt.BorderLayout','gnu.jpdf.TestMenuBar','gnu.jpdf.PDFJob','gnu.jpdf.TestPanel','javax.swing.JScrollPane','java.awt.Dimension','java.awt.Toolkit','javax.swing.JOptionPane','gnu.jpdf.HelpFrame','java.awt.JobAttributes','java.awt.Color','java.awt.Point','java.awt.Font','gnu.jpdf.BoundingBox','java.awt.MediaTracker','javax.swing.JMenu','javax.swing.JMenuItem','javax.swing.KeyStroke','javax.swing.JTextArea','StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDFTest", null, 'javax.swing.JFrame', 'java.awt.event.ActionListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pane=null;
-this.documentDimension=null;
-this.currentPage=0;
-this.job=null;
-this.pdfDocumentAlreadyDone=false;
-this.drawingArea=null;
-this.menuBar=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.pane=Clazz.new_($I$(1));
-}, 1);
+this.pane=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['pdfDocumentAlreadyDone'],'I',['currentPage'],'O',['pane','javax.swing.JPanel','documentDimension','java.awt.Dimension','job','gnu.jpdf.PDFJob','drawingArea','gnu.jpdf.TestPanel','menuBar','gnu.jpdf.TestMenuBar']]
+,['Z',['noWindow'],'S',['outputPdfFile','sampleImageFile']]]
 
 Clazz.newMeth(C$, 'c$$S$S$Z', function (outputPdfFile, sampleImageFile, noWindow) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var file=null;
 var fileOutputStream=null;
 try {
-file=Clazz.new_($I$(2).c$$S,[outputPdfFile]);
-fileOutputStream=Clazz.new_($I$(3).c$$java_io_File,[file]);
+file=Clazz.new_($I$(2,1).c$$S,[outputPdfFile]);
+fileOutputStream=Clazz.new_($I$(3,1).c$$java_io_File,[file]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.err.println$S("Error!! - Invalid output file path: " + outputPdfFile);
@@ -40,33 +28,32 @@ throw e;
 }
 System.out.println$S("GNU JPDF creating " + file);
 this.addWindowListener$java_awt_event_WindowListener(((P$.PDFTest$1||
-(function(){var C$=Clazz.newClass(P$, "PDFTest$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "PDFTest$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (e) {
 System.exit$I(0);
 });
 })()
-), Clazz.new_($I$(4), [this, null],P$.PDFTest$1)));
+), Clazz.new_($I$(4,1),[this, null],P$.PDFTest$1)));
 var contentPane=this.getContentPane$();
-this.pane.setLayout$java_awt_LayoutManager(Clazz.new_($I$(5)));
-this.menuBar=Clazz.new_($I$(6).c$$java_awt_event_ActionListener,[this]);
+this.pane.setLayout$java_awt_LayoutManager(Clazz.new_($I$(5,1)));
+this.menuBar=Clazz.new_($I$(6,1).c$$java_awt_event_ActionListener,[this]);
 this.setJMenuBar$javax_swing_JMenuBar(this.menuBar);
 var pdfGraphics=null;
-this.job=Clazz.new_($I$(7).c$$java_io_OutputStream,[fileOutputStream]);
+this.job=Clazz.new_($I$(7,1).c$$java_io_OutputStream,[fileOutputStream]);
 pdfGraphics=this.job.getGraphics$();
 var d=this.job.getPageDimension$();
 this.documentDimension=d;
 var w=(d.getWidth$()|0);
 var h=(d.getHeight$()|0);
-this.drawingArea=Clazz.new_($I$(8));
-var scrollPane=Clazz.new_($I$(9).c$$java_awt_Component$I$I,[this.drawingArea, 22, 32]);
-this.drawingArea.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(10).c$$I$I,[1000, 1000]));
+this.drawingArea=Clazz.new_($I$(8,1));
+var scrollPane=Clazz.new_($I$(9,1).c$$java_awt_Component$I$I,[this.drawingArea, 22, 32]);
+this.drawingArea.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(10,1).c$$I$I,[1000, 1000]));
 this.pane.add$java_awt_Component$O(scrollPane, "Center");
 contentPane.add$java_awt_Component(this.pane);
 this.setTitle$S("PDF Test Application");
@@ -115,7 +102,7 @@ this.drawingArea.repaint$();
 this.drawingArea.revalidate$();
 }, p$1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var source=e.getSource$();
 if (source === this.menuBar.close ) {
 System.exit$I(0);
@@ -145,12 +132,12 @@ $I$(12).showMessageDialog$java_awt_Component$O(this, "gnujpdf test application, 
 }, p$1);
 
 Clazz.newMeth(C$, 'showHelp', function () {
-var helpFrame=Clazz.new_($I$(13));
+var helpFrame=Clazz.new_($I$(13,1));
 }, p$1);
 
 Clazz.newMeth(C$, 'printPdf', function () {
 System.out.println$S("Printing...");
-var jobAttributes=Clazz.new_($I$(14));
+var jobAttributes=Clazz.new_($I$(14,1));
 var toolkit=$I$(11).getDefaultToolkit$();
 var pjob=toolkit.getPrintJob$java_awt_JSFrame$S$java_awt_JobAttributes$java_awt_PageAttributes(this, "PDF Test Print", jobAttributes, null);
 if (pjob != null ) {
@@ -171,12 +158,12 @@ Clazz.newMeth(C$, 'doTest$java_awt_Graphics$java_awt_Dimension', function (g, d)
 g.setColor$java_awt_Color($I$(15).white);
 g.fillRect$I$I$I$I(0, 0, d.width, d.height);
 g.setColor$java_awt_Color($I$(15).black);
-var boxUpperLeft=Clazz.new_($I$(16).c$$I$I,[60, 60]);
-var boxSize=Clazz.new_($I$(10).c$$I$I,[200, 200]);
-var f=Clazz.new_($I$(17).c$$S$I$I,["TimesRoman", 0, 14]);
+var boxUpperLeft=Clazz.new_($I$(16,1).c$$I$I,[60, 60]);
+var boxSize=Clazz.new_($I$(10,1).c$$I$I,[200, 200]);
+var f=Clazz.new_($I$(17,1).c$$S$I$I,["TimesRoman", 0, 14]);
 g.setFont$java_awt_Font(f);
 var fm=g.getFontMetrics$java_awt_Font(f);
-var box=Clazz.new_($I$(18).c$$java_awt_Point$java_awt_Dimension,[boxUpperLeft, boxSize]);
+var box=Clazz.new_($I$(18,1).c$$java_awt_Point$java_awt_Dimension,[boxUpperLeft, boxSize]);
 var string="Hello World! this is a really long string";
 var padding=10;
 var child=null;
@@ -206,9 +193,9 @@ return;
 throw stle;
 }
 }
-var b1=Clazz.new_($I$(18).c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(16).c$$I$I,[300, 60]), Clazz.new_($I$(10).c$$I$I,[200, 200])]);
+var b1=Clazz.new_([Clazz.new_($I$(16,1).c$$I$I,[300, 60]), Clazz.new_($I$(10,1).c$$I$I,[200, 200])],$I$(18,1).c$$java_awt_Point$java_awt_Dimension);
 g.drawRect$I$I$I$I((b1.getAbsoluteLocation$().getX$()|0), (b1.getAbsoluteLocation$().getY$()|0), (b1.getSize$().getWidth$()|0), (b1.getSize$().getHeight$()|0));
-var b2=Clazz.new_($I$(18).c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(16).c$$I$I,[10, 10]), Clazz.new_($I$(10).c$$I$I,[100, 100])]);
+var b2=Clazz.new_([Clazz.new_($I$(16,1).c$$I$I,[10, 10]), Clazz.new_($I$(10,1).c$$I$I,[100, 100])],$I$(18,1).c$$java_awt_Point$java_awt_Dimension);
 b1.add$gnu_jpdf_BoundingBox(b2);
 g.drawRect$I$I$I$I((b2.getAbsoluteLocation$().getX$()|0), (b2.getAbsoluteLocation$().getY$()|0), (b2.getSize$().getWidth$()|0), (b2.getSize$().getHeight$()|0));
 try {
@@ -231,9 +218,9 @@ p$1.drawSampleImage$java_awt_Graphics$java_awt_Dimension.apply(this, [g, d]);
 
 Clazz.newMeth(C$, 'drawStringsInBox$java_awt_Graphics', function (g) {
 g.setColor$java_awt_Color($I$(15).black);
-var box=Clazz.new_($I$(18).c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(16).c$$I$I,[20, 300]), Clazz.new_($I$(10).c$$I$I,[250, 250])]);
+var box=Clazz.new_([Clazz.new_($I$(16,1).c$$I$I,[20, 300]), Clazz.new_($I$(10,1).c$$I$I,[250, 250])],$I$(18,1).c$$java_awt_Point$java_awt_Dimension);
 g.drawRect$I$I$I$I((box.getAbsoluteLocation$().getX$()|0), (box.getAbsoluteLocation$().getY$()|0), (box.getSize$().getWidth$()|0), (box.getSize$().getHeight$()|0));
-var f=Clazz.new_($I$(17).c$$S$I$I,["Helvetica", 0, 12]);
+var f=Clazz.new_($I$(17,1).c$$S$I$I,["Helvetica", 0, 12]);
 g.setFont$java_awt_Font(f);
 var fm=g.getFontMetrics$();
 var line1="Line 1";
@@ -302,7 +289,7 @@ try {
 if (C$.sampleImageFile == null ) return;
 var toolkit=$I$(11).getDefaultToolkit$();
 var img=toolkit.createImage$S(C$.sampleImageFile);
-var tracker=Clazz.new_($I$(19).c$$java_awt_Component,[this.drawingArea]);
+var tracker=Clazz.new_($I$(19,1).c$$java_awt_Component,[this.drawingArea]);
 tracker.addImage$java_awt_Image$I(img, 0);
 try {
 tracker.waitForID$I(0);
@@ -357,7 +344,7 @@ xp=Clazz.array(Integer.TYPE, -1, [60, 60, 70, 65, 70]);
 yp=Clazz.array(Integer.TYPE, -1, [50, 60, 60, 55, 50]);
 np=xp.length;
 g.fillPolygon$IA$IA$I(xp, yp, np);
-g.setFont$java_awt_Font(Clazz.new_($I$(17).c$$S$I$I,["SansSerif", 0, 12]));
+g.setFont$java_awt_Font(Clazz.new_($I$(17,1).c$$S$I$I,["SansSerif", 0, 12]));
 g.drawString$S$I$I("This is a simple string", 10, 120);
 g.drawString$S$I$I("This is a (complex) string", 10, 130);
 g.drawString$S$I$I("(complex) string (with ( (multiple brackets ))", 10, 140);
@@ -397,7 +384,7 @@ for (var i=0; i < fonts.length; i++) g.drawString$S$I$I(fonts[i], 98 - fm.string
 var cf=g.getFont$();
 for (var i=0; i < fonts.length; i++) {
 for (var j=0; j < modes.length; j++) {
-g.setFont$java_awt_Font(Clazz.new_($I$(17).c$$S$I$I,[fonts[i], imodes[j], 10]));
+g.setFont$java_awt_Font(Clazz.new_($I$(17,1).c$$S$I$I,[fonts[i], imodes[j], 10]));
 g.drawString$S$I$I(modes[j], 100 + (50 * j), ty);
 }
 ty+=12;
@@ -447,4 +434,4 @@ System.out.println$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

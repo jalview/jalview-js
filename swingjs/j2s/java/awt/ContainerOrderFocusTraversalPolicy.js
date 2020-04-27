@@ -1,26 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ContainerOrderFocusTraversalPolicy", null, 'java.awt.FocusTraversalPolicy', 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ContainerOrderFocusTraversalPolicy", null, 'java.awt.FocusTraversalPolicy', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.FORWARD_TRAVERSAL=0;
-this.BACKWARD_TRAVERSAL=0;
-this.implicitDownCycleTraversal=false;
-this.cachedRoot=null;
-this.cachedCycle=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.FORWARD_TRAVERSAL=0;
 this.BACKWARD_TRAVERSAL=1;
 this.implicitDownCycleTraversal=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['implicitDownCycleTraversal'],'I',['FORWARD_TRAVERSAL','BACKWARD_TRAVERSAL'],'O',['cachedRoot','java.awt.Container','cachedCycle','java.util.List']]]
 
 Clazz.newMeth(C$, 'getFocusTraversalCycle$java_awt_Container', function (aContainer) {
-var cycle=Clazz.new_($I$(1));
+var cycle=Clazz.new_($I$(1,1));
 p$1.enumerateCycle$java_awt_Container$java_util_List.apply(this, [aContainer, cycle]);
 return cycle;
 }, p$1);
@@ -32,7 +24,7 @@ return cycle.indexOf$O(aComponent);
 Clazz.newMeth(C$, 'enumerateCycle$java_awt_Container$java_util_List', function (container, cycle) {
 if (!(container.isVisible$() && container.isDisplayable$() )) {
 return;
-}cycle.add$TE(container);
+}cycle.add$O(container);
 var components=container.getChildArray$();
 for (var i=0, n=container.getComponentCount$(); i < n; i++) {
 var comp=components[i];
@@ -41,7 +33,7 @@ var cont=comp;
 if (!cont.isFocusCycleRoot$() && !cont.isFocusTraversalPolicyProvider$() ) {
 p$1.enumerateCycle$java_awt_Container$java_util_List.apply(this, [cont, cycle]);
 continue;
-}}cycle.add$TE(comp);
+}}cycle.add$O(comp);
 }
 }, p$1);
 
@@ -79,9 +71,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["aContainer and aC
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["aContainer should be focus cycle root or focus traversal policy provider"]);
 } else if (aContainer.isFocusCycleRoot$() && !aComponent.isFocusCycleRoot$java_awt_Container(aContainer) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["aContainer is not a focus cycle root of aComponent"]);
-}/*sync org.eclipse.jdt.core.dom.MethodInvocation*/(aContainer.getTreeLock$());
-{
-if (!(aContainer.isVisible$() && aContainer.isDisplayable$() )) {
+}if (!(aContainer.isVisible$() && aContainer.isDisplayable$() )) {
 return null;
 }var comp=p$1.getComponentDownCycle$java_awt_Component$I.apply(this, [aComponent, 0]);
 if (comp != null ) {
@@ -111,7 +101,7 @@ comp=this.getFirstComponent$java_awt_Container(aContainer);
 this.cachedRoot=null;
 this.cachedCycle=null;
 return comp;
-}}return null;
+}return null;
 });
 
 Clazz.newMeth(C$, 'getComponentBefore$java_awt_Container$java_awt_Component', function (aContainer, aComponent) {
@@ -161,9 +151,7 @@ Clazz.newMeth(C$, 'getFirstComponent$java_awt_Container', function (aContainer) 
 var cycle;
 if (aContainer == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["aContainer cannot be null"]);
-}/*sync org.eclipse.jdt.core.dom.MethodInvocation*/(aContainer.getTreeLock$());
-{
-if (!(aContainer.isVisible$() && aContainer.isDisplayable$() )) {
+}if (!(aContainer.isVisible$() && aContainer.isDisplayable$() )) {
 return null;
 }if (this.cachedRoot === aContainer ) {
 cycle=this.cachedCycle;
@@ -172,12 +160,13 @@ cycle=p$1.getFocusTraversalCycle$java_awt_Container.apply(this, [aContainer]);
 }if (cycle.size$() == 0) {
 return null;
 }for (var comp, $comp = cycle.iterator$(); $comp.hasNext$()&&((comp=($comp.next$())),1);) {
+if (comp === aContainer ) continue;
 if (this.accept$java_awt_Component(comp)) {
 return comp;
 } else if (comp !== aContainer  && (comp=p$1.getComponentDownCycle$java_awt_Component$I.apply(this, [comp, 0])) != null  ) {
 return comp;
 }}
-}return null;
+return null;
 });
 
 Clazz.newMeth(C$, 'getLastComponent$java_awt_Container', function (aContainer) {
@@ -233,4 +222,4 @@ break;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

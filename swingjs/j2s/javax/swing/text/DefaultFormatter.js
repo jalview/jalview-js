@@ -1,27 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.Utilities',['javax.swing.text.DefaultFormatter','.DefaultDocumentFilter'],['javax.swing.text.DefaultFormatter','.DefaultNavigationFilter'],['javax.swing.text.Position','.Bias'],['javax.swing.text.DefaultFormatter','.ReplaceHolder']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultFormatter", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.Utilities',['javax.swing.text.DefaultFormatter','.DefaultDocumentFilter'],['javax.swing.text.DefaultFormatter','.DefaultNavigationFilter'],['javax.swing.text.Position','.Bias'],['javax.swing.text.DefaultFormatter','.ReplaceHolder']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultFormatter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, ['javax.swing.JFormattedTextField','.AbstractFormatter'], 'Cloneable');
+C$.$classes$=[['ReplaceHolder',8],['DefaultNavigationFilter',2],['DefaultDocumentFilter',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.allowsInvalid=false;
-this.overwriteMode=false;
-this.commitOnEdit=false;
-this.valueClass=null;
-this.navigationFilter=null;
-this.documentFilter=null;
-this.replaceHolder=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['allowsInvalid','overwriteMode','commitOnEdit'],'O',['valueClass','Class','navigationFilter','javax.swing.text.NavigationFilter','documentFilter','javax.swing.text.DocumentFilter','replaceHolder','javax.swing.text.DefaultFormatter.ReplaceHolder']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.overwriteMode=true;
 this.allowsInvalid=true;
 }, 1);
@@ -81,13 +72,13 @@ return "";
 
 Clazz.newMeth(C$, 'getDocumentFilter$', function () {
 if (this.documentFilter == null ) {
-this.documentFilter=Clazz.new_($I$(2), [this, null]);
+this.documentFilter=Clazz.new_($I$(2,1),[this, null]);
 }return this.documentFilter;
 });
 
 Clazz.newMeth(C$, 'getNavigationFilter$', function () {
 if (this.navigationFilter == null ) {
-this.navigationFilter=Clazz.new_($I$(3), [this, null]);
+this.navigationFilter=Clazz.new_($I$(3,1),[this, null]);
 }return this.navigationFilter;
 });
 
@@ -261,31 +252,21 @@ fb.moveDot$I$javax_swing_text_Position_Bias(dot, bias);
 
 Clazz.newMeth(C$, 'getReplaceHolder$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet', function (fb, offset, length, text, attrs) {
 if (this.replaceHolder == null ) {
-this.replaceHolder=Clazz.new_($I$(5));
+this.replaceHolder=Clazz.new_($I$(5,1));
 }this.replaceHolder.reset$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet(fb, offset, length, text, attrs);
 return this.replaceHolder;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultFormatter, "ReplaceHolder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultFormatter, "ReplaceHolder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fb=null;
-this.offset=0;
-this.length=0;
-this.text=null;
-this.attrs=null;
-this.value=null;
-this.cursorPosition=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offset','length','cursorPosition'],'S',['text'],'O',['fb','javax.swing.text.DocumentFilter.FilterBypass','attrs','javax.swing.text.AttributeSet','value','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'reset$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet', function (fb, offset, length, text, attrs) {
 this.fb=fb;
@@ -300,15 +281,14 @@ this.cursorPosition=-1;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultFormatter, "DefaultNavigationFilter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultFormatter, "DefaultNavigationFilter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.NavigationFilter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'setDot$javax_swing_text_NavigationFilter_FilterBypass$I$javax_swing_text_Position_Bias', function (fb, dot, bias) {
 var tc=this.this$0.getFormattedTextField$.apply(this.this$0, []);
@@ -336,15 +316,14 @@ return this.this$0.getNextVisualPositionFrom$javax_swing_text_JTextComponent$I$j
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultFormatter, "DefaultDocumentFilter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultFormatter, "DefaultDocumentFilter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.DocumentFilter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'remove$javax_swing_text_DocumentFilter_FilterBypass$I$I', function (fb, offset, length) {
 var tc=this.this$0.getFormattedTextField$.apply(this.this$0, []);
@@ -373,4 +352,4 @@ this.this$0.replace$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swi
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

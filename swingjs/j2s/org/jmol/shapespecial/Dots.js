@@ -1,34 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),I$=[[0,'javajs.util.BS','org.jmol.atomdata.RadiusData','org.jmol.geodesic.EnvelopeCalculation','org.jmol.util.C','javajs.util.M3','org.jmol.util.BSUtil',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','javajs.util.SB','java.util.Hashtable','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Dots", null, 'org.jmol.shape.AtomShape');
-C$.MAX_LEVEL=0;
+(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),I$=[[0,'javajs.util.BS','org.jmol.atomdata.RadiusData','org.jmol.geodesic.EnvelopeCalculation','org.jmol.util.C','javajs.util.M3','org.jmol.util.BSUtil',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','javajs.util.SB','java.util.Hashtable','org.jmol.shape.Shape','org.jmol.util.Escape']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Dots", null, 'org.jmol.shape.AtomShape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.MAX_LEVEL=3;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ec=null;
-this.isSurface=false;
-this.bsOn=null;
-this.bsSelected=null;
-this.bsIgnore=null;
-this.thisAtom=0;
-this.thisRadius=0;
-this.thisArgb=0;
-this.rdLast=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isSurface=false;
-this.bsOn=Clazz.new_($I$(1));
-this.rdLast=Clazz.new_($I$(2).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 0, null, null]);
-}, 1);
+this.bsOn=Clazz.new_($I$(1,1));
+this.rdLast=Clazz.new_($I$(2,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 0, null, null]);
+},1);
+
+C$.$fields$=[['Z',['isSurface'],'F',['thisRadius'],'I',['thisAtom','thisArgb'],'O',['ec','org.jmol.geodesic.EnvelopeCalculation','bsOn','javajs.util.BS','+bsSelected','+bsIgnore','rdLast','org.jmol.atomdata.RadiusData']]
+,['I',['MAX_LEVEL']]]
 
 Clazz.newMeth(C$, 'initShape$', function () {
 C$.superclazz.prototype.initShape$.apply(this, []);
 this.translucentAllowed=false;
-this.ec=Clazz.new_($I$(3)).set$org_jmol_atomdata_AtomDataServer$I$HA(this.vwr, this.ac, this.mads);
+this.ec=Clazz.new_($I$(3,1)).set$org_jmol_atomdata_AtomDataServer$I$HA(this.vwr, this.ac, this.mads);
 });
 
 Clazz.newMeth(C$, 'getSize$I', function (atomIndex) {
@@ -87,7 +74,7 @@ return;
 bs=(value)[1];
 var m4=(value)[2];
 if (m4 == null ) return;
-var m=Clazz.new_($I$(5));
+var m=Clazz.new_($I$(5,1));
 m4.getRotationScale$javajs_util_M3(m);
 this.ec.reCalculate$javajs_util_BS$javajs_util_M3(bs, m);
 return;
@@ -103,11 +90,11 @@ Clazz.newMeth(C$, 'initialize$', function () {
 this.bsSelected=null;
 this.bsIgnore=null;
 this.isActive=false;
-if (this.ec == null ) this.ec=Clazz.new_($I$(3)).set$org_jmol_atomdata_AtomDataServer$I$HA(this.vwr, this.ac, this.mads);
+if (this.ec == null ) this.ec=Clazz.new_($I$(3,1)).set$org_jmol_atomdata_AtomDataServer$I$HA(this.vwr, this.ac, this.mads);
 });
 
 Clazz.newMeth(C$, 'setSizeRD$org_jmol_atomdata_RadiusData$javajs_util_BS', function (rd, bsSelected) {
-if (rd == null ) rd=Clazz.new_($I$(2).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 0, $I$(7).ABSOLUTE, null]);
+if (rd == null ) rd=Clazz.new_([null, 0, $I$(7).ABSOLUTE, null],$I$(2,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
 if (this.bsSelected != null ) bsSelected=this.bsSelected;
 var isVisible=true;
 var setRadius=3.4028235E38;
@@ -173,22 +160,25 @@ atom.setClickable$I(this.vf);
 Clazz.newMeth(C$, 'getShapeState$', function () {
 var dotsConvexMaps=this.ec.getDotsConvexMaps$();
 if (dotsConvexMaps == null  || this.ec.getDotsConvexMax$() == 0 ) return "";
-var s=Clazz.new_($I$(9));
-var temp=Clazz.new_($I$(10));
+var s=Clazz.new_($I$(9,1));
+var temp=Clazz.new_($I$(10,1));
 var ac=this.vwr.ms.ac;
 var type=(this.isSurface ? "geoSurface " : "dots ");
 for (var i=0; i < ac; i++) {
 if (!this.bsOn.get$I(i) || dotsConvexMaps[i] == null  ) continue;
-if (this.bsColixSet != null  && this.bsColixSet.get$I(i) ) $I$(6).setMapBitSet$java_util_Map$I$I$S(temp, i, i, org.jmol.shape.Shape.getColorCommand$S$B$H$Z(type, ($b$[0] = this.paletteIDs[i], $b$[0]), this.colixes[i], this.translucentAllowed));
+if (this.bsColixSet != null  && this.bsColixSet.get$I(i) ) (function(a,f){return f.apply(null,a)})([temp, i, i, $I$(11).getColorCommand$S$B$H$Z(type, this.paletteIDs[i], this.colixes[i], this.translucentAllowed)],$I$(6).setMapBitSet$java_util_Map$I$I$S);
 var bs=dotsConvexMaps[i];
 if (!bs.isEmpty$()) {
 var r=this.ec.getAppropriateRadius$I(i);
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, type + i + " radius " + new Float(r).toString() + " " + $I$(11).eBS$javajs_util_BS(bs) );
+(function(a,f){return f.apply(null,a)})([s, type + i + " radius " + new Float(r).toString() + " " + $I$(12).eBS$javajs_util_BS(bs) ],$I$(11).appendCmd$javajs_util_SB$S);
 }}
 return s.append$S(this.vwr.getCommands$java_util_Map$java_util_Map$S(temp, null, "select")).toString();
 });
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.MAX_LEVEL=3;
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

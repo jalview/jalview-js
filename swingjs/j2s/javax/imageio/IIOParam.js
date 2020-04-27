@@ -1,22 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.imageio"),I$=[[0,'java.awt.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IIOParam");
+(function(){var P$=Clazz.newPackage("javax.imageio"),I$=[[0,'java.awt.Point']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IIOParam");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sourceRegion=null;
-this.sourceXSubsampling=0;
-this.sourceYSubsampling=0;
-this.subsamplingXOffset=0;
-this.subsamplingYOffset=0;
-this.sourceBands=null;
-this.destinationType=null;
-this.destinationOffset=null;
-this.defaultController=null;
-this.controller=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.sourceRegion=null;
@@ -26,13 +11,15 @@ this.subsamplingXOffset=0;
 this.subsamplingYOffset=0;
 this.sourceBands=null;
 this.destinationType=null;
-this.destinationOffset=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+this.destinationOffset=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 this.defaultController=null;
 this.controller=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['sourceXSubsampling','sourceYSubsampling','subsamplingXOffset','subsamplingYOffset'],'O',['sourceRegion','java.awt.Rectangle','sourceBands','int[]','destinationType','javax.imageio.ImageTypeSpecifier','destinationOffset','java.awt.Point','defaultController','javax.imageio.IIOParamController','+controller']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.controller=this.defaultController;
 }, 1);
 
@@ -155,7 +142,7 @@ return (this.controller != null );
 Clazz.newMeth(C$, 'activateController$', function () {
 if (!this.hasController$()) {
 throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["hasController() == false!"]);
-}return this.getController$().activate$(this);
+}return this.getController$().activate$javax_imageio_IIOParam(this);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

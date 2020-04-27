@@ -1,40 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'jalview.datamodel.AlignmentAnnotation','jalview.datamodel.Annotation','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','jalview.bin.JalviewLite','java.awt.Checkbox','jalview.appletgui.EditNameDialog','java.awt.Panel','java.awt.FlowLayout','java.awt.Cursor','jalview.util.ParseHtmlBodyAndLinks','jalview.appletgui.Tooltip','java.awt.Dimension','java.awt.PopupMenu','jalview.util.MessageManager','java.awt.MenuItem','jalview.analysis.AlignmentUtils','java.util.Collections','java.awt.CheckboxMenuItem','jalview.util.Platform','jalview.datamodel.SequenceGroup','jalview.appletgui.PaintRefresher','java.util.Arrays','jalview.datamodel.SequenceI','jalview.appletgui.AlignFrame','StringBuffer','jalview.datamodel.HiddenColumns','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationLabels", null, 'java.awt.Panel', ['java.awt.event.ActionListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
-C$.HEIGHT_ADJUSTER_HEIGHT=0;
-C$.ADDNEW=null;
-C$.EDITNAME=null;
-C$.HIDE=null;
-C$.SHOWALL=null;
-C$.OUTPUT_TEXT=null;
-C$.COPYCONS_SEQ=null;
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'jalview.datamodel.AlignmentAnnotation','jalview.datamodel.Annotation','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','jalview.bin.JalviewLite','java.awt.Checkbox','jalview.appletgui.EditNameDialog','java.awt.Panel','java.awt.FlowLayout','java.awt.Cursor','jalview.util.ParseHtmlBodyAndLinks','jalview.appletgui.Tooltip','java.awt.Dimension','java.awt.PopupMenu','jalview.util.MessageManager','java.awt.MenuItem','jalview.analysis.AlignmentUtils','java.util.Collections','java.awt.CheckboxMenuItem','jalview.util.Platform','jalview.datamodel.SequenceGroup','jalview.appletgui.PaintRefresher','java.util.Arrays','jalview.datamodel.SequenceI','jalview.appletgui.AlignFrame','StringBuffer','jalview.datamodel.HiddenColumns','java.awt.Color']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationLabels", null, 'java.awt.Panel', ['java.awt.event.ActionListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.HEIGHT_ADJUSTER_HEIGHT=10;
-C$.ADDNEW="Add New Row";
-C$.EDITNAME="Edit Label/Description";
-C$.HIDE="Hide This Row";
-C$.SHOWALL="Show All Hidden Rows";
-C$.OUTPUT_TEXT="Show Values In Textbox";
-C$.COPYCONS_SEQ="Copy Consensus Sequence";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.image=null;
-this.active=false;
-this.ap=null;
-this.av=null;
-this.resizing=false;
-this.oldY=0;
-this.mouseX=0;
-this.scrollOffset=0;
-this.selectedRow=0;
-this.tooltip=null;
-this.hasHiddenRows=false;
-this.resizePanel=false;
-this.dragEvent=null;
-this.dragCancelled=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.active=false;
@@ -44,10 +11,13 @@ this.selectedRow=-1;
 this.resizePanel=false;
 this.dragEvent=null;
 this.dragCancelled=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['active','resizing','hasHiddenRows','resizePanel','dragCancelled'],'I',['oldY','mouseX','scrollOffset','selectedRow'],'O',['image','java.awt.Image','ap','jalview.appletgui.AlignmentPanel','av','jalview.appletgui.AlignViewport','tooltip','jalview.appletgui.Tooltip','dragEvent','java.awt.event.MouseEvent']]
+,['I',['HEIGHT_ADJUSTER_HEIGHT'],'S',['ADDNEW','EDITNAME','HIDE','SHOWALL','OUTPUT_TEXT','COPYCONS_SEQ']]]
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignmentPanel', function (ap) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.ap=ap;
 this.av=ap.av;
 this.setLayout$java_awt_LayoutManager(null);
@@ -56,7 +26,7 @@ this.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignViewport', function (av) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=av;
 }, 1);
 
@@ -84,10 +54,10 @@ break;
 return row;
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 var aa=this.av.getAlignment$().getAlignmentAnnotation$();
 if (evt.getActionCommand$().equals$O(C$.ADDNEW)) {
-var newAnnotation=Clazz.new_($I$(1).c$$S$S$jalview_datamodel_AnnotationA,["", null, Clazz.array($I$(2), [this.ap.av.getAlignment$().getWidth$()])]);
+var newAnnotation=Clazz.new_(["", null, Clazz.array($I$(2), [this.ap.av.getAlignment$().getWidth$()])],$I$(1,1).c$$S$S$jalview_datamodel_AnnotationA);
 if (!this.editLabelDescription$jalview_datamodel_AlignmentAnnotation(newAnnotation)) {
 return;
 }this.ap.av.getAlignment$().addAnnotation$jalview_datamodel_AlignmentAnnotation(newAnnotation);
@@ -101,10 +71,10 @@ for (var i=0; i < aa.length; i++) {
 aa[i].visible=(aa[i].annotations == null ) ? false : true;
 }
 } else if (evt.getActionCommand$().equals$O(C$.OUTPUT_TEXT)) {
-var cap=Clazz.new_($I$(3).c$$Z$jalview_appletgui_AlignFrame,[false, this.ap.alignFrame]);
-var frame=Clazz.new_($I$(4));
+var cap=Clazz.new_($I$(3,1).c$$Z$jalview_appletgui_AlignFrame,[false, this.ap.alignFrame]);
+var frame=Clazz.new_($I$(4,1));
 frame.add$java_awt_Component(cap);
-$I$(5).addFrame$java_awt_Frame$S$I$I(frame, this.ap.alignFrame.getTitle$() + " - " + aa[this.selectedRow].label , 500, 100);
+$I$(5,"addFrame$java_awt_Frame$S$I$I",[frame, this.ap.alignFrame.getTitle$() + " - " + aa[this.selectedRow].label , 500, 100]);
 cap.setText$S(aa[this.selectedRow].toString());
 } else if (evt.getActionCommand$().equals$O(C$.COPYCONS_SEQ)) {
 var group=aa[this.selectedRow].groupRef;
@@ -122,9 +92,9 @@ this.ap.paintAlignment$Z$Z(true, true);
 });
 
 Clazz.newMeth(C$, 'editLabelDescription$jalview_datamodel_AlignmentAnnotation', function (annotation) {
-var padGaps=Clazz.new_($I$(6).c$$S$Z,["Fill Empty Gaps With \"" + this.ap.av.getGapCharacter$() + "\"" , annotation.padGaps]);
-var dialog=Clazz.new_($I$(7).c$$S$S$S$S$java_awt_Frame$S$I$I$Z,[annotation.label, annotation.description, "      Annotation Label", "Annotation Description", this.ap.alignFrame, "Edit Annotation Name / Description", 500, 180, false]);
-var empty=Clazz.new_($I$(8).c$$java_awt_LayoutManager,[Clazz.new_($I$(9))]);
+var padGaps=Clazz.new_(["Fill Empty Gaps With \"" + this.ap.av.getGapCharacter$() + "\"" , annotation.padGaps],$I$(6,1).c$$S$Z);
+var dialog=Clazz.new_($I$(7,1).c$$S$S$S$S$java_awt_Frame$S$I$I$Z,[annotation.label, annotation.description, "      Annotation Label", "Annotation Description", this.ap.alignFrame, "Edit Annotation Name / Description", 500, 180, false]);
+var empty=Clazz.new_([Clazz.new_($I$(9,1))],$I$(8,1).c$$java_awt_LayoutManager);
 empty.add$java_awt_Component(padGaps);
 dialog.add$java_awt_Component(empty);
 dialog.pack$();
@@ -144,9 +114,9 @@ this.resizePanel=evt.getY$() < C$.HEIGHT_ADJUSTER_HEIGHT && evt.getX$() < 50 ;
 this.setCursor$java_awt_Cursor($I$(10).getPredefinedCursor$I(this.resizePanel ? 9 : 0));
 var row=this.getSelectedRow$I(evt.getY$() + this.scrollOffset);
 if (row > -1) {
-var phb=Clazz.new_($I$(11).c$$S$Z$S,[this.av.getAlignment$().getAlignmentAnnotation$()[row].getDescription$Z(true), true, "\n"]);
+var phb=Clazz.new_([this.av.getAlignment$().getAlignmentAnnotation$()[row].getDescription$Z(true), true, "\n"],$I$(11,1).c$$S$Z$S);
 if (this.tooltip == null ) {
-this.tooltip=Clazz.new_($I$(12).c$$S$java_awt_Component,[phb.getNonHtmlContent$(), this]);
+this.tooltip=Clazz.new_([phb.getNonHtmlContent$(), this],$I$(12,1).c$$S$java_awt_Component);
 } else {
 this.tooltip.setTip$S(phb.getNonHtmlContent$());
 }} else if (this.tooltip != null ) {
@@ -171,9 +141,9 @@ dif=(dif/(this.ap.av.getCharHeight$())|0);
 dif*=this.ap.av.getCharHeight$();
 if ((d.height - dif) > 20 && (f.height + dif) > 20 ) {
 this.ap.annotationPanel.setSize$I$I(d.width, d.height - dif);
-this.setSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[e.width, d.height - dif]));
-this.ap.annotationSpaceFillerHolder.setSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[e.width, d.height - dif]));
-this.ap.annotationPanelHolder.setSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[d.width, d.height - dif]));
+this.setSize$java_awt_Dimension(Clazz.new_($I$(13,1).c$$I$I,[e.width, d.height - dif]));
+this.ap.annotationSpaceFillerHolder.setSize$java_awt_Dimension(Clazz.new_($I$(13,1).c$$I$I,[e.width, d.height - dif]));
+this.ap.annotationPanelHolder.setSize$java_awt_Dimension(Clazz.new_($I$(13,1).c$$I$I,[d.width, d.height - dif]));
 this.ap.apvscroll.setValues$I$I$I$I(this.ap.apvscroll.getValue$(), d.height - dif, 0, this.av.calcPanelHeight$());
 f.height+=dif;
 this.ap.seqPanelHolder.setPreferredSize$java_awt_Dimension(f);
@@ -237,69 +207,67 @@ return;
 }this.dragCancelled=false;
 this.selectedRow=this.getSelectedRow$I(evt.getY$() + this.scrollOffset);
 var aa=this.ap.av.getAlignment$().getAlignmentAnnotation$();
-if ((evt.getModifiers$() & 4) == 4) {
-var popup=Clazz.new_($I$(14).c$$S,[$I$(15).getString$S("label.annotations")]);
-var item=Clazz.new_($I$(16).c$$S,[C$.ADDNEW]);
+if ((evt.getModifiersEx$() & 4096) == 4096) {
+var popup=Clazz.new_([$I$(15).getString$S("label.annotations")],$I$(14,1).c$$S);
+var item=Clazz.new_($I$(16,1).c$$S,[C$.ADDNEW]);
 item.addActionListener$java_awt_event_ActionListener(this);
 popup.add$java_awt_MenuItem(item);
 if (this.selectedRow < 0) {
 if (this.hasHiddenRows) {
-item=Clazz.new_($I$(16).c$$S,[C$.SHOWALL]);
+item=Clazz.new_($I$(16,1).c$$S,[C$.SHOWALL]);
 item.addActionListener$java_awt_event_ActionListener(this);
 popup.add$java_awt_MenuItem(item);
 }this.add$java_awt_PopupMenu(popup);
 popup.show$java_awt_Component$I$I(this, evt.getX$(), evt.getY$());
 return;
-}item=Clazz.new_($I$(16).c$$S,[C$.EDITNAME]);
+}item=Clazz.new_($I$(16,1).c$$S,[C$.EDITNAME]);
 item.addActionListener$java_awt_event_ActionListener(this);
 popup.add$java_awt_MenuItem(item);
-item=Clazz.new_($I$(16).c$$S,[C$.HIDE]);
+item=Clazz.new_($I$(16,1).c$$S,[C$.HIDE]);
 item.addActionListener$java_awt_event_ActionListener(this);
 popup.add$java_awt_MenuItem(item);
 if (this.selectedRow < aa.length) {
 if (aa[this.selectedRow].sequenceRef != null ) {
 var label=aa[this.selectedRow].label;
-var hideType=Clazz.new_($I$(16).c$$S,[$I$(15).getString$S("label.hide_all") + " " + label ]);
+var hideType=Clazz.new_([$I$(15).getString$S("label.hide_all") + " " + label ],$I$(16,1).c$$S);
 hideType.addActionListener$java_awt_event_ActionListener(((P$.AnnotationLabels$1||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-$I$(17).showOrHideSequenceAnnotations$jalview_datamodel_AlignmentI$java_util_Collection$java_util_List$Z$Z(this.b$['jalview.appletgui.AnnotationLabels'].ap.av.getAlignment$(), $I$(18).singleton$TT(this.$finals$.label), null, false, false);
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+$I$(17,"showOrHideSequenceAnnotations$jalview_datamodel_AlignmentI$java_util_Collection$java_util_List$Z$Z",[this.b$['jalview.appletgui.AnnotationLabels'].ap.av.getAlignment$(), $I$(18).singleton$O(this.$finals$.label), null, false, false]);
 this.b$['jalview.appletgui.AnnotationLabels'].refresh$.apply(this.b$['jalview.appletgui.AnnotationLabels'], []);
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$1.$init$, [this, {label: label}])));
+), Clazz.new_(P$.AnnotationLabels$1.$init$,[this, {label:label}])));
 popup.add$java_awt_MenuItem(hideType);
 }}if (this.hasHiddenRows) {
-item=Clazz.new_($I$(16).c$$S,[C$.SHOWALL]);
+item=Clazz.new_($I$(16,1).c$$S,[C$.SHOWALL]);
 item.addActionListener$java_awt_event_ActionListener(this);
 popup.add$java_awt_MenuItem(item);
 }this.add$java_awt_PopupMenu(popup);
-item=Clazz.new_($I$(16).c$$S,[C$.OUTPUT_TEXT]);
+item=Clazz.new_($I$(16,1).c$$S,[C$.OUTPUT_TEXT]);
 item.addActionListener$java_awt_event_ActionListener(this);
 popup.add$java_awt_MenuItem(item);
 if (this.selectedRow < aa.length) {
 if (aa[this.selectedRow].autoCalculated) {
 if (aa[this.selectedRow].label.indexOf$S("Consensus") > -1) {
 popup.addSeparator$();
-var cbmi=Clazz.new_($I$(19).c$$S$Z,[$I$(15).getString$S("label.ignore_gaps_consensus"), (aa[this.selectedRow].groupRef != null ) ? aa[this.selectedRow].groupRef.getIgnoreGapsConsensus$() : this.ap.av.isIgnoreGapsConsensus$()]);
+var cbmi=Clazz.new_([$I$(15).getString$S("label.ignore_gaps_consensus"), (aa[this.selectedRow].groupRef != null ) ? aa[this.selectedRow].groupRef.getIgnoreGapsConsensus$() : this.ap.av.isIgnoreGapsConsensus$()],$I$(19,1).c$$S$Z);
 var aaa=aa[this.selectedRow];
 cbmi.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$2||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 if (this.$finals$.aaa.groupRef != null ) {
 this.$finals$.aaa.groupRef.setIgnoreGapsConsensus$Z(this.$finals$.cbmi.getState$());
 } else {
@@ -307,118 +275,112 @@ this.b$['jalview.appletgui.AnnotationLabels'].ap.av.setIgnoreGapsConsensus$Z$jal
 }this.b$['jalview.appletgui.AnnotationLabels'].ap.paintAlignment$Z$Z(true, true);
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$2.$init$, [this, {aaa: aaa, cbmi: cbmi}])));
+), Clazz.new_(P$.AnnotationLabels$2.$init$,[this, {aaa:aaa,cbmi:cbmi}])));
 popup.add$java_awt_MenuItem(cbmi);
 if (aaa.groupRef != null ) {
-var chist=Clazz.new_($I$(19).c$$S$Z,[$I$(15).getString$S("label.show_group_histogram"), aa[this.selectedRow].groupRef.isShowConsensusHistogram$()]);
+var chist=Clazz.new_([$I$(15).getString$S("label.show_group_histogram"), aa[this.selectedRow].groupRef.isShowConsensusHistogram$()],$I$(19,1).c$$S$Z);
 chist.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$3||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 this.$finals$.aaa.groupRef.setShowConsensusHistogram$Z(this.$finals$.chist.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$3.$init$, [this, {aaa: aaa, chist: chist}])));
+), Clazz.new_(P$.AnnotationLabels$3.$init$,[this, {aaa:aaa,chist:chist}])));
 popup.add$java_awt_MenuItem(chist);
-var cprofl=Clazz.new_($I$(19).c$$S$Z,[$I$(15).getString$S("label.show_group_logo"), aa[this.selectedRow].groupRef.isShowSequenceLogo$()]);
+var cprofl=Clazz.new_([$I$(15).getString$S("label.show_group_logo"), aa[this.selectedRow].groupRef.isShowSequenceLogo$()],$I$(19,1).c$$S$Z);
 cprofl.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$4||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 this.$finals$.aaa.groupRef.setshowSequenceLogo$Z(this.$finals$.cprofl.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$4.$init$, [this, {aaa: aaa, cprofl: cprofl}])));
+), Clazz.new_(P$.AnnotationLabels$4.$init$,[this, {aaa:aaa,cprofl:cprofl}])));
 popup.add$java_awt_MenuItem(cprofl);
-var cprofn=Clazz.new_($I$(19).c$$S$Z,[$I$(15).getString$S("label.normalise_group_logo"), aa[this.selectedRow].groupRef.isNormaliseSequenceLogo$()]);
+var cprofn=Clazz.new_([$I$(15).getString$S("label.normalise_group_logo"), aa[this.selectedRow].groupRef.isNormaliseSequenceLogo$()],$I$(19,1).c$$S$Z);
 cprofn.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$5||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 this.$finals$.aaa.groupRef.setshowSequenceLogo$Z(true);
 this.$finals$.aaa.groupRef.setNormaliseSequenceLogo$Z(this.$finals$.cprofn.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$5.$init$, [this, {aaa: aaa, cprofn: cprofn}])));
+), Clazz.new_(P$.AnnotationLabels$5.$init$,[this, {aaa:aaa,cprofn:cprofn}])));
 popup.add$java_awt_MenuItem(cprofn);
 } else {
-var chist=Clazz.new_($I$(19).c$$S$Z,[$I$(15).getString$S("label.show_histogram"), this.av.isShowConsensusHistogram$()]);
+var chist=Clazz.new_([$I$(15).getString$S("label.show_histogram"), this.av.isShowConsensusHistogram$()],$I$(19,1).c$$S$Z);
 chist.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$6||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 this.b$['jalview.appletgui.AnnotationLabels'].av.setShowConsensusHistogram$Z(this.$finals$.chist.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.alignFrame.showConsensusHistogram.setState$Z(this.$finals$.chist.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$6.$init$, [this, {chist: chist}])));
+), Clazz.new_(P$.AnnotationLabels$6.$init$,[this, {chist:chist}])));
 popup.add$java_awt_MenuItem(chist);
-var cprof=Clazz.new_($I$(19).c$$S$Z,[$I$(15).getString$S("label.show_logo"), this.av.isShowSequenceLogo$()]);
+var cprof=Clazz.new_([$I$(15).getString$S("label.show_logo"), this.av.isShowSequenceLogo$()],$I$(19,1).c$$S$Z);
 cprof.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$7||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$7", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$7", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 this.b$['jalview.appletgui.AnnotationLabels'].av.setShowSequenceLogo$Z(this.$finals$.cprof.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.alignFrame.showSequenceLogo.setState$Z(this.$finals$.cprof.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$7.$init$, [this, {cprof: cprof}])));
+), Clazz.new_(P$.AnnotationLabels$7.$init$,[this, {cprof:cprof}])));
 popup.add$java_awt_MenuItem(cprof);
-var cprofn=Clazz.new_($I$(19).c$$S$Z,[$I$(15).getString$S("label.normalise_logo"), this.av.isNormaliseSequenceLogo$()]);
+var cprofn=Clazz.new_([$I$(15).getString$S("label.normalise_logo"), this.av.isNormaliseSequenceLogo$()],$I$(19,1).c$$S$Z);
 cprofn.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$8||
-(function(){var C$=Clazz.newClass(P$, "AnnotationLabels$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AnnotationLabels$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
 this.b$['jalview.appletgui.AnnotationLabels'].av.setShowSequenceLogo$Z(true);
 this.b$['jalview.appletgui.AnnotationLabels'].ap.alignFrame.normSequenceLogo.setState$Z(this.$finals$.cprofn.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].av.setNormaliseSequenceLogo$Z(this.$finals$.cprofn.getState$());
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$8.$init$, [this, {cprofn: cprofn}])));
+), Clazz.new_(P$.AnnotationLabels$8.$init$,[this, {cprofn:cprofn}])));
 popup.add$java_awt_MenuItem(cprofn);
-}item=Clazz.new_($I$(16).c$$S,[C$.COPYCONS_SEQ]);
+}item=Clazz.new_($I$(16,1).c$$S,[C$.COPYCONS_SEQ]);
 item.addActionListener$java_awt_event_ActionListener(this);
 popup.add$java_awt_MenuItem(item);
 }}}popup.show$java_awt_Component$I$I(this, evt.getX$(), evt.getY$());
@@ -430,7 +392,7 @@ this.ap.seqPanel.ap.idPanel.highlightSearchResults$java_util_List(null);
 var sg=this.ap.av.getSelectionGroup$();
 if (sg == null  || sg === aa[this.selectedRow].groupRef   || !($I$(20).isControlDown$java_awt_event_MouseEvent(evt) || evt.isShiftDown$() ) ) {
 if ($I$(20).isControlDown$java_awt_event_MouseEvent(evt) || evt.isShiftDown$() ) {
-this.ap.av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(21).c$$jalview_datamodel_SequenceGroup,[aa[this.selectedRow].groupRef]));
+this.ap.av.setSelectionGroup$jalview_datamodel_SequenceGroup(Clazz.new_($I$(21,1).c$$jalview_datamodel_SequenceGroup,[aa[this.selectedRow].groupRef]));
 } else {
 this.ap.av.setSelectionGroup$jalview_datamodel_SequenceGroup(aa[this.selectedRow].groupRef);
 }} else {
@@ -442,20 +404,20 @@ sg.addOrRemove$jalview_datamodel_SequenceI$Z(sgs, --remainToAdd == 0);
 sg.addSequence$jalview_datamodel_SequenceI$Z(sgs, --remainToAdd == 0);
 }}
 }this.ap.paintAlignment$Z$Z(false, false);
-$I$(22).Refresh$java_awt_Component$S(this.ap, this.ap.av.getSequenceSetId$());
+$I$(22,"Refresh$java_awt_Component$S",[this.ap, this.ap.av.getSequenceSetId$()]);
 this.ap.av.sendSelection$();
 } else {
 this.ap.seqPanel.ap.idPanel.highlightSearchResults$java_util_List(aa[this.selectedRow].groupRef.getSequences$java_util_Map(null));
 }return;
 } else if (aa[this.selectedRow].sequenceRef != null ) {
 if (evt.getClickCount$() == 1) {
-this.ap.seqPanel.ap.idPanel.highlightSearchResults$java_util_List($I$(23).asList$TTA(Clazz.array($I$(24), -1, [aa[this.selectedRow].sequenceRef])));
+this.ap.seqPanel.ap.idPanel.highlightSearchResults$java_util_List($I$(23,"asList$OA",[Clazz.array($I$(24), -1, [aa[this.selectedRow].sequenceRef])]));
 } else if (evt.getClickCount$() >= 2) {
 this.ap.seqPanel.ap.idPanel.highlightSearchResults$java_util_List(null);
 var sg=this.ap.av.getSelectionGroup$();
 if (sg != null ) {
 if (!($I$(20).isControlDown$java_awt_event_MouseEvent(evt) || evt.isShiftDown$() )) {
-sg=Clazz.new_($I$(21).c$$jalview_datamodel_SequenceGroup,[sg]);
+sg=Clazz.new_($I$(21,1).c$$jalview_datamodel_SequenceGroup,[sg]);
 sg.clear$();
 sg.addSequence$jalview_datamodel_SequenceI$Z(aa[this.selectedRow].sequenceRef, false);
 } else {
@@ -464,23 +426,23 @@ sg.addOrRemove$jalview_datamodel_SequenceI$Z(aa[this.selectedRow].sequenceRef, t
 } else {
 sg.addSequence$jalview_datamodel_SequenceI$Z(aa[this.selectedRow].sequenceRef, true);
 }}} else {
-sg=Clazz.new_($I$(21));
+sg=Clazz.new_($I$(21,1));
 sg.setStartRes$I(0);
 sg.setEndRes$I(this.ap.av.getAlignment$().getWidth$() - 1);
 sg.addSequence$jalview_datamodel_SequenceI$Z(aa[this.selectedRow].sequenceRef, false);
 }this.ap.av.setSelectionGroup$jalview_datamodel_SequenceGroup(sg);
 this.ap.paintAlignment$Z$Z(false, false);
-$I$(22).Refresh$java_awt_Component$S(this.ap, this.ap.av.getSequenceSetId$());
+$I$(22,"Refresh$java_awt_Component$S",[this.ap, this.ap.av.getSequenceSetId$()]);
 this.ap.av.sendSelection$();
 }}}}});
 
 Clazz.newMeth(C$, 'copy_annotseqtoclipboard$jalview_datamodel_SequenceI', function (sq) {
 if (sq == null  || sq.getLength$() < 1 ) {
 return;
-}$I$(25).copiedSequences=Clazz.new_($I$(26));
+}$I$(25).copiedSequences=Clazz.new_($I$(26,1));
 $I$(25).copiedSequences.append$S(sq.getName$() + "\t" + sq.getStart$() + "\t" + sq.getEnd$() + "\t" + sq.getSequenceAsString$() + "\n" );
 if (this.av.hasHiddenColumns$()) {
-$I$(25).copiedHiddenColumns=Clazz.new_($I$(27).c$$jalview_datamodel_HiddenColumns,[this.av.getAlignment$().getHiddenColumns$()]);
+$I$(25).copiedHiddenColumns=Clazz.new_([this.av.getAlignment$().getHiddenColumns$()],$I$(27,1).c$$jalview_datamodel_HiddenColumns);
 }});
 
 Clazz.newMeth(C$, 'update$java_awt_Graphics', function (g) {
@@ -529,6 +491,16 @@ g.drawString$S$I$I($I$(15).getString$S("label.right_click"), 2, 8);
 g.drawString$S$I$I($I$(15).getString$S("label.to_add_annotation"), 2, 18);
 }});
 
+C$.$static$=function(){C$.$static$=0;
+C$.HEIGHT_ADJUSTER_HEIGHT=10;
+C$.ADDNEW="Add New Row";
+C$.EDITNAME="Edit Label/Description";
+C$.HIDE="Hide This Row";
+C$.SHOWALL="Show All Hidden Rows";
+C$.OUTPUT_TEXT="Show Values In Textbox";
+C$.COPYCONS_SEQ="Copy Consensus Sequence";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

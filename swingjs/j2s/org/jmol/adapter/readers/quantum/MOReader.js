@@ -1,32 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','javajs.util.Lst','javajs.util.AU','java.util.Hashtable','org.jmol.quantum.QS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MOReader", null, 'org.jmol.adapter.readers.quantum.BasisFunctionReader');
-C$.FC_LIST=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','javajs.util.Lst','javajs.util.AU','java.util.Hashtable','org.jmol.adapter.readers.quantum.BasisFunctionReader','org.jmol.quantum.QS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MOReader", null, 'org.jmol.adapter.readers.quantum.BasisFunctionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.FC_LIST="(F1)  (F2)  (F10) (F4)  (F2)  (F3)  (F6)  (F9)  (F8)  (F5)";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.shellCount=0;
-this.gaussianCount=0;
-this.gaussians=null;
-this.energyUnits=null;
-this.moTypes=null;
-this.getNBOs=false;
-this.getNBOCharges=false;
-this.haveNboCharges=false;
-this.haveNboOrbitals=false;
-this.orbitalsRead=false;
-this.lastMoData=null;
-this.allowNoOrbitals=false;
-this.HEADER_GAMESS_UK_MO=0;
-this.HEADER_GAMESS_OCCUPANCIES=0;
-this.HEADER_GAMESS_ORIGINAL=0;
-this.HEADER_NONE=0;
-this.haveCoeffMap=false;
-this.iMo0=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.shellCount=0;
@@ -37,7 +12,10 @@ this.HEADER_GAMESS_OCCUPANCIES=2;
 this.HEADER_GAMESS_ORIGINAL=1;
 this.HEADER_NONE=0;
 this.iMo0=1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['getNBOs','getNBOCharges','haveNboCharges','haveNboOrbitals','orbitalsRead','allowNoOrbitals','haveCoeffMap'],'I',['shellCount','gaussianCount','HEADER_GAMESS_UK_MO','HEADER_GAMESS_OCCUPANCIES','HEADER_GAMESS_ORIGINAL','HEADER_NONE','iMo0'],'S',['energyUnits'],'O',['gaussians','float[][]','moTypes','javajs.util.Lst','lastMoData','java.util.Map']]
+,['S',['FC_LIST']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.line="\nNBOs";
@@ -82,19 +60,19 @@ var atoms=this.asc.atoms;
 for (var i=i0; i < ac; ++i) {
 while (atoms[i].elementNumber == 0)++i;
 
-var tokens=$I$(1).getTokens$S(this.rd$());
+var tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(1).getTokens$S);
 var charge;
 if (tokens == null  || tokens.length < 3  || Float.isNaN$F(charge=this.parseFloatStr$S(tokens[2])) ) {
 $I$(2).info$S("Error reading NBO charges: " + this.line);
 return;
 }atoms[i].partialCharge=charge;
-if (this.debugging) $I$(2).debug$S("Atom " + i + " using NBOcharge: " + new Float(charge).toString() );
+if (this.debugging) (function(a,f){return f.apply(null,a)})(["Atom " + i + " using NBOcharge: " + new Float(charge).toString() ],$I$(2).debug$S);
 }
 $I$(2).info$S("Using NBO charges for Model " + this.asc.atomSetCount);
 }, p$1);
 
 Clazz.newMeth(C$, 'getNboTypes$', function () {
-this.moTypes=Clazz.new_($I$(3));
+this.moTypes=Clazz.new_($I$(3,1));
 this.iMo0=(this.orbitals == null  ? 0 : this.orbitals.size$()) + 1;
 this.rd$();
 this.rd$();
@@ -102,7 +80,7 @@ var n=0;
 var pt=0;
 while (this.line != null  && (pt=this.line.indexOf$S(".")) >= 0  && pt < 10 ){
 if (this.parseIntRange$S$I$I(this.line, 0, pt) != n + 1) break;
-this.moTypes.add$I$TE(n++, this.line.substring$I$I(pt + 1, Math.min(40, this.line.length$())).trim$());
+this.moTypes.add$I$O(n++, this.line.substring$I$I(pt + 1, Math.min(40, this.line.length$())).trim$());
 while (this.rd$() != null  && this.line.startsWith$S("       ") ){
 }
 }
@@ -115,7 +93,7 @@ this.rd$();
 return;
 }this.dfCoefMaps=null;
 if (this.haveNboOrbitals) {
-this.orbitals=Clazz.new_($I$(3));
+this.orbitals=Clazz.new_($I$(3,1));
 this.alphaBeta="";
 }this.haveNboOrbitals=true;
 this.orbitalsRead=true;
@@ -187,8 +165,8 @@ fieldSize=8;
 mos=$I$(4).createArrayOfHashtable$I(nThisLine);
 data=$I$(4).createArrayOfArrayList$I(nThisLine);
 }for (var i=0; i < nThisLine; i++) {
-mos[i]=Clazz.new_($I$(5));
-data[i]=Clazz.new_($I$(3));
+mos[i]=Clazz.new_($I$(5,1));
+data[i]=Clazz.new_($I$(3,1));
 }
 this.getMOHeader$I$SA$java_util_MapA$I(headerType, tokens, mos, nThisLine);
 continue;
@@ -203,25 +181,25 @@ case 112:
 pCoeffLabels += " " + type.toUpperCase$();
 break;
 case 100:
-dCoeffLabels += " " + P$.BasisFunctionReader.canonicalizeQuantumSubshellTag$S(type.toUpperCase$());
+dCoeffLabels += " " + (function(a,f){return f.apply(null,a)})([type.toUpperCase$()],$I$(6).canonicalizeQuantumSubshellTag$S);
 break;
 case 102:
-fCoeffLabels += " " + P$.BasisFunctionReader.canonicalizeQuantumSubshellTag$S(type.toUpperCase$());
+fCoeffLabels += " " + (function(a,f){return f.apply(null,a)})([type.toUpperCase$()],$I$(6).canonicalizeQuantumSubshellTag$S);
 break;
 case 115:
 }
 }} else {
 var nChar=type.length$();
 ch=(nChar < 4 ? "S" : nChar == 4 ? "G" : nChar == 5 ? "H" : "?");
-if (!this.haveCoeffMap && nChar == 3 ) fCoeffLabels += " " + P$.BasisFunctionReader.canonicalizeQuantumSubshellTag$S(type.toUpperCase$());
- else if (!this.haveCoeffMap && nChar == 2 ) dCoeffLabels += " " + P$.BasisFunctionReader.canonicalizeQuantumSubshellTag$S(type.toUpperCase$());
-}if ($I$(6).isQuantumBasisSupported$C(ch)) {
+if (!this.haveCoeffMap && nChar == 3 ) fCoeffLabels += " " + (function(a,f){return f.apply(null,a)})([type.toUpperCase$()],$I$(6).canonicalizeQuantumSubshellTag$S);
+ else if (!this.haveCoeffMap && nChar == 2 ) dCoeffLabels += " " + (function(a,f){return f.apply(null,a)})([type.toUpperCase$()],$I$(6).canonicalizeQuantumSubshellTag$S);
+}if ($I$(7).isQuantumBasisSupported$C(ch)) {
 if (ptOffset < 0) {
-for (var i=0; i < nThisLine; i++) data[i].addLast$TV(tokens[i + nSkip]);
+for (var i=0; i < nThisLine; i++) data[i].addLast$O(tokens[i + nSkip]);
 
 } else {
 var pt=ptOffset;
-for (var i=0; i < nThisLine; i++, pt+=fieldSize) data[i].addLast$TV(this.line.substring$I$I(pt, pt + fieldSize).trim$());
+for (var i=0; i < nThisLine; i++, pt+=fieldSize) data[i].addLast$O(this.line.substring$I$I(pt, pt + fieldSize).trim$());
 
 }}this.line="";
 }
@@ -232,15 +210,15 @@ this.dfCoefMaps=null;
 });
 
 Clazz.newMeth(C$, 'addCoef$java_util_Map$FA$S$F$F$I', function (mo, coefs, type, energy, occ, moCount) {
-mo.put$TK$TV("coefficients", coefs);
+mo.put$O$O("coefficients", coefs);
 if (this.moTypes != null ) {
 type=this.moTypes.get$I(moCount % this.moTypes.size$());
 occ=(type.indexOf$S("*") >= 0 ? 0 : 2);
 } else if (this.alphaBeta.length$() > 0) {
 type=this.alphaBeta;
-}if (type != null ) mo.put$TK$TV("type", type);
-if (!Float.isNaN$F(energy)) mo.put$TK$TV("energy", Float.valueOf$F(energy));
-if (!Float.isNaN$F(occ)) mo.put$TK$TV("occupancy", Float.valueOf$F(occ));
+}if (type != null ) mo.put$O$O("type", type);
+if (!Float.isNaN$F(energy)) mo.put$O$O("energy", Float.valueOf$F(energy));
+if (!Float.isNaN$F(occ)) mo.put$O$O("occupancy", Float.valueOf$F(occ));
 this.setMO$java_util_Map(mo);
 });
 
@@ -251,29 +229,29 @@ default:
 case 0:
 return;
 case 3:
-for (var i=0; i < nThisLine; i++) mos[i].put$TK$TV("energy", Float.valueOf$S(tokens[i]));
+for (var i=0; i < nThisLine; i++) mos[i].put$O$O("energy", Float.valueOf$S(tokens[i]));
 
 this.readLines$I(5);
 return;
 case 1:
 tokens=this.getTokens$();
-if (tokens.length == 0) tokens=$I$(1).getTokens$S(this.rd$());
+if (tokens.length == 0) tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(1).getTokens$S);
 for (var i=0; i < nThisLine; i++) {
-mos[i].put$TK$TV("energy", Float.valueOf$S(tokens[i]));
+mos[i].put$O$O("energy", Float.valueOf$S(tokens[i]));
 }
 this.rd$();
 break;
 case 2:
 var haveSymmetry=(this.line.length$() > 0 || this.rd$() != null  );
 tokens=this.getTokens$();
-for (var i=0; i < nThisLine; i++) mos[i].put$TK$TV("occupancy", Float.valueOf$F(tokens[i].charAt$I(0) == "-" ? 2.0 : this.parseFloatStr$S(tokens[i])));
+for (var i=0; i < nThisLine; i++) mos[i].put$O$O("occupancy", Float.valueOf$F(tokens[i].charAt$I(0) == "-" ? 2.0 : this.parseFloatStr$S(tokens[i])));
 
 this.rd$();
 if (!haveSymmetry) return;
 }
 if (this.line.length$() > 0) {
 tokens=this.getTokens$();
-for (var i=0; i < nThisLine; i++) mos[i].put$TK$TV("symmetry", tokens[i]);
+for (var i=0; i < nThisLine; i++) mos[i].put$O$O("symmetry", tokens[i]);
 
 }});
 
@@ -282,18 +260,18 @@ for (var i=0; i < nColumns; i++) {
 var coefs=Clazz.array(Float.TYPE, [data[i].size$()]);
 for (var j=coefs.length; --j >= 0; ) coefs[j]=this.parseFloatStr$S(data[i].get$I(j));
 
-mos[i].put$TK$TV("coefficients", coefs);
+mos[i].put$O$O("coefficients", coefs);
 this.setMO$java_util_Map(mos[i]);
 }
 });
 
 Clazz.newMeth(C$, 'setMOData$Z', function (clearOrbitals) {
 if (this.shells != null  && this.gaussians != null   && (this.allowNoOrbitals || this.orbitals.size$() != 0 ) ) {
-this.moData.put$TK$TV("calculationType", this.calculationType);
-this.moData.put$TK$TV("energyUnits", this.energyUnits);
-this.moData.put$TK$TV("shells", this.shells);
-this.moData.put$TK$TV("gaussians", this.gaussians);
-this.moData.put$TK$TV("mos", this.orbitals);
+this.moData.put$O$O("calculationType", this.calculationType);
+this.moData.put$O$O("energyUnits", this.energyUnits);
+this.moData.put$O$O("shells", this.shells);
+this.moData.put$O$O("gaussians", this.gaussians);
+this.moData.put$O$O("mos", this.orbitals);
 this.finalizeMOData$java_util_Map(this.lastMoData=this.moData);
 }if (clearOrbitals) {
 this.clearOrbitals$();
@@ -302,16 +280,16 @@ this.clearOrbitals$();
 Clazz.newMeth(C$, 'readSecondOrderData', function () {
 this.readLines$I(5);
 if (this.lastMoData == null  || this.moTypes == null  ) return;
-var ht=Clazz.new_($I$(5));
-for (var i=this.moTypes.size$(); --i >= 0; ) ht.put$TK$TV($I$(1).rep$S$S$S(this.moTypes.get$I(i).substring$I(10), " ", ""), Integer.valueOf$I(i + this.iMo0));
+var ht=Clazz.new_($I$(5,1));
+for (var i=this.moTypes.size$(); --i >= 0; ) ht.put$O$O((function(a,f){return f.apply(null,a)})([this.moTypes.get$I(i).substring$I(10), " ", ""],$I$(1).rep$S$S$S), Integer.valueOf$I(i + this.iMo0));
 
-var strSecondOrderData=Clazz.new_($I$(3));
+var strSecondOrderData=Clazz.new_($I$(3,1));
 while (this.rd$() != null  && this.line.indexOf$S("NBO") < 0 ){
 if (this.line.length$() < 5 || this.line.charAt$I(4) != "." ) continue;
-strSecondOrderData.addLast$TV(Clazz.array(String, -1, [$I$(1).rep$S$S$S(this.line.substring$I$I(5, 27).trim$(), " ", ""), $I$(1).rep$S$S$S(this.line.substring$I$I(32, 54).trim$(), " ", ""), this.line.substring$I$I(55, 62).trim$(), this.line.substring$I(71).trim$()]));
+strSecondOrderData.addLast$O(Clazz.array(String, -1, [(function(a,f){return f.apply(null,a)})([this.line.substring$I$I(5, 27).trim$(), " ", ""],$I$(1).rep$S$S$S), (function(a,f){return f.apply(null,a)})([this.line.substring$I$I(32, 54).trim$(), " ", ""],$I$(1).rep$S$S$S), this.line.substring$I$I(55, 62).trim$(), this.line.substring$I(71).trim$()]));
 }
 var secondOrderData=Clazz.array(Float.TYPE, [strSecondOrderData.size$(), 4]);
-this.lastMoData.put$TK$TV("secondOrderData", secondOrderData);
+this.lastMoData.put$O$O("secondOrderData", secondOrderData);
 this.lastMoData=null;
 var IMO;
 for (var i=strSecondOrderData.size$(); --i >= 0; ) {
@@ -325,6 +303,10 @@ secondOrderData[i][3]=this.parseFloatStr$S(a[3]);
 }
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.FC_LIST="(F1)  (F2)  (F10) (F4)  (F2)  (F3)  (F6)  (F9)  (F8)  (F5)";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,38 +1,21 @@
-(function(){var P$=Clazz.newPackage("swingjs.jzlib"),p$1={},I$=[[0,'swingjs.jzlib.InfBlocks','swingjs.jzlib.CRC32','swingjs.jzlib.GZIPHeader','swingjs.jzlib.Adler32',['swingjs.jzlib.Inflate','.Return'],'java.io.ByteArrayOutputStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Inflate", function(){
+(function(){var P$=Clazz.newPackage("swingjs.jzlib"),p$1={},I$=[[0,'swingjs.jzlib.InfBlocks','swingjs.jzlib.CRC32','swingjs.jzlib.GZIPHeader','swingjs.jzlib.Adler32',['swingjs.jzlib.Inflate','.Return'],'java.io.ByteArrayOutputStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Inflate", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.mark=null;
+C$.$classes$=[['Return',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.mark=Clazz.array(Byte.TYPE, -1, [0, 0, -1, -1]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mode=0;
-this.method=0;
-this.was=0;
-this.need=0;
-this.marker=0;
-this.wrap=0;
-this.wbits=0;
-this.blocks=null;
-this.z=null;
-this.flags=0;
-this.need_bytes=0;
-this.crcbuf=null;
-this.gheader=null;
-this.tmp_string=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.was=-1;
-this.need_bytes=-1;
+this.need秘bytes=-1;
 this.crcbuf=Clazz.array(Byte.TYPE, [4]);
 this.gheader=null;
 this.tmp_string=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mode','method','marker','wrap','wbits','flags','need秘bytes'],'J',['was','need'],'O',['blocks','swingjs.jzlib.InfBlocks','z','swingjs.jzlib.ZStream','crcbuf','byte[]','gheader','swingjs.jzlib.GZIPHeader','tmp_string','java.io.ByteArrayOutputStream']]
+,['O',['mark','byte[]']]]
 
 Clazz.newMeth(C$, 'reset$', function () {
 this.inflateReset$();
@@ -43,7 +26,7 @@ if (this.z == null ) return -2;
 this.z.total_in=this.z.total_out=0;
 this.z.msg=null;
 this.mode=14;
-this.need_bytes=-1;
+this.need秘bytes=-1;
 this.blocks.reset$();
 return 0;
 });
@@ -55,7 +38,7 @@ this.blocks.free$();
 });
 
 Clazz.newMeth(C$, 'c$$swingjs_jzlib_ZStream', function (z) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.z=z;
 }, 1);
 
@@ -75,7 +58,7 @@ return -2;
 this.blocks.free$();
 this.blocks=null;
 }this.wbits=w;
-this.blocks=Clazz.new_($I$(1).c$$swingjs_jzlib_ZStream$I,[this.z, 1 << w]);
+this.blocks=Clazz.new_($I$(1,1).c$$swingjs_jzlib_ZStream$I,[this.z, 1 << w]);
 this.inflateReset$();
 return 0;
 });
@@ -83,7 +66,7 @@ return 0;
 Clazz.newMeth(C$, 'inflate$I', function (f) {
 var r;
 var b;
-if (this.z == null  || this.z.next_in == null  ) {
+if (this.z == null  || this.z.$in == null  ) {
 if (f == 4 && this.mode == 14 ) return 0;
 return -2;
 }f=f == 4 ? -5 : 0;
@@ -104,9 +87,9 @@ throw e;
 }
 }
 if ((this.wrap & 2) != 0 && this.need == 35615 ) {
-this.z.checksum=Clazz.new_($I$(2));
+this.z.checksum=Clazz.new_($I$(2,1));
 p$1.checksum$I$J.apply(this, [2, this.need]);
-if (this.gheader == null ) this.gheader=Clazz.new_($I$(3));
+if (this.gheader == null ) this.gheader=Clazz.new_($I$(3,1));
 this.mode=23;
 break;
 }this.flags=0;
@@ -124,7 +107,7 @@ break;
 this.mode=13;
 this.z.msg="invalid window size";
 break;
-}this.z.checksum=Clazz.new_($I$(4));
+}this.z.checksum=Clazz.new_($I$(4,1));
 if ((b & 32) == 0) {
 this.mode=7;
 break;
@@ -134,28 +117,28 @@ if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need=((this.z.next_in[this.z.next_in_index++] & 255) << 24) & 4278190080;
+this.need=((this.z.$in[this.z.in_index++] & 255) << 24) & 4278190080;
 this.mode=3;
 case 3:
 if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 16) & 16711680;
+this.need+=((this.z.$in[this.z.in_index++] & 255) << 16) & 16711680;
 this.mode=4;
 case 4:
 if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 8) & 65280;
+this.need+=((this.z.$in[this.z.in_index++] & 255) << 8) & 65280;
 this.mode=5;
 case 5:
 if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need+=(this.z.next_in[this.z.next_in_index++] & 255);
+this.need+=(this.z.$in[this.z.in_index++] & 255);
 this.z.checksum.resetLong$J(this.need);
 this.mode=6;
 return 2;
@@ -186,28 +169,28 @@ if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need=((this.z.next_in[this.z.next_in_index++] & 255) << 24) & 4278190080;
+this.need=((this.z.$in[this.z.in_index++] & 255) << 24) & 4278190080;
 this.mode=9;
 case 9:
 if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 16) & 16711680;
+this.need+=((this.z.$in[this.z.in_index++] & 255) << 16) & 16711680;
 this.mode=10;
 case 10:
 if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need+=((this.z.next_in[this.z.next_in_index++] & 255) << 8) & 65280;
+this.need+=((this.z.$in[this.z.in_index++] & 255) << 8) & 65280;
 this.mode=11;
 case 11:
 if (this.z.avail_in == 0) return r;
 r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need+=(this.z.next_in[this.z.next_in_index++] & 255);
+this.need+=(this.z.$in[this.z.in_index++] & 255);
 if (this.flags != 0) {
 this.need=((this.need & -16777216) >> 24 | (this.need & 16711680) >> 8 | (this.need & 65280) << 8 | (this.need & 65535) << 24) & 4294967295;
 }if ((((this.was)|0)) != (((this.need)|0))) {
@@ -390,7 +373,7 @@ this.mode=13;
 this.z.msg="header crc mismatch";
 this.marker=5;
 break;
-}}this.z.checksum=Clazz.new_($I$(2));
+}}this.z.checksum=Clazz.new_($I$(2,1));
 this.mode=7;
 break;
 default:
@@ -430,20 +413,20 @@ if (this.mode != 13) {
 this.mode=13;
 this.marker=0;
 }if ((n=this.z.avail_in) == 0) return -5;
-p=this.z.next_in_index;
+p=this.z.in_index;
 m=this.marker;
 while (n != 0 && m < 4 ){
-if (this.z.next_in[p] == C$.mark[m]) {
+if (this.z.$in[p] == C$.mark[m]) {
 m++;
-} else if (this.z.next_in[p] != 0) {
+} else if (this.z.$in[p] != 0) {
 m=0;
 } else {
 m=4 - m;
 }p++;
 n--;
 }
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+this.z.total_in+=p - this.z.in_index;
+this.z.in_index=p;
 this.z.avail_in=n;
 this.marker=m;
 if (m != 4) {
@@ -463,56 +446,56 @@ return this.blocks.sync_point$();
 });
 
 Clazz.newMeth(C$, 'readBytes$I$I$I', function (n, r, f) {
-if (this.need_bytes == -1) {
-this.need_bytes=n;
+if (this.need秘bytes == -1) {
+this.need秘bytes=n;
 this.need=0;
-}while (this.need_bytes > 0){
+}while (this.need秘bytes > 0){
 if (this.z.avail_in == 0) {
-throw Clazz.new_($I$(5).c$$I, [this, null, r]);
+throw Clazz.new_($I$(5,1).c$$I,[this, null, r]);
 }r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.need=this.need | ((this.z.next_in[this.z.next_in_index++] & 255) << ((n - this.need_bytes) * 8));
-this.need_bytes--;
+this.need=this.need | ((this.z.$in[this.z.in_index++] & 255) << ((n - this.need秘bytes) * 8));
+this.need秘bytes--;
 }
 if (n == 2) {
 this.need&=65535;
 } else if (n == 4) {
 this.need&=4294967295;
-}this.need_bytes=-1;
+}this.need秘bytes=-1;
 return r;
 }, p$1);
 
 Clazz.newMeth(C$, 'readString$I$I', function (r, f) {
 if (this.tmp_string == null ) {
-this.tmp_string=Clazz.new_($I$(6));
+this.tmp_string=Clazz.new_($I$(6,1));
 }var b=0;
 do {
 if (this.z.avail_in == 0) {
-throw Clazz.new_($I$(5).c$$I, [this, null, r]);
+throw Clazz.new_($I$(5,1).c$$I,[this, null, r]);
 }r=f;
 this.z.avail_in--;
 this.z.total_in++;
-b=this.z.next_in[this.z.next_in_index];
-if (b != 0) this.tmp_string.write$BA$I$I(this.z.next_in, this.z.next_in_index, 1);
-this.z.checksum.update$BA$I$I(this.z.next_in, this.z.next_in_index, 1);
-this.z.next_in_index++;
+b=this.z.$in[this.z.in_index];
+if (b != 0) this.tmp_string.write$BA$I$I(this.z.$in, this.z.in_index, 1);
+this.z.checksum.update$BA$I$I(this.z.$in, this.z.in_index, 1);
+this.z.in_index++;
 } while (b != 0);
 return r;
 }, p$1);
 
 Clazz.newMeth(C$, 'readBytes$I$I', function (r, f) {
 if (this.tmp_string == null ) {
-this.tmp_string=Clazz.new_($I$(6));
+this.tmp_string=Clazz.new_($I$(6,1));
 }while (this.need > 0){
 if (this.z.avail_in == 0) {
-throw Clazz.new_($I$(5).c$$I, [this, null, r]);
+throw Clazz.new_($I$(5,1).c$$I,[this, null, r]);
 }r=f;
 this.z.avail_in--;
 this.z.total_in++;
-this.tmp_string.write$BA$I$I(this.z.next_in, this.z.next_in_index, 1);
-this.z.checksum.update$BA$I$I(this.z.next_in, this.z.next_in_index, 1);
-this.z.next_in_index++;
+this.tmp_string.write$BA$I$I(this.z.$in, this.z.in_index, 1);
+this.z.checksum.update$BA$I$I(this.z.$in, this.z.in_index, 1);
+this.z.in_index++;
 this.need--;
 }
 return r;
@@ -520,7 +503,7 @@ return r;
 
 Clazz.newMeth(C$, 'checksum$I$J', function (n, v) {
 for (var i=0; i < n; i++) {
-this.crcbuf[i]=(((v & 255)|0)|0);
+this.crcbuf[i]=((v & 255)|0);
 v>>=8;
 }
 this.z.checksum.update$BA$I$I(this.crcbuf, 0, n);
@@ -550,24 +533,24 @@ default:
 return false;
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.mark=Clazz.array(Byte.TYPE, -1, [0, 0, -1, -1]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Inflate, "Return", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Inflate, "Return", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'Exception');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.r=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['r']]]
 
 Clazz.newMeth(C$, 'c$$I', function (r) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.r=r;
 }, 1);
 
@@ -576,4 +559,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

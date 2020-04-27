@@ -1,27 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AxesRenderer", null, 'org.jmol.render.CageRenderer');
-C$.axisLabels=null;
-C$.axesTypes=null;
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "AxesRenderer", null, 'org.jmol.render.CageRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.axisLabels=Clazz.array(String, -1, ["+X", "+Y", "+Z", null, null, null, "a", "b", "c", "X", "Y", "Z", null, null, null, "X", null, "Z", null, "(Y)", null]);
-C$.axesTypes=Clazz.array(String, -1, ["a", "b", "c"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.originScreen=null;
-this.colixes=null;
-this.pt000=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.originScreen=Clazz.new_($I$(1));
+this.originScreen=Clazz.new_($I$(1,1));
 this.colixes=Clazz.array(Short.TYPE, [3]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['originScreen','javajs.util.P3','colixes','short[]','pt000','javajs.util.P3']]
+,['O',['axisLabels','String[]','+axesTypes']]]
 
 Clazz.newMeth(C$, 'initRenderer$', function () {
-this.endcap=($b$[0] = 2, $b$[0]);
+this.endcap=2;
 this.draw000=false;
 });
 
@@ -33,7 +24,7 @@ var isXY=(axes.axisXY.z != 0 );
 if (!isXY && this.tm.isNavigating$() && this.vwr.getBoolean$I(603979890)  ) return false;
 this.imageFontScaling=this.vwr.imageFontScaling;
 if (this.vwr.areAxesTainted$()) axes.reinitShape$();
-this.font3d=this.vwr.gdata.getFont3DScaled$javajs_awt_Font$F(axes.font3d, this.imageFontScaling);
+this.font3d=this.vwr.gdata.getFont3DScaled$org_jmol_util_Font$F(axes.font3d, this.imageFontScaling);
 var modelIndex=this.vwr.am.cmi;
 var isDataFrame=this.vwr.isJmolDataFrame$();
 this.pt000=(isDataFrame ? this.pt0 : axes.originPoint);
@@ -145,10 +136,14 @@ x += dx;
 y += dy;
 }var xStrBaseline=Math.floor(x - strWidth / 2.0);
 var yStrBaseline=Math.floor(y + strAscent / 2.0);
-this.g3d.drawString$S$javajs_awt_Font$I$I$I$I$H(str, this.font3d, (xStrBaseline|0), (yStrBaseline|0), (z|0), (z|0), 0);
+this.g3d.drawString$S$org_jmol_util_Font$I$I$I$I$H(str, this.font3d, (xStrBaseline|0), (yStrBaseline|0), (z|0), (z|0), 0);
 }, p$1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.axisLabels=Clazz.array(String, -1, ["+X", "+Y", "+Z", null, null, null, "a", "b", "c", "X", "Y", "Z", null, null, null, "X", null, "Z", null, "(Y)", null]);
+C$.axesTypes=Clazz.array(String, -1, ["a", "b", "c"]);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

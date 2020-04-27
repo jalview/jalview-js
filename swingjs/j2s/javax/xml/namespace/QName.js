@@ -1,47 +1,34 @@
-(function(){var P$=Clazz.newPackage("javax.xml.namespace"),I$=[[0,'java.util.StringTokenizer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "QName");
+(function(){var P$=Clazz.newPackage("javax.xml.namespace"),I$=[[0,'java.security.AccessController']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "QName", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.namespaceURI=null;
-this.localPart=null;
-this.prefix=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'valueOf$S', function (toStringName) {
-var uri=null;
-var localPart=null;
-var tokenizer=Clazz.new_($I$(1).c$$S$S,[toStringName, "{}"]);
-var tokenCount=tokenizer.countTokens$();
-if (tokenCount < 1 || tokenCount > 2 ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid QName string: " + toStringName]);
-if (tokenCount > 1) uri=tokenizer.nextToken$();
-localPart=tokenizer.nextToken$();
-return Clazz.new_(C$.c$$S$S,[uri, localPart]);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S', function (localPart) {
-C$.c$$S$S.apply(this, [null, localPart]);
-}, 1);
+C$.$fields$=[['S',['namespaceURI','localPart','prefix']]
+,['Z',['useDefaultSerialVersionUID'],'J',['serialVersionUID']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (namespaceURI, localPart) {
 C$.c$$S$S$S.apply(this, [namespaceURI, localPart, ""]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S', function (namespaceURI, localPart, prefix) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
+if (namespaceURI == null ) {
+this.namespaceURI="";
+} else {
 this.namespaceURI=namespaceURI;
-if (this.namespaceURI == null ) this.namespaceURI="";
-if (localPart == null ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["localPart cannot be null"]);
-if (localPart.startsWith$S(":")) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal localPart: " + localPart]);
-this.localPart=localPart;
-this.prefix=prefix;
-if (this.prefix == null ) this.prefix="";
+}if (localPart == null ) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["local part cannot be \"null\" when creating a QName"]);
+}this.localPart=localPart;
+if (prefix == null ) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["prefix cannot be \"null\" when creating a QName"]);
+}this.prefix=prefix;
+}, 1);
+
+Clazz.newMeth(C$, 'c$$S', function (localPart) {
+C$.c$$S$S$S.apply(this, ["", localPart, ""]);
 }, 1);
 
 Clazz.newMeth(C$, 'getNamespaceURI$', function () {
@@ -56,29 +43,75 @@ Clazz.newMeth(C$, 'getPrefix$', function () {
 return this.prefix;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-if (this.namespaceURI.equals$O("")) return this.localPart;
- else return '{' + this.namespaceURI + '}' + this.localPart ;
-});
-
-Clazz.newMeth(C$, 'equals$O', function (obj) {
-if (Clazz.instanceOf(obj, "javax.xml.namespace.QName")) {
-var qn=obj;
-var equals=this.namespaceURI.equals$O(qn.namespaceURI);
-return equals && this.localPart.equals$O(qn.localPart) ;
-}return false;
+Clazz.newMeth(C$, 'equals$O', function (objectToTest) {
+if (objectToTest === this ) {
+return true;
+}if (objectToTest == null  || !(Clazz.instanceOf(objectToTest, "javax.xml.namespace.QName")) ) {
+return false;
+}var qName=objectToTest;
+return this.localPart.equals$O(qName.localPart) && this.namespaceURI.equals$O(qName.namespaceURI) ;
 });
 
 Clazz.newMeth(C$, 'hashCode$', function () {
-var hashCode=this.namespaceURI.hashCode$() + this.localPart.hashCode$();
-return hashCode;
+return this.namespaceURI.hashCode$() ^ this.localPart.hashCode$();
 });
 
-Clazz.newMeth(C$, 'compareTo$O', function (o) {
-var other=o;
-return this.toString().compareTo$S(other.toString());
+Clazz.newMeth(C$, 'toString', function () {
+if (this.namespaceURI.equals$O("")) {
+return this.localPart;
+} else {
+return "{" + this.namespaceURI + "}" + this.localPart ;
+}});
+
+Clazz.newMeth(C$, 'valueOf$S', function (qNameAsString) {
+if (qNameAsString == null ) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["cannot create QName from \"null\" or \"\" String"]);
+}if (qNameAsString.length$() == 0) {
+return Clazz.new_(C$.c$$S$S$S,["", qNameAsString, ""]);
+}if (qNameAsString.charAt$I(0) != "{") {
+return Clazz.new_(C$.c$$S$S$S,["", qNameAsString, ""]);
+}if (qNameAsString.startsWith$S("{}")) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Namespace URI .equals(XMLConstants.NULL_NS_URI), .equals(\"" + "" + "\"), " + "only the local part, " + "\"" + qNameAsString.substring$I(2 + "".length$()) + "\", " + "should be provided." ]);
+}var endOfNamespaceURI=qNameAsString.indexOf$I("}");
+if (endOfNamespaceURI == -1) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["cannot create QName from \"" + qNameAsString + "\", missing closing \"}\"" ]);
+}return Clazz.new_(C$.c$$S$S$S,[qNameAsString.substring$I$I(1, endOfNamespaceURI), qNameAsString.substring$I(endOfNamespaceURI + 1), ""]);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.useDefaultSerialVersionUID=true;
+{
+try {
+var valueUseCompatibleSerialVersionUID=$I$(1,"doPrivileged$java_security_PrivilegedAction",[((P$.QName$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "QName$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, 'run$', function () {
+return System.getProperty$S("com.sun.xml.namespace.QName.useCompatibleSerialVersionUID");
 });
+})()
+), Clazz.new_(P$.QName$1.$init$,[this, null]))]);
+C$.useDefaultSerialVersionUID=(valueUseCompatibleSerialVersionUID != null  && valueUseCompatibleSerialVersionUID.equals$O("1.0") ) ? false : true;
+} catch (exception) {
+if (Clazz.exceptionOf(exception,"Exception")){
+C$.useDefaultSerialVersionUID=true;
+} else {
+throw exception;
+}
+}
+if (C$.useDefaultSerialVersionUID) {
+C$.serialVersionUID=-9120448754896609940;
+} else {
+C$.serialVersionUID=4418622981026545151;
+}};
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,63 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shape"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.util.Normix','org.jmol.util.C','javajs.util.Measure','javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','org.jmol.script.T','javajs.util.M3','org.jmol.util.BSUtil','javajs.util.BS','java.util.Hashtable','Boolean','javajs.util.AU','javajs.util.M4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Mesh", null, 'org.jmol.util.MeshSurface');
+(function(){var P$=Clazz.newPackage("org.jmol.shape"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.util.Normix','org.jmol.util.C','javajs.util.Measure','javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','org.jmol.script.T','javajs.util.M3','org.jmol.util.BSUtil','javajs.util.BS','java.util.Hashtable','Boolean','javajs.util.AU','javajs.util.M4']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Mesh", null, 'org.jmol.util.MeshSurface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.title=null;
-this.meshColix=0;
-this.normixes=null;
-this.lineData=null;
-this.thisID=null;
-this.isValid=false;
-this.scriptCommand=null;
-this.colorCommand=null;
-this.lattice=null;
-this.symops=null;
-this.symopNormixes=null;
-this.visible=false;
-this.lighting=0;
-this.colorType=0;
-this.haveXyPoints=false;
-this.diameter=0;
-this.width=0;
-this.ptCenter=null;
-this.linkedMesh=null;
-this.vertexColorMap=null;
-this.vAB=null;
-this.vTemp=null;
-this.color=0;
-this.useColix=false;
-this.unitCell=null;
-this.scale3d=0;
-this.index=0;
-this.atomIndex=0;
-this.modelIndex=0;
-this.visibilityFlags=0;
-this.insideOut=false;
-this.checkByteCount=0;
-this.normalsInverted=false;
-this.showContourLines=false;
-this.showPoints=false;
-this.drawTriangles=false;
-this.fillTriangles=false;
-this.showTriangles=false;
-this.frontOnly=false;
-this.isShell=false;
-this.isTwoSided=false;
-this.havePlanarContours=false;
-this.bsTemp=null;
-this.colorDensity=false;
-this.cappingObject=null;
-this.slabbingObject=null;
-this.volumeRenderPointSize=0;
-this.connectedAtoms=null;
-this.isModelConnected=false;
-this.recalcAltVertices=false;
-this.symopColixes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isValid=true;
@@ -77,14 +21,16 @@ this.isShell=false;
 this.isTwoSided=true;
 this.havePlanarContours=false;
 this.volumeRenderPointSize=0.15;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isValid','visible','haveXyPoints','useColix','insideOut','normalsInverted','showContourLines','showPoints','drawTriangles','fillTriangles','showTriangles','frontOnly','isShell','isTwoSided','havePlanarContours','colorDensity','isModelConnected','recalcAltVertices'],'F',['width','scale3d','volumeRenderPointSize'],'I',['lighting','colorType','diameter','color','index','atomIndex','modelIndex','visibilityFlags','checkByteCount'],'H',['meshColix'],'S',['thisID','scriptCommand','colorCommand'],'O',['title','String[]','normixes','short[]','lineData','javajs.util.Lst','lattice','javajs.util.P3','symops','javajs.util.M4[]','symopNormixes','short[][]','ptCenter','javajs.util.P3','linkedMesh','org.jmol.shape.Mesh','vertexColorMap','java.util.Map','vAB','javajs.util.V3','+vTemp','unitCell','org.jmol.api.SymmetryInterface','bsTemp','javajs.util.BS','cappingObject','java.lang.Object','+slabbingObject','connectedAtoms','int[]','symopColixes','short[]']]]
 
 Clazz.newMeth(C$, 'setVisibilityFlags$I', function (n) {
 this.visibilityFlags=n;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'mesh1$org_jmol_viewer_Viewer$S$H$I', function (vwr, thisID, colix, index) {
@@ -93,9 +39,9 @@ this.vwr=vwr;
 this.thisID=thisID;
 this.colix=colix;
 this.index=index;
-this.ptCenter=Clazz.new_($I$(1));
-this.vAB=Clazz.new_($I$(2));
-this.vTemp=Clazz.new_($I$(2));
+this.ptCenter=Clazz.new_($I$(1,1));
+this.vAB=Clazz.new_($I$(2,1));
+this.vTemp=Clazz.new_($I$(2,1));
 return this;
 });
 
@@ -171,7 +117,7 @@ Clazz.newMeth(C$, 'getNormals$javajs_util_T3A$javajs_util_P4', function (vertice
 this.normixCount=(this.isDrawPolygon ? this.pc : this.vc);
 if (this.normixCount < 0) return null;
 var normals=Clazz.array($I$(2), [this.normixCount]);
-for (var i=this.normixCount; --i >= 0; ) normals[i]=Clazz.new_($I$(2));
+for (var i=this.normixCount; --i >= 0; ) normals[i]=Clazz.new_($I$(2,1));
 
 if (plane == null ) {
 this.sumVertexNormals$javajs_util_T3A$javajs_util_V3A(vertices, normals);
@@ -248,7 +194,7 @@ return 1.0E-8;
 });
 
 Clazz.newMeth(C$, 'getState$S', function (type) {
-var s=Clazz.new_($I$(6));
+var s=Clazz.new_($I$(6,1));
 if (this.isValid) {
 s.append$S(type);
 if (!type.equals$O("mo") && !type.equals$O("nbo") ) s.append$S(" ID ").append$S($I$(7).esc$S(this.thisID));
@@ -264,7 +210,7 @@ s.append$S(" display " + $I$(8).eBS$javajs_util_BS(this.bsDisplay));
 });
 
 Clazz.newMeth(C$, 'getRendering$', function () {
-var s=Clazz.new_($I$(6));
+var s=Clazz.new_($I$(6,1));
 s.append$S(this.fillTriangles ? " fill" : " noFill");
 s.append$S(this.drawTriangles ? " mesh" : " noMesh");
 s.append$S(this.showPoints ? " dots" : " noDots");
@@ -288,7 +234,7 @@ normal=$I$(2).new3$F$F$F(thePlane.x, thePlane.y, thePlane.z);
 normal.normalize$();
 normal.scale$F(this.scale3d);
 if (this.mat4 != null ) {
-var m3=Clazz.new_($I$(10));
+var m3=Clazz.new_($I$(10,1));
 this.mat4.getRotationScale$javajs_util_M3(m3);
 m3.rotate$javajs_util_T3(normal);
 }}for (var i=0; i < this.vc; i++) {
@@ -306,7 +252,7 @@ Clazz.newMeth(C$, 'setShowWithin$javajs_util_Lst$F$Z', function (showWithinPoint
 if (showWithinPoints.size$() == 0) {
 this.bsDisplay=(isWithinNot ? $I$(11).newBitSet2$I$I(0, this.vc) : null);
 return;
-}this.bsDisplay=Clazz.new_($I$(12));
+}this.bsDisplay=Clazz.new_($I$(12,1));
 for (var i=0; i < this.vc; i++) if (C$.checkWithin$javajs_util_T3$javajs_util_Lst$F$Z(this.vs[i], showWithinPoints, showWithinDistance2, isWithinNot)) this.bsDisplay.set$I(i);
 
 });
@@ -327,7 +273,7 @@ return this.getVisibleVBS$();
 });
 
 Clazz.newMeth(C$, 'getVisibleVBS$', function () {
-var bs=Clazz.new_($I$(12));
+var bs=Clazz.new_($I$(12,1));
 if (this.pc == 0 && this.bsSlabDisplay != null  ) $I$(11).copy2$javajs_util_BS$javajs_util_BS(this.bsSlabDisplay, bs);
  else for (var i=this.pc; --i >= 0; ) if (this.bsSlabDisplay == null  || this.bsSlabDisplay.get$I(i) ) {
 var vertexIndexes=this.pis[i];
@@ -380,20 +326,20 @@ return;
 });
 
 Clazz.newMeth(C$, 'getInfo$Z', function (isAll) {
-var info=Clazz.new_($I$(13));
-info.put$TK$TV("id", this.thisID);
-info.put$TK$TV("vertexCount", Integer.valueOf$I(this.vc));
-info.put$TK$TV("polygonCount", Integer.valueOf$I(this.pc));
-info.put$TK$TV("haveQuads", $I$(14).valueOf$Z(this.haveQuads));
-info.put$TK$TV("haveValues", $I$(14).valueOf$Z(this.vvs != null ));
+var info=Clazz.new_($I$(13,1));
+info.put$O$O("id", this.thisID);
+info.put$O$O("vertexCount", Integer.valueOf$I(this.vc));
+info.put$O$O("polygonCount", Integer.valueOf$I(this.pc));
+info.put$O$O("haveQuads", $I$(14).valueOf$Z(this.haveQuads));
+info.put$O$O("haveValues", (function(a,f){return f.apply(null,a)})([this.vvs != null ],$I$(14).valueOf$Z));
 if (isAll) {
 if (this.vc > 0) {
-info.put$TK$TV("vertices", $I$(15).arrayCopyPt$javajs_util_T3A$I(this.vs, this.vc));
-if (this.bsSlabDisplay != null ) info.put$TK$TV("bsVertices", this.getVisibleVBS$());
-}if (this.vvs != null ) info.put$TK$TV("vertexValues", $I$(15).arrayCopyF$FA$I(this.vvs, this.vc));
+info.put$O$O("vertices", $I$(15).arrayCopyPt$javajs_util_T3A$I(this.vs, this.vc));
+if (this.bsSlabDisplay != null ) info.put$O$O("bsVertices", this.getVisibleVBS$());
+}if (this.vvs != null ) info.put$O$O("vertexValues", $I$(15).arrayCopyF$FA$I(this.vvs, this.vc));
 if (this.pc > 0) {
-info.put$TK$TV("polygons", $I$(15).arrayCopyII$IAA$I(this.pis, this.pc));
-if (this.bsSlabDisplay != null ) info.put$TK$TV("bsPolygons", this.bsSlabDisplay);
+info.put$O$O("polygons", $I$(15).arrayCopyII$IAA$I(this.pis, this.pc));
+if (this.bsSlabDisplay != null ) info.put$O$O("bsPolygons", this.bsSlabDisplay);
 }}return info;
 });
 
@@ -409,8 +355,8 @@ Clazz.newMeth(C$, 'rotateTranslate$javajs_util_Quat$javajs_util_T3$Z', function 
 if (q == null  && offset == null  ) {
 this.mat4=null;
 return;
-}var m3=Clazz.new_($I$(10));
-var v=Clazz.new_($I$(2));
+}var m3=Clazz.new_($I$(10,1));
+var v=Clazz.new_($I$(2,1));
 if (this.mat4 == null ) this.mat4=$I$(16).newM4$javajs_util_M4(null);
 this.mat4.getRotationScale$javajs_util_M3(m3);
 this.mat4.getTranslation$javajs_util_T3(v);
@@ -427,4 +373,4 @@ Clazz.newMeth(C$, 'getNormalsTemp$', function () {
 return (this.normalsTemp == null  ? (this.normalsTemp=this.getNormals$javajs_util_T3A$javajs_util_P4(this.vs, null)) : this.normalsTemp);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

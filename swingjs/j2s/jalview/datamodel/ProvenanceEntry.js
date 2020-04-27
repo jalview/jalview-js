@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[];
-var C$=Clazz.newClass(P$, "ProvenanceEntry");
+/*c*/var C$=Clazz.newClass(P$, "ProvenanceEntry");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.user=null;
-this.action=null;
-this.id=null;
-this.date=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['user','action','id'],'O',['date','java.util.Date']]]
 
 Clazz.newMeth(C$, 'c$$S$S$java_util_Date$S', function (u, a, d, i) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.user=u;
 this.action=a;
 this.date=d;
@@ -41,4 +34,4 @@ return this.id;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

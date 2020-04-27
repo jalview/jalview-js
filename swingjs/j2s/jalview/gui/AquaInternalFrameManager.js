@@ -1,23 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AquaInternalFrameManager", null, 'javax.swing.DefaultDesktopManager');
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AquaInternalFrameManager", null, 'javax.swing.DefaultDesktopManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fCurrentFrame=null;
-this.fInitialFrame=null;
-this.fChildFrames=null;
-this.ourManager=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.fChildFrames=Clazz.new_($I$(1).c$$I,[1]);
-}, 1);
+this.fChildFrames=Clazz.new_($I$(1,1).c$$I,[1]);
+},1);
+
+C$.$fields$=[['O',['fCurrentFrame','javax.swing.JInternalFrame','+fInitialFrame','fChildFrames','java.util.Vector','ourManager','javax.swing.DesktopManager']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_DesktopManager', function (desktopManager) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.ourManager=desktopManager;
 }, 1);
 
@@ -53,7 +46,7 @@ if (f != null ) {
 C$.superclazz.prototype.activateFrame$javax_swing_JInternalFrame.apply(this, [f]);
 }if (this.fChildFrames.indexOf$O(f) != -1) {
 this.fChildFrames.remove$O(f);
-}this.fChildFrames.addElement$TE(f);
+}this.fChildFrames.addElement$O(f);
 if (this.fCurrentFrame != null  && f !== this.fCurrentFrame  ) {
 if (this.fCurrentFrame.isSelected$()) {
 this.fCurrentFrame.setSelected$Z(false);
@@ -109,4 +102,4 @@ p$1.switchFrame$Z.apply(this, [false]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,57 +1,37 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'org.jmol.c.STR','javajs.util.P3','javajs.util.V3','javajs.util.Quat','javajs.util.Lst','org.jmol.modelset.Group','org.jmol.modelsetbio.NucleicPolymer','javajs.util.A4','javajs.util.M3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NucleicMonomer", null, 'org.jmol.modelsetbio.PhosphorusMonomer');
-C$.interestingNucleicAtomIDs=null;
-C$.ring6OffsetIndexes=null;
-C$.ring5OffsetIndexes=null;
-C$.riboseOffsetIndexes=null;
-C$.heavyAtomIndexes=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'org.jmol.modelsetbio.Monomer','org.jmol.c.STR','javajs.util.P3','javajs.util.V3','javajs.util.Quat','javajs.util.Lst','org.jmol.modelset.Group','org.jmol.modelsetbio.NucleicPolymer','javajs.util.A4','javajs.util.M3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "NucleicMonomer", null, 'org.jmol.modelsetbio.PhosphorusMonomer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.interestingNucleicAtomIDs=Clazz.array(Byte.TYPE, -1, [~13, 37, ~79, 36, 32, 33, 34, 35, ~38, ~39, ~40, ~41, ~47, ~46, ~42, ~13, ~44, ~43, ~72, ~6, ~88, 10, 9, ~74, ~76, ~12, ~11, ~8, ~78, ~7]);
-C$.ring6OffsetIndexes=Clazz.array(Byte.TYPE, -1, [3, 1, 4, 5, 6, 7]);
-C$.ring5OffsetIndexes=Clazz.array(Byte.TYPE, -1, [3, 9, 10, 11, 7]);
-C$.riboseOffsetIndexes=Clazz.array(Byte.TYPE, -1, [25, 26, 22, 27, 28, 21, 29, 19, 0]);
-C$.heavyAtomIndexes=Clazz.array(Byte.TYPE, -1, [3, 1, 4, 5, 6, 7, 11, 10, 9, 16, 14, 8, 12, 17, 13]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isPurine=false;
-this.isPyrimidine=false;
-this.hasRnaO2Prime=false;
-this.baseCenter=null;
-this.bps=null;
-this.dssrBox=null;
-this.dssrBoxHeight=0;
-this.dssrFrame=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isPurine','isPyrimidine','hasRnaO2Prime'],'F',['dssrBoxHeight'],'O',['baseCenter','javajs.util.P3','bps','javajs.util.Lst','dssrBox','javajs.util.P3[]','+dssrFrame']]
+,['O',['interestingNucleicAtomIDs','byte[]','+ring6OffsetIndexes','+ring5OffsetIndexes','+riboseOffsetIndexes','+heavyAtomIndexes']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'validateAndAllocate$org_jmol_modelset_Chain$S$I$I$I$IA', function (chain, group3, seqcode, firstAtomIndex, lastAtomIndex, specialAtomIndexes) {
-var offsets=P$.Monomer.scanForOffsets$I$IA$BA(firstAtomIndex, specialAtomIndexes, C$.interestingNucleicAtomIDs);
+var offsets=$I$(1).scanForOffsets$I$IA$BA(firstAtomIndex, specialAtomIndexes, C$.interestingNucleicAtomIDs);
 if (offsets == null ) return null;
-if (!P$.Monomer.checkOptional$BA$B$I$I(offsets, ($b$[0] = 19, $b$[0]), firstAtomIndex, specialAtomIndexes[73])) return null;
-P$.Monomer.checkOptional$BA$B$I$I(offsets, ($b$[0] = 20, $b$[0]), firstAtomIndex, specialAtomIndexes[89]);
-P$.Monomer.checkOptional$BA$B$I$I(offsets, ($b$[0] = 18, $b$[0]), firstAtomIndex, specialAtomIndexes[90]);
-P$.Monomer.checkOptional$BA$B$I$I(offsets, ($b$[0] = 23, $b$[0]), firstAtomIndex, specialAtomIndexes[75]);
-P$.Monomer.checkOptional$BA$B$I$I(offsets, ($b$[0] = 24, $b$[0]), firstAtomIndex, specialAtomIndexes[77]);
+if (!$I$(1).checkOptional$BA$B$I$I(offsets, 19, firstAtomIndex, specialAtomIndexes[73])) return null;
+$I$(1).checkOptional$BA$B$I$I(offsets, 20, firstAtomIndex, specialAtomIndexes[89]);
+$I$(1).checkOptional$BA$B$I$I(offsets, 18, firstAtomIndex, specialAtomIndexes[90]);
+$I$(1).checkOptional$BA$B$I$I(offsets, 23, firstAtomIndex, specialAtomIndexes[75]);
+$I$(1).checkOptional$BA$B$I$I(offsets, 24, firstAtomIndex, specialAtomIndexes[77]);
 return p$1.set4$org_jmol_modelset_Chain$S$I$I$I$BA.apply((Clazz.new_(C$)), [chain, group3, seqcode, firstAtomIndex, lastAtomIndex, offsets]);
 }, 1);
 
 Clazz.newMeth(C$, 'set4$org_jmol_modelset_Chain$S$I$I$I$BA', function (chain, group3, seqcode, firstAtomIndex, lastAtomIndex, offsets) {
 this.set2$org_jmol_modelset_Chain$S$I$I$I$BA(chain, group3, seqcode, firstAtomIndex, lastAtomIndex, offsets);
-if (!P$.Monomer.have$BA$B(offsets, ($b$[0] = 15, $b$[0]))) {
-offsets[0]=(offsets[19]|0);
+if (!$I$(1).have$BA$B(offsets, 15)) {
+offsets[0]=offsets[19];
 this.setLeadAtomIndex$();
-}this.hasRnaO2Prime=P$.Monomer.have$BA$B(offsets, ($b$[0] = 2, $b$[0]));
-this.isPyrimidine=P$.Monomer.have$BA$B(offsets, ($b$[0] = 8, $b$[0]));
-this.isPurine=P$.Monomer.have$BA$B(offsets, ($b$[0] = 9, $b$[0])) && P$.Monomer.have$BA$B(offsets, ($b$[0] = 10, $b$[0])) && P$.Monomer.have$BA$B(offsets, ($b$[0] = 11, $b$[0]))  ;
+}this.hasRnaO2Prime=$I$(1).have$BA$B(offsets, 2);
+this.isPyrimidine=$I$(1).have$BA$B(offsets, 8);
+this.isPurine=$I$(1).have$BA$B(offsets, 9) && $I$(1).have$BA$B(offsets, 10) && $I$(1).have$BA$B(offsets, 11)  ;
 return this;
 }, p$1);
 
@@ -76,11 +56,11 @@ return this.isPyrimidine || !this.isPurine && this.isPyrimidineByID$()  ;
 });
 
 Clazz.newMeth(C$, 'isGuanine$', function () {
-return P$.Monomer.have$BA$B(this.offsets, ($b$[0] = 17, $b$[0]));
+return $I$(1).have$BA$B(this.offsets, 17);
 });
 
 Clazz.newMeth(C$, 'getProteinStructureType$', function () {
-return (this.hasRnaO2Prime ? $I$(1).RNA : $I$(1).DNA);
+return (this.hasRnaO2Prime ? $I$(2).RNA : $I$(2).DNA);
 });
 
 Clazz.newMeth(C$, 'getP$', function () {
@@ -144,7 +124,7 @@ return this.getAtomFromOffsetIndex$I(13);
 });
 
 Clazz.newMeth(C$, 'getTerminatorAtom$', function () {
-return this.getAtomFromOffsetIndex$I(P$.Monomer.have$BA$B(this.offsets, ($b$[0] = 20, $b$[0])) ? ($b$[0] = 20, $b$[0]) : ($b$[0] = 21, $b$[0]));
+return this.getAtomFromOffsetIndex$I($I$(1).have$BA$B(this.offsets, 20) ? 20 : 21);
 });
 
 Clazz.newMeth(C$, 'getBaseRing6Points$javajs_util_P3A', function (pts) {
@@ -199,7 +179,7 @@ if (this.isPurine) for (var i=4; --i >= 1; ) this.getAtomFromOffsetIndex$I(C$.ri
 });
 
 Clazz.newMeth(C$, 'getN0$', function () {
-return (this.getAtomFromOffsetIndex$I(this.isPurine ? ($b$[0] = 11, $b$[0]) : ($b$[0] = 4, $b$[0])));
+return (this.getAtomFromOffsetIndex$I(this.isPurine ? 11 : 4));
 });
 
 Clazz.newMeth(C$, 'getHelixData$I$C$I', function (tokType, qType, mStep) {
@@ -216,7 +196,7 @@ return this.getP$();
 case 99:
 if (this.baseCenter == null ) {
 var n=0;
-this.baseCenter=Clazz.new_($I$(2));
+this.baseCenter=Clazz.new_($I$(3,1));
 for (var i=0; i < C$.heavyAtomIndexes.length; i++) {
 var a=this.getAtomFromOffsetIndex$I(C$.heavyAtomIndexes[i]);
 if (a == null ) continue;
@@ -293,10 +273,10 @@ ptB=this.getAtomFromOffsetIndex$I(1);
 }break;
 }
 if (ptA == null  || ptB == null  ) return null;
-var vA=$I$(3).newVsub$javajs_util_T3$javajs_util_T3(ptA, ptNorP);
-var vB=$I$(3).newVsub$javajs_util_T3$javajs_util_T3(ptB, ptNorP);
+var vA=$I$(4).newVsub$javajs_util_T3$javajs_util_T3(ptA, ptNorP);
+var vB=$I$(4).newVsub$javajs_util_T3$javajs_util_T3(ptB, ptNorP);
 if (reverseY) vB.scale$F(-1);
-return $I$(4).getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z(vA, vB, null, yBased);
+return $I$(5).getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z(vA, vB, null, yBased);
 });
 
 Clazz.newMeth(C$, 'isCrossLinked$org_jmol_modelset_Group', function (g) {
@@ -321,9 +301,9 @@ if (!(Clazz.instanceOf(g, "org.jmol.modelsetbio.NucleicMonomer"))) continue;
 var m=g;
 if ((this.isPurine ? m.getN3$() : m.getN1$()) === N2 ) {
 if (vReturn == null ) return true;
-vReturn.addLast$TV(Integer.valueOf$I(N.i));
-vReturn.addLast$TV(Integer.valueOf$I(N2.i));
-vReturn.addLast$TV(Integer.valueOf$I(m.leadAtomIndex));
+vReturn.addLast$O(Integer.valueOf$I(N.i));
+vReturn.addLast$O(Integer.valueOf$I(N2.i));
+vReturn.addLast$O(Integer.valueOf$I(m.leadAtomIndex));
 }}}
 return vReturn != null  && vReturn.size$() > 0 ;
 });
@@ -357,8 +337,8 @@ return false;
 });
 
 Clazz.newMeth(C$, 'addBasePair$org_jmol_modelsetbio_BasePair', function (bp) {
-if (this.bps == null ) this.bps=Clazz.new_($I$(5));
-this.bps.addLast$TV(bp);
+if (this.bps == null ) this.bps=Clazz.new_($I$(6,1));
+this.bps.addLast$O(bp);
 });
 
 Clazz.newMeth(C$, 'setGroup1$C', function (g) {
@@ -371,39 +351,39 @@ return this.bps;
 });
 
 Clazz.newMeth(C$, 'getGroup1b$', function () {
-var g3=$I$(6).group3Names[this.groupID];
-var g1=($I$(7).htGroup1 == null  ? null : $I$(7).htGroup1.get$O(g3));
+var g3=$I$(7).group3Names[this.groupID];
+var g1=($I$(8).htGroup1 == null  ? null : $I$(8).htGroup1.get$O(g3));
 return (g1 == null  ? Character.toLowerCase$C(g3.charAt$I(g3.length$() - 1)) : g1.charAt$I(0));
 });
 
 Clazz.newMeth(C$, 'getDSSRFrame$org_jmol_viewer_Viewer', function (vwr) {
 if (this.dssrFrame != null ) return this.dssrFrame;
 if (this.dssrNT != null ) return this.dssrFrame=vwr.getAnnotationParser$Z(true).getDSSRFrame$java_util_Map(this.dssrNT);
-var oxyz=this.dssrFrame=Clazz.array($I$(2), [4]);
-for (var i=4; --i >= 0; ) oxyz[i]=Clazz.new_($I$(2));
+var oxyz=this.dssrFrame=Clazz.array($I$(3), [4]);
+for (var i=4; --i >= 0; ) oxyz[i]=Clazz.new_($I$(3,1));
 
 if (this.isPurine$()) {
-var v85=$I$(2).newP$javajs_util_T3(this.getC5$());
+var v85=(function(a,f){return f.apply(null,a)})([this.getC5$()],$I$(3).newP$javajs_util_T3);
 v85.sub$javajs_util_T3(this.getC8$());
 v85.normalize$();
 oxyz[2].setT$javajs_util_T3(v85);
 oxyz[2].scale$F(-1);
 oxyz[0].scaleAdd2$F$javajs_util_T3$javajs_util_T3(4.9, v85, this.getC8$());
-var v89=$I$(2).newP$javajs_util_T3(this.getN0$());
+var v89=(function(a,f){return f.apply(null,a)})([this.getN0$()],$I$(3).newP$javajs_util_T3);
 v89.sub$javajs_util_T3(this.getC8$());
 oxyz[3].cross$javajs_util_T3$javajs_util_T3(v89, v85);
 oxyz[3].normalize$();
 } else {
-var v61=$I$(2).newP$javajs_util_T3(this.getN0$());
+var v61=(function(a,f){return f.apply(null,a)})([this.getN0$()],$I$(3).newP$javajs_util_T3);
 v61.sub$javajs_util_T3(this.getC6$());
-var v65=$I$(2).newP$javajs_util_T3(this.getC5$());
+var v65=(function(a,f){return f.apply(null,a)})([this.getC5$()],$I$(3).newP$javajs_util_T3);
 v65.sub$javajs_util_T3(this.getC6$());
 oxyz[3].cross$javajs_util_T3$javajs_util_T3(v61, v65);
 oxyz[3].normalize$();
 oxyz[2].setT$javajs_util_T3(v61);
 oxyz[2].normalize$();
-var aa=$I$(8).new4$F$F$F$F(oxyz[3].x, oxyz[3].y, oxyz[3].z, 1.1623893);
-var m3=Clazz.new_($I$(9));
+var aa=$I$(9).new4$F$F$F$F(oxyz[3].x, oxyz[3].y, oxyz[3].z, 1.1623893);
+var m3=Clazz.new_($I$(10,1));
 m3.setAA$javajs_util_A4(aa);
 m3.rotate$javajs_util_T3(oxyz[2]);
 oxyz[0].scaleAdd2$F$javajs_util_T3$javajs_util_T3(5.1, oxyz[2], this.getC6$());
@@ -411,7 +391,14 @@ oxyz[2].scale$F(-1);
 }oxyz[1].cross$javajs_util_T3$javajs_util_T3(oxyz[2], oxyz[3]);
 return this.dssrFrame;
 });
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.interestingNucleicAtomIDs=Clazz.array(Byte.TYPE, -1, [~13, 37, ~79, 36, 32, 33, 34, 35, ~38, ~39, ~40, ~41, ~47, ~46, ~42, ~13, ~44, ~43, ~72, ~6, ~88, 10, 9, ~74, ~76, ~12, ~11, ~8, ~78, ~7]);
+C$.ring6OffsetIndexes=Clazz.array(Byte.TYPE, -1, [3, 1, 4, 5, 6, 7]);
+C$.ring5OffsetIndexes=Clazz.array(Byte.TYPE, -1, [3, 9, 10, 11, 7]);
+C$.riboseOffsetIndexes=Clazz.array(Byte.TYPE, -1, [25, 26, 22, 27, 28, 21, 29, 19, 0]);
+C$.heavyAtomIndexes=Clazz.array(Byte.TYPE, -1, [3, 1, 4, 5, 6, 7, 11, 10, 9, 16, 14, 8, 12, 17, 13]);
+};
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,17 +1,13 @@
-(function(){var P$=Clazz.newPackage("javax.swing.table"),I$=[[0,'javax.swing.event.EventListenerList','javax.swing.event.TableModelListener','javax.swing.event.TableModelEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractTableModel", null, null, 'javax.swing.table.TableModel');
+(function(){var P$=Clazz.newPackage("javax.swing.table"),I$=[[0,'javax.swing.event.EventListenerList','javax.swing.event.TableModelListener','javax.swing.event.TableModelEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractTableModel", null, null, 'javax.swing.table.TableModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.listenerList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.listenerList=Clazz.new_($I$(1));
-}, 1);
+this.listenerList=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['listenerList','javax.swing.event.EventListenerList']]]
 
 Clazz.newMeth(C$, 'getColumnName$I', function (column) {
 var result="";
@@ -41,11 +37,11 @@ Clazz.newMeth(C$, 'setValueAt$O$I$I', function (aValue, rowIndex, columnIndex) {
 });
 
 Clazz.newMeth(C$, 'addTableModelListener$javax_swing_event_TableModelListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(2),['tableChanged$javax_swing_event_TableModelEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(2),['tableChanged$javax_swing_event_TableModelEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeTableModelListener$javax_swing_event_TableModelListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(2),['tableChanged$javax_swing_event_TableModelEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(2),['tableChanged$javax_swing_event_TableModelEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getTableModelListeners$', function () {
@@ -53,34 +49,34 @@ return this.listenerList.getListeners$Class(Clazz.getClass($I$(2),['tableChanged
 });
 
 Clazz.newMeth(C$, 'fireTableDataChanged$', function () {
-this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableModel,[this]));
+this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableModel,[this]));
 });
 
 Clazz.newMeth(C$, 'fireTableStructureChanged$', function () {
-this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableModel$I,[this, -1]));
+this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableModel$I,[this, -1]));
 });
 
 Clazz.newMeth(C$, 'fireTableRowsInserted$I$I', function (firstRow, lastRow) {
-this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableModel$I$I$I$I,[this, firstRow, lastRow, -1, 1]));
+this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableModel$I$I$I$I,[this, firstRow, lastRow, -1, 1]));
 });
 
 Clazz.newMeth(C$, 'fireTableRowsUpdated$I$I', function (firstRow, lastRow) {
-this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableModel$I$I$I$I,[this, firstRow, lastRow, -1, 0]));
+this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableModel$I$I$I$I,[this, firstRow, lastRow, -1, 0]));
 });
 
 Clazz.newMeth(C$, 'fireTableRowsDeleted$I$I', function (firstRow, lastRow) {
-this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableModel$I$I$I$I,[this, firstRow, lastRow, -1, -1]));
+this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableModel$I$I$I$I,[this, firstRow, lastRow, -1, -1]));
 });
 
 Clazz.newMeth(C$, 'fireTableCellUpdated$I$I', function (row, column) {
-this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3).c$$javax_swing_table_TableModel$I$I$I,[this, row, row, column]));
+this.fireTableChanged$javax_swing_event_TableModelEvent(Clazz.new_($I$(3,1).c$$javax_swing_table_TableModel$I$I$I,[this, row, row, column]));
 });
 
 Clazz.newMeth(C$, 'fireTableChanged$javax_swing_event_TableModelEvent', function (e) {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(2),['tableChanged$javax_swing_event_TableModelEvent']) ) {
-(listeners[i + 1]).tableChanged$(e);
+(listeners[i + 1]).tableChanged$javax_swing_event_TableModelEvent(e);
 }}
 });
 
@@ -90,4 +86,4 @@ return this.listenerList.getListeners$Class(listenerType);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

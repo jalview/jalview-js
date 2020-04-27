@@ -1,21 +1,13 @@
 (function(){var P$=Clazz.newPackage("jalview.ext.android"),I$=[];
-var C$=Clazz.newClass(P$, "ContainerHelpers");
-C$.EMPTY_BOOLEANS=null;
-C$.EMPTY_INTS=null;
-C$.EMPTY_DOUBLES=null;
-C$.EMPTY_LONGS=null;
-C$.EMPTY_OBJECTS=null;
+/*c*/var C$=Clazz.newClass(P$, "ContainerHelpers");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_BOOLEANS=Clazz.array(Boolean.TYPE, [0]);
-C$.EMPTY_INTS=Clazz.array(Integer.TYPE, [0]);
-C$.EMPTY_DOUBLES=Clazz.array(Double.TYPE, [0]);
-C$.EMPTY_LONGS=Clazz.array(Long.TYPE, [0]);
-C$.EMPTY_OBJECTS=Clazz.array(java.lang.Object, [0]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['EMPTY_BOOLEANS','boolean[]','EMPTY_INTS','int[]','EMPTY_DOUBLES','double[]','EMPTY_LONGS','long[]','EMPTY_OBJECTS','Object[]']]]
 
 Clazz.newMeth(C$, 'binarySearch$IA$I$I', function (array, size, value) {
 var lo=0;
@@ -65,6 +57,14 @@ return mid;
 return ~lo;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_BOOLEANS=Clazz.array(Boolean.TYPE, [0]);
+C$.EMPTY_INTS=Clazz.array(Integer.TYPE, [0]);
+C$.EMPTY_DOUBLES=Clazz.array(Double.TYPE, [0]);
+C$.EMPTY_LONGS=Clazz.array(Long.TYPE, [0]);
+C$.EMPTY_OBJECTS=Clazz.array(java.lang.Object, [0]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

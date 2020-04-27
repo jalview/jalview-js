@@ -1,25 +1,17 @@
 (function(){var P$=Clazz.newPackage("java.nio");
-var C$=Clazz.newClass(P$, "Buffer");
+/*c*/var C$=Clazz.newClass(P$, "Buffer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mark=0;
-this.position=0;
-this.limit=0;
-this.capacity=0;
-this.address=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.mark=-1;
 this.position=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['mark','position','limit','capacity'],'J',['address']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (mark, pos, lim, cap) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (cap < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Negative capacity: " + cap]);
 this.capacity=cap;
 this.limit$I(lim);
@@ -151,4 +143,4 @@ if ((off | len | (off + len) | (size - (off + len)) ) < 0) throw Clazz.new_(Claz
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

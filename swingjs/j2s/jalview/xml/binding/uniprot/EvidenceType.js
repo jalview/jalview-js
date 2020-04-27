@@ -1,19 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
-var C$=Clazz.newClass(P$, "EvidenceType");
+/*c*/var C$=Clazz.newClass(P$, "EvidenceType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.source=null;
-this.importedFrom=null;
-this.type=null;
-this.key=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['type'],'O',['source','jalview.xml.binding.uniprot.SourceType','importedFrom','jalview.xml.binding.uniprot.ImportedFromType','key','java.math.BigInteger']]]
 
 Clazz.newMeth(C$, 'getSource$', function () {
 return this.source;
@@ -46,12 +39,13 @@ return this.key;
 Clazz.newMeth(C$, 'setKey$java_math_BigInteger', function (value) {
 this.key=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.EvidenceType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="evidenceType" propOrder={"source"  "importedFrom"  } )']],
-  [['type','String'],['@XmlAttribute(name="type" required="true" )']],
-  [['key','java.math.BigInteger'],['@XmlAttribute(name="key" required="true" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.EvidenceType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="evidenceType" propOrder={"source"  "importedFrom"  } ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" required="true" ']],
+  [['key','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="key" required="true" ']],
   [['source','jalview.xml.binding.uniprot.SourceType'],['@XmlElement']],
-  [['importedFrom','jalview.xml.binding.uniprot.ImportedFromType'],['@XmlElement']]];
+  [['importedFrom','jalview.xml.binding.uniprot.ImportedFromType'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,29 +1,43 @@
-(function(){var P$=Clazz.newPackage("sun.util.resources"),I$=[[0,'java.util.LinkedHashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TimeZoneNamesBundle", null, 'sun.util.resources.OpenListResourceBundle');
+(function(){var P$=Clazz.newPackage("sun.util.resources"),p$1={},I$=[[0,'java.util.LinkedHashMap','java.util.LinkedHashSet']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TimeZoneNamesBundle", null, 'sun.util.resources.OpenListResourceBundle');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+Clazz.newMeth(C$, 'getStringArray$S$I', function (key, size) {
+var names=p$1.handleGetObject$S$I.apply(this, [key, size]);
+if ((names == null  || names.length != size ) && this.parent != null  ) {
+names=(this.parent).getStringArray$S$I(key, size);
+}if (names == null ) {
+throw Clazz.new_(Clazz.load('java.util.MissingResourceException').c$$S$S$S,["no time zone names", this.getClass$().getName$(), key]);
+}return names;
+});
 
 Clazz.newMeth(C$, 'handleGetObject$S', function (key) {
+return p$1.handleGetObject$S$I.apply(this, [key, 5]);
+});
+
+Clazz.newMeth(C$, 'handleGetObject$S$I', function (key, n) {
 var contents=C$.superclazz.prototype.handleGetObject$S.apply(this, [key]);
 if (contents == null ) {
 return null;
-}var clen=contents.length;
+}var clen=Math.min(n - 1, contents.length);
 var tmpobj=Clazz.array(String, [clen + 1]);
 tmpobj[0]=key;
-for (var i=0; i < clen; i++) {
-tmpobj[i + 1]=contents[i];
-}
+System.arraycopy$O$I$O$I$I(contents, 0, tmpobj, 1, clen);
 return tmpobj;
-});
+}, p$1);
 
 Clazz.newMeth(C$, 'createMap$I', function (size) {
-return Clazz.new_($I$(1).c$$I,[size]);
+return Clazz.new_($I$(1,1).c$$I,[size]);
+});
+
+Clazz.newMeth(C$, 'createSet$', function () {
+return Clazz.new_($I$(2,1));
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

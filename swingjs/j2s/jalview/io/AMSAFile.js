@@ -1,30 +1,24 @@
 (function(){var P$=Clazz.newPackage("jalview.io"),I$=[];
-var C$=Clazz.newClass(P$, "AMSAFile", null, 'jalview.io.FastaFile');
+/*c*/var C$=Clazz.newClass(P$, "AMSAFile", null, 'jalview.io.FastaFile');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.al=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['al','jalview.datamodel.AlignmentI']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI', function (al) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.al=al;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$jalview_io_DataSourceType', function (inFile, sourceType) {
-C$.superclazz.c$$S$jalview_io_DataSourceType.apply(this, [inFile, sourceType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$jalview_io_DataSourceType.apply(this,[inFile, sourceType]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_FileParse', function (source) {
-C$.superclazz.c$$jalview_io_FileParse.apply(this, [source]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_FileParse.apply(this,[source]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'print$jalview_datamodel_SequenceIA$Z', function (sqs, jvsuffix) {
@@ -64,4 +58,4 @@ this.out.append$S(this.newline);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

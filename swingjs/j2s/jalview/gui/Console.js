@@ -1,42 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.io.PipedInputStream','StringBuffer','java.awt.Toolkit','javax.swing.JTextArea','javax.swing.JButton','jalview.util.MessageManager','java.awt.BorderLayout','javax.swing.JScrollPane','Thread','java.io.PipedOutputStream','java.io.PrintStream','java.awt.GraphicsEnvironment','javax.swing.JFrame','java.awt.Dimension','jalview.gui.JalviewAppender','jalview.javascript.log4j.SimpleLayout','jalview.javascript.log4j.Logger','javax.swing.SwingUtilities']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Console", null, 'java.awt.event.WindowAdapter', ['java.awt.event.WindowListener', 'java.awt.event.ActionListener', 'Runnable']);
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.io.PipedInputStream','StringBuffer','java.awt.Toolkit','javax.swing.JTextArea','javax.swing.JButton','jalview.util.MessageManager','java.awt.BorderLayout','javax.swing.JScrollPane','Thread','java.io.PipedOutputStream','java.io.PrintStream','java.awt.GraphicsEnvironment','javax.swing.JFrame','java.awt.Dimension','jalview.gui.JalviewAppender','jalview.javascript.log4j.SimpleLayout','jalview.javascript.log4j.Logger','javax.swing.SwingUtilities']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Console", null, 'java.awt.event.WindowAdapter', ['java.awt.event.WindowListener', 'java.awt.event.ActionListener', 'Runnable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.frame=null;
-this.textArea=null;
-this.byteslim=0;
-this.bytescut=0;
-this.reader=null;
-this.reader2=null;
-this.textAppender=null;
-this.quit=false;
-this.stdout=null;
-this.stderr=null;
-this.pin=null;
-this.pin2=null;
-this.displayPipe=null;
-this.errorThrower=null;
-this.parent=null;
-this.MIN_WIDTH=0;
-this.MIN_HEIGHT=0;
-this.pout=null;
-this.perr=null;
-this.header=null;
-this.updateConsole=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.byteslim=102400;
 this.bytescut=76800;
 this.stdout=System.out;
 this.stderr=System.err;
-this.pin=Clazz.new_($I$(1));
-this.pin2=Clazz.new_($I$(1));
-this.displayPipe=Clazz.new_($I$(2));
+this.pin=Clazz.new_($I$(1,1));
+this.pin2=Clazz.new_($I$(1,1));
+this.displayPipe=Clazz.new_($I$(2,1));
 this.parent=null;
 this.MIN_WIDTH=300;
 this.MIN_HEIGHT=250;
@@ -44,10 +18,12 @@ this.pout=null;
 this.perr=null;
 this.header=null;
 this.updateConsole=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['quit','updateConsole'],'I',['byteslim','bytescut','MIN_WIDTH','MIN_HEIGHT'],'S',['header'],'O',['frame','javax.swing.JFrame','textArea','javax.swing.JTextArea','reader','Thread','+reader2','+textAppender','stdout','java.io.PrintStream','+stderr','pin','java.io.PipedInputStream','+pin2','displayPipe','StringBuffer','errorThrower','Thread','parent','jalview.gui.Desktop','pout','java.io.PipedOutputStream','+perr']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var screenSize=$I$(3).getDefaultToolkit$().getScreenSize$();
 this.frame=p$1.initFrame$S$I$I$I$I.apply(this, ["Java Console", (screenSize.width/2|0), (screenSize.height/2|0), -1, -1]);
 p$1.initConsole$Z.apply(this, [true]);
@@ -58,11 +34,11 @@ p$1.initConsole$Z$Z.apply(this, [visible, true]);
 }, p$1);
 
 Clazz.newMeth(C$, 'initConsole$Z$Z', function (visible, redirect) {
-this.textArea=Clazz.new_($I$(4));
+this.textArea=Clazz.new_($I$(4,1));
 this.textArea.setEditable$Z(false);
-var button=Clazz.new_($I$(5).c$$S,[$I$(6).getString$S("action.clear")]);
-this.frame.getContentPane$().setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
-this.frame.getContentPane$().add$java_awt_Component$O(Clazz.new_($I$(8).c$$java_awt_Component,[this.textArea]), "Center");
+var button=Clazz.new_([$I$(6).getString$S("action.clear")],$I$(5,1).c$$S);
+this.frame.getContentPane$().setLayout$java_awt_LayoutManager(Clazz.new_($I$(7,1)));
+this.frame.getContentPane$().add$java_awt_Component$O(Clazz.new_($I$(8,1).c$$java_awt_Component,[this.textArea]), "Center");
 this.frame.getContentPane$().add$java_awt_Component$O(button, "South");
 this.frame.setVisible$Z(visible);
 this.updateConsole=visible;
@@ -73,13 +49,13 @@ this.redirectStreams$();
 } else {
 this.unredirectStreams$();
 }this.quit=false;
-this.reader=Clazz.new_($I$(9).c$$Runnable,[this]);
+this.reader=Clazz.new_($I$(9,1).c$$Runnable,[this]);
 this.reader.setDaemon$Z(true);
 this.reader.start$();
-this.reader2=Clazz.new_($I$(9).c$$Runnable,[this]);
+this.reader2=Clazz.new_($I$(9,1).c$$Runnable,[this]);
 this.reader2.setDaemon$Z(true);
 this.reader2.start$();
-this.textAppender=Clazz.new_($I$(9).c$$Runnable,[this]);
+this.textAppender=Clazz.new_($I$(9,1).c$$Runnable,[this]);
 this.textAppender.setDaemon$Z(true);
 this.textAppender.start$();
 }, p$1);
@@ -87,8 +63,8 @@ this.textAppender.start$();
 Clazz.newMeth(C$, 'redirectStreams$', function () {
 if (this.pout == null ) {
 try {
-this.pout=Clazz.new_($I$(10).c$$java_io_PipedInputStream,[this.pin]);
-System.setOut$java_io_PrintStream(Clazz.new_($I$(11).c$$java_io_OutputStream$Z,[this.pout, true]));
+this.pout=Clazz.new_($I$(10,1).c$$java_io_PipedInputStream,[this.pin]);
+System.setOut$java_io_PrintStream(Clazz.new_($I$(11,1).c$$java_io_OutputStream$Z,[this.pout, true]));
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.io.IOException")){
 var io = e$$;
@@ -107,8 +83,8 @@ throw e$$;
 }
 }
 try {
-this.perr=Clazz.new_($I$(10).c$$java_io_PipedInputStream,[this.pin2]);
-System.setErr$java_io_PrintStream(Clazz.new_($I$(11).c$$java_io_OutputStream$Z,[this.perr, true]));
+this.perr=Clazz.new_($I$(10,1).c$$java_io_PipedInputStream,[this.pin2]);
+System.setErr$java_io_PrintStream(Clazz.new_($I$(11,1).c$$java_io_OutputStream$Z,[this.perr, true]));
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.io.IOException")){
 var io = e$$;
@@ -134,7 +110,7 @@ try {
 System.setOut$java_io_PrintStream(this.stdout);
 this.pout.flush$();
 this.pout.close$();
-this.pin=Clazz.new_($I$(1));
+this.pin=Clazz.new_($I$(1,1));
 this.pout=null;
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.io.IOException")){
@@ -157,7 +133,7 @@ try {
 System.setErr$java_io_PrintStream(this.stderr);
 this.perr.flush$();
 this.perr.close$();
-this.pin2=Clazz.new_($I$(1));
+this.pin2=Clazz.new_($I$(1,1));
 this.perr=null;
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.io.IOException")){
@@ -187,13 +163,13 @@ for (var n=0; n < fontNames.length; n++) {
 System.out.println$S(fontNames[n]);
 }
 System.out.println$S("\nLets throw an error on this console");
-this.errorThrower=Clazz.new_($I$(9).c$$Runnable,[this]);
+this.errorThrower=Clazz.new_($I$(9,1).c$$Runnable,[this]);
 this.errorThrower.setDaemon$Z(true);
 this.errorThrower.start$();
 });
 
 Clazz.newMeth(C$, 'initFrame$S$I$I$I$I', function (string, i, j, x, y) {
-var frame=Clazz.new_($I$(13).c$$S,[string]);
+var frame=Clazz.new_($I$(13,1).c$$S,[string]);
 frame.setName$S(string);
 if (x == -1) {
 x=(i/2|0);
@@ -208,17 +184,17 @@ C$.c$$jalview_gui_Desktop$Z.apply(this, [desktop, true]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_gui_Desktop$Z', function (desktop, showjconsole) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.parent=desktop;
 var bounds=desktop.getLastKnownDimensions$S("JAVA_CONSOLE_");
 if (bounds == null ) {
 this.frame=p$1.initFrame$S$I$I$I$I.apply(this, ["Jalview Java Console", (desktop.getWidth$()/2|0), (desktop.getHeight$()/4|0), desktop.getX$(), desktop.getY$()]);
 } else {
 this.frame=p$1.initFrame$S$I$I$I$I.apply(this, ["Jalview Java Console", bounds.width, bounds.height, bounds.x, bounds.y]);
-}this.frame.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(14).c$$I$I,[this.MIN_WIDTH, this.MIN_HEIGHT]));
+}this.frame.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(14,1).c$$I$I,[this.MIN_WIDTH, this.MIN_HEIGHT]));
 p$1.initConsole$Z.apply(this, [false]);
-var jappender=Clazz.new_($I$(15));
-jappender.setLayout$jalview_javascript_log4j_Layout(Clazz.new_($I$(16)));
+var jappender=Clazz.new_($I$(15,1));
+jappender.setLayout$jalview_javascript_log4j_Layout(Clazz.new_($I$(16,1)));
 $I$(15).setTextArea$javax_swing_JTextArea(this.textArea);
 $I$(17).getRootLogger$().addAppender$jalview_javascript_log4j_Appender(jappender);
 }, 1);
@@ -275,7 +251,7 @@ this.frame.setVisible$Z(false);
 p$1.closeConsoleGui.apply(this, []);
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 p$1.trimBuffer$Z.apply(this, [true]);
 });
 
@@ -328,7 +304,7 @@ if (this.updateConsole) {
 var count;
 while (this.displayPipe.length$() > 0){
 count=0;
-var tmp=Clazz.new_($I$(2));
+var tmp=Clazz.new_($I$(2,1));
 var replace;
 {
 replace=this.displayPipe;
@@ -386,20 +362,19 @@ Clazz.newMeth(C$, 'appendToTextArea$S', function (input) {
 if (this.updateConsole == false ) {
 return;
 }var time=System.nanoTime$();
-$I$(18).invokeLater$Runnable(((P$.Console$1||
-(function(){var C$=Clazz.newClass(P$, "Console$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(18,"invokeLater$Runnable",[((P$.Console$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Console$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['jalview.gui.Console'].displayPipe.append$S(this.$finals$.input);
 });
 })()
-), Clazz.new_(P$.Console$1.$init$, [this, {input: input}])));
+), Clazz.new_(P$.Console$1.$init$,[this, {input:input}]))]);
 }, p$1);
 
 Clazz.newMeth(C$, 'trimBuffer$Z', function (clear) {
@@ -473,4 +448,4 @@ Clazz.newMeth(C$, 'getHeader$', function () {
 return this.header;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,20 @@
 (function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[];
-var C$=Clazz.newClass(P$, "PixelConverter", function(){
+/*c*/var C$=Clazz.newClass(P$, "PixelConverter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.instance=null;
+C$.$classes$=[['Rgbx',9],['Xrgb',9],['Argb',9],['Ushort565Rgb',9],['Ushort555Rgbx',9],['Ushort555Rgb',9],['Ushort4444Argb',9],['Xbgr',9],['Bgrx',9],['Rgba',9],['RgbaPre',9],['ArgbPre',9],['ArgbBm',9],['ByteGray',9],['UshortGray',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.alphaMask=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.alphaMask=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['alphaMask']]
+,['O',['instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -56,21 +52,25 @@ return pixel;
 Clazz.newMeth(C$, 'getAlphaMask$', function () {
 return this.alphaMask;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Rgbx", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Rgbx", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -80,22 +80,26 @@ return (rgb << 8);
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return (-16777216 | (pixel >> 8));
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Xrgb", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Xrgb", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -105,22 +109,26 @@ return rgb;
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return (-16777216 | pixel);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Argb", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Argb", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.alphaMask=-16777216;
 }, 1);
 
@@ -131,22 +139,26 @@ return rgb;
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return pixel;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Ushort565Rgb", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Ushort565Rgb", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -165,22 +177,26 @@ b=(pixel) & 31;
 b=(b << 3) | (b >> 2);
 return (-16777216 | (r << 16) | (g << 8) | (b) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Ushort555Rgbx", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Ushort555Rgbx", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -199,22 +215,26 @@ b=(pixel >> 1) & 31;
 b=(b << 3) | (b >> 2);
 return (-16777216 | (r << 16) | (g << 8) | (b) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Ushort555Rgb", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Ushort555Rgb", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -233,22 +253,26 @@ b=(pixel) & 31;
 b=(b << 3) | (b >> 2);
 return (-16777216 | (r << 16) | (g << 8) | (b) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Ushort4444Argb", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Ushort4444Argb", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.alphaMask=61440;
 }, 1);
 
@@ -275,22 +299,26 @@ b=pixel & 15;
 b=((pixel << 4) | (pixel << 0)) & 255;
 return (a | r | g | b );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Xbgr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Xbgr", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -300,22 +328,26 @@ return (((rgb & 255) << 16) | (rgb & 65280) | ((rgb >> 16) & 255) );
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return (-16777216 | ((pixel & 255) << 16) | (pixel & 65280) | ((pixel >> 16) & 255) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Bgrx", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Bgrx", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -325,22 +357,26 @@ return ((rgb << 24) | ((rgb & 65280) << 8) | ((rgb >> 8) & 65280) );
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return (-16777216 | ((pixel & 65280) << 8) | ((pixel >> 8) & 65280) | (pixel >>> 24) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "Rgba", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "Rgba", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.alphaMask=255;
 }, 1);
 
@@ -351,22 +387,26 @@ return ((rgb << 8) | (rgb >>> 24));
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return ((pixel << 24) | (pixel >>> 8));
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "RgbaPre", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "RgbaPre", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.alphaMask=255;
 }, 1);
 
@@ -396,22 +436,26 @@ g=(((g << 8) - g)/a|0);
 b=(((b << 8) - b)/a|0);
 return ((r << 24) | (g << 16) | (b << 8) | (a) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "ArgbPre", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "ArgbPre", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.alphaMask=-16777216;
 }, 1);
 
@@ -441,22 +485,26 @@ g=(((g << 8) - g)/a|0);
 b=(((b << 8) - b)/a|0);
 return ((a << 24) | (r << 16) | (g << 8) | (b) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "ArgbBm", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "ArgbBm", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -466,22 +514,26 @@ return (rgb | ((rgb >> 31) << 24));
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return ((pixel << 7) >> 7);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "ByteGray", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "ByteGray", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.image.PixelConverter');
-C$.$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -494,22 +546,26 @@ return ((red * 0.299 + grn * 0.587 + blu * 0.114 + 0.5)|0);
 Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm) {
 return ((((((65280) | pixel) << 8) | pixel) << 8) | pixel);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$instance=Clazz.new_(C$);
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PixelConverter, "UshortGray", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PixelConverter, "UshortGray", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['sun.awt.image.PixelConverter','.ByteGray']);
-C$.$$instance=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$$instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['$$instance','sun.awt.image.PixelConverter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'rgbToPixel$I$java_awt_image_ColorModel', function (rgb, cm) {
@@ -523,6 +579,10 @@ Clazz.newMeth(C$, 'pixelToRgb$I$java_awt_image_ColorModel', function (pixel, cm)
 pixel=pixel >> 8;
 return ((((((65280) | pixel) << 8) | pixel) << 8) | pixel);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.$$instance=Clazz.new_(C$);
+};
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

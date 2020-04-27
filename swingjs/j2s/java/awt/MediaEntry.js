@@ -1,23 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "MediaEntry");
+/*c*/var C$=Clazz.newClass(P$, "MediaEntry");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tracker=null;
-this.ID=0;
-this.next=null;
-this.status=0;
-this.cancelled=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['cancelled'],'I',['ID','status'],'O',['tracker','java.awt.MediaTracker','next','java.awt.MediaEntry']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_MediaTracker$I', function (mt, id) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.tracker=mt;
 this.ID=id;
 }, 1);
@@ -62,4 +54,4 @@ this.status=flag;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

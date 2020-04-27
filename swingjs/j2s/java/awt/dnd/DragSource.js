@@ -1,33 +1,14 @@
-(function(){var P$=Clazz.newPackage("java.awt.dnd"),I$=[[0,'java.awt.GraphicsEnvironment','java.awt.datatransfer.SystemFlavorMap','java.awt.Toolkit','sun.awt.dnd.SunDragSourceContextPeer','java.awt.dnd.DragSourceContext','java.awt.dnd.MouseDragGestureRecognizer','java.awt.dnd.DnDEventMulticaster','java.awt.dnd.DragSourceListener','java.awt.dnd.DragSourceMotionListener','java.awt.AWTEventMulticaster']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DragSource", null, null, 'java.io.Serializable');
-C$.DefaultCopyDrop=null;
-C$.DefaultMoveDrop=null;
-C$.DefaultLinkDrop=null;
-C$.DefaultCopyNoDrop=null;
-C$.DefaultMoveNoDrop=null;
-C$.DefaultLinkNoDrop=null;
-C$.dflt=null;
+(function(){var P$=Clazz.newPackage("java.awt.dnd"),I$=[[0,'java.awt.GraphicsEnvironment','java.awt.datatransfer.SystemFlavorMap','java.awt.Toolkit','sun.awt.dnd.SunDragSourceContextPeer','java.awt.dnd.DragSourceContext','java.awt.dnd.MouseDragGestureRecognizer','java.awt.dnd.DnDEventMulticaster','java.awt.dnd.DragSourceListener','java.awt.dnd.DragSourceMotionListener','java.awt.AWTEventMulticaster']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DragSource", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DefaultCopyDrop=C$.load$S("DnD.Cursor.CopyDrop");
-C$.DefaultMoveDrop=C$.load$S("DnD.Cursor.MoveDrop");
-C$.DefaultLinkDrop=C$.load$S("DnD.Cursor.LinkDrop");
-C$.DefaultCopyNoDrop=C$.load$S("DnD.Cursor.CopyNoDrop");
-C$.DefaultMoveNoDrop=C$.load$S("DnD.Cursor.MoveNoDrop");
-C$.DefaultLinkNoDrop=C$.load$S("DnD.Cursor.LinkNoDrop");
-C$.dflt=($I$(1).isHeadless$()) ? null : Clazz.new_(C$);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.flavorMap=null;
-this.listener=null;
-this.motionListener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.flavorMap=$I$(2).getDefaultFlavorMap$();
-}, 1);
+},1);
+
+C$.$fields$=[['O',['flavorMap','java.awt.datatransfer.FlavorMap','listener','java.awt.dnd.DragSourceListener','motionListener','java.awt.dnd.DragSourceMotionListener']]
+,['O',['DefaultCopyDrop','java.awt.Cursor','+DefaultMoveDrop','+DefaultLinkDrop','+DefaultCopyNoDrop','+DefaultMoveNoDrop','+DefaultLinkNoDrop','dflt','java.awt.dnd.DragSource']]]
 
 Clazz.newMeth(C$, 'load$S', function (name) {
 if ($I$(1).isHeadless$()) {
@@ -63,7 +44,7 @@ throw e;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'startDrag$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java_awt_Point$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener$java_awt_datatransfer_FlavorMap', function (trigger, dragCursor, dragImage, imageOffset, transferable, dsl, flavorMap) {
@@ -98,7 +79,7 @@ this.startDrag$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java
 });
 
 Clazz.newMeth(C$, 'createDragSourceContext$java_awt_dnd_peer_DragSourceContextPeer$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java_awt_Point$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener', function (dscp, dgl, dragCursor, dragImage, imageOffset, t, dsl) {
-return Clazz.new_($I$(5).c$$java_awt_dnd_peer_DragSourceContextPeer$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java_awt_Point$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener,[dscp, dgl, dragCursor, dragImage, imageOffset, t, dsl]);
+return Clazz.new_($I$(5,1).c$$java_awt_dnd_peer_DragSourceContextPeer$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java_awt_Point$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener,[dscp, dgl, dragCursor, dragImage, imageOffset, t, dsl]);
 });
 
 Clazz.newMeth(C$, 'getFlavorMap$', function () {
@@ -187,11 +168,21 @@ dsl.dragDropEnd$java_awt_dnd_DragSourceDropEvent(dsde);
 Clazz.newMeth(C$, 'processDragMouseMoved$java_awt_dnd_DragSourceDragEvent', function (dsde) {
 var dsml=this.motionListener;
 if (dsml != null ) {
-dsml.dragMouseMoved$(dsde);
+dsml.dragMouseMoved$java_awt_dnd_DragSourceDragEvent(dsde);
 }});
 
 Clazz.newMeth(C$, 'getDragThreshold$', function () {
 return 5;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.DefaultCopyDrop=C$.load$S("DnD.Cursor.CopyDrop");
+C$.DefaultMoveDrop=C$.load$S("DnD.Cursor.MoveDrop");
+C$.DefaultLinkDrop=C$.load$S("DnD.Cursor.LinkDrop");
+C$.DefaultCopyNoDrop=C$.load$S("DnD.Cursor.CopyNoDrop");
+C$.DefaultMoveNoDrop=C$.load$S("DnD.Cursor.MoveNoDrop");
+C$.DefaultLinkNoDrop=C$.load$S("DnD.Cursor.LinkNoDrop");
+C$.dflt=($I$(1).isHeadless$()) ? null : Clazz.new_(C$);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

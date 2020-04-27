@@ -1,14 +1,13 @@
 (function(){var P$=java.util,I$=[];
-var C$=Clazz.newClass(P$, "AbstractSequentialList", null, 'java.util.AbstractList');
+/*c*/var C$=Clazz.newClass(P$, "AbstractSequentialList", null, 'java.util.AbstractList');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'get$I', function (index) {
@@ -23,11 +22,11 @@ throw exc;
 }
 });
 
-Clazz.newMeth(C$, 'set$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'set$I$O', function (index, element) {
 try {
 var e=this.listIterator$I(index);
 var oldVal=e.next$();
-e.set$TE(element);
+e.set$O(element);
 return oldVal;
 } catch (exc) {
 if (Clazz.exceptionOf(exc,"java.util.NoSuchElementException")){
@@ -38,9 +37,9 @@ throw exc;
 }
 });
 
-Clazz.newMeth(C$, 'add$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'add$I$O', function (index, element) {
 try {
-this.listIterator$I(index).add$TE(element);
+this.listIterator$I(index).add$O(element);
 } catch (exc) {
 if (Clazz.exceptionOf(exc,"java.util.NoSuchElementException")){
 throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["Index: " + index]);
@@ -71,7 +70,7 @@ var modified=false;
 var e1=this.listIterator$I(index);
 var e2=c.iterator$();
 while (e2.hasNext$()){
-e1.add$TE(e2.next$());
+e1.add$O(e2.next$());
 modified=true;
 }
 return modified;
@@ -88,4 +87,4 @@ Clazz.newMeth(C$, 'iterator$', function () {
 return this.listIterator$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

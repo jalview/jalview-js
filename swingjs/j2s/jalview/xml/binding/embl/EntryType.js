@@ -1,50 +1,25 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.embl"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EntryType", function(){
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.embl"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EntryType", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Assembly',9],['Contig',9],['Feature',9],['Reference',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.secondaryAccession=null;
-this.projectAccession=null;
-this.description=null;
-this.comment=null;
-this.keyword=null;
-this.reference=null;
-this.xref=null;
-this.feature=null;
-this.assembly=null;
-this.contig=null;
-this.sequence=null;
-this.accession=null;
-this.version=null;
-this.entryVersion=null;
-this.dataClass=null;
-this.taxonomicDivision=null;
-this.moleculeType=null;
-this.sequenceLength=null;
-this.topology=null;
-this.firstPublic=null;
-this.firstPublicRelease=null;
-this.lastUpdated=null;
-this.lastUpdatedRelease=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['description','comment','sequence','accession','dataClass','taxonomicDivision','moleculeType','topology'],'O',['secondaryAccession','java.util.List','+projectAccession','+keyword','+reference','+xref','+feature','assembly','jalview.xml.binding.embl.EntryType.Assembly','contig','jalview.xml.binding.embl.EntryType.Contig','version','java.math.BigInteger','+entryVersion','+sequenceLength','firstPublic','javax.xml.datatype.XMLGregorianCalendar','firstPublicRelease','java.math.BigInteger','lastUpdated','javax.xml.datatype.XMLGregorianCalendar','lastUpdatedRelease','java.math.BigInteger']]]
 
 Clazz.newMeth(C$, 'getSecondaryAccession$', function () {
 if (this.secondaryAccession == null ) {
-this.secondaryAccession=Clazz.new_($I$(1));
+this.secondaryAccession=Clazz.new_($I$(1,1));
 }return this.secondaryAccession;
 });
 
 Clazz.newMeth(C$, 'getProjectAccession$', function () {
 if (this.projectAccession == null ) {
-this.projectAccession=Clazz.new_($I$(1));
+this.projectAccession=Clazz.new_($I$(1,1));
 }return this.projectAccession;
 });
 
@@ -66,25 +41,25 @@ this.comment=value;
 
 Clazz.newMeth(C$, 'getKeyword$', function () {
 if (this.keyword == null ) {
-this.keyword=Clazz.new_($I$(1));
+this.keyword=Clazz.new_($I$(1,1));
 }return this.keyword;
 });
 
 Clazz.newMeth(C$, 'getReference$', function () {
 if (this.reference == null ) {
-this.reference=Clazz.new_($I$(1));
+this.reference=Clazz.new_($I$(1,1));
 }return this.reference;
 });
 
 Clazz.newMeth(C$, 'getXref$', function () {
 if (this.xref == null ) {
-this.xref=Clazz.new_($I$(1));
+this.xref=Clazz.new_($I$(1,1));
 }return this.xref;
 });
 
 Clazz.newMeth(C$, 'getFeature$', function () {
 if (this.feature == null ) {
-this.feature=Clazz.new_($I$(1));
+this.feature=Clazz.new_($I$(1,1));
 }return this.feature;
 });
 
@@ -207,20 +182,21 @@ return this.lastUpdatedRelease;
 Clazz.newMeth(C$, 'setLastUpdatedRelease$java_math_BigInteger', function (value) {
 this.lastUpdatedRelease=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="EntryType" propOrder={"secondaryAccession"  "projectAccession"  "description"  "comment"  "keyword"  "reference"  "xref"  "feature"  "assembly"  "contig"  "sequence"  } )']],
-  [['description','String'],['@XmlElement(required="true" )']],
-  [['accession','.'],['@XmlAttribute(name="accession" required="true" )']],
-  [['version','java.math.BigInteger'],['@XmlAttribute(name="version" required="true" )']],
-  [['entryVersion','.'],['@XmlAttribute(name="entryVersion" )']],
-  [['dataClass','String'],['@XmlAttribute(name="dataClass" required="true" )']],
-  [['taxonomicDivision','.'],['@XmlAttribute(name="taxonomicDivision" required="true" )']],
-  [['moleculeType','.'],['@XmlAttribute(name="moleculeType" required="true" )']],
-  [['sequenceLength','java.math.BigInteger'],['@XmlAttribute(name="sequenceLength" required="true" )']],
-  [['topology','String'],['@XmlAttribute(name="topology" required="true" )']],
-  [['firstPublic','javax.xml.datatype.XMLGregorianCalendar'],['@XmlAttribute(name="firstPublic" )','@XmlSchemaType(name="date" )']],
-  [['firstPublicRelease','java.math.BigInteger'],['@XmlAttribute(name="firstPublicRelease" )']],
-  [['lastUpdated','javax.xml.datatype.XMLGregorianCalendar'],['@XmlAttribute(name="lastUpdated" )','@XmlSchemaType(name="date" )']],
-  [['lastUpdatedRelease','java.math.BigInteger'],['@XmlAttribute(name="lastUpdatedRelease" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="EntryType" propOrder={"secondaryAccession"  "projectAccession"  "description"  "comment"  "keyword"  "reference"  "xref"  "feature"  "assembly"  "contig"  "sequence"  } ']],
+  [['description','String',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['accession','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="accession" required="true" ']],
+  [['version','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="version" required="true" ']],
+  [['entryVersion','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="entryVersion" ']],
+  [['dataClass','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="dataClass" required="true" ']],
+  [['taxonomicDivision','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="taxonomicDivision" required="true" ']],
+  [['moleculeType','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="moleculeType" required="true" ']],
+  [['sequenceLength','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="sequenceLength" required="true" ']],
+  [['topology','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="topology" required="true" ']],
+  [['firstPublic','javax.xml.datatype.XMLGregorianCalendar',null,['javax.xml.bind.annotation.XmlAttribute','javax.xml.bind.annotation.XmlSchemaType']],['name="firstPublic" ','name="date" ']],
+  [['firstPublicRelease','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="firstPublicRelease" ']],
+  [['lastUpdated','javax.xml.datatype.XMLGregorianCalendar',null,['javax.xml.bind.annotation.XmlAttribute','javax.xml.bind.annotation.XmlSchemaType']],['name="lastUpdated" ','name="date" ']],
+  [['lastUpdatedRelease','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="lastUpdatedRelease" ']],
   [['null','jalview.xml.binding.embl.EntryType.Assembly'],['!XmlInner']],
   [['null','jalview.xml.binding.embl.EntryType.Contig'],['!XmlInner']],
   [['null','jalview.xml.binding.embl.EntryType.Feature'],['!XmlInner']],
@@ -234,52 +210,40 @@ C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType'],['@XmlAccessorType(Xm
   [['feature','java.util.List<jalview.xml.binding.embl.EntryType.Feature>'],['@XmlElement']],
   [['assembly','jalview.xml.binding.embl.EntryType.Assembly'],['@XmlElement']],
   [['contig','jalview.xml.binding.embl.EntryType.Contig'],['@XmlElement']],
-  [['sequence','String'],['@XmlElement']]];
+  [['sequence','String'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType, "Assembly", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType, "Assembly", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['Range',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.range=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['range','java.util.List']]]
 
 Clazz.newMeth(C$, 'getRange$', function () {
 if (this.range == null ) {
-this.range=Clazz.new_($I$(1));
+this.range=Clazz.new_($I$(1,1));
 }return this.range;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Assembly'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"range"  } )']],
-  [['range','java.util.List<jalview.xml.binding.embl.EntryType.Assembly.Range>'],['@XmlElement(required="true" )']],
-  [['null','jalview.xml.binding.embl.EntryType.Assembly.Range'],['!XmlInner']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Assembly',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"range"  } ']],
+  [['range','java.util.List<jalview.xml.binding.embl.EntryType.Assembly.Range>',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['null','jalview.xml.binding.embl.EntryType.Assembly.Range'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType.Assembly, "Range", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType.Assembly, "Range", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.begin=null;
-this.end=null;
-this.primaryBegin=null;
-this.primaryEnd=null;
-this.accession=null;
-this.version=null;
-this.complement=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['accession'],'O',['begin','java.math.BigInteger','+end','+primaryBegin','+primaryEnd','+version','complement','Boolean']]]
 
 Clazz.newMeth(C$, 'getBegin$', function () {
 return this.begin;
@@ -333,20 +297,21 @@ Clazz.newMeth(C$, 'isComplement$', function () {
 if (this.complement == null ) {
 return false;
 } else {
-return (this.complement).booleanValue$();
+return (this.complement).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setComplement$Boolean', function (value) {
 this.complement=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Assembly.Range'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['begin','java.math.BigInteger'],['@XmlAttribute(name="begin" required="true" )']],
-  [['end','.'],['@XmlAttribute(name="end" required="true" )']],
-  [['primaryBegin','.'],['@XmlAttribute(name="primaryBegin" )']],
-  [['primaryEnd','.'],['@XmlAttribute(name="primaryEnd" )']],
-  [['accession','String'],['@XmlAttribute(name="accession" required="true" )']],
-  [['version','java.math.BigInteger'],['@XmlAttribute(name="version" required="true" )']],
-  [['complement','Boolean'],['@XmlAttribute(name="complement" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Assembly.Range',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['begin','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="begin" required="true" ']],
+  [['end','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="end" required="true" ']],
+  [['primaryBegin','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="primaryBegin" ']],
+  [['primaryEnd','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="primaryEnd" ']],
+  [['accession','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="accession" required="true" ']],
+  [['version','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="version" required="true" ']],
+  [['complement','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="complement" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -354,48 +319,39 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType, "Contig", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType, "Contig", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['Gap',9],['Range',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rangeOrGap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['rangeOrGap','java.util.List']]]
 
 Clazz.newMeth(C$, 'getRangeOrGap$', function () {
 if (this.rangeOrGap == null ) {
-this.rangeOrGap=Clazz.new_($I$(1));
+this.rangeOrGap=Clazz.new_($I$(1,1));
 }return this.rangeOrGap;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Contig'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"rangeOrGap"  } )']],
-  [['rangeOrGap','java.util.List<java.lang.Object>'],['@XmlElements({"@XmlElement(name="range",type=EntryType.Contig.Range.class)" ,"@XmlElement(name="gap",type=EntryType.Contig.Gap.class)" })','@XmlElement(name="gap" type="jalview.xml.binding.embl.EntryType.Contig.Gap.class" )','@XmlElement(name="range" type="jalview.xml.binding.embl.EntryType.Contig.Range.class" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Contig',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"rangeOrGap"  } ']],
+  [['rangeOrGap','java.util.List<java.lang.Object>',null,['javax.xml.bind.annotation.XmlElements','javax.xml.bind.annotation.XmlElement','javax.xml.bind.annotation.XmlElement']],['{"@XmlElement(name="range",type=EntryType.Contig.Range.class)" ,"@XmlElement(name="gap",type=EntryType.Contig.Gap.class)" }','name="range" type="jalview.xml.binding.embl.EntryType.Contig.Range.class" ','name="gap" type="jalview.xml.binding.embl.EntryType.Contig.Gap.class" ']],
   [['null','jalview.xml.binding.embl.EntryType.Contig.Gap'],['!XmlInner']],
-  [['null','jalview.xml.binding.embl.EntryType.Contig.Range'],['!XmlInner']]];
+  [['null','jalview.xml.binding.embl.EntryType.Contig.Range'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType.Contig, "Gap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType.Contig, "Gap", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.begin=null;
-this.end=null;
-this.length=null;
-this.unknownLength=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['begin','java.math.BigInteger','+end','+length','unknownLength','Boolean']]]
 
 Clazz.newMeth(C$, 'getBegin$', function () {
 return this.begin;
@@ -425,41 +381,32 @@ Clazz.newMeth(C$, 'isUnknownLength$', function () {
 if (this.unknownLength == null ) {
 return false;
 } else {
-return (this.unknownLength).booleanValue$();
+return (this.unknownLength).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setUnknownLength$Boolean', function (value) {
 this.unknownLength=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Contig.Gap'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['begin','java.math.BigInteger'],['@XmlAttribute(name="begin" required="true" )']],
-  [['end','.'],['@XmlAttribute(name="end" required="true" )']],
-  [['length','.'],['@XmlAttribute(name="length" required="true" )']],
-  [['unknownLength','Boolean'],['@XmlAttribute(name="unknownLength" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Contig.Gap',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['begin','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="begin" required="true" ']],
+  [['end','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="end" required="true" ']],
+  [['length','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="length" required="true" ']],
+  [['unknownLength','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="unknownLength" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType.Contig, "Range", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType.Contig, "Range", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.begin=null;
-this.end=null;
-this.primaryBegin=null;
-this.primaryEnd=null;
-this.accession=null;
-this.version=null;
-this.complement=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['accession'],'O',['begin','java.math.BigInteger','+end','+primaryBegin','+primaryEnd','+version','complement','Boolean']]]
 
 Clazz.newMeth(C$, 'getBegin$', function () {
 return this.begin;
@@ -513,20 +460,21 @@ Clazz.newMeth(C$, 'isComplement$', function () {
 if (this.complement == null ) {
 return false;
 } else {
-return (this.complement).booleanValue$();
+return (this.complement).valueOf();
 }});
 
 Clazz.newMeth(C$, 'setComplement$Boolean', function (value) {
 this.complement=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Contig.Range'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['begin','java.math.BigInteger'],['@XmlAttribute(name="begin" required="true" )']],
-  [['end','.'],['@XmlAttribute(name="end" required="true" )']],
-  [['primaryBegin','.'],['@XmlAttribute(name="primaryBegin" )']],
-  [['primaryEnd','.'],['@XmlAttribute(name="primaryEnd" )']],
-  [['accession','String'],['@XmlAttribute(name="accession" required="true" )']],
-  [['version','java.math.BigInteger'],['@XmlAttribute(name="version" required="true" )']],
-  [['complement','Boolean'],['@XmlAttribute(name="complement" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Contig.Range',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['begin','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="begin" required="true" ']],
+  [['end','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="end" required="true" ']],
+  [['primaryBegin','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="primaryBegin" ']],
+  [['primaryEnd','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="primaryEnd" ']],
+  [['accession','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="accession" required="true" ']],
+  [['version','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="version" required="true" ']],
+  [['complement','Boolean',null,['javax.xml.bind.annotation.XmlAttribute']],['name="complement" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -534,24 +482,17 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType, "Feature", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType, "Feature", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['FeatureTaxon',9],['Qualifier',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.taxon=null;
-this.xref=null;
-this.qualifier=null;
-this.name=null;
-this.location=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name','location'],'O',['taxon','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon','xref','java.util.List','+qualifier']]]
 
 Clazz.newMeth(C$, 'getTaxon$', function () {
 return this.taxon;
@@ -563,13 +504,13 @@ this.taxon=value;
 
 Clazz.newMeth(C$, 'getXref$', function () {
 if (this.xref == null ) {
-this.xref=Clazz.new_($I$(1));
+this.xref=Clazz.new_($I$(1,1));
 }return this.xref;
 });
 
 Clazz.newMeth(C$, 'getQualifier$', function () {
 if (this.qualifier == null ) {
-this.qualifier=Clazz.new_($I$(1));
+this.qualifier=Clazz.new_($I$(1,1));
 }return this.qualifier;
 });
 
@@ -588,32 +529,27 @@ return this.location;
 Clazz.newMeth(C$, 'setLocation$S', function (value) {
 this.location=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Feature'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"taxon"  "xref"  "qualifier"  } )']],
-  [['name','String'],['@XmlAttribute(name="name" required="true" )']],
-  [['location','.'],['@XmlAttribute(name="location" required="true" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Feature',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"taxon"  "xref"  "qualifier"  } ']],
+  [['name','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" required="true" ']],
+  [['location','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="location" required="true" ']],
   [['null','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon'],['!XmlInner']],
   [['null','jalview.xml.binding.embl.EntryType.Feature.Qualifier'],['!XmlInner']],
   [['taxon','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon'],['@XmlElement']],
   [['xref','java.util.List<jalview.xml.binding.embl.XrefType>'],['@XmlElement']],
-  [['qualifier','java.util.List<jalview.xml.binding.embl.EntryType.Feature.Qualifier>'],['@XmlElement']]];
+  [['qualifier','java.util.List<jalview.xml.binding.embl.EntryType.Feature.Qualifier>'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType.Feature, "FeatureTaxon", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType.Feature, "FeatureTaxon", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['Lineage',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lineage=null;
-this.scientificName=null;
-this.commonName=null;
-this.taxId=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['scientificName','commonName'],'O',['lineage','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage','taxId','java.math.BigInteger']]]
 
 Clazz.newMeth(C$, 'getLineage$', function () {
 return this.lineage;
@@ -646,51 +582,46 @@ return this.taxId;
 Clazz.newMeth(C$, 'setTaxId$java_math_BigInteger', function (value) {
 this.taxId=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"lineage"  } )']],
-  [['scientificName','String'],['@XmlAttribute(name="scientificName" required="true" )']],
-  [['commonName','.'],['@XmlAttribute(name="commonName" )']],
-  [['taxId','java.math.BigInteger'],['@XmlAttribute(name="taxId" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"lineage"  } ']],
+  [['scientificName','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="scientificName" required="true" ']],
+  [['commonName','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="commonName" ']],
+  [['taxId','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="taxId" ']],
   [['null','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage'],['!XmlInner']],
-  [['lineage','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage'],['@XmlElement']]];
+  [['lineage','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType.Feature.FeatureTaxon, "Lineage", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType.Feature.FeatureTaxon, "Lineage", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
+C$.$classes$=[['Taxon',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.taxon=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['taxon','java.util.List']]]
 
 Clazz.newMeth(C$, 'getTaxon$', function () {
 if (this.taxon == null ) {
-this.taxon=Clazz.new_($I$(1));
+this.taxon=Clazz.new_($I$(1,1));
 }return this.taxon;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"taxon"  } )']],
-  [['taxon','java.util.List<jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage.Taxon>'],['@XmlElement(required="true" )']],
-  [['null','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage.Taxon'],['!XmlInner']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"taxon"  } ']],
+  [['taxon','java.util.List<jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage.Taxon>',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['null','jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage.Taxon'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType.Feature.FeatureTaxon.Lineage, "Taxon", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType.Feature.FeatureTaxon.Lineage, "Taxon", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.scientificName=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['scientificName']]]
 
 Clazz.newMeth(C$, 'getScientificName$', function () {
 return this.scientificName;
@@ -699,8 +630,9 @@ return this.scientificName;
 Clazz.newMeth(C$, 'setScientificName$S', function (value) {
 this.scientificName=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage.Taxon'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['scientificName','String'],['@XmlAttribute(name="scientificName" required="true" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Feature.FeatureTaxon.Lineage.Taxon',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['scientificName','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="scientificName" required="true" ']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -711,21 +643,16 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType.Feature, "Qualifier", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType.Feature, "Qualifier", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value','name']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -742,9 +669,10 @@ return this.name;
 Clazz.newMeth(C$, 'setName$S', function (value) {
 this.name=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Feature.Qualifier'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"value"  } )']],
-  [['name','String'],['@XmlAttribute(name="name" required="true" )']],
-  [['value','String'],['@XmlElement']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Feature.Qualifier',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"value"  } ']],
+  [['name','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" required="true" ']],
+  [['value','String'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })()
@@ -752,36 +680,16 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EntryType, "Reference", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EntryType, "Reference", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.title=null;
-this.author=null;
-this.applicant=null;
-this.consortium=null;
-this.submissionDate=null;
-this.journal=null;
-this.year=null;
-this.volume=null;
-this.issue=null;
-this.firstPage=null;
-this.lastPage=null;
-this.comment=null;
-this.referenceLocation=null;
-this.xref=null;
-this.type=null;
-this.number=null;
-this.location=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['title','consortium','journal','year','volume','issue','firstPage','lastPage','comment','referenceLocation','type','location'],'O',['author','java.util.List','+applicant','submissionDate','javax.xml.datatype.XMLGregorianCalendar','xref','java.util.List','number','java.math.BigInteger']]]
 
 Clazz.newMeth(C$, 'getTitle$', function () {
 return this.title;
@@ -793,13 +701,13 @@ this.title=value;
 
 Clazz.newMeth(C$, 'getAuthor$', function () {
 if (this.author == null ) {
-this.author=Clazz.new_($I$(1));
+this.author=Clazz.new_($I$(1,1));
 }return this.author;
 });
 
 Clazz.newMeth(C$, 'getApplicant$', function () {
 if (this.applicant == null ) {
-this.applicant=Clazz.new_($I$(1));
+this.applicant=Clazz.new_($I$(1,1));
 }return this.applicant;
 });
 
@@ -885,7 +793,7 @@ this.referenceLocation=value;
 
 Clazz.newMeth(C$, 'getXref$', function () {
 if (this.xref == null ) {
-this.xref=Clazz.new_($I$(1));
+this.xref=Clazz.new_($I$(1,1));
 }return this.xref;
 });
 
@@ -912,11 +820,12 @@ return this.location;
 Clazz.newMeth(C$, 'setLocation$S', function (value) {
 this.location=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Reference'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"title"  "author"  "applicant"  "consortium"  "submissionDate"  "journal"  "year"  "volume"  "issue"  "firstPage"  "lastPage"  "comment"  "referenceLocation"  "xref"  } )']],
-  [['submissionDate','javax.xml.datatype.XMLGregorianCalendar'],['@XmlSchemaType(name="date" )']],
-  [['type','String'],['@XmlAttribute(name="type" required="true" )']],
-  [['number','java.math.BigInteger'],['@XmlAttribute(name="number" required="true" )']],
-  [['location','String'],['@XmlAttribute(name="location" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.embl.EntryType.Reference',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"title"  "author"  "applicant"  "consortium"  "submissionDate"  "journal"  "year"  "volume"  "issue"  "firstPage"  "lastPage"  "comment"  "referenceLocation"  "xref"  } ']],
+  [['submissionDate','javax.xml.datatype.XMLGregorianCalendar',null,['javax.xml.bind.annotation.XmlSchemaType']],['name="date" ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" required="true" ']],
+  [['number','java.math.BigInteger',null,['javax.xml.bind.annotation.XmlAttribute']],['name="number" required="true" ']],
+  [['location','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="location" ']],
   [['title','String'],['@XmlElement']],
   [['author','java.util.List<java.lang.String>'],['@XmlElement']],
   [['applicant','java.util.List<java.lang.String>'],['@XmlElement']],
@@ -929,11 +838,11 @@ C$.__ANN__ = [[[null,'jalview.xml.binding.embl.EntryType.Reference'],['@XmlAcces
   [['lastPage','String'],['@XmlElement']],
   [['comment','String'],['@XmlElement']],
   [['referenceLocation','String'],['@XmlElement']],
-  [['xref','java.util.List<jalview.xml.binding.embl.XrefType>'],['@XmlElement']]];
+  [['xref','java.util.List<jalview.xml.binding.embl.XrefType>'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

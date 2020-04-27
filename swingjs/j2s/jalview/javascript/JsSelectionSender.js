@@ -1,26 +1,20 @@
 (function(){var P$=Clazz.newPackage("jalview.javascript");
-var C$=Clazz.newClass(P$, "JsSelectionSender", null, 'jalview.javascript.JSFunctionExec', ['jalview.structure.SelectionListener', 'jalview.javascript.JsCallBack']);
+/*c*/var C$=Clazz.newClass(P$, "JsSelectionSender", null, 'jalview.javascript.JSFunctionExec', ['jalview.structure.SelectionListener', 'jalview.javascript.JsCallBack']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._af=null;
-this._listener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['_listener'],'O',['_af','jalview.appletgui.AlignFrame']]]
 
 Clazz.newMeth(C$, 'c$$jalview_bin_JalviewLite$jalview_appletgui_AlignFrame$S', function (jvlite, af, listener) {
-C$.superclazz.c$$jalview_bin_JalviewLite.apply(this, [jvlite]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_bin_JalviewLite.apply(this,[jvlite]);C$.$init$.apply(this);
 this._af=af;
 this._listener=listener;
 }, 1);
 
-Clazz.newMeth(C$, ['selection$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_structure_SelectionSource','selection$'], function (seqsel, colsel, hidden, source) {
+Clazz.newMeth(C$, 'selection$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_structure_SelectionSource', function (seqsel, colsel, hidden, source) {
 try {
 var setid="";
 var src=this._af;
@@ -75,4 +69,4 @@ return this._listener;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

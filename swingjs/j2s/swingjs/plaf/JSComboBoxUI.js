@@ -1,19 +1,30 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'swingjs.api.js.DOMNode','javajs.util.PT','swingjs.plaf.JSComponentUI','javax.swing.LookAndFeel','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSComboBoxUI", null, 'swingjs.plaf.JSLightweightUI', ['java.awt.event.ItemListener', 'javax.swing.event.ListDataListener']);
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},I$=[[0,'javax.swing.UIManager','sun.swing.DefaultLookup','javax.swing.SwingUtilities','javax.swing.KeyStroke','java.awt.event.ActionEvent','javax.swing.plaf.basic.BasicGraphicsUtils','java.awt.EventQueue',['javax.swing.text.Position','.Bias'],'swingjs.jquery.JQueryUI','StringBuffer','javax.swing.CellRendererPane','java.awt.Dimension','swingjs.plaf.JSComponentUI',['swingjs.plaf.JSComboBoxUI','.DefaultKeySelectionManager'],'javax.swing.LookAndFeel','sun.awt.AppContext','javax.swing.DefaultListCellRenderer',['swingjs.plaf.JSComboBoxUI','.Actions'],'swingjs.plaf.JSComboPopupList',['swingjs.plaf.BasicComboBoxRenderer','.UIResource'],['swingjs.plaf.BasicComboBoxEditor','.UIResource'],['swingjs.plaf.JSComboBoxUI','.Handler'],['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Rectangle','swingjs.plaf.LazyActionMap']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSComboBoxUI", function(){
+Clazz.newInstance(this, arguments,0,C$);
+}, 'swingjs.plaf.JSLightweightUI');
+C$.$classes$=[['KeyHandler',1],['FocusHandler',1],['ListDataHandler',1],['ItemHandler',1],['PropertyChangeHandler',1],['ComboBoxLayoutManager',1],['Actions',10],['Handler',2],['DefaultKeySelectionManager',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.comboBox=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+this.hasFocus=false;
+this.isTableCellEditor=false;
+this.currentValuePane=Clazz.new_($I$(11,1));
+this.timeFactor=1000;
+this.lastTime=0;
+this.time=0;
+this.isMinimumSizeDirty=true;
+this.cachedMinimumSize=Clazz.new_($I$(12,1).c$$I$I,[0, 0]);
+this.isDisplaySizeDirty=true;
+this.cachedDisplaySize=Clazz.new_($I$(12,1).c$$I$I,[0, 0]);
+this.squareButton=true;
+},1);
+
+C$.$fields$=[['Z',['hasCustomRenderer','contentsTainted','hasFocus','isTableCellEditor','isMinimumSizeDirty','isDisplaySizeDirty','sameBaseline','squareButton'],'J',['timeFactor','lastTime','time'],'O',['renderer','javax.swing.ListCellRenderer','comboBox','javax.swing.JComboBox','listBox','javax.swing.JList','currentValuePane','javax.swing.CellRendererPane','popup','swingjs.plaf.JSComboPopupList','editor','java.awt.Component','keyListener','java.awt.event.KeyListener','focusListener','java.awt.event.FocusListener','propertyChangeListener','java.beans.PropertyChangeListener','itemListener','java.awt.event.ItemListener','popupMouseListener','java.awt.event.MouseListener','popupMouseMotionListener','java.awt.event.MouseMotionListener','popupKeyListener','java.awt.event.KeyListener','listDataListener','javax.swing.event.ListDataListener','handler','swingjs.plaf.JSComboBoxUI.Handler','keySelectionManager','javax.swing.JComboBox.KeySelectionManager','cachedMinimumSize','java.awt.Dimension','+cachedDisplaySize','padding','java.awt.Insets']]
+,['O',['COMBO_UI_LIST_CELL_RENDERER_KEY','java.lang.Object','HIDE_POPUP_KEY','StringBuffer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.isContainer=true;
 this.allowPaintedBackground=false;
 this.setDoc$();
@@ -22,103 +33,1024 @@ this.setDoc$();
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
 this.comboBox=this.jc;
 if (this.domNode == null ) {
-this.domNode=this.focusNode=$I$(1).setStyles(P$.JSComponentUI.newDOMObject$S$S$SA("select", this.id, []), ["padding", "0px 0px", "lineHeight", "0.8", "box-sizing", "border-box"]);
-this.ignoreAllMouseEvents$swingjs_api_js_DOMNode(this.domNode);
-this.bindJQueryEvents$swingjs_api_js_DOMNode$S$I(this.domNode, "change", -1);
-this.addJQueryFocusCallbacks$();
-}p$1.populateList.apply(this, []);
-p$1.checkEnabled.apply(this, []);
+this.domNode=this.focusNode=$I$(13).newDOMObject$S$S$SA("div", this.id, []);
+this.setDataShadowKeyComponent$swingjs_api_js_DOMNode$java_awt_Component(this.domNode, this.listBox);
+}this.addFocusHandler$();
+this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.domNode, this.c.getFont$());
+this.popup.updateEnabled$();
 return this.updateDOMNodeCUI$();
 });
 
-Clazz.newMeth(C$, 'checkEnabled', function () {
-if (this.comboBox.isEnabled$()) this.domNode.removeAttribute("disabled");
- else $I$(1).setAttr(this.domNode, "disabled", "TRUE");
-}, p$1);
+Clazz.newMeth(C$, 'setVisible$Z', function (b) {
+if (this.isTainted) this.setHTMLElement$();
+C$.superclazz.prototype.setVisible$Z.apply(this, [b]);
+if (b) this.popup.setComboVisible$Z(true);
+});
+
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
+var name=e.getPropertyName$();
+switch (name) {
+case "ancestor":
+break;
+case "updateSwingJS":
+this.popup.updateState$java_util_EventObject$S(e, name);
+return;
+case "renderer":
+this.renderer=e.getNewValue$();
+this.listBox.setCellRenderer$javax_swing_ListCellRenderer(this.renderer);
+this.hasCustomRenderer=true;
+return;
+}
+C$.superclazz.prototype.propertyChange$java_beans_PropertyChangeEvent.apply(this, [e]);
+});
+
+Clazz.newMeth(C$, 'getChildCount$', function () {
+return 0;
+});
 
 Clazz.newMeth(C$, 'setEnabled$Z', function (b) {
-p$1.checkEnabled.apply(this, []);
+this.popup.updateEnabled$();
 });
 
-Clazz.newMeth(C$, ['handleJSEvent$O$I$O','handleJSEvent$'], function (target, eventType, jQueryEvent) {
-switch (eventType) {
-case -1:
-var index=$I$(2).parseInt$S("" + $I$(1).getAttr(this.domNode, "selectedIndex"));
-this.comboBox._setTrigger$Z(true);
-this.comboBox.setSelectedIndex$I(index);
-this.comboBox._setTrigger$Z(false);
-break;
-}
-return true;
+Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
+this.isMinimumSizeDirty=true;
+this.comboBox=c;
+this.installDefaults$();
+this.listBox=this.popup=this.createPopup$();
+this.listBox.setSelectionBackground$java_awt_Color(null);
+this.listBox.addListSelectionListener$javax_swing_event_ListSelectionListener(p$1.getHandler.apply(this, []));
+this.comboBox.add$java_awt_Component(this.listBox);
+var inTable=c.getClientProperty$O("JComboBox.isTableCellEditor");
+if (inTable != null ) {
+this.isTableCellEditor=inTable.equals$O(Boolean.TRUE) ? true : false;
+}if (this.comboBox.getRenderer$() == null  || Clazz.instanceOf(this.comboBox.getRenderer$(), "javax.swing.plaf.UIResource") ) {
+this.comboBox.setRenderer$javax_swing_ListCellRenderer(this.createRenderer$());
+}this.installListeners$();
+this.installComponents$();
+this.comboBox.setLayout$java_awt_LayoutManager(this.createLayoutManager$());
+this.comboBox.setRequestFocusEnabled$Z(true);
+this.installKeyboardActions$();
+this.comboBox.putClientProperty$O$O("doNotCancelPopup", C$.HIDE_POPUP_KEY);
+if (this.keySelectionManager == null  || Clazz.instanceOf(this.keySelectionManager, "javax.swing.plaf.UIResource") ) {
+this.keySelectionManager=Clazz.new_($I$(14,1),[this, null]);
+}this.comboBox.setKeySelectionManager$javax_swing_JComboBox_KeySelectionManager(this.keySelectionManager);
 });
 
-Clazz.newMeth(C$, 'populateList', function () {
-this.$$O(this.domNode).empty();
-var n=this.comboBox.getItemCount$();
-var iselect=this.comboBox.getSelectedIndex$();
-for (var i=0; i < n; i++) {
-var item=this.comboBox.getItemAt$I(i).toString();
-var option=$I$(1).createElement("option", this.id + "_" + (++$I$(3).incr) );
-$I$(1).setAttr(option, "innerHTML", item);
-if (i == iselect) $I$(1).setAttr(option, "selected", "TRUE");
-this.domNode.appendChild(option);
-}
-}, p$1);
-
-Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-this.comboBox=jc;
-this.installListeners$();
-$I$(4).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "ComboBox.background", "ComboBox.foreground", "ComboBox.font");
+Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (c) {
+this.setPopupVisible$javax_swing_JComboBox$Z(this.comboBox, false);
+this.popup.uninstallingUI$();
+this.uninstallKeyboardActions$();
+this.comboBox.setLayout$java_awt_LayoutManager(null);
+this.uninstallComponents$();
+this.uninstallListeners$();
+this.uninstallDefaults$();
+if (this.comboBox.getRenderer$() == null  || Clazz.instanceOf(this.comboBox.getRenderer$(), "javax.swing.plaf.UIResource") ) {
+this.comboBox.setRenderer$javax_swing_ListCellRenderer(null);
+}var comboBoxEditor=this.comboBox.editor &&this.comboBox.getEditor$();
+if (Clazz.instanceOf(comboBoxEditor, "javax.swing.plaf.UIResource")) {
+if (comboBoxEditor.getEditorComponent$().hasFocus$()) {
+this.comboBox.requestFocusInWindow$();
+}this.comboBox.setEditor$javax_swing_ComboBoxEditor(null);
+}if (Clazz.instanceOf(this.keySelectionManager, "javax.swing.plaf.UIResource")) {
+this.comboBox.setKeySelectionManager$javax_swing_JComboBox_KeySelectionManager(null);
+}this.handler=null;
+this.keyListener=null;
+this.focusListener=null;
+this.listDataListener=null;
+this.propertyChangeListener=null;
+this.popup=null;
+this.listBox=null;
+this.comboBox=null;
 });
+
+Clazz.newMeth(C$, 'installDefaults$', function () {
+$I$(15).installColorsAndFont$javax_swing_JComponent$S$S$S(this.comboBox, "ComboBox.background", "ComboBox.foreground", "ComboBox.font");
+$I$(15).installBorder$javax_swing_JComponent$S(this.comboBox, "ComboBox.border");
+$I$(15).installProperty$javax_swing_JComponent$S$O(this.comboBox, "opaque", Boolean.TRUE);
+var l=$I$(1).get$O("ComboBox.timeFactor");
+this.timeFactor=l == null  ? 1000 : l.longValue$();
+var b=$I$(1).get$O("ComboBox.squareButton");
+this.squareButton=b == null  ? true : (b).valueOf();
+this.padding=$I$(1).getInsets$O("ComboBox.padding");
+});
+
+Clazz.newMeth(C$, 'installListeners$', function () {
+if ((this.itemListener=this.createItemListener$()) != null ) {
+this.comboBox.addItemListener$java_awt_event_ItemListener(this.itemListener);
+}if ((this.propertyChangeListener=this.createPropertyChangeListener$()) != null ) {
+this.comboBox.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
+}if ((this.keyListener=this.createKeyListener$()) != null ) {
+this.comboBox.addKeyListener$java_awt_event_KeyListener(this.keyListener);
+}if ((this.focusListener=this.createFocusListener$()) != null ) {
+this.comboBox.addFocusListener$java_awt_event_FocusListener(this.focusListener);
+}if ((this.popupMouseListener=this.popup.getMouseListener$()) != null ) {
+this.comboBox.addMouseListener$java_awt_event_MouseListener(this.popupMouseListener);
+}if ((this.popupMouseMotionListener=this.popup.getMouseMotionListener$()) != null ) {
+this.comboBox.addMouseMotionListener$java_awt_event_MouseMotionListener(this.popupMouseMotionListener);
+}if ((this.popupKeyListener=this.popup.getKeyListener$()) != null ) {
+this.comboBox.addKeyListener$java_awt_event_KeyListener(this.popupKeyListener);
+}if (this.comboBox.getModel$() != null ) {
+if ((this.listDataListener=this.createListDataListener$()) != null ) {
+this.comboBox.getModel$().addListDataListener$javax_swing_event_ListDataListener(this.listDataListener);
+}}});
+
+Clazz.newMeth(C$, 'uninstallDefaults$', function () {
+$I$(15).installColorsAndFont$javax_swing_JComponent$S$S$S(this.comboBox, "ComboBox.background", "ComboBox.foreground", "ComboBox.font");
+$I$(15).uninstallBorder$javax_swing_JComponent(this.comboBox);
+});
+
+Clazz.newMeth(C$, 'uninstallListeners$', function () {
+if (this.keyListener != null ) {
+this.comboBox.removeKeyListener$java_awt_event_KeyListener(this.keyListener);
+}if (this.itemListener != null ) {
+this.comboBox.removeItemListener$java_awt_event_ItemListener(this.itemListener);
+}if (this.propertyChangeListener != null ) {
+this.comboBox.removePropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
+}if (this.focusListener != null ) {
+this.comboBox.removeFocusListener$java_awt_event_FocusListener(this.focusListener);
+}if (this.popupMouseListener != null ) {
+this.comboBox.removeMouseListener$java_awt_event_MouseListener(this.popupMouseListener);
+}if (this.popupMouseMotionListener != null ) {
+this.comboBox.removeMouseMotionListener$java_awt_event_MouseMotionListener(this.popupMouseMotionListener);
+}if (this.popupKeyListener != null ) {
+this.comboBox.removeKeyListener$java_awt_event_KeyListener(this.popupKeyListener);
+}if (this.comboBox.getModel$() != null ) {
+if (this.listDataListener != null ) {
+this.comboBox.getModel$().removeListDataListener$javax_swing_event_ListDataListener(this.listDataListener);
+}}});
 
 Clazz.newMeth(C$, 'getPropertyPrefix$', function () {
 return "ComboBox";
 });
 
 Clazz.newMeth(C$, 'getDisabledColors$S', function (pp) {
-this.inactiveBackground=$I$(5).getColor$O(pp + "disabledBackground");
-this.inactiveForeground=$I$(5).getColor$O(pp + "disabledForeground");
+this.inactiveBackground=$I$(1).getColor$O(pp + "disabledBackground");
+this.inactiveForeground=$I$(1).getColor$O(pp + "disabledForeground");
 });
 
-Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
-this.uninstallListeners$();
+Clazz.newMeth(C$, 'getDefaultListCellRenderer$', function () {
+var renderer=$I$(16).getAppContext$().get$O(C$.COMBO_UI_LIST_CELL_RENDERER_KEY);
+if (renderer == null ) {
+$I$(16).getAppContext$().put$O$O(C$.COMBO_UI_LIST_CELL_RENDERER_KEY, renderer=Clazz.new_($I$(17,1)));
+}return renderer;
+}, 1);
+
+Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap', function (map) {
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["hidePopup"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["pageDownPassThrough"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["pageUpPassThrough"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["homePassThrough"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["endPassThrough"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["selectNext"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["selectNext2"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["togglePopup"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["spacePopup"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["selectPrevious"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["selectPrevious2"]));
+map.put$javax_swing_Action(Clazz.new_($I$(18,1).c$$S,["enterPressed"]));
+}, 1);
+
+Clazz.newMeth(C$, 'createPopup$', function () {
+return Clazz.new_($I$(19,1).c$$swingjs_plaf_JSComboBoxUI,[this]);
 });
 
-Clazz.newMeth(C$, 'installListeners$', function () {
-this.comboBox.addItemListener$java_awt_event_ItemListener(this);
-if (this.comboBox.getModel$() != null ) {
-this.comboBox.getModel$().addListDataListener$javax_swing_event_ListDataListener(this);
+Clazz.newMeth(C$, 'createKeyListener$', function () {
+return p$1.getHandler.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'createFocusListener$', function () {
+return p$1.getHandler.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'createListDataListener$', function () {
+return p$1.getHandler.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'createItemListener$', function () {
+return p$1.getHandler.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'createPropertyChangeListener$', function () {
+return p$1.getHandler.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'createLayoutManager$', function () {
+return p$1.getHandler.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'createRenderer$', function () {
+return Clazz.new_($I$(20,1));
+});
+
+Clazz.newMeth(C$, 'createEditor$', function () {
+return Clazz.new_($I$(21,1));
+});
+
+Clazz.newMeth(C$, 'getHandler', function () {
+if (this.handler == null ) {
+this.handler=Clazz.new_($I$(22,1),[this, null]);
+}return this.handler;
+}, p$1);
+
+Clazz.newMeth(C$, 'updateToolTipTextForChildren', function () {
+var children=this.comboBox.getComponents$();
+for (var i=0; i < children.length; ++i) {
+if (Clazz.instanceOf(children[i], "javax.swing.JComponent")) {
+(children[i]).setToolTipText$S(this.comboBox.getToolTipText$());
+}}
+}, p$1);
+
+Clazz.newMeth(C$, 'installComponents$', function () {
+if (this.comboBox.isEditable$()) {
+this.addEditor$();
+}this.comboBox.add$java_awt_Component(this.currentValuePane);
+});
+
+Clazz.newMeth(C$, 'uninstallComponents$', function () {
+if (this.editor != null ) {
+this.unconfigureEditor$();
+}this.comboBox.removeAll$();
+});
+
+Clazz.newMeth(C$, 'addEditor$', function () {
+this.removeEditor$();
+this.editor=this.comboBox.getEditor$().getEditorComponent$();
+if (this.editor != null ) {
+this.configureEditor$();
+this.comboBox.add$java_awt_Component(this.editor);
+if (this.comboBox.isFocusOwner$()) {
+this.editor.requestFocusInWindow$();
+}}});
+
+Clazz.newMeth(C$, 'removeEditor$', function () {
+if (this.editor != null ) {
+this.unconfigureEditor$();
+this.comboBox.remove$java_awt_Component(this.editor);
+this.editor=null;
 }});
 
-Clazz.newMeth(C$, 'uninstallListeners$', function () {
-this.comboBox.removeItemListener$java_awt_event_ItemListener(this);
-if (this.comboBox.getModel$() != null ) this.comboBox.getModel$().removeListDataListener$javax_swing_event_ListDataListener(this);
+Clazz.newMeth(C$, 'configureEditor$', function () {
+this.editor.setEnabled$Z(this.comboBox.isEnabled$());
+this.editor.setFocusable$Z(this.comboBox.isFocusable$());
+this.editor.setFont$java_awt_Font(this.comboBox.getFont$());
+if (this.focusListener != null ) {
+this.editor.addFocusListener$java_awt_event_FocusListener(this.focusListener);
+}this.editor.addFocusListener$java_awt_event_FocusListener(p$1.getHandler.apply(this, []));
+this.comboBox.getEditor$().addActionListener$java_awt_event_ActionListener(p$1.getHandler.apply(this, []));
+if (Clazz.instanceOf(this.editor, "javax.swing.JComponent")) {
+(this.editor).putClientProperty$O$O("doNotCancelPopup", C$.HIDE_POPUP_KEY);
+(this.editor).setInheritsPopupMenu$Z(true);
+}this.comboBox.configureEditor$javax_swing_ComboBoxEditor$O(this.comboBox.getEditor$(), this.comboBox.getSelectedItem$());
+this.editor.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
 });
 
-Clazz.newMeth(C$, 'setPopupVisible$javax_swing_JComboBox$Z', function (c, v) {
+Clazz.newMeth(C$, 'unconfigureEditor$', function () {
+if (this.focusListener != null ) {
+this.editor.removeFocusListener$java_awt_event_FocusListener(this.focusListener);
+}this.editor.removePropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
+this.editor.removeFocusListener$java_awt_event_FocusListener(p$1.getHandler.apply(this, []));
+this.comboBox.getEditor$().removeActionListener$java_awt_event_ActionListener(p$1.getHandler.apply(this, []));
 });
 
 Clazz.newMeth(C$, 'isPopupVisible$javax_swing_JComboBox', function (c) {
-return false;
+return this.popup.isVisible$();
+});
+
+Clazz.newMeth(C$, 'setPopupVisible$javax_swing_JComboBox$Z', function (c, v) {
+this.popup.setPopupVisible$Z(v);
 });
 
 Clazz.newMeth(C$, 'isFocusTraversable$javax_swing_JComboBox', function (c) {
+return !this.comboBox.isEditable$();
+});
+
+Clazz.newMeth(C$, 'paint$java_awt_Graphics$javax_swing_JComponent', function (g, c) {
+if (this.contentsTainted) {
+this.popup.updateList$();
+this.contentsTainted=false;
+} else {
+this.popup.updateCSS$();
+}this.popup.updateSelectedIndex$();
+this.popup.setPopupVisible$Z(false);
+});
+
+Clazz.newMeth(C$, 'getPreferredSize$javax_swing_JComponent', function (c) {
+return this.getMinimumSize$javax_swing_JComponent(c);
+});
+
+Clazz.newMeth(C$, 'getMinimumSize$javax_swing_JComponent', function (c) {
+if (!this.isMinimumSizeDirty) {
+return Clazz.new_($I$(12,1).c$$java_awt_Dimension,[this.cachedMinimumSize]);
+}var size=this.getDisplaySize$();
+var insets=c.getInsets$();
+var buttonWidth=20;
+size.height+=insets.top + insets.bottom;
+size.width+=insets.left + insets.right + buttonWidth + 10 ;
+this.cachedMinimumSize.setSize$I$I(size.width, size.height);
+this.isMinimumSizeDirty=false;
+return Clazz.new_($I$(12,1).c$$java_awt_Dimension,[size]);
+});
+
+Clazz.newMeth(C$, 'getMaximumSize$javax_swing_JComponent', function (c) {
+return Clazz.new_($I$(12,1).c$$I$I,[32767, 32767]);
+});
+
+Clazz.newMeth(C$, 'getBaseline$javax_swing_JComponent$I$I', function (c, width, height) {
+C$.superclazz.prototype.getBaseline$javax_swing_JComponent$I$I.apply(this, [c, width, height]);
+var baseline=-1;
+this.getDisplaySize$();
+if (this.sameBaseline) {
+var insets=c.getInsets$();
+height=height - insets.top - insets.bottom ;
+if (!this.comboBox.isEditable$()) {
+var renderer=this.comboBox.getRenderer$();
+if (renderer == null ) {
+renderer=Clazz.new_($I$(17,1));
+}var value=null;
+var prototypeValue=this.comboBox.getPrototypeDisplayValue$();
+if (prototypeValue != null ) {
+value=prototypeValue;
+} else if (this.comboBox.getModel$().getSize$() > 0) {
+value=this.comboBox.getModel$().getElementAt$I(0);
+}var component=renderer.getListCellRendererComponent$javax_swing_JList$O$I$Z$Z(this.listBox, value, -1, false, false);
+if (Clazz.instanceOf(component, "javax.swing.JLabel")) {
+var label=component;
+var text=label.getText$();
+if ((text == null ) || text.isEmpty$() ) {
+label.setText$S(" ");
+}}if (Clazz.instanceOf(component, "javax.swing.JComponent")) {
+component.setFont$java_awt_Font(this.comboBox.getFont$());
+}baseline=component.getBaseline$I$I(width, height);
+} else {
+baseline=this.editor.getBaseline$I$I(width, height);
+}if (baseline > 0) {
+baseline+=insets.top;
+}}return baseline;
+});
+
+Clazz.newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent', function (c) {
+C$.superclazz.prototype.getBaselineResizeBehavior$javax_swing_JComponent.apply(this, [c]);
+this.getDisplaySize$();
+if (this.comboBox.isEditable$()) {
+return this.editor.getBaselineResizeBehavior$();
+} else if (this.sameBaseline) {
+var renderer=this.comboBox.getRenderer$();
+if (renderer == null ) {
+renderer=Clazz.new_($I$(17,1));
+}var value=null;
+var prototypeValue=this.comboBox.getPrototypeDisplayValue$();
+if (prototypeValue != null ) {
+value=prototypeValue;
+} else if (this.comboBox.getModel$().getSize$() > 0) {
+value=this.comboBox.getModel$().getElementAt$I(0);
+}if (value != null ) {
+var component=renderer.getListCellRendererComponent$javax_swing_JList$O$I$Z$Z(this.listBox, value, -1, false, false);
+return component.getBaselineResizeBehavior$();
+}}return $I$(23).OTHER;
+});
+
+Clazz.newMeth(C$, 'isNavigationKey$I', function (keyCode) {
+return keyCode == 38 || keyCode == 40  || keyCode == 224  || keyCode == 225 ;
+});
+
+Clazz.newMeth(C$, 'isNavigationKey$I$I', function (keyCode, modifiers) {
+var inputMap=this.comboBox.getInputMap$I(1);
+var key=$I$(4).getKeyStroke$I$I(keyCode, modifiers);
+if (inputMap != null  && inputMap.get$javax_swing_KeyStroke(key) != null  ) {
 return true;
+}return false;
+}, p$1);
+
+Clazz.newMeth(C$, 'selectNextPossibleValue$', function () {
+var si;
+if (this.comboBox.isPopupVisible$()) {
+si=this.listBox.getSelectedIndex$();
+} else {
+si=this.comboBox.getSelectedIndex$();
+}if (si < this.comboBox.getModel$().getSize$() - 1) {
+this.listBox.setSelectedIndex$I(si + 1);
+this.listBox.ensureIndexIsVisible$I(si + 1);
+if (!this.isTableCellEditor) {
+if (!($I$(1).getBoolean$O("ComboBox.noActionOnKeyNavigation") && this.comboBox.isPopupVisible$() )) {
+this.comboBox.setSelectedIndex$I(si + 1);
+}}this.repaint$();
+}});
+
+Clazz.newMeth(C$, 'selectPreviousPossibleValue$', function () {
+var si;
+if (this.comboBox.isPopupVisible$()) {
+si=this.listBox.getSelectedIndex$();
+} else {
+si=this.comboBox.getSelectedIndex$();
+}if (si > 0) {
+this.listBox.setSelectedIndex$I(si - 1);
+this.listBox.ensureIndexIsVisible$I(si - 1);
+if (!this.isTableCellEditor) {
+if (!($I$(1).getBoolean$O("ComboBox.noActionOnKeyNavigation") && this.comboBox.isPopupVisible$() )) {
+this.comboBox.setSelectedIndex$I(si - 1);
+}}this.repaint$();
+}});
+
+Clazz.newMeth(C$, 'toggleOpenClose$', function () {
+this.setPopupVisible$javax_swing_JComboBox$Z(this.comboBox, !this.isPopupVisible$javax_swing_JComboBox(this.comboBox));
+});
+
+Clazz.newMeth(C$, 'rectangleForCurrentValue$', function () {
+var width=this.comboBox.getWidth$();
+var height=this.comboBox.getHeight$();
+var insets=this.comboBox.getInsets$();
+var buttonSize=height - (insets.top + insets.bottom);
+if ($I$(6).isLeftToRight$java_awt_Component(this.comboBox)) {
+return Clazz.new_([insets.left, insets.top, width - (insets.left + insets.right + buttonSize ), height - (insets.top + insets.bottom)],$I$(24,1).c$$I$I$I$I);
+} else {
+return Clazz.new_([insets.left + buttonSize, insets.top, width - (insets.left + insets.right + buttonSize ), height - (insets.top + insets.bottom)],$I$(24,1).c$$I$I$I$I);
+}});
+
+Clazz.newMeth(C$, 'paintCurrentValue$java_awt_Graphics$java_awt_Rectangle$Z', function (g, bounds, hasFocus) {
+});
+
+Clazz.newMeth(C$, 'paintCurrentValueBackground$java_awt_Graphics$java_awt_Rectangle$Z', function (g, bounds, hasFocus) {
+var t=g.getColor$();
+if (this.comboBox.isEnabled$()) g.setColor$java_awt_Color($I$(2).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$java_awt_Color(this.comboBox, this, "ComboBox.background", null));
+ else g.setColor$java_awt_Color($I$(2).getColor$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$java_awt_Color(this.comboBox, this, "ComboBox.disabledBackground", null));
+g.fillRect$I$I$I$I(bounds.x, bounds.y, bounds.width, bounds.height);
+g.setColor$java_awt_Color(t);
+});
+
+Clazz.newMeth(C$, 'repaintCurrentValue$', function () {
+var r=this.rectangleForCurrentValue$();
+this.comboBox.repaint$I$I$I$I(r.x, r.y, r.width, r.height);
+});
+
+Clazz.newMeth(C$, 'getDefaultSize$', function () {
+var d=this.getSizeForComponent$java_awt_Component(C$.getDefaultListCellRenderer$().getListCellRendererComponent$javax_swing_JList$O$I$Z$Z(this.listBox, " ", -1, false, false));
+return Clazz.new_($I$(12,1).c$$I$I,[d.width, d.height]);
+});
+
+Clazz.newMeth(C$, 'getDisplaySize$', function () {
+if (!this.isDisplaySizeDirty) {
+return Clazz.new_($I$(12,1).c$$java_awt_Dimension,[this.cachedDisplaySize]);
+}var result=Clazz.new_($I$(12,1));
+this.renderer=this.comboBox.getRenderer$();
+if (this.renderer == null ) {
+this.renderer=Clazz.new_($I$(17,1));
+}this.sameBaseline=true;
+var prototypeValue=this.comboBox.getPrototypeDisplayValue$();
+if (prototypeValue != null ) {
+result=this.getSizeForComponent$java_awt_Component(this.renderer.getListCellRendererComponent$javax_swing_JList$O$I$Z$Z(this.listBox, prototypeValue, -1, false, false));
+} else {
+var model=this.comboBox.getModel$();
+var modelSize=model.getSize$();
+var baseline=-1;
+var d;
+if (modelSize > 0) {
+for (var i=0; i < modelSize; i++) {
+var value=model.getElementAt$I(i);
+var c=this.renderer.getListCellRendererComponent$javax_swing_JList$O$I$Z$Z(this.listBox, value, -1, false, false);
+d=this.getSizeForComponent$java_awt_Component(c);
+if (this.sameBaseline && value != null   && (!(Clazz.instanceOf(value, "java.lang.String")) || !"".equals$O(value) ) ) {
+var newBaseline=c.getBaseline$I$I(d.width, d.height);
+if (newBaseline == -1) {
+this.sameBaseline=false;
+} else if (baseline == -1) {
+baseline=newBaseline;
+} else if (baseline != newBaseline) {
+this.sameBaseline=false;
+}}result.width=Math.max(result.width, d.width);
+result.height=Math.max(result.height, d.height);
+}
+} else {
+result=this.getDefaultSize$();
+if (this.comboBox.isEditable$()) {
+result.width=100;
+}}}if (this.comboBox.isEditable$()) {
+var d=this.editor.getPreferredSize$();
+result.width=Math.max(result.width, d.width);
+result.height=Math.max(result.height, d.height);
+}if (this.padding != null ) {
+result.width+=this.padding.left + this.padding.right;
+result.height+=this.padding.top + this.padding.bottom;
+}this.cachedDisplaySize.setSize$I$I(result.width, result.height);
+this.isDisplaySizeDirty=false;
+return result;
+});
+
+Clazz.newMeth(C$, 'getSizeForComponent$java_awt_Component', function (comp) {
+this.currentValuePane.add$java_awt_Component(comp);
+comp.setFont$java_awt_Font(this.comboBox.getFont$());
+var ui=(comp).秘getUI$();
+ui.reInit$Z(true);
+var d=comp.getPreferredSize$();
+comp.setSize$java_awt_Dimension(d);
+this.currentValuePane.remove$java_awt_Component(comp);
+return d;
+});
+
+Clazz.newMeth(C$, 'installKeyboardActions$', function () {
+var km=this.getInputMap$I(1);
+$I$(3).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.comboBox, 1, km);
+$I$(25,"installLazyActionMap$javax_swing_JComponent$Class$S",[this.comboBox, Clazz.getClass(C$), "ComboBox.actionMap"]);
+});
+
+Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
+if (condition == 1) {
+var keyMap=$I$(2).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.comboBox, this, "ComboBox.ancestorInputMap");
+var listMap=$I$(2).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.comboBox, this, "List.focusInputMap");
+if (listMap == null ) return keyMap;
+listMap.setParent$javax_swing_InputMap(keyMap);
+return listMap;
+}return null;
+});
+
+Clazz.newMeth(C$, 'isTableCellEditor$', function () {
+return this.isTableCellEditor;
+});
+
+Clazz.newMeth(C$, 'uninstallKeyboardActions$', function () {
+$I$(3).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.comboBox, 1, null);
+$I$(3).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(this.comboBox, null);
+});
+
+Clazz.newMeth(C$, 'repaint$', function () {
+this.comboBox.repaint$();
+});
+
+C$.$static$=function(){C$.$static$=0;
+{
+$I$(9).loadJQComboBox$();
+};
+C$.COMBO_UI_LIST_CELL_RENDERER_KEY=("DefaultListCellRendererKey");
+C$.HIDE_POPUP_KEY=Clazz.new_($I$(10,1).c$$S,["HidePopupKey"]);
+};
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "KeyHandler", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, 'java.awt.event.KeyAdapter');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (e) {
+p$1.getHandler.apply(this.this$0, []).keyPressed$java_awt_event_KeyEvent(e);
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "FocusHandler", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, 'java.awt.event.FocusListener');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
+p$1.getHandler.apply(this.this$0, []).focusGained$java_awt_event_FocusEvent(e);
+});
+
+Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
+p$1.getHandler.apply(this.this$0, []).focusLost$java_awt_event_FocusEvent(e);
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "ListDataHandler", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, 'javax.swing.event.ListDataListener');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'contentsChanged$javax_swing_event_ListDataEvent', function (e) {
+p$1.getHandler.apply(this.this$0, []).contentsChanged$javax_swing_event_ListDataEvent(e);
 });
 
 Clazz.newMeth(C$, 'intervalAdded$javax_swing_event_ListDataEvent', function (e) {
-this.revalidate$();
+p$1.getHandler.apply(this.this$0, []).intervalAdded$javax_swing_event_ListDataEvent(e);
 });
 
 Clazz.newMeth(C$, 'intervalRemoved$javax_swing_event_ListDataEvent', function (e) {
-this.revalidate$();
+p$1.getHandler.apply(this.this$0, []).intervalRemoved$javax_swing_event_ListDataEvent(e);
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "ItemHandler", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, 'java.awt.event.ItemListener');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "PropertyChangeHandler", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, 'java.beans.PropertyChangeListener');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
+p$1.getHandler.apply(this.this$0, []).propertyChange$java_beans_PropertyChangeEvent(e);
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "ComboBoxLayoutManager", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, 'java.awt.LayoutManager');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
+});
+
+Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
+});
+
+Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
+return p$1.getHandler.apply(this.this$0, []).preferredLayoutSize$java_awt_Container(parent);
+});
+
+Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
+return p$1.getHandler.apply(this.this$0, []).minimumLayoutSize$java_awt_Container(parent);
+});
+
+Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (parent) {
+p$1.getHandler.apply(this.this$0, []).layoutContainer$java_awt_Container(parent);
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "Actions", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+}, 'sun.swing.UIAction');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$S', function (name) {
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
+}, 1);
+
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+var key=this.getName$();
+var comboBox=e.getSource$();
+var ui=comboBox.getUI$();
+if (key == "hidePopup") {
+comboBox.firePopupMenuCanceled$();
+comboBox.setPopupVisible$Z(false);
+} else if (key == "pageDownPassThrough" || key == "pageUpPassThrough"  || key == "homePassThrough"  || key == "endPassThrough" ) {
+var index=p$2.getNextIndex$javax_swing_JComboBox$S.apply(this, [comboBox, key]);
+if (index >= 0 && index < comboBox.getItemCount$() ) {
+if ($I$(1).getBoolean$O("ComboBox.noActionOnKeyNavigation") && comboBox.isPopupVisible$() ) {
+ui.listBox.setSelectedIndex$I(index);
+ui.listBox.ensureIndexIsVisible$I(index);
+ui.repaint$();
+} else {
+comboBox.setSelectedIndex$I(index);
+}}} else if (key == "selectNext") {
+if (comboBox.isShowing$()) {
+if (comboBox.isPopupVisible$()) {
+if (ui != null ) {
+ui.selectNextPossibleValue$();
+}} else {
+comboBox.setPopupVisible$Z(true);
+}}} else if (key == "selectNext2") {
+if (comboBox.isShowing$()) {
+if ((comboBox.isEditable$() || (ui != null  && ui.isTableCellEditor$() ) ) && !comboBox.isPopupVisible$() ) {
+comboBox.setPopupVisible$Z(true);
+} else {
+if (ui != null ) {
+ui.selectNextPossibleValue$();
+}}}} else if (key == "togglePopup" || key == "spacePopup" ) {
+if (ui != null  && (key == "togglePopup" || !comboBox.isEditable$() ) ) {
+if (ui.isTableCellEditor$()) {
+comboBox.setSelectedIndex$I(ui.listBox.getSelectedIndex$());
+} else {
+comboBox.setPopupVisible$Z(!comboBox.isPopupVisible$());
+}}} else if (key == "selectPrevious") {
+if (ui != null ) {
+if (ui.isPopupVisible$javax_swing_JComboBox(comboBox)) {
+ui.selectPreviousPossibleValue$();
+} else if ($I$(2).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(comboBox, ui, "ComboBox.showPopupOnNavigation", false)) {
+ui.setPopupVisible$javax_swing_JComboBox$Z(comboBox, true);
+}}} else if (key == "selectPrevious2") {
+if (comboBox.isShowing$() && ui != null  ) {
+if (comboBox.isEditable$() && !comboBox.isPopupVisible$() ) {
+comboBox.setPopupVisible$Z(true);
+} else {
+ui.selectPreviousPossibleValue$();
+}}} else if (key == "enterPressed") {
+if (comboBox.isPopupVisible$()) {
+if ($I$(1).getBoolean$O("ComboBox.noActionOnKeyNavigation")) {
+var listItem=ui.listBox.getSelectedValue$();
+if (listItem != null ) {
+comboBox.getEditor$().setItem$O(listItem);
+comboBox.setSelectedItem$O(listItem);
+}comboBox.setPopupVisible$Z(false);
+} else {
+var isEnterSelectablePopup=$I$(1).getBoolean$O("ComboBox.isEnterSelectablePopup");
+if (!comboBox.isEditable$() || isEnterSelectablePopup || ui.isTableCellEditor  ) {
+var listItem=ui.listBox.getSelectedValue$();
+if (listItem != null ) {
+comboBox.getEditor$().setItem$O(listItem);
+comboBox.setSelectedItem$O(listItem);
+}}comboBox.setPopupVisible$Z(false);
+}} else {
+if (ui.isTableCellEditor && !comboBox.isEditable$() ) {
+comboBox.setSelectedItem$O(comboBox.getSelectedItem$());
+}var root=$I$(3).getRootPane$java_awt_Component(comboBox);
+if (root != null ) {
+var im=root.getInputMap$I(2);
+var am=root.getActionMap$();
+if (im != null  && am != null  ) {
+var obj=im.get$javax_swing_KeyStroke($I$(4).getKeyStroke$I$I(10, 0));
+if (obj != null ) {
+var action=am.get$O(obj);
+if (action != null ) {
+action.actionPerformed$java_awt_event_ActionEvent(Clazz.new_([root, e.getID$(), e.getActionCommand$(), e.getWhen$(), e.getModifiers$()],$I$(5,1).c$$O$I$S$J$I));
+}}}}}}});
+
+Clazz.newMeth(C$, 'getNextIndex$javax_swing_JComboBox$S', function (comboBox, key) {
+var listHeight=comboBox.getMaximumRowCount$();
+var selectedIndex=comboBox.getSelectedIndex$();
+if ($I$(1).getBoolean$O("ComboBox.noActionOnKeyNavigation") && (Clazz.instanceOf(comboBox.getUI$(), "swingjs.plaf.JSComboBoxUI")) ) {
+selectedIndex=(comboBox.getUI$()).listBox.getSelectedIndex$();
+}if (key == "pageUpPassThrough") {
+var index=selectedIndex - listHeight;
+return (index < 0 ? 0 : index);
+} else if (key == "pageDownPassThrough") {
+var index=selectedIndex + listHeight;
+var max=comboBox.getItemCount$();
+return (index < max ? index : max - 1);
+} else if (key == "homePassThrough") {
+return 0;
+} else if (key == "endPassThrough") {
+return comboBox.getItemCount$() - 1;
+}return comboBox.getSelectedIndex$();
+}, p$2);
+
+Clazz.newMeth(C$, 'isEnabled$O', function (c) {
+if (this.getName$() == "hidePopup") {
+return (c != null  && (c).isPopupVisible$() );
+}return true;
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "Handler", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, ['java.awt.event.ActionListener', 'java.awt.event.FocusListener', 'java.awt.event.KeyListener', 'java.awt.LayoutManager', 'javax.swing.event.ListDataListener', 'java.beans.PropertyChangeListener', 'javax.swing.event.ListSelectionListener', 'java.awt.event.ItemListener']);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (e) {
+this.this$0.popup.updateState$java_util_EventObject$S(e, null);
+});
+
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
+var propertyName=e.getPropertyName$();
+if (e.getSource$() === this.this$0.editor ) {
+if ("border".equals$O(propertyName)) {
+this.this$0.isMinimumSizeDirty=true;
+this.this$0.isDisplaySizeDirty=true;
+this.this$0.comboBox.revalidate$();
+}} else {
+var comboBox=e.getSource$();
+if (propertyName === "model" ) {
+var newModel=e.getNewValue$();
+var oldModel=e.getOldValue$();
+if (oldModel != null  && this.this$0.listDataListener != null  ) {
+oldModel.removeListDataListener$javax_swing_event_ListDataListener(this.this$0.listDataListener);
+}if (newModel != null  && this.this$0.listDataListener != null  ) {
+newModel.addListDataListener$javax_swing_event_ListDataListener(this.this$0.listDataListener);
+}if (this.this$0.editor != null ) {
+comboBox.configureEditor$javax_swing_ComboBoxEditor$O(comboBox.getEditor$(), comboBox.getSelectedItem$());
+}this.this$0.isMinimumSizeDirty=true;
+this.this$0.isDisplaySizeDirty=true;
+comboBox.revalidate$();
+this.this$0.listBox.setModel$javax_swing_ListModel(newModel);
+this.b$['swingjs.plaf.JSComponentUI'].setTainted$Z.apply(this.b$['swingjs.plaf.JSComponentUI'], [true]);
+this.this$0.updateDOMNode$.apply(this.this$0, []);
+this.this$0.popup.updateList$();
+this.this$0.popup.updateSelectedIndex$();
+this.this$0.popup.updateCSS$();
+this.this$0.repaint$.apply(this.this$0, []);
+} else if (propertyName === "editor"  && comboBox.isEditable$() ) {
+this.this$0.addEditor$.apply(this.this$0, []);
+comboBox.revalidate$();
+} else if (propertyName === "editable" ) {
+if (comboBox.isEditable$()) {
+comboBox.setRequestFocusEnabled$Z(false);
+this.this$0.addEditor$.apply(this.this$0, []);
+} else {
+comboBox.setRequestFocusEnabled$Z(true);
+this.this$0.removeEditor$.apply(this.this$0, []);
+}p$1.updateToolTipTextForChildren.apply(this.this$0, []);
+comboBox.revalidate$();
+} else if (propertyName === "enabled" ) {
+var enabled=comboBox.isEnabled$();
+if (this.this$0.editor != null ) this.this$0.editor.setEnabled$Z(enabled);
+this.this$0.repaint$.apply(this.this$0, []);
+} else if (propertyName === "focusable" ) {
+var focusable=comboBox.isFocusable$();
+if (this.this$0.editor != null ) this.this$0.editor.setFocusable$Z(focusable);
+this.this$0.repaint$.apply(this.this$0, []);
+} else if (propertyName === "maximumRowCount" ) {
+if (this.this$0.isPopupVisible$javax_swing_JComboBox.apply(this.this$0, [comboBox])) {
+this.this$0.setPopupVisible$javax_swing_JComboBox$Z.apply(this.this$0, [comboBox, false]);
+this.this$0.setPopupVisible$javax_swing_JComboBox$Z.apply(this.this$0, [comboBox, true]);
+}} else if (propertyName === "font" ) {
+this.this$0.listBox.setFont$java_awt_Font(comboBox.getFont$());
+if (this.this$0.editor != null ) {
+this.this$0.editor.setFont$java_awt_Font(comboBox.getFont$());
+}this.this$0.isMinimumSizeDirty=true;
+this.this$0.isDisplaySizeDirty=true;
+comboBox.validate$();
+} else if (propertyName == "ToolTipText") {
+p$1.updateToolTipTextForChildren.apply(this.this$0, []);
+} else if (propertyName == "JComboBox.isTableCellEditor") {
+var inTable=e.getNewValue$();
+this.this$0.isTableCellEditor=inTable.equals$O(Boolean.TRUE) ? true : false;
+} else if (propertyName === "prototypeDisplayValue" ) {
+this.this$0.isMinimumSizeDirty=true;
+this.this$0.isDisplaySizeDirty=true;
+comboBox.revalidate$();
+} else if (propertyName === "renderer" ) {
+this.this$0.isMinimumSizeDirty=true;
+this.this$0.isDisplaySizeDirty=true;
+this.this$0.popup.updateList$();
+comboBox.revalidate$();
+}}});
+
+Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (e) {
+if (p$1.isNavigationKey$I$I.apply(this.this$0, [e.getKeyCode$(), e.getModifiers$()])) {
+this.this$0.lastTime=0;
+} else if (this.this$0.comboBox.isEnabled$() && this.this$0.comboBox.getModel$().getSize$() != 0  && p$3.isTypeAheadKey$java_awt_event_KeyEvent.apply(this, [e])  && e.getKeyChar$() != "\uffff" ) {
+this.this$0.time=e.getWhen$();
+if (this.this$0.comboBox.selectWithKeyChar$C(e.getKeyChar$())) {
+e.consume$();
+}}});
+
+Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent', function (e) {
+});
+
+Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent', function (e) {
+});
+
+Clazz.newMeth(C$, 'isTypeAheadKey$java_awt_event_KeyEvent', function (e) {
+return !e.isAltDown$() && !$I$(6).isMenuShortcutKeyDown$java_awt_event_InputEvent(e) ;
+}, p$3);
+
+Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
+var comboBoxEditor=this.this$0.comboBox.getEditor$();
+if ((comboBoxEditor != null ) && (e.getSource$() === comboBoxEditor.getEditorComponent$() ) ) {
+return;
+}this.this$0.hasFocus=true;
+this.this$0.repaint$.apply(this.this$0, []);
+if (this.this$0.comboBox.isEditable$() && this.this$0.editor != null  ) {
+this.this$0.editor.requestFocus$();
+}});
+
+Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
+var editor=this.this$0.comboBox.getEditor$();
+if ((editor != null ) && (e.getSource$() === editor.getEditorComponent$() ) ) {
+var item=editor.getItem$();
+var selectedItem=this.this$0.comboBox.getSelectedItem$();
+if (!e.isTemporary$() && item != null   && !item.equals$O((selectedItem == null ) ? "" : selectedItem) ) {
+this.this$0.comboBox.actionPerformed$java_awt_event_ActionEvent(Clazz.new_([editor, 0, "", $I$(7).getMostRecentEventTime$(), 0],$I$(5,1).c$$O$I$S$J$I));
+}}this.this$0.hasFocus=false;
+if (!e.isTemporary$()) {
+this.this$0.setPopupVisible$javax_swing_JComboBox$Z.apply(this.this$0, [this.this$0.comboBox, false]);
+}this.this$0.repaint$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$, 'contentsChanged$javax_swing_event_ListDataEvent', function (e) {
-this.revalidate$();
+if (!(e.getIndex0$() == -1 && e.getIndex1$() == -1 )) {
+this.this$0.isMinimumSizeDirty=true;
+this.this$0.comboBox.revalidate$();
+}if (this.this$0.comboBox.isEditable$() && this.this$0.editor != null  ) {
+this.this$0.comboBox.configureEditor$javax_swing_ComboBoxEditor$O(this.this$0.comboBox.getEditor$(), this.this$0.comboBox.getSelectedItem$());
+}this.this$0.contentsTainted=true;
+this.this$0.isDisplaySizeDirty=true;
+this.this$0.repaint$.apply(this.this$0, []);
 });
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (e) {
+Clazz.newMeth(C$, 'intervalAdded$javax_swing_event_ListDataEvent', function (e) {
+this.contentsChanged$javax_swing_event_ListDataEvent(e);
 });
+
+Clazz.newMeth(C$, 'intervalRemoved$javax_swing_event_ListDataEvent', function (e) {
+this.contentsChanged$javax_swing_event_ListDataEvent(e);
+});
+
+Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
+});
+
+Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
+});
+
+Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
+return parent.getPreferredSize$();
+});
+
+Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
+return parent.getMinimumSize$();
+});
+
+Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (parent) {
+if (this.this$0.editor != null ) {
+this.this$0.editor.setBounds$java_awt_Rectangle(this.this$0.rectangleForCurrentValue$.apply(this.this$0, []));
+}});
+
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
+var item=this.this$0.comboBox.getEditor$().getItem$();
+if (item != null ) {
+if (!this.this$0.comboBox.isPopupVisible$() && !item.equals$O(this.this$0.comboBox.getSelectedItem$()) ) {
+this.this$0.comboBox.setSelectedItem$O(this.this$0.comboBox.getEditor$().getItem$());
+}var am=this.this$0.comboBox.getActionMap$();
+if (am != null ) {
+var action=am.get$O("enterPressed");
+if (action != null ) {
+action.actionPerformed$java_awt_event_ActionEvent(Clazz.new_([this.this$0.comboBox, evt.getID$(), evt.getActionCommand$(), evt.getModifiers$()],$I$(5,1).c$$O$I$S$I));
+}}}});
+
+Clazz.newMeth(C$, 'valueChanged$javax_swing_event_ListSelectionEvent', function (e) {
+this.this$0.popup.updateHoverIndex$();
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSComboBoxUI, "DefaultKeySelectionManager", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+}, null, [['javax.swing.JComboBox','javax.swing.JComboBox.KeySelectionManager'], 'javax.swing.plaf.UIResource']);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+this.prefix="";
+this.typedString="";
+},1);
+
+C$.$fields$=[['S',['prefix','typedString']]]
+
+Clazz.newMeth(C$, 'selectionForKey$C$javax_swing_ComboBoxModel', function (aKey, aModel) {
+if (this.this$0.lastTime == 0) {
+this.prefix="";
+this.typedString="";
+}var startingFromSelection=true;
+var startIndex=this.this$0.comboBox.getSelectedIndex$();
+if (this.this$0.time - this.this$0.lastTime < this.this$0.timeFactor) {
+this.typedString += aKey;
+if ((this.prefix.length$() == 1) && (aKey == this.prefix.charAt$I(0)) ) {
+startIndex++;
+} else {
+this.prefix=this.typedString;
+}} else {
+startIndex++;
+this.typedString="" + aKey;
+this.prefix=this.typedString;
+}this.this$0.lastTime=this.this$0.time;
+if (startIndex < 0 || startIndex >= aModel.getSize$() ) {
+startingFromSelection=false;
+startIndex=0;
+}var index=this.this$0.listBox.getNextMatch$S$I$javax_swing_text_Position_Bias(this.prefix, startIndex, $I$(8).Forward);
+if (index < 0 && startingFromSelection ) {
+index=this.this$0.listBox.getNextMatch$S$I$javax_swing_text_Position_Bias(this.prefix, 0, $I$(8).Forward);
+}return index;
+});
+
+Clazz.newMeth(C$);
+})()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

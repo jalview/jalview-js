@@ -1,49 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.navigate"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.util.GData','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Navigator", null, 'org.jmol.thread.JmolThread', 'org.jmol.api.JmolNavigatorInterface');
+(function(){var P$=Clazz.newPackage("org.jmol.navigate"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.util.GData','org.jmol.util.Escape']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Navigator", null, 'org.jmol.thread.JmolThread', 'org.jmol.api.JmolNavigatorInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tm=null;
-this.nHits=0;
-this.multiplier=0;
-this.isPathGuide=false;
-this.points=null;
-this.pointGuides=null;
-this.frameTimeMillis=0;
-this.floatSecondsTotal=0;
-this.axis=null;
-this.degrees=0;
-this.center=null;
-this.depthPercent=0;
-this.xTrans=0;
-this.yTrans=0;
-this.depthStart=0;
-this.depthDelta=0;
-this.xTransStart=0;
-this.xTransDelta=0;
-this.yTransStart=0;
-this.yTransDelta=0;
-this.degreeStep=0;
-this.centerStart=null;
-this.totalSteps=0;
-this.aaStepCenter=null;
-this.isNavTo=false;
-this.iStep=0;
-this.navigationList=null;
-this.iList=0;
-this.isStep=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.multiplier=1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isPathGuide','isNavTo','isStep'],'F',['floatSecondsTotal','degrees','depthPercent','xTrans','yTrans','depthStart','depthDelta','xTransStart','xTransDelta','yTransStart','yTransDelta','degreeStep'],'I',['nHits','multiplier','frameTimeMillis','totalSteps','iStep','iList'],'O',['tm','org.jmol.viewer.TransformManager','points','javajs.util.P3[]','+pointGuides','axis','javajs.util.V3','center','javajs.util.P3','+centerStart','aaStepCenter','javajs.util.V3','navigationList','javajs.util.Lst']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_TransformManager$org_jmol_viewer_Viewer', function (tm, vwr) {
@@ -56,95 +23,13 @@ this.setEval$org_jmol_api_JmolScriptEvaluator(eval);
 this.navigationList=list;
 this.iList=0;
 this.isStep=false;
-this.run$();
-});
-
-Clazz.newMeth(C$, 'nextList$I$javajs_util_P3', function (i, ptTemp) {
-var o=this.navigationList.get$I(i);
-var seconds=(o[1]).floatValue$();
-var tok=(o[0]).intValue$();
-switch (tok) {
-case 134217751:
-var pt=o[2];
-if (seconds == 0 ) {
-this.tm.setNavigatePt$javajs_util_P3(pt);
-this.vwr.moveUpdate$F(0);
-return;
-}this.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F(seconds, null, NaN, pt, NaN, NaN, NaN);
-break;
-case 1073742084:
-var path=o[2];
-var theta=o[3];
-var indexStart=(o[4])[0];
-var indexEnd=(o[4])[1];
-this.navigate$F$javajs_util_P3AA$javajs_util_P3A$FA$I$I(seconds, null, path, theta, indexStart, indexEnd);
-break;
-case 1112152078:
-var pathGuide=(o[2]);
-this.navigate$F$javajs_util_P3AA$javajs_util_P3A$FA$I$I(seconds, pathGuide, null, null, 0, 2147483647);
-break;
-case 528432:
-var rotAxis=o[2];
-var degrees=(o[3]).floatValue$();
-if (seconds == 0 ) {
-this.navigateAxis$javajs_util_V3$F(rotAxis, degrees);
-this.vwr.moveUpdate$F(0);
-return;
-}this.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F(seconds, rotAxis, degrees, null, NaN, NaN, NaN);
-break;
-case 4160:
-case 268435634:
-if (tok == 4160) {
-this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(o[2], ptTemp);
-} else {
-ptTemp.x=(o[2]).floatValue$();
-ptTemp.y=(o[3]).floatValue$();
-p$1.setNavPercent$javajs_util_P3.apply(this, [ptTemp]);
-}if (seconds == 0 ) {
-this.navTranslatePercentOrTo$F$F$F(-1, ptTemp.x, ptTemp.y);
-this.vwr.moveUpdate$F(0);
-return;
-}this.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F(seconds, null, NaN, null, NaN, ptTemp.x, ptTemp.y);
-break;
-case 554176526:
-var percent=(o[2]).floatValue$();
-this.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F(seconds, null, NaN, null, percent, NaN, NaN);
-break;
-}
-}, p$1);
-
-Clazz.newMeth(C$, 'setNavPercent$javajs_util_P3', function (pt1) {
-this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(this.tm.navigationCenter, this.tm.navigationOffset);
-var x=pt1.x;
-var y=pt1.y;
-if (!Float.isNaN$F(x)) x=this.tm.width * x / 100.0 + (Float.isNaN$F(y) ? this.tm.navigationOffset.x : (this.tm.width / 2.0));
-if (!Float.isNaN$F(y)) y=this.tm.height * y / 100.0 + (Float.isNaN$F(x) ? this.tm.navigationOffset.y : this.tm.getNavPtHeight$());
-pt1.x=x;
-pt1.y=y;
-}, p$1);
-
-Clazz.newMeth(C$, 'navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F', function (seconds, axis, degrees, center, depthPercent, xTrans, yTrans) {
-this.floatSecondsTotal=seconds;
-this.axis=axis;
-this.degrees=degrees;
-this.center=center;
-this.depthPercent=depthPercent;
-this.xTrans=xTrans;
-this.yTrans=yTrans;
-p$1.setupNavTo.apply(this, []);
-this.isStep=true;
-this.run$();
-});
-
-Clazz.newMeth(C$, 'navigate$F$javajs_util_P3AA$javajs_util_P3A$FA$I$I', function (seconds, pathGuide, path, theta, indexStart, indexEnd) {
-this.floatSecondsTotal=seconds;
-p$1.setupNav$F$javajs_util_P3AA$javajs_util_P3A$I$I.apply(this, [seconds, pathGuide, path, indexStart, indexEnd]);
-this.isStep=true;
+this.stopped=false;
+if (this.isJS) this.useTimeout=true;
 this.run$();
 });
 
 Clazz.newMeth(C$, 'run1$I', function (mode) {
-var ptTemp=Clazz.new_($I$(1));
+var ptTemp=Clazz.new_($I$(1,1));
 while (this.isJS || this.vwr.isScriptExecuting$() )switch (mode) {
 case -1:
 if (this.isStep) {
@@ -155,7 +40,7 @@ break;
 }mode=2;
 break;
 case 2:
-p$1.nextList$I$javajs_util_P3.apply(this, [this.iList, ptTemp]);
+p$1.nextList$OA$javajs_util_P3.apply(this, [this.navigationList.get$I(this.iList), ptTemp]);
 return;
 case 0:
 if (this.stopped || this.iStep >= this.totalSteps ) {
@@ -185,6 +70,89 @@ return;
 }
 
 });
+
+Clazz.newMeth(C$, 'nextList$OA$javajs_util_P3', function (o, ptTemp) {
+var tok=(o[0]).intValue$();
+var seconds=(o[1]).floatValue$();
+switch (tok) {
+case 134217751:
+var pt=o[2];
+if (seconds == 0 ) {
+this.tm.setNavigatePt$javajs_util_P3(pt);
+this.vwr.moveUpdate$F(0);
+return;
+}p$1.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F.apply(this, [seconds, null, NaN, pt, NaN, NaN, NaN]);
+break;
+case 1073742084:
+var path=o[2];
+var theta=o[3];
+var indexStart=(o[4])[0];
+var indexEnd=(o[4])[1];
+p$1.navigate$F$javajs_util_P3AA$javajs_util_P3A$FA$I$I.apply(this, [seconds, null, path, theta, indexStart, indexEnd]);
+break;
+case 1112152078:
+var pathGuide=(o[2]);
+p$1.navigate$F$javajs_util_P3AA$javajs_util_P3A$FA$I$I.apply(this, [seconds, pathGuide, null, null, 0, 2147483647]);
+break;
+case 528432:
+var rotAxis=o[2];
+var degrees=(o[3]).floatValue$();
+if (seconds == 0 ) {
+this.navigateAxis$javajs_util_V3$F(rotAxis, degrees);
+this.vwr.moveUpdate$F(0);
+return;
+}p$1.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F.apply(this, [seconds, rotAxis, degrees, null, NaN, NaN, NaN]);
+break;
+case 4160:
+case 268435634:
+if (tok == 4160) {
+this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(o[2], ptTemp);
+} else {
+ptTemp.x=(o[2]).floatValue$();
+ptTemp.y=(o[3]).floatValue$();
+p$1.setNavPercent$javajs_util_P3.apply(this, [ptTemp]);
+}if (seconds == 0 ) {
+this.navTranslatePercentOrTo$F$F$F(-1, ptTemp.x, ptTemp.y);
+this.vwr.moveUpdate$F(0);
+return;
+}p$1.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F.apply(this, [seconds, null, NaN, null, NaN, ptTemp.x, ptTemp.y]);
+break;
+case 554176526:
+var percent=(o[2]).floatValue$();
+p$1.navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F.apply(this, [seconds, null, NaN, null, percent, NaN, NaN]);
+break;
+}
+}, p$1);
+
+Clazz.newMeth(C$, 'navigate$F$javajs_util_P3AA$javajs_util_P3A$FA$I$I', function (seconds, pathGuide, path, theta, indexStart, indexEnd) {
+this.floatSecondsTotal=seconds;
+p$1.setupNav$F$javajs_util_P3AA$javajs_util_P3A$I$I.apply(this, [seconds, pathGuide, path, indexStart, indexEnd]);
+this.isStep=true;
+this.run$();
+}, p$1);
+
+Clazz.newMeth(C$, 'navigateTo$F$javajs_util_V3$F$javajs_util_P3$F$F$F', function (seconds, axis, degrees, center, depthPercent, xTrans, yTrans) {
+this.floatSecondsTotal=seconds;
+this.axis=axis;
+this.degrees=degrees;
+this.center=center;
+this.depthPercent=depthPercent;
+this.xTrans=xTrans;
+this.yTrans=yTrans;
+p$1.setupNavTo.apply(this, []);
+this.isStep=true;
+this.run$();
+}, p$1);
+
+Clazz.newMeth(C$, 'setNavPercent$javajs_util_P3', function (pt1) {
+this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(this.tm.navigationCenter, this.tm.navigationOffset);
+var x=pt1.x;
+var y=pt1.y;
+if (!Float.isNaN$F(x)) x=this.tm.width * x / 100.0 + (Float.isNaN$F(y) ? this.tm.navigationOffset.x : (this.tm.width / 2.0));
+if (!Float.isNaN$F(y)) y=this.tm.height * y / 100.0 + (Float.isNaN$F(x) ? this.tm.navigationOffset.y : this.tm.getNavPtHeight$());
+pt1.x=x;
+pt1.y=y;
+}, p$1);
 
 Clazz.newMeth(C$, 'doNavStep$I', function (iStep) {
 if (!this.isNavTo) {
@@ -227,7 +195,7 @@ this.xTransDelta=this.xTrans - this.xTransStart;
 this.yTransStart=this.tm.navigationOffset.y;
 this.yTransDelta=this.yTrans - this.yTransStart;
 this.degreeStep=this.degrees / (this.totalSteps + 1);
-this.aaStepCenter=$I$(2).newVsub$javajs_util_T3$javajs_util_T3(this.center == null  ? this.tm.navigationCenter : this.center, this.tm.navigationCenter);
+this.aaStepCenter=(function(a,f){return f.apply(null,a)})([this.center == null  ? this.tm.navigationCenter : this.center, this.tm.navigationCenter],$I$(2).newVsub$javajs_util_T3$javajs_util_T3);
 this.aaStepCenter.scale$F(1.0 / (this.totalSteps + 1));
 this.centerStart=$I$(1).newP$javajs_util_T3(this.tm.navigationCenter);
 }}, p$1);
@@ -264,8 +232,8 @@ this.totalSteps=nSteps;
 }, p$1);
 
 Clazz.newMeth(C$, 'alignZX$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (pt0, pt1, ptVectorWing) {
-var pt0s=Clazz.new_($I$(1));
-var pt1s=Clazz.new_($I$(1));
+var pt0s=Clazz.new_($I$(1,1));
+var pt1s=Clazz.new_($I$(1,1));
 var m=this.tm.matrixRotate;
 m.rotate2$javajs_util_T3$javajs_util_T3(pt0, pt0s);
 m.rotate2$javajs_util_T3$javajs_util_T3(pt1, pt1s);
@@ -277,7 +245,7 @@ if (angle != 0 ) this.tm.navigateAxis$javajs_util_V3$F(v, (angle * 57.2957795130
 m.rotate2$javajs_util_T3$javajs_util_T3(pt0, pt0s);
 var pt2=$I$(1).newP$javajs_util_T3(ptVectorWing);
 pt2.add$javajs_util_T3(pt0);
-var pt2s=Clazz.new_($I$(1));
+var pt2s=Clazz.new_($I$(1,1));
 m.rotate2$javajs_util_T3$javajs_util_T3(pt2, pt2s);
 vPath.sub2$javajs_util_T3$javajs_util_T3(pt2s, pt0s);
 vPath.z=0;
@@ -329,7 +297,7 @@ p$1.newNavigationCenter.apply(this, []);
 break;
 case -2:
 case 3:
-var pt1=this.tm.matrixTransform.rotTrans2$javajs_util_T3$javajs_util_T3(this.tm.navigationCenter, Clazz.new_($I$(1)));
+var pt1=this.tm.matrixTransform.rotTrans2$javajs_util_T3$javajs_util_T3(this.tm.navigationCenter, Clazz.new_($I$(1,1)));
 var z=pt1.z;
 this.tm.matrixTransform.rotTrans2$javajs_util_T3$javajs_util_T3(this.tm.fixedRotationCenter, pt1);
 this.tm.modelCenterOffset=this.tm.referencePlaneOffset + (pt1.z - z);
@@ -371,7 +339,7 @@ if (this.tm.zSlabPercentSetting == this.tm.zDepthPercentSetting) this.tm.zSlabVa
 
 Clazz.newMeth(C$, 'newNavigationCenter', function () {
 this.tm.mode=this.tm.defaultMode;
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(1,1));
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(this.tm.fixedRotationCenter, pt);
 pt.x -= this.tm.navigationOffset.x;
 pt.y -= this.tm.navigationOffset.y;
@@ -389,7 +357,7 @@ this.tm.navZ=0;
 }this.tm.rotateXRadians$F$javajs_util_BS(0.017453292 * -0.02 * this.tm.navY , null);
 this.tm.rotateYRadians$F$javajs_util_BS(0.017453292 * 0.02 * this.tm.navX , null);
 var pt=this.tm.navigationCenter;
-var pts=Clazz.new_($I$(1));
+var pts=Clazz.new_($I$(1,1));
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(pt, pts);
 pts.z += this.tm.navZ;
 this.tm.unTransformPoint$javajs_util_T3$javajs_util_T3(pts, pt);
@@ -548,4 +516,4 @@ C$.superclazz.prototype.oops$Exception.apply(this, [e]);
 this.tm.navigating=false;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

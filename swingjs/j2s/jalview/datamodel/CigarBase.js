@@ -1,33 +1,26 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'StringBuffer','Error','jalview.util.MessageManager','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CigarBase");
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'StringBuffer','Error','jalview.util.MessageManager','java.util.Vector']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CigarBase");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.length=0;
-this._inc_length=0;
-this.operation=null;
-this.range=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.length=0;
 this._inc_length=10;
 this.operation=null;
 this.range=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['length','_inc_length'],'O',['operation','char[]','range','int[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getSequenceAndDeletions$S$C', function (reference, GapChar) {
 var rlength=0;
 var deletions=Clazz.array(Integer.TYPE, [this.length, null]);
 var trunc_deletions=null;
-var sq=Clazz.new_($I$(1));
+var sq=Clazz.new_($I$(1,1));
 var cursor=0;
 var alcursor=0;
 var start=0;
@@ -78,7 +71,7 @@ end=cursor - 1;
 endpos=alcursor;
 break;
 default:
-throw Clazz.new_($I$(2).c$$S,[$I$(3).formatMessage$S$SA("error.unknown_seq_cigar_operation", Clazz.array(String, -1, [Clazz.new_($I$(1).c$$I,[this.operation[i].$c()]).toString()]))]);
+throw Clazz.new_([$I$(3,"formatMessage$S$SA",["error.unknown_seq_cigar_operation", Clazz.array(String, -1, [Clazz.new_([this.operation[i].$c()],$I$(1,1).c$$I).toString()])])],$I$(2,1).c$$S);
 }
 }
 if (++delcount > 0) {
@@ -132,7 +125,7 @@ range[op]=Integer.parseInt$S(rangeint);
 i=j;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_bug_parse_cigar_string")]);
+throw Clazz.new_([$I$(3).getString$S("error.implementation_bug_parse_cigar_string")],$I$(2,1).c$$S);
 } else {
 throw e;
 }
@@ -142,7 +135,7 @@ c = String.fromCharCode(c.$c()- 32);
 }if ((c == "M" || c == "I"  || c == "D" )) {
 operation[op++]=c;
 } else {
-throw Clazz.new_(Clazz.load('Exception').c$$S,[$I$(3).formatMessage$S$SA("exception.unexpected_operation_cigar_string_pos", Clazz.array(String, -1, [Clazz.new_($I$(1).c$$I,[c.$c()]).toString(), Integer.valueOf$I(i).toString(), cigarString]))]);
+throw Clazz.new_(Clazz.load('Exception').c$$S,[$I$(3,"formatMessage$S$SA",["exception.unexpected_operation_cigar_string_pos", Clazz.array(String, -1, [Clazz.new_([c.$c()],$I$(1,1).c$$I).toString(), Integer.valueOf$I(i).toString(), cigarString])])]);
 }}
 return Clazz.array(java.lang.Object, -1, [operation, range]);
 }, 1);
@@ -151,11 +144,11 @@ Clazz.newMeth(C$, 'addOperation$C$I', function (op, range) {
 if (op >= "a" && op <= "z" ) {
 op = String.fromCharCode(op.$c()- 32);
 }if (op != "M" && op != "D"  && op != "I" ) {
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error_invalid_operation_string")]);
+throw Clazz.new_([$I$(3).getString$S("error.implementation_error_invalid_operation_string")],$I$(2,1).c$$S);
 }if (range == 0) {
 return;
 }if (range < 0) {
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.invalid_range_string")]);
+throw Clazz.new_([$I$(3).getString$S("error.invalid_range_string")],$I$(2,1).c$$S);
 }var lngth=0;
 if (this.operation == null ) {
 this.operation=Clazz.array(Character.TYPE, [this._inc_length]);
@@ -182,7 +175,7 @@ var deleted=0;
 if (this.length == 0) {
 return deleted;
 }if (start < 0 || start > end ) {
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error_delete_range_out_of_bounds")]);
+throw Clazz.new_([$I$(3).getString$S("error.implementation_error_delete_range_out_of_bounds")],$I$(2,1).c$$S);
 }var cursor=0;
 var rlength=1 + end - start;
 var oldlen=this.length;
@@ -228,9 +221,9 @@ this.addInsertion$I(remain - rlength);
 rlength=0;
 }break;
 case 68:
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error")]);
+throw Clazz.new_([$I$(3).getString$S("error.implementation_error")],$I$(2,1).c$$S);
 default:
-throw Clazz.new_($I$(2).c$$S,[$I$(3).formatMessage$S$SA("error.implementation_error_unknown_operation", Clazz.array(String, -1, [Clazz.new_($I$(1).c$$I,[oldops[o].$c()]).toString()]))]);
+throw Clazz.new_([$I$(3,"formatMessage$S$SA",["error.implementation_error_unknown_operation", Clazz.array(String, -1, [Clazz.new_([oldops[o].$c()],$I$(1,1).c$$I).toString()])])],$I$(2,1).c$$S);
 }
 rlength-=remain;
 remain=oldrange[++o];
@@ -252,7 +245,7 @@ return false;
 Clazz.newMeth(C$, 'getDeletedRegions$', function () {
 if (this.length == 0) {
 return null;
-}var dr=Clazz.new_($I$(4));
+}var dr=Clazz.new_($I$(4,1));
 var cursor=0;
 var vcursor=0;
 for (var i=0; i < this.length; i++) {
@@ -264,7 +257,7 @@ case 73:
 vcursor+=this.range[i];
 break;
 case 68:
-dr.addElement$TE(Clazz.array(Integer.TYPE, -1, [vcursor, cursor, this.range[i]]));
+dr.addElement$O(Clazz.array(Integer.TYPE, -1, [vcursor, cursor, this.range[i]]));
 cursor+=this.range[i];
 }
 }
@@ -308,7 +301,7 @@ this.addOperation$C$I("D", range);
 });
 
 Clazz.newMeth(C$, 'getCigarstring$', function () {
-var cigarString=Clazz.new_($I$(1));
+var cigarString=Clazz.new_($I$(1,1));
 for (var i=0; i < this.length; i++) {
 cigarString.append$S("" + this.range[i]);
 cigarString.append$C(this.operation[i]);
@@ -316,4 +309,4 @@ cigarString.append$C(this.operation[i]);
 return cigarString.toString();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

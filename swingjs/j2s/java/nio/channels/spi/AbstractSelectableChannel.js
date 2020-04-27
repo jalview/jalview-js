@@ -1,18 +1,7 @@
-(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),p$1={},I$=[[0,'Thread','java.nio.channels.SelectionKey']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractSelectableChannel", null, 'java.nio.channels.SelectableChannel');
+(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),p$1={},I$=[[0,'Thread','java.nio.channels.SelectionKey']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractSelectableChannel", null, 'java.nio.channels.SelectableChannel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.provider=null;
-this.keys=null;
-this.keyCount=0;
-this.keyLock=null;
-this.regLock=null;
-this.blocking=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.keys=null;
@@ -20,10 +9,12 @@ this.keyCount=0;
 this.keyLock= Clazz.new_();
 this.regLock= Clazz.new_();
 this.blocking=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['blocking'],'I',['keyCount'],'O',['provider','java.nio.channels.spi.SelectorProvider','keys','java.nio.channels.SelectionKey[]','keyLock','java.lang.Object','+regLock']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_channels_spi_SelectorProvider', function (provider) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.provider=provider;
 }, 1);
 
@@ -130,8 +121,11 @@ this.implConfigureBlocking$Z(block);
 this.blocking=block;
 }return this;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

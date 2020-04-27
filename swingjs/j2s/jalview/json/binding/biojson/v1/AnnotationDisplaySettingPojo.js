@@ -1,21 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.json.binding.biojson.v1"),I$=[];
-var C$=Clazz.newClass(P$, "AnnotationDisplaySettingPojo");
+/*c*/var C$=Clazz.newClass(P$, "AnnotationDisplaySettingPojo");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.scaleColLabel=false;
-this.showAllColLabels=false;
-this.centreColLabels=false;
-this.belowAlignment=false;
-this.visible=false;
-this.hasIcon=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['scaleColLabel','showAllColLabels','centreColLabels','belowAlignment','visible','hasIcon']]]
 
 Clazz.newMeth(C$, 'isScaleColLabel$', function () {
 return this.scaleColLabel;
@@ -64,7 +55,20 @@ return this.hasIcon;
 Clazz.newMeth(C$, 'setHasIcon$Z', function (hasIcon) {
 this.hasIcon=hasIcon;
 });
+C$.$getAnn$ = function(){ return [
+[['scaleColLabel','boolean',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Indicates if column label is scaled to fit within the <br>alignment column" ']],
+  [['showAllColLabels','.',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Indicates if every column label is displayed." ']],
+  [['centreColLabels','.',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Indicates if column labels is centred relative to the <br>alignment column" ']],
+  [['belowAlignment','.',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Indicates if the Annotation is shown below the alignment" ']],
+  [['visible','.',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Indicates if the annotation row is visible" ']],
+  [['hasIcon','.',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Indicates if annotation has a graphical symbol track" ']],
+  [['M:isScaleColLabel','boolean'],['@XmlElement']],
+  [['M:isShowAllColLabels','boolean'],['@XmlElement']],
+  [['M:isCentreColLabels','boolean'],['@XmlElement']],
+  [['M:isBelowAlignment','boolean'],['@XmlElement']],
+  [['M:isVisible','boolean'],['@XmlElement']],
+  [['M:isHasIcon','boolean'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

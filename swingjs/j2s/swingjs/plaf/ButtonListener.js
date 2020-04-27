@@ -1,34 +1,30 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'javax.swing.MenuSelectionManager','swingjs.plaf.JSComponentUI','swingjs.plaf.ButtonListener','swingjs.plaf.JSPopupMenuUI','javax.swing.MenuElement',['swingjs.plaf.ButtonListener','.Actions'],'swingjs.plaf.LazyActionMap','javax.swing.SwingUtilities','javax.swing.UIManager','javax.swing.plaf.ComponentInputMapUIResource','sun.swing.DefaultLookup','javax.swing.KeyStroke']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ButtonListener", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'javax.swing.MenuSelectionManager','swingjs.plaf.ButtonListener','swingjs.plaf.JSComponentUI','swingjs.plaf.JSPopupMenuUI','javax.swing.MenuElement',['swingjs.plaf.ButtonListener','.Actions'],'swingjs.plaf.LazyActionMap','javax.swing.SwingUtilities','javax.swing.UIManager','javax.swing.plaf.ComponentInputMapUIResource','sun.swing.DefaultLookup','javax.swing.KeyStroke']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ButtonListener", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.FocusListener', 'javax.swing.event.ChangeListener', 'java.beans.PropertyChangeListener']);
-C$.crossMenuMnemonic=false;
+C$.$classes$=[['Actions',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ui=null;
-this.lastMnemonic=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['lastMnemonic'],'O',['ui','swingjs.plaf.JSButtonUI']]
+,['Z',['crossMenuMnemonic']]]
 
 Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap', function (map) {
-map.put$javax_swing_Action(Clazz.new_($I$(6).c$$S,["pressed"]));
-map.put$javax_swing_Action(Clazz.new_($I$(6).c$$S,["released"]));
-map.put$javax_swing_Action(Clazz.new_($I$(6).c$$S$javax_swing_JMenu$Z,["selectMenu", null, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(6).c$$S,["doClick"]));
+map.put$javax_swing_Action(Clazz.new_($I$(6,1).c$$S,["pressed"]));
+map.put$javax_swing_Action(Clazz.new_($I$(6,1).c$$S,["released"]));
+map.put$javax_swing_Action(Clazz.new_($I$(6,1).c$$S$javax_swing_JMenu$Z,["selectMenu", null, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(6,1).c$$S,["doClick"]));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$swingjs_plaf_JSButtonUI', function (ui) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.ui=ui;
 }, 1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var prop=e.getPropertyName$();
 if (this.ui.isUIDisabled) return;
 var b=e.getSource$();
@@ -55,7 +51,7 @@ b.setOpaque$Z(b.isContentAreaFilled$());
 });
 
 Clazz.newMeth(C$, 'installKeyboardActions$javax_swing_JComponent', function (c) {
-$I$(7).installLazyActionMap$javax_swing_JComponent$Class$S(c, Clazz.getClass(C$), "Button.actionMap");
+$I$(7,"installLazyActionMap$javax_swing_JComponent$Class$S",[c, Clazz.getClass(C$), "Button.actionMap"]);
 if (!this.ui.isMenu && !this.ui.isMenuItem ) {
 var button=c;
 this.updateMnemonicBinding$javax_swing_AbstractButton(button);
@@ -68,7 +64,7 @@ this.updateAcceleratorBinding$javax_swing_JComponent(c);
 });
 
 Clazz.newMeth(C$, 'createInputMap$javax_swing_JComponent', function (c) {
-return Clazz.new_($I$(10).c$$javax_swing_JComponent,[c]);
+return Clazz.new_($I$(10,1).c$$javax_swing_JComponent,[c]);
 });
 
 Clazz.newMeth(C$, 'uninstallKeyboardActions$javax_swing_JComponent', function (c) {
@@ -79,10 +75,8 @@ $I$(8).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(c, null);
 
 Clazz.newMeth(C$, 'getInputMap$I$javax_swing_JComponent', function (condition, c) {
 if (condition == 0) {
-var ui=c.getUI$();
-if (Clazz.instanceOf(ui, "swingjs.plaf.JSButtonUI")) {
-return $I$(11).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(c, ui, ui.getPropertyPrefix$() + ".focusInputMap");
-}}return null;
+return $I$(11,"get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S",[c, this.ui, this.ui.getPropertyPrefix$() + ".focusInputMap"]);
+}return null;
 });
 
 Clazz.newMeth(C$, 'updateMnemonicBinding$javax_swing_AbstractButton', function (b) {
@@ -113,7 +107,7 @@ return;
 }var map=$I$(8).getUIInputMap$javax_swing_JComponent$I(b, 2);
 if (m != 0) {
 if (map == null ) {
-map=Clazz.new_($I$(10).c$$javax_swing_JComponent,[b]);
+map=Clazz.new_($I$(10,1).c$$javax_swing_JComponent,[b]);
 $I$(8).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(b, 2, map);
 }map.clear$();
 map.put$javax_swing_KeyStroke$O($I$(12).getKeyStroke$I$I$Z(m, 8, false), "pressed");
@@ -123,9 +117,9 @@ map.put$javax_swing_KeyStroke$O($I$(12).getKeyStroke$I$I$Z(m, 0, true), "release
 map.clear$();
 }});
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 var b=e.getSource$();
-this.verifyButtonClick$javax_swing_AbstractButton(b);
+this.verifyButtonClick$javax_swing_AbstractButton$Z(b, false);
 });
 
 Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
@@ -150,7 +144,7 @@ Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
 if ($I$(8).isLeftMouseButton$java_awt_event_MouseEvent(e)) {
 var b=e.getSource$();
-if (b.getUIClassID$() == "MenuUI" && (b).isTopLevelMenu$() ) {
+if (b.getUIClassID$() === "MenuUI"  && (b).isTopLevelMenu$() ) {
 (b).setPopupMenuVisible$Z(!(b).isPopupMenuVisible$());
 var root=(b.getTopLevelAncestor$()).getRootPane$();
 root.requestFocus$();
@@ -161,13 +155,13 @@ if ($I$(8).isLeftMouseButton$java_awt_event_MouseEvent(e)) {
 var b=e.getSource$();
 if (C$.checkHideMenus$javax_swing_AbstractButton(b)) return;
 b.doClick$I(0);
-this.verifyButtonClick$javax_swing_AbstractButton(b);
+this.verifyButtonClick$javax_swing_AbstractButton$Z(b, true);
 }});
 
 Clazz.newMeth(C$, 'checkHideMenus$javax_swing_AbstractButton', function (b) {
 var s=b.getUIClassID$();
-if (s == "MenuUI") return true;
-if (s.indexOf$S("MenuItemUI") >= 0) $I$(2).hideMenusAndToolTip$();
+if (s === "MenuUI" ) return true;
+if (s.indexOf$S("MenuItemUI") >= 0) $I$(3).hideMenusAndToolTip$();
 return false;
 }, 1);
 
@@ -187,12 +181,12 @@ model.setRollover$Z(false);
 }model.setArmed$Z(false);
 });
 
-Clazz.newMeth(C$, 'verifyButtonClick$javax_swing_AbstractButton', function (b) {
-var m=b.getModel$();
+Clazz.newMeth(C$, 'verifyButtonClick$javax_swing_AbstractButton$Z', function (b, delayed) {
 var btn=this.ui.actionNode;
-var state=m.isSelected$();
+if (btn == null  || this.ui.domNode == null  ) return true;
+var state=b.getModel$().isSelected$();
 {
-setTimeout(function(){btn && (btn.checked = state)}, 0);
+if (delayed) { setTimeout(function(){ btn && btn.checked != state && (btn.checked = state); }, 0); } else { btn.checked = state; }
 }
 return true;
 });
@@ -215,30 +209,25 @@ $I$(8).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(jc, 2, ma
 }map.put$javax_swing_KeyStroke$O(a, "doClick");
 }});
 ;
-(function(){var C$=Clazz.newClass(P$.ButtonListener, "Actions", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ButtonListener, "Actions", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.swing.UIAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.menu=null;
-this.force=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.force=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['force'],'O',['menu','javax.swing.JMenu']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var b=e.getSource$();
+if (b.秘getUI$().isModalBlocked$()) return;
 var model=b.getModel$();
 switch (this.getName$()) {
 case "pressed":
@@ -254,17 +243,17 @@ break;
 case "doClick":
 var mi=e.getSource$();
 $I$(1).defaultManager$().clearSelectedPath$();
-if (!P$.ButtonListener.checkHideMenus$javax_swing_AbstractButton(mi)) {
+if (!$I$(2).checkHideMenus$javax_swing_AbstractButton(mi)) {
 mi.doClick$();
 break;
 }case "selectMenu":
 var menu=p$1.getMenu$java_awt_event_ActionEvent.apply(this, [e]);
 if (menu.isTopLevelMenu$()) {
-$I$(2).hideMenusAndToolTip$();
+$I$(3).hideMenusAndToolTip$();
 var p=menu.getPopupMenu$();
 menu.setPopupMenuVisible$Z(!p.isVisible$());
 return;
-}if (!$I$(3).crossMenuMnemonic) {
+}if (!$I$(2).crossMenuMnemonic) {
 var pm=$I$(4).getLastPopup$();
 if (pm != null  && pm !== menu.getParent$()  ) {
 return;
@@ -306,8 +295,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_JMenu$Z', function (key, menu, shouldForce) {
-C$.superclazz.c$$S.apply(this, [key]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[key]);C$.$init$.apply(this);
 this.menu=menu;
 this.force=shouldForce;
 }, 1);
@@ -330,4 +318,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

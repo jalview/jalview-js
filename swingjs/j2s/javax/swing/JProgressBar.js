@@ -1,28 +1,17 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultBoundedRangeModel','java.text.NumberFormat',['javax.swing.JProgressBar','.ModelListener'],'javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JProgressBar", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultBoundedRangeModel','java.text.NumberFormat',['javax.swing.JProgressBar','.ModelListener'],'javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JProgressBar", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
+C$.$classes$=[['ModelListener',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.orientation=0;
-this.paintBorder=false;
-this.model=null;
-this.progressString=null;
-this.paintString=false;
-this.changeEvent=null;
-this.changeListener=null;
-this.format=null;
-this.indeterminate=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.changeEvent=null;
 this.changeListener=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['paintBorder','paintString','indeterminate'],'I',['orientation'],'S',['progressString'],'O',['model','javax.swing.BoundedRangeModel','changeEvent','javax.swing.event.ChangeEvent','changeListener','javax.swing.event.ChangeListener','format','java.text.Format']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [0]);
@@ -37,8 +26,8 @@ C$.c$$I$I$I.apply(this, [0, min, max]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (orient, min, max) {
-Clazz.super_(C$, this,1);
-this.setModel$javax_swing_BoundedRangeModel(Clazz.new_($I$(1).c$$I$I$I$I,[min, 0, min, max]));
+Clazz.super_(C$, this);
+this.setModel$javax_swing_BoundedRangeModel(Clazz.new_($I$(1,1).c$$I$I$I$I,[min, 0, min, max]));
 this.updateUI$();
 this.setOrientation$I(orient);
 this.setBorderPainted$Z(true);
@@ -48,7 +37,7 @@ this.setIndeterminate$Z(false);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_BoundedRangeModel', function (newModel) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setModel$javax_swing_BoundedRangeModel(newModel);
 this.updateUI$();
 this.setOrientation$I(0);
@@ -91,7 +80,7 @@ this.paintString=b;
 this.firePropertyChange$S$Z$Z("stringPainted", oldValue, this.paintString);
 if (this.paintString != oldValue ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getString$', function () {
@@ -108,7 +97,7 @@ var oldValue=this.progressString;
 this.progressString=s;
 this.firePropertyChange$S$O$O("string", oldValue, this.progressString);
 if (this.progressString == null  || oldValue == null   || !this.progressString.equals$O(oldValue) ) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getPercentComplete$', function () {
@@ -127,7 +116,7 @@ var oldValue=this.paintBorder;
 this.paintBorder=b;
 this.firePropertyChange$S$Z$Z("borderPainted", oldValue, this.paintBorder);
 if (this.paintBorder != oldValue ) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Graphics', function (g) {
@@ -136,15 +125,15 @@ C$.superclazz.prototype.paintBorder$java_awt_Graphics.apply(this, [g]);
 }});
 
 Clazz.newMeth(C$, 'createChangeListener$', function () {
-return Clazz.new_($I$(3), [this, null]);
+return Clazz.new_($I$(3,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(4),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(4),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(4),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(4),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getChangeListeners$', function () {
@@ -155,8 +144,8 @@ Clazz.newMeth(C$, 'fireStateChanged$', function () {
 var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(4),['stateChanged$javax_swing_event_ChangeEvent']) ) {
-if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(5).c$$O,[this]);
-(listeners[i + 1]).stateChanged$(this.changeEvent);
+if (this.changeEvent == null ) this.changeEvent=Clazz.new_($I$(5,1).c$$O,[this]);
+(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
 
@@ -176,7 +165,7 @@ this.changeListener=this.createChangeListener$();
 newModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 }if (this.model != null ) {
 this.model.setExtent$I(0);
-}this.repaint$();
+}this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getValue$', function () {
@@ -223,21 +212,20 @@ var indeterminateString=(this.indeterminate ? "true" : "false");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",orientation=" + orientationString + ",paintBorder=" + paintBorderString + ",paintString=" + paintStringString + ",progressString=" + progressStringString + ",indeterminateString=" + indeterminateString ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JProgressBar, "ModelListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JProgressBar, "ModelListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 this.this$0.fireStateChanged$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.rendersurface"),p$1={},I$=[[0,'Boolean','javajs.util.V3','org.jmol.util.C','org.jmol.util.Normix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsosurfaceRenderer", null, 'org.jmol.render.MeshRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.rendersurface"),p$1={},I$=[[0,'Boolean','javajs.util.V3','org.jmol.util.C','org.jmol.util.Normix']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "IsosurfaceRenderer", null, 'org.jmol.render.MeshRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.iHideBackground=false;
-this.isBicolorMap=false;
-this.backgroundColix=0;
-this.nError=0;
-this.vertexValues=null;
-this.imesh=null;
-this.isosurface=null;
-this.isNavigationMode=false;
-this.iShowNormals=false;
-this.showNumbers=false;
-this.showKey=null;
-this.hasColorRange=false;
-this.meshScale=0;
-this.mySlabValue=0;
-this.globalSlabValue=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nError=0;
 this.meshScale=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['iHideBackground','isBicolorMap','isNavigationMode','iShowNormals','showNumbers','hasColorRange'],'I',['nError','meshScale','mySlabValue','globalSlabValue'],'H',['backgroundColix'],'O',['vertexValues','float[]','imesh','org.jmol.shapesurface.IsosurfaceMesh','isosurface','org.jmol.shapesurface.Isosurface','showKey','Boolean']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 return this.renderIso$();
@@ -168,8 +150,8 @@ this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(this.pt2f, this.pt2f);
 var r=(this.vwr.tm.scaleToScreen$I$I((this.pt2f.z|0), 100)|0);
 if (r < 1) r=1;
 if (!isRadical) {
-var v1=Clazz.new_($I$(2));
-var v2=Clazz.new_($I$(2));
+var v1=Clazz.new_($I$(2,1));
+var v2=Clazz.new_($I$(2,1));
 this.pt1f.setT$javajs_util_T3(this.vertices[0]);
 this.tm.transformPt3f$javajs_util_T3$javajs_util_P3(this.pt1f, this.pt1f);
 v1.sub2$javajs_util_T3$javajs_util_T3(this.pt2f, this.pt1f);
@@ -210,7 +192,7 @@ this.pt2f.z -= 2;
 if (!this.antialias && diam == 1 ) {
 this.g3d.drawLineAB$javajs_util_P3$javajs_util_P3(this.pt1f, this.pt2f);
 } else {
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 1, $b$[0]), diam, this.pt1f, this.pt2f);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(1, diam, this.pt1f, this.pt2f);
 }}
 }
 }, p$1);
@@ -222,7 +204,7 @@ var slabPoints=((this.volumeRender || this.mesh.pc == 0 ) && this.selectedPolyOn
 var incr=this.imesh.vertexIncrement;
 var diam;
 if (this.mesh.diameter <= 0) {
-diam=this.vwr.getInt$I(553648143);
+diam=this.vwr.getInt$I(553648142);
 this.frontOnly=this.isShell=false;
 } else {
 diam=(this.vwr.getScreenDim$()/(this.volumeRender ? 50 : 100)|0);
@@ -230,14 +212,14 @@ diam=(this.vwr.getScreenDim$()/(this.volumeRender ? 50 : 100)|0);
 if (diam < 1) diam=1;
 var cX=(this.showNumbers ? (this.vwr.getScreenWidth$()/2|0) : 0);
 var cY=(this.showNumbers ? (this.vwr.getScreenHeight$()/2|0) : 0);
-if (this.showNumbers) this.vwr.gdata.setFontFid$B(($b$[0] = this.vwr.gdata.getFontFidFS$S$F("Monospaced", 24), $b$[0]));
+if (this.showNumbers) this.vwr.gdata.setFontFid$B(this.vwr.gdata.getFontFidFS$S$F("Monospaced", 24));
 for (var i=(!this.imesh.hasGridPoints || this.imesh.firstRealVertex < 0  ? 0 : this.imesh.firstRealVertex); i < this.vertexCount; i+=incr) {
 if (this.vertexValues != null  && Float.isNaN$F(this.vertexValues[i])  || this.frontOnly && !this.isVisibleNormix$H(this.normixes[i])   || this.imesh.jvxlData.thisSet >= 0 && this.mesh.vertexSets[i] != this.imesh.jvxlData.thisSet   || !this.mesh.isColorSolid && this.mesh.vcs != null   && !this.setColix$H(this.mesh.vcs[i])   || this.haveBsDisplay && !this.mesh.bsDisplay.get$I(i)   || slabPoints && !this.bsPolygons.get$I(i)  ) continue;
 this.hasColorRange=true;
 if (this.showNumbers && this.screens[i].z > 10  && Math.abs(this.screens[i].x - cX) < 150  && Math.abs(this.screens[i].y - cY) < 150 ) {
 var s=i + (this.mesh.isColorSolid ? "" : " " + new Float(this.mesh.vvs[i]).toString());
 this.g3d.setC$H(4);
-this.g3d.drawStringNoSlab$S$javajs_awt_Font$I$I$I$H(s, null, this.screens[i].x, this.screens[i].y, this.screens[i].z - 30, 0);
+this.g3d.drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H(s, null, this.screens[i].x, this.screens[i].y, this.screens[i].z - 30, 0);
 }if (this.volumeRender) {
 diam=(this.vwr.tm.scaleToScreen$I$I(this.screens[i].z, ptSize)|0);
 if (diam < 1) diam=1;
@@ -247,7 +229,7 @@ this.g3d.fillSphereI$I$javajs_util_P3i(diam, this.screens[i]);
 }}
 if (incr == 3) {
 this.g3d.setC$H(this.isTranslucent ? $I$(3).getColixTranslucent3$H$Z$F(12, true, 0.5) : 12);
-for (var i=1; i < this.vertexCount; i+=3) this.g3d.fillCylinder$B$I$javajs_util_P3i$javajs_util_P3i(($b$[0] = 3, $b$[0]), (diam/4|0), this.screens[i], this.screens[i + 1]);
+for (var i=1; i < this.vertexCount; i+=3) this.g3d.fillCylinder$B$I$javajs_util_P3i$javajs_util_P3i(3, (diam/4|0), this.screens[i], this.screens[i + 1]);
 
 this.g3d.setC$H(this.isTranslucent ? $I$(3).getColixTranslucent3$H$Z$F(21, true, 0.5) : 21);
 for (var i=1; i < this.vertexCount; i+=3) this.g3d.fillSphereI$I$javajs_util_P3i(diam, this.screens[i]);
@@ -325,7 +307,7 @@ continue;
 }if (iB == iC) {
 this.setColix$H(colixA);
 if (iA == iB) this.g3d.fillSphereI$I$javajs_util_P3i(diam, this.screens[iA]);
- else this.g3d.fillCylinder$B$I$javajs_util_P3i$javajs_util_P3i(($b$[0] = 3, $b$[0]), diam, this.screens[iA], this.screens[iB]);
+ else this.g3d.fillCylinder$B$I$javajs_util_P3i$javajs_util_P3i(3, diam, this.screens[iA], this.screens[iB]);
 } else if (this.mesh.colorsExplicit) {
 this.vwr.gdata.setColor$I(polygon[4]);
 colixA=$I$(3).copyColixTranslucency$H$H(this.mesh.colix, 2047);
@@ -362,7 +344,7 @@ if (generateSet) this.exportSurface$H(colorSolid ? colix : ($s$[0] = 0, $s$[0]))
 Clazz.newMeth(C$, 'getDiameter', function () {
 var diam;
 if (this.mesh.diameter <= 0) {
-diam=(this.meshScale < 0 ? this.meshScale=this.vwr.getInt$I(553648151) : this.meshScale);
+diam=(this.meshScale < 0 ? this.meshScale=this.vwr.getInt$I(553648150) : this.meshScale);
 if (this.antialias) diam*=2;
 } else {
 diam=(this.vwr.getScreenDim$()/100|0);
@@ -372,7 +354,7 @@ return diam;
 
 Clazz.newMeth(C$, 'renderNormals', function () {
 if (!this.g3d.setC$H($I$(3).copyColixTranslucency$H$H(this.mesh.colix, 8))) return;
-this.vwr.gdata.setFontFid$B(($b$[0] = this.vwr.gdata.getFontFidFS$S$F("Monospaced", 24), $b$[0]));
+this.vwr.gdata.setFontFid$B(this.vwr.gdata.getFontFidFS$S$F("Monospaced", 24));
 var vertexVectors=$I$(4).getVertexVectors$();
 for (var i=this.vertexCount; --i >= 0; ) {
 if (this.vertexValues != null  && Float.isNaN$F(this.vertexValues[i]) ) continue;
@@ -385,9 +367,8 @@ this.pt1f.set$F$F$F(this.screens[i].x, this.screens[i].y, this.screens[i].z);
 this.g3d.drawLineAB$javajs_util_P3$javajs_util_P3(this.pt1f, this.pt2f);
 }}
 }, p$1);
-var $b$ = new Int8Array(1);
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

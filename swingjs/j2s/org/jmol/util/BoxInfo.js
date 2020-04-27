@@ -1,39 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.util.Point3fi']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BoxInfo");
-C$.bbcageTickEdges=null;
-C$.uccageTickEdges=null;
-C$.edges=null;
-C$.unitCubePoints=null;
-C$.facePoints=null;
-C$.toCanonical=null;
-C$.unitBboxPoints=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.util.Point3fi']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "BoxInfo");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.bbcageTickEdges=Clazz.array(Character.TYPE, -1, ["z", "\u0000", "\u0000", "y", "x", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000"]);
-C$.uccageTickEdges=Clazz.array(Character.TYPE, -1, ["z", "y", "x", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000"]);
-C$.edges=Clazz.array(Byte.TYPE, -1, [0, 1, 0, 2, 0, 4, 1, 3, 1, 5, 2, 3, 2, 6, 3, 7, 4, 5, 4, 6, 5, 7, 6, 7]);
-C$.unitCubePoints=Clazz.array($I$(1), -1, [$I$(1).new3$F$F$F(0, 0, 0), $I$(1).new3$F$F$F(0, 0, 1), $I$(1).new3$F$F$F(0, 1, 0), $I$(1).new3$F$F$F(0, 1, 1), $I$(1).new3$F$F$F(1, 0, 0), $I$(1).new3$F$F$F(1, 0, 1), $I$(1).new3$F$F$F(1, 1, 0), $I$(1).new3$F$F$F(1, 1, 1)]);
-C$.facePoints=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [4, 0, 6]), Clazz.array(Integer.TYPE, -1, [4, 6, 5]), Clazz.array(Integer.TYPE, -1, [5, 7, 1]), Clazz.array(Integer.TYPE, -1, [1, 3, 0]), Clazz.array(Integer.TYPE, -1, [6, 2, 7]), Clazz.array(Integer.TYPE, -1, [1, 0, 5]), Clazz.array(Integer.TYPE, -1, [0, 2, 6]), Clazz.array(Integer.TYPE, -1, [6, 7, 5]), Clazz.array(Integer.TYPE, -1, [7, 3, 1]), Clazz.array(Integer.TYPE, -1, [3, 2, 0]), Clazz.array(Integer.TYPE, -1, [2, 3, 7]), Clazz.array(Integer.TYPE, -1, [0, 4, 5])]);
-C$.toCanonical=Clazz.array(Integer.TYPE, -1, [0, 3, 4, 7, 1, 2, 5, 6]);
-C$.unitBboxPoints=Clazz.array($I$(1), [8]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bbCorner0=null;
-this.bbCorner1=null;
-this.bbCenter=null;
-this.bbVector=null;
-this.bbVertices=null;
-this.isScaleSet=false;
-this.margin=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.bbCorner0=Clazz.new_($I$(1));
-this.bbCorner1=Clazz.new_($I$(1));
-this.bbCenter=Clazz.new_($I$(1));
-this.bbVector=Clazz.new_($I$(2));
+this.bbCorner0=Clazz.new_($I$(1,1));
+this.bbCorner1=Clazz.new_($I$(1,1));
+this.bbCenter=Clazz.new_($I$(1,1));
+this.bbVector=Clazz.new_($I$(2,1));
 this.bbVertices=Clazz.array($I$(3), [8]);
 {
 for (var i=0; i < 8; i++) {
@@ -41,11 +15,14 @@ C$.unitBboxPoints[i]=$I$(1).new3$F$F$F(-1, -1, -1);
 C$.unitBboxPoints[i].scaleAdd2$F$javajs_util_T3$javajs_util_T3(2, C$.unitCubePoints[i], C$.unitBboxPoints[i]);
 }
 }
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isScaleSet'],'F',['margin'],'O',['bbCorner0','javajs.util.P3','+bbCorner1','+bbCenter','bbVector','javajs.util.V3','bbVertices','org.jmol.util.Point3fi[]']]
+,['O',['bbcageTickEdges','char[]','+uccageTickEdges','edges','byte[]','unitCubePoints','javajs.util.P3[]','facePoints','int[][]','toCanonical','int[]','unitBboxPoints','javajs.util.P3[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-for (var i=8; --i >= 0; ) this.bbVertices[i]=Clazz.new_($I$(3));
+;C$.$init$.apply(this);
+for (var i=8; --i >= 0; ) this.bbVertices[i]=Clazz.new_($I$(3,1));
 
 this.reset$();
 }, 1);
@@ -58,8 +35,8 @@ this.bbCorner1.set$F$F$F(-3.4028235E38, -3.4028235E38, -3.4028235E38);
 
 Clazz.newMeth(C$, 'scaleBox$javajs_util_P3A$F', function (pts, scale) {
 if (scale == 0  || scale == 1  ) return;
-var center=Clazz.new_($I$(1));
-var v=Clazz.new_($I$(2));
+var center=Clazz.new_($I$(1,1));
+var v=Clazz.new_($I$(2,1));
 for (var i=0; i < 8; i++) center.add$javajs_util_T3(pts[i]);
 
 center.scale$F(0.125);
@@ -123,7 +100,7 @@ return this.bbVertices;
 
 Clazz.newMeth(C$, 'setBoundBoxFromOABC$javajs_util_T3A', function (points) {
 var origin=$I$(1).newP$javajs_util_T3(points[0]);
-var pt111=Clazz.new_($I$(1));
+var pt111=Clazz.new_($I$(1,1));
 for (var i=0; i < 4; i++) pt111.add$javajs_util_T3(points[i]);
 
 this.setBoundBox$javajs_util_T3$javajs_util_T3$Z$F(origin, pt111, true, 1);
@@ -201,5 +178,15 @@ return (pt.x >= this.bbCorner0.x  && pt.x <= this.bbCorner1.x   && pt.y >= this.
 Clazz.newMeth(C$, 'getMaxDim$', function () {
 return this.bbVector.length$() * 2;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.bbcageTickEdges=Clazz.array(Character.TYPE, -1, ["z", "\u0000", "\u0000", "y", "x", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000"]);
+C$.uccageTickEdges=Clazz.array(Character.TYPE, -1, ["z", "y", "x", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000", "\u0000"]);
+C$.edges=Clazz.array(Byte.TYPE, -1, [0, 1, 0, 2, 0, 4, 1, 3, 1, 5, 2, 3, 2, 6, 3, 7, 4, 5, 4, 6, 5, 7, 6, 7]);
+C$.unitCubePoints=Clazz.array($I$(1), -1, [$I$(1).new3$F$F$F(0, 0, 0), $I$(1).new3$F$F$F(0, 0, 1), $I$(1).new3$F$F$F(0, 1, 0), $I$(1).new3$F$F$F(0, 1, 1), $I$(1).new3$F$F$F(1, 0, 0), $I$(1).new3$F$F$F(1, 0, 1), $I$(1).new3$F$F$F(1, 1, 0), $I$(1).new3$F$F$F(1, 1, 1)]);
+C$.facePoints=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [4, 0, 6]), Clazz.array(Integer.TYPE, -1, [4, 6, 5]), Clazz.array(Integer.TYPE, -1, [5, 7, 1]), Clazz.array(Integer.TYPE, -1, [1, 3, 0]), Clazz.array(Integer.TYPE, -1, [6, 2, 7]), Clazz.array(Integer.TYPE, -1, [1, 0, 5]), Clazz.array(Integer.TYPE, -1, [0, 2, 6]), Clazz.array(Integer.TYPE, -1, [6, 7, 5]), Clazz.array(Integer.TYPE, -1, [7, 3, 1]), Clazz.array(Integer.TYPE, -1, [3, 2, 0]), Clazz.array(Integer.TYPE, -1, [2, 3, 7]), Clazz.array(Integer.TYPE, -1, [0, 4, 5])]);
+C$.toCanonical=Clazz.array(Integer.TYPE, -1, [0, 3, 4, 7, 1, 2, 5, 6]);
+C$.unitBboxPoints=Clazz.array($I$(1), [8]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,30 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.Arrays','java.awt.Rectangle',['sun.awt.geom.Crossings','.EvenOdd'],['java.awt.Polygon','.PolygonPathIterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Polygon", function(){
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.Arrays','java.awt.Rectangle',['sun.awt.geom.Crossings','.EvenOdd'],['java.awt.Polygon','.PolygonPathIterator']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Polygon", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'java.awt.Shape');
+C$.$classes$=[['PolygonPathIterator',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.npoints=0;
-this.xpoints=null;
-this.ypoints=null;
-this.bounds=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['npoints'],'O',['xpoints','int[]','+ypoints','bounds','java.awt.Rectangle']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.xpoints=Clazz.array(Integer.TYPE, [4]);
 this.ypoints=Clazz.array(Integer.TYPE, [4]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$IA$IA$I', function (xpoints, ypoints, npoints) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (npoints > xpoints.length || npoints > ypoints.length ) {
 throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["npoints > xpoints.length || npoints > ypoints.length"]);
 }if (npoints < 0) {
@@ -65,7 +59,7 @@ var y=ypoints[i];
 boundsMinY=Math.min(boundsMinY, y);
 boundsMaxY=Math.max(boundsMaxY, y);
 }
-this.bounds=Clazz.new_($I$(2).c$$I$I$I$I,[boundsMinX, boundsMinY, boundsMaxX - boundsMinX, boundsMaxY - boundsMinY]);
+this.bounds=Clazz.new_($I$(2,1).c$$I$I$I$I,[boundsMinX, boundsMinY, boundsMaxX - boundsMinX, boundsMaxY - boundsMinY]);
 });
 
 Clazz.newMeth(C$, 'updateBounds$I$I', function (x, y) {
@@ -103,7 +97,7 @@ return this.getBoundingBox$();
 
 Clazz.newMeth(C$, 'getBoundingBox$', function () {
 if (this.npoints == 0) {
-return Clazz.new_($I$(2));
+return Clazz.new_($I$(2,1));
 }if (this.bounds == null ) {
 this.calculateBounds$IA$IA$I(this.xpoints, this.ypoints, this.npoints);
 }return this.bounds.getBounds$();
@@ -172,7 +166,7 @@ return ((hits & 1) != 0);
 });
 
 Clazz.newMeth(C$, 'getCrossings$D$D$D$D', function (xlo, ylo, xhi, yhi) {
-var cross=Clazz.new_($I$(3).c$$D$D$D$D,[xlo, ylo, xhi, yhi]);
+var cross=Clazz.new_($I$(3,1).c$$D$D$D$D,[xlo, ylo, xhi, yhi]);
 var lastx=this.xpoints[this.npoints - 1];
 var lasty=this.ypoints[this.npoints - 1];
 var curx;
@@ -215,32 +209,26 @@ return this.contains$D$D$D$D(r.getX$(), r.getY$(), r.getWidth$(), r.getHeight$()
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return Clazz.new_($I$(4).c$$java_awt_Polygon$java_awt_geom_AffineTransform, [this, null, this, at]);
+return Clazz.new_($I$(4,1).c$$java_awt_Polygon$java_awt_geom_AffineTransform,[this, null, this, at]);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform$D', function (at, flatness) {
 return this.getPathIterator$java_awt_geom_AffineTransform(at);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Polygon, "PolygonPathIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Polygon, "PolygonPathIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.poly=null;
-this.transform=null;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index'],'O',['poly','java.awt.Polygon','transform','java.awt.geom.AffineTransform']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Polygon$java_awt_geom_AffineTransform', function (pg, at) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.poly=pg;
 this.transform=at;
 if (pg.npoints == 0) {
@@ -282,4 +270,4 @@ this.transform.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

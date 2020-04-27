@@ -1,16 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.Lst','javajs.util.PT','javajs.util.V3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GamessUSReader", null, 'org.jmol.adapter.readers.quantum.GamessReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.Lst','org.jmol.adapter.smarter.AtomSetCollectionReader','javajs.util.PT','javajs.util.V3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "GamessUSReader", null, 'org.jmol.adapter.readers.quantum.GamessReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lowdenCharges=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['lowdenCharges']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.lowdenCharges=this.checkAndRemoveFilterKey$S("CHARGE=LOW");
@@ -19,7 +15,7 @@ C$.superclazz.prototype.initializeReader$.apply(this, []);
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 if (this.line.startsWith$S(" $DATA")) return p$1.readInputDeck.apply(this, []);
-if (this.line.indexOf$S("***************") >= 0) $I$(1).info$S(this.rd$());
+if (this.line.indexOf$S("***************") >= 0) (function(a,f){return f.apply(null,a)})([this.rd$()],$I$(1).info$S);
 var isBohr;
 if (this.line.indexOf$S("FINAL ENERGY IS") >= 0 || this.line.indexOf$S("TOTAL ENERGY = ") >= 0  || this.line.indexOf$S("FINAL RHF ENERGY IS") >= 0 ) this.readEnergy$();
 if (this.line.indexOf$S("BASIS OPTIONS") >= 0) {
@@ -33,7 +29,7 @@ this.readGaussianBasis$S$S("SHELL TYPE", "TOTAL");
 return false;
 }if ((isBohr=this.line.indexOf$S("COORDINATES (BOHR)") >= 0) || this.line.indexOf$S("COORDINATES OF ALL ATOMS ARE (ANGS)") >= 0 ) {
 if (!this.doGetModel$I$S(++this.modelNumber, null)) return this.checkLastModel$();
-this.atomNames=Clazz.new_($I$(2));
+this.atomNames=Clazz.new_($I$(2,1));
 if (isBohr) this.readAtomsInBohrCoordinates$();
  else p$1.readAtomsInAngstromCoordinates.apply(this, []);
 return true;
@@ -98,7 +94,7 @@ if (Float.isNaN$F(x) || Float.isNaN$F(y) || Float.isNaN$F(z)  ) break;
 var atom=this.asc.addNewAtom$();
 atom.atomName=atomName + (++acInFirstModel);
 this.setAtomCoordXYZ$org_jmol_adapter_smarter_Atom$F$F$F(atom, x * 0.5291772, y * 0.5291772, z * 0.5291772);
-this.atomNames.addLast$TV(atomName);
+this.atomNames.addLast$O(atomName);
 }
 });
 
@@ -113,10 +109,10 @@ var y=this.parseFloatRange$S$I$I(this.line, 37, 57);
 var z=this.parseFloatRange$S$I$I(this.line, 57, 77);
 if (Float.isNaN$F(x) || Float.isNaN$F(y) || Float.isNaN$F(z)  ) break;
 var atom=this.asc.addNewAtom$();
-atom.elementSymbol=org.jmol.adapter.smarter.AtomSetCollectionReader.getElementSymbol$I(this.parseIntRange$S$I$I(this.line, 11, 14));
+atom.elementSymbol=(function(a,f){return f.apply(null,a)})([this.parseIntRange$S$I$I(this.line, 11, 14)],$I$(3).getElementSymbol$I);
 atom.atomName=atom.elementSymbol + (++n);
 this.setAtomCoordXYZ$org_jmol_adapter_smarter_Atom$F$F$F(atom, x * 0.5291772, y * 0.5291772, z * 0.5291772);
-this.atomNames.addLast$TV(atomName);
+this.atomNames.addLast$O(atomName);
 }
 });
 
@@ -133,9 +129,9 @@ var z=this.parseFloatRange$S$I$I(this.line, 46, 61);
 if (Float.isNaN$F(x) || Float.isNaN$F(y) || Float.isNaN$F(z)  ) break;
 var atom=this.asc.addNewAtom$();
 this.setAtomCoordXYZ$org_jmol_adapter_smarter_Atom$F$F$F(atom, x, y, z);
-atom.elementSymbol=org.jmol.adapter.smarter.AtomSetCollectionReader.getElementSymbol$I(this.parseIntRange$S$I$I(this.line, 11, 14));
+atom.elementSymbol=(function(a,f){return f.apply(null,a)})([this.parseIntRange$S$I$I(this.line, 11, 14)],$I$(3).getElementSymbol$I);
 atom.atomName=atom.elementSymbol + (++n);
-this.atomNames.addLast$TV(atomName);
+this.atomNames.addLast$O(atomName);
 }
 if (this.line.indexOf$S("COORDINATES OF FRAGMENT MULTIPOLE CENTERS (ANGS)") >= 0) {
 this.rd$();
@@ -152,7 +148,7 @@ if (Float.isNaN$F(x) || Float.isNaN$F(y) || Float.isNaN$F(z)  ) break;
 var atom=this.asc.addNewAtom$();
 atom.atomName=atomName + (++n);
 this.setAtomCoordXYZ$org_jmol_adapter_smarter_Atom$F$F$F(atom, x, y, z);
-this.atomNames.addLast$TV(atomName);
+this.atomNames.addLast$O(atomName);
 }
 }}, p$1);
 
@@ -173,7 +169,7 @@ if (++poploc >= tokens.length || !"CHARGE".equals$O(tokens[poploc++]) ) return;
 var atoms=this.asc.atoms;
 var startAtom=this.asc.getLastAtomSetAtomIndex$();
 var endAtom=this.asc.ac;
-for (var i=startAtom; i < endAtom && this.rd$() != null  ; ++i) atoms[i].partialCharge=this.parseFloatStr$S($I$(3).getTokens$S(this.prevline)[poploc]);
+for (var i=startAtom; i < endAtom && this.rd$() != null  ; ++i) atoms[i].partialCharge=this.parseFloatStr$S($I$(4).getTokens$S(this.prevline)[poploc]);
 
 });
 
@@ -186,13 +182,13 @@ this.rd$();
 tokens=this.getTokens$();
 if (tokens.length != 5) return;
 if ("DX".equals$O(tokens[0]) && "DY".equals$O(tokens[1]) && "DZ".equals$O(tokens[2])  ) {
-tokens=$I$(3).getTokens$S(this.rd$());
-var dipole=$I$(4).new3$F$F$F(this.parseFloatStr$S(tokens[0]), this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[2]));
-$I$(1).info$S("Molecular dipole for model " + this.asc.atomSetCount + " = " + dipole );
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(4).getTokens$S);
+var dipole=(function(a,f){return f.apply(null,a)})([this.parseFloatStr$S(tokens[0]), this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[2])],$I$(5).new3$F$F$F);
+(function(a,f){return f.apply(null,a)})(["Molecular dipole for model " + this.asc.atomSetCount + " = " + dipole ],$I$(1).info$S);
 this.asc.setCurrentModelInfo$S$O("dipole", dipole);
 }});
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

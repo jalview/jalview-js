@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.V3','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DelPhiBinaryReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.V3','javajs.util.SB']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "DelPhiBinaryReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.data=null;
-this.pt=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pt'],'O',['data','float[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -39,12 +34,12 @@ var botlbl=p$1.readString.apply(this, []);
 $I$(1).info$S(botlbl);
 var scalemid=p$1.readFloatArray.apply(this, []);
 var scale=scalemid[0];
-$I$(1).info$S("DelPhi scale: " + new Float(scale).toString());
+(function(a,f){return f.apply(null,a)})(["DelPhi scale: " + new Float(scale).toString()],$I$(1).info$S);
 var dx=(scale == 1  ? 0.84375 : 1 / scale);
 this.volumetricVectors[0]=$I$(2).new3$F$F$F(0, 0, dx);
 this.volumetricVectors[1]=$I$(2).new3$F$F$F(0, dx, 0);
 this.volumetricVectors[2]=$I$(2).new3$F$F$F(dx, 0, 0);
-$I$(1).info$S("DelPhi resolution (pts/angstrom) set to: " + new Float(dx).toString());
+(function(a,f){return f.apply(null,a)})(["DelPhi resolution (pts/angstrom) set to: " + new Float(dx).toString()],$I$(1).info$S);
 var nx=65;
 this.voxelCounts[0]=this.voxelCounts[1]=this.voxelCounts[2]=nx;
 $I$(1).info$S("DelPhi voxel counts: " + nx);
@@ -54,7 +49,7 @@ $I$(1).info$S("DelPhi center " + this.volumetricOrigin);
 this.volumetricOrigin.x -= dx;
 this.volumetricOrigin.y -= dx;
 this.volumetricOrigin.z -= dx;
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(3));
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(3,1));
 this.jvxlFileHeaderBuffer.append$S("DelPhi DATA ").append$S(nxttoplbl.replace$C$C("\n", " ").trim$()).append$S("\n\n");
 });
 
@@ -84,4 +79,4 @@ Clazz.newMeth(C$, 'skipData$I', function (nPoints) {
 this.pt+=nPoints;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

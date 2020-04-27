@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("javax.swing"),I$=[];
-var C$=Clazz.newClass(P$, "SizeRequirements");
+/*c*/var C$=Clazz.newClass(P$, "SizeRequirements");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.minimum=0;
-this.preferred=0;
-this.maximum=0;
-this.alignment=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['alignment'],'I',['minimum','preferred','maximum']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.minimum=0;
 this.preferred=0;
 this.maximum=0;
@@ -24,7 +17,7 @@ this.alignment=0.5;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$F', function (min, pref, max, a) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.minimum=min;
 this.preferred=pref;
 this.maximum=max;
@@ -173,4 +166,4 @@ Clazz.newMeth(C$, 'adjustSizes$I$javax_swing_SizeRequirementsA', function (delta
 return Clazz.array(Integer.TYPE, [0]);
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,33 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.api.Interface','javajs.util.AU','javajs.util.P3','java.util.Random','javajs.util.PT','org.jmol.quantum.QS','javajs.util.V3','javajs.util.Measure','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsoMOReader", null, 'org.jmol.jvxl.readers.AtomDataReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.api.Interface','javajs.util.AU','javajs.util.P3','java.util.Random','javajs.util.PT','org.jmol.quantum.QS','javajs.util.V3','javajs.util.Measure','org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "IsoMOReader", null, 'org.jmol.jvxl.readers.AtomDataReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.random=null;
-this.points=null;
-this.vTemp=null;
-this.q=null;
-this.mos=null;
-this.isNci=false;
-this.coef=null;
-this.dfCoefMaps=null;
-this.linearCombination=null;
-this.coefs=null;
-this.isElectronDensityCalc=false;
-this.mo=null;
-this.vDist=null;
-this.qSetupDone=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.vDist=Clazz.array(Float.TYPE, [3]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNci','isElectronDensityCalc','qSetupDone'],'O',['random','java.util.Random','points','javajs.util.P3[]','vTemp','javajs.util.V3','q','org.jmol.quantum.QuantumCalculation','mos','javajs.util.Lst','coef','float[]','dfCoefMaps','int[][]','linearCombination','float[]','coefs','float[][]','mo','java.util.Map','vDist','float[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$org_jmol_jvxl_readers_SurfaceGenerator', function (sg) {
@@ -70,7 +53,7 @@ for (var i=this.params.title.length; --i >= 0; ) p$1.fixTitleLine$I$java_util_Ma
 this.coef=this.mo.get$O("coefficients");
 this.dfCoefMaps=this.mo.get$O("dfCoefMaps");
 } else {
-this.coefs=$I$(2).newFloat2$I(this.mos.size$());
+this.coefs=(function(a,f){return f.apply(null,a)})([this.mos.size$()],$I$(2).newFloat2$I);
 for (var i=1; i < this.linearCombination.length; i+=2) {
 var j=(this.linearCombination[i]|0);
 if (j > this.mos.size$() || j < 1 ) return;
@@ -85,11 +68,11 @@ this.volumeData.doIterate=false;
 this.volumeData.setVoxelDataAsArray$FAAA(this.voxelData=Clazz.array(Float.TYPE, [1, 1, 1]));
 this.volumeData.sr=this;
 this.points=Clazz.array($I$(3), [1]);
-this.points[0]=Clazz.new_($I$(3));
+this.points[0]=Clazz.new_($I$(3,1));
 if (!p$1.setupCalculation.apply(this, [])) this.q=null;
 } else if (this.params.psi_monteCarloCount > 0) {
 this.vertexDataOnly=true;
-this.random=Clazz.new_($I$(4).c$$J,[this.params.randomSeed]);
+this.random=Clazz.new_($I$(4,1).c$$J,[this.params.randomSeed]);
 }});
 
 Clazz.newMeth(C$, 'readVolumeParameters$Z', function (isMapData) {
@@ -105,11 +88,11 @@ if (line.indexOf$S(" MO ") >= 0) {
 var nboType=this.params.moData.get$O("nboType");
 if (nboType != null ) line=$I$(5).rep$S$S$S(line, " MO ", " " + nboType + " " );
 }if (line.indexOf$S("%M") >= 0) line=this.params.title[iLine]=$I$(5).formatStringS$S$S$S(line, "M", this.atomData.modelName);
-if (line.indexOf$S("%F") >= 0) line=this.params.title[iLine]=$I$(5).formatStringS$S$S$S(line, "F", $I$(5).rep$S$S$S(this.params.fileName, "DROP_", ""));
+if (line.indexOf$S("%F") >= 0) line=this.params.title[iLine]=(function(a,f){return f.apply(null,a)})([line, "F", $I$(5).rep$S$S$S(this.params.fileName, "DROP_", "")],$I$(5).formatStringS$S$S$S);
 var pt=line.indexOf$S("%");
 if (line.length$() == 0 || pt < 0 ) return;
 var rep=0;
-if (line.indexOf$S("%I") >= 0) line=$I$(5).formatStringS$S$S$S(line, "I", this.params.qm_moLinearCombination == null  ? "" + this.params.qm_moNumber : $I$(6).getMOString$FA(this.params.qm_moLinearCombination));
+if (line.indexOf$S("%I") >= 0) line=(function(a,f){return f.apply(null,a)})([line, "I", this.params.qm_moLinearCombination == null  ? "" + this.params.qm_moNumber : $I$(6).getMOString$FA(this.params.qm_moLinearCombination)],$I$(5).formatStringS$S$S$S);
 if (line.indexOf$S("%N") >= 0) line=$I$(5).formatStringS$S$S$S(line, "N", "" + this.params.qmOrbitalCount);
 var energy=null;
 if (mo == null ) {
@@ -125,17 +108,23 @@ break;
 }}
 } else {
 if (mo.containsKey$O("energy")) energy=mo.get$O("energy");
-}if (line.indexOf$S("%E") >= 0) line=$I$(5).formatStringS$S$S$S(line, "E", energy != null  && ++rep != 0  ? "" + energy.toString() : "");
-if (line.indexOf$S("%U") >= 0) line=$I$(5).formatStringS$S$S$S(line, "U", energy != null  && this.params.moData.containsKey$O("energyUnits")  && ++rep != 0  ? this.params.moData.get$O("energyUnits") : "");
+}if (line.indexOf$S("%E") >= 0) {
+line=(function(a,f){return f.apply(null,a)})([line, "E", energy != null  && ++rep != 0  ? "" + energy.toString() : ""],$I$(5).formatStringS$S$S$S);
+} else if (energy != null ) {
+var s=(function(a,f){return f.apply(null,a)})([line, "E", energy.floatValue$()],$I$(5).formatStringF$S$S$F);
+if (s != line) {
+line=s;
+rep++;
+}}if (line.indexOf$S("%U") >= 0) line=(function(a,f){return f.apply(null,a)})([line, "U", energy != null  && this.params.moData.containsKey$O("energyUnits")  && ++rep != 0  ? this.params.moData.get$O("energyUnits") : ""],$I$(5).formatStringS$S$S$S);
 if (line.indexOf$S("%L") >= 0) {
 var labels=this.params.moData.get$O("nboLabels");
-line=$I$(5).formatStringS$S$S$S(line, "L", (labels != null  && this.params.qm_moNumber > 0  && ++rep != 0  ? labels[(this.params.qm_moNumber - 1) % labels.length] : ""));
-}if (line.indexOf$S("%S") >= 0) line=$I$(5).formatStringS$S$S$S(line, "S", mo != null  && mo.containsKey$O("symmetry")  && ++rep != 0  ? "" + mo.get$O("symmetry") : "");
+line=(function(a,f){return f.apply(null,a)})([line, "L", (labels != null  && this.params.qm_moNumber > 0  && ++rep != 0  ? labels[(this.params.qm_moNumber - 1) % labels.length] : "")],$I$(5).formatStringS$S$S$S);
+}if (line.indexOf$S("%S") >= 0) line=(function(a,f){return f.apply(null,a)})([line, "S", mo != null  && mo.containsKey$O("symmetry")  && ++rep != 0  ? "" + mo.get$O("symmetry") : ""],$I$(5).formatStringS$S$S$S);
 if (line.indexOf$S("%O") >= 0) {
 var obj=(mo == null  ? null : mo.get$O("occupancy"));
 var o=(obj == null  ? 0 : obj.floatValue$());
-line=$I$(5).formatStringS$S$S$S(line, "O", obj != null  && ++rep != 0  ? (o == (o|0)  ? "" + (o|0) : $I$(5).formatF$F$I$I$Z$Z(o, 0, 4, false, false)) : "");
-}if (line.indexOf$S("%T") >= 0) line=$I$(5).formatStringS$S$S$S(line, "T", mo != null  && mo.containsKey$O("type")  && ++rep != 0  ? "" + mo.get$O("type") : "");
+line=(function(a,f){return f.apply(null,a)})([line, "O", obj != null  && ++rep != 0  ? (o == (o|0)  ? "" + (o|0) : $I$(5).formatF$F$I$I$Z$Z(o, 0, 4, false, false)) : ""],$I$(5).formatStringS$S$S$S);
+}if (line.indexOf$S("%T") >= 0) line=(function(a,f){return f.apply(null,a)})([line, "T", mo != null  && mo.containsKey$O("type")  && ++rep != 0  ? "" + mo.get$O("type") : ""],$I$(5).formatStringS$S$S$S);
 if (line.equals$O("string")) {
 this.params.title[iLine]="";
 return;
@@ -150,9 +139,9 @@ this.readSurfaceDataVDR$Z(isMapData);
 return;
 }if (this.points != null ) return;
 this.points=Clazz.array($I$(3), [1000]);
-for (var j=0; j < 1000; j++) this.points[j]=Clazz.new_($I$(3));
+for (var j=0; j < 1000; j++) this.points[j]=Clazz.new_($I$(3,1));
 
-if (this.params.thePlane != null ) this.vTemp=Clazz.new_($I$(7));
+if (this.params.thePlane != null ) this.vTemp=Clazz.new_($I$(7,1));
 for (var i=0; i < 3; i++) this.vDist[i]=this.volumeData.volumetricVectorLengths[i] * this.volumeData.voxelCounts[i];
 
 this.volumeData.setVoxelDataAsArray$FAAA(this.voxelData=Clazz.array(Float.TYPE, [1000, 1, 1]));
@@ -205,7 +194,7 @@ var isMonteCarlo=(this.params.psi_monteCarloCount > 0);
 if (this.isElectronDensityCalc) {
 if (this.mos == null  || isMonteCarlo ) return;
 for (var i=this.params.qm_moNumber; --i >= 0; ) {
-$I$(9).info$S(" generating isosurface data for MO " + (i + 1));
+(function(a,f){return f.apply(null,a)})([" generating isosurface data for MO " + (i + 1)],$I$(9).info$S);
 var mo=this.mos.get$I(i);
 this.coef=mo.get$O("coefficients");
 this.dfCoefMaps=mo.get$O("dfCoefMaps");
@@ -213,11 +202,11 @@ if (!p$1.setupCalculation.apply(this, [])) return;
 this.q.createCube$();
 }
 } else {
-if (!isMonteCarlo) $I$(9).info$S("generating isosurface data for MO using cutoff " + new Float(this.params.cutoff).toString());
+if (!isMonteCarlo) (function(a,f){return f.apply(null,a)})(["generating isosurface data for MO using cutoff " + new Float(this.params.cutoff).toString()],$I$(9).info$S);
 if (!p$1.setupCalculation.apply(this, [])) return;
 this.q.createCube$();
 this.jvxlData.integration=this.q.getIntegration$();
-if (this.mo != null ) this.mo.put$TK$TV("integration", Float.valueOf$F(this.jvxlData.integration));
+if (this.mo != null ) this.mo.put$O$O("integration", Float.valueOf$F(this.jvxlData.integration));
 }});
 
 Clazz.newMeth(C$, 'getPlane$I', function (x) {
@@ -247,4 +236,4 @@ if (this.params.isSquared) zero *= zero;
 }return zero;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

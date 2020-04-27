@@ -1,30 +1,22 @@
-(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'uk.ac.vamsas.objects.core.DataSetAnnotations','jalview.datamodel.SequenceFeature','uk.ac.vamsas.objects.core.Provenance','jalview.bin.Cache','jalview.io.vamsas.DatastoreItem','uk.ac.vamsas.objects.core.Seg','jalview.util.UrlLink','uk.ac.vamsas.objects.core.Link','uk.ac.vamsas.objects.core.Score','uk.ac.vamsas.objects.core.Property','uk.ac.vamsas.objects.utils.Properties']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Sequencefeature", null, 'jalview.io.vamsas.Rangetype');
+(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'uk.ac.vamsas.objects.core.DataSetAnnotations','jalview.datamodel.SequenceFeature','uk.ac.vamsas.objects.core.Provenance','jalview.bin.Cache','jalview.io.vamsas.DatastoreItem','uk.ac.vamsas.objects.core.Seg','jalview.util.UrlLink','uk.ac.vamsas.objects.core.Link','uk.ac.vamsas.objects.core.Score','uk.ac.vamsas.objects.core.Property','uk.ac.vamsas.objects.utils.Properties','Boolean']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Sequencefeature", null, 'jalview.io.vamsas.Rangetype');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dataset=null;
-this.sequence=null;
-this.dsSeq=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['dataset','uk.ac.vamsas.objects.core.DataSet','sequence','uk.ac.vamsas.objects.core.Sequence','dsSeq','jalview.datamodel.SequenceI']]]
 
 Clazz.newMeth(C$, 'c$$jalview_io_VamsasAppDatastore$jalview_datamodel_SequenceFeature$uk_ac_vamsas_objects_core_DataSet$uk_ac_vamsas_objects_core_Sequence', function (vamsasAppDatastore, sequenceFeature, dataset, sequence) {
-C$.superclazz.c$$jalview_io_VamsasAppDatastore$O$Class.apply(this, [vamsasAppDatastore, sequenceFeature, Clazz.getClass($I$(1))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_VamsasAppDatastore$O$Class.apply(this,[vamsasAppDatastore, sequenceFeature, Clazz.getClass($I$(1))]);C$.$init$.apply(this);
 this.dataset=dataset;
 this.sequence=sequence;
 this.doSync$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_DataSetAnnotations$jalview_datamodel_SequenceI', function (vamsasAppDatastore, dseta, dsSeq) {
-C$.superclazz.c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_client_Vobject$Class.apply(this, [vamsasAppDatastore, dseta, Clazz.getClass($I$(2))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_client_Vobject$Class.apply(this,[vamsasAppDatastore, dseta, Clazz.getClass($I$(2))]);C$.$init$.apply(this);
 this.dsSeq=dsSeq;
 this.doJvUpdate$();
 }, 1);
@@ -32,9 +24,9 @@ this.doJvUpdate$();
 Clazz.newMeth(C$, 'addToDocument$', function () {
 var dsa=this.vobj;
 var feature=this.jvobj;
-dsa=p$1.getDSAnnotationFromJalview$uk_ac_vamsas_objects_core_RangeAnnotation$jalview_datamodel_SequenceFeature.apply(this, [Clazz.new_($I$(1)), feature]);
+dsa=p$1.getDSAnnotationFromJalview$uk_ac_vamsas_objects_core_RangeAnnotation$jalview_datamodel_SequenceFeature.apply(this, [Clazz.new_($I$(1,1)), feature]);
 if (dsa.getProvenance$() == null ) {
-dsa.setProvenance$uk_ac_vamsas_objects_core_Provenance(Clazz.new_($I$(3)));
+dsa.setProvenance$uk_ac_vamsas_objects_core_Provenance(Clazz.new_($I$(3,1)));
 }this.addProvenance$uk_ac_vamsas_objects_core_Provenance$S(dsa.getProvenance$(), "created");
 dsa.addSeqRef$O(this.sequence);
 this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(feature, dsa);
@@ -95,7 +87,7 @@ feature.otherDetails.clear$();
 
 Clazz.newMeth(C$, 'getDSAnnotationFromJalview$uk_ac_vamsas_objects_core_RangeAnnotation$jalview_datamodel_SequenceFeature', function (dsa, feature) {
 dsa.setType$S(feature.getType$());
-var vSeg=Clazz.new_($I$(6));
+var vSeg=Clazz.new_($I$(6,1));
 vSeg.setStart$I(feature.getBegin$());
 vSeg.setEnd$I(feature.getEnd$());
 vSeg.setInclusive$Z(true);
@@ -107,16 +99,16 @@ dsa.setStatus$S(feature.getStatus$());
 if (feature.links != null  && feature.links.size$() > 0 ) {
 for (var i=0, iSize=feature.links.size$(); i < iSize; i++) {
 var link=feature.links.elementAt$I(i);
-var ulink=Clazz.new_($I$(7).c$$S,[link]);
+var ulink=Clazz.new_($I$(7,1).c$$S,[link]);
 if (ulink.isValid$()) {
-var vLink=Clazz.new_($I$(8));
+var vLink=Clazz.new_($I$(8,1));
 vLink.setContent$S(ulink.getLabel$());
 vLink.setHref$S(ulink.getTarget$());
 dsa.addLink$uk_ac_vamsas_objects_core_Link(vLink);
 }}
 }dsa.setGroup$S(feature.getFeatureGroup$());
 if (!Float.isNaN$F(feature.getScore$())) {
-var fscore=Clazz.new_($I$(9));
+var fscore=Clazz.new_($I$(9,1));
 dsa.setScore$uk_ac_vamsas_objects_core_ScoreA(Clazz.array($I$(9), -1, [fscore]));
 fscore.setContent$F(feature.getScore$());
 fscore.setName$S(feature.getType$());
@@ -126,7 +118,7 @@ var props=dsa.getPropertyAsReference$();
 while (iter.hasNext$()){
 var key=iter.next$();
 if (!key.equalsIgnoreCase$S("score") && !key.equalsIgnoreCase$S("status") ) {
-var nprop=Clazz.new_($I$(10));
+var nprop=Clazz.new_($I$(10,1));
 nprop.setName$S(key);
 var vlu=feature.getValue$S(key);
 nprop.setContent$S(feature.getValue$S(key).toString());
@@ -164,9 +156,9 @@ scoreFound=true;
 }}
 }var sf=null;
 if (scoreFound) {
-sf=Clazz.new_($I$(2).c$$S$S$I$I$F$S,[featureType, dseta.getDescription$(), se[0], se[1], theScore, dseta.getGroup$()]);
+sf=Clazz.new_([featureType, dseta.getDescription$(), se[0], se[1], theScore, dseta.getGroup$()],$I$(2,1).c$$S$S$I$I$F$S);
 } else {
-sf=Clazz.new_($I$(2).c$$S$S$I$I$S,[featureType, dseta.getDescription$(), se[0], se[1], dseta.getGroup$()]);
+sf=Clazz.new_([featureType, dseta.getDescription$(), se[0], se[1], dseta.getGroup$()],$I$(2,1).c$$S$S$I$I$S);
 }sf.setStatus$S(dseta.getStatus$());
 if (dseta.getLinkCount$() > 0) {
 var links=dseta.getLink$();
@@ -189,7 +181,7 @@ if ($I$(11).isString$uk_ac_vamsas_objects_core_Property(p)) {
 val=p.getContent$();
 }if ($I$(11).isBoolean$uk_ac_vamsas_objects_core_Property(p)) {
 try {
-val= Boolean.from(p.getContent$());
+val=$I$(12,"valueOf$S",[p.getContent$()]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -198,7 +190,7 @@ throw e;
 }
 }if ($I$(11).isFloat$uk_ac_vamsas_objects_core_Property(p)) {
 try {
-val= new Float(p.getContent$());
+val=Float.valueOf$S(p.getContent$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -207,7 +199,7 @@ throw e;
 }
 }if ($I$(11).isInteger$uk_ac_vamsas_objects_core_Property(p)) {
 try {
-val= new Integer(p.getContent$());
+val=Integer.valueOf$S(p.getContent$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -222,4 +214,4 @@ return sf;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

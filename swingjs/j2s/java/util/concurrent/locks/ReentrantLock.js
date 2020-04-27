@@ -1,27 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent.locks"),p$1={},I$=[[0,'Thread','Error',['java.util.concurrent.locks.AbstractQueuedSynchronizer','.ConditionObject'],['java.util.concurrent.locks.ReentrantLock','.NonfairSync'],['java.util.concurrent.locks.ReentrantLock','.FairSync']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ReentrantLock", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent.locks"),p$1={},I$=[[0,'Thread','Error',['java.util.concurrent.locks.AbstractQueuedSynchronizer','.ConditionObject'],['java.util.concurrent.locks.ReentrantLock','.NonfairSync'],['java.util.concurrent.locks.ReentrantLock','.FairSync']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ReentrantLock", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.util.concurrent.locks.Lock', 'java.io.Serializable']);
+C$.$classes$=[['Sync',1032],['NonfairSync',24],['FairSync',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sync=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sync','java.util.concurrent.locks.ReentrantLock.Sync']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.sync=Clazz.new_($I$(4));
+;C$.$init$.apply(this);
+this.sync=Clazz.new_($I$(4,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (fair) {
-C$.$init$.apply(this);
-this.sync=(fair) ? Clazz.new_($I$(5)) : Clazz.new_($I$(4));
+;C$.$init$.apply(this);
+this.sync=(fair) ? Clazz.new_($I$(5,1)) : Clazz.new_($I$(4,1));
 }, 1);
 
 Clazz.newMeth(C$, 'lock$', function () {
@@ -97,15 +94,14 @@ Clazz.newMeth(C$, 'toString', function () {
 return "[Unlocked]";
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ReentrantLock, "Sync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ReentrantLock, "Sync", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.concurrent.locks.AbstractQueuedSynchronizer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'nonfairTryAcquire$I', function (acquires) {
 var current=$I$(1).currentThread$();
@@ -116,7 +112,7 @@ this.setExclusiveOwnerThread$Thread(current);
 return true;
 }} else if (current === this.getExclusiveOwnerThread$() ) {
 var nextc=c + acquires;
-if (nextc < 0) throw Clazz.new_($I$(2).c$$S,["Maximum lock count exceeded"]);
+if (nextc < 0) throw Clazz.new_($I$(2,1).c$$S,["Maximum lock count exceeded"]);
 this.setState$I(nextc);
 return true;
 }return false;
@@ -138,7 +134,7 @@ return true;
 });
 
 Clazz.newMeth(C$, 'newCondition$', function () {
-return Clazz.new_($I$(3), [this, null]);
+return Clazz.new_($I$(3,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'getOwner$', function () {
@@ -161,15 +157,14 @@ this.setState$I(0);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ReentrantLock, "NonfairSync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ReentrantLock, "NonfairSync", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.locks.ReentrantLock','.Sync']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'lock$', function () {
 if (this.compareAndSetState$I$I(0, 1)) this.setExclusiveOwnerThread$Thread($I$(1).currentThread$());
@@ -183,15 +178,14 @@ return this.nonfairTryAcquire$I(acquires);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ReentrantLock, "FairSync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ReentrantLock, "FairSync", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.concurrent.locks.ReentrantLock','.Sync']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'lock$', function () {
 this.acquire$I(1);
@@ -206,7 +200,7 @@ this.setExclusiveOwnerThread$Thread(current);
 return true;
 }} else if (current === this.getExclusiveOwnerThread$() ) {
 var nextc=c + acquires;
-if (nextc < 0) throw Clazz.new_($I$(2).c$$S,["Maximum lock count exceeded"]);
+if (nextc < 0) throw Clazz.new_($I$(2,1).c$$S,["Maximum lock count exceeded"]);
 this.setState$I(nextc);
 return true;
 }return false;
@@ -215,4 +209,4 @@ return true;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

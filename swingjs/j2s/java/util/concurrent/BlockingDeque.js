@@ -1,7 +1,6 @@
 (function(){var P$=Clazz.newPackage("java.util.concurrent"),I$=[];
-var C$=Clazz.newInterface(P$, "BlockingDeque", null, null, ['java.util.concurrent.BlockingQueue', 'java.util.Deque']);
+/*i*/var C$=Clazz.newInterface(P$, "BlockingDeque", null, null, ['java.util.concurrent.BlockingQueue', 'java.util.Deque']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:50 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

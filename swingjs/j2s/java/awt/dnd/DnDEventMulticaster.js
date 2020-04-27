@@ -1,15 +1,13 @@
 (function(){var P$=Clazz.newPackage("java.awt.dnd"),I$=[];
-var C$=Clazz.newClass(P$, "DnDEventMulticaster", null, 'java.awt.AWTEventMulticaster', ['java.awt.dnd.DragSourceListener', 'java.awt.dnd.DragSourceMotionListener']);
+/*c*/var C$=Clazz.newClass(P$, "DnDEventMulticaster", null, 'java.awt.AWTEventMulticaster', ['java.awt.dnd.DragSourceListener', 'java.awt.dnd.DragSourceMotionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_util_EventListener$java_util_EventListener', function (a, b) {
-C$.superclazz.c$$java_util_EventListener$java_util_EventListener.apply(this, [a, b]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_EventListener$java_util_EventListener.apply(this,[a, b]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'dragEnter$java_awt_dnd_DragSourceDragEvent', function (dsde) {
@@ -37,9 +35,9 @@ Clazz.newMeth(C$, 'dragDropEnd$java_awt_dnd_DragSourceDropEvent', function (dsde
 (this.b).dragDropEnd$java_awt_dnd_DragSourceDropEvent(dsde);
 });
 
-Clazz.newMeth(C$, ['dragMouseMoved$java_awt_dnd_DragSourceDragEvent','dragMouseMoved$'], function (dsde) {
-(this.a).dragMouseMoved$(dsde);
-(this.b).dragMouseMoved$(dsde);
+Clazz.newMeth(C$, 'dragMouseMoved$java_awt_dnd_DragSourceDragEvent', function (dsde) {
+(this.a).dragMouseMoved$java_awt_dnd_DragSourceDragEvent(dsde);
+(this.b).dragMouseMoved$java_awt_dnd_DragSourceDragEvent(dsde);
 });
 
 Clazz.newMeth(C$, 'add$java_awt_dnd_DragSourceListener$java_awt_dnd_DragSourceListener', function (a, b) {
@@ -85,4 +83,4 @@ return l;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

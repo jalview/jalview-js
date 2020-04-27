@@ -1,28 +1,24 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers");
-var C$=Clazz.newClass(P$, "ControleurBPHeightIncrement", null, null, 'javax.swing.event.ChangeListener');
+/*c*/var C$=Clazz.newClass(P$, "ControleurBPHeightIncrement", null, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._vsbb=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['_vsbb','fr.orsay.lri.varna.views.VueBPHeightIncrement']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_views_VueBPHeightIncrement', function (vsbb) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._vsbb=vsbb;
 }, 1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
-this._vsbb.get_vp$().setBPHeightIncrement$D((this._vsbb.getIncrement$()).doubleValue$());
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
+this._vsbb.get_vp$().setBPHeightIncrement$D((this._vsbb.getIncrement$()).valueOf());
 this._vsbb.get_vp$().drawRNA$();
 this._vsbb.get_vp$().repaint$();
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

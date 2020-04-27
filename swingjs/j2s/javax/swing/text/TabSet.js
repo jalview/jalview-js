@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'javax.swing.text.TabStop','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TabSet");
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'javax.swing.text.TabStop','StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TabSet");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tabs=null;
-this.hashCode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.hashCode=2147483647;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['hashCode'],'O',['tabs','javax.swing.text.TabStop[]']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_TabStopA', function (tabs) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (tabs != null ) {
 var tabCount=tabs.length;
 this.tabs=Clazz.array($I$(1), [tabCount]);
@@ -95,7 +90,7 @@ this.hashCode-=1;
 
 Clazz.newMeth(C$, 'toString', function () {
 var tabCount=this.getTabCount$();
-var buffer=Clazz.new_($I$(2).c$$S,["[ "]);
+var buffer=Clazz.new_($I$(2,1).c$$S,["[ "]);
 for (var counter=0; counter < tabCount; counter++) {
 if (counter > 0) buffer.append$S(" - ");
 buffer.append$S(this.getTab$I(counter).toString());
@@ -106,4 +101,4 @@ return buffer.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

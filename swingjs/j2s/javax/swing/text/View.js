@@ -1,22 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.Position','.Bias'],'javax.swing.text.Utilities','java.awt.Rectangle',['javax.swing.event.DocumentEvent','.EventType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "View", null, null, 'javax.swing.SwingConstants');
-C$.sharedBiasReturn=null;
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.Position','.Bias'],'javax.swing.text.Utilities','java.awt.Rectangle',['javax.swing.event.DocumentEvent','.EventType']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "View", null, null, 'javax.swing.SwingConstants');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.sharedBiasReturn=Clazz.array($I$(1), [1]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.elem=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['parent','javax.swing.text.View','elem','javax.swing.text.Element']]
+,['O',['sharedBiasReturn','javax.swing.text.Position.Bias[]']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.elem=elem;
 }, 1);
 
@@ -160,7 +154,7 @@ throw ble;
 }
 if (s1 == null ) {
 var alloc=(Clazz.instanceOf(a, "java.awt.Rectangle")) ? a : a.getBounds$();
-s1=Clazz.new_($I$(3).c$$I$I$I$I,[alloc.x + alloc.width - 1, alloc.y, 1, alloc.height]);
+s1=Clazz.new_($I$(3,1).c$$I$I$I$I,[alloc.x + alloc.width - 1, alloc.y, 1, alloc.height]);
 }} else {
 s1=this.modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias(p1, a, b1);
 }var r0=s0.getBounds$();
@@ -290,7 +284,7 @@ var added=null;
 if (addedElems != null ) {
 added=Clazz.array(C$, [addedElems.length]);
 for (var i=0; i < addedElems.length; i++) {
-added[i]=f.create$(addedElems[i]);
+added[i]=f.create$javax_swing_text_Element(addedElems[i]);
 }
 }var nremoved=0;
 var index=ec.getIndex$();
@@ -345,7 +339,7 @@ if ((ec != null ) && (a != null ) ) {
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, true);
 var host=this.getContainer$();
 if (host != null ) {
-host.repaint$();
+host.秘repaint$();
 }}});
 
 Clazz.newMeth(C$, 'modelToView$I$java_awt_Shape', function (pos, a) {
@@ -357,6 +351,10 @@ C$.sharedBiasReturn[0]=$I$(1).Forward;
 return this.viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA(x, y, a, C$.sharedBiasReturn);
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.sharedBiasReturn=Clazz.array($I$(1), [1]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

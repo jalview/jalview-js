@@ -1,29 +1,21 @@
-(function(){var P$=Clazz.newPackage("jalview.math"),I$=[[0,'jalview.util.Format','java.util.Arrays','jalview.util.MessageManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Matrix", null, null, 'jalview.math.MatrixI');
+(function(){var P$=Clazz.newPackage("jalview.math"),I$=[[0,'jalview.util.Format','java.util.Arrays','jalview.util.MessageManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Matrix", null, null, 'jalview.math.MatrixI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rows=0;
-this.cols=0;
-this.value=null;
-this.d=null;
-this.e=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['rows','cols'],'O',['value','double[][]','d','double[]','+e']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (rowCount, colCount) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rows=rowCount;
 this.cols=colCount;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$DAA', function (values) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rows=values.length;
 this.cols=this.rows == 0 ? 0 : values[0].length;
 this.value=Clazz.array(Double.TYPE, [this.rows, null]);
@@ -49,7 +41,7 @@ return Clazz.new_(C$.c$$DAA,[out]);
 Clazz.newMeth(C$, 'print$java_io_PrintStream$S', function (ps, format) {
 for (var i=0; i < this.rows; i++) {
 for (var j=0; j < this.cols; j++) {
-$I$(1).print$java_io_PrintStream$S$D(ps, format, this.getValue$I$I(i, j));
+$I$(1,"print$java_io_PrintStream$S$D",[ps, format, this.getValue$I$I(i, j)]);
 }
 ps.println$();
 }
@@ -231,7 +223,7 @@ break;
 if (m != l) {
 iter++;
 if (iter == 45) {
-throw Clazz.new_(Clazz.load('Exception').c$$S,[$I$(3).formatMessage$S$SA("exception.matrix_too_many_iteration", Clazz.array(String, -1, ["tqli", Integer.valueOf$I(45).toString()]))]);
+throw Clazz.new_(Clazz.load('Exception').c$$S,[$I$(3,"formatMessage$S$SA",["exception.matrix_too_many_iteration", Clazz.array(String, -1, ["tqli", Integer.valueOf$I(45).toString()])])]);
 } else {
 }g=(this.d[l] - this.d[l - 1]) / (2.0 * this.e[l - 1]);
 r=Math.sqrt((g * g) + 1.0);
@@ -395,7 +387,7 @@ break;
 if (m != l) {
 iter++;
 if (iter == 45) {
-throw Clazz.new_(Clazz.load('Exception').c$$S,[$I$(3).formatMessage$S$SA("exception.matrix_too_many_iteration", Clazz.array(String, -1, ["tqli2", Integer.valueOf$I(45).toString()]))]);
+throw Clazz.new_(Clazz.load('Exception').c$$S,[$I$(3,"formatMessage$S$SA",["exception.matrix_too_many_iteration", Clazz.array(String, -1, ["tqli2", Integer.valueOf$I(45).toString()])])]);
 } else {
 }g=(this.d[l] - this.d[l - 1]) / (2.0 * this.e[l - 1]);
 r=Math.sqrt((g * g) + 1.0);
@@ -563,4 +555,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

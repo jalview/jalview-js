@@ -1,33 +1,20 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),p$1={},I$=[[0,'java.util.Arrays','StringBuilder','jalview.math.Matrix','jalview.util.Comparison']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScoreMatrix", null, 'jalview.analysis.scoremodels.SimilarityScoreModel', 'jalview.api.analysis.PairwiseScoreModelI');
-C$.scoreGapAsAny=false;
+(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),p$1={},I$=[[0,'java.util.Arrays','StringBuilder','jalview.math.Matrix','jalview.util.Comparison']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScoreMatrix", null, 'jalview.analysis.scoremodels.SimilarityScoreModel', 'jalview.api.analysis.PairwiseScoreModelI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.scoreGapAsAny=false;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.description=null;
-this.symbols=null;
-this.matrix=null;
-this.symbolIndex=null;
-this.peptide=false;
-this.minValue=0;
-this.maxValue=0;
-this.symmetric=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['peptide','symmetric'],'F',['minValue','maxValue'],'S',['name','description'],'O',['symbols','char[]','matrix','float[][]','symbolIndex','short[]']]
+,['Z',['scoreGapAsAny']]]
 
 Clazz.newMeth(C$, 'c$$S$CA$FAA', function (theName, alphabet, values) {
 C$.c$$S$S$CA$FAA.apply(this, [theName, null, alphabet, values]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$CA$FAA', function (theName, theDescription, alphabet, values) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (alphabet.length != values.length) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["score matrix size must match alphabet size"]);
 }for (var row, $row = 0, $$row = values; $row<$$row.length&&((row=($$row[$row])),1);$row++) {
@@ -116,7 +103,7 @@ return this.symbolIndex[c.$c()];
 return -1;
 }});
 
-Clazz.newMeth(C$, ['getPairwiseScore$C$C','getPairwiseScore$'], function (c, d) {
+Clazz.newMeth(C$, 'getPairwiseScore$C$C', function (c, d) {
 if (c.$c() >= this.symbolIndex.length ) {
 System.err.println$S(String.format$S$OA("Unexpected character %s in getPairwiseScore", [new Character(c)]));
 return 0;
@@ -135,7 +122,7 @@ return this.outputMatrix$Z(false);
 });
 
 Clazz.newMeth(C$, 'outputMatrix$Z', function (html) {
-var sb=Clazz.new_($I$(2).c$$I,[512]);
+var sb=Clazz.new_($I$(2,1).c$$I,[512]);
 if (html) {
 sb.append$S("<table border=\"1\">");
 sb.append$S(html ? "<tr><th></th>" : "");
@@ -182,7 +169,7 @@ if (this.symmetric) {
 values[col][row]=total;
 }}
 }
-return Clazz.new_($I$(3).c$$DAA,[values]);
+return Clazz.new_($I$(3,1).c$$DAA,[values]);
 });
 
 Clazz.newMeth(C$, 'computeSimilarity$S$S$jalview_api_analysis_SimilarityParamsI', function (seq1, seq2, params) {
@@ -246,8 +233,12 @@ return this;
 Clazz.newMeth(C$, 'isSymmetric$', function () {
 return this.symmetric;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.scoreGapAsAny=false;
+};
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

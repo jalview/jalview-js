@@ -1,24 +1,15 @@
 (function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[];
-var C$=Clazz.newClass(P$, "BondIteratorSelected", null, null, 'org.jmol.modelset.BondIterator');
+/*c*/var C$=Clazz.newClass(P$, "BondIteratorSelected", null, null, 'org.jmol.modelset.BondIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bonds=null;
-this.bondCount=0;
-this.bondType=0;
-this.iBond=0;
-this.bsSelected=null;
-this.bondSelectionModeOr=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['bondSelectionModeOr'],'I',['bondCount','bondType','iBond'],'O',['bonds','org.jmol.modelset.Bond[]','bsSelected','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelset_BondA$I$I$javajs_util_BS$Z', function (bonds, bondCount, bondType, bsSelected, bondSelectionModeOr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.bonds=bonds;
 this.bondCount=bondCount;
 this.bondType=bondType;
@@ -52,4 +43,4 @@ return this.bonds[this.iBond++];
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

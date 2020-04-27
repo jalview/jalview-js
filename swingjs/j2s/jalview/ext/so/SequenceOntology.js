@@ -1,28 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.so"),p$1={},I$=[[0,'java.util.ArrayList','java.util.HashMap','java.util.zip.ZipInputStream','java.io.BufferedInputStream','java.io.BufferedReader','java.io.InputStreamReader','org.biojava.nbio.ontology.io.OboParser','Boolean','java.util.Collections']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SequenceOntology", null, null, 'jalview.io.gff.SequenceOntologyI');
+(function(){var P$=Clazz.newPackage("jalview.ext.so"),p$1={},I$=[[0,'java.util.ArrayList','java.util.HashMap','java.util.zip.ZipInputStream','java.io.BufferedInputStream','java.io.BufferedReader','java.io.InputStreamReader','org.biojava.nbio.ontology.io.OboParser','Boolean','java.util.Collections']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SequenceOntology", null, null, 'jalview.io.gff.SequenceOntologyI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ontology=null;
-this.isA=null;
-this.termsByDescription=null;
-this.termIsA=null;
-this.termsFound=null;
-this.termsNotFound=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ontology','org.biojava.nbio.ontology.Ontology','isA','org.biojava.nbio.ontology.Term','termsByDescription','java.util.Map','+termIsA','termsFound','java.util.List','+termsNotFound']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.termsFound=Clazz.new_($I$(1));
-this.termsNotFound=Clazz.new_($I$(1));
-this.termsByDescription=Clazz.new_($I$(2));
-this.termIsA=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.termsFound=Clazz.new_($I$(1,1));
+this.termsNotFound=Clazz.new_($I$(1,1));
+this.termsByDescription=Clazz.new_($I$(2,1));
+this.termIsA=Clazz.new_($I$(2,1));
 this.loadOntologyZipFile$S("so-xp-simple.obo");
 }, 1);
 
@@ -32,7 +23,7 @@ var zipStream=null;
 try {
 var zipFile=ontologyFile + ".zip";
 var inStream=this.getClass$().getResourceAsStream$S("/" + zipFile);
-zipStream=Clazz.new_($I$(3).c$$java_io_InputStream,[Clazz.new_($I$(4).c$$java_io_InputStream,[inStream])]);
+zipStream=Clazz.new_([Clazz.new_($I$(4,1).c$$java_io_InputStream,[inStream])],$I$(3,1).c$$java_io_InputStream);
 var entry;
 while ((entry=zipStream.getNextEntry$()) != null ){
 if (entry.getName$().equals$O(ontologyFile)) {
@@ -64,8 +55,8 @@ throw e;
 }});
 
 Clazz.newMeth(C$, 'loadOboFile$java_io_InputStream', function (is) {
-var oboFile=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(6).c$$java_io_InputStream,[is])]);
-var parser=Clazz.new_($I$(7));
+var oboFile=Clazz.new_([Clazz.new_($I$(6,1).c$$java_io_InputStream,[is])],$I$(5,1).c$$java_io_Reader);
+var parser=Clazz.new_($I$(7,1));
 this.ontology=parser.parseOBO$java_io_BufferedReader$S$S(oboFile, "SO", "the SO ontology");
 this.isA=this.ontology.getTerm$S("is_a");
 this.storeTermNames$();
@@ -87,7 +78,7 @@ term=replaced;
 System.err.println$S("Ignoring " + replaced.getName$() + " as obsolete and duplicated by " + term.getName$() );
 } else {
 System.err.println$S("Warning: " + term.getName$() + " has replaced " + replaced.getName$() + " for lookup of '" + description + "'" );
-}}this.termsByDescription.put$TK$TV(description, term);
+}}this.termsByDescription.put$O$O(description, term);
 }}}
 });
 
@@ -136,14 +127,14 @@ return this.termIsA$org_biojava_nbio_ontology_Term$org_biojava_nbio_ontology_Ter
 Clazz.newMeth(C$, 'termFound$S', function (term) {
 {
 if (!this.termsFound.contains$O(term)) {
-this.termsFound.add$TE(term);
+this.termsFound.add$O(term);
 }}}, p$1);
 
 Clazz.newMeth(C$, 'termNotFound$S', function (term) {
 {
 if (!this.termsNotFound.contains$O(term)) {
 System.err.println$S("SO term " + term + " invalid" );
-this.termsNotFound.add$TE(term);
+this.termsNotFound.add$O(term);
 }}}, p$1);
 
 Clazz.newMeth(C$, 'termIsA$org_biojava_nbio_ontology_Term$org_biojava_nbio_ontology_Term', function (childTerm, parentTerm) {
@@ -157,20 +148,20 @@ this.findParents$org_biojava_nbio_ontology_Term(childTerm);
 for (var parent, $parent = parents.iterator$(); $parent.hasNext$()&&((parent=($parent.next$())),1);) {
 if (this.termIsA$org_biojava_nbio_ontology_Term$org_biojava_nbio_ontology_Term(parent, parentTerm)) {
 if (!parents.contains$O(parentTerm)) {
-parents.add$TE(parentTerm);
+parents.add$O(parentTerm);
 }return true;
 }}
 return false;
 });
 
 Clazz.newMeth(C$, 'findParents$org_biojava_nbio_ontology_Term', function (childTerm) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 for (var triple, $triple = this.ontology.getTriples$org_biojava_nbio_ontology_Term$org_biojava_nbio_ontology_Term$org_biojava_nbio_ontology_Term(childTerm, null, this.isA).iterator$(); $triple.hasNext$()&&((triple=($triple.next$())),1);) {
 var parent=triple.getObject$();
-result.add$TE(parent);
+result.add$O(parent);
 this.findParents$org_biojava_nbio_ontology_Term(parent);
 }
-this.termIsA.put$TK$TV(childTerm, result);
+this.termIsA.put$O$O(childTerm, result);
 });
 
 Clazz.newMeth(C$, 'getTerm$S', function (nameOrDescription) {
@@ -203,4 +194,4 @@ $I$(9).sort$java_util_List$java_util_Comparator(this.termsNotFound, String.CASE_
 return this.termsNotFound;
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

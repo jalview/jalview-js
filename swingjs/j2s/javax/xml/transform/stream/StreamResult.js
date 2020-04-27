@@ -1,35 +1,63 @@
 (function(){var P$=Clazz.newPackage("javax.xml.transform.stream"),I$=[];
-var C$=Clazz.newClass(P$, "StreamResult", null, 'swingjs.xml.JSXMLStreamResult', 'javax.xml.transform.Result');
+/*c*/var C$=Clazz.newClass(P$, "StreamResult", null, null, 'javax.xml.transform.Result');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['systemId'],'O',['outputStream','java.io.OutputStream','writer','java.io.Writer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (os) {
-C$.superclazz.c$$java_io_OutputStream.apply(this, [os]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (outputStream) {
+;C$.$init$.apply(this);
+this.setOutputStream$java_io_OutputStream(outputStream);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Writer', function (writer) {
-C$.superclazz.c$$java_io_Writer.apply(this, [writer]);
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
+this.setWriter$java_io_Writer(writer);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (id) {
-C$.superclazz.c$$S.apply(this, [id]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S', function (systemId) {
+;C$.$init$.apply(this);
+this.systemId=systemId;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (f) {
-C$.superclazz.c$$java_io_File.apply(this, [f]);
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
+this.setSystemId$S(f.toURI$().toASCIIString$());
 }, 1);
+
+Clazz.newMeth(C$, 'setOutputStream$java_io_OutputStream', function (outputStream) {
+this.outputStream=outputStream;
+});
+
+Clazz.newMeth(C$, 'getOutputStream$', function () {
+return this.outputStream;
+});
+
+Clazz.newMeth(C$, 'setWriter$java_io_Writer', function (writer) {
+this.writer=writer;
+});
+
+Clazz.newMeth(C$, 'getWriter$', function () {
+return this.writer;
+});
+
+Clazz.newMeth(C$, 'setSystemId$S', function (systemId) {
+this.systemId=systemId;
+});
+
+Clazz.newMeth(C$, 'setSystemId$java_io_File', function (f) {
+this.systemId=f.toURI$().toASCIIString$();
+});
+
+Clazz.newMeth(C$, 'getSystemId$', function () {
+return this.systemId;
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

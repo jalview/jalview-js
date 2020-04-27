@@ -1,28 +1,20 @@
-(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'javax.swing.JScrollPane','javax.swing.DefaultListModel','javax.swing.border.LineBorder','java.awt.AWTEventMulticaster','java.awt.event.ItemListener','java.awt.event.ActionListener']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "List", null, 'javax.swing.JList', ['java.awt.ItemSelectable', ['java.awt.JSComponent','java.awt.JSComponent.A2SWrappedComponent']]);
-C$.nameCounter=0;
+(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'javax.swing.JScrollPane','javax.swing.DefaultListModel','javax.swing.border.LineBorder','java.awt.AWTEventMulticaster','java.awt.event.ItemListener','java.awt.event.ActionListener','java.awt.event.ItemEvent','java.awt.event.ActionEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "List", null, 'javax.swing.JList', ['java.awt.ItemSelectable', ['java.awt.JSComponent','java.awt.JSComponent.A2SWrappedComponent'], 'javax.swing.event.ListSelectionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nameCounter=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.visibleIndex=0;
-this.actionListener=null;
-this.itemListener=null;
-this.awtmodel=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.visibleIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['visibleIndex'],'O',['actionListener','java.awt.event.ActionListener','itemListener','java.awt.event.ItemListener','awtmodel','javax.swing.DefaultListModel']]
+,['I',['nameCounter']]]
 
 Clazz.newMeth(C$, 'isAWT$', function () {
 });
 
-Clazz.newMeth(C$, 'getWrap$', function () {
-return Clazz.new_($I$(1).c$$java_awt_Component,[this]);
+Clazz.newMeth(C$, '秘getWrap$', function () {
+return Clazz.new_($I$(1,1).c$$java_awt_Component,[this]);
 });
 
 Clazz.newMeth(C$, 'c$$I$Z', function (rows, multipleMode) {
@@ -32,8 +24,7 @@ this.setVisibleRowCount$I(rows == 0 ? 4 : rows);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$javax_swing_ListModel.apply(this, [Clazz.new_($I$(2))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_ListModel.apply(this,[Clazz.new_($I$(2,1))]);C$.$init$.apply(this);
 this.awtmodel=this.getModel$();
 this.setBorder$javax_swing_border_Border($I$(3).createBlackLineBorder$());
 }, 1);
@@ -77,8 +68,8 @@ this.addItem$S$I(item, index);
 });
 
 Clazz.newMeth(C$, 'addItem$S$I', function (item, index) {
-if (index >= 0 && index < this.awtmodel.getSize$() ) this.awtmodel.add$I$TE(index, item);
- else this.awtmodel.addElement$TE(item);
+if (index >= 0 && index < this.awtmodel.getSize$() ) this.awtmodel.add$I$O(index, item);
+ else this.awtmodel.addElement$O(item);
 });
 
 Clazz.newMeth(C$, 'replaceItem$S$I', function (newValue, index) {
@@ -220,12 +211,15 @@ if (l == null ) {
 return;
 }this.itemListener=$I$(4).add$java_awt_event_ItemListener$java_awt_event_ItemListener(this.itemListener, l);
 this.newEventsOnly=true;
+this.removeListSelectionListener$javax_swing_event_ListSelectionListener(this);
+this.addListSelectionListener$javax_swing_event_ListSelectionListener(this);
 });
 
 Clazz.newMeth(C$, 'removeItemListener$java_awt_event_ItemListener', function (l) {
 if (l == null ) {
 return;
 }this.itemListener=$I$(4).remove$java_awt_event_ItemListener$java_awt_event_ItemListener(this.itemListener, l);
+if (this.itemListener == null ) this.removeListSelectionListener$javax_swing_event_ListSelectionListener(this);
 });
 
 Clazz.newMeth(C$, 'getItemListeners$', function () {
@@ -289,17 +283,36 @@ return;
 Clazz.newMeth(C$, 'processItemEvent$java_awt_event_ItemEvent', function (e) {
 var listener=this.itemListener;
 if (listener != null ) {
-listener.itemStateChanged$(e);
+listener.itemStateChanged$java_awt_event_ItemEvent(e);
+}});
+
+Clazz.newMeth(C$, 'valueChanged$javax_swing_event_ListSelectionEvent', function (e) {
+if (this.itemListener != null  && !this.getSelectionModel$().getValueIsAdjusting$() ) {
+this.processItemEvent$java_awt_event_ItemEvent(Clazz.new_([this, 701, this.getSelectedItem$(), 1],$I$(7,1).c$$java_awt_ItemSelectable$I$O$I));
 }});
 
 Clazz.newMeth(C$, 'processActionEvent$java_awt_event_ActionEvent', function (e) {
 var listener=this.actionListener;
 if (listener != null ) {
-listener.actionPerformed$(e);
+listener.actionPerformed$java_awt_event_ActionEvent(e);
 }});
 
 Clazz.newMeth(C$, 'paramString$', function () {
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",selected=" + this.getSelectedItem$() ;
 });
+
+Clazz.newMeth(C$, '秘processUIEvent$java_awt_event_MouseEvent', function (e) {
+C$.superclazz.prototype.秘processUIEvent$java_awt_event_MouseEvent.apply(this, [e]);
+if (e.getID$() == 500) {
+if (e.getClickCount$() == 2) {
+this.processActionEvent$java_awt_event_ActionEvent(Clazz.new_([this, 1001, this.getSelectedItem$()],$I$(8,1).c$$O$I$S));
+if (this.itemListener != null ) this.processItemEvent$java_awt_event_ItemEvent(Clazz.new_([this, 701, this.getSelectedItem$(), 1],$I$(7,1).c$$java_awt_ItemSelectable$I$O$I));
+return true;
+}}return false;
+});
+
+C$.$static$=function(){C$.$static$=0;
+C$.nameCounter=0;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:45 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

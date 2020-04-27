@@ -1,19 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EspressoReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "EspressoReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cellParams=null;
-this.totEnergy=null;
-this.endFlag=false;
-this.aPar=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['endFlag'],'F',['aPar'],'O',['cellParams','float[]','totEnergy','Double']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.setSpaceGroupName$S("P1");
@@ -49,7 +42,7 @@ if (this.line.contains$CharSequence("bohr")) this.aPar=0.5291772;
 if (andAPar && this.line.contains$CharSequence("=") ) this.aPar=this.parseFloatStr$S(this.line.substring$I(this.line.indexOf$S("=") + 1)) * 0.5291772;
 this.cellParams=Clazz.array(Float.TYPE, [9]);
 for (var n=0, i=0; n < 3; n++) {
-var tokens=$I$(1).getTokens$S(this.rd$());
+var tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(1).getTokens$S);
 this.cellParams[i++]=this.parseFloatStr$S(tokens[i0]) * this.aPar;
 this.cellParams[i++]=this.parseFloatStr$S(tokens[i0 + 1]) * this.aPar;
 this.cellParams[i++]=this.parseFloatStr$S(tokens[i0 + 2]) * this.aPar;
@@ -98,7 +91,7 @@ if (this.endFlag) this.discardLinesUntilContains$S("Harris-Foulkes estimate");
 }, p$1);
 
 Clazz.newMeth(C$, 'readEnergy', function () {
-this.totEnergy=Double.valueOf$D(Double.parseDouble$S($I$(1).getTokens$S(this.line.substring$I(this.line.indexOf$S("=") + 1))[0]));
+this.totEnergy=Double.valueOf$D(Double.parseDouble$S((function(a,f){return f.apply(null,a)})([this.line.substring$I(this.line.indexOf$S("=") + 1)],$I$(1).getTokens$S)[0]));
 }, p$1);
 
 Clazz.newMeth(C$, 'setEnergy', function () {
@@ -109,4 +102,4 @@ this.asc.setAtomSetName$S("E = " + this.totEnergy.toString() + " Ry" );
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

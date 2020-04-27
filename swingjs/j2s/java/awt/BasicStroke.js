@@ -1,24 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BasicStroke", null, null, ['java.awt.Stroke', 'Cloneable']);
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BasicStroke", null, null, ['java.awt.Stroke', 'Cloneable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.join=0;
-this.cap=0;
-this.miterlimit=0;
-this.dash=null;
-this.dash_phase=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['width','miterlimit','dash_phase'],'I',['join','cap'],'O',['dash','float[]']]]
 
 Clazz.newMeth(C$, 'c$$F$I$I$F$FA$F', function (width, cap, join, miterlimit, dash, dash_phase) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (width < 0.0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["negative width"]);
 }if (cap != 0 && cap != 1  && cap != 2 ) {
@@ -66,7 +57,7 @@ Clazz.newMeth(C$, 'c$', function () {
 C$.c$$F$I$I$F$FA$F.apply(this, [1.0, 2, 0, 10.0, null, 0.0]);
 }, 1);
 
-Clazz.newMeth(C$, ['createStrokedShape$java_awt_Shape','createStrokedShape$'], function (s) {
+Clazz.newMeth(C$, 'createStrokedShape$java_awt_Shape', function (s) {
 return s;
 });
 
@@ -135,4 +126,4 @@ Clazz.newMeth(C$, 'clone$', function () {
 return Clazz.new_(C$.c$$F$I$I$F$FA$F,[this.width, this.cap, this.join, this.miterlimit, this.dash, this.dash_phase]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

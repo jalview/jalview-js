@@ -1,39 +1,25 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),p$1={},I$=[[0,'jalview.util.Platform','java.util.HashMap','jalview.ext.ensembl.EnsemblData','java.net.URL','Thread','StringBuilder','java.io.DataOutputStream','jalview.util.StringUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EnsemblRestClient", null, 'jalview.ext.ensembl.EnsemblSequenceFetcher');
-C$.domainData=null;
+(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),p$1={},I$=[[0,'jalview.util.Platform','java.util.HashMap','jalview.ext.ensembl.EnsemblData','java.net.URL','Thread','StringBuilder','java.io.DataOutputStream','jalview.util.StringUtils']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EnsemblRestClient", null, 'jalview.ext.ensembl.EnsemblSequenceFetcher');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-$I$(1).addJ2SDirectDatabaseCall$S("http://rest.ensembl");
-$I$(1).addJ2SDirectDatabaseCall$S("https://rest.ensembl");
-};
-{
-C$.domainData=Clazz.new_($I$(2));
-C$.domainData.put$TK$TV("https://rest.ensembl.org", Clazz.new_($I$(3).c$$S$S,["https://rest.ensembl.org", "10.0"]));
-C$.domainData.put$TK$TV("https://rest.ensembl.org", Clazz.new_($I$(3).c$$S$S,["https://rest.ensembl.org", "10.0"]));
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inProgress=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.inProgress=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['inProgress']]
+,['O',['domainData','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 if (!C$.domainData.containsKey$O(this.ensemblDomain)) {
-C$.domainData.put$TK$TV(this.ensemblDomain, Clazz.new_($I$(3).c$$S$S,[this.ensemblDomain, "10.0"]));
+C$.domainData.put$O$O(this.ensemblDomain, Clazz.new_($I$(3,1).c$$S$S,[this.ensemblDomain, "10.0"]));
 }if (!C$.domainData.containsKey$O(this.ensemblGenomesDomain)) {
-C$.domainData.put$TK$TV(this.ensemblGenomesDomain, Clazz.new_($I$(3).c$$S$S,[this.ensemblGenomesDomain, "10.0"]));
+C$.domainData.put$O$O(this.ensemblGenomesDomain, Clazz.new_($I$(3,1).c$$S$S,[this.ensemblGenomesDomain, "10.0"]));
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (d) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setDomain$S(d);
 }, 1);
 
@@ -57,7 +43,7 @@ Clazz.newMeth(C$, 'checkEnsembl$', function () {
 var br=null;
 var pingUrl=this.getDomain$() + "/info/ping" + "?content-type=application/json" ;
 try {
-var val=this.getJSON$java_net_URL$java_util_List$I$I$S(Clazz.new_($I$(4).c$$S,[pingUrl]), null, 2000, 1, null);
+var val=this.getJSON$java_net_URL$java_util_List$I$I$S(Clazz.new_($I$(4,1).c$$S,[pingUrl]), null, 2000, 1, null);
 if (val == null ) {
 return false;
 }var pingString=val.get$O("ping").toString();
@@ -98,9 +84,7 @@ if (responseCode != 200) {
 System.err.println$S("Response code " + responseCode);
 return null;
 }var response=connection.getInputStream$();
-$I$(1).timeCheck$S$I(null, 1);
 var ret=$I$(1).parseJSON$java_io_InputStream(response);
-$I$(1).timeCheck$S$I("EnsemblRestClient.getJSON " + url, 1);
 return ret;
 }, p$1);
 
@@ -124,7 +108,7 @@ Clazz.newMeth(C$, 'checkRetryAfter$java_net_HttpURLConnection', function (connec
 var retryDelay=connection.getHeaderField$S("Retry-After");
 if (retryDelay != null ) {
 try {
-var retrySecs=(Integer.valueOf$S(retryDelay)).intValue$();
+var retrySecs=(Integer.valueOf$S(retryDelay)).valueOf();
 if (retrySecs > 0 && retrySecs < 10 ) {
 System.err.println$S("Ensembl REST service rate limit exceeded, waiting " + retryDelay + " seconds before retrying" );
 $I$(5).sleep$J(1000 * retrySecs);
@@ -154,7 +138,7 @@ info.lastVersionCheckTime=now;
 
 Clazz.newMeth(C$, 'writePostBody$java_net_HttpURLConnection$java_util_List', function (connection, ids) {
 var first;
-var postBody=Clazz.new_($I$(6).c$$I,[64]);
+var postBody=Clazz.new_($I$(6,1).c$$I,[64]);
 postBody.append$S("{\"ids\":[");
 first=true;
 for (var i=0, n=ids.size$(); i < n; i++) {
@@ -169,7 +153,7 @@ postBody.append$S("\"");
 postBody.append$S("]}");
 var thepostbody=postBody.toString().getBytes$();
 connection.setRequestProperty$S$S("Content-Length", Integer.toString$I(thepostbody.length));
-var wr=Clazz.new_($I$(7).c$$java_io_OutputStream,[connection.getOutputStream$()]);
+var wr=Clazz.new_([connection.getOutputStream$()],$I$(7,1).c$$java_io_OutputStream);
 wr.write$BA(thepostbody);
 wr.flush$();
 wr.close$();
@@ -197,7 +181,7 @@ return json;
 Clazz.newMeth(C$, 'checkEnsemblRestVersion', function () {
 var info=C$.domainData.get$O(this.getDomain$());
 try {
-var val=this.getJSON$java_net_URL$java_util_List$I$I$S(Clazz.new_($I$(4).c$$S,[this.getDomain$() + "/info/rest" + "?content-type=application/json" ]), null, -1, 1, null);
+var val=this.getJSON$java_net_URL$java_util_List$I$I$S(Clazz.new_([this.getDomain$() + "/info/rest" + "?content-type=application/json" ],$I$(4,1).c$$S), null, -1, 1, null);
 if (val == null ) {
 return;
 }var version=val.get$O("release").toString();
@@ -206,7 +190,7 @@ var expected=info.expectedRestVersion;
 var expectedMajorVersion=expected.substring$I$I(0, expected.indexOf$S("."));
 info.restMajorVersionMismatch=false;
 try {
-if ((Float.valueOf$S(majorVersion)).floatValue$() > (Float.valueOf$S(expectedMajorVersion)).floatValue$() ) {
+if ((Float.valueOf$S(majorVersion)).valueOf() > (Float.valueOf$S(expectedMajorVersion)).valueOf() ) {
 info.restMajorVersionMismatch=true;
 }} catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
@@ -231,7 +215,7 @@ return C$.domainData.get$O(this.getDomain$()).restMajorVersionMismatch;
 Clazz.newMeth(C$, 'checkEnsemblDataVersion', function () {
 var val;
 try {
-val=this.getJSON$java_net_URL$java_util_List$I$I$S(Clazz.new_($I$(4).c$$S,[this.getDomain$() + "/info/data" + "?content-type=application/json" ]), null, -1, 1, null);
+val=this.getJSON$java_net_URL$java_util_List$I$I$S(Clazz.new_([this.getDomain$() + "/info/data" + "?content-type=application/json" ],$I$(4,1).c$$S), null, -1, 1, null);
 if (val == null ) {
 return;
 }var versions=val.get$O("releases");
@@ -248,5 +232,17 @@ return C$.domainData.get$O(this.getDomain$()).dataVersion;
 Clazz.newMeth(C$, 'getDbVersion$', function () {
 return this.getEnsemblDataVersion$();
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+$I$(1).addJ2SDirectDatabaseCall$S("http://rest.ensembl");
+$I$(1).addJ2SDirectDatabaseCall$S("https://rest.ensembl");
+};
+{
+C$.domainData=Clazz.new_($I$(2,1));
+C$.domainData.put$O$O("https://rest.ensembl.org", Clazz.new_($I$(3,1).c$$S$S,["https://rest.ensembl.org", "10.0"]));
+C$.domainData.put$O$O("https://rest.ensembl.org", Clazz.new_($I$(3,1).c$$S$S,["https://rest.ensembl.org", "10.0"]));
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

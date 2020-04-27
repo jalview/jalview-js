@@ -1,43 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.rendercgo"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.shapecgo.CGOMesh','org.jmol.util.Logger','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CGORenderer", null, 'org.jmol.renderspecial.DrawRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.rendercgo"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.shapecgo.CGOMesh','org.jmol.util.Logger','org.jmol.util.C']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CGORenderer", null, 'org.jmol.renderspecial.DrawRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cgoMesh=null;
-this.cmds=null;
-this.pt3=null;
-this.colix0=0;
-this.colix1=0;
-this.colix2=0;
-this.normix0=0;
-this.normix1=0;
-this.normix2=0;
-this.normix=0;
-this.doColor=false;
-this.ptNormal=0;
-this.ptColor=0;
-this.map0=null;
-this.vX=null;
-this.vY=null;
-this.x0=0;
-this.y0=0;
-this.dx=0;
-this.dy=0;
-this.scaleX=0;
-this.scaleY=0;
-this.is2D=false;
-this.is2DPercent=false;
-this.isMapped=false;
-this.isPS=false;
-this.screenZ=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.pt3=Clazz.new_($I$(1));
-}, 1);
+this.pt3=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['doColor','is2D','is2DPercent','isMapped','isPS'],'F',['x0','y0','dx','dy','scaleX','scaleY'],'I',['ptNormal','ptColor','screenZ'],'H',['colix0','colix1','colix2','normix0','normix1','normix2','normix'],'O',['cgoMesh','org.jmol.shapecgo.CGOMesh','cmds','javajs.util.Lst','pt3','javajs.util.P3','+map0','+vX','+vY']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 this.needTranslucent=false;
@@ -102,9 +72,9 @@ case -103:
 this.isPS=true;
 case -102:
 this.is2D=this.isMapped=true;
-this.map0=Clazz.new_($I$(1));
-this.vX=Clazz.new_($I$(1));
-this.vY=Clazz.new_($I$(1));
+this.map0=Clazz.new_($I$(1,1));
+this.vX=Clazz.new_($I$(1,1));
+this.vY=Clazz.new_($I$(1,1));
 this.cgoMesh.getPoint$I$javajs_util_T3(j + 1, this.map0);
 this.cgoMesh.getPoint$I$javajs_util_T3(j + 4, this.vX);
 this.vX.sub$javajs_util_T3(this.map0);
@@ -277,7 +247,7 @@ return this.cgoMesh.nList.get$I(this.ptNormal++).shortValue$();
 
 Clazz.newMeth(C$, 'getColix$Z', function (doSet) {
 if (this.doColor) {
-this.colix=$I$(4).copyColixTranslucency$H$H(this.cgoMesh.colix, this.cgoMesh.cList.get$I(this.ptColor++).shortValue$());
+this.colix=(function(a,f){return f.apply(null,a)})([this.cgoMesh.colix, this.cgoMesh.cList.get$I(this.ptColor++).shortValue$()],$I$(4).copyColixTranslucency$H$H);
 if (doSet) this.g3d.setC$H(this.colix);
 }return this.colix;
 }, p$1);
@@ -304,4 +274,4 @@ this.g3d.fillTriangle3CNBits$javajs_util_P3$H$H$javajs_util_P3$H$H$javajs_util_P
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

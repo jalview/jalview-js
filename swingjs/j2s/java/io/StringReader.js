@@ -1,108 +1,84 @@
-(function(){var P$=java.io,p$1={},I$=[[0,'org.apache.harmony.luni.util.Msg']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StringReader", null, 'java.io.Reader');
+(function(){var P$=java.io,p$1={};
+/*c*/var C$=Clazz.newClass(P$, "StringReader", null, 'java.io.Reader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.str=null;
-this.markpos=0;
-this.pos=0;
-this.count=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.markpos=-1;
+this.next=0;
+this.mark=0;
+},1);
+
+C$.$fields$=[['I',['length','next','mark'],'S',['str']]]
+
+Clazz.newMeth(C$, 'c$$S', function (s) {
+Clazz.super_(C$, this);
+this.str=s;
+this.length=s.length$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (str) {
-C$.superclazz.c$$O.apply(this, [str]);
-C$.$init$.apply(this);
-this.str=str;
-this.count=str.length$();
-}, 1);
-
-Clazz.newMeth(C$, 'close$', function () {
-{
-if (p$1.isOpen.apply(this, [])) {
-this.str=null;
-}}});
-
-Clazz.newMeth(C$, 'isOpen', function () {
-return this.str != null ;
+Clazz.newMeth(C$, 'ensureOpen', function () {
+if (this.str == null ) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }, p$1);
 
-Clazz.newMeth(C$, 'mark$I', function (readLimit) {
-if (readLimit >= 0) {
+Clazz.newMeth(C$, 'read$', function () {
 {
-if (p$1.isOpen.apply(this, [])) {
-this.markpos=this.pos;
-} else {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K0083")]);
-}}} else {
-throw Clazz.new_(Clazz.load('IllegalArgumentException'));
+p$1.ensureOpen.apply(this, []);
+if (this.next >= this.length) return -1;
+return this.str.charAt$I(this.next++).$c();
+}});
+
+Clazz.newMeth(C$, 'read$CA$I$I', function (cbuf, off, len) {
+{
+p$1.ensureOpen.apply(this, []);
+if ((off < 0) || (off > cbuf.length) || (len < 0) || ((off + len) > cbuf.length) || ((off + len) < 0)  ) {
+throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
+} else if (len == 0) {
+return 0;
+}if (this.next >= this.length) return -1;
+var n=Math.min(this.length - this.next, len);
+this.str.getChars$I$I$CA$I(this.next, this.next + n, cbuf, off);
+this.next+=n;
+return n;
+}});
+
+Clazz.newMeth(C$, 'skip$J', function (ns) {
+{
+p$1.ensureOpen.apply(this, []);
+if (this.next >= this.length) return 0;
+var n=Math.min(this.length - this.next, ns);
+n=Math.max(-this.next, n);
+this.next+=n;
+return n;
+}});
+
+Clazz.newMeth(C$, 'ready$', function () {
+{
+p$1.ensureOpen.apply(this, []);
+return true;
 }});
 
 Clazz.newMeth(C$, 'markSupported$', function () {
 return true;
 });
 
-Clazz.newMeth(C$, 'read$', function () {
-{
-if (p$1.isOpen.apply(this, [])) {
-if (this.pos != this.count) {
-return this.str.charAt$I(this.pos++).$c();
-}return -1;
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K0083")]);
-}});
-
-Clazz.newMeth(C$, 'read$CA$I$I', function (buf, offset, len) {
-if (0 <= offset && offset <= buf.length  && 0 <= len  && len <= buf.length - offset ) {
-{
-if (p$1.isOpen.apply(this, [])) {
-if (this.pos == this.count) {
-return -1;
-}var end=this.pos + len > this.count ? this.count : this.pos + len;
-this.str.getChars$I$I$CA$I(this.pos, end, buf, offset);
-var read=end - this.pos;
-this.pos=end;
-return read;
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K0083")]);
-}}throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException'));
-});
-
-Clazz.newMeth(C$, 'ready$', function () {
-{
-if (p$1.isOpen.apply(this, [])) {
-return true;
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K0083")]);
+Clazz.newMeth(C$, 'mark$I', function (readAheadLimit) {
+if (readAheadLimit < 0) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Read-ahead limit < 0"]);
+}{
+p$1.ensureOpen.apply(this, []);
+this.mark=this.next;
 }});
 
 Clazz.newMeth(C$, 'reset$', function () {
 {
-if (p$1.isOpen.apply(this, [])) {
-this.pos=this.markpos != -1 ? this.markpos : 0;
-} else {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K0083")]);
-}}});
-
-Clazz.newMeth(C$, 'skip$J', function (ns) {
-{
-if (p$1.isOpen.apply(this, [])) {
-if (ns <= 0) {
-return 0;
-}var skipped=0;
-if (ns < this.count - this.pos) {
-this.pos=this.pos + (ns|0);
-skipped=ns;
-} else {
-skipped=this.count - this.pos;
-this.pos=this.count;
-}return skipped;
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(1).getString$S("K0083")]);
+p$1.ensureOpen.apply(this, []);
+this.next=this.mark;
 }});
+
+Clazz.newMeth(C$, 'close$', function () {
+this.str=null;
+});
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

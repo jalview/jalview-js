@@ -1,32 +1,16 @@
-(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},I$=[[0,'java.util.zip.Deflater','java.io.ByteArrayOutputStream','java.util.zip.DeflaterOutputStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PngEncoder", null, 'javajs.img.CRCEncoder');
+(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},I$=[[0,'java.util.zip.Deflater','java.io.ByteArrayOutputStream','java.util.zip.DeflaterOutputStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PngEncoder", null, 'javajs.img.CRCEncoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.encodeAlpha=false;
-this.filter=0;
-this.bytesPerPixel=0;
-this.compressionLevel=0;
-this.type=null;
-this.transparentColor=null;
-this.appData=null;
-this.appPrefix=null;
-this.comment=null;
-this.bytes=null;
-this.scanLines=null;
-this.byteWidth=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.filter=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['encodeAlpha'],'I',['filter','bytesPerPixel','compressionLevel','byteWidth'],'S',['type','appPrefix','comment'],'O',['transparentColor','Integer','appData','byte[]','+bytes','+scanLines']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setParams$java_util_Map', function (params) {
@@ -64,8 +48,8 @@ var pngIdBytes=Clazz.array(Byte.TYPE, -1, [-119, 80, 78, 71, 13, 10, 26, 10]);
 this.writeBytes$BA(pngIdBytes);
 p$1.writeHeader.apply(this, []);
 p$1.writeText$S.apply(this, [C$.getApplicationText$S$S$I$I(this.appPrefix, this.type, 0, 0)]);
-p$1.writeText$S.apply(this, ["Software\0" + this.comment]);
-p$1.writeText$S.apply(this, ["Creation Time\0" + this.date]);
+p$1.writeText$S.apply(this, ["Software\u0000" + this.comment]);
+p$1.writeText$S.apply(this, ["Creation Time\u0000" + this.date]);
 if (!this.encodeAlpha && this.transparentColor != null  ) p$1.writeTransparentColor$I.apply(this, [this.transparentColor.intValue$()]);
 return p$1.writeImageData.apply(this, []);
 }, p$1);
@@ -91,7 +75,7 @@ sData=sData.substring$I(sData.length$() - 9);
 if (prefix == null ) prefix="#SwingJS.";
 if (prefix.length$() < 9) prefix=(prefix + ".........");
 if (prefix.length$() > 9) prefix=prefix.substring$I$I(0, 9);
-return prefix + "\0" + type + sPNG + "+" + sData ;
+return prefix + "\u0000" + type + sPNG + "+" + sData ;
 }, 1);
 
 Clazz.newMeth(C$, 'writeHeader', function () {
@@ -132,9 +116,9 @@ var scanWidth=this.byteWidth + 1;
 var rowsLeft=this.height;
 var nRows;
 var scanPos;
-var deflater=Clazz.new_($I$(1).c$$I,[this.compressionLevel]);
-var outBytes=Clazz.new_($I$(2).c$$I,[1024]);
-var compBytes=Clazz.new_($I$(3).c$$java_io_ByteArrayOutputStream$java_util_zip_Deflater,[outBytes, deflater]);
+var deflater=Clazz.new_($I$(1,1).c$$I,[this.compressionLevel]);
+var outBytes=Clazz.new_($I$(2,1).c$$I,[1024]);
+var compBytes=Clazz.new_($I$(3,1).c$$java_io_ByteArrayOutputStream$java_util_zip_Deflater,[outBytes, deflater]);
 var pt=0;
 try {
 while (rowsLeft > 0){
@@ -144,12 +128,12 @@ var nPixels=this.width * nRows;
 scanPos=0;
 for (var i=0; i < nPixels; i++, pt++) {
 if (i % this.width == 0) {
-this.scanLines[scanPos++]=((this.filter|0)|0);
-}this.scanLines[scanPos++]=((((this.pixels[pt] >> 16) & 255)|0)|0);
-this.scanLines[scanPos++]=((((this.pixels[pt] >> 8) & 255)|0)|0);
-this.scanLines[scanPos++]=((((this.pixels[pt]) & 255)|0)|0);
+this.scanLines[scanPos++]=(this.filter|0);
+}this.scanLines[scanPos++]=(((this.pixels[pt] >> 16) & 255)|0);
+this.scanLines[scanPos++]=(((this.pixels[pt] >> 8) & 255)|0);
+this.scanLines[scanPos++]=(((this.pixels[pt]) & 255)|0);
 if (this.encodeAlpha) {
-this.scanLines[scanPos++]=((((this.pixels[pt] >> 24) & 255)|0)|0);
+this.scanLines[scanPos++]=(((this.pixels[pt] >> 24) & 255)|0);
 }}
 compBytes.write$BA$I$I(this.scanLines, 0, scanPos);
 rowsLeft-=nRows;
@@ -181,4 +165,4 @@ this.writeString$S("IEND");
 this.writeCRC$();
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

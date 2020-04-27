@@ -1,29 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapecgo"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','javajs.util.BS','org.jmol.util.C','javajs.util.CU','org.jmol.util.Normix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CGOMesh", null, 'org.jmol.shapespecial.DrawMesh');
-C$.sizes=null;
-C$.sizes2D=null;
-C$.keyMap=null;
+(function(){var P$=Clazz.newPackage("org.jmol.shapecgo"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','javajs.util.BS','org.jmol.util.C','javajs.util.CU','org.jmol.util.Normix']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CGOMesh", null, 'org.jmol.shapespecial.DrawMesh');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.sizes=Clazz.array(Integer.TYPE, -1, [0, 8, 1, 0, 3, 3, 3, 4, 27, 13, 1, 1, 1, 1, 13, 15, 1, 35, 13, 3, 2, 3, 9, 1, 2, 1, 14, 16, 1, 2]);
-C$.sizes2D=Clazz.array(Integer.TYPE, -1, [0, 6, 1, 0, 2, 3, 3, 4, 24, 13, 1, 1, 1, 1, 11, 15, 1, 35, 13, 3, 2, 3, 9, 1, 2, 1, 14, 16, 1, 2]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cmds=null;
-this.nList=null;
-this.cList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.nList=Clazz.new_($I$(1));
-this.cList=Clazz.new_($I$(1));
-}, 1);
+this.nList=Clazz.new_($I$(1,1));
+this.cList=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['cmds','javajs.util.Lst','+nList','+cList']]
+,['O',['sizes','int[]','+sizes2D','keyMap','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$S$H$I', function (vwr, thisID, colix, index) {
-C$.superclazz.c$$org_jmol_viewer_Viewer$S$H$I.apply(this, [vwr, thisID, colix, index]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$org_jmol_viewer_Viewer$S$H$I.apply(this,[vwr, thisID, colix, index]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getSize$I$Z', function (i, is2D) {
@@ -51,11 +40,11 @@ return (i >= 0 && i < C$.sizes.length  ? (is2D ? C$.sizes2D : C$.sizes)[i] : -1)
 }, 1);
 
 Clazz.newMeth(C$, 'getKeyMap$', function () {
-var keyMap=Clazz.new_($I$(2));
+var keyMap=Clazz.new_($I$(2,1));
 var tokens=$I$(3).getTokens$S("BEGIN:2 END:3 STOP:0 POINT:0 POINTS:0 LINES:1 LINE_LOOP:2 LINE_STRIP:3 TRIANGLES:4 TRIANGLE_STRIP:5 TRIANGLE_FAN:6 LINE:1 VERTEX:4 NORMAL:5 COLOR:6 LINEWIDTH:10 SAUSAGE:14 DIAMETER:-100 SCREEN:-101 UVMAP:-102 PS:-103 NEWPATH:-104 CLOSEPATH:-105 STROKE:-106 SETLINEWIDTH:-107 SCALE:-108 MOVETO:-109 LINETO:-110 SHOWPAGE:-111");
 for (var i=tokens.length; --i >= 0; ) {
 var pt=tokens[i].indexOf$S(":");
-keyMap.put$TK$TV(tokens[i].substring$I$I(0, pt), Integer.valueOf$I(Integer.parseInt$S(tokens[i].substring$I(pt + 1))));
+keyMap.put$O$O(tokens[i].substring$I$I(0, pt), Integer.valueOf$I(Integer.parseInt$S(tokens[i].substring$I(pt + 1))));
 }
 return keyMap;
 }, 1);
@@ -85,9 +74,9 @@ return true;
 Clazz.newMeth(C$, 'parseEPSData$S$javajs_util_Lst', function (eps, data) {
 var pt=eps.indexOf$S("%%BoundingBox:");
 if (pt < 0) return false;
-var stack=Clazz.new_($I$(1));
+var stack=Clazz.new_($I$(1,1));
 var next=Clazz.array(Integer.TYPE, -1, [pt + 14]);
-for (var i=0; i < 4; i++) data.addLast$TV(Float.valueOf$F($I$(3).parseFloatNext$S$IA(eps, next)));
+for (var i=0; i < 4; i++) data.addLast$O(Float.valueOf$F($I$(3).parseFloatNext$S$IA(eps, next)));
 
 pt=eps.indexOf$S("%%EndProlog");
 if (pt < 0) return false;
@@ -101,11 +90,11 @@ var s=$I$(3).parseTokenChecked$S$I$IA(eps, len, next);
 if (s.startsWith$S("%%")) continue;
 if (!C$.addKey$javajs_util_Lst$S(data, s)) return false;
 if (stack.size$() > 0) {
-for (var k=0, n=stack.size$(); k < n; k++) data.addLast$TV(stack.get$I(k));
+for (var k=0, n=stack.size$(); k < n; k++) data.addLast$O(stack.get$I(k));
 
 stack.clear$();
 }} else {
-stack.addLast$TV(Float.valueOf$F(f));
+stack.addLast$O(Float.valueOf$F(f));
 }}
 return true;
 }, 1);
@@ -120,17 +109,17 @@ i=j;
 j=slen;
 continue;
 case 2:
-data.addLast$TV(Float.valueOf$F(t.intValue));
+data.addLast$O(Float.valueOf$F(t.intValue));
 break;
 case 3:
-data.addLast$TV(t.value);
+data.addLast$O(t.value);
 break;
 case 8:
 case 10:
 var pt=(tok == 8 ? t.value : vwr.ms.getAtomSetCenter$javajs_util_BS(t.value));
-data.addLast$TV(Float.valueOf$F(pt.x));
-data.addLast$TV(Float.valueOf$F(pt.y));
-data.addLast$TV(Float.valueOf$F(pt.z));
+data.addLast$O(Float.valueOf$F(pt.x));
+data.addLast$O(Float.valueOf$F(pt.y));
+data.addLast$O(Float.valueOf$F(pt.z));
 break;
 default:
 if (!C$.addKey$javajs_util_Lst$S(data, st[j].value.toString())) {
@@ -147,7 +136,7 @@ Clazz.newMeth(C$, 'addKey$javajs_util_Lst$S', function (data, key) {
 key=key.toUpperCase$();
 var ii=C$.keyMap.get$O(key.toUpperCase$());
 if (ii == null ) return false;
-data.addLast$TV(ii);
+data.addLast$O(ii);
 return true;
 }, 1);
 
@@ -160,7 +149,7 @@ Clazz.newMeth(C$, 'set$javajs_util_Lst', function (list) {
 this.width=200;
 this.diameter=0;
 this.useColix=true;
-this.bsTemp=Clazz.new_($I$(5));
+this.bsTemp=Clazz.new_($I$(5,1));
 try {
 if (Clazz.instanceOf(list.get$I(0), "java.lang.Number")) {
 this.cmds=list;
@@ -221,12 +210,12 @@ throw e;
 
 Clazz.newMeth(C$, 'addColix$I', function (i) {
 this.getPoint$I$javajs_util_T3(i, this.vTemp);
-this.cList.addLast$TV(Short.valueOf$H($I$(6).getColix$I($I$(7).colorPtToFFRGB$javajs_util_T3(this.vTemp))));
+this.cList.addLast$O(Short.valueOf$H((function(a,f){return f.apply(null,a)})([$I$(7).colorPtToFFRGB$javajs_util_T3(this.vTemp)],$I$(6).getColix$I)));
 }, p$1);
 
 Clazz.newMeth(C$, 'addNormix$I', function (i) {
 this.getPoint$I$javajs_util_T3(i, this.vTemp);
-this.nList.addLast$TV(Short.valueOf$H($I$(8).get2SidedNormix$javajs_util_V3$javajs_util_BS(this.vTemp, this.bsTemp)));
+this.nList.addLast$O(Short.valueOf$H($I$(8).get2SidedNormix$javajs_util_V3$javajs_util_BS(this.vTemp, this.bsTemp)));
 }, p$1);
 
 Clazz.newMeth(C$, 'getPoint$I$javajs_util_T3', function (i, pt) {
@@ -241,6 +230,11 @@ Clazz.newMeth(C$, 'getFloat$I', function (i) {
 return (this.cmds.get$I(i)).floatValue$();
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.sizes=Clazz.array(Integer.TYPE, -1, [0, 8, 1, 0, 3, 3, 3, 4, 27, 13, 1, 1, 1, 1, 13, 15, 1, 35, 13, 3, 2, 3, 9, 1, 2, 1, 14, 16, 1, 2]);
+C$.sizes2D=Clazz.array(Integer.TYPE, -1, [0, 6, 1, 0, 2, 3, 3, 4, 24, 13, 1, 1, 1, 1, 11, 15, 1, 35, 13, 3, 2, 3, 9, 1, 2, 1, 14, 16, 1, 2]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

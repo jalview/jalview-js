@@ -1,25 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.ws.uimodel");
-var C$=Clazz.newClass(P$, "AlignAnalysisUIText");
+/*c*/var C$=Clazz.newClass(P$, "AlignAnalysisUIText");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.serviceType=null;
-this.client=null;
-this.calcId=null;
-this.AAconToggle=null;
-this.AAconToggleTooltip=null;
-this.AAeditSettings=null;
-this.AAeditSettingsTooltip=null;
-this.isNa=false;
-this.isPr=false;
-this.isAA=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNa','isPr','isAA'],'S',['serviceType','calcId','AAconToggle','AAconToggleTooltip','AAeditSettings','AAeditSettingsTooltip'],'O',['client','Class']]]
 
 Clazz.newMeth(C$, 'getServiceType$', function () {
 return this.serviceType;
@@ -42,7 +29,7 @@ return this.isAA;
 });
 
 Clazz.newMeth(C$, 'c$$S$Class$S$Z$Z$Z$S$S$S$S', function (serviceType, client, calcId, acceptNucl, acceptProt, acceptGaps, toggle, toggleTooltip, settings, settingsTooltip) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.serviceType=serviceType;
 this.calcId=calcId;
 this.isNa=acceptNucl;
@@ -97,4 +84,4 @@ this.AAeditSettingsTooltip=aAeditSettingsTooltip;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

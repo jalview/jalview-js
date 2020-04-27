@@ -1,32 +1,12 @@
 (function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),I$=[];
-var C$=Clazz.newClass(P$, "Calculation");
+/*c*/var C$=Clazz.newClass(P$, "Calculation");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.key=null;
-this.dE=0;
-this.a=null;
-this.b=null;
-this.c=null;
-this.d=null;
-this.ia=0;
-this.ib=0;
-this.ic=0;
-this.id=0;
-this.iData=null;
-this.dData=null;
-this.delta=0;
-this.rab=0;
-this.theta=0;
-this.energy=0;
-this.calcs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['dE','delta','rab','theta','energy'],'I',['ia','ib','ic','id'],'O',['key','Integer','a','org.jmol.minimize.MinAtom','+b','+c','+d','iData','int[]','dData','double[]','calcs','org.jmol.minimize.forcefield.Calculations']]]
 
 Clazz.newMeth(C$, 'set$org_jmol_minimize_forcefield_Calculations', function (calcs) {
 this.calcs=calcs;
@@ -59,4 +39,4 @@ break;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

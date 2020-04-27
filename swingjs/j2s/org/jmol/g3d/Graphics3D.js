@@ -1,72 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.P3i','javajs.util.V3','org.jmol.util.GData','org.jmol.g3d.TextRenderer','org.jmol.g3d.Platform3D','org.jmol.g3d.Pixelator','org.jmol.g3d.LineRenderer','org.jmol.g3d.SphereRenderer','org.jmol.g3d.CylinderRenderer','org.jmol.api.Interface','org.jmol.g3d.PixelatorT','org.jmol.c.STER','org.jmol.g3d.PixelatorShaded','org.jmol.util.C','org.jmol.g3d.PixelatorScreened','org.jmol.g3d.TextString','javajs.util.AU','java.util.Arrays','javajs.awt.Font','org.jmol.util.Normix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Graphics3D", null, 'org.jmol.util.GData', 'org.jmol.api.JmolRendererInterface');
-C$.sort=null;
-C$.nullShadeIndex=0;
+(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.P3i','javajs.util.V3','org.jmol.util.GData','org.jmol.g3d.TextRenderer','org.jmol.g3d.Platform3D','org.jmol.g3d.Pixelator','org.jmol.g3d.LineRenderer','org.jmol.g3d.SphereRenderer','org.jmol.g3d.CylinderRenderer','org.jmol.api.Interface','org.jmol.g3d.PixelatorT','org.jmol.c.STER','org.jmol.g3d.PixelatorShaded','org.jmol.util.C','org.jmol.g3d.PixelatorScreened','org.jmol.g3d.TextString','javajs.util.AU','java.util.Arrays','org.jmol.util.Font','org.jmol.util.Normix']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Graphics3D", null, 'org.jmol.util.GData', 'org.jmol.api.JmolRendererInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nullShadeIndex=($b$[0] = 50, $b$[0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.platform=null;
-this.line3d=null;
-this.sphere3d=null;
-this.cylinder3d=null;
-this.triangle3d=null;
-this.circle3d=null;
-this.hermite3d=null;
-this.isFullSceneAntialiasingEnabled=false;
-this.antialias2=false;
-this.strings=null;
-this.stringCount=0;
-this.anaglyphChannelBytes=null;
-this.twoPass=false;
-this.haveTranslucentObjects=false;
-this.pbuf=null;
-this.pbufT=null;
-this.zbuf=null;
-this.zbufT=null;
-this.translucencyMask=0;
-this.renderLow=false;
-this.shadesCurrent=null;
-this.anaglyphLength=0;
-this.pixel=null;
-this.pixel0=null;
-this.pixelT0=null;
-this.pixelScreened=null;
-this.pixelShaded=null;
-this.zMargin=0;
-this.aobuf=null;
-this.currentShadeIndex=0;
-this.lastRawColor=0;
-this.translucencyLog=0;
-this.wasScreened=false;
-this.saveAmbient=0;
-this.saveDiffuse=0;
-this.sA=null;
-this.sB=null;
-this.sC=null;
-this.vectorAB=null;
-this.vectorAC=null;
-this.vectorNormal=null;
-this.shadeIndexes=null;
-this.shadeIndexes2Sided=null;
-this.pass2Flag01=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.strings=null;
 this.twoPass=false;
-this.sA=Clazz.new_($I$(1));
-this.sB=Clazz.new_($I$(1));
-this.sC=Clazz.new_($I$(1));
-this.vectorAB=Clazz.new_($I$(2));
-this.vectorAC=Clazz.new_($I$(2));
-this.vectorNormal=Clazz.new_($I$(2));
+this.sA=Clazz.new_($I$(1,1));
+this.sB=Clazz.new_($I$(1,1));
+this.sC=Clazz.new_($I$(1,1));
+this.vectorAB=Clazz.new_($I$(2,1));
+this.vectorAC=Clazz.new_($I$(2,1));
+this.vectorNormal=Clazz.new_($I$(2,1));
 this.shadeIndexes=Clazz.array(Byte.TYPE, [$I$(3).normixCount]);
 this.shadeIndexes2Sided=Clazz.array(Byte.TYPE, [$I$(3).normixCount]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isFullSceneAntialiasingEnabled','antialias2','twoPass','haveTranslucentObjects','renderLow','wasScreened'],'I',['stringCount','translucencyMask','anaglyphLength','zMargin','currentShadeIndex','lastRawColor','translucencyLog','saveAmbient','saveDiffuse','pass2Flag01'],'O',['platform','org.jmol.g3d.Platform3D','line3d','org.jmol.g3d.LineRenderer','sphere3d','org.jmol.g3d.SphereRenderer','cylinder3d','org.jmol.g3d.CylinderRenderer','triangle3d','org.jmol.g3d.G3DRenderer','+circle3d','+hermite3d','strings','org.jmol.g3d.TextString[]','anaglyphChannelBytes','byte[]','pbuf','int[]','+pbufT','+zbuf','+zbufT','+shadesCurrent','pixel','org.jmol.g3d.Pixelator','+pixel0','pixelT0','org.jmol.g3d.PixelatorT','pixelScreened','org.jmol.g3d.PixelatorScreened','pixelShaded','org.jmol.g3d.PixelatorShaded','sA','javajs.util.P3i','+sB','+sC','vectorAB','javajs.util.V3','+vectorAC','+vectorNormal','shadeIndexes','byte[]','+shadeIndexes2Sided']]
+,['B',['nullShadeIndex'],'O',['sort','java.util.Comparator']]]
 
 Clazz.newMeth(C$, 'isWebGL$', function () {
 return false;
@@ -92,20 +43,20 @@ this.zMargin=dz;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-for (var i=$I$(3).normixCount; --i >= 0; ) this.transformedVectors[i]=Clazz.new_($I$(2));
+Clazz.super_(C$, this);
+for (var i=$I$(3).normixCount; --i >= 0; ) this.transformedVectors[i]=Clazz.new_($I$(2,1));
 
 }, 1);
 
 Clazz.newMeth(C$, 'initialize$org_jmol_viewer_Viewer$org_jmol_api_GenericPlatform', function (vwr, apiPlatform) {
 this.vwr=vwr;
 this.apiPlatform=apiPlatform;
-this.platform=Clazz.new_($I$(5).c$$org_jmol_api_GenericPlatform,[apiPlatform]);
-this.pixel=this.pixel0=Clazz.new_($I$(6).c$$org_jmol_g3d_Graphics3D,[this]);
+this.platform=Clazz.new_($I$(5,1).c$$org_jmol_api_GenericPlatform,[apiPlatform]);
+this.pixel=this.pixel0=Clazz.new_($I$(6,1).c$$org_jmol_g3d_Graphics3D,[this]);
 this.graphicsForMetrics=this.platform.getGraphicsForMetrics$();
-this.line3d=Clazz.new_($I$(7).c$$org_jmol_g3d_Graphics3D,[this]);
-this.sphere3d=Clazz.new_($I$(8).c$$org_jmol_g3d_Graphics3D,[this]);
-this.cylinder3d=Clazz.new_($I$(9).c$$org_jmol_g3d_Graphics3D,[this]);
+this.line3d=Clazz.new_($I$(7,1).c$$org_jmol_g3d_Graphics3D,[this]);
+this.sphere3d=Clazz.new_($I$(8,1).c$$org_jmol_g3d_Graphics3D,[this]);
+this.cylinder3d=Clazz.new_($I$(9,1).c$$org_jmol_g3d_Graphics3D,[this]);
 });
 
 Clazz.newMeth(C$, 'addRenderer$I', function (tok) {
@@ -113,7 +64,7 @@ switch (tok) {
 case 1073741880:
 if (this.circle3d == null ) this.circle3d=p$1.getRenderer$S.apply(this, ["Circle"]);
 break;
-case 553648146:
+case 553648145:
 if (this.hermite3d == null ) this.hermite3d=p$1.getRenderer$S.apply(this, ["Hermite"]);
 case 1073742182:
 if (this.triangle3d == null ) {
@@ -126,7 +77,7 @@ this.triangle3d=p$1.getRenderer$S.apply(this, ["Triangle"]);
 Clazz.newMeth(C$, 'getRenderer$S', function (type) {
 var r=($I$(10).getOption$S$org_jmol_viewer_Viewer$S("g3d." + type + "Renderer" , this.vwr, "render"));
 if (r == null ) throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Interface"]);
-r.set$(this, this);
+r.set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData(this, this);
 return r;
 }, p$1);
 
@@ -168,7 +119,6 @@ if (this.pbuf == null ) {
 this.platform.allocateBuffers$I$I$Z$Z(this.windowWidth, this.windowHeight, this.antialiasThisFrame, isImageWrite);
 this.pbuf=this.platform.pBuffer;
 this.zbuf=this.platform.zBuffer;
-this.aobuf=null;
 this.pixel0.setBuf$();
 if (this.pixelT0 != null ) this.pixelT0.setBuf$();
 if (this.pixelShaded != null ) this.pixelShaded.setBuf$();
@@ -188,7 +138,6 @@ this.pbuf=null;
 this.zbuf=null;
 this.pbufT=null;
 this.zbufT=null;
-this.aobuf=null;
 this.platform.releaseBuffers$();
 this.line3d.clearLineCache$();
 }, p$1);
@@ -205,7 +154,7 @@ this.zbufT=this.platform.zBufferT;
 }this.antialias2=antialiasTranslucent;
 if (this.antialiasThisFrame && !this.antialias2 ) p$1.downsampleFullSceneAntialiasing$Z.apply(this, [true]);
 this.platform.clearTBuffer$();
-if (this.pixelT0 == null ) this.pixelT0=Clazz.new_($I$(11).c$$org_jmol_g3d_Graphics3D,[this]);
+if (this.pixelT0 == null ) this.pixelT0=Clazz.new_($I$(11,1).c$$org_jmol_g3d_Graphics3D,[this]);
 if (this.pixel.p0 == null ) this.pixel=this.pixelT0;
  else this.pixel.p0=this.pixelT0;
 return true;
@@ -278,11 +227,6 @@ if (dorelease) p$1.releaseBuffers.apply(this, []);
 return obj;
 });
 
-Clazz.newMeth(C$, 'drawDirect$O', function (g) {
-
-g.drawDirectRGBA$IA(this.pbuf);
-});
-
 Clazz.newMeth(C$, 'applyAnaglygh$org_jmol_c_STER$IA', function (stereoMode, stereoColors) {
 switch (stereoMode) {
 case $I$(12).REDCYAN:
@@ -324,7 +268,7 @@ Clazz.newMeth(C$, 'snapshotAnaglyphChannelBytes$', function () {
 if (this.currentlyRendering) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.anaglyphLength=this.windowWidth * this.windowHeight;
 if (this.anaglyphChannelBytes == null  || this.anaglyphChannelBytes.length != this.anaglyphLength ) this.anaglyphChannelBytes=Clazz.array(Byte.TYPE, [this.anaglyphLength]);
-for (var i=this.anaglyphLength; --i >= 0; ) this.anaglyphChannelBytes[i]=((this.pbuf[i]|0)|0);
+for (var i=this.anaglyphLength; --i >= 0; ) this.anaglyphChannelBytes[i]=(this.pbuf[i]|0);
 
 });
 
@@ -340,7 +284,7 @@ Clazz.newMeth(C$, 'setSlabAndZShade$I$I$I$I$I', function (slabValue, depthValue,
 this.setSlab$I(slabValue);
 this.setDepth$I(depthValue);
 if (zSlab < zDepth) {
-if (this.pixelShaded == null ) this.pixelShaded=Clazz.new_($I$(13).c$$org_jmol_g3d_Graphics3D,[this]);
+if (this.pixelShaded == null ) this.pixelShaded=Clazz.new_($I$(13,1).c$$org_jmol_g3d_Graphics3D,[this]);
 this.pixel=this.pixelShaded.set$I$I$I(zSlab, zDepth, zShadePower);
 } else {
 this.pixel=this.pixel0;
@@ -426,7 +370,7 @@ Clazz.newMeth(C$, 'setScreened$Z', function (isScreened) {
 if (this.wasScreened != isScreened ) {
 this.wasScreened=isScreened;
 if (isScreened) {
-if (this.pixelScreened == null ) this.pixelScreened=Clazz.new_($I$(15).c$$org_jmol_g3d_Graphics3D$org_jmol_g3d_Pixelator,[this, this.pixel0]);
+if (this.pixelScreened == null ) this.pixelScreened=Clazz.new_($I$(15,1).c$$org_jmol_g3d_Graphics3D$org_jmol_g3d_Pixelator,[this, this.pixel0]);
 if (this.pixel.p0 == null ) this.pixel=this.pixelScreened;
  else this.pixel.p0=this.pixelScreened;
 } else if (this.pixel.p0 == null  || this.pixel === this.pixelScreened  ) {
@@ -574,37 +518,37 @@ while (--heightFill >= 0)this.plotPixelsUnclippedCount$I$I$I$I$I$I$IA$org_jmol_g
 
 });
 
-Clazz.newMeth(C$, 'drawString$S$javajs_awt_Font$I$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, zSlab, bgColix) {
+Clazz.newMeth(C$, 'drawString$S$org_jmol_util_Font$I$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, zSlab, bgColix) {
 this.currentShadeIndex=0;
 if (str == null ) return;
 if (this.isClippedZ$I(zSlab)) return;
-this.drawStringNoSlab$S$javajs_awt_Font$I$I$I$H(str, font3d, xBaseline, yBaseline, z, bgColix);
+this.drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H(str, font3d, xBaseline, yBaseline, z, bgColix);
 });
 
-Clazz.newMeth(C$, 'drawStringNoSlab$S$javajs_awt_Font$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, bgColix) {
+Clazz.newMeth(C$, 'drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, bgColix) {
 if (str == null ) return;
 if (this.strings == null ) this.strings=Clazz.array($I$(16), [10]);
 if (this.stringCount == this.strings.length) this.strings=$I$(17).doubleLength$O(this.strings);
-var t=Clazz.new_($I$(16));
-t.setText$S$javajs_awt_Font$I$I$I$I$I(str, font3d == null  ? this.currentFont : (this.currentFont=font3d), this.argbCurrent, $I$(14).isColixTranslucent$H(bgColix) ? (this.getColorArgbOrGray$H(bgColix) & 16777215) | ((bgColix & 30720) << 13) : 0, xBaseline, yBaseline, z);
+var t=Clazz.new_($I$(16,1));
+t.setText$S$org_jmol_util_Font$I$I$I$I$I(str, font3d == null  ? this.currentFont : (this.currentFont=font3d), this.argbCurrent, $I$(14).isColixTranslucent$H(bgColix) ? (this.getColorArgbOrGray$H(bgColix) & 16777215) | ((bgColix & 30720) << 13) : 0, xBaseline, yBaseline, z);
 this.strings[this.stringCount++]=t;
 });
 
 Clazz.newMeth(C$, 'renderAllStrings$O', function (jmolRenderer) {
 if (this.strings == null ) return;
 if (this.stringCount >= 2) {
-if (C$.sort == null ) C$.sort=Clazz.new_($I$(16));
-$I$(18).sort$TTA$java_util_Comparator(this.strings, C$.sort);
+if (C$.sort == null ) C$.sort=Clazz.new_($I$(16,1));
+$I$(18).sort$OA$java_util_Comparator(this.strings, C$.sort);
 }for (var i=0; i < this.stringCount; i++) {
 var ts=this.strings[i];
-this.plotText$I$I$I$I$I$S$javajs_awt_Font$org_jmol_api_JmolRendererInterface(ts.x, ts.y, ts.z, ts.argb, ts.bgargb, ts.text, ts.font, jmolRenderer);
+this.plotText$I$I$I$I$I$S$org_jmol_util_Font$org_jmol_api_JmolRendererInterface(ts.x, ts.y, ts.z, ts.argb, ts.bgargb, ts.text, ts.font, jmolRenderer);
 }
 this.strings=null;
 this.stringCount=0;
 });
 
-Clazz.newMeth(C$, 'plotText$I$I$I$I$I$S$javajs_awt_Font$org_jmol_api_JmolRendererInterface', function (x, y, z, argb, bgargb, text, font3d, jmolRenderer) {
-$I$(4).plot$I$I$I$I$I$S$javajs_awt_Font$org_jmol_g3d_Graphics3D$org_jmol_api_JmolRendererInterface$Z(x, y, z, argb, bgargb, text, font3d, this, jmolRenderer, this.antialiasThisFrame);
+Clazz.newMeth(C$, 'plotText$I$I$I$I$I$S$org_jmol_util_Font$org_jmol_api_JmolRendererInterface', function (x, y, z, argb, bgargb, text, font3d, jmolRenderer) {
+$I$(4).plot$I$I$I$I$I$S$org_jmol_util_Font$org_jmol_g3d_Graphics3D$org_jmol_api_JmolRendererInterface$Z(x, y, z, argb, bgargb, text, font3d, this, jmolRenderer, this.antialiasThisFrame);
 });
 
 Clazz.newMeth(C$, 'drawImage$O$I$I$I$I$H$I$I', function (objImage, x, y, z, zSlab, bgcolix, width, height) {
@@ -646,16 +590,16 @@ if ((b & -16777216) == (-16777216)) p.addPixel$I$I$I(pbufOffset, z, b);
 if (jmolRenderer == null ) jmolRenderer=this;
 for (var i=0, offset=0; i < imageHeight; i++) for (var j=0; j < imageWidth; j++) {
 var b=buffer[offset++];
-if ((b & -16777216) == (-16777216)) jmolRenderer.plotImagePixel$I$I$I$I$B$I$I$I$IA$O$I(b, x + j, y + i, z, ($b$[0] = 8, $b$[0]), bg, w, h, zb, p, t);
+if ((b & -16777216) == (-16777216)) jmolRenderer.plotImagePixel$I$I$I$I$B$I$I$I$IA$O$I(b, x + j, y + i, z, 8, bg, w, h, zb, p, t);
 }
 
 }});
 
 Clazz.newMeth(C$, 'setFontFid$B', function (fid) {
-this.currentFont=$I$(19).getFont3D$B(($b$[0] = fid, $b$[0]));
+this.currentFont=$I$(19).getFont3D$B(fid);
 });
 
-Clazz.newMeth(C$, 'setFont$javajs_awt_Font', function (font3d) {
+Clazz.newMeth(C$, 'setFont$org_jmol_util_Font', function (font3d) {
 this.currentFont=font3d;
 });
 
@@ -678,10 +622,22 @@ p$1.plotPoints$I$IA$I$I.apply(this, [count, coordinates, 0, 0]);
 }});
 
 Clazz.newMeth(C$, 'drawDashedLineBits$I$I$javajs_util_P3$javajs_util_P3', function (run, rise, pointA, pointB) {
-p$1.setScreeni$javajs_util_P3$javajs_util_P3i.apply(this, [pointA, this.sA]);
+if (this.isAntialiased$()) {
+run+=run;
+rise+=rise;
+}p$1.setScreeni$javajs_util_P3$javajs_util_P3i.apply(this, [pointA, this.sA]);
 p$1.setScreeni$javajs_util_P3$javajs_util_P3i.apply(this, [pointB, this.sB]);
 this.line3d.plotLineBits$I$I$javajs_util_P3i$javajs_util_P3i$I$I$Z(this.argbCurrent, this.argbCurrent, this.sA, this.sB, run, rise, true);
-});
+if (this.isAntialiased$()) {
+if (Math.abs(pointA.x - pointB.x) < Math.abs(pointA.y - pointB.y) ) {
+this.sA.x+=1;
+this.sB.x+=1;
+this.line3d.plotLineBits$I$I$javajs_util_P3i$javajs_util_P3i$I$I$Z(this.argbCurrent, this.argbCurrent, this.sA, this.sB, run, rise, true);
+} else {
+this.sA.y+=1;
+this.sB.y+=1;
+this.line3d.plotLineBits$I$I$javajs_util_P3i$javajs_util_P3i$I$I$Z(this.argbCurrent, this.argbCurrent, this.sA, this.sB, run, rise, true);
+}}});
 
 Clazz.newMeth(C$, 'setScreeni$javajs_util_P3$javajs_util_P3i', function (pt, p) {
 p.x=Math.round(pt.x);
@@ -725,15 +681,15 @@ if (this.wasScreened) screen=2;
 if (!this.setC$H(colixA)) colixA=($s$[0] = 0, $s$[0]);
 if (this.wasScreened) screen+=1;
 if (colixA == 0 && colixB == 0 ) return;
-this.cylinder3d.renderOld$H$H$I$B$I$I$I$I$I$I$I(colixA, colixB, screen, ($b$[0] = endcaps, $b$[0]), diameter, xA, yA, zA, xB, yB, zB);
+this.cylinder3d.renderOld$H$H$I$B$I$I$I$I$I$I$I(colixA, colixB, screen, endcaps, diameter, xA, yA, zA, xB, yB, zB);
 });
 
 Clazz.newMeth(C$, 'fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F', function (endcaps, diameter, screenA, screenB, pt0f, pt1f, radius) {
-if (diameter <= this.ht3) this.cylinder3d.renderOld$H$H$I$B$I$I$I$I$I$I$I(this.colixCurrent, this.colixCurrent, 0, ($b$[0] = endcaps, $b$[0]), diameter, (screenA.x|0), (screenA.y|0), (screenA.z|0), (screenB.x|0), (screenB.y|0), (screenB.z|0));
+if (diameter <= this.ht3) this.cylinder3d.renderOld$H$H$I$B$I$I$I$I$I$I$I(this.colixCurrent, this.colixCurrent, 0, endcaps, diameter, (screenA.x|0), (screenA.y|0), (screenA.z|0), (screenB.x|0), (screenB.y|0), (screenB.z|0));
 });
 
 Clazz.newMeth(C$, 'fillCylinder$B$I$javajs_util_P3i$javajs_util_P3i', function (endcaps, diameter, screenA, screenB) {
-if (diameter <= this.ht3) this.cylinder3d.renderOld$H$H$I$B$I$I$I$I$I$I$I(this.colixCurrent, this.colixCurrent, 0, ($b$[0] = endcaps, $b$[0]), diameter, screenA.x, screenA.y, screenA.z, screenB.x, screenB.y, screenB.z);
+if (diameter <= this.ht3) this.cylinder3d.renderOld$H$H$I$B$I$I$I$I$I$I$I(this.colixCurrent, this.colixCurrent, 0, endcaps, diameter, screenA.x, screenA.y, screenA.z, screenB.x, screenB.y, screenB.z);
 });
 
 Clazz.newMeth(C$, 'fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3', function (endcaps, diameter, screenA, screenB) {
@@ -743,7 +699,7 @@ p$1.setScreeni$javajs_util_P3$javajs_util_P3i.apply(this, [screenA, this.sA]);
 p$1.setScreeni$javajs_util_P3$javajs_util_P3i.apply(this, [screenB, this.sB]);
 this.line3d.plotLineBits$I$I$javajs_util_P3i$javajs_util_P3i$I$I$Z(this.getColorArgbOrGray$H(this.colixCurrent), this.getColorArgbOrGray$H(this.colixCurrent), this.sA, this.sB, 0, 0, false);
 return;
-}this.cylinder3d.renderBitsFloat$H$H$I$B$I$javajs_util_P3$javajs_util_P3(this.colixCurrent, this.colixCurrent, 0, ($b$[0] = endcaps, $b$[0]), diameter, screenA, screenB);
+}this.cylinder3d.renderBitsFloat$H$H$I$B$I$javajs_util_P3$javajs_util_P3(this.colixCurrent, this.colixCurrent, 0, endcaps, diameter, screenA, screenB);
 }});
 
 Clazz.newMeth(C$, 'fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3', function (colixA, colixB, endcaps, diameter, screenA, screenB) {
@@ -757,11 +713,11 @@ if (this.wasScreened) screen+=1;
 if (colixA == 0 && colixB == 0 ) return;
 p$1.setScreeni$javajs_util_P3$javajs_util_P3i.apply(this, [screenA, this.sA]);
 p$1.setScreeni$javajs_util_P3$javajs_util_P3i.apply(this, [screenB, this.sB]);
-this.cylinder3d.renderBits$H$H$I$B$I$javajs_util_P3i$javajs_util_P3i(colixA, colixB, screen, ($b$[0] = endcaps, $b$[0]), diameter, this.sA, this.sB);
+this.cylinder3d.renderBits$H$H$I$B$I$javajs_util_P3i$javajs_util_P3i(colixA, colixB, screen, endcaps, diameter, this.sA, this.sB);
 });
 
 Clazz.newMeth(C$, 'fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z', function (endcap, screenDiameter, screenBase, screenTip, isBarb) {
-if (screenDiameter <= this.ht3) this.cylinder3d.renderConeOld$H$B$I$F$F$F$F$F$F$Z$Z(this.colixCurrent, ($b$[0] = endcap, $b$[0]), screenDiameter, screenBase.x, screenBase.y, screenBase.z, screenTip.x, screenTip.y, screenTip.z, true, isBarb);
+if (screenDiameter <= this.ht3) this.cylinder3d.renderConeOld$H$B$I$F$F$F$F$F$F$Z$Z(this.colixCurrent, endcap, screenDiameter, screenBase.x, screenBase.y, screenBase.z, screenTip.x, screenTip.y, screenTip.z, true, isBarb);
 });
 
 Clazz.newMeth(C$, 'drawHermite4$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (tension, s0, s1, s2, s3) {
@@ -847,7 +803,7 @@ return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'getShadeIndex$H', function (normix) {
-return (normix == ~9999 || normix == 9999  ? ($b$[0] = C$.nullShadeIndex, $b$[0]) : ($b$[0] = normix < 0 ? (this.shadeIndexes2Sided[~normix]|0) : (this.shadeIndexes[normix]|0), $b$[0]));
+return (normix == ~9999 || normix == 9999  ? C$.nullShadeIndex : normix < 0 ? this.shadeIndexes2Sided[~normix] : this.shadeIndexes[normix]);
 });
 
 Clazz.newMeth(C$, 'setTriangleTranslucency$H$H$H', function (colixA, colixB, colixC) {
@@ -858,7 +814,7 @@ var maskC=colixC & 30720;
 maskA&=~16384;
 maskB&=~16384;
 maskC&=~16384;
-var mask=org.jmol.util.GData.roundInt$I(((maskA + maskB + maskC )/3|0)) & 30720;
+var mask=(function(a,f){return f.apply(null,a)})([((maskA + maskB + maskC )/3|0)],$I$(3).roundInt$I) & 30720;
 this.translucencyMask=(mask << 13) | 16777215;
 }}, p$1);
 
@@ -890,7 +846,7 @@ if (z < zbuf[offset]) p.addPixel$I$I$I(offset, z, argb);
 
 Clazz.newMeth(C$, 'plotImagePixel$I$I$I$I$B$I$I$I$IA$O$I', function (argb, x, y, z, shade, bgargb, width, height, zbuf, p, transpLog) {
 if (x < 0 || x >= width  || y < 0  || y >= height ) return;
-(p).addImagePixel$B$I$I$I$I$I(($b$[0] = shade, $b$[0]), transpLog, y * width + x, z, argb, bgargb);
+(p).addImagePixel$B$I$I$I$I$I(shade, transpLog, y * width + x, z, argb, bgargb);
 });
 
 Clazz.newMeth(C$, 'plotPixelsClippedRaster$I$I$I$I$I$org_jmol_util_Rgb16$org_jmol_util_Rgb16', function (count, x, y, zAtLeft, zPastRight, rgb16Left, rgb16Right) {
@@ -902,7 +858,7 @@ var seed=(x << 16) + (y << 1) ^ 858993459;
 var zScaled=(zAtLeft << 10) + (512);
 var dz=zPastRight - zAtLeft;
 var roundFactor=(count/2|0);
-var zIncrementScaled=org.jmol.util.GData.roundInt$I((((dz << 10) + (dz >= 0 ? roundFactor : -roundFactor))/count|0));
+var zIncrementScaled=(function(a,f){return f.apply(null,a)})([(((dz << 10) + (dz >= 0 ? roundFactor : -roundFactor))/count|0)],$I$(3).roundInt$I);
 if (x < 0) {
 x=-x;
 zScaled+=zIncrementScaled * x;
@@ -949,7 +905,7 @@ var seed=((x << 16) + (y << 1) ^ 858993459) & 2147483647;
 var zScaled=(zAtLeft << 10) + (512);
 var dz=zPastRight - zAtLeft;
 var roundFactor=(count/2|0);
-var zIncrementScaled=org.jmol.util.GData.roundInt$I((((dz << 10) + (dz >= 0 ? roundFactor : -roundFactor))/count|0));
+var zIncrementScaled=(function(a,f){return f.apply(null,a)})([(((dz << 10) + (dz >= 0 ? roundFactor : -roundFactor))/count|0)],$I$(3).roundInt$I);
 var offsetPbuf=y * this.width + x;
 var zb=this.zbuf;
 var p=this.pixel;
@@ -968,11 +924,11 @@ zScaled+=zIncrementScaled;
 }
 } else {
 var rScaled=rgb16Left.r << 8;
-var rIncrement=org.jmol.util.GData.roundInt$I((((rgb16Right.r - rgb16Left.r) << 8)/count|0));
+var rIncrement=(function(a,f){return f.apply(null,a)})([(((rgb16Right.r - rgb16Left.r) << 8)/count|0)],$I$(3).roundInt$I);
 var gScaled=rgb16Left.g;
-var gIncrement=org.jmol.util.GData.roundInt$I(((rgb16Right.g - gScaled)/count|0));
+var gIncrement=(function(a,f){return f.apply(null,a)})([((rgb16Right.g - gScaled)/count|0)],$I$(3).roundInt$I);
 var bScaled=rgb16Left.b;
-var bIncrement=org.jmol.util.GData.roundInt$I(((rgb16Right.b - bScaled)/count|0));
+var bIncrement=(function(a,f){return f.apply(null,a)})([((rgb16Right.b - bScaled)/count|0)],$I$(3).roundInt$I);
 while (--count >= 0){
 var z=zScaled >> 10;
 if (z < zb[offsetPbuf]) p.addPixel$I$I$I(offsetPbuf, z, -16777216 | (rScaled & 16711680) | (gScaled & 65280) | ((bScaled >> 8) & 255) );
@@ -1048,11 +1004,11 @@ p.addPixel$I$I$I(offsetPbuf, zCurrent, c);
 }
 } else {
 var rScaled=rgb16Left.r << 8;
-var rIncrement=org.jmol.util.GData.roundInt$I((((rgb16Right.r - rgb16Left.r) << 8)/count|0));
+var rIncrement=(function(a,f){return f.apply(null,a)})([(((rgb16Right.r - rgb16Left.r) << 8)/count|0)],$I$(3).roundInt$I);
 var gScaled=rgb16Left.g;
-var gIncrement=org.jmol.util.GData.roundInt$I(((rgb16Right.g - gScaled)/count|0));
+var gIncrement=(function(a,f){return f.apply(null,a)})([((rgb16Right.g - gScaled)/count|0)],$I$(3).roundInt$I);
 var bScaled=rgb16Left.b;
-var bIncrement=org.jmol.util.GData.roundInt$I(((rgb16Right.b - bScaled)/count|0));
+var bIncrement=(function(a,f){return f.apply(null,a)})([((rgb16Right.b - bScaled)/count|0)],$I$(3).roundInt$I);
 while (--count >= 0){
 var zCurrent=this.line3d.getZCurrent$F$F$I(a, b, x++);
 if (zCurrent < zb[offsetPbuf]) p.addPixel$I$I$I(offsetPbuf, zCurrent, -16777216 | (rScaled & 16711680) | (gScaled & 65280) | ((bScaled >> 8) & 255) );
@@ -1162,8 +1118,8 @@ var vertexVectors=$I$(20).getVertexVectors$();
 for (var i=$I$(3).normixCount; --i >= 0; ) {
 var tv=this.transformedVectors[i];
 rotationMatrix.rotate2$javajs_util_T3$javajs_util_T3(vertexVectors[i], tv);
-this.shadeIndexes[i]=(this.shader.getShadeB$F$F$F(tv.x, -tv.y, tv.z)|0);
-this.shadeIndexes2Sided[i]=((tv.z >= 0  ? (this.shadeIndexes[i]|0) : (this.shader.getShadeB$F$F$F(-tv.x, tv.y, -tv.z)|0))|0);
+this.shadeIndexes[i]=this.shader.getShadeB$F$F$F(tv.x, -tv.y, tv.z);
+this.shadeIndexes2Sided[i]=(tv.z >= 0  ? this.shadeIndexes[i] : this.shader.getShadeB$F$F$F(-tv.x, tv.y, -tv.z));
 }
 });
 
@@ -1194,7 +1150,11 @@ this.drawRect$I$I$I$I$I$I(x, y + h, z, 0, w, h);
 Clazz.newMeth(C$, 'initializeOutput$org_jmol_viewer_Viewer$D$java_util_Map', function (vwr, privateKey, params) {
 return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.nullShadeIndex=($b$[0] = 50, $b$[0]);
+};
 var $b$ = new Int8Array(1);
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

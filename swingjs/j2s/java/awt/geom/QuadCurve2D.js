@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[[0,['java.awt.geom.Point2D','.Float'],['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Point2D','.Double'],['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Line2D','java.awt.geom.QuadIterator','java.awt.geom.FlatteningPathIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "QuadCurve2D", function(){
+(function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[[0,['java.awt.geom.Point2D','.Float'],['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Point2D','.Double'],['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Line2D','java.awt.geom.QuadIterator','java.awt.geom.FlatteningPathIterator']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "QuadCurve2D", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.awt.Shape', 'Cloneable']);
+C$.$classes$=[['Float',9],['Double',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setCurve$DA$I', function (coords, offset) {
@@ -46,11 +46,11 @@ return $I$(5).ptSegDist$D$D$D$D$D$D(coords[offset + 0], coords[offset + 1], coor
 }, 1);
 
 Clazz.newMeth(C$, 'getFlatnessSq$', function () {
-return $I$(5).ptSegDistSq$D$D$D$D$D$D(this.getX1$(), this.getY1$(), this.getX2$(), this.getY2$(), this.getCtrlX$(), this.getCtrlY$());
+return $I$(5,"ptSegDistSq$D$D$D$D$D$D",[this.getX1$(), this.getY1$(), this.getX2$(), this.getY2$(), this.getCtrlX$(), this.getCtrlY$()]);
 });
 
 Clazz.newMeth(C$, 'getFlatness$', function () {
-return $I$(5).ptSegDist$D$D$D$D$D$D(this.getX1$(), this.getY1$(), this.getX2$(), this.getY2$(), this.getCtrlX$(), this.getCtrlY$());
+return $I$(5,"ptSegDist$D$D$D$D$D$D",[this.getX1$(), this.getY1$(), this.getX2$(), this.getY2$(), this.getCtrlX$(), this.getCtrlY$()]);
 });
 
 Clazz.newMeth(C$, 'subdivide$java_awt_geom_QuadCurve2D$java_awt_geom_QuadCurve2D', function (left, right) {
@@ -289,39 +289,30 @@ return this.getBounds2D$().getBounds$();
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return Clazz.new_($I$(6).c$$java_awt_geom_QuadCurve2D$java_awt_geom_AffineTransform,[this, at]);
+return Clazz.new_($I$(6,1).c$$java_awt_geom_QuadCurve2D$java_awt_geom_AffineTransform,[this, at]);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform$D', function (at, flatness) {
-return Clazz.new_($I$(7).c$$java_awt_geom_PathIterator$D,[this.getPathIterator$java_awt_geom_AffineTransform(at), flatness]);
+return Clazz.new_([this.getPathIterator$java_awt_geom_AffineTransform(at), flatness],$I$(7,1).c$$java_awt_geom_PathIterator$D);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.QuadCurve2D, "Float", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.QuadCurve2D, "Float", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.QuadCurve2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x1=0;
-this.y1=0;
-this.ctrlx=0;
-this.ctrly=0;
-this.x2=0;
-this.y2=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['x1','y1','ctrlx','ctrly','x2','y2']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$F$F$F$F', function (x1, y1, ctrlx, ctrly, x2, y2) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setCurve$F$F$F$F$F$F(x1, y1, ctrlx, ctrly, x2, y2);
 }, 1);
 
@@ -334,7 +325,7 @@ return this.y1;
 });
 
 Clazz.newMeth(C$, 'getP1$', function () {
-return Clazz.new_($I$(1).c$$F$F,[this.x1, this.y1]);
+return Clazz.new_($I$(1,1).c$$F$F,[this.x1, this.y1]);
 });
 
 Clazz.newMeth(C$, 'getCtrlX$', function () {
@@ -346,7 +337,7 @@ return this.ctrly;
 });
 
 Clazz.newMeth(C$, 'getCtrlPt$', function () {
-return Clazz.new_($I$(1).c$$F$F,[this.ctrlx, this.ctrly]);
+return Clazz.new_($I$(1,1).c$$F$F,[this.ctrlx, this.ctrly]);
 });
 
 Clazz.newMeth(C$, 'getX2$', function () {
@@ -358,7 +349,7 @@ return this.y2;
 });
 
 Clazz.newMeth(C$, 'getP2$', function () {
-return Clazz.new_($I$(1).c$$F$F,[this.x2, this.y2]);
+return Clazz.new_($I$(1,1).c$$F$F,[this.x2, this.y2]);
 });
 
 Clazz.newMeth(C$, 'setCurve$D$D$D$D$D$D', function (x1, y1, ctrlx, ctrly, x2, y2) {
@@ -384,36 +375,27 @@ var left=Math.min(Math.min(this.x1, this.x2), this.ctrlx);
 var top=Math.min(Math.min(this.y1, this.y2), this.ctrly);
 var right=Math.max(Math.max(this.x1, this.x2), this.ctrlx);
 var bottom=Math.max(Math.max(this.y1, this.y2), this.ctrly);
-return Clazz.new_($I$(2).c$$F$F$F$F,[left, top, right - left, bottom - top]);
+return Clazz.new_($I$(2,1).c$$F$F$F$F,[left, top, right - left, bottom - top]);
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.QuadCurve2D, "Double", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.QuadCurve2D, "Double", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.QuadCurve2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x1=0;
-this.y1=0;
-this.ctrlx=0;
-this.ctrly=0;
-this.x2=0;
-this.y2=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['x1','y1','ctrlx','ctrly','x2','y2']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D', function (x1, y1, ctrlx, ctrly, x2, y2) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setCurve$D$D$D$D$D$D(x1, y1, ctrlx, ctrly, x2, y2);
 }, 1);
 
@@ -426,7 +408,7 @@ return this.y1;
 });
 
 Clazz.newMeth(C$, 'getP1$', function () {
-return Clazz.new_($I$(3).c$$D$D,[this.x1, this.y1]);
+return Clazz.new_($I$(3,1).c$$D$D,[this.x1, this.y1]);
 });
 
 Clazz.newMeth(C$, 'getCtrlX$', function () {
@@ -438,7 +420,7 @@ return this.ctrly;
 });
 
 Clazz.newMeth(C$, 'getCtrlPt$', function () {
-return Clazz.new_($I$(3).c$$D$D,[this.ctrlx, this.ctrly]);
+return Clazz.new_($I$(3,1).c$$D$D,[this.ctrlx, this.ctrly]);
 });
 
 Clazz.newMeth(C$, 'getX2$', function () {
@@ -450,7 +432,7 @@ return this.y2;
 });
 
 Clazz.newMeth(C$, 'getP2$', function () {
-return Clazz.new_($I$(3).c$$D$D,[this.x2, this.y2]);
+return Clazz.new_($I$(3,1).c$$D$D,[this.x2, this.y2]);
 });
 
 Clazz.newMeth(C$, 'setCurve$D$D$D$D$D$D', function (x1, y1, ctrlx, ctrly, x2, y2) {
@@ -467,8 +449,8 @@ var left=Math.min(Math.min(this.x1, this.x2), this.ctrlx);
 var top=Math.min(Math.min(this.y1, this.y2), this.ctrly);
 var right=Math.max(Math.max(this.x1, this.x2), this.ctrlx);
 var bottom=Math.max(Math.max(this.y1, this.y2), this.ctrly);
-return Clazz.new_($I$(4).c$$D$D$D$D,[left, top, right - left, bottom - top]);
+return Clazz.new_($I$(4,1).c$$D$D$D$D,[left, top, right - left, bottom - top]);
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

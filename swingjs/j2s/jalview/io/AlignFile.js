@@ -1,23 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.datamodel.SequenceI','Error','jalview.util.MessageManager','java.util.Hashtable','java.util.Vector','java.util.ArrayList','jalview.datamodel.Sequence']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignFile", null, 'jalview.io.FileParse', ['jalview.io.AlignmentFileReaderI', 'jalview.io.AlignmentFileWriterI']);
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.datamodel.SequenceI','Error','jalview.util.MessageManager','java.util.Hashtable','java.util.Vector','java.util.ArrayList','jalview.datamodel.Sequence']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignFile", null, 'jalview.io.FileParse', ['jalview.io.AlignmentFileReaderI', 'jalview.io.AlignmentFileWriterI']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.noSeqs=0;
-this.maxLength=0;
-this.seqs=null;
-this.annotations=null;
-this.seqGroups=null;
-this.properties=null;
-this.start=0;
-this.end=0;
-this.parseCalled=false;
-this.parseImmediately=false;
-this.newickStrings=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.noSeqs=0;
@@ -25,14 +9,16 @@ this.maxLength=0;
 this.parseCalled=false;
 this.parseImmediately=true;
 this.newickStrings=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['parseCalled','parseImmediately'],'I',['noSeqs','maxLength'],'J',['start','end'],'O',['seqs','java.util.Vector','+annotations','seqGroups','java.util.List','properties','java.util.Hashtable','newickStrings','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'isParseImmediately$', function () {
 return this.parseImmediately;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.initData$();
 }, 1);
 
@@ -46,8 +32,7 @@ C$.c$$Z$O$jalview_io_DataSourceType.apply(this, [true, dataObject, sourceType]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$O$jalview_io_DataSourceType', function (parseImmediately, dataObject, sourceType) {
-C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this, [dataObject, sourceType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this,[dataObject, sourceType]);C$.$init$.apply(this);
 this.initData$();
 if (parseImmediately) {
 this.doParse$();
@@ -58,8 +43,7 @@ C$.c$$Z$jalview_io_FileParse.apply(this, [true, source]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$jalview_io_FileParse', function (parseImmediately, source) {
-C$.superclazz.c$$jalview_io_FileParse.apply(this, [source]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_FileParse.apply(this,[source]);C$.$init$.apply(this);
 this.initData$();
 this.parseImmediately=parseImmediately;
 if (parseImmediately) {
@@ -113,12 +97,12 @@ al.setProperty$O$O(keys.nextElement$(), vals.nextElement$());
 
 Clazz.newMeth(C$, 'setAlignmentProperty$O$O', function (key, value) {
 if (key == null ) {
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error_cannot_have_null_alignment")]);
+throw Clazz.new_([$I$(3).getString$S("error.implementation_error_cannot_have_null_alignment")],$I$(2,1).c$$S);
 }if (value == null ) {
 return;
 }if (this.properties == null ) {
-this.properties=Clazz.new_($I$(4));
-}this.properties.put$TK$TV(key, value);
+this.properties=Clazz.new_($I$(4,1));
+}this.properties.put$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'getAlignmentProperty$O', function (key) {
@@ -128,16 +112,16 @@ return this.properties.get$O(key);
 });
 
 Clazz.newMeth(C$, 'initData$', function () {
-this.seqs=Clazz.new_($I$(5));
-this.annotations=Clazz.new_($I$(5));
-this.seqGroups=Clazz.new_($I$(6));
+this.seqs=Clazz.new_($I$(5,1));
+this.annotations=Clazz.new_($I$(5,1));
+this.seqGroups=Clazz.new_($I$(6,1));
 this.parseCalled=false;
 });
 
 Clazz.newMeth(C$, 'setSeqs$jalview_datamodel_SequenceIA', function (s) {
-this.seqs=Clazz.new_($I$(5));
+this.seqs=Clazz.new_($I$(5,1));
 for (var i=0; i < s.length; i++) {
-this.seqs.addElement$TE(s[i]);
+this.seqs.addElement$O(s[i]);
 }
 });
 
@@ -146,11 +130,11 @@ var seq=null;
 id=id.trim$();
 var space=id.indexOf$S(" ");
 if (space > -1) {
-seq=Clazz.new_($I$(7).c$$S$S,[id.substring$I$I(0, space), ""]);
+seq=Clazz.new_([id.substring$I$I(0, space), ""],$I$(7,1).c$$S$S);
 var desc=id.substring$I(space + 1);
 seq.setDescription$S(desc);
 } else {
-seq=Clazz.new_($I$(7).c$$S$S,[id, ""]);
+seq=Clazz.new_($I$(7,1).c$$S$S,[id, ""]);
 }return seq;
 });
 
@@ -164,8 +148,8 @@ return this.printId$jalview_datamodel_SequenceI$Z(seq, true);
 
 Clazz.newMeth(C$, 'addNewickTree$S$S', function (treeName, newickString) {
 if (this.newickStrings == null ) {
-this.newickStrings=Clazz.new_($I$(5));
-}this.newickStrings.addElement$TE(Clazz.array(String, -1, [treeName, newickString]));
+this.newickStrings=Clazz.new_($I$(5,1));
+}this.newickStrings.addElement$O(Clazz.array(String, -1, [treeName, newickString]));
 });
 
 Clazz.newMeth(C$, 'getTreeCount$', function () {
@@ -179,7 +163,7 @@ al.addGroup$jalview_datamodel_SequenceGroup(sg);
 });
 
 Clazz.newMeth(C$, 'addSequence$jalview_datamodel_SequenceI', function (seq) {
-this.seqs.add$TE(seq);
+this.seqs.add$O(seq);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.awt.GraphicsEnvironment',['javax.swing.TransferHandler','.SwingDropTarget'],'java.awt.Rectangle','java.awt.Point','Error','java.awt.JSComponent','java.awt.event.MouseWheelEvent','javax.swing.event.MenuDragMouseEvent','java.awt.event.MouseEvent','swingjs.api.js.DOMNode','sun.swing.SwingUtilities2','swingjs.api.Interface','java.awt.EventQueue','java.awt.KeyboardFocusManager','javax.swing.JComponent','java.awt.event.ActionEvent','swingjs.JSUtil',['javax.swing.SwingUtilities','.SharedOwnerFrame'],'sun.awt.AppContext','Thread']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SwingUtilities", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'java.awt.GraphicsEnvironment',['javax.swing.TransferHandler','.SwingDropTarget'],'java.awt.Rectangle','java.awt.Point','Error','java.awt.JSComponent','java.awt.event.MouseWheelEvent','javax.swing.event.MenuDragMouseEvent','java.awt.event.MouseEvent','swingjs.api.js.DOMNode','sun.swing.SwingUtilities2','javax.swing.CellRendererPane','java.awt.EventQueue','java.awt.KeyboardFocusManager','javax.swing.JComponent','java.awt.event.ActionEvent','swingjs.JSToolkit',['javax.swing.SwingUtilities','.SharedOwnerFrame'],'sun.awt.AppContext','Thread']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SwingUtilities", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'javax.swing.SwingConstants');
+C$.$classes$=[['SharedOwnerFrame',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'installSwingDropTargetAsNecessary$java_awt_Component$javax_swing_TransferHandler', function (c, t) {
 var dropHandler=c.getDropTarget$();
@@ -15,7 +15,7 @@ if ((dropHandler == null ) || (Clazz.instanceOf(dropHandler, "javax.swing.plaf.U
 if (t == null ) {
 c.setDropTarget$java_awt_dnd_DropTarget(null);
 } else if (!$I$(1).isHeadless$()) {
-c.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_($I$(2).c$$java_awt_Component,[c]));
+c.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_($I$(2,1).c$$java_awt_Component,[c]));
 }}}, 1);
 
 Clazz.newMeth(C$, 'isRectangleContainingRectangle$java_awt_Rectangle$java_awt_Rectangle', function (a, b) {
@@ -25,7 +25,7 @@ return true;
 }, 1);
 
 Clazz.newMeth(C$, 'getLocalBounds$java_awt_Component', function (aComponent) {
-var b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[aComponent.getBounds$()]);
+var b=Clazz.new_([aComponent.getBounds$()],$I$(3,1).c$$java_awt_Rectangle);
 b.x=b.y=0;
 return b;
 }, 1);
@@ -41,11 +41,11 @@ return null;
 Clazz.newMeth(C$, 'convertScreenLocationToParent$java_awt_Container$I$I', function (parent, x, y) {
 for (var p=parent; p != null ; p=p.getParent$()) {
 if (p != null  && p.isWindowOrJSApplet$() ) {
-var point=Clazz.new_($I$(4).c$$I$I,[x, y]);
+var point=Clazz.new_($I$(4,1).c$$I$I,[x, y]);
 C$.convertPointFromScreen$java_awt_Point$java_awt_Component(point, parent);
 return point;
 }}
-throw Clazz.new_($I$(5).c$$S,["convertScreenLocationToParent: no window ancestor"]);
+throw Clazz.new_($I$(5,1).c$$S,["convertScreenLocationToParent: no window ancestor"]);
 }, 1);
 
 Clazz.newMeth(C$, 'convertPoint$java_awt_Component$java_awt_Point$java_awt_Component', function (source, aPoint, destination) {
@@ -53,25 +53,25 @@ var p;
 if (source == null  && destination == null  ) return aPoint;
 if (source == null ) {
 source=C$.getWindowAncestor$java_awt_Component(destination);
-if (source == null ) throw Clazz.new_($I$(5).c$$S,["Source component not connected to component tree hierarchy"]);
-}p=Clazz.new_($I$(4).c$$java_awt_Point,[aPoint]);
+if (source == null ) throw Clazz.new_($I$(5,1).c$$S,["Source component not connected to component tree hierarchy"]);
+}p=Clazz.new_($I$(4,1).c$$java_awt_Point,[aPoint]);
 C$.convertPointToScreen$java_awt_Point$java_awt_Component(p, source);
 if (destination == null ) {
 destination=C$.getWindowAncestor$java_awt_Component(source);
-if (destination == null ) throw Clazz.new_($I$(5).c$$S,["Destination component not connected to component tree hierarchy"]);
+if (destination == null ) throw Clazz.new_($I$(5,1).c$$S,["Destination component not connected to component tree hierarchy"]);
 }C$.convertPointFromScreen$java_awt_Point$java_awt_Component(p, destination);
 return p;
 }, 1);
 
 Clazz.newMeth(C$, 'convertPoint$java_awt_Component$I$I$java_awt_Component', function (source, x, y, destination) {
-var point=Clazz.new_($I$(4).c$$I$I,[x, y]);
+var point=Clazz.new_($I$(4,1).c$$I$I,[x, y]);
 return C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(source, point, destination);
 }, 1);
 
 Clazz.newMeth(C$, 'convertRectangle$java_awt_Component$java_awt_Rectangle$java_awt_Component', function (source, aRectangle, destination) {
-var point=Clazz.new_($I$(4).c$$I$I,[aRectangle.x, aRectangle.y]);
+var point=Clazz.new_($I$(4,1).c$$I$I,[aRectangle.x, aRectangle.y]);
 point=C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(source, point, destination);
-return Clazz.new_($I$(3).c$$I$I$I$I,[point.x, point.y, aRectangle.width, aRectangle.height]);
+return Clazz.new_($I$(3,1).c$$I$I$I$I,[point.x, point.y, aRectangle.width, aRectangle.height]);
 }, 1);
 
 Clazz.newMeth(C$, 'getAncestorOfClass$Class$java_awt_Component', function (c, comp) {
@@ -94,7 +94,7 @@ Clazz.newMeth(C$, 'getDeepestComponentAt$java_awt_Component$I$I', function (pare
 if (!parent.contains$I$I(x, y)) {
 return null;
 }if (Clazz.instanceOf(parent, "java.awt.Container")) {
-var components=$I$(6).getChildArray$java_awt_Container(parent);
+var components=$I$(6).秘getChildArray$java_awt_Container(parent);
 for (var i=0, n=(parent).getComponentCount$(); i < n; i++) {
 var comp=components[i];
 if (comp != null  && comp.isVisible$() ) {
@@ -110,19 +110,19 @@ return comp;
 }, 1);
 
 Clazz.newMeth(C$, 'convertMouseEvent$java_awt_Component$java_awt_event_MouseEvent$java_awt_Component', function (source, sourceEvent, destination) {
-var p=C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(source, Clazz.new_($I$(4).c$$I$I,[sourceEvent.getX$(), sourceEvent.getY$()]), destination);
+var p=C$.convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(source, Clazz.new_([sourceEvent.getX$(), sourceEvent.getY$()],$I$(4,1).c$$I$I), destination);
 var newSource;
 if (destination != null ) newSource=destination;
  else newSource=source;
 var newEvent;
 if (Clazz.instanceOf(sourceEvent, "java.awt.event.MouseWheelEvent")) {
 var sourceWheelEvent=sourceEvent;
-newEvent=Clazz.new_($I$(7).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I,[newSource, sourceWheelEvent.getID$(), sourceWheelEvent.getWhen$(), sourceWheelEvent.getModifiers$(), p.x, p.y, sourceWheelEvent.getXOnScreen$(), sourceWheelEvent.getYOnScreen$(), sourceWheelEvent.getClickCount$(), sourceWheelEvent.isPopupTrigger$(), sourceWheelEvent.getScrollType$(), sourceWheelEvent.getScrollAmount$(), sourceWheelEvent.getWheelRotation$()]);
+newEvent=Clazz.new_([newSource, sourceWheelEvent.getID$(), sourceWheelEvent.getWhen$(), sourceWheelEvent.getModifiers$(), p.x, p.y, sourceWheelEvent.getXOnScreen$(), sourceWheelEvent.getYOnScreen$(), sourceWheelEvent.getClickCount$(), sourceWheelEvent.isPopupTrigger$(), sourceWheelEvent.getScrollType$(), sourceWheelEvent.getScrollAmount$(), sourceWheelEvent.getWheelRotation$()],$I$(7,1).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I$I$I);
 } else if (Clazz.instanceOf(sourceEvent, "javax.swing.event.MenuDragMouseEvent")) {
 var sourceMenuDragEvent=sourceEvent;
-newEvent=Clazz.new_($I$(8).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager,[newSource, sourceMenuDragEvent.getID$(), sourceMenuDragEvent.getWhen$(), sourceMenuDragEvent.getModifiers$(), p.x, p.y, sourceMenuDragEvent.getXOnScreen$(), sourceMenuDragEvent.getYOnScreen$(), sourceMenuDragEvent.getClickCount$(), sourceMenuDragEvent.isPopupTrigger$(), sourceMenuDragEvent.getPath$(), sourceMenuDragEvent.getMenuSelectionManager$()]);
+newEvent=Clazz.new_([newSource, sourceMenuDragEvent.getID$(), sourceMenuDragEvent.getWhen$(), sourceMenuDragEvent.getModifiers$(), p.x, p.y, sourceMenuDragEvent.getXOnScreen$(), sourceMenuDragEvent.getYOnScreen$(), sourceMenuDragEvent.getClickCount$(), sourceMenuDragEvent.isPopupTrigger$(), sourceMenuDragEvent.getPath$(), sourceMenuDragEvent.getMenuSelectionManager$()],$I$(8,1).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$javax_swing_MenuElementA$javax_swing_MenuSelectionManager);
 } else {
-newEvent=Clazz.new_($I$(9).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[newSource, sourceEvent.getID$(), sourceEvent.getWhen$(), sourceEvent.getModifiers$(), p.x, p.y, sourceEvent.getXOnScreen$(), sourceEvent.getYOnScreen$(), sourceEvent.getClickCount$(), sourceEvent.isPopupTrigger$(), 0]);
+newEvent=Clazz.new_([newSource, sourceEvent.getID$(), sourceEvent.getWhen$(), sourceEvent.getModifiers$(), p.x, p.y, sourceEvent.getXOnScreen$(), sourceEvent.getYOnScreen$(), sourceEvent.getClickCount$(), sourceEvent.isPopupTrigger$(), 0],$I$(9,1).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I);
 }return newEvent;
 }, 1);
 
@@ -220,7 +220,7 @@ return dest;
 Clazz.newMeth(C$, 'computeDifference$java_awt_Rectangle$java_awt_Rectangle', function (rectA, rectB) {
 if (rectB == null  || !rectA.intersects$java_awt_Rectangle(rectB)  || C$.isRectangleContainingRectangle$java_awt_Rectangle$java_awt_Rectangle(rectB, rectA) ) {
 return Clazz.array($I$(3), [0]);
-}var t=Clazz.new_($I$(3));
+}var t=Clazz.new_($I$(3,1));
 var a=null;
 var b=null;
 var c=null;
@@ -233,28 +233,28 @@ t.y=rectA.y;
 t.width=rectB.x - rectA.x;
 t.height=rectA.height;
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.x=rectB.x;
 t.y=rectA.y;
 t.width=rectB.width;
 t.height=rectB.y - rectA.y;
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.x=rectB.x;
 t.y=rectB.y + rectB.height;
 t.width=rectB.width;
 t.height=rectA.y + rectA.height - (rectB.y + rectB.height);
 if (t.width > 0 && t.height > 0 ) {
-c=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+c=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.x=rectB.x + rectB.width;
 t.y=rectA.y;
 t.width=rectA.x + rectA.width - (rectB.x + rectB.width);
 t.height=rectA.height;
 if (t.width > 0 && t.height > 0 ) {
-d=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+d=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 if (rectB.x <= rectA.x && rectB.y <= rectA.y ) {
@@ -274,11 +274,11 @@ rectCount++;
 }} else {
 t.setBounds$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), (rectB.y + rectB.height) - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.setBounds$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x <= rectA.x && (rectB.y + rectB.height) >= (rectA.y + rectA.height) ) {
 if ((rectB.x + rectB.width) > (rectA.x + rectA.width)) {
@@ -289,34 +289,34 @@ rectCount++;
 }} else {
 t.setBounds$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectB.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), (rectA.y + rectA.height) - rectB.y);
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x <= rectA.x) {
 if ((rectB.x + rectB.width) >= (rectA.x + rectA.width)) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectB.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectB.height);
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-c=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+c=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x <= (rectA.x + rectA.width) && (rectB.x + rectB.width) > (rectA.x + rectA.width) ) {
 if (rectB.y <= rectA.y && (rectB.y + rectB.height) > (rectA.y + rectA.height) ) {
@@ -327,69 +327,69 @@ rectCount++;
 }} else if (rectB.y <= rectA.y) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, (rectB.y + rectB.height) - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else if ((rectB.y + rectB.height) > (rectA.y + rectA.height)) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, rectB.y, rectB.x - rectA.x, (rectA.y + rectA.height) - rectB.y);
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectA.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, rectB.y, rectB.x - rectA.x, rectB.height);
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectA.x, (rectB.y + rectB.height), rectA.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-c=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+c=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}} else if (rectB.x >= rectA.x && (rectB.x + rectB.width) <= (rectA.x + rectA.width) ) {
 if (rectB.y <= rectA.y && (rectB.y + rectB.height) > (rectA.y + rectA.height) ) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else if (rectB.y <= rectA.y) {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectB.x, (rectB.y + rectB.height), rectB.width, (rectA.y + rectA.height) - (rectB.y + rectB.height));
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-c=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+c=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }} else {
 t.reshape$I$I$I$I(rectA.x, rectA.y, rectB.x - rectA.x, rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-a=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+a=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I(rectB.x, rectA.y, rectB.width, rectB.y - rectA.y);
 if (t.width > 0 && t.height > 0 ) {
-b=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+b=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }t.reshape$I$I$I$I((rectB.x + rectB.width), rectA.y, (rectA.x + rectA.width) - (rectB.x + rectB.width), rectA.height);
 if (t.width > 0 && t.height > 0 ) {
-c=Clazz.new_($I$(3).c$$java_awt_Rectangle,[t]);
+c=Clazz.new_($I$(3,1).c$$java_awt_Rectangle,[t]);
 rectCount++;
 }}}}result=Clazz.array($I$(3), [rectCount]);
 rectCount=0;
@@ -413,7 +413,7 @@ return ((anEvent.getModifiers$() & 4) == 4);
 }, 1);
 
 Clazz.newMeth(C$, 'layoutCompoundLabel$javax_swing_JComponent$java_awt_FontMetrics$S$javax_swing_Icon$I$I$I$I$java_awt_Rectangle$java_awt_Rectangle$java_awt_Rectangle$I', function (c, fm, text, icon, verticalAlignment, horizontalAlignment, verticalTextPosition, horizontalTextPosition, viewR, iconR, textR, textIconGap) {
-var ui=c.getUI$();
+var ui=c.秘getUI$();
 var ltr=(c == null  || c.getComponentOrientation$().isLeftToRight$() );
 var hAlign;
 var hTextPos;
@@ -482,9 +482,8 @@ textR.width=1;
 textR.height=fm.getHeight$();
 } else {
 var t=text.replace$C$C(" ", "\u00a0");
-if (t != text) $I$(10).setAttr(ui.textNode, "innerHTML", t);
+if (t != text && (ui.textNode.innerHTML != t ||false) ) $I$(10).setAttr(ui.textNode, "innerHTML", t);
 var d=ui.getHTMLSize$swingjs_api_js_DOMNode(ui.textNode);
-if (t != text) $I$(10).setAttr(ui.textNode, "innerHTML", text);
 textR.width=(d.width == 0 ? 1 : d.width);
 textR.height=(d.height == 0 ? fm.getHeight$() : d.height);
 }if (textR.width > availTextWidth) {
@@ -550,7 +549,7 @@ if (Clazz.instanceOf(shell, "javax.swing.CellRendererPane")) {
 if (shell.getParent$() !== p ) {
 p.add$java_awt_Component(shell);
 }} else {
-shell=$I$(12).getInstance$S$Z("javax.swing.CellRendererPane", false);
+shell=Clazz.new_($I$(12,1));
 shell.add$java_awt_Component(c);
 p.add$java_awt_Component(shell);
 }return shell;
@@ -560,7 +559,7 @@ Clazz.newMeth(C$, 'updateComponentTreeUI$java_awt_Component', function (c) {
 C$.updateComponentTreeUI0$java_awt_Component(c);
 c.invalidate$();
 c.validate$();
-c.repaint$();
+(c).秘repaint$();
 }, 1);
 
 Clazz.newMeth(C$, 'updateComponentTreeUI0$java_awt_Component', function (c) {
@@ -576,7 +575,7 @@ if (Clazz.instanceOf(c, "javax.swing.JMenu")) {
 children=(c).getMenuArray$();
 n=(c).getMenuComponentCount$();
 } else if (Clazz.instanceOf(c, "java.awt.Container")) {
-children=$I$(6).getChildArray$java_awt_Container(c);
+children=$I$(6).秘getChildArray$java_awt_Container(c);
 n=(c).getComponentCount$();
 }for (var i=0; i < n; i++) {
 C$.updateComponentTreeUI0$java_awt_Component(children[i]);
@@ -661,7 +660,7 @@ command=commandO.toString();
 command=String.valueOf$C(event.getKeyChar$());
 } else {
 command=null;
-}action.actionPerformed$(Clazz.new_($I$(16).c$$O$I$S$J$I,[sender, 1001, command, event.getWhen$(), modifiers]));
+}action.actionPerformed$java_awt_event_ActionEvent(Clazz.new_([sender, 1001, command, event.getWhen$(), modifiers],$I$(16,1).c$$O$I$S$J$I));
 return true;
 }, 1);
 
@@ -712,7 +711,7 @@ return null;
 Clazz.newMeth(C$, 'getSharedOwnerFrame$', function () {
 var p=$I$(17).getAppletViewer$();
 var f=p.sharedOwnerFrame;
-return (f == null  ? (p.sharedOwnerFrame=Clazz.new_($I$(18))) : f);
+return (f == null  ? (p.sharedOwnerFrame=Clazz.new_($I$(18,1))) : f);
 }, 1);
 
 Clazz.newMeth(C$, 'getSharedOwnerFrameShutdownListener$', function () {
@@ -741,8 +740,8 @@ return c.getComponentOrientation$().isLeftToRight$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-throw Clazz.new_($I$(5).c$$S,["SwingUtilities is just a container for static methods"]);
+;C$.$init$.apply(this);
+throw Clazz.new_($I$(5,1).c$$S,["SwingUtilities is just a container for static methods"]);
 }, 1);
 
 Clazz.newMeth(C$, 'doesIconReferenceImage$javax_swing_Icon$java_awt_Image', function (icon, image) {
@@ -771,7 +770,7 @@ return null;
 }var rect=r;
 var insets=c.getInsets$();
 if (rect == null ) {
-rect=Clazz.new_($I$(3));
+rect=Clazz.new_($I$(3,1));
 }rect.x=insets.left;
 rect.y=insets.top;
 rect.width=c.getWidth$() - insets.left - insets.right ;
@@ -799,19 +798,17 @@ parent=parent.getParent$();
 return parent;
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.SwingUtilities, "SharedOwnerFrame", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SwingUtilities, "SharedOwnerFrame", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.JFrame', 'java.awt.event.WindowListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$O$O$O$O.apply(this, [null, null, null, null]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O$O$O$O.apply(this,[null, null, null, null]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'addNotify$', function () {
@@ -868,4 +865,4 @@ Clazz.newMeth(C$, 'dispose$', function () {
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 22:59:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

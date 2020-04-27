@@ -1,28 +1,23 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.api.js.DOMNode','javax.swing.BorderFactory','swingjs.plaf.ButtonListener','javax.swing.UIManager','javax.swing.LookAndFeel','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSButtonUI", null, 'swingjs.plaf.JSLightweightUI');
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode','javax.swing.BorderFactory','swingjs.plaf.ButtonListener','javax.swing.UIManager','javax.swing.LookAndFeel','java.awt.Dimension','swingjs.plaf.JSLabelUI']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSButtonUI", null, 'swingjs.plaf.JSLightweightUI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.menuItem=null;
-this.button=null;
-this.shiftOffset=0;
-this.defaultTextShiftOffset=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.shiftOffset=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['shiftOffset','defaultTextShiftOffset'],'O',['menuItem','javax.swing.JMenuItem','button','javax.swing.AbstractButton']]]
 
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
+if (this.domNode == null ) {
 this.isSimpleButton=true;
 this.allowPaintedBackground=false;
-if (this.domNode == null ) {
 this.setDoPropagate$();
-this.domNode=this.enableNode=this.buttonNode=P$.JSComponentUI.newDOMObject$S$S$SA("button", this.id + "_dom", ["type", "button"]);
-$I$(1).setPositionAbsolute(this.domNode);
+this.domNode=this.enableNode=this.buttonNode=$I$(1).newDOMObject$S$S$SA("button", this.id + "_dom", ["type", "button", "style", "padding:0"]);
+this.addClass$swingjs_api_js_DOMNode$S(this.domNode, "j2sbutton");
+this.setFocusable$();
+$I$(2).setPositionAbsolute(this.domNode);
 this.iconNode=null;
 this.createButton$();
 }this.setupButton$();
@@ -37,6 +32,13 @@ this.setDataComponent$swingjs_api_js_DOMNode(this.textNode);
 this.setEnabled$Z(this.c.isEnabled$());
 });
 
+Clazz.newMeth(C$, 'setJSText$swingjs_api_js_DOMNode$S$S', function (obj, prop, val) {
+var node=$I$(2).setAttr(obj, prop, val);
+if (val.indexOf$S("<u>") >= 0) {
+this.setDataComponent$swingjs_api_js_DOMNode($I$(2).firstChild(node));
+}return node;
+});
+
 Clazz.newMeth(C$, 'createItem$S$swingjs_api_js_DOMNode', function (type, buttonNode) {
 var text=this.button.getText$();
 var icon=this.button.getIcon$();
@@ -44,12 +46,12 @@ var gap=this.button.getIconTextGap$();
 this.isMenuSep=(("|").equals$O(text) || ("-").equals$O(text) );
 if (this.isMenuSep) {
 text=null;
-}this.itemNode=P$.JSComponentUI.newDOMObject$S$S$SA("li", this.id, []);
+}this.itemNode=$I$(1).newDOMObject$S$S$SA("li", this.id, []);
 if (text == null  && icon == null  ) return this.itemNode;
-this.menuAnchorNode=P$.JSComponentUI.newDOMObject$S$S$SA("div", this.id + "_a", []);
-if (type != "_bar") {
+this.menuAnchorNode=$I$(1).newDOMObject$S$S$SA("div", this.id + "_a", []);
+if (type !== "_bar" ) {
 this.addClass$swingjs_api_js_DOMNode$S(this.menuAnchorNode, "a");
-$I$(1).setStyles(this.menuAnchorNode, ["margin", "1px 2px 1px 2px"]);
+$I$(2).setStyles(this.menuAnchorNode, ["margin", "1px 2px 1px 2px"]);
 }this.itemNode.appendChild(this.menuAnchorNode);
 this.setDoPropagate$();
 if (buttonNode == null ) {
@@ -85,15 +87,17 @@ C$.superclazz.prototype.enableNode$swingjs_api_js_DOMNode$Z.apply(this, [node, b
 
 Clazz.newMeth(C$, 'setupButton$', function () {
 this.setIconAndText$S$javax_swing_Icon$I$S("button", this.button.getIcon$(), this.button.getIconTextGap$(), this.button.getText$());
-if (this.button.getBorder$() == null  || this.button.getBorder$() === $I$(2).emptyBorder  ) $I$(1).setStyles(this.buttonNode, ["border", "none"]);
- else if (this.button.getBorder$() === $I$(2).html5Border ) $I$(1).setStyles(this.buttonNode, ["border", null]);
+if (this.button.getBorder$() == null  || this.button.getBorder$() === $I$(3).emptyBorder  ) $I$(2).setStyles(this.buttonNode, ["border", "none"]);
+ else if (this.button.getBorder$() === $I$(3).html5Border ) $I$(2).setStyles(this.buttonNode, ["border", null]);
 if (!this.isMenuSep) {
 this.setMnemonic$I(-1);
 this.setAlignments$javax_swing_AbstractButton$Z(this.button, false);
+this.updateCenteringNode$();
 }});
 
-Clazz.newMeth(C$, ['handleJSEvent$O$I$O','handleJSEvent$'], function (target, eventType, jQueryEvent) {
-if (this.actionNode == null ) if (this.menuItem == null ) {
+Clazz.newMeth(C$, 'handleJSEvent$O$I$O', function (target, eventType, jQueryEvent) {
+if (eventType == 401) {
+}if (this.actionNode == null ) if (this.menuItem == null ) {
 switch (eventType) {
 case 402:
 var keyCode=jQueryEvent.keyCode ||0;
@@ -123,7 +127,7 @@ this.uninstallListeners$javax_swing_AbstractButton(this.button);
 });
 
 Clazz.newMeth(C$, 'installListeners$javax_swing_AbstractButton', function (b) {
-this.buttonListener=Clazz.new_($I$(3).c$$swingjs_plaf_JSButtonUI,[this]);
+this.buttonListener=Clazz.new_($I$(4,1).c$$swingjs_plaf_JSButtonUI,[this]);
 if (this.buttonListener != null ) {
 b.addMouseListener$java_awt_event_MouseListener(this.buttonListener);
 b.addMouseMotionListener$java_awt_event_MouseMotionListener(this.buttonListener);
@@ -170,25 +174,25 @@ return "Button";
 
 Clazz.newMeth(C$, 'installDefaults$javax_swing_AbstractButton', function (b) {
 var pp=this.getPropertyPrefix$();
-this.defaultTextShiftOffset=$I$(4).getInt$O(pp + ".textShiftOffset");
+this.defaultTextShiftOffset=$I$(5).getInt$O(pp + ".textShiftOffset");
 if (b.getMargin$() == null  || (Clazz.instanceOf(b.getMargin$(), "javax.swing.plaf.UIResource")) ) {
-b.setMargin$java_awt_Insets($I$(4).getInsets$O(pp + ".margin"));
-}$I$(5).installColorsAndFont$javax_swing_JComponent$S$S$S(b, pp + ".background", pp + ".foreground", pp + ".font");
-$I$(5).installBorder$javax_swing_JComponent$S(b, pp + ".border");
-$I$(5).installProperty$javax_swing_JComponent$S$O(b, "iconTextGap",  new Integer(4));
+b.setMargin$java_awt_Insets($I$(5).getInsets$O(pp + ".margin"));
+}$I$(6).installColorsAndFont$javax_swing_JComponent$S$S$S(b, pp + ".background", pp + ".foreground", pp + ".font");
+$I$(6).installBorder$javax_swing_JComponent$S(b, pp + ".border");
+$I$(6,"installProperty$javax_swing_JComponent$S$O",[b, "iconTextGap",  new Integer(4)]);
 });
 
 Clazz.newMeth(C$, 'getCSSAdjustment$Z', function (addingCSS) {
-return Clazz.new_($I$(6).c$$I$I,[(this.itemNode == null  ? 0 : 10), 0]);
+return Clazz.new_([(this.itemNode == null  ? 0 : 10), 0],$I$(7,1).c$$I$I);
 });
 
 Clazz.newMeth(C$, 'setInnerComponentBounds$I$I', function (width, height) {
 if (this.isSimpleButton) {
 var i=this.getButtonOuterInsets$javax_swing_AbstractButton(this.button);
 if (!(Clazz.instanceOf(this.button.getBorder$(), "javax.swing.plaf.UIResource"))) {
-$I$(1).setTopLeftAbsolute(this.domNode, i.left, i.top);
-$I$(1).setSize(this.domNode, width - i.left - i.right , height - i.top - i.bottom );
-$I$(1).setStyles(this.domNode, ["border", i.left + i.right + i.top + i.bottom  > 0 ? "none" : null]);
+$I$(2).setTopLeftAbsolute(this.domNode, i.left, i.top);
+$I$(2).setSize(this.domNode, width - i.left - i.right , height - i.top - i.bottom );
+$I$(2).setStyles(this.domNode, ["border", i.left + i.right + i.top + i.bottom  > 0 ? "none" : null]);
 }}});
 
 Clazz.newMeth(C$, 'getHTMLSizePreferred$swingjs_api_js_DOMNode$Z', function (obj, addCSS) {
@@ -198,9 +202,19 @@ return this.setHTMLSize1$swingjs_api_js_DOMNode$Z$Z(obj, addCSS, true);
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics$javax_swing_JComponent', function (g, c) {
 this.imagePersists=true;
+if (this.jc.秘paintsSelfEntirely$()) $I$(2).setStyles(this.centeringNode, ["visibility", "visible"]);
 C$.superclazz.prototype.paint$java_awt_Graphics$javax_swing_JComponent.apply(this, [g, c]);
+});
+
+Clazz.newMeth(C$, 'isFocusable$', function () {
+return true;
+});
+
+Clazz.newMeth(C$, 'getPreferredSize$javax_swing_JComponent', function (jc) {
+if (this.isAWT && this.isSimpleButton ) return $I$(8).getMinimumSizePeer$javax_swing_JComponent$O(jc, this.button);
+return C$.superclazz.prototype.getPreferredSize$javax_swing_JComponent.apply(this, [jc]);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,21 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Vector','javax.swing.JInternalFrame','java.util.TreeSet',['javax.swing.JDesktopPane','.ComponentPosition'],'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JDesktopPane", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Vector','javax.swing.JInternalFrame','java.util.TreeSet',['javax.swing.JDesktopPane','.ComponentPosition'],'javax.swing.JLayeredPane','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JDesktopPane", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JLayeredPane');
+C$.$classes$=[['ComponentPosition',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.desktopManager=null;
-this.selectedFrame=null;
-this.dragMode=0;
-this.dragModeSet=false;
-this.framesCache=null;
-this.componentOrderCheckingEnabled=false;
-this.componentOrderChanged=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.selectedFrame=null;
@@ -23,11 +12,12 @@ this.dragMode=0;
 this.dragModeSet=false;
 this.componentOrderCheckingEnabled=true;
 this.componentOrderChanged=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['dragModeSet','componentOrderCheckingEnabled','componentOrderChanged'],'I',['dragMode'],'O',['desktopManager','javax.swing.DesktopManager','selectedFrame','javax.swing.JInternalFrame','framesCache','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.initLayeredPane$();
 }, 1);
 
@@ -73,16 +63,16 @@ Clazz.newMeth(C$, 'getAllFrames$', function () {
 var i;
 var count;
 var results;
-var vResults=Clazz.new_($I$(1).c$$I,[10]);
+var vResults=Clazz.new_($I$(1,1).c$$I,[10]);
 var next;
 var tmp;
 count=this.getComponentCount$();
 for (i=0; i < count; i++) {
 next=this.getComponent$I(i);
-if (Clazz.instanceOf(next, "javax.swing.JInternalFrame")) vResults.addElement$TE(next);
+if (Clazz.instanceOf(next, "javax.swing.JInternalFrame")) vResults.addElement$O(next);
  else if (Clazz.instanceOf(next, "javax.swing.JInternalFrame.JDesktopIcon")) {
 tmp=(next).getInternalFrame$();
-if (tmp != null ) vResults.addElement$TE(tmp);
+if (tmp != null ) vResults.addElement$O(tmp);
 }}
 results=Clazz.array($I$(2), [vResults.size$()]);
 vResults.copyInto$OA(results);
@@ -101,17 +91,17 @@ Clazz.newMeth(C$, 'getAllFramesInLayer$I', function (layer) {
 var i;
 var count;
 var results;
-var vResults=Clazz.new_($I$(1).c$$I,[10]);
+var vResults=Clazz.new_($I$(1,1).c$$I,[10]);
 var next;
 var tmp;
 count=this.getComponentCount$();
 for (i=0; i < count; i++) {
 next=this.getComponent$I(i);
 if (Clazz.instanceOf(next, "javax.swing.JInternalFrame")) {
-if ((next).getLayer$() == layer) vResults.addElement$TE(next);
+if ((next).getLayer$() == layer) vResults.addElement$O(next);
 } else if (Clazz.instanceOf(next, "javax.swing.JInternalFrame.JDesktopIcon")) {
 tmp=(next).getInternalFrame$();
-if (tmp != null  && (tmp).getLayer$() == layer ) vResults.addElement$TE(tmp);
+if (tmp != null  && (tmp).getLayer$() == layer ) vResults.addElement$O(tmp);
 }}
 results=Clazz.array($I$(2), [vResults.size$()]);
 vResults.copyInto$OA(results);
@@ -138,18 +128,18 @@ throw e;
 
 Clazz.newMeth(C$, 'getFrames', function () {
 var c;
-var set=Clazz.new_($I$(3));
+var set=Clazz.new_($I$(3,1));
 for (var i=0; i < this.getComponentCount$(); i++) {
 c=this.getComponent$I(i);
 if (Clazz.instanceOf(c, "javax.swing.JInternalFrame")) {
-set.add$TE(Clazz.new_($I$(4).c$$javax_swing_JInternalFrame$I$I,[c, P$.JLayeredPane.getLayer$java_awt_Component(c), i]));
+set.add$O(Clazz.new_([c, $I$(5).getLayer$java_awt_Component(c), i],$I$(4,1).c$$javax_swing_JInternalFrame$I$I));
 } else if (Clazz.instanceOf(c, "javax.swing.JInternalFrame.JDesktopIcon")) {
 c=(c).getInternalFrame$();
-set.add$TE(Clazz.new_($I$(4).c$$javax_swing_JInternalFrame$I$I,[c, P$.JLayeredPane.getLayer$java_awt_Component(c), i]));
+set.add$O(Clazz.new_([c, $I$(5).getLayer$java_awt_Component(c), i],$I$(4,1).c$$javax_swing_JInternalFrame$I$I));
 }}
-var frames=Clazz.new_($I$(5).c$$I,[set.size$()]);
+var frames=Clazz.new_([set.size$()],$I$(6,1).c$$I);
 for (var position, $position = set.iterator$(); $position.hasNext$()&&((position=($position.next$())),1);) {
-frames.add$TE(position.component);
+frames.add$O(position.component);
 }
 return frames;
 }, p$1);
@@ -249,7 +239,7 @@ this.componentOrderChanged=true;
 }}});
 
 Clazz.newMeth(C$, 'setUIProperty$S$O', function (propertyName, value) {
-if (propertyName == "dragMode") {
+if (propertyName === "dragMode" ) {
 if (!this.dragModeSet) {
 this.setDragMode$I((value).intValue$());
 this.dragModeSet=false;
@@ -262,31 +252,25 @@ var desktopManagerString=(this.desktopManager != null  ? this.desktopManager.toS
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",desktopManager=" + desktopManagerString ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JDesktopPane, "ComponentPosition", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JDesktopPane, "ComponentPosition", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'Comparable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.component=null;
-this.layer=0;
-this.zOrder=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['layer','zOrder'],'O',['component','javax.swing.JInternalFrame']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_JInternalFrame$I$I', function (component, layer, zOrder) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.component=component;
 this.layer=layer;
 this.zOrder=zOrder;
 }, 1);
 
-Clazz.newMeth(C$, ['compareTo$javax_swing_JDesktopPane_ComponentPosition','compareTo$','compareTo$TT'], function (o) {
+Clazz.newMeth(C$, ['compareTo$javax_swing_JDesktopPane_ComponentPosition','compareTo$O'], function (o) {
 var delta=o.layer - this.layer;
 if (delta == 0) {
 return this.zOrder - o.zOrder;
@@ -296,4 +280,4 @@ return this.zOrder - o.zOrder;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

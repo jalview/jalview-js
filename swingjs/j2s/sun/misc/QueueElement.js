@@ -1,24 +1,18 @@
 (function(){var P$=Clazz.newPackage("sun.misc"),I$=[];
-var C$=Clazz.newClass(P$, "QueueElement");
+/*c*/var C$=Clazz.newClass(P$, "QueueElement");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.next=null;
-this.prev=null;
-this.obj=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.next=null;
 this.prev=null;
 this.obj=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['next','sun.misc.QueueElement','+prev','obj','<T>']]]
 
 Clazz.newMeth(C$, 'c$$O', function (obj) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.obj=obj;
 }, 1);
 
@@ -28,4 +22,4 @@ return "QueueElement[obj=" + this.obj + (this.prev == null  ? " null" : " prev")
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

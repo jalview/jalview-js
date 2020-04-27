@@ -1,26 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),I$=[[0,'javax.xml.bind.helpers.Messages','java.text.MessageFormat']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ValidationEventImpl", null, null, 'javax.xml.bind.ValidationEvent');
+(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),I$=[[0,'javax.xml.bind.helpers.Messages','java.text.MessageFormat']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ValidationEventImpl", null, null, 'javax.xml.bind.ValidationEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.severity=0;
-this.message=null;
-this.linkedException=null;
-this.locator=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['severity'],'S',['message'],'O',['linkedException','Throwable','locator','javax.xml.bind.ValidationEventLocator']]]
 
 Clazz.newMeth(C$, 'c$$I$S$javax_xml_bind_ValidationEventLocator', function (_severity, _message, _locator) {
 C$.c$$I$S$javax_xml_bind_ValidationEventLocator$Throwable.apply(this, [_severity, _message, _locator, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$S$javax_xml_bind_ValidationEventLocator$Throwable', function (_severity, _message, _locator, _linkedException) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setSeverity$I(_severity);
 this.message=_message;
 this.locator=_locator;
@@ -77,9 +70,9 @@ default:
 s=String.valueOf$I(this.getSeverity$());
 break;
 }
-return $I$(2).format$S$OA("[severity={0},message={1},locator={2}]", Clazz.array(java.lang.Object, -1, [s, this.getMessage$(), this.getLocator$()]));
+return $I$(2,"format$S$OA",["[severity={0},message={1},locator={2}]", Clazz.array(java.lang.Object, -1, [s, this.getMessage$(), this.getLocator$()])]);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

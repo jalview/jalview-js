@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("gov.nist.jama"),I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "QRDecomposition", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("gov.nist.jama"),I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "QRDecomposition", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.QR=null;
-this.m=0;
-this.n=0;
-this.Rdiag=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['m','n'],'O',['QR','double[][]','Rdiag','double[]']]]
 
 Clazz.newMeth(C$, 'c$$gov_nist_jama_Matrix', function (A) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.QR=A.getArrayCopy$();
 this.m=A.getRowDimension$();
 this.n=A.getColumnDimension$();
@@ -55,7 +48,7 @@ return true;
 });
 
 Clazz.newMeth(C$, 'getH$', function () {
-var X=Clazz.new_($I$(2).c$$I$I,[this.m, this.n]);
+var X=Clazz.new_($I$(2,1).c$$I$I,[this.m, this.n]);
 var H=X.getArray$();
 for (var i=0; i < this.m; i++) {
 for (var j=0; j < this.n; j++) {
@@ -69,7 +62,7 @@ return X;
 });
 
 Clazz.newMeth(C$, 'getR$', function () {
-var X=Clazz.new_($I$(2).c$$I$I,[this.n, this.n]);
+var X=Clazz.new_($I$(2,1).c$$I$I,[this.n, this.n]);
 var R=X.getArray$();
 for (var i=0; i < this.n; i++) {
 for (var j=0; j < this.n; j++) {
@@ -85,7 +78,7 @@ return X;
 });
 
 Clazz.newMeth(C$, 'getQ$', function () {
-var X=Clazz.new_($I$(2).c$$I$I,[this.m, this.n]);
+var X=Clazz.new_($I$(2,1).c$$I$I,[this.m, this.n]);
 var Q=X.getArray$();
 for (var k=this.n - 1; k >= 0; k--) {
 for (var i=0; i < this.m; i++) {
@@ -136,9 +129,9 @@ X[i][j] -= X[k][j] * this.QR[i][k];
 }
 }
 }
-return (Clazz.new_($I$(2).c$$DAA$I$I,[X, this.n, nx]).getMatrix$I$I$I$I(0, this.n - 1, 0, nx - 1));
+return (Clazz.new_($I$(2,1).c$$DAA$I$I,[X, this.n, nx]).getMatrix$I$I$I$I(0, this.n - 1, 0, nx - 1));
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

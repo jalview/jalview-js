@@ -1,30 +1,23 @@
-(function(){var P$=Clazz.newPackage("javax.sound.sampled"),I$=[[0,'javax.sound.sampled.AudioFormat','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newInterface(P$, "DataLine", function(){
+(function(){var P$=Clazz.newPackage("javax.sound.sampled"),I$=[[0,'javax.sound.sampled.AudioFormat','StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*i*/var C$=Clazz.newInterface(P$, "DataLine", function(){
 }, null, 'javax.sound.sampled.Line');
+C$.$classes$=[['Info',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 ;
-(function(){var C$=Clazz.newClass(P$.DataLine, "Info", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DataLine, "Info", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.sound.sampled.Line','.Info']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.formats=null;
-this.minBufferSize=0;
-this.maxBufferSize=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['minBufferSize','maxBufferSize'],'O',['formats','javax.sound.sampled.AudioFormat[]']]]
 
 Clazz.newMeth(C$, 'c$$Class$javax_sound_sampled_AudioFormatA$I$I', function (lineClass, formats, minBufferSize, maxBufferSize) {
-C$.superclazz.c$$Class.apply(this, [lineClass]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Class.apply(this,[lineClass]);C$.$init$.apply(this);
 if (formats == null ) {
 this.formats=Clazz.array($I$(1), [0]);
 } else {
@@ -34,8 +27,7 @@ this.maxBufferSize=maxBufferSize;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Class$javax_sound_sampled_AudioFormat$I', function (lineClass, format, bufferSize) {
-C$.superclazz.c$$Class.apply(this, [lineClass]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Class.apply(this,[lineClass]);C$.$init$.apply(this);
 if (format == null ) {
 this.formats=Clazz.array($I$(1), [0]);
 } else {
@@ -92,7 +84,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var buf=Clazz.new_($I$(2));
+var buf=Clazz.new_($I$(2,1));
 if ((this.formats.length == 1) && (this.formats[0] != null ) ) {
 buf.append$S(" supporting format " + this.formats[0]);
 } else if (this.getFormats$().length > 1) {
@@ -109,26 +101,19 @@ buf.append$S(", and buffers of up to " + this.minBufferSize + " bytes" );
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DataLine, "Info", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DataLine, "Info", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.sound.sampled.Line','.Info']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.formats=null;
-this.minBufferSize=0;
-this.maxBufferSize=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['minBufferSize','maxBufferSize'],'O',['formats','javax.sound.sampled.AudioFormat[]']]]
 
 Clazz.newMeth(C$, 'c$$Class$javax_sound_sampled_AudioFormatA$I$I', function (lineClass, formats, minBufferSize, maxBufferSize) {
-C$.superclazz.c$$Class.apply(this, [lineClass]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Class.apply(this,[lineClass]);C$.$init$.apply(this);
 if (formats == null ) {
 this.formats=Clazz.array($I$(1), [0]);
 } else {
@@ -138,8 +123,7 @@ this.maxBufferSize=maxBufferSize;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Class$javax_sound_sampled_AudioFormat$I', function (lineClass, format, bufferSize) {
-C$.superclazz.c$$Class.apply(this, [lineClass]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Class.apply(this,[lineClass]);C$.$init$.apply(this);
 if (format == null ) {
 this.formats=Clazz.array($I$(1), [0]);
 } else {
@@ -196,7 +180,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var buf=Clazz.new_($I$(2));
+var buf=Clazz.new_($I$(2,1));
 if ((this.formats.length == 1) && (this.formats[0] != null ) ) {
 buf.append$S(" supporting format " + this.formats[0]);
 } else if (this.getFormats$().length > 1) {
@@ -213,4 +197,4 @@ buf.append$S(", and buffers of up to " + this.minBufferSize + " bytes" );
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

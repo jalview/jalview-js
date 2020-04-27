@@ -1,27 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'java.io.DataInputStream','javajs.util.Rdr','org.jmol.util.Logger','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Dsn6BinaryReader", null, 'org.jmol.jvxl.readers.MapFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'java.io.DataInputStream','javajs.util.Rdr','org.jmol.util.Logger','javajs.util.SB']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Dsn6BinaryReader", null, 'org.jmol.jvxl.readers.MapFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.byteFactor=0;
-this.xyCount=0;
-this.nBrickX=0;
-this.nBrickY=0;
-this.brickLayerVoxelCount=0;
-this.brickLayerByteCount=0;
-this.brickRowByteCount=0;
-this.brickLayer=null;
-this.pt=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['byteFactor'],'I',['xyCount','nBrickX','nBrickY','brickLayerVoxelCount','brickLayerByteCount','brickRowByteCount','pt'],'O',['brickLayer','byte[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, brNull) {
@@ -31,7 +19,7 @@ var o2=sg.getReaderData$();
 var fileName=o2[0];
 var data=o2[1];
 if (data == null ) this.binarydoc.setStream$java_io_BufferedInputStream$Z(sg.atomDataServer.getBufferedInputStream$S(fileName), true);
- else this.binarydoc.setStreamData$java_io_DataInputStream$Z(Clazz.new_($I$(1).c$$java_io_InputStream,[$I$(2).getBIS$BA(data.getBytes$())]), true);
+ else this.binarydoc.setStreamData$java_io_DataInputStream$Z(Clazz.new_([(function(a,f){return f.apply(null,a)})([data.getBytes$()],$I$(2).getBIS$BA)],$I$(1,1).c$$java_io_InputStream), true);
 if (this.params.thePlane == null ) this.params.insideOut=!this.params.insideOut;
 this.nSurfaces=1;
 });
@@ -76,7 +64,7 @@ var dmaxError1=(255 - header17 - 0.5 ) * header19 / (header16 - 0.5);
 var dmaxError2=(255 - header17 + 0.5) * header19 / (header16 + 0.5);
 var dminError=Math.round((dminError2 - dminError1) / 0.002) * 0.001;
 var dmaxError=Math.round((dmaxError2 - dmaxError1) / 0.002) * 0.001;
-$I$(3).info$S("DNS6 dmin,dmax = " + new Float(this.dmin).toString() + "+/-" + new Float(dminError).toString() + "," + new Float(this.dmax).toString() + "+/-" + new Float(dmaxError).toString() );
+(function(a,f){return f.apply(null,a)})(["DNS6 dmin,dmax = " + new Float(this.dmin).toString() + "+/-" + new Float(dminError).toString() + "," + new Float(this.dmax).toString() + "+/-" + new Float(dmaxError).toString() ],$I$(3).info$S);
 this.a /= scalingFactor;
 this.b /= scalingFactor;
 this.c /= scalingFactor;
@@ -93,7 +81,7 @@ this.nBrickY=((this.n1 + 7)/8|0);
 this.brickRowByteCount=this.nBrickX * 512;
 this.brickLayerByteCount=this.brickRowByteCount * this.nBrickY;
 this.brickLayer=Clazz.array(Byte.TYPE, [this.brickLayerByteCount]);
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(4));
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(4,1));
 this.jvxlFileHeaderBuffer.append$S("DNS6/O progressive brick data reader\n");
 this.jvxlFileHeaderBuffer.append$S("see http://www.uoxray.uoregon.edu/tnt/manual/node104.html\n");
 });
@@ -130,4 +118,4 @@ for (var i=0; i < nPoints; i++) this.binarydoc.readByte$();
 
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

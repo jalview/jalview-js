@@ -1,28 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.P3i']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HallTranslation");
-C$.latticeTranslationData=null;
-C$.nLatticeTypes=0;
-C$.hallTranslationTerms=null;
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.P3i']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "HallTranslation");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.latticeTranslationData=Clazz.array(String, -1, ["\u0000", "unknown", "", "P", "primitive", "", "I", "body-centered", " 1n", "R", "rhombohedral", " 1r 1r", "F", "face-centered", " 1ab 1bc 1ac", "A", "A-centered", " 1bc", "B", "B-centered", " 1ac", "C", "C-centered", " 1ab", "S", "rhombohedral(S)", " 1s 1s", "T", "rhombohedral(T)", " 1t 1t"]);
-C$.nLatticeTypes=(C$.latticeTranslationData.length/3|0) - 1;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.translationCode='\0';
-this.rotationOrder=0;
-this.rotationShift12ths=0;
-this.vectorShift12ths=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.translationCode="\u0000";
-}, 1);
+},1);
+
+C$.$fields$=[['C',['translationCode'],'I',['rotationOrder','rotationShift12ths'],'O',['vectorShift12ths','javajs.util.P3i']]
+,['I',['nLatticeTypes'],'O',['latticeTranslationData','String[]','hallTranslationTerms','org.jmol.symmetry.HallTranslation[]']]]
 
 Clazz.newMeth(C$, 'c$$C$javajs_util_P3i', function (translationCode, params) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.translationCode=translationCode;
 if (params != null ) {
 if (params.z >= 0) {
@@ -30,7 +19,7 @@ this.vectorShift12ths=params;
 return;
 }this.rotationOrder=params.x;
 this.rotationShift12ths=params.y;
-}this.vectorShift12ths=Clazz.new_($I$(1));
+}this.vectorShift12ths=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'getHallLatticeEquivalent$I', function (latticeParameter) {
@@ -89,6 +78,11 @@ return ht;
 return ht;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.latticeTranslationData=Clazz.array(String, -1, ["\u0000", "unknown", "", "P", "primitive", "", "I", "body-centered", " 1n", "R", "rhombohedral", " 1r 1r", "F", "face-centered", " 1ab 1bc 1ac", "A", "A-centered", " 1bc", "B", "B-centered", " 1ac", "C", "C-centered", " 1ab", "S", "rhombohedral(S)", " 1s 1s", "T", "rhombohedral(T)", " 1t 1t"]);
+C$.nLatticeTypes=(C$.latticeTranslationData.length/3|0) - 1;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,28 +1,16 @@
 (function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[];
-var C$=Clazz.newClass(P$, "Bits");
-C$.upper=null;
-C$.lower=null;
-C$.title=null;
-C$.currency=null;
-C$.decimal_digit=null;
-C$.math=null;
-C$.letter=null;
-C$.white=null;
-C$.punct=null;
+/*c*/var C$=Clazz.newClass(P$, "Bits");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.carray=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['carray','char[]']]
+,['O',['upper','com.stevesoft.pat.Bits','+lower','+title','+currency','+decimal_digit','+math','+letter','+white','+punct']]]
 
 Clazz.newMeth(C$, 'c$$CA', function (carray) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.carray=carray;
 }, 1);
 
@@ -2968,4 +2956,4 @@ var $k$;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

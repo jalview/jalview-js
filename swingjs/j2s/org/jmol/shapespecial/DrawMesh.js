@@ -1,38 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),I$=[[0,['org.jmol.shapespecial.Draw','.EnumDrawType'],'javajs.util.V3','javajs.util.BS','javajs.util.P3','javajs.util.AU','org.jmol.util.BSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DrawMesh", null, 'org.jmol.shape.Mesh');
+(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),I$=[[0,['org.jmol.shapespecial.Draw','.EnumDrawType'],'javajs.util.V3','javajs.util.BS','javajs.util.P3','javajs.util.AU','org.jmol.util.BSUtil']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "DrawMesh", null, 'org.jmol.shape.Mesh');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bsMeshesVisible=null;
-this.modelFlags=null;
-this.drawType=null;
-this.drawTypes=null;
-this.ptCenters=null;
-this.axis=null;
-this.axes=null;
-this.drawVertexCount=0;
-this.drawVertexCounts=null;
-this.isFixed=false;
-this.isVector=false;
-this.drawArrowScale=0;
-this.noHead=false;
-this.isBarb=false;
-this.scale=0;
-this.isScaleSet=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.scale=1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isFixed','isVector','noHead','isBarb','isScaleSet'],'F',['drawArrowScale','scale'],'I',['drawVertexCount'],'O',['bsMeshesVisible','javajs.util.BS','+modelFlags','drawType','org.jmol.shapespecial.Draw.EnumDrawType','drawTypes','org.jmol.shapespecial.Draw.EnumDrawType[]','ptCenters','javajs.util.P3[]','axis','javajs.util.V3','axes','javajs.util.V3[]','drawVertexCounts','int[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$S$H$I', function (vwr, thisID, colix, index) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.drawType=$I$(1).NONE;
 this.axis=$I$(2).new3$F$F$F(1, 0, 0);
-this.bsMeshesVisible=Clazz.new_($I$(3));
+this.bsMeshesVisible=Clazz.new_($I$(3,1));
 this.mesh1$org_jmol_viewer_Viewer$S$H$I(vwr, thisID, colix, index);
 }, 1);
 
@@ -106,4 +87,4 @@ return this.haveXyPoints;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

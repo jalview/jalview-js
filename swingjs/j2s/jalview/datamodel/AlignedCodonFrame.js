@@ -1,22 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.ArrayList','jalview.datamodel.Mapping',['jalview.datamodel.AlignedCodonFrame','.SequenceToSequenceMapping'],'jalview.datamodel.SequenceI','jalview.util.MapList','jalview.util.MappingUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignedCodonFrame", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.ArrayList','jalview.datamodel.Mapping',['jalview.datamodel.AlignedCodonFrame','.SequenceToSequenceMapping'],'jalview.datamodel.SequenceI','jalview.util.MapList','jalview.util.MappingUtils']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignedCodonFrame", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['SequenceToSequenceMapping',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mappings=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['mappings','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.mappings=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.mappings=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'addMap$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList', function (dnaseq, aaseq, map) {
@@ -31,41 +28,41 @@ if (ssm.fromSeq === fromSeq  && ssm.mapping.to === toSeq  ) {
 ssm.mapping.map.addMapList$jalview_util_MapList(map);
 return;
 }}
-var mp=Clazz.new_($I$(2).c$$jalview_datamodel_SequenceI$jalview_util_MapList,[toSeq, map]);
+var mp=Clazz.new_($I$(2,1).c$$jalview_datamodel_SequenceI$jalview_util_MapList,[toSeq, map]);
 mp.setMappedFromId$S(mapFromId);
-this.mappings.add$TE(Clazz.new_($I$(3).c$$jalview_datamodel_SequenceI$jalview_datamodel_Mapping, [this, null, fromSeq, mp]));
+this.mappings.add$O(Clazz.new_($I$(3,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_Mapping,[this, null, fromSeq, mp]));
 });
 
 Clazz.newMeth(C$, 'getdnaSeqs$', function () {
-var seqs=Clazz.new_($I$(1));
+var seqs=Clazz.new_($I$(1,1));
 for (var ssm, $ssm = this.mappings.iterator$(); $ssm.hasNext$()&&((ssm=($ssm.next$())),1);) {
-seqs.add$TE(ssm.fromSeq);
+seqs.add$O(ssm.fromSeq);
 }
-return seqs.toArray$TTA(Clazz.array($I$(4), [seqs.size$()]));
+return seqs.toArray$OA(Clazz.array($I$(4), [seqs.size$()]));
 });
 
 Clazz.newMeth(C$, 'getAaSeqs$', function () {
-var seqs=Clazz.new_($I$(1));
+var seqs=Clazz.new_($I$(1,1));
 for (var ssm, $ssm = this.mappings.iterator$(); $ssm.hasNext$()&&((ssm=($ssm.next$())),1);) {
-seqs.add$TE(ssm.mapping.to);
+seqs.add$O(ssm.mapping.to);
 }
-return seqs.toArray$TTA(Clazz.array($I$(4), [seqs.size$()]));
+return seqs.toArray$OA(Clazz.array($I$(4), [seqs.size$()]));
 });
 
 Clazz.newMeth(C$, 'getdnaToProt$', function () {
-var maps=Clazz.new_($I$(1));
+var maps=Clazz.new_($I$(1,1));
 for (var ssm, $ssm = this.mappings.iterator$(); $ssm.hasNext$()&&((ssm=($ssm.next$())),1);) {
-maps.add$TE(ssm.mapping.map);
+maps.add$O(ssm.mapping.map);
 }
-return maps.toArray$TTA(Clazz.array($I$(5), [maps.size$()]));
+return maps.toArray$OA(Clazz.array($I$(5), [maps.size$()]));
 });
 
 Clazz.newMeth(C$, 'getProtMappings$', function () {
-var maps=Clazz.new_($I$(1));
+var maps=Clazz.new_($I$(1,1));
 for (var ssm, $ssm = this.mappings.iterator$(); $ssm.hasNext$()&&((ssm=($ssm.next$())),1);) {
-maps.add$TE(ssm.mapping);
+maps.add$O(ssm.mapping);
 }
-return maps.toArray$TTA(Clazz.array($I$(2), [maps.size$()]));
+return maps.toArray$OA(Clazz.array($I$(2), [maps.size$()]));
 });
 
 Clazz.newMeth(C$, 'getMappingForSequence$jalview_datamodel_SequenceI', function (seq) {
@@ -171,7 +168,7 @@ return null;
 Clazz.newMeth(C$, 'getMappedCodons$jalview_datamodel_SequenceI$I', function (protein, aaPos) {
 var ml=null;
 var dnaSeq=null;
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
 for (var ssm, $ssm = this.mappings.iterator$(); $ssm.hasNext$()&&((ssm=($ssm.next$())),1);) {
 if (ssm.mapping.to === protein  && ssm.mapping.getMap$().getFromRatio$() == 3 ) {
 ml=ssm.mapping.map;
@@ -184,22 +181,22 @@ var start=dnaSeq.getStart$();
 var c1=dnaSeq.getCharAt$I(codonPos[0] - start);
 var c2=dnaSeq.getCharAt$I(codonPos[1] - start);
 var c3=dnaSeq.getCharAt$I(codonPos[2] - start);
-result.add$TE(Clazz.array(Character.TYPE, -1, [c1, c2, c3]));
+result.add$O(Clazz.array(Character.TYPE, -1, [c1, c2, c3]));
 }}
 return result.isEmpty$() ? null : result;
 });
 
 Clazz.newMeth(C$, 'getMappingsFromSequence$jalview_datamodel_SequenceI', function (seq) {
-var result=Clazz.new_($I$(1));
-var related=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(1,1));
+var related=Clazz.new_($I$(1,1));
 var seqDs=seq.getDatasetSequence$();
 seqDs=seqDs != null  ? seqDs : seq;
 for (var ssm, $ssm = this.mappings.iterator$(); $ssm.hasNext$()&&((ssm=($ssm.next$())),1);) {
 var mapping=ssm.mapping;
 if (ssm.fromSeq === seqDs ) {
 if (!related.contains$O(mapping.to)) {
-result.add$TE(mapping);
-related.add$TE(mapping.to);
+result.add$O(mapping);
+related.add$O(mapping.to);
 }}}
 return result;
 });
@@ -298,24 +295,19 @@ Clazz.newMeth(C$, 'getMappings$', function () {
 return this.mappings;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.AlignedCodonFrame, "SequenceToSequenceMapping", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AlignedCodonFrame, "SequenceToSequenceMapping", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fromSeq=null;
-this.mapping=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['fromSeq','jalview.datamodel.SequenceI','mapping','jalview.datamodel.Mapping']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$jalview_datamodel_Mapping', function (from, map) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.fromSeq=from;
 this.mapping=map;
 }, 1);
@@ -348,4 +340,4 @@ return this.mapping;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,33 +1,14 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.Rdr','javajs.util.SB','java.io.ByteArrayOutputStream','javajs.util.Base64']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OC", null, 'java.io.OutputStream', 'javajs.api.GenericOutputChannel');
-C$.urlPrefixes=null;
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.Rdr','javajs.util.SB','java.io.ByteArrayOutputStream','javajs.util.Base64']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OC", null, 'java.io.OutputStream', 'javajs.api.GenericOutputChannel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.urlPrefixes=Clazz.array(String, -1, ["http:", "https:", "sftp:", "ftp:", "file:"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bytePoster=null;
-this.fileName=null;
-this.bw=null;
-this.isLocalFile=false;
-this.byteCount=0;
-this.isCanceled=false;
-this.closed=false;
-this.os=null;
-this.sb=null;
-this.type=null;
-this.isBase64=false;
-this.os0=null;
-this.bytes=null;
-this.bigEndian=false;
-this.isTemp=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bigEndian=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isLocalFile','isCanceled','closed','isBase64','bigEndian','isTemp'],'I',['byteCount'],'S',['fileName','type'],'O',['bytePoster','javajs.api.BytePoster','bw','java.io.BufferedWriter','os','java.io.OutputStream','sb','javajs.util.SB','os0','java.io.OutputStream','bytes','byte[]']]
+,['O',['urlPrefixes','String[]']]]
 
 Clazz.newMeth(C$, 'setTemp$Z', function (tf) {
 this.isTemp=tf;
@@ -85,7 +66,7 @@ try {
 if (this.bw != null ) {
 this.bw.write$S(s);
 } else if (this.os == null ) {
-if (this.sb == null ) this.sb=Clazz.new_($I$(2));
+if (this.sb == null ) this.sb=Clazz.new_($I$(2,1));
 this.sb.append$S(s);
 } else {
 var b=s.getBytes$();
@@ -117,7 +98,7 @@ return;
 {
 this.os = null;
 }
-if (this.os == null ) this.os=Clazz.new_($I$(3));
+if (this.os == null ) this.os=Clazz.new_($I$(3,1));
 if (this.bw != null ) {
 this.bw.close$();
 this.bw=$I$(1).getBufferedWriter$java_io_OutputStream$S(this.os, null);
@@ -231,17 +212,20 @@ var s=this.getBase64$();
 if (this.os0 != null ) {
 this.os=this.os0;
 this.append$S(s);
-}this.sb=Clazz.new_($I$(2));
+}this.sb=Clazz.new_($I$(2,1));
 this.sb.append$S(s);
 this.isBase64=false;
 return this.closeChannel$();
 }return (this.sb == null  ? null : this.sb.toString());
 }this.closed=true;
-var J2S=null;
+if (!this.isLocalFile) {
+var ret=p$1.postByteArray.apply(this, []);
+if (ret.startsWith$S("java.net")) this.byteCount=-1;
+return ret;
+}var J2S=null;
 var _function=null;
-{
+
 J2S = self.J2S || self.Jmol; _function = (typeof this.fileName == "function" ? this.fileName : null);
-}
 if (J2S != null  && !this.isTemp ) {
 var data=(this.sb == null  ? this.toByteArray$() : this.sb.toString());
 if (_function == null ) {
@@ -260,7 +244,7 @@ return this.isBase64;
 });
 
 Clazz.newMeth(C$, 'getBase64$', function () {
-return $I$(4).getBase64$BA(this.toByteArray$()).toString();
+return $I$(4,"getBase64$BA",[this.toByteArray$()]).toString();
 });
 
 Clazz.newMeth(C$, 'toByteArray$', function () {
@@ -285,7 +269,7 @@ return this.byteCount + " bytes";
 });
 
 Clazz.newMeth(C$, 'postByteArray', function () {
-return this.bytePoster == null  ? null : this.bytePoster.postByteArray$(this.fileName, this.toByteArray$());
+return this.bytePoster == null  ? null : this.bytePoster.postByteArray$S$BA(this.fileName, this.toByteArray$());
 }, p$1);
 
 Clazz.newMeth(C$, 'isRemote$S', function (fileName) {
@@ -326,6 +310,10 @@ Clazz.newMeth(C$, 'writeFloat$F', function (x) {
 this.writeInt$I(x == 0  ? 0 : Float.floatToIntBits$F(x));
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.urlPrefixes=Clazz.array(String, -1, ["http:", "https:", "sftp:", "ftp:", "file:"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

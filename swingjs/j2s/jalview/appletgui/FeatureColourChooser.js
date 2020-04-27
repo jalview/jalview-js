@@ -1,54 +1,32 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Panel','java.awt.Choice','java.awt.Scrollbar','java.awt.TextField','java.awt.Checkbox','jalview.datamodel.GraphLine','java.awt.Color','jalview.schemes.FeatureColour','jalview.appletgui.JVDialog','jalview.util.MessageManager','java.awt.Label','java.awt.Font','java.awt.GridLayout','java.awt.FlowLayout','java.awt.event.FocusAdapter','java.awt.Dimension','jalview.appletgui.PaintRefresher','jalview.appletgui.UserDefinedColours']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeatureColourChooser", null, 'java.awt.Panel', ['java.awt.event.ActionListener', 'java.awt.event.AdjustmentListener', 'java.awt.event.ItemListener', 'java.awt.event.MouseListener']);
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Panel','java.awt.Choice','java.awt.Scrollbar','java.awt.TextField','java.awt.Checkbox','jalview.datamodel.GraphLine','java.awt.Color','jalview.schemes.FeatureColour','jalview.appletgui.JVDialog','jalview.util.MessageManager','java.awt.Label','java.awt.Font','java.awt.GridLayout','java.awt.FlowLayout','java.awt.event.FocusAdapter','java.awt.Dimension','jalview.appletgui.PaintRefresher','jalview.appletgui.UserDefinedColours']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeatureColourChooser", null, 'java.awt.Panel', ['java.awt.event.ActionListener', 'java.awt.event.AdjustmentListener', 'java.awt.event.ItemListener', 'java.awt.event.MouseListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.frame=null;
-this.owner=null;
-this.fr=null;
-this.fs=null;
-this.cs=null;
-this.oldcs=null;
-this.adjusting=false;
-this.min=0;
-this.max=0;
-this.type=null;
-this.af=null;
-this.minColour=null;
-this.maxColour=null;
-this.threshold=null;
-this.slider=null;
-this.thresholdValue=null;
-this.thresholdIsMin=null;
-this.colourFromLabel=null;
-this.threshline=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.fs=null;
 this.adjusting=false;
 this.type=null;
 this.af=null;
-this.minColour=Clazz.new_($I$(1));
-this.maxColour=Clazz.new_($I$(1));
-this.threshold=Clazz.new_($I$(2));
-this.slider=Clazz.new_($I$(3).c$$I,[0]);
-this.thresholdValue=Clazz.new_($I$(4).c$$I,[20]);
-this.thresholdIsMin=Clazz.new_($I$(5));
-this.colourFromLabel=Clazz.new_($I$(5));
-}, 1);
+this.minColour=Clazz.new_($I$(1,1));
+this.maxColour=Clazz.new_($I$(1,1));
+this.threshold=Clazz.new_($I$(2,1));
+this.slider=Clazz.new_($I$(3,1).c$$I,[0]);
+this.thresholdValue=Clazz.new_($I$(4,1).c$$I,[20]);
+this.thresholdIsMin=Clazz.new_($I$(5,1));
+this.colourFromLabel=Clazz.new_($I$(5,1));
+},1);
+
+C$.$fields$=[['Z',['adjusting'],'F',['min','max'],'S',['type'],'O',['frame','jalview.appletgui.JVDialog','owner','java.awt.Frame','fr','jalview.appletgui.FeatureRenderer','fs','jalview.appletgui.FeatureSettings','cs','jalview.api.FeatureColourI','+oldcs','af','jalview.appletgui.AlignFrame','minColour','java.awt.Panel','+maxColour','threshold','java.awt.Choice','slider','java.awt.Scrollbar','thresholdValue','java.awt.TextField','thresholdIsMin','java.awt.Checkbox','+colourFromLabel','threshline','jalview.datamodel.GraphLine']]]
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignFrame$S', function (alignFrame, featureType) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.af=alignFrame;
 p$1.init$jalview_appletgui_FeatureRenderer$S.apply(this, [alignFrame.getSeqcanvas$().getFeatureRenderer$(), featureType]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_FeatureSettings$S', function (fsettings, featureType) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.fs=fsettings;
 p$1.init$jalview_appletgui_FeatureRenderer$S.apply(this, [fsettings.fr, featureType]);
 }, 1);
@@ -59,16 +37,16 @@ this.fr=frenderer;
 var mm=this.fr.getMinMax$().get$O(this.type)[0];
 this.min=mm[0];
 this.max=mm[1];
-this.threshline=Clazz.new_($I$(6).c$$F$S$java_awt_Color,[(this.max - this.min) / 2.0, "Threshold", $I$(7).black]);
+this.threshline=Clazz.new_([(this.max - this.min) / 2.0, "Threshold", $I$(7).black],$I$(6,1).c$$F$S$java_awt_Color);
 this.oldcs=this.fr.getFeatureColours$().get$O(this.type);
 if (this.oldcs.isGraduatedColour$()) {
 this.threshline.value=this.oldcs.getThreshold$();
-this.cs=Clazz.new_($I$(8).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[this.oldcs.getColour$(), this.oldcs.getMinColour$(), this.oldcs.getMaxColour$(), this.oldcs.getNoColour$(), this.min, this.max]);
+this.cs=Clazz.new_([this.oldcs.getColour$(), this.oldcs.getMinColour$(), this.oldcs.getMaxColour$(), this.oldcs.getNoColour$(), this.min, this.max],$I$(8,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F);
 } else {
 var bl=$I$(7).black;
 if (this.oldcs.isSimpleColour$()) {
 bl=this.oldcs.getColour$();
-}this.cs=Clazz.new_($I$(8).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[bl, $I$(7).white, bl, $I$(7).white, mm[0], mm[1]]);
+}this.cs=Clazz.new_([bl, $I$(7).white, bl, $I$(7).white, mm[0], mm[1]],$I$(8,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F);
 }this.minColour.setBackground$java_awt_Color(this.cs.getMinColour$());
 this.maxColour.setBackground$java_awt_Color(this.cs.getMaxColour$());
 this.minColour.setForeground$java_awt_Color(this.cs.getMinColour$());
@@ -90,7 +68,7 @@ this.colourFromLabel.addItemListener$java_awt_event_ItemListener(this);
 this.slider.addAdjustmentListener$java_awt_event_AdjustmentListener(this);
 this.slider.addMouseListener$java_awt_event_MouseListener(this);
 this.owner=(this.af != null ) ? this.af : this.fs.frame;
-this.frame=Clazz.new_($I$(9).c$$java_awt_Frame$S$Z$I$I,[this.owner, $I$(10).formatMessage$S$SA("label.variable_color_for", Clazz.array(String, -1, [this.type])), true, 480, 248]);
+this.frame=Clazz.new_([this.owner, $I$(10,"formatMessage$S$SA",["label.variable_color_for", Clazz.array(String, -1, [this.type])]), true, 480, 248],$I$(9,1).c$$java_awt_Frame$S$Z$I$I);
 this.frame.setMainPanel$java_awt_Panel(this);
 this.validate$();
 this.frame.setVisible$Z(true);
@@ -102,7 +80,7 @@ this.frame.setVisible$Z(false);
 }}, p$1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 try {
 p$1.jbInit.apply(this, []);
 } catch (ex) {
@@ -115,25 +93,25 @@ throw ex;
 }, 1);
 
 Clazz.newMeth(C$, 'jbInit', function () {
-var minLabel=Clazz.new_($I$(11).c$$S,[$I$(10).getString$S("label.min_value") + ":"]);
-var maxLabel=Clazz.new_($I$(11).c$$S,[$I$(10).getString$S("label.max_value") + ":"]);
-minLabel.setFont$java_awt_Font(Clazz.new_($I$(12).c$$S$I$I,["Verdana", 0, 11]));
-maxLabel.setFont$java_awt_Font(Clazz.new_($I$(12).c$$S$I$I,["Verdana", 0, 11]));
+var minLabel=Clazz.new_([$I$(10).getString$S("label.min_value") + ":"],$I$(11,1).c$$S);
+var maxLabel=Clazz.new_([$I$(10).getString$S("label.max_value") + ":"],$I$(11,1).c$$S);
+minLabel.setFont$java_awt_Font(Clazz.new_($I$(12,1).c$$S$I$I,["Verdana", 0, 11]));
+maxLabel.setFont$java_awt_Font(Clazz.new_($I$(12,1).c$$S$I$I,["Verdana", 0, 11]));
 this.minColour.setBounds$I$I$I$I(0, 0, 40, 27);
 this.maxColour.setBounds$I$I$I$I(0, 0, 40, 27);
 this.minColour.addMouseListener$java_awt_event_MouseListener(this);
-this.maxColour.setFont$java_awt_Font(Clazz.new_($I$(12).c$$S$I$I,["Verdana", 0, 11]));
+this.maxColour.setFont$java_awt_Font(Clazz.new_($I$(12,1).c$$S$I$I,["Verdana", 0, 11]));
 this.maxColour.addMouseListener$java_awt_event_MouseListener(this);
 this.thresholdIsMin.addItemListener$java_awt_event_ItemListener(this);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(13).c$$I$I,[4, 1]));
-var jPanel1=Clazz.new_($I$(1));
-jPanel1.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14)));
-var jPanel2=Clazz.new_($I$(1));
-jPanel2.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14)));
-var jPanel3=Clazz.new_($I$(1));
-jPanel3.setLayout$java_awt_LayoutManager(Clazz.new_($I$(13).c$$I$I,[1, 1]));
-var jPanel4=Clazz.new_($I$(1));
-jPanel4.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14)));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(13,1).c$$I$I,[4, 1]));
+var jPanel1=Clazz.new_($I$(1,1));
+jPanel1.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14,1)));
+var jPanel2=Clazz.new_($I$(1,1));
+jPanel2.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14,1)));
+var jPanel3=Clazz.new_($I$(1,1));
+jPanel3.setLayout$java_awt_LayoutManager(Clazz.new_($I$(13,1).c$$I$I,[1, 1]));
+var jPanel4=Clazz.new_($I$(1,1));
+jPanel4.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14,1)));
 jPanel1.setBackground$java_awt_Color($I$(7).white);
 jPanel2.setBackground$java_awt_Color($I$(7).white);
 jPanel4.setBackground$java_awt_Color($I$(7).white);
@@ -143,32 +121,31 @@ this.threshold.addItem$S($I$(10).getString$S("label.threshold_feature_above_thre
 this.threshold.addItem$S($I$(10).getString$S("label.threshold_feature_below_threshold"));
 this.thresholdValue.addActionListener$java_awt_event_ActionListener(this);
 this.thresholdValue.addFocusListener$java_awt_event_FocusListener(((P$.FeatureColourChooser$1||
-(function(){var C$=Clazz.newClass(P$, "FeatureColourChooser$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.FocusAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "FeatureColourChooser$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.FocusAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
 this.b$['jalview.appletgui.FeatureColourChooser'].thresholdValue_actionPerformed$.apply(this.b$['jalview.appletgui.FeatureColourChooser'], []);
 });
 })()
-), Clazz.new_($I$(15), [this, null],P$.FeatureColourChooser$1)));
+), Clazz.new_($I$(15,1),[this, null],P$.FeatureColourChooser$1)));
 this.slider.setBackground$java_awt_Color($I$(7).white);
 this.slider.setEnabled$Z(false);
-this.slider.setSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[93, 21]));
+this.slider.setSize$java_awt_Dimension(Clazz.new_($I$(16,1).c$$I$I,[93, 21]));
 this.thresholdValue.setEnabled$Z(false);
-this.thresholdValue.setSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[79, 22]));
+this.thresholdValue.setSize$java_awt_Dimension(Clazz.new_($I$(16,1).c$$I$I,[79, 22]));
 this.thresholdValue.setColumns$I(5);
 jPanel3.setBackground$java_awt_Color($I$(7).white);
-this.colourFromLabel.setFont$java_awt_Font(Clazz.new_($I$(12).c$$S$I$I,["Verdana", 0, 11]));
+this.colourFromLabel.setFont$java_awt_Font(Clazz.new_($I$(12,1).c$$S$I$I,["Verdana", 0, 11]));
 this.colourFromLabel.setLabel$S($I$(10).getString$S("label.colour_by_label"));
-this.colourFromLabel.setSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[139, 22]));
+this.colourFromLabel.setSize$java_awt_Dimension(Clazz.new_($I$(16,1).c$$I$I,[139, 22]));
 this.thresholdIsMin.setBackground$java_awt_Color($I$(7).white);
 this.thresholdIsMin.setLabel$S($I$(10).getString$S("label.threshold_minmax"));
-this.thresholdIsMin.setSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[135, 23]));
+this.thresholdIsMin.setSize$java_awt_Dimension(Clazz.new_($I$(16,1).c$$I$I,[135, 23]));
 jPanel1.add$java_awt_Component(minLabel);
 jPanel1.add$java_awt_Component(this.minColour);
 jPanel1.add$java_awt_Component(maxLabel);
@@ -184,7 +161,7 @@ this.add$java_awt_Component(jPanel3);
 this.add$java_awt_Component(jPanel4);
 }, p$1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 if (evt.getSource$() === this.thresholdValue ) {
 this.thresholdValue_actionPerformed$();
 } else if (evt.getSource$() === this.minColour ) {
@@ -197,7 +174,7 @@ this.changeColour$Z(true);
 
 Clazz.newMeth(C$, 'thresholdValue_actionPerformed$', function () {
 try {
-var f= new Float(this.thresholdValue.getText$()).floatValue$();
+var f=Float.valueOf$S(this.thresholdValue.getText$()).floatValue$();
 this.slider.setValue$I(((f * 1000)|0));
 this.adjustmentValueChanged$java_awt_event_AdjustmentEvent(null);
 this.changeColour$Z(true);
@@ -209,13 +186,13 @@ throw ex;
 }
 });
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (evt) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (evt) {
 this.maxColour.setEnabled$Z(!this.colourFromLabel.getState$());
 this.minColour.setEnabled$Z(!this.colourFromLabel.getState$());
 this.changeColour$Z(true);
 });
 
-Clazz.newMeth(C$, ['adjustmentValueChanged$java_awt_event_AdjustmentEvent','adjustmentValueChanged$'], function (evt) {
+Clazz.newMeth(C$, 'adjustmentValueChanged$java_awt_event_AdjustmentEvent', function (evt) {
 if (!this.adjusting) {
 this.thresholdValue.setText$S((new Float(this.slider.getValue$() / 1000.0).toString()) + "");
 this.valueChanged$();
@@ -225,12 +202,12 @@ Clazz.newMeth(C$, 'valueChanged$', function () {
 this.threshline.value=this.slider.getValue$() / 1000.0;
 this.cs.setThreshold$F(this.threshline.value);
 this.changeColour$Z(false);
-$I$(17).Refresh$java_awt_Component$S(this, this.fr.getViewport$().getSequenceSetId$());
+$I$(17,"Refresh$java_awt_Component$S",[this, this.fr.getViewport$().getSequenceSetId$()]);
 });
 
 Clazz.newMeth(C$, 'minColour_actionPerformed$java_awt_Color', function (newCol) {
 if (newCol == null ) {
-Clazz.new_($I$(18).c$$java_awt_Component$java_awt_Color$java_awt_Frame$S,[this, this.minColour.getBackground$(), this.owner, $I$(10).getString$S("label.select_colour_minimum_value")]);
+Clazz.new_([this, this.minColour.getBackground$(), this.owner, $I$(10).getString$S("label.select_colour_minimum_value")],$I$(18,1).c$$java_awt_Component$java_awt_Color$java_awt_Frame$S);
 } else {
 this.minColour.setBackground$java_awt_Color(newCol);
 this.minColour.setForeground$java_awt_Color(newCol);
@@ -240,7 +217,7 @@ this.changeColour$Z(true);
 
 Clazz.newMeth(C$, 'maxColour_actionPerformed$java_awt_Color', function (newCol) {
 if (newCol == null ) {
-Clazz.new_($I$(18).c$$java_awt_Component$java_awt_Color$java_awt_Frame$S,[this, this.maxColour.getBackground$(), this.owner, $I$(10).getString$S("label.select_colour_maximum_value")]);
+Clazz.new_([this, this.maxColour.getBackground$(), this.owner, $I$(10).getString$S("label.select_colour_maximum_value")],$I$(18,1).c$$java_awt_Component$java_awt_Color$java_awt_Frame$S);
 } else {
 this.maxColour.setBackground$java_awt_Color(newCol);
 this.maxColour.setForeground$java_awt_Color(newCol);
@@ -260,7 +237,7 @@ thresholdOption=0;
 this.thresholdValue.setEnabled$Z(true);
 var minc=this.minColour.getBackground$();
 var maxc=this.maxColour.getBackground$();
-var acg=Clazz.new_($I$(8).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[maxc, minc, maxc, minc, this.min, this.max]);
+var acg=Clazz.new_($I$(8,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[maxc, minc, maxc, minc, this.min, this.max]);
 acg.setColourByLabel$Z(this.colourFromLabel.getState$());
 this.maxColour.setEnabled$Z(!this.colourFromLabel.getState$());
 this.minColour.setEnabled$Z(!this.colourFromLabel.getState$());
@@ -282,9 +259,9 @@ this.adjusting=false;
 acg.setBelowThreshold$Z(thresholdOption == 0);
 if (this.thresholdIsMin.getState$() && thresholdOption != -1 ) {
 if (thresholdOption == 1) {
-acg=Clazz.new_($I$(8).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[acg.getColour$(), acg.getMinColour$(), acg.getMaxColour$(), acg.getNoColour$(), this.threshline.value, this.max]);
+acg=Clazz.new_([acg.getColour$(), acg.getMinColour$(), acg.getMaxColour$(), acg.getNoColour$(), this.threshline.value, this.max],$I$(8,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F);
 } else {
-acg=Clazz.new_($I$(8).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[acg.getColour$(), acg.getMinColour$(), acg.getMaxColour$(), acg.getNoColour$(), this.min, this.threshline.value]);
+acg=Clazz.new_([acg.getColour$(), acg.getMinColour$(), acg.getMaxColour$(), acg.getNoColour$(), this.min, this.threshline.value],$I$(8,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F);
 }}this.fr.setColour$S$jalview_api_FeatureColourI(this.type, acg);
 this.cs=acg;
 this.fs.selectionChanged$Z(updateOverview);
@@ -316,4 +293,4 @@ Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (evt) {
 Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (evt) {
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,26 +1,10 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'java.io.File',['swingjs.plaf.JSFileChooserUI','.ApproveSelectionAction'],['swingjs.plaf.JSFileChooserUI','.CancelSelectionAction'],'javax.swing.JPanel','java.awt.BorderLayout','javax.swing.SwingUtilities','sun.swing.DefaultLookup','javax.swing.plaf.ActionMapUIResource','javax.swing.LookAndFeel','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSFileChooserUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'java.io.File',['swingjs.plaf.JSFileChooserUI','.ApproveSelectionAction'],['swingjs.plaf.JSFileChooserUI','.CancelSelectionAction'],'javax.swing.JPanel','java.awt.BorderLayout','javax.swing.SwingUtilities','sun.swing.DefaultLookup','javax.swing.plaf.ActionMapUIResource','javax.swing.LookAndFeel']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSFileChooserUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSPanelUI');
+C$.$classes$=[['ApproveSelectionAction',4],['CancelSelectionAction',4]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.openButtonMnemonic=0;
-this.cancelButtonMnemonic=0;
-this.openButtonText=null;
-this.cancelButtonText=null;
-this.openDialogTitleText=null;
-this.approveSelectionAction=null;
-this.cancelSelectionAction=null;
-this.filechooser=null;
-this.propertyChangeListener=null;
-this.accessoryPanel=null;
-this.readOnly=false;
-this.usesSIngleFilePane=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.openButtonMnemonic=0;
@@ -28,17 +12,19 @@ this.cancelButtonMnemonic=0;
 this.openButtonText=null;
 this.cancelButtonText=null;
 this.openDialogTitleText=null;
-this.approveSelectionAction=Clazz.new_($I$(2), [this, null]);
-this.cancelSelectionAction=Clazz.new_($I$(3), [this, null]);
+this.approveSelectionAction=Clazz.new_($I$(2,1),[this, null]);
+this.cancelSelectionAction=Clazz.new_($I$(3,1),[this, null]);
 this.filechooser=null;
 this.propertyChangeListener=null;
 this.accessoryPanel=null;
 this.readOnly=true;
 this.usesSIngleFilePane=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['readOnly','usesSIngleFilePane'],'I',['openButtonMnemonic','cancelButtonMnemonic'],'S',['openButtonText','cancelButtonText','openDialogTitleText'],'O',['approveSelectionAction','javax.swing.Action','+cancelSelectionAction','filechooser','javax.swing.JFileChooser','propertyChangeListener','java.beans.PropertyChangeListener','accessoryPanel','javax.swing.JPanel']]]
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
-this.accessoryPanel=Clazz.new_($I$(4).c$$java_awt_LayoutManager,[Clazz.new_($I$(5))]);
+this.accessoryPanel=Clazz.new_([Clazz.new_($I$(5,1))],$I$(4,1).c$$java_awt_LayoutManager);
 this.filechooser=c;
 this.installDefaults$javax_swing_JFileChooser(this.filechooser);
 this.installComponents$javax_swing_JFileChooser(this.filechooser);
@@ -74,7 +60,7 @@ $I$(6).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(fc, actio
 
 Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
 if (condition == 1) {
-return $I$(7).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.getFileChooser$(), this, "FileChooser.ancestorInputMap");
+return $I$(7,"get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S",[this.getFileChooser$(), this, "FileChooser.ancestorInputMap"]);
 }return null;
 });
 
@@ -83,7 +69,7 @@ return this.createActionMap$();
 });
 
 Clazz.newMeth(C$, 'createActionMap$', function () {
-var map=Clazz.new_($I$(8));
+var map=Clazz.new_($I$(8,1));
 map.put$O$javax_swing_Action("approveSelection", this.getApproveSelectionAction$());
 map.put$O$javax_swing_Action("cancelSelection", this.getCancelSelectionAction$());
 return map;
@@ -98,7 +84,7 @@ $I$(6).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(fc, null)
 
 Clazz.newMeth(C$, 'installDefaults$javax_swing_JFileChooser', function (fc) {
 this.installStrings$javax_swing_JFileChooser(fc);
-$I$(9).installProperty$javax_swing_JComponent$S$O(fc, "opaque", $I$(10).FALSE);
+$I$(9).installProperty$javax_swing_JComponent$S$O(fc, "opaque", Boolean.FALSE);
 });
 
 Clazz.newMeth(C$, 'installStrings$javax_swing_JFileChooser', function (fc) {
@@ -188,46 +174,43 @@ Clazz.newMeth(C$, 'getCancelSelectionAction$', function () {
 return this.cancelSelectionAction;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JSFileChooserUI, "ApproveSelectionAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSFileChooserUI, "ApproveSelectionAction", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.AbstractAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["approveSelection"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["approveSelection"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var chooser=this.this$0.getFileChooser$.apply(this.this$0, []);
 var filename=this.this$0.getFileName$.apply(this.this$0, []);
 if (filename != null ) {
 filename=filename.trim$();
 }if (filename == null  || filename.equals$O("") ) {
 return;
-}var selectedFile=Clazz.new_($I$(1).c$$S,[filename]);
+}var selectedFile=Clazz.new_($I$(1,1).c$$S,[filename]);
 if (selectedFile != null ) {
 chooser.setSelectedFile$java_io_File(selectedFile);
 chooser.approveSelection$();
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSFileChooserUI, "CancelSelectionAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSFileChooserUI, "CancelSelectionAction", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.AbstractAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.this$0.getFileChooser$.apply(this.this$0, []).cancelSelection$();
 });
 
@@ -236,4 +219,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

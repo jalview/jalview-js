@@ -1,23 +1,16 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.CoderResult']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UnicodeDecoder", null, 'java.nio.charset.CharsetDecoder');
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.CoderResult']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UnicodeDecoder", null, 'java.nio.charset.CharsetDecoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.expectedByteOrder=0;
-this.currentByteOrder=0;
-this.defaultByteOrder=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultByteOrder=1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['expectedByteOrder','currentByteOrder','defaultByteOrder']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$I', function (cs, bo) {
-C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this, [cs, 0.5, 1.0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this,[cs, 0.5, 1.0]);C$.$init$.apply(this);
 this.expectedByteOrder=this.currentByteOrder=bo;
 }, 1);
 
@@ -79,4 +72,4 @@ this.currentByteOrder=this.expectedByteOrder;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

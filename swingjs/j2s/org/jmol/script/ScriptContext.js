@@ -1,57 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[[0,'java.util.Hashtable','org.jmol.script.SV']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptContext");
-C$.contextCount=0;
+(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[[0,'java.util.Hashtable','org.jmol.script.SV']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptContext");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.contextCount=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.aatoken=null;
-this.allowJSThreads=false;
-this.chk=false;
-this.contextPath=null;
-this.vars=null;
-this.displayLoadErrorsSave=false;
-this.errorMessage=null;
-this.errorMessageUntranslated=null;
-this.errorType=null;
-this.executionPaused=false;
-this.executionStepping=false;
-this.functionName=null;
-this.iCommandError=0;
-this.id=0;
-this.isComplete=false;
-this.isFunction=false;
-this.isJSThread=false;
-this.isStateScript=false;
-this.isTryCatch=false;
-this.forVars=null;
-this.iToken=0;
-this.lineEnd=0;
-this.lineIndices=null;
-this.lineNumbers=null;
-this.mustResumeEval=false;
-this.outputBuffer=null;
-this.parallelProcessor=null;
-this.parentContext=null;
-this.pc=0;
-this.pc0=0;
-this.pcEnd=0;
-this.script=null;
-this.scriptExtensions=null;
-this.scriptFileName=null;
-this.scriptLevel=0;
-this.statement=null;
-this.htFileCache=null;
-this.statementLength=0;
-this.token=null;
-this.tryPt=0;
-this.theToken=null;
-this.theTok=0;
-this.pointers=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.contextPath=" >> ";
@@ -59,10 +9,13 @@ this.iCommandError=-1;
 this.isComplete=true;
 this.lineEnd=2147483647;
 this.pcEnd=2147483647;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['allowJSThreads','chk','displayLoadErrorsSave','executionPaused','executionStepping','isComplete','isFunction','isJSThread','isStateScript','isTryCatch','mustResumeEval'],'I',['iCommandError','id','iToken','lineEnd','pc','pc0','pcEnd','scriptLevel','statementLength','tryPt','theTok'],'S',['contextPath','errorMessage','errorMessageUntranslated','errorType','functionName','script','scriptExtensions','scriptFileName'],'O',['aatoken','org.jmol.script.T[][]','vars','java.util.Map','forVars','org.jmol.script.SV[]','lineIndices','int[][]','lineNumbers','short[]','outputBuffer','javajs.util.SB','parallelProcessor','org.jmol.api.JmolParallelProcessor','parentContext','org.jmol.script.ScriptContext','statement','org.jmol.script.T[]','htFileCache','java.util.Map','token','org.jmol.script.ContextToken','theToken','org.jmol.script.T','pointers','int[]']]
+,['I',['contextCount']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.id=++C$.contextCount;
 }, 1);
 
@@ -85,13 +38,13 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getFullMap$', function () {
-var ht=Clazz.new_($I$(1));
+var ht=Clazz.new_($I$(1,1));
 var context=this;
-if (this.contextPath != null ) ht.put$TK$TV("_path", $I$(2).newS$S(this.contextPath));
+if (this.contextPath != null ) ht.put$O$O("_path", $I$(2).newS$S(this.contextPath));
 while (context != null  && !context.isFunction ){
 if (context.vars != null ) for (var key, $key = context.vars.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) if (!ht.containsKey$O(key)) {
 var val=context.vars.get$O(key);
-if (val.tok != 2 || val.intValue != 2147483647 ) ht.put$TK$TV(key, val);
+if (val.tok != 2 || val.intValue != 2147483647 ) ht.put$O$O(key, val);
 }
 context=context.parentContext;
 }
@@ -121,5 +74,9 @@ return (this.aatoken == null  ? -1 : this.aatoken.length);
 Clazz.newMeth(C$, 'getToken$I', function (i) {
 return this.aatoken[i];
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.contextCount=0;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,22 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.DisplayMode',['java.awt.GraphicsDevice','.WindowTranslucency']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GraphicsDevice", function(){
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.DisplayMode',['java.awt.GraphicsDevice','.WindowTranslucency']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GraphicsDevice", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['WindowTranslucency',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fullScreenWindow=null;
-this.windowedModeBounds=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['fullScreenWindow','java.awt.Window','windowedModeBounds','java.awt.Rectangle']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getBestConfiguration$O', function (gct) {
@@ -46,7 +42,7 @@ Clazz.newMeth(C$, 'getDisplayMode$', function () {
 var gc=this.getDefaultConfiguration$();
 var r=gc.getBounds$();
 var cm=gc.getColorModel$();
-return Clazz.new_($I$(1).c$$I$I$I$I,[r.width, r.height, cm.getPixelSize$(), 0]);
+return Clazz.new_([r.width, r.height, cm.getPixelSize$(), 0],$I$(1,1).c$$I$I$I$I);
 });
 
 Clazz.newMeth(C$, 'getDisplayModes$', function () {
@@ -93,19 +89,21 @@ return configs[j];
 return null;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.GraphicsDevice, "WindowTranslucency", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.GraphicsDevice, "WindowTranslucency", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "PERPIXEL_TRANSPARENT", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "TRANSLUCENT", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "PERPIXEL_TRANSLUCENT", 2, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -113,4 +111,4 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

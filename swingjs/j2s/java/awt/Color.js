@@ -1,75 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.ColorPaintContext']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Color", null, null, 'java.awt.Paint');
-C$.white=null;
-C$.WHITE=null;
-C$.lightGray=null;
-C$.LIGHT_GRAY=null;
-C$.gray=null;
-C$.GRAY=null;
-C$.darkGray=null;
-C$.DARK_GRAY=null;
-C$.black=null;
-C$.none=null;
-C$.BLACK=null;
-C$.red=null;
-C$.RED=null;
-C$.pink=null;
-C$.PINK=null;
-C$.orange=null;
-C$.ORANGE=null;
-C$.yellow=null;
-C$.YELLOW=null;
-C$.green=null;
-C$.GREEN=null;
-C$.magenta=null;
-C$.MAGENTA=null;
-C$.cyan=null;
-C$.CYAN=null;
-C$.blue=null;
-C$.BLUE=null;
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.ColorPaintContext']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Color", null, null, 'java.awt.Paint');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.white=Clazz.new_(C$.c$$I$I$I,[255, 255, 255]);
-C$.WHITE=C$.white;
-C$.lightGray=Clazz.new_(C$.c$$I$I$I,[192, 192, 192]);
-C$.LIGHT_GRAY=C$.lightGray;
-C$.gray=Clazz.new_(C$.c$$I$I$I,[128, 128, 128]);
-C$.GRAY=C$.gray;
-C$.darkGray=Clazz.new_(C$.c$$I$I$I,[64, 64, 64]);
-C$.DARK_GRAY=C$.darkGray;
-C$.black=Clazz.new_(C$.c$$I$I$I,[0, 0, 0]);
-C$.none=Clazz.new_(C$.c$$I$I$I,[0, 0, 1]);
-C$.BLACK=C$.black;
-C$.red=Clazz.new_(C$.c$$I$I$I,[255, 0, 0]);
-C$.RED=C$.red;
-C$.pink=Clazz.new_(C$.c$$I$I$I,[255, 175, 175]);
-C$.PINK=C$.pink;
-C$.orange=Clazz.new_(C$.c$$I$I$I,[255, 200, 0]);
-C$.ORANGE=C$.orange;
-C$.yellow=Clazz.new_(C$.c$$I$I$I,[255, 255, 0]);
-C$.YELLOW=C$.yellow;
-C$.green=Clazz.new_(C$.c$$I$I$I,[0, 255, 0]);
-C$.GREEN=C$.green;
-C$.magenta=Clazz.new_(C$.c$$I$I$I,[255, 0, 255]);
-C$.MAGENTA=C$.magenta;
-C$.cyan=Clazz.new_(C$.c$$I$I$I,[0, 255, 255]);
-C$.CYAN=C$.cyan;
-C$.blue=Clazz.new_(C$.c$$I$I$I,[0, 0, 255]);
-C$.BLUE=C$.blue;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=0;
-this.frgbvalue=null;
-this.falpha=0;
-this.context=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.frgbvalue=null;
 this.falpha=0.0;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['falpha'],'I',['value'],'O',['frgbvalue','float[]','context','java.awt.ColorPaintContext']]
+,['O',['white','java.awt.Color','+WHITE','+lightGray','+LIGHT_GRAY','+gray','+GRAY','+darkGray','+DARK_GRAY','+black','+none','+BLACK','+red','+RED','+pink','+PINK','+orange','+ORANGE','+yellow','+YELLOW','+green','+GREEN','+magenta','+MAGENTA','+cyan','+CYAN','+blue','+BLUE']]]
 
 Clazz.newMeth(C$, 'testColorValueRange$I$I$I$I', function (r, g, b, a) {
 var rangeError=false;
@@ -91,7 +31,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Color parameter o
 }}, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (r, g, b) {
@@ -99,18 +39,18 @@ C$.c$$I$I$I$I.apply(this, [r, g, b, 255]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (r, g, b, a) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.value=((a & 255) << 24) | ((r & 255) << 16) | ((g & 255) << 8) | ((b & 255) << 0) ;
 C$.testColorValueRange$I$I$I$I(r, g, b, a);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (rgb) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.value=-16777216 | rgb;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$Z', function (rgba, hasalpha) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (hasalpha) {
 this.value=rgba;
 } else {
@@ -191,7 +131,7 @@ return C$.getColor$S$java_awt_Color(nm, null);
 
 Clazz.newMeth(C$, 'getColor$S$java_awt_Color', function (nm, v) {
 try {
-var i=(Integer.decode$S(nm)).intValue$();
+var i=(Integer.decode$S(nm)).valueOf();
 return Clazz.new_(C$.c$$I$I$I,[(i >> 16) & 255, (i >> 8) & 255, i & 255]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
@@ -341,7 +281,7 @@ return f;
 
 Clazz.newMeth(C$, 'createContext$java_awt_image_ColorModel$java_awt_Rectangle$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform$java_awt_RenderingHints', function (cm, r, r2d, xform, hints) {
 if (this.context == null  || this.context.getRGB$() != this.getRGB$() ) {
-this.context=Clazz.new_($I$(1).c$$I$java_awt_image_ColorModel,[this.getRGB$(), cm]);
+this.context=Clazz.new_([this.getRGB$(), cm],$I$(1,1).c$$I$java_awt_image_ColorModel);
 }return this.context;
 });
 
@@ -354,5 +294,35 @@ return 2;
 } else {
 return 3;
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.white=Clazz.new_(C$.c$$I$I$I,[255, 255, 255]);
+C$.WHITE=C$.white;
+C$.lightGray=Clazz.new_(C$.c$$I$I$I,[192, 192, 192]);
+C$.LIGHT_GRAY=C$.lightGray;
+C$.gray=Clazz.new_(C$.c$$I$I$I,[128, 128, 128]);
+C$.GRAY=C$.gray;
+C$.darkGray=Clazz.new_(C$.c$$I$I$I,[64, 64, 64]);
+C$.DARK_GRAY=C$.darkGray;
+C$.black=Clazz.new_(C$.c$$I$I$I,[0, 0, 0]);
+C$.none=Clazz.new_(C$.c$$I$I$I,[0, 0, 1]);
+C$.BLACK=C$.black;
+C$.red=Clazz.new_(C$.c$$I$I$I,[255, 0, 0]);
+C$.RED=C$.red;
+C$.pink=Clazz.new_(C$.c$$I$I$I,[255, 175, 175]);
+C$.PINK=C$.pink;
+C$.orange=Clazz.new_(C$.c$$I$I$I,[255, 200, 0]);
+C$.ORANGE=C$.orange;
+C$.yellow=Clazz.new_(C$.c$$I$I$I,[255, 255, 0]);
+C$.YELLOW=C$.yellow;
+C$.green=Clazz.new_(C$.c$$I$I$I,[0, 255, 0]);
+C$.GREEN=C$.green;
+C$.magenta=Clazz.new_(C$.c$$I$I$I,[255, 0, 255]);
+C$.MAGENTA=C$.magenta;
+C$.cyan=Clazz.new_(C$.c$$I$I$I,[0, 255, 255]);
+C$.CYAN=C$.cyan;
+C$.blue=Clazz.new_(C$.c$$I$I$I,[0, 0, 255]);
+C$.BLUE=C$.blue;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

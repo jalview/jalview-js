@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.sound.sampled"),I$=[[0,'swingjs.JSToolkit','swingjs.JSAudio','javax.sound.sampled.AudioFileFormat',['javax.sound.sampled.AudioFileFormat','.Type'],'java.io.ByteArrayInputStream','javajs.util.Rdr','swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AudioSystem");
+(function(){var P$=Clazz.newPackage("javax.sound.sampled"),I$=[[0,'swingjs.JSToolkit','swingjs.JSAudio','javax.sound.sampled.AudioFileFormat',['javax.sound.sampled.AudioFileFormat','.Type'],'java.io.ByteArrayInputStream','javajs.util.Rdr','swingjs.JSUtil']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AudioSystem");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getLine$javax_sound_sampled_Line_Info', function (info) {
 var line=$I$(1).getAudioLine$javax_sound_sampled_Line_Info(info);
@@ -21,12 +20,12 @@ Clazz.newMeth(C$, 'getAudioFileFormat$java_net_URL', function (url) {
 var ais=C$.getAudioInputStream$java_net_URL(url);
 var format=(ais == null  ? null : ais.getFormat$());
 if (format == null ) throw Clazz.new_(Clazz.load('javax.sound.sampled.UnsupportedAudioFileException').c$$S,["file is not a supported file type"]);
-return Clazz.new_($I$(3).c$$javax_sound_sampled_AudioFileFormat_Type$javax_sound_sampled_AudioFormat$I,[$I$(4).getType$javax_sound_sampled_AudioFormat(format), format, -1]);
+return Clazz.new_([$I$(4).getType$javax_sound_sampled_AudioFormat(format), format, -1],$I$(3,1).c$$javax_sound_sampled_AudioFileFormat_Type$javax_sound_sampled_AudioFormat$I);
 }, 1);
 
 Clazz.newMeth(C$, 'getAudioInputStream$java_io_InputStream', function (stream) {
 if (Clazz.instanceOf(stream, "java.io.ByteArrayInputStream")) return C$.getAudioInputStream$java_io_ByteArrayInputStream(stream);
-return C$.getAudioInputStream$java_io_ByteArrayInputStream(Clazz.new_($I$(5).c$$BA,[$I$(6).getLimitedStreamBytes$java_io_InputStream$J(stream, -1)]));
+return C$.getAudioInputStream$java_io_ByteArrayInputStream(Clazz.new_([$I$(6).getLimitedStreamBytes$java_io_InputStream$J(stream, -1)],$I$(5,1).c$$BA));
 }, 1);
 
 Clazz.newMeth(C$, 'getAudioInputStream$java_net_URL', function (url) {
@@ -35,4 +34,4 @@ return C$.getAudioInputStream$java_io_InputStream($I$(7).getURLInputStream$java_
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

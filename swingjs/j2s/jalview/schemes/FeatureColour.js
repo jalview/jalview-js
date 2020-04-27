@@ -1,44 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.util.MessageManager','java.util.StringTokenizer','jalview.datamodel.features.FeatureMatcher','jalview.util.ColorUtils','java.awt.Color','jalview.util.Format','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeatureColour", null, null, 'jalview.api.FeatureColourI');
-C$.I18N_LABEL=null;
-C$.I18N_SCORE=null;
-C$.DEFAULT_NO_COLOUR=null;
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.util.MessageManager','java.util.StringTokenizer','jalview.datamodel.features.FeatureMatcher','jalview.util.ColorUtils','java.awt.Color','jalview.util.Format','StringBuilder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeatureColour", null, null, 'jalview.api.FeatureColourI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.I18N_LABEL=$I$(1).getString$S("label.label");
-C$.I18N_SCORE=$I$(1).getString$S("label.score");
-C$.DEFAULT_NO_COLOUR=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.colour=null;
-this.minColour=null;
-this.maxColour=null;
-this.noColour=null;
-this.graduatedColour=false;
-this.colourByLabel=false;
-this.attributeName=null;
-this.threshold=0;
-this.base=0;
-this.range=0;
-this.belowThreshold=false;
-this.aboveThreshold=false;
-this.isHighToLow=false;
-this.autoScaled=false;
-this.minRed=0;
-this.minGreen=0;
-this.minBlue=0;
-this.deltaRed=0;
-this.deltaGreen=0;
-this.deltaBlue=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['graduatedColour','colourByLabel','belowThreshold','aboveThreshold','isHighToLow','autoScaled'],'F',['threshold','base','range','minRed','minGreen','minBlue','deltaRed','deltaGreen','deltaBlue'],'O',['+colour','+minColour','+maxColour','+noColour','attributeName','String[]']]
+,['S',['I18N_LABEL','I18N_SCORE'],'O',['DEFAULT_NO_COLOUR','java.awt.Color']]]
 
 Clazz.newMeth(C$, 'parseJalviewFeatureColour$S', function (descriptor) {
-var gcol=Clazz.new_($I$(2).c$$S$S$Z,[descriptor, "|", true]);
+var gcol=Clazz.new_($I$(2,1).c$$S$S$Z,[descriptor, "|", true]);
 var min=1.4E-45;
 var max=3.4028235E38;
 var byLabel=false;
@@ -114,7 +86,7 @@ if (gcol.hasMoreTokens$()) {
 gcol.nextToken$();
 }try {
 if (minval.length$() > 0) {
-min= new Float(minval).floatValue$();
+min=Float.valueOf$S(minval).floatValue$();
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Couldn't parse the minimum value for graduated colour ('" + minval + "')" ]);
@@ -124,7 +96,7 @@ throw e;
 }
 try {
 if (maxval.length$() > 0) {
-max= new Float(maxval).floatValue$();
+max=Float.valueOf$S(maxval).floatValue$();
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Couldn't parse the maximum value for graduated colour (" + descriptor + ")" ]);
@@ -161,7 +133,7 @@ System.err.println$S("Ignoring unrecognised threshold type : " + ttype);
 try {
 gcol.nextToken$();
 tval=gcol.nextToken$();
-featureColour.setThreshold$F( new Float(tval).floatValue$());
+featureColour.setThreshold$F(Float.valueOf$S(tval).floatValue$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.err.println$S("Couldn't parse threshold value as a float: (" + tval + ")" );
@@ -195,7 +167,7 @@ this.setGraduatedColour$Z(false);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_schemes_FeatureColour', function (fc) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.graduatedColour=fc.graduatedColour;
 this.colour=fc.colour;
 this.minColour=fc.minColour;
@@ -219,7 +191,7 @@ this.setColourByLabel$Z(fc.isColourByLabel$());
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F', function (myColour, low, high, noValueColour, min, max) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (low == null ) {
 low=$I$(5).white;
 }if (high == null ) {
@@ -338,7 +310,7 @@ return this.getColour$();
 if (this.attributeName != null ) {
 try {
 var attVal=feature.getValueAsString$SA(this.attributeName);
-scr=(Float.valueOf$S(attVal)).floatValue$();
+scr=(Float.valueOf$S(attVal)).valueOf();
 } catch (e) {
 scr=NaN;
 }
@@ -357,7 +329,7 @@ scl=-scl;
 scl=0.0;
 }if (scl > 1.0 ) {
 scl=1.0;
-}return Clazz.new_($I$(5).c$$F$F$F,[this.minRed + scl * this.deltaRed, this.minGreen + scl * this.deltaGreen, this.minBlue + scl * this.deltaBlue]);
+}return Clazz.new_($I$(5,1).c$$F$F$F,[this.minRed + scl * this.deltaRed, this.minGreen + scl * this.deltaGreen, this.minBlue + scl * this.deltaBlue]);
 });
 
 Clazz.newMeth(C$, 'getMax$', function () {
@@ -379,19 +351,19 @@ return this.isAboveThreshold$() || this.isBelowThreshold$() ;
 Clazz.newMeth(C$, 'toJalviewFormat$S', function (featureType) {
 var colourString=null;
 if (this.isSimpleColour$()) {
-colourString=$I$(6).getHexString$java_awt_Color(this.getColour$());
+colourString=$I$(6,"getHexString$java_awt_Color",[this.getColour$()]);
 } else {
-var sb=Clazz.new_($I$(7).c$$I,[32]);
+var sb=Clazz.new_($I$(7,1).c$$I,[32]);
 if (this.isColourByAttribute$()) {
 sb.append$S("attribute").append$S("|");
-sb.append$S($I$(3).toAttributeDisplayName$SA(this.getAttributeName$()));
+sb.append$S($I$(3,"toAttributeDisplayName$SA",[this.getAttributeName$()]));
 } else if (this.isColourByLabel$()) {
 sb.append$S("label");
 } else {
 sb.append$S("score");
 }if (this.isGraduatedColour$()) {
-sb.append$S("|").append$S($I$(6).getHexString$java_awt_Color(this.getMinColour$())).append$S("|");
-sb.append$S($I$(6).getHexString$java_awt_Color(this.getMaxColour$())).append$S("|");
+sb.append$S("|").append$S($I$(6,"getHexString$java_awt_Color",[this.getMinColour$()])).append$S("|");
+sb.append$S($I$(6,"getHexString$java_awt_Color",[this.getMaxColour$()])).append$S("|");
 var noValue="noValueMin";
 if (this.maxColour.equals$O(this.noColour)) {
 noValue="noValueMax";
@@ -435,7 +407,7 @@ return false;
 if (this.attributeName != null ) {
 try {
 var attVal=feature.getValueAsString$SA(this.attributeName);
-scr=(Float.valueOf$S(attVal)).floatValue$();
+scr=(Float.valueOf$S(attVal)).valueOf();
 } catch (e) {
 scr=NaN;
 }
@@ -447,10 +419,10 @@ return false;
 Clazz.newMeth(C$, 'getDescription$', function () {
 if (this.isSimpleColour$()) {
 return "r=" + this.colour.getRed$() + ",g=" + this.colour.getGreen$() + ",b=" + this.colour.getBlue$() ;
-}var tt=Clazz.new_($I$(7));
+}var tt=Clazz.new_($I$(7,1));
 var by=null;
 if (this.getAttributeName$() != null ) {
-by=$I$(3).toAttributeDisplayName$SA(this.getAttributeName$());
+by=$I$(3,"toAttributeDisplayName$SA",[this.getAttributeName$()]);
 } else if (this.isColourByLabel$()) {
 by=C$.I18N_LABEL;
 } else {
@@ -464,5 +436,11 @@ tt.append$S(C$.I18N_SCORE).append$S(" ");
 tt.append$F(this.getThreshold$()).append$S(")");
 }return tt.toString();
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.I18N_LABEL=$I$(1).getString$S("label.label");
+C$.I18N_SCORE=$I$(1).getString$S("label.score");
+C$.DEFAULT_NO_COLOUR=null;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

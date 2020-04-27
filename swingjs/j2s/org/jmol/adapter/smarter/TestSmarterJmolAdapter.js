@@ -1,37 +1,29 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'java.io.File','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.TestSmarterJmolAdapterImpl','org.jmol.util.JUnitLogger','java.io.FileInputStream','java.util.zip.GZIPInputStream','java.io.BufferedInputStream','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Rdr','javajs.util.BinaryDocument','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TestSmarterJmolAdapter", null, 'junit.framework.TestSuite');
-C$.testOne=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'java.io.File','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.TestSmarterJmolAdapterImpl','org.jmol.util.JUnitLogger','java.io.FileInputStream','java.util.zip.GZIPInputStream','java.io.BufferedInputStream','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Rdr','javajs.util.BinaryDocument','junit.framework.Assert','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "TestSmarterJmolAdapter", null, 'junit.framework.TestSuite');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.datafileDirectory=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.datafileDirectory="../Jmol-datafiles";
-}, 1);
+},1);
+
+C$.$fields$=[['S',['datafileDirectory']]
+,['S',['testOne']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Class$S', function (theClass, name) {
-C$.superclazz.c$$Class$S.apply(this, [theClass, name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Class$S.apply(this,[theClass, name]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Class', function (theClass) {
-C$.superclazz.c$$Class.apply(this, [theClass]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Class.apply(this,[theClass]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'suite$', function () {
@@ -104,24 +96,23 @@ return result;
 
 Clazz.newMeth(C$, 'addDirectory$S$S$S', function (directory, ext, typeAllowed) {
 if (C$.testOne != null  && !directory.equals$O(C$.testOne) ) return;
-var dir=Clazz.new_($I$(1).c$$S$S,[this.datafileDirectory, directory]);
+var dir=Clazz.new_($I$(1,1).c$$S$S,[this.datafileDirectory, directory]);
 var exts=$I$(2).split$S$S(ext, ";");
 for (var ie=0; ie < exts.length; ie++) {
 var e=exts[ie];
 var files=dir.list$java_io_FilenameFilter(((P$.TestSmarterJmolAdapter$1||
-(function(){var C$=Clazz.newClass(P$, "TestSmarterJmolAdapter$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.io.FilenameFilter', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "TestSmarterJmolAdapter$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.io.FilenameFilter', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['accept$java_io_File$S','accept$'], function (dir, name) {
+Clazz.newMeth(C$, 'accept$java_io_File$S', function (dir, name) {
 return name.endsWith$S("." + this.$finals$.e);
 });
 })()
-), Clazz.new_(P$.TestSmarterJmolAdapter$1.$init$, [this, {e: e}])));
+), Clazz.new_(P$.TestSmarterJmolAdapter$1.$init$,[this, {e:e}])));
 if (files == null ) {
 $I$(3).warn$S("No files in directory [" + directory + "] for extension [" + e + "]" );
 } else {
@@ -131,9 +122,9 @@ for (var i=0; i < files.length; i++) p$1.addFile$Z$S$S$S.apply(this, [e.endsWith
 }, p$1);
 
 Clazz.newMeth(C$, 'addFile$Z$S$S$S', function (gzipped, directory, filename, typeAllowed) {
-var file=Clazz.new_($I$(1).c$$java_io_File$S,[Clazz.new_($I$(1).c$$S$S,[this.datafileDirectory, directory]), filename]);
-var test=Clazz.new_($I$(4).c$$java_io_File$Z$S,[file, gzipped, typeAllowed]);
+var file=Clazz.new_([Clazz.new_($I$(1,1).c$$S$S,[this.datafileDirectory, directory]), filename],$I$(1,1).c$$java_io_File$S);
+var test=Clazz.new_($I$(4,1).c$$java_io_File$Z$S,[file, gzipped, typeAllowed]);
 this.addTest$junit_framework_Test(test);
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.api.js.DOMNode']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CellHolder", null, 'swingjs.plaf.JSLightweightUI');
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.api.js.DOMNode']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CellHolder");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getRowColumnID$swingjs_plaf_JSComponentUI$I$I', function (holder, row, col) {
 return holder.id + "_tab" + (row >= 0 ? "_row" + row : "") + "_col" + col ;
@@ -30,28 +29,20 @@ return $I$(1).getElement(rcID);
 
 Clazz.newMeth(C$, 'updateCellNode$swingjs_api_js_DOMNode$java_awt_JSComponent$I$I', function (td, c, width, height) {
 var ui;
-if (c == null  || (ui=c.getUI$()).isNull ) return;
-if (width > 0) {
-c.setSize$I$I(width, height);
-} else {
+if (c == null  || (ui=c.秘getUI$()).isNull ) return;
+var isHeader=(width >= 0);
+if (!isHeader) {
 width=$I$(1).getWidth(td);
 height=$I$(1).getHeight(td);
-}ui.tableID=$I$(1).getAttr(td, "id");
+}c.秘reshape$I$I$I$I$Z(c.getX$(), c.getY$(), width, height, false);
 ui.setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(c, width, height, null);
-ui.outerNode=null;
-ui.reInit$();
-ui.updateDOMNode$();
-ui.saveCellNodes$swingjs_api_js_DOMNode(td);
-}, 1);
-
-Clazz.newMeth(C$, 'restoreUI$swingjs_plaf_JSComponentUI$swingjs_api_js_DOMNode$I$I$I$I', function (ui, td, row, col, w, h) {
-ui.restoreCellNodes$swingjs_api_js_DOMNode(td);
+ui.saveCellNodes$swingjs_api_js_DOMNode$Z(td, isHeader);
 }, 1);
 
 Clazz.newMeth(C$, 'setJ2SRendererComponent$javax_swing_JComponent', function (comp) {
-(comp.getUI$()).setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(comp, 0, 0, null);
+if (comp != null ) comp.秘getUI$().setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(comp, 0, 0, null);
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

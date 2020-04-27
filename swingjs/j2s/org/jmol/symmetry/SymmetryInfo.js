@@ -1,27 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.PT','org.jmol.util.SimpleUnitCell']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SymmetryInfo");
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.PT','org.jmol.util.SimpleUnitCell']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SymmetryInfo");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.coordinatesAreFractional=false;
-this.isMultiCell=false;
-this.sgName=null;
-this.symmetryOperations=null;
-this.infoStr=null;
-this.cellRange=null;
-this.latticeType=null;
-this.intlTableNo=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.latticeType="P";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['coordinatesAreFractional','isMultiCell'],'S',['sgName','infoStr','latticeType','intlTableNo'],'O',['symmetryOperations','org.jmol.symmetry.SymmetryOperation[]','cellRange','int[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setSymmetryInfo$java_util_Map$FA', function (info, unitCellParams) {
@@ -39,7 +28,7 @@ var s="\nNumber of symmetry operations: " + (symmetryCount == 0 ? 1 : symmetryCo
 for (var i=0; i < symmetryCount; i++) {
 var op=this.symmetryOperations[i];
 s += "\n" + op.fixMagneticXYZ$javajs_util_M4$S$Z(op, op.xyz, true);
-if (op.isCenteringOp) c += " (" + $I$(1).rep$S$S$S($I$(1).replaceAllCharacters$S$S$S(op.xyz, "xyz", "0"), "0+", "") + ")" ;
+if (op.isCenteringOp) c += " (" + (function(a,f){return f.apply(null,a)})([$I$(1).replaceAllCharacters$S$S$S(op.xyz, "xyz", "0"), "0+", ""],$I$(1).rep$S$S$S) + ")" ;
 }
 if (c.length$() > 0) this.infoStr += "\nCentering: " + c;
 this.infoStr += s;
@@ -51,4 +40,4 @@ this.isMultiCell=(this.coordinatesAreFractional && this.symmetryOperations != nu
 return unitCellParams;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

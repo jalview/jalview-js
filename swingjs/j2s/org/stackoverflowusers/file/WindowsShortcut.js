@@ -1,22 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.stackoverflowusers.file"),p$1={},I$=[[0,'java.io.FileInputStream','java.io.ByteArrayOutputStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "WindowsShortcut");
+(function(){var P$=Clazz.newPackage("org.stackoverflowusers.file"),p$1={},I$=[[0,'java.io.FileInputStream','java.io.ByteArrayOutputStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "WindowsShortcut");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isDirectory=false;
-this.isLocal=false;
-this.real_file=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isDirectory','isLocal'],'S',['real_file']]]
 
 Clazz.newMeth(C$, 'isPotentialValidLink$java_io_File', function (file) {
 var minimum_length=100;
-var fis=Clazz.new_($I$(1).c$$java_io_File,[file]);
+var fis=Clazz.new_($I$(1,1).c$$java_io_File,[file]);
 var isPotentiallyValid=false;
 try {
 isPotentiallyValid=file.isFile$() && file.getName$().toLowerCase$().endsWith$S(".lnk") && fis.available$() >= 100   && C$.isMagicPresent$BA(C$.getBytes$java_io_InputStream$Integer(fis, new Integer(32))) ;
@@ -27,8 +21,8 @@ return isPotentiallyValid;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_File', function (file) {
-C$.$init$.apply(this);
-var $in=Clazz.new_($I$(1).c$$java_io_File,[file]);
+;C$.$init$.apply(this);
+var $in=Clazz.new_($I$(1,1).c$$java_io_File,[file]);
 try {
 p$1.parseLink$BA.apply(this, [C$.getBytes$java_io_InputStream($in)]);
 } finally {
@@ -53,9 +47,9 @@ return C$.getBytes$java_io_InputStream$Integer($in, null);
 }, 1);
 
 Clazz.newMeth(C$, 'getBytes$java_io_InputStream$Integer', function ($in, max) {
-var bout=Clazz.new_($I$(2));
+var bout=Clazz.new_($I$(2,1));
 var buff=Clazz.array(Byte.TYPE, [256]);
-while (max == null  || (max).intValue$() > 0  ){
+while (max == null  || (max).valueOf() > 0  ){
 var n=$in.read$BA(buff);
 if (n == -1) {
 break;
@@ -75,16 +69,16 @@ return link.length >= 32 && C$.bytesToDword$BA$I(link, 0) == 76 ;
 Clazz.newMeth(C$, 'parseLink$BA', function (link) {
 try {
 if (!C$.isMagicPresent$BA(link)) throw Clazz.new_(Clazz.load('java.text.ParseException').c$$S$I,["Invalid shortcut; magic is missing", 0]);
-var flags=($b$[0] = link[0x14], $b$[0]);
+var flags=link[20];
 var file_atts_offset=24;
-var file_atts=($b$[0] = link[24], $b$[0]);
-var is_dir_mask=($b$[0] = 16, $b$[0]);
+var file_atts=link[24];
+var is_dir_mask=16;
 if ((file_atts & is_dir_mask) > 0) {
 this.isDirectory=true;
 } else {
 this.isDirectory=false;
 }var shell_offset=76;
-var has_shell_mask=($b$[0] = 1, $b$[0]);
+var has_shell_mask=1;
 var shell_len=0;
 if ((flags & 1) > 0) {
 shell_len=C$.bytesToWord$BA$I(link, 76) + 2;
@@ -133,8 +127,7 @@ return ((bytes[off + 1] & 255) << 8) | (bytes[off] & 255);
 Clazz.newMeth(C$, 'bytesToDword$BA$I', function (bytes, off) {
 return (C$.bytesToWord$BA$I(bytes, off + 2) << 16) | C$.bytesToWord$BA$I(bytes, off);
 }, 1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

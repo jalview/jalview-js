@@ -1,26 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.AU','javajs.util.Lst','java.util.Hashtable','Boolean','javajs.util.Measure','org.jmol.util.Escape','javajs.util.SB','javajs.util.PT','java.util.Arrays','org.jmol.modelset.BondSet','org.jmol.util.BSUtil','javajs.util.BArray','javajs.util.Base64','javajs.util.BS','java.util.Collections',['org.jmol.script.SV','.Sort']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SV", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.script.SV','javajs.util.P3','javajs.util.AU','javajs.util.Lst','java.util.Hashtable','Boolean','javajs.util.Measure','org.jmol.util.Escape','javajs.util.SB','javajs.util.PT','java.util.Arrays','org.jmol.modelset.BondSet','org.jmol.util.BSUtil','javajs.util.BArray','javajs.util.Base64','javajs.util.BS','java.util.Collections',['org.jmol.script.SV','.Sort']]],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SV", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.script.T', 'javajs.api.JSONEncodable');
-C$.vT=null;
-C$.vF=null;
-C$.pt0=null;
+C$.$classes$=[['Sort',4]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.vT=C$.newSV$I$I$O(1073742335, 1, "true");
-C$.vF=C$.newSV$I$I$O(1073742334, 0, "false");
-C$.pt0=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.myName=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.index=2147483647;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index'],'S',['myName']]
+,['O',['vT','org.jmol.script.SV','+vF','pt0','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'newV$I$O', function (tok, value) {
 var sv=Clazz.new_(C$);
@@ -120,7 +111,7 @@ x=C$.unescapePointOrBitsetAsVariable$O(x);
 if (Clazz.instanceOf(x, "org.jmol.script.SV")) return x;
 return C$.newV$I$O(4, x);
 }if (Clazz.instanceOf(x, "javajs.util.P3")) return C$.newV$I$O(8, x);
-if (Clazz.instanceOf(x, "javajs.util.V3")) return C$.newV$I$O(8, $I$(1).newP$javajs_util_T3(x));
+if (Clazz.instanceOf(x, "javajs.util.V3")) return C$.newV$I$O(8, $I$(2).newP$javajs_util_T3(x));
 if (Clazz.instanceOf(x, "javajs.util.BS")) return C$.newV$I$O(10, x);
 if (Clazz.instanceOf(x, "javajs.util.P4")) return C$.newV$I$O(9, x);
 if (Clazz.instanceOf(x, "javajs.util.Quat")) return C$.newV$I$O(9, (x).toPoint4f$());
@@ -130,17 +121,17 @@ if (Clazz.instanceOf(x, "javajs.util.Lst")) return C$.getVariableList$javajs_uti
 if (Clazz.instanceOf(x, "javajs.util.BArray")) return C$.newV$I$O(15, x);
 if (Clazz.instanceOf(x, "org.jmol.script.ScriptContext")) return C$.newV$I$O(14, x);
 if (Clazz.instanceOf(x, Clazz.array(C$, -1))) return C$.getVariableAV$org_jmol_script_SVA(x);
-if ($I$(2).isAI$O(x)) return C$.getVariableAI$IA(x);
-if ($I$(2).isAB$O(x)) return C$.getVariableAB$BA(x);
-if ($I$(2).isAF$O(x)) return C$.getVariableAF$FA(x);
-if ($I$(2).isAD$O(x)) return C$.getVariableAD$DA(x);
-if ($I$(2).isAS$O(x)) return C$.getVariableAS$SA(x);
-if ($I$(2).isAP$O(x)) return C$.getVariableAP$javajs_util_T3A(x);
-if ($I$(2).isAII$O(x)) return C$.getVariableAII$IAA(x);
-if ($I$(2).isAFF$O(x)) return C$.getVariableAFF$FAA(x);
-if ($I$(2).isASS$O(x)) return C$.getVariableASS$SAA(x);
-if ($I$(2).isADD$O(x)) return C$.getVariableADD$DAA(x);
-if ($I$(2).isAFloat$O(x)) return C$.newV$I$O(13, x);
+if ($I$(3).isAI$O(x)) return C$.getVariableAI$IA(x);
+if ($I$(3).isAB$O(x)) return C$.getVariableAB$BA(x);
+if ($I$(3).isAF$O(x)) return C$.getVariableAF$FA(x);
+if ($I$(3).isAD$O(x)) return C$.getVariableAD$DA(x);
+if ($I$(3).isAS$O(x)) return C$.getVariableAS$SA(x);
+if ($I$(3).isAP$O(x)) return C$.getVariableAP$javajs_util_T3A(x);
+if ($I$(3).isAII$O(x)) return C$.getVariableAII$IAA(x);
+if ($I$(3).isAFF$O(x)) return C$.getVariableAFF$FAA(x);
+if ($I$(3).isASS$O(x)) return C$.getVariableASS$SAA(x);
+if ($I$(3).isADD$O(x)) return C$.getVariableADD$DAA(x);
+if ($I$(3).isAFloat$O(x)) return C$.newV$I$O(13, x);
 return C$.newJSVar$O(x);
 }, 1);
 
@@ -172,18 +163,18 @@ return (itest ? C$.vT : C$.vF);
 case 1:
 return (inum > 2147483647  || inum != Math.floor(inum)   ? C$.newF$F(inum) : C$.newI$I((inum|0)));
 case 2:
-var v=Clazz.new_($I$(3));
-for (var i=0, n=array.length; i < n; i++) v.addLast$TV(C$.newJSVar$O(array[i]));
+var v=Clazz.new_($I$(4,1));
+for (var i=0, n=array.length; i < n; i++) v.addLast$O(C$.newJSVar$O(array[i]));
 
 return C$.getVariableList$javajs_util_Lst(v);
 case 3:
-var map=Clazz.new_($I$(4));
+var map=Clazz.new_($I$(5,1));
 for (var i=keys.length; --i >= 0; ) {
 var o=null;
 {
 o = array[keys[i]];
 }
-map.put$TK$TV(keys[i], C$.newJSVar$O(o));
+map.put$O$O(keys[i], C$.newJSVar$O(o));
 }
 return C$.getVariableMap$java_util_Map(map);
 }
@@ -198,8 +189,8 @@ o=oo;
 break;
 }
 if (!(Clazz.instanceOf(o, "org.jmol.script.SV"))) {
-var x2=Clazz.new_($I$(4));
-for (var entry, $entry = ht.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) x2.put$TK$TV(entry.getKey$(), C$.getVariable$O(entry.getValue$()));
+var x2=Clazz.new_($I$(5,1));
+for (var entry, $entry = ht.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) x2.put$O$O(entry.getKey$(), C$.getVariable$O(entry.getValue$()));
 
 x=x2;
 }return C$.newV$I$O(6, x);
@@ -208,92 +199,92 @@ x=x2;
 Clazz.newMeth(C$, 'getVariableList$javajs_util_Lst', function (v) {
 var len=v.size$();
 if (len > 0 && Clazz.instanceOf(v.get$I(0), "org.jmol.script.SV") ) return C$.newV$I$O(7, v);
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < len; i++) objects.addLast$TV(C$.getVariable$O(v.get$I(i)));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < len; i++) objects.addLast$O(C$.getVariable$O(v.get$I(i)));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAV$org_jmol_script_SVA', function (v) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < v.length; i++) objects.addLast$TV(v[i]);
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < v.length; i++) objects.addLast$O(v[i]);
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAD$DA', function (f) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < f.length; i++) objects.addLast$TV(C$.newV$I$O(3, Float.valueOf$F(f[i])));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < f.length; i++) objects.addLast$O(C$.newV$I$O(3, Float.valueOf$F(f[i])));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAO$OA', function (o) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < o.length; i++) objects.addLast$TV(C$.getVariable$O(o[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < o.length; i++) objects.addLast$O(C$.getVariable$O(o[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAS$SA', function (s) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < s.length; i++) objects.addLast$TV(C$.newV$I$O(4, s[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < s.length; i++) objects.addLast$O(C$.newV$I$O(4, s[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAP$javajs_util_T3A', function (p) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < p.length; i++) objects.addLast$TV(C$.newV$I$O(8, p[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < p.length; i++) objects.addLast$O(C$.newV$I$O(8, p[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAFF$FAA', function (fx) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < fx.length; i++) objects.addLast$TV(C$.getVariableAF$FA(fx[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < fx.length; i++) objects.addLast$O(C$.getVariableAF$FA(fx[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableADD$DAA', function (fx) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < fx.length; i++) objects.addLast$TV(C$.getVariableAD$DA(fx[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < fx.length; i++) objects.addLast$O(C$.getVariableAD$DA(fx[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableASS$SAA', function (fx) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < fx.length; i++) objects.addLast$TV(C$.getVariableAS$SA(fx[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < fx.length; i++) objects.addLast$O(C$.getVariableAS$SA(fx[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAII$IAA', function (ix) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < ix.length; i++) objects.addLast$TV(C$.getVariableAI$IA(ix[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < ix.length; i++) objects.addLast$O(C$.getVariableAI$IA(ix[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAF$FA', function (f) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < f.length; i++) objects.addLast$TV(C$.newV$I$O(3, Float.valueOf$F(f[i])));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < f.length; i++) objects.addLast$O(C$.newV$I$O(3, Float.valueOf$F(f[i])));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAI$IA', function (ix) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < ix.length; i++) objects.addLast$TV(C$.newI$I(ix[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < ix.length; i++) objects.addLast$O(C$.newI$I(ix[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
 
 Clazz.newMeth(C$, 'getVariableAB$BA', function (ix) {
-var objects=Clazz.new_($I$(3));
-for (var i=0; i < ix.length; i++) objects.addLast$TV(C$.newI$I(ix[i]));
+var objects=Clazz.new_($I$(4,1));
+for (var i=0; i < ix.length; i++) objects.addLast$O(C$.newI$I(ix[i]));
 
 return C$.newV$I$O(7, objects);
 }, 1);
@@ -347,10 +338,10 @@ if (!(Clazz.instanceOf(xx, "org.jmol.script.SV"))) return xx;
 var x=xx;
 switch (x.tok) {
 case 1073742335:
-return $I$(5).TRUE;
+return $I$(6).TRUE;
 case 0:
 case 1073742334:
-return $I$(5).FALSE;
+return $I$(6).FALSE;
 case 2:
 return Integer.valueOf$I(x.intValue);
 case 10:
@@ -420,6 +411,10 @@ return x.intValue;
 case 3:
 case 7:
 case 4:
+case 8:
+case 9:
+case 11:
+case 12:
 return (C$.fValue$org_jmol_script_T(x)|0);
 case 10:
 return C$.bsSelectToken$org_jmol_script_T(x).cardinality$();
@@ -451,13 +446,13 @@ return C$.iValue$org_jmol_script_T(x);
 case 8:
 return (x.value).length$();
 case 9:
-return $I$(6).distanceToPlane$javajs_util_P4$javajs_util_T3(x.value, C$.pt0);
+return $I$(7).distanceToPlane$javajs_util_P4$javajs_util_T3(x.value, C$.pt0);
 case 11:
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(2,1));
 (x.value).rotate$javajs_util_T3(pt);
 return pt.length$();
 case 12:
-var pt1=Clazz.new_($I$(1));
+var pt1=Clazz.new_($I$(2,1));
 (x.value).rotTrans$javajs_util_T3(pt1);
 return pt1.length$();
 default:
@@ -478,7 +473,7 @@ case 2:
 return "" + x.intValue;
 case 10:
 var bs=C$.bsSelectToken$org_jmol_script_T(x);
-return (Clazz.instanceOf(x.value, "org.jmol.modelset.BondSet") ? $I$(7).eBond$javajs_util_BS(bs) : $I$(7).eBS$javajs_util_BS(bs));
+return (Clazz.instanceOf(x.value, "org.jmol.modelset.BondSet") ? $I$(8).eBond$javajs_util_BS(bs) : $I$(8).eBS$javajs_util_BS(bs));
 case 7:
 var sv=(x).getList$();
 i=x.intValue;
@@ -487,9 +482,9 @@ if (i != 2147483647) return (i < 1 || i > sv.size$()  ? "" : C$.sValue$org_jmol_
 case 6:
 case 14:
 if (Clazz.instanceOf(x.value, "java.lang.String")) return x.value;
-sb=Clazz.new_($I$(8));
+sb=Clazz.new_($I$(9,1));
 C$.sValueArray$javajs_util_SB$org_jmol_script_SV$S$S$Z$Z$Z$I$Z(sb, x, "", "", false, true, true, 2147483647, false);
-return $I$(9).rep$S$S$S(sb.toString(), "\n\u0000", " ");
+return (function(a,f){return f.apply(null,a)})([sb.toString(), "\n\u0000", " "],$I$(10).rep$S$S$S);
 case 4:
 var s=x.value;
 i=x.intValue;
@@ -498,12 +493,12 @@ if (i == 2147483647) return s;
 if (i < 1 || i > s.length$() ) return "";
 return "" + s.charAt$I(i - 1);
 case 8:
-return $I$(7).eP$javajs_util_T3(x.value);
+return $I$(8).eP$javajs_util_T3(x.value);
 case 9:
-return $I$(7).eP4$javajs_util_P4(x.value);
+return $I$(8).eP4$javajs_util_P4(x.value);
 case 11:
 case 12:
-return $I$(7).e$O(x.value);
+return $I$(8).e$O(x.value);
 default:
 return x.value.toString();
 }
@@ -544,8 +539,8 @@ sb.append$S(isEscaped ? vx.escape$() : C$.sValue$org_jmol_script_T(vx));
 Clazz.newMeth(C$, 'sValueAddKeys$javajs_util_SB$S$java_util_Map$S$Z$Z$I$Z', function (sb, path, ht, tabs, isEscaped, addValues, maxLevels, skipEmpty) {
 if (maxLevels < 0) return;
 var keyset=ht.keySet$();
-var keys=ht.keySet$().toArray$TTA(Clazz.array(String, [keyset.size$()]));
-$I$(10).sort$OA(keys);
+var keys=ht.keySet$().toArray$OA(Clazz.array(String, [keyset.size$()]));
+$I$(11).sort$OA(keys);
 if (isEscaped) {
 sb.append$S("{ ");
 var sep="";
@@ -553,7 +548,7 @@ for (var i=0; i < keys.length; i++) {
 var key=keys[i];
 var val=ht.get$O(key);
 if (skipEmpty && (val.tok == 7 && val.getList$().size$() == 0  || val.tok == 6 && val.getMap$().isEmpty$()  ) ) continue;
-if (addValues) sb.append$S(sep).append$S($I$(9).esc$S(key)).append$S(":");
+if (addValues) sb.append$S(sep).append$S($I$(10).esc$S(key)).append$S(":");
  else sb.appendC$C(" ").append$S(key);
 C$.sValueArray$javajs_util_SB$org_jmol_script_SV$S$S$Z$Z$Z$I$Z(sb, val, path, tabs + "  ", true, false, addValues, maxLevels, skipEmpty);
 sep=",";
@@ -566,9 +561,9 @@ tabs += "  ";
 for (var i=0; i < keys.length; i++) {
 sb.append$S(tabs);
 var key=keys[i];
-sb.append$S($I$(9).esc$S(key)).append$S("  :");
-var sb2=Clazz.new_($I$(8));
-if (!(Clazz.instanceOf(ht.get$O(key), "org.jmol.script.SV"))) ht.put$TK$TV(key, C$.getVariable$O(ht.get$O(key)));
+sb.append$S($I$(10).esc$S(key)).append$S("  :");
+var sb2=Clazz.new_($I$(9,1));
+if (!(Clazz.instanceOf(ht.get$O(key), "org.jmol.script.SV"))) ht.put$O$O(key, C$.getVariable$O(ht.get$O(key)));
 var v=ht.get$O(key);
 isEscaped=C$.isRawType$I(v.tok);
 C$.sValueArray$javajs_util_SB$org_jmol_script_SV$S$S$Z$Z$Z$I$Z(sb2, v, path, tabs, isEscaped, false, addValues, maxLevels, skipEmpty);
@@ -601,7 +596,7 @@ switch (x.tok) {
 case 8:
 return x.value;
 case 4:
-var o=$I$(7).uP$S(x.value);
+var o=$I$(8).uP$S(x.value);
 if (Clazz.instanceOf(o, "javajs.util.P3")) return o;
 }
 return null;
@@ -612,7 +607,7 @@ switch (x.tok) {
 case 9:
 return x.value;
 case 4:
-var o=$I$(7).uP$S(x.value);
+var o=$I$(8).uP$S(x.value);
 if (!(Clazz.instanceOf(o, "javajs.util.P4"))) break;
 return o;
 }
@@ -620,23 +615,23 @@ return null;
 }, 1);
 
 Clazz.newMeth(C$, 'toFloat$S', function (s) {
-return (s.equalsIgnoreCase$S("true") ? 1 : s.length$() == 0 || s.equalsIgnoreCase$S("false")  ? 0 : $I$(9).parseFloatStrict$S($I$(9).trim$S$S(s, " \t\n")));
+return (s.equalsIgnoreCase$S("true") ? 1 : s.length$() == 0 || s.equalsIgnoreCase$S("false")  ? 0 : (function(a,f){return f.apply(null,a)})([$I$(10).trim$S$S(s, " \t\n")],$I$(10).parseFloatStrict$S));
 }, 1);
 
 Clazz.newMeth(C$, 'concatList$org_jmol_script_SV$org_jmol_script_SV$Z', function (x1, x2, asNew) {
 var v1=x1.getList$();
 var v2=x2.getList$();
 if (!asNew) {
-if (v2 == null ) v1.addLast$TV(C$.newT$org_jmol_script_T(x2));
- else for (var i=0; i < v2.size$(); i++) v1.addLast$TV(v2.get$I(i));
+if (v2 == null ) v1.addLast$O(C$.newT$org_jmol_script_T(x2));
+ else for (var i=0; i < v2.size$(); i++) v1.addLast$O(v2.get$I(i));
 
 return x1;
-}var vlist=Clazz.new_($I$(3));
-if (v1 == null ) vlist.addLast$TV(x1);
- else for (var i=0; i < v1.size$(); i++) vlist.addLast$TV(v1.get$I(i));
+}var vlist=Clazz.new_($I$(4,1));
+if (v1 == null ) vlist.addLast$O(x1);
+ else for (var i=0; i < v1.size$(); i++) vlist.addLast$O(v1.get$I(i));
 
-if (v2 == null ) vlist.addLast$TV(x2);
- else for (var i=0; i < v2.size$(); i++) vlist.addLast$TV(v2.get$I(i));
+if (v2 == null ) vlist.addLast$O(x2);
+ else for (var i=0; i < v2.size$(); i++) vlist.addLast$O(v2.get$I(i));
 
 return C$.getVariableList$javajs_util_Lst(vlist);
 }, 1);
@@ -680,10 +675,10 @@ var tokenOut=C$.newSV$I$I$O(tokenIn.tok, 2147483647, null);
 switch (tokenIn.tok) {
 case 10:
 if (Clazz.instanceOf(tokenIn.value, "org.jmol.modelset.BondSet")) {
-bs=$I$(11).newBS$javajs_util_BS$IA(tokenIn.value, (tokenIn.value).associatedAtoms);
+bs=(function(a,f){return f.apply(null,a)})([tokenIn.value, (tokenIn.value).associatedAtoms],$I$(12).newBS$javajs_util_BS$IA);
 len=bs.cardinality$();
 } else {
-bs=$I$(12).copy$javajs_util_BS(tokenIn.value);
+bs=$I$(13).copy$javajs_util_BS(tokenIn.value);
 len=(isInputSelected ? 1 : bs.cardinality$());
 }break;
 case 15:
@@ -755,10 +750,10 @@ break;
 case 7:
 if (--i1 < 0 || i1 >= len ) return C$.newV$I$O(4, "");
 if (isOne) return (tokenIn).getList$().get$I(i1);
-var o2=Clazz.new_($I$(3));
+var o2=Clazz.new_($I$(4,1));
 var o1=(tokenIn).getList$();
 var nn=Math.min(i2, len) - i1;
-for (var i=0; i < nn; i++) o2.addLast$TV(C$.newT$org_jmol_script_T(o1.get$I(i + i1)));
+for (var i=0; i < nn; i++) o2.addLast$O(C$.newT$org_jmol_script_T(o1.get$I(i + i1)));
 
 tokenOut.value=o2;
 break;
@@ -767,9 +762,9 @@ if (--i1 < 0 || i1 >= len ) return C$.newV$I$O(4, "");
 var data=(((tokenIn).value)).data;
 if (isOne) return C$.newI$I(data[i1]);
 var b=Clazz.array(Byte.TYPE, [Math.min(i2, len) - i1]);
-for (var i=b.length; --i >= 0; ) b[i]=(data[i1 + i]|0);
+for (var i=b.length; --i >= 0; ) b[i]=data[i1 + i];
 
-tokenOut.value=Clazz.new_($I$(13).c$$BA,[b]);
+tokenOut.value=Clazz.new_($I$(14,1).c$$BA,[b]);
 break;
 }
 return tokenOut;
@@ -824,9 +819,9 @@ var v=this.value;
 len=v.size$();
 if (pt1 <= 0) pt1=len + pt1;
 if (--pt1 < 0) pt1=0;
-if (len <= pt1) for (var i=len; i <= pt1; i++) v.addLast$TV(C$.newV$I$O(4, ""));
+if (len <= pt1) for (var i=len; i <= pt1; i++) v.addLast$O(C$.newV$I$O(4, ""));
 
-v.set$I$TE(pt1, $var);
+v.set$I$O(pt1, $var);
 break;
 }
 });
@@ -834,14 +829,14 @@ break;
 Clazz.newMeth(C$, 'escape$', function () {
 switch (this.tok) {
 case 4:
-return $I$(9).esc$S(this.value);
+return $I$(10).esc$S(this.value);
 case 11:
 case 12:
-return $I$(9).toJSON$S$O(null, this.value);
+return $I$(10).toJSON$S$O(null, this.value);
 case 7:
 case 6:
 case 14:
-var sb=Clazz.new_($I$(8));
+var sb=Clazz.new_($I$(9,1));
 C$.sValueArray$javajs_util_SB$org_jmol_script_SV$S$S$Z$Z$Z$I$Z(sb, this, "", "", true, false, true, 2147483647, false);
 return sb.toString();
 default:
@@ -873,11 +868,11 @@ break;
 } else if (Clazz.instanceOf(o, "java.lang.String")) {
 s=o;
 }if (s != null  && s.length$() == 0 ) return s;
-if (v == null ) v=$I$(7).uABsM$S(s);
+if (v == null ) v=$I$(8).uABsM$S(s);
 if (Clazz.instanceOf(v, "javajs.util.P3")) return (C$.newV$I$O(8, v));
 if (Clazz.instanceOf(v, "javajs.util.P4")) return C$.newV$I$O(9, v);
 if (Clazz.instanceOf(v, "javajs.util.BS")) {
-if (s != null  && s.indexOf$S("[{") == 0 ) v=$I$(11).newBS$javajs_util_BS$IA(v, null);
+if (s != null  && s.indexOf$S("[{") == 0 ) v=$I$(12).newBS$javajs_util_BS$IA(v, null);
 return C$.newV$I$O(10, v);
 }if (Clazz.instanceOf(v, "javajs.util.M34")) return (C$.newV$I$O(Clazz.instanceOf(v, "javajs.util.M3") ? 11 : 12, v));
 return o;
@@ -918,7 +913,7 @@ if (ve != null ) ve[0]=C$.fValue$org_jmol_script_T($var);
 if (getS) of[3]=C$.sValue$org_jmol_script_T($var);
 if (getP) of[4]=$var.value;
 if (getQ) of[5]=$var.value;
-return $I$(9).sprintf$S$S$OA(strFormat, "IFDspq", of);
+return $I$(10).sprintf$S$S$OA(strFormat, "IFDspq", of);
 }, 1);
 
 Clazz.newMeth(C$, 'getFormatType$S', function (format) {
@@ -946,37 +941,37 @@ case 22:
 var bytes;
 switch (args[1].tok) {
 case 15:
-bytes=$I$(2).arrayCopyByte$BA$I((args[1].value).data, -1);
+bytes=(function(a,f){return f.apply(null,a)})([(args[1].value).data, -1],$I$(3).arrayCopyByte$BA$I);
 break;
 case 7:
 var l=args[1].getList$();
 if (pt == 22) {
-var l1=Clazz.new_($I$(3));
-for (var i=l.size$(); --i >= 0; ) l1.addLast$TV(l.get$I(i));
+var l1=Clazz.new_($I$(4,1));
+for (var i=l.size$(); --i >= 0; ) l1.addLast$O(l.get$I(i));
 
 return l1;
 }bytes=Clazz.array(Byte.TYPE, [l.size$()]);
-for (var i=bytes.length; --i >= 0; ) bytes[i]=((l.get$I(i).asInt$()|0)|0);
+for (var i=bytes.length; --i >= 0; ) bytes[i]=(l.get$I(i).asInt$()|0);
 
 break;
 default:
 var s=args[1].asString$();
 if (s.startsWith$S(";base64,")) {
 if (pt == 5) return s;
-bytes=$I$(14).decodeBase64$S(s);
+bytes=$I$(15).decodeBase64$S(s);
 } else {
 bytes=s.getBytes$();
 }}
-return (pt == 22 ? C$.getVariable$O(bytes) : pt == 12 ? Clazz.new_($I$(13).c$$BA,[bytes]) : ";base64," + $I$(14).getBase64$BA(bytes).toString());
+return (pt == 22 ? C$.getVariable$O(bytes) : pt == 12 ? Clazz.new_($I$(14,1).c$$BA,[bytes]) : ";base64," + $I$(15).getBase64$BA(bytes).toString());
 }
 }
-var format=$I$(9).split$S$S($I$(9).rep$S$S$S(C$.sValue$org_jmol_script_T(args[0]), "%%", "\u0001"), "%");
+var format=(function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([C$.sValue$org_jmol_script_T(args[0]), "%%", "\u0001"],$I$(10).rep$S$S$S), "%"],$I$(10).split$S$S);
 if (format.length == 0) return "";
-var sb=Clazz.new_($I$(8));
+var sb=Clazz.new_($I$(9,1));
 sb.append$S(format[0]);
 for (var i=1; i < format.length; i++) {
-var ret=C$.sprintf$S$org_jmol_script_SV($I$(9).formatCheck$S("%" + format[i]), (args[1].tok == 6 ? args[1] : args[1].tok == 7 ? args[1].getList$().get$I(i - 1) : i < args.length ? args[i] : null));
-if ($I$(2).isAS$O(ret)) {
+var ret=C$.sprintf$S$org_jmol_script_SV($I$(10).formatCheck$S("%" + format[i]), (args[1].tok == 6 ? args[1] : args[1].tok == 7 ? args[1].getList$().get$I(i - 1) : i < args.length ? args[i] : null));
+if ($I$(3).isAS$O(ret)) {
 var list=ret;
 for (var j=0; j < list.length; j++) sb.append$S(list[j]).append$S("\n");
 
@@ -993,22 +988,22 @@ return (x.index == 2147483647 ? C$.selectItemTok$org_jmol_script_T$I(x, -2147483
 case 7:
 return C$.unEscapeBitSetArray$javajs_util_Lst$Z(x.getList$(), allowNull);
 default:
-return (allowNull ? null : Clazz.new_($I$(15)));
+return (allowNull ? null : Clazz.new_($I$(16,1)));
 }
 }, 1);
 
 Clazz.newMeth(C$, 'unEscapeBitSetArray$javajs_util_Lst$Z', function (x, allowNull) {
-var bs=Clazz.new_($I$(15));
+var bs=Clazz.new_($I$(16,1));
 for (var i=0; i < x.size$(); i++) {
 var v=x.get$I(i);
 if (v.tok == 2 && v.intValue >= 0 ) {
 bs.set$I(v.intValue);
 } else if (v.tok == 7) {
 var bs2=C$.unEscapeBitSetArray$javajs_util_Lst$Z(v.getList$(), true);
-if (bs2 == null ) return (allowNull ? null : Clazz.new_($I$(15)));
+if (bs2 == null ) return (allowNull ? null : Clazz.new_($I$(16,1)));
 bs.or$javajs_util_BS(bs2);
 } else if (!C$.unEscapeBitSet$org_jmol_script_SV$javajs_util_BS(v, bs)) {
-return (allowNull ? null : Clazz.new_($I$(15)));
+return (allowNull ? null : Clazz.new_($I$(16,1)));
 }}
 return bs;
 }, 1);
@@ -1038,7 +1033,7 @@ return (x1.value).equals$O(x2.value);
 }, 1);
 
 Clazz.newMeth(C$, 'isLike$org_jmol_script_SV$org_jmol_script_SV', function (x1, x2) {
-return (x1 != null  && x2 != null   && x1.tok == 4  && x2.tok == 4  && $I$(9).isLike$S$S(x1.value, x2.value) );
+return (x1 != null  && x2 != null   && x1.tok == 4  && x2.tok == 4  && $I$(10).isLike$S$S(x1.value, x2.value) );
 }, 1);
 
 Clazz.newMeth(C$, 'sortOrReverse$I', function (arrayPt) {
@@ -1048,11 +1043,11 @@ if (arrayPt == -2147483648) {
 var n=x.size$();
 for (var i=0; i < n; i++) {
 var v=x.get$I(i);
-x.set$I$TE(i, x.get$I(--n));
-x.set$I$TE(n, v);
+x.set$I$O(i, x.get$I(--n));
+x.set$I$O(n, v);
 }
 } else {
-$I$(16).sort$java_util_List$java_util_Comparator(this.getList$(), Clazz.new_($I$(17).c$$I$S, [this, null, --arrayPt, null]));
+(function(a,f){return f.apply(null,a)})([this.getList$(), Clazz.new_($I$(18,1).c$$I$S,[this, null, --arrayPt, null])],$I$(17).sort$java_util_List$java_util_Comparator);
 }}return this;
 });
 
@@ -1063,7 +1058,7 @@ if (m == null ) {
 var x=this.getList$();
 if (value == null  || x == null  ) {
 return (x == null  || x.size$() == 0  ? C$.newS$S("") : x.removeItemAt$I(x.size$() - 1));
-}x.addLast$TV(C$.newI$I(0).setv$org_jmol_script_SV(value));
+}x.addLast$O(C$.newI$I(0).setv$org_jmol_script_SV(value));
 } else {
 if (value == null ) {
 m.clear$();
@@ -1085,14 +1080,14 @@ v=lst.removeItemAt$I(i);
 v=m.remove$O(mapKey.asString$());
 }return (v == null  ? C$.newS$S("") : v);
 }if (m != null ) {
-m.put$TK$TV(mapKey.asString$(), C$.newI$I(0).setv$org_jmol_script_SV(value));
+m.put$O$O(mapKey.asString$(), C$.newI$I(0).setv$org_jmol_script_SV(value));
 }}return this;
 });
 
 Clazz.newMeth(C$, 'unEscapeBitSet$org_jmol_script_SV$javajs_util_BS', function (x, bs) {
 switch (x.tok) {
 case 4:
-var bs1=$I$(15).unescape$S(x.value);
+var bs1=$I$(16).unescape$S(x.value);
 if (bs1 == null ) return false;
 bs.or$javajs_util_BS(bs1);
 return true;
@@ -1140,16 +1135,16 @@ break;
 case 7:
 return this;
 default:
-o2=Clazz.new_($I$(3));
-o2.addLast$TV(this);
+o2=Clazz.new_($I$(4,1));
+o2.addLast$O(this);
 return C$.newV$I$O(7, o2);
 }
-o2=Clazz.new_($I$(3));
+o2=Clazz.new_($I$(4,1));
 for (var i=0; i < dim; i++) {
 var a=Clazz.array(Float.TYPE, [dim]);
 if (m3 == null ) m4.getRow$I$FA(i, a);
  else m3.getRow$I$FA(i, a);
-o2.addLast$TV(C$.getVariableAF$FA(a));
+o2.addLast$O(C$.getVariableAF$FA(a));
 }
 return C$.newV$I$O(7, o2);
 });
@@ -1188,20 +1183,20 @@ case 2:
 case 3:
 return C$.sValue$org_jmol_script_T(this);
 case 15:
-return $I$(9).byteArrayToJSON$BA((this.value).data);
+return (function(a,f){return f.apply(null,a)})([(this.value).data],$I$(10).byteArrayToJSON$BA);
 case 14:
-return $I$(9).toJSON$S$O(null, (this.value).getFullMap$());
+return (function(a,f){return f.apply(null,a)})([null, (this.value).getFullMap$()],$I$(10).toJSON$S$O);
 case 7:
 case 6:
 if (this.myName != null ) {
 this.myName=null;
 return (this.tok == 6 ? "{  }" : "[  ]");
 }this.myName="x";
-var s=$I$(9).toJSON$S$O(null, this.value);
+var s=$I$(10).toJSON$S$O(null, this.value);
 this.myName=null;
 return s;
 default:
-return $I$(9).toJSON$S$O(null, this.value);
+return $I$(10).toJSON$S$O(null, this.value);
 }
 });
 
@@ -1210,7 +1205,7 @@ return this.getMap$().get$O(key);
 });
 
 Clazz.newMeth(C$, 'mapPut$S$org_jmol_script_SV', function (key, v) {
-this.getMap$().put$TK$TV(key, v);
+this.getMap$().put$O$O(key, v);
 });
 
 Clazz.newMeth(C$, 'getMap$', function () {
@@ -1225,7 +1220,7 @@ return null;
 
 Clazz.newMeth(C$, 'getMapKeys$I$Z', function (nLevels, skipEmpty) {
 if (this.tok != 6) return "";
-var sb=Clazz.new_($I$(8));
+var sb=Clazz.new_($I$(9,1));
 C$.sValueArray$javajs_util_SB$org_jmol_script_SV$S$S$Z$Z$Z$I$Z(sb, this, "", "", true, false, false, nLevels + 1, skipEmpty);
 return sb.toString();
 });
@@ -1243,10 +1238,10 @@ break;
 default:
 return null;
 }
-var keys=Clazz.new_($I$(3));
+var keys=Clazz.new_($I$(4,1));
 p$1.getKeyList$Z$javajs_util_Lst$S.apply(this, [isAll, keys, ""]);
-var skeys=keys.toArray$TTA(Clazz.array(String, [keys.size$()]));
-$I$(10).sort$OA(skeys);
+var skeys=keys.toArray$OA(Clazz.array(String, [keys.size$()]));
+$I$(11).sort$OA(skeys);
 return skeys;
 });
 
@@ -1260,10 +1255,10 @@ if ((lst=this.getList$()) != null  && (n=lst.size$()) > 0 ) p$1.getKeyList$Z$jav
 }return;
 }for (var e, $e = map.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var k=e.getKey$();
-if (isAll && (k.length$() == 0 || !$I$(9).isLetter$C(k.charAt$I(0)) ) ) {
+if (isAll && (k.length$() == 0 || !(function(a,f){return f.apply(null,a)})([k.charAt$I(0)],$I$(10).isLetter$C) ) ) {
 if (prefix.endsWith$S(".")) prefix=prefix.substring$I$I(0, prefix.length$() - 1);
-k="[" + $I$(9).esc$S(k) + "]" ;
-}keys.addLast$TV(prefix + k);
+k="[" + $I$(10).esc$S(k) + "]" ;
+}keys.addLast$O(prefix + k);
 if (isAll) p$1.getKeyList$Z$javajs_util_Lst$S.apply(e.getValue$(), [true, keys, prefix + k + "." ]);
 }
 }, p$1);
@@ -1271,17 +1266,17 @@ if (isAll) p$1.getKeyList$Z$javajs_util_Lst$S.apply(e.getValue$(), [true, keys, 
 Clazz.newMeth(C$, 'deepCopy$O$Z$Z', function (v, isHash, isDeep) {
 if (isHash) {
 var vold=v;
-var vnew=Clazz.new_($I$(4));
+var vnew=Clazz.new_($I$(5,1));
 for (var e, $e = vold.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var v1=e.getValue$();
-vnew.put$TK$TV(e.getKey$(), isDeep ? C$.deepCopySV$org_jmol_script_SV(v1) : v1);
+vnew.put$O$O(e.getKey$(), isDeep ? C$.deepCopySV$org_jmol_script_SV(v1) : v1);
 }
 return vnew;
 }var vold2=v;
-var vnew2=Clazz.new_($I$(3));
+var vnew2=Clazz.new_($I$(4,1));
 for (var i=0, n=vold2.size$(); i < n; i++) {
 var vm=vold2.get$I(i);
-vnew2.addLast$TV(isDeep ? C$.deepCopySV$org_jmol_script_SV(vm) : vm);
+vnew2.addLast$O(isDeep ? C$.deepCopySV$org_jmol_script_SV(vm) : vm);
 }
 return vnew2;
 }, 1);
@@ -1292,7 +1287,7 @@ case 6:
 case 7:
 if ("\r".equals$O(vm.myName)) {
 vm.myName=null;
-vm=C$.newV$I$O(vm.tok, (vm.tok == 6 ? Clazz.new_($I$(4)) : Clazz.new_($I$(3))));
+vm=C$.newV$I$O(vm.tok, (vm.tok == 6 ? Clazz.new_($I$(5,1)) : Clazz.new_($I$(4,1))));
 } else {
 var name0=vm.myName;
 vm.myName="\r";
@@ -1307,46 +1302,47 @@ return vm;
 Clazz.newMeth(C$, 'sortMapArray$S', function (key) {
 var lst=this.getList$();
 if (lst != null ) {
-$I$(16).sort$java_util_List$java_util_Comparator(this.getList$(), Clazz.new_($I$(17).c$$I$S, [this, null, 0, key]));
+(function(a,f){return f.apply(null,a)})([this.getList$(), Clazz.new_($I$(18,1).c$$I$S,[this, null, 0, key])],$I$(17).sort$java_util_List$java_util_Comparator);
 }return this;
 });
 
 Clazz.newMeth(C$, 'safeJSON$S$O', function (key, property) {
-return "{" + (Clazz.instanceOf(property, "org.jmol.script.SV") ? $I$(9).esc$S(key) + " : " + C$.format$org_jmol_script_SVA$I(Clazz.array(C$, -1, [null, property]), 0)  : $I$(9).toJSON$S$O(key, property)) + "}" ;
+return "{" + (Clazz.instanceOf(property, "org.jmol.script.SV") ? $I$(10).esc$S(key) + " : " + C$.format$org_jmol_script_SVA$I(Clazz.array(C$, -1, [null, property]), 0)  : $I$(10).toJSON$S$O(key, property)) + "}" ;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.vT=C$.newSV$I$I$O(1073742335, 1, "true");
+C$.vF=C$.newSV$I$I$O(1073742334, 0, "false");
+C$.pt0=Clazz.new_($I$(2,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SV, "Sort", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SV, "Sort", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Comparator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.arrayPt=0;
-this.myKey=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['arrayPt'],'S',['myKey']]]
 
 Clazz.newMeth(C$, 'c$$I$S', function (arrayPt, myKey) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.arrayPt=arrayPt;
 this.myKey=myKey;
 }, 1);
 
-Clazz.newMeth(C$, ['compare$org_jmol_script_SV$org_jmol_script_SV','compare$','compare$TT$TT'], function (x, y) {
+Clazz.newMeth(C$, ['compare$org_jmol_script_SV$org_jmol_script_SV','compare$O$O'], function (x, y) {
 if (x.tok != y.tok) {
 if (x.tok == 3 || x.tok == 2  || y.tok == 3  || y.tok == 2 ) {
-var fx=P$.SV.fValue$org_jmol_script_T(x);
-var fy=P$.SV.fValue$org_jmol_script_T(y);
+var fx=$I$(1).fValue$org_jmol_script_T(x);
+var fy=$I$(1).fValue$org_jmol_script_T(y);
 return (fx < fy  ? -1 : fx > fy  ? 1 : 0);
-}if (x.tok == 4 || y.tok == 4 ) return P$.SV.sValue$org_jmol_script_T(x).compareTo$S(P$.SV.sValue$org_jmol_script_T(y));
+}if (x.tok == 4 || y.tok == 4 ) return $I$(1).sValue$org_jmol_script_T(x).compareTo$S($I$(1).sValue$org_jmol_script_T(y));
 }switch (x.tok) {
 case 4:
-return P$.SV.sValue$org_jmol_script_T(x).compareTo$S(P$.SV.sValue$org_jmol_script_T(y));
+return $I$(1).sValue$org_jmol_script_T(x).compareTo$S($I$(1).sValue$org_jmol_script_T(y));
 case 7:
 var sx=x.getList$();
 var sy=y.getList$();
@@ -1359,8 +1355,8 @@ case 6:
 if (this.myKey != null ) {
 return this.compare$org_jmol_script_SV$org_jmol_script_SV(x.getMap$().get$O(this.myKey), y.getMap$().get$O(this.myKey));
 }default:
-var fx=P$.SV.fValue$org_jmol_script_T(x);
-var fy=P$.SV.fValue$org_jmol_script_T(y);
+var fx=$I$(1).fValue$org_jmol_script_T(x);
+var fy=$I$(1).fValue$org_jmol_script_T(y);
 return (fx < fy  ? -1 : fx > fy  ? 1 : 0);
 }
 });
@@ -1370,4 +1366,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

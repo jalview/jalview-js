@@ -1,24 +1,20 @@
-(function(){var P$=Clazz.newPackage("sun.swing"),p$1={},I$=[[0,'java.util.LinkedList',['sun.swing.ImageCache','.Entry']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageCache", function(){
+(function(){var P$=Clazz.newPackage("sun.swing"),p$1={},I$=[[0,'java.util.LinkedList',['sun.swing.ImageCache','.Entry']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ImageCache", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Entry',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.maxCount=0;
-this.entries=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['maxCount'],'O',['entries','java.util.LinkedList']]]
 
 Clazz.newMeth(C$, 'c$$I', function (maxCount) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.maxCount=maxCount;
-this.entries=Clazz.new_($I$(1));
+this.entries=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'setMaxCount$I', function (maxCount) {
@@ -39,13 +35,13 @@ if (entry == null ) {
 iter.remove$();
 } else if (entry.equals$java_awt_GraphicsConfiguration$I$I$OA(config, w, h, args)) {
 iter.remove$();
-this.entries.addFirst$TE(ref);
+this.entries.addFirst$O(ref);
 return entry;
 }}
-entry=Clazz.new_($I$(2).c$$java_awt_GraphicsConfiguration$I$I$OA,[config, w, h, args]);
+entry=Clazz.new_($I$(2,1).c$$java_awt_GraphicsConfiguration$I$I$OA,[config, w, h, args]);
 if (this.entries.size$() >= this.maxCount) {
 this.entries.removeLast$();
-}this.entries.addFirst$TE(entry);
+}this.entries.addFirst$O(entry);
 return entry;
 }, p$1);
 
@@ -59,27 +55,19 @@ var entry=p$1.getEntry$O$java_awt_GraphicsConfiguration$I$I$OA.apply(this, [key,
 entry.setImage$java_awt_Image(image);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ImageCache, "Entry", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ImageCache, "Entry", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.config=null;
-this.w=0;
-this.h=0;
-this.args=null;
-this.image=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['w','h'],'O',['config','java.awt.GraphicsConfiguration','args','Object[]','image','java.awt.Image']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_GraphicsConfiguration$I$I$OA', function (config, w, h, args) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.config=config;
 this.args=args;
 this.w=w;
@@ -124,4 +112,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:40 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,29 +1,19 @@
 (function(){var P$=Clazz.newPackage("jalview.json.binding.biojson.v1"),I$=[];
-var C$=Clazz.newClass(P$, "SequencePojo");
+/*c*/var C$=Clazz.newClass(P$, "SequencePojo");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seq=null;
-this.name=null;
-this.type=null;
-this.id=null;
-this.order=0;
-this.start=0;
-this.end=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['order','start','end'],'S',['seq','name','type','id']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$S$S$S', function (start, end, id, name, seq) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.id=id;
 this.name=name;
 this.seq=seq;
@@ -84,5 +74,20 @@ return this.type;
 Clazz.newMeth(C$, 'setType$S', function (type) {
 this.type=type;
 });
+C$.$getAnn$ = function(){ return [
+[['seq','String',null,['com.github.reinert.jjschema.Attributes']],['required="true" minLength="3" maxLength="2147483647" description="Sequence residue characters. An aligned sequence may contain <br>one of the following gap characters &#x201c;.&#x201d;, &#x201c;-&#x201d; or &#x201c;&nbsp;&#x201d;" ']],
+  [['name','.',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="Sequence name" ']],
+  [['type','.',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Sequence type" enums={"DNA"  "RNA"  "Protein"  } ']],
+  [['id','.',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="Unique identifier for a given Sequence" ']],
+  [['order','int',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="The order/position of a sequence in the alignment space" ']],
+  [['start','.',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="The index of the sequence’s first residue in its source database, <br>using a one-based numbering index system" ']],
+  [['end','.',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="The index of the sequence’s last residue in its source database, <br>using a one-based numbering index system" ']],
+  [['M:getSeq','String'],['@XmlElement']],
+  [['M:getName','String'],['@XmlElement']],
+  [['M:getId','String'],['@XmlElement']],
+  [['M:getStart','int'],['@XmlElement']],
+  [['M:getEnd','int'],['@XmlElement']],
+  [['M:getOrder','int'],['@XmlElement']],
+  [['M:getType','String'],['@XmlElement']]]}
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

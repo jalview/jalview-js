@@ -28,7 +28,7 @@ in the same directory as ' + document.location.href)
 # ( see https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS )
 Info = {
    code: null,
-   main: "jalview.bin.Jalview", # starts the JalviewJS desktop
+   main: "jalview.bin.Jalview", # s arts the JalviewJS desktop
    args: null, // specify command line to be passed to the main method of above class
    core: "jvexamplefile", # preload classes
    width: 850,
@@ -169,6 +169,8 @@ Until the process is fully automated, this git repository is manually updated by
 cd jalview-js # change to repository working directory
 rm -Rf swingjs # delete existing jalviewjs files
 tar -zxf jalviewjs-site.tar.gz # unpack the latest JalviewJS distribution
+cp -Rf site/* ./
+rm -Rf site;
 git add -u # add any updated files in swingjs, or examples directory
 git add swingjs # add any new files in swingjs
 git commit # make sure you state which version the release includes

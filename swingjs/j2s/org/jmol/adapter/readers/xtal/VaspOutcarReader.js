@@ -1,31 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.Lst','javajs.util.PT','javajs.util.DF']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VaspOutcarReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.Lst','javajs.util.PT','javajs.util.DF']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "VaspOutcarReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.atomNames=null;
-this.ac=0;
-this.inputOnly=false;
-this.mDsimulation=false;
-this.isVersion5=false;
-this.elementNames=null;
-this.gibbsEnergy=null;
-this.gibbsEntropy=null;
-this.electronEne=null;
-this.kinEne=null;
-this.totEne=null;
-this.temp=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.ac=0;
 this.mDsimulation=false;
 this.isVersion5=false;
-this.elementNames=Clazz.new_($I$(1));
-}, 1);
+this.elementNames=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['inputOnly','mDsimulation','isVersion5'],'F',['temp'],'I',['ac'],'O',['atomNames','String[]','elementNames','javajs.util.Lst','gibbsEnergy','Double','+gibbsEntropy','+electronEne','+kinEne','+totEne']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.isPrimitive=true;
@@ -65,12 +50,12 @@ p$1.setSymmetry.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'readElementNames', function () {
-this.elementNames.addLast$TV(this.getTokens$()[3]);
+this.elementNames.addLast$O(this.getTokens$()[3]);
 }, p$1);
 
 Clazz.newMeth(C$, 'readAtomCountAndSetNames', function () {
 var numofElement=Clazz.array(Integer.TYPE, [100]);
-var tokens=$I$(2).getTokens$S(this.line.substring$I(this.line.indexOf$S("=") + 1));
+var tokens=(function(a,f){return f.apply(null,a)})([this.line.substring$I(this.line.indexOf$S("=") + 1)],$I$(2).getTokens$S);
 this.ac=0;
 for (var i=0; i < tokens.length; i++) this.ac+=(numofElement[i]=this.parseIntStr$S(tokens[i]));
 
@@ -104,7 +89,7 @@ this.setFractionalCoordinates$Z(false);
 Clazz.newMeth(C$, 'readInitialCoordinates', function () {
 var counter=0;
 while (this.rd$() != null  && this.line.length$() > 10 ){
-this.addAtomXYZSymName$SA$I$S$S($I$(2).getTokens$S(p$1.fixMinus$S.apply(this, [this.line])), 0, null, this.atomNames[counter++]);
+this.addAtomXYZSymName$SA$I$S$S((function(a,f){return f.apply(null,a)})([p$1.fixMinus$S.apply(this, [this.line])],$I$(2).getTokens$S), 0, null, this.atomNames[counter++]);
 }
 this.asc.setAtomSetName$S("Initial Coordinates");
 }, p$1);
@@ -118,10 +103,10 @@ while (this.rd$() != null  && this.line.indexOf$S("----------") < 0 )this.addAto
 
 Clazz.newMeth(C$, 'readEnergy', function () {
 this.rd$();
-var tokens=$I$(2).getTokens$S(this.rd$());
+var tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(2).getTokens$S);
 this.gibbsEnergy=Double.valueOf$D(Double.parseDouble$S(tokens[4]));
 this.rd$();
-tokens=$I$(2).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(2).getTokens$S);
 var enthalpy=Double.parseDouble$S(tokens[3]);
 this.gibbsEntropy=Double.valueOf$D(enthalpy - this.gibbsEnergy.doubleValue$());
 }, p$1);
@@ -139,27 +124,27 @@ this.asc.setAtomSetName$S("G = " + this.gibbsEnergy.toString() + " eV, T*S = " +
 Clazz.newMeth(C$, 'readMdyn', function () {
 var tokens=this.getTokens$();
 this.rd$();
-tokens=$I$(2).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(2).getTokens$S);
 this.electronEne=Double.valueOf$D(Double.parseDouble$S(tokens[4]));
-tokens=$I$(2).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(2).getTokens$S);
 this.kinEne=Double.valueOf$D(Double.parseDouble$S(tokens[4]));
 this.temp=this.parseFloatStr$S(tokens[6]);
 this.readLines$I(3);
-tokens=$I$(2).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(2).getTokens$S);
 this.totEne=Double.valueOf$D(Double.parseDouble$S(tokens[4]));
 p$1.setAtomSetInfoMd.apply(this, []);
 }, p$1);
 
 Clazz.newMeth(C$, 'setAtomSetInfoMd', function () {
-this.asc.setAtomSetName$S("Temp. = " + $I$(3).formatDecimal$F$I((this.temp), 2) + " K, Energy = " + this.totEne.toString() + " eV" );
+this.asc.setAtomSetName$S("Temp. = " + (function(a,f){return f.apply(null,a)})([(this.temp), 2],$I$(3).formatDecimal$F$I) + " K, Energy = " + this.totEne.toString() + " eV" );
 this.asc.setCurrentModelInfo$S$O("Energy", this.totEne);
 this.asc.setInfo$S$O("Energy", this.totEne);
 this.asc.setCurrentModelInfo$S$O("EleEnergy", this.kinEne);
 this.asc.setInfo$S$O("EleEnergy", this.electronEne);
 this.asc.setCurrentModelInfo$S$O("Kinetic", this.electronEne);
 this.asc.setInfo$S$O("Kinetic", this.kinEne);
-this.asc.setCurrentModelInfo$S$O("Temperature", $I$(3).formatDecimal$F$I((this.temp), 2));
-this.asc.setInfo$S$O("Temperature", $I$(3).formatDecimal$F$I((this.temp), 2));
+this.asc.setCurrentModelInfo$S$O("Temperature", (function(a,f){return f.apply(null,a)})([(this.temp), 2],$I$(3).formatDecimal$F$I));
+this.asc.setInfo$S$O("Temperature", (function(a,f){return f.apply(null,a)})([(this.temp), 2],$I$(3).formatDecimal$F$I));
 }, p$1);
 
 Clazz.newMeth(C$, 'readFrequency', function () {
@@ -186,4 +171,4 @@ this.rd$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

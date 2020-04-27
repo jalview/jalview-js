@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},p$2={},I$=[[0,'java.nio.charset.CoderResult','java.nio.ByteBuffer','java.nio.charset.CodingErrorAction',['sun.nio.cs.Surrogate','.Parser'],'sun.nio.cs.StandardCharsets',['sun.nio.cs.UTF_8','.Decoder'],['sun.nio.cs.UTF_8','.Encoder']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UTF_8", function(){
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},p$2={},I$=[[0,'java.nio.charset.CoderResult','sun.nio.cs.UTF_8','java.nio.ByteBuffer','java.nio.charset.CodingErrorAction',['sun.nio.cs.Surrogate','.Parser'],'sun.nio.cs.StandardCharsets',['sun.nio.cs.UTF_8','.Decoder'],['sun.nio.cs.UTF_8','.Encoder']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UTF_8", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'sun.nio.cs.Unicode');
+C$.$classes$=[['Decoder',10],['Encoder',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S$SA.apply(this, ["UTF-8", $I$(5).aliases_UTF_8]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$SA.apply(this,["UTF-8", $I$(6).aliases_UTF_8]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'historicalName$', function () {
@@ -19,11 +18,11 @@ return "UTF8";
 });
 
 Clazz.newMeth(C$, 'newDecoder$', function () {
-return Clazz.new_($I$(6).c$$java_nio_charset_Charset,[this]);
+return Clazz.new_($I$(7,1).c$$java_nio_charset_Charset,[this]);
 });
 
 Clazz.newMeth(C$, 'newEncoder$', function () {
-return Clazz.new_($I$(7).c$$java_nio_charset_Charset,[this]);
+return Clazz.new_($I$(8,1).c$$java_nio_charset_Charset,[this]);
 });
 
 Clazz.newMeth(C$, 'updatePositions$java_nio_Buffer$I$java_nio_Buffer$I', function (src, sp, dst, dp) {
@@ -31,19 +30,17 @@ src.position$I(sp - src.arrayOffset$());
 dst.position$I(dp - dst.arrayOffset$());
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.UTF_8, "Decoder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.UTF_8, "Decoder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.nio.charset.CharsetDecoder', 'sun.nio.cs.ArrayDecoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_nio_charset_Charset', function (cs) {
-C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this, [cs, 1.0, 1.0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this,[cs, 1.0, 1.0]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'isNotContinuation$I', function (b) {
@@ -85,7 +82,7 @@ return $I$(1).malformedForLength$I(1);
 case 3:
 var b1=src.get$();
 var b2=src.get$();
-return $I$(1).malformedForLength$I(((b1 == -32 && (b2 & 224) == 128 ) || C$.isNotContinuation$I(b2) ) ? 1 : 2);
+return $I$(1,"malformedForLength$I",[((b1 == -32 && (b2 & 224) == 128 ) || C$.isNotContinuation$I(b2) ) ? 1 : 2]);
 case 4:
 b1=src.get$() & 255;
 b2=src.get$() & 255;
@@ -101,7 +98,7 @@ return null;
 Clazz.newMeth(C$, 'malformed$java_nio_ByteBuffer$I$java_nio_CharBuffer$I$I', function (src, sp, dst, dp, nb) {
 src.position$I(sp - src.arrayOffset$());
 var cr=C$.malformedN$java_nio_ByteBuffer$I(src, nb);
-P$.UTF_8.updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
+$I$(2).updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
 return cr;
 }, 1);
 
@@ -113,7 +110,7 @@ return cr;
 }, 1);
 
 Clazz.newMeth(C$, 'malformedForLength$java_nio_ByteBuffer$I$java_nio_CharBuffer$I$I', function (src, sp, dst, dp, malformedNB) {
-P$.UTF_8.updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
+$I$(2).updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
 return $I$(1).malformedForLength$I(malformedNB);
 }, 1);
 
@@ -123,7 +120,7 @@ return $I$(1).malformedForLength$I(malformedNB);
 }, 1);
 
 Clazz.newMeth(C$, 'xflow$java_nio_Buffer$I$I$java_nio_Buffer$I$I', function (src, sp, sl, dst, dp, nb) {
-P$.UTF_8.updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
+$I$(2).updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
 return (nb == 0 || sl - sp < nb ) ? $I$(1).UNDERFLOW : $I$(1).OVERFLOW;
 }, 1);
 
@@ -242,12 +239,12 @@ if (src.hasArray$() && dst.hasArray$() ) return p$1.decodeArrayLoop$java_nio_Byt
 });
 
 Clazz.newMeth(C$, 'getByteBuffer$java_nio_ByteBuffer$BA$I', function (bb, ba, sp) {
-if (bb == null ) bb=$I$(2).wrap$BA(ba);
+if (bb == null ) bb=$I$(3).wrap$BA(ba);
 bb.position$I(sp);
 return bb;
 }, 1);
 
-Clazz.newMeth(C$, ['decode$BA$I$I$CA','decode$'], function (sa, sp, len, da) {
+Clazz.newMeth(C$, 'decode$BA$I$I$CA', function (sa, sp, len, da) {
 var sl=sp + len;
 var dp=0;
 var dlASCII=Math.min(len, da.length);
@@ -262,13 +259,13 @@ da[dp++]=String.fromCharCode(b1);
 if (sp < sl) {
 var b2=sa[sp++];
 if (C$.isNotContinuation$I(b2)) {
-if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 da[dp++]=this.replacement$().charAt$I(0);
 sp--;
 } else {
 da[dp++]=String.fromCharCode((((b1 << 6) ^ b2) ^ (3968)));
 }continue;
-}if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+}if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 da[dp++]=this.replacement$().charAt$I(0);
 return dp;
 } else if ((b1 >> 4) == -2) {
@@ -276,7 +273,7 @@ if (sp + 1 < sl) {
 var b2=sa[sp++];
 var b3=sa[sp++];
 if (C$.isMalformed3$I$I$I(b1, b2, b3)) {
-if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 da[dp++]=this.replacement$().charAt$I(0);
 sp-=3;
 bb=C$.getByteBuffer$java_nio_ByteBuffer$BA$I(bb, sa, sp);
@@ -284,12 +281,12 @@ sp+=C$.malformedN$java_nio_ByteBuffer$I(bb, 3).length$();
 } else {
 var c=String.fromCharCode(((b1 << 12) ^ (b2 << 6) ^ (b3 ^ (-123008)) ));
 if (Character.isSurrogate$C(c)) {
-if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 da[dp++]=this.replacement$().charAt$I(0);
 } else {
 da[dp++]=c;
 }}continue;
-}if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+}if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 if (sp < sl && C$.isMalformed3_2$I$I(b1, sa[sp]) ) {
 da[dp++]=this.replacement$().charAt$I(0);
 continue;
@@ -302,7 +299,7 @@ var b3=sa[sp++];
 var b4=sa[sp++];
 var uc=((b1 << 18) ^ (b2 << 12) ^ (b3 << 6) ^ (b4 ^ (3678080)) );
 if (C$.isMalformed4$I$I$I(b2, b3, b4) || !Character.isSupplementaryCodePoint$I(uc) ) {
-if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 da[dp++]=this.replacement$().charAt$I(0);
 sp-=4;
 bb=C$.getByteBuffer$java_nio_ByteBuffer$BA$I(bb, sa, sp);
@@ -311,7 +308,7 @@ sp+=C$.malformedN$java_nio_ByteBuffer$I(bb, 4).length$();
 da[dp++]=Character.highSurrogate$I(uc);
 da[dp++]=Character.lowSurrogate$I(uc);
 }continue;
-}if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+}if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 b1&=255;
 if (b1 > 244 || sp < sl && C$.isMalformed4_2$I$I(b1, sa[sp] & 255)  ) {
 da[dp++]=this.replacement$().charAt$I(0);
@@ -323,36 +320,33 @@ continue;
 }da[dp++]=this.replacement$().charAt$I(0);
 return dp;
 } else {
-if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
+if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
 da[dp++]=this.replacement$().charAt$I(0);
 }}
 return dp;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.UTF_8, "Encoder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.UTF_8, "Encoder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.nio.charset.CharsetEncoder', 'sun.nio.cs.ArrayEncoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sgp=null;
-this.repl=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.repl=($b$[0] = 63, $b$[0]);
-}, 1);
+this.repl=63;
+},1);
+
+C$.$fields$=[['B',['repl'],'O',['sgp','sun.nio.cs.Surrogate.Parser']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_charset_Charset', function (cs) {
-C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this, [cs, 1.1, 3.0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this,[cs, 1.1, 3.0]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'canEncode$C', function (c) {
@@ -364,7 +358,7 @@ return ((repl.length == 1 && repl[0] >= 0 ) || C$.superclazz.prototype.isLegalRe
 });
 
 Clazz.newMeth(C$, 'overflow$java_nio_CharBuffer$I$java_nio_ByteBuffer$I', function (src, sp, dst, dp) {
-P$.UTF_8.updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
+$I$(2).updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
 return $I$(1).OVERFLOW;
 }, 1);
 
@@ -381,37 +375,37 @@ var da=dst.array$();
 var dp=dst.arrayOffset$() + dst.position$();
 var dl=dst.arrayOffset$() + dst.limit$();
 var dlASCII=dp + Math.min(sl - sp, dl - dp);
-while (dp < dlASCII && sa[sp] < "\u0080" )da[dp++]=((sa[sp++].$c()|0)|0);
+while (dp < dlASCII && sa[sp] < "\u0080" )da[dp++]=(sa[sp++].$c()|0);
 
 while (sp < sl){
 var c=sa[sp];
 if (c.$c() < 128 ) {
 if (dp >= dl) return C$.overflow$java_nio_CharBuffer$I$java_nio_ByteBuffer$I(src, sp, dst, dp);
-da[dp++]=((c.$c()|0)|0);
+da[dp++]=(c.$c()|0);
 } else if (c.$c() < 2048 ) {
 if (dl - dp < 2) return C$.overflow$java_nio_CharBuffer$I$java_nio_ByteBuffer$I(src, sp, dst, dp);
-da[dp++]=(((192 | (c.$c() >> 6))|0)|0);
-da[dp++]=(((128 | (c.$c() & 63))|0)|0);
+da[dp++]=((192 | (c.$c() >> 6))|0);
+da[dp++]=((128 | (c.$c() & 63))|0);
 } else if (Character.isSurrogate$C(c)) {
-if (this.sgp == null ) this.sgp=Clazz.new_($I$(4));
+if (this.sgp == null ) this.sgp=Clazz.new_($I$(5,1));
 var uc=this.sgp.parse$C$CA$I$I(c, sa, sp, sl);
 if (uc < 0) {
-P$.UTF_8.updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
+$I$(2).updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
 return this.sgp.error$();
 }if (dl - dp < 4) return C$.overflow$java_nio_CharBuffer$I$java_nio_ByteBuffer$I(src, sp, dst, dp);
-da[dp++]=(((240 | ((uc >> 18)))|0)|0);
-da[dp++]=(((128 | ((uc >> 12) & 63))|0)|0);
-da[dp++]=(((128 | ((uc >> 6) & 63))|0)|0);
-da[dp++]=(((128 | (uc & 63))|0)|0);
+da[dp++]=((240 | ((uc >> 18)))|0);
+da[dp++]=((128 | ((uc >> 12) & 63))|0);
+da[dp++]=((128 | ((uc >> 6) & 63))|0);
+da[dp++]=((128 | (uc & 63))|0);
 sp++;
 } else {
 if (dl - dp < 3) return C$.overflow$java_nio_CharBuffer$I$java_nio_ByteBuffer$I(src, sp, dst, dp);
-da[dp++]=(((224 | ((c.$c() >> 12)))|0)|0);
-da[dp++]=(((128 | ((c.$c() >> 6) & 63))|0)|0);
-da[dp++]=(((128 | (c.$c() & 63))|0)|0);
+da[dp++]=((224 | ((c.$c() >> 12)))|0);
+da[dp++]=((128 | ((c.$c() >> 6) & 63))|0);
+da[dp++]=((128 | (c.$c() & 63))|0);
 }sp++;
 }
-P$.UTF_8.updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
+$I$(2).updatePositions$java_nio_Buffer$I$java_nio_Buffer$I(src, sp, dst, dp);
 return $I$(1).UNDERFLOW;
 }, p$2);
 
@@ -421,28 +415,28 @@ while (src.hasRemaining$()){
 var c=src.get$();
 if (c.$c() < 128 ) {
 if (!dst.hasRemaining$()) return C$.overflow$java_nio_CharBuffer$I(src, mark);
-dst.put$B(($b$[0] = (c.$c()|0), $b$[0]));
+dst.put$B(($b$[0] = c.$c(), $b$[0]));
 } else if (c.$c() < 2048 ) {
 if (dst.remaining$() < 2) return C$.overflow$java_nio_CharBuffer$I(src, mark);
-dst.put$B(($b$[0] = ((192 | (c.$c() >> 6))|0), $b$[0]));
-dst.put$B(($b$[0] = ((128 | (c.$c() & 63))|0), $b$[0]));
+dst.put$B(($b$[0] = (192 | (c.$c() >> 6)), $b$[0]));
+dst.put$B(($b$[0] = (128 | (c.$c() & 63)), $b$[0]));
 } else if (Character.isSurrogate$C(c)) {
-if (this.sgp == null ) this.sgp=Clazz.new_($I$(4));
+if (this.sgp == null ) this.sgp=Clazz.new_($I$(5,1));
 var uc=this.sgp.parse$C$java_nio_CharBuffer(c, src);
 if (uc < 0) {
 src.position$I(mark);
 return this.sgp.error$();
 }if (dst.remaining$() < 4) return C$.overflow$java_nio_CharBuffer$I(src, mark);
-dst.put$B(($b$[0] = ((240 | ((uc >> 18)))|0), $b$[0]));
-dst.put$B(($b$[0] = ((128 | ((uc >> 12) & 63))|0), $b$[0]));
-dst.put$B(($b$[0] = ((128 | ((uc >> 6) & 63))|0), $b$[0]));
-dst.put$B(($b$[0] = ((128 | (uc & 63))|0), $b$[0]));
+dst.put$B(($b$[0] = (240 | ((uc >> 18))), $b$[0]));
+dst.put$B(($b$[0] = (128 | ((uc >> 12) & 63)), $b$[0]));
+dst.put$B(($b$[0] = (128 | ((uc >> 6) & 63)), $b$[0]));
+dst.put$B(($b$[0] = (128 | (uc & 63)), $b$[0]));
 mark++;
 } else {
 if (dst.remaining$() < 3) return C$.overflow$java_nio_CharBuffer$I(src, mark);
-dst.put$B(($b$[0] = ((224 | ((c.$c() >> 12)))|0), $b$[0]));
-dst.put$B(($b$[0] = ((128 | ((c.$c() >> 6) & 63))|0), $b$[0]));
-dst.put$B(($b$[0] = ((128 | (c.$c() & 63))|0), $b$[0]));
+dst.put$B(($b$[0] = (224 | ((c.$c() >> 12))), $b$[0]));
+dst.put$B(($b$[0] = (128 | ((c.$c() >> 6) & 63)), $b$[0]));
+dst.put$B(($b$[0] = (128 | (c.$c() & 63)), $b$[0]));
 }mark++;
 }
 src.position$I(mark);
@@ -455,38 +449,38 @@ if (src.hasArray$() && dst.hasArray$() ) return p$2.encodeArrayLoop$java_nio_Cha
 });
 
 Clazz.newMeth(C$, 'implReplaceWith$BA', function (newReplacement) {
-this.repl=($b$[0] = newReplacement[0], $b$[0]);
+this.repl=newReplacement[0];
 });
 
-Clazz.newMeth(C$, ['encode$CA$I$I$BA','encode$'], function (sa, sp, len, da) {
+Clazz.newMeth(C$, 'encode$CA$I$I$BA', function (sa, sp, len, da) {
 var sl=sp + len;
 var dp=0;
 var dlASCII=dp + Math.min(len, da.length);
-while (dp < dlASCII && sa[sp] < "\u0080" )da[dp++]=((sa[sp++].$c()|0)|0);
+while (dp < dlASCII && sa[sp] < "\u0080" )da[dp++]=(sa[sp++].$c()|0);
 
 while (sp < sl){
 var c=sa[sp++];
 if (c.$c() < 128 ) {
-da[dp++]=((c.$c()|0)|0);
+da[dp++]=(c.$c()|0);
 } else if (c.$c() < 2048 ) {
-da[dp++]=(((192 | (c.$c() >> 6))|0)|0);
-da[dp++]=(((128 | (c.$c() & 63))|0)|0);
+da[dp++]=((192 | (c.$c() >> 6))|0);
+da[dp++]=((128 | (c.$c() & 63))|0);
 } else if (Character.isSurrogate$C(c)) {
-if (this.sgp == null ) this.sgp=Clazz.new_($I$(4));
+if (this.sgp == null ) this.sgp=Clazz.new_($I$(5,1));
 var uc=this.sgp.parse$C$CA$I$I(c, sa, sp - 1, sl);
 if (uc < 0) {
-if (this.malformedInputAction$() !== $I$(3).REPLACE ) return -1;
-da[dp++]=(this.repl|0);
+if (this.malformedInputAction$() !== $I$(4).REPLACE ) return -1;
+da[dp++]=this.repl;
 } else {
-da[dp++]=(((240 | ((uc >> 18)))|0)|0);
-da[dp++]=(((128 | ((uc >> 12) & 63))|0)|0);
-da[dp++]=(((128 | ((uc >> 6) & 63))|0)|0);
-da[dp++]=(((128 | (uc & 63))|0)|0);
+da[dp++]=((240 | ((uc >> 18)))|0);
+da[dp++]=((128 | ((uc >> 12) & 63))|0);
+da[dp++]=((128 | ((uc >> 6) & 63))|0);
+da[dp++]=((128 | (uc & 63))|0);
 sp++;
 }} else {
-da[dp++]=(((224 | ((c.$c() >> 12)))|0)|0);
-da[dp++]=(((128 | ((c.$c() >> 6) & 63))|0)|0);
-da[dp++]=(((128 | (c.$c() & 63))|0)|0);
+da[dp++]=((224 | ((c.$c() >> 12)))|0);
+da[dp++]=((128 | ((c.$c() >> 6) & 63))|0);
+da[dp++]=((128 | (c.$c() & 63))|0);
 }}
 return dp;
 });
@@ -495,4 +489,4 @@ var $b$ = new Int8Array(1);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

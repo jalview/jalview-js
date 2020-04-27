@@ -1,93 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.math.BitSieve','java.util.Random','java.util.Arrays','java.math.MutableBigInteger','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BigInteger", null, 'Number', 'Comparable');
-C$.myRandom=null;
-C$.TWO_TO_THE=null;
-C$.bitsPerDigit=null;
-C$.SMALL_PRIME_PRODUCT=null;
-C$.posConst=null;
-C$.negConst=null;
-C$.powerCache=null;
-C$.logCache=null;
-C$.LOG_TWO=0;
-C$.ZERO=null;
-C$.ONE=null;
-C$.TWO=null;
-C$.NEGATIVE_ONE=null;
-C$.TEN=null;
-C$.bnExpModThreshTable32=null;
-C$.bnExpModThreshTable24=null;
-C$.zeros=null;
-C$.digitsPerLongRadix48=null;
-C$.longRadix48=null;
-C$.digitsPerInt32=null;
-C$.intRadix32=null;
-C$.digitsPerInt24=null;
-C$.intRadix24=null;
+(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.math.BitSieve','java.util.Random','java.util.Arrays','java.math.MutableBigInteger','StringBuilder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BigInteger", null, 'Number', 'Comparable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-C$.TWO_TO_THE=[] ||Clazz.array(Long.TYPE, [49]);
-C$.TWO_TO_THE[0]=1;
-for (var i=1, n=48; i <= n; i++) C$.TWO_TO_THE[i]=C$.TWO_TO_THE[i - 1] * 2;
-
-};
-C$.bitsPerDigit=Clazz.array(Integer.TYPE, -1, [0, 0, 1024, 1624, 2048, 2378, 2648, 2875, 3072, 3247, 3402, 3543, 3672, 3790, 3899, 4001, 4096, 4186, 4271, 4350, 4426, 4498, 4567, 4633, 4696, 4756, 4814, 4870, 4923, 4975, 5025, 5074, 5120, 5166, 5210, 5253, 5295]);
-C$.SMALL_PRIME_PRODUCT=C$.valueOf$J(152125131763605);
-C$.posConst=Clazz.array(C$, [17]);
-C$.negConst=Clazz.array(C$, [17]);
-C$.LOG_TWO=Math.log(2.0);
-{
-for (var i=1; i <= 16; i++) {
-var magnitude=Clazz.array(Integer.TYPE, [1]);
-magnitude[0]=i;
-C$.posConst[i]=Clazz.new_(C$.c$$IA$I,[magnitude, 1]);
-C$.negConst[i]=Clazz.new_(C$.c$$IA$I,[magnitude, -1]);
-}
-C$.powerCache=Clazz.array(C$, [37, null]);
-C$.logCache=Clazz.array(Double.TYPE, [37]);
-for (var i=2; i <= 36; i++) {
-C$.powerCache[i]=Clazz.array(C$, -1, [C$.valueOf$J(i)]);
-C$.logCache[i]=Math.log(i);
-}
-};
-C$.ZERO=Clazz.new_(C$.c$$IA$I,[Clazz.array(Integer.TYPE, [0]), 0]);
-C$.ONE=C$.valueOf$J(1);
-C$.TWO=C$.valueOf$J(2);
-C$.NEGATIVE_ONE=C$.valueOf$J(-1);
-C$.TEN=C$.valueOf$J(10);
-C$.bnExpModThreshTable32=Clazz.array(Integer.TYPE, -1, [7, 25, 81, 241, 673, 1793, 2147483647]);
-C$.bnExpModThreshTable24=Clazz.array(Integer.TYPE, -1, [7, 25, 81, 241, 673, 1793, 2147483647]);
-C$.zeros=Clazz.array(String, [64]);
-{
-C$.zeros[63]="000000000000000000000000000000000000000000000000000000000000000";
-for (var i=0; i < 63; i++) C$.zeros[i]=C$.zeros[63].substring$I$I(0, i);
-
-};
-C$.digitsPerLongRadix48=Clazz.array(Integer.TYPE, -1, [0, 0, 46, 29, 23, 20, 18, 16, 15, 14, 14, 13, 13, 12, 12, 12, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]);
-C$.longRadix48=Clazz.array(C$, -1, [null, null, C$.valueOf$J$J(16384, 0), C$.valueOf$J$J(15979, 1094942099), C$.valueOf$J$J(16384, 0), C$.valueOf$J$J(22204, 1977800241), C$.valueOf$J$J(23646, 1159987200), C$.valueOf$J$J(7737, -1526366847), C$.valueOf$J$J(8192, 0), C$.valueOf$J$J(5326, 1796636465), C$.valueOf$J$J(23283, 276447232), C$.valueOf$J$J(8037, -234981317), C$.valueOf$J$J(24911, 1275068416), C$.valueOf$J$J(5424, -2112458319), C$.valueOf$J$J(13200, 344068096), C$.valueOf$J$J(30208, -329154239), C$.valueOf$J$J(4096, 0), C$.valueOf$J$J(7979, -1942714447), C$.valueOf$J$J(14963, -1480538112), C$.valueOf$J$J(27122, -2139071189), C$.valueOf$J$J(2384, 797966336), C$.valueOf$J$J(3883, -1771999463), C$.valueOf$J$J(6183, -154967040), C$.valueOf$J$J(9645, 1551643729), C$.valueOf$J$J(14762, 1073741824), C$.valueOf$J$J(22204, 1977800241), C$.valueOf$J$J(1264, 665016832), C$.valueOf$J$J(1775, 2030534587), C$.valueOf$J$J(2462, -48496640), C$.valueOf$J$J(3377, -1253550019), C$.valueOf$J$J(4582, -835117568), C$.valueOf$J$J(6155, -196513505), C$.valueOf$J$J(8192, 0), C$.valueOf$J$J(10806, 67801377), C$.valueOf$J$J(14136, -959897088), C$.valueOf$J$J(18350, -1306177021), C$.valueOf$J$J(23646, 1159987200)]);
-C$.digitsPerInt32=Clazz.array(Integer.TYPE, -1, [0, 0, 30, 19, 15, 13, 11, 11, 10, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5]);
-C$.intRadix32=Clazz.array(Integer.TYPE, -1, [0, 0, 1073741824, 1162261467, 1073741824, 1220703125, 362797056, 1977326743, 1073741824, 387420489, 1000000000, 214358881, 429981696, 815730721, 1475789056, 170859375, 268435456, 410338673, 612220032, 893871739, 1280000000, 1801088541, 113379904, 148035889, 191102976, 244140625, 308915776, 387420489, 481890304, 594823321, 729000000, 887503681, 1073741824, 1291467969, 1544804416, 1838265625, 60466176]);
-C$.digitsPerInt24=Clazz.array(Integer.TYPE, -1, [0, 0, 23, 15, 11, 10, 9, 8, 7, 7, 7, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4]);
-C$.intRadix24=Clazz.array(Integer.TYPE, -1, [0, 0, 8388608, 14348907, 4194304, 9765625, 10077696, 5764801, 2097152, 4782969, 10000000, 1771561, 2985984, 4826809, 7529536, 11390625, 1048576, 1419857, 1889568, 2476099, 3200000, 4084101, 5153632, 6436343, 7962624, 9765625, 11881376, 14348907, 614656, 707281, 810000, 923521, 1048576, 1185921, 1336336, 1500625, 1679616]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.signum=0;
-this.mag=null;
-this.bitCount=0;
-this.bitLength=0;
-this.lowestSetBit=0;
-this.firstNonzeroIntNum=0;
-this.THIRD_CARRY=0;
-this.THIRD_MULT=0;
-this.stringValue=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.THIRD_CARRY=5592406;
 this.THIRD_MULT=11184811;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['signum','bitCount','bitLength','lowestSetBit','firstNonzeroIntNum','THIRD_CARRY','THIRD_MULT'],'S',['stringValue'],'O',['+mag']]
+,['D',['LOG_TWO'],'O',['myRandom','java.util.Random','TWO_TO_THE','long[]','bitsPerDigit','int[]','SMALL_PRIME_PRODUCT','java.math.BigInteger','posConst','java.math.BigInteger[]','+negConst','powerCache','java.math.BigInteger[][]','logCache','double[]','ZERO','java.math.BigInteger','+ONE','+TWO','+NEGATIVE_ONE','+TEN','bnExpModThreshTable32','int[]','+bnExpModThreshTable24','zeros','String[]','digitsPerLongRadix48','int[]','longRadix48','java.math.BigInteger[]','digitsPerInt32','int[]','+intRadix32','+digitsPerInt24','+intRadix24']]]
 
 Clazz.newMeth(C$, 'longNumberOfLeadingZeros$J', function (x) {
 var n;
@@ -132,7 +54,7 @@ return this.mag.length <= 1 && this.bitLength$() <= 23 ;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 
 this.valueOf = this.toString;
 }, 1);
@@ -401,13 +323,13 @@ var p;
 p=Clazz.new_(C$.c$$I$java_util_Random,[bitLength, rnd]).setBit$I(bitLength - 1);
 p.mag[p.mag.length - 1]&=-2;
 var searchLen=C$.getPrimeSearchLen$I(bitLength);
-var searchSieve=Clazz.new_($I$(1).c$$java_math_BigInteger$I,[p, searchLen]);
+var searchSieve=Clazz.new_($I$(1,1).c$$java_math_BigInteger$I,[p, searchLen]);
 var candidate=searchSieve.retrieve$java_math_BigInteger$I$java_util_Random(p, certainty, rnd);
 while ((candidate == null ) || (candidate.bitLength$() != bitLength) ){
 p=p.add$java_math_BigInteger(C$.valueOf$J(2 * searchLen));
 if (p.bitLength$() != bitLength) p=Clazz.new_(C$.c$$I$java_util_Random,[bitLength, rnd]).setBit$I(bitLength - 1);
 p.mag[p.mag.length - 1]&=-2;
-searchSieve=Clazz.new_($I$(1).c$$java_math_BigInteger$I,[p, searchLen]);
+searchSieve=Clazz.new_($I$(1,1).c$$java_math_BigInteger$I,[p, searchLen]);
 candidate=searchSieve.retrieve$java_math_BigInteger$I$java_util_Random(p, certainty, rnd);
 }
 return candidate;
@@ -432,7 +354,7 @@ result=result.add$java_math_BigInteger(C$.TWO);
 }if (result.testBit$I(0)) result=result.subtract$java_math_BigInteger(C$.ONE);
 var searchLen=C$.getPrimeSearchLen$I(result.bitLength$());
 while (true){
-var searchSieve=Clazz.new_($I$(1).c$$java_math_BigInteger$I,[result, searchLen]);
+var searchSieve=Clazz.new_($I$(1,1).c$$java_math_BigInteger$I,[result, searchLen]);
 var candidate=searchSieve.retrieve$java_math_BigInteger$I$java_util_Random(result, 100, null);
 if (candidate != null ) return candidate;
 result=result.add$java_math_BigInteger(C$.valueOf$J(2 * searchLen));
@@ -559,7 +481,7 @@ return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'myRandom$', function () {
-return (C$.myRandom == null  ? (C$.myRandom=Clazz.new_($I$(2))) : C$.myRandom);
+return (C$.myRandom == null  ? (C$.myRandom=Clazz.new_($I$(2,1))) : C$.myRandom);
 }, 1);
 
 Clazz.newMeth(C$, 'checkRange', function () {
@@ -1078,9 +1000,9 @@ return p$1.divideBurnikelZiegler$java_math_BigInteger.apply(this, [val]);
 }});
 
 Clazz.newMeth(C$, 'divideKnuth$java_math_BigInteger', function (val) {
-var q=Clazz.new_($I$(4));
-var a=Clazz.new_($I$(4).c$$IA,[this.mag]);
-var b=Clazz.new_($I$(4).c$$IA,[val.mag]);
+var q=Clazz.new_($I$(4,1));
+var a=Clazz.new_($I$(4,1).c$$IA,[this.mag]);
+var b=Clazz.new_($I$(4,1).c$$IA,[val.mag]);
 a.divideKnuth$java_math_MutableBigInteger$java_math_MutableBigInteger$Z(b, q, false);
 return q.toBigInteger$I(this.signum * val.signum);
 }, p$1);
@@ -1094,9 +1016,9 @@ return p$1.divideAndRemainderBurnikelZiegler$java_math_BigInteger.apply(this, [v
 
 Clazz.newMeth(C$, 'divideAndRemainderKnuth$java_math_BigInteger', function (val) {
 var result=Clazz.array(C$, [2]);
-var q=Clazz.new_($I$(4));
-var a=Clazz.new_($I$(4).c$$IA,[this.mag]);
-var b=Clazz.new_($I$(4).c$$IA,[val.mag]);
+var q=Clazz.new_($I$(4,1));
+var a=Clazz.new_($I$(4,1).c$$IA,[this.mag]);
+var b=Clazz.new_($I$(4,1).c$$IA,[val.mag]);
 var r=a.divideKnuth$java_math_MutableBigInteger$java_math_MutableBigInteger(b, q);
 result[0]=q.toBigInteger$I(this.signum == val.signum ? 1 : -1);
 result[1]=r.toBigInteger$I(this.signum);
@@ -1111,9 +1033,9 @@ return p$1.remainderBurnikelZiegler$java_math_BigInteger.apply(this, [val]);
 }});
 
 Clazz.newMeth(C$, 'remainderKnuth$java_math_BigInteger', function (val) {
-var q=Clazz.new_($I$(4));
-var a=Clazz.new_($I$(4).c$$IA,[this.mag]);
-var b=Clazz.new_($I$(4).c$$IA,[val.mag]);
+var q=Clazz.new_($I$(4,1));
+var a=Clazz.new_($I$(4,1).c$$IA,[this.mag]);
+var b=Clazz.new_($I$(4,1).c$$IA,[val.mag]);
 return a.divideKnuth$java_math_MutableBigInteger$java_math_MutableBigInteger(b, q).toBigInteger$I(this.signum);
 }, p$1);
 
@@ -1126,8 +1048,8 @@ return p$1.divideAndRemainderBurnikelZiegler$java_math_BigInteger.apply(this, [v
 }, p$1);
 
 Clazz.newMeth(C$, 'divideAndRemainderBurnikelZiegler$java_math_BigInteger', function (val) {
-var q=Clazz.new_($I$(4));
-var r=Clazz.new_($I$(4).c$$java_math_BigInteger,[this]).divideAndRemainderBurnikelZiegler$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4).c$$java_math_BigInteger,[val]), q);
+var q=Clazz.new_($I$(4,1));
+var r=Clazz.new_($I$(4,1).c$$java_math_BigInteger,[this]).divideAndRemainderBurnikelZiegler$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4,1).c$$java_math_BigInteger,[val]), q);
 var qBigInt=q.isZero$() ? C$.ZERO : q.toBigInteger$I(this.signum * val.signum);
 var rBigInt=r.isZero$() ? C$.ZERO : r.toBigInteger$I(this.signum);
 return Clazz.array(C$, -1, [qBigInt, rBigInt]);
@@ -1198,8 +1120,8 @@ return answer;
 Clazz.newMeth(C$, 'gcd$java_math_BigInteger', function (val) {
 if (val.signum == 0) return this.abs$();
  else if (this.signum == 0) return val.abs$();
-var a=Clazz.new_($I$(4).c$$java_math_BigInteger,[this]);
-var b=Clazz.new_($I$(4).c$$java_math_BigInteger,[val]);
+var a=Clazz.new_($I$(4,1).c$$java_math_BigInteger,[this]);
+var b=Clazz.new_($I$(4,1).c$$java_math_BigInteger,[val]);
 var result=a.hybridGCD$java_math_MutableBigInteger(b);
 return result.toBigInteger$I(1);
 });
@@ -1295,13 +1217,13 @@ var y2=m1.modInverse$java_math_BigInteger(m2);
 if (m.mag.length < 33554432) {
 result=a1.multiply$java_math_BigInteger(m2).multiply$java_math_BigInteger(y1).add$java_math_BigInteger(a2.multiply$java_math_BigInteger(m1).multiply$java_math_BigInteger(y2)).mod$java_math_BigInteger(m);
 } else {
-var t1=Clazz.new_($I$(4));
-Clazz.new_($I$(4).c$$java_math_BigInteger,[a1.multiply$java_math_BigInteger(m2)]).multiply$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4).c$$java_math_BigInteger,[y1]), t1);
-var t2=Clazz.new_($I$(4));
-Clazz.new_($I$(4).c$$java_math_BigInteger,[a2.multiply$java_math_BigInteger(m1)]).multiply$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4).c$$java_math_BigInteger,[y2]), t2);
+var t1=Clazz.new_($I$(4,1));
+Clazz.new_([a1.multiply$java_math_BigInteger(m2)],$I$(4,1).c$$java_math_BigInteger).multiply$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4,1).c$$java_math_BigInteger,[y1]), t1);
+var t2=Clazz.new_($I$(4,1));
+Clazz.new_([a2.multiply$java_math_BigInteger(m1)],$I$(4,1).c$$java_math_BigInteger).multiply$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4,1).c$$java_math_BigInteger,[y2]), t2);
 t1.add$java_math_MutableBigInteger(t2);
-var q=Clazz.new_($I$(4));
-result=t1.divide$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4).c$$java_math_BigInteger,[m]), q).toBigInteger$();
+var q=Clazz.new_($I$(4,1));
+result=t1.divide$java_math_MutableBigInteger$java_math_MutableBigInteger(Clazz.new_($I$(4,1).c$$java_math_BigInteger,[m]), q).toBigInteger$();
 }}return (invertResult ? result.modInverse$java_math_BigInteger(m) : result);
 });
 
@@ -1324,9 +1246,9 @@ for (var i=0; i < tblmask; i++) table[i]=Clazz.array(Integer.TYPE, [modLen]);
 
 var inv=-$I$(4).inverseMod24$I(mod[modLen - 1]);
 var a=C$.leftShift$IA$I$I(base, base.length, modLen * 24);
-var q=Clazz.new_($I$(4));
-var a2=Clazz.new_($I$(4).c$$IA,[a]);
-var b2=Clazz.new_($I$(4).c$$IA,[mod]);
+var q=Clazz.new_($I$(4,1));
+var a2=Clazz.new_($I$(4,1).c$$IA,[a]);
+var b2=Clazz.new_($I$(4,1).c$$IA,[mod]);
 var r=a2.divide$java_math_MutableBigInteger$java_math_MutableBigInteger(b2, q);
 table[0]=r.toIntArray$();
 if (table[0].length < modLen) {
@@ -1502,8 +1424,8 @@ if (m.equals$O(C$.ONE)) return C$.ZERO;
 var modVal=this;
 if (this.signum < 0 || (this.compareMagnitude$java_math_BigInteger(m) >= 0) ) modVal=this.mod$java_math_BigInteger(m);
 if (modVal.equals$O(C$.ONE)) return C$.ONE;
-var a=Clazz.new_($I$(4).c$$java_math_BigInteger,[modVal]);
-var b=Clazz.new_($I$(4).c$$java_math_BigInteger,[m]);
+var a=Clazz.new_($I$(4,1).c$$java_math_BigInteger,[modVal]);
+var b=Clazz.new_($I$(4,1).c$$java_math_BigInteger,[m]);
 var result=a.mutableModInverse$java_math_MutableBigInteger(b);
 return result.toBigInteger$I(1);
 });
@@ -1722,7 +1644,7 @@ if (!w.testBit$I(0) || w.equals$O(C$.ONE) ) return false;
 return w.primeToCertainty$I$java_util_Random(certainty, null);
 });
 
-Clazz.newMeth(C$, ['compareTo$java_math_BigInteger','compareTo$','compareTo$TT'], function (val) {
+Clazz.newMeth(C$, ['compareTo$java_math_BigInteger','compareTo$O'], function (val) {
 if (this.signum == val.signum) {
 switch (this.signum) {
 case 1:
@@ -1813,7 +1735,7 @@ Clazz.newMeth(C$, 'toString$I', function (radix) {
 if (this.signum == 0) return "0";
 if (radix < 2 || radix > 36 ) radix=10;
 if (this.mag.length <= 20) return p$1.smallToString$I.apply(this, [radix]);
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(5,1));
 if (this.signum < 0) {
 C$.toString$java_math_BigInteger$StringBuilder$I$I(this.negate$(), sb, radix, 0);
 sb.insert$I$C(0, "-");
@@ -1830,16 +1752,16 @@ var tmp=this.abs$();
 var numGroups=0;
 while (tmp.signum != 0){
 var d=C$.longRadix48[radix];
-var q=Clazz.new_($I$(4));
-var a=Clazz.new_($I$(4).c$$IA,[tmp.mag]);
-var b=Clazz.new_($I$(4).c$$IA,[d.mag]);
+var q=Clazz.new_($I$(4,1));
+var a=Clazz.new_($I$(4,1).c$$IA,[tmp.mag]);
+var b=Clazz.new_($I$(4,1).c$$IA,[d.mag]);
 var r=a.divide$java_math_MutableBigInteger$java_math_MutableBigInteger(b, q);
 var q2=q.toBigInteger$I(tmp.signum * d.signum);
 var r2=r.toBigInteger$I(tmp.signum * d.signum);
 digitGroup[numGroups++]=Long.toString$J$I(r2.longValue$(), radix);
 tmp=q2;
 }
-var buf=Clazz.new_($I$(5).c$$I,[numGroups * C$.digitsPerLongRadix48[radix] + 1]);
+var buf=Clazz.new_($I$(5,1).c$$I,[numGroups * C$.digitsPerLongRadix48[radix] + 1]);
 if (this.signum < 0) {
 buf.append$C("-");
 }buf.append$S(digitGroup[numGroups - 1]);
@@ -1878,7 +1800,7 @@ var cacheLine=C$.powerCache[radix];
 if (exponent < cacheLine.length) {
 return cacheLine[exponent];
 }var oldLength=cacheLine.length;
-cacheLine=$I$(3).copyOf$TTA$I(cacheLine, exponent + 1);
+cacheLine=$I$(3).copyOf$OA$I(cacheLine, exponent + 1);
 for (var i=oldLength; i <= exponent; i++) {
 cacheLine[i]=cacheLine[i - 1].pow$I(2);
 }
@@ -1923,7 +1845,7 @@ bytesCopied=1;
 } else {
 nextInt>>>=8;
 bytesCopied++;
-}byteArray[i]=((nextInt|0)|0);
+}byteArray[i]=(nextInt|0);
 }
 return byteArray;
 }, p$1);
@@ -2131,14 +2053,60 @@ if (value >= -32768 && value <= 32767 ) return this.shortValue$();
 Clazz.newMeth(C$, 'byteValueExact$', function () {
 if (this.isOneInt$()) {
 var value=this.intValue$();
-if (value >= -128 && value <= 127 ) return $b$[0] = this.byteValue$(), $b$[0];
+if (value >= -128 && value <= 127 ) return this.byteValue$();
 }throw Clazz.new_(Clazz.load('ArithmeticException').c$$S,["BigInteger out of byte range"]);
 });
 
 Clazz.newMeth(C$, 'getLeadingZerosShift$I', function (val) {
 return Integer.numberOfLeadingZeros$I(val) - 8;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
-var $b$ = new Int8Array(1);
+{
+C$.TWO_TO_THE=[] ||Clazz.array(Long.TYPE, [49]);
+C$.TWO_TO_THE[0]=1;
+for (var i=1, n=48; i <= n; i++) C$.TWO_TO_THE[i]=C$.TWO_TO_THE[i - 1] * 2;
+
+};
+C$.bitsPerDigit=Clazz.array(Integer.TYPE, -1, [0, 0, 1024, 1624, 2048, 2378, 2648, 2875, 3072, 3247, 3402, 3543, 3672, 3790, 3899, 4001, 4096, 4186, 4271, 4350, 4426, 4498, 4567, 4633, 4696, 4756, 4814, 4870, 4923, 4975, 5025, 5074, 5120, 5166, 5210, 5253, 5295]);
+C$.SMALL_PRIME_PRODUCT=C$.valueOf$J(152125131763605);
+C$.posConst=Clazz.array(C$, [17]);
+C$.negConst=Clazz.array(C$, [17]);
+C$.LOG_TWO=Math.log(2.0);
+{
+for (var i=1; i <= 16; i++) {
+var magnitude=Clazz.array(Integer.TYPE, [1]);
+magnitude[0]=i;
+C$.posConst[i]=Clazz.new_(C$.c$$IA$I,[magnitude, 1]);
+C$.negConst[i]=Clazz.new_(C$.c$$IA$I,[magnitude, -1]);
+}
+C$.powerCache=Clazz.array(C$, [37, null]);
+C$.logCache=Clazz.array(Double.TYPE, [37]);
+for (var i=2; i <= 36; i++) {
+C$.powerCache[i]=Clazz.array(C$, -1, [C$.valueOf$J(i)]);
+C$.logCache[i]=Math.log(i);
+}
+};
+C$.ZERO=Clazz.new_(C$.c$$IA$I,[Clazz.array(Integer.TYPE, [0]), 0]);
+C$.ONE=C$.valueOf$J(1);
+C$.TWO=C$.valueOf$J(2);
+C$.NEGATIVE_ONE=C$.valueOf$J(-1);
+C$.TEN=C$.valueOf$J(10);
+C$.bnExpModThreshTable32=Clazz.array(Integer.TYPE, -1, [7, 25, 81, 241, 673, 1793, 2147483647]);
+C$.bnExpModThreshTable24=Clazz.array(Integer.TYPE, -1, [7, 25, 81, 241, 673, 1793, 2147483647]);
+C$.zeros=Clazz.array(String, [64]);
+{
+C$.zeros[63]="000000000000000000000000000000000000000000000000000000000000000";
+for (var i=0; i < 63; i++) C$.zeros[i]=C$.zeros[63].substring$I$I(0, i);
+
+};
+C$.digitsPerLongRadix48=Clazz.array(Integer.TYPE, -1, [0, 0, 46, 29, 23, 20, 18, 16, 15, 14, 14, 13, 13, 12, 12, 12, 11, 11, 11, 11, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]);
+C$.longRadix48=Clazz.array(C$, -1, [null, null, C$.valueOf$J$J(16384, 0), C$.valueOf$J$J(15979, 1094942099), C$.valueOf$J$J(16384, 0), C$.valueOf$J$J(22204, 1977800241), C$.valueOf$J$J(23646, 1159987200), C$.valueOf$J$J(7737, -1526366847), C$.valueOf$J$J(8192, 0), C$.valueOf$J$J(5326, 1796636465), C$.valueOf$J$J(23283, 276447232), C$.valueOf$J$J(8037, -234981317), C$.valueOf$J$J(24911, 1275068416), C$.valueOf$J$J(5424, -2112458319), C$.valueOf$J$J(13200, 344068096), C$.valueOf$J$J(30208, -329154239), C$.valueOf$J$J(4096, 0), C$.valueOf$J$J(7979, -1942714447), C$.valueOf$J$J(14963, -1480538112), C$.valueOf$J$J(27122, -2139071189), C$.valueOf$J$J(2384, 797966336), C$.valueOf$J$J(3883, -1771999463), C$.valueOf$J$J(6183, -154967040), C$.valueOf$J$J(9645, 1551643729), C$.valueOf$J$J(14762, 1073741824), C$.valueOf$J$J(22204, 1977800241), C$.valueOf$J$J(1264, 665016832), C$.valueOf$J$J(1775, 2030534587), C$.valueOf$J$J(2462, -48496640), C$.valueOf$J$J(3377, -1253550019), C$.valueOf$J$J(4582, -835117568), C$.valueOf$J$J(6155, -196513505), C$.valueOf$J$J(8192, 0), C$.valueOf$J$J(10806, 67801377), C$.valueOf$J$J(14136, -959897088), C$.valueOf$J$J(18350, -1306177021), C$.valueOf$J$J(23646, 1159987200)]);
+C$.digitsPerInt32=Clazz.array(Integer.TYPE, -1, [0, 0, 30, 19, 15, 13, 11, 11, 10, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5]);
+C$.intRadix32=Clazz.array(Integer.TYPE, -1, [0, 0, 1073741824, 1162261467, 1073741824, 1220703125, 362797056, 1977326743, 1073741824, 387420489, 1000000000, 214358881, 429981696, 815730721, 1475789056, 170859375, 268435456, 410338673, 612220032, 893871739, 1280000000, 1801088541, 113379904, 148035889, 191102976, 244140625, 308915776, 387420489, 481890304, 594823321, 729000000, 887503681, 1073741824, 1291467969, 1544804416, 1838265625, 60466176]);
+C$.digitsPerInt24=Clazz.array(Integer.TYPE, -1, [0, 0, 23, 15, 11, 10, 9, 8, 7, 7, 7, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4]);
+C$.intRadix24=Clazz.array(Integer.TYPE, -1, [0, 0, 8388608, 14348907, 4194304, 9765625, 10077696, 5764801, 2097152, 4782969, 10000000, 1771561, 2985984, 4826809, 7529536, 11390625, 1048576, 1419857, 1889568, 2476099, 3200000, 4084101, 5153632, 6436343, 7962624, 9765625, 11881376, 14348907, 614656, 707281, 810000, 923521, 1048576, 1185921, 1336336, 1500625, 1679616]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,43 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PMeshWriter");
+(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.util.C']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "PMeshWriter");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.imesh=null;
-this.isBinary=false;
-this.oc=null;
-this.i0=0;
-this.polygonIndexes=null;
-this.selectedPolyOnly=false;
-this.bsPolygons=null;
-this.haveBsDisplay=false;
-this.colorSolid=false;
-this.colorArrayed=false;
-this.cx=0;
-this.vertexColixes=null;
-this.noColor=false;
-this.contourColixes=null;
-this.vertexValues=null;
-this.vertexCount=0;
-this.imap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBinary','selectedPolyOnly','haveBsDisplay','colorSolid','colorArrayed','noColor'],'I',['i0','vertexCount'],'H',['cx'],'O',['imesh','org.jmol.shapesurface.IsosurfaceMesh','oc','javajs.util.OC','polygonIndexes','int[][]','bsPolygons','javajs.util.BS','vertexColixes','short[]','+contourColixes','vertexValues','float[]','imap','int[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'write$org_jmol_shapesurface_IsosurfaceMesh$Z', function (isosurfaceMesh, isBinary) {
 this.imesh=isosurfaceMesh;
 this.isBinary=isBinary;
-var bsPoly=Clazz.new_($I$(1));
-var bsVert=Clazz.new_($I$(1));
-var bsPoints=Clazz.new_($I$(1));
+var bsPoly=Clazz.new_($I$(1,1));
+var bsVert=Clazz.new_($I$(1,1));
+var bsPoints=Clazz.new_($I$(1,1));
 if (this.imesh.showPoints || this.imesh.pc <= 0 ) p$1.checkPoints$javajs_util_BS.apply(this, [bsPoints]);
 bsVert.or$javajs_util_BS(bsPoints);
 if (this.imesh.drawTriangles) p$1.checkTriangles$Z$javajs_util_BS$javajs_util_BS.apply(this, [false, bsPoly, bsVert]);
@@ -56,7 +36,7 @@ for (var i=0; i < nV; i++) p$1.outputXYZ$javajs_util_T3.apply(this, [this.imesh.
 if (!isBinary) p$1.outputInt$I.apply(this, [-1]);
 if (this.imesh.showPoints || this.imesh.pc <= 0 ) p$1.outputPoints$javajs_util_BS.apply(this, [bsPoints]);
 bsVert.or$javajs_util_BS(bsPoints);
-var bsDone=Clazz.new_($I$(1));
+var bsDone=Clazz.new_($I$(1,1));
 if (this.imesh.drawTriangles) p$1.outputTriangles$Z$javajs_util_BS$javajs_util_BS.apply(this, [false, bsPoly, bsDone]);
 if (this.imesh.pc > 0 && this.imesh.fillTriangles ) p$1.outputTriangles$Z$javajs_util_BS$javajs_util_BS.apply(this, [true, bsPoly, bsDone]);
 if (isBinary) this.oc.writeInt$I(0);
@@ -205,4 +185,4 @@ if ((check & 2) != 0) p$1.outputEdge$I$I$I.apply(this, [iB, iC, color]);
 if ((check & 4) != 0) p$1.outputEdge$I$I$I.apply(this, [iC, iA, color]);
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

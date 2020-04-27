@@ -1,38 +1,10 @@
-(function(){var P$=Clazz.newPackage("java.util.jar"),p$1={},p$2={},I$=[[0,'sun.security.util.ManifestEntryVerifier','sun.security.util.Debug','java.util.HashMap','java.security.CodeSigner','java.util.Hashtable','java.util.ArrayList','java.io.ByteArrayOutputStream','java.util.Locale','sun.security.util.SignatureFileVerifier','sun.security.util.ManifestDigester','java.security.cert.Certificate',['java.util.jar.JarVerifier','.VerifierCodeSource'],'java.security.CodeSource','java.util.jar.JarVerifier','java.util.Collections','java.util.zip.ZipEntry','java.util.HashSet']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JarVerifier", function(){
+(function(){var P$=Clazz.newPackage("java.util.jar"),p$1={},p$2={},I$=[[0,'sun.security.util.ManifestEntryVerifier','sun.security.util.Debug','java.util.HashMap','java.security.CodeSigner','java.util.Hashtable','java.util.ArrayList','java.io.ByteArrayOutputStream','java.util.Locale','sun.security.util.SignatureFileVerifier','sun.security.util.ManifestDigester','java.security.cert.Certificate',['java.util.jar.JarVerifier','.VerifierCodeSource'],'java.security.CodeSource','java.util.jar.JarVerifier','java.util.Collections','java.util.zip.ZipEntry','java.util.HashSet']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JarVerifier", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.debug=null;
+C$.$classes$=[['VerifierStream',8],['VerifierCodeSource',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.debug=$I$(2).getInstance$S("jar");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.verifiedSigners=null;
-this.sigFileSigners=null;
-this.sigFileData=null;
-this.pendingBlocks=null;
-this.signerCache=null;
-this.parsingBlockOrSF=false;
-this.parsingMeta=false;
-this.anyToVerify=false;
-this.baos=null;
-this.manDig=null;
-this.manifestRawBytes=null;
-this.eagerValidation=false;
-this.csdomain=null;
-this.manifestDigests=null;
-this.urlToCodeSourceMap=null;
-this.signerToCodeSource=null;
-this.lastURL=null;
-this.lastURLMap=null;
-this.emptySigner=null;
-this.signerMap=null;
-this.emptyEnumeration=null;
-this.jarCodeSigners=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.parsingBlockOrSF=false;
@@ -40,17 +12,18 @@ this.parsingMeta=true;
 this.anyToVerify=true;
 this.manifestRawBytes=($b$[0] = null, $b$[0]);
 this.csdomain= Clazz.new_();
-this.urlToCodeSourceMap=Clazz.new_($I$(3));
-this.signerToCodeSource=Clazz.new_($I$(3));
+this.urlToCodeSourceMap=Clazz.new_($I$(3,1));
+this.signerToCodeSource=Clazz.new_($I$(3,1));
 this.emptySigner=Clazz.array($I$(4), [0]);
 this.emptyEnumeration=((P$.JarVerifier$1||
-(function(){var C$=Clazz.newClass(P$, "JarVerifier$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JarVerifier$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 return false;
@@ -60,18 +33,21 @@ Clazz.newMeth(C$, 'nextElement$', function () {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 })()
-), Clazz.new_(P$.JarVerifier$1.$init$, [this, null]));
-}, 1);
+), Clazz.new_(P$.JarVerifier$1.$init$,[this, null]));
+},1);
+
+C$.$fields$=[['Z',['parsingBlockOrSF','parsingMeta','anyToVerify','eagerValidation'],'O',['verifiedSigners','java.util.Hashtable','+sigFileSigners','+sigFileData','pendingBlocks','java.util.ArrayList','+signerCache','baos','java.io.ByteArrayOutputStream','manDig','sun.security.util.ManifestDigester','manifestRawBytes','byte[]','csdomain','java.lang.Object','manifestDigests','java.util.List','urlToCodeSourceMap','java.util.Map','+signerToCodeSource','lastURL','java.net.URL','lastURLMap','java.util.Map','emptySigner','java.security.CodeSigner[]','signerMap','java.util.Map','emptyEnumeration','java.util.Enumeration','jarCodeSigners','java.util.List']]
+,['O',['debug','sun.security.util.Debug']]]
 
 Clazz.newMeth(C$, 'c$$BA', function (rawBytes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.manifestRawBytes=rawBytes;
-this.sigFileSigners=Clazz.new_($I$(5));
-this.verifiedSigners=Clazz.new_($I$(5));
-this.sigFileData=Clazz.new_($I$(5).c$$I,[11]);
-this.pendingBlocks=Clazz.new_($I$(6));
-this.baos=Clazz.new_($I$(7));
-this.manifestDigests=Clazz.new_($I$(6));
+this.sigFileSigners=Clazz.new_($I$(5,1));
+this.verifiedSigners=Clazz.new_($I$(5,1));
+this.sigFileData=Clazz.new_($I$(5,1).c$$I,[11]);
+this.pendingBlocks=Clazz.new_($I$(6,1));
+this.baos=Clazz.new_($I$(7,1));
+this.manifestDigests=Clazz.new_($I$(6,1));
 }, 1);
 
 Clazz.newMeth(C$, 'beginEntry$java_util_jar_JarEntry$sun_security_util_ManifestEntryVerifier', function (je, mev) {
@@ -111,7 +87,7 @@ if (b != -1) {
 if (this.parsingBlockOrSF) {
 this.baos.write$I(b);
 } else {
-mev.update$B(($b$[0] = (b|0), $b$[0]));
+mev.update$B(($b$[0] = b, $b$[0]));
 }} else {
 p$2.processEntry$sun_security_util_ManifestEntryVerifier.apply(this, [mev]);
 }});
@@ -141,7 +117,7 @@ C$.debug.println$S("processEntry: processing block");
 if (uname.endsWith$S(".SF")) {
 var key=uname.substring$I$I(0, uname.length$() - 3);
 var bytes=this.baos.toByteArray$();
-this.sigFileData.put$TK$TV(key, bytes);
+this.sigFileData.put$O$O(key, bytes);
 var it=this.pendingBlocks.iterator$();
 while (it.hasNext$()){
 var sfv=it.next$();
@@ -153,19 +129,19 @@ sfv.process$java_util_Hashtable$java_util_List(this.sigFileSigners, this.manifes
 }}
 return;
 }var key=uname.substring$I$I(0, uname.lastIndexOf$S("."));
-if (this.signerCache == null ) this.signerCache=Clazz.new_($I$(6));
+if (this.signerCache == null ) this.signerCache=Clazz.new_($I$(6,1));
 if (this.manDig == null ) {
 {
 if (this.manDig == null ) {
-this.manDig=Clazz.new_($I$(10).c$$BA,[this.manifestRawBytes]);
+this.manDig=Clazz.new_($I$(10,1).c$$BA,[this.manifestRawBytes]);
 this.manifestRawBytes=null;
-}}}var sfv=Clazz.new_($I$(9).c$$java_util_ArrayList$sun_security_util_ManifestDigester$S$BA,[this.signerCache, this.manDig, uname, this.baos.toByteArray$()]);
+}}}var sfv=Clazz.new_([this.signerCache, this.manDig, uname, this.baos.toByteArray$()],$I$(9,1).c$$java_util_ArrayList$sun_security_util_ManifestDigester$S$BA);
 if (sfv.needSignatureFileBytes$()) {
 var bytes=this.sigFileData.get$O(key);
 if (bytes == null ) {
 if (C$.debug != null ) {
 C$.debug.println$S("adding pending block");
-}this.pendingBlocks.add$TE(sfv);
+}this.pendingBlocks.add$O(sfv);
 return;
 } else {
 sfv.setSignatureFile$BA(bytes);
@@ -231,11 +207,11 @@ throw e;
 
 Clazz.newMeth(C$, 'mapSignersToCertArray$java_security_CodeSignerA', function (signers) {
 if (signers != null ) {
-var certChains=Clazz.new_($I$(6));
+var certChains=Clazz.new_($I$(6,1));
 for (var i=0; i < signers.length; i++) {
 certChains.addAll$java_util_Collection(signers[i].getSignerCertPath$().getCertificates$());
 }
-return certChains.toArray$TTA(Clazz.array($I$(11), [certChains.size$()]));
+return certChains.toArray$OA(Clazz.array($I$(11), [certChains.size$()]));
 }return null;
 }, 1);
 
@@ -253,7 +229,7 @@ this.signerCache=null;
 this.manDig=null;
 if (this.sigFileSigners.containsKey$O("META-INF/MANIFEST.MF")) {
 var codeSigners=this.sigFileSigners.remove$O("META-INF/MANIFEST.MF");
-this.verifiedSigners.put$TK$TV("META-INF/MANIFEST.MF", codeSigners);
+this.verifiedSigners.put$O$O("META-INF/MANIFEST.MF", codeSigners);
 }});
 
 Clazz.newMeth(C$, 'mapSignersToCodeSource$java_net_URL$java_security_CodeSignerA', function (url, signers) {
@@ -263,25 +239,25 @@ map=this.lastURLMap;
 } else {
 map=this.urlToCodeSourceMap.get$O(url);
 if (map == null ) {
-map=Clazz.new_($I$(3));
-this.urlToCodeSourceMap.put$TK$TV(url, map);
+map=Clazz.new_($I$(3,1));
+this.urlToCodeSourceMap.put$O$O(url, map);
 }this.lastURLMap=map;
 this.lastURL=url;
 }var cs=map.get$O(signers);
 if (cs == null ) {
-cs=Clazz.new_($I$(12).c$$O$java_net_URL$java_security_CodeSignerA,[this.csdomain, url, signers]);
-this.signerToCodeSource.put$TK$TV(signers, cs);
+cs=Clazz.new_($I$(12,1).c$$O$java_net_URL$java_security_CodeSignerA,[this.csdomain, url, signers]);
+this.signerToCodeSource.put$O$O(signers, cs);
 }return cs;
 }, p$2);
 
 Clazz.newMeth(C$, 'mapSignersToCodeSources$java_net_URL$java_util_List$Z', function (url, signers, unsigned) {
-var sources=Clazz.new_($I$(6));
+var sources=Clazz.new_($I$(6,1));
 for (var i=0; i < signers.size$(); i++) {
-sources.add$TE(p$2.mapSignersToCodeSource$java_net_URL$java_security_CodeSignerA.apply(this, [url, signers.get$I(i)]));
+sources.add$O(p$2.mapSignersToCodeSource$java_net_URL$java_security_CodeSignerA.apply(this, [url, signers.get$I(i)]));
 }
 if (unsigned) {
-sources.add$TE(p$2.mapSignersToCodeSource$java_net_URL$java_security_CodeSignerA.apply(this, [url, null]));
-}return sources.toArray$TTA(Clazz.array($I$(13), [sources.size$()]));
+sources.add$O(p$2.mapSignersToCodeSource$java_net_URL$java_security_CodeSignerA.apply(this, [url, null]));
+}return sources.toArray$OA(Clazz.array($I$(13), [sources.size$()]));
 }, p$2);
 
 Clazz.newMeth(C$, 'findMatchingSigners$java_security_CodeSource', function (cs) {
@@ -290,9 +266,9 @@ var vcs=cs;
 if (vcs.isSameDomain$O(this.csdomain)) {
 return p$1.getPrivateSigners.apply((cs), []);
 }}var sources=p$2.mapSignersToCodeSources$java_net_URL$java_util_List$Z.apply(this, [cs.getLocation$(), p$2.getJarCodeSigners.apply(this, []), true]);
-var sourceList=Clazz.new_($I$(6));
+var sourceList=Clazz.new_($I$(6,1));
 for (var i=0; i < sources.length; i++) {
-sourceList.add$TE(sources[i]);
+sourceList.add$O(sources[i]);
 }
 var j=sourceList.indexOf$O(cs);
 if (j != -1) {
@@ -306,7 +282,7 @@ match=this.emptySigner;
 
 Clazz.newMeth(C$, 'signerMap', function () {
 if (this.signerMap == null ) {
-this.signerMap=Clazz.new_($I$(3).c$$I,[this.verifiedSigners.size$() + this.sigFileSigners.size$()]);
+this.signerMap=Clazz.new_([this.verifiedSigners.size$() + this.sigFileSigners.size$()],$I$(3,1).c$$I);
 this.signerMap.putAll$java_util_Map(this.verifiedSigners);
 this.signerMap.putAll$java_util_Map(this.sigFileSigners);
 }return this.signerMap;
@@ -316,12 +292,12 @@ Clazz.newMeth(C$, 'entryNames$java_util_jar_JarFile$java_security_CodeSourceA', 
 var map=p$2.signerMap.apply(this, []);
 var itor=map.entrySet$().iterator$();
 var matchUnsigned=false;
-var req=Clazz.new_($I$(6).c$$I,[cs.length]);
+var req=Clazz.new_($I$(6,1).c$$I,[cs.length]);
 for (var i=0; i < cs.length; i++) {
 var match=p$2.findMatchingSigners$java_security_CodeSource.apply(this, [cs[i]]);
 if (match != null ) {
 if (match.length > 0) {
-req.add$TE(match);
+req.add$O(match);
 } else {
 matchUnsigned=true;
 }} else {
@@ -330,18 +306,14 @@ matchUnsigned=true;
 var signersReq=req;
 var enum2=(matchUnsigned) ? p$2.unsignedEntryNames$java_util_jar_JarFile.apply(this, [jar]) : this.emptyEnumeration;
 return ((P$.JarVerifier$2||
-(function(){var C$=Clazz.newClass(P$, "JarVerifier$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JarVerifier$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name']]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 if (this.name != null ) {
@@ -367,44 +339,39 @@ return value;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 })()
-), Clazz.new_(P$.JarVerifier$2.$init$, [this, {itor: itor, signersReq: signersReq, enum2: enum2}]));
+), Clazz.new_(P$.JarVerifier$2.$init$,[this, {signersReq:signersReq,enum2:enum2,itor:itor}]));
 });
 
 Clazz.newMeth(C$, 'entries2$java_util_jar_JarFile$java_util_Enumeration', function (jar, e) {
-var map=Clazz.new_($I$(3));
+var map=Clazz.new_($I$(3,1));
 map.putAll$java_util_Map(p$2.signerMap.apply(this, []));
 var enum_=e;
 return ((P$.JarVerifier$3||
-(function(){var C$=Clazz.newClass(P$, "JarVerifier$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JarVerifier$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.signers=null;
-this.entry=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.signers=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['signers','java.util.Enumeration','entry','java.util.jar.JarEntry']]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 if (this.entry != null ) {
 return true;
 }while (this.$finals$.enum_.hasMoreElements$()){
 var ze=this.$finals$.enum_.nextElement$();
-if ($I$(14).isSigningRelated$S(ze.getName$())) {
+if ($I$(14,"isSigningRelated$S",[ze.getName$()])) {
 continue;
 }this.entry=this.$finals$.jar.newEntry$java_util_zip_ZipEntry(ze);
 return true;
 }
 if (this.signers == null ) {
-this.signers=$I$(15).enumeration$java_util_Collection(this.$finals$.map.keySet$());
+this.signers=$I$(15,"enumeration$java_util_Collection",[this.$finals$.map.keySet$()]);
 }while (this.signers.hasMoreElements$()){
 var name=this.signers.nextElement$();
-this.entry=this.$finals$.jar.newEntry$java_util_zip_ZipEntry(Clazz.new_($I$(16).c$$S,[name]));
+this.entry=this.$finals$.jar.newEntry$java_util_zip_ZipEntry(Clazz.new_($I$(16,1).c$$S,[name]));
 return true;
 }
 return false;
@@ -419,7 +386,7 @@ return je;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 })()
-), Clazz.new_(P$.JarVerifier$3.$init$, [this, {enum_: enum_, jar: jar, map: map}]));
+), Clazz.new_(P$.JarVerifier$3.$init$,[this, {jar:jar,enum_:enum_,map:map}]));
 });
 
 Clazz.newMeth(C$, 'isSigningRelated$S', function (name) {
@@ -430,18 +397,14 @@ Clazz.newMeth(C$, 'unsignedEntryNames$java_util_jar_JarFile', function (jar) {
 var map=p$2.signerMap.apply(this, []);
 var entries=jar.entries$();
 return ((P$.JarVerifier$4||
-(function(){var C$=Clazz.newClass(P$, "JarVerifier$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JarVerifier$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name']]]
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 if (this.name != null ) {
@@ -450,7 +413,7 @@ return true;
 var value;
 var e=this.$finals$.entries.nextElement$();
 value=e.getName$();
-if (e.isDirectory$() || P$.JarVerifier.isSigningRelated$S(value) ) {
+if (e.isDirectory$() || $I$(14).isSigningRelated$S(value) ) {
 continue;
 }if (this.$finals$.map.get$O(value) == null ) {
 this.name=value;
@@ -467,15 +430,15 @@ return value;
 }throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 })()
-), Clazz.new_(P$.JarVerifier$4.$init$, [this, {entries: entries, map: map}]));
+), Clazz.new_(P$.JarVerifier$4.$init$,[this, {entries:entries,map:map}]));
 }, p$2);
 
 Clazz.newMeth(C$, 'getJarCodeSigners', function () {
 var signers;
 if (this.jarCodeSigners == null ) {
-var set=Clazz.new_($I$(17));
+var set=Clazz.new_($I$(17,1));
 set.addAll$java_util_Collection(p$2.signerMap.apply(this, []).values$());
-this.jarCodeSigners=Clazz.new_($I$(6));
+this.jarCodeSigners=Clazz.new_($I$(6,1));
 this.jarCodeSigners.addAll$java_util_Collection(set);
 }return this.jarCodeSigners;
 }, p$2);
@@ -505,33 +468,30 @@ return $I$(15).unmodifiableList$java_util_List(this.manifestDigests);
 });
 
 Clazz.newMeth(C$, 'getUnsignedCS$java_net_URL', function (url) {
-return Clazz.new_($I$(12).c$$O$java_net_URL$java_security_cert_CertificateA,[null, url, null]);
+return Clazz.new_($I$(12,1).c$$O$java_net_URL$java_security_cert_CertificateA,[null, url, null]);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.debug=$I$(2).getInstance$S("jar");
+};
 var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.JarVerifier, "VerifierStream", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JarVerifier, "VerifierStream", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.io.InputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.is=null;
-this.jv=null;
-this.mev=null;
-this.numLeft=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['numLeft'],'O',['is','java.io.InputStream','jv','java.util.jar.JarVerifier','mev','sun.security.util.ManifestEntryVerifier']]]
 
 Clazz.newMeth(C$, 'c$$java_util_jar_Manifest$java_util_jar_JarEntry$java_io_InputStream$java_util_jar_JarVerifier', function (man, je, is, jv) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.is=is;
 this.jv=jv;
-this.mev=Clazz.new_($I$(1).c$$java_util_jar_Manifest,[man]);
+this.mev=Clazz.new_($I$(1,1).c$$java_util_jar_Manifest,[man]);
 this.jv.beginEntry$java_util_jar_JarEntry$sun_security_util_ManifestEntryVerifier(je, this.mev);
 this.numLeft=je.getSize$();
 if (this.numLeft == 0) this.jv.update$I$sun_security_util_ManifestEntryVerifier(-1, this.mev);
@@ -575,35 +535,26 @@ return this.is.available$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JarVerifier, "VerifierCodeSource", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JarVerifier, "VerifierCodeSource", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.security.CodeSource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vlocation=null;
-this.vsigners=null;
-this.vcerts=null;
-this.csdomain=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['vlocation','java.net.URL','vsigners','java.security.CodeSigner[]','vcerts','java.security.cert.Certificate[]','csdomain','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$O$java_net_URL$java_security_CodeSignerA', function (csdomain, location, signers) {
-C$.superclazz.c$$java_net_URL$java_security_CodeSignerA.apply(this, [location, signers]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_net_URL$java_security_CodeSignerA.apply(this,[location, signers]);C$.$init$.apply(this);
 this.csdomain=csdomain;
 this.vlocation=location;
 this.vsigners=signers;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$java_net_URL$java_security_cert_CertificateA', function (csdomain, location, certs) {
-C$.superclazz.c$$java_net_URL$java_security_cert_CertificateA.apply(this, [location, certs]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_net_URL$java_security_cert_CertificateA.apply(this,[location, certs]);C$.$init$.apply(this);
 this.csdomain=csdomain;
 this.vlocation=location;
 this.vcerts=certs;
@@ -643,4 +594,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:45 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,31 +1,16 @@
 (function(){var P$=Clazz.newPackage("jalview.javascript.log4j"),p$1={};
-var C$=Clazz.newClass(P$, "Level", null, 'jalview.javascript.log4j.Priority', 'java.io.Serializable');
-C$.OFF=null;
-C$.$FATAL=null;
-C$.$ERROR=null;
-C$.$WARN=null;
-C$.$INFO=null;
-C$.$DEBUG=null;
-C$.TRACE=null;
-C$.ALL=null;
+/*c*/var C$=Clazz.newClass(P$, "Level", null, 'jalview.javascript.log4j.Priority', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.OFF=Clazz.new_(C$.c$$I$S$I,[2147483647, "OFF", 0]);
-C$.$FATAL=Clazz.new_(C$.c$$I$S$I,[50000, "FATAL", 0]);
-C$.$ERROR=Clazz.new_(C$.c$$I$S$I,[40000, "ERROR", 3]);
-C$.$WARN=Clazz.new_(C$.c$$I$S$I,[30000, "WARN", 4]);
-C$.$INFO=Clazz.new_(C$.c$$I$S$I,[20000, "INFO", 6]);
-C$.$DEBUG=Clazz.new_(C$.c$$I$S$I,[10000, "DEBUG", 7]);
-C$.TRACE=Clazz.new_(C$.c$$I$S$I,[5000, "TRACE", 7]);
-C$.ALL=Clazz.new_(C$.c$$I$S$I,[-2147483648, "ALL", 7]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['OFF','jalview.javascript.log4j.Level','+$FATAL','+$ERROR','+$WARN','+$INFO','+$DEBUG','+TRACE','+ALL']]]
 
 Clazz.newMeth(C$, 'c$$I$S$I', function (level, levelStr, syslogEquivalent) {
-C$.superclazz.c$$I$S$I.apply(this, [level, levelStr, syslogEquivalent]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$S$I.apply(this,[level, levelStr, syslogEquivalent]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'toLevel$S', function (sArg) {
@@ -106,6 +91,17 @@ return C$.toLevel$I(this.level);
 }return this;
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.OFF=Clazz.new_(C$.c$$I$S$I,[2147483647, "OFF", 0]);
+C$.$FATAL=Clazz.new_(C$.c$$I$S$I,[50000, "FATAL", 0]);
+C$.$ERROR=Clazz.new_(C$.c$$I$S$I,[40000, "ERROR", 3]);
+C$.$WARN=Clazz.new_(C$.c$$I$S$I,[30000, "WARN", 4]);
+C$.$INFO=Clazz.new_(C$.c$$I$S$I,[20000, "INFO", 6]);
+C$.$DEBUG=Clazz.new_(C$.c$$I$S$I,[10000, "DEBUG", 7]);
+C$.TRACE=Clazz.new_(C$.c$$I$S$I,[5000, "TRACE", 7]);
+C$.ALL=Clazz.new_(C$.c$$I$S$I,[-2147483648, "ALL", 7]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

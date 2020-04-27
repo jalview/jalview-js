@@ -1,42 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.adapter.smarter.Atom','org.jmol.util.Logger','org.jmol.adapter.smarter.Bond','javajs.util.AU','javajs.util.Lst','org.jmol.adapter.readers.quantum.BasisFunctionReader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CsfReader", null, 'org.jmol.adapter.readers.quantum.MopacSlaterReader');
-C$.connectorFields=null;
-C$.connectorFieldMap=null;
-C$.atomFields=null;
-C$.atomFieldMap=null;
-C$.bondFields=null;
-C$.bondFieldMap=null;
-C$.vibFields=null;
-C$.vibFieldMap=null;
-C$.moFields=null;
-C$.moFieldMap=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.adapter.smarter.Atom','org.jmol.util.Logger','org.jmol.adapter.smarter.Bond','javajs.util.AU','javajs.util.Lst','org.jmol.adapter.readers.quantum.BasisFunctionReader']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CsfReader", null, 'org.jmol.adapter.readers.quantum.MopacSlaterReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.connectorFields=Clazz.array(String, -1, ["objCls1", "objID1", "objCls2", "objID2"]);
-C$.connectorFieldMap=Clazz.array(Byte.TYPE, -1, [1, 2, 3, 4]);
-C$.atomFields=Clazz.array(String, -1, ["ID", "sym", "anum", "chrg", "xyz_coordinates", "pchrg"]);
-C$.atomFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1, 2, 3, 4, 5]);
-C$.bondFields=Clazz.array(String, -1, ["ID", "type"]);
-C$.bondFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1]);
-C$.vibFields=Clazz.array(String, -1, ["ID", "normalMode", "Energy", "transitionDipole"]);
-C$.vibFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1, 2, 3]);
-C$.moFields=Clazz.array(String, -1, ["ID", "eig_val", "mo_occ", "eig_vec", "eig_vec_compressed", "coef_indices", "bfxn_ang", "sto_exp", "contractions", "gto_exp", "shell"]);
-C$.moFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nAtoms=0;
-this.strAtomicNumbers=null;
-this.fieldCount=0;
-this.nVibrations=0;
-this.nGaussians=0;
-this.nSlaters=0;
-this.htBonds=null;
-this.propertyItemCounts=null;
-this.fieldTypes=null;
-this.connectors=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nAtoms=0;
@@ -44,9 +9,12 @@ this.strAtomicNumbers="";
 this.nVibrations=0;
 this.nGaussians=0;
 this.nSlaters=0;
-this.propertyItemCounts=Clazz.new_($I$(1));
+this.propertyItemCounts=Clazz.new_($I$(1,1));
 this.fieldTypes=Clazz.array(Integer.TYPE, [100]);
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nAtoms','fieldCount','nVibrations','nGaussians','nSlaters'],'S',['strAtomicNumbers'],'O',['htBonds','java.util.Map','+propertyItemCounts','fieldTypes','int[]','connectors','java.util.Map']]
+,['O',['connectorFields','String[]','connectorFieldMap','byte[]','atomFields','String[]','atomFieldMap','byte[]','bondFields','String[]','bondFieldMap','byte[]','vibFields','String[]','vibFieldMap','byte[]','moFields','String[]','moFieldMap','byte[]']]]
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 if (this.line.equals$O("local_transform")) {
@@ -78,7 +46,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'processLocalTransform', function () {
-var tokens=$I$(2).getTokens$S(this.rd$() + " " + this.rd$() + " " + this.rd$() + " " + this.rd$() );
+var tokens=(function(a,f){return f.apply(null,a)})([this.rd$() + " " + this.rd$() + " " + this.rd$() + " " + this.rd$() ],$I$(2).getTokens$S);
 this.setTransform$F$F$F$F$F$F$F$F$F(this.parseFloatStr$S(tokens[0]), this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[4]), this.parseFloatStr$S(tokens[5]), this.parseFloatStr$S(tokens[6]), this.parseFloatStr$S(tokens[8]), this.parseFloatStr$S(tokens[9]), this.parseFloatStr$S(tokens[10]));
 }, p$1);
 
@@ -96,7 +64,7 @@ if (this.line == null  || this.line.startsWith$S("object_class") ) return this.f
 var tokens=Clazz.array(String, [0]);
 while (this.line != null ){
 tokens=this.getTokens$();
-if (this.line.indexOf$S("property ") == 0) this.propertyItemCounts.put$TK$TV(tokens[1], Integer.valueOf$I((tokens[6].equals$O("STRING") ? 1 : this.parseIntStr$S(tokens[5]))));
+if (this.line.indexOf$S("property ") == 0) this.propertyItemCounts.put$O$O(tokens[1], Integer.valueOf$I((tokens[6].equals$O("STRING") ? 1 : this.parseIntStr$S(tokens[5]))));
  else if (this.line.indexOf$S("ID") == 0) break;
 this.rd$();
 }
@@ -118,7 +86,7 @@ var ioffset=i0;
 for (var i=0; i < n; i++) {
 var ipt=ioffset + i;
 if (ipt == tokens.length) {
-tokens=$I$(2).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(2).getTokens$S);
 ioffset-=ipt - i0;
 ipt=i0;
 }if (isInteger) (f)[i]=this.parseIntStr$S(tokens[ipt]);
@@ -127,7 +95,7 @@ ipt=i0;
 }, p$1);
 
 Clazz.newMeth(C$, 'processConnectorObject', function () {
-this.connectors=Clazz.new_($I$(1));
+this.connectors=Clazz.new_($I$(1,1));
 this.rd$();
 p$1.parseLineParameters$SA$BA.apply(this, [C$.connectorFields, C$.connectorFieldMap]);
  out : for (; this.rd$() != null ; ) {
@@ -168,7 +136,7 @@ if (this.htBonds != null ) p$1.setBond$org_jmol_adapter_smarter_Bond$SA.apply(th
 } else {
 var connect=Clazz.array(String, [2]);
 connect[0]=thisAtomID;
-this.connectors.put$TK$TV(thisBondID, connect);
+this.connectors.put$O$O(thisBondID, connect);
 }}}
 }, p$1);
 
@@ -185,12 +153,12 @@ this.nAtoms=0;
 for (; this.rd$() != null ; ) {
 if (this.line.startsWith$S("property_flags:")) break;
 var tokens=this.getTokens$();
-var atom=Clazz.new_($I$(3));
+var atom=Clazz.new_($I$(3,1));
 var field;
 for (var i=0; i < this.fieldCount; i++) {
 var type=this.fieldTypes[i];
 if (type == 0) continue;
-if ((field=tokens[i]) == null ) $I$(4).warn$S("field == null in " + this.line);
+if ((field=tokens[i]) == null ) (function(a,f){return f.apply(null,a)})(["field == null in " + this.line],$I$(4).warn$S);
 switch (type) {
 case -1:
 atom.atomSerial=$I$(2).parseInt$S(field);
@@ -241,11 +209,11 @@ if (field.equals$O("single")) order=1;
  else if (field.equals$O("double")) order=2;
  else if (field.equals$O("triple")) order=3;
  else $I$(4).warn$S("unknown CSF bond order: " + field);
-var bond=Clazz.new_($I$(5).c$$I$I$I,[-1, -1, 1]);
+var bond=Clazz.new_($I$(5,1).c$$I$I$I,[-1, -1, 1]);
 bond.order=order;
 if (this.connectors == null ) {
-if (this.htBonds == null ) this.htBonds=Clazz.new_($I$(1));
-this.htBonds.put$TK$TV(thisBondID, bond);
+if (this.htBonds == null ) this.htBonds=Clazz.new_($I$(1,1));
+this.htBonds.put$O$O(thisBondID, bond);
 } else {
 p$1.setBond$org_jmol_adapter_smarter_Bond$SA.apply(this, [bond, this.connectors.get$O(thisBondID)]);
 }break;
@@ -341,10 +309,10 @@ list[iMo][pt]=listCompressed[iMo][i];
 }
 }for (var i=0; i < this.nOrbitals; i++) if (Math.abs(list[iMo][i]) < 1.0E-4 ) list[iMo][i]=0;
 
-var mo=Clazz.new_($I$(1));
-mo.put$TK$TV("energy", Float.valueOf$F(energy[iMo]));
-mo.put$TK$TV("occupancy", Float.valueOf$F(occupancy[iMo]));
-mo.put$TK$TV("coefficients", list[iMo]);
+var mo=Clazz.new_($I$(1,1));
+mo.put$O$O("energy", Float.valueOf$F(energy[iMo]));
+mo.put$O$O("occupancy", Float.valueOf$F(occupancy[iMo]));
+mo.put$O$O("coefficients", list[iMo]);
 this.setMO$java_util_Map(mo);
 }
 this.setMOs$S("eV");
@@ -393,8 +361,8 @@ p$1.fillCsfArray$S$SA$I$O$Z.apply(this, ["contractions", tokens, i, contractionC
 }
 }
 if (isGaussian) {
-var sdata=Clazz.new_($I$(7));
-var gdata=Clazz.new_($I$(7));
+var sdata=Clazz.new_($I$(7,1));
+var gdata=Clazz.new_($I$(7,1));
 var iShell=0;
 var gaussianCount=0;
 for (var ipt=0; ipt < this.nGaussians; ipt++) {
@@ -403,22 +371,22 @@ iShell=shells[ipt];
 var slater=Clazz.array(Integer.TYPE, [4]);
 var iAtom=this.asc.getAtomIndex$S(this.connectors.get$O(sto_gto + "_basis_fxn" + (ipt + 1) )[0]);
 slater[0]=iAtom + 1;
-slater[1]=$I$(8).getQuantumShellTagID$S(types[ipt].substring$I$I(0, 1));
+slater[1]=(function(a,f){return f.apply(null,a)})([types[ipt].substring$I$I(0, 1)],$I$(8).getQuantumShellTagID$S);
 var nZ=0;
 while (++nZ < nZetas && zetas[ipt][nZ] != 0  ){
 }
 slater[2]=gaussianCount;
 slater[3]=nZ;
-sdata.addLast$TV(slater);
+sdata.addLast$O(slater);
 gaussianCount+=nZ;
-for (var i=0; i < nZ; i++) gdata.addLast$TV(Clazz.array(Float.TYPE, -1, [zetas[ipt][i], contractionCoefs[ipt][i]]));
+for (var i=0; i < nZ; i++) gdata.addLast$O(Clazz.array(Float.TYPE, -1, [zetas[ipt][i], contractionCoefs[ipt][i]]));
 
 }}
 var garray=$I$(6).newFloat2$I(gaussianCount);
 for (var i=0; i < gaussianCount; i++) garray[i]=gdata.get$I(i);
 
-this.moData.put$TK$TV("shells", sdata);
-this.moData.put$TK$TV("gaussians", garray);
+this.moData.put$O$O("shells", sdata);
+this.moData.put$O$O("gaussians", garray);
 } else {
 for (var ipt=0; ipt < this.nSlaters; ipt++) {
 var iAtom=this.asc.getAtomIndex$S(this.connectors.get$O(sto_gto + "_basis_fxn" + (ipt + 1) )[0]);
@@ -430,6 +398,19 @@ this.createSphericalSlaterByType$I$I$S$F$F(iAtom, this.atomicNumbers[iAtom], typ
 this.setSlaters$Z$Z(true, false);
 }}, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.connectorFields=Clazz.array(String, -1, ["objCls1", "objID1", "objCls2", "objID2"]);
+C$.connectorFieldMap=Clazz.array(Byte.TYPE, -1, [1, 2, 3, 4]);
+C$.atomFields=Clazz.array(String, -1, ["ID", "sym", "anum", "chrg", "xyz_coordinates", "pchrg"]);
+C$.atomFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1, 2, 3, 4, 5]);
+C$.bondFields=Clazz.array(String, -1, ["ID", "type"]);
+C$.bondFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1]);
+C$.vibFields=Clazz.array(String, -1, ["ID", "normalMode", "Energy", "transitionDipole"]);
+C$.vibFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1, 2, 3]);
+C$.moFields=Clazz.array(String, -1, ["ID", "eig_val", "mo_occ", "eig_vec", "eig_vec_compressed", "coef_indices", "bfxn_ang", "sto_exp", "contractions", "gto_exp", "shell"]);
+C$.moFieldMap=Clazz.array(Byte.TYPE, -1, [-1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

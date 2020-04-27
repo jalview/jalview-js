@@ -1,23 +1,17 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.SwingUtilities','java.awt.JSComponent','java.util.HashMap','javax.swing.Popup','java.util.ArrayList','java.awt.event.WindowAdapter','java.awt.Toolkit','java.awt.Rectangle','java.awt.Insets','javax.swing.JLayeredPane','javax.swing.JPanel','java.awt.BorderLayout',['javax.swing.PopupFactory','.MediumWeightPopup','.MediumWeightComponent'],'javax.swing.JRootPane','javax.swing.PopupFactory','javax.swing.ClientPropertyKey','Boolean',['javax.swing.PopupFactory','.LightWeightPopup'],['javax.swing.PopupFactory','.MediumWeightPopup'],['javax.swing.PopupFactory','.HeavyWeightPopup']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PopupFactory", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.SwingUtilities','javax.swing.PopupFactory','java.awt.JSComponent','java.util.HashMap','javax.swing.Popup','java.util.ArrayList',['javax.swing.PopupFactory','.HeavyWeightPopup'],'java.awt.event.WindowAdapter','java.awt.Toolkit','java.awt.Rectangle','java.awt.Insets','javax.swing.JLayeredPane','javax.swing.JPanel','java.awt.BorderLayout',['javax.swing.PopupFactory','.MediumWeightPopup','.MediumWeightComponent'],'javax.swing.JRootPane','javax.swing.ClientPropertyKey',['javax.swing.PopupFactory','.LightWeightPopup'],['javax.swing.PopupFactory','.MediumWeightPopup']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PopupFactory", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.popupCount=0;
-C$.SharedInstanceKey=null;
-C$.lastToolTipPopUp=null;
+C$.$classes$=[['HeavyWeightPopup',10],['ContainerPopup',10],['LightWeightPopup',10],['MediumWeightPopup',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.SharedInstanceKey= Clazz.new_();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.popupType=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.popupType=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['popupType']]
+,['I',['popupCount'],'O',['SharedInstanceKey','java.lang.Object','lastToolTipPopUp','javax.swing.Popup']]]
 
 Clazz.newMeth(C$, 'setSharedInstance$javax_swing_PopupFactory', function (factory) {
 if (factory == null ) {
@@ -50,7 +44,7 @@ var popup=p$1.getPopup$java_awt_Component$java_awt_Component$I$I$I.apply(this, [
 if (popup == null ) {
 popup=p$1.getPopup$java_awt_Component$java_awt_Component$I$I$I.apply(this, [owner, contents, x, y, 2]);
 }if (isToolTip && C$.lastToolTipPopUp != null  ) {
-(popup.getComponent$())._canvas=(C$.lastToolTipPopUp.getComponent$())._canvas;
+(popup.getComponent$()).秘canvas=(C$.lastToolTipPopUp.getComponent$()).秘canvas;
 }C$.lastToolTipPopUp=popup;
 return popup;
 });
@@ -64,7 +58,7 @@ popupType=1;
 }var c=owner;
 while (c != null ){
 if (Clazz.instanceOf(c, "javax.swing.JComponent")) {
-if ((c).getClientProperty$O($I$(16).PopupFactory_FORCE_HEAVYWEIGHT_POPUP) === $I$(17).TRUE ) {
+if ((c).getClientProperty$O($I$(17).PopupFactory_FORCE_HEAVYWEIGHT_POPUP) === Boolean.TRUE ) {
 popupType=2;
 break;
 }}c=c.getParent$();
@@ -93,41 +87,47 @@ return $I$(19).getMediumWeightPopup$java_awt_Component$java_awt_Component$I$I(ow
 }, p$1);
 
 Clazz.newMeth(C$, 'getHeavyWeightPopup$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
-return $I$(20).getHeavyWeightPopup$java_awt_Component$java_awt_Component$I$I(owner, contents, ownerX, ownerY);
+return $I$(7).getHeavyWeightPopup$java_awt_Component$java_awt_Component$I$I(owner, contents, ownerX, ownerY);
 }, p$1);
 
 Clazz.newMeth(C$, 'invokerInHeavyWeightPopup$java_awt_Component', function (i) {
 if (i != null ) {
 var parent;
 for (parent=i.getParent$(); parent != null ; parent=parent.getParent$()) {
-if ($I$(4).isHeavyWeight$java_awt_Container(parent)) {
+if ($I$(5).isHeavyWeight$java_awt_Container(parent)) {
 return true;
 }}
 }return false;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.SharedInstanceKey= Clazz.new_();
+};
 ;
-(function(){var C$=Clazz.newClass(P$.PopupFactory, "HeavyWeightPopup", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PopupFactory, "HeavyWeightPopup", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.Popup');
-C$.heavyWeightPopupCacheKey=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.heavyWeightPopupCacheKey= Clazz.new_();
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['heavyWeightPopupCacheKey','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'getHeavyWeightPopup$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 var window=(owner != null ) ? $I$(1).getWindowAncestor$java_awt_Component(owner) : null;
 var popup=null;
+var name=(Clazz.instanceOf(contents, "javax.swing.JPopupMenu") ? "MenuPopup" : "ToolTip") + ++$I$(2).popupCount;
 if (window != null ) {
 popup=C$.getRecycledHeavyWeightPopup$java_awt_Window(window);
+window.setName$S(name + "(recycled)");
 }var focusPopup=false;
 if (contents != null  && contents.isFocusable$() ) {
 if (Clazz.instanceOf(contents, "javax.swing.JPopupMenu")) {
 var jpm=contents;
-var popComps=$I$(2).getChildArray$java_awt_Container(jpm);
+var popComps=$I$(3).秘getChildArray$java_awt_Container(jpm);
 for (var i=0, n=jpm.getComponentCount$(); i < n; i++) {
 if (!(Clazz.instanceOf(popComps[i], "javax.swing.MenuElement")) && !(Clazz.instanceOf(popComps[i], "javax.swing.JSeparator")) ) {
 focusPopup=true;
@@ -135,6 +135,7 @@ break;
 }}
 }}if (popup == null ) {
 popup=Clazz.new_(C$);
+popup.name="popup" + (++$I$(2).popupCount);
 }popup.reset$java_awt_Component$java_awt_Component$I$I(owner, contents, ownerX, ownerY);
 if (focusPopup) {
 var wnd=popup.getComponent$();
@@ -162,7 +163,7 @@ Clazz.newMeth(C$, 'getHeavyWeightPopupCache$', function () {
 {
 var cache=$I$(1).appContextGet$O(C$.heavyWeightPopupCacheKey);
 if (cache == null ) {
-cache=Clazz.new_($I$(3).c$$I,[2]);
+cache=Clazz.new_($I$(4,1).c$$I,[2]);
 $I$(1).appContextPut$O$O(C$.heavyWeightPopupCacheKey, cache);
 }return cache;
 }}, 1);
@@ -170,30 +171,29 @@ $I$(1).appContextPut$O$O(C$.heavyWeightPopupCacheKey, cache);
 Clazz.newMeth(C$, 'recycleHeavyWeightPopup$javax_swing_PopupFactory_HeavyWeightPopup', function (popup) {
 {
 var cache;
-var window=$I$(1).getWindowAncestor$java_awt_Component(popup.getComponent$());
+var window=$I$(1,"getWindowAncestor$java_awt_Component",[popup.getComponent$()]);
 var heavyPopupCache=C$.getHeavyWeightPopupCache$();
-if ($I$(4).isDefaultFrame$O(window) || !(window).isVisible$() ) {
+if ($I$(5).isDefaultFrame$O(window) || !(window).isVisible$() ) {
 popup._dispose$();
 return;
 } else if (heavyPopupCache.containsKey$O(window)) {
 cache=heavyPopupCache.get$O(window);
 } else {
-cache=Clazz.new_($I$(5));
-heavyPopupCache.put$TK$TV(window, cache);
+cache=Clazz.new_($I$(6,1));
+heavyPopupCache.put$O$O(window, cache);
 var w=window;
 w.addWindowListener$java_awt_event_WindowListener(((P$.PopupFactory$HeavyWeightPopup$1||
-(function(){var C$=Clazz.newClass(P$, "PopupFactory$HeavyWeightPopup$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "PopupFactory$HeavyWeightPopup$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'windowClosed$java_awt_event_WindowEvent', function (e) {
 var popups;
 {
-var heavyPopupCache2=P$.PopupFactory.HeavyWeightPopup.getHeavyWeightPopupCache$();
+var heavyPopupCache2=$I$(7).getHeavyWeightPopupCache$();
 popups=heavyPopupCache2.remove$O(this.$finals$.w);
 }if (popups != null ) {
 for (var counter=popups.size$() - 1; counter >= 0; counter--) {
@@ -201,9 +201,9 @@ for (var counter=popups.size$() - 1; counter >= 0; counter--) {
 }
 }});
 })()
-), Clazz.new_($I$(6), [this, {w: w}],P$.PopupFactory$HeavyWeightPopup$1)));
+), Clazz.new_($I$(8,1),[this, {w:w}],P$.PopupFactory$HeavyWeightPopup$1)));
 }if (cache.size$() < 5) {
-cache.add$TE(popup);
+cache.add$O(popup);
 } else {
 popup._dispose$();
 }}}, 1);
@@ -220,25 +220,23 @@ Clazz.newMeth(C$, '_dispose$', function () {
 C$.superclazz.prototype.dispose$.apply(this, []);
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.heavyWeightPopupCacheKey= Clazz.new_();
+};
+
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PopupFactory, "ContainerPopup", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PopupFactory, "ContainerPopup", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.Popup');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.owner=null;
-this.x=0;
-this.y=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['x','y'],'O',['owner','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'hide$', function () {
 var component=this.getComponent$();
@@ -314,14 +312,14 @@ break;
 
 Clazz.newMeth(C$, 'getContainerPopupArea$java_awt_GraphicsConfiguration', function (gc) {
 var screenBounds;
-var toolkit=$I$(7).getDefaultToolkit$();
+var toolkit=$I$(9).getDefaultToolkit$();
 var insets;
 if (gc != null ) {
 screenBounds=gc.getBounds$();
 insets=toolkit.getScreenInsets$java_awt_GraphicsConfiguration(gc);
 } else {
-screenBounds=Clazz.new_($I$(8).c$$java_awt_Dimension,[toolkit.getScreenSize$()]);
-insets=Clazz.new_($I$(9).c$$I$I$I$I,[0, 0, 0, 0]);
+screenBounds=Clazz.new_([toolkit.getScreenSize$()],$I$(10,1).c$$java_awt_Dimension);
+insets=Clazz.new_($I$(11,1).c$$I$I$I$I,[0, 0, 0, 0]);
 }screenBounds.x+=insets.left;
 screenBounds.y+=insets.top;
 screenBounds.width-=(insets.left + insets.right);
@@ -332,15 +330,14 @@ return screenBounds;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PopupFactory, "LightWeightPopup", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PopupFactory, "LightWeightPopup", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.PopupFactory','.ContainerPopup']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getLightWeightPopup$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 var popup=null;
@@ -377,13 +374,13 @@ var p=$I$(1).convertScreenLocationToParent$java_awt_Container$I$I(parent, this.x
 var component=this.getComponent$();
 component.setLocation$I$I(p.x, p.y);
 if (Clazz.instanceOf(parent, "javax.swing.JLayeredPane")) {
-(parent).add$java_awt_Component$O$I(component, $I$(10).POPUP_LAYER, 0);
+(parent).add$java_awt_Component$O$I(component, $I$(12).POPUP_LAYER, 0);
 } else {
 parent.add$java_awt_Component(component);
 }});
 
 Clazz.newMeth(C$, 'createComponent$java_awt_Component', function (owner) {
-var component=Clazz.new_($I$(11).c$$java_awt_LayoutManager$Z,[Clazz.new_($I$(12)), true]);
+var component=Clazz.new_([Clazz.new_($I$(14,1)), true],$I$(13,1).c$$java_awt_LayoutManager$Z);
 component.setOpaque$Z(true);
 return component;
 });
@@ -401,22 +398,18 @@ this.pack$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PopupFactory, "MediumWeightPopup", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PopupFactory, "MediumWeightPopup", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.PopupFactory','.ContainerPopup']);
-C$.mediumWeightPopupCacheKey=null;
+C$.$classes$=[['MediumWeightComponent',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.mediumWeightPopupCacheKey= Clazz.new_();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rootPane=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['rootPane','javax.swing.JRootPane']]
+,['O',['mediumWeightPopupCacheKey','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'getMediumWeightPopup$java_awt_Component$java_awt_Component$I$I', function (owner, contents, ownerX, ownerY) {
 var popup=C$.getRecycledMediumWeightPopup$();
@@ -432,7 +425,7 @@ return null;
 Clazz.newMeth(C$, 'getMediumWeightPopupCache$', function () {
 var cache=$I$(1).appContextGet$O(C$.mediumWeightPopupCacheKey);
 if (cache == null ) {
-cache=Clazz.new_($I$(5));
+cache=Clazz.new_($I$(6,1));
 $I$(1).appContextPut$O$O(C$.mediumWeightPopupCacheKey, cache);
 }return cache;
 }, 1);
@@ -441,7 +434,7 @@ Clazz.newMeth(C$, 'recycleMediumWeightPopup$javax_swing_PopupFactory_MediumWeigh
 {
 var mediumPopupCache=C$.getMediumWeightPopupCache$();
 if (mediumPopupCache.size$() < 5) {
-mediumPopupCache.add$TE(popup);
+mediumPopupCache.add$O(popup);
 }}}, 1);
 
 Clazz.newMeth(C$, 'getRecycledMediumWeightPopup$', function () {
@@ -473,7 +466,7 @@ parent=(parent).getLayeredPane$();
 var p=$I$(1).convertScreenLocationToParent$java_awt_Container$I$I(parent, this.x, this.y);
 component.setVisible$Z(false);
 component.setLocation$I$I(p.x, p.y);
-(parent).add$java_awt_Component$O$I(component, $I$(10).POPUP_LAYER, 0);
+(parent).add$java_awt_Component$O$I(component, $I$(12).POPUP_LAYER, 0);
 } else {
 var p=$I$(1).convertScreenLocationToParent$java_awt_Container$I$I(parent, this.x, this.y);
 component.setLocation$I$I(p.x, p.y);
@@ -483,8 +476,8 @@ parent.add$java_awt_Component(component);
 });
 
 Clazz.newMeth(C$, 'createComponent$java_awt_Component', function (owner) {
-var component=Clazz.new_($I$(13));
-this.rootPane=Clazz.new_($I$(14).c$$S$Z$java_awt_Container,["_Popup" + (++$I$(15).popupCount), false, component]);
+var component=Clazz.new_($I$(15,1));
+this.rootPane=Clazz.new_(["_Popup" + (++$I$(2).popupCount), false, component],$I$(16,1).c$$S$Z$java_awt_Container);
 this.rootPane.setFrameViewer$swingjs_JSFrameViewer((owner).getFrameViewer$());
 this.rootPane.setOpaque$Z(true);
 component.add$java_awt_Component$O(this.rootPane, "Center");
@@ -500,20 +493,22 @@ contents.invalidate$();
 component.validate$();
 this.pack$();
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.mediumWeightPopupCacheKey= Clazz.new_();
+};
 ;
-(function(){var C$=Clazz.newClass(P$.PopupFactory.MediumWeightPopup, "MediumWeightComponent", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PopupFactory.MediumWeightPopup, "MediumWeightComponent", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.Panel', 'javax.swing.SwingHeavyWeight');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$java_awt_LayoutManager.apply(this, [Clazz.new_($I$(12))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_LayoutManager.apply(this,[Clazz.new_($I$(14,1))]);C$.$init$.apply(this);
 }, 1);
 })()
 
@@ -522,4 +517,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:42 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

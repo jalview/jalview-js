@@ -1,42 +1,18 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','javajs.util.Lst','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CifDataParser", null, null, 'javajs.api.GenericCifDataParser');
-C$.htFields=null;
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','javajs.util.Lst','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CifDataParser", null, null, 'javajs.api.GenericCifDataParser');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.htFields=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.reader=null;
-this.br=null;
-this.line=null;
-this.str=null;
-this.ich=0;
-this.cch=0;
-this.wasUnquoted=false;
-this.cterm='\0';
-this.nullString=null;
-this.asObject=false;
-this.debugging=false;
-this.strPeeked=null;
-this.ichPeeked=0;
-this.columnCount=0;
-this.columnNames=null;
-this.columnData=null;
-this.isLoop=false;
-this.haveData=false;
-this.fileHeader=null;
-this.isHeader=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.cterm="\u0000";
 this.nullString="\u0000";
 this.columnData=Clazz.array(java.lang.Object, [100]);
-this.fileHeader=Clazz.new_($I$(2));
+this.fileHeader=Clazz.new_($I$(2,1));
 this.isHeader=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['wasUnquoted','asObject','debugging','isLoop','haveData','isHeader'],'C',['cterm'],'I',['ich','cch','ichPeeked','columnCount'],'S',['line','str','nullString'],'O',['reader','javajs.api.GenericLineReader','br','java.io.BufferedReader','strPeeked','java.lang.Object','columnNames','String[]','columnData','Object[]','fileHeader','javajs.util.SB']]
+,['O',['htFields','java.util.Map']]]
 
 Clazz.newMeth(C$, 'getVersion$', function () {
 return 1;
@@ -47,7 +23,7 @@ this.nullString=nullString;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getColumnData$I', function (i) {
@@ -78,17 +54,17 @@ this.line="";
 var key;
 var data=null;
 var data0=null;
-var allData=Clazz.new_($I$(1));
-var models=Clazz.new_($I$(3));
-allData.put$TK$TV("models", models);
+var allData=Clazz.new_($I$(1,1));
+var models=Clazz.new_($I$(3,1));
+allData.put$O$O("models", models);
 this.asObject=(this.getVersion$() >= 2);
 this.nullString=null;
-var saveFrames=Clazz.new_($I$(3));
+var saveFrames=Clazz.new_($I$(3,1));
 try {
 while ((key=this.getNextToken$()) != null ){
 if (key.startsWith$S("global_") || key.startsWith$S("data_") ) {
-models.addLast$TV(data0=data=Clazz.new_($I$(1)));
-data.put$TK$TV("name", key);
+models.addLast$O(data0=data=Clazz.new_($I$(1,1)));
+data.put$O$O("name", key);
 continue;
 }if (key.startsWith$S("loop_")) {
 p$1.getAllCifLoopData$java_util_Map.apply(this, [data]);
@@ -102,10 +78,10 @@ data=data0;
 } else {
 data=saveFrames.removeItemAt$I(n - 1);
 }} else {
-saveFrames.addLast$TV(data);
+saveFrames.addLast$O(data);
 var d=data;
-data=Clazz.new_($I$(1));
-d.put$TK$TV(key, data);
+data=Clazz.new_($I$(1,1));
+d.put$O$O(key, data);
 }continue;
 }if (key.charAt$I(0) != "_") {
 System.out.println$S("CIF ERROR ? should be an underscore: " + key);
@@ -114,7 +90,7 @@ var value=(this.asObject ? this.getNextTokenObject$() : this.getNextToken$());
 if (value == null ) {
 System.out.println$S("CIF ERROR ? end of file; data missing: " + key);
 } else {
-data.put$TK$TV(this.fixKey$S(key), value);
+data.put$O$O(this.fixKey$S(key), value);
 }}}
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -137,17 +113,17 @@ return allData;
 
 Clazz.newMeth(C$, 'getAllCifLoopData$java_util_Map', function (data) {
 var key;
-var keyWords=Clazz.new_($I$(3));
+var keyWords=Clazz.new_($I$(3,1));
 var o;
 while ((o=this.peekToken$()) != null  && Clazz.instanceOf(o, "java.lang.String")  && (o).charAt$I(0) == "_" ){
 key=this.fixKey$S(this.getTokenPeeked$());
-keyWords.addLast$TV(key);
-data.put$TK$TV(key, Clazz.new_($I$(3)));
+keyWords.addLast$O(key);
+data.put$O$O(key, Clazz.new_($I$(3,1)));
 }
 this.columnCount=keyWords.size$();
 if (this.columnCount == 0) return;
 this.isLoop=true;
-while (this.getData$())for (var i=0; i < this.columnCount; i++) (data.get$O(keyWords.get$I(i))).addLast$TV(this.columnData[i]);
+while (this.getData$())for (var i=0; i < this.columnCount; i++) (data.get$O(keyWords.get$I(i))).addLast$O(this.columnData[i]);
 
 
 this.isLoop=false;
@@ -183,7 +159,7 @@ return false;
 
 Clazz.newMeth(C$, 'skipLoop$Z', function (doReport) {
 var str;
-var ret=(doReport ? Clazz.new_($I$(2)) : null);
+var ret=(doReport ? Clazz.new_($I$(2,1)) : null);
 var n=0;
 while ((str=this.peekToken$()) != null  && str.charAt$I(0) == "_" ){
 if (ret != null ) ret.append$S(str).append$S("\n");
@@ -246,9 +222,9 @@ return this.strPeeked;
 Clazz.newMeth(C$, 'fullTrim$S', function (str) {
 var pt0=-1;
 var pt1=str.length$();
-while (++pt0 < pt1 && $I$(4).isWhitespace$C(str.charAt$I(pt0)) ){
+while (++pt0 < pt1 && $I$(4,"isWhitespace$C",[str.charAt$I(pt0)]) ){
 }
-while (--pt1 > pt0 && $I$(4).isWhitespace$C(str.charAt$I(pt1)) ){
+while (--pt1 > pt0 && $I$(4,"isWhitespace$C",[str.charAt$I(pt1)]) ){
 }
 return str.substring$I$I(pt0, pt1 + 1);
 });
@@ -277,7 +253,7 @@ var s;
 if (fields == null ) {
 this.columnNames=Clazz.array(String, [100]);
 } else {
-if (!C$.htFields.containsKey$O(fields[0])) for (var i=fields.length; --i >= 0; ) C$.htFields.put$TK$TV(fields[i], Integer.valueOf$I(i));
+if (!C$.htFields.containsKey$O(fields[0])) for (var i=fields.length; --i >= 0; ) C$.htFields.put$O$O(fields[i], Integer.valueOf$I(i));
 
 for (var i=fields.length; --i >= 0; ) key2col[i]=-1;
 
@@ -342,10 +318,10 @@ return this.setString$S(this.preprocessSemiString$());
 
 Clazz.newMeth(C$, 'preprocessSemiString$', function () {
 this.ich=1;
-var str='\1' + this.line.substring$I(1) + '\n' ;
+var str='\u0001' + this.line.substring$I(1) + '\n' ;
 while (this.readLine$() != null ){
 if (this.line.startsWith$S(";")) {
-str=str.substring$I$I(0, str.length$() - 1) + '\1' + this.line.substring$I(1) ;
+str=str.substring$I$I(0, str.length$() - 1) + '\u0001' + this.line.substring$I(1) ;
 break;
 }str += this.line + '\n';
 }
@@ -411,5 +387,9 @@ pt2++;
 ++this.ich;
 }return this.str.substring$I$I(pt1, pt2);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.htFields=Clazz.new_($I$(1,1));
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

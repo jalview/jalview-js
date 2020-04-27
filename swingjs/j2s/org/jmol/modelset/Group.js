@@ -1,36 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.c.STR','org.jmol.util.Logger','javajs.util.Quat','org.jmol.util.Escape','org.jmol.util.BSUtil','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Group", null, null, 'org.jmol.modelset.Structure');
-C$.standardGroupList=null;
-C$.group3Names=null;
-C$.specialAtomNames=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.c.STR','org.jmol.util.Logger','javajs.util.Quat','org.jmol.util.Escape','org.jmol.util.BSUtil','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Group", null, null, 'org.jmol.modelset.Structure');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.group3Names=Clazz.array(String, [128]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.chain=null;
-this.groupIndex=0;
-this.group1='\0';
-this.firstAtomIndex=0;
-this.leadAtomIndex=0;
-this.lastAtomIndex=0;
-this.bsAdded=null;
-this.seqcode=0;
-this.groupID=0;
-this.selectedIndex=0;
-this.shapeVisibilityFlags=0;
-this.dssrNT=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.firstAtomIndex=-1;
 this.leadAtomIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['C',['group1'],'I',['groupIndex','firstAtomIndex','leadAtomIndex','lastAtomIndex','seqcode','selectedIndex','shapeVisibilityFlags'],'H',['groupID'],'O',['chain','org.jmol.modelset.Chain','bsAdded','javajs.util.BS','dssrNT','java.util.Map']]
+,['S',['standardGroupList'],'O',['group3Names','String[]','+specialAtomNames']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setGroup$org_jmol_modelset_Chain$S$I$I$I', function (chain, group3, seqcode, firstAtomIndex, lastAtomIndex) {
@@ -50,7 +32,7 @@ return this.bsAdded != null  && this.bsAdded.get$I(atomIndex) ;
 });
 
 Clazz.newMeth(C$, 'addAtoms$I', function (atomIndex) {
-if (this.bsAdded == null ) this.bsAdded=Clazz.new_($I$(1));
+if (this.bsAdded == null ) this.bsAdded=Clazz.new_($I$(1,1));
 this.bsAdded.set$I(atomIndex);
 });
 
@@ -304,17 +286,17 @@ if (this.bsAdded != null ) $I$(6).deleteBits$javajs_util_BS$javajs_util_BS(this.
 });
 
 Clazz.newMeth(C$, 'getGroupInfo$I$javajs_util_P3', function (igroup, ptTemp) {
-var infoGroup=Clazz.new_($I$(7));
-infoGroup.put$TK$TV("groupIndex", Integer.valueOf$I(igroup));
-infoGroup.put$TK$TV("groupID", Short.valueOf$H(this.groupID));
+var infoGroup=Clazz.new_($I$(7,1));
+infoGroup.put$O$O("groupIndex", Integer.valueOf$I(igroup));
+infoGroup.put$O$O("groupID", Short.valueOf$H(this.groupID));
 var s=this.getSeqcodeString$();
-if (s != null ) infoGroup.put$TK$TV("seqCode", s);
-infoGroup.put$TK$TV("_apt1", Integer.valueOf$I(this.firstAtomIndex));
-infoGroup.put$TK$TV("_apt2", Integer.valueOf$I(this.lastAtomIndex));
-if (this.bsAdded != null ) infoGroup.put$TK$TV("addedAtoms", this.bsAdded);
-infoGroup.put$TK$TV("atomInfo1", this.chain.model.ms.getAtomInfo$I$S$javajs_util_P3(this.firstAtomIndex, null, ptTemp));
-infoGroup.put$TK$TV("atomInfo2", this.chain.model.ms.getAtomInfo$I$S$javajs_util_P3(this.lastAtomIndex, null, ptTemp));
-infoGroup.put$TK$TV("visibilityFlags", Integer.valueOf$I(this.shapeVisibilityFlags));
+if (s != null ) infoGroup.put$O$O("seqCode", s);
+infoGroup.put$O$O("_apt1", Integer.valueOf$I(this.firstAtomIndex));
+infoGroup.put$O$O("_apt2", Integer.valueOf$I(this.lastAtomIndex));
+if (this.bsAdded != null ) infoGroup.put$O$O("addedAtoms", this.bsAdded);
+infoGroup.put$O$O("atomInfo1", this.chain.model.ms.getAtomInfo$I$S$javajs_util_P3(this.firstAtomIndex, null, ptTemp));
+infoGroup.put$O$O("atomInfo2", this.chain.model.ms.getAtomInfo$I$S$javajs_util_P3(this.lastAtomIndex, null, ptTemp));
+infoGroup.put$O$O("visibilityFlags", Integer.valueOf$I(this.shapeVisibilityFlags));
 return infoGroup;
 });
 
@@ -340,7 +322,7 @@ return -1;
 });
 
 Clazz.newMeth(C$, 'getBSSideChain$', function () {
-return Clazz.new_($I$(1));
+return Clazz.new_($I$(1,1));
 });
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -350,6 +332,10 @@ return "[" + this.getGroup3$() + "-" + this.getSeqcodeString$() + "]" ;
 Clazz.newMeth(C$, 'isNucleicMonomer$', function () {
 return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.group3Names=Clazz.array(String, [128]);
+};
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

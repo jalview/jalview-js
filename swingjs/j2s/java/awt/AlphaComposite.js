@@ -1,48 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'sun.java2d.SunCompositeContext']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlphaComposite", null, null, 'java.awt.Composite');
-C$.Clear=null;
-C$.Src=null;
-C$.Dst=null;
-C$.SrcOver=null;
-C$.DstOver=null;
-C$.SrcIn=null;
-C$.DstIn=null;
-C$.SrcOut=null;
-C$.DstOut=null;
-C$.SrcAtop=null;
-C$.DstAtop=null;
-C$.Xor=null;
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'sun.java2d.SunCompositeContext']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlphaComposite", null, null, 'java.awt.Composite');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.Clear=Clazz.new_(C$.c$$I,[1]);
-C$.Src=Clazz.new_(C$.c$$I,[2]);
-C$.Dst=Clazz.new_(C$.c$$I,[9]);
-C$.SrcOver=Clazz.new_(C$.c$$I,[3]);
-C$.DstOver=Clazz.new_(C$.c$$I,[4]);
-C$.SrcIn=Clazz.new_(C$.c$$I,[5]);
-C$.DstIn=Clazz.new_(C$.c$$I,[6]);
-C$.SrcOut=Clazz.new_(C$.c$$I,[7]);
-C$.DstOut=Clazz.new_(C$.c$$I,[8]);
-C$.SrcAtop=Clazz.new_(C$.c$$I,[10]);
-C$.DstAtop=Clazz.new_(C$.c$$I,[11]);
-C$.Xor=Clazz.new_(C$.c$$I,[12]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.extraAlpha=0;
-this.rule=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['extraAlpha'],'I',['rule']]
+,['O',['Clear','java.awt.AlphaComposite','+Src','+Dst','+SrcOver','+DstOver','+SrcIn','+DstIn','+SrcOut','+DstOut','+SrcAtop','+DstAtop','+Xor']]]
 
 Clazz.newMeth(C$, 'c$$I', function (rule) {
-C$.c$$I$F.apply(this, [rule, 1.0]);
+C$.c$$I$F.apply(this, [rule, rule == 1 ? 0 : 1]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F', function (rule, alpha) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (alpha < 0.0  || alpha > 1.0  ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["alpha value out of range"]);
 }if (rule < 1 || rule > 12 ) {
@@ -88,8 +60,8 @@ return C$.getInstance$I(rule);
 }return Clazz.new_(C$.c$$I$F,[rule, alpha]);
 }, 1);
 
-Clazz.newMeth(C$, ['createContext$java_awt_image_ColorModel$java_awt_image_ColorModel$java_awt_RenderingHints','createContext$'], function (srcColorModel, dstColorModel, hints) {
-return Clazz.new_($I$(1).c$$java_awt_AlphaComposite$java_awt_image_ColorModel$java_awt_image_ColorModel,[this, srcColorModel, dstColorModel]);
+Clazz.newMeth(C$, 'createContext$java_awt_image_ColorModel$java_awt_image_ColorModel$java_awt_RenderingHints', function (srcColorModel, dstColorModel, hints) {
+return Clazz.new_($I$(1,1).c$$java_awt_AlphaComposite$java_awt_image_ColorModel$java_awt_image_ColorModel,[this, srcColorModel, dstColorModel]);
 });
 
 Clazz.newMeth(C$, 'getAlpha$', function () {
@@ -123,6 +95,21 @@ return false;
 }return true;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.Clear=Clazz.new_(C$.c$$I,[1]);
+C$.Src=Clazz.new_(C$.c$$I,[2]);
+C$.Dst=Clazz.new_(C$.c$$I,[9]);
+C$.SrcOver=Clazz.new_(C$.c$$I,[3]);
+C$.DstOver=Clazz.new_(C$.c$$I,[4]);
+C$.SrcIn=Clazz.new_(C$.c$$I,[5]);
+C$.DstIn=Clazz.new_(C$.c$$I,[6]);
+C$.SrcOut=Clazz.new_(C$.c$$I,[7]);
+C$.DstOut=Clazz.new_(C$.c$$I,[8]);
+C$.SrcAtop=Clazz.new_(C$.c$$I,[10]);
+C$.DstAtop=Clazz.new_(C$.c$$I,[11]);
+C$.Xor=Clazz.new_(C$.c$$I,[12]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

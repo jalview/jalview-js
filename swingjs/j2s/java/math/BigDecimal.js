@@ -1,76 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.math.BigInteger','StringBuilder','java.math.MathContext','java.math.RoundingMode',['java.math.BigDecimal','.LongOverflow'],['java.math.BigDecimal','.StringBuilderHelper'],'AssertionError','java.util.Arrays','java.math.MutableBigInteger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BigDecimal", function(){
+(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.math.BigInteger','StringBuilder','java.math.MathContext','java.math.RoundingMode',['java.math.BigDecimal','.LongOverflow'],['java.math.BigDecimal','.StringBuilderHelper'],'AssertionError','java.util.Arrays','java.math.MutableBigInteger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BigDecimal", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'Number', 'Comparable');
-C$.INFLATED_BIGINT=null;
-C$.myStringBuilder=null;
-C$.zeroThroughTen=null;
-C$.ZERO_SCALED_BY=null;
-C$.ZERO=null;
-C$.ONE=null;
-C$.TEN=null;
-C$.bufd=null;
-C$.bufi2=null;
-C$.bufb8=null;
-C$.double10pow=null;
-C$.float10pow=null;
-C$.LONG_TEN_POWERS_TABLE=null;
-C$.BIG_TEN_POWERS_TABLE=null;
-C$.THRESHOLDS_TABLE=null;
-C$.BIG_TEN_POWERS_TABLE_INITLEN=0;
-C$.BIG_TEN_POWERS_TABLE_MAX=0;
-C$.LONGLONG_TEN_POWERS_TABLE=null;
+C$.$classes$=[['LongOverflow',10],['StringBuilderHelper',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.INFLATED_BIGINT=$I$(1).valueOf$J(-281474976710656);
-C$.zeroThroughTen=Clazz.array(C$, -1, [Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ONE, 1, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(2), 2, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(3), 3, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(4), 4, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(5), 5, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(6), 6, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(7), 7, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(8), 8, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(9), 9, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).TEN, 10, 0, 2])]);
-C$.ZERO_SCALED_BY=Clazz.array(C$, -1, [C$.zeroThroughTen[0], Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 1, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 2, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 3, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 4, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 5, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 6, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 7, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 8, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 9, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 10, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 11, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 12, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 13, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 14, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 15, 1])]);
-C$.ZERO=C$.zeroThroughTen[0];
-C$.ONE=C$.zeroThroughTen[1];
-C$.TEN=C$.zeroThroughTen[10];
-{
-var buf8=new ArrayBuffer(8) ||null;
-C$.bufd=new Float64Array(buf8) ||null;
-C$.bufi2=new Uint32Array(buf8) ||null;
-C$.bufb8=new Uint8Array(buf8) ||null;
-};
-C$.double10pow=Clazz.array(Double.TYPE, -1, [1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0E7, 1.0E8, 1.0E9, 1.0E10, 1.0E11, 1.0E12, 1.0E13, 1.0E14, 1.0E15, 1.0E16, 1.0E17, 1.0E18, 1.0E19, 1.0E20, 1.0E21, 1.0E22]);
-C$.float10pow=Clazz.array(Float.TYPE, -1, [1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0E7, 1.0E8, 1.0E9, 1.0E10]);
-{
-C$.LONG_TEN_POWERS_TABLE=1 ? [] :Clazz.array(Long.TYPE, [16]);
-C$.BIG_TEN_POWERS_TABLE=Clazz.array($I$(1), [16]);
-C$.THRESHOLDS_TABLE=1 ? [] :Clazz.array(Long.TYPE, [16]);
-var v=1;
-var vm=281474976710656;
-var vb=$I$(1).ONE;
-for (var i=0; i < 16; i++) {
-C$.LONG_TEN_POWERS_TABLE[i]=v;
-C$.THRESHOLDS_TABLE[i]=vm;
-C$.BIG_TEN_POWERS_TABLE[i]=vb;
-v=1 ? v * 10 :0;
-vm=1 ? Math.floor(vm / 10) :0;
-vb=vb.multiply$java_math_BigInteger($I$(1).TEN);
-}
-};
-C$.BIG_TEN_POWERS_TABLE_INITLEN=C$.BIG_TEN_POWERS_TABLE.length;
-C$.BIG_TEN_POWERS_TABLE_MAX=16 * C$.BIG_TEN_POWERS_TABLE_INITLEN;
-C$.LONGLONG_TEN_POWERS_TABLE=Clazz.array(Long.TYPE, -2, [Clazz.array(Long.TYPE, -1, [0, 10000000000000000]), Clazz.array(Long.TYPE, -1, [0, 100000000000000000]), Clazz.array(Long.TYPE, -1, [0, 1000000000000000000]), Clazz.array(Long.TYPE, -1, [0, -8446744073709551616]), Clazz.array(Long.TYPE, -1, [5, 7766279631452241920]), Clazz.array(Long.TYPE, -1, [54, 3875820019684212736]), Clazz.array(Long.TYPE, -1, [542, 1864712049423024128]), Clazz.array(Long.TYPE, -1, [5421, 200376420520689664]), Clazz.array(Long.TYPE, -1, [54210, 2003764205206896640]), Clazz.array(Long.TYPE, -1, [542101, 1590897978359414784]), Clazz.array(Long.TYPE, -1, [5421010, -2537764290115403776]), Clazz.array(Long.TYPE, -1, [54210108, -6930898827444486144]), Clazz.array(Long.TYPE, -1, [542101086, 4477988020393345024]), Clazz.array(Long.TYPE, -1, [5421010862, 7886392056514347008]), Clazz.array(Long.TYPE, -1, [54210108624, 5076944270305263616]), Clazz.array(Long.TYPE, -1, [542101086242, -4570789518076018688]), Clazz.array(Long.TYPE, -1, [5421010862427, -8814407033341083648]), Clazz.array(Long.TYPE, -1, [54210108624275, 4089650035136921600]), Clazz.array(Long.TYPE, -1, [542101086242752, 4003012203950112768]), Clazz.array(Long.TYPE, -1, [5421010862427522, 3136633892082024448]), Clazz.array(Long.TYPE, -1, [54210108624275221, -5527149226598858752]), Clazz.array(Long.TYPE, -1, [542101086242752217, 68739955140067328]), Clazz.array(Long.TYPE, -1, [5421010862427522170, 687399551400673280])]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.intVal=null;
-this.scale=0;
-this.precision=0;
-this.stringCache=null;
-this.intCompact=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['scale','precision'],'J',['intCompact'],'S',['stringCache'],'O',['intVal','java.math.BigInteger']]
+,['I',['BIG_TEN_POWERS_TABLE_INITLEN','BIG_TEN_POWERS_TABLE_MAX'],'O',['INFLATED_BIGINT','java.math.BigInteger','zeroThroughTen','java.math.BigDecimal[]','+ZERO_SCALED_BY','ZERO','java.math.BigDecimal','+ONE','+TEN','bufd','double[]','bufi2','int[]','double10pow','double[]','float10pow','float[]','LONG_TEN_POWERS_TABLE','long[]','BIG_TEN_POWERS_TABLE','java.math.BigInteger[]','THRESHOLDS_TABLE','long[]','LONGLONG_TEN_POWERS_TABLE','long[][]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 
 this.valueOf = this.toString;
 }, 1);
@@ -106,7 +49,7 @@ len--;
 }var dot=false;
 var exp=0;
 var c;
-var isCompact=(len <= 18);
+var isCompact=(len <= 9);
 var idx=0;
 if (isCompact) {
 for (; len > 0; offset++, len--) {
@@ -185,7 +128,7 @@ break;
 if (prec == 0) throw Clazz.new_(Clazz.load('NumberFormatException'));
 if (exp != 0) {
 scl=p$1.adjustScale$I$J.apply(this, [scl, exp]);
-}rb=Clazz.new_($I$(1).c$$CA$I$I,[coeff, isneg ? -1 : 1, prec]);
+}rb=Clazz.new_($I$(1,1).c$$CA$I$I,[coeff, isneg ? -1 : 1, prec]);
 rs=C$.compactValFor$java_math_BigInteger(rb);
 var mcp=mc.precision;
 if (mcp > 0 && (prec > mcp) ) {
@@ -357,12 +300,6 @@ this.precision=prec;
 Clazz.newMeth(C$, 'doubleToInt2$D', function (val) {
 C$.bufd[0]=val;
 return C$.bufi2;
-}, 1);
-
-Clazz.newMeth(C$, 'int2ToByte8$I$I', function (high, low) {
-C$.bufi2[0]=low;
-C$.bufi2[1]=high;
-return C$.bufb8;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_math_BigInteger', function (val) {
@@ -636,17 +573,8 @@ return C$.multiplyAndRound$java_math_BigInteger$java_math_BigInteger$I$java_math
 
 Clazz.newMeth(C$, 'divide$java_math_BigDecimal$I$I', function (divisor, scale, roundingMode) {
 if (roundingMode < 0 || roundingMode > 7 ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid rounding mode"]);
-if (this.intCompact != -281474976710656) {
-if ((divisor.intCompact != -281474976710656)) {
-return C$.divide$J$I$J$I$I$I(this.intCompact, this.scale, divisor.intCompact, divisor.scale, scale, roundingMode);
-} else {
-return C$.divide$J$I$java_math_BigInteger$I$I$I(this.intCompact, this.scale, divisor.intVal, divisor.scale, scale, roundingMode);
-}} else {
-if ((divisor.intCompact != -281474976710656)) {
-return C$.divide$java_math_BigInteger$I$J$I$I$I(this.intVal, this.scale, divisor.intCompact, divisor.scale, scale, roundingMode);
-} else {
-return C$.divide$java_math_BigInteger$I$java_math_BigInteger$I$I$I(this.intVal, this.scale, divisor.intVal, divisor.scale, scale, roundingMode);
-}}});
+return C$.divide$java_math_BigInteger$I$java_math_BigInteger$I$I$I(this.intVal == null  ? $I$(1).valueOf$J(this.intCompact) : this.intVal, this.scale, divisor.intVal == null  ? $I$(1).valueOf$J(divisor.intCompact) : divisor.intVal, divisor.scale, scale, roundingMode);
+});
 
 Clazz.newMeth(C$, 'divide$java_math_BigDecimal$I$java_math_RoundingMode', function (divisor, scale, roundingMode) {
 return this.divide$java_math_BigDecimal$I$I(divisor, scale, roundingMode.oldMode);
@@ -667,7 +595,7 @@ throw Clazz.new_(Clazz.load('ArithmeticException').c$$S,["Division by zero"]);
 }var preferredScale=C$.saturateLong$J(this.scale - divisor.scale);
 if (this.signum$() == 0) return C$.zeroValueOf$I(preferredScale);
  else {
-var mc=Clazz.new_($I$(3).c$$I$java_math_RoundingMode,[(Math.min(this.precision$() + (Math.ceil(10.0 * divisor.precision$() / 3.0)|0), 2147483647)|0), $I$(4).UNNECESSARY]);
+var mc=Clazz.new_([(Math.min(this.precision$() + (Math.ceil(10.0 * divisor.precision$() / 3.0)|0), 2147483647)|0), $I$(4).UNNECESSARY],$I$(3,1).c$$I$java_math_RoundingMode);
 var quotient;
 try {
 quotient=this.divide$java_math_BigDecimal$java_math_MathContext(divisor, mc);
@@ -712,7 +640,7 @@ if (p$1.compareMagnitude$java_math_BigDecimal.apply(this, [divisor]) < 0) {
 return C$.zeroValueOf$I(preferredScale);
 }if (this.signum$() == 0 && divisor.signum$() != 0 ) return this.setScale$I$I(preferredScale, 7);
 var maxDigits=(Math.min(this.precision$() + (Math.ceil(10.0 * divisor.precision$() / 3.0)|0) + Math.abs(this.scale$() - divisor.scale$()) + 2 , 2147483647)|0);
-var quotient=this.divide$java_math_BigDecimal$java_math_MathContext(divisor, Clazz.new_($I$(3).c$$I$java_math_RoundingMode,[maxDigits, $I$(4).DOWN]));
+var quotient=this.divide$java_math_BigDecimal$java_math_MathContext(divisor, Clazz.new_([maxDigits, $I$(4).DOWN],$I$(3,1).c$$I$java_math_RoundingMode));
 if (quotient.scale > 0) {
 quotient=quotient.setScale$I$java_math_RoundingMode(0, $I$(4).DOWN);
 quotient=C$.stripZerosToMatchScale$java_math_BigInteger$J$I$I(quotient.intVal, quotient.intCompact, quotient.scale, preferredScale);
@@ -724,7 +652,7 @@ quotient=quotient.setScale$I$I(preferredScale, 7);
 Clazz.newMeth(C$, 'divideToIntegralValue$java_math_BigDecimal$java_math_MathContext', function (divisor, mc) {
 if (mc.precision == 0 || (p$1.compareMagnitude$java_math_BigDecimal.apply(this, [divisor]) < 0) ) return this.divideToIntegralValue$java_math_BigDecimal(divisor);
 var preferredScale=C$.saturateLong$J(this.scale - divisor.scale);
-var result=this.divide$java_math_BigDecimal$java_math_MathContext(divisor, Clazz.new_($I$(3).c$$I$java_math_RoundingMode,[mc.precision, $I$(4).DOWN]));
+var result=this.divide$java_math_BigDecimal$java_math_MathContext(divisor, Clazz.new_([mc.precision, $I$(4).DOWN],$I$(3,1).c$$I$java_math_RoundingMode));
 if (result.scale$() < 0) {
 var product=result.multiply$java_math_BigDecimal(divisor);
 if (p$1.compareMagnitude$java_math_BigDecimal.apply(this.subtract$java_math_BigDecimal(product), [divisor]) >= 0) {
@@ -780,7 +708,7 @@ var mag=Math.abs(n);
 if (mc.precision > 0) {
 var elength=C$.longDigitLength$J(mag);
 if (elength > mc.precision) throw Clazz.new_(Clazz.load('ArithmeticException').c$$S,["Invalid operation"]);
-workmc=Clazz.new_($I$(3).c$$I$java_math_RoundingMode,[mc.precision + elength + 1 , mc.roundingMode]);
+workmc=Clazz.new_($I$(3,1).c$$I$java_math_RoundingMode,[mc.precision + elength + 1 , mc.roundingMode]);
 }var acc=C$.ONE;
 var seenbit=false;
 for (var i=1; ; i++) {
@@ -912,7 +840,7 @@ return C$.createAndStripZerosToMatchScale$J$I$J(this.intCompact, this.scale, -28
 return C$.createAndStripZerosToMatchScale$java_math_BigInteger$I$J(this.intVal, this.scale, -281474976710656);
 }});
 
-Clazz.newMeth(C$, ['compareTo$java_math_BigDecimal','compareTo$','compareTo$TT'], function (val) {
+Clazz.newMeth(C$, ['compareTo$java_math_BigDecimal','compareTo$O'], function (val) {
 if (this.scale == val.scale) {
 var xs=this.intCompact;
 var ys=val.intCompact;
@@ -1002,11 +930,11 @@ return "0";
 }var tailingZeros=C$.checkScaleNonZero$J((-this.scale));
 var buf;
 if (this.intCompact != -281474976710656) {
-buf=Clazz.new_($I$(2).c$$I,[20 + tailingZeros]);
+buf=Clazz.new_($I$(2,1).c$$I,[20 + tailingZeros]);
 buf.append$J(this.intCompact);
 } else {
 var str=this.intVal.toString();
-buf=Clazz.new_($I$(2).c$$I,[str.length$() + tailingZeros]);
+buf=Clazz.new_([str.length$() + tailingZeros],$I$(2,1).c$$I);
 buf.append$S(str);
 }for (var i=0; i < tailingZeros; i++) buf.append$C("0");
 
@@ -1025,11 +953,11 @@ var insertionPoint=intString.length$() - scale;
 if (insertionPoint == 0) {
 return (signum < 0 ? "-0." : "0.") + intString;
 } else if (insertionPoint > 0) {
-buf=Clazz.new_($I$(2).c$$S,[intString]);
+buf=Clazz.new_($I$(2,1).c$$S,[intString]);
 buf.insert$I$C(insertionPoint, ".");
 if (signum < 0) buf.insert$I$C(0, "-");
 } else {
-buf=Clazz.new_($I$(2).c$$I,[3 - insertionPoint + intString.length$()]);
+buf=Clazz.new_([3 - insertionPoint + intString.length$()],$I$(2,1).c$$I);
 buf.append$S(signum < 0 ? "-0." : "0.");
 for (var i=0; i < -insertionPoint; i++) buf.append$C("0");
 
@@ -1081,7 +1009,7 @@ Clazz.newMeth(C$, 'byteValueExact$', function () {
 var num;
 num=this.longValueExact$();
 if (($b$[0] = num, $b$[0]) != num) throw Clazz.new_(Clazz.load('ArithmeticException').c$$S,["Overflow"]);
-return $b$[0] = (num|0), $b$[0];
+return ($b$[0] = num, $b$[0]);
 });
 
 Clazz.newMeth(C$, 'floatValue$', function () {
@@ -1120,7 +1048,7 @@ if (this.scale == 2 && this.intCompact >= 0  && this.intCompact < 2147483647 ) {
 var lowInt=(this.intCompact|0) % 100;
 var highInt=((this.intCompact|0)/100|0);
 return (Integer.toString$I(highInt) + '.' + $I$(6).DIGIT_TENS[lowInt] + $I$(6).DIGIT_ONES[lowInt] );
-}var sbHelper=Clazz.new_($I$(6));
+}var sbHelper=Clazz.new_($I$(6,1));
 var coeff;
 var offset;
 if (this.intCompact != -281474976710656) {
@@ -1171,7 +1099,7 @@ buf.append$S("0.0");
 adjusted+=3;
 break;
 default:
-throw Clazz.new_($I$(7).c$$O,["Unexpected sig value " + sig]);
+throw Clazz.new_($I$(7,1).c$$O,["Unexpected sig value " + sig]);
 }
 } else if (sig >= coeffLen) {
 buf.append$CA$I$I(coeff, offset, coeffLen);
@@ -1205,7 +1133,7 @@ if (curLen <= n) {
 var newLen=curLen << 1;
 while (newLen <= n)newLen<<=1;
 
-pows=$I$(8).copyOf$TTA$I(pows, newLen);
+pows=$I$(8).copyOf$OA$I(pows, newLen);
 for (var i=curLen; i < newLen; i++) pows[i]=pows[i - 1].multiply$java_math_BigInteger($I$(1).TEN);
 
 C$.BIG_TEN_POWERS_TABLE=pows;
@@ -1217,7 +1145,7 @@ if (hi == 0) {
 if (lo >= 0) {
 return C$.longDigitLength$J(lo);
 }return (C$.unsignedLongCompareEq$J$D(lo, C$.LONGLONG_TEN_POWERS_TABLE[0][1])) ? 17 : 16;
-}var r=($I$(1).longRightShift$J$I((128 - $I$(1).longNumberOfLeadingZeros$J(hi) + 1) * 1233, 12)|0);
+}var r=($I$(1,"longRightShift$J$I",[(128 - $I$(1).longNumberOfLeadingZeros$J(hi) + 1) * 1233, 12])|0);
 var idx=r - 16;
 return (idx >= C$.LONGLONG_TEN_POWERS_TABLE.length || C$.longLongCompareMagnitude$J$J$D$D(hi, lo, C$.LONGLONG_TEN_POWERS_TABLE[idx][0], C$.LONGLONG_TEN_POWERS_TABLE[idx][1]) ) ? r : r + 1;
 }, 1);
@@ -1265,7 +1193,7 @@ return (r >= tab.length || x < tab[r] ) ? r : r + 1;
 
 Clazz.newMeth(C$, 'bigDigitLength$java_math_BigInteger', function (b) {
 if (b.signum == 0) return 1;
-var r=($I$(1).longRightShift$J$I(((b.bitLength$() + 1) * 646456993), 31)|0);
+var r=($I$(1,"longRightShift$J$I",[((b.bitLength$() + 1) * 646456993), 31])|0);
 return b.compareMagnitude$java_math_BigInteger(C$.bigTenToThe$I(r)) < 0 ? r : r + 1;
 }, 1);
 
@@ -1279,6 +1207,7 @@ if (this.intCompact != 0 && ((b=this.intVal) == null  || b.signum$() != 0 ) ) th
 }, p$1);
 
 Clazz.newMeth(C$, 'compactValFor$java_math_BigInteger', function (b) {
+if (true) return -281474976710656;
 if (b.isOneInt$()) return b.intValue$();
 var m=b.mag;
 var len=m.length;
@@ -1465,7 +1394,7 @@ return true;
 case 6:
 return oddQuot;
 default:
-throw Clazz.new_($I$(7).c$$O,["Unexpected rounding mode" + roundingMode]);
+throw Clazz.new_($I$(7,1).c$$O,["Unexpected rounding mode" + roundingMode]);
 }
 }}
 }, 1);
@@ -1485,8 +1414,8 @@ var isRemainderZero;
 var qsign;
 var r=0;
 var mq=null;
-var mdividend=Clazz.new_($I$(9).c$$IA,[bdividend.mag]);
-mq=Clazz.new_($I$(9));
+var mdividend=Clazz.new_($I$(9,1).c$$IA,[bdividend.mag]);
+mq=Clazz.new_($I$(9,1));
 r=mdividend.divide$J$java_math_MutableBigInteger(ldivisor, mq);
 isRemainderZero=(r == 0);
 qsign=(ldivisor < 0) ? -bdividend.signum : bdividend.signum;
@@ -1501,8 +1430,8 @@ var isRemainderZero;
 var qsign;
 var r=0;
 var mq=null;
-var mdividend=Clazz.new_($I$(9).c$$IA,[bdividend.mag]);
-mq=Clazz.new_($I$(9));
+var mdividend=Clazz.new_($I$(9,1).c$$IA,[bdividend.mag]);
+mq=Clazz.new_($I$(9,1));
 r=mdividend.divide$J$java_math_MutableBigInteger(ldivisor, mq);
 isRemainderZero=(r == 0);
 qsign=(ldivisor < 0) ? -bdividend.signum : bdividend.signum;
@@ -1534,9 +1463,9 @@ cmpFracHalf=C$.longCompareMagnitude$J$J(2 * r, ldivisor);
 Clazz.newMeth(C$, 'divideAndRound$java_math_BigInteger$java_math_BigInteger$I', function (bdividend, bdivisor, roundingMode) {
 var isRemainderZero;
 var qsign;
-var mdividend=Clazz.new_($I$(9).c$$IA,[bdividend.mag]);
-var mq=Clazz.new_($I$(9));
-var mdivisor=Clazz.new_($I$(9).c$$IA,[bdivisor.mag]);
+var mdividend=Clazz.new_($I$(9,1).c$$IA,[bdividend.mag]);
+var mq=Clazz.new_($I$(9,1));
+var mdivisor=Clazz.new_($I$(9,1).c$$IA,[bdivisor.mag]);
 var mr=mdividend.divide$java_math_MutableBigInteger$java_math_MutableBigInteger(mdivisor, mq);
 isRemainderZero=mr.isZero$();
 qsign=(bdividend.signum != bdivisor.signum) ? -1 : 1;
@@ -1549,9 +1478,9 @@ mq.add$java_math_MutableBigInteger($I$(9).ONE);
 Clazz.newMeth(C$, 'divideAndRound$java_math_BigInteger$java_math_BigInteger$I$I$I', function (bdividend, bdivisor, scale, roundingMode, preferredScale) {
 var isRemainderZero;
 var qsign;
-var mdividend=Clazz.new_($I$(9).c$$IA,[bdividend.mag]);
-var mq=Clazz.new_($I$(9));
-var mdivisor=Clazz.new_($I$(9).c$$IA,[bdivisor.mag]);
+var mdividend=Clazz.new_($I$(9,1).c$$IA,[bdividend.mag]);
+var mq=Clazz.new_($I$(9,1));
+var mdivisor=Clazz.new_($I$(9,1).c$$IA,[bdivisor.mag]);
 var mr=mdividend.divide$java_math_MutableBigInteger$java_math_MutableBigInteger(mdivisor, mq);
 isRemainderZero=mr.isZero$();
 qsign=(bdividend.signum != bdivisor.signum) ? -1 : 1;
@@ -1859,7 +1788,7 @@ var d3=$I$(1).getHighBits$J(d2);
 d2=$I$(1).getLowBits$J(d2);
 product=d0_hi * d1_hi + d2;
 d2=$I$(1).getLowBits$J(product);
-d3=$I$(1).getLowBits$J(($I$(1).getHighBits$J(product) + d3));
+d3=$I$(1,"getLowBits$J",[($I$(1).getHighBits$J(product) + d3)]);
 var dividendHi=C$.make64$J$J(d3, d2);
 var dividendLo=C$.make64$J$J(d1, d0);
 return C$.divideAndRound128$J$J$J$I$I$I$I(dividendHi, dividendLo, divisor, qsign, scale, roundingMode, preferredScale);
@@ -1913,10 +1842,10 @@ r_tmp+=v1;
 if (r_tmp >= 16777216) break;
 }
 if ((q1|0) < 0) {
-var mq=Clazz.new_($I$(9).c$$IA,[Clazz.array(Integer.TYPE, -1, [(q1|0), (q0|0)])]);
+var mq=Clazz.new_([Clazz.array(Integer.TYPE, -1, [(q1|0), (q0|0)])],$I$(9,1).c$$IA);
 if (roundingMode == 1 && scale == preferredScale ) {
 return mq.toBigDecimal$I$I(sign, scale);
-}var r=$I$(1).longRightShift$J$I(C$.mulsub$J$J$J$J$J(u1, u0, v1, v0, q0), shift);
+}var r=$I$(1,"longRightShift$J$I",[C$.mulsub$J$J$J$J$J(u1, u0, v1, v0, q0), shift]);
 if (r != 0) {
 if (C$.needIncrement$J$I$I$java_math_MutableBigInteger$J($I$(1).longRightShift$J$I(divisor, shift), roundingMode, sign, mq, r)) {
 mq.add$java_math_MutableBigInteger($I$(9).ONE);
@@ -1930,7 +1859,7 @@ return mq.toBigDecimal$I$I(sign, scale);
 }}}var q=C$.make64$J$J(q1, q0);
 q*=sign;
 if (roundingMode == 1 && scale == preferredScale ) return C$.valueOf$J$I(q, scale);
-var r=$I$(1).longRightShift$J$I(C$.mulsub$J$J$J$J$J(u1, u0, v1, v0, q0), shift);
+var r=$I$(1,"longRightShift$J$I",[C$.mulsub$J$J$J$J$J(u1, u0, v1, v0, q0), shift]);
 if (r != 0) {
 var increment=C$.needIncrement$J$I$I$J$J($I$(1).longRightShift$J$I(divisor, shift), roundingMode, sign, q, r);
 return C$.valueOf$J$I((increment ? q + sign : q), scale);
@@ -2077,7 +2006,7 @@ var m3=$I$(1).getHighBits$J(m2);
 m2=$I$(1).getLowBits$J(m2);
 product=m0_hi * m1_hi + m2;
 m2=$I$(1).getLowBits$J(product);
-m3=$I$(1).getLowBits$J(($I$(1).getHighBits$J(product) + m3));
+m3=$I$(1,"getLowBits$J",[($I$(1).getHighBits$J(product) + m3)]);
 var mHi=C$.make64$J$J(m3, m2);
 var mLo=C$.make64$J$J(m1, m0);
 var res=C$.doRound128$J$J$I$I$java_math_MathContext(mHi, mLo, rsign, scale, mc);
@@ -2139,97 +2068,91 @@ return C$.divideAndRound$J$J$I$I$I(dividend, ys, scale, roundingMode, scale);
 return C$.divideAndRound$java_math_BigInteger$java_math_BigInteger$I$I$I($I$(1).valueOf$J(dividend), scaledDivisor, scale, roundingMode, scale);
 }}, 1);
 
-Clazz.newMeth(C$, 'divide$java_math_BigInteger$I$J$I$I$I', function (dividend, dividendScale, divisor, divisorScale, scale, roundingMode) {
-if (C$.checkScale$java_math_BigInteger$J(dividend, scale + divisorScale) > dividendScale) {
-var newScale=scale + divisorScale;
-var raise=newScale - dividendScale;
-var scaledDividend=C$.bigMultiplyPowerTen$java_math_BigInteger$I(dividend, raise);
-return C$.divideAndRound$java_math_BigInteger$J$I$I$I(scaledDividend, divisor, scale, roundingMode, scale);
-} else {
-var newScale=C$.checkScale$J$J(divisor, dividendScale - scale);
-var raise=newScale - divisorScale;
-if (raise < C$.LONG_TEN_POWERS_TABLE.length) {
-var ys=divisor;
-if ((ys=C$.longMultiplyPowerTen$J$I(ys, raise)) != -281474976710656) {
-return C$.divideAndRound$java_math_BigInteger$J$I$I$I(dividend, ys, scale, roundingMode, scale);
-}}var scaledDivisor=C$.bigMultiplyPowerTen$J$I(divisor, raise);
-return C$.divideAndRound$java_math_BigInteger$java_math_BigInteger$I$I$I(dividend, scaledDivisor, scale, roundingMode, scale);
-}}, 1);
-
-Clazz.newMeth(C$, 'divide$J$I$java_math_BigInteger$I$I$I', function (dividend, dividendScale, divisor, divisorScale, scale, roundingMode) {
-if (C$.checkScale$J$J(dividend, scale + divisorScale) > dividendScale) {
-var newScale=scale + divisorScale;
-var raise=newScale - dividendScale;
-var scaledDividend=C$.bigMultiplyPowerTen$J$I(dividend, raise);
-return C$.divideAndRound$java_math_BigInteger$java_math_BigInteger$I$I$I(scaledDividend, divisor, scale, roundingMode, scale);
-} else {
-var newScale=C$.checkScale$java_math_BigInteger$J(divisor, dividendScale - scale);
-var raise=newScale - divisorScale;
-var scaledDivisor=C$.bigMultiplyPowerTen$java_math_BigInteger$I(divisor, raise);
-return C$.divideAndRound$java_math_BigInteger$java_math_BigInteger$I$I$I($I$(1).valueOf$J(dividend), scaledDivisor, scale, roundingMode, scale);
-}}, 1);
-
 Clazz.newMeth(C$, 'divide$java_math_BigInteger$I$java_math_BigInteger$I$I$I', function (dividend, dividendScale, divisor, divisorScale, scale, roundingMode) {
-if (C$.checkScale$java_math_BigInteger$J(dividend, scale + divisorScale) > dividendScale) {
-var newScale=scale + divisorScale;
-var raise=newScale - dividendScale;
+var newScale=(C$.checkScale$java_math_BigInteger$J(dividend, scale + divisorScale) > dividendScale ? scale + divisorScale : C$.checkScale$java_math_BigInteger$J(divisor, dividendScale - scale));
+var raise=newScale - divisorScale;
 var scaledDividend=C$.bigMultiplyPowerTen$java_math_BigInteger$I(dividend, raise);
 return C$.divideAndRound$java_math_BigInteger$java_math_BigInteger$I$I$I(scaledDividend, divisor, scale, roundingMode, scale);
-} else {
-var newScale=C$.checkScale$java_math_BigInteger$J(divisor, dividendScale - scale);
-var raise=newScale - divisorScale;
-var scaledDivisor=C$.bigMultiplyPowerTen$java_math_BigInteger$I(divisor, raise);
-return C$.divideAndRound$java_math_BigInteger$java_math_BigInteger$I$I$I(dividend, scaledDivisor, scale, roundingMode, scale);
-}}, 1);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.INFLATED_BIGINT=$I$(1).valueOf$J(-281474976710656);
+C$.zeroThroughTen=Clazz.array(C$, -1, [Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ONE, 1, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(2), 2, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(3), 3, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(4), 4, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(5), 5, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(6), 6, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(7), 7, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(8), 8, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).valueOf$J(9), 9, 0, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).TEN, 10, 0, 2])]);
+C$.ZERO_SCALED_BY=Clazz.array(C$, -1, [C$.zeroThroughTen[0], Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 1, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 2, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 3, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 4, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 5, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 6, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 7, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 8, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 9, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 10, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 11, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 12, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 13, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 14, 1]), Clazz.new_(C$.c$$java_math_BigInteger$J$I$I,[$I$(1).ZERO, 0, 15, 1])]);
+C$.ZERO=C$.zeroThroughTen[0];
+C$.ONE=C$.zeroThroughTen[1];
+C$.TEN=C$.zeroThroughTen[10];
+{
+var buf8=new ArrayBuffer(8) ||null;
+C$.bufd=new Float64Array(buf8) ||null;
+C$.bufi2=new Uint32Array(buf8) ||null;
+};
+C$.double10pow=Clazz.array(Double.TYPE, -1, [1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0E7, 1.0E8, 1.0E9, 1.0E10, 1.0E11, 1.0E12, 1.0E13, 1.0E14, 1.0E15, 1.0E16, 1.0E17, 1.0E18, 1.0E19, 1.0E20, 1.0E21, 1.0E22]);
+C$.float10pow=Clazz.array(Float.TYPE, -1, [1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 1.0E7, 1.0E8, 1.0E9, 1.0E10]);
+{
+C$.LONG_TEN_POWERS_TABLE=1 ? [] :Clazz.array(Long.TYPE, [16]);
+C$.BIG_TEN_POWERS_TABLE=Clazz.array($I$(1), [16]);
+C$.THRESHOLDS_TABLE=1 ? [] :Clazz.array(Long.TYPE, [16]);
+var v=1;
+var vm=281474976710656;
+var vb=$I$(1).ONE;
+for (var i=0; i < 16; i++) {
+C$.LONG_TEN_POWERS_TABLE[i]=v;
+C$.THRESHOLDS_TABLE[i]=vm;
+C$.BIG_TEN_POWERS_TABLE[i]=vb;
+v=1 ? v * 10 :0;
+vm=1 ? Math.floor(vm / 10) :0;
+vb=vb.multiply$java_math_BigInteger($I$(1).TEN);
+}
+};
+C$.BIG_TEN_POWERS_TABLE_INITLEN=C$.BIG_TEN_POWERS_TABLE.length;
+C$.BIG_TEN_POWERS_TABLE_MAX=16 * C$.BIG_TEN_POWERS_TABLE_INITLEN;
+C$.LONGLONG_TEN_POWERS_TABLE=Clazz.array(Long.TYPE, -2, [Clazz.array(Long.TYPE, -1, [0, 10000000000000000]), Clazz.array(Long.TYPE, -1, [0, 100000000000000000]), Clazz.array(Long.TYPE, -1, [0, 1000000000000000000]), Clazz.array(Long.TYPE, -1, [0, -8446744073709551616]), Clazz.array(Long.TYPE, -1, [5, 7766279631452241920]), Clazz.array(Long.TYPE, -1, [54, 3875820019684212736]), Clazz.array(Long.TYPE, -1, [542, 1864712049423024128]), Clazz.array(Long.TYPE, -1, [5421, 200376420520689664]), Clazz.array(Long.TYPE, -1, [54210, 2003764205206896640]), Clazz.array(Long.TYPE, -1, [542101, 1590897978359414784]), Clazz.array(Long.TYPE, -1, [5421010, -2537764290115403776]), Clazz.array(Long.TYPE, -1, [54210108, -6930898827444486144]), Clazz.array(Long.TYPE, -1, [542101086, 4477988020393345024]), Clazz.array(Long.TYPE, -1, [5421010862, 7886392056514347008]), Clazz.array(Long.TYPE, -1, [54210108624, 5076944270305263616]), Clazz.array(Long.TYPE, -1, [542101086242, -4570789518076018688]), Clazz.array(Long.TYPE, -1, [5421010862427, -8814407033341083648]), Clazz.array(Long.TYPE, -1, [54210108624275, 4089650035136921600]), Clazz.array(Long.TYPE, -1, [542101086242752, 4003012203950112768]), Clazz.array(Long.TYPE, -1, [5421010862427522, 3136633892082024448]), Clazz.array(Long.TYPE, -1, [54210108624275221, -5527149226598858752]), Clazz.array(Long.TYPE, -1, [542101086242752217, 68739955140067328]), Clazz.array(Long.TYPE, -1, [5421010862427522170, 687399551400673280])]);
+};
 var $s$ = new Int16Array(1);
 var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.BigDecimal, "LongOverflow", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BigDecimal, "LongOverflow", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.LONGMIN=null;
-C$.LONGMAX=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LONGMIN=$I$(1).valueOf$J(-281474976710656);
-C$.LONGMAX=$I$(1).valueOf$J(281474976710656);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['LONGMIN','java.math.BigInteger','+LONGMAX']]]
 
 Clazz.newMeth(C$, 'check$java_math_BigDecimal', function (num) {
 var intVal=p$1.inflated.apply(num, []);
 if (intVal.compareTo$java_math_BigInteger(C$.LONGMIN) < 0 || intVal.compareTo$java_math_BigInteger(C$.LONGMAX) > 0 ) throw Clazz.new_(Clazz.load('ArithmeticException').c$$S,["Overflow"]);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.LONGMIN=$I$(1).valueOf$J(-281474976710656);
+C$.LONGMAX=$I$(1).valueOf$J(281474976710656);
+};
+
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.BigDecimal, "StringBuilderHelper", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BigDecimal, "StringBuilderHelper", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.DIGIT_TENS=null;
-C$.DIGIT_ONES=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DIGIT_TENS=Clazz.array(Character.TYPE, -1, ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "6", "6", "6", "6", "6", "6", "6", "6", "6", "6", "7", "7", "7", "7", "7", "7", "7", "7", "7", "7", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "9", "9", "9", "9", "9", "9", "9", "9", "9", "9"]);
-C$.DIGIT_ONES=Clazz.array(Character.TYPE, -1, ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sb=null;
-this.cmpCharArray=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sb','StringBuilder','cmpCharArray','char[]']]
+,['O',['DIGIT_TENS','char[]','+DIGIT_ONES']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.sb=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.sb=Clazz.new_($I$(2,1));
 this.cmpCharArray=Clazz.array(Character.TYPE, [19]);
 }, 1);
 
@@ -2267,7 +2190,12 @@ this.cmpCharArray[--charPos]=C$.DIGIT_ONES[i2];
 if (i2 >= 10) this.cmpCharArray[--charPos]=C$.DIGIT_TENS[i2];
 return charPos;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.DIGIT_TENS=Clazz.array(Character.TYPE, -1, ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "6", "6", "6", "6", "6", "6", "6", "6", "6", "6", "7", "7", "7", "7", "7", "7", "7", "7", "7", "7", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "9", "9", "9", "9", "9", "9", "9", "9", "9", "9"]);
+C$.DIGIT_ONES=Clazz.array(Character.TYPE, -1, ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]);
+};
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

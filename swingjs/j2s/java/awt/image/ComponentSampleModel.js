@@ -1,27 +1,17 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBufferByte','java.awt.image.DataBufferUShort','java.awt.image.DataBufferShort','java.awt.image.DataBufferInt','java.awt.image.DataBuffer','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ComponentSampleModel", null, 'java.awt.image.SampleModel');
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBufferByte','java.awt.image.DataBufferUShort','java.awt.image.DataBufferShort','java.awt.image.DataBufferInt','java.awt.image.DataBuffer','java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ComponentSampleModel", null, 'java.awt.image.SampleModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bandOffsets=null;
-this.bankIndices=null;
-this.$numBands=0;
-this.numBanks=0;
-this.scanlineStride=0;
-this.pixelStride=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.$numBands=1;
 this.numBanks=1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['$numBands','numBanks','scanlineStride','pixelStride'],'O',['bandOffsets','int[]','+bankIndices']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA', function (dataType, w, h, pixelStride, scanlineStride, bandOffsets) {
-C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, bandOffsets.length]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$I$I.apply(this,[dataType, w, h, bandOffsets.length]);C$.$init$.apply(this);
 this.dataType=dataType;
 this.pixelStride=pixelStride;
 this.scanlineStride=scanlineStride;
@@ -42,8 +32,7 @@ this.bankIndices[i]=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA$IA', function (dataType, w, h, pixelStride, scanlineStride, bankIndices, bandOffsets) {
-C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, bandOffsets.length]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$I$I.apply(this,[dataType, w, h, bandOffsets.length]);C$.$init$.apply(this);
 this.dataType=dataType;
 this.pixelStride=pixelStride;
 this.scanlineStride=scanlineStride;
@@ -167,16 +156,16 @@ var dataBuffer=null;
 var size=(p$1.getBufferSize.apply(this, [])|0);
 switch (this.dataType) {
 case 0:
-dataBuffer=Clazz.new_($I$(1).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(1,1).c$$I$I,[size, this.numBanks]);
 break;
 case 1:
-dataBuffer=Clazz.new_($I$(2).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(2,1).c$$I$I,[size, this.numBanks]);
 break;
 case 2:
-dataBuffer=Clazz.new_($I$(3).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(3,1).c$$I$I,[size, this.numBanks]);
 break;
 case 3:
-dataBuffer=Clazz.new_($I$(4).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(4,1).c$$I$I,[size, this.numBanks]);
 break;
 }
 return dataBuffer;
@@ -236,7 +225,7 @@ var bdata;
 if (obj == null ) bdata=Clazz.array(Byte.TYPE, [numDataElems]);
  else bdata=obj;
 for (var i=0; i < numDataElems; i++) {
-bdata[i]=((data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0)|0);
+bdata[i]=(data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0);
 }
 obj=bdata;
 break;
@@ -468,4 +457,4 @@ return hash;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

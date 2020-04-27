@@ -1,24 +1,19 @@
-(function(){var P$=java.util,p$1={},I$=[[0,'java.util.Objects',['java.util.LinkedList','.ListItr'],'java.util.Spliterators',['java.util.LinkedList','.Node'],['java.util.LinkedList','.DescendingIterator'],'InternalError','java.lang.reflect.Array',['java.util.LinkedList','.LLSpliterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LinkedList", function(){
+(function(){var P$=java.util,p$1={},I$=[[0,'java.util.Objects',['java.util.LinkedList','.ListItr'],'java.util.Spliterators',['java.util.LinkedList','.Node'],['java.util.LinkedList','.DescendingIterator'],'InternalError','java.lang.reflect.Array',['java.util.LinkedList','.LLSpliterator']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LinkedList", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractSequentialList', ['java.util.List', 'java.util.Deque', 'Cloneable', 'java.io.Serializable']);
+C$.$classes$=[['ListItr',2],['Node',10],['DescendingIterator',2],['LLSpliterator',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.size=0;
-this.first=null;
-this.last=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.size=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['size'],'O',['first','java.util.LinkedList.Node','+last']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
@@ -26,9 +21,9 @@ C$.c$.apply(this, []);
 this.addAll$java_util_Collection(c);
 }, 1);
 
-Clazz.newMeth(C$, ['linkFirst$TE'], function (e) {
+Clazz.newMeth(C$, 'linkFirst$O', function (e) {
 var f=this.first;
-var newNode=Clazz.new_($I$(4).c$$java_util_LinkedList_Node$TE$java_util_LinkedList_Node,[null, e, f]);
+var newNode=Clazz.new_($I$(4,1).c$$java_util_LinkedList_Node$O$java_util_LinkedList_Node,[null, e, f]);
 this.first=newNode;
 if (f == null ) this.last=newNode;
  else f.prev=newNode;
@@ -36,9 +31,9 @@ this.size++;
 this.modCount++;
 }, p$1);
 
-Clazz.newMeth(C$, ['linkLast$TE'], function (e) {
+Clazz.newMeth(C$, 'linkLast$O', function (e) {
 var l=this.last;
-var newNode=Clazz.new_($I$(4).c$$java_util_LinkedList_Node$TE$java_util_LinkedList_Node,[l, e, null]);
+var newNode=Clazz.new_($I$(4,1).c$$java_util_LinkedList_Node$O$java_util_LinkedList_Node,[l, e, null]);
 this.last=newNode;
 if (l == null ) this.first=newNode;
  else l.next_=newNode;
@@ -46,9 +41,9 @@ this.size++;
 this.modCount++;
 });
 
-Clazz.newMeth(C$, ['linkBefore$TE$java_util_LinkedList_Node'], function (e, succ) {
+Clazz.newMeth(C$, 'linkBefore$O$java_util_LinkedList_Node', function (e, succ) {
 var pred=succ.prev;
-var newNode=Clazz.new_($I$(4).c$$java_util_LinkedList_Node$TE$java_util_LinkedList_Node,[pred, e, succ]);
+var newNode=Clazz.new_($I$(4,1).c$$java_util_LinkedList_Node$O$java_util_LinkedList_Node,[pred, e, succ]);
 succ.prev=newNode;
 if (pred == null ) this.first=newNode;
  else pred.next_=newNode;
@@ -126,12 +121,12 @@ if (l == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'))
 return p$1.unlinkLast$java_util_LinkedList_Node.apply(this, [l]);
 });
 
-Clazz.newMeth(C$, ['addFirst$TE'], function (e) {
-p$1.linkFirst$TE.apply(this, [e]);
+Clazz.newMeth(C$, 'addFirst$O', function (e) {
+p$1.linkFirst$O.apply(this, [e]);
 });
 
-Clazz.newMeth(C$, ['addLast$TE'], function (e) {
-this.linkLast$TE(e);
+Clazz.newMeth(C$, 'addLast$O', function (e) {
+this.linkLast$O(e);
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
@@ -142,8 +137,8 @@ Clazz.newMeth(C$, 'size$', function () {
 return this.size;
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.linkLast$TE(e);
+Clazz.newMeth(C$, 'add$O', function (e) {
+this.linkLast$O(e);
 return true;
 });
 
@@ -182,7 +177,7 @@ succ=this.node$I(index);
 pred=succ.prev;
 }for (var o, $o = 0, $$o = a; $o<$$o.length&&((o=($$o[$o])),1);$o++) {
 var e=o;
-var newNode=Clazz.new_($I$(4).c$$java_util_LinkedList_Node$TE$java_util_LinkedList_Node,[pred, e, null]);
+var newNode=Clazz.new_($I$(4,1).c$$java_util_LinkedList_Node$O$java_util_LinkedList_Node,[pred, e, null]);
 if (pred == null ) this.first=newNode;
  else pred.next_=newNode;
 pred=newNode;
@@ -215,7 +210,7 @@ p$1.checkElementIndex$I.apply(this, [index]);
 return this.node$I(index).item;
 });
 
-Clazz.newMeth(C$, 'set$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'set$I$O', function (index, element) {
 p$1.checkElementIndex$I.apply(this, [index]);
 var x=this.node$I(index);
 var oldVal=x.item;
@@ -223,10 +218,10 @@ x.item=element;
 return oldVal;
 });
 
-Clazz.newMeth(C$, 'add$I$TE', function (index, element) {
+Clazz.newMeth(C$, 'add$I$O', function (index, element) {
 p$1.checkPositionIndex$I.apply(this, [index]);
-if (index == this.size) this.linkLast$TE(element);
- else this.linkBefore$TE$java_util_LinkedList_Node(element, this.node$I(index));
+if (index == this.size) this.linkLast$O(element);
+ else this.linkBefore$O$java_util_LinkedList_Node(element, this.node$I(index));
 });
 
 Clazz.newMeth(C$, 'remove$I', function (index) {
@@ -315,17 +310,17 @@ Clazz.newMeth(C$, 'remove$', function () {
 return this.removeFirst$();
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
-return this.add$TE(e);
+Clazz.newMeth(C$, 'offer$O', function (e) {
+return this.add$O(e);
 });
 
-Clazz.newMeth(C$, ['offerFirst$TE'], function (e) {
-this.addFirst$TE(e);
+Clazz.newMeth(C$, 'offerFirst$O', function (e) {
+this.addFirst$O(e);
 return true;
 });
 
-Clazz.newMeth(C$, ['offerLast$TE'], function (e) {
-this.addLast$TE(e);
+Clazz.newMeth(C$, 'offerLast$O', function (e) {
+this.addLast$O(e);
 return true;
 });
 
@@ -349,8 +344,8 @@ var l=this.last;
 return (l == null ) ? null : p$1.unlinkLast$java_util_LinkedList_Node.apply(this, [l]);
 });
 
-Clazz.newMeth(C$, ['push$TE'], function (e) {
-this.addFirst$TE(e);
+Clazz.newMeth(C$, 'push$O', function (e) {
+this.addFirst$O(e);
 });
 
 Clazz.newMeth(C$, 'pop$', function () {
@@ -379,11 +374,11 @@ return true;
 
 Clazz.newMeth(C$, 'listIterator$I', function (index) {
 p$1.checkPositionIndex$I.apply(this, [index]);
-return Clazz.new_($I$(2).c$$I, [this, null, index]);
+return Clazz.new_($I$(2,1).c$$I,[this, null, index]);
 });
 
 Clazz.newMeth(C$, 'descendingIterator$', function () {
-return Clazz.new_($I$(5), [this, null]);
+return Clazz.new_($I$(5,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'superClone', function () {
@@ -391,7 +386,7 @@ try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(6).c$$Throwable,[e]);
+throw Clazz.new_($I$(6,1).c$$Throwable,[e]);
 } else {
 throw e;
 }
@@ -403,7 +398,7 @@ var clone=p$1.superClone.apply(this, []);
 clone.first=clone.last=null;
 clone.size=0;
 clone.modCount=0;
-for (var x=this.first; x != null ; x=x.next_) clone.add$TE(x.item);
+for (var x=this.first; x != null ; x=x.next_) clone.add$O(x.item);
 
 return clone;
 });
@@ -416,7 +411,7 @@ for (var x=this.first; x != null ; x=x.next_) result[i++]=x.item;
 return result;
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 if (a.length < this.size) a=Clazz.array(a.getClass$().getComponentType$(), this.size);
 var i=0;
 var result=a;
@@ -436,36 +431,29 @@ for (var x=this.first; x != null ; x=x.next_) s.writeObject$O(x.item);
 Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
 s.defaultReadObject$();
 var size=s.readInt$();
-for (var i=0; i < size; i++) this.linkLast$TE(s.readObject$());
+for (var i=0; i < size; i++) this.linkLast$O(s.readObject$());
 
 }, p$1);
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(8).c$$java_util_LinkedList$I$I,[this, -1, 0]);
+return Clazz.new_($I$(8,1).c$$java_util_LinkedList$I$I,[this, -1, 0]);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.LinkedList, "ListItr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.LinkedList, "ListItr", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.ListIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lastReturned=null;
-this.next=null;
-this.nextIndex=0;
-this.expectedModCount=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.expectedModCount=this.this$0.modCount;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nextIndex','expectedModCount'],'O',['lastReturned','java.util.LinkedList.Node','+next']]]
 
 Clazz.newMeth(C$, 'c$$I', function (index) {
-C$.$init$.apply(this);
-this.next=(index == this.this$0.size) ? null : this.b$['java.util.LinkedList'].node$I.apply(this.b$['java.util.LinkedList'], [index]);
+;C$.$init$.apply(this);
+this.next=(index == this.this$0.size) ? null : this.this$0.node$I.apply(this.this$0, [index]);
 this.nextIndex=index;
 }, 1);
 
@@ -506,32 +494,32 @@ Clazz.newMeth(C$, 'remove$', function () {
 this.checkForComodification$();
 if (this.lastReturned == null ) throw Clazz.new_(Clazz.load('IllegalStateException'));
 var lastNext=this.lastReturned.next_;
-this.b$['java.util.LinkedList'].unlink$java_util_LinkedList_Node.apply(this.b$['java.util.LinkedList'], [this.lastReturned]);
+this.this$0.unlink$java_util_LinkedList_Node.apply(this.this$0, [this.lastReturned]);
 if (this.next === this.lastReturned ) this.next=lastNext;
  else this.nextIndex--;
 this.lastReturned=null;
 this.expectedModCount++;
 });
 
-Clazz.newMeth(C$, ['set$TE'], function (e) {
+Clazz.newMeth(C$, 'set$O', function (e) {
 if (this.lastReturned == null ) throw Clazz.new_(Clazz.load('IllegalStateException'));
 this.checkForComodification$();
 this.lastReturned.item=e;
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
+Clazz.newMeth(C$, 'add$O', function (e) {
 this.checkForComodification$();
 this.lastReturned=null;
-if (this.next == null ) this.b$['java.util.LinkedList'].linkLast$TE.apply(this.b$['java.util.LinkedList'], [e]);
- else this.b$['java.util.LinkedList'].linkBefore$TE$java_util_LinkedList_Node.apply(this.b$['java.util.LinkedList'], [e, this.next]);
+if (this.next == null ) this.this$0.linkLast$O.apply(this.this$0, [e]);
+ else this.this$0.linkBefore$O$java_util_LinkedList_Node.apply(this.this$0, [e, this.next]);
 this.nextIndex++;
 this.expectedModCount++;
 });
 
 Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
-$I$(1).requireNonNull$TT(action);
+$I$(1).requireNonNull$O(action);
 while (this.this$0.modCount == this.expectedModCount && this.nextIndex < this.this$0.size ){
-action.accept$(this.next.item);
+action.accept$O(this.next.item);
 this.lastReturned=this.next;
 this.next=this.next.next_;
 this.nextIndex++;
@@ -546,25 +534,19 @@ if (this.this$0.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.LinkedList, "Node", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.LinkedList, "Node", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.item=null;
-this.next_=null;
-this.prev=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_util_LinkedList_Node$TE$java_util_LinkedList_Node', function (prev, element, next) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['item','<E>','next_','java.util.LinkedList.Node','+prev']]]
+
+Clazz.newMeth(C$, 'c$$java_util_LinkedList_Node$O$java_util_LinkedList_Node', function (prev, element, next) {
+;C$.$init$.apply(this);
 this.item=element;
 this.next_=next;
 this.prev=prev;
@@ -573,21 +555,17 @@ this.prev=prev;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.LinkedList, "DescendingIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.LinkedList, "DescendingIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.itr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.itr=Clazz.new_($I$(2).c$$I, [this, null, this.b$['java.util.LinkedList'].size$.apply(this.b$['java.util.LinkedList'], [])]);
-}, 1);
+this.itr=Clazz.new_([this, null, this.this$0.size$.apply(this.this$0, [])],$I$(2,1).c$$I);
+},1);
+
+C$.$fields$=[['O',['itr','java.util.LinkedList.ListItr']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.itr.hasPrevious$();
@@ -604,27 +582,19 @@ this.itr.remove$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.LinkedList, "LLSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.LinkedList, "LLSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Spliterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.list=null;
-this.current=null;
-this.est=0;
-this.expectedModCount=0;
-this.batch=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['est','expectedModCount','batch'],'O',['list','java.util.LinkedList','current','java.util.LinkedList.Node']]]
 
 Clazz.newMeth(C$, 'c$$java_util_LinkedList$I$I', function (list, est, expectedModCount) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.list=list;
 this.est=est;
 this.expectedModCount=expectedModCount;
@@ -675,7 +645,7 @@ this.est=0;
 do {
 var e=p.item;
 p=p.next_;
-action.accept$(e);
+action.accept$O(e);
 } while (p != null  && --n > 0 );
 }if (this.list.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 });
@@ -687,7 +657,7 @@ if (this.getEst$() > 0 && (p=this.current) != null  ) {
 --this.est;
 var e=p.item;
 this.current=p.next_;
-action.accept$(e);
+action.accept$O(e);
 if (this.list.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 return true;
 }return false;
@@ -700,4 +670,4 @@ return 16464;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

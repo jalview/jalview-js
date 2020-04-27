@@ -1,19 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','Boolean','org.jmol.adapter.smarter.Bond','javajs.util.Lst','javajs.util.PT','org.jmol.adapter.readers.quantum.BasisFunctionReader','javajs.util.AU','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "WebMOReader", null, 'org.jmol.adapter.readers.quantum.MopacSlaterReader');
-C$.DS_LIST=null;
-C$.DC_LIST=null;
-C$.FS_LIST=null;
-C$.FC_LIST=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','Boolean','org.jmol.adapter.smarter.AtomSetCollectionReader','org.jmol.adapter.smarter.Bond','javajs.util.Lst','javajs.util.PT','org.jmol.adapter.readers.quantum.BasisFunctionReader','javajs.util.AU','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "WebMOReader", null, 'org.jmol.adapter.readers.quantum.MopacSlaterReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DS_LIST="NOT IMPLEMENTED IN THIS READER";
-C$.DC_LIST="xx    yy    zz    xy    xz    yz";
-C$.FS_LIST="NOT IMPLEMENTED IN THIS READER";
-C$.FC_LIST="xxx   yyy   zzz   yyx   xxy   xxz   zzx   zzy   yyz   xyz";
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['S',['DS_LIST','DC_LIST','FS_LIST','FC_LIST']]]
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 if (this.line.equals$O("[HEADER]")) {
@@ -45,19 +39,19 @@ return false;
 Clazz.newMeth(C$, 'finalizeSubclassReader$', function () {
 this.finalizeReaderASCR$();
 if (this.nOrbitals > 0) this.setMOs$S("eV");
-if (this.debugging) $I$(1).debug$S(this.orbitals.size$() + " molecular orbitals read");
+if (this.debugging) (function(a,f){return f.apply(null,a)})([this.orbitals.size$() + " molecular orbitals read"],$I$(1).debug$S);
 });
 
 Clazz.newMeth(C$, 'readHeader$', function () {
-this.moData.put$TK$TV("isNormalized", $I$(2).TRUE);
+this.moData.put$O$O("isNormalized", $I$(2).TRUE);
 while (this.rd$() != null  && this.line.length$() > 0 ){
-this.moData.put$TK$TV("calculationType", "?");
+this.moData.put$O$O("calculationType", "?");
 var tokens=this.getTokens$();
 tokens[0]=tokens[0].substring$I$I(0, 1).toLowerCase$() + tokens[0].substring$I$I(1, tokens[0].length$());
 var str="";
 for (var i=1; i < tokens.length; i++) str += (i == 1 ? "" : " ") + tokens[i].toLowerCase$();
 
-this.moData.put$TK$TV(tokens[0], str);
+this.moData.put$O$O(tokens[0], str);
 }
 });
 
@@ -67,7 +61,7 @@ var tokens=this.getTokens$();
 if (tokens.length == 0) continue;
 var sym=tokens[0];
 var atNo=this.parseIntStr$S(sym);
-this.setAtomCoordScaled$org_jmol_adapter_smarter_Atom$SA$I$F(null, tokens, 1, 0.5291772).elementSymbol=(atNo == -2147483648 ? sym : org.jmol.adapter.smarter.AtomSetCollectionReader.getElementSymbol$I(atNo));
+this.setAtomCoordScaled$org_jmol_adapter_smarter_Atom$SA$I$F(null, tokens, 1, 0.5291772).elementSymbol=(atNo == -2147483648 ? sym : $I$(3).getElementSymbol$I(atNo));
 }
 });
 
@@ -78,7 +72,7 @@ if (tokens.length == 0) continue;
 var atomIndex1=this.parseIntStr$S(tokens[0]);
 var atomIndex2=this.parseIntStr$S(tokens[1]);
 var order=this.parseIntStr$S(tokens[2]);
-this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(3).c$$I$I$I,[atomIndex1 - 1, atomIndex2 - 1, order]));
+this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(4,1).c$$I$I$I,[atomIndex1 - 1, atomIndex2 - 1, order]));
 }
 });
 
@@ -117,8 +111,8 @@ return (this.rd$() != null  && (this.line.length$() == 0 || this.line.charAt$I(0
 }, p$1);
 
 Clazz.newMeth(C$, 'readGaussianBasis$', function () {
-var sdata=Clazz.new_($I$(4));
-var gdata=Clazz.new_($I$(4));
+var sdata=Clazz.new_($I$(5,1));
+var gdata=Clazz.new_($I$(5,1));
 var atomNo=1;
 var gaussianPtr=0;
 while (p$1.getLine.apply(this, [])){
@@ -127,32 +121,32 @@ if (tokens.length == 0) continue;
 if (tokens.length != 1) throw Clazz.new_(Clazz.load('Exception').c$$S,["Error reading GTOs: missing atom index"]);
 var slater=Clazz.array(Integer.TYPE, [4]);
 atomNo=this.parseIntStr$S(tokens[0]);
-tokens=$I$(5).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(6).getTokens$S);
 var nGaussians=this.parseIntStr$S(tokens[1]);
 slater[0]=atomNo;
-slater[1]=$I$(6).getQuantumShellTagID$S(tokens[0]);
+slater[1]=$I$(7).getQuantumShellTagID$S(tokens[0]);
 slater[2]=gaussianPtr + 1;
 slater[3]=nGaussians;
 for (var i=0; i < nGaussians; i++) {
-var strData=$I$(5).getTokens$S(this.rd$());
+var strData=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(6).getTokens$S);
 var nData=strData.length;
 var data=Clazz.array(Float.TYPE, [nData]);
 for (var d=0; d < nData; d++) {
 data[d]=this.parseFloatStr$S(strData[d]);
 }
-gdata.addLast$TV(data);
+gdata.addLast$O(data);
 gaussianPtr++;
 }
-sdata.addLast$TV(slater);
+sdata.addLast$O(slater);
 }
-var garray=$I$(7).newFloat2$I(gaussianPtr);
+var garray=$I$(8).newFloat2$I(gaussianPtr);
 for (var i=0; i < gaussianPtr; i++) {
 garray[i]=gdata.get$I(i);
 }
-this.moData.put$TK$TV("shells", sdata);
-this.moData.put$TK$TV("gaussians", garray);
+this.moData.put$O$O("shells", sdata);
+this.moData.put$O$O("gaussians", garray);
 if (this.debugging) {
-$I$(1).debug$S(sdata.size$() + " slater shells read");
+(function(a,f){return f.apply(null,a)})([sdata.size$() + " slater shells read"],$I$(1).debug$S);
 $I$(1).debug$S(garray.length + " gaussian primitives read");
 }this.asc.setCurrentModelInfo$S$O("moData", this.moData);
 });
@@ -172,28 +166,35 @@ $I$(1).error$S("MOLECULAR ORBITALS SKIPPED");
 while (p$1.getLine.apply(this, [])){
 }
 return;
-}var mo=Clazz.new_($I$(8));
-var data=Clazz.new_($I$(4));
+}var mo=Clazz.new_($I$(9,1));
+var data=Clazz.new_($I$(5,1));
 var energy=this.parseFloatStr$S(this.rd$());
 var occupancy=this.parseFloatStr$S(this.rd$());
 while (p$1.getLine.apply(this, [])){
 var tokens=this.getTokens$();
 if (tokens.length == 0) {
 continue;
-}data.addLast$TV(tokens[1]);
+}data.addLast$O(tokens[1]);
 }
 var coefs=Clazz.array(Float.TYPE, [data.size$()]);
 for (var i=data.size$(); --i >= 0; ) {
 coefs[i]=this.parseFloatStr$S(data.get$I(i));
 }
-mo.put$TK$TV("energy", Float.valueOf$F(energy));
-mo.put$TK$TV("occupancy", Float.valueOf$F(occupancy));
-mo.put$TK$TV("coefficients", coefs);
-this.orbitals.addLast$TV(mo);
+mo.put$O$O("energy", Float.valueOf$F(energy));
+mo.put$O$O("occupancy", Float.valueOf$F(occupancy));
+mo.put$O$O("coefficients", coefs);
+this.orbitals.addLast$O(mo);
 this.nOrbitals++;
-if (occupancy > 0 ) this.moData.put$TK$TV("HOMO", Integer.valueOf$I(this.nOrbitals));
+if (occupancy > 0 ) this.moData.put$O$O("HOMO", Integer.valueOf$I(this.nOrbitals));
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.DS_LIST="NOT IMPLEMENTED IN THIS READER";
+C$.DC_LIST="xx    yy    zz    xy    xz    yz";
+C$.FS_LIST="NOT IMPLEMENTED IN THIS READER";
+C$.FC_LIST="xxx   yyy   zzz   yyx   xxy   xxz   zzx   zzy   yyz   xyz";
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

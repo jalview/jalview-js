@@ -1,30 +1,28 @@
-(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.webexport"),I$=[[0,'org.jmol.i18n.GT','javax.swing.SpinnerNumberModel','org.openscience.jmol.app.webexport.WebExport','javax.swing.JSpinner','javax.swing.JPanel','javax.swing.JLabel','javajs.util.PT','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PopInJmol", null, 'org.openscience.jmol.app.webexport.WebPanel', 'javax.swing.event.ChangeListener');
+(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.webexport"),I$=[[0,'org.jmol.i18n.GT','javax.swing.SpinnerNumberModel','org.openscience.jmol.app.webexport.WebExport','javax.swing.JSpinner','javax.swing.JPanel','javax.swing.JLabel','javajs.util.PT','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "PopInJmol", null, 'org.openscience.jmol.app.webexport.WebPanel', 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$org_openscience_jmol_app_webexport_WebPanelA$I', function (vwr, fc, webPanels, panelIndex) {
-C$.superclazz.c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$org_openscience_jmol_app_webexport_WebPanelA$I.apply(this, [vwr, fc, webPanels, panelIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$org_openscience_jmol_app_webexport_WebPanelA$I.apply(this,[vwr, fc, webPanels, panelIndex]);C$.$init$.apply(this);
 this.panelName="pop_in";
 this.listLabel=$I$(1).$$S("These names will be used as filenames used by JSmol");
 }, 1);
 
 Clazz.newMeth(C$, 'appletParamPanel$', function () {
-var appletSizeModelW=Clazz.new_($I$(2).c$$I$I$I$I,[$I$(3).getPopInWidth$(), 50, 1000, 25]);
-var appletSizeModelH=Clazz.new_($I$(2).c$$I$I$I$I,[$I$(3).getPopInHeight$(), 50, 1000, 25]);
-this.appletSizeSpinnerW=Clazz.new_($I$(4).c$$javax_swing_SpinnerModel,[appletSizeModelW]);
+var appletSizeModelW=Clazz.new_([$I$(3).getPopInWidth$(), 50, 1000, 25],$I$(2,1).c$$I$I$I$I);
+var appletSizeModelH=Clazz.new_([$I$(3).getPopInHeight$(), 50, 1000, 25],$I$(2,1).c$$I$I$I$I);
+this.appletSizeSpinnerW=Clazz.new_($I$(4,1).c$$javax_swing_SpinnerModel,[appletSizeModelW]);
 this.appletSizeSpinnerW.addChangeListener$javax_swing_event_ChangeListener(this);
-this.appletSizeSpinnerH=Clazz.new_($I$(4).c$$javax_swing_SpinnerModel,[appletSizeModelH]);
+this.appletSizeSpinnerH=Clazz.new_($I$(4,1).c$$javax_swing_SpinnerModel,[appletSizeModelH]);
 this.appletSizeSpinnerH.addChangeListener$javax_swing_event_ChangeListener(this);
-var appletSizeWHPanel=Clazz.new_($I$(5));
-appletSizeWHPanel.add$java_awt_Component(Clazz.new_($I$(6).c$$S,[$I$(1).$$S("JSmol width:")]));
+var appletSizeWHPanel=Clazz.new_($I$(5,1));
+appletSizeWHPanel.add$java_awt_Component(Clazz.new_([$I$(1).$$S("JSmol width:")],$I$(6,1).c$$S));
 appletSizeWHPanel.add$java_awt_Component(this.appletSizeSpinnerW);
-appletSizeWHPanel.add$java_awt_Component(Clazz.new_($I$(6).c$$S,[$I$(1).$$S("height:")]));
+appletSizeWHPanel.add$java_awt_Component(Clazz.new_([$I$(1).$$S("height:")],$I$(6,1).c$$S));
 appletSizeWHPanel.add$java_awt_Component(this.appletSizeSpinnerH);
 return (appletSizeWHPanel);
 });
@@ -63,15 +61,15 @@ s=$I$(7).rep$S$S$S(s, "@CLASS@", "" + divClass);
 s=$I$(7).rep$S$S$S(s, "@I@", "" + i);
 s=$I$(7).rep$S$S$S(s, "@WIDTH@", "" + JmolSizeW);
 s=$I$(7).rep$S$S$S(s, "@HEIGHT@", "" + JmolSizeH);
-s=$I$(7).rep$S$S$S(s, "@NAME@", "&#x201C;" + $I$(1).escapeHTML$S(name) + "&#x201D;" );
-s=$I$(7).rep$S$S$S(s, "@APPLETNAME@", $I$(1).escapeHTML$S(javaname));
+s=(function(a,f){return f.apply(null,a)})([s, "@NAME@", "&#x201C;" + $I$(1).escapeHTML$S(name) + "&#x201D;" ],$I$(7).rep$S$S$S);
+s=(function(a,f){return f.apply(null,a)})([s, "@APPLETNAME@", $I$(1).escapeHTML$S(javaname)],$I$(7).rep$S$S$S);
 s=$I$(7).rep$S$S$S(s, "@LEFTWIDGETS@", "");
 s=$I$(7).rep$S$S$S(s, "@RIGHTWIDGETS@", widgetDefs);
 appletDefs.append$S(s);
 return html;
 });
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 if (e.getSource$() === this.appletSizeSpinnerW  || e.getSource$() === this.appletSizeSpinnerH  ) {
 var width=((this.appletSizeSpinnerW.getModel$())).getNumber$().intValue$();
 var height=((this.appletSizeSpinnerH.getModel$())).getNumber$().intValue$();
@@ -83,12 +81,12 @@ var index=whichList.getSelectedIndex$();
 var instance=whichList.getModel$().getElementAt$I(index);
 instance.width=width;
 instance.height=height;
-var params=Clazz.new_($I$(8));
-params.put$TK$TV("fileName", instance.pictFile);
-params.put$TK$TV("type", "PNG");
-params.put$TK$TV("quality", Integer.valueOf$I(2));
-params.put$TK$TV("width", Integer.valueOf$I(width));
-params.put$TK$TV("height", Integer.valueOf$I(height));
+var params=Clazz.new_($I$(8,1));
+params.put$O$O("fileName", instance.pictFile);
+params.put$O$O("type", "PNG");
+params.put$O$O("quality", Integer.valueOf$I(2));
+params.put$O$O("width", Integer.valueOf$I(width));
+params.put$O$O("height", Integer.valueOf$I(height));
 this.vwr.outputToFile$java_util_Map(params);
 return;
 }if (e.getSource$() === this.appletSizeSpinnerP ) {
@@ -99,4 +97,4 @@ return;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

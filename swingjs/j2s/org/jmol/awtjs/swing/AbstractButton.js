@@ -1,25 +1,15 @@
 (function(){var P$=Clazz.newPackage("org.jmol.awtjs.swing"),I$=[];
-var C$=Clazz.newClass(P$, "AbstractButton", null, 'org.jmol.awtjs.swing.JComponent', 'javajs.awt.SC');
+/*c*/var C$=Clazz.newClass(P$, "AbstractButton", null, 'org.jmol.awtjs.swing.JComponent', 'org.jmol.api.SC');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.itemListener=null;
-this.applet=null;
-this.htmlName=null;
-this.selected=false;
-this.popupMenu=null;
-this.icon=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['selected'],'S',['htmlName','icon'],'O',['itemListener','java.lang.Object','+applet','popupMenu','org.jmol.api.SC']]]
 
 Clazz.newMeth(C$, 'c$$S', function (type) {
-C$.superclazz.c$$S.apply(this, [type]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[type]);C$.$init$.apply(this);
 this.enabled=true;
 }, 1);
 
@@ -46,7 +36,7 @@ Clazz.newMeth(C$, 'setIcon$O', function (icon) {
 this.icon=icon;
 });
 
-Clazz.newMeth(C$, 'init$S$O$S$javajs_awt_SC', function (text, icon, actionCommand, popupMenu) {
+Clazz.newMeth(C$, 'init$S$O$S$org_jmol_api_SC', function (text, icon, actionCommand, popupMenu) {
 this.text=text;
 this.icon=icon;
 this.actionCommand=actionCommand;
@@ -60,12 +50,12 @@ Clazz.newMeth(C$, 'getTopPopupMenu$', function () {
 return this.popupMenu;
 });
 
-Clazz.newMeth(C$, 'add$javajs_awt_SC', function (item) {
-this.addComponent$javajs_awt_Component(item);
+Clazz.newMeth(C$, 'add$org_jmol_api_SC', function (item) {
+this.addComponent$org_jmol_awtjs_swing_Component(item);
 });
 
-Clazz.newMeth(C$, 'insert$javajs_awt_SC$I', function (subMenu, index) {
-this.insertComponent$javajs_awt_Component$I(subMenu, index);
+Clazz.newMeth(C$, 'insert$org_jmol_api_SC$I', function (subMenu, index) {
+this.insertComponent$org_jmol_awtjs_swing_Component$I(subMenu, index);
 });
 
 Clazz.newMeth(C$, 'getPopupMenu$', function () {
@@ -92,4 +82,4 @@ return " disabled=\"disabled\"";
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

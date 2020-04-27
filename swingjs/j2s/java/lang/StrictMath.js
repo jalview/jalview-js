@@ -1,14 +1,13 @@
 (function(){var P$=java.lang;
-var C$=Clazz.newClass(P$, "StrictMath");
+/*c*/var C$=Clazz.newClass(P$, "StrictMath");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'addExact$I$I', function (x, y) {
@@ -75,15 +74,15 @@ return Math.copySign(magnitude, (Float.isNaN$F(sign) ? 1.0 : sign));
 }, 1);
 
 Clazz.newMeth(C$, 'getExponent$F', function (f) {
-return Math.getExponent(f);
+return Math.getExponent$F(f);
 }, 1);
 
 Clazz.newMeth(C$, 'getExponent$D', function (d) {
-return Math.getExponent(d);
+return Math.getExponent$D(d);
 }, 1);
 
 Clazz.newMeth(C$, 'nextAfter$D$D', function (start, direction) {
-return Math.nextAfter(start, direction);
+return Math.nextAfter$D$D(start, direction);
 }, 1);
 
 Clazz.newMeth(C$, 'nextAfter$F$D', function (start, direction) {
@@ -92,19 +91,19 @@ return Math.nextAfter$F$D(start, direction);
 }, 1);
 
 Clazz.newMeth(C$, 'nextUp$D', function (d) {
-return Math.nextUp(d);
+return Math.nextUp$D(d);
 }, 1);
 
 Clazz.newMeth(C$, 'nextUp$F', function (f) {
-return Math.nextUp(f);
+return Math.nextUp$F(f);
 }, 1);
 
 Clazz.newMeth(C$, 'nextDown$D', function (d) {
-return Math.nextDown(d);
+return Math.nextDown$D(d);
 }, 1);
 
 Clazz.newMeth(C$, 'nextDown$F', function (f) {
-return Math.nextDown(f);
+return Math.nextDown$F(f);
 }, 1);
 
 Clazz.newMeth(C$, 'scalb$D$I', function (d, scaleFactor) {
@@ -340,4 +339,4 @@ Clazz.newMeth(C$, 'ulp$F', function (f) {
 return Math.ulp$F(f);
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

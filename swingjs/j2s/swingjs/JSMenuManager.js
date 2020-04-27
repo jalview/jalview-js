@@ -1,16 +1,17 @@
-(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'swingjs.JSUtil','swingjs.api.js.DOMNode','java.awt.EventQueue','javax.swing.MenuElement']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSMenuManager", null, 'javax.swing.MenuSelectionManager');
-C$.currentNode=null;
+(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'javax.swing.MenuSelectionManager','swingjs.JSUtil','swingjs.api.js.DOMNode','java.awt.EventQueue','javax.swing.MenuElement']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSMenuManager", null, 'javax.swing.MenuSelectionManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['currentNode','swingjs.api.js.DOMNode']]]
 
 Clazz.newMeth(C$, 'setCurrentNode$O', function (node) {
 C$.currentNode=node;
-javax.swing.MenuSelectionManager.defaultManager$().clearSelectedPath$();
+$I$(1).defaultManager$().clearSelectedPath$();
 }, 1);
 
 Clazz.newMeth(C$, 'processKeyEvent$java_awt_event_KeyEvent', function (e) {
@@ -18,11 +19,11 @@ if ((e.getModifiers$() & ~8) != 0) {
 p$1.checkNavigationKeys$java_awt_event_KeyEvent.apply(this, [e]);
 return;
 }var i=Character.toLowerCase$I(e.getKeyCode$());
-var obj=$I$(1).jQuery.$(".a.ui-mnem-" + i);
+var obj=$I$(2).jQuery.$(".a.ui-mnem-" + i);
 var node=(obj[0] ||null);
-var jc=$I$(2).getAttr(node, "data-component");
+var jc=$I$(3).getAttr(node, "data-component");
 if (jc == null ) return;
-$I$(3).setCurrentEventAndMostRecentTime$java_awt_AWTEvent(e);
+$I$(4).setCurrentEventAndMostRecentTime$java_awt_AWTEvent(e);
 jc.processKeyEvent$java_awt_event_KeyEvent$javax_swing_MenuElementA$javax_swing_MenuSelectionManager(e, p$1.getPathTo$javax_swing_MenuElement$Z.apply(this, [jc, true]), this);
 });
 
@@ -35,7 +36,7 @@ this.setSelectedPath$javax_swing_MenuElementA(p$1.getPathTo$javax_swing_MenuElem
 });
 
 Clazz.newMeth(C$, 'getPathTo$javax_swing_MenuElement$Z', function (jc, addTarget) {
-var selection=Clazz.array($I$(4), [0]);
+var selection=Clazz.array($I$(5), [0]);
 while (jc != null ){
 if (addTarget) {
 
@@ -52,4 +53,4 @@ return selection;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,28 +1,24 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.SimpleAttributeSet','.EmptyAttributeSet'],'java.util.Hashtable','javax.swing.text.StyleConstants']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SimpleAttributeSet", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.SimpleAttributeSet','.EmptyAttributeSet'],'java.util.Hashtable','javax.swing.text.StyleConstants']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SimpleAttributeSet", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['javax.swing.text.MutableAttributeSet', 'Cloneable']);
-C$.EMPTY=null;
+C$.$classes$=[['EmptyAttributeSet',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.table=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.table=Clazz.new_($I$(2).c$$I,[3]);
-}, 1);
+this.table=Clazz.new_($I$(2,1).c$$I,[3]);
+},1);
+
+C$.$fields$=[['O',['table','java.util.Hashtable']]
+,['O',['EMPTY','javax.swing.text.AttributeSet']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet', function (source) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.addAttributes$javax_swing_text_AttributeSet(source);
 }, 1);
 
@@ -74,7 +70,7 @@ return result;
 });
 
 Clazz.newMeth(C$, 'addAttribute$O$O', function (name, value) {
-this.table.put$TK$TV(name, value);
+this.table.put$O$O(name, value);
 });
 
 Clazz.newMeth(C$, 'addAttributes$javax_swing_text_AttributeSet', function (attributes) {
@@ -155,16 +151,19 @@ s=s + key + "=" + value + " " ;
 }}
 return s;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY=Clazz.new_($I$(1,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.SimpleAttributeSet, "EmptyAttributeSet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SimpleAttributeSet, "EmptyAttributeSet", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'javax.swing.text.AttributeSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getAttributeCount$', function () {
 return 0;
@@ -188,13 +187,12 @@ return null;
 
 Clazz.newMeth(C$, 'getAttributeNames$', function () {
 return ((P$.SimpleAttributeSet$EmptyAttributeSet$1||
-(function(){var C$=Clazz.newClass(P$, "SimpleAttributeSet$EmptyAttributeSet$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "SimpleAttributeSet$EmptyAttributeSet$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'hasMoreElements$', function () {
 return false;
@@ -204,7 +202,7 @@ Clazz.newMeth(C$, 'nextElement$', function () {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 });
 })()
-), Clazz.new_(P$.SimpleAttributeSet$EmptyAttributeSet$1.$init$, [this, null]));
+), Clazz.new_(P$.SimpleAttributeSet$EmptyAttributeSet$1.$init$,[this, null]));
 });
 
 Clazz.newMeth(C$, 'containsAttribute$O$O', function (name, value) {
@@ -232,4 +230,4 @@ return 0;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

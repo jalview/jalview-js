@@ -1,27 +1,13 @@
-(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.math.RoundingMode']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MathContext", null, null, 'java.io.Serializable');
-C$.DEFAULT_ROUNDINGMODE=null;
-C$.UNLIMITED=null;
-C$.DECIMAL32=null;
-C$.DECIMAL64=null;
-C$.DECIMAL128=null;
+(function(){var P$=Clazz.newPackage("java.math"),p$1={},I$=[[0,'java.math.RoundingMode']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MathContext", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEFAULT_ROUNDINGMODE=$I$(1).HALF_UP;
-C$.UNLIMITED=Clazz.new_(C$.c$$I$java_math_RoundingMode,[0, $I$(1).HALF_UP]);
-C$.DECIMAL32=Clazz.new_(C$.c$$I$java_math_RoundingMode,[7, $I$(1).HALF_EVEN]);
-C$.DECIMAL64=Clazz.new_(C$.c$$I$java_math_RoundingMode,[16, $I$(1).HALF_EVEN]);
-C$.DECIMAL128=Clazz.new_(C$.c$$I$java_math_RoundingMode,[34, $I$(1).HALF_EVEN]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.precision=0;
-this.roundingMode=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['precision'],'O',['roundingMode','java.math.RoundingMode']]
+,['O',['DEFAULT_ROUNDINGMODE','java.math.RoundingMode','UNLIMITED','java.math.MathContext','+DECIMAL32','+DECIMAL64','+DECIMAL128']]]
 
 Clazz.newMeth(C$, 'c$$I', function (setPrecision) {
 C$.c$$I$java_math_RoundingMode.apply(this, [setPrecision, C$.DEFAULT_ROUNDINGMODE]);
@@ -29,7 +15,7 @@ return;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$java_math_RoundingMode', function (setPrecision, setRoundingMode) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (setPrecision < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Digits < 0"]);
 if (setRoundingMode == null ) throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["null RoundingMode"]);
 this.precision=setPrecision;
@@ -38,7 +24,7 @@ return;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (val) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var bad=false;
 var setPrecision;
 if (val == null ) throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["null String"]);
@@ -95,6 +81,14 @@ var message="MathContext: null roundingMode in stream";
 throw Clazz.new_(Clazz.load('java.io.StreamCorruptedException').c$$S,[message]);
 }}, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.DEFAULT_ROUNDINGMODE=$I$(1).HALF_UP;
+C$.UNLIMITED=Clazz.new_(C$.c$$I$java_math_RoundingMode,[0, $I$(1).HALF_UP]);
+C$.DECIMAL32=Clazz.new_(C$.c$$I$java_math_RoundingMode,[7, $I$(1).HALF_EVEN]);
+C$.DECIMAL64=Clazz.new_(C$.c$$I$java_math_RoundingMode,[16, $I$(1).HALF_EVEN]);
+C$.DECIMAL128=Clazz.new_(C$.c$$I$java_math_RoundingMode,[34, $I$(1).HALF_EVEN]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

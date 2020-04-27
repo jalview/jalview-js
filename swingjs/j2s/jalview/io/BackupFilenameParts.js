@@ -1,24 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.bin.Cache']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BackupFilenameParts");
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.io.BackupFilesPresetEntry']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BackupFilenameParts");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.base=null;
-this.templateStart=null;
-this.num=0;
-this.digits=0;
-this.templateEnd=null;
-this.isBackupFile=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBackupFile'],'I',['num','digits'],'S',['base','templateStart','templateEnd']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.isBackupFile=false;
 }, 1);
 
@@ -31,7 +22,7 @@ C$.c$$S$S$S$I$Z.apply(this, [filename, base, template, suggesteddigits, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$S$I$Z', function (filename, base, template, suggesteddigits, extensionMatch) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.isBackupFile=false;
 var numcharstart=template.indexOf$S("%n");
 var digits=0;
@@ -65,12 +56,13 @@ this.isBackupFile=true;
 
 Clazz.newMeth(C$, 'currentBackupFilenameParts$S$S$Z', function (filename, base, extensionMatch) {
 var bfp=Clazz.new_(C$);
-var template=$I$(1).getDefault$S$S("BACKUPFILES_SUFFIX", null);
+var bfpe=$I$(1).getSavedBackupEntry$();
+var template=bfpe.suffix;
 if (template == null ) {
 return bfp;
 }var digits;
 try {
-digits=Integer.parseInt$S($I$(1).getDefault$S$S("BACKUPFILES_SUFFIX_DIGITS", null));
+digits=bfpe.digits;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return bfp;
@@ -96,4 +88,4 @@ var backupfilename=base + backupSuffix;
 return backupfilename;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

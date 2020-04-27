@@ -1,46 +1,35 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.RBuffer','StringBuffer','com.stevesoft.pat.PartialBuffer','com.stevesoft.pat.wrap.StringBufferWrap','com.stevesoft.pat.StringBufferLike']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RegexReader", null, 'java.io.Reader');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.RBuffer','StringBuffer','com.stevesoft.pat.PartialBuffer','com.stevesoft.pat.wrap.StringBufferWrap','com.stevesoft.pat.StringBufferLike']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RegexReader", null, 'java.io.Reader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rb=null;
-this.wrap=null;
-this.moreToRead=false;
-this.r=null;
-this.rp=null;
-this.nmax=0;
-this.max_lines=0;
-this.EOLchar='\0';
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.rb=Clazz.new_($I$(1).c$$StringBuffer,[Clazz.new_($I$(2))]);
-this.wrap=Clazz.new_($I$(3).c$$StringBuffer,[this.rb.sb]);
+this.rb=Clazz.new_([Clazz.new_($I$(2,1))],$I$(1,1).c$$StringBuffer);
+this.wrap=Clazz.new_($I$(3,1).c$$StringBuffer,[this.rb.sb]);
 this.moreToRead=true;
 this.nmax=2048;
 this.max_lines=2;
 this.EOLchar="\n";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['moreToRead'],'C',['EOLchar'],'I',['nmax','max_lines'],'O',['rb','com.stevesoft.pat.RBuffer','wrap','com.stevesoft.pat.PartialBuffer','r','java.io.Reader','rp','com.stevesoft.pat.Replacer']]]
 
 Clazz.newMeth(C$, 'c$$com_stevesoft_pat_Regex$java_io_Reader', function (rex, r) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.r=r;
 this.rp=rex.getReplacer$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$com_stevesoft_pat_Transformer$java_io_Reader', function (tex, r) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.r=r;
 this.rp=tex.getReplacer$();
 }, 1);
 
 Clazz.newMeth(C$, 'reset$', function () {
 this.r.reset$();
-this.rb=Clazz.new_($I$(1).c$$StringBuffer,[Clazz.new_($I$(2))]);
-this.wrap=Clazz.new_($I$(3).c$$StringBuffer,[this.rb.sb]);
+this.rb=Clazz.new_([Clazz.new_($I$(2,1))],$I$(1,1).c$$StringBuffer);
+this.wrap=Clazz.new_($I$(3,1).c$$StringBuffer,[this.rb.sb]);
 this.moreToRead=true;
 });
 
@@ -75,8 +64,8 @@ this.readData$();
 if (this.wrap.overRun) {
 this.readData$();
 } else {
-var sbw=Clazz.new_($I$(4));
-var sbl=Clazz.new_($I$(5).c$$com_stevesoft_pat_BasicStringBufferLike,[sbw]);
+var sbw=Clazz.new_($I$(4,1));
+var sbl=Clazz.new_($I$(5,1).c$$com_stevesoft_pat_BasicStringBufferLike,[sbw]);
 var rex=this.rp.getRegex$();
 var npos=rex.matchedTo$();
 this.rp.setBuffer$com_stevesoft_pat_StringBufferLike(sbl);
@@ -84,9 +73,9 @@ this.rp.setSource$com_stevesoft_pat_StringLike(this.wrap);
 this.rp.setPos$I(npos);
 this.rp.apply$com_stevesoft_pat_RegRes$com_stevesoft_pat_ReplaceRule(rex, rex.getReplaceRule$());
 var opos=this.rb.epos;
-var rb2=Clazz.new_($I$(1).c$$StringBuffer,[sbw.unwrap$()]);
+var rb2=Clazz.new_([sbw.unwrap$()],$I$(1,1).c$$StringBuffer);
 rb2.epos=rb2.sb.length$();
-var rb3=Clazz.new_($I$(1).c$$StringBuffer,[this.rb.sb]);
+var rb3=Clazz.new_($I$(1,1).c$$StringBuffer,[this.rb.sb]);
 this.rb.next=rb2;
 rb2.next=rb3;
 if (npos == opos) {
@@ -173,4 +162,4 @@ return n;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

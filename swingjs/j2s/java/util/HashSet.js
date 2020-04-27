@@ -1,43 +1,38 @@
-(function(){var P$=java.util,p$1={},I$=[[0,'java.util.HashMap','java.util.LinkedHashMap','InternalError',['java.util.HashMap','.KeySpliterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HashSet", null, 'java.util.AbstractSet', ['java.util.Set', 'Cloneable', 'java.io.Serializable']);
-C$.PRESENT=null;
+(function(){var P$=java.util,p$1={},I$=[[0,'java.util.HashMap','java.util.LinkedHashMap','InternalError',['java.util.HashMap','.KeySpliterator']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HashSet", null, 'java.util.AbstractSet', ['java.util.Set', 'Cloneable', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.PRESENT= Clazz.new_();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.map=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['map','java.util.HashMap']]
+,['O',['PRESENT','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.map=Clazz.new_($I$(1));
+Clazz.super_(C$, this);
+this.map=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-Clazz.super_(C$, this,1);
-this.map=Clazz.new_($I$(1).c$$I,[Math.max(((c.size$() / 0.75)|0) + 1, 16)]);
+Clazz.super_(C$, this);
+this.map=Clazz.new_([Math.max(((c.size$() / 0.75)|0) + 1, 16)],$I$(1,1).c$$I);
 this.addAll$java_util_Collection(c);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
-Clazz.super_(C$, this,1);
-this.map=Clazz.new_($I$(1).c$$I$F,[initialCapacity, loadFactor]);
+Clazz.super_(C$, this);
+this.map=Clazz.new_($I$(1,1).c$$I$F,[initialCapacity, loadFactor]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
-Clazz.super_(C$, this,1);
-this.map=Clazz.new_($I$(1).c$$I,[initialCapacity]);
+Clazz.super_(C$, this);
+this.map=Clazz.new_($I$(1,1).c$$I,[initialCapacity]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F$Z', function (initialCapacity, loadFactor, dummy) {
-Clazz.super_(C$, this,1);
-this.map=Clazz.new_($I$(2).c$$I$F,[initialCapacity, loadFactor]);
+Clazz.super_(C$, this);
+this.map=Clazz.new_($I$(2,1).c$$I$F,[initialCapacity, loadFactor]);
 }, 1);
 
 Clazz.newMeth(C$, 'iterator$', function () {
@@ -56,8 +51,8 @@ Clazz.newMeth(C$, 'contains$O', function (o) {
 return this.map.containsKey$O(o);
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-return this.map.put$TK$TV(e, C$.PRESENT) == null ;
+Clazz.newMeth(C$, 'add$O', function (e) {
+return this.map.put$O$O(e, C$.PRESENT) == null ;
 });
 
 Clazz.newMeth(C$, 'remove$O', function (o) {
@@ -75,7 +70,7 @@ newSet.map=this.map.clone$();
 return newSet;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(3).c$$Throwable,[e]);
+throw Clazz.new_($I$(3,1).c$$Throwable,[e]);
 } else {
 throw e;
 }
@@ -103,15 +98,19 @@ throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["Illegal loa
 if (size < 0) {
 throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["Illegal size: " + size]);
 }capacity=(Math.min(size * Math.min(1 / loadFactor, 4.0), 1073741824)|0);
-this.map=(Clazz.instanceOf((this), "java.util.LinkedHashSet") ? Clazz.new_($I$(2).c$$I$F,[capacity, loadFactor]) : Clazz.new_($I$(1).c$$I$F,[capacity, loadFactor]));
+this.map=(Clazz.instanceOf((this), "java.util.LinkedHashSet") ? Clazz.new_($I$(2,1).c$$I$F,[capacity, loadFactor]) : Clazz.new_($I$(1,1).c$$I$F,[capacity, loadFactor]));
 for (var i=0; i < size; i++) {
 var e=s.readObject$();
-this.map.put$TK$TV(e, C$.PRESENT);
+this.map.put$O$O(e, C$.PRESENT);
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(4).c$$java_util_HashMap$I$I$I$I,[this.map, 0, -1, 0, 0]);
+return Clazz.new_($I$(4,1).c$$java_util_HashMap$I$I$I$I,[this.map, 0, -1, 0, 0]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.PRESENT= Clazz.new_();
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

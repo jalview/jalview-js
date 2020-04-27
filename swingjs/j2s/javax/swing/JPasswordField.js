@@ -1,18 +1,13 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.text.Segment']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JPasswordField", null, 'javax.swing.JTextField');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.text.Segment']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JPasswordField", null, 'javax.swing.JTextField');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.echoChar='\0';
-this.echoCharSet=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.echoCharSet=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['echoCharSet'],'C',['echoChar']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$javax_swing_text_Document$S$I.apply(this, [null, null, 0]);
@@ -31,8 +26,7 @@ C$.c$$javax_swing_text_Document$S$I.apply(this, [null, text, columns]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Document$S$I', function (doc, txt, columns) {
-C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this, [doc, txt, columns]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this,[doc, txt, columns]);C$.$init$.apply(this);
 this.updateUI$();
 }, 1);
 
@@ -53,7 +47,7 @@ return this.echoChar;
 Clazz.newMeth(C$, 'setEchoChar$C', function (c) {
 this.echoChar=c;
 this.echoCharSet=true;
-this.repaint$();
+this.秘repaint$();
 this.revalidate$();
 });
 
@@ -77,7 +71,7 @@ return C$.superclazz.prototype.getText$I$I.apply(this, [offs, len]);
 
 Clazz.newMeth(C$, 'getPassword$', function () {
 var doc=this.getDocument$();
-var txt=Clazz.new_($I$(1));
+var txt=Clazz.new_($I$(1,1));
 try {
 doc.getText$I$I$javax_swing_text_Segment(0, doc.getLength$(), txt);
 } catch (e) {
@@ -97,12 +91,12 @@ return C$.superclazz.prototype.paramString$.apply(this, []) + ",echoChar=" + thi
 });
 
 Clazz.newMeth(C$, 'customSetUIProperty$S$O', function (propertyName, value) {
-if (propertyName == "echoChar") {
+if (propertyName === "echoChar" ) {
 if (!this.echoCharSet) {
-this.setEchoChar$C((value).charValue$());
+this.setEchoChar$C((value).valueOf());
 this.echoCharSet=false;
 }return true;
 }return false;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

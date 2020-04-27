@@ -1,34 +1,22 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.M4','javajs.util.V3','javajs.util.P4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TransformManager4D", null, 'org.jmol.viewer.TransformManager');
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.M4','javajs.util.V3','javajs.util.P4']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "TransformManager4D", null, 'org.jmol.viewer.TransformManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.is4D=false;
-this.mouseMode=0;
-this.m2_rotate=null;
-this.m3_toScreen=null;
-this.zOffset=0;
-this.v1=null;
-this.m4=null;
-this.p4=null;
-this.zero=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.is4D=false;
 this.mouseMode=3;
-this.m3_toScreen=Clazz.new_($I$(1));
-this.v1=Clazz.new_($I$(2));
-this.m4=Clazz.new_($I$(1));
-this.p4=Clazz.new_($I$(3));
-this.zero=Clazz.new_($I$(2));
-}, 1);
+this.m3_toScreen=Clazz.new_($I$(1,1));
+this.v1=Clazz.new_($I$(2,1));
+this.m4=Clazz.new_($I$(1,1));
+this.p4=Clazz.new_($I$(3,1));
+this.zero=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['is4D'],'F',['zOffset'],'I',['mouseMode'],'O',['m2_rotate','javajs.util.M4','+m3_toScreen','v1','javajs.util.T3','m4','javajs.util.M4','p4','javajs.util.T4','zero','javajs.util.V3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'resetRotation$', function () {
@@ -113,4 +101,4 @@ this.fScrPt.z += this.zOffset;
 this.matrixTransform.rotTrans2$javajs_util_T3$javajs_util_T3(ptXYZ, this.fScrPt);
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

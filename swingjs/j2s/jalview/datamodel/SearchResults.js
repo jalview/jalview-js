@@ -1,24 +1,21 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'StringBuilder','java.util.ArrayList',['jalview.datamodel.SearchResults','.Match'],'java.util.BitSet']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SearchResults", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'StringBuilder','java.util.ArrayList',['jalview.datamodel.SearchResults','.Match'],'java.util.BitSet']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SearchResults", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'jalview.datamodel.SearchResultsI');
+C$.$classes$=[['Match',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.matches=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.matches=Clazz.new_($I$(2));
-}, 1);
+this.matches=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['O',['matches','java.util.List']]]
 
 Clazz.newMeth(C$, 'addResult$jalview_datamodel_SequenceI$I$I', function (seq, start, end) {
-var m=Clazz.new_($I$(3).c$$jalview_datamodel_SequenceI$I$I, [this, null, seq, start, end]);
+var m=Clazz.new_($I$(3,1).c$$jalview_datamodel_SequenceI$I$I,[this, null, seq, start, end]);
 if (!this.matches.contains$O(m)) {
-this.matches.add$TE(m);
+this.matches.add$O(m);
 }return m;
 });
 
@@ -71,7 +68,7 @@ return result;
 
 Clazz.newMeth(C$, 'markColumns$jalview_datamodel_SequenceCollectionI$java_util_BitSet', function (sqcol, bs) {
 var count=0;
-var mask=Clazz.new_($I$(4));
+var mask=Clazz.new_($I$(4,1));
 var startRes=sqcol.getStartRes$();
 var endRes=sqcol.getEndRes$();
 for (var s, $s = sqcol.getSequences$().iterator$(); $s.hasNext$()&&((s=($s.next$())),1);) {
@@ -119,25 +116,19 @@ Clazz.newMeth(C$, 'addSearchResults$jalview_datamodel_SearchResultsI', function 
 this.matches.addAll$java_util_Collection(toAdd.getResults$());
 });
 ;
-(function(){var C$=Clazz.newClass(P$.SearchResults, "Match", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SearchResults, "Match", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'jalview.datamodel.SearchResultMatchI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequence=null;
-this.start=0;
-this.end=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['start','end'],'O',['sequence','jalview.datamodel.SequenceI']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$I$I', function (seq, start, end) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.sequence=seq;
 if (start <= end) {
 this.start=start;
@@ -160,7 +151,7 @@ return this.end;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 if (this.sequence != null ) {
 sb.append$S(this.sequence.getName$()).append$S("/");
 }sb.append$I(this.start).append$S("-").append$I(this.end);
@@ -190,4 +181,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

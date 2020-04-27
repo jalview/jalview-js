@@ -1,28 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),p$1={},I$=[[0,'jalview.datamodel.GraphLine','jalview.schemes.ColourSchemeProperty','java.util.IdentityHashMap','java.awt.Color','jalview.util.Comparison','jalview.renderer.AnnotationRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationColourGradient", null, 'jalview.schemes.FollowerColourScheme');
+(function(){var P$=Clazz.newPackage("jalview.schemes"),p$1={},I$=[[0,'jalview.datamodel.GraphLine','jalview.schemes.ColourSchemeProperty','java.util.IdentityHashMap','java.awt.Color','jalview.util.Comparison','jalview.renderer.AnnotationRenderer']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationColourGradient", null, 'jalview.schemes.FollowerColourScheme');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.annotation=null;
-this.aboveAnnotationThreshold=0;
-this.thresholdIsMinMax=false;
-this.annotationThreshold=null;
-this.redMin=0;
-this.greenMin=0;
-this.blueMin=0;
-this.redRange=0;
-this.greenRange=0;
-this.blueRange=0;
-this.predefinedColours=false;
-this.seqAssociated=false;
-this.noGradient=false;
-this.seqannot=null;
-this.aamin=0;
-this.aamax=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.thresholdIsMinMax=false;
@@ -32,12 +11,14 @@ this.noGradient=false;
 this.seqannot=null;
 this.aamin=0.0;
 this.aamax=0.0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['thresholdIsMinMax','predefinedColours','seqAssociated','noGradient'],'F',['aamin','aamax'],'I',['aboveAnnotationThreshold','redMin','greenMin','blueMin','redRange','greenRange','blueRange'],'O',['annotation','jalview.datamodel.AlignmentAnnotation','annotationThreshold','jalview.datamodel.GraphLine','seqannot','java.util.IdentityHashMap']]]
 
 Clazz.newMeth(C$, 'getInstance$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI', function (view, sg) {
 var acg=Clazz.new_(C$.c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I,[this.annotation, this.getColourScheme$(), this.aboveAnnotationThreshold]);
 acg.thresholdIsMinMax=this.thresholdIsMinMax;
-acg.annotationThreshold=(this.annotationThreshold == null ) ? null : Clazz.new_($I$(1).c$$jalview_datamodel_GraphLine,[this.annotationThreshold]);
+acg.annotationThreshold=(this.annotationThreshold == null ) ? null : Clazz.new_($I$(1,1).c$$jalview_datamodel_GraphLine,[this.annotationThreshold]);
 acg.redMin=this.redMin;
 acg.greenMin=this.greenMin;
 acg.blueMin=this.blueMin;
@@ -51,7 +32,7 @@ return acg;
 });
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I', function (annotation, originalColour, aboveThreshold) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (Clazz.instanceOf(originalColour, "jalview.schemes.AnnotationColourGradient")) {
 this.setColourScheme$jalview_schemes_ColourSchemeI((originalColour).getColourScheme$());
 } else {
@@ -71,7 +52,7 @@ p$1.checkLimits.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation$java_awt_Color$java_awt_Color$I', function (annotation, minColour, maxColour, aboveThreshold) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.annotation=annotation;
 this.aboveAnnotationThreshold=aboveThreshold;
 if (aboveThreshold != -1 && annotation.threshold != null  ) {
@@ -91,7 +72,7 @@ this.aamax=this.annotation.graphMax;
 this.aamin=this.annotation.graphMin;
 if (this.annotation.isRNA$()) {
 $I$(2).resetRnaHelicesShading$();
-$I$(2).initRnaHelicesShading$I(1 + (this.aamax|0));
+$I$(2,"initRnaHelicesShading$I",[1 + (this.aamax|0)]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map', function (alignment, hiddenReps) {
@@ -100,7 +81,7 @@ if (this.seqAssociated && this.annotation.getCalcId$() != null  ) {
 if (this.seqannot != null ) {
 this.seqannot.clear$();
 } else {
-this.seqannot=Clazz.new_($I$(3));
+this.seqannot=Clazz.new_($I$(3,1));
 }var alcontext=Clazz.instanceOf(alignment, "jalview.datamodel.AlignmentI") ? alignment : alignment.getContext$();
 var f=true;
 var rna=false;
@@ -108,7 +89,7 @@ for (var alan, $alan = alcontext.findAnnotation$S(this.annotation.getCalcId$()).
 if (alan.sequenceRef != null  && (alan.label != null  && this.annotation != null   && alan.label.equals$O(this.annotation.label) ) ) {
 if (!rna && alan.isRNA$() ) {
 rna=true;
-}this.seqannot.put$TK$TV(alan.sequenceRef, alan);
+}this.seqannot.put$O$O(alan.sequenceRef, alan);
 if (f || alan.graphMax > this.aamax  ) {
 this.aamax=alan.graphMax;
 }if (f || alan.graphMin < this.aamin  ) {
@@ -116,7 +97,7 @@ this.aamin=alan.graphMin;
 }f=false;
 }}
 if (rna) {
-$I$(2).initRnaHelicesShading$I(1 + (this.aamax|0));
+$I$(2,"initRnaHelicesShading$I",[1 + (this.aamax|0)]);
 }}});
 
 Clazz.newMeth(C$, 'getAnnotation$', function () {
@@ -135,11 +116,11 @@ return this.annotationThreshold.value;
 }});
 
 Clazz.newMeth(C$, 'getMinColour$', function () {
-return Clazz.new_($I$(4).c$$I$I$I,[this.redMin, this.greenMin, this.blueMin]);
+return Clazz.new_($I$(4,1).c$$I$I$I,[this.redMin, this.greenMin, this.blueMin]);
 });
 
 Clazz.newMeth(C$, 'getMaxColour$', function () {
-return Clazz.new_($I$(4).c$$I$I$I,[this.redMin + this.redRange, this.greenMin + this.greenRange, this.blueMin + this.blueRange]);
+return Clazz.new_($I$(4,1).c$$I$I$I,[this.redMin + this.redRange, this.greenMin + this.greenRange, this.blueMin + this.blueRange]);
 });
 
 Clazz.newMeth(C$, 'findColour$C', function (c) {
@@ -194,7 +175,7 @@ range=0.0;
 }}var dr=((this.redRange * range + this.redMin)|0);
 var dg=((this.greenRange * range + this.greenMin)|0);
 var db=((this.blueRange * range + this.blueMin)|0);
-return Clazz.new_($I$(4).c$$I$I$I,[dr, dg, db]);
+return Clazz.new_($I$(4,1).c$$I$I$I,[dr, dg, db]);
 });
 
 Clazz.newMeth(C$, 'isPredefinedColours$', function () {
@@ -231,4 +212,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

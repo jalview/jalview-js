@@ -1,32 +1,21 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),I$=[[0,'java.awt.Rectangle','java.awt.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "WritableRaster", null, 'java.awt.image.Raster');
+(function(){var P$=Clazz.newPackage("java.awt.image"),I$=[[0,'java.awt.Rectangle','java.awt.Point']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "WritableRaster", null, 'java.awt.image.Raster');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'setParams$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point', function (model, dataBuffer, origin) {
-});
-
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_Point', function (sampleModel, origin) {
-Clazz.super_(C$, this,1);
-this.setRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster(sampleModel, sampleModel.createDataBuffer$(), Clazz.new_($I$(1).c$$I$I$I$I,[origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()]), origin, null);
+C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_WritableRaster.apply(this, [sampleModel, sampleModel.createDataBuffer$(), Clazz.new_([origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()],$I$(1,1).c$$I$I$I$I), origin, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point', function (sampleModel, dataBuffer, origin) {
-Clazz.super_(C$, this,1);
-this.setRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster(sampleModel, dataBuffer, Clazz.new_($I$(1).c$$I$I$I$I,[origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()]), origin, null);
+C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_WritableRaster.apply(this, [sampleModel, dataBuffer, Clazz.new_([origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()],$I$(1,1).c$$I$I$I$I), origin, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster', function (sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent) {
-Clazz.super_(C$, this,1);
-this.setRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster(sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent);
+Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_WritableRaster', function (sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent) {
+;C$.superclazz.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster.apply(this,[sampleModel, dataBuffer, aRegion, sampleModelTranslate, parent]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getWritableParent$', function () {
@@ -53,7 +42,7 @@ sm=this.sampleModel.createSubsetSampleModel$IA(bandList);
 sm=this.sampleModel;
 }var deltaX=childMinX - parentX;
 var deltaY=childMinY - parentY;
-return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster,[sm, this.getDataBuffer$(), Clazz.new_($I$(1).c$$I$I$I$I,[childMinX, childMinY, w, h]), Clazz.new_($I$(2).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
+return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_WritableRaster,[sm, this.getDataBuffer$(), Clazz.new_($I$(1,1).c$$I$I$I$I,[childMinX, childMinY, w, h]), Clazz.new_($I$(2,1).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
 });
 
 Clazz.newMeth(C$, 'setDataElements$I$I$O', function (x, y, inData) {
@@ -109,11 +98,27 @@ height=this.minY + this.height - dstOffY;
 return;
 }switch (srcRaster.getSampleModel$().getDataType$()) {
 case 0:
+case 2:
+case 1:
 case 3:
 var iData=null;
 for (var startY=0; startY < height; startY++) {
 iData=srcRaster.getPixels$I$I$I$I$IA(srcOffX, srcOffY + startY, width, 1, iData);
 this.setPixels$I$I$I$I$IA(dstOffX, dstOffY + startY, width, 1, iData);
+}
+break;
+case 4:
+var fData=null;
+for (var startY=0; startY < height; startY++) {
+fData=srcRaster.getPixels$I$I$I$I$FA(srcOffX, srcOffY + startY, width, 1, fData);
+this.setPixels$I$I$I$I$FA(dstOffX, dstOffY + startY, width, 1, fData);
+}
+break;
+case 5:
+var dData=null;
+for (var startY=0; startY < height; startY++) {
+dData=srcRaster.getPixels$I$I$I$I$DA(srcOffX, srcOffY + startY, width, 1, dData);
+this.setPixels$I$I$I$I$DA(dstOffX, dstOffY + startY, width, 1, dData);
 }
 break;
 }
@@ -166,5 +171,7 @@ this.sampleModel.setSamples$I$I$I$I$I$FA$java_awt_image_DataBuffer(x - this.samp
 Clazz.newMeth(C$, 'setSamples$I$I$I$I$I$DA', function (x, y, w, h, b, dArray) {
 this.sampleModel.setSamples$I$I$I$I$I$DA$java_awt_image_DataBuffer(x - this.sampleModelTranslateX, y - this.sampleModelTranslateY, w, h, b, dArray, this.dataBuffer);
 });
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

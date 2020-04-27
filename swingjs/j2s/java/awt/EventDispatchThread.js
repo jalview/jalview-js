@@ -1,27 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Component',['java.awt.EventFilter','.FilterAction'],'sun.awt.SunToolkit','javajs.util.Lst','swingjs.JSToolkit',['java.awt.EventDispatchThread','.StopDispatchEvent'],'Thread',['java.awt.EventDispatchThread','.HierarchyEventFilter'],'sun.awt.AWTAutoShutdown']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EventDispatchThread", function(){
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Component',['java.awt.EventFilter','.FilterAction'],'sun.awt.SunToolkit','javajs.util.Lst','swingjs.JSToolkit',['java.awt.EventDispatchThread','.StopDispatchEvent'],'Thread',['java.awt.EventDispatchThread','.HierarchyEventFilter'],'sun.awt.AWTAutoShutdown']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EventDispatchThread", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javajs.util.JSThread');
+C$.$classes$=[['StopDispatchEvent',0],['HierarchyEventFilter',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.theQueue=null;
-this.eventFilters=null;
-this.modalFiltersCount=0;
-this.filter=null;
-this.cond=null;
-this.id=0;
-this.doDispatch=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.eventFilters=Clazz.new_($I$(4));
+this.eventFilters=Clazz.new_($I$(4,1));
 this.modalFiltersCount=0;
 this.doDispatch=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doDispatch'],'I',['modalFiltersCount','id'],'O',['theQueue','java.awt.EventQueue','eventFilters','javajs.util.Lst','filter','java.awt.EventFilter','cond','java.awt.Conditional']]]
 
 Clazz.newMeth(C$, 'myInit$', function () {
 this.addEventFilter$java_awt_EventFilter(this.filter);
@@ -35,19 +26,18 @@ return (this.doDispatch && (this.cond == null  || this.cond.evaluate$() ) && !th
 Clazz.newMeth(C$, 'myLoop$', function () {
 var myid=this.id;
 var r=((P$.EventDispatchThread$1||
-(function(){var C$=Clazz.newClass(P$, "EventDispatchThread$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EventDispatchThread$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 this.b$['java.awt.EventDispatchThread'].pumpOneEventForFilters$I.apply(this.b$['java.awt.EventDispatchThread'], [this.$finals$.myid]);
 });
 })()
-), Clazz.new_(P$.EventDispatchThread$1.$init$, [this, {myid: myid}]));
+), Clazz.new_(P$.EventDispatchThread$1.$init$,[this, {myid:myid}]));
 var me=this;
 var mode=1;
 var f=function() {r.run$();me.run1$I(mode)} ||null;
@@ -70,13 +60,12 @@ Clazz.newMeth(C$, 'onException$Exception', function (e) {
 });
 
 Clazz.newMeth(C$, 'c$$ThreadGroup$S$java_awt_EventQueue', function (group, name, queue) {
-C$.superclazz.c$$ThreadGroup$S.apply(this, [group, name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$ThreadGroup$S.apply(this,[group, name]);C$.$init$.apply(this);
 this.theQueue=queue;
 }, 1);
 
 Clazz.newMeth(C$, 'stopDispatchingImpl$Z', function (wait) {
-var stopEvent=Clazz.new_($I$(6), [this, null]);
+var stopEvent=Clazz.new_($I$(6,1),[this, null]);
 if ($I$(7).currentThread$() !== this ) {
 this.theQueue.postEventPrivate$java_awt_AWTEvent(stopEvent);
 if (wait) {
@@ -116,7 +105,7 @@ this.pumpEventsForHierarchy$I$java_awt_Conditional$java_awt_Component(id, cond, 
 });
 
 Clazz.newMeth(C$, 'pumpEventsForHierarchy$I$java_awt_Conditional$java_awt_Component', function (id, cond, modalComponent) {
-this.pumpEventsForFilter$I$java_awt_Conditional$java_awt_EventFilter(id, cond, Clazz.new_($I$(8).c$$java_awt_Component,[modalComponent]));
+this.pumpEventsForFilter$I$java_awt_Conditional$java_awt_EventFilter(id, cond, Clazz.new_($I$(8,1).c$$java_awt_Component,[modalComponent]));
 });
 
 Clazz.newMeth(C$, 'pumpEventsForFilter$I$java_awt_Conditional$java_awt_EventFilter', function (id, cond, filter) {
@@ -156,10 +145,10 @@ var cf=f;
 if (cf.compareTo$java_awt_ModalEventFilter(newFilter) > 0) {
 break;
 }}}
-this.eventFilters.add$I$TE(k, filter);
+this.eventFilters.add$I$O(k, filter);
 this.modalFiltersCount++;
 } else {
-this.eventFilters.addLast$TV(filter);
+this.eventFilters.addLast$O(filter);
 }}}});
 
 Clazz.newMeth(C$, 'removeEventFilter$java_awt_EventFilter', function (filter) {
@@ -181,7 +170,7 @@ eventOK=true;
 {
 for (var i=this.eventFilters.size$() - 1; i >= 0; i--) {
 var f=this.eventFilters.get$I(i);
-var accept=f.acceptEvent$(event);
+var accept=f.acceptEvent$java_awt_AWTEvent(event);
 if (accept === $I$(2).REJECT ) {
 eventOK=false;
 break;
@@ -241,19 +230,17 @@ Clazz.newMeth(C$, 'getEventQueue$', function () {
 return this.theQueue;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.EventDispatchThread, "StopDispatchEvent", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EventDispatchThread, "StopDispatchEvent", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.awt.AWTEvent', 'java.awt.ActiveEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$O$I.apply(this, [this.this$0, 0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O$I.apply(this,[this.this$0, 0]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'dispatch$', function () {
@@ -261,27 +248,23 @@ this.this$0.doDispatch=false;
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EventDispatchThread, "HierarchyEventFilter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EventDispatchThread, "HierarchyEventFilter", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.awt.EventFilter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.modalComponent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['modalComponent','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (modalComponent) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.modalComponent=modalComponent;
 }, 1);
 
-Clazz.newMeth(C$, ['acceptEvent$java_awt_AWTEvent','acceptEvent$'], function (event) {
+Clazz.newMeth(C$, 'acceptEvent$java_awt_AWTEvent', function (event) {
 if (this.modalComponent != null ) {
 var eventID=event.getID$();
 var mouseEvent=(eventID >= 500) && (eventID <= 507) ;
@@ -313,4 +296,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,27 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},p$2={},I$=[[0,'java.awt.GridBagLayout','java.awt.GridBagConstraints','javax.swing.JPanel','javax.swing.colorchooser.MainSwatchPanel','javax.swing.colorchooser.RecentSwatchPanel',['javax.swing.colorchooser.DefaultSwatchChooserPanel','.MainSwatchListener'],['javax.swing.colorchooser.DefaultSwatchChooserPanel','.RecentSwatchListener'],'java.awt.BorderLayout','javax.swing.border.CompoundBorder','javax.swing.border.LineBorder','java.awt.Color','java.awt.Insets','javax.swing.JLabel','java.awt.Dimension','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SwatchPanel", null, 'javax.swing.JPanel');
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},p$2={},I$=[[0,'javax.swing.colorchooser.AbstractColorChooserPanel','java.awt.GridBagLayout','java.awt.GridBagConstraints','javax.swing.JPanel','javax.swing.colorchooser.MainSwatchPanel','javax.swing.colorchooser.RecentSwatchPanel',['javax.swing.colorchooser.DefaultSwatchChooserPanel','.MainSwatchListener'],['javax.swing.colorchooser.DefaultSwatchChooserPanel','.RecentSwatchListener'],'java.awt.BorderLayout','javax.swing.border.CompoundBorder','javax.swing.border.LineBorder','java.awt.Color','java.awt.Insets','javax.swing.JLabel','java.awt.Dimension','javax.swing.UIManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SwatchPanel", null, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.colors=null;
-this.swatchSize=null;
-this.numSwatches=null;
-this.gap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['colors','java.awt.Color[]','swatchSize','java.awt.Dimension','+numSwatches','+gap']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.initValues$();
 this.initColors$();
 this.setToolTipText$S("");
 this.setOpaque$Z(true);
-this.setBackground$java_awt_Color($I$(11).white);
+this.setBackground$java_awt_Color($I$(12).white);
 this.setRequestFocusEnabled$Z(false);
 this.setInheritsPopupMenu$Z(true);
 }, 1);
@@ -46,7 +39,7 @@ x=(this.numSwatches.width - column - 1 ) * (this.swatchSize.width + this.gap.wid
 } else {
 x=column * (this.swatchSize.width + this.gap.width);
 }g.fillRect$I$I$I$I(x, y, this.swatchSize.width, this.swatchSize.height);
-g.setColor$java_awt_Color($I$(11).black);
+g.setColor$java_awt_Color($I$(12).black);
 g.drawLine$I$I$I$I(x + this.swatchSize.width - 1, y, x + this.swatchSize.width - 1, y + this.swatchSize.height - 1);
 g.drawLine$I$I$I$I(x, y + this.swatchSize.height - 1, x + this.swatchSize.width - 1, y + this.swatchSize.height - 1);
 }
@@ -56,7 +49,7 @@ g.drawLine$I$I$I$I(x, y + this.swatchSize.height - 1, x + this.swatchSize.width 
 Clazz.newMeth(C$, 'getPreferredSize$', function () {
 var x=this.numSwatches.width * (this.swatchSize.width + this.gap.width) - 1;
 var y=this.numSwatches.height * (this.swatchSize.height + this.gap.height) - 1;
-return Clazz.new_($I$(14).c$$I$I,[x, y]);
+return Clazz.new_($I$(15,1).c$$I$I,[x, y]);
 });
 
 Clazz.newMeth(C$, 'initColors$', function () {
@@ -81,4 +74,4 @@ Clazz.newMeth(C$, 'getColorForCell$I$I', function (column, row) {
 return this.colors[(row * this.numSwatches.width) + column];
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

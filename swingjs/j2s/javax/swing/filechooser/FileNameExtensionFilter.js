@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing.filechooser"),I$=[[0,'java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileNameExtensionFilter", null, 'javax.swing.filechooser.FileFilter');
+(function(){var P$=Clazz.newPackage("javax.swing.filechooser"),I$=[[0,'java.util.Arrays']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FileNameExtensionFilter", null, 'javax.swing.filechooser.FileFilter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.description=null;
-this.extensions=null;
-this.lowerCaseExtensions=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['description'],'O',['extensions','String[]','+lowerCaseExtensions']]]
 
 Clazz.newMeth(C$, 'c$$S$SA', function (description, extensions) {
-C$.superclazz.c$$SA.apply(this, [extensions]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$SA.apply(this,[extensions]);C$.$init$.apply(this);
 if (extensions == null  || extensions.length == 0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Extensions must be non-null and not empty"]);
 }this.description=description;
@@ -56,9 +49,9 @@ return result;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-return C$.superclazz.prototype.toString.apply(this, []) + "[description=" + this.getDescription$() + " extensions=" + $I$(1).asList$TTA(this.getExtensions$()) + "]" ;
+return C$.superclazz.prototype.toString.apply(this, []) + "[description=" + this.getDescription$() + " extensions=" + $I$(1,"asList$OA",[this.getExtensions$()]) + "]" ;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

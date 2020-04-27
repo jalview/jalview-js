@@ -1,32 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.util.zip"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','java.util.zip.CRC32','java.util.zip.Deflater','swingjs.jzlib.ZStream','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ZipOutputStream", null, 'java.util.zip.DeflaterOutputStream', 'java.util.zip.ZipConstants');
+(function(){var P$=Clazz.newPackage("java.util.zip"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','java.util.zip.CRC32','java.util.zip.Deflater','swingjs.jzlib.ZStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ZipOutputStream", null, 'java.util.zip.DeflaterOutputStream', 'java.util.zip.ZipConstants');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.current=null;
-this.xentries=null;
-this.names=null;
-this.crc=null;
-this.written=0;
-this.locoff=0;
-this.comment=null;
-this.method=0;
-this.finished=false;
-this.$closed=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.xentries=Clazz.new_($I$(1));
-this.names=Clazz.new_($I$(2));
-this.crc=Clazz.new_($I$(3));
+this.xentries=Clazz.new_($I$(1,1));
+this.names=Clazz.new_($I$(2,1));
+this.crc=Clazz.new_($I$(3,1));
 this.written=0;
 this.locoff=0;
 this.method=8;
 this.$closed=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['finished','$closed'],'I',['method'],'J',['written','locoff'],'O',['current','java.util.zip.ZipEntry','xentries','javajs.util.Lst','names','java.util.Map','crc','java.util.zip.CRC32','comment','byte[]']]]
 
 Clazz.newMeth(C$, 'version$java_util_zip_ZipEntry', function (e) {
 switch (e.method) {
@@ -45,12 +32,11 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.setZOS$java_io_OutputStream(out);
 }, 1);
 
@@ -60,7 +46,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'newDeflater$', function () {
-return (Clazz.new_($I$(4).c$$I,[2147483647])).init$I$I$Z(-1, 0, true);
+return (Clazz.new_($I$(4,1).c$$I,[2147483647])).init$I$I$Z(-1, 0, true);
 }, 1);
 
 Clazz.newMeth(C$, 'setComment$S', function (comment) {
@@ -97,11 +83,11 @@ throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["unsupported com
 }
 if (this.names.containsKey$O(e.name)) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["duplicate entry: " + e.name]);
-}this.names.put$TK$TV(e.name, $I$(6).TRUE);
+}this.names.put$O$O(e.name, Boolean.TRUE);
 e.flag|=2048;
 this.current=e;
 this.current.offset=this.written;
-this.xentries.addLast$TV(this.current);
+this.xentries.addLast$O(this.current);
 p$1.writeLOC$java_util_zip_ZipEntry.apply(this, [this.current]);
 });
 
@@ -383,4 +369,4 @@ this.out.write$BA$I$I(b, off, len);
 this.written+=len;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

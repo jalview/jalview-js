@@ -1,25 +1,12 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.HashMap','java.util.Vector','jalview.datamodel.features.FeatureSources','jalview.datamodel.features.FeatureAttributes','StringBuilder','jalview.util.StringUtils','java.util.TreeMap','jalview.datamodel.features.FeatureAttributeType']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SequenceFeature", null, null, 'jalview.datamodel.features.FeatureLocationI');
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.LinkedHashMap','java.util.Vector','jalview.datamodel.features.FeatureSources','jalview.datamodel.features.FeatureAttributes','StringBuilder','jalview.util.StringUtils','java.util.TreeMap','jalview.datamodel.features.FeatureAttributeType']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SequenceFeature", null, null, 'jalview.datamodel.features.FeatureLocationI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.begin=0;
-this.end=0;
-this.featureGroup=null;
-this.score=0;
-this.contactFeature=false;
-this.description=null;
-this.otherDetails=null;
-this.links=null;
-this.source=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['contactFeature'],'F',['score'],'I',['begin','end'],'S',['type','featureGroup','description','source'],'O',['otherDetails','java.util.Map','links','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceFeature', function (cpy) {
 C$.c$$jalview_datamodel_SequenceFeature$I$I$S$F.apply(this, [cpy, cpy.getBegin$(), cpy.getEnd$(), cpy.getFeatureGroup$(), cpy.getScore$()]);
@@ -30,7 +17,7 @@ C$.c$$S$S$I$I$F$S.apply(this, [theType, theDesc, theBegin, theEnd, 0.0, group]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$I$I$F$S', function (theType, theDesc, theBegin, theEnd, theScore, group) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.type=theType;
 this.description=theDesc;
 this.begin=theBegin;
@@ -44,15 +31,11 @@ Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceFeature$S$I$I$S$F', function (sf
 C$.c$$S$S$I$I$F$S.apply(this, [newType, sf.getDescription$(), newBegin, newEnd, newScore, newGroup]);
 this.source=sf.source;
 if (sf.otherDetails != null ) {
-this.otherDetails=Clazz.new_($I$(1));
-for (var entry, $entry = sf.otherDetails.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
-this.otherDetails.put$TK$TV(entry.getKey$(), entry.getValue$());
-}
+this.otherDetails=Clazz.new_($I$(1,1));
+this.otherDetails.putAll$java_util_Map(sf.otherDetails);
 }if (sf.links != null  && sf.links.size$() > 0 ) {
-this.links=Clazz.new_($I$(2));
-for (var i=0, iSize=sf.links.size$(); i < iSize; i++) {
-this.links.addElement$TE(sf.links.elementAt$I(i));
-}
+this.links=Clazz.new_($I$(2,1));
+this.links.addAll$java_util_Collection(sf.links);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceFeature$I$I$S$F', function (sf, newBegin, newEnd, newGroup, newScore) {
@@ -118,9 +101,9 @@ return this.featureGroup;
 
 Clazz.newMeth(C$, 'addLink$S', function (labelLink) {
 if (this.links == null ) {
-this.links=Clazz.new_($I$(2));
+this.links=Clazz.new_($I$(2,1));
 }if (!this.links.contains$O(labelLink)) {
-this.links.insertElementAt$TE$I(labelLink, 0);
+this.links.insertElementAt$O$I(labelLink, 0);
 }});
 
 Clazz.newMeth(C$, 'getScore$', function () {
@@ -151,8 +134,8 @@ return value == null  ? defaultValue : value;
 Clazz.newMeth(C$, 'setValue$S$O', function (key, value) {
 if (value != null ) {
 if (this.otherDetails == null ) {
-this.otherDetails=Clazz.new_($I$(1));
-}this.otherDetails.put$TK$TV(key, value);
+this.otherDetails=Clazz.new_($I$(1,1));
+}this.otherDetails.put$O$O(key, value);
 this.recordAttribute$S$O(key, value);
 }});
 
@@ -169,14 +152,6 @@ this.setValue$S$O("status", status);
 
 Clazz.newMeth(C$, 'getStatus$', function () {
 return this.getValue$S("status");
-});
-
-Clazz.newMeth(C$, 'setAttributes$S', function (attr) {
-this.setValue$S$O("ATTRIBUTES", attr);
-});
-
-Clazz.newMeth(C$, 'getAttributes$', function () {
-return this.getValue$S("ATTRIBUTES");
 });
 
 Clazz.newMeth(C$, 'getStrand$', function () {
@@ -227,13 +202,13 @@ Clazz.newMeth(C$, 'isNonPositional$', function () {
 return this.begin == 0 && this.end == 0 ;
 });
 
-Clazz.newMeth(C$, 'getDetailsReport$', function () {
+Clazz.newMeth(C$, 'getDetailsReport$S', function (seqName) {
 var metadata=$I$(3).getInstance$().getSource$S(this.source);
-var sb=Clazz.new_($I$(5).c$$I,[128]);
+var sb=Clazz.new_($I$(5,1).c$$I,[128]);
 sb.append$S("<br>");
 sb.append$S("<table>");
+sb.append$S(String.format$S$OA("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", ["Location", seqName, this.begin == this.end ? new Integer(this.begin) : this.begin + (this.isContactFeature$() ? ":" : "-") + this.end ]));
 sb.append$S(String.format$S$OA("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", ["Type", this.type, ""]));
-sb.append$S(String.format$S$OA("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", ["Start/end", this.begin == this.end ? new Integer(this.begin) : this.begin + (this.isContactFeature$() ? ":" : "-") + this.end , ""]));
 var desc=$I$(6).stripHtmlTags$S(this.description);
 sb.append$S(String.format$S$OA("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", ["Description", desc, ""]));
 if (!Float.isNaN$F(this.score) && this.score != 0.0  ) {
@@ -241,16 +216,14 @@ sb.append$S(String.format$S$OA("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", ["S
 }if (this.featureGroup != null ) {
 sb.append$S(String.format$S$OA("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", ["Group", this.featureGroup, ""]));
 }if (this.otherDetails != null ) {
-var ordered=Clazz.new_($I$(7).c$$java_util_Comparator,[String.CASE_INSENSITIVE_ORDER]);
+var ordered=Clazz.new_($I$(7,1).c$$java_util_Comparator,[String.CASE_INSENSITIVE_ORDER]);
 ordered.putAll$java_util_Map(this.otherDetails);
 for (var entry, $entry = ordered.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var key=entry.getKey$();
-if ("ATTRIBUTES".equals$O(key)) {
-continue;
-}var value=entry.getValue$();
+var value=entry.getValue$();
 if (Clazz.instanceOf(value, "java.util.Map")) {
 var values=value;
-var sm=Clazz.new_($I$(7).c$$java_util_Comparator,[String.CASE_INSENSITIVE_ORDER]);
+var sm=Clazz.new_($I$(7,1).c$$java_util_Comparator,[String.CASE_INSENSITIVE_ORDER]);
 sm.putAll$java_util_Map(values);
 for (var e, $e = sm.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 sb.append$S(String.format$S$OA("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", [key, e.getKey$().toString(), e.getValue$().toString()]));
@@ -276,7 +249,7 @@ return true;
 }var attType=metadata.getAttributeType$S(key);
 if (attType != null  && (attType === $I$(8).Float  || attType.equals$O($I$(8).Integer) ) ) {
 try {
-var fval=(Float.valueOf$S(value)).floatValue$();
+var fval=(Float.valueOf$S(value)).valueOf();
 if (fval == 0.0 ) {
 return false;
 }} catch (e) {
@@ -291,5 +264,7 @@ throw e;
 Clazz.newMeth(C$, 'setSource$S', function (theSource) {
 this.source=theSource;
 });
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

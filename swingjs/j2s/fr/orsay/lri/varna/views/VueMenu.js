@@ -1,55 +1,34 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.views"),p$1={},I$=[[0,'javax.swing.JCheckBoxMenuItem','java.util.ArrayList','java.awt.Point','fr.orsay.lri.varna.controlers.ControleurMenu',['javax.swing.JPopupMenu','.Separator'],'javax.swing.JMenuItem','javax.swing.KeyStroke','javax.swing.JMenu']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VueMenu", null, 'javax.swing.JPopupMenu');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.views"),p$1={},I$=[[0,'javax.swing.JCheckBoxMenuItem','java.util.ArrayList','java.awt.Point','fr.orsay.lri.varna.controlers.ControleurMenu',['javax.swing.JPopupMenu','.Separator'],'javax.swing.JMenuItem','javax.swing.KeyStroke','javax.swing.JMenu']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VueMenu", null, 'javax.swing.JPopupMenu');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._vp=null;
-this._controlerMenu=null;
-this._itemOptionSpecialBaseColored=null;
-this._itemShowWarnings=null;
-this._itemDrawBackbone=null;
-this._itemOptionGapsBaseColored=null;
-this._itemOptionBondsColored=null;
-this._itemShowNCBP=null;
-this._itemShowOnlyPlanar=null;
-this._itemFlatExteriorLoop=null;
-this._itemShowColorMap=null;
-this._dashBasesColor=null;
-this._disabled=null;
-this._rotation=null;
-this._bpHeightIncrement=null;
-this._spawnOrigin=null;
-this._subMenuBases=null;
-this._selectionMenuIndex=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._itemOptionSpecialBaseColored=Clazz.new_($I$(1).c$$S$Z,["Custom colored", false]);
-this._itemShowWarnings=Clazz.new_($I$(1).c$$S$Z,["Show warnings", false]);
-this._itemDrawBackbone=Clazz.new_($I$(1).c$$S$Z,["Draw backbone", true]);
-this._itemOptionGapsBaseColored=Clazz.new_($I$(1).c$$S$Z,["Custom colored", false]);
-this._itemOptionBondsColored=Clazz.new_($I$(1).c$$S$Z,["Use base color for base-pairs", false]);
-this._itemShowNCBP=Clazz.new_($I$(1).c$$S$Z,["Show non-canonical BPs", true]);
-this._itemShowOnlyPlanar=Clazz.new_($I$(1).c$$S$Z,["Hide tertiary BPs", false]);
-this._itemFlatExteriorLoop=Clazz.new_($I$(1).c$$S$Z,["Flat exterior loop", false]);
-this._itemShowColorMap=Clazz.new_($I$(1).c$$S$Z,["Show color map", false]);
-this._disabled=Clazz.new_($I$(2));
-this._spawnOrigin=Clazz.new_($I$(3).c$$I$I,[-1, -1]);
+this._itemOptionSpecialBaseColored=Clazz.new_($I$(1,1).c$$S$Z,["Custom colored", false]);
+this._itemShowWarnings=Clazz.new_($I$(1,1).c$$S$Z,["Show warnings", false]);
+this._itemDrawBackbone=Clazz.new_($I$(1,1).c$$S$Z,["Draw backbone", true]);
+this._itemOptionGapsBaseColored=Clazz.new_($I$(1,1).c$$S$Z,["Custom colored", false]);
+this._itemOptionBondsColored=Clazz.new_($I$(1,1).c$$S$Z,["Use base color for base-pairs", false]);
+this._itemShowNCBP=Clazz.new_($I$(1,1).c$$S$Z,["Show non-canonical BPs", true]);
+this._itemShowOnlyPlanar=Clazz.new_($I$(1,1).c$$S$Z,["Hide tertiary BPs", false]);
+this._itemFlatExteriorLoop=Clazz.new_($I$(1,1).c$$S$Z,["Flat exterior loop", false]);
+this._itemShowColorMap=Clazz.new_($I$(1,1).c$$S$Z,["Show color map", false]);
+this._disabled=Clazz.new_($I$(2,1));
+this._spawnOrigin=Clazz.new_($I$(3,1).c$$I$I,[-1, -1]);
 this._selectionMenuIndex=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['_vp','fr.orsay.lri.varna.VARNAPanel','_controlerMenu','fr.orsay.lri.varna.controlers.ControleurMenu','_itemOptionSpecialBaseColored','javax.swing.JCheckBoxMenuItem','+_itemShowWarnings','+_itemDrawBackbone','+_itemOptionGapsBaseColored','+_itemOptionBondsColored','+_itemShowNCBP','+_itemShowOnlyPlanar','+_itemFlatExteriorLoop','+_itemShowColorMap','_dashBasesColor','javax.swing.JMenuItem','_disabled','java.util.ArrayList','_rotation','javax.swing.JMenuItem','+_bpHeightIncrement','_spawnOrigin','java.awt.Point','_subMenuBases','javax.swing.JMenu','_selectionMenuIndex','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_VARNAPanel', function (vp) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._vp=vp;
-this._controlerMenu=Clazz.new_($I$(4).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_views_VueMenu,[this._vp, this]);
+this._controlerMenu=Clazz.new_($I$(4,1).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_views_VueMenu,[this._vp, this]);
 }, 1);
 
 Clazz.newMeth(C$, 'addTitle$S$Z', function (title, keep) {
-var sep=Clazz.new_($I$(5));
-var titleItem=Clazz.new_($I$(6).c$$S,[" " + title]);
+var sep=Clazz.new_($I$(5,1));
+var titleItem=Clazz.new_($I$(6,1).c$$S,[" " + title]);
 var previousFont=titleItem.getFont$();
 var futureFont=previousFont.deriveFont$I(1).deriveFont$F(previousFont.getSize$() + 1.0);
 titleItem.setFont$java_awt_Font(futureFont);
@@ -59,8 +38,8 @@ titleItem.setForeground$java_awt_Color(future);
 this.add$javax_swing_JMenuItem(titleItem);
 this.add$java_awt_Component(sep);
 if (!keep) {
-this._disabled.add$TE(sep);
-this._disabled.add$TE(titleItem);
+this._disabled.add$O(sep);
+this._disabled.add$O(titleItem);
 }}, p$1);
 
 Clazz.newMeth(C$, 'configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container', function (mi, command, keyStroke, par) {
@@ -72,12 +51,12 @@ mi.setActionCommand$S(command);
 mi.addActionListener$java_awt_event_ActionListener(this._controlerMenu);
 if (keyStroke != null ) if (!keyStroke.equals$O("")) mi.setAccelerator$javax_swing_KeyStroke($I$(7).getKeyStroke$S(keyStroke));
 if (disabled) {
-this._disabled.add$TE(mi);
+this._disabled.add$O(mi);
 }par.add$java_awt_Component(mi);
 }, p$1);
 
 Clazz.newMeth(C$, 'createMenuItem$S$S$S$java_awt_Container$Z', function (caption, command, keyStroke, par, disabled) {
-var mi=Clazz.new_($I$(6).c$$S,[caption]);
+var mi=Clazz.new_($I$(6,1).c$$S,[caption]);
 p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container$Z.apply(this, [mi, command, keyStroke, par, disabled]);
 return mi;
 }, p$1);
@@ -115,27 +94,27 @@ this.addSeparator$();
 p$1.addTitle$S$Z.apply(this, ["Display", true]);
 p$1.viewMenu.apply(this, []);
 p$1.displayMenu.apply(this, []);
-var sep=Clazz.new_($I$(5));
+var sep=Clazz.new_($I$(5,1));
 this.add$java_awt_Component(sep);
-this._disabled.add$TE(sep);
+this._disabled.add$O(sep);
 p$1.addTitle$S$Z.apply(this, ["Edit", false]);
 p$1.editRNAMenu.apply(this, []);
 p$1.redrawMenu.apply(this, []);
 p$1.colorClassesMenu.apply(this, []);
 p$1.annotationMenu.apply(this, []);
-this._disabled.add$TE(this._itemShowNCBP);
-this._disabled.add$TE(this._itemShowOnlyPlanar);
+this._disabled.add$O(this._itemShowNCBP);
+this._disabled.add$O(this._itemShowOnlyPlanar);
 p$1.aboutMenu.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'annotationMenu', function () {
-var submenuAnnotations=Clazz.new_($I$(8).c$$S,["Annotations"]);
-var addAnnotations=Clazz.new_($I$(8).c$$S,["New"]);
+var submenuAnnotations=Clazz.new_($I$(8,1).c$$S,["Annotations"]);
+var addAnnotations=Clazz.new_($I$(8,1).c$$S,["New"]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Here", "annotationsaddPosition", "", addAnnotations]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Base", "annotationsaddBase", "", addAnnotations]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Loop", "annotationsaddLoop", "", addAnnotations]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Helix", "annotationsaddHelix", "", addAnnotations]);
-var sep=Clazz.new_($I$(5));
+var sep=Clazz.new_($I$(5,1));
 addAnnotations.add$java_awt_Component(sep);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Region", "annotationsaddRegion", "", addAnnotations]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Chem. prob.", "annotationsaddChemProb", "", addAnnotations]);
@@ -154,7 +133,7 @@ Clazz.newMeth(C$, 'fileMenu', function () {
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["New...", "userInput", "control N", this, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Open...", "file", "control O", this, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Save...", "saveas", "control S", this, true]);
-var submenuSave=Clazz.new_($I$(8).c$$S,["Save as"]);
+var submenuSave=Clazz.new_($I$(8,1).c$$S,["Save as"]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["DBN (Vienna)", "dbn", "", submenuSave]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["BPSEQ", "bpseq", "", submenuSave]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["CT", "ct", "", submenuSave]);
@@ -162,7 +141,7 @@ this.add$javax_swing_JMenuItem(submenuSave);
 }, p$1);
 
 Clazz.newMeth(C$, 'exportMenu', function () {
-var submenuExport=Clazz.new_($I$(8).c$$S,["Export"]);
+var submenuExport=Clazz.new_($I$(8,1).c$$S,["Export"]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["SVG", "svg", "", submenuExport]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["PGF/TIKZ", "tikz", "", submenuExport]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["XFIG", "xfig", "", submenuExport]);
@@ -175,19 +154,19 @@ this.add$javax_swing_JMenuItem(submenuExport);
 }, p$1);
 
 Clazz.newMeth(C$, 'displayMenu', function () {
-var subMenuBasePairs=Clazz.new_($I$(8).c$$S,["Base Pairs"]);
+var subMenuBasePairs=Clazz.new_($I$(8,1).c$$S,["Base Pairs"]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["BP style...", "bpstyle", "control shift P", subMenuBasePairs]);
 p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container.apply(this, [this._itemShowNCBP, "shownc", "control W", subMenuBasePairs]);
 p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container.apply(this, [this._itemShowOnlyPlanar, "shownp", "control E", subMenuBasePairs]);
-var subMenuNSBases=Clazz.new_($I$(8).c$$S,["Non-standard bases"]);
+var subMenuNSBases=Clazz.new_($I$(8,1).c$$S,["Non-standard bases"]);
 p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container.apply(this, [this._itemOptionSpecialBaseColored, "specialbasecolored", "control J", subMenuNSBases]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Color", "specialBasesColor", "control shift J", subMenuNSBases]);
-var subMenuGapsBases=Clazz.new_($I$(8).c$$S,["\'Gaps\' bases"]);
+var subMenuGapsBases=Clazz.new_($I$(8,1).c$$S,["\'Gaps\' bases"]);
 p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container.apply(this, [this._itemOptionGapsBaseColored, "dashbasecolored", "control D", subMenuGapsBases]);
 this._dashBasesColor=p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Color", "dashBasesColor", "control shift D", subMenuGapsBases]);
-var sep=Clazz.new_($I$(5));
-this._disabled.add$TE(sep);
-var submenuStyle=Clazz.new_($I$(8).c$$S,["RNA style"]);
+var sep=Clazz.new_($I$(5,1));
+this._disabled.add$O(sep);
+var submenuStyle=Clazz.new_($I$(8,1).c$$S,["RNA style"]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Toggle draw bases", "gaspin", "alt G", submenuStyle, true]);
 submenuStyle.add$javax_swing_JMenuItem(subMenuBasePairs);
 submenuStyle.addSeparator$();
@@ -196,20 +175,20 @@ submenuStyle.add$javax_swing_JMenuItem(subMenuGapsBases);
 submenuStyle.add$java_awt_Component(sep);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Backbone color", "backbone", "control K", submenuStyle, true]);
 p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container.apply(this, [this._itemDrawBackbone, "showbackbone", "alt B", submenuStyle]);
-var submenuTitle=Clazz.new_($I$(8).c$$S,["Title"]);
+var submenuTitle=Clazz.new_($I$(8,1).c$$S,["Title"]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Set Title", "setTitle", "control T", submenuTitle, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Font", "titleDisplay", "control shift T", submenuTitle, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Color", "titleColor", "control alt T", submenuTitle, true]);
-this._disabled.add$TE(submenuTitle);
-var submenuColorMap=Clazz.new_($I$(8).c$$S,["Color map"]);
+this._disabled.add$O(submenuTitle);
+var submenuColorMap=Clazz.new_($I$(8,1).c$$S,["Color map"]);
 p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container$Z.apply(this, [this._itemShowColorMap, "toggleshowcolormap", "control shift L", submenuColorMap, false]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Caption", "colormapcaption", "control shift C", submenuColorMap, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Style...", "colormapstyle", "control L", submenuColorMap, false]);
 submenuColorMap.addSeparator$();
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Edit values...", "colormapvalues", "shift L", submenuColorMap, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Load values...", "colormaploadvalues", "control shift K", submenuColorMap, true]);
-this._disabled.add$TE(submenuColorMap);
-var submenuMisc=Clazz.new_($I$(8).c$$S,["Misc"]);
+this._disabled.add$O(submenuColorMap);
+var submenuMisc=Clazz.new_($I$(8,1).c$$S,["Misc"]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Num. period.", "numPeriod", "control M", submenuMisc]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["Background color", "background", "control G", submenuMisc]);
 submenuMisc.add$javax_swing_JMenuItem(submenuTitle);
@@ -224,10 +203,10 @@ p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["BasePairs...", "edit
 }, p$1);
 
 Clazz.newMeth(C$, 'redrawMenu', function () {
-var submenuRedraw=Clazz.new_($I$(8).c$$S,["Redraw"]);
-this._disabled.add$TE(submenuRedraw);
-var submenuAlgorithms=Clazz.new_($I$(8).c$$S,["Algorithm"]);
-this._disabled.add$TE(submenuAlgorithms);
+var submenuRedraw=Clazz.new_($I$(8,1).c$$S,["Redraw"]);
+this._disabled.add$O(submenuRedraw);
+var submenuAlgorithms=Clazz.new_($I$(8,1).c$$S,["Algorithm"]);
+this._disabled.add$O(submenuAlgorithms);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Linear", "line", "control 1", submenuAlgorithms, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Circular", "circular", "control 2", submenuAlgorithms, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Radiate", "radiate", "control 3", submenuAlgorithms, true]);
@@ -245,8 +224,8 @@ p$1.configMenuItem$javax_swing_JMenuItem$S$S$java_awt_Container$Z.apply(this, [t
 }, p$1);
 
 Clazz.newMeth(C$, 'viewMenu', function () {
-var submenuView=Clazz.new_($I$(8).c$$S,["View"]);
-var zoomDisplay=Clazz.new_($I$(8).c$$S,["Zoom"]);
+var submenuView=Clazz.new_($I$(8,1).c$$S,["View"]);
+var zoomDisplay=Clazz.new_($I$(8,1).c$$S,["Zoom"]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["25%", "zoom25", "", zoomDisplay]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["50%", "zoom50", "", zoomDisplay]);
 p$1.createMenuItem$S$S$S$java_awt_Container.apply(this, ["100%", "zoom100", "", zoomDisplay]);
@@ -263,7 +242,7 @@ this.add$javax_swing_JMenuItem(submenuView);
 
 Clazz.newMeth(C$, 'addSelectionMenu$javax_swing_JMenuItem', function (s) {
 this._selectionMenuIndex=s;
-this._disabled.add$TE(s);
+this._disabled.add$O(s);
 this.insert$java_awt_Component$I(s, this.getComponentCount$() - 2);
 });
 
@@ -274,8 +253,8 @@ this._selectionMenuIndex=null;
 }});
 
 Clazz.newMeth(C$, 'colorClassesMenu', function () {
-this._subMenuBases=Clazz.new_($I$(8).c$$S,["Colors"]);
-this._disabled.add$TE(this._subMenuBases);
+this._subMenuBases=Clazz.new_($I$(8,1).c$$S,["Colors"]);
+this._disabled.add$O(this._subMenuBases);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["By Base", "eachKind", "control U", this._subMenuBases, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["By BP", "eachCouple", "shift U", this._subMenuBases, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["By Position", "eachBase", "alt U", this._subMenuBases, true]);
@@ -310,7 +289,7 @@ var texte=this._vp.get_selectedAnnotation$().getTexte$();
 if (texte.length$() < 5) debut=texte;
  else debut=texte.substring$I$I(0, 5) + "...";
 title="Annotation: " + debut;
-}var menuAnnotation=Clazz.new_($I$(8).c$$S,[title]);
+}var menuAnnotation=Clazz.new_($I$(8,1).c$$S,[title]);
 if (!existingAnnot) p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Add", menu.getActionCommand$() + "annotationadd", "", menuAnnotation, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Edit", menu.getActionCommand$() + "annotationedit", "", menuAnnotation, true]);
 p$1.createMenuItem$S$S$S$java_awt_Container$Z.apply(this, ["Remove", menu.getActionCommand$() + "annotationremove", "", menuAnnotation, true]);
@@ -374,7 +353,7 @@ this._itemOptionBondsColored=optionBondsColored;
 });
 
 Clazz.newMeth(C$, 'show$java_awt_Component$I$I', function (invoker, x, y) {
-this._spawnOrigin=Clazz.new_($I$(3).c$$I$I,[x, y]);
+this._spawnOrigin=Clazz.new_($I$(3,1).c$$I$I,[x, y]);
 C$.superclazz.prototype.show$java_awt_Component$I$I.apply(this, [invoker, x, y]);
 });
 
@@ -384,4 +363,4 @@ return this._spawnOrigin;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:47 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

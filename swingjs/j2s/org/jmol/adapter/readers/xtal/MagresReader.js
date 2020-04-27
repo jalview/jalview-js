@@ -1,24 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','javajs.util.SB','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.Atom','org.jmol.util.Escape','org.jmol.util.Tensor']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MagresReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.Lst','javajs.util.SB','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.Atom','org.jmol.util.Escape','org.jmol.util.Tensor']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MagresReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.currentBlock=0;
-this.cellParams=null;
-this.magresUnits=null;
-this.interactionTensors=null;
-this.header=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.currentBlock=-1;
-this.magresUnits=Clazz.new_($I$(1));
-this.interactionTensors=Clazz.new_($I$(2));
-this.header=Clazz.new_($I$(3));
-}, 1);
+this.magresUnits=Clazz.new_($I$(1,1));
+this.interactionTensors=Clazz.new_($I$(2,1));
+this.header=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['I',['currentBlock'],'O',['cellParams','float[]','magresUnits','java.util.Map','interactionTensors','javajs.util.Lst','header','javajs.util.SB']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.setFractionalCoordinates$Z(false);
@@ -76,7 +68,7 @@ case 3:
 if (this.currentBlock == -1) {
 this.currentBlock=1;
 this.asc.newAtomSet$();
-this.magresUnits=Clazz.new_($I$(1));
+this.magresUnits=Clazz.new_($I$(1,1));
 }break;
 case 4:
 if (this.currentBlock == 1) this.currentBlock=-1;
@@ -84,7 +76,7 @@ break;
 case 5:
 if (this.currentBlock == -1) {
 this.currentBlock=2;
-this.magresUnits=Clazz.new_($I$(1));
+this.magresUnits=Clazz.new_($I$(1,1));
 this.asc.setCurrentModelInfo$S$O("magresUnits", this.magresUnits);
 }break;
 case 6:
@@ -98,7 +90,7 @@ Clazz.newMeth(C$, 'setUnits$Z', function (isMagresBlock) {
 var tokens=this.getTokens$();
 var id=tokens[1];
 if (isMagresBlock) this.appendLoadNote$S("Ellipsoid set " + $I$(4).esc$S(id) + ": " + (id.startsWith$S("ms") ? "Magnetic Shielding" : id.startsWith$S("efg") ? "Electric Field Gradient" : id.startsWith$S("isc") ? "J-Coupling" : "?") );
-this.magresUnits.put$TK$TV(id, tokens[2]);
+this.magresUnits.put$O$O(id, tokens[2]);
 return true;
 }, p$1);
 
@@ -124,7 +116,7 @@ var units=this.magresUnits.get$O("atom");
 if (units == null ) return true;
 var f=(units.startsWith$S("A") ? 1 : 0.5291772);
 var tokens=this.getTokens$();
-var atom=Clazz.new_($I$(6));
+var atom=Clazz.new_($I$(6,1));
 var pt=1;
 atom.elementSymbol=tokens[pt++];
 atom.atomName=C$.getAtomName$S$S(tokens[pt++], tokens[pt++]);
@@ -154,34 +146,31 @@ this.magresUnits.remove$O(type);
 var data=Clazz.array(Float.TYPE, [9]);
 for (var i=0; i < 9; ) data[i]=this.parseFloatStr$S(tokens[++i]);
 
-$I$(5).info$S("Magres reader creating magres_" + type + ": " + $I$(7).eAF$FA(data) );
+(function(a,f){return f.apply(null,a)})(["Magres reader creating magres_" + type + ": " + $I$(7).eAF$FA(data) ],$I$(5).info$S);
 this.asc.setCurrentModelInfo$S$O("magres_" + type, data);
 }var atomName1=C$.getAtomName$S$S(tokens[1], tokens[2]);
 var pt=3;
 var atomName2=(isIsc ? C$.getAtomName$S$S(tokens[pt++], tokens[pt++]) : null);
 if (atomName1.equals$O(atomName2)) {
-$I$(5).warn$S(type + " ignored; atom1 == atom2 for " + atomName1 + " line: " + this.line );
+(function(a,f){return f.apply(null,a)})([type + " ignored; atom1 == atom2 for " + atomName1 + " line: " + this.line ],$I$(5).warn$S);
 return true;
 }var id=atomName1;
 if (atomName2 != null ) id += "//" + atomName2;
-var a=Clazz.array(Double.TYPE, [3, 3]);
-for (var i=0; i < 3; i++) for (var j=0; j < 3; j++) a[i][j]=Double.valueOf$S(tokens[pt++]).doubleValue$();
-
-
+var a=this.fill3x3$SA$I(tokens, pt);
 var a1=this.asc.getAtomFromName$S(atomName1);
 if (a1 == null ) return true;
 var a2=null;
-var t=Clazz.new_($I$(8)).setFromAsymmetricTensor$DAA$S$S(a, type, id);
+var t=Clazz.new_($I$(8,1)).setFromAsymmetricTensor$DAA$S$S(a, type, id);
 if (atomName2 == null ) {
 a1.addTensor$org_jmol_util_Tensor$S$Z(t, null, false);
 } else {
 a2=this.asc.getAtomFromName$S(atomName2);
 if (a2 == null ) return true;
-this.interactionTensors.addLast$TV(t);
+this.interactionTensors.addLast$O(t);
 }t.setAtomIndexes$I$I(a1.index, (a2 == null  ? -1 : a2.index));
 return true;
 }, p$1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

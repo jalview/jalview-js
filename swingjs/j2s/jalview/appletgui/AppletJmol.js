@@ -1,85 +1,50 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Dimension','java.awt.Color','java.awt.Font','jalview.util.MessageManager','java.awt.Menu','java.awt.MenuItem','java.awt.CheckboxMenuItem','java.util.ArrayList','Error','jalview.appletgui.AppletJmolBinding','jalview.datamodel.PDBEntry','jalview.datamodel.SequenceI','jalview.io.DataSourceType','jalview.bin.JalviewLite','jalview.structure.StructureSelectionManager','java.awt.MenuBar','java.awt.BorderLayout',['jalview.appletgui.AppletJmol','.RenderPanel'],'java.awt.Panel','java.awt.event.WindowAdapter','jalview.io.FileParse','java.util.Vector','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','StringBuffer','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.schemes.PurinePyrimidineColourScheme','jalview.appletgui.UserDefinedColours','java.net.URL','java.awt.GridLayout']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AppletJmol", function(){
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Dimension','java.awt.Color','java.awt.Font','jalview.util.MessageManager','java.awt.Menu','java.awt.MenuItem','java.awt.CheckboxMenuItem','java.util.ArrayList','Error','jalview.appletgui.AppletJmolBinding','jalview.datamodel.PDBEntry','jalview.datamodel.SequenceI','jalview.io.DataSourceType','jalview.bin.JalviewLite','jalview.structure.StructureSelectionManager','java.awt.MenuBar','java.awt.BorderLayout',['jalview.appletgui.AppletJmol','.RenderPanel'],'java.awt.Panel','java.awt.event.WindowAdapter','jalview.io.FileParse','java.util.Vector','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','StringBuffer','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.schemes.PurinePyrimidineColourScheme','jalview.appletgui.UserDefinedColours','java.net.URL','java.awt.GridLayout']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AppletJmol", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'jalview.appletgui.EmbmenuFrame', ['java.awt.event.KeyListener', 'java.awt.event.ActionListener', 'java.awt.event.ItemListener']);
+C$.$classes$=[['RenderPanel',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fileMenu=null;
-this.viewMenu=null;
-this.coloursMenu=null;
-this.chainMenu=null;
-this.helpMenu=null;
-this.mappingMenuItem=null;
-this.seqColour=null;
-this.jmolColour=null;
-this.chain=null;
-this.charge=null;
-this.zappo=null;
-this.taylor=null;
-this.hydro=null;
-this.helix=null;
-this.strand=null;
-this.turn=null;
-this.buried=null;
-this.purinepyrimidine=null;
-this.user=null;
-this.jmolHelp=null;
-this.scriptWindow=null;
-this.inputLine=null;
-this.history=null;
-this.renderPanel=null;
-this.ap=null;
-this._aps=null;
-this.fileLoadingError=null;
-this.loadedInline=false;
-this.fr=null;
-this.jmb=null;
-this.protocol=null;
-this.allChainsSelected=false;
-this.splitPane=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.fileMenu=Clazz.new_($I$(5).c$$S,[$I$(4).getString$S("action.file")]);
-this.viewMenu=Clazz.new_($I$(5).c$$S,[$I$(4).getString$S("action.view")]);
-this.coloursMenu=Clazz.new_($I$(5).c$$S,[$I$(4).getString$S("action.colour")]);
-this.chainMenu=Clazz.new_($I$(5).c$$S,[$I$(4).getString$S("action.show_chain")]);
-this.helpMenu=Clazz.new_($I$(5).c$$S,[$I$(4).getString$S("action.help")]);
-this.mappingMenuItem=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.view_mapping")]);
-this.seqColour=Clazz.new_($I$(7).c$$S$Z,[$I$(4).getString$S("action.by_sequence"), true]);
-this.jmolColour=Clazz.new_($I$(7).c$$S$Z,[$I$(4).getString$S("action.using_jmol"), false]);
-this.chain=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("action.by_chain")]);
-this.charge=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.charge_cysteine")]);
-this.zappo=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_zappo")]);
-this.taylor=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_taylor")]);
-this.hydro=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_hydrophobic")]);
-this.helix=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_helix_propensity")]);
-this.strand=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_strand_propensity")]);
-this.turn=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_turn_propensity")]);
-this.buried=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_buried_index")]);
-this.purinepyrimidine=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.colourScheme_purine/pyrimidine")]);
-this.user=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.user_defined_colours")]);
-this.jmolHelp=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.jmol_help")]);
-this._aps=Clazz.new_($I$(8));
+this.fileMenu=Clazz.new_([$I$(4).getString$S("action.file")],$I$(5,1).c$$S);
+this.viewMenu=Clazz.new_([$I$(4).getString$S("action.view")],$I$(5,1).c$$S);
+this.coloursMenu=Clazz.new_([$I$(4).getString$S("action.colour")],$I$(5,1).c$$S);
+this.chainMenu=Clazz.new_([$I$(4).getString$S("action.show_chain")],$I$(5,1).c$$S);
+this.helpMenu=Clazz.new_([$I$(4).getString$S("action.help")],$I$(5,1).c$$S);
+this.mappingMenuItem=Clazz.new_([$I$(4).getString$S("label.view_mapping")],$I$(6,1).c$$S);
+this.seqColour=Clazz.new_([$I$(4).getString$S("action.by_sequence"), true],$I$(7,1).c$$S$Z);
+this.jmolColour=Clazz.new_([$I$(4).getString$S("action.using_jmol"), false],$I$(7,1).c$$S$Z);
+this.chain=Clazz.new_([$I$(4).getString$S("action.by_chain")],$I$(6,1).c$$S);
+this.charge=Clazz.new_([$I$(4).getString$S("label.charge_cysteine")],$I$(6,1).c$$S);
+this.zappo=Clazz.new_([$I$(4).getString$S("label.colourScheme_zappo")],$I$(6,1).c$$S);
+this.taylor=Clazz.new_([$I$(4).getString$S("label.colourScheme_taylor")],$I$(6,1).c$$S);
+this.hydro=Clazz.new_([$I$(4).getString$S("label.colourScheme_hydrophobic")],$I$(6,1).c$$S);
+this.helix=Clazz.new_([$I$(4).getString$S("label.colourScheme_helix_propensity")],$I$(6,1).c$$S);
+this.strand=Clazz.new_([$I$(4).getString$S("label.colourScheme_strand_propensity")],$I$(6,1).c$$S);
+this.turn=Clazz.new_([$I$(4).getString$S("label.colourScheme_turn_propensity")],$I$(6,1).c$$S);
+this.buried=Clazz.new_([$I$(4).getString$S("label.colourScheme_buried_index")],$I$(6,1).c$$S);
+this.purinepyrimidine=Clazz.new_([$I$(4).getString$S("label.colourScheme_purine/pyrimidine")],$I$(6,1).c$$S);
+this.user=Clazz.new_([$I$(4).getString$S("label.user_defined_colours")],$I$(6,1).c$$S);
+this.jmolHelp=Clazz.new_([$I$(4).getString$S("label.jmol_help")],$I$(6,1).c$$S);
+this._aps=Clazz.new_($I$(8,1));
 this.fr=null;
 this.protocol=null;
 this.allChainsSelected=false;
 this.splitPane=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['loadedInline','allChainsSelected'],'S',['fileLoadingError','protocol'],'O',['fileMenu','java.awt.Menu','+viewMenu','+coloursMenu','+chainMenu','+helpMenu','mappingMenuItem','java.awt.MenuItem','seqColour','java.awt.CheckboxMenuItem','+jmolColour','chain','java.awt.MenuItem','+charge','+zappo','+taylor','+hydro','+helix','+strand','+turn','+buried','+purinepyrimidine','+user','+jmolHelp','scriptWindow','java.awt.Panel','inputLine','java.awt.TextField','history','java.awt.TextArea','renderPanel','jalview.appletgui.AppletJmol.RenderPanel','ap','jalview.appletgui.AlignmentPanel','_aps','java.util.List','fr','jalview.appletgui.FeatureRenderer','jmb','jalview.appletgui.AppletJmolBinding','splitPane','java.awt.Panel']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$SAA$Z$jalview_appletgui_AlignmentPanel$S', function (pdbentries, boundseqs, boundchains, align, ap, protocol) {
-Clazz.super_(C$, this,1);
-throw Clazz.new_($I$(9).c$$S,[$I$(4).getString$S("error.not_yet_implemented")]);
+Clazz.super_(C$, this);
+throw Clazz.new_([$I$(4).getString$S("error.not_yet_implemented")],$I$(9,1).c$$S);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType', function (pdbentry, seq, chains, ap, protocol) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.ap=ap;
-this.jmb=Clazz.new_($I$(10).c$$jalview_appletgui_AppletJmol$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType,[this, ap.getStructureSelectionManager$(), Clazz.array($I$(11), -1, [pdbentry]), Clazz.array($I$(12), -2, [seq]), protocol]);
+this.jmb=Clazz.new_([this, ap.getStructureSelectionManager$(), Clazz.array($I$(11), -1, [pdbentry]), Clazz.array($I$(12), -2, [seq]), protocol],$I$(10,1).c$$jalview_appletgui_AppletJmol$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType);
 this.jmb.setColourBySequence$Z(true);
 if (pdbentry.getId$() == null  || pdbentry.getId$().length$() < 1 ) {
 if (protocol === $I$(13).PASTE ) {
@@ -92,7 +57,7 @@ System.err.println$S("AppletJmol: PDB ID is '" + pdbentry.getId$() + "'" );
 var reader=null;
 if (alreadyMapped != null ) {
 reader=$I$(15).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider(ap.av.applet).setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(seq, chains, pdbentry.getFile$(), protocol, null);
-}var menuBar=Clazz.new_($I$(16));
+}var menuBar=Clazz.new_($I$(16,1));
 menuBar.add$java_awt_Menu(this.fileMenu);
 this.fileMenu.add$java_awt_MenuItem(this.mappingMenuItem);
 menuBar.add$java_awt_Menu(this.viewMenu);
@@ -128,12 +93,12 @@ this.coloursMenu.add$java_awt_MenuItem(this.purinepyrimidine);
 this.coloursMenu.add$java_awt_MenuItem(this.user);
 this.coloursMenu.add$java_awt_MenuItem(this.jmolColour);
 this.helpMenu.add$java_awt_MenuItem(this.jmolHelp);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
 this.setMenuBar$java_awt_MenuBar(menuBar);
-this.renderPanel=Clazz.new_($I$(18), [this, null]);
+this.renderPanel=Clazz.new_($I$(18,1),[this, null]);
 this.embedMenuIfNeeded$java_awt_Panel(this.renderPanel);
 this.add$java_awt_Component$O(this.renderPanel, "Center");
-this.scriptWindow=Clazz.new_($I$(19));
+this.scriptWindow=Clazz.new_($I$(19,1));
 this.scriptWindow.setVisible$Z(false);
 try {
 this.jmb.allocateViewer$java_awt_Container$Z$S$java_net_URL$java_net_URL$S$java_awt_Container$S(this.renderPanel, true, ap.av.applet.getName$() + "_jmol_", ap.av.applet.getDocumentBase$(), ap.av.applet.getCodeBase$(), "-applet", this.scriptWindow, null);
@@ -148,19 +113,18 @@ throw e;
 }
 }
 this.addWindowListener$java_awt_event_WindowListener(((P$.AppletJmol$1||
-(function(){var C$=Clazz.newClass(P$, "AppletJmol$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AppletJmol$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (evt) {
 this.b$['jalview.appletgui.AppletJmol'].closeViewer$.apply(this.b$['jalview.appletgui.AppletJmol'], []);
 });
 })()
-), Clazz.new_($I$(20), [this, null],P$.AppletJmol$1)));
+), Clazz.new_($I$(20,1),[this, null],P$.AppletJmol$1)));
 pdbentry.setProperty$S$O("protocol", protocol);
 if (pdbentry.getFile$() != null ) {
 if (protocol === $I$(13).PASTE ) {
@@ -177,7 +141,7 @@ System.err.println$S("AppletJmol:Trying to reuse existing PDBfile IO parser.");
 }if (freader == null ) {
 if ($I$(14).debug) {
 System.err.println$S("AppletJmol:Creating new PDBfile IO parser.");
-}var fp=Clazz.new_($I$(21).c$$O$jalview_io_DataSourceType,[pdbentry.getFile$(), protocol]);
+}var fp=Clazz.new_([pdbentry.getFile$(), protocol],$I$(21,1).c$$O$jalview_io_DataSourceType);
 fp.mark$();
 freader=fp.getReader$();
 }if (freader == null ) {
@@ -191,7 +155,7 @@ e.printStackTrace$();
 throw e;
 }
 }
-}}$I$(14).addFrame$java_awt_Frame$S$I$I(this, this.jmb.getViewerTitle$(), 400, 400);
+}}$I$(14,"addFrame$java_awt_Frame$S$I$I",[this, this.jmb.getViewerTitle$(), 400, 400]);
 }, 1);
 
 Clazz.newMeth(C$, 'loadInline$S', function (string) {
@@ -201,24 +165,24 @@ this.jmb.loadInline$S(string);
 
 Clazz.newMeth(C$, 'setChainMenuItems$java_util_List', function (chains) {
 this.chainMenu.removeAll$();
-var menuItem=Clazz.new_($I$(6).c$$S,[$I$(4).getString$S("label.all")]);
+var menuItem=Clazz.new_([$I$(4).getString$S("label.all")],$I$(6,1).c$$S);
 menuItem.addActionListener$java_awt_event_ActionListener(this);
 this.chainMenu.add$java_awt_MenuItem(menuItem);
 var menuItemCB;
 for (var ch, $ch = chains.iterator$(); $ch.hasNext$()&&((ch=($ch.next$())),1);) {
-menuItemCB=Clazz.new_($I$(7).c$$S$Z,[ch, true]);
+menuItemCB=Clazz.new_($I$(7,1).c$$S$Z,[ch, true]);
 menuItemCB.addItemListener$java_awt_event_ItemListener(this);
 this.chainMenu.add$java_awt_MenuItem(menuItemCB);
 }
 });
 
 Clazz.newMeth(C$, 'centerViewer$', function () {
-var toshow=Clazz.new_($I$(22));
+var toshow=Clazz.new_($I$(22,1));
 for (var i=0; i < this.chainMenu.getItemCount$(); i++) {
 if (Clazz.instanceOf(this.chainMenu.getItem$I(i), "java.awt.CheckboxMenuItem")) {
 var item=this.chainMenu.getItem$I(i);
 if (item.getState$()) {
-toshow.addElement$TE(item.getLabel$());
+toshow.addElement$O(item.getLabel$());
 }}}
 this.jmb.centerViewer$java_util_Vector(toshow);
 });
@@ -229,12 +193,12 @@ this.jmb=null;
 this.setVisible$Z(false);
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 if (evt.getSource$() === this.mappingMenuItem ) {
-var cap=Clazz.new_($I$(23).c$$Z$jalview_appletgui_AlignFrame,[false, null]);
-var frame=Clazz.new_($I$(24));
+var cap=Clazz.new_($I$(23,1).c$$Z$jalview_appletgui_AlignFrame,[false, null]);
+var frame=Clazz.new_($I$(24,1));
 frame.add$java_awt_Component(cap);
-var sb=Clazz.new_($I$(25));
+var sb=Clazz.new_($I$(25,1));
 try {
 cap.setText$S(this.jmb.printMappings$());
 } catch (ex) {
@@ -246,7 +210,7 @@ return;
 throw ex;
 }
 }
-$I$(14).addFrame$java_awt_Frame$S$I$I(frame, $I$(4).getString$S("label.pdb_sequence_mapping"), 550, 600);
+$I$(14,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(4).getString$S("label.pdb_sequence_mapping"), 550, 600]);
 } else if (evt.getSource$() === this.charge ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.charge]);
 this.jmb.colourByCharge$();
@@ -255,33 +219,33 @@ p$1.setEnabled$java_awt_MenuItem.apply(this, [this.chain]);
 this.jmb.colourByChain$();
 } else if (evt.getSource$() === this.zappo ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.zappo]);
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(26)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(26,1)));
 } else if (evt.getSource$() === this.taylor ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.taylor]);
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(27)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(27,1)));
 } else if (evt.getSource$() === this.hydro ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.hydro]);
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(28)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(28,1)));
 } else if (evt.getSource$() === this.helix ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.helix]);
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(29)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(29,1)));
 } else if (evt.getSource$() === this.strand ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.strand]);
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(30)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(30,1)));
 } else if (evt.getSource$() === this.turn ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.turn]);
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(31)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(31,1)));
 } else if (evt.getSource$() === this.buried ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.buried]);
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(32)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(32,1)));
 } else if (evt.getSource$() === this.purinepyrimidine ) {
-this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(33)));
+this.jmb.setJalviewColourScheme$jalview_schemes_ColourSchemeI(Clazz.new_($I$(33,1)));
 } else if (evt.getSource$() === this.user ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.user]);
-Clazz.new_($I$(34).c$$jalview_appletgui_AppletJmol,[this]);
+Clazz.new_($I$(34,1).c$$jalview_appletgui_AppletJmol,[this]);
 } else if (evt.getSource$() === this.jmolHelp ) {
 try {
-this.ap.av.applet.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(35).c$$S,["http://jmol.sourceforge.net/docs/JmolUserGuide/"]), "jmolHelp");
+this.ap.av.applet.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(35,1).c$$S,["http://jmol.sourceforge.net/docs/JmolUserGuide/"]), "jmolHelp");
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"java.net.MalformedURLException")){
 } else {
@@ -304,7 +268,7 @@ this.seqColour.setState$Z(itm === this.seqColour );
 this.jmb.setColourBySequence$Z(itm === this.seqColour );
 }, p$1);
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (evt) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (evt) {
 if (evt.getSource$() === this.jmolColour ) {
 p$1.setEnabled$java_awt_MenuItem.apply(this, [this.jmolColour]);
 this.jmb.setColourBySequence$Z(false);
@@ -344,7 +308,7 @@ this.setTitle$S(this.jmb.getViewerTitle$());
 
 Clazz.newMeth(C$, 'showUrl$S', function (url) {
 try {
-this.ap.av.applet.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(35).c$$S,[url]), "jmolOutput");
+this.ap.av.applet.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(35,1).c$$S,[url]), "jmolOutput");
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"java.net.MalformedURLException")){
 } else {
@@ -356,8 +320,8 @@ throw ex;
 Clazz.newMeth(C$, 'showConsole$Z', function (showConsole) {
 if (showConsole) {
 this.remove$java_awt_Component(this.renderPanel);
-this.splitPane=Clazz.new_($I$(19));
-this.splitPane.setLayout$java_awt_LayoutManager(Clazz.new_($I$(36).c$$I$I,[2, 1]));
+this.splitPane=Clazz.new_($I$(19,1));
+this.splitPane.setLayout$java_awt_LayoutManager(Clazz.new_($I$(36,1).c$$I$I,[2, 1]));
 this.splitPane.add$java_awt_Component(this.renderPanel);
 this.splitPane.add$java_awt_Component(this.scriptWindow);
 this.scriptWindow.setVisible$Z(true);
@@ -393,21 +357,17 @@ if (this.history != null ) {
 this.history.append$S("\n" + text);
 }});
 ;
-(function(){var C$=Clazz.newClass(P$.AppletJmol, "RenderPanel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AppletJmol, "RenderPanel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.awt.Panel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.currentSize=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.currentSize=Clazz.new_($I$(1));
-}, 1);
+this.currentSize=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['currentSize','java.awt.Dimension']]]
 
 Clazz.newMeth(C$, 'update$java_awt_Graphics', function (g) {
 this.paint$java_awt_Graphics(g);
@@ -419,7 +379,7 @@ if (this.this$0.jmb.viewer == null ) {
 g.setColor$java_awt_Color($I$(2).black);
 g.fillRect$I$I$I$I(0, 0, this.currentSize.width, this.currentSize.height);
 g.setColor$java_awt_Color($I$(2).white);
-g.setFont$java_awt_Font(Clazz.new_($I$(3).c$$S$I$I,["Verdana", 1, 14]));
+g.setFont$java_awt_Font(Clazz.new_($I$(3,1).c$$S$I$I,["Verdana", 1, 14]));
 g.drawString$S$I$I($I$(4).getString$S("label.retrieving_pdb_data"), 20, (this.currentSize.height/2|0));
 } else {
 this.this$0.jmb.viewer.renderScreenImage$O$I$I(g, this.currentSize.width, this.currentSize.height);
@@ -430,4 +390,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

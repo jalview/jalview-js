@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.Objects','javax.swing.JButton','java.awt.Font','java.awt.Color','javax.swing.JMenu','javax.swing.JPanel','java.awt.GridLayout','java.awt.BorderLayout','java.awt.Rectangle','jalview.util.MessageManager','javax.swing.JComboBox','jalview.gui.ComboBoxTooltipRenderer','java.awt.event.MouseAdapter','javax.swing.BorderFactory']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JvSwingUtils");
+(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.Objects','javax.swing.JButton','java.awt.Font','java.awt.Color','javax.swing.JMenu','javax.swing.JPanel','java.awt.GridLayout','java.awt.BorderLayout','java.awt.Rectangle','jalview.util.MessageManager','javax.swing.JComboBox','jalview.gui.ComboBoxTooltipRenderer','java.awt.event.MouseAdapter','javax.swing.BorderFactory']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JvSwingUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'wrapTooltip$Z$S', function (enclose, ttext) {
-$I$(1).requireNonNull$TT$S(ttext, "Tootip text to format must not be null!");
+$I$(1).requireNonNull$O$S(ttext, "Tootip text to format must not be null!");
 ttext=ttext.trim$();
 var maxLengthExceeded=false;
 if (ttext.contains$CharSequence("<br>")) {
@@ -26,9 +25,9 @@ return enclose ? "<html>" + ttext + "</html>"  : ttext;
 }, 1);
 
 Clazz.newMeth(C$, 'makeButton$S$S$java_awt_event_ActionListener', function (label, tooltip, action) {
-var button=Clazz.new_($I$(2));
+var button=Clazz.new_($I$(2,1));
 button.setText$S(label);
-button.setFont$java_awt_Font(Clazz.new_($I$(3).c$$S$I$I,["Verdana", 0, 10]));
+button.setFont$java_awt_Font(Clazz.new_($I$(3,1).c$$S$I$I,["Verdana", 0, 10]));
 button.setForeground$java_awt_Color($I$(4).black);
 button.setHorizontalAlignment$I(0);
 button.setToolTipText$S(tooltip);
@@ -43,17 +42,17 @@ if (Clazz.instanceOf(menu.getMenuComponent$I(i), "javax.swing.JMenu") && (menu.g
 submenuinstance=menu.getMenuComponent$I(i);
 }}
 if (submenuinstance == null ) {
-submenuinstance=Clazz.new_($I$(5).c$$S,[submenu]);
+submenuinstance=Clazz.new_($I$(5,1).c$$S,[submenu]);
 menu.add$javax_swing_JMenuItem(submenuinstance);
 }return submenuinstance;
 }, 1);
 
 Clazz.newMeth(C$, 'addtoLayout$javax_swing_JPanel$S$javax_swing_JComponent$javax_swing_JComponent', function (panel, tooltip, label, valBox) {
-var laypanel=Clazz.new_($I$(6).c$$java_awt_LayoutManager,[Clazz.new_($I$(7).c$$I$I,[1, 2])]);
-var labPanel=Clazz.new_($I$(6).c$$java_awt_LayoutManager,[Clazz.new_($I$(8))]);
-var valPanel=Clazz.new_($I$(6));
-labPanel.setBounds$java_awt_Rectangle(Clazz.new_($I$(9).c$$I$I$I$I,[7, 7, 158, 23]));
-valPanel.setBounds$java_awt_Rectangle(Clazz.new_($I$(9).c$$I$I$I$I,[172, 7, 270, 23]));
+var laypanel=Clazz.new_([Clazz.new_($I$(7,1).c$$I$I,[1, 2])],$I$(6,1).c$$java_awt_LayoutManager);
+var labPanel=Clazz.new_([Clazz.new_($I$(8,1))],$I$(6,1).c$$java_awt_LayoutManager);
+var valPanel=Clazz.new_($I$(6,1));
+labPanel.setBounds$java_awt_Rectangle(Clazz.new_($I$(9,1).c$$I$I$I$I,[7, 7, 158, 23]));
+valPanel.setBounds$java_awt_Rectangle(Clazz.new_($I$(9,1).c$$I$I$I$I,[172, 7, 270, 23]));
 labPanel.add$java_awt_Component$O(label, "West");
 valPanel.add$java_awt_Component(valBox);
 laypanel.add$java_awt_Component(labPanel);
@@ -85,7 +84,7 @@ return C$.getLabelFont$Z$Z(false, false);
 }, 1);
 
 Clazz.newMeth(C$, 'getLabelFont$Z$Z', function (bold, italic) {
-return Clazz.new_($I$(3).c$$S$I$I,["Verdana", (!bold && !italic ) ? 0 : (bold ? 1 : 0) + (italic ? 2 : 0), 11]);
+return Clazz.new_(["Verdana", (!bold && !italic ) ? 0 : (bold ? 1 : 0) + (italic ? 2 : 0), 11],$I$(3,1).c$$S$I$I);
 }, 1);
 
 Clazz.newMeth(C$, 'getTextAreaFont$', function () {
@@ -130,21 +129,20 @@ comp.setFont$java_awt_Font(C$.getLabelFont$());
 }, 1);
 
 Clazz.newMeth(C$, 'buildComboWithTooltips$java_util_List$java_util_List', function (entries, tooltips) {
-var combo=Clazz.new_($I$(11));
-var renderer=Clazz.new_($I$(12));
+var combo=Clazz.new_($I$(11,1));
+var renderer=Clazz.new_($I$(12,1));
 combo.setRenderer$javax_swing_ListCellRenderer(renderer);
 for (var attName, $attName = entries.iterator$(); $attName.hasNext$()&&((attName=($attName.next$())),1);) {
-combo.addItem$TE(attName);
+combo.addItem$O(attName);
 }
 renderer.setTooltips$java_util_List(tooltips);
 var mouseListener=((P$.JvSwingUtils$1||
-(function(){var C$=Clazz.newClass(P$, "JvSwingUtils$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JvSwingUtils$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (e) {
 var j=this.$finals$.combo.getSelectedIndex$();
@@ -156,7 +154,7 @@ Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
 this.$finals$.combo.setToolTipText$S(null);
 });
 })()
-), Clazz.new_($I$(13), [this, {combo: combo, tooltips: tooltips}],P$.JvSwingUtils$1));
+), Clazz.new_($I$(13,1),[this, {tooltips:tooltips,combo:combo}],P$.JvSwingUtils$1));
 for (var c, $c = 0, $$c = combo.getComponents$(); $c<$$c.length&&((c=($$c[$c])),1);$c++) {
 c.addMouseListener$java_awt_event_MouseListener(mouseListener);
 }
@@ -166,7 +164,7 @@ return combo;
 Clazz.newMeth(C$, 'createTitledBorder$javax_swing_JComponent$S$Z', function (comp, title, italic) {
 var font=comp.getFont$();
 if (italic) {
-font=Clazz.new_($I$(3).c$$S$I$I,[font.getName$(), 2, font.getSize$()]);
+font=Clazz.new_([font.getName$(), 2, font.getSize$()],$I$(3,1).c$$S$I$I);
 }var border=$I$(14).createTitledBorder$S("");
 var titledBorder=$I$(14).createTitledBorder$javax_swing_border_Border$S$I$I$java_awt_Font(border, title, 4, 0, font);
 comp.setBorder$javax_swing_border_Border(titledBorder);
@@ -175,4 +173,4 @@ return titledBorder;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

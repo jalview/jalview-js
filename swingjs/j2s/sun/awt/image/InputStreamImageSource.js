@@ -1,20 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'sun.awt.image.ImageConsumerQueue','sun.awt.image.ImageFetcher','Thread']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "InputStreamImageSource", null, null, ['java.awt.image.ImageProducer', 'sun.awt.image.ImageFetchable']);
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'sun.awt.image.ImageConsumerQueue','sun.awt.image.ImageFetcher','Thread']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "InputStreamImageSource", null, null, ['java.awt.image.ImageProducer', 'sun.awt.image.ImageFetchable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.consumers=null;
-this.decoder=null;
-this.decoders=null;
-this.awaitingFetch=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.awaitingFetch=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['awaitingFetch'],'O',['consumers','sun.awt.image.ImageConsumerQueue','decoder','sun.awt.image.ImageDecoder','+decoders']]]
 
 Clazz.newMeth(C$, 'countConsumers$sun_awt_image_ImageConsumerQueue', function (cq) {
 var i=0;
@@ -66,7 +59,7 @@ while (cq != null  && cq.consumer !== ic  ){
 cq=cq.next;
 }
 if (cq == null ) {
-cq=Clazz.new_($I$(1).c$$sun_awt_image_InputStreamImageSource$java_awt_image_ImageConsumer,[this, ic]);
+cq=Clazz.new_($I$(1,1).c$$sun_awt_image_InputStreamImageSource$java_awt_image_ImageConsumer,[this, ic]);
 cq.next=this.consumers;
 this.consumers=cq;
 } else {
@@ -221,4 +214,4 @@ this.decoder=null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

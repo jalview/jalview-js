@@ -1,25 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'java.io.File','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.TestSmarterJmolAdapterImpl','org.jmol.util.JUnitLogger','java.io.FileInputStream','java.util.zip.GZIPInputStream','java.io.BufferedInputStream','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Rdr','javajs.util.BinaryDocument','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TestSmarterJmolAdapterImpl", null, 'junit.framework.TestCase');
-C$.continuing=false;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'java.io.File','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.TestSmarterJmolAdapterImpl','org.jmol.util.JUnitLogger','java.io.FileInputStream','java.util.zip.GZIPInputStream','java.io.BufferedInputStream','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Rdr','javajs.util.BinaryDocument','junit.framework.Assert','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "TestSmarterJmolAdapterImpl", null, 'junit.framework.TestCase');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.continuing=true;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.file=null;
-this.gzipped=false;
-this.typeAllowed=null;
-this.mustForce=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['gzipped','mustForce'],'S',['typeAllowed'],'O',['file','java.io.File']]
+,['Z',['continuing']]]
 
 Clazz.newMeth(C$, 'c$$java_io_File$Z$S', function (file, gzipped, typeAllowed) {
-C$.superclazz.c$$S.apply(this, ["testFile"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["testFile"]);C$.$init$.apply(this);
 this.file=file;
 this.gzipped=gzipped;
 this.mustForce=(typeAllowed.startsWith$S("="));
@@ -35,12 +26,12 @@ Clazz.newMeth(C$, 'testFile$', function () {
 if (!C$.continuing) return;
 var fname=this.file.getCanonicalPath$();
 System.out.println$S(fname);
-$I$(5).setInformation$S(this.file.getPath$());
-var iStream=Clazz.new_($I$(6).c$$java_io_File,[this.file]);
-if (this.gzipped) iStream=Clazz.new_($I$(7).c$$java_io_InputStream$I,[iStream, 512]);
-var bis=Clazz.new_($I$(8).c$$java_io_InputStream,[iStream]);
-$I$(3).info$S(this.file.getPath$());
-var adapter=Clazz.new_($I$(9));
+(function(a,f){return f.apply(null,a)})([this.file.getPath$()],$I$(5).setInformation$S);
+var iStream=Clazz.new_($I$(6,1).c$$java_io_File,[this.file]);
+if (this.gzipped) iStream=Clazz.new_($I$(7,1).c$$java_io_InputStream$I,[iStream, 512]);
+var bis=Clazz.new_($I$(8,1).c$$java_io_InputStream,[iStream]);
+(function(a,f){return f.apply(null,a)})([this.file.getPath$()],$I$(3).info$S);
+var adapter=Clazz.new_($I$(9,1));
 var type=null;
 var ok=true;
 var reader;
@@ -50,23 +41,23 @@ if (fileType == null ) {
 reader=$I$(10).getBufferedReader$java_io_BufferedInputStream$S(bis, null);
 fileType=adapter.getFileTypeName$O(reader);
 } else {
-reader=Clazz.new_($I$(11)).setStream$java_io_BufferedInputStream$Z(bis, true);
+reader=Clazz.new_($I$(11,1)).setStream$java_io_BufferedInputStream$Z(bis, true);
 }ok=(this.typeAllowed.equals$O(fileType) || this.typeAllowed.indexOf$S(";" + fileType + ";" ) >= 0 );
 if (ok == this.mustForce ) {
 C$.continuing=false;
-junit.framework.Assert.fail$S("Wrong type for " + this.file.getPath$() + ": " + fileType + " instead of " + this.typeAllowed );
+(function(a,f){return f.apply(null,a)})(["Wrong type for " + this.file.getPath$() + ": " + fileType + " instead of " + this.typeAllowed ],$I$(12).fail$S);
 }if (this.mustForce) type=this.typeAllowed;
-var htParams=Clazz.new_($I$(12));
-htParams.put$TK$TV("fullPathName", fname);
+var htParams=Clazz.new_($I$(13,1));
+htParams.put$O$O("fullPathName", fname);
 var result=adapter.getAtomSetCollectionFromReaderType$S$S$O$java_util_Map(this.file.getName$(), type, reader, htParams);
 System.out.println$O(result);
 C$.continuing=(result != null  && Clazz.instanceOf(result, "org.jmol.adapter.smarter.AtomSetCollection") );
-junit.framework.Assert.assertNotNull$S$O("Nothing read for " + this.file.getPath$(), result);
-junit.framework.Assert.assertFalse$S$Z("Error returned for " + this.file.getPath$() + ": " + result , Clazz.instanceOf(result, "java.lang.String"));
-junit.framework.Assert.assertTrue$S$Z("Not an AtomSetCollection for " + this.file.getPath$(), Clazz.instanceOf(result, "org.jmol.adapter.smarter.AtomSetCollection"));
+(function(a,f){return f.apply(null,a)})(["Nothing read for " + this.file.getPath$(), result],$I$(12).assertNotNull$S$O);
+(function(a,f){return f.apply(null,a)})(["Error returned for " + this.file.getPath$() + ": " + result , Clazz.instanceOf(result, "java.lang.String")],$I$(12).assertFalse$S$Z);
+(function(a,f){return f.apply(null,a)})(["Not an AtomSetCollection for " + this.file.getPath$(), Clazz.instanceOf(result, "org.jmol.adapter.smarter.AtomSetCollection")],$I$(12).assertTrue$S$Z);
 var nAtoms=(result).ac;
 C$.continuing&=(nAtoms > 0);
-junit.framework.Assert.assertTrue$S$Z("No atoms loaded for " + this.file.getPath$(), nAtoms > 0);
+(function(a,f){return f.apply(null,a)})(["No atoms loaded for " + this.file.getPath$(), nAtoms > 0],$I$(12).assertTrue$S$Z);
 });
 
 Clazz.newMeth(C$, 'getName$', function () {
@@ -89,6 +80,10 @@ this.typeAllowed=null;
 this.mustForce=false;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.continuing=true;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

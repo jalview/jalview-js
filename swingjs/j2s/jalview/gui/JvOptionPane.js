@@ -1,36 +1,27 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.HashMap','jalview.util.Platform','javax.swing.JOptionPane','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JvOptionPane", null, 'javax.swing.JOptionPane', ['jalview.util.dialogrunner.DialogRunnerI', 'java.beans.PropertyChangeListener']);
-C$.mockResponse=null;
-C$.interactiveMode=false;
+(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.HashMap','jalview.util.Platform','javax.swing.JOptionPane','java.util.Arrays']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JvOptionPane", null, 'javax.swing.JOptionPane', ['jalview.util.dialogrunner.DialogRunnerI', 'java.beans.PropertyChangeListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.mockResponse=new Integer(2);
-C$.interactiveMode=true;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parentComponent=null;
-this.callbacks=null;
-this.ourOptions=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.callbacks=Clazz.new_($I$(1));
-}, 1);
+this.callbacks=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['parentComponent','java.awt.Component','callbacks','java.util.Map','ourOptions','java.util.List']]
+,['Z',['interactiveMode'],'O',['mockResponse','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (parent) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.parentComponent=$I$(2).isJS$() ? this : parent;
 }, 1);
 
 Clazz.newMeth(C$, 'showConfirmDialog$java_awt_Component$O', function (parentComponent, message) {
-return C$.isInteractiveMode$() ? $I$(3).showConfirmDialog$java_awt_Component$O(parentComponent, message) : ((C$.getMockResponse$()).objectValue$()|0);
+return C$.isInteractiveMode$() ? $I$(3).showConfirmDialog$java_awt_Component$O(parentComponent, message) : ((C$.getMockResponse$()).valueOf()|0);
 }, 1);
 
 Clazz.newMeth(C$, 'showConfirmDialog$java_awt_Component$O$S$I', function (parentComponent, message, title, optionType) {
 if (!C$.isInteractiveMode$()) {
-return ((C$.getMockResponse$()).objectValue$()|0);
+return ((C$.getMockResponse$()).valueOf()|0);
 }switch (optionType) {
 case 1:
 default:
@@ -41,20 +32,20 @@ return $I$(3).showConfirmDialog$java_awt_Component$O$S$I(parentComponent, messag
 }, 1);
 
 Clazz.newMeth(C$, 'showConfirmDialog$java_awt_Component$O$S$I$I', function (parentComponent, message, title, optionType, messageType) {
-return C$.isInteractiveMode$() ? $I$(3).showConfirmDialog$java_awt_Component$O$S$I$I(parentComponent, message, title, optionType, messageType) : ((C$.getMockResponse$()).objectValue$()|0);
+return C$.isInteractiveMode$() ? $I$(3).showConfirmDialog$java_awt_Component$O$S$I$I(parentComponent, message, title, optionType, messageType) : ((C$.getMockResponse$()).valueOf()|0);
 }, 1);
 
 Clazz.newMeth(C$, 'showConfirmDialog$java_awt_Component$O$S$I$I$javax_swing_Icon', function (parentComponent, message, title, optionType, messageType, icon) {
-return C$.isInteractiveMode$() ? $I$(3).showConfirmDialog$java_awt_Component$O$S$I$I$javax_swing_Icon(parentComponent, message, title, optionType, messageType, icon) : ((C$.getMockResponse$()).objectValue$()|0);
+return C$.isInteractiveMode$() ? $I$(3).showConfirmDialog$java_awt_Component$O$S$I$I$javax_swing_Icon(parentComponent, message, title, optionType, messageType, icon) : ((C$.getMockResponse$()).valueOf()|0);
 }, 1);
 
 Clazz.newMeth(C$, 'showInternalConfirmDialog$java_awt_Component$O', function (parentComponent, message) {
-return C$.isInteractiveMode$() ? $I$(3).showInternalConfirmDialog$java_awt_Component$O(parentComponent, message) : ((C$.getMockResponse$()).objectValue$()|0);
+return C$.isInteractiveMode$() ? $I$(3).showInternalConfirmDialog$java_awt_Component$O(parentComponent, message) : ((C$.getMockResponse$()).valueOf()|0);
 }, 1);
 
 Clazz.newMeth(C$, 'showInternalConfirmDialog$java_awt_Component$S$S$I', function (parentComponent, message, title, optionType) {
 if (!C$.isInteractiveMode$()) {
-return ((C$.getMockResponse$()).objectValue$()|0);
+return ((C$.getMockResponse$()).valueOf()|0);
 }switch (optionType) {
 case 1:
 case 0:
@@ -66,7 +57,7 @@ return $I$(3).showConfirmDialog$java_awt_Component$O$S$I(parentComponent, messag
 
 Clazz.newMeth(C$, 'showInternalConfirmDialog$java_awt_Component$O$S$I$I', function (parentComponent, message, title, optionType, messageType) {
 if (!C$.isInteractiveMode$()) {
-return ((C$.getMockResponse$()).objectValue$()|0);
+return ((C$.getMockResponse$()).valueOf()|0);
 }switch (optionType) {
 case 1:
 case 0:
@@ -78,7 +69,7 @@ return $I$(3).showConfirmDialog$java_awt_Component$O$S$I$I(parentComponent, mess
 
 Clazz.newMeth(C$, 'showInternalConfirmDialog$java_awt_Component$O$S$I$I$javax_swing_Icon', function (parentComponent, message, title, optionType, messageType, icon) {
 if (!C$.isInteractiveMode$()) {
-return ((C$.getMockResponse$()).objectValue$()|0);
+return ((C$.getMockResponse$()).valueOf()|0);
 }switch (optionType) {
 case 1:
 case 0:
@@ -90,7 +81,7 @@ return $I$(3).showConfirmDialog$java_awt_Component$O$S$I$I$javax_swing_Icon(pare
 
 Clazz.newMeth(C$, 'showOptionDialog$java_awt_Component$S$S$I$I$javax_swing_Icon$OA$O', function (parentComponent, message, title, optionType, messageType, icon, options, initialValue) {
 if (!C$.isInteractiveMode$()) {
-return ((C$.getMockResponse$()).objectValue$()|0);
+return ((C$.getMockResponse$()).valueOf()|0);
 }return $I$(3).showOptionDialog$java_awt_Component$O$S$I$I$javax_swing_Icon$OA$O(parentComponent, message, title, optionType, messageType, icon, options, initialValue);
 }, 1);
 
@@ -105,7 +96,7 @@ Clazz.newMeth(C$, 'showMessageDialog$java_awt_Component$S$S$I', function (parent
 if (!C$.isInteractiveMode$()) {
 C$.outputMessage$O(message);
 return;
-}$I$(3).showMessageDialog$java_awt_Component$O$S$I(parentComponent, C$.getPrefix$I(messageType) + message, title, messageType);
+}$I$(3,"showMessageDialog$java_awt_Component$O$S$I",[parentComponent, C$.getPrefix$I(messageType) + message, title, messageType]);
 }, 1);
 
 Clazz.newMeth(C$, 'showMessageDialog$java_awt_Component$S$S$I$javax_swing_Icon', function (parentComponent, message, title, messageType, icon) {
@@ -126,7 +117,7 @@ Clazz.newMeth(C$, 'showInternalMessageDialog$java_awt_Component$S$S$I', function
 if (!C$.isInteractiveMode$()) {
 C$.outputMessage$O(message);
 return;
-}$I$(3).showMessageDialog$java_awt_Component$O$S$I(parentComponent, C$.getPrefix$I(messageType) + message, title, messageType);
+}$I$(3,"showMessageDialog$java_awt_Component$O$S$I",[parentComponent, C$.getPrefix$I(messageType) + message, title, messageType]);
 }, 1);
 
 Clazz.newMeth(C$, 'showInternalMessageDialog$java_awt_Component$O$S$I$javax_swing_Icon', function (parentComponent, message, title, messageType, icon) {
@@ -179,7 +170,7 @@ return C$.isInteractiveMode$() ? $I$(3).showInternalInputDialog$java_awt_Compone
 }, 1);
 
 Clazz.newMeth(C$, 'showInternalInputDialog$java_awt_Component$S$S$I', function (parentComponent, message, title, messageType) {
-return C$.isInteractiveMode$() ? $I$(3).showInternalInputDialog$java_awt_Component$O$S$I(parentComponent, C$.getPrefix$I(messageType) + message, title, messageType) : C$.getMockResponse$().toString();
+return C$.isInteractiveMode$() ? $I$(3,"showInternalInputDialog$java_awt_Component$O$S$I",[parentComponent, C$.getPrefix$I(messageType) + message, title, messageType]) : C$.getMockResponse$().toString();
 }, 1);
 
 Clazz.newMeth(C$, 'showInternalInputDialog$java_awt_Component$S$S$I$javax_swing_Icon$OA$O', function (parentComponent, message, title, messageType, icon, selectionValues, initialSelectionValue) {
@@ -234,7 +225,7 @@ return Clazz.new_(C$.c$$java_awt_Component,[parentComponent]);
 Clazz.newMeth(C$, 'showDialog$S$S$I$I$javax_swing_Icon$OA$O', function (message, title, optionType, messageType, icon, options, initialValue) {
 if (!C$.isInteractiveMode$()) {
 this.handleResponse$O(C$.getMockResponse$());
-}this.ourOptions=$I$(4).asList$TTA(options);
+}this.ourOptions=$I$(4).asList$OA(options);
 var response=$I$(3).showOptionDialog$java_awt_Component$O$S$I$I$javax_swing_Icon$OA$O(this.parentComponent, message, title, optionType, messageType, icon, options, initialValue);
 if (!$I$(2).isJS$()) 
 {}
@@ -243,7 +234,7 @@ if (!$I$(2).isJS$())
 Clazz.newMeth(C$, 'showInternalDialog$javax_swing_JPanel$S$I$I$javax_swing_Icon$OA$S', function (mainPanel, title, yesNoCancelOption, questionMessage, icon, options, initresponse) {
 if (!C$.isInteractiveMode$()) {
 this.handleResponse$O(C$.getMockResponse$());
-}this.ourOptions=$I$(4).asList$TTA(options);
+}this.ourOptions=$I$(4).asList$OA(options);
 var response;
 if (this.parentComponent !== this ) {
 response=$I$(3).showInternalOptionDialog$java_awt_Component$O$S$I$I$javax_swing_Icon$OA$O(this.parentComponent, mainPanel, title, yesNoCancelOption, questionMessage, icon, options, initresponse);
@@ -253,12 +244,12 @@ response=$I$(3).showOptionDialog$java_awt_Component$O$S$I$I$javax_swing_Icon$OA$
 {}
 });
 
-Clazz.newMeth(C$, ['setResponseHandler$O$Runnable','setResponseHandler$'], function (response, action) {
-this.callbacks.put$TK$TV(response, action);
+Clazz.newMeth(C$, 'setResponseHandler$O$Runnable', function (response, action) {
+this.callbacks.put$O$O(response, action);
 return this;
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 var newValue=evt.getNewValue$();
 var ourOption=this.ourOptions.indexOf$O(newValue);
 if (ourOption >= 0) {
@@ -275,6 +266,11 @@ if (action != null ) {
 action.run$();
 }});
 
+C$.$static$=function(){C$.$static$=0;
+C$.mockResponse=new Integer(2);
+C$.interactiveMode=true;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

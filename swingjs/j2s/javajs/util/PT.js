@@ -1,15 +1,13 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.DF','javajs.util.SB','javajs.util.AU','java.lang.reflect.Array']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PT");
-C$.tensScale=null;
-C$.decimalScale=null;
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.DF','javajs.util.SB','javajs.util.AU','java.lang.reflect.Array']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PT");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.tensScale=Clazz.array(Float.TYPE, -1, [10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0]);
-C$.decimalScale=Clazz.array(Float.TYPE, -1, [0.1, 0.01, 0.001, 1.0E-4, 1.0E-5, 1.0E-6, 1.0E-7, 1.0E-8, 1.0E-9]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['tensScale','float[]','+decimalScale']]]
 
 Clazz.newMeth(C$, 'parseInt$S', function (str) {
 return C$.parseIntNext$S$IA(str, Clazz.array(Integer.TYPE, -1, [0]));
@@ -416,7 +414,7 @@ if (padLength <= 0) return value;
 var isNeg=(zeroPad && !alignLeft && value.charAt$I(0) == "-"  );
 var padChar=(zeroPad ? "0" : " ");
 var padChar0=(isNeg ? "-" : padChar);
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 if (alignLeft) sb.append$S(value);
 sb.appendC$C(padChar0);
 for (var i=padLength; --i > 0; ) sb.appendC$C(padChar);
@@ -469,16 +467,13 @@ var sb=null;
 while (true){
 if (Clazz.instanceOf(info, "java.lang.String")) {
 s=info;
-{
-if (typeof s == "undefined") s = "null"
-}
 if (s.indexOf$S("{\"") != 0) {
 s=C$.esc$S(s);
 }break;
 }if (Clazz.instanceOf(info, "javajs.api.JSONEncodable")) {
 if ((s=(info).toJSON$()) == null ) s="null";
 break;
-}sb=Clazz.new_($I$(2));
+}sb=Clazz.new_($I$(2,1));
 if (Clazz.instanceOf(info, "java.util.Map")) {
 sb.append$S("{ ");
 var sep="";
@@ -531,7 +526,7 @@ return (x.constructor == Array || x.BYTES_PER_ELEMENT ? null : x.toString());
 }, 1);
 
 Clazz.newMeth(C$, 'byteArrayToJSON$BA', function (data) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S("[");
 var n=data.length;
 for (var i=0; i < n; i++) {
@@ -569,7 +564,7 @@ if (haveEscape) while (i < "\\\\\tt\rr\nn\"\"".length$()){
 var pt=-1;
 var ch="\\\\\tt\rr\nn\"\"".charAt$I(i++);
 var ch2="\\\\\tt\rr\nn\"\"".charAt$I(i++);
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 var pt0=0;
 while ((pt=str.indexOf$I$I(ch, pt + 1)) >= 0){
 sb.append$S(str.substring$I$I(pt0, pt)).appendC$C("\\").appendC$C(ch2);
@@ -599,7 +594,7 @@ return sf;
 
 Clazz.newMeth(C$, 'join$SA$C$I', function (s, c, i0) {
 if (s.length < i0) return null;
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S(s[i0++]);
 for (var i=i0; i < s.length; i++) sb.appendC$C(c).append$S(s[i]);
 
@@ -643,7 +638,7 @@ return f;
 }
 }
 var s=f.substring$I$I(0, pt + 1);
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 for (var i=0; i < n; i++) sb.append$S(s);
 
 sb.append$S(f.substring$I(pt + 1));
@@ -799,7 +794,7 @@ strFormat=C$.rep$S$S$S(strFormat, "%%", "\u0001");
 strFormat=C$.rep$S$S$S(strFormat, "%p", "%6.2p");
 strFormat=C$.rep$S$S$S(strFormat, "%q", "%6.2q");
 var format=C$.split$S$S(strFormat, "%");
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S(format[0]);
 for (var i=1; i < format.length; i++) {
 var f="%" + format[i];
@@ -941,6 +936,11 @@ var pt=s.indexOf$S("/");
 return (pt < 0 ? C$.parseFloat$S(s) : C$.parseFloat$S(s.substring$I$I(0, pt)) / C$.parseFloat$S(s.substring$I(pt + 1)));
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.tensScale=Clazz.array(Float.TYPE, -1, [10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0]);
+C$.decimalScale=Clazz.array(Float.TYPE, -1, [0.1, 0.01, 0.001, 1.0E-4, 1.0E-5, 1.0E-6, 1.0E-7, 1.0E-8, 1.0E-9]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

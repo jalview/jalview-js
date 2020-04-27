@@ -1,47 +1,27 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.api.Interface','java.net.URL','org.jmol.viewer.Viewer','org.jmol.util.Logger','org.jmol.io.FileReader','javajs.util.Rdr','javajs.util.SB','javajs.util.DataReader','javajs.util.AU','javajs.util.PT','javajs.util.Base64','javajs.util.OC','java.net.URLEncoder','org.jmol.viewer.JC','Boolean','javajs.util.ZipTools','javajs.util.CompoundDocument',['org.jmol.viewer.Viewer','.ACCESS'],'java.io.BufferedInputStream','javajs.util.LimitedLineReader','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileManager", null, null, 'javajs.api.BytePoster');
-C$.SIMULATION_PROTOCOL=null;
-C$.scriptFilePrefixes=null;
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.api.Interface','java.net.URL','org.jmol.viewer.Viewer','org.jmol.util.Logger','org.jmol.io.FileReader','javajs.util.Rdr','javajs.util.SB','javajs.util.DataReader','javajs.util.AU','javajs.util.PT','javajs.util.Base64','javajs.util.OC','java.net.URLEncoder','org.jmol.viewer.JC','Boolean','javajs.util.ZipTools','javajs.util.CompoundDocument',['org.jmol.viewer.Viewer','.ACCESS'],'java.io.BufferedInputStream','javajs.util.LimitedLineReader','javajs.util.Lst']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "FileManager", null, null, 'javajs.api.BytePoster');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.SIMULATION_PROTOCOL="http://SIMULATION/";
-C$.scriptFilePrefixes=Clazz.array(String, -1, ["/*file*/\"", "FILE0=\"", "FILE1=\""]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.spartanDoc=null;
-this.jzu=null;
-this.pathForAllFiles=null;
-this.nameAsGiven=null;
-this.fullPathName=null;
-this.lastFullPathName=null;
-this.lastNameAsGiven=null;
-this.fileName=null;
-this.appletDocumentBaseURL=null;
-this.appletProxy=null;
-this.cache=null;
-this.pngjCache=null;
-this.spardirCache=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.pathForAllFiles="";
 this.nameAsGiven="zapped";
 this.lastNameAsGiven="zapped";
 this.appletDocumentBaseURL=null;
-this.cache=Clazz.new_($I$(1));
-}, 1);
+this.cache=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['S',['pathForAllFiles','nameAsGiven','fullPathName','lastFullPathName','lastNameAsGiven','fileName','appletProxy'],'O',['vwr','org.jmol.viewer.Viewer','spartanDoc','org.jmol.adapter.readers.spartan.SpartanUtil','jzu','org.jmol.io.JmolUtil','appletDocumentBaseURL','java.net.URL','cache','java.util.Map','+pngjCache','+spardirCache']]
+,['S',['SIMULATION_PROTOCOL'],'O',['scriptFilePrefixes','String[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer', function (vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 this.clear$();
 }, 1);
 
 Clazz.newMeth(C$, 'spartanUtil$', function () {
-return (this.spartanDoc == null  ? this.spartanDoc=($I$(2).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.adapter.readers.spartan.SpartanUtil", this.vwr, "fm getSpartanUtil()")).set$org_jmol_viewer_FileManager(this) : this.spartanDoc);
+return (this.spartanDoc == null  ? this.spartanDoc=((function(a,f){return f.apply(null,a)})(["org.jmol.adapter.readers.spartan.SpartanUtil", this.vwr, "fm getSpartanUtil()"],$I$(2).getInterface$S$org_jmol_viewer_Viewer$S)).set$org_jmol_viewer_FileManager(this) : this.spartanDoc);
 });
 
 Clazz.newMeth(C$, 'getJzu$', function () {
@@ -55,7 +35,7 @@ this.spardirCache=null;
 
 Clazz.newMeth(C$, 'setLoadState$java_util_Map', function (htParams) {
 if (this.vwr.getPreserveState$()) {
-htParams.put$TK$TV("loadState", this.vwr.g.getLoadState$java_util_Map(htParams));
+htParams.put$O$O("loadState", this.vwr.g.getLoadState$java_util_Map(htParams));
 }}, p$1);
 
 Clazz.newMeth(C$, 'getPathForAllFiles$', function () {
@@ -100,7 +80,7 @@ return (this.appletDocumentBaseURL == null  ? "" : this.appletDocumentBaseURL.to
 Clazz.newMeth(C$, 'setAppletContext$S', function (documentBase) {
 try {
 System.out.println$S("setting document base to \"" + documentBase + "\"" );
-this.appletDocumentBaseURL=(documentBase.length$() == 0 ? null : Clazz.new_($I$(3).c$$java_net_URL$S$java_net_URLStreamHandler,[null, documentBase, null]));
+this.appletDocumentBaseURL=(documentBase.length$() == 0 ? null : Clazz.new_($I$(3,1).c$$java_net_URL$S$java_net_URLStreamHandler,[null, documentBase, null]));
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 System.out.println$S("error setting document base to " + documentBase);
@@ -119,22 +99,22 @@ if (htParams.get$O("atomDataOnly") == null ) p$1.setLoadState$java_util_Map.appl
 var name0=name;
 name=this.vwr.resolveDatabaseFormat$S(name);
 if (!name0.equals$O(name) && name0.indexOf$S("/") < 0  && $I$(4).hasDatabasePrefix$S(name0) ) {
-htParams.put$TK$TV("dbName", name0);
+htParams.put$O$O("dbName", name0);
 }if (name.endsWith$S("%2D%")) {
 var filter=htParams.get$O("filter");
-htParams.put$TK$TV("filter", (filter == null  ? "" : filter) + "2D");
+htParams.put$O$O("filter", (filter == null  ? "" : filter) + "2D");
 name=name.substring$I$I(0, name.length$() - 4);
 }var pt=name.indexOf$S("::");
 var nameAsGiven=(pt >= 0 ? name.substring$I(pt + 2) : name);
 var fileType=(pt >= 0 ? name.substring$I$I(0, pt) : null);
-$I$(5).info$S("\nFileManager.getAtomSetCollectionFromFile(" + nameAsGiven + ")" + (name.equals$O(nameAsGiven) ? "" : " //" + name) );
+(function(a,f){return f.apply(null,a)})(["\nFileManager.getAtomSetCollectionFromFile(" + nameAsGiven + ")" + (name.equals$O(nameAsGiven) ? "" : " //" + name) ],$I$(5).info$S);
 var names=p$1.getClassifiedName$S$Z.apply(this, [nameAsGiven, true]);
 if (names.length == 1) return names[0];
 var fullPathName=names[0];
 var fileName=names[1];
-htParams.put$TK$TV("fullPathName", (fileType == null  ? "" : fileType + "::") + C$.fixDOSName$S(fullPathName));
-if (this.vwr.getBoolean$I(603979880) && this.vwr.getBoolean$I(603979825) ) this.vwr.getChimeMessenger$().update$S(fullPathName);
-var fileReader=Clazz.new_($I$(6).c$$org_jmol_viewer_Viewer$S$S$S$S$O$java_util_Map$Z,[this.vwr, fileName, fullPathName, nameAsGiven, fileType, null, htParams, isAppend]);
+htParams.put$O$O("fullPathName", (fileType == null  ? "" : fileType + "::") + C$.fixDOSName$S(fullPathName));
+if (this.vwr.getBoolean$I(603979879) && this.vwr.getBoolean$I(603979825) ) this.vwr.getChimeMessenger$().update$S(fullPathName);
+var fileReader=Clazz.new_($I$(6,1).c$$org_jmol_viewer_Viewer$S$S$S$S$O$java_util_Map$Z,[this.vwr, fileName, fullPathName, nameAsGiven, fileType, null, htParams, isAppend]);
 fileReader.run$();
 return fileReader.getAtomSetCollection$();
 });
@@ -156,8 +136,8 @@ fileNames[i]=C$.fixDOSName$S(names[0]);
 fileTypes[i]=fileType;
 namesAsGiven[i]=nameAsGiven;
 }
-htParams.put$TK$TV("fullPathNames", fullPathNames);
-htParams.put$TK$TV("fileTypes", fileTypes);
+htParams.put$O$O("fullPathNames", fullPathNames);
+htParams.put$O$O("fileTypes", fileTypes);
 var filesReader=p$1.newFilesReader$SA$SA$SA$javajs_util_DataReaderA$java_util_Map$Z.apply(this, [fullPathNames, namesAsGiven, fileTypes, null, htParams, isAppend]);
 filesReader.run$();
 return filesReader.getAtomSetCollection$();
@@ -167,7 +147,7 @@ Clazz.newMeth(C$, 'createAtomSetCollectionFromString$S$java_util_Map$Z', functio
 p$1.setLoadState$java_util_Map.apply(this, [htParams]);
 var isAddH=(strModel.indexOf$S("Viewer.AddHydrogens") >= 0);
 var fnames=(isAddH ? this.getFileInfo$() : null);
-var fileReader=Clazz.new_($I$(6).c$$org_jmol_viewer_Viewer$S$S$S$S$O$java_util_Map$Z,[this.vwr, "string", null, null, null, $I$(7).getBR$S(strModel), htParams, isAppend]);
+var fileReader=Clazz.new_([this.vwr, "string", null, null, null, $I$(7).getBR$S(strModel), htParams, isAppend],$I$(6,1).c$$org_jmol_viewer_Viewer$S$S$S$S$O$java_util_Map$Z);
 fileReader.run$();
 if (fnames != null ) this.setFileInfo$SA(fnames);
 if (!isAppend && !(Clazz.instanceOf(fileReader.getAtomSetCollection$(), "java.lang.String")) ) {
@@ -179,7 +159,7 @@ Clazz.newMeth(C$, 'createAtomSeCollectionFromStrings$SA$javajs_util_SB$java_util
 if (!htParams.containsKey$O("isData")) {
 var oldSep="\"" + this.vwr.getDataSeparator$() + "\"" ;
 var tag="\"" + (isAppend ? "append" : "model") + " inline\"" ;
-var sb=Clazz.new_($I$(8));
+var sb=Clazz.new_($I$(8,1));
 sb.append$S("set dataSeparator \"~~~next file~~~\";\ndata ").append$S(tag);
 for (var i=0; i < arrayModels.length; i++) {
 if (i > 0) sb.append$S("~~~next file~~~");
@@ -188,7 +168,7 @@ sb.append$S(arrayModels[i]);
 sb.append$S("end ").append$S(tag).append$S(";set dataSeparator ").append$S(oldSep);
 loadScript.appendSB$javajs_util_SB(sb);
 }p$1.setLoadState$java_util_Map.apply(this, [htParams]);
-$I$(5).info$S("FileManager.getAtomSetCollectionFromStrings(string[])");
+(function(a,f){return f.apply(null,a)})(["FileManager.getAtomSetCollectionFromStrings(string[])"],$I$(5).info$S);
 var fullPathNames=Clazz.array(String, [arrayModels.length]);
 var readers=Clazz.array($I$(9), [arrayModels.length]);
 for (var i=0; i < arrayModels.length; i++) {
@@ -201,7 +181,7 @@ return filesReader.getAtomSetCollection$();
 });
 
 Clazz.newMeth(C$, 'createAtomSeCollectionFromArrayData$javajs_util_Lst$java_util_Map$Z', function (arrayData, htParams, isAppend) {
-$I$(5).info$S("FileManager.getAtomSetCollectionFromArrayData(Vector)");
+(function(a,f){return f.apply(null,a)})(["FileManager.getAtomSetCollectionFromArrayData(Vector)"],$I$(5).info$S);
 var nModels=arrayData.size$();
 var fullPathNames=Clazz.array(String, [nModels]);
 var readers=Clazz.array($I$(9), [nModels]);
@@ -228,14 +208,14 @@ return fr;
 }, p$1);
 
 Clazz.newMeth(C$, 'createAtomSetCollectionFromDOM$O$java_util_Map', function (DOMNode, htParams) {
-var aDOMReader=$I$(2).getOption$S$org_jmol_viewer_Viewer$S("io.DOMReadaer", this.vwr, "file");
+var aDOMReader=$I$(2).getOption$S$org_jmol_viewer_Viewer$S("io.DOMReader", this.vwr, "file");
 aDOMReader.set$org_jmol_viewer_FileManager$org_jmol_viewer_Viewer$O$java_util_Map(this, this.vwr, DOMNode, htParams);
 aDOMReader.run$();
 return aDOMReader.getAtomSetCollection$();
 });
 
 Clazz.newMeth(C$, 'createAtomSetCollectionFromReader$S$S$O$java_util_Map', function (fullPathName, name, reader, htParams) {
-var fileReader=Clazz.new_($I$(6).c$$org_jmol_viewer_Viewer$S$S$S$S$O$java_util_Map$Z,[this.vwr, name, fullPathName, null, null, reader, htParams, false]);
+var fileReader=Clazz.new_($I$(6,1).c$$org_jmol_viewer_Viewer$S$S$S$S$O$java_util_Map$Z,[this.vwr, name, fullPathName, null, null, reader, htParams, false]);
 fileReader.run$();
 return fileReader.getAtomSetCollection$();
 });
@@ -251,7 +231,7 @@ var ret=null;
 var errorMessage=null;
 var cacheBytes=(allowCached && outputBytes == null   ? cacheBytes=p$1.getPngjOrDroppedBytes$S$S.apply(this, [fullName, name]) : null);
 try {
-if (allowCached && name.indexOf$S(".png") >= 0  && this.pngjCache == null   && !this.vwr.getBoolean$I(603979960) ) this.pngjCache=Clazz.new_($I$(1));
+if (allowCached && name.indexOf$S(".png") >= 0  && this.pngjCache == null   && !this.vwr.getBoolean$I(603979960) ) this.pngjCache=Clazz.new_($I$(1,1));
 if (cacheBytes == null ) {
 var isPngjBinaryPost=(name.indexOf$S("?POST?_PNGJBIN_") >= 0);
 var isPngjPost=(isPngjBinaryPost || name.indexOf$S("?POST?_PNGJ_") >= 0 );
@@ -261,9 +241,9 @@ var bytes=this.vwr.getImageAsBytes$S$I$I$I$SA(isPngjPost ? "PNGJ" : "PNG", 0, 0,
 if (errMsg[0] != null ) return errMsg[0];
 if (isPngjBinaryPost) {
 outputBytes=bytes;
-name=$I$(11).rep$S$S$S(name, "?_", "=_");
+name=(function(a,f){return f.apply(null,a)})([name, "?_", "=_"],$I$(11).rep$S$S$S);
 } else {
-name=Clazz.new_($I$(8)).append$S(name).append$S("=").appendSB$javajs_util_SB($I$(12).getBase64$BA(bytes)).toString();
+name=Clazz.new_($I$(8,1)).append$S(name).append$S("=").appendSB$javajs_util_SB($I$(12).getBase64$BA(bytes)).toString();
 }}var iurl=$I$(13).urlTypeIndex$S(name);
 var isURL=(iurl >= 0);
 var post=null;
@@ -273,7 +253,7 @@ name=name.substring$I$I(0, iurl);
 }var isApplet=(this.appletDocumentBaseURL != null );
 if (isApplet || isURL ) {
 if (isApplet && isURL && this.appletProxy != null   ) name=this.appletProxy + "?url=" + p$1.urlEncode$S.apply(this, [name]) ;
-var url=(isApplet ? Clazz.new_($I$(3).c$$java_net_URL$S$java_net_URLStreamHandler,[this.appletDocumentBaseURL, name, null]) : Clazz.new_($I$(3).c$$java_net_URL$S$java_net_URLStreamHandler,[null, name, null]));
+var url=(isApplet ? Clazz.new_($I$(3,1).c$$java_net_URL$S$java_net_URLStreamHandler,[this.appletDocumentBaseURL, name, null]) : Clazz.new_($I$(3,1).c$$java_net_URL$S$java_net_URLStreamHandler,[null, name, null]));
 if (checkOnly) return null;
 name=url.toString();
 if (showMsg && name.toLowerCase$().indexOf$S("password") < 0 ) $I$(5).info$S("FileManager opening url " + name);
@@ -281,7 +261,7 @@ ret=this.vwr.apiPlatform.getURLContents$java_net_URL$BA$S$Z(url, outputBytes, po
 var bytes=null;
 if (Clazz.instanceOf(ret, "javajs.util.SB")) {
 var sb=ret;
-if (allowReader && !$I$(7).isBase64$javajs_util_SB(sb) ) return $I$(7).getBR$S(sb.toString());
+if (allowReader && !$I$(7).isBase64$javajs_util_SB(sb) ) return (function(a,f){return f.apply(null,a)})([sb.toString()],$I$(7).getBR$S);
 bytes=$I$(7).getBytesFromSB$javajs_util_SB(sb);
 } else if ($I$(10).isAB$O(ret)) {
 bytes=ret;
@@ -322,7 +302,7 @@ resourceName=(url == null  ? vwr.vwrOptions.get$O("codePath") + classPath + reso
 if (vwr.async) {
 var bytes=vwr.fm.cacheGet$S$Z(resourceName, false);
 if (bytes == null ) throw Clazz.new_(Clazz.load('org.jmol.viewer.JmolAsyncException').c$$S,[resourceName]);
-return $I$(7).getBufferedReader$java_io_BufferedInputStream$S($I$(7).getBIS$BA(bytes), null);
+return (function(a,f){return f.apply(null,a)})([$I$(7).getBIS$BA(bytes), null],$I$(7).getBufferedReader$java_io_BufferedInputStream$S);
 }return vwr.fm.getBufferedReaderOrErrorMessageFromName$S$SA$Z$Z(resourceName, Clazz.array(String, -1, [null, null]), false, true);
 }, 1);
 
@@ -385,12 +365,12 @@ if (doSpecialLoad && bytesOrStream == null  ) {
 var o=(name.endsWith$S(".spt") ? Clazz.array(String, -1, [null, null, null]) : name.indexOf$S(".spardir") < 0 ? null : this.spartanUtil$().getFileList$S$Z(name, isTypeCheckOnly));
 if (o != null ) return o;
 }name=$I$(15).fixProtocol$S(name);
-if (bytesOrStream == null  && (bytesOrStream=p$1.getCachedPngjBytes$S.apply(this, [name])) != null   && htParams != null  ) htParams.put$TK$TV("sourcePNGJ", $I$(16).TRUE);
+if (bytesOrStream == null  && (bytesOrStream=p$1.getCachedPngjBytes$S.apply(this, [name])) != null   && htParams != null  ) htParams.put$O$O("sourcePNGJ", $I$(16).TRUE);
 name=name.replace$CharSequence$CharSequence("#_DOCACHE_", "");
 var fullName=name;
 var subFileList=null;
 if (name.indexOf$S("|") >= 0) {
-subFileList=$I$(11).split$S$S(name.replace$C$C("\\", "/"), "|");
+subFileList=(function(a,f){return f.apply(null,a)})([name.replace$C$C("\\", "/"), "|"],$I$(11).split$S$S);
 if (bytesOrStream == null ) $I$(5).info$S("FileManager opening zip " + name);
 name=subFileList[0];
 }var t=(bytesOrStream == null  ? this.getBufferedInputStreamOrErrorMessageFromName$S$S$Z$Z$BA$Z$Z(name, fullName, true, false, null, !forceInputStream, true) : $I$(10).isAB$O(bytesOrStream) ? $I$(7).getBIS$BA(bytesOrStream) : bytesOrStream);
@@ -401,10 +381,10 @@ if ($I$(7).isGzipS$java_io_InputStream(bis)) bis=$I$(17).getUnzippedInputStream$
  else if ($I$(7).isBZip2S$java_io_InputStream(bis)) bis=$I$(17).getUnzippedInputStreamBZip2$java_io_BufferedInputStream(bis);
 if (forceInputStream && subFileList == null  ) return bis;
 if ($I$(7).isCompoundDocumentS$java_io_InputStream(bis)) {
-var doc=Clazz.new_($I$(18));
+var doc=Clazz.new_($I$(18,1));
 doc.setDocStream$java_io_BufferedInputStream(bis);
 var s=doc.getAllDataFiles$S$S("Molecule", "Input").toString();
-return (forceInputStream ? $I$(7).getBIS$BA(s.getBytes$()) : $I$(7).getBR$S(s));
+return (forceInputStream ? (function(a,f){return f.apply(null,a)})([s.getBytes$()],$I$(7).getBIS$BA) : $I$(7).getBR$S(s));
 }if ($I$(7).isMessagePackS$java_io_InputStream(bis) || $I$(7).isPickleS$java_io_InputStream(bis) ) return bis;
 if ($I$(7).isPngZipStream$java_io_InputStream(bis)) bis=$I$(17).getPngZipStream$java_io_BufferedInputStream$Z(bis, true);
 if ($I$(7).isZipS$java_io_InputStream(bis)) {
@@ -454,30 +434,30 @@ return (bytes).length + " bytes";
 });
 
 Clazz.newMeth(C$, 'getFileAsMap$S$S', function (name, type) {
-var bdata=Clazz.new_($I$(1));
+var bdata=Clazz.new_($I$(1,1));
 var t;
 if (name == null ) {
 var errMsg=Clazz.array(String, [1]);
 var bytes=this.vwr.getImageAsBytes$S$I$I$I$SA(type, -1, -1, -1, errMsg);
 if (errMsg[0] != null ) {
-bdata.put$TK$TV("_ERROR_", errMsg[0]);
+bdata.put$O$O("_ERROR_", errMsg[0]);
 return bdata;
 }t=$I$(7).getBIS$BA(bytes);
 } else {
 var data=Clazz.array(String, [2]);
 t=this.getFullPathNameOrError$S$Z$SA(name, true, data);
 if (Clazz.instanceOf(t, "java.lang.String")) {
-bdata.put$TK$TV("_ERROR_", t);
+bdata.put$O$O("_ERROR_", t);
 return bdata;
 }if (!p$1.checkSecurity$S.apply(this, [data[0]])) {
-bdata.put$TK$TV("_ERROR_", "java.io. Security exception: cannot read file " + data[0]);
+bdata.put$O$O("_ERROR_", "java.io. Security exception: cannot read file " + data[0]);
 return bdata;
 }}try {
 $I$(17).readFileAsMap$java_io_BufferedInputStream$java_util_Map$S(t, bdata, name);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 bdata.clear$();
-bdata.put$TK$TV("_ERROR_", "" + e);
+bdata.put$O$O("_ERROR_", "" + e);
 } else {
 throw e;
 }
@@ -521,7 +501,7 @@ var bytes=null;
 var isPopupImage=(echoName != null  && echoName.startsWith$S("\u0001") );
 if (isPopupImage) {
 if (echoName.equals$O("\u0001closeall\u0001null")) return this.vwr.loadImageData$O$S$S$O($I$(16).TRUE, "\u0001closeall", "\u0001closeall", null);
-if ("\1close".equals$O(nameOrBytes)) return this.vwr.loadImageData$O$S$S$O($I$(16).FALSE, "\u0001close", echoName, null);
+if ("\u0001close".equals$O(nameOrBytes)) return this.vwr.loadImageData$O$S$S$O($I$(16).FALSE, "\u0001close", echoName, null);
 }if (Clazz.instanceOf(nameOrBytes, "java.util.Map")) {
 nameOrBytes=((nameOrBytes).containsKey$O("_DATA_") ? (nameOrBytes).get$O("_DATA_") : (nameOrBytes).get$O("_IMAGE_"));
 }if (Clazz.instanceOf(nameOrBytes, "org.jmol.script.SV")) nameOrBytes=(nameOrBytes).value;
@@ -552,7 +532,7 @@ return isAsynchronous;
 Clazz.newMeth(C$, 'getClassifiedName$S$Z', function (name, isFullLoad) {
 if (name == null ) return Clazz.array(String, -1, [null]);
 var doSetPathForAllFiles=(this.pathForAllFiles.length$() > 0);
-if (name.startsWith$S("?") || name.startsWith$S("http://?") ) {
+if (name.startsWith$S("?") || name.startsWith$S("http://?") || name.startsWith$S("https://?")  ) {
 if (!$I$(4).isJS && (name=this.vwr.dialogAsk$S$S$java_util_Map("Load", name, null)) == null  ) return Clazz.array(String, -1, [isFullLoad ? "#CANCELED#" : null]);
 doSetPathForAllFiles=false;
 }var file=null;
@@ -568,7 +548,7 @@ if (name.indexOf$S(":") < 0 && name.indexOf$S("/") != 0 ) name=C$.addDirectory$S
 if (this.appletDocumentBaseURL == null ) {
 if ($I$(13).urlTypeIndex$S(name) >= 0 || this.vwr.haveAccess$org_jmol_viewer_Viewer_ACCESS($I$(19).NONE)  || this.vwr.haveAccess$org_jmol_viewer_Viewer_ACCESS($I$(19).READSPT) && !name.endsWith$S(".spt") && !name.endsWith$S("/")   ) {
 try {
-url=Clazz.new_($I$(3).c$$java_net_URL$S$java_net_URLStreamHandler,[null, name, null]);
+url=Clazz.new_($I$(3,1).c$$java_net_URL$S$java_net_URLStreamHandler,[null, name, null]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return Clazz.array(String, -1, [isFullLoad ? e.toString() : null]);
@@ -584,7 +564,7 @@ names=Clazz.array(String, -1, [(s == null  ? fname : s), fname, (s == null  ? fn
 }} else {
 try {
 if (name.indexOf$S(":\\") == 1 || name.indexOf$S(":/") == 1 ) name="file:/" + name;
-url=Clazz.new_($I$(3).c$$java_net_URL$S$java_net_URLStreamHandler,[this.appletDocumentBaseURL, name, null]);
+url=Clazz.new_($I$(3,1).c$$java_net_URL$S$java_net_URLStreamHandler,[this.appletDocumentBaseURL, name, null]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return Clazz.array(String, -1, [isFullLoad ? e.toString() : null]);
@@ -601,7 +581,7 @@ var name0=names[0];
 names[0]=this.pathForAllFiles + names[1];
 $I$(5).info$S("FileManager substituting " + name0 + " --> " + names[0] );
 }if (isFullLoad && (file != null  || $I$(13).urlTypeIndex$S(names[0]) == 4 ) ) {
-var path=(file == null  ? $I$(11).trim$S$S(names[0].substring$I(5), "/") : names[0]);
+var path=(file == null  ? (function(a,f){return f.apply(null,a)})([names[0].substring$I(5), "/"],$I$(11).trim$S$S) : names[0]);
 var pt=path.length$() - names[1].length$() - 1 ;
 if (pt > 0) {
 path=path.substring$I$I(0, pt);
@@ -672,7 +652,7 @@ if (!forDialog) vwr.setStringProperty$S$S("defaultDirectoryLocal", path);
 }, 1);
 
 Clazz.newMeth(C$, 'getLocalPathForWritingFile$org_jmol_viewer_Viewer$S', function (vwr, file) {
-if (file.startsWith$S("http://")) return file;
+if (file.startsWith$S("http://") || file.startsWith$S("https://") ) return file;
 file=$I$(11).rep$S$S$S(file, "?", "");
 if (file.indexOf$S("file:/") == 0) return file.substring$I(6);
 if (file.indexOf$S("/") == 0 || file.indexOf$S(":") >= 0 ) return file;
@@ -700,7 +680,7 @@ return name.substring$I(pt + 1);
 Clazz.newMeth(C$, 'determineSurfaceTypeIs$java_io_InputStream', function (is) {
 var br;
 try {
-br=$I$(7).getBufferedReader$java_io_BufferedInputStream$S(Clazz.new_($I$(20).c$$java_io_InputStream,[is]), "ISO-8859-1");
+br=(function(a,f){return f.apply(null,a)})([Clazz.new_($I$(20,1).c$$java_io_InputStream,[is]), "ISO-8859-1"],$I$(7).getBufferedReader$java_io_BufferedInputStream$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 return null;
@@ -712,11 +692,11 @@ return C$.determineSurfaceFileType$java_io_BufferedReader(br);
 }, 1);
 
 Clazz.newMeth(C$, 'isScriptType$S', function (fname) {
-return $I$(11).isOneOf$S$S(fname.toLowerCase$().substring$I(fname.lastIndexOf$S(".") + 1), ";pse;spt;png;pngj;jmol;zip;");
+return (function(a,f){return f.apply(null,a)})([fname.toLowerCase$().substring$I(fname.lastIndexOf$S(".") + 1), ";pse;spt;png;pngj;jmol;zip;"],$I$(11).isOneOf$S$S);
 }, 1);
 
 Clazz.newMeth(C$, 'isSurfaceType$S', function (fname) {
-return $I$(11).isOneOf$S$S(fname.toLowerCase$().substring$I(fname.lastIndexOf$S(".") + 1), ";jvxl;kin;o;msms;map;pmesh;mrc;efvet;cube;obj;dssr;bcif;");
+return (function(a,f){return f.apply(null,a)})([fname.toLowerCase$().substring$I(fname.lastIndexOf$S(".") + 1), ";jvxl;kin;o;msms;map;pmesh;mrc;efvet;cube;obj;dssr;bcif;"],$I$(11).isOneOf$S$S);
 }, 1);
 
 Clazz.newMeth(C$, 'determineSurfaceFileType$java_io_BufferedReader', function (bufferedReader) {
@@ -742,7 +722,7 @@ throw e;
 }
 }}var br=null;
 try {
-br=Clazz.new_($I$(21).c$$java_io_BufferedReader$I,[bufferedReader, 16000]);
+br=Clazz.new_($I$(21,1).c$$java_io_BufferedReader$I,[bufferedReader, 16000]);
 line=br.getHeader$I(0);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -843,7 +823,7 @@ var i=-1;
 while ((i=script.indexOf$S$I(tag, i + 1)) >= 0){
 var s=$I$(11).getQuotedStringAt$S$I(script, i);
 if (s.indexOf$S("::") >= 0) s=$I$(11).split$S$S(s, "::")[1];
-fileList.addLast$TV(s);
+fileList.addLast$O(s);
 }
 }
 }, 1);
@@ -865,10 +845,10 @@ script=$I$(11).rep$S$S$S(script, tag + ".", tag + scriptPath);
 Clazz.newMeth(C$, 'setScriptFileRefs$S$S$Z', function (script, dataPath, isLocal) {
 if (dataPath == null ) return script;
 var noPath=(dataPath.length$() == 0);
-var fileNames=Clazz.new_($I$(22));
+var fileNames=Clazz.new_($I$(22,1));
 C$.getFileReferences$S$javajs_util_Lst(script, fileNames);
-var oldFileNames=Clazz.new_($I$(22));
-var newFileNames=Clazz.new_($I$(22));
+var oldFileNames=Clazz.new_($I$(22,1));
+var newFileNames=Clazz.new_($I$(22,1));
 var nFiles=fileNames.size$();
 for (var iFile=0; iFile < nFiles; iFile++) {
 var name0=fileNames.get$I(iFile);
@@ -883,8 +863,8 @@ if (pt < 0 && !noPath ) name="/" + name;
 if (pt < 0 || noPath ) pt++;
 name=dataPath + name.substring$I(pt);
 }}$I$(5).info$S("FileManager substituting " + name0 + " --> " + name );
-oldFileNames.addLast$TV("\"" + name0 + "\"" );
-newFileNames.addLast$TV("\1\"" + name + "\"" );
+oldFileNames.addLast$O("\"" + name0 + "\"" );
+newFileNames.addLast$O("\u0001\"" + name + "\"" );
 }
 return $I$(11).replaceStrings$S$javajs_util_Lst$javajs_util_Lst(script, oldFileNames, newFileNames);
 }, 1);
@@ -895,7 +875,7 @@ if ($I$(5).debugging) $I$(5).debug$S("cachePut " + key);
 if (data == null  || "".equals$O(data) ) {
 this.cache.remove$O(key);
 return;
-}this.cache.put$TK$TV(key, data);
+}this.cache.put$O$O(key, data);
 p$1.getCachedPngjBytes$S.apply(this, [key]);
 });
 
@@ -928,19 +908,19 @@ this.cacheClear$();
 return -1;
 }var data;
 if (isAdd) {
-fileName=$I$(15).fixProtocol$S(this.vwr.resolveDatabaseFormat$S(fileName));
+fileName=(function(a,f){return f.apply(null,a)})([this.vwr.resolveDatabaseFormat$S(fileName)],$I$(15).fixProtocol$S);
 data=this.getFileAsBytes$S$javajs_util_OC(fileName, null);
 if (Clazz.instanceOf(data, "java.lang.String")) return 0;
 this.cachePut$S$O(fileName, data);
 } else {
-if (fileName.endsWith$S("*")) return $I$(10).removeMapKeys$java_util_Map$S(this.cache, fileName.substring$I$I(0, fileName.length$() - 1));
+if (fileName.endsWith$S("*")) return (function(a,f){return f.apply(null,a)})([this.cache, fileName.substring$I$I(0, fileName.length$() - 1)],$I$(10).removeMapKeys$java_util_Map$S);
 data=this.cache.remove$O(C$.fixDOSName$S(fileName));
 }return (data == null  ? 0 : Clazz.instanceOf(data, "java.lang.String") ? (data).length$() : (data).length);
 });
 
 Clazz.newMeth(C$, 'cacheList$', function () {
-var map=Clazz.new_($I$(1));
-for (var entry, $entry = this.cache.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) map.put$TK$TV(entry.getKey$(), Integer.valueOf$I($I$(10).isAB$O(entry.getValue$()) ? (entry.getValue$()).length : entry.getValue$().toString().length$()));
+var map=Clazz.new_($I$(1,1));
+for (var entry, $entry = this.cache.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) map.put$O$O(entry.getKey$(), Integer.valueOf$I((function(a,f){return f.apply(null,a)})([entry.getValue$()],$I$(10).isAB$O) ? (entry.getValue$()).length : entry.getValue$().toString().length$()));
 
 return map;
 });
@@ -952,8 +932,8 @@ return (names == null  ? pathName : names[2]);
 
 Clazz.newMeth(C$, 'recachePngjBytes$S$BA', function (fileName, bytes) {
 if (this.pngjCache == null  || !this.pngjCache.containsKey$O(fileName) ) return;
-this.pngjCache.put$TK$TV(fileName, bytes);
-$I$(5).info$S("PNGJ recaching " + fileName + " (" + bytes.length + ")" );
+this.pngjCache.put$O$O(fileName, bytes);
+(function(a,f){return f.apply(null,a)})(["PNGJ recaching " + fileName + " (" + bytes.length + ")" ],$I$(5).info$S);
 });
 
 Clazz.newMeth(C$, 'getPngjOrDroppedBytes$S$S', function (fullName, name) {
@@ -965,7 +945,7 @@ Clazz.newMeth(C$, 'getCachedPngjBytes$S', function (pathName) {
 return (pathName == null  || this.pngjCache == null   || pathName.indexOf$S(".png") < 0  ? null : this.getJzu$().getCachedPngjBytes$org_jmol_viewer_FileManager$S(this, pathName));
 }, p$1);
 
-Clazz.newMeth(C$, ['postByteArray$S$BA','postByteArray$'], function (fileName, bytes) {
+Clazz.newMeth(C$, 'postByteArray$S$BA', function (fileName, bytes) {
 if (fileName.startsWith$S("cache://")) {
 this.cachePut$S$O(fileName, bytes);
 return "OK " + bytes.length + "cached" ;
@@ -990,6 +970,11 @@ throw e;
 return (ret == null  ? "" : $I$(7).fixUTF$BA(ret));
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.SIMULATION_PROTOCOL="http://SIMULATION/";
+C$.scriptFilePrefixes=Clazz.array(String, -1, ["/*file*/\"", "FILE0=\"", "FILE1=\""]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

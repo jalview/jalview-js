@@ -1,25 +1,17 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.rest"),p$1={},I$=[[0,'java.util.ArrayList','jalview.io.packed.SimpleDataProvider','Error','jalview.util.MessageManager','jalview.ws.io.mime.JalviewMimeContentHandler','org.apache.james.mime4j.parser.MimeStreamParser','jalview.bin.Cache','jalview.io.packed.ParsePackedSet','java.io.InputStreamReader','java.io.BufferedReader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HttpResultSet", null, 'jalview.io.FileParse');
+(function(){var P$=Clazz.newPackage("jalview.ws.rest"),p$1={},I$=[[0,'java.util.ArrayList','jalview.io.packed.SimpleDataProvider','Error','jalview.util.MessageManager','jalview.ws.io.mime.JalviewMimeContentHandler','org.apache.james.mime4j.parser.MimeStreamParser','jalview.bin.Cache','jalview.io.packed.ParsePackedSet','java.io.InputStreamReader','java.io.BufferedReader']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HttpResultSet", null, 'jalview.io.FileParse', 'AutoCloseable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cachedRequest=null;
-this.repeatable=false;
-this.en=null;
-this.restJob=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.repeatable=false;
 this.en=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['repeatable'],'O',['cachedRequest','org.apache.http.client.methods.HttpRequestBase','en','org.apache.http.HttpEntity','restJob','jalview.ws.rest.RestJob']]]
 
 Clazz.newMeth(C$, 'c$$jalview_ws_rest_RestJob$org_apache_http_HttpResponse$org_apache_http_client_methods_HttpRequestBase', function (rj, con, req) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.setDataName$S(rj.getJobId$() + " Part " + rj.getJobnum$() );
 this.restJob=rj;
 this.cachedRequest=req;
@@ -27,23 +19,23 @@ p$1.initDataSource$org_apache_http_HttpResponse.apply(this, [con]);
 }, 1);
 
 Clazz.newMeth(C$, 'createResultDataProviders$', function () {
-var dp=Clazz.new_($I$(1));
+var dp=Clazz.new_($I$(1,1));
 for (var type, $type = this.restJob.rsd.getResultDataTypes$().iterator$(); $type.hasNext$()&&((type=($type.next$())),1);) {
-dp.add$TE(Clazz.new_($I$(2).c$$jalview_io_packed_DataProvider_JvDataType$jalview_io_FileParse$O,[type, this, null]));
+dp.add$O(Clazz.new_($I$(2,1).c$$jalview_io_packed_DataProvider_JvDataType$jalview_io_FileParse$O,[type, this, null]));
 }
 return dp;
 });
 
 Clazz.newMeth(C$, 'parseResultSet$', function () {
-var dp=Clazz.new_($I$(1));
+var dp=Clazz.new_($I$(1,1));
 var results=null;
 if (this.en == null ) {
-throw Clazz.new_($I$(3).c$$S,[$I$(4).getString$S("error.implementation_error_need_to_have_httpresponse")]);
+throw Clazz.new_([$I$(4).getString$S("error.implementation_error_need_to_have_httpresponse")],$I$(3,1).c$$S);
 }var ds=this.restJob.newJalviewDataset$();
 if (Clazz.instanceOf(this.en, "org.apache.http.entity.mime.MultipartEntity")) {
 var mpe=this.en;
-var handler=Clazz.new_($I$(5).c$$jalview_io_packed_JalviewDataset,[ds]);
-var parser=Clazz.new_($I$(6));
+var handler=Clazz.new_($I$(5,1).c$$jalview_io_packed_JalviewDataset,[ds]);
+var parser=Clazz.new_($I$(6,1));
 parser.setContentHandler$org_apache_james_mime4j_parser_ContentHandler(handler);
 try {
 parser.parse$java_io_InputStream(mpe.getContent$());
@@ -57,10 +49,10 @@ this.en.consumeContent$();
 throw me;
 }
 }
-return Clazz.new_($I$(8)).getAlignment$jalview_io_packed_JalviewDataset$Iterable(ds, handler.getJalviewDataProviders$());
+return Clazz.new_($I$(8,1)).getAlignment$jalview_io_packed_JalviewDataset$Iterable(ds, handler.getJalviewDataProviders$());
 } else {
 dp=this.createResultDataProviders$();
-var pps=Clazz.new_($I$(8));
+var pps=Clazz.new_($I$(8,1));
 return pps.getAlignment$jalview_io_packed_JalviewDataset$Iterable(ds, dp);
 }});
 
@@ -79,7 +71,7 @@ $I$(7).log.debug$O("Assuming \'Default\' Result Encoding.");
 $I$(7).log.debug$O("Result Encoded as : " + enc);
 }var br=null;
 try {
-br=(enc != null ) ? Clazz.new_($I$(9).c$$java_io_InputStream$S,[this.en.getContent$(), enc]) : Clazz.new_($I$(9).c$$java_io_InputStream,[this.en.getContent$()]);
+br=(enc != null ) ? Clazz.new_([this.en.getContent$(), enc],$I$(9,1).c$$java_io_InputStream$S) : Clazz.new_([this.en.getContent$()],$I$(9,1).c$$java_io_InputStream);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.UnsupportedEncodingException")){
 $I$(7).log.error$O$Throwable("Can't handle encoding '" + enc + "' for response from webservice." , e);
@@ -92,11 +84,11 @@ throw e;
 }
 }
 if (br != null ) {
-this.dataIn=Clazz.new_($I$(10).c$$java_io_Reader,[br]);
+this.dataIn=Clazz.new_($I$(10,1).c$$java_io_Reader,[br]);
 this.error=false;
 }}}, p$1);
 
-Clazz.newMeth(C$, 'finalize$', function () {
+Clazz.newMeth(C$, 'close$', function () {
 this.dataIn=null;
 this.cachedRequest=null;
 try {
@@ -115,7 +107,6 @@ var ex = e$$;
 throw e$$;
 }
 }
-C$.superclazz.prototype.finalize$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getUrl$', function () {
@@ -133,4 +124,4 @@ throw x;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

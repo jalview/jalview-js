@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.datatransfer"),I$=[[0,'java.awt.datatransfer.DataFlavor','java.io.StringReader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StringSelection", null, null, ['java.awt.datatransfer.Transferable', 'java.awt.datatransfer.ClipboardOwner']);
-C$.flavors=null;
+(function(){var P$=Clazz.newPackage("java.awt.datatransfer"),I$=[[0,'java.awt.datatransfer.DataFlavor','java.io.StringReader']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StringSelection", null, null, ['java.awt.datatransfer.Transferable', 'java.awt.datatransfer.ClipboardOwner']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.flavors=Clazz.array($I$(1), -1, [$I$(1).stringFlavor, $I$(1).plainTextFlavor]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.data=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['data']]
+,['O',['flavors','java.awt.datatransfer.DataFlavor[]']]]
 
 Clazz.newMeth(C$, 'c$$S', function (data) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.data=data;
 }, 1);
 
@@ -35,14 +30,18 @@ Clazz.newMeth(C$, 'getTransferData$java_awt_datatransfer_DataFlavor', function (
 if (flavor.equals$java_awt_datatransfer_DataFlavor(C$.flavors[0])) {
 return this.data;
 } else if (flavor.equals$java_awt_datatransfer_DataFlavor(C$.flavors[1])) {
-return Clazz.new_($I$(2).c$$S,[this.data == null  ? "" : this.data]);
+return Clazz.new_([this.data == null  ? "" : this.data],$I$(2,1).c$$S);
 } else {
 throw Clazz.new_(Clazz.load('java.awt.datatransfer.UnsupportedFlavorException').c$$java_awt_datatransfer_DataFlavor,[flavor]);
 }});
 
-Clazz.newMeth(C$, ['lostOwnership$java_awt_datatransfer_Clipboard$java_awt_datatransfer_Transferable','lostOwnership$'], function (clipboard, contents) {
+Clazz.newMeth(C$, 'lostOwnership$java_awt_datatransfer_Clipboard$java_awt_datatransfer_Transferable', function (clipboard, contents) {
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.flavors=Clazz.array($I$(1), -1, [$I$(1).stringFlavor, $I$(1).plainTextFlavor]);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

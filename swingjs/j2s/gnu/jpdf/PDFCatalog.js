@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("gnu.jpdf"),I$=[[0,'gnu.jpdf.PDFStream','gnu.jpdf.PDFDocument']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDFCatalog", null, 'gnu.jpdf.PDFObject');
+(function(){var P$=Clazz.newPackage("gnu.jpdf"),I$=[[0,'gnu.jpdf.PDFStream','gnu.jpdf.PDFDocument']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDFCatalog", null, 'gnu.jpdf.PDFObject');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pdfPageList=null;
-this.outlines=null;
-this.pagemode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pagemode'],'O',['pdfPageList','gnu.jpdf.PDFPageList','outlines','gnu.jpdf.PDFOutline']]]
 
 Clazz.newMeth(C$, 'c$$gnu_jpdf_PDFPageList$I', function (pdfPageList, pagemode) {
-C$.superclazz.c$$S.apply(this, ["/Catalog"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["/Catalog"]);C$.$init$.apply(this);
 this.pdfPageList=pdfPageList;
 this.pagemode=pagemode;
 }, 1);
@@ -28,18 +21,18 @@ this.outlines=outline;
 Clazz.newMeth(C$, 'write$java_io_OutputStream', function (os) {
 this.writeStart$java_io_OutputStream(os);
 $I$(1).write$java_io_OutputStream$S(os, "/Pages ");
-$I$(1).write$java_io_OutputStream$S(os, this.pdfPageList.toString());
+$I$(1,"write$java_io_OutputStream$S",[os, this.pdfPageList.toString()]);
 $I$(1).write$java_io_OutputStream$S(os, "\n");
 if (this.outlines != null ) {
 $I$(1).write$java_io_OutputStream$S(os, "/Outlines ");
-$I$(1).write$java_io_OutputStream$S(os, this.outlines.toString());
+$I$(1,"write$java_io_OutputStream$S",[os, this.outlines.toString()]);
 $I$(1).write$java_io_OutputStream$S(os, "\n");
 }$I$(1).write$java_io_OutputStream$S(os, "/PageMode ");
-$I$(1).write$java_io_OutputStream$S(os, $I$(2).PDF_PAGE_MODES[this.pagemode]);
+$I$(1,"write$java_io_OutputStream$S",[os, $I$(2).PDF_PAGE_MODES[this.pagemode]]);
 $I$(1).write$java_io_OutputStream$S(os, "\n");
 this.writeEnd$java_io_OutputStream(os);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

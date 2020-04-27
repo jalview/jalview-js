@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.io.FileParse','jalview.io.FileFormat']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IdentifyFile");
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.io.FileParse','jalview.io.FileFormat']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IdentifyFile");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'identify$O$jalview_io_DataSourceType', function (file, protocol) {
 return (Clazz.instanceOf(file, "java.io.File") ? this.identify$java_io_File$jalview_io_DataSourceType(file, protocol) : this.identify$S$jalview_io_DataSourceType(file, protocol));
@@ -15,7 +14,7 @@ Clazz.newMeth(C$, 'identify$java_io_File$jalview_io_DataSourceType', function (f
 var emessage="UNIDENTIFIED FILE PARSING ERROR";
 var parser=null;
 try {
-parser=Clazz.new_($I$(1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
+parser=Clazz.new_($I$(1,1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
 if (parser.isValid$()) {
 return this.identify$jalview_io_FileParse(parser);
 }} catch (e) {
@@ -36,7 +35,7 @@ Clazz.newMeth(C$, 'identify$S$jalview_io_DataSourceType', function (file, source
 var emessage="UNIDENTIFIED FILE PARSING ERROR";
 var parser=null;
 try {
-parser=Clazz.new_($I$(1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
+parser=Clazz.new_($I$(1,1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
 if (parser.isValid$()) {
 return this.identify$jalview_io_FileParse(parser);
 }} catch (e) {
@@ -58,7 +57,7 @@ return this.identify$jalview_io_FileParse$Z(source, true);
 });
 
 Clazz.newMeth(C$, 'identify$jalview_io_AlignmentFileReaderI$Z', function (file, closeSource) {
-var fp=Clazz.new_($I$(1).c$$O$jalview_io_DataSourceType,[file.getInFile$(), file.getDataSourceType$()]);
+var fp=Clazz.new_([file.getInFile$(), file.getDataSourceType$()],$I$(1,1).c$$O$jalview_io_DataSourceType);
 return this.identify$jalview_io_FileParse$Z(fp, closeSource);
 });
 
@@ -240,4 +239,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

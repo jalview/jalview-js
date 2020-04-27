@@ -1,31 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),I$=[[0,'java.util.concurrent.atomic.AtomicBoolean','java.util.HashSet','java.nio.channels.spi.AbstractInterruptibleChannel','Thread']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractSelector", null, 'java.nio.channels.Selector');
+(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),I$=[[0,'java.util.concurrent.atomic.AtomicBoolean','java.util.HashSet']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractSelector", null, 'java.nio.channels.Selector');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.selectorOpen=null;
-this.provider=null;
-this.cancelledKeys=null;
-this.interruptor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.selectorOpen=Clazz.new_($I$(1).c$$Z,[true]);
-this.cancelledKeys=Clazz.new_($I$(2));
+this.selectorOpen=Clazz.new_($I$(1,1).c$$Z,[true]);
+this.cancelledKeys=Clazz.new_($I$(2,1));
 this.interruptor=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['selectorOpen','java.util.concurrent.atomic.AtomicBoolean','provider','java.nio.channels.spi.SelectorProvider','cancelledKeys','java.util.Set','interruptor','sun.nio.ch.Interruptible']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_channels_spi_SelectorProvider', function (provider) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.provider=provider;
 }, 1);
 
 Clazz.newMeth(C$, 'cancel$java_nio_channels_SelectionKey', function (k) {
 {
-this.cancelledKeys.add$TE(k);
+this.cancelledKeys.add$O(k);
 }});
 
 Clazz.newMeth(C$, 'close$', function () {
@@ -51,30 +44,11 @@ Clazz.newMeth(C$, 'deregister$java_nio_channels_spi_AbstractSelectionKey', funct
 });
 
 Clazz.newMeth(C$, 'begin$', function () {
-if (this.interruptor == null ) {
-this.interruptor=((P$.AbstractSelector$1||
-(function(){var C$=Clazz.newClass(P$, "AbstractSelector$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'sun.nio.ch.Interruptible', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['interrupt$Thread','interrupt$'], function (ignore) {
-this.b$['java.nio.channels.spi.AbstractSelector'].wakeup$.apply(this.b$['java.nio.channels.spi.AbstractSelector'], []);
-});
-})()
-), Clazz.new_(P$.AbstractSelector$1.$init$, [this, null]));
-}$I$(3).blockedOn$sun_nio_ch_Interruptible(this.interruptor);
-var me=$I$(4).currentThread$();
-if (me.isInterrupted$()) this.interruptor.interrupt$(me);
 });
 
 Clazz.newMeth(C$, 'end$', function () {
-$I$(3).blockedOn$sun_nio_ch_Interruptible(null);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

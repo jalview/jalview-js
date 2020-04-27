@@ -1,37 +1,23 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.CompoundDocHeader','javajs.util.Lst','java.io.DataInputStream','javajs.util.SB','javajs.util.CompoundDocDirEntry','javajs.util.ZipData']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CompoundDocument", null, 'javajs.util.BinaryDocument');
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.CompoundDocHeader','javajs.util.Lst','java.io.DataInputStream','javajs.util.SB','javajs.util.CompoundDocDirEntry','javajs.util.ZipData']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CompoundDocument", null, 'javajs.util.BinaryDocument');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.header=null;
-this.directory=null;
-this.rootEntry=null;
-this.SAT=null;
-this.SSAT=null;
-this.sectorSize=0;
-this.shortSectorSize=0;
-this.nShortSectorsPerStandardSector=0;
-this.nIntPerSector=0;
-this.nDirEntriesperSector=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.header=Clazz.new_($I$(1).c$$javajs_util_CompoundDocument,[this]);
-this.directory=Clazz.new_($I$(2));
-}, 1);
+this.header=Clazz.new_($I$(1,1).c$$javajs_util_CompoundDocument,[this]);
+this.directory=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['I',['sectorSize','shortSectorSize','nShortSectorsPerStandardSector','nIntPerSector','nDirEntriesperSector'],'O',['header','javajs.util.CompoundDocHeader','directory','javajs.util.Lst','rootEntry','javajs.util.CompoundDocDirEntry','SAT','int[]','+SSAT']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.isBigEndian=true;
 }, 1);
 
 Clazz.newMeth(C$, 'setDocStream$java_io_BufferedInputStream', function (bis) {
 if (!this.isRandom) {
-this.stream=Clazz.new_($I$(3).c$$java_io_InputStream,[bis]);
+this.stream=Clazz.new_($I$(3,1).c$$java_io_InputStream,[bis]);
 }this.stream.mark$I(2147483647);
 if (!p$1.readHeader.apply(this, [])) return;
 p$1.getSectorAllocationTable.apply(this, []);
@@ -44,7 +30,7 @@ return this.directory;
 });
 
 Clazz.newMeth(C$, 'getDirectoryListing$S', function (separator) {
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 for (var i=0; i < this.directory.size$(); i++) {
 var thisEntry=this.directory.get$I(i);
 if (!thisEntry.isEmpty) sb.append$S(separator).append$S(thisEntry.entryName).append$S("\tlen=").appendI$I(thisEntry.lenStream).append$S("\tSID=").appendI$I(thisEntry.SIDfirstSector).append$S(thisEntry.isStandard ? "\tfileOffset=" + p$1.getOffset$I.apply(this, [thisEntry.SIDfirstSector]) : "");
@@ -57,7 +43,7 @@ return this.getAllDataFiles$S$S(null, null);
 });
 
 Clazz.newMeth(C$, 'getAllDataMapped$S$S$java_util_Map', function (prefix, binaryFileList, fileData) {
-fileData.put$TK$TV("#Directory_Listing", this.getDirectoryListing$S("|"));
+fileData.put$O$O("#Directory_Listing", this.getDirectoryListing$S("|"));
 binaryFileList="|" + binaryFileList + "|" ;
 for (var i=0; i < this.directory.size$(); i++) {
 var thisEntry=this.directory.get$I(i);
@@ -66,13 +52,13 @@ var name=thisEntry.entryName;
 System.out.println$S("CompoundDocument file " + name);
 var isBinary=(binaryFileList.indexOf$S("|" + name + "|" ) >= 0);
 if (isBinary) name += ":asBinaryString";
-fileData.put$TK$TV(prefix + "/" + name , p$1.appendData$javajs_util_SB$S$javajs_util_CompoundDocDirEntry$Z.apply(this, [Clazz.new_($I$(4)), name, thisEntry, isBinary]).toString());
+fileData.put$O$O(prefix + "/" + name , p$1.appendData$javajs_util_SB$S$javajs_util_CompoundDocDirEntry$Z.apply(this, [Clazz.new_($I$(4,1)), name, thisEntry, isBinary]).toString());
 }}
 this.close$();
 });
 
 Clazz.newMeth(C$, 'getAllDataFiles$S$S', function (binaryFileList, firstFile) {
-var data=Clazz.new_($I$(4));
+var data=Clazz.new_($I$(4,1));
 data.append$S("Compound Document File Directory: ");
 data.append$S(this.getDirectoryListing$S("|"));
 data.append$S("\n");
@@ -109,7 +95,7 @@ for (var i=0; i < this.directory.size$(); i++) {
 var thisEntry=this.directory.get$I(i);
 if (thisEntry.entryName.equals$O(entryName)) return p$1.getEntryAsString$javajs_util_CompoundDocDirEntry$Z.apply(this, [thisEntry, false]);
 }
-return Clazz.new_($I$(4));
+return Clazz.new_($I$(4,1));
 });
 
 Clazz.newMeth(C$, 'getOffset$I', function (SID) {
@@ -198,9 +184,9 @@ try {
 while (thisSID > 0){
 p$1.gotoSector$I.apply(this, [thisSID]);
 for (var j=this.nDirEntriesperSector; --j >= 0; ) {
-thisEntry=Clazz.new_($I$(5).c$$javajs_util_CompoundDocument,[this]);
+thisEntry=Clazz.new_($I$(5,1).c$$javajs_util_CompoundDocument,[this]);
 thisEntry.readData$();
-this.directory.addLast$TV(thisEntry);
+this.directory.addLast$O(thisEntry);
 if (thisEntry.entryType == 5) this.rootEntry=thisEntry;
 }
 thisSID=this.SAT[thisSID];
@@ -215,21 +201,21 @@ throw e;
 }, p$1);
 
 Clazz.newMeth(C$, 'getEntryAsString$javajs_util_CompoundDocDirEntry$Z', function (thisEntry, asBinaryString) {
-if (thisEntry.isEmpty) return Clazz.new_($I$(4));
+if (thisEntry.isEmpty) return Clazz.new_($I$(4,1));
 return (thisEntry.isStandard ? p$1.getStandardStringData$I$I$Z.apply(this, [thisEntry.SIDfirstSector, thisEntry.lenStream, asBinaryString]) : p$1.getShortStringData$I$I$Z.apply(this, [thisEntry.SIDfirstSector, thisEntry.lenStream, asBinaryString]));
 }, p$1);
 
 Clazz.newMeth(C$, 'getStandardStringData$I$I$Z', function (thisSID, nBytes, asBinaryString) {
-var data=Clazz.new_($I$(4));
+var data=Clazz.new_($I$(4,1));
 var byteBuf=Clazz.array(Byte.TYPE, [this.sectorSize]);
-var gzipData=Clazz.new_($I$(6).c$$I,[nBytes]);
+var gzipData=Clazz.new_($I$(6,1).c$$I,[nBytes]);
 try {
 while (thisSID > 0 && nBytes > 0 ){
 p$1.gotoSector$I.apply(this, [thisSID]);
 nBytes=p$1.getSectorData$javajs_util_SB$BA$I$I$Z$javajs_util_ZipData.apply(this, [data, byteBuf, this.sectorSize, nBytes, asBinaryString, gzipData]);
 thisSID=this.SAT[thisSID];
 }
-if (nBytes == -9999) return Clazz.new_($I$(4));
+if (nBytes == -9999) return Clazz.new_($I$(4,1));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.out.println$S(e.toString());
@@ -260,12 +246,12 @@ if (--nBytes < 1) break;
 }, p$1);
 
 Clazz.newMeth(C$, 'getShortStringData$I$I$Z', function (shortSID, nBytes, asBinaryString) {
-var data=Clazz.new_($I$(4));
+var data=Clazz.new_($I$(4,1));
 if (this.rootEntry == null ) return data;
 var thisSID=this.rootEntry.SIDfirstSector;
 var ptShort=0;
 var byteBuf=Clazz.array(Byte.TYPE, [this.shortSectorSize]);
-var gzipData=Clazz.new_($I$(6).c$$I,[nBytes]);
+var gzipData=Clazz.new_($I$(6,1).c$$I,[nBytes]);
 try {
 while (thisSID >= 0 && shortSID >= 0  && nBytes > 0 ){
 while (shortSID - ptShort >= this.nShortSectorsPerStandardSector){
@@ -288,4 +274,4 @@ if (gzipData.isEnabled) gzipData.addTo$javajs_util_SB(data);
 return data;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

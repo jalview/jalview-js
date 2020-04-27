@@ -1,19 +1,12 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.Point','java.awt.Dimension',['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Rectangle", null, 'java.awt.geom.Rectangle2D', 'java.awt.Shape');
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.Point','java.awt.Dimension',['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Rectangle", null, 'java.awt.geom.Rectangle2D', 'java.awt.Shape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['x','y','width','height']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I$I$I.apply(this, [0, 0, 0, 0]);
@@ -24,7 +17,7 @@ C$.c$$I$I$I$I.apply(this, [r.x, r.y, r.width, r.height]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (x, y, width, height) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.x=x;
 this.y=y;
 this.width=width;
@@ -117,7 +110,7 @@ this.height=height;
 });
 
 Clazz.newMeth(C$, 'getLocation$', function () {
-return Clazz.new_($I$(1).c$$I$I,[this.x, this.y]);
+return Clazz.new_($I$(1,1).c$$I$I,[this.x, this.y]);
 });
 
 Clazz.newMeth(C$, 'setLocation$java_awt_Point', function (p) {
@@ -165,7 +158,7 @@ if (this.height < 0) this.height=2147483647;
 });
 
 Clazz.newMeth(C$, 'getSize$', function () {
-return Clazz.new_($I$(2).c$$I$I,[this.width, this.height]);
+return Clazz.new_($I$(2,1).c$$I$I,[this.width, this.height]);
 });
 
 Clazz.newMeth(C$, 'setSize$java_awt_Dimension', function (d) {
@@ -416,7 +409,7 @@ out|=8;
 Clazz.newMeth(C$, 'createIntersection$java_awt_geom_Rectangle2D', function (r) {
 if (Clazz.instanceOf(r, "java.awt.Rectangle")) {
 return this.intersection$java_awt_Rectangle(r);
-}var dest=Clazz.new_($I$(3));
+}var dest=Clazz.new_($I$(3,1));
 $I$(4).intersect$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -424,7 +417,7 @@ return dest;
 Clazz.newMeth(C$, 'createUnion$java_awt_geom_Rectangle2D', function (r) {
 if (Clazz.instanceOf(r, "java.awt.Rectangle")) {
 return this.union$java_awt_Rectangle(r);
-}var dest=Clazz.new_($I$(3));
+}var dest=Clazz.new_($I$(3,1));
 $I$(4).union$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -440,4 +433,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[x=" + this.x + ",y=" + this.y + ",width=" + this.width + ",height=" + this.height + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,23 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent.locks"),p$1={},p$2={},I$=[[0,['java.util.concurrent.locks.AbstractQueuedSynchronizer','.Node'],'Thread','java.util.concurrent.locks.LockSupport','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractQueuedSynchronizer", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent.locks"),p$1={},p$2={},I$=[[0,['java.util.concurrent.locks.AbstractQueuedSynchronizer','.Node'],'Thread','java.util.concurrent.locks.LockSupport','java.util.concurrent.locks.AbstractQueuedSynchronizer','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractQueuedSynchronizer", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.concurrent.locks.AbstractOwnableSynchronizer', 'java.io.Serializable');
+C$.$classes$=[['Node',24],['ConditionObject',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.head=null;
-this.tail=null;
-this.state=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['state'],'O',['head','java.util.concurrent.locks.AbstractQueuedSynchronizer.Node','+tail']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getState$', function () {
@@ -29,6 +24,8 @@ this.state=newState;
 });
 
 Clazz.newMeth(C$, 'compareAndSetState$I$I', function (expect, update) {
+if (this.state != expect) return false;
+this.state=update;
 return true;
 });
 
@@ -36,7 +33,7 @@ Clazz.newMeth(C$, 'enq$java_util_concurrent_locks_AbstractQueuedSynchronizer_Nod
 for (; ; ) {
 var t=this.tail;
 if (t == null ) {
-if (p$2.compareAndSetHead$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node.apply(this, [Clazz.new_($I$(1))])) this.tail=this.head;
+if (p$2.compareAndSetHead$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node.apply(this, [Clazz.new_($I$(1,1))])) this.tail=this.head;
 } else {
 node.prev=t;
 if (p$2.compareAndSetTail$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node.apply(this, [t, node])) {
@@ -46,7 +43,7 @@ return t;
 }, p$2);
 
 Clazz.newMeth(C$, 'addWaiter$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node', function (mode) {
-var node=Clazz.new_($I$(1).c$$Thread$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node,[$I$(2).currentThread$(), mode]);
+var node=Clazz.new_([$I$(2).currentThread$(), mode],$I$(1,1).c$$Thread$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node);
 var pred=this.tail;
 if (pred != null ) {
 node.prev=pred;
@@ -384,30 +381,30 @@ return n;
 });
 
 Clazz.newMeth(C$, 'getQueuedThreads$', function () {
-var list=Clazz.new_($I$(4));
+var list=Clazz.new_($I$(5,1));
 for (var p=this.tail; p != null ; p=p.prev) {
 var t=p.thread;
-if (t != null ) list.add$TE(t);
+if (t != null ) list.add$O(t);
 }
 return list;
 });
 
 Clazz.newMeth(C$, 'getExclusiveQueuedThreads$', function () {
-var list=Clazz.new_($I$(4));
+var list=Clazz.new_($I$(5,1));
 for (var p=this.tail; p != null ; p=p.prev) {
 if (!p.isShared$()) {
 var t=p.thread;
-if (t != null ) list.add$TE(t);
+if (t != null ) list.add$O(t);
 }}
 return list;
 });
 
 Clazz.newMeth(C$, 'getSharedQueuedThreads$', function () {
-var list=Clazz.new_($I$(4));
+var list=Clazz.new_($I$(5,1));
 for (var p=this.tail; p != null ; p=p.prev) {
 if (p.isShared$()) {
 var t=p.thread;
-if (t != null ) list.add$TE(t);
+if (t != null ) list.add$O(t);
 }}
 return list;
 });
@@ -485,43 +482,40 @@ return condition.getWaitingThreads$();
 });
 
 Clazz.newMeth(C$, 'compareAndSetHead$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node', function (update) {
+if (this.head != null ) return false;
+this.head=update;
 return true;
 }, p$2);
 
 Clazz.newMeth(C$, 'compareAndSetTail$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node', function (expect, update) {
+if (this.tail !== expect ) return false;
+this.tail=update;
 return true;
 }, p$2);
 
 Clazz.newMeth(C$, 'compareAndSetWaitStatus$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node$I$I', function (node, expect, update) {
+if (node.waitStatus != expect) return false;
+node.waitStatus=update;
 return true;
 }, 1);
 
 Clazz.newMeth(C$, 'compareAndSetNext$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node', function (node, expect, update) {
+if (node.next !== expect ) return false;
+node.next=update;
 return true;
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractQueuedSynchronizer, "Node", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractQueuedSynchronizer, "Node", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.SHARED=null;
-C$.EXCLUSIVE=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.SHARED=Clazz.new_(C$);
-C$.EXCLUSIVE=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.waitStatus=0;
-this.prev=null;
-this.next=null;
-this.thread=null;
-this.nextWaiter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['waitStatus'],'O',['+prev','+next','thread','Thread','nextWaiter','java.util.concurrent.locks.AbstractQueuedSynchronizer.Node']]
+,['O',['SHARED','java.util.concurrent.locks.AbstractQueuedSynchronizer.Node','+EXCLUSIVE']]]
 
 Clazz.newMeth(C$, 'isShared$', function () {
 return this.nextWaiter === C$.SHARED ;
@@ -534,40 +528,40 @@ if (p == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Thread$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node', function (thread, mode) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.nextWaiter=mode;
 this.thread=thread;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Thread$I', function (thread, waitStatus) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.waitStatus=waitStatus;
 this.thread=thread;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.SHARED=Clazz.new_(C$);
+C$.EXCLUSIVE=null;
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractQueuedSynchronizer, "ConditionObject", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractQueuedSynchronizer, "ConditionObject", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['java.util.concurrent.locks.Condition', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.firstWaiter=null;
-this.lastWaiter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['firstWaiter','java.util.concurrent.locks.AbstractQueuedSynchronizer.Node','+lastWaiter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'addConditionWaiter', function () {
@@ -575,7 +569,7 @@ var t=this.lastWaiter;
 if (t != null  && t.waitStatus != -2 ) {
 p$1.unlinkCancelledWaiters.apply(this, []);
 t=this.lastWaiter;
-}var node=Clazz.new_($I$(1).c$$Thread$I,[$I$(2).currentThread$(), -2]);
+}var node=Clazz.new_([$I$(2).currentThread$(), -2],$I$(1,1).c$$Thread$I);
 if (t == null ) this.firstWaiter=node;
  else t.nextWaiter=node;
 this.lastWaiter=node;
@@ -634,7 +628,7 @@ while (!this.this$0.isOnSyncQueue$java_util_concurrent_locks_AbstractQueuedSynch
 $I$(3).park$O(this);
 if ($I$(2).interrupted$()) interrupted=true;
 }
-if (this.this$0.acquireQueued$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node$I.apply(this.this$0, [node, savedState]) || interrupted ) P$.AbstractQueuedSynchronizer.selfInterrupt$();
+if (this.this$0.acquireQueued$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node$I.apply(this.this$0, [node, savedState]) || interrupted ) $I$(4).selfInterrupt$();
 });
 
 Clazz.newMeth(C$, 'checkInterruptWhileWaiting$java_util_concurrent_locks_AbstractQueuedSynchronizer_Node', function (node) {
@@ -643,7 +637,7 @@ return $I$(2).interrupted$() ? (this.this$0.transferAfterCancelledWait$java_util
 
 Clazz.newMeth(C$, 'reportInterruptAfterWait$I', function (interruptMode) {
 if (interruptMode == -1) throw Clazz.new_(Clazz.load('InterruptedException'));
- else if (interruptMode == 1) P$.AbstractQueuedSynchronizer.selfInterrupt$();
+ else if (interruptMode == 1) $I$(4).selfInterrupt$();
 }, p$1);
 
 Clazz.newMeth(C$, 'await$', function () {
@@ -751,14 +745,14 @@ return n;
 
 Clazz.newMeth(C$, 'getWaitingThreads$', function () {
 if (!this.this$0.isHeldExclusively$.apply(this.this$0, [])) throw Clazz.new_(Clazz.load('IllegalMonitorStateException'));
-var list=Clazz.new_($I$(4));
+var list=Clazz.new_($I$(5,1));
 for (var w=this.firstWaiter; w != null ; w=w.nextWaiter) {
 if (w.waitStatus == -2) {
 var t=w.thread;
-if (t != null ) list.add$TE(t);
+if (t != null ) list.add$O(t);
 }}
 return list;
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

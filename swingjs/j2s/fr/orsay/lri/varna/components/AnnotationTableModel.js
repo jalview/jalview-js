@@ -1,27 +1,22 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationTableModel", null, 'javax.swing.table.AbstractTableModel');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationTableModel", null, 'javax.swing.table.AbstractTableModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.columnNames=null;
-this.data=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.columnNames=Clazz.array(String, -1, ["Annotation"]);
-this.data=Clazz.new_($I$(1));
-}, 1);
+this.data=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['columnNames','String[]','data','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$$java_util_ArrayList', function (annot) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var ligne;
 for (var i=0; i < annot.size$(); i++) {
-ligne=Clazz.new_($I$(1));
-ligne.add$TE(annot.get$I(i));
-this.data.add$TE(ligne);
+ligne=Clazz.new_($I$(1,1));
+ligne.add$O(annot.get$I(i));
+this.data.add$O(ligne);
 }
 }, 1);
 
@@ -53,10 +48,10 @@ return true;
 }});
 
 Clazz.newMeth(C$, 'setValueAt$O$I$I', function (value, row, col) {
-this.data.get$I(row).set$I$TE(col, value);
+this.data.get$I(row).set$I$O(col, value);
 this.fireTableCellUpdated$I$I(row, col);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

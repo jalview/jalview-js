@@ -1,26 +1,22 @@
-(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'sun.awt.geom.Order0','sun.awt.geom.Order1','sun.awt.geom.Order2','sun.awt.geom.Order3','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Curve");
+(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'sun.awt.geom.Order0','sun.awt.geom.Order1','sun.awt.geom.Order2','sun.awt.geom.Order3','InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Curve");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.direction=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['direction']]]
 
 Clazz.newMeth(C$, 'insertMove$java_util_Vector$D$D', function (curves, x, y) {
-curves.add$TE(Clazz.new_($I$(1).c$$D$D,[x, y]));
+curves.add$O(Clazz.new_($I$(1,1).c$$D$D,[x, y]));
 }, 1);
 
 Clazz.newMeth(C$, 'insertLine$java_util_Vector$D$D$D$D', function (curves, x0, y0, x1, y1) {
 if (y0 < y1 ) {
-curves.add$TE(Clazz.new_($I$(2).c$$D$D$D$D$I,[x0, y0, x1, y1, 1]));
+curves.add$O(Clazz.new_($I$(2,1).c$$D$D$D$D$I,[x0, y0, x1, y1, 1]));
 } else if (y0 > y1 ) {
-curves.add$TE(Clazz.new_($I$(2).c$$D$D$D$D$I,[x1, y1, x0, y0, -1]));
+curves.add$O(Clazz.new_($I$(2,1).c$$D$D$D$D$I,[x1, y1, x0, y0, -1]));
 } else {
 }}, 1);
 
@@ -328,7 +324,7 @@ crossings=C$.rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin,
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (direction) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.direction=direction;
 }, 1);
 
@@ -445,7 +441,7 @@ if (y1 <= yrange[0] ) {
 System.err.println$S("this == " + this);
 System.err.println$S("that == " + that);
 System.out.println$S("target range = " + new Double(yrange[0]).toString() + "=>" + new Double(yrange[1]).toString() );
-throw Clazz.new_($I$(5).c$$S,["sun.awt.geom.Curve backstepping from " + new Double(yrange[0]).toString() + " to " + new Double(y1).toString() ]);
+throw Clazz.new_(["sun.awt.geom.Curve backstepping from " + new Double(yrange[0]).toString() + " to " + new Double(y1).toString() ],$I$(5,1).c$$S);
 }yrange[1]=y1;
 if (this.getXMax$() <= that.getXMin$() ) {
 if (this.getXMin$() == that.getXMax$() ) {
@@ -551,7 +547,7 @@ var ys=this.YforT$D(s);
 if (s == s0  || s == s1  ) {
 System.out.println$S("s0 = " + new Double(s0).toString());
 System.out.println$S("s1 = " + new Double(s1).toString());
-throw Clazz.new_($I$(5).c$$S,["no s progress!"]);
+throw Clazz.new_($I$(5,1).c$$S,["no s progress!"]);
 }if (t1 - t0 > 0.001 ) {
 var t=(t0 + t1) / 2;
 var xt=that.XforT$D(t);
@@ -559,7 +555,7 @@ var yt=that.YforT$D(t);
 if (t == t0  || t == t1  ) {
 System.out.println$S("t0 = " + new Double(t0).toString());
 System.out.println$S("t1 = " + new Double(t1).toString());
-throw Clazz.new_($I$(5).c$$S,["no t progress!"]);
+throw Clazz.new_($I$(5,1).c$$S,["no t progress!"]);
 }if (ys >= yt0  && yt >= ys0  ) {
 if (this.findIntersect$sun_awt_geom_Curve$DA$D$I$I$D$D$D$D$D$D$D$D$D$D$D$D(that, yrange, ymin, slevel + 1, tlevel + 1, s0, xs0, ys0, s, xs, ys, t0, xt0, yt0, t, xt, yt)) {
 return true;
@@ -586,7 +582,7 @@ var yt=that.YforT$D(t);
 if (t == t0  || t == t1  ) {
 System.out.println$S("t0 = " + new Double(t0).toString());
 System.out.println$S("t1 = " + new Double(t1).toString());
-throw Clazz.new_($I$(5).c$$S,["no t progress!"]);
+throw Clazz.new_($I$(5,1).c$$S,["no t progress!"]);
 }if (yt >= ys0 ) {
 if (this.findIntersect$sun_awt_geom_Curve$DA$D$I$I$D$D$D$D$D$D$D$D$D$D$D$D(that, yrange, ymin, slevel, tlevel + 1, s0, xs0, ys0, s1, xs1, ys1, t0, xt0, yt0, t, xt, yt)) {
 return true;
@@ -640,4 +636,4 @@ return (Math.abs(v1 - v2) < Math.max(Math.abs(v1), Math.abs(v2)) * 1.0E-10 );
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

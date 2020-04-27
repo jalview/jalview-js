@@ -1,18 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.text"),I$=[[0,'java.lang.ref.SoftReference','InternalError','java.text.StringCharacterIterator','java.util.Locale',['java.text.BreakIterator','.BreakIteratorCache'],'sun.util.locale.provider.LocaleProviderAdapter','java.text.spi.BreakIteratorProvider','sun.util.locale.provider.LocaleServiceProviderPool']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BreakIterator", function(){
+(function(){var P$=Clazz.newPackage("java.text"),I$=[[0,['java.text.BreakIterator','.BreakIteratorCache'],'InternalError','java.text.StringCharacterIterator','java.util.Locale','sun.util.locale.provider.LocaleProviderAdapter','java.text.spi.BreakIteratorProvider','sun.util.locale.provider.LocaleServiceProviderPool']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BreakIterator", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Cloneable');
-C$.iterCache=null;
+C$.$classes$=[['BreakIteratorCache',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.iterCache=Clazz.array($I$(1), [4]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['iterCache','java.text.BreakIterator.BreakIteratorCache[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'clone$', function () {
@@ -20,7 +21,7 @@ try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(2).c$$Throwable,[e]);
+throw Clazz.new_($I$(2,1).c$$Throwable,[e]);
 } else {
 throw e;
 }
@@ -45,7 +46,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 });
 
 Clazz.newMeth(C$, 'setText$S', function (newText) {
-this.setText$java_text_CharacterIterator(Clazz.new_($I$(3).c$$S,[newText]));
+this.setText$java_text_CharacterIterator(Clazz.new_($I$(3,1).c$$S,[newText]));
 });
 
 Clazz.newMeth(C$, 'getWordInstance$', function () {
@@ -82,21 +83,21 @@ return C$.getBreakInstance$java_util_Locale$I(locale, 3);
 
 Clazz.newMeth(C$, 'getBreakInstance$java_util_Locale$I', function (locale, type) {
 if (C$.iterCache[type] != null ) {
-var cache=C$.iterCache[type].get$();
+var cache=C$.iterCache[type];
 if (cache != null ) {
 if (cache.getLocale$().equals$O(locale)) {
 return cache.createBreakInstance$();
 }}}var result=C$.createBreakInstance$java_util_Locale$I(locale, type);
-var cache=Clazz.new_($I$(5).c$$java_util_Locale$java_text_BreakIterator,[locale, result]);
-C$.iterCache[type]=Clazz.new_($I$(1).c$$TT,[cache]);
+var cache=Clazz.new_($I$(1,1).c$$java_util_Locale$java_text_BreakIterator,[locale, result]);
+C$.iterCache[type]=cache;
 return result;
 }, 1);
 
 Clazz.newMeth(C$, 'createBreakInstance$java_util_Locale$I', function (locale, type) {
-var adapter=$I$(6).getAdapter$Class$java_util_Locale(Clazz.getClass($I$(7)), locale);
+var adapter=$I$(5,"getAdapter$Class$java_util_Locale",[Clazz.getClass($I$(6)), locale]);
 var iterator=C$.createBreakInstance$sun_util_locale_provider_LocaleProviderAdapter$java_util_Locale$I(adapter, locale, type);
 if (iterator == null ) {
-iterator=C$.createBreakInstance$sun_util_locale_provider_LocaleProviderAdapter$java_util_Locale$I($I$(6).forJRE$(), locale, type);
+iterator=C$.createBreakInstance$sun_util_locale_provider_LocaleProviderAdapter$java_util_Locale$I($I$(5).forJRE$(), locale, type);
 }return iterator;
 }, 1);
 
@@ -121,28 +122,27 @@ return iterator;
 }, 1);
 
 Clazz.newMeth(C$, 'getAvailableLocales$', function () {
-var pool=$I$(8).getPool$Class(Clazz.getClass($I$(7)));
+var pool=$I$(7,"getPool$Class",[Clazz.getClass($I$(6))]);
 return pool.getAvailableLocales$();
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.iterCache=Clazz.array($I$(1), [4]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.BreakIterator, "BreakIteratorCache", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BreakIterator, "BreakIteratorCache", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.iter=null;
-this.locale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['iter','java.text.BreakIterator','locale','java.util.Locale']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Locale$java_text_BreakIterator', function (locale, iter) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.locale=locale;
 this.iter=iter.clone$();
 }, 1);
@@ -158,4 +158,4 @@ return this.iter.clone$();
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

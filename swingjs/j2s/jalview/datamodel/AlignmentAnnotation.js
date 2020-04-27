@@ -1,50 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.HashMap','jalview.analysis.Rna','java.util.Arrays','jalview.datamodel.SFSortByEnd','StringBuffer','jalview.schemes.ResidueProperties',['jalview.datamodel.AlignmentAnnotation','.AnnotCharSequence'],'jalview.datamodel.GraphLine','jalview.datamodel.Annotation','StringBuilder','Error','java.util.Collections','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignmentAnnotation", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.HashMap','jalview.analysis.Rna','java.util.Arrays','jalview.datamodel.SFSortByEnd','StringBuffer','jalview.schemes.ResidueProperties',['jalview.datamodel.AlignmentAnnotation','.AnnotCharSequence'],'jalview.datamodel.GraphLine','jalview.datamodel.Annotation','StringBuilder','Error','java.util.Collections','java.util.ArrayList']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignmentAnnotation", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.counter=0;
+C$.$classes$=[['AnnotCharSequence',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.counter=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.autoCalculated=false;
-this.annotationId=null;
-this.sequenceRef=null;
-this.label=null;
-this.description=null;
-this.annotations=null;
-this.bps=null;
-this._rnasecstr=null;
-this.invalidrnastruc=0;
-this.sequenceMapping=null;
-this.graphMin=0;
-this.graphMax=0;
-this.score=0;
-this.hasScore=false;
-this.threshold=null;
-this.editable=false;
-this.hasIcons=false;
-this.hasText=false;
-this.visible=false;
-this.graphGroup=0;
-this.height=0;
-this.graph=0;
-this.graphHeight=0;
-this.padGaps=false;
-this.belowAlignment=false;
-this.groupRef=null;
-this.showAllColLabels=false;
-this.scaleColLabel=false;
-this.centreColLabels=false;
-this.isrna=false;
-this._lastrnaannot=0;
-this.calcId=null;
-this.properties=null;
-this._linecolour=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.autoCalculated=false;
@@ -67,8 +27,11 @@ this.scaleColLabel=false;
 this.centreColLabels=false;
 this._lastrnaannot=-1;
 this.calcId="";
-this.properties=Clazz.new_($I$(1));
-}, 1);
+this.properties=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['autoCalculated','hasScore','editable','hasIcons','hasText','visible','padGaps','belowAlignment','showAllColLabels','scaleColLabel','centreColLabels','isrna'],'D',['score'],'F',['graphMin','graphMax'],'I',['graphGroup','height','graph','graphHeight'],'J',['invalidrnastruc','_lastrnaannot'],'S',['annotationId','label','description','calcId'],'O',['sequenceRef','jalview.datamodel.SequenceI','annotations','jalview.datamodel.Annotation[]','bps','java.util.List','_rnasecstr','jalview.datamodel.SequenceFeature[]','sequenceMapping','java.util.Map','threshold','jalview.datamodel.GraphLine','groupRef','jalview.datamodel.SequenceGroup','properties','java.util.Map','_linecolour','java.awt.Color']]
+,['J',['counter']]]
 
 Clazz.newMeth(C$, '_updateRnaSecStr$CharSequence', function (rnaAnnotation) {
 try {
@@ -95,7 +58,7 @@ var mxval=0;
 for (var x=0; x < this._rnasecstr.length; x++) {
 var val=0;
 try {
-val=(Integer.valueOf$S(this._rnasecstr[x].getFeatureGroup$())).intValue$();
+val=(Integer.valueOf$S(this._rnasecstr[x].getFeatureGroup$())).valueOf();
 if (mxval < val) {
 mxval=val;
 }} catch (q) {
@@ -125,8 +88,8 @@ if (thisSfArray == null  || thatSfArray == null  ) {
 return thisSfArray == null  && thatSfArray == null  ;
 }if (thisSfArray.length != thatSfArray.length) {
 return false;
-}$I$(3).sort$TTA$java_util_Comparator(thisSfArray, Clazz.new_($I$(4)));
-$I$(3).sort$TTA$java_util_Comparator(thatSfArray, Clazz.new_($I$(4)));
+}$I$(3,"sort$OA$java_util_Comparator",[thisSfArray, Clazz.new_($I$(4,1))]);
+$I$(3,"sort$OA$java_util_Comparator",[thatSfArray, Clazz.new_($I$(4,1))]);
 for (var i=0; i < thisSfArray.length; i++) {
 var thisSf=thisSfArray[i];
 var thatSf=thatSfArray[i];
@@ -154,7 +117,7 @@ return 0;
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$jalview_datamodel_AnnotationA', function (label, description, annotations) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setAnnotationId$();
 this.editable=true;
 this.label=label;
@@ -166,7 +129,7 @@ this.validateRangeAndDisplay$();
 Clazz.newMeth(C$, 'areLabelsSecondaryStructure$', function () {
 var nonSSLabel=false;
 this.isrna=false;
-var rnastring=Clazz.new_($I$(5));
+var rnastring=Clazz.new_($I$(5,1));
 var firstChar=String.fromCharCode(0);
 for (var i=0; i < this.annotations.length; i++) {
 if (this.annotations[i] == null ) {
@@ -199,12 +162,12 @@ this.annotations[j].secondaryStructure=" ";
 }}
 } else {
 if (this.isrna) {
-p$1._updateRnaSecStr$CharSequence.apply(this, [Clazz.new_($I$(7), [this, null])]);
+p$1._updateRnaSecStr$CharSequence.apply(this, [Clazz.new_($I$(7,1),[this, null])]);
 }}});
 
 Clazz.newMeth(C$, 'getRNAStruc$', function () {
 if (this.isrna) {
-var rnastruc=Clazz.new_($I$(7), [this, null]).toString();
+var rnastruc=Clazz.new_($I$(7,1),[this, null]).toString();
 if (this._lastrnaannot != rnastruc.hashCode$()) {
 this._lastrnaannot=rnastruc.hashCode$();
 p$1._updateRnaSecStr$CharSequence.apply(this, [rnastruc]);
@@ -213,7 +176,7 @@ p$1._updateRnaSecStr$CharSequence.apply(this, [rnastruc]);
 });
 
 Clazz.newMeth(C$, 'c$$S$S$jalview_datamodel_AnnotationA$F$F$I', function (label, description, annotations, min, max, graphType) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setAnnotationId$();
 this.editable=graphType == 0;
 this.label=label;
@@ -265,7 +228,7 @@ this.annotations[i].displayCharacter="";
 }});
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation', function (annotation) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setAnnotationId$();
 this.label= String.instantialize(annotation.label);
 if (annotation.description != null ) {
@@ -289,20 +252,20 @@ this.scaleColLabel=annotation.scaleColLabel;
 this.showAllColLabels=annotation.showAllColLabels;
 this.calcId=annotation.calcId;
 if (annotation.properties != null ) {
-this.properties=Clazz.new_($I$(1));
+this.properties=Clazz.new_($I$(1,1));
 for (var val, $val = annotation.properties.entrySet$().iterator$(); $val.hasNext$()&&((val=($val.next$())),1);) {
-this.properties.put$TK$TV(val.getKey$(), val.getValue$());
+this.properties.put$O$O(val.getKey$(), val.getValue$());
 }
 }if (this.hasScore=annotation.hasScore) {
 this.score=annotation.score;
 }if (annotation.threshold != null ) {
-this.threshold=Clazz.new_($I$(8).c$$jalview_datamodel_GraphLine,[annotation.threshold]);
+this.threshold=Clazz.new_($I$(8,1).c$$jalview_datamodel_GraphLine,[annotation.threshold]);
 }var ann=annotation.annotations;
 if (annotation.annotations != null ) {
 this.annotations=Clazz.array($I$(9), [ann.length]);
 for (var i=0; i < ann.length; i++) {
 if (ann[i] != null ) {
-this.annotations[i]=Clazz.new_($I$(9).c$$jalview_datamodel_Annotation,[ann[i]]);
+this.annotations[i]=Clazz.new_($I$(9,1).c$$jalview_datamodel_Annotation,[ann[i]]);
 if (this._linecolour != null ) {
 this._linecolour=this.annotations[i].colour;
 }}}
@@ -310,7 +273,7 @@ this._linecolour=this.annotations[i].colour;
 this.sequenceRef=annotation.sequenceRef;
 if (annotation.sequenceMapping != null ) {
 var p=null;
-this.sequenceMapping=Clazz.new_($I$(1));
+this.sequenceMapping=Clazz.new_($I$(1,1));
 var pos=annotation.sequenceMapping.keySet$().iterator$();
 while (pos.hasNext$()){
 p=pos.next$();
@@ -320,7 +283,7 @@ continue;
 }if (ann != null ) {
 for (var i=0; i < ann.length; i++) {
 if (ann[i] === a ) {
-this.sequenceMapping.put$TK$TV(p, this.annotations[i]);
+this.sequenceMapping.put$O$O(p, this.annotations[i]);
 }}
 }}
 } else {
@@ -347,12 +310,12 @@ System.arraycopy$O$I$O$I$I(this.annotations, startRes, temp, 0, endRes - startRe
 var spos=this.sequenceRef.findPosition$I(startRes);
 var epos=this.sequenceRef.findPosition$I(endRes);
 if (this.sequenceMapping != null ) {
-var newmapping=Clazz.new_($I$(1));
+var newmapping=Clazz.new_($I$(1,1));
 var e=this.sequenceMapping.keySet$().iterator$();
 while (e.hasNext$()){
 var pos=e.next$();
 if (pos.intValue$() >= spos && pos.intValue$() <= epos ) {
-newmapping.put$TK$TV(pos, this.sequenceMapping.get$O(pos));
+newmapping.put$O$O(pos, this.sequenceMapping.get$O(pos));
 }}
 this.sequenceMapping.clear$();
 this.sequenceMapping=newmapping;
@@ -373,7 +336,7 @@ return true;
 Clazz.newMeth(C$, 'toString', function () {
 if (this.annotations == null ) {
 return "";
-}var buffer=Clazz.new_($I$(10).c$$I,[256]);
+}var buffer=Clazz.new_($I$(10,1).c$$I,[256]);
 for (var i=0; i < this.annotations.length; i++) {
 if (this.annotations[i] != null ) {
 if (this.graph != 0) {
@@ -408,7 +371,7 @@ return;
 }this.sequenceRef=seqRef;
 if (this.annotations == null ) {
 return;
-}this.sequenceMapping=Clazz.new_($I$(1));
+}this.sequenceMapping=Clazz.new_($I$(1,1));
 var seqPos;
 for (var i=0; i < this.annotations.length; i++) {
 if (this.annotations[i] != null ) {
@@ -416,7 +379,7 @@ if (alreadyMapped) {
 seqPos=seqRef.findPosition$I(i);
 } else {
 seqPos=i + startRes;
-}this.sequenceMapping.put$TK$TV( new Integer(seqPos), this.annotations[i]);
+}this.sequenceMapping.put$O$O(Integer.valueOf$I(seqPos), this.annotations[i]);
 }}
 });
 
@@ -434,7 +397,7 @@ var temp=Clazz.array($I$(9), [aSize]);
 var index;
 if (this.sequenceMapping != null ) {
 for (a=this.sequenceRef.getStart$(); a <= this.sequenceRef.getEnd$(); a++) {
-index= new Integer(a);
+index=Integer.valueOf$I(a);
 var annot=this.sequenceMapping.get$O(index);
 if (annot != null ) {
 position=this.sequenceRef.findIndex$I(a) - 1;
@@ -513,7 +476,7 @@ if (padgaps) {
 this.hasText=true;
 for (var i=0; i < this.annotations.length; i++) {
 if (this.annotations[i] == null ) {
-this.annotations[i]=Clazz.new_($I$(9).c$$S$S$C$F$java_awt_Color,[String.valueOf$C(gapchar), null, " ", 0.0, null]);
+this.annotations[i]=Clazz.new_([String.valueOf$C(gapchar), null, " ", 0.0, null],$I$(9,1).c$$S$S$C$F$java_awt_Color);
 } else if (this.annotations[i].displayCharacter == null  || this.annotations[i].displayCharacter.equals$O(" ") ) {
 this.annotations[i].displayCharacter=String.valueOf$C(gapchar);
 }}
@@ -550,15 +513,15 @@ return this.isrna;
 
 Clazz.newMeth(C$, 'liftOver$jalview_datamodel_SequenceI$jalview_datamodel_Mapping', function (sq, sp2sq) {
 if (sp2sq.getMappedWidth$() != sp2sq.getWidth$()) {
-throw Clazz.new_($I$(11).c$$S,["liftOver currently not implemented for transfer of annotation between different types of seqeunce"]);
+throw Clazz.new_($I$(11,1).c$$S,["liftOver currently not implemented for transfer of annotation between different types of seqeunce"]);
 }var mapIsTo=(sp2sq != null ) ? (sp2sq.getTo$() === sq  || sp2sq.getTo$() === sq.getDatasetSequence$()  ) : false;
-var mapForsq=Clazz.new_($I$(1));
+var mapForsq=Clazz.new_($I$(1,1));
 if (this.sequenceMapping != null ) {
 if (sp2sq != null ) {
 for (var ie, $ie = this.sequenceMapping.entrySet$().iterator$(); $ie.hasNext$()&&((ie=($ie.next$())),1);) {
-var mpos=Integer.valueOf$I(mapIsTo ? sp2sq.getMappedPosition$I((ie.getKey$()).intValue$()) : sp2sq.getPosition$I((ie.getKey$()).intValue$()));
-if ((mpos).intValue$() >= sq.getStart$()  && (mpos).intValue$() <= sq.getEnd$()  ) {
-mapForsq.put$TK$TV(mpos, ie.getValue$());
+var mpos=Integer.valueOf$I(mapIsTo ? sp2sq.getMappedPosition$I((ie.getKey$()).valueOf()) : sp2sq.getPosition$I((ie.getKey$()).valueOf()));
+if ((mpos).valueOf() >= sq.getStart$()  && (mpos).valueOf() <= sq.getEnd$()  ) {
+mapForsq.put$O$O(mpos, ie.getValue$());
 }}
 this.sequenceMapping=mapForsq;
 this.sequenceRef=sq;
@@ -569,7 +532,7 @@ this.adjustForAlignment$();
 Clazz.newMeth(C$, 'remap$jalview_datamodel_SequenceI$java_util_HashMap$I$I$I', function (newref, mapping, from, to, idxoffset) {
 if (mapping != null ) {
 var old=this.sequenceMapping;
-var remap=Clazz.new_($I$(1));
+var remap=Clazz.new_($I$(1,1));
 var index=-1;
 for (var mp, $mp = mapping.values$().iterator$(); $mp.hasNext$()&&((mp=($mp.next$())),1);) {
 if (index++ < 0) {
@@ -582,10 +545,10 @@ if (mp != null  && mp.length > from ) {
 ann=this.sequenceMapping.get$O(Integer.valueOf$I(mp[from]));
 }}if (ann != null ) {
 if (to == -1) {
-remap.put$TK$TV(Integer.valueOf$I(idxoffset + index), ann);
+remap.put$O$O(Integer.valueOf$I(idxoffset + index), ann);
 } else {
 if (to > -1 && to < mp.length ) {
-remap.put$TK$TV(Integer.valueOf$I(mp[to]), ann);
+remap.put$O$O(Integer.valueOf$I(mp[to]), ann);
 }}}}
 this.sequenceMapping=remap;
 old.clear$();
@@ -602,8 +565,8 @@ return null;
 
 Clazz.newMeth(C$, 'setProperty$S$S', function (property, value) {
 if (this.properties == null ) {
-this.properties=Clazz.new_($I$(1));
-}this.properties.put$TK$TV(property, value);
+this.properties=Clazz.new_($I$(1,1));
+}this.properties.put$O$O(property, value);
 });
 
 Clazz.newMeth(C$, 'hasProperties$', function () {
@@ -677,7 +640,7 @@ this.restrict$I$I(start, end);
 }}});
 
 Clazz.newMeth(C$, 'removeHiddenAnnotation$I$I$jalview_datamodel_HiddenColumns', function (start, end, hiddenColumns) {
-var annels=Clazz.new_($I$(13));
+var annels=Clazz.new_($I$(13,1));
 var els=null;
 var w=0;
 var blocks=hiddenColumns.getVisContigsIterator$I$I$Z(start, end + 1, false);
@@ -694,7 +657,7 @@ copylength=annotationLength;
 } else {
 copylength=this.annotations.length - block[0];
 }}els=Clazz.array($I$(9), [annotationLength]);
-annels.add$TE(els);
+annels.add$O(els);
 System.arraycopy$O$I$O$I$I(this.annotations, block[0], els, 0, copylength);
 w+=annotationLength;
 }
@@ -708,10 +671,10 @@ w+=chnk.length;
 }}, p$1);
 
 Clazz.newMeth(C$, 'findAnnotations$Iterable$jalview_datamodel_SequenceI$S$S', function (list, seq, calcId, label) {
-var aa=Clazz.new_($I$(13));
+var aa=Clazz.new_($I$(13,1));
 for (var ann, $ann = list.iterator$(); $ann.hasNext$()&&((ann=($ann.next$())),1);) {
 if ((calcId == null  || (ann.getCalcId$() != null  && ann.getCalcId$().equals$O(calcId) ) ) && (seq == null  || (ann.sequenceRef != null  && ann.sequenceRef === seq  ) ) && (label == null  || (ann.label != null  && ann.label.equals$O(label) ) )  ) {
-aa.add$TE(ann);
+aa.add$O(ann);
 }}
 return aa;
 }, 1);
@@ -726,46 +689,45 @@ return true;
 }, 1);
 
 Clazz.newMeth(C$, 'findAnnotation$java_util_List$S', function (list, calcId) {
-var aa=Clazz.new_($I$(13));
+var aa=Clazz.new_($I$(13,1));
 if (calcId == null ) {
 return aa;
 }for (var a, $a = list.iterator$(); $a.hasNext$()&&((a=($a.next$())),1);) {
 if (a.getCalcId$() == calcId || (a.getCalcId$() != null  && calcId != null   && a.getCalcId$().equals$O(calcId) ) ) {
-aa.add$TE(a);
+aa.add$O(a);
 }}
 return aa;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.counter=0;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.AlignmentAnnotation, "AnnotCharSequence", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AlignmentAnnotation, "AnnotCharSequence", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'CharSequence');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.max=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.offset=0;
 this.max=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offset','max']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [0, this.this$0.annotations.length]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (start, end) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.offset=start;
 this.max=end;
 }, 1);
 
 Clazz.newMeth(C$, 'subSequence$I$I', function (start, end) {
-return Clazz.new_(C$.c$$I$I, [this, null, this.offset + start, this.offset + end]);
+return Clazz.new_(C$.c$$I$I,[this, null, this.offset + start, this.offset + end]);
 });
 
 Clazz.newMeth(C$, 'length$', function () {
@@ -788,4 +750,4 @@ return  String.instantialize(string);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

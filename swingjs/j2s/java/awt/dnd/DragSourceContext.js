@@ -1,25 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt.dnd"),p$1={},I$=[[0,'java.awt.dnd.DragSource']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DragSourceContext", null, null, ['java.awt.dnd.DragSourceListener', 'java.awt.dnd.DragSourceMotionListener', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt.dnd"),p$1={},I$=[[0,'java.awt.dnd.DragSource']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DragSourceContext", null, null, ['java.awt.dnd.DragSourceListener', 'java.awt.dnd.DragSourceMotionListener', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.peer=null;
-this.trigger=null;
-this.cursor=null;
-this.transferable=null;
-this.listener=null;
-this.useCustomCursor=false;
-this.sourceActions=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['useCustomCursor'],'I',['sourceActions'],'O',['peer','java.awt.dnd.peer.DragSourceContextPeer','trigger','java.awt.dnd.DragGestureEvent','cursor','java.awt.Cursor','transferable','java.awt.datatransfer.Transferable','listener','java.awt.dnd.DragSourceListener']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_dnd_peer_DragSourceContextPeer$java_awt_dnd_DragGestureEvent$java_awt_Cursor$java_awt_Image$java_awt_Point$java_awt_datatransfer_Transferable$java_awt_dnd_DragSourceListener', function (dscp, trigger, dragCursor, dragImage, offset, t, dsl) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (dscp == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["DragSourceContextPeer"]);
 }if (trigger == null ) {
@@ -127,7 +117,7 @@ dsl.dragDropEnd$java_awt_dnd_DragSourceDropEvent(dsde);
 }this.getDragSource$().processDragDropEnd$java_awt_dnd_DragSourceDropEvent(dsde);
 });
 
-Clazz.newMeth(C$, ['dragMouseMoved$java_awt_dnd_DragSourceDragEvent','dragMouseMoved$'], function (dsde) {
+Clazz.newMeth(C$, 'dragMouseMoved$java_awt_dnd_DragSourceDragEvent', function (dsde) {
 this.getDragSource$().processDragMouseMoved$java_awt_dnd_DragSourceDragEvent(dsde);
 });
 
@@ -166,4 +156,4 @@ if (this.peer != null ) this.peer.setCursor$java_awt_Cursor(this.cursor);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

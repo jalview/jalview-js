@@ -1,38 +1,17 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'jalview.util.Comparison','jalview.datamodel.features.SequenceFeatures','jalview.datamodel.DBRefEntry','jalview.datamodel.SequenceFeature','jalview.datamodel.AlignmentAnnotation','jalview.datamodel.PDBEntry','java.util.Vector','StringBuffer','java.util.Arrays','jalview.datamodel.Mapping','jalview.datamodel.SequenceCursor','jalview.datamodel.Range','jalview.analysis.AlignSeq','java.util.BitSet','java.util.ArrayList','jalview.util.StringUtils',['jalview.datamodel.Sequence','.DBModList'],'java.util.Collections','jalview.util.DBRefUtils','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Sequence", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'jalview.util.Comparison','jalview.datamodel.features.SequenceFeatures','jalview.datamodel.DBRefEntry','jalview.datamodel.SequenceFeature','jalview.datamodel.AlignmentAnnotation','jalview.datamodel.PDBEntry','java.util.Vector','StringBuilder','java.util.Arrays','jalview.datamodel.GeneLocus','jalview.datamodel.Mapping','jalview.datamodel.SequenceCursor','jalview.datamodel.Range','jalview.analysis.AlignSeq','java.util.BitSet','java.util.ArrayList','jalview.util.StringUtils',['jalview.datamodel.Sequence','.DBModList'],'java.util.Collections','jalview.util.DBRefUtils']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Sequence", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'jalview.datamodel.ASequence', 'jalview.datamodel.SequenceI');
+C$.$classes$=[['DBModList',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.datasetSequence=null;
-this.name=null;
-this.sequence=null;
-this.description=null;
-this.start=0;
-this.end=0;
-this.pdbIds=null;
-this.vamsasId=null;
-this.dbrefs=null;
-this.refModCount=0;
-this.rna=null;
-this.annotation=null;
-this.sequenceFeatureStore=null;
-this.cursor=null;
-this.changeCount=0;
-this._isNa=false;
-this._seqhash=0;
-this.primaryRefs=null;
-this.tmpList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.refModCount=0;
 this._seqhash=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_isNa'],'I',['start','end','refModCount','changeCount','_seqhash'],'S',['name','description','vamsasId'],'O',['datasetSequence','jalview.datamodel.SequenceI','sequence','char[]','pdbIds','java.util.Vector','dbrefs','jalview.datamodel.Sequence.DBModList','rna','fr.orsay.lri.varna.models.rna.RNA','annotation','java.util.Vector','sequenceFeatureStore','jalview.datamodel.features.SequenceFeaturesI','cursor','jalview.datamodel.SequenceCursor','primaryRefs','java.util.List','+tmpList']]]
 
 Clazz.newMeth(C$, 'c$$S$S$I$I', function (name, sequence, start, end) {
 C$.c$.apply(this, []);
@@ -63,8 +42,8 @@ var suffix=this.name.substring$I(slashPos + 1);
 var range=suffix.split$S("-");
 if (range.length == 2) {
 try {
-var from=(Integer.valueOf$S(range[0])).intValue$();
-var to=(Integer.valueOf$S(range[1])).intValue$();
+var from=(Integer.valueOf$S(range[0])).valueOf();
+var to=(Integer.valueOf$S(range[1])).valueOf();
 if (from > 0 && to >= from ) {
 this.name=this.name.substring$I$I(0, slashPos);
 this.setStart$I(from);
@@ -92,8 +71,8 @@ this.end=endRes;
 }}});
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.sequenceFeatureStore=Clazz.new_($I$(2));
+Clazz.super_(C$, this);
+this.sequenceFeatureStore=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (name, sequence) {
@@ -119,10 +98,10 @@ this.setDatasetSequence$jalview_datamodel_SequenceI(seq.getDatasetSequence$());
 var dbr=seq.getDBRefs$();
 if (dbr != null ) {
 for (var i=0, n=dbr.size$(); i < n; i++) {
-this.addDBRef$jalview_datamodel_DBRefEntry(Clazz.new_($I$(3).c$$jalview_api_DBRefEntryI,[dbr.get$I(i)]));
+this.addDBRef$jalview_datamodel_DBRefEntry(Clazz.new_([dbr.get$I(i)],$I$(3,1).c$$jalview_api_DBRefEntryI));
 }
 }for (var sf, $sf = seq.getSequenceFeatures$().iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
-this.addSequenceFeature$jalview_datamodel_SequenceFeature(Clazz.new_($I$(4).c$$jalview_datamodel_SequenceFeature,[sf]));
+this.addSequenceFeature$jalview_datamodel_SequenceFeature(Clazz.new_($I$(4,1).c$$jalview_datamodel_SequenceFeature,[sf]));
 }
 }if (seq.getAnnotation$() != null ) {
 var sqann=seq.getAnnotation$();
@@ -135,13 +114,13 @@ for (var apos=0; !found && apos < alAnnotation.length ; apos++) {
 found=(alAnnotation[apos] === sqann[i] );
 }
 }if (found) {
-var newann=Clazz.new_($I$(5).c$$jalview_datamodel_AlignmentAnnotation,[sqann[i]]);
+var newann=Clazz.new_($I$(5,1).c$$jalview_datamodel_AlignmentAnnotation,[sqann[i]]);
 this.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(newann);
 }}
 }if (seq.getAllPDBEntries$() != null ) {
 var ids=seq.getAllPDBEntries$();
 for (var pdb, $pdb = ids.iterator$(); $pdb.hasNext$()&&((pdb=($pdb.next$())),1);) {
-this.addPDBId$jalview_datamodel_PDBEntry(Clazz.new_($I$(6).c$$jalview_datamodel_PDBEntry,[pdb]));
+this.addPDBId$jalview_datamodel_PDBEntry(Clazz.new_($I$(6,1).c$$jalview_datamodel_PDBEntry,[pdb]));
 }
 }});
 
@@ -149,7 +128,7 @@ Clazz.newMeth(C$, 'setSequenceFeatures$java_util_List', function (features) {
 if (this.datasetSequence != null ) {
 this.datasetSequence.setSequenceFeatures$java_util_List(features);
 return;
-}this.sequenceFeatureStore=Clazz.new_($I$(2).c$$java_util_List,[features]);
+}this.sequenceFeatureStore=Clazz.new_($I$(2,1).c$$java_util_List,[features]);
 });
 
 Clazz.newMeth(C$, 'addSequenceFeature$jalview_datamodel_SequenceFeature', function (sf) {
@@ -180,14 +159,14 @@ return this.datasetSequence != null  ? this.datasetSequence.getFeatures$() : thi
 
 Clazz.newMeth(C$, 'addPDBId$jalview_datamodel_PDBEntry', function (entry) {
 if (this.pdbIds == null ) {
-this.pdbIds=Clazz.new_($I$(7));
-this.pdbIds.add$TE(entry);
+this.pdbIds=Clazz.new_($I$(7,1));
+this.pdbIds.add$O(entry);
 return true;
 }for (var pdbe, $pdbe = this.pdbIds.iterator$(); $pdbe.hasNext$()&&((pdbe=($pdbe.next$())),1);) {
 if (pdbe.updateFrom$jalview_datamodel_PDBEntry(entry)) {
 return false;
 }}
-this.pdbIds.addElement$TE(entry);
+this.pdbIds.addElement$O(entry);
 return true;
 });
 
@@ -196,14 +175,15 @@ this.pdbIds=id;
 });
 
 Clazz.newMeth(C$, 'getAllPDBEntries$', function () {
-return this.pdbIds == null  ? Clazz.new_($I$(7)) : this.pdbIds;
+return this.pdbIds == null  ? Clazz.new_($I$(7,1)) : this.pdbIds;
 });
 
 Clazz.newMeth(C$, 'getDisplayId$Z', function (jvsuffix) {
-var result=Clazz.new_($I$(8).c$$S,[this.name]);
-if (jvsuffix) {
-result.append$S("/" + this.start + "-" + this.end );
-}return result.toString();
+if (!jvsuffix) {
+return this.name;
+}var result=Clazz.new_($I$(8,1).c$$S,[this.name]);
+result.append$S("/").append$I(this.start).append$S("-").append$I(this.end);
+return result.toString();
 });
 
 Clazz.newMeth(C$, 'setName$S', function (theName) {
@@ -217,6 +197,7 @@ return this.name;
 
 Clazz.newMeth(C$, 'setStart$I', function (start) {
 this.start=start;
+this.sequenceChanged$();
 });
 
 Clazz.newMeth(C$, 'getStart$', function () {
@@ -294,40 +275,15 @@ this.description=desc;
 });
 
 Clazz.newMeth(C$, 'setGeneLoci$S$S$S$jalview_util_MapList', function (speciesId, assemblyId, chromosomeId, map) {
-this.addDBRef$jalview_datamodel_DBRefEntry(Clazz.new_($I$(3).c$$S$S$S$jalview_datamodel_Mapping,[speciesId, assemblyId, "chromosome" + ":" + chromosomeId , Clazz.new_($I$(10).c$$jalview_util_MapList,[map])]));
+this.addDBRef$jalview_datamodel_DBRefEntry(Clazz.new_([speciesId, assemblyId, chromosomeId, Clazz.new_($I$(11,1).c$$jalview_util_MapList,[map])],$I$(10,1).c$$S$S$S$jalview_datamodel_Mapping));
 });
 
 Clazz.newMeth(C$, 'getGeneLoci$', function () {
 var refs=this.getDBRefs$();
 if (refs != null ) {
 for (var ref, $ref = refs.iterator$(); $ref.hasNext$()&&((ref=($ref.next$())),1);) {
-if (ref.isChromosome$()) {
-return ((P$.Sequence$1||
-(function(){var C$=Clazz.newClass(P$, "Sequence$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.datamodel.GeneLociI', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'getSpeciesId$', function () {
-return this.$finals$.ref.getSource$();
-});
-
-Clazz.newMeth(C$, 'getAssemblyId$', function () {
-return this.$finals$.ref.getVersion$();
-});
-
-Clazz.newMeth(C$, 'getChromosomeId$', function () {
-return this.$finals$.ref.getAccessionId$().substring$I("chromosome".length$() + 1);
-});
-
-Clazz.newMeth(C$, 'getMap$', function () {
-return this.$finals$.ref.getMap$().getMap$();
-});
-})()
-), Clazz.new_(P$.Sequence$1.$init$, [this, {ref: ref}]));
+if (Clazz.instanceOf(ref, "jalview.datamodel.GeneLociI")) {
+return ref;
 }}
 }return null;
 });
@@ -359,7 +315,7 @@ Clazz.newMeth(C$, 'updateCursor$I$I$I', function (residuePos, column, startColum
 var endColumn=this.isValidCursor$jalview_datamodel_SequenceCursor(this.cursor) ? this.cursor.lastColumnPosition : 0;
 if (residuePos == this.end) {
 endColumn=column;
-}this.cursor=Clazz.new_($I$(11).c$$jalview_datamodel_SequenceI$I$I$I$I$I,[this, residuePos, column, startColumn, endColumn, this.changeCount]);
+}this.cursor=Clazz.new_($I$(12,1).c$$jalview_datamodel_SequenceI$I$I$I$I$I,[this, residuePos, column, startColumn, endColumn, this.changeCount]);
 });
 
 Clazz.newMeth(C$, 'findIndex$I$jalview_datamodel_SequenceCursor', function (pos, curs) {
@@ -482,11 +438,11 @@ while (col < length && col < toColumn ){
 if (!$I$(1).isGap$C(this.sequence[col++])) {
 lastPosition++;
 }}
-return Clazz.new_($I$(12).c$$I$I,[firstPosition, lastPosition]);
+return Clazz.new_($I$(13,1).c$$I$I,[firstPosition, lastPosition]);
 });
 
 Clazz.newMeth(C$, 'gapMap$', function () {
-var seq=$I$(13).extractGaps$S$S($I$(1).GapChars,  String.instantialize(this.sequence));
+var seq=$I$(14,"extractGaps$S$S",[$I$(1).GapChars,  String.instantialize(this.sequence)]);
 var map=Clazz.array(Integer.TYPE, [seq.length$()]);
 var j=0;
 var p=0;
@@ -499,7 +455,7 @@ return map;
 });
 
 Clazz.newMeth(C$, 'gapBitset$', function () {
-var gaps=Clazz.new_($I$(14).c$$I,[this.sequence.length]);
+var gaps=Clazz.new_($I$(15,1).c$$I,[this.sequence.length]);
 var j=0;
 while (j < this.sequence.length){
 if ($I$(1).isGap$C(this.sequence[j])) {
@@ -524,7 +480,7 @@ return map;
 });
 
 Clazz.newMeth(C$, 'getInsertions$', function () {
-var map=Clazz.new_($I$(15));
+var map=Clazz.new_($I$(16,1));
 var lastj=-1;
 var j=0;
 var seqlen=this.sequence.length;
@@ -534,18 +490,18 @@ if (lastj == -1) {
 lastj=j;
 }} else {
 if (lastj != -1) {
-map.add$TE(Clazz.array(Integer.TYPE, -1, [lastj, j - 1]));
+map.add$O(Clazz.array(Integer.TYPE, -1, [lastj, j - 1]));
 lastj=-1;
 }}j++;
 }
 if (lastj != -1) {
-map.add$TE(Clazz.array(Integer.TYPE, -1, [lastj, j - 1]));
+map.add$O(Clazz.array(Integer.TYPE, -1, [lastj, j - 1]));
 lastj=-1;
 }return map;
 });
 
 Clazz.newMeth(C$, 'getInsertionsAsBits$', function () {
-var map=Clazz.new_($I$(14));
+var map=Clazz.new_($I$(15,1));
 var lastj=-1;
 var j=0;
 var seqlen=this.sequence.length;
@@ -570,7 +526,7 @@ var newstart=this.start;
 var newend=this.end;
 if (i >= this.sequence.length || i < 0 ) {
 return;
-}var tmp=$I$(16).deleteChars$CA$I$I(this.sequence, i, j);
+}var tmp=$I$(17).deleteChars$CA$I$I(this.sequence, i, j);
 var createNewDs=false;
 var startIndex=this.findIndex$I(this.start) - 1;
 var endIndex=this.findIndex$I(this.end) - 1;
@@ -657,12 +613,12 @@ if (this.datasetSequence != null ) {
 this.datasetSequence.addDBRef$jalview_datamodel_DBRefEntry(entry);
 return;
 }if (this.dbrefs == null ) {
-this.dbrefs=Clazz.new_($I$(17), [this, null]);
+this.dbrefs=Clazz.new_($I$(18,1),[this, null]);
 }for (var ib=0, nb=this.dbrefs.size$(); ib < nb; ib++) {
 if (this.dbrefs.get$I(ib).updateFrom$jalview_api_DBRefEntryI(entry)) {
 return;
 }}
-this.dbrefs.add$TE(entry);
+this.dbrefs.add$O(entry);
 });
 
 Clazz.newMeth(C$, 'setDatasetSequence$jalview_datamodel_SequenceI', function (seq) {
@@ -678,7 +634,7 @@ return this.datasetSequence;
 });
 
 Clazz.newMeth(C$, 'getAnnotation$', function () {
-return this.annotation == null  ? null : this.annotation.toArray$TTA(Clazz.array($I$(5), [this.annotation.size$()]));
+return this.annotation == null  ? null : this.annotation.toArray$OA(Clazz.array($I$(5), [this.annotation.size$()]));
 });
 
 Clazz.newMeth(C$, 'hasAnnotation$jalview_datamodel_AlignmentAnnotation', function (ann) {
@@ -687,9 +643,9 @@ return this.annotation == null  ? false : this.annotation.contains$O(ann);
 
 Clazz.newMeth(C$, 'addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation', function (annotation) {
 if (this.annotation == null ) {
-this.annotation=Clazz.new_($I$(7));
+this.annotation=Clazz.new_($I$(7,1));
 }if (!this.annotation.contains$O(annotation)) {
-this.annotation.addElement$TE(annotation);
+this.annotation.addElement$O(annotation);
 }annotation.setSequenceRef$jalview_datamodel_SequenceI(this);
 });
 
@@ -734,7 +690,7 @@ this._isNa=$I$(1).isNucleotide$jalview_datamodel_SequenceI(this);
 
 Clazz.newMeth(C$, 'createDatasetSequence$', function () {
 if (this.datasetSequence == null ) {
-var dsseq=Clazz.new_(C$.c$$S$S$I$I,[this.getName$(), $I$(13).extractGaps$S$S($I$(1).GapChars, this.getSequenceAsString$()), this.getStart$(), this.getEnd$()]);
+var dsseq=Clazz.new_(C$.c$$S$S$I$I,[this.getName$(), $I$(14,"extractGaps$S$S",[$I$(1).GapChars, this.getSequenceAsString$()]), this.getStart$(), this.getEnd$()]);
 this.datasetSequence=dsseq;
 dsseq.setDescription$S(this.description);
 dsseq.sequenceFeatureStore=this.sequenceFeatureStore;
@@ -746,7 +702,7 @@ this.pdbIds=null;
 this.datasetSequence.updatePDBIds$();
 if (this.annotation != null ) {
 for (var aa, $aa = this.annotation.iterator$(); $aa.hasNext$()&&((aa=($aa.next$())),1);) {
-var _aa=Clazz.new_($I$(5).c$$jalview_datamodel_AlignmentAnnotation,[aa]);
+var _aa=Clazz.new_($I$(5,1).c$$jalview_datamodel_AlignmentAnnotation,[aa]);
 _aa.sequenceRef=this.datasetSequence;
 _aa.adjustForAlignment$();
 this.datasetSequence.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(_aa);
@@ -767,12 +723,12 @@ this.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(annotations[i]
 Clazz.newMeth(C$, 'getAnnotation$S', function (label) {
 if (this.annotation == null  || this.annotation.size$() == 0 ) {
 return null;
-}var subset=Clazz.new_($I$(7));
+}var subset=Clazz.new_($I$(7,1));
 var e=this.annotation.elements$();
 while (e.hasMoreElements$()){
 var ann=e.nextElement$();
 if (ann.label != null  && ann.label.equals$O(label) ) {
-subset.addElement$TE(ann);
+subset.addElement$O(ann);
 }}
 if (subset.size$() == 0) {
 return null;
@@ -795,7 +751,7 @@ return false;
 for (var ib=0, nb=this.dbrefs.size$(); ib < nb; ib++) {
 var dbr=this.dbrefs.get$I(ib);
 if ("PDB".equals$O(dbr.getSource$())) {
-var pdbe=Clazz.new_($I$(6).c$$jalview_datamodel_DBRefEntry,[dbr]);
+var pdbe=Clazz.new_($I$(6,1).c$$jalview_datamodel_DBRefEntry,[dbr]);
 added|=this.addPDBId$jalview_datamodel_PDBEntry(pdbe);
 }}
 return added;
@@ -811,7 +767,7 @@ return;
 }if (entry.getSequenceFeatures$() != null ) {
 var sfs=entry.getSequenceFeatures$();
 for (var feature, $feature = sfs.iterator$(); $feature.hasNext$()&&((feature=($feature.next$())),1);) {
-var sf=(mp != null ) ? mp.locateFeature$jalview_datamodel_SequenceFeature(feature) : Clazz.array($I$(4), -1, [Clazz.new_($I$(4).c$$jalview_datamodel_SequenceFeature,[feature])]);
+var sf=(mp != null ) ? mp.locateFeature$jalview_datamodel_SequenceFeature(feature) : Clazz.array($I$(4), -1, [Clazz.new_($I$(4,1).c$$jalview_datamodel_SequenceFeature,[feature])]);
 if (sf != null ) {
 for (var sfi=0; sfi < sf.length; sfi++) {
 this.addSequenceFeature$jalview_datamodel_SequenceFeature(sf[sfi]);
@@ -826,7 +782,7 @@ this.addPDBId$jalview_datamodel_PDBEntry(pdb);
 }var entryRefs=entry.getDBRefs$();
 if (entryRefs != null ) {
 for (var r=0, n=entryRefs.size$(); r < n; r++) {
-var newref=Clazz.new_($I$(3).c$$jalview_api_DBRefEntryI,[entryRefs.get$I(r)]);
+var newref=Clazz.new_([entryRefs.get$I(r)],$I$(3,1).c$$jalview_api_DBRefEntryI);
 if (newref.getMap$() != null  && mp != null  ) {
 }this.addDBRef$jalview_datamodel_DBRefEntry(newref);
 }
@@ -841,11 +797,11 @@ return this.rna;
 });
 
 Clazz.newMeth(C$, 'getAlignmentAnnotations$S$S', function (calcId, label) {
-var result=Clazz.new_($I$(15));
+var result=Clazz.new_($I$(16,1));
 if (this.annotation != null ) {
 for (var ann, $ann = this.annotation.iterator$(); $ann.hasNext$()&&((ann=($ann.next$())),1);) {
 if (ann.calcId != null  && ann.calcId.equals$O(calcId)  && ann.label != null   && ann.label.equals$O(label) ) {
-result.add$TE(ann);
+result.add$O(ann);
 }}
 }return result;
 });
@@ -871,16 +827,16 @@ Clazz.newMeth(C$, 'getPrimaryDBRefs$', function () {
 if (this.datasetSequence != null ) {
 return this.datasetSequence.getPrimaryDBRefs$();
 }if (this.dbrefs == null  || this.dbrefs.size$() == 0 ) {
-return $I$(18).emptyList$();
+return $I$(19).emptyList$();
 }{
 if (this.refModCount == this.dbrefs.getModCount$() && this.primaryRefs != null  ) {
 return this.primaryRefs;
 }this.refModCount=this.dbrefs.getModCount$();
-var primaries=(this.primaryRefs == null  ? (this.primaryRefs=Clazz.new_($I$(15))) : this.primaryRefs);
+var primaries=(this.primaryRefs == null  ? (this.primaryRefs=Clazz.new_($I$(16,1))) : this.primaryRefs);
 primaries.clear$();
 if (this.tmpList == null ) {
-this.tmpList=Clazz.new_($I$(15));
-this.tmpList.add$TE(null);
+this.tmpList=Clazz.new_($I$(16,1));
+this.tmpList.add$O(null);
 }for (var i=0, n=this.dbrefs.size$(); i < n; i++) {
 var ref=this.dbrefs.get$I(i);
 if (!ref.isPrimaryCandidate$()) {
@@ -894,13 +850,13 @@ var pdbentry=this.getPDBEntry$S(ref.getAccessionId$());
 if (pdbentry == null  || pdbentry.getFile$() == null  ) {
 continue;
 }} else {
-this.tmpList.set$I$TE(0, ref);
-var res=$I$(19).selectDbRefs$Z$java_util_List(!this.isProtein$(), this.tmpList);
+this.tmpList.set$I$O(0, ref);
+var res=$I$(20,"selectDbRefs$Z$java_util_List",[!this.isProtein$(), this.tmpList]);
 if (res == null  || res.get$I(0) !== this.tmpList.get$I(0)  ) {
 continue;
-}}primaries.add$TE(ref);
+}}primaries.add$O(ref);
 }
-$I$(19).ensurePrimaries$jalview_datamodel_SequenceI$java_util_List(this, primaries);
+$I$(20).ensurePrimaries$jalview_datamodel_SequenceI$java_util_List(this, primaries);
 return primaries;
 }});
 
@@ -908,11 +864,7 @@ Clazz.newMeth(C$, 'findFeatures$I$I$SA', function (fromColumn, toColumn, types) 
 var startPos=this.findPosition$I(fromColumn - 1);
 var endPos=fromColumn == toColumn ? startPos : this.findPosition$I(toColumn - 1);
 var result=this.getFeatures$().findFeatures$I$I$SA(startPos, endPos, types);
-if (this.datasetSequence != null ) {
-result=this.datasetSequence.getFeatures$().findFeatures$I$I$SA(startPos, endPos, types);
-} else {
-result=this.sequenceFeatureStore.findFeatures$I$I$SA(startPos, endPos, types);
-}var endColumnIsGapped=toColumn > 0 && toColumn <= this.sequence.length  && $I$(1).isGap$C(this.sequence[toColumn - 1]) ;
+var endColumnIsGapped=toColumn > 0 && toColumn <= this.sequence.length  && $I$(1).isGap$C(this.sequence[toColumn - 1]) ;
 if (endPos > this.end || endColumnIsGapped ) {
 var it=result.listIterator$();
 while (it.hasNext$()){
@@ -952,7 +904,7 @@ this.sequenceChanged$();
 });
 
 Clazz.newMeth(C$, 'getSequenceStringFromIterator$java_util_Iterator', function (it) {
-var newSequence=Clazz.new_($I$(20));
+var newSequence=Clazz.new_($I$(8,1));
 while (it.hasNext$()){
 var block=it.next$();
 if (it.hasNext$()) {
@@ -988,15 +940,14 @@ return start;
 }return 0;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Sequence, "DBModList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Sequence, "DBModList", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.ArrayList');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getModCount$', function () {
 return this.modCount;
@@ -1005,4 +956,4 @@ return this.modCount;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

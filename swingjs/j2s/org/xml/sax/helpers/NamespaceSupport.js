@@ -1,26 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.xml.sax.helpers"),p$1={},I$=[[0,'java.util.Vector','org.xml.sax.helpers.NamespaceSupport','java.util.Hashtable',['org.xml.sax.helpers.NamespaceSupport','.Context']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NamespaceSupport", function(){
+(function(){var P$=Clazz.newPackage("org.xml.sax.helpers"),p$1={},I$=[[0,'java.util.Vector','org.xml.sax.helpers.NamespaceSupport','java.util.Hashtable',['org.xml.sax.helpers.NamespaceSupport','.Context']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NamespaceSupport", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.EMPTY_ENUMERATION=null;
+C$.$classes$=[['Context',16]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_ENUMERATION=Clazz.new_($I$(1)).elements$();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.contexts=null;
-this.currentContext=null;
-this.contextPos=0;
-this.namespaceDeclUris=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['namespaceDeclUris'],'I',['contextPos'],'O',['contexts','org.xml.sax.helpers.NamespaceSupport.Context[]','currentContext','org.xml.sax.helpers.NamespaceSupport.Context']]
+,['O',['EMPTY_ENUMERATION','java.util.Enumeration']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.reset$();
 }, 1);
 
@@ -28,7 +21,7 @@ Clazz.newMeth(C$, 'reset$', function () {
 this.contexts=Clazz.array($I$(4), [32]);
 this.namespaceDeclUris=false;
 this.contextPos=0;
-this.contexts[this.contextPos]=this.currentContext=Clazz.new_($I$(4), [this, null]);
+this.contexts[this.contextPos]=this.currentContext=Clazz.new_($I$(4,1),[this, null]);
 this.currentContext.declarePrefix$S$S("xml", "http://www.w3.org/XML/1998/namespace");
 });
 
@@ -43,7 +36,7 @@ max*=2;
 this.contexts=newContexts;
 }this.currentContext=this.contexts[this.contextPos];
 if (this.currentContext == null ) {
-this.contexts[this.contextPos]=this.currentContext=Clazz.new_($I$(4), [this, null]);
+this.contexts[this.contextPos]=this.currentContext=Clazz.new_($I$(4,1),[this, null]);
 }if (this.contextPos > 0) {
 this.currentContext.setParent$org_xml_sax_helpers_NamespaceSupport_Context(this.contexts[this.contextPos - 1]);
 }});
@@ -88,12 +81,12 @@ return this.currentContext.getPrefix$S(uri);
 });
 
 Clazz.newMeth(C$, 'getPrefixes$S', function (uri) {
-var prefixes=Clazz.new_($I$(1));
+var prefixes=Clazz.new_($I$(1,1));
 var allPrefixes=this.getPrefixes$();
 while (allPrefixes.hasMoreElements$()){
 var prefix=allPrefixes.nextElement$();
 if (uri.equals$O(this.getURI$S(prefix))) {
-prefixes.addElement$TE(prefix);
+prefixes.addElement$O(prefix);
 }}
 return prefixes.elements$();
 });
@@ -108,33 +101,23 @@ if (value == this.namespaceDeclUris ) return;
 this.namespaceDeclUris=value;
 if (value) this.currentContext.declarePrefix$S$S("xmlns", "http://www.w3.org/xmlns/2000/");
  else {
-this.contexts[this.contextPos]=this.currentContext=Clazz.new_($I$(4), [this, null]);
+this.contexts[this.contextPos]=this.currentContext=Clazz.new_($I$(4,1),[this, null]);
 this.currentContext.declarePrefix$S$S("xml", "http://www.w3.org/XML/1998/namespace");
 }});
 
 Clazz.newMeth(C$, 'isNamespaceDeclUris$', function () {
 return this.namespaceDeclUris;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_ENUMERATION=Clazz.new_($I$(1,1)).elements$();
+};
 ;
-(function(){var C$=Clazz.newClass(P$.NamespaceSupport, "Context", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.NamespaceSupport, "Context", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.prefixTable=null;
-this.uriTable=null;
-this.elementNameTable=null;
-this.attributeNameTable=null;
-this.defaultNS=null;
-this.declsOK=false;
-this.declarations=null;
-this.declSeen=false;
-this.parent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultNS=null;
@@ -142,10 +125,12 @@ this.declsOK=true;
 this.declarations=null;
 this.declSeen=false;
 this.parent=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['declsOK','declSeen'],'S',['defaultNS'],'O',['prefixTable','java.util.Hashtable','+uriTable','+elementNameTable','+attributeNameTable','declarations','java.util.Vector','parent','org.xml.sax.helpers.NamespaceSupport.Context']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.copyTables.apply(this, []);
 }, 1);
 
@@ -175,7 +160,7 @@ if (!this.declsOK) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["c
 if (!this.declSeen) {
 p$1.copyTables.apply(this, []);
 }if (this.declarations == null ) {
-this.declarations=Clazz.new_($I$(1));
+this.declarations=Clazz.new_($I$(1,1));
 }prefix=prefix.intern$();
 uri=uri.intern$();
 if ("".equals$O(prefix)) {
@@ -184,9 +169,9 @@ this.defaultNS=null;
 } else {
 this.defaultNS=uri;
 }} else {
-this.prefixTable.put$TK$TV(prefix, uri);
-this.uriTable.put$TK$TV(uri, prefix);
-}this.declarations.addElement$TE(prefix);
+this.prefixTable.put$O$O(prefix, uri);
+this.uriTable.put$O$O(uri, prefix);
+}this.declarations.addElement$O(prefix);
 });
 
 Clazz.newMeth(C$, 'processName$S$Z', function (qName, isAttribute) {
@@ -205,7 +190,7 @@ name[2]=qName.intern$();
 var index=qName.indexOf$I(":");
 if (index == -1) {
 if (isAttribute) {
-if (qName == "xmlns" && this.this$0.namespaceDeclUris ) name[0]="http://www.w3.org/xmlns/2000/";
+if (qName === "xmlns"  && this.this$0.namespaceDeclUris ) name[0]="http://www.w3.org/xmlns/2000/";
  else name[0]="";
 } else if (this.defaultNS == null ) {
 name[0]="";
@@ -224,7 +209,7 @@ uri=this.prefixTable.get$O(prefix);
 return null;
 }name[0]=uri;
 name[1]=local.intern$();
-}table.put$TK$TV(name[2], name);
+}table.put$O$O(name[2], name);
 return name;
 });
 
@@ -262,15 +247,15 @@ Clazz.newMeth(C$, 'copyTables', function () {
 if (this.prefixTable != null ) {
 this.prefixTable=this.prefixTable.clone$();
 } else {
-this.prefixTable=Clazz.new_($I$(3));
+this.prefixTable=Clazz.new_($I$(3,1));
 }if (this.uriTable != null ) {
 this.uriTable=this.uriTable.clone$();
 } else {
-this.uriTable=Clazz.new_($I$(3));
-}this.elementNameTable=Clazz.new_($I$(3));
-this.attributeNameTable=Clazz.new_($I$(3));
+this.uriTable=Clazz.new_($I$(3,1));
+}this.elementNameTable=Clazz.new_($I$(3,1));
+this.attributeNameTable=Clazz.new_($I$(3,1));
 this.declSeen=true;
 }, p$1);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

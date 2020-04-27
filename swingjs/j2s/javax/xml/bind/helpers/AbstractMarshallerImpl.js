@@ -1,41 +1,31 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),p$1={},I$=[[0,'javax.xml.bind.helpers.DefaultValidationEventHandler','javax.xml.transform.stream.StreamResult','java.io.BufferedOutputStream','java.io.FileOutputStream','javax.xml.transform.sax.SAXResult','javax.xml.transform.dom.DOMResult','Boolean','javax.xml.bind.helpers.Messages']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractMarshallerImpl", null, null, 'javax.xml.bind.Marshaller');
-C$.aliases=null;
+(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),p$1={},I$=[[0,'javax.xml.bind.helpers.DefaultValidationEventHandler','javax.xml.transform.stream.StreamResult','java.io.BufferedOutputStream','java.io.FileOutputStream','javax.xml.transform.sax.SAXResult','javax.xml.transform.dom.DOMResult','javax.xml.bind.helpers.Messages']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractMarshallerImpl", null, null, 'javax.xml.bind.Marshaller');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.aliases=Clazz.array(String, -1, ["UTF-8", "UTF8", "UTF-16", "Unicode", "UTF-16BE", "UnicodeBigUnmarked", "UTF-16LE", "UnicodeLittleUnmarked", "US-ASCII", "ASCII", "TIS-620", "TIS620", "ISO-10646-UCS-2", "Unicode", "EBCDIC-CP-US", "cp037", "EBCDIC-CP-CA", "cp037", "EBCDIC-CP-NL", "cp037", "EBCDIC-CP-WT", "cp037", "EBCDIC-CP-DK", "cp277", "EBCDIC-CP-NO", "cp277", "EBCDIC-CP-FI", "cp278", "EBCDIC-CP-SE", "cp278", "EBCDIC-CP-IT", "cp280", "EBCDIC-CP-ES", "cp284", "EBCDIC-CP-GB", "cp285", "EBCDIC-CP-FR", "cp297", "EBCDIC-CP-AR1", "cp420", "EBCDIC-CP-HE", "cp424", "EBCDIC-CP-BE", "cp500", "EBCDIC-CP-CH", "cp500", "EBCDIC-CP-ROECE", "cp870", "EBCDIC-CP-YU", "cp870", "EBCDIC-CP-IS", "cp871", "EBCDIC-CP-AR2", "cp918"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.eventHandler=null;
-this.encoding=null;
-this.schemaLocation=null;
-this.noNSSchemaLocation=null;
-this.formattedOutput=false;
-this.fragment=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.eventHandler=Clazz.new_($I$(1));
+this.eventHandler=Clazz.new_($I$(1,1));
 this.encoding="UTF-8";
 this.schemaLocation=null;
 this.noNSSchemaLocation=null;
 this.formattedOutput=false;
 this.fragment=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['formattedOutput','fragment'],'S',['encoding','schemaLocation','noNSSchemaLocation'],'O',['eventHandler','javax.xml.bind.ValidationEventHandler']]
+,['O',['aliases','String[]']]]
 
 Clazz.newMeth(C$, 'marshal$O$java_io_OutputStream', function (obj, os) {
 p$1.checkNotNull$O$S$O$S.apply(this, [obj, "obj", os, "os"]);
-this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(2).c$$java_io_OutputStream,[os]));
+this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(2,1).c$$java_io_OutputStream,[os]));
 });
 
 Clazz.newMeth(C$, 'marshal$O$java_io_File', function (jaxbElement, output) {
 p$1.checkNotNull$O$S$O$S.apply(this, [jaxbElement, "jaxbElement", output, "output"]);
 try {
-var os=Clazz.new_($I$(3).c$$java_io_OutputStream,[Clazz.new_($I$(4).c$$java_io_File,[output])]);
+var os=Clazz.new_([Clazz.new_($I$(4,1).c$$java_io_File,[output])],$I$(3,1).c$$java_io_OutputStream);
 try {
-this.marshal$O$javax_xml_transform_Result(jaxbElement, Clazz.new_($I$(2).c$$java_io_OutputStream,[os]));
+this.marshal$O$javax_xml_transform_Result(jaxbElement, Clazz.new_($I$(2,1).c$$java_io_OutputStream,[os]));
 } finally {
 os.close$();
 }
@@ -50,21 +40,21 @@ throw e;
 
 Clazz.newMeth(C$, 'marshal$O$java_io_Writer', function (obj, w) {
 p$1.checkNotNull$O$S$O$S.apply(this, [obj, "obj", w, "writer"]);
-this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(2).c$$java_io_Writer,[w]));
+this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(2,1).c$$java_io_Writer,[w]));
 });
 
 Clazz.newMeth(C$, 'marshal$O$org_xml_sax_ContentHandler', function (obj, handler) {
 p$1.checkNotNull$O$S$O$S.apply(this, [obj, "obj", handler, "handler"]);
-this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(5).c$$org_xml_sax_ContentHandler,[handler]));
+this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(5,1).c$$org_xml_sax_ContentHandler,[handler]));
 });
 
 Clazz.newMeth(C$, 'marshal$O$org_w3c_dom_Node', function (obj, node) {
 p$1.checkNotNull$O$S$O$S.apply(this, [obj, "obj", node, "node"]);
-this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(6).c$$org_w3c_dom_Node,[node]));
+this.marshal$O$javax_xml_transform_Result(obj, Clazz.new_($I$(6,1).c$$org_w3c_dom_Node,[node]));
 });
 
 Clazz.newMeth(C$, 'getNode$O', function (obj) {
-p$1.checkNotNull$O$S$O$S.apply(this, [obj, "obj", $I$(7).TRUE, "foo"]);
+p$1.checkNotNull$O$S$O$S.apply(this, [obj, "obj", Boolean.TRUE, "foo"]);
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -128,14 +118,14 @@ throw e;
 
 Clazz.newMeth(C$, 'setProperty$S$O', function (name, value) {
 if (name == null ) {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(8).format$S$O("Shared.MustNotBeNull", "name")]);
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(7).format$S$O("Shared.MustNotBeNull", "name")]);
 }if ("jaxb.encoding".equals$O(name)) {
 p$1.checkString$S$O.apply(this, [name, value]);
 this.setEncoding$S(value);
 return;
 }if ("jaxb.formatted.output".equals$O(name)) {
 p$1.checkBoolean$S$O.apply(this, [name, value]);
-this.setFormattedOutput$Z((value).booleanValue$());
+this.setFormattedOutput$Z((value).valueOf());
 return;
 }if ("jaxb.noNamespaceSchemaLocation".equals$O(name)) {
 p$1.checkString$S$O.apply(this, [name, value]);
@@ -147,19 +137,19 @@ this.setSchemaLocation$S(value);
 return;
 }if ("jaxb.fragment".equals$O(name)) {
 p$1.checkBoolean$S$O.apply(this, [name, value]);
-this.setFragment$Z((value).booleanValue$());
+this.setFragment$Z((value).valueOf());
 return;
 }throw Clazz.new_(Clazz.load('javax.xml.bind.PropertyException').c$$S$O,[name, value]);
 });
 
 Clazz.newMeth(C$, 'getProperty$S', function (name) {
 if (name == null ) {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(8).format$S$O("Shared.MustNotBeNull", "name")]);
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(7).format$S$O("Shared.MustNotBeNull", "name")]);
 }if ("jaxb.encoding".equals$O(name)) return this.getEncoding$();
-if ("jaxb.formatted.output".equals$O(name)) return this.isFormattedOutput$() ? $I$(7).TRUE : $I$(7).FALSE;
+if ("jaxb.formatted.output".equals$O(name)) return this.isFormattedOutput$() ? Boolean.TRUE : Boolean.FALSE;
 if ("jaxb.noNamespaceSchemaLocation".equals$O(name)) return this.getNoNSSchemaLocation$();
 if ("jaxb.schemaLocation".equals$O(name)) return this.getSchemaLocation$();
-if ("jaxb.fragment".equals$O(name)) return this.isFragment$() ? $I$(7).TRUE : $I$(7).FALSE;
+if ("jaxb.fragment".equals$O(name)) return this.isFragment$() ? Boolean.TRUE : Boolean.FALSE;
 throw Clazz.new_(Clazz.load('javax.xml.bind.PropertyException').c$$S,[name]);
 });
 
@@ -169,24 +159,24 @@ return this.eventHandler;
 
 Clazz.newMeth(C$, 'setEventHandler$javax_xml_bind_ValidationEventHandler', function (handler) {
 if (handler == null ) {
-this.eventHandler=Clazz.new_($I$(1));
+this.eventHandler=Clazz.new_($I$(1,1));
 } else {
 this.eventHandler=handler;
 }});
 
 Clazz.newMeth(C$, 'checkBoolean$S$O', function (name, value) {
-if (!(Clazz.instanceOf(value, "java.lang.Boolean"))) throw Clazz.new_(Clazz.load('javax.xml.bind.PropertyException').c$$S,[$I$(8).format$S$O("AbstractMarshallerImpl.MustBeBoolean", name)]);
+if (!(Clazz.instanceOf(value, "java.lang.Boolean"))) throw Clazz.new_(Clazz.load('javax.xml.bind.PropertyException').c$$S,[$I$(7).format$S$O("AbstractMarshallerImpl.MustBeBoolean", name)]);
 }, p$1);
 
 Clazz.newMeth(C$, 'checkString$S$O', function (name, value) {
-if (!(Clazz.instanceOf(value, "java.lang.String"))) throw Clazz.new_(Clazz.load('javax.xml.bind.PropertyException').c$$S,[$I$(8).format$S$O("AbstractMarshallerImpl.MustBeString", name)]);
+if (!(Clazz.instanceOf(value, "java.lang.String"))) throw Clazz.new_(Clazz.load('javax.xml.bind.PropertyException').c$$S,[$I$(7).format$S$O("AbstractMarshallerImpl.MustBeString", name)]);
 }, p$1);
 
 Clazz.newMeth(C$, 'checkNotNull$O$S$O$S', function (o1, o1Name, o2, o2Name) {
 if (o1 == null ) {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(8).format$S$O("Shared.MustNotBeNull", o1Name)]);
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(7).format$S$O("Shared.MustNotBeNull", o1Name)]);
 }if (o2 == null ) {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(8).format$S$O("Shared.MustNotBeNull", o2Name)]);
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[$I$(7).format$S$O("Shared.MustNotBeNull", o2Name)]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'marshal$O$javax_xml_stream_XMLEventWriter', function (obj, writer) {
@@ -207,10 +197,10 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 
 Clazz.newMeth(C$, 'setAdapter$javax_xml_bind_annotation_adapters_XmlAdapter', function (adapter) {
 if (adapter == null ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-this.setAdapter$Class$TA(adapter.getClass$(), adapter);
+this.setAdapter$Class$javax_xml_bind_annotation_adapters_XmlAdapter(adapter.getClass$(), adapter);
 });
 
-Clazz.newMeth(C$, 'setAdapter$Class$TA', function (type, adapter) {
+Clazz.newMeth(C$, 'setAdapter$Class$javax_xml_bind_annotation_adapters_XmlAdapter', function (type, adapter) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
@@ -234,6 +224,10 @@ Clazz.newMeth(C$, 'getListener$', function () {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.aliases=Clazz.array(String, -1, ["UTF-8", "UTF8", "UTF-16", "Unicode", "UTF-16BE", "UnicodeBigUnmarked", "UTF-16LE", "UnicodeLittleUnmarked", "US-ASCII", "ASCII", "TIS-620", "TIS620", "ISO-10646-UCS-2", "Unicode", "EBCDIC-CP-US", "cp037", "EBCDIC-CP-CA", "cp037", "EBCDIC-CP-NL", "cp037", "EBCDIC-CP-WT", "cp037", "EBCDIC-CP-DK", "cp277", "EBCDIC-CP-NO", "cp277", "EBCDIC-CP-FI", "cp278", "EBCDIC-CP-SE", "cp278", "EBCDIC-CP-IT", "cp280", "EBCDIC-CP-ES", "cp284", "EBCDIC-CP-GB", "cp285", "EBCDIC-CP-FR", "cp297", "EBCDIC-CP-AR1", "cp420", "EBCDIC-CP-HE", "cp424", "EBCDIC-CP-BE", "cp500", "EBCDIC-CP-CH", "cp500", "EBCDIC-CP-ROECE", "cp870", "EBCDIC-CP-YU", "cp870", "EBCDIC-CP-IS", "cp871", "EBCDIC-CP-AR2", "cp918"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

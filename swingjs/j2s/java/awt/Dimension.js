@@ -1,17 +1,12 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "Dimension", null, 'java.awt.geom.Dimension2D');
+/*c*/var C$=Clazz.newClass(P$, "Dimension", null, 'java.awt.geom.Dimension2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.height=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['width','height']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I.apply(this, [0, 0]);
@@ -22,7 +17,7 @@ C$.c$$I$I.apply(this, [d.width, d.height]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (width, height) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.width=width;
 this.height=height;
 }, 1);
@@ -70,4 +65,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[width=" + this.width + ",height=" + this.height + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

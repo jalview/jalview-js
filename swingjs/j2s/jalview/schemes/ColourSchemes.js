@@ -1,39 +1,42 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.util.LinkedHashMap','jalview.schemes.JalviewColourScheme']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ColourSchemes");
-C$.instance=null;
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.util.LinkedHashMap','jalview.schemes.JalviewColourScheme']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ColourSchemes");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.schemes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['schemes','java.util.Map']]
+,['O',['instance','jalview.schemes.ColourSchemes']]]
 
 Clazz.newMeth(C$, 'getInstance$', function () {
 return C$.instance;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.loadColourSchemes$();
 }, 1);
 
 Clazz.newMeth(C$, 'loadColourSchemes$', function () {
-this.schemes=Clazz.new_($I$(1));
+this.schemes=Clazz.new_($I$(1,1));
 for (var cs, $cs = 0, $$cs = $I$(2).values$(); $cs<$$cs.length&&((cs=($$cs[$cs])),1);$cs++) {
 try {
-this.registerColourScheme$jalview_schemes_ColourSchemeI(cs.getSchemeClass$().newInstance$());
-} catch (e) {
-if (Clazz.exceptionOf(e,"InstantiationException") || Clazz.exceptionOf(e,"IllegalAccessException")){
+this.registerColourScheme$jalview_schemes_ColourSchemeI(cs.getSchemeClass$().getDeclaredConstructor$ClassA([]).newInstance$OA([]));
+} catch (e$$) {
+if (Clazz.exceptionOf(e$$,"InstantiationException") || Clazz.exceptionOf(e$$,"IllegalAccessException")){
+var e = e$$;
+{
 System.err.println$S("Error instantiating colour scheme for " + cs.toString() + " " + e.getMessage$() );
 e.printStackTrace$();
+}
+} else if (Clazz.exceptionOf(e$$,"ReflectiveOperationException")){
+var roe = e$$;
+{
+roe.printStackTrace$();
+}
 } else {
-throw e;
+throw e$$;
 }
 }
 }
@@ -47,7 +50,7 @@ return;
 }var lower=name.toLowerCase$();
 if (this.schemes.containsKey$O(lower)) {
 System.err.println$S("Warning: overwriting colour scheme named " + name);
-}this.schemes.put$TK$TV(lower, cs);
+}this.schemes.put$O$O(lower, cs);
 });
 
 Clazz.newMeth(C$, 'removeColourScheme$S', function (name) {
@@ -75,5 +78,9 @@ if (name == null ) {
 return false;
 }return this.schemes.containsKey$O(name.toLowerCase$());
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

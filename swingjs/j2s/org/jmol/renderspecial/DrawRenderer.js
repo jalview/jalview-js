@@ -1,37 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','javajs.util.P3i','javajs.util.BS','org.jmol.util.C','org.jmol.shapespecial.Draw',['org.jmol.shapespecial.Draw','.EnumDrawType'],'org.jmol.util.GData','javajs.util.M3','javajs.util.A4','javajs.util.Measure']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DrawRenderer", null, 'org.jmol.render.MeshRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','javajs.util.P3i','javajs.util.BS','org.jmol.util.C','org.jmol.shapespecial.Draw',['org.jmol.shapespecial.Draw','.EnumDrawType'],'org.jmol.util.GData','javajs.util.M3','javajs.util.A4','javajs.util.Measure']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "DrawRenderer", null, 'org.jmol.render.MeshRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.drawType=null;
-this.dmesh=null;
-this.controlHermites=null;
-this.pt0=null;
-this.pt1=null;
-this.pt2=null;
-this.vTemp=null;
-this.vTemp2=null;
-this.pt0f=null;
-this.pt0i=null;
-this.s0f=null;
-this.s1f=null;
-this.s2f=null;
-this.bsHandles=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.pt0=Clazz.new_($I$(1));
-this.pt1=Clazz.new_($I$(1));
-this.pt2=Clazz.new_($I$(1));
-this.vTemp=Clazz.new_($I$(2));
-this.vTemp2=Clazz.new_($I$(2));
-this.pt0f=Clazz.new_($I$(1));
-this.pt0i=Clazz.new_($I$(3));
-this.bsHandles=Clazz.new_($I$(4));
-}, 1);
+this.pt0=Clazz.new_($I$(1,1));
+this.pt1=Clazz.new_($I$(1,1));
+this.pt2=Clazz.new_($I$(1,1));
+this.vTemp=Clazz.new_($I$(2,1));
+this.vTemp2=Clazz.new_($I$(2,1));
+this.pt0f=Clazz.new_($I$(1,1));
+this.pt0i=Clazz.new_($I$(3,1));
+this.bsHandles=Clazz.new_($I$(4,1));
+},1);
+
+C$.$fields$=[['O',['drawType','org.jmol.shapespecial.Draw.EnumDrawType','dmesh','org.jmol.shapespecial.DrawMesh','controlHermites','javajs.util.P3[]','pt0','javajs.util.P3','+pt1','+pt2','vTemp','javajs.util.V3','+vTemp2','pt0f','javajs.util.P3','pt0i','javajs.util.P3i','s0f','javajs.util.P3','+s1f','+s2f','bsHandles','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 this.needTranslucent=false;
@@ -39,7 +22,10 @@ this.imageFontScaling=this.vwr.imageFontScaling;
 var draw=this.shape;
 for (var i=draw.meshCount; --i >= 0; ) {
 var mesh=this.dmesh=draw.meshes[i];
-if (mesh.connectedAtoms != null ) {
+if (mesh == null ) {
+System.out.println$S("DrawRenderer mesh is null?");
+return false;
+}if (mesh.connectedAtoms != null ) {
 if (mesh.connectedAtoms[0] < 0) continue;
 mesh.vs=Clazz.array($I$(1), [4]);
 mesh.vc=4;
@@ -138,7 +124,7 @@ break;
 }
 if (this.diameter == 0) this.diameter=3;
 if (isCurved) {
-this.g3d.addRenderer$I(553648146);
+this.g3d.addRenderer$I(553648145);
 for (var i=0, i0=0; i < nPoints - 1; i++) {
 this.g3d.fillHermite$I$I$I$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3(tension, this.diameter, this.diameter, this.diameter, this.p3Screens[i0], this.p3Screens[i], this.p3Screens[i + 1], this.p3Screens[i + (i == nPoints - 2 ? 1 : 2)]);
 i0=i;
@@ -150,7 +136,7 @@ this.render2b$Z(false);
 Clazz.newMeth(C$, 'setArc$javajs_util_T3$javajs_util_T3$javajs_util_T3$F$F$F$F', function (v1, v2, ptRef, nDegreesOffset, theta, fractionalOffset, scale) {
 this.vTemp.sub2$javajs_util_T3$javajs_util_T3(v2, v1);
 this.pt1f.scaleAdd2$F$javajs_util_T3$javajs_util_T3(fractionalOffset, this.vTemp, v1);
-var mat=Clazz.new_($I$(9)).setAA$javajs_util_A4($I$(10).newVA$javajs_util_V3$F(this.vTemp, (nDegreesOffset * 3.141592653589793 / 180)));
+var mat=Clazz.new_($I$(9,1)).setAA$javajs_util_A4((function(a,f){return f.apply(null,a)})([this.vTemp, (nDegreesOffset * 3.141592653589793 / 180)],$I$(10).newVA$javajs_util_V3$F));
 this.vTemp2.sub2$javajs_util_T3$javajs_util_T3(ptRef, v1);
 this.vTemp2.cross$javajs_util_T3$javajs_util_T3(this.vTemp, this.vTemp2);
 this.vTemp2.cross$javajs_util_T3$javajs_util_T3(this.vTemp2, this.vTemp);
@@ -165,7 +151,7 @@ while (nPoints < 10){
 degrees /= 2;
 nPoints=Math.round(theta / degrees) + 1;
 }
-mat.setAA$javajs_util_A4($I$(10).newVA$javajs_util_V3$F(this.vTemp, (degrees * 3.141592653589793 / 180)));
+mat.setAA$javajs_util_A4((function(a,f){return f.apply(null,a)})([this.vTemp, (degrees * 3.141592653589793 / 180)],$I$(10).newVA$javajs_util_V3$F));
 this.screens=this.vwr.allocTempScreens$I(nPoints);
 this.p3Screens=this.vwr.allocTempPoints$I(nPoints);
 var iBase=nPoints - (this.dmesh.scale < 2  ? 3 : 3);
@@ -212,7 +198,7 @@ this.pt1.set$F$F$F(this.screens[1].x, this.screens[1].y, this.screens[1].z);
 this.pt2.set$F$F$F(this.screens[3].x, this.screens[3].y, this.screens[3].z);
 var dx=(this.screens[1].x - this.screens[0].x) * f;
 var dy=(this.screens[1].y - this.screens[0].y) * f;
-if (dmax == 0  || $I$(11).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(this.pt2, this.pt0, $I$(1).new3$F$F$F(this.pt0.x, this.pt0.y, 10000.0), this.pt1, false) > 0  ) {
+if (dmax == 0  || (function(a,f){return f.apply(null,a)})([this.pt2, this.pt0, $I$(1).new3$F$F$F(this.pt0.x, this.pt0.y, 10000.0), this.pt1, false],$I$(11).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z) > 0  ) {
 dx=-dx;
 dy=-dy;
 }this.pt2.set$F$F$F(dy, -dx, 0);
@@ -271,16 +257,16 @@ var scaleFactor=zoomDimension / 20.0;
 this.pt1.scaleAdd2$F$javajs_util_T3$javajs_util_T3(this.dmesh.scale * scaleFactor, this.pt1, this.pt0);
 if (this.diameter == 0) this.diameter=1;
 if (this.diameter < 0) this.g3d.drawDashedLineBits$I$I$javajs_util_P3$javajs_util_P3(8, 4, this.pt0, this.pt1);
- else this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.pt0, this.pt1);
+ else this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.pt0, this.pt1);
 p$1.renderArrowHead$javajs_util_T3$javajs_util_T3$F$Z$Z$Z.apply(this, [this.pt0, this.pt1, 0, true, false, false]);
 }, p$1);
 
 Clazz.newMeth(C$, 'renderArrowHead$javajs_util_T3$javajs_util_T3$F$Z$Z$Z', function (pt1, pt2, factor2, isTransformed, withShaft, isBarb) {
 if (this.dmesh.noHead) return;
 if (this.s0f == null ) {
-this.s0f=Clazz.new_($I$(1));
-this.s1f=Clazz.new_($I$(1));
-this.s2f=Clazz.new_($I$(1));
+this.s0f=Clazz.new_($I$(1,1));
+this.s1f=Clazz.new_($I$(1,1));
+this.s2f=Clazz.new_($I$(1,1));
 }var fScale=p$1.getArrowScale.apply(this, []);
 if (isTransformed) fScale *= 40;
 if (factor2 > 0 ) fScale *= factor2;
@@ -310,8 +296,8 @@ this.vTemp.set$F$F$F(this.s2f.x - this.s1f.x, this.s2f.y - this.s1f.y, this.s2f.
 headDiameter=Math.round(this.vTemp.length$() * 0.5);
 this.diameter=(headDiameter/5|0);
 }if (this.diameter < 1) this.diameter=1;
-if (headDiameter > 2) this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(($b$[0] = 2, $b$[0]), headDiameter, this.s1f, this.s2f, isBarb);
-if (withShaft) this.g3d.fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(($b$[0] = 2, $b$[0]), this.diameter, this.s0f, this.s1f, null, null, 0);
+if (headDiameter > 2) this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(2, headDiameter, this.s1f, this.s2f, isBarb);
+if (withShaft) this.g3d.fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(2, this.diameter, this.s0f, this.s1f, null, null, 0);
 }, p$1);
 
 Clazz.newMeth(C$, 'getArrowScale', function () {
@@ -350,7 +336,7 @@ if (this.isExport || this.mesh.title == null   || this.vwr.getDrawHover$()  || !
 for (var i=this.dmesh.pc; --i >= 0; ) if (this.isPolygonDisplayable$I(i)) {
 var size=this.vwr.getFloat$I(570425356);
 if (size <= 0 ) size=14;
-this.vwr.gdata.setFontFid$B(($b$[0] = this.vwr.gdata.getFontFid$F(size * this.imageFontScaling), $b$[0]));
+this.vwr.gdata.setFontFid$B(this.vwr.gdata.getFontFid$F(size * this.imageFontScaling));
 var s=this.mesh.title[i < this.mesh.title.length ? i : this.mesh.title.length - 1];
 var pt=0;
 if (s.length$() > 1 && s.charAt$I(0) == ">" ) {
@@ -360,13 +346,12 @@ if (this.drawType === $I$(7).ARC ) this.pt1f.setT$javajs_util_T3(this.pt2f);
 }if (this.drawType !== $I$(7).ARC ) this.pt1f.setT$javajs_util_T3(this.vertices[this.dmesh.pis[i][pt]]);
 this.tm.transformPtScr$javajs_util_T3$javajs_util_P3i(this.pt1f, this.pt1i);
 var offset=Math.round(5 * this.imageFontScaling);
-this.g3d.drawString$S$javajs_awt_Font$I$I$I$I$H(s, null, this.pt1i.x + offset, this.pt1i.y - offset, this.pt1i.z, this.pt1i.z, 0);
+this.g3d.drawString$S$org_jmol_util_Font$I$I$I$I$H(s, null, this.pt1i.x + offset, this.pt1i.y - offset, this.pt1i.z, this.pt1i.z, 0);
 break;
 }
 }, p$1);
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

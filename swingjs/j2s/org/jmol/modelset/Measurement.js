@@ -1,37 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'org.jmol.util.Point3fi','javajs.util.SB','org.jmol.c.VDW','org.jmol.modelset.LabelToken','javajs.util.Measure','org.jmol.util.Escape','javajs.util.PT',['org.jmol.atomdata.RadiusData','.EnumType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Measurement");
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'org.jmol.util.Point3fi','javajs.util.SB','org.jmol.modelset.Atom','org.jmol.c.VDW','org.jmol.modelset.LabelToken','javajs.util.Measure','org.jmol.util.Escape','javajs.util.PT',['org.jmol.atomdata.RadiusData','.EnumType']]],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Measurement");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.thisID=null;
-this.ms=null;
-this.index=0;
-this.isVisible=false;
-this.isHidden=false;
-this.isTrajectory=false;
-this.isValid=false;
-this.colix=0;
-this.labelColix=0;
-this.mad=0;
-this.tickInfo=null;
-this.traceX=0;
-this.traceY=0;
-this.count=0;
-this.countPlusIndices=null;
-this.pts=null;
-this.value=0;
-this.strFormat=null;
-this.text=null;
-this.vwr=null;
-this.strMeasurement=null;
-this.type=null;
-this.tainted=false;
-this.renderAxis=null;
-this.renderArc=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isVisible=true;
@@ -41,7 +11,9 @@ this.isValid=true;
 this.labelColix=($s$[0] = -1, $s$[0]);
 this.traceX=-2147483648;
 this.countPlusIndices=Clazz.array(Integer.TYPE, [5]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isVisible','isHidden','isTrajectory','isValid','tainted'],'F',['value'],'I',['index','mad','traceX','traceY','count'],'H',['colix','labelColix'],'S',['thisID','strFormat','strMeasurement','type','newUnits'],'O',['ms','org.jmol.modelset.ModelSet','tickInfo','org.jmol.modelset.TickInfo','countPlusIndices','int[]','pts','org.jmol.util.Point3fi[]','text','org.jmol.modelset.Text','vwr','org.jmol.viewer.Viewer','renderAxis','javajs.util.A4','renderArc','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'isTainted$', function () {
 return (this.tainted && !(this.tainted=false) );
@@ -125,7 +97,7 @@ this.formatMeasurement$S(null);
 });
 
 Clazz.newMeth(C$, 'getMeasurementScript$S$Z', function (sep, withModelIndex) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 var asBitSet=(sep.equals$O(" "));
 for (var i=1; i <= this.count; i++) sb.append$S(i > 1 ? sep : " ").append$S(this.getLabel$I$Z$Z(i, asBitSet, withModelIndex));
 
@@ -175,7 +147,7 @@ if (pt >= 0) {
 label=label.substring$I$I(0, pt);
 if (label.length$() == 0) label="%VALUE";
 }var f=this.fixValue$S$Z(units, (label.indexOf$S("%V") >= 0));
-return p$1.formatString$F$S$S.apply(this, [f, units, label]);
+return p$1.formatString$F$S$S.apply(this, [f, this.newUnits, label]);
 }, p$1);
 
 Clazz.newMeth(C$, 'fixUnits$S', function (units) {
@@ -187,6 +159,7 @@ return units;
 }, 1);
 
 Clazz.newMeth(C$, 'fixValue$S$Z', function (units, andRound) {
+this.newUnits=units;
 if (this.count != 2) return this.value;
 var dist=this.value;
 if (units != null ) {
@@ -197,12 +170,24 @@ var i2=this.getAtomIndex$I(2);
 if (i1 >= 0 && i2 >= 0 ) {
 var a1=this.getAtom$I(1);
 var a2=this.getAtom$I(2);
-var isDC=(!isPercent && C$.nmrType$S(units) == 1 );
-this.type=(isPercent ? "percent" : isDC ? "dipoleCouplingConstant" : "J-CouplingConstant");
-dist=(isPercent ? dist / (a1.getVanderwaalsRadiusFloat$org_jmol_viewer_Viewer$org_jmol_c_VDW(this.vwr, $I$(3).AUTO) + a2.getVanderwaalsRadiusFloat$org_jmol_viewer_Viewer$org_jmol_c_VDW(this.vwr, $I$(3).AUTO)) : isDC ? this.vwr.getNMRCalculation$().getDipolarConstantHz$org_jmol_modelset_Atom$org_jmol_modelset_Atom(a1, a2) : this.vwr.getNMRCalculation$().getIsoOrAnisoHz$Z$org_jmol_modelset_Atom$org_jmol_modelset_Atom$S$org_jmol_util_Tensor(true, a1, a2, units, null));
-this.isValid=!Float.isNaN$F(dist);
+var itype=C$.nmrType$S(units);
+var isDC=(!isPercent && itype == 1 );
+this.type=(isPercent ? "percent" : isDC ? "dipoleCouplingConstant" : itype == 3 ? "NOE or 3JHH" : "J-CouplingConstant");
+if (itype == 3) {
+var result=this.vwr.getNMRCalculation$().getNOEorJHH$org_jmol_modelset_AtomA$I(Clazz.array($I$(3), -1, [a1, null, null, a2]), 11);
+if (result == null ) {
+dist=NaN;
+this.newUnits=units="";
+} else {
+dist=result[1];
+units=this.newUnits=(result.length == 2 ? "noe" : "hz");
+}} else {
+dist=(isPercent ? dist / (a1.getVanderwaalsRadiusFloat$org_jmol_viewer_Viewer$org_jmol_c_VDW(this.vwr, $I$(4).AUTO) + a2.getVanderwaalsRadiusFloat$org_jmol_viewer_Viewer$org_jmol_c_VDW(this.vwr, $I$(4).AUTO)) : isDC ? this.vwr.getNMRCalculation$().getDipolarConstantHz$org_jmol_modelset_Atom$org_jmol_modelset_Atom(a1, a2) : this.vwr.getNMRCalculation$().getIsoOrAnisoHz$Z$org_jmol_modelset_Atom$org_jmol_modelset_Atom$S$org_jmol_util_Tensor(true, a1, a2, units, null));
+}this.isValid=!Float.isNaN$F(dist);
 if (isPercent) units="pm";
-}}if (units.equals$O("nm")) return (andRound ? Math.round(dist * 100) / 1000.0 : dist / 10);
+}}if (units.equals$O("hz")) return (andRound ? Math.round(dist * 10) / 10.0 : dist);
+if (units.equals$O("noe")) return (andRound ? Math.round(dist * 100) / 100.0 : dist);
+if (units.equals$O("nm")) return (andRound ? Math.round(dist * 100) / 1000.0 : dist / 10);
 if (units.equals$O("pm")) return (andRound ? Math.round(dist * 1000) / 10.0 : dist * 100);
 if (units.equals$O("au")) return (andRound ? Math.round(dist / 0.5291772 * 1000) / 1000.0 : dist / 0.5291772);
 if (units.endsWith$S("khz")) return (andRound ? Math.round(dist / 10) / 100.0 : dist / 1000);
@@ -210,7 +195,7 @@ if (units.endsWith$S("khz")) return (andRound ? Math.round(dist / 10) / 100.0 : 
 });
 
 Clazz.newMeth(C$, 'nmrType$S', function (units) {
-return (units.indexOf$S("hz") < 0 ? 0 : units.startsWith$S("dc_") || units.equals$O("khz")  ? 1 : 2);
+return (units.indexOf$S("hz") < 0 ? 0 : units.equals$O("noe_hz") ? 3 : units.startsWith$S("dc_") || units.equals$O("khz")  ? 1 : 2);
 }, 1);
 
 Clazz.newMeth(C$, 'formatAngle$F', function (angle) {
@@ -234,7 +219,7 @@ return label;
 }, p$1);
 
 Clazz.newMeth(C$, 'formatString$F$S$S', function (value, units, label) {
-return $I$(4).formatLabelMeasure$org_jmol_viewer_Viewer$org_jmol_modelset_Measurement$S$F$S(this.vwr, this, label, value, units);
+return $I$(5).formatLabelMeasure$org_jmol_viewer_Viewer$org_jmol_modelset_Measurement$S$F$S(this.vwr, this, label, value, units);
 }, p$1);
 
 Clazz.newMeth(C$, 'sameAsPoints$IA$org_jmol_util_Point3fiA', function (indices, points) {
@@ -282,11 +267,11 @@ case 2:
 return ptA.distance$javajs_util_T3(ptB);
 case 3:
 ptC=(pts == null  ? this.getAtom$I(3) : pts[2]);
-return $I$(5).computeAngleABC$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(ptA, ptB, ptC, true);
+return $I$(6).computeAngleABC$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(ptA, ptB, ptC, true);
 case 4:
 ptC=(pts == null  ? this.getAtom$I(3) : pts[2]);
 var ptD=(pts == null  ? this.getAtom$I(4) : pts[3]);
-return $I$(5).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(ptA, ptB, ptC, ptD, true);
+return $I$(6).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(ptA, ptB, ptC, ptD, true);
 default:
 return NaN;
 }
@@ -294,7 +279,7 @@ return NaN;
 
 Clazz.newMeth(C$, 'getLabel$I$Z$Z', function (i, asBitSet, withModelIndex) {
 var atomIndex=this.countPlusIndices[i];
-return (atomIndex < 0 ? (withModelIndex ? "modelIndex " + this.getAtom$I(i).mi + " "  : "") + $I$(6).eP$javajs_util_T3(this.getAtom$I(i)) : asBitSet ? "({" + atomIndex + "})"  : this.vwr.getAtomInfo$I(atomIndex));
+return (atomIndex < 0 ? (withModelIndex ? "modelIndex " + this.getAtom$I(i).mi + " "  : "") + (function(a,f){return f.apply(null,a)})([this.getAtom$I(i)],$I$(7).eP$javajs_util_T3) : asBitSet ? "({" + atomIndex + "})"  : this.vwr.getAtomInfo$I(atomIndex));
 });
 
 Clazz.newMeth(C$, 'setModelIndex$H', function (modelIndex) {
@@ -329,10 +314,10 @@ return true;
 
 Clazz.newMeth(C$, 'getInfoAsString$S', function (units) {
 var f=this.fixValue$S$Z(units, true);
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S(this.count == 2 ? (this.type == null  ? "distance" : this.type) : this.count == 3 ? "angle" : "dihedral");
 sb.append$S(" \t").appendF$F(f);
-sb.append$S(" \t").append$S($I$(7).esc$S(this.strMeasurement));
+sb.append$S(" \t").append$S($I$(8).esc$S(this.strMeasurement));
 for (var i=1; i <= this.count; i++) sb.append$S(" \t").append$S(this.getLabel$I$Z$Z(i, false, false));
 
 if (this.thisID != null ) sb.append$S(" \t").append$S(this.thisID);
@@ -340,7 +325,7 @@ return sb.toString();
 });
 
 Clazz.newMeth(C$, 'isInRange$org_jmol_atomdata_RadiusData$F', function (radiusData, value) {
-if (radiusData.factorType === $I$(8).FACTOR ) {
+if (radiusData.factorType === $I$(9).FACTOR ) {
 var atom1=this.getAtom$I(1);
 var atom2=this.getAtom$I(2);
 var d=(atom1.getVanderwaalsRadiusFloat$org_jmol_viewer_Viewer$org_jmol_c_VDW(this.vwr, radiusData.vdwType) + atom2.getVanderwaalsRadiusFloat$org_jmol_viewer_Viewer$org_jmol_c_VDW(this.vwr, radiusData.vdwType)) * radiusData.value;
@@ -374,4 +359,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

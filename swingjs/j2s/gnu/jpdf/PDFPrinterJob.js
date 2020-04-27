@@ -1,28 +1,19 @@
-(function(){var P$=Clazz.newPackage("gnu.jpdf"),I$=[[0,'javax.print.attribute.HashPrintRequestAttributeSet','gnu.jpdf.PDFInfo','javax.print.attribute.standard.Copies','javax.print.attribute.standard.JobName','javax.print.attribute.standard.RequestingUserName','java.io.File','java.io.FileOutputStream','gnu.jpdf.PDFJob','javax.swing.JFileChooser','java.util.Locale']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDFPrinterJob", null, 'java.awt.print.PrinterJob');
-C$.fileChooser=null;
+(function(){var P$=Clazz.newPackage("gnu.jpdf"),I$=[[0,'javax.print.attribute.HashPrintRequestAttributeSet','gnu.jpdf.PDFInfo','javax.print.attribute.standard.Copies','javax.print.attribute.standard.JobName','javax.print.attribute.standard.RequestingUserName','java.io.File','java.io.FileOutputStream','gnu.jpdf.PDFJob','javax.swing.JFileChooser','java.util.Locale']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDFPrinterJob", null, 'java.awt.print.PrinterJob');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attributes=null;
-this.info=null;
-this.pageable=null;
-this.pageFormat=null;
-this.printable=null;
-this.printJob=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.pageable=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['attributes','javax.print.attribute.PrintRequestAttributeSet','info','gnu.jpdf.PDFInfo','pageable','java.awt.print.Pageable','pageFormat','java.awt.print.PageFormat','printable','java.awt.print.Printable','printJob','gnu.jpdf.PDFJob']]
+,['O',['fileChooser','javax.swing.JFileChooser']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.attributes=Clazz.new_($I$(1));
-this.info=Clazz.new_($I$(2));
+Clazz.super_(C$, this);
+this.attributes=Clazz.new_($I$(1,1));
+this.info=Clazz.new_($I$(2,1));
 this.setJobName$S("Java Printing");
 }, 1);
 
@@ -62,8 +53,8 @@ var pageCount;
 var file=null;
 var fileOutputStream=null;
 try {
-file=Clazz.new_($I$(6).c$$S,[pathname]);
-fileOutputStream=Clazz.new_($I$(7).c$$java_io_File,[file]);
+file=Clazz.new_($I$(6,1).c$$S,[pathname]);
+fileOutputStream=Clazz.new_($I$(7,1).c$$java_io_File,[file]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.err.println$S("Error!! - Invalid output file path: " + pathname);
@@ -73,7 +64,7 @@ throw e;
 }
 System.out.println$S("GNU JPDF creating " + file);
 var pdfGraphics=null;
-this.printJob=Clazz.new_($I$(8).c$$java_io_OutputStream,[fileOutputStream]);
+this.printJob=Clazz.new_($I$(8,1).c$$java_io_OutputStream,[fileOutputStream]);
 if (this.info != null ) {
 this.printJob.getPDFDocument$().setPDFInfo$gnu_jpdf_PDFInfo(this.info);
 }pageCount=(this.pageable == null  ? -1 : this.pageable.getNumberOfPages$());
@@ -82,7 +73,7 @@ if (this.pageable != null ) this.pageFormat=this.pageable.getPageFormat$I(pageIn
 if (this.pageFormat == null ) this.pageFormat=this.defaultPage$();
 pdfGraphics=this.printJob.getGraphics$java_awt_print_PageFormat(this.pageFormat);
 if (this.pageable != null ) this.printable=this.pageable.getPrintable$I(pageIndex);
-if (this.printable.print$(pdfGraphics, this.pageFormat, pageIndex) == 1) pageCount=0;
+if (this.printable.print$java_awt_Graphics$java_awt_print_PageFormat$I(pdfGraphics, this.pageFormat, pageIndex) == 1) pageCount=0;
 pdfGraphics.dispose$();
 }
 this.printJob.end$();
@@ -94,7 +85,7 @@ var file;
 var path;
 var jobName=this.getJobName$();
 if (C$.fileChooser == null ) {
-C$.fileChooser=Clazz.new_($I$(9));
+C$.fileChooser=Clazz.new_($I$(9,1));
 C$.fileChooser.setMultiSelectionEnabled$Z(false);
 C$.fileChooser.setFileSelectionMode$I(0);
 }if (jobName.equals$O("")) {
@@ -102,7 +93,7 @@ jobName="Java Printing";
 }jobName=jobName.replaceAll$S$S("\\\\", "-");
 jobName=jobName.replaceAll$S$S("/", "-");
 path=C$.fileChooser.getCurrentDirectory$();
-file=Clazz.new_($I$(6).c$$java_io_File$S,[path, jobName + ".pdf"]);
+file=Clazz.new_($I$(6,1).c$$java_io_File$S,[path, jobName + ".pdf"]);
 C$.fileChooser.setSelectedFile$java_io_File(file);
 if (C$.fileChooser.showSaveDialog$java_awt_Component(null) == 0) {
 file=C$.fileChooser.getSelectedFile$();
@@ -120,7 +111,7 @@ this.info.setAuthor$S(author);
 });
 
 Clazz.newMeth(C$, 'setCopies$I', function (copies) {
-this.attributes.add$javax_print_attribute_Attribute(Clazz.new_($I$(3).c$$I,[copies]));
+this.attributes.add$javax_print_attribute_Attribute(Clazz.new_($I$(3,1).c$$I,[copies]));
 });
 
 Clazz.newMeth(C$, 'setCreator$S', function (creator) {
@@ -128,7 +119,7 @@ this.info.setCreator$S(creator);
 });
 
 Clazz.newMeth(C$, 'setJobName$S', function (jobName) {
-this.attributes.add$javax_print_attribute_Attribute(Clazz.new_($I$(4).c$$S$java_util_Locale,[jobName, $I$(10).getDefault$()]));
+this.attributes.add$javax_print_attribute_Attribute(Clazz.new_([jobName, $I$(10).getDefault$()],$I$(4,1).c$$S$java_util_Locale));
 if (this.info.getTitle$() == null ) {
 this.info.setTitle$S(jobName);
 }});
@@ -156,4 +147,4 @@ Clazz.newMeth(C$, 'validatePage$java_awt_print_PageFormat', function (page) {
 return page.clone$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

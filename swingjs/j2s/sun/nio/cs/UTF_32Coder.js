@@ -1,33 +1,27 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.CoderResult']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UTF_32Coder", function(){
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.CoderResult']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UTF_32Coder", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Decoder',12],['Encoder',12]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 ;
-(function(){var C$=Clazz.newClass(P$.UTF_32Coder, "Decoder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.UTF_32Coder, "Decoder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.nio.charset.CharsetDecoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.currentBO=0;
-this.expectedBO=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['currentBO','expectedBO']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$I', function (cs, bo) {
-C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this, [cs, 0.25, 1.0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this,[cs, 0.25, 1.0]);C$.$init$.apply(this);
 this.expectedBO=bo;
 this.currentBO=0;
 }, 1);
@@ -80,41 +74,34 @@ this.currentBO=0;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.UTF_32Coder, "Encoder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.UTF_32Coder, "Encoder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.nio.charset.CharsetEncoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doBOM=false;
-this.doneBOM=false;
-this.byteOrder=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.doBOM=false;
 this.doneBOM=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doBOM','doneBOM'],'I',['byteOrder']]]
 
 Clazz.newMeth(C$, 'put$I$java_nio_ByteBuffer', function (cp, dst) {
 if (this.byteOrder == 1) {
-dst.put$B(($b$[0] = ((cp >> 24)|0), $b$[0]));
-dst.put$B(($b$[0] = ((cp >> 16)|0), $b$[0]));
-dst.put$B(($b$[0] = ((cp >> 8)|0), $b$[0]));
-dst.put$B(($b$[0] = (cp|0), $b$[0]));
+dst.put$B(($b$[0] = (cp >> 24), $b$[0]));
+dst.put$B(($b$[0] = (cp >> 16), $b$[0]));
+dst.put$B(($b$[0] = (cp >> 8), $b$[0]));
+dst.put$B(($b$[0] = cp, $b$[0]));
 } else {
-dst.put$B(($b$[0] = (cp|0), $b$[0]));
-dst.put$B(($b$[0] = ((cp >> 8)|0), $b$[0]));
-dst.put$B(($b$[0] = ((cp >> 16)|0), $b$[0]));
-dst.put$B(($b$[0] = ((cp >> 24)|0), $b$[0]));
+dst.put$B(($b$[0] = cp, $b$[0]));
+dst.put$B(($b$[0] = (cp >> 8), $b$[0]));
+dst.put$B(($b$[0] = (cp >> 16), $b$[0]));
+dst.put$B(($b$[0] = (cp >> 24), $b$[0]));
 }});
 
 Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$I$Z', function (cs, byteOrder, doBOM) {
-C$.superclazz.c$$java_nio_charset_Charset$F$F$BA.apply(this, [cs, 4.0, doBOM ? 8.0 : 4.0, (byteOrder == 1) ? Clazz.array(Byte.TYPE, -1, [0, 0, -1, -3]) : Clazz.array(Byte.TYPE, -1, [-3, -1, 0, 0])]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_nio_charset_Charset$F$F$BA.apply(this,[cs, 4.0, doBOM ? 8.0 : 4.0, (byteOrder == 1) ? Clazz.array(Byte.TYPE, -1, [0, 0, -1, -3]) : Clazz.array(Byte.TYPE, -1, [-3, -1, 0, 0])]);C$.$init$.apply(this);
 this.byteOrder=byteOrder;
 this.doBOM=doBOM;
 this.doneBOM=!doBOM;
@@ -161,4 +148,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

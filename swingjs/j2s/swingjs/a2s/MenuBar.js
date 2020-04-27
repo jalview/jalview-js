@@ -1,27 +1,21 @@
-(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'java.awt.Insets','java.awt.Color','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MenuBar", null, 'javax.swing.JMenuBar', 'java.awt.MenuContainer');
-C$.awtInsets=null;
+(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'java.awt.Insets','java.awt.Color','java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MenuBar", null, 'javax.swing.JMenuBar', 'java.awt.MenuContainer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.awtInsets=Clazz.new_($I$(1).c$$I$I$I$I,[6, 10, 6, 10]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.helpMenu=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.helpMenu=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['helpMenu','java.awt.Menu']]
+,['O',['awtInsets','java.awt.Insets']]]
 
 Clazz.newMeth(C$, 'isAWT$', function () {
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.setBackground$java_awt_Color(Clazz.new_($I$(2).c$$I,[15658734]));
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.setBackground$java_awt_Color(Clazz.new_($I$(2,1).c$$I,[15658734]));
 }, 1);
 
 Clazz.newMeth(C$, 'getInsets$', function () {
@@ -44,12 +38,12 @@ for (var i=0; i < nmenus; i++) {
 });
 
 Clazz.newMeth(C$, 'shortcuts$', function () {
-var shortcuts=Clazz.new_($I$(3));
+var shortcuts=Clazz.new_($I$(3,1));
 var nmenus=this.getMenuCount$();
 for (var i=0; i < nmenus; i++) {
 var e=(this.getMenu$I(i)).shortcuts$();
 while (e.hasMoreElements$()){
-shortcuts.addElement$TE(e.nextElement$());
+shortcuts.addElement$O(e.nextElement$());
 }
 }
 return shortcuts.elements$();
@@ -79,5 +73,9 @@ C$.superclazz.prototype.remove$java_awt_Component.apply(this, [m]);
 Clazz.newMeth(C$, 'countMenus$', function () {
 return this.getMenuCount$();
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.awtInsets=Clazz.new_($I$(1,1).c$$I$I$I$I,[6, 10, 6, 10]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:45 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

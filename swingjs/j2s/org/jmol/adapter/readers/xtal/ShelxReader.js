@@ -1,20 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.AU','org.jmol.util.Logger','org.jmol.adapter.smarter.Atom']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ShelxReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
-C$.supportedRecordTypes=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.AU','org.jmol.adapter.smarter.AtomSetCollectionReader','org.jmol.util.Logger','org.jmol.adapter.smarter.Atom']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ShelxReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.supportedRecordTypes=Clazz.array(String, -1, ["TITL", "CELL", "SPGR", "SFAC", "LATT", "SYMM", "NOTE", "ATOM", "END"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sfacElementSymbols=null;
-this.isCmdf=false;
-this.tokens=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isCmdf'],'O',['+sfacElementSymbols','+tokens']]
+,['O',['supportedRecordTypes','String[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.setFractionalCoordinates$Z(true);
@@ -97,7 +90,7 @@ for (var i=this.tokens.length; allElementSymbols && --i >= 1 ; ) {
 var token=this.tokens[i];
 allElementSymbols=C$.isValidElementSymbolNoCaseSecondChar$S(token);
 }
-var sfacTokens=$I$(1).getTokens$S(this.line.substring$I(4));
+var sfacTokens=(function(a,f){return f.apply(null,a)})([this.line.substring$I(4)],$I$(1).getTokens$S);
 if (allElementSymbols) p$1.parseSfacElementSymbols$SA.apply(this, [sfacTokens]);
  else p$1.parseSfacCoefficients$SA.apply(this, [sfacTokens]);
 }, p$1);
@@ -120,7 +113,7 @@ var a3=this.parseFloatStr$S(sfacTokens[5]);
 var a4=this.parseFloatStr$S(sfacTokens[7]);
 var c=this.parseFloatStr$S(sfacTokens[9]);
 var z=Math.round(a1 + a2 + a3 + a4 + c );
-var elementSymbol=org.jmol.adapter.smarter.AtomSetCollectionReader.getElementSymbol$I(z);
+var elementSymbol=$I$(3).getElementSymbol$I(z);
 var oldCount=0;
 if (this.sfacElementSymbols == null ) {
 this.sfacElementSymbols=Clazz.array(String, [1]);
@@ -138,7 +131,7 @@ var x=this.parseFloatStr$S(this.tokens[2]);
 var y=this.parseFloatStr$S(this.tokens[3]);
 var z=this.parseFloatStr$S(this.tokens[4]);
 if (Float.isNaN$F(x) || Float.isNaN$F(y) || Float.isNaN$F(z)  ) {
-$I$(3).error$S("skipping line " + this.line);
+$I$(4).error$S("skipping line " + this.line);
 return;
 }elementIndex--;
 var atom=this.asc.addNewAtom$();
@@ -154,7 +147,7 @@ data[3]=this.parseFloatStr$S(this.tokens[11]);
 data[4]=this.parseFloatStr$S(this.tokens[10]);
 data[5]=this.parseFloatStr$S(this.tokens[9]);
 for (var i=0; i < 6; i++) if (Float.isNaN$F(data[i])) {
-$I$(3).error$S("Bad anisotropic Uij data: " + this.line);
+$I$(4).error$S("Bad anisotropic Uij data: " + this.line);
 return;
 }
 this.asc.setAnisoBorU$org_jmol_adapter_smarter_Atom$FA$I(atom, data, 8);
@@ -181,12 +174,16 @@ if (str == null ) return false;
 var length=str.length$();
 if (length == 0) return false;
 var chFirst=str.charAt$I(0);
-if (length == 1) return $I$(4).isValidSym1$C(chFirst);
+if (length == 1) return $I$(5).isValidSym1$C(chFirst);
 if (length > 2) return false;
 var chSecond=str.charAt$I(1);
-return $I$(4).isValidSymNoCase$C$C(chFirst, chSecond);
+return $I$(5).isValidSymNoCase$C$C(chFirst, chSecond);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.supportedRecordTypes=Clazz.array(String, -1, ["TITL", "CELL", "SPGR", "SFAC", "LATT", "SYMM", "NOTE", "ATOM", "END"]);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

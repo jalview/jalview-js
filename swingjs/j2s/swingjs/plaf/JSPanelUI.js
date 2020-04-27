@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.api.js.DOMNode','java.awt.Dimension','javax.swing.LookAndFeel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSPanelUI", null, 'swingjs.plaf.JSLightweightUI');
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[[0,'swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode','java.awt.Dimension','javax.swing.LookAndFeel']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSPanelUI", null, 'swingjs.plaf.JSLightweightUI', 'java.awt.peer.ContainerPeer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$frameZ=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.$frameZ=10000;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['$frameZ']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.isContainer=this.isPanel=true;
 this.setDoc$();
 }, 1);
@@ -22,19 +18,19 @@ this.setDoc$();
 Clazz.newMeth(C$, 'updateDOMNode$', function () {
 var root=this.jc.getRootPane$();
 if (this.domNode == null ) {
-this.containerNode=this.domNode=P$.JSComponentUI.newDOMObject$S$S$SA("div", this.id, []);
-if (root != null  && root.getGlassPane$() === this.c  ) $I$(1).setVisible(this.domNode, false);
+this.containerNode=this.domNode=$I$(1).newDOMObject$S$S$SA("div", this.id, []);
+if (root != null  && root.getGlassPane$() === this.c  ) $I$(2).setVisible(this.domNode, false);
 }this.isContentPane=(root != null  && this.jc === root.getContentPane$()  );
 if (this.isContentPane) this.checkAllowDivOverflow$();
 return this.updateDOMNodeCUI$();
 });
 
 Clazz.newMeth(C$, 'getHTMLSizePreferred$swingjs_api_js_DOMNode$Z', function (obj, addCSS) {
-return Clazz.new_($I$(2).c$$I$I,[this.c.getWidth$(), this.c.getHeight$()]);
+return Clazz.new_([this.c.getWidth$(), this.c.getHeight$()],$I$(3,1).c$$I$I);
 });
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (jc) {
-$I$(3).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "Panel.background", "Panel.foreground", "Panel.font");
+$I$(4).installColorsAndFont$javax_swing_JComponent$S$S$S(jc, "Panel.background", "Panel.foreground", "Panel.font");
 });
 
 Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (jc) {
@@ -48,4 +44,4 @@ Clazz.newMeth(C$, 'getMinimumSize$javax_swing_JComponent', function (jc) {
 return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

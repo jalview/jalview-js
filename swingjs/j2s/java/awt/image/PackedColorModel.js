@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt.image"),p$1={};
-var C$=Clazz.newClass(P$, "PackedColorModel", null, 'java.awt.image.ColorModel');
+/*c*/var C$=Clazz.newClass(P$, "PackedColorModel", null, 'java.awt.image.ColorModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.maskArray=null;
-this.maskOffsets=null;
-this.scaleFactors=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['maskArray','int[]','+maskOffsets','scaleFactors','float[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$I$IA$I$Z$I$I', function (space, bits, colorMaskArray, alphaMask, isAlphaPremultiplied, trans, transferType) {
-C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this, [bits, C$.createBitsArray$IA$I(colorMaskArray, alphaMask), space, (alphaMask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this,[bits, C$.createBitsArray$IA$I(colorMaskArray, alphaMask), space, (alphaMask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);C$.$init$.apply(this);
 if (bits < 1 || bits > 32 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Number of bits must be between 1 and 32."]);
 }this.maskArray=Clazz.array(Integer.TYPE, [this.numComponents]);
@@ -32,8 +25,7 @@ this.transparency=2;
 }}}, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$I$I$I$I$I$Z$I$I', function (space, bits, rmask, gmask, bmask, amask, isAlphaPremultiplied, trans, transferType) {
-C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this, [bits, C$.createBitsArray$I$I$I$I(rmask, gmask, bmask, amask), space, (amask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this,[bits, C$.createBitsArray$I$I$I$I(rmask, gmask, bmask, amask), space, (amask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);C$.$init$.apply(this);
 if (space.getType$() != 5) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["ColorSpace must be TYPE_RGB."]);
 }this.maskArray=Clazz.array(Integer.TYPE, [this.numComponents]);
@@ -141,4 +133,4 @@ return -1;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

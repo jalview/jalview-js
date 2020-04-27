@@ -1,46 +1,39 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SourceDataType", function(){
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SourceDataType", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Plasmid',9],['Strain',9],['Tissue',9],['Transposon',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.strainOrPlasmidOrTransposon=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['strainOrPlasmidOrTransposon','java.util.List']]]
 
 Clazz.newMeth(C$, 'getStrainOrPlasmidOrTransposon$', function () {
 if (this.strainOrPlasmidOrTransposon == null ) {
-this.strainOrPlasmidOrTransposon=Clazz.new_($I$(1));
+this.strainOrPlasmidOrTransposon=Clazz.new_($I$(1,1));
 }return this.strainOrPlasmidOrTransposon;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.SourceDataType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="sourceDataType" propOrder={"strainOrPlasmidOrTransposon"  } )']],
-  [['strainOrPlasmidOrTransposon','java.util.List<java.lang.Object>'],['@XmlElements({"@XmlElement(name="strain",type=SourceDataType.Strain.class)" ,"@XmlElement(name="plasmid",type=SourceDataType.Plasmid.class)" ,"@XmlElement(name="transposon",type=SourceDataType.Transposon.class)" ,"@XmlElement(name="tissue",type=SourceDataType.Tissue.class)" })','@XmlElement(name="tissue" type="jalview.xml.binding.uniprot.SourceDataType.Tissue.class" )','@XmlElement(name="transposon" type="jalview.xml.binding.uniprot.SourceDataType.Transposon.class" )','@XmlElement(name="plasmid" type="jalview.xml.binding.uniprot.SourceDataType.Plasmid.class" )','@XmlElement(name="strain" type="jalview.xml.binding.uniprot.SourceDataType.Strain.class" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.SourceDataType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="sourceDataType" propOrder={"strainOrPlasmidOrTransposon"  } ']],
+  [['strainOrPlasmidOrTransposon','java.util.List<java.lang.Object>',null,['javax.xml.bind.annotation.XmlElements','javax.xml.bind.annotation.XmlElement','javax.xml.bind.annotation.XmlElement','javax.xml.bind.annotation.XmlElement','javax.xml.bind.annotation.XmlElement']],['{"@XmlElement(name="strain",type=SourceDataType.Strain.class)" ,"@XmlElement(name="plasmid",type=SourceDataType.Plasmid.class)" ,"@XmlElement(name="transposon",type=SourceDataType.Transposon.class)" ,"@XmlElement(name="tissue",type=SourceDataType.Tissue.class)" }','name="strain" type="jalview.xml.binding.uniprot.SourceDataType.Strain.class" ','name="plasmid" type="jalview.xml.binding.uniprot.SourceDataType.Plasmid.class" ','name="transposon" type="jalview.xml.binding.uniprot.SourceDataType.Transposon.class" ','name="tissue" type="jalview.xml.binding.uniprot.SourceDataType.Tissue.class" ']],
   [['null','jalview.xml.binding.uniprot.SourceDataType.Plasmid'],['!XmlInner']],
   [['null','jalview.xml.binding.uniprot.SourceDataType.Strain'],['!XmlInner']],
   [['null','jalview.xml.binding.uniprot.SourceDataType.Tissue'],['!XmlInner']],
-  [['null','jalview.xml.binding.uniprot.SourceDataType.Transposon'],['!XmlInner']]];
+  [['null','jalview.xml.binding.uniprot.SourceDataType.Transposon'],['!XmlInner']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.SourceDataType, "Plasmid", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SourceDataType, "Plasmid", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.evidence=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value'],'O',['evidence','java.util.List']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -52,31 +45,27 @@ this.value=value;
 
 Clazz.newMeth(C$, 'getEvidence$', function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.SourceDataType.Plasmid'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['evidence','java.util.List<java.lang.Integer>'],['@XmlAttribute(name="evidence" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.SourceDataType.Plasmid',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['evidence','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlAttribute']],['name="evidence" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SourceDataType, "Strain", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SourceDataType, "Strain", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.evidence=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value'],'O',['evidence','java.util.List']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -88,31 +77,27 @@ this.value=value;
 
 Clazz.newMeth(C$, 'getEvidence$', function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.SourceDataType.Strain'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['evidence','java.util.List<java.lang.Integer>'],['@XmlAttribute(name="evidence" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.SourceDataType.Strain',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['evidence','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlAttribute']],['name="evidence" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SourceDataType, "Tissue", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SourceDataType, "Tissue", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.evidence=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value'],'O',['evidence','java.util.List']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -124,31 +109,27 @@ this.value=value;
 
 Clazz.newMeth(C$, 'getEvidence$', function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.SourceDataType.Tissue'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['evidence','java.util.List<java.lang.Integer>'],['@XmlAttribute(name="evidence" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.SourceDataType.Tissue',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['evidence','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlAttribute']],['name="evidence" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.SourceDataType, "Transposon", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SourceDataType, "Transposon", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.evidence=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value'],'O',['evidence','java.util.List']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -160,16 +141,17 @@ this.value=value;
 
 Clazz.newMeth(C$, 'getEvidence$', function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.SourceDataType.Transposon'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['evidence','java.util.List<java.lang.Integer>'],['@XmlAttribute(name="evidence" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.SourceDataType.Transposon',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['evidence','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlAttribute']],['name="evidence" ']]]}
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

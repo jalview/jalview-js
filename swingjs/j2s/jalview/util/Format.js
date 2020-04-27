@@ -1,29 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),p$1={},I$=[[0,'java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Format");
+(function(){var P$=Clazz.newPackage("jalview.util"),p$1={},I$=[[0,'java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Format");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.precision=0;
-this.pre=null;
-this.post=null;
-this.leading_zeroes=false;
-this.show_plus=false;
-this.alternate=false;
-this.show_space=false;
-this.left_align=false;
-this.fmt='\0';
-this.formatString=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['leading_zeroes','show_plus','alternate','show_space','left_align'],'C',['fmt'],'I',['width','precision'],'S',['pre','post','formatString']]]
 
 Clazz.newMeth(C$, 'c$$S', function (s) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.formatString=s;
 this.width=0;
 this.precision=-1;
@@ -411,4 +397,4 @@ dp--;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

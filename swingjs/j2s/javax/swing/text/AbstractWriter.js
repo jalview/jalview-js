@@ -1,29 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.ElementIterator','javax.swing.text.Segment']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractWriter");
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.ElementIterator','javax.swing.text.Segment']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractWriter");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.it=null;
-this.out=null;
-this.indentLevel=0;
-this.indentSpace=0;
-this.doc=null;
-this.maxLineLength=0;
-this.currLength=0;
-this.startOffset=0;
-this.endOffset=0;
-this.offsetIndent=0;
-this.lineSeparator=null;
-this.canWrapLines=false;
-this.isLineEmpty=false;
-this.indentChars=null;
-this.tempChars=null;
-this.newlineChars=null;
-this.segment=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.indentLevel=0;
@@ -34,16 +12,18 @@ this.currLength=0;
 this.startOffset=0;
 this.endOffset=0;
 this.offsetIndent=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['canWrapLines','isLineEmpty'],'I',['indentLevel','indentSpace','maxLineLength','currLength','startOffset','endOffset','offsetIndent'],'S',['lineSeparator'],'O',['it','javax.swing.text.ElementIterator','out','java.io.Writer','doc','javax.swing.text.Document','indentChars','char[]','+tempChars','+newlineChars','segment','javax.swing.text.Segment']]]
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Document', function (w, doc) {
 C$.c$$java_io_Writer$javax_swing_text_Document$I$I.apply(this, [w, doc, 0, doc.getLength$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Document$I$I', function (w, doc, pos, len) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.doc=doc;
-this.it=Clazz.new_($I$(1).c$$javax_swing_text_Element,[doc.getDefaultRootElement$()]);
+this.it=Clazz.new_([doc.getDefaultRootElement$()],$I$(1,1).c$$javax_swing_text_Element);
 this.out=w;
 this.startOffset=pos;
 this.endOffset=pos + len;
@@ -71,9 +51,9 @@ C$.c$$java_io_Writer$javax_swing_text_Element$I$I.apply(this, [w, root, 0, root.
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Element$I$I', function (w, root, pos, len) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.doc=root.getDocument$();
-this.it=Clazz.new_($I$(1).c$$javax_swing_text_Element,[root]);
+this.it=Clazz.new_($I$(1,1).c$$javax_swing_text_Element,[root]);
 this.out=w;
 this.startOffset=pos;
 this.endOffset=pos + len;
@@ -117,7 +97,7 @@ var start=Math.max(this.getStartOffset$(), elem.getStartOffset$());
 var end=Math.min(this.getEndOffset$(), elem.getEndOffset$());
 if (start < end) {
 if (this.segment == null ) {
-this.segment=Clazz.new_($I$(2));
+this.segment=Clazz.new_($I$(2,1));
 }this.getDocument$().getText$I$I$javax_swing_text_Segment(start, end - start, this.segment);
 if (this.segment.count > 0) {
 this.write$CA$I$I(this.segment.array, this.segment.offset, this.segment.count);
@@ -328,4 +308,4 @@ return -1;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

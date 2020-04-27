@@ -1,20 +1,7 @@
-(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},p$2={},p$3={},I$=[[0,'javajs.img.JpegObj','javajs.img.DCT','javajs.img.Huffman','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DCT");
-C$.AANscaleFactor=null;
+(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},p$2={},p$3={},I$=[[0,'javajs.img.JpegObj','javajs.img.DCT','javajs.img.Huffman','javajs.util.AU']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DCT");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.AANscaleFactor=Clazz.array(Double.TYPE, -1, [1.0, 1.387039845, 1.306562965, 1.175875602, 1.0, 0.785694958, 0.5411961, 0.275899379]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.quantum=null;
-this.divisors=null;
-this.quantum_luminance=null;
-this.DivisorsLuminance=null;
-this.quantum_chrominance=null;
-this.DivisorsChrominance=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.quantum=$I$(4).newInt2$I(2);
@@ -23,10 +10,13 @@ this.quantum_luminance=Clazz.array(Integer.TYPE, [64]);
 this.DivisorsLuminance=Clazz.array(Double.TYPE, [64]);
 this.quantum_chrominance=Clazz.array(Integer.TYPE, [64]);
 this.DivisorsChrominance=Clazz.array(Double.TYPE, [64]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['quantum','int[][]','divisors','double[][]','quantum_luminance','int[]','DivisorsLuminance','double[]','quantum_chrominance','int[]','DivisorsChrominance','double[]']]
+,['O',['AANscaleFactor','double[]']]]
 
 Clazz.newMeth(C$, 'c$$I', function (quality) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$2.initMatrix$I.apply(this, [quality]);
 }, 1);
 
@@ -229,6 +219,10 @@ for (var i=0, index=0; i < 8; i++) for (var j=0; j < 8; j++, index++) outputData
 return outputData;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.AANscaleFactor=Clazz.array(Double.TYPE, -1, [1.0, 1.387039845, 1.306562965, 1.175875602, 1.0, 0.785694958, 0.5411961, 0.275899379]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

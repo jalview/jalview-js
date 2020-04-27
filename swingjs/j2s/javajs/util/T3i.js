@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("javajs.util"),I$=[];
-var C$=Clazz.newClass(P$, "T3i", null, null, 'java.io.Serializable');
+/*c*/var C$=Clazz.newClass(P$, "T3i", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.z=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['x','y','z']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$I$I$I', function (x, y, z) {
@@ -56,4 +50,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return "(" + this.x + ", " + this.y + ", " + this.z + ")" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

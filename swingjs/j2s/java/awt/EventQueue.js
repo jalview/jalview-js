@@ -1,50 +1,26 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Queue','Thread','sun.awt.SunToolkit','sun.awt.AWTAutoShutdown','java.awt.EventQueueItem','swingjs.JSToolkit','java.awt.Toolkit','sun.awt.AppContext','java.awt.EventDispatchThread','java.awt.event.InvocationEvent','Error']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EventQueue");
-C$.threadInitNumber=0;
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Queue','Thread','sun.awt.SunToolkit','sun.awt.AWTAutoShutdown','java.awt.EventQueueItem','swingjs.JSToolkit','java.awt.Toolkit','sun.awt.AppContext','java.awt.EventDispatchThread','java.awt.event.InvocationEvent','Error']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EventQueue");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queues=null;
-this.nextQueue=null;
-this.previousQueue=null;
-this.dispatchThread=null;
-this.threadGroup=null;
-this.mostRecentEventTime=0;
-this.currentEvent=null;
-this.waitForID=0;
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.queues=Clazz.array($I$(1), [4]);
 this.threadGroup=$I$(2).currentThread$().getThreadGroup$();
 this.mostRecentEventTime=System.currentTimeMillis$();
 this.name="AWT-EventQueue-" + C$.nextThreadNum$();
-}, 1);
+},1);
+
+C$.$fields$=[['I',['waitForID'],'J',['mostRecentEventTime'],'S',['name'],'O',['queues','java.awt.Queue[]','nextQueue','java.awt.EventQueue','+previousQueue','dispatchThread','java.awt.EventDispatchThread','threadGroup','ThreadGroup','currentEvent','java.awt.AWTEvent']]
+,['I',['threadInitNumber']]]
 
 Clazz.newMeth(C$, 'nextThreadNum$', function () {
 return C$.threadInitNumber++;
 }, 1);
 
-Clazz.newMeth(C$, 'noEvents$java_awt_EventQueue', function (eventQueue) {
-return p$1.noEvents.apply(eventQueue, []);
-}, 1);
-
-Clazz.newMeth(C$, 'getNextQueue$java_awt_EventQueue', function (eventQueue) {
-return eventQueue.nextQueue;
-}, 1);
-
-Clazz.newMeth(C$, 'removeSourceEvents$java_awt_EventQueue$O$Z', function (eventQueue, source, removeAllEvents) {
-eventQueue.removeSourceEvents$O$Z(source, removeAllEvents);
-}, 1);
-
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 for (var i=0; i < 4; i++) {
-this.queues[i]=Clazz.new_($I$(1));
+this.queues[i]=Clazz.new_($I$(1,1));
 }
 }, 1);
 
@@ -86,7 +62,7 @@ return 1;
 Clazz.newMeth(C$, 'postEventNow$java_awt_AWTEvent$I', function (theEvent, priority) {
 if (p$1.coalesceEvent$java_awt_AWTEvent$I.apply(this, [theEvent, priority])) {
 return;
-}var newItem=Clazz.new_($I$(5).c$$java_awt_AWTEvent,[theEvent]);
+}var newItem=Clazz.new_($I$(5,1).c$$java_awt_AWTEvent,[theEvent]);
 p$1.cacheEQItem$java_awt_EventQueueItem.apply(this, [newItem]);
 if (this.queues[priority].head == null ) {
 var shouldNotify=p$1.noEvents.apply(this, []);
@@ -100,10 +76,7 @@ this.queues[priority].tail=newItem;
 }}, p$1);
 
 Clazz.newMeth(C$, 'coalescePaintEvent$java_awt_event_PaintEvent', function (e) {
-var sourcePeer=(e.getSource$()).peer;
-if (sourcePeer != null ) {
-sourcePeer.coalescePaintEvent$java_awt_event_PaintEvent(e);
-}var cache=(e.getSource$()).eventCache;
+var cache=(e.getSource$()).eventCache;
 if (cache == null ) {
 return false;
 }var index=C$.eventToCacheIndex$java_awt_AWTEvent(e);
@@ -300,8 +273,12 @@ System.err.println$S("unable to dispatch event: " + event);
 }}, p$1);
 
 Clazz.newMeth(C$, 'getMostRecentEventTime$', function () {
-return 0;
+return p$1.getMostRecentEventTimeImpl.apply($I$(7).getEventQueue$(), []);
 }, 1);
+
+Clazz.newMeth(C$, 'getMostRecentEventTimeImpl', function () {
+return ($I$(2).currentThread$() === this.dispatchThread ) ? this.mostRecentEventTime : System.currentTimeMillis$();
+}, p$1);
 
 Clazz.newMeth(C$, 'getMostRecentEventTimeEx$', function () {
 return this.mostRecentEventTime;
@@ -335,8 +312,8 @@ newEventQueue.previousQueue=this;
 this.dispatchThread.stopDispatchingLater$();
 }this.nextQueue=newEventQueue;
 var appContext=$I$(8).getAppContext$();
-if (appContext.get$O($I$(8).EVENT_QUEUE_KEY) === this ) {
-appContext.put$O$O($I$(8).EVENT_QUEUE_KEY, newEventQueue);
+if (appContext.get$O("AppContext_EVENT_QUEUE_KEY") === this ) {
+appContext.put$O$O("AppContext_EVENT_QUEUE_KEY", newEventQueue);
 }});
 
 Clazz.newMeth(C$, 'pop$', function () {
@@ -361,8 +338,8 @@ throw ie;
 }
 }
 var appContext=$I$(8).getAppContext$();
-if (appContext.get$O($I$(8).EVENT_QUEUE_KEY) === this ) {
-appContext.put$O$O($I$(8).EVENT_QUEUE_KEY, this.previousQueue);
+if (appContext.get$O("AppContext_EVENT_QUEUE_KEY") === this ) {
+appContext.put$O$O("AppContext_EVENT_QUEUE_KEY", this.previousQueue);
 }this.previousQueue=null;
 }}var dt=this.dispatchThread;
 if (dt != null ) {
@@ -376,7 +353,7 @@ return $I$(6).isDispatchThread$();
 Clazz.newMeth(C$, 'initDispatchThread$', function () {
 {
 if (this.dispatchThread == null ) {
-var t=Clazz.new_($I$(9).c$$ThreadGroup$S$java_awt_EventQueue,[this.threadGroup, this.name, this]);
+var t=Clazz.new_($I$(9,1).c$$ThreadGroup$S$java_awt_EventQueue,[this.threadGroup, this.name, this]);
 $I$(4).getInstance$().notifyThreadBusy$Thread(t);
 this.dispatchThread=t;
 this.dispatchThread.start$();
@@ -440,7 +417,7 @@ mostRecentEventTime2=ie.getWhen$();
 }, p$1);
 
 Clazz.newMeth(C$, 'invokeLater$Runnable', function (runnable) {
-$I$(7).getEventQueue$().postEvent$java_awt_AWTEvent(Clazz.new_($I$(10).c$$O$I$Runnable$O$Z,[$I$(7).getDefaultToolkit$(), 1200, runnable, null, false]));
+$I$(7).getEventQueue$().postEvent$java_awt_AWTEvent(Clazz.new_([$I$(7).getDefaultToolkit$(), 1200, runnable, null, false],$I$(10,1).c$$O$I$Runnable$O$Z));
 }, 1);
 
 Clazz.newMeth(C$, 'invokeAndWait$Runnable', function (runnable) {
@@ -449,8 +426,8 @@ C$.invokeAndWaitStatic$O$Runnable($I$(7).getDefaultToolkit$(), runnable);
 
 Clazz.newMeth(C$, 'invokeAndWaitStatic$O$Runnable', function (source, runnable) {
 if (C$.isDispatchThread$()) {
-throw Clazz.new_($I$(11).c$$S,["Cannot call invokeAndWait from the event dispatcher thread"]);
-}var event=Clazz.new_($I$(10).c$$O$I$Runnable$O$Z,[source, 1200, runnable, null, true]);
+throw Clazz.new_($I$(11,1).c$$S,["Cannot call invokeAndWait from the event dispatcher thread"]);
+}var event=Clazz.new_($I$(10,1).c$$O$I$Runnable$O$Z,[source, 1200, runnable, null, true]);
 $I$(6).dispatchEvent$java_awt_AWTEvent$O$Z(event, null, true);
 var eventThrowable=event.getThrowable$();
 if (eventThrowable != null ) {
@@ -475,4 +452,4 @@ throw e;
 this.initDispatchThread$();
 }}});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

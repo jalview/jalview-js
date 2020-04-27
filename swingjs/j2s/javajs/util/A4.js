@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.T3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "A4", null, null, ['javajs.api.JSONEncodable', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.T3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "A4", null, null, ['javajs.api.JSONEncodable', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.z=0;
-this.angle=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['x','y','z','angle']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.z=1.0;
 }, 1);
 
@@ -95,4 +88,4 @@ Clazz.newMeth(C$, 'toJSON$', function () {
 return "[" + new Float(this.x).toString() + "," + new Float(this.y).toString() + "," + new Float(this.z).toString() + "," + new Float((this.angle * 180.0 / 3.141592653589793)).toString() + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,23 +1,16 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.V3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Eigen", null, null, 'javajs.api.EigenInterface');
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.V3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Eigen", null, null, 'javajs.api.EigenInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.n=0;
-this.d=null;
-this.e=null;
-this.V=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.n=3;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['n'],'O',['d','double[]','+e','V','double[][]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$I', function (n) {
@@ -41,7 +34,7 @@ return this.d;
 Clazz.newMeth(C$, 'fillFloatArrays$javajs_util_V3A$FA', function (eigenVectors, eigenValues) {
 for (var i=0; i < 3; i++) {
 if (eigenVectors != null ) {
-if (eigenVectors[i] == null ) eigenVectors[i]=Clazz.new_($I$(1));
+if (eigenVectors[i] == null ) eigenVectors[i]=Clazz.new_($I$(1,1));
 eigenVectors[i].set$F$F$F(this.V[0][i], this.V[1][i], this.V[2][i]);
 }if (eigenValues != null ) eigenValues[i]=this.d[i];
 }
@@ -261,4 +254,4 @@ r=0.0;
 }return r;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

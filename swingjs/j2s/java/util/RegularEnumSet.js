@@ -1,26 +1,22 @@
-(function(){var P$=java.util,I$=[[0,['java.util.RegularEnumSet','.EnumSetIterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RegularEnumSet", function(){
+(function(){var P$=java.util,I$=[[0,['java.util.RegularEnumSet','.EnumSetIterator']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RegularEnumSet", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.EnumSet');
+C$.$classes$=[['EnumSetIterator',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.elements=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.elements=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['elements']]]
 
 Clazz.newMeth(C$, 'c$$Class$EnumA', function (elementType, universe) {
-C$.superclazz.c$$Class$EnumA.apply(this, [elementType, universe]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Class$EnumA.apply(this,[elementType, universe]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['addRange$TE$TE'], function (from, to) {
+Clazz.newMeth(C$, 'addRange$Enum$Enum', function (from, to) {
 this.elements=(-1 >>> (from.ordinal$() - to.ordinal$() - 1 )) << from.ordinal$();
 });
 
@@ -35,11 +31,11 @@ this.elements&=-1 >>> -this.universe.length;
 }});
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(1), [this, null]);
+return Clazz.new_($I$(1,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'size$', function () {
-return Long.bitCount$J(this.elements);
+return Integer.bitCount$I(this.elements);
 });
 
 Clazz.newMeth(C$, 'isEmpty$', function () {
@@ -53,8 +49,8 @@ if (eClass !== this.elementType  && eClass.getSuperclass$() !== this.elementType
 return (this.elements & (1 << (e).ordinal$())) != 0;
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.typeCheck$TE(e);
+Clazz.newMeth(C$, ['add$Enum','add$O'], function (e) {
+this.typeCheck$Enum(e);
 var oldElements=this.elements;
 this.elements|=(1 << (e).ordinal$());
 return this.elements != oldElements;
@@ -119,25 +115,20 @@ if (es.elementType !== this.elementType ) return this.elements == 0 && es.elemen
 return es.elements == this.elements;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.RegularEnumSet, "EnumSetIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RegularEnumSet, "EnumSetIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.unseen=0;
-this.lastReturned=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.lastReturned=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['unseen','lastReturned']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.unseen=this.this$0.elements;
 }, 1);
 
@@ -149,7 +140,7 @@ Clazz.newMeth(C$, 'next$', function () {
 if (this.unseen == 0) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 this.lastReturned=this.unseen & -this.unseen;
 this.unseen-=this.lastReturned;
-return this.this$0.universe[Long.numberOfTrailingZeros$J(this.lastReturned)];
+return this.this$0.universe[Integer.numberOfTrailingZeros$I(this.lastReturned)];
 });
 
 Clazz.newMeth(C$, 'remove$', function () {
@@ -161,4 +152,4 @@ this.lastReturned=0;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

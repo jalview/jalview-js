@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.nio.channels"),I$=[[0,'java.nio.channels.spi.AsynchronousChannelProvider']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AsynchronousServerSocketChannel", null, null, ['java.nio.channels.AsynchronousChannel', 'java.nio.channels.NetworkChannel']);
+(function(){var P$=Clazz.newPackage("java.nio.channels"),I$=[[0,'java.nio.channels.spi.AsynchronousChannelProvider']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AsynchronousServerSocketChannel", null, null, ['java.nio.channels.AsynchronousChannel', 'java.nio.channels.NetworkChannel']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.provider=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['provider','java.nio.channels.spi.AsynchronousChannelProvider']]]
 
 Clazz.newMeth(C$, 'c$$java_nio_channels_spi_AsynchronousChannelProvider', function (provider) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.provider=provider;
 }, 1);
 
@@ -36,4 +32,4 @@ return this.bind$java_net_SocketAddress$I(local, 0);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

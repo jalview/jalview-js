@@ -1,18 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.P3i','org.jmol.c.STR','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TempArray");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.P3i','org.jmol.c.STR','Boolean']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "TempArray");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lengthsFreePoints=null;
-this.freePoints=null;
-this.lengthsFreeScreens=null;
-this.freeScreens=null;
-this.lengthsFreeEnum=null;
-this.freeEnum=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.lengthsFreePoints=Clazz.array(Integer.TYPE, [6]);
@@ -21,10 +10,12 @@ this.lengthsFreeScreens=Clazz.array(Integer.TYPE, [6]);
 this.freeScreens=Clazz.array($I$(2), [6, null]);
 this.lengthsFreeEnum=Clazz.array(Integer.TYPE, [2]);
 this.freeEnum=Clazz.array($I$(3), [2, null]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['lengthsFreePoints','int[]','freePoints','javajs.util.P3[][]','lengthsFreeScreens','int[]','freeScreens','javajs.util.P3i[][]','lengthsFreeEnum','int[]','freeEnum','org.jmol.c.STR[][]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'clear$', function () {
@@ -76,7 +67,7 @@ if (iFit > 0) {
 tempPoints=this.freePoints[iFit];
 } else {
 tempPoints=Clazz.array($I$(1), [size]);
-for (var i=size; --i >= 0; ) tempPoints[i]=Clazz.new_($I$(1));
+for (var i=size; --i >= 0; ) tempPoints[i]=Clazz.new_($I$(1,1));
 
 }return tempPoints;
 });
@@ -104,7 +95,7 @@ if (iFit > 0) {
 tempScreens=this.freeScreens[iFit];
 } else {
 tempScreens=Clazz.array($I$(2), [size]);
-for (var i=size; --i >= 0; ) tempScreens[i]=Clazz.new_($I$(2));
+for (var i=size; --i >= 0; ) tempScreens[i]=Clazz.new_($I$(2,1));
 
 }return tempScreens;
 });
@@ -145,4 +136,4 @@ Clazz.newMeth(C$, 'getSlabObjectType$I$O$Z$O', function (tok, data, isCap, color
 return Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(tok), data, $I$(4).valueOf$Z(isCap), colorData]);
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:57 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

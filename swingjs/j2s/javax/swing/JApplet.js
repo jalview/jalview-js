@@ -1,24 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.Color','javax.swing.JComponent','java.awt.BorderLayout','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JApplet", null, 'java.applet.JSApplet', 'javax.swing.RootPaneContainer');
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.Color','javax.swing.JComponent','java.awt.BorderLayout','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JApplet", null, 'java.applet.JSApplet', 'javax.swing.RootPaneContainer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rootPane=null;
-this.rootPaneCheckingEnabled=false;
-this.transferHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.rootPaneCheckingEnabled=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['rootPaneCheckingEnabled'],'O',['rootPane','javax.swing.JRootPane','transferHandler','javax.swing.TransferHandler']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.setFrameViewer$swingjs_JSFrameViewer(this.appletViewer);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.秘paintClass=this.秘updateClass=C$ ||null;
+this.setFrameViewer$swingjs_JSFrameViewer(this.秘appletViewer);
 p$1.setJApplet.apply(this, []);
 this.updateUI$();
 }, 1);
@@ -32,18 +26,18 @@ Clazz.newMeth(C$, 'setPanelUIClassID$', function () {
 
 Clazz.newMeth(C$, 'setJApplet', function () {
 this.setRootPane$javax_swing_JRootPane(this.createRootPane$());
-this.rootPane.setFrameViewer$swingjs_JSFrameViewer(this.appletViewer);
+this.rootPane.setFrameViewer$swingjs_JSFrameViewer(this.秘appletViewer);
 this.setForeground$java_awt_Color($I$(1).black);
 this.setBackground$java_awt_Color($I$(1).white);
 this.setLocale$java_util_Locale($I$(2).getDefaultLocale$());
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3)));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3,1)));
 this.setRootPaneCheckingEnabled$Z(true);
 this.setFocusTraversalPolicyProvider$Z(true);
 this.enableEvents$J(8);
 }, p$1);
 
 Clazz.newMeth(C$, 'createRootPane$', function () {
-var rp=Clazz.new_($I$(4).c$$S$Z$java_awt_Container,["", true, this]);
+var rp=Clazz.new_($I$(4,1).c$$S$Z$java_awt_Container,["", true, this]);
 rp.setOpaque$Z(true);
 return rp;
 });
@@ -154,7 +148,7 @@ return C$.superclazz.prototype.getGraphics$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'repaint$J$I$I$I$I', function (time, x, y, width, height) {
-if ($I$(6).HANDLE_TOP_LEVEL_PAINT) {
+if ((!this.秘isAWT$() || !this.canPaint$() ) && $I$(6).HANDLE_TOP_LEVEL_PAINT ) {
 $I$(6).currentManager$java_awt_Component(this).addDirtyRegion$java_applet_JSApplet$I$I$I$I(this, x, y, width, height);
 } else {
 C$.superclazz.prototype.repaint$J$I$I$I$I.apply(this, [time, x, y, width, height]);
@@ -170,12 +164,8 @@ var rootPaneCheckingEnabledString=(this.rootPaneCheckingEnabled ? "true" : "fals
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 
-Clazz.newMeth(C$, 'play$java_net_URL', function (url) {
-C$.superclazz.prototype.play$java_net_URL.apply(this, [url]);
-});
-
-Clazz.newMeth(C$, 'play$java_net_URL$S', function (url, name) {
-C$.superclazz.prototype.play$java_net_URL$S.apply(this, [url, name]);
+Clazz.newMeth(C$, 'getLocationOnScreen$', function () {
+return (this.isShowing$() ? this.getRootPane$().getLocationOnScreen$() : null);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:02:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

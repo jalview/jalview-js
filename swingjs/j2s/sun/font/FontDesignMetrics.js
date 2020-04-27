@@ -1,41 +1,28 @@
-(function(){var P$=Clazz.newPackage("sun.font"),p$1={},I$=[[0,'sun.font.FontDesignMetrics','java.util.Hashtable',['sun.font.FontDesignMetrics','.KeyReference'],'swingjs.JSToolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FontDesignMetrics", function(){
+(function(){var P$=Clazz.newPackage("sun.font"),p$1={},I$=[[0,'sun.font.FontDesignMetrics','java.util.Hashtable',['sun.font.FontDesignMetrics','.KeyReference'],'swingjs.JSToolkit']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FontDesignMetrics", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.FontMetrics');
-C$.roundingUpValue=0;
-C$.metricsCache=null;
-C$.recentMetrics=null;
-C$.recentIndex=0;
+C$.$classes$=[['KeyReference',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.roundingUpValue=0.95;
-C$.metricsCache=Clazz.new_($I$(2));
-C$.recentMetrics=Clazz.array(C$, [5]);
-C$.recentIndex=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ascent=0;
-this.descent=0;
-this.leading=0;
-this.height=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.ascent=-1;
 this.height=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['ascent','descent','leading'],'I',['height']]
+,['F',['roundingUpValue'],'I',['recentIndex'],'O',['metricsCache','java.util.Hashtable','recentMetrics','sun.font.FontDesignMetrics[]']]]
 
 Clazz.newMeth(C$, 'getMetrics$java_awt_Font', function (font) {
 var m=null;
 var r;
-r=C$.metricsCache.get$O(font);
+r=C$.metricsCache.get$O(font.toString());
 if (r != null ) {
 m=r.get$();
 }if (m == null ) {
 m=Clazz.new_(C$.c$$java_awt_Font,[font]);
-C$.metricsCache.put$TK$TV(font, Clazz.new_($I$(3).c$$O$O,[font, m]));
+C$.metricsCache.put$O$O(font.toString(), Clazz.new_($I$(3,1).c$$O$O,[font, m]));
 }for (var i=0; i < C$.recentMetrics.length; i++) {
 if (C$.recentMetrics[i] === m ) {
 return m;
@@ -48,8 +35,7 @@ C$.recentIndex=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Font', function (font) {
-C$.superclazz.c$$java_awt_Font.apply(this, [font]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Font.apply(this,[font]);C$.$init$.apply(this);
 this.font=font;
 p$1.initMatrixAndMetrics.apply(this, []);
 }, 1);
@@ -127,25 +113,27 @@ var buffer=Clazz.array(Character.TYPE, [2]);
 var len=Character.toChars$I$CA$I(codePoint, buffer, 0);
 return this.charsWidth$CA$I$I(buffer, 0, len);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.roundingUpValue=0.95;
+C$.metricsCache=Clazz.new_($I$(2,1));
+C$.recentMetrics=Clazz.array(C$, [5]);
+C$.recentIndex=0;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.FontDesignMetrics, "KeyReference", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.FontDesignMetrics, "KeyReference", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.key=null;
-this.val=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['key','java.lang.Object','+val']]]
 
 Clazz.newMeth(C$, 'c$$O$O', function (key, value) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.key=key;
 this.val=value;
 }, 1);
@@ -155,7 +143,7 @@ return this.val;
 });
 
 Clazz.newMeth(C$, 'dispose$', function () {
-if ($I$(1).metricsCache.get$O(this.key) === this ) {
+if ($I$(1).metricsCache.get$O(this.key.toString()) === this ) {
 $I$(1).metricsCache.remove$O(this.key);
 }});
 
@@ -164,4 +152,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

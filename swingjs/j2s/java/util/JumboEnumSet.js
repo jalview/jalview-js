@@ -1,37 +1,32 @@
-(function(){var P$=java.util,p$1={},I$=[[0,['java.util.JumboEnumSet','.EnumSetIterator'],'java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JumboEnumSet", function(){
+(function(){var P$=java.util,p$1={},I$=[[0,['java.util.JumboEnumSet','.EnumSetIterator'],'java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JumboEnumSet", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.EnumSet');
+C$.$classes$=[['EnumSetIterator',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.elements=null;
-this.size=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.size=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['size'],'O',['elements','int[]']]]
 
 Clazz.newMeth(C$, 'c$$Class$EnumA', function (elementType, universe) {
-C$.superclazz.c$$Class$EnumA.apply(this, [elementType, universe]);
-C$.$init$.apply(this);
-this.elements=Clazz.array(Long.TYPE, [(universe.length + 63) >>> 6]);
+;C$.superclazz.c$$Class$EnumA.apply(this,[elementType, universe]);C$.$init$.apply(this);
+this.elements=Clazz.array(Integer.TYPE, [(universe.length + 31) >>> 5]);
 }, 1);
 
-Clazz.newMeth(C$, ['addRange$TE$TE'], function (from, to) {
-var fromIndex=from.ordinal$() >>> 6;
-var toIndex=to.ordinal$() >>> 6;
+Clazz.newMeth(C$, 'addRange$Enum$Enum', function (from, to) {
+var fromIndex=from.ordinal$() >>> 5;
+var toIndex=to.ordinal$() >>> 5;
 if (fromIndex == toIndex) {
 this.elements[fromIndex]=(-1 >>> (from.ordinal$() - to.ordinal$() - 1 )) << from.ordinal$();
 } else {
 this.elements[fromIndex]=(-1 << from.ordinal$());
 for (var i=fromIndex + 1; i < toIndex; i++) this.elements[i]=-1;
 
-this.elements[toIndex]=-1 >>> (63 - to.ordinal$());
+this.elements[toIndex]=-1 >>> (31 - to.ordinal$());
 }this.size=to.ordinal$() - from.ordinal$() + 1;
 });
 
@@ -50,7 +45,7 @@ this.size=this.universe.length - this.size;
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(1), [this, null]);
+return Clazz.new_($I$(1,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'size$', function () {
@@ -66,13 +61,13 @@ if (e == null ) return false;
 var eClass=e.getClass$();
 if (eClass !== this.elementType  && eClass.getSuperclass$() !== this.elementType  ) return false;
 var eOrdinal=(e).ordinal$();
-return (this.elements[eOrdinal >>> 6] & (1 << eOrdinal)) != 0;
+return (this.elements[eOrdinal >>> 5] & (1 << eOrdinal)) != 0;
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.typeCheck$TE(e);
+Clazz.newMeth(C$, ['add$Enum','add$O'], function (e) {
+this.typeCheck$Enum(e);
 var eOrdinal=e.ordinal$();
-var eWordNum=eOrdinal >>> 6;
+var eWordNum=eOrdinal >>> 5;
 var oldElements=this.elements[eWordNum];
 this.elements[eWordNum]|=(1 << eOrdinal);
 var result=(this.elements[eWordNum] != oldElements);
@@ -135,7 +130,7 @@ return p$1.recalculateSize.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-$I$(2).fill$JA$J(this.elements, 0);
+$I$(2).fill$IA$I(this.elements, 0);
 this.size=0;
 });
 
@@ -143,7 +138,7 @@ Clazz.newMeth(C$, 'equals$O', function (o) {
 if (!(Clazz.instanceOf(o, "java.util.JumboEnumSet"))) return C$.superclazz.prototype.equals$O.apply(this, [o]);
 var es=o;
 if (es.elementType !== this.elementType ) return this.size == 0 && es.size == 0 ;
-return $I$(2).equals$JA$JA(es.elements, this.elements);
+return $I$(2).equals$IA$IA(es.elements, this.elements);
 });
 
 Clazz.newMeth(C$, 'recalculateSize', function () {
@@ -160,29 +155,22 @@ result.elements=result.elements.clone$();
 return result;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JumboEnumSet, "EnumSetIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JumboEnumSet, "EnumSetIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.unseen=0;
-this.unseenIndex=0;
-this.lastReturned=0;
-this.lastReturnedIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.unseenIndex=0;
 this.lastReturned=0;
 this.lastReturnedIndex=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['unseen','unseenIndex','lastReturned','lastReturnedIndex']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.unseen=this.this$0.elements[0];
 }, 1);
 
@@ -197,7 +185,7 @@ if (!this.hasNext$()) throw Clazz.new_(Clazz.load('java.util.NoSuchElementExcept
 this.lastReturned=this.unseen & -this.unseen;
 this.lastReturnedIndex=this.unseenIndex;
 this.unseen-=this.lastReturned;
-return this.this$0.universe[(this.lastReturnedIndex << 6) + Long.numberOfTrailingZeros$J(this.lastReturned)];
+return this.this$0.universe[(this.lastReturnedIndex << 5) + Integer.numberOfTrailingZeros$I(this.lastReturned)];
 });
 
 Clazz.newMeth(C$, 'remove$', function () {
@@ -212,4 +200,4 @@ this.this$0.size--;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

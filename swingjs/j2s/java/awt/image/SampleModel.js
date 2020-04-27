@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt.image"),I$=[];
-var C$=Clazz.newClass(P$, "SampleModel");
+/*c*/var C$=Clazz.newClass(P$, "SampleModel");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.height=0;
-this.numBands=0;
-this.dataType=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['width','height','numBands','dataType'],'O',['秘pix','int[]']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (dataType, w, h, numBands) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var size=w * h;
 if (w <= 0 || h <= 0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Width (" + w + ") and height (" + h + ") must be > 0" ]);
@@ -78,12 +71,13 @@ for (var j=x; j < x + w; j++) {
 o=this.getDataElements$I$I$O$java_awt_image_DataBuffer(j, i, o, data);
 btemp=o;
 for (var k=0; k < numDataElems; k++) {
-bdata[cnt++]=(btemp[k]|0);
+bdata[cnt++]=btemp[k];
 }
 }
 }
 obj=bdata;
 break;
+case 1:
 case 2:
 var sdata;
 var stemp;
@@ -131,9 +125,22 @@ var btemp=Clazz.array(Byte.TYPE, [numDataElems]);
 for (var i=y; i < y + h; i++) {
 for (var j=x; j < x + w; j++) {
 for (var k=0; k < numDataElems; k++) {
-btemp[k]=(barray[cnt++]|0);
+btemp[k]=barray[cnt++];
 }
 this.setDataElements$I$I$O$java_awt_image_DataBuffer(j, i, btemp, data);
+}
+}
+break;
+case 1:
+case 2:
+var sarray=obj;
+var stemp=Clazz.array(Short.TYPE, [numDataElems]);
+for (var i=y; i < y + h; i++) {
+for (var j=x; j < x + w; j++) {
+for (var k=0; k < numDataElems; k++) {
+stemp[k]=sarray[cnt++];
+}
+this.setDataElements$I$I$O$java_awt_image_DataBuffer(j, i, stemp, data);
 }
 }
 break;
@@ -146,6 +153,30 @@ for (var k=0; k < numDataElems; k++) {
 itemp[k]=iArray[cnt++];
 }
 this.setDataElements$I$I$O$java_awt_image_DataBuffer(j, i, itemp, data);
+}
+}
+break;
+case 4:
+var fArray=obj;
+var ftemp=Clazz.array(Float.TYPE, [numDataElems]);
+for (var i=y; i < y + h; i++) {
+for (var j=x; j < x + w; j++) {
+for (var k=0; k < numDataElems; k++) {
+ftemp[k]=fArray[cnt++];
+}
+this.setDataElements$I$I$O$java_awt_image_DataBuffer(j, i, ftemp, data);
+}
+}
+break;
+case 5:
+var dArray=obj;
+var dtemp=Clazz.array(Double.TYPE, [numDataElems]);
+for (var i=y; i < y + h; i++) {
+for (var j=x; j < x + w; j++) {
+for (var k=0; k < numDataElems; k++) {
+dtemp[k]=dArray[cnt++];
+}
+this.setDataElements$I$I$O$java_awt_image_DataBuffer(j, i, dtemp, data);
 }
 }
 break;
@@ -353,4 +384,4 @@ this.setSample$I$I$I$D$java_awt_image_DataBuffer(j, i, b, dArray[Offset++], data
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

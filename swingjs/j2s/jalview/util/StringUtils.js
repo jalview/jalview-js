@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.regex.Pattern','java.util.ArrayList','StringBuffer','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StringUtils");
-C$.DELIMITERS_PATTERN=null;
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.regex.Pattern','java.util.ArrayList','StringBuffer','StringBuilder','java.net.URLEncoder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StringUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DELIMITERS_PATTERN=$I$(1).compile$S(".*=\'[^\']*(?!\')");
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['DELIMITERS_PATTERN','java.util.regex.Pattern','urlEncodings','String[]']]]
 
 Clazz.newMeth(C$, 'insertCharAt$CA$I$I$C', function ($in, position, count, ch) {
 var tmp=Clazz.array(Character.TYPE, [$in.length + count]);
@@ -54,7 +54,7 @@ Clazz.newMeth(C$, 'separatorListToArray$S$S', function (input, delimiter) {
 var seplen=delimiter.length$();
 if (input == null  || input.equals$O("")  || input.equals$O(delimiter) ) {
 return null;
-}var jv=Clazz.new_($I$(2));
+}var jv=Clazz.new_($I$(2,1));
 var cp=0;
 var pos;
 var escape;
@@ -64,9 +64,9 @@ var lstitem=null;
 while ((pos=input.indexOf$S$I(delimiter, cp)) >= cp){
 escape=(pos > 0 && input.charAt$I(pos - 1) == "\\" ) ? -1 : 0;
 if (wasescaped || wasquoted ) {
-jv.set$I$TE(jv.size$() - 1, lstitem=lstitem + delimiter + input.substring$I$I(cp, pos + escape) );
+jv.set$I$O(jv.size$() - 1, lstitem=lstitem + delimiter + input.substring$I$I(cp, pos + escape) );
 } else {
-jv.add$TE(lstitem=input.substring$I$I(cp, pos + escape));
+jv.add$O(lstitem=input.substring$I$I(cp, pos + escape));
 }cp=pos + seplen;
 wasescaped=escape == -1;
 wasquoted=C$.DELIMITERS_PATTERN.matcher$CharSequence(lstitem).matches$();
@@ -74,12 +74,12 @@ wasquoted=C$.DELIMITERS_PATTERN.matcher$CharSequence(lstitem).matches$();
 if (cp < input.length$()) {
 var c=input.substring$I(cp);
 if (wasescaped || wasquoted ) {
-jv.set$I$TE(jv.size$() - 1, lstitem + delimiter + c );
+jv.set$I$O(jv.size$() - 1, lstitem + delimiter + c );
 } else {
 if (!c.equals$O(delimiter)) {
-jv.add$TE(c);
+jv.add$O(c);
 }}}if (jv.size$() > 0) {
-var v=jv.toArray$TTA(Clazz.array(String, [jv.size$()]));
+var v=jv.toArray$OA(Clazz.array(String, [jv.size$()]));
 jv.clear$();
 if (false) {
 System.err.println$S("Array from '" + delimiter + "' separated List:\n" + v.length );
@@ -93,7 +93,7 @@ System.err.println$S("Empty Array from '" + delimiter + "' separated List" );
 }, 1);
 
 Clazz.newMeth(C$, 'arrayToSeparatorList$SA$S', function (list, separator) {
-var v=Clazz.new_($I$(3));
+var v=Clazz.new_($I$(3,1));
 if (list != null  && list.length > 0 ) {
 for (var i=0, iSize=list.length; i < iSize; i++) {
 if (list[i] != null ) {
@@ -111,7 +111,7 @@ System.err.println$S("Returning empty '" + separator + "' separated List\n" );
 }, 1);
 
 Clazz.newMeth(C$, 'listToDelimitedString$java_util_List$S', function (terms, delim) {
-var sb=Clazz.new_($I$(4).c$$I,[32]);
+var sb=Clazz.new_($I$(4,1).c$$I,[32]);
 if (terms != null  && !terms.isEmpty$() ) {
 var appended=false;
 for (var term, $term = terms.iterator$(); $term.hasNext$()&&((term=($term.next$())),1);) {
@@ -156,8 +156,8 @@ if (pointSeparator != null ) {
 tok1=tok1.replace$CharSequence$CharSequence(pointSeparator, ".");
 tok2=tok2.replace$CharSequence$CharSequence(pointSeparator, ".");
 }try {
-var f1=(Float.valueOf$S(tok1)).floatValue$();
-var f2=(Float.valueOf$S(tok2)).floatValue$();
+var f1=(Float.valueOf$S(tok1)).valueOf();
+var f2=(Float.valueOf$S(tok2)).valueOf();
 var comp=Float.compare$F$F(f1, f2);
 if (comp != 0) {
 return comp;
@@ -204,6 +204,61 @@ text=text.replaceAll$S$S(">", "&gt;");
 }return text;
 }, 1);
 
+Clazz.newMeth(C$, 'urlEncode$S$S', function (s, encodable) {
+if (s == null  || s.isEmpty$() ) {
+return s;
+}if (encodable.indexOf$I("%") != -1) {
+s=C$.urlEncode$S$C(s, "%");
+}for (var c, $c = 0, $$c = encodable.toCharArray$(); $c<$$c.length&&((c=($$c[$c])),1);$c++) {
+if (c != "%") {
+s=C$.urlEncode$S$C(s, c);
+}}
+return s;
+}, 1);
+
+Clazz.newMeth(C$, 'urlEncode$S$C', function (s, c) {
+var decoded=String.valueOf$C(c);
+if (s.indexOf$S(decoded) != -1) {
+var encoded=C$.getUrlEncoding$C(c);
+if (!encoded.equals$O(decoded)) {
+s=s.replace$CharSequence$CharSequence(decoded, encoded);
+}}return s;
+}, 1);
+
+Clazz.newMeth(C$, 'urlDecode$S$S', function (s, encodable) {
+if (s == null  || s.isEmpty$() ) {
+return s;
+}for (var c, $c = 0, $$c = encodable.toCharArray$(); $c<$$c.length&&((c=($$c[$c])),1);$c++) {
+var encoded=C$.getUrlEncoding$C(c);
+if (s.indexOf$S(encoded) != -1) {
+var decoded=String.valueOf$C(c);
+s=s.replace$CharSequence$CharSequence(encoded, decoded);
+}}
+return s;
+}, 1);
+
+Clazz.newMeth(C$, 'getUrlEncoding$C', function (c) {
+if (c.$c() < 0  || c.$c() >= C$.urlEncodings.length  ) {
+return String.valueOf$C(c);
+}var enc=C$.urlEncodings[c.$c()];
+if (enc == null ) {
+try {
+enc=C$.urlEncodings[c.$c()]=$I$(5,"encode$S$S",[String.valueOf$C(c), "UTF-8"]);
+} catch (e) {
+if (Clazz.exceptionOf(e,"java.io.UnsupportedEncodingException")){
+enc=C$.urlEncodings[c.$c()]=String.valueOf$C(c);
+} else {
+throw e;
+}
+}
+}return enc;
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.DELIMITERS_PATTERN=$I$(1,"compile$S",[".*=\'[^\']*(?!\')"]);
+C$.urlEncodings=Clazz.array(String, [255]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

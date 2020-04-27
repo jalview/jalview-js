@@ -1,27 +1,19 @@
 (function(){var P$=Clazz.newPackage("org.jmol.viewer"),I$=[];
-var C$=Clazz.newClass(P$, "MouseState");
+/*c*/var C$=Clazz.newClass(P$, "MouseState");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.modifiers=0;
-this.time=0;
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.x=-1000;
 this.y=-1000;
 this.modifiers=0;
 this.time=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['x','y','modifiers'],'J',['time'],'S',['name']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 }, 1);
 
@@ -54,4 +46,4 @@ return (current.x == this.x && current.y == this.y  && current.time == this.time
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

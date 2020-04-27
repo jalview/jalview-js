@@ -1,41 +1,21 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.SwingUtilities','java.awt.JSComponent','sun.awt.AppContext',['javax.swing.JInternalFrame','.FocusPropertyChangeListener'],['javax.swing.JInternalFrame','.JDesktopIcon'],'javax.swing.UIManager','Boolean','javax.swing.JLayeredPane','sun.swing.SwingUtilities2','javax.swing.event.InternalFrameListener','javax.swing.event.InternalFrameEvent','java.beans.VetoableChangeSupport','java.beans.VetoableChangeListener']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JInternalFrame", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.JInternalFrame','javax.swing.SwingUtilities','java.awt.JSComponent','sun.awt.AppContext',['javax.swing.JInternalFrame','.FocusPropertyChangeListener'],['javax.swing.JInternalFrame','.JDesktopIcon'],'javax.swing.UIManager','javax.swing.JLayeredPane','sun.swing.SwingUtilities2','javax.swing.event.InternalFrameListener','javax.swing.event.InternalFrameEvent','java.beans.VetoableChangeSupport','java.beans.VetoableChangeListener']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JInternalFrame", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JFrame', ['javax.swing.WindowConstants', 'javax.swing.RootPaneContainer']);
-C$.PROPERTY_CHANGE_LISTENER_KEY=null;
+C$.$classes$=[['FocusPropertyChangeListener',10],['JDesktopIcon',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.PROPERTY_CHANGE_LISTENER_KEY= Clazz.new_();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vetoableChangeSupport=null;
-this.closable=false;
-this.isClosed=false;
-this.maximizable=false;
-this.isMaximum=false;
-this.iconable=false;
-this.isIcon=false;
-this.isSelected=false;
-this.frameIcon=null;
-this.desktopIcon=null;
-this.lastCursor=null;
-this.opened=false;
-this.normalBounds=null;
-this.lastFocusOwner=null;
-this.desktop=null;
-this.isDragging=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.normalBounds=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['closable','isClosed','maximizable','isMaximum','iconable','isIcon','isSelected','opened','isDragging'],'O',['vetoableChangeSupport','java.beans.VetoableChangeSupport','frameIcon','javax.swing.Icon','desktopIcon','javax.swing.JInternalFrame.JDesktopIcon','lastCursor','java.awt.Cursor','normalBounds','java.awt.Rectangle','lastFocusOwner','java.awt.Component','desktop','javax.swing.JDesktopPane']]]
 
 Clazz.newMeth(C$, 'addPropertyChangeListenerIfNecessary$', function () {
-if ($I$(3).getAppContext$().get$O(C$.PROPERTY_CHANGE_LISTENER_KEY) == null ) {
-var focusListener=Clazz.new_($I$(4));
-$I$(3).getAppContext$().put$O$O(C$.PROPERTY_CHANGE_LISTENER_KEY, focusListener);
+if ($I$(4).getAppContext$().get$O("JInternalFramePropertyChangeListener") == null ) {
+var focusListener=Clazz.new_($I$(5,1));
+$I$(4).getAppContext$().put$O$O("JInternalFramePropertyChangeListener", focusListener);
 }}, 1);
 
 Clazz.newMeth(C$, 'updateLastFocusOwner$java_awt_Component', function (component) {
@@ -70,8 +50,8 @@ C$.c$$S$Z$Z$Z$Z.apply(this, [title, resizable, closable, maximizable, false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$Z$Z$Z$Z', function (title, resizable, closable, maximizable, iconifiable) {
-C$.superclazz.c$$S$java_awt_GraphicsConfiguration.apply(this, [title, null]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$java_awt_GraphicsConfiguration.apply(this,[title, null]);C$.$init$.apply(this);
+this.秘paintClass=C$ ||null;
 this.defaultCloseOperation=2;
 this.resizable=resizable;
 this.closable=closable;
@@ -79,7 +59,7 @@ this.maximizable=maximizable;
 this.isMaximum=false;
 this.iconable=iconifiable;
 this.isIcon=false;
-this.desktopIcon=Clazz.new_($I$(5).c$$javax_swing_JInternalFrame,[this]);
+this.desktopIcon=Clazz.new_($I$(6,1).c$$javax_swing_JInternalFrame,[this]);
 C$.addPropertyChangeListenerIfNecessary$();
 }, 1);
 
@@ -109,18 +89,18 @@ this.desktopIcon.updateUIWhenHidden$();
 }});
 
 Clazz.newMeth(C$, 'updateUIWhenHidden$', function () {
-this.setUI$javax_swing_plaf_InternalFrameUI($I$(6).getUI$java_awt_Component(this));
+this.setUI$javax_swing_plaf_InternalFrameUI($I$(7).getUI$java_awt_Component(this));
 this.invalidate$();
-var children=$I$(2).getChildArray$java_awt_Container(this.desktop);
+var children=$I$(3).秘getChildArray$java_awt_Container(this.desktop);
 var n=this.desktop.getComponentCount$();
 for (var i=0; i < n; i++) {
-$I$(1).updateComponentTreeUI$java_awt_Component(children[i]);
+$I$(2).updateComponentTreeUI$java_awt_Component(children[i]);
 }
 });
 
 Clazz.newMeth(C$, 'setClosable$Z', function (b) {
-var oldValue=this.closable ? $I$(7).TRUE : $I$(7).FALSE;
-var newValue=b ? $I$(7).TRUE : $I$(7).FALSE;
+var oldValue=this.closable ? Boolean.TRUE : Boolean.FALSE;
+var newValue=b ? Boolean.TRUE : Boolean.FALSE;
 this.closable=b;
 this.firePropertyChange$S$O$O("closable", oldValue, newValue);
 });
@@ -136,8 +116,8 @@ return this.isClosed;
 Clazz.newMeth(C$, 'setClosed$Z', function (b) {
 if (this.isClosed == b ) {
 return;
-}var oldValue=this.isClosed ? $I$(7).TRUE : $I$(7).FALSE;
-var newValue=b ? $I$(7).TRUE : $I$(7).FALSE;
+}var oldValue=this.isClosed ? Boolean.TRUE : Boolean.FALSE;
+var newValue=b ? Boolean.TRUE : Boolean.FALSE;
 if (b) {
 this.fireInternalFrameEvent$I(25550);
 }this.fireVetoableChange$S$O$O("closed", oldValue, newValue);
@@ -151,8 +131,8 @@ this.dispose$();
 }});
 
 Clazz.newMeth(C$, 'setIconifiable$Z', function (b) {
-var oldValue=this.iconable ? $I$(7).TRUE : $I$(7).FALSE;
-var newValue=b ? $I$(7).TRUE : $I$(7).FALSE;
+var oldValue=this.iconable ? Boolean.TRUE : Boolean.FALSE;
+var newValue=b ? Boolean.TRUE : Boolean.FALSE;
 this.iconable=b;
 this.firePropertyChange$S$O$O("iconable", oldValue, newValue);
 });
@@ -169,8 +149,8 @@ Clazz.newMeth(C$, 'setIcon$Z', function (b) {
 if (this.isIcon == b ) {
 return;
 }this.firePropertyChange$S$O$O("ancestor", null, this.getParent$());
-var oldValue=this.isIcon ? $I$(7).TRUE : $I$(7).FALSE;
-var newValue=b ? $I$(7).TRUE : $I$(7).FALSE;
+var oldValue=this.isIcon ? Boolean.TRUE : Boolean.FALSE;
+var newValue=b ? Boolean.TRUE : Boolean.FALSE;
 this.fireVetoableChange$S$O$O("icon", oldValue, newValue);
 this.isIcon=b;
 this.firePropertyChange$S$O$O("icon", oldValue, newValue);
@@ -179,8 +159,8 @@ if (b) this.fireInternalFrameEvent$I(25552);
 });
 
 Clazz.newMeth(C$, 'setMaximizable$Z', function (b) {
-var oldValue=this.maximizable ? $I$(7).TRUE : $I$(7).FALSE;
-var newValue=b ? $I$(7).TRUE : $I$(7).FALSE;
+var oldValue=this.maximizable ? Boolean.TRUE : Boolean.FALSE;
+var newValue=b ? Boolean.TRUE : Boolean.FALSE;
 this.maximizable=b;
 this.firePropertyChange$S$O$O("maximizable", oldValue, newValue);
 });
@@ -196,8 +176,8 @@ return this.isMaximum;
 Clazz.newMeth(C$, 'setMaximum$Z', function (b) {
 if (this.isMaximum == b ) {
 return;
-}var oldValue=this.isMaximum ? $I$(7).TRUE : $I$(7).FALSE;
-var newValue=b ? $I$(7).TRUE : $I$(7).FALSE;
+}var oldValue=this.isMaximum ? Boolean.TRUE : Boolean.FALSE;
+var newValue=b ? Boolean.TRUE : Boolean.FALSE;
 this.fireVetoableChange$S$O$O("maximum", oldValue, newValue);
 this.isMaximum=b;
 this.firePropertyChange$S$O$O("maximum", oldValue, newValue);
@@ -209,8 +189,8 @@ this.restoreSubcomponentFocus$();
 return;
 }if ((this.isSelected == selected ) || (selected && (this.isIcon ? !this.desktopIcon.isShowing$() : !this.isShowing$()) ) ) {
 return;
-}var oldValue=this.isSelected ? $I$(7).TRUE : $I$(7).FALSE;
-var newValue=selected ? $I$(7).TRUE : $I$(7).FALSE;
+}var oldValue=this.isSelected ? Boolean.TRUE : Boolean.FALSE;
+var newValue=selected ? Boolean.TRUE : Boolean.FALSE;
 this.fireVetoableChange$S$O$O("selected", oldValue, newValue);
 if (selected) {
 this.restoreSubcomponentFocus$();
@@ -270,7 +250,7 @@ if (this.getParent$() != null  && Clazz.instanceOf(this.getParent$(), "javax.swi
 var p=this.getParent$();
 p.setLayer$java_awt_Component$I$I(this, layer.intValue$(), p.getPosition$java_awt_Component(this));
 } else {
-$I$(8).putLayer$javax_swing_JComponent$I(this, layer.intValue$());
+$I$(8,"putLayer$javax_swing_JComponent$I",[this, layer.intValue$()]);
 }});
 
 Clazz.newMeth(C$, 'setLayer$I', function (layer) {
@@ -322,7 +302,7 @@ return this.lastFocusOwner;
 
 Clazz.newMeth(C$, 'restoreSubcomponentFocus$', function () {
 if (this.isIcon$()) {
-$I$(9).compositeRequestFocus$java_awt_Component(this.getDesktopIcon$());
+$I$(9,"compositeRequestFocus$java_awt_Component",[this.getDesktopIcon$()]);
 } else {
 this.lastFocusOwner=this.getMostRecentFocusOwner$();
 if (this.lastFocusOwner == null ) {
@@ -339,12 +319,12 @@ C$.superclazz.prototype.reshape$I$I$I$I.apply(this, [x, y, width, height]);
 });
 
 Clazz.newMeth(C$, 'addInternalFrameListener$javax_swing_event_InternalFrameListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(10),['internalFrameActivated$javax_swing_event_InternalFrameEvent','internalFrameClosed$javax_swing_event_InternalFrameEvent','internalFrameClosing$javax_swing_event_InternalFrameEvent','internalFrameDeactivated$javax_swing_event_InternalFrameEvent','internalFrameDeiconified$javax_swing_event_InternalFrameEvent','internalFrameIconified$javax_swing_event_InternalFrameEvent','internalFrameOpened$javax_swing_event_InternalFrameEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(10),['internalFrameActivated$javax_swing_event_InternalFrameEvent','internalFrameClosed$javax_swing_event_InternalFrameEvent','internalFrameClosing$javax_swing_event_InternalFrameEvent','internalFrameDeactivated$javax_swing_event_InternalFrameEvent','internalFrameDeiconified$javax_swing_event_InternalFrameEvent','internalFrameIconified$javax_swing_event_InternalFrameEvent','internalFrameOpened$javax_swing_event_InternalFrameEvent']), l);
 this.enableEvents$J(0);
 });
 
 Clazz.newMeth(C$, 'removeInternalFrameListener$javax_swing_event_InternalFrameListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(10),['internalFrameActivated$javax_swing_event_InternalFrameEvent','internalFrameClosed$javax_swing_event_InternalFrameEvent','internalFrameClosing$javax_swing_event_InternalFrameEvent','internalFrameDeactivated$javax_swing_event_InternalFrameEvent','internalFrameDeiconified$javax_swing_event_InternalFrameEvent','internalFrameIconified$javax_swing_event_InternalFrameEvent','internalFrameOpened$javax_swing_event_InternalFrameEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(10),['internalFrameActivated$javax_swing_event_InternalFrameEvent','internalFrameClosed$javax_swing_event_InternalFrameEvent','internalFrameClosing$javax_swing_event_InternalFrameEvent','internalFrameDeactivated$javax_swing_event_InternalFrameEvent','internalFrameDeiconified$javax_swing_event_InternalFrameEvent','internalFrameIconified$javax_swing_event_InternalFrameEvent','internalFrameOpened$javax_swing_event_InternalFrameEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getInternalFrameListeners$', function () {
@@ -357,7 +337,7 @@ var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(10),['internalFrameActivated$javax_swing_event_InternalFrameEvent','internalFrameClosed$javax_swing_event_InternalFrameEvent','internalFrameClosing$javax_swing_event_InternalFrameEvent','internalFrameDeactivated$javax_swing_event_InternalFrameEvent','internalFrameDeiconified$javax_swing_event_InternalFrameEvent','internalFrameIconified$javax_swing_event_InternalFrameEvent','internalFrameOpened$javax_swing_event_InternalFrameEvent']) ) {
 if (e == null ) {
-e=Clazz.new_($I$(11).c$$javax_swing_JInternalFrame$I,[this, id]);
+e=Clazz.new_($I$(11,1).c$$javax_swing_JInternalFrame$I,[this, id]);
 }switch (e.getID$()) {
 case 25549:
 (listeners[i + 1]).internalFrameOpened$javax_swing_event_InternalFrameEvent(e);
@@ -404,10 +384,10 @@ throw pve;
 break;
 case 2:
 try {
-this.fireVetoableChange$S$O$O("closed", $I$(7).FALSE, $I$(7).TRUE);
+this.fireVetoableChange$S$O$O("closed", Boolean.FALSE, Boolean.TRUE);
 this.isClosed=true;
 this.setVisible$Z(false);
-this.firePropertyChange$S$O$O("closed", $I$(7).FALSE, $I$(7).TRUE);
+this.firePropertyChange$S$O$O("closed", Boolean.FALSE, Boolean.TRUE);
 this.dispose$();
 } catch (pve) {
 if (Clazz.exceptionOf(pve,"java.beans.PropertyVetoException")){
@@ -429,7 +409,7 @@ return;
 
 Clazz.newMeth(C$, 'addVetoableChangeListener$java_beans_VetoableChangeListener', function (listener) {
 if (this.vetoableChangeSupport == null ) {
-this.vetoableChangeSupport=Clazz.new_($I$(12).c$$O,[this]);
+this.vetoableChangeSupport=Clazz.new_($I$(12,1).c$$O,[this]);
 }this.vetoableChangeSupport.addVetoableChangeListener$java_beans_VetoableChangeListener(listener);
 });
 
@@ -511,7 +491,7 @@ throw pve;
 }
 }
 }if (!this.isClosed) {
-this.firePropertyChange$S$O$O("closed", $I$(7).FALSE, $I$(7).TRUE);
+this.firePropertyChange$S$O$O("closed", Boolean.FALSE, Boolean.TRUE);
 this.isClosed=true;
 }this.fireInternalFrameEvent$I(25551);
 });
@@ -543,10 +523,6 @@ Clazz.newMeth(C$, 'getContainer$', function () {
 return this.getParent$();
 });
 
-Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
-this.paintContainer$java_awt_Graphics(g);
-});
-
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
 C$.superclazz.prototype.paint$java_awt_Graphics.apply(this, [this.getRootPane$().getGraphics$()]);
 });
@@ -557,42 +533,45 @@ this.desktop=jDesktopPane;
 
 Clazz.newMeth(C$, 'checkInternalFrameMouseDown$', function () {
 });
+
+Clazz.newMeth(C$, 'addNotify$', function () {
+C$.superclazz.prototype.addNotify$.apply(this, []);
+(this.parent).getTopLevelAncestor$().秘setIsDesktop$();
+});
+
+Clazz.newMeth(C$, '秘frameAddNodify$javax_swing_JRootPane', function (rootPane) {
+});
 ;
-(function(){var C$=Clazz.newClass(P$.JInternalFrame, "FocusPropertyChangeListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JInternalFrame, "FocusPropertyChangeListener", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.beans.PropertyChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
-if (e.getPropertyName$() == "permanentFocusOwner") {
-P$.JInternalFrame.updateLastFocusOwner$java_awt_Component(e.getNewValue$());
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
+if (e.getPropertyName$() === "permanentFocusOwner" ) {
+$I$(1,"updateLastFocusOwner$java_awt_Component",[e.getNewValue$()]);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JInternalFrame, "JDesktopIcon", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JInternalFrame, "JDesktopIcon", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.JComponent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.internalFrame=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['internalFrame','javax.swing.JInternalFrame']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_JInternalFrame', function (f) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setVisible$Z(false);
 this.setInternalFrame$javax_swing_JInternalFrame(f);
 this.updateUI$();
@@ -621,7 +600,7 @@ this.invalidate$();
 var r=this.getPreferredSize$();
 this.setSize$I$I(r.width, r.height);
 if (this.internalFrame != null  && this.internalFrame.getUI$() != null  ) {
-$I$(1).updateComponentTreeUI$java_awt_Component(this.internalFrame);
+$I$(2).updateComponentTreeUI$java_awt_Component(this.internalFrame);
 }});
 
 Clazz.newMeth(C$, 'updateUIWhenHidden$', function () {
@@ -629,14 +608,14 @@ C$.superclazz.prototype.updateUI$.apply(this, []);
 var r=this.getPreferredSize$();
 this.setSize$I$I(r.width, r.height);
 this.invalidate$();
-var children=$I$(2).getChildArray$java_awt_Container(this);
+var children=$I$(3).秘getChildArray$java_awt_Container(this);
 if (children != null ) {
 for (var i=0, n=this.getComponentCount$(); i < n; i++) {
-$I$(1).updateComponentTreeUI$java_awt_Component(children[i]);
+$I$(2).updateComponentTreeUI$java_awt_Component(children[i]);
 }
 }});
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

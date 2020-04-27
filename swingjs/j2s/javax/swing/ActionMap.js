@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.ArrayTable','java.util.HashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ActionMap");
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.ArrayTable','java.util.HashMap']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ActionMap");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.arrayTable=null;
-this.parent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['arrayTable','javax.swing.ArrayTable','parent','javax.swing.ActionMap']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setParent$javax_swing_ActionMap', function (map) {
@@ -32,7 +27,7 @@ return;
 this.remove$O(key);
 } else {
 if (this.arrayTable == null ) {
-this.arrayTable=Clazz.new_($I$(1));
+this.arrayTable=Clazz.new_($I$(1,1));
 }this.arrayTable.put$O$O(key, action);
 }});
 
@@ -82,15 +77,15 @@ if (pKeys == null ) {
 return keys;
 }if (keys == null ) {
 return pKeys;
-}var keyMap=Clazz.new_($I$(2));
+}var keyMap=Clazz.new_($I$(2,1));
 var counter;
 for (counter=keys.length - 1; counter >= 0; counter--) {
-keyMap.put$TK$TV(keys[counter], keys[counter]);
+keyMap.put$O$O(keys[counter], keys[counter]);
 }
 for (counter=pKeys.length - 1; counter >= 0; counter--) {
-keyMap.put$TK$TV(pKeys[counter], pKeys[counter]);
+keyMap.put$O$O(pKeys[counter], pKeys[counter]);
 }
 return keyMap.keySet$().toArray$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

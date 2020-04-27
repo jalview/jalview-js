@@ -1,35 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,['java.awt.JobAttributes','.DefaultSelectionType'],['java.awt.JobAttributes','.DestinationType'],['java.awt.JobAttributes','.DialogType'],'InternalError',['java.awt.JobAttributes','.MultipleDocumentHandlingType'],['java.awt.JobAttributes','.SidesType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JobAttributes", function(){
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,['java.awt.JobAttributes','.DefaultSelectionType'],['java.awt.JobAttributes','.DestinationType'],['java.awt.JobAttributes','.DialogType'],'InternalError',['java.awt.JobAttributes','.MultipleDocumentHandlingType'],['java.awt.JobAttributes','.SidesType']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JobAttributes", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Cloneable');
+C$.$classes$=[['DefaultSelectionType',25],['DestinationType',25],['DialogType',25],['MultipleDocumentHandlingType',25],['SidesType',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.copies=0;
-this.defaultSelection=null;
-this.destination=null;
-this.dialog=null;
-this.fileName=null;
-this.fromPage=0;
-this.maxPage=0;
-this.minPage=0;
-this.multipleDocumentHandling=null;
-this.pageRanges=null;
-this.prFirst=0;
-this.prLast=0;
-this.printer=null;
-this.sides=null;
-this.toPage=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['copies','fromPage','maxPage','minPage','prFirst','prLast','toPage'],'S',['fileName','printer'],'O',['defaultSelection','java.awt.JobAttributes.DefaultSelectionType','destination','java.awt.JobAttributes.DestinationType','dialog','java.awt.JobAttributes.DialogType','multipleDocumentHandling','java.awt.JobAttributes.MultipleDocumentHandlingType','pageRanges','int[][]','sides','java.awt.JobAttributes.SidesType']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setCopiesToDefault$();
 this.setDefaultSelection$java_awt_JobAttributes_DefaultSelectionType($I$(1).ALL);
 this.setDestination$java_awt_JobAttributes_DestinationType($I$(2).PRINTER);
@@ -41,12 +24,12 @@ this.setSidesToDefault$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_JobAttributes', function (obj) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.set$java_awt_JobAttributes(obj);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$java_awt_JobAttributes_DefaultSelectionType$java_awt_JobAttributes_DestinationType$java_awt_JobAttributes_DialogType$S$I$I$java_awt_JobAttributes_MultipleDocumentHandlingType$IAA$S$java_awt_JobAttributes_SidesType', function (copies, defaultSelection, destination, dialog, fileName, maxPage, minPage, multipleDocumentHandling, pageRanges, printer, sides) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setCopies$I(copies);
 this.setDefaultSelection$java_awt_JobAttributes_DefaultSelectionType(defaultSelection);
 this.setDestination$java_awt_JobAttributes_DestinationType(destination);
@@ -65,7 +48,7 @@ try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(4));
+throw Clazz.new_($I$(4,1));
 } else {
 throw e;
 }
@@ -333,130 +316,132 @@ prStr += "]";
 return "copies=" + this.getCopies$() + ",defaultSelection=" + this.getDefaultSelection$() + ",destination=" + this.getDestination$() + ",dialog=" + this.getDialog$() + ",fileName=" + this.getFileName$() + ",fromPage=" + this.getFromPage$() + ",maxPage=" + this.getMaxPage$() + ",minPage=" + this.getMinPage$() + ",multiple-document-handling=" + this.getMultipleDocumentHandling$() + ",page-ranges=" + prStr + ",printer=" + this.getPrinter$() + ",sides=" + this.getSides$() + ",toPage=" + this.getToPage$() ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JobAttributes, "DefaultSelectionType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JobAttributes, "DefaultSelectionType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.ALL=null;
-C$.RANGE=null;
-C$.SELECTION=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','ALL','java.awt.JobAttributes.DefaultSelectionType','+RANGE','+SELECTION']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["all", "range", "selection"]);
 C$.ALL=Clazz.new_(C$.c$$I,[0]);
 C$.RANGE=Clazz.new_(C$.c$$I,[1]);
 C$.SELECTION=Clazz.new_(C$.c$$I,[2]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JobAttributes, "DestinationType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JobAttributes, "DestinationType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.FILE=null;
-C$.PRINTER=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','FILE','java.awt.JobAttributes.DestinationType','+PRINTER']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["file", "printer"]);
 C$.FILE=Clazz.new_(C$.c$$I,[0]);
 C$.PRINTER=Clazz.new_(C$.c$$I,[1]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JobAttributes, "DialogType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JobAttributes, "DialogType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.COMMON=null;
-C$.NATIVE=null;
-C$.NONE=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','COMMON','java.awt.JobAttributes.DialogType','+NATIVE','+NONE']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["common", "native", "none"]);
 C$.COMMON=Clazz.new_(C$.c$$I,[0]);
 C$.NATIVE=Clazz.new_(C$.c$$I,[1]);
 C$.NONE=Clazz.new_(C$.c$$I,[2]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JobAttributes, "MultipleDocumentHandlingType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JobAttributes, "MultipleDocumentHandlingType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.SEPARATE_DOCUMENTS_COLLATED_COPIES=null;
-C$.SEPARATE_DOCUMENTS_UNCOLLATED_COPIES=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','SEPARATE_DOCUMENTS_COLLATED_COPIES','java.awt.JobAttributes.MultipleDocumentHandlingType','+SEPARATE_DOCUMENTS_UNCOLLATED_COPIES']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["separate-documents-collated-copies", "separate-documents-uncollated-copies"]);
 C$.SEPARATE_DOCUMENTS_COLLATED_COPIES=Clazz.new_(C$.c$$I,[0]);
 C$.SEPARATE_DOCUMENTS_UNCOLLATED_COPIES=Clazz.new_(C$.c$$I,[1]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JobAttributes, "SidesType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JobAttributes, "SidesType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.ONE_SIDED=null;
-C$.TWO_SIDED_LONG_EDGE=null;
-C$.TWO_SIDED_SHORT_EDGE=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','ONE_SIDED','java.awt.JobAttributes.SidesType','+TWO_SIDED_LONG_EDGE','+TWO_SIDED_SHORT_EDGE']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["one-sided", "two-sided-long-edge", "two-sided-short-edge"]);
 C$.ONE_SIDED=Clazz.new_(C$.c$$I,[0]);
 C$.TWO_SIDED_LONG_EDGE=Clazz.new_(C$.c$$I,[1]);
 C$.TWO_SIDED_SHORT_EDGE=Clazz.new_(C$.c$$I,[2]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

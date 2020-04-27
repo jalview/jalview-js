@@ -1,13 +1,12 @@
-(function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[[0,'jalview.util.StringUtils','jalview.io.gff.SequenceOntologyFactory']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "InterProScanHelper", null, 'jalview.io.gff.Gff3Helper');
+(function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[[0,'jalview.util.StringUtils','jalview.io.gff.SequenceOntologyFactory']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "InterProScanHelper", null, 'jalview.io.gff.Gff3Helper');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z','processGff$'], function (seq, gff, align, newseqs, relaxedIdMatching) {
+Clazz.newMeth(C$, 'processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z', function (seq, gff, align, newseqs, relaxedIdMatching) {
 if (".".equals$O(gff[1])) {
 return null;
 }return C$.superclazz.prototype.processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z.apply(this, [seq, gff, align, newseqs, relaxedIdMatching]);
@@ -39,4 +38,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

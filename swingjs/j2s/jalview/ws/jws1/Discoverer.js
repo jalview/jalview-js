@@ -1,29 +1,14 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.jws1"),p$1={},I$=[[0,'java.beans.PropertyChangeSupport','ext.vamsas.IRegistryServiceLocator','jalview.bin.Cache','java.util.Vector','java.util.StringTokenizer','java.net.URL','java.util.Hashtable','ext.vamsas.ServiceHandle','jalview.util.MessageManager','jalview.gui.Desktop','jalview.gui.JvOptionPane','jalview.ws.jws1.Discoverer','Thread','jalview.ws.jws1.MsaWSClient','jalview.ws.jws1.JPredClient','jalview.ws.jws1.SeqSearchWSClient']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Discoverer", null, null, 'Runnable');
-C$.RootServiceURL=null;
-C$.ServiceURLList=null;
-C$.reallyDiscoverServices=false;
-C$.services=null;
-C$.serviceList=null;
-C$.serviceClientBindings=null;
+(function(){var P$=Clazz.newPackage("jalview.ws.jws1"),p$1={},I$=[[0,'java.beans.PropertyChangeSupport','ext.vamsas.IRegistryServiceLocator','jalview.bin.Cache','java.util.Vector','java.util.StringTokenizer','java.net.URL','java.util.Hashtable','ext.vamsas.ServiceHandle','jalview.util.MessageManager','jalview.gui.Desktop','jalview.gui.JvOptionPane','jalview.ws.jws1.Discoverer','Thread','jalview.ws.jws1.MsaWSClient','jalview.ws.jws1.JPredClient','jalview.ws.jws1.SeqSearchWSClient']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Discoverer", null, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.RootServiceURL=null;
-C$.ServiceURLList=null;
-C$.reallyDiscoverServices=true;
-C$.services=null;
-C$.serviceList=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.registry=null;
-this.changeSupport=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.changeSupport=Clazz.new_($I$(1).c$$O,[this]);
-}, 1);
+this.changeSupport=Clazz.new_($I$(1,1).c$$O,[this]);
+},1);
+
+C$.$fields$=[['O',['registry','ext.vamsas.IRegistry','changeSupport','java.beans.PropertyChangeSupport']]
+,['Z',['reallyDiscoverServices'],'O',['RootServiceURL','java.net.URL','ServiceURLList','java.util.Vector','services','java.util.Hashtable','serviceList','java.util.Vector','serviceClientBindings','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener', function (listener) {
 this.changeSupport.addPropertyChangeListener$java_beans_PropertyChangeListener(listener);
@@ -38,7 +23,7 @@ this.changeSupport.firePropertyChange$S$O$O(prop, oldvalue, newvalue);
 });
 
 Clazz.newMeth(C$, 'locateWebService$java_net_URL', function (WsURL) {
-var loc=Clazz.new_($I$(2));
+var loc=Clazz.new_($I$(2,1));
 var server=null;
 try {
 server=loc.getRegistryService$java_net_URL(WsURL);
@@ -56,16 +41,16 @@ return server;
 }, p$1);
 
 Clazz.newMeth(C$, 'getDiscoveryURLS$', function () {
-var urls=Clazz.new_($I$(4));
+var urls=Clazz.new_($I$(4,1));
 var RootServiceURLs=$I$(3).getDefault$S$S("DISCOVERY_URLS", "http://www.compbio.dundee.ac.uk/JalviewWS/services/ServiceRegistry");
 try {
-var st=Clazz.new_($I$(5).c$$S$S,[RootServiceURLs, ","]);
+var st=Clazz.new_($I$(5,1).c$$S$S,[RootServiceURLs, ","]);
 while (st.hasMoreElements$()){
 var url=null;
 try {
-var u=Clazz.new_($I$(6).c$$S,[url=st.nextToken$()]);
+var u=Clazz.new_([url=st.nextToken$()],$I$(6,1).c$$S);
 if (!urls.contains$O(u)) {
-urls.add$TE(u);
+urls.add$O(u);
 } else {
 $I$(3).log.info$O("Ignoring duplicate url in DISCOVERY_URLS list");
 }} catch (ex) {
@@ -98,10 +83,10 @@ if (C$.reallyDiscoverServices) {
 C$.ServiceURLList=C$.getDiscoveryURLS$();
 } else {
 $I$(3).log.debug$O("Setting default services");
-C$.services=Clazz.new_($I$(7));
-var defServices=Clazz.array($I$(8), -1, [Clazz.new_($I$(8).c$$S$S$S$S,["MsaWS", "Edgar, Robert C. (2004), MUSCLE: multiple sequence alignment with high accuracy and high throughput, Nucleic Acids Research 32(5), 1792-97.", "http://www.compbio.dundee.ac.uk/JalviewWS/services/MuscleWS", $I$(9).getString$S("label.muscle_multiple_protein_sequence_alignment")]), Clazz.new_($I$(8).c$$S$S$S$S,["MsaWS", "Katoh, K., K. Kuma, K., Toh, H.,  and Miyata, T. (2005) \"MAFFT version 5: improvement in accuracy of multiple sequence alignment.\" Nucleic Acids Research, 33 511-518", "http://www.compbio.dundee.ac.uk/JalviewWS/services/MafftWS", $I$(9).getString$S("label.mafft_multiple_sequence_alignment")]), Clazz.new_($I$(8).c$$S$S$S$S,["MsaWS", "Thompson, J.D., Higgins, D.G. and Gibson, T.J. (1994) CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position specific gap penalties and weight matrix choice. Nucleic Acids Research, 22 4673-4680", "http://www.compbio.dundee.ac.uk/JalviewWS/services/ClustalWS", $I$(9).getString$S("label.clustalw_multiple_sequence_alignment")]), Clazz.new_($I$(8).c$$S$S$S$S,["SecStrPred", "Drozdetskiy A, Cole C, Procter J & Barton GJ. (2015)\nJPred4: a protein secondary structure prediction server\nNucleic Acids Research, Web Server issue (first published 15th April 2015)\ndoi://10.1093/nar/gkv332", "http://www.compbio.dundee.ac.uk/JalviewWS/services/jpred", "JPred Secondary Structure Prediction"])]);
-C$.services=Clazz.new_($I$(7));
-C$.serviceList=Clazz.new_($I$(4));
+C$.services=Clazz.new_($I$(7,1));
+var defServices=Clazz.array($I$(8), -1, [Clazz.new_(["MsaWS", "Edgar, Robert C. (2004), MUSCLE: multiple sequence alignment with high accuracy and high throughput, Nucleic Acids Research 32(5), 1792-97.", "http://www.compbio.dundee.ac.uk/JalviewWS/services/MuscleWS", $I$(9).getString$S("label.muscle_multiple_protein_sequence_alignment")],$I$(8,1).c$$S$S$S$S), Clazz.new_(["MsaWS", "Katoh, K., K. Kuma, K., Toh, H.,  and Miyata, T. (2005) \"MAFFT version 5: improvement in accuracy of multiple sequence alignment.\" Nucleic Acids Research, 33 511-518", "http://www.compbio.dundee.ac.uk/JalviewWS/services/MafftWS", $I$(9).getString$S("label.mafft_multiple_sequence_alignment")],$I$(8,1).c$$S$S$S$S), Clazz.new_(["MsaWS", "Thompson, J.D., Higgins, D.G. and Gibson, T.J. (1994) CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position specific gap penalties and weight matrix choice. Nucleic Acids Research, 22 4673-4680", "http://www.compbio.dundee.ac.uk/JalviewWS/services/ClustalWS", $I$(9).getString$S("label.clustalw_multiple_sequence_alignment")],$I$(8,1).c$$S$S$S$S), Clazz.new_(["SecStrPred", "Drozdetskiy A, Cole C, Procter J & Barton GJ. (2015)\nJPred4: a protein secondary structure prediction server\nNucleic Acids Research, Web Server issue (first published 15th April 2015)\ndoi://10.1093/nar/gkv332", "http://www.compbio.dundee.ac.uk/JalviewWS/services/jpred", "JPred Secondary Structure Prediction"],$I$(8,1).c$$S$S$S$S)]);
+C$.services=Clazz.new_($I$(7,1));
+C$.serviceList=Clazz.new_($I$(4,1));
 C$.buildServiceLists$ext_vamsas_ServiceHandleA$java_util_Vector$java_util_Hashtable(defServices, C$.serviceList, C$.services);
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -123,7 +108,7 @@ var f = e$$;
 {
 if (f.getFaultReason$().indexOf$S("(407)") > -1) {
 if ($I$(10).desktop != null ) {
-$I$(11).showMessageDialog$java_awt_Component$S$S$I($I$(10).desktop, $I$(9).getString$S("label.set_proxy_settings"), $I$(9).getString$S("label.proxy_authorization_failed"), 2);
+$I$(11,"showMessageDialog$java_awt_Component$S$S$I",[$I$(10).desktop, $I$(9).getString$S("label.set_proxy_settings"), $I$(9).getString$S("label.proxy_authorization_failed"), 2]);
 }} else {
 $I$(3).log.warn$O("No Discovery service at " + location);
 $I$(3).log.debug$O$Throwable("Axis Fault", f);
@@ -149,18 +134,18 @@ for (var i=0, j=sh.length; i < j; i++) {
 if (!cat.contains$O(sh[i])) {
 $I$(3).log.debug$O("A " + sh[i].getAbstractName$() + " service called " + sh[i].getName$() + " exists at " + sh[i].getEndpointURL$() + "\n" );
 if (!sscat.containsKey$O(sh[i].getAbstractName$())) {
-sscat.put$TK$TV(sh[i].getAbstractName$(), cat=Clazz.new_($I$(4)));
+sscat.put$O$O(sh[i].getAbstractName$(), cat=Clazz.new_($I$(4,1)));
 } else {
 cat=sscat.get$O(sh[i].getAbstractName$());
-}cat.add$TE(sh[i]);
+}cat.add$O(sh[i]);
 if (sh[i].getAbstractName$().equals$O("Registry")) {
 for (var s=0, sUrls=C$.ServiceURLList.size$(); s < sUrls; s++) {
 var disc_serv=null;
 try {
-disc_serv=Clazz.new_($I$(6).c$$S,[sh[i].getEndpointURL$()]);
+disc_serv=Clazz.new_([sh[i].getEndpointURL$()],$I$(6,1).c$$S);
 if (!C$.ServiceURLList.contains$O(disc_serv)) {
 $I$(3).log.debug$O("Adding new discovery service at " + disc_serv);
-C$.ServiceURLList.add$TE(disc_serv);
+C$.ServiceURLList.add$O(disc_serv);
 seenNewDiscovery=true;
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -175,8 +160,8 @@ return seenNewDiscovery;
 }, 1);
 
 Clazz.newMeth(C$, 'discoverServices$', function () {
-var sscat=Clazz.new_($I$(7));
-var cat=Clazz.new_($I$(4));
+var sscat=Clazz.new_($I$(7,1));
+var cat=Clazz.new_($I$(4,1));
 var sh=null;
 var s_url=0;
 if (C$.ServiceURLList == null ) {
@@ -198,29 +183,28 @@ this.changeSupport.firePropertyChange$S$O$O("services", oldServices, C$.services
 Clazz.newMeth(C$, 'run$', function () {
 var discoverer=this;
 var discoverThread=((P$.Discoverer$1||
-(function(){var C$=Clazz.newClass(P$, "Discoverer$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "Discoverer$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('Thread'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 $I$(12).doDiscovery$();
 this.$finals$.discoverer.discoverServices$();
 });
 })()
-), Clazz.new_($I$(13), [this, {discoverer: discoverer}],P$.Discoverer$1));
+), Clazz.new_($I$(13,1),[this, {discoverer:discoverer}],P$.Discoverer$1));
 discoverThread.start$();
 });
 
 Clazz.newMeth(C$, 'getServiceClient$ext_vamsas_ServiceHandle', function (sh) {
 if (C$.serviceClientBindings == null ) {
-C$.serviceClientBindings=Clazz.new_($I$(7));
-C$.serviceClientBindings.put$TK$TV("MsaWS", Clazz.new_($I$(14)));
-C$.serviceClientBindings.put$TK$TV("SecStrPred", Clazz.new_($I$(15)));
-C$.serviceClientBindings.put$TK$TV("SeqSearch", Clazz.new_($I$(16)));
+C$.serviceClientBindings=Clazz.new_($I$(7,1));
+C$.serviceClientBindings.put$O$O("MsaWS", Clazz.new_($I$(14,1)));
+C$.serviceClientBindings.put$O$O("SecStrPred", Clazz.new_($I$(15,1)));
+C$.serviceClientBindings.put$O$O("SeqSearch", Clazz.new_($I$(16,1)));
 }var instance=C$.serviceClientBindings.get$O(sh.getAbstractName$());
 if (instance == null ) {
 System.err.println$S("WARNING - POSSIBLE IMPLEMENTATION ERROR - cannot find WSClient implementation for " + sh.getAbstractName$());
@@ -229,6 +213,14 @@ instance.serviceHandle=sh;
 }return instance;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.RootServiceURL=null;
+C$.ServiceURLList=null;
+C$.reallyDiscoverServices=true;
+C$.services=null;
+C$.serviceList=null;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

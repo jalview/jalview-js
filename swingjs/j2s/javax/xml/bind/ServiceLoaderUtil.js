@@ -1,19 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind"),I$=[[0,'java.util.ServiceLoader','java.util.logging.Level','Thread']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ServiceLoaderUtil", function(){
+(function(){var P$=Clazz.newPackage("javax.xml.bind"),I$=[[0,'java.util.ServiceLoader','Thread']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ServiceLoaderUtil", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['ExceptionHandler',1032]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'firstByServiceLoader$Class$java_util_logging_Logger$javax_xml_bind_ServiceLoaderUtil_ExceptionHandler', function (spiClass, logger, handler) {
 try {
 var serviceLoader=$I$(1).load$Class(spiClass);
 for (var impl, $impl = serviceLoader.iterator$(); $impl.hasNext$()&&((impl=($impl.next$())),1);) {
-logger.fine$S("ServiceProvider loading Facility used; returning object [" + impl.getClass$().getName$() + "]" );
 return impl;
 }
 } catch (t) {
@@ -30,13 +29,11 @@ var m=target.getMethod$S$ClassA("lookupProviderClasses", [Clazz.getClass(Class)]
 var iter=(m.invoke$O$OA(null, [serviceClass])).iterator$();
 if (iter.hasNext$()) {
 var next=iter.next$();
-logger.fine$S("Found implementation using OSGi facility; returning object [" + next.getClass$().getName$() + "]." );
 return next;
 } else {
 return null;
 }} catch (ignored) {
 if (Clazz.exceptionOf(ignored,"IllegalAccessException") || Clazz.exceptionOf(ignored,"java.lang.reflect.InvocationTargetException") || Clazz.exceptionOf(ignored,"ClassNotFoundException") || Clazz.exceptionOf(ignored,"NoSuchMethodException")){
-logger.log$java_util_logging_Level$S$Exception($I$(2).FINE, "Unable to find from OSGi: [" + factoryId + "]" , ignored);
 return null;
 } else {
 throw ignored;
@@ -96,7 +93,7 @@ return C$.nullSafeLoadClass$S$ClassLoader(className, classLoader);
 
 Clazz.newMeth(C$, 'contextClassLoader$javax_xml_bind_ServiceLoaderUtil_ExceptionHandler', function (exceptionHandler) {
 try {
-return $I$(3).currentThread$().getContextClassLoader$();
+return $I$(2).currentThread$().getContextClassLoader$();
 } catch (x) {
 if (Clazz.exceptionOf(x,"Exception")){
 throw exceptionHandler.createException$Throwable$S(x, x.toString());
@@ -106,19 +103,18 @@ throw x;
 }
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.ServiceLoaderUtil, "ExceptionHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ServiceLoaderUtil, "ExceptionHandler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

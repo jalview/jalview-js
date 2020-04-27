@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultButtonModel','javax.swing.SwingUtilities']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JButton", null, 'javax.swing.AbstractButton');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.DefaultButtonModel','javax.swing.SwingUtilities']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JButton", null, 'javax.swing.AbstractButton');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$S$javax_swing_Icon.apply(this, [null, null]);
@@ -25,14 +24,14 @@ this.setAction$javax_swing_Action(a);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$javax_swing_Icon', function (text, icon) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setModel$();
 this.init$S$javax_swing_Icon(text, icon);
 this.setOpaque$Z(true);
 }, 1);
 
 Clazz.newMeth(C$, 'setModel$', function () {
-this.setModel$javax_swing_ButtonModel(Clazz.new_($I$(1)));
+this.setModel$javax_swing_ButtonModel(Clazz.new_($I$(1,1)));
 });
 
 Clazz.newMeth(C$, 'getUIClassID$', function () {
@@ -68,4 +67,4 @@ var defaultCapableString=(this.defaultCapable ? "true" : "false");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",defaultCapable=" + defaultCapableString ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

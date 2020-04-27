@@ -1,37 +1,23 @@
-(function(){var P$=Clazz.newPackage("sun.util.calendar"),p$1={},I$=[[0,'java.util.Date','sun.util.calendar.CalendarSystem','java.util.SimpleTimeZone']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ZoneInfo", null, 'java.util.TimeZone');
-C$.gcal=null;
-C$.aliasTable=null;
+(function(){var P$=Clazz.newPackage("sun.util.calendar"),p$1={},I$=[[0,'sun.util.calendar.CalendarSystem','java.util.SimpleTimeZone']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ZoneInfo", null, 'java.util.TimeZone');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rawOffset=0;
-this.rawOffsetDiff=0;
-this.checksum=0;
-this.dstSavings=0;
-this.transitions=null;
-this.offsets=null;
-this.simpleTimeZoneParams=null;
-this.willGMTOffsetChange=false;
-this.dirty=false;
-this.lastRule=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.rawOffsetDiff=0;
 this.willGMTOffsetChange=false;
 this.dirty=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['willGMTOffsetChange','dirty'],'I',['rawOffset','rawOffsetDiff','checksum','dstSavings'],'O',['transitions','long[]','offsets','int[]','+simpleTimeZoneParams','lastRule','java.util.SimpleTimeZone']]
+,['O',['gcal','sun.util.calendar.CalendarSystem','aliasTable','java.util.Map']]]
 
 Clazz.newMeth(C$, 'setRawOffsetReally$I', function (offset) {
 this.rawOffset=offset;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I', function (ID, rawOffset) {
@@ -39,7 +25,7 @@ C$.c$$S$I$I$I$JA$IA$IA$Z.apply(this, [ID, rawOffset, 0, 0, null, null, null, fal
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$I$I$I$JA$IA$IA$Z', function (ID, rawOffset, dstSavings, checksum, transitions, offsets, simpleTimeZoneParams, willGMTOffsetChange) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setID$S(ID);
 this.rawOffset=rawOffset;
 this.dstSavings=dstSavings;
@@ -96,7 +82,7 @@ var rawoffset=tz.getRawOffset$();
 var msec=date;
 if (type != 0) {
 msec-=this.rawOffset;
-}var dstoffset=tz.inDaylightTime$java_util_Date(Clazz.new_($I$(1).c$$J,[msec])) ? tz.getDSTSavings$() : 0;
+}var dstoffset=tz.inDaylightTime$java_util_Date(Clazz.new_(java.util.Date.c$$J,[msec])) ? tz.getDSTSavings$() : 0;
 if (offsets != null ) {
 offsets[0]=rawoffset;
 offsets[1]=dstoffset;
@@ -140,7 +126,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 year=1 - year;
 } else if (era != 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-}if (C$.gcal == null ) C$.gcal=$I$(2).getGregorianCalendar$();
+}if (C$.gcal == null ) C$.gcal=$I$(1).getGregorianCalendar$();
 var date=C$.gcal.newCalendarDate$java_util_TimeZone(null);
 date.setDate$I$I$I(year, month + 1, day);
 if (C$.gcal.validate$sun_util_calendar_CalendarDate(date) == false ) {
@@ -208,6 +194,22 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[id=\"" + this.getID$() + "\"" + ",offset=" + p$1.getLastRawOffset.apply(this, []) + ",dstSavings=" + this.dstSavings + ",useDaylight=" + this.useDaylightTime$() + ",transitions=" + ((this.transitions != null ) ? this.transitions.length : 0) + ",lastRule=" + (this.lastRule == null  ? this.getLastRuleInstance$() : this.lastRule) + "]" ;
 });
 
+Clazz.newMeth(C$, 'getAvailableIDs$', function () {
+return Clazz.array(String, -1, ["GMT"]);
+}, 1);
+
+Clazz.newMeth(C$, 'getAvailableIDs$I', function (rawOffset) {
+return (rawOffset == 0 ? C$.getAvailableIDs$() : Clazz.array(String, [0]));
+}, 1);
+
+Clazz.newMeth(C$, 'getTimeZone$S', function (ID) {
+if (!ID.equals$O("GMT")) return null;
+var zi=Clazz.new_(C$);
+zi.setID$S(ID);
+zi.setRawOffset$I(0);
+return zi;
+}, 1);
+
 Clazz.newMeth(C$, 'getLastRule', function () {
 if (this.lastRule == null ) {
 this.lastRule=this.getLastRuleInstance$();
@@ -218,8 +220,8 @@ Clazz.newMeth(C$, 'getLastRuleInstance$', function () {
 if (this.simpleTimeZoneParams == null ) {
 return null;
 }if (this.simpleTimeZoneParams.length == 10) {
-return Clazz.new_($I$(3).c$$I$S$I$I$I$I$I$I$I$I$I$I$I,[p$1.getLastRawOffset.apply(this, []), this.getID$(), this.simpleTimeZoneParams[0], this.simpleTimeZoneParams[1], this.simpleTimeZoneParams[2], this.simpleTimeZoneParams[3], this.simpleTimeZoneParams[4], this.simpleTimeZoneParams[5], this.simpleTimeZoneParams[6], this.simpleTimeZoneParams[7], this.simpleTimeZoneParams[8], this.simpleTimeZoneParams[9], this.dstSavings]);
-}return Clazz.new_($I$(3).c$$I$S$I$I$I$I$I$I$I$I$I,[p$1.getLastRawOffset.apply(this, []), this.getID$(), this.simpleTimeZoneParams[0], this.simpleTimeZoneParams[1], this.simpleTimeZoneParams[2], this.simpleTimeZoneParams[3], this.simpleTimeZoneParams[4], this.simpleTimeZoneParams[5], this.simpleTimeZoneParams[6], this.simpleTimeZoneParams[7], this.dstSavings]);
+return Clazz.new_([p$1.getLastRawOffset.apply(this, []), this.getID$(), this.simpleTimeZoneParams[0], this.simpleTimeZoneParams[1], this.simpleTimeZoneParams[2], this.simpleTimeZoneParams[3], this.simpleTimeZoneParams[4], this.simpleTimeZoneParams[5], this.simpleTimeZoneParams[6], this.simpleTimeZoneParams[7], this.simpleTimeZoneParams[8], this.simpleTimeZoneParams[9], this.dstSavings],$I$(2,1).c$$I$S$I$I$I$I$I$I$I$I$I$I$I);
+}return Clazz.new_([p$1.getLastRawOffset.apply(this, []), this.getID$(), this.simpleTimeZoneParams[0], this.simpleTimeZoneParams[1], this.simpleTimeZoneParams[2], this.simpleTimeZoneParams[3], this.simpleTimeZoneParams[4], this.simpleTimeZoneParams[5], this.simpleTimeZoneParams[6], this.simpleTimeZoneParams[7], this.dstSavings],$I$(2,1).c$$I$S$I$I$I$I$I$I$I$I$I);
 });
 
 Clazz.newMeth(C$, 'clone$', function () {
@@ -267,4 +269,4 @@ return aliases;
 }}return aliases;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

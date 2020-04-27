@@ -1,27 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'sun.awt.AppContext','java.util.HashMap','java.util.StringTokenizer','java.util.Collections','java.awt.VKCollection','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AWTKeyStroke");
-C$.modifierKeywords=null;
-C$.vks=null;
-C$.APP_CONTEXT_CACHE_KEY=null;
-C$.APP_CONTEXT_KEYSTROKE_KEY=null;
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'sun.awt.AppContext','java.util.HashMap','java.util.StringTokenizer','java.util.Collections','java.awt.VKCollection','StringBuilder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AWTKeyStroke");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.APP_CONTEXT_CACHE_KEY= Clazz.new_();
-C$.APP_CONTEXT_KEYSTROKE_KEY=Clazz.new_(C$);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.keyChar='\0';
-this.keyCode=0;
-this.modifiers=0;
-this.onKeyRelease=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.keyChar="\uffff";
 this.keyCode=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['onKeyRelease'],'C',['keyChar'],'I',['keyCode','modifiers']]
+,['S',['APP_CONTEXT_CACHE_KEY','APP_CONTEXT_KEYSTROKE_KEY'],'O',['modifierKeywords','java.util.Map','vks','java.awt.VKCollection']]]
 
 Clazz.newMeth(C$, 'getAWTKeyStrokeClass$', function () {
 var clazz=$I$(1).getAppContext$().get$O(Clazz.getClass(C$));
@@ -32,11 +20,11 @@ $I$(1).getAppContext$().put$O$O(Clazz.getClass(C$), Clazz.getClass(C$));
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$C$I$I$Z', function (keyChar, keyCode, modifiers, onKeyRelease) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.keyChar=keyChar;
 this.keyCode=keyCode;
 this.modifiers=modifiers;
@@ -109,7 +97,7 @@ Clazz.newMeth(C$, 'getCachedStroke$C$I$I$Z', function (keyChar, keyCode, modifie
 var cache=$I$(1).getAppContext$().get$O(C$.APP_CONTEXT_CACHE_KEY);
 var cacheKey=$I$(1).getAppContext$().get$O(C$.APP_CONTEXT_KEYSTROKE_KEY);
 if (cache == null ) {
-cache=Clazz.new_($I$(2));
+cache=Clazz.new_($I$(2,1));
 $I$(1).getAppContext$().put$O$O(C$.APP_CONTEXT_CACHE_KEY, cache);
 }if (cacheKey == null ) {
 try {
@@ -140,10 +128,10 @@ throw e$$;
 cacheKey.keyCode=keyCode;
 cacheKey.modifiers=C$.mapNewModifiers$I(C$.mapOldModifiers$I(modifiers));
 cacheKey.onKeyRelease=onKeyRelease;
-var stroke=cache.get$O(cacheKey);
+var stroke=cache.get$O(cacheKey.toString());
 if (stroke == null ) {
 stroke=cacheKey;
-cache.put$TK$TV(stroke, stroke);
+cache.put$O$O(stroke.toString(), stroke);
 $I$(1).getAppContext$().remove$O(C$.APP_CONTEXT_KEYSTROKE_KEY);
 }return stroke;
 }, 1);
@@ -183,23 +171,23 @@ Clazz.newMeth(C$, 'getAWTKeyStroke$S', function (s) {
 if (s == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["String cannot be null"]);
 }var errmsg="String formatted incorrectly";
-var st=Clazz.new_($I$(3).c$$S$S,[s, " "]);
+var st=Clazz.new_($I$(3,1).c$$S$S,[s, " "]);
 var mask=0;
 var released=false;
 var typed=false;
 var pressed=false;
 {
 if (C$.modifierKeywords == null ) {
-var uninitializedMap=Clazz.new_($I$(2).c$$I$F,[8, 1.0]);
-uninitializedMap.put$TK$TV("shift", Integer.valueOf$I(65));
-uninitializedMap.put$TK$TV("control", Integer.valueOf$I(130));
-uninitializedMap.put$TK$TV("ctrl", Integer.valueOf$I(130));
-uninitializedMap.put$TK$TV("meta", Integer.valueOf$I(260));
-uninitializedMap.put$TK$TV("alt", Integer.valueOf$I(520));
-uninitializedMap.put$TK$TV("altGraph", Integer.valueOf$I(8224));
-uninitializedMap.put$TK$TV("button1", Integer.valueOf$I(1024));
-uninitializedMap.put$TK$TV("button2", Integer.valueOf$I(2048));
-uninitializedMap.put$TK$TV("button3", Integer.valueOf$I(4096));
+var uninitializedMap=Clazz.new_($I$(2,1).c$$I$F,[8, 1.0]);
+uninitializedMap.put$O$O("shift", Integer.valueOf$I(65));
+uninitializedMap.put$O$O("control", Integer.valueOf$I(130));
+uninitializedMap.put$O$O("ctrl", Integer.valueOf$I(130));
+uninitializedMap.put$O$O("meta", Integer.valueOf$I(260));
+uninitializedMap.put$O$O("alt", Integer.valueOf$I(520));
+uninitializedMap.put$O$O("altGraph", Integer.valueOf$I(8224));
+uninitializedMap.put$O$O("button1", Integer.valueOf$I(1024));
+uninitializedMap.put$O$O("button2", Integer.valueOf$I(2048));
+uninitializedMap.put$O$O("button3", Integer.valueOf$I(4096));
 C$.modifierKeywords=$I$(4).synchronizedMap$java_util_Map(uninitializedMap);
 }}var count=st.countTokens$();
 for (var i=1; i <= count; i++) {
@@ -233,7 +221,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["String formatted 
 }, 1);
 
 Clazz.newMeth(C$, 'getVKCollection$', function () {
-return (C$.vks == null  ? (C$.vks=Clazz.new_($I$(5))) : C$.vks);
+return (C$.vks == null  ? (C$.vks=Clazz.new_($I$(5,1))) : C$.vks);
 }, 1);
 
 Clazz.newMeth(C$, 'addKeyCode$S$I', function (key, keyCode) {
@@ -291,7 +279,7 @@ return C$.getModifiersText$I(this.modifiers) + (this.onKeyRelease ? "released" :
 }});
 
 Clazz.newMeth(C$, 'getModifiersText$I', function (modifiers) {
-var buf=Clazz.new_($I$(6));
+var buf=Clazz.new_($I$(6,1));
 if ((modifiers & 64) != 0) {
 buf.append$S("shift ");
 }if ((modifiers & 128) != 0) {
@@ -357,6 +345,11 @@ modifiers|=2;
 modifiers|=4;
 }return modifiers;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.APP_CONTEXT_CACHE_KEY="AWTKeyStroke_CACHE_KEY";
+C$.APP_CONTEXT_KEYSTROKE_KEY="AWTKeyStroke_KEYSTROKE_KEY";
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

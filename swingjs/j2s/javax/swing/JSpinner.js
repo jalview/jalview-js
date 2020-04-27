@@ -1,28 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.JFormattedTextField','javax.swing.JSpinner','java.awt.Dimension','sun.util.resources.LocaleData','java.text.MessageFormat','java.text.SimpleDateFormat',['javax.swing.JSpinner','.DateEditorFormatter'],'javax.swing.text.DefaultFormatterFactory','java.text.DecimalFormat',['javax.swing.JSpinner','.NumberEditorFormatter'],['javax.swing.JSpinner','.ListEditor','.ListFormatter','.Filter'],['javax.swing.JSpinner','.ListEditor','.ListFormatter'],['javax.swing.JSpinner','.DisabledAction'],'javax.swing.SpinnerNumberModel',['javax.swing.JSpinner','.DateEditor'],['javax.swing.JSpinner','.ListEditor'],['javax.swing.JSpinner','.NumberEditor'],['javax.swing.JSpinner','.DefaultEditor'],['javax.swing.JSpinner','.ModelListener'],'javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSpinner", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.JFormattedTextField','javax.swing.JSpinner','java.awt.Dimension','sun.util.resources.LocaleData','java.text.MessageFormat','java.text.SimpleDateFormat',['javax.swing.JSpinner','.DateEditorFormatter'],'javax.swing.text.DefaultFormatterFactory','java.text.DecimalFormat',['javax.swing.JSpinner','.NumberEditorFormatter'],['javax.swing.JSpinner','.ListEditor','.ListFormatter','.Filter'],['javax.swing.JSpinner','.ListEditor','.ListFormatter'],['javax.swing.JSpinner','.DisabledAction'],'javax.swing.SpinnerNumberModel',['javax.swing.JSpinner','.DateEditor'],['javax.swing.JSpinner','.ListEditor'],['javax.swing.JSpinner','.NumberEditor'],['javax.swing.JSpinner','.DefaultEditor'],['javax.swing.JSpinner','.ModelListener'],'javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSpinner", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JComponent');
-C$.DISABLED_ACTION=null;
+C$.$classes$=[['ModelListener',2],['DefaultEditor',9],['DateEditorFormatter',10],['DateEditor',9],['NumberEditorFormatter',10],['NumberEditor',9],['ListEditor',9],['DisabledAction',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DISABLED_ACTION=Clazz.new_($I$(13));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.model=null;
-this.editor=null;
-this.modelListener=null;
-this.changeEvent=null;
-this.editorExplicitlySet=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.editorExplicitlySet=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['editorExplicitlySet'],'O',['model','javax.swing.SpinnerModel','editor','javax.swing.JComponent','modelListener','javax.swing.event.ChangeListener','changeEvent','javax.swing.event.ChangeEvent']]
+,['O',['DISABLED_ACTION','javax.swing.Action']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_SpinnerModel', function (model) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (model == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["model cannot be null"]);
 }this.model=model;
@@ -36,18 +28,18 @@ return "SpinnerUI";
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.c$$javax_swing_SpinnerModel.apply(this, [Clazz.new_($I$(14))]);
+C$.c$$javax_swing_SpinnerModel.apply(this, [Clazz.new_($I$(14,1))]);
 }, 1);
 
 Clazz.newMeth(C$, 'createEditor$javax_swing_SpinnerModel', function (model) {
 if (Clazz.instanceOf(model, "javax.swing.SpinnerDateModel")) {
-return Clazz.new_($I$(15).c$$javax_swing_JSpinner,[this]);
+return Clazz.new_($I$(15,1).c$$javax_swing_JSpinner,[this]);
 } else if (Clazz.instanceOf(model, "javax.swing.SpinnerListModel")) {
-return Clazz.new_($I$(16).c$$javax_swing_JSpinner,[this]);
+return Clazz.new_($I$(16,1).c$$javax_swing_JSpinner,[this]);
 } else if (Clazz.instanceOf(model, "javax.swing.SpinnerNumberModel")) {
-return Clazz.new_($I$(17).c$$javax_swing_JSpinner,[this]);
+return Clazz.new_($I$(17,1).c$$javax_swing_JSpinner,[this]);
 } else {
-return Clazz.new_($I$(18).c$$javax_swing_JSpinner,[this]);
+return Clazz.new_($I$(18,1).c$$javax_swing_JSpinner,[this]);
 }});
 
 Clazz.newMeth(C$, 'setModel$javax_swing_SpinnerModel', function (model) {
@@ -63,7 +55,7 @@ this.model.addChangeListener$javax_swing_event_ChangeListener(this.modelListener
 if (!this.editorExplicitlySet) {
 this.setEditor$javax_swing_JComponent(this.createEditor$javax_swing_SpinnerModel(model));
 this.editorExplicitlySet=false;
-}this.repaint$();
+}this.秘repaint$();
 this.revalidate$();
 }});
 
@@ -85,13 +77,13 @@ return this.getModel$().getNextValue$();
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (listener) {
 if (this.modelListener == null ) {
-this.modelListener=Clazz.new_($I$(19), [this, null]);
+this.modelListener=Clazz.new_($I$(19,1),[this, null]);
 this.getModel$().addChangeListener$javax_swing_event_ChangeListener(this.modelListener);
-}this.listenerList.add$Class$TT(Clazz.getClass($I$(20),['stateChanged$javax_swing_event_ChangeEvent']), listener);
+}this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(20),['stateChanged$javax_swing_event_ChangeEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'removeChangeListener$javax_swing_event_ChangeListener', function (listener) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(20),['stateChanged$javax_swing_event_ChangeEvent']), listener);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(20),['stateChanged$javax_swing_event_ChangeEvent']), listener);
 });
 
 Clazz.newMeth(C$, 'getChangeListeners$', function () {
@@ -103,8 +95,8 @@ var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(20),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent=Clazz.new_($I$(21).c$$O,[this]);
-}(listeners[i + 1]).stateChanged$(this.changeEvent);
+this.changeEvent=Clazz.new_($I$(21,1).c$$O,[this]);
+}(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
 
@@ -123,7 +115,7 @@ if (Clazz.instanceOf(oldEditor, "javax.swing.JSpinner.DefaultEditor")) {
 }this.editorExplicitlySet=true;
 this.firePropertyChange$S$O$O("editor", oldEditor, editor);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getEditor$', function () {
@@ -135,38 +127,39 @@ var editor=this.getEditor$();
 if (Clazz.instanceOf(editor, "javax.swing.JSpinner.DefaultEditor")) {
 (editor).commitEdit$();
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.DISABLED_ACTION=Clazz.new_($I$(13,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "ModelListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "ModelListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 this.this$0.fireStateChanged$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "DefaultEditor", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "DefaultEditor", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.JPanel', ['javax.swing.event.ChangeListener', 'java.beans.PropertyChangeListener', 'java.awt.LayoutManager']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JSpinner', function (spinner) {
-C$.superclazz.c$$java_awt_LayoutManager.apply(this, [null]);
-C$.$init$.apply(this);
-var ftf=Clazz.new_($I$(1));
+;C$.superclazz.c$$java_awt_LayoutManager.apply(this,[null]);C$.$init$.apply(this);
+var ftf=Clazz.new_($I$(1,1));
 ftf.setName$S("Spinner.formattedTextField");
 ftf.setValue$O(spinner.getValue$());
 ftf.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
@@ -200,12 +193,12 @@ Clazz.newMeth(C$, 'getTextField$', function () {
 return this.getComponent$I(0);
 });
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 var spinner=(e.getSource$());
 this.getTextField$().setValue$O(spinner.getValue$());
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var spinner=this.getSpinner$();
 if (spinner == null ) {
 return;
@@ -241,7 +234,7 @@ Clazz.newMeth(C$, 'insetSize$java_awt_Container', function (parent) {
 var insets=parent.getInsets$();
 var w=insets.left + insets.right;
 var h=insets.top + insets.bottom;
-return Clazz.new_($I$(3).c$$I$I,[w, h]);
+return Clazz.new_($I$(3,1).c$$I$I,[w, h]);
 }, p$1);
 
 Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
@@ -293,24 +286,19 @@ return this.getComponent$I(0).getBaselineResizeBehavior$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "DateEditorFormatter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "DateEditorFormatter", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.DateFormatter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.model=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['model','javax.swing.SpinnerDateModel']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_SpinnerDateModel$java_text_DateFormat', function (model, format) {
-C$.superclazz.c$$java_text_DateFormat.apply(this, [format]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_text_DateFormat.apply(this,[format]);C$.$init$.apply(this);
 this.model=model;
 }, 1);
 
@@ -333,15 +321,14 @@ return this.model.getEnd$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "DateEditor", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "DateEditor", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.JSpinner','.DefaultEditor']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getDefaultPattern$java_util_Locale', function (loc) {
 var r=$I$(4).getDateFormatData$java_util_Locale(loc);
@@ -355,17 +342,16 @@ C$.c$$javax_swing_JSpinner$S.apply(this, [spinner, C$.getDefaultPattern$java_uti
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JSpinner$S', function (spinner, dateFormatPattern) {
-C$.c$$javax_swing_JSpinner$java_text_DateFormat.apply(this, [spinner, Clazz.new_($I$(6).c$$S$java_util_Locale,[dateFormatPattern, spinner.getLocale$()])]);
+C$.c$$javax_swing_JSpinner$java_text_DateFormat.apply(this, [spinner, Clazz.new_([dateFormatPattern, spinner.getLocale$()],$I$(6,1).c$$S$java_util_Locale)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JSpinner$java_text_DateFormat', function (spinner, format) {
-C$.superclazz.c$$javax_swing_JSpinner.apply(this, [spinner]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_JSpinner.apply(this,[spinner]);C$.$init$.apply(this);
 if (!(Clazz.instanceOf(spinner.getModel$(), "javax.swing.SpinnerDateModel"))) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["model not a SpinnerDateModel"]);
 }var model=spinner.getModel$();
-var formatter=Clazz.new_($I$(7).c$$javax_swing_SpinnerDateModel$java_text_DateFormat,[model, format]);
-var factory=Clazz.new_($I$(8).c$$javax_swing_JFormattedTextField_AbstractFormatter,[formatter]);
+var formatter=Clazz.new_($I$(7,1).c$$javax_swing_SpinnerDateModel$java_text_DateFormat,[model, format]);
+var factory=Clazz.new_($I$(8,1).c$$javax_swing_JFormattedTextField_AbstractFormatter,[formatter]);
 var ftf=this.getTextField$();
 ftf.setEditable$Z(true);
 ftf.setFormatterFactory$javax_swing_JFormattedTextField_AbstractFormatterFactory(factory);
@@ -392,24 +378,19 @@ return (this.getSpinner$().getModel$());
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "NumberEditorFormatter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "NumberEditorFormatter", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.NumberFormatter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.model=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['model','javax.swing.SpinnerNumberModel']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_SpinnerNumberModel$java_text_NumberFormat', function (model, format) {
-C$.superclazz.c$$java_text_NumberFormat.apply(this, [format]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_text_NumberFormat.apply(this,[format]);C$.$init$.apply(this);
 this.model=model;
 this.setValueClass$Class(model.getValue$().getClass$());
 }, 1);
@@ -433,15 +414,14 @@ return this.model.getMaximum$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "NumberEditor", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "NumberEditor", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.JSpinner','.DefaultEditor']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getDefaultPattern$java_util_Locale', function (locale) {
 var rb=$I$(4).getNumberFormatData$java_util_Locale(locale);
@@ -454,17 +434,16 @@ C$.c$$javax_swing_JSpinner$S.apply(this, [spinner, C$.getDefaultPattern$java_uti
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JSpinner$S', function (spinner, decimalFormatPattern) {
-C$.c$$javax_swing_JSpinner$java_text_DecimalFormat.apply(this, [spinner, Clazz.new_($I$(9).c$$S,[decimalFormatPattern])]);
+C$.c$$javax_swing_JSpinner$java_text_DecimalFormat.apply(this, [spinner, Clazz.new_($I$(9,1).c$$S,[decimalFormatPattern])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JSpinner$java_text_DecimalFormat', function (spinner, format) {
-C$.superclazz.c$$javax_swing_JSpinner.apply(this, [spinner]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_JSpinner.apply(this,[spinner]);C$.$init$.apply(this);
 if (!(Clazz.instanceOf(spinner.getModel$(), "javax.swing.SpinnerNumberModel"))) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["model not a SpinnerNumberModel"]);
 }var model=spinner.getModel$();
-var formatter=Clazz.new_($I$(10).c$$javax_swing_SpinnerNumberModel$java_text_NumberFormat,[model, format]);
-var factory=Clazz.new_($I$(8).c$$javax_swing_JFormattedTextField_AbstractFormatter,[formatter]);
+var formatter=Clazz.new_($I$(10,1).c$$javax_swing_SpinnerNumberModel$java_text_NumberFormat,[model, format]);
+var factory=Clazz.new_($I$(8,1).c$$javax_swing_JFormattedTextField_AbstractFormatter,[formatter]);
 var ftf=this.getTextField$();
 ftf.setEditable$Z(true);
 ftf.setFormatterFactory$javax_swing_JFormattedTextField_AbstractFormatterFactory(factory);
@@ -492,43 +471,39 @@ return (this.getSpinner$().getModel$());
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "ListEditor", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "ListEditor", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.JSpinner','.DefaultEditor']);
+C$.$classes$=[['ListFormatter',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JSpinner', function (spinner) {
-C$.superclazz.c$$javax_swing_JSpinner.apply(this, [spinner]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_JSpinner.apply(this,[spinner]);C$.$init$.apply(this);
 if (!(Clazz.instanceOf(spinner.getModel$(), "javax.swing.SpinnerListModel"))) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["model not a SpinnerListModel"]);
 }this.getTextField$().setEditable$Z(true);
-this.getTextField$().setFormatterFactory$javax_swing_JFormattedTextField_AbstractFormatterFactory(Clazz.new_($I$(8).c$$javax_swing_JFormattedTextField_AbstractFormatter,[Clazz.new_($I$(12), [this, null])]));
+this.getTextField$().setFormatterFactory$javax_swing_JFormattedTextField_AbstractFormatterFactory(Clazz.new_([Clazz.new_($I$(12,1),[this, null])],$I$(8,1).c$$javax_swing_JFormattedTextField_AbstractFormatter));
 }, 1);
 
 Clazz.newMeth(C$, 'getModel$', function () {
 return (this.getSpinner$().getModel$());
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner.ListEditor, "ListFormatter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner.ListEditor, "ListFormatter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.JFormattedTextField','.AbstractFormatter']);
+C$.$classes$=[['Filter',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.filter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['filter','javax.swing.text.DocumentFilter']]]
 
 Clazz.newMeth(C$, 'valueToString$O', function (value) {
 if (value == null ) {
@@ -542,19 +517,18 @@ return string;
 
 Clazz.newMeth(C$, 'getDocumentFilter$', function () {
 if (this.filter == null ) {
-this.filter=Clazz.new_($I$(11), [this, null]);
+this.filter=Clazz.new_($I$(11,1),[this, null]);
 }return this.filter;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner.ListEditor.ListFormatter, "Filter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner.ListEditor.ListFormatter, "Filter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.DocumentFilter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'replace$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet', function (fb, offset, length, string, attrs) {
 if (string != null  && (offset + length) == fb.getDocument$().getLength$() ) {
@@ -581,15 +555,14 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSpinner, "DisabledAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSpinner, "DisabledAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'javax.swing.Action');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getValue$S', function (key) {
 return null;
@@ -611,10 +584,10 @@ Clazz.newMeth(C$, 'addPropertyChangeListener$java_beans_PropertyChangeListener',
 Clazz.newMeth(C$, 'removePropertyChangeListener$java_beans_PropertyChangeListener', function (l) {
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (ae) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (ae) {
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

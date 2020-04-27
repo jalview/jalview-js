@@ -1,20 +1,19 @@
 (function(){var P$=Clazz.newPackage("swingjs.a2s");
-var C$=Clazz.newClass(P$, "Canvas", null, 'swingjs.a2s.Panel');
+/*c*/var C$=Clazz.newClass(P$, "Canvas", null, 'swingjs.a2s.Panel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$java_awt_GraphicsConfiguration', function (config) {
 C$.c$.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this._alwaysPaint=true;
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.秘setPaintsSelf$I(2);
+this.秘paintClass=this.秘updateClass=C$ ||null;
 }, 1);
 
 Clazz.newMeth(C$, 'getPreferredSize$', function () {
@@ -31,13 +30,12 @@ this.setOpaque$Z(c != null );
 });
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
-(g).setBackground$java_awt_Color(this.getBackground$());
 g.clearRect$I$I$I$I(0, 0, this.width, this.height);
-this.update$java_awt_Graphics(g);
 });
 
 Clazz.newMeth(C$, 'update$java_awt_Graphics', function (g) {
-if (this.paintComponent$java_awt_Graphics ||false) this.paintComponent$java_awt_Graphics(g);
+g.clearRect$I$I$I$I(0, 0, this.width, this.height);
+this.paint$java_awt_Graphics(g);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:44 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

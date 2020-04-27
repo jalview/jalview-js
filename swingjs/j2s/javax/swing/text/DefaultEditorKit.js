@@ -1,18 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.UIManager','java.awt.Rectangle','java.awt.Point',['javax.swing.text.Position','.Bias'],'javax.swing.text.Utilities',['javax.swing.text.DefaultEditorKit','.BeginWordAction'],['javax.swing.text.DefaultEditorKit','.EndWordAction'],['javax.swing.text.DefaultEditorKit','.BeginLineAction'],['javax.swing.text.DefaultEditorKit','.EndLineAction'],['javax.swing.text.DefaultEditorKit','.BeginParagraphAction'],['javax.swing.text.DefaultEditorKit','.EndParagraphAction'],'java.awt.ComponentOrientation','javax.swing.Action',['javax.swing.text.DefaultEditorKit','.InsertContentAction'],['javax.swing.text.DefaultEditorKit','.DeletePrevCharAction'],['javax.swing.text.DefaultEditorKit','.DeleteNextCharAction'],['javax.swing.text.DefaultEditorKit','.ReadOnlyAction'],['javax.swing.text.DefaultEditorKit','.WritableAction'],['javax.swing.text.DefaultEditorKit','.CutAction'],['javax.swing.text.DefaultEditorKit','.CopyAction'],['javax.swing.text.DefaultEditorKit','.PasteAction'],['javax.swing.text.DefaultEditorKit','.VerticalPageAction'],['javax.swing.text.DefaultEditorKit','.PageAction'],['javax.swing.text.DefaultEditorKit','.InsertBreakAction'],['javax.swing.text.DefaultEditorKit','.BeepAction'],['javax.swing.text.DefaultEditorKit','.NextVisualPositionAction'],['javax.swing.text.DefaultEditorKit','.PreviousWordAction'],['javax.swing.text.DefaultEditorKit','.NextWordAction'],['javax.swing.text.DefaultEditorKit','.BeginAction'],['javax.swing.text.DefaultEditorKit','.EndAction'],['javax.swing.text.DefaultEditorKit','.DefaultKeyTypedAction'],['javax.swing.text.DefaultEditorKit','.InsertTabAction'],['javax.swing.text.DefaultEditorKit','.SelectWordAction'],['javax.swing.text.DefaultEditorKit','.SelectLineAction'],['javax.swing.text.DefaultEditorKit','.SelectParagraphAction'],['javax.swing.text.DefaultEditorKit','.SelectAllAction'],['javax.swing.text.DefaultEditorKit','.UnselectAction'],['javax.swing.text.DefaultEditorKit','.ToggleComponentOrientationAction'],'swingjs.JSToolkit','java.io.InputStreamReader','swingjs.api.Interface','java.io.OutputStream','javax.swing.text.Segment']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultEditorKit", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.UIManager','java.awt.Rectangle','java.awt.Point',['javax.swing.text.Position','.Bias'],'javax.swing.text.Utilities',['javax.swing.text.DefaultEditorKit','.BeginWordAction'],['javax.swing.text.DefaultEditorKit','.EndWordAction'],['javax.swing.text.DefaultEditorKit','.BeginLineAction'],['javax.swing.text.DefaultEditorKit','.EndLineAction'],['javax.swing.text.DefaultEditorKit','.BeginParagraphAction'],['javax.swing.text.DefaultEditorKit','.EndParagraphAction'],'java.awt.ComponentOrientation','javax.swing.Action',['javax.swing.text.DefaultEditorKit','.InsertContentAction'],['javax.swing.text.DefaultEditorKit','.DeletePrevCharAction'],['javax.swing.text.DefaultEditorKit','.DeleteNextCharAction'],['javax.swing.text.DefaultEditorKit','.ReadOnlyAction'],['javax.swing.text.DefaultEditorKit','.WritableAction'],['javax.swing.text.DefaultEditorKit','.CutAction'],['javax.swing.text.DefaultEditorKit','.CopyAction'],['javax.swing.text.DefaultEditorKit','.PasteAction'],['javax.swing.text.DefaultEditorKit','.VerticalPageAction'],['javax.swing.text.DefaultEditorKit','.PageAction'],['javax.swing.text.DefaultEditorKit','.InsertBreakAction'],['javax.swing.text.DefaultEditorKit','.BeepAction'],['javax.swing.text.DefaultEditorKit','.NextVisualPositionAction'],['javax.swing.text.DefaultEditorKit','.PreviousWordAction'],['javax.swing.text.DefaultEditorKit','.NextWordAction'],['javax.swing.text.DefaultEditorKit','.BeginAction'],['javax.swing.text.DefaultEditorKit','.EndAction'],['javax.swing.text.DefaultEditorKit','.DefaultKeyTypedAction'],['javax.swing.text.DefaultEditorKit','.InsertTabAction'],['javax.swing.text.DefaultEditorKit','.SelectWordAction'],['javax.swing.text.DefaultEditorKit','.SelectLineAction'],['javax.swing.text.DefaultEditorKit','.SelectParagraphAction'],['javax.swing.text.DefaultEditorKit','.SelectAllAction'],['javax.swing.text.DefaultEditorKit','.UnselectAction'],['javax.swing.text.DefaultEditorKit','.ToggleComponentOrientationAction'],'javax.swing.text.PlainDocument','java.io.InputStreamReader','swingjs.api.Interface','java.io.OutputStream','javax.swing.text.Segment']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultEditorKit", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.EditorKit');
-C$.defaultActions=null;
+C$.$classes$=[['DefaultKeyTypedAction',9],['InsertContentAction',9],['InsertBreakAction',9],['InsertTabAction',9],['DeletePrevCharAction',8],['DeleteNextCharAction',8],['ReadOnlyAction',8],['WritableAction',8],['CutAction',9],['CopyAction',9],['PasteAction',9],['BeepAction',9],['VerticalPageAction',8],['PageAction',8],['NextVisualPositionAction',8],['BeginWordAction',8],['EndWordAction',8],['PreviousWordAction',8],['NextWordAction',8],['BeginLineAction',8],['EndLineAction',8],['BeginParagraphAction',8],['EndParagraphAction',8],['BeginAction',8],['EndAction',8],['SelectWordAction',8],['SelectLineAction',8],['SelectParagraphAction',8],['SelectAllAction',8],['UnselectAction',8],['ToggleComponentOrientationAction',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultActions=Clazz.array($I$(13), -1, [Clazz.new_($I$(14)), Clazz.new_($I$(15)), Clazz.new_($I$(16)), Clazz.new_($I$(17)), Clazz.new_($I$(18)), Clazz.new_($I$(19)), Clazz.new_($I$(20)), Clazz.new_($I$(21)), Clazz.new_($I$(22).c$$S$I$Z,["page-up", -1, false]), Clazz.new_($I$(22).c$$S$I$Z,["page-down", 1, false]), Clazz.new_($I$(22).c$$S$I$Z,["selection-page-up", -1, true]), Clazz.new_($I$(22).c$$S$I$Z,["selection-page-down", 1, true]), Clazz.new_($I$(23).c$$S$Z$Z,["selection-page-left", true, true]), Clazz.new_($I$(23).c$$S$Z$Z,["selection-page-right", false, true]), Clazz.new_($I$(24)), Clazz.new_($I$(25)), Clazz.new_($I$(26).c$$S$Z$I,["caret-forward", false, 3]), Clazz.new_($I$(26).c$$S$Z$I,["caret-backward", false, 7]), Clazz.new_($I$(26).c$$S$Z$I,["selection-forward", true, 3]), Clazz.new_($I$(26).c$$S$Z$I,["selection-backward", true, 7]), Clazz.new_($I$(26).c$$S$Z$I,["caret-up", false, 1]), Clazz.new_($I$(26).c$$S$Z$I,["caret-down", false, 5]), Clazz.new_($I$(26).c$$S$Z$I,["selection-up", true, 1]), Clazz.new_($I$(26).c$$S$Z$I,["selection-down", true, 5]), Clazz.new_($I$(6).c$$S$Z,["caret-begin-word", false]), Clazz.new_($I$(7).c$$S$Z,["caret-end-word", false]), Clazz.new_($I$(6).c$$S$Z,["selection-begin-word", true]), Clazz.new_($I$(7).c$$S$Z,["selection-end-word", true]), Clazz.new_($I$(27).c$$S$Z,["caret-previous-word", false]), Clazz.new_($I$(28).c$$S$Z,["caret-next-word", false]), Clazz.new_($I$(27).c$$S$Z,["selection-previous-word", true]), Clazz.new_($I$(28).c$$S$Z,["selection-next-word", true]), Clazz.new_($I$(8).c$$S$Z,["caret-begin-line", false]), Clazz.new_($I$(9).c$$S$Z,["caret-end-line", false]), Clazz.new_($I$(8).c$$S$Z,["selection-begin-line", true]), Clazz.new_($I$(9).c$$S$Z,["selection-end-line", true]), Clazz.new_($I$(10).c$$S$Z,["caret-begin-paragraph", false]), Clazz.new_($I$(11).c$$S$Z,["caret-end-paragraph", false]), Clazz.new_($I$(10).c$$S$Z,["selection-begin-paragraph", true]), Clazz.new_($I$(11).c$$S$Z,["selection-end-paragraph", true]), Clazz.new_($I$(29).c$$S$Z,["caret-begin", false]), Clazz.new_($I$(30).c$$S$Z,["caret-end", false]), Clazz.new_($I$(29).c$$S$Z,["selection-begin", true]), Clazz.new_($I$(30).c$$S$Z,["selection-end", true]), Clazz.new_($I$(31)), Clazz.new_($I$(32)), Clazz.new_($I$(33)), Clazz.new_($I$(34)), Clazz.new_($I$(35)), Clazz.new_($I$(36)), Clazz.new_($I$(37)), Clazz.new_($I$(38))]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['defaultActions','javax.swing.Action[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getContentType$', function () {
@@ -32,15 +33,15 @@ return null;
 });
 
 Clazz.newMeth(C$, 'createDefaultDocument$', function () {
-return $I$(39).getPlainDocument$();
+return Clazz.new_($I$(39,1));
 });
 
 Clazz.newMeth(C$, 'read$java_io_InputStream$javax_swing_text_Document$I', function ($in, doc, pos) {
-this.read$java_io_Reader$javax_swing_text_Document$I(Clazz.new_($I$(40).c$$java_io_InputStream,[$in]), doc, pos);
+this.read$java_io_Reader$javax_swing_text_Document$I(Clazz.new_($I$(40,1).c$$java_io_InputStream,[$in]), doc, pos);
 });
 
 Clazz.newMeth(C$, 'write$java_io_OutputStream$javax_swing_text_Document$I$I', function (out, doc, pos, len) {
-var osw=$I$(41).getInstanceWithParams$S$ClassA$OA("java.io.OutputStreamWriter", Clazz.array(Class, -1, [Clazz.getClass($I$(42))]), Clazz.array(java.lang.Object, -1, [out]));
+var osw=$I$(41,"getInstanceWithParams$S$ClassA$OA",["java.io.OutputStreamWriter", Clazz.array(Class, -1, [Clazz.getClass($I$(42))]), Clazz.array(java.lang.Object, -1, [out])]);
 this.write$java_io_Writer$javax_swing_text_Document$I$I(osw, doc, pos, len);
 osw.flush$();
 });
@@ -118,7 +119,7 @@ doc.putProperty$O$O("__EndOfLine__", "\n");
 Clazz.newMeth(C$, 'write$java_io_Writer$javax_swing_text_Document$I$I', function (out, doc, pos, len) {
 if ((pos < 0) || ((pos + len) > doc.getLength$()) ) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["DefaultEditorKit.write", pos]);
-}var data=Clazz.new_($I$(43));
+}var data=Clazz.new_($I$(43,1));
 var nleft=len;
 var offs=pos;
 var endOfLineProperty=doc.getProperty$O("__EndOfLine__");
@@ -165,23 +166,25 @@ nleft-=n;
 }
 }out.flush$();
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultActions=Clazz.array($I$(13), -1, [Clazz.new_($I$(14,1)), Clazz.new_($I$(15,1)), Clazz.new_($I$(16,1)), Clazz.new_($I$(17,1)), Clazz.new_($I$(18,1)), Clazz.new_($I$(19,1)), Clazz.new_($I$(20,1)), Clazz.new_($I$(21,1)), Clazz.new_($I$(22,1).c$$S$I$Z,["page-up", -1, false]), Clazz.new_($I$(22,1).c$$S$I$Z,["page-down", 1, false]), Clazz.new_($I$(22,1).c$$S$I$Z,["selection-page-up", -1, true]), Clazz.new_($I$(22,1).c$$S$I$Z,["selection-page-down", 1, true]), Clazz.new_($I$(23,1).c$$S$Z$Z,["selection-page-left", true, true]), Clazz.new_($I$(23,1).c$$S$Z$Z,["selection-page-right", false, true]), Clazz.new_($I$(24,1)), Clazz.new_($I$(25,1)), Clazz.new_($I$(26,1).c$$S$Z$I,["caret-forward", false, 3]), Clazz.new_($I$(26,1).c$$S$Z$I,["caret-backward", false, 7]), Clazz.new_($I$(26,1).c$$S$Z$I,["selection-forward", true, 3]), Clazz.new_($I$(26,1).c$$S$Z$I,["selection-backward", true, 7]), Clazz.new_($I$(26,1).c$$S$Z$I,["caret-up", false, 1]), Clazz.new_($I$(26,1).c$$S$Z$I,["caret-down", false, 5]), Clazz.new_($I$(26,1).c$$S$Z$I,["selection-up", true, 1]), Clazz.new_($I$(26,1).c$$S$Z$I,["selection-down", true, 5]), Clazz.new_($I$(6,1).c$$S$Z,["caret-begin-word", false]), Clazz.new_($I$(7,1).c$$S$Z,["caret-end-word", false]), Clazz.new_($I$(6,1).c$$S$Z,["selection-begin-word", true]), Clazz.new_($I$(7,1).c$$S$Z,["selection-end-word", true]), Clazz.new_($I$(27,1).c$$S$Z,["caret-previous-word", false]), Clazz.new_($I$(28,1).c$$S$Z,["caret-next-word", false]), Clazz.new_($I$(27,1).c$$S$Z,["selection-previous-word", true]), Clazz.new_($I$(28,1).c$$S$Z,["selection-next-word", true]), Clazz.new_($I$(8,1).c$$S$Z,["caret-begin-line", false]), Clazz.new_($I$(9,1).c$$S$Z,["caret-end-line", false]), Clazz.new_($I$(8,1).c$$S$Z,["selection-begin-line", true]), Clazz.new_($I$(9,1).c$$S$Z,["selection-end-line", true]), Clazz.new_($I$(10,1).c$$S$Z,["caret-begin-paragraph", false]), Clazz.new_($I$(11,1).c$$S$Z,["caret-end-paragraph", false]), Clazz.new_($I$(10,1).c$$S$Z,["selection-begin-paragraph", true]), Clazz.new_($I$(11,1).c$$S$Z,["selection-end-paragraph", true]), Clazz.new_($I$(29,1).c$$S$Z,["caret-begin", false]), Clazz.new_($I$(30,1).c$$S$Z,["caret-end", false]), Clazz.new_($I$(29,1).c$$S$Z,["selection-begin", true]), Clazz.new_($I$(30,1).c$$S$Z,["selection-end", true]), Clazz.new_($I$(31,1)), Clazz.new_($I$(32,1)), Clazz.new_($I$(33,1)), Clazz.new_($I$(34,1)), Clazz.new_($I$(35,1)), Clazz.new_($I$(36,1)), Clazz.new_($I$(37,1)), Clazz.new_($I$(38,1))]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "DefaultKeyTypedAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "DefaultKeyTypedAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["default-typed"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["default-typed"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if ((target != null ) && (e != null ) ) {
 if ((!target.isEditable$()) || (!target.isEnabled$()) ) {
@@ -195,22 +198,20 @@ target.replaceSelection$S(content);
 }}}});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "InsertContentAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "InsertContentAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["insert-content"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["insert-content"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if ((target != null ) && (e != null ) ) {
 if ((!target.isEditable$()) || (!target.isEnabled$()) ) {
@@ -224,22 +225,20 @@ $I$(1).getLookAndFeel$().provideErrorFeedback$java_awt_Component(target);
 }}});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "InsertBreakAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "InsertBreakAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["insert-break"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["insert-break"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 if ((!target.isEditable$()) || (!target.isEnabled$()) ) {
@@ -249,22 +248,20 @@ return;
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "InsertTabAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "InsertTabAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["insert-tab"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["insert-tab"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 if ((!target.isEditable$()) || (!target.isEnabled$()) ) {
@@ -274,261 +271,187 @@ return;
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "DeletePrevCharAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "DeletePrevCharAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["delete-previous"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["delete-previous"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
-var beep=true;
 if ((target != null ) && (target.isEditable$()) ) {
-try {
-var doc=target.getDocument$();
-var caret=target.getCaret$();
-var dot=caret.getDot$();
-var mark=caret.getMark$();
-if (dot != mark) {
-doc.remove$I$I(Math.min(dot, mark), Math.abs(dot - mark));
-beep=false;
-} else if (dot > 0) {
-var delChars=1;
-if (dot > 1) {
-var dotChars=doc.getText$I$I(dot - 2, 2);
-var c0=dotChars.charAt$I(0);
-var c1=dotChars.charAt$I(1);
-if (c0 >= "\ud800" && c0 <= "\udbff"  && c1 >= "\udc00"  && c1 <= "\udfff" ) {
-delChars=2;
-}}doc.remove$I$I(dot - delChars, delChars);
-beep=false;
-}} catch (bl) {
-if (Clazz.exceptionOf(bl,"javax.swing.text.BadLocationException")){
-} else {
-throw bl;
-}
-}
-}if (beep) {
-$I$(1).getLookAndFeel$().provideErrorFeedback$java_awt_Component(target);
+(target.ui).action$S$I("delete", -1);
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "DeleteNextCharAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "DeleteNextCharAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["delete-next"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["delete-next"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
-var beep=true;
 if ((target != null ) && (target.isEditable$()) ) {
-try {
-var doc=target.getDocument$();
-var caret=target.getCaret$();
-var dot=caret.getDot$();
-var mark=caret.getMark$();
-if (dot != mark) {
-doc.remove$I$I(Math.min(dot, mark), Math.abs(dot - mark));
-beep=false;
-} else if (dot < doc.getLength$()) {
-var delChars=1;
-if (dot < doc.getLength$() - 1) {
-var dotChars=doc.getText$I$I(dot, 2);
-var c0=dotChars.charAt$I(0);
-var c1=dotChars.charAt$I(1);
-if (c0 >= "\ud800" && c0 <= "\udbff"  && c1 >= "\udc00"  && c1 <= "\udfff" ) {
-delChars=2;
-}}doc.remove$I$I(dot, delChars);
-beep=false;
-}} catch (bl) {
-if (Clazz.exceptionOf(bl,"javax.swing.text.BadLocationException")){
-} else {
-throw bl;
-}
-}
-}if (beep) {
-$I$(1).getLookAndFeel$().provideErrorFeedback$java_awt_Component(target);
+(target.ui).action$S$I("delete", 1);
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "ReadOnlyAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "ReadOnlyAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["set-read-only"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["set-read-only"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 target.setEditable$Z(false);
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "WritableAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "WritableAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["set-writable"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["set-writable"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 target.setEditable$Z(true);
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "CutAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "CutAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["cut-to-clipboard"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["cut-to-clipboard"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 target.cut$();
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "CopyAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "CopyAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["copy-to-clipboard"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["copy-to-clipboard"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 target.copy$();
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "PasteAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "PasteAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["paste-from-clipboard"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["paste-from-clipboard"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 target.paste$();
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "BeepAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "BeepAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["beep"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["beep"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 $I$(1).getLookAndFeel$().provideErrorFeedback$java_awt_Component(target);
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "VerticalPageAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "VerticalPageAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-this.direction=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select'],'I',['direction']]]
 
 Clazz.newMeth(C$, 'c$$S$I$Z', function (nm, direction, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 this.direction=direction;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var visible=target.getVisibleRect$();
-var newVis=Clazz.new_($I$(2).c$$java_awt_Rectangle,[visible]);
+var newVis=Clazz.new_($I$(2,1).c$$java_awt_Rectangle,[visible]);
 var selectedIndex=target.getCaretPosition$();
 var scrollAmount=this.direction * target.getScrollableBlockIncrement$java_awt_Rectangle$I$I(visible, 1, this.direction);
 var initialY=visible.y;
@@ -544,12 +467,12 @@ scrollAmount=(scrollAmount/h|0) * h;
 }newVis.y=p$1.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, initialY + scrollAmount, visible.height]);
 var newIndex;
 if (visible.contains$I$I(dotBounds.x, dotBounds.y)) {
-newIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3).c$$I$I,[x, p$1.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, dotBounds.y + scrollAmount, 0])]));
+newIndex=target.viewToModel$java_awt_Point(Clazz.new_([x, p$1.constrainY$javax_swing_text_JTextComponent$I$I.apply(this, [target, dotBounds.y + scrollAmount, 0])],$I$(3,1).c$$I$I));
 } else {
 if (this.direction == -1) {
-newIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3).c$$I$I,[x, newVis.y]));
+newIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3,1).c$$I$I,[x, newVis.y]));
 } else {
-newIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3).c$$I$I,[x, newVis.y + visible.height]));
+newIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3,1).c$$I$I,[x, newVis.y + visible.height]));
 }}newIndex=p$1.constrainOffset$javax_swing_text_JTextComponent$I.apply(this, [target, newIndex]);
 if (newIndex != selectedIndex) {
 p$1.adjustScrollIfNecessary$javax_swing_text_JTextComponent$java_awt_Rectangle$I$I.apply(this, [target, newVis, initialY, newIndex]);
@@ -609,34 +532,28 @@ throw ble;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "PageAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "PageAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-this.left=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select','left']]]
 
 Clazz.newMeth(C$, 'c$$S$Z$Z', function (nm, left, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 this.left=left;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var selectedIndex;
-var visible=Clazz.new_($I$(2));
+var visible=Clazz.new_($I$(2,1));
 target.computeVisibleRect$java_awt_Rectangle(visible);
 if (this.left) {
 visible.x=Math.max(0, visible.x - visible.width);
@@ -645,9 +562,9 @@ visible.x+=visible.width;
 }selectedIndex=target.getCaretPosition$();
 if (selectedIndex != -1) {
 if (this.left) {
-selectedIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3).c$$I$I,[visible.x, visible.y]));
+selectedIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3,1).c$$I$I,[visible.x, visible.y]));
 } else {
-selectedIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3).c$$I$I,[visible.x + visible.width - 1, visible.y + visible.height - 1]));
+selectedIndex=target.viewToModel$java_awt_Point(Clazz.new_($I$(3,1).c$$I$I,[visible.x + visible.width - 1, visible.y + visible.height - 1]));
 }var doc=target.getDocument$();
 if ((selectedIndex != 0) && (selectedIndex > (doc.getLength$() - 1)) ) {
 selectedIndex=doc.getLength$() - 1;
@@ -660,30 +577,24 @@ selectedIndex=0;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "NextVisualPositionAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "NextVisualPositionAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-this.direction=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select'],'I',['direction']]]
 
 Clazz.newMeth(C$, 'c$$S$Z$I', function (nm, select, direction) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 this.direction=direction;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var caret=target.getCaret$();
@@ -694,7 +605,7 @@ var magicPosition=caret.getMagicCaretPosition$();
 try {
 if (magicPosition == null  && (this.direction == 1 || this.direction == 5 ) ) {
 var r=(bidiCaret != null ) ? (target.getUI$()).modelToView$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias(target, dot, bidiCaret.getDotBias$()) : target.modelToView$I(dot);
-magicPosition=Clazz.new_($I$(3).c$$I$I,[r.x, r.y]);
+magicPosition=Clazz.new_($I$(3,1).c$$I$I,[r.x, r.y]);
 }var filter=target.getNavigationFilter$();
 if (filter != null ) {
 dot=filter.getNextVisualPositionFrom$javax_swing_text_JTextComponent$I$javax_swing_text_Position_Bias$I$javax_swing_text_Position_BiasA(target, dot, (bidiCaret != null ) ? bidiCaret.getDotBias$() : $I$(4).Forward, this.direction, bias);
@@ -725,28 +636,23 @@ throw ex;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginWordAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginWordAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 try {
@@ -768,28 +674,23 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "EndWordAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "EndWordAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 try {
@@ -811,28 +712,23 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "PreviousWordAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "PreviousWordAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var offs=target.getCaretPosition$();
@@ -864,28 +760,23 @@ $I$(1).getLookAndFeel$().provideErrorFeedback$java_awt_Component(target);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "NextWordAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "NextWordAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var offs=target.getCaretPosition$();
@@ -922,28 +813,23 @@ $I$(1).getLookAndFeel$().provideErrorFeedback$java_awt_Component(target);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginLineAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginLineAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 try {
@@ -965,28 +851,23 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "EndLineAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "EndLineAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 try {
@@ -1008,28 +889,23 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginParagraphAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginParagraphAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var offs=target.getCaretPosition$();
@@ -1044,28 +920,23 @@ target.setCaretPosition$I(offs);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "EndParagraphAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "EndParagraphAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var offs=target.getCaretPosition$();
@@ -1080,28 +951,23 @@ target.setCaretPosition$I(offs);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "BeginAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 if (this.select) {
@@ -1113,28 +979,23 @@ target.setCaretPosition$I(0);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "EndAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "EndAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.select=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['select']]]
 
 Clazz.newMeth(C$, 'c$$S$Z', function (nm, select) {
-C$.superclazz.c$$S.apply(this, [nm]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[nm]);C$.$init$.apply(this);
 this.select=select;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var doc=target.getDocument$();
@@ -1148,109 +1009,89 @@ target.setCaretPosition$I(dot);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectWordAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectWordAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.start=null;
-this.end=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['start','javax.swing.Action','+end']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["select-word"]);
-C$.$init$.apply(this);
-this.start=Clazz.new_($I$(6).c$$S$Z,["pigdog", false]);
-this.end=Clazz.new_($I$(7).c$$S$Z,["pigdog", true]);
+;C$.superclazz.c$$S.apply(this,["select-word"]);C$.$init$.apply(this);
+this.start=Clazz.new_($I$(6,1).c$$S$Z,["pigdog", false]);
+this.end=Clazz.new_($I$(7,1).c$$S$Z,["pigdog", true]);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-this.start.actionPerformed$(e);
-this.end.actionPerformed$(e);
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+this.start.actionPerformed$java_awt_event_ActionEvent(e);
+this.end.actionPerformed$java_awt_event_ActionEvent(e);
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectLineAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectLineAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.start=null;
-this.end=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['start','javax.swing.Action','+end']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["select-line"]);
-C$.$init$.apply(this);
-this.start=Clazz.new_($I$(8).c$$S$Z,["pigdog", false]);
-this.end=Clazz.new_($I$(9).c$$S$Z,["pigdog", true]);
+;C$.superclazz.c$$S.apply(this,["select-line"]);C$.$init$.apply(this);
+this.start=Clazz.new_($I$(8,1).c$$S$Z,["pigdog", false]);
+this.end=Clazz.new_($I$(9,1).c$$S$Z,["pigdog", true]);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-this.start.actionPerformed$(e);
-this.end.actionPerformed$(e);
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+this.start.actionPerformed$java_awt_event_ActionEvent(e);
+this.end.actionPerformed$java_awt_event_ActionEvent(e);
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectParagraphAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectParagraphAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.start=null;
-this.end=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['start','javax.swing.Action','+end']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["select-paragraph"]);
-C$.$init$.apply(this);
-this.start=Clazz.new_($I$(10).c$$S$Z,["pigdog", false]);
-this.end=Clazz.new_($I$(11).c$$S$Z,["pigdog", true]);
+;C$.superclazz.c$$S.apply(this,["select-paragraph"]);C$.$init$.apply(this);
+this.start=Clazz.new_($I$(10,1).c$$S$Z,["pigdog", false]);
+this.end=Clazz.new_($I$(11,1).c$$S$Z,["pigdog", true]);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-this.start.actionPerformed$(e);
-this.end.actionPerformed$(e);
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+this.start.actionPerformed$java_awt_event_ActionEvent(e);
+this.end.actionPerformed$java_awt_event_ActionEvent(e);
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectAllAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "SelectAllAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["select-all"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["select-all"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var doc=target.getDocument$();
@@ -1259,44 +1100,40 @@ target.moveCaretPosition$I(doc.getLength$());
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "UnselectAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "UnselectAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["unselect"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["unselect"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 target.setCaretPosition$I(target.getCaretPosition$());
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultEditorKit, "ToggleComponentOrientationAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultEditorKit, "ToggleComponentOrientationAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["toggle-componentOrientation"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["toggle-componentOrientation"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getTextComponent$java_awt_event_ActionEvent(e);
 if (target != null ) {
 var last=target.getComponentOrientation$();
@@ -1304,8 +1141,8 @@ var next;
 if (last === $I$(12).RIGHT_TO_LEFT ) next=$I$(12).LEFT_TO_RIGHT;
  else next=$I$(12).RIGHT_TO_LEFT;
 target.setComponentOrientation$java_awt_ComponentOrientation(next);
-target.repaint$();
+target.秘repaint$();
 }});
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

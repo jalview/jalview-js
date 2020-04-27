@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("sun.reflect"),I$=[[0,'InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Reflection");
+(function(){var P$=Clazz.newPackage("sun.reflect"),I$=[[0,'InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Reflection");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getCallerClass$', function () {
 var cl=null;
@@ -47,13 +46,13 @@ do {
 idx1++;
 } while (name1.charAt$I(idx1) == "[");
 if (name1.charAt$I(idx1) != "L") {
-throw Clazz.new_($I$(1).c$$S,["Illegal class name " + name1]);
+throw Clazz.new_($I$(1,1).c$$S,["Illegal class name " + name1]);
 }}if (name2.charAt$I(idx2) == "[") {
 do {
 idx2++;
 } while (name2.charAt$I(idx2) == "[");
 if (name2.charAt$I(idx2) != "L") {
-throw Clazz.new_($I$(1).c$$S,["Illegal class name " + name2]);
+throw Clazz.new_($I$(1,1).c$$S,["Illegal class name " + name2]);
 }}var length1=lastDot1 - idx1;
 var length2=lastDot2 - idx2;
 if (length1 != length2) {
@@ -72,4 +71,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

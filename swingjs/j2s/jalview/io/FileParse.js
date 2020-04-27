@@ -1,27 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'Error','jalview.util.MessageManager','java.io.File','java.io.FileInputStream','java.io.BufferedReader','java.io.FileReader','java.io.InputStreamReader','java.util.zip.GZIPInputStream','java.net.URL','jalview.util.Platform','jalview.io.DataSourceType','java.io.ByteArrayInputStream','java.io.StringReader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileParse");
+(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'Error','jalview.util.MessageManager','java.io.File','java.io.FileInputStream','java.io.BufferedReader','java.io.FileReader','java.io.InputStreamReader','java.util.zip.GZIPInputStream','java.net.URL','jalview.util.Platform','jalview.io.DataSourceType','java.io.ByteArrayInputStream','java.io.StringReader']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FileParse");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dataName=null;
-this.inFile=null;
-this.bytes=null;
-this.viewport=null;
-this.exportSettings=null;
-this.index=0;
-this.suffixSeparator='\0';
-this.newline=null;
-this.suffix=null;
-this.dataSourceType=null;
-this.dataIn=null;
-this.errormessage=null;
-this.error=false;
-this.warningMessage=null;
-this.READAHEAD_LIMIT=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dataName="unknown source";
@@ -36,7 +16,9 @@ this.errormessage="UNINITIALISED SOURCE";
 this.error=true;
 this.warningMessage=null;
 this.READAHEAD_LIMIT=2048;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['error'],'C',['suffixSeparator'],'I',['index','READAHEAD_LIMIT'],'S',['dataName','newline','suffix','errormessage','warningMessage'],'O',['inFile','java.io.File','bytes','byte[]','viewport','jalview.api.AlignViewportI','exportSettings','jalview.api.AlignExportSettingsI','dataSourceType','jalview.io.DataSourceType','dataIn','java.io.BufferedReader']]]
 
 Clazz.newMeth(C$, 'getBytes$', function () {
 return this.bytes;
@@ -51,13 +33,13 @@ return this.newline;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_FileParse', function (from) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (from == null ) {
-throw Clazz.new_($I$(1).c$$S,[$I$(2).getString$S("error.implementation_error_null_fileparse")]);
+throw Clazz.new_([$I$(2).getString$S("error.implementation_error_null_fileparse")],$I$(1,1).c$$S);
 }if (from === this ) {
 return;
 }this.index=++from.index;
@@ -75,7 +57,7 @@ this.mark$();
 
 Clazz.newMeth(C$, 'checkFileSource$S', function (fileStr) {
 this.error=false;
-this.inFile=Clazz.new_($I$(3).c$$S,[fileStr]);
+this.inFile=Clazz.new_($I$(3,1).c$$S,[fileStr]);
 if (!this.inFile.exists$()) {
 this.errormessage="FILE NOT FOUND";
 this.error=true;
@@ -88,7 +70,7 @@ this.error=true;
 }if (!this.error) {
 if (fileStr.toLowerCase$().endsWith$S(".gz")) {
 try {
-this.dataIn=p$1.tryAsGzipSource$java_io_InputStream.apply(this, [Clazz.new_($I$(4).c$$S,[fileStr])]);
+this.dataIn=p$1.tryAsGzipSource$java_io_InputStream.apply(this, [Clazz.new_($I$(4,1).c$$S,[fileStr])]);
 this.dataName=fileStr;
 return this.error;
 } catch (x) {
@@ -98,13 +80,13 @@ this.warningMessage="Failed  to resolve as a GZ stream (" + x.getMessage$() + ")
 throw x;
 }
 }
-;}this.dataIn=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(6).c$$S,[fileStr])]);
+;}this.dataIn=Clazz.new_([Clazz.new_($I$(6,1).c$$S,[fileStr])],$I$(5,1).c$$java_io_Reader);
 this.dataName=fileStr;
 }return this.error;
 }, p$1);
 
 Clazz.newMeth(C$, 'tryAsGzipSource$java_io_InputStream', function (inputStream) {
-var inData=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(7).c$$java_io_InputStream,[Clazz.new_($I$(8).c$$java_io_InputStream,[inputStream])])]);
+var inData=Clazz.new_([Clazz.new_([Clazz.new_($I$(8,1).c$$java_io_InputStream,[inputStream])],$I$(7,1).c$$java_io_InputStream)],$I$(5,1).c$$java_io_Reader);
 inData.mark$I(2048);
 inData.read$();
 inData.reset$();
@@ -113,7 +95,7 @@ return inData;
 
 Clazz.newMeth(C$, 'checkURLSource$S', function (fileStr) {
 this.errormessage="URL NOT FOUND";
-var url=Clazz.new_($I$(9).c$$S,[fileStr]);
+var url=Clazz.new_($I$(9,1).c$$S,[fileStr]);
 var e=null;
 if (fileStr.toLowerCase$().endsWith$S(".gz")) {
 try {
@@ -129,7 +111,7 @@ throw ex;
 }
 }
 }try {
-this.dataIn=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(7).c$$java_io_InputStream,[url.openStream$()])]);
+this.dataIn=Clazz.new_([Clazz.new_([url.openStream$()],$I$(7,1).c$$java_io_InputStream)],$I$(5,1).c$$java_io_Reader);
 } catch (q) {
 if (Clazz.exceptionOf(q,"java.io.IOException")){
 if (e != null ) {
@@ -152,7 +134,7 @@ return fileStr.substring$I$I(0, sfpos);
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$java_io_BufferedReader$S$jalview_io_DataSourceType', function (source, originString, sourceType) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.dataSourceType=sourceType;
 this.error=false;
 this.inFile=null;
@@ -170,7 +152,7 @@ throw q;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$jalview_io_DataSourceType', function (file, sourceType) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (Clazz.instanceOf(file, "java.io.File")) {
 p$1.parse$java_io_File$S$jalview_io_DataSourceType$Z.apply(this, [file, (file).getPath$(), sourceType, true]);
 } else {
@@ -184,18 +166,18 @@ this.error=false;
 if (sourceType === $I$(11).FILE ) {
 if (this.bytes != null ) {
 this.inFile=file;
-this.dataIn=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(7).c$$java_io_InputStream,[Clazz.new_($I$(12).c$$BA,[this.bytes])])]);
+this.dataIn=Clazz.new_([Clazz.new_([Clazz.new_($I$(12,1).c$$BA,[this.bytes])],$I$(7,1).c$$java_io_InputStream)],$I$(5,1).c$$java_io_Reader);
 this.dataName=fileStr;
 } else if (p$1.checkFileSource$S.apply(this, [fileStr])) {
 var suffixLess=p$1.extractSuffix$S.apply(this, [fileStr]);
 if (suffixLess != null ) {
 if (p$1.checkFileSource$S.apply(this, [suffixLess])) {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2).formatMessage$S$SA("exception.problem_opening_file_also_tried", Clazz.array(String, -1, [this.inFile.getName$(), suffixLess, this.errormessage]))]);
+throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2,"formatMessage$S$SA",["exception.problem_opening_file_also_tried", Clazz.array(String, -1, [this.inFile.getName$(), suffixLess, this.errormessage])])]);
 }} else {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2).formatMessage$S$SA("exception.problem_opening_file", Clazz.array(String, -1, [this.inFile.getName$(), this.errormessage]))]);
+throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2,"formatMessage$S$SA",["exception.problem_opening_file", Clazz.array(String, -1, [this.inFile.getName$(), this.errormessage])])]);
 }}} else if (sourceType === $I$(11).RELATIVE_URL ) {
 this.bytes=$I$(10).getFileAsBytes$S(fileStr);
-this.dataIn=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(7).c$$java_io_InputStream,[Clazz.new_($I$(12).c$$BA,[this.bytes])])]);
+this.dataIn=Clazz.new_([Clazz.new_([Clazz.new_($I$(12,1).c$$BA,[this.bytes])],$I$(7,1).c$$java_io_InputStream)],$I$(5,1).c$$java_io_Reader);
 this.dataName=fileStr;
 } else if (sourceType === $I$(11).URL ) {
 try {
@@ -233,7 +215,7 @@ throw e;
 }
 } else if (sourceType === $I$(11).PASTE ) {
 this.errormessage="PASTE INACCESSIBLE!";
-this.dataIn=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(13).c$$S,[fileStr])]);
+this.dataIn=Clazz.new_([Clazz.new_($I$(13,1).c$$S,[fileStr])],$I$(5,1).c$$java_io_Reader);
 this.dataName="Paste";
 } else if (sourceType === $I$(11).CLASSLOADER ) {
 this.errormessage="RESOURCE CANNOT BE LOCATED";
@@ -243,7 +225,7 @@ var suffixLess=p$1.extractSuffix$S.apply(this, [fileStr]);
 if (suffixLess != null ) {
 is=this.getClass$().getResourceAsStream$S("/" + suffixLess);
 }}if (is != null ) {
-this.dataIn=Clazz.new_($I$(5).c$$java_io_Reader,[Clazz.new_($I$(7).c$$java_io_InputStream,[is])]);
+this.dataIn=Clazz.new_([Clazz.new_($I$(7,1).c$$java_io_InputStream,[is])],$I$(5,1).c$$java_io_Reader);
 this.dataName=fileStr;
 } else {
 this.error=true;
@@ -251,7 +233,7 @@ this.error=true;
 this.errormessage="PROBABLE IMPLEMENTATION ERROR : Datasource Type given as '" + (sourceType != null  ? sourceType : "null") + "'" ;
 this.error=true;
 }if (this.dataIn == null  || this.error ) {
-throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2).formatMessage$S$SA("exception.failed_to_read_data_from_source", Clazz.array(String, -1, [this.errormessage]))]);
+throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2,"formatMessage$S$SA",["exception.failed_to_read_data_from_source", Clazz.array(String, -1, [this.errormessage])])]);
 }this.error=false;
 this.dataIn.mark$I(2048);
 }, p$1);
@@ -266,7 +248,7 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2).getString$S("exc
 Clazz.newMeth(C$, 'nextLine$', function () {
 if (!this.error) {
 return this.dataIn.readLine$();
-}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2).formatMessage$S$SA("exception.invalid_source_stream", Clazz.array(String, -1, [this.errormessage]))]);
+}throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[$I$(2,"formatMessage$S$SA",["exception.invalid_source_stream", Clazz.array(String, -1, [this.errormessage])])]);
 });
 
 Clazz.newMeth(C$, 'isExporting$', function () {
@@ -351,5 +333,37 @@ return null;
 Clazz.newMeth(C$, 'getDataSourceType$', function () {
 return this.dataSourceType;
 });
+
+Clazz.newMeth(C$, 'getBufferedReader$O$jalview_io_DataSourceType', function (file, sourceType) {
+var $in=null;
+var bytes;
+switch (sourceType) {
+case $I$(11).FILE:
+if (Clazz.instanceOf(file, "java.lang.String")) {
+return Clazz.new_([Clazz.new_($I$(6,1).c$$S,[file])],$I$(5,1).c$$java_io_Reader);
+}bytes=$I$(10).getFileBytes$java_io_File(file);
+if (bytes != null ) {
+return Clazz.new_([Clazz.new_([Clazz.new_($I$(12,1).c$$BA,[bytes])],$I$(7,1).c$$java_io_InputStream)],$I$(5,1).c$$java_io_Reader);
+}return Clazz.new_([Clazz.new_($I$(6,1).c$$java_io_File,[file])],$I$(5,1).c$$java_io_Reader);
+case $I$(11).URL:
+var url=Clazz.new_([file.toString()],$I$(9,1).c$$S);
+$in=Clazz.new_([Clazz.new_([url.openStream$()],$I$(7,1).c$$java_io_InputStream)],$I$(5,1).c$$java_io_Reader);
+break;
+case $I$(11).RELATIVE_URL:
+bytes=$I$(10,"getFileAsBytes$S",[file.toString()]);
+if (bytes != null ) {
+$in=Clazz.new_([Clazz.new_([Clazz.new_($I$(12,1).c$$BA,[bytes])],$I$(7,1).c$$java_io_InputStream)],$I$(5,1).c$$java_io_Reader);
+}break;
+case $I$(11).PASTE:
+$in=Clazz.new_([Clazz.new_([file.toString()],$I$(13,1).c$$S)],$I$(5,1).c$$java_io_Reader);
+break;
+case $I$(11).CLASSLOADER:
+var is=this.getClass$().getResourceAsStream$S("/" + file);
+if (is != null ) {
+$in=Clazz.new_([Clazz.new_($I$(7,1).c$$java_io_InputStream,[is])],$I$(5,1).c$$java_io_Reader);
+}break;
+}
+return $in;
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

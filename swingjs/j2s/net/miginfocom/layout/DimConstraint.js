@@ -1,24 +1,10 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.ResizeConstraint','net.miginfocom.layout.BoundSize','net.miginfocom.layout.UnitValue','net.miginfocom.layout.PlatformDefaults','net.miginfocom.layout.LayoutUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DimConstraint", null, null, 'java.io.Externalizable');
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.ResizeConstraint','net.miginfocom.layout.BoundSize','net.miginfocom.layout.UnitValue','net.miginfocom.layout.PlatformDefaults','net.miginfocom.layout.LayoutUtil']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DimConstraint", null, null, 'java.io.Externalizable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.resize=null;
-this.sizeGroup=null;
-this.size=null;
-this.gapBefore=null;
-this.gapAfter=null;
-this.align=null;
-this.endGroup=null;
-this.fill=false;
-this.noGrid=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.resize=Clazz.new_($I$(1));
+this.resize=Clazz.new_($I$(1,1));
 this.sizeGroup=null;
 this.size=$I$(2).NULL_SIZE;
 this.gapBefore=null;
@@ -27,10 +13,12 @@ this.align=null;
 this.endGroup=null;
 this.fill=false;
 this.noGrid=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['fill','noGrid'],'S',['sizeGroup','endGroup'],'O',['resize','net.miginfocom.layout.ResizeConstraint','size','net.miginfocom.layout.BoundSize','+gapBefore','+gapAfter','align','net.miginfocom.layout.UnitValue']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getGrowPriority$', function () {
@@ -182,11 +170,11 @@ return $I$(5).getSerializedObject$O(this);
 }, p$1);
 
 Clazz.newMeth(C$, 'readExternal$java_io_ObjectInput', function ($in) {
-$I$(5).setSerializedObject$O$O(this, $I$(5).readAsXML$java_io_ObjectInput($in));
+$I$(5,"setSerializedObject$O$O",[this, $I$(5).readAsXML$java_io_ObjectInput($in)]);
 });
 
 Clazz.newMeth(C$, 'writeExternal$java_io_ObjectOutput', function (out) {
 if (this.getClass$() === Clazz.getClass(C$) ) $I$(5).writeAsXML$java_io_ObjectOutput$O(out, this);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

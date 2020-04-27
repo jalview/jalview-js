@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.dssx"),p$1={},I$=[[0,'Boolean','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Bridge");
+(function(){var P$=Clazz.newPackage("org.jmol.dssx"),p$1={},I$=[[0,'Boolean','org.jmol.util.Escape']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Bridge");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.a=null;
-this.b=null;
-this.ladder=null;
-this.isAntiparallel=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAntiparallel'],'O',['a','org.jmol.modelset.Atom','+b','ladder','int[][]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$java_util_Map', function (a, b, htLadders) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.a=a;
 this.b=b;
 this.ladder=Clazz.array(Integer.TYPE, [2, 2]);
@@ -37,7 +30,7 @@ p$1.addLadder$java_util_Map.apply(this, [htLadders]);
 });
 
 Clazz.newMeth(C$, 'addLadder$java_util_Map', function (htLadders) {
-htLadders.put$TK$TV(this.ladder, (this.isAntiparallel ? $I$(1).TRUE : $I$(1).FALSE));
+htLadders.put$O$O(this.ladder, (this.isAntiparallel ? $I$(1).TRUE : $I$(1).FALSE));
 }, p$1);
 
 Clazz.newMeth(C$, 'canAdd$org_jmol_dssx_Bridge', function (bridge) {
@@ -59,4 +52,4 @@ return (this.isAntiparallel ? "a " : "p ") + this.a + " - " + this.b + "\t" + $I
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.Lst','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Cif2DataParser", null, 'javajs.util.CifDataParser');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.Lst','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Cif2DataParser", null, 'javajs.util.CifDataParser');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getVersion$', function () {
 return 2;
@@ -92,7 +91,7 @@ var str=this.preprocessSemiString$();
 if (str.indexOf$I(";") != 1 && (pt1=str.indexOf$I("\\")) > 1  && ((pt2=str.indexOf$I("\n")) > pt1 || pt2 < 0 ) ) {
 var prefix=str.substring$I$I(1, pt1);
 str=$I$(1).rep$S$S$S(str, "\n" + prefix, "\n");
-str="\1" + str.substring$I(str.charAt$I(pt1 + 1) == "\\" ? pt1 + 1 : pt2 < 0 ? str.length$() - 1 : pt2 + 1);
+str="\u0001" + str.substring$I(str.charAt$I(pt1 + 1) == "\\" ? pt1 + 1 : pt2 < 0 ? str.length$() - 1 : pt2 + 1);
 }this.ich=0;
 return p$1.fixLineFolding$S.apply(this, [str]);
 });
@@ -103,14 +102,14 @@ var cterm0=this.cterm;
 this.cterm="]";
 var ns=this.nullString;
 this.nullString=null;
-var lst=(this.asObject ? Clazz.new_($I$(2)) : null);
+var lst=(this.asObject ? Clazz.new_($I$(2,1)) : null);
 var n=0;
 var str="";
 while (true){
 var value=(this.asObject ? this.getNextTokenObject$() : this.getNextToken$());
 if (value == null  || value.equals$O("]") ) break;
 if (this.asObject) {
-lst.addLast$TV(value);
+lst.addLast$O(value);
 } else {
 if (n++ > 0) str += ",";
 str += value;
@@ -126,7 +125,7 @@ var cterm0=this.cterm;
 this.cterm="}";
 var ns=this.nullString;
 this.nullString=null;
-var map=(this.asObject ? Clazz.new_($I$(3)) : null);
+var map=(this.asObject ? Clazz.new_($I$(3,1)) : null);
 var n=0;
 var str="";
 while (true){
@@ -135,7 +134,7 @@ if (key == null  || key.equals$O("}") ) break;
 while (p$1.isSpaceOrColon$I.apply(this, [this.ich]))this.ich++;
 
 if (this.asObject) {
-map.put$TK$TV(key, this.getNextTokenObject$());
+map.put$O$O(key, this.getNextTokenObject$());
 } else {
 if (n++ > 0) str += ",";
 str += key + " : " + this.getNextToken$() ;
@@ -182,7 +181,7 @@ return (this.asObject ? Integer.valueOf$I(i) : "" + i);
 Clazz.newMeth(C$, 'fixLineFolding$S', function (str) {
 if (str.indexOf$I("\\") < 0) return str;
 var n=str.length$();
-if (str.endsWith$S("\\\u0001")) str=str.substring$I$I(0, n - 1) + "\n\1";
+if (str.endsWith$S("\\\u0001")) str=str.substring$I$I(0, n - 1) + "\n\u0001";
 var pt=0;
 while ((pt=str.indexOf$I$I("\\", pt + 1)) >= 0){
 var eol=str.indexOf$I$I("\n", pt);
@@ -203,7 +202,7 @@ return str;
 
 Clazz.newMeth(C$, 'getArrayFromStringList$S$I', function (s, n) {
 var f=Clazz.array(Float.TYPE, [n]);
-$I$(1).parseFloatArrayInfested$SA$FA($I$(1).getTokens$S(s.replace$C$C(",", " ").replace$C$C("[", " ")), f);
+(function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([s.replace$C$C(",", " ").replace$C$C("[", " ")],$I$(1).getTokens$S), f],$I$(1).parseFloatArrayInfested$SA$FA);
 var d=Clazz.array(Double.TYPE, [n]);
 for (var i=0; i < n; i++) d[i]=f[i];
 
@@ -212,4 +211,4 @@ return d;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

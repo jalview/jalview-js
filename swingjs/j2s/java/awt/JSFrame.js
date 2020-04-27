@@ -1,21 +1,7 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Cursor','java.awt.Window']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSFrame", null, 'java.awt.Window');
-C$.$nameCounter=0;
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Cursor','java.awt.Window']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSFrame", null, 'java.awt.Window');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$nameCounter=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.maximizedBounds=null;
-this.title=null;
-this.resizable=false;
-this.undecorated=false;
-this.mbManagement=false;
-this.$state=0;
-this.ownedWindows=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.title="Untitled";
@@ -23,25 +9,28 @@ this.resizable=true;
 this.undecorated=false;
 this.mbManagement=false;
 this.$state=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['resizable','undecorated','mbManagement'],'I',['$state'],'S',['title'],'O',['maximizedBounds','java.awt.Rectangle','ownedWindows','java.util.Vector']]
+,['I',['$nameCounter']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.initTitleGC$S$java_awt_GraphicsConfiguration(null, null);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_GraphicsConfiguration', function (gc) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.initTitleGC$S$java_awt_GraphicsConfiguration(null, gc);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (title) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.initTitleGC$S$java_awt_GraphicsConfiguration(title, null);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_awt_GraphicsConfiguration', function (title, gc) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.initTitleGC$S$java_awt_GraphicsConfiguration(title, gc);
 }, 1);
 
@@ -206,5 +195,9 @@ frames[c++]=w;
 }}
 return frames;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.$nameCounter=0;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

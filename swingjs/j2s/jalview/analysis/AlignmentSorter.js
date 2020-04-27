@@ -1,45 +1,22 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'jalview.datamodel.SequenceI','jalview.analysis.scoremodels.SimilarityParams','jalview.analysis.scoremodels.PIDModel','jalview.util.QuickSort','java.util.ArrayList','jalview.datamodel.SequenceFeature','StringBuilder','java.util.Collections']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignmentSorter");
-C$.sortIdAscending=false;
-C$.lastGroupHash=0;
-C$.sortGroupAscending=false;
-C$.lastOrder=null;
-C$.sortOrderAscending=false;
-C$.lastTree=null;
-C$.sortTreeAscending=false;
-C$.lastSortByAnnotation=null;
-C$.sortByFeatureCriteria=null;
-C$.sortByFeatureAscending=false;
-C$.sortLengthAscending=false;
-C$.FEATURE_SCORE=null;
-C$.FEATURE_LABEL=null;
-C$.FEATURE_DENSITY=null;
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'jalview.datamodel.SequenceI','jalview.analysis.scoremodels.SimilarityParams','jalview.analysis.scoremodels.PIDModel','jalview.util.QuickSort','java.util.ArrayList','jalview.datamodel.SequenceFeature','StringBuilder','java.util.Collections']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignmentSorter");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.sortIdAscending=true;
-C$.lastGroupHash=0;
-C$.sortGroupAscending=true;
-C$.lastOrder=null;
-C$.sortOrderAscending=true;
-C$.lastTree=null;
-C$.sortTreeAscending=true;
-C$.sortByFeatureAscending=true;
-C$.FEATURE_SCORE="average_score";
-C$.FEATURE_LABEL="text";
-C$.FEATURE_DENSITY="density";
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['Z',['sortIdAscending','sortGroupAscending','sortOrderAscending','sortTreeAscending','sortByFeatureAscending','sortLengthAscending'],'I',['lastGroupHash'],'S',['lastSortByAnnotation','sortByFeatureCriteria','FEATURE_SCORE','FEATURE_LABEL','FEATURE_DENSITY'],'O',['lastOrder','jalview.datamodel.AlignmentOrder','lastTree','jalview.analysis.TreeModel']]]
 
 Clazz.newMeth(C$, 'sortByPID$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceI', function (align, s) {
 var nSeq=align.getHeight$();
 var scores=Clazz.array(Float.TYPE, [nSeq]);
 var seqs=Clazz.array($I$(1), [nSeq]);
 var refSeq=s.getSequenceAsString$();
-var pidParams=Clazz.new_($I$(2).c$$Z$Z$Z$Z,[true, true, true, true]);
+var pidParams=Clazz.new_($I$(2,1).c$$Z$Z$Z$Z,[true, true, true, true]);
 for (var i=0; i < nSeq; i++) {
-scores[i]=$I$(3).computePID$S$S$jalview_api_analysis_SimilarityParamsI(align.getSequenceAt$I(i).getSequenceAsString$(), refSeq, pidParams);
+scores[i]=$I$(3,"computePID$S$S$jalview_api_analysis_SimilarityParamsI",[align.getSequenceAt$I(i).getSequenceAsString$(), refSeq, pidParams]);
 seqs[i]=align.getSequenceAt$I(i);
 }
 $I$(4).sort$FA$OA(scores, seqs);
@@ -56,8 +33,8 @@ len=((nSeq + 1)/2|0);
 }var asq=align.getSequences$();
 {
 for (var i=0; i < len; i++) {
-asq.set$I$TE(i, seqs[nSeq - i - 1 ]);
-asq.set$I$TE(nSeq - i - 1 , seqs[i]);
+asq.set$I$O(i, seqs[nSeq - i - 1 ]);
+asq.set$I$O(nSeq - i - 1 , seqs[i]);
 }
 }}, 1);
 
@@ -68,14 +45,14 @@ C$.setOrder$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA(align, C$.
 Clazz.newMeth(C$, 'setOrder$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA', function (align, seqs) {
 var algn=align.getSequences$();
 {
-var tmp=Clazz.new_($I$(5));
+var tmp=Clazz.new_($I$(5,1));
 for (var i=0; i < seqs.length; i++) {
 if (algn.contains$O(seqs[i])) {
-tmp.add$TE(seqs[i]);
+tmp.add$O(seqs[i]);
 }}
 algn.clear$();
 for (var i=0; i < tmp.size$(); i++) {
-algn.add$TE(tmp.get$I(i));
+algn.add$O(tmp.get$I(i));
 }
 }}, 1);
 
@@ -112,7 +89,7 @@ C$.setOrder$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA(align, seq
 }, 1);
 
 Clazz.newMeth(C$, 'sortByGroup$jalview_datamodel_AlignmentI', function (align) {
-var groups=Clazz.new_($I$(5));
+var groups=Clazz.new_($I$(5,1));
 if (groups.hashCode$() != C$.lastGroupHash) {
 C$.sortGroupAscending=true;
 C$.lastGroupHash=groups.hashCode$();
@@ -122,18 +99,18 @@ C$.sortGroupAscending=!C$.sortGroupAscending;
 for (var j=0; j < groups.size$(); j++) {
 var sg2=groups.get$I(j);
 if (sg.getSize$() > sg2.getSize$()) {
-groups.add$I$TE(j, sg);
+groups.add$I$O(j, sg);
 break;
 }}
 if (!groups.contains$O(sg)) {
-groups.add$TE(sg);
+groups.add$O(sg);
 }}
-var seqs=Clazz.new_($I$(5));
+var seqs=Clazz.new_($I$(5,1));
 for (var i=0; i < groups.size$(); i++) {
 var sg=groups.get$I(i);
 var orderedseqs=sg.getSequencesInOrder$jalview_datamodel_AlignmentI(align);
 for (var j=0; j < orderedseqs.length; j++) {
-seqs.add$TE(orderedseqs[j]);
+seqs.add$O(orderedseqs[j]);
 }
 }
 if (C$.sortGroupAscending) {
@@ -143,7 +120,7 @@ C$.setReverseOrder$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA(ali
 }}, 1);
 
 Clazz.newMeth(C$, 'vectorSubsetToArray$java_util_List$java_util_List', function (tmp, mask) {
-var seqs=Clazz.new_($I$(5));
+var seqs=Clazz.new_($I$(5,1));
 var i;
 var idx;
 var tmask=Clazz.array(Boolean.TYPE, [mask.size$()]);
@@ -155,13 +132,13 @@ var sq=tmp.get$I(i);
 idx=mask.indexOf$O(sq);
 if (idx > -1 && tmask[idx] ) {
 tmask[idx]=false;
-seqs.add$TE(sq);
+seqs.add$O(sq);
 }}
 for (i=0; i < tmask.length; i++) {
 if (tmask[i]) {
-seqs.add$TE(mask.get$I(i));
+seqs.add$O(mask.get$I(i));
 }}
-return seqs.toArray$TTA(Clazz.array($I$(1), [seqs.size$()]));
+return seqs.toArray$OA(Clazz.array($I$(1), [seqs.size$()]));
 }, 1);
 
 Clazz.newMeth(C$, 'sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder', function (align, order) {
@@ -178,7 +155,7 @@ C$.setReverseOrder$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA(ali
 
 Clazz.newMeth(C$, 'getOrderByTree$jalview_datamodel_AlignmentI$jalview_analysis_TreeModel', function (align, tree) {
 var nSeq=align.getHeight$();
-var tmp=Clazz.new_($I$(5));
+var tmp=Clazz.new_($I$(5,1));
 tmp=C$._sortByTree$jalview_datamodel_SequenceNode$java_util_List$java_util_List(tree.getTopNode$(), tmp, align.getSequences$());
 if (tmp.size$() != nSeq) {
 if (tmp.size$() != nSeq) {
@@ -205,7 +182,7 @@ Clazz.newMeth(C$, 'addStrays$jalview_datamodel_AlignmentI$java_util_List', funct
 var nSeq=align.getHeight$();
 for (var i=0; i < nSeq; i++) {
 if (!tmp.contains$O(align.getSequenceAt$I(i))) {
-tmp.add$TE(align.getSequenceAt$I(i));
+tmp.add$O(align.getSequenceAt$I(i));
 }}
 if (nSeq != tmp.size$()) {
 System.err.println$S("ERROR: Size still not right even after addStrays");
@@ -220,7 +197,7 @@ if ((left == null ) && (right == null ) ) {
 if (!node.isPlaceholder$() && (node.element$() != null ) ) {
 if (Clazz.instanceOf(node.element$(), "jalview.datamodel.SequenceI")) {
 if (!tmp.contains$O(node.element$())) {
-tmp.add$TE(node.element$());
+tmp.add$O(node.element$());
 }}}return tmp;
 } else {
 C$._sortByTree$jalview_datamodel_SequenceNode$java_util_List$java_util_List(left, tmp, seqset);
@@ -231,7 +208,7 @@ C$._sortByTree$jalview_datamodel_SequenceNode$java_util_List$java_util_List(righ
 Clazz.newMeth(C$, 'recoverOrder$jalview_datamodel_SequenceIA', function (alignment) {
 var ids=Clazz.array(Float.TYPE, [alignment.length]);
 for (var i=0; i < alignment.length; i++) {
-ids[i]=( new Float(alignment[i].getName$().substring$I(8))).floatValue$();
+ids[i]=(Float.valueOf$S(alignment[i].getName$().substring$I(8))).floatValue$();
 }
 $I$(4).sort$FA$OA(ids, alignment);
 }, 1);
@@ -289,7 +266,7 @@ var feats=Clazz.array(java.lang.Object, [seqs.length, null]);
 var min=0.0;
 var max=0.0;
 for (var i=0; i < seqs.length; i++) {
-var types=featureTypes == null  ? null : featureTypes.toArray$TTA(Clazz.array(String, [featureTypes.size$()]));
+var types=featureTypes == null  ? null : featureTypes.toArray$OA(Clazz.array(String, [featureTypes.size$()]));
 var sfs=seqs[i].findFeatures$I$I$SA(startCol + 1, endCol + 1, types);
 seqScores[i]=0;
 scores[i]=0.0;
@@ -308,7 +285,7 @@ hasScores++;
 hasScore[i]=true;
 scores[i] += score;
 }}}
-feats[i]=sfs.toArray$TTA(Clazz.array($I$(6), [sfs.size$()]));
+feats[i]=sfs.toArray$OA(Clazz.array($I$(6), [sfs.size$()]));
 if (!sfs.isEmpty$()) {
 if (method == C$.FEATURE_LABEL) {
 var labs=Clazz.array(String, [sfs.size$()]);
@@ -347,7 +324,7 @@ $I$(4).sortByDouble$DA$OA$Z(scores, seqs, C$.sortByFeatureAscending);
 }, 1);
 
 Clazz.newMeth(C$, 'flipFeatureSortIfUnchanged$S$java_util_List$java_util_List$I$I', function (method, featureTypes, groups, startCol, endCol) {
-var sb=Clazz.new_($I$(7).c$$I,[64]);
+var sb=Clazz.new_($I$(7,1).c$$I,[64]);
 sb.append$I(startCol).append$S(method).append$I(endCol);
 if (featureTypes != null ) {
 $I$(8).sort$java_util_List(featureTypes);
@@ -363,6 +340,20 @@ C$.sortByFeatureAscending=!C$.sortByFeatureAscending;
 }C$.sortByFeatureCriteria=scoreCriteria;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.sortIdAscending=true;
+C$.lastGroupHash=0;
+C$.sortGroupAscending=true;
+C$.lastOrder=null;
+C$.sortOrderAscending=true;
+C$.lastTree=null;
+C$.sortTreeAscending=true;
+C$.sortByFeatureAscending=true;
+C$.FEATURE_SCORE="average_score";
+C$.FEATURE_LABEL="text";
+C$.FEATURE_DENSITY="density";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

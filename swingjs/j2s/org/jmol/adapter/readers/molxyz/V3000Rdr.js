@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.molxyz"),p$1={},I$=[[0,'javajs.util.PT','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "V3000Rdr");
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.molxyz"),p$1={},I$=[[0,'javajs.util.PT','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "V3000Rdr");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mr=null;
-this.line=null;
-this.userData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['line'],'O',['mr','org.jmol.adapter.readers.molxyz.MolReader','userData','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_adapter_smarter_AtomSetCollectionReader', function (mr) {
@@ -91,7 +85,7 @@ var atoms;
 var name;
 var data;
 while (!p$1.rd.apply(this, []).contains$CharSequence("END SGROUP")){
-if (this.userData == null ) this.userData=Clazz.new_($I$(2));
+if (this.userData == null ) this.userData=Clazz.new_($I$(2,1));
 if ((atoms=p$1.getField$S.apply(this, ["ATOMS"])) == null  || (name=p$1.getField$S.apply(this, ["FIELDNAME"])) == null   || (data=p$1.getField$S.apply(this, ["FIELDDATA"])) == null  ) continue;
 name=name.toLowerCase$();
 var isPartial=(name.indexOf$S("partial") >= 0);
@@ -105,7 +99,7 @@ for (var i=this.mr.asc.getLastAtomSetAtomIndex$(), n=this.mr.asc.ac; i < n; i++)
 }var a=null;
 var f=0;
 if (isPartial) f=this.mr.parseFloatStr$S(data);
- else if ((a=this.userData.get$O(name)) == null ) this.userData.put$TK$TV(name, a=Clazz.array(String, [ac]));
+ else if ((a=this.userData.get$O(name)) == null ) this.userData.put$O$O(name, a=Clazz.array(String, [ac]));
 try {
 var tokens=$I$(1).getTokens$S(atoms);
 for (var i=tokens.length; --i >= 1; ) {
@@ -164,4 +158,4 @@ this.line=s + this.line;
 }
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

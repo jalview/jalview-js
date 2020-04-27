@@ -1,34 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.V3','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GulpReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
-C$.tags=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.V3','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "GulpReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.tags=Clazz.array(String, -1, ["a", "b", "c", "alpha", "beta", "gamma"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isSlab=false;
-this.isPolymer=false;
-this.$isPrimitive=false;
-this.sep=null;
-this.coordinatesArePrimitive=false;
-this.atomCharges=null;
-this.bTest=false;
-this.a=0;
-this.b=0;
-this.c=0;
-this.alpha=0;
-this.beta=0;
-this.gamma=0;
-this.primitiveData=null;
-this.totEnergy=null;
-this.energyUnits=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.sep="-------";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isSlab','isPolymer','$isPrimitive','coordinatesArePrimitive','bTest'],'F',['a','b','c','alpha','beta','gamma'],'S',['sep','energyUnits'],'O',['atomCharges','java.util.Map','primitiveData','float[]','totEnergy','Double']]
+,['O',['tags','String[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.$isPrimitive=!this.checkFilterKey$S("CONV");
@@ -153,7 +133,7 @@ return;
 this.coordinatesArePrimitive=(i0 == 0);
 this.rd$();
 while (this.rd$() != null  && this.line.contains$CharSequence("=") ){
-var tokens=$I$(1).getTokens$S(this.line.replace$C$C("=", " "));
+var tokens=(function(a,f){return f.apply(null,a)})([this.line.replace$C$C("=", " ")],$I$(1).getTokens$S);
 for (var i=i0; i < i0 + 4; i+=2) if (tokens.length > i + 1) p$1.setParameter$S$F.apply(this, [tokens[i], this.parseFloatStr$S(tokens[i + 1])]);
 
 }
@@ -171,7 +151,7 @@ p$1.scalePrimitiveData$I$F.apply(this, [6, this.c]);
 if (!this.coordinatesArePrimitive) while (this.rd$() != null  && this.line.indexOf$S("Final") < 0 )if (this.line.indexOf$S("Non-primitive lattice parameters") > 0) {
 this.rd$();
 for (var i=0; i < 2; i++) {
-tokens=$I$(1).getTokens$S(this.rd$().replace$C$C("=", " "));
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$().replace$C$C("=", " ")],$I$(1).getTokens$S);
 p$1.setParameter$S$F.apply(this, [tokens[0], this.parseFloatStr$S(tokens[1])]);
 p$1.setParameter$S$F.apply(this, [tokens[2], this.parseFloatStr$S(tokens[3])]);
 p$1.setParameter$S$F.apply(this, [tokens[4], this.parseFloatStr$S(tokens[5])]);
@@ -227,21 +207,21 @@ if (finalizeSymmetry) this.applySymmetryAndSetTrajectory$();
 }, p$1);
 
 Clazz.newMeth(C$, 'readPartialCharges', function () {
-this.atomCharges=Clazz.new_($I$(3));
+this.atomCharges=Clazz.new_($I$(3,1));
 this.discardLinesUntilContains$S(this.sep);
 this.discardLinesUntilContains$S(this.sep);
 var tokens;
-while ((tokens=$I$(1).getTokens$S(this.rd$())).length > 5){
+while ((tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(1).getTokens$S)).length > 5){
 var species=tokens[0];
 var charge=this.atomCharges.get$O(species);
 var f=(charge == null  ? 0 : charge.floatValue$());
-this.atomCharges.put$TK$TV(species, Float.valueOf$F((f + this.parseFloatStr$S(tokens[4]))));
+this.atomCharges.put$O$O(species, Float.valueOf$F((f + this.parseFloatStr$S(tokens[4]))));
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'readEnergy', function () {
 if (this.line.indexOf$S("=") < 0) this.discardLinesUntilContains$S("=");
-var tokens=$I$(1).getTokens$S(this.line.substring$I(this.line.indexOf$S("=")));
+var tokens=(function(a,f){return f.apply(null,a)})([this.line.substring$I(this.line.indexOf$S("="))],$I$(1).getTokens$S);
 this.totEnergy=Double.valueOf$D(Double.parseDouble$S(tokens[1]));
 this.energyUnits=tokens[2];
 this.discardLinesUntilContains$S(this.sep);
@@ -254,6 +234,10 @@ this.asc.setAtomSetName$S("E = " + this.totEnergy.toString() + " " + this.energy
 this.totEnergy=null;
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.tags=Clazz.array(String, -1, ["a", "b", "c", "alpha", "beta", "gamma"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

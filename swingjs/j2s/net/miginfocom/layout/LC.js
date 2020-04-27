@@ -1,34 +1,7 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.BoundSize','net.miginfocom.layout.UnitValue','net.miginfocom.layout.ConstraintParser','Boolean','net.miginfocom.layout.LayoutUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LC", null, null, 'java.io.Externalizable');
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.BoundSize','net.miginfocom.layout.UnitValue','net.miginfocom.layout.ConstraintParser','Boolean','net.miginfocom.layout.LayoutUtil']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LC", null, null, 'java.io.Externalizable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.wrapAfter=0;
-this.leftToRight=null;
-this.insets=null;
-this.alignX=null;
-this.alignY=null;
-this.gridGapX=null;
-this.gridGapY=null;
-this.width=null;
-this.height=null;
-this.packW=null;
-this.packH=null;
-this.pwAlign=0;
-this.phAlign=0;
-this.debugMillis=0;
-this.hideMode=0;
-this.noCache=false;
-this.flowX=false;
-this.fillX=false;
-this.fillY=false;
-this.topToBottom=false;
-this.noGrid=false;
-this.visualPadding=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.wrapAfter=2097051;
@@ -53,10 +26,12 @@ this.fillY=false;
 this.topToBottom=true;
 this.noGrid=false;
 this.visualPadding=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['noCache','flowX','fillX','fillY','topToBottom','noGrid','visualPadding'],'F',['pwAlign','phAlign'],'I',['wrapAfter','debugMillis','hideMode'],'O',['leftToRight','Boolean','insets','net.miginfocom.layout.UnitValue[]','alignX','net.miginfocom.layout.UnitValue','+alignY','gridGapX','net.miginfocom.layout.BoundSize','+gridGapY','+width','+height','+packW','+packH']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'isNoCache$', function () {
@@ -388,7 +363,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'minWidth$S', function (width) {
-this.setWidth$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.getWidth$(), $I$(3).parseUnitValue$S$Z(width, true), null, null));
+this.setWidth$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.getWidth$(), $I$(3).parseUnitValue$S$Z(width, true), null, null]));
 return this;
 });
 
@@ -398,12 +373,12 @@ return this;
 });
 
 Clazz.newMeth(C$, 'maxWidth$S', function (width) {
-this.setWidth$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.getWidth$(), null, null, $I$(3).parseUnitValue$S$Z(width, true)));
+this.setWidth$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.getWidth$(), null, null, $I$(3).parseUnitValue$S$Z(width, true)]));
 return this;
 });
 
 Clazz.newMeth(C$, 'minHeight$S', function (height) {
-this.setHeight$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.getHeight$(), $I$(3).parseUnitValue$S$Z(height, false), null, null));
+this.setHeight$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.getHeight$(), $I$(3).parseUnitValue$S$Z(height, false), null, null]));
 return this;
 });
 
@@ -413,7 +388,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'maxHeight$S', function (height) {
-this.setHeight$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.getHeight$(), null, null, $I$(3).parseUnitValue$S$Z(height, false)));
+this.setHeight$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.getHeight$(), null, null, $I$(3).parseUnitValue$S$Z(height, false)]));
 return this;
 });
 
@@ -422,11 +397,11 @@ return $I$(5).getSerializedObject$O(this);
 }, p$1);
 
 Clazz.newMeth(C$, 'readExternal$java_io_ObjectInput', function ($in) {
-$I$(5).setSerializedObject$O$O(this, $I$(5).readAsXML$java_io_ObjectInput($in));
+$I$(5,"setSerializedObject$O$O",[this, $I$(5).readAsXML$java_io_ObjectInput($in)]);
 });
 
 Clazz.newMeth(C$, 'writeExternal$java_io_ObjectOutput', function (out) {
 if (this.getClass$() === Clazz.getClass(C$) ) $I$(5).writeAsXML$java_io_ObjectOutput$O(out, this);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,15 +1,13 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),p$1={};
-var C$=Clazz.newClass(P$, "TikzExport", null, 'fr.orsay.lri.varna.models.export.SecStrDrawingProducer');
+/*c*/var C$=Clazz.newClass(P$, "TikzExport", null, 'fr.orsay.lri.varna.models.export.SecStrDrawingProducer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 C$.superclazz.prototype.setScale$D.apply(this, [0.2]);
 }, 1);
 
@@ -116,4 +114,4 @@ Clazz.newMeth(C$, 'drawBackboneEndS$I', function (index) {
 return "";
 });
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

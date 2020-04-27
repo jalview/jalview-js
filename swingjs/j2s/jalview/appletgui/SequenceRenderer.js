@@ -1,29 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'jalview.renderer.ResidueColourFinder','java.awt.Color','java.awt.Font','jalview.util.Comparison']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SequenceRenderer", null, null, 'jalview.api.SequenceRenderer');
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'jalview.renderer.ResidueColourFinder','java.awt.Color','java.awt.Font','jalview.util.Comparison']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SequenceRenderer", null, null, 'jalview.api.SequenceRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.av=null;
-this.fm=null;
-this.renderGaps=false;
-this.allGroups=null;
-this.resBoxColour=null;
-this.graphics=null;
-this.resColourFinder=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.renderGaps=true;
 this.allGroups=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['renderGaps'],'O',['av','jalview.appletgui.AlignViewport','fm','java.awt.FontMetrics','allGroups','jalview.datamodel.SequenceGroup[]','resBoxColour','java.awt.Color','graphics','java.awt.Graphics','resColourFinder','jalview.renderer.ResidueColourFinder']]]
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignViewport', function (av) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.av=av;
-this.resColourFinder=Clazz.new_($I$(1));
+this.resColourFinder=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'prepare$java_awt_Graphics$Z', function (g, renderGaps) {
@@ -32,7 +22,7 @@ this.fm=g.getFontMetrics$();
 this.renderGaps=renderGaps;
 });
 
-Clazz.newMeth(C$, ['getResidueColour$jalview_datamodel_SequenceI$I$jalview_renderer_seqfeatures_FeatureColourFinder','getResidueColour$'], function (seq, position, finder) {
+Clazz.newMeth(C$, 'getResidueColour$jalview_datamodel_SequenceI$I$jalview_renderer_seqfeatures_FeatureColourFinder', function (seq, position, finder) {
 return this.resColourFinder.getResidueColour$Z$jalview_renderer_ResidueShaderI$jalview_datamodel_SequenceGroupA$jalview_datamodel_SequenceI$I$jalview_renderer_seqfeatures_FeatureColourFinder(this.av.getShowBoxes$(), this.av.getResidueShading$(), this.allGroups, seq, position, finder);
 });
 
@@ -89,7 +79,7 @@ var avCharHeight=this.av.getCharHeight$();
 var boldFont=null;
 var bold=false;
 if (this.av.isUpperCasebold$()) {
-boldFont=Clazz.new_($I$(3).c$$S$I$I,[this.av.getFont$().getName$(), 1, avCharHeight]);
+boldFont=Clazz.new_([this.av.getFont$().getName$(), 1, avCharHeight],$I$(3,1).c$$S$I$I);
 this.graphics.setFont$java_awt_Font(this.av.getFont$());
 }y1+=avCharHeight - (avCharHeight/5|0);
 var charOffset=0;
@@ -176,4 +166,4 @@ this.graphics.drawString$S$I$I(String.valueOf$C(s), charOffset + x1, (y1 + this.
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:46 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

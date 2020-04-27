@@ -1,38 +1,27 @@
-(function(){var P$=Clazz.newPackage("java.text"),I$=[[0,'java.util.HashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newInterface(P$, "AttributedCharacterIterator", function(){
+(function(){var P$=Clazz.newPackage("java.text"),I$=[[0,'java.util.HashMap']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*i*/var C$=Clazz.newInterface(P$, "AttributedCharacterIterator", function(){
 }, null, 'java.text.CharacterIterator');
+C$.$classes$=[['Attribute',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 ;
-(function(){var C$=Clazz.newClass(P$.AttributedCharacterIterator, "Attribute", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributedCharacterIterator, "Attribute", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.io.Serializable');
-C$.instanceMap=null;
-C$.LANGUAGE=null;
-C$.READING=null;
-C$.INPUT_METHOD_SEGMENT=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instanceMap=Clazz.new_($I$(1).c$$I,[7]);
-C$.LANGUAGE=Clazz.new_(C$.c$$S,["language"]);
-C$.READING=Clazz.new_(C$.c$$S,["reading"]);
-C$.INPUT_METHOD_SEGMENT=Clazz.new_(C$.c$$S,["input_method_segment"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name']]
+,['O',['instanceMap','java.util.Map','LANGUAGE','java.text.AttributedCharacterIterator.Attribute','+READING','+INPUT_METHOD_SEGMENT']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 if (this.getClass$() === Clazz.getClass(C$) ) {
-C$.instanceMap.put$TK$TV(name, this);
+C$.instanceMap.put$O$O(name, this);
 }}, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -60,38 +49,34 @@ return instance;
 } else {
 throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["unknown attribute name"]);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.instanceMap=Clazz.new_($I$(1,1).c$$I,[7]);
+C$.LANGUAGE=Clazz.new_(C$.c$$S,["language"]);
+C$.READING=Clazz.new_(C$.c$$S,["reading"]);
+C$.INPUT_METHOD_SEGMENT=Clazz.new_(C$.c$$S,["input_method_segment"]);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributedCharacterIterator, "Attribute", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributedCharacterIterator, "Attribute", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.io.Serializable');
-C$.instanceMap=null;
-C$.LANGUAGE=null;
-C$.READING=null;
-C$.INPUT_METHOD_SEGMENT=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instanceMap=Clazz.new_($I$(1).c$$I,[7]);
-C$.LANGUAGE=Clazz.new_(C$.c$$S,["language"]);
-C$.READING=Clazz.new_(C$.c$$S,["reading"]);
-C$.INPUT_METHOD_SEGMENT=Clazz.new_(C$.c$$S,["input_method_segment"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name']]
+,['O',['instanceMap','java.util.Map','LANGUAGE','java.text.AttributedCharacterIterator.Attribute','+READING','+INPUT_METHOD_SEGMENT']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 if (this.getClass$() === Clazz.getClass(C$) ) {
-C$.instanceMap.put$TK$TV(name, this);
+C$.instanceMap.put$O$O(name, this);
 }}, 1);
 
 Clazz.newMeth(C$, 'equals$O', function (obj) {
@@ -119,8 +104,15 @@ return instance;
 } else {
 throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["unknown attribute name"]);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.instanceMap=Clazz.new_($I$(1,1).c$$I,[7]);
+C$.LANGUAGE=Clazz.new_(C$.c$$S,["language"]);
+C$.READING=Clazz.new_(C$.c$$S,["reading"]);
+C$.INPUT_METHOD_SEGMENT=Clazz.new_(C$.c$$S,["input_method_segment"]);
+};
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:42 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,31 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'org.jmol.util.C','org.jmol.modelset.Text','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Hover", null, 'org.jmol.shape.TextShape');
+(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'org.jmol.util.C','org.jmol.modelset.Text','javajs.util.AU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Hover", null, 'org.jmol.shape.TextShape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.hoverText=null;
-this.atomIndex=0;
-this.xy=null;
-this.text=null;
-this.labelFormat=null;
-this.atomFormats=null;
-this.specialLabel=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.atomIndex=-1;
 this.labelFormat="%U";
-}, 1);
+},1);
+
+C$.$fields$=[['I',['atomIndex'],'S',['text','labelFormat','specialLabel'],'O',['hoverText','org.jmol.modelset.Text','xy','javajs.util.P3i','atomFormats','String[]']]]
 
 Clazz.newMeth(C$, 'initShape$', function () {
 this.isHover=true;
 var font3d=this.vwr.gdata.getFont3DFSS$S$S$F("SansSerif", "Plain", 12);
 var bgcolix=$I$(1).getColixS$S("#FFFFC3");
 var colix=4;
-this.currentObject=this.hoverText=$I$(2).newLabel$org_jmol_viewer_Viewer$javajs_awt_Font$S$H$H$I$F(this.vwr, font3d, null, colix, bgcolix, 4, 0);
+this.currentObject=this.hoverText=$I$(2).newLabel$org_jmol_viewer_Viewer$org_jmol_util_Font$S$H$H$I$F(this.vwr, font3d, null, colix, bgcolix, 4, 0);
 this.hoverText.adjustForWindow=true;
 });
 
@@ -69,4 +59,4 @@ return;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

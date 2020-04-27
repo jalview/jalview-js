@@ -1,51 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.P3','org.jmol.util.Logger','org.jmol.util.SimpleUnitCell']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MapFileReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.P3','org.jmol.util.Logger','org.jmol.util.SimpleUnitCell']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MapFileReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dmin=0;
-this.dmax=0;
-this.dmean=0;
-this.drange=0;
-this.mapc=0;
-this.mapr=0;
-this.maps=0;
-this.n0=0;
-this.n1=0;
-this.n2=0;
-this.mode=0;
-this.xyzStart=null;
-this.na=0;
-this.nb=0;
-this.nc=0;
-this.a=0;
-this.b=0;
-this.c=0;
-this.alpha=0;
-this.beta=0;
-this.gamma=0;
-this.origin=null;
-this.vectors=null;
-this.xIndex=0;
-this.yIndex=0;
-this.zIndex=0;
-this.p3=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dmin=3.4028235E38;
 this.xyzStart=Clazz.array(Float.TYPE, [3]);
-this.origin=Clazz.new_($I$(1));
+this.origin=Clazz.new_($I$(1,1));
 this.vectors=Clazz.array($I$(1), [3]);
 this.xIndex=-1;
-this.p3=Clazz.new_($I$(1));
-}, 1);
+this.p3=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['F',['dmin','dmax','dmean','drange','a','b','c','alpha','beta','gamma'],'I',['mapc','mapr','maps','n0','n1','n2','mode','na','nb','nc','xIndex','yIndex','zIndex'],'O',['xyzStart','float[]','origin','javajs.util.P3','vectors','javajs.util.P3[]','p3','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -64,12 +34,12 @@ if (this.params.thePlane == null ) this.params.insideOut=(";123;231;312;".indexO
 Clazz.newMeth(C$, 'getVectorsAndOrigin$', function () {
 this.checkInsideOut$I$I$I(this.mapc, this.mapr, this.maps);
 $I$(2).info$S("grid parameters: nx,ny,nz: " + this.n0 + "," + this.n1 + "," + this.n2 );
-$I$(2).info$S("grid parameters: nxStart,nyStart,nzStart: " + new Float(this.xyzStart[0]).toString() + "," + new Float(this.xyzStart[1]).toString() + "," + new Float(this.xyzStart[2]).toString() );
+(function(a,f){return f.apply(null,a)})(["grid parameters: nxStart,nyStart,nzStart: " + new Float(this.xyzStart[0]).toString() + "," + new Float(this.xyzStart[1]).toString() + "," + new Float(this.xyzStart[2]).toString() ],$I$(2).info$S);
 $I$(2).info$S("grid parameters: mx,my,mz: " + this.na + "," + this.nb + "," + this.nc );
-$I$(2).info$S("grid parameters: a,b,c,alpha,beta,gamma: " + new Float(this.a).toString() + "," + new Float(this.b).toString() + "," + new Float(this.c).toString() + "," + new Float(this.alpha).toString() + "," + new Float(this.beta).toString() + "," + new Float(this.gamma).toString() );
+(function(a,f){return f.apply(null,a)})(["grid parameters: a,b,c,alpha,beta,gamma: " + new Float(this.a).toString() + "," + new Float(this.b).toString() + "," + new Float(this.c).toString() + "," + new Float(this.alpha).toString() + "," + new Float(this.beta).toString() + "," + new Float(this.gamma).toString() ],$I$(2).info$S);
 $I$(2).info$S("grid parameters: mapc,mapr,maps: " + this.mapc + "," + this.mapr + "," + this.maps );
 $I$(2).info$S("grid parameters: originX,Y,Z: " + this.origin);
-var unitCell=$I$(3).newA$FA(Clazz.array(Float.TYPE, -1, [this.a / this.na, this.b / this.nb, this.c / this.nc, this.alpha, this.beta, this.gamma]));
+var unitCell=(function(a,f){return f.apply(null,a)})([Clazz.array(Float.TYPE, -1, [this.a / this.na, this.b / this.nb, this.c / this.nc, this.alpha, this.beta, this.gamma])],$I$(3).newA$FA);
 this.vectors[0]=$I$(1).new3$F$F$F(1, 0, 0);
 this.vectors[1]=$I$(1).new3$F$F$F(0, 1, 0);
 this.vectors[2]=$I$(1).new3$F$F$F(0, 0, 1);
@@ -110,7 +80,7 @@ $I$(2).info$S("boundbox corners " + this.origin + " " + this.p3 + ";draw bbox bo
 Clazz.newMeth(C$, 'setCutoffAutomatic$', function () {
 if (this.params.thePlane == null  && this.params.cutoffAutomatic ) {
 this.params.cutoff=-1.0;
-$I$(2).info$S("MapReader: setting cutoff to default value of " + new Float(this.params.cutoff).toString() + (this.boundingBox == null  ? " (no BOUNDBOX parameter)\n" : "\n") );
+(function(a,f){return f.apply(null,a)})(["MapReader: setting cutoff to default value of " + new Float(this.params.cutoff).toString() + (this.boundingBox == null  ? " (no BOUNDBOX parameter)\n" : "\n") ],$I$(2).info$S);
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

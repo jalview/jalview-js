@@ -1,31 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['javax.swing.text.Position','.Bias'],'javax.swing.text.SegmentCache','javax.swing.text.StateInvariantError','javax.swing.text.StyleConstants','Boolean','javax.swing.text.AbstractDocument','java.util.BitSet',['javax.swing.text.GlyphView','.JustificationInfo']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GlyphView", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['javax.swing.text.Position','.Bias'],'javax.swing.text.SegmentCache','javax.swing.text.StateInvariantError','javax.swing.text.StyleConstants','javax.swing.text.AbstractDocument','java.util.BitSet',['javax.swing.text.GlyphView','.JustificationInfo']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GlyphView", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.View', ['javax.swing.text.TabableView', 'Cloneable']);
-C$.defaultPainter=null;
+C$.$classes$=[['JustificationInfo',8],['GlyphPainter',1033]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.length=0;
-this.impliedCR=false;
-this.skipWidth=false;
-this.expander=null;
-this.x=0;
-this.painter=null;
-this.justificationInfo=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.justificationInfo=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['impliedCR','skipWidth'],'I',['offset','length','x'],'O',['expander','javax.swing.text.TabExpander','painter','javax.swing.text.GlyphView.GlyphPainter','justificationInfo','javax.swing.text.GlyphView.JustificationInfo']]
+,['O',['defaultPainter','javax.swing.text.GlyphView.GlyphPainter']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element.apply(this,[elem]);C$.$init$.apply(this);
 this.offset=0;
 this.length=0;
 var parent=elem.getParentElement$();
@@ -63,7 +52,7 @@ var doc=this.getDocument$();
 doc.getText$I$I$javax_swing_text_Segment(p0, p1 - p0, text);
 } catch (bl) {
 if (Clazz.exceptionOf(bl,"javax.swing.text.BadLocationException")){
-throw Clazz.new_($I$(3).c$$S,["GlyphView: Stale view: " + bl]);
+throw Clazz.new_($I$(3,1).c$$S,["GlyphView: Stale view: " + bl]);
 } else {
 throw bl;
 }
@@ -141,7 +130,7 @@ c=Clazz.forName(classname);
 if (Clazz.instanceOf(o, "javax.swing.text.GlyphView.GlyphPainter")) {
 C$.defaultPainter=o;
 }} catch (e) {
-throw Clazz.new_($I$(3).c$$S,["GlyphView: Can't load glyph painter: " + classname]);
+throw Clazz.new_($I$(3,1).c$$S,["GlyphView: Can't load glyph painter: " + classname]);
 }
 }this.setGlyphPainter$javax_swing_text_GlyphView_GlyphPainter(C$.defaultPainter.getPainter$javax_swing_text_GlyphView$I$I(this, this.getStartOffset$(), this.getEndOffset$()));
 }});
@@ -290,7 +279,7 @@ return v;
 
 Clazz.newMeth(C$, 'getBreakSpot$I$I', function (p0, p1) {
 var doc=this.getDocument$();
-if (doc != null  && $I$(5).TRUE.equals$O(doc.getProperty$O($I$(6).MultiByteProperty)) ) {
+if (doc != null  && Boolean.TRUE.equals$O(doc.getProperty$O($I$(5).MultiByteProperty)) ) {
 return p$1.getBreakSpotUseBreakIterator$I$I.apply(this, [p0, p1]);
 }return p$1.getBreakSpotUseWhitespace$I$I.apply(this, [p0, p1]);
 }, p$1);
@@ -365,7 +354,7 @@ var trailingSpaces=0;
 var contentSpaces=0;
 var leadingSpaces=0;
 var hasTab=false;
-var spaceMap=Clazz.new_($I$(7).c$$I,[endOffset - startOffset + 1]);
+var spaceMap=Clazz.new_($I$(6,1).c$$I,[endOffset - startOffset + 1]);
 for (var i=txtEnd, state=0; i >= txtOffset; i--) {
 if (" " == segment.array[i]) {
 spaceMap.set$I(i - txtOffset);
@@ -397,33 +386,23 @@ startJustifiableContent=startContentPosition - txtOffset;
 }var endJustifiableContent=-1;
 if (endContentPosition > txtOffset) {
 endJustifiableContent=endContentPosition - txtOffset;
-}this.justificationInfo=Clazz.new_($I$(8).c$$I$I$I$I$I$Z$java_util_BitSet,[startJustifiableContent, endJustifiableContent, leadingSpaces, contentSpaces, trailingSpaces, hasTab, spaceMap]);
+}this.justificationInfo=Clazz.new_($I$(7,1).c$$I$I$I$I$I$Z$java_util_BitSet,[startJustifiableContent, endJustifiableContent, leadingSpaces, contentSpaces, trailingSpaces, hasTab, spaceMap]);
 return this.justificationInfo;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.GlyphView, "JustificationInfo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GlyphView, "JustificationInfo", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.start=0;
-this.end=0;
-this.leadingSpaces=0;
-this.contentSpaces=0;
-this.trailingSpaces=0;
-this.hasTab=false;
-this.spaceMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['hasTab'],'I',['start','end','leadingSpaces','contentSpaces','trailingSpaces'],'O',['spaceMap','java.util.BitSet']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$I$Z$java_util_BitSet', function (start, end, leadingSpaces, contentSpaces, trailingSpaces, hasTab, spaceMap) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.start=start;
 this.end=end;
 this.leadingSpaces=leadingSpaces;
@@ -436,15 +415,14 @@ this.spaceMap=spaceMap;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GlyphView, "GlyphPainter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GlyphView, "GlyphPainter", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getPainter$javax_swing_text_GlyphView$I$I', function (v, p0, p1) {
 return this;
@@ -509,4 +487,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

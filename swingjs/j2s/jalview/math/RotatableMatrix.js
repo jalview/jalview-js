@@ -1,35 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.math"),I$=[[0,'java.util.HashMap',['jalview.math.RotatableMatrix','.Axis'],'jalview.datamodel.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RotatableMatrix", function(){
+(function(){var P$=Clazz.newPackage("jalview.math"),I$=[[0,'java.util.HashMap',['jalview.math.RotatableMatrix','.Axis'],'jalview.datamodel.Point']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RotatableMatrix", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.cachedRotations=null;
+C$.$classes$=[['Axis',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-C$.cachedRotations=Clazz.new_($I$(1));
-for (var axis, $axis = 0, $$axis = $I$(2).values$(); $axis<$$axis.length&&((axis=($$axis[$axis])),1);$axis++) {
-var map=Clazz.new_($I$(1));
-C$.cachedRotations.put$TK$TV(axis, map);
-for (var deg=1; deg < 5; deg++) {
-var rotation=C$.getRotation$F$jalview_math_RotatableMatrix_Axis(deg, axis);
-map.put$TK$TV(Float.valueOf$F(deg), rotation);
-rotation=C$.getRotation$F$jalview_math_RotatableMatrix_Axis(-deg, axis);
-map.put$TK$TV(Float.valueOf$F(-deg), rotation);
-}
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.matrix=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['matrix','float[][]']]
+,['O',['cachedRotations','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.matrix=Clazz.array(Float.TYPE, [3, 3]);
 for (var j=0; j < 3; j++) {
 this.matrix[j][j]=1.0;
@@ -118,22 +102,40 @@ this.matrix=tmp;
 
 Clazz.newMeth(C$, 'vectorMultiply$jalview_datamodel_Point', function (coord) {
 var v=this.vectorMultiply$FA(Clazz.array(Float.TYPE, -1, [coord.x, coord.y, coord.z]));
-return Clazz.new_($I$(3).c$$F$F$F,[v[0], v[1], v[2]]);
+return Clazz.new_($I$(3,1).c$$F$F$F,[v[0], v[1], v[2]]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+C$.cachedRotations=Clazz.new_($I$(1,1));
+for (var axis, $axis = 0, $$axis = $I$(2).values$(); $axis<$$axis.length&&((axis=($$axis[$axis])),1);$axis++) {
+var map=Clazz.new_($I$(1,1));
+C$.cachedRotations.put$O$O(axis, map);
+for (var deg=1; deg < 5; deg++) {
+var rotation=C$.getRotation$F$jalview_math_RotatableMatrix_Axis(deg, axis);
+map.put$O$O(Float.valueOf$F(deg), rotation);
+rotation=C$.getRotation$F$jalview_math_RotatableMatrix_Axis(-deg, axis);
+map.put$O$O(Float.valueOf$F(-deg), rotation);
+}
+}
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.RotatableMatrix, "Axis", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.RotatableMatrix, "Axis", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "X", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "Y", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "Z", 2, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -141,4 +143,4 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

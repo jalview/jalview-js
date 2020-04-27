@@ -1,19 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'java.util.Hashtable','java.util.StringTokenizer','jalview.io.BackupFilenameParts','java.util.LinkedHashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JalviewFileFilter", null, 'javax.swing.filechooser.FileFilter');
-C$.suffixHash=null;
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'java.util.Hashtable','java.util.StringTokenizer','jalview.io.BackupFilenameParts','java.util.LinkedHashMap']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JalviewFileFilter", null, 'javax.swing.filechooser.FileFilter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.suffixHash=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.filters=null;
-this.description=null;
-this.fullDescription=null;
-this.useExtensionsInDescription=false;
-this.parentJFC=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.filters=null;
@@ -21,11 +9,14 @@ this.description="no description";
 this.fullDescription="full description";
 this.useExtensionsInDescription=true;
 this.parentJFC=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['useExtensionsInDescription'],'S',['description','fullDescription'],'O',['filters','java.util.Map','parentJFC','jalview.io.JalviewFileChooser']]
+,['O',['suffixHash','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (extension, description) {
-Clazz.super_(C$, this,1);
-var st=Clazz.new_($I$(2).c$$S$S,[extension, ","]);
+Clazz.super_(C$, this);
+var st=Clazz.new_($I$(2,1).c$$S$S,[extension, ","]);
 while (st.hasMoreElements$()){
 this.addExtension$S(st.nextToken$().trim$());
 }
@@ -37,7 +28,7 @@ C$.c$$SA$S.apply(this, [filts, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$SA$S', function (filts, description) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 for (var i=0; i < filts.length; i++) {
 this.addExtension$S(filts[i]);
 }
@@ -62,7 +53,7 @@ var it=this.filters.keySet$().iterator$();
 var ext=it.next$();
 if (!f.getName$().contains$CharSequence(ext)) {
 continue EXTENSION;
-}var bfp=$I$(3).currentBackupFilenameParts$S$S$Z(f.getName$(), ext, true);
+}var bfp=$I$(3,"currentBackupFilenameParts$S$S$Z",[f.getName$(), ext, true]);
 if (bfp.isBackupFile$()) {
 return true;
 }}
@@ -80,8 +71,8 @@ return filename.substring$I(i + 1).toLowerCase$();
 
 Clazz.newMeth(C$, 'addExtension$S', function (extension) {
 if (this.filters == null ) {
-this.filters=Clazz.new_($I$(4).c$$I,[5]);
-}this.filters.put$TK$TV(extension.toLowerCase$(), this);
+this.filters=Clazz.new_($I$(4,1).c$$I,[5]);
+}this.filters.put$O$O(extension.toLowerCase$(), this);
 this.fullDescription=null;
 });
 
@@ -119,6 +110,10 @@ Clazz.newMeth(C$, 'setParentJFC$jalview_io_JalviewFileChooser', function (p) {
 this.parentJFC=p;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.suffixHash=Clazz.new_($I$(1,1));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

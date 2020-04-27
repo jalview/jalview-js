@@ -1,36 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'java.util.HashSet','javajs.util.P3','org.jmol.util.Logger','javajs.util.Quat','org.jmol.viewer.Viewer','javajs.util.AU','org.jmol.util.MeshSurface','javajs.util.M4','javajs.util.V3','javajs.util.BS','javajs.util.Lst','org.jmol.util.Escape','org.jmol.export.MeshData','javajs.util.PT','javajs.util.SB','javajs.util.CU','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "_ObjExporter", null, 'org.jmol.export.__CartesianExporter');
+(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'java.util.HashSet','javajs.util.P3','org.jmol.util.Logger','javajs.util.Quat','org.jmol.viewer.Viewer','javajs.util.AU','org.jmol.util.MeshSurface','javajs.util.M4','javajs.util.V3','javajs.util.BS','javajs.util.Lst','org.jmol.util.Escape','org.jmol.export.MeshData','javajs.util.PT','javajs.util.SB','org.jmol.export.___Exporter','javajs.util.CU','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "_ObjExporter", null, 'org.jmol.export.__CartesianExporter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.surfacesOnly=false;
-this.normalizeUV=false;
-this.mtlout=null;
-this.objFileRootName=null;
-this.nMtlBytes=0;
-this.textures=null;
-this.textureFiles=null;
-this.sphereNum=0;
-this.cylinderNum=0;
-this.ellipseNum=0;
-this.circleNum=0;
-this.ellipsoidNum=0;
-this.coneNum=0;
-this.triangleNum=0;
-this.surfaceNum=0;
-this.currentVertexOrigin=0;
-this.currentNormalOrigin=0;
-this.currentTextureOrigin=0;
-this.ptTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.surfacesOnly=false;
 this.normalizeUV=true;
-this.textures=Clazz.new_($I$(1));
+this.textures=Clazz.new_($I$(1,1));
 this.sphereNum=1;
 this.cylinderNum=1;
 this.ellipseNum=1;
@@ -42,11 +18,13 @@ this.surfaceNum=1;
 this.currentVertexOrigin=1;
 this.currentNormalOrigin=1;
 this.currentTextureOrigin=1;
-this.ptTemp=Clazz.new_($I$(2));
-}, 1);
+this.ptTemp=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['surfacesOnly','normalizeUV'],'I',['nMtlBytes','sphereNum','cylinderNum','ellipseNum','circleNum','ellipsoidNum','coneNum','triangleNum','surfaceNum','currentVertexOrigin','currentNormalOrigin','currentTextureOrigin'],'S',['objFileRootName'],'O',['mtlout','javajs.util.OC','textures','java.util.Set','textureFiles','javajs.util.Lst','ptTemp','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.debugPrint$S("_WavefrontObjExporter CTOR");
 this.commentChar="# ";
 }, 1);
@@ -101,7 +79,7 @@ this.outputSphere$javajs_util_P3$F$H$Z(pt2, radius * 1.01, colix, true);
 } else if (endcaps == 2) {
 p$1.outputCircle1$javajs_util_P3$javajs_util_P3$H$F.apply(this, [pt1, pt2, colix, radius]);
 p$1.outputCircle1$javajs_util_P3$javajs_util_P3$H$F.apply(this, [pt2, pt1, colix, radius]);
-}p$1.outputCylinder1$javajs_util_P3$javajs_util_P3$javajs_util_P3$H$B$F$javajs_util_P3$javajs_util_P3.apply(this, [ptCenter, pt1, pt2, colix, ($b$[0] = endcaps, $b$[0]), radius, ptX, ptY]);
+}p$1.outputCylinder1$javajs_util_P3$javajs_util_P3$javajs_util_P3$H$B$F$javajs_util_P3$javajs_util_P3.apply(this, [ptCenter, pt1, pt2, colix, endcaps, radius, ptX, ptY]);
 return true;
 });
 
@@ -181,7 +159,7 @@ this.debugPrint$S("  number of polygons used=" + meshSurface.bsPolygons.cardinal
 var nPolygons=meshSurface.pc;
 if (meshSurface.normals != null ) meshSurface.normalCount=meshSurface.vc;
 var isAll=(bsPolygons == null );
-var faces=$I$(6).newInt2$I(isAll ? nPolygons : bsPolygons.cardinality$());
+var faces=(function(a,f){return f.apply(null,a)})([isAll ? nPolygons : bsPolygons.cardinality$()],$I$(6).newInt2$I);
 var i0=(isAll ? nPolygons - 1 : bsPolygons.nextSetBit$I(0));
 for (var i=i0, ipt=0; i >= 0; i=isAll ? i - 1 : bsPolygons.nextSetBit$I(i + 1)) {
 var polygon=meshSurface.pis[i];
@@ -207,15 +185,15 @@ this.debugPrint$S("  width=" + width + " height=" + height + " size = " + (width
 var file=p$1.createTextureFile$S$org_jmol_util_MeshSurface$IA.apply(this, [name, data, dim]);
 if (file == null  || file.getByteCount$() == 0 ) {
 System.out.println$S("Error creating texture file: " + name);
-this.textureFiles.addLast$TV("Error creating texture file: " + name);
+this.textureFiles.addLast$O("Error creating texture file: " + name);
 return;
-}this.textureFiles.addLast$TV(file.getByteCount$() + " (" + width + "x" + height + ") " + name );
+}this.textureFiles.addLast$O(file.getByteCount$() + " (" + width + "x" + height + ") " + name );
 var shortName=file.getName$();
 p$1.outputMtl$S.apply(this, [" map_Kd " + shortName + "\n" ]);
 p$1.outputMtl$S.apply(this, [" map_Ka " + shortName + "\n" ]);
 }var matrix=$I$(8).newM4$javajs_util_M4(null);
 matrix.setTranslation$javajs_util_T3($I$(9).newV$javajs_util_T3(meshSurface.offset));
-var bsValid=Clazz.new_($I$(10));
+var bsValid=Clazz.new_($I$(10,1));
 p$1.addMesh$S$org_jmol_util_MeshSurface$javajs_util_M4$javajs_util_M4$H$IA$javajs_util_BS.apply(this, [name, data, matrix, null, colix, dim, bsValid]);
 });
 
@@ -243,7 +221,7 @@ throw ex;
 }
 p$1.outputMtl$S.apply(this, ["# Created by Jmol " + $I$(5).getJmolVersion$() + "\n" ]);
 this.output$S("\nmtllib " + this.mtlout.getName$() + "\n" );
-this.textureFiles=Clazz.new_($I$(11));
+this.textureFiles=Clazz.new_($I$(11,1));
 this.debugPrint$S("End initializeOutput:");
 return true;
 });
@@ -272,12 +250,12 @@ this.mtlout.append$S(data);
 }, p$1);
 
 Clazz.newMeth(C$, 'getTextureName$H', function (colix) {
-return "k" + $I$(12).getHexColorFromRGB$I(this.gdata.getColorArgbOrGray$H(colix));
+return "k" + (function(a,f){return f.apply(null,a)})([this.gdata.getColorArgbOrGray$H(colix)],$I$(12).getHexColorFromRGB$I);
 }, p$1);
 
 Clazz.newMeth(C$, 'outputCircle1$javajs_util_P3$javajs_util_P3$H$F', function (ptCenter, ptPerp, colix, radius) {
 var data=$I$(13).getCircleData$();
-var matrix=Clazz.new_($I$(8));
+var matrix=Clazz.new_($I$(8,1));
 p$1.addTexture$H$S.apply(this, [colix, null]);
 var name="Circle" + this.circleNum++;
 matrix.setToM3$javajs_util_M34(this.getRotationMatrix$javajs_util_P3$javajs_util_P3$F(ptCenter, ptPerp, radius));
@@ -290,7 +268,7 @@ p$1.addMesh$S$org_jmol_util_MeshSurface$javajs_util_M4$javajs_util_M4$H$IA$javaj
 
 Clazz.newMeth(C$, 'outputCone1$javajs_util_P3$javajs_util_P3$F$H', function (ptBase, ptTip, radius, colix) {
 var data=$I$(13).getConeData$();
-var matrix=Clazz.new_($I$(8));
+var matrix=Clazz.new_($I$(8,1));
 p$1.addTexture$H$S.apply(this, [colix, null]);
 var name="Cone" + this.coneNum++;
 matrix.setToM3$javajs_util_M34(this.getRotationMatrix$javajs_util_P3$javajs_util_P3$F(ptBase, ptTip, radius));
@@ -303,7 +281,7 @@ p$1.addMesh$S$org_jmol_util_MeshSurface$javajs_util_M4$javajs_util_M4$H$IA$javaj
 
 Clazz.newMeth(C$, 'outputEllipse1$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$H', function (ptCenter, ptZ, ptX, ptY, colix) {
 var data=$I$(13).getCircleData$();
-var matrix=Clazz.new_($I$(8));
+var matrix=Clazz.new_($I$(8,1));
 p$1.addTexture$H$S.apply(this, [colix, null]);
 var name="Ellipse" + this.ellipseNum++;
 matrix.setToM3$javajs_util_M34(this.getRotationMatrix$javajs_util_P3$javajs_util_P3$F$javajs_util_P3$javajs_util_P3(ptCenter, ptZ, 1, ptX, ptY));
@@ -321,7 +299,7 @@ p$1.addTexture$H$S.apply(this, [colix, null]);
 var name;
 if (Clazz.instanceOf(center, "org.jmol.modelset.Atom")) {
 var atom=center;
-name=$I$(14).replaceAllCharacters$S$S$S(atom.getAtomName$(), " \t", "") + "_Atom";
+name=(function(a,f){return f.apply(null,a)})([atom.getAtomName$(), " \t", ""],$I$(14).replaceAllCharacters$S$S$S) + "_Atom";
 } else if (rx == ry  && rx == rz  ) {
 name="Sphere" + this.sphereNum++;
 } else {
@@ -332,7 +310,7 @@ p$1.addMesh$S$org_jmol_util_MeshSurface$javajs_util_M4$javajs_util_M4$H$IA$javaj
 
 Clazz.newMeth(C$, 'outputCylinder1$javajs_util_P3$javajs_util_P3$javajs_util_P3$H$B$F$javajs_util_P3$javajs_util_P3', function (ptCenter, pt1, pt2, colix, endcaps, radius, ptX, ptY) {
 var data=$I$(13).getCylinderData$Z(false);
-var matrix=Clazz.new_($I$(8));
+var matrix=Clazz.new_($I$(8,1));
 p$1.addTexture$H$S.apply(this, [colix, null]);
 var name="Cylinder" + this.cylinderNum++;
 var n=(ptX != null  && endcaps == 0  ? 2 : 1);
@@ -359,11 +337,11 @@ Clazz.newMeth(C$, 'addTexture$H$S', function (colix, name) {
 var scolix=Short.valueOf$H(colix);
 if (name == null  && this.textures.contains$O(scolix) ) {
 return;
-}this.textures.add$TE(scolix);
-var sb=Clazz.new_($I$(15));
+}this.textures.add$O(scolix);
+var sb=Clazz.new_($I$(15,1));
 sb.append$S("\nnewmtl " + (name == null  ? p$1.getTextureName$H.apply(this, [colix]) : name) + "\n" );
 sb.append$S(" Ns 163\n");
-sb.append$S(" Tr " + P$.___Exporter.opacityFractionalFromColix$H(colix) + "\n" );
+sb.append$S(" Tr " + $I$(16).opacityFractionalFromColix$H(colix) + "\n" );
 sb.append$S(" Ni 0.001\n");
 sb.append$S(" illum 2\n");
 sb.append$S(" Ka 0.20 0.20 0.20\n");
@@ -395,7 +373,7 @@ var nNormals=data.normalCount;
 var map2=null;
 var vNormals=null;
 if (normals != null ) {
-vNormals=Clazz.new_($I$(11));
+vNormals=Clazz.new_($I$(11,1));
 map2=this.getNormalMap$javajs_util_T3A$I$javajs_util_BS$javajs_util_Lst(normals, nNormals, bsValid, vNormals);
 nNormals=vNormals.size$();
 this.output$S("# Number of normals: " + nNormals + "\n" );
@@ -471,21 +449,21 @@ var height=dim[1];
 var textureType="png";
 var row=height - 1;
 var col=0;
-var sum=Clazz.new_($I$(2));
+var sum=Clazz.new_($I$(2,1));
 var w=width * 3;
 var h=height * 3;
 var bytes=(textureType.equals$O("tga") ? Clazz.array(Byte.TYPE, [h, w * 3]) : null);
 var rgbbuf=(bytes == null  ? Clazz.array(Integer.TYPE, [h * w]) : null);
-var ptTemp=Clazz.new_($I$(2));
+var ptTemp=Clazz.new_($I$(2,1));
 for (var i=0; i < data.pis.length; i++) {
 var rgb;
 if (data.pcs == null ) {
 var face=data.pis[i];
 sum.set$F$F$F(0, 0, 0);
-for (var iVertex, $iVertex = 0, $$iVertex = face; $iVertex<$$iVertex.length&&((iVertex=($$iVertex[$iVertex])),1);$iVertex++) sum.add$javajs_util_T3($I$(16).colorPtFromInt$I$javajs_util_P3(this.gdata.getColorArgbOrGray$H(colixes[iVertex]), ptTemp));
+for (var iVertex, $iVertex = 0, $$iVertex = face; $iVertex<$$iVertex.length&&((iVertex=($$iVertex[$iVertex])),1);$iVertex++) sum.add$javajs_util_T3((function(a,f){return f.apply(null,a)})([this.gdata.getColorArgbOrGray$H(colixes[iVertex]), ptTemp],$I$(17).colorPtFromInt$I$javajs_util_P3));
 
 sum.scale$F(1.0 / face.length);
-rgb=$I$(16).colorPtToFFRGB$javajs_util_T3(sum);
+rgb=$I$(17).colorPtToFFRGB$javajs_util_T3(sum);
 } else {
 rgb=this.gdata.getColorArgbOrGray$H(colixes[i]);
 }if (bytes == null ) {
@@ -496,14 +474,14 @@ for (var j=0; j < 3; j++) for (var k=0; k < 3; k++) rgbbuf[(row * 3 + k) * w + c
 }if ((col=(col + 1) % width) == 0) row--;
 }
 try {
-var params=Clazz.new_($I$(17));
+var params=Clazz.new_($I$(18,1));
 var fname=this.fileName;
 if (rgbbuf != null ) {
-params.put$TK$TV("rgbbuf", rgbbuf);
-params.put$TK$TV("fileName", this.objFileRootName + "_" + name + "." + textureType );
-params.put$TK$TV("type", textureType);
-params.put$TK$TV("width", Integer.valueOf$I(w));
-params.put$TK$TV("height", Integer.valueOf$I(h));
+params.put$O$O("rgbbuf", rgbbuf);
+params.put$O$O("fileName", this.objFileRootName + "_" + name + "." + textureType );
+params.put$O$O("type", textureType);
+params.put$O$O("width", Integer.valueOf$I(w));
+params.put$O$O("height", Integer.valueOf$I(h));
 fname=this.fileName=this.vwr.outputToFile$java_util_Map(params);
 }this.debugPrint$S("End createTextureFile: " + fname);
 return params.get$O("outputChannel");
@@ -516,6 +494,5 @@ throw ex;
 }
 }
 }, p$1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

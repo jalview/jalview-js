@@ -1,25 +1,16 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.P4','javajs.util.M3','javajs.util.A4','javajs.util.V3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Quat");
-C$.qZero=null;
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.P4','javajs.util.M3','javajs.util.A4','javajs.util.V3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Quat");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.qZero=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.q0=0;
-this.q1=0;
-this.q2=0;
-this.q3=0;
-this.mat=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['q0','q1','q2','q3'],'O',['mat','javajs.util.M3']]
+,['O',['qZero','javajs.util.P4']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.q0=1;
 }, 1);
 
@@ -100,7 +91,7 @@ this.q3=(pt.z * fact);
 Clazz.newMeth(C$, 'setAA$javajs_util_A4', function (a) {
 var aa=$I$(3).newAA$javajs_util_A4(a);
 if (aa.angle == 0 ) aa.y=1;
-p$1.setM$javajs_util_M3.apply(this, [Clazz.new_($I$(2)).setAA$javajs_util_A4(aa)]);
+p$1.setM$javajs_util_M3.apply(this, [Clazz.new_($I$(2,1)).setAA$javajs_util_A4(aa)]);
 });
 
 Clazz.newMeth(C$, 'setM$javajs_util_M3', function (mat) {
@@ -159,15 +150,15 @@ vB.sub$javajs_util_T3(center);
 
 Clazz.newMeth(C$, 'getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z', function (vA, vB, vC, yBased) {
 if (vC == null ) {
-vC=Clazz.new_($I$(4));
+vC=Clazz.new_($I$(4,1));
 vC.cross$javajs_util_T3$javajs_util_T3(vA, vB);
 if (yBased) vA.cross$javajs_util_T3$javajs_util_T3(vB, vC);
-}var vBprime=Clazz.new_($I$(4));
+}var vBprime=Clazz.new_($I$(4,1));
 vBprime.cross$javajs_util_T3$javajs_util_T3(vC, vA);
 vA.normalize$();
 vBprime.normalize$();
 vC.normalize$();
-var mat=Clazz.new_($I$(2));
+var mat=Clazz.new_($I$(2,1));
 mat.setColumnV$I$javajs_util_T3(0, vA);
 mat.setColumnV$I$javajs_util_T3(1, vBprime);
 mat.setColumnV$I$javajs_util_T3(2, vC);
@@ -181,7 +172,7 @@ return this.mat;
 });
 
 Clazz.newMeth(C$, 'setMatrix', function () {
-this.mat=Clazz.new_($I$(2));
+this.mat=Clazz.new_($I$(2,1));
 this.mat.m00=this.q0 * this.q0 + this.q1 * this.q1 - this.q2 * this.q2 - this.q3 * this.q3;
 this.mat.m01=2 * this.q1 * this.q2  - 2 * this.q0 * this.q3 ;
 this.mat.m02=2 * this.q1 * this.q3  + 2 * this.q0 * this.q2 ;
@@ -238,7 +229,7 @@ if (i == -1) {
 scale *= p$1.getFixFactor.apply(this, []);
 return $I$(4).new3$F$F$F(this.q1 * scale, this.q2 * scale, this.q3 * scale);
 }if (this.mat == null ) p$1.setMatrix.apply(this, []);
-var v=Clazz.new_($I$(4));
+var v=Clazz.new_($I$(4,1));
 this.mat.getColumnV$I$javajs_util_T3(i, v);
 if (scale != 1.0 ) v.scale$F(scale);
 return v;
@@ -380,7 +371,7 @@ return C$.newP4$javajs_util_P4($I$(1).new4$F$F$F$F(mean.x, mean.y, mean.z, f));
 }, 1);
 
 Clazz.newMeth(C$, 'newMean$javajs_util_QuatA$javajs_util_Quat', function (data, mean) {
-var sum=Clazz.new_($I$(4));
+var sum=Clazz.new_($I$(4,1));
 var v;
 var q;
 var dq;
@@ -431,5 +422,9 @@ rB=Math.acos(this.q3 * this.q3 - this.q2 * this.q2 - this.q1 * this.q1 + this.q0
 rG=Math.atan2(2 * (this.q1 * this.q3 + this.q0 * this.q2), 2 * (-this.q2 * this.q3 + this.q0 * this.q1));
 return Clazz.array(Float.TYPE, -1, [(rA / 0.017453292519943295), (rB / 0.017453292519943295), (rG / 0.017453292519943295)]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.qZero=Clazz.new_($I$(1,1));
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

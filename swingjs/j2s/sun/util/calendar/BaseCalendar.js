@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("sun.util.calendar"),p$1={},I$=[[0,'sun.util.calendar.CalendarUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BaseCalendar", function(){
+(function(){var P$=Clazz.newPackage("sun.util.calendar"),p$1={},I$=[[0,'sun.util.calendar.CalendarUtils']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BaseCalendar", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'sun.util.calendar.AbstractCalendar');
-C$.FIXED_DATES=null;
-C$.DAYS_IN_MONTH=null;
-C$.ACCUMULATED_DAYS_IN_MONTH=null;
-C$.ACCUMULATED_DAYS_IN_MONTH_LEAP=null;
+C$.$classes$=[['Date',1033]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.FIXED_DATES=Clazz.array(Integer.TYPE, -1, [719163, 719528, 719893, 720259, 720624, 720989, 721354, 721720, 722085, 722450, 722815, 723181, 723546, 723911, 724276, 724642, 725007, 725372, 725737, 726103, 726468, 726833, 727198, 727564, 727929, 728294, 728659, 729025, 729390, 729755, 730120, 730486, 730851, 731216, 731581, 731947, 732312, 732677, 733042, 733408, 733773, 734138, 734503, 734869, 735234, 735599, 735964, 736330, 736695, 737060, 737425, 737791, 738156, 738521, 738886, 739252, 739617, 739982, 740347, 740713, 741078, 741443, 741808, 742174, 742539, 742904, 743269, 743635, 744000, 744365]);
-C$.DAYS_IN_MONTH=Clazz.array(Integer.TYPE, -1, [31, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
-C$.ACCUMULATED_DAYS_IN_MONTH=Clazz.array(Integer.TYPE, -1, [-30, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]);
-C$.ACCUMULATED_DAYS_IN_MONTH_LEAP=Clazz.array(Integer.TYPE, -1, [-30, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['FIXED_DATES','int[]','+DAYS_IN_MONTH','+ACCUMULATED_DAYS_IN_MONTH','+ACCUMULATED_DAYS_IN_MONTH_LEAP']]]
 
 Clazz.newMeth(C$, 'validate$sun_util_calendar_CalendarDate', function (date) {
 var bdate=date;
@@ -150,7 +145,7 @@ var days=dayOfMonth;
 if (prevyear >= 0) {
 days+=(365 * prevyear) + ((prevyear/4|0)) - ((prevyear/100|0)) + ((prevyear/400|0)) + (((367 * month - 362)/12|0));
 } else {
-days+=(365 * prevyear) + $I$(1).floorDivide$J$J(prevyear, 4) - $I$(1).floorDivide$J$J(prevyear, 100) + $I$(1).floorDivide$J$J(prevyear, 400) + $I$(1).floorDivide$I$I((367 * month - 362), 12);
+days+=(365 * prevyear) + $I$(1).floorDivide$J$J(prevyear, 4) - $I$(1).floorDivide$J$J(prevyear, 100) + $I$(1).floorDivide$J$J(prevyear, 400) + $I$(1,"floorDivide$I$I",[(367 * month - 362), 12]);
 }if (month > 2) {
 days-=this.isLeapYear$I(year) ? 1 : 2;
 }if (cache != null  && isJan1 ) {
@@ -256,36 +251,35 @@ return this.isLeapYear$I((date).getNormalizedYear$());
 Clazz.newMeth(C$, 'isLeapYear$I', function (normalizedYear) {
 return $I$(1).isGregorianLeapYear$I(normalizedYear);
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.FIXED_DATES=Clazz.array(Integer.TYPE, -1, [719163, 719528, 719893, 720259, 720624, 720989, 721354, 721720, 722085, 722450, 722815, 723181, 723546, 723911, 724276, 724642, 725007, 725372, 725737, 726103, 726468, 726833, 727198, 727564, 727929, 728294, 728659, 729025, 729390, 729755, 730120, 730486, 730851, 731216, 731581, 731947, 732312, 732677, 733042, 733408, 733773, 734138, 734503, 734869, 735234, 735599, 735964, 736330, 736695, 737060, 737425, 737791, 738156, 738521, 738886, 739252, 739617, 739982, 740347, 740713, 741078, 741443, 741808, 742174, 742539, 742904, 743269, 743635, 744000, 744365]);
+C$.DAYS_IN_MONTH=Clazz.array(Integer.TYPE, -1, [31, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
+C$.ACCUMULATED_DAYS_IN_MONTH=Clazz.array(Integer.TYPE, -1, [-30, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]);
+C$.ACCUMULATED_DAYS_IN_MONTH_LEAP=Clazz.array(Integer.TYPE, -1, [-30, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.BaseCalendar, "Date", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BaseCalendar, "Date", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.util.calendar.CalendarDate');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cachedYear=0;
-this.cachedFixedDateJan1=0;
-this.cachedFixedDateNextJan1=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.cachedYear=2004;
 this.cachedFixedDateJan1=731581;
 this.cachedFixedDateNextJan1=this.cachedFixedDateJan1 + 366;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['cachedYear'],'J',['cachedFixedDateJan1','cachedFixedDateNextJan1']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_TimeZone', function (zone) {
-C$.superclazz.c$$java_util_TimeZone.apply(this, [zone]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_util_TimeZone.apply(this,[zone]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setNormalizedDate$I$I$I', function (normalizedYear, month, dayOfMonth) {
@@ -319,4 +313,4 @@ this.cachedFixedDateNextJan1=jan1 + len;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:40 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

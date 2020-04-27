@@ -1,39 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.V3','org.jmol.util.Logger','javajs.util.Lst','org.jmol.util.BSUtil','org.jmol.symmetry.CIPChirality','javajs.util.P3','javajs.util.Measure','javajs.util.P4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CIPData");
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.V3','org.jmol.util.Logger','javajs.util.Lst','org.jmol.util.BSUtil','org.jmol.symmetry.CIPChirality','javajs.util.P3','javajs.util.Measure','javajs.util.P4']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CIPData");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.testRule6Full=false;
-this.vwr=null;
-this.atoms=null;
-this.bsAtoms=null;
-this.bsMolecule=null;
-this.bsAromatic=null;
-this.bsXAromatic=null;
-this.bsNegativeAromatic=null;
-this.bsAzacyclic=null;
-this.bsAtropisomeric=null;
-this.bsHelixM=null;
-this.bsHelixP=null;
-this.lstSmallRings=null;
-this.bsKekuleAmbiguous=null;
-this.bsEnes=null;
-this.vNorm=null;
-this.vTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.bsXAromatic=Clazz.new_($I$(1));
-this.bsNegativeAromatic=Clazz.new_($I$(1));
-this.bsAtropisomeric=Clazz.new_($I$(1));
-this.bsKekuleAmbiguous=Clazz.new_($I$(1));
-this.bsEnes=Clazz.new_($I$(1));
-this.vNorm=Clazz.new_($I$(2));
-this.vTemp=Clazz.new_($I$(2));
-}, 1);
+this.bsXAromatic=Clazz.new_($I$(1,1));
+this.bsNegativeAromatic=Clazz.new_($I$(1,1));
+this.bsAtropisomeric=Clazz.new_($I$(1,1));
+this.bsKekuleAmbiguous=Clazz.new_($I$(1,1));
+this.bsEnes=Clazz.new_($I$(1,1));
+this.vNorm=Clazz.new_($I$(2,1));
+this.vTemp=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['testRule6Full'],'O',['vwr','org.jmol.viewer.Viewer','atoms','org.jmol.util.SimpleNode[]','bsAtoms','javajs.util.BS','+bsMolecule','+bsAromatic','+bsXAromatic','+bsNegativeAromatic','+bsAzacyclic','+bsAtropisomeric','+bsHelixM','+bsHelixP','lstSmallRings','javajs.util.BS[]','bsKekuleAmbiguous','javajs.util.BS','+bsEnes','vNorm','javajs.util.V3','+vTemp']]]
 
 Clazz.newMeth(C$, 'isTracker$', function () {
 return false;
@@ -44,7 +24,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_Viewer$javajs_util_BS', function (vwr, bsAtoms) {
@@ -89,7 +69,7 @@ throw e;
 
 Clazz.newMeth(C$, 'getList$S', function (smarts) {
 var level=$I$(3).getLogLevel$();
-$I$(3).setLogLevel$I(Math.min(level, 4));
+(function(a,f){return f.apply(null,a)})([Math.min(level, 4)],$I$(3).setLogLevel$I);
 var list=this.vwr.getSubstructureSetArray$S$javajs_util_BS$I(smarts, this.bsMolecule, 2);
 $I$(3).setLogLevel$I(level);
 return list;
@@ -97,7 +77,7 @@ return list;
 
 Clazz.newMeth(C$, 'match$S', function (smarts) {
 var level=$I$(3).getLogLevel$();
-$I$(3).setLogLevel$I(Math.min(level, 4));
+(function(a,f){return f.apply(null,a)})([Math.min(level, 4)],$I$(3).setLogLevel$I);
 var bs=this.vwr.getSmartsMatch$S$javajs_util_BS(smarts, this.bsMolecule);
 $I$(3).setLogLevel$I(level);
 return bs;
@@ -106,9 +86,9 @@ return bs;
 Clazz.newMeth(C$, 'getEneKekule$', function () {
 if (this.bsEnes.cardinality$() < 8) return;
 var bsAllEnes=this.bsEnes.clone$();
-var bsPath=Clazz.new_($I$(1));
+var bsPath=Clazz.new_($I$(1,1));
 this.bsEnes.andNot$javajs_util_BS(this.bsKekuleAmbiguous);
-var bsEneAtom1=Clazz.new_($I$(1));
+var bsEneAtom1=Clazz.new_($I$(1,1));
 for (var i=this.bsEnes.nextSetBit$I(0); i >= 0; i=this.bsEnes.nextSetBit$I(i + 1)) {
 bsPath.clearAll$();
 bsEneAtom1.clearAll$();
@@ -142,23 +122,23 @@ if (atom.getElementNumber$() != 7 || atom.getCovalentBondCount$() != 3  || this.
 var edges=atom.getEdges$();
 for (var k=edges.length; --k >= 0; ) if (edges[k].getOtherNode$org_jmol_util_SimpleNode(atom).getElementNumber$() == 1) continue out;
 
-var nRings=Clazz.new_($I$(4));
+var nRings=Clazz.new_($I$(4,1));
 for (var j=this.lstSmallRings.length; --j >= 0; ) {
 var bsRing=this.lstSmallRings[j];
 if (!bsRing.get$I(i)) continue;
-nRings.addLast$TV(bsRing);
+nRings.addLast$O(bsRing);
 if (j == 0) {
 p$1.addAzacyclicN$I.apply(this, [i]);
 continue out;
 }}
 var nr=nRings.size$();
 if (nr < 2) continue;
-var bsSubs=Clazz.new_($I$(1));
+var bsSubs=Clazz.new_($I$(1,1));
 var bonds=atom.getEdges$();
 for (var b=bonds.length; --b >= 0; ) if (bonds[b].isCovalent$()) bsSubs.set$I(bonds[b].getOtherNode$org_jmol_util_SimpleNode(atom).getIndex$());
 
-var bsBoth=Clazz.new_($I$(1));
-var bsAll=Clazz.new_($I$(1));
+var bsBoth=Clazz.new_($I$(1,1));
+var bsAll=Clazz.new_($I$(1,1));
 for (var j=0; j < nr - 1; j++) {
 var bs1=nRings.get$I(j);
 for (var k=j + 1; k < nr; k++) {
@@ -178,7 +158,7 @@ continue out;
 }, p$1);
 
 Clazz.newMeth(C$, 'addAzacyclicN$I', function (i) {
-if (this.bsAzacyclic == null ) this.bsAzacyclic=Clazz.new_($I$(1));
+if (this.bsAzacyclic == null ) this.bsAzacyclic=Clazz.new_($I$(1,1));
 this.bsAzacyclic.set$I(i);
 }, p$1);
 
@@ -259,19 +239,19 @@ var pts=Clazz.array($I$(7), [4]);
 var bonds=a.getEdges$();
 for (var n=bonds.length, i=n, pt=0; --i >= 0 && pt < 4 ; ) if (bonds[i].isCovalent$()) pts[pt++]=bonds[i].getOtherNode$org_jmol_util_SimpleNode(a).getXYZ$();
 
-var plane=$I$(8).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(pts[0], pts[1], pts[2], vNorm, this.vTemp, Clazz.new_($I$(9)));
-return $I$(8).distanceToPlane$javajs_util_P4$javajs_util_T3(plane, (pts[3] == null  ? a.getXYZ$() : pts[3]));
+var plane=(function(a,f){return f.apply(null,a)})([pts[0], pts[1], pts[2], vNorm, this.vTemp, Clazz.new_($I$(9,1))],$I$(8).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4);
+return (function(a,f){return f.apply(null,a)})([plane, (pts[3] == null  ? a.getXYZ$() : pts[3])],$I$(8).distanceToPlane$javajs_util_P4$javajs_util_T3);
 });
 
 Clazz.newMeth(C$, 'isCis$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom', function (a, b, c, d) {
-$I$(8).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(a.atom.getXYZ$(), b.atom.getXYZ$(), c.atom.getXYZ$(), this.vNorm, this.vTemp);
-var vNorm2=Clazz.new_($I$(2));
-$I$(8).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(b.atom.getXYZ$(), c.atom.getXYZ$(), d.atom.getXYZ$(), vNorm2, this.vTemp);
+(function(a,f){return f.apply(null,a)})([a.atom.getXYZ$(), b.atom.getXYZ$(), c.atom.getXYZ$(), this.vNorm, this.vTemp],$I$(8).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3);
+var vNorm2=Clazz.new_($I$(2,1));
+(function(a,f){return f.apply(null,a)})([b.atom.getXYZ$(), c.atom.getXYZ$(), d.atom.getXYZ$(), vNorm2, this.vTemp],$I$(8).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3);
 return (this.vNorm.dot$javajs_util_T3(vNorm2) > 0  ? 13 : 14);
 });
 
 Clazz.newMeth(C$, 'isPositiveTorsion$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom', function (a, b, c, d) {
-var angle=$I$(8).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(a.atom.getXYZ$(), b.atom.getXYZ$(), c.atom.getXYZ$(), d.atom.getXYZ$(), true);
+var angle=(function(a,f){return f.apply(null,a)})([a.atom.getXYZ$(), b.atom.getXYZ$(), c.atom.getXYZ$(), d.atom.getXYZ$(), true],$I$(8).computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z);
 return (angle > 0  ? 18 : 17);
 });
 
@@ -307,4 +287,4 @@ Clazz.newMeth(C$, 'setRule6Full$Z', function (rrrr) {
 this.testRule6Full=rrrr;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

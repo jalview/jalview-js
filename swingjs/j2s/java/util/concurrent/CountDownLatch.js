@@ -1,23 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),I$=[[0,['java.util.concurrent.CountDownLatch','.Sync']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CountDownLatch", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),I$=[[0,['java.util.concurrent.CountDownLatch','.Sync']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CountDownLatch", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Sync',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sync=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sync','java.util.concurrent.CountDownLatch.Sync']]]
 
 Clazz.newMeth(C$, 'c$$I', function (count) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (count < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["count < 0"]);
-this.sync=Clazz.new_($I$(1).c$$I,[count]);
+this.sync=Clazz.new_($I$(1,1).c$$I,[count]);
 }, 1);
 
 Clazz.newMeth(C$, 'await$', function () {
@@ -40,18 +37,17 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + "[Count = " + this.sync.getCount$() + "]" ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.CountDownLatch, "Sync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.CountDownLatch, "Sync", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.util.concurrent.locks.AbstractQueuedSynchronizer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$I', function (count) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setState$I(count);
 }, 1);
 
@@ -77,4 +73,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

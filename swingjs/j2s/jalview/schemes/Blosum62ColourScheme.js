@@ -1,19 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.awt.Color','jalview.analysis.scoremodels.ScoreModels','jalview.util.Comparison','jalview.schemes.JalviewColourScheme']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Blosum62ColourScheme", null, 'jalview.schemes.ResidueColourScheme');
-C$.LIGHT_BLUE=null;
-C$.DARK_BLUE=null;
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.awt.Color','jalview.analysis.scoremodels.ScoreModels','jalview.util.Comparison','jalview.schemes.JalviewColourScheme']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Blosum62ColourScheme", null, 'jalview.schemes.ResidueColourScheme');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LIGHT_BLUE=Clazz.new_($I$(1).c$$I$I$I,[204, 204, 255]);
-C$.DARK_BLUE=Clazz.new_($I$(1).c$$I$I$I,[154, 154, 255]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['LIGHT_BLUE','java.awt.Color','+DARK_BLUE']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getInstance$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI', function (view, coll) {
@@ -32,7 +29,7 @@ colour=C$.DARK_BLUE;
 } else {
 var score=0;
 for (var consensus, $consensus = 0, $$consensus = consensusResidue.toCharArray$(); $consensus<$$consensus.length&&((consensus=($$consensus[$consensus])),1);$consensus++) {
-score += sm.getPairwiseScore$(consensus, res);
+score += sm.getPairwiseScore$C$C(consensus, res);
 }
 if (score > 0 ) {
 colour=C$.LIGHT_BLUE;
@@ -52,5 +49,10 @@ return $I$(4).Blosum62.toString();
 Clazz.newMeth(C$, 'isSimple$', function () {
 return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.LIGHT_BLUE=Clazz.new_($I$(1,1).c$$I$I$I,[204, 204, 255]);
+C$.DARK_BLUE=Clazz.new_($I$(1,1).c$$I$I$I,[154, 154, 255]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

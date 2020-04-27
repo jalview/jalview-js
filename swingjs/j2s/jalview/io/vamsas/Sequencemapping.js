@@ -1,31 +1,23 @@
-(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'jalview.bin.Cache','jalview.util.MapList','uk.ac.vamsas.objects.core.SequenceMapping','jalview.datamodel.AlignedCodonFrame','jalview.structure.StructureSelectionManager','jalview.gui.Desktop','java.util.ArrayList','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Sequencemapping", null, 'jalview.io.vamsas.Rangetype');
+(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'jalview.bin.Cache','jalview.util.MapList','uk.ac.vamsas.objects.core.SequenceMapping','jalview.datamodel.AlignedCodonFrame','jalview.structure.StructureSelectionManager','jalview.gui.Desktop','java.util.ArrayList','java.util.Vector']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Sequencemapping", null, 'jalview.io.vamsas.Rangetype');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.from=null;
-this.ds=null;
-this.mjvmapping=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 {
 $I$(1).log.error$O("Not implemented: Jalview Update Alcodon Mapping:TODO!");
 }
-}, 1);
+},1);
+
+C$.$fields$=[['O',['from','uk.ac.vamsas.objects.core.SequenceType','ds','uk.ac.vamsas.objects.core.DataSet','mjvmapping','jalview.datamodel.Mapping']]]
 
 Clazz.newMeth(C$, 'c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_SequenceMapping', function (datastore, sequenceMapping) {
-C$.superclazz.c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_client_Vobject$Class.apply(this, [datastore, sequenceMapping, Clazz.getClass($I$(2))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_client_Vobject$Class.apply(this,[datastore, sequenceMapping, Clazz.getClass($I$(2))]);C$.$init$.apply(this);
 this.doJvUpdate$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_VamsasAppDatastore$jalview_datamodel_Mapping$uk_ac_vamsas_objects_core_SequenceType$uk_ac_vamsas_objects_core_DataSet', function (datastore, mjvmapping, from, ds) {
-C$.superclazz.c$$jalview_io_VamsasAppDatastore$O$Class.apply(this, [datastore, mjvmapping.getMap$(), Clazz.getClass($I$(3))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_VamsasAppDatastore$O$Class.apply(this,[datastore, mjvmapping.getMap$(), Clazz.getClass($I$(3))]);C$.$init$.apply(this);
 this.from=from;
 this.ds=ds;
 this.mjvmapping=mjvmapping;
@@ -76,7 +68,7 @@ var to=this.getjv2vObj$O(jvto);
 if (to == null ) {
 $I$(1).log.warn$O("FIXME NONFATAL - do a second update: Ignoring Forward Reference to seuqence not yet bound to vamsas seuqence object");
 return;
-}var sequenceMapping=Clazz.new_($I$(3));
+}var sequenceMapping=Clazz.new_($I$(3,1));
 sequenceMapping.setLoc$O(from);
 sequenceMapping.setMap$O(to);
 var dnaToProt=false;
@@ -153,7 +145,7 @@ dnaToProt=true;
 sense=false;
 }}var dsLoc=this.getvObj2jv$uk_ac_vamsas_client_Vobject(sdloc.getV_parent$());
 var dsMap=this.getvObj2jv$uk_ac_vamsas_client_Vobject(sdmap.getV_parent$());
-var acf=Clazz.new_($I$(4));
+var acf=Clazz.new_($I$(4,1));
 if (dsLoc != null  && dsLoc !== dsMap  ) {
 dsLoc.addCodonFrame$jalview_datamodel_AlignedCodonFrame(acf);
 }if (dsMap != null ) {
@@ -162,7 +154,7 @@ dsMap.addCodonFrame$jalview_datamodel_AlignedCodonFrame(acf);
 if (dnaToProt) {
 if (!sense) {
 mapping=this.parsemapType$uk_ac_vamsas_objects_core_MapType$I$I(sequenceMapping, 1, 3);
-mapping=Clazz.new_($I$(2).c$$java_util_List$java_util_List$I$I,[mapping.getToRanges$(), mapping.getFromRanges$(), mapping.getToRatio$(), mapping.getFromRatio$()]);
+mapping=Clazz.new_([mapping.getToRanges$(), mapping.getFromRanges$(), mapping.getToRatio$(), mapping.getFromRatio$()],$I$(2,1).c$$java_util_List$java_util_List$I$I);
 acf.addMap$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList(to, from, mapping);
 } else {
 mapping=this.parsemapType$uk_ac_vamsas_objects_core_MapType$I$I(sequenceMapping, 3, 1);
@@ -171,7 +163,7 @@ acf.addMap$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_
 mapping=this.parsemapType$uk_ac_vamsas_objects_core_MapType$I$I(sequenceMapping, 1, 1);
 acf.addMap$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList(from, to, mapping);
 }this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(mapping, sequenceMapping);
-$I$(5).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider($I$(6).instance).registerMapping$jalview_datamodel_AlignedCodonFrame(acf);
+$I$(5,"getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider",[$I$(6).instance]).registerMapping$jalview_datamodel_AlignedCodonFrame(acf);
 }, p$1);
 
 Clazz.newMeth(C$, 'matchConjugateDBRefs$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$jalview_util_MapList', function (from, to, smap) {
@@ -182,9 +174,9 @@ $I$(1).log.debug$O("Not matching conjugate refs for " + from.getName$() + " and 
 }if ($I$(1).log.isDebugEnabled$()) {
 $I$(1).log.debug$O("Matching conjugate refs for " + from.getName$() + " and " + to.getName$() );
 }var fdb=from.getDBRefs$();
-var tdb=Clazz.new_($I$(7).c$$java_util_Collection,[to.getDBRefs$()]);
+var tdb=Clazz.new_([to.getDBRefs$()],$I$(7,1).c$$java_util_Collection);
 var tdblen=to.getDBRefs$().size$();
-var matched=Clazz.new_($I$(8));
+var matched=Clazz.new_($I$(8,1));
 var smapI=smap.getInverse$();
 for (var f=0, fn=fdb.size$(); f < fn; f++) {
 var fe=fdb.get$I(f);
@@ -212,4 +204,4 @@ fmp.setTo$jalview_datamodel_SequenceI(to);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

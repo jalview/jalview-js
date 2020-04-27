@@ -1,40 +1,26 @@
-(function(){var P$=Clazz.newPackage("jalview.renderer"),p$1={},I$=[[0,'java.beans.PropertyChangeSupport','jalview.renderer.seqfeatures.FeatureColourFinder','java.awt.image.BufferedImage','java.awt.Color','java.awt.AlphaComposite']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OverviewRenderer");
+(function(){var P$=Clazz.newPackage("jalview.renderer"),p$1={},I$=[[0,'java.beans.PropertyChangeSupport','jalview.renderer.seqfeatures.FeatureColourFinder','java.awt.image.BufferedImage','java.awt.Color','java.awt.AlphaComposite']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OverviewRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.TRANSPARENCY=0;
-this.changeSupport=null;
-this.finder=null;
-this.miniMe=null;
-this.pixelsPerCol=0;
-this.pixelsPerSeq=0;
-this.graphHeight=0;
-this.redraw=false;
-this.al=null;
-this.shader=null;
-this.resColFinder=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.TRANSPARENCY=0.5;
-this.changeSupport=Clazz.new_($I$(1).c$$O,[this]);
+this.changeSupport=Clazz.new_($I$(1,1).c$$O,[this]);
 this.redraw=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['redraw'],'F',['TRANSPARENCY','pixelsPerCol','pixelsPerSeq'],'I',['graphHeight'],'O',['changeSupport','java.beans.PropertyChangeSupport','finder','jalview.renderer.seqfeatures.FeatureColourFinder','miniMe','java.awt.image.BufferedImage','al','jalview.datamodel.AlignmentI','shader','jalview.renderer.ResidueShaderI','resColFinder','jalview.renderer.OverviewResColourFinder']]]
 
 Clazz.newMeth(C$, 'c$$jalview_renderer_seqfeatures_FeatureRenderer$jalview_viewmodel_OverviewDimensions$jalview_datamodel_AlignmentI$jalview_renderer_ResidueShaderI$jalview_renderer_OverviewResColourFinder', function (fr, od, alignment, resshader, colFinder) {
-C$.$init$.apply(this);
-this.finder=Clazz.new_($I$(2).c$$jalview_api_FeatureRenderer,[fr]);
+;C$.$init$.apply(this);
+this.finder=Clazz.new_($I$(2,1).c$$jalview_api_FeatureRenderer,[fr]);
 this.resColFinder=colFinder;
 this.al=alignment;
 this.shader=resshader;
 this.pixelsPerCol=od.getPixelsPerCol$();
 this.pixelsPerSeq=od.getPixelsPerSeq$();
 this.graphHeight=od.getGraphHeight$();
-this.miniMe=Clazz.new_($I$(3).c$$I$I$I,[od.getWidth$(), od.getHeight$(), 1]);
+this.miniMe=Clazz.new_([od.getWidth$(), od.getHeight$(), 1],$I$(3,1).c$$I$I$I);
 }, 1);
 
 Clazz.newMeth(C$, 'draw$jalview_api_AlignmentRowsCollectionI$jalview_api_AlignmentColsCollectionI', function (rows, cols) {
@@ -107,7 +93,7 @@ g.drawImage$java_awt_Image$I$I$I$I$java_awt_image_ImageObserver(mask, 0, 0, this
 }}, p$1);
 
 Clazz.newMeth(C$, 'buildHiddenImage$jalview_api_AlignmentRowsCollectionI$jalview_api_AlignmentColsCollectionI$I$I', function (rows, cols, width, height) {
-var hiddenImage=Clazz.new_($I$(3).c$$I$I$I,[width, height, 2]);
+var hiddenImage=Clazz.new_($I$(3,1).c$$I$I$I,[width, height, 2]);
 var colIndex=0;
 var pixelCol=0;
 var hidden=this.resColFinder.getHiddenColour$();
@@ -184,4 +170,4 @@ this.changeSupport.removePropertyChangeListener$java_beans_PropertyChangeListene
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

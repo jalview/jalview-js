@@ -1,53 +1,43 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'java.util.Vector','com.stevesoft.pat.Regex']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RegexTokenizer", null, null, 'java.util.Enumeration');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'java.util.Vector','com.stevesoft.pat.Regex']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RegexTokenizer", null, null, 'java.util.Enumeration');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.toParse=null;
-this.r=null;
-this.count=0;
-this.v=null;
-this.vi=null;
-this.pos=0;
-this.offset=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.count=0;
-this.v=Clazz.new_($I$(1));
-this.vi=Clazz.new_($I$(1));
+this.v=Clazz.new_($I$(1,1));
+this.vi=Clazz.new_($I$(1,1));
 this.pos=0;
 this.offset=1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['count','pos','offset'],'S',['toParse'],'O',['r','com.stevesoft.pat.Regex','v','java.util.Vector','+vi']]]
 
 Clazz.newMeth(C$, 'getMore$', function () {
 var s=this.r.right$();
 if (this.r.searchFrom$S$I(this.toParse, this.pos)) {
-this.v.addElement$TE(this.r.left$().substring$I(this.pos));
-this.vi.addElement$TE( new Integer(this.r.matchFrom$() + this.r.charsMatched$()));
+this.v.addElement$O(this.r.left$().substring$I(this.pos));
+this.vi.addElement$O(Integer.valueOf$I(this.r.matchFrom$() + this.r.charsMatched$()));
 for (var i=0; i < this.r.numSubs$(); i++) {
 if (this.r.substring$() != null ) {
-this.v.addElement$TE(this.r.substring$I(i + this.offset));
-this.vi.addElement$TE( new Integer(this.r.matchFrom$I(i + this.offset) + this.r.charsMatched$I(i + this.offset)));
+this.v.addElement$O(this.r.substring$I(i + this.offset));
+this.vi.addElement$O(Integer.valueOf$I(this.r.matchFrom$I(i + this.offset) + this.r.charsMatched$I(i + this.offset)));
 }}
 this.pos=this.r.matchFrom$() + this.r.charsMatched$();
 } else if (s != null ) {
-this.v.addElement$TE(s);
+this.v.addElement$O(s);
 }});
 
 Clazz.newMeth(C$, 'c$$S$S', function (txt, ptrn) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.toParse=txt;
-this.r=Clazz.new_($I$(2).c$$S,[ptrn]);
+this.r=Clazz.new_($I$(2,1).c$$S,[ptrn]);
 this.offset=$I$(2).BackRefOffset;
 this.getMore$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$com_stevesoft_pat_Regex', function (txt, r) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.toParse=txt;
 this.r=r;
 this.offset=$I$(2).BackRefOffset;
@@ -114,4 +104,4 @@ return ret;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

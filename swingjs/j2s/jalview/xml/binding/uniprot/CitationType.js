@@ -1,32 +1,12 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CitationType");
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CitationType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.title=null;
-this.editorList=null;
-this.authorList=null;
-this.locator=null;
-this.dbReference=null;
-this.type=null;
-this.date=null;
-this.name=null;
-this.volume=null;
-this.first=null;
-this.last=null;
-this.publisher=null;
-this.city=null;
-this.db=null;
-this.number=null;
-this.institute=null;
-this.country=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['title','locator','type','date','name','volume','first','last','publisher','city','db','number','institute','country'],'O',['editorList','jalview.xml.binding.uniprot.NameListType','+authorList','dbReference','java.util.List']]]
 
 Clazz.newMeth(C$, 'getTitle$', function () {
 return this.title;
@@ -62,7 +42,7 @@ this.locator=value;
 
 Clazz.newMeth(C$, 'getDbReference$', function () {
 if (this.dbReference == null ) {
-this.dbReference=Clazz.new_($I$(1));
+this.dbReference=Clazz.new_($I$(1,1));
 }return this.dbReference;
 });
 
@@ -161,25 +141,26 @@ return this.country;
 Clazz.newMeth(C$, 'setCountry$S', function (value) {
 this.country=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.CitationType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="citationType" propOrder={"title"  "editorList"  "authorList"  "locator"  "dbReference"  } )']],
-  [['type','String'],['@XmlAttribute(name="type" required="true" )']],
-  [['date','.'],['@XmlAttribute(name="date" )']],
-  [['name','.'],['@XmlAttribute(name="name" )']],
-  [['volume','.'],['@XmlAttribute(name="volume" )']],
-  [['first','.'],['@XmlAttribute(name="first" )']],
-  [['last','.'],['@XmlAttribute(name="last" )']],
-  [['publisher','.'],['@XmlAttribute(name="publisher" )']],
-  [['city','.'],['@XmlAttribute(name="city" )']],
-  [['db','.'],['@XmlAttribute(name="db" )']],
-  [['number','.'],['@XmlAttribute(name="number" )']],
-  [['institute','.'],['@XmlAttribute(name="institute" )']],
-  [['country','.'],['@XmlAttribute(name="country" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.CitationType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="citationType" propOrder={"title"  "editorList"  "authorList"  "locator"  "dbReference"  } ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" required="true" ']],
+  [['date','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="date" ']],
+  [['name','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" ']],
+  [['volume','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="volume" ']],
+  [['first','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="first" ']],
+  [['last','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="last" ']],
+  [['publisher','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="publisher" ']],
+  [['city','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="city" ']],
+  [['db','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="db" ']],
+  [['number','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="number" ']],
+  [['institute','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="institute" ']],
+  [['country','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="country" ']],
   [['title','String'],['@XmlElement']],
   [['editorList','jalview.xml.binding.uniprot.NameListType'],['@XmlElement']],
   [['authorList','jalview.xml.binding.uniprot.NameListType'],['@XmlElement']],
   [['locator','String'],['@XmlElement']],
-  [['dbReference','java.util.List<jalview.xml.binding.uniprot.DbReferenceType>'],['@XmlElement']]];
+  [['dbReference','java.util.List<jalview.xml.binding.uniprot.DbReferenceType>'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

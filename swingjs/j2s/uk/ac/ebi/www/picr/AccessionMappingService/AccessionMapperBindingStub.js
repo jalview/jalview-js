@@ -1,61 +1,50 @@
-(function(){var P$=Clazz.newPackage("uk.ac.ebi.www.picr.AccessionMappingService"),I$=[[0,'org.apache.axis.description.OperationDesc','java.util.Vector','javax.xml.namespace.QName','uk.ac.ebi.picr.model.UPEntry','org.apache.axis.enum.Style','org.apache.axis.enum.Use','org.apache.axis.client.Service','org.apache.axis.encoding.ser.BeanSerializerFactory','org.apache.axis.encoding.ser.BeanDeserializerFactory','org.apache.axis.encoding.ser.EnumSerializerFactory','org.apache.axis.encoding.ser.EnumDeserializerFactory','org.apache.axis.encoding.ser.ArraySerializerFactory','org.apache.axis.encoding.ser.ArrayDeserializerFactory','org.apache.axis.encoding.ser.SimpleSerializerFactory','org.apache.axis.encoding.ser.SimpleDeserializerFactory','org.apache.axis.encoding.ser.SimpleListSerializerFactory','org.apache.axis.encoding.ser.SimpleListDeserializerFactory','uk.ac.ebi.picr.model.CrossReference','org.apache.axis.AxisFault','Boolean','org.apache.axis.soap.SOAPConstants','org.apache.axis.utils.JavaUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AccessionMapperBindingStub", null, 'org.apache.axis.client.Stub', 'uk.ac.ebi.www.picr.AccessionMappingService.AccessionMapperInterface');
-C$._operations=null;
+(function(){var P$=Clazz.newPackage("uk.ac.ebi.www.picr.AccessionMappingService"),I$=[[0,'org.apache.axis.description.OperationDesc','java.util.Vector','javax.xml.namespace.QName','uk.ac.ebi.picr.model.UPEntry','org.apache.axis.enum.Style','org.apache.axis.enum.Use','org.apache.axis.client.Service','org.apache.axis.encoding.ser.BeanSerializerFactory','org.apache.axis.encoding.ser.BeanDeserializerFactory','org.apache.axis.encoding.ser.EnumSerializerFactory','org.apache.axis.encoding.ser.EnumDeserializerFactory','org.apache.axis.encoding.ser.ArraySerializerFactory','org.apache.axis.encoding.ser.ArrayDeserializerFactory','org.apache.axis.encoding.ser.SimpleSerializerFactory','org.apache.axis.encoding.ser.SimpleDeserializerFactory','org.apache.axis.encoding.ser.SimpleListSerializerFactory','org.apache.axis.encoding.ser.SimpleListDeserializerFactory','uk.ac.ebi.picr.model.CrossReference','org.apache.axis.AxisFault','Boolean','org.apache.axis.soap.SOAPConstants','org.apache.axis.utils.JavaUtils']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AccessionMapperBindingStub", null, 'org.apache.axis.client.Stub', 'uk.ac.ebi.www.picr.AccessionMappingService.AccessionMapperInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-C$._operations=Clazz.array($I$(1), [3]);
-C$._initOperationDesc1$();
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cachedSerClasses=null;
-this.cachedSerQNames=null;
-this.cachedSerFactories=null;
-this.cachedDeserFactories=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.cachedSerClasses=Clazz.new_($I$(2));
-this.cachedSerQNames=Clazz.new_($I$(2));
-this.cachedSerFactories=Clazz.new_($I$(2));
-this.cachedDeserFactories=Clazz.new_($I$(2));
-}, 1);
+this.cachedSerClasses=Clazz.new_($I$(2,1));
+this.cachedSerQNames=Clazz.new_($I$(2,1));
+this.cachedSerFactories=Clazz.new_($I$(2,1));
+this.cachedDeserFactories=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['O',['cachedSerClasses','java.util.Vector','+cachedSerQNames','+cachedSerFactories','+cachedDeserFactories']]
+,['O',['_operations','org.apache.axis.description.OperationDesc[]']]]
 
 Clazz.newMeth(C$, '_initOperationDesc1$', function () {
 var oper;
-oper=Clazz.new_($I$(1));
+oper=Clazz.new_($I$(1,1));
 oper.setName$S("getUPIForSequence");
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "sequence"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), ($b$[0] = 1, $b$[0]), false, false);
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "searchDatabases"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.array(String, -1), ($b$[0] = 1, $b$[0]), false, false);
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "taxonId"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), ($b$[0] = 1, $b$[0]), false, false);
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "onlyActive"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]), Boolean.TYPE, ($b$[0] = 1, $b$[0]), false, false);
-oper.setReturnType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://model.picr.ebi.ac.uk", "UPEntry"]));
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "sequence"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), 1, false, false);
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "searchDatabases"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.array(String, -1), 1, false, false);
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "taxonId"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), 1, false, false);
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "onlyActive"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]), Boolean.TYPE, 1, false, false);
+oper.setReturnType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://model.picr.ebi.ac.uk", "UPEntry"]));
 oper.setReturnClass$Class(Clazz.getClass($I$(4)));
-oper.setReturnQName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForSequenceReturn"]));
+oper.setReturnQName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForSequenceReturn"]));
 oper.setStyle$org_apache_axis_enum_Style($I$(5).WRAPPED);
 oper.setUse$org_apache_axis_enum_Use($I$(6).LITERAL);
 C$._operations[0]=oper;
-oper=Clazz.new_($I$(1));
+oper=Clazz.new_($I$(1,1));
 oper.setName$S("getUPIForAccession");
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "accession"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), ($b$[0] = 1, $b$[0]), false, false);
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "ac_version"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), ($b$[0] = 1, $b$[0]), false, false);
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "searchDatabases"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.array(String, -1), ($b$[0] = 1, $b$[0]), false, false);
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "taxonId"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), ($b$[0] = 1, $b$[0]), false, false);
-oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "onlyActive"]), Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]), Boolean.TYPE, ($b$[0] = 1, $b$[0]), false, false);
-oper.setReturnType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://model.picr.ebi.ac.uk", "UPEntry"]));
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "accession"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), 1, false, false);
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "ac_version"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), 1, false, false);
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "searchDatabases"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.array(String, -1), 1, false, false);
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "taxonId"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]), Clazz.getClass(String), 1, false, false);
+oper.addParameter$javax_xml_namespace_QName$javax_xml_namespace_QName$Class$B$Z$Z(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "onlyActive"]), Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "boolean"]), Boolean.TYPE, 1, false, false);
+oper.setReturnType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://model.picr.ebi.ac.uk", "UPEntry"]));
 oper.setReturnClass$Class(Clazz.array($I$(4), -1));
-oper.setReturnQName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForAccessionReturn"]));
+oper.setReturnQName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForAccessionReturn"]));
 oper.setStyle$org_apache_axis_enum_Style($I$(5).WRAPPED);
 oper.setUse$org_apache_axis_enum_Use($I$(6).LITERAL);
 C$._operations[1]=oper;
-oper=Clazz.new_($I$(1));
+oper=Clazz.new_($I$(1,1));
 oper.setName$S("getMappedDatabaseNames");
-oper.setReturnType$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
+oper.setReturnType$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.w3.org/2001/XMLSchema", "string"]));
 oper.setReturnClass$Class(Clazz.array(String, -1));
-oper.setReturnQName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "mappedDatabases"]));
+oper.setReturnQName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "mappedDatabases"]));
 oper.setStyle$org_apache_axis_enum_Style($I$(5).WRAPPED);
 oper.setUse$org_apache_axis_enum_Use($I$(6).LITERAL);
 C$._operations[2]=oper;
@@ -71,9 +60,9 @@ this.cachedEndpoint=endpointURL;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_xml_rpc_Service', function (service) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (service == null ) {
-this.service=Clazz.new_($I$(7));
+this.service=Clazz.new_($I$(7,1));
 } else {
 this.service=service;
 }var cls;
@@ -88,18 +77,18 @@ var simplesf=Clazz.getClass($I$(14));
 var simpledf=Clazz.getClass($I$(15));
 var simplelistsf=Clazz.getClass($I$(16));
 var simplelistdf=Clazz.getClass($I$(17));
-qName=Clazz.new_($I$(3).c$$S$S,["http://model.picr.ebi.ac.uk", "UPEntry"]);
-this.cachedSerQNames.add$TE(qName);
+qName=Clazz.new_($I$(3,1).c$$S$S,["http://model.picr.ebi.ac.uk", "UPEntry"]);
+this.cachedSerQNames.add$O(qName);
 cls=Clazz.getClass($I$(4));
-this.cachedSerClasses.add$TE(cls);
-this.cachedSerFactories.add$TE(beansf);
-this.cachedDeserFactories.add$TE(beandf);
-qName=Clazz.new_($I$(3).c$$S$S,["http://model.picr.ebi.ac.uk", "CrossReference"]);
-this.cachedSerQNames.add$TE(qName);
+this.cachedSerClasses.add$O(cls);
+this.cachedSerFactories.add$O(beansf);
+this.cachedDeserFactories.add$O(beandf);
+qName=Clazz.new_($I$(3,1).c$$S$S,["http://model.picr.ebi.ac.uk", "CrossReference"]);
+this.cachedSerQNames.add$O(qName);
 cls=Clazz.getClass($I$(18));
-this.cachedSerClasses.add$TE(cls);
-this.cachedSerFactories.add$TE(beansf);
-this.cachedDeserFactories.add$TE(beandf);
+this.cachedSerClasses.add$O(cls);
+this.cachedSerFactories.add$O(beansf);
+this.cachedDeserFactories.add$O(beandf);
 }, 1);
 
 Clazz.newMeth(C$, 'createCall$', function () {
@@ -134,7 +123,7 @@ _call.registerTypeMapping$Class$javax_xml_namespace_QName$Class$Class$Z(cls, qNa
 }
 }}return _call;
 } catch (_t) {
-throw Clazz.new_($I$(19).c$$S$Throwable,["Failure trying to get the Call object", _t]);
+throw Clazz.new_($I$(19,1).c$$S$Throwable,["Failure trying to get the Call object", _t]);
 }
 });
 
@@ -149,10 +138,10 @@ _call.setEncodingStyle$S(null);
 _call.setProperty$S$O("sendXsiTypes", $I$(20).FALSE);
 _call.setProperty$S$O("sendMultiRefs", $I$(20).FALSE);
 _call.setSOAPVersion$org_apache_axis_soap_SOAPConstants($I$(21).SOAP11_CONSTANTS);
-_call.setOperationName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForSequence"]));
+_call.setOperationName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForSequence"]));
 this.setRequestHeaders$org_apache_axis_client_Call(_call);
 this.setAttachments$org_apache_axis_client_Call(_call);
-var _resp=_call.invoke$OA(Clazz.array(java.lang.Object, -1, [sequence, searchDatabases, taxonId,  Boolean.from(onlyActive)]));
+var _resp=_call.invoke$OA(Clazz.array(java.lang.Object, -1, [sequence, searchDatabases, taxonId, $I$(20).valueOf$Z(onlyActive)]));
 if (Clazz.instanceOf(_resp, "java.rmi.RemoteException")) {
 throw _resp;
 } else {
@@ -161,7 +150,7 @@ try {
 return _resp;
 } catch (_exception) {
 if (Clazz.exceptionOf(_exception,"Exception")){
-return $I$(22).convert$O$Class(_resp, Clazz.getClass($I$(4)));
+return $I$(22,"convert$O$Class",[_resp, Clazz.getClass($I$(4))]);
 } else {
 throw _exception;
 }
@@ -179,10 +168,10 @@ _call.setEncodingStyle$S(null);
 _call.setProperty$S$O("sendXsiTypes", $I$(20).FALSE);
 _call.setProperty$S$O("sendMultiRefs", $I$(20).FALSE);
 _call.setSOAPVersion$org_apache_axis_soap_SOAPConstants($I$(21).SOAP11_CONSTANTS);
-_call.setOperationName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForAccession"]));
+_call.setOperationName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getUPIForAccession"]));
 this.setRequestHeaders$org_apache_axis_client_Call(_call);
 this.setAttachments$org_apache_axis_client_Call(_call);
-var _resp=_call.invoke$OA(Clazz.array(java.lang.Object, -1, [accession, ac_version, searchDatabases, taxonId,  Boolean.from(onlyActive)]));
+var _resp=_call.invoke$OA(Clazz.array(java.lang.Object, -1, [accession, ac_version, searchDatabases, taxonId, $I$(20).valueOf$Z(onlyActive)]));
 if (Clazz.instanceOf(_resp, "java.rmi.RemoteException")) {
 throw _resp;
 } else {
@@ -191,7 +180,7 @@ try {
 return _resp;
 } catch (_exception) {
 if (Clazz.exceptionOf(_exception,"Exception")){
-return $I$(22).convert$O$Class(_resp, Clazz.array($I$(4), -1));
+return $I$(22,"convert$O$Class",[_resp, Clazz.array($I$(4), -1)]);
 } else {
 throw _exception;
 }
@@ -209,7 +198,7 @@ _call.setEncodingStyle$S(null);
 _call.setProperty$S$O("sendXsiTypes", $I$(20).FALSE);
 _call.setProperty$S$O("sendMultiRefs", $I$(20).FALSE);
 _call.setSOAPVersion$org_apache_axis_soap_SOAPConstants($I$(21).SOAP11_CONSTANTS);
-_call.setOperationName$javax_xml_namespace_QName(Clazz.new_($I$(3).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getMappedDatabaseNames"]));
+_call.setOperationName$javax_xml_namespace_QName(Clazz.new_($I$(3,1).c$$S$S,["http://www.ebi.ac.uk/picr/AccessionMappingService", "getMappedDatabaseNames"]));
 this.setRequestHeaders$org_apache_axis_client_Call(_call);
 this.setAttachments$org_apache_axis_client_Call(_call);
 var _resp=_call.invoke$OA(Clazz.array(java.lang.Object, -1, []));
@@ -221,12 +210,18 @@ try {
 return _resp;
 } catch (_exception) {
 if (Clazz.exceptionOf(_exception,"Exception")){
-return $I$(22).convert$O$Class(_resp, Clazz.array(String, -1));
+return $I$(22,"convert$O$Class",[_resp, Clazz.array(String, -1)]);
 } else {
 throw _exception;
 }
 }
 }});
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+C$._operations=Clazz.array($I$(1), [3]);
+C$._initOperationDesc1$();
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

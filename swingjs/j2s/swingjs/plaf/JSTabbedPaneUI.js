@@ -1,64 +1,10 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},p$4={},p$5={},p$6={},p$7={},I$=[[0,'java.awt.Dimension','javax.swing.SwingUtilities','java.awt.Rectangle','java.awt.Point','swingjs.plaf.JSGraphicsUtils',['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabViewport'],['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabPanel'],['swingjs.plaf.JSTabbedPaneUI','.CroppedEdge'],'java.awt.event.ActionEvent','javax.swing.UIManager','swingjs.plaf.BasicHTML','java.awt.JSComponent','java.awt.Insets','swingjs.api.js.DOMNode',['swingjs.plaf.JSTabbedPaneUI','.Actions'],['swingjs.plaf.JSTabbedPaneUI','.TabbedPaneScrollLayout'],['swingjs.plaf.JSTabbedPaneUI','.TabbedPaneLayout'],['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabSupport'],['swingjs.plaf.JSTabbedPaneUI','.TabContainer'],['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabButton'],'javax.swing.LookAndFeel','Boolean',['swingjs.plaf.JSTabbedPaneUI','.Handler'],'swingjs.plaf.LazyActionMap','sun.swing.DefaultLookup','javax.swing.KeyStroke','java.util.Hashtable','javax.swing.plaf.ComponentInputMapUIResource',['java.awt.Component','.BaselineResizeBehavior'],'sun.swing.SwingUtilities2','java.awt.Polygon','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSTabbedPaneUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},p$4={},p$5={},p$6={},p$7={},I$=[[0,'java.awt.Dimension','javax.swing.SwingUtilities','java.awt.Rectangle','java.awt.Point','swingjs.plaf.JSGraphicsUtils',['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabViewport'],['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabPanel'],['swingjs.plaf.JSTabbedPaneUI','.CroppedEdge'],'java.awt.event.ActionEvent','javax.swing.UIManager','swingjs.plaf.BasicHTML','java.awt.JSComponent','swingjs.plaf.JSTabbedPaneUI','java.awt.Insets','swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode',['swingjs.plaf.JSTabbedPaneUI','.Actions'],['swingjs.plaf.JSTabbedPaneUI','.TabbedPaneScrollLayout'],['swingjs.plaf.JSTabbedPaneUI','.TabbedPaneLayout'],['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabSupport'],['swingjs.plaf.JSTabbedPaneUI','.TabContainer'],['swingjs.plaf.JSTabbedPaneUI','.ScrollableTabButton'],'javax.swing.LookAndFeel',['swingjs.plaf.JSTabbedPaneUI','.Handler'],'swingjs.plaf.LazyActionMap','sun.swing.DefaultLookup','javax.swing.KeyStroke','java.util.Hashtable','javax.swing.plaf.ComponentInputMapUIResource',['java.awt.Component','.BaselineResizeBehavior'],'sun.swing.SwingUtilities2','java.awt.Polygon','java.util.Vector']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSTabbedPaneUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSPanelUI', 'javax.swing.SwingConstants');
-C$.xCropLen=null;
-C$.yCropLen=null;
+C$.$classes$=[['Actions',10],['TabbedPaneLayout',1],['TabbedPaneScrollLayout',2],['ScrollableTabSupport',2],['ScrollableTabViewport',2],['ScrollableTabPanel',2],['ScrollableTabButton',2],['Handler',2],['PropertyChangeHandler',1],['TabSelectionHandler',1],['MouseHandler',1],['FocusHandler',1],['TabContainer',2],['CroppedEdge',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.xCropLen=Clazz.array(Integer.TYPE, -1, [1, 1, 0, 0, 1, 1, 2, 2]);
-C$.yCropLen=Clazz.array(Integer.TYPE, -1, [0, 3, 3, 6, 6, 9, 9, 12]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tabPane=null;
-this.highlight=null;
-this.lightHighlight=null;
-this.shadow=null;
-this.darkShadow=null;
-this.focus=null;
-this.selectedColor=null;
-this.textIconGap=0;
-this.tabRunOverlay=0;
-this.tabInsets=null;
-this.selectedTabPadInsets=null;
-this.tabAreaInsets=null;
-this.contentBorderInsets=null;
-this.tabsOverlapBorder=false;
-this.tabsOpaque=false;
-this.contentOpaque=false;
-this.upKey=null;
-this.downKey=null;
-this.leftKey=null;
-this.rightKey=null;
-this.tabRuns=null;
-this.runCount=0;
-this.selectedRun=0;
-this.rects=null;
-this.maxTabHeight=0;
-this.maxTabWidth=0;
-this.tabChangeListener=null;
-this.propertyChangeListener=null;
-this.mouseListener=null;
-this.focusListener=null;
-this.currentPadInsets=null;
-this.currentTabAreaInsets=null;
-this.visibleComponent=null;
-this.htmlViews=null;
-this.mnemonicToIndexMap=null;
-this.mnemonicInputMap=null;
-this.tabScroller=null;
-this.tabContainer=null;
-this.calcRect=null;
-this.focusIndex=0;
-this.handler=null;
-this.rolloverTabIndex=0;
-this.isRunsDirty=false;
-this.calculatedBaseline=false;
-this.baseline=0;
-this.$$frameZ=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tabsOpaque=true;
@@ -67,14 +13,17 @@ this.tabRuns=Clazz.array(Integer.TYPE, [10]);
 this.runCount=0;
 this.selectedRun=-1;
 this.rects=Clazz.array($I$(3), [0]);
-this.currentPadInsets=Clazz.new_($I$(13).c$$I$I$I$I,[0, 0, 0, 0]);
-this.currentTabAreaInsets=Clazz.new_($I$(13).c$$I$I$I$I,[0, 0, 0, 0]);
-this.calcRect=Clazz.new_($I$(3).c$$I$I$I$I,[0, 0, 0, 0]);
+this.currentPadInsets=Clazz.new_($I$(14,1).c$$I$I$I$I,[0, 0, 0, 0]);
+this.currentTabAreaInsets=Clazz.new_($I$(14,1).c$$I$I$I$I,[0, 0, 0, 0]);
+this.calcRect=Clazz.new_($I$(3,1).c$$I$I$I$I,[0, 0, 0, 0]);
 this.$$frameZ=10000;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['tabsOverlapBorder','tabsOpaque','contentOpaque','isRunsDirty','calculatedBaseline'],'I',['textIconGap','tabRunOverlay','runCount','selectedRun','maxTabHeight','maxTabWidth','focusIndex','rolloverTabIndex','baseline','$$frameZ'],'O',['tabPane','javax.swing.JTabbedPane','highlight','java.awt.Color','+lightHighlight','+shadow','+darkShadow','+focus','+selectedColor','tabInsets','java.awt.Insets','+selectedTabPadInsets','+tabAreaInsets','+contentBorderInsets','upKey','javax.swing.KeyStroke','+downKey','+leftKey','+rightKey','tabRuns','int[]','rects','java.awt.Rectangle[]','tabChangeListener','javax.swing.event.ChangeListener','propertyChangeListener','java.beans.PropertyChangeListener','mouseListener','java.awt.event.MouseListener','focusListener','java.awt.event.FocusListener','currentPadInsets','java.awt.Insets','+currentTabAreaInsets','visibleComponent','java.awt.Component','htmlViews','java.util.Vector','mnemonicToIndexMap','java.util.Hashtable','mnemonicInputMap','javax.swing.InputMap','tabScroller','swingjs.plaf.JSTabbedPaneUI.ScrollableTabSupport','tabContainer','swingjs.plaf.JSTabbedPaneUI.TabContainer','calcRect','java.awt.Rectangle','handler','swingjs.plaf.JSTabbedPaneUI.Handler']]
+,['O',['xCropLen','int[]','+yCropLen']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.isContainer=true;
 this.setDoc$();
 }, 1);
@@ -83,30 +32,30 @@ Clazz.newMeth(C$, 'updateDOMNode$', function () {
 if (this.domNode == null ) {
 var root=this.jc.getRootPane$();
 this.isContentPane=(root != null  && this.jc === root.getContentPane$()  );
-this.domNode=P$.JSComponentUI.newDOMObject$S$S$SA("div", this.id, []);
-if (root != null  && root.getGlassPane$() === this.c  ) $I$(14).setVisible(this.domNode, false);
+this.domNode=$I$(15).newDOMObject$S$S$SA("div", this.id, []);
+if (root != null  && root.getGlassPane$() === this.c  ) $I$(16).setVisible(this.domNode, false);
 }return this.updateDOMNodeCUI$();
 });
 
 Clazz.newMeth(C$, 'getHTMLSizePreferred$swingjs_api_js_DOMNode$Z', function (obj, addCSS) {
-return Clazz.new_($I$(1).c$$I$I,[this.c.getWidth$(), this.c.getHeight$()]);
+return Clazz.new_([this.c.getWidth$(), this.c.getHeight$()],$I$(1,1).c$$I$I);
 });
 
 Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap', function (map) {
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigateNext"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigatePrevious"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigateRight"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigateLeft"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigateUp"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigateDown"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigatePageUp"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["navigatePageDown"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["requestFocus"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["requestFocusForVisibleComponent"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["setSelectedIndex"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["selectTabWithFocus"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["scrollTabsForwardAction"]));
-map.put$javax_swing_Action(Clazz.new_($I$(15).c$$S,["scrollTabsBackwardAction"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigateNext"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigatePrevious"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigateRight"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigateLeft"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigateUp"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigateDown"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigatePageUp"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["navigatePageDown"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["requestFocus"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["requestFocusForVisibleComponent"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["setSelectedIndex"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["selectTabWithFocus"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["scrollTabsForwardAction"]));
+map.put$javax_swing_Action(Clazz.new_($I$(17,1).c$$S,["scrollTabsBackwardAction"]));
 }, 1);
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
@@ -132,9 +81,9 @@ this.tabPane=null;
 
 Clazz.newMeth(C$, 'createLayoutManager$', function () {
 if (this.tabPane.getTabLayoutPolicy$() == 1) {
-return Clazz.new_($I$(16), [this, null]);
+return Clazz.new_($I$(18,1),[this, null]);
 } else {
-return Clazz.new_($I$(17), [this, null]);
+return Clazz.new_($I$(19,1),[this, null]);
 }});
 
 Clazz.newMeth(C$, 'scrollableTabLayoutEnabled', function () {
@@ -144,7 +93,7 @@ return (Clazz.instanceOf(this.tabPane.getLayout$(), "swingjs.plaf.JSTabbedPaneUI
 Clazz.newMeth(C$, 'installComponents$', function () {
 if (p$1.scrollableTabLayoutEnabled.apply(this, [])) {
 if (this.tabScroller == null ) {
-this.tabScroller=Clazz.new_($I$(18).c$$I, [this, null, this.tabPane.getTabPlacement$()]);
+this.tabScroller=Clazz.new_([this, null, this.tabPane.getTabPlacement$()],$I$(20,1).c$$I);
 this.tabPane.add$java_awt_Component(this.tabScroller.viewport);
 }}p$1.installTabContainer.apply(this, []);
 });
@@ -154,7 +103,7 @@ for (var i=0; i < this.tabPane.getTabCount$(); i++) {
 var tabComponent=this.tabPane.getTabComponentAt$I(i);
 if (tabComponent != null ) {
 if (this.tabContainer == null ) {
-this.tabContainer=Clazz.new_($I$(19), [this, null]);
+this.tabContainer=Clazz.new_($I$(21,1),[this, null]);
 }this.tabContainer.add$java_awt_Component(tabComponent);
 }}
 if (this.tabContainer == null ) {
@@ -168,7 +117,7 @@ this.tabPane.add$java_awt_Component(this.tabContainer);
 Clazz.newMeth(C$, 'createScrollButton$I', function (direction) {
 if (direction != 5 && direction != 1  && direction != 3  && direction != 7 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Direction must be one of: SOUTH, NORTH, EAST or WEST"]);
-}return Clazz.new_($I$(20).c$$I, [this, null, direction]);
+}return Clazz.new_($I$(22,1).c$$I,[this, null, direction]);
 });
 
 Clazz.newMeth(C$, 'uninstallComponents$', function () {
@@ -194,7 +143,7 @@ this.tabPane.remove$java_awt_Component(this.tabContainer);
 }, p$1);
 
 Clazz.newMeth(C$, 'installDefaults$', function () {
-$I$(21).installColorsAndFont$javax_swing_JComponent$S$S$S(this.tabPane, "TabbedPane.background", "TabbedPane.foreground", "TabbedPane.font");
+$I$(23).installColorsAndFont$javax_swing_JComponent$S$S$S(this.tabPane, "TabbedPane.background", "TabbedPane.foreground", "TabbedPane.font");
 this.highlight=$I$(10).getColor$O("TabbedPane.light");
 this.lightHighlight=$I$(10).getColor$O("TabbedPane.highlight");
 this.shadow=$I$(10).getColor$O("TabbedPane.shadow");
@@ -212,8 +161,8 @@ this.tabsOpaque=$I$(10).getBoolean$O("TabbedPane.tabsOpaque");
 this.contentOpaque=$I$(10).getBoolean$O("TabbedPane.contentOpaque");
 var opaque=$I$(10).get$O("TabbedPane.opaque");
 if (opaque == null ) {
-opaque=$I$(22).FALSE;
-}$I$(21).installProperty$javax_swing_JComponent$S$O(this.tabPane, "opaque", opaque);
+opaque=Boolean.FALSE;
+}$I$(23).installProperty$javax_swing_JComponent$S$O(this.tabPane, "opaque", opaque);
 });
 
 Clazz.newMeth(C$, 'uninstallDefaults$', function () {
@@ -282,7 +231,7 @@ return p$1.getHandler.apply(this, []);
 
 Clazz.newMeth(C$, 'getHandler', function () {
 if (this.handler == null ) {
-this.handler=Clazz.new_($I$(23), [this, null]);
+this.handler=Clazz.new_($I$(24,1),[this, null]);
 }return this.handler;
 }, p$1);
 
@@ -291,15 +240,15 @@ var km=this.getInputMap$I(1);
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.tabPane, 1, km);
 km=this.getInputMap$I(0);
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.tabPane, 0, km);
-$I$(24).installLazyActionMap$javax_swing_JComponent$Class$S(this.tabPane, Clazz.getClass(C$), "TabbedPane.actionMap");
+$I$(25,"installLazyActionMap$javax_swing_JComponent$Class$S",[this.tabPane, Clazz.getClass(C$), "TabbedPane.actionMap"]);
 p$1.updateMnemonics.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
 if (condition == 1) {
-return $I$(25).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.tabPane, this, "TabbedPane.ancestorInputMap");
+return $I$(26).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.tabPane, this, "TabbedPane.ancestorInputMap");
 } else if (condition == 0) {
-return $I$(25).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.tabPane, this, "TabbedPane.focusInputMap");
+return $I$(26).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.tabPane, this, "TabbedPane.focusInputMap");
 }return null;
 });
 
@@ -330,13 +279,13 @@ this.mnemonicInputMap.clear$();
 Clazz.newMeth(C$, 'addMnemonic$I$I', function (index, mnemonic) {
 if (this.mnemonicToIndexMap == null ) {
 p$1.initMnemonics.apply(this, []);
-}this.mnemonicInputMap.put$javax_swing_KeyStroke$O($I$(26).getKeyStroke$I$I(mnemonic, 8), "setSelectedIndex");
-this.mnemonicToIndexMap.put$TK$TV( new Integer(mnemonic),  new Integer(index));
+}this.mnemonicInputMap.put$javax_swing_KeyStroke$O($I$(27).getKeyStroke$I$I(mnemonic, 8), "setSelectedIndex");
+this.mnemonicToIndexMap.put$O$O( new Integer(mnemonic),  new Integer(index));
 }, p$1);
 
 Clazz.newMeth(C$, 'initMnemonics', function () {
-this.mnemonicToIndexMap=Clazz.new_($I$(27));
-this.mnemonicInputMap=Clazz.new_($I$(28).c$$javax_swing_JComponent,[this.tabPane]);
+this.mnemonicToIndexMap=Clazz.new_($I$(28,1));
+this.mnemonicInputMap=Clazz.new_($I$(29,1).c$$javax_swing_JComponent,[this.tabPane]);
 this.mnemonicInputMap.setParent$javax_swing_InputMap($I$(2).getUIInputMap$javax_swing_JComponent$I(this.tabPane, 2));
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.tabPane, 2, this.mnemonicInputMap);
 }, p$1);
@@ -389,11 +338,11 @@ switch (this.tabPane.getTabPlacement$()) {
 case 2:
 case 4:
 case 1:
-return $I$(29).CONSTANT_ASCENT;
+return $I$(30).CONSTANT_ASCENT;
 case 3:
-return $I$(29).CONSTANT_DESCENT;
+return $I$(30).CONSTANT_DESCENT;
 }
-return $I$(29).OTHER;
+return $I$(30).OTHER;
 });
 
 Clazz.newMeth(C$, 'getBaseline$I', function (tab) {
@@ -410,7 +359,7 @@ return c.getBaseline$I$I(pref.width, pref.height) + ((cellHeight - pref.height)/
 var view=this.getTextViewForTab$I(tab);
 if (view != null ) {
 var viewHeight=(view.getPreferredSpan$I(1)|0);
-var baseline=$I$(11).getHTMLBaseline$javax_swing_text_View$I$I(view, (view.getPreferredSpan$I(0)|0), viewHeight);
+var baseline=$I$(11,"getHTMLBaseline$javax_swing_text_View$I$I",[view, (view.getPreferredSpan$I(0)|0), viewHeight]);
 if (baseline >= 0) {
 return (this.maxTabHeight/2|0) - (viewHeight/2|0) + baseline + this.getBaselineOffset$();
 }return -1;
@@ -484,8 +433,8 @@ this.paintContentBorder$java_awt_Graphics$I$I(g, tabPlacement, selectedIndex);
 
 Clazz.newMeth(C$, 'paintTabArea$java_awt_Graphics$I$I', function (g, tabPlacement, selectedIndex) {
 var tabCount=this.tabPane.getTabCount$();
-var iconRect=Clazz.new_($I$(3));
-var textRect=Clazz.new_($I$(3));
+var iconRect=Clazz.new_($I$(3,1));
+var textRect=Clazz.new_($I$(3,1));
 var clipRect=g.getClipBounds$();
 for (var i=this.runCount - 1; i >= 0; i--) {
 var start=this.tabRuns[i];
@@ -509,14 +458,14 @@ this.paintTabBackground$java_awt_Graphics$I$I$I$I$I$I$Z(g, tabPlacement, tabInde
 }this.paintTabBorder$java_awt_Graphics$I$I$I$I$I$I$Z(g, tabPlacement, tabIndex, tabRect.x, tabRect.y, tabRect.width, tabRect.height, isSelected);
 var title=this.tabPane.getTitleAt$I(tabIndex);
 var font=this.tabPane.getFont$();
-var metrics=$I$(30).getFontMetrics$javax_swing_JComponent$java_awt_Graphics$java_awt_Font(this.tabPane, g, font);
+var metrics=$I$(31).getFontMetrics$javax_swing_JComponent$java_awt_Graphics$java_awt_Font(this.tabPane, g, font);
 var icon=this.getIconForTab$I(tabIndex);
 this.layoutLabel$I$java_awt_FontMetrics$I$S$javax_swing_Icon$java_awt_Rectangle$java_awt_Rectangle$java_awt_Rectangle$Z(tabPlacement, metrics, tabIndex, title, icon, tabRect, iconRect, textRect, isSelected);
 if (this.tabPane.getTabComponentAt$I(tabIndex) == null ) {
 var clippedTitle=title;
 if (p$1.scrollableTabLayoutEnabled.apply(this, []) && this.tabScroller.croppedEdge.isParamsSet$() && this.tabScroller.croppedEdge.getTabIndex$() == tabIndex   && p$1.isHorizontalTabPlacement.apply(this, []) ) {
 var availTextWidth=this.tabScroller.croppedEdge.getCropline$() - (textRect.x - tabRect.x) - this.tabScroller.croppedEdge.getCroppedSideWidth$() ;
-clippedTitle=$I$(30).clipStringIfNecessary$javax_swing_JComponent$java_awt_FontMetrics$S$I(null, metrics, title, availTextWidth);
+clippedTitle=$I$(31).clipStringIfNecessary$javax_swing_JComponent$java_awt_FontMetrics$S$I(null, metrics, title, availTextWidth);
 }this.paintText$java_awt_Graphics$I$java_awt_Font$java_awt_FontMetrics$I$S$java_awt_Rectangle$Z(g, tabPlacement, font, metrics, tabIndex, clippedTitle, textRect, isSelected);
 this.paintIcon$java_awt_Graphics$I$I$javax_swing_Icon$java_awt_Rectangle$Z(g, tabPlacement, tabIndex, icon, iconRect, isSelected);
 }});
@@ -569,9 +518,9 @@ break;
 }
 }
 if (tabPlacement == 1 || tabPlacement == 3 ) {
-return Clazz.new_($I$(31).c$$IA$IA$I,[xp, yp, pcnt]);
+return Clazz.new_($I$(32,1).c$$IA$IA$I,[xp, yp, pcnt]);
 } else {
-return Clazz.new_($I$(31).c$$IA$IA$I,[yp, xp, pcnt]);
+return Clazz.new_($I$(32,1).c$$IA$IA$I,[yp, xp, pcnt]);
 }}, 1);
 
 Clazz.newMeth(C$, 'paintCroppedTabEdge$java_awt_Graphics', function (g) {
@@ -643,18 +592,18 @@ var selectedFG=$I$(10).getColor$O("TabbedPane.selectedForeground");
 if (selectedFG != null ) {
 fg=selectedFG;
 }}g.setColor$java_awt_Color(fg);
-$I$(30).drawStringUnderlineCharAt$javax_swing_JComponent$java_awt_Graphics$S$I$I$I(this.tabPane, g, title, mnemIndex, textRect.x, textRect.y + metrics.getAscent$());
+$I$(31,"drawStringUnderlineCharAt$javax_swing_JComponent$java_awt_Graphics$S$I$I$I",[this.tabPane, g, title, mnemIndex, textRect.x, textRect.y + metrics.getAscent$()]);
 } else {
 g.setColor$java_awt_Color(this.tabPane.getBackgroundAt$I(tabIndex).brighter$());
-$I$(30).drawStringUnderlineCharAt$javax_swing_JComponent$java_awt_Graphics$S$I$I$I(this.tabPane, g, title, mnemIndex, textRect.x, textRect.y + metrics.getAscent$());
+$I$(31,"drawStringUnderlineCharAt$javax_swing_JComponent$java_awt_Graphics$S$I$I$I",[this.tabPane, g, title, mnemIndex, textRect.x, textRect.y + metrics.getAscent$()]);
 g.setColor$java_awt_Color(this.tabPane.getBackgroundAt$I(tabIndex).darker$());
-$I$(30).drawStringUnderlineCharAt$javax_swing_JComponent$java_awt_Graphics$S$I$I$I(this.tabPane, g, title, mnemIndex, textRect.x - 1, textRect.y + metrics.getAscent$() - 1);
+$I$(31,"drawStringUnderlineCharAt$javax_swing_JComponent$java_awt_Graphics$S$I$I$I",[this.tabPane, g, title, mnemIndex, textRect.x - 1, textRect.y + metrics.getAscent$() - 1]);
 }}});
 
 Clazz.newMeth(C$, 'getTabLabelShiftX$I$I$Z', function (tabPlacement, tabIndex, isSelected) {
 var tabRect=this.rects[tabIndex];
 var propKey=(isSelected ? "selectedLabelShift" : "labelShift");
-var nudge=$I$(25).getInt$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$I(this.tabPane, this, "TabbedPane." + propKey, 1);
+var nudge=$I$(26).getInt$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$I(this.tabPane, this, "TabbedPane." + propKey, 1);
 switch (tabPlacement) {
 case 2:
 return nudge;
@@ -670,7 +619,7 @@ return tabRect.width % 2;
 Clazz.newMeth(C$, 'getTabLabelShiftY$I$I$Z', function (tabPlacement, tabIndex, isSelected) {
 var tabRect=this.rects[tabIndex];
 var propKey=(isSelected ? "selectedLabelShift" : "labelShift");
-var nudge=$I$(25).getInt$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$I(this.tabPane, this, "TabbedPane." + propKey, 1);
+var nudge=$I$(26).getInt$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$I(this.tabPane, this, "TabbedPane." + propKey, 1);
 switch (tabPlacement) {
 case 3:
 return -nudge;
@@ -868,7 +817,7 @@ layout.calculateLayoutInfo$();
 
 Clazz.newMeth(C$, 'getTabBounds$javax_swing_JTabbedPane$I', function (pane, i) {
 p$1.ensureCurrentLayout.apply(this, []);
-var tabRect=Clazz.new_($I$(3));
+var tabRect=Clazz.new_($I$(3,1));
 return this.getTabBounds$I$java_awt_Rectangle(i, tabRect);
 });
 
@@ -886,7 +835,7 @@ if (validateIfNecessary) {
 p$1.ensureCurrentLayout.apply(this, []);
 }if (this.isRunsDirty) {
 return -1;
-}var p=Clazz.new_($I$(4).c$$I$I,[x, y]);
+}var p=Clazz.new_($I$(4,1).c$$I$I,[x, y]);
 if (p$1.scrollableTabLayoutEnabled.apply(this, [])) {
 p$1.translatePointToTabPanel$I$I$java_awt_Point.apply(this, [x, y, p]);
 var viewRect=this.tabScroller.viewport.getViewRect$();
@@ -972,7 +921,7 @@ var tempRectArray=Clazz.array($I$(3), [tabCount]);
 System.arraycopy$O$I$O$I$I(this.rects, 0, tempRectArray, 0, Math.min(rectArrayLen, tabCount));
 this.rects=tempRectArray;
 for (var rectIndex=rectArrayLen; rectIndex < tabCount; rectIndex++) {
-this.rects[rectIndex]=Clazz.new_($I$(3));
+this.rects[rectIndex]=Clazz.new_($I$(3,1));
 }
 }});
 
@@ -1073,7 +1022,7 @@ if (v != null ) {
 width+=(v.getPreferredSpan$I(0)|0);
 } else {
 var title=this.tabPane.getTitleAt$I(tabIndex);
-width+=$I$(30).stringWidth$javax_swing_JComponent$java_awt_FontMetrics$S(this.tabPane, metrics, title);
+width+=$I$(31).stringWidth$javax_swing_JComponent$java_awt_FontMetrics$S(this.tabPane, metrics, title);
 }}return width;
 });
 
@@ -1124,7 +1073,7 @@ return this.tabPane.getFontMetrics$java_awt_Font(font);
 
 Clazz.newMeth(C$, 'navigateSelectedTab$I', function (direction) {
 var tabPlacement=this.tabPane.getTabPlacement$();
-var current=$I$(25).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.tabPane, this, "TabbedPane.selectionFollowsFocus", true) ? this.tabPane.getSelectedIndex$() : this.getFocusIndex$();
+var current=$I$(26).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.tabPane, this, "TabbedPane.selectionFollowsFocus", true) ? this.tabPane.getSelectedIndex$() : this.getFocusIndex$();
 var tabCount=this.tabPane.getTabCount$();
 var leftToRight=$I$(5).isLeftToRight$java_awt_Component(this.tabPane);
 if (tabCount <= 0) {
@@ -1249,7 +1198,7 @@ p$1.navigateTo$I.apply(this, [newIndex]);
 }});
 
 Clazz.newMeth(C$, 'navigateTo$I', function (index) {
-if ($I$(25).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.tabPane, this, "TabbedPane.selectionFollowsFocus", true)) {
+if ($I$(26).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.tabPane, this, "TabbedPane.selectionFollowsFocus", true)) {
 this.tabPane.setSelectedIndex$I(index);
 } else {
 this.setFocusIndex$I$Z(index, true);
@@ -1390,39 +1339,42 @@ targetInsets.right=topInsets.right;
 }, 1);
 
 Clazz.newMeth(C$, 'requestFocusForVisibleComponent$', function () {
-return $I$(30).tabbedPaneChangeFocusTo$java_awt_Component(this.getVisibleComponent$());
+return $I$(31,"tabbedPaneChangeFocusTo$java_awt_Component",[this.getVisibleComponent$()]);
 });
 
 Clazz.newMeth(C$, 'createHTMLVector', function () {
-var htmlViews=Clazz.new_($I$(32));
+var htmlViews=Clazz.new_($I$(33,1));
 var count=this.tabPane.getTabCount$();
 if (count > 0) {
 for (var i=0; i < count; i++) {
 var title=this.tabPane.getTitleAt$I(i);
 if ($I$(11).isHTMLString$S(title)) {
-htmlViews.addElement$TE($I$(11).createHTMLView$javax_swing_JComponent$S(this.tabPane, title));
+htmlViews.addElement$O($I$(11).createHTMLView$javax_swing_JComponent$S(this.tabPane, title));
 } else {
-htmlViews.addElement$TE(null);
+htmlViews.addElement$O(null);
 }}
 }return htmlViews;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.xCropLen=Clazz.array(Integer.TYPE, -1, [1, 1, 0, 0, 1, 1, 2, 2]);
+C$.yCropLen=Clazz.array(Integer.TYPE, -1, [0, 3, 3, 6, 6, 9, 9, 12]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "Actions", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "Actions", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.swing.UIAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S', function (key) {
-C$.superclazz.c$$S.apply(this, [key]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[key]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var key=this.getName$();
 var pane=e.getSource$();
 var ui=pane.getUI$();
@@ -1480,15 +1432,14 @@ ui.tabScroller.scrollBackward$I(pane.getTabPlacement$());
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabbedPaneLayout", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabbedPaneLayout", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.awt.LayoutManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
 });
@@ -1509,7 +1460,7 @@ var tabPlacement=this.this$0.tabPane.getTabPlacement$();
 var insets=this.this$0.tabPane.getInsets$();
 var contentInsets=this.this$0.getContentBorderInsets$I.apply(this.this$0, [tabPlacement]);
 var tabAreaInsets=this.this$0.getTabAreaInsets$I.apply(this.this$0, [tabPlacement]);
-var zeroSize=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var zeroSize=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var height=0;
 var width=0;
 var cWidth=0;
@@ -1540,7 +1491,7 @@ width=Math.max(width, this.this$0.calculateMaxTabWidth$I.apply(this.this$0, [tab
 tabExtent=this.preferredTabAreaHeight$I$I(tabPlacement, width - tabAreaInsets.left - tabAreaInsets.right );
 height+=tabExtent;
 }
-return Clazz.new_($I$(1).c$$I$I,[width + insets.left + insets.right + contentInsets.left + contentInsets.right , height + insets.bottom + insets.top + contentInsets.top + contentInsets.bottom ]);
+return Clazz.new_($I$(1,1).c$$I$I,[width + insets.left + insets.right + contentInsets.left + contentInsets.right , height + insets.bottom + insets.top + contentInsets.top + contentInsets.bottom ]);
 });
 
 Clazz.newMeth(C$, 'preferredTabAreaHeight$I$I', function (tabPlacement, width) {
@@ -1666,8 +1617,8 @@ this.this$0.isRunsDirty=false;
 Clazz.newMeth(C$, 'layoutTabComponents', function () {
 if (this.this$0.tabContainer == null ) {
 return;
-}var rect=Clazz.new_($I$(3));
-var delta=Clazz.new_($I$(4).c$$I$I,[-this.this$0.tabContainer.getX$(), -this.this$0.tabContainer.getY$()]);
+}var rect=Clazz.new_($I$(3,1));
+var delta=Clazz.new_([-this.this$0.tabContainer.getX$(), -this.this$0.tabContainer.getY$()],$I$(4,1).c$$I$I);
 if (p$1.scrollableTabLayoutEnabled.apply(this.this$0, [])) {
 p$1.translatePointToTabPanel$I$I$java_awt_Point.apply(this.this$0, [0, 0, delta]);
 }for (var i=0; i < this.this$0.tabPane.getTabCount$(); i++) {
@@ -1926,15 +1877,14 @@ selRect.width-=right;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabbedPaneScrollLayout", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabbedPaneScrollLayout", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['swingjs.plaf.JSTabbedPaneUI','.TabbedPaneLayout']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'preferredTabAreaHeight$I$I', function (tabPlacement, width) {
 return this.this$0.calculateMaxTabHeight$I.apply(this.this$0, [tabPlacement]);
@@ -2180,41 +2130,31 @@ var rightMargin=size.width - (insets.right + tabAreaInsets.right);
 for (i=0; i < tabCount; i++) {
 this.this$0.rects[i].x=rightMargin - this.this$0.rects[i].x - this.this$0.rects[i].width ;
 }
-}this.this$0.tabScroller.tabPanel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(1).c$$I$I,[totalWidth, totalHeight]));
+}this.this$0.tabScroller.tabPanel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(1,1).c$$I$I,[totalWidth, totalHeight]));
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabSupport", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabSupport", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['java.awt.event.ActionListener', 'javax.swing.event.ChangeListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.viewport=null;
-this.tabPanel=null;
-this.scrollForwardButton=null;
-this.scrollBackwardButton=null;
-this.croppedEdge=null;
-this.leadingTabIndex=0;
-this.tabViewPosition=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.tabViewPosition=Clazz.new_($I$(4).c$$I$I,[0, 0]);
-}, 1);
+this.tabViewPosition=Clazz.new_($I$(4,1).c$$I$I,[0, 0]);
+},1);
+
+C$.$fields$=[['I',['leadingTabIndex'],'O',['viewport','swingjs.plaf.JSTabbedPaneUI.ScrollableTabViewport','tabPanel','swingjs.plaf.JSTabbedPaneUI.ScrollableTabPanel','scrollForwardButton','javax.swing.JButton','+scrollBackwardButton','croppedEdge','swingjs.plaf.JSTabbedPaneUI.CroppedEdge','tabViewPosition','java.awt.Point']]]
 
 Clazz.newMeth(C$, 'c$$I', function (tabPlacement) {
-C$.$init$.apply(this);
-this.viewport=Clazz.new_($I$(6), [this, null]);
-this.tabPanel=Clazz.new_($I$(7), [this, null]);
+;C$.$init$.apply(this);
+this.viewport=Clazz.new_($I$(6,1),[this, null]);
+this.tabPanel=Clazz.new_($I$(7,1),[this, null]);
 this.viewport.setView$java_awt_Component(this.tabPanel);
 this.viewport.addChangeListener$javax_swing_event_ChangeListener(this);
-this.croppedEdge=Clazz.new_($I$(8), [this, null]);
+this.croppedEdge=Clazz.new_($I$(8,1),[this, null]);
 this.createButtons$();
 }, 1);
 
@@ -2264,20 +2204,20 @@ case 1:
 case 3:
 this.tabViewPosition.x=this.leadingTabIndex == 0 ? 0 : this.this$0.rects[this.leadingTabIndex].x;
 if ((viewSize.width - this.tabViewPosition.x) < viewRect.width) {
-var extentSize=Clazz.new_($I$(1).c$$I$I,[viewSize.width - this.tabViewPosition.x, viewRect.height]);
+var extentSize=Clazz.new_($I$(1,1).c$$I$I,[viewSize.width - this.tabViewPosition.x, viewRect.height]);
 this.viewport.setExtentSize$java_awt_Dimension(extentSize);
 }break;
 case 2:
 case 4:
 this.tabViewPosition.y=this.leadingTabIndex == 0 ? 0 : this.this$0.rects[this.leadingTabIndex].y;
 if ((viewSize.height - this.tabViewPosition.y) < viewRect.height) {
-var extentSize=Clazz.new_($I$(1).c$$I$I,[viewRect.width, viewSize.height - this.tabViewPosition.y]);
+var extentSize=Clazz.new_($I$(1,1).c$$I$I,[viewRect.width, viewSize.height - this.tabViewPosition.y]);
 this.viewport.setExtentSize$java_awt_Dimension(extentSize);
 }}
 this.viewport.setViewPosition$java_awt_Point(this.tabViewPosition);
 });
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 p$4.updateView.apply(this, []);
 });
 
@@ -2326,7 +2266,7 @@ this.scrollForwardButton.setEnabled$Z(this.leadingTabIndex < tabCount - 1 && vie
 }
 }, p$4);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var map=this.this$0.tabPane.getActionMap$();
 if (map != null ) {
 var actionKey;
@@ -2336,29 +2276,27 @@ actionKey="scrollTabsForwardAction";
 actionKey="scrollTabsBackwardAction";
 }var action=map.get$O(actionKey);
 if (action != null  && action.isEnabled$() ) {
-action.actionPerformed$(Clazz.new_($I$(9).c$$O$I$S$J$I,[this.this$0.tabPane, 1001, null, e.getWhen$(), e.getModifiers$()]));
+action.actionPerformed$java_awt_event_ActionEvent(Clazz.new_([this.this$0.tabPane, 1001, null, e.getWhen$(), e.getModifiers$()],$I$(9,1).c$$O$I$S$J$I));
 }}});
 
 Clazz.newMeth(C$, 'toString', function () {
-return  String.instantialize("viewport.viewSize=" + this.viewport.getViewSize$() + "\n" + "viewport.viewRectangle=" + this.viewport.getViewRect$() + "\n" + "leadingTabIndex=" + this.leadingTabIndex + "\n" + "tabViewPosition=" + this.tabViewPosition );
+return ("viewport.viewSize=" + this.viewport.getViewSize$() + "\n" + "viewport.viewRectangle=" + this.viewport.getViewRect$() + "\n" + "leadingTabIndex=" + this.leadingTabIndex + "\n" + "tabViewPosition=" + this.tabViewPosition );
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabViewport", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabViewport", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JViewport', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.setName$S("TabbedPane.scrollableViewport");
 this.setScrollMode$I(0);
 this.setOpaque$Z(this.this$0.tabPane.isOpaque$());
@@ -2369,19 +2307,17 @@ bgColor=this.this$0.tabPane.getBackground$();
 }, 1);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabPanel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabPanel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$java_awt_LayoutManager.apply(this, [null]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_LayoutManager.apply(this,[null]);C$.$init$.apply(this);
 this.setOpaque$Z(this.this$0.tabPane.isOpaque$());
 var bgColor=$I$(10).getColor$O("TabbedPane.tabAreaBackground");
 if (bgColor == null ) {
@@ -2406,81 +2342,78 @@ child.setBounds$I$I$I$I(0, 0, this.getWidth$(), this.getHeight$());
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabButton", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "ScrollableTabButton", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'swingjs.plaf.BasicArrowButton', ['javax.swing.plaf.UIResource', 'javax.swing.SwingConstants']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$I', function (direction) {
-C$.superclazz.c$$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color.apply(this, [direction, $I$(10).getColor$O("TabbedPane.selected"), $I$(10).getColor$O("TabbedPane.shadow"), $I$(10).getColor$O("TabbedPane.darkShadow"), $I$(10).getColor$O("TabbedPane.highlight")]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color.apply(this,[direction, $I$(10).getColor$O("TabbedPane.selected"), $I$(10).getColor$O("TabbedPane.shadow"), $I$(10).getColor$O("TabbedPane.darkShadow"), $I$(10).getColor$O("TabbedPane.highlight")]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "Handler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "Handler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['javax.swing.event.ChangeListener', 'java.awt.event.ContainerListener', 'java.awt.event.FocusListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.beans.PropertyChangeListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 var pane=e.getSource$();
 var name=e.getPropertyName$();
 var isScrollLayout=p$1.scrollableTabLayoutEnabled.apply(this.this$0, []);
-if (name == "mnemonicAt") {
+if (name === "mnemonicAt" ) {
 p$1.updateMnemonics.apply(this.this$0, []);
-pane.repaint$();
-} else if (name == "displayedMnemonicIndexAt") {
-pane.repaint$();
-} else if (name == "indexForTitle") {
+pane.秘repaint$();
+} else if (name === "displayedMnemonicIndexAt" ) {
+pane.秘repaint$();
+} else if (name === "indexForTitle" ) {
 this.this$0.calculatedBaseline=false;
-p$5.updateHtmlViews$I.apply(this, [(e.getNewValue$()).intValue$()]);
-} else if (name == "tabLayoutPolicy") {
+p$5.updateHtmlViews$I.apply(this, [(e.getNewValue$()).valueOf()]);
+} else if (name === "tabLayoutPolicy" ) {
 this.this$0.uninstallUI$javax_swing_JComponent.apply(this.this$0, [pane]);
 this.this$0.installUI$javax_swing_JComponent.apply(this.this$0, [pane]);
 this.this$0.calculatedBaseline=false;
-} else if (name == "tabPlacement") {
+} else if (name === "tabPlacement" ) {
 if (p$1.scrollableTabLayoutEnabled.apply(this.this$0, [])) {
 this.this$0.tabScroller.createButtons$();
 }this.this$0.calculatedBaseline=false;
-} else if (name == "opaque" && isScrollLayout ) {
+} else if (name === "opaque"  && isScrollLayout ) {
 var newVal=(e.getNewValue$()).booleanValue$();
 this.this$0.tabScroller.tabPanel.setOpaque$Z(newVal);
 this.this$0.tabScroller.viewport.setOpaque$Z(newVal);
-} else if (name == "background" && isScrollLayout ) {
+} else if (name === "background"  && isScrollLayout ) {
 var newVal=e.getNewValue$();
 this.this$0.tabScroller.tabPanel.setBackground$java_awt_Color(newVal);
 this.this$0.tabScroller.viewport.setBackground$java_awt_Color(newVal);
 var newColor=this.this$0.selectedColor == null  ? newVal : this.this$0.selectedColor;
 this.this$0.tabScroller.scrollForwardButton.setBackground$java_awt_Color(newColor);
 this.this$0.tabScroller.scrollBackwardButton.setBackground$java_awt_Color(newColor);
-} else if (name == "indexForTabComponent") {
+} else if (name === "indexForTabComponent" ) {
 if (this.this$0.tabContainer != null ) {
 p$6.removeUnusedTabComponents.apply(this.this$0.tabContainer, []);
-}var c=this.this$0.tabPane.getTabComponentAt$I((e.getNewValue$()).intValue$());
+}var c=this.this$0.tabPane.getTabComponentAt$I((e.getNewValue$()).valueOf());
 if (c != null ) {
 if (this.this$0.tabContainer == null ) {
 p$1.installTabContainer.apply(this.this$0, []);
 } else {
 this.this$0.tabContainer.add$java_awt_Component(c);
 }}this.this$0.tabPane.revalidate$();
-this.this$0.tabPane.repaint$();
+this.this$0.tabPane.秘repaint$();
 this.this$0.calculatedBaseline=false;
-} else if (name == "indexForNullComponent") {
+} else if (name === "indexForNullComponent" ) {
 this.this$0.isRunsDirty=true;
-p$5.updateHtmlViews$I.apply(this, [(e.getNewValue$()).intValue$()]);
-} else if (name == "font") {
+p$5.updateHtmlViews$I.apply(this, [(e.getNewValue$()).valueOf()]);
+} else if (name === "font" ) {
 this.this$0.calculatedBaseline=false;
 }});
 
@@ -2492,17 +2425,17 @@ if (this.this$0.htmlViews == null ) {
 this.this$0.htmlViews=p$1.createHTMLVector.apply(this.this$0, []);
 } else {
 var v=$I$(11).createHTMLView$javax_swing_JComponent$S(this.this$0.tabPane, title);
-this.this$0.htmlViews.insertElementAt$TE$I(v, index);
+this.this$0.htmlViews.insertElementAt$O$I(v, index);
 }} else {
 if (this.this$0.htmlViews != null ) {
-this.this$0.htmlViews.insertElementAt$TE$I(null, index);
+this.this$0.htmlViews.insertElementAt$O$I(null, index);
 }}p$1.updateMnemonics.apply(this.this$0, []);
 }, p$5);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 var tabPane=e.getSource$();
 tabPane.revalidate$();
-tabPane.repaint$();
+tabPane.秘repaint$();
 this.this$0.setFocusIndex$I$Z.apply(this.this$0, [tabPane.getSelectedIndex$(), false]);
 if (p$1.scrollableTabLayoutEnabled.apply(this.this$0, [])) {
 var index=tabPane.getSelectedIndex$();
@@ -2578,49 +2511,46 @@ p$1.validateFocusIndex.apply(this.this$0, []);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "PropertyChangeHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "PropertyChangeHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.beans.PropertyChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 p$1.getHandler.apply(this.this$0, []).propertyChange$java_beans_PropertyChangeEvent(e);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabSelectionHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabSelectionHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 p$1.getHandler.apply(this.this$0, []).stateChanged$javax_swing_event_ChangeEvent(e);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "MouseHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "MouseHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.awt.event.MouseAdapter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
 p$1.getHandler.apply(this.this$0, []).mousePressed$java_awt_event_MouseEvent(e);
@@ -2629,15 +2559,14 @@ p$1.getHandler.apply(this.this$0, []).mousePressed$java_awt_event_MouseEvent(e);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "FocusHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "FocusHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.awt.event.FocusAdapter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
 p$1.getHandler.apply(this.this$0, []).focusGained$java_awt_event_FocusEvent(e);
@@ -2650,25 +2579,20 @@ p$1.getHandler.apply(this.this$0, []).focusLost$java_awt_event_FocusEvent(e);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabContainer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "TabContainer", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.notifyTabbedPane=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.notifyTabbedPane=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['notifyTabbedPane']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$java_awt_LayoutManager.apply(this, [null]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_LayoutManager.apply(this,[null]);C$.$init$.apply(this);
 this.setOpaque$Z(false);
 }, 1);
 
@@ -2680,7 +2604,7 @@ this.this$0.tabPane.setTabComponentAt$I$java_awt_Component(index, null);
 }});
 
 Clazz.newMeth(C$, 'removeUnusedTabComponents', function () {
-var components=$I$(12).getChildArray$java_awt_Container(this);
+var components=$I$(12).秘getChildArray$java_awt_Container(this);
 for (var i=0, n=this.getComponentCount$(); i < n; i++) {
 var c=components[i];
 if (!(Clazz.instanceOf(c, "javax.swing.plaf.UIResource"))) {
@@ -2696,34 +2620,26 @@ return this.this$0.tabScroller != null  && !this.this$0.tabScroller.croppedEdge.
 
 Clazz.newMeth(C$, 'doLayout$', function () {
 if (p$1.scrollableTabLayoutEnabled.apply(this.this$0, [])) {
-this.this$0.tabScroller.tabPanel.repaint$();
+this.this$0.tabScroller.tabPanel.秘repaint$();
 p$4.updateView.apply(this.this$0.tabScroller, []);
 } else {
 this.this$0.tabPane.repaint$java_awt_Rectangle(this.getBounds$());
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTabbedPaneUI, "CroppedEdge", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTabbedPaneUI, "CroppedEdge", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.shape=null;
-this.tabIndex=0;
-this.cropline=0;
-this.cropx=0;
-this.cropy=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['tabIndex','cropline','cropx','cropy'],'O',['shape','java.awt.Shape']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setOpaque$Z(false);
 }, 1);
 
@@ -2734,7 +2650,7 @@ this.cropx=cropx;
 this.cropy=cropy;
 var tabRect=this.this$0.rects[tabIndex];
 this.setBounds$java_awt_Rectangle(tabRect);
-this.shape=P$.JSTabbedPaneUI.createCroppedTabShape$I$java_awt_Rectangle$I(this.this$0.tabPane.getTabPlacement$(), tabRect, cropline);
+this.shape=$I$(13,"createCroppedTabShape$I$java_awt_Rectangle$I",[this.this$0.tabPane.getTabPlacement$(), tabRect, cropline]);
 if (this.getParent$() == null  && this.this$0.tabContainer != null  ) {
 this.this$0.tabContainer.add$java_awt_Component$I(this, 0);
 }});
@@ -2783,4 +2699,4 @@ g2.translate$I$I(-this.cropx, -this.cropy);
 }});
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

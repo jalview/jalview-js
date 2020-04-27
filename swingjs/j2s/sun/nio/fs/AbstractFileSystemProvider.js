@@ -1,14 +1,13 @@
 (function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[];
-var C$=Clazz.newClass(P$, "AbstractFileSystemProvider", null, 'java.nio.file.spi.FileSystemProvider');
+/*c*/var C$=Clazz.newClass(P$, "AbstractFileSystemProvider", null, 'java.nio.file.spi.FileSystemProvider');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'split$S', function (attribute) {
@@ -47,4 +46,4 @@ Clazz.newMeth(C$, 'deleteIfExists$java_nio_file_Path', function (file) {
 return this.implDelete$java_nio_file_Path$Z(file, false);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

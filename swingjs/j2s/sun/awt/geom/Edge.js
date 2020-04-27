@@ -1,30 +1,19 @@
 (function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[];
-var C$=Clazz.newClass(P$, "Edge");
+/*c*/var C$=Clazz.newClass(P$, "Edge");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.curve=null;
-this.ctag=0;
-this.etag=0;
-this.activey=0;
-this.equivalence=0;
-this.lastEdge=null;
-this.lastResult=0;
-this.lastLimit=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['activey','lastLimit'],'I',['ctag','etag','equivalence','lastResult'],'O',['curve','sun.awt.geom.Curve','lastEdge','sun.awt.geom.Edge']]]
 
 Clazz.newMeth(C$, 'c$$sun_awt_geom_Curve$I', function (c, ctag) {
 C$.c$$sun_awt_geom_Curve$I$I.apply(this, [c, ctag, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$sun_awt_geom_Curve$I$I', function (c, ctag, etag) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.curve=c;
 this.ctag=ctag;
 this.etag=etag;
@@ -85,4 +74,4 @@ return ("Edge[" + this.curve + ", " + (this.ctag == 0 ? "L" : "R") + ", " + (thi
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

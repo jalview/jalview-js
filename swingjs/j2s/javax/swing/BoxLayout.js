@@ -1,30 +1,21 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.AWTError','java.awt.Dimension','javax.swing.SizeRequirements']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BoxLayout", null, null, 'java.awt.LayoutManager2');
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.AWTError','java.awt.Dimension','javax.swing.SizeRequirements']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BoxLayout", null, null, 'java.awt.LayoutManager2');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.axis=0;
-this.target=null;
-this.xChildren=null;
-this.yChildren=null;
-this.xTotal=null;
-this.yTotal=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['axis'],'O',['target','java.awt.Container','xChildren','javax.swing.SizeRequirements[]','+yChildren','xTotal','javax.swing.SizeRequirements','+yTotal']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Container$I$java_io_PrintStream', function (target, axis, dbg) {
 C$.c$$java_awt_Container$I.apply(this, [target, axis]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Container$I', function (target, axis) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (axis != 0 && axis != 1  && axis != 2  && axis != 3 ) {
-throw Clazz.new_($I$(1).c$$S,["Invalid axis"]);
+throw Clazz.new_($I$(1,1).c$$S,["Invalid axis"]);
 }this.axis=axis;
 this.target=target;
 }, 1);
@@ -62,7 +53,7 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests$();
-size=Clazz.new_($I$(2).c$$I$I,[this.xTotal.preferred, this.yTotal.preferred]);
+size=Clazz.new_($I$(2,1).c$$I$I,[this.xTotal.preferred, this.yTotal.preferred]);
 }var insets=target.getInsets$();
 size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
 size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
@@ -74,7 +65,7 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests$();
-size=Clazz.new_($I$(2).c$$I$I,[this.xTotal.minimum, this.yTotal.minimum]);
+size=Clazz.new_($I$(2,1).c$$I$I,[this.xTotal.minimum, this.yTotal.minimum]);
 }var insets=target.getInsets$();
 size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
 size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
@@ -86,7 +77,7 @@ var size;
 {
 this.checkContainer$java_awt_Container(target);
 this.checkRequests$();
-size=Clazz.new_($I$(2).c$$I$I,[this.xTotal.maximum, this.yTotal.maximum]);
+size=Clazz.new_($I$(2,1).c$$I$I,[this.xTotal.maximum, this.yTotal.maximum]);
 }var insets=target.getInsets$();
 size.width=(Math.min(size.width + insets.left + insets.right , 2147483647)|0);
 size.height=(Math.min(size.height + insets.top + insets.bottom , 2147483647)|0);
@@ -135,7 +126,7 @@ c.setBounds$I$I$I$I((Math.min($in.left + xOffsets[i], 2147483647)|0), (Math.min(
 
 Clazz.newMeth(C$, 'checkContainer$java_awt_Container', function (target) {
 if (this.target !== target ) {
-throw Clazz.new_($I$(1).c$$S,["BoxLayout can\'t be shared"]);
+throw Clazz.new_($I$(1,1).c$$S,["BoxLayout can\'t be shared"]);
 }});
 
 Clazz.newMeth(C$, 'checkRequests$', function () {
@@ -146,14 +137,14 @@ this.yChildren=Clazz.array($I$(3), [n]);
 for (var i=0; i < n; i++) {
 var c=this.target.getComponent$I(i);
 if (!c.isVisible$()) {
-this.xChildren[i]=Clazz.new_($I$(3).c$$I$I$I$F,[0, 0, 0, c.getAlignmentX$()]);
-this.yChildren[i]=Clazz.new_($I$(3).c$$I$I$I$F,[0, 0, 0, c.getAlignmentY$()]);
+this.xChildren[i]=Clazz.new_([0, 0, 0, c.getAlignmentX$()],$I$(3,1).c$$I$I$I$F);
+this.yChildren[i]=Clazz.new_([0, 0, 0, c.getAlignmentY$()],$I$(3,1).c$$I$I$I$F);
 continue;
 }var min=c.getMinimumSize$();
 var typ=c.getPreferredSize$();
 var max=c.getMaximumSize$();
-this.xChildren[i]=Clazz.new_($I$(3).c$$I$I$I$F,[min.width, typ.width, max.width, c.getAlignmentX$()]);
-this.yChildren[i]=Clazz.new_($I$(3).c$$I$I$I$F,[min.height, typ.height, max.height, c.getAlignmentY$()]);
+this.xChildren[i]=Clazz.new_([min.width, typ.width, max.width, c.getAlignmentX$()],$I$(3,1).c$$I$I$I$F);
+this.yChildren[i]=Clazz.new_([min.height, typ.height, max.height, c.getAlignmentY$()],$I$(3,1).c$$I$I$I$F);
 }
 var absoluteAxis=p$1.resolveAxis$I$java_awt_ComponentOrientation.apply(this, [this.axis, this.target.getComponentOrientation$()]);
 if (absoluteAxis == 0) {
@@ -177,4 +168,4 @@ absoluteAxis=axis;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

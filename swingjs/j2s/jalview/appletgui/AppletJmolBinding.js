@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'jalview.appletgui.SequenceRenderer','java.net.URL','org.jmol.console.AppletConsole']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AppletJmolBinding", null, 'jalview.ext.jmol.JalviewJmolBinding');
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'jalview.appletgui.SequenceRenderer','java.net.URL','org.jmol.console.AppletConsole']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AppletJmolBinding", null, 'jalview.ext.jmol.JalviewJmolBinding');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.appletJmolBinding=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['appletJmolBinding','jalview.appletgui.AppletJmol']]]
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AppletJmol$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType', function (appletJmol, sSm, pdbentry, seq, protocol) {
-C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType.apply(this, [sSm, pdbentry, seq, protocol]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType.apply(this,[sSm, pdbentry, seq, protocol]);C$.$init$.apply(this);
 this.appletJmolBinding=appletJmol;
 }, 1);
 
@@ -23,7 +18,7 @@ return this.appletJmolBinding.ap.getFeatureRenderer$();
 });
 
 Clazz.newMeth(C$, 'getSequenceRenderer$jalview_api_AlignmentViewPanel', function (alignment) {
-return Clazz.new_($I$(1).c$$jalview_appletgui_AlignViewport,[(alignment).av]);
+return Clazz.new_([(alignment).av],$I$(1,1).c$$jalview_appletgui_AlignViewport);
 });
 
 Clazz.newMeth(C$, 'sendConsoleEcho$S', function (strEcho) {
@@ -52,7 +47,7 @@ this.colourBySequence$jalview_api_AlignmentViewPanel(ap);
 
 Clazz.newMeth(C$, 'showUrl$S', function (url) {
 try {
-this.appletJmolBinding.ap.av.applet.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(2).c$$S,[url]), "jmol");
+this.appletJmolBinding.ap.av.applet.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(2,1).c$$S,[url]), "jmol");
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"java.net.MalformedURLException")){
 } else {
@@ -67,7 +62,7 @@ Clazz.newMeth(C$, 'newJmolPopup$Z$S$Z', function (translateLocale, menuName, asP
 Clazz.newMeth(C$, 'notifyScriptTermination$S$I', function (strStatus, msWalltime) {
 });
 
-Clazz.newMeth(C$, ['selectionChanged$javajs_util_BS','selectionChanged$'], function (arg0) {
+Clazz.newMeth(C$, 'selectionChanged$javajs_util_BS', function (arg0) {
 });
 
 Clazz.newMeth(C$, 'refreshPdbEntries$', function () {
@@ -78,7 +73,7 @@ this.appletJmolBinding.showConsole$Z(show);
 });
 
 Clazz.newMeth(C$, 'createJmolConsole$java_awt_Container$S', function (consolePanel, buttonsToShow) {
-var appc=Clazz.new_($I$(3));
+var appc=Clazz.new_($I$(3,1));
 appc.start$org_jmol_viewer_Viewer(this.viewer);
 return appc;
 });
@@ -101,4 +96,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

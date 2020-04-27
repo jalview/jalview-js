@@ -1,42 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'Thread','java.util.concurrent.locks.LockSupport','Runtime','sun.misc.Unsafe','Error','java.util.concurrent.atomic.AtomicReference',['java.util.concurrent.Phaser','.QNode'],'java.util.concurrent.ForkJoinPool']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Phaser", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'Thread','java.util.concurrent.locks.LockSupport','Runtime','sun.misc.Unsafe','Error','java.util.concurrent.atomic.AtomicReference',['java.util.concurrent.Phaser','.QNode'],'java.util.concurrent.ForkJoinPool']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Phaser", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.NCPU=0;
-C$.SPINS_PER_ARRIVAL=0;
-C$.UNSAFE=null;
-C$.stateOffset=0;
+C$.$classes$=[['QNode',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NCPU=$I$(3).getRuntime$().availableProcessors$();
-C$.SPINS_PER_ARRIVAL=(C$.NCPU < 2) ? 1 : 256;
-C$.stateOffset=0;
-{
-try {
-C$.UNSAFE=$I$(4).getUnsafe$();
-var k=Clazz.getClass(C$);
-C$.stateOffset=C$.UNSAFE.objectFieldOffset$reflect_Field(k.getDeclaredField$S("state"));
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_($I$(5).c$$Throwable,[e]);
-} else {
-throw e;
-}
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.state=0;
-this.parent=null;
-this.root=null;
-this.evenQ=null;
-this.oddQ=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['state'],'O',['parent','java.util.concurrent.Phaser','+root','evenQ','java.util.concurrent.atomic.AtomicReference','+oddQ']]
+,['I',['NCPU','SPINS_PER_ARRIVAL'],'J',['stateOffset'],'O',['UNSAFE','sun.misc.Unsafe']]]
 
 Clazz.newMeth(C$, 'unarrivedOf$J', function (s) {
 var counts=(s|0);
@@ -154,7 +128,7 @@ C$.c$$java_util_concurrent_Phaser$I.apply(this, [parent, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_Phaser$I', function (parent, parties) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (parties >>> 16 != 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal number of parties"]);
 var phase=0;
 this.parent=parent;
@@ -166,8 +140,8 @@ this.oddQ=root.oddQ;
 if (parties != 0) phase=p$1.doRegister$I.apply(parent, [1]);
 } else {
 this.root=this;
-this.evenQ=Clazz.new_($I$(6));
-this.oddQ=Clazz.new_($I$(6));
+this.evenQ=Clazz.new_($I$(6,1));
+this.oddQ=Clazz.new_($I$(6,1));
 }this.state=(parties == 0) ? 1 : (phase << 32) | (parties << 16) | (parties) ;
 }, 1);
 
@@ -229,7 +203,7 @@ var s=(root === this ) ? this.state : p$1.reconcileState.apply(this, []);
 var p=((s >>> 32)|0);
 if (phase < 0) return phase;
 if (p == phase) {
-var node=Clazz.new_($I$(7).c$$java_util_concurrent_Phaser$I$Z$Z$J,[this, phase, true, false, 0]);
+var node=Clazz.new_($I$(7,1).c$$java_util_concurrent_Phaser$I$Z$Z$J,[this, phase, true, false, 0]);
 p=p$1.internalAwaitAdvance$I$java_util_concurrent_Phaser_QNode.apply(root, [phase, node]);
 if (node.wasInterrupted) throw Clazz.new_(Clazz.load('InterruptedException'));
 }return p;
@@ -242,7 +216,7 @@ var s=(root === this ) ? this.state : p$1.reconcileState.apply(this, []);
 var p=((s >>> 32)|0);
 if (phase < 0) return phase;
 if (p == phase) {
-var node=Clazz.new_($I$(7).c$$java_util_concurrent_Phaser$I$Z$Z$J,[this, phase, true, true, nanos]);
+var node=Clazz.new_($I$(7,1).c$$java_util_concurrent_Phaser$I$Z$Z$J,[this, phase, true, true, nanos]);
 p=p$1.internalAwaitAdvance$I$java_util_concurrent_Phaser_QNode.apply(root, [phase, node]);
 if (node.wasInterrupted) throw Clazz.new_(Clazz.load('InterruptedException'));
  else if (p == phase) throw Clazz.new_(Clazz.load('java.util.concurrent.TimeoutException'));
@@ -305,7 +279,7 @@ var q;
 var t;
 var head=(phase & 1) == 0 ? this.evenQ : this.oddQ;
 while ((q=head.get$()) != null  && q.phase != ((this.root.state >>> 32)|0) ){
-if (head.compareAndSet$TV$TV(q, q.next) && (t=q.thread) != null  ) {
+if (head.compareAndSet$O$O(q, q.next) && (t=q.thread) != null  ) {
 q.thread=null;
 $I$(2).unpark$Thread(t);
 }}
@@ -318,7 +292,7 @@ var t;
 var q=head.get$();
 var p=((this.root.state >>> 32)|0);
 if (q == null  || ((t=q.thread) != null  && q.phase == p ) ) return p;
-if (head.compareAndSet$TV$TV(q, q.next) && t != null  ) {
+if (head.compareAndSet$O$O(q, q.next) && t != null  ) {
 q.thread=null;
 $I$(2).unpark$Thread(t);
 }}
@@ -337,13 +311,13 @@ var unarrived=(s|0) & 65535;
 if (unarrived != lastUnarrived && (lastUnarrived=unarrived) < C$.NCPU ) spins+=C$.SPINS_PER_ARRIVAL;
 var interrupted=$I$(1).interrupted$();
 if (interrupted || --spins < 0 ) {
-node=Clazz.new_($I$(7).c$$java_util_concurrent_Phaser$I$Z$Z$J,[this, phase, false, false, 0]);
+node=Clazz.new_($I$(7,1).c$$java_util_concurrent_Phaser$I$Z$Z$J,[this, phase, false, false, 0]);
 node.wasInterrupted=interrupted;
 }} else if (node.isReleasable$()) break;
  else if (!queued) {
 var head=(phase & 1) == 0 ? this.evenQ : this.oddQ;
 var q=node.next=head.get$();
-if ((q == null  || q.phase == phase ) && ((this.state >>> 32)|0) == phase ) queued=head.compareAndSet$TV$TV(q, node);
+if ((q == null  || q.phase == phase ) && ((this.state >>> 32)|0) == phase ) queued=head.compareAndSet$O$O(q, node);
 } else {
 try {
 $I$(8).managedBlock$java_util_concurrent_ForkJoinPool_ManagedBlocker(node);
@@ -362,32 +336,38 @@ if (p == phase && (p=((this.state >>> 32)|0)) == phase ) return p$1.abortWait$I.
 }p$1.releaseWaiters$I.apply(this, [phase]);
 return p;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.NCPU=$I$(3).getRuntime$().availableProcessors$();
+C$.SPINS_PER_ARRIVAL=(C$.NCPU < 2) ? 1 : 256;
+{
+try {
+C$.UNSAFE=$I$(4).getUnsafe$();
+var k=Clazz.getClass(C$);
+C$.stateOffset=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(k.getDeclaredField$S("state"));
+} catch (e) {
+if (Clazz.exceptionOf(e,"Exception")){
+throw Clazz.new_($I$(5,1).c$$Throwable,[e]);
+} else {
+throw e;
+}
+}
+};
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Phaser, "QNode", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Phaser, "QNode", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.concurrent.ForkJoinPool','java.util.concurrent.ForkJoinPool.ManagedBlocker']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.phaser=null;
-this.phase=0;
-this.interruptible=false;
-this.timed=false;
-this.wasInterrupted=false;
-this.nanos=0;
-this.deadline=0;
-this.thread=null;
-this.next=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['interruptible','timed','wasInterrupted'],'I',['phase'],'J',['nanos','deadline'],'O',['phaser','java.util.concurrent.Phaser','thread','Thread','next','java.util.concurrent.Phaser.QNode']]]
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_Phaser$I$Z$Z$J', function (phaser, phase, interruptible, timed, nanos) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.phaser=phaser;
 this.phase=phase;
 this.interruptible=interruptible;
@@ -425,4 +405,4 @@ return this.isReleasable$();
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

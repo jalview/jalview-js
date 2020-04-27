@@ -1,33 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'org.jmol.symmetry.PointGroup','org.jmol.symmetry.SpaceGroup','org.jmol.util.Logger','javajs.util.Lst','org.jmol.symmetry.SymmetryOperation','org.jmol.symmetry.SymmetryInfo','org.jmol.symmetry.UnitCell','javajs.util.P3','org.jmol.util.SimpleUnitCell','javajs.util.BS','org.jmol.api.Interface','org.jmol.util.Escape','org.jmol.bspt.Bspt']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Symmetry", null, null, 'org.jmol.api.SymmetryInterface');
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'org.jmol.symmetry.PointGroup','org.jmol.symmetry.SpaceGroup','org.jmol.util.Logger','javajs.util.Lst','org.jmol.symmetry.SymmetryOperation','org.jmol.symmetry.SymmetryInfo','org.jmol.symmetry.UnitCell','javajs.util.P3','org.jmol.util.SimpleUnitCell','javajs.util.BS','org.jmol.api.Interface','org.jmol.util.Escape','org.jmol.bspt.Bspt']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Symmetry", null, null, 'org.jmol.api.SymmetryInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pointGroup=null;
-this.spaceGroup=null;
-this.symmetryInfo=null;
-this.unitCell=null;
-this.isBio=false;
-this.desc=null;
-this.cip=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBio'],'O',['pointGroup','org.jmol.symmetry.PointGroup','spaceGroup','org.jmol.symmetry.SpaceGroup','symmetryInfo','org.jmol.symmetry.SymmetryInfo','unitCell','org.jmol.symmetry.UnitCell','desc','org.jmol.symmetry.SymmetryDesc','cip','org.jmol.symmetry.CIPChirality']]]
 
 Clazz.newMeth(C$, 'isBio$', function () {
 return this.isBio;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setPointGroup$org_jmol_api_SymmetryInterface$javajs_util_T3$javajs_util_T3A$javajs_util_BS$Z$F$F$Z', function (siLast, center, atomset, bsAtoms, haveVibration, distanceTolerance, linearTolerance, localEnvOnly) {
-this.pointGroup=$I$(1).getPointGroup$org_jmol_symmetry_PointGroup$javajs_util_T3$javajs_util_T3A$javajs_util_BS$Z$F$F$Z(siLast == null  ? null : (siLast).pointGroup, center, atomset, bsAtoms, haveVibration, distanceTolerance, linearTolerance, localEnvOnly);
+this.pointGroup=(function(a,f){return f.apply(null,a)})([siLast == null  ? null : (siLast).pointGroup, center, atomset, bsAtoms, haveVibration, distanceTolerance, linearTolerance, localEnvOnly],$I$(1).getPointGroup$org_jmol_symmetry_PointGroup$javajs_util_T3$javajs_util_T3A$javajs_util_BS$Z$F$F$Z);
 return this;
 });
 
@@ -69,7 +59,7 @@ this.spaceGroup=symmetry.getSpaceGroup$();
 
 Clazz.newMeth(C$, 'createSpaceGroup$I$S$O$I', function (desiredSpaceGroupIndex, name, data, modDim) {
 this.spaceGroup=$I$(2).createSpaceGroup$I$S$O$I(desiredSpaceGroupIndex, name, data, modDim);
-if (this.spaceGroup != null  && $I$(3).debugging ) $I$(3).debug$S("using generated space group " + this.spaceGroup.dumpInfo$());
+if (this.spaceGroup != null  && $I$(3).debugging ) (function(a,f){return f.apply(null,a)})(["using generated space group " + this.spaceGroup.dumpInfo$()],$I$(3).debug$S);
 return this.spaceGroup != null ;
 });
 
@@ -84,11 +74,11 @@ return this.spaceGroup.getLatticeDesignation$();
 Clazz.newMeth(C$, 'setFinalOperations$S$javajs_util_P3A$I$I$Z$S', function (name, atoms, iAtomFirst, noSymmetryCount, doNormalize, filterSymop) {
 if (name != null  && (name.startsWith$S("bio") || name.indexOf$S(" *(") >= 0 ) ) this.spaceGroup.name=name;
 if (filterSymop != null ) {
-var lst=Clazz.new_($I$(4));
-lst.addLast$TV(this.spaceGroup.operations[0]);
-for (var i=1; i < this.spaceGroup.operationCount; i++) if (filterSymop.contains$CharSequence(" " + (i + 1) + " " )) lst.addLast$TV(this.spaceGroup.operations[i]);
+var lst=Clazz.new_($I$(4,1));
+lst.addLast$O(this.spaceGroup.operations[0]);
+for (var i=1; i < this.spaceGroup.operationCount; i++) if (filterSymop.contains$CharSequence(" " + (i + 1) + " " )) lst.addLast$O(this.spaceGroup.operations[i]);
 
-this.spaceGroup=$I$(2).createSpaceGroup$I$S$O$I(-1, name + " *(" + filterSymop.trim$() + ")" , lst, -1);
+this.spaceGroup=(function(a,f){return f.apply(null,a)})([-1, name + " *(" + filterSymop.trim$() + ")" , lst, -1],$I$(2).createSpaceGroup$I$S$O$I);
 }this.spaceGroup.setFinalOperations$javajs_util_P3A$I$I$Z(atoms, iAtomFirst, noSymmetryCount, doNormalize);
 });
 
@@ -106,7 +96,7 @@ var op=this.spaceGroup.operations[i];
 if (!op.isFinalized) op.doFinalize$();
 $I$(5).newPoint$javajs_util_M4$javajs_util_P3$javajs_util_P3$I$I$I(op, atom1, atom2, transX, transY, transZ);
 return;
-}$I$(5).newPoint$javajs_util_M4$javajs_util_P3$javajs_util_P3$I$I$I((o == null  ? this.spaceGroup.finalOperations[i] : o), atom1, atom2, transX, transY, transZ);
+}(function(a,f){return f.apply(null,a)})([(o == null  ? this.spaceGroup.finalOperations[i] : o), atom1, atom2, transX, transY, transZ],$I$(5).newPoint$javajs_util_M4$javajs_util_P3$javajs_util_P3$I$I$I);
 });
 
 Clazz.newMeth(C$, 'rotateAxes$I$javajs_util_V3A$javajs_util_P3$javajs_util_M3', function (iop, axes, ptTemp, mTemp) {
@@ -200,16 +190,16 @@ return (this.symmetryInfo == null  || this.symmetryInfo.symmetryOperations == nu
 });
 
 Clazz.newMeth(C$, 'setSymmetryInfo$I$java_util_Map$FA', function (modelIndex, modelAuxiliaryInfo, unitCellParams) {
-this.symmetryInfo=Clazz.new_($I$(6));
+this.symmetryInfo=Clazz.new_($I$(6,1));
 var params=this.symmetryInfo.setSymmetryInfo$java_util_Map$FA(modelAuxiliaryInfo, unitCellParams);
 if (params != null ) {
 this.setUnitCell$FA$Z(params, modelAuxiliaryInfo.containsKey$O("jmolData"));
 this.unitCell.moreInfo=modelAuxiliaryInfo.get$O("moreUnitCellInfo");
-modelAuxiliaryInfo.put$TK$TV("infoUnitCell", this.getUnitCellAsArray$Z(false));
+modelAuxiliaryInfo.put$O$O("infoUnitCell", this.getUnitCellAsArray$Z(false));
 this.setOffsetPt$javajs_util_T3(modelAuxiliaryInfo.get$O("unitCellOffset"));
 var matUnitCellOrientation=modelAuxiliaryInfo.get$O("matUnitCellOrientation");
 if (matUnitCellOrientation != null ) this.initializeOrientation$javajs_util_M3(matUnitCellOrientation);
-if ($I$(3).debugging) $I$(3).debug$S("symmetryInfos[" + modelIndex + "]:\n" + this.unitCell.dumpInfo$Z(true) );
+if ($I$(3).debugging) (function(a,f){return f.apply(null,a)})(["symmetryInfos[" + modelIndex + "]:\n" + this.unitCell.dumpInfo$Z(true) ],$I$(3).debug$S);
 }return this;
 });
 
@@ -280,7 +270,7 @@ return this.unitCell.getUnitCellAsArray$Z(vectorsOnly);
 
 Clazz.newMeth(C$, 'getTensor$org_jmol_viewer_Viewer$FA', function (vwr, parBorU) {
 if (parBorU == null ) return null;
-if (this.unitCell == null ) this.unitCell=$I$(7).fromParams$FA$Z(Clazz.array(Float.TYPE, -1, [1, 1, 1, 90, 90, 90]), true);
+if (this.unitCell == null ) this.unitCell=(function(a,f){return f.apply(null,a)})([Clazz.array(Float.TYPE, -1, [1, 1, 1, 90, 90, 90]), true],$I$(7).fromParams$FA$Z);
 return this.unitCell.getTensor$org_jmol_viewer_Viewer$FA(vwr, parBorU);
 });
 
@@ -301,7 +291,7 @@ this.unitCell.setOffset$javajs_util_T3(pt);
 });
 
 Clazz.newMeth(C$, 'setOffset$I', function (nnn) {
-var pt=Clazz.new_($I$(8));
+var pt=Clazz.new_($I$(8,1));
 $I$(9).ijkToPoint3f$I$javajs_util_P3$I$I(nnn, pt, 0, 0);
 this.unitCell.setOffset$javajs_util_T3(pt);
 });
@@ -351,13 +341,13 @@ return this.unitCell.isSupercell$();
 
 Clazz.newMeth(C$, 'notInCentroid$org_jmol_modelset_ModelSet$javajs_util_BS$IA', function (modelSet, bsAtoms, minmax) {
 try {
-var bsDelete=Clazz.new_($I$(10));
+var bsDelete=Clazz.new_($I$(10,1));
 var iAtom0=bsAtoms.nextSetBit$I(0);
 var molecules=modelSet.getMolecules$();
 var moleculeCount=molecules.length;
 var atoms=modelSet.at;
 var isOneMolecule=(molecules[moleculeCount - 1].firstAtomIndex == modelSet.am[atoms[iAtom0].mi].firstAtomIndex);
-var center=Clazz.new_($I$(8));
+var center=Clazz.new_($I$(8,1));
 var centroidPacked=(minmax[6] == 1);
  nextMol : for (var i=moleculeCount; --i >= 0 && bsAtoms.get$I(molecules[i].firstAtomIndex) ; ) {
 var bs=molecules[i].atomList;
@@ -397,16 +387,20 @@ Clazz.newMeth(C$, 'getDesc$org_jmol_modelset_ModelSet', function (modelSet) {
 return (this.desc == null  ? (this.desc=($I$(11).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.symmetry.SymmetryDesc", modelSet.vwr, "eval"))) : this.desc).set$org_jmol_modelset_ModelSet(modelSet);
 }, p$1);
 
-Clazz.newMeth(C$, 'getSymmetryInfoAtom$org_jmol_modelset_ModelSet$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I', function (modelSet, iatom, xyz, op, pt, pt2, id, type, scaleFactor, nth) {
-return p$1.getDesc$org_jmol_modelset_ModelSet.apply(this, [modelSet]).getSymopInfo$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I(iatom, xyz, op, pt, pt2, id, type, scaleFactor, nth);
+Clazz.newMeth(C$, 'getSymmetryInfoAtom$org_jmol_modelset_ModelSet$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I$I', function (modelSet, iatom, xyz, op, pt, pt2, id, type, scaleFactor, nth, options) {
+return p$1.getDesc$org_jmol_modelset_ModelSet.apply(this, [modelSet]).getSymopInfo$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I$I(iatom, xyz, op, pt, pt2, id, type, scaleFactor, nth, options);
 });
 
-Clazz.newMeth(C$, 'getSpaceGroupInfo$org_jmol_modelset_ModelSet$S$I$Z', function (modelSet, sgName, modelIndex, isFull) {
+Clazz.newMeth(C$, 'getSpaceGroupInfo$org_jmol_modelset_ModelSet$S$I$Z$FA', function (modelSet, sgName, modelIndex, isFull, cellParams) {
 var isForModel=(sgName == null );
 if (sgName == null ) {
 var info=modelSet.getModelAuxiliaryInfo$I(modelSet.vwr.am.cmi);
 if (info != null ) sgName=info.get$O("spaceGroup");
-}return p$1.getDesc$org_jmol_modelset_ModelSet.apply(this, [modelSet]).getSpaceGroupInfo$org_jmol_symmetry_Symmetry$I$S$I$javajs_util_P3$javajs_util_P3$S$F$I$Z$Z(this, modelIndex, sgName, 0, null, null, null, 0, -1, isFull, isForModel);
+}var cellInfo=null;
+if (cellParams != null ) {
+cellInfo=Clazz.new_(C$);
+cellInfo.setUnitCell$FA$Z(cellParams, false);
+}return p$1.getDesc$org_jmol_modelset_ModelSet.apply(this, [modelSet]).getSpaceGroupInfo$org_jmol_symmetry_Symmetry$I$S$I$javajs_util_P3$javajs_util_P3$S$F$I$Z$Z$I$org_jmol_api_SymmetryInterface(this, modelIndex, sgName, 0, null, null, null, 0, -1, isFull, isForModel, 0, cellInfo);
 });
 
 Clazz.newMeth(C$, 'fcoord$javajs_util_T3', function (p) {
@@ -449,7 +443,7 @@ return this.unitCell.toFromPrimitive$Z$C$javajs_util_T3A$javajs_util_M3(toPrimit
 
 Clazz.newMeth(C$, 'generateCrystalClass$javajs_util_P3', function (pt0) {
 var ops=this.getSymmetryOperations$();
-var lst=Clazz.new_($I$(4));
+var lst=Clazz.new_($I$(4,1));
 var isRandom=(pt0 == null );
 var rand1=0;
 var rand2=0;
@@ -462,7 +456,7 @@ pt0=$I$(8).new3$F$F$F(rand1 + 1, rand2 + 2, rand3 + 3);
 } else {
 pt0=$I$(8).newP$javajs_util_T3(pt0);
 }if (ops == null  || this.unitCell == null  ) {
-lst.addLast$TV(pt0);
+lst.addLast$O(pt0);
 } else {
 this.unitCell.toFractional$javajs_util_T3$Z(pt0, true);
 var pt1=null;
@@ -473,25 +467,25 @@ pt1=$I$(8).new3$F$F$F(rand2 + 4, rand3 + 5, rand1 + 6);
 this.unitCell.toFractional$javajs_util_T3$Z(pt1, true);
 pt2=$I$(8).new3$F$F$F(rand3 + 7, rand1 + 8, rand2 + 9);
 this.unitCell.toFractional$javajs_util_T3$Z(pt2, true);
-}var bspt=Clazz.new_($I$(13).c$$I$I,[3, 0]);
+}var bspt=Clazz.new_($I$(13,1).c$$I$I,[3, 0]);
 var iter=bspt.allocateCubeIterator$();
-var pt=Clazz.new_($I$(8));
+var pt=Clazz.new_($I$(8,1));
  out : for (var i=ops.length; --i >= 0; ) {
 ops[i].rotate2$javajs_util_T3$javajs_util_T3(pt0, pt);
 iter.initialize$javajs_util_T3$F$Z(pt, 0.001, false);
 if (iter.hasMoreElements$()) continue out;
 var ptNew=$I$(8).newP$javajs_util_T3(pt);
-lst.addLast$TV(ptNew);
+lst.addLast$O(ptNew);
 bspt.addTuple$javajs_util_T3(ptNew);
 if (isRandom) {
 if (pt2 != null ) {
-pt3=Clazz.new_($I$(8));
+pt3=Clazz.new_($I$(8,1));
 ops[i].rotate2$javajs_util_T3$javajs_util_T3(pt2, pt3);
-lst.addLast$TV(pt3);
+lst.addLast$O(pt3);
 }if (pt1 != null ) {
-pt3=Clazz.new_($I$(8));
+pt3=Clazz.new_($I$(8,1));
 ops[i].rotate2$javajs_util_T3$javajs_util_T3(pt1, pt3);
-lst.addLast$TV(pt3);
+lst.addLast$O(pt3);
 }}}
 for (var j=lst.size$(); --j >= 0; ) this.unitCell.toCartesian$javajs_util_T3$Z(lst.get$I(j), true);
 
@@ -528,5 +522,9 @@ return (this.unitCell == null  || latticeType == null   ? null : this.unitCell.g
 Clazz.newMeth(C$, 'getUnitCellInfoMap$', function () {
 return (this.unitCell == null  ? null : this.unitCell.getInfo$());
 });
+
+Clazz.newMeth(C$, 'setUnitCell$org_jmol_symmetry_Symmetry', function (uc) {
+this.unitCell=$I$(7).cloneUnitCell$org_jmol_symmetry_UnitCell(uc.unitCell);
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,58 +1,30 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Panel','java.awt.Scrollbar','jalview.appletgui.SeqPanel','jalview.appletgui.IdPanel','jalview.appletgui.ScalePanel','jalview.appletgui.IdwidthAdjuster','jalview.appletgui.AnnotationPanel','jalview.appletgui.AnnotationLabels','java.awt.event.ComponentAdapter','jalview.appletgui.PaintRefresher','jalview.appletgui.FeatureRenderer','java.awt.Dimension','java.awt.Frame','jalview.bin.JalviewLite','jalview.structure.StructureSelectionManager','jalview.analysis.AnnotationSorter','java.awt.BorderLayout','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignmentPanel", null, 'java.awt.Panel', ['java.awt.event.AdjustmentListener', 'jalview.api.AlignmentViewPanel', 'jalview.viewmodel.ViewportListenerI']);
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.Panel','java.awt.Scrollbar','jalview.appletgui.SeqPanel','jalview.appletgui.IdPanel','jalview.appletgui.ScalePanel','jalview.appletgui.IdwidthAdjuster','jalview.appletgui.AnnotationPanel','jalview.appletgui.AnnotationLabels','java.awt.event.ComponentAdapter','jalview.appletgui.PaintRefresher','jalview.appletgui.FeatureRenderer','java.awt.Dimension','java.awt.Frame','jalview.bin.JalviewLite','jalview.structure.StructureSelectionManager','jalview.analysis.AnnotationSorter','java.awt.BorderLayout','java.awt.Color']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignmentPanel", null, 'java.awt.Panel', ['java.awt.event.AdjustmentListener', 'jalview.api.AlignmentViewPanel', 'jalview.viewmodel.ViewportListenerI']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.av=null;
-this.overviewPanel=null;
-this.seqPanel=null;
-this.idPanel=null;
-this.idwidthAdjuster=null;
-this.alignFrame=null;
-this.scalePanel=null;
-this.annotationPanel=null;
-this.alabels=null;
-this.vpRanges=null;
-this.fastPaint=false;
-this.hextent=0;
-this.vextent=0;
-this.sequenceHolderPanel=null;
-this.vscroll=null;
-this.hscroll=null;
-this.seqPanelHolder=null;
-this.scalePanelHolder=null;
-this.idPanelHolder=null;
-this.idSpaceFillerPanel1=null;
-this.annotationSpaceFillerHolder=null;
-this.hscrollFillerPanel=null;
-this.annotationPanelHolder=null;
-this.apvscroll=null;
-this.scrollComplementaryPanel=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.fastPaint=true;
 this.hextent=0;
 this.vextent=0;
-this.sequenceHolderPanel=Clazz.new_($I$(1));
-this.vscroll=Clazz.new_($I$(2));
-this.hscroll=Clazz.new_($I$(2));
-this.seqPanelHolder=Clazz.new_($I$(1));
-this.scalePanelHolder=Clazz.new_($I$(1));
-this.idPanelHolder=Clazz.new_($I$(1));
-this.idSpaceFillerPanel1=Clazz.new_($I$(1));
-this.annotationSpaceFillerHolder=Clazz.new_($I$(1));
-this.hscrollFillerPanel=Clazz.new_($I$(1));
-this.annotationPanelHolder=Clazz.new_($I$(1));
-this.apvscroll=Clazz.new_($I$(2));
+this.sequenceHolderPanel=Clazz.new_($I$(1,1));
+this.vscroll=Clazz.new_($I$(2,1));
+this.hscroll=Clazz.new_($I$(2,1));
+this.seqPanelHolder=Clazz.new_($I$(1,1));
+this.scalePanelHolder=Clazz.new_($I$(1,1));
+this.idPanelHolder=Clazz.new_($I$(1,1));
+this.idSpaceFillerPanel1=Clazz.new_($I$(1,1));
+this.annotationSpaceFillerHolder=Clazz.new_($I$(1,1));
+this.hscrollFillerPanel=Clazz.new_($I$(1,1));
+this.annotationPanelHolder=Clazz.new_($I$(1,1));
+this.apvscroll=Clazz.new_($I$(2,1));
 this.scrollComplementaryPanel=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['fastPaint','scrollComplementaryPanel'],'I',['hextent','vextent'],'O',['av','jalview.appletgui.AlignViewport','overviewPanel','jalview.appletgui.OverviewPanel','seqPanel','jalview.appletgui.SeqPanel','idPanel','jalview.appletgui.IdPanel','idwidthAdjuster','jalview.appletgui.IdwidthAdjuster','alignFrame','jalview.appletgui.AlignFrame','scalePanel','jalview.appletgui.ScalePanel','annotationPanel','jalview.appletgui.AnnotationPanel','alabels','jalview.appletgui.AnnotationLabels','vpRanges','jalview.viewmodel.ViewportRanges','sequenceHolderPanel','java.awt.Panel','vscroll','java.awt.Scrollbar','+hscroll','seqPanelHolder','java.awt.Panel','+scalePanelHolder','+idPanelHolder','+idSpaceFillerPanel1','+annotationSpaceFillerHolder','+hscrollFillerPanel','+annotationPanelHolder','apvscroll','java.awt.Scrollbar']]]
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignFrame$jalview_appletgui_AlignViewport', function (af, av) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 try {
 p$1.jbInit.apply(this, []);
 } catch (e) {
@@ -65,14 +37,14 @@ throw e;
 this.alignFrame=af;
 this.av=av;
 this.vpRanges=av.getRanges$();
-this.seqPanel=Clazz.new_($I$(3).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[av, this]);
-this.idPanel=Clazz.new_($I$(4).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[av, this]);
-this.scalePanel=Clazz.new_($I$(5).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[av, this]);
-this.idwidthAdjuster=Clazz.new_($I$(6).c$$jalview_appletgui_AlignmentPanel,[this]);
-this.annotationPanel=Clazz.new_($I$(7).c$$jalview_appletgui_AlignmentPanel,[this]);
+this.seqPanel=Clazz.new_($I$(3,1).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[av, this]);
+this.idPanel=Clazz.new_($I$(4,1).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[av, this]);
+this.scalePanel=Clazz.new_($I$(5,1).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[av, this]);
+this.idwidthAdjuster=Clazz.new_($I$(6,1).c$$jalview_appletgui_AlignmentPanel,[this]);
+this.annotationPanel=Clazz.new_($I$(7,1).c$$jalview_appletgui_AlignmentPanel,[this]);
 this.annotationPanelHolder.add$java_awt_Component$O(this.annotationPanel, "Center");
 this.sequenceHolderPanel.add$java_awt_Component$O(this.annotationPanelHolder, "South");
-this.alabels=Clazz.new_($I$(8).c$$jalview_appletgui_AlignmentPanel,[this]);
+this.alabels=Clazz.new_($I$(8,1).c$$jalview_appletgui_AlignmentPanel,[this]);
 this.setAnnotationVisible$Z(av.isShowAnnotation$());
 this.idPanelHolder.add$java_awt_Component$O(this.idPanel, "Center");
 this.idSpaceFillerPanel1.add$java_awt_Component$O(this.idwidthAdjuster, "Center");
@@ -85,13 +57,12 @@ this.apvscroll.addAdjustmentListener$java_awt_event_AdjustmentListener(this);
 this.hscroll.addAdjustmentListener$java_awt_event_AdjustmentListener(this);
 this.vscroll.addAdjustmentListener$java_awt_event_AdjustmentListener(this);
 this.addComponentListener$java_awt_event_ComponentListener(((P$.AlignmentPanel$1||
-(function(){var C$=Clazz.newClass(P$, "AlignmentPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.ComponentAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignmentPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.ComponentAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'componentResized$java_awt_event_ComponentEvent', function (evt) {
 if (this.$finals$.av.getWrapAlignment$()) {
@@ -107,7 +78,7 @@ this.b$['jalview.appletgui.AlignmentPanel'].validateAnnotationDimensions$Z.apply
 }this.b$['java.awt.Component'].repaint$.apply(this.b$['java.awt.Component'], []);
 });
 })()
-), Clazz.new_($I$(9), [this, {av: av}],P$.AlignmentPanel$1)));
+), Clazz.new_($I$(9,1),[this, {av:av}],P$.AlignmentPanel$1)));
 var d=this.calculateIdWidth$();
 this.idPanel.idCanvas.setSize$java_awt_Dimension(d);
 this.hscrollFillerPanel.setSize$I$I(d.width, this.annotationPanel.getSize$().height);
@@ -116,21 +87,20 @@ this.annotationSpaceFillerHolder.setSize$I$I(d.width, this.annotationPanel.getSi
 this.alabels.setSize$I$I(d.width, this.annotationPanel.getSize$().height);
 var ap=this;
 av.addPropertyChangeListener$java_beans_PropertyChangeListener(((P$.AlignmentPanel$2||
-(function(){var C$=Clazz.newClass(P$, "AlignmentPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignmentPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 if (evt.getPropertyName$().equals$O("alignment")) {
-$I$(10).Refresh$java_awt_Component$S$Z$Z(this.$finals$.ap, this.$finals$.av.getSequenceSetId$(), true, true);
+$I$(10,"Refresh$java_awt_Component$S$Z$Z",[this.$finals$.ap, this.$finals$.av.getSequenceSetId$(), true, true]);
 this.b$['jalview.appletgui.AlignmentPanel'].alignmentChanged$.apply(this.b$['jalview.appletgui.AlignmentPanel'], []);
 }});
 })()
-), Clazz.new_(P$.AlignmentPanel$2.$init$, [this, {ap: ap, av: av}])));
+), Clazz.new_(P$.AlignmentPanel$2.$init$,[this, {ap:ap,av:av}])));
 av.getRanges$().addPropertyChangeListener$jalview_viewmodel_ViewportListenerI(this);
 }, 1);
 
@@ -147,7 +117,7 @@ return this.seqPanel.seqCanvas.fr;
 });
 
 Clazz.newMeth(C$, 'cloneFeatureRenderer$', function () {
-var nfr=Clazz.new_($I$(11).c$$jalview_viewmodel_AlignmentViewport,[this.av]);
+var nfr=Clazz.new_($I$(11,1).c$$jalview_viewmodel_AlignmentViewport,[this.av]);
 nfr.transferSettings$jalview_api_FeatureRenderer(this.seqPanel.seqCanvas.fr);
 return nfr;
 });
@@ -163,8 +133,8 @@ this.repaint$();
 Clazz.newMeth(C$, 'fontChanged$', function () {
 this.idPanel.idCanvas.image=null;
 var fm=this.getFontMetrics$java_awt_Font(this.av.getFont$());
-this.scalePanel.setSize$java_awt_Dimension(Clazz.new_($I$(12).c$$I$I,[10, this.av.getCharHeight$() + fm.getDescent$()]));
-this.idwidthAdjuster.setSize$java_awt_Dimension(Clazz.new_($I$(12).c$$I$I,[10, this.av.getCharHeight$() + fm.getDescent$()]));
+this.scalePanel.setSize$java_awt_Dimension(Clazz.new_([10, this.av.getCharHeight$() + fm.getDescent$()],$I$(12,1).c$$I$I));
+this.idwidthAdjuster.setSize$java_awt_Dimension(Clazz.new_([10, this.av.getCharHeight$() + fm.getDescent$()],$I$(12,1).c$$I$I));
 this.av.updateSequenceIdColours$();
 this.annotationPanel.image=null;
 var ap=this.annotationPanel.adjustPanelHeight$Z(false);
@@ -189,7 +159,7 @@ this.validate$();
 
 Clazz.newMeth(C$, 'calculateIdWidth$', function () {
 if (this.av.nullFrame == null ) {
-this.av.nullFrame=Clazz.new_($I$(13));
+this.av.nullFrame=Clazz.new_($I$(13,1));
 this.av.nullFrame.addNotify$();
 }var g=this.av.nullFrame.getGraphics$();
 var fm=g.getFontMetrics$java_awt_Font(this.av.font);
@@ -213,7 +183,7 @@ if (fm.stringWidth$S(label) > idWidth) {
 idWidth=fm.stringWidth$S(label);
 }i++;
 }
-}return Clazz.new_($I$(12).c$$I$I,[idWidth, this.idPanel.idCanvas.getSize$().height]);
+}return Clazz.new_([idWidth, this.idPanel.idCanvas.getSize$().height],$I$(12,1).c$$I$I);
 });
 
 Clazz.newMeth(C$, 'highlightSearchResults$jalview_datamodel_SearchResultsI', function (results) {
@@ -331,12 +301,12 @@ annotationHeight=Math.min(annotationHeight, availableHeight - 2 * rowHeight);
 annotationHeight=this.annotationPanelHolder.getSize$().height;
 }if (availableHeight - annotationHeight < 5) {
 annotationHeight=availableHeight;
-}this.annotationPanel.setSize$java_awt_Dimension(Clazz.new_($I$(12).c$$I$I,[d.width, annotationHeight]));
-this.annotationPanelHolder.setSize$java_awt_Dimension(Clazz.new_($I$(12).c$$I$I,[d.width, annotationHeight]));
+}this.annotationPanel.setSize$java_awt_Dimension(Clazz.new_($I$(12,1).c$$I$I,[d.width, annotationHeight]));
+this.annotationPanelHolder.setSize$java_awt_Dimension(Clazz.new_($I$(12,1).c$$I$I,[d.width, annotationHeight]));
 this.seqPanel.seqCanvas.setSize$I$I(d.width, this.seqPanel.seqCanvas.getSize$().height);
 var e=this.idPanel.getSize$();
-this.alabels.setSize$java_awt_Dimension(Clazz.new_($I$(12).c$$I$I,[e.width, annotationHeight]));
-this.annotationSpaceFillerHolder.setSize$java_awt_Dimension(Clazz.new_($I$(12).c$$I$I,[e.width, annotationHeight]));
+this.alabels.setSize$java_awt_Dimension(Clazz.new_($I$(12,1).c$$I$I,[e.width, annotationHeight]));
+this.annotationSpaceFillerHolder.setSize$java_awt_Dimension(Clazz.new_($I$(12,1).c$$I$I,[e.width, annotationHeight]));
 var s=this.apvscroll.getValue$();
 if (s > mheight - annotationHeight) {
 s=0;
@@ -397,7 +367,7 @@ p$1.adjustVertical$I.apply(this, [y]);
 p$1.sendViewPosition.apply(this, []);
 }});
 
-Clazz.newMeth(C$, ['adjustmentValueChanged$java_awt_event_AdjustmentEvent','adjustmentValueChanged$'], function (evt) {
+Clazz.newMeth(C$, 'adjustmentValueChanged$java_awt_event_AdjustmentEvent', function (evt) {
 if (evt == null  || evt.getSource$() === this.apvscroll  ) {
 this.annotationPanel.setScrollOffset$I$Z(this.apvscroll.getValue$(), false);
 this.alabels.setScrollOffset$I$Z(this.apvscroll.getValue$(), false);
@@ -473,7 +443,7 @@ $I$(15).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvid
 }, p$1);
 
 Clazz.newMeth(C$, 'paintAlignment$Z$Z', function (updateOverview, updateStructures) {
-var sorter=Clazz.new_($I$(16).c$$jalview_datamodel_AlignmentI$Z,[this.getAlignment$(), this.av.isShowAutocalculatedAbove$()]);
+var sorter=Clazz.new_([this.getAlignment$(), this.av.isShowAutocalculatedAbove$()],$I$(16,1).c$$jalview_datamodel_AlignmentI$Z);
 sorter.sort$jalview_datamodel_AlignmentAnnotationA$jalview_analysis_AnnotationSorter_SequenceAnnotationOrder(this.getAlignment$().getAlignmentAnnotation$(), this.av.getSortAnnotationsBy$());
 this.repaint$();
 if (updateStructures) {
@@ -511,25 +481,25 @@ this.vscroll.setValues$I$I$I$I(scrollPosition, 1, 0, maxScroll + 1);
 }, p$1);
 
 Clazz.newMeth(C$, 'jbInit', function () {
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
-this.sequenceHolderPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
-this.seqPanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
+this.sequenceHolderPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
+this.seqPanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
 this.scalePanelHolder.setBackground$java_awt_Color($I$(18).white);
-this.scalePanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
-this.idPanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
+this.scalePanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
+this.idPanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
 this.idSpaceFillerPanel1.setBackground$java_awt_Color($I$(18).white);
-this.idSpaceFillerPanel1.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
+this.idSpaceFillerPanel1.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
 this.annotationSpaceFillerHolder.setBackground$java_awt_Color($I$(18).white);
-this.annotationSpaceFillerHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
+this.annotationSpaceFillerHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
 this.hscroll.setOrientation$I(0);
-var hscrollHolder=Clazz.new_($I$(1));
-hscrollHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
+var hscrollHolder=Clazz.new_($I$(1,1));
+hscrollHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
 this.hscrollFillerPanel.setBackground$java_awt_Color($I$(18).white);
 this.apvscroll.setOrientation$I(1);
 this.apvscroll.setVisible$Z(true);
 this.apvscroll.addAdjustmentListener$java_awt_event_AdjustmentListener(this);
 this.annotationPanelHolder.setBackground$java_awt_Color($I$(18).white);
-this.annotationPanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17)));
+this.annotationPanelHolder.setLayout$java_awt_LayoutManager(Clazz.new_($I$(17,1)));
 this.annotationPanelHolder.add$java_awt_Component$O(this.apvscroll, "East");
 hscrollHolder.setBackground$java_awt_Color($I$(18).white);
 this.seqPanelHolder.setBackground$java_awt_Color($I$(18).white);
@@ -571,7 +541,7 @@ Clazz.newMeth(C$, 'getStructureSelectionManager$', function () {
 return $I$(15).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider(this.av.applet);
 });
 
-Clazz.newMeth(C$, ['raiseOOMWarning$S$OutOfMemoryError','raiseOOMWarning$'], function (string, error) {
+Clazz.newMeth(C$, 'raiseOOMWarning$S$OutOfMemoryError', function (string, error) {
 System.err.println$S("Out of memory whilst '" + string + "'" );
 error.printStackTrace$();
 });
@@ -584,7 +554,7 @@ Clazz.newMeth(C$, 'isSetToScrollComplementPanel$', function () {
 return this.scrollComplementaryPanel;
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 var x=this.vpRanges.getStartRes$();
 var y=this.vpRanges.getStartSeq$();
 this.setScrollValues$I$I(x, y);
@@ -596,4 +566,4 @@ this.setToScrollComplementPanel$Z(true);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

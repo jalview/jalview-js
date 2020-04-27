@@ -1,29 +1,22 @@
 (function(){var P$=java.io;
-var C$=Clazz.newClass(P$, "ByteArrayInputStream", null, 'java.io.InputStream');
+/*c*/var C$=Clazz.newClass(P$, "ByteArrayInputStream", null, 'java.io.InputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.buf=null;
-this.pos=0;
-this.mark=0;
-this.count=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pos','mark','count'],'O',['buf','byte[]']]]
 
 Clazz.newMeth(C$, 'c$$BA', function (buf) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.mark=0;
 this.buf=buf;
 this.count=buf.length;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$I$I', function (buf, offset, length) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.buf=buf;
 this.pos=offset >= buf.length ? buf.length : offset;
 this.mark=this.pos;
@@ -78,4 +71,4 @@ return this.pos - temp;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

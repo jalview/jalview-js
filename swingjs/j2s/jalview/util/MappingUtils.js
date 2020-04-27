@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.HashMap','jalview.datamodel.Sequence','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],['jalview.commands.EditCommand','.Edit'],'jalview.datamodel.SequenceI','jalview.util.StringUtils','jalview.datamodel.SearchResults','jalview.datamodel.SequenceGroup','jalview.util.Comparison','java.util.Arrays','jalview.datamodel.AlignedCodonFrame','java.util.ArrayList','jalview.analysis.AlignmentSorter','jalview.datamodel.AlignmentOrder','jalview.commands.OrderCommand','jalview.util.ReverseListIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MappingUtils");
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.HashMap','jalview.datamodel.Sequence','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],['jalview.commands.EditCommand','.Edit'],'jalview.datamodel.SequenceI','jalview.util.StringUtils','jalview.datamodel.SearchResults','jalview.datamodel.SequenceGroup','jalview.util.Comparison','java.util.Arrays','jalview.datamodel.AlignedCodonFrame','java.util.ArrayList','jalview.analysis.AlignmentSorter','jalview.datamodel.AlignmentOrder','jalview.commands.OrderCommand','jalview.util.ReverseListIterator']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MappingUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'mapCutOrPaste$jalview_commands_EditCommand_Edit$Z$java_util_List$jalview_commands_EditCommand$java_util_List', function (edit, undo, targetSeqs, result, mappings) {
 var action=edit.getAction$();
@@ -17,16 +16,16 @@ action=action.getUndoAction$();
 Clazz.newMeth(C$, 'mapEditCommand$jalview_commands_EditCommand$Z$jalview_datamodel_AlignmentI$C$java_util_List', function (command, undo, mapTo, gapChar, mappings) {
 if (!mapTo.isNucleotide$()) {
 return null;
-}var targetCopies=Clazz.new_($I$(1));
+}var targetCopies=Clazz.new_($I$(1,1));
 for (var seq, $seq = mapTo.getSequences$().iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
 var ds=seq.getDatasetSequence$();
 if (ds != null ) {
-var copy=Clazz.new_($I$(2).c$$jalview_datamodel_SequenceI,[seq]);
+var copy=Clazz.new_($I$(2,1).c$$jalview_datamodel_SequenceI,[seq]);
 copy.setDatasetSequence$jalview_datamodel_SequenceI(ds);
-targetCopies.put$TK$TV(ds, copy);
+targetCopies.put$O$O(ds, copy);
 }}
 var originalSequences=command.priorState$Z(undo);
-var result=Clazz.new_($I$(3));
+var result=Clazz.new_($I$(3,1));
 var edits=command.getEditIterator$Z(!undo);
 while (edits.hasNext$()){
 var edit=edits.next$();
@@ -62,22 +61,22 @@ if (match != null ) {
 var ratio=3;
 var mappedCount=count * 3;
 var mappedEditPos=action === $I$(4).DELETE_GAP  ? match[0] - mappedCount : match[0];
-var e=Clazz.new_($I$(5).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$C, [result, null, action, Clazz.array($I$(6), -1, [targetSeq]), mappedEditPos, mappedCount, gapChar]);
+var e=Clazz.new_([result, null, action, Clazz.array($I$(6), -1, [targetSeq]), mappedEditPos, mappedCount, gapChar],$I$(5,1).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$C);
 result.addEdit$jalview_commands_EditCommand_Edit(e);
 if (action === $I$(4).INSERT_GAP ) {
-copyTarget.setSequence$S( String.instantialize($I$(7).insertCharAt$CA$I$I$C(copyTarget.getSequence$(), mappedEditPos, mappedCount, gapChar)));
+copyTarget.setSequence$S( String.instantialize($I$(7,"insertCharAt$CA$I$I$C",[copyTarget.getSequence$(), mappedEditPos, mappedCount, gapChar])));
 } else if (action === $I$(4).DELETE_GAP ) {
-copyTarget.setSequence$S( String.instantialize($I$(7).deleteChars$CA$I$I(copyTarget.getSequence$(), mappedEditPos, mappedEditPos + mappedCount)));
+copyTarget.setSequence$S( String.instantialize($I$(7,"deleteChars$CA$I$I",[copyTarget.getSequence$(), mappedEditPos, mappedEditPos + mappedCount])));
 }}}
 }if (action === $I$(4).INSERT_GAP ) {
-actedOn.setSequence$S( String.instantialize($I$(7).insertCharAt$CA$I$I$C(actedOn.getSequence$(), editPos, count, gapChar)));
+actedOn.setSequence$S( String.instantialize($I$(7,"insertCharAt$CA$I$I$C",[actedOn.getSequence$(), editPos, count, gapChar])));
 } else if (action === $I$(4).DELETE_GAP ) {
-actedOn.setSequence$S( String.instantialize($I$(7).deleteChars$CA$I$I(actedOn.getSequence$(), editPos, editPos + count)));
+actedOn.setSequence$S( String.instantialize($I$(7,"deleteChars$CA$I$I",[actedOn.getSequence$(), editPos, editPos + count])));
 }}
 }, 1);
 
 Clazz.newMeth(C$, 'buildSearchResults$jalview_datamodel_SequenceI$I$java_util_List', function (seq, index, seqmappings) {
-var results=Clazz.new_($I$(8));
+var results=Clazz.new_($I$(8,1));
 C$.addSearchResults$jalview_datamodel_SearchResultsI$jalview_datamodel_SequenceI$I$java_util_List(results, seq, index, seqmappings);
 return results;
 }, 1);
@@ -93,7 +92,7 @@ Clazz.newMeth(C$, 'mapSequenceGroup$jalview_datamodel_SequenceGroup$jalview_api_
 var targetIsNucleotide=mapTo.isNucleotide$();
 var protein=targetIsNucleotide ? mapFrom : mapTo;
 var codonFrames=protein.getAlignment$().getCodonFrames$();
-var mappedGroup=Clazz.new_($I$(9).c$$jalview_datamodel_SequenceGroup,[sg]);
+var mappedGroup=Clazz.new_($I$(9,1).c$$jalview_datamodel_SequenceGroup,[sg]);
 mappedGroup.setColourScheme$jalview_schemes_ColourSchemeI(mapTo.getGlobalColourScheme$());
 mappedGroup.clear$();
 var minStartCol=-1;
@@ -102,13 +101,13 @@ var selectionStartRes=sg.getStartRes$();
 var selectionEndRes=sg.getEndRes$();
 for (var selected, $selected = sg.getSequences$().iterator$(); $selected.hasNext$()&&((selected=($selected.next$())),1);) {
 var firstUngappedPos=selectionStartRes;
-while (firstUngappedPos <= selectionEndRes && $I$(10).isGap$C(selected.getCharAt$I(firstUngappedPos)) ){
+while (firstUngappedPos <= selectionEndRes && $I$(10,"isGap$C",[selected.getCharAt$I(firstUngappedPos)]) ){
 firstUngappedPos++;
 }
 if (firstUngappedPos > selectionEndRes) {
 continue;
 }var lastUngappedPos=selectionEndRes;
-while (lastUngappedPos >= selectionStartRes && $I$(10).isGap$C(selected.getCharAt$I(lastUngappedPos)) ){
+while (lastUngappedPos >= selectionStartRes && $I$(10,"isGap$C",[selected.getCharAt$I(lastUngappedPos)]) ){
 lastUngappedPos--;
 }
 var startResiduePos=selected.findPosition$I(firstUngappedPos);
@@ -120,7 +119,7 @@ for (var seq, $seq = mapTo.getAlignment$().getSequences$().iterator$(); $seq.has
 var mappedStartResidue=0;
 var mappedEndResidue=0;
 if (seq.getDatasetSequence$() === mappedSequence ) {
-var mapping=$I$(11).asList$TTA(Clazz.array($I$(12), -1, [acf]));
+var mapping=$I$(11,"asList$OA",[Clazz.array($I$(12), -1, [acf])]);
 var sr=C$.buildSearchResults$jalview_datamodel_SequenceI$I$java_util_List(selected, startResiduePos, mapping);
 for (var m, $m = sr.getResults$().iterator$(); $m.hasNext$()&&((m=($m.next$())),1);) {
 mappedStartResidue=m.getStart$();
@@ -147,7 +146,7 @@ return mappedGroup;
 
 Clazz.newMeth(C$, 'mapOrderCommand$jalview_commands_OrderCommand$Z$jalview_datamodel_AlignmentI$java_util_List', function (command, undo, mapTo, mappings) {
 var sortOrder=command.getSequenceOrder$Z(undo);
-var mappedOrder=Clazz.new_($I$(13));
+var mappedOrder=Clazz.new_($I$(13,1));
 var j=0;
 var mappingToNucleotide=mapTo.isNucleotide$();
 for (var seq, $seq = 0, $$seq = sortOrder; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
@@ -156,7 +155,7 @@ var mappedSeq=mappingToNucleotide ? acf.getDnaForAaSeq$jalview_datamodel_Sequenc
 if (mappedSeq != null ) {
 for (var seq2, $seq2 = mapTo.getSequences$().iterator$(); $seq2.hasNext$()&&((seq2=($seq2.next$())),1);) {
 if (seq2.getDatasetSequence$() === mappedSeq ) {
-mappedOrder.add$TE(seq2);
+mappedOrder.add$O(seq2);
 j++;
 break;
 }}
@@ -167,12 +166,12 @@ return null;
 }if (j < mapTo.getHeight$()) {
 for (var seq, $seq = mapTo.getSequences$().iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
 if (!mappedOrder.contains$O(seq)) {
-mappedOrder.add$TE(seq);
+mappedOrder.add$O(seq);
 }}
-}var mappedOrderArray=mappedOrder.toArray$TTA(Clazz.array($I$(6), [mappedOrder.size$()]));
+}var mappedOrderArray=mappedOrder.toArray$OA(Clazz.array($I$(6), [mappedOrder.size$()]));
 var oldOrder=mapTo.getSequencesArray$();
-$I$(14).sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder(mapTo, Clazz.new_($I$(15).c$$jalview_datamodel_SequenceIA,[mappedOrderArray]));
-var result=Clazz.new_($I$(16).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[command.getDescription$(), oldOrder, mapTo]);
+$I$(14,"sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder",[mapTo, Clazz.new_($I$(15,1).c$$jalview_datamodel_SequenceIA,[mappedOrderArray])]);
+var result=Clazz.new_([command.getDescription$(), oldOrder, mapTo],$I$(16,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI);
 return result;
 }, 1);
 
@@ -238,7 +237,7 @@ return found ? mappedTo : null;
 }, 1);
 
 Clazz.newMeth(C$, 'findCodonsFor$jalview_datamodel_SequenceI$I$java_util_List', function (seq, col, mappings) {
-var result=Clazz.new_($I$(13));
+var result=Clazz.new_($I$(13,1));
 var dsPos=seq.findPosition$I(col);
 for (var mapping, $mapping = mappings.iterator$(); $mapping.hasNext$()&&((mapping=($mapping.next$())),1);) {
 if (mapping.involvesSequence$jalview_datamodel_SequenceI(seq)) {
@@ -273,7 +272,7 @@ return C$.findMappingsForSequenceAndOthers$jalview_datamodel_SequenceI$java_util
 }, 1);
 
 Clazz.newMeth(C$, 'findMappingsForSequenceAndOthers$jalview_datamodel_SequenceI$java_util_List$java_util_List', function (sequence, mappings, filterList) {
-var result=Clazz.new_($I$(13));
+var result=Clazz.new_($I$(13,1));
 if (sequence == null  || mappings == null  ) {
 return result;
 }for (var mapping, $mapping = mappings.iterator$(); $mapping.hasNext$()&&((mapping=($mapping.next$())),1);) {
@@ -284,11 +283,11 @@ var otherDataset=otherseq.getDatasetSequence$();
 if (otherseq === sequence  || otherseq === sequence.getDatasetSequence$()   || (otherDataset != null  && (otherDataset === sequence  || otherDataset === sequence.getDatasetSequence$()  ) ) ) {
 continue;
 }if (mapping.involvesSequence$jalview_datamodel_SequenceI(otherseq)) {
-result.add$TE(mapping);
+result.add$O(mapping);
 break;
 }}
 } else {
-result.add$TE(mapping);
+result.add$O(mapping);
 }}}
 return result;
 }, 1);
@@ -353,7 +352,7 @@ return (min <= queryRange[0] && max >= queryRange[0]  && min <= queryRange[1]  &
 
 Clazz.newMeth(C$, 'removeEndPositions$I$java_util_List', function (positions, ranges) {
 var toRemove=positions;
-var it=Clazz.new_($I$(17).c$$java_util_List,[ranges]);
+var it=Clazz.new_($I$(17,1).c$$java_util_List,[ranges]);
 while (toRemove > 0){
 var endRange=it.next$();
 if (endRange.length != 2) {
@@ -374,4 +373,4 @@ it.remove$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

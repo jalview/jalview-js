@@ -1,27 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.viewmodel"),I$=[[0,'jalview.analysis.PCA','java.util.Vector','jalview.datamodel.SequencePoint','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PCAModel");
+(function(){var P$=Clazz.newPackage("jalview.viewmodel"),I$=[[0,'jalview.analysis.PCA','java.util.Vector','jalview.datamodel.SequencePoint','StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PCAModel");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inputData=null;
-this.seqs=null;
-this.similarityParams=null;
-this.scoreModel=null;
-this.nucleotide=false;
-this.pca=null;
-this.top=0;
-this.points=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nucleotide=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['nucleotide'],'I',['top'],'O',['inputData','jalview.datamodel.AlignmentView','seqs','jalview.datamodel.SequenceI[]','similarityParams','jalview.api.analysis.SimilarityParamsI','scoreModel','jalview.api.analysis.ScoreModelI','pca','jalview.analysis.PCA','points','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentView$jalview_datamodel_SequenceIA$Z$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI', function (seqData, sqs, nuc, modelName, params) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.inputData=seqData;
 this.seqs=sqs;
 this.nucleotide=nuc;
@@ -30,7 +19,7 @@ this.similarityParams=params;
 }, 1);
 
 Clazz.newMeth(C$, 'calculate$', function () {
-this.pca=Clazz.new_($I$(1).c$$jalview_datamodel_AlignmentView$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI,[this.inputData, this.scoreModel, this.similarityParams]);
+this.pca=Clazz.new_($I$(1,1).c$$jalview_datamodel_AlignmentView$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI,[this.inputData, this.scoreModel, this.similarityParams]);
 this.pca.run$();
 var ii=0;
 while ((ii < this.seqs.length) && (this.seqs[ii] != null ) ){
@@ -38,11 +27,11 @@ ii++;
 }
 var height=this.pca.getHeight$();
 this.top=height - 1;
-this.points=Clazz.new_($I$(2));
+this.points=Clazz.new_($I$(2,1));
 var scores=this.pca.getComponents$I$I$I$F(this.top - 1, this.top - 2, this.top - 3, 100);
 for (var i=0; i < height; i++) {
-var sp=Clazz.new_($I$(3).c$$jalview_datamodel_SequenceI$jalview_datamodel_Point,[this.seqs[i], scores[i]]);
-this.points.add$TE(sp);
+var sp=Clazz.new_($I$(3,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_Point,[this.seqs[i], scores[i]]);
+this.points.add$O(sp);
 }
 });
 
@@ -86,7 +75,7 @@ this.inputData=data;
 });
 
 Clazz.newMeth(C$, 'getPointsasCsv$Z$I$I$I', function (transformed, xdim, ydim, zdim) {
-var csv=Clazz.new_($I$(4));
+var csv=Clazz.new_($I$(4,1));
 csv.append$S("\"Sequence\"");
 if (transformed) {
 csv.append$S(",");
@@ -149,4 +138,4 @@ this.pca=data;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,69 +1,30 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','javajs.util.AU','org.jmol.shapespecial.Polyhedron','javajs.util.BS','Boolean','org.jmol.util.BSUtil','org.jmol.util.C','javajs.util.PT','javajs.util.Lst','javajs.util.P4','javajs.util.Measure','org.jmol.c.PAL','java.util.Arrays','org.jmol.util.Logger','org.jmol.api.Interface','org.jmol.util.Normix','java.util.Hashtable','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Polyhedra", null, 'org.jmol.shape.AtomShape', 'java.util.Comparator');
-C$.randomPoint=null;
-C$.MAX_DISTANCE_TO_PLANE=0;
+(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','javajs.util.AU','org.jmol.shapespecial.Polyhedron','javajs.util.BS','Boolean','org.jmol.util.BSUtil','org.jmol.util.C','javajs.util.PT','javajs.util.Lst','javajs.util.P4','javajs.util.Measure','org.jmol.c.PAL','java.util.Arrays','org.jmol.util.Logger','org.jmol.api.Interface','org.jmol.util.Normix','java.util.Hashtable','javajs.util.SB','org.jmol.shape.Shape']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Polyhedra", null, 'org.jmol.shape.AtomShape', 'java.util.Comparator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.randomPoint=$I$(1).new3$F$F$F(3141.0, 2718.0, 1414.0);
-C$.MAX_DISTANCE_TO_PLANE=0.1;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.otherAtoms=null;
-this.normalsT=null;
-this.planesT=null;
-this.polyhedronCount=0;
-this.polyhedrons=null;
-this.drawEdges=0;
-this.radius=0;
-this.radiusMin=0;
-this.pointScale=0;
-this.nVertices=0;
-this.faceCenterOffset=0;
-this.isCollapsed=false;
-this.isFull=false;
-this.iHaveCenterBitSet=false;
-this.bondedOnly=false;
-this.haveBitSetVertices=false;
-this.centers=null;
-this.thisID=null;
-this.center=null;
-this.bsVertices=null;
-this.bsVertexCount=null;
-this.useUnitCell=false;
-this.nPoints=0;
-this.planarParam=0;
-this.info=null;
-this.distanceRef=0;
-this.modelIndex=0;
-this.isAuto=false;
-this.explicitFaces=null;
-this.bsPolys=null;
-this.vAB=null;
-this.vAC=null;
-this.vBC=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.otherAtoms=Clazz.array($I$(1), [498]);
 this.normalsT=Clazz.array($I$(2), [251]);
 this.planesT=$I$(3).newInt2$I(250);
 this.polyhedrons=Clazz.array($I$(4), [32]);
-this.bsPolys=Clazz.new_($I$(5));
-this.vAB=Clazz.new_($I$(2));
-this.vAC=Clazz.new_($I$(2));
-this.vBC=Clazz.new_($I$(2));
-}, 1);
+this.bsPolys=Clazz.new_($I$(5,1));
+this.vAB=Clazz.new_($I$(2,1));
+this.vAC=Clazz.new_($I$(2,1));
+this.vBC=Clazz.new_($I$(2,1));
+},1);
 
-Clazz.newMeth(C$, ['compare$OA$OA','compare$','compare$TT$TT'], function (a, b) {
+C$.$fields$=[['Z',['isCollapsed','isFull','iHaveCenterBitSet','bondedOnly','haveBitSetVertices','useUnitCell','isAuto'],'F',['radius','radiusMin','pointScale','faceCenterOffset','planarParam','distanceRef'],'I',['polyhedronCount','drawEdges','nVertices','nPoints','modelIndex'],'S',['thisID'],'O',['otherAtoms','javajs.util.P3[]','normalsT','javajs.util.V3[]','planesT','int[][]','polyhedrons','org.jmol.shapespecial.Polyhedron[]','centers','javajs.util.BS','center','javajs.util.P3','bsVertices','javajs.util.BS','+bsVertexCount','info','java.util.Map','explicitFaces','int[][]','bsPolys','javajs.util.BS','vAB','javajs.util.V3','+vAC','+vBC']]
+,['F',['MAX_DISTANCE_TO_PLANE'],'O',['randomPoint','javajs.util.P3']]]
+
+Clazz.newMeth(C$, ['compare$OA$OA','compare$O$O'], function (a, b) {
 var da=(a[0] == null  ? 3.4028235E38 : (a[0]).floatValue$());
 var db=(b[0] == null  ? 3.4028235E38 : (b[0]).floatValue$());
 return (da < db  ? -1 : da > db  ? 1 : 0);
 });
 
 Clazz.newMeth(C$, 'setProperty$S$O$javajs_util_BS', function (propertyName, value, bs) {
-if (this.thisID != null ) bs=Clazz.new_($I$(5));
+if (this.thisID != null ) bs=Clazz.new_($I$(5,1));
 if ("init" == propertyName) {
 this.faceCenterOffset=0.25;
 this.planarParam=NaN;
@@ -75,7 +36,7 @@ this.thisID=null;
 this.center=null;
 this.centers=null;
 this.info=null;
-this.bsVertexCount=Clazz.new_($I$(5));
+this.bsVertexCount=Clazz.new_($I$(5,1));
 this.bondedOnly=this.isCollapsed=this.isFull=this.iHaveCenterBitSet=this.useUnitCell=this.isAuto=this.haveBitSetVertices=false;
 if ($I$(6).TRUE === value ) this.drawEdges=0;
 return;
@@ -152,7 +113,7 @@ this.bondedOnly=true;
 return;
 }if ("info" == propertyName) {
 this.info=value;
-this.centers=(this.info.containsKey$O("center") ? null : $I$(7).newAndSetBit$I((this.info.get$O("atomIndex")).intValue));
+this.centers=(this.info.containsKey$O("center") ? null : (function(a,f){return f.apply(null,a)})([(this.info.get$O("atomIndex")).intValue],$I$(7).newAndSetBit$I));
 this.iHaveCenterBitSet=(this.centers != null );
 return;
 }if ("delete" == propertyName) {
@@ -183,7 +144,7 @@ return;
 bs=("colorThis" == propertyName && this.iHaveCenterBitSet  ? this.centers : p$1.andBitSet$javajs_util_BS.apply(this, [bs]));
 var isPhase=("colorPhase" == propertyName);
 var cvalue=(isPhase ? (value)[1] : value);
-var colixEdge=(isPhase ? $I$(8).getColix$I(((value)[0]).intValue$()) : 0);
+var colixEdge=(isPhase ? (function(a,f){return f.apply(null,a)})([((value)[0]).intValue$()],$I$(8).getColix$I) : 0);
 var colix=$I$(8).getColixO$O(isPhase ? cvalue : value);
 var p;
 var bs1=p$1.findPolyBS$javajs_util_BS.apply(this, [bs]);
@@ -241,13 +202,13 @@ this.polyhedrons=$I$(3).deleteElements$O$I$I(this.polyhedrons, i, 1);
 });
 
 Clazz.newMeth(C$, 'setDefinedFaces$javajs_util_P3A$IAA', function (points, faces) {
-var bsUsed=Clazz.new_($I$(5));
+var bsUsed=Clazz.new_($I$(5,1));
 for (var i=faces.length; --i >= 0; ) {
 var face=faces[i];
 for (var j=face.length; --j >= 0; ) bsUsed.set$I(face[j]);
 
 }
-var bsNot=$I$(7).newBitSet2$I$I(0, bsUsed.length$());
+var bsNot=(function(a,f){return f.apply(null,a)})([0, bsUsed.length$()],$I$(7).newBitSet2$I$I);
 bsNot.andNot$javajs_util_BS(bsUsed);
 var nNot=bsNot.cardinality$();
 if (nNot > 0) {
@@ -269,7 +230,7 @@ for (var j=face.length; --j >= 0; ) face[j]=mapOldToNew[face[j]];
 
 }
 }var n=this.nPoints=points.length;
-this.center=Clazz.new_($I$(1));
+this.center=Clazz.new_($I$(1,1));
 this.otherAtoms=Clazz.array($I$(1), [n + 1]);
 if (n > 0) {
 this.otherAtoms[n]=this.center;
@@ -358,7 +319,7 @@ var sm=(smiles == null  ? null : this.vwr.getSmilesMatcher$());
 if (sm != null ) smiles=sm.cleanSmiles$S(smiles);
 var nv=(smiles != null  ? $I$(9).countChar$S$C(smiles, "*") : iatom);
 if (nv == 0) nv=-2147483648;
-var bs=Clazz.new_($I$(5));
+var bs=Clazz.new_($I$(5,1));
 if (smiles == null  || sm != null  ) for (var i=this.polyhedronCount; --i >= 0; ) {
 p=this.polyhedrons[i];
 if (p.id != null ) continue;
@@ -383,8 +344,8 @@ throw e;
 data[1]=bs;
 return true;
 }if (property == "allInfo") {
-var info=Clazz.new_($I$(10));
-for (var i=this.polyhedronCount; --i >= 0; ) info.addLast$TV(this.polyhedrons[i].getInfo$org_jmol_viewer_Viewer$S(this.vwr, "info"));
+var info=Clazz.new_($I$(10,1));
+for (var i=this.polyhedronCount; --i >= 0; ) info.addLast$O(this.polyhedrons[i].getInfo$org_jmol_viewer_Viewer$S(this.vwr, "info"));
 
 data[1]=info;
 return true;
@@ -396,11 +357,11 @@ var faces=p.faces;
 var vertices=p.vertices;
 var center=(p.center == null  ? p.centralAtom : p.center);
 if (p.planes == null ) {
-var vNorm=Clazz.new_($I$(2));
-var vAB=Clazz.new_($I$(2));
+var vNorm=Clazz.new_($I$(2,1));
+var vAB=Clazz.new_($I$(2,1));
 p.planes=Clazz.array($I$(11), [faces.length]);
 for (var iface=faces.length; --iface >= 0; ) {
-var plane=p.planes[iface]=Clazz.new_($I$(11));
+var plane=p.planes[iface]=Clazz.new_($I$(11,1));
 $I$(12).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(vertices[faces[iface][0]], vertices[faces[iface][1]], vertices[faces[iface][2]], vNorm, vAB, plane);
 }
 }var maxDistance=0;
@@ -408,7 +369,7 @@ for (var i=p.nVertices; --i >= 0; ) {
 var d=vertices[i].distance$javajs_util_T3(center);
 if (d > maxDistance ) maxDistance=d;
 }
-var bsAtoms=$I$(7).copy$javajs_util_BS(this.vwr.getAtomsNearPt$F$javajs_util_P3(maxDistance + offset, center));
+var bsAtoms=(function(a,f){return f.apply(null,a)})([this.vwr.getAtomsNearPt$F$javajs_util_P3(maxDistance + offset, center)],$I$(7).copy$javajs_util_BS);
 var atoms=this.vwr.ms.at;
 for (var i=bsAtoms.nextSetBit$I(0); i >= 0; i=bsAtoms.nextSetBit$I(i + 1)) {
 for (var f=faces.length; --f >= 0; ) {
@@ -446,18 +407,18 @@ return bs;
 }, p$1);
 
 Clazz.newMeth(C$, 'isMatch$S', function (id) {
-return this.thisID != null  && $I$(9).isMatch$S$S$Z$Z(id.toLowerCase$(), this.thisID.toLowerCase$(), true, true) ;
+return this.thisID != null  && (function(a,f){return f.apply(null,a)})([id.toLowerCase$(), this.thisID.toLowerCase$(), true, true],$I$(9).isMatch$S$S$Z$Z) ;
 }, p$1);
 
 Clazz.newMeth(C$, 'getShapeDetail$', function () {
-var lst=Clazz.new_($I$(10));
-for (var i=0; i < this.polyhedronCount; i++) lst.addLast$TV(this.polyhedrons[i].getInfo$org_jmol_viewer_Viewer$S(this.vwr, "info"));
+var lst=Clazz.new_($I$(10,1));
+for (var i=0; i < this.polyhedronCount; i++) lst.addLast$O(this.polyhedrons[i].getInfo$org_jmol_viewer_Viewer$S(this.vwr, "info"));
 
 return lst;
 });
 
 Clazz.newMeth(C$, 'andBitSet$javajs_util_BS', function (bs) {
-var bsCenters=Clazz.new_($I$(5));
+var bsCenters=Clazz.new_($I$(5,1));
 for (var i=this.polyhedronCount; --i >= 0; ) {
 var p=this.polyhedrons[i];
 if (p.id == null ) bsCenters.set$I(p.centralAtom.i);
@@ -468,12 +429,12 @@ return bsCenters;
 
 Clazz.newMeth(C$, 'deletePolyhedra', function () {
 var newCount=0;
-var pid=($b$[0] = $I$(13).pidOf$O(null), $b$[0]);
+var pid=$I$(13).pidOf$O(null);
 var bs=p$1.findPolyBS$javajs_util_BS.apply(this, [this.centers]);
 for (var i=0; i < this.polyhedronCount; ++i) {
 var p=this.polyhedrons[i];
 if (bs.get$I(i)) {
-if (this.colixes != null  && p.id == null  ) this.setColixAndPalette$H$B$I(0, ($b$[0] = pid, $b$[0]), p.centralAtom.i);
+if (this.colixes != null  && p.id == null  ) this.setColixAndPalette$H$B$I(0, pid, p.centralAtom.i);
 continue;
 }this.polyhedrons[newCount++]=p;
 }
@@ -501,7 +462,7 @@ p=p$1.validatePolyhedron$javajs_util_P3$I.apply(this, [this.center, this.nPoints
 }} else if (this.info != null  && this.info.containsKey$O("id") ) {
 var o=this.info.get$O("id");
 this.thisID=(Clazz.instanceOf(o, "org.jmol.script.SV") ? (o).asString$() : o.toString());
-p=Clazz.new_($I$(4)).setInfo$org_jmol_viewer_Viewer$java_util_Map$org_jmol_modelset_AtomA(this.vwr, this.info, this.vwr.ms.at);
+p=Clazz.new_($I$(4,1)).setInfo$org_jmol_viewer_Viewer$java_util_Map$org_jmol_modelset_AtomA(this.vwr, this.info, this.vwr.ms.at);
 }if (p != null ) {
 p$1.addPolyhedron$org_jmol_shapespecial_Polyhedron.apply(this, [p]);
 return;
@@ -526,7 +487,7 @@ this.vwr.setIteratorForAtom$org_jmol_api_AtomIndexIterator$I$F(iter, i, this.rad
 p=p$1.constructRadiusPolyhedron$org_jmol_modelset_Atom$org_jmol_api_AtomIndexIterator.apply(this, [atom, iter]);
 break;
 case 6:
-p=Clazz.new_($I$(4)).setInfo$org_jmol_viewer_Viewer$java_util_Map$org_jmol_modelset_AtomA(this.vwr, this.info, this.vwr.ms.at);
+p=Clazz.new_($I$(4,1)).setInfo$org_jmol_viewer_Viewer$java_util_Map$org_jmol_modelset_AtomA(this.vwr, this.info, this.vwr.ms.at);
 break;
 case 2:
 p=p$1.validatePolyhedron$javajs_util_P3$I.apply(this, [atom, this.nPoints]);
@@ -571,7 +532,7 @@ return (otherAtomCount < 3 || this.nVertices > 0 && !this.bsVertexCount.get$I(ot
 Clazz.newMeth(C$, 'constructUnitCellPolygon$org_jmol_modelset_Atom$Z', function (atom, useBondAlgorithm) {
 var unitcell=this.vwr.ms.getUnitCellForAtom$I(atom.i);
 if (unitcell == null ) return null;
-var bsAtoms=$I$(7).copy$javajs_util_BS(this.vwr.getModelUndeletedAtomsBitSet$I(atom.mi));
+var bsAtoms=(function(a,f){return f.apply(null,a)})([this.vwr.getModelUndeletedAtomsBitSet$I(atom.mi)],$I$(7).copy$javajs_util_BS);
 if (this.bsVertices != null ) bsAtoms.and$javajs_util_BS(this.bsVertices);
 if (bsAtoms.isEmpty$()) return null;
 var iter=unitcell.getIterator$org_jmol_viewer_Viewer$org_jmol_modelset_Atom$org_jmol_modelset_AtomA$javajs_util_BS$F(this.vwr, atom, this.atoms, bsAtoms, useBondAlgorithm ? 5.0 : this.radius);
@@ -633,7 +594,7 @@ if (otherAtomCount < 4) return otherAtomCount;
 var dist=Clazz.array(java.lang.Object, [250, 2]);
 for (var i=0; i < otherAtomCount; i++) dist[i][0]=Float.valueOf$F(atom.distance$javajs_util_T3((dist[i][1]=this.otherAtoms[i])));
 
-$I$(14).sort$TTA$java_util_Comparator(dist, this);
+$I$(14).sort$OA$java_util_Comparator(dist, this);
 var maxGap=0;
 var iMax=0;
 var n=otherAtomCount;
@@ -643,9 +604,9 @@ for (var i=1; i < n; i++) {
 var d=(dist[i][0]).floatValue$();
 var gap=d - dlast;
 this.otherAtoms[i]=dist[i][1];
-if ($I$(15).debugging) $I$(15).info$S("polyhedron d=" + new Float(d).toString() + " " + this.otherAtoms[i] );
+if ($I$(15).debugging) (function(a,f){return f.apply(null,a)})(["polyhedron d=" + new Float(d).toString() + " " + this.otherAtoms[i] ],$I$(15).info$S);
 if (gap > maxGap ) {
-if ($I$(15).debugging) $I$(15).info$S("polyhedron maxGap=" + new Float(gap).toString() + " for i=" + i + " d=" + new Float(d).toString() + " " + this.otherAtoms[i] );
+if ($I$(15).debugging) (function(a,f){return f.apply(null,a)})(["polyhedron maxGap=" + new Float(gap).toString() + " for i=" + i + " d=" + new Float(d).toString() + " " + this.otherAtoms[i] ],$I$(15).info$S);
 maxGap=gap;
 iMax=i;
 }dlast=d;
@@ -660,7 +621,7 @@ var faceTriangles;
 var normals;
 var collapsed=this.isCollapsed;
 var triangleCount=0;
-var bsCenterPlanes=Clazz.new_($I$(5));
+var bsCenterPlanes=Clazz.new_($I$(5,1));
 var triangles;
 if (faces != null ) {
 collapsed=false;
@@ -681,49 +642,49 @@ for (var i=0; i < vertexCount; i++) ptAve.add$javajs_util_T3(points[i]);
 
 ptAve.scale$F(1.0 / (vertexCount + 1));
 var ptRef=$I$(1).newP$javajs_util_T3(ptAve);
-var bsThroughCenter=Clazz.new_($I$(5));
+var bsThroughCenter=Clazz.new_($I$(5,1));
 if (this.thisID == null ) for (var pt=0, i=0; i < ni; i++) for (var j=i + 1; j < nj; j++) for (var k=j + 1; k < vertexCount; k++, pt++) if (p$1.isPlanar$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3.apply(this, [points[i], points[j], points[k], ptRef])) bsThroughCenter.set$I(pt);
 
 
 
 triangles=this.planesT;
-var pTemp=Clazz.new_($I$(11));
-var nTemp=Clazz.new_($I$(2));
+var pTemp=Clazz.new_($I$(11,1));
+var nTemp=Clazz.new_($I$(2,1));
 var offset=this.faceCenterOffset;
 var fmax=247;
 var vmax=250;
 var bsTemp=$I$(17).newVertexBitSet$();
 normals=this.normalsT;
-var htNormMap=Clazz.new_($I$(18));
-var htEdgeMap=Clazz.new_($I$(18));
-var lstRejected=(this.isFull ? Clazz.new_($I$(10)) : null);
+var htNormMap=Clazz.new_($I$(18,1));
+var htEdgeMap=Clazz.new_($I$(18,1));
+var lstRejected=(this.isFull ? Clazz.new_($I$(10,1)) : null);
 var edgeTest=Clazz.array(java.lang.Object, [3]);
 var vAC=this.vAC;
 for (var i=0, pt=0; i < ni; i++) for (var j=i + 1; j < nj; j++) {
 for (var k=j + 1; k < vertexCount; k++, pt++) {
 if (triangleCount >= fmax) {
-$I$(15).error$S("Polyhedron error: maximum face(" + fmax + ") -- reduce RADIUS" );
+(function(a,f){return f.apply(null,a)})(["Polyhedron error: maximum face(" + fmax + ") -- reduce RADIUS" ],$I$(15).error$S);
 return null;
 }if (this.nPoints >= vmax) {
-$I$(15).error$S("Polyhedron error: maximum vertex count(" + vmax + ") -- reduce RADIUS" );
+(function(a,f){return f.apply(null,a)})(["Polyhedron error: maximum vertex count(" + vmax + ") -- reduce RADIUS" ],$I$(15).error$S);
 return null;
 }var isThroughCenter=bsThroughCenter.get$I(pt);
 var rpt=(isThroughCenter ? C$.randomPoint : ptAve);
-var normal=Clazz.new_($I$(2));
+var normal=Clazz.new_($I$(2,1));
 var isWindingOK=$I$(12).getNormalFromCenter$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z$javajs_util_V3$javajs_util_V3(rpt, points[i], points[j], points[k], !isThroughCenter, normal, vAC);
 var t=Clazz.array(Integer.TYPE, -1, [isWindingOK ? i : j, isWindingOK ? j : i, k, -7]);
 var err=p$1.checkFacet$javajs_util_P3A$I$IA$I$javajs_util_V3$javajs_util_P4$javajs_util_V3$javajs_util_V3$java_util_Map$java_util_Map$F$javajs_util_BS$OA.apply(this, [points, vertexCount, t, triangleCount, normal, pTemp, nTemp, vAC, htNormMap, htEdgeMap, planarParam, bsTemp, edgeTest]);
 if (err != 0 ) {
 if (this.isFull && err != 3.4028235E38   && err < 0.5  ) {
 t[3]=((err * 100)|0);
-lstRejected.addLast$TV(t);
+lstRejected.addLast$O(t);
 }continue;
 }normals[triangleCount]=normal;
 triangles[triangleCount]=t;
 if (isThroughCenter) {
 bsCenterPlanes.set$I(triangleCount++);
 } else if (collapsed) {
-points[this.nPoints]=Clazz.new_($I$(1));
+points[this.nPoints]=Clazz.new_($I$(1,1));
 points[this.nPoints].scaleAdd2$F$javajs_util_T3$javajs_util_T3(offset, normal, atomOrPt);
 ptRef.setT$javajs_util_T3(points[this.nPoints]);
 p$1.addFacet$I$I$I$javajs_util_P3$javajs_util_P3A$javajs_util_V3A$IAA$I$I$Z$javajs_util_V3.apply(this, [i, j, k, ptRef, points, normals, triangles, triangleCount++, this.nPoints, isWindingOK, vAC]);
@@ -737,12 +698,12 @@ triangleCount++;
 
 this.nPoints--;
 if ($I$(15).debugging) {
-$I$(15).info$S("Polyhedron planeCount=" + triangleCount + " nPoints=" + this.nPoints );
-for (var i=0; i < triangleCount; i++) $I$(15).info$S("Polyhedron " + $I$(9).toJSON$S$O("face[" + i + "]" , triangles[i]));
+(function(a,f){return f.apply(null,a)})(["Polyhedron planeCount=" + triangleCount + " nPoints=" + this.nPoints ],$I$(15).info$S);
+for (var i=0; i < triangleCount; i++) (function(a,f){return f.apply(null,a)})(["Polyhedron " + $I$(9).toJSON$S$O("face[" + i + "]" , triangles[i])],$I$(15).info$S);
 
 }faces=p$1.getFaces$IAA$I$java_util_Map.apply(this, [triangles, triangleCount, htNormMap]);
 faceTriangles=p$1.getFaceTriangles$I$java_util_Map$I.apply(this, [faces.length, htNormMap, triangleCount]);
-}return Clazz.new_($I$(4)).set$S$I$javajs_util_P3$javajs_util_P3A$I$I$IAA$I$IAA$IAA$javajs_util_V3A$javajs_util_BS$Z$F$F(this.thisID, this.modelIndex, atomOrPt, points, this.nPoints, vertexCount, triangles, triangleCount, faces, faceTriangles, normals, bsCenterPlanes, collapsed, this.distanceRef, this.pointScale);
+}return Clazz.new_($I$(4,1)).set$S$I$javajs_util_P3$javajs_util_P3A$I$I$IAA$I$IAA$IAA$javajs_util_V3A$javajs_util_BS$Z$F$F(this.thisID, this.modelIndex, atomOrPt, points, this.nPoints, vertexCount, triangles, triangleCount, faces, faceTriangles, normals, bsCenterPlanes, collapsed, this.distanceRef, this.pointScale);
 }, p$1);
 
 Clazz.newMeth(C$, 'fixExplicitFaceWinding$IA$I$javajs_util_P3A$javajs_util_V3A', function (face, ipt, points, normals) {
@@ -752,7 +713,7 @@ var a=points[face[i]];
 var b=points[face[(i + 1) % n]];
 var c=points[face[(i + 2) % n]];
 if ($I$(12).computeAngleABC$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z(a, b, c, true) < 178 ) {
-if (!$I$(12).getNormalFromCenter$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z$javajs_util_V3$javajs_util_V3(this.center, a, b, c, true, normals[ipt]=Clazz.new_($I$(2)), this.vAC)) face=$I$(3).arrayCopyRangeRevI$IA$I$I(face, 0, -1);
+if (!(function(a,f){return f.apply(null,a)})([this.center, a, b, c, true, normals[ipt]=Clazz.new_($I$(2,1)), this.vAC],$I$(12).getNormalFromCenter$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z$javajs_util_V3$javajs_util_V3)) face=$I$(3).arrayCopyRangeRevI$IA$I$I(face, 0, -1);
 break;
 }}
 return face;
@@ -779,7 +740,7 @@ return faceTriangles;
 }, p$1);
 
 Clazz.newMeth(C$, 'addFacet$I$I$I$javajs_util_P3$javajs_util_P3A$javajs_util_V3A$IAA$I$I$Z$javajs_util_V3', function (i, j, k, ptRef, points, normals, faces, planeCount, nRef, isWindingOK, vTemp) {
-var normal=Clazz.new_($I$(2));
+var normal=Clazz.new_($I$(2,1));
 var ii=isWindingOK ? i : j;
 var jj=isWindingOK ? j : i;
 $I$(12).getNormalFromCenter$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z$javajs_util_V3$javajs_util_V3(points[k], ptRef, points[ii], points[jj], false, normal, vTemp);
@@ -798,7 +759,7 @@ vAC.normalize$();
 var v=vAC.dot$javajs_util_T3(vNorm);
 if (v > 0.05 ) {
 return v;
-}if ($I$(15).debugging) $I$(15).info$S("checkFacet " + j + " " + new Float(v).toString() + " " + $I$(9).toJSON$S$O(null, t) );
+}if ($I$(15).debugging) (function(a,f){return f.apply(null,a)})(["checkFacet " + j + " " + new Float(v).toString() + " " + $I$(9).toJSON$S$O(null, t) ],$I$(15).info$S);
 }
 var normix=Integer.valueOf$I($I$(17).getNormixV$javajs_util_V3$javajs_util_BS(norm, bsTemp));
 var o=htNormMap.get$O(normix);
@@ -809,10 +770,10 @@ var n=e.getKey$();
 if (norms[n.intValue$()].dot$javajs_util_T3(norm) > planarParam ) {
 o=e.getValue$();
 o[2]=n;
-htNormMap.put$TK$TV(normix, o);
+htNormMap.put$O$O(normix, o);
 break;
 }}
-if (o == null ) htNormMap.put$TK$TV(normix, o=Clazz.array(java.lang.Object, -1, [Clazz.new_($I$(10)), Clazz.new_($I$(10)), normix]));
+if (o == null ) htNormMap.put$O$O(normix, o=Clazz.array(java.lang.Object, -1, [Clazz.new_($I$(10,1)), Clazz.new_($I$(10,1)), normix]));
 }normix=o[2];
 var faceEdgeList=o[0];
 var faceTriList=o[1];
@@ -822,10 +783,10 @@ for (var i=0; i < 3; i++) {
 var oo=edgeTest[i];
 if (oo === $I$(6).TRUE ) continue;
 var oe=oo;
-faceEdgeList.addLast$TV(oe[2]);
-htEdgeMap.put$TK$TV(oe[3], oe);
+faceEdgeList.addLast$O(oe[2]);
+htEdgeMap.put$O$O(oe[3], oe);
 }
-faceTriList.addLast$TV(Integer.valueOf$I(index));
+faceTriList.addLast$O(Integer.valueOf$I(index));
 return 0;
 }, p$1);
 
@@ -862,8 +823,8 @@ if (f[0] == b[0] && f[1] == b[1] ) {
 f[2]=-1;
 break;
 }}
-htEdgeMap.put$TK$TV(edge, Clazz.array(java.lang.Object, -1, [null]));
-htEdgeMap.put$TK$TV(edge0, Clazz.array(java.lang.Object, -1, [null]));
+htEdgeMap.put$O$O(edge, Clazz.array(java.lang.Object, -1, [null]));
+htEdgeMap.put$O$O(edge0, Clazz.array(java.lang.Object, -1, [null]));
 return $I$(6).TRUE;
 }, p$1);
 
@@ -877,7 +838,7 @@ return (this.vBC.dot$javajs_util_T3(this.vAC) < 0 );
 }, p$1);
 
 Clazz.newMeth(C$, 'isPlanar$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (pt1, pt2, pt3, ptX) {
-var norm=Clazz.new_($I$(2));
+var norm=Clazz.new_($I$(2,1));
 var w=$I$(12).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(pt1, pt2, pt3, norm, this.vAB);
 var d=$I$(12).distanceToPlaneV$javajs_util_V3$F$javajs_util_P3(norm, w, ptX);
 return (Math.abs(d) < C$.MAX_DISTANCE_TO_PLANE );
@@ -944,22 +905,26 @@ p.visibilityFlags=(p.visible && (p.modelIndex < 0 || bsModels.get$I(p.modelIndex
 
 Clazz.newMeth(C$, 'getShapeState$', function () {
 if (this.polyhedronCount == 0) return "";
-var s=Clazz.new_($I$(19));
+var s=Clazz.new_($I$(19,1));
 for (var i=0; i < this.polyhedronCount; i++) if (this.polyhedrons[i].isValid) s.append$S(this.polyhedrons[i].getState$org_jmol_viewer_Viewer(this.vwr));
 
-if (this.drawEdges == 2) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, "polyhedra frontedges");
- else if (this.drawEdges == 1) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, "polyhedra edges");
- else if (this.drawEdges == 3) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, "polyhedra edgesOnly");
+if (this.drawEdges == 2) $I$(20).appendCmd$javajs_util_SB$S(s, "polyhedra frontedges");
+ else if (this.drawEdges == 1) $I$(20).appendCmd$javajs_util_SB$S(s, "polyhedra edges");
+ else if (this.drawEdges == 3) $I$(20).appendCmd$javajs_util_SB$S(s, "polyhedra edgesOnly");
 s.append$S(this.vwr.getStateCreator$().getAtomShapeState$org_jmol_shape_AtomShape(this));
 var ia;
 for (var i=0; i < this.polyhedronCount; i++) {
 var p=this.polyhedrons[i];
-if (p.isValid && p.id == null   && p.colixEdge != 0  && this.bsColixSet.get$I(ia=p.centralAtom.i) ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, "select ({" + ia + "}); color polyhedra " + ($I$(8).isColixTranslucent$H(this.colixes[ia]) ? "translucent " : "") + $I$(8).getHexCode$H(this.colixes[ia]) + " " + $I$(8).getHexCode$H(p.colixEdge) );
+if (p.isValid && p.id == null   && p.colixEdge != 0  && this.bsColixSet.get$I(ia=p.centralAtom.i) ) (function(a,f){return f.apply(null,a)})([s, "select ({" + ia + "}); color polyhedra " + ($I$(8).isColixTranslucent$H(this.colixes[ia]) ? "translucent " : "") + $I$(8).getHexCode$H(this.colixes[ia]) + " " + $I$(8).getHexCode$H(p.colixEdge) ],$I$(20).appendCmd$javajs_util_SB$S);
 }
 return s.toString();
 });
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.randomPoint=$I$(1).new3$F$F$F(3141.0, 2718.0, 1414.0);
+C$.MAX_DISTANCE_TO_PLANE=0.1;
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

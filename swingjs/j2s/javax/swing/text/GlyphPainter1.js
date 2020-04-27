@@ -1,22 +1,18 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.Utilities','javax.swing.text.SegmentCache','java.awt.Rectangle',['javax.swing.text.Position','.Bias'],'java.awt.Toolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GlyphPainter1", null, ['javax.swing.text.GlyphView','.GlyphPainter']);
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.Utilities','javax.swing.text.SegmentCache','java.awt.Rectangle',['javax.swing.text.Position','.Bias'],'java.awt.Toolkit']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GlyphPainter1", null, ['javax.swing.text.GlyphView','.GlyphPainter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.metrics=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['metrics','java.awt.FontMetrics']]]
 
 Clazz.newMeth(C$, 'getSpan$javax_swing_text_GlyphView$I$I$javax_swing_text_TabExpander$F', function (v, p0, p1, e, x) {
 this.sync$javax_swing_text_GlyphView(v);
 var text=v.getText$I$I(p0, p1);
 var justificationData=p$1.getJustificationData$javax_swing_text_GlyphView.apply(this, [v]);
-var width=$I$(1).getTabbedTextWidth$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$javax_swing_text_TabExpander$I$IA(v, text, this.metrics, (x|0), e, p0, justificationData);
+var width=$I$(1,"getTabbedTextWidth$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$javax_swing_text_TabExpander$I$IA",[v, text, this.metrics, (x|0), e, p0, justificationData]);
 $I$(2).releaseSharedSegment$javax_swing_text_Segment(text);
 return width;
 });
@@ -47,13 +43,13 @@ var p1=v.getEndOffset$();
 var expander=v.getTabExpander$();
 var text;
 if (pos == p1) {
-return Clazz.new_($I$(3).c$$I$I$I$I,[alloc.x + alloc.width, alloc.y, 0, this.metrics.getHeight$()]);
+return Clazz.new_([alloc.x + alloc.width, alloc.y, 0, this.metrics.getHeight$()],$I$(3,1).c$$I$I$I$I);
 }if ((pos >= p0) && (pos <= p1) ) {
 text=v.getText$I$I(p0, pos);
 var justificationData=p$1.getJustificationData$javax_swing_text_GlyphView.apply(this, [v]);
 var width=$I$(1).getTabbedTextWidth$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$javax_swing_text_TabExpander$I$IA(v, text, this.metrics, alloc.x, expander, p0, justificationData);
 $I$(2).releaseSharedSegment$javax_swing_text_Segment(text);
-return Clazz.new_($I$(3).c$$I$I$I$I,[alloc.x + width, alloc.y, 0, this.metrics.getHeight$()]);
+return Clazz.new_([alloc.x + width, alloc.y, 0, this.metrics.getHeight$()],$I$(3,1).c$$I$I$I$I);
 }throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["modelToView - can\'t convert", p1]);
 });
 
@@ -65,7 +61,7 @@ var p1=v.getEndOffset$();
 var expander=v.getTabExpander$();
 var text=v.getText$I$I(p0, p1);
 var justificationData=p$1.getJustificationData$javax_swing_text_GlyphView.apply(this, [v]);
-var offs=$I$(1).getTabbedTextOffset$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$I$javax_swing_text_TabExpander$I$IA(v, text, this.metrics, alloc.x, (x|0), expander, p0, justificationData);
+var offs=$I$(1,"getTabbedTextOffset$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$I$javax_swing_text_TabExpander$I$IA",[v, text, this.metrics, alloc.x, (x|0), expander, p0, justificationData]);
 $I$(2).releaseSharedSegment$javax_swing_text_Segment(text);
 var retValue=p0 + offs;
 if (retValue == p1) {
@@ -79,7 +75,7 @@ this.sync$javax_swing_text_GlyphView(v);
 var expander=v.getTabExpander$();
 var s=v.getText$I$I(p0, v.getEndOffset$());
 var justificationData=p$1.getJustificationData$javax_swing_text_GlyphView.apply(this, [v]);
-var index=$I$(1).getTabbedTextOffset$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$I$javax_swing_text_TabExpander$I$Z$IA(v, s, this.metrics, (x|0), ((x + len)|0), expander, p0, false, justificationData);
+var index=$I$(1,"getTabbedTextOffset$javax_swing_text_View$javax_swing_text_Segment$java_awt_FontMetrics$I$I$javax_swing_text_TabExpander$I$Z$IA",[v, s, this.metrics, (x|0), ((x + len)|0), expander, p0, false, justificationData]);
 $I$(2).releaseSharedSegment$javax_swing_text_Segment(s);
 var p1=p0 + index;
 return p1;
@@ -103,4 +99,4 @@ ret=row.justificationData;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

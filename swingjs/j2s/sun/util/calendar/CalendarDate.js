@@ -1,40 +1,20 @@
-(function(){var P$=Clazz.newPackage("sun.util.calendar"),I$=[[0,'java.util.TimeZone','InternalError','StringBuilder','sun.util.calendar.CalendarUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CalendarDate", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("sun.util.calendar"),I$=[[0,'java.util.TimeZone','InternalError','StringBuilder','sun.util.calendar.CalendarUtils']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CalendarDate", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.era=null;
-this.year=0;
-this.month=0;
-this.dayOfMonth=0;
-this.dayOfWeek=0;
-this.leapYear=false;
-this.hours=0;
-this.minutes=0;
-this.seconds=0;
-this.millis=0;
-this.fraction=0;
-this.normalized=false;
-this.zoneinfo=null;
-this.zoneOffset=0;
-this.daylightSaving=0;
-this.forceStandardTime=false;
-this.locale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dayOfWeek=-2147483648;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['leapYear','normalized','forceStandardTime'],'I',['year','month','dayOfMonth','dayOfWeek','hours','minutes','seconds','millis','zoneOffset','daylightSaving'],'J',['fraction'],'O',['era','sun.util.calendar.Era','zoneinfo','java.util.TimeZone','locale','java.util.Locale']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$java_util_TimeZone.apply(this, [$I$(1).getDefault$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_TimeZone', function (zone) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.zoneinfo=zone;
 }, 1);
 
@@ -298,7 +278,7 @@ try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(2));
+throw Clazz.new_($I$(2,1));
 } else {
 throw e;
 }
@@ -306,7 +286,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 $I$(4).sprintf0d$StringBuilder$I$I(sb, this.year, 4).append$C("-");
 $I$(4).sprintf0d$StringBuilder$I$I(sb, this.month, 2).append$C("-");
 $I$(4).sprintf0d$StringBuilder$I$I(sb, this.dayOfMonth, 2).append$C("T");
@@ -327,7 +307,7 @@ offset=-this.zoneOffset;
 sign="-";
 }offset=(offset/60000|0);
 sb.append$C(sign);
-$I$(4).sprintf0d$StringBuilder$I$I(sb, (offset/60|0), 2);
+$I$(4,"sprintf0d$StringBuilder$I$I",[sb, (offset/60|0), 2]);
 $I$(4).sprintf0d$StringBuilder$I$I(sb, offset % 60, 2);
 } else {
 sb.append$S(" local time");
@@ -358,4 +338,4 @@ Clazz.newMeth(C$, 'setDaylightSaving$I', function (daylightSaving) {
 this.daylightSaving=daylightSaving;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

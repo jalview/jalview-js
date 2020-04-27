@@ -1,27 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,'java.io.BufferedReader','java.io.InputStreamReader','java.io.StringReader','StringBuilder','org.json.JSONObject','org.json.JSONArray']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONTokener");
+(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,'java.io.BufferedReader','java.io.InputStreamReader','java.io.StringReader','StringBuilder','org.json.JSONObject','org.json.JSONArray']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONTokener");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.character=0;
-this.eof=false;
-this.index=0;
-this.line=0;
-this.previous='\0';
-this.reader=null;
-this.usePrevious=false;
-this.characterPreviousLine=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['eof','usePrevious'],'C',['previous'],'J',['character','index','line','characterPreviousLine'],'O',['reader','java.io.Reader']]]
 
 Clazz.newMeth(C$, 'c$$java_io_Reader', function (reader) {
-C$.$init$.apply(this);
-this.reader=reader.markSupported$() ? reader : Clazz.new_($I$(1).c$$java_io_Reader,[reader]);
+;C$.$init$.apply(this);
+this.reader=reader.markSupported$() ? reader : Clazz.new_($I$(1,1).c$$java_io_Reader,[reader]);
 this.eof=false;
 this.usePrevious=false;
 this.previous=String.fromCharCode(0);
@@ -32,11 +21,11 @@ this.line=1;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function (inputStream) {
-C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(2).c$$java_io_InputStream,[inputStream])]);
+C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(2,1).c$$java_io_InputStream,[inputStream])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (s) {
-C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(3).c$$S,[s])]);
+C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(3,1).c$$S,[s])]);
 }, 1);
 
 Clazz.newMeth(C$, 'back$', function () {
@@ -169,7 +158,7 @@ return c;
 
 Clazz.newMeth(C$, 'nextString$C', function (quote) {
 var c;
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 for (; ; ) {
 c=this.next$();
 switch (c.$c()) {
@@ -225,7 +214,7 @@ return sb.toString();
 });
 
 Clazz.newMeth(C$, 'nextTo$C', function (delimiter) {
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 for (; ; ) {
 var c=this.next$();
 if (c == delimiter || c.$c() == 0   || c == "\n"  || c == "\r" ) {
@@ -238,7 +227,7 @@ this.back$();
 
 Clazz.newMeth(C$, 'nextTo$S', function (delimiters) {
 var c;
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 for (; ; ) {
 c=this.next$();
 if (delimiters.indexOf$I(c) >= 0 || c.$c() == 0   || c == "\n"  || c == "\r" ) {
@@ -258,12 +247,12 @@ case 39:
 return this.nextString$C(c);
 case 123:
 this.back$();
-return Clazz.new_($I$(5).c$$org_json_JSONTokener,[this]);
+return Clazz.new_($I$(5,1).c$$org_json_JSONTokener,[this]);
 case 91:
 this.back$();
-return Clazz.new_($I$(6).c$$org_json_JSONTokener,[this]);
+return Clazz.new_($I$(6,1).c$$org_json_JSONTokener,[this]);
 }
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 while (c >= " " && ",:]}/\\\"[{;=#".indexOf$I(c) < 0 ){
 sb.append$C(c);
 c=this.next$();
@@ -317,4 +306,4 @@ return " at " + this.index + " [character " + this.character + " line " + this.l
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:31 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

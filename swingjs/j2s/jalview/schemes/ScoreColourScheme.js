@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.awt.Color','jalview.util.Comparison']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScoreColourScheme", null, 'jalview.schemes.ResidueColourScheme');
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.awt.Color','jalview.util.Comparison']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScoreColourScheme", null, 'jalview.schemes.ResidueColourScheme');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.min=0;
-this.max=0;
-this.scores=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['min','max'],'O',['scores','double[]']]]
 
 Clazz.newMeth(C$, 'c$$IA$DA$D$D', function (symbolIndex, scores, min, max) {
-C$.superclazz.c$$IA.apply(this, [symbolIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IA.apply(this,[symbolIndex]);C$.$init$.apply(this);
 this.scores=scores;
 this.min=min;
 this.max=max;
@@ -39,7 +32,7 @@ return $I$(1).white;
 });
 
 Clazz.newMeth(C$, 'makeColour$F', function (c) {
-return Clazz.new_($I$(1).c$$F$F$F,[c, 0.0, 1.0 - c]);
+return Clazz.new_($I$(1,1).c$$F$F$F,[c, 0.0, 1.0 - c]);
 });
 
 Clazz.newMeth(C$, 'getSchemeName$', function () {
@@ -52,4 +45,4 @@ return Clazz.new_(C$.c$$IA$DA$D$D,[this.symbolIndex, this.scores, this.min, this
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

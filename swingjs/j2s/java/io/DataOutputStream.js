@@ -1,24 +1,17 @@
 (function(){var P$=java.io,p$1={};
-var C$=Clazz.newClass(P$, "DataOutputStream", null, 'java.io.FilterOutputStream', 'java.io.DataOutput');
+/*c*/var C$=Clazz.newClass(P$, "DataOutputStream", null, 'java.io.FilterOutputStream', 'java.io.DataOutput');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.written=0;
-this.bytearr=null;
-this.writeBuffer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bytearr=null;
 this.writeBuffer=Clazz.array(Byte.TYPE, [8]);
-}, 1);
+},1);
+
+C$.$fields$=[['I',['written'],'O',['bytearr','byte[]','+writeBuffer']]]
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (out) {
-C$.superclazz.c$$java_io_OutputStream.apply(this, [out]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_OutputStream.apply(this,[out]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'incCount$I', function (value) {
@@ -73,14 +66,14 @@ p$1.incCount$I.apply(this, [4]);
 });
 
 Clazz.newMeth(C$, 'writeLong$J', function (v) {
-this.writeBuffer[0]=(((v >>> 56)|0)|0);
-this.writeBuffer[1]=(((v >>> 48)|0)|0);
-this.writeBuffer[2]=(((v >>> 40)|0)|0);
-this.writeBuffer[3]=(((v >>> 32)|0)|0);
-this.writeBuffer[4]=(((v >>> 24)|0)|0);
-this.writeBuffer[5]=(((v >>> 16)|0)|0);
-this.writeBuffer[6]=(((v >>> 8)|0)|0);
-this.writeBuffer[7]=(((v >>> 0)|0)|0);
+this.writeBuffer[0]=((v >>> 56)|0);
+this.writeBuffer[1]=((v >>> 48)|0);
+this.writeBuffer[2]=((v >>> 40)|0);
+this.writeBuffer[3]=((v >>> 32)|0);
+this.writeBuffer[4]=((v >>> 24)|0);
+this.writeBuffer[5]=((v >>> 16)|0);
+this.writeBuffer[6]=((v >>> 8)|0);
+this.writeBuffer[7]=((v >>> 0)|0);
 this.out.write$BA$I$I(this.writeBuffer, 0, 8);
 p$1.incCount$I.apply(this, [8]);
 });
@@ -137,25 +130,25 @@ if (dos.bytearr == null  || (dos.bytearr.length < (utflen + 2)) ) dos.bytearr=Cl
 bytearr=dos.bytearr;
 } else {
 bytearr=Clazz.array(Byte.TYPE, [utflen + 2]);
-}bytearr[count++]=((((utflen >>> 8) & 255)|0)|0);
-bytearr[count++]=((((utflen >>> 0) & 255)|0)|0);
+}bytearr[count++]=(((utflen >>> 8) & 255)|0);
+bytearr[count++]=(((utflen >>> 0) & 255)|0);
 var i=0;
 for (i=0; i < strlen; i++) {
 c=str.charAt$I(i).$c();
 if (!((c >= 1) && (c <= 127) )) break;
-bytearr[count++]=((c|0)|0);
+bytearr[count++]=(c|0);
 }
 for (; i < strlen; i++) {
 c=str.charAt$I(i).$c();
 if ((c >= 1) && (c <= 127) ) {
-bytearr[count++]=((c|0)|0);
+bytearr[count++]=(c|0);
 } else if (c > 2047) {
-bytearr[count++]=(((224 | ((c >> 12) & 15))|0)|0);
-bytearr[count++]=(((128 | ((c >> 6) & 63))|0)|0);
-bytearr[count++]=(((128 | ((c >> 0) & 63))|0)|0);
+bytearr[count++]=((224 | ((c >> 12) & 15))|0);
+bytearr[count++]=((128 | ((c >> 6) & 63))|0);
+bytearr[count++]=((128 | ((c >> 0) & 63))|0);
 } else {
-bytearr[count++]=(((192 | ((c >> 6) & 31))|0)|0);
-bytearr[count++]=(((128 | ((c >> 0) & 63))|0)|0);
+bytearr[count++]=((192 | ((c >> 6) & 31))|0);
+bytearr[count++]=((128 | ((c >> 0) & 63))|0);
 }}
 out.write$BA$I$I(bytearr, 0, utflen + 2);
 return utflen + 2;
@@ -168,4 +161,4 @@ var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,19 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.ArrayList','java.util.Collections','java.util.BitSet',['jalview.datamodel.ColumnSelection','.IntList'],['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.ThresholdType'],['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.SearchableAnnotationField']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ColumnSelection", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.ArrayList','java.util.Collections','java.util.BitSet',['jalview.datamodel.ColumnSelection','.IntList'],['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.ThresholdType'],['jalview.viewmodel.annotationfilter.AnnotationFilterParameter','.SearchableAnnotationField']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ColumnSelection", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['IntList',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.selection=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.selection=Clazz.new_($I$(4), [this, null]);
-}, 1);
+this.selection=Clazz.new_($I$(4,1),[this, null]);
+},1);
+
+C$.$fields$=[['O',['selection','jalview.datamodel.ColumnSelection.IntList']]]
 
 Clazz.newMeth(C$, 'addElement$I', function (col) {
 this.selection.add$I(col);
@@ -30,9 +27,9 @@ this.selection.remove$I(col);
 Clazz.newMeth(C$, 'removeElements$I$I', function (start, end) {
 var colInt;
 for (var i=start; i < end; i++) {
-colInt= new Integer(i);
+colInt=Integer.valueOf$I(i);
 if (this.selection.contains$Integer(colInt)) {
-this.selection.remove$I((colInt).intValue$());
+this.selection.remove$I((colInt).valueOf());
 }}
 });
 
@@ -92,13 +89,13 @@ min=max;
 });
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_ColumnSelection', function (copy) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (copy != null ) {
-this.selection=Clazz.new_($I$(4).c$$jalview_datamodel_ColumnSelection_IntList, [this, null, copy.selection]);
+this.selection=Clazz.new_($I$(4,1).c$$jalview_datamodel_ColumnSelection_IntList,[this, null, copy.selection]);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'invertColumnSelection$I$I$jalview_datamodel_AlignmentI', function (first, width, al) {
@@ -113,16 +110,16 @@ this.addElement$I(i);
 });
 
 Clazz.newMeth(C$, 'setElementsFrom$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns', function (colsel, hiddenColumns) {
-this.selection=Clazz.new_($I$(4), [this, null]);
+this.selection=Clazz.new_($I$(4,1),[this, null]);
 if (colsel.selection != null  && colsel.selection.size$() > 0 ) {
 if (hiddenColumns.hasHiddenColumns$()) {
 for (var col, $col = colsel.getSelected$().iterator$(); $col.hasNext$()&&((col=($col.next$())),1);) {
 if (hiddenColumns != null  && hiddenColumns.isVisible$I(col.intValue$()) ) {
-this.selection.add$I((col).intValue$());
+this.selection.add$I((col).valueOf());
 }}
 } else {
 for (var col, $col = colsel.getSelected$().iterator$(); $col.hasNext$()&&((col=($col.next$())),1);) {
-this.addElement$I((col).intValue$());
+this.addElement$I((col).valueOf());
 }
 }}});
 
@@ -239,28 +236,22 @@ this.addElement$I(col);
 }}
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ColumnSelection, "IntList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ColumnSelection, "IntList", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.order=null;
-this._uorder=null;
-this.selected=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['order','java.util.List','+_uorder','selected','java.util.BitSet']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.order=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.order=Clazz.new_($I$(1,1));
 this._uorder=$I$(2).unmodifiableList$java_util_List(this.order);
-this.selected=Clazz.new_($I$(3));
+this.selected=Clazz.new_($I$(3,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_ColumnSelection_IntList', function (other) {
@@ -274,7 +265,7 @@ this.add$I(other.elementAt$I(i));
 
 Clazz.newMeth(C$, 'add$I', function (i) {
 if (!this.selected.get$I(i)) {
-this.order.add$TE(Integer.valueOf$I(i));
+this.order.add$O(Integer.valueOf$I(i));
 this.selected.set$I(i);
 }});
 
@@ -284,14 +275,14 @@ this.selected.clear$();
 });
 
 Clazz.newMeth(C$, 'remove$I', function (col) {
-var colInt= new Integer(col);
+var colInt=Integer.valueOf$I(col);
 if (this.selected.get$I(col)) {
 this.order.remove$O(colInt);
 this.selected.clear$I(col);
 }});
 
 Clazz.newMeth(C$, 'contains$Integer', function (colInt) {
-return this.selected.get$I((colInt).intValue$());
+return this.selected.get$I((colInt).valueOf());
 });
 
 Clazz.newMeth(C$, 'isEmpty$', function () {
@@ -307,7 +298,7 @@ return this.order.size$();
 });
 
 Clazz.newMeth(C$, 'elementAt$I', function (i) {
-return (this.order.get$I(i)).intValue$();
+return (this.order.get$I(i)).valueOf();
 });
 
 Clazz.newMeth(C$, 'pruneColumnList$java_util_List', function (shifts) {
@@ -333,13 +324,13 @@ return pruned;
 });
 
 Clazz.newMeth(C$, 'compensateForEdits$I$I', function (start, change) {
-var mask=Clazz.new_($I$(3));
+var mask=Clazz.new_($I$(3,1));
 for (var i=0; i < this.order.size$(); i++) {
-var temp=(this.order.get$I(i)).intValue$();
+var temp=(this.order.get$I(i)).valueOf();
 if (temp >= start) {
 this.selected.clear$I(temp);
 mask.set$I(temp - change);
-this.order.set$I$TE(i,  new Integer(temp - change));
+this.order.set$I$O(i, Integer.valueOf$I(temp - change));
 }}
 this.selected.or$java_util_BitSet(mask);
 });
@@ -357,14 +348,14 @@ return this.selected.get$I(0) ? 0 : this.selected.nextSetBit$I(0);
 });
 
 Clazz.newMeth(C$, 'getRanges$', function () {
-var rlist=Clazz.new_($I$(1));
+var rlist=Clazz.new_($I$(1,1));
 if (this.selected.isEmpty$()) {
 return rlist;
 }var next=this.selected.nextSetBit$I(0);
 var clear=-1;
 while (next != -1){
 clear=this.selected.nextClearBit$I(next);
-rlist.add$TE(Clazz.array(Integer.TYPE, -1, [next, clear - 1]));
+rlist.add$O(Clazz.array(Integer.TYPE, -1, [next, clear - 1]));
 next=this.selected.nextSetBit$I(clear);
 }
 return rlist;
@@ -381,4 +372,4 @@ return (obj).selected.equals$O(this.selected);
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

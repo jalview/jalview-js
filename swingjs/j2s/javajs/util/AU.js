@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'java.lang.reflect.Array','javajs.util.T3','java.util.Arrays','javajs.util.Lst','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AU");
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'java.lang.reflect.Array','javajs.util.T3','java.util.Arrays','javajs.util.Lst','java.util.Hashtable']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AU");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'ensureLength$O$I', function (array, minimumLength) {
 return (array != null  && C$.getLength$O(array) >= minimumLength  ? array : C$.arrayCopyObject$O$I(array, minimumLength));
@@ -227,7 +226,7 @@ return str;
 Clazz.newMeth(C$, 'sortedItem$javajs_util_Lst$I', function (v, n) {
 if (v.size$() == 0) return null;
 if (v.size$() == 1) return v.get$I(0);
-var keys=v.toArray$TTA(Clazz.array(String, [v.size$()]));
+var keys=v.toArray$OA(Clazz.array(String, [v.size$()]));
 $I$(3).sort$OA(keys);
 return keys[n % keys.length];
 }, 1);
@@ -283,8 +282,8 @@ return Clazz.array(Double.TYPE, [n, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'removeMapKeys$java_util_Map$S', function (map, root) {
-var list=Clazz.new_($I$(4));
-for (var key, $key = map.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) if (key.startsWith$S(root)) list.addLast$TV(key);
+var list=Clazz.new_($I$(4,1));
+for (var key, $key = map.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) if (key.startsWith$S(root)) list.addLast$O(key);
 
 for (var i=list.size$(); --i >= 0; ) map.remove$O(list.get$I(i));
 
@@ -349,4 +348,4 @@ for (var i = b.length; --i >= 0;) { var j = b[i] & 0xFF; if (j >= 0x80) j -= 0x1
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

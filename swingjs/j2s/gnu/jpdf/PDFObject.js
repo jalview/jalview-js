@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("gnu.jpdf"),I$=[[0,'gnu.jpdf.PDFStream','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDFObject", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("gnu.jpdf"),I$=[[0,'gnu.jpdf.PDFStream','StringBuffer']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDFObject", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.objser=0;
-this.pdfDocument=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['objser'],'S',['type'],'O',['pdfDocument','gnu.jpdf.PDFDocument']]]
 
 Clazz.newMeth(C$, 'c$$S', function (type) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.type=type;
 }, 1);
 
@@ -32,7 +26,7 @@ return this.pdfDocument;
 });
 
 Clazz.newMeth(C$, 'writeStart$java_io_OutputStream', function (os) {
-$I$(1).write$java_io_OutputStream$S(os, Integer.toString$I(this.objser));
+$I$(1,"write$java_io_OutputStream$S",[os, Integer.toString$I(this.objser)]);
 $I$(1).write$java_io_OutputStream$S(os, " 0 obj\n<<\n");
 if (this.type != null ) {
 $I$(1).write$java_io_OutputStream$S(os, "/Type ");
@@ -50,7 +44,7 @@ return "" + this.objser + " 0 R" ;
 
 Clazz.newMeth(C$, 'toArray$java_util_Vector', function (v) {
 if (v.size$() == 0) return "";
-var b=Clazz.new_($I$(2));
+var b=Clazz.new_($I$(2,1));
 var bs="[";
 for (var x, $x = v.iterator$(); $x.hasNext$()&&((x=($x.next$())),1);) {
 b.append$S(bs);
@@ -63,4 +57,4 @@ return b.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

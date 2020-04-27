@@ -1,24 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.event"),p$1={},I$=[[0,'java.awt.Toolkit','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "KeyEvent", null, 'java.awt.event.InputEvent');
+(function(){var P$=Clazz.newPackage("java.awt.event"),p$1={},I$=[[0,'java.awt.Toolkit','StringBuilder','java.awt.event.InputEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "KeyEvent", null, 'java.awt.event.InputEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isProxyActive=false;
-this.keyCode=0;
-this.keyChar='\0';
-this.keyLocation=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isProxyActive=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isProxyActive'],'C',['keyChar'],'I',['keyCode','keyLocation']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$C$I', function (source, id, when, modifiers, keyCode, keyChar, keyLocation) {
-C$.superclazz.c$$java_awt_Component$I$J$I.apply(this, [source, id, when, modifiers]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Component$I$J$I.apply(this,[source, id, when, modifiers]);C$.$init$.apply(this);
 if (id == 400) {
 if (keyChar == "\uffff") {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["invalid keyChar"]);
@@ -46,8 +38,7 @@ C$.c$$java_awt_Component$I$J$I$I$C.apply(this, [source, id, when, modifiers, key
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getKeyCode$', function () {
@@ -374,7 +365,7 @@ return unknown + " keyCode: 0x" + Integer.toString$I$I(keyCode, 16) ;
 }, 1);
 
 Clazz.newMeth(C$, 'getKeyModifiersText$I', function (modifiers) {
-var buf=Clazz.new_($I$(2));
+var buf=Clazz.new_($I$(2,1));
 if ((modifiers & 4) != 0) {
 buf.append$S($I$(1).getProperty$S$S("AWT.meta", "Meta"));
 buf.append$S("+");
@@ -481,7 +472,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'paramString$', function () {
-var str=Clazz.new_($I$(2).c$$I,[100]);
+var str=Clazz.new_($I$(2,1).c$$I,[100]);
 switch (this.id) {
 case 401:
 str.append$S("KEY_PRESSED");
@@ -529,7 +520,7 @@ break;
 if (this.getModifiers$() != 0) {
 str.append$S(",modifiers=").append$S(C$.getKeyModifiersText$I(this.modifiers));
 }if (this.getModifiersEx$() != 0) {
-str.append$S(",extModifiers=").append$S(P$.InputEvent.getModifiersExText$I(this.modifiers));
+str.append$S(",extModifiers=").append$S($I$(3).getModifiersExText$I(this.modifiers));
 }str.append$S(",keyLocation=");
 switch (this.keyLocation) {
 case 0:
@@ -584,4 +575,4 @@ this.modifiers|=32;
 this.modifiers|=16;
 }}, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

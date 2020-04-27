@@ -1,23 +1,17 @@
 (function(){var P$=Clazz.newPackage("java.awt.color"),I$=[];
-var C$=Clazz.newClass(P$, "ColorSpace");
-C$.sRGBspace=null;
+/*c*/var C$=Clazz.newClass(P$, "ColorSpace");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=0;
-this.numComponents=0;
-this.compName=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.compName=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['type','numComponents'],'O',['compName','String[]']]
+,['O',['sRGBspace','java.awt.color.ColorSpace','+GRAYspace']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (type, numcomponents) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.type=type;
 this.numComponents=numcomponents;
 }, 1);
@@ -31,6 +25,12 @@ if (C$.sRGBspace == null ) {
 C$.sRGBspace=Clazz.new_(C$.c$$I$I,[5, 3]);
 }theColorSpace=C$.sRGBspace;
 break;
+case 1003:
+{
+if (C$.GRAYspace == null ) {
+C$.GRAYspace=Clazz.new_(C$.c$$I$I,[6, 1]);
+}theColorSpace=C$.GRAYspace;
+}break;
 }
 return theColorSpace;
 }, 1);
@@ -117,4 +117,4 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Component index o
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

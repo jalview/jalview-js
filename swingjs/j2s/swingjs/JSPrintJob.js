@@ -1,20 +1,12 @@
-(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'java.io.ByteArrayOutputStream','java.io.FileOutputStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSPrintJob", null, 'gnu.jpdf.PDFJob');
+(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'java.io.ByteArrayOutputStream','java.io.FileOutputStream']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSPrintJob", null, 'gnu.jpdf.PDFJob');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fileName=null;
-this.jobTitle=null;
-this.jobAttributes=null;
-this.pageAttributes=null;
-this.properties=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['fileName','jobTitle'],'O',['jobAttributes','java.awt.JobAttributes','pageAttributes','java.awt.PageAttributes','properties','java.util.Properties']]]
 
 Clazz.newMeth(C$, 'setAttributes$S$java_awt_JobAttributes$java_awt_PageAttributes', function (jobtitle, jobAttributes, pageAttributes) {
 p$1.setFile$S.apply(this, [jobtitle]);
@@ -31,7 +23,7 @@ Clazz.newMeth(C$, 'setFile$S', function (jobtitle) {
 this.fileName=this.jobTitle=jobtitle;
 if (this.fileName != null  && !this.fileName.endsWith$S(".pdf") ) this.fileName += ".pdf";
 try {
-this.os=(this.fileName == null  ? Clazz.new_($I$(1)) : Clazz.new_($I$(2).c$$S,[this.fileName]));
+this.os=(this.fileName == null  ? Clazz.new_($I$(1,1)) : Clazz.new_($I$(2,1).c$$S,[this.fileName]));
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.FileNotFoundException")){
 } else {
@@ -51,4 +43,4 @@ return this.getGraphics$I("landscape".equals$O(name) ? 0 : 1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

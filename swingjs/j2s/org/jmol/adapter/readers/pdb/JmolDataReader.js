@@ -1,25 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pdb"),I$=[[0,'java.util.Hashtable','org.jmol.util.Logger','org.jmol.util.Parser','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JmolDataReader", null, 'org.jmol.adapter.readers.pdb.PdbReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pdb"),I$=[[0,'java.util.Hashtable','org.jmol.util.Logger','org.jmol.util.Parser','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JmolDataReader", null, 'org.jmol.adapter.readers.pdb.PdbReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.props=null;
-this.residueNames=null;
-this.atomNames=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['props','java.util.Map','residueNames','String[]','+atomNames']]]
 
 Clazz.newMeth(C$, 'checkRemark$', function () {
 while (true){
 if (this.line.length$() < 30 || this.line.indexOf$S("Jmol") != 11 ) break;
 switch ("Ppard".indexOf$S(this.line.substring$I$I(16, 17))) {
 case 0:
-this.props=Clazz.new_($I$(1));
+this.props=Clazz.new_($I$(1,1));
 this.asc.setInfo$S$O("jmolData", this.line);
 if (!this.line.endsWith$S("#noautobond")) this.line += "#noautobond";
 break;
@@ -34,7 +28,7 @@ $I$(2).info$S("reading " + name + " " + tokens.length );
 var prop=Clazz.array(Float.TYPE, [tokens.length]);
 for (var i=prop.length; --i >= 0; ) prop[i]=this.parseFloatStr$S(tokens[i]);
 
-this.props.put$TK$TV(name, prop);
+this.props.put$O$O(name, prop);
 break;
 case 2:
 this.line=this.line.substring$I(27);
@@ -49,7 +43,7 @@ break;
 case 4:
 $I$(2).info$S(this.line);
 var data=Clazz.array(Float.TYPE, [15]);
-$I$(3).parseStringInfestedFloatArray$S$javajs_util_BS$FA(this.line.substring$I(10).replace$C$C("=", " ").replace$C$C("{", " ").replace$C$C("}", " "), null, data);
+(function(a,f){return f.apply(null,a)})([this.line.substring$I(10).replace$C$C("=", " ").replace$C$C("{", " ").replace$C$C("}", " "), null, data],$I$(3).parseStringInfestedFloatArray$S$javajs_util_BS$FA);
 var minXYZ=$I$(4).new3$F$F$F(data[0], data[1], data[2]);
 var maxXYZ=$I$(4).new3$F$F$F(data[3], data[4], data[5]);
 this.fileScaling=$I$(4).new3$F$F$F(data[6], data[7], data[8]);
@@ -91,4 +85,4 @@ this.finalizeReaderPDB$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

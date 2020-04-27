@@ -1,24 +1,12 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeatureType");
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeatureType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.original=null;
-this.variation=null;
-this.location=null;
-this.type=null;
-this.status=null;
-this.id=null;
-this.description=null;
-this.evidence=null;
-this.ref=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['original','type','status','id','description','ref'],'O',['variation','java.util.List','location','jalview.xml.binding.uniprot.LocationType','evidence','java.util.List']]]
 
 Clazz.newMeth(C$, 'getOriginal$', function () {
 return this.original;
@@ -30,7 +18,7 @@ this.original=value;
 
 Clazz.newMeth(C$, 'getVariation$', function () {
 if (this.variation == null ) {
-this.variation=Clazz.new_($I$(1));
+this.variation=Clazz.new_($I$(1,1));
 }return this.variation;
 });
 
@@ -76,7 +64,7 @@ this.description=value;
 
 Clazz.newMeth(C$, 'getEvidence$', function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
 
@@ -87,17 +75,18 @@ return this.ref;
 Clazz.newMeth(C$, 'setRef$S', function (value) {
 this.ref=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.FeatureType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="featureType" propOrder={"original"  "variation"  "location"  } )']],
-  [['location','jalview.xml.binding.uniprot.LocationType'],['@XmlElement(required="true" )']],
-  [['type','String'],['@XmlAttribute(name="type" required="true" )']],
-  [['status','.'],['@XmlAttribute(name="status" )']],
-  [['id','.'],['@XmlAttribute(name="id" )']],
-  [['description','.'],['@XmlAttribute(name="description" )']],
-  [['evidence','java.util.List<java.lang.Integer>'],['@XmlAttribute(name="evidence" )']],
-  [['ref','String'],['@XmlAttribute(name="ref" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.FeatureType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="featureType" propOrder={"original"  "variation"  "location"  } ']],
+  [['location','jalview.xml.binding.uniprot.LocationType',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" required="true" ']],
+  [['status','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="status" ']],
+  [['id','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="id" ']],
+  [['description','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="description" ']],
+  [['evidence','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlAttribute']],['name="evidence" ']],
+  [['ref','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ref" ']],
   [['original','String'],['@XmlElement']],
-  [['variation','java.util.List<java.lang.String>'],['@XmlElement']]];
+  [['variation','java.util.List<java.lang.String>'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'java.awt.Rectangle','java.awt.event.MouseEvent','javax.swing.SwingUtilities','javax.swing.table.DefaultTableColumnModel','sun.swing.table.DefaultTableCellHeaderRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JTableHeader", null, 'javax.swing.JComponent', 'javax.swing.event.TableColumnModelListener');
+(function(){var P$=Clazz.newPackage("javax.swing.table"),p$1={},I$=[[0,'java.awt.Rectangle','java.awt.event.MouseEvent','javax.swing.SwingUtilities','javax.swing.table.DefaultTableColumnModel','sun.swing.table.DefaultTableCellHeaderRenderer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JTableHeader", null, 'javax.swing.JComponent', 'javax.swing.event.TableColumnModelListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.table=null;
-this.columnModel=null;
-this.reorderingAllowed=false;
-this.resizingAllowed=false;
-this.updateTableInRealTime=false;
-this.resizingColumn=null;
-this.draggedColumn=null;
-this.draggedDistance=0;
-this.defaultRenderer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['reorderingAllowed','resizingAllowed','updateTableInRealTime'],'I',['draggedDistance'],'O',['table','javax.swing.JTable','columnModel','javax.swing.table.TableColumnModel','resizingColumn','javax.swing.table.TableColumn','+draggedColumn','defaultRenderer','javax.swing.table.TableCellRenderer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$javax_swing_table_TableColumnModel.apply(this, [null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_table_TableColumnModel', function (cm) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 if (cm == null ) cm=this.createDefaultColumnModel$();
 this.setColumnModel$javax_swing_table_TableColumnModel(cm);
 this.initializeLocalVars$();
@@ -103,7 +90,7 @@ x=p$1.getWidthInRightToLeft.apply(this, []) - x - 1 ;
 });
 
 Clazz.newMeth(C$, 'getHeaderRect$I', function (column) {
-var r=Clazz.new_($I$(1));
+var r=Clazz.new_($I$(1,1));
 var cm=this.getColumnModel$();
 r.height=this.getHeight$();
 if (column < 0) {
@@ -131,12 +118,12 @@ var aColumn=this.columnModel.getColumn$I(column);
 var renderer=aColumn.getHeaderRenderer$();
 if (renderer == null ) {
 renderer=this.defaultRenderer;
-}var component=renderer.getTableCellRendererComponent$(this.getTable$(), aColumn.getHeaderValue$(), false, false, -1, column);
+}var component=renderer.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(this.getTable$(), aColumn.getHeaderValue$(), false, false, -1, column);
 if (Clazz.instanceOf(component, "javax.swing.JComponent")) {
 var newEvent;
 var cellRect=this.getHeaderRect$I(column);
 p.translate$I$I(-cellRect.x, -cellRect.y);
-newEvent=Clazz.new_($I$(2).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I,[component, event.getID$(), event.getWhen$(), event.getModifiers$(), p.x, p.y, event.getXOnScreen$(), event.getYOnScreen$(), event.getClickCount$(), event.isPopupTrigger$(), 0]);
+newEvent=Clazz.new_([component, event.getID$(), event.getWhen$(), event.getModifiers$(), p.x, p.y, event.getXOnScreen$(), event.getYOnScreen$(), event.getClickCount$(), event.isPopupTrigger$(), 0],$I$(2,1).c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I);
 tip=(component).getToolTipText$java_awt_event_MouseEvent(newEvent);
 }}if (tip == null ) tip=this.getToolTipText$();
 return tip;
@@ -145,7 +132,7 @@ return tip;
 Clazz.newMeth(C$, 'setUI$javax_swing_plaf_TableHeaderUI', function (ui) {
 if (this.ui !== ui ) {
 C$.superclazz.prototype.setUI$javax_swing_plaf_ComponentUI.apply(this, [ui]);
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'updateUI$', function () {
@@ -165,7 +152,7 @@ old.removeColumnModelListener$javax_swing_event_TableColumnModelListener(this);
 }this.columnModel=columnModel;
 columnModel.addColumnModelListener$javax_swing_event_TableColumnModelListener(this);
 this.firePropertyChange$S$O$O("columnModel", old, columnModel);
-this.resizeAndRepaint$();
+this.resizeAnd秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getColumnModel$', function () {
@@ -173,30 +160,30 @@ return this.columnModel;
 });
 
 Clazz.newMeth(C$, 'columnAdded$javax_swing_event_TableColumnModelEvent', function (e) {
-this.resizeAndRepaint$();
+this.resizeAnd秘repaint$();
 });
 
 Clazz.newMeth(C$, 'columnRemoved$javax_swing_event_TableColumnModelEvent', function (e) {
-this.resizeAndRepaint$();
+this.resizeAnd秘repaint$();
 });
 
 Clazz.newMeth(C$, 'columnMoved$javax_swing_event_TableColumnModelEvent', function (e) {
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'columnMarginChanged$javax_swing_event_ChangeEvent', function (e) {
-this.resizeAndRepaint$();
+this.resizeAnd秘repaint$();
 });
 
 Clazz.newMeth(C$, 'columnSelectionChanged$javax_swing_event_ListSelectionEvent', function (e) {
 });
 
 Clazz.newMeth(C$, 'createDefaultColumnModel$', function () {
-return Clazz.new_($I$(4));
+return Clazz.new_($I$(4,1));
 });
 
 Clazz.newMeth(C$, 'createDefaultRenderer$', function () {
-return Clazz.new_($I$(5));
+return Clazz.new_($I$(5,1));
 });
 
 Clazz.newMeth(C$, 'initializeLocalVars$', function () {
@@ -211,9 +198,9 @@ this.updateTableInRealTime=true;
 this.setDefaultRenderer$javax_swing_table_TableCellRenderer(this.createDefaultRenderer$());
 });
 
-Clazz.newMeth(C$, 'resizeAndRepaint$', function () {
+Clazz.newMeth(C$, 'resizeAnd秘repaint$', function () {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'setDraggedColumn$javax_swing_table_TableColumn', function (aColumn) {
@@ -241,4 +228,4 @@ var updateTableInRealTimeString=(this.updateTableInRealTime ? "true" : "false");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",draggedDistance=" + this.draggedDistance + ",reorderingAllowed=" + reorderingAllowedString + ",resizingAllowed=" + resizingAllowedString + ",updateTableInRealTime=" + updateTableInRealTimeString ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:14 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

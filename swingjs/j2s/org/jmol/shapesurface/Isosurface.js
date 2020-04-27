@@ -1,58 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'org.jmol.shapesurface.IsosurfaceMesh','javajs.util.P4','javajs.util.P3i','javajs.util.AU','org.jmol.jvxl.readers.SurfaceGenerator','org.jmol.jvxl.data.JvxlData','org.jmol.viewer.Viewer','javajs.util.PT','org.jmol.util.C','javajs.util.P3','org.jmol.viewer.JC','javajs.util.Quat','Boolean','javajs.util.M4','org.jmol.util.Logger','javajs.util.Rdr','javajs.util.Lst','javajs.util.V3','org.jmol.jvxl.data.MeshData','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Escape','javajs.util.BS','org.jmol.util.TempArray','javajs.util.A4','javajs.util.M3','org.jmol.shape.Mesh','java.util.Hashtable','javajs.util.CU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Isosurface", null, 'org.jmol.shape.MeshCollection', 'org.jmol.jvxl.api.MeshDataServer');
+(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'org.jmol.shapesurface.IsosurfaceMesh','javajs.util.P4','javajs.util.P3i','javajs.util.AU','org.jmol.jvxl.readers.SurfaceGenerator','org.jmol.jvxl.data.JvxlData','org.jmol.viewer.Viewer','javajs.util.PT','org.jmol.util.C','javajs.util.P3','org.jmol.viewer.JC','javajs.util.Quat','Boolean','javajs.util.M4','org.jmol.util.Logger','javajs.util.Rdr','javajs.util.Lst','javajs.util.V3','org.jmol.jvxl.data.MeshData','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder','org.jmol.shape.Shape','org.jmol.util.Escape','javajs.util.BS','org.jmol.util.TempArray','javajs.util.A4','javajs.util.M3','org.jmol.shape.Mesh','java.util.Hashtable','javajs.util.CU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Isosurface", null, 'org.jmol.shape.MeshCollection', 'org.jmol.jvxl.api.MeshDataServer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isomeshes=null;
-this.thisMesh=null;
-this.actualID=null;
-this.iHaveBitSets=false;
-this.explicitContours=false;
-this.atomIndex=0;
-this.moNumber=0;
-this.moLinearCombination=null;
-this.colorType=0;
-this.defaultColix=0;
-this.meshColix=0;
-this.center=null;
-this.scale3d=0;
-this.isPhaseColored=false;
-this.isColorExplicit=false;
-this.scriptAppendix=null;
-this.sg=null;
-this.jvxlData=null;
-this.withinDistance2=0;
-this.isWithinNot=false;
-this.withinPoints=null;
-this.cutoffRange=null;
-this.allowMesh=false;
-this.script=null;
-this.iHaveModelIndex=false;
-this.nLCAO=0;
-this.lcaoDir=null;
-this.associateNormals=false;
-this.oldFileName=null;
-this.newFileName=null;
-this.ptXY=null;
-this.keyXy=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isomeshes=Clazz.array($I$(1), [4]);
 this.scriptAppendix="";
 this.allowMesh=true;
 this.nLCAO=0;
-this.lcaoDir=Clazz.new_($I$(2));
-this.ptXY=Clazz.new_($I$(3));
-}, 1);
+this.lcaoDir=Clazz.new_($I$(2,1));
+this.ptXY=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['Z',['iHaveBitSets','explicitContours','isPhaseColored','isColorExplicit','isWithinNot','allowMesh','iHaveModelIndex','associateNormals'],'F',['scale3d','withinDistance2'],'I',['atomIndex','moNumber','colorType','nLCAO'],'H',['defaultColix','meshColix'],'S',['actualID','scriptAppendix','script','oldFileName','newFileName'],'O',['isomeshes','org.jmol.shapesurface.IsosurfaceMesh[]','thisMesh','org.jmol.shapesurface.IsosurfaceMesh','moLinearCombination','float[]','center','javajs.util.P3','sg','org.jmol.jvxl.readers.SurfaceGenerator','jvxlData','org.jmol.jvxl.data.JvxlData','withinPoints','javajs.util.Lst','cutoffRange','float[]','lcaoDir','javajs.util.P4','ptXY','javajs.util.P3i','keyXy','int[]']]]
 
 Clazz.newMeth(C$, 'allocMesh$S$org_jmol_shape_Mesh', function (thisID, m) {
 var index=this.meshCount++;
 this.meshes=this.isomeshes=$I$(4).ensureLength$O$I(this.isomeshes, this.meshCount * 2);
-this.currentMesh=this.thisMesh=this.isomeshes[index]=(m == null  ? Clazz.new_($I$(1).c$$org_jmol_viewer_Viewer$S$H$I,[this.vwr, thisID, this.colix, index]) : m);
+this.currentMesh=this.thisMesh=this.isomeshes[index]=(m == null  ? Clazz.new_($I$(1,1).c$$org_jmol_viewer_Viewer$S$H$I,[this.vwr, thisID, this.colix, index]) : m);
 this.currentMesh.index=index;
 if (this.sg != null ) this.sg.setJvxlData$org_jmol_jvxl_data_JvxlData(this.jvxlData=this.thisMesh.jvxlData);
 });
@@ -64,7 +29,7 @@ this.newSg$();
 });
 
 Clazz.newMeth(C$, 'newSg$', function () {
-this.sg=Clazz.new_($I$(5).c$$org_jmol_atomdata_AtomDataServer$org_jmol_jvxl_api_MeshDataServer$org_jmol_jvxl_data_MeshData$org_jmol_jvxl_data_JvxlData,[this.vwr, this, null, this.jvxlData=Clazz.new_($I$(6))]);
+this.sg=Clazz.new_([this.vwr, this, null, this.jvxlData=Clazz.new_($I$(6,1))],$I$(5,1).c$$org_jmol_atomdata_AtomDataServer$org_jmol_jvxl_api_MeshDataServer$org_jmol_jvxl_data_MeshData$org_jmol_jvxl_data_JvxlData);
 this.sg.params.showTiming=this.vwr.getBoolean$I(603979934);
 this.sg.version="Jmol " + $I$(7).getJmolVersion$();
 });
@@ -144,15 +109,15 @@ this.thisMesh.colorVertices$H$javajs_util_BS$Z($I$(9).getColixO$O(value), bs, fa
 }return;
 }if ("colorPhase" == propertyName) {
 var colors=value;
-var colix0=$I$(9).getColix$I((colors[0]).intValue$());
-var colix1=$I$(9).getColix$I((colors[1]).intValue$());
+var colix0=(function(a,f){return f.apply(null,a)})([(colors[0]).intValue$()],$I$(9).getColix$I);
+var colix1=(function(a,f){return f.apply(null,a)})([(colors[1]).intValue$()],$I$(9).getColix$I);
 var id=(this.thisMesh != null  ? this.thisMesh.thisID : $I$(8).isWild$S(this.previousMeshID) ? this.previousMeshID : null);
 var list=this.getMeshList$S$Z(id, false);
 for (var i=list.size$(); --i >= 0; ) p$1.setColorPhase$org_jmol_shapesurface_IsosurfaceMesh$H$H.apply(this, [list.get$I(i), colix0, colix1]);
 
 return;
 }if ("color" == propertyName) {
-var color=$I$(9).getHexCode$H($I$(9).getColixO$O(value));
+var color=(function(a,f){return f.apply(null,a)})([$I$(9).getColixO$O(value)],$I$(9).getHexCode$H);
 if (this.thisMesh != null ) {
 p$1.setIsoMeshColor$org_jmol_shapesurface_IsosurfaceMesh$S.apply(this, [this.thisMesh, color]);
 } else {
@@ -481,11 +446,11 @@ if (this.sg != null ) this.sg.setJvxlData$org_jmol_jvxl_data_JvxlData(this.jvxlD
 
 Clazz.newMeth(C$, 'getPropertyData$S$OA', function (property, data) {
 if (property == "keys") {
-var keys=(Clazz.instanceOf(data[1], "javajs.util.Lst") ? data[1] : Clazz.new_($I$(17)));
+var keys=(Clazz.instanceOf(data[1], "javajs.util.Lst") ? data[1] : Clazz.new_($I$(17,1)));
 data[1]=keys;
-keys.addLast$TV("info");
-keys.addLast$TV("data");
-keys.addLast$TV("atoms");
+keys.addLast$O("info");
+keys.addLast$O("data");
+keys.addLast$O("atoms");
 }if (property == "colorEncoder") {
 var mesh=this.getMesh$S(data[0]);
 return (mesh != null  && (data[1]=mesh.colorEncoder) != null  );
@@ -504,7 +469,7 @@ if (m.mat4 != null ) {
 var d=Clazz.array($I$(10), [2]);
 d[0]=$I$(10).newP$javajs_util_T3(m.jvxlData.boundingBox[0]);
 d[1]=$I$(10).newP$javajs_util_T3(m.jvxlData.boundingBox[1]);
-var v=Clazz.new_($I$(18));
+var v=Clazz.new_($I$(18,1));
 m.mat4.getTranslation$javajs_util_T3(v);
 d[0].add$javajs_util_T3(v);
 d[1].add$javajs_util_T3(v);
@@ -523,7 +488,7 @@ var p=$I$(10).newP$javajs_util_T3(m.jvxlData.boundingBox[0]);
 p.add$javajs_util_T3(m.jvxlData.boundingBox[1]);
 p.scale$F(0.5);
 if (m.mat4 != null ) {
-var v=Clazz.new_($I$(18));
+var v=Clazz.new_($I$(18,1));
 m.mat4.getTranslation$javajs_util_T3(v);
 p.add$javajs_util_T3(v);
 }data[2]=p;
@@ -568,19 +533,19 @@ if (property == "jvxlDataXml" || property == "jvxlMeshXml" ) {
 var meshData=null;
 this.jvxlData.slabInfo=null;
 if (property == "jvxlMeshXml" || this.jvxlData.vertexDataOnly  || thisMesh.bsSlabDisplay != null  && thisMesh.bsSlabGhost == null   ) {
-meshData=Clazz.new_($I$(19));
+meshData=Clazz.new_($I$(19,1));
 this.fillMeshData$org_jmol_jvxl_data_MeshData$I$org_jmol_shapesurface_IsosurfaceMesh(meshData, 1, thisMesh);
 meshData.polygonColorData=C$.getPolygonColorData$I$HA$IAA$javajs_util_BS(meshData.pc, meshData.pcs, (meshData.colorsExplicit ? meshData.pis : null), meshData.bsSlabDisplay);
 } else if (thisMesh.bsSlabGhost != null ) {
 this.jvxlData.slabInfo=thisMesh.slabOptions.toString();
-}var sb=Clazz.new_($I$(20));
+}var sb=Clazz.new_($I$(20,1));
 p$1.getMeshCommand$javajs_util_SB$I.apply(this, [sb, thisMesh.index]);
 thisMesh.setJvxlColorMap$Z(true);
-return $I$(21).jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S(this.jvxlData, meshData, this.title, "", true, 1, sb.toString(), null);
+return (function(a,f){return f.apply(null,a)})([this.jvxlData, meshData, this.title, "", true, 1, sb.toString(), null],$I$(21).jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S);
 }if (property == "jvxlFileInfo") {
 return $I$(21).jvxlGetInfo$org_jmol_jvxl_data_JvxlData(this.jvxlData);
 }if (property == "command") {
-var sb=Clazz.new_($I$(20));
+var sb=Clazz.new_($I$(20,1));
 var list=this.getMeshList$S$Z((index < 0 ? this.previousMeshID : thisMesh.thisID), false);
 for (var i=list.size$(); --i >= 0; ) p$1.getMeshCommand$javajs_util_SB$I.apply(this, [sb, i]);
 
@@ -600,7 +565,7 @@ if (isArea) {
 if (mesh.calculatedArea != null ) return mesh.calculatedArea;
 } else {
 if (mesh.calculatedVolume != null ) return mesh.calculatedVolume;
-}var meshData=Clazz.new_($I$(19));
+}var meshData=Clazz.new_($I$(19,1));
 this.fillMeshData$org_jmol_jvxl_data_MeshData$I$org_jmol_shapesurface_IsosurfaceMesh(meshData, 1, mesh);
 meshData.nSets=mesh.nSets;
 meshData.vertexSets=mesh.vertexSets;
@@ -618,7 +583,7 @@ return ret;
 Clazz.newMeth(C$, 'getPolygonColorData$I$HA$IAA$javajs_util_BS', function (ccount, colixes, polygons, bsSlabDisplay) {
 var isExplicit=(polygons != null );
 if (colixes == null  && polygons == null  ) return null;
-var list1=Clazz.new_($I$(20));
+var list1=Clazz.new_($I$(20,1));
 var count=0;
 var colix=($s$[0] = 0, $s$[0]);
 var color=0;
@@ -641,7 +606,7 @@ return list1.toString();
 
 Clazz.newMeth(C$, 'getShapeState$', function () {
 this.clean$();
-var sb=Clazz.new_($I$(20));
+var sb=Clazz.new_($I$(20,1));
 sb.append$S("\n");
 for (var i=0; i < this.meshCount; i++) p$1.getMeshCommand$javajs_util_SB$I.apply(this, [sb, i]);
 
@@ -653,37 +618,37 @@ var imesh=this.meshes[i];
 if (imesh == null  || imesh.scriptCommand == null  ) return;
 var cmd=imesh.scriptCommand;
 var modelCount=this.vwr.ms.mc;
-if (modelCount > 1) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "frame " + this.vwr.getModelNumberDotted$I(imesh.modelIndex));
+if (modelCount > 1) (function(a,f){return f.apply(null,a)})([sb, "frame " + this.vwr.getModelNumberDotted$I(imesh.modelIndex)],$I$(22).appendCmd$javajs_util_SB$S);
 cmd=$I$(8).rep$S$S$S(cmd, ";; isosurface map", " map");
 cmd=$I$(8).rep$S$S$S(cmd, "; isosurface map", " map");
 cmd=cmd.replace$C$C("\t", " ");
 cmd=$I$(8).rep$S$S$S(cmd, ";#", "; #");
 var pt=cmd.indexOf$S("; #");
 if (pt >= 0) cmd=cmd.substring$I$I(0, pt);
-if (imesh.connectedAtoms != null ) cmd += " connect " + $I$(22).eAI$IA(imesh.connectedAtoms);
+if (imesh.connectedAtoms != null ) cmd += " connect " + $I$(23).eAI$IA(imesh.connectedAtoms);
 cmd=$I$(8).trim$S$S(cmd, ";");
 if (imesh.linkedMesh != null ) cmd += " LINK";
 if (this.myType == "lcaoCartoon" && imesh.atomIndex >= 0 ) cmd += " ATOMINDEX " + imesh.atomIndex;
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, cmd);
+$I$(22).appendCmd$javajs_util_SB$S(sb, cmd);
 var id=this.myType + " ID " + $I$(8).esc$S(imesh.thisID) ;
-if (imesh.jvxlData.thisSet >= 0) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, id + " set " + (imesh.jvxlData.thisSet + 1) );
-if (imesh.mat4 != null  && !imesh.isModelConnected ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, id + " move " + $I$(22).matrixToScript$O(imesh.mat4) );
-if (imesh.scale3d != 0 ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, id + " scale3d " + new Float(imesh.scale3d).toString() );
-if (imesh.jvxlData.slabValue != -2147483648) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, id + " slab " + imesh.jvxlData.slabValue );
-if (imesh.slabOptions != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, imesh.slabOptions.toString());
+if (imesh.jvxlData.thisSet >= 0) (function(a,f){return f.apply(null,a)})([sb, id + " set " + (imesh.jvxlData.thisSet + 1) ],$I$(22).appendCmd$javajs_util_SB$S);
+if (imesh.mat4 != null  && !imesh.isModelConnected ) (function(a,f){return f.apply(null,a)})([sb, id + " move " + $I$(23).matrixToScript$O(imesh.mat4) ],$I$(22).appendCmd$javajs_util_SB$S);
+if (imesh.scale3d != 0 ) (function(a,f){return f.apply(null,a)})([sb, id + " scale3d " + new Float(imesh.scale3d).toString() ],$I$(22).appendCmd$javajs_util_SB$S);
+if (imesh.jvxlData.slabValue != -2147483648) $I$(22).appendCmd$javajs_util_SB$S(sb, id + " slab " + imesh.jvxlData.slabValue );
+if (imesh.slabOptions != null ) (function(a,f){return f.apply(null,a)})([sb, imesh.slabOptions.toString()],$I$(22).appendCmd$javajs_util_SB$S);
 if (cmd.charAt$I(0) != "#") {
-if (this.allowMesh) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, imesh.getState$S(this.myType));
-if (!imesh.isColorSolid && imesh.colorType == 0  && $I$(9).isColixTranslucent$H(imesh.colix) ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "color " + this.myType + " " + org.jmol.shape.Shape.getTranslucentLabel$H(imesh.colix) );
+if (this.allowMesh) (function(a,f){return f.apply(null,a)})([sb, imesh.getState$S(this.myType)],$I$(22).appendCmd$javajs_util_SB$S);
+if (!imesh.isColorSolid && imesh.colorType == 0  && $I$(9).isColixTranslucent$H(imesh.colix) ) (function(a,f){return f.apply(null,a)})([sb, "color " + this.myType + " " + $I$(22).getTranslucentLabel$H(imesh.colix) ],$I$(22).appendCmd$javajs_util_SB$S);
 if (imesh.colorCommand != null  && imesh.colorType == 0  && !imesh.colorCommand.equals$O("#inherit;") ) {
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, imesh.colorCommand);
+$I$(22).appendCmd$javajs_util_SB$S(sb, imesh.colorCommand);
 }var colorArrayed=(imesh.isColorSolid && imesh.pcs != null  );
 if (imesh.isColorSolid && imesh.colorType == 0  && !imesh.colorsExplicit  && !colorArrayed ) {
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, org.jmol.shape.Shape.getColorCommandUnk$S$H$Z(this.myType, imesh.colix, this.translucentAllowed));
+(function(a,f){return f.apply(null,a)})([sb, $I$(22).getColorCommandUnk$S$H$Z(this.myType, imesh.colix, this.translucentAllowed)],$I$(22).appendCmd$javajs_util_SB$S);
 } else if (imesh.jvxlData.isBicolorMap && imesh.colorPhased ) {
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "color isosurface phase " + org.jmol.shape.Shape.encodeColor$H(imesh.jvxlData.minColorIndex) + " " + org.jmol.shape.Shape.encodeColor$H(imesh.jvxlData.maxColorIndex) );
+(function(a,f){return f.apply(null,a)})([sb, "color isosurface phase " + $I$(22).encodeColor$H(imesh.jvxlData.minColorIndex) + " " + $I$(22).encodeColor$H(imesh.jvxlData.maxColorIndex) ],$I$(22).appendCmd$javajs_util_SB$S);
 }if (imesh.vertexColorMap != null ) for (var entry, $entry = imesh.vertexColorMap.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var bs=entry.getValue$();
-if (!bs.isEmpty$()) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "color " + this.myType + " " + $I$(22).eBS$javajs_util_BS(bs) + " " + entry.getKey$() );
+if (!bs.isEmpty$()) (function(a,f){return f.apply(null,a)})([sb, "color " + this.myType + " " + $I$(23).eBS$javajs_util_BS(bs) + " " + entry.getKey$() ],$I$(22).appendCmd$javajs_util_SB$S);
 }
 }}, p$1);
 
@@ -695,7 +660,7 @@ this.modelIndex=-1;
 if (script != null  && (i=script.indexOf$S("MODEL({")) >= 0 ) {
 var j=script.indexOf$S$I("})", i);
 if (j > 0) {
-var bs=$I$(23).unescape$S(script.substring$I$I(i + 3, j + 1));
+var bs=(function(a,f){return f.apply(null,a)})([script.substring$I$I(i + 3, j + 1)],$I$(24).unescape$S);
 this.modelIndex=(bs == null  ? -1 : bs.nextSetBit$I(0));
 this.iHaveModelIndex=(this.modelIndex >= 0);
 }}if (script == null ) return false;
@@ -704,18 +669,18 @@ i=script.indexOf$S("# ({");
 if (i < 0) return false;
 var j=script.indexOf$S$I("})", i);
 if (j < 0) return false;
-var bs=$I$(23).unescape$S(script.substring$I$I(i + 2, j + 2));
+var bs=(function(a,f){return f.apply(null,a)})([script.substring$I$I(i + 2, j + 2)],$I$(24).unescape$S);
 if (bsCmd == null ) this.sg.setProp$S$O$javajs_util_BS("select", bs, null);
  else bsCmd[0]=bs;
 if ((i=script.indexOf$S$I("({", j)) < 0) return true;
 j=script.indexOf$S$I("})", i);
 if (j < 0) return false;
-bs=$I$(23).unescape$S(script.substring$I$I(i + 1, j + 1));
+bs=(function(a,f){return f.apply(null,a)})([script.substring$I$I(i + 1, j + 1)],$I$(24).unescape$S);
 if (bsCmd == null ) this.sg.setProp$S$O$javajs_util_BS("ignore", bs, null);
  else bsCmd[1]=bs;
 if ((i=script.indexOf$S$I("/({", j)) == j + 2) {
 if ((j=script.indexOf$S$I("})", i)) < 0) return false;
-bs=$I$(23).unescape$S(script.substring$I$I(i + 3, j + 1));
+bs=(function(a,f){return f.apply(null,a)})([script.substring$I$I(i + 3, j + 1)],$I$(24).unescape$S);
 if (bsCmd == null ) this.vwr.ms.setTrajectoryBs$javajs_util_BS(bs);
  else bsCmd[2]=bs;
 }return true;
@@ -731,10 +696,10 @@ if (i >= 0) this.sg.setProp$S$O$javajs_util_BS("slab", p$1.getCapSlabObject$S$Z.
 Clazz.newMeth(C$, 'getCapSlabObject$S$Z', function (s, isCap) {
 try {
 if (s.indexOf$S("array") == 0) {
-var pts=$I$(8).split$S$S(s.substring$I$I(6, s.length$() - 1), ",");
-return $I$(24).getSlabObjectType$I$O$Z$O(1678381065, Clazz.array($I$(10), -1, [$I$(22).uP$S(pts[0]), $I$(22).uP$S(pts[1]), $I$(22).uP$S(pts[2]), $I$(22).uP$S(pts[3])]), isCap, null);
-}var plane=$I$(22).uP$S(s);
-if (Clazz.instanceOf(plane, "javajs.util.P4")) return $I$(24).getSlabObjectType$I$O$Z$O(134217750, plane, isCap, null);
+var pts=(function(a,f){return f.apply(null,a)})([s.substring$I$I(6, s.length$() - 1), ","],$I$(8).split$S$S);
+return (function(a,f){return f.apply(null,a)})([1678381065, Clazz.array($I$(10), -1, [$I$(23).uP$S(pts[0]), $I$(23).uP$S(pts[1]), $I$(23).uP$S(pts[2]), $I$(23).uP$S(pts[3])]), isCap, null],$I$(25).getSlabObjectType$I$O$Z$O);
+}var plane=$I$(23).uP$S(s);
+if (Clazz.instanceOf(plane, "javajs.util.P4")) return $I$(25).getSlabObjectType$I$O$Z$O(134217750, plane, isCap, null);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -801,17 +766,17 @@ var lcaoCartoon=this.sg.setLcao$();
 var rotRadians=rotAxis.x + rotAxis.y + rotAxis.z ;
 this.defaultColix=$I$(9).getColix$I(this.sg.params.colorPos);
 var colixNeg=$I$(9).getColix$I(this.sg.params.colorNeg);
-var y=Clazz.new_($I$(18));
+var y=Clazz.new_($I$(18,1));
 var isReverse=(lcaoCartoon.length$() > 0 && lcaoCartoon.charAt$I(0) == "-" );
 if (isReverse) lcaoCartoon=lcaoCartoon.substring$I(1);
 var sense=(isReverse ? -1 : 1);
 y.cross$javajs_util_T3$javajs_util_T3(z, x);
 if (rotRadians != 0 ) {
-var a=Clazz.new_($I$(25));
+var a=Clazz.new_($I$(26,1));
 if (rotAxis.x != 0 ) a.setVA$javajs_util_V3$F(x, rotRadians);
  else if (rotAxis.y != 0 ) a.setVA$javajs_util_V3$F(y, rotRadians);
  else a.setVA$javajs_util_V3$F(z, rotRadians);
-var m=Clazz.new_($I$(26)).setAA$javajs_util_A4(a);
+var m=Clazz.new_($I$(27,1)).setAA$javajs_util_A4(a);
 m.rotate$javajs_util_T3(x);
 m.rotate$javajs_util_T3(y);
 m.rotate$javajs_util_T3(z);
@@ -1004,7 +969,7 @@ this.thisMesh.reinitializeLightingAndColor$org_jmol_viewer_Viewer(this.vwr);
 
 Clazz.newMeth(C$, 'setBsVdw', function () {
 if (this.sg.bsVdw == null ) return;
-if (this.thisMesh.bsVdw == null ) this.thisMesh.bsVdw=Clazz.new_($I$(23));
+if (this.thisMesh.bsVdw == null ) this.thisMesh.bsVdw=Clazz.new_($I$(24,1));
 this.thisMesh.bsVdw.or$javajs_util_BS(this.sg.bsVdw);
 }, p$1);
 
@@ -1018,7 +983,7 @@ return 0;
 
 Clazz.newMeth(C$, 'addVertexCopy$javajs_util_T3$F$I$Z', function (vertexXYZ, value, assocVertex, asCopy) {
 if (this.cutoffRange != null  && (value < this.cutoffRange[0]  || value > this.cutoffRange[1]  ) ) return -1;
-return (this.withinPoints != null  && !$I$(27).checkWithin$javajs_util_T3$javajs_util_Lst$F$Z(vertexXYZ, this.withinPoints, this.withinDistance2, this.isWithinNot)  ? -1 : this.thisMesh.addVertexCopy$javajs_util_T3$F$I$Z$Z(vertexXYZ, value, assocVertex, this.associateNormals, asCopy));
+return (this.withinPoints != null  && !$I$(28).checkWithin$javajs_util_T3$javajs_util_Lst$F$Z(vertexXYZ, this.withinPoints, this.withinDistance2, this.isWithinNot)  ? -1 : this.thisMesh.addVertexCopy$javajs_util_T3$F$I$Z$Z(vertexXYZ, value, assocVertex, this.associateNormals, asCopy));
 });
 
 Clazz.newMeth(C$, 'addTriangleCheck$I$I$I$I$I$Z$I', function (iA, iB, iC, check, iContour, isAbsolute, color) {
@@ -1063,35 +1028,35 @@ if (this.sg.jvxlData !== this.jvxlData  || this.sg.jvxlData !== this.thisMesh.jv
 }, p$1);
 
 Clazz.newMeth(C$, 'getShapeDetail$', function () {
-var V=Clazz.new_($I$(17));
+var V=Clazz.new_($I$(17,1));
 for (var i=0; i < this.meshCount; i++) {
-var info=Clazz.new_($I$(28));
+var info=Clazz.new_($I$(29,1));
 var mesh=this.isomeshes[i];
 if (mesh == null  || mesh.vs == null   || mesh.vc == 0 && mesh.pc == 0  ) continue;
 this.addMeshInfo$org_jmol_shapesurface_IsosurfaceMesh$java_util_Map(mesh, info);
-V.addLast$TV(info);
+V.addLast$O(info);
 }
 return V;
 });
 
 Clazz.newMeth(C$, 'addMeshInfo$org_jmol_shapesurface_IsosurfaceMesh$java_util_Map', function (mesh, info) {
-info.put$TK$TV("ID", (mesh.thisID == null  ? "<noid>" : mesh.thisID));
-info.put$TK$TV("visible", $I$(13).valueOf$Z(mesh.visible));
-info.put$TK$TV("vertexCount", Integer.valueOf$I(mesh.vc));
-if (mesh.calculatedVolume != null ) info.put$TK$TV("volume", mesh.calculatedVolume);
-if (mesh.calculatedArea != null ) info.put$TK$TV("area", mesh.calculatedArea);
-if (!Float.isNaN$F(mesh.ptCenter.x)) info.put$TK$TV("center", mesh.ptCenter);
-if (mesh.mat4 != null ) info.put$TK$TV("mat4", mesh.mat4);
-if (mesh.scale3d != 0 ) info.put$TK$TV("scale3d", Float.valueOf$F(mesh.scale3d));
-info.put$TK$TV("xyzMin", mesh.jvxlData.boundingBox[0]);
-info.put$TK$TV("xyzMax", mesh.jvxlData.boundingBox[1]);
+info.put$O$O("ID", (mesh.thisID == null  ? "<noid>" : mesh.thisID));
+info.put$O$O("visible", $I$(13).valueOf$Z(mesh.visible));
+info.put$O$O("vertexCount", Integer.valueOf$I(mesh.vc));
+if (mesh.calculatedVolume != null ) info.put$O$O("volume", mesh.calculatedVolume);
+if (mesh.calculatedArea != null ) info.put$O$O("area", mesh.calculatedArea);
+if (!Float.isNaN$F(mesh.ptCenter.x)) info.put$O$O("center", mesh.ptCenter);
+if (mesh.mat4 != null ) info.put$O$O("mat4", mesh.mat4);
+if (mesh.scale3d != 0 ) info.put$O$O("scale3d", Float.valueOf$F(mesh.scale3d));
+info.put$O$O("xyzMin", mesh.jvxlData.boundingBox[0]);
+info.put$O$O("xyzMax", mesh.jvxlData.boundingBox[1]);
 var s=$I$(21).jvxlGetInfo$org_jmol_jvxl_data_JvxlData(mesh.jvxlData);
-if (s != null ) info.put$TK$TV("jvxlInfo", s.replace$C$C("\n", " "));
-info.put$TK$TV("modelIndex", Integer.valueOf$I(mesh.modelIndex));
-info.put$TK$TV("color", $I$(29).colorPtFromInt$I$javajs_util_P3($I$(9).getArgb$H(mesh.colix), null));
-if (mesh.colorEncoder != null ) info.put$TK$TV("colorKey", mesh.colorEncoder.getColorKey$());
-if (mesh.title != null ) info.put$TK$TV("title", mesh.title);
-if (mesh.jvxlData.contourValues != null  || mesh.jvxlData.contourValuesUsed != null  ) info.put$TK$TV("contours", mesh.getContourList$org_jmol_viewer_Viewer(this.vwr));
+if (s != null ) info.put$O$O("jvxlInfo", s.replace$C$C("\n", " "));
+info.put$O$O("modelIndex", Integer.valueOf$I(mesh.modelIndex));
+info.put$O$O("color", (function(a,f){return f.apply(null,a)})([$I$(9).getArgb$H(mesh.colix), null],$I$(30).colorPtFromInt$I$javajs_util_P3));
+if (mesh.colorEncoder != null ) info.put$O$O("colorKey", mesh.colorEncoder.getColorKey$());
+if (mesh.title != null ) info.put$O$O("title", mesh.title);
+if (mesh.jvxlData.contourValues != null  || mesh.jvxlData.contourValuesUsed != null  ) info.put$O$O("contours", mesh.getContourList$org_jmol_viewer_Viewer(this.vwr));
 });
 
 Clazz.newMeth(C$, 'getPlane$I', function (x) {
@@ -1185,7 +1150,7 @@ if (imesh < 0) return null;
 this.pickedMesh=this.isomeshes[imesh];
 p$1.setPropertySuper$S$O$javajs_util_BS.apply(this, ["thisID", this.pickedMesh.thisID, null]);
 var iFace=this.pickedVertex=(pickFront ? jminz : jmaxz);
-var ptRet=Clazz.new_($I$(10));
+var ptRet=Clazz.new_($I$(10,1));
 ptRet.setT$javajs_util_T3((pickFront ? this.pickedMesh.vs[this.pickedVertex] : (this.pickedMesh).centers[iFace]));
 this.pickedModel=($s$[0] = this.pickedMesh.modelIndex, $s$[0]);
 var map=this.getPickedPoint$javajs_util_T3$I(ptRet, this.pickedModel);
@@ -1270,7 +1235,7 @@ return (pickedVertex == -1 ? null : ($I$(15).debugging ? "$" + m.thisID + "[" + 
 }, p$1);
 
 Clazz.newMeth(C$, 'getCmd$I', function (index) {
-var sb=Clazz.new_($I$(20)).append$S("\n");
+var sb=Clazz.new_($I$(20,1)).append$S("\n");
 p$1.getMeshCommand$javajs_util_SB$I.apply(this, [sb, index]);
 return (sb.toString());
 });
@@ -1278,4 +1243,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

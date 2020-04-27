@@ -1,35 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.DefaultLogger','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Logger");
-C$._logger=null;
-C$._activeLevels=null;
-C$._logLevel=false;
-C$.debugging=false;
-C$.debuggingHigh=false;
-C$.htTiming=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.DefaultLogger','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Logger");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$._logger=Clazz.new_($I$(1));
-C$._activeLevels=Clazz.array(Boolean.TYPE, [7]);
-C$._logLevel=false;
-{
-C$._activeLevels[6]=C$.getProperty$S$Z("debugHigh", false);
-C$._activeLevels[5]=C$.getProperty$S$Z("debug", false);
-C$._activeLevels[4]=C$.getProperty$S$Z("info", true);
-C$._activeLevels[3]=C$.getProperty$S$Z("warn", true);
-C$._activeLevels[2]=C$.getProperty$S$Z("error", true);
-C$._activeLevels[1]=C$.getProperty$S$Z("fatal", true);
-C$._logLevel=C$.getProperty$S$Z("logLevel", false);
-C$.debugging=(C$._logger != null  && (C$._activeLevels[5] || C$._activeLevels[6] ) );
-C$.debuggingHigh=(C$.debugging && C$._activeLevels[6] );
-};
-C$.htTiming=Clazz.new_($I$(2));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['Z',['_logLevel','debugging','debuggingHigh'],'O',['_logger','org.jmol.util.LoggerInterface','_activeLevels','boolean[]','htTiming','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getProperty$S$Z', function (level, defaultValue) {
@@ -166,7 +147,7 @@ C$._logger.fatalEx$S$Throwable(txt, e);
 }, 1);
 
 Clazz.newMeth(C$, 'startTimer$S', function (msg) {
-if (msg != null ) C$.htTiming.put$TK$TV(msg, Long.valueOf$J(System.currentTimeMillis$()));
+if (msg != null ) C$.htTiming.put$O$O(msg, Long.valueOf$J(System.currentTimeMillis$()));
 }, 1);
 
 Clazz.newMeth(C$, 'getTimerMsg$S$I', function (msg, time) {
@@ -194,5 +175,23 @@ var bMax=0;
 {}
 C$.info$S("Memory: Total-Free=" + (bTotal - bFree) + "; Total=" + bTotal + "; Free=" + bFree + "; Max=" + bMax );
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$._logger=Clazz.new_($I$(1,1));
+C$._activeLevels=Clazz.array(Boolean.TYPE, [7]);
+C$._logLevel=false;
+{
+C$._activeLevels[6]=C$.getProperty$S$Z("debugHigh", false);
+C$._activeLevels[5]=C$.getProperty$S$Z("debug", false);
+C$._activeLevels[4]=C$.getProperty$S$Z("info", true);
+C$._activeLevels[3]=C$.getProperty$S$Z("warn", true);
+C$._activeLevels[2]=C$.getProperty$S$Z("error", true);
+C$._activeLevels[1]=C$.getProperty$S$Z("fatal", true);
+C$._logLevel=C$.getProperty$S$Z("logLevel", false);
+C$.debugging=(C$._logger != null  && (C$._activeLevels[5] || C$._activeLevels[6] ) );
+C$.debuggingHigh=(C$.debugging && C$._activeLevels[6] );
+};
+C$.htTiming=Clazz.new_($I$(2,1));
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

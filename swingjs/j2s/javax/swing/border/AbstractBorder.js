@@ -1,17 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing.border"),I$=[[0,'java.awt.Insets','java.awt.Rectangle',['java.awt.Component','.BaselineResizeBehavior']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractBorder", null, null, 'javax.swing.border.Border');
+(function(){var P$=Clazz.newPackage("javax.swing.border"),I$=[[0,'java.awt.Insets','java.awt.Rectangle',['java.awt.Component','.BaselineResizeBehavior']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractBorder", null, null, 'javax.swing.border.Border');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+this.秘paintClass=C$ ||null;
+},1);
+
+C$.$fields$=[['O',['秘paintClass','Class']]]
 
 Clazz.newMeth(C$, 'paintBorder$java_awt_Component$java_awt_Graphics$I$I$I$I', function (c, g, x, y, width, height) {
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component', function (c) {
-return Clazz.new_($I$(1).c$$I$I$I$I,[0, 0, 0, 0]);
+return Clazz.new_($I$(1,1).c$$I$I$I$I,[0, 0, 0, 0]);
 });
 
 Clazz.newMeth(C$, 'getBorderInsets$java_awt_Component$java_awt_Insets', function (c, insets) {
@@ -30,8 +32,8 @@ return C$.getInteriorRectangle$java_awt_Component$javax_swing_border_Border$I$I$
 Clazz.newMeth(C$, 'getInteriorRectangle$java_awt_Component$javax_swing_border_Border$I$I$I$I', function (c, b, x, y, width, height) {
 var insets;
 if (b != null ) insets=b.getBorderInsets$java_awt_Component(c);
- else insets=Clazz.new_($I$(1).c$$I$I$I$I,[0, 0, 0, 0]);
-return Clazz.new_($I$(2).c$$I$I$I$I,[x + insets.left, y + insets.top, width - insets.right - insets.left , height - insets.top - insets.bottom ]);
+ else insets=Clazz.new_($I$(1,1).c$$I$I$I$I,[0, 0, 0, 0]);
+return Clazz.new_($I$(2,1).c$$I$I$I$I,[x + insets.left, y + insets.top, width - insets.right - insets.left , height - insets.top - insets.bottom ]);
 }, 1);
 
 Clazz.newMeth(C$, 'getBaseline$java_awt_Component$I$I', function (c, width, height) {
@@ -52,4 +54,4 @@ return c.getComponentOrientation$().isLeftToRight$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

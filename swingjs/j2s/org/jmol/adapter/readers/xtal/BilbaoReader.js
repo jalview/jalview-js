@@ -1,23 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.V3','org.jmol.util.Vibration','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BilbaoReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.V3','org.jmol.util.Vibration','javajs.util.SB']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "BilbaoReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.getHigh=false;
-this.getSym=false;
-this.normDispl=false;
-this.doDisplace=false;
-this.kvec=null;
-this.i0=0;
-this.nAtoms=0;
-this.isBCSfile=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['getHigh','getSym','normDispl','doDisplace','isBCSfile'],'I',['i0','nAtoms'],'S',['kvec']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.normDispl=!this.checkFilterKey$S("NONORM");
@@ -93,7 +82,7 @@ for (var i=0; i < 6; i++) this.setUnitCellItem$I$F(i, data[i]);
 this.i0=this.asc.ac;
 this.nAtoms=this.parseIntStr$S(p$1.rdLine.apply(this, []));
 for (var i=this.nAtoms; --i >= 0; ) {
-var tokens=$I$(1).getTokens$S(p$1.rdLine.apply(this, []));
+var tokens=(function(a,f){return f.apply(null,a)})([p$1.rdLine.apply(this, [])],$I$(1).getTokens$S);
 if (!this.getSym && tokens[1].contains$CharSequence("_") ) continue;
 if (tokens.length == 3) this.addAtomXYZSymName$SA$I$S$S(tokens, 0, "Be", "Be1");
  else this.addAtomXYZSymName$SA$I$S$S(tokens, 3, tokens[0], tokens[0] + tokens[1]);
@@ -109,14 +98,14 @@ Clazz.newMeth(C$, 'readDisplacements$F', function (fAmp) {
 for (var i=0; i < this.nAtoms; i++) {
 if (this.line == null ) p$1.rdLine.apply(this, []);
 var tokens=$I$(1).split$S$S(this.line, "x|x");
-if (this.getSym || !tokens[0].contains$CharSequence("_") ) this.asc.atoms[this.i0 + i].vib=$I$(2).new3$F$F$F(this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3]));
+if (this.getSym || !tokens[0].contains$CharSequence("_") ) this.asc.atoms[this.i0 + i].vib=(function(a,f){return f.apply(null,a)})([this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3])],$I$(2).new3$F$F$F);
 this.line=null;
 }
 this.applySymmetryAndSetTrajectory$();
 for (var i=this.asc.ac; --i >= this.i0; ) {
 var a=this.asc.atoms[i];
 if (a.vib != null ) {
-var v=Clazz.new_($I$(3));
+var v=Clazz.new_($I$(3,1));
 v.setT$javajs_util_T3(a.vib);
 a.vib=v;
 this.asc.getSymmetry$().toCartesian$javajs_util_T3$Z(v, true);
@@ -159,7 +148,7 @@ return s.trim$();
 }, p$1);
 
 Clazz.newMeth(C$, 'getLinesUntil$S', function (key) {
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 do {
 sb.append$S(this.line);
 } while (!this.rd$().contains$CharSequence(key));
@@ -168,4 +157,4 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

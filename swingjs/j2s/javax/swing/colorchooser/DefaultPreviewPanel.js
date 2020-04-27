@@ -1,19 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'javax.swing.SwingUtilities','javax.swing.JColorChooser','java.awt.Dimension','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultPreviewPanel", null, 'javax.swing.JPanel');
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'javax.swing.SwingUtilities','javax.swing.JColorChooser','java.awt.Dimension','java.awt.Color']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultPreviewPanel", null, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.squareSize=0;
-this.squareGap=0;
-this.innerGap=0;
-this.textGap=0;
-this.sampleText=null;
-this.swatchWidth=0;
-this.oldColor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.squareSize=25;
@@ -23,10 +11,12 @@ this.textGap=5;
 this.sampleText="Sample Text";
 this.swatchWidth=50;
 this.oldColor=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['squareSize','squareGap','innerGap','textGap','swatchWidth'],'S',['sampleText'],'O',['oldColor','java.awt.Color']]]
 
 Clazz.newMeth(C$, 'getColorChooser', function () {
-return $I$(1).getAncestorOfClass$Class$java_awt_Component(Clazz.getClass($I$(2)), this);
+return $I$(1,"getAncestorOfClass$Class$java_awt_Component",[Clazz.getClass($I$(2)), this]);
 }, p$1);
 
 Clazz.newMeth(C$, 'getPreferredSize$', function () {
@@ -38,7 +28,7 @@ var height=fm.getHeight$();
 var width=fm.stringWidth$S(this.sampleText);
 var y=height * 5 + this.textGap * 2;
 var x=this.squareSize * 3 + this.squareGap * 2 + this.swatchWidth + width + this.textGap * 3;
-return Clazz.new_($I$(3).c$$I$I,[x, y]);
+return Clazz.new_($I$(3,1).c$$I$I,[x, y]);
 });
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
@@ -128,4 +118,4 @@ return (this.squareSize * 3 + this.squareGap * 2);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

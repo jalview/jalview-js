@@ -1,15 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'sun.awt.image.FetcherInfo','Thread','sun.awt.AppContext','StringBuffer','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageFetcher", null, 'Thread');
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'sun.awt.image.FetcherInfo','Thread','sun.awt.AppContext','java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ImageFetcher", null, 'Thread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$ThreadGroup$I', function (threadGroup, index) {
-C$.superclazz.c$$ThreadGroup$S.apply(this, [threadGroup, "Image Fetcher " + index]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$ThreadGroup$S.apply(this,[threadGroup, "Image Fetcher " + index]);C$.$init$.apply(this);
 this.setDaemon$Z(true);
 }, 1);
 
@@ -17,7 +15,7 @@ Clazz.newMeth(C$, 'add$sun_awt_image_ImageFetchable', function (src) {
 var info=$I$(1).getFetcherInfo$();
 {
 if (!info.waitList.contains$O(src)) {
-info.waitList.addElement$TE(src);
+info.waitList.addElement$O(src);
 if (info.numWaiting == 0 && info.numFetchers < info.fetchers.length ) {
 C$.createFetchers$sun_awt_image_FetcherInfo(info);
 }info.waitList.notify$();
@@ -185,4 +183,4 @@ return;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

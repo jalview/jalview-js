@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("sun.awt.image"),I$=[];
-var C$=Clazz.newClass(P$, "SunVolatileImage", null, 'java.awt.image.VolatileImage');
+/*c*/var C$=Clazz.newClass(P$, "SunVolatileImage", null, 'java.awt.image.VolatileImage');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.graphicsConfig=null;
-this.width=0;
-this.height=0;
-this.caps=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['width','height'],'O',['graphicsConfig','java.awt.GraphicsConfiguration','caps','java.awt.ImageCapabilities']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_GraphicsConfiguration$I$I$I$O', function (graphicsConfig, width, height, transparency, capsObject) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.graphicsConfig=graphicsConfig;
 this.width=width;
 this.height=height;
@@ -70,4 +63,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,16 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'org.jmol.adapter.smarter.Atom','org.jmol.api.JmolAdapter','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MopacArchiveReader", null, 'org.jmol.adapter.readers.simple.InputReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'org.jmol.adapter.smarter.Atom','org.jmol.api.JmolAdapter','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MopacArchiveReader", null, 'org.jmol.adapter.readers.simple.InputReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.energyWithUnits=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['energyWithUnits']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.asc.newAtomSet$();
@@ -44,7 +40,7 @@ var atom=null;
 var sym=null;
 this.setFractionalCoordinates$Z(false);
 while (this.rd$() != null  && this.line.length$() >= 50 ){
-this.vAtoms.addLast$TV(atom=Clazz.new_($I$(1)));
+this.vAtoms.addLast$O(atom=Clazz.new_($I$(1,1)));
 atom.x=this.parseFloatRange$S$I$I(this.line, 5, 18);
 atom.y=this.parseFloatRange$S$I$I(this.line, 21, 34);
 atom.z=this.parseFloatRange$S$I$I(this.line, 37, 50);
@@ -72,7 +68,7 @@ this.setAtomCoord$org_jmol_adapter_smarter_Atom(atom);
 if (sym.equals$O("Tv")) {
 this.setSpaceGroupName$S("P1");
 var nTv=this.vAtoms.size$() - this.ac;
-for (var i=nTv; i < 3; i++) this.vAtoms.addLast$TV(Clazz.new_($I$(1)));
+for (var i=nTv; i < 3; i++) this.vAtoms.addLast$O(Clazz.new_($I$(1,1)));
 
 var xyz=Clazz.array(Float.TYPE, [9]);
 for (var i=0; i < 3; i++) {
@@ -98,7 +94,7 @@ ptMin.x=Math.min(ptMin.x, atom.x);
 ptMin.y=Math.min(ptMin.y, atom.y);
 ptMin.z=Math.min(ptMin.z, atom.z);
 }
-var ptCenter=Clazz.new_($I$(3));
+var ptCenter=Clazz.new_($I$(3,1));
 switch (nTv) {
 case 3:
 ptCenter.x=0.5;
@@ -117,4 +113,4 @@ for (var i=this.ac; --i >= 0; ) this.vAtoms.get$I(i).add$javajs_util_T3(ptCenter
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

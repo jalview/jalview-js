@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),I$=[[0,'org.jmol.minimize.Util']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UFFTorsionCalc", null, 'org.jmol.minimize.forcefield.Calculation');
+(function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),I$=[[0,'org.jmol.minimize.Util']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "UFFTorsionCalc", null, 'org.jmol.minimize.forcefield.Calculation');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'setData$javajs_util_Lst$IA', function (calc, t) {
 var cosNPhi0=-1;
@@ -84,7 +83,7 @@ break;
 V=2.0934;
 }
 if ($I$(1).isNearZero$D(V)) return;
-calc.addLast$TV(Clazz.array(java.lang.Object, -1, [Clazz.array(Integer.TYPE, -1, [this.ia, this.ib, this.ic, this.id, n]), Clazz.array(Double.TYPE, -1, [V, cosNPhi0])]));
+calc.addLast$O(Clazz.array(java.lang.Object, -1, [Clazz.array(Integer.TYPE, -1, [this.ia, this.ib, this.ic, this.id, n]), Clazz.array(Double.TYPE, -1, [V, cosNPhi0])]));
 });
 
 Clazz.newMeth(C$, 'compute$OA', function (dataIn) {
@@ -97,10 +96,10 @@ this.energy=V * (1.0 - cosNPhi0 * Math.cos(this.theta * n));
 if (this.calcs.gradients) {
 this.dE=V * n * cosNPhi0 * Math.sin(n * this.theta) ;
 this.calcs.addForces$org_jmol_minimize_forcefield_Calculation$I(this, 4);
-}if (this.calcs.logging) this.calcs.appendLogData$S(this.calcs.getDebugLine$I$org_jmol_minimize_forcefield_Calculation(3, this));
+}if (this.calcs.logging) this.calcs.appendLogData$S(this.calcs.getDebugLine$I$org_jmol_minimize_forcefield_Calculation(2, this));
 return this.energy;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

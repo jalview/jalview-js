@@ -1,32 +1,25 @@
-(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'javajs.util.V3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PolyhedronStereoSorter", null, null, 'java.util.Comparator');
+(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'javajs.util.V3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "PolyhedronStereoSorter", null, null, 'java.util.Comparator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vTemp=null;
-this.vRef=null;
-this.align1=null;
-this.align2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.vTemp=Clazz.new_($I$(1));
-this.align1=Clazz.new_($I$(1));
-this.align2=Clazz.new_($I$(1));
-}, 1);
+this.vTemp=Clazz.new_($I$(1,1));
+this.align1=Clazz.new_($I$(1,1));
+this.align2=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['vTemp','javajs.util.V3','+vRef','+align1','+align2']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setRef$javajs_util_V3', function (vRef) {
 this.vRef=vRef;
 });
 
-Clazz.newMeth(C$, ['compare$OA$OA','compare$','compare$TT$TT'], function (a, b) {
+Clazz.newMeth(C$, ['compare$OA$OA','compare$O$O'], function (a, b) {
 var torA=(a[1]).floatValue$();
 var torB=(b[1]).floatValue$();
 if (Math.abs(torA - torB) < 1.0 ) {
@@ -43,4 +36,4 @@ var angle=this.align1.angle$javajs_util_V3(this.align2);
 return (angle < 0.17453292 );
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

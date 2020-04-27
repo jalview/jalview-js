@@ -1,32 +1,27 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInf']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "patInt");
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInf']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "patInt");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.i=0;
-this.inf=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['inf'],'I',['i']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.i=0;
 this.inf=false;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (init) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.i=init;
 this.inf=false;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$com_stevesoft_pat_patInt', function (p) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.i=p.i;
 this.inf=p.inf;
 }, 1);
@@ -72,7 +67,7 @@ this.i+=p.i;
 
 Clazz.newMeth(C$, 'mul$com_stevesoft_pat_patInt', function (p) {
 if (this.inf || p.inf ) {
-return Clazz.new_($I$(1));
+return Clazz.new_($I$(1,1));
 }return Clazz.new_(C$.c$$I,[this.i * p.i]);
 });
 
@@ -104,4 +99,4 @@ Clazz.newMeth(C$, 'intValue$', function () {
 return this.inf ? 2147483647 : this.i;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

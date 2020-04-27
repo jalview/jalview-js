@@ -1,29 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.imageio"),I$=[[0,'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ImageWriteParam", null, 'javax.imageio.IIOParam');
+(function(){var P$=Clazz.newPackage("javax.imageio"),I$=[[0,'java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ImageWriteParam", null, 'javax.imageio.IIOParam');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.canWriteTiles=false;
-this.tilingMode=0;
-this.preferredTileSizes=null;
-this.tilingSet=false;
-this.tileWidth=0;
-this.tileHeight=0;
-this.canOffsetTiles=false;
-this.tileGridXOffset=0;
-this.tileGridYOffset=0;
-this.canWriteProgressive=false;
-this.progressiveMode=0;
-this.canWriteCompressed=false;
-this.compressionMode=0;
-this.compressionTypes=null;
-this.compressionType=null;
-this.compressionQuality=0;
-this.locale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.canWriteTiles=false;
@@ -43,14 +21,16 @@ this.compressionTypes=null;
 this.compressionType=null;
 this.compressionQuality=1.0;
 this.locale=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['canWriteTiles','tilingSet','canOffsetTiles','canWriteProgressive','canWriteCompressed'],'F',['compressionQuality'],'I',['tilingMode','tileWidth','tileHeight','tileGridXOffset','tileGridYOffset','progressiveMode','compressionMode'],'S',['compressionType'],'O',['preferredTileSizes','java.awt.Dimension[]','compressionTypes','String[]','locale','java.util.Locale']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Locale', function (locale) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.locale=locale;
 }, 1);
 
@@ -59,7 +39,7 @@ if (sizes == null ) {
 return null;
 }var temp=Clazz.array($I$(1), [sizes.length]);
 for (var i=0; i < sizes.length; i++) {
-temp[i]=Clazz.new_($I$(1).c$$java_awt_Dimension,[sizes[i]]);
+temp[i]=Clazz.new_($I$(1,1).c$$java_awt_Dimension,[sizes[i]]);
 }
 return temp;
 }, 1);
@@ -338,4 +318,4 @@ throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No compression type 
 }return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

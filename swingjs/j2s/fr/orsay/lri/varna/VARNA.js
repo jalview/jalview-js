@@ -1,59 +1,47 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna"),I$=[[0,'fr.orsay.lri.varna.models.VARNAConfigLoader','java.awt.dnd.DropTarget','javax.swing.JOptionPane','java.awt.GridLayout','fr.orsay.lri.varna.VARNAPanel','fr.orsay.lri.varna.controlers.ControleurScriptParser']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VARNA", null, 'javax.swing.JApplet', ['fr.orsay.lri.varna.interfaces.InterfaceParameterLoader', 'java.awt.dnd.DropTargetListener']);
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna"),I$=[[0,'fr.orsay.lri.varna.models.VARNAConfigLoader','java.awt.dnd.DropTarget','javax.swing.JOptionPane','java.awt.GridLayout','fr.orsay.lri.varna.VARNAPanel','fr.orsay.lri.varna.controlers.ControleurScriptParser']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VARNA", null, 'javax.swing.JApplet', ['fr.orsay.lri.varna.interfaces.InterfaceParameterLoader', 'java.awt.dnd.DropTargetListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-
-if (!thisApplet.__Info.sequenceDBN) { thisApplet.__Info.sequenceDBN = "GGGGCCAAUAUGGCCAUCC";
-thisApplet.__Info.structureDBN = "((((((.....))))..))";
-thisApplet.__Info.title = "Hello RNA world, from SwingJS!";//prompt("Title?","Hello RNA world!");
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._vpl=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._vpl=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['_vpl','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, ['init$','init'], function () {
 try {
-var VARNAcfg=Clazz.new_($I$(1).c$$fr_orsay_lri_varna_interfaces_InterfaceParameterLoader,[this]);
+var VARNAcfg=Clazz.new_($I$(1,1).c$$fr_orsay_lri_varna_interfaces_InterfaceParameterLoader,[this]);
 try {
 this._vpl=VARNAcfg.createVARNAPanels$();
 for (var i=0; i < this._vpl.size$(); i++) {
-Clazz.new_($I$(2).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this._vpl.get$I(i), this]);
+Clazz.new_([this._vpl.get$I(i), this],$I$(2,1).c$$java_awt_Component$java_awt_dnd_DropTargetListener);
 }
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"java.io.IOException")){
 var e = e$$;
 {
-$I$(3).showMessageDialog$java_awt_Component$O$S$I(this, e.getMessage$(), "VARNA Error", 0);
+$I$(3,"showMessageDialog$java_awt_Component$O$S$I",[this, e.getMessage$(), "VARNA Error", 0]);
 }
 } else if (Clazz.exceptionOf(e$$,"fr.orsay.lri.varna.exceptions.ExceptionFileFormatOrSyntax")){
 var e = e$$;
 {
-$I$(3).showMessageDialog$java_awt_Component$O$S$I(this, e.getMessage$(), "VARNA Error", 0);
+$I$(3,"showMessageDialog$java_awt_Component$O$S$I",[this, e.getMessage$(), "VARNA Error", 0]);
 }
 } else if (Clazz.exceptionOf(e$$,"fr.orsay.lri.varna.exceptions.ExceptionLoadingFailed")){
 var e = e$$;
 {
-$I$(3).showMessageDialog$java_awt_Component$O$S$I(this, e.getMessage$(), "VARNA Error", 0);
+$I$(3,"showMessageDialog$java_awt_Component$O$S$I",[this, e.getMessage$(), "VARNA Error", 0]);
 }
 } else {
 throw e$$;
 }
 }
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(4).c$$I$I,[VARNAcfg.getNbColumns$(), VARNAcfg.getNbRows$()]));
+this.setLayout$java_awt_LayoutManager(Clazz.new_([VARNAcfg.getNbColumns$(), VARNAcfg.getNbRows$()],$I$(4,1).c$$I$I));
 for (var i=0; i < this._vpl.size$(); i++) {
 this.getContentPane$().add$java_awt_Component(this._vpl.get$I(i));
 }
@@ -86,7 +74,7 @@ Clazz.newMeth(C$, ['update$','update'], function () {
 System.out.println$S("update");
 });
 
-Clazz.newMeth(C$, ['getParameterValue$S$S','getParameterValue','getParameterValue$'], function (key, def) {
+Clazz.newMeth(C$, ['getParameterValue$S$S','getParameterValue'], function (key, def) {
 if (this.getParameter$S(key) == null ) {
 return def;
 } else {
@@ -110,7 +98,7 @@ var result="[";
 var v=this._vpl.get$I(panel);
 var l=v.getSelectionIndices$();
 for (var i=0; i < l.size$(); i++) {
-var n=(l.get$I(i)).intValue$();
+var n=(l.get$I(i)).valueOf();
 if (i > 0) {
 result += ",";
 }result += n;
@@ -202,5 +190,15 @@ throw e;
 
 Clazz.newMeth(C$, ['dropActionChanged$java_awt_dnd_DropTargetDragEvent','dropActionChanged'], function (arg0) {
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+
+if (!thisApplet.__Info.sequenceDBN) { thisApplet.__Info.sequenceDBN = "GGGGCCAAUAUGGCCAUCC";
+thisApplet.__Info.structureDBN = "((((((.....))))..))";
+thisApplet.__Info.title = "Hello RNA world, from SwingJS!";//prompt("Title?","Hello RNA world!");
+}
+};
+};
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:41 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

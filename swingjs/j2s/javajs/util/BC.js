@@ -1,15 +1,16 @@
 (function(){var P$=Clazz.newPackage("javajs.util"),I$=[];
-var C$=Clazz.newClass(P$, "BC");
-C$.fracIEEE=null;
+/*c*/var C$=Clazz.newClass(P$, "BC");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['fracIEEE','float[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'bytesToFloat$BA$I$Z', function (bytes, j, isBigEndian) {
@@ -67,5 +68,15 @@ if (f == 0  || i < -140 ) return 0;
 if (i > 128) return 3.4028235E38;
 return f * C$.fracIEEE[i + 140];
 }, 1);
+
+Clazz.newMeth(C$, 'bytesToFloats$BA$I$FA$I$I', function (src, srcpos, dst, dstpos, nfloats) {
+var f=new Float32Array(src.buffer) ||null;
+System.arraycopy$O$I$O$I$I(f, srcpos << 2, dst, dstpos, nfloats);
+}, 1);
+
+Clazz.newMeth(C$, 'bytesToDouble$BA$I$DA$I$I', function (src, srcpos, dst, dstpos, ndoubles) {
+var f=new Float64Array(src.buffer) ||null;
+System.arraycopy$O$I$O$I$I(f, srcpos << 2, dst, dstpos, ndoubles);
+}, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.audio"),I$=[[0,'swingjs.JSToolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AudioPlayer", null, 'javajs.util.JSThread');
-C$.player=null;
+(function(){var P$=Clazz.newPackage("sun.audio"),I$=[[0,'swingjs.JSToolkit']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AudioPlayer", null, 'javajs.util.JSThread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.player=C$.getAudioPlayer$();
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['player','sun.audio.AudioPlayer']]]
 
 Clazz.newMeth(C$, 'getAudioPlayer$', function () {
 return Clazz.new_(C$);
@@ -41,7 +41,7 @@ Clazz.newMeth(C$, 'doFinally$', function () {
 Clazz.newMeth(C$, 'start$java_io_InputStream', function (is) {
 var ads=is;
 try {
-$I$(1).playAudio$BA$javax_sound_sampled_AudioFormat(ads.getAudioData$().buffer, ads.getAudioData$().format);
+$I$(1,"playAudio$BA$javax_sound_sampled_AudioFormat",[ads.getAudioData$().buffer, ads.getAudioData$().format]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"javax.sound.sampled.UnsupportedAudioFileException")){
 e.printStackTrace$();
@@ -51,6 +51,10 @@ throw e;
 }
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.player=C$.getAudioPlayer$();
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

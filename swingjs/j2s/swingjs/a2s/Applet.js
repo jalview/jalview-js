@@ -1,39 +1,34 @@
-(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'swingjs.a2s.A2SListener','java.awt.FlowLayout','swingjs.JSUtil','java.net.URL']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Applet", null, 'javax.swing.JApplet', 'swingjs.a2s.A2SContainer');
+(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'swingjs.a2s.A2SContainer','javax.swing.JApplet','swingjs.a2s.A2SListener','java.awt.FlowLayout','java.awt.Font','java.net.URL']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Applet", null, 'javax.swing.JApplet', 'swingjs.a2s.A2SContainer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.listener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['listener','swingjs.a2s.A2SListener']]]
+
+Clazz.newMeth(C$, ['isAWT$','isAWT'], function () {
+});
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-C$.fixAWTPaint$java_awt_Component$Class(this, Clazz.getClass(C$));
-this.listener=Clazz.new_($I$(1));
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+$I$(1,"fixAWTPaint$java_awt_Component$Class",[this, Clazz.getClass($I$(2))]);
+this.listener=Clazz.new_($I$(3,1));
 this.addMouseListener$java_awt_event_MouseListener(this.listener);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(this.listener);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(2)));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(4,1)));
 (this.getContentPane$()).setOpaque$Z(false);
 }, 1);
 
-Clazz.newMeth(C$, 'fixAWTPaint$java_awt_Component$Class', function (c, cl) {
-var f=$I$(3).getJ2SAlias$java_awt_Component$S(c, "paint$java_awt_Graphics");
-if ($I$(3).isOverridden$O$Class(f, cl) && f.toString().indexOf$S("C$.superclazz.prototype.paint$java_awt_Graphics.apply(this") < 0 ) {
-
-c.paint$java_awt_Graphics = function(g) { cl.$clazz$.prototype.paint$java_awt_Graphics.apply(c,[g]);
-f.apply(c,[g]);
-}
-}}, 1);
+Clazz.newMeth(C$, ['getFont$','getFont'], function () {
+if (this.font == null  && this.parent == null  ) this.font=Clazz.new_($I$(5,1).c$$S$I$I,["Dialog", 0, 12]);
+return C$.superclazz.prototype.getFont$.apply(this, []);
+});
 
 Clazz.newMeth(C$, ['setBackground$java_awt_Color','setBackground'], function (c) {
 C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [c]);
+this.getRootPane$().setBackground$java_awt_Color(c);
 this.getContentPane$().setBackground$java_awt_Color(c);
 });
 
@@ -47,7 +42,7 @@ if (codeBase.endsWith$S("/bin/")) {
 var appletPath=this.getClass$().getName$();
 codeBase += appletPath.substring$I$I(0, appletPath.lastIndexOf$S(".") + 1).replace$C$C(".", "/");
 }try {
-return Clazz.new_($I$(4).c$$S,[codeBase]);
+return Clazz.new_($I$(6,1).c$$S,[codeBase]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return null;
@@ -57,4 +52,4 @@ throw e;
 }
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,71 +1,26 @@
-(function(){var P$=Clazz.newPackage("org.jmol.thread"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.A4','javajs.util.M3',['org.jmol.thread.MoveToThread','.Slider'],'javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MoveToThread", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.thread"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.A4','javajs.util.M3',['org.jmol.thread.MoveToThread','.Slider'],'javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MoveToThread", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.thread.JmolThread');
+C$.$classes$=[['Slider',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isMove=false;
-this.aaStepCenter=null;
-this.aaStepNavCenter=null;
-this.aaStep=null;
-this.aaTotal=null;
-this.matrixStart=null;
-this.matrixStartInv=null;
-this.matrixStep=null;
-this.matrixEnd=null;
-this.center=null;
-this.navCenter=null;
-this.ptMoveToCenter=null;
-this.zoom=null;
-this.xTrans=null;
-this.yTrans=null;
-this.xNav=null;
-this.yNav=null;
-this.navDepth=null;
-this.cameraDepth=null;
-this.cameraX=null;
-this.cameraY=null;
-this.rotationRadius=null;
-this.pixelScale=null;
-this.fps=0;
-this.frameTimeMillis=0;
-this.doEndMove=false;
-this.fStep=0;
-this.transformManager=null;
-this.floatSecondsTotal=0;
-this.totalSteps=0;
-this.iStep=0;
-this.timePerStep=0;
-this.radiansXStep=0;
-this.radiansYStep=0;
-this.radiansZStep=0;
-this.dRot=null;
-this.dTrans=null;
-this.dZoom=0;
-this.dSlab=0;
-this.zoomPercent0=0;
-this.slab=0;
-this.transX=0;
-this.transY=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isMove','doEndMove'],'F',['fStep','floatSecondsTotal','radiansXStep','radiansYStep','radiansZStep','dZoom','dSlab','zoomPercent0','transX','transY'],'I',['fps','totalSteps','iStep','timePerStep','slab'],'J',['frameTimeMillis'],'O',['aaStepCenter','javajs.util.V3','+aaStepNavCenter','aaStep','javajs.util.A4','+aaTotal','matrixStart','javajs.util.M3','+matrixStartInv','+matrixStep','+matrixEnd','center','javajs.util.P3','+navCenter','+ptMoveToCenter','zoom','org.jmol.thread.MoveToThread.Slider','+xTrans','+yTrans','+xNav','+yNav','+navDepth','+cameraDepth','+cameraX','+cameraY','+rotationRadius','+pixelScale','transformManager','org.jmol.viewer.TransformManager','dRot','javajs.util.V3','+dTrans']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.aaStepCenter=Clazz.new_($I$(1));
-this.aaStepNavCenter=Clazz.new_($I$(1));
-this.aaStep=Clazz.new_($I$(2));
-this.aaTotal=Clazz.new_($I$(2));
-this.matrixStart=Clazz.new_($I$(3));
-this.matrixStartInv=Clazz.new_($I$(3));
-this.matrixStep=Clazz.new_($I$(3));
-this.matrixEnd=Clazz.new_($I$(3));
+Clazz.super_(C$, this);
+this.aaStepCenter=Clazz.new_($I$(1,1));
+this.aaStepNavCenter=Clazz.new_($I$(1,1));
+this.aaStep=Clazz.new_($I$(2,1));
+this.aaTotal=Clazz.new_($I$(2,1));
+this.matrixStart=Clazz.new_($I$(3,1));
+this.matrixStartInv=Clazz.new_($I$(3,1));
+this.matrixStep=Clazz.new_($I$(3,1));
+this.matrixEnd=Clazz.new_($I$(3,1));
 }, 1);
 
 Clazz.newMeth(C$, 'setManager$O$org_jmol_viewer_Viewer$O', function (manager, vwr, params) {
@@ -146,7 +101,7 @@ return this.totalSteps;
 }, p$1);
 
 Clazz.newMeth(C$, 'newSlider$F$F', function (start, value) {
-return (Float.isNaN$F(value) || value == 3.4028235E38   ? null : Clazz.new_($I$(4).c$$F$F, [this, null, start, value]));
+return (Float.isNaN$F(value) || value == 3.4028235E38   ? null : Clazz.new_($I$(4,1).c$$F$F,[this, null, start, value]));
 }, p$1);
 
 Clazz.newMeth(C$, 'run1Move$I', function (mode) {
@@ -263,25 +218,19 @@ Clazz.newMeth(C$, 'getVal$org_jmol_thread_MoveToThread_Slider', function (s) {
 return (s == null  ? NaN : s.getVal$F(this.fStep));
 }, p$1);
 ;
-(function(){var C$=Clazz.newClass(P$.MoveToThread, "Slider", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.MoveToThread, "Slider", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.start=0;
-this.delta=0;
-this.value=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['start','delta','value']]]
 
 Clazz.newMeth(C$, 'c$$F$F', function (start, value) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.start=start;
 this.value=value;
 this.delta=value - start;
@@ -294,4 +243,4 @@ return (fStep < 0  ? this.value : this.start + fStep * this.delta);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

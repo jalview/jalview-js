@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,'org.json.JSONObject','org.json.JSONArray']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONWriter");
+(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,'org.json.JSONObject','org.json.JSONArray']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONWriter");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.comma=false;
-this.mode='\0';
-this.stack=null;
-this.top=0;
-this.writer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['comma'],'C',['mode'],'I',['top'],'O',['stack','org.json.JSONObject[]','writer','Appendable']]]
 
 Clazz.newMeth(C$, 'c$$Appendable', function (w) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.comma=false;
 this.mode="i";
 this.stack=Clazz.array($I$(1), [200]);
@@ -112,7 +104,7 @@ if (this.mode == "i") {
 this.mode="o";
 }if (this.mode == "o" || this.mode == "a" ) {
 p$1.append$S.apply(this, ["{"]);
-p$1.push$org_json_JSONObject.apply(this, [Clazz.new_($I$(1))]);
+p$1.push$org_json_JSONObject.apply(this, [Clazz.new_($I$(1,1))]);
 this.comma=false;
 return this;
 }throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["Misplaced object."]);
@@ -160,15 +152,15 @@ return (C$.isNumberOK$O$S(value, s) ? s : $I$(1).quote$S(s));
 return value.toString();
 }if (Clazz.instanceOf(value, "java.util.Map")) {
 var map=value;
-return Clazz.new_($I$(1).c$$java_util_Map,[map]).toString();
+return Clazz.new_($I$(1,1).c$$java_util_Map,[map]).toString();
 }if (Clazz.instanceOf(value, "java.util.Collection")) {
 var coll=value;
-return Clazz.new_($I$(2).c$$java_util_Collection,[coll]).toString();
+return Clazz.new_($I$(2,1).c$$java_util_Collection,[coll]).toString();
 }if (value.getClass$().isArray$()) {
-return Clazz.new_($I$(2).c$$O,[value]).toString();
+return Clazz.new_($I$(2,1).c$$O,[value]).toString();
 }if (Clazz.instanceOf(value, "java.lang.Enum")) {
-return $I$(1).quote$S((value).name$());
-}return $I$(1).quote$S(value.toString());
+return $I$(1,"quote$S",[(value).name$()]);
+}return $I$(1,"quote$S",[value.toString()]);
 }, 1);
 
 Clazz.newMeth(C$, 'value$Z', function (b) {
@@ -207,4 +199,4 @@ return Double.isFinite$D(d) && (s.indexOf$S("E-") < 0 || d != 0  ) ;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

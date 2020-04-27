@@ -1,26 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'java.util.Vector','javax.swing.text.View',['javax.swing.text.Position','.Bias'],'javax.swing.text.LabelView',['javax.swing.text.FlowView','.FlowStrategy'],['javax.swing.text.FlowView','.LogicalView'],'javax.swing.SizeRequirements']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FlowView", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'java.util.Vector','javax.swing.text.View',['javax.swing.text.Position','.Bias'],'javax.swing.text.LabelView',['javax.swing.text.FlowView','.FlowStrategy'],['javax.swing.text.FlowView','.LogicalView'],'javax.swing.SizeRequirements']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FlowView", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.BoxView');
+C$.$classes$=[['FlowStrategy',9],['LogicalView',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.layoutSpan=0;
-this.layoutPool=null;
-this.strategy=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['layoutSpan'],'O',['layoutPool','javax.swing.text.View','strategy','javax.swing.text.FlowView.FlowStrategy']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element$I', function (elem, axis) {
-C$.superclazz.c$$javax_swing_text_Element$I.apply(this, [elem, axis]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element$I.apply(this,[elem, axis]);C$.$init$.apply(this);
 this.layoutSpan=2147483647;
-this.strategy=Clazz.new_($I$(5));
+this.strategy=Clazz.new_($I$(5,1));
 }, 1);
 
 Clazz.newMeth(C$, 'getFlowAxis$', function () {
@@ -39,7 +33,7 @@ return 0;
 
 Clazz.newMeth(C$, 'loadChildren$javax_swing_text_ViewFactory', function (f) {
 if (this.layoutPool == null ) {
-this.layoutPool=Clazz.new_($I$(6).c$$javax_swing_text_Element,[this.getElement$()]);
+this.layoutPool=Clazz.new_([this.getElement$()],$I$(6,1).c$$javax_swing_text_Element);
 }this.layoutPool.setParent$javax_swing_text_View(this);
 this.strategy.insertUpdate$javax_swing_text_FlowView$javax_swing_event_DocumentEvent$java_awt_Rectangle(this, null, null);
 });
@@ -76,13 +70,13 @@ if (p != null ) {
 p.preferenceChanged$javax_swing_text_View$Z$Z(this, (heightAxis == 0), (heightAxis == 1));
 }var host=this.getContainer$();
 if (host != null ) {
-host.repaint$();
+(host).秘repaint$();
 }}}C$.superclazz.prototype.layout$I$I.apply(this, [width, height]);
 });
 
 Clazz.newMeth(C$, 'calculateMinorAxisRequirements$I$javax_swing_SizeRequirements', function (axis, r) {
 if (r == null ) {
-r=Clazz.new_($I$(7));
+r=Clazz.new_($I$(7,1));
 }var pref=this.layoutPool.getPreferredSpan$I(axis);
 var min=this.layoutPool.getMinimumSpan$I(axis);
 r.minimum=(min|0);
@@ -113,22 +107,17 @@ if (parent == null  && this.layoutPool != null  ) {
 this.layoutPool.setParent$javax_swing_text_View(null);
 }});
 ;
-(function(){var C$=Clazz.newClass(P$.FlowView, "FlowStrategy", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.FlowView, "FlowStrategy", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.damageStart=0;
-this.viewBuffer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.damageStart=2147483647;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['damageStart'],'O',['viewBuffer','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'addDamage$javax_swing_text_FlowView$I', function (fv, offset) {
 if (offset >= fv.getStartOffset$() && offset < fv.getEndOffset$() ) {
@@ -192,7 +181,7 @@ rowIndex--;
 rowIndex=0;
 p0=fv.getStartOffset$();
 }this.reparentViews$javax_swing_text_View$I(pool, p0);
-this.viewBuffer=Clazz.new_($I$(1).c$$I$I,[10, 10]);
+this.viewBuffer=Clazz.new_($I$(1,1).c$$I$I,[10, 10]);
 var rowCount=fv.getViewCount$();
 while (p0 < p1){
 var row;
@@ -231,9 +220,9 @@ break;
 if (bw >= 3000) {
 var w=v.breakView$I$I$F$F(flowAxis, pos, x, spanLeft);
 if (w != null ) {
-this.viewBuffer.add$TE(w);
+this.viewBuffer.add$O(w);
 } else if (n == 0) {
-this.viewBuffer.add$TE(v);
+this.viewBuffer.add$O(v);
 }break;
 } else if (bw >= breakWeight && bw > 0 ) {
 breakWeight=bw;
@@ -254,12 +243,12 @@ this.viewBuffer.remove$I(i);
 v=v.breakView$I$I$F$F(flowAxis, v.getStartOffset$(), breakX, breakSpan);
 }spanLeft -= chunkSpan;
 x += chunkSpan;
-this.viewBuffer.add$TE(v);
+this.viewBuffer.add$O(v);
 pos=v.getEndOffset$();
 n++;
 }
 var views=Clazz.array($I$(2), [this.viewBuffer.size$()]);
-this.viewBuffer.toArray$TTA(views);
+this.viewBuffer.toArray$OA(views);
 row.replace$I$I$javax_swing_text_ViewA(0, row.getViewCount$(), views);
 return (views.length > 0 ? row.getEndOffset$() : pos);
 });
@@ -326,19 +315,17 @@ return v;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.FlowView, "LogicalView", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.FlowView, "LogicalView", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.CompositeView');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element.apply(this,[elem]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getViewIndexAtPosition$I', function (pos) {
@@ -351,7 +338,7 @@ return 0;
 Clazz.newMeth(C$, 'loadChildren$javax_swing_text_ViewFactory', function (f) {
 var elem=this.getElement$();
 if (elem.isLeaf$()) {
-var v=Clazz.new_($I$(4).c$$javax_swing_text_Element,[elem]);
+var v=Clazz.new_($I$(4,1).c$$javax_swing_text_Element,[elem]);
 this.append$javax_swing_text_View(v);
 } else {
 C$.superclazz.prototype.loadChildren$javax_swing_text_ViewFactory.apply(this, [f]);
@@ -428,4 +415,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

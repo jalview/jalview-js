@@ -1,20 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.structure"),I$=[];
-var C$=Clazz.newClass(P$, "AtomSpec");
+/*c*/var C$=Clazz.newClass(P$, "AtomSpec");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.modelNo=0;
-this.pdbFile=null;
-this.chain=null;
-this.pdbResNum=0;
-this.atomIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['modelNo','pdbResNum','atomIndex'],'S',['pdbFile','chain']]]
 
 Clazz.newMeth(C$, 'fromChimeraAtomspec$S', function (spec) {
 var colonPos=spec.indexOf$S(":");
@@ -27,7 +19,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[spec]);
 var dotPos=modelSubmodel.indexOf$S(".");
 var modelId=0;
 try {
-modelId=(Integer.valueOf$S(dotPos == -1 ? modelSubmodel : modelSubmodel.substring$I$I(0, dotPos))).intValue$();
+modelId=(Integer.valueOf$S(dotPos == -1 ? modelSubmodel : modelSubmodel.substring$I$I(0, dotPos))).valueOf();
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
 } else {
@@ -51,7 +43,7 @@ return Clazz.new_(C$.c$$I$S$I$I,[modelId, chainId, resNum, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$I$I', function (pdbFile, chain, resNo, atomNo) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.pdbFile=pdbFile;
 this.chain=chain;
 this.pdbResNum=resNo;
@@ -59,7 +51,7 @@ this.atomIndex=atomNo;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$S$I$I', function (modelId, chainId, resNo, atomNo) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.modelNo=modelId;
 this.chain=chainId;
 this.pdbResNum=resNo;
@@ -96,4 +88,4 @@ return "pdbFile: " + this.pdbFile + ", chain: " + this.chain + ", res: " + this.
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

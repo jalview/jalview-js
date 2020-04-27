@@ -1,22 +1,18 @@
-(function(){var P$=java.util,I$=[[0,'java.security.SecureRandom',['java.util.UUID','.Holder'],'java.security.MessageDigest','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UUID", function(){
+(function(){var P$=java.util,I$=[[0,'java.security.SecureRandom',['java.util.UUID','.Holder'],'java.security.MessageDigest','InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UUID", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.io.Serializable', 'Comparable']);
+C$.$classes$=[['Holder',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mostSigBits=0;
-this.leastSigBits=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['J',['mostSigBits','leastSigBits']]]
 
 Clazz.newMeth(C$, 'c$$BA', function (data) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var msb=0;
 var lsb=0;
 Clazz.assert(C$, this, function(){return data.length == 16}, function(){return "data must be 16 bytes in length"});
@@ -29,7 +25,7 @@ this.leastSigBits=lsb;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$J$J', function (mostSigBits, leastSigBits) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.mostSigBits=mostSigBits;
 this.leastSigBits=leastSigBits;
 }, 1);
@@ -51,7 +47,7 @@ try {
 md=$I$(3).getInstance$S("MD5");
 } catch (nsae) {
 if (Clazz.exceptionOf(nsae,"java.security.NoSuchAlgorithmException")){
-throw Clazz.new_($I$(4).c$$S$Throwable,["MD5 not supported", nsae]);
+throw Clazz.new_($I$(4,1).c$$S$Throwable,["MD5 not supported", nsae]);
 } else {
 throw nsae;
 }
@@ -134,26 +130,33 @@ var id=obj;
 return (this.mostSigBits == id.mostSigBits && this.leastSigBits == id.leastSigBits );
 });
 
-Clazz.newMeth(C$, ['compareTo$java_util_UUID','compareTo$','compareTo$TT'], function (val) {
+Clazz.newMeth(C$, ['compareTo$java_util_UUID','compareTo$O'], function (val) {
 return (this.mostSigBits < val.mostSigBits ? -1 : (this.mostSigBits > val.mostSigBits ? 1 : (this.leastSigBits < val.leastSigBits ? -1 : (this.leastSigBits > val.leastSigBits ? 1 : 0))));
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.UUID, "Holder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.UUID, "Holder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.numberGenerator=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.numberGenerator=Clazz.new_($I$(1));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['numberGenerator','java.security.SecureRandom']]]
+
+C$.$static$=function(){C$.$static$=0;
+C$.numberGenerator=Clazz.new_($I$(1,1));
+};
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:50 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

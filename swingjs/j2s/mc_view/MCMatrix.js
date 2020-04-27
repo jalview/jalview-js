@@ -1,24 +1,16 @@
 (function(){var P$=Clazz.newPackage("mc_view"),I$=[];
-var C$=Clazz.newClass(P$, "MCMatrix");
+/*c*/var C$=Clazz.newClass(P$, "MCMatrix");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.matrix=null;
-this.tmp=null;
-this.mycos=0;
-this.mysin=0;
-this.myconst=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.myconst=0.017453292;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['mycos','mysin','myconst'],'O',['matrix','float[][]','+tmp']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (rows, cols) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.matrix=Clazz.array(Float.TYPE, [rows, cols]);
 this.tmp=Clazz.array(Float.TYPE, [rows, cols]);
 }, 1);
@@ -128,4 +120,4 @@ this.matrix[2][1]=0;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

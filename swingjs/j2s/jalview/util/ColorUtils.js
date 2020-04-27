@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.HashMap','java.util.Random','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ColorUtils");
-C$.myColours=null;
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.HashMap','java.util.Random','java.awt.Color']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ColorUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.myColours=Clazz.new_($I$(1));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['myColours','java.util.Map']]]
 
 Clazz.newMeth(C$, 'generateRandomColor$java_awt_Color', function (mix) {
-var random=Clazz.new_($I$(2));
+var random=Clazz.new_($I$(2,1));
 var red=random.nextInt$I(256);
 var green=random.nextInt$I(256);
 var blue=random.nextInt$I(256);
@@ -18,7 +18,7 @@ if (mix != null ) {
 red=((red + mix.getRed$())/2|0);
 green=((green + mix.getGreen$())/2|0);
 blue=((blue + mix.getBlue$())/2|0);
-}var color=Clazz.new_($I$(3).c$$I$I$I,[red, green, blue]);
+}var color=Clazz.new_($I$(3,1).c$$I$I$I,[red, green, blue]);
 return color;
 }, 1);
 
@@ -46,7 +46,7 @@ value=maxValue;
 var r=minColour.getRed$() + prop * (maxColour.getRed$() - minColour.getRed$());
 var g=minColour.getGreen$() + prop * (maxColour.getGreen$() - minColour.getGreen$());
 var b=minColour.getBlue$() + prop * (maxColour.getBlue$() - minColour.getBlue$());
-return Clazz.new_($I$(3).c$$F$F$F,[r / 255, g / 255, b / 255]);
+return Clazz.new_($I$(3,1).c$$F$F$F,[r / 255, g / 255, b / 255]);
 }, 1);
 
 Clazz.newMeth(C$, 'bleachColour$java_awt_Color$F', function (colour, bleachFactor) {
@@ -63,13 +63,13 @@ if (bleachFactor > 0 ) {
 red=(red+((255 - red) * bleachFactor)|0);
 green=(green+((255 - green) * bleachFactor)|0);
 blue=(blue+((255 - blue) * bleachFactor)|0);
-return Clazz.new_($I$(3).c$$I$I$I,[red, green, blue]);
+return Clazz.new_($I$(3,1).c$$I$I$I,[red, green, blue]);
 } else {
 var factor=1 + bleachFactor;
 red=(red*(factor)|0);
 green=(green*(factor)|0);
 blue=(blue*(factor)|0);
-return Clazz.new_($I$(3).c$$I$I$I,[red, green, blue]);
+return Clazz.new_($I$(3,1).c$$I$I$I,[red, green, blue]);
 }}, 1);
 
 Clazz.newMeth(C$, 'parseColourString$S', function (colour) {
@@ -79,7 +79,7 @@ return null;
 var col=null;
 try {
 var value=Integer.parseInt$S$I(colour, 16);
-col=Clazz.new_($I$(3).c$$I,[value]);
+col=Clazz.new_($I$(3,1).c$$I,[value]);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"NumberFormatException")){
 } else {
@@ -95,7 +95,7 @@ if (tokens.length == 3) {
 var r=Integer.parseInt$S(tokens[0].trim$());
 var g=Integer.parseInt$S(tokens[1].trim$());
 var b=Integer.parseInt$S(tokens[2].trim$());
-col=Clazz.new_($I$(3).c$$I$I$I,[r, g, b]);
+col=Clazz.new_($I$(3,1).c$$I$I$I,[r, g, b]);
 }} catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 } else {
@@ -121,9 +121,9 @@ if (end > lsize) {
 end=lsize;
 }var g=Math.abs(name.substring$I$I(start, end).hashCode$() + rgbOffset) % 210 + 20;
 var b=Math.abs(name.substring$I(end).hashCode$() + rgbOffset) % 210 + 20;
-var color=Clazz.new_($I$(3).c$$I$I$I,[r, g, b]);
+var color=Clazz.new_($I$(3,1).c$$I$I$I,[r, g, b]);
 if (C$.myColours.size$() < 1729) {
-C$.myColours.put$TK$TV(name, color);
+C$.myColours.put$O$O(name, color);
 }return color;
 }, 1);
 
@@ -176,6 +176,10 @@ break;
 return col;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.myColours=Clazz.new_($I$(1,1));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

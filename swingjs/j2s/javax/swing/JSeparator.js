@@ -1,24 +1,20 @@
 (function(){var P$=Clazz.newPackage("javax.swing"),p$1={};
-var C$=Clazz.newClass(P$, "JSeparator", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
+/*c*/var C$=Clazz.newClass(P$, "JSeparator", null, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.orientation=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.orientation=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['orientation']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I.apply(this, [0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (orientation) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.checkOrientation$I.apply(this, [orientation]);
 this.orientation=orientation;
 this.setFocusable$Z(false);
@@ -41,7 +37,7 @@ p$1.checkOrientation$I.apply(this, [orientation]);
 this.orientation=orientation;
 this.firePropertyChange$S$I$I("orientation", oldValue, orientation);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'checkOrientation$I', function (orientation) {
@@ -59,4 +55,4 @@ var orientationString=(this.orientation == 0 ? "HORIZONTAL" : "VERTICAL");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",orientation=" + orientationString ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

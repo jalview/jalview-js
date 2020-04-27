@@ -1,17 +1,12 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
-var C$=Clazz.newClass(P$, "StatusType");
+/*c*/var C$=Clazz.newClass(P$, "StatusType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.status=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value','status']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -31,10 +26,11 @@ return this.status;
 Clazz.newMeth(C$, 'setStatus$S', function (value) {
 this.status=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.StatusType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="statusType" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['status','.'],['@XmlAttribute(name="status" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.StatusType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="statusType" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['status','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="status" ']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,19 +1,17 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.exceptions"),I$=[];
-var C$=Clazz.newClass(P$, "ExceptionXMLGeneration", null, 'Exception');
+/*c*/var C$=Clazz.newClass(P$, "ExceptionXMLGeneration", null, 'Exception');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S', function (message) {
-C$.superclazz.c$$S.apply(this, [message]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[message]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:44 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

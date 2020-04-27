@@ -1,25 +1,17 @@
-(function(){var P$=java.util,p$1={},p$2={},p$3={},I$=[[0,['java.util.Formatter','.Flags'],['java.util.Formatter','.Conversion'],'java.util.Calendar','java.util.Locale','java.util.Formatter','StringBuilder',['java.util.Formatter','.DateTime'],['java.util.Formatter','.FormattedFloatingDecimal'],'java.text.DateFormatSymbols','java.text.DecimalFormatSymbols','java.text.NumberFormat','java.util.regex.Pattern','javajs.util.Rdr','java.util.ArrayList',['java.util.Formatter','.FixedString'],['java.util.Formatter','.FormatSpecifier'],['java.util.Formatter','.FormatString']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Formatter", function(){
+(function(){var P$=java.util,p$1={},p$2={},p$3={},I$=[[0,['java.util.Formatter','.Flags'],['java.util.Formatter','.Conversion'],'java.util.Calendar','java.util.Locale','java.util.Formatter','StringBuilder',['java.util.Formatter','.DateTime'],['java.util.Formatter','.FormattedFloatingDecimal'],'java.text.DateFormatSymbols','java.text.DecimalFormatSymbols','java.text.NumberFormat','java.util.regex.Pattern','javajs.util.Rdr','java.util.ArrayList',['java.util.Formatter','.FixedString'],['java.util.Formatter','.FormatSpecifier'],['java.util.Formatter','.FormatString']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Formatter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'java.io.Flushable');
-C$.scaleUp=0;
-C$.fsPattern=null;
+C$.$classes$=[['FormatString',10],['FixedString',2],['FormatSpecifier',2],['Flags',10],['Conversion',10],['DateTime',10],['FormattedFloatingDecimal',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.fsPattern=$I$(12).compile$S("%(\\d+\\$)?([-#+ 0,(\\<]*)?(\\d+)?(\\.\\d+)?([tT])?([a-zA-Z%])");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.a=null;
-this.l=null;
-this.lastException=null;
-this.zero='\0';
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.zero="0";
-}, 1);
+},1);
+
+C$.$fields$=[['C',['zero'],'O',['a','Appendable','l','java.util.Locale','lastException','java.io.IOException']]
+,['D',['scaleUp'],'O',['fsPattern','java.util.regex.Pattern']]]
 
 Clazz.newMeth(C$, 'init$Appendable$java_util_Locale', function (a, l) {
 this.a=a;
@@ -28,29 +20,29 @@ p$3.setZero.apply(this, []);
 }, p$3);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-p$3.init$Appendable$java_util_Locale.apply(this, [Clazz.new_($I$(6)), $I$(4).getDefault$()]);
+;C$.$init$.apply(this);
+p$3.init$Appendable$java_util_Locale.apply(this, [Clazz.new_($I$(6,1)), $I$(4).getDefault$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Appendable', function (a) {
-C$.$init$.apply(this);
-if (a == null ) a=Clazz.new_($I$(6));
+;C$.$init$.apply(this);
+if (a == null ) a=Clazz.new_($I$(6,1));
 p$3.init$Appendable$java_util_Locale.apply(this, [a, $I$(4).getDefault$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Locale', function (l) {
-C$.$init$.apply(this);
-p$3.init$Appendable$java_util_Locale.apply(this, [Clazz.new_($I$(6)), l]);
+;C$.$init$.apply(this);
+p$3.init$Appendable$java_util_Locale.apply(this, [Clazz.new_($I$(6,1)), l]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Appendable$java_util_Locale', function (a, l) {
-C$.$init$.apply(this);
-if (a == null ) a=Clazz.new_($I$(6));
+;C$.$init$.apply(this);
+if (a == null ) a=Clazz.new_($I$(6,1));
 p$3.init$Appendable$java_util_Locale.apply(this, [a, l]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream', function (os) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$3.init$Appendable$java_util_Locale.apply(this, [$I$(13).getBufferedWriter$java_io_OutputStream$S(os, null), $I$(4).getDefault$()]);
 }, 1);
 
@@ -59,7 +51,7 @@ C$.c$$java_io_OutputStream$S$java_util_Locale.apply(this, [os, csn, $I$(4).getDe
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_OutputStream$S$java_util_Locale', function (os, csn, l) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$3.init$Appendable$java_util_Locale.apply(this, [$I$(13).getBufferedWriter$java_io_OutputStream$S(os, csn), l]);
 }, 1);
 
@@ -166,7 +158,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'parse$S', function (s) {
-var al=Clazz.new_($I$(14));
+var al=Clazz.new_($I$(14,1));
 var m=C$.fsPattern.matcher$CharSequence(s);
 var i=0;
 while (i < s.length$()){
@@ -174,20 +166,20 @@ var have=m.find$I(i);
 if (have) {
 if (m.start$() != i) {
 p$3.checkText$S.apply(this, [s.substring$I$I(i, m.start$())]);
-al.add$TE(Clazz.new_($I$(15).c$$S, [this, null, s.substring$I$I(i, m.start$())]));
+al.add$O(Clazz.new_([this, null, s.substring$I$I(i, m.start$())],$I$(15,1).c$$S));
 }var n=m.groupCount$() - 1;
 var sa=Clazz.array(String, [n]);
 for (var j=0; j < n; j++) {
 sa[j]=m.group$I(j + 1);
 }
-al.add$TE(Clazz.new_($I$(16).c$$java_util_Formatter$SA, [this, null, this, sa]));
+al.add$O(Clazz.new_($I$(16,1).c$$java_util_Formatter$SA,[this, null, this, sa]));
 i=m.end$();
 } else {
 p$3.checkText$S.apply(this, [s.substring$I(i)]);
-al.add$TE(Clazz.new_($I$(15).c$$S, [this, null, s.substring$I(i)]));
+al.add$O(Clazz.new_([this, null, s.substring$I(i)],$I$(15,1).c$$S));
 break;
 }}
-return al.toArray$TTA(Clazz.array($I$(17), [0]));
+return al.toArray$OA(Clazz.array($I$(17), [0]));
 }, p$3);
 
 Clazz.newMeth(C$, 'checkText$S', function (s) {
@@ -196,28 +188,28 @@ if ((idx=s.indexOf$I("%")) != -1) {
 var c=(idx > s.length$() - 2 ? "%" : s.charAt$I(idx + 1));
 throw Clazz.new_(Clazz.load('java.util.UnknownFormatConversionException').c$$S,[String.valueOf$C(c)]);
 }}, p$3);
+
+C$.$static$=function(){C$.$static$=0;
+C$.fsPattern=$I$(12,"compile$S",["%(\\d+\\$)?([-#+ 0,(\\<]*)?(\\d+)?(\\.\\d+)?([tT])?([a-zA-Z%])"]);
+};
 ;
-(function(){var C$=Clazz.newInterface(P$.Formatter, "FormatString", function(){
+(function(){/*i*/var C$=Clazz.newInterface(P$.Formatter, "FormatString", function(){
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Formatter, "FixedString", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Formatter, "FixedString", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, [['java.util.Formatter','java.util.Formatter.FormatString']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['s']]]
 
 Clazz.newMeth(C$, 'c$$S', function (s) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.s=s;
 }, 1);
 
@@ -236,30 +228,19 @@ return this.s;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Formatter, "FormatSpecifier", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Formatter, "FormatSpecifier", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, [['java.util.Formatter','java.util.Formatter.FormatString']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.f=null;
-this.width=0;
-this.precision=0;
-this.dt=false;
-this.c='\0';
-this.formatter=null;
-this.ls=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.index=-1;
 this.f=$I$(1).NONE;
 this.dt=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['dt'],'C',['c'],'I',['index','width','precision'],'S',['ls'],'O',['f','java.util.Formatter.Flags','formatter','java.util.Formatter']]]
 
 Clazz.newMeth(C$, 'index$S', function (s) {
 if (s != null ) {
@@ -330,7 +311,7 @@ if ($I$(2).isText$C(this.c)) this.index=-2;
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$java_util_Formatter$SA', function (formatter, sa) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.formatter=formatter;
 p$1.index$S.apply(this, [sa[0]]);
 p$1.flags$S.apply(this, [sa[1]]);
@@ -392,7 +373,7 @@ Clazz.assert(C$, this, function(){return false});
 
 Clazz.newMeth(C$, 'printInteger$O$java_util_Locale', function (arg, l) {
 if (arg == null ) p$1.printS$S.apply(this, ["null"]);
- else if (Clazz.instanceOf(arg, "java.lang.Byte")) p$1.printB$B$java_util_Locale.apply(this, [($b$[0] = (arg).byteValue$(), $b$[0]), l]);
+ else if (Clazz.instanceOf(arg, "java.lang.Byte")) p$1.printB$B$java_util_Locale.apply(this, [(arg).byteValue$(), l]);
  else if (Clazz.instanceOf(arg, "java.lang.Short")) p$1.printSh$H$java_util_Locale.apply(this, [(arg).shortValue$(), l]);
  else if (Clazz.instanceOf(arg, "java.lang.Integer")) p$1.printI$I$java_util_Locale.apply(this, [(arg).intValue$(), l]);
  else if (Clazz.instanceOf(arg, "java.lang.Long")) p$1.printL$J$java_util_Locale.apply(this, [(arg).longValue$(), l]);
@@ -412,7 +393,7 @@ p$1.printS$S.apply(this, ["null"]);
 return;
 }var cal=null;
 if (Clazz.instanceOf(arg, "java.util.Date")) {
-cal=$I$(3).getInstance$java_util_Locale(l == null  ? $I$(4).US : l);
+cal=$I$(3,"getInstance$java_util_Locale",[l == null  ? $I$(4).US : l]);
 cal.setTime$java_util_Date(arg);
 } else if (Clazz.instanceOf(arg, "java.util.Calendar")) {
 cal=(arg).clone$();
@@ -430,7 +411,7 @@ return;
 if (Clazz.instanceOf(arg, "java.lang.Character")) {
 s=(arg).toString();
 } else if (Clazz.instanceOf(arg, "java.lang.Byte")) {
-var i=($b$[0] = (arg).byteValue$(), $b$[0]);
+var i=(arg).byteValue$();
 if (Character.isValidCodePoint$I(i)) s= String.instantialize(Character.toChars$I(i));
  else throw Clazz.new_(Clazz.load('java.util.IllegalFormatCodePointException').c$$I,[i]);
 } else if (Clazz.instanceOf(arg, "java.lang.Short")) {
@@ -451,8 +432,8 @@ if (arg == null ) {
 p$1.printS$S.apply(this, ["null"]);
 } else if (Clazz.instanceOf(arg, "java.util.Formattable")) {
 var fmt=this.formatter;
-if (this.formatter.locale$() !== l ) fmt=Clazz.new_($I$(5).c$$Appendable$java_util_Locale,[this.formatter.out$(), l]);
-(arg).formatTo$(fmt, this.f.valueOf$(), this.width, this.precision);
+if (this.formatter.locale$() !== l ) fmt=Clazz.new_([this.formatter.out$(), l],$I$(5,1).c$$Appendable$java_util_Locale);
+(arg).formatTo$java_util_Formatter$I$I$I(fmt, this.f.valueOf$(), this.width, this.precision);
 } else {
 p$1.printS$S.apply(this, [arg.toString()]);
 }}, p$1);
@@ -477,7 +458,7 @@ this.this$0.a.append$CharSequence(p$1.justify$S.apply(this, [s]));
 
 Clazz.newMeth(C$, 'justify$S', function (s) {
 if (this.width == -1) return s;
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 var pad=this.f.contains$java_util_Formatter_Flags($I$(1).LEFT_JUSTIFY);
 var sp=this.width - s.length$();
 if (!pad) for (var i=0; i < sp; i++) sb.append$C(" ");
@@ -489,7 +470,7 @@ return sb.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(6).c$$I,["%".$c()]);
+var sb=Clazz.new_(["%".$c()],$I$(6,1).c$$I);
 var dupf=this.f.dup$().remove$java_util_Formatter_Flags($I$(1).UPPERCASE);
 sb.append$S(dupf.toString());
 if (this.index > 0) sb.append$I(this.index).append$C("$");
@@ -591,7 +572,7 @@ Clazz.assert(C$, this, function(){return v >= 0}, function(){return v});
 }, p$1);
 
 Clazz.newMeth(C$, 'printL$J$java_util_Locale', function (value, l) {
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 if (this.c == "d") {
 var neg=value < 0;
 var va;
@@ -642,7 +623,7 @@ p$1.printDL$D$java_util_Locale.apply(this, [value, l]);
 }, p$1);
 
 Clazz.newMeth(C$, 'printDL$D$java_util_Locale', function (value, l) {
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 var neg=Double.compare$D$D(value, 0.0) == -1;
 if (!Double.isNaN$D(value)) {
 var v=Math.abs(value);
@@ -658,7 +639,7 @@ sb.append$S(this.f.contains$java_util_Formatter_Flags($I$(1).UPPERCASE) ? "NAN" 
 Clazz.newMeth(C$, 'printD$StringBuilder$D$java_util_Locale$java_util_Formatter_Flags$C$I$Z', function (sb, value, l, f, c, precision, neg) {
 if (c == "e") {
 var prec=(precision == -1 ? 6 : precision);
-var fd=Clazz.new_($I$(8).c$$D$I$I, [this, null, value, prec, 2]);
+var fd=Clazz.new_($I$(8,1).c$$D$I$I,[this, null, value, prec, 2]);
 var v=Clazz.array(Character.TYPE, [30]);
 var len=fd.getChars$CA(v);
 var mant=p$1.addZeros$CA$I.apply(this, [p$1.mantissa$CA$I.apply(this, [v, len]), prec]);
@@ -676,7 +657,7 @@ System.arraycopy$O$I$O$I$I(exp, 1, tmp, 0, exp.length - 1);
 sb.append$CharSequence(p$1.localizedMagnitude$StringBuilder$CA$java_util_Formatter_Flags$I$java_util_Locale.apply(this, [null, tmp, flags, -1, l]));
 } else if (c == "f") {
 var prec=(precision == -1 ? 6 : precision);
-var fd=Clazz.new_($I$(8).c$$D$I$I, [this, null, value, prec, 1]);
+var fd=Clazz.new_($I$(8,1).c$$D$I$I,[this, null, value, prec, 1]);
 var v=Clazz.array(Character.TYPE, [30 + 1 + Math.abs(fd.getExponent$()) ]);
 var len=fd.getChars$CA(v);
 var mant=p$1.addZeros$CA$I.apply(this, [p$1.mantissa$CA$I.apply(this, [v, len]), prec]);
@@ -688,7 +669,7 @@ p$1.localizedMagnitude$StringBuilder$CA$java_util_Formatter_Flags$I$java_util_Lo
 var prec=precision;
 if (precision == -1) prec=6;
  else if (precision == 0) prec=1;
-var fd=Clazz.new_($I$(8).c$$D$I$I, [this, null, value, prec, 0]);
+var fd=Clazz.new_($I$(8,1).c$$D$I$I,[this, null, value, prec, 0]);
 var v=Clazz.array(Character.TYPE, [30 + 1 + Math.abs(fd.getExponent$()) ]);
 var len=fd.getChars$CA(v);
 var exp=p$1.exponent$CA$I.apply(this, [v, len]);
@@ -794,7 +775,7 @@ return tmp;
 }, p$1);
 
 Clazz.newMeth(C$, 'printDT$java_util_Calendar$C$java_util_Locale', function (t, c, l) {
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 p$1.printDTL$StringBuilder$java_util_Calendar$C$java_util_Locale.apply(this, [sb, t, c, l]);
 var s=p$1.justify$S.apply(this, [sb.toString()]);
 if (this.f.contains$java_util_Formatter_Flags($I$(1).UPPERCASE)) s=s.toUpperCase$();
@@ -802,7 +783,7 @@ this.this$0.a.append$CharSequence(s);
 }, p$1);
 
 Clazz.newMeth(C$, 'printDTL$StringBuilder$java_util_Calendar$C$java_util_Locale', function (sb, t, c, l) {
-if (sb == null ) sb=Clazz.new_($I$(6));
+if (sb == null ) sb=Clazz.new_($I$(6,1));
 switch (c.$c()) {
 case 72:
 case 73:
@@ -947,7 +928,7 @@ var sep=":";
 p$1.printDTL$StringBuilder$java_util_Calendar$C$java_util_Locale.apply(this, [sb, t, "I", l]).append$CharSequence(sep);
 p$1.printDTL$StringBuilder$java_util_Calendar$C$java_util_Locale.apply(this, [sb, t, "M", l]).append$CharSequence(sep);
 p$1.printDTL$StringBuilder$java_util_Calendar$C$java_util_Locale.apply(this, [sb, t, "S", l]).append$CharSequence(" ");
-var tsb=Clazz.new_($I$(6));
+var tsb=Clazz.new_($I$(6,1));
 p$1.printDTL$StringBuilder$java_util_Calendar$C$java_util_Locale.apply(this, [tsb, t, "p", l]);
 sb.append$S(tsb.toString().toUpperCase$());
 break;
@@ -1003,7 +984,7 @@ return p$1.localizedMagnitude$StringBuilder$CA$java_util_Formatter_Flags$I$java_
 }, p$1);
 
 Clazz.newMeth(C$, 'localizedMagnitude$StringBuilder$CA$java_util_Formatter_Flags$I$java_util_Locale', function (sb, value, f, width, l) {
-if (sb == null ) sb=Clazz.new_($I$(6));
+if (sb == null ) sb=Clazz.new_($I$(6,1));
 var begin=sb.length$();
 var zero=p$1.getZero$java_util_Locale.apply(this, [l]);
 var grpSep="\u0000";
@@ -1045,47 +1026,28 @@ if (width != -1 && f.contains$java_util_Formatter_Flags($I$(1).ZERO_PAD) ) for (
 
 return sb;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
-var $b$ = new Int8Array(1);
+};
+
+Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Formatter, "Flags", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Formatter, "Flags", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.NONE=null;
-C$.LEFT_JUSTIFY=null;
-C$.UPPERCASE=null;
-C$.ALTERNATE=null;
-C$.PLUS=null;
-C$.LEADING_SPACE=null;
-C$.ZERO_PAD=null;
-C$.GROUP=null;
-C$.PARENTHESES=null;
-C$.PREVIOUS=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NONE=Clazz.new_(C$.c$$I,[0]);
-C$.LEFT_JUSTIFY=Clazz.new_(C$.c$$I,[1]);
-C$.UPPERCASE=Clazz.new_(C$.c$$I,[2]);
-C$.ALTERNATE=Clazz.new_(C$.c$$I,[4]);
-C$.PLUS=Clazz.new_(C$.c$$I,[8]);
-C$.LEADING_SPACE=Clazz.new_(C$.c$$I,[16]);
-C$.ZERO_PAD=Clazz.new_(C$.c$$I,[32]);
-C$.GROUP=Clazz.new_(C$.c$$I,[64]);
-C$.PARENTHESES=Clazz.new_(C$.c$$I,[128]);
-C$.PREVIOUS=Clazz.new_(C$.c$$I,[256]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.flags=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['flags']]
+,['O',['NONE','java.util.Formatter.Flags','+LEFT_JUSTIFY','+UPPERCASE','+ALTERNATE','+PLUS','+LEADING_SPACE','+ZERO_PAD','+GROUP','+PARENTHESES','+PREVIOUS']]]
 
 Clazz.newMeth(C$, 'c$$I', function (f) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.flags=f;
 }, 1);
 
@@ -1147,7 +1109,7 @@ throw Clazz.new_(Clazz.load('java.util.UnknownFormatFlagsException').c$$S,[Strin
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 if (this.contains$java_util_Formatter_Flags(C$.LEFT_JUSTIFY)) sb.append$C("-");
 if (this.contains$java_util_Formatter_Flags(C$.UPPERCASE)) sb.append$C("^");
 if (this.contains$java_util_Formatter_Flags(C$.ALTERNATE)) sb.append$C("#");
@@ -1160,18 +1122,30 @@ if (this.contains$java_util_Formatter_Flags(C$.PREVIOUS)) sb.append$C("<");
 return sb.toString();
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.NONE=Clazz.new_(C$.c$$I,[0]);
+C$.LEFT_JUSTIFY=Clazz.new_(C$.c$$I,[1]);
+C$.UPPERCASE=Clazz.new_(C$.c$$I,[2]);
+C$.ALTERNATE=Clazz.new_(C$.c$$I,[4]);
+C$.PLUS=Clazz.new_(C$.c$$I,[8]);
+C$.LEADING_SPACE=Clazz.new_(C$.c$$I,[16]);
+C$.ZERO_PAD=Clazz.new_(C$.c$$I,[32]);
+C$.GROUP=Clazz.new_(C$.c$$I,[64]);
+C$.PARENTHESES=Clazz.new_(C$.c$$I,[128]);
+C$.PREVIOUS=Clazz.new_(C$.c$$I,[256]);
+};
+
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Formatter, "Conversion", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Formatter, "Conversion", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValid$C', function (c) {
 return (C$.isGeneral$C(c) || C$.isInteger$C(c) || C$.isFloat$C(c) || C$.isText$C(c) || c == "t"   || C$.isCharacter$C(c) );
@@ -1241,15 +1215,14 @@ return false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Formatter, "DateTime", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Formatter, "DateTime", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isValid$C', function (c) {
 switch (c.$c()) {
@@ -1293,25 +1266,19 @@ return false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Formatter, "FormattedFloatingDecimal", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Formatter, "FormattedFloatingDecimal", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.str=null;
-this.exp=0;
-this.expr=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['exp','expr'],'S',['str']]]
 
 Clazz.newMeth(C$, 'c$$D$I$I', function (value, prec, type) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.str="" + new Double(value).toString();
 p$2.getString$I$D$I.apply(this, [type, value, prec]);
 if (p$2.checkRoundHalfDown$D.apply(this, [value])) {
@@ -1388,4 +1355,4 @@ return this.expr;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

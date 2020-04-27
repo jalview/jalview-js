@@ -1,27 +1,22 @@
 (function(){var P$=Clazz.newPackage("swingjs.plaf"),I$=[];
-var C$=Clazz.newClass(P$, "JSTextPaneUI", null, 'swingjs.plaf.JSEditorPaneUI');
+/*c*/var C$=Clazz.newClass(P$, "JSTextPaneUI", null, 'swingjs.plaf.JSEditorPaneUI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.isTextPane=true;
 }, 1);
-
-Clazz.newMeth(C$, 'updateDOMNode$', function () {
-return C$.superclazz.prototype.updateDOMNode$.apply(this, []);
-});
 
 Clazz.newMeth(C$, 'getPropertyPrefix$', function () {
 return "TextPane";
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
-C$.superclazz.prototype.propertyChange$java_beans_PropertyChangeEvent.apply(this, [evt]);
+Clazz.newMeth(C$, 'enableNode$swingjs_api_js_DOMNode$Z', function (node, b) {
+C$.superclazz.prototype.enableNode$swingjs_api_js_DOMNode$Z.apply(this, [node, b]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

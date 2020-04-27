@@ -1,27 +1,22 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),I$=[[0,'java.util.LinkedList','java.util.ArrayList',['fr.orsay.lri.varna.models.treealign.Tree','.DFSPrefixIterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Tree", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),I$=[[0,'java.util.LinkedList','java.util.ArrayList',['fr.orsay.lri.varna.models.treealign.Tree','.DFSPrefixIterator']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Tree", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Iterable');
+C$.$classes$=[['DFSPrefixIterator',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.children=null;
-this.value=null;
-this.tree=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tree=this;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['children','java.util.List','value','<T>','tree','fr.orsay.lri.varna.models.treealign.Tree']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
 });
 
-Clazz.newMeth(C$, ['setValue$TT'], function (value) {
+Clazz.newMeth(C$, 'setValue$O', function (value) {
 this.value=value;
 });
 
@@ -36,13 +31,13 @@ this.children=children;
 Clazz.newMeth(C$, 'c$$Iterable', function (children) {
 C$.c$.apply(this, []);
 for (var child, $child = children.iterator$(); $child.hasNext$()&&((child=($child.next$())),1);) {
-this.children.add$TE(child);
+this.children.add$O(child);
 }
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.children=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.children=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'rootDegree$', function () {
@@ -72,24 +67,20 @@ return C$.superclazz.prototype.toString.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return (Clazz.new_($I$(3), [this, null]));
+return (Clazz.new_($I$(3,1),[this, null]));
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Tree, "DFSPrefixIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Tree, "DFSPrefixIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.remainingNodes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.remainingNodes=Clazz.new_($I$(1));
-}, 1);
+this.remainingNodes=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['remainingNodes','java.util.LinkedList']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return !this.remainingNodes.isEmpty$();
@@ -103,14 +94,14 @@ this.remainingNodes.removeLast$();
 var children=currentNode.getChildren$();
 var n=children.size$();
 for (var i=n - 1; i >= 0; i--) {
-this.remainingNodes.add$TE(children.get$I(i));
+this.remainingNodes.add$O(children.get$I(i));
 }
 return currentNode;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.remainingNodes.add$TE(this.this$0.tree);
+;C$.$init$.apply(this);
+this.remainingNodes.add$O(this.this$0.tree);
 }, 1);
 
 Clazz.newMeth(C$, 'remove$', function () {
@@ -118,4 +109,4 @@ throw (Clazz.new_(Clazz.load('UnsupportedOperationException')));
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

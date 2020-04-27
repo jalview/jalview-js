@@ -1,94 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.data"),I$=[[0,'javajs.util.BS','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JvxlData");
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.data"),I$=[[0,'javajs.util.BS','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JvxlData");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.msg=null;
-this.wasJvxl=false;
-this.wasCubic=false;
-this.jvxlFileTitle=null;
-this.jvxlFileMessage=null;
-this.jvxlSurfaceData=null;
-this.jvxlEdgeData=null;
-this.jvxlColorData=null;
-this.jvxlVolumeDataXml=null;
-this.jvxlExcluded=null;
-this.jvxlPlane=null;
-this.isJvxlPrecisionColor=false;
-this.jvxlDataIsColorMapped=false;
-this.jvxlDataIs2dContour=false;
-this.jvxlDataIsColorDensity=false;
-this.isColorReversed=false;
-this.thisSet=0;
-this.edgeFractionBase=0;
-this.edgeFractionRange=0;
-this.colorFractionBase=0;
-this.colorFractionRange=0;
-this.isValid=false;
-this.insideOut=false;
-this.isXLowToHigh=false;
-this.isContoured=false;
-this.isBicolorMap=false;
-this.isTruncated=false;
-this.isCutoffAbsolute=false;
-this.isModelConnected=false;
-this.vertexDataOnly=false;
-this.mappedDataMin=0;
-this.mappedDataMax=0;
-this.valueMappedToRed=0;
-this.valueMappedToBlue=0;
-this.cutoff=0;
-this.pointsPerAngstrom=0;
-this.nPointsX=0;
-this.nPointsY=0;
-this.nPointsZ=0;
-this.nBytes=0;
-this.nContours=0;
-this.nEdges=0;
-this.nSurfaceInts=0;
-this.vertexCount=0;
-this.vContours=null;
-this.contourColixes=null;
-this.contourColors=null;
-this.contourValues=null;
-this.contourValuesUsed=null;
-this.thisContour=0;
-this.scale3d=0;
-this.minColorIndex=0;
-this.maxColorIndex=0;
-this.title=null;
-this.version=null;
-this.boundingBox=null;
-this.excludedTriangleCount=0;
-this.excludedVertexCount=0;
-this.colorDensity=false;
-this.pointSize=0;
-this.moleculeXml=null;
-this.dataMin=0;
-this.dataMax=0;
-this.saveVertexCount=0;
-this.vertexColorMap=null;
-this.nVertexColors=0;
-this.vertexColors=null;
-this.color=null;
-this.meshColor=null;
-this.translucency=0;
-this.colorScheme=null;
-this.rendering=null;
-this.slabValue=0;
-this.isSlabbable=false;
-this.diameter=0;
-this.slabInfo=null;
-this.allowVolumeRender=false;
-this.voxelVolume=0;
-this.mapLattice=null;
-this.fixedLattice=null;
-this.baseColor=null;
-this.integration=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.msg="";
@@ -104,10 +17,12 @@ this.minColorIndex=($s$[0] = -1, $s$[0]);
 this.maxColorIndex=($s$[0] = 0, $s$[0]);
 this.slabValue=-2147483648;
 this.integration=NaN;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['wasJvxl','wasCubic','isJvxlPrecisionColor','jvxlDataIsColorMapped','jvxlDataIs2dContour','jvxlDataIsColorDensity','isColorReversed','isValid','insideOut','isXLowToHigh','isContoured','isBicolorMap','isTruncated','isCutoffAbsolute','isModelConnected','vertexDataOnly','colorDensity','isSlabbable','allowVolumeRender'],'F',['mappedDataMin','mappedDataMax','valueMappedToRed','valueMappedToBlue','cutoff','pointsPerAngstrom','scale3d','pointSize','dataMin','dataMax','translucency','voxelVolume','integration'],'I',['thisSet','edgeFractionBase','edgeFractionRange','colorFractionBase','colorFractionRange','nPointsX','nPointsY','nPointsZ','nContours','nEdges','nSurfaceInts','vertexCount','thisContour','excludedTriangleCount','excludedVertexCount','saveVertexCount','nVertexColors','slabValue','diameter'],'J',['nBytes'],'H',['minColorIndex','maxColorIndex'],'S',['msg','jvxlFileTitle','jvxlFileMessage','jvxlSurfaceData','jvxlEdgeData','jvxlColorData','jvxlVolumeDataXml','contourColors','version','moleculeXml','color','meshColor','colorScheme','rendering','slabInfo','baseColor'],'O',['jvxlExcluded','javajs.util.BS[]','jvxlPlane','javajs.util.P4','vContours','javajs.util.Lst[]','contourColixes','short[]','contourValues','float[]','+contourValuesUsed','title','String[]','boundingBox','javajs.util.P3[]','vertexColorMap','java.util.Map','vertexColors','int[]','mapLattice','javajs.util.P3','+fixedLattice']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'clear$', function () {
@@ -158,7 +73,7 @@ this.setSurfaceInfoFromBitSetPts$javajs_util_BS$javajs_util_P4$javajs_util_P3(bs
 });
 
 Clazz.newMeth(C$, 'setSurfaceInfoFromBitSetPts$javajs_util_BS$javajs_util_P4$javajs_util_P3', function (bs, thePlane, mapLattice) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 var nSurfaceInts=(thePlane != null  ? 0 : $I$(3).jvxlEncodeBitSetBuffer$javajs_util_BS$I$javajs_util_SB(bs, this.nPointsX * this.nPointsY * this.nPointsZ , sb));
 this.setSurfaceInfo$javajs_util_P4$javajs_util_P3$I$S(thePlane, mapLattice, nSurfaceInts, sb.toString());
 });
@@ -177,4 +92,4 @@ return String.copyValueOf$CA(chars);
 }, 1);
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

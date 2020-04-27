@@ -1,35 +1,29 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'java.awt.BasicStroke','org.jmol.awt.AwtColor','java.awt.image.BufferedImage','java.awt.geom.GeneralPath']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AwtG2D", null, null, 'org.jmol.api.GenericGraphics');
+(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'java.awt.BasicStroke','org.jmol.awt.AwtColor','java.awt.image.BufferedImage','java.awt.geom.GeneralPath']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "AwtG2D", null, null, 'org.jmol.api.GenericGraphics');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.strokeBasic=null;
-this.strokeBold=null;
-this.path=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.strokeBasic=Clazz.new_($I$(1));
-this.strokeBold=Clazz.new_($I$(1).c$$F,[2.0]);
-}, 1);
+this.strokeBasic=Clazz.new_($I$(1,1));
+this.strokeBold=Clazz.new_($I$(1,1).c$$F,[2.0]);
+},1);
+
+C$.$fields$=[['O',['strokeBasic','java.awt.BasicStroke','+strokeBold','path','java.awt.geom.GeneralPath']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getColor4$I$I$I$I', function (r, g, b, a) {
-return Clazz.new_($I$(2).c$$I$I$I$I,[r, g, b, a]);
+return Clazz.new_($I$(2,1).c$$I$I$I$I,[r, g, b, a]);
 });
 
 Clazz.newMeth(C$, 'getColor3$I$I$I', function (r, g, b) {
-return Clazz.new_($I$(2).c$$I$I$I,[r, g, b]);
+return Clazz.new_($I$(2,1).c$$I$I$I,[r, g, b]);
 });
 
 Clazz.newMeth(C$, 'getColor1$I', function (rgb) {
-return Clazz.new_($I$(2).c$$I,[rgb]);
+return Clazz.new_($I$(2,1).c$$I,[rgb]);
 });
 
 Clazz.newMeth(C$, 'drawString$O$S$I$I', function (g, text, x, y) {
@@ -47,7 +41,7 @@ Clazz.newMeth(C$, 'setGraphicsColor$O$javajs_api_GenericColor', function (g, c) 
 (g).setColor$java_awt_Color(c);
 });
 
-Clazz.newMeth(C$, 'setFont$O$javajs_awt_Font', function (g, font) {
+Clazz.newMeth(C$, 'setFont$O$org_jmol_util_Font', function (g, font) {
 (g).setFont$java_awt_Font(font.font);
 return font;
 });
@@ -57,7 +51,7 @@ Clazz.newMeth(C$, 'drawGrayScaleImage$O$O$I$I$I$I$I$I$I$I', function (g, image2d
 });
 
 Clazz.newMeth(C$, 'newGrayScaleImage$O$O$I$I$IA', function (gMain, image, width, height, buffer) {
-var image2D=Clazz.new_($I$(3).c$$I$I$I,[width, height, 10]);
+var image2D=Clazz.new_($I$(3,1).c$$I$I$I,[width, height, 10]);
 image2D.getRaster$().setSamples$I$I$I$I$I$IA(0, 0, width, height, 0, buffer);
 return image2D;
 });
@@ -115,7 +109,7 @@ return true;
 
 Clazz.newMeth(C$, 'doStroke$O$Z', function (g, isBegin) {
 if (isBegin || this.path == null  ) {
-this.path=Clazz.new_($I$(4));
+this.path=Clazz.new_($I$(4,1));
 } else {
 (g).draw$java_awt_Shape(this.path);
 this.path=null;
@@ -125,4 +119,4 @@ Clazz.newMeth(C$, 'lineTo$O$I$I', function (g, x2, y2) {
 this.path.lineTo$F$F(x2, y2);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

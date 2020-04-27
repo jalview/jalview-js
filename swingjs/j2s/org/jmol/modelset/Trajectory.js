@@ -1,23 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.V3','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Trajectory");
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.V3','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Trajectory");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.ms=null;
-this.steps=null;
-this.isFractional=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isFractional=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isFractional'],'O',['vwr','org.jmol.viewer.Viewer','ms','org.jmol.modelset.ModelSet','steps','javajs.util.Lst']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_Viewer$org_jmol_modelset_ModelSet$javajs_util_Lst', function (vwr, ms, steps) {
@@ -46,8 +39,8 @@ if (currentModelIndex >= 0 && currentModelIndex != modelIndex  && am[currentMode
 });
 
 Clazz.newMeth(C$, 'setAtomPositions$I$I$javajs_util_P3A$javajs_util_P3A$F$javajs_util_V3A$Z', function (baseModelIndex, modelIndex, t1, t2, f, vibs, isFractional) {
-var bs=Clazz.new_($I$(1));
-var vib=Clazz.new_($I$(2));
+var bs=Clazz.new_($I$(1,1));
+var vib=Clazz.new_($I$(2,1));
 var am=this.ms.am;
 var at=this.ms.at;
 var iFirst=am[baseModelIndex].firstAtomIndex;
@@ -64,7 +57,7 @@ this.ms.setVibrationVector$I$javajs_util_T3(i, vib);
 }bs.set$I(i);
 }
 } else {
-var p=Clazz.new_($I$(3));
+var p=Clazz.new_($I$(3,1));
 var n=Math.min(t1.length, t2.length);
 for (var pt=0, i=iFirst; i < iMax && pt < n ; i++, pt++) {
 at[i].mi=($s$[0] = modelIndex, $s$[0]);
@@ -83,7 +76,7 @@ if (am[baseModelIndex].hasRasmolHBonds) (am[baseModelIndex]).resetRasmolBonds$ja
 }, p$1);
 
 Clazz.newMeth(C$, 'getModelsSelected$', function () {
-var bsModels=Clazz.new_($I$(1));
+var bsModels=Clazz.new_($I$(1,1));
 for (var i=this.ms.mc; --i >= 0; ) {
 var t=this.ms.am[i].selectedTrajectory;
 if (t >= 0) {
@@ -156,4 +149,4 @@ for (var i=this.ms.mc; --i >= 0; ) if (bsModels.get$I(i) && this.ms.am[i].isTraj
 });
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

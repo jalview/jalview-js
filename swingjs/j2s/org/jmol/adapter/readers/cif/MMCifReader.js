@@ -1,62 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'javajs.util.M4','Boolean','javajs.util.PT','java.util.Hashtable','org.jmol.adapter.smarter.Atom','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.util.Logger','javajs.util.Lst','javajs.util.SB','org.jmol.adapter.smarter.Structure','org.jmol.c.STR','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MMCifReader", null, 'org.jmol.adapter.readers.cif.CifReader');
-C$.ncsoperFields=null;
-C$.operFields=null;
-C$.assemblyFields=null;
-C$.structRefFields=null;
-C$.chemCompFields=null;
-C$.structConfFields=null;
-C$.structSheetRangeFields=null;
-C$.structSiteFields=null;
-C$.structConnFields=null;
-C$.chemCompBondFields=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'javajs.util.M4','Boolean','javajs.util.PT','java.util.Hashtable','org.jmol.adapter.smarter.Atom','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.util.Logger','javajs.util.Lst','javajs.util.SB','org.jmol.adapter.smarter.Structure','org.jmol.c.STR','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MMCifReader", null, 'org.jmol.adapter.readers.cif.CifReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.ncsoperFields=Clazz.array(String, -1, ["*_matrix[1][1]", "*_matrix[1][2]", "*_matrix[1][3]", "*_vector[1]", "*_matrix[2][1]", "*_matrix[2][2]", "*_matrix[2][3]", "*_vector[2]", "*_matrix[3][1]", "*_matrix[3][2]", "*_matrix[3][3]", "*_vector[3]", "*_id", "*_symmetry_operation"]);
-C$.operFields=Clazz.array(String, -1, ["*_matrix[1][1]", "*_matrix[1][2]", "*_matrix[1][3]", "*_vector[1]", "*_matrix[2][1]", "*_matrix[2][2]", "*_matrix[2][3]", "*_vector[2]", "*_matrix[3][1]", "*_matrix[3][2]", "*_matrix[3][3]", "*_vector[3]", "*_id", "*_symmetry_operation"]);
-C$.assemblyFields=Clazz.array(String, -1, ["_pdbx_struct_assembly_gen_assembly_id", "_pdbx_struct_assembly_gen_oper_expression", "_pdbx_struct_assembly_gen_asym_id_list"]);
-C$.structRefFields=Clazz.array(String, -1, ["_struct_ref_seq_dif_mon_id", "_struct_ref_seq_dif_db_mon_id"]);
-C$.chemCompFields=Clazz.array(String, -1, ["_chem_comp_id", "_chem_comp_name"]);
-C$.structConfFields=Clazz.array(String, -1, ["*_conf_type_id", "*_beg_auth_asym_id", "*_beg_auth_seq_id", "*_pdbx_beg_pdb_ins_code", "*_end_auth_asym_id", "*_end_auth_seq_id", "*_pdbx_end_pdb_ins_code", "*_id", "*_pdbx_pdb_helix_id", "*_pdbx_pdb_helix_class"]);
-C$.structSheetRangeFields=Clazz.array(String, -1, ["*_sheet_id", "*_beg_auth_asym_id", "*_beg_auth_seq_id", "*_pdbx_beg_pdb_ins_code", "*_end_auth_asym_id", "*_end_auth_seq_id", "*_pdbx_end_pdb_ins_code", "*_id"]);
-C$.structSiteFields=Clazz.array(String, -1, ["*_site_id", "*_auth_comp_id", "*_auth_asym_id", "*_auth_seq_id", "*_label_alt_id"]);
-C$.structConnFields=Clazz.array(String, -1, ["*_ptnr1_auth_asym_id", "*_ptnr1_auth_seq_id", "*_ptnr1_auth_comp_id", "*_ptnr1_label_atom_id", "*_pdbx_ptnr1_label_alt_id", "*_ptnr1_symmetry", "*_ptnr2_auth_asym_id", "*_ptnr2_auth_seq_id", "*_ptnr2_auth_comp_id", "*_ptnr2_label_atom_id", "*_pdbx_ptnr2_label_alt_id", "*_ptnr2_symmetry", "*_conn_type_id", "*_pdbx_value_order"]);
-C$.chemCompBondFields=Clazz.array(String, -1, ["*_comp_id", "*_atom_id_1", "*_atom_id_2", "*_value_order", "*_pdbx_aromatic_flag"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isBiomolecule=false;
-this.byChain=false;
-this.bySymop=false;
-this.chainAtomMap=null;
-this.chainAtomCounts=null;
-this.vBiomolecules=null;
-this.htBiomts=null;
-this.htSites=null;
-this.htHetero=null;
-this.htBondMap=null;
-this.assemblyIdAtoms=null;
-this.thisChain=0;
-this.modelIndex=0;
-this.chainSum=null;
-this.chainAtomCount=null;
-this.isLigandBondBug=false;
-this.mident=null;
-this.requiresSorting=false;
-this.structConnMap=null;
-this.structConnList=null;
-this.doSetBonds=false;
-this.modelStrings=null;
-this.done=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.thisChain=-1;
 this.modelIndex=0;
 this.structConnList="";
 this.modelStrings="";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBiomolecule','byChain','bySymop','isLigandBondBug','requiresSorting','doSetBonds','done'],'I',['thisChain','modelIndex'],'S',['structConnList','modelStrings'],'O',['chainAtomMap','java.util.Map','+chainAtomCounts','vBiomolecules','javajs.util.Lst','htBiomts','java.util.Map','+htSites','+htHetero','+htBondMap','+assemblyIdAtoms','chainSum','javajs.util.P3','chainAtomCount','int[]','mident','javajs.util.M4','structConnMap','javajs.util.Lst']]
+,['O',['ncsoperFields','String[]','+operFields','+assemblyFields','+structRefFields','+chemCompFields','+structConfFields','+structSheetRangeFields','+structSiteFields','+structConnFields','+chemCompBondFields']]]
 
 Clazz.newMeth(C$, 'initSubclass$', function () {
 this.setIsPDB$();
@@ -73,8 +28,8 @@ this.filter=this.filter.replace$C$C(":", " ");
 this.bySymop=this.checkFilterKey$S("BYSYMOP");
 }this.isCourseGrained=this.byChain || this.bySymop ;
 if (this.isCourseGrained) {
-this.chainAtomMap=Clazz.new_($I$(4));
-this.chainAtomCounts=Clazz.new_($I$(4));
+this.chainAtomMap=Clazz.new_($I$(4,1));
+this.chainAtomCounts=Clazz.new_($I$(4,1));
 }this.isLigandBondBug=(this.stateScriptVersionInt >= 140204 && this.stateScriptVersionInt <= 140208  || this.stateScriptVersionInt >= 140304 && this.stateScriptVersionInt <= 140308  );
 });
 
@@ -110,7 +65,7 @@ var lastSet=-1;
 var atoms=this.asc.atoms;
 var newAtoms=Clazz.array($I$(5), [natoms]);
 var ids=$I$(3).split$S$S("," + this.modelStrings + "," , ",,");
-var bsAtomsNew=(this.asc.bsAtoms == null  ? null : $I$(6).newN$I(this.asc.bsAtoms.size$()));
+var bsAtomsNew=(this.asc.bsAtoms == null  ? null : (function(a,f){return f.apply(null,a)})([this.asc.bsAtoms.size$()],$I$(6).newN$I));
 for (var im=1, n=0; im < ids.length; im++) {
 var sModel=ids[im];
 var modelIndex=-1;
@@ -195,17 +150,17 @@ var pt=(a.vib == null  ? a.sequenceNumber : a.vib.x);
 if (pt != seqid ) {
 seqid=pt;
 if (comp != null ) p$1.processBonds$javajs_util_Lst$java_util_Map$Z.apply(this, [this.htBondMap.get$O(comp), map, false]);
-map=Clazz.new_($I$(4));
+map=Clazz.new_($I$(4,1));
 comp=atoms[i].group3;
 if (!this.htBondMap.containsKey$O(comp)) {
 comp=null;
 continue;
 }}if (comp == null ) continue;
-map.put$TK$TV(a.atomName, Integer.valueOf$I(a.index));
+map.put$O$O(a.atomName, Integer.valueOf$I(a.index));
 }
 if (comp != null ) p$1.processBonds$javajs_util_Lst$java_util_Map$Z.apply(this, [this.htBondMap.get$O(comp), map, false]);
 if (this.structConnMap != null ) {
-map=Clazz.new_($I$(4));
+map=Clazz.new_($I$(4,1));
 seqid=-1;
 comp=null;
 for (var i=bsAtoms.nextSetBit$I(0); i >= 0; i=bsAtoms.nextSetBit$I(i + 1)) {
@@ -219,7 +174,7 @@ comp=null;
 continue;
 }comp=ckey;
 }if (comp == null ) continue;
-map.put$TK$TV(comp + a.atomName + a.altLoc , Integer.valueOf$I(a.index));
+map.put$O$O(comp + a.atomName + a.altLoc , Integer.valueOf$I(a.index));
 }
 p$1.processBonds$javajs_util_Lst$java_util_Map$Z.apply(this, [this.structConnMap, map, true]);
 }this.appendLoadNote$S(this.asc.bondCount + " bonds added");
@@ -231,7 +186,7 @@ var i2;
 for (var i=0, n=cmap.size$(); i < n; i++) {
 var o=cmap.get$I(i);
 if ((i1=map.get$O(o[0])) == null  || (i2=map.get$O(o[1])) == null  ) continue;
-if (this.debugging) $I$(8).debug$S((isStructConn ? "_struct_conn" : "_comp_bond") + " adding bond " + i1 + " " + i2 + " order=" + o[2] );
+if (this.debugging) (function(a,f){return f.apply(null,a)})([(isStructConn ? "_struct_conn" : "_comp_bond") + " adding bond " + i1 + " " + i2 + " order=" + o[2] ],$I$(8).debug$S);
 this.asc.addNewBondWithOrder$I$I$I(i1.intValue$(), i2.intValue$(), (o[2]).intValue$());
 }
 }, p$1);
@@ -241,9 +196,9 @@ this.parseLoopParameters$SA(C$.structRefFields);
 var g1;
 var g3;
 while (this.parser.getData$()){
-if (this.isNull$S(g1=this.getField$B(($b$[0] = 1, $b$[0])).toLowerCase$()) || g1.length$() != 1  || this.isNull$S(g3=this.getField$B(($b$[0] = 0, $b$[0]))) ) continue;
-if (this.htGroup1 == null ) this.asc.setInfo$S$O("htGroup1", this.htGroup1=Clazz.new_($I$(4)));
-this.htGroup1.put$TK$TV(g3, g1);
+if (this.isNull$S(g1=this.getField$B(1).toLowerCase$()) || g1.length$() != 1  || this.isNull$S(g3=this.getField$B(0)) ) continue;
+if (this.htGroup1 == null ) this.asc.setInfo$S$O("htGroup1", this.htGroup1=Clazz.new_($I$(4,1)));
+this.htGroup1.put$O$O(g3, g1);
 }
 return true;
 }, p$1);
@@ -277,24 +232,24 @@ var operators=assem[1];
 var name="biomolecule " + id;
 $I$(8).info$S(name + " operators " + operators + " ASYM_IDs " + list );
 this.appendLoadNote$S("found " + name + ": " + list );
-if (this.vBiomolecules == null ) this.vBiomolecules=Clazz.new_($I$(9));
+if (this.vBiomolecules == null ) this.vBiomolecules=Clazz.new_($I$(9,1));
 var info=null;
 for (var i=this.vBiomolecules.size$(); --i >= 0; ) if (this.vBiomolecules.get$I(i).get$O("name").equals$O(name)) {
 info=this.vBiomolecules.get$I(i);
 break;
 }
 if (info == null ) {
-info=Clazz.new_($I$(4));
-info.put$TK$TV("name", name);
+info=Clazz.new_($I$(4,1));
+info.put$O$O("name", name);
 var iMolecule=this.parseIntStr$S(id);
-info.put$TK$TV("molecule", iMolecule == -2147483648 ? id : Integer.valueOf$I(iMolecule));
-info.put$TK$TV("biomts", Clazz.new_($I$(9)));
-info.put$TK$TV("chains", Clazz.new_($I$(9)));
-info.put$TK$TV("assemblies", Clazz.new_($I$(9)));
-info.put$TK$TV("operators", Clazz.new_($I$(9)));
-this.vBiomolecules.addLast$TV(info);
-}(info.get$O("assemblies")).addLast$TV("$" + list.replace$C$C(",", "$"));
-(info.get$O("operators")).addLast$TV(p$1.decodeAssemblyOperators$S.apply(this, [operators]));
+info.put$O$O("molecule", iMolecule == -2147483648 ? id : Integer.valueOf$I(iMolecule));
+info.put$O$O("biomts", Clazz.new_($I$(9,1)));
+info.put$O$O("chains", Clazz.new_($I$(9,1)));
+info.put$O$O("assemblies", Clazz.new_($I$(9,1)));
+info.put$O$O("operators", Clazz.new_($I$(9,1)));
+this.vBiomolecules.addLast$O(info);
+}(info.get$O("assemblies")).addLast$O("$" + list.replace$C$C(",", "$"));
+(info.get$O("operators")).addLast$O(p$1.decodeAssemblyOperators$S.apply(this, [operators]));
 this.checkFilterAssembly$S$java_util_Map(id, info);
 });
 
@@ -306,14 +261,14 @@ Clazz.newMeth(C$, 'decodeAssemblyOperators$S', function (ops) {
 var pt=ops.indexOf$S(")(");
 if (pt >= 0) return p$1.crossBinary$S$S.apply(this, [p$1.decodeAssemblyOperators$S.apply(this, [ops.substring$I$I(0, pt + 1)]), p$1.decodeAssemblyOperators$S.apply(this, [ops.substring$I(pt + 1)])]);
 if (ops.startsWith$S("(")) {
-if (ops.indexOf$S("-") >= 0) ops=$I$(6).unescape$S("({" + ops.substring$I$I(1, ops.length$() - 1).replace$C$C("-", ":").replace$C$C(",", " ") + "})" ).toJSON$();
+if (ops.indexOf$S("-") >= 0) ops=(function(a,f){return f.apply(null,a)})(["({" + ops.substring$I$I(1, ops.length$() - 1).replace$C$C("-", ":").replace$C$C(",", " ") + "})" ],$I$(6).unescape$S).toJSON$();
 ops=$I$(3).rep$S$S$S(ops, " ", "");
 ops=ops.substring$I$I(1, ops.length$() - 1);
 }return ops;
 }, p$1);
 
 Clazz.newMeth(C$, 'crossBinary$S$S', function (ops1, ops2) {
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 var opsLeft=$I$(3).split$S$S(ops1, ",");
 var opsRight=$I$(3).split$S$S(ops2, ",");
 for (var i=0; i < opsLeft.length; i++) for (var j=0; j < opsRight.length; j++) sb.append$S(",").append$S(opsLeft[i]).append$S("|").append$S(opsRight[j]);
@@ -348,8 +303,8 @@ m[p]=this.parseFloatStr$S(this.field);
 }
 }
 if (id != null  && (count == 12 || xyz != null  && this.symmetry != null   ) ) {
-$I$(8).info$S((isNCS ? "noncrystallographic symmetry operator " : "assembly operator ") + id + " " + xyz );
-var m4=Clazz.new_($I$(1));
+(function(a,f){return f.apply(null,a)})([(isNCS ? "noncrystallographic symmetry operator " : "assembly operator ") + id + " " + xyz ],$I$(8).info$S);
+var m4=Clazz.new_($I$(1,1));
 if (count != 12) {
 this.symmetry.getMatrixFromString$S$FA$Z$I(xyz, m, false, 0);
 m[3] *= this.symmetry.getUnitCellInfoType$I(0) / 12;
@@ -365,27 +320,27 @@ Clazz.newMeth(C$, 'addMatrix$S$javajs_util_M4$Z', function (id, m4, isNCS) {
 if (isNCS) {
 if (m4.equals$O(this.mident)) return;
 m4.m33=0;
-if (this.lstNCS == null ) this.lstNCS=Clazz.new_($I$(9));
-this.lstNCS.addLast$TV(m4);
+if (this.lstNCS == null ) this.lstNCS=Clazz.new_($I$(9,1));
+this.lstNCS.addLast$O(m4);
 } else {
-if (this.htBiomts == null ) this.htBiomts=Clazz.new_($I$(4));
-this.htBiomts.put$TK$TV(id, m4);
+if (this.htBiomts == null ) this.htBiomts=Clazz.new_($I$(4,1));
+this.htBiomts.put$O$O(id, m4);
 }});
 
 Clazz.newMeth(C$, 'processChemCompLoopBlock', function () {
 this.parseLoopParameters$SA(C$.chemCompFields);
 var groupName;
 var hetName;
-while (this.parser.getData$())if (!this.isNull$S(groupName=this.getField$B(($b$[0] = 0, $b$[0]))) && !this.isNull$S(hetName=this.getField$B(($b$[0] = 1, $b$[0]))) ) this.addHetero$S$S$Z$Z(groupName, hetName, true, true);
+while (this.parser.getData$())if (!this.isNull$S(groupName=this.getField$B(0)) && !this.isNull$S(hetName=this.getField$B(1)) ) this.addHetero$S$S$Z$Z(groupName, hetName, true, true);
 
 return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'addHetero$S$S$Z$Z', function (groupName, hetName, doCheck, addNote) {
 if (doCheck && !this.vwr.getJBR$().isHetero$S(groupName) ) return;
-if (this.htHetero == null ) this.htHetero=Clazz.new_($I$(4));
+if (this.htHetero == null ) this.htHetero=Clazz.new_($I$(4,1));
 if (doCheck && this.htHetero.containsKey$O(groupName) ) return;
-this.htHetero.put$TK$TV(groupName, hetName);
+this.htHetero.put$O$O(groupName, hetName);
 if (addNote) this.appendLoadNote$S(groupName + " = " + hetName );
 });
 
@@ -398,25 +353,25 @@ if (!this.checkAllFieldsPresent$SA$I$Z(C$.structConfFields, -1, true)) {
 this.parser.skipLoop$Z(true);
 return false;
 }while (this.parser.getData$()){
-var structure=Clazz.new_($I$(11).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA,[-1, $I$(12).HELIX, $I$(12).HELIX, null, 0, 0, null]);
-var type=this.getField$B(($b$[0] = 0, $b$[0]));
+var structure=Clazz.new_([-1, $I$(12).HELIX, $I$(12).HELIX, null, 0, 0, null],$I$(11,1).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA);
+var type=this.getField$B(0);
 if (type.startsWith$S("TURN")) structure.structureType=structure.substructureType=$I$(12).TURN;
  else if (!type.startsWith$S("HELX")) structure.structureType=structure.substructureType=$I$(12).NONE;
- else structure.substructureType=$I$(11).getHelixType$I(this.parseIntStr$S(this.getField$B(($b$[0] = 9, $b$[0]))));
-structure.serialID=this.parseIntStr$S(this.getField$B(($b$[0] = 8, $b$[0])));
-structure.structureID=this.getField$B(($b$[0] = 7, $b$[0]));
+ else structure.substructureType=(function(a,f){return f.apply(null,a)})([this.parseIntStr$S(this.getField$B(9))],$I$(11).getHelixType$I);
+structure.serialID=this.parseIntStr$S(this.getField$B(8));
+structure.structureID=this.getField$B(7);
 p$1.addStructure$org_jmol_adapter_smarter_Structure.apply(this, [structure]);
 }
 return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'addStructure$org_jmol_adapter_smarter_Structure', function (structure) {
-structure.startChainID=this.vwr.getChainID$S$Z(structure.startChainStr=this.getField$B(($b$[0] = 1, $b$[0])), true);
-structure.startSequenceNumber=this.parseIntStr$S(this.getField$B(($b$[0] = 2, $b$[0])));
-structure.startInsertionCode=this.getField$B(($b$[0] = 3, $b$[0])).charAt$I(0);
-structure.endChainID=this.vwr.getChainID$S$Z(structure.endChainStr=this.getField$B(($b$[0] = 4, $b$[0])), true);
-structure.endSequenceNumber=this.parseIntStr$S(this.getField$B(($b$[0] = 5, $b$[0])));
-structure.endInsertionCode=this.getField$B(($b$[0] = 6, $b$[0])).charAt$I(0);
+structure.startChainID=this.vwr.getChainID$S$Z(structure.startChainStr=this.getField$B(1), true);
+structure.startSequenceNumber=this.parseIntStr$S(this.getField$B(2));
+structure.startInsertionCode=this.getField$B(3).charAt$I(0);
+structure.endChainID=this.vwr.getChainID$S$Z(structure.endChainStr=this.getField$B(4), true);
+structure.endSequenceNumber=this.parseIntStr$S(this.getField$B(5));
+structure.endInsertionCode=this.getField$B(6).charAt$I(0);
 this.asc.addStructure$org_jmol_adapter_smarter_Structure(structure);
 }, p$1);
 
@@ -428,7 +383,7 @@ return false;
 if (!this.checkAllFieldsPresent$SA$I$Z(C$.structSheetRangeFields, -1, true)) {
 this.parser.skipLoop$Z(true);
 return false;
-}while (this.parser.getData$())p$1.addStructure$org_jmol_adapter_smarter_Structure.apply(this, [Clazz.new_($I$(11).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA,[-1, $I$(12).SHEET, $I$(12).SHEET, this.getField$B(($b$[0] = 0, $b$[0])), this.parseIntStr$S(this.getField$B(($b$[0] = 7, $b$[0]))), 1, null])]);
+}while (this.parser.getData$())p$1.addStructure$org_jmol_adapter_smarter_Structure.apply(this, [Clazz.new_([-1, $I$(12).SHEET, $I$(12).SHEET, this.getField$B(0), this.parseIntStr$S(this.getField$B(7)), 1, null],$I$(11,1).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA)]);
 
 return true;
 }, p$1);
@@ -436,30 +391,30 @@ return true;
 Clazz.newMeth(C$, 'processStructSiteBlock', function () {
 this.parseLoopParametersFor$S$SA("_struct_site_gen", C$.structSiteFields);
 var htSite=null;
-this.htSites=Clazz.new_($I$(4));
+this.htSites=Clazz.new_($I$(4,1));
 var seqNum;
 var resID;
 while (this.parser.getData$()){
-if (this.isNull$S(seqNum=this.getField$B(($b$[0] = 3, $b$[0]))) || this.isNull$S(resID=this.getField$B(($b$[0] = 1, $b$[0]))) ) continue;
-var siteID=this.getField$B(($b$[0] = 0, $b$[0]));
+if (this.isNull$S(seqNum=this.getField$B(3)) || this.isNull$S(resID=this.getField$B(1)) ) continue;
+var siteID=this.getField$B(0);
 htSite=this.htSites.get$O(siteID);
 if (htSite == null ) {
-htSite=Clazz.new_($I$(4));
-htSite.put$TK$TV("groups", "");
-this.htSites.put$TK$TV(siteID, htSite);
-}var insCode=this.getField$B(($b$[0] = 4, $b$[0]));
-var chainID=this.getField$B(($b$[0] = 2, $b$[0]));
+htSite=Clazz.new_($I$(4,1));
+htSite.put$O$O("groups", "");
+this.htSites.put$O$O(siteID, htSite);
+}var insCode=this.getField$B(4);
+var chainID=this.getField$B(2);
 var group="[" + resID + "]" + seqNum + (this.isNull$S(insCode) ? "" : "^" + insCode) + (this.isNull$S(chainID) ? "" : ":" + chainID) ;
 var groups=htSite.get$O("groups");
 groups += (groups.length$() == 0 ? "" : ",") + group;
-htSite.put$TK$TV("groups", groups);
+htSite.put$O$O("groups", groups);
 }
 return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'setBiomolecules', function () {
 if (this.assemblyIdAtoms == null  && this.chainAtomCounts == null  ) return;
-var bsAll=Clazz.new_($I$(6));
+var bsAll=Clazz.new_($I$(6,1));
 for (var i=this.vBiomolecules.size$(); --i >= 0; ) {
 var biomolecule=this.vBiomolecules.get$I(i);
 p$1.setBiomolecule$java_util_Map$javajs_util_BS.apply(this, [biomolecule, (biomolecule === this.thisBiomolecule  ? bsAll : null)]);
@@ -474,21 +429,21 @@ var biomtchains=biomolecule.get$O("chains");
 var biomts=biomolecule.get$O("biomts");
 var operators=biomolecule.get$O("operators");
 var assemblies=biomolecule.get$O("assemblies");
-var sum=Clazz.new_($I$(13));
+var sum=Clazz.new_($I$(13,1));
 var count=0;
-var bsAtoms=Clazz.new_($I$(6));
+var bsAtoms=Clazz.new_($I$(6,1));
 var nAtomsTotal=0;
 var isBioCourse=(this.isBiomolecule && this.isCourseGrained );
 for (var i=operators.size$(); --i >= 0; ) {
-var ops=$I$(3).split$S$S(operators.get$I(i), ",");
-var ids=$I$(3).split$S$S(assemblies.get$I(i), "$");
+var ops=(function(a,f){return f.apply(null,a)})([operators.get$I(i), ","],$I$(3).split$S$S);
+var ids=(function(a,f){return f.apply(null,a)})([assemblies.get$I(i), "$"],$I$(3).split$S$S);
 var chainlist="";
 var nAtoms=0;
 for (var j=1; j < ids.length; j++) {
 var id=ids[j];
 chainlist += ":" + id + ";" ;
 if (this.assemblyIdAtoms != null ) {
-biomolecule.put$TK$TV("asemblyIdAtoms", this.assemblyIdAtoms);
+biomolecule.put$O$O("asemblyIdAtoms", this.assemblyIdAtoms);
 var bs=this.assemblyIdAtoms.get$O(id);
 if (bs != null ) {
 bsAtoms.or$javajs_util_BS(bs);
@@ -509,15 +464,15 @@ for (var j=0; j < ops.length; j++) {
 var m=p$1.getOpMatrix$S.apply(this, [ops[j]]);
 if (m == null ) return 0;
 if (m.equals$O(this.mident)) {
-biomts.add$I$TE(0, this.mident);
-biomtchains.add$I$TE(0, chainlist);
+biomts.add$I$O(0, this.mident);
+biomtchains.add$I$O(0, chainlist);
 } else {
-biomts.addLast$TV(m);
-biomtchains.addLast$TV(chainlist);
+biomts.addLast$O(m);
+biomtchains.addLast$O(chainlist);
 }}
 if (this.bySymop && bsAll != null  ) {
 nAtoms=1;
-var a1=Clazz.new_($I$(5));
+var a1=Clazz.new_($I$(5,1));
 a1.setT$javajs_util_T3(sum);
 a1.scale$F(1.0 / count);
 a1.radius=16;
@@ -525,14 +480,14 @@ this.asc.addAtom$org_jmol_adapter_smarter_Atom(a1);
 }nAtoms*=ops.length;
 nAtomsTotal+=nAtoms;
 }
-biomolecule.put$TK$TV("atomCount", Integer.valueOf$I(nAtomsTotal));
+biomolecule.put$O$O("atomCount", Integer.valueOf$I(nAtomsTotal));
 return nAtomsTotal;
 }, p$1);
 
 Clazz.newMeth(C$, 'createParticle$S', function (id) {
 var asum=this.chainAtomMap.get$O(id);
 var c=this.chainAtomCounts.get$O(id)[0];
-var a=Clazz.new_($I$(5));
+var a=Clazz.new_($I$(5,1));
 a.setT$javajs_util_T3(asum);
 a.scale$F(1.0 / c);
 a.elementSymbol="Pt";
@@ -545,7 +500,7 @@ Clazz.newMeth(C$, 'getOpMatrix$S', function (ops) {
 if (this.htBiomts == null ) return $I$(1).newM4$javajs_util_M4(null);
 var pt=ops.indexOf$S("|");
 if (pt >= 0) {
-var m=$I$(1).newM4$javajs_util_M4(this.htBiomts.get$O(ops.substring$I$I(0, pt)));
+var m=(function(a,f){return f.apply(null,a)})([this.htBiomts.get$O(ops.substring$I$I(0, pt))],$I$(1).newM4$javajs_util_M4);
 m.mul$javajs_util_M4(this.htBiomts.get$O(ops.substring$I(pt + 1)));
 return m;
 }return this.htBiomts.get$O(ops);
@@ -554,17 +509,17 @@ return m;
 Clazz.newMeth(C$, 'processStructConnLoopBlock', function () {
 this.parseLoopParametersFor$S$SA("_struct_conn", C$.structConnFields);
 while (this.parser.getData$()){
-var sym1=this.getField$B(($b$[0] = 5, $b$[0]));
-var sym2=this.getField$B(($b$[0] = 11, $b$[0]));
+var sym1=this.getField$B(5);
+var sym2=this.getField$B(11);
 if (!sym1.equals$O(sym2) || !this.isNull$S(sym1) && !sym1.equals$O("1_555")  ) continue;
-var type=this.getField$B(($b$[0] = 12, $b$[0]));
+var type=this.getField$B(12);
 if (!type.startsWith$S("covale") && !type.equals$O("disulf") && !type.equals$O("metalc")  ) continue;
-if (this.htBondMap == null ) this.htBondMap=Clazz.new_($I$(4));
-var key1=this.vwr.getChainID$S$Z(this.getField$B(($b$[0] = 0, $b$[0])), true) + this.getField$B(($b$[0] = 2, $b$[0])) + new Float(this.parseFloatStr$S(this.getField$B(($b$[0] = 1, $b$[0])))).toString() + this.getField$B(($b$[0] = 3, $b$[0])) + this.getField$B(($b$[0] = 4, $b$[0])) ;
-var key2=this.vwr.getChainID$S$Z(this.getField$B(($b$[0] = 6, $b$[0])), true) + this.getField$B(($b$[0] = 8, $b$[0])) + new Float(this.parseFloatStr$S(this.getField$B(($b$[0] = 7, $b$[0])))).toString() + this.getField$B(($b$[0] = 9, $b$[0])) + this.getField$B(($b$[0] = 10, $b$[0])) ;
-var order=this.getBondOrder$S(this.getField$B(($b$[0] = 13, $b$[0])));
-if (this.structConnMap == null ) this.structConnMap=Clazz.new_($I$(9));
-this.structConnMap.addLast$TV(Clazz.array(java.lang.Object, -1, [key1, key2, Integer.valueOf$I(order)]));
+if (this.htBondMap == null ) this.htBondMap=Clazz.new_($I$(4,1));
+var key1=this.vwr.getChainID$S$Z(this.getField$B(0), true) + this.getField$B(2) + new Float(this.parseFloatStr$S(this.getField$B(1))).toString() + this.getField$B(3) + this.getField$B(4) ;
+var key2=this.vwr.getChainID$S$Z(this.getField$B(6), true) + this.getField$B(8) + new Float(this.parseFloatStr$S(this.getField$B(7))).toString() + this.getField$B(9) + this.getField$B(10) ;
+var order=this.getBondOrder$S(this.getField$B(13));
+if (this.structConnMap == null ) this.structConnMap=Clazz.new_($I$(9,1));
+this.structConnMap.addLast$O(Clazz.array(java.lang.Object, -1, [key1, key2, Integer.valueOf$I(order)]));
 if (this.structConnList.indexOf$S(key1) < 0) this.structConnList += key1;
 if (this.structConnList.indexOf$S(key2) < 0) this.structConnList += key2;
 }
@@ -575,11 +530,11 @@ Clazz.newMeth(C$, 'processCompBondLoopBlock', function () {
 this.doSetBonds=true;
 this.parseLoopParametersFor$S$SA("_chem_comp_bond", C$.chemCompBondFields);
 while (this.parser.getData$()){
-var comp=this.getField$B(($b$[0] = 0, $b$[0]));
-var atom1=this.getField$B(($b$[0] = 1, $b$[0]));
-var atom2=this.getField$B(($b$[0] = 2, $b$[0]));
-var order=this.getBondOrder$S(this.getField$B(($b$[0] = 3, $b$[0])));
-if ((this.getField$B(($b$[0] = 4, $b$[0])).charAt$I(0) == "Y")) switch (order) {
+var comp=this.getField$B(0);
+var atom1=this.getField$B(1);
+var atom2=this.getField$B(2);
+var order=this.getBondOrder$S(this.getField$B(3));
+if ((this.getField$B(4).charAt$I(0) == "Y")) switch (order) {
 case 1:
 order=513;
 break;
@@ -590,10 +545,10 @@ break;
 if (this.isLigand) {
 this.asc.addNewBondWithOrderA$org_jmol_adapter_smarter_Atom$org_jmol_adapter_smarter_Atom$I(this.asc.getAtomFromName$S(atom1), this.asc.getAtomFromName$S(atom2), order);
 } else if (this.haveHAtoms || this.htHetero != null  && this.htHetero.containsKey$O(comp)  ) {
-if (this.htBondMap == null ) this.htBondMap=Clazz.new_($I$(4));
+if (this.htBondMap == null ) this.htBondMap=Clazz.new_($I$(4,1));
 var cmap=this.htBondMap.get$O(comp);
-if (cmap == null ) this.htBondMap.put$TK$TV(comp, cmap=Clazz.new_($I$(9)));
-cmap.addLast$TV(Clazz.array(java.lang.Object, -1, [atom1, atom2, Integer.valueOf$I(this.haveHAtoms ? order : 1)]));
+if (cmap == null ) this.htBondMap.put$O$O(comp, cmap=Clazz.new_($I$(9,1)));
+cmap.addLast$O(Clazz.array(java.lang.Object, -1, [atom1, atom2, Integer.valueOf$I(this.haveHAtoms ? order : 1)]));
 }}
 return true;
 }, p$1);
@@ -603,8 +558,8 @@ if (this.isBiomolecule) {
 if (this.isCourseGrained) {
 var sum=this.chainAtomMap.get$O(assemblyId);
 if (sum == null ) {
-this.chainAtomMap.put$TK$TV(assemblyId, sum=Clazz.new_($I$(13)));
-this.chainAtomCounts.put$TK$TV(assemblyId, Clazz.array(Integer.TYPE, [1]));
+this.chainAtomMap.put$O$O(assemblyId, sum=Clazz.new_($I$(13,1)));
+this.chainAtomCounts.put$O$O(assemblyId, Clazz.array(Integer.TYPE, [1]));
 }this.chainAtomCounts.get$O(assemblyId)[0]++;
 sum.add$javajs_util_T3(atom);
 return false;
@@ -613,15 +568,15 @@ if (this.thisChain != atom.chainID) {
 this.thisChain=atom.chainID;
 this.chainSum=this.chainAtomMap.get$O(strChain);
 if (this.chainSum == null ) {
-this.chainAtomMap.put$TK$TV(strChain, this.chainSum=Clazz.new_($I$(13)));
-this.chainAtomCounts.put$TK$TV(strChain, this.chainAtomCount=Clazz.array(Integer.TYPE, [1]));
+this.chainAtomMap.put$O$O(strChain, this.chainSum=Clazz.new_($I$(13,1)));
+this.chainAtomCounts.put$O$O(strChain, this.chainAtomCount=Clazz.array(Integer.TYPE, [1]));
 }}this.chainSum.add$javajs_util_T3(atom);
 this.chainAtomCount[0]++;
 return false;
 }if (assemblyId != null ) {
-if (this.assemblyIdAtoms == null ) this.assemblyIdAtoms=Clazz.new_($I$(4));
+if (this.assemblyIdAtoms == null ) this.assemblyIdAtoms=Clazz.new_($I$(4,1));
 var bs=this.assemblyIdAtoms.get$O(assemblyId);
-if (bs == null ) this.assemblyIdAtoms.put$TK$TV(assemblyId, bs=Clazz.new_($I$(6)));
+if (bs == null ) this.assemblyIdAtoms.put$O$O(assemblyId, bs=Clazz.new_($I$(6,1)));
 bs.set$I(this.ac);
 }return true;
 });
@@ -653,9 +608,9 @@ p$1.setHetero.apply(this, []);
 this.newModel$I(modelNumberToUse);
 if (!this.skipping) {
 this.nextAtomSet$();
-if (this.modelMap == null  || this.asc.ac == 0 ) this.modelMap=Clazz.new_($I$(4));
-this.modelMap.put$TK$TV("" + modelNo, Integer.valueOf$I(Math.max(0, this.asc.iSet)));
-this.modelMap.put$TK$TV("_" + Math.max(0, this.asc.iSet), Integer.valueOf$I(modelNo));
+if (this.modelMap == null  || this.asc.ac == 0 ) this.modelMap=Clazz.new_($I$(4,1));
+this.modelMap.put$O$O("" + modelNo, Integer.valueOf$I(Math.max(0, this.asc.iSet)));
+this.modelMap.put$O$O("_" + Math.max(0, this.asc.iSet), Integer.valueOf$I(modelNo));
 }return modelNo;
 });
 
@@ -664,8 +619,20 @@ if (this.htHetero != null ) {
 this.asc.setCurrentModelInfo$S$O("hetNames", this.htHetero);
 this.asc.setInfo$S$O("hetNames", this.htHetero);
 }}, p$1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.ncsoperFields=Clazz.array(String, -1, ["*_matrix[1][1]", "*_matrix[1][2]", "*_matrix[1][3]", "*_vector[1]", "*_matrix[2][1]", "*_matrix[2][2]", "*_matrix[2][3]", "*_vector[2]", "*_matrix[3][1]", "*_matrix[3][2]", "*_matrix[3][3]", "*_vector[3]", "*_id", "*_symmetry_operation"]);
+C$.operFields=Clazz.array(String, -1, ["*_matrix[1][1]", "*_matrix[1][2]", "*_matrix[1][3]", "*_vector[1]", "*_matrix[2][1]", "*_matrix[2][2]", "*_matrix[2][3]", "*_vector[2]", "*_matrix[3][1]", "*_matrix[3][2]", "*_matrix[3][3]", "*_vector[3]", "*_id", "*_symmetry_operation"]);
+C$.assemblyFields=Clazz.array(String, -1, ["_pdbx_struct_assembly_gen_assembly_id", "_pdbx_struct_assembly_gen_oper_expression", "_pdbx_struct_assembly_gen_asym_id_list"]);
+C$.structRefFields=Clazz.array(String, -1, ["_struct_ref_seq_dif_mon_id", "_struct_ref_seq_dif_db_mon_id"]);
+C$.chemCompFields=Clazz.array(String, -1, ["_chem_comp_id", "_chem_comp_name"]);
+C$.structConfFields=Clazz.array(String, -1, ["*_conf_type_id", "*_beg_auth_asym_id", "*_beg_auth_seq_id", "*_pdbx_beg_pdb_ins_code", "*_end_auth_asym_id", "*_end_auth_seq_id", "*_pdbx_end_pdb_ins_code", "*_id", "*_pdbx_pdb_helix_id", "*_pdbx_pdb_helix_class"]);
+C$.structSheetRangeFields=Clazz.array(String, -1, ["*_sheet_id", "*_beg_auth_asym_id", "*_beg_auth_seq_id", "*_pdbx_beg_pdb_ins_code", "*_end_auth_asym_id", "*_end_auth_seq_id", "*_pdbx_end_pdb_ins_code", "*_id"]);
+C$.structSiteFields=Clazz.array(String, -1, ["*_site_id", "*_auth_comp_id", "*_auth_asym_id", "*_auth_seq_id", "*_label_alt_id"]);
+C$.structConnFields=Clazz.array(String, -1, ["*_ptnr1_auth_asym_id", "*_ptnr1_auth_seq_id", "*_ptnr1_auth_comp_id", "*_ptnr1_label_atom_id", "*_pdbx_ptnr1_label_alt_id", "*_ptnr1_symmetry", "*_ptnr2_auth_asym_id", "*_ptnr2_auth_seq_id", "*_ptnr2_auth_comp_id", "*_ptnr2_label_atom_id", "*_pdbx_ptnr2_label_alt_id", "*_ptnr2_symmetry", "*_conn_type_id", "*_pdbx_value_order"]);
+C$.chemCompBondFields=Clazz.array(String, -1, ["*_comp_id", "*_atom_id_1", "*_atom_id_2", "*_value_order", "*_pdbx_aromatic_flag"]);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:56 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

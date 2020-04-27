@@ -1,42 +1,29 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.awt.Rectangle','java.awt.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BytePackedRaster", null, 'sun.awt.image.SunWritableRaster');
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.awt.Rectangle','sun.awt.image.SunWritableRaster','java.awt.Point']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BytePackedRaster", null, 'sun.awt.image.SunWritableRaster');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dataBitOffset=0;
-this.scanlineStride=0;
-this.pixelBitStride=0;
-this.bitMask=0;
-this.data=null;
-this.shiftOffset=0;
-this.type=0;
-this.maxX=0;
-this.maxY=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['dataBitOffset','scanlineStride','pixelBitStride','bitMask','shiftOffset','type','maxX','maxY'],'O',['data','byte[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_Point', function (sampleModel, origin) {
-C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_BytePackedRaster.apply(this, [sampleModel, sampleModel.createDataBuffer$(), Clazz.new_($I$(1).c$$I$I$I$I,[origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()]), origin, null]);
+C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_BytePackedRaster.apply(this, [sampleModel, sampleModel.createDataBuffer$(), Clazz.new_([origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()],$I$(1,1).c$$I$I$I$I), origin, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point', function (sampleModel, dataBuffer, origin) {
-C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_BytePackedRaster.apply(this, [sampleModel, dataBuffer, Clazz.new_($I$(1).c$$I$I$I$I,[origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()]), origin, null]);
+C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_BytePackedRaster.apply(this, [sampleModel, dataBuffer, Clazz.new_([origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()],$I$(1,1).c$$I$I$I$I), origin, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_BytePackedRaster', function (sampleModel, dataBuffer, aRegion, origin, parent) {
-C$.superclazz.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_Raster.apply(this, [sampleModel, dataBuffer, aRegion, origin, parent]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$java_awt_image_WritableRaster.apply(this,[sampleModel, dataBuffer, aRegion, origin, parent]);C$.$init$.apply(this);
 this.maxX=this.minX + this.width;
 this.maxY=this.minY + this.height;
 if (!(Clazz.instanceOf(dataBuffer, "java.awt.image.DataBufferByte"))) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["BytePackedRasters must havebyte DataBuffers"]);
 }var dbb=dataBuffer;
-this.data=P$.SunWritableRaster.stealData$java_awt_image_DataBufferByte$I(dbb, 0);
+this.data=$I$(2).stealData$java_awt_image_DataBufferByte$I(dbb, 0);
 if (dbb.getNumBanks$() != 1) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["DataBuffer for BytePackedRasters must only have 1 bank."]);
 }var dbOffset=dbb.getOffset$();
@@ -84,7 +71,7 @@ outData=obj;
 }var bitnum=this.dataBitOffset + (x - this.minX) * this.pixelBitStride;
 var element=this.data[(y - this.minY) * this.scanlineStride + (bitnum >> 3)] & 255;
 var shift=this.shiftOffset - (bitnum & 7);
-outData[0]=((((element >> shift) & this.bitMask)|0)|0);
+outData[0]=(((element >> shift) & this.bitMask)|0);
 return outData;
 });
 
@@ -109,7 +96,7 @@ for (var j=0; j < h; j++) {
 var bitnum=scanbit;
 for (var i=0; i < w; i++) {
 var shift=this.shiftOffset - (bitnum & 7);
-outData[outindex++]=(((this.bitMask & (data[index + (bitnum >> 3)] >> shift))|0)|0);
+outData[outindex++]=((this.bitMask & (data[index + (bitnum >> 3)] >> shift))|0);
 bitnum+=pixbits;
 }
 index+=this.scanlineStride;
@@ -137,7 +124,7 @@ var element;
 var i=0;
 while ((i < w) && ((bitnum & 7) != 0) ){
 var shift=this.shiftOffset - (bitnum & 7);
-outData[outindex++]=(((this.bitMask & (data[index + (bitnum >> 3)] >> shift))|0)|0);
+outData[outindex++]=((this.bitMask & (data[index + (bitnum >> 3)] >> shift))|0);
 bitnum+=pixbits;
 i++;
 }
@@ -146,53 +133,53 @@ switch (pixbits) {
 case 1:
 for (; i < w - 7; i+=8) {
 element=data[inIndex++];
-outData[outindex++]=((((element >> 7) & 1)|0)|0);
-outData[outindex++]=((((element >> 6) & 1)|0)|0);
-outData[outindex++]=((((element >> 5) & 1)|0)|0);
-outData[outindex++]=((((element >> 4) & 1)|0)|0);
-outData[outindex++]=((((element >> 3) & 1)|0)|0);
-outData[outindex++]=((((element >> 2) & 1)|0)|0);
-outData[outindex++]=((((element >> 1) & 1)|0)|0);
-outData[outindex++]=(((element & 1)|0)|0);
+outData[outindex++]=(((element >> 7) & 1)|0);
+outData[outindex++]=(((element >> 6) & 1)|0);
+outData[outindex++]=(((element >> 5) & 1)|0);
+outData[outindex++]=(((element >> 4) & 1)|0);
+outData[outindex++]=(((element >> 3) & 1)|0);
+outData[outindex++]=(((element >> 2) & 1)|0);
+outData[outindex++]=(((element >> 1) & 1)|0);
+outData[outindex++]=((element & 1)|0);
 bitnum+=8;
 }
 break;
 case 2:
 for (; i < w - 7; i+=8) {
 element=data[inIndex++];
-outData[outindex++]=((((element >> 6) & 3)|0)|0);
-outData[outindex++]=((((element >> 4) & 3)|0)|0);
-outData[outindex++]=((((element >> 2) & 3)|0)|0);
-outData[outindex++]=(((element & 3)|0)|0);
+outData[outindex++]=(((element >> 6) & 3)|0);
+outData[outindex++]=(((element >> 4) & 3)|0);
+outData[outindex++]=(((element >> 2) & 3)|0);
+outData[outindex++]=((element & 3)|0);
 element=data[inIndex++];
-outData[outindex++]=((((element >> 6) & 3)|0)|0);
-outData[outindex++]=((((element >> 4) & 3)|0)|0);
-outData[outindex++]=((((element >> 2) & 3)|0)|0);
-outData[outindex++]=(((element & 3)|0)|0);
+outData[outindex++]=(((element >> 6) & 3)|0);
+outData[outindex++]=(((element >> 4) & 3)|0);
+outData[outindex++]=(((element >> 2) & 3)|0);
+outData[outindex++]=((element & 3)|0);
 bitnum+=16;
 }
 break;
 case 4:
 for (; i < w - 7; i+=8) {
 element=data[inIndex++];
-outData[outindex++]=((((element >> 4) & 15)|0)|0);
-outData[outindex++]=(((element & 15)|0)|0);
+outData[outindex++]=(((element >> 4) & 15)|0);
+outData[outindex++]=((element & 15)|0);
 element=data[inIndex++];
-outData[outindex++]=((((element >> 4) & 15)|0)|0);
-outData[outindex++]=(((element & 15)|0)|0);
+outData[outindex++]=(((element >> 4) & 15)|0);
+outData[outindex++]=((element & 15)|0);
 element=data[inIndex++];
-outData[outindex++]=((((element >> 4) & 15)|0)|0);
-outData[outindex++]=(((element & 15)|0)|0);
+outData[outindex++]=(((element >> 4) & 15)|0);
+outData[outindex++]=((element & 15)|0);
 element=data[inIndex++];
-outData[outindex++]=((((element >> 4) & 15)|0)|0);
-outData[outindex++]=(((element & 15)|0)|0);
+outData[outindex++]=(((element >> 4) & 15)|0);
+outData[outindex++]=((element & 15)|0);
 bitnum+=32;
 }
 break;
 }
 for (; i < w; i++) {
 var shift=this.shiftOffset - (bitnum & 7);
-outData[outindex++]=(((this.bitMask & (data[index + (bitnum >> 3)] >> shift))|0)|0);
+outData[outindex++]=((this.bitMask & (data[index + (bitnum >> 3)] >> shift))|0);
 bitnum+=pixbits;
 }
 index+=this.scanlineStride;
@@ -207,10 +194,10 @@ throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate 
 var bitnum=this.dataBitOffset + (x - this.minX) * this.pixelBitStride;
 var index=(y - this.minY) * this.scanlineStride + (bitnum >> 3);
 var shift=this.shiftOffset - (bitnum & 7);
-var element=($b$[0] = this.data[index], $b$[0]);
+var element=this.data[index];
 element=($b$[0] = element&(~(this.bitMask << shift)), $b$[0]);
 element=($b$[0] = element|((inData[0] & this.bitMask) << shift), $b$[0]);
-this.data[index]=(element|0);
+this.data[index]=element;
 this.markDirty$();
 });
 
@@ -253,7 +240,7 @@ bits=copybits;
 var element=outData[outbyte];
 element&=~mask;
 element|=(inData[inbyte] & mask);
-outData[outbyte]=((element|0)|0);
+outData[outbyte]=(element|0);
 inbyte+=inscan;
 outbyte+=outscan;
 }
@@ -284,7 +271,7 @@ for (var j=0; j < height; j++) {
 var element=outData[outbyte];
 element&=~mask;
 element|=(inData[inbyte] & mask);
-outData[outbyte]=((element|0)|0);
+outData[outbyte]=(element|0);
 inbyte+=inscan;
 outbyte+=outscan;
 }
@@ -302,14 +289,14 @@ mask&=255 << (bits - copybits);
 bits=copybits;
 }var lastByte=inData.length - 1;
 for (var j=0; j < height; j++) {
-var inData0=($b$[0] = inData[inbyte], $b$[0]);
-var inData1=($b$[0] = 0, $b$[0]);
+var inData0=inData[inbyte];
+var inData1=0;
 if (inbyte < lastByte) {
-inData1=($b$[0] = inData[inbyte + 1], $b$[0]);
+inData1=inData[inbyte + 1];
 }var element=outData[outbyte];
 element&=~mask;
 element|=(((inData0 << lshift) | ((inData1 & 255) >> rshift)) >> bitpos) & mask;
-outData[outbyte]=((element|0)|0);
+outData[outbyte]=(element|0);
 inbyte+=inscan;
 outbyte+=outscan;
 }
@@ -329,7 +316,7 @@ var inData0=inData[ibyte];
 for (var i=0; i < copybytes; i++) {
 var inData1=inData[ibyte + 1];
 var val=(inData0 << lshift) | ((inData1 & 255) >> rshift);
-outData[obyte]=((val|0)|0);
+outData[obyte]=(val|0);
 inData0=inData1;
 ++ibyte;
 ++obyte;
@@ -347,14 +334,14 @@ var lshift=inbit & 7;
 var rshift=8 - lshift;
 var lastByte=inData.length - 1;
 for (var j=0; j < height; j++) {
-var inData0=($b$[0] = inData[inbyte], $b$[0]);
-var inData1=($b$[0] = 0, $b$[0]);
+var inData0=inData[inbyte];
+var inData1=0;
 if (inbyte < lastByte) {
-inData1=($b$[0] = inData[inbyte + 1], $b$[0]);
+inData1=inData[inbyte + 1];
 }var element=outData[outbyte];
 element&=~mask;
 element|=((inData0 << lshift) | ((inData1 & 255) >> rshift)) & mask;
-outData[outbyte]=((element|0)|0);
+outData[outbyte]=(element|0);
 inbyte+=inscan;
 outbyte+=outscan;
 }
@@ -415,7 +402,7 @@ var shift=this.shiftOffset - (bitnum & 7);
 element=data[index + (bitnum >> 3)];
 element&=~(this.bitMask << shift);
 element|=(inData[outindex++] & this.bitMask) << shift;
-data[index + (bitnum >> 3)]=((element|0)|0);
+data[index + (bitnum >> 3)]=(element|0);
 bitnum+=pixbits;
 i++;
 }
@@ -431,7 +418,7 @@ element|=(inData[outindex++] & 1) << 3;
 element|=(inData[outindex++] & 1) << 2;
 element|=(inData[outindex++] & 1) << 1;
 element|=(inData[outindex++] & 1);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 bitnum+=8;
 }
 break;
@@ -441,12 +428,12 @@ element=(inData[outindex++] & 3) << 6;
 element|=(inData[outindex++] & 3) << 4;
 element|=(inData[outindex++] & 3) << 2;
 element|=(inData[outindex++] & 3);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(inData[outindex++] & 3) << 6;
 element|=(inData[outindex++] & 3) << 4;
 element|=(inData[outindex++] & 3) << 2;
 element|=(inData[outindex++] & 3);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 bitnum+=16;
 }
 break;
@@ -454,16 +441,16 @@ case 4:
 for (; i < w - 7; i+=8) {
 element=(inData[outindex++] & 15) << 4;
 element|=(inData[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(inData[outindex++] & 15) << 4;
 element|=(inData[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(inData[outindex++] & 15) << 4;
 element|=(inData[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(inData[outindex++] & 15) << 4;
 element|=(inData[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 bitnum+=32;
 }
 break;
@@ -473,7 +460,7 @@ var shift=this.shiftOffset - (bitnum & 7);
 element=data[index + (bitnum >> 3)];
 element&=~(this.bitMask << shift);
 element|=(inData[outindex++] & this.bitMask) << shift;
-data[index + (bitnum >> 3)]=((element|0)|0);
+data[index + (bitnum >> 3)]=(element|0);
 bitnum+=pixbits;
 }
 index+=this.scanlineStride;
@@ -577,7 +564,7 @@ var shift=this.shiftOffset - (bitnum & 7);
 element=data[index + (bitnum >> 3)];
 element&=~(this.bitMask << shift);
 element|=(iArray[outindex++] & this.bitMask) << shift;
-data[index + (bitnum >> 3)]=((element|0)|0);
+data[index + (bitnum >> 3)]=(element|0);
 bitnum+=pixbits;
 i++;
 }
@@ -593,7 +580,7 @@ element|=(iArray[outindex++] & 1) << 3;
 element|=(iArray[outindex++] & 1) << 2;
 element|=(iArray[outindex++] & 1) << 1;
 element|=(iArray[outindex++] & 1);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 bitnum+=8;
 }
 break;
@@ -603,12 +590,12 @@ element=(iArray[outindex++] & 3) << 6;
 element|=(iArray[outindex++] & 3) << 4;
 element|=(iArray[outindex++] & 3) << 2;
 element|=(iArray[outindex++] & 3);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(iArray[outindex++] & 3) << 6;
 element|=(iArray[outindex++] & 3) << 4;
 element|=(iArray[outindex++] & 3) << 2;
 element|=(iArray[outindex++] & 3);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 bitnum+=16;
 }
 break;
@@ -616,16 +603,16 @@ case 4:
 for (; i < w - 7; i+=8) {
 element=(iArray[outindex++] & 15) << 4;
 element|=(iArray[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(iArray[outindex++] & 15) << 4;
 element|=(iArray[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(iArray[outindex++] & 15) << 4;
 element|=(iArray[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 element=(iArray[outindex++] & 15) << 4;
 element|=(iArray[outindex++] & 15);
-data[inIndex++]=((element|0)|0);
+data[inIndex++]=(element|0);
 bitnum+=32;
 }
 break;
@@ -635,7 +622,7 @@ var shift=this.shiftOffset - (bitnum & 7);
 element=data[index + (bitnum >> 3)];
 element&=~(this.bitMask << shift);
 element|=(iArray[outindex++] & this.bitMask) << shift;
-data[index + (bitnum >> 3)]=((element|0)|0);
+data[index + (bitnum >> 3)]=(element|0);
 bitnum+=pixbits;
 }
 index+=this.scanlineStride;
@@ -664,14 +651,14 @@ sm=this.sampleModel.createSubsetSampleModel$IA(bandList);
 sm=this.sampleModel;
 }var deltaX=x0 - x;
 var deltaY=y0 - y;
-return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_BytePackedRaster,[sm, this.dataBuffer, Clazz.new_($I$(1).c$$I$I$I$I,[x0, y0, width, height]), Clazz.new_($I$(2).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
+return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_BytePackedRaster,[sm, this.dataBuffer, Clazz.new_($I$(1,1).c$$I$I$I$I,[x0, y0, width, height]), Clazz.new_($I$(3,1).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
 });
 
 Clazz.newMeth(C$, 'createCompatibleWritableRaster$I$I', function (w, h) {
 if (w <= 0 || h <= 0 ) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["negative " + ((w <= 0) ? "width" : "height")]);
 }var sm=this.sampleModel.createCompatibleSampleModel$I$I(w, h);
-return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_Point,[sm, Clazz.new_($I$(2).c$$I$I,[0, 0])]);
+return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_Point,[sm, Clazz.new_($I$(3,1).c$$I$I,[0, 0])]);
 });
 
 Clazz.newMeth(C$, 'createCompatibleWritableRaster$', function () {
@@ -709,4 +696,4 @@ var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

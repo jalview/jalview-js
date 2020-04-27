@@ -1,21 +1,7 @@
 (function(){var P$=Clazz.newPackage("swingjs.jzlib");
-var C$=Clazz.newClass(P$, "InflaterInputStream", null, 'java.io.FilterInputStream');
+/*c*/var C$=Clazz.newClass(P$, "InflaterInputStream", null, 'java.io.FilterInputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inflater=null;
-this.buf=null;
-this.len=0;
-this.closed=false;
-this.eof=false;
-this.close_in=false;
-this.myinflater=false;
-this.byte1=null;
-this.b=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.closed=false;
@@ -24,11 +10,12 @@ this.close_in=true;
 this.myinflater=false;
 this.byte1=Clazz.array(Byte.TYPE, [1]);
 this.b=Clazz.array(Byte.TYPE, [512]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['closed','eof','close_in','myinflater'],'I',['len'],'O',['inflater','swingjs.jzlib.Inflater','buf','byte[]','+byte1','+b']]]
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream$swingjs_jzlib_Inflater$I$Z', function ($in, inflater, size, close_in) {
-C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_InputStream.apply(this,[$in]);C$.$init$.apply(this);
 this.inflater=inflater;
 this.buf=Clazz.array(Byte.TYPE, [size]);
 this.close_in=close_in;
@@ -137,17 +124,17 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["mark/reset not support
 });
 
 Clazz.newMeth(C$, 'getTotalIn$', function () {
-return this.inflater.getTotalIn$();
+return this.inflater.getTotalInL$();
 });
 
 Clazz.newMeth(C$, 'getTotalOut$', function () {
-return this.inflater.getTotalOut$();
+return this.inflater.getTotalOutL$();
 });
 
 Clazz.newMeth(C$, 'getAvailIn$', function () {
 if (this.inflater.avail_in <= 0) return null;
 var tmp=Clazz.array(Byte.TYPE, [this.inflater.avail_in]);
-System.arraycopy$O$I$O$I$I(this.inflater.next_in, this.inflater.next_in_index, tmp, 0, this.inflater.avail_in);
+System.arraycopy$O$I$O$I$I(this.inflater.$in, this.inflater.in_index, tmp, 0, this.inflater.avail_in);
 return tmp;
 });
 
@@ -174,4 +161,4 @@ return this.inflater;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

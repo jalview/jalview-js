@@ -1,25 +1,19 @@
 (function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[];
-var C$=Clazz.newClass(P$, "TabStop");
+/*c*/var C$=Clazz.newClass(P$, "TabStop");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.alignment=0;
-this.position=0;
-this.leader=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['position'],'I',['alignment','leader']]]
 
 Clazz.newMeth(C$, 'c$$F', function (pos) {
 C$.c$$F$I$I.apply(this, [pos, 0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$I$I', function (pos, align, leader) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.alignment=align;
 this.leader=leader;
 this.position=pos;
@@ -77,4 +71,4 @@ return buf;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

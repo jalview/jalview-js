@@ -1,26 +1,13 @@
 (function(){var P$=java.util,p$1={};
-var C$=Clazz.newClass(P$, "StringTokenizer", null, null, 'java.util.Enumeration');
+/*c*/var C$=Clazz.newClass(P$, "StringTokenizer", null, null, 'java.util.Enumeration');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.currentPosition=0;
-this.newPosition=0;
-this.maxPosition=0;
-this.str=null;
-this.delimiters=null;
-this.retDelims=false;
-this.delimsChanged=false;
-this.maxDelimCodePoint=0;
-this.hasSurrogates=false;
-this.delimiterCodePoints=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.hasSurrogates=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['retDelims','delimsChanged','hasSurrogates'],'I',['currentPosition','newPosition','maxPosition','maxDelimCodePoint'],'S',['str','delimiters'],'O',['delimiterCodePoints','int[]']]]
 
 Clazz.newMeth(C$, 'setMaxDelimCodePoint', function () {
 if (this.delimiters == null ) {
@@ -47,7 +34,7 @@ this.delimiterCodePoints[i]=c;
 }}, p$1);
 
 Clazz.newMeth(C$, 'c$$S$S$Z', function (str, delim, returnDelims) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.currentPosition=0;
 this.newPosition=-1;
 this.delimsChanged=false;
@@ -157,4 +144,4 @@ return count;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

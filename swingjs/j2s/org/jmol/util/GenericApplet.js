@@ -1,47 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','org.jmol.i18n.GT','Boolean','org.jmol.viewer.Viewer','org.jmol.c.CBK','org.jmol.viewer.JC','javajs.util.SB','javajs.util.Lst','java.net.URL']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GenericApplet", null, null, ['org.jmol.api.JmolAppletInterface', 'org.jmol.api.JmolStatusListener']);
-C$.htRegistry=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','org.jmol.i18n.GT','Boolean','org.jmol.viewer.Viewer','org.jmol.c.CBK','org.jmol.viewer.JC','javajs.util.SB','javajs.util.Lst','java.net.URL']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "GenericApplet", null, null, ['org.jmol.api.JmolAppletInterface', 'org.jmol.api.JmolStatusListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isJS=false;
-this.codeBase=null;
-this.documentBase=null;
-this.isSigned=false;
-this.language=null;
-this.doTranslate=false;
-this.haveDocumentAccess=false;
-this.isStereoSlave=false;
-this.mayScript=false;
-this.htmlName=null;
-this.fullName=null;
-this.statusForm=null;
-this.statusText=null;
-this.statusTextarea=null;
-this.gRight=null;
-this.viewer=null;
-this.callbacks=null;
-this.vwrOptions=null;
-this.haveNotifiedError=false;
-this.appletObject=null;
-this.isJNLP=false;
-this.loading=false;
-this.syncId=null;
-this.outputBuffer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.doTranslate=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isJS','isSigned','doTranslate','haveDocumentAccess','isStereoSlave','mayScript','haveNotifiedError','isJNLP','loading'],'S',['codeBase','documentBase','language','htmlName','fullName','statusForm','statusText','statusTextarea','syncId'],'O',['gRight','java.lang.Object','viewer','org.jmol.viewer.Viewer','callbacks','java.util.Map','+vwrOptions','appletObject','java.lang.Object','outputBuffer','javajs.util.SB']]
+,['O',['htRegistry','java.util.Map']]]
 
 Clazz.newMeth(C$, 'init$O', function (applet) {
-this.callbacks=Clazz.new_($I$(1));
-if (C$.htRegistry == null ) C$.htRegistry=Clazz.new_($I$(1));
+this.callbacks=Clazz.new_($I$(1,1));
+if (C$.htRegistry == null ) C$.htRegistry=Clazz.new_($I$(1,1));
 this.appletObject=applet;
-this.htmlName=$I$(2).split$S$S("" + this.getJmolParameter$S("name"), "_object")[0];
+this.htmlName=(function(a,f){return f.apply(null,a)})(["" + this.getJmolParameter$S("name"), "_object"],$I$(2).split$S$S)[0];
 this.syncId=this.getJmolParameter$S("syncId");
 this.fullName=this.htmlName + "__" + this.syncId + "__" ;
 System.out.println$S("Jmol JavaScript applet " + this.fullName + " initializing" );
@@ -55,11 +28,11 @@ p$1.initApplication.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'initApplication', function () {
-this.vwrOptions.put$TK$TV("applet", $I$(5).TRUE);
-if (this.getJmolParameter$S("statusListener") == null ) this.vwrOptions.put$TK$TV("statusListener", this);
+this.vwrOptions.put$O$O("applet", $I$(5).TRUE);
+if (this.getJmolParameter$S("statusListener") == null ) this.vwrOptions.put$O$O("statusListener", this);
 this.language=this.getJmolParameter$S("language");
-if (this.language != null ) this.vwrOptions.put$TK$TV("language", this.language);
-this.viewer=Clazz.new_($I$(6).c$$java_util_Map,[this.vwrOptions]);
+if (this.language != null ) this.vwrOptions.put$O$O("language", this.language);
+this.viewer=Clazz.new_($I$(6,1).c$$java_util_Map,[this.vwrOptions]);
 this.viewer.pushHoldRepaint$();
 var emulate=p$1.getValueLowerCase$S$S.apply(this, ["emulate", "jmol"]);
 p$1.setStringProperty$S$S.apply(this, ["defaults", emulate.equals$O("chime") ? "RasMol" : "Jmol"]);
@@ -76,7 +49,7 @@ System.out.println$S("language=" + this.language);
 if (this.callbacks.get$O($I$(7).SCRIPT) == null  && this.callbacks.get$O($I$(7).ERROR) == null  ) if (this.callbacks.get$O($I$(7).MESSAGE) != null  || this.statusForm != null   || this.statusText != null  ) {
 if (this.doTranslate && (this.getValue$S$S("doTranslate", null) == null ) ) {
 this.doTranslate=false;
-$I$(3).warn$S("Note -- Presence of message callback disables disable translation; to enable message translation use jmolSetTranslation(true) prior to jmolApplet()");
+(function(a,f){return f.apply(null,a)})(["Note -- Presence of message callback disables disable translation; to enable message translation use jmolSetTranslation(true) prior to jmolApplet()"],$I$(3).warn$S);
 }if (this.doTranslate) $I$(3).warn$S("Note -- Automatic language translation may affect parsing of message callbacks messages; use scriptCallback or errorCallback to process errors");
 }if (!this.doTranslate) {
 $I$(4).setDoTranslate$Z(false);
@@ -127,7 +100,7 @@ p$1.setStringProperty$S$S.apply(this, [name, this.getValue$S$S(name, defaultValu
 
 Clazz.newMeth(C$, 'setStringProperty$S$S', function (name, value) {
 if (value == null ) return;
-$I$(3).info$S(name + " = \"" + value + "\"" );
+(function(a,f){return f.apply(null,a)})([name + " = \"" + value + "\"" ],$I$(3).info$S);
 this.viewer.setStringProperty$S$S(name, value);
 }, p$1);
 
@@ -164,7 +137,7 @@ return this.viewer.processMouseEvent$I$I$I$I$J(e.id, e.x, e.y, e.modifiers, e.wh
 });
 
 Clazz.newMeth(C$, 'getAppletInfo$', function () {
-return $I$(4).o$S$O($I$(4).$$S("Jmol Applet version {0} {1}.\n\nAn OpenScience project.\n\nSee http://www.jmol.org for more information"), Clazz.array(java.lang.Object, -1, [$I$(8).version, $I$(8).date])) + "\nhtmlName = " + $I$(2).esc$S(this.htmlName) + "\nsyncId = " + $I$(2).esc$S(this.syncId) + "\ndocumentBase = " + $I$(2).esc$S(this.documentBase) + "\ncodeBase = " + $I$(2).esc$S(this.codeBase) ;
+return (function(a,f){return f.apply(null,a)})([$I$(4).$$S("Jmol Applet version {0} {1}.\n\nAn OpenScience project.\n\nSee http://www.jmol.org for more information"), Clazz.array(java.lang.Object, -1, [$I$(8).version, $I$(8).date])],$I$(4).o$S$O) + "\nhtmlName = " + $I$(2).esc$S(this.htmlName) + "\nsyncId = " + $I$(2).esc$S(this.syncId) + "\ndocumentBase = " + $I$(2).esc$S(this.documentBase) + "\ncodeBase = " + $I$(2).esc$S(this.codeBase) ;
 });
 
 Clazz.newMeth(C$, 'script$S', function (script) {
@@ -193,7 +166,7 @@ return p$1.scriptProcessor$S$S$I.apply(this, [script, statusParams, 1]);
 
 Clazz.newMeth(C$, 'scriptWaitOutput$S', function (script) {
 if (script == null  || script.length$() == 0 ) return "";
-this.outputBuffer=Clazz.new_($I$(9));
+this.outputBuffer=Clazz.new_($I$(9,1));
 this.viewer.scriptWaitStatus$S$S(script, "");
 var str=(this.outputBuffer == null  ? "" : this.outputBuffer.toString());
 this.outputBuffer=null;
@@ -283,7 +256,7 @@ return;
 }var callback=$I$(7).getCallback$S(callbackName);
 if (callback != null  && (this.loading || callback !== $I$(7).EVAL  ) ) {
 if (callbackFunction == null ) this.callbacks.remove$O(callback);
- else this.callbacks.put$TK$TV(callback, callbackFunction);
+ else this.callbacks.put$O$O(callback, callbackFunction);
 return;
 }p$1.consoleMessage$S.apply(this, ["Available callbacks include: " + $I$(7).getNameList$().replace$C$C(";", " ").trim$()]);
 });
@@ -422,7 +395,7 @@ this.doSendCallback$S$OA$S(callback, data, strInfo);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 if (!this.haveNotifiedError) if ($I$(3).debugging) {
-$I$(3).debug$S(type.name$() + "Callback call error to " + callback + ": " + e );
+(function(a,f){return f.apply(null,a)})([type.name$() + "Callback call error to " + callback + ": " + e ],$I$(3).debug$S);
 }this.haveNotifiedError=true;
 } else {
 throw e;
@@ -434,13 +407,13 @@ Clazz.newMeth(C$, 'sendScript$S$S$Z$Z', function (script, appletName, isSync, do
 if (doCallback) {
 script=p$1.notifySync$S$S.apply(this, [script, appletName]);
 if (script == null  || script.length$() == 0  || script.equals$O("0") ) return "";
-}var apps=Clazz.new_($I$(10));
+}var apps=Clazz.new_($I$(10,1));
 C$.findApplets$S$S$S$javajs_util_Lst(appletName, this.syncId, this.fullName, apps);
 var nApplets=apps.size$();
 if (nApplets == 0) {
 if (!doCallback && !appletName.equals$O("*") ) $I$(3).error$S(this.fullName + " couldn't find applet " + appletName );
 return "";
-}var sb=(isSync ? null : Clazz.new_($I$(9)));
+}var sb=(isSync ? null : Clazz.new_($I$(9,1)));
 var getGraphics=(isSync && script.equals$O("GET_GRAPHICS") );
 var setNoGraphics=(isSync && script.equals$O("SET_GRAPHICS_OFF") );
 if (getGraphics) this.viewer.setStereo$Z$O(false, (this.gRight=null));
@@ -513,9 +486,9 @@ return C$.htRegistry;
 });
 
 Clazz.newMeth(C$, 'showUrl$S', function (urlString) {
-if ($I$(3).debugging) $I$(3).debug$S("showUrl(" + urlString + ")" );
+if ($I$(3).debugging) (function(a,f){return f.apply(null,a)})(["showUrl(" + urlString + ")" ],$I$(3).debug$S);
 if (urlString != null  && urlString.length$() > 0 ) try {
-this.doShowDocument$java_net_URL(Clazz.new_($I$(11).c$$java_net_URL$S$java_net_URLStreamHandler,[null, urlString, null]));
+this.doShowDocument$java_net_URL(Clazz.new_($I$(11,1).c$$java_net_URL$S$java_net_URLStreamHandler,[null, urlString, null]));
 } catch (mue) {
 if (Clazz.exceptionOf(mue,"java.net.MalformedURLException")){
 p$1.consoleMessage$S.apply(this, ["Malformed URL:" + urlString]);
@@ -531,12 +504,12 @@ return Clazz.array(Integer.TYPE, -1, [this.viewer.getScreenWidth$(), this.viewer
 
 Clazz.newMeth(C$, 'checkIn$S$O', function (name, applet) {
 if (name != null ) {
-$I$(3).info$S("AppletRegistry.checkIn(" + name + ")" );
-C$.htRegistry.put$TK$TV(name, applet);
+(function(a,f){return f.apply(null,a)})(["AppletRegistry.checkIn(" + name + ")" ],$I$(3).info$S);
+C$.htRegistry.put$O$O(name, applet);
 }if ($I$(3).debugging) {
 for (var entry, $entry = C$.htRegistry.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var theApplet=entry.getKey$();
-$I$(3).debug$S(theApplet + " " + entry.getValue$() );
+(function(a,f){return f.apply(null,a)})([theApplet + " " + entry.getValue$() ],$I$(3).debug$S);
 }
 }}, 1);
 
@@ -554,14 +527,14 @@ return;
 if (appletName == null  || appletName.equals$O("*")  || appletName.equals$O(">") ) {
 for (var appletName2, $appletName2 = C$.htRegistry.keySet$().iterator$(); $appletName2.hasNext$()&&((appletName2=($appletName2.next$())),1);) {
 if (!appletName2.equals$O(excludeName) && appletName2.indexOf$S(ext) > 0 ) {
-apps.addLast$TV(appletName2);
+apps.addLast$O(appletName2);
 }}
 return;
 }if (excludeName.indexOf$S("_object") >= 0 && appletName.indexOf$S("_object") < 0 ) appletName += "_object";
 if (appletName.indexOf$S("__") < 0) appletName += ext;
 if (!C$.htRegistry.containsKey$O(appletName)) appletName="jmolApplet" + appletName;
 if (!appletName.equals$O(excludeName) && C$.htRegistry.containsKey$O(appletName) ) {
-apps.addLast$TV(appletName);
+apps.addLast$O(appletName);
 }}, 1);
 
 Clazz.newMeth(C$, 'notifyAudioEnded$O', function (htParams) {
@@ -570,4 +543,4 @@ this.viewer.sm.notifyAudioStatus$java_util_Map(htParams);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

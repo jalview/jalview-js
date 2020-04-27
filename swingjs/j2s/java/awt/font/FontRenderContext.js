@@ -1,35 +1,38 @@
-(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,'java.awt.geom.AffineTransform','java.awt.RenderingHints']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FontRenderContext");
+(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,'java.awt.RenderingHints','java.awt.geom.AffineTransform']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FontRenderContext");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tx=null;
-this.aaHintValue=null;
-this.fmHintValue=null;
-this.defaulting=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['defaulting'],'O',['tx','java.awt.geom.AffineTransform','aaHintValue','java.lang.Object','+fmHintValue']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
+this.aaHintValue=$I$(1).VALUE_TEXT_ANTIALIAS_DEFAULT;
+this.fmHintValue=$I$(1).VALUE_FRACTIONALMETRICS_DEFAULT;
 this.defaulting=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform$Z$Z', function (tx, isAntiAliased, usesFractionalMetrics) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (tx != null  && !tx.isIdentity$() ) {
-this.tx=Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform,[tx]);
+this.tx=Clazz.new_($I$(2,1).c$$java_awt_geom_AffineTransform,[tx]);
+}if (isAntiAliased) {
+this.aaHintValue=$I$(1).VALUE_TEXT_ANTIALIAS_ON;
+} else {
+this.aaHintValue=$I$(1).VALUE_TEXT_ANTIALIAS_OFF;
+}if (usesFractionalMetrics) {
+this.fmHintValue=$I$(1).VALUE_FRACTIONALMETRICS_ON;
+} else {
+this.fmHintValue=$I$(1).VALUE_FRACTIONALMETRICS_OFF;
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform$O$O', function (tx, aaHint, fmHint) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (tx != null  && !tx.isIdentity$() ) {
-this.tx=Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform,[tx]);
+this.tx=Clazz.new_($I$(2,1).c$$java_awt_geom_AffineTransform,[tx]);
 }this.aaHintValue=aaHint;
 this.fmHintValue=fmHint;
 }, 1);
@@ -52,32 +55,32 @@ return this.getTransform$().getType$();
 }});
 
 Clazz.newMeth(C$, 'getTransform$', function () {
-return (this.tx == null ) ? Clazz.new_($I$(1)) : Clazz.new_($I$(1).c$$java_awt_geom_AffineTransform,[this.tx]);
+return (this.tx == null ) ? Clazz.new_($I$(2,1)) : Clazz.new_($I$(2,1).c$$java_awt_geom_AffineTransform,[this.tx]);
 });
 
 Clazz.newMeth(C$, 'isAntiAliased$', function () {
-return !(this.aaHintValue === $I$(2).VALUE_TEXT_ANTIALIAS_OFF  || this.aaHintValue === $I$(2).VALUE_TEXT_ANTIALIAS_DEFAULT  );
+return !(this.aaHintValue === $I$(1).VALUE_TEXT_ANTIALIAS_OFF  || this.aaHintValue === $I$(1).VALUE_TEXT_ANTIALIAS_DEFAULT  );
 });
 
 Clazz.newMeth(C$, 'usesFractionalMetrics$', function () {
-return !(this.fmHintValue === $I$(2).VALUE_FRACTIONALMETRICS_OFF  || this.fmHintValue === $I$(2).VALUE_FRACTIONALMETRICS_DEFAULT  );
+return !(this.fmHintValue === $I$(1).VALUE_FRACTIONALMETRICS_OFF  || this.fmHintValue === $I$(1).VALUE_FRACTIONALMETRICS_DEFAULT  );
 });
 
 Clazz.newMeth(C$, 'getAntiAliasingHint$', function () {
 if (this.defaulting) {
 if (this.isAntiAliased$()) {
-return $I$(2).VALUE_TEXT_ANTIALIAS_ON;
+return $I$(1).VALUE_TEXT_ANTIALIAS_ON;
 } else {
-return $I$(2).VALUE_TEXT_ANTIALIAS_OFF;
+return $I$(1).VALUE_TEXT_ANTIALIAS_OFF;
 }}return this.aaHintValue;
 });
 
 Clazz.newMeth(C$, 'getFractionalMetricsHint$', function () {
 if (this.defaulting) {
 if (this.usesFractionalMetrics$()) {
-return $I$(2).VALUE_FRACTIONALMETRICS_ON;
+return $I$(1).VALUE_FRACTIONALMETRICS_ON;
 } else {
-return $I$(2).VALUE_FRACTIONALMETRICS_OFF;
+return $I$(1).VALUE_FRACTIONALMETRICS_OFF;
 }}return this.fmHintValue;
 });
 
@@ -117,4 +120,4 @@ hash+=this.fmHintValue.hashCode$();
 }return hash;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

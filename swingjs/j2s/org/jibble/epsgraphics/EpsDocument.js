@@ -1,47 +1,35 @@
-(function(){var P$=Clazz.newPackage("org.jibble.epsgraphics"),p$1={},I$=[[0,'java.io.StringWriter','java.io.BufferedWriter','java.io.OutputStreamWriter','jalview.bin.Cache','java.util.Date']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EpsDocument");
+(function(){var P$=Clazz.newPackage("org.jibble.epsgraphics"),p$1={},I$=[[0,'java.io.StringWriter','java.io.BufferedWriter','java.io.OutputStreamWriter','jalview.bin.Cache','java.util.Date']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EpsDocument");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.minX=0;
-this.minY=0;
-this.maxX=0;
-this.maxY=0;
-this._isClipSet=false;
-this._title=null;
-this._stringWriter=null;
-this._bufferedWriter=null;
-this._lastG=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._isClipSet=false;
 this._bufferedWriter=null;
 this._lastG=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_isClipSet'],'F',['minX','minY','maxX','maxY'],'S',['_title'],'O',['_stringWriter','java.io.StringWriter','_bufferedWriter','java.io.BufferedWriter','_lastG','org.jibble.epsgraphics.EpsGraphics2D']]]
 
 Clazz.newMeth(C$, 'c$$S', function (title) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._title=title;
 this.minX=Infinity;
 this.minY=Infinity;
 this.maxX=-Infinity;
 this.maxY=-Infinity;
-this._stringWriter=Clazz.new_($I$(1));
-this._bufferedWriter=Clazz.new_($I$(2).c$$java_io_Writer,[this._stringWriter]);
+this._stringWriter=Clazz.new_($I$(1,1));
+this._bufferedWriter=Clazz.new_($I$(2,1).c$$java_io_Writer,[this._stringWriter]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_io_OutputStream$I$I$I$I', function (title, outputStream, minX, minY, maxX, maxY) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._title=title;
 this.minX=minX;
 this.minY=minY;
 this.maxX=maxX;
 this.maxY=maxY;
-this._bufferedWriter=Clazz.new_($I$(2).c$$java_io_Writer,[Clazz.new_($I$(3).c$$java_io_OutputStream,[outputStream])]);
+this._bufferedWriter=Clazz.new_([Clazz.new_($I$(3,1).c$$java_io_OutputStream,[outputStream])],$I$(2,1).c$$java_io_Writer);
 this.write$java_io_Writer(this._bufferedWriter);
 }, 1);
 
@@ -100,7 +88,7 @@ var offsetY=-this.minY;
 writer.write$S("%!PS-Adobe-3.0 EPSF-3.0\n");
 writer.write$S("%%Creator: Jalview " + $I$(4).getProperty$S("VERSION") + " \n" );
 writer.write$S("%%Title: " + this._title + "\n" );
-writer.write$S("%%CreationDate: " + Clazz.new_($I$(5)) + "\n" );
+writer.write$S("%%CreationDate: " + Clazz.new_($I$(5,1)) + "\n" );
 writer.write$S("%%BoundingBox: 0 0 " + ((Math.ceil(this.maxX + offsetX)|0)) + " " + ((Math.ceil(this.maxY + offsetY)|0)) + "\n" );
 writer.write$S("%%DocumentData: Clean7Bit\n");
 writer.write$S("%%DocumentProcessColors: Black\n");
@@ -154,4 +142,4 @@ this._isClipSet=isClipSet;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

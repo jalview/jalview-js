@@ -1,30 +1,16 @@
-(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},I$=[[0,'java.awt.Point','java.awt.Dimension','StringBuffer','java.util.Vector','java.util.StringTokenizer','java.awt.Font','java.awt.Frame']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BoundingBox", null, 'java.awt.Rectangle');
-C$.VERT_ALIGNS=null;
-C$.HORIZ_ALIGNS=null;
-C$.SUBTRACTS=null;
+(function(){var P$=Clazz.newPackage("gnu.jpdf"),p$1={},I$=[[0,'java.awt.Point','java.awt.Dimension','StringBuffer','java.util.Vector','java.util.StringTokenizer','java.awt.Font','java.awt.Frame']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BoundingBox", null, 'java.awt.Rectangle');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.VERT_ALIGNS=Clazz.array(Integer.TYPE, -1, [0, 1, 2]);
-C$.HORIZ_ALIGNS=Clazz.array(Integer.TYPE, -1, [3, 4, 5]);
-C$.SUBTRACTS=Clazz.array(Integer.TYPE, -1, [6, 7, 8, 9]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.drawingPoint=null;
-this.absoluteLocation=null;
-this.parent=null;
-this.stringArray=null;
-this.fullString=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['fullString'],'O',['drawingPoint','java.awt.Point','+absoluteLocation','parent','gnu.jpdf.BoundingBox','stringArray','String[]']]
+,['O',['VERT_ALIGNS','int[]','+HORIZ_ALIGNS','+SUBTRACTS']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Point$java_awt_Dimension', function (p, d) {
-C$.superclazz.c$$java_awt_Point$java_awt_Dimension.apply(this, [p, d]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Point$java_awt_Dimension.apply(this,[p, d]);C$.$init$.apply(this);
 this.drawingPoint=this.getLocation$();
 this.absoluteLocation=this.getLocation$();
 }, 1);
@@ -144,8 +130,8 @@ cx=0;
 cx=((pw/2|0)) - ((cw/2|0));
 } else {
 cx=pw - cw;
-}childLocation=Clazz.new_($I$(1).c$$I$I,[cx, cy]);
-childSize=Clazz.new_($I$(2).c$$I$I,[cw, ch]);
+}childLocation=Clazz.new_($I$(1,1).c$$I$I,[cx, cy]);
+childSize=Clazz.new_($I$(2,1).c$$I$I,[cw, ch]);
 var dpx;
 var dpy;
 var abx;
@@ -165,8 +151,8 @@ abx=px + cx + ancestorTranslateX ;
 aby=py + cy + ancestorTranslateY ;
 dpx=abx + padding;
 dpy=aby + padding + sa ;
-var drawingPoint=Clazz.new_($I$(1).c$$I$I,[dpx, dpy]);
-var returnChild=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension$java_awt_Point$java_awt_Point,[childLocation, childSize, drawingPoint, Clazz.new_($I$(1).c$$I$I,[abx, aby])]);
+var drawingPoint=Clazz.new_($I$(1,1).c$$I$I,[dpx, dpy]);
+var returnChild=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension$java_awt_Point$java_awt_Point,[childLocation, childSize, drawingPoint, Clazz.new_($I$(1,1).c$$I$I,[abx, aby])]);
 this.add$gnu_jpdf_BoundingBox(returnChild);
 returnChild.setFullString$S(string);
 returnChild.setStringArray$SA(childStrArray);
@@ -248,7 +234,7 @@ var y=(p.getY$()|0);
 g.drawString$S$I$I(string, x, y);
 } catch (stle) {
 if (Clazz.exceptionOf(stle,"gnu.jpdf.StringTooLongException")){
-var buf=Clazz.new_($I$(3)).append$S(string);
+var buf=Clazz.new_($I$(3,1)).append$S(string);
 if (buf.length$() == 0) {
 System.out.println$S("BoundingBox.drawChoppedString, buf len 0 ??");
 throw Clazz.new_(Clazz.load('RuntimeException'));
@@ -292,17 +278,17 @@ return null;
 }if (fm == null ) {
 System.err.println$S("Tried createStringArray with null FontMetrics");
 }var lw=pw - (padding * 2);
-var returnVector=Clazz.new_($I$(4));
-var st=Clazz.new_($I$(5).c$$S$S$Z,[string, " \t\n\r\f", true]);
-var tempBuffer=Clazz.new_($I$(3));
-var finalBuffer=Clazz.new_($I$(3));
+var returnVector=Clazz.new_($I$(4,1));
+var st=Clazz.new_($I$(5,1).c$$S$S$Z,[string, " \t\n\r\f", true]);
+var tempBuffer=Clazz.new_($I$(3,1));
+var finalBuffer=Clazz.new_($I$(3,1));
 while (st.hasMoreTokens$()){
 var tempString=st.nextToken$();
 tempBuffer.append$S(tempString);
 if ((fm.stringWidth$S(tempBuffer.toString()) < lw) && (tempBuffer.toString().charAt$I(tempBuffer.toString().length$() - 1) != "\n") && (tempBuffer.toString().charAt$I(tempBuffer.toString().length$() - 1) != "\r")  ) {
 finalBuffer.append$S(tempString);
 continue;
-}returnVector.addElement$TE(finalBuffer.toString());
+}returnVector.addElement$O(finalBuffer.toString());
 finalBuffer.delete$I$I(0, finalBuffer.length$());
 tempBuffer.delete$I$I(0, tempBuffer.length$());
 if ((tempString.charAt$I(0) != "\n") && (tempString.charAt$I(0) != "\r") ) {
@@ -310,7 +296,7 @@ tempBuffer.append$S(tempString);
 finalBuffer.append$S(tempString);
 }continue;
 }
-returnVector.addElement$TE(finalBuffer.toString());
+returnVector.addElement$O(finalBuffer.toString());
 var len=returnVector.size$();
 var childStrArray=Clazz.array(String, [len]);
 for (var i=0; i < len; i++) {
@@ -347,23 +333,23 @@ var ph=(this.getSize$().getHeight$()|0);
 switch (subtractFrom) {
 case 8:
 pw=cx;
-this.setSize$java_awt_Dimension(Clazz.new_($I$(2).c$$I$I,[pw, ph]));
+this.setSize$java_awt_Dimension(Clazz.new_($I$(2,1).c$$I$I,[pw, ph]));
 return this;
 case 9:
 px=px + cw + cx ;
 pw=pw - cw - cx ;
-this.setLocation$java_awt_Point(Clazz.new_($I$(1).c$$I$I,[px, py]));
-this.setSize$java_awt_Dimension(Clazz.new_($I$(2).c$$I$I,[pw, ph]));
+this.setLocation$java_awt_Point(Clazz.new_($I$(1,1).c$$I$I,[px, py]));
+this.setSize$java_awt_Dimension(Clazz.new_($I$(2,1).c$$I$I,[pw, ph]));
 return this;
 case 7:
 py=py + ch + cy ;
 ph=ph - ch - cy ;
-this.setLocation$java_awt_Point(Clazz.new_($I$(1).c$$I$I,[px, py]));
-this.setSize$java_awt_Dimension(Clazz.new_($I$(2).c$$I$I,[pw, ph]));
+this.setLocation$java_awt_Point(Clazz.new_($I$(1,1).c$$I$I,[px, py]));
+this.setSize$java_awt_Dimension(Clazz.new_($I$(2,1).c$$I$I,[pw, ph]));
 return this;
 case 6:
 ph=cy;
-this.setSize$java_awt_Dimension(Clazz.new_($I$(2).c$$I$I,[pw, ph]));
+this.setSize$java_awt_Dimension(Clazz.new_($I$(2,1).c$$I$I,[pw, ph]));
 return this;
 default:
 break;
@@ -376,12 +362,12 @@ return this.drawingPoint;
 });
 
 Clazz.newMeth(C$, 'main$SA', function (args) {
-var upperLeft=Clazz.new_($I$(1).c$$I$I,[5, 5]);
-var bounds=Clazz.new_($I$(2).c$$I$I,[100, 100]);
+var upperLeft=Clazz.new_($I$(1,1).c$$I$I,[5, 5]);
+var bounds=Clazz.new_($I$(2,1).c$$I$I,[100, 100]);
 var parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[upperLeft, bounds]);
 var string="Hello World!";
-var font=Clazz.new_($I$(6).c$$S$I$I,["SansSerif", 0, 12]);
-var frame=Clazz.new_($I$(7));
+var font=Clazz.new_($I$(6,1).c$$S$I$I,["SansSerif", 0, 12]);
+var frame=Clazz.new_($I$(7,1));
 frame.addNotify$();
 try {
 var image=frame.createImage$I$I(100, 100);
@@ -392,9 +378,9 @@ var fm=graphics.getFontMetrics$java_awt_Font(font);
 var child=parent.getStringBounds$S$I$I$java_awt_FontMetrics$I(string, 4, 1, fm, 5);
 System.out.println$S("Drawing Point: " + child.getDrawingPoint$().toString());
 System.out.println$S("Now testing subtract() method...");
-parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1).c$$I$I,[10, 10]), Clazz.new_($I$(2).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1,1).c$$I$I,[10, 10]), Clazz.new_($I$(2,1).c$$I$I,[300, 300])]);
 System.out.println$S("parent: " + parent.toString());
-child=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1).c$$I$I,[90, 110]), Clazz.new_($I$(2).c$$I$I,[100, 100])]);
+child=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1,1).c$$I$I,[90, 110]), Clazz.new_($I$(2,1).c$$I$I,[100, 100])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("child: " + child.toString());
 System.out.println$();
@@ -404,21 +390,21 @@ parent=parent.subtract$gnu_jpdf_BoundingBox$I(child, 6);
 System.out.println$S("new parent: " + parent.toString());
 System.out.println$();
 System.out.println$S("Resetting parent");
-parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1).c$$I$I,[10, 10]), Clazz.new_($I$(2).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1,1).c$$I$I,[10, 10]), Clazz.new_($I$(2,1).c$$I$I,[300, 300])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("SUBTRACT_FROM_BOTTOM");
 parent.subtract$gnu_jpdf_BoundingBox$I(child, 7);
 System.out.println$S("new parent: " + parent.toString());
 System.out.println$();
 System.out.println$S("Resetting parent");
-parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1).c$$I$I,[10, 10]), Clazz.new_($I$(2).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1,1).c$$I$I,[10, 10]), Clazz.new_($I$(2,1).c$$I$I,[300, 300])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("SUBTRACT_FROM_LEFT");
 parent.subtract$gnu_jpdf_BoundingBox$I(child, 8);
 System.out.println$S("new parent: " + parent.toString());
 System.out.println$();
 System.out.println$S("Resetting parent");
-parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1).c$$I$I,[10, 10]), Clazz.new_($I$(2).c$$I$I,[300, 300])]);
+parent=Clazz.new_(C$.c$$java_awt_Point$java_awt_Dimension,[Clazz.new_($I$(1,1).c$$I$I,[10, 10]), Clazz.new_($I$(2,1).c$$I$I,[300, 300])]);
 parent.add$gnu_jpdf_BoundingBox(child);
 System.out.println$S("SUBTRACT_FROM_RIGHT");
 parent.subtract$gnu_jpdf_BoundingBox$I(child, 9);
@@ -436,8 +422,7 @@ throw e;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Point$java_awt_Dimension$java_awt_Point$java_awt_Point', function (p, d, drawingPoint, absolute) {
-C$.superclazz.c$$java_awt_Point$java_awt_Dimension.apply(this, [p, d]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Point$java_awt_Dimension.apply(this,[p, d]);C$.$init$.apply(this);
 this.drawingPoint=drawingPoint;
 this.absoluteLocation=absolute;
 }, 1);
@@ -460,6 +445,12 @@ return true;
 return false;
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.VERT_ALIGNS=Clazz.array(Integer.TYPE, -1, [0, 1, 2]);
+C$.HORIZ_ALIGNS=Clazz.array(Integer.TYPE, -1, [3, 4, 5]);
+C$.SUBTRACTS=Clazz.array(Integer.TYPE, -1, [6, 7, 8, 9]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

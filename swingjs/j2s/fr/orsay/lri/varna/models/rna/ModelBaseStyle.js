@@ -1,33 +1,16 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.utils.XMLUtils','fr.orsay.lri.varna.models.VARNAConfig','java.awt.Color','java.util.ArrayList','fr.orsay.lri.varna.exceptions.ExceptionModeleStyleBaseSyntaxError','fr.orsay.lri.varna.exceptions.ExceptionParameterError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ModelBaseStyle", null, null, ['Cloneable', 'java.io.Serializable']);
-C$.XML_ELEMENT_NAME=null;
-C$.XML_VAR_OUTLINE_NAME=null;
-C$.XML_VAR_INNER_NAME=null;
-C$.XML_VAR_NUMBER_NAME=null;
-C$.XML_VAR_NAME_NAME=null;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.utils.XMLUtils','fr.orsay.lri.varna.models.VARNAConfig','java.awt.Color','java.util.ArrayList','fr.orsay.lri.varna.exceptions.ExceptionModeleStyleBaseSyntaxError','fr.orsay.lri.varna.exceptions.ExceptionParameterError']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ModelBaseStyle", null, null, ['Cloneable', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.XML_ELEMENT_NAME="basestyle";
-C$.XML_VAR_OUTLINE_NAME="outline";
-C$.XML_VAR_INNER_NAME="inner";
-C$.XML_VAR_NUMBER_NAME="num";
-C$.XML_VAR_NAME_NAME="name";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._base_outline_color=null;
-this._base_inner_color=null;
-this._base_number_color=null;
-this._base_name_color=null;
-this._selected=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_selected'],'O',['_base_outline_color','java.awt.Color','+_base_inner_color','+_base_number_color','+_base_name_color']]
+,['S',['XML_ELEMENT_NAME','XML_VAR_OUTLINE_NAME','XML_VAR_INNER_NAME','XML_VAR_NUMBER_NAME','XML_VAR_NAME_NAME']]]
 
 Clazz.newMeth(C$, 'toXML$javax_xml_transform_sax_TransformerHandler', function (hd) {
-var atts=Clazz.new_($I$(1));
+var atts=Clazz.new_($I$(1,1));
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_OUTLINE_NAME, "CDATA", "" + $I$(2).toHTMLNotation$java_awt_Color(this._base_outline_color));
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_INNER_NAME, "CDATA", "" + $I$(2).toHTMLNotation$java_awt_Color(this._base_inner_color));
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_NUMBER_NAME, "CDATA", "" + $I$(2).toHTMLNotation$java_awt_Color(this._base_number_color));
@@ -47,7 +30,7 @@ return result;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._base_outline_color=$I$(3).BASE_OUTLINE_COLOR_DEFAULT;
 this._base_inner_color=$I$(3).BASE_INNER_COLOR_DEFAULT;
 this._base_number_color=$I$(3).BASE_NUMBER_COLOR_DEFAULT;
@@ -56,7 +39,7 @@ this._selected=false;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Font', function (outline, inner, number, name, font) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._base_outline_color=outline;
 this._base_inner_color=inner;
 this._base_number_color=number;
@@ -69,7 +52,7 @@ this.assignParameters$S(parameterValue);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_ModelBaseStyle', function (msb) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._base_outline_color=msb.getBaseOutlineColor$();
 this._base_inner_color=msb.getBaseInnerColor$();
 this._base_number_color=msb.getBaseNumberColor$();
@@ -114,7 +97,7 @@ try {
 result=$I$(4).decode$S(col);
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-result=$I$(4).getColor$S$java_awt_Color(col, $I$(4).green);
+result=$I$(4,"getColor$S$java_awt_Color",[col, $I$(4).green]);
 } else {
 throw e;
 }
@@ -125,14 +108,14 @@ return result;
 Clazz.newMeth(C$, 'assignParameters$S', function (parametersValue) {
 if (parametersValue.equals$O("")) return;
 var parametersL=parametersValue.split$S(",");
-var namesArray=Clazz.new_($I$(5));
-var valuesArray=Clazz.new_($I$(5));
+var namesArray=Clazz.new_($I$(5,1));
+var valuesArray=Clazz.new_($I$(5,1));
 var param;
 for (var i=0; i < parametersL.length; i++) {
 param=parametersL[i].split$S("=");
-if (param.length != 2) throw Clazz.new_($I$(6).c$$S,["Bad parameter: '" + param[0] + "' ..." ]);
-namesArray.add$TE(param[0].replace$CharSequence$CharSequence(" ", ""));
-valuesArray.add$TE(param[1].replace$CharSequence$CharSequence(" ", ""));
+if (param.length != 2) throw Clazz.new_($I$(6,1).c$$S,["Bad parameter: '" + param[0] + "' ..." ]);
+namesArray.add$O(param[0].replace$CharSequence$CharSequence(" ", ""));
+valuesArray.add$O(param[1].replace$CharSequence$CharSequence(" ", ""));
 }
 for (var i=0; i < namesArray.size$(); i++) {
 if (namesArray.get$I(i).toLowerCase$().equals$O("fill")) {
@@ -140,7 +123,7 @@ try {
 this.setBaseInnerColor$java_awt_Color(C$.getSafeColor$S(valuesArray.get$I(i)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "Bad inner color Syntax:" + valuesArray.get$I(i)]);
+throw Clazz.new_([e.getMessage$(), "Bad inner color Syntax:" + valuesArray.get$I(i)],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
@@ -150,7 +133,7 @@ try {
 this.setBaseNameColor$java_awt_Color(C$.getSafeColor$S(valuesArray.get$I(i)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "Bad name color Syntax:" + valuesArray.get$I(i)]);
+throw Clazz.new_([e.getMessage$(), "Bad name color Syntax:" + valuesArray.get$I(i)],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
@@ -160,7 +143,7 @@ try {
 this.setBaseNumberColor$java_awt_Color(C$.getSafeColor$S(valuesArray.get$I(i)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "Bad numbers color Syntax:" + valuesArray.get$I(i)]);
+throw Clazz.new_([e.getMessage$(), "Bad numbers color Syntax:" + valuesArray.get$I(i)],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
@@ -170,12 +153,12 @@ try {
 this.setBaseOutlineColor$java_awt_Color(C$.getSafeColor$S(valuesArray.get$I(i)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "Bad outline color Syntax:" + valuesArray.get$I(i)]);
+throw Clazz.new_([e.getMessage$(), "Bad outline color Syntax:" + valuesArray.get$I(i)],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
-} else throw Clazz.new_($I$(6).c$$S,["Unknown parameter:" + namesArray.get$I(i)]);
+} else throw Clazz.new_(["Unknown parameter:" + namesArray.get$I(i)],$I$(6,1).c$$S);
 }
 });
 
@@ -187,5 +170,13 @@ if (s.toLowerCase$().equals$O("italic")) style=new Integer(2);
  else style=null;
 return style;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.XML_ELEMENT_NAME="basestyle";
+C$.XML_VAR_OUTLINE_NAME="outline";
+C$.XML_VAR_INNER_NAME="inner";
+C$.XML_VAR_NUMBER_NAME="num";
+C$.XML_VAR_NAME_NAME="name";
+};
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:30:01 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

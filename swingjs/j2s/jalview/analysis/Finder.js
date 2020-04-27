@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'com.stevesoft.pat.Regex','jalview.datamodel.SearchResults','java.util.Vector','jalview.datamodel.Range','jalview.analysis.AlignSeq','jalview.util.Comparison']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Finder", null, null, 'jalview.api.FinderI');
+(function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[[0,'com.stevesoft.pat.Regex','jalview.datamodel.SearchResults','java.util.Vector','jalview.datamodel.Range','jalview.analysis.AlignSeq','jalview.util.Comparison']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Finder", null, null, 'jalview.api.FinderI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.searchResults=null;
-this.idMatches=null;
-this.viewport=null;
-this.sequenceIndex=0;
-this.columnIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['sequenceIndex','columnIndex'],'O',['searchResults','jalview.datamodel.SearchResultsI','idMatches','java.util.Vector','viewport','jalview.api.AlignViewportI']]]
 
 Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI', function (av) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.viewport=av;
 this.sequenceIndex=0;
 this.columnIndex=-1;
@@ -40,10 +32,10 @@ this.columnIndex=-1;
 
 Clazz.newMeth(C$, 'doFind$S$Z$Z$Z', function (theSearchString, matchCase, searchDescription, findAll) {
 var searchString=matchCase ? theSearchString : theSearchString.toUpperCase$();
-var searchPattern=Clazz.new_($I$(1).c$$S,[searchString]);
+var searchPattern=Clazz.new_($I$(1,1).c$$S,[searchString]);
 searchPattern.setIgnoreCase$Z(!matchCase);
-this.searchResults=Clazz.new_($I$(2));
-this.idMatches=Clazz.new_($I$(3));
+this.searchResults=Clazz.new_($I$(2,1));
+this.idMatches=Clazz.new_($I$(3,1));
 var selection=this.viewport.getSelectionGroup$();
 if (selection != null  && selection.getSize$() < 1 ) {
 selection=null;
@@ -80,7 +72,7 @@ this.columnIndex=seqColEnd + 1;
 return null;
 }seqColStart=Math.max(seqColStart, selectionStart);
 seqColEnd=Math.min(seqColEnd, selectionEnd);
-}return Clazz.new_($I$(4).c$$I$I,[seqColStart, seqColEnd]);
+}return Clazz.new_($I$(4,1).c$$I$I,[seqColStart, seqColEnd]);
 });
 
 Clazz.newMeth(C$, 'findNextMatch$jalview_datamodel_SequenceI$S$com_stevesoft_pat_Regex$Z', function (seq, searchString, searchPattern, matchDescription) {
@@ -103,7 +95,7 @@ var visible=this.getNextVisibleSequenceRegion$jalview_datamodel_SequenceI$I(seq,
 if (visible == null ) {
 return false;
 }var seqString=seq.getSequenceAsString$I$I(visible.start, visible.end + 1);
-var noGaps=$I$(5).extractGaps$S$S($I$(6).GapChars, seqString);
+var noGaps=$I$(5,"extractGaps$S$S",[$I$(6).GapChars, seqString]);
 if (searchPattern.search$S(noGaps)) {
 var sequenceStartPosition=seq.findPosition$I(visible.start);
 this.recordMatch$jalview_datamodel_SequenceI$com_stevesoft_pat_Regex$I(seq, searchPattern, sequenceStartPosition);
@@ -140,14 +132,14 @@ return true;
 Clazz.newMeth(C$, 'searchSequenceDescription$jalview_datamodel_SequenceI$com_stevesoft_pat_Regex', function (seq, searchPattern) {
 var desc=seq.getDescription$();
 if (desc != null  && searchPattern.search$S(desc)  && !this.idMatches.contains$O(seq) ) {
-this.idMatches.addElement$TE(seq);
+this.idMatches.addElement$O(seq);
 return true;
 }return false;
 });
 
 Clazz.newMeth(C$, 'searchSequenceName$jalview_datamodel_SequenceI$com_stevesoft_pat_Regex', function (seq, searchPattern) {
 if (searchPattern.search$S(seq.getName$()) && !this.idMatches.contains$O(seq) ) {
-this.idMatches.addElement$TE(seq);
+this.idMatches.addElement$O(seq);
 return true;
 }return false;
 });
@@ -177,4 +169,4 @@ return this.searchResults;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

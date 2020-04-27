@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.smiles"),p$1={},I$=[[0,'org.jmol.smiles.SmilesParser','org.jmol.smiles.SmilesGenerator','javajs.util.BS','javajs.util.PT','org.jmol.smiles.SmilesSearch','org.jmol.util.BSUtil','org.jmol.smiles.SmilesAtom','org.jmol.smiles.SmilesBond','javajs.util.AU','org.jmol.util.Elements','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmilesMatcher", null, null, 'org.jmol.api.SmilesMatcherInterface');
+(function(){var P$=Clazz.newPackage("org.jmol.smiles"),p$1={},I$=[[0,'org.jmol.smiles.SmilesParser','org.jmol.smiles.SmilesGenerator','javajs.util.BS','javajs.util.PT','org.jmol.smiles.SmilesSearch','org.jmol.util.BSUtil','org.jmol.smiles.SmilesAtom','org.jmol.smiles.SmilesBond','javajs.util.AU','org.jmol.util.Elements','org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SmilesMatcher", null, null, 'org.jmol.api.SmilesMatcherInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getLastException$', function () {
 return Clazz.load('org.jmol.smiles.InvalidSmilesException').getLastError$();
@@ -21,7 +20,7 @@ return search.getMolecularFormula$Z$FA$Z(!isSmarts, null, false);
 
 Clazz.newMeth(C$, 'getSmiles$org_jmol_util_NodeA$I$javajs_util_BS$S$I', function (atoms, ac, bsSelected, bioComment, flags) {
 Clazz.load('org.jmol.smiles.InvalidSmilesException').clear$();
-return (Clazz.new_($I$(2))).getSmiles$org_jmol_smiles_SmilesMatcher$org_jmol_util_NodeA$I$javajs_util_BS$S$I(this, atoms, ac, bsSelected, bioComment, flags);
+return (Clazz.new_($I$(2,1))).getSmiles$org_jmol_smiles_SmilesMatcher$org_jmol_util_NodeA$I$javajs_util_BS$S$I(this, atoms, ac, bsSelected, bioComment, flags);
 });
 
 Clazz.newMeth(C$, 'areEqual$S$S', function (smiles1, smiles2) {
@@ -53,7 +52,7 @@ Clazz.newMeth(C$, 'getAtoms$S', function (target) {
 Clazz.load('org.jmol.smiles.InvalidSmilesException').clear$();
 target=$I$(1).cleanPattern$S(target);
 var search=$I$(1).newSearch$S$Z$Z(target, false, true);
-search.createTopoMap$javajs_util_BS(Clazz.new_($I$(3)));
+search.createTopoMap$javajs_util_BS(Clazz.new_($I$(3,1)));
 return search.targetAtoms;
 });
 
@@ -63,8 +62,8 @@ var mf1=this.getMolecularFormula$S$Z(smiles1, false);
 var mf2=this.getMolecularFormula$S$Z(smiles2, false);
 if (!mf1.equals$O(mf2)) return "none";
 var check;
-var n1=$I$(4).countChar$S$C($I$(4).rep$S$S$S(smiles1, "@@", "@"), "@");
-var n2=$I$(4).countChar$S$C($I$(4).rep$S$S$S(smiles2, "@@", "@"), "@");
+var n1=(function(a,f){return f.apply(null,a)})([$I$(4).rep$S$S$S(smiles1, "@@", "@"), "@"],$I$(4).countChar$S$C);
+var n2=(function(a,f){return f.apply(null,a)})([$I$(4).rep$S$S$S(smiles2, "@@", "@"), "@"],$I$(4).countChar$S$C);
 check=(n1 == n2 && this.areEqual$S$S(smiles2, smiles1) > 0 );
 if (!check) {
 var s=smiles1 + smiles2;
@@ -91,7 +90,7 @@ return p$1.matchPriv$S$org_jmol_util_NodeA$I$javajs_util_BS$javajs_util_BS$Z$I$I
 
 Clazz.newMeth(C$, 'getMMFF94AtomTypes$SA$org_jmol_util_NodeA$I$javajs_util_BS$javajs_util_Lst$javajs_util_LstA', function (smarts, atoms, ac, bsSelected, ret, vRings) {
 Clazz.load('org.jmol.smiles.InvalidSmilesException').clear$();
-var sp=Clazz.new_($I$(1).c$$Z$Z,[true, true]);
+var sp=Clazz.new_($I$(1,1).c$$Z$Z,[true, true]);
 var search=null;
 var flags=(770);
 search=sp.parse$S("");
@@ -104,15 +103,15 @@ search.getRingData$javajs_util_LstA$Z$Z(vRings, true, true);
 search.asVector=false;
 search.subSearches=Clazz.array($I$(5), [1]);
 search.getSelections$();
-var bsDone=Clazz.new_($I$(3));
+var bsDone=Clazz.new_($I$(3,1));
 for (var i=0; i < smarts.length; i++) {
 if (smarts[i] == null  || smarts[i].length$() == 0  || smarts[i].startsWith$S("#") ) {
-ret.addLast$TV(null);
+ret.addLast$O(null);
 continue;
 }search.clear$();
 search.subSearches[0]=sp.getSubsearch$org_jmol_smiles_SmilesSearch$S$I(search, $I$(1).cleanPattern$S(smarts[i]), flags);
-var bs=$I$(6).copy$javajs_util_BS(search.search$());
-ret.addLast$TV(bs);
+var bs=(function(a,f){return f.apply(null,a)})([search.search$()],$I$(6).copy$javajs_util_BS);
+ret.addLast$O(bs);
 bsDone.or$javajs_util_BS(bs);
 if (bsDone.cardinality$() == ac) return;
 }
@@ -129,7 +128,7 @@ return p$1.matchPriv$S$org_jmol_util_NodeA$I$javajs_util_BS$javajs_util_BS$Z$I$I
 Clazz.newMeth(C$, 'polyhedronToSmiles$org_jmol_util_Node$IAA$I$javajs_util_P3A$I$S', function (center, faces, atomCount, points, flags, details) {
 var atoms=Clazz.array($I$(7), [atomCount]);
 for (var i=0; i < atomCount; i++) {
-atoms[i]=Clazz.new_($I$(7));
+atoms[i]=Clazz.new_($I$(7,1));
 var pt=(points == null  ? null : points[i]);
 if (Clazz.instanceOf(pt, "org.jmol.util.Node")) {
 atoms[i].elementNumber=(pt).getElementNumber$();
@@ -149,7 +148,7 @@ var iatom2;
 for (var j=n; --j >= 0; ) {
 if ((iatom=face[j]) >= atomCount || (iatom2=face[(j + 1) % n]) >= atomCount ) continue;
 if (atoms[iatom].getBondTo$org_jmol_smiles_SmilesAtom(atoms[iatom2]) == null ) {
-var b=Clazz.new_($I$(8).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z,[atoms[iatom], atoms[iatom2], 1, false]);
+var b=Clazz.new_($I$(8,1).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z,[atoms[iatom], atoms[iatom2], 1, false]);
 b.index=nBonds++;
 }}
 }
@@ -158,12 +157,12 @@ var n=atoms[i].bondCount;
 if (n == 0 || n != atoms[i].bonds.length ) atoms[i].bonds=$I$(9).arrayCopyObject$O$I(atoms[i].bonds, n);
 }
 var s=null;
-var g=Clazz.new_($I$(2));
+var g=Clazz.new_($I$(2,1));
 if (points != null ) g.polySmilesCenter=center;
 Clazz.load('org.jmol.smiles.InvalidSmilesException').clear$();
 s=g.getSmiles$org_jmol_smiles_SmilesMatcher$org_jmol_util_NodeA$I$javajs_util_BS$S$I(this, atoms, atomCount, $I$(6).newBitSet2$I$I(0, atomCount), null, flags | 4096 | 16 | 32 );
 if ((flags & 65536) == 65536) {
-s="//* " + center + " *//\t[" + $I$(10).elementSymbolFromNumber$I(center.getElementNumber$()) + "@PH" + atomCount + (details == null  ? "" : "/" + details + "/" ) + "]." + s ;
+s="//* " + center + " *//\t[" + (function(a,f){return f.apply(null,a)})([center.getElementNumber$()],$I$(10).elementSymbolFromNumber$I) + "@PH" + atomCount + (details == null  ? "" : "/" + details + "/" ) + "]." + s ;
 }return s;
 });
 
@@ -172,7 +171,7 @@ return p$1.matchPriv$S$org_jmol_util_NodeA$I$javajs_util_BS$javajs_util_BS$Z$I$I
 });
 
 Clazz.newMeth(C$, 'findPriv$S$org_jmol_smiles_SmilesSearch$I$I', function (pattern, search, flags, mode) {
-var bsAromatic=Clazz.new_($I$(3));
+var bsAromatic=Clazz.new_($I$(3,1));
 search.setFlags$I(search.flags | $I$(1).getFlags$S(pattern));
 search.createTopoMap$javajs_util_BS(bsAromatic);
 return p$1.matchPriv$S$org_jmol_util_NodeA$I$javajs_util_BS$javajs_util_BS$Z$I$I.apply(this, [pattern, search.targetAtoms, -search.targetAtoms.length, null, bsAromatic, bsAromatic.isEmpty$(), flags, mode]);
@@ -184,7 +183,7 @@ try {
 var isSmarts=((flags & 2) == 2);
 var search=$I$(1).newSearch$S$Z$Z(pattern, isSmarts, false);
 if (!isSmarts && !search.patternAromatic ) {
-if (bsAromatic == null ) bsAromatic=Clazz.new_($I$(3));
+if (bsAromatic == null ) bsAromatic=Clazz.new_($I$(3,1));
 $I$(5).normalizeAromaticity$org_jmol_smiles_SmilesAtomA$javajs_util_BS$I(search.patternAtoms, bsAromatic, search.flags);
 search.isNormalized=true;
 }search.targetAtoms=atoms;
@@ -205,7 +204,7 @@ return search.search$();
 case 2:
 search.asVector=true;
 var vb=search.search$();
-return vb.toArray$TTA(Clazz.array($I$(3), [vb.size$()]));
+return vb.toArray$OA(Clazz.array($I$(3), [vb.size$()]));
 case 4:
 search.exitFirstMatch=true;
 search.setAtropicity=true;
@@ -215,7 +214,7 @@ case 3:
 search.getMaps=true;
 search.setFlags$I(flags | search.flags);
 var vl=search.search$();
-return vl.toArray$TTA($I$(9).newInt2$I(vl.size$()));
+return vl.toArray$OA((function(a,f){return f.apply(null,a)})([vl.size$()],$I$(9).newInt2$I));
 }
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -234,7 +233,7 @@ return $I$(1).cleanPattern$S(smiles);
 });
 
 Clazz.newMeth(C$, 'getMapForJME$S$org_jmol_modelset_AtomA$javajs_util_BS', function (jme, at, bsAtoms) {
-var molecule=Clazz.new_($I$(5));
+var molecule=Clazz.new_($I$(5,1));
 var tokens=$I$(4).getTokens$S(jme);
 var nAtoms=$I$(4).parseInt$S(tokens[0]);
 var nBonds=$I$(4).parseInt$S(tokens[1]);
@@ -245,9 +244,9 @@ var a=molecule.addAtom$();
 var ic=sa.indexOf$S("+");
 var charge=0;
 if (ic >= 0) {
-charge=(ic == sa.length$() - 1 ? 1 : $I$(4).parseInt$S(sa.substring$I(ic + 1)));
+charge=(ic == sa.length$() - 1 ? 1 : (function(a,f){return f.apply(null,a)})([sa.substring$I(ic + 1)],$I$(4).parseInt$S));
 } else if ((ic=sa.indexOf$S("-")) >= 0) {
-charge=$I$(4).parseInt$S(sa.substring$I(ic));
+charge=(function(a,f){return f.apply(null,a)})([sa.substring$I(ic)],$I$(4).parseInt$S);
 }a.setCharge$I(charge);
 a.setSymbol$S(ic < 0 ? sa : sa.substring$I$I(0, ic));
 }
@@ -269,7 +268,7 @@ case 3:
 order=3;
 break;
 }
-Clazz.new_($I$(8).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z,[a1, a2, order, false]).index=i;
+Clazz.new_($I$(8,1).c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z,[a1, a2, order, false]).index=i;
 }
 var s="";
 try {
@@ -293,4 +292,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.text"),p$1={},p$2={},I$=[[0,'InternalError','java.util.Hashtable',['java.text.AttributedString','.AttributeMap'],'java.util.HashSet','java.text.AttributeEntry','StringBuffer','java.util.Vector',['java.text.AttributedString','.AttributedStringIterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AttributedString", function(){
+(function(){var P$=Clazz.newPackage("java.text"),p$1={},p$2={},I$=[[0,'InternalError','java.text.AttributedString','java.util.Hashtable',['java.text.AttributedString','.AttributeMap'],'java.util.HashSet','java.text.AttributeEntry','StringBuffer','java.util.Vector',['java.text.AttributedString','.AttributedStringIterator']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AttributedString", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['AttributedStringIterator',18],['AttributeMap',18]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.text=null;
-this.runArraySize=0;
-this.runCount=0;
-this.runStarts=null;
-this.runAttributes=null;
-this.runAttributeValues=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['runArraySize','runCount'],'S',['text'],'O',['runStarts','int[]','runAttributes','java.util.Vector[]','+runAttributeValues']]]
 
 Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIteratorA', function (iterators) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (iterators == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Iterators must not be null"]);
 }if (iterators.length == 0) {
 this.text="";
 } else {
-var buffer=Clazz.new_($I$(6));
+var buffer=Clazz.new_($I$(7,1));
 for (var counter=0; counter < iterators.length; counter++) {
 p$2.appendContents$StringBuffer$java_text_CharacterIterator.apply(this, [buffer, iterators[counter]]);
 }
@@ -52,14 +44,14 @@ offset+=(end - start);
 }}}, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (text) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (text == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.text=text;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_util_Map', function (text, attributes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (text == null  || attributes == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.text=text;
@@ -69,15 +61,15 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Can\'t add attrib
 }var attributeCount=attributes.size$();
 if (attributeCount > 0) {
 p$2.createRunAttributeDataVectors.apply(this, []);
-var newRunAttributes=Clazz.new_($I$(7).c$$I,[attributeCount]);
-var newRunAttributeValues=Clazz.new_($I$(7).c$$I,[attributeCount]);
+var newRunAttributes=Clazz.new_($I$(8,1).c$$I,[attributeCount]);
+var newRunAttributeValues=Clazz.new_($I$(8,1).c$$I,[attributeCount]);
 this.runAttributes[0]=newRunAttributes;
 this.runAttributeValues[0]=newRunAttributeValues;
 var iterator=attributes.entrySet$().iterator$();
 while (iterator.hasNext$()){
 var entry=iterator.next$();
-newRunAttributes.addElement$TE(entry.getKey$());
-newRunAttributeValues.addElement$TE(entry.getValue$());
+newRunAttributes.addElement$O(entry.getKey$());
+newRunAttributeValues.addElement$O(entry.getValue$());
 }
 }}, 1);
 
@@ -90,23 +82,23 @@ C$.c$$java_text_AttributedCharacterIterator$I$I$java_text_AttributedCharacterIte
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$I$I$java_text_AttributedCharacterIterator_AttributeA', function (text, beginIndex, endIndex, attributes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (text == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }var textBeginIndex=text.getBeginIndex$();
 var textEndIndex=text.getEndIndex$();
 if (beginIndex < textBeginIndex || endIndex > textEndIndex  || beginIndex > endIndex ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid substring range"]);
-var textBuffer=Clazz.new_($I$(6));
+var textBuffer=Clazz.new_($I$(7,1));
 text.setIndex$I(beginIndex);
 for (var c=text.current$(); text.getIndex$() < endIndex; c=text.next$()) textBuffer.append$C(c);
 
 this.text=textBuffer.toString();
 if (beginIndex == endIndex) return;
-var keys=Clazz.new_($I$(4));
+var keys=Clazz.new_($I$(5,1));
 if (attributes == null ) {
 keys.addAll$java_util_Collection(text.getAllAttributeKeys$());
 } else {
-for (var i=0; i < attributes.length; i++) keys.add$TE(attributes[i]);
+for (var i=0; i < attributes.length; i++) keys.add$O(attributes[i]);
 
 keys.retainAll$java_util_Collection(text.getAllAttributeKeys$());
 }if (keys.isEmpty$()) return;
@@ -182,8 +174,8 @@ p$2.addAttributeRunData$java_text_AttributedCharacterIterator_Attribute$O$I$I.ap
 
 Clazz.newMeth(C$, 'createRunAttributeDataVectors', function () {
 var newRunStarts=Clazz.array(Integer.TYPE, [10]);
-var newRunAttributes=Clazz.array($I$(7), [10]);
-var newRunAttributeValues=Clazz.array($I$(7), [10]);
+var newRunAttributes=Clazz.array($I$(8), [10]);
+var newRunAttributeValues=Clazz.array($I$(8), [10]);
 this.runStarts=newRunStarts;
 this.runAttributes=newRunAttributes;
 this.runAttributeValues=newRunAttributeValues;
@@ -207,8 +199,8 @@ return runIndex;
 }if (this.runCount == this.runArraySize) {
 var newArraySize=this.runArraySize + 10;
 var newRunStarts=Clazz.array(Integer.TYPE, [newArraySize]);
-var newRunAttributes=Clazz.array($I$(7), [newArraySize]);
-var newRunAttributeValues=Clazz.array($I$(7), [newArraySize]);
+var newRunAttributes=Clazz.array($I$(8), [newArraySize]);
+var newRunAttributeValues=Clazz.array($I$(8), [newArraySize]);
 for (var i=0; i < this.runArraySize; i++) {
 newRunStarts[i]=this.runStarts[i];
 newRunAttributes[i]=this.runAttributes[i];
@@ -243,17 +235,17 @@ Clazz.newMeth(C$, 'addAttributeRunData$java_text_AttributedCharacterIterator_Att
 for (var i=beginRunIndex; i < endRunIndex; i++) {
 var keyValueIndex=-1;
 if (this.runAttributes[i] == null ) {
-var newRunAttributes=Clazz.new_($I$(7));
-var newRunAttributeValues=Clazz.new_($I$(7));
+var newRunAttributes=Clazz.new_($I$(8,1));
+var newRunAttributeValues=Clazz.new_($I$(8,1));
 this.runAttributes[i]=newRunAttributes;
 this.runAttributeValues[i]=newRunAttributeValues;
 } else {
 keyValueIndex=this.runAttributes[i].indexOf$O(attribute);
 }if (keyValueIndex == -1) {
 var oldSize=this.runAttributes[i].size$();
-this.runAttributes[i].addElement$TE(attribute);
+this.runAttributes[i].addElement$O(attribute);
 try {
-this.runAttributeValues[i].addElement$TE(value);
+this.runAttributeValues[i].addElement$O(value);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 this.runAttributes[i].setSize$I(oldSize);
@@ -263,7 +255,7 @@ throw e;
 }
 }
 } else {
-this.runAttributeValues[i].set$I$TE(keyValueIndex, value);
+this.runAttributeValues[i].set$I$O(keyValueIndex, value);
 }}
 }, p$2);
 
@@ -276,7 +268,7 @@ return this.getIterator$java_text_AttributedCharacterIterator_AttributeA$I$I(att
 });
 
 Clazz.newMeth(C$, 'getIterator$java_text_AttributedCharacterIterator_AttributeA$I$I', function (attributes, beginIndex, endIndex) {
-return Clazz.new_($I$(8).c$$java_text_AttributedCharacterIterator_AttributeA$I$I, [this, null, attributes, beginIndex, endIndex]);
+return Clazz.new_($I$(9,1).c$$java_text_AttributedCharacterIterator_AttributeA$I$I,[this, null, attributes, beginIndex, endIndex]);
 });
 
 Clazz.newMeth(C$, 'length$', function () {
@@ -356,13 +348,13 @@ p$2.createRunAttributeDataVectors.apply(this, []);
 }var index=p$2.ensureRunBreak$I$Z.apply(this, [offset, false]);
 var size;
 if (attrs != null  && (size=attrs.size$()) > 0 ) {
-var runAttrs=Clazz.new_($I$(7).c$$I,[size]);
-var runValues=Clazz.new_($I$(7).c$$I,[size]);
+var runAttrs=Clazz.new_($I$(8,1).c$$I,[size]);
+var runValues=Clazz.new_($I$(8,1).c$$I,[size]);
 var iterator=attrs.entrySet$().iterator$();
 while (iterator.hasNext$()){
 var entry=iterator.next$();
-runAttrs.add$TE(entry.getKey$());
-runValues.add$TE(entry.getValue$());
+runAttrs.add$O(entry.getKey$());
+runValues.add$O(entry.getValue$());
 }
 this.runAttributes[index]=runAttrs;
 this.runAttributeValues[index]=runValues;
@@ -374,28 +366,19 @@ return (attrs != null  && attrs.size$() > 0 );
 }return (!last.equals$O(attrs));
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.AttributedString, "AttributedStringIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributedString, "AttributedStringIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.text.AttributedCharacterIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.beginIndex=0;
-this.endIndex=0;
-this.currentIndex=0;
-this.currentRunIndex=0;
-this.currentRunStart=0;
-this.currentRunLimit=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['beginIndex','endIndex','currentIndex','currentRunIndex','currentRunStart','currentRunLimit']]]
 
 Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator_AttributeA$I$I', function (attributes, beginIndex, endIndex) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (beginIndex < 0 || beginIndex > endIndex  || endIndex > this.this$0.length$.apply(this.this$0, []) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid substring range"]);
 }this.beginIndex=beginIndex;
@@ -425,7 +408,7 @@ var other=Clazz.clone(this);
 return other;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(1));
+throw Clazz.new_($I$(1,1));
 } else {
 throw e;
 }
@@ -492,7 +475,7 @@ return this.currentRunStart;
 var value=this.getAttribute$java_text_AttributedCharacterIterator_Attribute(attribute);
 var runStart=this.currentRunStart;
 var runIndex=this.currentRunIndex;
-while (runStart > this.beginIndex && P$.AttributedString.valuesMatch$O$O(value, p$2.getAttribute$java_text_AttributedCharacterIterator_Attribute$I.apply(this.this$0, [attribute, runIndex - 1])) ){
+while (runStart > this.beginIndex && $I$(2,"valuesMatch$O$O",[value, p$2.getAttribute$java_text_AttributedCharacterIterator_Attribute$I.apply(this.this$0, [attribute, runIndex - 1])]) ){
 runIndex--;
 runStart=this.this$0.runStarts[runIndex];
 }
@@ -527,7 +510,7 @@ return this.currentRunLimit;
 var value=this.getAttribute$java_text_AttributedCharacterIterator_Attribute(attribute);
 var runLimit=this.currentRunLimit;
 var runIndex=this.currentRunIndex;
-while (runLimit < this.endIndex && P$.AttributedString.valuesMatch$O$O(value, p$2.getAttribute$java_text_AttributedCharacterIterator_Attribute$I.apply(this.this$0, [attribute, runIndex + 1])) ){
+while (runLimit < this.endIndex && $I$(2,"valuesMatch$O$O",[value, p$2.getAttribute$java_text_AttributedCharacterIterator_Attribute$I.apply(this.this$0, [attribute, runIndex + 1])]) ){
 runIndex++;
 runLimit=runIndex < this.this$0.runCount - 1 ? this.this$0.runStarts[runIndex + 1] : this.endIndex;
 }
@@ -553,15 +536,15 @@ runLimit=this.endIndex;
 
 Clazz.newMeth(C$, 'getAttributes$', function () {
 if (this.this$0.runAttributes == null  || this.currentRunIndex == -1  || this.this$0.runAttributes[this.currentRunIndex] == null  ) {
-return Clazz.new_($I$(2));
-}return Clazz.new_($I$(3).c$$I$I$I, [this, null, this.currentRunIndex, this.beginIndex, this.endIndex]);
+return Clazz.new_($I$(3,1));
+}return Clazz.new_($I$(4,1).c$$I$I$I,[this, null, this.currentRunIndex, this.beginIndex, this.endIndex]);
 });
 
 Clazz.newMeth(C$, 'getAllAttributeKeys$', function () {
 if (this.this$0.runAttributes == null ) {
-return Clazz.new_($I$(4));
+return Clazz.new_($I$(5,1));
 }{
-var keys=Clazz.new_($I$(4));
+var keys=Clazz.new_($I$(5,1));
 var i=0;
 while (i < this.this$0.runCount){
 if (this.this$0.runStarts[i] < this.endIndex && (i == this.this$0.runCount - 1 || this.this$0.runStarts[i + 1] > this.beginIndex ) ) {
@@ -569,7 +552,7 @@ var currentRunAttributes=this.this$0.runAttributes[i];
 if (currentRunAttributes != null ) {
 var j=currentRunAttributes.size$();
 while (j-- > 0){
-keys.add$TE(currentRunAttributes.get$I(j));
+keys.add$O(currentRunAttributes.get$I(j));
 }
 }}i++;
 }
@@ -622,32 +605,26 @@ this.currentRunLimit=this.endIndex;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AttributedString, "AttributeMap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AttributedString, "AttributeMap", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.AbstractMap');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.runIndex=0;
-this.beginIndex=0;
-this.endIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['runIndex','beginIndex','endIndex']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (runIndex, beginIndex, endIndex) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.runIndex=runIndex;
 this.beginIndex=beginIndex;
 this.endIndex=endIndex;
 }, 1);
 
 Clazz.newMeth(C$, 'entrySet$', function () {
-var set=Clazz.new_($I$(4));
+var set=Clazz.new_($I$(5,1));
 {
 var size=this.this$0.runAttributes[this.runIndex].size$();
 for (var i=0; i < size; i++) {
@@ -657,8 +634,8 @@ if (Clazz.instanceOf(value, "java.text.Annotation")) {
 value=p$2.getAttributeCheckRange$java_text_AttributedCharacterIterator_Attribute$I$I$I.apply(this.this$0, [key, this.runIndex, this.beginIndex, this.endIndex]);
 if (value == null ) {
 continue;
-}}var entry=Clazz.new_($I$(5).c$$java_text_AttributedCharacterIterator_Attribute$O,[key, value]);
-set.add$TE(entry);
+}}var entry=Clazz.new_($I$(6,1).c$$java_text_AttributedCharacterIterator_Attribute$O,[key, value]);
+set.add$O(entry);
 }
 }return set;
 });
@@ -672,4 +649,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

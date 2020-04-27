@@ -1,43 +1,20 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.util.Vector','jalview.io.vamsas.DatastoreRegistry','java.util.Hashtable','jalview.gui.Desktop','jalview.bin.Cache','jalview.util.MessageManager','Error','uk.ac.vamsas.objects.core.DataSet','jalview.io.vamsas.Datasetsequence','uk.ac.vamsas.objects.core.Alignment','uk.ac.vamsas.objects.core.Provenance','uk.ac.vamsas.objects.core.Property','java.util.HashMap','uk.ac.vamsas.objects.core.AlignmentAnnotation','uk.ac.vamsas.objects.core.Seg','uk.ac.vamsas.objects.core.AnnotationElement','uk.ac.vamsas.objects.core.Glyph','uk.ac.vamsas.objects.utils.Properties','jalview.io.vamsas.Tree','uk.ac.vamsas.objects.core.AlignmentSequence','jalview.datamodel.Sequence','uk.ac.vamsas.objects.core.DataSetAnnotations','uk.ac.vamsas.objects.core.AlignmentSequenceAnnotation','jalview.project.Jalview2XML','java.util.jar.JarInputStream','jalview.structure.StructureSelectionManager','java.util.jar.JarOutputStream','java.util.IdentityHashMap','jalview.io.vamsas.Dbref','jalview.datamodel.SequenceI','jalview.datamodel.Alignment','jalview.io.vamsas.Sequencefeature','jalview.gui.AlignFrame','jalview.io.vamsas.Sequencemapping','jalview.datamodel.Annotation','java.awt.Color','jalview.datamodel.GraphLine','jalview.datamodel.AlignmentAnnotation','jalview.util.MapList','uk.ac.vamsas.objects.core.Local','uk.ac.vamsas.objects.core.Mapped','jalview.datamodel.Provenance','uk.ac.vamsas.objects.core.Entry','java.util.Date']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VamsasAppDatastore");
-C$.HASSECSTR=0;
-C$.HASVALS=0;
-C$.HASHPHOB=0;
-C$.HASDC=0;
-C$.HASDESCSTR=0;
-C$.HASTWOSTATE=0;
+(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,'java.util.Vector','jalview.io.vamsas.DatastoreRegistry','java.util.Hashtable','jalview.gui.Desktop','jalview.bin.Cache','jalview.util.MessageManager','Error','uk.ac.vamsas.objects.core.DataSet','jalview.io.vamsas.Datasetsequence','uk.ac.vamsas.objects.core.Alignment','uk.ac.vamsas.objects.core.Provenance','uk.ac.vamsas.objects.core.Property','java.util.HashMap','uk.ac.vamsas.objects.core.AlignmentAnnotation','uk.ac.vamsas.objects.core.Seg','uk.ac.vamsas.objects.core.AnnotationElement','uk.ac.vamsas.objects.core.Glyph','uk.ac.vamsas.objects.utils.Properties','jalview.io.vamsas.Tree','uk.ac.vamsas.objects.core.AlignmentSequence','jalview.datamodel.Sequence','uk.ac.vamsas.objects.core.DataSetAnnotations','uk.ac.vamsas.objects.core.AlignmentSequenceAnnotation','jalview.project.Jalview2XML','java.util.jar.JarInputStream','jalview.structure.StructureSelectionManager','java.util.jar.JarOutputStream','java.util.IdentityHashMap','jalview.io.vamsas.Dbref','jalview.datamodel.SequenceI','jalview.datamodel.Alignment','jalview.io.vamsas.Sequencefeature','jalview.gui.AlignFrame','jalview.io.vamsas.Sequencemapping','jalview.datamodel.Annotation','java.awt.Color','jalview.datamodel.GraphLine','jalview.datamodel.AlignmentAnnotation','jalview.util.MapList','uk.ac.vamsas.objects.core.Local','uk.ac.vamsas.objects.core.Mapped','jalview.datamodel.Provenance','uk.ac.vamsas.objects.core.Entry','java.util.Date']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VamsasAppDatastore");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.HASSECSTR=0;
-C$.HASVALS=1;
-C$.HASHPHOB=2;
-C$.HASDC=3;
-C$.HASDESCSTR=4;
-C$.HASTWOSTATE=5;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.provEntry=null;
-this.cdoc=null;
-this.vobj2jv=null;
-this.jv2vobj=null;
-this.alignRDHash=null;
-this.skipList=null;
-this.dojvsync=false;
-this.newAlignmentViews=null;
-this.dsReg=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.provEntry=null;
 this.dojvsync=true;
-this.newAlignmentViews=Clazz.new_($I$(1));
-this.dsReg=Clazz.new_($I$(2));
-}, 1);
+this.newAlignmentViews=Clazz.new_($I$(1,1));
+this.dsReg=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['dojvsync'],'O',['provEntry','uk.ac.vamsas.objects.core.Entry','cdoc','uk.ac.vamsas.client.IClientDocument','vobj2jv','java.util.Hashtable','jv2vobj','java.util.IdentityHashMap','alignRDHash','java.util.Hashtable','+skipList','newAlignmentViews','java.util.Vector','dsReg','jalview.io.vamsas.DatastoreRegistry']]
+,['I',['HASSECSTR','HASVALS','HASHPHOB','HASDC','HASDESCSTR','HASTWOSTATE']]]
 
 Clazz.newMeth(C$, 'c$$uk_ac_vamsas_client_IClientDocument$java_util_Hashtable$java_util_IdentityHashMap$uk_ac_vamsas_objects_core_Entry$java_util_Hashtable', function (cdoc, vobj2jv, jv2vobj, provEntry, alignRDHash) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.cdoc=cdoc;
 this.vobj2jv=vobj2jv;
 this.jv2vobj=jv2vobj;
@@ -47,10 +24,10 @@ p$1.buildSkipList.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'buildSkipList', function () {
-this.skipList=Clazz.new_($I$(3));
+this.skipList=Clazz.new_($I$(3,1));
 var al=$I$(4).getAlignFrames$();
 for (var f=0; al != null  && f < al.length ; f++) {
-this.skipList.put$TK$TV(al[f].getViewport$().getSequenceSetId$(), al[f]);
+this.skipList.put$O$O(al[f].getViewport$().getSequenceSetId$(), al[f]);
 }
 }, p$1);
 
@@ -95,8 +72,8 @@ $I$(5).log.debug$O$Throwable("Warning? Overwriting existing vamsas id binding fo
 } else if (this.jv2vobj.containsKey$O(jvobj) && !(this.jv2vobj.get$O(jvobj)).equals$O(vobj.getVorbaId$()) ) {
 $I$(5).log.debug$O$Throwable("Warning? Overwriting existing jalview object binding for " + jvobj, Clazz.new_(Clazz.load('Exception').c$$S,["Overwriting jalview object binding."]));
 }$I$(5).log.debug$O("Binding " + vobj.getVorbaId$() + " to " + jvobj );
-this.vobj2jv.put$TK$TV(vobj.getVorbaId$(), jvobj);
-this.jv2vobj.put$TK$TV(jvobj, vobj.getVorbaId$());
+this.vobj2jv.put$O$O(vobj.getVorbaId$(), jvobj);
+this.jv2vobj.put$O$O(jvobj, vobj.getVorbaId$());
 });
 
 Clazz.newMeth(C$, 'storeVAMSAS$jalview_gui_AlignViewport$S', function (av, aFtitle) {
@@ -125,12 +102,12 @@ if (dataset == null ) {
 dataset=vbound.getV_parent$();
 } else {
 if (vbound.getV_parent$() != null  && dataset !== vbound.getV_parent$()  ) {
-throw Clazz.new_($I$(7).c$$S,[$I$(6).getString$S("error.implementation_error_cannot_map_alignment_sequences")]);
+throw Clazz.new_([$I$(6).getString$S("error.implementation_error_cannot_map_alignment_sequences")],$I$(7,1).c$$S);
 }}}}}
 }if (dataset == null ) {
 $I$(5).log.warn$O("Creating new vamsas dataset for alignment view " + av.getSequenceSetId$());
 root=this.cdoc.getVamsasRoots$()[0];
-dataset=Clazz.new_($I$(8));
+dataset=Clazz.new_($I$(8,1));
 root.addDataSet$uk_ac_vamsas_objects_core_DataSet(dataset);
 this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(jds, dataset);
 dataset.setProvenance$uk_ac_vamsas_objects_core_Provenance(this.dummyProvenance$());
@@ -139,13 +116,13 @@ nw=true;
 root=dataset.getV_parent$();
 }var sequence;
 var dict=jal.isNucleotide$() ? "info:iubmb.org/nucleosides" : "info:iubmb.org/aminoacids";
-var dssmods=Clazz.new_($I$(1));
+var dssmods=Clazz.new_($I$(1,1));
 for (var i=0; i < jal.getHeight$(); i++) {
 var sq=jal.getSequenceAt$I(i).getDatasetSequence$();
-var dssync=Clazz.new_($I$(9).c$$jalview_io_VamsasAppDatastore$jalview_datamodel_SequenceI$S$uk_ac_vamsas_objects_core_DataSet,[this, sq, dict, dataset]);
+var dssync=Clazz.new_($I$(9,1).c$$jalview_io_VamsasAppDatastore$jalview_datamodel_SequenceI$S$uk_ac_vamsas_objects_core_DataSet,[this, sq, dict, dataset]);
 sequence=dssync.getVobj$();
 if (dssync.getModified$()) {
-dssmods.addElement$TE(sequence);
+dssmods.addElement$O(sequence);
 };}
 if (dssmods.size$() > 0) {
 if (!nw) {
@@ -155,14 +132,14 @@ dssmods.removeAllElements$();
 p$1.addToSkipList$jalview_viewmodel_AlignmentViewport.apply(this, [av]);
 return false;
 }if (alignment == null ) {
-alignment=Clazz.new_($I$(10));
+alignment=Clazz.new_($I$(10,1));
 this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(av.getSequenceSetId$(), alignment);
 if (alignment.getProvenance$() == null ) {
-alignment.setProvenance$uk_ac_vamsas_objects_core_Provenance(Clazz.new_($I$(11)));
+alignment.setProvenance$uk_ac_vamsas_objects_core_Provenance(Clazz.new_($I$(11,1)));
 }this.addProvenance$uk_ac_vamsas_objects_core_Provenance$S(alignment.getProvenance$(), "added");
 dataset.addAlignment$uk_ac_vamsas_objects_core_Alignment(alignment);
 {
-var title=Clazz.new_($I$(12));
+var title=Clazz.new_($I$(12,1));
 title.setName$S("title");
 title.setType$S("string");
 title.setContent$S(aFtitle);
@@ -171,12 +148,12 @@ alignment.addProperty$uk_ac_vamsas_objects_core_Property(title);
 for (var i=0; i < jal.getHeight$(); i++) {
 p$1.syncToAlignmentSequence$jalview_datamodel_SequenceI$uk_ac_vamsas_objects_core_Alignment$java_util_Vector.apply(this, [jal.getSequenceAt$I(i), alignment, null]);
 }
-this.alignRDHash.put$TK$TV(av.getSequenceSetId$(), av.getUndoRedoHash$());
+this.alignRDHash.put$O$O(av.getSequenceSetId$(), av.getUndoRedoHash$());
 } else {
 var alismod=av.isUndoRedoHashModified$JA(this.alignRDHash.get$O(av.getSequenceSetId$()));
 if (alignment.getModifiable$() == null  || alignment.getModifiable$().length$() == 0 ) {
 var modified=false;
-var docseqs=Clazz.new_($I$(1).c$$java_util_Collection,[alignment.getAlignmentSequenceAsReference$()]);
+var docseqs=Clazz.new_([alignment.getAlignmentSequenceAsReference$()],$I$(1,1).c$$java_util_Collection);
 for (var i=0; i < jal.getHeight$(); i++) {
 modified|=p$1.syncToAlignmentSequence$jalview_datamodel_SequenceI$uk_ac_vamsas_objects_core_Alignment$java_util_Vector.apply(this, [jal.getSequenceAt$I(i), alignment, docseqs]);
 }
@@ -201,7 +178,7 @@ if (alseq != null  && alseq.getSequenceFeatures$() != null  ) {
 }}
 if (jal.getAlignmentAnnotation$() != null ) {
 var aa=jal.getAlignmentAnnotation$();
-var AlSeqMaps=Clazz.new_($I$(13));
+var AlSeqMaps=Clazz.new_($I$(13,1));
 for (var i=0; i < aa.length; i++) {
 if (aa[i] == null  || p$1.isJalviewOnly$jalview_datamodel_AlignmentAnnotation.apply(this, [aa[i]]) ) {
 continue;
@@ -222,11 +199,11 @@ break;
 }} else {
 var an=this.getjv2vObj$O(aa[i]);
 if (an == null ) {
-an=Clazz.new_($I$(14));
+an=Clazz.new_($I$(14,1));
 an.setType$S("JalviewAnnotation");
 an.setDescription$S(aa[i].description);
 alignment.addAlignmentAnnotation$uk_ac_vamsas_objects_core_AlignmentAnnotation(an);
-var vSeg=Clazz.new_($I$(15));
+var vSeg=Clazz.new_($I$(15,1));
 vSeg.setStart$I(1);
 vSeg.setInclusive$Z(true);
 vSeg.setEnd$I(jal.getWidth$());
@@ -244,15 +221,15 @@ an.setGraph$Z(false);
 for (var a=0; a < aa[i].annotations.length; a++) {
 if ((aa[i] == null ) || (aa[i].annotations[a] == null ) ) {
 continue;
-}ae=Clazz.new_($I$(16));
+}ae=Clazz.new_($I$(16,1));
 ae.setDescription$S(aa[i].annotations[a].description);
-ae.addGlyph$uk_ac_vamsas_objects_core_Glyph(Clazz.new_($I$(17)));
+ae.addGlyph$uk_ac_vamsas_objects_core_Glyph(Clazz.new_($I$(17,1)));
 ae.getGlyph$I(0).setContent$S(aa[i].annotations[a].displayCharacter);
 if (an.isGraph$()) {
 ae.addValue$F(aa[i].annotations[a].value);
 }ae.setPosition$J(a + 1);
 if (aa[i].annotations[a].secondaryStructure != " ") {
-var ss=Clazz.new_($I$(17));
+var ss=Clazz.new_($I$(17,1));
 ss.setDict$S("aasecstr_3");
 ss.setContent$S(String.valueOf$C(aa[i].annotations[a].secondaryStructure));
 ae.addGlyph$uk_ac_vamsas_objects_core_Glyph(ss);
@@ -264,7 +241,7 @@ if (aa[i].graph != 0) {
 an.setGraph$Z(true);
 an.setGroup$S(Integer.toString$I(aa[i].graphGroup));
 if (aa[i].threshold != null  && aa[i].threshold.displayed ) {
-an.addProperty$uk_ac_vamsas_objects_core_Property($I$(18).newProperty$S$S$S("threshold", "float", "" + new Float(aa[i].threshold.value).toString()));
+an.addProperty$uk_ac_vamsas_objects_core_Property($I$(18,"newProperty$S$S$S",["threshold", "float", "" + new Float(aa[i].threshold.value).toString()]));
 if (aa[i].threshold.label != null ) {
 an.addProperty$uk_ac_vamsas_objects_core_Property($I$(18).newProperty$S$S$S("thresholdName", "string", "" + aa[i].threshold.label));
 }}}} else {
@@ -279,7 +256,7 @@ for (var t=0; t < frames.length; t++) {
 if (Clazz.instanceOf(frames[t], "jalview.gui.TreePanel")) {
 var tp=frames[t];
 if (tp.getViewPort$().getSequenceSetId$().equals$O(av.getSequenceSetId$())) {
-var vtree=Clazz.new_($I$(19).c$$jalview_io_VamsasAppDatastore$jalview_gui_TreePanel$jalview_datamodel_AlignmentI$uk_ac_vamsas_objects_core_Alignment,[this, tp, jal, alignment]);
+var vtree=Clazz.new_($I$(19,1).c$$jalview_io_VamsasAppDatastore$jalview_gui_TreePanel$jalview_datamodel_AlignmentI$uk_ac_vamsas_objects_core_Alignment,[this, tp, jal, alignment]);
 }}}
 }} catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
@@ -298,8 +275,8 @@ return (!av.getAlignment$().isAligned$());
 
 Clazz.newMeth(C$, 'addToSkipList$jalview_viewmodel_AlignmentViewport', function (av) {
 if (this.skipList == null ) {
-this.skipList=Clazz.new_($I$(3));
-}this.skipList.put$TK$TV(av.getSequenceSetId$(), av);
+this.skipList=Clazz.new_($I$(3,1));
+}this.skipList.put$O$O(av.getSequenceSetId$(), av);
 }, p$1);
 
 Clazz.newMeth(C$, 'removeValignmentSequences$uk_ac_vamsas_objects_core_Alignment$java_util_Vector', function (alignment, docseqs) {
@@ -309,24 +286,24 @@ alignment.removeAlignmentSequence$uk_ac_vamsas_objects_core_AlignmentSequence(en
 }
 var pe=this.addProvenance$uk_ac_vamsas_objects_core_Provenance$S(alignment.getProvenance$(), "Removed " + docseqs.size$() + " sequences" );
 en=alignment.enumerateAlignmentAnnotation$();
-var toremove=Clazz.new_($I$(1));
+var toremove=Clazz.new_($I$(1,1));
 while (en.hasMoreElements$()){
 var alan=en.nextElement$();
 if (alan.getSeqrefsCount$() > 0) {
 var p=0;
-var storem=Clazz.new_($I$(1));
+var storem=Clazz.new_($I$(1,1));
 var sr=alan.enumerateSeqrefs$();
 while (sr.hasMoreElements$()){
 var alsr=sr.nextElement$();
 if (docseqs.contains$O(alsr)) {
-storem.addElement$TE(alsr);
+storem.addElement$O(alsr);
 }}
 sr=storem.elements$();
 while (sr.hasMoreElements$()){
 alan.removeSeqrefs$O(sr.nextElement$());
 }
 if (alan.getSeqrefsCount$() == 0) {
-toremove.addElement$TE(alan);
+toremove.addElement$O(alan);
 }}}
 en=toremove.elements$();
 while (en.hasMoreElements$()){
@@ -339,7 +316,7 @@ var modal=false;
 var up2doc=false;
 var alseq=this.getjv2vObj$O(jvalsq);
 if (alseq == null ) {
-alseq=Clazz.new_($I$(20));
+alseq=Clazz.new_($I$(20,1));
 up2doc=true;
 } else {
 if (unbounddocseq != null ) {
@@ -385,7 +362,7 @@ modal=true;
 }if (modal && $I$(5).log.isDebugEnabled$() ) {
 $I$(5).log.debug$O("Updating apparently edited sequence " + alseq.getName$());
 }} else {
-alseq=Clazz.new_($I$(21).c$$S$S$I$I,[valseq.getName$(), valseq.getSequence$().replace$C$C(valGapchar, gapChar), (valseq.getStart$()|0), (valseq.getEnd$()|0)]);
+alseq=Clazz.new_([valseq.getName$(), valseq.getSequence$().replace$C$C(valGapchar, gapChar), (valseq.getStart$()|0), (valseq.getEnd$()|0)],$I$(21,1).c$$S$S$I$I);
 var datsetseq=valseq.getRefid$();
 if (datsetseq != null ) {
 alseq.setDatasetSequence$jalview_datamodel_SequenceI(this.getvObj2jv$uk_ac_vamsas_client_Vobject(datsetseq));
@@ -398,7 +375,7 @@ alseq.setDescription$S(alseq.getDatasetSequence$().getDescription$());
 $I$(5).log.error$O("Invalid dataset sequence id (null) for alignment sequence " + valseq.getVorbaId$());
 }this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(alseq, valseq);
 alseq.setVamsasId$S(valseq.getVorbaId$().getId$());
-dsseqs.add$TE(alseq);
+dsseqs.add$O(alseq);
 }var datsetseq=valseq.getRefid$();
 if (datsetseq != null ) {
 if (datsetseq !== alseq.getDatasetSequence$() ) {
@@ -408,7 +385,7 @@ modal=true;
 }, p$1);
 
 Clazz.newMeth(C$, 'initRangeAnnotationType$uk_ac_vamsas_objects_core_RangeAnnotation$jalview_datamodel_AlignmentAnnotation$IA', function (an, alan, gapMap) {
-var vSeg=Clazz.new_($I$(15));
+var vSeg=Clazz.new_($I$(15,1));
 vSeg.setStart$I(1);
 vSeg.setInclusive$Z(true);
 vSeg.setEnd$I(gapMap.length);
@@ -420,15 +397,15 @@ var ae;
 for (var a=0; a < alan.annotations.length; a++) {
 if (alan.annotations[a] == null ) {
 continue;
-}ae=Clazz.new_($I$(16));
+}ae=Clazz.new_($I$(16,1));
 ae.setDescription$S(alan.annotations[a].description);
-ae.addGlyph$uk_ac_vamsas_objects_core_Glyph(Clazz.new_($I$(17)));
+ae.addGlyph$uk_ac_vamsas_objects_core_Glyph(Clazz.new_($I$(17,1)));
 ae.getGlyph$I(0).setContent$S(alan.annotations[a].displayCharacter);
 if (alan.graph != 0) {
 ae.addValue$F(alan.annotations[a].value);
 }ae.setPosition$J(gapMap[a] + 1);
 if (alan.annotations[a].secondaryStructure != " ") {
-var ss=Clazz.new_($I$(17));
+var ss=Clazz.new_($I$(17,1));
 ss.setDict$S("aasecstr_3");
 ss.setContent$S(String.valueOf$C(alan.annotations[a].secondaryStructure));
 ae.addGlyph$uk_ac_vamsas_objects_core_Glyph(ss);
@@ -440,15 +417,15 @@ Clazz.newMeth(C$, 'saveDatasetSequenceAnnotation$java_util_HashMap$uk_ac_vamsas_
 var an=this.getjv2vObj$O(alan);
 var gapMap=p$1.getGapMap$java_util_HashMap$jalview_datamodel_AlignmentAnnotation.apply(this, [AlSeqMaps, alan]);
 if (an == null ) {
-an=Clazz.new_($I$(22));
+an=Clazz.new_($I$(22,1));
 p$1.initRangeAnnotationType$uk_ac_vamsas_objects_core_RangeAnnotation$jalview_datamodel_AlignmentAnnotation$IA.apply(this, [an, alan, gapMap]);
 an.setProvenance$uk_ac_vamsas_objects_core_Provenance(this.dummyProvenance$());
 p$1.setAnnotationType$uk_ac_vamsas_objects_core_RangeAnnotation$jalview_datamodel_AlignmentAnnotation.apply(this, [an, alan]);
 an.setGroup$S(Integer.toString$I(alan.graphGroup));
 if (alan.getThreshold$() != null  && alan.getThreshold$().displayed ) {
-an.addProperty$uk_ac_vamsas_objects_core_Property($I$(18).newProperty$S$S$S("threshold", "float", "" + new Float(alan.getThreshold$().value).toString()));
+an.addProperty$uk_ac_vamsas_objects_core_Property($I$(18,"newProperty$S$S$S",["threshold", "float", "" + new Float(alan.getThreshold$().value).toString()]));
 if (alan.getThreshold$().label != null ) {
-an.addProperty$uk_ac_vamsas_objects_core_Property($I$(18).newProperty$S$S$S("thresholdName", "string", "" + alan.getThreshold$().label));
+an.addProperty$uk_ac_vamsas_objects_core_Property($I$(18,"newProperty$S$S$S",["thresholdName", "string", "" + alan.getThreshold$().label]));
 }}(sref.getV_parent$()).addDataSetAnnotations$uk_ac_vamsas_objects_core_DataSetAnnotations(an);
 this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(alan, an);
 } else {
@@ -475,7 +452,7 @@ Clazz.newMeth(C$, 'saveAlignmentSequenceAnnotation$java_util_HashMap$uk_ac_vamsa
 var an=this.getjv2vObj$O(alan);
 var gapMap=p$1.getGapMap$java_util_HashMap$jalview_datamodel_AlignmentAnnotation.apply(this, [AlSeqMaps, alan]);
 if (an == null ) {
-an=Clazz.new_($I$(23));
+an=Clazz.new_($I$(23,1));
 p$1.initRangeAnnotationType$uk_ac_vamsas_objects_core_RangeAnnotation$jalview_datamodel_AlignmentAnnotation$IA.apply(this, [an, alan, gapMap]);
 an.setType$S("JalviewAnnotation");
 alsref.addAlignmentSequenceAnnotation$uk_ac_vamsas_objects_core_AlignmentSequenceAnnotation(an);
@@ -533,19 +510,18 @@ var cappdata=this.cdoc.getClientAppdata$();
 if (cappdata != null ) {
 if (cappdata.hasClientAppdata$()) {
 try {
-var fromxml=Clazz.new_($I$(24));
+var fromxml=Clazz.new_($I$(24,1));
 fromxml.attemptversion1parse=false;
 fromxml.setUniqueSetSuffix$S("");
 fromxml.setObjectMappingTables$java_util_Hashtable$java_util_IdentityHashMap(this.vobj2jv, this.jv2vobj);
 fromxml.setSkipList$java_util_Hashtable(this.skipList);
 var jprovider=((P$.VamsasAppDatastore$1||
-(function(){var C$=Clazz.newClass(P$, "VamsasAppDatastore$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.util.jarInputStreamProvider', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasAppDatastore$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.util.jarInputStreamProvider', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getFilename$', function () {
 return "Jalview Vamsas Document Client Data";
@@ -553,10 +529,10 @@ return "Jalview Vamsas Document Client Data";
 
 Clazz.newMeth(C$, 'getJarInputStream$', function () {
 $I$(5).log.debug$O("Returning client input stream for Jalview from Vamsas Document.");
-return Clazz.new_($I$(25).c$$java_io_InputStream,[this.$finals$.cappdata.getClientInputStream$()]);
+return Clazz.new_([this.$finals$.cappdata.getClientInputStream$()],$I$(25,1).c$$java_io_InputStream);
 });
 })()
-), Clazz.new_(P$.VamsasAppDatastore$1.$init$, [this, {cappdata: cappdata}]));
+), Clazz.new_(P$.VamsasAppDatastore$1.$init$,[this, {cappdata:cappdata}]));
 if (this.dojvsync) {
 fromxml.loadJalviewAlign$jalview_util_jarInputStreamProvider(jprovider);
 }} catch (e$$) {
@@ -578,19 +554,18 @@ throw e$$;
 }
 }}if (cappdata.hasUserAppdata$()) {
 try {
-var fromxml=Clazz.new_($I$(24));
+var fromxml=Clazz.new_($I$(24,1));
 fromxml.attemptversion1parse=false;
 fromxml.setUniqueSetSuffix$S("");
 fromxml.setSkipList$java_util_Hashtable(this.skipList);
 fromxml.setObjectMappingTables$java_util_Hashtable$java_util_IdentityHashMap(p$1.mapKeysToString$java_util_Hashtable.apply(this, [this.vobj2jv]), p$1.mapValuesToString$java_util_IdentityHashMap.apply(this, [this.jv2vobj]));
 var jarstream=((P$.VamsasAppDatastore$2||
-(function(){var C$=Clazz.newClass(P$, "VamsasAppDatastore$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.util.jarInputStreamProvider', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasAppDatastore$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.util.jarInputStreamProvider', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getFilename$', function () {
 return "Jalview Vamsas Document User Data";
@@ -598,10 +573,10 @@ return "Jalview Vamsas Document User Data";
 
 Clazz.newMeth(C$, 'getJarInputStream$', function () {
 $I$(5).log.debug$O("Returning user input stream for Jalview from Vamsas Document.");
-return Clazz.new_($I$(25).c$$java_io_InputStream,[this.$finals$.cappdata.getUserInputStream$()]);
+return Clazz.new_([this.$finals$.cappdata.getUserInputStream$()],$I$(25,1).c$$java_io_InputStream);
 });
 })()
-), Clazz.new_(P$.VamsasAppDatastore$2.$init$, [this, {cappdata: cappdata}]));
+), Clazz.new_(P$.VamsasAppDatastore$2.$init$,[this, {cappdata:cappdata}]));
 if (this.dojvsync) {
 fromxml.loadJalviewAlign$jalview_util_jarInputStreamProvider(jarstream);
 }} catch (e$$) {
@@ -656,7 +631,7 @@ af.closeMenuItem_actionPerformed$Z(false);
 seqsetidobj=newviewid;
 if (false) {
 if (mappings != null ) {
-$I$(26).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider($I$(4).instance).registerMappings$java_util_List(mappings);
+$I$(26,"getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider",[$I$(4).instance]).registerMappings$java_util_List(mappings);
 }}}}
 newviews=null;
 this.newAlignmentViews.clear$();
@@ -665,21 +640,21 @@ this.newAlignmentViews.clear$();
 Clazz.newMeth(C$, 'replaceJvObjMapping$O$O', function (oldjvobject, newjvobject) {
 var vobject=this.jv2vobj.remove$O(oldjvobject);
 if (vobject == null ) {
-throw Clazz.new_($I$(7).c$$S,[$I$(6).formatMessage$S$SA("error.implementation_error_old_jalview_object_not_bound", Clazz.array(String, -1, [oldjvobject.toString()]))]);
+throw Clazz.new_([$I$(6,"formatMessage$S$SA",["error.implementation_error_old_jalview_object_not_bound", Clazz.array(String, -1, [oldjvobject.toString()])])],$I$(7,1).c$$S);
 }if (newjvobject != null ) {
-this.jv2vobj.put$TK$TV(newjvobject, vobject);
-this.vobj2jv.put$TK$TV(vobject, newjvobject);
+this.jv2vobj.put$O$O(newjvobject, vobject);
+this.vobj2jv.put$O$O(vobject, newjvobject);
 }}, p$1);
 
 Clazz.newMeth(C$, 'updateJalviewClientAppdata$', function () {
 var cappdata=this.cdoc.getClientAppdata$();
 if (cappdata != null ) {
 try {
-var jxml=Clazz.new_($I$(24));
+var jxml=Clazz.new_($I$(24,1));
 jxml.setObjectMappingTables$java_util_Hashtable$java_util_IdentityHashMap(p$1.mapKeysToString$java_util_Hashtable.apply(this, [this.vobj2jv]), p$1.mapValuesToString$java_util_IdentityHashMap.apply(this, [this.jv2vobj]));
 jxml.setSkipList$java_util_Hashtable(this.skipList);
 if (this.dojvsync) {
-jxml.saveState$java_util_jar_JarOutputStream(Clazz.new_($I$(27).c$$java_io_OutputStream,[cappdata.getClientOutputStream$()]));
+jxml.saveState$java_util_jar_JarOutputStream(Clazz.new_([cappdata.getClientOutputStream$()],$I$(27,1).c$$java_io_OutputStream));
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 $I$(5).log.error$O$Throwable("Couldn\'t update jalview client application data. Giving up - local settings probably lost.", e);
@@ -692,21 +667,21 @@ $I$(5).log.error$O("Couldn\'t access client application data for vamsas session.
 }});
 
 Clazz.newMeth(C$, 'mapValuesToString$java_util_IdentityHashMap', function (jv2vobj2) {
-var mapped=Clazz.new_($I$(28));
+var mapped=Clazz.new_($I$(28,1));
 var keys=jv2vobj2.keySet$().iterator$();
 while (keys.hasNext$()){
 var key=keys.next$();
-mapped.put$TK$TV(key, jv2vobj2.get$O(key).toString());
+mapped.put$O$O(key, jv2vobj2.get$O(key).toString());
 }
 return mapped;
 }, p$1);
 
 Clazz.newMeth(C$, 'mapKeysToString$java_util_Hashtable', function (vobj2jv2) {
-var mapped=Clazz.new_($I$(3));
+var mapped=Clazz.new_($I$(3,1));
 var keys=vobj2jv2.keySet$().iterator$();
 while (keys.hasNext$()){
 var key=keys.next$();
-mapped.put$TK$TV(key.toString(), vobj2jv2.get$O(key));
+mapped.put$O$O(key.toString(), vobj2jv2.get$O(key));
 }
 return mapped;
 }, p$1);
@@ -726,21 +701,21 @@ var jremain=0;
 if (jdataset == null ) {
 $I$(5).log.debug$O("Initialising new jalview dataset fields");
 newds=true;
-dsseqs=Clazz.new_($I$(1));
+dsseqs=Clazz.new_($I$(1,1));
 } else {
 $I$(5).log.debug$O("Update jalview dataset from vamsas.");
 jremain=jdataset.getHeight$();
 dsseqs=jdataset.getSequences$();
 }for (i=0; i < iSize; i++) {
 var vdseq=dataset.getSequence$I(i);
-var dssync=Clazz.new_($I$(9).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_Sequence,[this, vdseq]);
+var dssync=Clazz.new_($I$(9,1).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_Sequence,[this, vdseq]);
 var dsseq=dssync.getJvobj$();
 if (dssync.isAddfromdoc$()) {
-dsseqs.add$TE(dsseq);
+dsseqs.add$O(dsseq);
 }if (vdseq.getDbRefCount$() > 0) {
 var dbref=vdseq.getDbRef$();
 for (var db=0; db < dbref.length; db++) {
-Clazz.new_($I$(29).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_DbRef$uk_ac_vamsas_objects_core_Sequence$jalview_datamodel_SequenceI,[this, dbref[db], vdseq, dsseq]);
+Clazz.new_($I$(29,1).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_DbRef$uk_ac_vamsas_objects_core_Sequence$jalview_datamodel_SequenceI,[this, dbref[db], vdseq, dsseq]);
 }
 dsseq.updatePDBIds$();
 }}
@@ -748,9 +723,9 @@ if (newds) {
 var seqs=Clazz.array($I$(30), [dsseqs.size$()]);
 for (i=0, iSize=dsseqs.size$(); i < iSize; i++) {
 seqs[i]=dsseqs.get$I(i);
-dsseqs.set$I$TE(i, null);
+dsseqs.set$I$O(i, null);
 }
-jdataset=Clazz.new_($I$(31).c$$jalview_datamodel_SequenceIA,[seqs]);
+jdataset=Clazz.new_($I$(31,1).c$$jalview_datamodel_SequenceIA,[seqs]);
 $I$(5).log.debug$O("New vamsas dataset imported into jalview.");
 this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(jdataset, dataset);
 }if (dataset.getDataSetAnnotations$() != null ) {
@@ -762,7 +737,7 @@ if (dsSeq == null ) {
 $I$(5).log.warn$O("Couldn't resolve jalview sequenceI for dataset object reference " + (dataset.getDataSetAnnotations$I(dsa).getSeqRef$I(0)).getVorbaId$().getId$());
 } else {
 if (dseta.getAnnotationElementCount$() == 0) {
-Clazz.new_($I$(32).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_DataSetAnnotations$jalview_datamodel_SequenceI,[this, dseta, dsSeq]);
+Clazz.new_($I$(32,1).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_DataSetAnnotations$jalview_datamodel_SequenceI,[this, dseta, dsSeq]);
 } else {
 $I$(5).log.warn$O("Ignoring dataset annotation with annotationElements. Not yet supported in jalview.");
 }}} else {
@@ -777,13 +752,13 @@ if (av != null ) {
 jal=(av.hasHiddenRows$()) ? av.getAlignment$().getHiddenSequences$().getFullAlignment$() : av.getAlignment$();
 }iSize=alignment.getAlignmentSequenceCount$();
 var refreshal=false;
-var newasAnnots=Clazz.new_($I$(1));
+var newasAnnots=Clazz.new_($I$(1,1));
 var gapChar=" ";
 if (jal != null ) {
 dsseqs=jal.getSequences$();
 gapChar=jal.getGapCharacter$();
 } else {
-dsseqs=Clazz.new_($I$(1));
+dsseqs=Clazz.new_($I$(1,1));
 }var valGapchar=alignment.getGapChar$().charAt$I(0);
 for (i=0; i < iSize; i++) {
 var valseq=alignment.getAlignmentSequence$I(i);
@@ -803,7 +778,7 @@ asa.createSequenceMapping$jalview_datamodel_SequenceI$I$Z(alseq, se[0], false);
 alseq.addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(asa);
 this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(asa, vasannot[a]);
 refreshal=true;
-newasAnnots.add$TE(asa);
+newasAnnots.add$O(asa);
 } else {
 if (vasannot[a].getModifiable$() == null ) {
 $I$(5).log.info$O("UNIMPLEMENTED: not recovering user modifiable sequence alignment annotation");
@@ -813,15 +788,15 @@ if (jal == null ) {
 var seqs=Clazz.array($I$(30), [dsseqs.size$()]);
 for (i=0, iSize=dsseqs.size$(); i < iSize; i++) {
 seqs[i]=dsseqs.get$I(i);
-dsseqs.set$I$TE(i, null);
+dsseqs.set$I$O(i, null);
 }
-jal=Clazz.new_($I$(31).c$$jalview_datamodel_SequenceIA,[seqs]);
+jal=Clazz.new_($I$(31,1).c$$jalview_datamodel_SequenceIA,[seqs]);
 $I$(5).log.debug$O("New vamsas alignment imported into jalview " + alignment.getVorbaId$().getId$());
 jal.setDataset$jalview_datamodel_AlignmentI(jdataset);
 }if (newasAnnots != null  && newasAnnots.size$() > 0 ) {
 for (var an=0, anSize=newasAnnots.size$(); an < anSize; an++) {
 jal.addAnnotation$jalview_datamodel_AlignmentAnnotation(newasAnnots.elementAt$I(an));
-newasAnnots.setElementAt$TE$I(null, an);
+newasAnnots.setElementAt$O$I(null, an);
 }
 newasAnnots=null;
 }if (alignment.getAlignmentAnnotationCount$() > 0) {
@@ -841,9 +816,9 @@ refreshal=true;
 }var alignFrame;
 if (av == null ) {
 $I$(5).log.debug$O("New alignframe for alignment " + alignment.getVorbaId$());
-alignFrame=Clazz.new_($I$(33).c$$jalview_datamodel_AlignmentI$I$I$S,[jal, 700, 500, alignment.getVorbaId$().toString()]);
+alignFrame=Clazz.new_([jal, 700, 500, alignment.getVorbaId$().toString()],$I$(33,1).c$$jalview_datamodel_AlignmentI$I$I$S);
 av=alignFrame.getViewport$();
-this.newAlignmentViews.addElement$TE(av);
+this.newAlignmentViews.addElement$O(av);
 var title=alignment.getProvenance$().getEntry$I(alignment.getProvenance$().getEntryCount$() - 1).getAction$();
 if (alignment.getPropertyCount$() > 0) {
 for (var p=0, pe=alignment.getPropertyCount$(); p < pe; p++) {
@@ -861,7 +836,7 @@ av.alignmentChanged$jalview_api_AlignmentViewPanel(alignFrame.alignPanel);
 alignFrame.alignPanel.adjustAnnotationHeight$();
 }}if (alignment.getTreeCount$() > 0) {
 for (var t=0; t < alignment.getTreeCount$(); t++) {
-var vstree=Clazz.new_($I$(19).c$$jalview_io_VamsasAppDatastore$jalview_gui_AlignFrame$uk_ac_vamsas_objects_core_Tree,[this, alignFrame, alignment.getTree$I(t)]);
+var vstree=Clazz.new_([this, alignFrame, alignment.getTree$I(t)],$I$(19,1).c$$jalview_io_VamsasAppDatastore$jalview_gui_AlignFrame$uk_ac_vamsas_objects_core_Tree);
 var tp=null;
 if (vstree.isValidTree$()) {
 tp=alignFrame.showNewickTree$jalview_io_NewickFile$S$jalview_datamodel_AlignmentView$I$I$I$I(vstree.getNewickTree$(), vstree.getTitle$(), vstree.getInputData$(), 600, 500, t * 20 + 50, t * 20 + 50);
@@ -885,7 +860,7 @@ for (var _ds=0, _nds=root.getDataSetCount$(); _ds < _nds; _ds++) {
 var dataset=root.getDataSet$I(_ds);
 if (dataset.getSequenceMappingCount$() > 0) {
 for (var sm=0, smCount=dataset.getSequenceMappingCount$(); sm < smCount; sm++) {
-var seqmap=Clazz.new_($I$(34).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_SequenceMapping,[this, dataset.getSequenceMapping$I(sm)]);
+var seqmap=Clazz.new_([this, dataset.getSequenceMapping$I(sm)],$I$(34,1).c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_objects_core_SequenceMapping);
 }
 }}
 }
@@ -894,7 +869,7 @@ return this.newAlignmentViews.size$();
 
 Clazz.newMeth(C$, 'findViewport$uk_ac_vamsas_objects_core_Alignment', function (alignment) {
 var av=null;
-var avs=$I$(4).getViewports$S(this.getvObj2jv$uk_ac_vamsas_client_Vobject(alignment));
+var avs=$I$(4,"getViewports$S",[this.getvObj2jv$uk_ac_vamsas_client_Vobject(alignment)]);
 if (avs != null ) {
 av=avs[0];
 }return av;
@@ -934,7 +909,7 @@ AeContent[C$.HASSECSTR]=true;
 $I$(5).log.debug$O("ignoring hydrophobicity glyph marker.");
 AeContent[C$.HASHPHOB]=true;
 var c=(dc=glyphs[g].getContent$()).charAt$I(0);
-colour=Clazz.new_($I$(36).c$$I$I$I,[c == "+" ? 255 : 0, c == "." ? 255 : 0, c == "-" ? 255 : 0]);
+colour=Clazz.new_([c == "+" ? 255 : 0, c == "." ? 255 : 0, c == "-" ? 255 : 0],$I$(36,1).c$$I$I$I);
 } else if (glyphs[g].getDict$().equals$O("utf8")) {
 dc=glyphs[g].getContent$();
 AeContent[C$.HASDC]=true;
@@ -948,9 +923,9 @@ if (ae[aa].getValueCount$() > 1) {
 $I$(5).log.warn$O("ignoring additional " + (ae[aa].getValueCount$() - 1) + " values in annotation element." );
 }val=ae[aa].getValue$I(0);
 }if (colour == null ) {
-anot[row][pos]=Clazz.new_($I$(35).c$$S$S$C$F,[(dc != null ) ? dc : "", desc, (ss != null ) ? ss.charAt$I(0) : " ", val]);
+anot[row][pos]=Clazz.new_([(dc != null ) ? dc : "", desc, (ss != null ) ? ss.charAt$I(0) : " ", val],$I$(35,1).c$$S$S$C$F);
 } else {
-anot[row][pos]=Clazz.new_($I$(35).c$$S$S$C$F$java_awt_Color,[(dc != null ) ? dc : "", desc, (ss != null ) ? ss.charAt$I(0) : " ", val, colour]);
+anot[row][pos]=Clazz.new_([(dc != null ) ? dc : "", desc, (ss != null ) ? ss.charAt$I(0) : " ", val, colour],$I$(35,1).c$$S$S$C$F$java_awt_Color);
 }} else {
 $I$(5).log.warn$O("Ignoring out of bound annotation element " + aa + " in " + annotation.getVorbaId$().getId$() );
 }}
@@ -992,7 +967,7 @@ type=2;
 } else if (props[p].getName$().equalsIgnoreCase$S("threshold")) {
 var val=null;
 try {
-val= new Float(props[p].getContent$());
+val=Float.valueOf$S(props[p].getContent$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 $I$(5).log.warn$O("Failed to parse threshold property");
@@ -1002,12 +977,12 @@ throw e;
 }
 if (val != null ) {
 if (gl == null ) {
-gl=Clazz.new_($I$(37).c$$F$S$java_awt_Color,[val.floatValue$(), "", $I$(36).black]);
+gl=Clazz.new_([val.floatValue$(), "", $I$(36).black],$I$(37,1).c$$F$S$java_awt_Color);
 } else {
 gl.value=val.floatValue$();
 }}} else if (props[p].getName$().equalsIgnoreCase$S("thresholdName")) {
 if (gl == null ) {
-gl=Clazz.new_($I$(37).c$$F$S$java_awt_Color,[0, "", $I$(36).black]);
+gl=Clazz.new_([0, "", $I$(36).black],$I$(37,1).c$$F$S$java_awt_Color);
 }gl.label=props[p].getContent$();
 }}
 }var jan=null;
@@ -1041,7 +1016,7 @@ var interval=arow[i].value - arow[lastval].value;
 interval /= i - lastval;
 var base=arow[lastval].value;
 for (var ip=lastval + 1, np=0; ip < i; np++, ip++) {
-arow[ip]=Clazz.new_($I$(35).c$$S$S$C$F,["", "", " ", interval * np + base]);
+arow[ip]=Clazz.new_($I$(35,1).c$$S$S$C$F,["", "", " ", interval * np + base]);
 }
 }}lastval=i;
 if (first) {
@@ -1061,10 +1036,10 @@ arow[i].displayCharacter= String.instantialize(arow[i].description);
 }} else {
 arow[i].displayCharacter=new Float(arow[i].value).toString() + "";
 }}}}
-jan=Clazz.new_($I$(38).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,[a_label, a_descr, arow, min, max, type]);
+jan=Clazz.new_($I$(38,1).c$$S$S$jalview_datamodel_AnnotationA$F$F$I,[a_label, a_descr, arow, min, max, type]);
 } else {
 if (annotation.getAnnotationElementCount$() == 0) {
-}jan=Clazz.new_($I$(38).c$$S$S$jalview_datamodel_AnnotationA,[a_label, a_descr, arow]);
+}jan=Clazz.new_($I$(38,1).c$$S$S$jalview_datamodel_AnnotationA,[a_label, a_descr, arow]);
 jan.setThreshold$jalview_datamodel_GraphLine(null);
 jan.annotationId=annotation.getVorbaId$().toString();
 }if (annotation.getLinkCount$() > 0) {
@@ -1089,7 +1064,7 @@ Clazz.newMeth(C$, 'getBounds$uk_ac_vamsas_objects_core_RangeType', function (dse
 if (dseta != null ) {
 var se=null;
 if (dseta.getSegCount$() > 0 && dseta.getPosCount$() > 0 ) {
-throw Clazz.new_($I$(7).c$$S,[$I$(6).getString$S("error.invalid_vamsas_rangetype_cannot_resolve_lists")]);
+throw Clazz.new_([$I$(6).getString$S("error.invalid_vamsas_rangetype_cannot_resolve_lists")],$I$(7,1).c$$S);
 }if (dseta.getSegCount$() > 0) {
 se=p$1.getSegRange$uk_ac_vamsas_objects_core_Seg$Z.apply(this, [dseta.getSeg$I(0), true]);
 for (var s=1, sSize=dseta.getSegCount$(); s < sSize; s++) {
@@ -1114,24 +1089,24 @@ se[1]=pos;
 }, p$1);
 
 Clazz.newMeth(C$, 'getMapping$uk_ac_vamsas_objects_core_RangeType', function (dseta) {
-var posList=Clazz.new_($I$(1));
+var posList=Clazz.new_($I$(1,1));
 if (dseta != null ) {
 var se=null;
 if (dseta.getSegCount$() > 0 && dseta.getPosCount$() > 0 ) {
-throw Clazz.new_($I$(7).c$$S,[$I$(6).getString$S("error.invalid_vamsas_rangetype_cannot_resolve_lists")]);
+throw Clazz.new_([$I$(6).getString$S("error.invalid_vamsas_rangetype_cannot_resolve_lists")],$I$(7,1).c$$S);
 }if (dseta.getSegCount$() > 0) {
 for (var s=0, sSize=dseta.getSegCount$(); s < sSize; s++) {
 se=p$1.getSegRange$uk_ac_vamsas_objects_core_Seg$Z.apply(this, [dseta.getSeg$I(s), false]);
 var se_end=se[1 - se[2]] + (se[2] == 0 ? 1 : -1);
 for (var p=se[se[2]]; p != se_end; p+=se[2] == 0 ? 1 : -1) {
-posList.add$TE( new Integer(p));
+posList.add$O(Integer.valueOf$I(p));
 }
 }
 } else if (dseta.getPosCount$() > 0) {
 var pos=dseta.getPos$I(0).getI$();
 for (var p=0, pSize=dseta.getPosCount$(); p < pSize; p++) {
 pos=dseta.getPos$I(p).getI$();
-posList.add$TE( new Integer(pos));
+posList.add$O(Integer.valueOf$I(pos));
 }
 }}if (posList != null  && posList.size$() > 0 ) {
 var range=Clazz.array(Integer.TYPE, [posList.size$()]);
@@ -1149,13 +1124,13 @@ var localRange=p$1.getMapping$uk_ac_vamsas_objects_core_RangeType.apply(this, [m
 var mappedRange=p$1.getMapping$uk_ac_vamsas_objects_core_RangeType.apply(this, [maprange.getMapped$()]);
 var lu=maprange.getLocal$().hasUnit$() ? maprange.getLocal$().getUnit$() : localu;
 var mu=maprange.getMapped$().hasUnit$() ? maprange.getMapped$().getUnit$() : mappedu;
-ml=Clazz.new_($I$(39).c$$IA$IA$I$I,[localRange, mappedRange, (lu|0), (mu|0)]);
+ml=Clazz.new_([localRange, mappedRange, (lu|0), (mu|0)],$I$(39,1).c$$IA$IA$I$I);
 return ml;
 }, p$1);
 
 Clazz.newMeth(C$, 'initRangeType$uk_ac_vamsas_objects_core_RangeType$java_util_List', function (mrt, ranges) {
 for (var range, $range = ranges.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
-var vSeg=Clazz.new_($I$(15));
+var vSeg=Clazz.new_($I$(15,1));
 vSeg.setStart$I(range[0]);
 vSeg.setEnd$I(range[1]);
 mrt.addSeg$uk_ac_vamsas_objects_core_Seg(vSeg);
@@ -1163,8 +1138,8 @@ mrt.addSeg$uk_ac_vamsas_objects_core_Seg(vSeg);
 }, p$1);
 
 Clazz.newMeth(C$, 'initMapType$uk_ac_vamsas_objects_core_MapType$jalview_util_MapList$Z', function (maprange, ml, setUnits) {
-maprange.setLocal$uk_ac_vamsas_objects_core_Local(Clazz.new_($I$(40)));
-maprange.setMapped$uk_ac_vamsas_objects_core_Mapped(Clazz.new_($I$(41)));
+maprange.setLocal$uk_ac_vamsas_objects_core_Local(Clazz.new_($I$(40,1)));
+maprange.setMapped$uk_ac_vamsas_objects_core_Mapped(Clazz.new_($I$(41,1)));
 p$1.initRangeType$uk_ac_vamsas_objects_core_RangeType$java_util_List.apply(this, [maprange.getLocal$(), ml.getFromRanges$()]);
 p$1.initRangeType$uk_ac_vamsas_objects_core_RangeType$java_util_List.apply(this, [maprange.getMapped$(), ml.getToRanges$()]);
 if (setUnits) {
@@ -1173,7 +1148,7 @@ maprange.getLocal$().setUnit$J(ml.getToRatio$());
 }}, p$1);
 
 Clazz.newMeth(C$, 'getJalviewProvenance$uk_ac_vamsas_objects_core_Provenance', function (prov) {
-var jprov=Clazz.new_($I$(42));
+var jprov=Clazz.new_($I$(42,1));
 for (var i=0; i < prov.getEntryCount$(); i++) {
 jprov.addEntry$S$S$java_util_Date$S(prov.getEntry$I(i).getUser$(), prov.getEntry$I(i).getAction$(), prov.getEntry$I(i).getDate$(), prov.getEntry$I(i).getId$());
 }
@@ -1185,19 +1160,19 @@ return this.dummyProvenance$S(null);
 });
 
 Clazz.newMeth(C$, 'dummyPEntry$S', function (action) {
-var entry=Clazz.new_($I$(43));
+var entry=Clazz.new_($I$(43,1));
 entry.setApp$S(this.provEntry.getApp$());
 if (action != null ) {
 entry.setAction$S(action);
 } else {
 entry.setAction$S("created.");
-}entry.setDate$java_util_Date(Clazz.new_($I$(44)));
+}entry.setDate$java_util_Date(Clazz.new_($I$(44,1)));
 entry.setUser$S(this.provEntry.getUser$());
 return entry;
 });
 
 Clazz.newMeth(C$, 'dummyProvenance$S', function (action) {
-var prov=Clazz.new_($I$(11));
+var prov=Clazz.new_($I$(11,1));
 prov.addEntry$uk_ac_vamsas_objects_core_Entry(this.dummyPEntry$S(action));
 return prov;
 });
@@ -1245,14 +1220,14 @@ var mps=acf.getProtMappings$();
 for (var smp=0; smp < mps.length; smp++) {
 var mfrom=this.getjv2vObj$O(dmps[smp]);
 if (mfrom != null ) {
-Clazz.new_($I$(34).c$$jalview_io_VamsasAppDatastore$jalview_datamodel_Mapping$uk_ac_vamsas_objects_core_SequenceType$uk_ac_vamsas_objects_core_DataSet,[this, mps[smp], mfrom, dataset]);
+Clazz.new_($I$(34,1).c$$jalview_io_VamsasAppDatastore$jalview_datamodel_Mapping$uk_ac_vamsas_objects_core_SequenceType$uk_ac_vamsas_objects_core_DataSet,[this, mps[smp], mfrom, dataset]);
 } else {
 $I$(5).log.warn$O("NO Vamsas Binding for local sequence! NOT CREATING MAPPING FOR " + dmps[smp].getDisplayId$Z(true) + " to " + mps[smp].getTo$().getName$() );
 }}
 }}
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_(Clazz.load('Exception').c$$S$Throwable,[$I$(6).formatMessage$S$SA("exception.couldnt_store_sequence_mappings", Clazz.array(String, -1, [title])), e]);
+throw Clazz.new_(Clazz.load('Exception').c$$S$Throwable,[$I$(6,"formatMessage$S$SA",["exception.couldnt_store_sequence_mappings", Clazz.array(String, -1, [title])]), e]);
 } else {
 throw e;
 }
@@ -1274,10 +1249,19 @@ this.skipList=skipList;
 
 Clazz.newMeth(C$, 'getDatastoreRegisty$', function () {
 if (this.dsReg == null ) {
-this.dsReg=Clazz.new_($I$(2));
+this.dsReg=Clazz.new_($I$(2,1));
 }return this.dsReg;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.HASSECSTR=0;
+C$.HASVALS=1;
+C$.HASHPHOB=2;
+C$.HASDC=3;
+C$.HASDESCSTR=4;
+C$.HASTWOSTATE=5;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

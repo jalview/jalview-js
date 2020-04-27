@@ -1,31 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.P3','javajs.util.PT','javajs.util.CU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PmeshReader", null, 'org.jmol.jvxl.readers.PolygonFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.P3','javajs.util.PT','javajs.util.CU']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "PmeshReader", null, 'org.jmol.jvxl.readers.PolygonFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isBinary=false;
-this.nPolygons=0;
-this.pmeshError=null;
-this.type=null;
-this.isClosedFace=false;
-this.fixedCount=0;
-this.onePerLine=false;
-this.vertexBase=0;
-this.vertexMap=null;
-this.tokens=null;
-this.iToken=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tokens=Clazz.array(String, [0]);
 this.iToken=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBinary','isClosedFace','onePerLine'],'I',['nPolygons','fixedCount','vertexBase','iToken'],'S',['pmeshError','type'],'O',['vertexMap','int[]','tokens','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -69,8 +55,8 @@ return false;
 });
 
 Clazz.newMeth(C$, 'getSurfaceData$', function () {
-if (this.readVerticesAndPolygons$()) $I$(2).info$S((this.isBinary ? "binary " : "") + this.type + " file contains " + this.nVertices + " vertices and " + this.nPolygons + " polygons for " + this.nTriangles + " triangles" );
- else $I$(2).error$S(this.params.fileName + ": " + (this.pmeshError == null  ? "Error reading pmesh data " : this.pmeshError) );
+if (this.readVerticesAndPolygons$()) (function(a,f){return f.apply(null,a)})([(this.isBinary ? "binary " : "") + this.type + " file contains " + this.nVertices + " vertices and " + this.nPolygons + " polygons for " + this.nTriangles + " triangles" ],$I$(2).info$S);
+ else (function(a,f){return f.apply(null,a)})([this.params.fileName + ": " + (this.pmeshError == null  ? "Error reading pmesh data " : this.pmeshError) ],$I$(2).error$S);
 });
 
 Clazz.newMeth(C$, 'readVerticesAndPolygons$', function () {
@@ -124,7 +110,7 @@ return false;
 }this.pmeshError=this.type + " ERROR: invalid vertex list";
 this.vertexMap=Clazz.array(Integer.TYPE, [this.nVertices]);
 for (var i=0; i < this.nVertices; i++) {
-var pt=$I$(3).new3$F$F$F(p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []));
+var pt=(function(a,f){return f.apply(null,a)})([p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, [])],$I$(3).new3$F$F$F);
 if (this.isAnisotropic) this.setVertexAnisotropy$javajs_util_T3(pt);
 if ($I$(2).debugging) $I$(2).debug$S(i + ": " + pt );
 this.vertexMap[i]=this.addVertexCopy$javajs_util_T3$F$I$Z(pt, 0, i, false);
@@ -173,7 +159,7 @@ color=p$1.getInt.apply(this, []);
 } else {
 var c=p$1.nextToken.apply(this, []);
 try {
-color=(c.startsWith$S("0x") ? $I$(4).parseIntRadix$S$I(c.substring$I(2), 16) : this.parseIntStr$S(c));
+color=(c.startsWith$S("0x") ? (function(a,f){return f.apply(null,a)})([c.substring$I(2), 16],$I$(4).parseIntRadix$S$I) : this.parseIntStr$S(c));
 } catch (e) {
 color=-2147483648;
 }
@@ -209,4 +195,4 @@ Clazz.newMeth(C$, 'getFloat', function () {
 return (this.isBinary ? this.binarydoc.readFloat$() : this.parseFloatStr$S(p$1.nextToken.apply(this, [])));
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

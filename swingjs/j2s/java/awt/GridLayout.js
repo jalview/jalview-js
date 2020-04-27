@@ -1,19 +1,12 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GridLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GridLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.hgap=0;
-this.vgap=0;
-this.rows=0;
-this.cols=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['hgap','vgap','rows','cols']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I$I$I.apply(this, [1, 0, 0, 0]);
@@ -24,7 +17,7 @@ C$.c$$I$I$I$I.apply(this, [rows, cols, 0, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (rows, cols, hgap, vgap) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if ((rows == 0) && (cols == 0) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["rows and cols cannot both be zero"]);
 }this.rows=rows;
@@ -96,7 +89,7 @@ w=d.width;
 }if (h < d.height) {
 h=d.height;
 }}
-return Clazz.new_($I$(1).c$$I$I,[insets.left + insets.right + ncols * w  + (ncols - 1) * this.hgap, insets.top + insets.bottom + nrows * h  + (nrows - 1) * this.vgap]);
+return Clazz.new_([insets.left + insets.right + ncols * w  + (ncols - 1) * this.hgap, insets.top + insets.bottom + nrows * h  + (nrows - 1) * this.vgap],$I$(1,1).c$$I$I);
 }});
 
 Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
@@ -120,7 +113,7 @@ w=d.width;
 }if (h < d.height) {
 h=d.height;
 }}
-return Clazz.new_($I$(1).c$$I$I,[insets.left + insets.right + ncols * w  + (ncols - 1) * this.hgap, insets.top + insets.bottom + nrows * h  + (nrows - 1) * this.vgap]);
+return Clazz.new_([insets.left + insets.right + ncols * w  + (ncols - 1) * this.hgap, insets.top + insets.bottom + nrows * h  + (nrows - 1) * this.vgap],$I$(1,1).c$$I$I);
 }});
 
 Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (parent) {
@@ -167,4 +160,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.getClass$().getName$() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + ",rows=" + this.rows + ",cols=" + this.cols + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

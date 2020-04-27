@@ -1,27 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Hashtable',['javax.swing.JSlider','.JSliderLabelUIResource'],'javax.swing.DefaultBoundedRangeModel',['javax.swing.JSlider','.ModelListener'],'javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent',['javax.swing.JSlider','.JSliderSmartHashtable']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSlider", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Hashtable',['javax.swing.JSlider','.JSliderLabelUIResource'],'javax.swing.DefaultBoundedRangeModel',['javax.swing.JSlider','.ModelListener'],'javax.swing.event.ChangeListener','javax.swing.event.ChangeEvent',['javax.swing.JSlider','.JSliderSmartHashtable']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSlider", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JComponent', 'javax.swing.SwingConstants');
+C$.$classes$=[['ModelListener',2],['JSliderSmartHashtable',0],['JSliderLabelUIResource',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.paintTicks=false;
-this.paintTrack=false;
-this.paintLabels=false;
-this.isInverted=false;
-this.sliderModel=null;
-this.majorTickSpacing=0;
-this.minorTickSpacing=0;
-this.snapToTicks=false;
-this.snapToValue=false;
-this.orientation=0;
-this.labelTable=null;
-this.changeListener=null;
-this.changeEvent=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.paintTicks=false;
@@ -32,7 +15,9 @@ this.snapToTicks=false;
 this.snapToValue=true;
 this.changeListener=this.createChangeListener$();
 this.changeEvent=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['paintTicks','paintTrack','paintLabels','isInverted','snapToTicks','snapToValue'],'I',['majorTickSpacing','minorTickSpacing','orientation'],'O',['sliderModel','javax.swing.BoundedRangeModel','labelTable','java.util.Dictionary','changeListener','javax.swing.event.ChangeListener','changeEvent','javax.swing.event.ChangeEvent']]]
 
 Clazz.newMeth(C$, 'checkOrientation$I', function (orientation) {
 switch (orientation) {
@@ -61,16 +46,16 @@ C$.c$$I$I$I$I.apply(this, [0, min, max, value]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (orientation, min, max, value) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.checkOrientation$I.apply(this, [orientation]);
 this.orientation=orientation;
-this.sliderModel=Clazz.new_($I$(3).c$$I$I$I$I,[value, 0, min, max]);
+this.sliderModel=Clazz.new_($I$(3,1).c$$I$I$I$I,[value, 0, min, max]);
 this.sliderModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
 this.updateUI$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_BoundedRangeModel', function (brm) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.orientation=0;
 this.setModel$javax_swing_BoundedRangeModel(brm);
 this.sliderModel.addChangeListener$javax_swing_event_ChangeListener(this.changeListener);
@@ -87,15 +72,15 @@ this.updateLabelUIs$();
 });
 
 Clazz.newMeth(C$, 'createChangeListener$', function () {
-return Clazz.new_($I$(4), [this, null]);
+return Clazz.new_($I$(4,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'addChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeChangeListener$javax_swing_event_ChangeListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getChangeListeners$', function () {
@@ -107,8 +92,8 @@ var listeners=this.listenerList.getListenerList$();
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(5),['stateChanged$javax_swing_event_ChangeEvent']) ) {
 if (this.changeEvent == null ) {
-this.changeEvent=Clazz.new_($I$(6).c$$O,[this]);
-}(listeners[i + 1]).stateChanged$(this.changeEvent);
+this.changeEvent=Clazz.new_($I$(6,1).c$$O,[this]);
+}(listeners[i + 1]).stateChanged$javax_swing_event_ChangeEvent(this.changeEvent);
 }}
 });
 
@@ -204,7 +189,7 @@ this.updateLabelUIs$();
 this.firePropertyChange$S$O$O("labelTable", oldTable, this.labelTable);
 if (labels !== oldTable ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'updateLabelUIs$', function () {
@@ -241,7 +226,7 @@ if (start > this.getMaximum$() || start < this.getMinimum$() ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Slider label start point out of range."]);
 }if (increment <= 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Label incremement must be > 0"]);
-}var table=Clazz.new_($I$(7).c$$I$I, [this, null, increment, start]);
+}var table=Clazz.new_($I$(7,1).c$$I$I,[this, null, increment, start]);
 if (this.getLabelTable$() != null  && (Clazz.instanceOf(this.getLabelTable$(), "java.beans.PropertyChangeListener")) ) {
 this.removePropertyChangeListener$java_beans_PropertyChangeListener(this.getLabelTable$());
 }this.addPropertyChangeListener$java_beans_PropertyChangeListener(table);
@@ -257,7 +242,7 @@ var oldValue=this.isInverted;
 this.isInverted=b;
 this.firePropertyChange$S$Z$Z("inverted", oldValue, this.isInverted);
 if (b != oldValue ) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getMajorTickSpacing$', function () {
@@ -271,7 +256,7 @@ if (this.labelTable == null  && this.getMajorTickSpacing$() > 0  && this.getPain
 this.setLabelTable$java_util_Dictionary(this.createStandardLabels$I(this.getMajorTickSpacing$()));
 }this.firePropertyChange$S$I$I("majorTickSpacing", oldValue, this.majorTickSpacing);
 if (this.majorTickSpacing != oldValue && this.getPaintTicks$() ) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getMinorTickSpacing$', function () {
@@ -283,7 +268,7 @@ var oldValue=this.minorTickSpacing;
 this.minorTickSpacing=n;
 this.firePropertyChange$S$I$I("minorTickSpacing", oldValue, this.minorTickSpacing);
 if (this.minorTickSpacing != oldValue && this.getPaintTicks$() ) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getSnapToTicks$', function () {
@@ -316,7 +301,7 @@ this.paintTicks=b;
 this.firePropertyChange$S$Z$Z("paintTicks", oldValue, this.paintTicks);
 if (this.paintTicks != oldValue ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getPaintTrack$', function () {
@@ -328,7 +313,7 @@ var oldValue=this.paintTrack;
 this.paintTrack=b;
 this.firePropertyChange$S$Z$Z("paintTrack", oldValue, this.paintTrack);
 if (this.paintTrack != oldValue ) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getPaintLabels$', function () {
@@ -343,7 +328,7 @@ this.setLabelTable$java_util_Dictionary(this.createStandardLabels$I(this.getMajo
 }this.firePropertyChange$S$Z$Z("paintLabels", oldValue, this.paintLabels);
 if (this.paintLabels != oldValue ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'paramString$', function () {
@@ -357,97 +342,87 @@ var orientationString=(this.orientation == 0 ? "HORIZONTAL" : "VERTICAL");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",isInverted=" + isInvertedString + ",majorTickSpacing=" + this.majorTickSpacing + ",minorTickSpacing=" + this.minorTickSpacing + ",orientation=" + orientationString + ",paintLabels=" + paintLabelsString + ",paintTicks=" + paintTicksString + ",paintTrack=" + paintTrackString + ",snapToTicks=" + snapToTicksString + ",snapToValue=" + snapToValueString ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.JSlider, "ModelListener", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSlider, "ModelListener", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent', function (e) {
 this.this$0.fireStateChanged$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSlider, "JSliderSmartHashtable", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSlider, "JSliderSmartHashtable", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.Hashtable', 'java.beans.PropertyChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.increment=0;
-this.start=0;
-this.startAtMin=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.increment=0;
 this.start=0;
 this.startAtMin=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['startAtMin'],'I',['increment','start']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (increment, start) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.increment=increment;
 this.start=start;
 this.startAtMin=start == this.this$0.getMinimum$.apply(this.this$0, []);
 this.createLabels$();
 }, 1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (e) {
 if (e.getPropertyName$().equals$O("minimum") && this.startAtMin ) {
 this.start=this.this$0.getMinimum$.apply(this.this$0, []);
 }if (e.getPropertyName$().equals$O("minimum") || e.getPropertyName$().equals$O("maximum") ) {
 var keys=this.this$0.getLabelTable$.apply(this.this$0, []).keys$();
 var key=null;
-var hashtable=Clazz.new_($I$(1));
+var hashtable=Clazz.new_($I$(1,1));
 while (keys.hasMoreElements$()){
 key=keys.nextElement$();
 var value=this.this$0.getLabelTable$.apply(this.this$0, []).get$O(key);
 if (!(Clazz.instanceOf(value, "javax.swing.JSlider.JSliderLabelUIResource"))) {
-hashtable.put$TK$TV(key, value);
+hashtable.put$O$O(key, value);
 }}
 this.clear$();
 this.createLabels$();
 keys=hashtable.keys$();
 while (keys.hasMoreElements$()){
 key=keys.nextElement$();
-this.put$TK$TV(key, hashtable.get$O(key));
+this.put$O$O(key, hashtable.get$O(key));
 }
 (e.getSource$()).setLabelTable$java_util_Dictionary(this);
 }});
 
 Clazz.newMeth(C$, 'createLabels$', function () {
 for (var labelIndex=this.start; labelIndex <= this.this$0.getMaximum$.apply(this.this$0, []); labelIndex+=this.increment) {
-this.put$TK$TV( new Integer(labelIndex), Clazz.new_($I$(2).c$$S$I, [this, null, "" + labelIndex, 0]));
+this.put$O$O("" + (labelIndex), Clazz.new_($I$(2,1).c$$S$I,[this, null, "" + labelIndex, 0]));
 }
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSlider, "JSliderLabelUIResource", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSlider, "JSliderLabelUIResource", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JLabel', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$S$I', function (text, alignment) {
-C$.superclazz.c$$S$I.apply(this, [text, alignment]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S$I.apply(this,[text, alignment]);C$.$init$.apply(this);
 this.setName$S("Slider.label");
 }, 1);
 
@@ -472,4 +447,4 @@ return this.this$0.getForeground$.apply(this.this$0, []);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

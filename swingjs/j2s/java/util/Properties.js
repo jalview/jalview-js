@@ -1,38 +1,36 @@
-(function(){var P$=java.util,p$1={},I$=[[0,['java.util.Properties','.LineReader'],'java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Properties", function(){
+(function(){var P$=java.util,p$1={},I$=[[0,'java.util.ServiceConfigurationError','java.util.ServiceLoader','sun.util.spi.XmlPropertiesProvider','java.security.AccessController',['java.util.Properties','.XmlSupport'],'jdk.internal.util.xml.BasicXmlPropertiesProvider',['java.util.Properties','.LineReader'],'StringBuffer','java.io.BufferedWriter','java.io.OutputStreamWriter','java.util.Objects','java.util.Hashtable']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Properties", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.Hashtable');
+C$.$classes$=[['LineReader',0],['XmlSupport',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.defaults=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['defaults','java.util.Properties']]
+,['O',['hexDigit','char[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$java_util_Properties.apply(this, [null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Properties', function (defaults) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.defaults=defaults;
 }, 1);
 
 Clazz.newMeth(C$, 'setProperty$S$S', function (key, value) {
-return this.put$TK$TV(key, value);
+return this.put$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'load$java_io_Reader', function (reader) {
-p$1.load0$java_util_Properties_LineReader.apply(this, [Clazz.new_($I$(1).c$$java_io_Reader, [this, null, reader])]);
+p$1.load0$java_util_Properties_LineReader.apply(this, [Clazz.new_($I$(7,1).c$$java_io_Reader,[this, null, reader])]);
 });
 
 Clazz.newMeth(C$, 'load$java_io_InputStream', function (inStream) {
-p$1.load0$java_util_Properties_LineReader.apply(this, [Clazz.new_($I$(1).c$$java_io_InputStream, [this, null, inStream])]);
+p$1.load0$java_util_Properties_LineReader.apply(this, [Clazz.new_($I$(7,1).c$$java_io_InputStream,[this, null, inStream])]);
 });
 
 Clazz.newMeth(C$, 'load0$java_util_Properties_LineReader', function (lr) {
@@ -75,7 +73,7 @@ break;
 }
 var key=p$1.loadConvert$CA$I$I$CA.apply(this, [lr.lineBuf, 0, keyLen, convtBuf]);
 var value=p$1.loadConvert$CA$I$I$CA.apply(this, [lr.lineBuf, valueStart, limit - valueStart, convtBuf]);
-this.put$TK$TV(key, value);
+this.put$O$O(key, value);
 }
 }, p$1);
 
@@ -143,6 +141,143 @@ out[outLen++]=aChar;
 return  String.instantialize(out, 0, outLen);
 }, p$1);
 
+Clazz.newMeth(C$, 'saveConvert$S$Z$Z', function (theString, escapeSpace, escapeUnicode) {
+var len=theString.length$();
+var bufLen=len * 2;
+if (bufLen < 0) {
+bufLen=2147483647;
+}var outBuffer=Clazz.new_($I$(8,1).c$$I,[bufLen]);
+for (var x=0; x < len; x++) {
+var aChar=theString.charAt$I(x);
+if ((aChar.$c() > 61 ) && (aChar.$c() < 127 ) ) {
+if (aChar == "\\") {
+outBuffer.append$C("\\");
+outBuffer.append$C("\\");
+continue;
+}outBuffer.append$C(aChar);
+continue;
+}switch (aChar.$c()) {
+case 32:
+if (x == 0 || escapeSpace ) outBuffer.append$C("\\");
+outBuffer.append$C(" ");
+break;
+case 9:
+outBuffer.append$C("\\");
+outBuffer.append$C("t");
+break;
+case 10:
+outBuffer.append$C("\\");
+outBuffer.append$C("n");
+break;
+case 13:
+outBuffer.append$C("\\");
+outBuffer.append$C("r");
+break;
+case 12:
+outBuffer.append$C("\\");
+outBuffer.append$C("f");
+break;
+case 61:
+case 58:
+case 35:
+case 33:
+outBuffer.append$C("\\");
+outBuffer.append$C(aChar);
+break;
+default:
+if (!!(((aChar.$c() < 32 ) || (aChar.$c() > 126 ) ) & escapeUnicode)) {
+outBuffer.append$C("\\");
+outBuffer.append$C("u");
+outBuffer.append$C(C$.toHex$I((aChar.$c() >> 12) & 15));
+outBuffer.append$C(C$.toHex$I((aChar.$c() >> 8) & 15));
+outBuffer.append$C(C$.toHex$I((aChar.$c() >> 4) & 15));
+outBuffer.append$C(C$.toHex$I(aChar.$c() & 15));
+} else {
+outBuffer.append$C(aChar);
+}}
+}
+return outBuffer.toString();
+}, p$1);
+
+Clazz.newMeth(C$, 'writeComments$java_io_BufferedWriter$S', function (bw, comments) {
+bw.write$S("#");
+var len=comments.length$();
+var current=0;
+var last=0;
+var uu=Clazz.array(Character.TYPE, [6]);
+uu[0]="\\";
+uu[1]="u";
+while (current < len){
+var c=comments.charAt$I(current);
+if (c > "\u00ff" || c == "\n"  || c == "\r" ) {
+if (last != current) bw.write$S(comments.substring$I$I(last, current));
+if (c > "\u00ff") {
+uu[2]=C$.toHex$I((c.$c() >> 12) & 15);
+uu[3]=C$.toHex$I((c.$c() >> 8) & 15);
+uu[4]=C$.toHex$I((c.$c() >> 4) & 15);
+uu[5]=C$.toHex$I(c.$c() & 15);
+bw.write$S( String.instantialize(uu));
+} else {
+bw.newLine$();
+if (c == "\r" && current != len - 1  && comments.charAt$I(current + 1) == "\n" ) {
+current++;
+}if (current == len - 1 || (comments.charAt$I(current + 1) != "#" && comments.charAt$I(current + 1) != "!" ) ) bw.write$S("#");
+}last=current + 1;
+}current++;
+}
+if (last != current) bw.write$S(comments.substring$I$I(last, current));
+bw.newLine$();
+}, 1);
+
+Clazz.newMeth(C$, 'save$java_io_OutputStream$S', function (out, comments) {
+try {
+this.store$java_io_OutputStream$S(out, comments);
+} catch (e) {
+if (Clazz.exceptionOf(e,"java.io.IOException")){
+} else {
+throw e;
+}
+}
+});
+
+Clazz.newMeth(C$, 'store$java_io_Writer$S', function (writer, comments) {
+p$1.store0$java_io_BufferedWriter$S$Z.apply(this, [(Clazz.instanceOf(writer, "java.io.BufferedWriter")) ? writer : Clazz.new_($I$(9,1).c$$java_io_Writer,[writer]), comments, false]);
+});
+
+Clazz.newMeth(C$, 'store$java_io_OutputStream$S', function (out, comments) {
+p$1.store0$java_io_BufferedWriter$S$Z.apply(this, [Clazz.new_([Clazz.new_($I$(10,1).c$$java_io_OutputStream$S,[out, "8859_1"])],$I$(9,1).c$$java_io_Writer), comments, true]);
+});
+
+Clazz.newMeth(C$, 'store0$java_io_BufferedWriter$S$Z', function (bw, comments, escUnicode) {
+if (comments != null ) {
+C$.writeComments$java_io_BufferedWriter$S(bw, comments);
+}bw.write$S("#" + Clazz.new_(java.util.Date).toString());
+bw.newLine$();
+{
+for (var e=this.keys$(); e.hasMoreElements$(); ) {
+var key=e.nextElement$();
+var val=this.get$O(key);
+key=p$1.saveConvert$S$Z$Z.apply(this, [key, true, escUnicode]);
+val=p$1.saveConvert$S$Z$Z.apply(this, [val, false, escUnicode]);
+bw.write$S(key + "=" + val );
+bw.newLine$();
+}
+}bw.flush$();
+}, p$1);
+
+Clazz.newMeth(C$, 'loadFromXML$java_io_InputStream', function ($in) {
+$I$(5,"load$java_util_Properties$java_io_InputStream",[this, $I$(11).requireNonNull$O($in)]);
+$in.close$();
+});
+
+Clazz.newMeth(C$, 'storeToXML$java_io_OutputStream$S', function (os, comment) {
+this.storeToXML$java_io_OutputStream$S$S(os, comment, "UTF-8");
+});
+
+Clazz.newMeth(C$, 'storeToXML$java_io_OutputStream$S$S', function (os, comment, encoding) {
+$I$(5,"save$java_util_Properties$java_io_OutputStream$S$S",[this, $I$(11).requireNonNull$O(os), comment, $I$(11).requireNonNull$O(encoding)]);
+});
+
 Clazz.newMeth(C$, 'getProperty$S', function (key) {
 var oval=C$.superclazz.prototype.get$O.apply(this, [key]);
 var sval=(Clazz.instanceOf(oval, "java.lang.String")) ? oval : null;
@@ -155,15 +290,41 @@ return (val == null ) ? defaultValue : val;
 });
 
 Clazz.newMeth(C$, 'propertyNames$', function () {
-var h=Clazz.new_($I$(2));
+var h=Clazz.new_($I$(12,1));
 p$1.enumerate$java_util_Hashtable.apply(this, [h]);
 return h.keys$();
 });
 
 Clazz.newMeth(C$, 'stringPropertyNames$', function () {
-var h=Clazz.new_($I$(2));
+var h=Clazz.new_($I$(12,1));
 p$1.enumerateStringProperties$java_util_Hashtable.apply(this, [h]);
 return h.keySet$();
+});
+
+Clazz.newMeth(C$, 'list$java_io_PrintStream', function (out) {
+out.println$S("-- listing properties --");
+var h=Clazz.new_($I$(12,1));
+p$1.enumerate$java_util_Hashtable.apply(this, [h]);
+for (var e=h.keys$(); e.hasMoreElements$(); ) {
+var key=e.nextElement$();
+var val=h.get$O(key);
+if (val.length$() > 40) {
+val=val.substring$I$I(0, 37) + "...";
+}out.println$S(key + "=" + val );
+}
+});
+
+Clazz.newMeth(C$, 'list$java_io_PrintWriter', function (out) {
+out.println$S("-- listing properties --");
+var h=Clazz.new_($I$(12,1));
+p$1.enumerate$java_util_Hashtable.apply(this, [h]);
+for (var e=h.keys$(); e.hasMoreElements$(); ) {
+var key=e.nextElement$();
+var val=h.get$O(key);
+if (val.length$() > 40) {
+val=val.substring$I$I(0, 37) + "...";
+}out.println$S(key + "=" + val );
+}
 });
 
 Clazz.newMeth(C$, 'enumerate$java_util_Hashtable', function (h) {
@@ -171,7 +332,7 @@ if (this.defaults != null ) {
 p$1.enumerate$java_util_Hashtable.apply(this.defaults, [h]);
 }for (var e=this.keys$(); e.hasMoreElements$(); ) {
 var key=e.nextElement$();
-h.put$TK$TV(key, this.get$O(key));
+h.put$O$O(key, this.get$O(key));
 }
 }, p$1);
 
@@ -182,42 +343,40 @@ p$1.enumerateStringProperties$java_util_Hashtable.apply(this.defaults, [h]);
 var k=e.nextElement$();
 var v=this.get$O(k);
 if (Clazz.instanceOf(k, "java.lang.String") && Clazz.instanceOf(v, "java.lang.String") ) {
-h.put$TK$TV(k, v);
+h.put$O$O(k, v);
 }}
 }, p$1);
+
+Clazz.newMeth(C$, 'toHex$I', function (nibble) {
+return C$.hexDigit[(nibble & 15)];
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.hexDigit=Clazz.array(Character.TYPE, -1, ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Properties, "LineReader", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Properties, "LineReader", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inByteBuf=null;
-this.inCharBuf=null;
-this.lineBuf=null;
-this.inLimit=0;
-this.inOff=0;
-this.inStream=null;
-this.reader=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.lineBuf=Clazz.array(Character.TYPE, [1024]);
 this.inLimit=0;
 this.inOff=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['inLimit','inOff'],'O',['inByteBuf','byte[]','inCharBuf','char[]','+lineBuf','inStream','java.io.InputStream','reader','java.io.Reader']]]
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function (inStream) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.inStream=inStream;
 this.inByteBuf=Clazz.array(Byte.TYPE, [8192]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_io_Reader', function (reader) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.reader=reader;
 this.inCharBuf=Clazz.array(Character.TYPE, [8192]);
 }, 1);
@@ -238,6 +397,8 @@ this.inOff=0;
 if (this.inLimit <= 0) {
 if (len == 0 || isCommentLine ) {
 return -1;
+}if (precedingBackslash) {
+len--;
 }return len;
 }}if (this.inStream != null ) {
 c=String.fromCharCode((255 & this.inByteBuf[this.inOff++]));
@@ -281,7 +442,9 @@ continue;
 this.inLimit=(this.inStream == null ) ? this.reader.read$CA(this.inCharBuf) : this.inStream.read$BA(this.inByteBuf);
 this.inOff=0;
 if (this.inLimit <= 0) {
-return len;
+if (precedingBackslash) {
+len--;
+}return len;
 }}if (precedingBackslash) {
 len-=1;
 skipWhiteSpace=true;
@@ -296,5 +459,73 @@ return len;
 
 Clazz.newMeth(C$);
 })()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.Properties, "XmlSupport", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+});
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['PROVIDER','sun.util.spi.XmlPropertiesProvider']]]
+
+Clazz.newMeth(C$, 'loadProviderFromProperty$ClassLoader', function (cl) {
+var cn=System.getProperty$S("sun.util.spi.XmlPropertiesProvider");
+if (cn == null ) return null;
+try {
+var c=Clazz.forName(cn, true, cl);
+return c.newInstance$();
+} catch (x) {
+if (Clazz.exceptionOf(x,"ClassNotFoundException") || Clazz.exceptionOf(x,"IllegalAccessException") || Clazz.exceptionOf(x,"InstantiationException")){
+throw Clazz.new_($I$(1,1).c$$S$Throwable,[null, x]);
+} else {
+throw x;
+}
+}
+}, 1);
+
+Clazz.newMeth(C$, 'loadProviderAsService$ClassLoader', function (cl) {
+var iterator=$I$(2,"load$Class$ClassLoader",[Clazz.getClass($I$(3)), cl]).iterator$();
+return iterator.hasNext$() ? iterator.next$() : null;
+}, 1);
+
+Clazz.newMeth(C$, 'loadProvider$', function () {
+return $I$(4,"doPrivileged$java_security_PrivilegedAction",[((P$.Properties$XmlSupport$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "Properties$XmlSupport$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'run$', function () {
+var cl=ClassLoader.getSystemClassLoader$();
+var provider=$I$(5).loadProviderFromProperty$ClassLoader(cl);
+if (provider != null ) return provider;
+provider=$I$(5).loadProviderAsService$ClassLoader(cl);
+if (provider != null ) return provider;
+return Clazz.new_($I$(6,1));
+});
+})()
+), Clazz.new_(P$.Properties$XmlSupport$1.$init$,[this, null]))]);
+}, 1);
+
+Clazz.newMeth(C$, 'load$java_util_Properties$java_io_InputStream', function (props, $in) {
+C$.PROVIDER.load$java_util_Properties$java_io_InputStream(props, $in);
+}, 1);
+
+Clazz.newMeth(C$, 'save$java_util_Properties$java_io_OutputStream$S$S', function (props, os, comment, encoding) {
+C$.PROVIDER.store$java_util_Properties$java_io_OutputStream$S$S(props, os, comment, encoding);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.PROVIDER=C$.loadProvider$();
+};
+
+Clazz.newMeth(C$);
+})()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

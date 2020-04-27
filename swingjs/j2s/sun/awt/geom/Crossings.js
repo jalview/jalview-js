@@ -1,30 +1,21 @@
-(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'java.util.Vector',['sun.awt.geom.Crossings','.EvenOdd'],'sun.awt.geom.Curve']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Crossings", function(){
+(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'java.util.Vector',['sun.awt.geom.Crossings','.EvenOdd'],'sun.awt.geom.Curve']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Crossings", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['EvenOdd',25],['NonZero',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.limit=0;
-this.yranges=null;
-this.xlo=0;
-this.ylo=0;
-this.xhi=0;
-this.yhi=0;
-this.tmp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.limit=0;
 this.yranges=Clazz.array(Double.TYPE, [10]);
-this.tmp=Clazz.new_($I$(1));
-}, 1);
+this.tmp=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['D',['xlo','ylo','xhi','yhi'],'I',['limit'],'O',['yranges','double[]','tmp','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'c$$D$D$D$D', function (xlo, ylo, xhi, yhi) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.xlo=xlo;
 this.ylo=ylo;
 this.xhi=xhi;
@@ -61,7 +52,7 @@ return (this.limit == 0);
 });
 
 Clazz.newMeth(C$, 'findCrossings$java_util_Vector$D$D$D$D', function (curves, xlo, ylo, xhi, yhi) {
-var cross=Clazz.new_($I$(2).c$$D$D$D$D,[xlo, ylo, xhi, yhi]);
+var cross=Clazz.new_($I$(2,1).c$$D$D$D$D,[xlo, ylo, xhi, yhi]);
 var enum_=curves.elements$();
 while (enum_.hasMoreElements$()){
 var c=enum_.nextElement$();
@@ -159,19 +150,17 @@ this.tmp.clear$();
 return false;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Crossings, "EvenOdd", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Crossings, "EvenOdd", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.geom.Crossings');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D', function (xlo, ylo, xhi, yhi) {
-C$.superclazz.c$$D$D$D$D.apply(this, [xlo, ylo, xhi, yhi]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$D$D$D$D.apply(this,[xlo, ylo, xhi, yhi]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'covers$D$D', function (ystart, yend) {
@@ -243,24 +232,19 @@ this.yranges[to++]=yend;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Crossings, "NonZero", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Crossings, "NonZero", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.geom.Crossings');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.crosscounts=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['crosscounts','int[]']]]
 
 Clazz.newMeth(C$, 'c$$D$D$D$D', function (xlo, ylo, xhi, yhi) {
-C$.superclazz.c$$D$D$D$D.apply(this, [xlo, ylo, xhi, yhi]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$D$D$D$D.apply(this,[xlo, ylo, xhi, yhi]);C$.$init$.apply(this);
 this.crosscounts=Clazz.array(Integer.TYPE, [(this.yranges.length/2|0)]);
 }, 1);
 
@@ -360,4 +344,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

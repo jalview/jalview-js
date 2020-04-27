@@ -1,25 +1,18 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),p$1={},I$=[[0,'java.awt.Color','java.awt.RenderingHints','javax.swing.JColorChooser','fr.orsay.lri.varna.models.rna.ModeleColorMap','java.awt.Cursor']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GradientEditorPanel", null, 'javax.swing.JPanel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.components"),p$1={},I$=[[0,'java.awt.Color','java.awt.RenderingHints','javax.swing.JColorChooser','fr.orsay.lri.varna.models.rna.ModeleColorMap','java.awt.Cursor']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GradientEditorPanel", null, 'javax.swing.JPanel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._mcm=null;
-this.EDGES=null;
-this.BUTTONS=null;
-this._selectedIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.EDGES=$I$(1).gray.brighter$();
 this.BUTTONS=$I$(1).LIGHT_GRAY.brighter$();
 this._selectedIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['_selectedIndex'],'O',['_mcm','fr.orsay.lri.varna.models.rna.ModeleColorMap','EDGES','java.awt.Color','+BUTTONS']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_ModeleColorMap', function (mcm) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._mcm=mcm;
 this.addMouseListener$java_awt_event_MouseListener(this);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
@@ -59,7 +52,7 @@ Clazz.newMeth(C$, 'alterColor$java_awt_Color$I', function (c, inc) {
 var nr=Math.min(Math.max(c.getRed$() + inc, 0), 255);
 var ng=Math.min(Math.max(c.getGreen$() + inc, 0), 255);
 var nb=Math.min(Math.max(c.getBlue$() + inc, 0), 255);
-return Clazz.new_($I$(1).c$$I$I$I,[nr, ng, nb]);
+return Clazz.new_($I$(1,1).c$$I$I$I,[nr, ng, nb]);
 }, p$1);
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
@@ -76,7 +69,7 @@ g2d.setColor$java_awt_Color(this._mcm.getColorForValue$D(val));
 g2d.drawLine$I$I$I$I(i, 0, i, height);
 }
 for (var i=0; i < this._mcm.getNumColors$(); i++) {
-var val=(this._mcm.getValueAt$I(i)).doubleValue$();
+var val=(this._mcm.getValueAt$I(i)).valueOf();
 var c=this._mcm.getColorAt$I(i);
 var norm=(val - this._mcm.getMinValue$()) / (this._mcm.getMaxValue$() - this._mcm.getMinValue$());
 var x=((norm * (this.getWidth$() - 1))|0);
@@ -135,7 +128,7 @@ return Math.abs(p$1.getXPos$I.apply(this, [this._selectedIndex]) - x) <= 5;
 }, p$1);
 
 Clazz.newMeth(C$, 'getXPos$I', function (i) {
-var val=(this._mcm.getValueAt$I(i)).doubleValue$();
+var val=(this._mcm.getValueAt$I(i)).valueOf();
 var norm=(val - this._mcm.getMinValue$()) / (this._mcm.getMaxValue$() - this._mcm.getMinValue$());
 return ((norm * (this.getWidth$() - 1))|0);
 }, p$1);
@@ -160,7 +153,7 @@ if (p$1.isRemove$I$I.apply(this, [arg0.getX$(), arg0.getY$()])) {
 p$1.removeEntry$I.apply(this, [this._selectedIndex]);
 } else if (Math.abs(p$1.getXPos$I.apply(this, [this._selectedIndex]) - arg0.getX$()) > 5) {
 var val=this._mcm.getMinValue$() + arg0.getX$() * (this._mcm.getMaxValue$() - this._mcm.getMinValue$()) / (this.getWidth$() - 1);
-var nc=$I$(3).showDialog$java_awt_Component$S$java_awt_Color(this, "Choose new color", this._mcm.getColorAt$I(this._selectedIndex));
+var nc=$I$(3,"showDialog$java_awt_Component$S$java_awt_Color",[this, "Choose new color", this._mcm.getColorAt$I(this._selectedIndex)]);
 if (nc != null ) {
 this._mcm.addColor$D$java_awt_Color(val, nc);
 this.repaint$();
@@ -178,9 +171,9 @@ this.requestFocus$();
 this._selectedIndex=p$1.locateSelectedIndex$I$I.apply(this, [arg0.getX$(), arg0.getY$()]);
 if (this._selectedIndex != -1) {
 if (p$1.isChooseColor$I$I.apply(this, [arg0.getX$(), arg0.getY$()])) {
-var nc=$I$(3).showDialog$java_awt_Component$S$java_awt_Color(this, "Choose new color", this._mcm.getColorAt$I(this._selectedIndex));
+var nc=$I$(3,"showDialog$java_awt_Component$S$java_awt_Color",[this, "Choose new color", this._mcm.getColorAt$I(this._selectedIndex)]);
 if (nc != null ) {
-var nv=(this._mcm.getValueAt$I(this._selectedIndex)).doubleValue$();
+var nv=(this._mcm.getValueAt$I(this._selectedIndex)).valueOf();
 p$1.replaceEntry$I$java_awt_Color$D.apply(this, [this._selectedIndex, nc, nv]);
 this._selectedIndex=-1;
 }}}});
@@ -190,10 +183,10 @@ this._selectedIndex=-1;
 });
 
 Clazz.newMeth(C$, 'replaceEntry$I$java_awt_Color$D', function (index, nc, nv) {
-var cm=Clazz.new_($I$(4));
+var cm=Clazz.new_($I$(4,1));
 for (var i=0; i < this._mcm.getNumColors$(); i++) {
 if (i != index) {
-var val=(this._mcm.getValueAt$I(i)).doubleValue$();
+var val=(this._mcm.getValueAt$I(i)).valueOf();
 var c=this._mcm.getColorAt$I(i);
 cm.addColor$D$java_awt_Color(val, c);
 } else {
@@ -205,10 +198,10 @@ this.firePropertyChange$S$O$O("PaletteChanged", "a", "b");
 }, p$1);
 
 Clazz.newMeth(C$, 'removeEntry$I', function (index) {
-var cm=Clazz.new_($I$(4));
+var cm=Clazz.new_($I$(4,1));
 for (var i=0; i < this._mcm.getNumColors$(); i++) {
 if (i != index) {
-var val=(this._mcm.getValueAt$I(i)).doubleValue$();
+var val=(this._mcm.getValueAt$I(i)).valueOf();
 var c=this._mcm.getColorAt$I(i);
 cm.addColor$D$java_awt_Color(val, c);
 }}
@@ -244,4 +237,4 @@ $I$(5).getPredefinedCursor$I(0);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

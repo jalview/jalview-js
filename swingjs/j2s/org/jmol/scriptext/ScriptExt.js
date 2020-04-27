@@ -1,20 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),I$=[[0,'javajs.util.AU','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptExt");
+(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),I$=[[0,'javajs.util.AU','javajs.util.P3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptExt");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.e=null;
-this.chk=false;
-this.st=null;
-this.slen=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['chk'],'I',['slen'],'O',['vwr','org.jmol.viewer.Viewer','e','org.jmol.script.ScriptEval','st','org.jmol.script.T[]']]]
 
 Clazz.newMeth(C$, 'init$O', function (eval) {
 this.e=eval;
@@ -141,7 +133,7 @@ if (!this.e.setMeshDisplayProperty$I$I$I(shapeID, iptDisplayProperty, 0)) this.i
 
 Clazz.newMeth(C$, 'getIntArray2$I', function (i) {
 var list=(this.e.getToken$I(i)).getList$();
-var faces=$I$(1).newInt2$I(list.size$());
+var faces=(function(a,f){return f.apply(null,a)})([list.size$()],$I$(1).newInt2$I);
 for (var vi=faces.length; --vi >= 0; ) {
 var face=list.get$I(vi).getList$();
 if (face == null ) this.invArg$();
@@ -183,4 +175,4 @@ return points;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:18:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

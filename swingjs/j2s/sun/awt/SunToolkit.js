@@ -1,34 +1,23 @@
-(function(){var P$=Clazz.newPackage("sun.awt"),p$1={},I$=[[0,'java.util.HashMap','java.awt.EventQueue','sun.awt.AppContext','sun.awt.PostEventQueue','Thread','sun.awt.AWTAutoShutdown','sun.awt.AWTAccessor','sun.awt.PeerEvent','java.awt.Toolkit','java.awt.Dimension','sun.font.FontDesignMetrics','java.util.Locale']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SunToolkit", null, 'java.awt.Toolkit', ['sun.awt.WindowClosingSupport', 'sun.awt.WindowClosingListener', 'sun.awt.ComponentFactory']);
-C$.appContextMap=null;
-C$.imgCache=null;
-C$.startupLocale=null;
-C$.dataTransfererClassName=null;
+(function(){var P$=Clazz.newPackage("sun.awt"),I$=[[0,'java.util.HashMap','java.awt.EventQueue','sun.awt.AppContext','sun.awt.PostEventQueue','Thread','sun.awt.AWTAutoShutdown','sun.awt.PeerEvent','java.awt.Toolkit','java.awt.Dimension','sun.font.FontDesignMetrics','java.util.Locale']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SunToolkit", null, 'java.awt.Toolkit', 'sun.awt.ComponentFactory');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.appContextMap=Clazz.new_($I$(1));
-C$.imgCache=Clazz.new_($I$(1));
-C$.startupLocale=null;
-C$.dataTransfererClassName=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.windowClosingListener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.windowClosingListener=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['windowClosingListener','sun.awt.WindowClosingListener']]
+,['S',['dataTransfererClassName'],'O',['appContextMap','java.util.Map','imgCache','java.util.HashMap','startupLocale','java.util.Locale']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var eventQueue;
-eventQueue=Clazz.new_($I$(2));
+eventQueue=Clazz.new_($I$(2,1));
 var appContext=$I$(3).getAppContext$();
 if (appContext != null ) {
-appContext.put$O$O($I$(3).EVENT_QUEUE_KEY, eventQueue);
-var postEventQueue=Clazz.new_($I$(4).c$$java_awt_EventQueue,[eventQueue]);
+appContext.put$O$O("AppContext_EVENT_QUEUE_KEY", eventQueue);
+var postEventQueue=Clazz.new_($I$(4,1).c$$java_awt_EventQueue,[eventQueue]);
 appContext.put$O$O("PostEventQueue", postEventQueue);
 }}, 1);
 
@@ -49,14 +38,14 @@ eventQueue=Clazz.forName(eqName).newInstance$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.err.println$S("Failed loading " + eqName + ": " + e );
-eventQueue=Clazz.new_($I$(2));
+eventQueue=Clazz.new_($I$(2,1));
 } else {
 throw e;
 }
 }
-var appContext=Clazz.new_($I$(3).c$$ThreadGroup,[threadGroup]);
-appContext.put$O$O($I$(3).EVENT_QUEUE_KEY, eventQueue);
-var postEventQueue=Clazz.new_($I$(4).c$$java_awt_EventQueue,[eventQueue]);
+var appContext=Clazz.new_($I$(3,1).c$$ThreadGroup,[threadGroup]);
+appContext.put$O$O("AppContext_EVENT_QUEUE_KEY", eventQueue);
+var postEventQueue=Clazz.new_($I$(4,1).c$$java_awt_EventQueue,[eventQueue]);
 appContext.put$O$O("PostEventQueue", postEventQueue);
 return appContext;
 }, 1);
@@ -82,11 +71,7 @@ $I$(6).getInstance$().unregisterPeer$O$O(target, peer);
 }}, 1);
 
 Clazz.newMeth(C$, 'setAppContext$O$sun_awt_AppContext', function (target, context) {
-if (Clazz.instanceOf(target, "java.awt.Component")) {
-$I$(7).getComponentAccessor$().setAppContext$java_awt_Component$sun_awt_AppContext(target, context);
-} else {
 return false;
-}return true;
 }, 1);
 
 Clazz.newMeth(C$, 'getAppContext$O', function (target) {
@@ -108,7 +93,7 @@ context=C$.appContextMap.get$O(target);
 }, 1);
 
 Clazz.newMeth(C$, 'setLWRequestStatus$java_awt_Window$Z', function (changed, status) {
-$I$(7).getWindowAccessor$().setLWRequestStatus$java_awt_Window$Z(changed, status);
+changed.setLWRequestStatus$Z(status);
 }, 1);
 
 Clazz.newMeth(C$, 'checkAndSetPolicy$java_awt_Container$Z', function (cont, isSwingCont) {
@@ -116,7 +101,7 @@ Clazz.newMeth(C$, 'checkAndSetPolicy$java_awt_Container$Z', function (cont, isSw
 
 Clazz.newMeth(C$, 'insertTargetMapping$O$sun_awt_AppContext', function (target, appContext) {
 if (!C$.setAppContext$O$sun_awt_AppContext(target, appContext)) {
-C$.appContextMap.put$TK$TV(target, appContext);
+C$.appContextMap.put$O$O(target, appContext);
 }}, 1);
 
 Clazz.newMeth(C$, 'postEvent$sun_awt_AppContext$java_awt_AWTEvent', function (appContext, event) {
@@ -128,21 +113,20 @@ postEventQueue.postEvent$java_awt_AWTEvent(event);
 }}, 1);
 
 Clazz.newMeth(C$, 'postPriorityEvent$java_awt_AWTEvent', function (e) {
-var pe=Clazz.new_($I$(8).c$$O$Runnable$J,[$I$(9).getDefaultToolkit$(), ((P$.SunToolkit$1||
-(function(){var C$=Clazz.newClass(P$, "SunToolkit$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+var pe=Clazz.new_([$I$(8).getDefaultToolkit$(), ((P$.SunToolkit$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "SunToolkit$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-$I$(7).getAWTEventAccessor$().setPosted$java_awt_AWTEvent(this.$finals$.e);
+this.$finals$.e.setPosted$();
 (this.$finals$.e.getSource$()).dispatchEvent$java_awt_AWTEvent(this.$finals$.e);
 });
 })()
-), Clazz.new_(P$.SunToolkit$1.$init$, [this, {e: e}])), 2]);
+), Clazz.new_(P$.SunToolkit$1.$init$,[this, {e:e}])), 2],$I$(7,1).c$$O$Runnable$J);
 C$.postEvent$sun_awt_AppContext$java_awt_AWTEvent(C$.targetToAppContext$O(e.getSource$()), pe);
 }, 1);
 
@@ -160,24 +144,23 @@ return (postEventQueue == null  || postEventQueue.noEvents$() );
 }, 1);
 
 Clazz.newMeth(C$, 'executeOnEventHandlerThread$O$Runnable', function (target, runnable) {
-C$.executeOnEventHandlerThread$sun_awt_PeerEvent(Clazz.new_($I$(8).c$$O$Runnable$J,[target, runnable, 1]));
+C$.executeOnEventHandlerThread$sun_awt_PeerEvent(Clazz.new_($I$(7,1).c$$O$Runnable$J,[target, runnable, 1]));
 }, 1);
 
 Clazz.newMeth(C$, 'executeOnEventHandlerThread$O$Runnable$J', function (target, runnable, when) {
 C$.executeOnEventHandlerThread$sun_awt_PeerEvent(((P$.SunToolkit$2||
-(function(){var C$=Clazz.newClass(P$, "SunToolkit$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('sun.awt.PeerEvent'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "SunToolkit$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('sun.awt.PeerEvent'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getWhen$', function () {
 return this.$finals$.when;
 });
 })()
-), Clazz.new_($I$(8).c$$O$Runnable$J, [this, {when: when}, target, runnable, 1],P$.SunToolkit$2)));
+), Clazz.new_($I$(7,1).c$$O$Runnable$J,[this, {when:when}, target, runnable, 1],P$.SunToolkit$2)));
 }, 1);
 
 Clazz.newMeth(C$, 'executeOnEventHandlerThread$sun_awt_PeerEvent', function (peerEvent) {
@@ -185,26 +168,21 @@ C$.postEvent$sun_awt_AppContext$java_awt_AWTEvent(C$.targetToAppContext$O(peerEv
 }, 1);
 
 Clazz.newMeth(C$, 'invokeLaterOnAppContext$sun_awt_AppContext$Runnable', function (appContext, dispatcher) {
-C$.postEvent$sun_awt_AppContext$java_awt_AWTEvent(appContext, Clazz.new_($I$(8).c$$O$Runnable$J,[$I$(9).getDefaultToolkit$(), dispatcher, 1]));
+C$.postEvent$sun_awt_AppContext$java_awt_AWTEvent(appContext, Clazz.new_([$I$(8).getDefaultToolkit$(), dispatcher, 1],$I$(7,1).c$$O$Runnable$J));
 }, 1);
 
 Clazz.newMeth(C$, 'isDispatchThreadForAppContext$O', function (target) {
 var appContext=C$.targetToAppContext$O(target);
-var eq=appContext.get$O($I$(3).EVENT_QUEUE_KEY);
-var next=$I$(7).getEventQueueAccessor$().getNextQueue$java_awt_EventQueue(eq);
-while (next != null ){
-eq=next;
-next=$I$(7).getEventQueueAccessor$().getNextQueue$java_awt_EventQueue(eq);
-}
-return ($I$(5).currentThread$() === $I$(7).getEventQueueAccessor$().getDispatchThread$java_awt_EventQueue(eq) );
+var eq=appContext.get$O("AppContext_EVENT_QUEUE_KEY");
+return $I$(2).isDispatchThread$();
 }, 1);
 
 Clazz.newMeth(C$, 'getScreenSize$', function () {
-return Clazz.new_($I$(10).c$$I$I,[this.getScreenWidth$(), this.getScreenHeight$()]);
+return Clazz.new_([this.getScreenWidth$(), this.getScreenHeight$()],$I$(9,1).c$$I$I);
 });
 
 Clazz.newMeth(C$, 'getFontMetrics$java_awt_Font', function (font) {
-return $I$(11).getMetrics$java_awt_Font(font);
+return $I$(10).getMetrics$java_awt_Font(font);
 });
 
 Clazz.newMeth(C$, 'getFontList$', function () {
@@ -217,12 +195,8 @@ return this.createComponent$java_awt_Component(target);
 });
 
 Clazz.newMeth(C$, 'disableBackgroundErase$java_awt_Component', function (component) {
-p$1.disableBackgroundEraseImpl$java_awt_Component.apply(this, [component]);
+component.setBackgroundEraseDisabled$Z(true);
 });
-
-Clazz.newMeth(C$, 'disableBackgroundEraseImpl$java_awt_Component', function (component) {
-$I$(7).getComponentAccessor$().setBackgroundEraseDisabled$java_awt_Component$Z(component, true);
-}, p$1);
 
 Clazz.newMeth(C$, 'getSunAwtNoerasebackground$', function () {
 return false;
@@ -240,7 +214,7 @@ var img=C$.imgCache.get$O(url);
 if (img == null ) {
 try {
 img=tk.createImage$java_net_URL(url);
-C$.imgCache.put$TK$TV(url, img);
+C$.imgCache.put$O$O(url, img);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -255,7 +229,7 @@ var img=C$.imgCache.get$O(filename);
 if (img == null ) {
 try {
 tk.createImage$S(filename);
-C$.imgCache.put$TK$TV(filename, img);
+C$.imgCache.put$O$O(filename, img);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -292,12 +266,12 @@ return C$.getSystemEventQueueImplPP$sun_awt_AppContext($I$(3).getAppContext$());
 }, 1);
 
 Clazz.newMeth(C$, 'getSystemEventQueueImplPP$sun_awt_AppContext', function (appContext) {
-var theEventQueue=appContext.get$O($I$(3).EVENT_QUEUE_KEY);
+var theEventQueue=appContext.get$O("AppContext_EVENT_QUEUE_KEY");
 return theEventQueue;
 }, 1);
 
 Clazz.newMeth(C$, 'getNativeContainer$java_awt_Component', function (c) {
-return $I$(9).getNativeContainer$java_awt_Component(c);
+return $I$(8).getNativeContainer$java_awt_Component(c);
 }, 1);
 
 Clazz.newMeth(C$, 'getFocusAcceleratorKeyMask$', function () {
@@ -310,7 +284,7 @@ return false;
 
 Clazz.newMeth(C$, 'getStartupLocale$', function () {
 if (C$.startupLocale == null ) {
-C$.startupLocale=$I$(12).US;
+C$.startupLocale=$I$(11).US;
 
 
 }return C$.startupLocale;
@@ -326,7 +300,7 @@ C$.dataTransfererClassName=className;
 
 Clazz.newMeth(C$, 'getDataTransfererClassName$', function () {
 if (C$.dataTransfererClassName == null ) {
-$I$(9).getDefaultToolkit$();
+$I$(8).getDefaultToolkit$();
 }return C$.dataTransfererClassName;
 }, 1);
 
@@ -390,5 +364,12 @@ return false;
 Clazz.newMeth(C$, 'needUpdateWindow$', function () {
 return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.appContextMap=Clazz.new_($I$(1,1));
+C$.imgCache=Clazz.new_($I$(1,1));
+C$.startupLocale=null;
+C$.dataTransfererClassName=null;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 22:59:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

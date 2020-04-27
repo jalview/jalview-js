@@ -1,43 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),I$=[[0,'org.jmol.jvxl.data.JvxlData','org.jmol.viewer.Viewer','java.util.Hashtable','org.jmol.util.C','javajs.util.V3','javajs.util.P3','org.jmol.jvxl.data.JvxlCoder','javajs.util.Lst','org.jmol.util.Logger','org.jmol.api.Interface','javajs.util.BS','javajs.util.SB','javajs.util.CU','javajs.util.PT','org.jmol.script.T','org.jmol.util.ColorEncoder','javajs.util.AU','javajs.util.P3i','org.jmol.util.SimpleUnitCell','javajs.util.M4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsosurfaceMesh", null, 'org.jmol.shape.Mesh');
+(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),I$=[[0,'org.jmol.jvxl.data.JvxlData','org.jmol.viewer.Viewer','java.util.Hashtable','org.jmol.util.C','org.jmol.shape.Mesh','javajs.util.V3','javajs.util.P3','org.jmol.jvxl.data.JvxlCoder','javajs.util.Lst','org.jmol.util.Logger','org.jmol.api.Interface','javajs.util.BS','javajs.util.SB','javajs.util.CU','javajs.util.PT','org.jmol.script.T','org.jmol.util.ColorEncoder','javajs.util.AU','javajs.util.P3i','org.jmol.util.SimpleUnitCell','javajs.util.M4']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "IsosurfaceMesh", null, 'org.jmol.shape.Mesh');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jvxlData=null;
-this.vertexIncrement=0;
-this.firstRealVertex=0;
-this.dataType=0;
-this.hasGridPoints=false;
-this.calculatedArea=null;
-this.calculatedVolume=null;
-this.info=null;
-this.assocGridPointMap=null;
-this.assocGridPointNormals=null;
-this.mergeAssociatedNormalCount=0;
-this.centers=null;
-this.contourValues=null;
-this.contourColixes=null;
-this.colorEncoder=null;
-this.bsVdw=null;
-this.colorPhased=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.vertexIncrement=1;
 this.firstRealVertex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['hasGridPoints','colorPhased'],'I',['vertexIncrement','firstRealVertex','dataType','mergeAssociatedNormalCount'],'O',['jvxlData','org.jmol.jvxl.data.JvxlData','calculatedArea','java.lang.Object','+calculatedVolume','+info','assocGridPointMap','java.util.Map','+assocGridPointNormals','centers','javajs.util.P3[]','contourValues','float[]','contourColixes','short[]','colorEncoder','org.jmol.util.ColorEncoder','bsVdw','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'getResolution$', function () {
 return 1 / this.jvxlData.pointsPerAngstrom;
 });
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$S$H$I', function (vwr, thisID, colix, index) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.mesh1$org_jmol_viewer_Viewer$S$H$I(vwr, thisID, colix, index);
-this.jvxlData=Clazz.new_($I$(1));
+this.jvxlData=Clazz.new_($I$(1,1));
 this.checkByteCount=2;
 this.jvxlData.version=$I$(2).getJmolVersion$();
 }, 1);
@@ -92,8 +72,8 @@ break;
 default:
 if (this.firstRealVertex < 0) this.firstRealVertex=vPt;
 if (associateNormals) {
-if (this.assocGridPointMap == null ) this.assocGridPointMap=Clazz.new_($I$(3));
-this.assocGridPointMap.put$TK$TV(Integer.valueOf$I(vPt), Integer.valueOf$I(assocVertex + this.mergeAssociatedNormalCount));
+if (this.assocGridPointMap == null ) this.assocGridPointMap=Clazz.new_($I$(3,1));
+this.assocGridPointMap.put$O$O(Integer.valueOf$I(vPt), Integer.valueOf$I(assocVertex + this.mergeAssociatedNormalCount));
 }}
 return vPt;
 });
@@ -114,12 +94,12 @@ this.assocGridPointNormals=null;
 }});
 
 Clazz.newMeth(C$, 'sumVertexNormals$javajs_util_T3A$javajs_util_V3A', function (vertices, vectorSums) {
-org.jmol.shape.Mesh.sumVertexNormals2$org_jmol_shape_Mesh$javajs_util_T3A$javajs_util_V3A(this, vertices, vectorSums);
+$I$(5).sumVertexNormals2$org_jmol_shape_Mesh$javajs_util_T3A$javajs_util_V3A(this, vertices, vectorSums);
 if (this.assocGridPointMap != null  && vectorSums.length > 0  && !this.isMerged ) {
-if (this.assocGridPointNormals == null ) this.assocGridPointNormals=Clazz.new_($I$(3));
+if (this.assocGridPointNormals == null ) this.assocGridPointNormals=Clazz.new_($I$(3,1));
 for (var entry, $entry = this.assocGridPointMap.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var gridPoint=entry.getValue$();
-if (!this.assocGridPointNormals.containsKey$O(gridPoint)) this.assocGridPointNormals.put$TK$TV(gridPoint, $I$(5).new3$F$F$F(0, 0, 0));
+if (!this.assocGridPointNormals.containsKey$O(gridPoint)) this.assocGridPointNormals.put$O$O(gridPoint, $I$(6).new3$F$F$F(0, 0, 0));
 this.assocGridPointNormals.get$O(gridPoint).add$javajs_util_T3(vectorSums[entry.getKey$().intValue$()]);
 }
 for (var entry, $entry = this.assocGridPointMap.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) vectorSums[entry.getKey$().intValue$()]=this.assocGridPointNormals.get$O(entry.getValue$());
@@ -128,11 +108,11 @@ for (var entry, $entry = this.assocGridPointMap.entrySet$().iterator$(); $entry.
 
 Clazz.newMeth(C$, 'getCenters$', function () {
 if (this.centers != null ) return this.centers;
-this.centers=Clazz.array($I$(6), [this.pc]);
+this.centers=Clazz.array($I$(7), [this.pc]);
 for (var i=0; i < this.pc; i++) {
 var p=this.pis[i];
 if (p == null ) continue;
-var pt=this.centers[i]=$I$(6).newP$javajs_util_T3(this.vs[p[0]]);
+var pt=this.centers[i]=$I$(7).newP$javajs_util_T3(this.vs[p[0]]);
 pt.add$javajs_util_T3(this.vs[p[1]]);
 pt.add$javajs_util_T3(this.vs[p[2]]);
 pt.scale$F(0.33333334);
@@ -150,12 +130,12 @@ var vContours=this.jvxlData.vContours;
 if (vContours != null ) {
 for (var i=0; i < n; i++) {
 if (vContours[i].size$() > 6) return this.jvxlData.vContours;
-$I$(7).set3dContourVector$javajs_util_Lst$IAA$javajs_util_T3A(vContours[i], this.pis, this.vs);
+$I$(8).set3dContourVector$javajs_util_Lst$IAA$javajs_util_T3A(vContours[i], this.pis, this.vs);
 }
 return this.jvxlData.vContours;
-}vContours=Clazz.array($I$(8), [n]);
+}vContours=Clazz.array($I$(9), [n]);
 for (var i=0; i < n; i++) {
-vContours[i]=Clazz.new_($I$(8));
+vContours[i]=Clazz.new_($I$(9,1));
 }
 if (this.jvxlData.contourValuesUsed == null ) {
 var dv=(this.jvxlData.valueMappedToBlue - this.jvxlData.valueMappedToRed) / (n + 1);
@@ -163,7 +143,7 @@ for (var i=0; i < n; i++) {
 var value=this.jvxlData.valueMappedToRed + (i + 1) * dv;
 C$.get3dContour$org_jmol_shapesurface_IsosurfaceMesh$javajs_util_Lst$F$H(this, vContours[i], value, this.jvxlData.contourColixes[i]);
 }
-$I$(9).info$S(n + " contour lines; separation = " + new Float(dv).toString() );
+(function(a,f){return f.apply(null,a)})([n + " contour lines; separation = " + new Float(dv).toString() ],$I$(10).info$S);
 } else {
 for (var i=0; i < n; i++) {
 var value=this.jvxlData.contourValuesUsed[i];
@@ -179,13 +159,13 @@ return this.jvxlData.vContours=vContours;
 });
 
 Clazz.newMeth(C$, 'getPmeshData$Z', function (isBinary) {
-var mw=$I$(10).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.shapesurface.PMeshWriter", this.vwr, "script");
+var mw=$I$(11).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.shapesurface.PMeshWriter", this.vwr, "script");
 return mw.write$org_jmol_shapesurface_IsosurfaceMesh$Z(this, isBinary);
 });
 
 Clazz.newMeth(C$, 'get3dContour$org_jmol_shapesurface_IsosurfaceMesh$javajs_util_Lst$F$H', function (m, v, value, colix) {
-var bsContour=$I$(11).newN$I(m.pc);
-var fData=Clazz.new_($I$(12));
+var bsContour=$I$(12).newN$I(m.pc);
+var fData=Clazz.new_($I$(13,1));
 var color=$I$(4).getArgb$H(colix);
 C$.setContourVector$javajs_util_Lst$I$javajs_util_BS$F$H$I$javajs_util_SB(v, m.pc, bsContour, value, colix, color, fData);
 for (var i=0; i < m.pc; i++) if (m.setABC$I(i) != null ) C$.addContourPoints$javajs_util_Lst$javajs_util_BS$I$javajs_util_SB$javajs_util_T3A$FA$I$I$I$F(v, bsContour, i, fData, m.vs, m.vvs, m.iA, m.iB, m.iC, value);
@@ -193,12 +173,12 @@ for (var i=0; i < m.pc; i++) if (m.setABC$I(i) != null ) C$.addContourPoints$jav
 }, 1);
 
 Clazz.newMeth(C$, 'setContourVector$javajs_util_Lst$I$javajs_util_BS$F$H$I$javajs_util_SB', function (v, nPolygons, bsContour, value, colix, color, fData) {
-v.add$I$TE(0, Integer.valueOf$I(nPolygons));
-v.add$I$TE(1, bsContour);
-v.add$I$TE(2, Float.valueOf$F(value));
-v.add$I$TE(3, Clazz.array(Short.TYPE, -1, [colix]));
-v.add$I$TE(4, Clazz.array(Integer.TYPE, -1, [color]));
-v.add$I$TE(5, fData);
+v.add$I$O(0, Integer.valueOf$I(nPolygons));
+v.add$I$O(1, bsContour);
+v.add$I$O(2, Float.valueOf$F(value));
+v.add$I$O(3, Clazz.array(Short.TYPE, -1, [colix]));
+v.add$I$O(4, Clazz.array(Integer.TYPE, -1, [color]));
+v.add$I$O(5, fData);
 }, 1);
 
 Clazz.newMeth(C$, 'addContourPoints$javajs_util_Lst$javajs_util_BS$I$javajs_util_SB$javajs_util_T3A$FA$I$I$I$F', function (v, bsContour, i, fData, vertices, vertexValues, iA, iB, iC, value) {
@@ -237,9 +217,9 @@ default:
 return;
 }
 bsContour.set$I(i);
-$I$(7).appendContourTriangleIntersection$I$F$F$javajs_util_SB(type, f1, f2, fData);
-v.addLast$TV(pt1);
-v.addLast$TV(pt2);
+$I$(8).appendContourTriangleIntersection$I$F$F$javajs_util_SB(type, f1, f2, fData);
+v.addLast$O(pt1);
+v.addLast$O(pt2);
 }, 1);
 
 Clazz.newMeth(C$, 'checkPt$FA$I$I$F', function (vertexValues, i, j, v) {
@@ -249,7 +229,7 @@ return (v == (v1=vertexValues[i])  ? 0 : v == (v2=vertexValues[j])  ? 1 : (v1 < 
 }, 1);
 
 Clazz.newMeth(C$, 'getContourPoint$javajs_util_T3A$I$I$F', function (vertices, i, j, f) {
-var pt=Clazz.new_($I$(6));
+var pt=Clazz.new_($I$(7,1));
 pt.sub2$javajs_util_T3$javajs_util_T3(vertices[j], vertices[i]);
 pt.scaleAdd2$F$javajs_util_T3$javajs_util_T3(f, pt, vertices[i]);
 return pt;
@@ -293,14 +273,14 @@ break;
 });
 
 Clazz.newMeth(C$, 'getContourList$org_jmol_viewer_Viewer', function (vwr) {
-var ht=Clazz.new_($I$(3));
-ht.put$TK$TV("values", (this.jvxlData.contourValuesUsed == null  ? this.jvxlData.contourValues : this.jvxlData.contourValuesUsed));
-var colors=Clazz.new_($I$(8));
+var ht=Clazz.new_($I$(3,1));
+ht.put$O$O("values", (this.jvxlData.contourValuesUsed == null  ? this.jvxlData.contourValues : this.jvxlData.contourValuesUsed));
+var colors=Clazz.new_($I$(9,1));
 if (this.jvxlData.contourColixes != null ) {
 for (var i=0; i < this.jvxlData.contourColixes.length; i++) {
-colors.addLast$TV($I$(13).colorPtFromInt$I$javajs_util_P3($I$(4).getArgb$H(this.jvxlData.contourColixes[i]), null));
+colors.addLast$O((function(a,f){return f.apply(null,a)})([$I$(4).getArgb$H(this.jvxlData.contourColixes[i]), null],$I$(14).colorPtFromInt$I$javajs_util_P3));
 }
-ht.put$TK$TV("colors", colors);
+ht.put$O$O("colors", colors);
 }return ht;
 });
 
@@ -312,15 +292,15 @@ this.jvxlData.vContours=null;
 });
 
 Clazz.newMeth(C$, 'setVertexColorMap$', function () {
-this.vertexColorMap=Clazz.new_($I$(3));
+this.vertexColorMap=Clazz.new_($I$(3,1));
 var lastColix=($s$[0] = -999, $s$[0]);
 var bs=null;
 for (var i=this.vc; --i >= 0; ) {
 var c=this.vcs[i];
 if (c != lastColix) {
-var color=$I$(4).getHexCode$H(lastColix=c);
+var color=(function(a,f){return f.apply(null,a)})([lastColix=c],$I$(4).getHexCode$H);
 bs=this.vertexColorMap.get$O(color);
-if (bs == null ) this.vertexColorMap.put$TK$TV(color, bs=Clazz.new_($I$(11)));
+if (bs == null ) this.vertexColorMap.put$O$O(color, bs=Clazz.new_($I$(12,1)));
 }bs.set$I(i);
 }
 });
@@ -344,7 +324,7 @@ this.vcs[i]=$I$(4).copyColixTranslucency$H$H(this.colix, colix);
 Clazz.newMeth(C$, 'colorVertices$H$javajs_util_BS$Z', function (colix, bs, isAtoms) {
 if (this.vertexSource == null ) return;
 colix=$I$(4).copyColixTranslucency$H$H(this.colix, colix);
-var bsVertices=(isAtoms ? Clazz.new_($I$(11)) : bs);
+var bsVertices=(isAtoms ? Clazz.new_($I$(12,1)) : bs);
 this.checkAllocColixes$();
 if (isAtoms) for (var i=0; i < this.vc; i++) {
 var pt=this.vertexSource[i];
@@ -357,7 +337,7 @@ if (bsVertices != null ) bsVertices.set$I(i);
 if (!isAtoms) {
 return;
 }var color=$I$(4).getHexCode$H(colix);
-if (this.vertexColorMap == null ) this.vertexColorMap=Clazz.new_($I$(3));
+if (this.vertexColorMap == null ) this.vertexColorMap=Clazz.new_($I$(3,1));
 C$.addColorToMap$java_util_Map$S$javajs_util_BS(this.vertexColorMap, color, bs);
 });
 
@@ -374,7 +354,7 @@ bsMap.or$javajs_util_BS(bs);
 } else {
 entry.getValue$().andNot$javajs_util_BS(bs);
 }
-if (bsMap == null ) colorMap.put$TK$TV(color, bs);
+if (bsMap == null ) colorMap.put$O$O(color, bs);
 }, 1);
 
 Clazz.newMeth(C$, 'setJvxlColorMap$Z', function (isAll) {
@@ -386,12 +366,12 @@ this.jvxlData.rendering=this.getRendering$().substring$I(1);
 this.jvxlData.colorScheme=(this.colorEncoder == null  ? null : this.colorEncoder.getColorScheme$());
 if (this.jvxlData.vertexColors == null ) this.jvxlData.nVertexColors=(this.vertexColorMap == null  ? 0 : this.vertexColorMap.size$());
 if (this.vertexColorMap == null  || this.vertexSource == null   || !isAll ) return;
-if (this.jvxlData.vertexColorMap == null ) this.jvxlData.vertexColorMap=Clazz.new_($I$(3));
+if (this.jvxlData.vertexColorMap == null ) this.jvxlData.vertexColorMap=Clazz.new_($I$(3,1));
 for (var entry, $entry = this.vertexColorMap.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var bsMap=entry.getValue$();
 if (bsMap.isEmpty$()) continue;
 var color=entry.getKey$();
-var bs=Clazz.new_($I$(11));
+var bs=Clazz.new_($I$(12,1));
 for (var i=0; i < this.vc; i++) if (bsMap.get$I(this.vertexSource[i])) bs.set$I(i);
 
 C$.addColorToMap$java_util_Map$S$javajs_util_BS(this.jvxlData.vertexColorMap, color, bs);
@@ -405,7 +385,7 @@ if (this.colorEncoder == null  || (this.colorCommand=this.colorEncoder.getColorS
 if (this.colorCommand.equals$O("inherit")) {
 this.colorCommand="#inherit;";
 return;
-}this.colorCommand="color $" + $I$(14).esc$S(this.thisID) + $I$(14).esc$S(this.colorCommand) + " range " + (this.jvxlData.isColorReversed ? new Float(this.jvxlData.valueMappedToBlue).toString() + " " + new Float(this.jvxlData.valueMappedToRed).toString()  : new Float(this.jvxlData.valueMappedToRed).toString() + " " + new Float(this.jvxlData.valueMappedToBlue).toString() ) ;
+}this.colorCommand="color $" + $I$(15).esc$S(this.thisID) + $I$(15).esc$S(this.colorCommand) + " range " + (this.jvxlData.isColorReversed ? new Float(this.jvxlData.valueMappedToBlue).toString() + " " + new Float(this.jvxlData.valueMappedToRed).toString()  : new Float(this.jvxlData.valueMappedToRed).toString() + " " + new Float(this.jvxlData.valueMappedToBlue).toString() ) ;
 });
 
 Clazz.newMeth(C$, 'setColorsFromJvxlData$I', function (colorRgb) {
@@ -416,7 +396,7 @@ this.colix=$I$(4).getColix$I(colorRgb);
 } else if (this.jvxlData.color != null ) {
 this.colix=$I$(4).getColixS$S(this.jvxlData.color);
 }if (this.colix == 0) this.colix=5;
-this.colix=$I$(4).getColixTranslucent3$H$Z$F(this.colix, this.jvxlData.translucency != 0 , this.jvxlData.translucency);
+this.colix=(function(a,f){return f.apply(null,a)})([this.colix, this.jvxlData.translucency != 0 , this.jvxlData.translucency],$I$(4).getColixTranslucent3$H$Z$F);
 var translucencyLevel=(this.jvxlData.translucency == 0  ? NaN : this.jvxlData.translucency);
 if (this.jvxlData.meshColor != null ) this.meshColix=$I$(4).getColixS$S(this.jvxlData.meshColor);
 this.setJvxlDataRendering$();
@@ -437,7 +417,7 @@ for (var i=this.vc; --i >= 0; ) this.vcs[i]=this.colix;
 
 }for (var entry, $entry = this.jvxlData.vertexColorMap.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var bsMap=entry.getValue$();
-var colix=$I$(4).copyColixTranslucency$H$H(this.colix, $I$(4).getColixS$S(entry.getKey$()));
+var colix=(function(a,f){return f.apply(null,a)})([this.colix, (function(a,f){return f.apply(null,a)})([entry.getKey$()],$I$(4).getColixS$S)],$I$(4).copyColixTranslucency$H$H);
 for (var i=bsMap.nextSetBit$I(0); i >= 0; i=bsMap.nextSetBit$I(i + 1)) this.vcs[i]=colix;
 
 }
@@ -446,14 +426,14 @@ for (var i=bsMap.nextSetBit$I(0); i >= 0; i=bsMap.nextSetBit$I(i + 1)) this.vcs[
 
 Clazz.newMeth(C$, 'setJvxlDataRendering$', function () {
 if (this.jvxlData.rendering != null ) {
-var tokens=$I$(14).getTokens$S(this.jvxlData.rendering);
-for (var i=0; i < tokens.length; i++) this.setTokenProperty$I$Z($I$(15).getTokFromName$S(tokens[i]), true);
+var tokens=$I$(15).getTokens$S(this.jvxlData.rendering);
+for (var i=0; i < tokens.length; i++) this.setTokenProperty$I$Z($I$(16).getTokFromName$S(tokens[i]), true);
 
 }});
 
 Clazz.newMeth(C$, 'remapColors$org_jmol_viewer_Viewer$org_jmol_util_ColorEncoder$F', function (vwr, ce, translucentLevel) {
 if (ce == null ) ce=this.colorEncoder;
-if (ce == null ) ce=this.colorEncoder=Clazz.new_($I$(16).c$$org_jmol_util_ColorEncoder$org_jmol_viewer_Viewer,[null, vwr]);
+if (ce == null ) ce=this.colorEncoder=Clazz.new_($I$(17,1).c$$org_jmol_util_ColorEncoder$org_jmol_viewer_Viewer,[null, vwr]);
 this.colorEncoder=ce;
 this.setColorCommand$();
 if (Float.isNaN$F(translucentLevel)) {
@@ -496,7 +476,7 @@ var isTranslucent=$I$(4).isColixTranslucent$H(this.colix);
 if (ce.isTranslucent) {
 if (!isTranslucent) this.colix=$I$(4).getColixTranslucent3$H$Z$F(this.colix, true, 0.5);
 isTranslucent=false;
-}this.vcs=$I$(17).ensureLengthShort$HA$I(this.vcs, this.vc);
+}this.vcs=$I$(18).ensureLengthShort$HA$I(this.vcs, this.vc);
 for (var i=this.vc; --i >= this.mergeVertexCount0; ) this.vcs[i]=ce.getColorIndex$F(this.vvs[i]);
 
 this.setTranslucent$Z$F(isTranslucent, translucentLevel);
@@ -516,7 +496,7 @@ for (var i=0; i < this.contourValues.length; i++) this.contourColixes[i]=ce.getC
 
 this.setDiscreteColixes$FA$HA(null, null);
 }this.jvxlData.isJvxlPrecisionColor=true;
-$I$(7).jvxlCreateColorData$org_jmol_jvxl_data_JvxlData$FA(this.jvxlData, this.vvs);
+$I$(8).jvxlCreateColorData$org_jmol_jvxl_data_JvxlData$FA(this.jvxlData, this.vvs);
 this.setColorCommand$();
 this.isColorSolid=false;
 });
@@ -541,12 +521,12 @@ var nV=this.vc + (m == null  ? 0 : m.vc);
 if (this.pis == null ) this.pis=Clazz.array(Integer.TYPE, [0, 0]);
 if (m != null  && m.pis == null  ) m.pis=Clazz.array(Integer.TYPE, [0, 0]);
 var nP=(this.bsSlabDisplay == null  || this.pc == 0  ? this.pc : this.bsSlabDisplay.cardinality$()) + (m == null  || m.pc == 0  ? 0 : m.bsSlabDisplay == null  ? m.pc : m.bsSlabDisplay.cardinality$());
-if (this.vs == null ) this.vs=Clazz.array($I$(6), [0]);
-this.vs=$I$(17).ensureLength$O$I(this.vs, nV);
-this.vvs=$I$(17).ensureLengthA$FA$I(this.vvs, nV);
+if (this.vs == null ) this.vs=Clazz.array($I$(7), [0]);
+this.vs=$I$(18).ensureLength$O$I(this.vs, nV);
+this.vvs=$I$(18).ensureLengthA$FA$I(this.vvs, nV);
 var haveSources=(this.vertexSource != null  && (m == null  || m.vertexSource != null  ) );
-this.vertexSource=$I$(17).ensureLengthI$IA$I(this.vertexSource, nV);
-var newPolygons=$I$(17).newInt2$I(nP);
+this.vertexSource=$I$(18).ensureLengthI$IA$I(this.vertexSource, nV);
+var newPolygons=$I$(18).newInt2$I(nP);
 var ipt=C$.mergePolygons$org_jmol_util_MeshSurface$I$I$IAA(this, 0, 0, newPolygons);
 if (m != null ) {
 ipt=C$.mergePolygons$org_jmol_util_MeshSurface$I$I$IAA(m, ipt, this.vc, newPolygons);
@@ -573,40 +553,40 @@ return ipt;
 }, 1);
 
 Clazz.newMeth(C$, 'getUnitCell$', function () {
-return (this.unitCell != null  || (this.unitCell=this.vwr.ms.am[this.modelIndex].biosymmetry) != null   || (this.unitCell=this.vwr.ms.getUnitCell$I(this.modelIndex)) != null   || this.oabc != null  && (this.unitCell=$I$(10).getSymmetry$org_jmol_viewer_Viewer$S(this.vwr, "symmetry").getUnitCell$javajs_util_T3A$Z$S(this.oabc, true, null)) != null    ? this.unitCell : null);
+return (this.unitCell != null  || (this.unitCell=this.vwr.ms.am[this.modelIndex].biosymmetry) != null   || (this.unitCell=this.vwr.ms.getUnitCell$I(this.modelIndex)) != null   || this.oabc != null  && (this.unitCell=$I$(11).getSymmetry$org_jmol_viewer_Viewer$S(this.vwr, "symmetry").getUnitCell$javajs_util_T3A$Z$S(this.oabc, true, null)) != null    ? this.unitCell : null);
 });
 
 Clazz.newMeth(C$, 'fixLattice$', function () {
 if (this.getUnitCell$() == null ) return;
-var minXYZ=Clazz.new_($I$(18));
-var maxXYZ=$I$(18).new3$I$I$I((this.lattice.x|0), (this.lattice.y|0), (this.lattice.z|0));
+var minXYZ=Clazz.new_($I$(19,1));
+var maxXYZ=(function(a,f){return f.apply(null,a)})([(this.lattice.x|0), (this.lattice.y|0), (this.lattice.z|0)],$I$(19).new3$I$I$I);
 this.jvxlData.fixedLattice=this.lattice;
 this.lattice=null;
-$I$(19).setMinMaxLatticeParameters$I$javajs_util_P3i$javajs_util_P3i$I((this.unitCell.getUnitCellInfoType$I(6)|0), minXYZ, maxXYZ, 0);
+(function(a,f){return f.apply(null,a)})([(this.unitCell.getUnitCellInfoType$I(6)|0), minXYZ, maxXYZ, 0],$I$(20).setMinMaxLatticeParameters$I$javajs_util_P3i$javajs_util_P3i$I);
 var nCells=(maxXYZ.x - minXYZ.x) * (maxXYZ.y - minXYZ.y) * (maxXYZ.z - minXYZ.z) ;
-var latticeOffset=Clazz.new_($I$(6));
+var latticeOffset=Clazz.new_($I$(7,1));
 var vc0=this.vc;
 var vcNew=nCells * this.vc;
-this.vs=$I$(17).arrayCopyPt$javajs_util_T3A$I(this.vs, vcNew);
-this.vvs=(this.vvs == null  ? null : $I$(17).ensureLengthA$FA$I(this.vvs, vcNew));
+this.vs=$I$(18).arrayCopyPt$javajs_util_T3A$I(this.vs, vcNew);
+this.vvs=(this.vvs == null  ? null : $I$(18).ensureLengthA$FA$I(this.vvs, vcNew));
 var pc0=this.pc;
 var pcNew=nCells * this.pc;
-this.pis=$I$(17).arrayCopyII$IAA$I(this.pis, pcNew);
+this.pis=$I$(18).arrayCopyII$IAA$I(this.pis, pcNew);
 var off=0;
-this.normixes=$I$(17).arrayCopyShort$HA$I(this.normixes, vcNew);
+this.normixes=$I$(18).arrayCopyShort$HA$I(this.normixes, vcNew);
 for (var tx=minXYZ.x; tx < maxXYZ.x; tx++) for (var ty=minXYZ.y; ty < maxXYZ.y; ty++) for (var tz=minXYZ.z; tz < maxXYZ.z; tz++) {
 if (tx == 0 && ty == 0  && tz == 0 ) continue;
 latticeOffset.set$F$F$F(tx, ty, tz);
 this.unitCell.toCartesian$javajs_util_T3$Z(latticeOffset, false);
 for (var i=0; i < vc0; i++) {
 this.normixes[this.vc]=this.normixes[i];
-var v=$I$(6).newP$javajs_util_T3(this.vs[i]);
+var v=$I$(7).newP$javajs_util_T3(this.vs[i]);
 v.add$javajs_util_T3(latticeOffset);
 this.addVCVal$javajs_util_T3$F$Z(v, this.vvs[i], false);
 }
 off+=vc0;
 for (var i=0; i < pc0; i++) {
-var p=$I$(17).arrayCopyI$IA$I(this.pis[i], -1);
+var p=$I$(18).arrayCopyI$IA$I(this.pis[i], -1);
 p[0]+=off;
 p[1]+=off;
 p[2]+=off;
@@ -615,10 +595,10 @@ this.addPolygon$IA$javajs_util_BS(p, null);
 }
 
 
-var xyzMin=Clazz.new_($I$(6));
-var xyzMax=Clazz.new_($I$(6));
+var xyzMin=Clazz.new_($I$(7,1));
+var xyzMax=Clazz.new_($I$(7,1));
 this.setBox$javajs_util_P3$javajs_util_P3(xyzMin, xyzMax);
-this.jvxlData.boundingBox=Clazz.array($I$(6), -1, [xyzMin, xyzMax]);
+this.jvxlData.boundingBox=Clazz.array($I$(7), -1, [xyzMin, xyzMax]);
 });
 
 Clazz.newMeth(C$, 'getMinDistance2ForVertexGrouping$', function () {
@@ -645,7 +625,7 @@ if (!doUpdate) return;
 if (this.isModelConnected) {
 this.mat4=this.vwr.ms.am[this.modelIndex].mat4;
 } else {
-if (this.mat4 == null ) this.mat4=$I$(20).newM4$javajs_util_M4(null);
+if (this.mat4 == null ) this.mat4=$I$(21).newM4$javajs_util_M4(null);
 this.mat4.mul2$javajs_util_M4$javajs_util_M4(m, this.mat4);
 }this.recalcAltVertices=true;
 });
@@ -668,4 +648,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

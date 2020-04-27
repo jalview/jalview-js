@@ -1,31 +1,21 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.awt.Image','Thread','java.util.Hashtable','sun.awt.image.ImageRepresentation','java.awt.image.ColorModel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ToolkitImage", null, 'java.awt.Image');
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.awt.Image','Thread','java.util.Hashtable','sun.awt.image.ImageRepresentation','java.awt.image.ColorModel']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ToolkitImage", null, 'java.awt.Image');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.source=null;
-this.src=null;
-this.imagerep=null;
-this.width=0;
-this.height=0;
-this.properties=null;
-this.availinfo=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.width=-1;
 this.height=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['width','height','availinfo'],'O',['source','java.awt.image.ImageProducer','src','sun.awt.image.InputStreamImageSource','imagerep','sun.awt.image.ImageRepresentation','properties','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer', function (is) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.source=is;
 if (Clazz.instanceOf(is, "sun.awt.image.InputStreamImageSource")) {
 this.src=is;
@@ -94,7 +84,7 @@ p$1.addWatcher$java_awt_image_ImageObserver$Z.apply(this, [iw, true]);
 Clazz.newMeth(C$, 'addWatcher$java_awt_image_ImageObserver$Z', function (iw, load) {
 if ((this.availinfo & 64) != 0) {
 if (iw != null ) {
-iw.imageUpdate$(this, 192, -1, -1, -1, -1);
+iw.imageUpdate$java_awt_Image$I$I$I$I$I(this, 192, -1, -1, -1, -1);
 }return;
 }var ir=this.getImageRep$();
 ir.addWatcher$java_awt_image_ImageObserver(iw);
@@ -137,7 +127,7 @@ this.addInfo$I(3);
 
 Clazz.newMeth(C$, 'setProperties$java_util_Hashtable', function (props) {
 if (props == null ) {
-props=Clazz.new_($I$(3));
+props=Clazz.new_($I$(3,1));
 }this.properties=props;
 this.addInfo$I(4);
 });
@@ -162,7 +152,7 @@ this.src.flush$();
 }});
 
 Clazz.newMeth(C$, 'makeImageRep$', function () {
-return Clazz.new_($I$(4).c$$sun_awt_image_ToolkitImage$java_awt_image_ColorModel$Z,[this, $I$(5).getRGBdefault$(), false]);
+return Clazz.new_([this, $I$(5).getRGBdefault$(), false],$I$(4,1).c$$sun_awt_image_ToolkitImage$java_awt_image_ColorModel$Z);
 });
 
 Clazz.newMeth(C$, 'getImageRep$', function () {
@@ -191,4 +181,4 @@ var imageRep=this.getImageRep$();
 imageRep.setAccelerationPriority$F(this.accelerationPriority);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StringCharBuffer", null, 'java.nio.CharBuffer');
+(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StringCharBuffer", null, 'java.nio.CharBuffer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.str=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['str','CharSequence']]]
 
 Clazz.newMeth(C$, 'c$$CharSequence$I$I', function (s, start, end) {
-C$.superclazz.c$$I$I$I$I.apply(this, [-1, start, end, s.length$()]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$I$I.apply(this,[-1, start, end, s.length$()]);C$.$init$.apply(this);
 var n=s.length$();
 if ((start < 0) || (start > n) || (end < start) || (end > n)  ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
 this.str=s;
@@ -25,8 +20,7 @@ return Clazz.new_(C$.c$$CharSequence$I$I$I$I$I,[this.str, -1, 0, this.remaining$
 });
 
 Clazz.newMeth(C$, 'c$$CharSequence$I$I$I$I$I', function (s, mark, pos, limit, cap, offset) {
-C$.superclazz.c$$I$I$I$I$CA$I.apply(this, [mark, pos, limit, cap, null, offset]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I$I$I$CA$I.apply(this,[mark, pos, limit, cap, null, offset]);C$.$init$.apply(this);
 this.str=s;
 }, 1);
 
@@ -93,4 +87,4 @@ return $I$(1).nativeOrder$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

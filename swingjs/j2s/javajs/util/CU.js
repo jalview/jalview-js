@@ -1,21 +1,13 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'java.util.Hashtable','javajs.util.PT','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CU");
-C$.colorNames=null;
-C$.colorArgbs=null;
-C$.mapJavaScriptColors=null;
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'java.util.Hashtable','javajs.util.PT','javajs.util.P3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CU");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.colorNames=Clazz.array(String, -1, ["black", "pewhite", "pecyan", "pepurple", "pegreen", "peblue", "peviolet", "pebrown", "pepink", "peyellow", "pedarkgreen", "peorange", "pelightblue", "pedarkcyan", "pedarkgray", "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow", "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgreen", "lightgrey", "lightgray", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navy", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "purple", "red", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue", "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat", "white", "whitesmoke", "yellow", "yellowgreen", "bluetint", "greenblue", "greentint", "grey", "gray", "pinktint", "redorange", "yellowtint"]);
-C$.colorArgbs=Clazz.array(Integer.TYPE, -1, [-16777216, -1, -16711681, -3137281, -16711936, -10460929, -32576, -6021080, -10024, -256, -16728064, -20480, -5197569, -16736096, -10461088, -984833, -332841, -16711681, -8388652, -983041, -657956, -6972, -5171, -16776961, -7722014, -5952982, -2180985, -10510688, -8388864, -2987746, -32944, -10185235, -1828, -2354116, -16711681, -16777077, -16741493, -4684277, -5658199, -16751616, -4343957, -7667573, -11179217, -29696, -6737204, -7667712, -1468806, -7357297, -12042869, -13676721, -16724271, -7077677, -60269, -16728065, -9868951, -14774017, -5103070, -1296, -14513374, -65281, -2302756, -460545, -10496, -2448096, -8355712, -16744448, -5374161, -983056, -38476, -3318692, -11861886, -16, -989556, -1644806, -3851, -8586240, -1331, -5383962, -1015680, -2031617, -329006, -7278960, -2894893, -2894893, -18751, -24454, -14634326, -7876870, -8943463, -5192482, -32, -16711936, -13447886, -331546, -65281, -8388608, -10039894, -16777011, -4565549, -7114533, -12799119, -8689426, -16713062, -12004916, -3730043, -15132304, -655366, -6943, -6987, -8531, -16777088, -133658, -8355840, -9728477, -23296, -47872, -2461482, -1120086, -6751336, -5247250, -2396013, -4139, -9543, -3308225, -16181, -2252579, -5185306, -8388480, -65536, -4419697, -12490271, -7650029, -360334, -744352, -13726889, -2578, -6270419, -4144960, -7876885, -9807155, -9404272, -1286, -16711809, -12156236, -2968436, -16744320, -2572328, -40121, -12525360, -1146130, -663885, -1, -657931, -256, -6632142, -5253121, -13726889, -6750285, -8355712, -8355712, -21573, -47872, -592267]);
-C$.mapJavaScriptColors=Clazz.new_($I$(1));
-{
-for (var i=C$.colorNames.length; --i >= 0; ) C$.mapJavaScriptColors.put$TK$TV(C$.colorNames[i], Integer.valueOf$I(C$.colorArgbs[i]));
-
-};
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['colorNames','String[]','colorArgbs','int[]','mapJavaScriptColors','java.util.Map']]]
 
 Clazz.newMeth(C$, 'toRGBHexString$javajs_api_GenericColor', function (c) {
 var rgb=c.getRGB$();
@@ -43,7 +35,7 @@ strColor=strColor.toLowerCase$();
 if (strColor.charAt$I(0) == "[" && strColor.charAt$I(len - 1) == "]" ) {
 var check;
 if (strColor.indexOf$S(",") >= 0) {
-var tokens=$I$(2).split$S$S(strColor.substring$I$I(1, strColor.length$() - 1), ",");
+var tokens=$I$(2,"split$S$S",[strColor.substring$I$I(1, strColor.length$() - 1), ","]);
 if (tokens.length != 3) return 0;
 var red=$I$(2).parseFloat$S(tokens[0]);
 var grn=$I$(2).parseFloat$S(tokens[1]);
@@ -64,7 +56,7 @@ strColor="#" + strColor.substring$I$I(len - 7, len - 1);
 len=7;
 }if (len == 7 && strColor.charAt$I(0) == "#" ) {
 try {
-return $I$(2).parseIntRadix$S$I(strColor.substring$I$I(1, 7), 16) | -16777216;
+return $I$(2,"parseIntRadix$S$I",[strColor.substring$I$I(1, 7), 16]) | -16777216;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return 0;
@@ -93,7 +85,7 @@ return C$.colorPtFromInt$I$javajs_util_P3(C$.getArgbFromString$S(colorName), nul
 }, 1);
 
 Clazz.newMeth(C$, 'colorPtFromInt$I$javajs_util_P3', function (color, pt) {
-if (pt == null ) pt=Clazz.new_($I$(3));
+if (pt == null ) pt=Clazz.new_($I$(3,1));
 pt.set$F$F$F((color >> 16) & 255, (color >> 8) & 255, color & 255);
 return pt;
 }, 1);
@@ -123,7 +115,7 @@ var p=(max + min);
 var q=(max - min);
 var h=(60 * ((q == 0  ? 0 : max == r  ? ((g - b) / q + 6) : max == g  ? (b - r) / q + 2 : (r - g) / q + 4))) % 360;
 var s=q / (q == 0  ? 1 : p <= 1  ? p : 2 - p);
-return (doRound ? $I$(3).new3$F$F$F(Math.round(h * 10) / 10.0, Math.round(s * 1000) / 10.0, Math.round(p * 500) / 10.0) : $I$(3).new3$F$F$F(h, s * 100, p * 50));
+return (doRound ? $I$(3,"new3$F$F$F",[Math.round(h * 10) / 10.0, Math.round(s * 1000) / 10.0, Math.round(p * 500) / 10.0]) : $I$(3).new3$F$F$F(h, s * 100, p * 50));
 }, 1);
 
 Clazz.newMeth(C$, 'hslToRGB$javajs_util_P3', function (hsl) {
@@ -135,13 +127,23 @@ var q=2 * (l - p);
 var r=C$.toRGB$F$F$F(p, q, h + 2);
 var g=C$.toRGB$F$F$F(p, q, h);
 var b=C$.toRGB$F$F$F(p, q, h - 2);
-return $I$(3).new3$F$F$F(Math.round(r * 255), Math.round(g * 255), Math.round(b * 255));
+return $I$(3,"new3$F$F$F",[Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)]);
 }, 1);
 
 Clazz.newMeth(C$, 'toRGB$F$F$F', function (p, q, h) {
 return ((h=(h + (h < 0  ? 6 : h > 6  ? -6 : 0))) < 1  ? p + q * h : h < 3  ? p + q : h < 4  ? p + q * (4 - h) : p);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.colorNames=Clazz.array(String, -1, ["black", "pewhite", "pecyan", "pepurple", "pegreen", "peblue", "peviolet", "pebrown", "pepink", "peyellow", "pedarkgreen", "peorange", "pelightblue", "pedarkcyan", "pedarkgray", "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "cyan", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow", "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgreen", "lightgrey", "lightgray", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navy", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "purple", "red", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue", "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat", "white", "whitesmoke", "yellow", "yellowgreen", "bluetint", "greenblue", "greentint", "grey", "gray", "pinktint", "redorange", "yellowtint"]);
+C$.colorArgbs=Clazz.array(Integer.TYPE, -1, [-16777216, -1, -16711681, -3137281, -16711936, -10460929, -32576, -6021080, -10024, -256, -16728064, -20480, -5197569, -16736096, -10461088, -984833, -332841, -16711681, -8388652, -983041, -657956, -6972, -5171, -16776961, -7722014, -5952982, -2180985, -10510688, -8388864, -2987746, -32944, -10185235, -1828, -2354116, -16711681, -16777077, -16741493, -4684277, -5658199, -16751616, -4343957, -7667573, -11179217, -29696, -6737204, -7667712, -1468806, -7357297, -12042869, -13676721, -16724271, -7077677, -60269, -16728065, -9868951, -14774017, -5103070, -1296, -14513374, -65281, -2302756, -460545, -10496, -2448096, -8355712, -16744448, -5374161, -983056, -38476, -3318692, -11861886, -16, -989556, -1644806, -3851, -8586240, -1331, -5383962, -1015680, -2031617, -329006, -7278960, -2894893, -2894893, -18751, -24454, -14634326, -7876870, -8943463, -5192482, -32, -16711936, -13447886, -331546, -65281, -8388608, -10039894, -16777011, -4565549, -7114533, -12799119, -8689426, -16713062, -12004916, -3730043, -15132304, -655366, -6943, -6987, -8531, -16777088, -133658, -8355840, -9728477, -23296, -47872, -2461482, -1120086, -6751336, -5247250, -2396013, -4139, -9543, -3308225, -16181, -2252579, -5185306, -8388480, -65536, -4419697, -12490271, -7650029, -360334, -744352, -13726889, -2578, -6270419, -4144960, -7876885, -9807155, -9404272, -1286, -16711809, -12156236, -2968436, -16744320, -2572328, -40121, -12525360, -1146130, -663885, -1, -657931, -256, -6632142, -5253121, -13726889, -6750285, -8355712, -8355712, -21573, -47872, -592267]);
+C$.mapJavaScriptColors=Clazz.new_($I$(1,1));
+{
+for (var i=C$.colorNames.length; --i >= 0; ) C$.mapJavaScriptColors.put$O$O(C$.colorNames[i], Integer.valueOf$I(C$.colorArgbs[i]));
+
+};
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

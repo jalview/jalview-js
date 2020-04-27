@@ -1,44 +1,50 @@
 (function(){var P$=java.lang,I$=[];
-var C$=Clazz.newClass(P$, "AssertionError", null, 'Error');
+/*c*/var C$=Clazz.newClass(P$, "AssertionError", null, 'Error');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.super_(C$, this);
+}, 1);
+
+Clazz.newMeth(C$, 'c$$S', function (detailMessage) {
+;C$.superclazz.c$$S.apply(this,[detailMessage]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O', function (detailMessage) {
-C$.superclazz.c$$S$Throwable.apply(this, [String.valueOf$O(detailMessage), (Clazz.instanceOf(detailMessage, "java.lang.Throwable") ? detailMessage : null)]);
-C$.$init$.apply(this);
+C$.c$$S.apply(this, [String.valueOf$O(detailMessage)]);
+if (Clazz.instanceOf(detailMessage, "java.lang.Throwable")) this.initCause$Throwable(detailMessage);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z', function (detailMessage) {
-C$.c$$O.apply(this, [String.valueOf$Z(detailMessage)]);
+C$.c$$S.apply(this, [String.valueOf$Z(detailMessage)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$C', function (detailMessage) {
-C$.c$$O.apply(this, [String.valueOf$C(detailMessage)]);
+C$.c$$S.apply(this, [String.valueOf$C(detailMessage)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (detailMessage) {
-C$.c$$O.apply(this, [Integer.toString$I(detailMessage)]);
+C$.c$$S.apply(this, [String.valueOf$I(detailMessage)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$J', function (detailMessage) {
-C$.c$$O.apply(this, [Long.toString$J(detailMessage)]);
+C$.c$$S.apply(this, [String.valueOf$J(detailMessage)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F', function (detailMessage) {
-C$.c$$O.apply(this, [Float.toString$F(detailMessage)]);
+C$.c$$S.apply(this, [String.valueOf$F(detailMessage)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D', function (detailMessage) {
-C$.c$$O.apply(this, [Double.toString$D(detailMessage)]);
+C$.c$$S.apply(this, [String.valueOf$D(detailMessage)]);
+}, 1);
+
+Clazz.newMeth(C$, 'c$$S$Throwable', function (message, cause) {
+;C$.superclazz.c$$S$Throwable.apply(this,[message, cause]);C$.$init$.apply(this);
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

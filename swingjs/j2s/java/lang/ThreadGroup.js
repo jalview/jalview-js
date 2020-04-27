@@ -1,36 +1,21 @@
-(function(){var P$=java.lang,p$1={},I$=[[0,'Thread','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ThreadGroup", null, null, [['Thread','Thread.UncaughtExceptionHandler']]);
+(function(){var P$=java.lang,p$1={},I$=[[0,'Thread','java.util.Arrays','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ThreadGroup", null, null, [['Thread','Thread.UncaughtExceptionHandler']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.name=null;
-this.maxPriority=0;
-this.destroyed=false;
-this.daemon=false;
-this.vmAllowSuspension=false;
-this.nUnstartedThreads=0;
-this.nthreads=0;
-this.threads=null;
-this.ngroups=0;
-this.groups=null;
-this.html5Applet=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.maxPriority=10;
 this.nUnstartedThreads=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['destroyed','daemon','vmAllowSuspension','秘systemExited'],'I',['maxPriority','nUnstartedThreads','nthreads','ngroups'],'S',['name'],'O',['parent','ThreadGroup','threads','Thread[]','groups','ThreadGroup[]','秘html5Applet','swingjs.api.js.HTML5Applet','秘appletViewer','swingjs.JSAppletViewer','秘timerQueue','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
 C$.c$$ThreadGroup$S.apply(this, [$I$(1).currentThread$().getThreadGroup$(), name]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$ThreadGroup$S', function (parent, name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.name=name;
 this.parent=parent;
 if (parent != null ) {
@@ -76,7 +61,7 @@ return;
 }this.maxPriority=(this.parent != null ) ? Math.min(pri, this.parent.maxPriority) : pri;
 ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }}for (var i=0; i < ngroupsSnapshot; i++) {
@@ -105,7 +90,7 @@ return 0;
 }result=this.nthreads;
 ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }}for (var i=0; i < ngroupsSnapshot; i++) {
@@ -140,7 +125,7 @@ list[n++]=this.threads[i];
 if (recurse) {
 ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }}}if (recurse) {
@@ -158,7 +143,7 @@ if (this.destroyed) {
 return 0;
 }ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }}var n=ngroupsSnapshot;
@@ -193,7 +178,7 @@ n+=ng;
 }if (recurse) {
 ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }}}if (recurse) {
@@ -217,7 +202,7 @@ this.threads[i].interrupt$();
 }
 ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }}for (var i=0; i < ngroupsSnapshot; i++) {
@@ -243,7 +228,7 @@ if (this.threads[i] === us ) suicide=true;
 }
 ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 }}for (var i=0; i < ngroupsSnapshot; i++) suicide=p$1.stopOrSuspend$Z.apply(groupsSnapshot[i], [suspend]) || suicide ;
 
 return suicide;
@@ -259,7 +244,7 @@ this.threads[i].resume$();
 }
 ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }}for (var i=0; i < ngroupsSnapshot; i++) {
@@ -276,7 +261,7 @@ if (this.destroyed || (this.nthreads > 0) ) {
 throw Clazz.new_(Clazz.load('IllegalThreadStateException'));
 }ngroupsSnapshot=this.ngroups;
 if (this.groups != null ) {
-groupsSnapshot=$I$(2).copyOf$TTA$I(this.groups, ngroupsSnapshot);
+groupsSnapshot=$I$(2).copyOf$OA$I(this.groups, ngroupsSnapshot);
 } else {
 groupsSnapshot=null;
 }if (this.parent != null ) {
@@ -299,7 +284,7 @@ throw Clazz.new_(Clazz.load('IllegalThreadStateException'));
 }if (this.groups == null ) {
 this.groups=Clazz.array(C$, [4]);
 } else if (this.ngroups == this.groups.length) {
-this.groups=$I$(2).copyOf$TTA$I(this.groups, this.ngroups * 2);
+this.groups=$I$(2).copyOf$OA$I(this.groups, this.ngroups * 2);
 }this.groups[this.ngroups]=g;
 this.ngroups++;
 }}, p$1);
@@ -335,7 +320,7 @@ throw Clazz.new_(Clazz.load('IllegalThreadStateException'));
 }if (this.threads == null ) {
 this.threads=Clazz.array($I$(1), [4]);
 } else if (this.nthreads == this.threads.length) {
-this.threads=$I$(2).copyOf$TTA$I(this.threads, this.nthreads * 2);
+this.threads=$I$(2).copyOf$OA$I(this.threads, this.nthreads * 2);
 }this.threads[this.nthreads]=t;
 this.nthreads++;
 this.nUnstartedThreads--;
@@ -357,22 +342,44 @@ this.notifyAll$();
 this.destroy$();
 }}});
 
-Clazz.newMeth(C$, ['uncaughtException$Thread$Throwable','uncaughtException$'], function (t, e) {
+Clazz.newMeth(C$, 'uncaughtException$Thread$Throwable', function (t, e) {
 if (this.parent != null ) {
 this.parent.uncaughtException$Thread$Throwable(t, e);
 } else {
 var ueh=$I$(1).getDefaultUncaughtExceptionHandler$();
 if (ueh != null ) {
-ueh.uncaughtException$(t, e);
+ueh.uncaughtException$Thread$Throwable(t, e);
 } else if (!(Clazz.instanceOf(e, "java.lang.ThreadDeath"))) {
 System.err.print$S("Exception in thread \"" + t.getName$() + "\" " );
 e.printStackTrace$java_io_PrintStream(System.err);
 }}});
 
 Clazz.newMeth(C$, 'toString', function () {
-return this.getClass$().getName$() + "[name=" + this.getName$() + ",maxpri=" + this.maxPriority + ",html5Applet=" + this.html5Applet + "]" ;
+return this.getClass$().getName$() + "[name=" + this.getName$() + ",maxpri=" + this.maxPriority + ",html5Applet=" + this.秘html5Applet + "]" ;
+});
+
+Clazz.newMeth(C$, '秘getTimerQueue$', function () {
+return (this.秘systemExited ? null : this.秘timerQueue == null  ? (this.秘timerQueue=Clazz.new_($I$(3,1))) : this.秘timerQueue);
+});
+
+Clazz.newMeth(C$, '秘exit$', function () {
+var q=this.秘getTimerQueue$();
+if (q != null ) for (var i=q.size$(); --i >= 0; ) {
+var t=q.get$I(i);
+try {
+t.stop$();
+} catch (e) {
+}
+}
+this.秘systemExited=true;
+});
+
+Clazz.newMeth(C$, '秘transferJ2SInfo$ThreadGroup', function (g) {
+g.秘appletViewer=this.秘appletViewer;
+g.秘html5Applet=this.秘html5Applet;
+g.秘timerQueue=this.秘timerQueue;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

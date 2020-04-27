@@ -1,15 +1,13 @@
 (function(){var P$=Clazz.newPackage("jalview.javascript.log4j"),I$=[];
-var C$=Clazz.newClass(P$, "Layout", null, null, 'jalview.javascript.log4j.spi.OptionHandler');
-C$.LINE_SEP=null;
-C$.LINE_SEP_LEN=0;
+/*c*/var C$=Clazz.newClass(P$, "Layout", null, null, 'jalview.javascript.log4j.spi.OptionHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.LINE_SEP=System.getProperty$S("line.separator");
-C$.LINE_SEP_LEN=C$.LINE_SEP.length$();
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['I',['LINE_SEP_LEN'],'S',['LINE_SEP']]]
 
 Clazz.newMeth(C$, 'getContentType$', function () {
 return "text/plain";
@@ -23,6 +21,11 @@ Clazz.newMeth(C$, 'getFooter$', function () {
 return null;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.LINE_SEP=System.getProperty$S("line.separator");
+C$.LINE_SEP_LEN=C$.LINE_SEP.length$();
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

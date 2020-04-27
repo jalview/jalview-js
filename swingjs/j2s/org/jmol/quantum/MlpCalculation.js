@@ -1,15 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.quantum"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MlpCalculation", null, 'org.jmol.quantum.MepCalculation');
+(function(){var P$=Clazz.newPackage("org.jmol.quantum"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MlpCalculation", null, 'org.jmol.quantum.MepCalculation');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.distanceMode=3;
 }, 1);
 
@@ -35,9 +33,9 @@ break;
 default:
 f=NaN;
 }
-}}if ($I$(1).debugging) $I$(1).debug$S(atoms[i].getInfo$() + " " + new Float(f).toString() );
+}}if ($I$(1).debugging) (function(a,f){return f.apply(null,a)})([atoms[i].getInfo$() + " " + new Float(f).toString() ],$I$(1).debug$S);
 potentials[i]=f;
 }
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

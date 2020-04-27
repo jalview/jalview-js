@@ -1,26 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,['java.awt.PageAttributes','.ColorType'],['java.awt.PageAttributes','.OriginType'],'InternalError','java.util.Locale',['java.awt.PageAttributes','.MediaType'],['java.awt.PageAttributes','.OrientationRequestedType'],['java.awt.PageAttributes','.PrintQualityType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PageAttributes", function(){
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,['java.awt.PageAttributes','.ColorType'],['java.awt.PageAttributes','.OriginType'],'InternalError','java.util.Locale',['java.awt.PageAttributes','.MediaType'],['java.awt.PageAttributes','.OrientationRequestedType'],['java.awt.PageAttributes','.PrintQualityType']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PageAttributes", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Cloneable');
+C$.$classes$=[['ColorType',25],['MediaType',25],['OrientationRequestedType',25],['OriginType',25],['PrintQualityType',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.color=null;
-this.media=null;
-this.orientationRequested=null;
-this.origin=null;
-this.printQuality=null;
-this.printerResolution=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['color','java.awt.PageAttributes.ColorType','media','java.awt.PageAttributes.MediaType','orientationRequested','java.awt.PageAttributes.OrientationRequestedType','origin','java.awt.PageAttributes.OriginType','printQuality','java.awt.PageAttributes.PrintQualityType','printerResolution','int[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setColor$java_awt_PageAttributes_ColorType($I$(1).MONOCHROME);
 this.setMediaToDefault$();
 this.setOrientationRequestedToDefault$();
@@ -30,12 +22,12 @@ this.setPrinterResolutionToDefault$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_PageAttributes', function (obj) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.set$java_awt_PageAttributes(obj);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_PageAttributes_ColorType$java_awt_PageAttributes_MediaType$java_awt_PageAttributes_OrientationRequestedType$java_awt_PageAttributes_OriginType$java_awt_PageAttributes_PrintQualityType$IA', function (color, media, orientationRequested, origin, printQuality, printerResolution) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setColor$java_awt_PageAttributes_ColorType(color);
 this.setMedia$java_awt_PageAttributes_MediaType(media);
 this.setOrientationRequested$java_awt_PageAttributes_OrientationRequestedType(orientationRequested);
@@ -49,7 +41,7 @@ try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(3));
+throw Clazz.new_($I$(3,1));
 } else {
 throw e;
 }
@@ -203,183 +195,48 @@ Clazz.newMeth(C$, 'toString', function () {
 return "color=" + this.getColor$() + ",media=" + this.getMedia$() + ",orientation-requested=" + this.getOrientationRequested$() + ",origin=" + this.getOrigin$() + ",print-quality=" + this.getPrintQuality$() + ",printer-resolution=[" + this.printerResolution[0] + "," + this.printerResolution[1] + "," + this.printerResolution[2] + "]" ;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.PageAttributes, "ColorType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PageAttributes, "ColorType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.COLOR=null;
-C$.MONOCHROME=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','COLOR','java.awt.PageAttributes.ColorType','+MONOCHROME']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["color", "monochrome"]);
 C$.COLOR=Clazz.new_(C$.c$$I,[0]);
 C$.MONOCHROME=Clazz.new_(C$.c$$I,[1]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PageAttributes, "MediaType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PageAttributes, "MediaType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.ISO_4A0=null;
-C$.ISO_2A0=null;
-C$.ISO_A0=null;
-C$.ISO_A1=null;
-C$.ISO_A2=null;
-C$.ISO_A3=null;
-C$.ISO_A4=null;
-C$.ISO_A5=null;
-C$.ISO_A6=null;
-C$.ISO_A7=null;
-C$.ISO_A8=null;
-C$.ISO_A9=null;
-C$.ISO_A10=null;
-C$.ISO_B0=null;
-C$.ISO_B1=null;
-C$.ISO_B2=null;
-C$.ISO_B3=null;
-C$.ISO_B4=null;
-C$.ISO_B5=null;
-C$.ISO_B6=null;
-C$.ISO_B7=null;
-C$.ISO_B8=null;
-C$.ISO_B9=null;
-C$.ISO_B10=null;
-C$.JIS_B0=null;
-C$.JIS_B1=null;
-C$.JIS_B2=null;
-C$.JIS_B3=null;
-C$.JIS_B4=null;
-C$.JIS_B5=null;
-C$.JIS_B6=null;
-C$.JIS_B7=null;
-C$.JIS_B8=null;
-C$.JIS_B9=null;
-C$.JIS_B10=null;
-C$.ISO_C0=null;
-C$.ISO_C1=null;
-C$.ISO_C2=null;
-C$.ISO_C3=null;
-C$.ISO_C4=null;
-C$.ISO_C5=null;
-C$.ISO_C6=null;
-C$.ISO_C7=null;
-C$.ISO_C8=null;
-C$.ISO_C9=null;
-C$.ISO_C10=null;
-C$.ISO_DESIGNATED_LONG=null;
-C$.EXECUTIVE=null;
-C$.FOLIO=null;
-C$.INVOICE=null;
-C$.LEDGER=null;
-C$.NA_LETTER=null;
-C$.NA_LEGAL=null;
-C$.QUARTO=null;
-C$.A=null;
-C$.B=null;
-C$.C=null;
-C$.D=null;
-C$.E=null;
-C$.NA_10X15_ENVELOPE=null;
-C$.NA_10X14_ENVELOPE=null;
-C$.NA_10X13_ENVELOPE=null;
-C$.NA_9X12_ENVELOPE=null;
-C$.NA_9X11_ENVELOPE=null;
-C$.NA_7X9_ENVELOPE=null;
-C$.NA_6X9_ENVELOPE=null;
-C$.NA_NUMBER_9_ENVELOPE=null;
-C$.NA_NUMBER_10_ENVELOPE=null;
-C$.NA_NUMBER_11_ENVELOPE=null;
-C$.NA_NUMBER_12_ENVELOPE=null;
-C$.NA_NUMBER_14_ENVELOPE=null;
-C$.INVITE_ENVELOPE=null;
-C$.ITALY_ENVELOPE=null;
-C$.MONARCH_ENVELOPE=null;
-C$.PERSONAL_ENVELOPE=null;
-C$.A0=null;
-C$.A1=null;
-C$.A2=null;
-C$.A3=null;
-C$.A4=null;
-C$.A5=null;
-C$.A6=null;
-C$.A7=null;
-C$.A8=null;
-C$.A9=null;
-C$.A10=null;
-C$.B0=null;
-C$.B1=null;
-C$.B2=null;
-C$.B3=null;
-C$.B4=null;
-C$.ISO_B4_ENVELOPE=null;
-C$.B5=null;
-C$.ISO_B5_ENVELOPE=null;
-C$.B6=null;
-C$.B7=null;
-C$.B8=null;
-C$.B9=null;
-C$.B10=null;
-C$.C0=null;
-C$.ISO_C0_ENVELOPE=null;
-C$.C1=null;
-C$.ISO_C1_ENVELOPE=null;
-C$.C2=null;
-C$.ISO_C2_ENVELOPE=null;
-C$.C3=null;
-C$.ISO_C3_ENVELOPE=null;
-C$.C4=null;
-C$.ISO_C4_ENVELOPE=null;
-C$.C5=null;
-C$.ISO_C5_ENVELOPE=null;
-C$.C6=null;
-C$.ISO_C6_ENVELOPE=null;
-C$.C7=null;
-C$.ISO_C7_ENVELOPE=null;
-C$.C8=null;
-C$.ISO_C8_ENVELOPE=null;
-C$.C9=null;
-C$.ISO_C9_ENVELOPE=null;
-C$.C10=null;
-C$.ISO_C10_ENVELOPE=null;
-C$.ISO_DESIGNATED_LONG_ENVELOPE=null;
-C$.STATEMENT=null;
-C$.TABLOID=null;
-C$.LETTER=null;
-C$.NOTE=null;
-C$.LEGAL=null;
-C$.ENV_10X15=null;
-C$.ENV_10X14=null;
-C$.ENV_10X13=null;
-C$.ENV_9X12=null;
-C$.ENV_9X11=null;
-C$.ENV_7X9=null;
-C$.ENV_6X9=null;
-C$.ENV_9=null;
-C$.ENV_10=null;
-C$.ENV_11=null;
-C$.ENV_12=null;
-C$.ENV_14=null;
-C$.ENV_INVITE=null;
-C$.ENV_ITALY=null;
-C$.ENV_MONARCH=null;
-C$.ENV_PERSONAL=null;
-C$.INVITE=null;
-C$.ITALY=null;
-C$.MONARCH=null;
-C$.PERSONAL=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','ISO_4A0','java.awt.PageAttributes.MediaType','+ISO_2A0','+ISO_A0','+ISO_A1','+ISO_A2','+ISO_A3','+ISO_A4','+ISO_A5','+ISO_A6','+ISO_A7','+ISO_A8','+ISO_A9','+ISO_A10','+ISO_B0','+ISO_B1','+ISO_B2','+ISO_B3','+ISO_B4','+ISO_B5','+ISO_B6','+ISO_B7','+ISO_B8','+ISO_B9','+ISO_B10','+JIS_B0','+JIS_B1','+JIS_B2','+JIS_B3','+JIS_B4','+JIS_B5','+JIS_B6','+JIS_B7','+JIS_B8','+JIS_B9','+JIS_B10','+ISO_C0','+ISO_C1','+ISO_C2','+ISO_C3','+ISO_C4','+ISO_C5','+ISO_C6','+ISO_C7','+ISO_C8','+ISO_C9','+ISO_C10','+ISO_DESIGNATED_LONG','+EXECUTIVE','+FOLIO','+INVOICE','+LEDGER','+NA_LETTER','+NA_LEGAL','+QUARTO','+A','+B','+C','+D','+E','+NA_10X15_ENVELOPE','+NA_10X14_ENVELOPE','+NA_10X13_ENVELOPE','+NA_9X12_ENVELOPE','+NA_9X11_ENVELOPE','+NA_7X9_ENVELOPE','+NA_6X9_ENVELOPE','+NA_NUMBER_9_ENVELOPE','+NA_NUMBER_10_ENVELOPE','+NA_NUMBER_11_ENVELOPE','+NA_NUMBER_12_ENVELOPE','+NA_NUMBER_14_ENVELOPE','+INVITE_ENVELOPE','+ITALY_ENVELOPE','+MONARCH_ENVELOPE','+PERSONAL_ENVELOPE','+A0','+A1','+A2','+A3','+A4','+A5','+A6','+A7','+A8','+A9','+A10','+B0','+B1','+B2','+B3','+B4','+ISO_B4_ENVELOPE','+B5','+ISO_B5_ENVELOPE','+B6','+B7','+B8','+B9','+B10','+C0','+ISO_C0_ENVELOPE','+C1','+ISO_C1_ENVELOPE','+C2','+ISO_C2_ENVELOPE','+C3','+ISO_C3_ENVELOPE','+C4','+ISO_C4_ENVELOPE','+C5','+ISO_C5_ENVELOPE','+C6','+ISO_C6_ENVELOPE','+C7','+ISO_C7_ENVELOPE','+C8','+ISO_C8_ENVELOPE','+C9','+ISO_C9_ENVELOPE','+C10','+ISO_C10_ENVELOPE','+ISO_DESIGNATED_LONG_ENVELOPE','+STATEMENT','+TABLOID','+LETTER','+NOTE','+LEGAL','+ENV_10X15','+ENV_10X14','+ENV_10X13','+ENV_9X12','+ENV_9X11','+ENV_7X9','+ENV_6X9','+ENV_9','+ENV_10','+ENV_11','+ENV_12','+ENV_14','+ENV_INVITE','+ENV_ITALY','+ENV_MONARCH','+ENV_PERSONAL','+INVITE','+ITALY','+MONARCH','+PERSONAL']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["iso-4a0", "iso-2a0", "iso-a0", "iso-a1", "iso-a2", "iso-a3", "iso-a4", "iso-a5", "iso-a6", "iso-a7", "iso-a8", "iso-a9", "iso-a10", "iso-b0", "iso-b1", "iso-b2", "iso-b3", "iso-b4", "iso-b5", "iso-b6", "iso-b7", "iso-b8", "iso-b9", "iso-b10", "jis-b0", "jis-b1", "jis-b2", "jis-b3", "jis-b4", "jis-b5", "jis-b6", "jis-b7", "jis-b8", "jis-b9", "jis-b10", "iso-c0", "iso-c1", "iso-c2", "iso-c3", "iso-c4", "iso-c5", "iso-c6", "iso-c7", "iso-c8", "iso-c9", "iso-c10", "iso-designated-long", "executive", "folio", "invoice", "ledger", "na-letter", "na-legal", "quarto", "a", "b", "c", "d", "e", "na-10x15-envelope", "na-10x14-envelope", "na-10x13-envelope", "na-9x12-envelope", "na-9x11-envelope", "na-7x9-envelope", "na-6x9-envelope", "na-number-9-envelope", "na-number-10-envelope", "na-number-11-envelope", "na-number-12-envelope", "na-number-14-envelope", "invite-envelope", "italy-envelope", "monarch-envelope", "personal-envelope"]);
 C$.ISO_4A0=Clazz.new_(C$.c$$I,[0]);
 C$.ISO_2A0=Clazz.new_(C$.c$$I,[1]);
@@ -528,91 +385,85 @@ C$.INVITE=C$.INVITE_ENVELOPE;
 C$.ITALY=C$.ITALY_ENVELOPE;
 C$.MONARCH=C$.MONARCH_ENVELOPE;
 C$.PERSONAL=C$.PERSONAL_ENVELOPE;
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PageAttributes, "OrientationRequestedType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PageAttributes, "OrientationRequestedType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.PORTRAIT=null;
-C$.LANDSCAPE=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','PORTRAIT','java.awt.PageAttributes.OrientationRequestedType','+LANDSCAPE']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["portrait", "landscape"]);
 C$.PORTRAIT=Clazz.new_(C$.c$$I,[0]);
 C$.LANDSCAPE=Clazz.new_(C$.c$$I,[1]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PageAttributes, "OriginType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PageAttributes, "OriginType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.PHYSICAL=null;
-C$.PRINTABLE=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','PHYSICAL','java.awt.PageAttributes.OriginType','+PRINTABLE']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["physical", "printable"]);
 C$.PHYSICAL=Clazz.new_(C$.c$$I,[0]);
 C$.PRINTABLE=Clazz.new_(C$.c$$I,[1]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.PageAttributes, "PrintQualityType", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PageAttributes, "PrintQualityType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.AttributeValue');
-C$.NAMES=null;
-C$.HIGH=null;
-C$.NORMAL=null;
-C$.DRAFT=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['NAMES','String[]','HIGH','java.awt.PageAttributes.PrintQualityType','+NORMAL','+DRAFT']]]
+
+Clazz.newMeth(C$, 'c$$I', function (type) {
+;C$.superclazz.c$$I$SA.apply(this,[type, C$.NAMES]);C$.$init$.apply(this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.NAMES=Clazz.array(String, -1, ["high", "normal", "draft"]);
 C$.HIGH=Clazz.new_(C$.c$$I,[0]);
 C$.NORMAL=Clazz.new_(C$.c$$I,[1]);
 C$.DRAFT=Clazz.new_(C$.c$$I,[2]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (type) {
-C$.superclazz.c$$I$SA.apply(this, [type, C$.NAMES]);
-C$.$init$.apply(this);
-}, 1);
+};
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:13 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

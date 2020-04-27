@@ -1,25 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.util.Logger','javajs.util.PT','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Lst','org.jmol.adapter.readers.quantum.BasisFunctionReader','org.jmol.util.Escape','javajs.util.AU','java.util.Hashtable','org.jmol.quantum.QS','javajs.util.V3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GaussianReader", null, 'org.jmol.adapter.readers.quantum.MOReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.util.Logger','javajs.util.PT','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Lst','org.jmol.adapter.readers.quantum.BasisFunctionReader','org.jmol.util.Escape','javajs.util.AU','java.util.Hashtable','org.jmol.adapter.smarter.AtomSetCollectionReader','org.jmol.quantum.QS','javajs.util.V3']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "GaussianReader", null, 'org.jmol.adapter.readers.quantum.MOReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.energyString=null;
-this.energyKey=null;
-this.calculationNumber=0;
-this.scanPoint=0;
-this.equivalentAtomSets=0;
-this.stepNumber=0;
-this.moModelSet=0;
-this.namedSets=null;
-this.isHighPrecision=false;
-this.haveHighPrecision=false;
-this.allowHighPrecision=false;
-this.orientationInput=false;
-this.orientation=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.energyString="";
@@ -28,8 +10,10 @@ this.calculationNumber=1;
 this.scanPoint=-1;
 this.equivalentAtomSets=0;
 this.moModelSet=-1;
-this.namedSets=Clazz.new_($I$(1));
-}, 1);
+this.namedSets=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['isHighPrecision','haveHighPrecision','allowHighPrecision','orientationInput'],'I',['calculationNumber','scanPoint','equivalentAtomSets','stepNumber','moModelSet'],'S',['energyString','energyKey','orientation'],'O',['namedSets','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.allowHighPrecision=!this.checkAndRemoveFilterKey$S("NOHP");
@@ -86,7 +70,7 @@ return true;
 }if (this.line.indexOf$S("Molecular Orbital Coefficients") >= 0 || this.line.indexOf$S("Natural Orbital Coefficients") >= 0  || this.line.indexOf$S("Natural Transition Orbitals") >= 0 ) {
 if (!this.filterMO$()) return true;
 this.readMolecularOrbitals$();
-$I$(2).info$S(this.orbitals.size$() + " molecular orbitals read");
+(function(a,f){return f.apply(null,a)})([this.orbitals.size$() + " molecular orbitals read"],$I$(2).info$S);
 return true;
 }if (this.line.startsWith$S(" Normal termination of Gaussian")) {
 ++this.calculationNumber;
@@ -125,11 +109,11 @@ this.asc.setAtomSetEnergy$S$F(tokens[2], this.parseFloatStr$S(tokens[2]));
 this.energyString=tokens[2] + " " + tokens[3] ;
 p$1.setNames$S$javajs_util_BS$I.apply(this, [this.energyKey + " = " + this.energyString , this.namedSets, this.equivalentAtomSets]);
 p$1.setProps$S$S$I.apply(this, [this.energyKey, this.energyString, this.equivalentAtomSets]);
-tokens=$I$(3).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S);
 if (tokens.length > 2) {
 p$1.setProps$S$S$I.apply(this, [tokens[0], tokens[2], this.equivalentAtomSets]);
 if (tokens.length > 5) p$1.setProps$S$S$I.apply(this, [tokens[3], tokens[5], this.equivalentAtomSets]);
-tokens=$I$(3).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S);
 }if (tokens.length > 2) p$1.setProps$S$S$I.apply(this, [tokens[0], tokens[2], this.equivalentAtomSets]);
 }, p$1);
 
@@ -170,8 +154,8 @@ this.asc.setAtomSetModelProperty$S$S(".PATH", "Calculation " + this.calculationN
 });
 
 Clazz.newMeth(C$, 'readBasis$', function () {
-this.shells=Clazz.new_($I$(5));
-var gdata=Clazz.new_($I$(5));
+this.shells=Clazz.new_($I$(5,1));
+var gdata=Clazz.new_($I$(5,1));
 var ac=0;
 this.gaussianCount=0;
 this.shellCount=0;
@@ -200,15 +184,15 @@ if (doSphericalF && oType.indexOf$S("F") >= 0  || doSphericalD && oType.indexOf$
 var nGaussians=this.parseIntStr$S(tokens[1]);
 slater[2]=this.gaussianCount + 1;
 slater[3]=nGaussians;
-if (this.debugging) $I$(2).debug$S("Slater " + this.shells.size$() + " " + $I$(7).eAI$IA(slater) );
-this.shells.addLast$TV(slater);
+if (this.debugging) (function(a,f){return f.apply(null,a)})(["Slater " + this.shells.size$() + " " + $I$(7).eAI$IA(slater) ],$I$(2).debug$S);
+this.shells.addLast$O(slater);
 this.gaussianCount+=nGaussians;
 for (var i=0; i < nGaussians; i++) {
 this.rd$();
 this.line=$I$(3).rep$S$S$S(this.line, "D ", "D+");
 tokens=this.getTokens$();
-if (this.debugging) $I$(2).debug$S("Gaussians " + (i + 1) + " " + $I$(7).eAS$SA$Z(tokens, true) );
-gdata.addLast$TV(tokens);
+if (this.debugging) (function(a,f){return f.apply(null,a)})(["Gaussians " + (i + 1) + " " + $I$(7).eAS$SA$Z(tokens, true) ],$I$(2).debug$S);
+gdata.addLast$O(tokens);
 }
 }
 }
@@ -227,10 +211,10 @@ this.enableShell$I(slater[1]);
 var nGaussians=this.parseIntStr$S(tokens[5]);
 slater[2]=this.gaussianCount + 1;
 slater[3]=nGaussians;
-this.shells.addLast$TV(slater);
+this.shells.addLast$O(slater);
 this.gaussianCount+=nGaussians;
 for (var i=0; i < nGaussians; i++) {
-gdata.addLast$TV($I$(3).getTokens$S(this.rd$()));
+gdata.addLast$O((function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S));
 }
 }
 }if (ac == 0) ac=1;
@@ -262,41 +246,41 @@ this.addMOData$I$javajs_util_LstA$java_util_MapA(nThisLine, data, mos);
 if (isNOtype) {
 tokens=this.getTokens$();
 nThisLine=tokens.length;
-tokens=$I$(3).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S);
 } else {
-tokens=$I$(3).getTokens$S(this.rd$());
+tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S);
 nThisLine=tokens.length;
 }for (var i=0; i < nThisLine; i++) {
-mos[i]=Clazz.new_($I$(9));
-data[i]=Clazz.new_($I$(5));
+mos[i]=Clazz.new_($I$(9,1));
+data[i]=Clazz.new_($I$(5,1));
 var sym;
 if (isNOtype) {
-mos[i].put$TK$TV("occupancy", Float.valueOf$F($I$(3).parseFloat$S(tokens[i + 2])));
+mos[i].put$O$O("occupancy", Float.valueOf$F($I$(3).parseFloat$S(tokens[i + 2])));
 } else {
 sym=tokens[i];
-mos[i].put$TK$TV("symmetry", sym);
-if (sym.indexOf$S("O") >= 0) mos[i].put$TK$TV("occupancy", Float.valueOf$F(2));
- else if (sym.indexOf$S("V") >= 0) mos[i].put$TK$TV("occupancy", Float.valueOf$F(0));
+mos[i].put$O$O("symmetry", sym);
+if (sym.indexOf$S("O") >= 0) mos[i].put$O$O("occupancy", Float.valueOf$F(2));
+ else if (sym.indexOf$S("V") >= 0) mos[i].put$O$O("occupancy", Float.valueOf$F(0));
 }}
 if (isNOtype) continue;
 this.line=this.rd$().substring$I(21);
 tokens=this.getTokens$();
-if (tokens.length != nThisLine) tokens=org.jmol.adapter.smarter.AtomSetCollectionReader.getStrings$S$I$I(this.line, nThisLine, 10);
+if (tokens.length != nThisLine) tokens=$I$(10).getStrings$S$I$I(this.line, nThisLine, 10);
 for (var i=0; i < nThisLine; i++) {
-mos[i].put$TK$TV("energy", Float.valueOf$S(tokens[i]));
+mos[i].put$O$O("energy", Float.valueOf$S(tokens[i]));
 }
 continue;
-} else if (this.line.length$() < 21 || (this.line.charAt$I(5) != " " && !$I$(3).isDigit$C(this.line.charAt$I(5)) ) ) {
+} else if (this.line.length$() < 21 || (this.line.charAt$I(5) != " " && !(function(a,f){return f.apply(null,a)})([this.line.charAt$I(5)],$I$(3).isDigit$C) ) ) {
 continue;
 }try {
 this.line=$I$(3).rep$S$S$S(this.line, " 0 ", "0  ");
 tokens=this.getTokens$();
 var type=tokens[tokens.length - nThisLine - 1 ].substring$I(1);
-if ($I$(3).isDigit$C(type.charAt$I(0))) type=type.substring$I(1);
-if (!$I$(10).isQuantumBasisSupported$C(type.charAt$I(0)) && "XYZ".indexOf$I(type.charAt$I(0)) >= 0 ) type=(type.length$() == 2 ? "D" : "F") + type;
-if (!$I$(10).isQuantumBasisSupported$C(type.charAt$I(0))) continue;
-tokens=org.jmol.adapter.smarter.AtomSetCollectionReader.getStrings$S$I$I(this.line.substring$I(this.line.length$() - 10 * nThisLine), nThisLine, 10);
-for (var i=0; i < nThisLine; i++) data[i].addLast$TV(tokens[i]);
+if ((function(a,f){return f.apply(null,a)})([type.charAt$I(0)],$I$(3).isDigit$C)) type=type.substring$I(1);
+if (!(function(a,f){return f.apply(null,a)})([type.charAt$I(0)],$I$(11).isQuantumBasisSupported$C) && "XYZ".indexOf$I(type.charAt$I(0)) >= 0 ) type=(type.length$() == 2 ? "D" : "F") + type;
+if (!(function(a,f){return f.apply(null,a)})([type.charAt$I(0)],$I$(11).isQuantumBasisSupported$C)) continue;
+tokens=(function(a,f){return f.apply(null,a)})([this.line.substring$I(this.line.length$() - 10 * nThisLine), nThisLine, 10],$I$(10).getStrings$S$I$I);
+for (var i=0; i < nThisLine; i++) data[i].addLast$O(tokens[i]);
 
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -321,7 +305,7 @@ var data=Clazz.array(String, [ac, null]);
 var temp=null;
 var atomIndices=Clazz.array(Integer.TYPE, [ac]);
 while (this.line != null  && this.line.length$() > 20 ){
-var symmetries=$I$(3).getTokens$S(this.rd$());
+var symmetries=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S);
 this.discardLinesUntilContains$S(" Frequencies");
 this.isHighPrecision=(this.line.indexOf$S("---") > 0);
 if (this.isHighPrecision ? !this.allowHighPrecision : this.haveHighPrecision) return;
@@ -331,9 +315,9 @@ this.haveHighPrecision=true;
 }if (temp == null ) temp=Clazz.array(String, [this.isHighPrecision ? 3 : 1, 0]);
 var width=(this.isHighPrecision ? 22 : 15);
 var frequencies=$I$(3).getTokensAt$S$I(this.line, width);
-var red_masses=$I$(3).getTokensAt$S$I(this.discardLinesUntilContains$S(this.isHighPrecision ? "Reduced masses" : "Red. masses"), width);
-var frc_consts=$I$(3).getTokensAt$S$I(this.discardLinesUntilContains$S(this.isHighPrecision ? "Force constants" : "Frc consts"), width);
-var intensities=$I$(3).getTokensAt$S$I(this.discardLinesUntilContains$S(this.isHighPrecision ? "IR Intensities" : "IR Inten"), width);
+var red_masses=(function(a,f){return f.apply(null,a)})([this.discardLinesUntilContains$S(this.isHighPrecision ? "Reduced masses" : "Red. masses"), width],$I$(3).getTokensAt$S$I);
+var frc_consts=(function(a,f){return f.apply(null,a)})([this.discardLinesUntilContains$S(this.isHighPrecision ? "Force constants" : "Frc consts"), width],$I$(3).getTokensAt$S$I);
+var intensities=(function(a,f){return f.apply(null,a)})([this.discardLinesUntilContains$S(this.isHighPrecision ? "IR Intensities" : "IR Inten"), width],$I$(3).getTokensAt$S$I);
 var iAtom0=this.asc.ac;
 var frequencyCount=frequencies.length;
 var ignore=Clazz.array(Boolean.TYPE, [frequencyCount]);
@@ -367,10 +351,10 @@ this.fillFrequencyData$I$I$I$ZA$Z$I$I$IA$I$SAA(iAtom0, nLines, ac, ignore, true,
 });
 
 Clazz.newMeth(C$, 'readDipoleMoment$', function () {
-var tokens=$I$(3).getTokens$S(this.rd$());
+var tokens=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S);
 if (tokens.length != 8) return;
-var dipole=$I$(11).new3$F$F$F(this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[3]), this.parseFloatStr$S(tokens[5]));
-$I$(2).info$S("Molecular dipole for model " + this.asc.atomSetCount + " = " + dipole );
+var dipole=(function(a,f){return f.apply(null,a)})([this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[3]), this.parseFloatStr$S(tokens[5])],$I$(12).new3$F$F$F);
+(function(a,f){return f.apply(null,a)})(["Molecular dipole for model " + this.asc.atomSetCount + " = " + dipole ],$I$(2).info$S);
 this.asc.setCurrentModelInfo$S$O("dipole", dipole);
 });
 
@@ -382,7 +366,7 @@ var atoms=this.asc.atoms;
 for (var i=i0; i < ac; ++i) {
 while (atoms[i].elementNumber == 0)++i;
 
-var charge=this.parseFloatStr$S($I$(3).getTokens$S(this.rd$())[2]);
+var charge=this.parseFloatStr$S((function(a,f){return f.apply(null,a)})([this.rd$()],$I$(3).getTokens$S)[2]);
 atoms[i].partialCharge=charge;
 }
 $I$(2).info$S("Mulliken charges found for Model " + this.asc.atomSetCount);
@@ -391,4 +375,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:00:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

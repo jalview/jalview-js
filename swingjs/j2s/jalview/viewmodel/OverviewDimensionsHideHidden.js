@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.viewmodel"),I$=[[0,'jalview.datamodel.VisibleColsCollection','jalview.datamodel.VisibleRowsCollection']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OverviewDimensionsHideHidden", null, 'jalview.viewmodel.OverviewDimensions');
+(function(){var P$=Clazz.newPackage("jalview.viewmodel"),I$=[[0,'jalview.datamodel.VisibleColsCollection','jalview.datamodel.VisibleRowsCollection']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OverviewDimensionsHideHidden", null, 'jalview.viewmodel.OverviewDimensions');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ranges=null;
-this.xdiff=0;
-this.ydiff=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['xdiff','ydiff'],'O',['ranges','jalview.viewmodel.ViewportRanges']]]
 
 Clazz.newMeth(C$, 'c$$jalview_viewmodel_ViewportRanges$Z', function (vpranges, showAnnotationPanel) {
-C$.superclazz.c$$jalview_viewmodel_ViewportRanges$Z.apply(this, [vpranges, showAnnotationPanel]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_viewmodel_ViewportRanges$Z.apply(this,[vpranges, showAnnotationPanel]);C$.$init$.apply(this);
 this.ranges=vpranges;
 this.resetAlignmentDims$();
 }, 1);
@@ -64,11 +57,11 @@ this.setBoxPosition$I$I$I$I(this.ranges.getStartRes$(), this.ranges.getStartSeq$
 });
 
 Clazz.newMeth(C$, 'getColumns$jalview_datamodel_AlignmentI', function (al) {
-return Clazz.new_($I$(1).c$$I$I$jalview_datamodel_HiddenColumns,[0, this.ranges.getAbsoluteAlignmentWidth$() - 1, al.getHiddenColumns$()]);
+return Clazz.new_([0, this.ranges.getAbsoluteAlignmentWidth$() - 1, al.getHiddenColumns$()],$I$(1,1).c$$I$I$jalview_datamodel_HiddenColumns);
 });
 
 Clazz.newMeth(C$, 'getRows$jalview_datamodel_AlignmentI', function (al) {
-return Clazz.new_($I$(2).c$$I$I$jalview_datamodel_AlignmentI,[0, this.ranges.getAbsoluteAlignmentHeight$() - 1, al]);
+return Clazz.new_([0, this.ranges.getAbsoluteAlignmentHeight$() - 1, al],$I$(2,1).c$$I$I$jalview_datamodel_AlignmentI);
 });
 
 Clazz.newMeth(C$, 'resetAlignmentDims$', function () {
@@ -98,4 +91,4 @@ this.ydiff=this.ranges.getStartSeq$() - vpy;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

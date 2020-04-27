@@ -1,19 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.ws"),I$=[[0,'StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JobStateSummary");
+(function(){var P$=Clazz.newPackage("jalview.ws"),I$=[[0,'StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JobStateSummary");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.running=0;
-this.queuing=0;
-this.finished=0;
-this.error=0;
-this.serror=0;
-this.cancelled=0;
-this.results=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.running=0;
@@ -23,7 +11,9 @@ this.error=0;
 this.serror=0;
 this.cancelled=0;
 this.results=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['running','queuing','finished','error','serror','cancelled','results']]]
 
 Clazz.newMeth(C$, 'updateJobPanelState$jalview_gui_WebserviceInfo$S$jalview_ws_AWsJob', function (wsInfo, OutputHeader, j) {
 if (j.cancelled) {
@@ -59,7 +49,7 @@ progheader += "Job was broken.\n";
 this.error++;
 j.subjobComplete=true;
 wsInfo.setStatus$I$I(j.jobnum, 4);
-}var output=Clazz.new_($I$(1));
+}var output=Clazz.new_($I$(1,1));
 if (OutputHeader != null ) {
 output.append$S(OutputHeader);
 }if (progheader != null ) {
@@ -79,4 +69,4 @@ this.error++;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

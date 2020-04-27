@@ -1,36 +1,25 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},p$2={},I$=[[0,'javajs.util.BS','java.util.Hashtable','org.jmol.util.Logger','java.util.Arrays','org.jmol.util.Elements','javajs.util.PT','javajs.util.Lst','java.util.Collections',['org.jmol.symmetry.CIPChirality','.CIPAtom'],'org.jmol.viewer.JC','org.jmol.util.SimpleNode']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CIPChirality", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},p$2={},I$=[[0,'javajs.util.BS','java.util.Hashtable','org.jmol.util.Logger','java.util.Arrays','org.jmol.util.Elements','javajs.util.PT','org.jmol.symmetry.CIPChirality','javajs.util.Lst','java.util.Collections',['org.jmol.symmetry.CIPChirality','.CIPAtom'],'org.jmol.viewer.JC','org.jmol.util.SimpleNode']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "CIPChirality", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.ruleNames=null;
+C$.$classes$=[['CIPAtom',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.ruleNames=Clazz.array(String, -1, ["", "1a", "1b", "2", "3", "4a", "4b", "4c", "5", "6"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.currentRule=0;
-this.root=null;
-this.data=null;
-this.doTrack=false;
-this.isAux=false;
-this.bsNeedRule=null;
-this.havePseudoAuxiliary=false;
-this.ptIDLogger=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.currentRule=1;
-this.bsNeedRule=Clazz.new_($I$(1));
-}, 1);
+this.bsNeedRule=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['doTrack','isAux','havePseudoAuxiliary'],'I',['currentRule','ptIDLogger'],'O',['root','org.jmol.symmetry.CIPChirality.CIPAtom','data','org.jmol.symmetry.CIPData','bsNeedRule','javajs.util.BS']]
+,['O',['ruleNames','String[]']]]
 
 Clazz.newMeth(C$, 'getRuleName$I', function (rule) {
 return C$.ruleNames[rule];
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getChiralityForAtoms$org_jmol_symmetry_CIPData', function (data) {
@@ -52,15 +41,15 @@ a.setCIPChirality$I(c == 0 ? 3 : c | ((this.currentRule - 1) << 5));
 if (this.doTrack && c != 0 ) data.getRootTrackerResult$org_jmol_symmetry_CIPChirality_CIPAtom(this.root);
 }
 if (haveAlkenes) {
-var lstEZ=Clazz.new_($I$(7));
+var lstEZ=Clazz.new_($I$(8,1));
 for (var i=bsToDo.nextSetBit$I(0); i >= 0; i=bsToDo.nextSetBit$I(i + 1)) p$2.getAtomBondChirality$org_jmol_util_SimpleNode$javajs_util_Lst$javajs_util_BS.apply(this, [data.atoms[i], lstEZ, bsToDo]);
 
 if (data.lstSmallRings.length > 0 && lstEZ.size$() > 0 ) p$2.clearSmallRingEZ$org_jmol_util_SimpleNodeA$javajs_util_Lst.apply(this, [data.atoms, lstEZ]);
 p$2.setStereoFromSmiles$javajs_util_BS$I$org_jmol_util_SimpleNodeA.apply(this, [data.bsHelixM, 17, data.atoms]);
 p$2.setStereoFromSmiles$javajs_util_BS$I$org_jmol_util_SimpleNodeA.apply(this, [data.bsHelixP, 18, data.atoms]);
 }if ($I$(3).debugging) {
-$I$(3).info$S("Kekule ambiguous = " + data.bsKekuleAmbiguous);
-$I$(3).info$S("small rings = " + $I$(6).toJSON$S$O(null, data.lstSmallRings));
+(function(a,f){return f.apply(null,a)})(["Kekule ambiguous = " + data.bsKekuleAmbiguous],$I$(3).info$S);
+(function(a,f){return f.apply(null,a)})(["small rings = " + $I$(6).toJSON$S$O(null, data.lstSmallRings)],$I$(3).info$S);
 }});
 
 Clazz.newMeth(C$, 'setStereoFromSmiles$javajs_util_BS$I$org_jmol_util_SimpleNodeA', function (bsHelix, stereo, atoms) {
@@ -128,7 +117,7 @@ c=p$2.getBondChiralityLimited$org_jmol_util_SimpleEdge$org_jmol_util_SimpleNode.
 } else {
 continue;
 }if (c != 0) {
-if (!isAtropic) lstEZ.addLast$TV(Clazz.array(Integer.TYPE, -1, [index, index1]));
+if (!isAtropic) lstEZ.addLast$O(Clazz.array(Integer.TYPE, -1, [index, index1]));
 bsToDo.clear$I(index);
 bsToDo.clear$I(index1);
 }if (isAtropic) break;
@@ -170,9 +159,9 @@ try {
 var isAlkeneEndCheck=(atom == null );
 if (isAlkeneEndCheck) {
 atom=(this.root=cipAtom).atom;
-cipAtom.htPathPoints=(cipAtom.parent=Clazz.new_($I$(9), [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(parentAtom, null, true, false, false)).htPathPoints;
+cipAtom.htPathPoints=(cipAtom.parent=Clazz.new_($I$(10,1),[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(parentAtom, null, true, false, false)).htPathPoints;
 } else {
-if (!(this.root=cipAtom=(cipAtom == null  ? Clazz.new_($I$(9), [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(atom, null, false, false, false) : cipAtom)).isSP3) {
+if (!(this.root=cipAtom=(cipAtom == null  ? Clazz.new_($I$(10,1),[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(atom, null, false, false, false) : cipAtom)).isSP3) {
 return 0;
 }}if (cipAtom.setNode$()) {
 for (this.currentRule=1; this.currentRule <= 9; this.currentRule++) {
@@ -218,7 +207,7 @@ rs=this.data.checkHandedness$org_jmol_symmetry_CIPChirality_CIPAtom(cipAtom);
 if (this.currentRule == 8) {
 if (cipAtom.nPriorities == 4 && nPrioritiesPrev == 2 ) cipAtom.isRule5Pseudo=!cipAtom.isRule5Pseudo;
 if (cipAtom.isRule5Pseudo) rs|=8;
-}if ($I$(3).debugging) $I$(3).info$S(atom + " " + $I$(10).getCIPChiralityName$I(rs) + " by Rule " + this.getRuleName$I(this.currentRule) + "\n----------------------------------" );
+}if ($I$(3).debugging) (function(a,f){return f.apply(null,a)})([atom + " " + $I$(11).getCIPChiralityName$I(rs) + " by Rule " + this.getRuleName$I(this.currentRule) + "\n----------------------------------" ],$I$(3).info$S);
 return rs;
 }}
 }} catch (e) {
@@ -235,18 +224,18 @@ Clazz.newMeth(C$, 'getBondChiralityLimited$org_jmol_util_SimpleEdge$org_jmol_uti
 if (a == null ) a=bond.getOtherNode$org_jmol_util_SimpleNode(null);
 if (this.data.couldBeChiralAlkene$org_jmol_util_SimpleNode$org_jmol_util_SimpleEdge(a, bond) == -1) return 0;
 var nSP2=Clazz.array(Integer.TYPE, [1]);
-var parents=Clazz.array($I$(11), [2]);
+var parents=Clazz.array($I$(12), [2]);
 var b=p$2.getLastCumuleneAtom$org_jmol_util_SimpleEdge$org_jmol_util_SimpleNode$IA$org_jmol_util_SimpleNodeA.apply(this, [bond, a, nSP2, parents]);
 var isAxial=nSP2[0] % 2 == 1;
 if (!isAxial && this.data.bsAromatic.get$I(a.getIndex$()) ) return -1;
 var c=p$2.setBondChirality$org_jmol_util_SimpleNode$org_jmol_util_SimpleNode$org_jmol_util_SimpleNode$org_jmol_util_SimpleNode$Z.apply(this, [a, parents[0], parents[1], b, isAxial]);
-if ($I$(3).debugging) $I$(3).info$S("get Bond Chirality " + $I$(10).getCIPChiralityName$I(c) + " " + bond );
+if ($I$(3).debugging) (function(a,f){return f.apply(null,a)})(["get Bond Chirality " + $I$(11).getCIPChiralityName$I(c) + " " + bond ],$I$(3).info$S);
 return c;
 }, p$2);
 
 Clazz.newMeth(C$, 'setBondChirality$org_jmol_util_SimpleNode$org_jmol_util_SimpleNode$org_jmol_util_SimpleNode$org_jmol_util_SimpleNode$Z', function (a, pa, pb, b, isAxial) {
-var a1=Clazz.new_($I$(9), [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(a, null, true, false, false);
-var b2=Clazz.new_($I$(9), [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(b, null, true, false, false);
+var a1=Clazz.new_($I$(10,1),[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(a, null, true, false, false);
+var b2=Clazz.new_($I$(10,1),[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(b, null, true, false, false);
 var atop=this.getAtomChiralityLimited$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_util_SimpleNode(null, a1, pa) - 1;
 var ruleA=this.currentRule;
 var btop=this.getAtomChiralityLimited$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_util_SimpleNode(null, b2, pb) - 1;
@@ -261,70 +250,23 @@ if (isAxial == (ruleA == 8)  == (ruleB == 8) ) c&=~8;
  else c|=8;
 a.setCIPChirality$I(c | ((ruleA - 1) << 5));
 b.setCIPChirality$I(c | ((ruleB - 1) << 5));
-if ($I$(3).debugging) $I$(3).info$S(a + "-" + b + " " + $I$(10).getCIPChiralityName$I(c) );
+if ($I$(3).debugging) (function(a,f){return f.apply(null,a)})([a + "-" + b + " " + $I$(11).getCIPChiralityName$I(c) ],$I$(3).info$S);
 }return c;
 }, p$2);
 
 Clazz.newMeth(C$, 'getEneChirality$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z', function (winner1, end1, end2, winner2, isAxial, allowPseudo) {
 return (winner1 == null  || winner2 == null   || winner1.atom == null   || winner2.atom == null   ? 0 : isAxial ? this.data.isPositiveTorsion$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom(winner1, end1, end2, winner2) : this.data.isCis$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom(winner1, end1, end2, winner2));
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.ruleNames=Clazz.array(String, -1, ["", "1a", "1b", "2", "3", "4a", "4b", "4c", "5", "6"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.CIPChirality, "CIPAtom", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.CIPChirality, "CIPAtom", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, ['Comparable', 'Cloneable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isRule5Pseudo=false;
-this.id=0;
-this.sphere=0;
-this.rootDistance=0;
-this.isSet=false;
-this.isDuplicate=false;
-this.isTerminal=false;
-this.isAlkene=false;
-this.atom=null;
-this.atomIndex=0;
-this.bondCount=0;
-this.elemNo=0;
-this.mass=0;
-this.parent=null;
-this.rootSubstituent=null;
-this.h1Count=0;
-this.atoms=null;
-this.nAtoms=0;
-this.bsPath=null;
-this.myPath=null;
-this.oldPriorities=null;
-this.priorities=null;
-this.oldNPriorities=0;
-this.nPriorities=0;
-this.priority=0;
-this.chiralPath=null;
-this.nRootDuplicates=0;
-this.htPathPoints=null;
-this.rule6refIndex=0;
-this.bsRule6Subs=null;
-this.alkeneParent=null;
-this.alkeneChild=null;
-this.isAlkeneAtom2=false;
-this.isKekuleAmbiguous=false;
-this.nextSP2=null;
-this.multipleBondDuplicate=false;
-this.isEvenEne=false;
-this.auxEZ=0;
-this.isSP3=false;
-this.auxChirality='\0';
-this.nextChiralBranch=null;
-this.isChiralPath=false;
-this.rule4Type=0;
-this.bsTemp=null;
-this.rule4Ref=0;
-this.listRS=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isRule5Pseudo=true;
@@ -339,11 +281,13 @@ this.isEvenEne=true;
 this.auxEZ=-1;
 this.isSP3=true;
 this.auxChirality="~";
-this.bsTemp=Clazz.new_($I$(1));
-}, 1);
+this.bsTemp=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['isRule5Pseudo','isSet','isDuplicate','isTerminal','isAlkene','isAlkeneAtom2','isKekuleAmbiguous','multipleBondDuplicate','isEvenEne','isSP3','isChiralPath'],'C',['auxChirality'],'F',['elemNo','mass'],'I',['id','sphere','rootDistance','atomIndex','bondCount','h1Count','nAtoms','oldNPriorities','nPriorities','priority','nRootDuplicates','rule6refIndex','auxEZ','rule4Type','rule4Ref'],'S',['myPath','chiralPath'],'O',['atom','org.jmol.util.SimpleNode','parent','org.jmol.symmetry.CIPChirality.CIPAtom','+rootSubstituent','atoms','org.jmol.symmetry.CIPChirality.CIPAtom[]','bsPath','javajs.util.BS','oldPriorities','int[]','+priorities','htPathPoints','java.util.Map','bsRule6Subs','javajs.util.BS','alkeneParent','org.jmol.symmetry.CIPChirality.CIPAtom','+alkeneChild','+nextSP2','+nextChiralBranch','bsTemp','javajs.util.BS','listRS','javajs.util.BS[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z', function (atom, parent, isAlkene, isDuplicate, isParentBond) {
@@ -362,11 +306,11 @@ this.isSP3=(this.bondCount == 4 || this.bondCount == 3 && !isAlkene  && (this.el
 if (parent != null ) this.sphere=parent.sphere + 1;
 if (this.sphere == 1) {
 this.rootSubstituent=this;
-this.htPathPoints=Clazz.new_($I$(2));
+this.htPathPoints=Clazz.new_($I$(2,1));
 } else if (parent != null ) {
 this.rootSubstituent=parent.rootSubstituent;
 this.htPathPoints=(parent.htPathPoints).clone$();
-}this.bsPath=(parent == null  ? Clazz.new_($I$(1)) : parent.bsPath.clone$());
+}this.bsPath=(parent == null  ? Clazz.new_($I$(1,1)) : parent.bsPath.clone$());
 if (isDuplicate) this.this$0.bsNeedRule.set$I(4);
 this.rootDistance=this.sphere;
 if (parent == null ) {
@@ -379,7 +323,7 @@ if ((this.rootDistance=(atom === this.this$0.root.atom  ? 0 : isParentBond ? par
 this.this$0.root.nRootDuplicates++;
 }} else {
 this.bsPath.set$I(this.atomIndex);
-this.htPathPoints.put$TK$TV(Integer.valueOf$I(this.atomIndex), Integer.valueOf$I(this.rootDistance));
+this.htPathPoints.put$O$O(Integer.valueOf$I(this.atomIndex), Integer.valueOf$I(this.rootDistance));
 }if (this.this$0.doTrack) {
 if (this.sphere < 50) this.myPath=(parent != null  ? parent.myPath + "-" : "") + this;
 if ($I$(3).debuggingHigh) $I$(3).info$S("new CIPAtom " + this.myPath);
@@ -397,7 +341,7 @@ var i2=(this.priorities[2] != this.priorities[3] ? 3 : 4);
 var istep=(this.priorities[2] == this.priorities[1] ? 1 : 2);
 var rsRM=0;
 var rsSP=0;
-var bsSubs=Clazz.new_($I$(1));
+var bsSubs=Clazz.new_($I$(1,1));
 for (var i=i1; i < i2; i++) bsSubs.set$I(this.atoms[i].atomIndex);
 
 if (this.nPriorities == 1) i2=2;
@@ -405,7 +349,7 @@ var cipAtom=null;
 var rs;
 for (var i=i1; i < i2; i+=istep) {
 if (this.this$0.data.testRule6Full) {
-cipAtom=Clazz.new_(C$, [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(this.atom, null, false, false, false);
+cipAtom=Clazz.new_(C$,[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(this.atom, null, false, false, false);
 cipAtom.rule6refIndex=this.atoms[i].atomIndex;
 cipAtom.setNode$();
 for (var j=0; j < 4; j++) {
@@ -417,7 +361,7 @@ rs=this.this$0.getAtomChiralityLimited$org_jmol_util_SimpleNode$org_jmol_symmetr
 this.this$0.currentRule=9;
 if (rs == 0) return 0;
 } else {
-this.this$0.root.bsRule6Subs=Clazz.new_($I$(1));
+this.this$0.root.bsRule6Subs=Clazz.new_($I$(1,1));
 this.this$0.root.rule6refIndex=this.atoms[i].atomIndex;
 p$1.saveRestorePriorities$Z.apply(this, [false]);
 this.sortSubstituents$I(-2147483648);
@@ -463,13 +407,13 @@ return n;
 Clazz.newMeth(C$, 'getMass', function () {
 if (this.isDuplicate) return 0;
 if (this.mass == -1 ) {
-if (this.isDuplicate || (this.mass=this.atom.getMass$()) != (this.mass|0)   || p$1.isType$S.apply(this, [";9Be;19F;23Na;27Al;31P;45Sc;55Mn;59Co;75As;89Y;93Nb;98Tc;103Rh;127I;133Cs;141Pr;145Pm;159Tb;165Ho;169Tm;197Au;209Bi;209Po;210At;222Rn;223Fr;226Ra;227Ac;231Pa;232Th;and all > U (atomno > 92)"]) ) return (this.mass == -1  ? this.mass=$I$(5).getAtomicMass$I((this.elemNo|0)) : this.mass);
+if (this.isDuplicate || (this.mass=this.atom.getMass$()) != (this.mass|0)   || p$1.isType$S.apply(this, [";9Be;19F;23Na;27Al;31P;45Sc;55Mn;59Co;75As;89Y;93Nb;98Tc;103Rh;127I;133Cs;141Pr;145Pm;159Tb;165Ho;169Tm;197Au;209Bi;209Po;210At;222Rn;223Fr;226Ra;227Ac;231Pa;232Th;and all > U (atomno > 92)"]) ) return (this.mass == -1  ? this.mass=(function(a,f){return f.apply(null,a)})([(this.elemNo|0)],$I$(5).getAtomicMass$I) : this.mass);
 if (p$1.isType$S.apply(this, [";16O;52Cr;96Mo;175Lu;"])) this.mass -= 0.1;
 }return this.mass;
 }, p$1);
 
 Clazz.newMeth(C$, 'isType$S', function (rule2Type) {
-return $I$(6).isOneOf$S$S((this.mass|0) + $I$(5).elementSymbolFromNumber$I((this.elemNo|0)), rule2Type);
+return (function(a,f){return f.apply(null,a)})([(this.mass|0) + (function(a,f){return f.apply(null,a)})([(this.elemNo|0)],$I$(5).elementSymbolFromNumber$I), rule2Type],$I$(6).isOneOf$S$S);
 }, p$1);
 
 Clazz.newMeth(C$, 'getKekuleElementNumber', function () {
@@ -500,7 +444,7 @@ var other=bond.getOtherNode$org_jmol_util_SimpleNode(this.atom);
 var isParentBond=(this.parent != null  && this.parent.atom === other  );
 var order=this.this$0.data.getBondOrder$org_jmol_util_SimpleEdge(bond);
 if (order == 2) {
-if (this.elemNo > 10  || !P$.CIPChirality.isFirstRow$org_jmol_util_SimpleNode(other) ) order=1;
+if (this.elemNo > 10  || !$I$(7).isFirstRow$org_jmol_util_SimpleNode(other) ) order=1;
  else {
 this.isAlkene=true;
 if (isParentBond) p$1.setEne.apply(this, []);
@@ -525,7 +469,7 @@ this.nAtoms++;
 p$1.addAtom$I$org_jmol_util_SimpleNode$Z$Z$Z.apply(this, [pt++, this.atom, true, false, false]);
 }break;
 }
-if (pt < 4) for (; pt < this.atoms.length; pt++) this.atoms[pt]=Clazz.new_(C$, [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(null, this, false, true, false);
+if (pt < 4) for (; pt < this.atoms.length; pt++) this.atoms[pt]=Clazz.new_(C$,[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(null, this, false, true, false);
 
 try {
 $I$(4).sort$OA(this.atoms);
@@ -561,7 +505,7 @@ if (++this.h1Count > 1) {
 if (this.parent == null ) {
 if ($I$(3).debuggingHigh) $I$(3).info$S(" second H atom found on " + this.atom);
 return null;
-}}}return this.atoms[i]=Clazz.new_(C$, [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(other, this, isAlkene, isDuplicate, isParentBond);
+}}}return this.atoms[i]=Clazz.new_(C$,[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(other, this, isAlkene, isDuplicate, isParentBond);
 }, p$1);
 
 Clazz.newMeth(C$, 'sortSubstituents$I', function (sphere) {
@@ -587,7 +531,7 @@ var newPriorities=Clazz.array(Integer.TYPE, [4]);
 if ($I$(3).debuggingHigh && this.h1Count < 2 ) {
 $I$(3).info$S(this.this$0.root + "---sortSubstituents---" + this );
 for (var i=0; i < 4; i++) {
-$I$(3).info$S(this.this$0.getRuleName$I.apply(this.this$0, [this.this$0.currentRule]) + ": " + this + "[" + i + "]=" + this.atoms[i].myPath + " " + Integer.toHexString$I(this.priorities[i]) );
+(function(a,f){return f.apply(null,a)})([this.this$0.getRuleName$I.apply(this.this$0, [this.this$0.currentRule]) + ": " + this + "[" + i + "]=" + this.atoms[i].myPath + " " + Integer.toHexString$I(this.priorities[i]) ],$I$(3).info$S);
 }
 $I$(3).info$S("---" + this.nPriorities);
 }var loser;
@@ -622,11 +566,11 @@ a.priority=this.priorities[pt]=p;
 this.atoms=newAtoms;
 this.nPriorities=this.bsTemp.cardinality$();
 if ($I$(3).debuggingHigh && this.atoms[2].atom != null   && this.atoms[2].elemNo != 1  ) {
-$I$(3).info$S(p$1.dots.apply(this, []) + this.atom + " nPriorities = " + this.nPriorities );
+(function(a,f){return f.apply(null,a)})([p$1.dots.apply(this, []) + this.atom + " nPriorities = " + this.nPriorities ],$I$(3).info$S);
 for (var i=0; i < 4; i++) {
-$I$(3).info$S(p$1.dots.apply(this, []) + this.myPath + "[" + i + "]=" + this.atoms[i] + " " + this.priorities[i] + " " + Integer.toHexString$I(this.priorities[i]) );
+(function(a,f){return f.apply(null,a)})([p$1.dots.apply(this, []) + this.myPath + "[" + i + "]=" + this.atoms[i] + " " + this.priorities[i] + " " + Integer.toHexString$I(this.priorities[i]) ],$I$(3).info$S);
 }
-$I$(3).info$S(p$1.dots.apply(this, []) + "-------" + this.nPriorities );
+(function(a,f){return f.apply(null,a)})([p$1.dots.apply(this, []) + "-------" + this.nPriorities ],$I$(3).info$S);
 }return (this.nPriorities == this.bondCount);
 });
 
@@ -666,7 +610,7 @@ break;
 return finalScore;
 }, p$1);
 
-Clazz.newMeth(C$, ['compareTo$org_jmol_symmetry_CIPChirality_CIPAtom','compareTo$','compareTo$TT'], function (b) {
+Clazz.newMeth(C$, ['compareTo$org_jmol_symmetry_CIPChirality_CIPAtom','compareTo$O'], function (b) {
 var score;
 return (this.this$0.root.rule4Ref == 0 ? (b == null  ? -1 : (this.atom == null ) != (b.atom == null )  ? (this.atom == null  ? 1 : -1) : (score=p$1.compareRule1a$org_jmol_symmetry_CIPChirality_CIPAtom.apply(this, [b])) != 0 ? score : (score=p$1.unlikeDuplicates$org_jmol_symmetry_CIPChirality_CIPAtom.apply(this, [b])) != 0 ? score : this.isDuplicate ? p$1.compareRule1b$org_jmol_symmetry_CIPChirality_CIPAtom.apply(this, [b]) : p$1.compareRule2$org_jmol_symmetry_CIPChirality_CIPAtom.apply(this, [b])) : this.sphere < b.sphere ? -1 : this.sphere > b.sphere ? 1 : this.chiralPath.compareTo$S(b.chiralPath));
 });
@@ -755,14 +699,14 @@ return this.listRS[0]=(this.this$0.currentRule == 8 || bs == null   ? this.listR
 Clazz.newMeth(C$, 'rank4bAndRead$javajs_util_BS', function (bsR) {
 var isS=(bsR != null );
 var ref=(isS ? 2 : 1);
-var list=Clazz.new_($I$(1));
-var chiralAtoms=Clazz.new_($I$(7));
+var list=Clazz.new_($I$(1,1));
+var chiralAtoms=Clazz.new_($I$(8,1));
 this.this$0.root.rule4Ref=ref;
 p$1.addChiralAtoms$javajs_util_Lst$I.apply(this, [chiralAtoms, ref]);
-$I$(8).sort$java_util_List(chiralAtoms);
+$I$(9).sort$java_util_List(chiralAtoms);
 this.this$0.root.rule4Ref=0;
 for (var i=0, n=chiralAtoms.size$(); i < n; i++) {
-if ($I$(3).debugging) $I$(3).info$S("" + ref + " " + this + " " + chiralAtoms.get$I(i).chiralPath );
+if ($I$(3).debugging) (function(a,f){return f.apply(null,a)})(["" + ref + " " + this + " " + chiralAtoms.get$I(i).chiralPath ],$I$(3).info$S);
 if (chiralAtoms.get$I(i).rule4Type == ref) list.set$I(i);
 }
 return list;
@@ -780,7 +724,7 @@ s=a.chiralPath + s;
 break;
 }}
 this.chiralPath=s;
-chiralAtoms.addLast$TV(this);
+chiralAtoms.addLast$O(this);
 }for (var i=0; i < 4; i++) if (this.atoms[i] != null ) p$1.addChiralAtoms$javajs_util_Lst$I.apply(this.atoms[i], [chiralAtoms, ref]);
 
 }, p$1);
@@ -843,7 +787,7 @@ this.auxEZ=this.alkeneChild.auxEZ=15;
 isChiralPath=true;
 if (rule2 != null  && rule2[0] != 8 ) {
 this.auxEZ=this.alkeneChild.auxEZ=rs;
-if ($I$(3).debuggingHigh) $I$(3).info$S("alkene type " + this + " " + (this.auxEZ == 14 ? "E" : "Z") );
+if ($I$(3).debuggingHigh) (function(a,f){return f.apply(null,a)})(["alkene type " + this + " " + (this.auxEZ == 14 ? "E" : "Z") ],$I$(3).info$S);
 } else if (!isBranch) {
 switch (rs) {
 case 17:
@@ -882,7 +826,7 @@ this.rule4Type=rs;
 }}}this.auxChirality=c;
 }if (node1 == null ) this.this$0.bsNeedRule.setBitTo$I$Z(5, nRS > 0);
 if (c != "~") {
-$I$(3).info$S("creating aux " + c + " for " + this + (this.myPath.length$() == 0 ? "" : " = " + this.myPath) );
+(function(a,f){return f.apply(null,a)})(["creating aux " + c + " for " + this + (this.myPath.length$() == 0 ? "" : " = " + this.myPath) ],$I$(3).info$S);
 }return (this.isChiralPath=isChiralPath);
 });
 
@@ -924,19 +868,19 @@ return null;
 }, p$1);
 
 Clazz.newMeth(C$, 'addReturnPath$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom', function (newParent, fromAtom) {
-var path=Clazz.new_($I$(7));
+var path=Clazz.new_($I$(8,1));
 var thisAtom=this;
 var newSub;
 var oldParent=fromAtom;
 var oldSub=newParent;
 while (oldParent.parent != null  && oldParent.parent.atoms[0] != null  ){
 if ($I$(3).debuggingHigh) $I$(3).info$S("path:" + oldParent.parent + "->" + oldParent );
-path.addLast$TV(oldParent=oldParent.parent);
+path.addLast$O(oldParent=oldParent.parent);
 }
-path.addLast$TV(null);
+path.addLast$O(null);
 for (var i=0, n=path.size$(); i < n; i++) {
 oldParent=path.get$I(i);
-newSub=(oldParent == null  ? Clazz.new_(C$, [this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(null, this, this.isAlkene, true, false) : oldParent.clone$());
+newSub=(oldParent == null  ? Clazz.new_(C$,[this, null]).create$org_jmol_util_SimpleNode$org_jmol_symmetry_CIPChirality_CIPAtom$Z$Z$Z(null, this, this.isAlkene, true, false) : oldParent.clone$());
 newSub.nPriorities=0;
 newSub.sphere=thisAtom.sphere + 1;
 p$1.replaceParentSubstituent$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom$org_jmol_symmetry_CIPChirality_CIPAtom.apply(thisAtom, [oldSub, newParent, newSub]);
@@ -997,4 +941,4 @@ return (this.isDuplicate ? "(" + this.atom.getAtomName$() + "." + this.rootDista
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

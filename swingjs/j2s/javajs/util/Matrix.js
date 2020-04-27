@@ -1,23 +1,18 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,['javajs.util.Matrix','.LUDecomp']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Matrix", function(){
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,['javajs.util.Matrix','.LUDecomp']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Matrix", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Cloneable');
+C$.$classes$=[['LUDecomp',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.a=null;
-this.m=0;
-this.n=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['m','n'],'O',['a','double[][]']]]
 
 Clazz.newMeth(C$, 'c$$DAA$I$I', function (a, m, n) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.a=(a == null  ? Clazz.array(Double.TYPE, [m, n]) : a);
 this.m=m;
 this.n=n;
@@ -120,7 +115,7 @@ return x;
 });
 
 Clazz.newMeth(C$, 'inverse$', function () {
-return Clazz.new_($I$(1).c$$I$I, [this, null, this.m, this.n]).solve$javajs_util_Matrix$I(C$.identity$I$I(this.m, this.m), this.n);
+return Clazz.new_($I$(1,1).c$$I$I,[this, null, this.m, this.n]).solve$javajs_util_Matrix$I(C$.identity$I$I(this.m, this.m), this.n);
 });
 
 Clazz.newMeth(C$, 'trace$', function () {
@@ -162,25 +157,19 @@ s += "]";
 return s;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Matrix, "LUDecomp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Matrix, "LUDecomp", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.LU=null;
-this.piv=null;
-this.pivsign=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['pivsign'],'O',['LU','double[][]','piv','int[]']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (m, n) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.LU=this.this$0.getArrayCopy$.apply(this.this$0, []);
 this.piv=Clazz.array(Integer.TYPE, [m]);
 for (var i=m; --i >= 0; ) this.piv[i]=i;
@@ -242,4 +231,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

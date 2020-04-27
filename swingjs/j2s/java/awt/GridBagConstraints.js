@@ -1,40 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.Insets','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GridBagConstraints", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.awt.Insets','InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GridBagConstraints", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.gridx=0;
-this.gridy=0;
-this.gridwidth=0;
-this.gridheight=0;
-this.weightx=0;
-this.weighty=0;
-this.anchor=0;
-this.fill=0;
-this.insets=null;
-this.ipadx=0;
-this.ipady=0;
-this.tempX=0;
-this.tempY=0;
-this.tempWidth=0;
-this.tempHeight=0;
-this.minWidth=0;
-this.minHeight=0;
-this.ascent=0;
-this.descent=0;
-this.baselineResizeBehavior=null;
-this.centerPadding=0;
-this.centerOffset=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['weightx','weighty'],'I',['gridx','gridy','gridwidth','gridheight','anchor','fill','ipadx','ipady','tempX','tempY','tempWidth','tempHeight','minWidth','minHeight','ascent','descent','centerPadding','centerOffset'],'O',['insets','java.awt.Insets','baselineResizeBehavior','java.awt.Component.BaselineResizeBehavior']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.gridx=-1;
 this.gridy=-1;
 this.gridwidth=1;
@@ -43,13 +18,13 @@ this.weightx=0;
 this.weighty=0;
 this.anchor=10;
 this.fill=0;
-this.insets=Clazz.new_($I$(1).c$$I$I$I$I,[0, 0, 0, 0]);
+this.insets=Clazz.new_($I$(1,1).c$$I$I$I$I,[0, 0, 0, 0]);
 this.ipadx=0;
 this.ipady=0;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$D$D$I$I$java_awt_Insets$I$I', function (gridx, gridy, gridwidth, gridheight, weightx, weighty, anchor, fill, insets, ipadx, ipady) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.gridx=gridx;
 this.gridy=gridy;
 this.gridwidth=gridwidth;
@@ -74,7 +49,7 @@ c.insets=this.insets.clone$();
 return c;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(2));
+throw Clazz.new_($I$(2,1));
 } else {
 throw e;
 }
@@ -85,4 +60,4 @@ Clazz.newMeth(C$, 'isVerticallyResizable$', function () {
 return (this.fill == 1 || this.fill == 3 );
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

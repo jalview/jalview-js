@@ -1,25 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,'org.jmol.viewer.JC','org.jmol.util.Edge','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Bond", null, 'org.jmol.util.Edge');
-C$.myVisibilityFlag=0;
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,'org.jmol.viewer.JC','org.jmol.util.Edge','org.jmol.util.C']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Bond", null, 'org.jmol.util.Edge');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.myVisibilityFlag=$I$(1).getShapeVisibilityFlag$I(1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.atom1=null;
-this.atom2=null;
-this.mad=0;
-this.colix=0;
-this.shapeVisibilityFlags=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['shapeVisibilityFlags'],'H',['mad','colix'],'O',['atom1','org.jmol.modelset.Atom','+atom2']]
+,['I',['myVisibilityFlag']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H', function (atom1, atom2, order, mad, colix) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.atom1=atom1;
 this.atom2=atom2;
 this.colix=colix;
@@ -50,7 +41,7 @@ return (this.order & 1023) != 0;
 });
 
 Clazz.newMeth(C$, 'isHydrogen$', function () {
-return org.jmol.util.Edge.isOrderH$I(this.order);
+return $I$(2).isOrderH$I(this.order);
 });
 
 Clazz.newMeth(C$, 'isStereo$', function () {
@@ -130,7 +121,7 @@ for (i2=0; i2 < bonds.length; i2++) {
 var a=bonds[i2].getOtherAtom$org_jmol_modelset_Atom(this.atom2);
 if (bs2.get$I(a.i) && a !== this.atom1  ) break;
 }
-}this.order=(i1 > 2 || i2 >= bonds.length  || i2 > 2  ? 1 : org.jmol.util.Edge.getAtropismOrder$I$I(i1 + 1, i2 + 1));
+}this.order=(i1 > 2 || i2 >= bonds.length  || i2 > 2  ? 1 : $I$(2).getAtropismOrder$I$I(i1 + 1, i2 + 1));
 });
 
 Clazz.newMeth(C$, 'getCIPChirality$Z', function (doCalculate) {
@@ -144,6 +135,10 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.atom1 + " - " + this.atom2 ;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.myVisibilityFlag=$I$(1).getShapeVisibilityFlag$I(1);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

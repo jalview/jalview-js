@@ -1,40 +1,55 @@
-(function(){var P$=java.io,I$=[[0,'java.util.concurrent.atomic.AtomicInteger','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileDescriptor");
-C$.$in=null;
-C$.out=null;
-C$.err=null;
+(function(){var P$=java.io,I$=[[0,'java.util.Arrays','java.util.concurrent.atomic.AtomicInteger','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FileDescriptor");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$in=Clazz.new_(C$.c$$I,[0]);
-C$.out=Clazz.new_(C$.c$$I,[1]);
-C$.err=Clazz.new_(C$.c$$I,[2]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._file=null;
-this.fd=0;
-this.handle=0;
-this.useCount=null;
-this.parent=null;
-this.otherParents=null;
-this.closed=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+this.len=-1;
 this.fd=-1;
 this.handle=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isTempFile','closed'],'I',['pos','len','fd'],'J',['handle'],'O',['_file','java.io.File','useCount','java.util.concurrent.atomic.AtomicInteger','parent','java.io.Closeable','otherParents','java.util.List']]
+,['O',['$in','java.io.FileDescriptor','+out','+err']]]
+
+Clazz.newMeth(C$, '_getBytes$Z', function (checkDisk) {
+if (this._file.秘bytes == null  && checkDisk ) {
+this._file.exists$();
+}return this._file.秘bytes;
+});
+
+Clazz.newMeth(C$, '_setPosAndLen$I$I', function (pos, len) {
+this.pos=pos;
+this.len=len;
+if (this._file.秘bytes == null ) this._file.秘bytes=Clazz.array(Byte.TYPE, [len]);
+ else if (len > this._file.秘bytes.length) this._file.秘bytes=$I$(1).copyOf$BA$I(this._file.秘bytes, len);
+});
+
+Clazz.newMeth(C$, '_getPos$', function () {
+return this.pos;
+});
+
+Clazz.newMeth(C$, '_getLen$', function () {
+return this.len;
+});
+
+Clazz.newMeth(C$, '_isTempFile$', function () {
+return this.isTempFile;
+});
+
+Clazz.newMeth(C$, '_setTempFile$Z', function (b) {
+this.isTempFile=b;
+});
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.useCount=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.useCount=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (fd) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.fd=fd;
-this.useCount=Clazz.new_($I$(1));
+this.useCount=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'set$java_io_FileDescriptor$I', function (obj, fd) {
@@ -70,21 +85,24 @@ return this.useCount.decrementAndGet$();
 
 Clazz.newMeth(C$, 'attach$java_io_Closeable', function (c) {
 this._file=(c._file ||null);
+this.isTempFile=Clazz.instanceOf(this._file, "swingjs.JSTempFile");
 if (this.parent == null ) {
 this.parent=c;
 } else if (this.otherParents == null ) {
-this.otherParents=Clazz.new_($I$(2));
-this.otherParents.add$TE(this.parent);
-this.otherParents.add$TE(c);
+this.otherParents=Clazz.new_($I$(3,1));
+this.otherParents.add$O(this.parent);
+this.otherParents.add$O(c);
 } else {
-this.otherParents.add$TE(c);
+this.otherParents.add$O(c);
 }});
 
 Clazz.newMeth(C$, 'closeAll$java_io_Closeable', function (releaser) {
 if (!this.closed) {
 this.closed=true;
 var ioe=null;
-try {var c=releaser;
+try {
+var c=releaser;
+try {
 if (this.otherParents != null ) {
 for (var referent, $referent = this.otherParents.iterator$(); $referent.hasNext$()&&((referent=($referent.next$())),1);) {
 try {
@@ -108,6 +126,14 @@ throw ex;
 } finally {
 if (ioe != null ) throw ioe;
 }
+}finally{/*res*/
+try{c&&c.close$&&c.close$()}catch(_){}}
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.$in=Clazz.new_(C$.c$$I,[0]);
+C$.out=Clazz.new_(C$.c$$I,[1]);
+C$.err=Clazz.new_(C$.c$$I,[2]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

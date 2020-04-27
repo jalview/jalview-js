@@ -1,38 +1,30 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},p$2={},I$=[[0,'java.util.ArrayList','java.security.AccessController','java.awt.Toolkit','javax.swing.SwingUtilities','java.awt.Point',['javax.swing.JLayer','.LayerEventController'],'javax.swing.plaf.LayerUI','sun.awt.AWTAccessor','java.awt.Rectangle',['javax.swing.JLayer','.DefaultLayerGlassPane']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JLayer", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},p$2={},I$=[[0,'java.util.ArrayList','java.security.AccessController','java.awt.Toolkit','javax.swing.SwingUtilities','java.awt.Point',['javax.swing.JLayer','.LayerEventController'],'javax.swing.plaf.LayerUI',['javax.swing.JLayer','.DefaultLayerGlassPane']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JLayer", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JComponent', ['javax.swing.Scrollable', 'java.beans.PropertyChangeListener']);
-C$.eventController=null;
+C$.$classes$=[['LayerEventController',10],['DefaultLayerGlassPane',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.eventController=Clazz.new_($I$(6));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.view=null;
-this.layerUI=null;
-this.glassPane=null;
-this.$eventMask=0;
-this.isPainting=false;
-this.isPaintingImmediately=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isPainting','isPaintingImmediately'],'J',['$eventMask'],'O',['view','<V extends java.awt.Component>','layerUI','javax.swing.plaf.LayerUI','glassPane','javax.swing.JPanel']]
+,['O',['eventController','javax.swing.JLayer.LayerEventController']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.c$$TV.apply(this, [null]);
+C$.c$$java_awt_Component.apply(this, [null]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$TV', function (view) {
-C$.c$$TV$javax_swing_plaf_LayerUI.apply(this, [view, Clazz.new_($I$(7))]);
+Clazz.newMeth(C$, 'c$$java_awt_Component', function (view) {
+C$.c$$java_awt_Component$javax_swing_plaf_LayerUI.apply(this, [view, Clazz.new_($I$(7,1))]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$TV$javax_swing_plaf_LayerUI', function (view, ui) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$java_awt_Component$javax_swing_plaf_LayerUI', function (view, ui) {
+Clazz.super_(C$, this);
+this.秘paintClass=C$ ||null;
 this.setGlassPane$javax_swing_JPanel(this.createGlassPane$());
-this.setView$TV(view);
+this.setView$java_awt_Component(view);
 this.setUI$javax_swing_plaf_LayerUI(ui);
 }, 1);
 
@@ -40,7 +32,7 @@ Clazz.newMeth(C$, 'getView$', function () {
 return this.view;
 });
 
-Clazz.newMeth(C$, 'setView$TV', function (view) {
+Clazz.newMeth(C$, 'setView$java_awt_Component', function (view) {
 var oldView=this.getView$();
 if (oldView != null ) {
 C$.superclazz.prototype.remove$java_awt_Component.apply(this, [oldView]);
@@ -49,7 +41,7 @@ C$.superclazz.prototype.addImpl$java_awt_Component$O$I.apply(this, [view, null, 
 }this.view=view;
 this.firePropertyChange$S$O$O("view", oldView, view);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'setUI$javax_swing_plaf_LayerUI', function (ui) {
@@ -72,17 +64,16 @@ if (oldGlassPane != null ) {
 isGlassPaneVisible=oldGlassPane.isVisible$();
 C$.superclazz.prototype.remove$java_awt_Component.apply(this, [oldGlassPane]);
 }if (glassPane != null ) {
-$I$(8).getComponentAccessor$().setMixingCutoutShape$java_awt_Component$java_awt_Shape(glassPane, Clazz.new_($I$(9)));
 glassPane.setVisible$Z(isGlassPaneVisible);
 C$.superclazz.prototype.addImpl$java_awt_Component$O$I.apply(this, [glassPane, null, 0]);
 }this.glassPane=glassPane;
 this.firePropertyChange$S$O$O("glassPane", oldGlassPane, glassPane);
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'createGlassPane$', function () {
-return Clazz.new_($I$(10));
+return Clazz.new_($I$(8,1));
 });
 
 Clazz.newMeth(C$, 'setLayout$java_awt_LayoutManager', function (mgr) {
@@ -103,7 +94,7 @@ Clazz.newMeth(C$, 'remove$java_awt_Component', function (comp) {
 if (comp == null ) {
 C$.superclazz.prototype.remove$java_awt_Component.apply(this, [comp]);
 } else if (comp === this.getView$() ) {
-this.setView$TV(null);
+this.setView$java_awt_Component(null);
 } else if (comp === this.getGlassPane$() ) {
 this.setGlassPane$javax_swing_JPanel(null);
 } else {
@@ -112,7 +103,7 @@ C$.superclazz.prototype.remove$java_awt_Component.apply(this, [comp]);
 
 Clazz.newMeth(C$, 'removeAll$', function () {
 if (this.view != null ) {
-this.setView$TV(null);
+this.setView$java_awt_Component(null);
 }if (this.glassPane != null ) {
 this.setGlassPane$javax_swing_JPanel(null);
 }});
@@ -152,7 +143,7 @@ Clazz.newMeth(C$, 'isOptimizedDrawingEnabled$', function () {
 return false;
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 if (this.getUI$() != null ) {
 this.getUI$().applyPropertyChange$java_beans_PropertyChangeEvent$javax_swing_JLayer(evt, this);
 }});
@@ -229,25 +220,24 @@ Clazz.newMeth(C$, 'doLayout$', function () {
 if (this.getUI$() != null ) {
 this.getUI$().doLayout$javax_swing_JLayer(this);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.eventController=Clazz.new_($I$(6,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JLayer, "LayerEventController", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JLayer, "LayerEventController", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.awt.event.AWTEventListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.layerMaskList=null;
-this.currentEventMask=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.layerMaskList=Clazz.new_($I$(1));
-}, 1);
+this.layerMaskList=Clazz.new_($I$(1,1));
+},1);
 
-Clazz.newMeth(C$, ['eventDispatched$java_awt_AWTEvent','eventDispatched$'], function (event) {
+C$.$fields$=[['J',['currentEventMask'],'O',['layerMaskList','java.util.ArrayList']]]
+
+Clazz.newMeth(C$, 'eventDispatched$java_awt_AWTEvent', function (event) {
 var source=event.getSource$();
 if (Clazz.instanceOf(source, "java.awt.Component")) {
 var component=source;
@@ -265,10 +255,10 @@ Clazz.newMeth(C$, 'updateAWTEventListener$J$J', function (oldEventMask, newEvent
 if (oldEventMask != 0) {
 this.layerMaskList.remove$O(new Long(oldEventMask));
 }if (newEventMask != 0) {
-this.layerMaskList.add$TE(new Long(newEventMask));
+this.layerMaskList.add$O(new Long(newEventMask));
 }var combinedMask=0;
 for (var mask, $mask = this.layerMaskList.iterator$(); $mask.hasNext$()&&((mask=($mask.next$())),1);) {
-combinedMask=(combinedMask|((mask).longValue$())|0);
+combinedMask=(combinedMask|((mask).valueOf())|0);
 }
 combinedMask&=231487;
 if (combinedMask == 0) {
@@ -284,39 +274,37 @@ return this.currentEventMask;
 }, p$1);
 
 Clazz.newMeth(C$, 'addAWTEventListener$J', function (eventMask) {
-$I$(2).doPrivileged$java_security_PrivilegedAction(((P$.JLayer$LayerEventController$1||
-(function(){var C$=Clazz.newClass(P$, "JLayer$LayerEventController$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+$I$(2,"doPrivileged$java_security_PrivilegedAction",[((P$.JLayer$LayerEventController$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JLayer$LayerEventController$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 $I$(3).getDefaultToolkit$().addAWTEventListener$java_awt_event_AWTEventListener$J(this.b$['javax.swing.JLayer.LayerEventController'], this.$finals$.eventMask);
 return null;
 });
 })()
-), Clazz.new_(P$.JLayer$LayerEventController$1.$init$, [this, {eventMask: eventMask}])));
+), Clazz.new_(P$.JLayer$LayerEventController$1.$init$,[this, {eventMask:eventMask}]))]);
 }, p$1);
 
 Clazz.newMeth(C$, 'removeAWTEventListener', function () {
-$I$(2).doPrivileged$java_security_PrivilegedAction(((P$.JLayer$LayerEventController$2||
-(function(){var C$=Clazz.newClass(P$, "JLayer$LayerEventController$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+$I$(2,"doPrivileged$java_security_PrivilegedAction",[((P$.JLayer$LayerEventController$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JLayer$LayerEventController$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 $I$(3).getDefaultToolkit$().removeAWTEventListener$java_awt_event_AWTEventListener(this.b$['javax.swing.JLayer.LayerEventController']);
 return null;
 });
 })()
-), Clazz.new_(P$.JLayer$LayerEventController$2.$init$, [this, null])));
+), Clazz.new_(P$.JLayer$LayerEventController$2.$init$,[this, null]))]);
 }, p$1);
 
 Clazz.newMeth(C$, 'isEventEnabled$J$I', function (eventMask, id) {
@@ -326,25 +314,24 @@ return (((eventMask & 1) != 0 && id >= 100  && id <= 103 ) || ((eventMask & 2) !
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JLayer, "DefaultLayerGlassPane", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JLayer, "DefaultLayerGlassPane", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setOpaque$Z(false);
 }, 1);
 
 Clazz.newMeth(C$, 'contains$I$I', function (x, y) {
 for (var i=0; i < this.getComponentCount$(); i++) {
 var c=this.getComponent$I(i);
-var point=$I$(4).convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(this, Clazz.new_($I$(5).c$$I$I,[x, y]), c);
+var point=$I$(4,"convertPoint$java_awt_Component$java_awt_Point$java_awt_Component",[this, Clazz.new_($I$(5,1).c$$I$I,[x, y]), c]);
 if (c.isVisible$() && c.contains$java_awt_Point(point) ) {
 return true;
 }}
@@ -354,4 +341,4 @@ return false;
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,38 +1,30 @@
 (function(){var P$=Clazz.newPackage("javax.xml.sax"),I$=[];
-var C$=Clazz.newClass(P$, "SAXException", null, 'Exception');
+/*c*/var C$=Clazz.newClass(P$, "SAXException", null, 'Exception');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.exception=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['exception','Exception']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.exception=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (message) {
-C$.superclazz.c$$S.apply(this, [message]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[message]);C$.$init$.apply(this);
 this.exception=null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Exception', function (e) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.exception=e;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$Exception', function (message, e) {
-C$.superclazz.c$$S.apply(this, [message]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[message]);C$.$init$.apply(this);
 this.exception=e;
 }, 1);
 
@@ -55,4 +47,4 @@ return this.exception.toString();
 return C$.superclazz.prototype.toString.apply(this, []);
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

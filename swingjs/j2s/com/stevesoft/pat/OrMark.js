@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.SubMark']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OrMark", null, 'com.stevesoft.pat.Or');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.SubMark']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OrMark", null, 'com.stevesoft.pat.Or');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sm=null;
-this.id=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.sm=Clazz.new_($I$(1));
-}, 1);
+this.sm=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['I',['id'],'O',['sm','com.stevesoft.pat.SubMark']]]
 
 Clazz.newMeth(C$, 'c$$I', function (i) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.sm.om=this;
 this.id=i;
 }, 1);
@@ -49,14 +44,14 @@ pt.marks[this.id + pt.nMarks]=swap + 1;
 
 Clazz.newMeth(C$, 'clone1$java_util_Hashtable', function (h) {
 var om=Clazz.new_(C$.c$$I,[this.id]);
-h.put$TK$TV(om, om);
-h.put$TK$TV(this, om);
+h.put$O$O(om, om);
+h.put$O$O(this, om);
 for (var i=0; i < this.v.size$(); i++) {
-om.v.addElement$TE((this.v.elementAt$I(i)).clone$java_util_Hashtable(h));
+om.v.addElement$O((this.v.elementAt$I(i)).clone$java_util_Hashtable(h));
 }
 return om;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

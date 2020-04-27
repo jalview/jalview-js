@@ -1,23 +1,17 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs.ext"),I$=[[0,'sun.misc.VM','java.security.AccessController','sun.security.action.GetPropertyAction']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ExtendedCharsets", null, 'sun.nio.cs.AbstractCharsetProvider');
-C$.instance=null;
+(function(){var P$=Clazz.newPackage("sun.nio.cs.ext"),I$=[[0,'sun.misc.VM','java.security.AccessController','sun.security.action.GetPropertyAction']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ExtendedCharsets", null, 'sun.nio.cs.AbstractCharsetProvider');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.initialized=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.initialized=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['initialized']]
+,['O',['instance','sun.nio.cs.ext.ExtendedCharsets']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["sun.nio.cs.ext"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["sun.nio.cs.ext"]);C$.$init$.apply(this);
 this.charset$S$S$SA("Big5", "Big5", Clazz.array(String, -1, ["csBig5"]));
 this.charset$S$S$SA("x-MS950-HKSCS-XP", "MS950_HKSCS_XP", Clazz.array(String, -1, ["MS950_HKSCS_XP"]));
 this.charset$S$S$SA("x-MS950-HKSCS", "MS950_HKSCS", Clazz.array(String, -1, ["MS950_HKSCS"]));
@@ -155,7 +149,7 @@ C$.instance=this;
 Clazz.newMeth(C$, 'init$', function () {
 if (this.initialized) return;
 if (!$I$(1).isBooted$()) return;
-var map=$I$(2).doPrivileged$java_security_PrivilegedAction(Clazz.new_($I$(3).c$$S,["sun.nio.cs.map"]));
+var map=$I$(2,"doPrivileged$java_security_PrivilegedAction",[Clazz.new_($I$(3,1).c$$S,["sun.nio.cs.map"])]);
 var sjisIsMS932=false;
 var iso2022jpIsMS50221=false;
 var iso2022jpIsMS50220=false;
@@ -188,7 +182,7 @@ this.charset$S$S$SA("x-windows-50220", "MS50220", Clazz.array(String, -1, ["cp50
 } else {
 this.deleteCharset$S$SA("x-windows-iso2022jp", Clazz.array(String, -1, ["windows-iso2022jp"]));
 this.charset$S$S$SA("x-windows-iso2022jp", "MSISO2022JP", Clazz.array(String, -1, ["windows-iso2022jp", "iso-2022-jp", "iso2022jp", "jis", "csISO2022JP", "jis_encoding", "csjisencoding"]));
-}}var osName=$I$(2).doPrivileged$java_security_PrivilegedAction(Clazz.new_($I$(3).c$$S,["os.name"]));
+}}var osName=$I$(2,"doPrivileged$java_security_PrivilegedAction",[Clazz.new_($I$(3,1).c$$S,["os.name"])]);
 if ("SunOS".equals$O(osName) || "Linux".equals$O(osName) || "AIX".equals$O(osName) || osName.contains$CharSequence("OS X")  ) {
 this.charset$S$S$SA("x-COMPOUND_TEXT", "COMPOUND_TEXT", Clazz.array(String, -1, ["COMPOUND_TEXT", "x11-compound_text", "x-compound-text"]));
 }this.initialized=true;
@@ -198,5 +192,9 @@ Clazz.newMeth(C$, 'aliasesFor$S', function (charsetName) {
 if (C$.instance == null ) return null;
 return C$.instance.aliases$S(charsetName);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=null;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

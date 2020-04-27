@@ -1,20 +1,18 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),p$1={},I$=[[0,'fr.orsay.lri.varna.models.templates.RNATemplateAlign','fr.orsay.lri.varna.models.templates.DrawRNATemplateMethod','java.util.HashMap','java.util.Arrays',['java.awt.geom.Point2D','.Double'],'java.util.HashSet',['fr.orsay.lri.varna.models.templates.RNATemplate','.In1Is'],'fr.orsay.lri.varna.models.geom.MiscGeom',['java.awt.geom.Line2D','.Double'],'fr.orsay.lri.varna.models.geom.LinesIntersect',['fr.orsay.lri.varna.models.templates.RNATemplate','.EdgeEndPointPosition'],['fr.orsay.lri.varna.models.rna.DrawRNATemplate','.UnpairedLineCounts'],'Error','fr.orsay.lri.varna.models.geom.ComputeArcCenter','fr.orsay.lri.varna.models.geom.CubicBezierCurve','fr.orsay.lri.varna.models.geom.ComputeEllipseAxis','fr.orsay.lri.varna.models.geom.HalfEllipse','java.awt.geom.AffineTransform','java.util.ArrayList','fr.orsay.lri.varna.models.templates.DrawRNATemplateCurveMethod']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DrawRNATemplate", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),p$1={},I$=[[0,'fr.orsay.lri.varna.models.templates.RNATemplateAlign','fr.orsay.lri.varna.models.templates.DrawRNATemplateMethod','java.util.HashMap','java.util.Arrays',['java.awt.geom.Point2D','.Double'],'java.util.HashSet',['fr.orsay.lri.varna.models.templates.RNATemplate','.In1Is'],'fr.orsay.lri.varna.models.geom.MiscGeom',['java.awt.geom.Line2D','.Double'],'fr.orsay.lri.varna.models.geom.LinesIntersect',['fr.orsay.lri.varna.models.templates.RNATemplate','.EdgeEndPointPosition'],['fr.orsay.lri.varna.models.rna.DrawRNATemplate','.UnpairedLineCounts'],'Error','fr.orsay.lri.varna.models.geom.ComputeArcCenter','fr.orsay.lri.varna.models.geom.CubicBezierCurve','fr.orsay.lri.varna.models.geom.ComputeEllipseAxis','fr.orsay.lri.varna.models.geom.HalfEllipse','java.awt.geom.AffineTransform','java.util.ArrayList','fr.orsay.lri.varna.models.templates.DrawRNATemplateCurveMethod']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DrawRNATemplate", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['UnpairedLineCounts',10]];
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rna=null;
-this.mapping=null;
-this._listeBases=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['rna','fr.orsay.lri.varna.models.rna.RNA','mapping','fr.orsay.lri.varna.models.templates.RNATemplateMapping','_listeBases','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_rna_RNA', function (rna) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rna=rna;
 this._listeBases=rna.getListeBases$();
 }, 1);
@@ -29,17 +27,17 @@ var iter;
 var globalIncreaseFactor=1;
 var translateVectors=null;
 if (helixLengthAdjustmentMethod === $I$(2).MAXSCALINGFACTOR ) {
-var lengthIncreaseFactor=Clazz.new_($I$(3));
+var lengthIncreaseFactor=Clazz.new_($I$(3,1));
 var maxLengthIncreaseFactor=-Infinity;
 iter=template.rnaIterator$();
 while (iter.hasNext$()){
 var element=iter.next$();
 if (Clazz.instanceOf(element, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateHelix") && this.mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(element) != null   && !lengthIncreaseFactor.containsKey$O(element) ) {
 var helix=element;
-var basesInHelixArray=$I$(1).intArrayFromList$java_util_List(this.mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix));
+var basesInHelixArray=$I$(1,"intArrayFromList$java_util_List",[this.mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix)]);
 $I$(4).sort$IA(basesInHelixArray);
 var l=p$1.computeLengthIncreaseFactor$IA$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$Z.apply(this, [basesInHelixArray, helix, straightBulges]);
-lengthIncreaseFactor.put$TK$TV(helix, new Double(l));
+lengthIncreaseFactor.put$O$O(helix, new Double(l));
 if (l > maxLengthIncreaseFactor ) {
 maxLengthIncreaseFactor=l;
 }}}
@@ -59,13 +57,13 @@ throw e;
 var centers=Clazz.array($I$(5), [this._listeBases.size$()]);
 var angles=Clazz.array(Double.TYPE, [this._listeBases.size$()]);
 for (var i=0; i < this._listeBases.size$(); i++) {
-coords[i]=Clazz.new_($I$(5).c$$D$D,[0, 0]);
-centers[i]=Clazz.new_($I$(5).c$$D$D,[0, 0]);
+coords[i]=Clazz.new_($I$(5,1).c$$D$D,[0, 0]);
+centers[i]=Clazz.new_($I$(5,1).c$$D$D,[0, 0]);
 }
 var computeCoords=true;
 while (computeCoords){
 computeCoords=false;
-var alreadyDrawnHelixes=Clazz.new_($I$(6));
+var alreadyDrawnHelixes=Clazz.new_($I$(6,1));
 var lastMappedHelix=null;
 var howWeGotOutOfLastHelix=null;
 var howWeGotOutOfLastHelixBaseIndex=0;
@@ -76,12 +74,12 @@ element=iter.next$();
 if (Clazz.instanceOf(element, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateHelix") && this.mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(element) != null  ) {
 var helix=element;
 var firstTimeWeMeetThisHelix;
-var basesInHelixArray=$I$(1).intArrayFromList$java_util_List(this.mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix));
+var basesInHelixArray=$I$(1,"intArrayFromList$java_util_List",[this.mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix)]);
 $I$(4).sort$IA(basesInHelixArray);
 if (!alreadyDrawnHelixes.contains$O(helix)) {
 firstTimeWeMeetThisHelix=true;
 p$1.drawHelixLikeTemplateHelix$IA$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$D$java_util_Map$Z.apply(this, [basesInHelixArray, helix, coords, centers, angles, globalIncreaseFactor, translateVectors, straightBulges]);
-alreadyDrawnHelixes.add$TE(helix);
+alreadyDrawnHelixes.add$O(helix);
 } else {
 firstTimeWeMeetThisHelix=false;
 }var howWeGetInCurrentHelix;
@@ -95,18 +93,18 @@ if (helix.getIn1Is$() === $I$(7).IN1_IS_5PRIME ) {
 howWeGetInCurrentHelix=helix.getIn2$();
 } else {
 howWeGetInCurrentHelix=helix.getIn1$();
-}}var P0=Clazz.new_($I$(5));
-var P3=Clazz.new_($I$(5));
+}}var P0=Clazz.new_($I$(5,1));
+var P3=Clazz.new_($I$(5,1));
 if (lastMappedHelix != null ) {
 if (lastMappedHelix === helix ) {
-var helixVector=Clazz.new_($I$(5));
-p$1.computeHelixEndPointDirections$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGotOutOfLastHelix, helixVector, Clazz.new_($I$(5))]);
+var helixVector=Clazz.new_($I$(5,1));
+p$1.computeHelixEndPointDirections$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGotOutOfLastHelix, helixVector, Clazz.new_($I$(5,1))]);
 var angle=$I$(8).angleFromVector$java_awt_geom_Point2D_Double(helixVector);
 var b1=basesInHelixArray[(basesInHelixArray.length/2|0) - 1];
 P0.setLocation$java_awt_geom_Point2D(coords[b1]);
 var b2=basesInHelixArray[(basesInHelixArray.length/2|0)];
 P3.setLocation$java_awt_geom_Point2D(coords[b2]);
-var loopCenter=Clazz.new_($I$(5).c$$D$D,[(P0.x + P3.x) / 2, (P0.y + P3.y) / 2]);
+var loopCenter=Clazz.new_([(P0.x + P3.x) / 2, (P0.y + P3.y) / 2],$I$(5,1).c$$D$D);
 this.rna.drawLoop$I$I$D$D$D$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$Z(b1, b2, loopCenter.x, loopCenter.y, angle, coords, centers, angles, straightBulges);
 if (helix.isFlipped$()) {
 C$.symmetric$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$I$I(loopCenter, helixVector, coords, b1, b2);
@@ -119,9 +117,9 @@ P3.setLocation$java_awt_geom_Point2D(coords[b2]);
 var P1;
 var P2;
 if (Clazz.instanceOf(howWeGotOutOfLastHelix.getOtherElement$(), "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence") && Clazz.instanceOf(howWeGetInCurrentHelix.getOtherElement$(), "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence") ) {
-P1=Clazz.new_($I$(5));
+P1=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGotOutOfLastHelix, P0, P1]);
-P2=Clazz.new_($I$(5));
+P2=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGetInCurrentHelix, P3, P2]);
 } else {
 P1=null;
@@ -147,9 +145,9 @@ coords[0].x *= globalIncreaseFactor;
 coords[0].y *= globalIncreaseFactor;
 } else {
 var idealLength=p$1.computeStraightLineIdealLength$I$I.apply(this, [b1, b2]);
-var j=Clazz.new_($I$(5));
+var j=Clazz.new_($I$(5,1));
 if (howWeGetInCurrentHelix != null ) {
-p$1.computeHelixEndPointDirections$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGetInCurrentHelix, Clazz.new_($I$(5)), j]);
+p$1.computeHelixEndPointDirections$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGetInCurrentHelix, Clazz.new_($I$(5,1)), j]);
 } else {
 j.setLocation$D$D(1, 0);
 }coords[b1].setLocation$D$D(coords[b2].x + j.x * idealLength, coords[b2].y + j.y * idealLength);
@@ -157,9 +155,9 @@ j.setLocation$D$D(1, 0);
 var P1;
 var P2;
 if (Clazz.instanceOf(howWeGetInCurrentHelix.getOtherElement$(), "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence") && templateSequence != null  ) {
-P1=Clazz.new_($I$(5));
+P1=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [templateSequence.getIn$(), P0, P1]);
-P2=Clazz.new_($I$(5));
+P2=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGetInCurrentHelix, P3, P2]);
 } else {
 P1=null;
@@ -206,27 +204,27 @@ coords[b2].x *= globalIncreaseFactor;
 coords[b2].y *= globalIncreaseFactor;
 } else {
 var idealLength=p$1.computeStraightLineIdealLength$I$I.apply(this, [b1, b2]);
-var j=Clazz.new_($I$(5));
+var j=Clazz.new_($I$(5,1));
 if (howWeGotOutOfLastHelix != null ) {
-p$1.computeHelixEndPointDirections$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGotOutOfLastHelix, Clazz.new_($I$(5)), j]);
+p$1.computeHelixEndPointDirections$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGotOutOfLastHelix, Clazz.new_($I$(5,1)), j]);
 } else {
 j.setLocation$D$D(1, 0);
 }coords[b2].setLocation$D$D(coords[b1].x + j.x * idealLength, coords[b1].y + j.y * idealLength);
-}var P0=Clazz.new_($I$(5));
-var P3=Clazz.new_($I$(5));
+}var P0=Clazz.new_($I$(5,1));
+var P3=Clazz.new_($I$(5,1));
 P0.setLocation$java_awt_geom_Point2D(coords[b1]);
 P3.setLocation$java_awt_geom_Point2D(coords[b2]);
 var P1;
 var P2;
 if (howWeGotOutOfLastHelix != null  && Clazz.instanceOf(howWeGotOutOfLastHelix.getOtherElement$(), "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence")  && endTemplateSequence != null  ) {
-P1=Clazz.new_($I$(5));
+P1=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [howWeGotOutOfLastHelix, P0, P1]);
-P2=Clazz.new_($I$(5));
+P2=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [endTemplateSequence.getOut$(), P3, P2]);
 } else if (lastMappedHelix == null  && beginTemplateSequence != null   && endTemplateSequence != null  ) {
-P1=Clazz.new_($I$(5));
+P1=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [beginTemplateSequence.getIn$(), P0, P1]);
-P2=Clazz.new_($I$(5));
+P2=Clazz.new_($I$(5,1));
 p$1.computeBezierTangentVectorTarget$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [endTemplateSequence.getOut$(), P3, P2]);
 } else {
 P1=null;
@@ -235,7 +233,7 @@ P2=null;
 }if (helixLengthAdjustmentMethod === $I$(2).NOINTERSECT  && coords.length > 3 ) {
 var lines=Clazz.array($I$(9), [coords.length - 1]);
 for (var i=0; i < coords.length - 1; i++) {
-lines[i]=Clazz.new_($I$(9).c$$java_awt_geom_Point2D$java_awt_geom_Point2D,[coords[i], coords[i + 1]]);
+lines[i]=Clazz.new_($I$(9,1).c$$java_awt_geom_Point2D$java_awt_geom_Point2D,[coords[i], coords[i + 1]]);
 }
 var intersectLines=0;
 for (var i=0; i < lines.length; i++) {
@@ -251,8 +249,8 @@ computeCoords=true;
 }}}}
 if (helixLengthAdjustmentMethod === $I$(2).MAXSCALINGFACTOR  || helixLengthAdjustmentMethod === $I$(2).NOINTERSECT  ) {
 }for (var i=0; i < this._listeBases.size$(); i++) {
-this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(5).c$$D$D,[coords[i].x * conf._spaceBetweenBases, coords[i].y * conf._spaceBetweenBases]));
-this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(5).c$$D$D,[centers[i].x * conf._spaceBetweenBases, centers[i].y * conf._spaceBetweenBases]));
+this._listeBases.get$I(i).setCoords$java_awt_geom_Point2D_Double(Clazz.new_($I$(5,1).c$$D$D,[coords[i].x * conf._spaceBetweenBases, coords[i].y * conf._spaceBetweenBases]));
+this._listeBases.get$I(i).setCenter$java_awt_geom_Point2D_Double(Clazz.new_($I$(5,1).c$$D$D,[centers[i].x * conf._spaceBetweenBases, centers[i].y * conf._spaceBetweenBases]));
 }
 });
 
@@ -260,7 +258,7 @@ Clazz.newMeth(C$, 'computeHelixEndPointDirections$fr_orsay_lri_varna_models_temp
 var helix=helixEndPoint.getElement$();
 var startpos=helix.getStartPosition$();
 var endpos=helix.getEndPosition$();
-var helixVector=Clazz.new_($I$(5));
+var helixVector=Clazz.new_($I$(5,1));
 switch (helixEndPoint.getPosition$()) {
 case $I$(11).IN1:
 case $I$(11).OUT2:
@@ -318,7 +316,7 @@ sequenceEndPointIsIn=true;
 sequenceEndPointIsIn=false;
 }}var l=sequenceEndPointIsIn ? sequence.getInTangentVectorLength$() : sequence.getOutTangentVectorLength$();
 var theta=sequenceEndPointIsIn ? sequence.getInTangentVectorAngle$() : sequence.getOutTangentVectorAngle$();
-var v=Clazz.new_($I$(5));
+var v=Clazz.new_($I$(5,1));
 v.x=l * Math.cos(theta);
 v.y=l * Math.sin(theta);
 curveVectorOtherPoint.x=curveEndPoint.x + v.x;
@@ -334,9 +332,9 @@ return realLength / templateLength;
 Clazz.newMeth(C$, 'computeLengthIncreaseDelta$IA$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$Z', function (basesInHelixArray, helix, straightBulges) {
 var templateLength=p$1.computeHelixTemplateLength$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix.apply(this, [helix]);
 var realLength=p$1.computeHelixRealLength$IA$Z.apply(this, [basesInHelixArray, straightBulges]);
-var i=Clazz.new_($I$(5));
+var i=Clazz.new_($I$(5,1));
 p$1.computeTemplateHelixVectors$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [helix, null, i, null]);
-return Clazz.new_($I$(5).c$$D$D,[i.x * (realLength - templateLength), i.y * (realLength - templateLength)]);
+return Clazz.new_([i.x * (realLength - templateLength), i.y * (realLength - templateLength)],$I$(5,1).c$$D$D);
 }, p$1);
 
 Clazz.newMeth(C$, 'computeTemplateHelixVectors$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double', function (helix, o, i, j) {
@@ -352,7 +350,7 @@ startpos=helix.getEndPosition$();
 o.x=startpos.x;
 o.y=startpos.y;
 }if (i != null  || j != null  ) {
-if (i == null ) i=Clazz.new_($I$(5));
+if (i == null ) i=Clazz.new_($I$(5,1));
 i.x=(endpos.x - startpos.x);
 i.y=(endpos.y - startpos.y);
 var i_original_norm=Math.hypot(i.x, i.y);
@@ -399,7 +397,7 @@ return p$1.drawHelixLikeTemplateHelix$IA$fr_orsay_lri_varna_models_templates_RNA
 }, p$1);
 
 Clazz.newMeth(C$, 'countUnpairedLine$I$I', function (firstBase, lastBase) {
-var counts=Clazz.new_($I$(12));
+var counts=Clazz.new_($I$(12,1));
 var nBP=0;
 var nLD=0;
 {
@@ -422,14 +420,14 @@ return counts;
 Clazz.newMeth(C$, 'drawHelixLikeTemplateHelix$IA$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$D$java_util_Map$Z', function (basesInHelixArray, helix, coords, centers, angles, scaleHelixOrigin, translateVectors, straightBulges) {
 var n=(basesInHelixArray.length/2|0);
 if (n == 0) return 0;
-var o=Clazz.new_($I$(5).c$$D$D,[0, 0]);
-var i=Clazz.new_($I$(5).c$$D$D,[1, 0]);
-var j=Clazz.new_($I$(5).c$$D$D,[0, 1]);
+var o=Clazz.new_($I$(5,1).c$$D$D,[0, 0]);
+var i=Clazz.new_($I$(5,1).c$$D$D,[1, 0]);
+var j=Clazz.new_($I$(5,1).c$$D$D,[0, 1]);
 var flipped=false;
 if (helix != null ) {
 p$1.computeTemplateHelixVectors$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double.apply(this, [helix, o, i, j]);
 flipped=helix.isFlipped$();
-}var li=Clazz.new_($I$(5).c$$D$D,[i.x * 40.0, i.y * 40.0]);
+}var li=Clazz.new_($I$(5,1).c$$D$D,[i.x * 40.0, i.y * 40.0]);
 o.x=(o.x - j.x * 65.0 / 2) * scaleHelixOrigin;
 o.y=(o.y - j.y * 65.0 / 2) * scaleHelixOrigin;
 if (translateVectors != null  && translateVectors.containsKey$O(helix) ) {
@@ -438,9 +436,9 @@ o.x=o.x + v.x;
 o.y=o.y + v.y;
 }var helixBasesPositions=Clazz.array($I$(5), [basesInHelixArray.length]);
 for (var k=0; k < helixBasesPositions.length; k++) {
-helixBasesPositions[k]=Clazz.new_($I$(5));
+helixBasesPositions[k]=Clazz.new_($I$(5,1));
 }
-var accDelta=Clazz.new_($I$(5).c$$D$D,[0, 0]);
+var accDelta=Clazz.new_($I$(5,1).c$$D$D,[0, 0]);
 for (var k=0; k < n; k++) {
 var kp=2 * n - k - 1;
 var p1=helixBasesPositions[k];
@@ -448,17 +446,17 @@ var p2=helixBasesPositions[kp];
 var bulge=k >= 1 && (basesInHelixArray[k] != basesInHelixArray[k - 1] + 1 || basesInHelixArray[kp + 1] != basesInHelixArray[kp] + 1 ) ;
 if (k >= 1) {
 if (basesInHelixArray[k] < basesInHelixArray[k - 1] || basesInHelixArray[kp + 1] < basesInHelixArray[kp] ) {
-throw Clazz.new_($I$(13).c$$S,["Internal bug: basesInHelixArray must be sorted"]);
+throw Clazz.new_($I$(13,1).c$$S,["Internal bug: basesInHelixArray must be sorted"]);
 }if (bulge) {
 var delta1=p$1.estimateBulgeWidth$I$I.apply(this, [basesInHelixArray[k - 1], basesInHelixArray[k]]);
 var delta2=p$1.estimateBulgeWidth$I$I.apply(this, [basesInHelixArray[kp], basesInHelixArray[kp + 1]]);
 var delta=Math.max(delta1, delta2);
 if (coords != null ) {
 for (var side=0; side < 2; side++) {
-var pstart=Clazz.new_($I$(5));
-var pend=Clazz.new_($I$(5));
-var bisectVect=Clazz.new_($I$(5));
-var is=Clazz.new_($I$(5));
+var pstart=Clazz.new_($I$(5,1));
+var pend=Clazz.new_($I$(5,1));
+var bisectVect=Clazz.new_($I$(5,1));
+var is=Clazz.new_($I$(5,1));
 var firstBase;
 var lastBase;
 var alphasign=flipped ? -1 : 1;
@@ -479,7 +477,7 @@ is.setLocation$D$D(-i.x, -i.y);
 }var arclen=p$1.estimateBulgeArcLength$I$I.apply(this, [firstBase, lastBase]);
 var centerOnBisect=$I$(14).computeArcCenter$D$D(delta, arclen);
 if (centerOnBisect > -1000 ) {
-var center=Clazz.new_($I$(5).c$$D$D,[pstart.x + is.x * delta / 2 + bisectVect.x * centerOnBisect, pstart.y + is.y * delta / 2 + bisectVect.y * centerOnBisect]);
+var center=Clazz.new_($I$(5,1).c$$D$D,[pstart.x + is.x * delta / 2 + bisectVect.x * centerOnBisect, pstart.y + is.y * delta / 2 + bisectVect.y * centerOnBisect]);
 var b=firstBase;
 var len=0;
 var r=Math.hypot(pstart.x - center.x, pstart.y - center.y);
@@ -522,10 +520,10 @@ if (b < l && l < lastBase ) {
 var b1pos=coords[b];
 var b2pos=coords[l];
 var beta=$I$(8).angleFromVector$D$D(b2pos.x - b1pos.x, b2pos.y - b1pos.y) - 1.5707963267948966 + (flipped ? 3.141592653589793 : 0);
-var loopCenter=Clazz.new_($I$(5).c$$D$D,[(b1pos.x + b2pos.x) / 2, (b1pos.y + b2pos.y) / 2]);
+var loopCenter=Clazz.new_([(b1pos.x + b2pos.x) / 2, (b1pos.y + b2pos.y) / 2],$I$(5,1).c$$D$D);
 this.rna.drawLoop$I$I$D$D$D$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$Z(b, l, loopCenter.x, loopCenter.y, beta, coords, centers, angles, straightBulges);
 if (helix.isFlipped$()) {
-var v=Clazz.new_($I$(5).c$$D$D,[Math.cos(beta), Math.sin(beta)]);
+var v=Clazz.new_([Math.cos(beta), Math.sin(beta)],$I$(5,1).c$$D$D);
 C$.symmetric$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$I$I(loopCenter, v, coords, b, l);
 C$.symmetric$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$I$I(loopCenter, v, centers, b, l);
 }b=l;
@@ -567,7 +565,7 @@ return 65.0 * counts.nBP + 40.0 * counts.nLD;
 }, p$1);
 
 Clazz.newMeth(C$, 'drawOnStraightLine$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$Z', function (firstBase, lastBase, P0, P3, coords, centers, cancelIfNotGood) {
-var vector=Clazz.new_($I$(5).c$$D$D,[P3.x - P0.x, P3.y - P0.y]);
+var vector=Clazz.new_($I$(5,1).c$$D$D,[P3.x - P0.x, P3.y - P0.y]);
 var vectorNorm=Math.hypot(vector.x, vector.y);
 var counts=p$1.countUnpairedLine$I$I.apply(this, [firstBase, lastBase]);
 var LD=Math.max((vectorNorm - counts.nBP * 65.0) / counts.nLD, 0);
@@ -593,7 +591,7 @@ b++;
 Clazz.newMeth(C$, 'drawOnBezierCurve$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$Z', function (firstBase, lastBase, P0, P1, P2, P3, coords, centers, cancelIfNotGood) {
 var counts=p$1.countUnpairedLine$I$I.apply(this, [firstBase, lastBase]);
 var n=counts.total;
-var bezier=Clazz.new_($I$(15).c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$I,[P0, P1, P2, P3, 10 * n]);
+var bezier=Clazz.new_($I$(15,1).c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$I,[P0, P1, P2, P3, 10 * n]);
 var curveLength=bezier.getApproxCurveLength$();
 var LD=Math.max((curveLength - counts.nBP * 65.0) / counts.nLD, 0);
 if (cancelIfNotGood && LD < 30.0  ) {
@@ -640,7 +638,7 @@ if (axisB == 0 ) {
 p$1.drawOnStraightLine$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$Z.apply(this, [firstBase, lastBase, P0, P3, coords, centers, false]);
 return;
 }var n=counts.total;
-var curve=Clazz.new_($I$(17).c$$D$D$I,[axisA, axisB, 10 * n]);
+var curve=Clazz.new_($I$(17,1).c$$D$D$I,[axisA, axisB, 10 * n]);
 var curveLength=curve.getApproxCurveLength$();
 var LD=Math.max((curveLength - counts.nBP * 65.0) / counts.nLD, 0);
 var t=Clazz.array(Double.TYPE, [n + 1]);
@@ -661,7 +659,7 @@ b++;
 }}
 }var sequenceBasesCoords=curve.uniformParam$DA(t);
 if (reverse) {
-var tranform1=Clazz.new_($I$(18));
+var tranform1=Clazz.new_($I$(18,1));
 tranform1.scale$D$D(1, -1);
 tranform1.transform$java_awt_geom_Point2DA$I$java_awt_geom_Point2DA$I$I(sequenceBasesCoords, 0, sequenceBasesCoords, 0, sequenceBasesCoords.length);
 }var tranform=$I$(17).matchAxisA$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double(P0, P3);
@@ -681,17 +679,17 @@ b++;
 }}, p$1);
 
 Clazz.newMeth(C$, 'drawAlongCurve$I$I$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$fr_orsay_lri_varna_models_templates_DrawRNATemplateCurveMethod$Z$Z', function (firstBase, lastBase, P0, P1, P2, P3, coords, centers, angles, curveMethod, reverse, straightBulges) {
-var alongBezierCurve=Clazz.new_($I$(19));
+var alongBezierCurve=Clazz.new_($I$(19,1));
 for (var depth=0, i=firstBase; i <= lastBase; i++) {
 var k=this._listeBases.get$I(i).getElementStructure$();
 if (k < 0 || k > lastBase  || k < firstBase ) {
 if (depth == 0) {
-alongBezierCurve.add$TE(new Integer(i));
+alongBezierCurve.add$O(new Integer(i));
 }} else {
 if (i < k) {
 if (depth == 0) {
-alongBezierCurve.add$TE(new Integer(i));
-alongBezierCurve.add$TE(new Integer(k));
+alongBezierCurve.add$O(new Integer(i));
+alongBezierCurve.add$O(new Integer(k));
 }depth++;
 } else {
 depth--;
@@ -723,7 +721,7 @@ var b2pos=coords[b2];
 var alpha=$I$(8).angleFromVector$D$D(b2pos.x - b1pos.x, b2pos.y - b1pos.y);
 this.rna.drawLoop$I$I$D$D$D$java_awt_geom_Point2D_DoubleA$java_awt_geom_Point2D_DoubleA$DA$Z(b1, b2, (b1pos.x + b2pos.x) / 2, (b1pos.y + b2pos.y) / 2, alpha - 1.5707963267948966, coords, centers, angles, straightBulges);
 if (reverse) {
-var symAxisVect=Clazz.new_($I$(5).c$$D$D,[coords[b2].x - coords[b1].x, coords[b2].y - coords[b1].y]);
+var symAxisVect=Clazz.new_($I$(5,1).c$$D$D,[coords[b2].x - coords[b1].x, coords[b2].y - coords[b1].y]);
 C$.symmetric$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$I$I(coords[b1], symAxisVect, coords, b1, b2);
 C$.symmetric$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$I$I(coords[b1], symAxisVect, centers, b1, b2);
 }}}
@@ -732,8 +730,8 @@ C$.symmetric$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_
 Clazz.newMeth(C$, 'symmetric$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_DoubleA$I$I', function (p, v, points, first, last) {
 var lv=v.x * v.x + v.y * v.y;
 for (var i=first; i <= last; i++) {
-var A=Clazz.new_($I$(5).c$$D$D,[points[i].x - p.x, points[i].y - p.y]);
-var B=Clazz.new_($I$(5).c$$D$D,[-(A.x * v.y * v.y  - 2 * A.y * v.x * v.y  - A.x * v.x * v.x ) / lv, (A.y * v.y * v.y  + 2 * A.x * v.x * v.y  - A.y * v.x * v.x ) / lv]);
+var A=Clazz.new_($I$(5,1).c$$D$D,[points[i].x - p.x, points[i].y - p.y]);
+var B=Clazz.new_([-(A.x * v.y * v.y  - 2 * A.y * v.x * v.y  - A.x * v.x * v.x ) / lv, (A.y * v.y * v.y  + 2 * A.x * v.x * v.y  - A.y * v.x * v.x ) / lv],$I$(5,1).c$$D$D);
 points[i].x=B.x + p.x;
 points[i].y=B.y + p.y;
 }
@@ -745,43 +743,40 @@ var newDeltaVector=parentDeltaVector;
 if (Clazz.instanceOf(nvt, "fr.orsay.lri.varna.models.templates.RNANodeValueTemplateBasePair")) {
 var helix=(nvt).getHelix$();
 if (!translateVectors.containsKey$O(helix)) {
-translateVectors.put$TK$TV(helix, parentDeltaVector);
+translateVectors.put$O$O(helix, parentDeltaVector);
 var basesInHelixArray;
 if (mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix) != null ) {
-basesInHelixArray=$I$(1).intArrayFromList$java_util_List(mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix));
+basesInHelixArray=$I$(1,"intArrayFromList$java_util_List",[mapping.getAncestor$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement(helix)]);
 $I$(4).sort$IA(basesInHelixArray);
 } else {
 basesInHelixArray=Clazz.array(Integer.TYPE, [0]);
 }var helixDeltaVector=p$1.computeLengthIncreaseDelta$IA$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix$Z.apply(this, [basesInHelixArray, helix, straightBulges]);
-newDeltaVector=Clazz.new_($I$(5).c$$D$D,[parentDeltaVector.x + helixDeltaVector.x, parentDeltaVector.y + helixDeltaVector.y]);
+newDeltaVector=Clazz.new_($I$(5,1).c$$D$D,[parentDeltaVector.x + helixDeltaVector.x, parentDeltaVector.y + helixDeltaVector.y]);
 }}for (var subtree, $subtree = tree.getChildren$().iterator$(); $subtree.hasNext$()&&((subtree=($subtree.next$())),1);) {
 p$1.computeHelixTranslations$fr_orsay_lri_varna_models_treealign_Tree$java_util_Map$fr_orsay_lri_varna_models_templates_RNATemplateMapping$java_awt_geom_Point2D_Double$Z.apply(this, [subtree, translateVectors, mapping, newDeltaVector, straightBulges]);
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'computeHelixTranslations$fr_orsay_lri_varna_models_treealign_Tree$fr_orsay_lri_varna_models_templates_RNATemplateMapping$Z', function (tree, mapping, straightBulges) {
-var translateVectors=Clazz.new_($I$(3));
-p$1.computeHelixTranslations$fr_orsay_lri_varna_models_treealign_Tree$java_util_Map$fr_orsay_lri_varna_models_templates_RNATemplateMapping$java_awt_geom_Point2D_Double$Z.apply(this, [tree, translateVectors, mapping, Clazz.new_($I$(5).c$$D$D,[0, 0]), straightBulges]);
+var translateVectors=Clazz.new_($I$(3,1));
+p$1.computeHelixTranslations$fr_orsay_lri_varna_models_treealign_Tree$java_util_Map$fr_orsay_lri_varna_models_templates_RNATemplateMapping$java_awt_geom_Point2D_Double$Z.apply(this, [tree, translateVectors, mapping, Clazz.new_($I$(5,1).c$$D$D,[0, 0]), straightBulges]);
 return translateVectors;
 }, p$1);
 ;
-(function(){var C$=Clazz.newClass(P$.DrawRNATemplate, "UnpairedLineCounts", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DrawRNATemplate, "UnpairedLineCounts", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nBP=0;
-this.nLD=0;
-this.total=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nBP','nLD','total']]]
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,['org.json.JSONObject','.Null'],'java.util.HashMap','org.json.JSONTokener','java.util.ResourceBundle','Thread','org.json.JSONArray','Boolean','java.math.BigInteger','java.math.BigDecimal','Enum','java.lang.reflect.Modifier','Void','java.util.Locale','org.json.JSONPointer','java.io.StringWriter','org.json.JSONWriter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONObject", function(){
+(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,['org.json.JSONObject','.Null'],'java.util.HashMap','org.json.JSONTokener','java.util.ResourceBundle','Thread','org.json.JSONArray','java.math.BigInteger','java.math.BigDecimal','Enum','java.lang.reflect.Modifier','java.util.Locale','org.json.JSONPointer','java.io.StringWriter','org.json.JSONWriter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONObject", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.NULL=null;
+C$.$classes$=[['Null',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NULL=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.map=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['map','java.util.Map']]
+,['O',['NULL','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.map=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.map=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$org_json_JSONObject$SA', function (jo, names) {
@@ -77,17 +73,17 @@ throw x.syntaxError$S("Expected a \',\' or \'}\'");
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (m) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (m == null ) {
-this.map=Clazz.new_($I$(2));
+this.map=Clazz.new_($I$(2,1));
 } else {
-this.map=Clazz.new_($I$(2).c$$I,[m.size$()]);
+this.map=Clazz.new_([m.size$()],$I$(2,1).c$$I);
 for (var e, $e = m.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 if (e.getKey$() == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Null key."]);
 }var value=e.getValue$();
 if (value != null ) {
-this.map.put$TK$TV(String.valueOf$O(e.getKey$()), C$.wrap$O(value));
+this.map.put$O$O(String.valueOf$O(e.getKey$()), C$.wrap$O(value));
 }}
 }}, 1);
 
@@ -113,12 +109,12 @@ throw ignore;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (source) {
-C$.c$$org_json_JSONTokener.apply(this, [Clazz.new_($I$(3).c$$S,[source])]);
+C$.c$$org_json_JSONTokener.apply(this, [Clazz.new_($I$(3,1).c$$S,[source])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_util_Locale', function (baseName, locale) {
 C$.c$.apply(this, []);
-var bundle=$I$(4).getBundle$S$java_util_Locale$O(baseName, locale, $I$(5).currentThread$().getContextClassLoader$());
+var bundle=$I$(4,"getBundle$S$java_util_Locale$O",[baseName, locale, $I$(5).currentThread$().getContextClassLoader$()]);
 var keys=bundle.getKeys$();
 while (keys.hasMoreElements$()){
 var key=keys.nextElement$();
@@ -139,19 +135,19 @@ target.put$S$O(path[last], bundle.getString$S(key));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
-C$.$init$.apply(this);
-this.map=Clazz.new_($I$(2).c$$I,[initialCapacity]);
+;C$.$init$.apply(this);
+this.map=Clazz.new_($I$(2,1).c$$I,[initialCapacity]);
 }, 1);
 
 Clazz.newMeth(C$, 'accumulate$S$O', function (key, value) {
 C$.testValidity$O(value);
 var object=this.opt$S(key);
 if (object == null ) {
-this.put$S$O(key, Clazz.instanceOf(value, "org.json.JSONArray") ? Clazz.new_($I$(6)).put$O(value) : value);
+this.put$S$O(key, Clazz.instanceOf(value, "org.json.JSONArray") ? Clazz.new_($I$(6,1)).put$O(value) : value);
 } else if (Clazz.instanceOf(object, "org.json.JSONArray")) {
 (object).put$O(value);
 } else {
-this.put$S$O(key, Clazz.new_($I$(6)).put$O(object).put$O(value));
+this.put$S$O(key, Clazz.new_($I$(6,1)).put$O(object).put$O(value));
 }return this;
 });
 
@@ -159,7 +155,7 @@ Clazz.newMeth(C$, 'append$S$O', function (key, value) {
 C$.testValidity$O(value);
 var object=this.opt$S(key);
 if (object == null ) {
-this.put$S$O(key, Clazz.new_($I$(6)).put$O(value));
+this.put$S$O(key, Clazz.new_($I$(6,1)).put$O(value));
 } else if (Clazz.instanceOf(object, "org.json.JSONArray")) {
 this.put$S$O(key, (object).put$O(value));
 } else {
@@ -198,9 +194,9 @@ throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONObject[" + C$.q
 
 Clazz.newMeth(C$, 'getBoolean$S', function (key) {
 var object=this.get$S(key);
-if (object.equals$O($I$(7).FALSE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("false") ) ) {
+if (object.equals$O(Boolean.FALSE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("false") ) ) {
 return false;
-} else if (object.equals$O($I$(7).TRUE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("true") ) ) {
+} else if (object.equals$O(Boolean.TRUE) || (Clazz.instanceOf(object, "java.lang.String") && (object).equalsIgnoreCase$S("true") ) ) {
 return true;
 }throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSONObject[" + C$.quote$S(key) + "] is not a Boolean." ]);
 });
@@ -208,7 +204,7 @@ return true;
 Clazz.newMeth(C$, 'getBigInteger$S', function (key) {
 var object=this.get$S(key);
 try {
-return Clazz.new_($I$(8).c$$S,[object.toString()]);
+return Clazz.new_([object.toString()],$I$(7,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,["JSONObject[" + C$.quote$S(key) + "] could not be converted to BigInteger." , e]);
@@ -223,7 +219,7 @@ var object=this.get$S(key);
 if (Clazz.instanceOf(object, "java.math.BigDecimal")) {
 return object;
 }try {
-return Clazz.new_($I$(9).c$$S,[object.toString()]);
+return Clazz.new_([object.toString()],$I$(8,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,["JSONObject[" + C$.quote$S(key) + "] could not be converted to BigDecimal." , e]);
@@ -317,7 +313,7 @@ throw e;
 Clazz.newMeth(C$, 'getNames$org_json_JSONObject', function (jo) {
 if (jo.isEmpty$()) {
 return null;
-}return jo.keySet$().toArray$TTA(Clazz.array(String, [jo.length$()]));
+}return jo.keySet$().toArray$OA(Clazz.array(String, [jo.length$()]));
 }, 1);
 
 Clazz.newMeth(C$, 'getNames$O', function (object) {
@@ -351,9 +347,9 @@ var value=this.opt$S(key);
 if (value == null ) {
 this.put$S$I(key, 1);
 } else if (Clazz.instanceOf(value, "java.math.BigInteger")) {
-this.put$S$O(key, (value).add$java_math_BigInteger($I$(8).ONE));
+this.put$S$O(key, (value).add$java_math_BigInteger($I$(7).ONE));
 } else if (Clazz.instanceOf(value, "java.math.BigDecimal")) {
-this.put$S$O(key, (value).add$java_math_BigDecimal($I$(9).ONE));
+this.put$S$O(key, (value).add$java_math_BigDecimal($I$(8).ONE));
 } else if (Clazz.instanceOf(value, "java.lang.Integer")) {
 this.put$S$I(key, (value).intValue$() + 1);
 } else if (Clazz.instanceOf(value, "java.lang.Long")) {
@@ -394,7 +390,7 @@ return this.map.isEmpty$();
 Clazz.newMeth(C$, 'names$', function () {
 if (this.map.isEmpty$()) {
 return null;
-}return Clazz.new_($I$(6).c$$java_util_Collection,[this.map.keySet$()]);
+}return Clazz.new_([this.map.keySet$()],$I$(6,1).c$$java_util_Collection);
 });
 
 Clazz.newMeth(C$, 'numberToString$Number', function (number) {
@@ -416,10 +412,10 @@ return key == null  ? null : this.map.get$O(key);
 });
 
 Clazz.newMeth(C$, 'optEnum$Class$S', function (clazz, key) {
-return this.optEnum$Class$S$TE(clazz, key, null);
+return this.optEnum$Class$S$Enum(clazz, key, null);
 });
 
-Clazz.newMeth(C$, 'optEnum$Class$S$TE', function (clazz, key, defaultValue) {
+Clazz.newMeth(C$, 'optEnum$Class$S$Enum', function (clazz, key, defaultValue) {
 try {
 var val=this.opt$S(key);
 if (C$.NULL.equals$O(val)) {
@@ -427,7 +423,7 @@ return defaultValue;
 }if (clazz.isAssignableFrom$Class(val.getClass$())) {
 var myE=val;
 return myE;
-}return $I$(10).valueOf$Class$S(clazz, val.toString());
+}return $I$(9,"valueOf$Class$S",[clazz, val.toString()]);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"IllegalArgumentException")){
 var e = e$$;
@@ -473,13 +469,13 @@ return defaultValue;
 }if (Clazz.instanceOf(val, "java.math.BigDecimal")) {
 return val;
 }if (Clazz.instanceOf(val, "java.math.BigInteger")) {
-return Clazz.new_($I$(9).c$$java_math_BigInteger,[val]);
+return Clazz.new_($I$(8,1).c$$java_math_BigInteger,[val]);
 }if (Clazz.instanceOf(val, "java.lang.Double") || Clazz.instanceOf(val, "java.lang.Float") ) {
-return Clazz.new_($I$(9).c$$D,[(val).doubleValue$()]);
+return Clazz.new_([(val).doubleValue$()],$I$(8,1).c$$D);
 }if (Clazz.instanceOf(val, "java.lang.Long") || Clazz.instanceOf(val, "java.lang.Integer") || Clazz.instanceOf(val, "java.lang.Short") || Clazz.instanceOf(val, "java.lang.Byte")  ) {
-return Clazz.new_($I$(9).c$$J,[(val).longValue$()]);
+return Clazz.new_([(val).longValue$()],$I$(8,1).c$$J);
 }try {
-return Clazz.new_($I$(9).c$$S,[val.toString()]);
+return Clazz.new_([val.toString()],$I$(8,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -498,14 +494,14 @@ return val;
 }if (Clazz.instanceOf(val, "java.math.BigDecimal")) {
 return (val).toBigInteger$();
 }if (Clazz.instanceOf(val, "java.lang.Double") || Clazz.instanceOf(val, "java.lang.Float") ) {
-return Clazz.new_($I$(9).c$$D,[(val).doubleValue$()]).toBigInteger$();
+return Clazz.new_([(val).doubleValue$()],$I$(8,1).c$$D).toBigInteger$();
 }if (Clazz.instanceOf(val, "java.lang.Long") || Clazz.instanceOf(val, "java.lang.Integer") || Clazz.instanceOf(val, "java.lang.Short") || Clazz.instanceOf(val, "java.lang.Byte")  ) {
-return $I$(8).valueOf$J((val).longValue$());
+return $I$(7,"valueOf$J",[(val).longValue$()]);
 }try {
 var valStr=val.toString();
 if (C$.isDecimalNotation$S(valStr)) {
-return Clazz.new_($I$(9).c$$S,[valStr]).toBigInteger$();
-}return Clazz.new_($I$(8).c$$S,[valStr]);
+return Clazz.new_($I$(8,1).c$$S,[valStr]).toBigInteger$();
+}return Clazz.new_($I$(7,1).c$$S,[valStr]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -573,7 +569,7 @@ return defaultValue;
 return (val).intValue$();
 }if (Clazz.instanceOf(val, "java.lang.String")) {
 try {
-return Clazz.new_($I$(9).c$$S,[val]).intValue$();
+return Clazz.new_($I$(8,1).c$$S,[val]).intValue$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -606,7 +602,7 @@ return defaultValue;
 return (val).longValue$();
 }if (Clazz.instanceOf(val, "java.lang.String")) {
 try {
-return Clazz.new_($I$(9).c$$S,[val]).longValue$();
+return Clazz.new_($I$(8,1).c$$S,[val]).longValue$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return defaultValue;
@@ -655,13 +651,13 @@ var includeSuperClass=klass.getClassLoader$() != null ;
 var methods=includeSuperClass ? klass.getMethods$() : klass.getDeclaredMethods$();
 for (var method, $method = 0, $$method = methods; $method<$$method.length&&((method=($$method[$method])),1);$method++) {
 var modifiers=method.getModifiers$();
-if ($I$(11).isPublic$I(modifiers) && !$I$(11).isStatic$I(modifiers) && method.getParameterTypes$().length == 0   && !method.isBridge$()  && method.getReturnType$() !== $I$(12).TYPE   && p$1.isValidMethodName$S.apply(this, [method.getName$()]) ) {
-var key=p$1.getKeyNameFromMethod$reflect_Method.apply(this, [method]);
+if ($I$(10).isPublic$I(modifiers) && !$I$(10).isStatic$I(modifiers) && method.getParameterTypes$().length == 0   && !method.isBridge$()  && p$1.isValidMethodName$S.apply(this, [method.getName$()]) ) {
+var key=p$1.getKeyNameFromMethod$java_lang_reflect_Method.apply(this, [method]);
 if (key != null  && !key.isEmpty$() ) {
 try {
 var result=method.invoke$O$OA(bean, []);
 if (result != null ) {
-this.map.put$TK$TV(key, C$.wrap$O(result));
+this.map.put$O$O(key, C$.wrap$O(result));
 if (Clazz.instanceOf(result, "java.io.Closeable")) {
 try {
 (result).close$();
@@ -695,7 +691,7 @@ Clazz.newMeth(C$, 'isValidMethodName$S', function (name) {
 return !"getClass".equals$O(name) && !"getDeclaringClass".equals$O(name) ;
 }, p$1);
 
-Clazz.newMeth(C$, 'getKeyNameFromMethod$reflect_Method', function (method) {
+Clazz.newMeth(C$, 'getKeyNameFromMethod$java_lang_reflect_Method', function (method) {
 var key;
 var name=method.getName$();
 if (name.startsWith$S("get") && name.length$() > 3 ) {
@@ -707,18 +703,18 @@ return null;
 }if (Character.isLowerCase$C(key.charAt$I(0))) {
 return null;
 }if (key.length$() == 1) {
-key=key.toLowerCase$java_util_Locale($I$(13).ROOT);
+key=key.toLowerCase$java_util_Locale($I$(11).ROOT);
 } else if (!Character.isUpperCase$C(key.charAt$I(1))) {
-key=key.substring$I$I(0, 1).toLowerCase$java_util_Locale($I$(13).ROOT) + key.substring$I(1);
+key=key.substring$I$I(0, 1).toLowerCase$java_util_Locale($I$(11).ROOT) + key.substring$I(1);
 }return (1 ? key.split("$")[0] :key);
 }, p$1);
 
 Clazz.newMeth(C$, 'put$S$Z', function (key, value) {
-return this.put$S$O(key, value ? $I$(7).TRUE : $I$(7).FALSE);
+return this.put$S$O(key, value ? Boolean.TRUE : Boolean.FALSE);
 });
 
 Clazz.newMeth(C$, 'put$S$java_util_Collection', function (key, value) {
-return this.put$S$O(key, Clazz.new_($I$(6).c$$java_util_Collection,[value]));
+return this.put$S$O(key, Clazz.new_($I$(6,1).c$$java_util_Collection,[value]));
 });
 
 Clazz.newMeth(C$, 'put$S$D', function (key, value) {
@@ -746,7 +742,7 @@ if (key == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Null key."]);
 }if (value != null ) {
 C$.testValidity$O(value);
-this.map.put$TK$TV(key, value);
+this.map.put$O$O(key, value);
 } else {
 this.remove$S(key);
 }return this;
@@ -767,7 +763,7 @@ return this.put$S$O(key, value);
 });
 
 Clazz.newMeth(C$, 'query$S', function (jsonPointer) {
-return this.query$org_json_JSONPointer(Clazz.new_($I$(14).c$$S,[jsonPointer]));
+return this.query$org_json_JSONPointer(Clazz.new_($I$(12,1).c$$S,[jsonPointer]));
 });
 
 Clazz.newMeth(C$, 'query$org_json_JSONPointer', function (jsonPointer) {
@@ -775,7 +771,7 @@ return jsonPointer.queryFrom$O(this);
 });
 
 Clazz.newMeth(C$, 'optQuery$S', function (jsonPointer) {
-return this.optQuery$org_json_JSONPointer(Clazz.new_($I$(14).c$$S,[jsonPointer]));
+return this.optQuery$org_json_JSONPointer(Clazz.new_($I$(12,1).c$$S,[jsonPointer]));
 });
 
 Clazz.newMeth(C$, 'optQuery$org_json_JSONPointer', function (jsonPointer) {
@@ -791,7 +787,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'quote$S', function (string) {
-var sw=Clazz.new_($I$(15));
+var sw=Clazz.new_($I$(13,1));
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(sw.getBuffer$());
 {
 try {
@@ -900,13 +896,13 @@ var initial=val.charAt$I(0);
 if ((initial >= "0" && initial <= "9" ) || initial == "-" ) {
 if (C$.isDecimalNotation$S(val)) {
 var d;
-return (val.length$() <= 14 && !(d=Double.valueOf$S(val)).isInfinite$()  && !d.isNaN$()  ? d : Clazz.new_($I$(9).c$$S,[val]));
+return (val.length$() <= 14 && !(d=Double.valueOf$S(val)).isInfinite$()  && !d.isNaN$()  ? d : Clazz.new_($I$(8,1).c$$S,[val]));
 }var n=(1 ? parseInt(val) :0);
 if (n >= -2147483648 && n <= 2147483647 ) {
 return Integer.valueOf$S(val);
 }if (val.equals$O("" + n)) {
 return Long.valueOf$S(val);
-}return Clazz.new_($I$(8).c$$S,[val]);
+}return Clazz.new_($I$(7,1).c$$S,[val]);
 }throw Clazz.new_(Clazz.load('NumberFormatException').c$$S,["val [" + val + "] is not a valid number." ]);
 }, 1);
 
@@ -914,9 +910,9 @@ Clazz.newMeth(C$, 'stringToValue$S', function (string) {
 if (string.equals$O("")) {
 return string;
 }if (string.equalsIgnoreCase$S("true")) {
-return $I$(7).TRUE;
+return Boolean.TRUE;
 }if (string.equalsIgnoreCase$S("false")) {
-return $I$(7).FALSE;
+return Boolean.FALSE;
 }if (string.equalsIgnoreCase$S("null")) {
 return C$.NULL;
 }var initial=string.charAt$I(0);
@@ -954,7 +950,7 @@ throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["JSON does not allow
 Clazz.newMeth(C$, 'toJSONArray$org_json_JSONArray', function (names) {
 if (names == null  || names.isEmpty$() ) {
 return null;
-}var ja=Clazz.new_($I$(6));
+}var ja=Clazz.new_($I$(6,1));
 for (var i=0; i < names.length$(); i+=1) {
 ja.put$O(this.opt$S(names.getString$I(i)));
 }
@@ -974,14 +970,14 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'toString$I', function (indentFactor) {
-var w=Clazz.new_($I$(15));
+var w=Clazz.new_($I$(13,1));
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(w.getBuffer$());
 {
 return this.write$java_io_Writer$I$I(w, indentFactor, 0).toString();
 }});
 
 Clazz.newMeth(C$, 'valueToString$O', function (value) {
-return $I$(16).valueToString$O(value);
+return $I$(14).valueToString$O(value);
 }, 1);
 
 Clazz.newMeth(C$, 'wrap$O', function (object) {
@@ -992,9 +988,9 @@ return C$.NULL;
 return object;
 }if (Clazz.instanceOf(object, "java.util.Collection")) {
 var coll=object;
-return Clazz.new_($I$(6).c$$java_util_Collection,[coll]);
+return Clazz.new_($I$(6,1).c$$java_util_Collection,[coll]);
 }if (object.getClass$().isArray$()) {
-return Clazz.new_($I$(6).c$$O,[object]);
+return Clazz.new_($I$(6,1).c$$O,[object]);
 }if (Clazz.instanceOf(object, "java.util.Map")) {
 var map=object;
 return Clazz.new_(C$.c$$java_util_Map,[map]);
@@ -1027,11 +1023,11 @@ var map=value;
 Clazz.new_(C$.c$$java_util_Map,[map]).write$java_io_Writer$I$I(writer, indentFactor, indent);
 } else if (Clazz.instanceOf(value, "java.util.Collection")) {
 var coll=value;
-Clazz.new_($I$(6).c$$java_util_Collection,[coll]).write$java_io_Writer$I$I(writer, indentFactor, indent);
+Clazz.new_($I$(6,1).c$$java_util_Collection,[coll]).write$java_io_Writer$I$I(writer, indentFactor, indent);
 } else if (value.getClass$().isArray$()) {
-Clazz.new_($I$(6).c$$O,[value]).write$java_io_Writer$I$I(writer, indentFactor, indent);
+Clazz.new_($I$(6,1).c$$O,[value]).write$java_io_Writer$I$I(writer, indentFactor, indent);
 } else {
-writer.write$S($I$(16).valueToString$O(value));
+writer.write$S($I$(14).valueToString$O(value));
 }return writer;
 }, 1);
 
@@ -1101,7 +1097,7 @@ throw exception;
 });
 
 Clazz.newMeth(C$, 'toMap$', function () {
-var results=Clazz.new_($I$(2));
+var results=Clazz.new_($I$(2,1));
 for (var entry, $entry = this.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var value;
 if (entry.getValue$() == null  || C$.NULL.equals$O(entry.getValue$()) ) {
@@ -1112,20 +1108,23 @@ value=(entry.getValue$()).toMap$();
 value=(entry.getValue$()).toList$();
 } else {
 value=entry.getValue$();
-}results.put$TK$TV(entry.getKey$(), value);
+}results.put$O$O(entry.getKey$(), value);
 }
 return results;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.NULL=Clazz.new_($I$(1,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSONObject, "Null", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSONObject, "Null", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'clone$', function () {
 return this;
@@ -1146,4 +1145,4 @@ return "null";
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:31 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

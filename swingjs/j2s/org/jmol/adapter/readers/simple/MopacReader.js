@@ -1,19 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MopacReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.AtomSetCollectionReader','javajs.util.BS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MopacReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.chargesFound=false;
-this.haveHeader=false;
-this.mopacVersion=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.chargesFound=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['chargesFound','haveHeader'],'I',['mopacVersion']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 while (this.mopacVersion == 0){
@@ -23,7 +17,7 @@ if (this.line.indexOf$S("2009") >= 0) this.mopacVersion=2009;
  else if (this.line.indexOf$S("7.") >= 0) this.mopacVersion=7;
  else if (this.line.indexOf$S("93") >= 0) this.mopacVersion=93;
  else if (this.line.indexOf$S("2002") >= 0) this.mopacVersion=2002;
- else if (this.line.indexOf$S("MOPAC2") >= 0) this.mopacVersion=$I$(1).parseInt$S(this.line.substring$I(this.line.indexOf$S("MOPAC2") + 5));
+ else if (this.line.indexOf$S("MOPAC2") >= 0) this.mopacVersion=(function(a,f){return f.apply(null,a)})([this.line.substring$I(this.line.indexOf$S("MOPAC2") + 5)],$I$(1).parseInt$S);
 }
 $I$(2).info$S("MOPAC version " + this.mopacVersion);
 });
@@ -94,14 +88,14 @@ atom.atomSerial=atomNumber;
 this.setAtomCoordTokens$org_jmol_adapter_smarter_Atom$SA$I(atom, tokens, 2);
 var elementSymbol=tokens[1];
 var atno=this.parseIntStr$S(elementSymbol);
-if (atno != -2147483648) elementSymbol=org.jmol.adapter.smarter.AtomSetCollectionReader.getElementSymbol$I(atno);
+if (atno != -2147483648) elementSymbol=$I$(3).getElementSymbol$I(atno);
 atom.elementSymbol=elementSymbol;
 this.rd$();
 }
 });
 
 Clazz.newMeth(C$, 'readFrequencies', function () {
-var bsOK=Clazz.new_($I$(3));
+var bsOK=Clazz.new_($I$(4,1));
 var n0=this.asc.iSet + 1;
 var tokens;
 var done=false;
@@ -131,7 +125,7 @@ if (this.line.indexOf$S("DESCRIPTION") < 0) this.discardLinesUntilContains$S("DE
 while (this.discardLinesUntilContains$S("VIBRATION") != null ){
 tokens=this.getTokens$();
 var freqNo=this.parseIntStr$S(tokens[1]);
-tokens[0]=$I$(1).getTokens$S(this.rd$())[1];
+tokens[0]=(function(a,f){return f.apply(null,a)})([this.rd$()],$I$(1).getTokens$S)[1];
 if (tokens[2].equals$O("ATOM")) tokens[2]=null;
 info[freqNo - 1]=tokens;
 if (freqNo == this.vibrationNumber) break;
@@ -147,4 +141,4 @@ this.asc.setAtomSetFrequency$I$S$S$S$S(this.vibrationNumber, null, info[i][2], i
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

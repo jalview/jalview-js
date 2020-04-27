@@ -1,20 +1,15 @@
-(function(){var P$=java.util,p$1={},p$2={},I$=[[0,'java.util.Objects',['java.util.ArrayDeque','.DeqIterator'],['java.util.ArrayDeque','.DescendingIterator'],'java.lang.reflect.Array','java.util.Arrays','AssertionError',['java.util.ArrayDeque','.DeqSpliterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ArrayDeque", function(){
+(function(){var P$=java.util,p$1={},p$2={},I$=[[0,'java.util.Objects',['java.util.ArrayDeque','.DeqIterator'],['java.util.ArrayDeque','.DescendingIterator'],'java.lang.reflect.Array','java.util.Arrays','AssertionError',['java.util.ArrayDeque','.DeqSpliterator']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ArrayDeque", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractCollection', ['java.util.Deque', 'Cloneable', 'java.io.Serializable']);
+C$.$classes$=[['DeqIterator',2],['DescendingIterator',2],['DeqSpliterator',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.elements=null;
-this.head=0;
-this.tail=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['head','tail'],'O',['elements','Object[]']]]
 
 Clazz.newMeth(C$, 'allocateElements$I', function (numElements) {
 var initialCapacity=8;
@@ -45,7 +40,7 @@ this.head=0;
 this.tail=n;
 }, p$1);
 
-Clazz.newMeth(C$, 'copyElements$TTA', function (a) {
+Clazz.newMeth(C$, 'copyElements$OA', function (a) {
 if (this.head < this.tail) {
 System.arraycopy$O$I$O$I$I(this.elements, this.head, a, 0, this.size$());
 } else if (this.head > this.tail) {
@@ -56,40 +51,40 @@ System.arraycopy$O$I$O$I$I(this.elements, 0, a, headPortionLen, this.tail);
 }, p$1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.elements=Clazz.array(java.lang.Object, [16]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I', function (numElements) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.allocateElements$I.apply(this, [numElements]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.allocateElements$I.apply(this, [c.size$()]);
 this.addAll$java_util_Collection(c);
 }, 1);
 
-Clazz.newMeth(C$, ['addFirst$TE'], function (e) {
+Clazz.newMeth(C$, 'addFirst$O', function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.elements[this.head=(this.head - 1) & (this.elements.length - 1)]=e;
 if (this.head == this.tail) p$1.doubleCapacity.apply(this, []);
 });
 
-Clazz.newMeth(C$, ['addLast$TE'], function (e) {
+Clazz.newMeth(C$, 'addLast$O', function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.elements[this.tail]=e;
 if ((this.tail=(this.tail + 1) & (this.elements.length - 1)) == this.head) p$1.doubleCapacity.apply(this, []);
 });
 
-Clazz.newMeth(C$, ['offerFirst$TE'], function (e) {
-this.addFirst$TE(e);
+Clazz.newMeth(C$, 'offerFirst$O', function (e) {
+this.addFirst$O(e);
 return true;
 });
 
-Clazz.newMeth(C$, ['offerLast$TE'], function (e) {
-this.addLast$TE(e);
+Clazz.newMeth(C$, 'offerLast$O', function (e) {
+this.addLast$O(e);
 return true;
 });
 
@@ -171,13 +166,13 @@ return true;
 return false;
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.addLast$TE(e);
+Clazz.newMeth(C$, 'add$O', function (e) {
+this.addLast$O(e);
 return true;
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
-return this.offerLast$TE(e);
+Clazz.newMeth(C$, 'offer$O', function (e) {
+return this.offerLast$O(e);
 });
 
 Clazz.newMeth(C$, 'remove$', function () {
@@ -196,8 +191,8 @@ Clazz.newMeth(C$, 'peek$', function () {
 return this.peekFirst$();
 });
 
-Clazz.newMeth(C$, ['push$TE'], function (e) {
-this.addFirst$TE(e);
+Clazz.newMeth(C$, 'push$O', function (e) {
+this.addFirst$O(e);
 });
 
 Clazz.newMeth(C$, 'pop$', function () {
@@ -250,11 +245,11 @@ return this.head == this.tail;
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(2), [this, null]);
+return Clazz.new_($I$(2,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'descendingIterator$', function () {
-return Clazz.new_($I$(3), [this, null]);
+return Clazz.new_($I$(3,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
@@ -287,13 +282,13 @@ i=(i + 1) & mask;
 }});
 
 Clazz.newMeth(C$, 'toArray$', function () {
-return p$1.copyElements$TTA.apply(this, [Clazz.array(java.lang.Object, [this.size$()])]);
+return p$1.copyElements$OA.apply(this, [Clazz.array(java.lang.Object, [this.size$()])]);
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA', function (a) {
 var size=this.size$();
 if (a.length < size) a=Clazz.array(a.getClass$().getComponentType$(), size);
-p$1.copyElements$TTA.apply(this, [a]);
+p$1.copyElements$OA.apply(this, [a]);
 if (a.length > size) a[size]=null;
 return a;
 });
@@ -301,11 +296,11 @@ return a;
 Clazz.newMeth(C$, 'clone$', function () {
 try {
 var result=Clazz.clone(this);
-result.elements=$I$(5).copyOf$TTA$I(this.elements, this.elements.length);
+result.elements=$I$(5).copyOf$OA$I(this.elements, this.elements.length);
 return result;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(6));
+throw Clazz.new_($I$(6,1));
 } else {
 throw e;
 }
@@ -331,29 +326,26 @@ for (var i=0; i < size; i++) this.elements[i]=s.readObject$();
 }, p$1);
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(7).c$$java_util_ArrayDeque$I$I,[this, -1, -1]);
+return Clazz.new_($I$(7,1).c$$java_util_ArrayDeque$I$I,[this, -1, -1]);
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ArrayDeque, "DeqIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ArrayDeque, "DeqIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cursor=0;
-this.fence=0;
-this.lastRet=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.cursor=this.this$0.head;
 this.fence=this.this$0.tail;
 this.lastRet=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['cursor','fence','lastRet']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.cursor != this.fence;
@@ -370,14 +362,14 @@ return result;
 
 Clazz.newMeth(C$, 'remove$', function () {
 if (this.lastRet < 0) throw Clazz.new_(Clazz.load('IllegalStateException'));
-if (p$1.delete$I.apply(this.b$['java.util.ArrayDeque'], [this.lastRet])) {
+if (p$1.delete$I.apply(this.this$0, [this.lastRet])) {
 this.cursor=(this.cursor - 1) & (this.this$0.elements.length - 1);
 this.fence=this.this$0.tail;
 }this.lastRet=-1;
 });
 
 Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
-$I$(1).requireNonNull$TT(action);
+$I$(1).requireNonNull$O(action);
 var a=this.this$0.elements;
 var m=a.length - 1;
 var f=this.fence;
@@ -387,32 +379,26 @@ while (i != f){
 var e=a[i];
 i=(i + 1) & m;
 if (e == null ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-action.accept$(e);
+action.accept$O(e);
 }
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ArrayDeque, "DescendingIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ArrayDeque, "DescendingIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cursor=0;
-this.fence=0;
-this.lastRet=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.cursor=this.this$0.tail;
 this.fence=this.this$0.head;
 this.lastRet=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['cursor','fence','lastRet']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.cursor != this.fence;
@@ -429,7 +415,7 @@ return result;
 
 Clazz.newMeth(C$, 'remove$', function () {
 if (this.lastRet < 0) throw Clazz.new_(Clazz.load('IllegalStateException'));
-if (!p$1.delete$I.apply(this.b$['java.util.ArrayDeque'], [this.lastRet])) {
+if (!p$1.delete$I.apply(this.this$0, [this.lastRet])) {
 this.cursor=(this.cursor + 1) & (this.this$0.elements.length - 1);
 this.fence=this.this$0.head;
 }this.lastRet=-1;
@@ -438,25 +424,19 @@ this.fence=this.this$0.head;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ArrayDeque, "DeqSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ArrayDeque, "DeqSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Spliterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.deq=null;
-this.fence=0;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['fence','index'],'O',['deq','java.util.ArrayDeque']]]
 
 Clazz.newMeth(C$, 'c$$java_util_ArrayDeque$I$I', function (deq, origin, fence) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.deq=deq;
 this.index=origin;
 this.fence=fence;
@@ -492,7 +472,7 @@ while (i != f){
 var e=a[i];
 i=(i + 1) & m;
 if (e == null ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-consumer.accept$(e);
+consumer.accept$O(e);
 }
 });
 
@@ -506,7 +486,7 @@ if (i != this.fence) {
 var e=a[i];
 this.index=(i + 1) & m;
 if (e == null ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-consumer.accept$(e);
+consumer.accept$O(e);
 return true;
 }return false;
 });
@@ -524,4 +504,4 @@ return 16720;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:44 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

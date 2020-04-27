@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.jws2.dm"),I$=[[0,'java.net.URL','Error','jalview.util.MessageManager','jalview.ws.jws2.ParameterUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JabaOption", null, null, 'jalview.ws.params.OptionI');
+(function(){var P$=Clazz.newPackage("jalview.ws.jws2.dm"),I$=[[0,'java.net.URL','Error','jalview.util.MessageManager','jalview.ws.jws2.ParameterUtils']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JabaOption", null, null, 'jalview.ws.params.OptionI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.opt=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['opt','compbio.metadata.Option']]]
 
 Clazz.newMeth(C$, 'c$$compbio_metadata_Option', function (rg) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.opt=rg;
 }, 1);
 
@@ -27,7 +23,7 @@ return this.opt.getName$();
 
 Clazz.newMeth(C$, 'getFurtherDetails$', function () {
 try {
-return Clazz.new_($I$(1).c$$S,[this.opt.getBasicURL$().toExternalForm$() + "/" + this.opt.getFurtherDetails$() ]);
+return Clazz.new_([this.opt.getBasicURL$().toExternalForm$() + "/" + this.opt.getFurtherDetails$() ],$I$(1,1).c$$S);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"NullPointerException")){
 var q = e$$;
@@ -62,7 +58,7 @@ this.opt.setDefaultValue$S(selectedItem);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 e.printStackTrace$();
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error_cannot_set_jaba_option")]);
+throw Clazz.new_([$I$(3).getString$S("error.implementation_error_cannot_set_jaba_option")],$I$(2,1).c$$S);
 } else {
 throw e;
 }
@@ -79,4 +75,4 @@ return this.opt;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

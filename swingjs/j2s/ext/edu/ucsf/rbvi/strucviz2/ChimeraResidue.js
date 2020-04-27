@@ -1,35 +1,21 @@
-(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'org.slf4j.LoggerFactory','java.util.ArrayList','ext.edu.ucsf.rbvi.strucviz2.ChimUtils','java.util.regex.Pattern']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ChimeraResidue", null, null, ['ext.edu.ucsf.rbvi.strucviz2.ChimeraStructuralObject', 'Comparable']);
-C$.displayType=0;
+(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'org.slf4j.LoggerFactory','java.util.ArrayList','ext.edu.ucsf.rbvi.strucviz2.ChimUtils','java.util.regex.Pattern']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ChimeraResidue", null, null, ['ext.edu.ucsf.rbvi.strucviz2.ChimeraStructuralObject', 'Comparable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.displayType=1;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.index=null;
-this.chainId=null;
-this.modelNumber=0;
-this.subModelNumber=0;
-this.residueNumber=0;
-this.insertionCode=null;
-this.chimeraModel=null;
-this.userData=null;
-this.selected=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.selected=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['selected'],'I',['modelNumber','subModelNumber','residueNumber'],'S',['type','index','chainId','insertionCode'],'O',['chimeraModel','ext.edu.ucsf.rbvi.strucviz2.ChimeraModel','userData','java.lang.Object']]
+,['I',['displayType']]]
 
 Clazz.newMeth(C$, 'c$$S$S$I', function (type, index, modelNumber) {
 C$.c$$S$S$I$I.apply(this, [type, index, modelNumber, 0]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$I$I', function (type, index, modelNumber, subModelNumber) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.type=type;
 this.index=index;
 this.modelNumber=modelNumber;
@@ -38,7 +24,7 @@ this.splitInsertionCode$S(this.index);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (chimeraInputLine) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 var split1=chimeraInputLine.split$S(":");
 var numberOffset=split1[0].indexOf$I("#");
 var model=split1[0].substring$I(numberOffset + 1);
@@ -52,7 +38,7 @@ this.modelNumber=Integer.parseInt$S(model.substring$I$I(0, decimalOffset));
 this.modelNumber=Integer.parseInt$S(model);
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(1).getLogger$Class(Clazz.getClass(C$)).error$S("Unexpected return from Chimera: " + model);
+$I$(1,"getLogger$Class",[Clazz.getClass(C$)]).error$S("Unexpected return from Chimera: " + model);
 this.modelNumber=-1;
 } else {
 throw e;
@@ -78,8 +64,8 @@ return this.selected;
 });
 
 Clazz.newMeth(C$, 'getChildren$', function () {
-var v=Clazz.new_($I$(2));
-v.add$TE(this);
+var v=Clazz.new_($I$(2,1));
+v.add$O(this);
 return v;
 });
 
@@ -139,7 +125,7 @@ Clazz.newMeth(C$, 'setUserData$O', function (data) {
 this.userData=data;
 });
 
-Clazz.newMeth(C$, ['compareTo$ext_edu_ucsf_rbvi_strucviz2_ChimeraResidue','compareTo$','compareTo$TT'], function (c2) {
+Clazz.newMeth(C$, ['compareTo$ext_edu_ucsf_rbvi_strucviz2_ChimeraResidue','compareTo$O'], function (c2) {
 if (this.residueNumber < c2.residueNumber) return -1;
  else if (this.residueNumber == c2.residueNumber) {
 if (this.insertionCode == null  && c2.insertionCode == null  ) return 0;
@@ -150,7 +136,7 @@ return (this.insertionCode.compareTo$S(c2.insertionCode));
 });
 
 Clazz.newMeth(C$, 'splitInsertionCode$S', function (residue) {
-var p=$I$(4).compile$S("(\\d*)([A-Z]?)");
+var p=$I$(4,"compile$S",["(\\d*)([A-Z]?)"]);
 var m=p.matcher$CharSequence(residue);
 if (m.matches$()) {
 this.residueNumber=Integer.parseInt$S(m.group$I(1));
@@ -170,6 +156,10 @@ Clazz.newMeth(C$, 'hasSelectedChildren$', function () {
 return false;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.displayType=1;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

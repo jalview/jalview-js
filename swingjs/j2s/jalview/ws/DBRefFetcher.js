@@ -1,38 +1,25 @@
-(function(){var P$=Clazz.newPackage("jalview.ws"),p$1={},I$=[[0,'jalview.gui.CutAndPasteTransfer','java.util.ArrayList','jalview.datamodel.SequenceI','jalview.gui.SequenceFetcher','jalview.bin.Cache','jalview.datamodel.DBRefSource','jalview.ws.seqfetcher.DbSourceProxy','Thread','java.util.Vector','Error','jalview.util.MessageManager','uk.ac.ebi.www.picr.AccessionMappingService.AccessionMapperServiceLocator','java.util.Arrays','java.util.Hashtable','StringBuffer','jalview.gui.OOMWarning','jalview.util.DBRefUtils','java.util.StringTokenizer','StringBuilder','jalview.gui.Desktop','jalview.analysis.AlignSeq','jalview.datamodel.Mapping']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DBRefFetcher", function(){
+(function(){var P$=Clazz.newPackage("jalview.ws"),p$1={},I$=[[0,'jalview.gui.CutAndPasteTransfer','java.util.ArrayList','jalview.datamodel.SequenceI','jalview.gui.SequenceFetcher','jalview.bin.Cache','jalview.datamodel.DBRefSource','jalview.ws.seqfetcher.DbSourceProxy','Thread','java.util.Vector','Error','jalview.util.MessageManager','uk.ac.ebi.www.picr.AccessionMappingService.AccessionMapperServiceLocator','java.util.Arrays','java.util.Hashtable','StringBuffer','jalview.gui.OOMWarning','jalview.util.DBRefUtils','java.util.StringTokenizer','StringBuilder','jalview.gui.Desktop','jalview.analysis.AlignSeq','jalview.datamodel.Mapping','java.util.HashMap','jalview.api.FeatureSettingsModelI']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DBRefFetcher", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Runnable');
-C$.NEWLINE=null;
+C$.$classes$=[['FetchFinishedListenerI',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NEWLINE=System.lineSeparator$();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dataset=null;
-this.progressWindow=null;
-this.output=null;
-this.running=false;
-this.picrClient=null;
-this.seqRefs=null;
-this.dbSources=null;
-this.sfetcher=null;
-this.listeners=null;
-this.alseqs=null;
-this.trimDsSeqs=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.output=Clazz.new_($I$(1));
+this.output=Clazz.new_($I$(1,1));
 this.running=false;
 this.picrClient=null;
 this.trimDsSeqs=true;
-}, 1);
+this.featureDisplaySettings=null;
+},1);
+
+C$.$fields$=[['Z',['running','trimDsSeqs'],'O',['dataset','jalview.datamodel.SequenceI[]','progressWindow','jalview.gui.IProgressIndicator','output','jalview.gui.CutAndPasteTransfer','picrClient','uk.ac.ebi.www.picr.AccessionMappingService.AccessionMapperInterface','seqRefs','java.util.Hashtable','dbSources','jalview.ws.seqfetcher.DbSourceProxy[]','sfetcher','jalview.ws.SequenceFetcher','listeners','java.util.List','alseqs','jalview.datamodel.SequenceI[]','featureDisplaySettings','java.util.Map']]
+,['S',['NEWLINE']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seqfetcher_DbSourceProxyA$jalview_gui_FeatureSettings$Z', function (seqs, progressIndicatorFrame, sources, featureSettings, isNucleotide) {
-C$.$init$.apply(this);
-this.listeners=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.listeners=Clazz.new_($I$(2,1));
 this.progressWindow=progressIndicatorFrame;
 this.alseqs=Clazz.array($I$(3), [seqs.length]);
 var ds=Clazz.array($I$(3), [seqs.length]);
@@ -54,12 +41,12 @@ this.dbSources=sources;
 
 Clazz.newMeth(C$, 'setDatabaseSources$jalview_gui_FeatureSettings$Z', function (featureSettings, forNucleotide) {
 var defdb=null;
-var selsources=Clazz.new_($I$(2));
+var selsources=Clazz.new_($I$(2,1));
 if (forNucleotide) {
 defdb=$I$(6).DNACODINGDBS;
 } else {
 defdb=$I$(6).PROTEINDBS;
-}var srces=Clazz.new_($I$(2));
+}var srces=Clazz.new_($I$(2,1));
 for (var ddb, $ddb = 0, $$ddb = defdb; $ddb<$$ddb.length&&((ddb=($$ddb[$ddb])),1);$ddb++) {
 var srcesfordb=this.sfetcher.getSourceProxy$S(ddb);
 if (srcesfordb != null ) {
@@ -69,7 +56,7 @@ srces.addAll$java_util_Collection(srcesfordb);
 }}
 }}
 srces.addAll$java_util_Collection(selsources);
-this.dbSources=srces.toArray$TTA(Clazz.array($I$(7), [srces.size$()]));
+this.dbSources=srces.toArray$OA(Clazz.array($I$(7), [srces.size$()]));
 });
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceIA', function (sequences) {
@@ -77,11 +64,11 @@ C$.c$$jalview_datamodel_SequenceIA$jalview_gui_IProgressIndicator$jalview_ws_seq
 }, 1);
 
 Clazz.newMeth(C$, 'addListener$jalview_ws_DBRefFetcher_FetchFinishedListenerI', function (l) {
-this.listeners.add$TE(l);
+this.listeners.add$O(l);
 });
 
 Clazz.newMeth(C$, 'fetchDBRefs$Z', function (waitTillFinished) {
-var thread=Clazz.new_($I$(8).c$$Runnable,[this]);
+var thread=Clazz.new_($I$(8,1).c$$Runnable,[this]);
 thread.start$();
 this.running=true;
 if (waitTillFinished) {
@@ -103,26 +90,26 @@ var seqs;
 if (this.seqRefs.containsKey$O(key)) {
 seqs=this.seqRefs.get$O(key);
 if (seqs != null  && !seqs.contains$O(seq) ) {
-seqs.addElement$TE(seq);
+seqs.addElement$O(seq);
 } else if (seqs == null ) {
-seqs=Clazz.new_($I$(9));
-seqs.addElement$TE(seq);
+seqs=Clazz.new_($I$(9,1));
+seqs.addElement$O(seq);
 }} else {
-seqs=Clazz.new_($I$(9));
-seqs.addElement$TE(seq);
-}this.seqRefs.put$TK$TV(key, seqs);
+seqs=Clazz.new_($I$(9,1));
+seqs.addElement$O(seq);
+}this.seqRefs.put$O$O(key, seqs);
 });
 
 Clazz.newMeth(C$, 'run$', function () {
 if (this.dbSources == null ) {
-throw Clazz.new_($I$(10).c$$S,[$I$(11).getString$S("error.implementation_error_must_init_dbsources")]);
+throw Clazz.new_([$I$(11).getString$S("error.implementation_error_must_init_dbsources")],$I$(10,1).c$$S);
 }this.running=true;
 var startTime=System.currentTimeMillis$();
 if (this.progressWindow != null ) {
 this.progressWindow.setProgressBar$S$J($I$(11).getString$S("status.fetching_db_refs"), startTime);
 }try {
 if ($I$(5).getDefault$S$Z("DBREFFETCH_USEPICR", false)) {
-this.picrClient=Clazz.new_($I$(12)).getAccessionMapperPort$();
+this.picrClient=Clazz.new_($I$(12,1)).getAccessionMapperPort$();
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.err.println$S("Couldn\'t locate PICR service instance.\n");
@@ -131,22 +118,23 @@ e.printStackTrace$();
 throw e;
 }
 }
-var sdataset=Clazz.new_($I$(9).c$$java_util_Collection,[$I$(13).asList$TTA(this.dataset)]);
-var warningMessages=Clazz.new_($I$(2));
+var sdataset=Clazz.new_([$I$(13).asList$OA(this.dataset)],$I$(9,1).c$$java_util_Collection);
+var warningMessages=Clazz.new_($I$(2,1));
+this.featureDisplaySettings=null;
 var db=0;
 while (sdataset.size$() > 0 && db < this.dbSources.length ){
 var maxqlen=1;
 System.out.println$S("Verifying against " + this.dbSources[db].getDbName$());
 var currSeqs=Clazz.array($I$(3), [sdataset.size$()]);
 sdataset.copyInto$OA(currSeqs);
-var queries=Clazz.new_($I$(9));
-this.seqRefs=Clazz.new_($I$(14));
+var queries=Clazz.new_($I$(9,1));
+this.seqRefs=Clazz.new_($I$(14,1));
 var seqIndex=0;
 var dbsource=this.dbSources[db];
 maxqlen=dbsource.getMaximumQueryCount$();
 while (queries.size$() > 0 || seqIndex < currSeqs.length ){
 if (queries.size$() > 0) {
-var queryString=Clazz.new_($I$(15).c$$S,[""]);
+var queryString=Clazz.new_($I$(15,1).c$$S,[""]);
 var numq=0;
 var nqSize=(maxqlen > queries.size$()) ? queries.size$() : maxqlen;
 while (queries.size$() > 0 && numq < nqSize ){
@@ -171,26 +159,26 @@ ex.printStackTrace$();
 } else if (Clazz.exceptionOf(e$$,"OutOfMemoryError")){
 var err = e$$;
 {
-Clazz.new_($I$(16).c$$S$OutOfMemoryError,["retrieving database references (" + queryString.toString() + ")" , err]);
+Clazz.new_(["retrieving database references (" + queryString.toString() + ")" , err],$I$(16,1).c$$S$OutOfMemoryError);
 }
 } else {
 throw e$$;
 }
 }
 if (retrieved != null ) {
-this.transferReferences$java_util_Vector$S$jalview_datamodel_AlignmentI$Z$java_util_List(sdataset, dbsource.getDbSource$(), retrieved, this.trimDsSeqs, warningMessages);
+this.transferReferences$java_util_Vector$jalview_ws_seqfetcher_DbSourceProxy$jalview_datamodel_AlignmentI$Z$java_util_List(sdataset, dbsource, retrieved, this.trimDsSeqs, warningMessages);
 }} else {
 for (var i=0; (seqIndex < this.dataset.length) && (i < 50) ; seqIndex++, i++) {
 var sequence=this.dataset[seqIndex];
-var uprefs=$I$(17).selectRefs$java_util_List$SA(sequence.getDBRefs$(), Clazz.array(String, -1, [dbsource.getDbSource$()]));
+var uprefs=$I$(17,"selectRefs$java_util_List$SA",[sequence.getDBRefs$(), Clazz.array(String, -1, [dbsource.getDbSource$()])]);
 if (uprefs != null  && uprefs.size$() > 0 ) {
 for (var j=0, n=uprefs.size$(); j < n; j++) {
 var upref=uprefs.get$I(j);
 this.addSeqId$jalview_datamodel_SequenceI$S(sequence, upref.getAccessionId$());
-queries.addElement$TE(upref.getAccessionId$().toUpperCase$());
+queries.addElement$O(upref.getAccessionId$().toUpperCase$());
 }
 } else {
-var st=Clazz.new_($I$(18).c$$S$S,[sequence.getName$(), "|"]);
+var st=Clazz.new_([sequence.getName$(), "|"],$I$(18,1).c$$S$S);
 while (st.hasMoreTokens$()){
 var token=st.nextToken$();
 var presp=null;
@@ -210,23 +198,23 @@ for (var id=0; id < presp.length; id++) {
 }
 System.out.println$S("Validated ID against PICR... (for what its worth):" + token);
 this.addSeqId$jalview_datamodel_SequenceI$S(sequence, token);
-queries.addElement$TE(token.toUpperCase$());
+queries.addElement$O(token.toUpperCase$());
 } else {
 this.addSeqId$jalview_datamodel_SequenceI$S(sequence, token);
-queries.addElement$TE(token.toUpperCase$());
+queries.addElement$O(token.toUpperCase$());
 }}
 }}
 }}
 db++;
 }
 if (!warningMessages.isEmpty$()) {
-var sb=Clazz.new_($I$(19).c$$I,[warningMessages.size$() * 30]);
+var sb=Clazz.new_([warningMessages.size$() * 30],$I$(19,1).c$$I);
 sb.append$S($I$(11).getString$S("label.your_sequences_have_been_verified"));
 for (var msg, $msg = warningMessages.iterator$(); $msg.hasNext$()&&((msg=($msg.next$())),1);) {
 sb.append$S(msg).append$S(C$.NEWLINE);
 }
 this.output.setText$S(sb.toString());
-$I$(20).addInternalFrame$javax_swing_JInternalFrame$S$I$I(this.output, $I$(11).getString$S("label.sequences_updated"), 600, 300);
+$I$(20,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[this.output, $I$(11).getString$S("label.sequences_updated"), 600, 300]);
 }if (this.progressWindow != null ) {
 this.progressWindow.setProgressBar$S$J($I$(11).getString$S("label.dbref_search_completed"), startTime);
 }for (var listener, $listener = this.listeners.iterator$(); $listener.hasNext$()&&((listener=($listener.next$())),1);) {
@@ -235,15 +223,16 @@ listener.finished$();
 this.running=false;
 });
 
-Clazz.newMeth(C$, 'transferReferences$java_util_Vector$S$jalview_datamodel_AlignmentI$Z$java_util_List', function (sdataset, dbSource, retrievedAl, trimDatasetSeqs, warningMessages) {
+Clazz.newMeth(C$, 'transferReferences$java_util_Vector$jalview_ws_seqfetcher_DbSourceProxy$jalview_datamodel_AlignmentI$Z$java_util_List', function (sdataset, dbSourceProxy, retrievedAl, trimDatasetSeqs, warningMessages) {
 if (retrievedAl == null  || retrievedAl.getHeight$() == 0 ) {
 return false;
-}var modified=false;
+}var dbSource=dbSourceProxy.getDbName$();
+var modified=false;
 var retrieved=p$1.recoverDbSequences$jalview_datamodel_SequenceIA.apply(this, [retrievedAl.getSequencesArray$()]);
 var sequence=null;
 for (var retrievedSeq, $retrievedSeq = 0, $$retrievedSeq = retrieved; $retrievedSeq<$$retrievedSeq.length&&((retrievedSeq=($$retrievedSeq[$retrievedSeq])),1);$retrievedSeq++) {
-var sequenceMatches=Clazz.new_($I$(9));
-var entryRefs=$I$(17).selectRefs$java_util_List$SA(retrievedSeq.getDBRefs$(), Clazz.array(String, -1, [dbSource]));
+var sequenceMatches=Clazz.new_($I$(9,1));
+var entryRefs=$I$(17,"selectRefs$java_util_List$SA",[retrievedSeq.getDBRefs$(), Clazz.array(String, -1, [dbSource])]);
 if (entryRefs == null ) {
 System.err.println$S("Dud dbSource string ? no entryrefs selected for " + dbSource + " on " + retrievedSeq.getName$() );
 continue;
@@ -255,7 +244,7 @@ var seqs=this.seqRefs.get$O(accessionId);
 for (var jj=0; jj < seqs.size$(); jj++) {
 sequence=seqs.elementAt$I(jj);
 if (!sequenceMatches.contains$O(sequence)) {
-sequenceMatches.addElement$TE(sequence);
+sequenceMatches.addElement$O(sequence);
 }}
 }}
 if (sequenceMatches.isEmpty$()) {
@@ -265,9 +254,11 @@ var sqs=this.seqRefs.get$O(e.nextElement$());
 if (sqs != null  && sqs.size$() > 0 ) {
 var sqe=sqs.elements$();
 while (sqe.hasMoreElements$()){
-sequenceMatches.addElement$TE(sqe.nextElement$());
+sequenceMatches.addElement$O(sqe.nextElement$());
 }
 }}
+}if (sequenceMatches.size$() > 0) {
+p$1.addFeatureSettings$jalview_ws_seqfetcher_DbSourceProxy.apply(this, [dbSourceProxy]);
 }var retrievedSeqString=retrievedSeq.getSequenceAsString$();
 var entrySeq=retrievedSeqString.toUpperCase$();
 for (var m=0; m < sequenceMatches.size$(); m++) {
@@ -276,7 +267,7 @@ var updateRefFrame=sequence.getDBRefs$() == null  || sequence.getDBRefs$().size$
 var mp;
 var sequenceStart=sequence.getStart$();
 var remoteEnclosesLocal=false;
-var nonGapped=$I$(21).extractGaps$S$S("-. ", sequence.getSequenceAsString$()).toUpperCase$();
+var nonGapped=$I$(21,"extractGaps$S$S",["-. ", sequence.getSequenceAsString$()]).toUpperCase$();
 var absStart=entrySeq.indexOf$S(nonGapped);
 if (absStart == -1) {
 absStart=nonGapped.indexOf$S(entrySeq);
@@ -284,7 +275,7 @@ if (absStart == -1) {
 continue;
 }var msg=sequence.getName$() + " has " + absStart + " prefixed residues compared to " + retrievedSeq.getName$() ;
 this.addWarningMessage$java_util_List$S(warningMessages, msg);
-mp=Clazz.new_($I$(22).c$$jalview_datamodel_SequenceI$IA$IA$I$I,[null, Clazz.array(Integer.TYPE, -1, [sequenceStart + absStart, sequenceStart + absStart + entrySeq.length$()  - 1]), Clazz.array(Integer.TYPE, -1, [retrievedSeq.getStart$(), retrievedSeq.getStart$() + entrySeq.length$() - 1]), 1, 1]);
+mp=Clazz.new_([null, Clazz.array(Integer.TYPE, -1, [sequenceStart + absStart, sequenceStart + absStart + entrySeq.length$()  - 1]), Clazz.array(Integer.TYPE, -1, [retrievedSeq.getStart$(), retrievedSeq.getStart$() + entrySeq.length$() - 1]), 1, 1],$I$(22,1).c$$jalview_datamodel_SequenceI$IA$IA$I$I);
 updateRefFrame=false;
 } else {
 remoteEnclosesLocal=true;
@@ -316,7 +307,7 @@ modified=true;
 this.addWarningMessage$java_util_List$S(warningMessages, "Start/end for " + sequence.getName$() + " updated from " + retrievedSeq.getName$() );
 }}for (var alsq=0; alsq < this.alseqs.length; alsq++) {
 if (this.alseqs[alsq].getDatasetSequence$() === sequence ) {
-var ngAlsq=$I$(21).extractGaps$S$S("-. ", this.alseqs[alsq].getSequenceAsString$()).toUpperCase$();
+var ngAlsq=$I$(21,"extractGaps$S$S",["-. ", this.alseqs[alsq].getSequenceAsString$()]).toUpperCase$();
 var oldstrt=this.alseqs[alsq].getStart$();
 this.alseqs[alsq].setStart$I(sequence.getSequenceAsString$().toUpperCase$().indexOf$S(ngAlsq) + sequence.getStart$());
 if (oldstrt != this.alseqs[alsq].getStart$()) {
@@ -329,35 +320,51 @@ modified=true;
 return modified;
 });
 
+Clazz.newMeth(C$, 'addFeatureSettings$jalview_ws_seqfetcher_DbSourceProxy', function (dbSourceProxy) {
+var fsettings=dbSourceProxy.getFeatureColourScheme$();
+if (fsettings != null ) {
+if (this.featureDisplaySettings == null ) {
+this.featureDisplaySettings=Clazz.new_($I$(23,1));
+}this.featureDisplaySettings.put$O$O(dbSourceProxy.getDbName$(), fsettings);
+}}, p$1);
+
+Clazz.newMeth(C$, 'getFeatureSettingsModels$', function () {
+return this.featureDisplaySettings == null  ? $I$(13,"asList$OA",[Clazz.array($I$(24), [0])]) : $I$(13,"asList$OA",[this.featureDisplaySettings.values$().toArray$OA(Clazz.array($I$(24), [1]))]);
+});
+
 Clazz.newMeth(C$, 'addWarningMessage$java_util_List$S', function (messageList, msg) {
 if (!messageList.contains$O(msg)) {
-messageList.add$TE(msg);
+messageList.add$O(msg);
 }});
 
 Clazz.newMeth(C$, 'recoverDbSequences$jalview_datamodel_SequenceIA', function (sequencesArray) {
 var n;
 if (sequencesArray == null  || (n=sequencesArray.length) == 0 ) return sequencesArray;
-var nseq=Clazz.new_($I$(2));
+var nseq=Clazz.new_($I$(2,1));
 for (var i=0; i < n; i++) {
-nseq.add$TE(sequencesArray[i]);
+nseq.add$O(sequencesArray[i]);
 var dbr=sequencesArray[i].getDBRefs$();
 var map=null;
 if (dbr != null ) {
 for (var r=0, rn=dbr.size$(); r < rn; r++) {
 if ((map=dbr.get$I(r).getMap$()) != null ) {
 if (map.getTo$() != null  && !nseq.contains$O(map.getTo$()) ) {
-nseq.add$TE(map.getTo$());
+nseq.add$O(map.getTo$());
 }}}
 }}
 if (nseq.size$() > 0) {
-return nseq.toArray$TTA(Clazz.array($I$(3), [nseq.size$()]));
+return nseq.toArray$OA(Clazz.array($I$(3), [nseq.size$()]));
 }return sequencesArray;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.NEWLINE=System.lineSeparator$();
+};
 ;
-(function(){var C$=Clazz.newInterface(P$.DBRefFetcher, "FetchFinishedListenerI", function(){
+(function(){/*i*/var C$=Clazz.newInterface(P$.DBRefFetcher, "FetchFinishedListenerI", function(){
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

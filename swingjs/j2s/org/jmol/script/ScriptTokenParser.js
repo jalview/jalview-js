@@ -1,53 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.script.T','Boolean','javajs.util.Lst','org.jmol.util.Logger','org.jmol.script.ScriptParam','javajs.util.P3','org.jmol.util.SimpleUnitCell','org.jmol.i18n.GT','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptTokenParser");
+(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.script.T','Boolean','javajs.util.Lst','org.jmol.util.Logger','org.jmol.script.ScriptParam','javajs.util.P3','org.jmol.util.SimpleUnitCell','org.jmol.i18n.GT','javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptTokenParser");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.script=null;
-this.isStateScript=false;
-this.lineCurrent=0;
-this.iCommand=0;
-this.ichCurrentCommand=0;
-this.ichComment=0;
-this.ichEnd=0;
-this.ichToken=0;
-this.theToken=null;
-this.lastFlowCommand=null;
-this.tokenCommand=null;
-this.lastToken=null;
-this.tokenAndEquals=null;
-this.theTok=0;
-this.nTokens=0;
-this.tokCommand=0;
-this.ptNewSetModifier=0;
-this.isNewSet=false;
-this.haveMacro=false;
-this.logMessages=false;
-this.atokenInfix=null;
-this.itokenInfix=0;
-this.isSetBrace=false;
-this.isMathExpressionCommand=false;
-this.isSetOrDefine=false;
-this.ltokenPostfix=null;
-this.isEmbeddedExpression=false;
-this.isCommaAsOrAllowed=false;
-this.theValue=null;
-this.htUserFunctions=null;
-this.haveString=false;
-this.residueSpecCodeGenerated=false;
-this.errorMessage=null;
-this.errorMessageUntranslated=null;
-this.errorLine=null;
-this.errorType=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.logMessages=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isStateScript','isNewSet','haveMacro','logMessages','isSetBrace','isMathExpressionCommand','isSetOrDefine','isEmbeddedExpression','isCommaAsOrAllowed','haveString','residueSpecCodeGenerated'],'I',['iCommand','ichCurrentCommand','ichComment','ichEnd','ichToken','theTok','nTokens','tokCommand','ptNewSetModifier','itokenInfix'],'H',['lineCurrent'],'S',['script','errorMessage','errorMessageUntranslated','errorLine','errorType'],'O',['vwr','org.jmol.viewer.Viewer','theToken','org.jmol.script.T','+lastFlowCommand','+tokenCommand','+lastToken','+tokenAndEquals','atokenInfix','org.jmol.script.T[]','ltokenPostfix','javajs.util.Lst','theValue','java.lang.Object','htUserFunctions','java.util.Map']]]
 
 Clazz.newMeth(C$, 'compileExpressions$', function () {
 var isScriptExpression=((this.tokCommand == 134222850 || this.tokCommand == 4124 ) && this.tokAt$I(2) == 268435472 );
@@ -68,13 +28,13 @@ this.atokenInfix[0]=$I$(1).tv$I$I$O(134320141, 0, this.atokenInfix[0].value);
 this.isNewSet=false;
 }}if ((this.isNewSet || this.isSetBrace ) && this.ptNewSetModifier != 2147483647  && size < this.ptNewSetModifier + 2 ) {
 if (!this.isNewSet || !this.haveMacro ) return this.commandExpected$();
-this.htUserFunctions.put$TK$TV(this.atokenInfix[0].value, $I$(2).TRUE);
+this.htUserFunctions.put$O$O(this.atokenInfix[0].value, $I$(2).TRUE);
 }return (size == 1 || !$I$(1).tokAttr$I$I(this.tokCommand, 262144)  ? true : this.error$I(0));
 });
 
 Clazz.newMeth(C$, 'compileExpression$', function () {
 var firstToken=(this.isSetOrDefine && !this.isSetBrace  ? 2 : 1);
-this.ltokenPostfix=Clazz.new_($I$(3));
+this.ltokenPostfix=Clazz.new_($I$(3,1));
 this.itokenInfix=0;
 var tokenBegin=null;
 var tok=this.tokAt$I(1);
@@ -112,7 +72,7 @@ case 1073742119:
 tok=this.tokAt$I(++firstToken);
 break;
 }
-if (tok == 1086324742 && !$I$(1).tokAttr$I$I(this.tokAt$I(firstToken + 1), 268435456) ) firstToken++;
+if (tok == 1086324742 && !(function(a,f){return f.apply(null,a)})([this.tokAt$I(firstToken + 1), 268435456],$I$(1).tokAttr$I$I) ) firstToken++;
 }
 for (var i=0; i < firstToken && p$1.addNextToken.apply(this, []) ; i++) {
 }
@@ -143,7 +103,7 @@ this.isEmbeddedExpression=true;
 this.isMathExpressionCommand=true;
 this.isCommaAsOrAllowed=false;
 }}}
-this.atokenInfix=this.ltokenPostfix.toArray$TTA(Clazz.array($I$(1), [this.ltokenPostfix.size$()]));
+this.atokenInfix=this.ltokenPostfix.toArray$OA(Clazz.array($I$(1), [this.ltokenPostfix.size$()]));
 return true;
 });
 
@@ -231,7 +191,7 @@ if (this.logMessages) $I$(4).debug$S("addTokenToPostfix" + token);
 if (token.tok == 268435520 && (this.lastToken.tok == 1073742336 || this.lastToken.tok == 1073742337 ) ) {
 var ipt=this.ltokenPostfix.size$() - 1;
 this.ltokenPostfix.removeItemAt$I(ipt);
-this.ltokenPostfix.addLast$TV($I$(1).tokenRightParen);
+this.ltokenPostfix.addLast$O($I$(1).tokenRightParen);
 var pcount=0;
 var tok;
 for (var i=this.ltokenPostfix.size$(); --i >= 0 && pcount >= 0 ; ) {
@@ -260,8 +220,8 @@ pcount=-10;
 }
 }
 if (pcount == -10) {
-this.ltokenPostfix.add$I$TE(ipt, $I$(1).tokenLeftParen);
-}}this.ltokenPostfix.addLast$TV(token);
+this.ltokenPostfix.add$I$O(ipt, $I$(1).tokenLeftParen);
+}}this.ltokenPostfix.addLast$O(token);
 this.lastToken=token;
 return true;
 }, p$1);
@@ -415,7 +375,7 @@ n++;
 }
 isCoordinate=(n >= 2);
 }if (isCoordinate && (isImplicitExpression || this.isEmbeddedExpression ) ) {
-this.ltokenPostfix.set$I$TE(pt, $I$(1).tokenCoordinateBegin);
+this.ltokenPostfix.set$I$O(pt, $I$(1).tokenCoordinateBegin);
 p$1.addTokenToPostfixToken$org_jmol_script_T.apply(this, [$I$(1).tokenCoordinateEnd]);
 p$1.tokenNext.apply(this, []);
 } else if (isImplicitExpression) {
@@ -580,7 +540,7 @@ break;
 case 1073742332:
 p$1.returnToken.apply(this, []);
 isCoordOrPlane=true;
-p$1.addTokenToPostfixToken$org_jmol_script_T.apply(this, [$I$(1).getTokenFromName$S(distance == 3.4028235E38  ? "plane" : "coord")]);
+p$1.addTokenToPostfixToken$org_jmol_script_T.apply(this, [(function(a,f){return f.apply(null,a)})([distance == 3.4028235E38  ? "plane" : "coord"],$I$(1).getTokenFromName$S)]);
 }
 if (!done) p$1.addNextTokenIf$I.apply(this, [268435504]);
 }}tok=p$1.tokPeek.apply(this, []);
@@ -720,7 +680,7 @@ return true;
 }, p$1);
 
 Clazz.newMeth(C$, 'clauseCell$I', function (tok) {
-var cell=Clazz.new_($I$(6));
+var cell=Clazz.new_($I$(6,1));
 p$1.tokenNext.apply(this, []);
 if (!p$1.tokenNextTok$I.apply(this, [268435860])) return this.errorStr$I$S(15, "=");
 if (p$1.getToken.apply(this, []) == null ) return this.error$I(3);
@@ -832,7 +792,7 @@ while (p$1.getToken.apply(this, []) != null  && this.theToken.tok != 268435521 )
 if (this.theToken == null ) return false;
 if (strSpec == "") return true;
 var pt;
-return (strSpec.length$() > 0 && (pt=strSpec.indexOf$S("*")) >= 0  && pt != strSpec.length$() - 1  ? this.error$I(14) : p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [$I$(1).o$I$O(1073742360, strSpec.toUpperCase$())]));
+return (strSpec.length$() > 0 && (pt=strSpec.indexOf$S("*")) >= 0  && pt != strSpec.length$() - 1  ? this.error$I(14) : p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [(function(a,f){return f.apply(null,a)})([1073742360, strSpec.toUpperCase$()],$I$(1).o$I$O)]));
 default:
 if ($I$(1).tokAttr$I$I(tok, 268435712)) {
 p$1.returnToken.apply(this, []);
@@ -876,7 +836,7 @@ break;
 default:
 if (!isSecond) return null;
 }
-return $I$(1).tv$I$I$O(1073742362, seqvalue, Integer.valueOf$I(seqcode));
+return (function(a,f){return f.apply(null,a)})([1073742362, seqvalue, Integer.valueOf$I(seqcode)],$I$(1).tv$I$I$O);
 }, p$1);
 
 Clazz.newMeth(C$, 'clauseChainSpec$I', function (tok) {
@@ -950,13 +910,13 @@ case 268435633:
 p$1.getToken.apply(this, []);
 return true;
 case 2:
-return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [$I$(1).o$I$O(1073742358, Integer.valueOf$I(p$1.getToken.apply(this, []).intValue))]);
+return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [(function(a,f){return f.apply(null,a)})([1073742358, Integer.valueOf$I(p$1.getToken.apply(this, []).intValue)],$I$(1).o$I$O)]);
 case 3:
-return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [$I$(1).tv$I$I$O(1073742358, p$1.fixModelSpec$org_jmol_script_T.apply(this, [p$1.getToken.apply(this, [])]), this.theValue)]);
+return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [(function(a,f){return f.apply(null,a)})([1073742358, p$1.fixModelSpec$org_jmol_script_T.apply(this, [p$1.getToken.apply(this, [])]), this.theValue],$I$(1).tv$I$I$O)]);
 case 268435504:
 case 1073742338:
 case 0:
-return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [$I$(1).o$I$O(1073742358, Integer.valueOf$I(1))]);
+return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [(function(a,f){return f.apply(null,a)})([1073742358, Integer.valueOf$I(1)],$I$(1).o$I$O)]);
 }
 return this.error$I(10);
 }, p$1);
@@ -982,7 +942,7 @@ atomSpec += "" + this.theToken.value;
 if (p$1.tokPeekIs$I.apply(this, [268435633])) {
 p$1.tokenNext.apply(this, []);
 atomSpec += "'";
-}return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [$I$(1).tv$I$I$O(1073742356, this.vwr.getJBR$().lookupSpecialAtomID$S(atomSpec.toUpperCase$()), atomSpec)]);
+}return p$1.generateResidueSpecCode$org_jmol_script_T.apply(this, [(function(a,f){return f.apply(null,a)})([1073742356, this.vwr.getJBR$().lookupSpecialAtomID$S(atomSpec.toUpperCase$()), atomSpec],$I$(1).tv$I$I$O)]);
 }, p$1);
 
 Clazz.newMeth(C$, 'errorString$I$S$S$Z', function (iError, value, more, translated) {
@@ -1036,7 +996,7 @@ case 13:
 msg=$I$(8).$$S("number or variable name expected");
 break;
 case 14:
-msg=$I$(8).$$S("residue specification (ALA, AL?, A*) expected");
+msg=(function(a,f){return f.apply(null,a)})(["residue specification (ALA, AL?, A*) expected"],$I$(8).$$S);
 break;
 case 15:
 msg=$I$(8).$$S("{0} expected");
@@ -1095,4 +1055,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

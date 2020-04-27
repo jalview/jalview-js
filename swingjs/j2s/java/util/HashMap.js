@@ -1,23 +1,17 @@
-(function(){var P$=java.util,p$1={},I$=[[0,'java.util.Objects',['java.util.HashMap','.KeyIterator'],['java.util.HashMap','.KeySpliterator'],['java.util.HashMap','.ValueIterator'],['java.util.HashMap','.ValueSpliterator'],['java.util.HashMap','.EntryIterator'],['java.util.HashMap','.EntrySpliterator'],['java.util.HashMap','.Node'],['java.util.HashMap','.KeySet'],['java.util.HashMap','.Values'],['java.util.HashMap','.EntrySet'],'InternalError',['java.util.HashMap','.TreeNode']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HashMap", function(){
+(function(){var P$=java.util,I$=[[0,'java.util.Objects',['java.util.HashMap','.KeyIterator'],'java.util.Map','java.util.HashMap',['java.util.HashMap','.KeySpliterator'],['java.util.HashMap','.ValueIterator'],['java.util.HashMap','.ValueSpliterator'],['java.util.HashMap','.EntryIterator'],['java.util.HashMap','.EntrySpliterator'],['java.util.HashMap','.Node'],['java.util.HashMap','.KeySet'],['java.util.HashMap','.Values'],['java.util.HashMap','.EntrySet'],'InternalError',['java.util.HashMap','.TreeNode']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HashMap", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractMap', ['java.util.Map', 'Cloneable', 'java.io.Serializable']);
+C$.$classes$=[['Node',8],['KeySet',16],['Values',16],['EntrySet',16],['HashIterator',1024],['KeyIterator',16],['ValueIterator',16],['EntryIterator',16],['HashMapSpliterator',8],['KeySpliterator',24],['ValueSpliterator',24],['EntrySpliterator',24],['TreeNode',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.table=null;
-this.entrySet=null;
-this.size=0;
-this.modCount=0;
-this.threshold=0;
-this.loadFactor=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+this.秘allowJS=false;
+},1);
+
+C$.$fields$=[['Z',['秘allowJS'],'F',['loadFactor'],'I',['size','modCount','threshold'],'O',['秘m','java.util.Map','table','java.util.HashMap.Node[]','entrySet','java.util.Set']]
+,['Z',['USE_SIMPLE']]]
 
 Clazz.newMeth(C$, 'hash$O', function (key) {
 var h;
@@ -31,7 +25,7 @@ return x.getClass$();
 }, 1);
 
 Clazz.newMeth(C$, 'compareComparables$Class$O$O', function (kc, k, x) {
-return (x == null  || x.getClass$() !== kc   ? 0 : (k).compareTo$(x));
+return (x == null  || x.getClass$() !== kc   ? 0 : (k).compareTo$O(x));
 }, 1);
 
 Clazz.newMeth(C$, 'tableSizeFor$I', function (cap) {
@@ -45,7 +39,7 @@ return (n < 0) ? 1 : (n >= 1073741824) ? 1073741824 : n + 1;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$F', function (initialCapacity, loadFactor) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (initialCapacity < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal initial capacity: " + initialCapacity]);
 if (initialCapacity > 1073741824) initialCapacity=1073741824;
 if (loadFactor <= 0  || Float.isNaN$F(loadFactor) ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal load factor: " + new Float(loadFactor).toString()]);
@@ -55,48 +49,85 @@ this.threshold=C$.tableSizeFor$I(initialCapacity);
 
 Clazz.newMeth(C$, 'c$$I', function (initialCapacity) {
 C$.c$$I$F.apply(this, [initialCapacity, 0.75]);
+this.秘allowJS=true;
+this.秘setJS$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
+this.秘allowJS=true;
+this.秘setJS$();
 this.loadFactor=0.75;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (m) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
+this.秘allowJS=(m.allowJS ||false);
+this.秘setJS$();
 this.loadFactor=0.75;
 this.putMapEntries$java_util_Map$Z(m, false);
 }, 1);
 
-Clazz.newMeth(C$, 'putMapEntries$java_util_Map$Z', function (m, evict) {
-var s=m.size$();
-if (s > 0) {
-if (this.table == null ) {
-var ft=(s / this.loadFactor) + 1.0;
+Clazz.newMeth(C$, 'putMapEntries$java_util_Map$Z', function (mOriginal, evict) {
+var n=mOriginal.size$();
+if (n == 0) return;
+var key=null;
+var value=null;
+if ($I$(3).秘isSimple$java_util_Map(this) && $I$(3).秘isSimple$java_util_Map(mOriginal) ) {
+var me=this;
+
+mOriginal.秘m.forEach(function(value, key) {
+me.putVal$I$O$O$Z$Z$I(0, key, value, false, evict, $I$(3).秘hasKey$java_util_Map$O(me, key));
+
+});
+return;
+}if (this.table == null ) {
+var ft=(n / this.loadFactor) + 1.0;
 var t=((ft < 1.07374182E9 ) ? (ft|0) : 1073741824);
 if (t > this.threshold) this.threshold=C$.tableSizeFor$I(t);
-} else if (s > this.threshold) this.resize$();
-for (var e, $e = m.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
-var key=e.getKey$();
-var value=e.getValue$();
-this.putVal$I$TK$TV$Z$Z(C$.hash$O(key), key, value, false, evict);
+} else if (n > this.threshold) this.resize$();
+if ($I$(3).秘isSimple$java_util_Map(mOriginal)) {
+var me=this;
+
+mOriginal.秘m.forEach(function(value, key) {
+me.putVal$I$O$O$Z$Z$I(C$.hash$O(key), key, value, false, evict, 0);
+
+});
+return;
+}this.秘m=null;
+for (var e, $e = mOriginal.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
+this.putVal$I$O$O$Z$Z$I(C$.hash$O(key), e.getKey$(), e.getValue$(), false, evict, 0);
 }
-}});
+});
 
 Clazz.newMeth(C$, 'size$', function () {
-return this.size;
+return (this.秘m && this.秘m.size ||this.size);
 });
 
 Clazz.newMeth(C$, 'isEmpty$', function () {
-return this.size == 0;
+return this.size$() == 0;
 });
 
 Clazz.newMeth(C$, 'get$O', function (key) {
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return null;
+case 3:
+var v=null;
+
+v = this.秘m.get(key);
+return v;
+}
 var e;
 return (e=this.getNode$I$O(C$.hash$O(key), key)) == null  ? null : e.value;
 });
 
-Clazz.newMeth(C$, ['getNode$I$O'], function (hash, key) {
+Clazz.newMeth(C$, 'getNode$I$O', function (hash, key) {
 var tab;
 var first;
 var e;
@@ -113,29 +144,66 @@ if (e.hash == hash && ((k=e.key) === key  || (key != null  && key.equals$O(k) ) 
 });
 
 Clazz.newMeth(C$, 'containsKey$O', function (key) {
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return false;
+case 3:
+return true;
+}
 return this.getNode$I$O(C$.hash$O(key), key) != null ;
 });
 
-Clazz.newMeth(C$, ['put$TK$TV'], function (key, value) {
-return this.putVal$I$TK$TV$Z$Z(C$.hash$O(key), key, value, false, true);
+Clazz.newMeth(C$, 'put$O$O', function (key, value) {
+var type=$I$(3).秘hasKey$java_util_Map$O(this, key);
+switch (type) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+case 3:
+return this.putVal$I$O$O$Z$Z$I(1, key, value, false, true, type);
+}
+return this.putVal$I$O$O$Z$Z$I(C$.hash$O(key), key, value, false, true, 0);
 });
 
-Clazz.newMeth(C$, ['putVal$I$TK$TV$Z$Z'], function (hash, key, value, onlyIfAbsent, evict) {
+Clazz.newMeth(C$, 'putVal$I$O$O$Z$Z$I', function (hash, key, value, onlyIfAbsent, evict, mode) {
+switch (mode) {
+case 2:
+
+this.秘m.set(key, value);
+++this.modCount;
+return null;
+case 3:
+var v0=(hash == 0 ? null : this.秘m.get(key) ||null);
+if (!onlyIfAbsent || v0 == null  ) {
+
+this.秘m.set(key, value);
+}return v0;
+case 0:
+break;
+}
 var tab;
 var p;
 var n;
 var i;
 if ((tab=this.table) == null  || (n=tab.length) == 0 ) n=(tab=this.resize$()).length;
-if ((p=tab[i=(n - 1) & hash]) == null ) tab[i]=this.newNode$I$TK$TV$java_util_HashMap_Node(hash, key, value, null);
+if ((p=tab[i=(n - 1) & hash]) == null ) tab[i]=this.newNode$I$O$O$java_util_HashMap_Node(hash, key, value, null);
  else {
 var e;
 var k;
 if (p.hash == hash && ((k=p.key) === key  || (key != null  && key.equals$O(k) ) ) ) e=p;
- else if (Clazz.instanceOf(p, "java.util.HashMap.TreeNode")) e=(p).putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$TK$TV(this, tab, hash, key, value);
+ else if (Clazz.instanceOf(p, "java.util.HashMap.TreeNode")) e=(p).putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$O$O(this, tab, hash, key, value);
  else {
 for (var binCount=0; ; ++binCount) {
 if ((e=p.next_) == null ) {
-p.next_=this.newNode$I$TK$TV$java_util_HashMap_Node(hash, key, value, null);
+p.next_=this.newNode$I$O$O$java_util_HashMap_Node(hash, key, value, null);
 if (binCount >= 7) this.treeifyBin$java_util_HashMap_NodeA$I(tab, hash);
 break;
 }if (e.hash == hash && ((k=e.key) === key  || (key != null  && key.equals$O(k) ) ) ) break;
@@ -171,7 +239,7 @@ newThr=12;
 var ft=newCap * this.loadFactor;
 newThr=(newCap < 1073741824 && ft < 1.07374182E9   ? (ft|0) : 2147483647);
 }this.threshold=newThr;
-var newTab=Clazz.array($I$(8), [newCap]);
+var newTab=Clazz.array($I$(10), [newCap]);
 this.table=newTab;
 if (oldTab != null ) {
 for (var j=0; j < oldCap; ++j) {
@@ -207,7 +275,7 @@ newTab[j + oldCap]=hiHead;
 }return newTab;
 });
 
-Clazz.newMeth(C$, ['treeifyBin$java_util_HashMap_NodeA$I'], function (tab, hash) {
+Clazz.newMeth(C$, 'treeifyBin$java_util_HashMap_NodeA$I', function (tab, hash) {
 var n;
 var index;
 var e;
@@ -231,12 +299,37 @@ this.putMapEntries$java_util_Map$Z(m, true);
 });
 
 Clazz.newMeth(C$, 'remove$O', function (key) {
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return null;
+case 3:
+return this.removeNode$I$O$O$Z$Z$I(1, key, null, false, true, 3);
+}
 var e;
-return (e=this.removeNode$I$O$O$Z$Z(C$.hash$O(key), key, null, false, true)) == null  ? null : e.value;
+return (e=this.removeNode$I$O$O$Z$Z$I(C$.hash$O(key), key, null, false, true, 0)) == null  ? null : e.value;
 });
 
-Clazz.newMeth(C$, ['removeNode$I$O$O$Z$Z'], function (hash, key, value, matchValue, movable) {
-var tab;
+Clazz.newMeth(C$, 'removeNode$I$O$O$Z$Z$I', function (hash, key, value, matchValue, movable, mode) {
+var v;
+if (mode == 3) {
+v=(hash == 1 || matchValue  ? this.秘m.get(key) ||null : null);
+if (!matchValue || v === value   || (value != null  && value.equals$O(v) ) ) {
+
+this.秘m["delete"](key);
+++this.modCount;
+switch (hash) {
+case 1:
+return v;
+case 3:
+return "true";
+}
+}return null;
+}var tab;
 var p;
 var n;
 var index;
@@ -244,7 +337,6 @@ if ((tab=this.table) != null  && (n=tab.length) > 0  && (p=tab[index=(n - 1) & h
 var node=null;
 var e;
 var k;
-var v;
 if (p.hash == hash && ((k=p.key) === key  || (key != null  && key.equals$O(k) ) ) ) node=p;
  else if ((e=p.next_) != null ) {
 if (Clazz.instanceOf(p, "java.util.HashMap.TreeNode")) node=(p).getTreeNode$I$O(hash, key);
@@ -269,6 +361,10 @@ return node;
 Clazz.newMeth(C$, 'clear$', function () {
 var tab;
 this.modCount++;
+if ($I$(3).秘isSimple$java_util_Map(this)) {
+
+this.秘m.clear();
+}this.秘setJS$();
 if ((tab=this.table) != null  && this.size > 0 ) {
 this.size=0;
 for (var i=0; i < tab.length; ++i) tab[i]=null;
@@ -276,48 +372,109 @@ for (var i=0; i < tab.length; ++i) tab[i]=null;
 }});
 
 Clazz.newMeth(C$, 'containsValue$O', function (value) {
+if (this.size$() == 0) return false;
+if ($I$(3).秘isSimple$java_util_Map(this)) {
+var m=this.秘m;
+
+var iter = m.values();
+for (var n = iter.next(); !n.done; n = iter.next()) { if (n.value == value || n.value.equals$O(value)) { return true;
+} }
+} else {
 var tab;
 var v;
-if ((tab=this.table) != null  && this.size > 0 ) {
+if ((tab=this.table) != null ) {
 for (var i=0; i < tab.length; ++i) {
 for (var e=tab[i]; e != null ; e=e.next_) {
 if ((v=e.value) === value  || (value != null  && value.equals$O(v) ) ) return true;
 }
 }
-}return false;
+}}return false;
 });
 
 Clazz.newMeth(C$, 'keySet$', function () {
 var ks;
-return (ks=this.keySet) == null  ? (this.keySet=Clazz.new_($I$(9), [this, null])) : ks;
+return (ks=this.keySet) == null  ? (this.keySet=Clazz.new_($I$(11,1),[this, null])) : ks;
 });
 
 Clazz.newMeth(C$, 'values$', function () {
 var vs;
-return (vs=this.values) == null  ? (this.values=Clazz.new_($I$(10), [this, null])) : vs;
+return (vs=this.values) == null  ? (this.values=Clazz.new_($I$(12,1),[this, null])) : vs;
 });
 
 Clazz.newMeth(C$, 'entrySet$', function () {
 var es;
-return (es=this.entrySet) == null  ? (this.entrySet=Clazz.new_($I$(11), [this, null])) : es;
+return (es=this.entrySet) == null  ? (this.entrySet=Clazz.new_($I$(13,1),[this, null])) : es;
 });
 
-Clazz.newMeth(C$, ['getOrDefault$O$TV'], function (key, defaultValue) {
+Clazz.newMeth(C$, 'getOrDefault$O$O', function (key, defaultValue) {
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return defaultValue;
+case 3:
+var v=null;
+
+v = this.秘m.get(key);
+return (v == null  ? defaultValue : v);
+}
 var e;
 return (e=this.getNode$I$O(C$.hash$O(key), key)) == null  ? defaultValue : e.value;
 });
 
-Clazz.newMeth(C$, ['putIfAbsent$TK$TV'], function (key, value) {
-return this.putVal$I$TK$TV$Z$Z(C$.hash$O(key), key, value, true, true);
+Clazz.newMeth(C$, 'putIfAbsent$O$O', function (key, value) {
+var type=$I$(3).秘hasKey$java_util_Map$O(this, key);
+switch (type) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 3:
+case 2:
+return this.putVal$I$O$O$Z$Z$I(1, key, value, true, true, type);
+}
+return this.putVal$I$O$O$Z$Z$I(C$.hash$O(key), key, value, true, true, 0);
 });
 
 Clazz.newMeth(C$, 'remove$O$O', function (key, value) {
-return this.removeNode$I$O$O$Z$Z(C$.hash$O(key), key, value, true, true) != null ;
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return false;
+case 3:
+return this.removeNode$I$O$O$Z$Z$I(3, key, value, true, true, 3) != null ;
+}
+return this.removeNode$I$O$O$Z$Z$I(C$.hash$O(key), key, value, true, true, 0) != null ;
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV$TV'], function (key, oldValue, newValue) {
+Clazz.newMeth(C$, 'replace$O$O$O', function (key, oldValue, newValue) {
+var v=null;
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return false;
+case 3:
+
+v = this.秘m.get(key);
+if (v == null  ? oldValue == null  : v.equals$O(oldValue)) {
+
+this.秘m.set(key, newValue);
+return true;
+}return false;
+}
 var e;
-var v;
 if ((e=this.getNode$I$O(C$.hash$O(key), key)) != null  && ((v=e.value) === oldValue  || (v != null  && v.equals$O(oldValue) ) ) ) {
 e.value=newValue;
 this.afterNodeAccess$java_util_HashMap_Node(e);
@@ -325,7 +482,21 @@ return true;
 }return false;
 });
 
-Clazz.newMeth(C$, ['replace$TK$TV'], function (key, value) {
+Clazz.newMeth(C$, 'replace$O$O', function (key, value) {
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return null;
+case 3:
+var v=null;
+
+v = this.秘m.get(key); this.秘m.set(key, value);
+return v;
+}
 var e;
 if ((e=this.getNode$I$O(C$.hash$O(key), key)) != null ) {
 var oldValue=e.value;
@@ -335,8 +506,30 @@ return oldValue;
 }return null;
 });
 
-Clazz.newMeth(C$, ['computeIfAbsent$TK$java_util_function_Function'], function (key, mappingFunction) {
+Clazz.newMeth(C$, 'computeIfAbsent$O$java_util_function_Function', function (key, mappingFunction) {
 if (mappingFunction == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var v=null;
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+v=mappingFunction.apply$O(key);
+if (v == null ) return null;
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 3:
+v=null;
+
+v = this.秘m.get(key);
+if (v != null ) return v;
+v=mappingFunction.apply$O(key);
+if (v != null ) this.putVal$I$O$O$Z$Z$I(0, key, v, false, true, 3);
+return v;
+case 2:
+v=mappingFunction.apply$O(key);
+if (v != null ) this.putVal$I$O$O$Z$Z$I(0, key, v, false, true, 2);
+return v;
+}
 var hash=C$.hash$O(key);
 var tab;
 var first;
@@ -361,16 +554,16 @@ break;
 if (old != null  && (oldValue=old.value) != null  ) {
 this.afterNodeAccess$java_util_HashMap_Node(old);
 return oldValue;
-}}var v=mappingFunction.apply$(key);
-if (v == null ) {
+}}if (v == null  && (v=mappingFunction.apply$O(key)) == null  ) {
 return null;
 } else if (old != null ) {
 old.value=v;
 this.afterNodeAccess$java_util_HashMap_Node(old);
 return v;
-} else if (t != null ) t.putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$TK$TV(this, tab, hash, key, v);
- else {
-tab[i]=this.newNode$I$TK$TV$java_util_HashMap_Node(hash, key, v, first);
+} else if (t != null ) {
+t.putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$O$O(this, tab, hash, key, v);
+} else {
+tab[i]=this.newNode$I$O$O$java_util_HashMap_Node(hash, key, v, first);
 if (binCount >= 7) this.treeifyBin$java_util_HashMap_NodeA$I(tab, hash);
 }++this.modCount;
 ++this.size;
@@ -378,23 +571,61 @@ this.afterNodeInsertion$Z(true);
 return v;
 });
 
-Clazz.newMeth(C$, ['computeIfPresent$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'computeIfPresent$O$java_util_function_BiFunction', function (key, remappingFunction) {
 if (remappingFunction == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var v=null;
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+return null;
+case 3:
+
+v = this.秘m.get(key);
+if (v != null ) {
+v=remappingFunction.apply$O$O(key, v);
+if (v == null ) {
+this.removeNode$I$O$O$Z$Z$I(0, key, v, false, true, 3);
+} else {
+this.putVal$I$O$O$Z$Z$I(0, key, v, false, true, 3);
+}}return v;
+}
 var e;
-var oldValue;
 var hash=C$.hash$O(key);
-if ((e=this.getNode$I$O(hash, key)) != null  && (oldValue=e.value) != null  ) {
-var v=remappingFunction.apply$(key, oldValue);
+if ((e=this.getNode$I$O(hash, key)) != null  && (v=e.value) != null  ) {
+v=remappingFunction.apply$O$O(key, v);
 if (v != null ) {
 e.value=v;
 this.afterNodeAccess$java_util_HashMap_Node(e);
 return v;
-} else this.removeNode$I$O$O$Z$Z(hash, key, null, false, true);
+} else this.removeNode$I$O$O$Z$Z$I(hash, key, null, false, true, 0);
 }return null;
 });
 
-Clazz.newMeth(C$, ['compute$TK$java_util_function_BiFunction'], function (key, remappingFunction) {
+Clazz.newMeth(C$, 'compute$O$java_util_function_BiFunction', function (key, remappingFunction) {
 if (remappingFunction == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var v=null;
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+v=remappingFunction.apply$O$O(key, null);
+if (v == null ) return null;
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+if ((v=remappingFunction.apply$O$O(key, v)) != null ) this.putVal$I$O$O$Z$Z$I(0, key, v, false, true, 2);
+return v;
+case 3:
+
+v = this.秘m.get(key);
+if ((v=remappingFunction.apply$O$O(key, v)) == null ) this.removeNode$I$O$O$Z$Z$I(0, key, null, false, true, 3);
+ else this.putVal$I$O$O$Z$Z$I(0, key, v, false, true, 3);
+return v;
+}
 var hash=C$.hash$O(key);
 var tab;
 var first;
@@ -415,17 +646,17 @@ old=e;
 break;
 }++binCount;
 } while ((e=e.next_) != null );
-}}var oldValue=(old == null ) ? null : old.value;
-var v=remappingFunction.apply$(key, oldValue);
+}}if (v == null  && old != null  ) v=old.value;
+v=remappingFunction.apply$O$O(key, v);
 if (old != null ) {
 if (v != null ) {
 old.value=v;
 this.afterNodeAccess$java_util_HashMap_Node(old);
-} else this.removeNode$I$O$O$Z$Z(hash, key, null, false, true);
+} else this.removeNode$I$O$O$Z$Z$I(hash, key, null, false, true, 0);
 } else if (v != null ) {
-if (t != null ) t.putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$TK$TV(this, tab, hash, key, v);
+if (t != null ) t.putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$O$O(this, tab, hash, key, v);
  else {
-tab[i]=this.newNode$I$TK$TV$java_util_HashMap_Node(hash, key, v, first);
+tab[i]=this.newNode$I$O$O$java_util_HashMap_Node(hash, key, v, first);
 if (binCount >= 7) this.treeifyBin$java_util_HashMap_NodeA$I(tab, hash);
 }++this.modCount;
 ++this.size;
@@ -433,9 +664,30 @@ this.afterNodeInsertion$Z(true);
 }return v;
 });
 
-Clazz.newMeth(C$, ['merge$TK$TV$java_util_function_BiFunction'], function (key, value, remappingFunction) {
+Clazz.newMeth(C$, 'merge$O$O$java_util_function_BiFunction', function (key, value, remappingFunction) {
 if (value == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 if (remappingFunction == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var v=null;
+switch ($I$(3).秘hasKey$java_util_Map$O(this, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this);
+break;
+case 2:
+value=remappingFunction.apply$O$O(null, value);
+if (value != null ) this.putVal$I$O$O$Z$Z$I(0, key, value, false, true, 2);
+return value;
+case 3:
+
+v = this.秘m.get(key);
+if (v != null ) value=remappingFunction.apply$O$O(v, value);
+if (value == null ) {
+this.removeNode$I$O$O$Z$Z$I(0, key, null, false, true, 3);
+} else {
+this.putVal$I$O$O$Z$Z$I(0, key, value, false, true, 3);
+}return value;
+}
 var hash=C$.hash$O(key);
 var tab;
 var first;
@@ -457,18 +709,17 @@ break;
 }++binCount;
 } while ((e=e.next_) != null );
 }}if (old != null ) {
-var v;
-if (old.value != null ) v=remappingFunction.apply$(old.value, value);
+if (old.value != null ) v=remappingFunction.apply$O$O(old.value, value);
  else v=value;
 if (v != null ) {
 old.value=v;
 this.afterNodeAccess$java_util_HashMap_Node(old);
-} else this.removeNode$I$O$O$Z$Z(hash, key, null, false, true);
+} else this.removeNode$I$O$O$Z$Z$I(hash, key, null, false, true, 0);
 return v;
 }if (value != null ) {
-if (t != null ) t.putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$TK$TV(this, tab, hash, key, value);
+if (t != null ) t.putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$O$O(this, tab, hash, key, value);
  else {
-tab[i]=this.newNode$I$TK$TV$java_util_HashMap_Node(hash, key, value, first);
+tab[i]=this.newNode$I$O$O$java_util_HashMap_Node(hash, key, value, first);
 if (binCount >= 7) this.treeifyBin$java_util_HashMap_NodeA$I(tab, hash);
 }++this.modCount;
 ++this.size;
@@ -477,29 +728,41 @@ this.afterNodeInsertion$Z(true);
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_BiConsumer', function (action) {
-var tab;
 if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-if (this.size > 0 && (tab=this.table) != null  ) {
+if (this.size$() == 0) return;
 var mc=this.modCount;
+if ($I$(3).秘isSimple$java_util_Map(this)) {
+var m=this.秘m;
+
+m.forEach(function(value,key){ action.accept$O$O(key, value); });
+} else {
+var tab;
+if ((tab=this.table) != null ) {
 for (var i=0; i < tab.length; ++i) {
-for (var e=tab[i]; e != null ; e=e.next_) action.accept$(e.key, e.value);
+for (var e=tab[i]; e != null ; e=e.next_) action.accept$O$O(e.key, e.value);
 
 }
-if (this.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-}});
+}}if (this.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+});
 
-Clazz.newMeth(C$, 'replaceAll$java_util_function_BiFunction', function ($function) {
-var tab;
-if ($function == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-if (this.size > 0 && (tab=this.table) != null  ) {
+Clazz.newMeth(C$, 'replaceAll$java_util_function_BiFunction', function (f) {
+if (f == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+if (this.size$() == 0) return;
 var mc=this.modCount;
+if ($I$(3).秘isSimple$java_util_Map(this)) {
+var m=this.秘m;
+
+m.forEach(function(value,key){ m.set(key, f.apply$O$O(key, value)); });
+} else {
+var tab;
+if ((tab=this.table) != null ) {
 for (var i=0; i < tab.length; ++i) {
 for (var e=tab[i]; e != null ; e=e.next_) {
-e.value=$function.apply$(e.key, e.value);
+e.value=f.apply$O$O(e.key, e.value);
 }
 }
-if (this.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-}});
+}}if (this.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+});
 
 Clazz.newMeth(C$, 'clone$', function () {
 var result;
@@ -507,7 +770,7 @@ try {
 result=C$.superclazz.prototype.clone$.apply(this, []);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(12).c$$Throwable,[e]);
+throw Clazz.new_($I$(14,1).c$$Throwable,[e]);
 } else {
 throw e;
 }
@@ -525,50 +788,46 @@ Clazz.newMeth(C$, 'capacity$', function () {
 return (this.table != null ) ? this.table.length : (this.threshold > 0) ? this.threshold : 16;
 });
 
-Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
-var buckets=this.capacity$();
-s.defaultWriteObject$();
-s.writeInt$I(buckets);
-s.writeInt$I(this.size);
-this.internalWriteEntries$java_io_ObjectOutputStream(s);
-}, p$1);
-
-Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
-s.defaultReadObject$();
-this.reinitialize$();
-if (this.loadFactor <= 0  || Float.isNaN$F(this.loadFactor) ) throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["Illegal load factor: " + new Float(this.loadFactor).toString()]);
-s.readInt$();
-var mappings=s.readInt$();
-if (mappings < 0) throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["Illegal mappings count: " + mappings]);
- else if (mappings > 0) {
-var lf=Math.min(Math.max(0.25, this.loadFactor), 4.0);
-var fc=mappings / lf + 1.0;
-var cap=((fc < 16 ) ? 16 : (fc >= 1073741824 ) ? 1073741824 : C$.tableSizeFor$I((fc|0)));
-var ft=cap * lf;
-this.threshold=((cap < 1073741824 && ft < 1073741824  ) ? (ft|0) : 2147483647);
-var tab=Clazz.array($I$(8), [cap]);
-this.table=tab;
-for (var i=0; i < mappings; i++) {
-var key=s.readObject$();
-var value=s.readObject$();
-this.putVal$I$TK$TV$Z$Z(C$.hash$O(key), key, value, false, false);
-}
-}}, p$1);
-
-Clazz.newMeth(C$, ['newNode$I$TK$TV$java_util_HashMap_Node'], function (hash, key, value, next) {
-return Clazz.new_($I$(8).c$$I$TK$TV$java_util_HashMap_Node,[hash, key, value, next]);
+Clazz.newMeth(C$, 'newNode$I$O$O$java_util_HashMap_Node', function (hash, key, value, next) {
+return Clazz.new_($I$(10,1).c$$I$O$O$java_util_HashMap_Node,[hash, key, value, next]);
 });
 
-Clazz.newMeth(C$, ['replacementNode$java_util_HashMap_Node$java_util_HashMap_Node'], function (p, next) {
-return Clazz.new_($I$(8).c$$I$TK$TV$java_util_HashMap_Node,[p.hash, p.key, p.value, next]);
+Clazz.newMeth(C$, 'getJSEntry$java_util_Map_Entry', function (e) {
+return ((P$.HashMap$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "HashMap$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['java.util.Map','java.util.Map.Entry']], 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'getKey$', function () {
+var node=this.$finals$.e;
+return (1 ? node.value[0] :null);
 });
 
-Clazz.newMeth(C$, ['newTreeNode$I$TK$TV$java_util_HashMap_Node'], function (hash, key, value, next) {
-return Clazz.new_($I$(13).c$$I$TK$TV$java_util_HashMap_Node,[hash, key, value, next]);
+Clazz.newMeth(C$, 'getValue$', function () {
+var node=this.$finals$.e;
+return (1 ? node.value[1] :null);
 });
 
-Clazz.newMeth(C$, ['replacementTreeNode$java_util_HashMap_Node$java_util_HashMap_Node'], function (p, next) {
-return Clazz.new_($I$(13).c$$I$TK$TV$java_util_HashMap_Node,[p.hash, p.key, p.value, next]);
+Clazz.newMeth(C$, 'setValue$O', function (value) {
+return this.b$['java.util.HashMap'].put$O$O.apply(this.b$['java.util.HashMap'], [this.getKey$(), value]);
+});
+})()
+), Clazz.new_(P$.HashMap$1.$init$,[this, {e:e}]));
+});
+
+Clazz.newMeth(C$, 'replacementNode$java_util_HashMap_Node$java_util_HashMap_Node', function (p, next) {
+return Clazz.new_($I$(10,1).c$$I$O$O$java_util_HashMap_Node,[p.hash, p.key, p.value, next]);
+});
+
+Clazz.newMeth(C$, 'newTreeNode$I$O$O$java_util_HashMap_Node', function (hash, key, value, next) {
+return Clazz.new_($I$(15,1).c$$I$O$O$java_util_HashMap_Node,[hash, key, value, next]);
+});
+
+Clazz.newMeth(C$, 'replacementTreeNode$java_util_HashMap_Node$java_util_HashMap_Node', function (p, next) {
+return Clazz.new_($I$(15,1).c$$I$O$O$java_util_HashMap_Node,[p.hash, p.key, p.value, next]);
 });
 
 Clazz.newMeth(C$, 'reinitialize$', function () {
@@ -578,16 +837,17 @@ this.keySet=null;
 this.values=null;
 this.modCount=0;
 this.threshold=0;
+this.秘setJS$();
 this.size=0;
 });
 
-Clazz.newMeth(C$, ['afterNodeAccess$java_util_HashMap_Node'], function (p) {
+Clazz.newMeth(C$, 'afterNodeAccess$java_util_HashMap_Node', function (p) {
 });
 
 Clazz.newMeth(C$, 'afterNodeInsertion$Z', function (evict) {
 });
 
-Clazz.newMeth(C$, ['afterNodeRemoval$java_util_HashMap_Node'], function (p) {
+Clazz.newMeth(C$, 'afterNodeRemoval$java_util_HashMap_Node', function (p) {
 });
 
 Clazz.newMeth(C$, 'internalWriteEntries$java_io_ObjectOutputStream', function (s) {
@@ -600,27 +860,28 @@ s.writeObject$O(e.value);
 }
 }
 }});
+
+Clazz.newMeth(C$, '秘setJS$', function () {
+this.秘m=(this.秘allowJS && C$.USE_SIMPLE  ? new Map() ||null : null);
+});
+
+C$.$static$=function(){C$.$static$=0;
+C$.USE_SIMPLE=true;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "Node", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "Node", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, [['java.util.Map','java.util.Map.Entry']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.hash=0;
-this.key=null;
-this.value=null;
-this.next_=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$I$TK$TV$java_util_HashMap_Node'], function (hash, key, value, next) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['hash'],'O',['key','<K>','value','<V>','next_','java.util.HashMap.Node']]]
+
+Clazz.newMeth(C$, 'c$$I$O$O$java_util_HashMap_Node', function (hash, key, value, next) {
+;C$.$init$.apply(this);
 this.hash=hash;
 this.key=key;
 this.value=value;
@@ -643,167 +904,201 @@ Clazz.newMeth(C$, 'hashCode$', function () {
 return $I$(1).hashCode$O(this.key) ^ $I$(1).hashCode$O(this.value);
 });
 
-Clazz.newMeth(C$, ['setValue$TV'], function (newValue) {
+Clazz.newMeth(C$, 'setValue$O', function (newValue) {
 var oldValue=this.value;
 this.value=newValue;
 return oldValue;
 });
 
 Clazz.newMeth(C$, 'equals$O', function (o) {
-if (o === this ) return true;
-if (Clazz.instanceOf(o, "java.util.Map.Entry")) {
-var e=o;
-if ($I$(1).equals$O$O(this.key, e.getKey$()) && $I$(1).equals$O$O(this.value, e.getValue$()) ) return true;
-}return false;
+return (o != null  && (o === this  || Clazz.instanceOf(o, "java.util.Map.Entry") && $I$(1,"equals$O$O",[this.key, (o).getKey$()]) && $I$(1,"equals$O$O",[this.value, (o).getValue$()])   ) );
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "KeySet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "KeySet", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.AbstractSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'size$', function () {
 return this.this$0.size;
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-this.b$['java.util.HashMap'].clear$.apply(this.b$['java.util.HashMap'], []);
+this.this$0.clear$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(2), [this, null]);
+return Clazz.new_($I$(2,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
-return this.b$['java.util.HashMap'].containsKey$O.apply(this.b$['java.util.HashMap'], [o]);
+return this.this$0.containsKey$O.apply(this.this$0, [o]);
 });
 
 Clazz.newMeth(C$, 'remove$O', function (key) {
-return this.b$['java.util.HashMap'].removeNode$I$O$O$Z$Z.apply(this.b$['java.util.HashMap'], [P$.HashMap.hash$O(key), key, null, false, true]) != null ;
+switch ($I$(3).秘hasKey$java_util_Map$O(this.this$0, key)) {
+case 0:
+break;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this.this$0);
+break;
+case 2:
+return false;
+case 3:
+return this.this$0.removeNode$I$O$O$Z$Z$I.apply(this.this$0, [3, key, null, false, true, 3]) != null ;
+}
+return this.this$0.removeNode$I$O$O$Z$Z$I.apply(this.this$0, [$I$(4).hash$O(key), key, null, false, true, 0]) != null ;
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(3).c$$java_util_HashMap$I$I$I$I,[this.b$['java.util.HashMap'], 0, -1, 0, 0]);
+return Clazz.new_($I$(5,1).c$$java_util_HashMap$I$I$I$I,[this.this$0, 0, -1, 0, 0]);
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
-var tab;
 if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-if (this.this$0.size > 0 && (tab=this.this$0.table) != null  ) {
+if (this.size$() == 0) return;
 var mc=this.this$0.modCount;
+if ($I$(3).秘isSimple$java_util_Map(this.this$0)) {
+var m=this.this$0.秘m;
+
+m.forEach(function(value, key){ action.accept$O(key); });
+} else {
+var tab;
+if ((tab=this.this$0.table) != null ) {
 for (var i=0; i < tab.length; ++i) {
-for (var e=tab[i]; e != null ; e=e.next_) action.accept$(e.key);
+for (var e=tab[i]; e != null ; e=e.next_) action.accept$O(e.key);
 
 }
-if (this.this$0.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-}});
+}}if (this.this$0.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "Values", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "Values", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.AbstractCollection');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'size$', function () {
-return this.this$0.size;
+return this.this$0.size$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-this.b$['java.util.HashMap'].clear$.apply(this.b$['java.util.HashMap'], []);
+this.this$0.clear$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(4), [this, null]);
+return Clazz.new_($I$(6,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
-return this.b$['java.util.HashMap'].containsValue$O.apply(this.b$['java.util.HashMap'], [o]);
+return this.this$0.containsValue$O.apply(this.this$0, [o]);
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(5).c$$java_util_HashMap$I$I$I$I,[this.b$['java.util.HashMap'], 0, -1, 0, 0]);
+return Clazz.new_($I$(7,1).c$$java_util_HashMap$I$I$I$I,[this.this$0, 0, -1, 0, 0]);
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
-var tab;
 if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-if (this.this$0.size > 0 && (tab=this.this$0.table) != null  ) {
+if (this.size$() == 0) return;
 var mc=this.this$0.modCount;
+if ($I$(3).秘isSimple$java_util_Map(this.this$0)) {
+var m=this.this$0.秘m;
+
+m.forEach(function(value){ action.accept$O(value); });
+} else {
+var tab;
+if ((tab=this.this$0.table) != null ) {
 for (var i=0; i < tab.length; ++i) {
-for (var e=tab[i]; e != null ; e=e.next_) action.accept$(e.value);
+for (var e=tab[i]; e != null ; e=e.next_) action.accept$O(e.value);
 
 }
-if (this.this$0.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-}});
+}}if (this.this$0.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "EntrySet", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "EntrySet", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.AbstractSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'size$', function () {
-return this.this$0.size;
+return this.this$0.size$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
-this.b$['java.util.HashMap'].clear$.apply(this.b$['java.util.HashMap'], []);
+this.this$0.clear$.apply(this.this$0, []);
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(6), [this, null]);
+return Clazz.new_($I$(8,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'contains$O', function (o) {
 if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) return false;
 var e=o;
 var key=e.getKey$();
-var candidate=this.b$['java.util.HashMap'].getNode$I$O.apply(this.b$['java.util.HashMap'], [P$.HashMap.hash$O(key), key]);
+if ($I$(3).秘isSimple$java_util_Map(this.this$0)) {
+if (!this.this$0.containsKey$O.apply(this.this$0, [key])) return false;
+var value=e.getValue$();
+var v=this.this$0.get$O.apply(this.this$0, [key]);
+return (value === v  || value != null  && value.equals$O(key)  );
+} else {
+var candidate=this.this$0.getNode$I$O.apply(this.this$0, [$I$(4).hash$O(key), key]);
 return candidate != null  && candidate.equals$O(e) ;
-});
+}});
 
 Clazz.newMeth(C$, 'remove$O', function (o) {
-if (Clazz.instanceOf(o, "java.util.Map.Entry")) {
-var e=o;
+if (!(Clazz.instanceOf(o, "java.util.Map.Entry"))) {
+return false;
+}var e=o;
 var key=e.getKey$();
 var value=e.getValue$();
-return this.b$['java.util.HashMap'].removeNode$I$O$O$Z$Z.apply(this.b$['java.util.HashMap'], [P$.HashMap.hash$O(key), key, value, true, true]) != null ;
-}return false;
+switch ($I$(3).秘hasKey$java_util_Map$O(this.this$0, key)) {
+default:
+case 0:
+return this.this$0.removeNode$I$O$O$Z$Z$I.apply(this.this$0, [$I$(4).hash$O(key), key, value, true, true, 0]) != null ;
+case 1:
+$I$(3).秘ensureJavaMap$java_util_Map(this.this$0);
+return this.this$0.removeNode$I$O$O$Z$Z$I.apply(this.this$0, [$I$(4).hash$O(key), key, value, true, true, 0]) != null ;
+case 2:
+return false;
+case 3:
+return this.this$0.removeNode$I$O$O$Z$Z$I.apply(this.this$0, [3, key, value, true, true, 3]) != null ;
+}
 });
 
 Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(7).c$$java_util_HashMap$I$I$I$I,[this.b$['java.util.HashMap'], 0, -1, 0, 0]);
+return Clazz.new_($I$(9,1).c$$java_util_HashMap$I$I$I$I,[this.this$0, 0, -1, 0, 0]);
 });
 
 Clazz.newMeth(C$, 'forEach$java_util_function_Consumer', function (action) {
-var tab;
 if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-if (this.this$0.size > 0 && (tab=this.this$0.table) != null  ) {
+if (this.size$() == 0) return;
+var tab;
+if ((tab=this.this$0.table) != null ) {
 var mc=this.this$0.modCount;
 for (var i=0; i < tab.length; ++i) {
-for (var e=tab[i]; e != null ; e=e.next_) action.accept$(e);
+for (var e=tab[i]; e != null ; e=e.next_) action.accept$O(e);
 
 }
 if (this.this$0.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
@@ -812,48 +1107,55 @@ if (this.this$0.modCount != mc) throw Clazz.new_(Clazz.load('java.util.Concurren
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "HashIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "HashIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.next_=null;
-this.current=null;
-this.expectedModCount=0;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isSimple'],'I',['expectedModCount','index'],'O',['jsMapIterator','java.util.Iterator','next_','java.util.HashMap.Node','+current']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.expectedModCount=this.this$0.modCount;
-var t=this.this$0.table;
 this.current=this.next_=null;
+this.isSimple=$I$(3).秘isSimple$java_util_Map(this.this$0);
+if (this.isSimple) {
+var m=this.this$0.秘m;
+
+this.jsMapIterator = m.entries();
+this.next_ = this.jsMapIterator.next();
+} else {
+var t=this.this$0.table;
 this.index=0;
 if (t != null  && this.this$0.size > 0 ) {
 do {
 } while (this.index < t.length && (this.next_=t[this.index++]) == null  );
-}}, 1);
+}}}, 1);
 
 Clazz.newMeth(C$, 'hasNext$', function () {
+if (this.isSimple) {
+return this.next_ != null  && (!this.next_.done &&true) ;
+} else {
 return this.next_ != null ;
-});
+}});
 
 Clazz.newMeth(C$, 'nextNode$', function () {
-var t;
-var e=this.next_;
 if (this.this$0.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+var e=this.next_;
 if (e == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
-if ((this.next_=(this.current=e).next_) == null  && (t=this.this$0.table) != null  ) {
+this.current=e;
+if (this.isSimple) {
+this.next_=this.jsMapIterator.next() ||null;
+} else {
+var t;
+if ((this.next_=this.current.next_) == null  && (t=this.this$0.table) != null  ) {
 do {
 } while (this.index < t.length && (this.next_=t[this.index++]) == null  );
-}return e;
+}}return e;
 });
 
 Clazz.newMeth(C$, 'remove$', function () {
@@ -861,97 +1163,108 @@ var p=this.current;
 if (p == null ) throw Clazz.new_(Clazz.load('IllegalStateException'));
 if (this.this$0.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 this.current=null;
-var key=p.key;
-this.b$['java.util.HashMap'].removeNode$I$O$O$Z$Z.apply(this.b$['java.util.HashMap'], [P$.HashMap.hash$O(key), key, null, false, false]);
-this.expectedModCount=this.this$0.modCount;
+var key=null;
+if (this.isSimple) {
+
+key = p.value[0];
+this.this$0.removeNode$I$O$O$Z$Z$I.apply(this.this$0, [0, key, null, false, false, 3]);
+} else {
+key=p.key;
+this.this$0.removeNode$I$O$O$Z$Z$I.apply(this.this$0, [$I$(4).hash$O(key), key, null, false, false, 0]);
+}this.expectedModCount=this.this$0.modCount;
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "KeyIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "KeyIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.HashMap','.HashIterator'], 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'next$', function () {
-return this.nextNode$().key;
-});
+var n=this.nextNode$();
+if (this.isSimple) {
+return (1 ? n.value[0] :null);
+} else {
+return n.key;
+}});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "ValueIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "ValueIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.HashMap','.HashIterator'], 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'next$', function () {
-return this.nextNode$().value;
-});
+var n=this.nextNode$();
+if (this.isSimple) {
+return (1 ? n.value[1] :null);
+} else {
+return n.value;
+}});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "EntryIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "EntryIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.HashMap','.HashIterator'], 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'next$', function () {
-return this.nextNode$();
-});
+var e=this.nextNode$();
+if (this.isSimple) {
+return this.this$0.getJSEntry$java_util_Map_Entry.apply(this.this$0, [e]);
+} else {
+return e;
+}});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "HashMapSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "HashMapSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.map=null;
-this.current=null;
-this.index=0;
-this.fence=0;
-this.est=0;
-this.expectedModCount=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_util_HashMap$I$I$I$I', function (m, origin, fence, est, expectedModCount) {
-C$.$init$.apply(this);
-this.map=m;
+C$.$fields$=[['Z',['isSimple'],'I',['index','fence','est','expectedModCount'],'O',['map','java.util.HashMap','current','java.util.HashMap.Node','jsMapIterator','java.util.Iterator']]]
+
+Clazz.newMeth(C$, 'c$$java_util_HashMap$I$I$I$I', function (map, origin, fence, est, expectedModCount) {
+;C$.$init$.apply(this);
+this.map=map;
 this.index=origin;
 this.fence=fence;
 this.est=est;
 this.expectedModCount=expectedModCount;
-}, 1);
+this.isSimple=$I$(3).秘isSimple$java_util_Map(map);
+if (this.isSimple) {
+var m=map.秘m;
+
+this.jsMapIterator = m.entries();
+}}, 1);
 
 Clazz.newMeth(C$, 'getFence$', function () {
 var hi;
 if ((hi=this.fence) < 0) {
 var m=this.map;
-this.est=m.size;
+this.est=m.size$();
 this.expectedModCount=m.modCount;
 var tab=m.table;
 hi=this.fence=(tab == null ) ? 0 : tab.length;
@@ -966,22 +1279,194 @@ return this.est;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "KeySpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "KeySpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.HashMap','.HashMapSpliterator'], 'java.util.Spliterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$java_util_HashMap$I$I$I$I'], function (m, origin, fence, est, expectedModCount) {
-C$.superclazz.c$$java_util_HashMap$I$I$I$I.apply(this, [m, origin, fence, est, expectedModCount]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_HashMap$I$I$I$I', function (m, origin, fence, est, expectedModCount) {
+;C$.superclazz.c$$java_util_HashMap$I$I$I$I.apply(this,[m, origin, fence, est, expectedModCount]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'trySplit$', function () {
+if (this.isSimple) return null;
+var hi=this.getFence$();
+var lo=this.index;
+var mid=(lo + hi) >>> 1;
+return (lo >= mid || this.current != null  ) ? null : Clazz.new_(C$.c$$java_util_HashMap$I$I$I$I,[this.map, lo, this.index=mid, this.est>>>=1, this.expectedModCount]);
+});
+
+Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
+if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var m=this.map;
+var i;
+var hi;
+var mc;
+var tab=m.table;
+if ((hi=this.fence) < 0) {
+mc=this.expectedModCount=m.modCount;
+hi=this.fence=(tab == null ) ? 0 : tab.length;
+} else mc=this.expectedModCount;
+var p=null;
+if (this.isSimple) {
+while (true){
+var k=null;
+
+p = this.jsMapIterator.next(); if (p.done) p = null; else k = p.value[0];
+if (p == null ) break;
+action.accept$O(k);
+}
+} else if (tab != null  && tab.length >= hi  && (i=this.index) >= 0  && (i < (this.index=hi) || this.current != null  ) ) {
+p=this.current;
+this.current=null;
+do {
+if (p == null ) p=tab[i++];
+ else {
+action.accept$O(p.key);
+p=p.next_;
+}} while (p != null  || i < hi );
+}if (m.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+});
+
+Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (action) {
+if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var k=null;
+var p=null;
+if (this.isSimple) {
+
+p = this.jsMapIterator.next(); if (p.done) p = null; else k = p.value[0];
+if (p != null ) {
+action.accept$O(k);
+return true;
+}} else {
+var hi;
+var tab=this.map.table;
+if (tab != null  && tab.length >= (hi=this.getFence$())  && this.index >= 0 ) {
+while (this.current != null  || this.index < hi ){
+if (this.current == null ) this.current=tab[this.index++];
+ else {
+k=this.current.key;
+this.current=this.current.next_;
+action.accept$O(k);
+if (this.map.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+return true;
+}}
+}}return false;
+});
+
+Clazz.newMeth(C$, 'characteristics$', function () {
+return (this.fence < 0 || this.est == this.map.size$()  ? 64 : 0) | 1;
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "ValueSpliterator", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+}, ['java.util.HashMap','.HashMapSpliterator'], 'java.util.Spliterator');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$java_util_HashMap$I$I$I$I', function (m, origin, fence, est, expectedModCount) {
+;C$.superclazz.c$$java_util_HashMap$I$I$I$I.apply(this,[m, origin, fence, est, expectedModCount]);C$.$init$.apply(this);
+}, 1);
+
+Clazz.newMeth(C$, 'trySplit$', function () {
+if (this.isSimple) return null;
+var hi=this.getFence$();
+var lo=this.index;
+var mid=(lo + hi) >>> 1;
+return (lo >= mid || this.current != null  ) ? null : Clazz.new_(C$.c$$java_util_HashMap$I$I$I$I,[this.map, lo, this.index=mid, this.est>>>=1, this.expectedModCount]);
+});
+
+Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
+if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var m=this.map;
+var i;
+var hi;
+var mc;
+var tab=m.table;
+if ((hi=this.fence) < 0) {
+mc=this.expectedModCount=m.modCount;
+hi=this.fence=(tab == null ) ? 0 : tab.length;
+} else mc=this.expectedModCount;
+var p=null;
+if (this.isSimple) {
+while (true){
+var v=null;
+
+p = this.jsMapIterator.next(); if (p.done) p = null; else v = p.value[1];
+if (p == null ) break;
+action.accept$O(v);
+}
+} else if (tab != null  && tab.length >= hi  && (i=this.index) >= 0  && (i < (this.index=hi) || this.current != null  ) ) {
+p=this.current;
+this.current=null;
+do {
+if (p == null ) p=tab[i++];
+ else {
+action.accept$O(p.value);
+p=p.next_;
+}} while (p != null  || i < hi );
+}if (m.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+});
+
+Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (action) {
+if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
+var v=null;
+var p=null;
+if (this.isSimple) {
+
+p = this.jsMapIterator.next(); if (p.done) p = null; else v = p.value[1];
+if (p != null ) {
+action.accept$O(v);
+if (this.map.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+return true;
+}} else {
+var hi;
+var tab=this.map.table;
+if (tab != null  && tab.length >= (hi=this.getFence$())  && this.index >= 0 ) {
+while (this.current != null  || this.index < hi ){
+if (this.current == null ) this.current=tab[this.index++];
+ else {
+v=this.current.value;
+this.current=this.current.next_;
+action.accept$O(v);
+if (this.map.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+return true;
+}}
+}}return false;
+});
+
+Clazz.newMeth(C$, 'characteristics$', function () {
+return (this.fence < 0 || this.est == this.map.size$()  ? 64 : 0);
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "EntrySpliterator", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+}, ['java.util.HashMap','.HashMapSpliterator'], 'java.util.Spliterator');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$java_util_HashMap$I$I$I$I', function (m, origin, fence, est, expectedModCount) {
+;C$.superclazz.c$$java_util_HashMap$I$I$I$I.apply(this,[m, origin, fence, est, expectedModCount]);C$.$init$.apply(this);
+}, 1);
+
+Clazz.newMeth(C$, 'trySplit$', function () {
+if (this.isSimple) return null;
 var hi=this.getFence$();
 var lo=this.index;
 var mid=(lo + hi) >>> 1;
@@ -999,167 +1484,45 @@ if ((hi=this.fence) < 0) {
 mc=this.expectedModCount=m.modCount;
 hi=this.fence=(tab == null ) ? 0 : tab.length;
 } else mc=this.expectedModCount;
-if (tab != null  && tab.length >= hi  && (i=this.index) >= 0  && (i < (this.index=hi) || this.current != null  ) ) {
-var p=this.current;
+var p=null;
+if (this.isSimple) {
+while (true){
+
+p = this.jsMapIterator.next(); if (p.done) p = null;
+if (p == null ) break;
+action.accept$O(this.map.getJSEntry$java_util_Map_Entry(p));
+}
+} else if (tab != null  && tab.length >= hi  && (i=this.index) >= 0  && (i < (this.index=hi) || this.current != null  ) ) {
+p=this.current;
 this.current=null;
 do {
 if (p == null ) p=tab[i++];
  else {
-action.accept$(p.key);
+action.accept$O(p);
 p=p.next_;
 }} while (p != null  || i < hi );
-if (m.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-}});
+}if (m.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+});
 
 Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (action) {
 var hi;
 if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var tab=this.map.table;
-if (tab != null  && tab.length >= (hi=this.getFence$())  && this.index >= 0 ) {
-while (this.current != null  || this.index < hi ){
-if (this.current == null ) this.current=tab[this.index++];
- else {
-var k=this.current.key;
-this.current=this.current.next_;
-action.accept$(k);
+var p=null;
+if (this.isSimple) {
+
+p = this.jsMapIterator.next(); if (p.done) p = null;
+if (p != null ) {
+action.accept$O(this.map.getJSEntry$java_util_Map_Entry(p));
 if (this.map.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 return true;
-}}
-}return false;
-});
-
-Clazz.newMeth(C$, 'characteristics$', function () {
-return (this.fence < 0 || this.est == this.map.size  ? 64 : 0) | 1;
-});
-
-Clazz.newMeth(C$);
-})()
-;
-(function(){var C$=Clazz.newClass(P$.HashMap, "ValueSpliterator", function(){
-Clazz.newInstance(this, arguments[0],false,C$);
-}, ['java.util.HashMap','.HashMapSpliterator'], 'java.util.Spliterator');
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['c$$java_util_HashMap$I$I$I$I'], function (m, origin, fence, est, expectedModCount) {
-C$.superclazz.c$$java_util_HashMap$I$I$I$I.apply(this, [m, origin, fence, est, expectedModCount]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'trySplit$', function () {
-var hi=this.getFence$();
-var lo=this.index;
-var mid=(lo + hi) >>> 1;
-return (lo >= mid || this.current != null  ) ? null : Clazz.new_(C$.c$$java_util_HashMap$I$I$I$I,[this.map, lo, this.index=mid, this.est>>>=1, this.expectedModCount]);
-});
-
-Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
-var i;
-var hi;
-var mc;
-if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-var m=this.map;
-var tab=m.table;
-if ((hi=this.fence) < 0) {
-mc=this.expectedModCount=m.modCount;
-hi=this.fence=(tab == null ) ? 0 : tab.length;
-} else mc=this.expectedModCount;
-if (tab != null  && tab.length >= hi  && (i=this.index) >= 0  && (i < (this.index=hi) || this.current != null  ) ) {
-var p=this.current;
-this.current=null;
-do {
-if (p == null ) p=tab[i++];
- else {
-action.accept$(p.value);
-p=p.next_;
-}} while (p != null  || i < hi );
-if (m.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-}});
-
-Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (action) {
-var hi;
-if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-var tab=this.map.table;
-if (tab != null  && tab.length >= (hi=this.getFence$())  && this.index >= 0 ) {
-while (this.current != null  || this.index < hi ){
-if (this.current == null ) this.current=tab[this.index++];
- else {
-var v=this.current.value;
-this.current=this.current.next_;
-action.accept$(v);
-if (this.map.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-return true;
-}}
-}return false;
-});
-
-Clazz.newMeth(C$, 'characteristics$', function () {
-return (this.fence < 0 || this.est == this.map.size  ? 64 : 0);
-});
-
-Clazz.newMeth(C$);
-})()
-;
-(function(){var C$=Clazz.newClass(P$.HashMap, "EntrySpliterator", function(){
-Clazz.newInstance(this, arguments[0],false,C$);
-}, ['java.util.HashMap','.HashMapSpliterator'], 'java.util.Spliterator');
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['c$$java_util_HashMap$I$I$I$I'], function (m, origin, fence, est, expectedModCount) {
-C$.superclazz.c$$java_util_HashMap$I$I$I$I.apply(this, [m, origin, fence, est, expectedModCount]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'trySplit$', function () {
-var hi=this.getFence$();
-var lo=this.index;
-var mid=(lo + hi) >>> 1;
-return (lo >= mid || this.current != null  ) ? null : Clazz.new_(C$.c$$java_util_HashMap$I$I$I$I,[this.map, lo, this.index=mid, this.est>>>=1, this.expectedModCount]);
-});
-
-Clazz.newMeth(C$, ['forEachRemaining$java_util_function_Consumer'], function (action) {
-var i;
-var hi;
-var mc;
-if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-var m=this.map;
-var tab=m.table;
-if ((hi=this.fence) < 0) {
-mc=this.expectedModCount=m.modCount;
-hi=this.fence=(tab == null ) ? 0 : tab.length;
-} else mc=this.expectedModCount;
-if (tab != null  && tab.length >= hi  && (i=this.index) >= 0  && (i < (this.index=hi) || this.current != null  ) ) {
-var p=this.current;
-this.current=null;
-do {
-if (p == null ) p=tab[i++];
- else {
-action.accept$(p);
-p=p.next_;
-}} while (p != null  || i < hi );
-if (m.modCount != mc) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-}});
-
-Clazz.newMeth(C$, ['tryAdvance$java_util_function_Consumer'], function (action) {
-var hi;
-if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-var tab=this.map.table;
-if (tab != null  && tab.length >= (hi=this.getFence$())  && this.index >= 0 ) {
+}} else if (tab != null  && tab.length >= (hi=this.getFence$())  && this.index >= 0 ) {
 while (this.current != null  || this.index < hi ){
 if (this.current == null ) this.current=tab[this.index++];
  else {
 var e=this.current;
 this.current=this.current.next_;
-action.accept$(e);
+action.accept$O(e);
 if (this.map.modCount != this.expectedModCount) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 return true;
 }}
@@ -1167,34 +1530,25 @@ return true;
 });
 
 Clazz.newMeth(C$, 'characteristics$', function () {
-return (this.fence < 0 || this.est == this.map.size  ? 64 : 0) | 1;
+return (this.fence < 0 || this.est == this.map.size$()  ? 64 : 0) | 1;
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.HashMap, "TreeNode", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.HashMap, "TreeNode", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['java.util.LinkedHashMap','.Entry']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.left=null;
-this.right=null;
-this.prev=null;
-this.red=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['c$$I$TK$TV$java_util_HashMap_Node'], function (hash, key, val, next) {
-C$.superclazz.c$$I$TK$TV$java_util_HashMap_Node.apply(this, [hash, key, val, next]);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['red'],'O',['parent','java.util.HashMap.TreeNode','+left','+right','+prev']]]
+
+Clazz.newMeth(C$, 'c$$I$O$O$java_util_HashMap_Node', function (hash, key, val, next) {
+;C$.superclazz.c$$I$O$O$java_util_HashMap_Node.apply(this,[hash, key, val, next]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'root$', function () {
@@ -1204,7 +1558,7 @@ r=p;
 }
 });
 
-Clazz.newMeth(C$, ['moveRootToFront$java_util_HashMap_NodeA$java_util_HashMap_TreeNode'], function (tab, root) {
+Clazz.newMeth(C$, 'moveRootToFront$java_util_HashMap_NodeA$java_util_HashMap_TreeNode', function (tab, root) {
 var n;
 if (root != null  && tab != null   && (n=tab.length) > 0 ) {
 var index=(n - 1) & root.hash;
@@ -1221,7 +1575,7 @@ root.prev=null;
 }Clazz.assert(C$, this, function(){return C$.checkInvariants$java_util_HashMap_TreeNode(root)});
 }}, 1);
 
-Clazz.newMeth(C$, ['find$I$O$Class'], function (h, k, kc) {
+Clazz.newMeth(C$, 'find$I$O$Class', function (h, k, kc) {
 var p=this;
 do {
 var ph;
@@ -1235,14 +1589,14 @@ if ((ph=p.hash) > h) p=pl;
  else if ((pk=p.key) === k  || (k != null  && k.equals$O(pk) ) ) return p;
  else if (pl == null ) p=pr;
  else if (pr == null ) p=pl;
- else if ((kc != null  || (kc=P$.HashMap.comparableClassFor$O(k)) != null  ) && (dir=P$.HashMap.compareComparables$Class$O$O(kc, k, pk)) != 0 ) p=(dir < 0) ? pl : pr;
+ else if ((kc != null  || (kc=$I$(4).comparableClassFor$O(k)) != null  ) && (dir=$I$(4).compareComparables$Class$O$O(kc, k, pk)) != 0 ) p=(dir < 0) ? pl : pr;
  else if ((q=pr.find$I$O$Class(h, k, kc)) != null ) return q;
  else p=pl;
 } while (p != null );
 return null;
 });
 
-Clazz.newMeth(C$, ['getTreeNode$I$O'], function (h, k) {
+Clazz.newMeth(C$, 'getTreeNode$I$O', function (h, k) {
 return ((this.parent != null ) ? this.root$() : this).find$I$O$Class(h, k, null);
 });
 
@@ -1252,7 +1606,7 @@ if (a == null  || b == null   || (d=a.getClass$().getName$().compareTo$S(b.getCl
 return d;
 }, 1);
 
-Clazz.newMeth(C$, ['treeify$java_util_HashMap_NodeA'], function (tab) {
+Clazz.newMeth(C$, 'treeify$java_util_HashMap_NodeA', function (tab) {
 var root=null;
 for (var x=this, next; x != null ; x=next) {
 next=x.next_;
@@ -1271,7 +1625,7 @@ var ph;
 var pk=p.key;
 if ((ph=p.hash) > h) dir=-1;
  else if (ph < h) dir=1;
- else if ((kc == null  && (kc=P$.HashMap.comparableClassFor$O(k)) == null  ) || (dir=P$.HashMap.compareComparables$Class$O$O(kc, k, pk)) == 0 ) dir=C$.tieBreakOrder$O$O(k, pk);
+ else if ((kc == null  && (kc=$I$(4).comparableClassFor$O(k)) == null  ) || (dir=$I$(4).compareComparables$Class$O$O(kc, k, pk)) == 0 ) dir=C$.tieBreakOrder$O$O(k, pk);
 var xp=p;
 if ((p=(dir <= 0) ? p.left : p.right) == null ) {
 x.parent=xp;
@@ -1284,7 +1638,7 @@ break;
 C$.moveRootToFront$java_util_HashMap_NodeA$java_util_HashMap_TreeNode(tab, root);
 });
 
-Clazz.newMeth(C$, ['untreeify$java_util_HashMap'], function (map) {
+Clazz.newMeth(C$, 'untreeify$java_util_HashMap', function (map) {
 var hd=null;
 var tl=null;
 for (var q=this; q != null ; q=q.next_) {
@@ -1296,7 +1650,7 @@ tl=p;
 return hd;
 });
 
-Clazz.newMeth(C$, ['putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$TK$TV'], function (map, tab, h, k, v) {
+Clazz.newMeth(C$, 'putTreeVal$java_util_HashMap$java_util_HashMap_NodeA$I$O$O', function (map, tab, h, k, v) {
 var kc=null;
 var searched=false;
 var root=(this.parent != null ) ? this.root$() : this;
@@ -1307,7 +1661,7 @@ var pk;
 if ((ph=p.hash) > h) dir=-1;
  else if (ph < h) dir=1;
  else if ((pk=p.key) === k  || (k != null  && k.equals$O(pk) ) ) return p;
- else if ((kc == null  && (kc=P$.HashMap.comparableClassFor$O(k)) == null  ) || (dir=P$.HashMap.compareComparables$Class$O$O(kc, k, pk)) == 0 ) {
+ else if ((kc == null  && (kc=$I$(4).comparableClassFor$O(k)) == null  ) || (dir=$I$(4).compareComparables$Class$O$O(kc, k, pk)) == 0 ) {
 if (!searched) {
 var q;
 var ch;
@@ -1317,7 +1671,7 @@ if (((ch=p.left) != null  && (q=ch.find$I$O$Class(h, k, kc)) != null  ) || ((ch=
 }var xp=p;
 if ((p=(dir <= 0) ? p.left : p.right) == null ) {
 var xpn=xp.next_;
-var x=map.newTreeNode$I$TK$TV$java_util_HashMap_Node(h, k, v, xpn);
+var x=map.newTreeNode$I$O$O$java_util_HashMap_Node(h, k, v, xpn);
 if (dir <= 0) xp.left=x;
  else xp.right=x;
 xp.next_=x;
@@ -1328,7 +1682,7 @@ return null;
 }}
 });
 
-Clazz.newMeth(C$, ['removeTreeNode$java_util_HashMap$java_util_HashMap_NodeA$Z'], function (map, tab, movable) {
+Clazz.newMeth(C$, 'removeTreeNode$java_util_HashMap$java_util_HashMap_NodeA$Z', function (map, tab, movable) {
 var n;
 if (tab == null  || (n=tab.length) == 0 ) return;
 var index=(n - 1) & this.hash;
@@ -1395,7 +1749,7 @@ if (p === pp.left ) pp.left=null;
 }}if (movable) C$.moveRootToFront$java_util_HashMap_NodeA$java_util_HashMap_TreeNode(tab, r);
 });
 
-Clazz.newMeth(C$, ['split$java_util_HashMap$java_util_HashMap_NodeA$I$I'], function (map, tab, index, bit) {
+Clazz.newMeth(C$, 'split$java_util_HashMap$java_util_HashMap_NodeA$I$I', function (map, tab, index, bit) {
 var b=this;
 var loHead=null;
 var loTail=null;
@@ -1429,7 +1783,7 @@ tab[index + bit]=hiHead;
 if (loHead != null ) hiHead.treeify$java_util_HashMap_NodeA(tab);
 }}});
 
-Clazz.newMeth(C$, ['rotateLeft$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode'], function (root, p) {
+Clazz.newMeth(C$, 'rotateLeft$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode', function (root, p) {
 var r;
 var pp;
 var rl;
@@ -1443,7 +1797,7 @@ p.parent=r;
 }return root;
 }, 1);
 
-Clazz.newMeth(C$, ['rotateRight$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode'], function (root, p) {
+Clazz.newMeth(C$, 'rotateRight$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode', function (root, p) {
 var l;
 var pp;
 var lr;
@@ -1457,7 +1811,7 @@ p.parent=l;
 }return root;
 }, 1);
 
-Clazz.newMeth(C$, ['balanceInsertion$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode'], function (root, x) {
+Clazz.newMeth(C$, 'balanceInsertion$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode', function (root, x) {
 x.red=true;
 for (var xp, xpp, xppl, xppr; ; ) {
 if ((xp=x.parent) == null ) {
@@ -1497,7 +1851,7 @@ root=C$.rotateLeft$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode(root, x
 }}}}}
 }, 1);
 
-Clazz.newMeth(C$, ['balanceDeletion$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode'], function (root, x) {
+Clazz.newMeth(C$, 'balanceDeletion$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode', function (root, x) {
 for (var xp, xpl, xpr; ; ) {
 if (x == null  || x === root  ) return root;
  else if ((xp=x.parent) == null ) {
@@ -1561,7 +1915,7 @@ root=C$.rotateRight$java_util_HashMap_TreeNode$java_util_HashMap_TreeNode(root, 
 }}}}
 }, 1);
 
-Clazz.newMeth(C$, ['checkInvariants$java_util_HashMap_TreeNode'], function (t) {
+Clazz.newMeth(C$, 'checkInvariants$java_util_HashMap_TreeNode', function (t) {
 var tp=t.parent;
 var tl=t.left;
 var tr=t.right;
@@ -1577,9 +1931,12 @@ if (tl != null  && !C$.checkInvariants$java_util_HashMap_TreeNode(tl) ) return f
 if (tr != null  && !C$.checkInvariants$java_util_HashMap_TreeNode(tr) ) return false;
 return true;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

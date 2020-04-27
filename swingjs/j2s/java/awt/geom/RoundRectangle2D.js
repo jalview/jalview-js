@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.RoundRectIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RoundRectangle2D", function(){
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,['java.awt.geom.Rectangle2D','.Float'],['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.RoundRectIterator']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RoundRectangle2D", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.geom.RectangularShape');
+C$.$classes$=[['Float',9],['Double',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setRoundRect$java_awt_geom_RoundRectangle2D', function (rr) {
@@ -87,7 +87,7 @@ return false;
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return Clazz.new_($I$(3).c$$java_awt_geom_RoundRectangle2D$java_awt_geom_AffineTransform,[this, at]);
+return Clazz.new_($I$(3,1).c$$java_awt_geom_RoundRectangle2D$java_awt_geom_AffineTransform,[this, at]);
 });
 
 Clazz.newMeth(C$, 'hashCode$', function () {
@@ -109,32 +109,23 @@ return ((this.getX$() == rr2d.getX$() ) && (this.getY$() == rr2d.getY$() ) && (t
 }return false;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.RoundRectangle2D, "Float", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RoundRectangle2D, "Float", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.RoundRectangle2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-this.arcwidth=0;
-this.archeight=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['x','y','width','height','arcwidth','archeight']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$F$F$F$F', function (x, y, w, h, arcw, arch) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setRoundRect$F$F$F$F$F$F(x, y, w, h, arcw, arch);
 }, 1);
 
@@ -194,36 +185,27 @@ this.archeight=rr.getArcHeight$();
 });
 
 Clazz.newMeth(C$, 'getBounds2D$', function () {
-return Clazz.new_($I$(1).c$$F$F$F$F,[this.x, this.y, this.width, this.height]);
+return Clazz.new_($I$(1,1).c$$F$F$F$F,[this.x, this.y, this.width, this.height]);
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RoundRectangle2D, "Double", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RoundRectangle2D, "Double", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.RoundRectangle2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-this.arcwidth=0;
-this.archeight=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['x','y','width','height','arcwidth','archeight']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D', function (x, y, w, h, arcw, arch) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setRoundRect$D$D$D$D$D$D(x, y, w, h, arcw, arch);
 }, 1);
 
@@ -274,8 +256,8 @@ this.archeight=rr.getArcHeight$();
 });
 
 Clazz.newMeth(C$, 'getBounds2D$', function () {
-return Clazz.new_($I$(2).c$$D$D$D$D,[this.x, this.y, this.width, this.height]);
+return Clazz.new_($I$(2,1).c$$D$D$D$D,[this.x, this.y, this.width, this.height]);
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

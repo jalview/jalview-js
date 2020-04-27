@@ -1,97 +1,25 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.SwingUtilities',['javax.swing.JComponent','.IntVector'],'javajs.util.Lst','javax.swing.JComponent','javax.swing.event.EventListenerList','java.util.HashSet','javax.swing.KeyStroke','java.awt.Rectangle','javax.swing.RepaintManager','sun.font.FontDesignMetrics','java.awt.Insets','javax.swing.ClientPropertyKey',['javax.swing.JComponent','.ActionStandin'],'java.util.Hashtable','javax.swing.KeyboardManager','javax.swing.InputMap','javax.swing.ComponentInputMap','javax.swing.ActionMap',['java.awt.Component','.BaselineResizeBehavior'],'java.util.Locale',['javax.swing.JComponent','.KeyboardState'],'javax.swing.Popup','javax.swing.ToolTipManager','javax.swing.JToolTip','javax.swing.Autoscroller','javax.swing.ArrayTable','swingjs.JSUtil','javax.swing.AncestorNotifier','javax.swing.event.AncestorListener','java.beans.PropertyChangeListener','java.util.ArrayList','java.awt.JSComponent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JComponent", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.SwingUtilities',['javax.swing.JComponent','.IntVector'],'javajs.util.Lst','javax.swing.JComponent','javax.swing.event.EventListenerList','java.util.HashSet','javax.swing.KeyStroke','java.awt.Rectangle','java.awt.JSComponent','javax.swing.RepaintManager','javax.swing.LegacyGlueFocusTraversalPolicy','sun.font.FontDesignMetrics','java.awt.Insets','javax.swing.ClientPropertyKey',['javax.swing.JComponent','.ActionStandin'],'java.util.Hashtable','javax.swing.KeyboardManager','javax.swing.InputMap','javax.swing.ComponentInputMap','javax.swing.ActionMap',['java.awt.Component','.BaselineResizeBehavior'],'java.util.Locale',['javax.swing.JComponent','.KeyboardState'],'javax.swing.Popup','javax.swing.ToolTipManager','javax.swing.JToolTip','javax.swing.Autoscroller','javax.swing.ArrayTable','swingjs.JSUtil','javax.swing.AncestorNotifier','javax.swing.event.AncestorListener','java.beans.PropertyChangeListener','java.util.ArrayList']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JComponent", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.Container');
-C$.managingFocusForwardTraversalKeys=null;
-C$.managingFocusBackwardTraversalKeys=null;
-C$.DEBUG_GRAPHICS_LOADED=false;
-C$.INPUT_VERIFIER_SOURCE_KEY=null;
-C$._tempRect=null;
-C$.componentObtainingGraphicsFrom=null;
-C$.componentObtainingGraphicsFromLock=null;
-C$.focusController=null;
-C$.JComponent_TRANSFER_HANDLER=null;
+C$.$classes$=[['ActionStandin',16],['IntVector',24],['KeyboardState',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.INPUT_VERIFIER_SOURCE_KEY= Clazz.new_();
-C$._tempRect=Clazz.new_($I$(3));
-C$.componentObtainingGraphicsFromLock= Clazz.new_();
-C$.focusController=((P$.JComponent$1||
-(function(){var C$=Clazz.newClass(P$, "JComponent$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'sun.awt.RequestFocusController', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, ['acceptRequestFocus$java_awt_Component$java_awt_Component$Z$Z$sun_awt_CausedFocusEvent_Cause','acceptRequestFocus$'], function (from, to, temporary, focusedWindowChangeAllowed, cause) {
-if ((to == null ) || !(Clazz.instanceOf(to, "javax.swing.JComponent")) ) {
-return true;
-}if ((from == null ) || !(Clazz.instanceOf(from, "javax.swing.JComponent")) ) {
-return true;
-}var target=to;
-if (!target.getVerifyInputWhenFocusTarget$()) {
-return true;
-}var jFocusOwner=from;
-var iv=jFocusOwner.getInputVerifier$();
-if (iv == null ) {
-return true;
-} else {
-var currentSource=$I$(1).appContextGet$O($I$(4).INPUT_VERIFIER_SOURCE_KEY);
-if (currentSource === jFocusOwner ) {
-return true;
-}$I$(1).appContextPut$O$O($I$(4).INPUT_VERIFIER_SOURCE_KEY, jFocusOwner);
-try {
-return iv.shouldYieldFocus$javax_swing_JComponent(jFocusOwner);
-} finally {
-if (currentSource != null ) {
-$I$(1).appContextPut$O$O($I$(4).INPUT_VERIFIER_SOURCE_KEY, currentSource);
-} else {
-$I$(1).appContextRemove$O($I$(4).INPUT_VERIFIER_SOURCE_KEY);
-}}
-}});
-})()
-), Clazz.new_(P$.JComponent$1.$init$, [this, null]));
-C$.JComponent_TRANSFER_HANDLER="transfer_handler";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._isAlignmentXSet=false;
-this._alignmentX=0;
-this._isAlignmentYSet=false;
-this._alignmentY=0;
-this.listenerList=null;
-this.clientProperties=null;
-this._autoscrolls=false;
-this._border=null;
-this._flags=0;
-this.verifyInputWhenFocusTarget=false;
-this.paintingChild=null;
-this._popupMenu=null;
-this.focusInputMap=null;
-this.ancestorInputMap=null;
-this.windowInputMap=null;
-this.actionMap=null;
-}, 1);
-
-Clazz.newMeth(C$, '$init$', function () {
-this.listenerList=Clazz.new_($I$(5));
+this.listenerList=Clazz.new_($I$(5,1));
 this.verifyInputWhenFocusTarget=true;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'safelyGetGraphics$java_awt_Component', function (c) {
-return C$.safelyGetGraphics$java_awt_Component$java_awt_Component(c, $I$(1).getRoot$java_awt_Component(c));
-}, 1);
+C$.$fields$=[['Z',['秘isAlignmentXSet','秘isAlignmentYSet','autoscrolls','verifyInputWhenFocusTarget'],'F',['秘alignmentX','秘alignmentY'],'I',['flags'],'O',['listenerList','javax.swing.event.EventListenerList','clientProperties','javax.swing.ArrayTable','paintingChild','java.awt.Component','秘popupMenu','javax.swing.JPopupMenu','focusInputMap','javax.swing.InputMap','+ancestorInputMap','windowInputMap','javax.swing.ComponentInputMap','actionMap','javax.swing.ActionMap']]
+,['Z',['DEBUG_GRAPHICS_LOADED'],'O',['managingFocusForwardTraversalKeys','java.util.Set','+managingFocusBackwardTraversalKeys','INPUT_VERIFIER_SOURCE_KEY','java.lang.Object','_tempRect','javajs.util.Lst','componentObtainingGraphicsFrom','java.awt.Component','focusController','sun.awt.RequestFocusController','JComponent_TRANSFER_HANDLER','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'safelyGetGraphics$java_awt_Component$java_awt_Component', function (c, root) {
-{
 C$.componentObtainingGraphicsFrom=root;
 var g=c.getGraphics$();
 C$.componentObtainingGraphicsFrom=null;
 return g;
-}}, 1);
+}, 1);
 
 Clazz.newMeth(C$, 'getGraphicsInvoked$java_awt_Component', function (root) {
 if (!C$.isComponentObtainingGraphicsFrom$java_awt_Component(root)) {
@@ -101,23 +29,22 @@ rootPane.disableTrueDoubleBuffering$();
 }}}, 1);
 
 Clazz.newMeth(C$, 'isComponentObtainingGraphicsFrom$java_awt_Component', function (c) {
-{
-return (C$.componentObtainingGraphicsFrom === c );
-}}, 1);
+return (c == null  && C$.componentObtainingGraphicsFrom != null   || C$.componentObtainingGraphicsFrom === c  );
+}, 1);
 
 Clazz.newMeth(C$, 'getManagingFocusForwardTraversalKeys$', function () {
 {
 if (C$.managingFocusForwardTraversalKeys == null ) {
-C$.managingFocusForwardTraversalKeys=Clazz.new_($I$(6).c$$I,[1]);
-C$.managingFocusForwardTraversalKeys.add$TE($I$(7).getKeyStroke$I$I(9, 2));
+C$.managingFocusForwardTraversalKeys=Clazz.new_($I$(6,1).c$$I,[1]);
+C$.managingFocusForwardTraversalKeys.add$O($I$(7).getKeyStroke$I$I(9, 2));
 }}return C$.managingFocusForwardTraversalKeys;
 }, 1);
 
 Clazz.newMeth(C$, 'getManagingFocusBackwardTraversalKeys$', function () {
 {
 if (C$.managingFocusBackwardTraversalKeys == null ) {
-C$.managingFocusBackwardTraversalKeys=Clazz.new_($I$(6).c$$I,[1]);
-C$.managingFocusBackwardTraversalKeys.add$TE($I$(7).getKeyStroke$I$I(9, 3));
+C$.managingFocusBackwardTraversalKeys=Clazz.new_($I$(6,1).c$$I,[1]);
+C$.managingFocusBackwardTraversalKeys.add$O($I$(7).getKeyStroke$I$I(9, 3));
 }}return C$.managingFocusBackwardTraversalKeys;
 }, 1);
 
@@ -128,18 +55,18 @@ var size=C$._tempRect.size$();
 if (size > 0) {
 rect=C$._tempRect.removeItemAt$I(size - 1);
 } else {
-rect=Clazz.new_($I$(8).c$$I$I$I$I,[0, 0, 0, 0]);
+rect=Clazz.new_($I$(8,1).c$$I$I$I$I,[0, 0, 0, 0]);
 }return rect;
 }}, 1);
 
 Clazz.newMeth(C$, 'recycleRectangle$java_awt_Rectangle', function (rect) {
 {
-C$._tempRect.addLast$TV(rect);
+C$._tempRect.addLast$O(rect);
 }}, 1);
 
 Clazz.newMeth(C$, 'setInheritsPopupMenu$Z', function (value) {
 var oldValue=p$1.getFlag$I.apply(this, [23]);
-p$1.setFlag$I$Z.apply(this, [23, value]);
+this.秘setFlag$I$Z(23, value);
 this.firePropertyChange$S$Z$Z("inheritsPopupMenu", oldValue, value);
 });
 
@@ -150,15 +77,15 @@ return p$1.getFlag$I.apply(this, [23]);
 Clazz.newMeth(C$, 'setComponentPopupMenu$javax_swing_JPopupMenu', function (popup) {
 if (popup != null ) {
 this.enableEvents$J(16);
-}var oldPopup=this._popupMenu;
-this._popupMenu=popup;
+}var oldPopup=this.秘popupMenu;
+this.秘popupMenu=popup;
 this.firePropertyChange$S$O$O("componentPopupMenu", oldPopup, popup);
 });
 
 Clazz.newMeth(C$, 'getComponentPopupMenu$', function () {
 if (!this.getInheritsPopupMenu$()) {
-return this._popupMenu;
-}if (this._popupMenu == null ) {
+return this.秘popupMenu;
+}if (this.秘popupMenu == null ) {
 var parent=this.getParent$();
 while (parent != null ){
 if (Clazz.instanceOf(parent, "javax.swing.JComponent")) {
@@ -168,14 +95,15 @@ break;
 }parent=parent.getParent$();
 }
 return null;
-}return this._popupMenu;
+}return this.秘popupMenu;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.秘paintClass=this.秘updateClass=C$ ||null;
 this.enableEvents$J(8);
-C$.superclazz.prototype.setLocale$java_util_Locale.apply(this, [C$.getDefaultLocale$()]);
+if (this.isManagingFocus$()) {
+}C$.superclazz.prototype.setLocale$java_util_Locale.apply(this, [C$.getDefaultLocale$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'getComponentGraphics$java_awt_Graphics', function (g) {
@@ -186,13 +114,10 @@ return componentGraphics;
 });
 
 Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
-if (this.ui != null ) {
-var scratchGraphics=(g == null ) ? null : g.create$();
+if (this.ui != null  && g != null  ) {
+var scratchGraphics=g.create$();
 try {
-this._isBackgroundPainted=false;
 this.ui.update$java_awt_Graphics$javax_swing_JComponent(scratchGraphics, this);
-var jsg=this.getJSGraphic2D$java_awt_Graphics(scratchGraphics);
-this._isBackgroundPainted=(jsg != null  && jsg.isBackgroundPainted$() );
 } finally {
 scratchGraphics.dispose$();
 }
@@ -216,20 +141,22 @@ var jc=this.getComponent$I(i);
 if (jc != null  && jc.isVisible$() ) {
 jc.getBounds$java_awt_Rectangle(tmpRect);
 var isContentPane=jc.getRootPane$().getContentPane$() === jc ;
-var vr=(Clazz.instanceOf(jc, "javax.swing.JTable") ? jc.getVisibleRect$() : tmpRect);
+var vr=(tmpRect);
 var jsg=g.create$I$I$I$I(tmpRect.x, (isContentPane ? 0 : tmpRect.y), vr.width, vr.height);
 jsg.setColor$java_awt_Color(jc.getForeground$());
 jsg.setFont$java_awt_Font(jc.getFont$());
 var shouldSetFlagBack=false;
 try {
-jc.checkBackgroundPainted$swingjs_JSGraphics2D$Z(jsg, true);
-jc.paint$java_awt_Graphics(jsg);
-jc.checkBackgroundPainted$swingjs_JSGraphics2D$Z(this.getJSGraphic2D$java_awt_Graphics(jsg), false);
+jc.秘checkBackgroundPainted$swingjs_JSGraphics2D$Z(jsg, true);
+$I$(9).秘setIsRepaint$Z(false);
+jc.秘paint$java_awt_Graphics(jsg);
+$I$(9).秘setIsRepaint$Z(true);
+jc.秘checkBackgroundPainted$swingjs_JSGraphics2D$Z(this.秘getJSGraphic2D$java_awt_Graphics(jsg), false);
 } finally {
 jsg.dispose$();
 if (shouldSetFlagBack) {
-p$1.setFlag$I$Z.apply((jc), [1, false]);
-p$1.setFlag$I$Z.apply((jc), [2, false]);
+(jc).秘setFlag$I$Z(1, false);
+(jc).秘setFlag$I$Z(2, false);
 }}
 }}
 C$.recycleRectangle$java_awt_Rectangle(tmpRect2);
@@ -270,23 +197,23 @@ this.printChildren$java_awt_Graphics(cg);
 }} finally {
 cg.dispose$();
 if (shouldClearPaintFlags) {
-p$1.setFlag$I$Z.apply(this, [1, false]);
-p$1.setFlag$I$Z.apply(this, [2, false]);
-p$1.setFlag$I$Z.apply(this, [11, false]);
-p$1.setFlag$I$Z.apply(this, [12, false]);
+this.秘setFlag$I$Z(1, false);
+this.秘setFlag$I$Z(2, false);
+this.秘setFlag$I$Z(11, false);
+this.秘setFlag$I$Z(12, false);
 }}
 });
 
 Clazz.newMeth(C$, 'paintForceDoubleBuffered$java_awt_Graphics', function (g) {
-var rm=$I$(9).currentManager$javax_swing_JComponent(this);
+var rm=$I$(10).currentManager$javax_swing_JComponent(this);
 var clip=g.getClipBounds$();
 rm.beginPaint$();
-p$1.setFlag$I$Z.apply(this, [13, true]);
+this.秘setFlag$I$Z(13, true);
 try {
 rm.paint$javax_swing_JComponent$javax_swing_JComponent$java_awt_Graphics$I$I$I$I(this, this, g, clip.x, clip.y, clip.width, clip.height);
 } finally {
 rm.endPaint$();
-p$1.setFlag$I$Z.apply(this, [13, false]);
+this.秘setFlag$I$Z(13, false);
 }
 });
 
@@ -306,30 +233,30 @@ var parent;
 for (parent=this.getParent$(); parent != null ; parent=parent.getParent$()) {
 if (Clazz.instanceOf(parent, "javax.swing.JComponent")) {
 jparent=parent;
-if (p$1.getFlag$I.apply(jparent, [1])) p$1.setFlag$I$Z.apply(this, [1, true]);
-if (p$1.getFlag$I.apply(jparent, [2])) p$1.setFlag$I$Z.apply(this, [2, true]);
-if (p$1.getFlag$I.apply(jparent, [11])) p$1.setFlag$I$Z.apply(this, [11, true]);
-if (p$1.getFlag$I.apply(jparent, [12])) p$1.setFlag$I$Z.apply(this, [12, true]);
+if (p$1.getFlag$I.apply(jparent, [1])) this.秘setFlag$I$Z(1, true);
+if (p$1.getFlag$I.apply(jparent, [2])) this.秘setFlag$I$Z(2, true);
+if (p$1.getFlag$I.apply(jparent, [11])) this.秘setFlag$I$Z(11, true);
+if (p$1.getFlag$I.apply(jparent, [12])) this.秘setFlag$I$Z(12, true);
 break;
 }}
 }, p$1);
 
 Clazz.newMeth(C$, 'printAll$java_awt_Graphics', function (g) {
-p$1.setFlag$I$Z.apply(this, [12, true]);
+this.秘setFlag$I$Z(12, true);
 try {
 this.print$java_awt_Graphics(g);
 } finally {
-p$1.setFlag$I$Z.apply(this, [12, false]);
+this.秘setFlag$I$Z(12, false);
 }
 });
 
 Clazz.newMeth(C$, 'print$java_awt_Graphics', function (g) {
-p$1.setFlag$I$Z.apply(this, [11, true]);
+this.秘setFlag$I$Z(11, true);
 this.firePropertyChange$S$Z$Z("paintingForPrint", false, true);
 try {
 this.paint$java_awt_Graphics(g);
 } finally {
-p$1.setFlag$I$Z.apply(this, [11, false]);
+this.秘setFlag$I$Z(11, false);
 this.firePropertyChange$S$Z$Z("paintingForPrint", true, false);
 }
 });
@@ -365,7 +292,13 @@ p$1.registerNextFocusableComponent$java_awt_Component.apply(this, [this.getNextF
 Clazz.newMeth(C$, 'registerNextFocusableComponent$java_awt_Component', function (nextFocusableComponent) {
 if (nextFocusableComponent == null ) {
 return;
-}}, p$1);
+}var nearestRoot=(this.isFocusCycleRoot$()) ? this : this.getFocusCycleRootAncestor$();
+var policy=nearestRoot.getFocusTraversalPolicy$();
+if (!(Clazz.instanceOf(policy, "javax.swing.LegacyGlueFocusTraversalPolicy"))) {
+policy=Clazz.new_($I$(11,1).c$$java_awt_FocusTraversalPolicy,[policy]);
+nearestRoot.setFocusTraversalPolicy$java_awt_FocusTraversalPolicy(policy);
+}(policy).setNextFocusableComponent$java_awt_Component$java_awt_Component(this, nextFocusableComponent);
+}, p$1);
 
 Clazz.newMeth(C$, 'deregisterNextFocusableComponent', function () {
 var nextFocusableComponent=this.getNextFocusableComponent$();
@@ -390,7 +323,7 @@ return this.getClientProperty$O("nextFocus");
 });
 
 Clazz.newMeth(C$, 'setRequestFocusEnabled$Z', function (requestFocusEnabled) {
-p$1.setFlag$I$Z.apply(this, [22, !requestFocusEnabled]);
+this.秘setFlag$I$Z(22, !requestFocusEnabled);
 });
 
 Clazz.newMeth(C$, 'isRequestFocusEnabled$', function () {
@@ -429,7 +362,7 @@ return this.verifyInputWhenFocusTarget;
 });
 
 Clazz.newMeth(C$, 'getFontMetrics$java_awt_Font', function (font) {
-return $I$(10).getMetrics$java_awt_Font(font);
+return $I$(12).getMetrics$java_awt_Font(font);
 });
 
 Clazz.newMeth(C$, 'setPreferredSize$java_awt_Dimension', function (preferredSize) {
@@ -476,38 +409,38 @@ return (this.ui != null ) ? this.ui.contains$javax_swing_JComponent$I$I(this, x,
 });
 
 Clazz.newMeth(C$, 'setBorder$javax_swing_border_Border', function (border) {
-var oldBorder=this._border;
-this._border=border;
+var oldBorder=this.秘border;
+this.秘border=border;
 this.firePropertyChange$S$O$O("border", oldBorder, border);
 if (border !== oldBorder ) {
 if (border == null  || oldBorder == null   || !(border.getBorderInsets$java_awt_Component(this).equals$O(oldBorder.getBorderInsets$java_awt_Component(this))) ) {
 this.revalidate$();
-}this.repaint$();
+}this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getBorder$', function () {
-return this._border;
+return this.秘border;
 });
 
 Clazz.newMeth(C$, 'getInsets$', function () {
-if (this._border != null ) {
-return this._border.getBorderInsets$java_awt_Component(this);
+if (this.秘border != null ) {
+return this.秘border.getBorderInsets$java_awt_Component(this);
 }return C$.superclazz.prototype.getInsets$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'getInsets$java_awt_Insets', function (insets) {
 var $in=null;
 if (insets == null ) {
-insets=Clazz.new_($I$(11).c$$I$I$I$I,[0, 0, 0, 0]);
+insets=Clazz.new_($I$(13,1).c$$I$I$I$I,[0, 0, 0, 0]);
 }if (this.isAWT || this.isAWTContainer ||false) {
 $in=this.getInsets$();
 } else {
-if (this._border == null ) {
+if (this.秘border == null ) {
 insets.left=insets.top=insets.right=insets.bottom=0;
 } else {
-if (Clazz.instanceOf(this._border, "javax.swing.border.AbstractBorder")) {
-$in=(this._border).getBorderInsets$java_awt_Component$java_awt_Insets(this, insets);
-}$in=this._border.getBorderInsets$java_awt_Component(this);
+if (Clazz.instanceOf(this.秘border, "javax.swing.border.AbstractBorder")) {
+$in=(this.秘border).getBorderInsets$java_awt_Component$java_awt_Insets(this, insets);
+}$in=this.秘border.getBorderInsets$java_awt_Component(this);
 }}if ($in != null ) {
 insets.left=$in.left;
 insets.right=$in.right;
@@ -517,35 +450,35 @@ insets.bottom=$in.bottom;
 });
 
 Clazz.newMeth(C$, 'getAlignmentY$', function () {
-if (this._isAlignmentYSet) {
-return this._alignmentY;
+if (this.秘isAlignmentYSet) {
+return this.秘alignmentY;
 }return C$.superclazz.prototype.getAlignmentY$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setAlignmentY$F', function (alignmentY) {
-this._alignmentY=alignmentY > 1.0  ? 1.0 : alignmentY < 0.0  ? 0.0 : alignmentY;
-this._isAlignmentYSet=true;
+this.秘alignmentY=alignmentY > 1.0  ? 1.0 : alignmentY < 0.0  ? 0.0 : alignmentY;
+this.秘isAlignmentYSet=true;
 });
 
 Clazz.newMeth(C$, 'getAlignmentX$', function () {
-if (this._isAlignmentXSet) {
-return this._alignmentX;
+if (this.秘isAlignmentXSet) {
+return this.秘alignmentX;
 }return C$.superclazz.prototype.getAlignmentX$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setAlignmentX$F', function (alignmentX) {
-this._alignmentX=alignmentX > 1.0  ? 1.0 : alignmentX < 0.0  ? 0.0 : alignmentX;
-this._isAlignmentXSet=true;
+this.秘alignmentX=alignmentX > 1.0  ? 1.0 : alignmentX < 0.0  ? 0.0 : alignmentX;
+this.秘isAlignmentXSet=true;
 });
 
 Clazz.newMeth(C$, 'setInputVerifier$javax_swing_InputVerifier', function (inputVerifier) {
-var oldInputVerifier=this.getClientProperty$O($I$(12).JComponent_INPUT_VERIFIER);
-this.putClientProperty$O$O($I$(12).JComponent_INPUT_VERIFIER, inputVerifier);
+var oldInputVerifier=this.getClientProperty$O($I$(14).JComponent_INPUT_VERIFIER);
+this.putClientProperty$O$O($I$(14).JComponent_INPUT_VERIFIER, inputVerifier);
 this.firePropertyChange$S$O$O("inputVerifier", oldInputVerifier, inputVerifier);
 });
 
 Clazz.newMeth(C$, 'getInputVerifier$', function () {
-return this.getClientProperty$O($I$(12).JComponent_INPUT_VERIFIER);
+return this.getClientProperty$O($I$(14).JComponent_INPUT_VERIFIER);
 });
 
 Clazz.newMeth(C$, 'getGraphics$', function () {
@@ -556,7 +489,7 @@ Clazz.newMeth(C$, 'registerKeyboardAction$java_awt_event_ActionListener$S$javax_
 var inputMap=this.getInputMap$I$Z(aCondition, true);
 if (inputMap != null ) {
 var actionMap=this.getActionMap$Z(true);
-var action=Clazz.new_($I$(13).c$$java_awt_event_ActionListener$S, [this, null, anAction, aCommand]);
+var action=Clazz.new_($I$(15,1).c$$java_awt_event_ActionListener$S,[this, null, anAction, aCommand]);
 inputMap.put$javax_swing_KeyStroke$O(aKeyStroke, action);
 if (actionMap != null ) {
 actionMap.put$O$javax_swing_Action(action, action);
@@ -567,7 +500,7 @@ p$1.registerWithKeyboardManager$Z.apply(this, [false]);
 });
 
 Clazz.newMeth(C$, 'registerWithKeyboardManager$Z', function (onlyIfNew) {
-if (java.awt.JSComponent.getTopInvokableAncestor$java_awt_Component$Z(this, true) == null ) return;
+if ($I$(9).秘getTopInvokableAncestor$java_awt_Component$Z(this, true) == null ) return;
 var inputMap=this.getInputMap$I$Z(2, false);
 var strokes;
 var registered=this.getClientProperty$O("_WhenInFocusedWindow");
@@ -591,10 +524,10 @@ p$1.unregisterWithKeyboardManager$javax_swing_KeyStroke.apply(this, [ks]);
 registered.clear$();
 }if (strokes != null  && strokes.length > 0 ) {
 if (registered == null ) {
-registered=Clazz.new_($I$(14).c$$I,[strokes.length]);
+registered=Clazz.new_($I$(16,1).c$$I,[strokes.length]);
 this.putClientProperty$O$O("_WhenInFocusedWindow", registered);
 }for (var counter=strokes.length - 1; counter >= 0; counter--) {
-registered.put$TK$TV(strokes[counter], strokes[counter]);
+registered.put$O$O(strokes[counter], strokes[counter]);
 }
 } else {
 this.putClientProperty$O$O("_WhenInFocusedWindow", null);
@@ -621,11 +554,11 @@ p$1.registerWithKeyboardManager$Z.apply(this, [false]);
 }});
 
 Clazz.newMeth(C$, 'registerWithKeyboardManager$javax_swing_KeyStroke', function (aKeyStroke) {
-$I$(15).getCurrentManager$().registerKeyStroke$javax_swing_KeyStroke$javax_swing_JComponent(aKeyStroke, this);
+$I$(17).getCurrentManager$().registerKeyStroke$javax_swing_KeyStroke$javax_swing_JComponent(aKeyStroke, this);
 }, p$1);
 
 Clazz.newMeth(C$, 'unregisterWithKeyboardManager$javax_swing_KeyStroke', function (aKeyStroke) {
-$I$(15).getCurrentManager$().unregisterKeyStroke$javax_swing_KeyStroke$javax_swing_JComponent(aKeyStroke, this);
+$I$(17).getCurrentManager$().unregisterKeyStroke$javax_swing_KeyStroke$javax_swing_JComponent(aKeyStroke, this);
 }, p$1);
 
 Clazz.newMeth(C$, 'registerKeyboardAction$java_awt_event_ActionListener$javax_swing_KeyStroke$I', function (anAction, aKeyStroke, aCondition) {
@@ -704,16 +637,16 @@ case 2:
 if (map != null  && !(Clazz.instanceOf(map, "javax.swing.ComponentInputMap")) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["WHEN_IN_FOCUSED_WINDOW InputMaps must be of type ComponentInputMap"]);
 }this.windowInputMap=map;
-p$1.setFlag$I$Z.apply(this, [7, true]);
+this.秘setFlag$I$Z(7, true);
 p$1.registerWithKeyboardManager$Z.apply(this, [false]);
 break;
 case 1:
 this.ancestorInputMap=map;
-p$1.setFlag$I$Z.apply(this, [6, true]);
+this.秘setFlag$I$Z(6, true);
 break;
 case 0:
 this.focusInputMap=map;
-p$1.setFlag$I$Z.apply(this, [5, true]);
+this.秘setFlag$I$Z(5, true);
 break;
 default:
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["condition must be one of JComponent.WHEN_IN_FOCUSED_WINDOW, JComponent.WHEN_FOCUSED or JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT"]);
@@ -730,7 +663,7 @@ return this.getInputMap$I$Z(0, true);
 
 Clazz.newMeth(C$, 'setActionMap$javax_swing_ActionMap', function (am) {
 this.actionMap=am;
-p$1.setFlag$I$Z.apply(this, [8, true]);
+this.秘setFlag$I$Z(8, true);
 });
 
 Clazz.newMeth(C$, 'getActionMap$', function () {
@@ -743,16 +676,16 @@ case 0:
 if (p$1.getFlag$I.apply(this, [5])) {
 return this.focusInputMap;
 }if (create) {
-var km=Clazz.new_($I$(16));
+var km=Clazz.new_($I$(18,1));
 this.setInputMap$I$javax_swing_InputMap(condition, km);
-this.jsInputMapSet$();
+this.秘jsInputMapSet$();
 return km;
 }break;
 case 1:
 if (p$1.getFlag$I.apply(this, [6])) {
 return this.ancestorInputMap;
 }if (create) {
-var km=Clazz.new_($I$(16));
+var km=Clazz.new_($I$(18,1));
 this.setInputMap$I$javax_swing_InputMap(condition, km);
 return km;
 }break;
@@ -760,7 +693,7 @@ case 2:
 if (p$1.getFlag$I.apply(this, [7])) {
 return this.windowInputMap;
 }if (create) {
-var km=Clazz.new_($I$(17).c$$javax_swing_JComponent,[this]);
+var km=Clazz.new_($I$(19,1).c$$javax_swing_JComponent,[this]);
 this.setInputMap$I$javax_swing_InputMap(condition, km);
 return km;
 }break;
@@ -774,7 +707,7 @@ Clazz.newMeth(C$, 'getActionMap$Z', function (create) {
 if (p$1.getFlag$I.apply(this, [8])) {
 return this.actionMap;
 }if (create) {
-var am=Clazz.new_($I$(18));
+var am=Clazz.new_($I$(20,1));
 this.setActionMap$javax_swing_ActionMap(am);
 return am;
 }return null;
@@ -790,7 +723,7 @@ return this.ui.getBaseline$javax_swing_JComponent$I$I(this, width, height);
 Clazz.newMeth(C$, 'getBaselineResizeBehavior$', function () {
 if (this.ui != null ) {
 return this.ui.getBaselineResizeBehavior$javax_swing_JComponent(this);
-}return $I$(19).OTHER;
+}return $I$(21).OTHER;
 });
 
 Clazz.newMeth(C$, 'requestDefaultFocus$', function () {
@@ -815,21 +748,21 @@ var oldEnabled=this.isEnabled$();
 C$.superclazz.prototype.setEnabled$Z.apply(this, [enabled]);
 this.firePropertyChange$S$Z$Z("enabled", oldEnabled, enabled);
 if (enabled != oldEnabled ) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setForeground$java_awt_Color', function (fg) {
 var oldFg=this.getForeground$();
 C$.superclazz.prototype.setForeground$java_awt_Color.apply(this, [fg]);
 if ((oldFg != null ) ? !oldFg.equals$O(fg) : ((fg != null ) && !fg.equals$O(oldFg) )) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setBackground$java_awt_Color', function (bg) {
 var oldBg=this.getBackground$();
 C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [bg]);
 if ((oldBg != null ) ? !oldBg.equals$O(bg) : ((bg != null ) && !bg.equals$O(oldBg) )) {
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'setFont$java_awt_Font', function (font) {
@@ -837,13 +770,13 @@ var oldFont=this.getFont$();
 C$.superclazz.prototype.setFont$java_awt_Font.apply(this, [font]);
 if (font !== oldFont ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'getDefaultLocale$', function () {
 var l=$I$(1).appContextGet$O("JComponent.defaultLocale");
 if (l == null ) {
-l=$I$(20).getDefault$();
+l=$I$(22).getDefault$();
 C$.setDefaultLocale$java_util_Locale(l);
 }return l;
 }, 1);
@@ -860,10 +793,8 @@ var shouldProcessKey;
 C$.superclazz.prototype.processKeyEvent$java_awt_event_KeyEvent.apply(this, [e]);
 if (!e.isConsumed$()) {
 this.processComponentKeyEvent$java_awt_event_KeyEvent(e);
-}shouldProcessKey=$I$(21).shouldProcess$java_awt_event_KeyEvent(e);
-if (e.isConsumed$()) {
-return;
-}if (shouldProcessKey && this.processKeyBindings$java_awt_event_KeyEvent$Z(e, e.getID$() == 401) ) {
+}shouldProcessKey=$I$(23).shouldProcess$java_awt_event_KeyEvent(e);
+if (!e.isConsumed$() && (shouldProcessKey && this.processKeyBindings$java_awt_event_KeyEvent$Z(e, e.getID$() == 401) ) ) {
 e.consume$();
 }});
 
@@ -874,7 +805,10 @@ if (map != null  && am != null   && this.isEnabled$() ) {
 var binding=map.get$javax_swing_KeyStroke(ks);
 var action=(binding == null ) ? null : am.get$O(binding);
 if (action != null ) {
-return $I$(1).notifyAction$javax_swing_Action$javax_swing_KeyStroke$java_awt_event_KeyEvent$O$I(action, ks, e, this, e.getModifiers$());
+this.秘keyAction=action;
+var ret=$I$(1,"notifyAction$javax_swing_Action$javax_swing_KeyStroke$java_awt_event_KeyEvent$O$I",[action, ks, e, this, e.getModifiers$()]);
+this.秘keyAction=null;
+return ret;
 }}return false;
 });
 
@@ -883,9 +817,9 @@ if (!$I$(1).isValidKeyEventForKeyBindings$java_awt_event_KeyEvent(e)) {
 return false;
 }var ks;
 if (e.getID$() == 400) {
-ks=$I$(7).getKeyStroke$C(e.getKeyChar$());
+ks=$I$(7,"getKeyStroke$C",[e.getKeyChar$()]);
 } else {
-ks=$I$(7).getKeyStroke$I$I$Z(e.getKeyCode$(), e.getModifiers$(), (pressed ? false : true));
+ks=$I$(7,"getKeyStroke$I$I$Z",[e.getKeyCode$(), e.getModifiers$(), (pressed ? false : true)]);
 }if (this.processKeyBinding$javax_swing_KeyStroke$java_awt_event_KeyEvent$I$Z(ks, e, 0, pressed)) return true;
 var parent=this;
 while (parent != null  && !parent.isWindowOrJSApplet$() ){
@@ -900,9 +834,9 @@ return C$.processKeyBindingsForAllComponents$java_awt_event_KeyEvent$java_awt_Co
 
 Clazz.newMeth(C$, 'processKeyBindingsForAllComponents$java_awt_event_KeyEvent$java_awt_Container$Z', function (e, container, pressed) {
 while (true){
-if ($I$(15).getCurrentManager$().fireKeyboardAction$java_awt_event_KeyEvent$Z$java_awt_Container(e, pressed, container)) {
+if ($I$(17).getCurrentManager$().fireKeyboardAction$java_awt_event_KeyEvent$Z$java_awt_Container(e, pressed, container)) {
 return true;
-}if ($I$(22).isHeavyWeight$java_awt_Container(container)) {
+}if ($I$(24).isHeavyWeight$java_awt_Container(container)) {
 container=(container).getOwner$();
 } else {
 return false;
@@ -912,7 +846,7 @@ return false;
 Clazz.newMeth(C$, 'setToolTipText$S', function (text) {
 var oldText=this.getToolTipText$();
 this.putClientProperty$O$O("ToolTipText", text);
-var toolTipManager=$I$(23).sharedInstance$();
+var toolTipManager=$I$(25).sharedInstance$();
 if (text != null ) {
 if (oldText == null ) {
 toolTipManager.registerComponent$javax_swing_JComponent(this);
@@ -937,7 +871,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'createToolTip$', function () {
-var tip=Clazz.new_($I$(24));
+var tip=Clazz.new_($I$(26,1));
 tip.setComponent$javax_swing_JComponent(this);
 return tip;
 });
@@ -960,31 +894,31 @@ aRect.y-=dy;
 }});
 
 Clazz.newMeth(C$, 'setAutoscrolls$Z', function (autoscrolls) {
-p$1.setFlag$I$Z.apply(this, [25, true]);
-if (this._autoscrolls != autoscrolls ) {
-this._autoscrolls=autoscrolls;
+this.秘setFlag$I$Z(25, true);
+if (this.autoscrolls != autoscrolls ) {
+this.autoscrolls=autoscrolls;
 if (autoscrolls) {
 this.enableEvents$J(16);
 this.enableEvents$J(32);
 } else {
-$I$(25).stop$javax_swing_JComponent(this);
+$I$(27).stop$javax_swing_JComponent(this);
 }}});
 
 Clazz.newMeth(C$, 'getAutoscrolls$', function () {
-return this._autoscrolls;
+return this.autoscrolls;
 });
 
 Clazz.newMeth(C$, 'processMouseEvent$java_awt_event_MouseEvent', function (e) {
-if (this._autoscrolls && e.getID$() == 502 ) {
-$I$(25).stop$javax_swing_JComponent(this);
+if (this.autoscrolls && e.getID$() == 502 ) {
+$I$(27).stop$javax_swing_JComponent(this);
 }C$.superclazz.prototype.processMouseEvent$java_awt_event_MouseEvent.apply(this, [e]);
 });
 
 Clazz.newMeth(C$, 'processMouseMotionEvent$java_awt_event_MouseEvent', function (e) {
 var dispatch=true;
-if (this._autoscrolls && e.getID$() == 506 ) {
-dispatch=!$I$(25).isRunning$javax_swing_JComponent(this);
-$I$(25).processMouseDragged$java_awt_event_MouseEvent(e);
+if (this.autoscrolls && e.getID$() == 506 ) {
+dispatch=!$I$(27).isRunning$javax_swing_JComponent(this);
+$I$(27).processMouseDragged$java_awt_event_MouseEvent(e);
 }if (dispatch) {
 C$.superclazz.prototype.processMouseMotionEvent$java_awt_event_MouseEvent.apply(this, [e]);
 }});
@@ -994,7 +928,7 @@ C$.superclazz.prototype.processMouseMotionEvent$java_awt_event_MouseEvent.apply(
 });
 
 Clazz.newMeth(C$, 'setCreatedDoubleBuffer$Z', function (newValue) {
-p$1.setFlag$I$Z.apply(this, [9, newValue]);
+this.秘setFlag$I$Z(9, newValue);
 });
 
 Clazz.newMeth(C$, 'getCreatedDoubleBuffer$', function () {
@@ -1011,7 +945,7 @@ return null;
 
 Clazz.newMeth(C$, 'getClientProperties', function () {
 if (this.clientProperties == null ) {
-this.clientProperties=Clazz.new_($I$(26));
+this.clientProperties=Clazz.new_($I$(28,1));
 }return this.clientProperties;
 }, p$1);
 
@@ -1045,7 +979,7 @@ p$1.uninstallUIAndProperties.apply(this, []);
 this.ui=newUI;
 if (oldUI != null ) {
 this.revalidate$();
-this.repaint$();
+this.秘repaint$();
 }});
 
 Clazz.newMeth(C$, 'uninstallUIAndProperties', function () {
@@ -1054,22 +988,30 @@ if (this.ui != null ) {
 }}, p$1);
 
 Clazz.newMeth(C$, 'setUIProperty$S$O', function (propertyName, value) {
-if (propertyName == "opaque") {
+if (propertyName === "opaque" ) {
 if (!p$1.getFlag$I.apply(this, [24])) {
 this.setOpaque$Z((value).booleanValue$());
-p$1.setFlag$I$Z.apply(this, [24, false]);
-}} else if (propertyName == "autoscrolls") {
+this.秘setFlag$I$Z(24, false);
+}} else if (propertyName === "autoscrolls" ) {
 if (!p$1.getFlag$I.apply(this, [25])) {
 this.setAutoscrolls$Z((value).booleanValue$());
-p$1.setFlag$I$Z.apply(this, [25, false]);
-}} else if (propertyName == "focusTraversalKeysForward") {
-} else if (propertyName == "focusTraversalKeysBackward") {
-} else {
-System.out.println$S(this.getClass$().getName$() + " property \"" + propertyName + "\" cannot be set using this method" + $I$(27).getStackTrace$I(5) );
+this.秘setFlag$I$Z(25, false);
+}} else if (propertyName === "focusTraversalKeysForward" ) {
+if (!p$1.getFlag$I.apply(this, [26])) {
+C$.superclazz.prototype.setFocusTraversalKeys$I$java_util_Set.apply(this, [0, value]);
+}} else if (propertyName === "focusTraversalKeysBackward" ) {
+if (!p$1.getFlag$I.apply(this, [27])) {
+C$.superclazz.prototype.setFocusTraversalKeys$I$java_util_Set.apply(this, [1, value]);
+}} else {
+System.out.println$S(this.getClass$().getName$() + " property \"" + propertyName + "\" cannot be set using this method" + $I$(29).getStackTrace$I(5) );
 }});
 
 Clazz.newMeth(C$, 'setFocusTraversalKeys$I$java_util_Set', function (id, keystrokes) {
-C$.superclazz.prototype.setFocusTraversalKeys$I$java_util_Set.apply(this, [id, keystrokes]);
+if (id == 0) {
+this.秘setFlag$I$Z(26, true);
+} else if (id == 1) {
+this.秘setFlag$I$Z(27, true);
+}C$.superclazz.prototype.setFocusTraversalKeys$I$java_util_Set.apply(this, [id, keystrokes]);
 });
 
 Clazz.newMeth(C$, 'isLightweightComponent$java_awt_Component', function (c) {
@@ -1084,8 +1026,8 @@ return p$1.getFlag$I.apply(this, [3]);
 
 Clazz.newMeth(C$, 'setOpaque$Z', function (isOpaque) {
 var oldValue=p$1.getFlag$I.apply(this, [3]);
-p$1.setFlag$I$Z.apply(this, [3, isOpaque]);
-p$1.setFlag$I$Z.apply(this, [24, true]);
+this.秘setFlag$I$Z(3, isOpaque);
+this.秘setFlag$I$Z(24, true);
 this.firePropertyChange$S$Z$Z("opaque", oldValue, isOpaque);
 });
 
@@ -1127,7 +1069,7 @@ C$.computeVisibleRect$java_awt_Component$java_awt_Rectangle(this, visibleRect);
 });
 
 Clazz.newMeth(C$, 'getVisibleRect$', function () {
-var visibleRect=Clazz.new_($I$(8));
+var visibleRect=Clazz.new_($I$(8,1));
 this.computeVisibleRect$java_awt_Rectangle(visibleRect);
 return visibleRect;
 });
@@ -1141,14 +1083,14 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getAncestorNotifier', function () {
-return this.getClientProperty$O($I$(12).JComponent_ANCESTOR_NOTIFIER);
+return this.getClientProperty$O($I$(14).JComponent_ANCESTOR_NOTIFIER);
 }, p$1);
 
 Clazz.newMeth(C$, 'addAncestorListener$javax_swing_event_AncestorListener', function (listener) {
 var ancestorNotifier=p$1.getAncestorNotifier.apply(this, []);
 if (ancestorNotifier == null ) {
-ancestorNotifier=Clazz.new_($I$(28).c$$javax_swing_JComponent,[this]);
-this.putClientProperty$O$O($I$(12).JComponent_ANCESTOR_NOTIFIER, ancestorNotifier);
+ancestorNotifier=Clazz.new_($I$(30,1).c$$javax_swing_JComponent,[this]);
+this.putClientProperty$O$O($I$(14).JComponent_ANCESTOR_NOTIFIER, ancestorNotifier);
 }ancestorNotifier.addAncestorListener$javax_swing_event_AncestorListener(listener);
 });
 
@@ -1159,21 +1101,21 @@ return;
 }ancestorNotifier.removeAncestorListener$javax_swing_event_AncestorListener(listener);
 if (ancestorNotifier.listenerList.getListenerList$().length == 0) {
 ancestorNotifier.removeAllListeners$();
-this.putClientProperty$O$O($I$(12).JComponent_ANCESTOR_NOTIFIER, null);
+this.putClientProperty$O$O($I$(14).JComponent_ANCESTOR_NOTIFIER, null);
 }});
 
 Clazz.newMeth(C$, 'getAncestorListeners$', function () {
 var ancestorNotifier=p$1.getAncestorNotifier.apply(this, []);
 if (ancestorNotifier == null ) {
-return Clazz.array($I$(29), [0]);
+return Clazz.array($I$(31), [0]);
 }return ancestorNotifier.getAncestorListeners$();
 });
 
 Clazz.newMeth(C$, 'getListeners$Class', function (listenerType) {
 var result;
-if (listenerType === Clazz.getClass($I$(29),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
+if (listenerType === Clazz.getClass($I$(31),['ancestorAdded$javax_swing_event_AncestorEvent','ancestorMoved$javax_swing_event_AncestorEvent','ancestorRemoved$javax_swing_event_AncestorEvent']) ) {
 result=this.getAncestorListeners$();
-} else if (listenerType === Clazz.getClass($I$(30),['propertyChange$java_beans_PropertyChangeEvent']) ) {
+} else if (listenerType === Clazz.getClass($I$(32),['propertyChange$java_beans_PropertyChangeEvent']) ) {
 result=this.getPropertyChangeListeners$();
 } else {
 result=this.listenerList.getListeners$Class(listenerType);
@@ -1195,14 +1137,14 @@ this.firePropertyChange$S$O$O("ancestor", this.getParent$(), null);
 p$1.unregisterWithKeyboardManager.apply(this, []);
 p$1.deregisterNextFocusableComponent.apply(this, []);
 if (this.getCreatedDoubleBuffer$()) {
-$I$(9).currentManager$javax_swing_JComponent(this).resetDoubleBuffer$();
+$I$(10).currentManager$javax_swing_JComponent(this).resetDoubleBuffer$();
 this.setCreatedDoubleBuffer$Z(false);
-}if (this._autoscrolls) {
-$I$(25).stop$javax_swing_JComponent(this);
+}if (this.autoscrolls) {
+$I$(27).stop$javax_swing_JComponent(this);
 }});
 
 Clazz.newMeth(C$, 'repaint$J$I$I$I$I', function (tm, x, y, width, height) {
-$I$(9).currentManager$javax_swing_JComponent(this).addDirtyRegion$javax_swing_JComponent$I$I$I$I(this, x, y, width, height);
+$I$(10).currentManager$javax_swing_JComponent(this).addDirtyRegion$javax_swing_JComponent$I$I$I$I(this, x, y, width, height);
 });
 
 Clazz.newMeth(C$, 'repaint$java_awt_Rectangle', function (r) {
@@ -1211,32 +1153,36 @@ this.repaint$J$I$I$I$I(0, r.x, r.y, r.width, r.height);
 
 Clazz.newMeth(C$, 'revalidate$', function () {
 if (this.ui != null ) (this.ui).setTainted$();
-if (this.getParent$() == null ) {
+if (this.getParent$() == null  && !this.isValidateRoot$()  || !this.秘isTopLevelVisible$() ) {
 return;
 }if ($I$(1).isEventDispatchThread$()) {
 this.invalidate$();
-$I$(9).currentManager$javax_swing_JComponent(this).addInvalidComponent$javax_swing_JComponent(this);
+if (!this.秘isAWT$()) $I$(10).currentManager$javax_swing_JComponent(this).addInvalidComponent$javax_swing_JComponent(this);
 } else {
 if (p$1.getFlag$I.apply(this, [28])) {
 return;
-}p$1.setFlag$I$Z.apply(this, [28, true]);
+}this.秘setFlag$I$Z(28, true);
 var callRevalidate=((P$.JComponent$2||
-(function(){var C$=Clazz.newClass(P$, "JComponent$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JComponent$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
-p$1.setFlag$I$Z.apply(this.b$['javax.swing.JComponent'], [28, false]);
+this.b$['javax.swing.JComponent'].秘setFlag$I$Z.apply(this.b$['javax.swing.JComponent'], [28, false]);
 this.b$['javax.swing.JComponent'].revalidate$.apply(this.b$['javax.swing.JComponent'], []);
 });
 })()
-), Clazz.new_(P$.JComponent$2.$init$, [this, null]));
+), Clazz.new_(P$.JComponent$2.$init$,[this, null]));
 $I$(1).invokeLater$Runnable(callRevalidate);
 }});
+
+Clazz.newMeth(C$, '秘isTopLevelVisible$', function () {
+var c=$I$(9).秘getTopInvokableAncestor$java_awt_Component$Z(this, true);
+return (c != null  && c.isVisible$() );
+});
 
 Clazz.newMeth(C$, 'isValidateRoot$', function () {
 return false;
@@ -1255,22 +1201,13 @@ var c=this;
 var parent;
 if (!this.isShowing$()) {
 return;
-}while (!(c).isOpaque$()){
-parent=c.getParent$();
-if (parent != null ) {
+}while (!c.isOpaque$() && (parent=c.getParent$()) != null  ){
 x+=c.getX$();
 y+=c.getY$();
 c=parent;
-} else {
-break;
-}if (!(Clazz.instanceOf(c, "javax.swing.JComponent"))) {
-break;
-}}
-if (Clazz.instanceOf(c, "javax.swing.JComponent")) {
-(c)._paintImmediately$I$I$I$I(x, y, w, h);
-} else {
-c.repaint$I$I$I$I(x, y, w, h);
-}});
+}
+p$1._paintImmediately$I$I$I$I.apply((c), [x, y, w, h]);
+});
 
 Clazz.newMeth(C$, 'paintImmediately$java_awt_Rectangle', function (r) {
 this.paintImmediately$I$I$I$I(r.x, r.y, r.width, r.height);
@@ -1285,20 +1222,14 @@ this.paintingChild=paintingChild;
 });
 
 Clazz.newMeth(C$, '_paintImmediately$I$I$I$I', function (x, y, w, h) {
-var g;
-var c;
 var tmpX;
 var tmpY;
 var tmpWidth;
 var tmpHeight;
 var offsetX=0;
 var offsetY=0;
-var hasBuffer=false;
 var bufferedComponent=null;
 var paintingComponent=this;
-var path=Clazz.new_($I$(31).c$$I,[7]);
-var pIndex=-1;
-var pCount=0;
 tmpX=tmpY=tmpWidth=tmpHeight=0;
 var paintImmediatelyClip=C$.fetchRectangle$();
 paintImmediatelyClip.x=x;
@@ -1307,21 +1238,25 @@ paintImmediatelyClip.width=w;
 paintImmediatelyClip.height=h;
 var ontop=this.alwaysOnTop$() && this.isOpaque$() ;
 if (ontop) {
-$I$(1).computeIntersection$I$I$I$I$java_awt_Rectangle(0, 0, this.getWidth$(), this.getHeight$(), paintImmediatelyClip);
+$I$(1,"computeIntersection$I$I$I$I$java_awt_Rectangle",[0, 0, this.getWidth$(), this.getHeight$(), paintImmediatelyClip]);
 if (paintImmediatelyClip.width == 0) {
 C$.recycleRectangle$java_awt_Rectangle(paintImmediatelyClip);
 return;
-}}var child;
-for (c=this, child=null; c != null  && !c.isWindowOrJSApplet$() ; child=c, c=c.getParent$()) {
+}}var path=null;
+var pIndex=-1;
+var g;
+var c=this;
+var child=null;
+for (var pCount=0; c != null  && !c.isWindowOrJSApplet$() ; child=c, c=c.getParent$(), pCount++) {
 var jc=(Clazz.instanceOf(c, "javax.swing.JComponent")) ? c : null;
-path.add$TE(c);
-if (!ontop && jc != null   && !jc.isOptimizedDrawingEnabled$() ) {
+if (path != null ) path.add$O(c);
+if (!ontop) {
+if (c !== this  && jc != null   && !jc.isOptimizedDrawingEnabled$() ) {
 var resetPC;
-if (c !== this ) {
 if (jc.isPaintingOrigin$()) {
 resetPC=true;
 } else {
-var children=$I$(32).getChildArray$java_awt_Container(c);
+var children=$I$(9).秘getChildArray$java_awt_Container(c);
 var i=0;
 for (var n=c.getComponentCount$(); i < n; i++) {
 if (children[i] === child ) break;
@@ -1337,16 +1272,17 @@ default:
 resetPC=true;
 break;
 }
-}} else {
-resetPC=false;
 }if (resetPC) {
-paintingComponent=jc;
+if (path == null ) {
+path=Clazz.new_($I$(33,1).c$$I,[pCount + 1]);
+for (var p=this; ; p=p.getParent$()) {
+path.add$O(p);
+if (p === c ) break;
+}
+}paintingComponent=jc;
 pIndex=pCount;
 offsetX=offsetY=0;
-hasBuffer=false;
-}}pCount++;
-if (!ontop) {
-var bx=c.getX$();
+}}var bx=c.getX$();
 var by=c.getY$();
 tmpWidth=c.getWidth$();
 tmpHeight=c.getHeight$();
@@ -1359,7 +1295,9 @@ offsetY+=by;
 if (c == null  || paintImmediatelyClip.width <= 0  || paintImmediatelyClip.height <= 0 ) {
 C$.recycleRectangle$java_awt_Rectangle(paintImmediatelyClip);
 return;
-}p$1.setFlag$I$Z.apply(paintingComponent, [13, true]);
+}if (paintingComponent.秘isContentPane && !paintingComponent.isOpaque$() ) {
+paintingComponent=paintingComponent.getRootPane$();
+}paintingComponent.秘setFlag$I$Z(13, true);
 paintImmediatelyClip.x-=offsetX;
 paintImmediatelyClip.y-=offsetY;
 if (paintingComponent !== this ) {
@@ -1373,18 +1311,9 @@ if (Clazz.instanceOf(comp, "javax.swing.JComponent")) {
 }try {
 g=C$.safelyGetGraphics$java_awt_Component$java_awt_Component(paintingComponent, c);
 try {
-if (hasBuffer) {
-var rm=$I$(9).currentManager$javax_swing_JComponent(bufferedComponent);
-rm.beginPaint$();
-try {
-rm.paint$javax_swing_JComponent$javax_swing_JComponent$java_awt_Graphics$I$I$I$I(paintingComponent, bufferedComponent, g, paintImmediatelyClip.x, paintImmediatelyClip.y, paintImmediatelyClip.width, paintImmediatelyClip.height);
+if (!this.秘isRootPane) g.clipRect$I$I$I$I(paintImmediatelyClip.x, paintImmediatelyClip.y, paintImmediatelyClip.width, paintImmediatelyClip.height);
+paintingComponent.秘paintWithBackgroundCheck$java_awt_Graphics(g);
 } finally {
-rm.endPaint$();
-}
-} else {
-if (!this.isRootPane) g.setClip$I$I$I$I(paintImmediatelyClip.x, paintImmediatelyClip.y, paintImmediatelyClip.width, paintImmediatelyClip.height);
-paintingComponent.paintWithBackgroundCheck$java_awt_Graphics(g);
-}} finally {
 g.dispose$();
 }
 } finally {
@@ -1396,16 +1325,16 @@ comp=path.get$I(i);
 if (Clazz.instanceOf(comp, "javax.swing.JComponent")) {
 (comp).setPaintingChild$java_awt_Component(null);
 }}
-}p$1.setFlag$I$Z.apply(paintingComponent, [13, false]);
+}paintingComponent.秘setFlag$I$Z(13, false);
 }
 C$.recycleRectangle$java_awt_Rectangle(paintImmediatelyClip);
-});
+}, p$1);
 
 Clazz.newMeth(C$, 'paintToOffscreen$java_awt_Graphics$I$I$I$I$I$I', function (g, x, y, w, h, maxX, maxY) {
 try {
-p$1.setFlag$I$Z.apply(this, [1, true]);
+this.秘setFlag$I$Z(1, true);
 if ((y + h) < maxY || (x + w) < maxX ) {
-p$1.setFlag$I$Z.apply(this, [2, true]);
+this.秘setFlag$I$Z(2, true);
 }if (p$1.getFlag$I.apply(this, [13])) {
 this.paint$java_awt_Graphics(g);
 } else {
@@ -1414,8 +1343,8 @@ p$1.paintComponentSafely$java_awt_Graphics.apply(this, [g]);
 p$1.paintBorderSafely$java_awt_Graphics.apply(this, [g]);
 }this.paintChildren$java_awt_Graphics(g);
 }} finally {
-p$1.setFlag$I$Z.apply(this, [1, false]);
-p$1.setFlag$I$Z.apply(this, [2, false]);
+this.秘setFlag$I$Z(1, false);
+this.秘setFlag$I$Z(2, false);
 }
 });
 
@@ -1450,16 +1379,16 @@ Clazz.newMeth(C$, 'checkIfChildObscuredBySibling$', function () {
 return true;
 });
 
-Clazz.newMeth(C$, 'setFlag$I$Z', function (aFlag, aValue) {
+Clazz.newMeth(C$, '秘setFlag$I$Z', function (aFlag, aValue) {
 if (aValue) {
-this._flags|=(1 << aFlag);
+this.flags|=(1 << aFlag);
 } else {
-this._flags&=~(1 << aFlag);
-}}, p$1);
+this.flags&=~(1 << aFlag);
+}});
 
 Clazz.newMeth(C$, 'getFlag$I', function (aFlag) {
 var mask=(1 << aFlag);
-return ((this._flags & mask) == mask);
+return ((this.flags & mask) == mask);
 }, p$1);
 
 Clazz.newMeth(C$, 'setDoubleBuffered$Z', function (aFlag) {
@@ -1477,8 +1406,8 @@ Clazz.newMeth(C$, 'paramString$', function () {
 var preferredSizeString=(this.isPreferredSizeSet$() ? this.getPreferredSize$().toString() : "");
 var minimumSizeString=(this.isMinimumSizeSet$() ? this.getMinimumSize$().toString() : "");
 var maximumSizeString=(this.isMaximumSizeSet$() ? this.getMaximumSize$().toString() : "");
-var borderString=(this._border == null  ? "" : (this._border === this  ? "this" : this._border.toString()));
-return C$.superclazz.prototype.paramString$.apply(this, []) + ",alignmentX=" + new Float(this._alignmentX).toString() + ",alignmentY=" + new Float(this._alignmentY).toString() + ",border=" + borderString + ",flags=" + this._flags + ",maximumSize=" + maximumSizeString + ",minimumSize=" + minimumSizeString + ",preferredSize=" + preferredSizeString ;
+var borderString=(this.秘border == null  ? "" : (this.秘border === this  ? "this" : this.秘border.toString()));
+return C$.superclazz.prototype.paramString$.apply(this, []) + ",alignmentX=" + new Float(this.秘alignmentX).toString() + ",alignmentY=" + new Float(this.秘alignmentY).toString() + ",border=" + borderString + ",flags=" + this.flags + ",maximumSize=" + maximumSizeString + ",minimumSize=" + minimumSizeString + ",preferredSize=" + preferredSizeString ;
 });
 
 Clazz.newMeth(C$, 'isActionStandin$javax_swing_Action', function (action) {
@@ -1497,7 +1426,7 @@ this.firePropertyChange$S$O$O("transferHandler", oldHandler, newHandler);
 });
 
 Clazz.newMeth(C$, 'getTransferHandler$', function () {
-return null;
+return this.getClientProperty$O(C$.JComponent_TRANSFER_HANDLER);
 });
 
 Clazz.newMeth(C$, 'setDropLocation$javax_swing_TransferHandler_DropLocation$O$Z', function (dropLocation, state, forDrop) {
@@ -1508,17 +1437,17 @@ Clazz.newMeth(C$, 'dndDone$', function () {
 });
 
 Clazz.newMeth(C$, 'paintComponentSafely$java_awt_Graphics', function (g) {
-var jsg=this.getJSGraphic2D$java_awt_Graphics(g);
+var jsg=this.秘getJSGraphic2D$java_awt_Graphics(g);
 var nSave=(jsg == null  ? 0 : jsg.mark$());
-this.checkBackgroundPainted$swingjs_JSGraphics2D$Z(jsg, true);
+this.秘checkBackgroundPainted$swingjs_JSGraphics2D$Z(jsg, true);
 this.paintComponent$java_awt_Graphics(g);
-this.checkBackgroundPainted$swingjs_JSGraphics2D$Z(jsg, false);
+this.秘checkBackgroundPainted$swingjs_JSGraphics2D$Z(jsg, false);
 if (jsg != null ) {
 jsg.reset$I(nSave);
 }}, p$1);
 
 Clazz.newMeth(C$, 'printComponentSafely$java_awt_Graphics', function (g) {
-var jsg=this.getJSGraphic2D$java_awt_Graphics(g);
+var jsg=this.秘getJSGraphic2D$java_awt_Graphics(g);
 var nSave=(jsg == null  ? 0 : jsg.mark$());
 this.printComponent$java_awt_Graphics(g);
 if (jsg != null ) jsg.reset$I(nSave);
@@ -1526,7 +1455,7 @@ if (jsg != null ) jsg.reset$I(nSave);
 
 Clazz.newMeth(C$, 'paintBorderSafely$java_awt_Graphics', function (g) {
 if (this.getBorder$() == null ) return;
-var jsg=this.getJSGraphic2D$java_awt_Graphics(g);
+var jsg=this.秘getJSGraphic2D$java_awt_Graphics(g);
 var nSave=(jsg == null  ? 0 : jsg.mark$());
 this.paintBorder$java_awt_Graphics(g);
 if (jsg != null ) jsg.reset$I(nSave);
@@ -1534,32 +1463,69 @@ if (jsg != null ) jsg.reset$I(nSave);
 
 Clazz.newMeth(C$, 'printBorderSafely$java_awt_Graphics', function (g) {
 if (this.getBorder$() == null ) return;
-this._isBackgroundPainted=true;
-var jsg=this.getJSGraphic2D$java_awt_Graphics(g);
+var jsg=this.秘getJSGraphic2D$java_awt_Graphics(g);
 var nSave=(jsg == null  ? 0 : jsg.mark$());
 this.printBorder$java_awt_Graphics(g);
 if (jsg != null ) jsg.reset$I(nSave);
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.INPUT_VERIFIER_SOURCE_KEY= Clazz.new_();
+C$._tempRect=Clazz.new_($I$(3,1));
+C$.focusController=((P$.JComponent$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JComponent$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'sun.awt.RequestFocusController', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, 'acceptRequestFocus$java_awt_Component$java_awt_Component$Z$Z$sun_awt_CausedFocusEvent_Cause', function (from, to, temporary, focusedWindowChangeAllowed, cause) {
+if ((to == null ) || !(Clazz.instanceOf(to, "javax.swing.JComponent")) ) {
+return true;
+}if ((from == null ) || !(Clazz.instanceOf(from, "javax.swing.JComponent")) ) {
+return true;
+}var target=to;
+if (!target.getVerifyInputWhenFocusTarget$()) {
+return true;
+}var jFocusOwner=from;
+var iv=jFocusOwner.getInputVerifier$();
+if (iv == null ) {
+return true;
+} else {
+var currentSource=$I$(1,"appContextGet$O",[$I$(4).INPUT_VERIFIER_SOURCE_KEY]);
+if (currentSource === jFocusOwner ) {
+return true;
+}$I$(1,"appContextPut$O$O",[$I$(4).INPUT_VERIFIER_SOURCE_KEY, jFocusOwner]);
+try {
+return iv.shouldYieldFocus$javax_swing_JComponent(jFocusOwner);
+} finally {
+if (currentSource != null ) {
+$I$(1,"appContextPut$O$O",[$I$(4).INPUT_VERIFIER_SOURCE_KEY, currentSource]);
+} else {
+$I$(1,"appContextRemove$O",[$I$(4).INPUT_VERIFIER_SOURCE_KEY]);
+}}
+}});
+})()
+), Clazz.new_(P$.JComponent$1.$init$,[this, null]));
+C$.JComponent_TRANSFER_HANDLER="transfer_handler";
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JComponent, "ActionStandin", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JComponent, "ActionStandin", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.Action');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.actionListener=null;
-this.command=null;
-this.action=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['command'],'O',['actionListener','java.awt.event.ActionListener','action','javax.swing.Action']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_event_ActionListener$S', function (actionListener, command) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.actionListener=actionListener;
 if (Clazz.instanceOf(actionListener, "javax.swing.Action")) {
 this.action=actionListener;
@@ -1587,9 +1553,9 @@ return true;
 }return this.action.isEnabled$();
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (ae) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (ae) {
 if (this.actionListener != null ) {
-this.actionListener.actionPerformed$(ae);
+this.actionListener.actionPerformed$java_awt_event_ActionEvent(ae);
 }});
 
 Clazz.newMeth(C$, 'putValue$S$O', function (key, value) {
@@ -1607,25 +1573,19 @@ Clazz.newMeth(C$, 'removePropertyChangeListener$java_beans_PropertyChangeListene
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JComponent, "IntVector", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JComponent, "IntVector", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.array=null;
-this.count=0;
-this.capacity=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.array=(null|0);
 this.count=0;
 this.capacity=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['count','capacity'],'O',['array','int[]']]]
 
 Clazz.newMeth(C$, 'size$', function () {
 return this.count;
@@ -1652,22 +1612,22 @@ this.array[index]=value;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JComponent, "KeyboardState", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JComponent, "KeyboardState", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.keyCodesKey=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.keyCodesKey=Clazz.getClass(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['keyCodesKey','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'getKeyCodeArray$', function () {
 var iv=$I$(1).appContextGet$O(C$.keyCodesKey);
 if (iv == null ) {
-iv=Clazz.new_($I$(2));
+iv=Clazz.new_($I$(2,1));
 $I$(1).appContextPut$O$O(C$.keyCodesKey, iv);
 }return iv;
 }, 1);
@@ -1724,7 +1684,11 @@ return false;
 }
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.keyCodesKey=Clazz.getClass(C$);
+};
+
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:45 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

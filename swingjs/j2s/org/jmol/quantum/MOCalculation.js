@@ -1,48 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.quantum"),p$1={},I$=[[0,'org.jmol.quantum.mo.DataAdder','org.jmol.quantum.QS','Boolean','org.jmol.util.Logger','javajs.api.Interface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MOCalculation", null, 'org.jmol.quantum.QuantumCalculation');
-C$.shellOrder=null;
+(function(){var P$=Clazz.newPackage("org.jmol.quantum"),p$1={},I$=[[0,'org.jmol.quantum.mo.DataAdder','org.jmol.quantum.QS','Boolean','org.jmol.util.Logger','javajs.api.Interface']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MOCalculation", null, 'org.jmol.quantum.QuantumCalculation');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.shellOrder=Clazz.array(String, -2, [Clazz.array(String, -1, ["S"]), Clazz.array(String, -1, ["X", "Y", "Z"]), Clazz.array(String, -1, ["S", "X", "Y", "Z"]), Clazz.array(String, -1, ["d0/z2", "d1+/xz", "d1-/yz", "d2+/x2-y2", "d2-/xy"]), Clazz.array(String, -1, ["XX", "YY", "ZZ", "XY", "XZ", "YZ"]), Clazz.array(String, -1, ["f0/2z3-3x2z-3y2z", "f1+/4xz2-x3-xy2", "f1-/4yz2-x2y-y3", "f2+/x2z-y2z", "f2-/xyz", "f3+/x3-3xy2", "f3-/3x2y-y3"]), Clazz.array(String, -1, ["XXX", "YYY", "ZZZ", "XYY", "XXY", "XXZ", "XZZ", "YZZ", "YYZ", "XYZ"])]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.CX=null;
-this.CY=null;
-this.CZ=null;
-this.DXY=null;
-this.DXZ=null;
-this.DYZ=null;
-this.EX=null;
-this.EY=null;
-this.EZ=null;
-this.calculationType=null;
-this.shells=null;
-this.gaussians=null;
-this.slaters=null;
-this.moCoefficients=null;
-this.moCoeff=0;
-this.gaussianPtr=0;
-this.normType=0;
-this.dfCoefMaps=null;
-this.linearCombination=null;
-this.coefs=null;
-this.moFactor=0;
-this.havePoints=false;
-this.testing=false;
-this.highLEnabled=null;
-this.sum=0;
-this.nGaussians=0;
-this.doShowShellType=false;
-this.warned=null;
-this.dataAdders=null;
-this.dataAdderOK=null;
-this.coeffs=null;
-this.map=null;
-this.lastGaussianPtr=0;
-this.isSquaredLinear=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.normType=0;
@@ -52,10 +11,13 @@ this.sum=-1;
 this.dataAdders=Clazz.array($I$(1), [20]);
 this.dataAdderOK=Clazz.array(Integer.TYPE, [20]);
 this.lastGaussianPtr=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['havePoints','testing','doShowShellType','isSquaredLinear'],'D',['moFactor','sum'],'I',['moCoeff','gaussianPtr','normType','nGaussians','lastGaussianPtr'],'S',['calculationType','warned'],'O',['CX','double[]','+CY','+CZ','+DXY','+DXZ','+DYZ','+EX','+EY','+EZ','shells','javajs.util.Lst','gaussians','float[][]','slaters','org.jmol.quantum.SlaterData[]','moCoefficients','float[]','dfCoefMaps','int[][]','linearCombination','float[]','coefs','float[][]','highLEnabled','int[]','dataAdders','org.jmol.quantum.mo.DataAdder[]','dataAdderOK','int[]','coeffs','double[]','map','int[]']]
+,['O',['shellOrder','String[][]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setupCalculation$java_util_Map$Z$org_jmol_jvxl_data_VolumeData$javajs_util_BS$javajs_util_T3A$org_jmol_modelset_AtomA$I$IAA$FA$FA$Z$FAA$javajs_util_T3A', function (moData, isSlaters, volumeData, bsSelected, xyz, atoms, firstAtomOffset, dfCoefMaps, moCoefficients, linearCombination, isSquaredLinear, coefs, points) {
@@ -97,8 +59,8 @@ type="NBO-AO";
 if (this.calculationType.indexOf$S("NWCHEM") >= 0) {
 this.normType=2;
 type="NWCHEM";
-$I$(4).info$S("Normalization of contractions (NWCHEM)");
-}}$I$(4).info$S("Normalizing AOs: " + type + " slaters:" + (this.slaters != null ) );
+(function(a,f){return f.apply(null,a)})(["Normalization of contractions (NWCHEM)"],$I$(4).info$S);
+}}(function(a,f){return f.apply(null,a)})(["Normalizing AOs: " + type + " slaters:" + (this.slaters != null ) ],$I$(4).info$S);
 }, p$1);
 
 Clazz.newMeth(C$, 'initialize$I$I$I$javajs_util_T3A', function (nX, nY, nZ, points) {
@@ -208,13 +170,13 @@ if (basisType >= 7 && this.highLEnabled[basisType] == 0 ) return false;
 var adder=this.dataAdders[basisType];
 switch (this.dataAdderOK[basisType]) {
 case 0:
-this.dataAdders[basisType]=adder=($I$(5).getInterface$S("org.jmol.quantum.mo.DataAdder" + $I$(2).getQuantumShellTag$I(basisType)));
+this.dataAdders[basisType]=adder=((function(a,f){return f.apply(null,a)})(["org.jmol.quantum.mo.DataAdder" + $I$(2).getQuantumShellTag$I(basisType)],$I$(5).getInterface$S));
 this.dataAdderOK[basisType]=(adder == null  ? -1 : 1);
 if (adder != null ) break;
 case -1:
 return false;
 }
-if (adder.addData$(this, this.havePoints)) return true;
+if (adder.addData$org_jmol_quantum_MOCalculation$Z(this, this.havePoints)) return true;
 this.dataAdders[basisType]=null;
 this.dataAdderOK[basisType]=-1;
 return false;
@@ -254,7 +216,7 @@ sum += c1 * f1 * c2 * f2  / Math.pow(alpha1 + alpha2, 2 * p);
 }
 }
 }sum=1 / Math.sqrt(f * sum);
-if ($I$(4).debuggingHigh) $I$(4).debug$S("\t\t\tnormalization for l=" + el + " nGaussians=" + this.nGaussians + " is " + new Double(sum).toString() );
+if ($I$(4).debuggingHigh) (function(a,f){return f.apply(null,a)})(["\t\t\tnormalization for l=" + el + " nGaussians=" + this.nGaussians + " is " + new Double(sum).toString() ],$I$(4).debug$S);
 return sum;
 });
 
@@ -735,20 +697,20 @@ return true;
 
 Clazz.newMeth(C$, 'dumpInfo$I', function (shell) {
 if (this.doShowShellType) {
-$I$(4).debug$S("\n\t\t\tprocessShell: " + shell + " type=" + $I$(2).getQuantumShellTag$I(shell) + " nGaussians=" + this.nGaussians + " atom=" + this.atomIndex );
+(function(a,f){return f.apply(null,a)})(["\n\t\t\tprocessShell: " + shell + " type=" + $I$(2).getQuantumShellTag$I(shell) + " nGaussians=" + this.nGaussians + " atom=" + this.atomIndex ],$I$(4).debug$S);
 this.doShowShellType=false;
 }if ($I$(4).isActiveLevel$I(6) && this.gaussianPtr != this.lastGaussianPtr ) {
 this.lastGaussianPtr=this.gaussianPtr;
 for (var ig=0; ig < this.nGaussians; ig++) {
 var alpha=this.gaussians[this.gaussianPtr + ig][0];
 var c1=this.gaussians[this.gaussianPtr + ig][1];
-$I$(4).debug$S("\t\t\tGaussian " + (ig + 1) + " alpha=" + new Double(alpha).toString() + " c=" + new Double(c1).toString() );
+(function(a,f){return f.apply(null,a)})(["\t\t\tGaussian " + (ig + 1) + " alpha=" + new Double(alpha).toString() + " c=" + new Double(c1).toString() ],$I$(4).debug$S);
 }
 }var so=C$.getShellOrder$I(shell);
 for (var i=0; i < this.map.length; i++) {
 var n=this.map[i] + this.moCoeff - this.map.length + i + 1;
 var c=this.coeffs[i];
-$I$(4).debug$S("MO coeff " + (so == null  ? "?" : so[i]) + " " + n + "\t" + new Double(c).toString() + "\t" + this.thisAtom.atom );
+(function(a,f){return f.apply(null,a)})(["MO coeff " + (so == null  ? "?" : so[i]) + " " + n + "\t" + new Double(c).toString() + "\t" + this.thisAtom.atom ],$I$(4).debug$S);
 }
 }, p$1);
 
@@ -767,7 +729,11 @@ this.integration += x * x;
 
 var volume=this.stepBohr[0] * this.stepBohr[1] * this.stepBohr[2] ;
 this.integration *= volume;
-$I$(4).info$S("Integrated density = " + new Float(this.integration).toString());
+(function(a,f){return f.apply(null,a)})(["Integrated density = " + new Float(this.integration).toString()],$I$(4).info$S);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.shellOrder=Clazz.array(String, -2, [Clazz.array(String, -1, ["S"]), Clazz.array(String, -1, ["X", "Y", "Z"]), Clazz.array(String, -1, ["S", "X", "Y", "Z"]), Clazz.array(String, -1, ["d0/z2", "d1+/xz", "d1-/yz", "d2+/x2-y2", "d2-/xy"]), Clazz.array(String, -1, ["XX", "YY", "ZZ", "XY", "XZ", "YZ"]), Clazz.array(String, -1, ["f0/2z3-3x2z-3y2z", "f1+/4xz2-x3-xy2", "f1-/4yz2-x2y-y3", "f2+/x2z-y2z", "f2-/xyz", "f3+/x3-3xy2", "f3-/3x2y-y3"]), Clazz.array(String, -1, ["XXX", "YYY", "ZZZ", "XYY", "XXY", "XXZ", "XZZ", "YZZ", "YYZ", "XYZ"])]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:15 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,62 +1,43 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.naView"),p$1={},I$=[[0,'fr.orsay.lri.varna.models.naView.Loop','fr.orsay.lri.varna.models.naView.Radloop','java.util.ArrayList','fr.orsay.lri.varna.models.naView.Base','fr.orsay.lri.varna.models.naView.Region','fr.orsay.lri.varna.models.naView.Connection','fr.orsay.lri.varna.exceptions.ExceptionNAViewAlgorithm']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NAView");
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.naView"),p$1={},I$=[[0,'fr.orsay.lri.varna.models.naView.Loop','fr.orsay.lri.varna.models.naView.Radloop','java.util.ArrayList','fr.orsay.lri.varna.models.naView.Base','fr.orsay.lri.varna.models.naView.Region','fr.orsay.lri.varna.models.naView.Connection','fr.orsay.lri.varna.exceptions.ExceptionNAViewAlgorithm']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NAView");
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ANUM=0;
-this.MAXITER=0;
-this.bases=null;
-this.nbase=0;
-this.nregion=0;
-this.loop_count=0;
-this.root=null;
-this.loops=null;
-this.regions=null;
-this.rlphead=null;
-this.lencut=0;
-this.RADIUS_REDUCTION_FACTOR=0;
-this.debug=false;
-this.angleinc=0;
-this._h=0;
-this._listeVARNAListener=null;
-this.noIterationFailureYet=false;
-this.HELIX_FACTOR=0;
-this.BACKBONE_DISTANCE=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.ANUM=9999.0;
 this.MAXITER=500;
-this.root=Clazz.new_($I$(1));
-this.rlphead=Clazz.new_($I$(2));
+this.root=Clazz.new_($I$(1,1));
+this.rlphead=Clazz.new_($I$(2,1));
 this.lencut=0.8;
 this.RADIUS_REDUCTION_FACTOR=1.4;
 this.debug=false;
-this._listeVARNAListener=Clazz.new_($I$(3));
+this._listeVARNAListener=Clazz.new_($I$(3,1));
 this.noIterationFailureYet=true;
 this.HELIX_FACTOR=0.6;
 this.BACKBONE_DISTANCE=27;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['debug','noIterationFailureYet'],'D',['ANUM','lencut','RADIUS_REDUCTION_FACTOR','angleinc','_h','HELIX_FACTOR','BACKBONE_DISTANCE'],'I',['MAXITER','nbase','nregion','loop_count'],'O',['bases','java.util.ArrayList','root','fr.orsay.lri.varna.models.naView.Loop','loops','java.util.ArrayList','+regions','rlphead','fr.orsay.lri.varna.models.naView.Radloop','_listeVARNAListener','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'naview_xy_coordinates$java_util_ArrayList$java_util_ArrayList$java_util_ArrayList', function (pair_table2, x, y) {
 if (this.debug) System.out.println$S("naview_xy_coordinates");
 if (pair_table2.size$() == 0) return 0;
 var i;
-var pair_table=Clazz.new_($I$(3).c$$I,[pair_table2.size$() + 1]);
-pair_table.add$TE(new Integer(pair_table2.size$()));
+var pair_table=Clazz.new_([pair_table2.size$() + 1],$I$(3,1).c$$I);
+pair_table.add$O(new Integer(pair_table2.size$()));
 for (var j=0; j < pair_table2.size$(); j++) {
-pair_table.add$TE(new Integer((pair_table2.get$I(j)).shortValue$() + 1));
+pair_table.add$O(new Integer((pair_table2.get$I(j)).valueOf() + 1));
 }
 if (this.debug) {
 p$1.infoStructure$java_util_ArrayList.apply(this, [pair_table]);
-}this.nbase=(pair_table.get$I(0)).intValue$();
-this.bases=Clazz.new_($I$(3).c$$I,[this.nbase + 1]);
+}this.nbase=(pair_table.get$I(0)).valueOf();
+this.bases=Clazz.new_($I$(3,1).c$$I,[this.nbase + 1]);
 for (var index=0; index < this.bases.size$(); index++) {
-this.bases.add$TE(Clazz.new_($I$(4)));
+this.bases.add$O(Clazz.new_($I$(4,1)));
 }
-this.regions=Clazz.new_($I$(3));
+this.regions=Clazz.new_($I$(3,1));
 for (var index=0; index < this.nbase + 1; index++) {
-this.regions.add$TE(Clazz.new_($I$(5)));
+this.regions.add$O(Clazz.new_($I$(5,1)));
 }
 p$1.read_in_bases$java_util_ArrayList.apply(this, [pair_table]);
 if (this.debug) p$1.infoBasesMate.apply(this, []);
@@ -64,9 +45,9 @@ this.rlphead=null;
 p$1.find_regions.apply(this, []);
 if (this.debug) p$1.infoRegions.apply(this, []);
 this.loop_count=0;
-this.loops=Clazz.new_($I$(3).c$$I,[this.nbase + 1]);
+this.loops=Clazz.new_($I$(3,1).c$$I,[this.nbase + 1]);
 for (var index=0; index < this.nbase + 1; index++) {
-this.loops.add$TE(Clazz.new_($I$(1)));
+this.loops.add$O(Clazz.new_($I$(1,1)));
 }
 p$1.construct_loop$I.apply(this, [0]);
 if (this.debug) p$1.infoBasesExtracted.apply(this, []);
@@ -75,8 +56,8 @@ if (this.debug) p$1.infoRoot.apply(this, []);
 if (this.debug) p$1.dump_loops.apply(this, []);
 p$1.traverse_loop$fr_orsay_lri_varna_models_naView_Loop$fr_orsay_lri_varna_models_naView_Connection.apply(this, [this.root, null]);
 for (i=0; i < this.nbase; i++) {
-x.add$TE(new Double(100 + this.BACKBONE_DISTANCE * this.bases.get$I(i + 1).getX$()));
-y.add$TE(new Double(100 + this.BACKBONE_DISTANCE * this.bases.get$I(i + 1).getY$()));
+x.add$O(new Double(100 + this.BACKBONE_DISTANCE * this.bases.get$I(i + 1).getX$()));
+y.add$O(new Double(100 + this.BACKBONE_DISTANCE * this.bases.get$I(i + 1).getY$()));
 }
 return this.nbase;
 });
@@ -133,18 +114,18 @@ Clazz.newMeth(C$, 'read_in_bases$java_util_ArrayList', function (pair_table) {
 if (this.debug) System.out.println$S("read_in_bases");
 var i;
 var npairs;
-this.bases.add$TE(Clazz.new_($I$(4)));
+this.bases.add$O(Clazz.new_($I$(4,1)));
 this.bases.get$I(0).setMate$I(0);
 this.bases.get$I(0).setExtracted$Z(false);
 this.bases.get$I(0).setX$D(9999.0);
 this.bases.get$I(0).setY$D(9999.0);
 for (npairs=0, i=1; i <= this.nbase; i++) {
-this.bases.add$TE(Clazz.new_($I$(4)));
+this.bases.add$O(Clazz.new_($I$(4,1)));
 this.bases.get$I(i).setExtracted$Z(false);
 this.bases.get$I(i).setX$D(9999.0);
 this.bases.get$I(i).setY$D(9999.0);
-this.bases.get$I(i).setMate$I((pair_table.get$I(i)).intValue$());
-if (((pair_table.get$I(i)).intValue$()|0) > i) npairs++;
+this.bases.get$I(i).setMate$I((pair_table.get$I(i)).valueOf());
+if (((pair_table.get$I(i)).valueOf()|0) > i) npairs++;
 }
 if (npairs == 0) {
 this.bases.get$I(1).setMate$I(this.nbase);
@@ -157,21 +138,21 @@ var i;
 var mate;
 var nb1;
 nb1=this.nbase + 1;
-var mark=Clazz.new_($I$(3).c$$I,[nb1]);
-for (i=0; i < nb1; i++) mark.add$TE(new Boolean(false));
+var mark=Clazz.new_($I$(3,1).c$$I,[nb1]);
+for (i=0; i < nb1; i++) mark.add$O(new Boolean(false));
 
 this.nregion=0;
 for (i=0; i <= this.nbase; i++) {
-if ((mate=this.bases.get$I(i).getMate$()) != 0 && !(mark.get$I(i)).booleanValue$() ) {
+if ((mate=this.bases.get$I(i).getMate$()) != 0 && !(mark.get$I(i)).valueOf() ) {
 this.regions.get$I(this.nregion).setStart1$I(i);
 this.regions.get$I(this.nregion).setEnd2$I(mate);
-mark.set$I$TE(i, new Boolean(true));
-mark.set$I$TE(mate, new Boolean(true));
+mark.set$I$O(i, new Boolean(true));
+mark.set$I$O(mate, new Boolean(true));
 this.bases.get$I(i).setRegion$fr_orsay_lri_varna_models_naView_Region(this.regions.get$I(this.nregion));
 this.bases.get$I(mate).setRegion$fr_orsay_lri_varna_models_naView_Region(this.regions.get$I(this.nregion));
 for (i++, mate--; i < mate && this.bases.get$I(i).getMate$() == mate ; i++, mate--) {
-mark.set$I$TE(mate, new Boolean(true));
-mark.set$I$TE(i, new Boolean(true));
+mark.set$I$O(mate, new Boolean(true));
+mark.set$I$O(i, new Boolean(true));
 this.bases.get$I(i).setRegion$fr_orsay_lri_varna_models_naView_Region(this.regions.get$I(this.nregion));
 this.bases.get$I(mate).setRegion$fr_orsay_lri_varna_models_naView_Region(this.regions.get$I(this.nregion));
 }
@@ -188,11 +169,11 @@ Clazz.newMeth(C$, 'construct_loop$I', function (ibase) {
 if (this.debug) System.out.println$S("construct_loop");
 var i;
 var mate;
-var retloop=Clazz.new_($I$(1));
-var lp=Clazz.new_($I$(1));
-var cp=Clazz.new_($I$(6));
-var rp=Clazz.new_($I$(5));
-var rlp=Clazz.new_($I$(2));
+var retloop=Clazz.new_($I$(1,1));
+var lp=Clazz.new_($I$(1,1));
+var cp=Clazz.new_($I$(6,1));
+var rp=Clazz.new_($I$(5,1));
+var rlp=Clazz.new_($I$(2,1));
 retloop=this.loops.get$I(this.loop_count++);
 retloop.setNconnection$I(0);
 retloop.setDepth$I(0);
@@ -218,9 +199,9 @@ this.bases.get$I(rp.getStart1$()).setExtracted$Z(true);
 this.bases.get$I(rp.getEnd1$()).setExtracted$Z(true);
 lp=p$1.construct_loop$I.apply(this, [rp.getEnd2$() < this.nbase ? rp.getEnd2$() + 1 : 0]);
 } else {
-throw Clazz.new_($I$(7).c$$S,["naview:Error detected in construct_loop. i = " + i + " not found in region table.\n" ]);
+throw Clazz.new_(["naview:Error detected in construct_loop. i = " + i + " not found in region table.\n" ],$I$(7,1).c$$S);
 }retloop.setNconnection$I(retloop.getNconnection$() + 1);
-cp=Clazz.new_($I$(6));
+cp=Clazz.new_($I$(6,1));
 retloop.setConnection$I$fr_orsay_lri_varna_models_naView_Connection(retloop.getNconnection$() - 1, cp);
 retloop.setConnection$I$fr_orsay_lri_varna_models_naView_Connection(retloop.getNconnection$(), null);
 cp.setLoop$fr_orsay_lri_varna_models_naView_Loop(lp);
@@ -234,7 +215,7 @@ cp.setEnd$I(rp.getEnd1$());
 }cp.setExtruded$Z(false);
 cp.setBroken$Z(false);
 lp.setNconnection$I(lp.getNconnection$() + 1);
-cp=Clazz.new_($I$(6));
+cp=Clazz.new_($I$(6,1));
 lp.setConnection$I$fr_orsay_lri_varna_models_naView_Connection(lp.getNconnection$() - 1, cp);
 lp.setConnection$I$fr_orsay_lri_varna_models_naView_Connection(lp.getNconnection$(), null);
 cp.setLoop$fr_orsay_lri_varna_models_naView_Loop(retloop);
@@ -274,7 +255,7 @@ System.out.printf$S$OA("  Loop %d Region %d (%d-%d)\n", [new Integer(ilp), new I
 
 Clazz.newMeth(C$, 'find_central_loop', function () {
 if (this.debug) System.out.println$S("find_central_loop");
-var lp=Clazz.new_($I$(1));
+var lp=Clazz.new_($I$(1,1));
 var maxconn;
 var maxdepth;
 var i;
@@ -295,7 +276,7 @@ this.root=lp;
 
 Clazz.newMeth(C$, 'determine_depths', function () {
 if (this.debug) System.out.println$S("determine_depths");
-var lp=Clazz.new_($I$(1));
+var lp=Clazz.new_($I$(1,1));
 var i;
 var j;
 for (i=0; i < this.loop_count; i++) {
@@ -711,8 +692,8 @@ var j;
 var end;
 var start;
 var imindit=0;
-var cp=Clazz.new_($I$(6));
-var cpnext=Clazz.new_($I$(6));
+var cp=Clazz.new_($I$(6,1));
+var cpnext=Clazz.new_($I$(6,1));
 var rt2_2=0.7071068;
 do {
 mindit=1.0E10;
@@ -769,7 +750,7 @@ ic=icstart;
 done=false;
 while (!done){
 if (count++ > lp.getNconnection$() * 2) {
-throw Clazz.new_($I$(7).c$$S,["Infinite loop detected in find_ic_middle"]);
+throw Clazz.new_($I$(7,1).c$$S,["Infinite loop detected in find_ic_middle"]);
 }if (anchor_connection != null  && lp.getConnection$I(ic) === acp  ) {
 ret=ic;
 }done=ic == icend;
@@ -801,7 +782,7 @@ end=rp.getEnd1$();
 start=rp.getStart2$();
 end=rp.getEnd2$();
 }if (this.bases.get$I(cp.getStart$()).getX$() > 9899.0  || this.bases.get$I(cp.getEnd$()).getX$() > 9899.0  ) {
-throw Clazz.new_($I$(7).c$$S,["Bad region passed to generate_region. Coordinates not defined."]);
+throw Clazz.new_($I$(7,1).c$$S,["Bad region passed to generate_region. Coordinates not defined."]);
 }for (i=start + 1; i <= end; i++) {
 l++;
 this.bases.get$I(i).setX$D(this.bases.get$I(cp.getStart$()).getX$() + this.HELIX_FACTOR * l * cp.getXrad$() );
@@ -968,7 +949,7 @@ h=(hhi + hlow) / 2.0;
 r=Math.sqrt(h * h + b * b / 4.0);
 disc=1.0 - 0.5 / (r * r);
 if (Math.abs(disc) > 1.0 ) {
-throw Clazz.new_($I$(7).c$$S,["Unexpected large magnitude discriminant = " + new Double(disc).toString() + " " + new Double(r).toString() ]);
+throw Clazz.new_(["Unexpected large magnitude discriminant = " + new Double(disc).toString() + " " + new Double(r).toString() ],$I$(7,1).c$$S);
 }theta=Math.acos(disc);
 phi=Math.acos(h / r);
 e=theta * (n + 1) + 2 * phi - 6.283185307179586;
@@ -996,9 +977,9 @@ return ((x1) > (x2) ) ? (x1) : (x2);
 }, p$1);
 
 Clazz.newMeth(C$, 'warningEmition$S', function (warningMessage) {
-throw (Clazz.new_($I$(7).c$$S,[warningMessage]));
+throw (Clazz.new_($I$(7,1).c$$S,[warningMessage]));
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

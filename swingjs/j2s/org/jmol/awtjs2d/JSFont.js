@@ -1,18 +1,17 @@
 (function(){var P$=Clazz.newPackage("org.jmol.awtjs2d"),I$=[];
-var C$=Clazz.newClass(P$, "JSFont");
+/*c*/var C$=Clazz.newClass(P$, "JSFont");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'newFont$S$Z$Z$F$S', function (fontFace, isBold, isItalic, fontSize, type) {
 fontFace=(fontFace.equals$O("Monospaced") ? "Courier" : fontFace.startsWith$S("Sans") ? "Helvetica Neue, Sans-serif" : "Serif");
 return (isBold ? "bold " : "") + (isItalic ? "italic " : "") + new Float(fontSize).toString() + type + " " + fontFace ;
 }, 1);
 
-Clazz.newMeth(C$, 'getFontMetrics$javajs_awt_Font$O', function (font, context) {
+Clazz.newMeth(C$, 'getFontMetrics$org_jmol_util_Font$O', function (font, context) {
 {
 if (context.font != font.font) { context.font = font.font;
 font.font = context.font;
@@ -37,7 +36,7 @@ return Math.ceil(context._fontDescent);
 }
 }, 1);
 
-Clazz.newMeth(C$, 'stringWidth$javajs_awt_Font$O$S', function (font, context, text) {
+Clazz.newMeth(C$, 'stringWidth$org_jmol_util_Font$O$S', function (font, context, text) {
 {
 context.font = font.font;
 return Math.ceil(context.measureText(text).width);
@@ -46,4 +45,4 @@ return Math.ceil(context.measureText(text).width);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

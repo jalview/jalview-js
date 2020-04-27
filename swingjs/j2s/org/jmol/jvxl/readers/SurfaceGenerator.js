@@ -1,46 +1,25 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','org.jmol.jvxl.readers.Parameters','org.jmol.jvxl.data.MeshData','org.jmol.jvxl.data.JvxlData','org.jmol.jvxl.data.VolumeData','javajs.util.PT','javajs.util.AU','org.jmol.util.Logger','org.jmol.jvxl.readers.SurfaceReader','javajs.util.P4','org.jmol.jvxl.data.JvxlCoder','javajs.util.Rdr','org.jmol.jvxl.readers.VolumeFileReader','org.jmol.viewer.FileManager','javajs.util.Measure','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SurfaceGenerator");
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','org.jmol.jvxl.readers.Parameters','org.jmol.jvxl.data.MeshData','org.jmol.jvxl.data.JvxlData','org.jmol.jvxl.data.VolumeData','javajs.util.PT','javajs.util.AU','org.jmol.util.Logger','org.jmol.jvxl.readers.SurfaceReader','javajs.util.P4','org.jmol.jvxl.data.JvxlCoder','javajs.util.Rdr','org.jmol.jvxl.readers.VolumeFileReader','org.jmol.viewer.FileManager','javajs.util.Measure','javajs.util.BS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "SurfaceGenerator");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.params=null;
-this.jvxlData=null;
-this.meshData=null;
-this.volumeDataTemp=null;
-this.meshDataServer=null;
-this.atomDataServer=null;
-this.marchingSquares=null;
-this.version=null;
-this.isValid=false;
-this.fileType=null;
-this.bsVdw=null;
-this.colorPtr=0;
-this.surfaceReader=null;
-this.out=null;
-this.readerData=null;
-this.vAB=null;
-this.vNorm=null;
-this.ptRef=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isValid=true;
-this.vAB=Clazz.new_($I$(1));
-this.vNorm=Clazz.new_($I$(1));
+this.vAB=Clazz.new_($I$(1,1));
+this.vNorm=Clazz.new_($I$(1,1));
 this.ptRef=$I$(2).new3$F$F$F(0, 0, 9.9999999E14);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isValid'],'I',['colorPtr'],'S',['version','fileType'],'O',['params','org.jmol.jvxl.readers.Parameters','jvxlData','org.jmol.jvxl.data.JvxlData','meshData','org.jmol.jvxl.data.MeshData','volumeDataTemp','org.jmol.jvxl.data.VolumeData','meshDataServer','org.jmol.jvxl.api.MeshDataServer','atomDataServer','org.jmol.atomdata.AtomDataServer','marchingSquares','org.jmol.jvxl.calc.MarchingSquares','bsVdw','javajs.util.BS','surfaceReader','org.jmol.jvxl.readers.SurfaceReader','out','javajs.util.OC','readerData','java.lang.Object','vAB','javajs.util.V3','+vNorm','ptRef','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_atomdata_AtomDataServer$org_jmol_jvxl_api_MeshDataServer$org_jmol_jvxl_data_MeshData$org_jmol_jvxl_data_JvxlData', function (atomDataServer, meshDataServer, meshData, jvxlData) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.atomDataServer=atomDataServer;
 this.meshDataServer=meshDataServer;
-this.params=Clazz.new_($I$(3));
-this.meshData=(meshData == null  ? Clazz.new_($I$(4)) : meshData);
-this.jvxlData=(jvxlData == null  ? Clazz.new_($I$(5)) : jvxlData);
-this.volumeDataTemp=Clazz.new_($I$(6));
+this.params=Clazz.new_($I$(3,1));
+this.meshData=(meshData == null  ? Clazz.new_($I$(4,1)) : meshData);
+this.jvxlData=(jvxlData == null  ? Clazz.new_($I$(5,1)) : jvxlData);
+this.volumeDataTemp=Clazz.new_($I$(6,1));
 this.initializeIsosurface$();
 }, 1);
 
@@ -127,7 +106,6 @@ if ($I$(9).debugging) for (var i=0; i < this.params.title.length; i++) if (this.
 }return true;
 }if ("sigma" == propertyName) {
 this.params.cutoff=this.params.sigma=(value).floatValue$();
-this.params.isPositiveOnly=false;
 this.params.cutoffAutomatic=false;
 return true;
 }if ("cutoff" == propertyName) {
@@ -142,6 +120,7 @@ return true;
 }if ("cutoffPositive" == propertyName) {
 this.params.cutoff=(value).floatValue$();
 this.params.isPositiveOnly=true;
+this.params.isCutoffAbsolute=false;
 return true;
 }if ("cap" == propertyName || "slab" == propertyName ) {
 if (value != null ) this.params.addSlabInfo$OA(value);
@@ -188,7 +167,7 @@ return true;
 this.params.insideOut=true;
 return true;
 }if ("sign" == propertyName) {
-this.params.isCutoffAbsolute=true;
+this.params.isCutoffAbsolute=!this.params.isPositiveOnly;
 this.params.colorBySign=true;
 this.colorPtr=0;
 return true;
@@ -513,7 +492,7 @@ var x=Clazz.forName("org.jmol.jvxl.readers." + name);
 return (x == null  ? null : x.newInstance$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(9).error$S("Interface.java Error creating instance for " + name + ": \n" + e.toString() );
+(function(a,f){return f.apply(null,a)})(["Interface.java Error creating instance for " + name + ": \n" + e.toString() ],$I$(9).error$S);
 return null;
 } else {
 throw e;
@@ -696,7 +675,7 @@ if (fileType == null ) fileType=$I$(15).determineSurfaceFileType$java_io_Buffere
 if (fileType != null  && fileType.startsWith$S("UPPSALA") ) {
 var fname=this.params.fileName;
 fname=fname.substring$I$I(0, fname.indexOf$S$I("/", 10));
-fname += $I$(7).getQuotedStringAt$S$I(fileType, fileType.indexOf$S("A HREF") + 1);
+fname += (function(a,f){return f.apply(null,a)})([fileType, fileType.indexOf$S("A HREF") + 1],$I$(7).getQuotedStringAt$S$I);
 this.params.fileName=fname;
 value=this.atomDataServer.getBufferedInputStream$S(fname);
 if (value == null ) {
@@ -757,10 +736,10 @@ vectors[i]=$I$(1).new3$F$F$F(info.y, info.z, info.w);
 }
 var nx=counts[0];
 var ny=counts[1];
-var pt=Clazz.new_($I$(2));
-var pta=Clazz.new_($I$(2));
-var ptb=Clazz.new_($I$(2));
-var ptc=Clazz.new_($I$(2));
+var pt=Clazz.new_($I$(2,1));
+var pta=Clazz.new_($I$(2,1));
+var ptb=Clazz.new_($I$(2,1));
+var ptc=Clazz.new_($I$(2,1));
 var data=this.params.functionInfo.get$I(5);
 var data2=Clazz.array(Float.TYPE, [nx, ny]);
 var d;
@@ -778,7 +757,7 @@ pt.z=p$1.distanceVerticalToPlane$F$F$javajs_util_P3$javajs_util_P3$javajs_util_P
 }data2[i][j]=pt.z;
 }
 
-this.params.functionInfo.set$I$TE(5, data2);
+this.params.functionInfo.set$I$O(5, data2);
 }, p$1);
 
 Clazz.newMeth(C$, 'distanceVerticalToPlane$F$F$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (x, y, pta, ptb, ptc) {
@@ -842,7 +821,7 @@ this.meshDataServer.setOutputChannel$javajs_api_GenericBinaryDocument$javajs_uti
 
 Clazz.newMeth(C$, 'fillAtomData$org_jmol_atomdata_AtomData$I', function (atomData, mode) {
 if ((mode & 2) != 0 && atomData.bsSelected != null  ) {
-if (this.bsVdw == null ) this.bsVdw=Clazz.new_($I$(17));
+if (this.bsVdw == null ) this.bsVdw=Clazz.new_($I$(17,1));
 this.bsVdw.or$javajs_util_BS(atomData.bsSelected);
 }this.atomDataServer.fillAtomData$org_jmol_atomdata_AtomData$I(atomData, mode);
 });
@@ -853,4 +832,4 @@ return (this.surfaceReader.volumeData == null  ? null : this.surfaceReader.volum
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

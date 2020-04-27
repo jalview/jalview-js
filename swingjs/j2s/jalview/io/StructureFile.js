@@ -1,36 +1,23 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,['jalview.datamodel.PDBEntry','.Type'],'jalview.structure.StructureImportSettings','jalview.datamodel.PDBEntry','jalview.datamodel.DBRefEntry','jalview.io.FileParse','jalview.analysis.AlignSeq','jalview.datamodel.Alignment','jalview.datamodel.AlignmentI','java.awt.Color','jalview.io.PDBFeatureSettings']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StructureFile", null, 'jalview.io.AlignFile');
+(function(){var P$=Clazz.newPackage("jalview.io"),p$1={},I$=[[0,['jalview.datamodel.PDBEntry','.Type'],'jalview.structure.StructureImportSettings','jalview.datamodel.PDBEntry','jalview.datamodel.DBRefEntry','jalview.io.FileParse','jalview.analysis.AlignSeq','jalview.datamodel.Alignment','jalview.datamodel.AlignmentI','java.awt.Color','jalview.io.PDBFeatureSettings']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StructureFile", null, 'jalview.io.AlignFile');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=null;
-this.dbRefType=null;
-this.visibleChainAnnotation=false;
-this.predictSecondaryStructure=false;
-this.externalSecondaryStructure=false;
-this.chains=null;
-this.pdbIdAvailable=false;
-this.structureFileType=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.visibleChainAnnotation=false;
 this.predictSecondaryStructure=false;
 this.externalSecondaryStructure=false;
 this.structureFileType=$I$(1).PDB.toString();
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['visibleChainAnnotation','predictSecondaryStructure','externalSecondaryStructure','pdbIdAvailable'],'S',['id','structureFileType'],'O',['dbRefType','jalview.datamodel.PDBEntry.Type','chains','java.util.Vector']]]
 
 Clazz.newMeth(C$, 'c$$O$jalview_io_DataSourceType', function (inFile, sourceType) {
-C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this, [inFile, sourceType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this,[inFile, sourceType]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_FileParse', function (fp) {
-C$.superclazz.c$$jalview_io_FileParse.apply(this, [fp]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_FileParse.apply(this,[fp]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'addSettings$Z$Z$Z', function (addAlignmentAnnotations, predictSecondaryStructure, externalSecStr) {
@@ -46,23 +33,21 @@ this.externalSecondaryStructure=$I$(2).isExternalSecondaryStructure$();
 });
 
 Clazz.newMeth(C$, 'c$$Z$O$jalview_io_DataSourceType', function (parseImmediately, dataObject, sourceType) {
-C$.superclazz.c$$Z$O$jalview_io_DataSourceType.apply(this, [parseImmediately, dataObject, sourceType]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Z$O$jalview_io_DataSourceType.apply(this,[parseImmediately, dataObject, sourceType]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$jalview_io_FileParse', function (a, fp) {
-C$.superclazz.c$$Z$jalview_io_FileParse.apply(this, [a, fp]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$Z$jalview_io_FileParse.apply(this,[a, fp]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'postProcessChain$mc_view_PDBChain', function (chain) {
 var pdbSequence=chain.sequence;
 pdbSequence.setName$S(this.getId$() + "|" + pdbSequence.getName$() );
-var entry=Clazz.new_($I$(3));
+var entry=Clazz.new_($I$(3,1));
 entry.setId$S(this.getId$());
 entry.setType$S(this.getStructureFileType$());
 if (chain.id != null ) {
@@ -71,19 +56,19 @@ entry.setChainCode$S(chain.id);
 entry.setFile$S(this.inFile.getAbsolutePath$());
 } else {
 entry.setFile$S(this.getDataName$());
-}var sourceDBRef=Clazz.new_($I$(4));
+}var sourceDBRef=Clazz.new_($I$(4,1));
 sourceDBRef.setAccessionId$S(this.getId$());
 sourceDBRef.setSource$S("PDB");
 sourceDBRef.setVersion$S("");
 pdbSequence.addPDBId$jalview_datamodel_PDBEntry(entry);
 pdbSequence.addDBRef$jalview_datamodel_DBRefEntry(sourceDBRef);
 var chainseq=pdbSequence;
-this.seqs.addElement$TE(chainseq);
+this.seqs.addElement$O(chainseq);
 var chainannot=chainseq.getAnnotation$();
 if (chainannot != null  && this.visibleChainAnnotation ) {
 for (var ai=0; ai < chainannot.length; ai++) {
 chainannot[ai].visible=this.visibleChainAnnotation;
-this.annotations.addElement$TE(chainannot[ai]);
+this.annotations.addElement$O(chainannot[ai]);
 }
 }return chainseq;
 });
@@ -101,7 +86,7 @@ try {
 var cl=Clazz.forName("jalview.ws.jws1.Annotate3D");
 if (cl != null ) {
 var annotate3d=cl.getConstructor$ClassA(Clazz.array(Class, -1, [])).newInstance$OA(Clazz.array(java.lang.Object, -1, []));
-var al=(cl.getMethod$S$ClassA("getRNAMLFor", Clazz.array(Class, -1, [Clazz.getClass($I$(5))])).invoke$O$OA(annotate3d, Clazz.array(java.lang.Object, -1, [Clazz.new_($I$(5).c$$O$jalview_io_DataSourceType,[this.getDataName$(), this.dataSourceType])])));
+var al=(cl.getMethod$S$ClassA("getRNAMLFor", Clazz.array(Class, -1, [Clazz.getClass($I$(5))])).invoke$O$OA(annotate3d, Clazz.array(java.lang.Object, -1, [Clazz.new_([this.getDataName$(), this.dataSourceType],$I$(5,1).c$$O$jalview_io_DataSourceType)])));
 for (var sq, $sq = al.getSequences$().iterator$(); $sq.hasNext$()&&((sq=($sq.next$())),1);) {
 if (sq.getDatasetSequence$() != null ) {
 if (sq.getDatasetSequence$().getAllPDBEntries$() != null ) {
@@ -166,13 +151,13 @@ try {
 var cl=Clazz.forName("jalview.ext.jmol.JmolParser");
 if (cl != null ) {
 var constructor=cl.getConstructor$ClassA(Clazz.array(Class, -1, [Clazz.getClass($I$(5))]));
-var args=Clazz.array(java.lang.Object, -1, [Clazz.new_($I$(5).c$$O$jalview_io_DataSourceType,[this.getDataName$(), this.dataSourceType])]);
+var args=Clazz.array(java.lang.Object, -1, [Clazz.new_([this.getDataName$(), this.dataSourceType],$I$(5,1).c$$O$jalview_io_DataSourceType)]);
 $I$(2).setShowSeqFeatures$Z(false);
 $I$(2).setVisibleChainAnnotation$Z(false);
 $I$(2).setProcessSecondaryStructure$Z(this.predictSecondaryStructure);
 $I$(2).setExternalSecondaryStructure$Z(this.externalSecondaryStructure);
 var jmf=constructor.newInstance$OA(args);
-var al=Clazz.new_($I$(7).c$$jalview_datamodel_SequenceIA,[cl.getMethod$S$ClassA("getSeqsAsArray", Clazz.array(Class, -1, [])).invoke$O$OA(jmf, [])]);
+var al=Clazz.new_([cl.getMethod$S$ClassA("getSeqsAsArray", Clazz.array(Class, -1, [])).invoke$O$OA(jmf, [])],$I$(7,1).c$$jalview_datamodel_SequenceIA);
 cl.getMethod$S$ClassA("addAnnotations", Clazz.array(Class, -1, [Clazz.getClass($I$(8),['addAnnotation$jalview_datamodel_AlignmentAnnotation','addAnnotation$jalview_datamodel_AlignmentAnnotation$I','addCodonFrame$jalview_datamodel_AlignedCodonFrame','addGroup$jalview_datamodel_SequenceGroup','addSequence$jalview_datamodel_SequenceI','alignAs$jalview_datamodel_AlignmentI','append$jalview_datamodel_AlignmentI','deleteAllAnnotations$Z','deleteAllGroups$','deleteAnnotation$jalview_datamodel_AlignmentAnnotation','deleteAnnotation$jalview_datamodel_AlignmentAnnotation$Z','deleteGroup$jalview_datamodel_SequenceGroup','deleteHiddenSequence$I','deleteSequence$jalview_datamodel_SequenceI','deleteSequence$I','findAllGroups$jalview_datamodel_SequenceI','findGroup$jalview_datamodel_SequenceI$I','findIndex$jalview_datamodel_SequenceI','findIndex$jalview_datamodel_SearchResultsI','findName$S','findName$S$Z','findName$jalview_datamodel_SequenceI$S$Z','findOrCreateAnnotation$S$S$Z$jalview_datamodel_SequenceI$jalview_datamodel_SequenceGroup','findSequenceMatch$S','getAbsoluteHeight$','getAlignmentAnnotation$','getCodonFrame$jalview_datamodel_SequenceI','getCodonFrames$','getCompactAlignment$','getDataset$','getGapCharacter$','getGroups$','getHeight$','getHiddenColumns$','getHiddenSequences$','getMapping$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI','getProperties$','getProperty$O','getSequenceAt$I','getSequenceAtAbsoluteIndex$I','getSequenceNames$','getSequences$','getSequencesArray$','getSequencesByName$','getVisibleWidth$','getWidth$','hasRNAStructure$','hasValidSequence$','isAligned$','isAligned$Z','isHidden$I','justify$Z','moveSelectedSequencesByOne$jalview_datamodel_SequenceGroup$java_util_Map$Z','padGaps$','propagateInsertions$jalview_datamodel_SequenceI$jalview_datamodel_AlignmentView','realiseMappings$java_util_List','removeCodonFrame$jalview_datamodel_AlignedCodonFrame','replaceSequenceAt$I$jalview_datamodel_SequenceI','setAnnotationIndex$jalview_datamodel_AlignmentAnnotation$I','setCodonFrames$java_util_List','setDataset$jalview_datamodel_AlignmentI','setGapCharacter$C','setHiddenColumns$jalview_datamodel_HiddenColumns','setProperty$O$O','setupJPredAlignment$','validateAnnotation$jalview_datamodel_AlignmentAnnotation'])])).invoke$O$OA(jmf, [al]);
 for (var sq, $sq = al.getSequences$().iterator$(); $sq.hasNext$()&&((sq=($sq.next$())),1);) {
 if (sq.getDatasetSequence$() != null ) {
@@ -278,7 +263,7 @@ this.dbRefType=dbRefType;
 });
 
 Clazz.newMeth(C$, 'getFeatureColourScheme$', function () {
-return Clazz.new_($I$(10));
+return Clazz.new_($I$(10,1));
 });
 
 Clazz.newMeth(C$, 'isPPDBIdAvailable$', function () {
@@ -289,4 +274,4 @@ Clazz.newMeth(C$, 'setPDBIdAvailable$Z', function (pdbIdAvailable) {
 this.pdbIdAvailable=pdbIdAvailable;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

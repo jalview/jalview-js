@@ -1,23 +1,20 @@
 (function(){var P$=Clazz.newPackage("javax.print.attribute.standard"),p$1={};
-var C$=Clazz.newClass(P$, "PageRanges", null, 'javax.print.attribute.SetOfIntegerSyntax', ['javax.print.attribute.DocAttribute', 'javax.print.attribute.PrintRequestAttribute', 'javax.print.attribute.PrintJobAttribute']);
+/*c*/var C$=Clazz.newClass(P$, "PageRanges", null, 'javax.print.attribute.SetOfIntegerSyntax', ['javax.print.attribute.DocAttribute', 'javax.print.attribute.PrintRequestAttribute', 'javax.print.attribute.PrintJobAttribute']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$IAA', function (members) {
-C$.superclazz.c$$IAA.apply(this, [members]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IAA.apply(this,[members]);C$.$init$.apply(this);
 if (members == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["members is null"]);
 }p$1.myPageRanges.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (members) {
-C$.superclazz.c$$S.apply(this, [members]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[members]);C$.$init$.apply(this);
 if (members == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["members is null"]);
 }p$1.myPageRanges.apply(this, []);
@@ -36,15 +33,13 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Page value < 1 sp
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$I', function (member) {
-C$.superclazz.c$$I.apply(this, [member]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[member]);C$.$init$.apply(this);
 if (member < 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Page value < 1 specified"]);
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$I$I', function (lowerBound, upperBound) {
-C$.superclazz.c$$I$I.apply(this, [lowerBound, upperBound]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I$I.apply(this,[lowerBound, upperBound]);C$.$init$.apply(this);
 if (lowerBound > upperBound) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null range specified"]);
 } else if (lowerBound < 1) {
@@ -65,4 +60,4 @@ return "page-ranges";
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,26 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'org.jmol.adapter.smarter.Atom']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XmlArgusReader", null, 'org.jmol.adapter.readers.xml.XmlReader');
-C$.keepCharsList=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'org.jmol.adapter.smarter.Atom']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "XmlArgusReader", null, 'org.jmol.adapter.readers.xml.XmlReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.keepCharsList=Clazz.array(String, -1, ["name", "x", "y", "z", "formalchg", "atomkey", "atsym", "e00", "e01", "e02", "e03", "e10", "e11", "e12", "e13", "e20", "e21", "e22", "e23", "e30", "e31", "e32", "e33"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.atomName1=null;
-this.atomName2=null;
-this.bondOrder=0;
-this.elementContext=0;
-this.trans=null;
-this.ptTrans=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['bondOrder','elementContext','ptTrans'],'S',['atomName1','atomName2'],'O',['trans','float[]']]
+,['O',['keepCharsList','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'processStartElement$S$S', function (localName, nodeName) {
@@ -33,7 +23,7 @@ this.asc.newAtomSet$();
 return;
 }if ("atom".equals$O(localName)) {
 this.elementContext=2;
-this.atom=Clazz.new_($I$(1));
+this.atom=Clazz.new_($I$(1,1));
 return;
 }if ("bond".equals$O(localName)) {
 this.elementContext=3;
@@ -123,5 +113,9 @@ this.trans[this.ptTrans++]=this.parseFloatStr$S(this.chars.toString());
 this.setKeepChars$Z(false);
 return;
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.keepCharsList=Clazz.array(String, -1, ["name", "x", "y", "z", "formalchg", "atomkey", "atsym", "e00", "e01", "e02", "e03", "e10", "e11", "e12", "e13", "e20", "e21", "e22", "e23", "e30", "e31", "e32", "e33"]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

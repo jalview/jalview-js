@@ -1,22 +1,18 @@
 (function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={};
-var C$=Clazz.newClass(P$, "CircleRenderer", null, null, 'org.jmol.g3d.G3DRenderer');
+/*c*/var C$=Clazz.newClass(P$, "CircleRenderer", null, null, 'org.jmol.g3d.G3DRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.g3d=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['g3d','org.jmol.g3d.Graphics3D']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData','set$'], function (g3d, gdata) {
+Clazz.newMeth(C$, 'set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData', function (g3d, gdata) {
 try {
 this.g3d=g3d;
 } catch (e) {
@@ -163,4 +159,4 @@ xChange+=2;
 }}
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,40 +1,16 @@
 (function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[];
-var C$=Clazz.newClass(P$, "RoundRectIterator", null, null, 'java.awt.geom.PathIterator');
-C$.a=0;
-C$.b=0;
-C$.c=0;
-C$.cv=0;
-C$.acv=0;
-C$.ctrlpts=null;
-C$.types=null;
+/*c*/var C$=Clazz.newClass(P$, "RoundRectIterator", null, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.a=1.0 - Math.cos(0.7853981633974483);
-C$.b=Math.tan(0.7853981633974483);
-C$.c=Math.sqrt(1.0 + C$.b * C$.b) - 1 + C$.a;
-C$.cv=1.3333333333333333 * C$.a * C$.b / C$.c;
-C$.acv=(1.0 - C$.cv) / 2.0;
-C$.ctrlpts=Clazz.array(Double.TYPE, -2, [Clazz.array(Double.TYPE, -1, [0.0, 0.0, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [0.0, 0.0, 1.0, -0.5]), Clazz.array(Double.TYPE, -1, [0.0, 0.0, 1.0, -C$.acv, 0.0, C$.acv, 1.0, 0.0, 0.0, 0.5, 1.0, 0.0]), Clazz.array(Double.TYPE, -1, [1.0, -0.5, 1.0, 0.0]), Clazz.array(Double.TYPE, -1, [1.0, -C$.acv, 1.0, 0.0, 1.0, 0.0, 1.0, -C$.acv, 1.0, 0.0, 1.0, -0.5]), Clazz.array(Double.TYPE, -1, [1.0, 0.0, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [1.0, 0.0, 0.0, C$.acv, 1.0, -C$.acv, 0.0, 0.0, 1.0, -0.5, 0.0, 0.0]), Clazz.array(Double.TYPE, -1, [0.0, 0.5, 0.0, 0.0]), Clazz.array(Double.TYPE, -1, [0.0, C$.acv, 0.0, 0.0, 0.0, 0.0, 0.0, C$.acv, 0.0, 0.0, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [])]);
-C$.types=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 1, 3, 1, 3, 1, 3, 4]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.w=0;
-this.h=0;
-this.aw=0;
-this.ah=0;
-this.affine=null;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['x','y','w','h','aw','ah'],'I',['index'],'O',['affine','java.awt.geom.AffineTransform']]
+,['D',['a','b','c','cv','acv'],'O',['ctrlpts','double[][]','types','int[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_geom_RoundRectangle2D$java_awt_geom_AffineTransform', function (rr, at) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.x=rr.getX$();
 this.y=rr.getY$();
 this.w=rr.getWidth$();
@@ -86,6 +62,16 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, (nc/2|0));
 }return C$.types[this.index];
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.a=1.0 - Math.cos(0.7853981633974483);
+C$.b=Math.tan(0.7853981633974483);
+C$.c=Math.sqrt(1.0 + C$.b * C$.b) - 1 + C$.a;
+C$.cv=1.3333333333333333 * C$.a * C$.b / C$.c;
+C$.acv=(1.0 - C$.cv) / 2.0;
+C$.ctrlpts=Clazz.array(Double.TYPE, -2, [Clazz.array(Double.TYPE, -1, [0.0, 0.0, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [0.0, 0.0, 1.0, -0.5]), Clazz.array(Double.TYPE, -1, [0.0, 0.0, 1.0, -C$.acv, 0.0, C$.acv, 1.0, 0.0, 0.0, 0.5, 1.0, 0.0]), Clazz.array(Double.TYPE, -1, [1.0, -0.5, 1.0, 0.0]), Clazz.array(Double.TYPE, -1, [1.0, -C$.acv, 1.0, 0.0, 1.0, 0.0, 1.0, -C$.acv, 1.0, 0.0, 1.0, -0.5]), Clazz.array(Double.TYPE, -1, [1.0, 0.0, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [1.0, 0.0, 0.0, C$.acv, 1.0, -C$.acv, 0.0, 0.0, 1.0, -0.5, 0.0, 0.0]), Clazz.array(Double.TYPE, -1, [0.0, 0.5, 0.0, 0.0]), Clazz.array(Double.TYPE, -1, [0.0, C$.acv, 0.0, 0.0, 0.0, 0.0, 0.0, C$.acv, 0.0, 0.0, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [])]);
+C$.types=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 1, 3, 1, 3, 1, 3, 4]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

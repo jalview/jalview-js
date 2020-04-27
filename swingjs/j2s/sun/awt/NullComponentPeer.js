@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("sun.awt"),I$=[[0,'java.awt.Dimension','java.awt.Point','java.awt.Insets','java.awt.Rectangle']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NullComponentPeer", null, null, ['java.awt.peer.LightweightPeer', 'java.awt.peer.PanelPeer']);
+(function(){var P$=Clazz.newPackage("sun.awt"),I$=[[0,'java.awt.Dimension','java.awt.Point','java.awt.Insets','java.awt.Rectangle']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NullComponentPeer", null, null, ['java.awt.peer.LightweightPeer', 'java.awt.peer.PanelPeer']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'isObscured$', function () {
 return false;
@@ -63,11 +62,11 @@ Clazz.newMeth(C$, 'handleEvent$java_awt_AWTEvent', function (arg0) {
 });
 
 Clazz.newMeth(C$, 'getPreferredSize$', function () {
-return Clazz.new_($I$(1).c$$I$I,[1, 1]);
+return Clazz.new_($I$(1,1).c$$I$I,[1, 1]);
 });
 
 Clazz.newMeth(C$, 'getMinimumSize$', function () {
-return Clazz.new_($I$(1).c$$I$I,[1, 1]);
+return Clazz.new_($I$(1,1).c$$I$I,[1, 1]);
 });
 
 Clazz.newMeth(C$, 'getToolkit$', function () {
@@ -129,21 +128,11 @@ return 0;
 });
 
 Clazz.newMeth(C$, 'getLocationOnScreen$', function () {
-return Clazz.new_($I$(2).c$$I$I,[0, 0]);
-});
-
-Clazz.newMeth(C$, 'getInsets$', function () {
-return this.insets$();
-});
-
-Clazz.newMeth(C$, 'beginValidate$', function () {
-});
-
-Clazz.newMeth(C$, 'endValidate$', function () {
+return Clazz.new_($I$(2,1).c$$I$I,[0, 0]);
 });
 
 Clazz.newMeth(C$, 'insets$', function () {
-return Clazz.new_($I$(3).c$$I$I$I$I,[0, 0, 0, 0]);
+return Clazz.new_($I$(3,1).c$$I$I$I$I,[0, 0, 0, 0]);
 });
 
 Clazz.newMeth(C$, 'isPaintPending$', function () {
@@ -156,12 +145,6 @@ return false;
 
 Clazz.newMeth(C$, 'createVolatileImage$I$I', function (width, height) {
 return null;
-});
-
-Clazz.newMeth(C$, 'beginLayout$', function () {
-});
-
-Clazz.newMeth(C$, 'endLayout$', function () {
 });
 
 Clazz.newMeth(C$, 'getBackBuffer$', function () {
@@ -191,9 +174,9 @@ Clazz.newMeth(C$, 'layout$', function () {
 });
 
 Clazz.newMeth(C$, 'getBounds$', function () {
-return Clazz.new_($I$(4).c$$I$I$I$I,[0, 0, 0, 0]);
+return Clazz.new_($I$(4,1).c$$I$I$I$I,[0, 0, 0, 0]);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

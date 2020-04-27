@@ -1,20 +1,17 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'java.net.URL','java.util.Arrays','java.util.Collections','jalview.util.MapList','jalview.bin.Cache']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EnsemblLookup", null, 'jalview.ext.ensembl.EnsemblRestClient');
+(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'java.net.URL','java.util.Arrays','java.util.Collections','jalview.datamodel.Mapping','jalview.util.MapList','jalview.datamodel.GeneLocus','jalview.bin.Cache']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EnsemblLookup", null, 'jalview.ext.ensembl.EnsemblRestClient');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (d) {
-C$.superclazz.c$$S.apply(this, [d]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[d]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getDbName$', function () {
@@ -35,7 +32,7 @@ var url=this.getDomain$() + "/lookup/id/" + identifier + "?content-type=applicat
 if (objectType != null ) {
 url += "&" + "object_type" + "=" + objectType ;
 }try {
-return Clazz.new_($I$(1).c$$S,[url]);
+return Clazz.new_($I$(1,1).c$$S,[url]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return null;
@@ -83,7 +80,7 @@ species=o.toString();
 });
 
 Clazz.newMeth(C$, 'getResult$S$S', function (identifier, objectType) {
-var ids=$I$(2).asList$TTA(Clazz.array(String, -1, [identifier]));
+var ids=$I$(2,"asList$OA",[Clazz.array(String, -1, [identifier])]);
 try {
 return this.getJSON$java_net_URL$java_util_List$I$I$S(this.getUrl$S$S(identifier, objectType), ids, -1, 1, null);
 } catch (e) {
@@ -114,38 +111,13 @@ var fromEnd=end - start + 1;
 var reverseStrand="-1".equals$O(strand);
 var toStart=reverseStrand ? end : start;
 var toEnd=reverseStrand ? start : end;
-var fromRange=$I$(3).singletonList$TT(Clazz.array(Integer.TYPE, -1, [1, fromEnd]));
-var toRange=$I$(3).singletonList$TT(Clazz.array(Integer.TYPE, -1, [toStart, toEnd]));
-var map=Clazz.new_($I$(4).c$$java_util_List$java_util_List$I$I,[fromRange, toRange, 1, 1]);
-return ((P$.EnsemblLookup$1||
-(function(){var C$=Clazz.newClass(P$, "EnsemblLookup$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.datamodel.GeneLociI', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'getSpeciesId$', function () {
-return this.$finals$.species == null  ? "" : this.$finals$.species;
-});
-
-Clazz.newMeth(C$, 'getAssemblyId$', function () {
-return this.$finals$.assembly;
-});
-
-Clazz.newMeth(C$, 'getChromosomeId$', function () {
-return this.$finals$.chromosome;
-});
-
-Clazz.newMeth(C$, 'getMap$', function () {
-return this.$finals$.map;
-});
-})()
-), Clazz.new_(P$.EnsemblLookup$1.$init$, [this, {species: species, assembly: assembly, chromosome: chromosome, map: map}]));
+var fromRange=$I$(3,"singletonList$O",[Clazz.array(Integer.TYPE, -1, [1, fromEnd])]);
+var toRange=$I$(3,"singletonList$O",[Clazz.array(Integer.TYPE, -1, [toStart, toEnd])]);
+var map=Clazz.new_([Clazz.new_($I$(5,1).c$$java_util_List$java_util_List$I$I,[fromRange, toRange, 1, 1])],$I$(4,1).c$$jalview_util_MapList);
+return Clazz.new_([species == null  ? "" : species, assembly, chromosome, map],$I$(6,1).c$$S$S$S$jalview_datamodel_Mapping);
 } catch (e) {
 if (Clazz.exceptionOf(e,"NullPointerException") || Clazz.exceptionOf(e,"NumberFormatException")){
-$I$(5).log.error$O("Error looking up gene loci: " + e.getMessage$());
+$I$(7).log.error$O("Error looking up gene loci: " + e.getMessage$());
 e.printStackTrace$();
 } else {
 throw e;
@@ -154,4 +126,4 @@ throw e;
 return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

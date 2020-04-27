@@ -1,62 +1,7 @@
-(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'java.awt.Font','StringBuffer','java.awt.Color','jalview.io.DataSourceType','jalview.analysis.AlignSeq','java.io.PrintStream','java.awt.Dimension','java.awt.event.KeyAdapter','javax.swing.ToolTipManager','java.util.Vector','java.awt.RenderingHints','jalview.gui.SequenceRenderer','jalview.gui.FeatureRenderer','jalview.renderer.seqfeatures.FeatureColourFinder','mc_view.Zsort','mc_view.MCMatrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDBCanvas", null, 'javax.swing.JPanel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'jalview.structure.StructureListener']);
+(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'java.awt.Font','StringBuffer','java.awt.Color','jalview.io.DataSourceType','jalview.analysis.AlignSeq','java.io.PrintStream','java.awt.Dimension','java.awt.event.KeyAdapter','javax.swing.ToolTipManager','java.util.Vector','java.awt.RenderingHints','jalview.gui.SequenceRenderer','jalview.gui.FeatureRenderer','jalview.renderer.seqfeatures.FeatureColourFinder','mc_view.Zsort','mc_view.MCMatrix']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDBCanvas", null, 'javax.swing.JPanel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'jalview.structure.StructureListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.redrawneeded=false;
-this.omx=0;
-this.mx=0;
-this.omy=0;
-this.my=0;
-this.pdb=null;
-this.pdbentry=null;
-this.bsize=0;
-this.img=null;
-this.ig=null;
-this.prefsize=null;
-this.centre=null;
-this.$width=null;
-this.maxwidth=0;
-this.scale=0;
-this.inStr=null;
-this.inType=null;
-this.bysequence=false;
-this.depthcue=false;
-this.wire=false;
-this.bymolecule=false;
-this.zbuffer=false;
-this.dragging=false;
-this.xstart=0;
-this.xend=0;
-this.ystart=0;
-this.yend=0;
-this.xmid=0;
-this.ymid=0;
-this.$font=null;
-this.seqcanvas=null;
-this.sequence=null;
-this.mappingDetails=null;
-this.mainchain=null;
-this.highlightRes=null;
-this.pdbAction=false;
-this.seqColoursReady=false;
-this.fr=null;
-this.backgroundColour=null;
-this.ap=null;
-this.ssm=null;
-this.errorMessage=null;
-this.visiblebonds=null;
-this.zsort=null;
-this.foundchain=0;
-this.highlightBond1=null;
-this.highlightBond2=null;
-this.lastMessage=null;
-this.resetLastRes=null;
-this.eval=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.redrawneeded=true;
@@ -71,15 +16,17 @@ this.depthcue=true;
 this.wire=false;
 this.bymolecule=false;
 this.zbuffer=true;
-this.$font=Clazz.new_($I$(1).c$$S$I$I,["Helvetica", 0, 10]);
-this.mappingDetails=Clazz.new_($I$(2));
+this.$font=Clazz.new_($I$(1,1).c$$S$I$I,["Helvetica", 0, 10]);
+this.mappingDetails=Clazz.new_($I$(2,1));
 this.pdbAction=false;
 this.seqColoursReady=false;
 this.backgroundColour=$I$(3).black;
 this.foundchain=-1;
-this.resetLastRes=Clazz.new_($I$(2));
-this.eval=Clazz.new_($I$(2));
-}, 1);
+this.resetLastRes=Clazz.new_($I$(2,1));
+this.eval=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['redrawneeded','bysequence','depthcue','wire','bymolecule','zbuffer','dragging','pdbAction','seqColoursReady'],'F',['maxwidth','scale'],'I',['omx','mx','omy','my','bsize','xstart','xend','ystart','yend','xmid','ymid','foundchain'],'S',['inStr','inType','errorMessage','lastMessage'],'O',['pdb','jalview.io.StructureFile','pdbentry','jalview.datamodel.PDBEntry','img','java.awt.Image','ig','java.awt.Graphics','prefsize','java.awt.Dimension','centre','float[]','+$width','$font','java.awt.Font','seqcanvas','jalview.gui.SeqCanvas','sequence','jalview.datamodel.SequenceI[]','mappingDetails','StringBuffer','mainchain','mc_view.PDBChain','highlightRes','java.util.Vector','fr','jalview.renderer.seqfeatures.FeatureRenderer','backgroundColour','java.awt.Color','ap','jalview.gui.AlignmentPanel','ssm','jalview.structure.StructureSelectionManager','visiblebonds','java.util.Vector','zsort','mc_view.Zsort','highlightBond1','mc_view.Bond','+highlightBond2','resetLastRes','StringBuffer','+eval']]]
 
 Clazz.newMeth(C$, 'init$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_gui_AlignmentPanel$jalview_io_DataSourceType', function (pdbentry, seq, chains, ap, protocol) {
 this.ap=ap;
@@ -114,17 +61,16 @@ var sequence=seq[0];
 for (var i=0; i < this.pdb.getChains$().size$(); i++) {
 this.mappingDetails.append$S("\n\nPDB Sequence is :\nSequence = " + this.pdb.getChains$().elementAt$I(i).sequence.getSequenceAsString$());
 this.mappingDetails.append$S("\nNo of residues = " + this.pdb.getChains$().elementAt$I(i).residues.size$() + "\n\n" );
-var as=Clazz.new_($I$(5).c$$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$S,[sequence, this.pdb.getChains$().elementAt$I(i).sequence, "pep"]);
+var as=Clazz.new_([sequence, this.pdb.getChains$().elementAt$I(i).sequence, "pep"],$I$(5,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$S);
 as.calcScoreMatrix$();
 as.traceAlignment$();
 var ps=((P$.PDBCanvas$1||
-(function(){var C$=Clazz.newClass(P$, "PDBCanvas$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "PDBCanvas$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'print$S', function (x) {
 this.b$['mc_view.PDBCanvas'].mappingDetails.append$S(x);
@@ -134,7 +80,7 @@ Clazz.newMeth(C$, 'println$', function () {
 this.b$['mc_view.PDBCanvas'].mappingDetails.append$S("\n");
 });
 })()
-), Clazz.new_($I$(6).c$$java_io_OutputStream, [this, null, System.out],P$.PDBCanvas$1));
+), Clazz.new_($I$(6,1).c$$java_io_OutputStream,[this, null, System.out],P$.PDBCanvas$1));
 as.printAlignment$java_io_PrintStream(ps);
 if (as.maxscore > max ) {
 max=as.maxscore;
@@ -153,23 +99,22 @@ this.mainchain.seqstart=seqstart;
 this.mainchain.seqend=seqend;
 this.mainchain.isVisible=true;
 this.pdb=this.pdb;
-this.prefsize=Clazz.new_($I$(7).c$$I$I,[this.getSize$().width, this.getSize$().height]);
+this.prefsize=Clazz.new_([this.getSize$().width, this.getSize$().height],$I$(7,1).c$$I$I);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
 this.addMouseListener$java_awt_event_MouseListener(this);
 this.addKeyListener$java_awt_event_KeyListener(((P$.PDBCanvas$2||
-(function(){var C$=Clazz.newClass(P$, "PDBCanvas$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "PDBCanvas$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (evt) {
 this.keyPressed$java_awt_event_KeyEvent(evt);
 });
 })()
-), Clazz.new_($I$(8), [this, null],P$.PDBCanvas$2)));
+), Clazz.new_($I$(8,1),[this, null],P$.PDBCanvas$2)));
 this.findCentre$();
 this.findWidth$();
 this.setupBonds$();
@@ -181,11 +126,11 @@ $I$(9).sharedInstance$().setDismissDelay$I(10000);
 
 Clazz.newMeth(C$, 'setupBonds$', function () {
 this.seqColoursReady=false;
-this.visiblebonds=Clazz.new_($I$(10));
+this.visiblebonds=Clazz.new_($I$(10,1));
 for (var chain, $chain = this.pdb.getChains$().iterator$(); $chain.hasNext$()&&((chain=($chain.next$())),1);) {
 if (chain.isVisible) {
 for (var bond, $bond = chain.bonds.iterator$(); $bond.hasNext$()&&((bond=($bond.next$())),1);) {
-this.visiblebonds.addElement$TE(bond);
+this.visiblebonds.addElement$O(bond);
 }
 }}
 this.updateSeqColours$();
@@ -282,7 +227,7 @@ Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
 C$.superclazz.prototype.paintComponent$java_awt_Graphics.apply(this, [g]);
 if (!this.seqColoursReady || this.errorMessage != null  ) {
 g.setColor$java_awt_Color($I$(3).black);
-g.setFont$java_awt_Font(Clazz.new_($I$(1).c$$S$I$I,["Verdana", 1, 14]));
+g.setFont$java_awt_Font(Clazz.new_($I$(1,1).c$$S$I$I,["Verdana", 1, 14]));
 g.drawString$S$I$I(this.errorMessage == null  ? "Retrieving PDB data...." : this.errorMessage, 20, (this.getHeight$()/2|0));
 return;
 }if ((this.img == null ) || (this.prefsize.width != this.getWidth$()) || (this.prefsize.height != this.getHeight$())  ) {
@@ -317,15 +262,15 @@ this.repaint$();
 });
 
 Clazz.newMeth(C$, 'colourBySequence$', function () {
-var sr=Clazz.new_($I$(12).c$$jalview_api_AlignViewportI,[this.ap.av]);
+var sr=Clazz.new_($I$(12,1).c$$jalview_api_AlignViewportI,[this.ap.av]);
 var mapping=this.ssm.getMapping$S(this.pdbentry.getFile$());
 var showFeatures=false;
 if (this.ap.av.isShowSequenceFeatures$()) {
 if (this.fr == null ) {
-this.fr=Clazz.new_($I$(13).c$$jalview_gui_AlignmentPanel,[this.ap]);
+this.fr=Clazz.new_($I$(13,1).c$$jalview_gui_AlignmentPanel,[this.ap]);
 }this.fr.transferSettings$jalview_api_FeatureRenderer(this.ap.alignFrame.getFeatureRenderer$());
 showFeatures=true;
-}var finder=Clazz.new_($I$(14).c$$jalview_api_FeatureRenderer,[this.fr]);
+}var finder=Clazz.new_($I$(14,1).c$$jalview_api_FeatureRenderer,[this.fr]);
 var chain;
 if (this.bysequence && this.pdb != null  ) {
 for (var ii=0; ii < this.pdb.getChains$().size$(); ii++) {
@@ -356,7 +301,7 @@ tmp.endCol=sr.getResidueColour$jalview_datamodel_SequenceI$I$jalview_renderer_se
 Clazz.newMeth(C$, 'drawScene$java_awt_Graphics', function (g) {
 if (this.zbuffer) {
 if (this.zsort == null ) {
-this.zsort=Clazz.new_($I$(15));
+this.zsort=Clazz.new_($I$(15,1));
 }this.zsort.sort$java_util_Vector(this.visiblebonds);
 }var tmpBond=null;
 for (var i=0; i < this.visiblebonds.size$(); i++) {
@@ -455,12 +400,12 @@ var chain=this.pdb.getChains$().elementAt$I(this.foundchain);
 if (chain === this.mainchain ) {
 if (fatom.alignmentMapping != -1) {
 if (this.highlightRes == null ) {
-this.highlightRes=Clazz.new_($I$(10));
+this.highlightRes=Clazz.new_($I$(10,1));
 }var atomString=Integer.toString$I(fatom.alignmentMapping);
 if (this.highlightRes.contains$O(atomString)) {
 this.highlightRes.remove$O(atomString);
 } else {
-this.highlightRes.add$TE(atomString);
+this.highlightRes.add$O(atomString);
 }}}}}this.mx=e.getX$();
 this.my=e.getY$();
 this.omx=this.mx;
@@ -502,7 +447,7 @@ var x=evt.getX$();
 var y=evt.getY$();
 this.mx=x;
 this.my=y;
-var objmat=Clazz.new_($I$(16).c$$I$I,[3, 3]);
+var objmat=Clazz.new_($I$(16,1).c$$I$I,[3, 3]);
 objmat.setIdentity$();
 if ((evt.getModifiers$() & 4) != 0) {
 objmat.rotatez$F(((this.mx - this.omx)));
@@ -693,4 +638,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

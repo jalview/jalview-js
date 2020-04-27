@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("jalview.ws.params"),I$=[];
-var C$=Clazz.newClass(P$, "AutoCalcSetting");
+/*c*/var C$=Clazz.newClass(P$, "AutoCalcSetting");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.autoUpdate=false;
-this.preset=null;
-this.jobArgset=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['autoUpdate'],'O',['preset','jalview.ws.params.WsParamSetI','jobArgset','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$jalview_ws_params_WsParamSetI$java_util_List$Z', function (preset2, jobArgset2, autoUpdate2) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.autoUpdate=autoUpdate2;
 this.preset=preset2;
 this.jobArgset=jobArgset2;
@@ -43,4 +37,4 @@ return this.jobArgset;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

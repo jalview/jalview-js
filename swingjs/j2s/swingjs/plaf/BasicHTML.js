@@ -1,15 +1,16 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'javax.swing.text.html.StyleSheet','java.io.StringReader',['swingjs.plaf.BasicHTML','.BasicDocument'],'swingjs.plaf.BasicHTML','sun.swing.SwingUtilities2','Error',['swingjs.plaf.BasicHTML','.Renderer'],'java.awt.Rectangle','javax.swing.text.StyleConstants',['javax.swing.text.html.HTML','.Tag'],'Boolean',['swingjs.plaf.BasicHTML','.BasicHTMLViewFactory'],['swingjs.plaf.BasicHTML','.BasicEditorKit']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BasicHTML", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'javax.swing.text.html.StyleSheet','java.io.StringReader',['swingjs.plaf.BasicHTML','.BasicDocument'],'swingjs.plaf.BasicHTML','sun.swing.SwingUtilities2','Error',['swingjs.plaf.BasicHTML','.Renderer'],'java.awt.Rectangle','javax.swing.text.StyleConstants',['javax.swing.text.html.HTML','.Tag'],['swingjs.plaf.BasicHTML','.BasicHTMLViewFactory'],['swingjs.plaf.BasicHTML','.BasicEditorKit']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BasicHTML", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.basicHTMLFactory=null;
-C$.basicHTMLViewFactory=null;
+C$.$classes$=[['BasicEditorKit',8],['BasicHTMLViewFactory',8],['BasicDocument',8],['Renderer',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['basicHTMLFactory','swingjs.plaf.BasicHTML.BasicEditorKit','basicHTMLViewFactory','javax.swing.text.ViewFactory']]]
 
 Clazz.newMeth(C$, 'createHTMLView$javax_swing_JComponent$S', function (c, html) {
 var kit=C$.getFactory$();
@@ -17,14 +18,14 @@ var doc=kit.createDefaultDocument$java_awt_Font$java_awt_Color(c.getFont$(), c.g
 var base=c.getClientProperty$O("html.base");
 if (Clazz.instanceOf(base, "java.net.URL")) {
 (doc).setBase$java_net_URL(base);
-}var r=Clazz.new_($I$(2).c$$S,[html]);
+}var r=Clazz.new_($I$(2,1).c$$S,[html]);
 try {
 kit.read$java_io_Reader$javax_swing_text_Document$I(r, doc, 0);
 } catch (e) {
 }
 var f=kit.getViewFactory$();
-var hview=f.create$(doc.getDefaultRootElement$());
-var v=Clazz.new_($I$(7).c$$javax_swing_JComponent$javax_swing_text_ViewFactory$javax_swing_text_View,[c, f, hview]);
+var hview=f.create$javax_swing_text_Element(doc.getDefaultRootElement$());
+var v=Clazz.new_($I$(7,1).c$$javax_swing_JComponent$javax_swing_text_ViewFactory$javax_swing_text_View,[c, f, hview]);
 return v;
 }, 1);
 
@@ -49,7 +50,7 @@ return baseline;
 Clazz.newMeth(C$, 'getBaseline$javax_swing_text_View$I$I', function (view, w, h) {
 if (C$.hasParagraph$javax_swing_text_View(view)) {
 view.setSize$F$F(w, h);
-return C$.getBaseline$javax_swing_text_View$java_awt_Shape(view, Clazz.new_($I$(8).c$$I$I$I$I,[0, 0, w, h]));
+return C$.getBaseline$javax_swing_text_View$java_awt_Shape(view, Clazz.new_($I$(8,1).c$$I$I$I$I,[0, 0, w, h]));
 }return -1;
 }, 1);
 
@@ -104,7 +105,7 @@ Clazz.newMeth(C$, 'updateRenderer$javax_swing_JComponent$S', function (c, text) 
 var value=null;
 var oldValue=c.getClientProperty$O("html");
 var htmlDisabled=c.getClientProperty$O("html.disable");
-if (htmlDisabled !== $I$(11).TRUE  && C$.isHTMLString$S(text) ) {
+if (htmlDisabled !== Boolean.TRUE  && C$.isHTMLString$S(text) ) {
 value=C$.createHTMLView$javax_swing_JComponent$S(c, text);
 }if (value !== oldValue  && oldValue != null  ) {
 for (var i=0; i < oldValue.getViewCount$(); i++) {
@@ -115,26 +116,27 @@ oldValue.getView$I(i).setParent$javax_swing_text_View(null);
 
 Clazz.newMeth(C$, 'getFactory$', function () {
 if (C$.basicHTMLFactory == null ) {
-C$.basicHTMLViewFactory=Clazz.new_($I$(12));
-C$.basicHTMLFactory=Clazz.new_($I$(13));
+C$.basicHTMLViewFactory=Clazz.new_($I$(11,1));
+C$.basicHTMLFactory=Clazz.new_($I$(12,1));
 }return C$.basicHTMLFactory;
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.BasicHTML, "BasicEditorKit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BasicHTML, "BasicEditorKit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.html.HTMLEditorKit');
-C$.defaultStyles=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['defaultStyles','javax.swing.text.html.StyleSheet']]]
 
 Clazz.newMeth(C$, 'getStyleSheet$', function () {
 if (C$.defaultStyles == null ) {
-C$.defaultStyles=Clazz.new_($I$(1));
-var r=Clazz.new_($I$(2).c$$S,["p { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }body { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }"]);
+C$.defaultStyles=Clazz.new_($I$(1,1));
+var r=Clazz.new_($I$(2,1).c$$S,["p { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }body { margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0 }"]);
 try {
 C$.defaultStyles.loadRules$java_io_Reader$java_net_URL(r, null);
 } catch (e) {
@@ -146,9 +148,9 @@ C$.defaultStyles.addStyleSheet$javax_swing_text_html_StyleSheet(C$.superclazz.pr
 
 Clazz.newMeth(C$, 'createDefaultDocument$java_awt_Font$java_awt_Color', function (defaultFont, foreground) {
 var styles=this.getStyleSheet$();
-var ss=Clazz.new_($I$(1));
+var ss=Clazz.new_($I$(1,1));
 ss.addStyleSheet$javax_swing_text_html_StyleSheet(styles);
-var doc=Clazz.new_($I$(3).c$$javax_swing_text_html_StyleSheet$java_awt_Font$java_awt_Color,[ss, defaultFont, foreground]);
+var doc=Clazz.new_($I$(3,1).c$$javax_swing_text_html_StyleSheet$java_awt_Font$java_awt_Color,[ss, defaultFont, foreground]);
 doc.setAsynchronousLoadPriority$I(2147483647);
 doc.setPreservesUnknownTags$Z(false);
 return doc;
@@ -161,17 +163,16 @@ return $I$(4).basicHTMLViewFactory;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.BasicHTML, "BasicHTMLViewFactory", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BasicHTML, "BasicHTMLViewFactory", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.text.html.HTMLEditorKit','.HTMLFactory']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['create$javax_swing_text_Element','create$'], function (elem) {
+Clazz.newMeth(C$, 'create$javax_swing_text_Element', function (elem) {
 var view=C$.superclazz.prototype.create$javax_swing_text_Element.apply(this, [elem]);
 if (Clazz.instanceOf(view, "javax.swing.text.html.ImageView")) {
 (view).setLoadsSynchronously$Z(true);
@@ -181,19 +182,17 @@ if (Clazz.instanceOf(view, "javax.swing.text.html.ImageView")) {
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.BasicHTML, "BasicDocument", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BasicHTML, "BasicDocument", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.html.HTMLDocument');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_text_html_StyleSheet$java_awt_Font$java_awt_Color', function (s, defaultFont, foreground) {
-C$.superclazz.c$$javax_swing_text_html_StyleSheet.apply(this, [s]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_html_StyleSheet.apply(this,[s]);C$.$init$.apply(this);
 this.setPreservesUnknownTags$Z(false);
 p$1.setFontAndColor$java_awt_Font$java_awt_Color.apply(this, [defaultFont, foreground]);
 }, 1);
@@ -205,27 +204,19 @@ this.getStyleSheet$().addRule$S($I$(5).displayPropertiesToCSS$java_awt_Font$java
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.BasicHTML, "Renderer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.BasicHTML, "Renderer", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.View');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.view=null;
-this.factory=null;
-this.host=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['width'],'O',['view','javax.swing.text.View','factory','javax.swing.text.ViewFactory','host','javax.swing.JComponent']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_JComponent$javax_swing_text_ViewFactory$javax_swing_text_View', function (c, f, v) {
-C$.superclazz.c$$javax_swing_text_Element.apply(this, [null]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Element.apply(this,[null]);C$.$init$.apply(this);
 this.host=c;
 this.factory=f;
 this.view=v;
@@ -253,7 +244,7 @@ return 2147483647;
 
 Clazz.newMeth(C$, 'preferenceChanged$javax_swing_text_View$Z$Z', function (child, width, height) {
 this.host.revalidate$();
-this.host.repaint$();
+this.host.秘repaint$();
 });
 
 Clazz.newMeth(C$, 'getAlignment$I', function (axis) {
@@ -267,7 +258,7 @@ this.view.paint$java_awt_Graphics$java_awt_Shape(g, allocation);
 });
 
 Clazz.newMeth(C$, 'setParent$javax_swing_text_View', function (parent) {
-throw Clazz.new_($I$(6).c$$S,["Can\'t set parent on root view"]);
+throw Clazz.new_($I$(6,1).c$$S,["Can\'t set parent on root view"]);
 });
 
 Clazz.newMeth(C$, 'getViewCount$', function () {
@@ -324,4 +315,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:29:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

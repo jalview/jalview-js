@@ -1,37 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'java.awt.Color','jalview.util.Platform','jalview.renderer.AnnotationRenderer','jalview.datamodel.Annotation','jalview.appletgui.UserDefinedColours','jalview.appletgui.EditNameDialog','java.awt.PopupMenu','jalview.util.MessageManager','java.awt.MenuItem','StringBuilder','jalview.util.Comparison','jalview.schemes.ResidueProperties','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationPanel", null, 'java.awt.Panel', ['jalview.renderer.AwtRenderPanelI', 'java.awt.event.AdjustmentListener', 'java.awt.event.ActionListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'jalview.viewmodel.ViewportListenerI']);
-C$.GRAPH_HEIGHT=0;
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'java.awt.Color','jalview.util.Platform','jalview.renderer.AnnotationRenderer','jalview.datamodel.Annotation','jalview.appletgui.UserDefinedColours','jalview.appletgui.EditNameDialog','java.awt.PopupMenu','jalview.util.MessageManager','java.awt.MenuItem','StringBuilder','jalview.util.Comparison','jalview.schemes.ResidueProperties','java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationPanel", null, 'java.awt.Panel', ['jalview.renderer.AwtRenderPanelI', 'java.awt.event.AdjustmentListener', 'java.awt.event.ActionListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'jalview.viewmodel.ViewportListenerI']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.GRAPH_HEIGHT=40;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.av=null;
-this.ap=null;
-this.activeRow=0;
-this.HELIX=null;
-this.SHEET=null;
-this.STEM=null;
-this.LABEL=null;
-this.REMOVE=null;
-this.COLOUR=null;
-this.HELIX_COLOUR=null;
-this.SHEET_COLOUR=null;
-this.image=null;
-this.gg=null;
-this.fm=null;
-this.imgWidth=0;
-this.fastPaint=false;
-this.graphStretch=0;
-this.graphStretchY=0;
-this.mouseDragging=false;
-this.renderer=null;
-this.needValidating=false;
-this.scrollOffset=0;
-this.bounds=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.activeRow=-1;
@@ -51,11 +21,14 @@ this.mouseDragging=false;
 this.needValidating=false;
 this.scrollOffset=0;
 this.bounds=Clazz.array(Integer.TYPE, [2]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['fastPaint','mouseDragging','needValidating'],'I',['activeRow','imgWidth','graphStretch','graphStretchY','scrollOffset'],'S',['HELIX','SHEET','STEM','LABEL','REMOVE','COLOUR'],'O',['av','jalview.appletgui.AlignViewport','ap','jalview.appletgui.AlignmentPanel','HELIX_COLOUR','java.awt.Color','+SHEET_COLOUR','image','java.awt.Image','gg','java.awt.Graphics','fm','java.awt.FontMetrics','renderer','jalview.renderer.AnnotationRenderer','bounds','int[]']]
+,['I',['GRAPH_HEIGHT']]]
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignmentPanel', function (ap) {
-Clazz.super_(C$, this,1);
-Clazz.new_($I$(2));
+Clazz.super_(C$, this);
+Clazz.new_($I$(2,1));
 this.ap=ap;
 this.av=ap.av;
 this.setLayout$java_awt_LayoutManager(null);
@@ -63,20 +36,20 @@ var height=this.adjustPanelHeight$();
 ap.apvscroll.setValues$I$I$I$I(0, this.getSize$().height, 0, height);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
 this.addMouseListener$java_awt_event_MouseListener(this);
-this.renderer=Clazz.new_($I$(3));
+this.renderer=Clazz.new_($I$(3,1));
 this.av.getRanges$().addPropertyChangeListener$jalview_viewmodel_ViewportListenerI(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignViewport', function (av) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=av;
-this.renderer=Clazz.new_($I$(3));
+this.renderer=Clazz.new_($I$(3,1));
 }, 1);
 
-Clazz.newMeth(C$, ['adjustmentValueChanged$java_awt_event_AdjustmentEvent','adjustmentValueChanged$'], function (evt) {
+Clazz.newMeth(C$, 'adjustmentValueChanged$java_awt_event_AdjustmentEvent', function (evt) {
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 var aa=this.av.getAlignment$().getAlignmentAnnotation$();
 if (aa == null ) {
 return;
@@ -104,17 +77,17 @@ aa[this.activeRow].hasText=true;
 if (!this.av.getAlignment$().getHiddenColumns$().isVisible$I(index)) {
 continue;
 }if (anot[index] == null ) {
-anot[index]=Clazz.new_($I$(4).c$$S$S$C$F,[label, "", " ", 0]);
+anot[index]=Clazz.new_($I$(4,1).c$$S$S$C$F,[label, "", " ", 0]);
 }anot[index].displayCharacter=label;
 }
 } else if (evt.getActionCommand$().equals$O("Colour")) {
-var udc=Clazz.new_($I$(5).c$$java_awt_Component$java_awt_Color$java_awt_Frame,[this, $I$(1).black, this.ap.alignFrame]);
+var udc=Clazz.new_([this, $I$(1).black, this.ap.alignFrame],$I$(5,1).c$$java_awt_Component$java_awt_Color$java_awt_Frame);
 var col=udc.getColor$();
 for (var index, $index = this.av.getColumnSelection$().getSelected$().iterator$(); $index.hasNext$()&&((index=($index.next$()).intValue$()),1);) {
 if (!this.av.getAlignment$().getHiddenColumns$().isVisible$I(index)) {
 continue;
 }if (anot[index] == null ) {
-anot[index]=Clazz.new_($I$(4).c$$S$S$C$F,["", "", " ", 0]);
+anot[index]=Clazz.new_($I$(4,1).c$$S$S$C$F,["", "", " ", 0]);
 }anot[index].colour=col;
 }
 } else {
@@ -142,7 +115,7 @@ aa[this.activeRow].showAllColLabels=true;
 if (!this.av.getAlignment$().getHiddenColumns$().isVisible$I(index)) {
 continue;
 }if (anot[index] == null ) {
-anot[index]=Clazz.new_($I$(4).c$$S$S$C$F,[label, "", type, 0]);
+anot[index]=Clazz.new_($I$(4,1).c$$S$S$C$F,[label, "", type, 0]);
 }anot[index].secondaryStructure=type != "S" ? type : label.length$() == 0 ? " " : label.charAt$I(0);
 anot[index].displayCharacter=label;
 }
@@ -154,7 +127,7 @@ return;
 });
 
 Clazz.newMeth(C$, 'enterLabel$S$S', function (text, label) {
-var dialog=Clazz.new_($I$(6).c$$S$S$S$S$java_awt_Frame$S$I$I$Z,[text, null, label, null, this.ap.alignFrame, "Enter Label", 400, 200, true]);
+var dialog=Clazz.new_($I$(6,1).c$$S$S$S$S$java_awt_Frame$S$I$I$Z,[text, null, label, null, this.ap.alignFrame, "Enter Label", 400, 200, true]);
 if (dialog.accept) {
 return dialog.getName$();
 } else {
@@ -178,29 +151,29 @@ this.graphStretch=i;
 this.graphStretchY=evt.getY$();
 }break;
 }}
-if ((evt.getModifiers$() & 4) == 4 && this.activeRow != -1 ) {
+if ((evt.getModifiersEx$() & 4096) == 4096 && this.activeRow != -1 ) {
 if (this.av.getColumnSelection$() == null  || this.av.getColumnSelection$().isEmpty$() ) {
 return;
-}var pop=Clazz.new_($I$(7).c$$S,[$I$(8).getString$S("label.structure_type")]);
+}var pop=Clazz.new_([$I$(8).getString$S("label.structure_type")],$I$(7,1).c$$S);
 var item;
 if (this.av.getAlignment$().isNucleotide$()) {
-item=Clazz.new_($I$(9).c$$S,["RNA Helix"]);
+item=Clazz.new_($I$(9,1).c$$S,["RNA Helix"]);
 item.addActionListener$java_awt_event_ActionListener(this);
 pop.add$java_awt_MenuItem(item);
 } else {
-item=Clazz.new_($I$(9).c$$S,["Helix"]);
+item=Clazz.new_($I$(9,1).c$$S,["Helix"]);
 item.addActionListener$java_awt_event_ActionListener(this);
 pop.add$java_awt_MenuItem(item);
-item=Clazz.new_($I$(9).c$$S,["Sheet"]);
+item=Clazz.new_($I$(9,1).c$$S,["Sheet"]);
 item.addActionListener$java_awt_event_ActionListener(this);
 pop.add$java_awt_MenuItem(item);
-}item=Clazz.new_($I$(9).c$$S,["Label"]);
+}item=Clazz.new_($I$(9,1).c$$S,["Label"]);
 item.addActionListener$java_awt_event_ActionListener(this);
 pop.add$java_awt_MenuItem(item);
-item=Clazz.new_($I$(9).c$$S,["Colour"]);
+item=Clazz.new_($I$(9,1).c$$S,["Colour"]);
 item.addActionListener$java_awt_event_ActionListener(this);
 pop.add$java_awt_MenuItem(item);
-item=Clazz.new_($I$(9).c$$S,["Remove Annotation"]);
+item=Clazz.new_($I$(9,1).c$$S,["Remove Annotation"]);
 item.addActionListener$java_awt_event_ActionListener(this);
 pop.add$java_awt_MenuItem(item);
 this.ap.alignFrame.add$java_awt_PopupMenu(pop);
@@ -252,7 +225,7 @@ var column=(evt.getX$()/this.av.getCharWidth$()|0) + this.av.getRanges$().getSta
 if (this.av.hasHiddenColumns$()) {
 column=this.av.getAlignment$().getHiddenColumns$().visibleToAbsoluteColumn$I(column);
 }if (row > -1 && column < aa[row].annotations.length  && aa[row].annotations[column] != null  ) {
-var text=Clazz.new_($I$(10));
+var text=Clazz.new_($I$(10,1));
 text.append$S($I$(8).getString$S("label.column")).append$S(" ").append$I(column + 1);
 var description=aa[row].annotations[column].description;
 if (description != null  && description.length$() > 0 ) {
@@ -291,7 +264,7 @@ return this.adjustPanelHeight$Z(true);
 
 Clazz.newMeth(C$, 'adjustPanelHeight$Z', function (repaint) {
 var height=this.av.calcPanelHeight$();
-this.setSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[this.getSize$().width, height]));
+this.setSize$java_awt_Dimension(Clazz.new_([this.getSize$().width, height],$I$(13,1).c$$I$I));
 if (repaint) {
 this.repaint$();
 }return height;
@@ -402,15 +375,19 @@ return this.bounds;
 return null;
 }});
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 if (evt.getPropertyName$().equals$O("startres")) {
-this.fastPaint$I(((evt.getNewValue$()).objectValue$()|0) - ((evt.getOldValue$()).objectValue$()|0));
+this.fastPaint$I(((evt.getNewValue$()).valueOf()|0) - ((evt.getOldValue$()).valueOf()|0));
 } else if (evt.getPropertyName$().equals$O("startresandseq")) {
 this.fastPaint$I((evt.getNewValue$())[0] - (evt.getOldValue$())[0]);
 } else if (evt.getPropertyName$().equals$O("move_viewport")) {
 this.repaint$();
 }});
 
+C$.$static$=function(){C$.$static$=0;
+C$.GRAPH_HEIGHT=40;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:44 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

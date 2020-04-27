@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.api"),p$1={},p$2={},I$=[[0,'Boolean','java.io.File','org.jmol.api.TestScriptsImpl','org.jmol.util.JUnitLogger','javax.swing.JFrame','java.util.Hashtable','org.openscience.jmol.app.Jmol','org.jmol.util.Profiling','java.io.BufferedReader','java.io.FileReader','org.jmol.api.JmolViewer','org.jmol.adapter.smarter.SmarterJmolAdapter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TestScriptsImpl", null, 'junit.framework.TestCase');
+(function(){var P$=Clazz.newPackage("org.jmol.api"),p$1={},p$2={},I$=[[0,'Boolean','java.io.File','org.jmol.api.TestScriptsImpl','org.jmol.util.JUnitLogger','javax.swing.JFrame','java.util.Hashtable','org.openscience.jmol.app.Jmol','org.jmol.util.Profiling','java.io.BufferedReader','java.io.FileReader','junit.framework.Assert','org.jmol.api.JmolViewer','org.jmol.adapter.smarter.SmarterJmolAdapter']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "TestScriptsImpl", null, 'junit.framework.TestCase');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.file=null;
-this.checkOnly=false;
-this.performance=false;
-this.nbExecutions=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['checkOnly','performance'],'I',['nbExecutions'],'O',['file','java.io.File']]]
 
 Clazz.newMeth(C$, 'c$$java_io_File$Z$Z', function (file, checkOnly, performance) {
-C$.superclazz.c$$S.apply(this, ["testFile"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["testFile"]);C$.$init$.apply(this);
 this.file=file;
 this.checkOnly=checkOnly;
 this.performance=performance;
@@ -38,7 +30,7 @@ this.testScript$();
 });
 
 Clazz.newMeth(C$, 'testScript$', function () {
-$I$(4).setInformation$S(this.file.getPath$());
+(function(a,f){return f.apply(null,a)})([this.file.getPath$()],$I$(4).setInformation$S);
 if (this.performance) {
 this.runPerformanceTest$();
 return;
@@ -46,9 +38,9 @@ return;
 });
 
 Clazz.newMeth(C$, 'runPerformanceTest$', function () {
-var frame=Clazz.new_($I$(5));
-var viewerOptions=Clazz.new_($I$(6));
-if (this.checkOnly) viewerOptions.put$TK$TV("check", $I$(1).TRUE);
+var frame=Clazz.new_($I$(5,1));
+var viewerOptions=Clazz.new_($I$(6,1));
+if (this.checkOnly) viewerOptions.put$O$O("check", $I$(1).TRUE);
 var jmol=$I$(7).getJmol$javax_swing_JFrame$I$I$java_util_Map(frame, 500, 500, viewerOptions);
 var viewer=jmol.vwr;
 var beginFull=$I$(8).getTime$();
@@ -57,7 +49,7 @@ viewer.scriptWaitStatus$S$S("set defaultDirectory \"" + this.file.getParent$().r
 var lineNum=0;
 var reader=null;
 try {
-reader=Clazz.new_($I$(9).c$$java_io_Reader,[Clazz.new_($I$(10).c$$java_io_File,[this.file])]);
+reader=Clazz.new_([Clazz.new_($I$(10,1).c$$java_io_File,[this.file])],$I$(9,1).c$$java_io_Reader);
 var line=null;
 var beginScript=$I$(8).getTime$();
 while ((line=reader.readLine$()) != null ){
@@ -81,7 +73,7 @@ if (Clazz.instanceOf(vector.get$I(0), "java.util.List")) {
 vector=vector.get$I(0);
 error=vector.get$I(vector.size$() - 1).toString();
 }}}if (!error.equalsIgnoreCase$S("Jmol script terminated successfully")) {
-junit.framework.Assert.fail$S("Error in script [" + this.file.getPath$() + "] " + "at line " + lineNum + " (" + line + "):\n" + error );
+(function(a,f){return f.apply(null,a)})(["Error in script [" + this.file.getPath$() + "] " + "at line " + lineNum + " (" + line + "):\n" + error ],$I$(11).fail$S);
 }}if ((end - begin) > 0) {
 p$2.outputPerformanceMessage$J$S.apply(this, [end - begin, "execute [" + line + "]" ]);
 }}
@@ -91,12 +83,12 @@ p$2.outputPerformanceMessage$J$S.apply(this, [endScript - beginScript, "execute 
 if (Clazz.exceptionOf(e$$,"java.io.FileNotFoundException")){
 var e = e$$;
 {
-junit.framework.Assert.fail$S("File " + this.file.getPath$() + " not found" );
+(function(a,f){return f.apply(null,a)})(["File " + this.file.getPath$() + " not found" ],$I$(11).fail$S);
 }
 } else if (Clazz.exceptionOf(e$$,"java.io.IOException")){
 var e = e$$;
 {
-junit.framework.Assert.fail$S("Error reading line " + lineNum + " of " + this.file.getPath$() );
+(function(a,f){return f.apply(null,a)})(["Error reading line " + lineNum + " of " + this.file.getPath$() ],$I$(11).fail$S);
 }
 } else {
 throw e$$;
@@ -119,10 +111,10 @@ p$2.outputPerformanceMessage$J$S.apply(this, [endFull - beginFull, this.nbExecut
 }});
 
 Clazz.newMeth(C$, 'runSimpleTest$', function () {
-$I$(4).setInformation$S(this.file.getPath$());
-var viewer=$I$(11).allocateViewer$O$org_jmol_api_JmolAdapter$S$java_net_URL$java_net_URL$S$org_jmol_api_JmolStatusListener(Clazz.new_($I$(5)), Clazz.new_($I$(12)), null, null, null, this.checkOnly ? "-n -c -l " : "-n -l ", null);
+(function(a,f){return f.apply(null,a)})([this.file.getPath$()],$I$(4).setInformation$S);
+var viewer=(function(a,f){return f.apply(null,a)})([Clazz.new_($I$(5,1)), Clazz.new_($I$(13,1)), null, null, null, this.checkOnly ? "-n -c -l " : "-n -l ", null],$I$(12).allocateViewer$O$org_jmol_api_JmolAdapter$S$java_net_URL$java_net_URL$S$org_jmol_api_JmolStatusListener);
 var s=viewer.evalFile$S(this.file.getPath$() + " -noqueue");
-junit.framework.Assert.assertNull$S$O("Error in script [" + this.file.getPath$() + ":\n" + s , s);
+(function(a,f){return f.apply(null,a)})(["Error in script [" + this.file.getPath$() + ":\n" + s , s],$I$(11).assertNull$S$O);
 });
 
 Clazz.newMeth(C$, 'outputPerformanceMessage$J$S', function (duration, message) {
@@ -151,4 +143,4 @@ this.file=null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

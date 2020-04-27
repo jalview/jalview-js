@@ -1,42 +1,24 @@
-(function(){var P$=Clazz.newPackage("org.jmol.minimize"),I$=[[0,'javajs.util.Lst','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MinAtom");
+(function(){var P$=Clazz.newPackage("org.jmol.minimize"),I$=[[0,'javajs.util.Lst','javajs.util.BS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "MinAtom");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.sType=null;
-this.atom=null;
-this.ffAtomType=null;
-this.ffType=0;
-this.vdwKey=null;
-this.coord=null;
-this.force=null;
-this.bonds=null;
-this.nBonds=0;
-this.hCount=0;
-this.partialCharge=0;
-this.bsVdw=null;
-this.bs14=null;
-this.bondedAtoms=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.coord=Clazz.array(Double.TYPE, [3]);
 this.force=Clazz.array(Double.TYPE, [3]);
-this.bonds=Clazz.new_($I$(1));
-this.bsVdw=Clazz.new_($I$(2));
-this.bs14=Clazz.new_($I$(2));
-}, 1);
+this.bonds=Clazz.new_($I$(1,1));
+this.bsVdw=Clazz.new_($I$(2,1));
+this.bs14=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['D',['partialCharge'],'I',['index','ffType','nBonds','hCount'],'S',['sType'],'O',['atom','org.jmol.modelset.Atom','ffAtomType','org.jmol.minimize.forcefield.AtomType','vdwKey','Integer','coord','double[]','+force','bonds','javajs.util.Lst','bsVdw','javajs.util.BS','+bs14','bondedAtoms','int[]']]]
 
 Clazz.newMeth(C$, 'toString', function () {
 return "#" + this.index + " " + this.sType ;
 });
 
 Clazz.newMeth(C$, 'c$$I$org_jmol_modelset_Atom$DA$I', function (index, atom, coord, ac) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.index=index;
 this.atom=atom;
 this.coord=coord;
@@ -71,7 +53,7 @@ return this.atom.getInfo$();
 });
 
 Clazz.newMeth(C$, 'addBond$org_jmol_minimize_MinBond$I', function (bond, i) {
-this.bonds.addLast$TV(bond);
+this.bonds.addLast$O(bond);
 this.nBonds++;
 this.bsVdw.clear$I(i);
 });
@@ -92,4 +74,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,31 +1,25 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsoformType", function(){
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IsoformType", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Name',9],['Sequence',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=null;
-this.name=null;
-this.sequence=null;
-this.text=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['id','java.util.List','+name','sequence','jalview.xml.binding.uniprot.IsoformType.Sequence','text','java.util.List']]]
 
 Clazz.newMeth(C$, 'getId$', function () {
 if (this.id == null ) {
-this.id=Clazz.new_($I$(1));
+this.id=Clazz.new_($I$(1,1));
 }return this.id;
 });
 
 Clazz.newMeth(C$, 'getName$', function () {
 if (this.name == null ) {
-this.name=Clazz.new_($I$(1));
+this.name=Clazz.new_($I$(1,1));
 }return this.name;
 });
 
@@ -39,32 +33,28 @@ this.sequence=value;
 
 Clazz.newMeth(C$, 'getText$', function () {
 if (this.text == null ) {
-this.text=Clazz.new_($I$(1));
+this.text=Clazz.new_($I$(1,1));
 }return this.text;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.IsoformType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="isoformType" propOrder={"id"  "name"  "sequence"  "text"  } )']],
-  [['id','java.util.List<java.lang.String>'],['@XmlElement(required="true" )']],
-  [['name','java.util.List<jalview.xml.binding.uniprot.IsoformType.Name>'],['@XmlElement(required="true" )']],
-  [['sequence','jalview.xml.binding.uniprot.IsoformType.Sequence'],['@XmlElement(required="true" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.IsoformType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="isoformType" propOrder={"id"  "name"  "sequence"  "text"  } ']],
+  [['id','java.util.List<java.lang.String>',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['name','java.util.List<jalview.xml.binding.uniprot.IsoformType.Name>',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['sequence','jalview.xml.binding.uniprot.IsoformType.Sequence',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
   [['null','jalview.xml.binding.uniprot.IsoformType.Name'],['!XmlInner']],
   [['null','jalview.xml.binding.uniprot.IsoformType.Sequence'],['!XmlInner']],
-  [['text','java.util.List<jalview.xml.binding.uniprot.EvidencedStringType>'],['@XmlElement']]];
+  [['text','java.util.List<jalview.xml.binding.uniprot.EvidencedStringType>'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.IsoformType, "Name", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.IsoformType, "Name", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.evidence=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['value'],'O',['evidence','java.util.List']]]
 
 Clazz.newMeth(C$, 'getValue$', function () {
 return this.value;
@@ -76,31 +66,27 @@ this.value=value;
 
 Clazz.newMeth(C$, 'getEvidence$', function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.IsoformType.Name'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"value"  } )']],
-  [['value','String'],['@XmlValue']],
-  [['evidence','java.util.List<java.lang.Integer>'],['@XmlAttribute(name="evidence" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.IsoformType.Name',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" propOrder={"value"  } ']],
+  [['value','String',null,['javax.xml.bind.annotation.XmlValue']],['']],
+  [['evidence','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlAttribute']],['name="evidence" ']]]}
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.IsoformType, "Sequence", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.IsoformType, "Sequence", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=null;
-this.ref=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['type','ref']]]
 
 Clazz.newMeth(C$, 'getType$', function () {
 return this.type;
@@ -117,13 +103,14 @@ return this.ref;
 Clazz.newMeth(C$, 'setRef$S', function (value) {
 this.ref=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.IsoformType.Sequence'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['type','String'],['@XmlAttribute(name="type" required="true" )']],
-  [['ref','.'],['@XmlAttribute(name="ref" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.IsoformType.Sequence',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['type','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="type" required="true" ']],
+  [['ref','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="ref" ']]]}
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:06 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

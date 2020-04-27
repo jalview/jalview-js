@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.MediaEntry','java.awt.ImageMediaEntry']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MediaTracker", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.MediaEntry','java.awt.ImageMediaEntry']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MediaTracker", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.target=null;
-this.head=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['target','java.awt.Component','head','java.awt.MediaEntry']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (comp) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.target=comp;
 }, 1);
 
@@ -23,7 +18,7 @@ this.addImage$java_awt_Image$I$I$I(image, id, -1, -1);
 });
 
 Clazz.newMeth(C$, 'addImage$java_awt_Image$I$I$I', function (image, id, w, h) {
-this.head=$I$(1).insert$java_awt_MediaEntry$java_awt_MediaEntry(this.head, Clazz.new_($I$(2).c$$java_awt_MediaTracker$java_awt_Image$I$I$I,[this, image, id, w, h]));
+this.head=$I$(1,"insert$java_awt_MediaEntry$java_awt_MediaEntry",[this.head, Clazz.new_($I$(2,1).c$$java_awt_MediaTracker$java_awt_Image$I$I$I,[this, image, id, w, h])]);
 });
 
 Clazz.newMeth(C$, 'checkAll$', function () {
@@ -122,4 +117,4 @@ return;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

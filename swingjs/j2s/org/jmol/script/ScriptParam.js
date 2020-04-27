@@ -1,28 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.script.SV','javajs.util.SB','java.util.Hashtable','javajs.util.PT','javajs.util.Lst','org.jmol.util.BSUtil','javajs.util.P3','javajs.util.V3','javajs.util.P4','javajs.util.Measure','org.jmol.util.Logger','javajs.util.Quat','org.jmol.util.Edge','org.jmol.script.T','javajs.util.CU','org.jmol.modelset.TickInfo']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptParam", null, 'org.jmol.script.ScriptError');
+(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.script.SV','javajs.util.SB','java.util.Hashtable','javajs.util.PT','javajs.util.Lst','org.jmol.util.BSUtil','javajs.util.P3','javajs.util.V3','javajs.util.P4','javajs.util.Measure','org.jmol.util.Logger','javajs.util.Quat','org.jmol.util.Edge','org.jmol.script.T','javajs.util.CU','org.jmol.modelset.TickInfo']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptParam", null, 'org.jmol.script.ScriptError');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.contextVariables=null;
-this.thisContext=null;
-this.iToken=0;
-this.theTok=0;
-this.theToken=null;
-this.st=null;
-this.slen=0;
-this.fractionalPoint=null;
-this.coordinatesAreFractional=false;
-this.isBondSet=false;
-this.pt1=null;
-this.pt2=null;
-this.pt3=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['coordinatesAreFractional','isBondSet'],'I',['iToken','theTok','slen'],'O',['contextVariables','java.util.Map','thisContext','org.jmol.script.ScriptContext','theToken','org.jmol.script.T','st','org.jmol.script.T[]','fractionalPoint','javajs.util.P3','+pt1','+pt2','+pt3']]]
 
 Clazz.newMeth(C$, 'getToken$I', function (i) {
 if (!this.checkToken$I(i)) this.error$I(13);
@@ -50,7 +34,7 @@ return $I$(1).getVariable$O(v);
 case 4:
 if (!(Clazz.instanceOf(v, "javajs.util.Lst"))) break;
 var sv=v;
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 for (var i=0; i < sv.size$(); i++) sb.append$S(sv.get$I(i).asString$()).appendC$C("\n");
 
 return sb.toString();
@@ -73,7 +57,7 @@ while (sc != null ){
 if (sc.isFunction) return $I$(1).newV$I$O(6, sc.vars);
 sc=sc.parentContext;
 }
-return $I$(1).newV$I$O(6, Clazz.new_($I$(3)));
+return (function(a,f){return f.apply(null,a)})([6, Clazz.new_($I$(3,1))],$I$(1).newV$I$O);
 }$var=$var.toLowerCase$();
 return (this.contextVariables != null  && this.contextVariables.containsKey$O($var)  ? this.contextVariables.get$O($var) : isLocal || this.thisContext == null   ? null : this.thisContext.getVariable$S($var));
 });
@@ -104,18 +88,18 @@ case 268435520:
 ++i;
 break;
 case 7:
-return $I$(1).strListValue$org_jmol_script_T(this.getToken$I(i));
+return (function(a,f){return f.apply(null,a)})([this.getToken$I(i)],$I$(1).strListValue$org_jmol_script_T);
 default:
 this.invArg$();
 }
 var tok;
-var v=Clazz.new_($I$(5));
+var v=Clazz.new_($I$(5,1));
 while ((tok=this.tokAt$I(i)) != 268435521){
 switch (tok) {
 case 268435504:
 break;
 case 4:
-v.addLast$TV(this.stringParameter$I(i));
+v.addLast$O(this.stringParameter$I(i));
 break;
 default:
 case 0:
@@ -178,7 +162,7 @@ var index=-2147483648;
 if (this.tokAt$I(i + 1) == 268435520) {
 index=(this).parameterExpressionList$I$I$Z(-i - 1, -1, true).get$I(0).asInt$();
 if (this.getToken$I(--this.iToken).tok != 268435521) this.invArg$();
-}if (this.chk) return Clazz.new_($I$(7));
+}if (this.chk) return Clazz.new_($I$(7,1));
 if (this.tokAt$I(i + 1) == 1073742336 && (this.tokAt$I(i + 2) == 1140850691 || this.tokAt$I(i + 2) == 1140850694 ) ) {
 index=2147483647;
 this.iToken=i + 2;
@@ -197,8 +181,8 @@ return center;
 });
 
 Clazz.newMeth(C$, 'planeParameter$I', function (i) {
-var vTemp=Clazz.new_($I$(8));
-var vTemp2=Clazz.new_($I$(8));
+var vTemp=Clazz.new_($I$(8,1));
+var vTemp2=Clazz.new_($I$(8,1));
 var plane=null;
 var norm=null;
 if (this.tokAt$I(i) == 134217750) i++;
@@ -211,20 +195,20 @@ plane=$I$(9).newPt$javajs_util_P4(this.theToken.value);
 break;
 case 1073742330:
 var id=this.objectNameParameter$I(++i);
-if (this.chk) return Clazz.new_($I$(9));
+if (this.chk) return Clazz.new_($I$(9,1));
 plane=(this).getPlaneForObject$S$javajs_util_V3(id, vTemp);
 break;
 case 1111492629:
 if (!this.checkToken$I(++i) || this.getToken$I(i++).tok != 268435860 ) this.evalError$S$S("x=?", null);
-plane=$I$(9).new4$F$F$F$F(1, 0, 0, -this.floatParameter$I(i));
+plane=(function(a,f){return f.apply(null,a)})([1, 0, 0, -this.floatParameter$I(i)],$I$(9).new4$F$F$F$F);
 break;
 case 1111492630:
 if (!this.checkToken$I(++i) || this.getToken$I(i++).tok != 268435860 ) this.evalError$S$S("y=?", null);
-plane=$I$(9).new4$F$F$F$F(0, 1, 0, -this.floatParameter$I(i));
+plane=(function(a,f){return f.apply(null,a)})([0, 1, 0, -this.floatParameter$I(i)],$I$(9).new4$F$F$F$F);
 break;
 case 1111492631:
 if (!this.checkToken$I(++i) || this.getToken$I(i++).tok != 268435860 ) this.evalError$S$S("z=?", null);
-plane=$I$(9).new4$F$F$F$F(0, 0, 1, -this.floatParameter$I(i));
+plane=(function(a,f){return f.apply(null,a)})([0, 0, 1, -this.floatParameter$I(i)],$I$(9).new4$F$F$F$F);
 break;
 case 1073741824:
 case 4:
@@ -246,14 +230,14 @@ this.pt2=this.atomCenterOrCoordinateParameter$I$OA(this.iToken, null);
 if (this.getToken$I(++this.iToken).tok == 268435504) ++this.iToken;
 if (this.isFloatParameter$I(this.iToken)) {
 var frac=this.floatParameter$I(this.iToken);
-plane=Clazz.new_($I$(9));
+plane=Clazz.new_($I$(9,1));
 vTemp.sub2$javajs_util_T3$javajs_util_T3(this.pt2, this.pt1);
 vTemp.scale$F(frac * 2);
 $I$(10).getBisectingPlane$javajs_util_P3$javajs_util_V3$javajs_util_T3$javajs_util_V3$javajs_util_P4(this.pt1, vTemp, vTemp2, vTemp, plane);
 } else {
 this.pt3=this.atomCenterOrCoordinateParameter$I$OA(this.iToken, null);
 i=this.iToken;
-norm=Clazz.new_($I$(8));
+norm=Clazz.new_($I$(8,1));
 }break;
 default:
 if (this.isArrayParameter$I(i)) {
@@ -262,11 +246,11 @@ if (list.size$() != 3) this.invArg$();
 this.pt1=list.get$I(0);
 this.pt2=list.get$I(1);
 this.pt3=list.get$I(2);
-norm=Clazz.new_($I$(8));
+norm=Clazz.new_($I$(8,1));
 }}
 if (norm != null ) {
 var w=$I$(10).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(this.pt1, this.pt2, this.pt3, norm, vTemp);
-plane=Clazz.new_($I$(9));
+plane=Clazz.new_($I$(9,1));
 plane.set4$F$F$F$F(norm.x, norm.y, norm.z, w);
 }if (!this.chk && $I$(11).debugging ) $I$(11).debug$S(" defined plane: " + plane);
 }if (plane == null ) this.errorMore$I$S$S$S(38, "{a b c d}", "\"xy\" \"xz\" \"yz\" \"x=...\" \"y=...\" \"z=...\"", "$xxxxx");
@@ -276,16 +260,16 @@ plane.scale4$F(-1);
 });
 
 Clazz.newMeth(C$, 'getPointOrCenterVector$org_jmol_script_T', function (t) {
-var data=Clazz.new_($I$(5));
+var data=Clazz.new_($I$(5,1));
 var pt;
 var bs;
 var pts=(t).getList$();
 if (pts == null ) this.invArg$();
 for (var j=0; j < pts.size$(); j++) {
-if ((pt=$I$(1).ptValue$org_jmol_script_SV(pts.get$I(j))) != null ) {
-data.addLast$TV(pt);
-} else if ((bs=$I$(1).getBitSet$org_jmol_script_SV$Z(pts.get$I(j), true)) != null ) {
-data.addLast$TV(bs.cardinality$() == 1 ? $I$(7).newP$javajs_util_T3(this.vwr.ms.at[bs.nextSetBit$I(0)]) : this.vwr.ms.getAtomSetCenter$javajs_util_BS(bs));
+if ((pt=(function(a,f){return f.apply(null,a)})([pts.get$I(j)],$I$(1).ptValue$org_jmol_script_SV)) != null ) {
+data.addLast$O(pt);
+} else if ((bs=(function(a,f){return f.apply(null,a)})([pts.get$I(j), true],$I$(1).getBitSet$org_jmol_script_SV$Z)) != null ) {
+data.addLast$O(bs.cardinality$() == 1 ? (function(a,f){return f.apply(null,a)})([this.vwr.ms.at[bs.nextSetBit$I(0)]],$I$(7).newP$javajs_util_T3) : this.vwr.ms.getAtomSetCenter$javajs_util_BS(bs));
 } else {
 this.invArg$();
 }}
@@ -302,9 +286,9 @@ return p;
 });
 
 Clazz.newMeth(C$, 'getHklPlane$javajs_util_P3', function (pt) {
-this.pt1=$I$(7).new3$F$F$F(pt.x == 0  ? 1 : 1 / pt.x, 0, 0);
-this.pt2=$I$(7).new3$F$F$F(0, pt.y == 0  ? 1 : 1 / pt.y, 0);
-this.pt3=$I$(7).new3$F$F$F(0, 0, pt.z == 0  ? 1 : 1 / pt.z);
+this.pt1=(function(a,f){return f.apply(null,a)})([pt.x == 0  ? 1 : 1 / pt.x, 0, 0],$I$(7).new3$F$F$F);
+this.pt2=(function(a,f){return f.apply(null,a)})([0, pt.y == 0  ? 1 : 1 / pt.y, 0],$I$(7).new3$F$F$F);
+this.pt3=(function(a,f){return f.apply(null,a)})([0, 0, pt.z == 0  ? 1 : 1 / pt.z],$I$(7).new3$F$F$F);
 if (pt.x == 0  && pt.y == 0   && pt.z == 0  ) {
 return null;
 } else if (pt.x == 0  && pt.y == 0  ) {
@@ -325,7 +309,7 @@ this.pt3.set$F$F$F(this.pt1.x, 0, 1);
 }this.vwr.toCartesian$javajs_util_T3$Z(this.pt1, false);
 this.vwr.toCartesian$javajs_util_T3$Z(this.pt2, false);
 this.vwr.toCartesian$javajs_util_T3$Z(this.pt3, false);
-return $I$(10).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(this.pt1, this.pt2, this.pt3, Clazz.new_($I$(8)), Clazz.new_($I$(8)), Clazz.new_($I$(9)));
+return (function(a,f){return f.apply(null,a)})([this.pt1, this.pt2, this.pt3, Clazz.new_($I$(8,1)), Clazz.new_($I$(8,1)), Clazz.new_($I$(9,1))],$I$(10).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4);
 });
 
 Clazz.newMeth(C$, 'getPointOrPlane$I$Z$Z$Z$Z$I$I$Z', function (index, integerOnly, allowFractional, doConvert, implicitFractional, minDim, maxDim, throwE) {
@@ -412,7 +396,7 @@ isOK=false;
 return null;
 }if (n == 3) {
 if (useCell555P4) {
-return $I$(9).new4$F$F$F$F(coord[0], coord[1], coord[2], (code555[0] % 1000) * 1000 + (code555[1] % 1000) + 1000000);
+return (function(a,f){return f.apply(null,a)})([coord[0], coord[1], coord[2], (code555[0] % 1000) * 1000 + (code555[1] % 1000) + 1000000],$I$(9).new4$F$F$F$F);
 }var pt=$I$(7).new3$F$F$F(coord[0], coord[1], coord[2]);
 if (this.coordinatesAreFractional && doConvert ) {
 this.fractionalPoint=$I$(7).newP$javajs_util_T3(pt);
@@ -464,7 +448,7 @@ Clazz.newMeth(C$, 'xypParameter$I', function (index) {
 var tok=this.tokAt$I(index);
 if (tok == 1073742195) tok=this.tokAt$I(++index);
 if (tok != 268435520 || !this.isFloatParameter$I(++index) ) return null;
-var pt=Clazz.new_($I$(7));
+var pt=Clazz.new_($I$(7,1));
 pt.x=this.floatParameter$I(index);
 if (this.tokAt$I(++index) == 268435504) index++;
 if (!this.isFloatParameter$I(index)) return null;
@@ -481,7 +465,7 @@ Clazz.newMeth(C$, 'xyzpParameter$I', function (index) {
 var tok=this.tokAt$I(index);
 if (tok == 1073742195) tok=this.tokAt$I(++index);
 if (tok != 268435520 || !this.isFloatParameter$I(++index) ) return null;
-var pt=Clazz.new_($I$(9));
+var pt=Clazz.new_($I$(9,1));
 pt.x=this.floatParameter$I(index);
 if (this.tokAt$I(++index) == 268435504) index++;
 if (!this.isFloatParameter$I(index)) return null;
@@ -536,7 +520,7 @@ return 0;
 Clazz.newMeth(C$, 'getPointArray$I$I$Z', function (i, nPoints, allowNull) {
 if (nPoints == 2147483647) nPoints=-1;
 var points=(nPoints < 0 ? null : Clazz.array($I$(7), [nPoints]));
-var vp=(nPoints < 0 ? Clazz.new_($I$(5)) : null);
+var vp=(nPoints < 0 ? Clazz.new_($I$(5,1)) : null);
 var tok=(i < 0 ? 7 : this.getToken$I(i++).tok);
 switch (tok) {
 case 7:
@@ -544,7 +528,7 @@ var v=(this.theToken).getList$();
 if (nPoints >= 0 && v.size$() != nPoints ) this.invArg$();
 nPoints=v.size$();
 if (points == null ) points=Clazz.array($I$(7), [nPoints]);
-for (var j=0; j < nPoints; j++) if ((points[j]=$I$(1).ptValue$org_jmol_script_SV(v.get$I(j))) == null  && !allowNull ) this.invArg$();
+for (var j=0; j < nPoints; j++) if ((points[j]=(function(a,f){return f.apply(null,a)})([v.get$I(j)],$I$(1).ptValue$org_jmol_script_SV)) == null  && !allowNull ) this.invArg$();
 
 return points;
 case 1073742195:
@@ -567,14 +551,14 @@ if (nPoints >= 0 && n == nPoints ) {
 tok=0;
 break;
 }var pt=this.centerParameter$I$OA(i, null);
-if (points == null ) vp.addLast$TV(pt);
+if (points == null ) vp.addLast$O(pt);
  else points[n]=pt;
 n++;
 i=this.iToken + 1;
 }
 }
 if (tok != 268435521) this.invArg$();
-if (points == null ) points=vp.toArray$TTA(Clazz.array($I$(7), [vp.size$()]));
+if (points == null ) points=vp.toArray$OA(Clazz.array($I$(7), [vp.size$()]));
 if (nPoints > 0 && points[nPoints - 1] == null  ) this.invArg$();
 return points;
 });
@@ -584,7 +568,7 @@ return this.listParameter4$I$I$I$Z(i, nMin, nMax, false);
 });
 
 Clazz.newMeth(C$, 'listParameter4$I$I$I$Z', function (i, nMin, nMax, allowString) {
-var v=Clazz.new_($I$(5));
+var v=Clazz.new_($I$(5,1));
 var tok=this.tokAt$I(i);
 if (tok == 1073742195) tok=this.tokAt$I(++i);
 var haveBrace=(tok == 1073742332);
@@ -601,26 +585,26 @@ case 1073742332:
 case 1073742338:
 break;
 case 4:
-if (allowString) v.addLast$TV(this.stringParameter$I(i));
+if (allowString) v.addLast$O(this.stringParameter$I(i));
 break;
 case 9:
 var pt4=this.getPoint4f$I(i);
-v.addLast$TV(Float.valueOf$F(pt4.x));
-v.addLast$TV(Float.valueOf$F(pt4.y));
-v.addLast$TV(Float.valueOf$F(pt4.z));
-v.addLast$TV(Float.valueOf$F(pt4.w));
+v.addLast$O(Float.valueOf$F(pt4.x));
+v.addLast$O(Float.valueOf$F(pt4.y));
+v.addLast$O(Float.valueOf$F(pt4.z));
+v.addLast$O(Float.valueOf$F(pt4.w));
 n+=4;
 break;
 default:
 if (this.isCenterParameter$I(i)) {
 var pt=this.centerParameter$I$OA(i, null);
 i=this.iToken;
-v.addLast$TV(Float.valueOf$F(pt.x));
-v.addLast$TV(Float.valueOf$F(pt.y));
-v.addLast$TV(Float.valueOf$F(pt.z));
+v.addLast$O(Float.valueOf$F(pt.x));
+v.addLast$O(Float.valueOf$F(pt.y));
+v.addLast$O(Float.valueOf$F(pt.z));
 n+=3;
 break;
-}v.addLast$TV(Float.valueOf$F(this.floatParameter$I(i)));
+}v.addLast$O(Float.valueOf$F(this.floatParameter$I(i)));
 n++;
 }
 i+=(n == nMax && haveSquare  && this.tokAt$I(i + 1) == 1073742338  ? 2 : 1);
@@ -676,12 +660,12 @@ switch (this.tokAt$I(i)) {
 case 7:
 var sv=(this.getToken$I(i)).getList$();
 var p4=null;
-if (sv.size$() == 0 || (p4=$I$(1).pt4Value$org_jmol_script_SV(sv.get$I(0))) == null  ) this.invArg$();
+if (sv.size$() == 0 || (p4=(function(a,f){return f.apply(null,a)})([sv.get$I(0)],$I$(1).pt4Value$org_jmol_script_SV)) == null  ) this.invArg$();
 return $I$(12).newP4$javajs_util_P4(p4);
 case 1073741864:
 return (this.chk ? null : this.vwr.getOrientationText$I$S$javajs_util_BS(1073741864, (divideByCurrent ? "best" : ""), bsAtoms));
 default:
-return $I$(12).newP4$javajs_util_P4(this.getPoint4f$I(i));
+return (function(a,f){return f.apply(null,a)})([this.getPoint4f$I(i)],$I$(12).newP4$javajs_util_P4);
 }
 });
 
@@ -783,10 +767,10 @@ switch (t.tok) {
 case 10:
 return this.vwr.ms.getAtomPointVector$javajs_util_BS(t.value);
 case 7:
-var data=Clazz.new_($I$(5));
+var data=Clazz.new_($I$(5,1));
 var pt;
 var pts=(t).getList$();
-for (var j=0; j < pts.size$(); j++) if ((pt=$I$(1).ptValue$org_jmol_script_SV(pts.get$I(j))) != null ) data.addLast$TV(pt);
+for (var j=0; j < pts.size$(); j++) if ((pt=(function(a,f){return f.apply(null,a)})([pts.get$I(j)],$I$(1).ptValue$org_jmol_script_SV)) != null ) data.addLast$O(pt);
  else return null;
 
 return data;
@@ -858,7 +842,7 @@ default:
 if (!$I$(14).tokAttr$I$I(this.theTok, 1073741824)) break;
 case 570425378:
 case 4:
-return $I$(15).getArgbFromString$S(this.paramAsStr$I(index));
+return (function(a,f){return f.apply(null,a)})([this.paramAsStr$I(index)],$I$(15).getArgbFromString$S);
 case 1073742195:
 return p$1.getColorTriad$I.apply(this, [index + 2]);
 case 268435520:
@@ -953,11 +937,11 @@ case 1073741824:
 this.invArg$();
 }
 if (this.tokAt$I(++index) == 1073742333) {
-tickInfo=Clazz.new_($I$(16).c$$javajs_util_P3,[null]);
+tickInfo=Clazz.new_($I$(16,1).c$$javajs_util_P3,[null]);
 tickInfo.type=str;
 this.iToken=index;
 return tickInfo;
-}tickInfo=Clazz.new_($I$(16).c$$javajs_util_P3,[this.getPointOrPlane$I$Z$Z$Z$Z$I$I$Z(index, false, true, false, false, 3, 3, true)]);
+}tickInfo=Clazz.new_([this.getPointOrPlane$I$Z$Z$Z$Z$I$I$Z(index, false, true, false, false, 3, 3, true)],$I$(16,1).c$$javajs_util_P3);
 if (this.coordinatesAreFractional || this.tokAt$I(this.iToken + 1) == 1814695966 ) {
 tickInfo.scale=$I$(7).new3$F$F$F(NaN, NaN, NaN);
 allowScale=false;
@@ -995,4 +979,4 @@ if (!this.chk) this.vwr.setStringProperty$S$S(key, value);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:18:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,20 +1,14 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.SwingUtilities','javax.swing.JComponent','javax.swing.JRootPane','javax.swing.RepaintManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JWindow", null, 'java.awt.Window', 'javax.swing.RootPaneContainer');
-C$.windowCount=0;
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.SwingUtilities','javax.swing.JComponent','javax.swing.JRootPane','javax.swing.RepaintManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JWindow", null, 'java.awt.Window', 'javax.swing.RootPaneContainer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rootPane=null;
-this.rootPaneCheckingEnabled=false;
-this.transferHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.rootPaneCheckingEnabled=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['rootPaneCheckingEnabled'],'O',['rootPane','javax.swing.JRootPane','transferHandler','javax.swing.TransferHandler']]
+,['I',['windowCount']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$java_awt_JSFrame.apply(this, [null]);
@@ -26,8 +20,7 @@ C$.superclazz.prototype.setFocusableWindowState$Z.apply(this, [false]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_JSFrame', function (owner) {
-C$.superclazz.c$$java_awt_Window.apply(this, [owner == null  ? $I$(1).getSharedOwnerFrame$() : owner]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window.apply(this,[owner == null  ? $I$(1).getSharedOwnerFrame$() : owner]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(1).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -35,8 +28,7 @@ this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Frame', function (owner) {
-C$.superclazz.c$$java_awt_Window.apply(this, [owner == null  ? $I$(1).getSharedOwnerFrame$() : owner]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window.apply(this,[owner == null  ? $I$(1).getSharedOwnerFrame$() : owner]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(1).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -44,8 +36,7 @@ this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Window', function (owner) {
-C$.superclazz.c$$java_awt_Window.apply(this, [owner == null  ? $I$(1).getSharedOwnerFrame$() : owner]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window.apply(this,[owner == null  ? $I$(1).getSharedOwnerFrame$() : owner]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(1).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -53,8 +44,7 @@ this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Window$java_awt_GraphicsConfiguration', function (owner, gc) {
-C$.superclazz.c$$java_awt_Window$java_awt_GraphicsConfiguration.apply(this, [owner == null  ? $I$(1).getSharedOwnerFrame$() : owner, gc]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_Window$java_awt_GraphicsConfiguration.apply(this,[owner == null  ? $I$(1).getSharedOwnerFrame$() : owner, gc]);C$.$init$.apply(this);
 if (owner == null ) {
 var ownerShutdownListener=$I$(1).getSharedOwnerFrameShutdownListener$();
 this.addWindowListener$java_awt_event_WindowListener(ownerShutdownListener);
@@ -76,7 +66,7 @@ return "WindowUI";
 });
 
 Clazz.newMeth(C$, 'createRootPane$', function () {
-var rp=Clazz.new_($I$(3).c$$S$Z$java_awt_Container,["_Window" + (++C$.windowCount), false, this]);
+var rp=Clazz.new_(["_Window" + (++C$.windowCount), false, this],$I$(3,1).c$$S$Z$java_awt_Container);
 rp.setOpaque$Z(true);
 return rp;
 });
@@ -184,4 +174,4 @@ var rootPaneCheckingEnabledString=(this.rootPaneCheckingEnabled ? "true" : "fals
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:05 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

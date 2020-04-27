@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.JEditorPane','javax.swing.UIManager','javax.swing.text.StyleConstants','javax.swing.text.StyledEditorKit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JTextPane", null, 'javax.swing.JEditorPane');
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'javax.swing.JEditorPane','javax.swing.UIManager','javax.swing.text.StyleConstants','javax.swing.text.StyledEditorKit']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JTextPane", null, 'javax.swing.JEditorPane');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var editorKit=this.createDefaultEditorKit$();
 var contentType=editorKit.getContentType$();
-if (contentType != null  && P$.JEditorPane.getEditorKitClassNameForContentType$S(contentType) == $I$(1).defaultEditorKitMap.get$O(contentType) ) {
+if (contentType != null  && $I$(1).getEditorKitClassNameForContentType$S(contentType) == $I$(1).defaultEditorKitMap.get$O(contentType) ) {
 this.setEditorKitForContentType$S$javax_swing_text_EditorKit(contentType, editorKit);
 }this.setEditorKit$javax_swing_text_EditorKit(editorKit);
 }, 1);
@@ -55,8 +54,8 @@ var caret=this.getCaret$();
 var p0=Math.min(caret.getDot$(), caret.getMark$());
 var p1=Math.max(caret.getDot$(), caret.getMark$());
 var attr=this.getInputAttributes$().copyAttributes$();
-if (Clazz.instanceOf(doc, "swingjs.api.JSMinimalAbstractDocument")) {
-(doc).replace$I$I$S$javax_swing_text_AttributeSet(p0, p1 - p0, content, attr);
+if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
+(doc).replace$I$I$S$javax_swing_text_AttributeSet$javax_swing_text_JTextComponent(p0, p1 - p0, content, attr, this);
 } else {
 if (p0 != p1) {
 doc.remove$I$I(p0, p1 - p0);
@@ -157,7 +156,7 @@ return this.getEditorKit$();
 });
 
 Clazz.newMeth(C$, 'createDefaultEditorKit$', function () {
-return Clazz.new_($I$(4));
+return Clazz.new_($I$(4,1));
 });
 
 Clazz.newMeth(C$, 'setEditorKit$javax_swing_text_EditorKit', function (kit) {
@@ -171,4 +170,4 @@ Clazz.newMeth(C$, 'paramString$', function () {
 return C$.superclazz.prototype.paramString$.apply(this, []);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:04 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

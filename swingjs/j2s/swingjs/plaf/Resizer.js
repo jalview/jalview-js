@@ -1,24 +1,7 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'swingjs.JSUtil','swingjs.api.js.DOMNode','javajs.api.JSFunction','java.awt.Rectangle','java.awt.Color','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Resizer");
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},I$=[[0,'swingjs.JSUtil','swingjs.api.js.DOMNode','javajs.api.JSFunction','java.awt.Rectangle','java.awt.Color','java.awt.Dimension']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Resizer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rootPane=null;
-this.resizer=null;
-this.rootNode=null;
-this.rubberBand=null;
-this.jframe=null;
-this.offsetx=0;
-this.offsety=0;
-this.minSize=0;
-this.rpc=null;
-this.titleHeight=0;
-this.enabled=false;
-this.allowResize=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.offsetx=-4;
@@ -26,10 +9,12 @@ this.offsety=-4;
 this.minSize=10;
 this.enabled=true;
 this.allowResize=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['enabled','allowResize'],'I',['offsetx','offsety','minSize','titleHeight'],'O',['rootPane','javax.swing.JRootPane','resizer','swingjs.api.js.DOMNode','+rootNode','+rubberBand','jframe','javax.swing.JFrame','rpc','javax.swing.RootPaneContainer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$swingjs_JSFrameViewer$javax_swing_RootPaneContainer', function (viewer, top) {
@@ -60,7 +45,7 @@ this.minSize=min;
 });
 
 Clazz.newMeth(C$, 'createAndShowResizer', function () {
-var id=this.rootPane.htmlName + "_resizer";
+var id=this.rootPane.秘htmlName + "_resizer";
 this.resizer=$I$(2).createElement("div", id);
 $I$(2).setSize(this.resizer, 10, 10);
 $I$(2).setStyles(this.resizer, ["background-color", "red", "opacity", "0", "cursor", "nwse-resize"]);
@@ -116,14 +101,14 @@ if (!this.enabled) return;
 if (event == null ) {
 r=p$1.getFrameOffset$I$I.apply(this, [dw, dh]);
 } else {
-$I$(2).getCSSRectangle(this.rootNode, r=Clazz.new_($I$(4)));
+$I$(2,"getCSSRectangle",[this.rootNode, r=Clazz.new_($I$(4,1))]);
 }if (this.jframe == null ) {
 this.rootPane.getGraphics$().setColor$java_awt_Color($I$(5).WHITE);
 this.rootPane.getGraphics$().fillRect$I$I$I$I(0, 0, r.width, r.height);
 (this.rootPane.getParent$()).resizeHTML$I$I(r.width, r.height);
 } else {
-this.jframe.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(6).c$$I$I,[r.width, r.height]));
-this.jframe.invalidate$();
+this.jframe.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(6,1).c$$I$I,[r.width, r.height]));
+this.jframe.invalidateTree$();
 this.jframe.repackContainer$();
 if (Clazz.instanceOf(this.jframe, "javax.swing.JInternalFrame")) {
 try {
@@ -156,4 +141,4 @@ if (b) this.show$();
  else this.hide$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:17:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

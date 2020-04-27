@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("javax.swing.tree"),I$=[];
-var C$=Clazz.newClass(P$, "AbstractLayoutCache", function(){
+/*c*/var C$=Clazz.newClass(P$, "AbstractLayoutCache", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'javax.swing.tree.RowMapper');
+C$.$classes$=[['NodeDimensions',1033]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nodeDimensions=null;
-this.treeModel=null;
-this.treeSelectionModel=null;
-this.rootVisible=false;
-this.rowHeight=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['rootVisible'],'I',['rowHeight'],'O',['nodeDimensions','javax.swing.tree.AbstractLayoutCache.NodeDimensions','treeModel','javax.swing.tree.TreeModel','treeSelectionModel','javax.swing.tree.TreeSelectionModel']]]
 
 Clazz.newMeth(C$, 'setNodeDimensions$javax_swing_tree_AbstractLayoutCache_NodeDimensions', function (nd) {
 this.nodeDimensions=nd;
@@ -99,7 +92,7 @@ return width;
 }}return 0;
 });
 
-Clazz.newMeth(C$, ['getRowsForPaths$javax_swing_tree_TreePathA','getRowsForPaths$'], function (paths) {
+Clazz.newMeth(C$, 'getRowsForPaths$javax_swing_tree_TreePathA', function (paths) {
 if (paths == null ) return null;
 var numPaths=paths.length;
 var rows=Clazz.array(Integer.TYPE, [numPaths]);
@@ -119,19 +112,18 @@ Clazz.newMeth(C$, 'isFixedRowHeight$', function () {
 return (this.rowHeight > 0);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.AbstractLayoutCache, "NodeDimensions", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AbstractLayoutCache, "NodeDimensions", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

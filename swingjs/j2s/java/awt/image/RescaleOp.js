@@ -1,27 +1,17 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.ByteLookupTable','swingjs.JSUtil','java.awt.image.LookupOp','java.awt.image.BufferedImage',['java.awt.geom.Point2D','.Float']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RescaleOp", null, null, ['java.awt.image.BufferedImageOp', 'java.awt.image.RasterOp']);
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.ByteLookupTable','swingjs.JSUtil','java.awt.image.LookupOp','java.awt.image.BufferedImage',['java.awt.geom.Point2D','.Float']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RescaleOp", null, null, ['java.awt.image.BufferedImageOp', 'java.awt.image.RasterOp']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.scaleFactors=null;
-this.offsets=null;
-this.length=0;
-this.hints=null;
-this.swingJStype=0;
-this.srcNbits=0;
-this.dstNbits=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.length=0;
 this.swingJStype="R".$c();
-}, 1);
+},1);
+
+C$.$fields$=[['I',['length','swingJStype','srcNbits','dstNbits'],'O',['scaleFactors','float[]','+offsets','hints','java.awt.RenderingHints']]]
 
 Clazz.newMeth(C$, 'c$$FA$FA$java_awt_RenderingHints', function (scaleFactors, offsets, hints) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.length=scaleFactors.length;
 if (this.length > offsets.length) this.length=offsets.length;
 this.scaleFactors=Clazz.array(Float.TYPE, [this.length]);
@@ -34,7 +24,7 @@ this.hints=hints;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$java_awt_RenderingHints', function (scaleFactor, offset, hints) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.length=1;
 this.scaleFactors=Clazz.array(Float.TYPE, [1]);
 this.offsets=Clazz.array(Float.TYPE, [1]);
@@ -74,15 +64,15 @@ if (val < 0) {
 val=0;
 } else {
 val=255;
-}}bandLutData[i]=((val|0)|0);
+}}bandLutData[i]=(val|0);
 }
 }
-return Clazz.new_($I$(1).c$$I$BAA,[0, lutData]);
+return Clazz.new_($I$(1,1).c$$I$BAA,[0, lutData]);
 }, p$1);
 
 Clazz.newMeth(C$, 'canUseLookup$java_awt_image_Raster$java_awt_image_Raster', function (src, dst) {
 var datatype=src.getDataBuffer$().getDataType$();
-if (datatype != 0) {
+if (datatype != 0 && datatype != 1 ) {
 return false;
 }var dstSM=dst.getSampleModel$();
 this.dstNbits=dstSM.getSampleSize$I(0);
@@ -128,6 +118,7 @@ if (srcCM.getColorSpace$().getType$() != dstCM.getColorSpace$().getType$()) {
 $I$(2).notImplemented$S(null);
 throw Clazz.new_(Clazz.load('java.awt.image.ImagingOpException').c$$S,["SwingJS only supports RGB color space"]);
 }}var origDst=dst;
+src.秘ensureHavePixels$Z(false);
 var srcRaster=src.getRaster$();
 var dstRaster=dst.getRaster$();
 if (srcCM.hasAlpha$()) {
@@ -175,7 +166,7 @@ if (dstNgray != 256) {
 throw Clazz.new_(Clazz.load('java.awt.image.ImagingOpException').c$$S,["SwingJS requires 256 gray scale"]);
 }if (dstNgray == 256) {
 var lut=p$1.createByteLut$FA$FA$I$I.apply(this, [this.scaleFactors, this.offsets, numBands, srcNgray]);
-var op=Clazz.new_($I$(3).c$$java_awt_image_LookupTable$java_awt_RenderingHints,[lut, this.hints]);
+var op=Clazz.new_($I$(3,1).c$$java_awt_image_LookupTable$java_awt_RenderingHints,[lut, this.hints]);
 op.filter$java_awt_image_Raster$java_awt_image_WritableRaster(src, dst);
 }} else {
 if (this.length > 1) {
@@ -229,11 +220,11 @@ Clazz.newMeth(C$, 'createCompatibleDestImage$java_awt_image_BufferedImage$java_a
 var image;
 if (destCM == null ) {
 var cm=src.getColorModel$();
-image=Clazz.new_($I$(4).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, src.getRaster$().createCompatibleWritableRaster$(), cm.isAlphaPremultiplied$(), null]);
+image=Clazz.new_([cm, src.getRaster$().createCompatibleWritableRaster$(), cm.isAlphaPremultiplied$(), null],$I$(4,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
 } else {
 var w=src.getWidth$();
 var h=src.getHeight$();
-image=Clazz.new_($I$(4).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied$(), null]);
+image=Clazz.new_([destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied$(), null],$I$(4,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
 }return image;
 });
 
@@ -243,7 +234,7 @@ return src.createCompatibleWritableRaster$I$I(src.getWidth$(), src.getHeight$())
 
 Clazz.newMeth(C$, 'getPoint2D$java_awt_geom_Point2D$java_awt_geom_Point2D', function (srcPt, dstPt) {
 if (dstPt == null ) {
-dstPt=Clazz.new_($I$(5));
+dstPt=Clazz.new_($I$(5,1));
 }dstPt.setLocation$D$D(srcPt.getX$(), srcPt.getY$());
 return dstPt;
 });
@@ -254,4 +245,4 @@ return this.hints;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

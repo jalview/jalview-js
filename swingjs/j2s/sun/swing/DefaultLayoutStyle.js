@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("sun.swing"),p$1={},I$=[[0,['javax.swing.LayoutStyle','.ComponentPlacement'],'javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultLayoutStyle", null, 'javax.swing.LayoutStyle');
-C$.INSTANCE=null;
+(function(){var P$=Clazz.newPackage("sun.swing"),p$1={},I$=[[0,['javax.swing.LayoutStyle','.ComponentPlacement'],'javax.swing.UIManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultLayoutStyle", null, 'javax.swing.LayoutStyle');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.INSTANCE=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['INSTANCE','sun.swing.DefaultLayoutStyle']]]
 
 Clazz.newMeth(C$, 'getInstance$', function () {
 return C$.INSTANCE;
@@ -55,7 +55,7 @@ return Math.max(offset, 0);
 
 Clazz.newMeth(C$, 'getButtonGap$javax_swing_JComponent$I', function (c, position) {
 var classID=c.getUIClassID$();
-if ((classID == "CheckBoxUI" || classID == "RadioButtonUI" ) && !(c).isBorderPainted$() ) {
+if ((classID === "CheckBoxUI"  || classID === "RadioButtonUI"  ) && !(c).isBorderPainted$() ) {
 var border=c.getBorder$();
 if (Clazz.instanceOf(border, "javax.swing.plaf.UIResource")) {
 return p$1.getInset$javax_swing_JComponent$I.apply(this, [c, position]);
@@ -83,7 +83,7 @@ return 0;
 
 Clazz.newMeth(C$, 'getIndent$javax_swing_JComponent$I', function (c, position) {
 var classID=c.getUIClassID$();
-if (classID == "CheckBoxUI" || classID == "RadioButtonUI" ) {
+if (classID === "CheckBoxUI"  || classID === "RadioButtonUI"  ) {
 var button=c;
 var insets=c.getInsets$();
 var icon=p$1.getIcon$javax_swing_AbstractButton.apply(this, [button]);
@@ -147,6 +147,10 @@ return insets.left;
 return 0;
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.INSTANCE=Clazz.new_(C$);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:40 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

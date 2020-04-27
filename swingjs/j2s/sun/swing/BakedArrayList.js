@@ -1,26 +1,21 @@
 (function(){var P$=Clazz.newPackage("sun.swing"),I$=[];
-var C$=Clazz.newClass(P$, "BakedArrayList", null, 'java.util.ArrayList');
+/*c*/var C$=Clazz.newClass(P$, "BakedArrayList", null, 'java.util.ArrayList');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._hashCode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['_hashCode']]]
 
 Clazz.newMeth(C$, 'c$$I', function (size) {
-C$.superclazz.c$$I.apply(this, [size]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[size]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (data) {
 C$.c$$I.apply(this, [data.size$()]);
 for (var counter=0, max=data.size$(); counter < max; counter++) {
-this.add$TE(data.get$I(counter));
+this.add$O(data.get$I(counter));
 }
 this.cacheHashCode$();
 }, 1);
@@ -50,4 +45,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

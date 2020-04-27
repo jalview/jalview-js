@@ -1,21 +1,16 @@
 (function(){var P$=Clazz.newPackage("swingjs"),I$=[];
-var C$=Clazz.newClass(P$, "JSNullComponentPeer", null, null, 'java.awt.peer.LightweightPeer');
+/*c*/var C$=Clazz.newClass(P$, "JSNullComponentPeer", null, null, 'java.awt.peer.LightweightPeer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.target=null;
-this.isNull=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isNull=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNull'],'O',['target','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (target) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.target=target;
 }, 1);
 
@@ -151,22 +146,6 @@ Clazz.newMeth(C$, 'getBounds$', function () {
 return null;
 });
 
-Clazz.newMeth(C$, 'getInsets$', function () {
-return null;
-});
-
-Clazz.newMeth(C$, 'beginValidate$', function () {
-});
-
-Clazz.newMeth(C$, 'endValidate$', function () {
-});
-
-Clazz.newMeth(C$, 'beginLayout$', function () {
-});
-
-Clazz.newMeth(C$, 'endLayout$', function () {
-});
-
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,18 +1,7 @@
 (function(){var P$=Clazz.newPackage("jalview.ws"),I$=[];
-var C$=Clazz.newClass(P$, "AWsJob");
+/*c*/var C$=Clazz.newClass(P$, "AWsJob");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jobnum=0;
-this.jobId=null;
-this.cancelled=false;
-this.allowedServerExceptions=0;
-this.submitted=false;
-this.subjobComplete=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.jobnum=0;
@@ -20,7 +9,9 @@ this.cancelled=false;
 this.allowedServerExceptions=3;
 this.submitted=false;
 this.subjobComplete=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['cancelled','submitted','subjobComplete'],'I',['jobnum','allowedServerExceptions'],'S',['jobId']]]
 
 Clazz.newMeth(C$, 'setJobId$S', function (jobId) {
 this.jobId=jobId;
@@ -67,7 +58,7 @@ return this.subjobComplete;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, '_defaultState$', function () {
@@ -75,4 +66,4 @@ var state="";
 return state;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

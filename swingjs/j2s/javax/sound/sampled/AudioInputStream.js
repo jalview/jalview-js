@@ -1,33 +1,19 @@
 (function(){var P$=Clazz.newPackage("javax.sound.sampled");
-var C$=Clazz.newClass(P$, "AudioInputStream", null, 'java.io.InputStream');
+/*c*/var C$=Clazz.newClass(P$, "AudioInputStream", null, 'java.io.InputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.stream=null;
-this.format=null;
-this.frameLength=0;
-this.frameSize=0;
-this.framePos=0;
-this.markpos=0;
-this.pushBackBuffer=null;
-this.pushBackLen=0;
-this.markPushBackBuffer=null;
-this.markPushBackLen=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.pushBackBuffer=null;
 this.pushBackLen=0;
 this.markPushBackBuffer=null;
 this.markPushBackLen=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['frameSize','pushBackLen','markPushBackLen'],'J',['frameLength','framePos','markpos'],'O',['stream','java.io.InputStream','format','javax.sound.sampled.AudioFormat','pushBackBuffer','byte[]','+markPushBackBuffer']]]
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream$javax_sound_sampled_AudioFormat$J', function (stream, format, length) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.format=format;
 this.frameLength=length;
 this.frameSize=format.getFrameSize$();
@@ -148,4 +134,4 @@ return this.stream.markSupported$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

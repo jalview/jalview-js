@@ -1,34 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.ColorModel','swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PixelGrabber", null, null, 'java.awt.image.ImageConsumer');
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.ColorModel','swingjs.JSUtil']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PixelGrabber", null, null, 'java.awt.image.ImageConsumer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.producer=null;
-this.dstX=0;
-this.dstY=0;
-this.dstW=0;
-this.dstH=0;
-this.imageModel=null;
-this.bytePixels=null;
-this.intPixels=null;
-this.dstOff=0;
-this.dstScan=0;
-this.grabbing=false;
-this.flags=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['grabbing'],'I',['dstX','dstY','dstW','dstH','dstOff','dstScan','flags'],'O',['producer','java.awt.image.ImageProducer','imageModel','java.awt.image.ColorModel','bytePixels','byte[]','intPixels','int[]']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$IA$I$I', function (img, x, y, w, h, pix, off, scansize) {
 C$.c$$java_awt_image_ImageProducer$I$I$I$I$IA$I$I.apply(this, [img.getSource$(), x, y, w, h, pix, off, scansize]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer$I$I$I$I$IA$I$I', function (ip, x, y, w, h, pix, off, scansize) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.producer=ip;
 this.dstX=x;
 this.dstY=y;
@@ -41,7 +26,7 @@ this.imageModel=$I$(1).getRGBdefault$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$Z', function (img, x, y, w, h, forceRGB) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.producer=img.getSource$();
 this.dstX=x;
 this.dstY=y;
@@ -284,4 +269,4 @@ return this.flags;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

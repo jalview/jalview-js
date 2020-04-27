@@ -1,25 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.BitSet','javax.swing.event.EventListenerList','javax.swing.event.ListSelectionListener','javax.swing.event.ListSelectionEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultListSelectionModel", null, null, ['javax.swing.ListSelectionModel', 'Cloneable']);
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.BitSet','javax.swing.event.EventListenerList','javax.swing.event.ListSelectionListener','javax.swing.event.ListSelectionEvent']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultListSelectionModel", null, null, ['javax.swing.ListSelectionModel', 'Cloneable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.selectionMode=0;
-this.minIndex=0;
-this.maxIndex=0;
-this.anchorIndex=0;
-this.leadIndex=0;
-this.firstAdjustedIndex=0;
-this.lastAdjustedIndex=0;
-this.isAdjusting=false;
-this.firstChangedIndex=0;
-this.lastChangedIndex=0;
-this.value=null;
-this.listenerList=null;
-this.leadAnchorNotificationEnabled=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.selectionMode=2;
@@ -32,10 +14,12 @@ this.lastAdjustedIndex=-1;
 this.isAdjusting=false;
 this.firstChangedIndex=2147483647;
 this.lastChangedIndex=-1;
-this.value=Clazz.new_($I$(1).c$$I,[32]);
-this.listenerList=Clazz.new_($I$(2));
+this.value=Clazz.new_($I$(1,1).c$$I,[32]);
+this.listenerList=Clazz.new_($I$(2,1));
 this.leadAnchorNotificationEnabled=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAdjusting','leadAnchorNotificationEnabled'],'I',['selectionMode','minIndex','maxIndex','anchorIndex','leadIndex','firstAdjustedIndex','lastAdjustedIndex','firstChangedIndex','lastChangedIndex'],'O',['value','java.util.BitSet','listenerList','javax.swing.event.EventListenerList']]]
 
 Clazz.newMeth(C$, 'getMinSelectionIndex$', function () {
 return this.isSelectionEmpty$() ? -1 : this.minIndex;
@@ -74,11 +58,11 @@ return (this.minIndex > this.maxIndex);
 });
 
 Clazz.newMeth(C$, 'addListSelectionListener$javax_swing_event_ListSelectionListener', function (l) {
-this.listenerList.add$Class$TT(Clazz.getClass($I$(3),['valueChanged$javax_swing_event_ListSelectionEvent']), l);
+this.listenerList.add$Class$java_util_EventListener(Clazz.getClass($I$(3),['valueChanged$javax_swing_event_ListSelectionEvent']), l);
 });
 
 Clazz.newMeth(C$, 'removeListSelectionListener$javax_swing_event_ListSelectionListener', function (l) {
-this.listenerList.remove$Class$TT(Clazz.getClass($I$(3),['valueChanged$javax_swing_event_ListSelectionEvent']), l);
+this.listenerList.remove$Class$java_util_EventListener(Clazz.getClass($I$(3),['valueChanged$javax_swing_event_ListSelectionEvent']), l);
 });
 
 Clazz.newMeth(C$, 'getListSelectionListeners$', function () {
@@ -105,8 +89,8 @@ var e=null;
 for (var i=listeners.length - 2; i >= 0; i-=2) {
 if (listeners[i] === Clazz.getClass($I$(3),['valueChanged$javax_swing_event_ListSelectionEvent']) ) {
 if (e == null ) {
-e=Clazz.new_($I$(4).c$$O$I$I$Z,[this, firstIndex, lastIndex, isAdjusting]);
-}(listeners[i + 1]).valueChanged$(e);
+e=Clazz.new_($I$(4,1).c$$O$I$I$Z,[this, firstIndex, lastIndex, isAdjusting]);
+}(listeners[i + 1]).valueChanged$javax_swing_event_ListSelectionEvent(e);
 }}
 });
 
@@ -326,7 +310,7 @@ return this.getClass$().getName$() + " " + Integer.toString$I(this.hashCode$()) 
 Clazz.newMeth(C$, 'clone$', function () {
 var clone=Clazz.clone(this);
 clone.value=this.value.clone$();
-clone.listenerList=Clazz.new_($I$(2));
+clone.listenerList=Clazz.new_($I$(2,1));
 return clone;
 });
 
@@ -379,4 +363,4 @@ p$1.changeSelection$I$I$I$I$Z.apply(this, [newMin, newMax, oldMin, oldMax, false
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

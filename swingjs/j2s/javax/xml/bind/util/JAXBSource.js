@@ -1,35 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind.util"),I$=[[0,'org.xml.sax.helpers.XMLFilterImpl','javax.xml.bind.util.Messages','org.xml.sax.InputSource']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JAXBSource", null, 'javax.xml.transform.sax.SAXSource');
+(function(){var P$=Clazz.newPackage("javax.xml.bind.util"),I$=[[0,'org.xml.sax.helpers.XMLFilterImpl','javax.xml.bind.util.Messages','org.xml.sax.InputSource']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JAXBSource", null, 'javax.xml.transform.sax.SAXSource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.marshaller=null;
-this.contentObject=null;
-this.pseudoParser=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.pseudoParser=((P$.JAXBSource$1||
-(function(){var C$=Clazz.newClass(P$, "JAXBSource$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'org.xml.sax.XMLReader', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "JAXBSource$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'org.xml.sax.XMLReader', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lexicalHandler=null;
-this.entityResolver=null;
-this.dtdHandler=null;
-this.repeater=null;
-this.errorHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.repeater=Clazz.new_($I$(1));
-}, 1);
+this.repeater=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['lexicalHandler','org.xml.sax.ext.LexicalHandler','entityResolver','org.xml.sax.EntityResolver','dtdHandler','org.xml.sax.DTDHandler','repeater','org.xml.sax.XMLFilter','errorHandler','org.xml.sax.ErrorHandler']]]
 
 Clazz.newMeth(C$, 'getFeature$S', function (name) {
 if (name.equals$O("http://xml.org/sax/features/namespaces")) return true;
@@ -110,21 +94,23 @@ throw e;
 }
 });
 })()
-), Clazz.new_(P$.JAXBSource$1.$init$, [this, null]));
-}, 1);
+), Clazz.new_(P$.JAXBSource$1.$init$,[this, null]));
+},1);
+
+C$.$fields$=[['O',['marshaller','javax.xml.bind.Marshaller','contentObject','java.lang.Object','pseudoParser','org.xml.sax.XMLReader']]]
 
 Clazz.newMeth(C$, 'c$$javax_xml_bind_JAXBContext$O', function (context, contentObject) {
 C$.c$$javax_xml_bind_Marshaller$O.apply(this, [(context == null ) ? C$.assertionFailed$S($I$(2).format$S("JAXBSource.NullContext")) : context.createMarshaller$(), (contentObject == null ) ? C$.assertionFailed$S($I$(2).format$S("JAXBSource.NullContent")) : contentObject]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_xml_bind_Marshaller$O', function (marshaller, contentObject) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (marshaller == null ) throw Clazz.new_(Clazz.load('javax.xml.bind.JAXBException').c$$S,[$I$(2).format$S("JAXBSource.NullMarshaller")]);
 if (contentObject == null ) throw Clazz.new_(Clazz.load('javax.xml.bind.JAXBException').c$$S,[$I$(2).format$S("JAXBSource.NullContent")]);
 this.marshaller=marshaller;
 this.contentObject=contentObject;
 C$.superclazz.prototype.setXMLReader$org_xml_sax_XMLReader.apply(this, [this.pseudoParser]);
-C$.superclazz.prototype.setInputSource$org_xml_sax_InputSource.apply(this, [Clazz.new_($I$(3))]);
+C$.superclazz.prototype.setInputSource$org_xml_sax_InputSource.apply(this, [Clazz.new_($I$(3,1))]);
 }, 1);
 
 Clazz.newMeth(C$, 'assertionFailed$S', function (message) {
@@ -133,4 +119,4 @@ throw Clazz.new_(Clazz.load('javax.xml.bind.JAXBException').c$$S,[message]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

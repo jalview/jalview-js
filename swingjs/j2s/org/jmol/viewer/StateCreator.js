@@ -1,27 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','org.jmol.viewer.Viewer','javajs.util.PT','org.jmol.c.VDW','org.jmol.util.Edge','org.jmol.modelset.BondSet','org.jmol.modelset.Bond','org.jmol.util.Escape','org.jmol.util.BSUtil','org.jmol.viewer.JC','org.jmol.viewer.StateManager','org.jmol.util.ColorEncoder','org.jmol.script.T','org.jmol.viewer.GlobalSettings','java.util.Arrays','org.jmol.c.STR','org.jmol.shape.Shape','javajs.awt.Font','javajs.util.P3','org.jmol.util.C','javajs.util.BS','org.jmol.c.PAL','org.jmol.modelset.AtomCollection','org.jmol.util.Logger','java.util.Date']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StateCreator", null, 'org.jmol.viewer.JmolStateCreator');
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.SB','org.jmol.viewer.Viewer','javajs.util.PT','org.jmol.c.VDW','org.jmol.util.Edge','org.jmol.modelset.BondSet','org.jmol.modelset.Bond','org.jmol.util.Escape','org.jmol.util.BSUtil','org.jmol.viewer.JC','org.jmol.viewer.StateManager','org.jmol.util.ColorEncoder','org.jmol.script.T','org.jmol.viewer.GlobalSettings','java.util.Arrays','org.jmol.c.STR','org.jmol.shape.Shape','org.jmol.util.Font','javajs.util.P3','org.jmol.shape.Measures','org.jmol.util.C','javajs.util.BS','org.jmol.c.PAL','org.jmol.modelset.AtomCollection','org.jmol.util.Logger','java.util.Date']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "StateCreator", null, 'org.jmol.viewer.JmolStateCreator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.temp=null;
-this.temp2=null;
-this.temp3=null;
-this.undoWorking=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.temp=Clazz.new_($I$(1));
-this.temp2=Clazz.new_($I$(1));
-this.temp3=Clazz.new_($I$(1));
+this.temp=Clazz.new_($I$(1,1));
+this.temp2=Clazz.new_($I$(1,1));
+this.temp3=Clazz.new_($I$(1,1));
 this.undoWorking=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['undoWorking'],'O',['vwr','org.jmol.viewer.Viewer','temp','java.util.Map','+temp2','+temp3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_viewer_Viewer', function (vwr) {
@@ -30,14 +22,14 @@ this.vwr=vwr;
 
 Clazz.newMeth(C$, 'getStateScript$S$I$I', function (type, width, height) {
 var isAll=(type == null  || type.equalsIgnoreCase$S("all") );
-var s=Clazz.new_($I$(2));
-var sfunc=(isAll ? Clazz.new_($I$(2)).append$S("function _setState() {\n") : null);
+var s=Clazz.new_($I$(2,1));
+var sfunc=(isAll ? Clazz.new_($I$(2,1)).append$S("function _setState() {\n") : null);
 if (isAll) {
 s.append$S("# Jmol state version " + $I$(3).getJmolVersion$() + ";\n" );
 if (this.vwr.isApplet) {
 p$1.app$javajs_util_SB$S.apply(this, [s, "# fullName = " + $I$(4).esc$S(this.vwr.fullName)]);
-p$1.app$javajs_util_SB$S.apply(this, [s, "# documentBase = " + $I$(4).esc$S($I$(3).appletDocumentBase)]);
-p$1.app$javajs_util_SB$S.apply(this, [s, "# codeBase = " + $I$(4).esc$S($I$(3).appletCodeBase)]);
+p$1.app$javajs_util_SB$S.apply(this, [s, "# documentBase = " + (function(a,f){return f.apply(null,a)})([$I$(3).appletDocumentBase],$I$(4).esc$S)]);
+p$1.app$javajs_util_SB$S.apply(this, [s, "# codeBase = " + (function(a,f){return f.apply(null,a)})([$I$(3).appletCodeBase],$I$(4).esc$S)]);
 s.append$S("\n");
 }}var global=this.vwr.g;
 if (isAll || type.equalsIgnoreCase$S("windowState") ) s.append$S(p$1.getWindowState$javajs_util_SB$I$I.apply(this, [sfunc, width, height]));
@@ -62,7 +54,7 @@ return s.toString();
 });
 
 Clazz.newMeth(C$, 'getDataState$javajs_util_SB', function (sfunc) {
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 var haveData=false;
 var atomProps=this.getAtomicPropertyState$I$javajs_util_BS(-1, null);
 if (atomProps.length$() > 0) {
@@ -89,7 +81,7 @@ var ms=this.vwr.ms;
 var len=ms.stateScripts.size$();
 if (len == 0) return "";
 var haveDefs=false;
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 var cmd;
 for (var i=0; i < len; i++) {
 var ss=ms.stateScripts.get$I(i);
@@ -107,7 +99,7 @@ return cmd + commands.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'getModelState$javajs_util_SB$Z$Z', function (sfunc, isAll, withProteinStructure) {
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 if (isAll && sfunc != null  ) {
 sfunc.append$S("  _setModelState;\n");
 commands.append$S("function _setModelState() {\n");
@@ -123,7 +115,7 @@ var ss=ms.stateScripts.get$I(i);
 if (!ss.inDefinedStateBlock && (cmd=ss.toString()).length$() > 0 ) {
 p$1.app$javajs_util_SB$S.apply(this, [commands, cmd]);
 }}
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 for (var i=0; i < ms.bondCount; i++) if (!models[bonds[i].atom1.mi].isModelKit) if (bonds[i].isHydrogen$() || (bonds[i].order & 131072) != 0 ) {
 var bond=bonds[i];
 var index=bond.atom1.i;
@@ -133,7 +125,7 @@ sb.appendI$I(index).appendC$C("\t").appendI$I(bond.atom2.i).appendC$C("\t").appe
 if (sb.length$() > 0) commands.append$S("data \"connect_atoms\"\n").appendSB$javajs_util_SB(sb).append$S("end \"connect_atoms\";\n");
 commands.append$S("\n");
 }if (ms.haveHiddenBonds) {
-var bs=Clazz.new_($I$(7));
+var bs=Clazz.new_($I$(7,1));
 for (var i=ms.bondCount; --i >= 0; ) if (bonds[i].mad != 0 && (bonds[i].shapeVisibilityFlags & $I$(8).myVisibilityFlag) == 0 ) bs.set$I(i);
 
 if (bs.isEmpty$()) ms.haveHiddenBonds=false;
@@ -149,7 +141,7 @@ for (var i=0; i < modelCount; i++) if (models[i].isJmolDataFrame) {
 needOrientations=true;
 break;
 }
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 for (var i=0; i < modelCount; i++) {
 var m=models[i];
 sb.setLength$I(0);
@@ -160,7 +152,7 @@ if (t != null  && t.length$() > 0 ) sb.append$S("  frame title ").append$S($I$(4
 if (needOrientations && m.orientation != null   && !ms.isTrajectorySubFrame$I(i) ) sb.append$S("  ").append$S(m.orientation.getMoveToText$Z(false)).append$S(";\n");
 if (m.frameDelay != 0 && !ms.isTrajectorySubFrame$I(i) ) sb.append$S("  frame delay ").appendF$F(m.frameDelay / 1000.0).append$S(";\n");
 if (m.simpleCage != null ) {
-sb.append$S("  unitcell ").append$S($I$(9).eAP$javajs_util_T3A(m.simpleCage.getUnitCellVectors$())).append$S(";\n");
+sb.append$S("  unitcell ").append$S((function(a,f){return f.apply(null,a)})([m.simpleCage.getUnitCellVectors$()],$I$(9).eAP$javajs_util_T3A)).append$S(";\n");
 p$1.getShapeStatePriv$javajs_util_SB$Z$I.apply(this, [sb, isAll, 33]);
 }if (sb.length$() > 0) commands.append$S("  frame " + ms.getModelNumberDotted$I(i) + ";\n" ).appendSB$javajs_util_SB(sb);
 }
@@ -179,12 +171,12 @@ commands.append$S("  frame ").append$S(ms.getModelNumberDotted$I(i)).appendSB$ja
 if (loadUC) this.vwr.shm.loadShape$I(33);
 p$1.getShapeStatePriv$javajs_util_SB$Z$I.apply(this, [commands, isAll, 33]);
 if (haveModulation) {
-var temp=Clazz.new_($I$(1));
+var temp=Clazz.new_($I$(1,1));
 var ivib;
 for (var i=modelCount; --i >= 0; ) {
 if ((ivib=this.vwr.ms.getLastVibrationVector$I$I(i, 1275072532)) >= 0) for (var j=models[i].firstAtomIndex; j <= ivib; j++) {
 var mset=ms.getModulation$I(j);
-if (mset != null ) $I$(10).setMapBitSet$java_util_Map$I$I$S(temp, j, j, mset.getState$());
+if (mset != null ) (function(a,f){return f.apply(null,a)})([temp, j, j, mset.getState$()],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 }
 }
 commands.append$S(this.getCommands$java_util_Map$java_util_Map$S(temp, null, "select"));
@@ -195,7 +187,7 @@ return commands.toString();
 
 Clazz.newMeth(C$, 'getWindowState$javajs_util_SB$I$I', function (sfunc, width, height) {
 var global=this.vwr.g;
-var str=Clazz.new_($I$(2));
+var str=Clazz.new_($I$(2,1));
 if (sfunc != null ) {
 sfunc.append$S("  initialize;\n  set refreshing false;\n  _setWindowState;\n");
 str.append$S("\nfunction _setWindowState() {\n");
@@ -203,7 +195,7 @@ str.append$S("\nfunction _setWindowState() {\n");
 str.append$S("# width ").appendI$I(width == 0 ? this.vwr.getScreenWidth$() : width).append$S(";\n# height ").appendI$I(height == 0 ? this.vwr.getScreenHeight$() : height).append$S(";\n");
 p$1.app$javajs_util_SB$S.apply(this, [str, "stateVersion = " + $I$(11).versionInt]);
 p$1.app$javajs_util_SB$S.apply(this, [str, "background " + $I$(9).escapeColor$I(global.objColors[0])]);
-for (var i=1; i < 7; i++) if (global.objColors[i] != 0) p$1.app$javajs_util_SB$S.apply(this, [str, $I$(12).getObjectNameFromId$I(i) + "Color = \"" + $I$(9).escapeColor$I(global.objColors[i]) + '"' ]);
+for (var i=1; i < 7; i++) if (global.objColors[i] != 0) p$1.app$javajs_util_SB$S.apply(this, [str, $I$(12).getObjectNameFromId$I(i) + "Color = \"" + $I$(9).escapeColor$I(global.objColors[i]) + '\"' ]);
 
 if (global.backgroundImageFileName != null ) {
 p$1.app$javajs_util_SB$S.apply(this, [str, "background IMAGE " + (global.backgroundImageFileName.startsWith$S(";base64,") ? "" : "/*file*/") + $I$(4).esc$S(global.backgroundImageFileName) ]);
@@ -213,7 +205,7 @@ return str.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'getLightingState$Z', function (isAll) {
-var str=Clazz.new_($I$(2));
+var str=Clazz.new_($I$(2,1));
 var g=this.vwr.gdata;
 p$1.app$javajs_util_SB$S.apply(this, [str, "set ambientPercent " + g.getAmbientPercent$()]);
 p$1.app$javajs_util_SB$S.apply(this, [str, "set diffusePercent " + g.getDiffusePercent$()]);
@@ -231,7 +223,7 @@ return str.toString();
 });
 
 Clazz.newMeth(C$, 'getFileState$javajs_util_SB', function (sfunc) {
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 if (sfunc != null ) {
 sfunc.append$S("  _setFileState;\n");
 commands.append$S("function _setFileState() {\n\n");
@@ -246,11 +238,11 @@ var ligandModelSet=this.vwr.ligandModelSet;
 if (ligandModelSet != null ) {
 for (var key, $key = ligandModelSet.keySet$().iterator$(); $key.hasNext$()&&((key=($key.next$())),1);) {
 var data=this.vwr.ligandModels.get$O(key + "_data");
-if (data != null ) cmds.append$S("  ").append$S($I$(9).encapsulateData$S$O$I("ligand_" + key, data.trim$() + "\n", 0));
+if (data != null ) cmds.append$S("  ").append$S((function(a,f){return f.apply(null,a)})(["ligand_" + key, data.trim$() + "\n", 0],$I$(9).encapsulateData$S$O$I));
 data=this.vwr.ligandModels.get$O(key + "_file");
-if (data != null ) cmds.append$S("  ").append$S($I$(9).encapsulateData$S$O$I("file_" + key, data.trim$() + "\n", 0));
+if (data != null ) cmds.append$S("  ").append$S((function(a,f){return f.apply(null,a)})(["file_" + key, data.trim$() + "\n", 0],$I$(9).encapsulateData$S$O$I));
 }
-}var commands=Clazz.new_($I$(2));
+}var commands=Clazz.new_($I$(2,1));
 var ms=this.vwr.ms;
 var models=ms.am;
 var modelCount=ms.mc;
@@ -264,7 +256,7 @@ var bs=ms.getModelAtomBitSetIncludingDeleted$I$Z(i, false);
 if (ms.tainted != null ) {
 if (ms.tainted[2] != null ) ms.tainted[2].andNot$javajs_util_BS(bs);
 if (ms.tainted[3] != null ) ms.tainted[3].andNot$javajs_util_BS(bs);
-}m.loadScript=Clazz.new_($I$(2));
+}m.loadScript=Clazz.new_($I$(2,1));
 this.getInlineData$javajs_util_SB$S$Z$S(commands, this.vwr.getModelExtract$O$Z$Z$S(bs, false, true, "MOL"), i > 0, null);
 } else {
 commands.appendSB$javajs_util_SB(m.loadScript);
@@ -285,7 +277,7 @@ loadScript.append$S("load /*data*/ data \"").append$S(tag).append$S("\"\n").appe
 });
 
 Clazz.newMeth(C$, 'getColorState$org_jmol_viewer_ColorManager$javajs_util_SB', function (cm, sfunc) {
-var s=Clazz.new_($I$(2));
+var s=Clazz.new_($I$(2,1));
 var n=p$1.getCEState$org_jmol_util_ColorEncoder$javajs_util_SB.apply(this, [cm.ce, s]);
 if (n > 0 && sfunc != null  ) sfunc.append$S("\n  _setColorState\n");
 return (n > 0 && sfunc != null   ? "function _setColorState() {\n" + s.append$S("}\n\n").toString() : s.toString());
@@ -295,7 +287,7 @@ Clazz.newMeth(C$, 'getCEState$org_jmol_util_ColorEncoder$javajs_util_SB', functi
 var n=0;
 for (var entry, $entry = p.schemes.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var name=entry.getKey$();
-if (!!(name.length$() > 0 & n++ >= 0)) s.append$S("color \"" + name + "=" + $I$(13).getColorSchemeList$IA(entry.getValue$()) + "\";\n" );
+if (!!(name.length$() > 0 & n++ >= 0)) s.append$S("color \"" + name + "=" + (function(a,f){return f.apply(null,a)})([entry.getValue$()],$I$(13).getColorSchemeList$IA) + "\";\n" );
 }
 return n;
 }, p$1);
@@ -303,7 +295,7 @@ return n;
 Clazz.newMeth(C$, 'getAnimState$org_jmol_viewer_AnimationManager$javajs_util_SB', function (am, sfunc) {
 var modelCount=this.vwr.ms.mc;
 if (modelCount < 2) return "";
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 if (sfunc != null ) {
 sfunc.append$S("  _setFrameState;\n");
 commands.append$S("function _setFrameState() {\n");
@@ -339,7 +331,7 @@ return commands.toString();
 
 Clazz.newMeth(C$, 'getParameterState$org_jmol_viewer_GlobalSettings$javajs_util_SB', function (global, sfunc) {
 var list=Clazz.array(String, [global.htBooleanParameterFlags.size$() + global.htNonbooleanParameterValues.size$()]);
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 var isState=(sfunc != null );
 if (isState) {
 sfunc.append$S("  _setParameterState;\n");
@@ -376,17 +368,17 @@ commands.append$S(s);
 }if (this.vwr.shm.getShape$I(5) != null ) commands.append$S(p$1.getDefaultLabelState$org_jmol_shape_Labels.apply(this, [this.vwr.shm.shapes[5]]));
 if (global.haveSetStructureList) {
 var slist=global.structureList;
-commands.append$S("struture HELIX set " + $I$(9).eAF$FA(slist.get$O($I$(17).HELIX)));
-commands.append$S("struture SHEET set " + $I$(9).eAF$FA(slist.get$O($I$(17).SHEET)));
-commands.append$S("struture TURN set " + $I$(9).eAF$FA(slist.get$O($I$(17).TURN)));
+commands.append$S("struture HELIX set " + (function(a,f){return f.apply(null,a)})([slist.get$O($I$(17).HELIX)],$I$(9).eAF$FA));
+commands.append$S("struture SHEET set " + (function(a,f){return f.apply(null,a)})([slist.get$O($I$(17).SHEET)],$I$(9).eAF$FA));
+commands.append$S("struture TURN set " + (function(a,f){return f.apply(null,a)})([slist.get$O($I$(17).TURN)],$I$(9).eAF$FA));
 }if (sfunc != null ) commands.append$S("\n}\n\n");
 return commands.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'getDefaultLabelState$org_jmol_shape_Labels', function (l) {
-var s=Clazz.new_($I$(2)).append$S("\n# label defaults;\n");
+var s=Clazz.new_($I$(2,1)).append$S("\n# label defaults;\n");
 p$1.app$javajs_util_SB$S.apply(this, [s, "select none"]);
-p$1.app$javajs_util_SB$S.apply(this, [s, $I$(18).getColorCommand$S$B$H$Z("label", ($b$[0] = l.defaultPaletteID, $b$[0]), l.defaultColix, l.translucentAllowed)]);
+p$1.app$javajs_util_SB$S.apply(this, [s, $I$(18).getColorCommand$S$B$H$Z("label", l.defaultPaletteID, l.defaultColix, l.translucentAllowed)]);
 p$1.app$javajs_util_SB$S.apply(this, [s, "background label " + $I$(18).encodeColor$H(l.defaultBgcolix)]);
 p$1.app$javajs_util_SB$S.apply(this, [s, "set labelOffset " + $I$(11).getXOffset$I(l.defaultOffset) + " " + ($I$(11).getYOffset$I(l.defaultOffset)) ]);
 var align=$I$(11).getHorizAlignmentName$I(l.defaultAlignment);
@@ -395,23 +387,23 @@ var pointer=$I$(11).getPointerName$I(l.defaultPointer);
 p$1.app$javajs_util_SB$S.apply(this, [s, "set labelPointer " + (pointer.length$() == 0 ? "off" : pointer)]);
 if ((l.defaultZPos & 32) != 0) p$1.app$javajs_util_SB$S.apply(this, [s, "set labelFront"]);
  else if ((l.defaultZPos & 16) != 0) p$1.app$javajs_util_SB$S.apply(this, [s, "set labelGroup"]);
-p$1.app$javajs_util_SB$S.apply(this, [s, $I$(18).getFontCommand$S$javajs_awt_Font("label", $I$(19).getFont3D$B(($b$[0] = l.defaultFontId, $b$[0])))]);
+p$1.app$javajs_util_SB$S.apply(this, [s, (function(a,f){return f.apply(null,a)})(["label", $I$(19).getFont3D$B(l.defaultFontId)],$I$(18).getFontCommand$S$org_jmol_util_Font)]);
 return s.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'getSelectionState$org_jmol_viewer_SelectionManager$javajs_util_SB', function (sm, sfunc) {
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 if (sfunc != null ) {
 sfunc.append$S("  _setSelectionState;\n");
 commands.append$S("function _setSelectionState() {\n");
 }if (this.vwr.ms.trajectory != null ) p$1.app$javajs_util_SB$S.apply(this, [commands, this.vwr.ms.trajectory.getState$()]);
-var temp=Clazz.new_($I$(1));
+var temp=Clazz.new_($I$(1,1));
 var cmd=null;
 p$1.addBs$javajs_util_SB$S$javajs_util_BS.apply(this, [commands, "hide ", sm.bsHidden]);
 p$1.addBs$javajs_util_SB$S$javajs_util_BS.apply(this, [commands, "subset ", sm.bsSubset]);
 p$1.addBs$javajs_util_SB$S$javajs_util_BS.apply(this, [commands, "delete ", sm.bsDeleted]);
 p$1.addBs$javajs_util_SB$S$javajs_util_BS.apply(this, [commands, "fix ", sm.bsFixed]);
-temp.put$TK$TV("-", this.vwr.slm.getSelectedAtomsNoSubset$());
+temp.put$O$O("-", this.vwr.slm.getSelectedAtomsNoSubset$());
 cmd=this.getCommands$java_util_Map$java_util_Map$S(temp, null, "select");
 if (cmd == null ) p$1.app$javajs_util_SB$S.apply(this, [commands, "select none"]);
  else commands.append$S(cmd);
@@ -423,7 +415,7 @@ return commands.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'getViewState$org_jmol_viewer_TransformManager$javajs_util_SB', function (tm, sfunc) {
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 var moveToText=tm.getMoveToText$F$Z(0, false);
 if (sfunc != null ) {
 sfunc.append$S("  _setPerspectiveState;\n");
@@ -478,7 +470,7 @@ var s="  set spinX " + (tm.spinX|0) + "; set spinY " + (tm.spinY|0) + "; set spi
 if (!Float.isNaN$F(tm.navFps)) s += "  set navX " + (tm.navX|0) + "; set navY " + (tm.navY|0) + "; set navZ " + (tm.navZ|0) + "; set navFps " + (tm.navFps|0) + ";" ;
 if (tm.navOn) s += " navigation on;";
 if (!tm.spinOn) return s;
-var prefix=(tm.isSpinSelected ? "\n  select " + $I$(9).eBS$javajs_util_BS(this.vwr.bsA$()) + ";\n  rotateSelected"  : "\n ");
+var prefix=(tm.isSpinSelected ? "\n  select " + (function(a,f){return f.apply(null,a)})([this.vwr.bsA$()],$I$(9).eBS$javajs_util_BS) + ";\n  rotateSelected"  : "\n ");
 if (tm.isSpinInternal) {
 var pt=$I$(20).newP$javajs_util_T3(tm.internalRotationCenter);
 pt.sub$javajs_util_T3(tm.rotationAxis);
@@ -491,7 +483,7 @@ s += " spin on";
 });
 
 Clazz.newMeth(C$, 'getCommands$java_util_Map$java_util_Map$S', function (htDefine, htMore, selectCmd) {
-var s=Clazz.new_($I$(2));
+var s=Clazz.new_($I$(2,1));
 var setPrev=p$1.getCommands2$java_util_Map$javajs_util_SB$S$S.apply(this, [htDefine, s, null, selectCmd]);
 if (htMore != null ) p$1.getCommands2$java_util_Map$javajs_util_SB$S$S.apply(this, [htMore, s, setPrev, "select"]);
 return s.toString();
@@ -501,7 +493,7 @@ Clazz.newMeth(C$, 'getCommands2$java_util_Map$javajs_util_SB$S$S', function (ht,
 if (ht == null ) return "";
 for (var entry, $entry = ht.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var key=entry.getKey$();
-var set=$I$(9).eBS$javajs_util_BS(entry.getValue$());
+var set=(function(a,f){return f.apply(null,a)})([entry.getValue$()],$I$(9).eBS$javajs_util_BS);
 if (set.length$() < 5) continue;
 set=selectCmd + " " + set ;
 if (!set.equals$O(setPrev)) p$1.app$javajs_util_SB$S.apply(this, [s, set]);
@@ -520,14 +512,14 @@ if (bs == null  || bs.length$() == 0 ) return;
 p$1.app$javajs_util_SB$S.apply(this, [sb, key + $I$(9).eBS$javajs_util_BS(bs)]);
 }, p$1);
 
-Clazz.newMeth(C$, 'getFontState$S$javajs_awt_Font', function (myType, font3d) {
-var objId=$I$(12).getObjectIdFromName$S(myType.equalsIgnoreCase$S("axes") ? "axis" : myType);
+Clazz.newMeth(C$, 'getFontState$S$org_jmol_util_Font', function (myType, font3d) {
+var objId=(function(a,f){return f.apply(null,a)})([myType.equalsIgnoreCase$S("axes") ? "axis" : myType],$I$(12).getObjectIdFromName$S);
 if (objId < 0) return "";
 var mad=this.vwr.getObjectMad10$I(objId);
-var s=Clazz.new_($I$(2)).append$S("\n");
+var s=Clazz.new_($I$(2,1)).append$S("\n");
 p$1.app$javajs_util_SB$S.apply(this, [s, myType + (mad == 0 ? " off" : mad == 1 ? " on" : mad == -1 ? " dotted" : mad < 20 ? " " + mad : " " + (new Float(mad / 20000.0).toString()))]);
 if (s.length$() < 3) return "";
-var fcmd=$I$(18).getFontCommand$S$javajs_awt_Font(myType, font3d);
+var fcmd=$I$(18).getFontCommand$S$org_jmol_util_Font(myType, font3d);
 if (fcmd.length$() > 0) fcmd="  " + fcmd + ";\n" ;
 return (s + fcmd);
 }, p$1);
@@ -552,17 +544,17 @@ if (tickInfo.reference != null ) sb.append$S(" point ").append$S($I$(9).eP$javaj
 Clazz.newMeth(C$, 'getMeasurementState$org_jmol_shape_Measures', function (shape) {
 var mList=shape.measurements;
 var measurementCount=shape.measurementCount;
-var font3d=shape.font3d;
+var font3d=$I$(21).font3d;
 var ti=shape.defaultTickInfo;
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 p$1.app$javajs_util_SB$S.apply(this, [commands, "measures delete"]);
 for (var i=0; i < measurementCount; i++) {
 var m=mList.get$I(i);
 var count=m.count;
-var sb=Clazz.new_($I$(2)).append$S("measure");
+var sb=Clazz.new_($I$(2,1)).append$S("measure");
 if (m.thisID != null ) sb.append$S(" ID ").append$S($I$(4).esc$S(m.thisID));
 if (m.mad != 0) sb.append$S(" radius ").appendF$F(m.thisID == null  || m.mad > 0  ? m.mad / 2000.0 : 0);
-if (m.colix != 0) sb.append$S(" color ").append$S($I$(9).escapeColor$I($I$(21).getArgb$H(m.colix)));
+if (m.colix != 0) sb.append$S(" color ").append$S((function(a,f){return f.apply(null,a)})([$I$(22).getArgb$H(m.colix)],$I$(9).escapeColor$I));
 if (m.text != null ) {
 if (m.text.font != null ) sb.append$S(" font ").append$S(m.text.font.getInfo$());
 if (m.text.align != 0) sb.append$S(" align ").append$S($I$(11).getHorizAlignmentName$I(m.text.align));
@@ -575,17 +567,17 @@ sb.append$S("; # " + shape.getInfoAsString$I(i));
 p$1.app$javajs_util_SB$S.apply(this, [commands, sb.toString()]);
 }
 p$1.app$javajs_util_SB$S.apply(this, [commands, "select *; set measures " + this.vwr.g.measureDistanceUnits]);
-p$1.app$javajs_util_SB$S.apply(this, [commands, $I$(18).getFontCommand$S$javajs_awt_Font("measures", font3d)]);
+p$1.app$javajs_util_SB$S.apply(this, [commands, $I$(18).getFontCommand$S$org_jmol_util_Font("measures", font3d)]);
 var nHidden=0;
-var temp=Clazz.new_($I$(1));
-var bs=$I$(22).newN$I(measurementCount);
+var temp=Clazz.new_($I$(1,1));
+var bs=$I$(23).newN$I(measurementCount);
 for (var i=0; i < measurementCount; i++) {
 var m=mList.get$I(i);
 if (m.isHidden) {
 nHidden++;
 bs.set$I(i);
-}if (shape.bsColixSet != null  && shape.bsColixSet.get$I(i) ) $I$(10).setMapBitSet$java_util_Map$I$I$S(temp, i, i, $I$(18).getColorCommandUnk$S$H$Z("measure", m.colix, shape.translucentAllowed));
-if (m.strFormat != null ) $I$(10).setMapBitSet$java_util_Map$I$I$S(temp, i, i, "measure " + $I$(4).esc$S(m.strFormat));
+}if (shape.bsColixSet != null  && shape.bsColixSet.get$I(i) ) (function(a,f){return f.apply(null,a)})([temp, i, i, $I$(18).getColorCommandUnk$S$H$Z("measure", m.colix, shape.translucentAllowed)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
+if (m.strFormat != null ) (function(a,f){return f.apply(null,a)})([temp, i, i, "measure " + $I$(4).esc$S(m.strFormat)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 }
 if (nHidden > 0) if (nHidden == measurementCount) p$1.app$javajs_util_SB$S.apply(this, [commands, "measures off; # lines and numbers off"]);
  else for (var i=0; i < measurementCount; i++) if (bs.get$I(i)) $I$(10).setMapBitSet$java_util_Map$I$I$S(temp, i, i, "measure off");
@@ -632,18 +624,18 @@ var bondCount=modelSet.bondCount;
 var r;
 if (reportAll || shape.bsSizeSet != null  ) {
 var i0=(reportAll ? bondCount - 1 : shape.bsSizeSet.nextSetBit$I(0));
-for (var i=i0; i >= 0; i=(reportAll ? i - 1 : shape.bsSizeSet.nextSetBit$I(i + 1))) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, "wireframe " + ((r=bonds[i].mad) == 1 ? "on" : "" + $I$(4).escF$F(r / 2000.0)));
+for (var i=i0; i >= 0; i=(reportAll ? i - 1 : shape.bsSizeSet.nextSetBit$I(i + 1))) (function(a,f){return f.apply(null,a)})([this.temp, i, i, "wireframe " + ((r=bonds[i].mad) == 1 ? "on" : "" + $I$(4).escF$F(r / 2000.0))],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 
 }if (reportAll || bsOrderSet != null  ) {
 var i0=(reportAll ? bondCount - 1 : bsOrderSet.nextSetBit$I(0));
 for (var i=i0; i >= 0; i=(reportAll ? i - 1 : bsOrderSet.nextSetBit$I(i + 1))) {
 var bond=bonds[i];
-if (reportAll || (bond.order & 131072) == 0 ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, "bondOrder " + $I$(6).getBondOrderNameFromOrder$I(bond.order));
+if (reportAll || (bond.order & 131072) == 0 ) (function(a,f){return f.apply(null,a)})([this.temp, i, i, "bondOrder " + $I$(6).getBondOrderNameFromOrder$I(bond.order)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 }
 }if (shape.bsColixSet != null ) for (var i=shape.bsColixSet.nextSetBit$I(0); i >= 0; i=shape.bsColixSet.nextSetBit$I(i + 1)) {
 var colix=bonds[i].colix;
-if ((colix & -30721) == 2) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, $I$(18).getColorCommand$S$B$H$Z("bonds", ($b$[0] = $I$(23).CPK.id, $b$[0]), colix, shape.translucentAllowed));
- else $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, $I$(18).getColorCommandUnk$S$H$Z("bonds", colix, shape.translucentAllowed));
+if ((colix & -30721) == 2) (function(a,f){return f.apply(null,a)})([this.temp, i, i, (function(a,f){return f.apply(null,a)})(["bonds", $I$(24).CPK.id, colix, shape.translucentAllowed],$I$(18).getColorCommand$S$B$H$Z)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
+ else (function(a,f){return f.apply(null,a)})([this.temp, i, i, $I$(18).getColorCommandUnk$S$H$Z("bonds", colix, shape.translucentAllowed)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 }
 var s=this.getCommands$java_util_Map$java_util_Map$S(this.temp, null, "select BONDS") + "\n" + (haveTainted ? this.getCommands$java_util_Map$java_util_Map$S(this.temp2, null, "select BONDS") + "\n" : "") ;
 p$1.clearTemp.apply(this, []);
@@ -675,7 +667,7 @@ case 32:
 s=p$1.getFontLineShapeState$org_jmol_shape_FontLineShape.apply(this, [shape]);
 break;
 case 36:
-s=p$1.getFontState$S$javajs_awt_Font.apply(this, [shape.myType, (shape).baseFont3d]);
+s=p$1.getFontState$S$org_jmol_util_Font.apply(this, [shape.myType, (shape).baseFont3d]);
 break;
 case 6:
 s=p$1.getMeasurementState$org_jmol_shape_Measures.apply(this, [shape]);
@@ -689,7 +681,7 @@ s=p$1.getBondState$org_jmol_shape_Sticks.apply(this, [shape]);
 break;
 case 31:
 var es=shape;
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S("\n  set echo off;\n");
 for (var t, $t = es.objects.values$().iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) {
 sb.append$S(p$1.getTextState$org_jmol_modelset_Text.apply(this, [t]));
@@ -705,9 +697,9 @@ break;
 case 35:
 p$1.clearTemp.apply(this, []);
 var h=shape;
-if (h.atomFormats != null ) for (var i=this.vwr.ms.ac; --i >= 0; ) if (h.atomFormats[i] != null ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, "set hoverLabel " + $I$(4).esc$S(h.atomFormats[i]));
+if (h.atomFormats != null ) for (var i=this.vwr.ms.ac; --i >= 0; ) if (h.atomFormats[i] != null ) (function(a,f){return f.apply(null,a)})([this.temp, i, i, "set hoverLabel " + $I$(4).esc$S(h.atomFormats[i])],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 
-s="\n  hover " + $I$(4).esc$S((h.labelFormat == null  ? "" : h.labelFormat)) + ";\n" + this.getCommands$java_util_Map$java_util_Map$S(this.temp, null, "select") ;
+s="\n  hover " + (function(a,f){return f.apply(null,a)})([(h.labelFormat == null  ? "" : h.labelFormat)],$I$(4).esc$S) + ";\n" + this.getCommands$java_util_Map$java_util_Map$S(this.temp, null, "select") ;
 p$1.clearTemp.apply(this, []);
 break;
 case 5:
@@ -723,14 +715,14 @@ cmd += $I$(4).esc$S(l.formats[i]);
 cmd += $I$(4).esc$S(t.textUnformatted);
 if (t.pymolOffset != null ) cmd += ";set labelOffset " + $I$(9).eAF$FA(t.pymolOffset);
 }$I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, cmd);
-if (l.bsColixSet != null  && l.bsColixSet.get$I(i) ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, $I$(18).getColorCommand$S$B$H$Z("label", ($b$[0] = l.paletteIDs[i], $b$[0]), l.colixes[i], l.translucentAllowed));
-if (l.bsBgColixSet != null  && l.bsBgColixSet.get$I(i) ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, "background label " + $I$(18).encodeColor$H(l.bgcolixes[i]));
+if (l.bsColixSet != null  && l.bsColixSet.get$I(i) ) (function(a,f){return f.apply(null,a)})([this.temp2, i, i, $I$(18).getColorCommand$S$B$H$Z("label", l.paletteIDs[i], l.colixes[i], l.translucentAllowed)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
+if (l.bsBgColixSet != null  && l.bsBgColixSet.get$I(i) ) (function(a,f){return f.apply(null,a)})([this.temp2, i, i, "background label " + $I$(18).encodeColor$H(l.bgcolixes[i])],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 var text=l.getLabel$I(i);
 var sppm=(text != null  ? text.scalePixelsPerMicron : 0);
-if (sppm > 0 ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, "set labelScaleReference " + (new Float(10000.0 / sppm).toString()));
+if (sppm > 0 ) (function(a,f){return f.apply(null,a)})([this.temp2, i, i, "set labelScaleReference " + (new Float(10000.0 / sppm).toString())],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 if (l.offsets != null  && l.offsets.length > i ) {
 var offsetFull=l.offsets[i];
-$I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, "set " + ($I$(11).isOffsetAbsolute$I(offsetFull) ? "labelOffsetAbsolute " : "labelOffset ") + $I$(11).getXOffset$I(offsetFull) + " " + $I$(11).getYOffset$I(offsetFull) );
+(function(a,f){return f.apply(null,a)})([this.temp2, i, i, "set " + ($I$(11).isOffsetAbsolute$I(offsetFull) ? "labelOffsetAbsolute " : "labelOffset ") + $I$(11).getXOffset$I(offsetFull) + " " + $I$(11).getYOffset$I(offsetFull) ],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 var align=$I$(11).getHorizAlignmentName$I(offsetFull >> 2);
 var pointer=$I$(11).getPointerName$I(offsetFull);
 if (pointer.length$() > 0) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, "set labelPointer " + pointer);
@@ -738,7 +730,7 @@ if ((offsetFull & 32) != 0) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2,
  else if ((offsetFull & 16) != 0) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, "set labelGroup");
 if (align.length$() > 0) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp3, i, i, "set labelAlignment " + align);
 }if (l.mads != null  && l.mads[i] < 0 ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, "set toggleLabel");
-if (l.bsFontSet != null  && l.bsFontSet.get$I(i) ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, $I$(18).getFontCommand$S$javajs_awt_Font("label", $I$(19).getFont3D$B(($b$[0] = l.fids[i], $b$[0]))));
+if (l.bsFontSet != null  && l.bsFontSet.get$I(i) ) (function(a,f){return f.apply(null,a)})([this.temp2, i, i, (function(a,f){return f.apply(null,a)})(["label", $I$(19).getFont3D$B(l.fids[i])],$I$(18).getFontCommand$S$org_jmol_util_Font)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 }
 s=this.getCommands$java_util_Map$java_util_Map$S(this.temp, this.temp2, "select") + this.getCommands$java_util_Map$java_util_Map$S(null, this.temp3, "select");
 this.temp3.clear$();
@@ -755,11 +747,11 @@ var r=0;
 for (var i=0; i < ac; i++) {
 if (shape.bsSizeSet != null  && shape.bsSizeSet.get$I(i) ) {
 if ((r=atoms[i].madAtom) < 0 ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, "Spacefill on");
- else $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, "Spacefill " + $I$(4).escF$F(r / 2000.0));
+ else (function(a,f){return f.apply(null,a)})([this.temp, i, i, "Spacefill " + $I$(4).escF$F(r / 2000.0)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 }if (shape.bsColixSet != null  && shape.bsColixSet.get$I(i) ) {
-var pid=($b$[0] = atoms[i].paletteID, $b$[0]);
-if (pid != $I$(23).CPK.id || $I$(21).isColixTranslucent$H(atoms[i].colixAtom) ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, $I$(18).getColorCommand$S$B$H$Z("atoms", ($b$[0] = pid, $b$[0]), atoms[i].colixAtom, shape.translucentAllowed));
-if (colixes != null  && i < colixes.length ) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, $I$(18).getColorCommand$S$B$H$Z("balls", ($b$[0] = pids[i], $b$[0]), colixes[i], shape.translucentAllowed));
+var pid=atoms[i].paletteID;
+if (pid != $I$(24).CPK.id || $I$(22).isColixTranslucent$H(atoms[i].colixAtom) ) (function(a,f){return f.apply(null,a)})([this.temp, i, i, $I$(18).getColorCommand$S$B$H$Z("atoms", pid, atoms[i].colixAtom, shape.translucentAllowed)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
+if (colixes != null  && i < colixes.length ) (function(a,f){return f.apply(null,a)})([this.temp2, i, i, $I$(18).getColorCommand$S$B$H$Z("balls", pids[i], colixes[i], shape.translucentAllowed)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 }}
 s=this.getCommands$java_util_Map$java_util_Map$S(this.temp, this.temp2, "select");
 p$1.clearTemp.apply(this, []);
@@ -772,10 +764,10 @@ return s;
 }, p$1);
 
 Clazz.newMeth(C$, 'getFontLineShapeState$org_jmol_shape_FontLineShape', function (shape) {
-var s=p$1.getFontState$S$javajs_awt_Font.apply(this, [shape.myType, shape.font3d]);
+var s=p$1.getFontState$S$org_jmol_util_Font.apply(this, [shape.myType, shape.font3d]);
 if (shape.tickInfos == null ) return s;
 var isOff=(s.indexOf$S(" off") >= 0);
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S(s);
 for (var i=0; i < 4; i++) if (shape.tickInfos[i] != null ) p$1.appendTickInfo$S$javajs_util_SB$org_jmol_modelset_TickInfo.apply(this, [shape.myType, sb, shape.tickInfos[i]]);
 
@@ -784,7 +776,7 @@ return sb.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'getAxesState$org_jmol_shape_Axes', function (axes) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S(p$1.getFontLineShapeState$org_jmol_shape_FontLineShape.apply(this, [axes]));
 sb.append$S("  axes scale ").appendF$F(this.vwr.getFloat$I(570425346)).append$S(";\n");
 if (axes.fixedOrigin != null ) sb.append$S("  axes center ").append$S($I$(9).eP$javajs_util_T3(axes.fixedOrigin)).append$S(";\n");
@@ -807,9 +799,9 @@ p$1.clearTemp.apply(this, []);
 var type=$I$(11).shapeClassBases[shape.shapeID];
 var isVector=(shape.shapeID == 18);
 var mad;
-if (shape.bsSizeSet != null ) for (var i=shape.bsSizeSet.nextSetBit$I(0); i >= 0; i=shape.bsSizeSet.nextSetBit$I(i + 1)) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp, i, i, type + " " + ((mad=shape.mads[i]) < 0 ? (isVector && mad < -1  ? "" + -mad : "on") : $I$(4).escF$F(mad / 2000.0)) );
+if (shape.bsSizeSet != null ) for (var i=shape.bsSizeSet.nextSetBit$I(0); i >= 0; i=shape.bsSizeSet.nextSetBit$I(i + 1)) (function(a,f){return f.apply(null,a)})([this.temp, i, i, type + " " + ((mad=shape.mads[i]) < 0 ? (isVector && mad < -1  ? "" + -mad : "on") : $I$(4).escF$F(mad / 2000.0)) ],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 
-if (shape.bsColixSet != null ) for (var i=shape.bsColixSet.nextSetBit$I(0); i >= 0; i=shape.bsColixSet.nextSetBit$I(i + 1)) $I$(10).setMapBitSet$java_util_Map$I$I$S(this.temp2, i, i, $I$(18).getColorCommand$S$B$H$Z(type, ($b$[0] = shape.paletteIDs[i], $b$[0]), shape.colixes[i], shape.translucentAllowed));
+if (shape.bsColixSet != null ) for (var i=shape.bsColixSet.nextSetBit$I(0); i >= 0; i=shape.bsColixSet.nextSetBit$I(i + 1)) (function(a,f){return f.apply(null,a)})([this.temp2, i, i, $I$(18).getColorCommand$S$B$H$Z(type, shape.paletteIDs[i], shape.colixes[i], shape.translucentAllowed)],$I$(10).setMapBitSet$java_util_Map$I$I$S);
 
 var s=this.getCommands$java_util_Map$java_util_Map$S(this.temp, this.temp2, "select");
 p$1.clearTemp.apply(this, []);
@@ -817,9 +809,9 @@ return s;
 });
 
 Clazz.newMeth(C$, 'getTextState$org_jmol_modelset_Text', function (t) {
-var s=Clazz.new_($I$(2));
+var s=Clazz.new_($I$(2,1));
 var text=t.text;
-if (text == null  || t.isLabelOrHover  || t.target.equals$O("error") ) return "";
+if (text == null  || !t.isEcho  || t.target.equals$O("error") ) return "";
 var isImage=(t.image != null );
 var strOff=null;
 var echoCmd="set echo ID " + $I$(4).esc$S(t.target);
@@ -851,19 +843,19 @@ s.append$S("  ").append$S(echoCmd).append$S(" point ").append$S(Clazz.instanceOf
 s.append$S("  ").append$S(echoCmd).append$S(" offset ").append$S($I$(9).escapeFloatA$FA$Z(t.pymolOffset, true)).append$S(";\n");
 }t.appendFontCmd$javajs_util_SB(s);
 s.append$S("; color echo");
-if ($I$(21).isColixTranslucent$H(t.colix)) s.append$S($I$(21).getColixTranslucencyLabel$H(t.colix));
-s.append$S(" ").append$S($I$(21).getHexCode$H(t.colix));
+if ($I$(22).isColixTranslucent$H(t.colix)) s.append$S($I$(22).getColixTranslucencyLabel$H(t.colix));
+s.append$S(" ").append$S($I$(22).getHexCode$H(t.colix));
 if (t.bgcolix != 0) {
 s.append$S("; color echo background ");
-if ($I$(21).isColixTranslucent$H(t.bgcolix)) s.append$S($I$(21).getColixTranslucencyLabel$H(t.bgcolix)).append$S(" ");
-s.append$S($I$(21).getHexCode$H(t.bgcolix));
+if ($I$(22).isColixTranslucent$H(t.bgcolix)) s.append$S($I$(22).getColixTranslucencyLabel$H(t.bgcolix)).append$S(" ");
+s.append$S($I$(22).getHexCode$H(t.bgcolix));
 }s.append$S(";\n");
 return s.toString();
 }, p$1);
 
 Clazz.newMeth(C$, 'getAllSettings$S', function (prefix) {
 var g=this.vwr.g;
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 var list=Clazz.array(String, [g.htBooleanParameterFlags.size$() + g.htNonbooleanParameterValues.size$() + g.htUserVariables.size$() ]);
 var n=0;
 var _prefix="_" + prefix;
@@ -892,7 +884,7 @@ return commands.toString();
 Clazz.newMeth(C$, 'chop$S', function (s) {
 var len=s.length$();
 if (len < 512) return s;
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 var sep="\"\\\n    + \"";
 var pt=0;
 for (var i=72; i < len; pt=i, i+=72) {
@@ -906,7 +898,7 @@ return sb.toString();
 
 Clazz.newMeth(C$, 'getFunctionCalls$S', function (f) {
 if (f == null ) f="";
-var s=Clazz.new_($I$(2));
+var s=Clazz.new_($I$(2,1));
 var pt=f.indexOf$S("*");
 var isGeneric=(pt >= 0);
 var isStatic=(f.indexOf$S("static_") == 0);
@@ -939,7 +931,7 @@ return (tainted != null  && tainted[type] != null   && tainted[type].get$I(atomI
 Clazz.newMeth(C$, 'getAtomicPropertyState$I$javajs_util_BS', function (taintWhat, bsSelected) {
 if (!this.vwr.g.preserveState) return "";
 var bs;
-var commands=Clazz.new_($I$(2));
+var commands=Clazz.new_($I$(2,1));
 for (var type=0; type < 17; type++) if (taintWhat < 0 || type == taintWhat ) if ((bs=(bsSelected != null  ? bsSelected : this.vwr.ms.getTaintedAtoms$I(type))) != null ) this.getAtomicPropertyStateBuffer$javajs_util_SB$I$javajs_util_BS$S$FA(commands, type, bs, null, null);
 
 return commands.toString();
@@ -947,8 +939,8 @@ return commands.toString();
 
 Clazz.newMeth(C$, 'getAtomicPropertyStateBuffer$javajs_util_SB$I$javajs_util_BS$S$FA', function (commands, type, bs, label, fData) {
 if (!this.vwr.g.preserveState) return;
-var s=Clazz.new_($I$(2));
-var dataLabel=(label == null  ? $I$(24).userSettableValues[type] : label) + " set";
+var s=Clazz.new_($I$(2,1));
+var dataLabel=(label == null  ? $I$(25).userSettableValues[type] : label) + " set";
 var n=0;
 var isDefault=(type == 2);
 var atoms=this.vwr.ms.at;
@@ -1069,7 +1061,7 @@ break;
 }
 if (list1.size$() == 0 || this.undoWorking ) return;
 this.undoWorking=true;
-list2.add$I$TE(0, list1.removeItemAt$I(0));
+list2.add$I$O(0, list1.removeItemAt$I(0));
 s=this.vwr.actionStatesRedo.get$I(0);
 if (type == 4165 && list2.size$() == 1 ) {
 var pt=Clazz.array(Integer.TYPE, -1, [1]);
@@ -1077,7 +1069,7 @@ type=$I$(4).parseIntNext$S$IA(s, pt);
 taintedAtom=$I$(4).parseIntNext$S$IA(s, pt);
 this.undoMoveActionClear$I$I$Z(taintedAtom, type, false);
 }if (this.vwr.ms.am[modelIndex].isModelKit || s.indexOf$S("zap ") < 0 ) {
-if ($I$(25).debugging) this.vwr.log$S(s);
+if ($I$(26).debugging) this.vwr.log$S(s);
 this.vwr.evalStringQuiet$S(s);
 } else {
 this.vwr.actionStates.clear$();
@@ -1086,8 +1078,8 @@ default:
 if (this.undoWorking && clearRedo ) return;
 this.undoWorking=true;
 var bs;
-var sb=Clazz.new_($I$(2));
-sb.append$S("#" + type + " " + taintedAtom + " " + (Clazz.new_($I$(26))) + "\n" );
+var sb=Clazz.new_($I$(2,1));
+sb.append$S("#" + type + " " + taintedAtom + " " + (Clazz.new_($I$(27,1))) + "\n" );
 if (taintedAtom >= 0) {
 bs=this.vwr.getModelUndeletedAtomsBitSet$I(modelIndex);
 this.vwr.ms.taintAtoms$javajs_util_BS$I(bs, type);
@@ -1099,10 +1091,10 @@ sb.append$S($I$(9).eBS$javajs_util_BS(bs)).append$S(";");
 this.getInlineData$javajs_util_SB$S$Z$S(sb, this.vwr.getModelExtract$O$Z$Z$S(bs, false, true, "MOL"), true, null);
 sb.append$S("set refreshing false;").append$S(this.vwr.acm.getPickingState$()).append$S(this.vwr.tm.getMoveToText$F$Z(0, false)).append$S("set refreshing true;");
 }if (clearRedo) {
-this.vwr.actionStates.add$I$TE(0, sb.toString());
+this.vwr.actionStates.add$I$O(0, sb.toString());
 this.vwr.actionStatesRedo.clear$();
 } else {
-this.vwr.actionStatesRedo.add$I$TE(1, sb.toString());
+this.vwr.actionStatesRedo.add$I$O(1, sb.toString());
 }if (this.vwr.actionStates.size$() == 100) {
 this.vwr.actionStates.removeItemAt$I(99);
 }}
@@ -1136,7 +1128,7 @@ return;
 }var syncMode=sm.getSyncMode$();
 if (syncMode == 0) return;
 if (syncMode != 1) disableSend=false;
-if ($I$(25).debugging) $I$(25).debug$S(this.vwr.htmlName + " syncing with script: " + script );
+if ($I$(26).debugging) $I$(26).debug$S(this.vwr.htmlName + " syncing with script: " + script );
 if (disableSend) sm.setSyncDriver$I(3);
 if (script.indexOf$S("Mouse: ") != 0) {
 var serviceMode=$I$(11).getServiceCommand$S(script);
@@ -1222,6 +1214,5 @@ throw e;
 }
 this.vwr.showString$S$Z("error reading SYNC command: " + script, false);
 });
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

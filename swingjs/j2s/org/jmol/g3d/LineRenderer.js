@@ -1,33 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LineRenderer", null, 'org.jmol.g3d.PrecisionRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.BS']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "LineRenderer", null, 'org.jmol.g3d.PrecisionRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.g3d=null;
-this.shader=null;
-this.lineBits=null;
-this.slope=0;
-this.lineTypeX=false;
-this.nBits=0;
-this.lineCache=null;
-this.slopeKey=null;
-this.x1t=0;
-this.y1t=0;
-this.z1t=0;
-this.x2t=0;
-this.y2t=0;
-this.z2t=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.lineCache=Clazz.new_($I$(1));
-}, 1);
+this.lineCache=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['lineTypeX'],'F',['slope'],'I',['nBits','x1t','y1t','z1t','x2t','y2t','z2t'],'O',['g3d','org.jmol.g3d.Graphics3D','shader','org.jmol.util.Shader','lineBits','javajs.util.BS','lineCache','java.util.Map','slopeKey','Float']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_g3d_Graphics3D', function (g3d) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.g3d=g3d;
 this.shader=g3d.shader;
 }, 1);
@@ -56,7 +39,7 @@ if (twoDError > dx ) {
 this.lineBits.set$I(i);
 twoDError=(twoDError-(twoDx)|0);
 }}
-this.lineCache.put$TK$TV(this.slopeKey, this.lineBits);
+this.lineCache.put$O$O(this.slopeKey, this.lineBits);
 });
 
 Clazz.newMeth(C$, 'clearLineCache$', function () {
@@ -626,4 +609,4 @@ if (zCurrent < zbuf[offset]) p.addPixel$I$I$I(offset, zCurrent, argb);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:08 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

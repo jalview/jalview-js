@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("javax.swing.plaf"),I$=[[0,'Error',['java.awt.Component','.BaselineResizeBehavior']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ComponentUI", null, null, 'java.awt.peer.ComponentPeer');
+(function(){var P$=Clazz.newPackage("javax.swing.plaf"),I$=[[0,'Error',['java.awt.Component','.BaselineResizeBehavior']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ComponentUI", null, null, 'java.awt.peer.ComponentPeer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (component) {
@@ -40,7 +39,7 @@ return c.inside$I$I(x, y);
 });
 
 Clazz.newMeth(C$, 'createUI$javax_swing_JComponent', function (c) {
-throw Clazz.new_($I$(1).c$$S,["ComponentUI.createUI not implemented."]);
+throw Clazz.new_($I$(1,1).c$$S,["ComponentUI.createUI not implemented."]);
 }, 1);
 
 Clazz.newMeth(C$, 'getBaseline$javax_swing_JComponent$I$I', function (c, width, height) {
@@ -51,4 +50,4 @@ Clazz.newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent', function (
 return $I$(2).OTHER;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:11 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

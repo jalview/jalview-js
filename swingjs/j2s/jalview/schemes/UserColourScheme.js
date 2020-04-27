@@ -1,26 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.schemes.ResidueProperties','java.awt.Color','jalview.util.ColorUtils','java.util.StringTokenizer','java.util.HashMap','java.util.ArrayList','StringBuilder','java.util.Collections','jalview.util.StringUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UserColourScheme", null, 'jalview.schemes.ResidueColourScheme');
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'jalview.schemes.ResidueProperties','java.awt.Color','jalview.util.ColorUtils','java.util.StringTokenizer','java.util.HashMap','java.util.ArrayList','StringBuilder','java.util.Collections','jalview.util.StringUtils']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UserColourScheme", null, 'jalview.schemes.ResidueColourScheme');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lowerCaseColours=null;
-this.schemeName=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['schemeName'],'O',['lowerCaseColours','java.awt.Color[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$IA.apply(this, [$I$(1).aaIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IA.apply(this,[$I$(1).aaIndex]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_awt_ColorA', function (newColors) {
-C$.superclazz.c$$IA.apply(this, [$I$(1).aaIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IA.apply(this,[$I$(1).aaIndex]);C$.$init$.apply(this);
 this.colors=newColors;
 }, 1);
 
@@ -37,8 +30,7 @@ System.arraycopy$O$I$O$I$I(from.lowerCaseColours, 0, this.lowerCaseColours, 0, f
 }}, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (colour) {
-C$.superclazz.c$$IA.apply(this, [$I$(1).aaIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IA.apply(this,[$I$(1).aaIndex]);C$.$init$.apply(this);
 if (colour.contains$CharSequence("=")) {
 this.parseAppletParameter$S(colour);
 return;
@@ -81,7 +73,7 @@ return this.schemeName;
 
 Clazz.newMeth(C$, 'parseAppletParameter$S', function (paramValue) {
 this.setAll$java_awt_Color($I$(2).white);
-var st=Clazz.new_($I$(4).c$$S$S,[paramValue, ";"]);
+var st=Clazz.new_($I$(4,1).c$$S$S,[paramValue, ";"]);
 var st2;
 var token=null;
 var colour;
@@ -91,7 +83,7 @@ while (st.hasMoreElements$()){
 token=st.nextToken$().trim$();
 residues=token.substring$I$I(0, token.indexOf$S("="));
 colour=token.substring$I(token.indexOf$S("=") + 1);
-st2=Clazz.new_($I$(4).c$$S$S,[residues, " ,"]);
+st2=Clazz.new_($I$(4,1).c$$S$S,[residues, " ,"]);
 while (st2.hasMoreTokens$()){
 var residue=st2.nextToken$();
 var colIndex=$I$(1).aaIndex[(residue.charCodeAt$I(0))];
@@ -141,27 +133,27 @@ return this.schemeName;
 });
 
 Clazz.newMeth(C$, 'toAppletParameter$', function () {
-var colours=Clazz.new_($I$(5));
+var colours=Clazz.new_($I$(5,1));
 for (var symbol="A"; symbol <= "Z"; symbol=String.fromCharCode(symbol.$c()+1)) {
 var residue=String.valueOf$C(symbol);
 var index=this.symbolIndex[symbol.$c()];
 var c=this.colors[index];
 if (c != null  && !c.equals$O($I$(2).white) ) {
 if (colours.get$O(c) == null ) {
-colours.put$TK$TV(c, Clazz.new_($I$(6)));
-}colours.get$O(c).add$TE(residue);
+colours.put$O$O(c, Clazz.new_($I$(6,1)));
+}colours.get$O(c).add$O(residue);
 }if (this.lowerCaseColours != null ) {
 c=this.lowerCaseColours[index];
 if (c != null  && !c.equals$O($I$(2).white) ) {
 residue=residue.toLowerCase$();
 if (colours.get$O(c) == null ) {
-colours.put$TK$TV(c, Clazz.new_($I$(6)));
-}colours.get$O(c).add$TE(residue);
+colours.put$O$O(c, Clazz.new_($I$(6,1)));
+}colours.get$O(c).add$O(residue);
 }}}
-var residueColours=Clazz.new_($I$(6));
+var residueColours=Clazz.new_($I$(6,1));
 for (var cols, $cols = colours.entrySet$().iterator$(); $cols.hasNext$()&&((cols=($cols.next$())),1);) {
 var first=true;
-var sb=Clazz.new_($I$(7));
+var sb=Clazz.new_($I$(7,1));
 for (var residue, $residue = cols.getValue$().iterator$(); $residue.hasNext$()&&((residue=($residue.next$())),1);) {
 if (!first) {
 sb.append$S(",");
@@ -171,7 +163,7 @@ first=false;
 sb.append$S("=");
 var hexString=Integer.toHexString$I(cols.getKey$().getRGB$()).substring$I(2);
 sb.append$S(hexString);
-residueColours.add$TE(sb.toString());
+residueColours.add$O(sb.toString());
 }
 $I$(8).sort$java_util_List(residueColours);
 return $I$(9).listToDelimitedString$java_util_List$S(residueColours, ";");
@@ -181,4 +173,4 @@ Clazz.newMeth(C$, 'hasGapColour$', function () {
 return (this.findColour$C(" ") != null );
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:01 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

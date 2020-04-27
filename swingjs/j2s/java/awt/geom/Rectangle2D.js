@@ -1,21 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[[0,['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D','java.awt.geom.RectIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Rectangle2D", function(){
+(function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[[0,['java.awt.geom.Rectangle2D','.Double'],'java.awt.geom.Rectangle2D','java.awt.geom.RectIterator']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Rectangle2D", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.awt.geom.RectangularShape');
+C$.$classes$=[['Float',9],['Double',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.iterator=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['iterator','java.awt.geom.RectIterator']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setRect$java_awt_geom_Rectangle2D', function (r) {
@@ -117,11 +114,11 @@ this.setRect$D$D$D$D(x1, y1, x2 - x1, y2 - y1);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform', function (at) {
-return (this.iterator == null  ? this.iterator=Clazz.new_($I$(3)) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
+return (this.iterator == null  ? this.iterator=Clazz.new_($I$(3,1)) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
 });
 
 Clazz.newMeth(C$, 'getPathIterator$java_awt_geom_AffineTransform$D', function (at, flatness) {
-return (this.iterator == null  ? this.iterator=Clazz.new_($I$(3)) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
+return (this.iterator == null  ? this.iterator=Clazz.new_($I$(3,1)) : this.iterator).set$java_awt_geom_Rectangle2D$java_awt_geom_AffineTransform(this, at);
 });
 
 Clazz.newMeth(C$, 'hashCode$', function () {
@@ -141,30 +138,23 @@ return ((this.getX$() == r2d.getX$() ) && (this.getY$() == r2d.getY$() ) && (thi
 }return false;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Rectangle2D, "Float", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Rectangle2D, "Float", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.Rectangle2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['x','y','width','height']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$F$F$F$F', function (x, y, w, h) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setRect$F$F$F$F(x, y, w, h);
 }, 1);
 
@@ -235,7 +225,7 @@ var dest;
 if (Clazz.instanceOf(r, "java.awt.geom.Rectangle2D.Float")) {
 dest=Clazz.new_(C$);
 } else {
-dest=Clazz.new_($I$(1));
+dest=Clazz.new_($I$(1,1));
 }$I$(2).intersect$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -245,7 +235,7 @@ var dest;
 if (Clazz.instanceOf(r, "java.awt.geom.Rectangle2D.Float")) {
 dest=Clazz.new_(C$);
 } else {
-dest=Clazz.new_($I$(1));
+dest=Clazz.new_($I$(1,1));
 }$I$(2).union$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D$java_awt_geom_Rectangle2D(this, r, dest);
 return dest;
 });
@@ -255,30 +245,23 @@ return this.getClass$().getName$() + "[x=" + new Float(this.x).toString() + ",y=
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Rectangle2D, "Double", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Rectangle2D, "Double", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'java.awt.geom.Rectangle2D');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['x','y','width','height']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D', function (x, y, w, h) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setRect$D$D$D$D(x, y, w, h);
 }, 1);
 
@@ -354,4 +337,4 @@ return this.getClass$().getName$() + "[x=" + new Double(this.x).toString() + ",y
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

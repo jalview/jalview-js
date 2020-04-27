@@ -1,41 +1,24 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'jalview.gui.FeatureRenderer','jalview.gui.SequenceRenderer','java.awt.BorderLayout','jalview.gui.PaintRefresher','java.awt.Color','jalview.renderer.ScaleRenderer','jalview.util.Comparison','java.awt.image.BufferedImage','java.awt.RenderingHints','jalview.gui.AnnotationPanel','java.awt.BasicStroke']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SeqCanvas", null, 'javax.swing.JPanel', 'jalview.viewmodel.ViewportListenerI');
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'jalview.gui.FeatureRenderer','jalview.gui.SequenceRenderer','java.awt.BorderLayout','jalview.gui.PaintRefresher','java.awt.Color','jalview.renderer.ScaleRenderer','jalview.util.Comparison','java.awt.image.BufferedImage','java.awt.RenderingHints','jalview.gui.AnnotationPanel','java.awt.BasicStroke']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SeqCanvas", null, 'javax.swing.JPanel', 'jalview.viewmodel.ViewportListenerI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fr=null;
-this.img=null;
-this.av=null;
-this.cursorX=0;
-this.cursorY=0;
-this.seqRdr=null;
-this.fastPaint=false;
-this.fastpainting=false;
-this.annotations=null;
-this.labelWidthEast=0;
-this.labelWidthWest=0;
-this.wrappedSpaceAboveAlignment=0;
-this.wrappedRepeatHeightPx=0;
-this.wrappedVisibleWidths=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.cursorX=0;
 this.cursorY=0;
 this.fastPaint=false;
 this.fastpainting=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['fastPaint','fastpainting'],'I',['cursorX','cursorY','labelWidthEast','labelWidthWest','wrappedSpaceAboveAlignment','wrappedRepeatHeightPx','wrappedVisibleWidths'],'O',['fr','jalview.gui.FeatureRenderer','img','java.awt.image.BufferedImage','av','jalview.gui.AlignViewport','seqRdr','jalview.gui.SequenceRenderer','annotations','jalview.gui.AnnotationPanel']]]
 
 Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel', function (ap) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.av=ap.av;
-this.fr=Clazz.new_($I$(1).c$$jalview_gui_AlignmentPanel,[ap]);
-this.seqRdr=Clazz.new_($I$(2).c$$jalview_api_AlignViewportI,[this.av]);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3)));
-$I$(4).Register$java_awt_Component$S(this, this.av.getSequenceSetId$());
+this.fr=Clazz.new_($I$(1,1).c$$jalview_gui_AlignmentPanel,[ap]);
+this.seqRdr=Clazz.new_($I$(2,1).c$$jalview_api_AlignViewportI,[this.av]);
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3,1)));
+$I$(4,"Register$java_awt_Component$S",[this, this.av.getSequenceSetId$()]);
 this.setBackground$java_awt_Color($I$(5).white);
 this.av.getRanges$().addPropertyChangeListener$jalview_viewmodel_ViewportListenerI(this);
 }, 1);
@@ -54,7 +37,7 @@ var charWidth=this.av.getCharWidth$();
 g.setColor$java_awt_Color($I$(5).white);
 g.fillRect$I$I$I$I(0, ypos - charHeight - (charHeight/2|0) , this.getWidth$(), (charHeight * 3/2|0) + 2);
 g.setColor$java_awt_Color($I$(5).black);
-var marks=Clazz.new_($I$(6)).calculateMarks$jalview_api_AlignViewportI$I$I(this.av, startx, endx);
+var marks=Clazz.new_($I$(6,1)).calculateMarks$jalview_api_AlignViewportI$I$I(this.av, startx, endx);
 for (var mark, $mark = marks.iterator$(); $mark.hasNext$()&&((mark=($mark.next$())),1);) {
 var mpos=mark.column;
 if (mpos < 0) {
@@ -84,7 +67,7 @@ var seq=this.av.getAlignment$().getSequenceAt$I(i);
 var index=left ? startX : endX;
 var value=-1;
 while (index >= startX && index <= endX ){
-if (!$I$(7).isGap$C(seq.getCharAt$I(index))) {
+if (!$I$(7,"isGap$C",[seq.getCharAt$I(index)])) {
 value=seq.findPosition$I(index);
 break;
 }if (left) {
@@ -172,7 +155,7 @@ p$1.drawSelectionGroup$java_awt_Graphics2D$I$I$I$I.apply(this, [g, startRes, end
 this.fastPaint=false;
 } else {
 if (this.img == null  || width != this.img.getWidth$()  || height != this.img.getHeight$() ) {
-this.img=Clazz.new_($I$(8).c$$I$I$I,[width, height, 1]);
+this.img=Clazz.new_($I$(8,1).c$$I$I$I,[width, height, 1]);
 }var gg=this.img.getGraphics$();
 gg.setFont$java_awt_Font(this.av.getFont$());
 if (this.av.antiAlias) {
@@ -284,7 +267,7 @@ if (this.av.isShowAnnotation$()) {
 var yShift=cHeight + ypos + 3 ;
 g.translate$I$I(0, yShift);
 if (this.annotations == null ) {
-this.annotations=Clazz.new_($I$(10).c$$jalview_gui_AlignViewport,[this.av]);
+this.annotations=Clazz.new_($I$(10,1).c$$jalview_gui_AlignViewport,[this.av]);
 }this.annotations.renderer.drawComponent$jalview_renderer_AwtRenderPanelI$jalview_api_AlignViewportI$java_awt_Graphics$I$I$I(this.annotations, this.av, g, -1, startColumn, endx + 1);
 g.translate$I$I(0, -yShift);
 }g.translate$I$I(-xOffset, 0);
@@ -334,7 +317,7 @@ var res;
 var hidden=this.av.getAlignment$().getHiddenColumns$();
 var it=hidden.getStartRegionIterator$I$I(startColumn, endColumn);
 while (it.hasNext$()){
-res=(it.next$()).intValue$() - startColumn;
+res=(it.next$()).valueOf() - startColumn;
 if (res < 0 || res > endColumn - startColumn + 1 ) {
 continue;
 }var xMiddle=res * charWidth;
@@ -346,37 +329,31 @@ g.fillPolygon$IA$IA$I(xPoints, yPoints, 3);
 });
 
 Clazz.newMeth(C$, 'drawWrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I', function (g, group, canvasWidth, canvasHeight, startRes) {
-var charHeight=this.av.getCharHeight$();
-var charWidth=this.av.getCharWidth$();
-var hgap=charHeight;
-if (this.av.getScaleAboveWrapped$()) {
-hgap+=charHeight;
-}var cWidth=((canvasWidth - this.labelWidthEast - this.labelWidthWest )/charWidth|0);
-var cHeight=this.av.getAlignment$().getHeight$() * charHeight;
-var startx=startRes;
-var endx;
-var ypos=hgap;
-var maxwidth=this.av.getAlignment$().getVisibleWidth$();
-g.setStroke$java_awt_Stroke(Clazz.new_($I$(11).c$$F$I$I$F$FA$F,[1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0]));
+g.setStroke$java_awt_Stroke(Clazz.new_([1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0],$I$(11,1).c$$F$I$I$F$FA$F));
 g.setColor$java_awt_Color($I$(5).RED);
+var charWidth=this.av.getCharWidth$();
+var cWidth=((canvasWidth - this.labelWidthEast - this.labelWidthWest )/charWidth|0);
+var startx=startRes;
+var maxwidth=this.av.getAlignment$().getVisibleWidth$();
+var ypos=this.wrappedSpaceAboveAlignment;
 while ((ypos <= canvasHeight) && (startx < maxwidth) ){
-endx=startx + cWidth - 1;
+var endx=startx + cWidth - 1;
 if (endx > maxwidth) {
 endx=maxwidth;
 }g.translate$I$I(this.labelWidthWest, 0);
 p$1.drawUnwrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I.apply(this, [g, group, startx, endx, 0, this.av.getAlignment$().getHeight$() - 1, ypos]);
 g.translate$I$I(-this.labelWidthWest, 0);
-ypos+=cHeight + this.getAnnotationHeight$() + hgap ;
+ypos+=this.wrappedRepeatHeightPx;
 startx+=cWidth;
 }
-g.setStroke$java_awt_Stroke(Clazz.new_($I$(11)));
+g.setStroke$java_awt_Stroke(Clazz.new_($I$(11,1)));
 }, p$1);
 
 Clazz.newMeth(C$, 'getAnnotationHeight$', function () {
 if (!this.av.isShowAnnotation$()) {
 return 0;
 }if (this.annotations == null ) {
-this.annotations=Clazz.new_($I$(10).c$$jalview_gui_AlignViewport,[this.av]);
+this.annotations=Clazz.new_($I$(10,1).c$$jalview_gui_AlignViewport,[this.av]);
 }return this.annotations.adjustPanelHeight$();
 });
 
@@ -452,13 +429,13 @@ Clazz.newMeth(C$, 'drawSelectionGroup$java_awt_Graphics2D$I$I$I$I', function (g,
 var group=this.av.getSelectionGroup$();
 if (group == null ) {
 return;
-}g.setStroke$java_awt_Stroke(Clazz.new_($I$(11).c$$F$I$I$F$FA$F,[1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0]));
+}g.setStroke$java_awt_Stroke(Clazz.new_([1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0],$I$(11,1).c$$F$I$I$F$FA$F));
 g.setColor$java_awt_Color($I$(5).RED);
 if (!this.av.getWrapAlignment$()) {
 p$1.drawUnwrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I.apply(this, [g, group, startRes, endRes, startSeq, endSeq, 0]);
 } else {
 p$1.drawWrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I.apply(this, [g, group, this.getWidth$(), this.getHeight$(), this.av.getRanges$().getStartRes$()]);
-}g.setStroke$java_awt_Stroke(Clazz.new_($I$(11)));
+}g.setStroke$java_awt_Stroke(Clazz.new_($I$(11,1)));
 }, p$1);
 
 Clazz.newMeth(C$, 'drawCursor$java_awt_Graphics$I$I$I$I', function (g, startRes, endRes, startSeq, endSeq) {
@@ -651,7 +628,7 @@ gg.dispose$();
 }return matchFound;
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 var eventName=evt.getPropertyName$();
 if (eventName.equals$O("Sequence group changed")) {
 this.fastPaint=true;
@@ -664,7 +641,7 @@ return;
 }var scrollX=0;
 if (eventName.equals$O("startres") || eventName.equals$O("startresandseq") ) {
 if (eventName.equals$O("startres")) {
-scrollX=((evt.getNewValue$()).objectValue$()|0) - ((evt.getOldValue$()).objectValue$()|0);
+scrollX=((evt.getNewValue$()).valueOf()|0) - ((evt.getOldValue$()).valueOf()|0);
 } else {
 scrollX=(evt.getNewValue$())[0] - (evt.getOldValue$())[0];
 }var vpRanges=this.av.getRanges$();
@@ -679,14 +656,14 @@ this.fastPaintWrapped$I(scrollX);
 } else {
 this.fastPaint$I$I(scrollX, 0);
 }} else if (eventName.equals$O("startseq")) {
-this.fastPaint$I$I(0, ((evt.getNewValue$()).objectValue$()|0) - ((evt.getOldValue$()).objectValue$()|0));
+this.fastPaint$I$I(0, ((evt.getNewValue$()).valueOf()|0) - ((evt.getOldValue$()).valueOf()|0));
 } else if (eventName.equals$O("startresandseq")) {
 if (this.av.getWrapAlignment$()) {
 this.fastPaintWrapped$I(scrollX);
 } else {
 this.fastPaint$I$I(scrollX, 0);
 }} else if (eventName.equals$O("startseq")) {
-this.fastPaint$I$I(0, ((evt.getNewValue$()).objectValue$()|0) - ((evt.getOldValue$()).objectValue$()|0));
+this.fastPaint$I$I(0, ((evt.getNewValue$()).valueOf()|0) - ((evt.getOldValue$()).valueOf()|0));
 } else if (eventName.equals$O("startresandseq")) {
 if (this.av.getWrapAlignment$()) {
 this.fastPaintWrapped$I(scrollX);
@@ -857,4 +834,4 @@ return this.labelWidthWest;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

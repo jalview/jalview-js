@@ -1,28 +1,22 @@
-(function(){var P$=Clazz.newPackage("gov.nist.jama"),p$1={},I$=[[0,'gov.nist.jama.SingularValueDecomposition','gov.nist.jama.util.Maths','gov.nist.jama.LUDecomposition','gov.nist.jama.EigenvalueDecomposition','gov.nist.jama.QRDecomposition']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Matrix", null, null, ['Cloneable', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("gov.nist.jama"),p$1={},I$=[[0,'gov.nist.jama.SingularValueDecomposition','gov.nist.jama.util.Maths','gov.nist.jama.LUDecomposition','gov.nist.jama.EigenvalueDecomposition','gov.nist.jama.QRDecomposition']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Matrix", null, null, ['Cloneable', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.A=null;
-this.m=0;
-this.n=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['m','n'],'O',['A','double[][]']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (m, n) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m=m;
 this.n=n;
 this.A=Clazz.array(Double.TYPE, [m, n]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$D', function (m, n, s) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m=m;
 this.n=n;
 this.A=Clazz.array(Double.TYPE, [m, n]);
@@ -34,7 +28,7 @@ this.A[i][j]=s;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$DAA', function (A) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m=A.length;
 this.n=A[0].length;
 for (var i=0; i < this.m; i++) {
@@ -45,14 +39,14 @@ this.A=A;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$DAA$I$I', function (A, m, n) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.A=A;
 this.m=m;
 this.n=n;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$DA$I', function (vals, m) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.m=m;
 this.n=(m != 0 ? (vals.length/m|0) : 0);
 if (m * this.n != vals.length) {
@@ -309,7 +303,7 @@ return f;
 });
 
 Clazz.newMeth(C$, 'norm2$', function () {
-return (Clazz.new_($I$(1).c$$gov_nist_jama_Matrix,[this]).norm2$());
+return (Clazz.new_($I$(1,1).c$$gov_nist_jama_Matrix,[this]).norm2$());
 });
 
 Clazz.newMeth(C$, 'normInf$', function () {
@@ -498,15 +492,15 @@ return X;
 });
 
 Clazz.newMeth(C$, 'lu$', function () {
-return Clazz.new_($I$(3).c$$gov_nist_jama_Matrix,[this]);
+return Clazz.new_($I$(3,1).c$$gov_nist_jama_Matrix,[this]);
 });
 
 Clazz.newMeth(C$, 'eig$Z', function (needVectors) {
-return Clazz.new_($I$(4).c$$gov_nist_jama_Matrix$Z,[this, needVectors]);
+return Clazz.new_($I$(4,1).c$$gov_nist_jama_Matrix$Z,[this, needVectors]);
 });
 
 Clazz.newMeth(C$, 'solve$gov_nist_jama_Matrix', function (B) {
-return (this.m == this.n ? (Clazz.new_($I$(3).c$$gov_nist_jama_Matrix,[this])).solve$gov_nist_jama_Matrix(B) : (Clazz.new_($I$(5).c$$gov_nist_jama_Matrix,[this])).solve$gov_nist_jama_Matrix(B));
+return (this.m == this.n ? (Clazz.new_($I$(3,1).c$$gov_nist_jama_Matrix,[this])).solve$gov_nist_jama_Matrix(B) : (Clazz.new_($I$(5,1).c$$gov_nist_jama_Matrix,[this])).solve$gov_nist_jama_Matrix(B));
 });
 
 Clazz.newMeth(C$, 'solveTranspose$gov_nist_jama_Matrix', function (B) {
@@ -518,7 +512,7 @@ return this.solve$gov_nist_jama_Matrix(C$.identity$I$I(this.m, this.m));
 });
 
 Clazz.newMeth(C$, 'det$', function () {
-return Clazz.new_($I$(3).c$$gov_nist_jama_Matrix,[this]).det$();
+return Clazz.new_($I$(3,1).c$$gov_nist_jama_Matrix,[this]).det$();
 });
 
 Clazz.newMeth(C$, 'cond$', function () {
@@ -562,4 +556,4 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Matrix dimensions
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

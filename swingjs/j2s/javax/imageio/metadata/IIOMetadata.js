@@ -1,19 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.imageio.metadata"),p$1={},I$=[[0,'javax.imageio.metadata.IIOMetadataFormatImpl','java.security.AccessController','Thread','javax.imageio.metadata.IIOMetadataNode']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IIOMetadata");
+(function(){var P$=Clazz.newPackage("javax.imageio.metadata"),p$1={},I$=[[0,'javax.imageio.metadata.IIOMetadataFormatImpl','java.security.AccessController','Thread','javax.imageio.metadata.IIOMetadataNode']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IIOMetadata");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.standardFormatSupported=false;
-this.nativeMetadataFormatName=null;
-this.nativeMetadataFormatClassName=null;
-this.extraMetadataFormatNames=null;
-this.extraMetadataFormatClassNames=null;
-this.defaultController=null;
-this.controller=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nativeMetadataFormatName=null;
@@ -22,14 +10,16 @@ this.extraMetadataFormatNames=null;
 this.extraMetadataFormatClassNames=null;
 this.defaultController=null;
 this.controller=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['standardFormatSupported'],'S',['nativeMetadataFormatName','nativeMetadataFormatClassName'],'O',['extraMetadataFormatNames','String[]','+extraMetadataFormatClassNames','defaultController','javax.imageio.metadata.IIOMetadataController','+controller']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$Z$S$S$SA$SA', function (standardMetadataFormatSupported, nativeMetadataFormatName, nativeMetadataFormatClassName, extraMetadataFormatNames, extraMetadataFormatClassNames) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.standardFormatSupported=standardMetadataFormatSupported;
 this.nativeMetadataFormatName=nativeMetadataFormatName;
 this.nativeMetadataFormatClassName=nativeMetadataFormatClassName;
@@ -106,38 +96,36 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Unsupported forma
 }try {
 var cls=null;
 var o=this;
-var loader=$I$(2).doPrivileged$java_security_PrivilegedAction(((P$.IIOMetadata$1||
-(function(){var C$=Clazz.newClass(P$, "IIOMetadata$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+var loader=$I$(2,"doPrivileged$java_security_PrivilegedAction",[((P$.IIOMetadata$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "IIOMetadata$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 return this.$finals$.o.getClass$().getClassLoader$();
 });
 })()
-), Clazz.new_(P$.IIOMetadata$1.$init$, [this, {o: o}])));
+), Clazz.new_(P$.IIOMetadata$1.$init$,[this, {o:o}]))]);
 try {
 cls=Clazz.forName(formatClassName, true, loader);
 } catch (e) {
 if (Clazz.exceptionOf(e,"ClassNotFoundException")){
-loader=$I$(2).doPrivileged$java_security_PrivilegedAction(((P$.IIOMetadata$2||
-(function(){var C$=Clazz.newClass(P$, "IIOMetadata$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+loader=$I$(2,"doPrivileged$java_security_PrivilegedAction",[((P$.IIOMetadata$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "IIOMetadata$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 return $I$(3).currentThread$().getContextClassLoader$();
 });
 })()
-), Clazz.new_(P$.IIOMetadata$2.$init$, [this, null])));
+), Clazz.new_(P$.IIOMetadata$2.$init$,[this, null]))]);
 try {
 cls=Clazz.forName(formatClassName, true, loader);
 } catch (e1) {
@@ -202,7 +190,7 @@ root.appendChild$org_w3c_dom_Node(node);
 }}, p$1);
 
 Clazz.newMeth(C$, 'getStandardTree$', function () {
-var root=Clazz.new_($I$(4).c$$S,["javax_imageio_1.0"]);
+var root=Clazz.new_($I$(4,1).c$$S,["javax_imageio_1.0"]);
 p$1.append$javax_imageio_metadata_IIOMetadataNode$javax_imageio_metadata_IIOMetadataNode.apply(this, [root, this.getStandardChromaNode$()]);
 p$1.append$javax_imageio_metadata_IIOMetadataNode$javax_imageio_metadata_IIOMetadataNode.apply(this, [root, this.getStandardCompressionNode$()]);
 p$1.append$javax_imageio_metadata_IIOMetadataNode$javax_imageio_metadata_IIOMetadataNode.apply(this, [root, this.getStandardDataNode$()]);
@@ -238,7 +226,7 @@ return (this.getController$() != null );
 Clazz.newMeth(C$, 'activateController$', function () {
 if (!this.hasController$()) {
 throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["hasController() == false!"]);
-}return this.getController$().activate$(this);
+}return this.getController$().activate$javax_imageio_metadata_IIOMetadata(this);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

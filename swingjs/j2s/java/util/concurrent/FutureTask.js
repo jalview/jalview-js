@@ -1,28 +1,25 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'Thread',['java.util.concurrent.FutureTask','.Sync'],'java.util.concurrent.Executors']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FutureTask", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'Thread',['java.util.concurrent.FutureTask','.Sync'],'java.util.concurrent.Executors']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FutureTask", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'java.util.concurrent.RunnableFuture');
+C$.$classes$=[['Sync',18]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sync=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sync','java.util.concurrent.FutureTask.Sync']]]
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_Callable', function (callable) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (callable == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-this.sync=Clazz.new_($I$(2).c$$java_util_concurrent_Callable, [this, null, callable]);
+this.sync=Clazz.new_($I$(2,1).c$$java_util_concurrent_Callable,[this, null, callable]);
 }, 1);
 
-Clazz.newMeth(C$, ['c$$Runnable$TV'], function (runnable, result) {
-C$.$init$.apply(this);
-this.sync=Clazz.new_($I$(2).c$$java_util_concurrent_Callable, [this, null, $I$(3).callable$Runnable$TT(runnable, result)]);
+Clazz.newMeth(C$, 'c$$Runnable$O', function (runnable, result) {
+;C$.$init$.apply(this);
+this.sync=Clazz.new_([this, null, $I$(3).callable$Runnable$O(runnable, result)],$I$(2,1).c$$java_util_concurrent_Callable);
 }, 1);
 
 Clazz.newMeth(C$, 'isCancelled$', function () {
@@ -48,8 +45,8 @@ return this.sync.innerGet$J(unit.toNanos$J(timeout));
 Clazz.newMeth(C$, 'done$', function () {
 });
 
-Clazz.newMeth(C$, ['set$TV'], function (v) {
-this.sync.innerSet$TV(v);
+Clazz.newMeth(C$, 'set$O', function (v) {
+this.sync.innerSet$O(v);
 });
 
 Clazz.newMeth(C$, 'setException$Throwable', function (t) {
@@ -64,26 +61,19 @@ Clazz.newMeth(C$, 'runAndReset$', function () {
 return this.sync.innerRunAndReset$();
 });
 ;
-(function(){var C$=Clazz.newClass(P$.FutureTask, "Sync", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.FutureTask, "Sync", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.concurrent.locks.AbstractQueuedSynchronizer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.callable=null;
-this.result=null;
-this.exception=null;
-this.runner=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['callable','java.util.concurrent.Callable','result','<V>','exception','Throwable','runner','Thread']]]
 
 Clazz.newMeth(C$, 'c$$java_util_concurrent_Callable', function (callable) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.callable=callable;
 }, 1);
 
@@ -122,7 +112,7 @@ if (this.exception != null ) throw Clazz.new_(Clazz.load('java.util.concurrent.E
 return this.result;
 });
 
-Clazz.newMeth(C$, 'innerSet$TV', function (v) {
+Clazz.newMeth(C$, 'innerSet$O', function (v) {
 for (; ; ) {
 var s=this.getState$();
 if (s == 2) return;
@@ -132,7 +122,7 @@ return;
 }if (this.compareAndSetState$I$I(s, 2)) {
 this.result=v;
 this.releaseShared$I(0);
-this.b$['java.util.concurrent.FutureTask'].done$.apply(this.b$['java.util.concurrent.FutureTask'], []);
+this.this$0.done$.apply(this.this$0, []);
 return;
 }}
 });
@@ -147,7 +137,7 @@ return;
 }if (this.compareAndSetState$I$I(s, 2)) {
 this.exception=t;
 this.releaseShared$I(0);
-this.b$['java.util.concurrent.FutureTask'].done$.apply(this.b$['java.util.concurrent.FutureTask'], []);
+this.this$0.done$.apply(this.this$0, []);
 return;
 }}
 });
@@ -162,7 +152,7 @@ if (mayInterruptIfRunning) {
 var r=this.runner;
 if (r != null ) r.interrupt$();
 }this.releaseShared$I(0);
-this.b$['java.util.concurrent.FutureTask'].done$.apply(this.b$['java.util.concurrent.FutureTask'], []);
+this.this$0.done$.apply(this.this$0, []);
 return true;
 });
 
@@ -174,10 +164,10 @@ var result;
 try {
 result=this.callable.call$();
 } catch (ex) {
-this.b$['java.util.concurrent.FutureTask'].setException$Throwable.apply(this.b$['java.util.concurrent.FutureTask'], [ex]);
+this.this$0.setException$Throwable.apply(this.this$0, [ex]);
 return;
 }
-this.b$['java.util.concurrent.FutureTask'].set$TV.apply(this.b$['java.util.concurrent.FutureTask'], [result]);
+this.this$0.set$O.apply(this.this$0, [result]);
 } else {
 this.releaseShared$I(0);
 }});
@@ -190,7 +180,7 @@ if (this.getState$() == 1) this.callable.call$();
 this.runner=null;
 return this.compareAndSetState$I$I(1, 0);
 } catch (ex) {
-this.b$['java.util.concurrent.FutureTask'].setException$Throwable.apply(this.b$['java.util.concurrent.FutureTask'], [ex]);
+this.this$0.setException$Throwable.apply(this.this$0, [ex]);
 return false;
 }
 });
@@ -200,4 +190,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

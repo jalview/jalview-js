@@ -1,29 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.modelset.Bond','org.jmol.modelset.BondIteratorSelected','org.jmol.util.C','javajs.util.AU','org.jmol.util.Edge','org.jmol.modelset.HBond','org.jmol.util.BSUtil','org.jmol.util.Logger','org.jmol.modelset.BondSet']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BondCollection", null, 'org.jmol.modelset.AtomCollection');
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.modelset.Bond','org.jmol.modelset.BondIteratorSelected','org.jmol.util.C','javajs.util.AU','org.jmol.util.Edge','org.jmol.modelset.HBond','org.jmol.util.BSUtil','org.jmol.modelset.BondSet']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "BondCollection", null, 'org.jmol.modelset.AtomCollection');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bo=null;
-this.bondCount=0;
-this.numCached=null;
-this.freeBonds=null;
-this.molecules=null;
-this.moleculeCount=0;
-this.defaultCovalentMad=0;
-this.bsAromaticSingle=null;
-this.bsAromaticDouble=null;
-this.bsAromatic=null;
-this.haveHiddenBonds=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveHiddenBonds'],'I',['bondCount','moleculeCount'],'H',['defaultCovalentMad'],'O',['bo','org.jmol.modelset.Bond[]','numCached','int[]','freeBonds','org.jmol.modelset.Bond[][][]','molecules','org.jmol.util.JmolMolecule[]','bsAromaticSingle','javajs.util.BS','+bsAromaticDouble','+bsAromatic']]]
 
 Clazz.newMeth(C$, 'setupBC$', function () {
-this.bsAromatic=Clazz.new_($I$(1));
+this.bsAromatic=Clazz.new_($I$(1,1));
 this.numCached=Clazz.array(Integer.TYPE, [5]);
 this.freeBonds=Clazz.array($I$(2), [5, null, null]);
 for (var i=5; --i > 0; ) this.freeBonds[i]=Clazz.array($I$(2), [200, null]);
@@ -38,11 +24,11 @@ this.releaseModelSetAC$();
 });
 
 Clazz.newMeth(C$, 'getBondIteratorForType$I$javajs_util_BS', function (bondType, bsAtoms) {
-return Clazz.new_($I$(3).c$$org_jmol_modelset_BondA$I$I$javajs_util_BS$Z,[this.bo, this.bondCount, bondType, bsAtoms, this.vwr.getBoolean$I(603979812)]);
+return Clazz.new_([this.bo, this.bondCount, bondType, bsAtoms, this.vwr.getBoolean$I(603979812)],$I$(3,1).c$$org_jmol_modelset_BondA$I$I$javajs_util_BS$Z);
 });
 
 Clazz.newMeth(C$, 'getBondIterator$javajs_util_BS', function (bsBonds) {
-return Clazz.new_($I$(3).c$$org_jmol_modelset_BondA$I$I$javajs_util_BS$Z,[this.bo, this.bondCount, 131071, bsBonds, false]);
+return Clazz.new_($I$(3,1).c$$org_jmol_modelset_BondA$I$I$javajs_util_BS$Z,[this.bo, this.bondCount, 131071, bsBonds, false]);
 });
 
 Clazz.newMeth(C$, 'getBondColix1$I', function (i) {
@@ -61,7 +47,7 @@ return n;
 });
 
 Clazz.newMeth(C$, 'getBondsForSelectedAtoms$javajs_util_BS$Z', function (bsAtoms, bondSelectionModeOr) {
-var bs=Clazz.new_($I$(1));
+var bs=Clazz.new_($I$(1,1));
 for (var iBond=0; iBond < this.bondCount; ++iBond) {
 var bond=this.bo[iBond];
 var isSelected1=bsAtoms.get$I(bond.atom1.i);
@@ -104,9 +90,9 @@ return this.bo[bond.index=index]=bond;
 Clazz.newMeth(C$, 'bondMutually$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$F', function (atom, atomOther, order, mad, energy) {
 var bond;
 if ($I$(6).isOrderH$I(order)) {
-bond=Clazz.new_($I$(7).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[atom, atomOther, order, mad, 0, energy]);
+bond=Clazz.new_($I$(7,1).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[atom, atomOther, order, mad, 0, energy]);
 } else {
-bond=Clazz.new_($I$(2).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H,[atom, atomOther, order, mad, 0]);
+bond=Clazz.new_($I$(2,1).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H,[atom, atomOther, order, mad, 0]);
 }p$1.addBondToAtom$org_jmol_modelset_Atom$org_jmol_modelset_Bond.apply(this, [atom, bond]);
 p$1.addBondToAtom$org_jmol_modelset_Atom$org_jmol_modelset_Bond.apply(this, [atomOther, bond]);
 return bond;
@@ -162,7 +148,7 @@ var maxDIsFraction=(maxD < 0 );
 var isFractional=(minDIsFraction || maxDIsFraction );
 minD=this.fixD$F$Z(minD, minDIsFraction);
 maxD=this.fixD$F$Z(maxD, maxDIsFraction);
-var bsDelete=Clazz.new_($I$(1));
+var bsDelete=Clazz.new_($I$(1,1));
 var nDeleted=0;
 var newOrder=order|=131072;
 if (!matchNull && $I$(6).isOrderH$I(order) ) order=30720;
@@ -170,7 +156,7 @@ var bsBonds;
 if (isBonds) {
 bsBonds=bsA;
 } else {
-bsBonds=Clazz.new_($I$(1));
+bsBonds=Clazz.new_($I$(1,1));
 for (var i=bsA.nextSetBit$I(0); i >= 0; i=bsA.nextSetBit$I(i + 1)) {
 var a=this.at[i];
 if (a.bonds != null ) for (var j=a.bonds.length; --j >= 0; ) if (bsB.get$I(a.getBondedAtomIndex$I(j))) bsBonds.set$I(a.bonds[j].index);
@@ -183,7 +169,7 @@ if (matchNull || newOrder == (bond.order & ~256 | 131072)  || (order & bond.orde
 bsDelete.set$I(i);
 nDeleted++;
 }}
-if (nDeleted > 0) this.dBm$javajs_util_BS$Z(bsDelete, false);
+if (nDeleted > 0) (this).deleteBonds$javajs_util_BS$Z(bsDelete, false);
 return Clazz.array(Integer.TYPE, -1, [0, nDeleted]);
 });
 
@@ -198,10 +184,6 @@ var dAB=Math.sqrt(d2);
 var dABcalc=atom1.getBondingRadius$() + atom2.getBondingRadius$();
 return ((minFrac ? dAB >= dABcalc * minD  : d2 >= minD ) && (maxfrac ? dAB <= dABcalc * maxD  : d2 <= maxD ) );
 }return (d2 >= minD  && d2 <= maxD  );
-});
-
-Clazz.newMeth(C$, 'dBm$javajs_util_BS$Z', function (bsBonds, isFullModel) {
-(this).deleteBonds$javajs_util_BS$Z(bsBonds, isFullModel);
 });
 
 Clazz.newMeth(C$, 'dBb$javajs_util_BS$Z', function (bsBond, isFullModel) {
@@ -238,9 +220,9 @@ if (bond.isAromatic$()) bond.setOrder$I(515);
 });
 
 Clazz.newMeth(C$, 'assignAromaticBondsBs$Z$javajs_util_BS', function (isUserCalculation, bsBonds) {
-if (!isUserCalculation) this.bsAromatic=Clazz.new_($I$(1));
-this.bsAromaticSingle=Clazz.new_($I$(1));
-this.bsAromaticDouble=Clazz.new_($I$(1));
+if (!isUserCalculation) this.bsAromatic=Clazz.new_($I$(1,1));
+this.bsAromaticSingle=Clazz.new_($I$(1,1));
+this.bsAromaticDouble=Clazz.new_($I$(1,1));
 var isAll=(bsBonds == null );
 var i0=(isAll ? this.bondCount - 1 : bsBonds.nextSetBit$I(0));
 for (var i=i0; i >= 0; i=(isAll ? i - 1 : bsBonds.nextSetBit$I(i + 1))) {
@@ -263,7 +245,7 @@ break;
 var bond;
 isAll=(bsBonds == null );
 i0=(isAll ? this.bondCount - 1 : bsBonds.nextSetBit$I(0));
-var bsTest=Clazz.new_($I$(1));
+var bsTest=Clazz.new_($I$(1,1));
 for (var i=i0; i >= 0; i=(isAll ? i - 1 : bsBonds.nextSetBit$I(i + 1))) {
 bond=this.bo[i];
 if (!bond.is$I(515) || this.bsAromaticDouble.get$I(i) || this.bsAromaticSingle.get$I(i)  ) continue;
@@ -275,7 +257,7 @@ bsTest.set$I(i);
 }}
 for (var i=bsTest.nextSetBit$I(0); i >= 0; i=bsTest.nextSetBit$I(i + 1)) if (!p$1.assignAromaticDouble$org_jmol_modelset_Bond.apply(this, [bond=this.bo[i]])) p$1.assignAromaticSingle$org_jmol_modelset_Bond.apply(this, [bond]);
 
-var bsModels=Clazz.new_($I$(1));
+var bsModels=Clazz.new_($I$(1,1));
 for (var i=i0; i >= 0; i=(isAll ? i - 1 : bsBonds.nextSetBit$I(i + 1))) {
 bond=this.bo[i];
 if (this.bsAromaticDouble.get$I(i)) {
@@ -423,7 +405,7 @@ break;
 }, p$1);
 
 Clazz.newMeth(C$, 'getAtomBitsMDb$I$O', function (tokType, specInfo) {
-var bs=Clazz.new_($I$(1));
+var bs=Clazz.new_($I$(1,1));
 switch (tokType) {
 default:
 return this.getAtomBitsMDa$I$O$javajs_util_BS(tokType, specInfo, bs);
@@ -443,53 +425,9 @@ return bs;
 }
 });
 
-Clazz.newMeth(C$, 'assignBond$I$C', function (bondIndex, type) {
-var bondOrder=type.$c() - 48;
-var bond=this.bo[bondIndex];
-(this).clearDB$I(bond.atom1.i);
-switch (type.$c()) {
-case 48:
-case 49:
-case 50:
-case 51:
-break;
-case 112:
-case 109:
-bondOrder=($I$(6).getBondOrderNumberFromOrder$I(bond.getCovalentOrder$()).charCodeAt$I(0)) - 48 + (type == "p" ? 1 : -1);
-if (bondOrder > 3) bondOrder=1;
- else if (bondOrder < 0) bondOrder=3;
-break;
-default:
-return null;
-}
-var bsAtoms=Clazz.new_($I$(1));
-try {
-if (bondOrder == 0) {
-var bs=Clazz.new_($I$(1));
-bs.set$I(bond.index);
-bsAtoms.set$I(bond.atom1.i);
-bsAtoms.set$I(bond.atom2.i);
-this.dBm$javajs_util_BS$Z(bs, false);
-return bsAtoms;
-}bond.setOrder$I(bondOrder | 131072);
-if (bond.atom1.getElementNumber$() != 1 && bond.atom2.getElementNumber$() != 1 ) {
-this.removeUnnecessaryBonds$org_jmol_modelset_Atom$Z(bond.atom1, false);
-this.removeUnnecessaryBonds$org_jmol_modelset_Atom$Z(bond.atom2, false);
-}bsAtoms.set$I(bond.atom1.i);
-bsAtoms.set$I(bond.atom2.i);
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-$I$(9).error$S("Exception in seBondOrder: " + e.toString());
-} else {
-throw e;
-}
-}
-return bsAtoms;
-});
-
 Clazz.newMeth(C$, 'removeUnnecessaryBonds$org_jmol_modelset_Atom$Z', function (atom, deleteAtom) {
-var bs=Clazz.new_($I$(1));
-var bsBonds=Clazz.new_($I$(1));
+var bs=Clazz.new_($I$(1,1));
+var bsBonds=Clazz.new_($I$(1,1));
 var bonds=atom.bonds;
 if (bonds == null ) return;
 for (var i=0; i < bonds.length; i++) if (bonds[i].isCovalent$()) {
@@ -498,7 +436,7 @@ if (atom2.getElementNumber$() == 1) bs.set$I(bonds[i].getOtherAtom$org_jmol_mode
 } else {
 bsBonds.set$I(bonds[i].index);
 }
-if (bsBonds.nextSetBit$I(0) >= 0) this.dBm$javajs_util_BS$Z(bsBonds, false);
+if (bsBonds.nextSetBit$I(0) >= 0) (this).deleteBonds$javajs_util_BS$Z(bsBonds, false);
 if (deleteAtom) bs.set$I(atom.i);
 if (bs.nextSetBit$I(0) >= 0) this.vwr.deleteAtoms$javajs_util_BS$Z(bs, false);
 });
@@ -511,7 +449,7 @@ for (var i=bs.nextSetBit$I(0); i >= 0; i=bs.nextSetBit$I(i + 1)) if (i < this.bo
 
 Clazz.newMeth(C$, 'getAtomsConnected$F$F$I$javajs_util_BS', function (min, max, intType, bs) {
 var isBonds=Clazz.instanceOf(bs, "org.jmol.modelset.BondSet");
-var bsResult=(isBonds ? Clazz.new_($I$(10)) : Clazz.new_($I$(1)));
+var bsResult=(isBonds ? Clazz.new_($I$(9,1)) : Clazz.new_($I$(1,1)));
 var nBonded=Clazz.array(Integer.TYPE, [this.ac]);
 var i;
 var ishbond=(intType == 30720);
@@ -542,4 +480,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:12 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

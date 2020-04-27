@@ -1,28 +1,22 @@
-(function(){var P$=Clazz.newPackage("javax.xml.sax.helpers"),I$=[[0,'java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AttributeListImpl", null, null, 'javax.xml.sax.AttributeList');
+(function(){var P$=Clazz.newPackage("javax.xml.sax.helpers"),I$=[[0,'java.util.Vector']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AttributeListImpl", null, null, 'javax.xml.sax.AttributeList');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.names=null;
-this.types=null;
-this.values=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.names=Clazz.new_($I$(1));
-this.types=Clazz.new_($I$(1));
-this.values=Clazz.new_($I$(1));
-}, 1);
+this.names=Clazz.new_($I$(1,1));
+this.types=Clazz.new_($I$(1,1));
+this.values=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['names','java.util.Vector','+types','+values']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_xml_sax_AttributeList', function (atts) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.setAttributeList$javax_xml_sax_AttributeList(atts);
 }, 1);
 
@@ -35,9 +29,9 @@ this.addAttribute$S$S$S(atts.getName$I(i), atts.getType$I(i), atts.getValue$I(i)
 });
 
 Clazz.newMeth(C$, 'addAttribute$S$S$S', function (name, type, value) {
-this.names.addElement$TE(name);
-this.types.addElement$TE(type);
-this.values.addElement$TE(value);
+this.names.addElement$O(name);
+this.types.addElement$O(type);
+this.values.addElement$O(value);
 });
 
 Clazz.newMeth(C$, 'removeAttribute$S', function (name) {
@@ -108,4 +102,4 @@ Clazz.newMeth(C$, 'getValue$S', function (name) {
 return this.getValue$I(this.names.indexOf$O(name));
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

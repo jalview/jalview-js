@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'java.util.HashMap','java.util.Collections']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractAclFileAttributeView", null, null, ['java.nio.file.attribute.AclFileAttributeView', 'sun.nio.fs.DynamicFileAttributeView']);
+(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'java.util.HashMap','java.util.Collections']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractAclFileAttributeView", null, null, ['java.nio.file.attribute.AclFileAttributeView', 'sun.nio.fs.DynamicFileAttributeView']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'name$', function () {
 return "acl";
@@ -37,12 +36,12 @@ owner=true;
 continue;
 }throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["'" + this.name$() + ":" + attribute + "' not recognized" ]);
 }
-var result=Clazz.new_($I$(1).c$$I,[2]);
-if (acl) result.put$TK$TV("acl", this.getAcl$());
-if (owner) result.put$TK$TV("owner", this.getOwner$());
+var result=Clazz.new_($I$(1,1).c$$I,[2]);
+if (acl) result.put$O$O("acl", this.getAcl$());
+if (owner) result.put$O$O("owner", this.getOwner$());
 return $I$(2).unmodifiableMap$java_util_Map(result);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,240 +1,119 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.MenuBar','java.awt.Menu','jalview.util.MessageManager','java.awt.MenuItem','java.awt.CheckboxMenuItem','java.awt.BorderLayout','java.awt.Label','jalview.appletgui.AlignViewport','jalview.appletgui.AlignmentPanel','jalview.controller.AlignViewController','jalview.io.FeaturesFile',['jalview.analysis.AnnotationSorter','.SequenceAnnotationOrder'],'jalview.appletgui.FontChooser','jalview.appletgui.FeatureSettings','jalview.io.AlignmentProperties','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','jalview.bin.JalviewLite','jalview.schemes.ClustalxColourScheme','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.schemes.NucleotideColourScheme','jalview.schemes.PurinePyrimidineColourScheme','jalview.schemes.RNAHelicesColour','jalview.appletgui.UserDefinedColours','jalview.schemes.PIDColourScheme','jalview.schemes.Blosum62ColourScheme','jalview.schemes.TCoffeeColourScheme','jalview.appletgui.AnnotationColourChooser','jalview.appletgui.AnnotationColumnChooser','jalview.io.FileFormats','jalview.io.AppletFormatAdapter','jalview.io.AnnotationFile','StringBuffer','java.net.URL','java.net.URLEncoder','jalview.appletgui.PaintRefresher','jalview.util.MappingUtils','java.util.Vector','jalview.datamodel.SequenceI','jalview.commands.SlideSequencesCommand','java.util.HashMap','jalview.datamodel.HiddenColumns','jalview.util.Comparison','java.util.StringTokenizer','jalview.datamodel.Sequence','jalview.datamodel.Alignment','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],'java.awt.Panel','java.awt.FlowLayout','jalview.appletgui.JVDialog','jalview.datamodel.SequenceGroup','jalview.commands.TrimRegionCommand','jalview.commands.RemoveGapColCommand','jalview.commands.RemoveGapsCommand','jalview.appletgui.Finder','java.util.Arrays','jalview.appletgui.OverviewPanel','java.awt.event.WindowAdapter','jalview.appletgui.SliderPanel','jalview.analysis.AlignmentSorter','jalview.commands.OrderCommand','jalview.appletgui.RedundancyPanel','jalview.appletgui.PairwiseAlignPanel','jalview.appletgui.PCAPanel','jalview.analysis.scoremodels.PIDModel','jalview.analysis.scoremodels.ScoreModels','jalview.appletgui.TreePanel','java.awt.Color','java.awt.Font','java.awt.Canvas','jalview.appletgui.ExtJmol','jalview.datamodel.PDBEntry','jalview.io.FileFormat','jalview.io.DataSourceType','jalview.structure.StructureSelectionManager','jalview.appletgui.AppletJmol','mc_view.AppletPDBViewer','jalview.io.TCoffeeScoreFile']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignFrame", null, 'jalview.appletgui.EmbmenuFrame', ['java.awt.event.ActionListener', 'java.awt.event.ItemListener', 'java.awt.event.KeyListener', 'jalview.api.AlignViewControllerGuiI']);
-C$.copiedSequences=null;
-C$.copiedHiddenColumns=null;
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'java.awt.MenuBar','java.awt.Menu','jalview.util.MessageManager','java.awt.MenuItem','java.awt.CheckboxMenuItem','java.awt.BorderLayout','java.awt.Label','jalview.appletgui.AlignViewport','jalview.appletgui.AlignmentPanel','jalview.controller.AlignViewController','jalview.io.FeaturesFile',['jalview.analysis.AnnotationSorter','.SequenceAnnotationOrder'],'jalview.appletgui.FontChooser','jalview.io.AlignmentProperties','jalview.appletgui.CutAndPasteTransfer','java.awt.Frame','jalview.bin.JalviewLite','jalview.schemes.ClustalxColourScheme','jalview.schemes.ZappoColourScheme','jalview.schemes.TaylorColourScheme','jalview.schemes.HydrophobicColourScheme','jalview.schemes.HelixColourScheme','jalview.schemes.StrandColourScheme','jalview.schemes.TurnColourScheme','jalview.schemes.BuriedColourScheme','jalview.schemes.NucleotideColourScheme','jalview.schemes.PurinePyrimidineColourScheme','jalview.schemes.RNAHelicesColour','jalview.appletgui.UserDefinedColours','jalview.schemes.PIDColourScheme','jalview.schemes.Blosum62ColourScheme','jalview.schemes.TCoffeeColourScheme','jalview.appletgui.AnnotationColourChooser','jalview.appletgui.AnnotationColumnChooser','jalview.io.FileFormats','jalview.io.AppletFormatAdapter','jalview.io.AnnotationFile','StringBuffer','java.net.URL','java.net.URLEncoder','jalview.appletgui.PaintRefresher','jalview.util.MappingUtils','java.util.Vector','jalview.datamodel.SequenceI','jalview.commands.SlideSequencesCommand','java.util.HashMap','jalview.datamodel.HiddenColumns','jalview.util.Comparison','java.util.StringTokenizer','jalview.datamodel.Sequence','jalview.datamodel.Alignment','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],'java.awt.Panel','java.awt.FlowLayout','jalview.appletgui.JVDialog','jalview.datamodel.SequenceGroup','jalview.commands.TrimRegionCommand','jalview.commands.RemoveGapColCommand','jalview.commands.RemoveGapsCommand','jalview.appletgui.Finder','java.util.Arrays','jalview.appletgui.OverviewPanel','java.awt.event.WindowAdapter','jalview.appletgui.SliderPanel','jalview.analysis.AlignmentSorter','jalview.commands.OrderCommand','jalview.appletgui.RedundancyPanel','jalview.appletgui.PairwiseAlignPanel','jalview.appletgui.PCAPanel','jalview.analysis.scoremodels.PIDModel','jalview.analysis.scoremodels.ScoreModels','jalview.appletgui.TreePanel','java.awt.Color','java.awt.Font','java.awt.Canvas','jalview.appletgui.ExtJmol','jalview.datamodel.PDBEntry','jalview.io.FileFormat','jalview.io.DataSourceType','jalview.structure.StructureSelectionManager','jalview.appletgui.AppletJmol','mc_view.AppletPDBViewer','jalview.io.TCoffeeScoreFile','jalview.appletgui.FeatureSettings']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignFrame", null, 'jalview.appletgui.EmbmenuFrame', ['java.awt.event.ActionListener', 'java.awt.event.ItemListener', 'java.awt.event.KeyListener', 'jalview.api.AlignViewControllerGuiI']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.avc=null;
-this.alignPanel=null;
-this.viewport=null;
-this.frameWidth=0;
-this.frameHeight=0;
-this.jalviewServletURL=null;
-this.showAutoCalculatedAbove=false;
-this.annotationSortOrder=null;
-this.alignFrameMenuBar=null;
-this.fileMenu=null;
-this.loadApplication=null;
-this.loadTree=null;
-this.loadAnnotations=null;
-this.outputFeatures=null;
-this.outputAnnotations=null;
-this.closeMenuItem=null;
-this.selectAllSequenceMenuItem=null;
-this.deselectAllSequenceMenuItem=null;
-this.invertSequenceMenuItem=null;
-this.remove2LeftMenuItem=null;
-this.remove2RightMenuItem=null;
-this.removeGappedColumnMenuItem=null;
-this.removeAllGapsMenuItem=null;
-this.viewBoxesMenuItem=null;
-this.viewTextMenuItem=null;
-this.sortPairwiseMenuItem=null;
-this.sortIDMenuItem=null;
-this.sortLengthMenuItem=null;
-this.sortGroupMenuItem=null;
-this.removeRedundancyMenuItem=null;
-this.pairwiseAlignmentMenuItem=null;
-this.PCAMenuItem=null;
-this.averageDistanceTreeMenuItem=null;
-this.neighbourTreeMenuItem=null;
-this.borderLayout1=null;
-this.statusBar=null;
-this.clustalColour=null;
-this.zappoColour=null;
-this.taylorColour=null;
-this.hydrophobicityColour=null;
-this.helixColour=null;
-this.strandColour=null;
-this.turnColour=null;
-this.buriedColour=null;
-this.purinePyrimidineColour=null;
-this.RNAHelixColour=null;
-this.userDefinedColour=null;
-this.PIDColour=null;
-this.BLOSUM62Colour=null;
-this.tcoffeeColour=null;
-this.njTreeBlosumMenuItem=null;
-this.avDistanceTreeBlosumMenuItem=null;
-this.annotationPanelMenuItem=null;
-this.colourTextMenuItem=null;
-this.displayNonconservedMenuItem=null;
-this.alProperties=null;
-this.overviewMenuItem=null;
-this.undoMenuItem=null;
-this.redoMenuItem=null;
-this.conservationMenuItem=null;
-this.noColourmenuItem=null;
-this.wrapMenuItem=null;
-this.renderGapsMenuItem=null;
-this.findMenuItem=null;
-this.abovePIDThreshold=null;
-this.nucleotideColour=null;
-this.deleteGroups=null;
-this.grpsFromSelection=null;
-this.createGroup=null;
-this.unGroup=null;
-this.$delete=null;
-this.copy=null;
-this.cut=null;
-this.pasteMenu=null;
-this.pasteNew=null;
-this.pasteThis=null;
-this.applyToAllGroups=null;
-this.$font=null;
-this.scaleAbove=null;
-this.scaleLeft=null;
-this.scaleRight=null;
-this.modifyPID=null;
-this.modifyConservation=null;
-this.autoCalculate=null;
-this.sortByTree=null;
-this.sortByTreeMenu=null;
-this.inputText=null;
-this.documentation=null;
-this.about=null;
-this.seqLimits=null;
-this.centreColumnLabelFlag=null;
-this.followMouseOverFlag=null;
-this.showSequenceLogo=null;
-this.applyAutoAnnotationSettings=null;
-this.showConsensusHistogram=null;
-this.showGroupConsensus=null;
-this.showGroupConservation=null;
-this.normSequenceLogo=null;
-this.featureSettings=null;
-this.sequenceFeatures=null;
-this.annotationColour=null;
-this.annotationColumnSelection=null;
-this.invertColSel=null;
-this.showColumns=null;
-this.showSeqs=null;
-this.hideColumns=null;
-this.hideSequences=null;
-this.hideAllButSelection=null;
-this.hideAllSelection=null;
-this.showAllHidden=null;
-this.newView=null;
-this.showAlignmentAnnotations=null;
-this.showSequenceAnnotations=null;
-this.sortAnnBySequence=null;
-this.sortAnnByLabel=null;
-this.showAutoFirst=null;
-this.showAutoLast=null;
-this.splitFrame=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.frameWidth=700;
 this.frameHeight=500;
-this.alignFrameMenuBar=Clazz.new_($I$(1));
-this.fileMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.file")]);
-this.loadApplication=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("label.view_full_application")]);
-this.loadTree=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("label.load_associated_tree")]);
-this.loadAnnotations=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("label.load_features_annotations")]);
-this.outputFeatures=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("label.export_features")]);
-this.outputAnnotations=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("label.export_annotations")]);
-this.closeMenuItem=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("action.close")]);
-this.selectAllSequenceMenuItem=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("action.select_all")]);
-this.deselectAllSequenceMenuItem=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("action.deselect_all")]);
-this.invertSequenceMenuItem=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("action.invert_selection")]);
-this.remove2LeftMenuItem=Clazz.new_($I$(4));
-this.remove2RightMenuItem=Clazz.new_($I$(4));
-this.removeGappedColumnMenuItem=Clazz.new_($I$(4));
-this.removeAllGapsMenuItem=Clazz.new_($I$(4));
-this.viewBoxesMenuItem=Clazz.new_($I$(5));
-this.viewTextMenuItem=Clazz.new_($I$(5));
-this.sortPairwiseMenuItem=Clazz.new_($I$(4));
-this.sortIDMenuItem=Clazz.new_($I$(4));
-this.sortLengthMenuItem=Clazz.new_($I$(4));
-this.sortGroupMenuItem=Clazz.new_($I$(4));
-this.removeRedundancyMenuItem=Clazz.new_($I$(4));
-this.pairwiseAlignmentMenuItem=Clazz.new_($I$(4));
-this.PCAMenuItem=Clazz.new_($I$(4));
-this.averageDistanceTreeMenuItem=Clazz.new_($I$(4));
-this.neighbourTreeMenuItem=Clazz.new_($I$(4));
-this.borderLayout1=Clazz.new_($I$(6));
-this.statusBar=Clazz.new_($I$(7));
-this.clustalColour=Clazz.new_($I$(4));
-this.zappoColour=Clazz.new_($I$(4));
-this.taylorColour=Clazz.new_($I$(4));
-this.hydrophobicityColour=Clazz.new_($I$(4));
-this.helixColour=Clazz.new_($I$(4));
-this.strandColour=Clazz.new_($I$(4));
-this.turnColour=Clazz.new_($I$(4));
-this.buriedColour=Clazz.new_($I$(4));
-this.purinePyrimidineColour=Clazz.new_($I$(4));
-this.RNAHelixColour=Clazz.new_($I$(4));
-this.userDefinedColour=Clazz.new_($I$(4));
-this.PIDColour=Clazz.new_($I$(4));
-this.BLOSUM62Colour=Clazz.new_($I$(4));
-this.tcoffeeColour=Clazz.new_($I$(4));
-this.njTreeBlosumMenuItem=Clazz.new_($I$(4));
-this.avDistanceTreeBlosumMenuItem=Clazz.new_($I$(4));
-this.annotationPanelMenuItem=Clazz.new_($I$(5));
-this.colourTextMenuItem=Clazz.new_($I$(5));
-this.displayNonconservedMenuItem=Clazz.new_($I$(5));
-this.alProperties=Clazz.new_($I$(4).c$$S,[$I$(3).getString$S("label.alignment_props")]);
-this.overviewMenuItem=Clazz.new_($I$(4));
-this.undoMenuItem=Clazz.new_($I$(4));
-this.redoMenuItem=Clazz.new_($I$(4));
-this.conservationMenuItem=Clazz.new_($I$(5));
-this.noColourmenuItem=Clazz.new_($I$(4));
-this.wrapMenuItem=Clazz.new_($I$(5));
-this.renderGapsMenuItem=Clazz.new_($I$(5));
-this.findMenuItem=Clazz.new_($I$(4));
-this.abovePIDThreshold=Clazz.new_($I$(5));
-this.nucleotideColour=Clazz.new_($I$(4));
-this.deleteGroups=Clazz.new_($I$(4));
-this.grpsFromSelection=Clazz.new_($I$(4));
-this.createGroup=Clazz.new_($I$(4));
-this.unGroup=Clazz.new_($I$(4));
-this.$delete=Clazz.new_($I$(4));
-this.copy=Clazz.new_($I$(4));
-this.cut=Clazz.new_($I$(4));
-this.pasteMenu=Clazz.new_($I$(2));
-this.pasteNew=Clazz.new_($I$(4));
-this.pasteThis=Clazz.new_($I$(4));
-this.applyToAllGroups=Clazz.new_($I$(5));
-this.$font=Clazz.new_($I$(4));
-this.scaleAbove=Clazz.new_($I$(5));
-this.scaleLeft=Clazz.new_($I$(5));
-this.scaleRight=Clazz.new_($I$(5));
-this.modifyPID=Clazz.new_($I$(4));
-this.modifyConservation=Clazz.new_($I$(4));
+this.alignFrameMenuBar=Clazz.new_($I$(1,1));
+this.fileMenu=Clazz.new_([$I$(3).getString$S("action.file")],$I$(2,1).c$$S);
+this.loadApplication=Clazz.new_([$I$(3).getString$S("label.view_full_application")],$I$(4,1).c$$S);
+this.loadTree=Clazz.new_([$I$(3).getString$S("label.load_associated_tree")],$I$(4,1).c$$S);
+this.loadAnnotations=Clazz.new_([$I$(3).getString$S("label.load_features_annotations")],$I$(4,1).c$$S);
+this.outputFeatures=Clazz.new_([$I$(3).getString$S("label.export_features")],$I$(4,1).c$$S);
+this.outputAnnotations=Clazz.new_([$I$(3).getString$S("label.export_annotations")],$I$(4,1).c$$S);
+this.closeMenuItem=Clazz.new_([$I$(3).getString$S("action.close")],$I$(4,1).c$$S);
+this.selectAllSequenceMenuItem=Clazz.new_([$I$(3).getString$S("action.select_all")],$I$(4,1).c$$S);
+this.deselectAllSequenceMenuItem=Clazz.new_([$I$(3).getString$S("action.deselect_all")],$I$(4,1).c$$S);
+this.invertSequenceMenuItem=Clazz.new_([$I$(3).getString$S("action.invert_selection")],$I$(4,1).c$$S);
+this.remove2LeftMenuItem=Clazz.new_($I$(4,1));
+this.remove2RightMenuItem=Clazz.new_($I$(4,1));
+this.removeGappedColumnMenuItem=Clazz.new_($I$(4,1));
+this.removeAllGapsMenuItem=Clazz.new_($I$(4,1));
+this.viewBoxesMenuItem=Clazz.new_($I$(5,1));
+this.viewTextMenuItem=Clazz.new_($I$(5,1));
+this.sortPairwiseMenuItem=Clazz.new_($I$(4,1));
+this.sortIDMenuItem=Clazz.new_($I$(4,1));
+this.sortLengthMenuItem=Clazz.new_($I$(4,1));
+this.sortGroupMenuItem=Clazz.new_($I$(4,1));
+this.removeRedundancyMenuItem=Clazz.new_($I$(4,1));
+this.pairwiseAlignmentMenuItem=Clazz.new_($I$(4,1));
+this.PCAMenuItem=Clazz.new_($I$(4,1));
+this.averageDistanceTreeMenuItem=Clazz.new_($I$(4,1));
+this.neighbourTreeMenuItem=Clazz.new_($I$(4,1));
+this.borderLayout1=Clazz.new_($I$(6,1));
+this.statusBar=Clazz.new_($I$(7,1));
+this.clustalColour=Clazz.new_($I$(4,1));
+this.zappoColour=Clazz.new_($I$(4,1));
+this.taylorColour=Clazz.new_($I$(4,1));
+this.hydrophobicityColour=Clazz.new_($I$(4,1));
+this.helixColour=Clazz.new_($I$(4,1));
+this.strandColour=Clazz.new_($I$(4,1));
+this.turnColour=Clazz.new_($I$(4,1));
+this.buriedColour=Clazz.new_($I$(4,1));
+this.purinePyrimidineColour=Clazz.new_($I$(4,1));
+this.RNAHelixColour=Clazz.new_($I$(4,1));
+this.userDefinedColour=Clazz.new_($I$(4,1));
+this.PIDColour=Clazz.new_($I$(4,1));
+this.BLOSUM62Colour=Clazz.new_($I$(4,1));
+this.tcoffeeColour=Clazz.new_($I$(4,1));
+this.njTreeBlosumMenuItem=Clazz.new_($I$(4,1));
+this.avDistanceTreeBlosumMenuItem=Clazz.new_($I$(4,1));
+this.annotationPanelMenuItem=Clazz.new_($I$(5,1));
+this.colourTextMenuItem=Clazz.new_($I$(5,1));
+this.displayNonconservedMenuItem=Clazz.new_($I$(5,1));
+this.alProperties=Clazz.new_([$I$(3).getString$S("label.alignment_props")],$I$(4,1).c$$S);
+this.overviewMenuItem=Clazz.new_($I$(4,1));
+this.undoMenuItem=Clazz.new_($I$(4,1));
+this.redoMenuItem=Clazz.new_($I$(4,1));
+this.conservationMenuItem=Clazz.new_($I$(5,1));
+this.noColourmenuItem=Clazz.new_($I$(4,1));
+this.wrapMenuItem=Clazz.new_($I$(5,1));
+this.renderGapsMenuItem=Clazz.new_($I$(5,1));
+this.findMenuItem=Clazz.new_($I$(4,1));
+this.abovePIDThreshold=Clazz.new_($I$(5,1));
+this.nucleotideColour=Clazz.new_($I$(4,1));
+this.deleteGroups=Clazz.new_($I$(4,1));
+this.grpsFromSelection=Clazz.new_($I$(4,1));
+this.createGroup=Clazz.new_($I$(4,1));
+this.unGroup=Clazz.new_($I$(4,1));
+this.$delete=Clazz.new_($I$(4,1));
+this.copy=Clazz.new_($I$(4,1));
+this.cut=Clazz.new_($I$(4,1));
+this.pasteMenu=Clazz.new_($I$(2,1));
+this.pasteNew=Clazz.new_($I$(4,1));
+this.pasteThis=Clazz.new_($I$(4,1));
+this.applyToAllGroups=Clazz.new_($I$(5,1));
+this.$font=Clazz.new_($I$(4,1));
+this.scaleAbove=Clazz.new_($I$(5,1));
+this.scaleLeft=Clazz.new_($I$(5,1));
+this.scaleRight=Clazz.new_($I$(5,1));
+this.modifyPID=Clazz.new_($I$(4,1));
+this.modifyConservation=Clazz.new_($I$(4,1));
 this.autoCalculate=null;
-this.sortByTree=Clazz.new_($I$(5).c$$S$Z,["Sort Alignment With New Tree", true]);
-this.sortByTreeMenu=Clazz.new_($I$(2));
-this.inputText=Clazz.new_($I$(4));
-this.documentation=Clazz.new_($I$(4));
-this.about=Clazz.new_($I$(4));
-this.seqLimits=Clazz.new_($I$(5));
-this.centreColumnLabelFlag=Clazz.new_($I$(5));
-this.followMouseOverFlag=Clazz.new_($I$(5));
-this.showSequenceLogo=Clazz.new_($I$(5));
-this.applyAutoAnnotationSettings=Clazz.new_($I$(5));
-this.showConsensusHistogram=Clazz.new_($I$(5));
-this.showGroupConsensus=Clazz.new_($I$(5));
-this.showGroupConservation=Clazz.new_($I$(5));
-this.normSequenceLogo=Clazz.new_($I$(5));
-this.featureSettings=Clazz.new_($I$(4));
-this.sequenceFeatures=Clazz.new_($I$(5));
-this.annotationColour=Clazz.new_($I$(4));
-this.annotationColumnSelection=Clazz.new_($I$(4));
-this.invertColSel=Clazz.new_($I$(4));
-this.showColumns=Clazz.new_($I$(4));
-this.showSeqs=Clazz.new_($I$(4));
-this.hideColumns=Clazz.new_($I$(4));
-this.hideSequences=Clazz.new_($I$(4));
-this.hideAllButSelection=Clazz.new_($I$(4));
-this.hideAllSelection=Clazz.new_($I$(4));
-this.showAllHidden=Clazz.new_($I$(4));
-this.newView=Clazz.new_($I$(4));
-}, 1);
+this.sortByTree=Clazz.new_($I$(5,1).c$$S$Z,["Sort Alignment With New Tree", true]);
+this.sortByTreeMenu=Clazz.new_($I$(2,1));
+this.inputText=Clazz.new_($I$(4,1));
+this.documentation=Clazz.new_($I$(4,1));
+this.about=Clazz.new_($I$(4,1));
+this.seqLimits=Clazz.new_($I$(5,1));
+this.centreColumnLabelFlag=Clazz.new_($I$(5,1));
+this.followMouseOverFlag=Clazz.new_($I$(5,1));
+this.showSequenceLogo=Clazz.new_($I$(5,1));
+this.applyAutoAnnotationSettings=Clazz.new_($I$(5,1));
+this.showConsensusHistogram=Clazz.new_($I$(5,1));
+this.showGroupConsensus=Clazz.new_($I$(5,1));
+this.showGroupConservation=Clazz.new_($I$(5,1));
+this.normSequenceLogo=Clazz.new_($I$(5,1));
+this.featureSettings=Clazz.new_($I$(4,1));
+this.sequenceFeatures=Clazz.new_($I$(5,1));
+this.annotationColour=Clazz.new_($I$(4,1));
+this.annotationColumnSelection=Clazz.new_($I$(4,1));
+this.invertColSel=Clazz.new_($I$(4,1));
+this.showColumns=Clazz.new_($I$(4,1));
+this.showSeqs=Clazz.new_($I$(4,1));
+this.hideColumns=Clazz.new_($I$(4,1));
+this.hideSequences=Clazz.new_($I$(4,1));
+this.hideAllButSelection=Clazz.new_($I$(4,1));
+this.hideAllSelection=Clazz.new_($I$(4,1));
+this.showAllHidden=Clazz.new_($I$(4,1));
+this.newView=Clazz.new_($I$(4,1));
+this.fs_bounds=null;
+},1);
+
+C$.$fields$=[['Z',['showAutoCalculatedAbove'],'I',['frameWidth','frameHeight'],'S',['jalviewServletURL'],'O',['avc','jalview.api.AlignViewControllerI','alignPanel','jalview.appletgui.AlignmentPanel','viewport','jalview.appletgui.AlignViewport','annotationSortOrder','jalview.analysis.AnnotationSorter.SequenceAnnotationOrder','alignFrameMenuBar','java.awt.MenuBar','fileMenu','java.awt.Menu','loadApplication','java.awt.MenuItem','+loadTree','+loadAnnotations','+outputFeatures','+outputAnnotations','+closeMenuItem','+selectAllSequenceMenuItem','+deselectAllSequenceMenuItem','+invertSequenceMenuItem','+remove2LeftMenuItem','+remove2RightMenuItem','+removeGappedColumnMenuItem','+removeAllGapsMenuItem','viewBoxesMenuItem','java.awt.CheckboxMenuItem','+viewTextMenuItem','sortPairwiseMenuItem','java.awt.MenuItem','+sortIDMenuItem','+sortLengthMenuItem','+sortGroupMenuItem','+removeRedundancyMenuItem','+pairwiseAlignmentMenuItem','+PCAMenuItem','+averageDistanceTreeMenuItem','+neighbourTreeMenuItem','borderLayout1','java.awt.BorderLayout','statusBar','java.awt.Label','clustalColour','java.awt.MenuItem','+zappoColour','+taylorColour','+hydrophobicityColour','+helixColour','+strandColour','+turnColour','+buriedColour','+purinePyrimidineColour','+RNAHelixColour','+userDefinedColour','+PIDColour','+BLOSUM62Colour','+tcoffeeColour','+njTreeBlosumMenuItem','+avDistanceTreeBlosumMenuItem','annotationPanelMenuItem','java.awt.CheckboxMenuItem','+colourTextMenuItem','+displayNonconservedMenuItem','alProperties','java.awt.MenuItem','+overviewMenuItem','+undoMenuItem','+redoMenuItem','conservationMenuItem','java.awt.CheckboxMenuItem','noColourmenuItem','java.awt.MenuItem','wrapMenuItem','java.awt.CheckboxMenuItem','+renderGapsMenuItem','findMenuItem','java.awt.MenuItem','abovePIDThreshold','java.awt.CheckboxMenuItem','nucleotideColour','java.awt.MenuItem','+deleteGroups','+grpsFromSelection','+createGroup','+unGroup','+$delete','+copy','+cut','pasteMenu','java.awt.Menu','pasteNew','java.awt.MenuItem','+pasteThis','applyToAllGroups','java.awt.CheckboxMenuItem','$font','java.awt.MenuItem','scaleAbove','java.awt.CheckboxMenuItem','+scaleLeft','+scaleRight','modifyPID','java.awt.MenuItem','+modifyConservation','autoCalculate','java.awt.CheckboxMenuItem','+sortByTree','sortByTreeMenu','java.awt.Menu','inputText','java.awt.MenuItem','+documentation','+about','seqLimits','java.awt.CheckboxMenuItem','+centreColumnLabelFlag','+followMouseOverFlag','+showSequenceLogo','+applyAutoAnnotationSettings','+showConsensusHistogram','+showGroupConsensus','+showGroupConservation','+normSequenceLogo','featureSettings','java.awt.MenuItem','sequenceFeatures','java.awt.CheckboxMenuItem','annotationColour','java.awt.MenuItem','+annotationColumnSelection','+invertColSel','+showColumns','+showSeqs','+hideColumns','+hideSequences','+hideAllButSelection','+hideAllSelection','+showAllHidden','+newView','showAlignmentAnnotations','java.awt.CheckboxMenuItem','+showSequenceAnnotations','+sortAnnBySequence','+sortAnnByLabel','+showAutoFirst','+showAutoLast','splitFrame','jalview.appletgui.SplitFrame','fs_bounds','java.awt.Rectangle']]
+,['O',['copiedSequences','StringBuffer','copiedHiddenColumns','jalview.datamodel.HiddenColumns']]]
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_bin_JalviewLite$S$Z', function (al, applet, title, embedded) {
 C$.c$$jalview_datamodel_AlignmentI$jalview_bin_JalviewLite$S$Z$Z.apply(this, [al, applet, title, embedded, true]);
@@ -249,7 +128,7 @@ C$.c$$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA$jalview_datamode
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceIA$jalview_datamodel_HiddenColumns$jalview_bin_JalviewLite$S$Z$Z', function (al, hiddenSeqs, hidden, applet, title, embedded, addToDisplay) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (applet != null ) {
 this.jalviewServletURL=applet.getParameter$S("APPLICATION_URL");
 }try {
@@ -278,14 +157,14 @@ if (Clazz.exceptionOf(ex,"Exception")){
 throw ex;
 }
 }
-}this.viewport=Clazz.new_($I$(8).c$$jalview_datamodel_AlignmentI$jalview_bin_JalviewLite,[al, applet]);
+}this.viewport=Clazz.new_($I$(8,1).c$$jalview_datamodel_AlignmentI$jalview_bin_JalviewLite,[al, applet]);
 if (hiddenSeqs != null  && hiddenSeqs.length > 0 ) {
 this.viewport.hideSequence$jalview_datamodel_SequenceIA(hiddenSeqs);
 }if (hidden != null ) {
 this.viewport.getAlignment$().setHiddenColumns$jalview_datamodel_HiddenColumns(hidden);
 }this.viewport.setScaleAboveWrapped$Z(this.scaleAbove.getState$());
-this.alignPanel=Clazz.new_($I$(9).c$$jalview_appletgui_AlignFrame$jalview_appletgui_AlignViewport,[this, this.viewport]);
-this.avc=Clazz.new_($I$(10).c$$jalview_api_AlignViewControllerGuiI$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, this.viewport, this.alignPanel]);
+this.alignPanel=Clazz.new_($I$(9,1).c$$jalview_appletgui_AlignFrame$jalview_appletgui_AlignViewport,[this, this.viewport]);
+this.avc=Clazz.new_($I$(10,1).c$$jalview_api_AlignViewControllerGuiI$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel,[this, this.viewport, this.alignPanel]);
 this.viewport.updateConservation$jalview_api_AlignmentViewPanel(this.alignPanel);
 this.viewport.updateConsensus$jalview_api_AlignmentViewPanel(this.alignPanel);
 this.displayNonconservedMenuItem.setState$Z(this.viewport.getShowUnconserved$());
@@ -377,7 +256,7 @@ var featuresFile=false;
 try {
 var colours=this.alignPanel.seqPanel.seqCanvas.getFeatureRenderer$().getFeatureColours$();
 var relaxedIdMatching=this.viewport.applet.getDefaultParameter$S$Z("relaxedidmatch", false);
-featuresFile=Clazz.new_($I$(11).c$$O$jalview_io_DataSourceType,[file, sourceType]).parse$jalview_datamodel_AlignmentI$java_util_Map$Z$Z(this.viewport.getAlignment$(), colours, true, relaxedIdMatching);
+featuresFile=Clazz.new_($I$(11,1).c$$O$jalview_io_DataSourceType,[file, sourceType]).parse$jalview_datamodel_AlignmentI$java_util_Map$Z$Z(this.viewport.getAlignment$(), colours, true, relaxedIdMatching);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 ex.printStackTrace$();
@@ -484,7 +363,7 @@ this.alignPanel.seqPanel.setSelectionAreaAtCursor$Z(false);
 }break;
 case 113:
 this.viewport.cursorMode=!this.viewport.cursorMode;
-this.setStatus$S($I$(3).formatMessage$S$SA("label.keyboard_editing_mode", Clazz.array(String, -1, [(this.viewport.cursorMode ? "on" : "off")])));
+this.setStatus$S($I$(3,"formatMessage$S$SA",["label.keyboard_editing_mode", Clazz.array(String, -1, [(this.viewport.cursorMode ? "on" : "off")])]));
 if (this.viewport.cursorMode) {
 this.alignPanel.seqPanel.seqCanvas.cursorX=ranges.getStartRes$();
 this.alignPanel.seqPanel.seqCanvas.cursorY=ranges.getStartSeq$();
@@ -588,7 +467,7 @@ Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent', function (evt) {
 Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent', function (evt) {
 });
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (evt) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (evt) {
 var source=evt.getSource$();
 if (source === this.displayNonconservedMenuItem ) {
 this.displayNonconservedMenuItem_actionPerformed$();
@@ -705,7 +584,7 @@ this.viewport.centreColumnLabels=this.centreColumnLabelFlag.getState$();
 this.alignPanel.annotationPanel.repaint$();
 }, p$1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 this.viewport.applet.currentAlignFrame=this;
 var source=evt.getSource$();
 if (source === this.inputText ) {
@@ -775,7 +654,7 @@ this.removeAllGapsMenuItem_actionPerformed$();
 } else if (source === this.findMenuItem ) {
 this.findMenuItem_actionPerformed$();
 } else if (source === this.$font ) {
-Clazz.new_($I$(13).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
+Clazz.new_($I$(13,1).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
 } else if (source === this.newView ) {
 this.newView$S(null);
 } else if (source === this.showColumns ) {
@@ -821,57 +700,57 @@ this.showConsensusHistogram_actionPerformed$();
 } else if (source === this.applyAutoAnnotationSettings ) {
 this.applyAutoAnnotationSettings_actionPerformed$();
 } else if (source === this.featureSettings ) {
-Clazz.new_($I$(14).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
+this.showFeatureSettingsUI$();
 } else if (source === this.alProperties ) {
-var contents=Clazz.new_($I$(15).c$$jalview_datamodel_AlignmentI,[this.viewport.getAlignment$()]).formatAsString$();
-var cap=Clazz.new_($I$(16).c$$Z$jalview_appletgui_AlignFrame,[false, this]);
+var contents=Clazz.new_([this.viewport.getAlignment$()],$I$(14,1).c$$jalview_datamodel_AlignmentI).formatAsString$();
+var cap=Clazz.new_($I$(15,1).c$$Z$jalview_appletgui_AlignFrame,[false, this]);
 cap.setText$S(contents.toString());
-var frame=Clazz.new_($I$(17));
+var frame=Clazz.new_($I$(16,1));
 frame.add$java_awt_Component(cap);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).formatMessage$S$SA("label.alignment_properties", Clazz.array(String, -1, [this.getTitle$()])), 400, 250);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3,"formatMessage$S$SA",["label.alignment_properties", Clazz.array(String, -1, [this.getTitle$()])]), 400, 250]);
 } else if (source === this.overviewMenuItem ) {
 this.overviewMenuItem_actionPerformed$();
 } else if (source === this.noColourmenuItem ) {
 this.changeColour$jalview_schemes_ColourSchemeI(null);
 } else if (source === this.clustalColour ) {
 this.abovePIDThreshold.setState$Z(false);
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(19).c$$jalview_datamodel_AnnotatedCollectionI$java_util_Map,[this.viewport.getAlignment$(), null]));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_([this.viewport.getAlignment$(), null],$I$(18,1).c$$jalview_datamodel_AnnotatedCollectionI$java_util_Map));
 } else if (source === this.zappoColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(20)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(19,1)));
 } else if (source === this.taylorColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(21)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(20,1)));
 } else if (source === this.hydrophobicityColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(22)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(21,1)));
 } else if (source === this.helixColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(23)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(22,1)));
 } else if (source === this.strandColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(24)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(23,1)));
 } else if (source === this.turnColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(25)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(24,1)));
 } else if (source === this.buriedColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(26)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(25,1)));
 } else if (source === this.nucleotideColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(27)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(26,1)));
 } else if (source === this.purinePyrimidineColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(28)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(27,1)));
 } else if (source === this.RNAHelixColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(29).c$$jalview_datamodel_AnnotatedCollectionI,[this.viewport.getAlignment$()]));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_([this.viewport.getAlignment$()],$I$(28,1).c$$jalview_datamodel_AnnotatedCollectionI));
 } else if (source === this.modifyPID ) {
 this.modifyPID_actionPerformed$();
 } else if (source === this.modifyConservation ) {
 this.modifyConservation_actionPerformed$();
 } else if (source === this.userDefinedColour ) {
-Clazz.new_($I$(30).c$$jalview_appletgui_AlignmentPanel$jalview_datamodel_SequenceGroup,[this.alignPanel, null]);
+Clazz.new_($I$(29,1).c$$jalview_appletgui_AlignmentPanel$jalview_datamodel_SequenceGroup,[this.alignPanel, null]);
 } else if (source === this.PIDColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(31)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(30,1)));
 } else if (source === this.BLOSUM62Colour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(32)));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(31,1)));
 } else if (source === this.tcoffeeColour ) {
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(33).c$$jalview_datamodel_AnnotatedCollectionI,[this.alignPanel.getAlignment$()]));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_([this.alignPanel.getAlignment$()],$I$(32,1).c$$jalview_datamodel_AnnotatedCollectionI));
 } else if (source === this.annotationColour ) {
-Clazz.new_($I$(34).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[this.viewport, this.alignPanel]);
+Clazz.new_($I$(33,1).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[this.viewport, this.alignPanel]);
 } else if (source === this.annotationColumnSelection ) {
-Clazz.new_($I$(35).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[this.viewport, this.alignPanel]);
+Clazz.new_($I$(34,1).c$$jalview_appletgui_AlignViewport$jalview_appletgui_AlignmentPanel,[this.viewport, this.alignPanel]);
 } else if (source === this.sortPairwiseMenuItem ) {
 this.sortPairwiseMenuItem_actionPerformed$();
 } else if (source === this.sortIDMenuItem ) {
@@ -901,37 +780,37 @@ this.about_actionPerformed$();
 }});
 
 Clazz.newMeth(C$, 'inputText_actionPerformed$', function () {
-var cap=Clazz.new_($I$(16).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
-var frame=Clazz.new_($I$(17));
+var cap=Clazz.new_($I$(15,1).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
+var frame=Clazz.new_($I$(16,1));
 frame.add$java_awt_Component(cap);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).getString$S("label.input_cut_paste"), 500, 500);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3).getString$S("label.input_cut_paste"), 500, 500]);
 });
 
 Clazz.newMeth(C$, 'outputText_actionPerformed$java_awt_event_ActionEvent', function (e) {
-var cap=Clazz.new_($I$(16).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
-var frame=Clazz.new_($I$(17));
+var cap=Clazz.new_($I$(15,1).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
+var frame=Clazz.new_($I$(16,1));
 frame.add$java_awt_Component(cap);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).formatMessage$S$OA("label.alignment_output_command", Clazz.array(java.lang.Object, -1, [e.getActionCommand$()])), 600, 500);
-var fileFormat=$I$(36).getInstance$().forName$S(e.getActionCommand$());
-cap.setText$S(Clazz.new_($I$(37).c$$jalview_api_AlignmentViewPanel,[this.alignPanel]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$Z(fileFormat, this.viewport.getAlignment$(), this.viewport.getShowJVSuffix$()));
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3,"formatMessage$S$OA",["label.alignment_output_command", Clazz.array(java.lang.Object, -1, [e.getActionCommand$()])]), 600, 500]);
+var fileFormat=$I$(35).getInstance$().forName$S(e.getActionCommand$());
+cap.setText$S(Clazz.new_($I$(36,1).c$$jalview_api_AlignmentViewPanel,[this.alignPanel]).formatSequences$jalview_io_FileFormatI$jalview_datamodel_AlignmentI$Z(fileFormat, this.viewport.getAlignment$(), this.viewport.getShowJVSuffix$()));
 });
 
 Clazz.newMeth(C$, 'loadAnnotations$', function () {
-var cap=Clazz.new_($I$(16).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
+var cap=Clazz.new_($I$(15,1).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
 cap.setText$S($I$(3).getString$S("label.paste_features_annotations_Tcoffee_here"));
 cap.setAnnotationImport$();
-var frame=Clazz.new_($I$(17));
+var frame=Clazz.new_($I$(16,1));
 frame.add$java_awt_Component(cap);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).getString$S("action.paste_annotations"), 400, 300);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3).getString$S("action.paste_annotations"), 400, 300]);
 });
 
 Clazz.newMeth(C$, 'outputAnnotations$Z', function (displayTextbox) {
-var annotation=Clazz.new_($I$(38)).printAnnotationsForView$jalview_api_AlignViewportI(this.viewport);
+var annotation=Clazz.new_($I$(37,1)).printAnnotationsForView$jalview_api_AlignViewportI(this.viewport);
 if (displayTextbox) {
-var cap=Clazz.new_($I$(16).c$$Z$jalview_appletgui_AlignFrame,[false, this]);
-var frame=Clazz.new_($I$(17));
+var cap=Clazz.new_($I$(15,1).c$$Z$jalview_appletgui_AlignFrame,[false, this]);
+var frame=Clazz.new_($I$(16,1));
 frame.add$java_awt_Component(cap);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).getString$S("label.annotations"), 600, 500);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3).getString$S("label.annotations"), 600, 500]);
 cap.setText$S(annotation);
 }return annotation;
 });
@@ -950,22 +829,22 @@ return this.alignPanel.getFeatureRenderer$().getDisplayedFeatureGroups$();
 
 Clazz.newMeth(C$, 'outputFeatures$Z$S', function (displayTextbox, format) {
 var features;
-var formatter=Clazz.new_($I$(11));
+var formatter=Clazz.new_($I$(11,1));
 if (format.equalsIgnoreCase$S("Jalview")) {
-features=formatter.printJalviewFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z(this.viewport.getAlignment$().getSequencesArray$(), this.alignPanel.getFeatureRenderer$(), true);
+features=formatter.printJalviewFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z$Z(this.viewport.getAlignment$().getSequencesArray$(), this.alignPanel.getFeatureRenderer$(), true, false);
 } else {
-features=formatter.printGffFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z(this.viewport.getAlignment$().getSequencesArray$(), this.alignPanel.getFeatureRenderer$(), true);
+features=formatter.printGffFormat$jalview_datamodel_SequenceIA$jalview_api_FeatureRenderer$Z$Z(this.viewport.getAlignment$().getSequencesArray$(), this.alignPanel.getFeatureRenderer$(), true, false);
 }if (displayTextbox) {
 var frimport=false;
 if (features == null  || features.equals$O("No Features Visible") ) {
 features="# No features visible - paste some and import them here.";
 frimport=true;
-}var cap=Clazz.new_($I$(16).c$$Z$jalview_appletgui_AlignFrame,[frimport, this]);
+}var cap=Clazz.new_($I$(15,1).c$$Z$jalview_appletgui_AlignFrame,[frimport, this]);
 if (frimport) {
 cap.setAnnotationImport$();
-}var frame=Clazz.new_($I$(17));
+}var frame=Clazz.new_($I$(16,1));
 frame.add$java_awt_Component(cap);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).getString$S("label.features"), 600, 500);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3).getString$S("label.features"), 600, 500]);
 cap.setText$S(features);
 } else {
 if (features == null ) {
@@ -974,7 +853,7 @@ features="";
 });
 
 Clazz.newMeth(C$, 'launchFullApplication$', function () {
-var url=Clazz.new_($I$(39).c$$S,[this.jalviewServletURL]);
+var url=Clazz.new_($I$(38,1).c$$S,[this.jalviewServletURL]);
 var firstSep=url.lastIndexOf$S("?") > url.lastIndexOf$S("/") ? "&" : "?";
 url.append$S(firstSep);
 url.append$S("open=" + this.appendProtocol$S(this.viewport.applet.getParameter$S("file")));
@@ -999,7 +878,7 @@ url.append$S("&tree=" + this.appendProtocol$S(this.viewport.applet.getParameter$
 });
 
 Clazz.newMeth(C$, 'removeWhiteSpace$S', function (colour) {
-var sb=Clazz.new_($I$(39));
+var sb=Clazz.new_($I$(38,1));
 for (var i=0; i < colour.length$(); i++) {
 if (Character.isWhitespace$C(colour.charAt$I(i))) {
 sb.append$S("%20");
@@ -1011,25 +890,34 @@ return sb.toString();
 
 Clazz.newMeth(C$, 'appendProtocol$S', function (url) {
 try {
-Clazz.new_($I$(40).c$$S,[url]);
-url=$I$(41).encode$S(url);
-} catch (ex) {
-if (Clazz.exceptionOf(ex,"java.net.MalformedURLException")){
+Clazz.new_($I$(39,1).c$$S,[url]);
+url=$I$(40).encode$S$S(url, "UTF-8");
+} catch (e$$) {
+if (Clazz.exceptionOf(e$$,"java.net.MalformedURLException")){
+var ex = e$$;
+{
 url=this.viewport.applet.getCodeBase$() + url;
+}
+} else if (Clazz.exceptionOf(e$$,"java.io.UnsupportedEncodingException")){
+var ex = e$$;
+{
+System.err.println$S("WARNING = IMPLEMENTATION ERROR - UNSUPPORTED ENCODING EXCEPTION FOR " + url);
+ex.printStackTrace$();
+}
 } else {
-throw ex;
+throw e$$;
 }
 }
 return url;
 });
 
 Clazz.newMeth(C$, 'closeMenuItem_actionPerformed$', function () {
-$I$(42).RemoveComponent$java_awt_Component(this.alignPanel);
+$I$(41).RemoveComponent$java_awt_Component(this.alignPanel);
 if (this.alignPanel.seqPanel != null  && this.alignPanel.seqPanel.seqCanvas != null  ) {
-$I$(42).RemoveComponent$java_awt_Component(this.alignPanel.seqPanel.seqCanvas);
+$I$(41).RemoveComponent$java_awt_Component(this.alignPanel.seqPanel.seqCanvas);
 }if (this.alignPanel.idPanel != null  && this.alignPanel.idPanel.idCanvas != null  ) {
-$I$(42).RemoveComponent$java_awt_Component(this.alignPanel.idPanel.idCanvas);
-}if ($I$(42).components.size$() == 0 && this.viewport.applet == null  ) {
+$I$(41).RemoveComponent$java_awt_Component(this.alignPanel.idPanel.idCanvas);
+}if ($I$(41).components.size$() == 0 && this.viewport.applet == null  ) {
 System.exit$I(0);
 }this.viewport=null;
 if (this.alignPanel != null  && this.alignPanel.overviewPanel != null  ) {
@@ -1042,14 +930,14 @@ Clazz.newMeth(C$, 'updateEditMenuBar$', function () {
 if (this.viewport.getHistoryList$().size$() > 0) {
 this.undoMenuItem.setEnabled$Z(true);
 var command=this.viewport.getHistoryList$().peek$();
-this.undoMenuItem.setLabel$S($I$(3).formatMessage$S$OA("label.undo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])));
+this.undoMenuItem.setLabel$S($I$(3,"formatMessage$S$OA",["label.undo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])]));
 } else {
 this.undoMenuItem.setEnabled$Z(false);
 this.undoMenuItem.setLabel$S($I$(3).getString$S("action.undo"));
 }if (this.viewport.getRedoList$().size$() > 0) {
 this.redoMenuItem.setEnabled$Z(true);
 var command=this.viewport.getRedoList$().peek$();
-this.redoMenuItem.setLabel$S($I$(3).formatMessage$S$OA("label.redo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])));
+this.redoMenuItem.setLabel$S($I$(3,"formatMessage$S$OA",["label.redo_command", Clazz.array(java.lang.Object, -1, [command.getDescription$()])]));
 } else {
 this.redoMenuItem.setEnabled$Z(false);
 this.redoMenuItem.setLabel$S($I$(3).getString$S("action.redo"));
@@ -1097,7 +985,7 @@ var al=null;
 if (Clazz.instanceOf(command, "jalview.commands.EditCommand")) {
 var editCommand=command;
 al=editCommand.getAlignment$();
-var comps=$I$(42).components.get$O(this.viewport.getSequenceSetId$());
+var comps=$I$(41).components.get$O(this.viewport.getSequenceSetId$());
 for (var i=0; i < comps.size$(); i++) {
 if (Clazz.instanceOf(comps.elementAt$I(i), "jalview.appletgui.AlignmentPanel")) {
 if (al === (comps.elementAt$I(i)).av.getAlignment$() ) {
@@ -1106,7 +994,7 @@ break;
 }}}
 }if (originalSource == null ) {
 if (al != null ) {
-$I$(42).validateSequences$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentI(al, this.viewport.getAlignment$());
+$I$(41,"validateSequences$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentI",[al, this.viewport.getAlignment$()]);
 }originalSource=this.viewport;
 }return originalSource;
 });
@@ -1119,34 +1007,34 @@ return;
 this.alignPanel.paintAlignment$Z$Z(true, false);
 var complement=this.viewport.getCodingComplement$();
 if (complement != null ) {
-var mappedSelection=$I$(43).mapSequenceGroup$jalview_datamodel_SequenceGroup$jalview_api_AlignViewportI$jalview_api_AlignViewportI(sg, this.viewport, complement);
+var mappedSelection=$I$(42).mapSequenceGroup$jalview_datamodel_SequenceGroup$jalview_api_AlignViewportI$jalview_api_AlignViewportI(sg, this.viewport, complement);
 complement.getAlignment$().moveSelectedSequencesByOne$jalview_datamodel_SequenceGroup$java_util_Map$Z(mappedSelection, up ? null : complement.getHiddenRepSequences$(), up);
 this.getSplitFrame$().getComplement$jalview_appletgui_AlignFrame(this).alignPanel.paintAlignment$Z$Z(true, false);
 }});
 
 Clazz.newMeth(C$, 'slideSequences$Z$I', function (right, size) {
-var sg=Clazz.new_($I$(44));
+var sg=Clazz.new_($I$(43,1));
 if (this.viewport.cursorMode) {
-sg.add$TE(this.viewport.getAlignment$().getSequenceAt$I(this.alignPanel.seqPanel.seqCanvas.cursorY));
+sg.add$O(this.viewport.getAlignment$().getSequenceAt$I(this.alignPanel.seqPanel.seqCanvas.cursorY));
 } else if (this.viewport.getSelectionGroup$() != null  && this.viewport.getSelectionGroup$().getSize$() != this.viewport.getAlignment$().getHeight$() ) {
 sg=this.viewport.getSelectionGroup$().getSequences$java_util_Map(this.viewport.getHiddenRepSequences$());
 }if (sg.size$() < 1) {
 return;
-}var invertGroup=Clazz.new_($I$(44));
+}var invertGroup=Clazz.new_($I$(43,1));
 for (var i=0; i < this.viewport.getAlignment$().getHeight$(); i++) {
 if (!sg.contains$O(this.viewport.getAlignment$().getSequenceAt$I(i))) {
-invertGroup.addElement$TE(this.viewport.getAlignment$().getSequenceAt$I(i));
+invertGroup.addElement$O(this.viewport.getAlignment$().getSequenceAt$I(i));
 }}
-var seqs1=sg.toArray$TTA(Clazz.array($I$(45), [sg.size$()]));
-var seqs2=invertGroup.toArray$TTA(Clazz.array($I$(45), [invertGroup.size$()]));
+var seqs1=sg.toArray$OA(Clazz.array($I$(44), [sg.size$()]));
+var seqs2=invertGroup.toArray$OA(Clazz.array($I$(44), [invertGroup.size$()]));
 for (var i=0; i < invertGroup.size$(); i++) {
 seqs2[i]=invertGroup.elementAt$I(i);
 }
 var ssc;
 if (right) {
-ssc=Clazz.new_($I$(46).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C,["Slide Sequences", seqs2, seqs1, size, this.viewport.getGapCharacter$()]);
+ssc=Clazz.new_(["Slide Sequences", seqs2, seqs1, size, this.viewport.getGapCharacter$()],$I$(45,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C);
 } else {
-ssc=Clazz.new_($I$(46).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C,["Slide Sequences", seqs1, seqs2, size, this.viewport.getGapCharacter$()]);
+ssc=Clazz.new_(["Slide Sequences", seqs1, seqs2, size, this.viewport.getGapCharacter$()],$I$(45,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_SequenceIA$I$C);
 }var groupAdjustment=0;
 if (ssc.getGapsInsertedBegin$() && right ) {
 if (this.viewport.cursorMode) {
@@ -1174,12 +1062,12 @@ Clazz.newMeth(C$, 'copy_actionPerformed$', function () {
 if (this.viewport.getSelectionGroup$() == null ) {
 return;
 }var sg=this.viewport.getSelectionGroup$();
-C$.copiedSequences=Clazz.new_($I$(39));
-var orderedSeqs=Clazz.new_($I$(47));
+C$.copiedSequences=Clazz.new_($I$(38,1));
+var orderedSeqs=Clazz.new_($I$(46,1));
 for (var i=0; i < sg.getSize$(); i++) {
 var seq=sg.getSequenceAt$I(i);
 var index=this.viewport.getAlignment$().findIndex$jalview_datamodel_SequenceI(seq);
-orderedSeqs.put$TK$TV(new Integer(index), seq);
+orderedSeqs.put$O$O(new Integer(index), seq);
 }
 var index=0;
 var startRes;
@@ -1188,7 +1076,7 @@ var ch;
 if (this.viewport.hasHiddenColumns$() && this.viewport.getSelectionGroup$() != null  ) {
 var hiddenOffset=this.viewport.getSelectionGroup$().getStartRes$();
 var hiddenCutoff=this.viewport.getSelectionGroup$().getEndRes$();
-C$.copiedHiddenColumns=Clazz.new_($I$(48).c$$jalview_datamodel_HiddenColumns$I$I$I,[this.viewport.getAlignment$().getHiddenColumns$(), hiddenOffset, hiddenCutoff, hiddenOffset]);
+C$.copiedHiddenColumns=Clazz.new_([this.viewport.getAlignment$().getHiddenColumns$(), hiddenOffset, hiddenCutoff, hiddenOffset],$I$(47,1).c$$jalview_datamodel_HiddenColumns$I$I$I);
 } else {
 C$.copiedHiddenColumns=null;
 }for (var i=0; i < sg.getSize$(); i++) {
@@ -1205,7 +1093,7 @@ startRes=seq.findPosition$I(sg.getStartRes$());
 endRes=0;
 for (var j=0; j < sg.getEndRes$() + 1 && j < seq.getLength$() ; j++) {
 ch=seq.getCharAt$I(j);
-if (!$I$(49).isGap$C((ch))) {
+if (!$I$(48,"isGap$C",[(ch)])) {
 endRes++;
 }}
 if (endRes > 0) {
@@ -1226,15 +1114,15 @@ Clazz.newMeth(C$, 'paste$Z', function (newAlignment) {
 try {
 if (C$.copiedSequences == null ) {
 return;
-}var st=Clazz.new_($I$(50).c$$S$S,[C$.copiedSequences.toString(), "\t"]);
-var seqs=Clazz.new_($I$(44));
+}var st=Clazz.new_([C$.copiedSequences.toString(), "\t"],$I$(49,1).c$$S$S);
+var seqs=Clazz.new_($I$(43,1));
 while (st.hasMoreElements$()){
 var name=st.nextToken$();
 var start=Integer.parseInt$S(st.nextToken$());
 var end=Integer.parseInt$S(st.nextToken$());
-seqs.addElement$TE(Clazz.new_($I$(51).c$$S$S$I$I,[name, st.nextToken$(), start, end]));
+seqs.addElement$O(Clazz.new_([name, st.nextToken$(), start, end],$I$(50,1).c$$S$S$I$I));
 }
-var newSeqs=Clazz.array($I$(45), [seqs.size$()]);
+var newSeqs=Clazz.array($I$(44), [seqs.size$()]);
 for (var i=0; i < seqs.size$(); i++) {
 newSeqs[i]=seqs.elementAt$I(i);
 }
@@ -1243,10 +1131,10 @@ var newtitle=$I$(3).getString$S("label.copied_sequences");
 if (this.getTitle$().startsWith$S($I$(3).getString$S("label.copied_sequences"))) {
 newtitle=this.getTitle$();
 } else {
-newtitle=newtitle.concat$S($I$(3).formatMessage$S$SA("label.from_msname", Clazz.array(String, -1, [this.getTitle$()])));
-}var af=Clazz.new_(C$.c$$jalview_datamodel_AlignmentI$jalview_bin_JalviewLite$S$Z,[Clazz.new_($I$(52).c$$jalview_datamodel_SequenceIA,[newSeqs]), this.viewport.applet, newtitle, false]);
+newtitle=newtitle.concat$S($I$(3,"formatMessage$S$SA",["label.from_msname", Clazz.array(String, -1, [this.getTitle$()])]));
+}var af=Clazz.new_(C$.c$$jalview_datamodel_AlignmentI$jalview_bin_JalviewLite$S$Z,[Clazz.new_($I$(51,1).c$$jalview_datamodel_SequenceIA,[newSeqs]), this.viewport.applet, newtitle, false]);
 af.viewport.setHiddenColumns$jalview_datamodel_HiddenColumns(C$.copiedHiddenColumns);
-$I$(18).addFrame$java_awt_Frame$S$I$I(af, newtitle, this.frameWidth, this.frameHeight);
+$I$(17).addFrame$java_awt_Frame$S$I$I(af, newtitle, this.frameWidth, this.frameHeight);
 } else {
 this.addSequences$jalview_datamodel_SequenceIA(newSeqs);
 }} catch (ex) {
@@ -1261,7 +1149,7 @@ Clazz.newMeth(C$, 'addSequences$jalview_datamodel_SequenceIA', function (seqs) {
 for (var i=0; i < seqs.length; i++) {
 this.viewport.getAlignment$().addSequence$jalview_datamodel_SequenceI(seqs[i]);
 }
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(53).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,[$I$(3).getString$S("label.add_sequences"), $I$(54).PASTE, seqs, 0, this.viewport.getAlignment$().getWidth$(), this.viewport.getAlignment$()]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_([$I$(3).getString$S("label.add_sequences"), $I$(53).PASTE, seqs, 0, this.viewport.getAlignment$().getWidth$(), this.viewport.getAlignment$()],$I$(52,1).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI));
 this.viewport.getRanges$().setEndSeq$I(this.viewport.getAlignment$().getHeight$() - 1);
 this.viewport.getAlignment$().getWidth$();
 this.viewport.firePropertyChange$S$O$O("alignment", null, this.viewport.getAlignment$().getSequences$());
@@ -1276,20 +1164,20 @@ Clazz.newMeth(C$, 'delete_actionPerformed$', function () {
 var sg=this.viewport.getSelectionGroup$();
 if (sg == null ) {
 return;
-}var seqs=Clazz.new_($I$(44));
+}var seqs=Clazz.new_($I$(43,1));
 var seq;
 for (var i=0; i < sg.getSize$(); i++) {
 seq=sg.getSequenceAt$I(i);
-seqs.addElement$TE(seq);
+seqs.addElement$O(seq);
 }
 if (sg.getSize$() == this.viewport.getAlignment$().getHeight$()) {
 var isEntireAlignWidth=(((sg.getEndRes$() - sg.getStartRes$()) + 1) == this.viewport.getAlignment$().getWidth$()) ? true : false;
 if (isEntireAlignWidth) {
 var title=$I$(3).getString$S("label.delete_all");
-var infoPanel=Clazz.new_($I$(55));
-infoPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(56)));
-infoPanel.add$java_awt_Component(Clazz.new_($I$(7).c$$S,[$I$(3).getString$S("warn.delete_all")]));
-var dialog=Clazz.new_($I$(57).c$$java_awt_Frame$S$Z$I$I,[this, title, true, 400, 200]);
+var infoPanel=Clazz.new_($I$(54,1));
+infoPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(55,1)));
+infoPanel.add$java_awt_Component(Clazz.new_([$I$(3).getString$S("warn.delete_all")],$I$(7,1).c$$S));
+var dialog=Clazz.new_($I$(56,1).c$$java_awt_Frame$S$Z$I$I,[this, title, true, 400, 200]);
 dialog.setMainPanel$java_awt_Panel(infoPanel);
 dialog.ok.setLabel$S($I$(3).getString$S("action.ok"));
 dialog.cancel.setLabel$S($I$(3).getString$S("action.cancel"));
@@ -1297,11 +1185,11 @@ dialog.setVisible$Z(true);
 if (!dialog.accept) {
 return;
 }}this.viewport.getColumnSelection$().removeElements$I$I(sg.getStartRes$(), sg.getEndRes$() + 1);
-}var cut=Clazz.array($I$(45), [seqs.size$()]);
+}var cut=Clazz.array($I$(44), [seqs.size$()]);
 for (var i=0; i < seqs.size$(); i++) {
 cut[i]=seqs.elementAt$I(i);
 }
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(53).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,[$I$(3).getString$S("label.cut_sequences"), $I$(54).CUT, cut, sg.getStartRes$(), sg.getEndRes$() - sg.getStartRes$() + 1, this.viewport.getAlignment$()]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_([$I$(3).getString$S("label.cut_sequences"), $I$(53).CUT, cut, sg.getStartRes$(), sg.getEndRes$() - sg.getStartRes$() + 1, this.viewport.getAlignment$()],$I$(52,1).c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI));
 this.viewport.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
 this.viewport.getAlignment$().deleteGroup$jalview_datamodel_SequenceGroup(sg);
 this.viewport.firePropertyChange$S$O$O("alignment", null, this.viewport.getAlignment$().getSequences$());
@@ -1343,7 +1231,7 @@ this.alignPanel.updateAnnotation$Z(this.applyAutoAnnotationSettings.getState$())
 
 Clazz.newMeth(C$, 'makeGrpsFromSelection_actionPerformed$', function () {
 if (this.avc.makeGroupsFromSelection$()) {
-$I$(42).Refresh$java_awt_Component$S(this, this.viewport.getSequenceSetId$());
+$I$(41,"Refresh$java_awt_Component$S",[this, this.viewport.getSequenceSetId$()]);
 this.alignPanel.updateAnnotation$();
 this.alignPanel.paintAlignment$Z$Z(true, true);
 }});
@@ -1363,14 +1251,14 @@ this.alignPanel.alignmentChanged$();
 }});
 
 Clazz.newMeth(C$, 'selectAllSequenceMenuItem_actionPerformed$', function () {
-var sg=Clazz.new_($I$(58));
+var sg=Clazz.new_($I$(57,1));
 for (var i=0; i < this.viewport.getAlignment$().getSequences$().size$(); i++) {
 sg.addSequence$jalview_datamodel_SequenceI$Z(this.viewport.getAlignment$().getSequenceAt$I(i), false);
 }
 sg.setEndRes$I(this.viewport.getAlignment$().getWidth$() - 1);
 this.viewport.setSelectionGroup$jalview_datamodel_SequenceGroup(sg);
 this.alignPanel.paintAlignment$Z$Z(false, false);
-$I$(42).Refresh$java_awt_Component$S(this.alignPanel, this.viewport.getSequenceSetId$());
+$I$(41,"Refresh$java_awt_Component$S",[this.alignPanel, this.viewport.getSequenceSetId$()]);
 this.viewport.sendSelection$();
 });
 
@@ -1384,7 +1272,7 @@ this.viewport.setSelectionGroup$jalview_datamodel_SequenceGroup(null);
 this.alignPanel.idPanel.idCanvas.searchResults=null;
 this.alignPanel.seqPanel.seqCanvas.highlightSearchResults$jalview_datamodel_SearchResultsI(null);
 this.alignPanel.paintAlignment$Z$Z(false, false);
-$I$(42).Refresh$java_awt_Component$S(this.alignPanel, this.viewport.getSequenceSetId$());
+$I$(41,"Refresh$java_awt_Component$S",[this.alignPanel, this.viewport.getSequenceSetId$()]);
 this.viewport.sendSelection$();
 });
 
@@ -1393,14 +1281,14 @@ var sg=this.viewport.getSelectionGroup$();
 for (var i=0; i < this.viewport.getAlignment$().getSequences$().size$(); i++) {
 sg.addOrRemove$jalview_datamodel_SequenceI$Z(this.viewport.getAlignment$().getSequenceAt$I(i), false);
 }
-$I$(42).Refresh$java_awt_Component$S(this.alignPanel, this.viewport.getSequenceSetId$());
+$I$(41,"Refresh$java_awt_Component$S",[this.alignPanel, this.viewport.getSequenceSetId$()]);
 this.viewport.sendSelection$();
 });
 
 Clazz.newMeth(C$, 'invertColSel_actionPerformed$', function () {
 this.viewport.invertColumnSelection$();
 this.alignPanel.paintAlignment$Z$Z(true, false);
-$I$(42).Refresh$java_awt_Component$S(this.alignPanel, this.viewport.getSequenceSetId$());
+$I$(41,"Refresh$java_awt_Component$S",[this.alignPanel, this.viewport.getSequenceSetId$()]);
 this.viewport.sendSelection$();
 });
 
@@ -1421,11 +1309,11 @@ seqs=this.viewport.getSelectionGroup$().getSequencesAsArray$java_util_Map(this.v
 seqs=al.getSequencesArray$();
 }var trimRegion;
 if (trimLeft) {
-trimRegion=Clazz.new_($I$(59).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI,["Remove Left", true, seqs, column, al]);
+trimRegion=Clazz.new_($I$(58,1).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI,["Remove Left", true, seqs, column, al]);
 ranges.setStartRes$I(0);
 } else {
-trimRegion=Clazz.new_($I$(59).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI,["Remove Right", false, seqs, column, al]);
-}this.setStatus$S($I$(3).formatMessage$S$SA("label.removed_columns", Clazz.array(String, -1, [Integer.valueOf$I(trimRegion.getSize$()).toString()])));
+trimRegion=Clazz.new_($I$(58,1).c$$S$Z$jalview_datamodel_SequenceIA$I$jalview_datamodel_AlignmentI,["Remove Right", false, seqs, column, al]);
+}this.setStatus$S($I$(3,"formatMessage$S$SA",["label.removed_columns", Clazz.array(String, -1, [Integer.valueOf$I(trimRegion.getSize$()).toString()])]));
 this.addHistoryItem$jalview_commands_CommandI(trimRegion);
 for (var sg, $sg = al.getGroups$().iterator$(); $sg.hasNext$()&&((sg=($sg.next$())),1);) {
 if ((trimLeft && !sg.adjustForRemoveLeft$I(column) ) || (!trimLeft && !sg.adjustForRemoveRight$I(column) ) ) {
@@ -1446,9 +1334,9 @@ start=this.viewport.getSelectionGroup$().getStartRes$();
 end=this.viewport.getSelectionGroup$().getEndRes$();
 } else {
 seqs=this.viewport.getAlignment$().getSequencesArray$();
-}var removeGapCols=Clazz.new_($I$(60).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,["Remove Gapped Columns", seqs, start, end, this.viewport.getAlignment$()]);
+}var removeGapCols=Clazz.new_(["Remove Gapped Columns", seqs, start, end, this.viewport.getAlignment$()],$I$(59,1).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI);
 this.addHistoryItem$jalview_commands_CommandI(removeGapCols);
-this.setStatus$S($I$(3).formatMessage$S$SA("label.removed_empty_columns", Clazz.array(String, -1, [Integer.valueOf$I(removeGapCols.getSize$()).toString()])));
+this.setStatus$S($I$(3,"formatMessage$S$SA",["label.removed_empty_columns", Clazz.array(String, -1, [Integer.valueOf$I(removeGapCols.getSize$()).toString()])]));
 var seq=al.getSequenceAt$I(0);
 var startRes=seq.findPosition$I(ranges.getStartRes$());
 ranges.setStartRes$I(seq.findIndex$I(startRes) - 1);
@@ -1469,21 +1357,21 @@ end=this.viewport.getSelectionGroup$().getEndRes$();
 seqs=this.viewport.getAlignment$().getSequencesArray$();
 }var seq=al.getSequenceAt$I(0);
 var startRes=seq.findPosition$I(ranges.getStartRes$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(61).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,["Remove Gaps", seqs, start, end, al]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(60,1).c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,["Remove Gaps", seqs, start, end, al]));
 ranges.setStartRes$I(seq.findIndex$I(startRes) - 1);
 this.viewport.firePropertyChange$S$O$O("alignment", null, al.getSequences$());
 });
 
 Clazz.newMeth(C$, 'findMenuItem_actionPerformed$', function () {
-Clazz.new_($I$(62).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
+Clazz.new_($I$(61,1).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
 });
 
 Clazz.newMeth(C$, 'newView$S', function (viewtitle) {
 var newal;
 if (this.viewport.hasHiddenRows$()) {
-newal=Clazz.new_($I$(52).c$$jalview_datamodel_SequenceIA,[this.viewport.getAlignment$().getHiddenSequences$().getFullAlignment$().getSequencesArray$()]);
+newal=Clazz.new_([this.viewport.getAlignment$().getHiddenSequences$().getFullAlignment$().getSequencesArray$()],$I$(51,1).c$$jalview_datamodel_SequenceIA);
 } else {
-newal=Clazz.new_($I$(52).c$$jalview_datamodel_SequenceIA,[this.viewport.getAlignment$().getSequencesArray$()]);
+newal=Clazz.new_([this.viewport.getAlignment$().getSequencesArray$()],$I$(51,1).c$$jalview_datamodel_SequenceIA);
 }if (this.viewport.getAlignment$().getAlignmentAnnotation$() != null ) {
 for (var i=0; i < this.viewport.getAlignment$().getAlignmentAnnotation$().length; i++) {
 if (!this.viewport.getAlignment$().getAlignmentAnnotation$()[i].autoCalculated) {
@@ -1491,11 +1379,11 @@ newal.addAnnotation$jalview_datamodel_AlignmentAnnotation(this.viewport.getAlign
 }}
 }var newaf=Clazz.new_(C$.c$$jalview_datamodel_AlignmentI$jalview_bin_JalviewLite$S$Z,[newal, this.viewport.applet, "", false]);
 newaf.viewport.setSequenceSetId$S(this.alignPanel.av.getSequenceSetId$());
-$I$(42).Register$java_awt_Component$S(this.alignPanel, this.alignPanel.av.getSequenceSetId$());
-$I$(42).Register$java_awt_Component$S(newaf.alignPanel, newaf.alignPanel.av.getSequenceSetId$());
-$I$(42).Register$java_awt_Component$S(newaf.alignPanel.idPanel.idCanvas, newaf.alignPanel.av.getSequenceSetId$());
-$I$(42).Register$java_awt_Component$S(newaf.alignPanel.seqPanel.seqCanvas, newaf.alignPanel.av.getSequenceSetId$());
-var comps=$I$(42).components.get$O(this.viewport.getSequenceSetId$());
+$I$(41,"Register$java_awt_Component$S",[this.alignPanel, this.alignPanel.av.getSequenceSetId$()]);
+$I$(41,"Register$java_awt_Component$S",[newaf.alignPanel, newaf.alignPanel.av.getSequenceSetId$()]);
+$I$(41,"Register$java_awt_Component$S",[newaf.alignPanel.idPanel.idCanvas, newaf.alignPanel.av.getSequenceSetId$()]);
+$I$(41,"Register$java_awt_Component$S",[newaf.alignPanel.seqPanel.seqCanvas, newaf.alignPanel.av.getSequenceSetId$()]);
+var comps=$I$(41).components.get$O(this.viewport.getSequenceSetId$());
 var viewSize=-1;
 for (var i=0; i < comps.size$(); i++) {
 if (Clazz.instanceOf(comps.elementAt$I(i), "jalview.appletgui.AlignmentPanel")) {
@@ -1518,7 +1406,7 @@ Clazz.newMeth(C$, 'getFeatureGroups$', function () {
 var fr=null;
 if (this.alignPanel != null  && (fr=this.alignPanel.getFeatureRenderer$()) != null  ) {
 var gps=fr.getFeatureGroups$();
-var _gps=gps.toArray$TTA(Clazz.array(String, [gps.size$()]));
+var _gps=gps.toArray$OA(Clazz.array(String, [gps.size$()]));
 return _gps;
 }return null;
 });
@@ -1527,7 +1415,7 @@ Clazz.newMeth(C$, 'getFeatureGroupsOfState$Z', function (visible) {
 var fr=null;
 if (this.alignPanel != null  && (fr=this.alignPanel.getFeatureRenderer$()) != null  ) {
 var gps=fr.getGroups$Z(visible);
-var _gps=gps.toArray$TTA(Clazz.array(String, [gps.size$()]));
+var _gps=gps.toArray$OA(Clazz.array(String, [gps.size$()]));
 return _gps;
 }return null;
 });
@@ -1537,7 +1425,7 @@ var fr=null;
 this.sequenceFeatures.setState$Z(true);
 this.viewport.setShowSequenceFeatures$Z(true);
 if (this.alignPanel != null  && (fr=this.alignPanel.getFeatureRenderer$()) != null  ) {
-fr.setGroupVisibility$java_util_List$Z($I$(63).asList$TTA(groups), state);
+fr.setGroupVisibility$java_util_List$Z($I$(62).asList$OA(groups), state);
 this.alignPanel.seqPanel.seqCanvas.repaint$();
 if (this.alignPanel.overviewPanel != null ) {
 this.alignPanel.overviewPanel.updateOverviewImage$();
@@ -1571,20 +1459,19 @@ this.alignPanel.paintAlignment$Z$Z(true, false);
 Clazz.newMeth(C$, 'overviewMenuItem_actionPerformed$', function () {
 if (this.alignPanel.overviewPanel != null ) {
 return;
-}var frame=Clazz.new_($I$(17));
-var overview=Clazz.new_($I$(64).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
+}var frame=Clazz.new_($I$(16,1));
+var overview=Clazz.new_($I$(63,1).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
 frame.add$java_awt_Component(overview);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).formatMessage$S$SA("label.overview_params", Clazz.array(String, -1, [this.getTitle$()])), overview.getPreferredSize$().width, overview.getPreferredSize$().height + 50);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3,"formatMessage$S$SA",["label.overview_params", Clazz.array(String, -1, [this.getTitle$()])]), overview.getPreferredSize$().width, overview.getPreferredSize$().height + 50]);
 frame.pack$();
 var ap=this.alignPanel;
 frame.addWindowListener$java_awt_event_WindowListener(((P$.AlignFrame$1||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (e) {
 this.$finals$.overview.dispose$();
@@ -1592,7 +1479,7 @@ if (this.$finals$.ap != null ) {
 this.$finals$.ap.setOverviewPanel$jalview_appletgui_OverviewPanel(null);
 }});
 })()
-), Clazz.new_($I$(65), [this, {overview: overview, ap: ap}],P$.AlignFrame$1)));
+), Clazz.new_($I$(64,1),[this, {ap:ap,overview:overview}],P$.AlignFrame$1)));
 this.alignPanel.setOverviewPanel$jalview_appletgui_OverviewPanel(overview);
 });
 
@@ -1603,14 +1490,14 @@ this.alignPanel.paintAlignment$Z$Z(true, true);
 
 Clazz.newMeth(C$, 'modifyPID_actionPerformed$', function () {
 if (this.viewport.getAbovePIDThreshold$() && this.viewport.getGlobalColourScheme$() != null  ) {
-$I$(66).setPIDSliderSource$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$());
-$I$(66).showPIDSlider$();
+$I$(65,"setPIDSliderSource$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$()]);
+$I$(65).showPIDSlider$();
 }});
 
 Clazz.newMeth(C$, 'modifyConservation_actionPerformed$', function () {
 if (this.viewport.getConservationSelected$() && this.viewport.getGlobalColourScheme$() != null  ) {
-$I$(66).setConservationSlider$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S(this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$());
-$I$(66).showConservationSlider$();
+$I$(65,"setConservationSlider$jalview_appletgui_AlignmentPanel$jalview_renderer_ResidueShaderI$S",[this.alignPanel, this.viewport.getResidueShading$(), this.alignPanel.getViewName$()]);
+$I$(65).showConservationSlider$();
 }});
 
 Clazz.newMeth(C$, 'conservationMenuItem_actionPerformed$', function () {
@@ -1622,7 +1509,7 @@ this.changeColour$jalview_schemes_ColourSchemeI(this.viewport.getGlobalColourSch
 if (selected) {
 this.modifyConservation_actionPerformed$();
 } else {
-$I$(66).hideConservationSlider$();
+$I$(65).hideConservationSlider$();
 }});
 
 Clazz.newMeth(C$, 'abovePIDThreshold_actionPerformed$', function () {
@@ -1635,46 +1522,46 @@ this.viewport.getResidueShading$().setThreshold$I$Z(0, this.viewport.isIgnoreGap
 if (selected) {
 this.modifyPID_actionPerformed$();
 } else {
-$I$(66).hidePIDSlider$();
+$I$(65).hidePIDSlider$();
 }});
 
 Clazz.newMeth(C$, 'sortPairwiseMenuItem_actionPerformed$', function () {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(67).sortByPID$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceI(this.viewport.getAlignment$(), this.viewport.getAlignment$().getSequenceAt$I(0));
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(68).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["Pairwise Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(66,"sortByPID$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceI",[this.viewport.getAlignment$(), this.viewport.getAlignment$().getSequenceAt$I(0)]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["Pairwise Sort", oldOrder, this.viewport.getAlignment$()],$I$(67,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'sortIDMenuItem_actionPerformed$', function () {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(67).sortByID$jalview_datamodel_AlignmentI(this.viewport.getAlignment$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(68).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["ID Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(66,"sortByID$jalview_datamodel_AlignmentI",[this.viewport.getAlignment$()]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["ID Sort", oldOrder, this.viewport.getAlignment$()],$I$(67,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'sortLengthMenuItem_actionPerformed$', function () {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(67).sortByLength$jalview_datamodel_AlignmentI(this.viewport.getAlignment$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(68).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["Length Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(66,"sortByLength$jalview_datamodel_AlignmentI",[this.viewport.getAlignment$()]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["Length Sort", oldOrder, this.viewport.getAlignment$()],$I$(67,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'sortGroupMenuItem_actionPerformed$', function () {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(67).sortByGroup$jalview_datamodel_AlignmentI(this.viewport.getAlignment$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(68).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,["Group Sort", oldOrder, this.viewport.getAlignment$()]));
+$I$(66,"sortByGroup$jalview_datamodel_AlignmentI",[this.viewport.getAlignment$()]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_(["Group Sort", oldOrder, this.viewport.getAlignment$()],$I$(67,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'removeRedundancyMenuItem_actionPerformed$', function () {
-Clazz.new_($I$(69).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
+Clazz.new_($I$(68,1).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
 });
 
 Clazz.newMeth(C$, 'pairwiseAlignmentMenuItem_actionPerformed$', function () {
 if (this.viewport.getSelectionGroup$() != null  && this.viewport.getSelectionGroup$().getSize$() > 1 ) {
-var frame=Clazz.new_($I$(17));
-frame.add$java_awt_Component(Clazz.new_($I$(70).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]));
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).getString$S("action.pairwise_alignment"), 600, 500);
+var frame=Clazz.new_($I$(16,1));
+frame.add$java_awt_Component(Clazz.new_($I$(69,1).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]));
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3).getString$S("action.pairwise_alignment"), 600, 500]);
 }});
 
 Clazz.newMeth(C$, 'PCAMenuItem_actionPerformed$', function () {
@@ -1690,7 +1577,7 @@ this.alignPanel.paintAlignment$Z$Z(false, false);
 }if ((this.viewport.getSelectionGroup$() != null  && this.viewport.getSelectionGroup$().getSize$() < 4  && this.viewport.getSelectionGroup$().getSize$() > 0 ) || this.viewport.getAlignment$().getHeight$() < 4 ) {
 return;
 }try {
-Clazz.new_($I$(71).c$$jalview_appletgui_AlignViewport,[this.viewport]);
+Clazz.new_($I$(70,1).c$$jalview_appletgui_AlignViewport,[this.viewport]);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"OutOfMemoryError")){
 } else {
@@ -1700,19 +1587,19 @@ throw ex;
 });
 
 Clazz.newMeth(C$, 'averageDistanceTreeMenuItem_actionPerformed$', function () {
-this.newTreePanel$S$S$S("AV", Clazz.new_($I$(72)).getName$(), "Average distance tree using PID");
+this.newTreePanel$S$S$S("AV", Clazz.new_($I$(71,1)).getName$(), "Average distance tree using PID");
 });
 
 Clazz.newMeth(C$, 'neighbourTreeMenuItem_actionPerformed$', function () {
-this.newTreePanel$S$S$S("NJ", Clazz.new_($I$(72)).getName$(), "Neighbour joining tree using PID");
+this.newTreePanel$S$S$S("NJ", Clazz.new_($I$(71,1)).getName$(), "Neighbour joining tree using PID");
 });
 
 Clazz.newMeth(C$, 'njTreeBlosumMenuItem_actionPerformed$', function () {
-this.newTreePanel$S$S$S("NJ", $I$(73).getInstance$().getBlosum62$().getName$(), "Neighbour joining tree using BLOSUM62");
+this.newTreePanel$S$S$S("NJ", $I$(72).getInstance$().getBlosum62$().getName$(), "Neighbour joining tree using BLOSUM62");
 });
 
 Clazz.newMeth(C$, 'avTreeBlosumMenuItem_actionPerformed$', function () {
-this.newTreePanel$S$S$S("AV", $I$(73).getInstance$().getBlosum62$().getName$(), "Average distance tree using BLOSUM62");
+this.newTreePanel$S$S$S("AV", $I$(72).getInstance$().getBlosum62$().getName$(), "Average distance tree using BLOSUM62");
 });
 
 Clazz.newMeth(C$, 'newTreePanel$S$S$S', function (type, pwType, title) {
@@ -1726,58 +1613,56 @@ current.insertCharAt$I$C(Width - 1, this.viewport.getGapCharacter$());
 }}
 this.alignPanel.paintAlignment$Z$Z(false, false);
 }if ((this.viewport.getSelectionGroup$() != null  && this.viewport.getSelectionGroup$().getSize$() > 1 ) || (this.viewport.getAlignment$().getHeight$() > 1) ) {
-var tp=Clazz.new_($I$(74).c$$jalview_appletgui_AlignmentPanel$S$S,[this.alignPanel, type, pwType]);
+var tp=Clazz.new_($I$(73,1).c$$jalview_appletgui_AlignmentPanel$S$S,[this.alignPanel, type, pwType]);
 this.addTreeMenuItem$jalview_appletgui_TreePanel$S(tp, title);
-$I$(18).addFrame$java_awt_Frame$S$I$I(tp, title, 600, 500);
+$I$(17).addFrame$java_awt_Frame$S$I$I(tp, title, 600, 500);
 }});
 
 Clazz.newMeth(C$, 'loadTree_actionPerformed$', function () {
-var cap=Clazz.new_($I$(16).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
+var cap=Clazz.new_($I$(15,1).c$$Z$jalview_appletgui_AlignFrame,[true, this]);
 cap.setText$S($I$(3).getString$S("label.paste_newick_tree_file"));
 cap.setTreeImport$();
-var frame=Clazz.new_($I$(17));
+var frame=Clazz.new_($I$(16,1));
 frame.add$java_awt_Component(cap);
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).getString$S("label.paste_newick_file"), 400, 300);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3).getString$S("label.paste_newick_file"), 400, 300]);
 });
 
 Clazz.newMeth(C$, 'loadTree$jalview_io_NewickFile$S', function (tree, treeFile) {
-var tp=Clazz.new_($I$(74).c$$jalview_appletgui_AlignmentPanel$S$S$jalview_io_NewickFile,[this.alignPanel, treeFile, $I$(3).getString$S("label.load_tree_from_file"), tree]);
-$I$(18).addFrame$java_awt_Frame$S$I$I(tp, treeFile, 600, 500);
+var tp=Clazz.new_([this.alignPanel, treeFile, $I$(3).getString$S("label.load_tree_from_file"), tree],$I$(73,1).c$$jalview_appletgui_AlignmentPanel$S$S$jalview_io_NewickFile);
+$I$(17).addFrame$java_awt_Frame$S$I$I(tp, treeFile, 600, 500);
 this.addTreeMenuItem$jalview_appletgui_TreePanel$S(tp, treeFile);
 });
 
 Clazz.newMeth(C$, 'sortByTree$jalview_appletgui_TreePanel$S', function (treePanel, title) {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-$I$(67).sortByTree$jalview_datamodel_AlignmentI$jalview_analysis_TreeModel(this.viewport.getAlignment$(), treePanel.getTree$());
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(68).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[$I$(3).formatMessage$S$SA("label.order_by_params", Clazz.array(String, -1, [title])), oldOrder, this.viewport.getAlignment$()]));
+$I$(66,"sortByTree$jalview_datamodel_AlignmentI$jalview_analysis_TreeModel",[this.viewport.getAlignment$(), treePanel.getTree$()]);
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_([$I$(3,"formatMessage$S$SA",["label.order_by_params", Clazz.array(String, -1, [title])]), oldOrder, this.viewport.getAlignment$()],$I$(67,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 this.alignPanel.paintAlignment$Z$Z(true, false);
 });
 
 Clazz.newMeth(C$, 'addTreeMenuItem$jalview_appletgui_TreePanel$S', function (treePanel, title) {
-var item=Clazz.new_($I$(4).c$$S,[title]);
+var item=Clazz.new_($I$(4,1).c$$S,[title]);
 this.sortByTreeMenu.add$java_awt_MenuItem(item);
 item.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$2||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (evt) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (evt) {
 this.b$['jalview.appletgui.AlignFrame'].sortByTree$jalview_appletgui_TreePanel$S.apply(this.b$['jalview.appletgui.AlignFrame'], [this.$finals$.treePanel, this.$finals$.title]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$2.$init$, [this, {treePanel: treePanel, title: title}])));
+), Clazz.new_(P$.AlignFrame$2.$init$,[this, {treePanel:treePanel,title:title}])));
 treePanel.addWindowListener$java_awt_event_WindowListener(((P$.AlignFrame$3||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'windowOpened$java_awt_event_WindowEvent', function (e) {
 if (this.b$['jalview.appletgui.AlignFrame'].viewport.sortByTree) {
@@ -1789,16 +1674,16 @@ Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent', function (e) {
 this.b$['jalview.appletgui.AlignFrame'].sortByTreeMenu.remove$java_awt_MenuComponent(this.$finals$.item);
 });
 })()
-), Clazz.new_($I$(65), [this, {treePanel: treePanel, title: title, item: item}],P$.AlignFrame$3)));
+), Clazz.new_($I$(64,1),[this, {item:item,treePanel:treePanel,title:title}],P$.AlignFrame$3)));
 });
 
 Clazz.newMeth(C$, 'sortBy$jalview_datamodel_AlignmentOrder$S', function (alorder, undoname) {
 var oldOrder=this.viewport.getAlignment$().getSequencesArray$();
-if ($I$(18).debug) {
+if ($I$(17).debug) {
 System.err.println$S("Sorting " + alorder.getOrder$().size$() + " in alignment '" + this.getTitle$() + "'" );
-}$I$(67).sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder(this.viewport.getAlignment$(), alorder);
+}$I$(66,"sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder",[this.viewport.getAlignment$(), alorder]);
 if (undoname != null ) {
-this.addHistoryItem$jalview_commands_CommandI(Clazz.new_($I$(68).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[undoname, oldOrder, this.viewport.getAlignment$()]));
+this.addHistoryItem$jalview_commands_CommandI(Clazz.new_([undoname, oldOrder, this.viewport.getAlignment$()],$I$(67,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI));
 }this.alignPanel.paintAlignment$Z$Z(true, false);
 return true;
 });
@@ -1808,9 +1693,9 @@ this.alignPanel.av.applet.openJalviewHelpUrl$();
 });
 
 Clazz.newMeth(C$, 'about_actionPerformed$', function () {
-var frame=Clazz.new_($I$(17));
-frame.add$java_awt_Component(Clazz.new_($I$(77).c$$S$S, [this, null, $I$(18).getVersion$(), $I$(18).getBuildDate$()],P$.AlignFrame$1AboutPanel));
-$I$(18).addFrame$java_awt_Frame$S$I$I(frame, $I$(3).getString$S("label.jalview"), 580, 220);
+var frame=Clazz.new_($I$(16,1));
+frame.add$java_awt_Component(Clazz.new_([this, null, $I$(17).getVersion$(), $I$(17).getBuildDate$()],$I$(76,1).c$$S$S,P$.AlignFrame$1AboutPanel));
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[frame, $I$(3).getString$S("label.jalview"), 580, 220]);
 });
 
 Clazz.newMeth(C$, 'showURL$S$S', function (url, target) {
@@ -1824,23 +1709,22 @@ Clazz.newMeth(C$, 'jbInit', function () {
 this.setMenuBar$java_awt_MenuBar(this.alignFrameMenuBar);
 this.inputText.setLabel$S($I$(3).getString$S("label.input_from_textbox"));
 this.inputText.addActionListener$java_awt_event_ActionListener(this);
-var outputTextboxMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("label.out_to_textbox")]);
-for (var ff, $ff = $I$(36).getInstance$().getWritableFormats$Z(true).iterator$(); $ff.hasNext$()&&((ff=($ff.next$())),1);) {
-var item=Clazz.new_($I$(4).c$$S,[ff]);
+var outputTextboxMenu=Clazz.new_([$I$(3).getString$S("label.out_to_textbox")],$I$(2,1).c$$S);
+for (var ff, $ff = $I$(35).getInstance$().getWritableFormats$Z(true).iterator$(); $ff.hasNext$()&&((ff=($ff.next$())),1);) {
+var item=Clazz.new_($I$(4,1).c$$S,[ff]);
 item.addActionListener$java_awt_event_ActionListener(((P$.AlignFrame$4||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['jalview.appletgui.AlignFrame'].outputText_actionPerformed$java_awt_event_ActionEvent.apply(this.b$['jalview.appletgui.AlignFrame'], [e]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$4.$init$, [this, null])));
+), Clazz.new_(P$.AlignFrame$4.$init$,[this, null])));
 outputTextboxMenu.add$java_awt_MenuItem(item);
 }
 this.closeMenuItem.addActionListener$java_awt_event_ActionListener(this);
@@ -1896,10 +1780,10 @@ this.annotationColumnSelection.setLabel$S($I$(3).getString$S("action.select_by_a
 this.annotationColumnSelection.addActionListener$java_awt_event_ActionListener(this);
 this.newView.setLabel$S($I$(3).getString$S("action.new_view"));
 this.newView.addActionListener$java_awt_event_ActionListener(this);
-var showMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.show")]);
+var showMenu=Clazz.new_([$I$(3).getString$S("action.show")],$I$(2,1).c$$S);
 this.showColumns.setLabel$S($I$(3).getString$S("label.all_columns"));
 this.showSeqs.setLabel$S($I$(3).getString$S("label.all_sequences"));
-var hideMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.hide")]);
+var hideMenu=Clazz.new_([$I$(3).getString$S("action.hide")],$I$(2,1).c$$S);
 this.hideColumns.setLabel$S($I$(3).getString$S("label.selected_columns"));
 this.hideSequences.setLabel$S($I$(3).getString$S("label.selected_sequences"));
 this.hideAllButSelection.setLabel$S($I$(3).getString$S("label.all_but_selected_region"));
@@ -1931,21 +1815,21 @@ this.showSequenceLogo.setLabel$S($I$(3).getString$S("label.show_consensus_logo")
 this.normSequenceLogo.setLabel$S($I$(3).getString$S("label.norm_consensus_logo"));
 this.applyAutoAnnotationSettings.setLabel$S($I$(3).getString$S("label.apply_all_groups"));
 this.applyAutoAnnotationSettings.setState$Z(true);
-var autoAnnMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("label.autocalculated_annotation")]);
+var autoAnnMenu=Clazz.new_([$I$(3).getString$S("label.autocalculated_annotation")],$I$(2,1).c$$S);
 this.showGroupConsensus.addItemListener$java_awt_event_ItemListener(this);
 this.showGroupConservation.addItemListener$java_awt_event_ItemListener(this);
 this.showConsensusHistogram.addItemListener$java_awt_event_ItemListener(this);
 this.showSequenceLogo.addItemListener$java_awt_event_ItemListener(this);
 this.normSequenceLogo.addItemListener$java_awt_event_ItemListener(this);
 this.applyAutoAnnotationSettings.addItemListener$java_awt_event_ItemListener(this);
-this.showAlignmentAnnotations=Clazz.new_($I$(5).c$$S,[$I$(3).getString$S("label.show_all_al_annotations")]);
-this.showSequenceAnnotations=Clazz.new_($I$(5).c$$S,[$I$(3).getString$S("label.show_all_seq_annotations")]);
-this.sortAnnBySequence=Clazz.new_($I$(5).c$$S,[$I$(3).getString$S("label.sort_annotations_by_sequence")]);
-this.sortAnnByLabel=Clazz.new_($I$(5).c$$S,[$I$(3).getString$S("label.sort_annotations_by_label")]);
-this.showAutoFirst=Clazz.new_($I$(5).c$$S,[$I$(3).getString$S("label.show_first")]);
+this.showAlignmentAnnotations=Clazz.new_([$I$(3).getString$S("label.show_all_al_annotations")],$I$(5,1).c$$S);
+this.showSequenceAnnotations=Clazz.new_([$I$(3).getString$S("label.show_all_seq_annotations")],$I$(5,1).c$$S);
+this.sortAnnBySequence=Clazz.new_([$I$(3).getString$S("label.sort_annotations_by_sequence")],$I$(5,1).c$$S);
+this.sortAnnByLabel=Clazz.new_([$I$(3).getString$S("label.sort_annotations_by_label")],$I$(5,1).c$$S);
+this.showAutoFirst=Clazz.new_([$I$(3).getString$S("label.show_first")],$I$(5,1).c$$S);
 this.showAutoFirst.setState$Z(false);
 p$1.setShowAutoCalculatedAbove$Z.apply(this, [this.showAutoFirst.getState$()]);
-this.showAutoLast=Clazz.new_($I$(5).c$$S,[$I$(3).getString$S("label.show_last")]);
+this.showAutoLast=Clazz.new_([$I$(3).getString$S("label.show_last")],$I$(5,1).c$$S);
 this.showAutoLast.setState$Z(!this.showAutoFirst.getState$());
 this.showAlignmentAnnotations.addItemListener$java_awt_event_ItemListener(this);
 this.showSequenceAnnotations.addItemListener$java_awt_event_ItemListener(this);
@@ -2047,7 +1931,7 @@ this.pairwiseAlignmentMenuItem.setLabel$S($I$(3).getString$S("action.pairwise_al
 this.pairwiseAlignmentMenuItem.addActionListener$java_awt_event_ActionListener(this);
 this.PCAMenuItem.setLabel$S($I$(3).getString$S("label.principal_component_analysis"));
 this.PCAMenuItem.addActionListener$java_awt_event_ActionListener(this);
-this.autoCalculate=Clazz.new_($I$(5).c$$S$Z,[$I$(3).getString$S("label.autocalculate_consensus"), true]);
+this.autoCalculate=Clazz.new_([$I$(3).getString$S("label.autocalculate_consensus"), true],$I$(5,1).c$$S$Z);
 this.averageDistanceTreeMenuItem.setLabel$S($I$(3).getString$S("label.average_distance_identity"));
 this.averageDistanceTreeMenuItem.addActionListener$java_awt_event_ActionListener(this);
 this.neighbourTreeMenuItem.setLabel$S($I$(3).getString$S("label.neighbour_joining_identity"));
@@ -2057,29 +1941,29 @@ this.avDistanceTreeBlosumMenuItem.addActionListener$java_awt_event_ActionListene
 this.njTreeBlosumMenuItem.setLabel$S($I$(3).getString$S("label.neighbour_blosum62"));
 this.njTreeBlosumMenuItem.addActionListener$java_awt_event_ActionListener(this);
 this.sortByTreeMenu.setLabel$S($I$(3).getString$S("action.by_tree_order"));
-var sortMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.sort")]);
-var calculateTreeMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.calculate_tree")]);
+var sortMenu=Clazz.new_([$I$(3).getString$S("action.sort")],$I$(2,1).c$$S);
+var calculateTreeMenu=Clazz.new_([$I$(3).getString$S("action.calculate_tree")],$I$(2,1).c$$S);
 this.autoCalculate.addItemListener$java_awt_event_ItemListener(this);
 this.sortByTree.addItemListener$java_awt_event_ItemListener(this);
-var helpMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.help")]);
+var helpMenu=Clazz.new_([$I$(3).getString$S("action.help")],$I$(2,1).c$$S);
 this.documentation.setLabel$S($I$(3).getString$S("label.documentation"));
 this.documentation.addActionListener$java_awt_event_ActionListener(this);
 this.about.setLabel$S($I$(3).getString$S("label.about"));
 this.about.addActionListener$java_awt_event_ActionListener(this);
 this.alignFrameMenuBar.add$java_awt_Menu(this.fileMenu);
-var editMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.edit")]);
+var editMenu=Clazz.new_([$I$(3).getString$S("action.edit")],$I$(2,1).c$$S);
 this.alignFrameMenuBar.add$java_awt_Menu(editMenu);
-var selectMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.select")]);
+var selectMenu=Clazz.new_([$I$(3).getString$S("action.select")],$I$(2,1).c$$S);
 this.alignFrameMenuBar.add$java_awt_Menu(selectMenu);
-var viewMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.view")]);
+var viewMenu=Clazz.new_([$I$(3).getString$S("action.view")],$I$(2,1).c$$S);
 this.alignFrameMenuBar.add$java_awt_Menu(viewMenu);
-var annotationsMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.annotations")]);
+var annotationsMenu=Clazz.new_([$I$(3).getString$S("action.annotations")],$I$(2,1).c$$S);
 this.alignFrameMenuBar.add$java_awt_Menu(annotationsMenu);
-var formatMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.format")]);
+var formatMenu=Clazz.new_([$I$(3).getString$S("action.format")],$I$(2,1).c$$S);
 this.alignFrameMenuBar.add$java_awt_Menu(formatMenu);
-var colourMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.colour")]);
+var colourMenu=Clazz.new_([$I$(3).getString$S("action.colour")],$I$(2,1).c$$S);
 this.alignFrameMenuBar.add$java_awt_Menu(colourMenu);
-var calculateMenu=Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("action.calculate")]);
+var calculateMenu=Clazz.new_([$I$(3).getString$S("action.calculate")],$I$(2,1).c$$S);
 this.alignFrameMenuBar.add$java_awt_Menu(calculateMenu);
 this.alignFrameMenuBar.add$java_awt_Menu(helpMenu);
 this.fileMenu.add$java_awt_MenuItem(this.inputText);
@@ -2210,8 +2094,8 @@ calculateMenu.add$java_awt_MenuItem(this.autoCalculate);
 calculateMenu.add$java_awt_MenuItem(this.sortByTree);
 helpMenu.add$java_awt_MenuItem(this.documentation);
 helpMenu.add$java_awt_MenuItem(this.about);
-this.statusBar.setBackground$java_awt_Color($I$(75).white);
-this.statusBar.setFont$java_awt_Font(Clazz.new_($I$(76).c$$S$I$I,["Verdana", 0, 11]));
+this.statusBar.setBackground$java_awt_Color($I$(74).white);
+this.statusBar.setFont$java_awt_Font(Clazz.new_($I$(75,1).c$$S$I$I,["Verdana", 0, 11]));
 this.setStatus$S($I$(3).getString$S("label.status_bar"));
 this.add$java_awt_Component$O(this.statusBar, "South");
 }, p$1);
@@ -2228,27 +2112,26 @@ if (this.embedMenuIfNeeded$java_awt_Panel(this.alignPanel)) {
 this.alignPanel.setSize$I$I(this.getSize$().width, this.getSize$().height - this.statusBar.getHeight$());
 }this.add$java_awt_Component$O(this.statusBar, "South");
 this.add$java_awt_Component$O(this.alignPanel, "Center");
-$I$(18).addFrame$java_awt_Frame$S$I$I(this, this.getTitle$(), this.frameWidth, this.frameHeight);
+$I$(17,"addFrame$java_awt_Frame$S$I$I",[this, this.getTitle$(), this.frameWidth, this.frameHeight]);
 }});
 
 Clazz.newMeth(C$, 'embedAlignFrameInApplet$jalview_bin_JalviewLite', function (theApplet) {
 this.fileMenu.remove$java_awt_MenuComponent(this.closeMenuItem);
 this.fileMenu.remove$I(3);
 this.embeddedMenu=this.makeEmbeddedPopupMenu$java_awt_MenuBar$Z$Z(this.alignFrameMenuBar, false, false);
-theApplet.setLayout$java_awt_LayoutManager(Clazz.new_($I$(6)));
+theApplet.setLayout$java_awt_LayoutManager(Clazz.new_($I$(6,1)));
 theApplet.add$java_awt_Component$O(this.embeddedMenu, "North");
 theApplet.add$java_awt_Component$O(this.statusBar, "South");
 this.alignPanel.setSize$I$I(theApplet.getSize$().width, theApplet.getSize$().height - this.embeddedMenu.getHeight$() - this.statusBar.getHeight$() );
 theApplet.add$java_awt_Component$O(this.alignPanel, "Center");
 var me=this;
 theApplet.addFocusListener$java_awt_event_FocusListener(((P$.AlignFrame$5||
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.FocusListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.FocusListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
 if (this.$finals$.theApplet.currentAlignFrame === this.$finals$.me ) {
@@ -2259,7 +2142,7 @@ Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
 this.$finals$.theApplet.currentAlignFrame=this.$finals$.me;
 });
 })()
-), Clazz.new_(P$.AlignFrame$5.$init$, [this, {theApplet: theApplet, me: me}])));
+), Clazz.new_(P$.AlignFrame$5.$init$,[this, {me:me,theApplet:theApplet}])));
 theApplet.validate$();
 });
 
@@ -2281,15 +2164,15 @@ return null;
 if (sequenceIds == null  || sequenceIds.length == 0 ) {
 seqs=this.viewport.getAlignment$().getSequencesArray$();
 } else {
-var sqi=Clazz.new_($I$(44));
+var sqi=Clazz.new_($I$(43,1));
 var al=this.viewport.getAlignment$();
 for (var sid=0; sid < sequenceIds.length; sid++) {
 var sq=al.findName$S(sequenceIds[sid]);
 if (sq != null ) {
-sqi.addElement$TE(sq);
+sqi.addElement$O(sq);
 }}
 if (sqi.size$() > 0) {
-seqs=Clazz.array($I$(45), [sqi.size$()]);
+seqs=Clazz.array($I$(44), [sqi.size$()]);
 for (var sid=0, sSize=sqi.size$(); sid < sSize; sid++) {
 seqs[sid]=sqi.elementAt$I(sid);
 }
@@ -2297,7 +2180,7 @@ seqs[sid]=sqi.elementAt$I(sid);
 return null;
 }}var jmv=null;
 if (jmv == null ) {
-jmv=Clazz.new_($I$(78).c$$org_jmol_viewer_Viewer$jalview_appletgui_AlignmentPanel$jalview_datamodel_SequenceIAA,[viewer, this.alignPanel, Clazz.array($I$(45), -2, [seqs])]);
+jmv=Clazz.new_([viewer, this.alignPanel, Clazz.array($I$(44), -2, [seqs])],$I$(77,1).c$$org_jmol_viewer_Viewer$jalview_appletgui_AlignmentPanel$jalview_datamodel_SequenceIAA);
 }return jmv;
 });
 
@@ -2316,11 +2199,11 @@ pdbentry=null;
 continue;
 }}
 }if (pdbentry == null ) {
-pdbentry=Clazz.new_($I$(79));
+pdbentry=Clazz.new_($I$(78,1));
 pdbentry.setId$S(pdbEntryString);
 pdbentry.setFile$S(pdbFile);
 needtoadd=true;
-}var protocol=$I$(37).resolveProtocol$S$jalview_io_FileFormatI(pdbFile, $I$(80).PDB);
+}var protocol=$I$(36,"resolveProtocol$S$jalview_io_FileFormatI",[pdbFile, $I$(79).PDB]);
 if (protocol == null ) {
 return false;
 }if (needtoadd) {
@@ -2332,12 +2215,12 @@ this.alignPanel.getStructureSelectionManager$().registerPDBEntry$jalview_datamod
 
 Clazz.newMeth(C$, 'cleanSeqChainArrays$jalview_datamodel_SequenceIA$SA', function (seqs, chains) {
 if (seqs != null ) {
-var sequences=Clazz.new_($I$(44));
+var sequences=Clazz.new_($I$(43,1));
 for (var i=0; i < seqs.length; i++) {
 if (seqs[i] != null ) {
-sequences.addElement$TE(Clazz.array(java.lang.Object, -1, [seqs[i], (chains != null ) ? chains[i] : null]));
+sequences.addElement$O(Clazz.array(java.lang.Object, -1, [seqs[i], (chains != null ) ? chains[i] : null]));
 }}
-seqs=Clazz.array($I$(45), [sequences.size$()]);
+seqs=Clazz.array($I$(44), [sequences.size$()]);
 chains=Clazz.array(String, [sequences.size$()]);
 for (var i=0, isize=sequences.size$(); i < isize; i++) {
 var oj=sequences.elementAt$I(i);
@@ -2356,7 +2239,7 @@ System.err.println$S("JalviewLite.AlignFrame:newStructureView: No sequence to bi
 }if (protocol == null ) {
 var sourceType=pdb.getProperty$S("protocol");
 try {
-protocol=$I$(81).valueOf$S(sourceType);
+protocol=$I$(80).valueOf$S(sourceType);
 } catch (e) {
 if (Clazz.exceptionOf(e,"IllegalArgumentException")){
 } else {
@@ -2367,13 +2250,13 @@ if (protocol == null ) {
 System.err.println$S("Couldn't work out protocol to open structure: " + pdb.getId$());
 return;
 }}if (applet.useXtrnalSviewer) {
-if ($I$(82).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider(applet).setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(seqs, chains, pdb.getFile$(), protocol, null) == null ) {
+if ($I$(81).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider(applet).setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(seqs, chains, pdb.getFile$(), protocol, null) == null ) {
 System.err.println$S("Failed to map " + pdb.getFile$() + " (" + protocol + ") to any sequences" );
 }return;
 }if (applet.isAlignPdbStructures$() && applet.jmolAvailable ) {
 var ajm=null;
 var tajm;
-var jmols=applet.getAppletWindow$Class(Clazz.getClass($I$(83)));
+var jmols=applet.getAppletWindow$Class(Clazz.getClass($I$(82)));
 for (var i=0, iSize=jmols.size$(); i < iSize; i++) {
 tajm=jmols.elementAt$I(i);
 if (tajm.ap.alignFrame === this ) {
@@ -2384,11 +2267,11 @@ if (ajm != null ) {
 System.err.println$S("Incremental adding and aligning structure to existing Jmol view not yet implemented.");
 ajm=null;
 }}if (applet.jmolAvailable) {
-Clazz.new_($I$(83).c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType,[pdb, seqs, chains, this.alignPanel, protocol]);
-$I$(18).lastFrameX+=40;
-$I$(18).lastFrameY+=40;
+Clazz.new_($I$(82,1).c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType,[pdb, seqs, chains, this.alignPanel, protocol]);
+$I$(17).lastFrameX+=40;
+$I$(17).lastFrameY+=40;
 } else {
-Clazz.new_($I$(84).c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType,[pdb, seqs, chains, this.alignPanel, protocol]);
+Clazz.new_($I$(83,1).c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType,[pdb, seqs, chains, this.alignPanel, protocol]);
 }});
 
 Clazz.newMeth(C$, 'alignedStructureView$jalview_bin_JalviewLite$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$SAA$SA', function (applet, pdb, seqs, chains, protocols) {
@@ -2416,7 +2299,7 @@ return this.viewport.getSequenceSetId$();
 });
 
 Clazz.newMeth(C$, 'loadScoreFile$S', function (source) {
-var file=Clazz.new_($I$(85).c$$O$jalview_io_DataSourceType,[source, $I$(37).checkProtocol$O(source)]);
+var file=Clazz.new_([source, $I$(36).checkProtocol$O(source)],$I$(84,1).c$$O$jalview_io_DataSourceType);
 if (!file.isValid$()) {
 System.err.println$S("Problems parsing T-Coffee scores: " + file.getWarningMessage$());
 System.err.println$S("Origin was:\n" + source);
@@ -2427,7 +2310,7 @@ System.err.println$S("The scores matrix does not match the alignment dimensions"
 }if (file.annotateAlignment$jalview_datamodel_AlignmentI$Z(this.alignPanel.getAlignment$(), false)) {
 this.alignPanel.fontChanged$();
 this.tcoffeeColour.setEnabled$Z(true);
-this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_($I$(33).c$$jalview_datamodel_AnnotatedCollectionI,[this.alignPanel.getAlignment$()]));
+this.changeColour$jalview_schemes_ColourSchemeI(Clazz.new_([this.alignPanel.getAlignment$()],$I$(32,1).c$$jalview_datamodel_AnnotatedCollectionI));
 return true;
 } else {
 System.err.println$S("Problems resolving T-Coffee scores:");
@@ -2460,43 +2343,50 @@ this.alignPanel.av.setShowSequenceFeatures$Z(true);
 Clazz.newMeth(C$, 'getFeatureSettingsUI$', function () {
 return this.alignPanel.av.featureSettings;
 });
+
+Clazz.newMeth(C$, 'showFeatureSettingsUI$', function () {
+return Clazz.new_($I$(85,1).c$$jalview_appletgui_AlignmentPanel,[this.alignPanel]);
+});
+
+Clazz.newMeth(C$, 'setFeatureSettingsGeometry$java_awt_Rectangle', function (bounds) {
+this.fs_bounds=bounds;
+});
+
+Clazz.newMeth(C$, 'getFeatureSettingsGeometry$', function () {
+return this.fs_bounds;
+});
 ;
-(function(){var C$=Clazz.newClass(P$, "AlignFrame$1AboutPanel", function(){
+(function(){/*l*/var C$=Clazz.newClass(P$, "AlignFrame$1AboutPanel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.awt.Canvas', null, 2);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.version=null;
-this.builddate=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['version','builddate']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (version, builddate) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.version=version;
 this.builddate=builddate;
 }, 1);
 
 Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
-g.setColor$java_awt_Color($I$(75).white);
+g.setColor$java_awt_Color($I$(74).white);
 g.fillRect$I$I$I$I(0, 0, this.getSize$().width, this.getSize$().height);
-g.setFont$java_awt_Font(Clazz.new_($I$(76).c$$S$I$I,["Helvetica", 0, 12]));
+g.setFont$java_awt_Font(Clazz.new_($I$(75,1).c$$S$I$I,["Helvetica", 0, 12]));
 var fm=g.getFontMetrics$();
 var fh=fm.getHeight$();
 var y=5;
 var x=7;
-g.setColor$java_awt_Color($I$(75).black);
-g.setFont$java_awt_Font(Clazz.new_($I$(76).c$$S$I$I,["Helvetica", 1, 14]));
-g.drawString$S$I$I($I$(3).formatMessage$S$SA("label.jalviewLite_release", Clazz.array(String, -1, [this.version])), x, y+=fh);
-g.setFont$java_awt_Font(Clazz.new_($I$(76).c$$S$I$I,["Helvetica", 1, 12]));
-g.drawString$S$I$I($I$(3).formatMessage$S$SA("label.jaview_build_date", Clazz.array(String, -1, [this.builddate])), x, y+=fh);
-g.setFont$java_awt_Font(Clazz.new_($I$(76).c$$S$I$I,["Helvetica", 0, 12]));
+g.setColor$java_awt_Color($I$(74).black);
+g.setFont$java_awt_Font(Clazz.new_($I$(75,1).c$$S$I$I,["Helvetica", 1, 14]));
+g.drawString$S$I$I($I$(3,"formatMessage$S$SA",["label.jalviewLite_release", Clazz.array(String, -1, [this.version])]), x, y+=fh);
+g.setFont$java_awt_Font(Clazz.new_($I$(75,1).c$$S$I$I,["Helvetica", 1, 12]));
+g.drawString$S$I$I($I$(3,"formatMessage$S$SA",["label.jaview_build_date", Clazz.array(String, -1, [this.builddate])]), x, y+=fh);
+g.setFont$java_awt_Font(Clazz.new_($I$(75,1).c$$S$I$I,["Helvetica", 0, 12]));
 g.drawString$S$I$I($I$(3).getString$S("label.jalview_authors_1"), x, y=(y+(fh * 1.5)|0));
 g.drawString$S$I$I($I$(3).getString$S("label.jalview_authors_2"), x + 50, y+=fh + 8);
 g.drawString$S$I$I($I$(3).getString$S("label.jalview_dev_managers"), x, y+=fh);
@@ -2512,4 +2402,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

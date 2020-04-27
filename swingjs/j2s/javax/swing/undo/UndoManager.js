@@ -1,24 +1,17 @@
-(function(){var P$=Clazz.newPackage("javax.swing.undo"),I$=[[0,'java.util.Vector','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UndoManager", null, 'javax.swing.undo.CompoundEdit', 'javax.swing.event.UndoableEditListener');
+(function(){var P$=Clazz.newPackage("javax.swing.undo"),I$=[[0,'java.util.ArrayList','javax.swing.UIManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UndoManager", null, 'javax.swing.undo.CompoundEdit', 'javax.swing.event.UndoableEditListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.indexOfNextAdd=0;
-this.limit=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['indexOfNextAdd','limit']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.indexOfNextAdd=0;
 this.limit=100;
-this.edits.ensureCapacity$I(this.limit);
 }, 1);
 
 Clazz.newMeth(C$, 'getLimit$', function () {
@@ -26,12 +19,10 @@ return this.limit;
 });
 
 Clazz.newMeth(C$, 'discardAllEdits$', function () {
-var cursor=this.edits.elements$();
-while (cursor.hasMoreElements$()){
-var e=cursor.nextElement$();
-e.die$();
+for (var i=this.edits.size$(); --i >= 0; ) {
+this.edits.get$I(i).die$();
 }
-this.edits=Clazz.new_($I$(1));
+this.edits=Clazz.new_($I$(1,1));
 this.indexOfNextAdd=0;
 });
 
@@ -58,9 +49,9 @@ this.trimEdits$I$I(0, keepFrom - 1);
 Clazz.newMeth(C$, 'trimEdits$I$I', function (from, to) {
 if (from <= to) {
 for (var i=to; from <= i; i--) {
-var e=this.edits.elementAt$I(i);
+var e=this.edits.get$I(i);
 e.die$();
-this.edits.removeElementAt$I(i);
+this.edits.remove$I(i);
 }
 if (this.indexOfNextAdd > to) {
 this.indexOfNextAdd-=to - from + 1;
@@ -77,7 +68,7 @@ this.trimForLimit$();
 Clazz.newMeth(C$, 'editToBeUndone$', function () {
 var i=this.indexOfNextAdd;
 while (i > 0){
-var edit=this.edits.elementAt$I(--i);
+var edit=this.edits.get$I(--i);
 if (edit.isSignificant$()) {
 return edit;
 }}
@@ -88,7 +79,7 @@ Clazz.newMeth(C$, 'editToBeRedone$', function () {
 var count=this.edits.size$();
 var i=this.indexOfNextAdd;
 while (i < count){
-var edit=this.edits.elementAt$I(i++);
+var edit=this.edits.get$I(i++);
 if (edit.isSignificant$()) {
 return edit;
 }}
@@ -98,7 +89,7 @@ return null;
 Clazz.newMeth(C$, 'undoTo$javax_swing_undo_UndoableEdit', function (edit) {
 var done=false;
 while (!done){
-var next=this.edits.elementAt$I(--this.indexOfNextAdd);
+var next=this.edits.get$I(--this.indexOfNextAdd);
 next.undo$();
 done=next === edit ;
 }
@@ -107,7 +98,7 @@ done=next === edit ;
 Clazz.newMeth(C$, 'redoTo$javax_swing_undo_UndoableEdit', function (edit) {
 var done=false;
 while (!done){
-var next=this.edits.elementAt$I(this.indexOfNextAdd++);
+var next=this.edits.get$I(this.indexOfNextAdd++);
 next.redo$();
 done=next === edit ;
 }
@@ -206,7 +197,7 @@ return $I$(2).getString$O("AbstractUndoableEdit.redoText");
 return C$.superclazz.prototype.getRedoPresentationName$.apply(this, []);
 }});
 
-Clazz.newMeth(C$, ['undoableEditHappened$javax_swing_event_UndoableEditEvent','undoableEditHappened$'], function (e) {
+Clazz.newMeth(C$, 'undoableEditHappened$javax_swing_event_UndoableEditEvent', function (e) {
 this.addEdit$javax_swing_undo_UndoableEdit(e.getEdit$());
 });
 
@@ -214,4 +205,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return C$.superclazz.prototype.toString.apply(this, []) + " limit: " + this.limit + " indexOfNextAdd: " + this.indexOfNextAdd ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

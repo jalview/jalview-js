@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.consolejs"),I$=[];
-var C$=Clazz.newClass(P$, "AppletConsole", null, 'org.jmol.console.GenericConsole');
+(function(){var P$=Clazz.newPackage("org.jmol.consolejs"),I$=[[0,'org.jmol.console.GenericConsole']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "AppletConsole", null, 'org.jmol.console.GenericConsole');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jsConsole=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['jsConsole','org.jmol.api.js.JSConsole']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'start$org_jmol_viewer_Viewer', function (vwr) {
@@ -30,7 +26,7 @@ this.setTitle$();
 });
 
 Clazz.newMeth(C$, 'setTitle$', function () {
-if (this.jsConsole != null ) this.jsConsole.setTitle(org.jmol.console.GenericConsole.getLabel$S("title"));
+if (this.jsConsole != null ) this.jsConsole.setTitle($I$(1).getLabel$S("title"));
 });
 
 Clazz.newMeth(C$, 'setVisible$Z', function (visible) {
@@ -67,4 +63,4 @@ Clazz.newMeth(C$, 'newJMenuItem$S', function (key) {
 return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:07 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

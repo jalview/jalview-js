@@ -1,75 +1,16 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.jws2"),I$=[[0,'java.util.HashMap','compbio.ws.client.Services','java.util.Hashtable','java.util.ArrayList','jalview.bin.Cache','jalview.datamodel.SequenceFeature','jalview.datamodel.GraphLine','java.awt.Color','jalview.util.ColorUtils','jalview.schemes.FeatureColour']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AADisorderClient", null, 'jalview.ws.jws2.JabawsCalcWorker');
-C$.featureMap=null;
-C$.annotMap=null;
-C$.DONTCOMBINE=null;
-C$.INVISIBLE=null;
+(function(){var P$=Clazz.newPackage("jalview.ws.jws2"),I$=[[0,'java.util.HashMap','compbio.ws.client.Services','java.util.Hashtable','java.util.ArrayList','jalview.bin.Cache','jalview.datamodel.SequenceFeature','jalview.datamodel.GraphLine','java.awt.Color','jalview.util.ColorUtils','jalview.schemes.FeatureColour']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AADisorderClient", null, 'jalview.ws.jws2.JabawsCalcWorker');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DONTCOMBINE="DONTCOMBINE";
-C$.INVISIBLE="INVISIBLE";
-{
-C$.featureMap=Clazz.new_($I$(1));
-var fmap;
-C$.featureMap.put$TK$TV($I$(2).IUPredWS.toString(), fmap=Clazz.new_($I$(1)));
-fmap.put$TK$TV("Glob", Clazz.array(String, -1, ["Globular Domain", "Predicted globular domain"]));
-C$.featureMap.put$TK$TV($I$(2).JronnWS.toString(), fmap=Clazz.new_($I$(1)));
-C$.featureMap.put$TK$TV($I$(2).DisemblWS.toString(), fmap=Clazz.new_($I$(1)));
-fmap.put$TK$TV("REM465", Clazz.array(String, -1, ["REM465", "Missing density"]));
-fmap.put$TK$TV("HOTLOOPS", Clazz.array(String, -1, ["HOTLOOPS", "Flexible loops"]));
-fmap.put$TK$TV("COILS", Clazz.array(String, -1, ["COILS", "Random coil"]));
-C$.featureMap.put$TK$TV($I$(2).GlobPlotWS.toString(), fmap=Clazz.new_($I$(1)));
-fmap.put$TK$TV("GlobDoms", Clazz.array(String, -1, ["Globular Domain", "Predicted globular domain"]));
-fmap.put$TK$TV("Disorder", Clazz.array(String, -1, ["Protein Disorder", "Probable unstructured peptide region"]));
-var amap;
-C$.annotMap=Clazz.new_($I$(1));
-C$.annotMap.put$TK$TV($I$(2).GlobPlotWS.toString(), amap=Clazz.new_($I$(1)));
-amap.put$TK$TV("Dydx", Clazz.new_($I$(1)));
-amap.get$O("Dydx").put$TK$TV(C$.DONTCOMBINE, C$.DONTCOMBINE);
-amap.get$O("Dydx").put$TK$TV("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0]));
-amap.get$O("Dydx").put$TK$TV("RANGE", Clazz.array(Float.TYPE, -1, [-1, +1]));
-amap.put$TK$TV("SmoothedScore", Clazz.new_($I$(1)));
-amap.get$O("SmoothedScore").put$TK$TV(C$.INVISIBLE, C$.INVISIBLE);
-amap.put$TK$TV("RawScore", Clazz.new_($I$(1)));
-amap.get$O("RawScore").put$TK$TV(C$.INVISIBLE, C$.INVISIBLE);
-C$.annotMap.put$TK$TV($I$(2).DisemblWS.toString(), amap=Clazz.new_($I$(1)));
-amap.put$TK$TV("COILS", Clazz.new_($I$(1)));
-amap.put$TK$TV("HOTLOOPS", Clazz.new_($I$(1)));
-amap.put$TK$TV("REM465", Clazz.new_($I$(1)));
-amap.get$O("COILS").put$TK$TV("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.516]));
-amap.get$O("COILS").put$TK$TV("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
-amap.get$O("HOTLOOPS").put$TK$TV("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.6]));
-amap.get$O("HOTLOOPS").put$TK$TV("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
-amap.get$O("REM465").put$TK$TV("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.1204]));
-amap.get$O("REM465").put$TK$TV("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
-C$.annotMap.put$TK$TV($I$(2).IUPredWS.toString(), amap=Clazz.new_($I$(1)));
-amap.put$TK$TV("Long", Clazz.new_($I$(1)));
-amap.put$TK$TV("Short", Clazz.new_($I$(1)));
-amap.get$O("Long").put$TK$TV("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.5]));
-amap.get$O("Long").put$TK$TV("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
-amap.get$O("Short").put$TK$TV("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.5]));
-amap.get$O("Short").put$TK$TV("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
-C$.annotMap.put$TK$TV($I$(2).JronnWS.toString(), amap=Clazz.new_($I$(1)));
-amap.put$TK$TV("JRonn", Clazz.new_($I$(1)));
-amap.get$O("JRonn").put$TK$TV("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.5]));
-amap.get$O("JRonn").put$TK$TV("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.typeName=null;
-this.methodName=null;
-this.groupName=null;
-this.af=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['typeName','methodName','groupName'],'O',['af','jalview.gui.AlignFrame']]
+,['S',['DONTCOMBINE','INVISIBLE'],'O',['featureMap','java.util.Map','+annotMap']]]
 
 Clazz.newMeth(C$, 'c$$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_gui_AlignFrame$jalview_ws_params_WsParamSetI$java_util_List', function (sh, alignFrame, thePreset, paramset) {
-C$.superclazz.c$$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_gui_AlignFrame$jalview_ws_params_WsParamSetI$java_util_List.apply(this, [sh, alignFrame, thePreset, paramset]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_gui_AlignFrame$jalview_ws_params_WsParamSetI$java_util_List.apply(this,[sh, alignFrame, thePreset, paramset]);C$.$init$.apply(this);
 this.af=alignFrame;
 this.typeName=sh.action;
 this.methodName=sh.serviceType;
@@ -93,8 +34,8 @@ if (immediate || !this.calcMan.isWorking$jalview_api_AlignCalcWorkerI(this) && t
 var featureTypeMap=C$.featureMap.get$O(this.service.serviceType);
 var annotTypeMap=C$.annotMap.get$O(this.service.serviceType);
 var dispFeatures=false;
-var fc=Clazz.new_($I$(3));
-var ourAnnot=Clazz.new_($I$(4));
+var fc=Clazz.new_($I$(3,1));
+var ourAnnot=Clazz.new_($I$(4,1));
 var graphGroup=1;
 if (this.alignViewport.getAlignment$().getAlignmentAnnotation$() != null ) {
 for (var ala, $ala = 0, $$ala = this.alignViewport.getAlignment$().getAlignmentAnnotation$(); $ala<$$ala.length&&((ala=($$ala[$ala])),1);$ala++) {
@@ -135,12 +76,12 @@ if (type == null ) {
 type=Clazz.array(String, -1, [this.typeName + " (" + scr.getMethod$() + ")" , this.service.getActionText$()]);
 }if (vals.hasNext$()) {
 val=vals.next$().floatValue$();
-sf=Clazz.new_($I$(6).c$$S$S$I$I$F$S,[type[0], type[1], base + rn.from, base + rn.to, val, this.methodName]);
+sf=Clazz.new_($I$(6,1).c$$S$S$I$I$F$S,[type[0], type[1], base + rn.from, base + rn.to, val, this.methodName]);
 } else {
-sf=Clazz.new_($I$(6).c$$S$S$I$I$S,[type[0], type[1], base + rn.from, base + rn.to, this.methodName]);
+sf=Clazz.new_($I$(6,1).c$$S$S$I$I$S,[type[0], type[1], base + rn.from, base + rn.to, this.methodName]);
 }dseq.addSequenceFeature$jalview_datamodel_SequenceFeature(sf);
 if (last != val  && !Float.isNaN$F(last) ) {
-fc.put$TK$TV(sf.getType$(), sf);
+fc.put$O$O(sf.getType$(), sf);
 }last=val;
 dispFeatures=true;
 }
@@ -167,10 +108,10 @@ sameGroup=true;
 }}annot.description="<html>" + this.service.getActionText$() + " - raw scores" ;
 if (thrsh != null ) {
 var threshNote=(thrsh[0] > 0  ? "Above " : "Below ") + new Double(thrsh[1]).toString() + " indicates disorder" ;
-annot.threshold=Clazz.new_($I$(7).c$$F$S$java_awt_Color,[thrsh[1], threshNote, $I$(8).red]);
+annot.threshold=Clazz.new_([thrsh[1], threshNote, $I$(8).red],$I$(7,1).c$$F$S$java_awt_Color);
 annot.description += "<br/>" + threshNote;
 }annot.description += "</html>";
-var col=$I$(9).createColourFromName$S(this.typeName + scr.getMethod$());
+var col=$I$(9,"createColourFromName$S",[this.typeName + scr.getMethod$()]);
 for (var p=0, ps=annot.annotations.length; p < ps; p++) {
 if (annot.annotations[p] != null ) {
 annot.annotations[p].colour=col;
@@ -187,7 +128,7 @@ var fr=(this.ap).cloneFeatureRenderer$();
 for (var ft, $ft = fc.keySet$().iterator$(); $ft.hasNext$()&&((ft=($ft.next$())),1);) {
 var gc=fr.getFeatureStyle$S(ft);
 if (gc.isSimpleColour$()) {
-var ggc=Clazz.new_($I$(10).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F,[gc.getColour$(), $I$(8).white, gc.getColour$(), $I$(8).white, 1.4E-45, 3.4028235E38]);
+var ggc=Clazz.new_([gc.getColour$(), $I$(8).white, gc.getColour$(), $I$(8).white, 1.4E-45, 3.4028235E38],$I$(10,1).c$$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color$F$F);
 ggc.setAutoScaled$Z(true);
 fr.setColour$S$jalview_api_FeatureColourI(ft, ggc);
 }}
@@ -204,6 +145,57 @@ Clazz.newMeth(C$, 'getCalcId$', function () {
 return null;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.DONTCOMBINE="DONTCOMBINE";
+C$.INVISIBLE="INVISIBLE";
+{
+C$.featureMap=Clazz.new_($I$(1,1));
+var fmap;
+C$.featureMap.put$O$O($I$(2).IUPredWS.toString(), fmap=Clazz.new_($I$(1,1)));
+fmap.put$O$O("Glob", Clazz.array(String, -1, ["Globular Domain", "Predicted globular domain"]));
+C$.featureMap.put$O$O($I$(2).JronnWS.toString(), fmap=Clazz.new_($I$(1,1)));
+C$.featureMap.put$O$O($I$(2).DisemblWS.toString(), fmap=Clazz.new_($I$(1,1)));
+fmap.put$O$O("REM465", Clazz.array(String, -1, ["REM465", "Missing density"]));
+fmap.put$O$O("HOTLOOPS", Clazz.array(String, -1, ["HOTLOOPS", "Flexible loops"]));
+fmap.put$O$O("COILS", Clazz.array(String, -1, ["COILS", "Random coil"]));
+C$.featureMap.put$O$O($I$(2).GlobPlotWS.toString(), fmap=Clazz.new_($I$(1,1)));
+fmap.put$O$O("GlobDoms", Clazz.array(String, -1, ["Globular Domain", "Predicted globular domain"]));
+fmap.put$O$O("Disorder", Clazz.array(String, -1, ["Protein Disorder", "Probable unstructured peptide region"]));
+var amap;
+C$.annotMap=Clazz.new_($I$(1,1));
+C$.annotMap.put$O$O($I$(2).GlobPlotWS.toString(), amap=Clazz.new_($I$(1,1)));
+amap.put$O$O("Dydx", Clazz.new_($I$(1,1)));
+amap.get$O("Dydx").put$O$O(C$.DONTCOMBINE, C$.DONTCOMBINE);
+amap.get$O("Dydx").put$O$O("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0]));
+amap.get$O("Dydx").put$O$O("RANGE", Clazz.array(Float.TYPE, -1, [-1, +1]));
+amap.put$O$O("SmoothedScore", Clazz.new_($I$(1,1)));
+amap.get$O("SmoothedScore").put$O$O(C$.INVISIBLE, C$.INVISIBLE);
+amap.put$O$O("RawScore", Clazz.new_($I$(1,1)));
+amap.get$O("RawScore").put$O$O(C$.INVISIBLE, C$.INVISIBLE);
+C$.annotMap.put$O$O($I$(2).DisemblWS.toString(), amap=Clazz.new_($I$(1,1)));
+amap.put$O$O("COILS", Clazz.new_($I$(1,1)));
+amap.put$O$O("HOTLOOPS", Clazz.new_($I$(1,1)));
+amap.put$O$O("REM465", Clazz.new_($I$(1,1)));
+amap.get$O("COILS").put$O$O("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.516]));
+amap.get$O("COILS").put$O$O("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
+amap.get$O("HOTLOOPS").put$O$O("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.6]));
+amap.get$O("HOTLOOPS").put$O$O("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
+amap.get$O("REM465").put$O$O("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.1204]));
+amap.get$O("REM465").put$O$O("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
+C$.annotMap.put$O$O($I$(2).IUPredWS.toString(), amap=Clazz.new_($I$(1,1)));
+amap.put$O$O("Long", Clazz.new_($I$(1,1)));
+amap.put$O$O("Short", Clazz.new_($I$(1,1)));
+amap.get$O("Long").put$O$O("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.5]));
+amap.get$O("Long").put$O$O("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
+amap.get$O("Short").put$O$O("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.5]));
+amap.get$O("Short").put$O$O("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
+C$.annotMap.put$O$O($I$(2).JronnWS.toString(), amap=Clazz.new_($I$(1,1)));
+amap.put$O$O("JRonn", Clazz.new_($I$(1,1)));
+amap.get$O("JRonn").put$O$O("THRESHOLD", Clazz.array(Double.TYPE, -1, [1, 0.5]));
+amap.get$O("JRonn").put$O$O("RANGE", Clazz.array(Float.TYPE, -1, [0, 1]));
+};
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:03 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

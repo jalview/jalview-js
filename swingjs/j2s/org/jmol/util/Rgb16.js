@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Rgb16");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.SB']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Rgb16");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.r=0;
-this.g=0;
-this.b=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['r','g','b']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'newI$I', function (argb) {
@@ -56,7 +50,7 @@ return (-16777216 | ((this.r << 8) & 16711680) | (this.g & 65280) | (this.b >> 8
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-return Clazz.new_($I$(1)).append$S("Rgb16(").appendI$I(this.r).appendC$C(",").appendI$I(this.g).appendC$C(",").appendI$I(this.b).append$S(" -> ").appendI$I((this.r >> 8) & 255).appendC$C(",").appendI$I((this.g >> 8) & 255).appendC$C(",").appendI$I((this.b >> 8) & 255).appendC$C(")").toString();
+return Clazz.new_($I$(1,1)).append$S("Rgb16(").appendI$I(this.r).appendC$C(",").appendI$I(this.g).appendC$C(",").appendI$I(this.b).append$S(" -> ").appendI$I((this.r >> 8) & 255).appendC$C(",").appendI$I((this.g >> 8) & 255).appendC$C(",").appendI$I((this.b >> 8) & 255).appendC$C(")").toString();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:57 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

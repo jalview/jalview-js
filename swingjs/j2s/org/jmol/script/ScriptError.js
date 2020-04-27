@@ -1,23 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.i18n.GT','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScriptError", null, null, 'org.jmol.api.JmolScriptEvaluator');
+(function(){var P$=Clazz.newPackage("org.jmol.script"),p$1={},I$=[[0,'org.jmol.i18n.GT','javajs.util.PT']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "ScriptError", null, null, 'org.jmol.api.JmolScriptEvaluator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.chk=false;
-this.ignoreError=false;
-this.error=false;
-this.errorMessage=null;
-this.errorMessageUntranslated=null;
-this.errorType=null;
-this.iCommandError=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['chk','ignoreError','error'],'I',['iCommandError'],'S',['errorMessage','errorMessageUntranslated','errorType'],'O',['vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'getErrorMessage$', function () {
 return this.errorMessage;
@@ -123,13 +112,13 @@ case 8:
 msg=$I$(1).$$S("color expected");
 break;
 case 9:
-msg=$I$(1).$$S("a color or palette name (Jmol, Rasmol) is required");
+msg=(function(a,f){return f.apply(null,a)})(["a color or palette name (Jmol, Rasmol) is required"],$I$(1).$$S);
 break;
 case 10:
 msg=$I$(1).$$S("command expected");
 break;
 case 11:
-msg=$I$(1).$$S("{x y z} or $name or (atom expression) required");
+msg=(function(a,f){return f.apply(null,a)})(["{x y z} or $name or (atom expression) required"],$I$(1).$$S);
 break;
 case 12:
 msg=$I$(1).$$S("draw object not defined");
@@ -138,10 +127,10 @@ case 13:
 msg=$I$(1).$$S("unexpected end of script command");
 break;
 case 14:
-msg=$I$(1).$$S("valid (atom expression) expected");
+msg=(function(a,f){return f.apply(null,a)})(["valid (atom expression) expected"],$I$(1).$$S);
 break;
 case 15:
-msg=$I$(1).$$S("(atom expression) or integer expected");
+msg=(function(a,f){return f.apply(null,a)})(["(atom expression) or integer expected"],$I$(1).$$S);
 break;
 case 16:
 msg=$I$(1).$$S("filename expected");
@@ -159,7 +148,7 @@ case 20:
 msg=$I$(1).$$S("integer expected");
 break;
 case 21:
-msg=$I$(1).$$S("integer out of range ({0} - {1})");
+msg=(function(a,f){return f.apply(null,a)})(["integer out of range ({0} - {1})"],$I$(1).$$S);
 break;
 case 22:
 msg=$I$(1).$$S("invalid argument");
@@ -204,10 +193,10 @@ case 34:
 msg=$I$(1).$$S("number expected");
 break;
 case 35:
-msg=$I$(1).$$S("number must be ({0} or {1})");
+msg=(function(a,f){return f.apply(null,a)})(["number must be ({0} or {1})"],$I$(1).$$S);
 break;
 case 36:
-msg=$I$(1).$$S("decimal number out of range ({0} - {1})");
+msg=(function(a,f){return f.apply(null,a)})(["decimal number out of range ({0} - {1})"],$I$(1).$$S);
 break;
 case 37:
 msg=$I$(1).$$S("object name expected after \'$\'");
@@ -252,7 +241,7 @@ case 50:
 msg=$I$(1).$$S("unrecognized {0} parameter");
 break;
 case 51:
-msg=$I$(1).$$S("unrecognized {0} parameter in Jmol state script (set anyway)");
+msg=(function(a,f){return f.apply(null,a)})(["unrecognized {0} parameter in Jmol state script (set anyway)"],$I$(1).$$S);
 break;
 case 52:
 msg=$I$(1).$$S("unrecognized SHOW parameter --  use {0}");
@@ -297,4 +286,4 @@ this.errorMessage += err;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

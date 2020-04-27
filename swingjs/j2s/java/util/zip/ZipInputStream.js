@@ -1,31 +1,18 @@
-(function(){var P$=Clazz.newPackage("java.util.zip"),p$1={},I$=[[0,'java.util.zip.CRC32','java.io.PushbackInputStream','java.util.zip.Inflater','java.util.zip.ZipEntry']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ZipInputStream", null, 'java.util.zip.InflaterInputStream', 'java.util.zip.ZipConstants');
+(function(){var P$=Clazz.newPackage("java.util.zip"),p$1={},I$=[[0,'java.util.zip.CRC32','java.io.PushbackInputStream','java.util.zip.Inflater','java.util.zip.ZipEntry']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ZipInputStream", null, 'java.util.zip.InflaterInputStream', 'java.util.zip.ZipConstants');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.entry=null;
-this.flag=0;
-this.crc=null;
-this.remaining=0;
-this.tmpbuf=null;
-this.$closed=false;
-this.entryEOF=false;
-this.zc=null;
-this.byteTest=null;
-this.$b=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.crc=Clazz.new_($I$(1));
+this.crc=Clazz.new_($I$(1,1));
 this.tmpbuf=Clazz.array(Byte.TYPE, [512]);
 this.$closed=false;
 this.entryEOF=false;
 this.byteTest=Clazz.array(Byte.TYPE, -1, [32]);
 this.$b=Clazz.array(Byte.TYPE, [256]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['$closed','entryEOF'],'I',['flag'],'J',['remaining'],'S',['zc'],'O',['entry','java.util.zip.ZipEntry','crc','java.util.zip.CRC32','tmpbuf','byte[]','+byteTest','+$b']]]
 
 Clazz.newMeth(C$, 'ensureOpen', function () {
 if (this.$closed) {
@@ -33,8 +20,7 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
-C$.superclazz.c$$java_io_InputStream$java_util_zip_Inflater$I.apply(this, [Clazz.new_($I$(2).c$$java_io_InputStream$I,[$in, 1024]), C$.newInflater$(), 512]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_io_InputStream$java_util_zip_Inflater$I.apply(this,[Clazz.new_($I$(2,1).c$$java_io_InputStream$I,[$in, 1024]), C$.newInflater$(), 512]);C$.$init$.apply(this);
 var charset="UTF-8";
 try {
  String.instantialize(this.byteTest, charset);
@@ -49,7 +35,7 @@ this.zc=charset;
 }, 1);
 
 Clazz.newMeth(C$, 'newInflater$', function () {
-return Clazz.new_($I$(3)).init$I$Z(0, true);
+return Clazz.new_($I$(3,1)).init$I$Z(0, true);
 }, 1);
 
 Clazz.newMeth(C$, 'getNextEntry$', function () {
@@ -211,7 +197,7 @@ return  String.instantialize(b2, 0, len);
 }, p$1);
 
 Clazz.newMeth(C$, 'createZipEntry$S', function (name) {
-return Clazz.new_($I$(4).c$$S,[name]);
+return Clazz.new_($I$(4,1).c$$S,[name]);
 });
 
 Clazz.newMeth(C$, 'readEnd$java_util_zip_ZipEntry', function (e) {
@@ -220,7 +206,7 @@ if (n > 0) {
 (this.$in).unread$BA$I$I(this.buf, this.len - n, n);
 this.eof=false;
 }if ((this.flag & 8) == 8) {
-if (this.inf.getTotalOut$() > 4294967295 || this.inf.getTotalIn$() > 4294967295 ) {
+if (this.inf.getTotalOutL$() > 4294967295 || this.inf.getTotalInL$() > 4294967295 ) {
 p$1.readFully$BA$I$I.apply(this, [this.tmpbuf, 0, 24]);
 var sig=C$.get32$BA$I(this.tmpbuf, 0);
 if (sig != 134695760) {
@@ -244,10 +230,10 @@ e.size=C$.get32$BA$I(this.tmpbuf, 8);
 e.crc=C$.get32$BA$I(this.tmpbuf, 4);
 e.csize=C$.get32$BA$I(this.tmpbuf, 8);
 e.size=C$.get32$BA$I(this.tmpbuf, 12);
-}}}if (e.size != this.inf.getTotalOut$()) {
-throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["invalid entry size (expected " + e.size + " but got " + this.inf.getTotalOut$() + " bytes)" ]);
-}if (e.csize != this.inf.getTotalIn$()) {
-throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["invalid entry compressed size (expected " + e.csize + " but got " + this.inf.getTotalIn$() + " bytes)" ]);
+}}}if (e.size != this.inf.getTotalOutL$()) {
+throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["invalid entry size (expected " + e.size + " but got " + this.inf.getTotalOutL$() + " bytes)" ]);
+}if (e.csize != this.inf.getTotalInL$()) {
+throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["invalid entry compressed size (expected " + e.csize + " but got " + this.inf.getTotalInL$() + " bytes)" ]);
 }if (e.crc != this.crc.getValue$()) {
 throw Clazz.new_(Clazz.load('java.util.zip.ZipException').c$$S,["invalid entry CRC (expected 0x" + Long.toHexString$J(e.crc) + " but got 0x" + Long.toHexString$J(this.crc.getValue$()) + ")" ]);
 }}, p$1);
@@ -276,4 +262,4 @@ return C$.get32$BA$I(b, off) | (C$.get32$BA$I(b, off + 4) << 32);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

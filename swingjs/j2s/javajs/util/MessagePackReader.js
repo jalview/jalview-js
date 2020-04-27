@@ -1,30 +1,25 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.BinaryDocument','javajs.util.BC','Boolean','java.util.Hashtable','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MessagePackReader");
+(function(){var P$=Clazz.newPackage("javajs.util"),p$1={},I$=[[0,'javajs.util.BinaryDocument','javajs.util.BC','java.util.Hashtable','javajs.util.SB']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MessagePackReader");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doc=null;
-this.isHomo=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isHomo'],'O',['doc','javajs.api.GenericBinaryDocumentReader']]]
 
 Clazz.newMeth(C$, 'c$$javajs_api_GenericBinaryDocumentReader$Z', function (binaryDoc, isHomogeneousArrays) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.isHomo=isHomogeneousArrays;
 this.doc=binaryDoc;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getMapForStream$java_io_BufferedInputStream', function (is) {
-this.doc=Clazz.new_($I$(1)).setStream$java_io_BufferedInputStream$Z(is, true);
+this.doc=Clazz.new_($I$(1,1)).setStream$java_io_BufferedInputStream$Z(is, true);
 var map=this.readMap$();
 is.close$();
 return map;
@@ -63,9 +58,9 @@ switch (b) {
 case 192:
 return null;
 case 194:
-return $I$(3).FALSE;
+return Boolean.FALSE;
 case 195:
-return $I$(3).TRUE;
+return Boolean.TRUE;
 case 199:
 return p$1.getObject$I.apply(this, [this.doc.readUInt8$()]);
 case 200:
@@ -208,13 +203,13 @@ return o;
 }, p$1);
 
 Clazz.newMeth(C$, 'getMap$I', function (n) {
-var map=Clazz.new_($I$(4));
+var map=Clazz.new_($I$(3,1));
 for (var i=0; i < n; i++) {
 var key=this.getNext$O$I(null, 0).toString();
 var value=this.getNext$O$I(null, 0);
 if (value == null ) {
 } else {
-map.put$TK$TV(key, value);
+map.put$O$O(key, value);
 }}
 return map;
 }, p$1);
@@ -302,7 +297,7 @@ return a;
 Clazz.newMeth(C$, 'rldecode32ToStr$BA', function (b) {
 var id=Clazz.array(String, [((b.length - 12)/4|0)]);
  out : for (var i=0, len=id.length, pt=12; i < len; i++) {
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(4,1));
 for (var j=0; j < 4; j++) {
 switch (b[pt]) {
 case 0:
@@ -324,7 +319,7 @@ if (b == null ) return null;
 var ret=Clazz.array(Character.TYPE, [n]);
 for (var i=0, pt=3; i < n; ) {
 var val=String.fromCharCode(b[((pt++) << 2) + 3]);
-for (var j=$I$(2).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=val;
+for (var j=$I$(2,"bytesToInt$BA$I$Z",[b, (pt++) << 2, true]); --j >= 0; ) ret[i++]=val;
 
 }
 return ret;
@@ -334,8 +329,8 @@ Clazz.newMeth(C$, 'rldecode32$BA$I', function (b, n) {
 if (b == null ) return null;
 var ret=Clazz.array(Integer.TYPE, [n]);
 for (var i=0, pt=3; i < n; ) {
-var val=$I$(2).bytesToInt$BA$I$Z(b, (pt++) << 2, true);
-for (var j=$I$(2).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=val;
+var val=$I$(2,"bytesToInt$BA$I$Z",[b, (pt++) << 2, true]);
+for (var j=$I$(2,"bytesToInt$BA$I$Z",[b, (pt++) << 2, true]); --j >= 0; ) ret[i++]=val;
 
 }
 return ret;
@@ -345,8 +340,8 @@ Clazz.newMeth(C$, 'rldecode32Delta$BA$I', function (b, n) {
 if (b == null ) return null;
 var ret=Clazz.array(Integer.TYPE, [n]);
 for (var i=0, pt=3, val=0; i < n; ) {
-var diff=$I$(2).bytesToInt$BA$I$Z(b, (pt++) << 2, true);
-for (var j=$I$(2).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=(val=val + diff);
+var diff=$I$(2,"bytesToInt$BA$I$Z",[b, (pt++) << 2, true]);
+for (var j=$I$(2,"bytesToInt$BA$I$Z",[b, (pt++) << 2, true]); --j >= 0; ) ret[i++]=(val=val + diff);
 
 }
 return ret;
@@ -356,8 +351,8 @@ Clazz.newMeth(C$, 'rldecodef$BA$I$F', function (b, n, divisor) {
 if (b == null ) return null;
 var ret=Clazz.array(Float.TYPE, [n]);
 for (var i=0, pt=3; i < n; ) {
-var val=$I$(2).bytesToInt$BA$I$Z(b, (pt++) << 2, true);
-for (var j=$I$(2).bytesToInt$BA$I$Z(b, (pt++) << 2, true); --j >= 0; ) ret[i++]=val / divisor;
+var val=$I$(2,"bytesToInt$BA$I$Z",[b, (pt++) << 2, true]);
+for (var j=$I$(2,"bytesToInt$BA$I$Z",[b, (pt++) << 2, true]); --j >= 0; ) ret[i++]=val / divisor;
 
 }
 return ret;
@@ -367,7 +362,7 @@ Clazz.newMeth(C$, 'unpack16Deltaf$BA$I$F', function (b, n, divisor) {
 if (b == null ) return null;
 var ret=Clazz.array(Float.TYPE, [n]);
 for (var i=0, pt=6, val=0, buf=0; i < n; ) {
-var diff=$I$(2).bytesToShort$BA$I$Z(b, (pt++) << 1, true);
+var diff=$I$(2,"bytesToShort$BA$I$Z",[b, (pt++) << 1, true]);
 if (diff == 32767 || diff == -32768 ) {
 buf+=diff;
 } else {
@@ -393,7 +388,7 @@ offset=0;
 break;
 case 2:
 for (var i=0, pt=6, offset=0; i < n; ) {
-var val=$I$(2).bytesToShort$BA$I$Z(b, (pt++) << 1, true);
+var val=$I$(2,"bytesToShort$BA$I$Z",[b, (pt++) << 1, true]);
 if (val == 32767 || val == -32768 ) {
 offset+=val;
 } else {
@@ -421,7 +416,7 @@ offset=0;
 break;
 case 2:
 for (var i=0, pt=6, offset=0; i < n; ) {
-var val=$I$(2).bytesToShort$BA$I$Z(b, (pt++) << 1, true);
+var val=$I$(2,"bytesToShort$BA$I$Z",[b, (pt++) << 1, true]);
 if (val == 32767 || val == -32768 ) {
 offset+=val;
 } else {
@@ -433,4 +428,4 @@ break;
 return ret;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

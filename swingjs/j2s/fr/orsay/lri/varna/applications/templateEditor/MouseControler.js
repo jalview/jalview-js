@@ -1,39 +1,27 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,['fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','.RelativePosition'],['java.awt.geom.Point2D','.Double'],'java.awt.Point',['fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','.Tool'],'fr.orsay.lri.varna.applications.templateEditor.UnpairedRegion','fr.orsay.lri.varna.applications.templateEditor.Helix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MouseControler", null, null, ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.MouseWheelListener']);
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,['fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','.RelativePosition'],['java.awt.geom.Point2D','.Double'],'java.awt.Point',['fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','.Tool'],'fr.orsay.lri.varna.applications.templateEditor.UnpairedRegion','fr.orsay.lri.varna.applications.templateEditor.Helix']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MouseControler", null, null, ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.MouseWheelListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._granularity=0;
-this.HYSTERESIS_DISTANCE=0;
-this._sp=null;
-this._elem=null;
-this._ui=null;
-this._currentMode=null;
-this.movingView=false;
-this._clickedPos=null;
-this._clickedPosScreen=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._granularity=8;
 this.HYSTERESIS_DISTANCE=10;
 this._currentMode=$I$(1).RP_OUTER;
 this.movingView=false;
-this._clickedPos=Clazz.new_($I$(2));
-this._clickedPosScreen=Clazz.new_($I$(3));
-}, 1);
+this._clickedPos=Clazz.new_($I$(2,1));
+this._clickedPosScreen=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['Z',['movingView'],'I',['_granularity','HYSTERESIS_DISTANCE'],'O',['_sp','fr.orsay.lri.varna.applications.templateEditor.TemplatePanel','_elem','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','_ui','fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','_currentMode','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement.RelativePosition','_clickedPos','java.awt.geom.Point2D.Double','_clickedPosScreen','java.awt.Point']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_applications_templateEditor_TemplatePanel$fr_orsay_lri_varna_applications_templateEditor_TemplateEditorPanelUI', function (sp, ui) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._sp=sp;
 this._elem=null;
 this._ui=ui;
 }, 1);
 
-Clazz.newMeth(C$, ['mouseWheelMoved$java_awt_event_MouseWheelEvent','mouseWheelMoved$'], function (e) {
+Clazz.newMeth(C$, 'mouseWheelMoved$java_awt_event_MouseWheelEvent', function (e) {
 if (e.getWheelRotation$() == -1) {
 this._sp.zoomIn$();
 } else {
@@ -51,12 +39,12 @@ Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (arg0) {
 });
 
 Clazz.newMeth(C$, 'getLogicalMouseCoords$java_awt_event_MouseEvent', function (event) {
-return Clazz.new_($I$(2).c$$D$D,[event.getX$() / this._sp.getScaleFactor$(), event.getY$() / this._sp.getScaleFactor$()]);
+return Clazz.new_([event.getX$() / this._sp.getScaleFactor$(), event.getY$() / this._sp.getScaleFactor$()],$I$(2,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (arg0) {
 this.movingView=false;
-this._clickedPos=Clazz.new_($I$(2).c$$D$D,[arg0.getX$(), arg0.getY$()]);
+this._clickedPos=Clazz.new_([arg0.getX$(), arg0.getY$()],$I$(2,1).c$$D$D);
 this._clickedPosScreen.x=arg0.getXOnScreen$();
 this._clickedPosScreen.y=arg0.getYOnScreen$();
 if (arg0.getButton$() == 2) {
@@ -69,7 +57,7 @@ if (elem == null ) {
 if (arg0.getButton$() == 1 && this._ui.getSelectedTool$() === $I$(4).CREATE_HELIX  ) {
 this._currentMode=$I$(1).RP_EDIT_START;
 } else if ((arg0.getButton$() == 1 && this._ui.getSelectedTool$() === $I$(4).CREATE_UNPAIRED  )) {
-var n=Clazz.new_($I$(5).c$$D$D$fr_orsay_lri_varna_models_templates_RNATemplate,[logicalMousePos.getX$(), logicalMousePos.getY$(), this._sp.getTemplate$()]);
+var n=Clazz.new_([logicalMousePos.getX$(), logicalMousePos.getY$(), this._sp.getTemplate$()],$I$(5,1).c$$D$D$fr_orsay_lri_varna_models_templates_RNATemplate);
 n.setDominantColor$java_awt_Color(this._sp.nextBackgroundColor$());
 this._ui.addElementUI$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement(n);
 this._sp.setSelected$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement(n);
@@ -117,7 +105,7 @@ this._currentMode=c._edge2;
 this._elem=p1;
 this._currentMode=c._edge1;
 }}if (Clazz.instanceOf(this._elem, "fr.orsay.lri.varna.applications.templateEditor.Helix")) {
-this._sp.setPointerPos$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[logicalMousePos.getX$(), logicalMousePos.getY$()]));
+this._sp.setPointerPos$java_awt_geom_Point2D_Double(Clazz.new_([logicalMousePos.getX$(), logicalMousePos.getY$()],$I$(2,1).c$$D$D));
 this._sp.setSelectedEdge$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(this._currentMode);
 }this._sp.setSelected$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement(this._elem);
 }break;
@@ -164,7 +152,7 @@ this._sp.repaint$();
 });
 
 Clazz.newMeth(C$, 'projectPoint$D$D$java_awt_geom_Point2D_Double', function (x, y, ref) {
-var result=Clazz.new_($I$(2));
+var result=Clazz.new_($I$(2,1));
 var nx=x - ref.x;
 var ny=y - ref.y;
 var tmp=4.9E-324;
@@ -183,7 +171,7 @@ return result;
 
 Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (arg0) {
 if (this.movingView) {
-var trans=Clazz.new_($I$(3).c$$I$I,[arg0.getXOnScreen$() - this._clickedPosScreen.x, arg0.getYOnScreen$() - this._clickedPosScreen.y]);
+var trans=Clazz.new_([arg0.getXOnScreen$() - this._clickedPosScreen.x, arg0.getYOnScreen$() - this._clickedPosScreen.y],$I$(3,1).c$$I$I);
 this._sp.translateView$java_awt_Point(trans);
 this._clickedPosScreen.x=arg0.getXOnScreen$();
 this._clickedPosScreen.y=arg0.getYOnScreen$();
@@ -195,7 +183,7 @@ case $I$(1).RP_EDIT_START:
 {
 if (this._clickedPos.distance$D$D(arg0.getX$(), arg0.getY$()) > 10 ) {
 System.out.println$S("Creating Helix...");
-var h1=Clazz.new_($I$(6).c$$D$D$fr_orsay_lri_varna_models_templates_RNATemplate$java_util_List,[logicalMousePos.getX$(), logicalMousePos.getY$(), this._sp.getTemplate$(), this._sp.getRNAComponents$()]);
+var h1=Clazz.new_([logicalMousePos.getX$(), logicalMousePos.getY$(), this._sp.getTemplate$(), this._sp.getRNAComponents$()],$I$(6,1).c$$D$D$fr_orsay_lri_varna_models_templates_RNATemplate$java_util_List);
 h1.setDominantColor$java_awt_Color(this._sp.nextBackgroundColor$());
 this._ui.addElementUI$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement(h1);
 this._sp.setSelected$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement(h1);
@@ -224,13 +212,13 @@ case $I$(1).RP_CONNECT_END3:
 case $I$(1).RP_CONNECT_END5:
 case $I$(1).RP_CONNECT_START5:
 case $I$(1).RP_CONNECT_START3:
-this._sp.setPointerPos$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[logicalMousePos.getX$(), logicalMousePos.getY$()]));
+this._sp.setPointerPos$java_awt_geom_Point2D_Double(Clazz.new_([logicalMousePos.getX$(), logicalMousePos.getY$()],$I$(2,1).c$$D$D));
 this._sp.repaint$();
 break;
 }
 } else if (Clazz.instanceOf(this._elem, "fr.orsay.lri.varna.applications.templateEditor.UnpairedRegion")) {
 var ur=this._elem;
-var p=Clazz.new_($I$(2).c$$D$D,[logicalMousePos.getX$(), logicalMousePos.getY$()]);
+var p=Clazz.new_([logicalMousePos.getX$(), logicalMousePos.getY$()],$I$(2,1).c$$D$D);
 switch (this._currentMode) {
 case $I$(1).RP_EDIT_TANGENT_5:
 {
@@ -262,4 +250,4 @@ Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (arg0) {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

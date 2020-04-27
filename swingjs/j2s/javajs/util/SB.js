@@ -1,20 +1,15 @@
 (function(){var P$=Clazz.newPackage("javajs.util"),I$=[];
-var C$=Clazz.newClass(P$, "SB");
+/*c*/var C$=Clazz.newClass(P$, "SB");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sb=null;
-this.s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['s'],'O',['sb','StringBuilder']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 {
 this.s = "";
 }
@@ -180,4 +175,4 @@ Clazz.newMeth(C$, 'insert$I$S', function (offset, str) {
 this.replace$I$I$S(offset, offset, str);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

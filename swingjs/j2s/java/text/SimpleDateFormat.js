@@ -1,35 +1,14 @@
-(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable',['java.text.DateFormat','.Field'],'java.util.Locale','java.text.DateFormatSymbols','sun.util.resources.LocaleData','java.text.MessageFormat','java.text.NumberFormat','java.util.Calendar','java.util.TimeZone','StringBuilder','java.util.Date','StringBuffer','java.text.CharacterIteratorFieldDelegate','sun.util.calendar.CalendarUtils','java.text.DontCareFieldPosition']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SimpleDateFormat", null, 'java.text.DateFormat');
-C$.cachedLocaleData=null;
-C$.cachedNumberFormatData=null;
-C$.PATTERN_INDEX_TO_CALENDAR_FIELD=null;
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD=null;
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID=null;
+(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable',['java.text.DateFormat','.Field'],'java.util.Locale','java.text.DateFormatSymbols','sun.util.resources.LocaleData','java.text.MessageFormat','java.text.NumberFormat','java.util.Calendar','java.util.TimeZone','StringBuilder','StringBuffer','java.text.CharacterIteratorFieldDelegate','sun.util.calendar.CalendarUtils','java.text.DontCareFieldPosition']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SimpleDateFormat", null, 'java.text.DateFormat');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.cachedLocaleData=Clazz.new_($I$(1).c$$I,[3]);
-C$.cachedNumberFormatData=Clazz.new_($I$(1).c$$I,[3]);
-C$.PATTERN_INDEX_TO_CALENDAR_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 5, 11, 11, 12, 13, 14, 7, 6, 8, 3, 4, 9, 10, 10, 15, 15]);
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17]);
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID=Clazz.array($I$(2), -1, [$I$(2).ERA, $I$(2).YEAR, $I$(2).MONTH, $I$(2).DAY_OF_MONTH, $I$(2).HOUR_OF_DAY1, $I$(2).HOUR_OF_DAY0, $I$(2).MINUTE, $I$(2).SECOND, $I$(2).MILLISECOND, $I$(2).DAY_OF_WEEK, $I$(2).DAY_OF_YEAR, $I$(2).DAY_OF_WEEK_IN_MONTH, $I$(2).WEEK_OF_YEAR, $I$(2).WEEK_OF_MONTH, $I$(2).AM_PM, $I$(2).HOUR1, $I$(2).HOUR0, $I$(2).TIME_ZONE, $I$(2).TIME_ZONE]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.serialVersionOnStream=0;
-this.pattern=null;
-this.compiledPattern=null;
-this.zeroDigit='\0';
-this.formatData=null;
-this.defaultCenturyStart=null;
-this.defaultCenturyStartYear=0;
-this.locale=null;
-this.useDateFormatSymbols=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.serialVersionOnStream=1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['useDateFormatSymbols'],'C',['zeroDigit'],'I',['serialVersionOnStream','defaultCenturyStartYear'],'S',['pattern'],'O',['compiledPattern','char[]','formatData','java.text.DateFormatSymbols','defaultCenturyStart','java.util.Date','locale','java.util.Locale']]
+,['O',['cachedLocaleData','java.util.Hashtable','+cachedNumberFormatData','PATTERN_INDEX_TO_CALENDAR_FIELD','int[]','+PATTERN_INDEX_TO_DATE_FORMAT_FIELD','PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID','java.text.DateFormat.Field[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I$java_util_Locale.apply(this, [3, 3, $I$(3).getDefault$()]);
@@ -40,7 +19,7 @@ C$.c$$S$java_util_Locale.apply(this, [pattern, $I$(3).getDefault$()]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_util_Locale', function (pattern, locale) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (pattern == null  || locale == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }p$1.initializeCalendar$java_util_Locale.apply(this, [locale]);
@@ -51,7 +30,7 @@ p$1.initialize$java_util_Locale.apply(this, [locale]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_text_DateFormatSymbols', function (pattern, formatSymbols) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (pattern == null  || formatSymbols == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.pattern=pattern;
@@ -63,7 +42,7 @@ this.useDateFormatSymbols=true;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$java_util_Locale', function (timeStyle, dateStyle, loc) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 if (loc == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.locale=loc;
@@ -83,7 +62,7 @@ throw e;
 }
 }if (dateTimePatterns == null ) {
 dateTimePatterns=r.getStringArray$S("DateTimePatterns");
-}C$.cachedLocaleData.put$TK$TV(key, dateTimePatterns);
+}C$.cachedLocaleData.put$O$O(key, dateTimePatterns);
 }this.formatData=$I$(4).getInstance$java_util_Locale(loc);
 if ((timeStyle >= 0) && (dateStyle >= 0) ) {
 var dateTimeArgs=Clazz.array(java.lang.Object, -1, [dateTimePatterns[timeStyle], dateTimePatterns[dateStyle + 4]]);
@@ -103,7 +82,7 @@ this.numberFormat=C$.cachedNumberFormatData.get$O(loc);
 if (this.numberFormat == null ) {
 this.numberFormat=$I$(7).getIntegerInstance$java_util_Locale(loc);
 this.numberFormat.setGroupingUsed$Z(false);
-C$.cachedNumberFormatData.put$TK$TV(loc, this.numberFormat);
+C$.cachedNumberFormatData.put$O$O(loc, this.numberFormat);
 }this.numberFormat=this.numberFormat.clone$();
 p$1.initializeDefaultCentury.apply(this, []);
 }, p$1);
@@ -111,11 +90,11 @@ p$1.initializeDefaultCentury.apply(this, []);
 Clazz.newMeth(C$, 'initializeCalendar$java_util_Locale', function (loc) {
 if (this.calendar == null ) {
 Clazz.assert(C$, this, function(){return loc != null });
-this.calendar=$I$(8).getInstance$java_util_TimeZone$java_util_Locale($I$(9).getDefault$(), loc);
+this.calendar=$I$(8,"getInstance$java_util_TimeZone$java_util_Locale",[$I$(9).getDefault$(), loc]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'getKey', function () {
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 sb.append$S(p$1.getCalendarName.apply(this, [])).append$C(".");
 sb.append$S(this.locale.getLanguage$()).append$C("_").append$S(this.locale.getCountry$()).append$C("_").append$S(this.locale.getVariant$());
 return sb.toString();
@@ -124,7 +103,7 @@ return sb.toString();
 Clazz.newMeth(C$, 'compile$S', function (pattern) {
 var length=pattern.length$();
 var inQuote=false;
-var compiledPattern=Clazz.new_($I$(10).c$$I,[length * 2]);
+var compiledPattern=Clazz.new_($I$(10,1).c$$I,[length * 2]);
 var tmpBuffer=null;
 var count=0;
 var lastTag=-1;
@@ -150,7 +129,7 @@ C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
 lastTag=-1;
 count=0;
 }if (tmpBuffer == null ) {
-tmpBuffer=Clazz.new_($I$(10).c$$I,[length]);
+tmpBuffer=Clazz.new_($I$(10,1).c$$I,[length]);
 } else {
 tmpBuffer.setLength$I(0);
 }inQuote=true;
@@ -222,7 +201,7 @@ buffer.append$C(String.fromCharCode((length & 65535)));
 }}, 1);
 
 Clazz.newMeth(C$, 'initializeDefaultCentury', function () {
-this.calendar.setTime$java_util_Date(Clazz.new_($I$(11)));
+this.calendar.setTime$java_util_Date(Clazz.new_(java.util.Date));
 this.calendar.add$I$I(1, -80);
 p$1.parseAmbiguousDatesAsAfter$java_util_Date.apply(this, [this.calendar.getTime$()]);
 }, p$1);
@@ -272,12 +251,12 @@ return toAppendTo;
 }, p$1);
 
 Clazz.newMeth(C$, 'formatToCharacterIterator$O', function (obj) {
-var sb=Clazz.new_($I$(12));
-var delegate=Clazz.new_($I$(13));
+var sb=Clazz.new_($I$(11,1));
+var delegate=Clazz.new_($I$(12,1));
 if (Clazz.instanceOf(obj, "java.util.Date")) {
 p$1.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [obj, sb, delegate]);
 } else if (Clazz.instanceOf(obj, "java.lang.Number")) {
-p$1.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [Clazz.new_($I$(11).c$$J,[(obj).longValue$()]), sb, delegate]);
+p$1.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [Clazz.new_(java.util.Date.c$$J,[(obj).longValue$()]), sb, delegate]);
 } else if (obj == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["formatToCharacterIterator must be passed non-null object"]);
 } else {
@@ -362,7 +341,7 @@ buffer.append$C("+");
 } else {
 width++;
 }var num=((value/60|0)) * 100 + (value % 60);
-$I$(14).sprintf0d$StringBuffer$I$I(buffer, num, width);
+$I$(13).sprintf0d$StringBuffer$I$I(buffer, num, width);
 break;
 default:
 if (current == null ) {
@@ -410,7 +389,7 @@ throw e;
 }
 this.numberFormat.setMinimumIntegerDigits$I(minDigits);
 this.numberFormat.setMaximumIntegerDigits$I(maxDigits);
-this.numberFormat.format$J$StringBuffer$java_text_FieldPosition(value, buffer, $I$(15).INSTANCE);
+this.numberFormat.format$J$StringBuffer$java_text_FieldPosition(value, buffer, $I$(14).INSTANCE);
 }, p$1);
 
 Clazz.newMeth(C$, 'parse$S$java_text_ParsePosition', function (text, pos) {
@@ -435,7 +414,7 @@ return "java.util.GregorianCalendar".equals$O(p$1.getCalendarName.apply(this, []
 }, p$1);
 
 Clazz.newMeth(C$, 'translatePattern$S$S$S', function (pattern, from, to) {
-var result=Clazz.new_($I$(10));
+var result=Clazz.new_($I$(10,1));
 var inQuote=false;
 for (var i=0; i < pattern.length$(); ++i) {
 var c=pattern.charAt$I(i);
@@ -496,6 +475,14 @@ if (!C$.superclazz.prototype.equals$O.apply(this, [obj])) return false;
 var that=obj;
 return (this.pattern.equals$O(that.pattern) && this.formatData.equals$O(that.formatData) );
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.cachedLocaleData=Clazz.new_($I$(1,1).c$$I,[3]);
+C$.cachedNumberFormatData=Clazz.new_($I$(1,1).c$$I,[3]);
+C$.PATTERN_INDEX_TO_CALENDAR_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 5, 11, 11, 12, 13, 14, 7, 6, 8, 3, 4, 9, 10, 10, 15, 15]);
+C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17]);
+C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID=Clazz.array($I$(2), -1, [$I$(2).ERA, $I$(2).YEAR, $I$(2).MONTH, $I$(2).DAY_OF_MONTH, $I$(2).HOUR_OF_DAY1, $I$(2).HOUR_OF_DAY0, $I$(2).MINUTE, $I$(2).SECOND, $I$(2).MILLISECOND, $I$(2).DAY_OF_WEEK, $I$(2).DAY_OF_YEAR, $I$(2).DAY_OF_WEEK_IN_MONTH, $I$(2).WEEK_OF_YEAR, $I$(2).WEEK_OF_MONTH, $I$(2).AM_PM, $I$(2).HOUR1, $I$(2).HOUR0, $I$(2).TIME_ZONE, $I$(2).TIME_ZONE]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

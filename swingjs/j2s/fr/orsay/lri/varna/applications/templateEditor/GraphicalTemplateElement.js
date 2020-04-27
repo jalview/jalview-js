@@ -1,53 +1,24 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,'java.awt.Color','java.awt.Font','java.util.HashMap','java.awt.BasicStroke','fr.orsay.lri.varna.applications.templateEditor.Couple','java.awt.Dimension',['java.awt.geom.Point2D','.Double']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GraphicalTemplateElement", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,'java.awt.Color','java.awt.Font','java.util.HashMap','java.awt.BasicStroke','fr.orsay.lri.varna.applications.templateEditor.Couple','java.awt.Dimension',['java.awt.geom.Point2D','.Double']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GraphicalTemplateElement", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.BACKBONE_COLOR=null;
-C$.CONTROL_COLOR=null;
-C$.NUMBER_FONT=null;
-C$.NUMBER_COLOR=null;
-C$.BASE_PAIR_COLOR=null;
-C$.BASE_COLOR=null;
-C$.BASE_FILL_COLOR=null;
-C$.BASE_FILL_3_COLOR=null;
-C$.BASE_FILL_5_COLOR=null;
-C$.MAGNET_COLOR=null;
+C$.$classes$=[['RelativePosition',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.BACKBONE_COLOR=$I$(1).gray;
-C$.CONTROL_COLOR=$I$(1).decode$S("#D0D0FF");
-C$.NUMBER_FONT=Clazz.new_($I$(2).c$$S$I$I,["Arial", 1, 18]);
-C$.NUMBER_COLOR=$I$(1).gray;
-C$.BASE_PAIR_COLOR=$I$(1).blue;
-C$.BASE_COLOR=$I$(1).gray;
-C$.BASE_FILL_COLOR=$I$(1).white;
-C$.BASE_FILL_3_COLOR=$I$(1).red;
-C$.BASE_FILL_5_COLOR=$I$(1).green;
-C$.MAGNET_COLOR=C$.CONTROL_COLOR;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._debug=false;
-this._mainColors=null;
-this._dominantColor=null;
-this._attachedElements=null;
-this._boldStroke=null;
-this._solidStroke=null;
-this.dash=null;
-this._dashedStroke=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._debug=false;
-this._mainColors=Clazz.new_($I$(3));
-this._dominantColor=Clazz.new_($I$(1).c$$F$F$F$F,[0.5, 0.5, 0.5, 0.9]);
-this._attachedElements=Clazz.new_($I$(3));
-this._boldStroke=Clazz.new_($I$(4).c$$F$I$I$F,[2.5, 1, 1, 3.0]);
-this._solidStroke=Clazz.new_($I$(4).c$$F$I$I$F,[1.5, 1, 1, 3.0]);
+this._mainColors=Clazz.new_($I$(3,1));
+this._dominantColor=Clazz.new_($I$(1,1).c$$F$F$F$F,[0.5, 0.5, 0.5, 0.9]);
+this._attachedElements=Clazz.new_($I$(3,1));
+this._boldStroke=Clazz.new_($I$(4,1).c$$F$I$I$F,[2.5, 1, 1, 3.0]);
+this._solidStroke=Clazz.new_($I$(4,1).c$$F$I$I$F,[1.5, 1, 1, 3.0]);
 this.dash=Clazz.array(Float.TYPE, -1, [5.0, 5.0]);
-this._dashedStroke=Clazz.new_($I$(4).c$$F$I$I$F$FA$F,[1.5, 1, 1, 3.0, this.dash, 0]);
-}, 1);
+this._dashedStroke=Clazz.new_($I$(4,1).c$$F$I$I$F$FA$F,[1.5, 1, 1, 3.0, this.dash, 0]);
+},1);
+
+C$.$fields$=[['Z',['_debug'],'O',['_mainColors','java.util.HashMap','_dominantColor','java.awt.Color','_attachedElements','java.util.HashMap','_boldStroke','java.awt.Stroke','+_solidStroke','dash','float[]','_dashedStroke','java.awt.Stroke']]
+,['O',['BACKBONE_COLOR','java.awt.Color','+CONTROL_COLOR','NUMBER_FONT','java.awt.Font','NUMBER_COLOR','java.awt.Color','+BASE_PAIR_COLOR','+BASE_COLOR','+BASE_FILL_COLOR','+BASE_FILL_3_COLOR','+BASE_FILL_5_COLOR','+MAGNET_COLOR']]]
 
 Clazz.newMeth(C$, 'setDominantColor$java_awt_Color', function (c) {
 this._dominantColor=c;
@@ -58,15 +29,15 @@ return this._dominantColor;
 });
 
 Clazz.newMeth(C$, 'setMainColor$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$java_awt_Color', function (edge, c) {
-this._mainColors.put$TK$TV(edge, c);
+this._mainColors.put$O$O(edge, c);
 });
 
 Clazz.newMeth(C$, 'attach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition', function (e, edgeOrig, edgeDest) {
-this._attachedElements.put$TK$TV(edgeOrig, Clazz.new_($I$(5).c$$TT$TU,[edgeDest, e]));
+this._attachedElements.put$O$O(edgeOrig, Clazz.new_($I$(5,1).c$$O$O,[edgeDest, e]));
 });
 
 Clazz.newMeth(C$, 'graphicalAttach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition', function (e, edgeOrig, edgeDest) {
-this._attachedElements.put$TK$TV(edgeOrig, Clazz.new_($I$(5).c$$TT$TU,[edgeDest, e]));
+this._attachedElements.put$O$O(edgeOrig, Clazz.new_($I$(5,1).c$$O$O,[edgeDest, e]));
 });
 
 Clazz.newMeth(C$, 'detach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition', function (edge) {
@@ -92,7 +63,7 @@ this.draw$java_awt_Graphics2D$Z(g2d, false);
 Clazz.newMeth(C$, 'getStringDimension$java_awt_Graphics2D$S', function (g, s) {
 var fm=g.getFontMetrics$();
 var r=fm.getStringBounds$S$java_awt_Graphics(s, g);
-return (Clazz.new_($I$(6).c$$I$I,[(r.getWidth$()|0), fm.getAscent$() - fm.getDescent$()]));
+return (Clazz.new_([(r.getWidth$()|0), fm.getAscent$() - fm.getDescent$()],$I$(6,1).c$$I$I));
 }, p$1);
 
 Clazz.newMeth(C$, 'drawStringCentered$java_awt_Graphics2D$S$D$D', function (g2, res, x, y) {
@@ -115,10 +86,10 @@ g2d.setColor$java_awt_Color(C$.BACKBONE_COLOR);
 g2d.drawOval$I$I$I$I((((center.x - 13.0))|0), (((center.y - 13.0))|0), 26, 26);
 var arrowLength=11.0;
 var width=3.0;
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x + arrowLength, center.y]), width);
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x - arrowLength, center.y]), width);
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x, center.y + arrowLength]), width);
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x, center.y - arrowLength]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x + arrowLength, center.y]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x - arrowLength, center.y]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x, center.y + arrowLength]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x, center.y - arrowLength]), width);
 });
 
 Clazz.newMeth(C$, 'drawEditStart$java_awt_Graphics2D$fr_orsay_lri_varna_applications_templateEditor_Helix$D$D$D$D', function (g2d, h, dx, dy, nx, ny) {
@@ -138,10 +109,10 @@ g2d.setColor$java_awt_Color(C$.BACKBONE_COLOR);
 g2d.drawOval$I$I$I$I((((center.x - 10.0))|0), (((center.y - 10.0))|0), 20, 20);
 var arrowLength=8.0;
 var width=3.0;
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x + nx * arrowLength, center.y + ny * arrowLength]), width);
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x - nx * arrowLength, center.y - ny * arrowLength]), width);
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x + dx * arrowLength, center.y + dy * arrowLength]), width);
-this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7).c$$D$D,[center.x - dx * arrowLength, center.y - dy * arrowLength]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x + nx * arrowLength, center.y + ny * arrowLength]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x - nx * arrowLength, center.y - ny * arrowLength]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x + dx * arrowLength, center.y + dy * arrowLength]), width);
+this.drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D(g2d, center, Clazz.new_($I$(7,1).c$$D$D,[center.x - dx * arrowLength, center.y - dy * arrowLength]), width);
 });
 
 Clazz.newMeth(C$, 'drawArrow$java_awt_Graphics2D$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D', function (g2d, orig, dest, width) {
@@ -193,12 +164,30 @@ if (Clazz.instanceOf(b, "fr.orsay.lri.varna.applications.templateEditor.Graphica
 return b === this ;
 } else return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.BACKBONE_COLOR=$I$(1).gray;
+C$.CONTROL_COLOR=$I$(1).decode$S("#D0D0FF");
+C$.NUMBER_FONT=Clazz.new_($I$(2,1).c$$S$I$I,["Arial", 1, 18]);
+C$.NUMBER_COLOR=$I$(1).gray;
+C$.BASE_PAIR_COLOR=$I$(1).blue;
+C$.BASE_COLOR=$I$(1).gray;
+C$.BASE_FILL_COLOR=$I$(1).white;
+C$.BASE_FILL_3_COLOR=$I$(1).red;
+C$.BASE_FILL_5_COLOR=$I$(1).green;
+C$.MAGNET_COLOR=C$.CONTROL_COLOR;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.GraphicalTemplateElement, "RelativePosition", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.GraphicalTemplateElement, "RelativePosition", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "RP_OUTER", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "RP_INNER_GENERAL", 1, []);
@@ -211,10 +200,7 @@ Clazz.newEnumConst($vals, C$.c$, "RP_CONNECT_END5", 7, []);
 Clazz.newEnumConst($vals, C$.c$, "RP_CONNECT_END3", 8, []);
 Clazz.newEnumConst($vals, C$.c$, "RP_EDIT_TANGENT_3", 9, []);
 Clazz.newEnumConst($vals, C$.c$, "RP_EDIT_TANGENT_5", 10, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -224,4 +210,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

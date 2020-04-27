@@ -1,50 +1,13 @@
-(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'org.slf4j.LoggerFactory','java.util.HashMap','java.awt.Color',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ChimUtils");
-C$.logger=null;
-C$.MAX_SUB_MODELS=0;
-C$.aaNames=null;
-C$.RESIDUE_ATTR=null;
-C$.RINALYZER_ATTR=null;
-C$.DEFAULT_STRUCTURE_KEY=null;
+(function(){var P$=Clazz.newPackage("ext.edu.ucsf.rbvi.strucviz2"),I$=[[0,'org.slf4j.LoggerFactory','java.util.HashMap','java.awt.Color',['ext.edu.ucsf.rbvi.strucviz2.StructureManager','.ModelType'],'java.util.ArrayList']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ChimUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.logger=$I$(1).getLogger$Class(Clazz.getClass(C$));
-C$.MAX_SUB_MODELS=1000;
-C$.RESIDUE_ATTR="ChimeraResidue";
-C$.RINALYZER_ATTR="RINalyzerResidue";
-C$.DEFAULT_STRUCTURE_KEY="pdbFileName";
-{
-C$.aaNames=Clazz.new_($I$(2));
-C$.aaNames.put$TK$TV("ALA", "A Ala Alanine N[C@@H](C)C(O)=O");
-C$.aaNames.put$TK$TV("ARG", "R Arg Arginine N[C@@H](CCCNC(N)=N)C(O)=O");
-C$.aaNames.put$TK$TV("ASN", "N Asn Asparagine N[C@@H](CC(N)=O)C(O)=O");
-C$.aaNames.put$TK$TV("ASP", "D Asp Aspartic_acid N[C@@H](CC(O)=O)C(O)=O");
-C$.aaNames.put$TK$TV("CYS", "C Cys Cysteine N[C@@H](CS)C(O)=O");
-C$.aaNames.put$TK$TV("GLN", "Q Gln Glutamine N[C@H](C(O)=O)CCC(N)=O");
-C$.aaNames.put$TK$TV("GLU", "E Glu Glumatic_acid N[C@H](C(O)=O)CCC(O)=O");
-C$.aaNames.put$TK$TV("GLY", "G Gly Glycine NCC(O)=O");
-C$.aaNames.put$TK$TV("HIS", "H His Histidine N[C@@H](CC1=CN=CN1)C(O)=O");
-C$.aaNames.put$TK$TV("ILE", "I Ile Isoleucine N[C@]([C@H](C)CC)([H])C(O)=O");
-C$.aaNames.put$TK$TV("LEU", "L Leu Leucine N[C@](CC(C)C)([H])C(O)=O");
-C$.aaNames.put$TK$TV("LYS", "K Lys Lysine N[C@](CCCCN)([H])C(O)=O");
-C$.aaNames.put$TK$TV("DLY", "K Dly D-Lysine NCCCC[C@@H](N)C(O)=O");
-C$.aaNames.put$TK$TV("MET", "M Met Methionine N[C@](CCSC)([H])C(O)=O");
-C$.aaNames.put$TK$TV("PHE", "F Phe Phenylalanine N[C@](CC1=CC=CC=C1)([H])C(O)=O");
-C$.aaNames.put$TK$TV("PRO", "P Pro Proline OC([C@@]1([H])NCCC1)=O");
-C$.aaNames.put$TK$TV("SER", "S Ser Serine OC[C@](C(O)=O)([H])N");
-C$.aaNames.put$TK$TV("THR", "T Thr Threonine O[C@H](C)[C@](C(O)=O)([H])N");
-C$.aaNames.put$TK$TV("TRP", "W Trp Tryptophan N[C@@]([H])(CC1=CN([H])C2=C1C=CC=C2)C(O)=O");
-C$.aaNames.put$TK$TV("TYR", "Y Tyr Tyrosine N[C@@](C(O)=O)([H])CC1=CC=C(O)C=C1");
-C$.aaNames.put$TK$TV("VAL", "V Val Valine N[C@@](C(O)=O)([H])C(C)C");
-C$.aaNames.put$TK$TV("ASX", "B Asx Aspartic_acid_or_Asparagine");
-C$.aaNames.put$TK$TV("GLX", "Z Glx Glutamine_or_Glutamic_acid");
-C$.aaNames.put$TK$TV("XAA", "X Xaa Any_or_unknown_amino_acid");
-C$.aaNames.put$TK$TV("HOH", "HOH HOH Water [H]O[H]");
-};
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['I',['MAX_SUB_MODELS'],'S',['RESIDUE_ATTR','RINALYZER_ATTR','DEFAULT_STRUCTURE_KEY'],'O',['logger','org.slf4j.Logger','aaNames','java.util.HashMap']]]
 
 Clazz.newMeth(C$, 'parseModelNumber$S', function (inputLine) {
 var hash=inputLine.indexOf$I("#");
@@ -117,13 +80,13 @@ var colorString=inputLine.substring$I(colorStart + 6);
 var rgbStrings=colorString.split$S(",");
 var rgbValues=Clazz.array(Float.TYPE, [4]);
 for (var i=0; i < rgbStrings.length; i++) {
-var f= new Float(rgbStrings[i]);
+var f=Float.valueOf$S(rgbStrings[i]);
 rgbValues[i]=f.floatValue$();
 }
 if (rgbStrings.length == 4) {
-return Clazz.new_($I$(3).c$$F$F$F$F,[rgbValues[0], rgbValues[1], rgbValues[2], rgbValues[3]]);
+return Clazz.new_($I$(3,1).c$$F$F$F$F,[rgbValues[0], rgbValues[1], rgbValues[2], rgbValues[3]]);
 } else {
-return Clazz.new_($I$(3).c$$F$F$F,[rgbValues[0], rgbValues[1], rgbValues[2]]);
+return Clazz.new_($I$(3,1).c$$F$F$F,[rgbValues[0], rgbValues[1], rgbValues[2]]);
 }} catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 C$.logger.warn$S$Throwable("Unexpected return from Chimera: " + inputLine, ex);
@@ -135,7 +98,7 @@ return $I$(3).white;
 }, 1);
 
 Clazz.newMeth(C$, 'makeModelKey$I$I', function (model, subModel) {
-return  new Integer(model * C$.MAX_SUB_MODELS + subModel);
+return Integer.valueOf$I(model * C$.MAX_SUB_MODELS + subModel);
 }, 1);
 
 Clazz.newMeth(C$, 'getModel$S$ext_edu_ucsf_rbvi_strucviz2_ChimeraManager', function (atomSpec, chimeraManager) {
@@ -398,7 +361,7 @@ if (models.size$() == 1) {
 chimeraModel=models.get$I(0);
 } else if (models.size$() > 1 && modelIDNoResChain[1] != null  ) {
 try {
-var modelNo=(Integer.valueOf$S(modelIDNoResChain[1])).intValue$();
+var modelNo=(Integer.valueOf$S(modelIDNoResChain[1])).valueOf();
 for (var model, $model = models.iterator$(); $model.hasNext$()&&((model=($model.next$())),1);) {
 if (model.getSubModelNumber$() == modelNo) {
 chimeraModel=model;
@@ -451,11 +414,11 @@ Clazz.newMeth(C$, 'findStructures$S', function (residueList) {
 if (residueList == null ) {
 return null;
 }var residues=residueList.split$S(",");
-var structureNameMap=Clazz.new_($I$(2));
+var structureNameMap=Clazz.new_($I$(2,1));
 for (var i=0; i < residues.length; i++) {
 var components=residues[i].split$S("#");
 if (components.length > 1) {
-structureNameMap.put$TK$TV(components[0], components[1]);
+structureNameMap.put$O$O(components[0], components[1]);
 }}
 if (structureNameMap.isEmpty$()) {
 return null;
@@ -471,7 +434,7 @@ return structure;
 }, 1);
 
 Clazz.newMeth(C$, 'parseFuncRes$java_util_List$S', function (residueNames, modelName) {
-var resRanges=Clazz.new_($I$(5));
+var resRanges=Clazz.new_($I$(5,1));
 for (var i=0; i < residueNames.size$(); i++) {
 var residue=residueNames.get$I(i);
 var components=residue.split$S("#");
@@ -509,7 +472,7 @@ resRange=resRange.concat$S(range[res]);
 resRange=resRange.concat$S(range[res].substring$I(3));
 }}
 if (!resRanges.contains$O(resRange)) {
-resRanges.add$TE(resRange);
+resRanges.add$O(resRange);
 }}
 return resRanges;
 }, 1);
@@ -551,6 +514,42 @@ name=(chimObj).toString() + " [" + name + "]" ;
 }return name;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.logger=$I$(1,"getLogger$Class",[Clazz.getClass(C$)]);
+C$.MAX_SUB_MODELS=1000;
+C$.RESIDUE_ATTR="ChimeraResidue";
+C$.RINALYZER_ATTR="RINalyzerResidue";
+C$.DEFAULT_STRUCTURE_KEY="pdbFileName";
+{
+C$.aaNames=Clazz.new_($I$(2,1));
+C$.aaNames.put$O$O("ALA", "A Ala Alanine N[C@@H](C)C(O)=O");
+C$.aaNames.put$O$O("ARG", "R Arg Arginine N[C@@H](CCCNC(N)=N)C(O)=O");
+C$.aaNames.put$O$O("ASN", "N Asn Asparagine N[C@@H](CC(N)=O)C(O)=O");
+C$.aaNames.put$O$O("ASP", "D Asp Aspartic_acid N[C@@H](CC(O)=O)C(O)=O");
+C$.aaNames.put$O$O("CYS", "C Cys Cysteine N[C@@H](CS)C(O)=O");
+C$.aaNames.put$O$O("GLN", "Q Gln Glutamine N[C@H](C(O)=O)CCC(N)=O");
+C$.aaNames.put$O$O("GLU", "E Glu Glumatic_acid N[C@H](C(O)=O)CCC(O)=O");
+C$.aaNames.put$O$O("GLY", "G Gly Glycine NCC(O)=O");
+C$.aaNames.put$O$O("HIS", "H His Histidine N[C@@H](CC1=CN=CN1)C(O)=O");
+C$.aaNames.put$O$O("ILE", "I Ile Isoleucine N[C@]([C@H](C)CC)([H])C(O)=O");
+C$.aaNames.put$O$O("LEU", "L Leu Leucine N[C@](CC(C)C)([H])C(O)=O");
+C$.aaNames.put$O$O("LYS", "K Lys Lysine N[C@](CCCCN)([H])C(O)=O");
+C$.aaNames.put$O$O("DLY", "K Dly D-Lysine NCCCC[C@@H](N)C(O)=O");
+C$.aaNames.put$O$O("MET", "M Met Methionine N[C@](CCSC)([H])C(O)=O");
+C$.aaNames.put$O$O("PHE", "F Phe Phenylalanine N[C@](CC1=CC=CC=C1)([H])C(O)=O");
+C$.aaNames.put$O$O("PRO", "P Pro Proline OC([C@@]1([H])NCCC1)=O");
+C$.aaNames.put$O$O("SER", "S Ser Serine OC[C@](C(O)=O)([H])N");
+C$.aaNames.put$O$O("THR", "T Thr Threonine O[C@H](C)[C@](C(O)=O)([H])N");
+C$.aaNames.put$O$O("TRP", "W Trp Tryptophan N[C@@]([H])(CC1=CN([H])C2=C1C=CC=C2)C(O)=O");
+C$.aaNames.put$O$O("TYR", "Y Tyr Tyrosine N[C@@](C(O)=O)([H])CC1=CC=C(O)C=C1");
+C$.aaNames.put$O$O("VAL", "V Val Valine N[C@@](C(O)=O)([H])C(C)C");
+C$.aaNames.put$O$O("ASX", "B Asx Aspartic_acid_or_Asparagine");
+C$.aaNames.put$O$O("GLX", "Z Glx Glutamine_or_Glutamic_acid");
+C$.aaNames.put$O$O("XAA", "X Xaa Any_or_unknown_amino_acid");
+C$.aaNames.put$O$O("HOH", "HOH HOH Water [H]O[H]");
+};
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

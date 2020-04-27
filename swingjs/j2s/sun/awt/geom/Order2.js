@@ -1,29 +1,12 @@
-(function(){var P$=Clazz.newPackage("sun.awt.geom");
-var C$=Clazz.newClass(P$, "Order2", null, 'sun.awt.geom.Curve');
+(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'sun.awt.geom.Curve']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Order2", null, 'sun.awt.geom.Curve');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x0=0;
-this.y0=0;
-this.cx0=0;
-this.cy0=0;
-this.x1=0;
-this.y1=0;
-this.xmin=0;
-this.xmax=0;
-this.xcoeff0=0;
-this.xcoeff1=0;
-this.xcoeff2=0;
-this.ycoeff0=0;
-this.ycoeff1=0;
-this.ycoeff2=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['x0','y0','cx0','cy0','x1','y1','xmin','xmax','xcoeff0','xcoeff1','xcoeff2','ycoeff0','ycoeff1','ycoeff2']]]
 
 Clazz.newMeth(C$, 'insert$java_util_Vector$DA$D$D$D$D$D$D$I', function (curves, tmp, x0, y0, cx0, cy0, x1, y1, direction) {
 var numparams=C$.getHorizontalParams$D$D$D$DA(y0, cy0, y1, tmp);
@@ -46,9 +29,9 @@ C$.addInstance$java_util_Vector$D$D$D$D$D$D$I(curves, tmp[i1], tmp[i1 + 1], tmp[
 
 Clazz.newMeth(C$, 'addInstance$java_util_Vector$D$D$D$D$D$D$I', function (curves, x0, y0, cx0, cy0, x1, y1, direction) {
 if (y0 > y1 ) {
-curves.add$TE(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x1, y1, cx0, cy0, x0, y0, -direction]));
+curves.add$O(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x1, y1, cx0, cy0, x0, y0, -direction]));
 } else if (y1 > y0 ) {
-curves.add$TE(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x0, y0, cx0, cy0, x1, y1, direction]));
+curves.add$O(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x0, y0, cx0, cy0, x1, y1, direction]));
 }}, 1);
 
 Clazz.newMeth(C$, 'getHorizontalParams$D$D$D$DA', function (c0, cp, c1, ret) {
@@ -94,8 +77,7 @@ coords[pos + 7]=y1;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (x0, y0, cx0, cy0, x1, y1, direction) {
-C$.superclazz.c$$I.apply(this, [direction]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$I.apply(this,[direction]);C$.$init$.apply(this);
 if (cy0 < y0 ) {
 cy0=y0;
 } else if (cy0 > y1 ) {
@@ -306,9 +288,9 @@ coords[3]=this.y0;
 });
 
 Clazz.newMeth(C$, 'controlPointString$', function () {
-return ("(" + new Double(P$.Curve.round$D(this.cx0)).toString() + ", " + new Double(P$.Curve.round$D(this.cy0)).toString() + "), " );
+return ("(" + new Double($I$(1).round$D(this.cx0)).toString() + ", " + new Double($I$(1).round$D(this.cy0)).toString() + "), " );
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

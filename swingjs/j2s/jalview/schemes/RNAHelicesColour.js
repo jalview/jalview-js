@@ -1,45 +1,35 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.util.Hashtable','jalview.schemes.ResidueProperties','jalview.schemes.ColourSchemeProperty','java.awt.Color','jalview.schemes.JalviewColourScheme']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RNAHelicesColour", null, 'jalview.schemes.ResidueColourScheme');
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.util.Hashtable','jalview.schemes.ResidueProperties','jalview.schemes.ColourSchemeProperty','java.awt.Color','jalview.schemes.JalviewColourScheme']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RNAHelicesColour", null, 'jalview.schemes.ResidueColourScheme');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.positionsToHelix=null;
-this.numHelix=0;
-this.annotation=null;
-this.lastrefresh=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.positionsToHelix=Clazz.new_($I$(1));
+this.positionsToHelix=Clazz.new_($I$(1,1));
 this.numHelix=0;
 this.lastrefresh=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['numHelix'],'J',['lastrefresh'],'O',['positionsToHelix','java.util.Hashtable','annotation','jalview.datamodel.AlignmentAnnotation']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation', function (annotation) {
-C$.superclazz.c$$IA.apply(this, [$I$(2).nucleotideIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IA.apply(this,[$I$(2).nucleotideIndex]);C$.$init$.apply(this);
 this.annotation=annotation;
 $I$(3).resetRnaHelicesShading$();
 this.refresh$();
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_datamodel_AnnotatedCollectionI', function (alignment) {
-C$.superclazz.c$$IA.apply(this, [$I$(2).nucleotideIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IA.apply(this,[$I$(2).nucleotideIndex]);C$.$init$.apply(this);
 $I$(3).resetRnaHelicesShading$();
 this.alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map(alignment, null);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_schemes_RNAHelicesColour', function (rnaHelicesColour) {
-C$.superclazz.c$$IA.apply(this, [$I$(2).nucleotideIndex]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$IA.apply(this,[$I$(2).nucleotideIndex]);C$.$init$.apply(this);
 this.annotation=rnaHelicesColour.annotation;
 this.refresh$();
 }, 1);
@@ -61,10 +51,10 @@ if (this.annotation != null  && ((this.annotation._rnasecstr == null  || this.la
 this.annotation.getRNAStruc$();
 this.lastrefresh=this.annotation._rnasecstr.hashCode$();
 this.numHelix=0;
-this.positionsToHelix=Clazz.new_($I$(1));
+this.positionsToHelix=Clazz.new_($I$(1,1));
 for (var x=0; x < this.annotation._rnasecstr.length; x++) {
-this.positionsToHelix.put$TK$TV(new Integer(this.annotation._rnasecstr[x].getBegin$()), this.annotation._rnasecstr[x].getFeatureGroup$());
-this.positionsToHelix.put$TK$TV(new Integer(this.annotation._rnasecstr[x].getEnd$()), this.annotation._rnasecstr[x].getFeatureGroup$());
+this.positionsToHelix.put$O$O(new Integer(this.annotation._rnasecstr[x].getBegin$()), this.annotation._rnasecstr[x].getFeatureGroup$());
+this.positionsToHelix.put$O$O(new Integer(this.annotation._rnasecstr[x].getEnd$()), this.annotation._rnasecstr[x].getFeatureGroup$());
 if (Integer.parseInt$S(this.annotation._rnasecstr[x].getFeatureGroup$()) > this.numHelix) {
 this.numHelix=Integer.parseInt$S(this.annotation._rnasecstr[x].getFeatureGroup$());
 }}
@@ -107,4 +97,4 @@ Clazz.newMeth(C$, 'isSimple$', function () {
 return false;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:00 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

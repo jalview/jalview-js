@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("jalview.workers"),I$=[];
-var C$=Clazz.newClass(P$, "AlignCalcWorker", null, null, 'jalview.api.AlignCalcWorkerI');
+/*c*/var C$=Clazz.newClass(P$, "AlignCalcWorker", null, null, 'jalview.api.AlignCalcWorkerI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.alignViewport=null;
-this.calcMan=null;
-this.ap=null;
-this.ourAnnots=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['alignViewport','jalview.api.AlignViewportI','calcMan','jalview.api.AlignCalcManagerI','ap','jalview.api.AlignmentViewPanel','ourAnnots','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel', function (alignViewport, alignPanel) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.alignViewport=alignViewport;
 this.calcMan=alignViewport.getCalcManager$();
 this.ap=alignPanel;
@@ -66,4 +59,4 @@ ann.graphMax=max;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:21:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

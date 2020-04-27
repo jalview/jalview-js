@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInt']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "lookAhead", null, 'com.stevesoft.pat.Or');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInt']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "lookAhead", null, 'com.stevesoft.pat.Or');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.reverse=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['reverse']]]
 
 Clazz.newMeth(C$, 'c$$Z', function (b) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.reverse=b;
 }, 1);
 
@@ -50,23 +46,23 @@ return "(?=";
 }});
 
 Clazz.newMeth(C$, 'minChars$', function () {
-return Clazz.new_($I$(1).c$$I,[0]);
+return Clazz.new_($I$(1,1).c$$I,[0]);
 });
 
 Clazz.newMeth(C$, 'maxChars$', function () {
-return Clazz.new_($I$(1).c$$I,[0]);
+return Clazz.new_($I$(1,1).c$$I,[0]);
 });
 
 Clazz.newMeth(C$, 'clone1$java_util_Hashtable', function (h) {
 var la=Clazz.new_(C$.c$$Z,[this.reverse]);
-h.put$TK$TV(this, la);
-h.put$TK$TV(la, la);
+h.put$O$O(this, la);
+h.put$O$O(la, la);
 for (var i=0; i < this.v.size$(); i++) {
-la.v.addElement$TE((this.v.elementAt$I(i)).clone$java_util_Hashtable(h));
+la.v.addElement$O((this.v.elementAt$I(i)).clone$java_util_Hashtable(h));
 }
 return la;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

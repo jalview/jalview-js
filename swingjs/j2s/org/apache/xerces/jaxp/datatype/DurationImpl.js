@@ -1,30 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.apache.xerces.jaxp.datatype"),p$1={},I$=[[0,['javax.xml.datatype.DatatypeConstants','.Field'],'javax.xml.datatype.DatatypeConstants','java.math.BigDecimal','javax.xml.datatype.XMLGregorianCalendar','org.apache.xerces.jaxp.datatype.XMLGregorianCalendarImpl','java.math.BigInteger','java.util.GregorianCalendar','StringBuffer','org.apache.xerces.jaxp.datatype.SerializedDuration']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DurationImpl", null, 'javax.xml.datatype.Duration', 'java.io.Serializable');
-C$.FIELDS=null;
-C$.ZERO=null;
-C$.TEST_POINTS=null;
-C$.FACTORS=null;
+(function(){var P$=Clazz.newPackage("org.apache.xerces.jaxp.datatype"),p$1={},I$=[[0,['javax.xml.datatype.DatatypeConstants','.Field'],'javax.xml.datatype.DatatypeConstants','java.math.BigDecimal','javax.xml.datatype.XMLGregorianCalendar','org.apache.xerces.jaxp.datatype.XMLGregorianCalendarImpl','java.math.BigInteger','java.util.GregorianCalendar','StringBuffer','org.apache.xerces.jaxp.datatype.SerializedDuration']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DurationImpl", null, 'javax.xml.datatype.Duration', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.FIELDS=Clazz.array($I$(1), -1, [$I$(2).YEARS, $I$(2).MONTHS, $I$(2).DAYS, $I$(2).HOURS, $I$(2).MINUTES, $I$(2).SECONDS]);
-C$.ZERO=$I$(3).valueOf$J(0);
-C$.TEST_POINTS=Clazz.array($I$(4), -1, [$I$(5).parse$S("1696-09-01T00:00:00Z"), $I$(5).parse$S("1697-02-01T00:00:00Z"), $I$(5).parse$S("1903-03-01T00:00:00Z"), $I$(5).parse$S("1903-07-01T00:00:00Z")]);
-C$.FACTORS=Clazz.array($I$(3), -1, [$I$(3).valueOf$J(12), null, $I$(3).valueOf$J(24), $I$(3).valueOf$J(60), $I$(3).valueOf$J(60)]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.signum=0;
-this.years=null;
-this.months=null;
-this.days=null;
-this.hours=null;
-this.minutes=null;
-this.seconds=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['signum'],'O',['years','java.math.BigInteger','+months','+days','+hours','+minutes','seconds','java.math.BigDecimal']]
+,['O',['FIELDS','javax.xml.datatype.DatatypeConstants.Field[]','ZERO','java.math.BigDecimal','TEST_POINTS','javax.xml.datatype.XMLGregorianCalendar[]','FACTORS','java.math.BigDecimal[]']]]
 
 Clazz.newMeth(C$, 'getSign$', function () {
 return this.signum;
@@ -40,7 +23,7 @@ return -1;
 }}, p$1);
 
 Clazz.newMeth(C$, 'c$$Z$java_math_BigInteger$java_math_BigInteger$java_math_BigInteger$java_math_BigInteger$java_math_BigInteger$java_math_BigDecimal', function (isPositive, years, months, days, hours, minutes, seconds) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.years=years;
 this.months=months;
 this.days=days;
@@ -79,7 +62,7 @@ return null;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$J', function (durationInMilliSeconds) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var is0x8000000000000000L=false;
 var l=durationInMilliSeconds;
 if (l > 0) {
@@ -94,7 +77,7 @@ is0x8000000000000000L=true;
 this.signum=0;
 }this.years=null;
 this.months=null;
-this.seconds=$I$(3).valueOf$J$I((l % 60000) + (is0x8000000000000000L ? 1 : 0), 3);
+this.seconds=$I$(3,"valueOf$J$I",[(l % 60000) + (is0x8000000000000000L ? 1 : 0), 3]);
 l=(l/(60000)|0);
 this.minutes=(l == 0) ? null : $I$(6).valueOf$J(l % 60);
 l=(l/(60)|0);
@@ -104,7 +87,7 @@ this.days=(l == 0) ? null : $I$(6).valueOf$J(l);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S', function (lexicalRepresentation) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 var s=lexicalRepresentation;
 var positive;
 var idx=Clazz.array(Integer.TYPE, [1]);
@@ -199,14 +182,14 @@ Clazz.newMeth(C$, 'parseBigInteger$S$S$I', function (whole, part, index) {
 if (part == null ) {
 return null;
 }part=part.substring$I$I(0, part.length$() - 1);
-return Clazz.new_($I$(6).c$$S,[part]);
+return Clazz.new_($I$(6,1).c$$S,[part]);
 }, 1);
 
 Clazz.newMeth(C$, 'parseBigDecimal$S$S$I', function (whole, part, index) {
 if (part == null ) {
 return null;
 }part=part.substring$I$I(0, part.length$() - 1);
-return Clazz.new_($I$(3).c$$S,[part]);
+return Clazz.new_($I$(3,1).c$$S,[part]);
 }, 1);
 
 Clazz.newMeth(C$, 'compare$javax_xml_datatype_Duration', function (rhs) {
@@ -244,14 +227,14 @@ if (rhsSecondsAsBigDecimal != null ) {
 rhsSeconds=rhsSecondsAsBigDecimal.toBigInteger$();
 }if (rhsSeconds != null  && rhsSeconds.compareTo$java_math_BigInteger(maxintAsBigInteger) == 1 ) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,[this.getClass$().getName$() + "#compare(Duration duration)" + " seconds too large to be supported by this implementation " + rhsSeconds.toString() ]);
-}var lhsCalendar=Clazz.new_($I$(7).c$$I$I$I$I$I$I,[1970, 1, 1, 0, 0, 0]);
+}var lhsCalendar=Clazz.new_($I$(7,1).c$$I$I$I$I$I$I,[1970, 1, 1, 0, 0, 0]);
 lhsCalendar.add$I$I(1, this.getYears$() * this.getSign$());
 lhsCalendar.add$I$I(2, this.getMonths$() * this.getSign$());
 lhsCalendar.add$I$I(6, this.getDays$() * this.getSign$());
 lhsCalendar.add$I$I(11, this.getHours$() * this.getSign$());
 lhsCalendar.add$I$I(12, this.getMinutes$() * this.getSign$());
 lhsCalendar.add$I$I(13, this.getSeconds$() * this.getSign$());
-var rhsCalendar=Clazz.new_($I$(7).c$$I$I$I$I$I$I,[1970, 1, 1, 0, 0, 0]);
+var rhsCalendar=Clazz.new_($I$(7,1).c$$I$I$I$I$I$I,[1970, 1, 1, 0, 0, 0]);
 rhsCalendar.add$I$I(1, rhs.getYears$() * rhs.getSign$());
 rhsCalendar.add$I$I(2, rhs.getMonths$() * rhs.getSign$());
 rhsCalendar.add$I$I(6, rhs.getDays$() * rhs.getSign$());
@@ -313,7 +296,7 @@ return (C$.getCalendarTimeInMillis$java_util_Calendar(cal)|0);
 });
 
 Clazz.newMeth(C$, 'toString', function () {
-var buf=Clazz.new_($I$(8));
+var buf=Clazz.new_($I$(8,1));
 if (this.signum < 0) {
 buf.append$C("-");
 }buf.append$C("P");
@@ -344,10 +327,10 @@ var insertionPoint=intString.length$() - scale;
 if (insertionPoint == 0) {
 return "0." + intString;
 } else if (insertionPoint > 0) {
-buf=Clazz.new_($I$(8).c$$S,[intString]);
+buf=Clazz.new_($I$(8,1).c$$S,[intString]);
 buf.insert$I$C(insertionPoint, ".");
 } else {
-buf=Clazz.new_($I$(8).c$$I,[3 - insertionPoint + intString.length$()]);
+buf=Clazz.new_([3 - insertionPoint + intString.length$()],$I$(8,1).c$$I);
 buf.append$S("0.");
 for (var i=0; i < -insertionPoint; i++) {
 buf.append$C("0");
@@ -435,7 +418,7 @@ return C$.getCalendarTimeInMillis$java_util_Calendar(cal) - C$.getCalendarTimeIn
 });
 
 Clazz.newMeth(C$, 'getTimeInMillis$java_util_Date', function (startInstant) {
-var cal=Clazz.new_($I$(7));
+var cal=Clazz.new_($I$(7,1));
 cal.setTime$java_util_Date(startInstant);
 this.addTo$java_util_Calendar(cal);
 return C$.getCalendarTimeInMillis$java_util_Calendar(cal) - startInstant.getTime$();
@@ -491,7 +474,7 @@ var bi=this.getField$javax_xml_datatype_DatatypeConstants_Field(f);
 if (bi == null ) {
 return C$.ZERO;
 } else {
-return Clazz.new_($I$(3).c$$java_math_BigInteger,[bi]);
+return Clazz.new_($I$(3,1).c$$java_math_BigInteger,[bi]);
 }}}, p$1);
 
 Clazz.newMeth(C$, 'toBigInteger$java_math_BigDecimal$Z', function (value, canBeNull) {
@@ -545,8 +528,8 @@ Clazz.newMeth(C$, 'sanitize$java_math_BigInteger$I', function (value, signum) {
 if (signum == 0 || value == null  ) {
 return C$.ZERO;
 }if (signum > 0) {
-return Clazz.new_($I$(3).c$$java_math_BigInteger,[value]);
-}return Clazz.new_($I$(3).c$$java_math_BigInteger,[value.negate$()]);
+return Clazz.new_($I$(3,1).c$$java_math_BigInteger,[value]);
+}return Clazz.new_([value.negate$()],$I$(3,1).c$$java_math_BigInteger);
 }, 1);
 
 Clazz.newMeth(C$, 'sanitize$java_math_BigDecimal$I', function (value, signum) {
@@ -583,7 +566,7 @@ calendar.add$I$I(14, millisec * this.signum);
 }});
 
 Clazz.newMeth(C$, 'addTo$java_util_Date', function (date) {
-var cal=Clazz.new_($I$(7));
+var cal=Clazz.new_($I$(7,1));
 cal.setTime$java_util_Date(date);
 this.addTo$java_util_Calendar(cal);
 date.setTime$J(C$.getCalendarTimeInMillis$java_util_Calendar(cal));
@@ -594,9 +577,16 @@ return cal.getTime$().getTime$();
 }, 1);
 
 Clazz.newMeth(C$, 'writeReplace', function () {
-return Clazz.new_($I$(9).c$$S,[this.toString()]);
+return Clazz.new_([this.toString()],$I$(9,1).c$$S);
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.FIELDS=Clazz.array($I$(1), -1, [$I$(2).YEARS, $I$(2).MONTHS, $I$(2).DAYS, $I$(2).HOURS, $I$(2).MINUTES, $I$(2).SECONDS]);
+C$.ZERO=$I$(3).valueOf$J(0);
+C$.TEST_POINTS=Clazz.array($I$(4), -1, [$I$(5).parse$S("1696-09-01T00:00:00Z"), $I$(5).parse$S("1697-02-01T00:00:00Z"), $I$(5).parse$S("1903-03-01T00:00:00Z"), $I$(5).parse$S("1903-07-01T00:00:00Z")]);
+C$.FACTORS=Clazz.array($I$(3), -1, [$I$(3).valueOf$J(12), null, $I$(3).valueOf$J(24), $I$(3).valueOf$J(60), $I$(3).valueOf$J(60)]);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

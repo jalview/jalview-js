@@ -1,23 +1,17 @@
 (function(){var P$=Clazz.newPackage("jalview.ext.rbvi.chimera"),I$=[];
-var C$=Clazz.newClass(P$, "ChimeraListener", null, 'jalview.httpserver.AbstractRequestHandler', 'jalview.structure.SelectionSource');
-C$.chimeraId=0;
+/*c*/var C$=Clazz.newClass(P$, "ChimeraListener", null, 'jalview.httpserver.AbstractRequestHandler', 'jalview.structure.SelectionSource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.chimeraId=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myChimeraId=0;
-this.chimeraBinding=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.myChimeraId=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['myChimeraId'],'O',['chimeraBinding','jalview.ext.rbvi.chimera.JalviewChimeraBinding']]
+,['I',['chimeraId']]]
 
 Clazz.newMeth(C$, 'c$$jalview_ext_rbvi_chimera_JalviewChimeraBinding', function (binding) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.myChimeraId=C$.chimeraId++;
 this.chimeraBinding=binding;
 this.setPath$S("chimera" + this.myChimeraId);
@@ -41,6 +35,10 @@ Clazz.newMeth(C$, 'getName$', function () {
 return "ChimeraListener";
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.chimeraId=0;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

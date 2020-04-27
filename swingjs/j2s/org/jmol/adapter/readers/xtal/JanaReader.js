@@ -1,35 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'Boolean','org.jmol.util.Logger','javajs.util.Lst','javajs.util.Matrix','org.jmol.api.Interface','javajs.util.PT','javajs.util.Rdr','javajs.util.BS','org.jmol.adapter.smarter.Atom','javajs.util.P3','javajs.util.V3','javajs.util.Quat','javajs.util.A4','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JanaReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
-C$.XYZ=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'Boolean','org.jmol.util.Logger','javajs.util.Lst','javajs.util.Matrix','org.jmol.api.Interface','javajs.util.PT','javajs.util.Rdr','javajs.util.BS','org.jmol.adapter.smarter.Atom','javajs.util.P3','javajs.util.V3','javajs.util.Quat','javajs.util.A4','java.util.Hashtable']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "JanaReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.XYZ=Clazz.array(String, -1, ["x", "y", "z"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lattvecs=null;
-this.thisSub=0;
-this.modAxes=null;
-this.haveM40Data=false;
-this.qicount=0;
-this.molName=null;
-this.molAtoms=null;
-this.molTtypes=null;
-this.modelMolecule=null;
-this.molHasTLS=false;
-this.matR=null;
-this.rho=null;
-this.firstPosition=false;
-this.vR=null;
-this.v0Cart=null;
-this.isLegendre=false;
-this.floats=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.floats=Clazz.array(Float.TYPE, [6]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveM40Data','molHasTLS','firstPosition','isLegendre'],'I',['thisSub','qicount'],'S',['modAxes','molName'],'O',['lattvecs','javajs.util.Lst','+molAtoms','+molTtypes','+modelMolecule','matR','javajs.util.M3','rho','javajs.util.P3','vR','javajs.util.V3','+v0Cart','floats','float[]']]
+,['O',['XYZ','String[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.modAxes=this.getFilter$S("MODAXES=");
@@ -54,7 +33,7 @@ case 10:
 p$1.ndim.apply(this, []);
 break;
 case 20:
-if (this.lattvecs == null ) this.lattvecs=Clazz.new_($I$(3));
+if (this.lattvecs == null ) this.lattvecs=Clazz.new_($I$(3,1));
 if (!this.ms.addLatticeVector$javajs_util_Lst$S(this.lattvecs, this.line.substring$I(8))) this.appendLoadNote$S(this.line + " not supported");
 break;
 case 30:
@@ -80,7 +59,7 @@ var m;
 if (this.thisSub++ == 0) {
 m=$I$(4).identity$I$I(n, n);
 this.ms.addSubsystem$S$javajs_util_Matrix("" + this.thisSub++, m);
-}m=Clazz.new_($I$(4).c$$DAA$I$I,[null, n, n]);
+}m=Clazz.new_($I$(4,1).c$$DAA$I$I,[null, n, n]);
 var a=m.getArray$();
 var data=Clazz.array(Float.TYPE, [n * n]);
 this.fillFloatArray$S$I$FA(null, 0, data);
@@ -133,7 +112,7 @@ this.ms.addModulation$java_util_Map$S$DA$I(null, "F_" + this.qicount + "_coefs_"
 }, p$1);
 
 Clazz.newMeth(C$, 'symmetry', function () {
-this.setSymmetryOperator$S($I$(6).rep$S$S$S(this.line.substring$I(9).trim$(), " ", ","));
+this.setSymmetryOperator$S((function(a,f){return f.apply(null,a)})([this.line.substring$I(9).trim$(), " ", ","],$I$(6).rep$S$S$S));
 }, p$1);
 
 Clazz.newMeth(C$, 'readM40Data$Z', function (haveReader) {
@@ -146,7 +125,7 @@ if (ipt < 0) return;
 m40File=m40File.substring$I$I(0, ipt + 2) + "40";
 var id=m40File.substring$I$I(0, ipt);
 this.reader.close$();
-this.reader=$I$(7).getBR$S(this.vwr.getLigandModel$S$S$S$S(id, m40File, "_file", "----"));
+this.reader=(function(a,f){return f.apply(null,a)})([this.vwr.getLigandModel$S$S$S$S(id, m40File, "_file", "----")],$I$(7).getBR$S);
 if (this.out != null ) this.out.append$S("******************************* M40 DATA *******************************\n");
 p$1.readM40Floats.apply(this, []);
 }this.haveM40Data=true;
@@ -154,7 +133,7 @@ if (this.line.startsWith$S("command")) p$1.readM40WaveVectors.apply(this, []);
 var nFree=0;
 var nGroups=0;
 var isAxial=false;
-var newSub=(this.thisSub == 0 ? null : Clazz.new_($I$(8)));
+var newSub=(this.thisSub == 0 ? null : Clazz.new_($I$(8,1)));
 var iSub=(this.thisSub == 0 ? 1 : this.thisSub);
 for (var i=0, n=0, pt=0; i < iSub; i++, pt+=10) {
 nFree=p$1.getInt$I$I.apply(this, [pt, pt + 5]);
@@ -171,11 +150,11 @@ this.rho=null;
 if (nGroups > 0) {
 $I$(2).info$S("JanaReader found " + nFree + " free atoms and " + nGroups + " groups" );
 this.molName=null;
-this.molAtoms=Clazz.new_($I$(3));
-this.molTtypes=Clazz.new_($I$(3));
+this.molAtoms=Clazz.new_($I$(3,1));
+this.molTtypes=Clazz.new_($I$(3,1));
 }while (p$1.skipToNextAtom.apply(this, []) != null ){
 nAtoms++;
-var atom=Clazz.new_($I$(9));
+var atom=Clazz.new_($I$(9,1));
 $I$(2).info$S(this.line);
 var name=this.line.substring$I$I(0, 9).trim$();
 atom.atomName=name;
@@ -194,7 +173,7 @@ this.molAtoms.clear$();
 this.molTtypes.clear$();
 this.molHasTLS=false;
 this.firstPosition=true;
-this.modelMolecule=Clazz.new_($I$(3));
+this.modelMolecule=Clazz.new_($I$(3,1));
 continue;
 }var isExcluded=false;
 var posName=(name.startsWith$S("pos#") ? name : null);
@@ -211,7 +190,7 @@ if (iSub > 0) {
 if (newSub.get$I(nAtoms)) iSub++;
 atom.altLoc=("" + iSub).charAt$I(0);
 }p$1.readAtomRecord$org_jmol_adapter_smarter_Atom$javajs_util_P3$javajs_util_P3$Z.apply(this, [atom, null, null, false]);
-if (this.molAtoms != null ) this.molAtoms.addLast$TV(atom);
+if (this.molAtoms != null ) this.molAtoms.addLast$O(atom);
 } else {
 if (this.molAtoms.size$() == 0) continue;
 p$1.processPosition$S$org_jmol_adapter_smarter_Atom$Z.apply(this, [posName, atom, isAxial]);
@@ -253,8 +232,8 @@ Clazz.newMeth(C$, 'processPosition$S$org_jmol_adapter_smarter_Atom$Z', function 
 pos.atomName=this.molName + "_" + posName ;
 var isImproper=(p$1.getInt$I$I.apply(this, [9, 11]) == -1);
 var systType=p$1.getInt$I$I.apply(this, [13, 14]);
-var rm=(systType == 0 ? null : Clazz.new_($I$(10)));
-var rp=(systType == 0 ? null : Clazz.new_($I$(10)));
+var rm=(systType == 0 ? null : Clazz.new_($I$(10,1)));
+var rp=(systType == 0 ? null : Clazz.new_($I$(10,1)));
 if (systType != 0) {
 throw Clazz.new_(Clazz.load('Exception').c$$S,["Jmol can only read rigid body groups with basic crystallographic settings."]);
 }var rotData=p$1.readAtomRecord$org_jmol_adapter_smarter_Atom$javajs_util_P3$javajs_util_P3$Z.apply(this, [pos, rm, rp, true]);
@@ -263,9 +242,9 @@ var n=this.molAtoms.size$();
 $I$(2).info$S(name + " Molecular group " + this.molName + " has " + n + " atoms" );
 var ext="_" + posName.substring$I(4);
 var vTrans=$I$(11).new3$F$F$F(pos.anisoBorU[3], pos.anisoBorU[4], pos.anisoBorU[5]);
-var phi=$I$(12).newAA$javajs_util_A4($I$(13).newVA$javajs_util_V3$F($I$(11).new3$F$F$F(0, 0, 1), (pos.anisoBorU[0] / 180 * 3.141592653589793)));
-var chi=$I$(12).newAA$javajs_util_A4($I$(13).newVA$javajs_util_V3$F(isAxial ? $I$(11).new3$F$F$F(0, 1, 0) : $I$(11).new3$F$F$F(1, 0, 0), (pos.anisoBorU[1] / 180 * 3.141592653589793)));
-var psi=$I$(12).newAA$javajs_util_A4($I$(13).newVA$javajs_util_V3$F(isAxial ? $I$(11).new3$F$F$F(1, 0, 0) : $I$(11).new3$F$F$F(0, 0, 1), (pos.anisoBorU[2] / 180 * 3.141592653589793)));
+var phi=(function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([$I$(11).new3$F$F$F(0, 0, 1), (pos.anisoBorU[0] / 180 * 3.141592653589793)],$I$(13).newVA$javajs_util_V3$F)],$I$(12).newAA$javajs_util_A4);
+var chi=(function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([isAxial ? $I$(11).new3$F$F$F(0, 1, 0) : $I$(11).new3$F$F$F(1, 0, 0), (pos.anisoBorU[1] / 180 * 3.141592653589793)],$I$(13).newVA$javajs_util_V3$F)],$I$(12).newAA$javajs_util_A4);
+var psi=(function(a,f){return f.apply(null,a)})([(function(a,f){return f.apply(null,a)})([isAxial ? $I$(11).new3$F$F$F(1, 0, 0) : $I$(11).new3$F$F$F(0, 0, 1), (pos.anisoBorU[2] / 180 * 3.141592653589793)],$I$(13).newVA$javajs_util_V3$F)],$I$(12).newAA$javajs_util_A4);
 this.matR=phi.mulQ$javajs_util_Quat(chi).mulQ$javajs_util_Quat(psi).getMatrix$();
 if (isImproper) this.matR.scale$F(-1);
 var script="";
@@ -275,12 +254,12 @@ var newName=a.atomName;
 script += ", " + newName;
 if (this.firstPosition) {
 newName += ext;
-this.modelMolecule.addLast$TV($I$(10).newP$javajs_util_T3(a));
+this.modelMolecule.addLast$O($I$(10).newP$javajs_util_T3(a));
 } else {
 a=this.asc.newCloneAtom$org_jmol_adapter_smarter_Atom(a);
 newName=newName.substring$I$I(0, newName.lastIndexOf$S("_")) + ext;
 }a.atomName=newName;
-var v0=$I$(11).newVsub$javajs_util_T3$javajs_util_T3(this.modelMolecule.get$I(i), this.rho);
+var v0=(function(a,f){return f.apply(null,a)})([this.modelMolecule.get$I(i), this.rho],$I$(11).newVsub$javajs_util_T3$javajs_util_T3);
 this.getSymmetry$().toCartesian$javajs_util_T3$Z(this.v0Cart=$I$(11).newV$javajs_util_T3(v0), true);
 this.vR=$I$(11).newV$javajs_util_T3(v0);
 p$1.cartesianProduct$javajs_util_T3$javajs_util_T3.apply(this, [this.vR, null]);
@@ -306,7 +285,7 @@ this.symmetry.toFractional$javajs_util_T3$Z(vA, true);
 Clazz.newMeth(C$, 'readAtomRecord$org_jmol_adapter_smarter_Atom$javajs_util_P3$javajs_util_P3$Z', function (atom, rm, rp, isPos) {
 var label=";" + atom.atomName;
 var tType=(isPos ? -1 : p$1.getInt$I$I.apply(this, [13, 14]));
-if (!isPos && this.molTtypes != null  ) this.molTtypes.addLast$TV(Integer.valueOf$I(tType));
+if (!isPos && this.molTtypes != null  ) this.molTtypes.addLast$O(Integer.valueOf$I(tType));
 var haveSpecialOcc=p$1.getFlag$I.apply(this, [60]);
 var haveSpecialDisp=p$1.getFlag$I.apply(this, [61]);
 var haveSpecialUij=p$1.getFlag$I.apply(this, [62]);
@@ -464,19 +443,19 @@ return data;
 }, p$1);
 
 Clazz.newMeth(C$, 'adjustM40Occupancies', function () {
-var htSiteMult=Clazz.new_($I$(14));
+var htSiteMult=Clazz.new_($I$(14,1));
 var atoms=this.asc.atoms;
 var symmetry=this.asc.getSymmetry$();
 for (var i=this.asc.ac; --i >= 0; ) {
 var a=atoms[i];
 var ii=htSiteMult.get$O(a.atomName);
-if (ii == null ) htSiteMult.put$TK$TV(a.atomName, ii=Integer.valueOf$I(symmetry.getSiteMultiplicity$javajs_util_P3(a)));
+if (ii == null ) htSiteMult.put$O$O(a.atomName, ii=Integer.valueOf$I(symmetry.getSiteMultiplicity$javajs_util_P3(a)));
 a.foccupancy *= ii.intValue$();
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'copyModulations$S$S', function (label, newLabel) {
-var mapTemp=Clazz.new_($I$(14));
+var mapTemp=Clazz.new_($I$(14,1));
 for (var e, $e = this.ms.getModulationMap$().entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var key=e.getKey$();
 if (!key.contains$CharSequence(label)) continue;
@@ -491,7 +470,7 @@ break;
 case 85:
 continue;
 }
-mapTemp.put$TK$TV(key, val);
+mapTemp.put$O$O(key, val);
 }
 for (var e, $e = mapTemp.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) this.ms.addModulation$java_util_Map$S$DA$I(null, e.getKey$(), e.getValue$(), -1);
 
@@ -566,6 +545,10 @@ Clazz.newMeth(C$, 'setMolecularModulation$S$F$F', function (key, csin, ccos) {
 this.ms.addModulation$java_util_Map$S$DA$I(null, key, p$1.setRigidBodyPhase$S$DA.apply(this, [key, Clazz.array(Double.TYPE, -1, [csin, ccos, 0])]), -1);
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.XYZ=Clazz.array(String, -1, ["x", "y", "z"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:02 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

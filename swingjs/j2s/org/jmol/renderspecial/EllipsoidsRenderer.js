@@ -1,64 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.V3','org.jmol.viewer.JC','javajs.util.BS','javajs.util.M3','javajs.util.M4','javajs.util.P3','javajs.util.PT','org.jmol.util.C','org.jmol.shapespecial.Ellipsoid','org.jmol.util.Normix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EllipsoidsRenderer", null, 'org.jmol.render.ShapeRenderer');
-C$.cossin=null;
-C$.unitAxisVectors=null;
-C$.axisPoints=null;
-C$.octants=null;
+(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.V3','org.jmol.viewer.JC','javajs.util.BS','javajs.util.M3','javajs.util.M4','javajs.util.P3','javajs.util.PT','org.jmol.util.C','org.jmol.shapespecial.Ellipsoid','org.jmol.util.Normix']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "EllipsoidsRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.cossin=Clazz.array(Float.TYPE, [36]);
-{
-for (var i=5, pt=0; i <= 90; i+=5) {
-C$.cossin[pt++]=Math.cos(i * 0.017453292);
-C$.cossin[pt++]=Math.sin(i * 0.017453292);
-}
-};
-C$.unitAxisVectors=Clazz.array($I$(1), -1, [$I$(2).axisNX, $I$(2).axisX, $I$(2).axisNY, $I$(2).axisY, $I$(2).axisNZ, $I$(2).axisZ]);
-C$.axisPoints=Clazz.array(Integer.TYPE, -1, [-1, 1, -2, 2, -3, 3]);
-C$.octants=Clazz.array(Integer.TYPE, -1, [5, 0, 3, 5, 2, 0, 4, 0, 2, 4, 3, 0, 5, 2, 1, 5, 1, 3, 4, 3, 1, 4, 1, 2]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ellipsoids=null;
-this.bGlobals=null;
-this.bOptions=null;
-this.OPTS=null;
-this.fillArc=false;
-this.isSet=false;
-this.diameter=0;
-this.diameter0=0;
-this.dotCount=0;
-this.dotScale=0;
-this.dx=0;
-this.eigenSignMask=0;
-this.iCutout=0;
-this.selectedOctant=0;
-this.coords=null;
-this.axes=null;
-this.center=null;
-this.perspectiveFactor=0;
-this.bsTemp=null;
-this.mat=null;
-this.mTemp=null;
-this.mDeriv=null;
-this.matScreenToCartesian=null;
-this.matScreenToEllipsoid=null;
-this.matEllipsoidToScreen=null;
-this.coefs=null;
-this.factoredLengths=null;
-this.selectedPoints=null;
-this.v1=null;
-this.v2=null;
-this.v3=null;
-this.pt1=null;
-this.pt2=null;
-this.s0=null;
-this.s1=null;
-this.s2=null;
-this.screens=null;
-this.points=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bGlobals=Clazz.array(Boolean.TYPE, [7]);
@@ -67,33 +10,36 @@ this.OPTS=Clazz.array(String, -1, ["dots", "arcs", "axes", "fill", "ball", "arro
 this.eigenSignMask=7;
 this.iCutout=-1;
 this.selectedOctant=-1;
-this.bsTemp=Clazz.new_($I$(3));
-this.mat=Clazz.new_($I$(4));
-this.mTemp=Clazz.new_($I$(4));
-this.mDeriv=Clazz.new_($I$(5));
-this.matScreenToCartesian=Clazz.new_($I$(4));
-this.matScreenToEllipsoid=Clazz.new_($I$(4));
-this.matEllipsoidToScreen=Clazz.new_($I$(4));
+this.bsTemp=Clazz.new_($I$(3,1));
+this.mat=Clazz.new_($I$(4,1));
+this.mTemp=Clazz.new_($I$(4,1));
+this.mDeriv=Clazz.new_($I$(5,1));
+this.matScreenToCartesian=Clazz.new_($I$(4,1));
+this.matScreenToEllipsoid=Clazz.new_($I$(4,1));
+this.matEllipsoidToScreen=Clazz.new_($I$(4,1));
 this.coefs=Clazz.array(Double.TYPE, [10]);
 this.factoredLengths=Clazz.array(Float.TYPE, [3]);
 this.selectedPoints=Clazz.array($I$(6), [3]);
-this.v1=Clazz.new_($I$(1));
-this.v2=Clazz.new_($I$(1));
-this.v3=Clazz.new_($I$(1));
-this.pt1=Clazz.new_($I$(6));
-this.pt2=Clazz.new_($I$(6));
-this.s0=Clazz.new_($I$(6));
-this.s1=Clazz.new_($I$(6));
-this.s2=Clazz.new_($I$(6));
+this.v1=Clazz.new_($I$(1,1));
+this.v2=Clazz.new_($I$(1,1));
+this.v3=Clazz.new_($I$(1,1));
+this.pt1=Clazz.new_($I$(6,1));
+this.pt2=Clazz.new_($I$(6,1));
+this.s0=Clazz.new_($I$(6,1));
+this.s1=Clazz.new_($I$(6,1));
+this.s2=Clazz.new_($I$(6,1));
 this.screens=Clazz.array($I$(6), [38]);
 this.points=Clazz.array($I$(6), [6]);
 {
-for (var i=0; i < this.points.length; i++) this.points[i]=Clazz.new_($I$(6));
+for (var i=0; i < this.points.length; i++) this.points[i]=Clazz.new_($I$(6,1));
 
-for (var i=0; i < this.screens.length; i++) this.screens[i]=Clazz.new_($I$(6));
+for (var i=0; i < this.screens.length; i++) this.screens[i]=Clazz.new_($I$(6,1));
 
 }
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['fillArc','isSet'],'F',['perspectiveFactor'],'I',['diameter','diameter0','dotCount','dotScale','dx','eigenSignMask','iCutout','selectedOctant'],'O',['ellipsoids','org.jmol.shapespecial.Ellipsoids','bGlobals','boolean[]','+bOptions','OPTS','String[]','coords','int[]','axes','javajs.util.V3[]','center','javajs.util.P3','bsTemp','javajs.util.BS','mat','javajs.util.M3','+mTemp','mDeriv','javajs.util.M4','matScreenToCartesian','javajs.util.M3','+matScreenToEllipsoid','+matEllipsoidToScreen','coefs','double[]','factoredLengths','float[]','selectedPoints','javajs.util.P3[]','v1','javajs.util.V3','+v2','+v3','pt1','javajs.util.P3','+pt2','+s0','+s1','+s2','screens','javajs.util.P3[]','+points']]
+,['O',['cossin','float[]','unitAxisVectors','javajs.util.V3[]','axisPoints','int[]','+octants']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 this.isSet=false;
@@ -149,7 +95,7 @@ if (!this.bOptions[0] && !this.bOptions[1] && !this.bOptions[4]  ) this.bOptions
 if (this.bOptions[0]) {
 this.bOptions[1]=false;
 this.bOptions[3]=false;
-this.dotScale=this.vwr.getInt$I(553648143);
+this.dotScale=this.vwr.getInt$I(553648142);
 }if (this.bOptions[0]) {
 this.dotCount=(this.vwr.getP$S("ellipsoidDotCount")).intValue$();
 if (this.coords == null  || this.coords.length != this.dotCount * 3 ) this.coords=Clazz.array(Integer.TYPE, [this.dotCount * 3]);
@@ -264,7 +210,7 @@ this.s2.z -= (this.v1.z|0);
 this.s1.x -= (this.v1.x|0);
 this.s1.y -= (this.v1.y|0);
 this.s1.z -= (this.v1.z|0);
-}this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(($b$[0] = 2, $b$[0]), (diam|0), this.s1, this.s2, false);
+}this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(2, (diam|0), this.s1, this.s2, false);
 this.s1.setT$javajs_util_T3(p2);
 this.s2.setT$javajs_util_T3(p2);
 if (isPositive) {
@@ -275,23 +221,23 @@ this.s2.z += (this.v1.z|0);
 this.s1.x += (this.v1.x|0);
 this.s1.y += (this.v1.y|0);
 this.s1.z += (this.v1.z|0);
-}this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(($b$[0] = 2, $b$[0]), (diam|0), this.s1, this.s2, false);
+}this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(2, (diam|0), this.s1, this.s2, false);
 }, p$1);
 
 Clazz.newMeth(C$, 'renderAxes', function () {
 if (this.bOptions[4] && this.bOptions[3] ) {
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.s0, this.selectedPoints[0]);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.s0, this.selectedPoints[1]);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.s0, this.selectedPoints[2]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.s0, this.selectedPoints[0]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.s0, this.selectedPoints[1]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.s0, this.selectedPoints[2]);
 return;
 }if (this.bOptions[4]) {
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens[32], this.screens[33]);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens[34], this.screens[35]);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens[36], this.screens[37]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens[32], this.screens[33]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens[34], this.screens[35]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens[36], this.screens[37]);
 } else {
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens[0], this.screens[1]);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens[2], this.screens[3]);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens[4], this.screens[5]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens[0], this.screens[1]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens[2], this.screens[3]);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens[4], this.screens[5]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'renderDots', function () {
@@ -344,13 +290,13 @@ this.pt2.scaleAdd2$F$javajs_util_T3$javajs_util_T3(C$.cossin[pt + 1] * d2, this.
 this.tm.transformPtScrT3$javajs_util_T3$javajs_util_T3(this.pt2, this.s2);
 if (this.fillArc) {
 this.g3d.fillTriangle3CNBits$javajs_util_P3$H$H$javajs_util_P3$H$H$javajs_util_P3$H$H$Z(this.s0, this.colix, normix, this.s1, this.colix, normix, this.s2, this.colix, normix, true);
-} else if (this.bOptions[6]) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.s1, this.s2);
+} else if (this.bOptions[6]) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.s1, this.s2);
  else this.screens[i + 7].setT$javajs_util_T3(this.s2);
 this.pt1.setT$javajs_util_T3(this.pt2);
 this.s1.setT$javajs_util_T3(this.s2);
 }
 if (!this.fillArc && !this.bOptions[6] ) {
-this.g3d.addRenderer$I(553648146);
+this.g3d.addRenderer$I(553648145);
 for (var i=0; i < 18; i++) {
 this.g3d.fillHermite$I$I$I$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3(5, this.diameter, this.diameter, this.diameter, this.screens[i == 0 ? i + 6 : i + 5], this.screens[i + 6], this.screens[i + 7], this.screens[i == 17 ? i + 7 : i + 8]);
 }
@@ -382,8 +328,20 @@ if (this.pt1.y < 0 ) i|=2;
 if (this.pt1.z < 0 ) i|=4;
 this.selectedOctant=i;
 }}, p$1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.cossin=Clazz.array(Float.TYPE, [36]);
+{
+for (var i=5, pt=0; i <= 90; i+=5) {
+C$.cossin[pt++]=Math.cos(i * 0.017453292);
+C$.cossin[pt++]=Math.sin(i * 0.017453292);
+}
+};
+C$.unitAxisVectors=Clazz.array($I$(1), -1, [$I$(2).axisNX, $I$(2).axisX, $I$(2).axisNY, $I$(2).axisY, $I$(2).axisNZ, $I$(2).axisZ]);
+C$.axisPoints=Clazz.array(Integer.TYPE, -1, [-1, 1, -2, 2, -3, 3]);
+C$.octants=Clazz.array(Integer.TYPE, -1, [5, 0, 3, 5, 2, 0, 4, 0, 2, 4, 3, 0, 5, 2, 1, 5, 1, 3, 4, 3, 1, 4, 1, 2]);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-18 20:01:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,25 @@
 (function(){var P$=Clazz.newPackage("java.nio"),p$1={};
-var C$=Clazz.newClass(P$, "MappedByteBuffer", null, 'java.nio.HeapByteBuffer');
+/*c*/var C$=Clazz.newClass(P$, "MappedByteBuffer", null, 'java.nio.HeapByteBuffer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fd=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['fd','java.io.FileDescriptor']]]
 
 Clazz.newMeth(C$, 'c$$I$I$I$I$java_io_FileDescriptor', function (mark, pos, lim, cap, fd) {
-C$.superclazz.c$$BA$I$I$I$I$I.apply(this, [null, mark, pos, lim, cap, 0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$BA$I$I$I$I$I.apply(this,[null, mark, pos, lim, cap, 0]);C$.$init$.apply(this);
 this.fd=fd;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$BA$I$I$I$I$I$java_io_FileDescriptor', function (hb, mark, pos, lim, cap, off, fd) {
-C$.superclazz.c$$BA$I$I$I$I$I.apply(this, [hb, mark, pos, lim, cap, off]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$BA$I$I$I$I$I.apply(this,[hb, mark, pos, lim, cap, off]);C$.$init$.apply(this);
 this.fd=fd;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I$I', function (mark, pos, lim, cap) {
-C$.superclazz.c$$BA$I$I$I$I$I.apply(this, [null, mark, pos, lim, cap, 0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$BA$I$I$I$I$I.apply(this,[null, mark, pos, lim, cap, 0]);C$.$init$.apply(this);
 this.fd=null;
 }, 1);
 
@@ -60,4 +53,4 @@ return this;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

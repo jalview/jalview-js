@@ -1,55 +1,30 @@
-(function(){var P$=Clazz.newPackage("sun.awt.geom"),p$1={},I$=[[0,'sun.awt.geom.CurveLink','sun.awt.geom.ChainEnd','java.util.Vector','sun.awt.geom.Curve','sun.awt.geom.Edge','java.util.Arrays','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AreaOp", function(){
+(function(){var P$=Clazz.newPackage("sun.awt.geom"),p$1={},I$=[[0,'sun.awt.geom.CurveLink','sun.awt.geom.ChainEnd','java.util.Vector','sun.awt.geom.Curve','sun.awt.geom.Edge','java.util.Arrays','InternalError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AreaOp", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.YXTopComparator=null;
-C$.EmptyLinkList=null;
-C$.EmptyChainList=null;
+C$.$classes$=[['CAGOp',1033],['AddOp',9],['SubOp',9],['IntOp',9],['XorOp',9],['NZWindOp',9],['EOWindOp',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.YXTopComparator=((P$.AreaOp$1||
-(function(){var C$=Clazz.newClass(P$, "AreaOp$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['compare$O$O','compare$','compare$TT$TT'], function (o1, o2) {
-var c1=(o1).getCurve$();
-var c2=(o2).getCurve$();
-var v1;
-var v2;
-if ((v1=c1.getYTop$()) == (v2=c2.getYTop$()) ) {
-if ((v1=c1.getXTop$()) == (v2=c2.getXTop$()) ) {
-return 0;
-}}if (v1 < v2 ) {
-return -1;
-}return 1;
-});
-})()
-), Clazz.new_(P$.AreaOp$1.$init$, [this, null]));
-C$.EmptyLinkList=Clazz.array($I$(1), [2]);
-C$.EmptyChainList=Clazz.array($I$(2), [2]);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+C$.$fields$=[[]
+,['O',['YXTopComparator','java.util.Comparator','EmptyLinkList','sun.awt.geom.CurveLink[]','EmptyChainList','sun.awt.geom.ChainEnd[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'calculate$java_util_Vector$java_util_Vector', function (left, right) {
-var edges=Clazz.new_($I$(3));
+var edges=Clazz.new_($I$(3,1));
 C$.addEdges$java_util_Vector$java_util_Vector$I(edges, left, 0);
 C$.addEdges$java_util_Vector$java_util_Vector$I(edges, right, 1);
 edges=p$1.pruneEdges$java_util_Vector.apply(this, [edges]);
 if (false) {
 System.out.println$S("result: ");
 var numcurves=edges.size$();
-var curvelist=edges.toArray$TTA(Clazz.array($I$(4), [numcurves]));
+var curvelist=edges.toArray$OA(Clazz.array($I$(4), [numcurves]));
 for (var i=0; i < numcurves; i++) {
 System.out.println$S("curvelist[" + i + "] = " + curvelist[i] );
 }
@@ -61,7 +36,7 @@ var enum_=curves.elements$();
 while (enum_.hasMoreElements$()){
 var c=enum_.nextElement$();
 if (c.getOrder$() > 0) {
-edges.add$TE(Clazz.new_($I$(5).c$$sun_awt_geom_Curve$I,[c, curvetag]));
+edges.add$O(Clazz.new_($I$(5,1).c$$sun_awt_geom_Curve$I,[c, curvetag]));
 }}
 }, 1);
 
@@ -69,8 +44,8 @@ Clazz.newMeth(C$, 'pruneEdges$java_util_Vector', function (edges) {
 var numedges=edges.size$();
 if (numedges < 2) {
 return edges;
-}var edgelist=edges.toArray$TTA(Clazz.array($I$(5), [numedges]));
-$I$(6).sort$TTA$java_util_Comparator(edgelist, C$.YXTopComparator);
+}var edgelist=edges.toArray$OA(Clazz.array($I$(5), [numedges]));
+$I$(6).sort$OA$java_util_Comparator(edgelist, C$.YXTopComparator);
 if (false) {
 System.out.println$S("pruning: ");
 for (var i=0; i < numedges; i++) {
@@ -82,9 +57,9 @@ var right=0;
 var cur=0;
 var next=0;
 var yrange=Clazz.array(Double.TYPE, [2]);
-var subcurves=Clazz.new_($I$(3));
-var chains=Clazz.new_($I$(3));
-var links=Clazz.new_($I$(3));
+var subcurves=Clazz.new_($I$(3,1));
+var chains=Clazz.new_($I$(3,1));
+var links=Clazz.new_($I$(3,1));
 while (left < numedges){
 var y=yrange[0];
 for (cur=next=right - 1; cur >= left; cur--) {
@@ -126,7 +101,7 @@ for (next=cur; next > left; next--) {
 var prevedge=edgelist[next - 1];
 var ordering=e.compareTo$sun_awt_geom_Edge$DA(prevedge, yrange);
 if (yrange[1] <= yrange[0] ) {
-throw Clazz.new_($I$(7).c$$S,["backstepping to " + new Double(yrange[1]).toString() + " from " + new Double(yrange[0]).toString() ]);
+throw Clazz.new_(["backstepping to " + new Double(yrange[1]).toString() + " from " + new Double(yrange[0]).toString() ],$I$(7,1).c$$S);
 }if (ordering >= 0) {
 if (ordering == 0) {
 var eq=prevedge.getEquivalence$();
@@ -175,7 +150,7 @@ e=(activematch != null  ? activematch : longestmatch);
 etag=this.classify$sun_awt_geom_Edge(e);
 }if (etag != 0) {
 e.record$D$I(yend, etag);
-links.add$TE(Clazz.new_($I$(1).c$$sun_awt_geom_Curve$D$D$I,[e.getCurve$(), ystart, yend, etag]));
+links.add$O(Clazz.new_([e.getCurve$(), ystart, yend, etag],$I$(1,1).c$$sun_awt_geom_Curve$D$D$I));
 }}
 if (this.getState$() != -1) {
 System.out.println$S("Still inside at end of active edge list!");
@@ -204,18 +179,18 @@ links.clear$();
 yrange[0]=yend;
 }
 C$.finalizeSubCurves$java_util_Vector$java_util_Vector(subcurves, chains);
-var ret=Clazz.new_($I$(3));
+var ret=Clazz.new_($I$(3,1));
 var enum_=subcurves.elements$();
 while (enum_.hasMoreElements$()){
 var link=enum_.nextElement$();
-ret.add$TE(link.getMoveto$());
+ret.add$O(link.getMoveto$());
 var nextlink=link;
 while ((nextlink=nextlink.getNext$()) != null ){
 if (!link.absorb$sun_awt_geom_CurveLink(nextlink)) {
-ret.add$TE(link.getSubCurve$());
+ret.add$O(link.getSubCurve$());
 link=nextlink;
 }}
-ret.add$TE(link.getSubCurve$());
+ret.add$O(link.getSubCurve$());
 }
 return ret;
 }, p$1);
@@ -225,15 +200,15 @@ var numchains=chains.size$();
 if (numchains == 0) {
 return;
 }if ((numchains & 1) != 0) {
-throw Clazz.new_($I$(7).c$$S,["Odd number of chains!"]);
+throw Clazz.new_($I$(7,1).c$$S,["Odd number of chains!"]);
 }var endlist=Clazz.array($I$(2), [numchains]);
-chains.toArray$TTA(endlist);
+chains.toArray$OA(endlist);
 for (var i=1; i < numchains; i+=2) {
 var open=endlist[i - 1];
 var close=endlist[i];
 var subcurve=open.linkTo$sun_awt_geom_ChainEnd(close);
 if (subcurve != null ) {
-subcurves.add$TE(subcurve);
+subcurves.add$O(subcurve);
 }}
 chains.clear$();
 }, 1);
@@ -245,18 +220,18 @@ if (numlinks == 0) {
 linklist=C$.EmptyLinkList;
 } else {
 if ((numlinks & 1) != 0) {
-throw Clazz.new_($I$(7).c$$S,["Odd number of new curves!"]);
+throw Clazz.new_($I$(7,1).c$$S,["Odd number of new curves!"]);
 }linklist=Clazz.array($I$(1), [numlinks + 2]);
-links.toArray$TTA(linklist);
+links.toArray$OA(linklist);
 }var numchains=chains.size$();
 var endlist;
 if (numchains == 0) {
 endlist=C$.EmptyChainList;
 } else {
 if ((numchains & 1) != 0) {
-throw Clazz.new_($I$(7).c$$S,["Odd number of chains!"]);
+throw Clazz.new_($I$(7,1).c$$S,["Odd number of chains!"]);
 }endlist=Clazz.array($I$(2), [numchains + 2]);
-chains.toArray$TTA(endlist);
+chains.toArray$OA(endlist);
 }var curchain=0;
 var curlink=0;
 chains.clear$();
@@ -278,22 +253,22 @@ connectlinks=(nextlink != null  && lx < cx   && C$.obstructs$D$D$I(nextlink.getX
 }}if (connectchains) {
 var subcurve=chain.linkTo$sun_awt_geom_ChainEnd(nextchain);
 if (subcurve != null ) {
-subcurves.add$TE(subcurve);
+subcurves.add$O(subcurve);
 }curchain+=2;
 chain=endlist[curchain];
 nextchain=endlist[curchain + 1];
 }if (connectlinks) {
-var openend=Clazz.new_($I$(2).c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd,[link, null]);
-var closeend=Clazz.new_($I$(2).c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd,[nextlink, openend]);
+var openend=Clazz.new_($I$(2,1).c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd,[link, null]);
+var closeend=Clazz.new_($I$(2,1).c$$sun_awt_geom_CurveLink$sun_awt_geom_ChainEnd,[nextlink, openend]);
 openend.setOtherEnd$sun_awt_geom_ChainEnd(closeend);
-chains.add$TE(openend);
-chains.add$TE(closeend);
+chains.add$O(openend);
+chains.add$O(closeend);
 curlink+=2;
 link=linklist[curlink];
 nextlink=linklist[curlink + 1];
 }if (!connectchains && !connectlinks ) {
 chain.addLink$sun_awt_geom_CurveLink(link);
-chains.add$TE(chain);
+chains.add$O(chain);
 curchain++;
 chain=nextchain;
 nextchain=endlist[curchain + 1];
@@ -308,23 +283,44 @@ System.out.println$S("Odd number of chains!");
 Clazz.newMeth(C$, 'obstructs$D$D$I', function (v1, v2, phase) {
 return (((phase & 1) == 0) ? (v1 <= v2 ) : (v1 < v2 ));
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.YXTopComparator=((P$.AreaOp$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AreaOp$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Comparator', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'compare$O$O', function (o1, o2) {
+var c1=(o1).getCurve$();
+var c2=(o2).getCurve$();
+var v1;
+var v2;
+if ((v1=c1.getYTop$()) == (v2=c2.getYTop$()) ) {
+if ((v1=c1.getXTop$()) == (v2=c2.getXTop$()) ) {
+return 0;
+}}if (v1 < v2 ) {
+return -1;
+}return 1;
+});
+})()
+), Clazz.new_(P$.AreaOp$1.$init$,[this, null]));
+C$.EmptyLinkList=Clazz.array($I$(1), [2]);
+C$.EmptyChainList=Clazz.array($I$(2), [2]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.AreaOp, "CAGOp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AreaOp, "CAGOp", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.geom.AreaOp');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inLeft=false;
-this.inRight=false;
-this.inResult=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['inLeft','inRight','inResult']]]
 
 Clazz.newMeth(C$, 'newRow$', function () {
 this.inLeft=false;
@@ -351,15 +347,14 @@ return (this.inResult ? 1 : -1);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AreaOp, "AddOp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AreaOp, "AddOp", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['sun.awt.geom.AreaOp','.CAGOp']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'newClassification$Z$Z', function (inLeft, inRight) {
 return (inLeft || inRight );
@@ -368,15 +363,14 @@ return (inLeft || inRight );
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AreaOp, "SubOp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AreaOp, "SubOp", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['sun.awt.geom.AreaOp','.CAGOp']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'newClassification$Z$Z', function (inLeft, inRight) {
 return (inLeft && !inRight );
@@ -385,15 +379,14 @@ return (inLeft && !inRight );
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AreaOp, "IntOp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AreaOp, "IntOp", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['sun.awt.geom.AreaOp','.CAGOp']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'newClassification$Z$Z', function (inLeft, inRight) {
 return (inLeft && inRight );
@@ -402,15 +395,14 @@ return (inLeft && inRight );
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AreaOp, "XorOp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AreaOp, "XorOp", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['sun.awt.geom.AreaOp','.CAGOp']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'newClassification$Z$Z', function (inLeft, inRight) {
 return (inLeft != inRight );
@@ -419,20 +411,16 @@ return (inLeft != inRight );
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AreaOp, "NZWindOp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AreaOp, "NZWindOp", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.geom.AreaOp');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.count=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['count']]]
 
 Clazz.newMeth(C$, 'newRow$', function () {
 this.count=0;
@@ -453,20 +441,16 @@ return ((this.count == 0) ? -1 : 1);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AreaOp, "EOWindOp", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AreaOp, "EOWindOp", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.awt.geom.AreaOp');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inside=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['inside']]]
 
 Clazz.newMeth(C$, 'newRow$', function () {
 this.inside=false;
@@ -485,4 +469,4 @@ return (this.inside ? 1 : -1);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

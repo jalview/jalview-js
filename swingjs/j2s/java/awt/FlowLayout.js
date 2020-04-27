@@ -1,20 +1,12 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FlowLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FlowLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.align=0;
-this.newAlign=0;
-this.hgap=0;
-this.vgap=0;
-this.alignOnBaseline=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['alignOnBaseline'],'I',['align','newAlign','hgap','vgap']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$I$I$I.apply(this, [1, 5, 5]);
@@ -25,7 +17,7 @@ C$.c$$I$I$I.apply(this, [align, 5, 5]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$I$I', function (align, hgap, vgap) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.hgap=hgap;
 this.vgap=vgap;
 this.setAlignment$I(align);
@@ -83,7 +75,7 @@ Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
 Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var nmembers=target.getComponentCount$();
 var firstVisibleComponent=true;
 var useBaseline=this.getAlignOnBaseline$();
@@ -117,7 +109,7 @@ Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
 var useBaseline=this.getAlignOnBaseline$();
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var nmembers=target.getComponentCount$();
 var maxAscent=0;
 var maxDescent=0;
@@ -262,4 +254,4 @@ break;
 return this.getClass$().getName$() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + str + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:09 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.JComponent','javax.swing.UIManager','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JFrame", null, 'java.awt.JSFrame', ['javax.swing.WindowConstants', 'javax.swing.RootPaneContainer']);
-C$.defaultLookAndFeelDecoratedKey=null;
-C$.frameCount=0;
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.JComponent','javax.swing.UIManager','javax.swing.JRootPane','javax.swing.SwingUtilities','javax.swing.RepaintManager']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JFrame", null, 'java.awt.JSFrame', ['javax.swing.WindowConstants', 'javax.swing.RootPaneContainer']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultLookAndFeelDecoratedKey= Clazz.new_();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.defaultCloseOperation=0;
-this.transferHandler=null;
-this.rootPane=null;
-this.rootPaneCheckingEnabled=false;
-this._boundsFrozen=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultCloseOperation=1;
 this.rootPaneCheckingEnabled=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'add$java_awt_Component$O', function (comp, constraints) {
-if (Clazz.instanceOf(comp, "javax.swing.JApplet")) {
-this.isAppletFrame=true;
-(comp).getLayeredPane$().isFramedApplet=true;
-}C$.superclazz.prototype.add$java_awt_Component$O.apply(this, [comp, constraints]);
-});
+C$.$fields$=[['Z',['rootPaneCheckingEnabled','秘boundsFrozen'],'I',['defaultCloseOperation'],'O',['transferHandler','javax.swing.TransferHandler','rootPane','javax.swing.JRootPane']]
+,['I',['frameCount'],'O',['defaultLookAndFeelDecoratedKey','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$', function () {
 C$.c$$S$java_awt_GraphicsConfiguration.apply(this, [null, null]);
@@ -41,7 +24,8 @@ C$.c$$S$java_awt_GraphicsConfiguration.apply(this, [title, null]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$java_awt_GraphicsConfiguration', function (title, gc) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
+this.秘paintClass=this.秘updateClass=C$ ||null;
 this.initTitleGC$S$java_awt_GraphicsConfiguration(title, gc);
 this.enableEvents$J(72);
 this.setLocale$java_util_Locale($I$(1).getDefaultLocale$());
@@ -55,12 +39,11 @@ if (supportsWindowDecorations) {
 this.setUndecorated$Z(true);
 this.getRootPane$().setWindowDecorationStyle$I(1);
 }}this.updateUI$();
-this.addNotify$();
-this.rootPane.addNotify$();
+this.秘frameAddNodify$javax_swing_JRootPane(this.rootPane);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O$O$O$O', function (object, object2, object3, object4) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getUIClassID$', function () {
@@ -68,7 +51,7 @@ return "FrameUI";
 });
 
 Clazz.newMeth(C$, 'createRootPane$', function () {
-var rp=Clazz.new_($I$(3).c$$S$Z$java_awt_Container,["_Frame" + (++C$.frameCount), false, this]);
+var rp=Clazz.new_(["_Frame" + (++C$.frameCount), false, this],$I$(3,1).c$$S$Z$java_awt_Container);
 rp.setOpaque$Z(true);
 return rp;
 });
@@ -227,15 +210,15 @@ C$.superclazz.prototype.repaint$J$I$I$I$I.apply(this, [time, x, y, width, height
 
 Clazz.newMeth(C$, 'setDefaultLookAndFeelDecorated$Z', function (defaultLookAndFeelDecorated) {
 if (defaultLookAndFeelDecorated) {
-$I$(4).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, $I$(6).TRUE);
+$I$(4).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, Boolean.TRUE);
 } else {
-$I$(4).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, $I$(6).FALSE);
+$I$(4).appContextPut$O$O(C$.defaultLookAndFeelDecoratedKey, Boolean.FALSE);
 }}, 1);
 
 Clazz.newMeth(C$, 'isDefaultLookAndFeelDecorated$', function () {
 var defaultLookAndFeelDecorated=$I$(4).appContextGet$O(C$.defaultLookAndFeelDecoratedKey);
 if (defaultLookAndFeelDecorated == null ) {
-defaultLookAndFeelDecorated=$I$(6).FALSE;
+defaultLookAndFeelDecorated=Boolean.FALSE;
 }return defaultLookAndFeelDecorated.booleanValue$();
 }, 1);
 
@@ -255,14 +238,18 @@ var rootPaneCheckingEnabledString=(this.rootPaneCheckingEnabled ? "true" : "fals
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",defaultCloseOperation=" + defaultCloseOperationString + ",rootPane=" + rootPaneString + ",rootPaneCheckingEnabled=" + rootPaneCheckingEnabledString ;
 });
 
-Clazz.newMeth(C$, '_freezeBounds$I$I', function (w, h) {
+Clazz.newMeth(C$, '秘freezeBounds$I$I', function (w, h) {
 this.setSize$I$I(w, h);
-this._boundsFrozen=true;
+this.秘boundsFrozen=true;
 this.resizable=false;
 });
 
 Clazz.newMeth(C$, 'reshape$I$I$I$I', function (x, y, width, height) {
-if (!this._boundsFrozen) C$.superclazz.prototype.reshape$I$I$I$I.apply(this, [x, y, width, height]);
+if (!this.秘boundsFrozen) C$.superclazz.prototype.reshape$I$I$I$I.apply(this, [x, y, width, height]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultLookAndFeelDecoratedKey= Clazz.new_();
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:44 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

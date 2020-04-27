@@ -1,34 +1,22 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.GridBagConstraints','java.awt.Point','java.awt.Dimension','java.awt.GridBagLayoutInfo','java.util.Arrays',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Rectangle']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GridBagLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.GridBagConstraints','java.awt.Point','java.awt.Dimension','java.awt.GridBagLayoutInfo','java.util.Arrays',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Rectangle']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GridBagLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.comptable=null;
-this.defaultConstraints=null;
-this.layoutInfo=null;
-this.columnWidths=null;
-this.rowHeights=null;
-this.columnWeights=null;
-this.rowWeights=null;
-this.componentAdjusting=null;
-this.rightToLeft=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.rightToLeft=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['rightToLeft'],'O',['comptable','java.util.Hashtable','defaultConstraints','java.awt.GridBagConstraints','layoutInfo','java.awt.GridBagLayoutInfo','columnWidths','int[]','+rowHeights','columnWeights','double[]','+rowWeights','componentAdjusting','java.awt.Component']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.comptable=Clazz.new_($I$(1));
-this.defaultConstraints=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.comptable=Clazz.new_($I$(1,1));
+this.defaultConstraints=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'setConstraints$java_awt_Component$java_awt_GridBagConstraints', function (comp, constraints) {
-this.comptable.put$TK$TV(comp, constraints.clone$());
+this.comptable.put$O$O(comp, constraints.clone$());
 });
 
 Clazz.newMeth(C$, 'getConstraints$java_awt_Component', function (comp) {
@@ -52,7 +40,7 @@ this.comptable.remove$O(comp);
 }, p$1);
 
 Clazz.newMeth(C$, 'getLayoutOrigin$', function () {
-var origin=Clazz.new_($I$(3).c$$I$I,[0, 0]);
+var origin=Clazz.new_($I$(3,1).c$$I$I,[0, 0]);
 if (this.layoutInfo != null ) {
 origin.x=this.layoutInfo.startx;
 origin.y=this.layoutInfo.starty;
@@ -80,7 +68,7 @@ return weights;
 });
 
 Clazz.newMeth(C$, 'location$I$I', function (x, y) {
-var loc=Clazz.new_($I$(3).c$$I$I,[0, 0]);
+var loc=Clazz.new_($I$(3,1).c$$I$I,[0, 0]);
 var i;
 var d;
 if (this.layoutInfo == null ) return loc;
@@ -131,7 +119,7 @@ return this.getMinSize$java_awt_Container$java_awt_GridBagLayoutInfo(parent, inf
 });
 
 Clazz.newMeth(C$, 'maximumLayoutSize$java_awt_Container', function (target) {
-return Clazz.new_($I$(4).c$$I$I,[2147483647, 2147483647]);
+return Clazz.new_($I$(4,1).c$$I$I,[2147483647, 2147483647]);
 });
 
 Clazz.newMeth(C$, 'getLayoutAlignmentX$java_awt_Container', function (parent) {
@@ -288,7 +276,7 @@ if (constraints.gridheight == 0 && curRow < 0 ) curCol=curX + curWidth;
 }
 if (this.columnWidths != null  && layoutWidth < this.columnWidths.length ) layoutWidth=this.columnWidths.length;
 if (this.rowHeights != null  && layoutHeight < this.rowHeights.length ) layoutHeight=this.rowHeights.length;
-r=Clazz.new_($I$(5).c$$I$I,[layoutWidth, layoutHeight]);
+r=Clazz.new_($I$(5,1).c$$I$I,[layoutWidth, layoutHeight]);
 curRow=curCol=-1;
 $I$(6).fill$IA$I(xMaxArray, 0);
 $I$(6).fill$IA$I(yMaxArray, 0);
@@ -759,7 +747,7 @@ return this.GetMinSize$java_awt_Container$java_awt_GridBagLayoutInfo(parent, inf
 });
 
 Clazz.newMeth(C$, 'GetMinSize$java_awt_Container$java_awt_GridBagLayoutInfo', function (parent, info) {
-var d=Clazz.new_($I$(4));
+var d=Clazz.new_($I$(4,1));
 var i;
 var t;
 var insets=parent.getInsets$();
@@ -785,7 +773,7 @@ var constraints;
 var insets=parent.getInsets$();
 var n=parent.getComponentCount$();
 var d;
-var r=Clazz.new_($I$(8));
+var r=Clazz.new_($I$(8,1));
 var i;
 var diffw;
 var diffh;
@@ -880,4 +868,4 @@ comp.setBounds$I$I$I$I(r.x, r.y, r.width, r.height);
 }, p$1);
 var $k$;
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:10 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

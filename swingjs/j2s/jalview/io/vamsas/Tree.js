@@ -1,41 +1,29 @@
-(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'jalview.gui.TreePanel','jalview.io.NewickFile','uk.ac.vamsas.objects.core.Tree','jalview.bin.Cache','jalview.io.vamsas.DatastoreItem','uk.ac.vamsas.objects.core.Provenance','uk.ac.vamsas.objects.core.Entry','uk.ac.vamsas.objects.core.Input','uk.ac.vamsas.objects.core.Param','uk.ac.vamsas.objects.core.Seg','jalview.datamodel.SeqCigar','java.util.Vector','jalview.datamodel.Sequence','java.util.Hashtable','uk.ac.vamsas.objects.core.Treenode','uk.ac.vamsas.objects.core.Vref','uk.ac.vamsas.objects.core.Newick','jalview.datamodel.SequenceI','jalview.datamodel.Alignment','jalview.datamodel.AlignmentView']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Tree", null, 'jalview.io.vamsas.DatastoreItem');
+(function(){var P$=Clazz.newPackage("jalview.io.vamsas"),p$1={},I$=[[0,'jalview.gui.TreePanel','jalview.io.NewickFile','uk.ac.vamsas.objects.core.Tree','jalview.bin.Cache','jalview.io.vamsas.DatastoreItem','uk.ac.vamsas.objects.core.Provenance','uk.ac.vamsas.objects.core.Entry','uk.ac.vamsas.objects.core.Input','uk.ac.vamsas.objects.core.Param','uk.ac.vamsas.objects.core.Seg','jalview.datamodel.SeqCigar','java.util.Vector','jalview.datamodel.Sequence','java.util.Hashtable','uk.ac.vamsas.objects.core.Treenode','uk.ac.vamsas.objects.core.Vref','uk.ac.vamsas.objects.core.Newick','jalview.datamodel.SequenceI','jalview.datamodel.Alignment','jalview.datamodel.AlignmentView']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Tree", null, 'jalview.io.vamsas.DatastoreItem');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jal=null;
-this.tp=null;
-this.tree=null;
-this.alignment=null;
-this.ntree=null;
-this.title=null;
-this.inputData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.inputData=null;
-}, 1);
+},1);
+
+C$.$fields$=[['S',['title'],'O',['jal','jalview.datamodel.AlignmentI','tp','jalview.gui.TreePanel','tree','uk.ac.vamsas.objects.core.Tree','alignment','uk.ac.vamsas.objects.core.Alignment','ntree','jalview.io.NewickFile','inputData','jalview.datamodel.AlignmentView']]]
 
 Clazz.newMeth(C$, 'updateFrom$jalview_io_VamsasAppDatastore$jalview_gui_AlignFrame$uk_ac_vamsas_objects_core_Tree', function (datastore, alignFrame, vtree) {
 var toTree=Clazz.new_(C$.c$$jalview_io_VamsasAppDatastore$jalview_gui_AlignFrame$uk_ac_vamsas_objects_core_Tree,[datastore, alignFrame, vtree]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_VamsasAppDatastore$jalview_gui_AlignFrame$uk_ac_vamsas_objects_core_Tree', function (datastore, alignFrame, vtree) {
-C$.superclazz.c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_client_Vobject$Class.apply(this, [datastore, vtree, Clazz.getClass($I$(1))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_VamsasAppDatastore$uk_ac_vamsas_client_Vobject$Class.apply(this,[datastore, vtree, Clazz.getClass($I$(1))]);C$.$init$.apply(this);
 this.doJvUpdate$();
 }, 1);
 
 Clazz.newMeth(C$, 'getNtree', function () {
-return Clazz.new_($I$(2).c$$S,[this.tree.getNewick$I(0).getContent$()]);
+return Clazz.new_([this.tree.getNewick$I(0).getContent$()],$I$(2,1).c$$S);
 }, p$1);
 
 Clazz.newMeth(C$, 'c$$jalview_io_VamsasAppDatastore$jalview_gui_TreePanel$jalview_datamodel_AlignmentI$uk_ac_vamsas_objects_core_Alignment', function (datastore, tp2, jal2, alignment2) {
-C$.superclazz.c$$jalview_io_VamsasAppDatastore$O$Class.apply(this, [datastore, tp2, Clazz.getClass($I$(3))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$jalview_io_VamsasAppDatastore$O$Class.apply(this,[datastore, tp2, Clazz.getClass($I$(3))]);C$.$init$.apply(this);
 this.jal=jal2;
 this.tp=this.jvobj;
 this.alignment=alignment2;
@@ -84,15 +72,15 @@ $I$(5).log.debug$O("Add modified jalview tree as new tree in document.");
 
 Clazz.newMeth(C$, 'makeTreeProvenance$jalview_datamodel_AlignmentI$jalview_gui_TreePanel', function (jal, tp) {
 $I$(4).log.debug$O("Making Tree provenance for " + tp.getTitle$());
-var prov=Clazz.new_($I$(6));
-prov.addEntry$uk_ac_vamsas_objects_core_Entry(Clazz.new_($I$(7)));
+var prov=Clazz.new_($I$(6,1));
+prov.addEntry$uk_ac_vamsas_objects_core_Entry(Clazz.new_($I$(7,1)));
 prov.getEntry$I(0).setAction$S("imported " + tp.getTitle$());
 prov.getEntry$I(0).setUser$S(this.provEntry.getUser$());
 prov.getEntry$I(0).setApp$S(this.provEntry.getApp$());
 prov.getEntry$I(0).setDate$java_util_Date(this.provEntry.getDate$());
 var originalData=tp.getTree$().getOriginalData$();
 if (originalData != null ) {
-var vInput=Clazz.new_($I$(8));
+var vInput=Clazz.new_($I$(8,1));
 var alsqrefs=this.getjv2vObjs$java_util_Vector(p$1.findAlignmentSequences$jalview_datamodel_AlignmentI$jalview_datamodel_SeqCigarA.apply(this, [jal, tp.getTree$().getOriginalData$().getSequences$()]));
 var alsqs=Clazz.array(java.lang.Object, [alsqrefs.size$()]);
 alsqrefs.copyInto$OA(alsqs);
@@ -100,14 +88,14 @@ vInput.setObjRef$OA(alsqs);
 prov.getEntry$I(0).setAction$S("created " + tp.getTitle$());
 prov.getEntry$I(0).addInput$uk_ac_vamsas_objects_core_Input(vInput);
 vInput.setName$S("jalview:seqdist");
-prov.getEntry$I(0).addParam$uk_ac_vamsas_objects_core_Param(Clazz.new_($I$(9)));
+prov.getEntry$I(0).addParam$uk_ac_vamsas_objects_core_Param(Clazz.new_($I$(9,1)));
 prov.getEntry$I(0).getParam$I(0).setName$S("treeType");
 prov.getEntry$I(0).getParam$I(0).setType$S("utf8");
 prov.getEntry$I(0).getParam$I(0).setContent$S("NJ");
 var ranges=originalData.getVisibleContigs$();
 var start=tp.getTree$().getOriginalData$().getAlignmentOrigin$();
 for (var r=0; r < ranges.length; r+=2) {
-var visSeg=Clazz.new_($I$(10));
+var visSeg=Clazz.new_($I$(10,1));
 visSeg.setStart$I(1 + start + ranges[r] );
 visSeg.setEnd$I(start + ranges[r + 1]);
 visSeg.setInclusive$Z(true);
@@ -120,14 +108,14 @@ return prov;
 Clazz.newMeth(C$, 'findAlignmentSequences$jalview_datamodel_AlignmentI$jalview_datamodel_SeqCigarA', function (jal, sequences) {
 var tseqs=Clazz.array($I$(11), [sequences.length]);
 System.arraycopy$O$I$O$I$I(sequences, 0, tseqs, 0, sequences.length);
-var alsq=Clazz.new_($I$(12));
+var alsq=Clazz.new_($I$(12,1));
 var jalsqs=jal.getSequences$();
 {
 for (var asq, $asq = jalsqs.iterator$(); $asq.hasNext$()&&((asq=($asq.next$())),1);) {
 for (var t=0; t < sequences.length; t++) {
 if (tseqs[t] != null  && (tseqs[t].getRefSeq$() === asq  || tseqs[t].getRefSeq$() === asq.getDatasetSequence$()  ) ) {
 tseqs[t]=null;
-alsq.add$TE(asq);
+alsq.add$O(asq);
 }}
 }
 }if (alsq.size$() < sequences.length) {
@@ -167,15 +155,15 @@ leaf.setElement$O(jvseq);
 leaf.setPlaceholder$Z(false);
 } else {
 leaf.setPlaceholder$Z(true);
-leaf.setElement$O(Clazz.new_($I$(13).c$$S$S,[leaf.getName$(), "THISISAPLACEHLDER"]));
+leaf.setElement$O(Clazz.new_([leaf.getName$(), "THISISAPLACEHLDER"],$I$(13,1).c$$S$S));
 }}}
 });
 
 Clazz.newMeth(C$, 'makeTreeNodes$jalview_analysis_TreeModel$uk_ac_vamsas_objects_core_Newick', function (treeModel, newick) {
 var leaves=treeModel.findLeaves$jalview_datamodel_SequenceNode(treeModel.getTopNode$());
-var tnv=Clazz.new_($I$(12));
+var tnv=Clazz.new_($I$(12,1));
 var l=leaves.elements$();
-var nodespecs=Clazz.new_($I$(14));
+var nodespecs=Clazz.new_($I$(14,1));
 while (l.hasMoreElements$()){
 var tnode=l.nextElement$();
 if (Clazz.instanceOf(tnode, "jalview.datamodel.SequenceNode")) {
@@ -184,16 +172,16 @@ var assocseq=(tnode).element$();
 if (Clazz.instanceOf(assocseq, "jalview.datamodel.SequenceI")) {
 var vobj=this.getjv2vObj$O(assocseq);
 if (vobj != null ) {
-var node=Clazz.new_($I$(15));
+var node=Clazz.new_($I$(15,1));
 if (newick.isRegisterable$()) {
 this.cdoc.registerObject$uk_ac_vamsas_client_Vobject(newick);
 node.addTreeId$O(newick);
 }node.setNodespec$S(p$1.makeNodeSpec$java_util_Hashtable$jalview_datamodel_BinaryNode.apply(this, [nodespecs, tnode]));
 node.setName$S(tnode.getName$());
-var vr=Clazz.new_($I$(16));
+var vr=Clazz.new_($I$(16,1));
 vr.addRefs$O(vobj);
 node.addVref$uk_ac_vamsas_objects_core_Vref(vr);
-tnv.addElement$TE(node);
+tnv.addElement$O(node);
 } else {
 System.err.println$S("WARNING: Unassociated treeNode " + tnode.element$().toString() + " " + ((tnode.getName$() != null ) ? " label " + tnode.getName$() : "") );
 }}}}}
@@ -208,7 +196,7 @@ Clazz.newMeth(C$, 'makeNodeSpec$java_util_Hashtable$jalview_datamodel_BinaryNode
 var nname= String.instantialize(tnode.getName$());
 var nindx=nodespecs.get$O(nname);
 if (nindx == null ) {
-nindx= new Integer(1);
+nindx=Integer.valueOf$I(1);
 }nname=nindx.toString() + " " + nname ;
 return nname;
 }, p$1);
@@ -218,7 +206,7 @@ var occurence=-1;
 var nspec=nodespec.substring$I(nodespec.indexOf$I(" ") + 1);
 var oval=nodespec.substring$I$I(0, nodespec.indexOf$I(" "));
 try {
-occurence= new Integer(oval).intValue$();
+occurence=Integer.valueOf$S(oval).intValue$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.err.println$S("Invalid nodespec '" + nodespec + "'" );
@@ -241,10 +229,10 @@ return bn;
 }, p$1);
 
 Clazz.newMeth(C$, 'addToDocument$', function () {
-this.tree=Clazz.new_($I$(3));
+this.tree=Clazz.new_($I$(3,1));
 this.bindjvvobj$O$uk_ac_vamsas_client_Vobject(this.tp, this.tree);
 this.tree.setTitle$S(this.tp.getTitle$());
-var newick=Clazz.new_($I$(17));
+var newick=Clazz.new_($I$(17,1));
 newick.setContent$S(this.tp.getTree$().print$());
 newick.setTitle$S(this.tp.getTitle$());
 this.tree.addNewick$uk_ac_vamsas_objects_core_Newick(newick);
@@ -280,7 +268,7 @@ for (var i=0, iSize=vInput.getObjRefCount$(); i < iSize; i++) {
 var seq=this.getvObj2jv$uk_ac_vamsas_client_Vobject(vInput.getObjRef$I(i));
 seqs[i]=seq;
 }
-view=Clazz.new_($I$(19).c$$jalview_datamodel_SequenceIA,[seqs]).getCompactAlignment$();
+view=Clazz.new_($I$(19,1).c$$jalview_datamodel_SequenceIA,[seqs]).getCompactAlignment$();
 }}var from=1;
 var to=jal.getWidth$();
 var offset=0;
@@ -297,7 +285,7 @@ offset-=se[0] - from;
 }}
 if (from < to) {
 view.deleteRange$I$I(offset + from - 1, offset + to - 1);
-}return Clazz.array(java.lang.Object, -1, [Clazz.new_($I$(20).c$$jalview_datamodel_CigarArray,[view]), jal]);
+}return Clazz.array(java.lang.Object, -1, [Clazz.new_($I$(20,1).c$$jalview_datamodel_CigarArray,[view]), jal]);
 }}
 $I$(4).log.debug$O("Returning null for input data recovery from provenance.");
 return null;
@@ -341,4 +329,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-23 11:20:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,32 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},p$2={},I$=[[0,'javax.swing.text.DocumentFilter','javax.swing.Action',['javax.swing.JFormattedTextField','.CommitAction'],['javax.swing.JFormattedTextField','.CancelAction'],'javax.swing.text.DefaultFormatterFactory','Boolean',['javax.swing.JFormattedTextField','.FocusLostHandler'],'javax.swing.text.TextAction',['javax.swing.JFormattedTextField','.DocumentHandler'],'javax.swing.ActionMap','swingjs.JSUtil','javax.swing.text.NumberFormatter','javax.swing.text.InternationalFormatter','javax.swing.text.DateFormatter','java.text.DecimalFormat','javax.swing.text.DefaultFormatter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JFormattedTextField", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},p$2={},I$=[[0,'javax.swing.text.DocumentFilter','javax.swing.Action',['javax.swing.JFormattedTextField','.CommitAction'],['javax.swing.JFormattedTextField','.CancelAction'],'javax.swing.text.DefaultFormatterFactory',['javax.swing.JFormattedTextField','.FocusLostHandler'],'javax.swing.text.TextAction',['javax.swing.JFormattedTextField','.DocumentHandler'],'javax.swing.ActionMap','swingjs.JSUtil','javax.swing.text.NumberFormatter','javax.swing.text.InternationalFormatter','javax.swing.text.DateFormatter','java.text.DecimalFormat','javax.swing.text.DefaultFormatter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JFormattedTextField", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JTextField');
-C$.$defaultActions=null;
+C$.$classes$=[['FocusLostHandler',2],['AbstractFormatterFactory',1033],['AbstractFormatter',1033],['CommitAction',8],['CancelAction',10],['DocumentHandler',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.$defaultActions=Clazz.array($I$(2), -1, [Clazz.new_($I$(3)), Clazz.new_($I$(4))]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.factory=null;
-this.format=null;
-this.value=null;
-this.editValid=false;
-this.focusLostBehavior=0;
-this.edited=false;
-this.documentListener=null;
-this.textFormatterActionMap=null;
-this.focusLostHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['editValid','edited'],'I',['focusLostBehavior'],'O',['factory','javax.swing.JFormattedTextField.AbstractFormatterFactory','format','javax.swing.JFormattedTextField.AbstractFormatter','value','java.lang.Object','documentListener','javax.swing.event.DocumentListener','textFormatterActionMap','javax.swing.ActionMap','focusLostHandler','javax.swing.JFormattedTextField.FocusLostHandler']]
+,['O',['$defaultActions','javax.swing.Action[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this, [null, null, 0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$javax_swing_text_Document$S$I.apply(this,[null, null, 0]);C$.$init$.apply(this);
 this.updateUI$();
 this.enableEvents$J(4);
 this.setFocusLostBehavior$I(1);
@@ -47,7 +34,7 @@ this.setFormatterFactory$javax_swing_JFormattedTextField_AbstractFormatterFactor
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JFormattedTextField_AbstractFormatter', function (formatter) {
-C$.c$$javax_swing_JFormattedTextField_AbstractFormatterFactory.apply(this, [Clazz.new_($I$(5).c$$javax_swing_JFormattedTextField_AbstractFormatter,[formatter])]);
+C$.c$$javax_swing_JFormattedTextField_AbstractFormatterFactory.apply(this, [Clazz.new_($I$(5,1).c$$javax_swing_JFormattedTextField_AbstractFormatter,[formatter])]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javax_swing_JFormattedTextField_AbstractFormatterFactory', function (factory) {
@@ -115,7 +102,7 @@ p$1.setValue$O$Z$Z.apply(this, [format.stringToValue$S(this.getText$()), false, 
 Clazz.newMeth(C$, 'setEditValid$Z', function (isValid) {
 if (isValid != this.editValid ) {
 this.editValid=isValid;
-this.firePropertyChange$S$O$O("editValid", $I$(6).valueOf$Z(!isValid), $I$(6).valueOf$Z(isValid));
+this.firePropertyChange$S$O$O("editValid", Boolean.valueOf$Z(!isValid), Boolean.valueOf$Z(isValid));
 }}, p$1);
 
 Clazz.newMeth(C$, 'isEditValid$', function () {
@@ -135,14 +122,14 @@ if (e.isTemporary$()) {
 return;
 }if (p$1.isEdited.apply(this, []) && e.getID$() == 1005 ) {
 if (this.focusLostHandler == null ) {
-this.focusLostHandler=Clazz.new_($I$(7), [this, null]);
+this.focusLostHandler=Clazz.new_($I$(6,1),[this, null]);
 }this.focusLostHandler.run$();
 } else if (!p$1.isEdited.apply(this, [])) {
 p$1.setValue$O$Z$Z.apply(this, [this.getValue$(), true, true]);
 }});
 
 Clazz.newMeth(C$, 'getActions$', function () {
-return $I$(8).augmentList$javax_swing_ActionA$javax_swing_ActionA(C$.superclazz.prototype.getActions$.apply(this, []), C$.$defaultActions);
+return $I$(7,"augmentList$javax_swing_ActionA$javax_swing_ActionA",[C$.superclazz.prototype.getActions$.apply(this, []), C$.$defaultActions]);
 });
 
 Clazz.newMeth(C$, 'setDocument$javax_swing_text_Document', function (doc) {
@@ -150,7 +137,7 @@ if (this.documentListener != null  && this.getDocument$() != null  ) {
 this.getDocument$().removeDocumentListener$javax_swing_event_DocumentListener(this.documentListener);
 }C$.superclazz.prototype.setDocument$javax_swing_text_Document.apply(this, [doc]);
 if (this.documentListener == null ) {
-this.documentListener=Clazz.new_($I$(9), [this, null]);
+this.documentListener=Clazz.new_($I$(8,1),[this, null]);
 }doc.addDocumentListener$javax_swing_event_DocumentListener(this.documentListener);
 });
 
@@ -161,7 +148,7 @@ this.textFormatterActionMap.clear$();
 }} else {
 if (this.textFormatterActionMap == null ) {
 var map=this.getActionMap$();
-this.textFormatterActionMap=Clazz.new_($I$(10));
+this.textFormatterActionMap=Clazz.new_($I$(9,1));
 while (map != null ){
 var parent=map.getParent$();
 if (Clazz.instanceOf(parent, "javax.swing.plaf.UIResource") || parent == null  ) {
@@ -205,32 +192,35 @@ return this.edited;
 
 Clazz.newMeth(C$, 'getDefaultFormatterFactory$O', function (type) {
 if (Clazz.instanceOf(type, "java.text.DateFormat")) {
-$I$(11).notImplemented$S(null);
+$I$(10).notImplemented$S(null);
 return null;
 }if (Clazz.instanceOf(type, "java.text.NumberFormat")) {
-return Clazz.new_($I$(5).c$$javax_swing_JFormattedTextField_AbstractFormatter,[Clazz.new_($I$(12).c$$java_text_NumberFormat,[type])]);
+return Clazz.new_([Clazz.new_($I$(11,1).c$$java_text_NumberFormat,[type])],$I$(5,1).c$$javax_swing_JFormattedTextField_AbstractFormatter);
 }if (Clazz.instanceOf(type, "java.text.Format")) {
-return Clazz.new_($I$(5).c$$javax_swing_JFormattedTextField_AbstractFormatter,[Clazz.new_($I$(13).c$$java_text_Format,[type])]);
+return Clazz.new_([Clazz.new_($I$(12,1).c$$java_text_Format,[type])],$I$(5,1).c$$javax_swing_JFormattedTextField_AbstractFormatter);
 }if (Clazz.instanceOf(type, "java.util.Date")) {
-return Clazz.new_($I$(5).c$$javax_swing_JFormattedTextField_AbstractFormatter,[Clazz.new_($I$(14))]);
+return Clazz.new_([Clazz.new_($I$(13,1))],$I$(5,1).c$$javax_swing_JFormattedTextField_AbstractFormatter);
 }if (Clazz.instanceOf(type, "java.lang.Number")) {
-var displayFormatter=Clazz.new_($I$(12));
+var displayFormatter=Clazz.new_($I$(11,1));
 (displayFormatter).setValueClass$Class(type.getClass$());
-var editFormatter=Clazz.new_($I$(12).c$$java_text_NumberFormat,[Clazz.new_($I$(15).c$$S,["#.#"])]);
+var editFormatter=Clazz.new_([Clazz.new_($I$(14,1).c$$S,["#.#"])],$I$(11,1).c$$java_text_NumberFormat);
 (editFormatter).setValueClass$Class(type.getClass$());
-return Clazz.new_($I$(5).c$$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedTextField_AbstractFormatter,[displayFormatter, displayFormatter, editFormatter]);
-}return Clazz.new_($I$(5).c$$javax_swing_JFormattedTextField_AbstractFormatter,[Clazz.new_($I$(16))]);
+return Clazz.new_($I$(5,1).c$$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedTextField_AbstractFormatter$javax_swing_JFormattedTextField_AbstractFormatter,[displayFormatter, displayFormatter, editFormatter]);
+}return Clazz.new_([Clazz.new_($I$(15,1))],$I$(5,1).c$$javax_swing_JFormattedTextField_AbstractFormatter);
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.$defaultActions=Clazz.array($I$(2), -1, [Clazz.new_($I$(3,1)), Clazz.new_($I$(4,1))]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JFormattedTextField, "FocusLostHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JFormattedTextField, "FocusLostHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 var fb=this.this$0.getFocusLostBehavior$.apply(this.this$0, []);
@@ -253,33 +243,28 @@ p$1.setValue$O$Z$Z.apply(this.this$0, [this.this$0.getValue$.apply(this.this$0, 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JFormattedTextField, "AbstractFormatterFactory", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JFormattedTextField, "AbstractFormatterFactory", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JFormattedTextField, "AbstractFormatter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JFormattedTextField, "AbstractFormatter", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ftf=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['ftf','javax.swing.JFormattedTextField']]]
 
 Clazz.newMeth(C$, 'install$javax_swing_JFormattedTextField', function (ftf) {
 if (this.ftf != null ) {
@@ -344,7 +329,7 @@ Clazz.newMeth(C$, 'installDocumentFilter$javax_swing_text_DocumentFilter', funct
 var ftf=this.getFormattedTextField$();
 if (ftf != null ) {
 var doc=ftf.getDocument$();
-if (Clazz.instanceOf(doc, "swingjs.api.JSMinimalAbstractDocument")) {
+if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
 (doc).setDocumentFilter$javax_swing_text_DocumentFilter(filter);
 }doc.putProperty$O$O(Clazz.getClass($I$(1)), null);
 }}, p$2);
@@ -352,17 +337,16 @@ if (Clazz.instanceOf(doc, "swingjs.api.JSMinimalAbstractDocument")) {
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JFormattedTextField, "CommitAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JFormattedTextField, "CommitAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.JTextField','.NotifyAction']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getFocusedComponent$();
 if (Clazz.instanceOf(target, "javax.swing.JFormattedTextField")) {
 try {
@@ -391,22 +375,20 @@ return false;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JFormattedTextField, "CancelAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JFormattedTextField, "CancelAction", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.TextAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["reset-field-edit"]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,["reset-field-edit"]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 var target=this.getFocusedComponent$();
 if (Clazz.instanceOf(target, "javax.swing.JFormattedTextField")) {
 var ftf=target;
@@ -424,15 +406,14 @@ return false;
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JFormattedTextField, "DocumentHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JFormattedTextField, "DocumentHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.DocumentListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'insertUpdate$javax_swing_event_DocumentEvent', function (e) {
 p$1.setEdited$Z.apply(this.this$0, [true]);
@@ -448,4 +429,4 @@ Clazz.newMeth(C$, 'changedUpdate$javax_swing_event_DocumentEvent', function (e) 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:59 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

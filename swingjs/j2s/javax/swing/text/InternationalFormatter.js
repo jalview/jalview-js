@@ -1,30 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['java.text.Format','.Field'],'java.util.ArrayList','javax.swing.Action',['javax.swing.text.InternationalFormatter','.IncrementAction'],'StringBuffer','java.util.BitSet',['javax.swing.text.InternationalFormatter','.ExtendedReplaceHolder']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "InternationalFormatter", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['java.text.Format','.Field'],'java.util.ArrayList','javax.swing.Action',['javax.swing.text.InternationalFormatter','.IncrementAction'],'StringBuffer','java.util.BitSet',['javax.swing.text.InternationalFormatter','.ExtendedReplaceHolder']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "InternationalFormatter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.DefaultFormatter');
-C$.EMPTY_FIELD_ARRAY=null;
+C$.$classes$=[['ExtendedReplaceHolder',8],['IncrementAction',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EMPTY_FIELD_ARRAY=Clazz.array($I$(1), [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.format=null;
-this.max=null;
-this.min=null;
-this.literalMask=null;
-this.iterator=null;
-this.validMask=false;
-this.string=null;
-this.ignoreDocumentMutate=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['validMask','ignoreDocumentMutate'],'S',['string'],'O',['format','java.text.Format','max','Comparable','+min','literalMask','java.util.BitSet','iterator','java.text.AttributedCharacterIterator']]
+,['O',['EMPTY_FIELD_ARRAY','java.text.Format.Field[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.setOverwriteMode$Z(false);
 }, 1);
 
@@ -98,9 +87,9 @@ if (this.getAllowsInvalid$()) {
 this.updateMask$();
 }var attrs=this.getAttributes$I(offset);
 if (attrs != null  && attrs.size$() > 0 ) {
-var al=Clazz.new_($I$(2));
+var al=Clazz.new_($I$(2,1));
 al.addAll$java_util_Collection(attrs.keySet$());
-return al.toArray$TTA(C$.EMPTY_FIELD_ARRAY);
+return al.toArray$OA(C$.EMPTY_FIELD_ARRAY);
 }return C$.EMPTY_FIELD_ARRAY;
 });
 
@@ -115,7 +104,7 @@ return formatter;
 
 Clazz.newMeth(C$, 'getActions$', function () {
 if (this.getSupportsIncrement$()) {
-return Clazz.array($I$(3), -1, [Clazz.new_($I$(4).c$$S$I, [this, null, "increment", 1]), Clazz.new_($I$(4).c$$S$I, [this, null, "decrement", -1])]);
+return Clazz.array($I$(3), -1, [Clazz.new_($I$(4,1).c$$S$I,[this, null, "increment", 1]), Clazz.new_($I$(4,1).c$$S$I,[this, null, "decrement", -1])]);
 }return null;
 });
 
@@ -128,7 +117,7 @@ return text;
 Clazz.newMeth(C$, 'isValidValue$O$Z', function (value, wantsCCE) {
 var min=this.getMinimum$();
 try {
-if (min != null  && min.compareTo$(value) > 0 ) {
+if (min != null  && min.compareTo$O(value) > 0 ) {
 return false;
 }} catch (cce) {
 if (Clazz.exceptionOf(cce,"ClassCastException")){
@@ -141,7 +130,7 @@ throw cce;
 }
 var max=this.getMaximum$();
 try {
-if (max != null  && max.compareTo$(value) < 0 ) {
+if (max != null  && max.compareTo$O(value) < 0 ) {
 return false;
 }} catch (cce) {
 if (Clazz.exceptionOf(cce,"ClassCastException")){
@@ -296,7 +285,7 @@ rh.length--;
 counter--;
 max--;
 } else if (replace == null ) {
-replace=Clazz.new_($I$(5).c$$I,[max]);
+replace=Clazz.new_($I$(5,1).c$$I,[max]);
 replace.append$S(text.substring$I$I(0, textIndex));
 replace.append$C(this.getLiteral$I(rh.offset + counter));
 }} else if (textIndex < tl) {
@@ -305,7 +294,7 @@ replace.append$C(text.charAt$I(textIndex));
 }textIndex++;
 } else {
 if (replace == null ) {
-replace=Clazz.new_($I$(5).c$$I,[max]);
+replace=Clazz.new_($I$(5,1).c$$I,[max]);
 if (textIndex > 0) {
 replace.append$S(text.substring$I$I(0, textIndex));
 }}if (replace != null ) {
@@ -385,7 +374,7 @@ if (iterator != null ) {
 this.validMask=true;
 this.iterator=iterator;
 if (this.literalMask == null ) {
-this.literalMask=Clazz.new_($I$(6));
+this.literalMask=Clazz.new_($I$(6,1));
 } else {
 for (var counter=this.literalMask.length$() - 1; counter >= 0; counter--) {
 this.literalMask.clear$I(counter);
@@ -473,25 +462,24 @@ this.updateValue$O(value);
 
 Clazz.newMeth(C$, 'getReplaceHolder$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet', function (fb, offset, length, text, attrs) {
 if (this.replaceHolder == null ) {
-this.replaceHolder=Clazz.new_($I$(7));
+this.replaceHolder=Clazz.new_($I$(7,1));
 }return C$.superclazz.prototype.getReplaceHolder$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet.apply(this, [fb, offset, length, text, attrs]);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.EMPTY_FIELD_ARRAY=Clazz.array($I$(1), [0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.InternationalFormatter, "ExtendedReplaceHolder", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.InternationalFormatter, "ExtendedReplaceHolder", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.text.DefaultFormatter','.ReplaceHolder']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.endOffset=0;
-this.endTextLength=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['endOffset','endTextLength']]]
 
 Clazz.newMeth(C$, 'resetFromValue$javax_swing_text_InternationalFormatter', function (formatter) {
 this.offset=0;
@@ -510,28 +498,23 @@ this.length=this.fb.getDocument$().getLength$();
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.InternationalFormatter, "IncrementAction", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.InternationalFormatter, "IncrementAction", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.AbstractAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.direction=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['direction']]]
 
 Clazz.newMeth(C$, 'c$$S$I', function (name, direction) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 this.direction=direction;
 }, 1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (ae) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (ae) {
 if (this.b$['javax.swing.JFormattedTextField.AbstractFormatter'].getFormattedTextField$.apply(this.b$['javax.swing.JFormattedTextField.AbstractFormatter'], []).isEditable$()) {
 if (this.b$['javax.swing.text.DefaultFormatter'].getAllowsInvalid$.apply(this.b$['javax.swing.text.DefaultFormatter'], [])) {
 this.this$0.updateMask$.apply(this.this$0, []);
@@ -574,4 +557,4 @@ this.b$['javax.swing.JFormattedTextField.AbstractFormatter'].invalidEdit$.apply(
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:28:16 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

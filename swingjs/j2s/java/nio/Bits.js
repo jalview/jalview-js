@@ -1,14 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Bits");
+(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Bits");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['_ia','int[]','_ha','short[]','_fa','float[]','_da','double[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'swap$H', function (x) {
@@ -32,40 +34,40 @@ return String.fromCharCode(((b1 << 8) | (b0 & 255)));
 }, 1);
 
 Clazz.newMeth(C$, 'getCharL$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeChar$B$B(($b$[0] = bb._get$I(bi + 1), $b$[0]), ($b$[0] = bb._get$I(bi), $b$[0]));
+return C$.makeChar$B$B(bb._get$I(bi + 1), bb._get$I(bi));
 }, 1);
 
 Clazz.newMeth(C$, 'getCharL$J', function (a) {
-return C$.makeChar$B$B(($b$[0] = C$._get$J$I(a, 1), $b$[0]), ($b$[0] = C$._get$J$I(a, 0), $b$[0]));
+return C$.makeChar$B$B(C$._get$J$I(a, 1), C$._get$J$I(a, 0));
 }, 1);
 
 Clazz.newMeth(C$, 'getCharB$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeChar$B$B(($b$[0] = bb._get$I(bi), $b$[0]), ($b$[0] = bb._get$I(bi + 1), $b$[0]));
+return C$.makeChar$B$B(bb._get$I(bi), bb._get$I(bi + 1));
 }, 1);
 
 Clazz.newMeth(C$, 'getCharB$J', function (a) {
-return C$.makeChar$B$B(($b$[0] = C$._get$J$I(a, 0), $b$[0]), ($b$[0] = C$._get$J$I(a, 1), $b$[0]));
+return C$.makeChar$B$B(C$._get$J$I(a, 0), C$._get$J$I(a, 1));
 }, 1);
 
 Clazz.newMeth(C$, '_get$J$I', function (a, i) {
 switch (i) {
 default:
 case 0:
-return $b$[0] = ((a & 255)|0), $b$[0];
+return ($b$[0] = (a & 255), $b$[0]);
 case 1:
-return $b$[0] = (((a >> 8) & 255)|0), $b$[0];
+return ($b$[0] = ((a >> 8) & 255), $b$[0]);
 case 2:
-return $b$[0] = (((a >> 16) & 255)|0), $b$[0];
+return ($b$[0] = ((a >> 16) & 255), $b$[0]);
 case 3:
-return $b$[0] = (((a >> 24) & 255)|0), $b$[0];
+return ($b$[0] = ((a >> 24) & 255), $b$[0]);
 case 4:
-return $b$[0] = (((a >> 32) & 255)|0), $b$[0];
+return ($b$[0] = ((a >> 32) & 255), $b$[0]);
 case 5:
-return $b$[0] = (((a >> 40) & 255)|0), $b$[0];
+return ($b$[0] = ((a >> 40) & 255), $b$[0]);
 case 6:
-return $b$[0] = (((a >> 48) & 255)|0), $b$[0];
+return ($b$[0] = ((a >> 48) & 255), $b$[0]);
 case 7:
-return $b$[0] = (((a >> 56) & 255)|0), $b$[0];
+return ($b$[0] = ((a >> 56) & 255), $b$[0]);
 }
 }, 1);
 
@@ -78,21 +80,21 @@ return bigEndian ? C$.getCharB$J(a) : C$.getCharL$J(a);
 }, 1);
 
 Clazz.newMeth(C$, 'char1$C', function (x) {
-return $b$[0] = ((x.$c() >> 8)|0), $b$[0];
+return ($b$[0] = (x.$c() >> 8), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'char0$C', function (x) {
-return $b$[0] = ((x).$c()|0), $b$[0];
+return ($b$[0] = (x).$c(), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'putCharL$java_nio_ByteBuffer$I$C', function (bb, bi, x) {
-bb._put$I$B(bi, ($b$[0] = C$.char0$C(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.char1$C(x), $b$[0]));
+bb._put$I$B(bi, C$.char0$C(x));
+bb._put$I$B(bi + 1, C$.char1$C(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putCharB$java_nio_ByteBuffer$I$C', function (bb, bi, x) {
-bb._put$I$B(bi, ($b$[0] = C$.char1$C(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.char0$C(x), $b$[0]));
+bb._put$I$B(bi, C$.char1$C(x));
+bb._put$I$B(bi + 1, C$.char0$C(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putChar$java_nio_ByteBuffer$I$C$Z', function (bb, bi, x, bigEndian) {
@@ -105,19 +107,19 @@ return ($s$[0] = ((b1 << 8) | (b0 & 255)), $s$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'getShortL$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeShort$B$B(($b$[0] = bb._get$I(bi + 1), $b$[0]), ($b$[0] = bb._get$I(bi), $b$[0]));
+return C$.makeShort$B$B(bb._get$I(bi + 1), bb._get$I(bi));
 }, 1);
 
 Clazz.newMeth(C$, 'getShortL$J', function (a) {
-return C$.makeShort$B$B(($b$[0] = C$._get$J$I(a, 1), $b$[0]), ($b$[0] = C$._get$J$I(a, 0), $b$[0]));
+return C$.makeShort$B$B(C$._get$J$I(a, 1), C$._get$J$I(a, 0));
 }, 1);
 
 Clazz.newMeth(C$, 'getShortB$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeShort$B$B(($b$[0] = bb._get$I(bi), $b$[0]), ($b$[0] = bb._get$I(bi + 1), $b$[0]));
+return C$.makeShort$B$B(bb._get$I(bi), bb._get$I(bi + 1));
 }, 1);
 
 Clazz.newMeth(C$, 'getShortB$J', function (a) {
-return C$.makeShort$B$B(($b$[0] = C$._get$J$I(a, 0), $b$[0]), ($b$[0] = C$._get$J$I(a, 1), $b$[0]));
+return C$.makeShort$B$B(C$._get$J$I(a, 0), C$._get$J$I(a, 1));
 }, 1);
 
 Clazz.newMeth(C$, 'getShort$java_nio_ByteBuffer$I$Z', function (bb, bi, bigEndian) {
@@ -129,21 +131,21 @@ return bigEndian ? C$.getShortB$J(a) : C$.getShortL$J(a);
 }, 1);
 
 Clazz.newMeth(C$, 'short1$H', function (x) {
-return $b$[0] = ((x >> 8)|0), $b$[0];
+return ($b$[0] = (x >> 8), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'short0$H', function (x) {
-return $b$[0] = ((x)|0), $b$[0];
+return ($b$[0] = (x), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'putShortL$java_nio_ByteBuffer$I$H', function (bb, bi, x) {
-bb._put$I$B(bi, ($b$[0] = C$.short0$H(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.short1$H(x), $b$[0]));
+bb._put$I$B(bi, C$.short0$H(x));
+bb._put$I$B(bi + 1, C$.short1$H(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putShortB$java_nio_ByteBuffer$I$H', function (bb, bi, x) {
-bb._put$I$B(bi, ($b$[0] = C$.short1$H(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.short0$H(x), $b$[0]));
+bb._put$I$B(bi, C$.short1$H(x));
+bb._put$I$B(bi + 1, C$.short0$H(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putShort$java_nio_ByteBuffer$I$H$Z', function (bb, bi, x, bigEndian) {
@@ -156,19 +158,19 @@ return (((b3) << 24) | ((b2 & 255) << 16) | ((b1 & 255) << 8) | ((b0 & 255)) );
 }, 1);
 
 Clazz.newMeth(C$, 'getIntL$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeInt$B$B$B$B(($b$[0] = bb._get$I(bi + 3), $b$[0]), ($b$[0] = bb._get$I(bi + 2), $b$[0]), ($b$[0] = bb._get$I(bi + 1), $b$[0]), ($b$[0] = bb._get$I(bi), $b$[0]));
+return C$.makeInt$B$B$B$B(bb._get$I(bi + 3), bb._get$I(bi + 2), bb._get$I(bi + 1), bb._get$I(bi));
 }, 1);
 
 Clazz.newMeth(C$, 'getIntL$J', function (a) {
-return C$.makeInt$B$B$B$B(($b$[0] = C$._get$J$I(a, 3), $b$[0]), ($b$[0] = C$._get$J$I(a, 2), $b$[0]), ($b$[0] = C$._get$J$I(a, 1), $b$[0]), ($b$[0] = C$._get$J$I(a, 0), $b$[0]));
+return C$.makeInt$B$B$B$B(C$._get$J$I(a, 3), C$._get$J$I(a, 2), C$._get$J$I(a, 1), C$._get$J$I(a, 0));
 }, 1);
 
 Clazz.newMeth(C$, 'getIntB$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeInt$B$B$B$B(($b$[0] = bb._get$I(bi), $b$[0]), ($b$[0] = bb._get$I(bi + 1), $b$[0]), ($b$[0] = bb._get$I(bi + 2), $b$[0]), ($b$[0] = bb._get$I(bi + 3), $b$[0]));
+return C$.makeInt$B$B$B$B(bb._get$I(bi), bb._get$I(bi + 1), bb._get$I(bi + 2), bb._get$I(bi + 3));
 }, 1);
 
 Clazz.newMeth(C$, 'getIntB$J', function (a) {
-return C$.makeInt$B$B$B$B(($b$[0] = C$._get$J$I(a, 0), $b$[0]), ($b$[0] = C$._get$J$I(a, 1), $b$[0]), ($b$[0] = C$._get$J$I(a, 2), $b$[0]), ($b$[0] = C$._get$J$I(a, 3), $b$[0]));
+return C$.makeInt$B$B$B$B(C$._get$J$I(a, 0), C$._get$J$I(a, 1), C$._get$J$I(a, 2), C$._get$J$I(a, 3));
 }, 1);
 
 Clazz.newMeth(C$, 'getInt$java_nio_ByteBuffer$I$Z', function (bb, bi, bigEndian) {
@@ -180,33 +182,33 @@ return bigEndian ? C$.getIntB$J(a) : C$.getIntL$J(a);
 }, 1);
 
 Clazz.newMeth(C$, 'int3$I', function (x) {
-return $b$[0] = ((x >> 24)|0), $b$[0];
+return ($b$[0] = (x >> 24), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'int2$I', function (x) {
-return $b$[0] = ((x >> 16)|0), $b$[0];
+return ($b$[0] = (x >> 16), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'int1$I', function (x) {
-return $b$[0] = ((x >> 8)|0), $b$[0];
+return ($b$[0] = (x >> 8), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'int0$I', function (x) {
-return $b$[0] = ((x)|0), $b$[0];
+return ($b$[0] = (x), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'putIntL$java_nio_ByteBuffer$I$I', function (bb, bi, x) {
-bb._put$I$B(bi + 3, ($b$[0] = C$.int3$I(x), $b$[0]));
-bb._put$I$B(bi + 2, ($b$[0] = C$.int2$I(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.int1$I(x), $b$[0]));
-bb._put$I$B(bi, ($b$[0] = C$.int0$I(x), $b$[0]));
+bb._put$I$B(bi + 3, C$.int3$I(x));
+bb._put$I$B(bi + 2, C$.int2$I(x));
+bb._put$I$B(bi + 1, C$.int1$I(x));
+bb._put$I$B(bi, C$.int0$I(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putIntB$java_nio_ByteBuffer$I$I', function (bb, bi, x) {
-bb._put$I$B(bi, ($b$[0] = C$.int3$I(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.int2$I(x), $b$[0]));
-bb._put$I$B(bi + 2, ($b$[0] = C$.int1$I(x), $b$[0]));
-bb._put$I$B(bi + 3, ($b$[0] = C$.int0$I(x), $b$[0]));
+bb._put$I$B(bi, C$.int3$I(x));
+bb._put$I$B(bi + 1, C$.int2$I(x));
+bb._put$I$B(bi + 2, C$.int1$I(x));
+bb._put$I$B(bi + 3, C$.int0$I(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putInt$java_nio_ByteBuffer$I$I$Z', function (bb, bi, x, bigEndian) {
@@ -219,7 +221,7 @@ return (((b7) << 56) | ((b6 & 255) << 48) | ((b5 & 255) << 40) | ((b4 & 255) << 
 }, 1);
 
 Clazz.newMeth(C$, 'getLongL$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeLong$B$B$B$B$B$B$B$B(($b$[0] = bb._get$I(bi + 7), $b$[0]), ($b$[0] = bb._get$I(bi + 6), $b$[0]), ($b$[0] = bb._get$I(bi + 5), $b$[0]), ($b$[0] = bb._get$I(bi + 4), $b$[0]), ($b$[0] = bb._get$I(bi + 3), $b$[0]), ($b$[0] = bb._get$I(bi + 2), $b$[0]), ($b$[0] = bb._get$I(bi + 1), $b$[0]), ($b$[0] = bb._get$I(bi), $b$[0]));
+return C$.makeLong$B$B$B$B$B$B$B$B(bb._get$I(bi + 7), bb._get$I(bi + 6), bb._get$I(bi + 5), bb._get$I(bi + 4), bb._get$I(bi + 3), bb._get$I(bi + 2), bb._get$I(bi + 1), bb._get$I(bi));
 }, 1);
 
 Clazz.newMeth(C$, 'getLongL$J', function (a) {
@@ -227,11 +229,11 @@ return a;
 }, 1);
 
 Clazz.newMeth(C$, 'getLongB$java_nio_ByteBuffer$I', function (bb, bi) {
-return C$.makeLong$B$B$B$B$B$B$B$B(($b$[0] = bb._get$I(bi), $b$[0]), ($b$[0] = bb._get$I(bi + 1), $b$[0]), ($b$[0] = bb._get$I(bi + 2), $b$[0]), ($b$[0] = bb._get$I(bi + 3), $b$[0]), ($b$[0] = bb._get$I(bi + 4), $b$[0]), ($b$[0] = bb._get$I(bi + 5), $b$[0]), ($b$[0] = bb._get$I(bi + 6), $b$[0]), ($b$[0] = bb._get$I(bi + 7), $b$[0]));
+return C$.makeLong$B$B$B$B$B$B$B$B(bb._get$I(bi), bb._get$I(bi + 1), bb._get$I(bi + 2), bb._get$I(bi + 3), bb._get$I(bi + 4), bb._get$I(bi + 5), bb._get$I(bi + 6), bb._get$I(bi + 7));
 }, 1);
 
 Clazz.newMeth(C$, 'getLongB$J', function (a) {
-return C$.makeLong$B$B$B$B$B$B$B$B(($b$[0] = C$._get$J$I(a, 0), $b$[0]), ($b$[0] = C$._get$J$I(a, 1), $b$[0]), ($b$[0] = C$._get$J$I(a, 2), $b$[0]), ($b$[0] = C$._get$J$I(a, 3), $b$[0]), ($b$[0] = C$._get$J$I(a, 4), $b$[0]), ($b$[0] = C$._get$J$I(a, 5), $b$[0]), ($b$[0] = C$._get$J$I(a, 6), $b$[0]), ($b$[0] = C$._get$J$I(a, 7), $b$[0]));
+return C$.makeLong$B$B$B$B$B$B$B$B(C$._get$J$I(a, 0), C$._get$J$I(a, 1), C$._get$J$I(a, 2), C$._get$J$I(a, 3), C$._get$J$I(a, 4), C$._get$J$I(a, 5), C$._get$J$I(a, 6), C$._get$J$I(a, 7));
 }, 1);
 
 Clazz.newMeth(C$, 'getLong$java_nio_ByteBuffer$I$Z', function (bb, bi, bigEndian) {
@@ -243,57 +245,57 @@ return bigEndian ? C$.getLongB$J(a) : C$.getLongL$J(a);
 }, 1);
 
 Clazz.newMeth(C$, 'long7$J', function (x) {
-return $b$[0] = ((x >> 56)|0), $b$[0];
+return ($b$[0] = (x >> 56), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'long6$J', function (x) {
-return $b$[0] = ((x >> 48)|0), $b$[0];
+return ($b$[0] = (x >> 48), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'long5$J', function (x) {
-return $b$[0] = ((x >> 40)|0), $b$[0];
+return ($b$[0] = (x >> 40), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'long4$J', function (x) {
-return $b$[0] = ((x >> 32)|0), $b$[0];
+return ($b$[0] = (x >> 32), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'long3$J', function (x) {
-return $b$[0] = ((x >> 24)|0), $b$[0];
+return ($b$[0] = (x >> 24), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'long2$J', function (x) {
-return $b$[0] = ((x >> 16)|0), $b$[0];
+return ($b$[0] = (x >> 16), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'long1$J', function (x) {
-return $b$[0] = ((x >> 8)|0), $b$[0];
+return ($b$[0] = (x >> 8), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'long0$J', function (x) {
-return $b$[0] = ((x)|0), $b$[0];
+return ($b$[0] = (x), $b$[0]);
 }, 1);
 
 Clazz.newMeth(C$, 'putLongL$java_nio_ByteBuffer$I$J', function (bb, bi, x) {
-bb._put$I$B(bi + 7, ($b$[0] = C$.long7$J(x), $b$[0]));
-bb._put$I$B(bi + 6, ($b$[0] = C$.long6$J(x), $b$[0]));
-bb._put$I$B(bi + 5, ($b$[0] = C$.long5$J(x), $b$[0]));
-bb._put$I$B(bi + 4, ($b$[0] = C$.long4$J(x), $b$[0]));
-bb._put$I$B(bi + 3, ($b$[0] = C$.long3$J(x), $b$[0]));
-bb._put$I$B(bi + 2, ($b$[0] = C$.long2$J(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.long1$J(x), $b$[0]));
-bb._put$I$B(bi, ($b$[0] = C$.long0$J(x), $b$[0]));
+bb._put$I$B(bi + 7, C$.long7$J(x));
+bb._put$I$B(bi + 6, C$.long6$J(x));
+bb._put$I$B(bi + 5, C$.long5$J(x));
+bb._put$I$B(bi + 4, C$.long4$J(x));
+bb._put$I$B(bi + 3, C$.long3$J(x));
+bb._put$I$B(bi + 2, C$.long2$J(x));
+bb._put$I$B(bi + 1, C$.long1$J(x));
+bb._put$I$B(bi, C$.long0$J(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putLongB$java_nio_ByteBuffer$I$J', function (bb, bi, x) {
-bb._put$I$B(bi, ($b$[0] = C$.long7$J(x), $b$[0]));
-bb._put$I$B(bi + 1, ($b$[0] = C$.long6$J(x), $b$[0]));
-bb._put$I$B(bi + 2, ($b$[0] = C$.long5$J(x), $b$[0]));
-bb._put$I$B(bi + 3, ($b$[0] = C$.long4$J(x), $b$[0]));
-bb._put$I$B(bi + 4, ($b$[0] = C$.long3$J(x), $b$[0]));
-bb._put$I$B(bi + 5, ($b$[0] = C$.long2$J(x), $b$[0]));
-bb._put$I$B(bi + 6, ($b$[0] = C$.long1$J(x), $b$[0]));
-bb._put$I$B(bi + 7, ($b$[0] = C$.long0$J(x), $b$[0]));
+bb._put$I$B(bi, C$.long7$J(x));
+bb._put$I$B(bi + 1, C$.long6$J(x));
+bb._put$I$B(bi + 2, C$.long5$J(x));
+bb._put$I$B(bi + 3, C$.long4$J(x));
+bb._put$I$B(bi + 4, C$.long3$J(x));
+bb._put$I$B(bi + 5, C$.long2$J(x));
+bb._put$I$B(bi + 6, C$.long1$J(x));
+bb._put$I$B(bi + 7, C$.long0$J(x));
 }, 1);
 
 Clazz.newMeth(C$, 'putLong$java_nio_ByteBuffer$I$J$Z', function (bb, bi, x, bigEndian) {
@@ -378,7 +380,38 @@ if (bigEndian) C$.putDoubleB$java_nio_ByteBuffer$I$D(bb, bi, x);
 Clazz.newMeth(C$, 'byteOrder$', function () {
 return $I$(1).LITTLE_ENDIAN;
 }, 1);
+
+Clazz.newMeth(C$, '_toInt32$BA', function (b) {
+{
+return Clazz.array(new Int32Array(b.buffer), C$._ia);
+}
+}, 1);
+
+Clazz.newMeth(C$, '_toInt16$BA', function (b) {
+{
+return Clazz.array(new Int16Array(b.buffer), C$._ha);
+}
+}, 1);
+
+Clazz.newMeth(C$, '_toFloat32$BA', function (b) {
+{
+return Clazz.array(new Float32Array(b.buffer), C$._fa);
+}
+}, 1);
+
+Clazz.newMeth(C$, '_toFloat64$BA', function (b) {
+{
+return Clazz.array(new Float64Array(b.buffer), C$._da);
+}
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$._ia=Clazz.array(Integer.TYPE, [0]);
+C$._ha=Clazz.array(Short.TYPE, [0]);
+C$._fa=Clazz.array(Float.TYPE, [0]);
+C$._da=Clazz.array(Double.TYPE, [0]);
+};
 var $b$ = new Int8Array(1);
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 07:27:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

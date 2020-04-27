@@ -1,48 +1,42 @@
-(function(){var P$=java.lang,I$=[[0,'Shutdown','RuntimePermission','ApplicationShutdownHooks','java.util.StringTokenizer','java.io.File','UnsatisfiedLinkError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Runtime");
-C$.currentRuntime=null;
+(function(){var P$=java.lang,I$=[[0,'Thread','swingjs.JSToolkit','Shutdown','ApplicationShutdownHooks','java.util.StringTokenizer','java.io.File','UnsatisfiedLinkError']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Runtime");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.currentRuntime=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['currentRuntime','Runtime']]]
 
 Clazz.newMeth(C$, 'getRuntime$', function () {
 return C$.currentRuntime;
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'exit$I', function (status) {
-var security=System.getSecurityManager$();
-if (security != null ) {
-security.checkExit$I(status);
-}$I$(1).exit$I(status);
+$I$(1).currentThread$().getThreadGroup$().秘exit$();
+var v=$I$(2).getAppletViewer$();
+if (v != null ) v.exit$();
+$I$(3).exit$I(status);
 });
 
 Clazz.newMeth(C$, 'addShutdownHook$Thread', function (hook) {
-var sm=System.getSecurityManager$();
-if (sm != null ) {
-sm.checkPermission$java_security_Permission(Clazz.new_($I$(2).c$$S,["shutdownHooks"]));
-}$I$(3).add$Thread(hook);
+$I$(4).add$Thread(hook);
 });
 
 Clazz.newMeth(C$, 'removeShutdownHook$Thread', function (hook) {
-var sm=System.getSecurityManager$();
-if (sm != null ) {
-sm.checkPermission$java_security_Permission(Clazz.new_($I$(2).c$$S,["shutdownHooks"]));
-}return $I$(3).remove$Thread(hook);
+return $I$(4).remove$Thread(hook);
 });
 
 Clazz.newMeth(C$, 'halt$I', function (status) {
 var sm=System.getSecurityManager$();
 if (sm != null ) {
 sm.checkExit$I(status);
-}$I$(1).halt$I(status);
+}$I$(3).halt$I(status);
 });
 
 Clazz.newMeth(C$, 'runFinalizersOnExit$Z', function (value) {
@@ -57,7 +51,7 @@ throw Clazz.new_(Clazz.load('SecurityException').c$$S,["runFinalizersOnExit"]);
 throw e;
 }
 }
-}$I$(1).setRunFinalizersOnExit$Z(value);
+}$I$(3).setRunFinalizersOnExit$Z(value);
 }, 1);
 
 Clazz.newMeth(C$, 'exec$S', function (command) {
@@ -70,7 +64,7 @@ return this.exec$S$SA$java_io_File(command, envp, null);
 
 Clazz.newMeth(C$, 'exec$S$SA$java_io_File', function (command, envp, dir) {
 if (command.length$() == 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Empty command"]);
-var st=Clazz.new_($I$(4).c$$S,[command]);
+var st=Clazz.new_($I$(5,1).c$$S,[command]);
 var cmdarray=Clazz.array(String, [st.countTokens$()]);
 for (var i=0; st.hasMoreTokens$(); i++) cmdarray[i]=st.nextToken$();
 
@@ -128,8 +122,8 @@ this.load0$Class$S(null, filename);
 });
 
 Clazz.newMeth(C$, 'load0$Class$S', function (fromClass, filename) {
-if (!(Clazz.new_($I$(5).c$$S,[filename]).isAbsolute$())) {
-throw Clazz.new_($I$(6).c$$S,["Expecting an absolute path of the library: " + filename]);
+if (!(Clazz.new_($I$(6,1).c$$S,[filename]).isAbsolute$())) {
+throw Clazz.new_($I$(7,1).c$$S,["Expecting an absolute path of the library: " + filename]);
 }ClassLoader.loadLibrary$Class$S$Z(fromClass, filename, true);
 });
 
@@ -138,8 +132,8 @@ this.loadLibrary0$Class$S(null, libname);
 });
 
 Clazz.newMeth(C$, 'loadLibrary0$Class$S', function (fromClass, libname) {
-if (libname.indexOf$I($I$(5).separatorChar.$c()) != -1) {
-throw Clazz.new_($I$(6).c$$S,["Directory separator should not appear in library name: " + libname]);
+if (libname.indexOf$I($I$(6).separatorChar.$c()) != -1) {
+throw Clazz.new_($I$(7,1).c$$S,["Directory separator should not appear in library name: " + libname]);
 }ClassLoader.loadLibrary$Class$S$Z(fromClass, libname, false);
 });
 
@@ -150,5 +144,9 @@ return $in;
 Clazz.newMeth(C$, 'getLocalizedOutputStream$java_io_OutputStream', function (out) {
 return out;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.currentRuntime=Clazz.new_(C$);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-04-08 08:14:55 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1
