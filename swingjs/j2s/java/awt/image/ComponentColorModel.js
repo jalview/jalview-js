@@ -1,35 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBuffer','java.util.Arrays','java.awt.image.Raster','java.awt.image.ComponentSampleModel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ComponentColorModel", null, 'java.awt.image.ColorModel');
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBuffer','java.util.Arrays','java.awt.image.Raster','java.awt.image.ComponentSampleModel']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ComponentColorModel", null, 'java.awt.image.ColorModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.signed=false;
-this.is_sRGB_stdScale=false;
-this.is_LinearRGB_stdScale=false;
-this.is_LinearGray_stdScale=false;
-this.is_ICCGray_stdScale=false;
-this.tosRGB8LUT=null;
-this.fromsRGB8LUT8=null;
-this.fromsRGB8LUT16=null;
-this.fromLinearGray16ToOtherGray16LUT=null;
-this.needScaleInit=false;
-this.noUnnorm=false;
-this.nonStdScale=false;
-this.min=null;
-this.diffMinMax=null;
-this.compOffset=null;
-this.compScale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$IA$Z$Z$I$I', function (colorSpace, bits, hasAlpha, isAlphaPremultiplied, transparency, transferType) {
-C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this, [C$.bitsHelper$I$java_awt_color_ColorSpace$Z(transferType, colorSpace, hasAlpha), C$.bitsArrayHelper$IA$I$java_awt_color_ColorSpace$Z(bits, transferType, colorSpace, hasAlpha), colorSpace, hasAlpha, isAlphaPremultiplied, transparency, transferType]);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['signed','is_sRGB_stdScale','is_LinearRGB_stdScale','is_LinearGray_stdScale','is_ICCGray_stdScale','needScaleInit','noUnnorm','nonStdScale'],'O',['tosRGB8LUT','byte[]','+fromsRGB8LUT8','fromsRGB8LUT16','short[]','+fromLinearGray16ToOtherGray16LUT','min','float[]','+diffMinMax','+compOffset','+compScale']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$IA$Z$Z$I$I',  function (colorSpace, bits, hasAlpha, isAlphaPremultiplied, transparency, transferType) {
+;C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this,[C$.bitsHelper$I$java_awt_color_ColorSpace$Z(transferType, colorSpace, hasAlpha), C$.bitsArrayHelper$IA$I$java_awt_color_ColorSpace$Z(bits, transferType, colorSpace, hasAlpha), colorSpace, hasAlpha, isAlphaPremultiplied, transparency, transferType]);C$.$init$.apply(this);
 switch (transferType) {
 case 0:
 case 1:
@@ -41,17 +21,23 @@ case 2:
 this.signed=true;
 this.needScaleInit=true;
 break;
+case 4:
+case 5:
+this.signed=true;
+this.needScaleInit=false;
+this.noUnnorm=true;
+this.nonStdScale=false;
+break;
 default:
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["This constructor is not " + "compatible with transferType " + transferType ]);
 }
-p$1.setupLUTs.apply(this, []);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$Z$Z$I$I', function (colorSpace, hasAlpha, isAlphaPremultiplied, transparency, transferType) {
+Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$Z$Z$I$I',  function (colorSpace, hasAlpha, isAlphaPremultiplied, transparency, transferType) {
 C$.c$$java_awt_color_ColorSpace$IA$Z$Z$I$I.apply(this, [colorSpace, null, hasAlpha, isAlphaPremultiplied, transparency, transferType]);
 }, 1);
 
-Clazz.newMeth(C$, 'bitsHelper$I$java_awt_color_ColorSpace$Z', function (transferType, colorSpace, hasAlpha) {
+Clazz.newMeth(C$, 'bitsHelper$I$java_awt_color_ColorSpace$Z',  function (transferType, colorSpace, hasAlpha) {
 var numBits=$I$(1).getDataTypeSize$I(transferType);
 var numComponents=colorSpace.getNumComponents$();
 if (hasAlpha) {
@@ -59,7 +45,7 @@ if (hasAlpha) {
 }return numBits * numComponents;
 }, 1);
 
-Clazz.newMeth(C$, 'bitsArrayHelper$IA$I$java_awt_color_ColorSpace$Z', function (origBits, transferType, colorSpace, hasAlpha) {
+Clazz.newMeth(C$, 'bitsArrayHelper$IA$I$java_awt_color_ColorSpace$Z',  function (origBits, transferType, colorSpace, hasAlpha) {
 switch (transferType) {
 case 0:
 case 1:
@@ -81,27 +67,7 @@ bits[i]=numBits;
 return bits;
 }, 1);
 
-Clazz.newMeth(C$, 'setupLUTs', function () {
-if (this.is_sRGB) {
-this.is_sRGB_stdScale=true;
-this.nonStdScale=false;
-} else if (this.needScaleInit) {
-this.nonStdScale=false;
-for (var i=0; i < this.numColorComponents; i++) {
-if ((this.colorSpace.getMinValue$I(i) != 0.0 ) || (this.colorSpace.getMaxValue$I(i) != 1.0 ) ) {
-this.nonStdScale=true;
-break;
-}}
-if (this.nonStdScale) {
-this.min=Clazz.array(Float.TYPE, [this.numColorComponents]);
-this.diffMinMax=Clazz.array(Float.TYPE, [this.numColorComponents]);
-for (var i=0; i < this.numColorComponents; i++) {
-this.min[i]=this.colorSpace.getMinValue$I(i);
-this.diffMinMax[i]=this.colorSpace.getMaxValue$I(i) - this.min[i];
-}
-}}}, p$1);
-
-Clazz.newMeth(C$, 'initScale', function () {
+Clazz.newMeth(C$, 'initScale',  function () {
 this.needScaleInit=false;
 if (this.nonStdScale || this.signed ) {
 this.noUnnorm=true;
@@ -117,10 +83,10 @@ for (var i=0; i < this.numColorComponents; i++) {
 bpixel[i]=(0|0);
 }
 if (this.supportsAlpha) {
-bpixel[this.numColorComponents]=((((1 << this.nBits[this.numColorComponents]) - 1)|0)|0);
+bpixel[this.numColorComponents]=(((1 << this.nBits[this.numColorComponents]) - 1)|0);
 }lowVal=this.getNormalizedComponents$O$FA$I(bpixel, null, 0);
 for (var i=0; i < this.numColorComponents; i++) {
-bpixel[i]=((((1 << this.nBits[i]) - 1)|0)|0);
+bpixel[i]=(((1 << this.nBits[i]) - 1)|0);
 }
 highVal=this.getNormalizedComponents$O$FA$I(bpixel, null, 0);
 }break;
@@ -190,7 +156,7 @@ this.compScale[i]=1.0 / (highVal[i] - lowVal[i]);
 }
 }}, p$1);
 
-Clazz.newMeth(C$, 'getRGBComponent$I$I', function (pixel, idx) {
+Clazz.newMeth(C$, 'getRGBComponent$I$I',  function (pixel, idx) {
 if (this.numComponents > 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["More than one component per pixel"]);
 }if (this.signed) {
@@ -220,19 +186,19 @@ var rgb=this.colorSpace.toRGB$FA(norm);
 return ((rgb[idx] * 255.0 + 0.5)|0);
 }, p$1);
 
-Clazz.newMeth(C$, 'getRed$I', function (pixel) {
+Clazz.newMeth(C$, 'getRed$I',  function (pixel) {
 return p$1.getRGBComponent$I$I.apply(this, [pixel, 0]);
 });
 
-Clazz.newMeth(C$, 'getGreen$I', function (pixel) {
+Clazz.newMeth(C$, 'getGreen$I',  function (pixel) {
 return p$1.getRGBComponent$I$I.apply(this, [pixel, 1]);
 });
 
-Clazz.newMeth(C$, 'getBlue$I', function (pixel) {
+Clazz.newMeth(C$, 'getBlue$I',  function (pixel) {
 return p$1.getRGBComponent$I$I.apply(this, [pixel, 2]);
 });
 
-Clazz.newMeth(C$, 'getAlpha$I', function (pixel) {
+Clazz.newMeth(C$, 'getAlpha$I',  function (pixel) {
 if (this.supportsAlpha == false ) {
 return 255;
 }if (this.numComponents > 1) {
@@ -242,7 +208,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Component value i
 }return ((((pixel) / ((1 << this.nBits[0]) - 1)) * 255.0 + 0.5)|0);
 });
 
-Clazz.newMeth(C$, 'getRGB$I', function (pixel) {
+Clazz.newMeth(C$, 'getRGB$I',  function (pixel) {
 if (this.numComponents > 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["More than one component per pixel"]);
 }if (this.signed) {
@@ -250,7 +216,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Component value i
 }return (this.getAlpha$I(pixel) << 24) | (this.getRed$I(pixel) << 16) | (this.getGreen$I(pixel) << 8) | (this.getBlue$I(pixel) << 0) ;
 });
 
-Clazz.newMeth(C$, 'extractComponent$O$I$I', function (inData, idx, precision) {
+Clazz.newMeth(C$, 'extractComponent$O$I$I',  function (inData, idx, precision) {
 var needAlpha=(this.supportsAlpha && this.isAlphaPremultiplied );
 var alp=0;
 var comp;
@@ -268,6 +234,30 @@ return ((((sdata[idx]) / (s)) * scalefactor + 0.5)|0);
 return 0;
 }} else {
 return (((sdata[idx] / 32767.0) * scalefactor + 0.5)|0);
+}}case 4:
+{
+var fdata=inData;
+var scalefactor=((1 << precision) - 1);
+if (needAlpha) {
+var f=fdata[this.numColorComponents];
+if (f != 0.0 ) {
+return ((((fdata[idx] / f) * scalefactor) + 0.5)|0);
+} else {
+return 0;
+}} else {
+return ((fdata[idx] * scalefactor + 0.5)|0);
+}}case 5:
+{
+var ddata=inData;
+var scalefactor=((1 << precision) - 1);
+if (needAlpha) {
+var d=ddata[this.numColorComponents];
+if (d != 0.0 ) {
+return ((((ddata[idx] / d) * scalefactor) + 0.5)|0);
+} else {
+return 0;
+}} else {
+return ((ddata[idx] * scalefactor + 0.5)|0);
 }}case 0:
 var bdata=inData;
 comp=bdata[idx] & mask;
@@ -306,7 +296,7 @@ return ((fcomp * scalefactor + 0.5)|0);
 }return comp;
 }}, p$1);
 
-Clazz.newMeth(C$, 'getRGBComponent$O$I', function (inData, idx) {
+Clazz.newMeth(C$, 'getRGBComponent$O$I',  function (inData, idx) {
 if (this.needScaleInit) {
 p$1.initScale.apply(this, []);
 }if (this.is_sRGB_stdScale) {
@@ -322,19 +312,19 @@ var rgb=this.colorSpace.toRGB$FA(norm);
 return ((rgb[idx] * 255.0 + 0.5)|0);
 }, p$1);
 
-Clazz.newMeth(C$, 'getRed$O', function (inData) {
+Clazz.newMeth(C$, 'getRed$O',  function (inData) {
 return p$1.getRGBComponent$O$I.apply(this, [inData, 0]);
 });
 
-Clazz.newMeth(C$, 'getGreen$O', function (inData) {
+Clazz.newMeth(C$, 'getGreen$O',  function (inData) {
 return p$1.getRGBComponent$O$I.apply(this, [inData, 1]);
 });
 
-Clazz.newMeth(C$, 'getBlue$O', function (inData) {
+Clazz.newMeth(C$, 'getBlue$O',  function (inData) {
 return p$1.getRGBComponent$O$I.apply(this, [inData, 2]);
 });
 
-Clazz.newMeth(C$, 'getAlpha$O', function (inData) {
+Clazz.newMeth(C$, 'getAlpha$O',  function (inData) {
 if (this.supportsAlpha == false ) {
 return 255;
 }var alpha=0;
@@ -344,6 +334,14 @@ switch (this.transferType) {
 case 2:
 var sdata=inData;
 alpha=(((sdata[aIdx] / 32767.0) * 255.0 + 0.5)|0);
+return alpha;
+case 4:
+var fdata=inData;
+alpha=((fdata[aIdx] * 255.0 + 0.5)|0);
+return alpha;
+case 5:
+var ddata=inData;
+alpha=((ddata[aIdx] * 255.0 + 0.5)|0);
 return alpha;
 case 0:
 var bdata=inData;
@@ -366,7 +364,7 @@ return alpha;
 return ((((alpha) / (((1 << this.nBits[aIdx]) - 1))) * 255.0 + 0.5)|0);
 }});
 
-Clazz.newMeth(C$, 'getRGB$O', function (inData) {
+Clazz.newMeth(C$, 'getRGB$O',  function (inData) {
 if (this.needScaleInit) {
 p$1.initScale.apply(this, []);
 }if (this.is_sRGB_stdScale || this.is_LinearRGB_stdScale ) {
@@ -379,7 +377,7 @@ var rgb=this.colorSpace.toRGB$FA(norm);
 return (this.getAlpha$O(inData) << 24) | ((((rgb[0] * 255.0 + 0.5)|0)) << 16) | ((((rgb[1] * 255.0 + 0.5)|0)) << 8) | ((((rgb[2] * 255.0 + 0.5)|0)) << 0) ;
 });
 
-Clazz.newMeth(C$, 'getDataElements$I$O', function (rgb, pixel) {
+Clazz.newMeth(C$, 'getDataElements$I$O',  function (rgb, pixel) {
 var red;
 var grn;
 var blu;
@@ -459,11 +457,139 @@ if (this.supportsAlpha) {
 alp=(rgb >> 24) & 255;
 sdata[this.numColorComponents]=((alp * (128.49803) + 0.5)|0);
 if (this.isAlphaPremultiplied) {
-factor *= alp * (0.003921569);
+factor*=alp * (0.003921569);
 }}for (var i=0; i < this.numColorComponents; i++) {
 sdata[i]=((norm[i] * factor + 0.5)|0);
 }
 }return sdata;
+}case 4:
+{
+var fdata;
+if (pixel == null ) {
+fdata=Clazz.array(Float.TYPE, [this.numComponents]);
+} else {
+fdata=pixel;
+}var factor;
+if (this.is_sRGB_stdScale || this.is_LinearRGB_stdScale ) {
+if (this.is_LinearRGB_stdScale) {
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+factor=1.5259022E-5;
+} else {
+factor=0.003921569;
+}if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+fdata[3]=alp * (0.003921569);
+if (this.isAlphaPremultiplied) {
+factor*=fdata[3];
+}}fdata[0]=red * factor;
+fdata[1]=grn * factor;
+fdata[2]=blu * factor;
+} else if (this.is_LinearGray_stdScale) {
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+fdata[0]=((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) ) / 65535.0;
+if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+fdata[1]=alp * (0.003921569);
+if (this.isAlphaPremultiplied) {
+fdata[0]*=fdata[1];
+}}} else if (this.is_ICCGray_stdScale) {
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+var gray=(((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) + 0.5 )|0);
+fdata[0]=(this.fromLinearGray16ToOtherGray16LUT[gray] & 65535) / 65535.0;
+if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+fdata[1]=alp * (0.003921569);
+if (this.isAlphaPremultiplied) {
+fdata[0]*=fdata[1];
+}}} else {
+var norm=Clazz.array(Float.TYPE, [3]);
+factor=0.003921569;
+norm[0]=red * factor;
+norm[1]=grn * factor;
+norm[2]=blu * factor;
+norm=this.colorSpace.fromRGB$FA(norm);
+if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+fdata[this.numColorComponents]=alp * factor;
+if (this.isAlphaPremultiplied) {
+factor*=alp;
+for (var i=0; i < this.numColorComponents; i++) {
+norm[i]*=factor;
+}
+}}for (var i=0; i < this.numColorComponents; i++) {
+fdata[i]=norm[i];
+}
+}return fdata;
+}case 5:
+{
+var ddata;
+if (pixel == null ) {
+ddata=Clazz.array(Double.TYPE, [this.numComponents]);
+} else {
+ddata=pixel;
+}if (this.is_sRGB_stdScale || this.is_LinearRGB_stdScale ) {
+var factor;
+if (this.is_LinearRGB_stdScale) {
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+factor=1.5259021896696422E-5;
+} else {
+factor=0.00392156862745098;
+}if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+ddata[3]=alp * (0.00392156862745098);
+if (this.isAlphaPremultiplied) {
+factor*=ddata[3];
+}}ddata[0]=red * factor;
+ddata[1]=grn * factor;
+ddata[2]=blu * factor;
+} else if (this.is_LinearGray_stdScale) {
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+ddata[0]=((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) ) / 65535.0;
+if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+ddata[1]=alp * (0.00392156862745098);
+if (this.isAlphaPremultiplied) {
+ddata[0]*=ddata[1];
+}}} else if (this.is_ICCGray_stdScale) {
+red=this.fromsRGB8LUT16[red] & 65535;
+grn=this.fromsRGB8LUT16[grn] & 65535;
+blu=this.fromsRGB8LUT16[blu] & 65535;
+var gray=(((0.2125 * red) + (0.7154 * grn) + (0.0721 * blu) + 0.5 )|0);
+ddata[0]=(this.fromLinearGray16ToOtherGray16LUT[gray] & 65535) / 65535.0;
+if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+ddata[1]=alp * (0.00392156862745098);
+if (this.isAlphaPremultiplied) {
+ddata[0]*=ddata[1];
+}}} else {
+var factor=0.003921569;
+var norm=Clazz.array(Float.TYPE, [3]);
+norm[0]=red * factor;
+norm[1]=grn * factor;
+norm[2]=blu * factor;
+norm=this.colorSpace.fromRGB$FA(norm);
+if (this.supportsAlpha) {
+alp=(rgb >> 24) & 255;
+ddata[this.numColorComponents]=alp * (0.00392156862745098);
+if (this.isAlphaPremultiplied) {
+factor*=alp;
+for (var i=0; i < this.numColorComponents; i++) {
+norm[i]*=factor;
+}
+}}for (var i=0; i < this.numColorComponents; i++) {
+ddata[i]=norm[i];
+}
+}return ddata;
 }}
 }var intpixel;
 if (this.transferType == 3 && pixel != null  ) {
@@ -496,7 +622,7 @@ intpixel[3]=alp;
 } else {
 intpixel[3]=((alp * (0.003921569) * ((1 << this.nBits[3]) - 1)  + 0.5)|0);
 }if (this.isAlphaPremultiplied) {
-factor *= (alp * (0.003921569));
+factor*=(alp * (0.003921569));
 precision=-1;
 }}if (this.nBits[0] == precision) {
 intpixel[0]=red;
@@ -522,7 +648,7 @@ intpixel[1]=alp;
 } else {
 intpixel[1]=((alp * (0.003921569) * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
 }if (this.isAlphaPremultiplied) {
-gray *= (alp * (0.003921569));
+gray*=(alp * (0.003921569));
 }}intpixel[0]=((gray * ((1 << this.nBits[0]) - 1) + 0.5)|0);
 } else if (this.is_ICCGray_stdScale) {
 red=this.fromsRGB8LUT16[red] & 65535;
@@ -537,7 +663,7 @@ intpixel[1]=alp;
 } else {
 intpixel[1]=((alp * (0.003921569) * ((1 << this.nBits[1]) - 1)  + 0.5)|0);
 }if (this.isAlphaPremultiplied) {
-gray *= (alp * (0.003921569));
+gray*=(alp * (0.003921569));
 }}intpixel[0]=((gray * ((1 << this.nBits[0]) - 1) + 0.5)|0);
 } else {
 var norm=Clazz.array(Float.TYPE, [3]);
@@ -561,9 +687,9 @@ intpixel[this.numColorComponents]=alp;
 } else {
 intpixel[this.numColorComponents]=((alp * factor * ((1 << this.nBits[this.numColorComponents]) - 1)  + 0.5)|0);
 }if (this.isAlphaPremultiplied) {
-factor *= alp;
+factor*=alp;
 for (var i=0; i < this.numColorComponents; i++) {
-norm[i] *= factor;
+norm[i]*=factor;
 }
 }}for (var i=0; i < this.numColorComponents; i++) {
 intpixel[i]=((norm[i] * ((1 << this.nBits[i]) - 1) + 0.5)|0);
@@ -577,7 +703,7 @@ bdata=Clazz.array(Byte.TYPE, [this.numComponents]);
 } else {
 bdata=pixel;
 }for (var i=0; i < this.numComponents; i++) {
-bdata[i]=(((255 & intpixel[i])|0)|0);
+bdata[i]=((255 & intpixel[i])|0);
 }
 return bdata;
 }case 1:
@@ -602,7 +728,7 @@ intpixel[i]=(1 << this.nBits[i]) - 1;
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
 });
 
-Clazz.newMeth(C$, 'getComponents$I$IA$I', function (pixel, components, offset) {
+Clazz.newMeth(C$, 'getComponents$I$IA$I',  function (pixel, components, offset) {
 if (this.numComponents > 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["More than one component per pixel"]);
 }if (this.needScaleInit) {
@@ -615,7 +741,7 @@ components=Clazz.array(Integer.TYPE, [offset + 1]);
 return components;
 });
 
-Clazz.newMeth(C$, 'getComponents$O$IA$I', function (pixel, components, offset) {
+Clazz.newMeth(C$, 'getComponents$O$IA$I',  function (pixel, components, offset) {
 var intpixel;
 if (this.needScaleInit) {
 p$1.initScale.apply(this, []);
@@ -637,7 +763,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Length of compone
 return components;
 });
 
-Clazz.newMeth(C$, 'getUnnormalizedComponents$FA$I$IA$I', function (normComponents, normOffset, components, offset) {
+Clazz.newMeth(C$, 'getUnnormalizedComponents$FA$I$IA$I',  function (normComponents, normOffset, components, offset) {
 if (this.needScaleInit) {
 p$1.initScale.apply(this, []);
 }if (this.noUnnorm) {
@@ -645,7 +771,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["This ColorModel d
 }return C$.superclazz.prototype.getUnnormalizedComponents$FA$I$IA$I.apply(this, [normComponents, normOffset, components, offset]);
 });
 
-Clazz.newMeth(C$, 'getNormalizedComponents$IA$I$FA$I', function (components, offset, normComponents, normOffset) {
+Clazz.newMeth(C$, 'getNormalizedComponents$IA$I$FA$I',  function (components, offset, normComponents, normOffset) {
 if (this.needScaleInit) {
 p$1.initScale.apply(this, []);
 }if (this.noUnnorm) {
@@ -653,7 +779,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["This ColorModel d
 }return C$.superclazz.prototype.getNormalizedComponents$IA$I$FA$I.apply(this, [components, offset, normComponents, normOffset]);
 });
 
-Clazz.newMeth(C$, 'getDataElement$IA$I', function (components, offset) {
+Clazz.newMeth(C$, 'getDataElement$IA$I',  function (components, offset) {
 if (this.needScaleInit) {
 p$1.initScale.apply(this, []);
 }if (this.numComponents == 1) {
@@ -663,7 +789,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["This ColorModel d
 }throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["This model returns " + this.numComponents + " elements in the pixel array." ]);
 });
 
-Clazz.newMeth(C$, 'getDataElements$IA$I$O', function (components, offset, obj) {
+Clazz.newMeth(C$, 'getDataElements$IA$I$O',  function (components, offset, obj) {
 if (this.needScaleInit) {
 p$1.initScale.apply(this, []);
 }if (this.noUnnorm) {
@@ -688,7 +814,7 @@ pixel=Clazz.array(Byte.TYPE, [this.numComponents]);
 } else {
 pixel=obj;
 }for (var i=0; i < this.numComponents; i++) {
-pixel[i]=(((components[offset + i] & 255)|0)|0);
+pixel[i]=((components[offset + i] & 255)|0);
 }
 return pixel;
 }case 1:
@@ -707,7 +833,7 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method 
 }
 });
 
-Clazz.newMeth(C$, 'getDataElement$FA$I', function (normComponents, normOffset) {
+Clazz.newMeth(C$, 'getDataElement$FA$I',  function (normComponents, normOffset) {
 if (this.numComponents > 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["More than one component per pixel"]);
 }if (this.signed) {
@@ -733,7 +859,7 @@ throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method 
 }
 });
 
-Clazz.newMeth(C$, 'getDataElements$FA$I$O', function (normComponents, normOffset, obj) {
+Clazz.newMeth(C$, 'getDataElements$FA$I$O',  function (normComponents, normOffset, obj) {
 var needAlpha=this.supportsAlpha && this.isAlphaPremultiplied ;
 var stdNormComponents;
 if (this.needScaleInit) {
@@ -762,12 +888,12 @@ bpixel=obj;
 }if (needAlpha) {
 var alpha=stdNormComponents[this.numColorComponents + normOffset];
 for (var c=0, nc=normOffset; c < this.numColorComponents; c++, nc++) {
-bpixel[c]=((((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0)|0);
+bpixel[c]=(((stdNormComponents[nc] * alpha) * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
 }
-bpixel[this.numColorComponents]=(((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0)|0);
+bpixel[this.numColorComponents]=((alpha * (((1 << this.nBits[this.numColorComponents]) - 1)) + 0.5)|0);
 } else {
 for (var c=0, nc=normOffset; c < this.numComponents; c++, nc++) {
-bpixel[c]=(((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0)|0);
+bpixel[c]=((stdNormComponents[nc] * (((1 << this.nBits[c]) - 1)) + 0.5)|0);
 }
 }return bpixel;
 case 1:
@@ -821,12 +947,46 @@ for (var c=0, nc=normOffset; c < this.numComponents; c++, nc++) {
 spixel[c]=((stdNormComponents[nc] * 32767.0 + 0.5)|0);
 }
 }return spixel;
+case 4:
+var fpixel;
+if (obj == null ) {
+fpixel=Clazz.array(Float.TYPE, [this.numComponents]);
+} else {
+fpixel=obj;
+}if (needAlpha) {
+var alpha=normComponents[this.numColorComponents + normOffset];
+for (var c=0, nc=normOffset; c < this.numColorComponents; c++, nc++) {
+fpixel[c]=normComponents[nc] * alpha;
+}
+fpixel[this.numColorComponents]=alpha;
+} else {
+for (var c=0, nc=normOffset; c < this.numComponents; c++, nc++) {
+fpixel[c]=normComponents[nc];
+}
+}return fpixel;
+case 5:
+var dpixel;
+if (obj == null ) {
+dpixel=Clazz.array(Double.TYPE, [this.numComponents]);
+} else {
+dpixel=obj;
+}if (needAlpha) {
+var alpha=(normComponents[this.numColorComponents + normOffset]);
+for (var c=0, nc=normOffset; c < this.numColorComponents; c++, nc++) {
+dpixel[c]=normComponents[nc] * alpha;
+}
+dpixel[this.numColorComponents]=alpha;
+} else {
+for (var c=0, nc=normOffset; c < this.numComponents; c++, nc++) {
+dpixel[c]=normComponents[nc];
+}
+}return dpixel;
 default:
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
 }
 });
 
-Clazz.newMeth(C$, 'getNormalizedComponents$O$FA$I', function (pixel, normComponents, normOffset) {
+Clazz.newMeth(C$, 'getNormalizedComponents$O$FA$I',  function (pixel, normComponents, normOffset) {
 if (normComponents == null ) {
 normComponents=Clazz.array(Float.TYPE, [this.numComponents + normOffset]);
 }switch (this.transferType) {
@@ -854,6 +1014,18 @@ for (var c=0, nc=normOffset; c < this.numComponents; c++, nc++) {
 normComponents[nc]=(spixel[c]) / 32767.0;
 }
 break;
+case 4:
+var fpixel=pixel;
+for (var c=0, nc=normOffset; c < this.numComponents; c++, nc++) {
+normComponents[nc]=fpixel[c];
+}
+break;
+case 5:
+var dpixel=pixel;
+for (var c=0, nc=normOffset; c < this.numComponents; c++, nc++) {
+normComponents[nc]=dpixel[c];
+}
+break;
 default:
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
 }
@@ -862,7 +1034,7 @@ var alpha=normComponents[this.numColorComponents + normOffset];
 if (alpha != 0.0 ) {
 var invAlpha=1.0 / alpha;
 for (var c=normOffset; c < this.numColorComponents + normOffset; c++) {
-normComponents[c] *= invAlpha;
+normComponents[c]*=invAlpha;
 }
 }}if (this.min != null ) {
 for (var c=0; c < this.numColorComponents; c++) {
@@ -871,7 +1043,7 @@ normComponents[c + normOffset]=this.min[c] + this.diffMinMax[c] * normComponents
 }return normComponents;
 });
 
-Clazz.newMeth(C$, 'coerceData$java_awt_image_WritableRaster$Z', function (raster, isAlphaPremultiplied) {
+Clazz.newMeth(C$, 'coerceData$java_awt_image_WritableRaster$Z',  function (raster, isAlphaPremultiplied) {
 if ((this.supportsAlpha == false ) || (this.isAlphaPremultiplied == isAlphaPremultiplied ) ) {
 return this;
 }var w=raster.getWidth$();
@@ -895,13 +1067,13 @@ pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
 normAlpha=(pixel[aIdx] & 255) * alphaScale;
 if (normAlpha != 0.0 ) {
 for (var c=0; c < aIdx; c++) {
-pixel[c]=((((pixel[c] & 255) * normAlpha + 0.5)|0)|0);
+pixel[c]=(((pixel[c] & 255) * normAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 } else {
 if (zpixel == null ) {
 zpixel=Clazz.array(Byte.TYPE, [this.numComponents]);
-$I$(2).fill$BA$B(zpixel, ($b$[0] = 0, $b$[0]));
+$I$(2).fill$BA$B(zpixel, 0);
 }raster.setDataElements$I$I$O(rX, rY, zpixel);
 }}
 }
@@ -975,6 +1147,50 @@ $I$(2).fill$HA$H(zpixel, 0);
 }}
 }
 }break;
+case 4:
+{
+var pixel=null;
+var zpixel=null;
+for (var y=0; y < h; y++, rY++) {
+rX=rminX;
+for (var x=0; x < w; x++, rX++) {
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=pixel[aIdx];
+if (normAlpha != 0.0 ) {
+for (var c=0; c < aIdx; c++) {
+pixel[c]*=normAlpha;
+}
+raster.setDataElements$I$I$O(rX, rY, pixel);
+} else {
+if (zpixel == null ) {
+zpixel=Clazz.array(Float.TYPE, [this.numComponents]);
+$I$(2).fill$FA$F(zpixel, 0.0);
+}raster.setDataElements$I$I$O(rX, rY, zpixel);
+}}
+}
+}break;
+case 5:
+{
+var pixel=null;
+var zpixel=null;
+for (var y=0; y < h; y++, rY++) {
+rX=rminX;
+for (var x=0; x < w; x++, rX++) {
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+var dnormAlpha=pixel[aIdx];
+if (dnormAlpha != 0.0 ) {
+for (var c=0; c < aIdx; c++) {
+pixel[c]*=dnormAlpha;
+}
+raster.setDataElements$I$I$O(rX, rY, pixel);
+} else {
+if (zpixel == null ) {
+zpixel=Clazz.array(Double.TYPE, [this.numComponents]);
+$I$(2).fill$DA$D(zpixel, 0.0);
+}raster.setDataElements$I$I$O(rX, rY, zpixel);
+}}
+}
+}break;
 default:
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
 }
@@ -992,7 +1208,7 @@ normAlpha=(pixel[aIdx] & 255) * alphaScale;
 if (normAlpha != 0.0 ) {
 var invAlpha=1.0 / normAlpha;
 for (var c=0; c < aIdx; c++) {
-pixel[c]=((((pixel[c] & 255) * invAlpha + 0.5)|0)|0);
+pixel[c]=(((pixel[c] & 255) * invAlpha + 0.5)|0);
 }
 raster.setDataElements$I$I$O(rX, rY, pixel);
 }}
@@ -1052,6 +1268,40 @@ raster.setDataElements$I$I$O(rX, rY, pixel);
 }}
 }
 }break;
+case 4:
+{
+var pixel=null;
+for (var y=0; y < h; y++, rY++) {
+rX=rminX;
+for (var x=0; x < w; x++, rX++) {
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+normAlpha=pixel[aIdx];
+if (normAlpha != 0.0 ) {
+var invAlpha=1.0 / normAlpha;
+for (var c=0; c < aIdx; c++) {
+pixel[c]*=invAlpha;
+}
+raster.setDataElements$I$I$O(rX, rY, pixel);
+}}
+}
+}break;
+case 5:
+{
+var pixel=null;
+for (var y=0; y < h; y++, rY++) {
+rX=rminX;
+for (var x=0; x < w; x++, rX++) {
+pixel=raster.getDataElements$I$I$O(rX, rY, pixel);
+var dnormAlpha=pixel[aIdx];
+if (dnormAlpha != 0.0 ) {
+var invAlpha=1.0 / dnormAlpha;
+for (var c=0; c < aIdx; c++) {
+pixel[c]*=invAlpha;
+}
+raster.setDataElements$I$I$O(rX, rY, pixel);
+}}
+}
+}break;
 default:
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["This method has not been " + "implemented for transferType " + this.transferType ]);
 }
@@ -1061,7 +1311,7 @@ return Clazz.new_(C$.c$$java_awt_color_ColorSpace$IA$Z$Z$I$I,[this.colorSpace, t
 return Clazz.new_(C$.c$$java_awt_color_ColorSpace$Z$Z$I$I,[this.colorSpace, this.supportsAlpha, isAlphaPremultiplied, this.transparency, this.transferType]);
 }});
 
-Clazz.newMeth(C$, 'isCompatibleRaster$java_awt_image_Raster', function (raster) {
+Clazz.newMeth(C$, 'isCompatibleRaster$java_awt_image_Raster',  function (raster) {
 var sm=raster.getSampleModel$();
 if (Clazz.instanceOf(sm, "java.awt.image.ComponentSampleModel")) {
 if (sm.getNumBands$() != this.getNumComponents$()) {
@@ -1075,11 +1325,12 @@ return (raster.getTransferType$() == this.transferType);
 return false;
 }});
 
-Clazz.newMeth(C$, 'createCompatibleWritableRaster$I$I', function (w, h) {
+Clazz.newMeth(C$, 'createCompatibleWritableRaster$I$I',  function (w, h) {
 var raster=null;
 switch (this.transferType) {
 case 0:
 case 1:
+raster=$I$(3).createInterleavedRaster$I$I$I$I$java_awt_Point(this.transferType, w, h, this.numComponents, null);
 break;
 default:
 var sm=this.createCompatibleSampleModel$I$I(w, h);
@@ -1089,7 +1340,7 @@ raster=$I$(3).createWritableRaster$java_awt_image_SampleModel$java_awt_image_Dat
 return raster;
 });
 
-Clazz.newMeth(C$, 'createCompatibleSampleModel$I$I', function (w, h) {
+Clazz.newMeth(C$, 'createCompatibleSampleModel$I$I',  function (w, h) {
 var bandOffsets=Clazz.array(Integer.TYPE, [this.numComponents]);
 for (var i=0; i < this.numComponents; i++) {
 bandOffsets[i]=i;
@@ -1099,11 +1350,11 @@ case 0:
 case 1:
 return null;
 default:
-return Clazz.new_($I$(4).c$$I$I$I$I$I$IA,[this.transferType, w, h, this.numComponents, w * this.numComponents, bandOffsets]);
+return Clazz.new_($I$(4,1).c$$I$I$I$I$I$IA,[this.transferType, w, h, this.numComponents, w * this.numComponents, bandOffsets]);
 }
 });
 
-Clazz.newMeth(C$, 'isCompatibleSampleModel$java_awt_image_SampleModel', function (sm) {
+Clazz.newMeth(C$, 'isCompatibleSampleModel$java_awt_image_SampleModel',  function (sm) {
 if (!(Clazz.instanceOf(sm, "java.awt.image.ComponentSampleModel"))) {
 return false;
 }if (this.numComponents != sm.getNumBands$()) {
@@ -1113,7 +1364,7 @@ return false;
 }return true;
 });
 
-Clazz.newMeth(C$, 'getAlphaRaster$java_awt_image_WritableRaster', function (raster) {
+Clazz.newMeth(C$, 'getAlphaRaster$java_awt_image_WritableRaster',  function (raster) {
 if (this.hasAlpha$() == false ) {
 return null;
 }var x=raster.getMinX$();
@@ -1123,7 +1374,7 @@ band[0]=raster.getNumBands$() - 1;
 return raster.createWritableChild$I$I$I$I$I$I$IA(x, y, raster.getWidth$(), raster.getHeight$(), x, y, band);
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!C$.superclazz.prototype.equals$O.apply(this, [obj])) {
 return false;
 }if (obj.getClass$() !== this.getClass$() ) {
@@ -1135,4 +1386,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,34 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','java.util.Arrays','javajs.util.P3','javajs.util.M3','javajs.util.Quat','javajs.util.V3','javajs.util.Eigen','org.jmol.util.Escape','org.jmol.util.EigenSort']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Tensor");
-C$.ADP_FACTOR=0;
-C$.tSort=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','java.util.Arrays','javajs.util.P3','javajs.util.M3','javajs.util.Quat','javajs.util.V3','javajs.util.Eigen','org.jmol.util.Escape','org.jmol.util.EigenSort']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Tensor");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.ADP_FACTOR=(Math.sqrt(0.5) / 3.141592653589793);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=null;
-this.type=null;
-this.iType=0;
-this.asymMatrix=null;
-this.symMatrix=null;
-this.eigenVectors=null;
-this.eigenValues=null;
-this.parBorU=null;
-this.altType=null;
-this.isIsotropic=false;
-this.forThermalEllipsoid=false;
-this.eigenSignMask=0;
-this.typeFactor=0;
-this.sortIso=false;
-this.modelIndex=0;
-this.atomIndex1=0;
-this.atomIndex2=0;
-this.isModulated=false;
-this.isUnmodulated=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.iType=-1;
@@ -36,12 +9,15 @@ this.eigenSignMask=7;
 this.typeFactor=1;
 this.atomIndex1=-1;
 this.atomIndex2=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isIsotropic','forThermalEllipsoid','sortIso','isModulated','isUnmodulated'],'F',['typeFactor'],'I',['iType','eigenSignMask','modelIndex','atomIndex1','atomIndex2'],'S',['id','type','altType'],'O',['asymMatrix','double[][]','+symMatrix','eigenVectors','javajs.util.V3[]','eigenValues','float[]','+parBorU']]
+,['F',['ADP_FACTOR'],'O',['tSort','org.jmol.util.EigenSort']]]
 
 Clazz.newMeth(C$, 'getType$S', function (type) {
 var pt=type.indexOf$S("_");
 if (pt >= 0) type=type.substring$I$I(0, pt);
-pt=";iso........;adp........;tls-u......;tls-r......;ms.........;efg........;isc........;charge.....;quadrupole.;raman......".indexOf$S(";" + type.toLowerCase$() + "." );
+pt=";iso........;adp........;tls-u......;tls-r......;ms.........;efg........;isc........;charge.....;quadrupole.;raman......;csa........".indexOf$S(";" + type.toLowerCase$() + "." );
 return (pt < 0 ? -1 : (pt/11|0));
 }, 1);
 
@@ -67,12 +43,12 @@ return true;
 Clazz.newMeth(C$, 'getInfo$S', function (infoType) {
 switch (C$.getInfoIndex$S(infoType)) {
 default:
-var info=Clazz.new_($I$(1));
-var s=$I$(2).getTokens$S($I$(2).replaceWithCharacter$S$S$C(";.............;eigenvalues..;eigenvectors.;asymmatrix...;symmatrix....;value........;isotropy.....;anisotropy...;asymmetry....;eulerzyz.....;eulerzxz.....;quaternion...;indices......;string.......;type.........;id...........;span.........;skew.........", ";.", " ").trim$());
+var info=Clazz.new_($I$(1,1));
+var s=$I$(2,"getTokens$S",[$I$(2).replaceWithCharacter$S$S$C(";.............;eigenvalues..;eigenvectors.;asymmatrix...;symmatrix....;value........;isotropy.....;anisotropy...;asymmetry....;eulerzyz.....;eulerzxz.....;quaternion...;indices......;string.......;type.........;id...........;span.........;skew.........", ";.", " ").trim$()]);
 $I$(3).sort$OA(s);
 for (var i=0; i < s.length; i++) {
 var o=this.getInfo$S(s[i]);
-if (o != null ) info.put$TK$TV(s[i], o);
+if (o != null ) info.put$O$O(s[i], o);
 }
 return info;
 case 1:
@@ -168,7 +144,7 @@ return t;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setFromAsymmetricTensor$DAA$S$S', function (asymmetricTensor, type, id) {
@@ -182,7 +158,7 @@ a[0][1]=a[1][0]=(a[0][1] + a[1][0]) / 2;
 a[1][2]=a[2][1]=(a[1][2] + a[2][1]) / 2;
 }if (a[0][2] != a[2][0] ) {
 a[0][2]=a[2][0]=(a[0][2] + a[2][0]) / 2;
-}var m=Clazz.new_($I$(5));
+}var m=Clazz.new_($I$(5,1));
 var mm=Clazz.array(Float.TYPE, [9]);
 for (var i=0, p=0; i < 3; i++) for (var j=0; j < 3; j++) mm[p++]=a[i][j];
 
@@ -190,7 +166,7 @@ for (var i=0, p=0; i < 3; i++) for (var j=0; j < 3; j++) mm[p++]=a[i][j];
 m.setA$FA(mm);
 var vectors=Clazz.array($I$(7), [3]);
 var values=Clazz.array(Float.TYPE, [3]);
-Clazz.new_($I$(8)).setM$DAA(a).fillFloatArrays$javajs_util_V3A$FA(vectors, values);
+Clazz.new_($I$(8,1)).setM$DAA(a).fillFloatArrays$javajs_util_V3A$FA(vectors, values);
 p$1.newTensorType$javajs_util_V3A$FA$S$S.apply(this, [vectors, values, type, id]);
 this.asymMatrix=asymmetricTensor;
 this.symMatrix=a;
@@ -198,7 +174,7 @@ this.id=id;
 return this;
 });
 
-Clazz.newMeth(C$, 'setFromEigenVectors$javajs_util_V3A$FA$S$S$org_jmol_util_Tensor', function (eigenVectors, eigenValues, type, id, t) {
+Clazz.newMeth(C$, 'setFromEigenVectors$javajs_util_T3A$FA$S$S$org_jmol_util_Tensor', function (eigenVectors, eigenValues, type, id, t) {
 var values=Clazz.array(Float.TYPE, [3]);
 var vectors=Clazz.array($I$(7), [3]);
 for (var i=0; i < 3; i++) {
@@ -239,7 +215,7 @@ mat[2][2]=coefs[2];
 mat[0][1]=mat[1][0]=coefs[3] / 2;
 mat[0][2]=mat[2][0]=coefs[4] / 2;
 mat[1][2]=mat[2][1]=coefs[5] / 2;
-Clazz.new_($I$(8)).setM$DAA(mat).fillFloatArrays$javajs_util_V3A$FA(this.eigenVectors, this.eigenValues);
+Clazz.new_($I$(8,1)).setM$DAA(mat).fillFloatArrays$javajs_util_V3A$FA(this.eigenVectors, this.eigenValues);
 this.setType$S("adp");
 p$1.sortAndNormalize.apply(this, []);
 return this;
@@ -294,6 +270,9 @@ this.forThermalEllipsoid=true;
 this.typeFactor=C$.ADP_FACTOR;
 this.altType="1";
 break;
+case 10:
+this.sortIso=true;
+this.typeFactor=0.01;
 case 4:
 this.sortIso=true;
 this.typeFactor=0.01;
@@ -319,7 +298,7 @@ break;
 
 Clazz.newMeth(C$, 'sortAndNormalize', function () {
 var o=Clazz.array(java.lang.Object, -1, [Clazz.array(java.lang.Object, -1, [$I$(7).newV$javajs_util_T3(this.eigenVectors[0]), Float.valueOf$F(this.eigenValues[0])]), Clazz.array(java.lang.Object, -1, [$I$(7).newV$javajs_util_T3(this.eigenVectors[1]), Float.valueOf$F(this.eigenValues[1])]), Clazz.array(java.lang.Object, -1, [$I$(7).newV$javajs_util_T3(this.eigenVectors[2]), Float.valueOf$F(this.eigenValues[2])])]);
-$I$(3).sort$TTA$java_util_Comparator(o, C$.getEigenSort$());
+$I$(3,"sort$OA$java_util_Comparator",[o, C$.getEigenSort$()]);
 for (var i=0; i < 3; i++) {
 var pt=i;
 this.eigenVectors[i]=(o[pt])[0];
@@ -345,11 +324,15 @@ return true;
 });
 
 Clazz.newMeth(C$, 'getEigenSort$', function () {
-return (C$.tSort == null  ? (C$.tSort=Clazz.new_($I$(10))) : C$.tSort);
+return (C$.tSort == null  ? (C$.tSort=Clazz.new_($I$(10,1))) : C$.tSort);
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
 return (this.type + " " + this.modelIndex + " " + this.atomIndex1 + " " + this.atomIndex2 + "\n" + (this.eigenVectors == null  ? "" + new Float(this.eigenValues[0]).toString() : this.eigenVectors[0] + "\t" + new Float(this.eigenValues[0]).toString() + "\t" + "\n" + this.eigenVectors[1] + "\t" + new Float(this.eigenValues[1]).toString() + "\t" + "\n" + this.eigenVectors[2] + "\t" + new Float(this.eigenValues[2]).toString() + "\t" + "\n" ) );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.ADP_FACTOR=(Math.sqrt(0.5) / 3.141592653589793);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

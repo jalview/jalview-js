@@ -1,38 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3i','javajs.util.P3','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HermiteRenderer", null, null, 'org.jmol.g3d.G3DRenderer');
-C$.vAB=null;
-C$.vAC=null;
+(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3i','javajs.util.P3','javajs.util.Lst']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HermiteRenderer", null, null, 'org.jmol.g3d.G3DRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.vAB=Clazz.new_($I$(1));
-C$.vAC=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.g3d=null;
-this.gdata=null;
-this.pLeft=null;
-this.pRight=null;
-this.sLeft=null;
-this.sRight=null;
-this.pTopLeft=null;
-this.pTopRight=null;
-this.pBotLeft=null;
-this.pBotRight=null;
-this.a1=null;
-this.a2=null;
-this.b1=null;
-this.b2=null;
-this.c1=null;
-this.c2=null;
-this.d1=null;
-this.d2=null;
-this.T1=null;
-this.T2=null;
-this.depth1=null;
-this.needToFill=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.pLeft=Clazz.array($I$(2), [16]);
@@ -45,33 +14,36 @@ this.pBotLeft=Clazz.array($I$(3), [16]);
 this.pBotRight=Clazz.array($I$(3), [16]);
 {
 for (var i=16; --i >= 0; ) {
-this.pLeft[i]=Clazz.new_($I$(2));
-this.pRight[i]=Clazz.new_($I$(2));
-this.pTopLeft[i]=Clazz.new_($I$(3));
-this.pTopRight[i]=Clazz.new_($I$(3));
-this.pBotLeft[i]=Clazz.new_($I$(3));
-this.pBotRight[i]=Clazz.new_($I$(3));
+this.pLeft[i]=Clazz.new_($I$(2,1));
+this.pRight[i]=Clazz.new_($I$(2,1));
+this.pTopLeft[i]=Clazz.new_($I$(3,1));
+this.pTopRight[i]=Clazz.new_($I$(3,1));
+this.pBotLeft[i]=Clazz.new_($I$(3,1));
+this.pBotRight[i]=Clazz.new_($I$(3,1));
 }
 }
-this.a1=Clazz.new_($I$(3));
-this.a2=Clazz.new_($I$(3));
-this.b1=Clazz.new_($I$(3));
-this.b2=Clazz.new_($I$(3));
-this.c1=Clazz.new_($I$(3));
-this.c2=Clazz.new_($I$(3));
-this.d1=Clazz.new_($I$(3));
-this.d2=Clazz.new_($I$(3));
-this.T1=Clazz.new_($I$(1));
-this.T2=Clazz.new_($I$(1));
-this.depth1=Clazz.new_($I$(1));
+this.a1=Clazz.new_($I$(3,1));
+this.a2=Clazz.new_($I$(3,1));
+this.b1=Clazz.new_($I$(3,1));
+this.b2=Clazz.new_($I$(3,1));
+this.c1=Clazz.new_($I$(3,1));
+this.c2=Clazz.new_($I$(3,1));
+this.d1=Clazz.new_($I$(3,1));
+this.d2=Clazz.new_($I$(3,1));
+this.T1=Clazz.new_($I$(1,1));
+this.T2=Clazz.new_($I$(1,1));
+this.depth1=Clazz.new_($I$(1,1));
 this.needToFill=Clazz.array(Boolean.TYPE, [16]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['g3d','org.jmol.api.JmolRendererInterface','gdata','org.jmol.util.GData','pLeft','javajs.util.P3i[]','+pRight','sLeft','float[]','+sRight','pTopLeft','javajs.util.P3[]','+pTopRight','+pBotLeft','+pBotRight','a1','javajs.util.P3','+a2','+b1','+b2','+c1','+c2','+d1','+d2','T1','javajs.util.V3','+T2','+depth1','needToFill','boolean[]']]
+,['O',['vAB','javajs.util.V3','+vAC']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData','set$'], function (g3d, gdata) {
+Clazz.newMeth(C$, 'set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData', function (g3d, gdata) {
 this.g3d=g3d;
 this.gdata=gdata;
 return this;
@@ -282,7 +254,7 @@ return (C$.vAB.z < 0  ? -1 : 1);
 
 Clazz.newMeth(C$, 'renderParallelPair$Z$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (fill, tension, p0, p1, p2, p3, p4, p5, p6, p7) {
 var endPoints=Clazz.array($I$(3), -1, [p2, p1, p6, p5]);
-var points=Clazz.new_($I$(4));
+var points=Clazz.new_($I$(4,1));
 var whichPoint=0;
 var numTopStrandPoints=2;
 var numPointsPerSegment=5.0;
@@ -324,7 +296,7 @@ this.pLeft[0].set$I$I$I(x1, y1, z1);
 this.sRight[0]=1;
 this.pRight[0].set$I$I$I(x2, y2, z2);
 sp=0;
-}points.addLast$TV(endPoints[whichPoint++]);
+}points.addLast$O(endPoints[whichPoint++]);
 currentInt=interval;
 do {
 var a=this.pLeft[sp];
@@ -336,9 +308,9 @@ if (dist2 <= 2) {
 var s=this.sLeft[sp];
 this.g3d.fillSphereI$I$javajs_util_P3i(3, a);
 if (s < 1.0 - currentInt ) {
-var temp=Clazz.new_($I$(3));
+var temp=Clazz.new_($I$(3,1));
 temp.set$F$F$F(a.x, a.y, a.z);
-points.addLast$TV(temp);
+points.addLast$O(temp);
 currentInt += interval;
 if (strands == 2) {
 numTopStrandPoints++;
@@ -364,11 +336,16 @@ this.sRight[sp]=s;
 this.pLeft[sp].setT$javajs_util_T3i(pMid);
 this.sLeft[sp]=s;
 }} while (sp >= 0);
-points.addLast$TV(endPoints[whichPoint++]);
+points.addLast$O(endPoints[whichPoint++]);
 }
 var size=points.size$();
 for (var top=0; top < numTopStrandPoints && (top + numTopStrandPoints) < size ; top++) this.g3d.drawLineAB$javajs_util_P3$javajs_util_P3(points.get$I(top), points.get$I(top + numTopStrandPoints));
 
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.vAB=Clazz.new_($I$(1,1));
+C$.vAC=Clazz.new_($I$(1,1));
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

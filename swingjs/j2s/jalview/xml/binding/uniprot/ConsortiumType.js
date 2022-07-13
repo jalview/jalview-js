@@ -1,27 +1,24 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
-var C$=Clazz.newClass(P$, "ConsortiumType");
+/*c*/var C$=Clazz.newClass(P$, "ConsortiumType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getName$', function () {
+C$.$fields$=[['S',['name']]]
+
+Clazz.newMeth(C$, 'getName$',  function () {
 return this.name;
 });
 
-Clazz.newMeth(C$, 'setName$S', function (value) {
+Clazz.newMeth(C$, 'setName$S',  function (value) {
 this.name=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.ConsortiumType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="consortiumType" )']],
-  [['name','String'],['@XmlAttribute(name="name" required="true" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.ConsortiumType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="consortiumType" ']],
+  [['name','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="name" required="true" ']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

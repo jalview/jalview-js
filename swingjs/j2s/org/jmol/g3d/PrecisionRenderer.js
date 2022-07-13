@@ -1,18 +1,12 @@
 (function(){var P$=Clazz.newPackage("org.jmol.g3d"),I$=[];
-var C$=Clazz.newClass(P$, "PrecisionRenderer");
+/*c*/var C$=Clazz.newClass(P$, "PrecisionRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.a=0;
-this.b=0;
-this.isOrthographic=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isOrthographic'],'F',['a','b']]]
 
 Clazz.newMeth(C$, 'getZCurrent$F$F$I', function (a, b, x) {
 return Math.round(a == 1.4E-45  ? b : this.isOrthographic ? a * x + b : a / (b - x));
@@ -50,4 +44,4 @@ this.b=(xb * zb - xa * za) / zdif;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

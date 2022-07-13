@@ -1,31 +1,10 @@
-(function(){var P$=Clazz.newPackage("java.awt.font"),p$1={},I$=[[0,['java.awt.font.TextLayout','.CaretPolicy'],'java.text.AttributedString','java.awt.font.TextAttribute','sun.font.FontResolver','sun.text.CodePointIterator','java.awt.font.TextLine','sun.font.AttributeValues','sun.font.CoreMetrics','sun.font.GraphicComponent','InternalError','Error',['java.awt.geom.Rectangle2D','.Float'],'java.awt.font.TextHitInfo','java.awt.geom.GeneralPath','java.awt.Shape','java.awt.geom.AffineTransform',['java.awt.geom.Point2D','.Float']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TextLayout", function(){
+(function(){var P$=Clazz.newPackage("java.awt.font"),p$1={},I$=[[0,['java.awt.font.TextLayout','.CaretPolicy'],'java.text.AttributedString','java.awt.font.TextAttribute','sun.font.FontResolver','sun.text.CodePointIterator','java.awt.font.TextLine','sun.font.AttributeValues','sun.font.CoreMetrics','sun.font.GraphicComponent','InternalError','Error',['java.awt.geom.Rectangle2D','.Float'],'java.awt.font.TextHitInfo','java.awt.geom.GeneralPath','java.awt.Shape','java.awt.geom.AffineTransform',['java.awt.geom.Point2D','.Float']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TextLayout", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'Cloneable');
-C$.dx=0;
-C$.dy=0;
-C$.DEFAULT_CARET_POLICY=null;
+C$.$classes$=[['CaretPolicy',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEFAULT_CARET_POLICY=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.characterCount=0;
-this.isVerticalLine=false;
-this.baseline=0;
-this.baselineOffsets=null;
-this.textLine=null;
-this.lineMetrics=null;
-this.visibleAdvance=0;
-this.hashCodeCache=0;
-this.cacheIsValid=false;
-this.justifyRatio=0;
-this.naturalBounds=null;
-this.boundsRect=null;
-this.caretsInLigaturesAreAllowed=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isVerticalLine=false;
@@ -34,10 +13,13 @@ this.cacheIsValid=false;
 this.naturalBounds=null;
 this.boundsRect=null;
 this.caretsInLigaturesAreAllowed=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S$java_awt_Font$java_awt_font_FontRenderContext', function (string, font, frc) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['isVerticalLine','cacheIsValid','caretsInLigaturesAreAllowed'],'B',['baseline'],'F',['visibleAdvance','justifyRatio'],'I',['characterCount','hashCodeCache'],'O',['baselineOffsets','float[]','textLine','java.awt.font.TextLine','lineMetrics','java.awt.font.TextLine.TextLineMetrics','naturalBounds','java.awt.geom.Rectangle2D','+boundsRect']]
+,['F',['dx','dy'],'O',['DEFAULT_CARET_POLICY','java.awt.font.TextLayout.CaretPolicy']]]
+
+Clazz.newMeth(C$, 'c$$S$java_awt_Font$java_awt_font_FontRenderContext',  function (string, font, frc) {
+;C$.$init$.apply(this);
 if (font == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null font passed to TextLayout constructor."]);
 }if (string == null ) {
@@ -51,13 +33,13 @@ attributes=font.getAttributes$();
 if (C$.sameBaselineUpTo$java_awt_Font$CA$I$I(font, text, 0, text.length) == text.length) {
 p$1.fastInit$CA$java_awt_Font$java_util_Map$java_awt_font_FontRenderContext.apply(this, [text, font, attributes, frc]);
 } else {
-var as=attributes == null  ? Clazz.new_($I$(2).c$$S,[string]) : Clazz.new_($I$(2).c$$S$java_util_Map,[string, attributes]);
+var as=attributes == null  ? Clazz.new_($I$(2,1).c$$S,[string]) : Clazz.new_($I$(2,1).c$$S$java_util_Map,[string, attributes]);
 as.addAttribute$java_text_AttributedCharacterIterator_Attribute$O($I$(3).FONT, font);
 p$1.standardInit$java_text_AttributedCharacterIterator$CA$java_awt_font_FontRenderContext.apply(this, [as.getIterator$(), text, frc]);
 }}, 1);
 
-Clazz.newMeth(C$, 'c$$S$java_util_Map$java_awt_font_FontRenderContext', function (string, attributes, frc) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$java_util_Map$java_awt_font_FontRenderContext',  function (string, attributes, frc) {
+;C$.$init$.apply(this);
 if (string == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null string passed to TextLayout constructor."]);
 }if (attributes == null ) {
@@ -69,11 +51,11 @@ var font=C$.singleFont$CA$I$I$java_util_Map(text, 0, text.length, attributes);
 if (font != null ) {
 p$1.fastInit$CA$java_awt_Font$java_util_Map$java_awt_font_FontRenderContext.apply(this, [text, font, attributes, frc]);
 } else {
-var as=Clazz.new_($I$(2).c$$S$java_util_Map,[string, attributes]);
+var as=Clazz.new_($I$(2,1).c$$S$java_util_Map,[string, attributes]);
 p$1.standardInit$java_text_AttributedCharacterIterator$CA$java_awt_font_FontRenderContext.apply(this, [as.getIterator$(), text, frc]);
 }}, 1);
 
-Clazz.newMeth(C$, 'singleFont$CA$I$I$java_util_Map', function (text, start, limit, attributes) {
+Clazz.newMeth(C$, 'singleFont$CA$I$I$java_util_Map',  function (text, start, limit, attributes) {
 if (attributes.get$O($I$(3).CHAR_REPLACEMENT) != null ) {
 return null;
 }var font=null;
@@ -98,8 +80,8 @@ return null;
 }return font;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext', function (text, frc) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext',  function (text, frc) {
+;C$.$init$.apply(this);
 if (text == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null iterator passed to TextLayout constructor."]);
 }var start=text.getBeginIndex$();
@@ -123,37 +105,37 @@ return;
 }}p$1.standardInit$java_text_AttributedCharacterIterator$CA$java_awt_font_FontRenderContext.apply(this, [text, chars, frc]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_font_TextLine$B$FA$F', function (textLine, baseline, baselineOffsets, justifyRatio) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_font_TextLine$B$FA$F',  function (textLine, baseline, baselineOffsets, justifyRatio) {
+;C$.$init$.apply(this);
 this.characterCount=textLine.characterCount$();
-this.baseline=($b$[0] = baseline, $b$[0]);
+this.baseline=baseline;
 this.baselineOffsets=baselineOffsets;
 this.textLine=textLine;
 this.justifyRatio=justifyRatio;
 }, 1);
 
-Clazz.newMeth(C$, 'paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA', function (aBaseline, lm, paragraphAttrs, text) {
-this.baseline=($b$[0] = aBaseline, $b$[0]);
-this.baselineOffsets=$I$(6).getNormalizedOffsets$FA$B(lm.baselineOffsets, ($b$[0] = this.baseline, $b$[0]));
+Clazz.newMeth(C$, 'paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA',  function (aBaseline, lm, paragraphAttrs, text) {
+this.baseline=aBaseline;
+this.baselineOffsets=$I$(6).getNormalizedOffsets$FA$B(lm.baselineOffsets, this.baseline);
 this.justifyRatio=$I$(7).getJustification$java_util_Map(paragraphAttrs);
 }, p$1);
 
-Clazz.newMeth(C$, 'fastInit$CA$java_awt_Font$java_util_Map$java_awt_font_FontRenderContext', function (chars, font, attrs, frc) {
+Clazz.newMeth(C$, 'fastInit$CA$java_awt_Font$java_util_Map$java_awt_font_FontRenderContext',  function (chars, font, attrs, frc) {
 this.isVerticalLine=false;
-var lm=font.getLineMetrics$CA$I$I$O(chars, 0, chars.length, frc);
+var lm=font.getLineMetrics$CA$I$I$java_awt_font_FontRenderContext(chars, 0, chars.length, frc);
 var cm=$I$(8).get$java_awt_font_LineMetrics(lm);
-var glyphBaseline=($b$[0] = (cm.baselineIndex|0), $b$[0]);
+var glyphBaseline=($b$[0] = cm.baselineIndex, $b$[0]);
 if (attrs == null ) {
-this.baseline=($b$[0] = glyphBaseline, $b$[0]);
+this.baseline=glyphBaseline;
 this.baselineOffsets=cm.baselineOffsets;
 this.justifyRatio=1.0;
 } else {
-p$1.paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA.apply(this, [($b$[0] = glyphBaseline, $b$[0]), cm, attrs, chars]);
+p$1.paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA.apply(this, [glyphBaseline, cm, attrs, chars]);
 }this.characterCount=chars.length;
 this.textLine=$I$(6).fastCreateTextLine$java_awt_font_FontRenderContext$CA$java_awt_Font$sun_font_CoreMetrics$java_util_Map(frc, chars, font, cm, attrs);
 }, p$1);
 
-Clazz.newMeth(C$, 'standardInit$java_text_AttributedCharacterIterator$CA$java_awt_font_FontRenderContext', function (text, chars, frc) {
+Clazz.newMeth(C$, 'standardInit$java_text_AttributedCharacterIterator$CA$java_awt_font_FontRenderContext',  function (text, chars, frc) {
 this.characterCount=chars.length;
 {
 var paragraphAttrs=text.getAttributes$();
@@ -161,23 +143,23 @@ var haveFont=$I$(6).advanceToFirstFont$java_text_AttributedCharacterIterator(tex
 if (haveFont) {
 var defaultFont=$I$(6).getFontAtCurrentPos$java_text_AttributedCharacterIterator(text);
 var charsStart=text.getIndex$() - text.getBeginIndex$();
-var lm=defaultFont.getLineMetrics$CA$I$I$O(chars, charsStart, charsStart + 1, frc);
+var lm=defaultFont.getLineMetrics$CA$I$I$java_awt_font_FontRenderContext(chars, charsStart, charsStart + 1, frc);
 var cm=$I$(8).get$java_awt_font_LineMetrics(lm);
-p$1.paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA.apply(this, [($b$[0] = (cm.baselineIndex|0), $b$[0]), cm, paragraphAttrs, chars]);
+p$1.paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA.apply(this, [($b$[0] = cm.baselineIndex, $b$[0]), cm, paragraphAttrs, chars]);
 } else {
 var graphic=paragraphAttrs.get$O($I$(3).CHAR_REPLACEMENT);
-var defaultBaseline=($b$[0] = C$.getBaselineFromGraphic$java_awt_font_GraphicAttribute(graphic), $b$[0]);
+var defaultBaseline=C$.getBaselineFromGraphic$java_awt_font_GraphicAttribute(graphic);
 var cm=$I$(9).createCoreMetrics$java_awt_font_GraphicAttribute(graphic);
-p$1.paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA.apply(this, [($b$[0] = defaultBaseline, $b$[0]), cm, paragraphAttrs, chars]);
+p$1.paragraphInit$B$sun_font_CoreMetrics$java_util_Map$CA.apply(this, [defaultBaseline, cm, paragraphAttrs, chars]);
 }}this.textLine=$I$(6).standardCreateTextLine$java_awt_font_FontRenderContext$java_text_AttributedCharacterIterator$CA$FA(frc, text, chars, this.baselineOffsets);
 }, p$1);
 
-Clazz.newMeth(C$, 'ensureCache', function () {
+Clazz.newMeth(C$, 'ensureCache',  function () {
 if (!this.cacheIsValid) {
 p$1.buildCache.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'buildCache', function () {
+Clazz.newMeth(C$, 'buildCache',  function () {
 this.lineMetrics=this.textLine.getMetrics$();
 if (this.textLine.isDirectionLTR$()) {
 var lastNonSpace=this.characterCount - 1;
@@ -218,37 +200,37 @@ this.hashCodeCache=0;
 this.cacheIsValid=true;
 }, p$1);
 
-Clazz.newMeth(C$, 'getNaturalBounds', function () {
+Clazz.newMeth(C$, 'getNaturalBounds',  function () {
 p$1.ensureCache.apply(this, []);
 if (this.naturalBounds == null ) {
 this.naturalBounds=this.textLine.getItalicBounds$();
 }return this.naturalBounds;
 }, p$1);
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(10).c$$Throwable,[e]);
+throw Clazz.new_($I$(10,1).c$$Throwable,[e]);
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'checkTextHit$java_awt_font_TextHitInfo', function (hit) {
+Clazz.newMeth(C$, 'checkTextHit$java_awt_font_TextHitInfo',  function (hit) {
 if (hit == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["TextHitInfo is null."]);
 }if (hit.getInsertionIndex$() < 0 || hit.getInsertionIndex$() > this.characterCount ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["TextHitInfo is out of range"]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'getJustifiedLayout$F', function (justificationWidth) {
+Clazz.newMeth(C$, 'getJustifiedLayout$F',  function (justificationWidth) {
 if (justificationWidth <= 0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["justificationWidth <= 0 passed to TextLayout.getJustifiedLayout()"]);
 }if (this.justifyRatio == -53.9 ) {
-throw Clazz.new_($I$(11).c$$S,["Can\'t justify again."]);
+throw Clazz.new_($I$(11,1).c$$S,["Can\'t justify again."]);
 }p$1.ensureCache.apply(this, []);
 var limit=this.characterCount;
 while (limit > 0 && this.textLine.isCharWhitespace$I(limit - 1) ){
@@ -256,77 +238,77 @@ while (limit > 0 && this.textLine.isCharWhitespace$I(limit - 1) ){
 }
 var newLine=this.textLine.getJustifiedLine$F$F$I$I(justificationWidth, this.justifyRatio, 0, limit);
 if (newLine != null ) {
-return Clazz.new_(C$.c$$java_awt_font_TextLine$B$FA$F,[newLine, ($b$[0] = this.baseline, $b$[0]), this.baselineOffsets, -53.9]);
+return Clazz.new_(C$.c$$java_awt_font_TextLine$B$FA$F,[newLine, this.baseline, this.baselineOffsets, -53.9]);
 }return this;
 });
 
-Clazz.newMeth(C$, 'handleJustify$F', function (justificationWidth) {
+Clazz.newMeth(C$, 'handleJustify$F',  function (justificationWidth) {
 });
 
-Clazz.newMeth(C$, 'getBaseline$', function () {
-return $b$[0] = this.baseline, $b$[0];
+Clazz.newMeth(C$, 'getBaseline$',  function () {
+return this.baseline;
 });
 
-Clazz.newMeth(C$, 'getBaselineOffsets$', function () {
+Clazz.newMeth(C$, 'getBaselineOffsets$',  function () {
 var offsets=Clazz.array(Float.TYPE, [this.baselineOffsets.length]);
 System.arraycopy$O$I$O$I$I(this.baselineOffsets, 0, offsets, 0, offsets.length);
 return offsets;
 });
 
-Clazz.newMeth(C$, 'getAdvance$', function () {
+Clazz.newMeth(C$, 'getAdvance$',  function () {
 p$1.ensureCache.apply(this, []);
 return this.lineMetrics.advance;
 });
 
-Clazz.newMeth(C$, 'getVisibleAdvance$', function () {
+Clazz.newMeth(C$, 'getVisibleAdvance$',  function () {
 p$1.ensureCache.apply(this, []);
 return this.visibleAdvance;
 });
 
-Clazz.newMeth(C$, 'getAscent$', function () {
+Clazz.newMeth(C$, 'getAscent$',  function () {
 p$1.ensureCache.apply(this, []);
 return this.lineMetrics.ascent;
 });
 
-Clazz.newMeth(C$, 'getDescent$', function () {
+Clazz.newMeth(C$, 'getDescent$',  function () {
 p$1.ensureCache.apply(this, []);
 return this.lineMetrics.descent;
 });
 
-Clazz.newMeth(C$, 'getLeading$', function () {
+Clazz.newMeth(C$, 'getLeading$',  function () {
 p$1.ensureCache.apply(this, []);
 return this.lineMetrics.leading;
 });
 
-Clazz.newMeth(C$, 'getBounds$', function () {
+Clazz.newMeth(C$, 'getBounds$',  function () {
 p$1.ensureCache.apply(this, []);
 if (this.boundsRect == null ) {
 var vb=this.textLine.getVisualBounds$();
 if (C$.dx != 0  || C$.dy != 0  ) {
 vb.setRect$D$D$D$D(vb.getX$() - C$.dx, vb.getY$() - C$.dy, vb.getWidth$(), vb.getHeight$());
 }this.boundsRect=vb;
-}var bounds=Clazz.new_($I$(12));
+}var bounds=Clazz.new_($I$(12,1));
 bounds.setRect$java_awt_geom_Rectangle2D(this.boundsRect);
 return bounds;
 });
 
-Clazz.newMeth(C$, 'getPixelBounds$java_awt_font_FontRenderContext$F$F', function (frc, x, y) {
+Clazz.newMeth(C$, 'getPixelBounds$java_awt_font_FontRenderContext$F$F',  function (frc, x, y) {
 return this.textLine.getPixelBounds$java_awt_font_FontRenderContext$F$F(frc, x, y);
 });
 
-Clazz.newMeth(C$, 'isLeftToRight$', function () {
+Clazz.newMeth(C$, 'isLeftToRight$',  function () {
 return this.textLine.isDirectionLTR$();
 });
 
-Clazz.newMeth(C$, 'isVertical$', function () {
+Clazz.newMeth(C$, 'isVertical$',  function () {
 return this.isVerticalLine;
 });
 
-Clazz.newMeth(C$, 'getCharacterCount$', function () {
+Clazz.newMeth(C$, 'getCharacterCount$',  function () {
 return this.characterCount;
 });
 
-Clazz.newMeth(C$, 'getCaretInfo$I$java_awt_geom_Rectangle2D$FA', function (caret, bounds, info) {
+Clazz.newMeth(C$, 'getCaretInfo$I$java_awt_geom_Rectangle2D$FA',  function (caret, bounds, info) {
 var top1X;
 var top2X;
 var bottom1X;
@@ -342,7 +324,7 @@ logIndex=this.textLine.visualToLogical$I(caret);
 pos=this.textLine.getCharLinePosition$I(logIndex);
 }var angle=this.textLine.getCharAngle$I(logIndex);
 var shift=this.textLine.getCharShift$I(logIndex);
-pos += angle * shift;
+pos+=angle * shift;
 top1X=top2X=pos + angle * this.textLine.getCharAscent$I(logIndex);
 bottom1X=bottom2X=pos - angle * this.textLine.getCharDescent$I(logIndex);
 } else {
@@ -351,7 +333,7 @@ var logIndex=this.textLine.visualToLogical$I(caret - 1);
 var angle1=this.textLine.getCharAngle$I(logIndex);
 var pos1=this.textLine.getCharLinePosition$I(logIndex) + this.textLine.getCharAdvance$I(logIndex);
 if (angle1 != 0 ) {
-pos1 += angle1 * this.textLine.getCharShift$I(logIndex);
+pos1+=angle1 * this.textLine.getCharShift$I(logIndex);
 top1X=pos1 + angle1 * this.textLine.getCharAscent$I(logIndex);
 bottom1X=pos1 - angle1 * this.textLine.getCharDescent$I(logIndex);
 } else {
@@ -361,7 +343,7 @@ var logIndex=this.textLine.visualToLogical$I(caret);
 var angle2=this.textLine.getCharAngle$I(logIndex);
 var pos2=this.textLine.getCharLinePosition$I(logIndex);
 if (angle2 != 0 ) {
-pos2 += angle2 * this.textLine.getCharShift$I(logIndex);
+pos2+=angle2 * this.textLine.getCharShift$I(logIndex);
 top2X=pos2 + angle2 * this.textLine.getCharAscent$I(logIndex);
 bottom2X=pos2 - angle2 * this.textLine.getCharDescent$I(logIndex);
 } else {
@@ -379,13 +361,13 @@ info[0]=(bottomX + (info[1] * bounds.getMaxY$()));
 }return info;
 }, p$1);
 
-Clazz.newMeth(C$, 'getCaretInfo$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D', function (hit, bounds) {
+Clazz.newMeth(C$, 'getCaretInfo$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D',  function (hit, bounds) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [hit]);
 return p$1.getCaretInfoTestInternal$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D.apply(this, [hit, bounds]);
 });
 
-Clazz.newMeth(C$, 'getCaretInfoTestInternal$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D', function (hit, bounds) {
+Clazz.newMeth(C$, 'getCaretInfoTestInternal$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D',  function (hit, bounds) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [hit]);
 var info=Clazz.array(Float.TYPE, [6]);
@@ -433,13 +415,13 @@ p2x=m.ascent;
 }} else {
 var bo=this.baselineOffsets[thiscm.baselineIndex];
 if (horiz) {
-ixbase += iangle * thiscm.ssOffset;
+ixbase+=iangle * thiscm.ssOffset;
 p1x=ixbase + iangle * thiscm.ascent;
 p2x=ixbase - iangle * thiscm.descent;
 p1y=bo - thiscm.ascent;
 p2y=bo + thiscm.descent;
 } else {
-ixbase -= iangle * thiscm.ssOffset;
+ixbase-=iangle * thiscm.ssOffset;
 p1y=ixbase + iangle * thiscm.ascent;
 p2y=ixbase - iangle * thiscm.descent;
 p1x=bo + thiscm.ascent;
@@ -451,11 +433,11 @@ info[5]=p2y;
 return info;
 }, p$1);
 
-Clazz.newMeth(C$, 'getCaretInfo$java_awt_font_TextHitInfo', function (hit) {
+Clazz.newMeth(C$, 'getCaretInfo$java_awt_font_TextHitInfo',  function (hit) {
 return this.getCaretInfo$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D(hit, p$1.getNaturalBounds.apply(this, []));
 });
 
-Clazz.newMeth(C$, 'hitToCaret$java_awt_font_TextHitInfo', function (hit) {
+Clazz.newMeth(C$, 'hitToCaret$java_awt_font_TextHitInfo',  function (hit) {
 var hitIndex=hit.getCharIndex$();
 if (hitIndex < 0) {
 return this.textLine.isDirectionLTR$() ? 0 : this.characterCount;
@@ -467,7 +449,7 @@ if (hit.isLeadingEdge$() != this.textLine.isCharLTR$I(hitIndex) ) {
 }return visIndex;
 }, p$1);
 
-Clazz.newMeth(C$, 'caretToHit$I', function (caret) {
+Clazz.newMeth(C$, 'caretToHit$I',  function (caret) {
 if (caret == 0 || caret == this.characterCount ) {
 if ((caret == this.characterCount) == this.textLine.isDirectionLTR$() ) {
 return $I$(13).leading$I(this.characterCount);
@@ -479,7 +461,7 @@ var leading=this.textLine.isCharLTR$I(charIndex);
 return leading ? $I$(13).leading$I(charIndex) : $I$(13).trailing$I(charIndex);
 }}, p$1);
 
-Clazz.newMeth(C$, 'caretIsValid$I', function (caret) {
+Clazz.newMeth(C$, 'caretIsValid$I',  function (caret) {
 if (caret == this.characterCount || caret == 0 ) {
 return true;
 }var offset=this.textLine.visualToLogical$I(caret);
@@ -490,7 +472,7 @@ return true;
 }}return this.textLine.caretAtOffsetIsValid$I(offset);
 }, p$1);
 
-Clazz.newMeth(C$, 'getNextRightHit$java_awt_font_TextHitInfo', function (hit) {
+Clazz.newMeth(C$, 'getNextRightHit$java_awt_font_TextHitInfo',  function (hit) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [hit]);
 var caret=p$1.hitToCaret$java_awt_font_TextHitInfo.apply(this, [hit]);
@@ -502,7 +484,7 @@ return null;
 return p$1.caretToHit$I.apply(this, [caret]);
 });
 
-Clazz.newMeth(C$, 'getNextRightHit$I$java_awt_font_TextLayout_CaretPolicy', function (offset, policy) {
+Clazz.newMeth(C$, 'getNextRightHit$I$java_awt_font_TextLayout_CaretPolicy',  function (offset, policy) {
 if (offset < 0 || offset > this.characterCount ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Offset out of bounds in TextLayout.getNextRightHit()"]);
 }if (policy == null ) {
@@ -517,11 +499,11 @@ return policy.getStrongCaret$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo
 return null;
 }});
 
-Clazz.newMeth(C$, 'getNextRightHit$I', function (offset) {
+Clazz.newMeth(C$, 'getNextRightHit$I',  function (offset) {
 return this.getNextRightHit$I$java_awt_font_TextLayout_CaretPolicy(offset, C$.DEFAULT_CARET_POLICY);
 });
 
-Clazz.newMeth(C$, 'getNextLeftHit$java_awt_font_TextHitInfo', function (hit) {
+Clazz.newMeth(C$, 'getNextLeftHit$java_awt_font_TextHitInfo',  function (hit) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [hit]);
 var caret=p$1.hitToCaret$java_awt_font_TextHitInfo.apply(this, [hit]);
@@ -533,7 +515,7 @@ return null;
 return p$1.caretToHit$I.apply(this, [caret]);
 });
 
-Clazz.newMeth(C$, 'getNextLeftHit$I$java_awt_font_TextLayout_CaretPolicy', function (offset, policy) {
+Clazz.newMeth(C$, 'getNextLeftHit$I$java_awt_font_TextLayout_CaretPolicy',  function (offset, policy) {
 if (policy == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null CaretPolicy passed to TextLayout.getNextLeftHit()"]);
 }if (offset < 0 || offset > this.characterCount ) {
@@ -548,11 +530,11 @@ return policy.getStrongCaret$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo
 return null;
 }});
 
-Clazz.newMeth(C$, 'getNextLeftHit$I', function (offset) {
+Clazz.newMeth(C$, 'getNextLeftHit$I',  function (offset) {
 return this.getNextLeftHit$I$java_awt_font_TextLayout_CaretPolicy(offset, C$.DEFAULT_CARET_POLICY);
 });
 
-Clazz.newMeth(C$, 'getVisualOtherHit$java_awt_font_TextHitInfo', function (hit) {
+Clazz.newMeth(C$, 'getVisualOtherHit$java_awt_font_TextHitInfo',  function (hit) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [hit]);
 var hitCharIndex=hit.getCharIndex$();
@@ -587,12 +569,12 @@ leading=charIndex == this.characterCount;
 }}return leading ? $I$(13).leading$I(charIndex) : $I$(13).trailing$I(charIndex);
 });
 
-Clazz.newMeth(C$, 'getCaretPath$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D', function (hit, bounds) {
+Clazz.newMeth(C$, 'getCaretPath$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D',  function (hit, bounds) {
 var info=this.getCaretInfo$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D(hit, bounds);
 return Clazz.array(Double.TYPE, -1, [info[2], info[3], info[4], info[5]]);
 }, p$1);
 
-Clazz.newMeth(C$, 'getCaretPath$I$java_awt_geom_Rectangle2D$Z', function (caret, bounds, clipToBounds) {
+Clazz.newMeth(C$, 'getCaretPath$I$java_awt_geom_Rectangle2D$Z',  function (caret, bounds, clipToBounds) {
 var info=p$1.getCaretInfo$I$java_awt_geom_Rectangle2D$FA.apply(this, [caret, bounds, null]);
 var pos=info[0];
 var slope=info[1];
@@ -666,8 +648,8 @@ y2=y0 - (right - x0) / slope;
 }}}}return threePoints ? Clazz.array(Double.TYPE, -1, [x0, y0, x2, y2, x1, y1]) : Clazz.array(Double.TYPE, -1, [x0, y0, x1, y1]);
 }, p$1);
 
-Clazz.newMeth(C$, 'pathToShape$DA$Z$sun_font_LayoutPathImpl', function (path, close, lp) {
-var result=Clazz.new_($I$(14).c$$I$I,[0, path.length]);
+Clazz.newMeth(C$, 'pathToShape$DA$Z$sun_font_LayoutPathImpl',  function (path, close, lp) {
+var result=Clazz.new_($I$(14,1).c$$I$I,[0, path.length]);
 result.moveTo$F$F(path[0], path[1]);
 for (var i=2; i < path.length; i+=2) {
 result.lineTo$F$F(path[i], path[i + 1]);
@@ -679,7 +661,7 @@ result=lp.mapShape$java_awt_Shape(result);
 }return result;
 }, 1);
 
-Clazz.newMeth(C$, 'getCaretShape$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D', function (hit, bounds) {
+Clazz.newMeth(C$, 'getCaretShape$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D',  function (hit, bounds) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [hit]);
 if (bounds == null ) {
@@ -687,13 +669,13 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null Rectangle2D 
 }return C$.pathToShape$DA$Z$sun_font_LayoutPathImpl(p$1.getCaretPath$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D.apply(this, [hit, bounds]), false, this.textLine.getLayoutPath$());
 });
 
-Clazz.newMeth(C$, 'getCaretShape$java_awt_font_TextHitInfo', function (hit) {
+Clazz.newMeth(C$, 'getCaretShape$java_awt_font_TextHitInfo',  function (hit) {
 return this.getCaretShape$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D(hit, p$1.getNaturalBounds.apply(this, []));
 });
 
-Clazz.newMeth(C$, 'getStrongHit$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo', function (hit1, hit2) {
-var hit1Level=($b$[0] = this.getCharacterLevel$I(hit1.getCharIndex$()), $b$[0]);
-var hit2Level=($b$[0] = this.getCharacterLevel$I(hit2.getCharIndex$()), $b$[0]);
+Clazz.newMeth(C$, 'getStrongHit$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo',  function (hit1, hit2) {
+var hit1Level=this.getCharacterLevel$I(hit1.getCharIndex$());
+var hit2Level=this.getCharacterLevel$I(hit2.getCharIndex$());
 if (hit1Level == hit2Level) {
 if (hit2.isLeadingEdge$() && !hit1.isLeadingEdge$() ) {
 return hit2;
@@ -703,16 +685,16 @@ return hit1;
 return (hit1Level < hit2Level) ? hit1 : hit2;
 }}, p$1);
 
-Clazz.newMeth(C$, 'getCharacterLevel$I', function (index) {
+Clazz.newMeth(C$, 'getCharacterLevel$I',  function (index) {
 if (index < -1 || index > this.characterCount ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Index is out of range in getCharacterLevel."]);
 }p$1.ensureCache.apply(this, []);
 if (index == -1 || index == this.characterCount ) {
-return $b$[0] = ((this.textLine.isDirectionLTR$() ? 0 : 1)|0), $b$[0];
-}return $b$[0] = this.textLine.getCharLevel$I(index), $b$[0];
+return ($b$[0] = (this.textLine.isDirectionLTR$() ? 0 : 1), $b$[0]);
+}return this.textLine.getCharLevel$I(index);
 });
 
-Clazz.newMeth(C$, 'getCaretShapes$I$java_awt_geom_Rectangle2D$java_awt_font_TextLayout_CaretPolicy', function (offset, bounds, policy) {
+Clazz.newMeth(C$, 'getCaretShapes$I$java_awt_geom_Rectangle2D$java_awt_font_TextLayout_CaretPolicy',  function (offset, bounds, policy) {
 p$1.ensureCache.apply(this, []);
 if (offset < 0 || offset > this.characterCount ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Offset out of bounds in TextLayout.getCaretShapes()"]);
@@ -742,15 +724,15 @@ result[1]=hitShape;
 }}return result;
 });
 
-Clazz.newMeth(C$, 'getCaretShapes$I$java_awt_geom_Rectangle2D', function (offset, bounds) {
+Clazz.newMeth(C$, 'getCaretShapes$I$java_awt_geom_Rectangle2D',  function (offset, bounds) {
 return this.getCaretShapes$I$java_awt_geom_Rectangle2D$java_awt_font_TextLayout_CaretPolicy(offset, bounds, C$.DEFAULT_CARET_POLICY);
 });
 
-Clazz.newMeth(C$, 'getCaretShapes$I', function (offset) {
+Clazz.newMeth(C$, 'getCaretShapes$I',  function (offset) {
 return this.getCaretShapes$I$java_awt_geom_Rectangle2D$java_awt_font_TextLayout_CaretPolicy(offset, p$1.getNaturalBounds.apply(this, []), C$.DEFAULT_CARET_POLICY);
 });
 
-Clazz.newMeth(C$, 'boundingShape$DA$DA', function (path0, path1) {
+Clazz.newMeth(C$, 'boundingShape$DA$DA',  function (path0, path1) {
 var result=C$.pathToShape$DA$Z$sun_font_LayoutPathImpl(path0, false, null);
 var sameDirection;
 if (this.isVerticalLine) {
@@ -775,7 +757,7 @@ result.closePath$();
 return result;
 }, p$1);
 
-Clazz.newMeth(C$, 'caretBoundingShape$I$I$java_awt_geom_Rectangle2D', function (caret0, caret1, bounds) {
+Clazz.newMeth(C$, 'caretBoundingShape$I$I$java_awt_geom_Rectangle2D',  function (caret0, caret1, bounds) {
 if (caret0 > caret1) {
 var temp=caret0;
 caret0=caret1;
@@ -783,7 +765,7 @@ caret1=temp;
 }return p$1.boundingShape$DA$DA.apply(this, [p$1.getCaretPath$I$java_awt_geom_Rectangle2D$Z.apply(this, [caret0, bounds, true]), p$1.getCaretPath$I$java_awt_geom_Rectangle2D$Z.apply(this, [caret1, bounds, true])]);
 }, p$1);
 
-Clazz.newMeth(C$, 'leftShape$java_awt_geom_Rectangle2D', function (bounds) {
+Clazz.newMeth(C$, 'leftShape$java_awt_geom_Rectangle2D',  function (bounds) {
 var path0;
 if (this.isVerticalLine) {
 path0=Clazz.array(Double.TYPE, -1, [bounds.getX$(), bounds.getY$(), bounds.getX$() + bounds.getWidth$(), bounds.getY$()]);
@@ -793,7 +775,7 @@ path0=Clazz.array(Double.TYPE, -1, [bounds.getX$(), bounds.getY$() + bounds.getH
 return p$1.boundingShape$DA$DA.apply(this, [path0, path1]);
 }, p$1);
 
-Clazz.newMeth(C$, 'rightShape$java_awt_geom_Rectangle2D', function (bounds) {
+Clazz.newMeth(C$, 'rightShape$java_awt_geom_Rectangle2D',  function (bounds) {
 var path1;
 if (this.isVerticalLine) {
 path1=Clazz.array(Double.TYPE, -1, [bounds.getX$(), bounds.getY$() + bounds.getHeight$(), bounds.getX$() + bounds.getWidth$(), bounds.getY$() + bounds.getHeight$()]);
@@ -803,7 +785,7 @@ path1=Clazz.array(Double.TYPE, -1, [bounds.getX$() + bounds.getWidth$(), bounds.
 return p$1.boundingShape$DA$DA.apply(this, [path0, path1]);
 }, p$1);
 
-Clazz.newMeth(C$, 'getLogicalRangesForVisualSelection$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo', function (firstEndpoint, secondEndpoint) {
+Clazz.newMeth(C$, 'getLogicalRangesForVisualSelection$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo',  function (firstEndpoint, secondEndpoint) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [firstEndpoint]);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [secondEndpoint]);
@@ -826,7 +808,7 @@ for (var i=0; i < this.characterCount; i++) {
 if (included[i] != inrun ) {
 inrun=!inrun;
 if (inrun) {
-count++;
+++count;
 }}}
 var ranges=Clazz.array(Integer.TYPE, [count * 2]);
 count=0;
@@ -841,13 +823,13 @@ ranges[count++]=this.characterCount;
 }return ranges;
 });
 
-Clazz.newMeth(C$, 'getVisualHighlightShape$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D', function (firstEndpoint, secondEndpoint, bounds) {
+Clazz.newMeth(C$, 'getVisualHighlightShape$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D',  function (firstEndpoint, secondEndpoint, bounds) {
 p$1.ensureCache.apply(this, []);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [firstEndpoint]);
 p$1.checkTextHit$java_awt_font_TextHitInfo.apply(this, [secondEndpoint]);
 if (bounds == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null Rectangle2D passed to TextLayout.getVisualHighlightShape()"]);
-}var result=Clazz.new_($I$(14).c$$I,[0]);
+}var result=Clazz.new_($I$(14,1).c$$I,[0]);
 var firstCaret=p$1.hitToCaret$java_awt_font_TextHitInfo.apply(this, [firstEndpoint]);
 var secondCaret=p$1.hitToCaret$java_awt_font_TextHitInfo.apply(this, [secondEndpoint]);
 result.append$java_awt_Shape$Z(p$1.caretBoundingShape$I$I$java_awt_geom_Rectangle2D.apply(this, [firstCaret, secondCaret, bounds]), false);
@@ -864,11 +846,11 @@ result=lp.mapShape$java_awt_Shape(result);
 }return result;
 });
 
-Clazz.newMeth(C$, 'getVisualHighlightShape$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo', function (firstEndpoint, secondEndpoint) {
+Clazz.newMeth(C$, 'getVisualHighlightShape$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo',  function (firstEndpoint, secondEndpoint) {
 return this.getVisualHighlightShape$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo$java_awt_geom_Rectangle2D(firstEndpoint, secondEndpoint, p$1.getNaturalBounds.apply(this, []));
 });
 
-Clazz.newMeth(C$, 'getLogicalHighlightShape$I$I$java_awt_geom_Rectangle2D', function (firstEndpoint, secondEndpoint, bounds) {
+Clazz.newMeth(C$, 'getLogicalHighlightShape$I$I$java_awt_geom_Rectangle2D',  function (firstEndpoint, secondEndpoint, bounds) {
 if (bounds == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null Rectangle2D passed to TextLayout.getLogicalHighlightShape()"]);
 }p$1.ensureCache.apply(this, []);
@@ -878,7 +860,7 @@ firstEndpoint=secondEndpoint;
 secondEndpoint=t;
 }if (firstEndpoint < 0 || secondEndpoint > this.characterCount ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Range is invalid in TextLayout.getLogicalHighlightShape()"]);
-}var result=Clazz.new_($I$(14).c$$I,[0]);
+}var result=Clazz.new_($I$(14,1).c$$I,[0]);
 var carets=Clazz.array(Integer.TYPE, [10]);
 var count=0;
 if (firstEndpoint < secondEndpoint) {
@@ -887,7 +869,7 @@ do {
 carets[count++]=p$1.hitToCaret$java_awt_font_TextHitInfo.apply(this, [$I$(13).leading$I(logIndex)]);
 var ltr=this.textLine.isCharLTR$I(logIndex);
 do {
-logIndex++;
+++logIndex;
 } while (logIndex < secondEndpoint && this.textLine.isCharLTR$I(logIndex) == ltr  );
 var hitCh=logIndex;
 carets[count++]=p$1.hitToCaret$java_awt_font_TextHitInfo.apply(this, [$I$(13).trailing$I(hitCh - 1)]);
@@ -917,11 +899,11 @@ result=lp.mapShape$java_awt_Shape(result);
 }return result;
 });
 
-Clazz.newMeth(C$, 'getLogicalHighlightShape$I$I', function (firstEndpoint, secondEndpoint) {
+Clazz.newMeth(C$, 'getLogicalHighlightShape$I$I',  function (firstEndpoint, secondEndpoint) {
 return this.getLogicalHighlightShape$I$I$java_awt_geom_Rectangle2D(firstEndpoint, secondEndpoint, p$1.getNaturalBounds.apply(this, []));
 });
 
-Clazz.newMeth(C$, 'getBlackBoxBounds$I$I', function (firstEndpoint, secondEndpoint) {
+Clazz.newMeth(C$, 'getBlackBoxBounds$I$I',  function (firstEndpoint, secondEndpoint) {
 p$1.ensureCache.apply(this, []);
 if (firstEndpoint > secondEndpoint) {
 var t=firstEndpoint;
@@ -929,7 +911,7 @@ firstEndpoint=secondEndpoint;
 secondEndpoint=t;
 }if (firstEndpoint < 0 || secondEndpoint > this.characterCount ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid range passed to TextLayout.getBlackBoxBounds()"]);
-}var result=Clazz.new_($I$(14).c$$I,[1]);
+}var result=Clazz.new_($I$(14,1).c$$I,[1]);
 if (firstEndpoint < this.characterCount) {
 for (var logIndex=firstEndpoint; logIndex < secondEndpoint; logIndex++) {
 var r=this.textLine.getCharBounds$I(logIndex);
@@ -945,17 +927,17 @@ result=lp.mapShape$java_awt_Shape(result);
 }return result;
 });
 
-Clazz.newMeth(C$, 'caretToPointDistance$FA$F$F', function (caretInfo, x, y) {
+Clazz.newMeth(C$, 'caretToPointDistance$FA$F$F',  function (caretInfo, x, y) {
 var lineDistance=this.isVerticalLine ? y : x;
 var distanceOffBaseline=this.isVerticalLine ? -x : y;
 return lineDistance - caretInfo[0] + (distanceOffBaseline * caretInfo[1]);
 }, p$1);
 
-Clazz.newMeth(C$, 'hitTestChar$F$F$java_awt_geom_Rectangle2D', function (x, y, bounds) {
+Clazz.newMeth(C$, 'hitTestChar$F$F$java_awt_geom_Rectangle2D',  function (x, y, bounds) {
 var lp=this.textLine.getLayoutPath$();
 var prev=false;
 if (lp != null ) {
-var pt=Clazz.new_($I$(17).c$$F$F,[x, y]);
+var pt=Clazz.new_($I$(17,1).c$$F$F,[x, y]);
 prev=lp.pointToPath$java_awt_geom_Point2D$java_awt_geom_Point2D(pt, pt);
 x=pt.x;
 y=pt.y;
@@ -995,12 +977,12 @@ cy=this.textLine.getMetrics$().descent - cm.descent + cm.ssOffset;
 cy=cm.effectiveBaselineOffset$FA(this.baselineOffsets) + cm.ssOffset;
 }var dy=(cm.descent - cm.ascent) / 2 - cy;
 dya=dy * cm.italicAngle;
-cy += dy;
+cy+=dy;
 ydsq=(cy - y) * (cy - y);
 }var cx=this.textLine.getCharXPosition$I(i);
 var ca=this.textLine.getCharAdvance$I(i);
 var dx=ca / 2;
-cx += dx - dya;
+cx+=dx - dya;
 var nd=Math.sqrt(4 * (cx - x) * (cx - x)  + ydsq);
 if (nd < distance ) {
 distance=nd;
@@ -1018,22 +1000,22 @@ trail=this.characterCount;
 return result;
 });
 
-Clazz.newMeth(C$, 'hitTestChar$F$F', function (x, y) {
+Clazz.newMeth(C$, 'hitTestChar$F$F',  function (x, y) {
 return this.hitTestChar$F$F$java_awt_geom_Rectangle2D(x, y, p$1.getNaturalBounds.apply(this, []));
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 if (this.hashCodeCache == 0) {
 p$1.ensureCache.apply(this, []);
 this.hashCodeCache=this.textLine.hashCode$();
 }return this.hashCodeCache;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 return (Clazz.instanceOf(obj, "java.awt.font.TextLayout")) && this.equals$java_awt_font_TextLayout(obj) ;
 });
 
-Clazz.newMeth(C$, 'equals$java_awt_font_TextLayout', function (rhs) {
+Clazz.newMeth(C$, 'equals$java_awt_font_TextLayout',  function (rhs) {
 if (rhs == null ) {
 return false;
 }if (rhs === this ) {
@@ -1042,34 +1024,34 @@ return true;
 return this.textLine.equals$O(rhs.textLine);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 p$1.ensureCache.apply(this, []);
 return this.textLine.toString();
 });
 
-Clazz.newMeth(C$, 'draw$java_awt_Graphics2D$F$F', function (g2, x, y) {
+Clazz.newMeth(C$, 'draw$java_awt_Graphics2D$F$F',  function (g2, x, y) {
 if (g2 == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Null Graphics2D passed to TextLayout.draw()"]);
 }this.textLine.draw$java_awt_Graphics2D$F$F(g2, x - C$.dx, y - C$.dy);
 });
 
-Clazz.newMeth(C$, 'getTextLineForTesting$', function () {
+Clazz.newMeth(C$, 'getTextLineForTesting$',  function () {
 return this.textLine;
 });
 
-Clazz.newMeth(C$, 'sameBaselineUpTo$java_awt_Font$CA$I$I', function (font, text, start, limit) {
+Clazz.newMeth(C$, 'sameBaselineUpTo$java_awt_Font$CA$I$I',  function (font, text, start, limit) {
 return limit;
 }, 1);
 
-Clazz.newMeth(C$, 'getBaselineFromGraphic$java_awt_font_GraphicAttribute', function (graphic) {
-var alignment=($b$[0] = (graphic.getAlignment$()|0), $b$[0]);
+Clazz.newMeth(C$, 'getBaselineFromGraphic$java_awt_font_GraphicAttribute',  function (graphic) {
+var alignment=($b$[0] = graphic.getAlignment$(), $b$[0]);
 if (alignment == -2 || alignment == -1 ) {
-return $b$[0] = 0, $b$[0];
+return 0;
 } else {
-return $b$[0] = alignment, $b$[0];
+return alignment;
 }}, 1);
 
-Clazz.newMeth(C$, 'getOutline$java_awt_geom_AffineTransform', function (tx) {
+Clazz.newMeth(C$, 'getOutline$java_awt_geom_AffineTransform',  function (tx) {
 p$1.ensureCache.apply(this, []);
 var result=this.textLine.getOutline$java_awt_geom_AffineTransform(tx);
 var lp=this.textLine.getLayoutPath$();
@@ -1078,11 +1060,11 @@ result=lp.mapShape$java_awt_Shape(result);
 }return result;
 });
 
-Clazz.newMeth(C$, 'getLayoutPath$', function () {
+Clazz.newMeth(C$, 'getLayoutPath$',  function () {
 return this.textLine.getLayoutPath$();
 });
 
-Clazz.newMeth(C$, 'hitToPoint$java_awt_font_TextHitInfo$java_awt_geom_Point2D', function (hit, point) {
+Clazz.newMeth(C$, 'hitToPoint$java_awt_font_TextHitInfo$java_awt_geom_Point2D',  function (hit, point) {
 if (hit == null  || point == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,[(hit == null  ? "hit" : "point") + " can't be null"]);
 }p$1.ensureCache.apply(this, []);
@@ -1104,27 +1086,30 @@ var lp=this.textLine.getLayoutPath$();
 if (lp != null ) {
 lp.pathToPoint$java_awt_geom_Point2D$Z$java_awt_geom_Point2D(point, ltr != leading , point);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.DEFAULT_CARET_POLICY=Clazz.new_($I$(1,1));
+};
 var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.TextLayout, "CaretPolicy", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TextLayout, "CaretPolicy", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'getStrongCaret$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo$java_awt_font_TextLayout', function (hit1, hit2, layout) {
+Clazz.newMeth(C$, 'getStrongCaret$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo$java_awt_font_TextLayout',  function (hit1, hit2, layout) {
 return p$1.getStrongHit$java_awt_font_TextHitInfo$java_awt_font_TextHitInfo.apply(layout, [hit1, hit2]);
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:52 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

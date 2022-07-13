@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),p$1={},I$=[[0,'fr.orsay.lri.varna.views.VueAnnotation','fr.orsay.lri.varna.views.VueHighlightRegionEdit','fr.orsay.lri.varna.views.VueChemProbAnnotation','fr.orsay.lri.varna.models.annotations.TextAnnotation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ControleurTableAnnotations", null, null, ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),p$1={},I$=[[0,'fr.orsay.lri.varna.views.VueAnnotation','fr.orsay.lri.varna.views.VueHighlightRegionEdit','fr.orsay.lri.varna.views.VueChemProbAnnotation','fr.orsay.lri.varna.models.annotations.TextAnnotation']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ControleurTableAnnotations", null, null, ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._table=null;
-this._vp=null;
-this._type=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['_type'],'O',['_table','javax.swing.JTable','_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$javax_swing_JTable$fr_orsay_lri_varna_VARNAPanel$I', function (table, vp, type) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._table=table;
 this._vp=vp;
 this._type=type;
@@ -54,12 +48,12 @@ var o=this._table.getValueAt$I$I(this._table.getSelectedRow$(), 0);
 if (Clazz.instanceOf(o, "fr.orsay.lri.varna.models.annotations.TextAnnotation")) {
 var textAnnot=o;
 var vueAnnotation;
-vueAnnotation=Clazz.new_($I$(1).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_models_annotations_TextAnnotation$Z,[this._vp, textAnnot, false]);
+vueAnnotation=Clazz.new_($I$(1,1).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_models_annotations_TextAnnotation$Z,[this._vp, textAnnot, false]);
 vueAnnotation.show$();
 } else if (Clazz.instanceOf(o, "fr.orsay.lri.varna.models.annotations.HighlightRegionAnnotation")) {
 var annot=o;
 var an=annot.clone$();
-var vueAnnotation=Clazz.new_($I$(2).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_models_annotations_HighlightRegionAnnotation,[this._vp, annot]);
+var vueAnnotation=Clazz.new_($I$(2,1).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_models_annotations_HighlightRegionAnnotation,[this._vp, annot]);
 if (!vueAnnotation.show$()) {
 annot.setBases$java_util_ArrayList(an.getBases$());
 annot.setFillColor$java_awt_Color(an.getFillColor$());
@@ -68,7 +62,7 @@ annot.setRadius$D(an.getRadius$());
 }} else if (Clazz.instanceOf(o, "fr.orsay.lri.varna.models.annotations.ChemProbAnnotation")) {
 var annot=o;
 var an=annot.clone$();
-var vueAnnotation=Clazz.new_($I$(3).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_models_annotations_ChemProbAnnotation,[this._vp, annot]);
+var vueAnnotation=Clazz.new_($I$(3,1).c$$fr_orsay_lri_varna_VARNAPanel$fr_orsay_lri_varna_models_annotations_ChemProbAnnotation,[this._vp, annot]);
 if (!vueAnnotation.show$()) {
 annot.setColor$java_awt_Color(an.getColor$());
 annot.setIntensity$D(an.getIntensity$());
@@ -103,4 +97,4 @@ this._vp.repaint$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:44 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

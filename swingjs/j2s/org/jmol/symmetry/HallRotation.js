@@ -1,24 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.M4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HallRotation");
-C$.hallRotationTerms=null;
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.M4']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HallRotation");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rotCode=null;
-this.seitzMatrix=null;
-this.seitzMatrixInv=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.seitzMatrix=Clazz.new_($I$(1));
-this.seitzMatrixInv=Clazz.new_($I$(1));
-}, 1);
+this.seitzMatrix=Clazz.new_($I$(1,1));
+this.seitzMatrixInv=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['S',['rotCode'],'O',['seitzMatrix','javajs.util.M4','+seitzMatrixInv']]
+,['O',['hallRotationTerms','org.jmol.symmetry.HallRotation[]']]]
 
 Clazz.newMeth(C$, 'c$$S$S', function (code, matrixData) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.rotCode=code;
 var data=Clazz.array(Float.TYPE, [16]);
 var dataInv=Clazz.array(Float.TYPE, [16]);
@@ -57,4 +51,4 @@ return (C$.hallRotationTerms == null  ? C$.hallRotationTerms=Clazz.array(C$, -1,
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

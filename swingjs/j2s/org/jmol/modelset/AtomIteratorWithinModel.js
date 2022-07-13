@@ -1,38 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,['org.jmol.atomdata.RadiusData','.EnumType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AtomIteratorWithinModel", null, null, 'org.jmol.api.AtomIndexIterator');
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,['org.jmol.atomdata.RadiusData','.EnumType']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AtomIteratorWithinModel", null, null, 'org.jmol.api.AtomIndexIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cubeIterator=null;
-this.bspf=null;
-this.threadSafe=false;
-this.hemisphereOnly=false;
-this.isZeroBased=false;
-this.modelIndex=0;
-this.atomIndex=0;
-this.zeroBase=0;
-this.distanceSquared=0;
-this.bsSelected=null;
-this.isGreaterOnly=false;
-this.checkGreater=false;
-this.radiusData=null;
-this.vdw1=0;
-this.isVdw=false;
-this.atoms=null;
-this.vwr=null;
-this.iNext=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.modelIndex=2147483647;
 this.atomIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['threadSafe','hemisphereOnly','isZeroBased','isGreaterOnly','checkGreater','isVdw'],'F',['distanceSquared','vdw1'],'I',['modelIndex','atomIndex','zeroBase','iNext'],'O',['cubeIterator','org.jmol.bspt.CubeIterator','bspf','org.jmol.bspt.Bspf','bsSelected','javajs.util.BS','radiusData','org.jmol.atomdata.RadiusData','atoms','org.jmol.modelset.Atom[]','vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'initialize$org_jmol_bspt_Bspf$javajs_util_BS$Z$Z$Z$Z', function (bspf, bsSelected, isGreaterOnly, isZeroBased, hemisphereOnly, threadSafe) {
@@ -131,4 +110,4 @@ Clazz.newMeth(C$, 'getPosition$', function () {
 return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

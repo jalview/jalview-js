@@ -1,31 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.export.UseTable','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSExporter", null, 'org.jmol.export.__CartesianExporter');
+(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.export.UseTable','org.jmol.export.___Exporter']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSExporter", null, 'org.jmol.export.__CartesianExporter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-{
-Jmol && Jmol.GLmol && Jmol.GLmol.extendJSExporter(org.jmol.export.JSExporter.prototype);
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.htSpheresRendered=null;
-this.htObjects=null;
-this.html5Applet=null;
-this.useTable=null;
-this.ret=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.htSpheresRendered=Clazz.new_($I$(1));
-this.htObjects=Clazz.new_($I$(1));
+this.htSpheresRendered=Clazz.new_($I$(1,1));
+this.htObjects=Clazz.new_($I$(1,1));
 this.ret=Clazz.array(String, [1]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['htSpheresRendered','java.util.Map','+htObjects','html5Applet','java.lang.Object','useTable','org.jmol.export.UseTable','ret','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'jsInitExport$O', function (applet) {
@@ -48,7 +35,7 @@ Clazz.newMeth(C$, 'jsTriangle$O$I$javajs_util_T3$javajs_util_T3$javajs_util_T3',
 
 Clazz.newMeth(C$, 'outputHeader$', function () {
 this.html5Applet=this.vwr.html5Applet;
-this.useTable=Clazz.new_($I$(2).c$$S,["JS"]);
+this.useTable=Clazz.new_($I$(2,1).c$$S,["JS"]);
 this.htSpheresRendered.clear$();
 this.htObjects.clear$();
 p$1.jsInitExport$O.apply(this, [this.html5Applet]);
@@ -63,13 +50,13 @@ this.useTable=null;
 
 Clazz.newMeth(C$, 'outputSphere$javajs_util_P3$F$H$Z', function (ptCenter, radius, colix, checkRadius) {
 var iRad=Math.round(radius * 100);
-var check=P$.___Exporter.round$javajs_util_T3(ptCenter) + (checkRadius ? " " + iRad : "");
+var check=$I$(3).round$javajs_util_T3(ptCenter) + (checkRadius ? " " + iRad : "");
 if (this.htSpheresRendered.get$O(check) != null ) return;
-this.htSpheresRendered.put$TK$TV(check, $I$(3).TRUE);
+this.htSpheresRendered.put$O$O(check, Boolean.TRUE);
 var found=this.useTable.getDefRet$S$SA("S" + colix + "_" + iRad , this.ret);
 var o;
 if (found) o=this.htObjects.get$O(this.ret[0]);
- else this.htObjects.put$TK$TV(this.ret[0], o=Clazz.array(java.lang.Object, -1, [p$1.getColor$H.apply(this, [colix]), Float.valueOf$F(radius)]));
+ else this.htObjects.put$O$O(this.ret[0], o=Clazz.array(java.lang.Object, -1, [p$1.getColor$H.apply(this, [colix]), Float.valueOf$F(radius)]));
 p$1.jsSphere$O$S$Z$javajs_util_T3$OA.apply(this, [this.html5Applet, this.ret[0], !found, ptCenter, o]);
 });
 
@@ -79,7 +66,7 @@ var length=pt1.distance$javajs_util_T3(pt2);
 var found=this.useTable.getDefRet$S$SA("C" + colix + "_" + Math.round(length * 100) + "_" + new Float(radius).toString() + "_" + endcaps , this.ret);
 var o;
 if (found) o=this.htObjects.get$O(this.ret[0]);
- else this.htObjects.put$TK$TV(this.ret[0], o=Clazz.array(java.lang.Object, -1, [p$1.getColor$H.apply(this, [colix]), Float.valueOf$F(length), Float.valueOf$F(radius)]));
+ else this.htObjects.put$O$O(this.ret[0], o=Clazz.array(java.lang.Object, -1, [p$1.getColor$H.apply(this, [colix]), Float.valueOf$F(length), Float.valueOf$F(radius)]));
 p$1.jsCylinder$O$S$Z$javajs_util_P3$javajs_util_P3$OA.apply(this, [this.html5Applet, this.ret[0], !found, pt1, pt2, o]);
 return true;
 });
@@ -91,7 +78,7 @@ Clazz.newMeth(C$, 'outputEllipsoid$javajs_util_P3$javajs_util_P3A$H', function (
 });
 
 Clazz.newMeth(C$, 'outputCone$javajs_util_P3$javajs_util_P3$F$H', function (ptBase, ptTip, radius, colix) {
-this.outputCylinder$javajs_util_P3$javajs_util_P3$javajs_util_P3$H$B$F$javajs_util_P3$javajs_util_P3$Z(null, ptBase, ptTip, colix, ($b$[0] = 0, $b$[0]), radius, null, null, false);
+this.outputCylinder$javajs_util_P3$javajs_util_P3$javajs_util_P3$H$B$F$javajs_util_P3$javajs_util_P3$Z(null, ptBase, ptTip, colix, 0, radius, null, null, false);
 });
 
 Clazz.newMeth(C$, 'getColor$H', function (colix) {
@@ -120,7 +107,7 @@ Clazz.newMeth(C$, 'output$javajs_util_T3', function (pt) {
 Clazz.newMeth(C$, 'plotImage$I$I$I$O$H$I$I', function (x, y, z, image, bgcolix, width, height) {
 });
 
-Clazz.newMeth(C$, 'plotText$I$I$I$H$S$javajs_awt_Font', function (x, y, z, colix, text, font3d) {
+Clazz.newMeth(C$, 'plotText$I$I$I$H$S$org_jmol_util_Font', function (x, y, z, colix, text, font3d) {
 });
 
 Clazz.newMeth(C$, 'getColors$HA', function (colixes) {
@@ -131,6 +118,13 @@ colors[i]=this.gdata.getColorArgbOrGray$H(colixes[i]);
 }
 return colors;
 }, p$1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+{
+Jmol && Jmol.GLmol && Jmol.GLmol.extendJSExporter(org.jmol.export.JSExporter.prototype);
+}
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

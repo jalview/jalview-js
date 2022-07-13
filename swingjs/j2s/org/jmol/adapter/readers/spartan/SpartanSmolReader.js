@@ -1,26 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.spartan"),p$1={},I$=[[0,'java.util.Hashtable','Boolean','javajs.util.PT','javajs.util.BC','javajs.util.SB','org.jmol.adapter.readers.spartan.SpartanArchive','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SpartanSmolReader", null, 'org.jmol.adapter.readers.spartan.SpartanInputReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.spartan"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','javajs.util.BC','javajs.util.SB','org.jmol.adapter.readers.spartan.SpartanArchive','org.jmol.util.Logger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SpartanSmolReader", null, 'org.jmol.adapter.readers.spartan.SpartanInputReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.iHaveModelStatement=false;
-this.isCompoundDocument=false;
-this.inputOnly=false;
-this.espCharges=false;
-this.natCharges=false;
-this.isInputFirst=false;
-this.iHaveNewDir=false;
-this.title=null;
-this.spartanArchive=null;
-this.titles=null;
-this.haveCharges=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['iHaveModelStatement','isCompoundDocument','inputOnly','espCharges','natCharges','isInputFirst','iHaveNewDir','haveCharges'],'S',['title'],'O',['spartanArchive','org.jmol.adapter.readers.spartan.SpartanArchive','titles','java.util.Map']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.isCompoundDocument=(this.rd$().indexOf$S("Compound Document File Directory") >= 0);
@@ -55,8 +41,8 @@ this.discardLinesUntilContains$S("#JMOL_MODEL");
 return false;
 }if (!this.isInputFirst) {
 p$1.makeNewAtomSet.apply(this, []);
-}this.moData=Clazz.new_($I$(1));
-this.moData.put$TK$TV("isNormalized", $I$(2).TRUE);
+}this.moData=Clazz.new_($I$(1,1));
+this.moData.put$O$O("isNormalized", Boolean.TRUE);
 var isOK=false;
 if (modelNo == -2147483648 || this.titles == null  ) {
 modelNo=this.modelNumber;
@@ -102,7 +88,7 @@ return false;
 this.asc.setAtomSetName$S(p$1.readArchive.apply(this, []));
 return false;
 }return true;
-}if (this.line.indexOf$S("5D shell") >= 0) this.moData.put$TK$TV("calculationType", this.calculationType=this.line);
+}if (this.line.indexOf$S("5D shell") >= 0) this.moData.put$O$O("calculationType", this.calculationType=this.line);
 return true;
 });
 
@@ -118,36 +104,36 @@ if (this.moData != null ) {
 var n=this.asc.atomSetInfo.get$O("HOMO_N");
 if (n != null ) {
 var i=n.intValue$();
-this.moData.put$TK$TV("HOMO", Integer.valueOf$I(i));
+this.moData.put$O$O("HOMO", Integer.valueOf$I(i));
 }}});
 
 Clazz.newMeth(C$, 'readMyTransform', function () {
 var mat;
 var binaryCodes=this.rd$();
-var tokens=$I$(3).getTokens$S(binaryCodes.trim$());
+var tokens=$I$(2,"getTokens$S",[binaryCodes.trim$()]);
 if (tokens.length < 16) return;
 var bytes=Clazz.array(Byte.TYPE, [tokens.length]);
-for (var i=0; i < tokens.length; i++) bytes[i]=(($I$(3).parseIntRadix$S$I(tokens[i], 16)|0)|0);
+for (var i=0; i < tokens.length; i++) bytes[i]=($I$(2).parseIntRadix$S$I(tokens[i], 16)|0);
 
 mat=Clazz.array(Float.TYPE, [16]);
-for (var i=16, j=bytes.length - 8; --i >= 0; j-=8) mat[i]=$I$(4).bytesToDoubleToFloat$BA$I$Z(bytes, j, false);
+for (var i=16, j=bytes.length - 8; --i >= 0; j-=8) mat[i]=$I$(3).bytesToDoubleToFloat$BA$I$Z(bytes, j, false);
 
 this.setTransform$F$F$F$F$F$F$F$F$F(mat[0], mat[1], mat[2], mat[4], mat[5], mat[6], mat[8], mat[9], mat[10]);
 }, p$1);
 
 Clazz.newMeth(C$, 'readOutput', function () {
-this.titles=Clazz.new_($I$(1));
-var header=Clazz.new_($I$(5));
+this.titles=Clazz.new_($I$(1,1));
+var header=Clazz.new_($I$(4,1));
 var pt;
 while (this.rd$() != null  && !this.line.startsWith$S("END ") ){
 header.append$S(this.line).append$S("\n");
-if ((pt=this.line.indexOf$S(")")) > 0) this.titles.put$TK$TV("Title" + this.parseIntRange$S$I$I(this.line, 0, pt), (this.line.substring$I(pt + 1).trim$()));
+if ((pt=this.line.indexOf$S(")")) > 0) this.titles.put$O$O("Title" + this.parseIntRange$S$I$I(this.line, 0, pt), (this.line.substring$I(pt + 1).trim$()));
 }
 this.asc.setInfo$S$O("fileHeader", header.toString());
 }, p$1);
 
 Clazz.newMeth(C$, 'readArchive', function () {
-this.spartanArchive=Clazz.new_($I$(6).c$$org_jmol_adapter_readers_quantum_BasisFunctionReader$S$S$I,[this, this.bondData, "END Directory Entry ", 0]);
+this.spartanArchive=Clazz.new_($I$(5,1).c$$org_jmol_adapter_readers_quantum_BasisFunctionReader$S$S$I,[this, this.bondData, "END Directory Entry ", 0]);
 var modelName=p$1.readArchiveHeader.apply(this, []);
 if (modelName != null ) this.modelAtomCount=this.spartanArchive.readArchive$S$Z$I$Z(this.line, false, this.asc.ac, false);
 return (this.constraints == null  ? modelName : null);
@@ -162,7 +148,7 @@ Clazz.newMeth(C$, 'readProperties', function () {
 if (this.modelAtomCount == 0) {
 this.rd$();
 return;
-}if (this.spartanArchive == null ) this.spartanArchive=Clazz.new_($I$(6).c$$org_jmol_adapter_readers_quantum_BasisFunctionReader$S$S$I,[this, this.bondData, "END Directory Entry ", this.modelAtomCount]);
+}if (this.spartanArchive == null ) this.spartanArchive=Clazz.new_($I$(5,1).c$$org_jmol_adapter_readers_quantum_BasisFunctionReader$S$S$I,[this, this.bondData, "END Directory Entry ", this.modelAtomCount]);
 this.spartanArchive.readProperties$();
 this.rd$();
 p$1.setCharges.apply(this, []);
@@ -170,12 +156,12 @@ p$1.setCharges.apply(this, []);
 
 Clazz.newMeth(C$, 'readArchiveHeader', function () {
 var modelInfo=this.rd$();
-if (this.debugging) $I$(7).debug$S(modelInfo);
+if (this.debugging) $I$(6).debug$S(modelInfo);
 if (modelInfo.indexOf$S("Error:") == 0) return null;
 this.asc.setCollectionName$S(modelInfo);
 this.asc.setAtomSetName$S(modelInfo);
 var modelName=this.rd$();
-if (this.debugging) $I$(7).debug$S(modelName);
+if (this.debugging) $I$(6).debug$S(modelName);
 this.rd$();
 return modelName;
 }, p$1);
@@ -186,4 +172,4 @@ this.asc.setAtomSetName$S(this.constraints + (this.constraints.length$() == 0 ? 
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

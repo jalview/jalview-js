@@ -1,50 +1,37 @@
 (function(){var P$=Clazz.newPackage("swingjs.jzlib");
-var C$=Clazz.newClass(P$, "InflaterInputStream", null, 'java.io.FilterInputStream');
+/*c*/var C$=Clazz.newClass(P$, "InflaterInputStream", null, 'java.io.FilterInputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inflater=null;
-this.buf=null;
-this.len=0;
-this.closed=false;
-this.eof=false;
-this.close_in=false;
-this.myinflater=false;
-this.byte1=null;
-this.b=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.closed=false;
 this.eof=false;
-this.close_in=true;
+this.close_in=false;
 this.myinflater=false;
 this.byte1=Clazz.array(Byte.TYPE, [1]);
 this.b=Clazz.array(Byte.TYPE, [512]);
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_io_InputStream$swingjs_jzlib_Inflater$I$Z', function ($in, inflater, size, close_in) {
-C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['closed','eof','close_in','myinflater'],'I',['len'],'O',['inflater','swingjs.jzlib.Inflater','buf','byte[]','+byte1','+b']]]
+
+Clazz.newMeth(C$, 'c$$java_io_InputStream$swingjs_jzlib_Inflater$I$Z',  function ($in, inflater, size, close_in) {
+;C$.superclazz.c$$java_io_InputStream.apply(this,[$in]);C$.$init$.apply(this);
 this.inflater=inflater;
 this.buf=Clazz.array(Byte.TYPE, [size]);
 this.close_in=close_in;
 }, 1);
 
-Clazz.newMeth(C$, 'read$', function () {
+Clazz.newMeth(C$, 'read$',  function () {
 if (this.closed) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }return this.read$BA$I$I(this.byte1, 0, 1) == -1 ? -1 : this.byte1[0] & 255;
 });
 
-Clazz.newMeth(C$, 'read$BA$I$I', function (b, off, len) {
+Clazz.newMeth(C$, 'read$BA$I$I',  function (b, off, len) {
 return this.readInf$BA$I$I(b, off, len);
 });
 
-Clazz.newMeth(C$, 'readInf$BA$I$I', function (b, off, len) {
+Clazz.newMeth(C$, 'readInf$BA$I$I',  function (b, off, len) {
 if (this.closed) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }if (b == null ) {
@@ -77,18 +64,18 @@ if (this.inflater.avail_out == 0) break;
 return n;
 });
 
-Clazz.newMeth(C$, 'available$', function () {
+Clazz.newMeth(C$, 'available$',  function () {
 if (this.closed) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }return (this.eof ? 0 : 1);
 });
 
-Clazz.newMeth(C$, 'skip$J', function (n) {
-if (n < 0) {
+Clazz.newMeth(C$, 'skip$J',  function (n) {
+if (Long.$lt(n,0 )) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["negative skip length"]);
 }if (this.closed) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
-}var max=(Math.min(n, 2147483647)|0);
+}var max=Long.$ival(Math.min$J$J(n, 2147483647));
 var total=0;
 while (total < max){
 var len=max - total;
@@ -103,14 +90,14 @@ break;
 return total;
 });
 
-Clazz.newMeth(C$, 'close$', function () {
+Clazz.newMeth(C$, 'close$',  function () {
 if (!this.closed) {
 if (this.myinflater) this.inflater.end$();
 if (this.close_in) this.$in.close$();
 this.closed=true;
 }});
 
-Clazz.newMeth(C$, 'fill$', function () {
+Clazz.newMeth(C$, 'fill$',  function () {
 if (this.closed) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }this.len=this.$in.read$BA$I$I(this.buf, 0, this.buf.length);
@@ -118,40 +105,40 @@ if (this.len == -1) {
 if (this.inflater.istate.wrap == 0 && !this.inflater.finished$() ) {
 this.buf[0]=(0|0);
 this.len=1;
-} else if (this.inflater.istate.was != -1) {
+} else if (Long.$ne(this.inflater.istate.was,-1 )) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["footer is not found"]);
 } else {
 throw Clazz.new_(Clazz.load('java.io.EOFException').c$$S,["Unexpected end of ZLIB input stream"]);
 }}this.inflater.setInput$BA$I$I$Z(this.buf, 0, this.len, true);
 });
 
-Clazz.newMeth(C$, 'markSupported$', function () {
+Clazz.newMeth(C$, 'markSupported$',  function () {
 return false;
 });
 
-Clazz.newMeth(C$, 'mark$I', function (readlimit) {
+Clazz.newMeth(C$, 'mark$I',  function (readlimit) {
 });
 
-Clazz.newMeth(C$, 'reset$', function () {
+Clazz.newMeth(C$, 'reset$',  function () {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["mark/reset not supported"]);
 });
 
-Clazz.newMeth(C$, 'getTotalIn$', function () {
-return this.inflater.getTotalIn$();
+Clazz.newMeth(C$, 'getTotalIn$',  function () {
+return this.inflater.getTotalInL$();
 });
 
-Clazz.newMeth(C$, 'getTotalOut$', function () {
-return this.inflater.getTotalOut$();
+Clazz.newMeth(C$, 'getTotalOut$',  function () {
+return this.inflater.getTotalOutL$();
 });
 
-Clazz.newMeth(C$, 'getAvailIn$', function () {
+Clazz.newMeth(C$, 'getAvailIn$',  function () {
 if (this.inflater.avail_in <= 0) return null;
 var tmp=Clazz.array(Byte.TYPE, [this.inflater.avail_in]);
-System.arraycopy$O$I$O$I$I(this.inflater.next_in, this.inflater.next_in_index, tmp, 0, this.inflater.avail_in);
+System.arraycopy$O$I$O$I$I(this.inflater.$in, this.inflater.in_index, tmp, 0, this.inflater.avail_in);
 return tmp;
 });
 
-Clazz.newMeth(C$, 'readHeader$', function () {
+Clazz.newMeth(C$, 'readHeader$',  function () {
 var empty="".getBytes$();
 this.inflater.setInput$BA$I$I$Z(empty, 0, 0, false);
 this.inflater.setOutput$BA$I$I(empty, 0, 0);
@@ -168,10 +155,10 @@ if (err != 0) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,[this.infl
 } while (this.inflater.istate.inParsingHeader$());
 });
 
-Clazz.newMeth(C$, 'getInflater$', function () {
+Clazz.newMeth(C$, 'getInflater$',  function () {
 return this.inflater;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:21 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

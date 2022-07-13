@@ -1,55 +1,50 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'jalview.datamodel.AlignedCodon','jalview.util.Comparison','jalview.util.MapList','jalview.datamodel.SequenceFeature','java.util.Vector',['jalview.datamodel.Mapping','.AlignedCodonIterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Mapping", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'jalview.datamodel.AlignedCodon','jalview.util.Comparison','jalview.util.MapList','jalview.datamodel.SequenceFeature','java.util.Vector',['jalview.datamodel.Mapping','.AlignedCodonIterator']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Mapping", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['AlignedCodonIterator',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.map=null;
-this.to=null;
-this.mappedFromId=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.map=null;
 this.to=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_util_MapList', function (map) {
-C$.$init$.apply(this);
+C$.$fields$=[['S',['mappedFromId'],'O',['map','jalview.util.MapList','to','jalview.datamodel.SequenceI']]]
+
+Clazz.newMeth(C$, 'c$$jalview_util_MapList',  function (map) {
+;C$.$init$.apply(this);
 this.map=map;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$jalview_util_MapList', function (to, map) {
+Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$jalview_util_MapList',  function (to, map) {
 C$.c$$jalview_util_MapList.apply(this, [map]);
 this.to=to;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$IA$IA$I$I', function (to, exon, is, i, j) {
-C$.c$$jalview_datamodel_SequenceI$jalview_util_MapList.apply(this, [to, Clazz.new_($I$(3).c$$IA$IA$I$I,[exon, is, i, j])]);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$IA$IA$I$I',  function (to, exon, is, i, j) {
+C$.c$$jalview_datamodel_SequenceI$jalview_util_MapList.apply(this, [to, Clazz.new_($I$(3,1).c$$IA$IA$I$I,[exon, is, i, j])]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_Mapping', function (map2) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_Mapping',  function (map2) {
+;C$.$init$.apply(this);
 if (map2 !== this  && map2 != null  ) {
 if (map2.map != null ) {
-this.map=Clazz.new_($I$(3).c$$jalview_util_MapList,[map2.map]);
+this.map=Clazz.new_($I$(3,1).c$$jalview_util_MapList,[map2.map]);
 }this.to=map2.to;
 this.mappedFromId=map2.mappedFromId;
 }}, 1);
 
-Clazz.newMeth(C$, 'getMap$', function () {
+Clazz.newMeth(C$, 'getMap$',  function () {
 return this.map;
 });
 
-Clazz.newMeth(C$, 'setMap$jalview_util_MapList', function (map) {
+Clazz.newMeth(C$, 'setMap$jalview_util_MapList',  function (map) {
 this.map=map;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (o) {
+Clazz.newMeth(C$, 'equals$O',  function (o) {
 if (o == null  || !(Clazz.instanceOf(o, "jalview.datamodel.Mapping")) ) {
 return false;
 }var other=o;
@@ -64,14 +59,14 @@ return true;
 }return false;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 var hashCode=(this.to == null  ? 1 : this.to.hashCode$());
 if (this.map != null ) {
 hashCode=hashCode * 31 + this.map.hashCode$();
 }return hashCode;
 });
 
-Clazz.newMeth(C$, 'getPosition$I', function (mpos) {
+Clazz.newMeth(C$, 'getPosition$I',  function (mpos) {
 if (this.map != null ) {
 var mp=this.map.shiftTo$I(mpos);
 if (mp != null ) {
@@ -79,25 +74,19 @@ return mp[0];
 }}return mpos;
 });
 
-Clazz.newMeth(C$, 'getWord$I', function (mpos) {
-if (this.map != null ) {
-return this.map.getToWord$I(mpos);
-}return null;
-});
-
-Clazz.newMeth(C$, 'getWidth$', function () {
+Clazz.newMeth(C$, 'getWidth$',  function () {
 if (this.map != null ) {
 return this.map.getFromRatio$();
 }return 1;
 });
 
-Clazz.newMeth(C$, 'getMappedWidth$', function () {
+Clazz.newMeth(C$, 'getMappedWidth$',  function () {
 if (this.map != null ) {
 return this.map.getToRatio$();
 }return 1;
 });
 
-Clazz.newMeth(C$, 'getMappedPosition$I', function (pos) {
+Clazz.newMeth(C$, 'getMappedPosition$I',  function (pos) {
 if (this.map != null ) {
 var mp=this.map.shiftFrom$I(pos);
 if (mp != null ) {
@@ -105,7 +94,7 @@ return mp[0];
 }}return pos;
 });
 
-Clazz.newMeth(C$, 'getMappedWord$I', function (pos) {
+Clazz.newMeth(C$, 'getMappedWord$I',  function (pos) {
 if (this.map != null ) {
 var mp=this.map.shiftFrom$I(pos);
 if (mp != null ) {
@@ -113,7 +102,7 @@ return Clazz.array(Integer.TYPE, -1, [mp[0], mp[0] + mp[2] * (this.map.getToRati
 }}return null;
 });
 
-Clazz.newMeth(C$, 'locateFeature$jalview_datamodel_SequenceFeature', function (f) {
+Clazz.newMeth(C$, 'locateFeature$jalview_datamodel_SequenceFeature',  function (f) {
 if (true) {
 if (this.map != null ) {
 var frange=this.map.locateInFrom$I$I(f.getBegin$(), f.getEnd$());
@@ -121,7 +110,7 @@ if (frange == null ) {
 return null;
 }var vf=Clazz.array($I$(4), [(frange.length/2|0)]);
 for (var i=0, v=0; i < frange.length; i+=2, v++) {
-vf[v]=Clazz.new_($I$(4).c$$jalview_datamodel_SequenceFeature$I$I$S$F,[f, frange[i], frange[i + 1], f.getFeatureGroup$(), f.getScore$()]);
+vf[v]=Clazz.new_([f, frange[i], frange[i + 1], f.getFeatureGroup$(), f.getScore$()],$I$(4,1).c$$jalview_datamodel_SequenceFeature$I$I$S$F);
 if (frange.length > 2) {
 vf[v].setDescription$S(f.getDescription$() + "\nPart " + (v + 1) );
 }}
@@ -129,7 +118,7 @@ return vf;
 }}return Clazz.array($I$(4), -1, [f]);
 });
 
-Clazz.newMeth(C$, 'locateRange$I$I', function (from, to) {
+Clazz.newMeth(C$, 'locateRange$I$I',  function (from, to) {
 if (this.map != null ) {
 if (from <= to) {
 from=(this.map.getToLowest$() < from) ? from : this.map.getToLowest$();
@@ -145,7 +134,7 @@ return null;
 }return Clazz.array(Integer.TYPE, -1, [from, to]);
 });
 
-Clazz.newMeth(C$, 'locateMappedRange$I$I', function (from, to) {
+Clazz.newMeth(C$, 'locateMappedRange$I$I',  function (from, to) {
 if (this.map != null ) {
 if (from <= to) {
 from=(this.map.getFromLowest$() < from) ? from : this.map.getFromLowest$();
@@ -161,21 +150,21 @@ return null;
 }return Clazz.array(Integer.TYPE, -1, [from, to]);
 });
 
-Clazz.newMeth(C$, 'intersectVisContigs$IA', function (viscontigs) {
+Clazz.newMeth(C$, 'intersectVisContigs$IA',  function (viscontigs) {
 var copy=Clazz.new_(C$.c$$jalview_datamodel_Mapping,[this]);
 if (this.map != null ) {
 var vpos=0;
 var apos=0;
-var toRange=Clazz.new_($I$(5));
-var fromRange=Clazz.new_($I$(5));
+var toRange=Clazz.new_($I$(5,1));
+var fromRange=Clazz.new_($I$(5,1));
 for (var vc=0; vc < viscontigs.length; vc+=2) {
 var mpr=this.locateMappedRange$I$I(1 + viscontigs[vc], viscontigs[vc + 1] - 1);
 if (mpr != null ) {
 for (var m=0; m < mpr.length; m+=2) {
-toRange.addElement$TE(Clazz.array(Integer.TYPE, -1, [mpr[m], mpr[m + 1]]));
+toRange.addElement$O(Clazz.array(Integer.TYPE, -1, [mpr[m], mpr[m + 1]]));
 var xpos=this.locateRange$I$I(mpr[m], mpr[m + 1]);
 for (var x=0; x < xpos.length; x+=2) {
-fromRange.addElement$TE(Clazz.array(Integer.TYPE, -1, [xpos[x], xpos[x + 1]]));
+fromRange.addElement$O(Clazz.array(Integer.TYPE, -1, [xpos[x], xpos[x + 1]]));
 }
 }
 }}
@@ -192,55 +181,39 @@ r=toRange.elementAt$I(f);
 to[f * 2]=r[0];
 to[f * 2 + 1]=r[1];
 }
-copy.setMap$jalview_util_MapList(Clazz.new_($I$(3).c$$IA$IA$I$I,[from, to, this.map.getFromRatio$(), this.map.getToRatio$()]));
+copy.setMap$jalview_util_MapList(Clazz.new_([from, to, this.map.getFromRatio$(), this.map.getToRatio$()],$I$(3,1).c$$IA$IA$I$I));
 }return copy;
 });
 
-Clazz.newMeth(C$, 'getTo$', function () {
+Clazz.newMeth(C$, 'getTo$',  function () {
 return this.to;
 });
 
-Clazz.newMeth(C$, 'setTo$jalview_datamodel_SequenceI', function (tto) {
+Clazz.newMeth(C$, 'setTo$jalview_datamodel_SequenceI',  function (tto) {
 this.to=tto;
 });
 
-Clazz.newMeth(C$, 'getCodonIterator$jalview_datamodel_SequenceI$C', function (seq, gapChar) {
-return Clazz.new_($I$(6).c$$jalview_datamodel_SequenceI$C, [this, null, seq, gapChar]);
+Clazz.newMeth(C$, 'getCodonIterator$jalview_datamodel_SequenceI$C',  function (seq, gapChar) {
+return Clazz.new_($I$(6,1).c$$jalview_datamodel_SequenceI$C,[this, null, seq, gapChar]);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-return String.format$S$OA("%s %s", [this.map.toString(), this.to == null  ? "" : this.to.getName$()]);
+Clazz.newMeth(C$, 'toString',  function () {
+return String.format$S$OA("%s %s", Clazz.array(java.lang.Object, -1, [this.map.toString(), this.to == null  ? "" : this.to.getName$()]));
 });
 
-Clazz.newMeth(C$, 'getMappedFromId$', function () {
+Clazz.newMeth(C$, 'getMappedFromId$',  function () {
 return this.mappedFromId;
 });
 
-Clazz.newMeth(C$, 'setMappedFromId$S', function (mappedFromId) {
+Clazz.newMeth(C$, 'setMappedFromId$S',  function (mappedFromId) {
 this.mappedFromId=mappedFromId;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Mapping, "AlignedCodonIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Mapping, "AlignedCodonIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.gap='\0';
-this.alignedSeq=null;
-this.start=0;
-this.alignedColumn=0;
-this.alignedBases=0;
-this.fromRanges=null;
-this.toRanges=null;
-this.currentFromRange=null;
-this.currentToRange=null;
-this.fromPosition=0;
-this.toPosition=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.alignedColumn=0;
@@ -249,15 +222,17 @@ this.currentFromRange=null;
 this.currentToRange=null;
 this.fromPosition=0;
 this.toPosition=0;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$C', function (seq, gapChar) {
-C$.$init$.apply(this);
+C$.$fields$=[['C',['gap'],'I',['start','alignedColumn','alignedBases','fromPosition','toPosition'],'O',['alignedSeq','jalview.datamodel.SequenceI','fromRanges','java.util.Iterator','+toRanges','currentFromRange','int[]','+currentToRange']]]
+
+Clazz.newMeth(C$, 'c$$jalview_datamodel_SequenceI$C',  function (seq, gapChar) {
+;C$.$init$.apply(this);
 this.alignedSeq=seq;
 this.start=seq.getStart$();
 this.gap=gapChar;
-this.fromRanges=this.this$0.map.getFromRanges$().iterator$();
-this.toRanges=this.this$0.map.getToRanges$().iterator$();
+this.fromRanges=this.b$['jalview.datamodel.Mapping'].map.getFromRanges$().iterator$();
+this.toRanges=this.b$['jalview.datamodel.Mapping'].map.getToRanges$().iterator$();
 if (this.fromRanges.hasNext$()) {
 this.currentFromRange=this.fromRanges.next$();
 this.fromPosition=this.currentFromRange[0];
@@ -266,7 +241,7 @@ this.currentToRange=this.toRanges.next$();
 this.toPosition=this.currentToRange[0];
 }}, 1);
 
-Clazz.newMeth(C$, 'hasNext$', function () {
+Clazz.newMeth(C$, 'hasNext$',  function () {
 if (this.fromRanges.hasNext$()) {
 return true;
 }if (this.currentFromRange == null  || this.fromPosition >= this.currentFromRange[1] ) {
@@ -274,21 +249,21 @@ return false;
 }return true;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
+Clazz.newMeth(C$, 'next$',  function () {
 if (!this.hasNext$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 }var codon=p$1.getNextCodon.apply(this, []);
 var alignedCodon=p$1.getAlignedCodon$IA.apply(this, [codon]);
 var peptide=p$1.getPeptide.apply(this, []);
-var peptideCol=this.toPosition - 1 - this.this$0.to.getStart$() ;
-return Clazz.new_($I$(1).c$$I$I$I$S$I,[alignedCodon[0], alignedCodon[1], alignedCodon[2], peptide, peptideCol]);
+var peptideCol=this.toPosition - 1 - this.b$['jalview.datamodel.Mapping'].to.getStart$() ;
+return Clazz.new_($I$(1,1).c$$I$I$I$S$I,[alignedCodon[0], alignedCodon[1], alignedCodon[2], peptide, peptideCol]);
 });
 
-Clazz.newMeth(C$, 'getPeptide', function () {
+Clazz.newMeth(C$, 'getPeptide',  function () {
 if (this.toPosition <= this.currentToRange[1]) {
-var seq=this.this$0.to;
+var seq=this.b$['jalview.datamodel.Mapping'].to;
 var pep=seq.getCharAt$I(this.toPosition - seq.getStart$());
-this.toPosition++;
+++this.toPosition;
 return String.valueOf$C(pep);
 }if (!this.toRanges.hasNext$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["Ran out of peptide at position " + this.toPosition]);
@@ -297,7 +272,7 @@ this.toPosition=this.currentToRange[0];
 return p$1.getPeptide.apply(this, []);
 }, p$1);
 
-Clazz.newMeth(C$, 'getNextCodon', function () {
+Clazz.newMeth(C$, 'getNextCodon',  function () {
 var codon=Clazz.array(Integer.TYPE, [3]);
 var codonbase=0;
 while (codonbase < 3){
@@ -312,7 +287,7 @@ this.fromPosition=this.currentFromRange[0];
 return codon;
 }, p$1);
 
-Clazz.newMeth(C$, 'getAlignedCodon$IA', function (codon) {
+Clazz.newMeth(C$, 'getAlignedCodon$IA',  function (codon) {
 var aligned=Clazz.array(Integer.TYPE, [codon.length]);
 for (var i=0; i < codon.length; i++) {
 aligned[i]=p$1.getAlignedColumn$I.apply(this, [codon[i]]);
@@ -320,18 +295,18 @@ aligned[i]=p$1.getAlignedColumn$I.apply(this, [codon[i]]);
 return aligned;
 }, p$1);
 
-Clazz.newMeth(C$, 'getAlignedColumn$I', function (sequencePos) {
+Clazz.newMeth(C$, 'getAlignedColumn$I',  function (sequencePos) {
 var truePos=sequencePos - (this.start - 1);
 var length=this.alignedSeq.getLength$();
 while (this.alignedBases < truePos && this.alignedColumn < length ){
 var c=this.alignedSeq.getCharAt$I(this.alignedColumn++);
 if (c != this.gap && !$I$(2).isGap$C(c) ) {
-this.alignedBases++;
+++this.alignedBases;
 }}
 return this.alignedColumn - 1;
 }, p$1);
 
-Clazz.newMeth(C$, 'remove$', function () {
+Clazz.newMeth(C$, 'remove$',  function () {
 });
 
 Clazz.newMeth(C$);
@@ -339,4 +314,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

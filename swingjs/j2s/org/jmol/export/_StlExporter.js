@@ -1,35 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'javajs.util.M4','org.jmol.util.Logger','javajs.util.OC','java.io.ByteArrayOutputStream','org.jmol.viewer.Viewer','javajs.util.Lst','javajs.util.Measure']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "_StlExporter", null, 'org.jmol.export._VrmlExporter');
+(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'javajs.util.M4','org.jmol.util.Logger','javajs.util.OC','java.io.ByteArrayOutputStream','org.jmol.viewer.Viewer','javajs.util.Lst','javajs.util.Measure']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "_StlExporter", null, 'org.jmol.export._VrmlExporter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isDebug=false;
-this.header=null;
-this.oc=null;
-this.bos=null;
-this.m4=null;
-this.lstMatrix=null;
-this.m4a=null;
-this.nTri=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.m4a=Clazz.new_($I$(1));
-}, 1);
+this.m4a=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['isDebug'],'I',['nTri'],'S',['header'],'O',['oc','javajs.util.OC','bos','java.io.ByteArrayOutputStream','m4','javajs.util.M4','lstMatrix','javajs.util.Lst','m4a','javajs.util.M4']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.useTable=null;
 this.noColor=true;
 this.isDebug=$I$(2).debugging;
 if (!this.isDebug) {
-this.oc=Clazz.new_($I$(3));
+this.oc=Clazz.new_($I$(3,1));
 this.oc.setBigEndian$Z(false);
-this.oc.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, null, false, this.bos=Clazz.new_($I$(4)));
+this.oc.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, null, false, this.bos=Clazz.new_($I$(4,1)));
 }}, 1);
 
 Clazz.newMeth(C$, 'outputHeader$', function () {
@@ -40,15 +28,15 @@ this.out.append$S("\n");
 } else {
 this.oc.write$BA$I$I(this.header.getBytes$(), 0, 80);
 this.oc.write$BA$I$I(Clazz.array(Byte.TYPE, [4]), 0, 4);
-}this.lstMatrix=Clazz.new_($I$(6));
-this.m4=Clazz.new_($I$(1));
+}this.lstMatrix=Clazz.new_($I$(6,1));
+this.m4=Clazz.new_($I$(1,1));
 this.m4.setIdentity$();
-this.lstMatrix.addLast$TV(this.m4);
+this.lstMatrix.addLast$O(this.m4);
 this.outputInitialTransform$();
 });
 
 Clazz.newMeth(C$, 'pushMatrix$', function () {
-this.lstMatrix.addLast$TV(this.m4);
+this.lstMatrix.addLast$O(this.m4);
 this.m4=$I$(1).newM4$javajs_util_M4(this.m4);
 });
 
@@ -76,11 +64,11 @@ this.outputAttr$S$F$F$F(attr, pt.x, pt.y, pt.z);
 
 Clazz.newMeth(C$, 'outputAttr$S$F$F$F', function (attr, x, y, z) {
 this.m4a.setIdentity$();
-if (attr == "scale") {
+if (attr === "scale" ) {
 this.m4a.m00=x;
 this.m4a.m11=y;
 this.m4a.m22=z;
-} else if (attr == "translation") {
+} else if (attr === "translation" ) {
 this.m4a.m03=x;
 this.m4a.m13=y;
 this.m4a.m23=z;
@@ -123,10 +111,10 @@ if (this.isDebug) {
 this.out.append$S("endsolid model\n");
 } else {
 var b=this.bos.toByteArray$();
-b[80]=(((this.nTri & 255)|0)|0);
-b[81]=((((this.nTri >> 8) & 255)|0)|0);
-b[82]=((((this.nTri >> 16) & 255)|0)|0);
-b[83]=((((this.nTri >> 24) & 255)|0)|0);
+b[80]=((this.nTri & 255)|0);
+b[81]=(((this.nTri >> 8) & 255)|0);
+b[82]=(((this.nTri >> 16) & 255)|0);
+b[83]=(((this.nTri >> 24) & 255)|0);
 this.out.write$BA$I$I(b, 0, b.length);
 }return this.finalizeOutput2$();
 });
@@ -134,7 +122,7 @@ this.out.write$BA$I$I(b, 0, b.length);
 Clazz.newMeth(C$, 'outputCircle$javajs_util_P3$javajs_util_P3$F$H$Z', function (pt1, pt2, radius, colix, doFill) {
 });
 
-Clazz.newMeth(C$, 'plotText$I$I$I$H$S$javajs_awt_Font', function (x, y, z, colix, text, font3d) {
+Clazz.newMeth(C$, 'plotText$I$I$I$H$S$org_jmol_util_Font', function (x, y, z, colix, text, font3d) {
 });
 
 Clazz.newMeth(C$, 'writePoint$S$javajs_util_T3', function (s, p) {
@@ -150,4 +138,4 @@ if (this.isDebug) this.out.append$S(" " + new Float(f).toString());
  else this.oc.writeInt$I(Float.floatToIntBits$F(f));
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

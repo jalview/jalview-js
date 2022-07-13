@@ -1,54 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.Matrix','javajs.util.V3','org.jmol.util.Logger','org.jmol.util.Escape','java.util.Hashtable','javajs.util.PT','javajs.util.Lst','org.jmol.util.Vibration']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ModulationSet", null, 'org.jmol.util.Vibration', 'org.jmol.api.JmolModulationSet');
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.Matrix','javajs.util.V3','org.jmol.util.Logger','org.jmol.util.Escape','java.util.Hashtable','javajs.util.PT','javajs.util.Lst','org.jmol.util.Vibration']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ModulationSet", null, 'org.jmol.util.Vibration', 'org.jmol.api.JmolModulationSet');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=null;
-this.r0=null;
-this.symmetry=null;
-this.axesLengths=null;
-this.nOps=0;
-this.iop=0;
-this.strop=null;
-this.spinOp=0;
-this.rsvs=null;
-this.vib=null;
-this.mods=null;
-this.isSubsystem=false;
-this.isCommensurate=false;
-this.fileOcc=0;
-this.occParams=null;
-this.occSiteMultiplicity=0;
-this.occAbsolute=false;
-this.modCalc=null;
-this.mxyz=null;
-this.htUij=null;
-this.vOcc=0;
-this.occValue=0;
-this.qtOffset=null;
-this.isQ=false;
-this.enabled=false;
-this.scale=0;
-this.gammaE=null;
-this.gammaIinv=null;
-this.sigma=null;
-this.tau=null;
-this.rI=null;
-this.tFactorInv=null;
-this.ptTemp=null;
-this.v0=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.vOcc=NaN;
 this.occValue=NaN;
-this.qtOffset=Clazz.new_($I$(1));
+this.qtOffset=Clazz.new_($I$(1,1));
 this.scale=1;
-this.ptTemp=Clazz.new_($I$(1));
-}, 1);
+this.ptTemp=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['isSubsystem','isCommensurate','occAbsolute','isQ','enabled'],'D',['fileOcc','occSiteMultiplicity'],'F',['spinOp','vOcc','occValue','scale'],'I',['nOps','iop'],'S',['id','strop'],'O',['r0','javajs.util.P3','symmetry','org.jmol.api.SymmetryInterface','axesLengths','float[]','rsvs','javajs.util.Matrix','vib','org.jmol.util.Vibration','mods','javajs.util.Lst','occParams','double[]','modCalc','org.jmol.util.ModulationSet','mxyz','javajs.util.V3','htUij','java.util.Map','qtOffset','javajs.util.P3','gammaE','javajs.util.M3','gammaIinv','javajs.util.Matrix','+sigma','+tau','+rI','+tFactorInv','ptTemp','javajs.util.P3','v0','javajs.util.V3']]]
 
 Clazz.newMeth(C$, 'getSubSystemUnitCell$', function () {
 return (this.isSubsystem ? this.symmetry : null);
@@ -63,7 +26,7 @@ return this.scale;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setMod$S$javajs_util_P3$javajs_util_P3$I$javajs_util_Lst$javajs_util_M3$javajs_util_MatrixA$org_jmol_api_SymmetryInterface$I$I$org_jmol_util_Vibration$Z', function (id, r00, r0, d, mods, gammaE, factors, symmetry, nOps, iop, v, isCommensurate) {
@@ -74,7 +37,7 @@ this.iop=iop;
 this.nOps=nOps;
 this.r0=r0;
 this.modDim=d;
-this.rI=Clazz.new_($I$(2).c$$DAA$I$I,[null, d, 1]);
+this.rI=Clazz.new_($I$(2,1).c$$DAA$I$I,[null, d, 1]);
 this.mods=mods;
 this.gammaE=gammaE;
 this.sigma=factors[0];
@@ -84,7 +47,7 @@ this.tFactorInv=factors[1].inverse$();
 }if (v != null ) {
 this.vib=v;
 this.vib.modScale=1;
-this.mxyz=Clazz.new_($I$(3));
+this.mxyz=Clazz.new_($I$(3,1));
 this.axesLengths=symmetry.getUnitCellParams$();
 if (this.axesLengths == null ) this.axesLengths=symmetry.getUnitCellParams$();
 }var vR00=$I$(2).newT$javajs_util_T3$Z(r00, true);
@@ -95,7 +58,7 @@ var gammaM=this.rsvs.getSubmatrix$I$I$I$I(3, 0, d, 3);
 var sI=this.rsvs.getSubmatrix$I$I$I$I(3, 3 + d, d, 1);
 this.spinOp=symmetry.getSpinOp$I(iop);
 this.tau=this.gammaIinv.mul$javajs_util_Matrix(this.sigma.mul$javajs_util_Matrix(vR0).sub$javajs_util_Matrix(gammaM.mul$javajs_util_Matrix(vR00)).sub$javajs_util_Matrix(sI));
-if ($I$(4).debuggingHigh) $I$(4).debug$S("MODSET create " + id + " r0=" + $I$(5).eP$javajs_util_T3(r0) + " tau=" + this.tau );
+if ($I$(4).debuggingHigh) $I$(4,"debug$S",["MODSET create " + id + " r0=" + $I$(5).eP$javajs_util_T3(r0) + " tau=" + this.tau ]);
 return this;
 });
 
@@ -106,7 +69,7 @@ this.vOcc=NaN;
 if (this.mxyz != null ) this.mxyz.set$F$F$F(0, 0, 0);
 var a;
 if (isQ && this.qtOffset != null  ) {
-var q=Clazz.new_($I$(2).c$$DAA$I$I,[null, 3, 1]);
+var q=Clazz.new_($I$(2,1).c$$DAA$I$I,[null, 3, 1]);
 a=q.getArray$();
 a[0][0]=this.qtOffset.x;
 a[1][0]=this.qtOffset.y;
@@ -140,11 +103,11 @@ if (this.spinOp < 0 ) this.mxyz.scale$F(this.spinOp);
 });
 
 Clazz.newMeth(C$, 'addUTens$S$F', function (utens, v) {
-if (this.htUij == null ) this.htUij=Clazz.new_($I$(6));
+if (this.htUij == null ) this.htUij=Clazz.new_($I$(6,1));
 var f=this.htUij.get$O(utens);
-if ($I$(4).debuggingHigh) $I$(4).debug$S("MODSET " + this.id + " utens=" + utens + " f=" + f.toString() + " v=" + new Float(v).toString() );
+if ($I$(4).debuggingHigh) $I$(4,"debug$S",["MODSET " + this.id + " utens=" + utens + " f=" + f.toString() + " v=" + new Float(v).toString() ]);
 if (f != null ) v += f.floatValue$();
-this.htUij.put$TK$TV(utens, Float.valueOf$F(v));
+this.htUij.put$O$O(utens, Float.valueOf$F(v));
 });
 
 Clazz.newMeth(C$, 'setModTQ$javajs_util_T3$Z$javajs_util_T3$Z$F', function (a, isOn, qtOffset, isQ, scale) {
@@ -200,13 +163,13 @@ Clazz.newMeth(C$, 'getModulation$C$javajs_util_T3', function (type, tuv) {
 p$1.getModCalc.apply(this, []);
 switch (type.$c()) {
 case 68:
-return $I$(1).newP$javajs_util_T3(tuv == null  ? this.r0 : this.modCalc.calculate$javajs_util_T3$Z(tuv, false));
+return $I$(1,"newP$javajs_util_T3",[tuv == null  ? this.r0 : this.modCalc.calculate$javajs_util_T3$Z(tuv, false)]);
 case 77:
-return $I$(1).newP$javajs_util_T3(tuv == null  ? this.v0 : this.modCalc.calculate$javajs_util_T3$Z(tuv, false).mxyz);
+return $I$(1,"newP$javajs_util_T3",[tuv == null  ? this.v0 : this.modCalc.calculate$javajs_util_T3$Z(tuv, false).mxyz]);
 case 84:
 this.modCalc.calculate$javajs_util_T3$Z(tuv, false);
 var ta=this.modCalc.rI.getArray$();
-return $I$(1).new3$F$F$F(ta[0][0], (this.modDim > 1 ? ta[1][0] : 0), (this.modDim > 2 ? ta[2][0] : 0));
+return $I$(1,"new3$F$F$F",[ta[0][0], (this.modDim > 1 ? ta[1][0] : 0), (this.modDim > 2 ? ta[2][0] : 0)]);
 case 79:
 return Float.valueOf$F(Math.abs(tuv == null  ? this.getOccupancy100$Z(false) : this.modCalc.calculate$javajs_util_T3$Z(tuv, false).getOccupancy100$Z(false)));
 }
@@ -242,26 +205,26 @@ this.modCalc.symmetry=this.symmetry;
 this.modCalc.tau=this.tau;
 this.modCalc.v0=this.v0;
 this.modCalc.vib=this.vib;
-if (this.mxyz != null ) this.modCalc.mxyz=Clazz.new_($I$(3));
+if (this.mxyz != null ) this.modCalc.mxyz=Clazz.new_($I$(3,1));
 }return this.modCalc;
 }, p$1);
 
 Clazz.newMeth(C$, 'getInfo$java_util_Map', function (info) {
-var modInfo=Clazz.new_($I$(6));
-modInfo.put$TK$TV("id", this.id);
-modInfo.put$TK$TV("r0", this.r0);
-modInfo.put$TK$TV("tau", this.tau.getArray$());
-modInfo.put$TK$TV("modDim", Integer.valueOf$I(this.modDim));
-modInfo.put$TK$TV("rsvs", this.rsvs);
-modInfo.put$TK$TV("sigma", this.sigma.getArray$());
-modInfo.put$TK$TV("symop", Integer.valueOf$I(this.iop + 1));
-modInfo.put$TK$TV("strop", this.strop);
-modInfo.put$TK$TV("unitcell", this.symmetry.getUnitCellInfo$());
-var mInfo=Clazz.new_($I$(8));
-for (var i=0; i < this.mods.size$(); i++) mInfo.addLast$TV(this.mods.get$I(i).getInfo$());
+var modInfo=Clazz.new_($I$(6,1));
+modInfo.put$O$O("id", this.id);
+modInfo.put$O$O("r0", this.r0);
+modInfo.put$O$O("tau", this.tau.getArray$());
+modInfo.put$O$O("modDim", Integer.valueOf$I(this.modDim));
+modInfo.put$O$O("rsvs", this.rsvs);
+modInfo.put$O$O("sigma", this.sigma.getArray$());
+modInfo.put$O$O("symop", Integer.valueOf$I(this.iop + 1));
+modInfo.put$O$O("strop", this.strop);
+modInfo.put$O$O("unitcell", this.symmetry.getUnitCellInfo$());
+var mInfo=Clazz.new_($I$(8,1));
+for (var i=0; i < this.mods.size$(); i++) mInfo.addLast$O(this.mods.get$I(i).getInfo$());
 
-modInfo.put$TK$TV("mods", mInfo);
-info.put$TK$TV("modulation", modInfo);
+modInfo.put$O$O("mods", mInfo);
+info.put$O$O("modulation", modInfo);
 });
 
 Clazz.newMeth(C$, 'setXYZ$javajs_util_T3', function (v) {
@@ -274,7 +237,7 @@ return;
 });
 
 Clazz.newMeth(C$, 'getVibration$Z', function (forceNew) {
-if (this.vib == null  && forceNew ) this.vib=Clazz.new_($I$(9));
+if (this.vib == null  && forceNew ) this.vib=Clazz.new_($I$(9,1));
 return this.vib;
 });
 
@@ -331,4 +294,4 @@ occ=this.occParams[0] * (this.occParams[1] + this.vOcc);
 return this.occValue=occ;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

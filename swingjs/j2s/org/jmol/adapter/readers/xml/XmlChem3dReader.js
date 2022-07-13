@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),I$=[[0,'javajs.util.Lst','org.jmol.adapter.smarter.Atom','javajs.util.PT','org.jmol.api.Interface','java.util.Hashtable','Boolean','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XmlChem3dReader", null, 'org.jmol.adapter.readers.xml.XmlReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),I$=[[0,'javajs.util.Lst','org.jmol.adapter.smarter.Atom','javajs.util.PT','org.jmol.api.Interface','java.util.Hashtable','org.jmol.util.Logger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XmlChem3dReader", null, 'org.jmol.adapter.readers.xml.XmlReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.orbitals=null;
-this.moData=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.orbitals=Clazz.new_($I$(1));
-}, 1);
+this.orbitals=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['orbitals','javajs.util.Lst','moData','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'processXml$org_jmol_adapter_readers_xml_XmlReader$O', function (parent, saxReader) {
@@ -29,7 +24,7 @@ if ("model".equals$O(localName)) {
 this.asc.newAtomSet$();
 return;
 }if ("atom".equals$O(localName)) {
-this.atom=Clazz.new_($I$(2));
+this.atom=Clazz.new_($I$(2,1));
 this.atom.atomName=this.atts.get$O("id");
 this.atom.elementSymbol=this.atts.get$O("symbol");
 if (this.atts.containsKey$O("cartcoords")) {
@@ -45,8 +40,8 @@ if (this.atts.containsKey$O("bondorder")) order=this.parseIntStr$S(this.atts.get
 this.asc.addNewBondFromNames$S$S$I(atom1, atom2, order);
 return;
 }if ("electronicstructurecalculation".equals$O(localName)) {
-tokens=$I$(3).getTokens$S(this.atts.get$O("calcpartialcharges"));
-var tokens2=$I$(3).getTokens$S(this.atts.get$O("calcatoms"));
+tokens=$I$(3,"getTokens$S",[this.atts.get$O("calcpartialcharges")]);
+var tokens2=$I$(3,"getTokens$S",[this.atts.get$O("calcatoms")]);
 for (var i=this.parseIntStr$S(tokens[0]); --i >= 0; ) this.asc.mapPartialCharge$S$F(tokens2[i + 1], this.parseFloatStr$S(tokens[i + 1]));
 
 }if ("griddata".equals$O(localName)) {
@@ -56,11 +51,11 @@ var nPointsZ=this.parseIntStr$S(this.atts.get$O("griddatzdim"));
 var xStep=this.parseFloatStr$S(this.atts.get$O("griddatxsize")) / (nPointsX);
 var yStep=this.parseFloatStr$S(this.atts.get$O("griddatysize")) / (nPointsY);
 var zStep=this.parseFloatStr$S(this.atts.get$O("griddatzsize")) / (nPointsZ);
-tokens=$I$(3).getTokens$S(this.atts.get$O("griddatorigin"));
+tokens=$I$(3,"getTokens$S",[this.atts.get$O("griddatorigin")]);
 var ox=this.parseFloatStr$S(tokens[0]);
 var oy=this.parseFloatStr$S(tokens[1]);
 var oz=this.parseFloatStr$S(tokens[2]);
-tokens=$I$(3).getTokens$S(this.atts.get$O("griddatdata"));
+tokens=$I$(3,"getTokens$S",[this.atts.get$O("griddatdata")]);
 var pt=1;
 var voxelData=Clazz.array(Float.TYPE, [nPointsX, nPointsY, nPointsZ]);
 var sum=0;
@@ -85,16 +80,16 @@ vd.setVolumetricVector$I$F$F$F(2, 0, 0, zStep);
 vd.setVolumetricOrigin$F$F$F(ox, oy, oz);
 vd.setVoxelDataAsArray$FAAA(voxelData);
 if (this.moData == null ) {
-this.moData=Clazz.new_($I$(5));
-this.moData.put$TK$TV("defaultCutoff", Float.valueOf$F(0.01));
-this.moData.put$TK$TV("haveVolumeData", $I$(6).TRUE);
-this.moData.put$TK$TV("calculationType", "Chem3D");
-this.orbitals=Clazz.new_($I$(1));
-this.moData.put$TK$TV("mos", this.orbitals);
-}var mo=Clazz.new_($I$(5));
-mo.put$TK$TV("volumeData", vd);
-this.orbitals.addLast$TV(mo);
-$I$(7).info$S("Chem3D molecular orbital data displayable using ISOSURFACE MO " + this.orbitals.size$());
+this.moData=Clazz.new_($I$(5,1));
+this.moData.put$O$O("defaultCutoff", Float.valueOf$F(0.01));
+this.moData.put$O$O("haveVolumeData", Boolean.TRUE);
+this.moData.put$O$O("calculationType", "Chem3D");
+this.orbitals=Clazz.new_($I$(1,1));
+this.moData.put$O$O("mos", this.orbitals);
+}var mo=Clazz.new_($I$(5,1));
+mo.put$O$O("volumeData", vd);
+this.orbitals.addLast$O(mo);
+$I$(6,"info$S",["Chem3D molecular orbital data displayable using ISOSURFACE MO " + this.orbitals.size$()]);
 return;
 }});
 
@@ -108,4 +103,4 @@ return;
 }this.setKeepChars$Z(false);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

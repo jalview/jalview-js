@@ -1,24 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'org.jmol.modelset.Text']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TextRenderer");
+(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'org.jmol.modelset.Text']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TextRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'render$org_jmol_modelset_Text$org_jmol_api_JmolRendererInterface$F$F$Z$FA$FA', function (text, g3d, scalePixelsPerMicron, imageFontScaling, isAbsolute, boxXY, temp) {
 if (text == null  || text.image == null  && !text.doFormatText  && text.lines == null   ) return false;
 var showText=g3d.setC$H(text.colix);
 if (!showText && (text.image == null  && (text.bgcolix == 0 || !g3d.setC$H(text.bgcolix) ) ) ) return false;
 text.setPosition$F$F$Z$FA(scalePixelsPerMicron, imageFontScaling, isAbsolute, boxXY);
-if (text.image == null  && text.bgcolix != 0 ) {
-if (g3d.setC$H(text.bgcolix)) C$.showBox$org_jmol_api_JmolRendererInterface$H$I$I$I$I$I$I$F$Z(g3d, text.colix, (text.boxX|0), (text.boxY|0) + text.boxYoff2 * 2, text.z + 2, text.zSlab, (text.boxWidth|0), (text.boxHeight|0), text.fontScale, text.isLabelOrHover);
+if (text.image == null ) {
+if (text.bgcolix != 0) {
+if (g3d.setC$H(text.bgcolix)) C$.showBox$org_jmol_api_JmolRendererInterface$H$I$I$I$I$I$I$F$Z(g3d, text.colix, (text.boxX|0), (text.boxY|0) + text.boxYoff2 * 2, text.z + 2, text.zSlab, (text.boxWidth|0), (text.boxHeight|0), text.fontScale, !text.isEcho);
 if (!showText) return false;
-}if (text.image == null ) {
-for (var i=0; i < text.lines.length; i++) {
+}for (var i=0; i < text.lines.length; i++) {
 text.setXYA$FA$I(temp, i);
-g3d.drawString$S$javajs_awt_Font$I$I$I$I$H(text.lines[i], text.font, (temp[0]|0), (temp[1]|0), text.z, text.zSlab, text.bgcolix);
+g3d.drawString$S$org_jmol_util_Font$I$I$I$I$H(text.lines[i], text.font, (temp[0]|0), (temp[1]|0), text.z, text.zSlab, text.bgcolix);
 }
 } else {
 g3d.drawImage$O$I$I$I$I$H$I$I(text.image, (text.boxX|0), (text.boxY|0), text.z, text.zSlab, text.bgcolix, (text.boxWidth|0), (text.boxHeight|0));
@@ -33,7 +32,7 @@ g3d.drawLineXYZ$I$I$I$I$I$I(text.atomX, text.atomY, text.atomZ, (x|0), (y|0), te
 return true;
 }, 1);
 
-Clazz.newMeth(C$, 'renderSimpleLabel$org_jmol_api_JmolRendererInterface$javajs_awt_Font$S$H$H$FA$I$I$I$I$F$I$Z$H$Z', function (g3d, font, strLabel, colix, bgcolix, boxXY, z, zSlab, xOffset, yOffset, ascent, descent, doPointer, pointerColix, isAbsolute) {
+Clazz.newMeth(C$, 'renderSimpleLabel$org_jmol_api_JmolRendererInterface$org_jmol_util_Font$S$H$H$FA$I$I$I$I$F$I$Z$H$Z', function (g3d, font, strLabel, colix, bgcolix, boxXY, z, zSlab, xOffset, yOffset, ascent, descent, doPointer, pointerColix, isAbsolute) {
 var boxWidth=font.stringWidth$S(strLabel) + 8;
 var boxHeight=ascent + descent + 8 ;
 var x0=(boxXY[0]|0);
@@ -43,7 +42,7 @@ var x=boxXY[0];
 var y=boxXY[1];
 if (bgcolix != 0 && g3d.setC$H(bgcolix) ) C$.showBox$org_jmol_api_JmolRendererInterface$H$I$I$I$I$I$I$F$Z(g3d, colix, (x|0), (y|0), z, zSlab, (boxWidth|0), (boxHeight|0), 1, true);
  else g3d.setC$H(colix);
-g3d.drawString$S$javajs_awt_Font$I$I$I$I$H(strLabel, font, ((x + 4)|0), ((y + 4 + ascent )|0), z - 1, zSlab, bgcolix);
+g3d.drawString$S$org_jmol_util_Font$I$I$I$I$H(strLabel, font, ((x + 4)|0), ((y + 4 + ascent )|0), z - 1, zSlab, bgcolix);
 if (doPointer) {
 g3d.setC$H(pointerColix);
 if (xOffset > 0) g3d.drawLineXYZ$I$I$I$I$I$I(x0, y0, zSlab, (x|0), ((y + boxHeight / 2)|0), zSlab);
@@ -62,4 +61,4 @@ g3d.drawRect$I$I$I$I$I$I(x + 1, y + 1, z - 1, zSlab, boxWidth - 2, boxHeight - 2
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

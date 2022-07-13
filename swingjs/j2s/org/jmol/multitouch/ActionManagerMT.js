@@ -1,31 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.multitouch"),p$1={},I$=[[0,'com.sparshui.GestureType','org.jmol.api.Interface','org.jmol.util.Logger','javajs.util.Lst','org.jmol.viewer.binding.Binding']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ActionManagerMT", null, 'org.jmol.viewer.ActionManager', 'org.jmol.multitouch.JmolMultiTouchClient');
-C$.TWO_POINT_GESTURE=null;
-C$.SINGLE_POINT_GESTURE=null;
-C$.eventNames=null;
+(function(){var P$=Clazz.newPackage("org.jmol.multitouch"),p$1={},I$=[[0,'com.sparshui.GestureType','org.jmol.api.Interface','org.jmol.util.Logger','javajs.util.Lst','org.jmol.viewer.binding.Binding']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ActionManagerMT", null, 'org.jmol.viewer.ActionManager', 'org.jmol.multitouch.JmolMultiTouchClient');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.TWO_POINT_GESTURE=Clazz.new_($I$(1).c$$S,["org.jmol.multitouch.sparshui.TwoPointGesture"]);
-C$.SINGLE_POINT_GESTURE=Clazz.new_($I$(1).c$$S,["org.jmol.multitouch.sparshui.SinglePointGesture"]);
-C$.eventNames=Clazz.array(String, -1, ["drag", "rotate", "spin", "touch", "zoom", "double-click", "flick", "relative-drag", "click"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.adapter=null;
-this.simulator=null;
-this.groupID=0;
-this.simulationPhase=0;
-this.resetNeeded=false;
-this.lastLogTime=0;
-this.doneHere=false;
-this.mouseDown=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.resetNeeded=true;
 this.lastLogTime=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['resetNeeded','doneHere','mouseDown'],'I',['groupID','simulationPhase'],'J',['lastLogTime'],'O',['adapter','org.jmol.multitouch.JmolMultiTouchAdapter','simulator','org.jmol.api.JmolTouchSimulatorInterface']]
+,['O',['TWO_POINT_GESTURE','com.sparshui.GestureType','+SINGLE_POINT_GESTURE','eventNames','String[]']]]
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_viewer_Viewer$S', function (vwr, commandOptions) {
 this.isMultiTouch=true;
@@ -44,14 +28,13 @@ this.groupID=(((Math.random() * 16777215)|0)) << 4;
 }if (isTablet) return;
 var className=(isSparsh ? "multitouch.sparshui.JmolSparshClientAdapter" : "multitouch.jni.JmolJniClientAdapter");
 this.adapter=$I$(2).getOption$S$org_jmol_viewer_Viewer$S(className, null, null);
-$I$(3).info$S("ActionManagerMT SparshUI groupID=" + this.groupID);
-$I$(3).info$S("ActionManagerMT adapter = " + this.adapter);
+$I$(3,"info$S",["ActionManagerMT SparshUI groupID=" + this.groupID]);
+$I$(3,"info$S",["ActionManagerMT adapter = " + this.adapter]);
 if (isSparsh) {
 p$1.startSparshUIService$Z.apply(this, [isSimulated]);
 } else if (isJNI) {
 this.adapter.setMultiTouchClient$org_jmol_viewer_Viewer$org_jmol_multitouch_JmolMultiTouchClient$Z(vwr, this, false);
 }this.setBinding$org_jmol_viewer_binding_Binding(this.b);
-this.xyRange=10;
 });
 
 Clazz.newMeth(C$, 'startSparshUIService$Z', function (isSimulated) {
@@ -106,9 +89,9 @@ throw e;
 
 Clazz.newMeth(C$, 'getAllowedGestures$I', function (groupID) {
 if (groupID != this.groupID || !this.vwr.getBoolean$I(603979784) ) return null;
-var list=Clazz.new_($I$(4));
-list.addLast$TV(C$.TWO_POINT_GESTURE);
-list.addLast$TV(C$.SINGLE_POINT_GESTURE);
+var list=Clazz.new_($I$(4,1));
+list.addLast$O(C$.TWO_POINT_GESTURE);
+list.addLast$O(C$.SINGLE_POINT_GESTURE);
 return list;
 });
 
@@ -129,7 +112,7 @@ return gid;
 });
 
 Clazz.newMeth(C$, 'processMultitouchEvent$I$I$I$I$javajs_util_P3$J', function (groupID, eventType, touchID, iData, pt, time) {
-if ($I$(3).debugging) $I$(3).debug$S(this + " time=" + time + " groupID=" + groupID + " " + Integer.toHexString$I(groupID) + " eventType=" + eventType + "(" + C$.getEventName$I(eventType) + ") iData=" + iData + " pt=" + pt );
+if ($I$(3).debugging) $I$(3,"debug$S",[this + " time=" + time + " groupID=" + groupID + " " + Integer.toHexString$I(groupID) + " eventType=" + eventType + "(" + C$.getEventName$I(eventType) + ") iData=" + iData + " pt=" + pt ]);
 switch (eventType) {
 case 0:
 if (iData == 2) {
@@ -236,6 +219,12 @@ Clazz.newMeth(C$, 'getDegrees$F$Z', function (delta, isX) {
 return delta / (isX ? this.vwr.getScreenWidth$() : this.vwr.getScreenHeight$()) * 180 * this.mouseDragFactor;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.TWO_POINT_GESTURE=Clazz.new_($I$(1,1).c$$S,["org.jmol.multitouch.sparshui.TwoPointGesture"]);
+C$.SINGLE_POINT_GESTURE=Clazz.new_($I$(1,1).c$$S,["org.jmol.multitouch.sparshui.SinglePointGesture"]);
+C$.eventNames=Clazz.array(String, -1, ["drag", "rotate", "spin", "touch", "zoom", "double-click", "flick", "relative-drag", "click"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

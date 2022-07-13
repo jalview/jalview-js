@@ -1,35 +1,35 @@
-(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Globs");
-C$.EOL='\0';
+(function(){var P$=Clazz.newPackage("sun.nio.fs"),I$=[[0,'StringBuilder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Globs");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.EOL=String.fromCharCode(0);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['C',['EOL']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'isRegexMeta$C', function (c) {
+Clazz.newMeth(C$, 'isRegexMeta$C',  function (c) {
 return ".^$+{[]|()".indexOf$I(c) != -1;
 }, 1);
 
-Clazz.newMeth(C$, 'isGlobMeta$C', function (c) {
+Clazz.newMeth(C$, 'isGlobMeta$C',  function (c) {
 return "\\*?[{".indexOf$I(c) != -1;
 }, 1);
 
-Clazz.newMeth(C$, 'next$S$I', function (glob, i) {
+Clazz.newMeth(C$, 'next$S$I',  function (glob, i) {
 if (i < glob.length$()) {
 return glob.charAt$I(i);
 }return C$.EOL;
 }, 1);
 
-Clazz.newMeth(C$, 'toRegexPattern$S$Z', function (globPattern, isDos) {
+Clazz.newMeth(C$, 'toRegexPattern$S$Z',  function (globPattern, isDos) {
 var inGroup=false;
-var regex=Clazz.new_($I$(1).c$$S,["^"]);
+var regex=Clazz.new_($I$(1,1).c$$S,["^"]);
 var i=0;
 while (i < globPattern.length$()){
 var c=globPattern.charAt$I(i++);
@@ -55,14 +55,14 @@ regex.append$S("[[^\\\\]&&[");
 regex.append$S("[[^/]&&[");
 }if (C$.next$S$I(globPattern, i) == "^") {
 regex.append$S("\\^");
-i++;
+++i;
 } else {
 if (C$.next$S$I(globPattern, i) == "!") {
 regex.append$C("^");
-i++;
+++i;
 }if (C$.next$S$I(globPattern, i) == "-") {
 regex.append$C("-");
-i++;
+++i;
 }}var hasRangeStart=false;
 var last=String.fromCharCode(0);
 while (i < globPattern.length$()){
@@ -113,7 +113,7 @@ regex.append$C(",");
 case 42:
 if (C$.next$S$I(globPattern, i) == "*") {
 regex.append$S(".*");
-i++;
+++i;
 } else {
 if (isDos) {
 regex.append$S("[^\\\\]*");
@@ -137,12 +137,16 @@ throw Clazz.new_(Clazz.load('java.util.regex.PatternSyntaxException').c$$S$S$I,[
 }return regex.append$C("$").toString();
 }, 1);
 
-Clazz.newMeth(C$, 'toUnixRegexPattern$S', function (globPattern) {
+Clazz.newMeth(C$, 'toUnixRegexPattern$S',  function (globPattern) {
 return C$.toRegexPattern$S$Z(globPattern, false);
 }, 1);
 
-Clazz.newMeth(C$, 'toWindowsRegexPattern$S', function (globPattern) {
+Clazz.newMeth(C$, 'toWindowsRegexPattern$S',  function (globPattern) {
 return C$.toRegexPattern$S$Z(globPattern, true);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.EOL=String.fromCharCode(0);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:08 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

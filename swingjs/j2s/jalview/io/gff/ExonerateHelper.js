@@ -1,15 +1,14 @@
-(function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[[0,'jalview.datamodel.MappingType']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ExonerateHelper", null, 'jalview.io.gff.Gff2Helper');
+(function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[[0,'jalview.io.gff.Gff2Helper','jalview.datamodel.MappingType','java.util.Locale']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ExonerateHelper", null, 'jalview.io.gff.Gff2Helper');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z','processGff$'], function (seq, gffColumns, align, newseqs, relaxedIdMatching) {
+Clazz.newMeth(C$, 'processGff$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z',  function (seq, gffColumns, align, newseqs, relaxedIdMatching) {
 var attr=gffColumns[8];
-var set=P$.Gff2Helper.parseNameValuePairs$S(attr);
+var set=$I$(1).parseNameValuePairs$S(attr);
 try {
 this.processGffSimilarity$java_util_Map$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z(set, seq, gffColumns, align, newseqs, relaxedIdMatching);
 } catch (ivfe) {
@@ -22,7 +21,7 @@ throw ivfe;
 return null;
 });
 
-Clazz.newMeth(C$, 'processGffSimilarity$java_util_Map$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z', function (set, seq, gff, align, newseqs, relaxedIdMatching) {
+Clazz.newMeth(C$, 'processGffSimilarity$java_util_Map$jalview_datamodel_SequenceI$SA$jalview_datamodel_AlignmentI$java_util_List$Z',  function (set, seq, gff, align, newseqs, relaxedIdMatching) {
 var featureIsOnTarget=true;
 var mapTo=set.get$O("Query");
 if (mapTo == null ) {
@@ -36,7 +35,7 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Expecting exactly one 
 }var mappedSequence=this.findSequence$S$jalview_datamodel_AlignmentI$java_util_List$Z(mapTo.get$I(0), align, newseqs, relaxedIdMatching);
 var mapFromSequence=seq;
 var mapToSequence=mappedSequence;
-if ((type === $I$(1).NucleotideToPeptide  && featureIsOnTarget ) || (type === $I$(1).PeptideToNucleotide  && !featureIsOnTarget ) ) {
+if ((type === $I$(2).NucleotideToPeptide  && featureIsOnTarget ) || (type === $I$(2).PeptideToNucleotide  && !featureIsOnTarget ) ) {
 mapFromSequence=mappedSequence;
 mapToSequence=seq;
 }var acf=this.getMapping$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI(align, mapFromSequence, mapToSequence);
@@ -57,7 +56,7 @@ continue;
 align.addCodonFrame$jalview_datamodel_AlignedCodonFrame(acf);
 });
 
-Clazz.newMeth(C$, 'buildMapping$S$jalview_datamodel_MappingType$Z$Z$SA', function (region, type, forwardStrand, featureIsOnTarget, gff) {
+Clazz.newMeth(C$, 'buildMapping$S$jalview_datamodel_MappingType$Z$Z$SA',  function (region, type, forwardStrand, featureIsOnTarget, gff) {
 var tokens=region.split$S(" ");
 if (tokens.length != 3) {
 System.err.println$S("Malformed Align descriptor: " + region);
@@ -102,32 +101,32 @@ toEnd=toStart - (toLength - 1);
 return codonmapping;
 });
 
-Clazz.newMeth(C$, 'getMappingType$S', function (model) {
+Clazz.newMeth(C$, 'getMappingType$S',  function (model) {
 var result=null;
 if (model.contains$CharSequence("protein2dna") || model.contains$CharSequence("protein2genome") ) {
-result=$I$(1).PeptideToNucleotide;
+result=$I$(2).PeptideToNucleotide;
 } else if (model.contains$CharSequence("coding2coding") || model.contains$CharSequence("coding2genome") || model.contains$CharSequence("cdna2genome") || model.contains$CharSequence("genome2genome")  ) {
-result=$I$(1).NucleotideToNucleotide;
+result=$I$(2).NucleotideToNucleotide;
 }return result;
 }, 1);
 
-Clazz.newMeth(C$, 'recognises$SA', function (columns) {
+Clazz.newMeth(C$, 'recognises$SA',  function (columns) {
 if (!"similarity".equalsIgnoreCase$S(columns[2])) {
 return false;
 }var model=columns[1];
 if (model != null ) {
-var mdl=model.toLowerCase$();
+var mdl=model.toLowerCase$java_util_Locale($I$(3).ROOT);
 if (mdl.contains$CharSequence("protein2dna") || mdl.contains$CharSequence("protein2genome") || mdl.contains$CharSequence("coding2coding") || mdl.contains$CharSequence("coding2genome") || mdl.contains$CharSequence("cdna2genome") || mdl.contains$CharSequence("genome2genome")  ) {
 return true;
 }}System.err.println$S("Sorry, I don't handle exonerate model " + model);
 return false;
 }, 1);
 
-Clazz.newMeth(C$, 'buildSequenceFeature$SA$java_util_Map', function (gff, set) {
+Clazz.newMeth(C$, 'buildSequenceFeature$SA$java_util_Map',  function (gff, set) {
 var sf=C$.superclazz.prototype.buildSequenceFeature$SA$I$S$java_util_Map.apply(this, [gff, 2, "exonerate", set]);
 return sf;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:38 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

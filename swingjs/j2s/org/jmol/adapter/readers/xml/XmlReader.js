@@ -1,44 +1,32 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'javajs.util.SB','java.util.Hashtable','org.jmol.adapter.smarter.AtomSetCollection','org.jmol.adapter.smarter.Resolver','javajs.util.Rdr','org.jmol.api.Interface','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XmlReader", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'javajs.util.SB','java.util.Hashtable','org.jmol.adapter.smarter.AtomSetCollection','org.jmol.adapter.smarter.Resolver','javajs.util.Rdr','org.jmol.api.Interface','org.jmol.util.Logger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XmlReader", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+C$.$classes$=[['NVPair',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.atom=null;
-this.bond=null;
-this.parent=null;
-this.atts=null;
-this.keepChars=false;
-this.chars=null;
-this.domObj=null;
-this.attribs=null;
-this.attArgs=null;
-this.nullObj=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.chars=$I$(1).newN$I(2000);
 this.domObj=Clazz.array(java.lang.Object, [1]);
 this.nullObj=Clazz.array(java.lang.Object, [0]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['keepChars'],'O',['atom','org.jmol.adapter.smarter.Atom','bond','org.jmol.adapter.smarter.Bond','parent','org.jmol.adapter.readers.xml.XmlReader','atts','java.util.Map','chars','javajs.util.SB','domObj','Object[]','+attribs','+attArgs','+nullObj']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.initCML$();
 });
 
 Clazz.newMeth(C$, 'initCML$', function () {
-this.atts=Clazz.new_($I$(2));
+this.atts=Clazz.new_($I$(2,1));
 p$1.setMyError$S.apply(this, [p$1.parseXML.apply(this, [])]);
 this.continuing=false;
 });
 
 Clazz.newMeth(C$, 'setMyError$S', function (err) {
 if (err != null  && (this.asc == null  || this.asc.errorMessage == null  ) ) {
-this.asc=Clazz.new_($I$(3).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,["xml", this, null, null]);
+this.asc=Clazz.new_($I$(3,1).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,["xml", this, null, null]);
 this.asc.errorMessage=err;
 }}, p$1);
 
@@ -51,7 +39,7 @@ return p$1.selectReaderAndGo$O.apply(this, [saxReader]);
 }, p$1);
 
 Clazz.newMeth(C$, 'selectReaderAndGo$O', function (saxReader) {
-this.asc=Clazz.new_($I$(3).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,[this.readerName, this, null, null]);
+this.asc=Clazz.new_($I$(3,1).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,[this.readerName, this, null, null]);
 var className=null;
 var thisReader=null;
 var pt=this.readerName.indexOf$S("(");
@@ -88,7 +76,7 @@ var data=null;
 {
 o = this.reader.lock.lock; if (o.$in) data = o.$in.buf;
 }
-if (Clazz.instanceOf(o, "java.io.BufferedInputStream")) o=$I$(5).streamToUTF8String$java_io_BufferedInputStream($I$(5).getBIS$BA(data));
+if (Clazz.instanceOf(o, "java.io.BufferedInputStream")) o=$I$(5,"streamToUTF8String$java_io_BufferedInputStream",[$I$(5).getBIS$BA(data)]);
 var isjs=false;
 {
 isjs = true;
@@ -196,7 +184,7 @@ var nodes=null;
 {
 nodes = attributes[0];
 }
-for (var i=nodes.length; --i >= 0; ) this.atts.put$TK$TV(p$1.fixLocal$S.apply(this, [nodes[i].name]).toLowerCase$(), nodes[i].value);
+for (var i=nodes.length; --i >= 0; ) this.atts.put$O$O(p$1.fixLocal$S.apply(this, [nodes[i].name]).toLowerCase$(), nodes[i].value);
 
 }, p$1);
 
@@ -209,25 +197,20 @@ return jsObject[0][name];
 Clazz.newMeth(C$, 'endDocument$', function () {
 });
 ;
-(function(){var C$=Clazz.newClass(P$.XmlReader, "NVPair", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.XmlReader, "NVPair", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.value=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name','value']]]
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

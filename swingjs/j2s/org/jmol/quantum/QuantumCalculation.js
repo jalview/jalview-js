@@ -1,46 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.quantum.QMAtom','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "QuantumCalculation");
+(function(){var P$=Clazz.newPackage("org.jmol.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.quantum.QMAtom','javajs.util.P3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "QuantumCalculation");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doDebug=false;
-this.bsExcluded=null;
-this.integration=0;
-this.voxelData=null;
-this.voxelDataTemp=null;
-this.countsXYZ=null;
-this.points=null;
-this.xMin=0;
-this.xMax=0;
-this.yMin=0;
-this.yMax=0;
-this.zMin=0;
-this.zMax=0;
-this.qmAtoms=null;
-this.atomIndex=0;
-this.thisAtom=null;
-this.firstAtomOffset=0;
-this.xBohr=null;
-this.yBohr=null;
-this.zBohr=null;
-this.originBohr=null;
-this.stepBohr=null;
-this.nX=0;
-this.nY=0;
-this.nZ=0;
-this.X=null;
-this.Y=null;
-this.Z=null;
-this.X2=null;
-this.Y2=null;
-this.Z2=null;
-this.rangeBohrOrAngstroms=0;
-this.unitFactor=0;
-this.volume=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.doDebug=false;
@@ -50,7 +11,9 @@ this.stepBohr=Clazz.array(Float.TYPE, [3]);
 this.rangeBohrOrAngstroms=10;
 this.unitFactor=1.8897161;
 this.volume=1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doDebug'],'F',['integration','rangeBohrOrAngstroms','unitFactor','volume'],'I',['xMin','xMax','yMin','yMax','zMin','zMax','atomIndex','firstAtomOffset','nX','nY','nZ'],'O',['bsExcluded','javajs.util.BS','voxelData','float[][][]','+voxelDataTemp','countsXYZ','int[]','points','javajs.util.T3[]','qmAtoms','org.jmol.quantum.QMAtom[]','thisAtom','org.jmol.quantum.QMAtom','xBohr','float[]','+yBohr','+zBohr','+originBohr','+stepBohr','+X','+Y','+Z','+X2','+Y2','+Z2']]]
 
 Clazz.newMeth(C$, 'getIntegration$', function () {
 return this.integration;
@@ -88,11 +51,11 @@ this.originBohr[i]=originXYZ[i] * this.unitFactor;
 this.stepBohr[i]=stepsXYZ[i] * this.unitFactor;
 this.volume *= this.stepBohr[i];
 }
-$I$(1).info$S("QuantumCalculation:\n origin = " + $I$(2).eAF$FA(originXYZ) + "\n steps = " + $I$(2).eAF$FA(stepsXYZ) + "\n origin(Bohr)= " + $I$(2).eAF$FA(this.originBohr) + "\n steps(Bohr)= " + $I$(2).eAF$FA(this.stepBohr) + "\n counts= " + this.nX + " " + this.nY + " " + this.nZ );
+$I$(1,"info$S",["QuantumCalculation:\n origin = " + $I$(2).eAF$FA(originXYZ) + "\n steps = " + $I$(2).eAF$FA(stepsXYZ) + "\n origin(Bohr)= " + $I$(2).eAF$FA(this.originBohr) + "\n steps(Bohr)= " + $I$(2).eAF$FA(this.stepBohr) + "\n counts= " + this.nX + " " + this.nY + " " + this.nZ ]);
 }this.qmAtoms=Clazz.array($I$(3), [renumber ? bsSelected.cardinality$() : xyz.length]);
 var isAll=(bsSelected == null );
 var i0=(isAll ? this.qmAtoms.length - 1 : bsSelected.nextSetBit$I(0));
-for (var i=i0, j=0; i >= 0; i=(isAll ? i - 1 : bsSelected.nextSetBit$I(i + 1))) this.qmAtoms[renumber ? j++ : i]=Clazz.new_($I$(3).c$$I$javajs_util_T3$org_jmol_modelset_Atom$FA$FA$FA$FA$FA$FA$F,[i, xyz[i], atoms[i], this.X, this.Y, this.Z, this.X2, this.Y2, this.Z2, this.unitFactor]);
+for (var i=i0, j=0; i >= 0; i=(isAll ? i - 1 : bsSelected.nextSetBit$I(i + 1))) this.qmAtoms[renumber ? j++ : i]=Clazz.new_($I$(3,1).c$$I$javajs_util_T3$org_jmol_modelset_Atom$FA$FA$FA$FA$FA$FA$F,[i, xyz[i], atoms[i], this.X, this.Y, this.Z, this.X2, this.Y2, this.Z2, this.unitFactor]);
 
 });
 
@@ -116,7 +79,7 @@ this.initializeOnePointQC$();
 
 Clazz.newMeth(C$, 'initializeOnePointQC$', function () {
 this.points=Clazz.array($I$(4), [1]);
-this.points[0]=Clazz.new_($I$(4));
+this.points[0]=Clazz.new_($I$(4,1));
 if (this.voxelData == null  || this.voxelData === this.voxelDataTemp  ) {
 this.voxelData=this.voxelDataTemp=Clazz.array(Float.TYPE, [1, 1, 1]);
 } else {
@@ -163,4 +126,4 @@ this.yMin=this.zMin=(ix < 0 ? 0 : ix);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

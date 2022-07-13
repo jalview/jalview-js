@@ -1,28 +1,21 @@
 (function(){var P$=Clazz.newPackage("jalview.workers"),I$=[];
-var C$=Clazz.newClass(P$, "AlignCalcWorker", null, null, 'jalview.api.AlignCalcWorkerI');
+/*c*/var C$=Clazz.newClass(P$, "AlignCalcWorker", null, null, 'jalview.api.AlignCalcWorkerI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.alignViewport=null;
-this.calcMan=null;
-this.ap=null;
-this.ourAnnots=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel', function (alignViewport, alignPanel) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['alignViewport','jalview.api.AlignViewportI','calcMan','jalview.api.AlignCalcManagerI','ap','jalview.api.AlignmentViewPanel','ourAnnots','java.util.List']]]
+
+Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel',  function (alignViewport, alignPanel) {
+;C$.$init$.apply(this);
 this.alignViewport=alignViewport;
 this.calcMan=alignViewport.getCalcManager$();
 this.ap=alignPanel;
 }, 1);
 
-Clazz.newMeth(C$, 'abortAndDestroy$', function () {
+Clazz.newMeth(C$, 'abortAndDestroy$',  function () {
 if (this.calcMan != null ) {
 this.calcMan.workerComplete$jalview_api_AlignCalcWorkerI(this);
 }this.alignViewport=null;
@@ -30,11 +23,11 @@ this.calcMan=null;
 this.ap=null;
 });
 
-Clazz.newMeth(C$, 'involves$jalview_datamodel_AlignmentAnnotation', function (i) {
+Clazz.newMeth(C$, 'involves$jalview_datamodel_AlignmentAnnotation',  function (i) {
 return this.ourAnnots != null  && this.ourAnnots.contains$O(i) ;
 });
 
-Clazz.newMeth(C$, 'removeAnnotation$', function () {
+Clazz.newMeth(C$, 'removeAnnotation$',  function () {
 if (this.ourAnnots != null  && this.alignViewport != null  ) {
 var alignment=this.alignViewport.getAlignment$();
 {
@@ -44,11 +37,11 @@ alignment.deleteAnnotation$jalview_datamodel_AlignmentAnnotation$Z(aa, true);
 }this.ourAnnots.clear$();
 }});
 
-Clazz.newMeth(C$, 'isDeletable$', function () {
+Clazz.newMeth(C$, 'isDeletable$',  function () {
 return false;
 });
 
-Clazz.newMeth(C$, 'setGraphMinMax$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_AnnotationA', function (ann, anns) {
+Clazz.newMeth(C$, 'setGraphMinMax$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_AnnotationA',  function (ann, anns) {
 var max=1.4E-45;
 var min=3.4028235E38;
 var set=false;
@@ -66,4 +59,4 @@ ann.graphMax=max;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

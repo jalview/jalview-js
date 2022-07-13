@@ -1,26 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.Bond','javajs.util.V3','javajs.util.Lst','javajs.util.AU','org.jmol.adapter.readers.quantum.BasisFunctionReader','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GaussianFchkReader", null, 'org.jmol.adapter.readers.quantum.GaussianReader');
-C$.AO_TYPES=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.Bond','javajs.util.V3','javajs.util.Lst','javajs.util.AU','org.jmol.adapter.readers.quantum.BasisFunctionReader','org.jmol.util.Escape']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GaussianFchkReader", null, 'org.jmol.adapter.readers.quantum.GaussianReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.AO_TYPES=Clazz.array(String, -1, ["F7", "D5", "L", "S", "P", "D", "F", "G", "H"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fileData=null;
-this.atomCount=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['atomCount'],'O',['fileData','java.util.Map']]
+,['O',['AO_TYPES','String[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 C$.superclazz.prototype.initializeReader$.apply(this, []);
 this.energyUnits="";
-this.fileData=Clazz.new_($I$(1));
-this.fileData.put$TK$TV("title", this.rd$().trim$());
-this.calculationType=$I$(2).rep$S$S$S(this.rd$(), "  ", " ");
+this.fileData=Clazz.new_($I$(1,1));
+this.fileData.put$O$O("title", this.rd$().trim$());
+this.calculationType=$I$(2,"rep$S$S$S",[this.rd$(), "  ", " "]);
 this.asc.newAtomSet$();
 this.asc.setCurrentModelInfo$S$O("fileData", this.fileData);
 p$1.readAllData.apply(this, []);
@@ -67,7 +61,7 @@ this.asc.addVibrationVectorWithSymmetry$I$F$F$F$Z(iAtom0 + iAtom, modes[fpt++], 
 }
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(3).error$S("Could not read Vib-E2 section: " + e.getMessage$());
+$I$(3,"error$S",["Could not read Vib-E2 section: " + e.getMessage$()]);
 } else {
 throw e;
 }
@@ -87,11 +81,11 @@ if (this.line.length$() < 40) {
 if (this.line.indexOf$S("NumAtom") == 0) {
 return;
 }continue;
-}var name=$I$(2).rep$S$S$S(this.line.substring$I$I(0, 40).trim$(), " ", "");
+}var name=$I$(2,"rep$S$S$S",[this.line.substring$I$I(0, 40).trim$(), " ", ""]);
 var type=this.line.charAt$I(43);
 var isArray=(this.line.indexOf$S("N=") >= 0);
 var v=this.line.substring$I(50).trim$();
-$I$(3).info$S(name + " = " + v + " " + isArray );
+$I$(3,"info$S",[name + " = " + v + " " + isArray ]);
 var o=null;
 if (isArray) {
 switch (type.$c()) {
@@ -121,7 +115,7 @@ o=v;
 break;
 }
 this.line=null;
-}if (o != null ) this.fileData.put$TK$TV(name, o);
+}if (o != null ) this.fileData.put$O$O(name, o);
 }
 }, p$1);
 
@@ -152,7 +146,7 @@ var ib=(iBond[pt]|0) - 1;
 if (ib <= ia) continue;
 var order=rBond[pt];
 var iorder=(order == 1.5  ? 515 : (order|0));
-this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(4).c$$I$I$I,[ia, ib, iorder]));
+this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(4,1).c$$I$I$I,[ia, ib, iorder]));
 }
 
 this.addJmolScript$S("connect 1.1 {_H} {*} ");
@@ -169,7 +163,7 @@ Clazz.newMeth(C$, 'readDipoleMoment$', function () {
 var data=this.fileData.get$O("DipoleMoment");
 if (data == null ) return;
 var dipole=$I$(5).new3$F$F$F(data[0], data[1], data[2]);
-$I$(3).info$S("Molecular dipole for model " + this.asc.atomSetCount + " = " + dipole );
+$I$(3,"info$S",["Molecular dipole for model " + this.asc.atomSetCount + " = " + dipole ]);
 this.asc.setCurrentModelInfo$S$O("dipole", dipole);
 });
 
@@ -191,7 +185,7 @@ this.gaussianCount=0;
 this.shellCount=0;
 if (types == null ) return;
 this.shellCount=types.length;
-this.shells=Clazz.new_($I$(6));
+this.shells=Clazz.new_($I$(6,1));
 var pps=this.fileData.get$O("Numberofprimitivespershell");
 var atomMap=this.fileData.get$O("Shelltoatommap");
 var exps=this.fileData.get$O("Primitiveexponents");
@@ -204,12 +198,12 @@ var nGaussians=(pps[i]|0);
 var iatom=(atomMap[i]|0);
 var slater=Clazz.array(Integer.TYPE, [4]);
 slater[0]=iatom;
-if (oType.equals$O("F7") || oType.equals$O("D5") ) slater[1]=$I$(8).getQuantumShellTagIDSpherical$S(oType.substring$I$I(0, 1));
+if (oType.equals$O("F7") || oType.equals$O("D5") ) slater[1]=$I$(8,"getQuantumShellTagIDSpherical$S",[oType.substring$I$I(0, 1)]);
  else slater[1]=$I$(8).getQuantumShellTagID$S(oType);
 slater[2]=this.gaussianCount + 1;
 slater[3]=nGaussians;
-if (this.debugging) $I$(3).debug$S("Slater " + this.shells.size$() + " " + $I$(9).eAI$IA(slater) );
-this.shells.addLast$TV(slater);
+if (this.debugging) $I$(3,"debug$S",["Slater " + this.shells.size$() + " " + $I$(9).eAI$IA(slater) ]);
+this.shells.addLast$O(slater);
 for (var j=0; j < nGaussians; j++) {
 var g=this.gaussians[this.gaussianCount]=Clazz.array(Float.TYPE, [3]);
 g[0]=exps[this.gaussianCount];
@@ -250,18 +244,22 @@ for (var i=0; i < nOrb; i++) {
 var coefs=Clazz.array(Float.TYPE, [nCoef]);
 for (var j=0; j < nCoef; j++) coefs[j]=c[pt++];
 
-var mo=Clazz.new_($I$(1));
-mo.put$TK$TV("coefficients", coefs);
-mo.put$TK$TV("occupancy", Float.valueOf$F(occ));
+var mo=Clazz.new_($I$(1,1));
+mo.put$O$O("coefficients", coefs);
+mo.put$O$O("occupancy", Float.valueOf$F(occ));
 n+=occ;
 if (n >= nElec) occ=0;
-mo.put$TK$TV("energy", Float.valueOf$F(e[i]));
-mo.put$TK$TV("type", this.alphaBeta);
+mo.put$O$O("energy", Float.valueOf$F(e[i]));
+mo.put$O$O("type", this.alphaBeta);
 this.setMO$java_util_Map(mo);
 }
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.AO_TYPES=Clazz.array(String, -1, ["F7", "D5", "L", "S", "P", "D", "F", "G", "H"]);
+};
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

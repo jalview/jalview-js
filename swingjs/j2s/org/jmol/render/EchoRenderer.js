@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'org.jmol.render.TextRenderer','org.jmol.util.C','org.jmol.util.Txt']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EchoRenderer", null, 'org.jmol.render.LabelsRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'org.jmol.render.TextRenderer','org.jmol.util.C','org.jmol.util.Txt']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EchoRenderer", null, 'org.jmol.render.LabelsRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'render$', function () {
 if (this.vwr.isPreviewOnly) return false;
@@ -48,13 +47,12 @@ p$1.renderFrameTitle$S.apply(this, [frameTitle]);
 });
 
 Clazz.newMeth(C$, 'renderFrameTitle$S', function (frameTitle) {
-this.vwr.gdata.setFontFid$B(($b$[0] = this.vwr.gdata.getFontFidFS$S$F("arial", ((24 * this.imageFontScaling)|0)), $b$[0]));
+this.vwr.gdata.setFontFid$B(this.vwr.gdata.getFontFidFS$S$F("arial", ((24 * this.imageFontScaling)|0)));
 var y=(Math.floor(this.vwr.getScreenHeight$() * (this.g3d.isAntialiased$() ? 2 : 1) - 10 * this.imageFontScaling)|0);
 var x=(Math.floor(5 * this.imageFontScaling)|0);
-this.g3d.drawStringNoSlab$S$javajs_awt_Font$I$I$I$H(frameTitle, null, x, y, 0, 0);
+this.g3d.drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H(frameTitle, null, x, y, 0, 0);
 }, p$1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

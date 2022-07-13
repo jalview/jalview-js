@@ -1,26 +1,12 @@
 (function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[];
-var C$=Clazz.newClass(P$, "SmilesBond", null, 'org.jmol.util.Edge');
+/*c*/var C$=Clazz.newClass(P$, "SmilesBond", null, 'org.jmol.util.Edge');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.atom1=null;
-this.atom2=null;
-this.isNot=false;
-this.matchingBond=null;
-this.primitives=null;
-this.nPrimitives=0;
-this.bondsOr=null;
-this.nBondsOr=0;
-this.isConnection=false;
-this.atropType=null;
-this.isChain=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isNot','isConnection','isChain'],'I',['nPrimitives','nBondsOr'],'O',['atom1','org.jmol.smiles.SmilesAtom','+atom2','matchingBond','org.jmol.util.Edge','primitives','org.jmol.smiles.SmilesBond[]','+bondsOr','atropType','int[]']]]
 
 Clazz.newMeth(C$, 'getBondOrderString$I', function (order) {
 switch (order) {
@@ -121,7 +107,7 @@ return this.atom1 + " -" + (this.isNot ? "!" : "") + this.order + "- " + this.at
 });
 
 Clazz.newMeth(C$, 'c$$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom$I$Z', function (atom1, atom2, bondType, isNot) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.set2$I$Z(bondType, isNot);
 this.set2a$org_jmol_smiles_SmilesAtom$org_jmol_smiles_SmilesAtom(atom1, atom2);
 }, 1);
@@ -241,4 +227,4 @@ return this.matchingBond == null  ? this : this.matchingBond;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

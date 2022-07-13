@@ -1,27 +1,23 @@
 (function(){var P$=java.io,I$=[];
-var C$=Clazz.newClass(P$, "PipedOutputStream", null, 'java.io.OutputStream');
+/*c*/var C$=Clazz.newClass(P$, "PipedOutputStream", null, 'java.io.OutputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sink=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_io_PipedInputStream', function (snk) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['O',['sink','java.io.PipedInputStream']]]
+
+Clazz.newMeth(C$, 'c$$java_io_PipedInputStream',  function (snk) {
+Clazz.super_(C$, this);
 this.connect$java_io_PipedInputStream(snk);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 }, 1);
 
-Clazz.newMeth(C$, 'connect$java_io_PipedInputStream', function (snk) {
+Clazz.newMeth(C$, 'connect$java_io_PipedInputStream',  function (snk) {
 if (snk == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 } else if (this.sink != null  || snk.connected ) {
@@ -32,13 +28,13 @@ snk.out=0;
 snk.connected=true;
 });
 
-Clazz.newMeth(C$, 'write$I', function (b) {
+Clazz.newMeth(C$, 'write$I',  function (b) {
 if (this.sink == null ) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Pipe not connected"]);
 }this.sink.receive$I(b);
 });
 
-Clazz.newMeth(C$, 'write$BA$I$I', function (b, off, len) {
+Clazz.newMeth(C$, 'write$BA$I$I',  function (b, off, len) {
 if (this.sink == null ) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Pipe not connected"]);
 } else if (b == null ) {
@@ -50,15 +46,15 @@ return;
 }this.sink.receive$BA$I$I(b, off, len);
 });
 
-Clazz.newMeth(C$, 'flush$', function () {
+Clazz.newMeth(C$, 'flush$',  function () {
 if (this.sink != null ) {
 {
 this.sink.notifyAll$();
 }}});
 
-Clazz.newMeth(C$, 'close$', function () {
+Clazz.newMeth(C$, 'close$',  function () {
 if (this.sink != null ) {
 this.sink.receivedLast$();
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:57 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

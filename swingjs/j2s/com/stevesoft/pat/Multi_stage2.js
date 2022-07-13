@@ -1,36 +1,27 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.RegSyntaxError','com.stevesoft.pat.patInt']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Multi_stage2", null, 'com.stevesoft.pat.PatternSub');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.RegSyntaxError','com.stevesoft.pat.patInt']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Multi_stage2", null, 'com.stevesoft.pat.PatternSub');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextRet=null;
-this.count=null;
-this.matchMin=null;
-this.matchMax=null;
-this.matchFewest=false;
-this.pos_old=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.matchFewest=false;
 this.pos_old=-1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'toString', function () {
+C$.$fields$=[['Z',['matchFewest'],'I',['pos_old'],'O',['nextRet','com.stevesoft.pat.Pattern','count','com.stevesoft.pat.patInt','+matchMin','+matchMax']]]
+
+Clazz.newMeth(C$, 'toString',  function () {
 var ret="";
-ret += this.sub.toString();
-ret += "{" + this.matchMin + "," + this.matchMax + "}" ;
+ret+=this.sub.toString();
+ret+="{" + this.matchMin + "," + this.matchMax + "}" ;
 if (this.matchFewest) {
-ret += "?";
-}ret += this.parent.nextString$();
+ret+="?";
+}ret+=this.parent.nextString$();
 return ret;
 });
 
-Clazz.newMeth(C$, 'c$$com_stevesoft_pat_patInt$com_stevesoft_pat_patInt$com_stevesoft_pat_Pattern', function (a, b, p) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$com_stevesoft_pat_patInt$com_stevesoft_pat_patInt$com_stevesoft_pat_Pattern',  function (a, b, p) {
+Clazz.super_(C$, this);
 if (p == null ) {
 $I$(1).endItAll$S("Multiple match of Null pattern requested.");
 }this.sub=p;
@@ -38,19 +29,19 @@ this.nextRet=this;
 this.sub.setParent$com_stevesoft_pat_Pattern(this);
 this.matchMin=a;
 this.matchMax=b;
-this.count=Clazz.new_($I$(2).c$$I,[0]);
+this.count=Clazz.new_($I$(2,1).c$$I,[0]);
 if (!a.lessEq$com_stevesoft_pat_patInt(b)) {
 $I$(1).endItAll$S("Bad Multi Args: " + a + ">" + b );
-}var i=Clazz.new_($I$(2).c$$I,[-1]);
+}var i=Clazz.new_($I$(2,1).c$$I,[-1]);
 if (a.lessEq$com_stevesoft_pat_patInt(i)) {
 $I$(1).endItAll$S("Bad Multi Args: " + a + "< 0" );
 }}, 1);
 
-Clazz.newMeth(C$, 'getNext$', function () {
+Clazz.newMeth(C$, 'getNext$',  function () {
 return this.nextRet;
 });
 
-Clazz.newMeth(C$, 'matchInternal$I$com_stevesoft_pat_Pthings', function (pos, pt) {
+Clazz.newMeth(C$, 'matchInternal$I$com_stevesoft_pat_Pthings',  function (pos, pt) {
 this.sub.setParent$com_stevesoft_pat_Pattern(this);
 var canUse=-1;
 if (this.pos_old >= 0 && pos == this.pos_old ) {
@@ -88,7 +79,7 @@ return ret;
 return canUse;
 }});
 
-Clazz.newMeth(C$, 'clone1$java_util_Hashtable', function (h) {
+Clazz.newMeth(C$, 'clone1$java_util_Hashtable',  function (h) {
 try {
 var m=Clazz.new_(C$.c$$com_stevesoft_pat_patInt$com_stevesoft_pat_patInt$com_stevesoft_pat_Pattern,[this.matchMin, this.matchMax, this.sub.clone$java_util_Hashtable(h)]);
 m.matchFewest=this.matchFewest;
@@ -104,4 +95,4 @@ throw rs;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:23 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

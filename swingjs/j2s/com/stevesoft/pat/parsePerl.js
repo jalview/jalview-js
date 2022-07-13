@@ -1,13 +1,12 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'StringBuffer','com.stevesoft.pat.CaseMgr','com.stevesoft.pat.RegSyntaxError','com.stevesoft.pat.Prop','com.stevesoft.pat.Regex','com.stevesoft.pat.StringRule','com.stevesoft.pat.ReplaceRule']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "parsePerl");
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'StringBuffer','com.stevesoft.pat.CaseMgr','com.stevesoft.pat.RegSyntaxError','com.stevesoft.pat.Prop','com.stevesoft.pat.Regex','com.stevesoft.pat.StringRule','com.stevesoft.pat.ReplaceRule']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "parsePerl");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'close$C', function (c) {
+Clazz.newMeth(C$, 'close$C',  function (c) {
 if (c == "<") {
 return ">";
 }if (c == "[") {
@@ -19,12 +18,12 @@ return "}";
 }return c;
 }, 1);
 
-Clazz.newMeth(C$, 'codify$S$Z', function (s, keepbs) {
+Clazz.newMeth(C$, 'codify$S$Z',  function (s, keepbs) {
 return C$.codify$S$I$I$Z(s, 0, s.length$(), keepbs);
 }, 1);
 
-Clazz.newMeth(C$, 'codify$S$I$I$Z', function (s, i0, iN, keepbs) {
-var sb=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'codify$S$I$I$Z',  function (s, i0, iN, keepbs) {
+var sb=Clazz.new_($I$(1,1));
 var ucmode=false;
 var lcmode=false;
 var litmode=false;
@@ -37,7 +36,7 @@ var mf=true;
 var app=true;
 if (c == "\\") {
 app=false;
-i++;
+++i;
 if (i < s.length$()) {
 var c2=s.charAt$I(i);
 switch (c2.$c()) {
@@ -68,7 +67,7 @@ mf=false;
 }app=true;
 break;
 }
-modified|=mf;
+modified=!!(modified|(mf));
 }}if (app) {
 if (lc1) {
 c=C$.lc$C(c);
@@ -87,15 +86,15 @@ sb.append$C("\\");
 return modified ? sb.toString() : s;
 }, 1);
 
-Clazz.newMeth(C$, 'uc$C', function (c) {
+Clazz.newMeth(C$, 'uc$C',  function (c) {
 return $I$(2).toUpperCase$C(c);
 }, 1);
 
-Clazz.newMeth(C$, 'lc$C', function (c) {
+Clazz.newMeth(C$, 'lc$C',  function (c) {
 return $I$(2).toLowerCase$C(c);
 }, 1);
 
-Clazz.newMeth(C$, 'needbs$C', function (c) {
+Clazz.newMeth(C$, 'needbs$C',  function (c) {
 if (c >= "a" && c <= "z" ) {
 return false;
 }if (c >= "A" && c <= "Z" ) {
@@ -107,15 +106,15 @@ return false;
 }return true;
 }, 1);
 
-Clazz.newMeth(C$, 'parse$S', function (s) {
+Clazz.newMeth(C$, 'parse$S',  function (s) {
 var igncase=false;
 var optim=false;
 var gFlag=false;
 var sFlag=false;
 var mFlag=false;
 var xFlag=false;
-var s1=Clazz.new_($I$(1));
-var s2=Clazz.new_($I$(1));
+var s1=Clazz.new_($I$(1,1));
+var s2=Clazz.new_($I$(1,1));
 var i=0;
 var count=0;
 var mode;
@@ -147,19 +146,19 @@ return null;
 }for (; i < s.length$(); i++) {
 if (s.charAt$I(i) == "\\") {
 s1.append$C("\\");
-i++;
+++i;
 } else if (s.charAt$I(i) == cdelim && count == 0 ) {
-i++;
+++i;
 break;
 } else if (s.charAt$I(i) == delim && cdelim != delim ) {
-count++;
+++count;
 } else if (s.charAt$I(i) == cdelim && cdelim != delim ) {
-count--;
+--count;
 }s1.append$C(s.charAt$I(i));
 }
 if (mode == "s" && cdelim != delim ) {
-while (i < s.length$() && $I$(4).isWhite$C(s.charAt$I(i)) ){
-i++;
+while (i < s.length$() && $I$(4,"isWhite$C",[s.charAt$I(i)]) ){
+++i;
 }
 if (i >= s.length$()) {
 try {
@@ -172,20 +171,20 @@ throw rs;
 }
 return null;
 }cdelim=C$.close$C(delim=s.charAt$I(i));
-i++;
+++i;
 }count=0;
 if (mode == "s") {
 for (; i < s.length$(); i++) {
 if (s.charAt$I(i) == "\\") {
 s2.append$C("\\");
-i++;
+++i;
 } else if (s.charAt$I(i) == cdelim && count == 0 ) {
-i++;
+++i;
 break;
 } else if (s.charAt$I(i) == delim && cdelim != delim ) {
-count++;
+++count;
 } else if (s.charAt$I(i) == cdelim && cdelim != delim ) {
-count--;
+--count;
 }s2.append$C(s.charAt$I(i));
 }
 }for (; i < s.length$(); i++) {
@@ -221,7 +220,7 @@ throw rs;
 return null;
 }
 }
-var r=Clazz.new_($I$(5));
+var r=Clazz.new_($I$(5,1));
 try {
 var pat=s1.toString();
 var reprul=s2.toString();
@@ -229,14 +228,14 @@ if (xFlag) {
 pat=C$.strip$S(pat);
 reprul=C$.strip$S(reprul);
 }r.compile$S(pat);
-r.ignoreCase|=igncase;
-r.gFlag|=gFlag;
-r.sFlag|=sFlag;
-r.mFlag|=mFlag;
+r.ignoreCase=!!(r.ignoreCase|(igncase));
+r.gFlag=!!(r.gFlag|(gFlag));
+r.sFlag=!!(r.sFlag|(sFlag));
+r.mFlag=!!(r.mFlag|(mFlag));
 if (optim) {
 r.optimize$();
 }if (delim == "\'") {
-r.setReplaceRule$com_stevesoft_pat_ReplaceRule(Clazz.new_($I$(6).c$$S,[reprul]));
+r.setReplaceRule$com_stevesoft_pat_ReplaceRule(Clazz.new_($I$(6,1).c$$S,[reprul]));
 } else {
 r.setReplaceRule$com_stevesoft_pat_ReplaceRule($I$(7).perlCode$S(reprul));
 }} catch (rs) {
@@ -249,17 +248,17 @@ throw rs;
 return r;
 }, 1);
 
-Clazz.newMeth(C$, 'strip$S', function (s) {
-var sb=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'strip$S',  function (s) {
+var sb=Clazz.new_($I$(1,1));
 for (var i=0; i < s.length$(); i++) {
 var c=s.charAt$I(i);
 if ($I$(4).isWhite$C(c)) {
 ;} else if (c == "#") {
-i++;
+++i;
 while (i < s.length$()){
 if (s.charAt$I(i) == "\n") {
 break;
-}i++;
+}++i;
 }
 } else if (c == "\\") {
 sb.append$C(c);
@@ -272,4 +271,4 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:24 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

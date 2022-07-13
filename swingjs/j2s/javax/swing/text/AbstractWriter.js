@@ -1,29 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.ElementIterator','javax.swing.text.Segment']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractWriter");
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.ElementIterator','javax.swing.text.Segment']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractWriter");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.it=null;
-this.out=null;
-this.indentLevel=0;
-this.indentSpace=0;
-this.doc=null;
-this.maxLineLength=0;
-this.currLength=0;
-this.startOffset=0;
-this.endOffset=0;
-this.offsetIndent=0;
-this.lineSeparator=null;
-this.canWrapLines=false;
-this.isLineEmpty=false;
-this.indentChars=null;
-this.tempChars=null;
-this.newlineChars=null;
-this.segment=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.indentLevel=0;
@@ -34,16 +12,18 @@ this.currLength=0;
 this.startOffset=0;
 this.endOffset=0;
 this.offsetIndent=0;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Document', function (w, doc) {
+C$.$fields$=[['Z',['canWrapLines','isLineEmpty'],'I',['indentLevel','indentSpace','maxLineLength','currLength','startOffset','endOffset','offsetIndent'],'S',['lineSeparator'],'O',['it','javax.swing.text.ElementIterator','out','java.io.Writer','doc','javax.swing.text.Document','indentChars','char[]','+tempChars','+newlineChars','segment','javax.swing.text.Segment']]]
+
+Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Document',  function (w, doc) {
 C$.c$$java_io_Writer$javax_swing_text_Document$I$I.apply(this, [w, doc, 0, doc.getLength$()]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Document$I$I', function (w, doc, pos, len) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Document$I$I',  function (w, doc, pos, len) {
+;C$.$init$.apply(this);
 this.doc=doc;
-this.it=Clazz.new_($I$(1).c$$javax_swing_text_Element,[doc.getDefaultRootElement$()]);
+this.it=Clazz.new_([doc.getDefaultRootElement$()],$I$(1,1).c$$javax_swing_text_Element);
 this.out=w;
 this.startOffset=pos;
 this.endOffset=pos + len;
@@ -66,41 +46,41 @@ newline="\n";
 }this.canWrapLines=true;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Element', function (w, root) {
+Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Element',  function (w, root) {
 C$.c$$java_io_Writer$javax_swing_text_Element$I$I.apply(this, [w, root, 0, root.getEndOffset$()]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Element$I$I', function (w, root, pos, len) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_io_Writer$javax_swing_text_Element$I$I',  function (w, root, pos, len) {
+;C$.$init$.apply(this);
 this.doc=root.getDocument$();
-this.it=Clazz.new_($I$(1).c$$javax_swing_text_Element,[root]);
+this.it=Clazz.new_($I$(1,1).c$$javax_swing_text_Element,[root]);
 this.out=w;
 this.startOffset=pos;
 this.endOffset=pos + len;
 this.canWrapLines=true;
 }, 1);
 
-Clazz.newMeth(C$, 'getStartOffset$', function () {
+Clazz.newMeth(C$, 'getStartOffset$',  function () {
 return this.startOffset;
 });
 
-Clazz.newMeth(C$, 'getEndOffset$', function () {
+Clazz.newMeth(C$, 'getEndOffset$',  function () {
 return this.endOffset;
 });
 
-Clazz.newMeth(C$, 'getElementIterator$', function () {
+Clazz.newMeth(C$, 'getElementIterator$',  function () {
 return this.it;
 });
 
-Clazz.newMeth(C$, 'getWriter$', function () {
+Clazz.newMeth(C$, 'getWriter$',  function () {
 return this.out;
 });
 
-Clazz.newMeth(C$, 'getDocument$', function () {
+Clazz.newMeth(C$, 'getDocument$',  function () {
 return this.doc;
 });
 
-Clazz.newMeth(C$, 'inRange$javax_swing_text_Element', function (next) {
+Clazz.newMeth(C$, 'inRange$javax_swing_text_Element',  function (next) {
 var startOffset=this.getStartOffset$();
 var endOffset=this.getEndOffset$();
 if ((next.getStartOffset$() >= startOffset && next.getStartOffset$() < endOffset ) || (startOffset >= next.getStartOffset$() && startOffset < next.getEndOffset$() ) ) {
@@ -108,87 +88,87 @@ return true;
 }return false;
 });
 
-Clazz.newMeth(C$, 'getText$javax_swing_text_Element', function (elem) {
+Clazz.newMeth(C$, 'getText$javax_swing_text_Element',  function (elem) {
 return this.doc.getText$I$I(elem.getStartOffset$(), elem.getEndOffset$() - elem.getStartOffset$());
 });
 
-Clazz.newMeth(C$, 'text$javax_swing_text_Element', function (elem) {
+Clazz.newMeth(C$, 'text$javax_swing_text_Element',  function (elem) {
 var start=Math.max(this.getStartOffset$(), elem.getStartOffset$());
 var end=Math.min(this.getEndOffset$(), elem.getEndOffset$());
 if (start < end) {
 if (this.segment == null ) {
-this.segment=Clazz.new_($I$(2));
+this.segment=Clazz.new_($I$(2,1));
 }this.getDocument$().getText$I$I$javax_swing_text_Segment(start, end - start, this.segment);
 if (this.segment.count > 0) {
 this.write$CA$I$I(this.segment.array, this.segment.offset, this.segment.count);
 }}});
 
-Clazz.newMeth(C$, 'setLineLength$I', function (l) {
+Clazz.newMeth(C$, 'setLineLength$I',  function (l) {
 this.maxLineLength=l;
 });
 
-Clazz.newMeth(C$, 'getLineLength$', function () {
+Clazz.newMeth(C$, 'getLineLength$',  function () {
 return this.maxLineLength;
 });
 
-Clazz.newMeth(C$, 'setCurrentLineLength$I', function (length) {
+Clazz.newMeth(C$, 'setCurrentLineLength$I',  function (length) {
 this.currLength=length;
 this.isLineEmpty=(this.currLength == 0);
 });
 
-Clazz.newMeth(C$, 'getCurrentLineLength$', function () {
+Clazz.newMeth(C$, 'getCurrentLineLength$',  function () {
 return this.currLength;
 });
 
-Clazz.newMeth(C$, 'isLineEmpty$', function () {
+Clazz.newMeth(C$, 'isLineEmpty$',  function () {
 return this.isLineEmpty;
 });
 
-Clazz.newMeth(C$, 'setCanWrapLines$Z', function (newValue) {
+Clazz.newMeth(C$, 'setCanWrapLines$Z',  function (newValue) {
 this.canWrapLines=newValue;
 });
 
-Clazz.newMeth(C$, 'getCanWrapLines$', function () {
+Clazz.newMeth(C$, 'getCanWrapLines$',  function () {
 return this.canWrapLines;
 });
 
-Clazz.newMeth(C$, 'setIndentSpace$I', function (space) {
+Clazz.newMeth(C$, 'setIndentSpace$I',  function (space) {
 this.indentSpace=space;
 });
 
-Clazz.newMeth(C$, 'getIndentSpace$', function () {
+Clazz.newMeth(C$, 'getIndentSpace$',  function () {
 return this.indentSpace;
 });
 
-Clazz.newMeth(C$, 'setLineSeparator$S', function (value) {
+Clazz.newMeth(C$, 'setLineSeparator$S',  function (value) {
 this.lineSeparator=value;
 });
 
-Clazz.newMeth(C$, 'getLineSeparator$', function () {
+Clazz.newMeth(C$, 'getLineSeparator$',  function () {
 return this.lineSeparator;
 });
 
-Clazz.newMeth(C$, 'incrIndent$', function () {
+Clazz.newMeth(C$, 'incrIndent$',  function () {
 if (this.offsetIndent > 0) {
-this.offsetIndent++;
+++this.offsetIndent;
 } else {
 if (++this.indentLevel * this.getIndentSpace$() >= this.getLineLength$()) {
-this.offsetIndent++;
+++this.offsetIndent;
 --this.indentLevel;
 }}});
 
-Clazz.newMeth(C$, 'decrIndent$', function () {
+Clazz.newMeth(C$, 'decrIndent$',  function () {
 if (this.offsetIndent > 0) {
 --this.offsetIndent;
 } else {
-this.indentLevel--;
+--this.indentLevel;
 }});
 
-Clazz.newMeth(C$, 'getIndentLevel$', function () {
+Clazz.newMeth(C$, 'getIndentLevel$',  function () {
 return this.indentLevel;
 });
 
-Clazz.newMeth(C$, 'indent$', function () {
+Clazz.newMeth(C$, 'indent$',  function () {
 var max=this.getIndentLevel$() * this.getIndentSpace$();
 if (this.indentChars == null  || max > this.indentChars.length ) {
 this.indentChars=Clazz.array(Character.TYPE, [max]);
@@ -202,14 +182,14 @@ if (wasEmpty && length == 0 ) {
 this.isLineEmpty=true;
 }});
 
-Clazz.newMeth(C$, 'write$C', function (ch) {
+Clazz.newMeth(C$, 'write$C',  function (ch) {
 if (this.tempChars == null ) {
 this.tempChars=Clazz.array(Character.TYPE, [128]);
 }this.tempChars[0]=ch;
 this.write$CA$I$I(this.tempChars, 0, 1);
 });
 
-Clazz.newMeth(C$, 'write$S', function (content) {
+Clazz.newMeth(C$, 'write$S',  function (content) {
 if (content == null ) {
 return;
 }var size=content.length$();
@@ -219,7 +199,7 @@ this.tempChars=Clazz.array(Character.TYPE, [size]);
 this.write$CA$I$I(this.tempChars, 0, size);
 });
 
-Clazz.newMeth(C$, 'writeLineSeparator$', function () {
+Clazz.newMeth(C$, 'writeLineSeparator$',  function () {
 var newline=this.getLineSeparator$();
 var length=newline.length$();
 if (this.newlineChars == null  || this.newlineChars.length < length ) {
@@ -229,7 +209,7 @@ this.output$CA$I$I(this.newlineChars, 0, length);
 this.setCurrentLineLength$I(0);
 });
 
-Clazz.newMeth(C$, 'write$CA$I$I', function (chars, startIndex, length) {
+Clazz.newMeth(C$, 'write$CA$I$I',  function (chars, startIndex, length) {
 if (!this.getCanWrapLines$()) {
 var lastIndex=startIndex;
 var endIndex=startIndex + length;
@@ -269,7 +249,7 @@ var counter=0;
 while (counter < maxBreak){
 if (Character.isWhitespace$C(chars[counter + lastIndex])) {
 breakPoint=counter;
-}counter++;
+}++counter;
 }
 if (breakPoint != -1) {
 breakPoint+=lastIndex + 1;
@@ -283,7 +263,7 @@ while (counter < maxBreak){
 if (Character.isWhitespace$C(chars[counter + lastIndex])) {
 breakPoint=counter;
 break;
-}counter++;
+}++counter;
 }
 if (breakPoint == -1) {
 this.output$CA$I$I(chars, lastIndex, endIndex - lastIndex);
@@ -304,7 +284,7 @@ this.indent$();
 }}}
 }});
 
-Clazz.newMeth(C$, 'writeAttributes$javax_swing_text_AttributeSet', function (attr) {
+Clazz.newMeth(C$, 'writeAttributes$javax_swing_text_AttributeSet',  function (attr) {
 var names=attr.getAttributeNames$();
 while (names.hasMoreElements$()){
 var name=names.nextElement$();
@@ -312,20 +292,20 @@ this.write$S(" " + name + "=" + attr.getAttribute$O(name) );
 }
 });
 
-Clazz.newMeth(C$, 'output$CA$I$I', function (content, start, length) {
+Clazz.newMeth(C$, 'output$CA$I$I',  function (content, start, length) {
 this.getWriter$().write$CA$I$I(content, start, length);
 this.setCurrentLineLength$I(this.getCurrentLineLength$() + length);
 });
 
-Clazz.newMeth(C$, 'indexOf$CA$C$I$I', function (chars, sChar, startIndex, endIndex) {
+Clazz.newMeth(C$, 'indexOf$CA$C$I$I',  function (chars, sChar, startIndex, endIndex) {
 while (startIndex < endIndex){
 if (chars[startIndex] == sChar) {
 return startIndex;
-}startIndex++;
+}++startIndex;
 }
 return -1;
 }, p$1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

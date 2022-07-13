@@ -1,45 +1,19 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'fr.orsay.lri.varna.models.rna.ModelBaseStyle','fr.orsay.lri.varna.models.rna.VARNAPoint',['java.awt.geom.Point2D','.Double']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ModeleBase", null, null, ['java.io.Serializable', 'Comparable']);
-C$.XML_VAR_TYPE_NAME=null;
-C$.XML_VAR_INDEX_NAME=null;
-C$.XML_VAR_LABEL_NAME=null;
-C$.XML_VAR_VALUE_NAME=null;
-C$.XML_VAR_POSITION_NAME=null;
-C$.XML_VAR_CENTER_NAME=null;
-C$.XML_VAR_NUMBER_NAME=null;
-C$.XML_VAR_CUSTOM_DRAWN_NAME=null;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'fr.orsay.lri.varna.models.rna.ModelBaseStyle','fr.orsay.lri.varna.models.rna.VARNAPoint',['java.awt.geom.Point2D','.Double']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ModeleBase", null, null, ['java.io.Serializable', 'Comparable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.XML_VAR_TYPE_NAME="type";
-C$.XML_VAR_INDEX_NAME="index";
-C$.XML_VAR_LABEL_NAME="label";
-C$.XML_VAR_VALUE_NAME="val";
-C$.XML_VAR_POSITION_NAME="pos";
-C$.XML_VAR_CENTER_NAME="center";
-C$.XML_VAR_NUMBER_NAME="num";
-C$.XML_VAR_CUSTOM_DRAWN_NAME="custom";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._BP=null;
-this._styleBase=null;
-this._colorie=null;
-this._coords=null;
-this._center=null;
-this._label=null;
-this._value=0;
-this._realIndex=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._styleBase=Clazz.new_($I$(1));
+this._styleBase=Clazz.new_($I$(1,1));
 this._colorie= Boolean.from(true);
-this._coords=Clazz.new_($I$(2));
-this._center=Clazz.new_($I$(2));
+this._coords=Clazz.new_($I$(2,1));
+this._center=Clazz.new_($I$(2,1));
 this._label="";
 this._realIndex=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_value'],'I',['_realIndex'],'S',['_label'],'O',['_BP','fr.orsay.lri.varna.models.rna.ModeleBP','_styleBase','fr.orsay.lri.varna.models.rna.ModelBaseStyle','_colorie','Boolean','_coords','fr.orsay.lri.varna.models.rna.VARNAPoint','+_center']]
+,['S',['XML_VAR_TYPE_NAME','XML_VAR_INDEX_NAME','XML_VAR_LABEL_NAME','XML_VAR_VALUE_NAME','XML_VAR_POSITION_NAME','XML_VAR_CENTER_NAME','XML_VAR_NUMBER_NAME','XML_VAR_CUSTOM_DRAWN_NAME']]]
 
 Clazz.newMeth(C$, 'getStyleBase$', function () {
 return this._styleBase;
@@ -54,7 +28,7 @@ this._value=d;
 });
 
 Clazz.newMeth(C$, 'setStyleBase$fr_orsay_lri_varna_models_rna_ModelBaseStyle', function (base) {
-this._styleBase=Clazz.new_($I$(1).c$$fr_orsay_lri_varna_models_rna_ModelBaseStyle,[base]);
+this._styleBase=Clazz.new_($I$(1,1).c$$fr_orsay_lri_varna_models_rna_ModelBaseStyle,[base]);
 });
 
 Clazz.newMeth(C$, 'getColorie$', function () {
@@ -97,7 +71,7 @@ this._realIndex=bn;
 });
 
 Clazz.newMeth(C$, 'getCoords$', function () {
-return Clazz.new_($I$(3).c$$D$D,[this._coords.x, this._coords.y]);
+return Clazz.new_($I$(3,1).c$$D$D,[this._coords.x, this._coords.y]);
 });
 
 Clazz.newMeth(C$, 'setCoords$java_awt_geom_Point2D_Double', function (coords) {
@@ -106,7 +80,7 @@ this._coords.y=coords.y;
 });
 
 Clazz.newMeth(C$, 'getCenter$', function () {
-return Clazz.new_($I$(3).c$$D$D,[this._center.x, this._center.y]);
+return Clazz.new_($I$(3,1).c$$D$D,[this._center.x, this._center.y]);
 });
 
 Clazz.newMeth(C$, 'setCenter$java_awt_geom_Point2D_Double', function (center) {
@@ -130,7 +104,7 @@ this._center.x=center.x;
 this._center.y=center.y;
 });
 
-Clazz.newMeth(C$, ['compareTo$fr_orsay_lri_varna_models_rna_ModeleBase','compareTo$','compareTo$TT'], function (other) {
+Clazz.newMeth(C$, ['compareTo$fr_orsay_lri_varna_models_rna_ModeleBase','compareTo$O'], function (other) {
 var nombre1=(other).getIndex$();
 var nombre2=this.getIndex$();
 if (nombre1 > nombre2) return -1;
@@ -138,6 +112,17 @@ if (nombre1 > nombre2) return -1;
  else return 1;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.XML_VAR_TYPE_NAME="type";
+C$.XML_VAR_INDEX_NAME="index";
+C$.XML_VAR_LABEL_NAME="label";
+C$.XML_VAR_VALUE_NAME="val";
+C$.XML_VAR_POSITION_NAME="pos";
+C$.XML_VAR_CENTER_NAME="center";
+C$.XML_VAR_NUMBER_NAME="num";
+C$.XML_VAR_CUSTOM_DRAWN_NAME="custom";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

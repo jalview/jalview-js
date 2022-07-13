@@ -1,104 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.awt.font"),p$1={},I$=[[0,['java.awt.font.TextLine','.Function'],['java.awt.font.TextLine','.TextLineMetrics'],['java.awt.geom.Point2D','.Double'],['sun.font.LayoutPathImpl','.SegmentPathBuilder'],['sun.font.LayoutPathImpl','.EmptyPath'],'java.awt.Rectangle','java.awt.image.BufferedImage','java.awt.Color','sun.font.BidiUtils',['java.awt.geom.Point2D','.Float'],'java.awt.geom.AffineTransform',['java.awt.geom.Rectangle2D','.Float'],'java.awt.geom.GeneralPath','StringBuilder','sun.font.AttributeValues','java.text.Bidi','sun.font.Decoration','sun.font.TextLabelFactory','sun.font.TextLineComponent','sun.font.CoreMetrics','sun.font.GraphicComponent','java.awt.font.StyledParagraph','java.awt.font.TextAttribute','java.awt.Font','sun.text.CodePointIterator','sun.font.FontResolver','java.awt.font.GlyphJustificationInfo','java.awt.font.TextJustifier']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TextLine", function(){
+(function(){var P$=Clazz.newPackage("java.awt.font"),p$1={},I$=[[0,['java.awt.font.TextLine','.Function'],['java.awt.font.TextLine','.TextLineMetrics'],['java.awt.geom.Point2D','.Double'],['sun.font.LayoutPathImpl','.SegmentPathBuilder'],['sun.font.LayoutPathImpl','.EmptyPath'],'java.awt.Rectangle','java.awt.image.BufferedImage','java.awt.Color','sun.font.BidiUtils',['java.awt.geom.Point2D','.Float'],'java.awt.geom.AffineTransform',['java.awt.geom.Rectangle2D','.Float'],'java.awt.geom.GeneralPath','StringBuilder','sun.font.AttributeValues','java.text.Bidi','sun.font.Decoration','sun.font.TextLabelFactory','sun.font.TextLineComponent','sun.font.CoreMetrics','sun.font.GraphicComponent','java.awt.font.StyledParagraph','java.awt.font.TextAttribute','java.awt.Font','sun.text.CodePointIterator','sun.font.FontResolver','java.awt.font.GlyphJustificationInfo','java.awt.font.TextJustifier']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TextLine", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.fgPosAdvF=null;
-C$.fgAdvanceF=null;
-C$.fgXPositionF=null;
-C$.fgYPositionF=null;
+C$.$classes$=[['TextLineMetrics',24],['Function',1034]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.fgPosAdvF=((P$.TextLine$1||
-(function(){var C$=Clazz.newClass(P$, "TextLine$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I', function (line, componentIndex, indexInArray) {
-var tlc=line.fComponents[componentIndex];
-var vi=p$1.getComponentVisualIndex$I.apply(line, [componentIndex]);
-return line.locs[vi * 2] + tlc.getCharX$I(indexInArray) + tlc.getCharAdvance$I(indexInArray) ;
-});
-})()
-), Clazz.new_($I$(1), [this, null],P$.TextLine$1));
-C$.fgAdvanceF=((P$.TextLine$2||
-(function(){var C$=Clazz.newClass(P$, "TextLine$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I', function (line, componentIndex, indexInArray) {
-var tlc=line.fComponents[componentIndex];
-return tlc.getCharAdvance$I(indexInArray);
-});
-})()
-), Clazz.new_($I$(1), [this, null],P$.TextLine$2));
-C$.fgXPositionF=((P$.TextLine$3||
-(function(){var C$=Clazz.newClass(P$, "TextLine$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I', function (line, componentIndex, indexInArray) {
-var vi=p$1.getComponentVisualIndex$I.apply(line, [componentIndex]);
-var tlc=line.fComponents[componentIndex];
-return line.locs[vi * 2] + tlc.getCharX$I(indexInArray);
-});
-})()
-), Clazz.new_($I$(1), [this, null],P$.TextLine$3));
-C$.fgYPositionF=((P$.TextLine$4||
-(function(){var C$=Clazz.newClass(P$, "TextLine$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I', function (line, componentIndex, indexInArray) {
-var tlc=line.fComponents[componentIndex];
-var charPos=tlc.getCharY$I(indexInArray);
-return charPos + p$1.getComponentShift$I.apply(line, [componentIndex]);
-});
-})()
-), Clazz.new_($I$(1), [this, null],P$.TextLine$4));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fComponents=null;
-this.fBaselineOffsets=null;
-this.fComponentVisualOrder=null;
-this.locs=null;
-this.fChars=null;
-this.fCharsStart=0;
-this.fCharsLimit=0;
-this.fCharVisualOrder=null;
-this.fCharLogicalOrder=null;
-this.fCharLevels=null;
-this.fIsDirectionLTR=false;
-this.lp=null;
-this.isSimple=false;
-this.pixelBounds=null;
-this.frc=null;
-this.fMetrics=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.fMetrics=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_font_FontRenderContext$sun_font_TextLineComponentA$FA$CA$I$I$IA$BA$Z', function (frc, components, baselineOffsets, chars, charsStart, charsLimit, charLogicalOrder, charLevels, isDirectionLTR) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['fIsDirectionLTR','isSimple'],'I',['fCharsStart','fCharsLimit'],'O',['fComponents','sun.font.TextLineComponent[]','fBaselineOffsets','float[]','fComponentVisualOrder','int[]','locs','float[]','fChars','char[]','fCharVisualOrder','int[]','+fCharLogicalOrder','fCharLevels','byte[]','lp','sun.font.LayoutPathImpl','pixelBounds','java.awt.Rectangle','frc','java.awt.font.FontRenderContext','fMetrics','java.awt.font.TextLine.TextLineMetrics']]
+,['O',['fgPosAdvF','java.awt.font.TextLine.Function','+fgAdvanceF','+fgXPositionF','+fgYPositionF']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_font_FontRenderContext$sun_font_TextLineComponentA$FA$CA$I$I$IA$BA$Z',  function (frc, components, baselineOffsets, chars, charsStart, charsLimit, charLogicalOrder, charLevels, isDirectionLTR) {
+;C$.$init$.apply(this);
 var componentVisualOrder=C$.computeComponentOrder$sun_font_TextLineComponentA$IA(components, charLogicalOrder);
 this.frc=frc;
 this.fComponents=components;
@@ -114,7 +30,7 @@ p$1.checkCtorArgs.apply(this, []);
 p$1.init.apply(this, []);
 }, 1);
 
-Clazz.newMeth(C$, 'checkCtorArgs', function () {
+Clazz.newMeth(C$, 'checkCtorArgs',  function () {
 var checkCharCount=0;
 for (var i=0; i < this.fComponents.length; i++) {
 checkCharCount+=this.fComponents[i].getNumCharacters$();
@@ -123,7 +39,7 @@ if (checkCharCount != this.characterCount$()) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid TextLine!  char count is different from sum of char counts of components."]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'init', function () {
+Clazz.newMeth(C$, 'init',  function () {
 var ascent=0;
 var descent=0;
 var leading=0;
@@ -135,9 +51,9 @@ var fitTopAndBottomGraphics=false;
 this.isSimple=true;
 for (var i=0; i < this.fComponents.length; i++) {
 tlc=this.fComponents[i];
-this.isSimple&=tlc.isSimple$();
+this.isSimple=!!(this.isSimple&(tlc.isSimple$()));
 var cm=tlc.getCoreMetrics$();
-var baseline=($b$[0] = (cm.baselineIndex|0), $b$[0]);
+var baseline=($b$[0] = cm.baselineIndex, $b$[0]);
 if (baseline >= 0) {
 var baselineOffset=this.fBaselineOffsets[baseline];
 ascent=Math.max(ascent, -baselineOffset + cm.ascent);
@@ -156,7 +72,7 @@ if (maxGraphicHeight > ascent + descent ) {
 descent=maxGraphicHeight - ascent;
 }if (maxGraphicHeightWithLeading > ascent + leading ) {
 leading=maxGraphicHeightWithLeading - ascent;
-}}leading -= descent;
+}}leading-=descent;
 if (fitTopAndBottomGraphics) {
 this.fBaselineOffsets=Clazz.array(Float.TYPE, -1, [this.fBaselineOffsets[0], this.fBaselineOffsets[1], this.fBaselineOffsets[2], descent, -ascent]);
 }var x=0;
@@ -183,37 +99,37 @@ var cdx=cm.italicAngle * (cb - d);
 var dax=pax - cax;
 var ddx=pdx - cdx;
 var dx=Math.max(dax, ddx);
-x += dx;
+x+=dx;
 y=cb;
 } else {
 y=cm.effectiveBaselineOffset$FA(this.fBaselineOffsets);
 }this.locs[n]=x;
 this.locs[n + 1]=y;
-x += tlc.getAdvance$();
+x+=tlc.getAdvance$();
 pcm=cm;
-needPath|=tlc.getBaselineTransform$() != null ;
+needPath=!!(needPath|(tlc.getBaselineTransform$() != null ));
 }
 if (pcm.italicAngle != 0 ) {
 var pb=pcm.effectiveBaselineOffset$FA(this.fBaselineOffsets);
 var pa=pb - pcm.ascent;
 var pd=pb + pcm.descent;
-pb += pcm.ssOffset;
+pb+=pcm.ssOffset;
 var d;
 if (pcm.italicAngle > 0 ) {
 d=pb + pcm.ascent;
 } else {
 d=pb - pcm.descent;
-}d *= pcm.italicAngle;
-x += d;
+}d*=pcm.italicAngle;
+x+=d;
 }this.locs[this.locs.length - 2]=x;
 advance=x;
-this.fMetrics=Clazz.new_($I$(2).c$$F$F$F$F,[ascent, descent, leading, advance]);
+this.fMetrics=Clazz.new_($I$(2,1).c$$F$F$F$F,[ascent, descent, leading, advance]);
 if (needPath) {
 this.isSimple=false;
-var pt=Clazz.new_($I$(3));
+var pt=Clazz.new_($I$(3,1));
 var tx=0;
 var ty=0;
-var builder=Clazz.new_($I$(4));
+var builder=Clazz.new_($I$(4,1));
 builder.moveTo$D$D(this.locs[0], 0);
 for (var i=0, n=0; i < this.fComponents.length; ++i, n+=2) {
 tlc=this.fComponents[p$1.getComponentLogicalIndex$I.apply(this, [i])];
@@ -221,22 +137,22 @@ var at=tlc.getBaselineTransform$();
 if (at != null  && ((at.getType$() & 1) != 0) ) {
 var dx=at.getTranslateX$();
 var dy=at.getTranslateY$();
-builder.moveTo$D$D(tx += dx, ty += dy);
+builder.moveTo$D$D(tx+=dx, ty+=dy);
 }pt.x=this.locs[n + 2] - this.locs[n];
 pt.y=0;
 if (at != null ) {
 at.deltaTransform$java_awt_geom_Point2D$java_awt_geom_Point2D(pt, pt);
-}builder.lineTo$D$D(tx += pt.x, ty += pt.y);
+}builder.lineTo$D$D(tx+=pt.x, ty+=pt.y);
 }
 this.lp=builder.complete$();
 if (this.lp == null ) {
 tlc=this.fComponents[p$1.getComponentLogicalIndex$I.apply(this, [0])];
 var at=tlc.getBaselineTransform$();
 if (at != null ) {
-this.lp=Clazz.new_($I$(5).c$$java_awt_geom_AffineTransform,[at]);
+this.lp=Clazz.new_($I$(5,1).c$$java_awt_geom_AffineTransform,[at]);
 }}}}, p$1);
 
-Clazz.newMeth(C$, 'getPixelBounds$java_awt_font_FontRenderContext$F$F', function (frc, x, y) {
+Clazz.newMeth(C$, 'getPixelBounds$java_awt_font_FontRenderContext$F$F',  function (frc, x, y) {
 var result=null;
 if (frc != null  && frc.equals$java_awt_font_FontRenderContext(this.frc) ) {
 frc=null;
@@ -246,7 +162,7 @@ var rx=x - ix;
 var ry=y - iy;
 var canCache=frc == null  && rx == 0   && ry == 0  ;
 if (canCache && this.pixelBounds != null  ) {
-result=Clazz.new_($I$(6).c$$java_awt_Rectangle,[this.pixelBounds]);
+result=Clazz.new_($I$(6,1).c$$java_awt_Rectangle,[this.pixelBounds]);
 result.x+=ix;
 result.y+=iy;
 return result;
@@ -261,14 +177,14 @@ result=pb;
 result.add$java_awt_Rectangle(pb);
 }}}
 if (result == null ) {
-result=Clazz.new_($I$(6).c$$I$I$I$I,[0, 0, 0, 0]);
+result=Clazz.new_($I$(6,1).c$$I$I$I$I,[0, 0, 0, 0]);
 }} else {
 var MARGIN=3;
 var r2d=this.getVisualBounds$();
 if (this.lp != null ) {
 r2d=this.lp.mapShape$java_awt_Shape(r2d).getBounds$();
 }var bounds=r2d.getBounds$();
-var im=Clazz.new_($I$(7).c$$I$I$I,[bounds.width + 6, bounds.height + 6, 2]);
+var im=Clazz.new_($I$(7,1).c$$I$I$I,[bounds.width + 6, bounds.height + 6, 2]);
 var g2d=im.createGraphics$();
 g2d.setColor$java_awt_Color($I$(8).WHITE);
 g2d.fillRect$I$I$I$I(0, 0, im.getWidth$(), im.getHeight$());
@@ -278,13 +194,13 @@ result=C$.computePixelBounds$java_awt_image_BufferedImage(im);
 result.x-=3 - bounds.x;
 result.y-=3 - bounds.y;
 }if (canCache) {
-this.pixelBounds=Clazz.new_($I$(6).c$$java_awt_Rectangle,[result]);
+this.pixelBounds=Clazz.new_($I$(6,1).c$$java_awt_Rectangle,[result]);
 }result.x+=ix;
 result.y+=iy;
 return result;
 });
 
-Clazz.newMeth(C$, 'computePixelBounds$java_awt_image_BufferedImage', function (im) {
+Clazz.newMeth(C$, 'computePixelBounds$java_awt_image_BufferedImage',  function (im) {
 var w=im.getWidth$();
 var h=im.getHeight$();
 var l=-1;
@@ -327,22 +243,22 @@ break loop;
 }}
 }
 ++r;
-}return Clazz.new_($I$(6).c$$I$I$I$I,[l, t, r - l, b - t]);
+}return Clazz.new_($I$(6,1).c$$I$I$I$I,[l, t, r - l, b - t]);
 }, 1);
 
-Clazz.newMeth(C$, 'characterCount$', function () {
+Clazz.newMeth(C$, 'characterCount$',  function () {
 return this.fCharsLimit - this.fCharsStart;
 });
 
-Clazz.newMeth(C$, 'isDirectionLTR$', function () {
+Clazz.newMeth(C$, 'isDirectionLTR$',  function () {
 return this.fIsDirectionLTR;
 });
 
-Clazz.newMeth(C$, 'getMetrics$', function () {
+Clazz.newMeth(C$, 'getMetrics$',  function () {
 return this.fMetrics;
 });
 
-Clazz.newMeth(C$, 'visualToLogical$I', function (visualIndex) {
+Clazz.newMeth(C$, 'visualToLogical$I',  function (visualIndex) {
 if (this.fCharLogicalOrder == null ) {
 return visualIndex;
 }if (this.fCharVisualOrder == null ) {
@@ -350,35 +266,35 @@ this.fCharVisualOrder=$I$(9).createInverseMap$IA(this.fCharLogicalOrder);
 }return this.fCharVisualOrder[visualIndex];
 });
 
-Clazz.newMeth(C$, 'logicalToVisual$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'logicalToVisual$I',  function (logicalIndex) {
 return (this.fCharLogicalOrder == null ) ? logicalIndex : this.fCharLogicalOrder[logicalIndex];
 });
 
-Clazz.newMeth(C$, 'getCharLevel$I', function (logicalIndex) {
-return $b$[0] = this.fCharLevels == null  ? (0|0) : (this.fCharLevels[logicalIndex]|0), $b$[0];
+Clazz.newMeth(C$, 'getCharLevel$I',  function (logicalIndex) {
+return this.fCharLevels == null  ? ($b$[0] = 0, $b$[0]) : this.fCharLevels[logicalIndex];
 });
 
-Clazz.newMeth(C$, 'isCharLTR$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'isCharLTR$I',  function (logicalIndex) {
 return (this.getCharLevel$I(logicalIndex) & 1) == 0;
 });
 
-Clazz.newMeth(C$, 'getCharType$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharType$I',  function (logicalIndex) {
 return Character.getType$C(this.fChars[logicalIndex + this.fCharsStart]);
 });
 
-Clazz.newMeth(C$, 'isCharSpace$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'isCharSpace$I',  function (logicalIndex) {
 return Character.isSpaceChar$C(this.fChars[logicalIndex + this.fCharsStart]);
 });
 
-Clazz.newMeth(C$, 'isCharWhitespace$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'isCharWhitespace$I',  function (logicalIndex) {
 return Character.isWhitespace$C(this.fChars[logicalIndex + this.fCharsStart]);
 });
 
-Clazz.newMeth(C$, 'getCharAngle$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharAngle$I',  function (logicalIndex) {
 return this.getCoreMetricsAt$I(logicalIndex).italicAngle;
 });
 
-Clazz.newMeth(C$, 'getCoreMetricsAt$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCoreMetricsAt$I',  function (logicalIndex) {
 if (logicalIndex < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Negative logicalIndex."]);
 }if (logicalIndex > this.fCharsLimit - this.fCharsStart) {
@@ -396,19 +312,19 @@ tlcStart=tlcLimit;
 return this.fComponents[currentTlc].getCoreMetrics$();
 });
 
-Clazz.newMeth(C$, 'getCharAscent$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharAscent$I',  function (logicalIndex) {
 return this.getCoreMetricsAt$I(logicalIndex).ascent;
 });
 
-Clazz.newMeth(C$, 'getCharDescent$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharDescent$I',  function (logicalIndex) {
 return this.getCoreMetricsAt$I(logicalIndex).descent;
 });
 
-Clazz.newMeth(C$, 'getCharShift$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharShift$I',  function (logicalIndex) {
 return this.getCoreMetricsAt$I(logicalIndex).ssOffset;
 });
 
-Clazz.newMeth(C$, 'applyFunctionAtIndex$I$java_awt_font_TextLine_Function', function (logicalIndex, f) {
+Clazz.newMeth(C$, 'applyFunctionAtIndex$I$java_awt_font_TextLine_Function',  function (logicalIndex, f) {
 if (logicalIndex < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Negative logicalIndex."]);
 }var tlcStart=0;
@@ -422,28 +338,28 @@ tlcStart=tlcLimit;
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["logicalIndex too large."]);
 }, p$1);
 
-Clazz.newMeth(C$, 'getCharAdvance$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharAdvance$I',  function (logicalIndex) {
 return p$1.applyFunctionAtIndex$I$java_awt_font_TextLine_Function.apply(this, [logicalIndex, C$.fgAdvanceF]);
 });
 
-Clazz.newMeth(C$, 'getCharXPosition$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharXPosition$I',  function (logicalIndex) {
 return p$1.applyFunctionAtIndex$I$java_awt_font_TextLine_Function.apply(this, [logicalIndex, C$.fgXPositionF]);
 });
 
-Clazz.newMeth(C$, 'getCharYPosition$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharYPosition$I',  function (logicalIndex) {
 return p$1.applyFunctionAtIndex$I$java_awt_font_TextLine_Function.apply(this, [logicalIndex, C$.fgYPositionF]);
 });
 
-Clazz.newMeth(C$, 'getCharLinePosition$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharLinePosition$I',  function (logicalIndex) {
 return this.getCharXPosition$I(logicalIndex);
 });
 
-Clazz.newMeth(C$, 'getCharLinePosition$I$Z', function (logicalIndex, leading) {
+Clazz.newMeth(C$, 'getCharLinePosition$I$Z',  function (logicalIndex, leading) {
 var f=this.isCharLTR$I(logicalIndex) == leading  ? C$.fgXPositionF : C$.fgPosAdvF;
 return p$1.applyFunctionAtIndex$I$java_awt_font_TextLine_Function.apply(this, [logicalIndex, f]);
 });
 
-Clazz.newMeth(C$, 'caretAtOffsetIsValid$I', function (offset) {
+Clazz.newMeth(C$, 'caretAtOffsetIsValid$I',  function (offset) {
 if (offset < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Negative offset."]);
 }var tlcStart=0;
@@ -457,13 +373,13 @@ tlcStart=tlcLimit;
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["logicalIndex too large."]);
 });
 
-Clazz.newMeth(C$, 'getComponentLogicalIndex$I', function (vi) {
+Clazz.newMeth(C$, 'getComponentLogicalIndex$I',  function (vi) {
 if (this.fComponentVisualOrder == null ) {
 return vi;
 }return this.fComponentVisualOrder[vi];
 }, p$1);
 
-Clazz.newMeth(C$, 'getComponentVisualIndex$I', function (li) {
+Clazz.newMeth(C$, 'getComponentVisualIndex$I',  function (li) {
 if (this.fComponentVisualOrder == null ) {
 return li;
 }for (var i=0; i < this.fComponentVisualOrder.length; ++i) {
@@ -473,7 +389,7 @@ return i;
 throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["bad component index: " + li]);
 }, p$1);
 
-Clazz.newMeth(C$, 'getCharBounds$I', function (logicalIndex) {
+Clazz.newMeth(C$, 'getCharBounds$I',  function (logicalIndex) {
 if (logicalIndex < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Negative logicalIndex."]);
 }var tlcStart=0;
@@ -492,49 +408,49 @@ tlcStart=tlcLimit;
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["logicalIndex too large."]);
 });
 
-Clazz.newMeth(C$, 'getComponentShift$I', function (index) {
+Clazz.newMeth(C$, 'getComponentShift$I',  function (index) {
 var cm=this.fComponents[index].getCoreMetrics$();
 return cm.effectiveBaselineOffset$FA(this.fBaselineOffsets);
 }, p$1);
 
-Clazz.newMeth(C$, 'draw$java_awt_Graphics2D$F$F', function (g2, x, y) {
+Clazz.newMeth(C$, 'draw$java_awt_Graphics2D$F$F',  function (g2, x, y) {
 if (this.lp == null ) {
 for (var i=0, n=0; i < this.fComponents.length; i++, n+=2) {
 var tlc=this.fComponents[p$1.getComponentLogicalIndex$I.apply(this, [i])];
 tlc.draw$java_awt_Graphics2D$F$F(g2, this.locs[n] + x, this.locs[n + 1] + y);
 }
 } else {
-var oldTx=g2.getTransform$();
-var pt=Clazz.new_($I$(10));
+var pt=Clazz.new_($I$(10,1));
 for (var i=0, n=0; i < this.fComponents.length; i++, n+=2) {
 var tlc=this.fComponents[p$1.getComponentLogicalIndex$I.apply(this, [i])];
 this.lp.pathToPoint$D$D$Z$java_awt_geom_Point2D(this.locs[n], this.locs[n + 1], false, pt);
-pt.x += x;
-pt.y += y;
+pt.x+=x;
+pt.y+=y;
 var at=tlc.getBaselineTransform$();
 if (at != null ) {
+g2=g2.create$();
 g2.translate$D$D(pt.x - at.getTranslateX$(), pt.y - at.getTranslateY$());
 g2.transform$java_awt_geom_AffineTransform(at);
 tlc.draw$java_awt_Graphics2D$F$F(g2, 0, 0);
-g2.setTransform$java_awt_geom_AffineTransform(oldTx);
+g2.dispose$();
 } else {
 tlc.draw$java_awt_Graphics2D$F$F(g2, pt.x, pt.y);
 }}
 }});
 
-Clazz.newMeth(C$, 'getVisualBounds$', function () {
+Clazz.newMeth(C$, 'getVisualBounds$',  function () {
 var result=null;
 for (var i=0, n=0; i < this.fComponents.length; i++, n+=2) {
 var tlc=this.fComponents[p$1.getComponentLogicalIndex$I.apply(this, [i])];
 var r=tlc.getVisualBounds$();
-var pt=Clazz.new_($I$(10).c$$F$F,[this.locs[n], this.locs[n + 1]]);
+var pt=Clazz.new_($I$(10,1).c$$F$F,[this.locs[n], this.locs[n + 1]]);
 if (this.lp == null ) {
 r.setRect$D$D$D$D(r.getMinX$() + pt.x, r.getMinY$() + pt.y, r.getWidth$(), r.getHeight$());
 } else {
 this.lp.pathToPoint$java_awt_geom_Point2D$Z$java_awt_geom_Point2D(pt, false, pt);
 var at=tlc.getBaselineTransform$();
 if (at != null ) {
-var tx=$I$(11).getTranslateInstance$D$D(pt.x - at.getTranslateX$(), pt.y - at.getTranslateY$());
+var tx=$I$(11,"getTranslateInstance$D$D",[pt.x - at.getTranslateX$(), pt.y - at.getTranslateY$()]);
 tx.concatenate$java_awt_geom_AffineTransform(at);
 r=tx.createTransformedShape$java_awt_Shape(r).getBounds2D$();
 } else {
@@ -545,11 +461,11 @@ result=r;
 result.add$java_awt_geom_Rectangle2D(r);
 }}
 if (result == null ) {
-result=Clazz.new_($I$(12).c$$F$F$F$F,[3.4028235E38, 3.4028235E38, 1.4E-45, 1.4E-45]);
+result=Clazz.new_($I$(12,1).c$$F$F$F$F,[3.4028235E38, 3.4028235E38, 1.4E-45, 1.4E-45]);
 }return result;
 });
 
-Clazz.newMeth(C$, 'getItalicBounds$', function () {
+Clazz.newMeth(C$, 'getItalicBounds$',  function () {
 var left=3.4028235E38;
 var right=-3.4028235E38;
 var top=3.4028235E38;
@@ -564,11 +480,11 @@ right=Math.max(right, x + tlcBounds.getMaxX$());
 top=Math.min(top, y + tlcBounds.getY$());
 bottom=Math.max(bottom, y + tlcBounds.getMaxY$());
 }
-return Clazz.new_($I$(12).c$$F$F$F$F,[left, top, right - left, bottom - top]);
+return Clazz.new_($I$(12,1).c$$F$F$F$F,[left, top, right - left, bottom - top]);
 });
 
-Clazz.newMeth(C$, 'getOutline$java_awt_geom_AffineTransform', function (tx) {
-var dstShape=Clazz.new_($I$(13).c$$I,[1]);
+Clazz.newMeth(C$, 'getOutline$java_awt_geom_AffineTransform',  function (tx) {
+var dstShape=Clazz.new_($I$(13,1).c$$I,[1]);
 for (var i=0, n=0; i < this.fComponents.length; i++, n+=2) {
 var tlc=this.fComponents[p$1.getComponentLogicalIndex$I.apply(this, [i])];
 dstShape.append$java_awt_Shape$Z(tlc.getOutline$F$F(this.locs[n], this.locs[n + 1]), false);
@@ -578,19 +494,19 @@ dstShape.transform$java_awt_geom_AffineTransform(tx);
 }return dstShape;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 return (this.fComponents.length << 16) ^ (this.fComponents[0].hashCode$() << 3) ^ (this.fCharsLimit - this.fCharsStart) ;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-var buf=Clazz.new_($I$(14));
+Clazz.newMeth(C$, 'toString',  function () {
+var buf=Clazz.new_($I$(14,1));
 for (var i=0; i < this.fComponents.length; i++) {
 buf.append$O(this.fComponents[i]);
 }
 return buf.toString();
 });
 
-Clazz.newMeth(C$, 'fastCreateTextLine$java_awt_font_FontRenderContext$CA$java_awt_Font$sun_font_CoreMetrics$java_util_Map', function (frc, chars, font, lm, attributes) {
+Clazz.newMeth(C$, 'fastCreateTextLine$java_awt_font_FontRenderContext$CA$java_awt_Font$sun_font_CoreMetrics$java_util_Map',  function (frc, chars, font, lm, attributes) {
 var isDirectionLTR=true;
 var levels=null;
 var charsLtoV=null;
@@ -606,16 +522,16 @@ isDirectionLTR=values.getRunDirection$() == 0;
 requiresBidi=!isDirectionLTR;
 }if (values.getBidiEmbedding$() != 0) {
 requiresBidi=true;
-var level=($b$[0] = (values.getBidiEmbedding$()|0), $b$[0]);
+var level=($b$[0] = values.getBidiEmbedding$(), $b$[0]);
 embs=Clazz.array(Byte.TYPE, [characterCount]);
 for (var i=0; i < embs.length; ++i) {
-embs[i]=(level|0);
+embs[i]=level;
 }
 }}if (!requiresBidi) {
 requiresBidi=$I$(16).requiresBidi$CA$I$I(chars, 0, chars.length);
 }if (requiresBidi) {
 var bidiflags=values == null  ? -2 : values.getRunDirection$();
-bidi=Clazz.new_($I$(16).c$$CA$I$BA$I$I$I,[chars, 0, embs, 0, chars.length, bidiflags]);
+bidi=Clazz.new_($I$(16,1).c$$CA$I$BA$I$I$I,[chars, 0, embs, 0, chars.length, bidiflags]);
 if (!bidi.isLeftToRight$()) {
 levels=$I$(9).getLevels$java_text_Bidi(bidi);
 var charsVtoL=$I$(9).createVisualToLogicalMap$BA(levels);
@@ -623,7 +539,7 @@ charsLtoV=$I$(9).createInverseMap$IA(charsVtoL);
 isDirectionLTR=bidi.baseIsLeftToRight$();
 }}var decorator=$I$(17).getDecoration$sun_font_AttributeValues(values);
 var layoutFlags=0;
-var factory=Clazz.new_($I$(18).c$$java_awt_font_FontRenderContext$CA$java_text_Bidi$I,[frc, chars, bidi, layoutFlags]);
+var factory=Clazz.new_($I$(18,1).c$$java_awt_font_FontRenderContext$CA$java_text_Bidi$I,[frc, chars, bidi, layoutFlags]);
 var components=Clazz.array($I$(19), [1]);
 components=C$.createComponentsOnRun$I$I$CA$IA$BA$sun_font_TextLabelFactory$java_awt_Font$sun_font_CoreMetrics$java_awt_font_FontRenderContext$sun_font_Decoration$sun_font_TextLineComponentA$I(0, chars.length, chars, charsLtoV, levels, factory, font, lm, frc, decorator, components, 0);
 var numComponents=components.length;
@@ -637,13 +553,13 @@ components=temp;
 }return Clazz.new_(C$.c$$java_awt_font_FontRenderContext$sun_font_TextLineComponentA$FA$CA$I$I$IA$BA$Z,[frc, components, lm.baselineOffsets, chars, 0, chars.length, charsLtoV, levels, isDirectionLTR]);
 }, 1);
 
-Clazz.newMeth(C$, 'expandArray$sun_font_TextLineComponentA', function (orig) {
+Clazz.newMeth(C$, 'expandArray$sun_font_TextLineComponentA',  function (orig) {
 var newComponents=Clazz.array($I$(19), [orig.length + 8]);
 System.arraycopy$O$I$O$I$I(orig, 0, newComponents, 0, orig.length);
 return newComponents;
 }, 1);
 
-Clazz.newMeth(C$, 'createComponentsOnRun$I$I$CA$IA$BA$sun_font_TextLabelFactory$java_awt_Font$sun_font_CoreMetrics$java_awt_font_FontRenderContext$sun_font_Decoration$sun_font_TextLineComponentA$I', function (runStart, runLimit, chars, charsLtoV, levels, factory, font, cm, frc, decorator, components, numComponents) {
+Clazz.newMeth(C$, 'createComponentsOnRun$I$I$CA$IA$BA$sun_font_TextLabelFactory$java_awt_Font$sun_font_CoreMetrics$java_awt_font_FontRenderContext$sun_font_Decoration$sun_font_TextLineComponentA$I',  function (runStart, runLimit, chars, charsLtoV, levels, factory, font, cm, frc, decorator, components, numComponents) {
 var pos=runStart;
 do {
 var chunkLimit=C$.firstVisualChunk$IA$BA$I$I(charsLtoV, levels, pos, runLimit);
@@ -651,7 +567,7 @@ do {
 var startPos=pos;
 var lmCount;
 if (cm == null ) {
-var lineMetrics=font.getLineMetrics$CA$I$I$O(chars, startPos, chunkLimit, frc);
+var lineMetrics=font.getLineMetrics$CA$I$I$java_awt_font_FontRenderContext(chars, startPos, chunkLimit, frc);
 cm=$I$(20).get$java_awt_font_LineMetrics(lineMetrics);
 lmCount=lineMetrics.getNumChars$();
 } else {
@@ -667,7 +583,7 @@ pos+=lmCount;
 return components;
 }, 1);
 
-Clazz.newMeth(C$, 'getComponents$java_awt_font_StyledParagraph$CA$I$I$IA$BA$sun_font_TextLabelFactory', function (styledParagraph, chars, textStart, textLimit, charsLtoV, levels, factory) {
+Clazz.newMeth(C$, 'getComponents$java_awt_font_StyledParagraph$CA$I$I$IA$BA$sun_font_TextLabelFactory',  function (styledParagraph, chars, textStart, textLimit, charsLtoV, levels, factory) {
 var frc=factory.getFontRenderContext$();
 var numComponents=0;
 var tempComponents=Clazz.array($I$(19), [1]);
@@ -681,7 +597,7 @@ var baseRot=null;
 var graphicAttribute=graphicOrFont;
 do {
 var chunkLimit=C$.firstVisualChunk$IA$BA$I$I(charsLtoV, levels, pos, runLimit);
-var nextGraphic=Clazz.new_($I$(21).c$$java_awt_font_GraphicAttribute$sun_font_Decoration$IA$BA$I$I$java_awt_geom_AffineTransform,[graphicAttribute, decorator, charsLtoV, levels, pos, chunkLimit, baseRot]);
+var nextGraphic=Clazz.new_($I$(21,1).c$$java_awt_font_GraphicAttribute$sun_font_Decoration$IA$BA$I$I$java_awt_geom_AffineTransform,[graphicAttribute, decorator, charsLtoV, levels, pos, chunkLimit, baseRot]);
 pos=chunkLimit;
 ++numComponents;
 if (numComponents >= tempComponents.length) {
@@ -706,7 +622,7 @@ System.arraycopy$O$I$O$I$I(tempComponents, 0, components, 0, numComponents);
 }return components;
 }, 1);
 
-Clazz.newMeth(C$, 'createLineFromText$CA$java_awt_font_StyledParagraph$sun_font_TextLabelFactory$Z$FA', function (chars, styledParagraph, factory, isDirectionLTR, baselineOffsets) {
+Clazz.newMeth(C$, 'createLineFromText$CA$java_awt_font_StyledParagraph$sun_font_TextLabelFactory$Z$FA',  function (chars, styledParagraph, factory, isDirectionLTR, baselineOffsets) {
 factory.setLineContext$I$I(0, chars.length);
 var lineBidi=factory.getLineBidi$();
 var charsLtoV=null;
@@ -719,7 +635,7 @@ charsLtoV=$I$(9).createInverseMap$IA(charsVtoL);
 return Clazz.new_(C$.c$$java_awt_font_FontRenderContext$sun_font_TextLineComponentA$FA$CA$I$I$IA$BA$Z,[factory.getFontRenderContext$(), components, baselineOffsets, chars, 0, chars.length, charsLtoV, levels, isDirectionLTR]);
 }, 1);
 
-Clazz.newMeth(C$, 'computeComponentOrder$sun_font_TextLineComponentA$IA', function (components, charsLtoV) {
+Clazz.newMeth(C$, 'computeComponentOrder$sun_font_TextLineComponentA$IA',  function (components, charsLtoV) {
 var componentOrder=null;
 if (charsLtoV != null  && components.length > 1 ) {
 componentOrder=Clazz.array(Integer.TYPE, [components.length]);
@@ -733,20 +649,20 @@ componentOrder=$I$(9).createInverseMap$IA(componentOrder);
 }return componentOrder;
 }, 1);
 
-Clazz.newMeth(C$, 'standardCreateTextLine$java_awt_font_FontRenderContext$java_text_AttributedCharacterIterator$CA$FA', function (frc, text, chars, baselineOffsets) {
-var styledParagraph=Clazz.new_($I$(22).c$$java_text_AttributedCharacterIterator$CA,[text, chars]);
-var bidi=Clazz.new_($I$(16).c$$java_text_AttributedCharacterIterator,[text]);
+Clazz.newMeth(C$, 'standardCreateTextLine$java_awt_font_FontRenderContext$java_text_AttributedCharacterIterator$CA$FA',  function (frc, text, chars, baselineOffsets) {
+var styledParagraph=Clazz.new_($I$(22,1).c$$java_text_AttributedCharacterIterator$CA,[text, chars]);
+var bidi=Clazz.new_($I$(16,1).c$$java_text_AttributedCharacterIterator,[text]);
 if (bidi.isLeftToRight$()) {
 bidi=null;
 }var layoutFlags=0;
-var factory=Clazz.new_($I$(18).c$$java_awt_font_FontRenderContext$CA$java_text_Bidi$I,[frc, chars, bidi, layoutFlags]);
+var factory=Clazz.new_($I$(18,1).c$$java_awt_font_FontRenderContext$CA$java_text_Bidi$I,[frc, chars, bidi, layoutFlags]);
 var isDirectionLTR=true;
 if (bidi != null ) {
 isDirectionLTR=bidi.baseIsLeftToRight$();
 }return C$.createLineFromText$CA$java_awt_font_StyledParagraph$sun_font_TextLabelFactory$Z$FA(chars, styledParagraph, factory, isDirectionLTR, baselineOffsets);
 }, 1);
 
-Clazz.newMeth(C$, 'advanceToFirstFont$java_text_AttributedCharacterIterator', function (aci) {
+Clazz.newMeth(C$, 'advanceToFirstFont$java_text_AttributedCharacterIterator',  function (aci) {
 for (var ch=aci.first$(); ch != "\uffff"; ch=aci.setIndex$I(aci.getRunLimit$())) {
 if (aci.getAttribute$java_text_AttributedCharacterIterator_Attribute($I$(23).CHAR_REPLACEMENT) == null ) {
 return true;
@@ -754,7 +670,7 @@ return true;
 return false;
 }, 1);
 
-Clazz.newMeth(C$, 'getNormalizedOffsets$FA$B', function (baselineOffsets, baseline) {
+Clazz.newMeth(C$, 'getNormalizedOffsets$FA$B',  function (baselineOffsets, baseline) {
 if (baselineOffsets[baseline] != 0 ) {
 var base=baselineOffsets[baseline];
 var temp=Clazz.array(Float.TYPE, [baselineOffsets.length]);
@@ -764,12 +680,12 @@ baselineOffsets=temp;
 }return baselineOffsets;
 }, 1);
 
-Clazz.newMeth(C$, 'getFontAtCurrentPos$java_text_AttributedCharacterIterator', function (aci) {
+Clazz.newMeth(C$, 'getFontAtCurrentPos$java_text_AttributedCharacterIterator',  function (aci) {
 var value=aci.getAttribute$java_text_AttributedCharacterIterator_Attribute($I$(23).FONT);
 if (value != null ) {
 return value;
 }if (aci.getAttribute$java_text_AttributedCharacterIterator_Attribute($I$(23).FAMILY) != null ) {
-return $I$(24).getFont$java_util_Map(aci.getAttributes$());
+return $I$(24,"getFont$java_util_Map",[aci.getAttributes$()]);
 }var ch=$I$(25).create$java_text_CharacterIterator(aci).next$();
 if (ch != -1) {
 var resolver=$I$(26).getInstance$();
@@ -777,16 +693,16 @@ return resolver.getFont$I$java_util_Map(resolver.getFontIndex$I(ch), aci.getAttr
 }return null;
 }, 1);
 
-Clazz.newMeth(C$, 'firstVisualChunk$IA$BA$I$I', function (order, direction, start, limit) {
+Clazz.newMeth(C$, 'firstVisualChunk$IA$BA$I$I',  function (order, direction, start, limit) {
 if (order != null  && direction != null  ) {
-var dir=($b$[0] = direction[start], $b$[0]);
+var dir=direction[start];
 while (++start < limit && direction[start] == dir ){
 }
 return start;
 }return limit;
 }, 1);
 
-Clazz.newMeth(C$, 'getJustifiedLine$F$F$I$I', function (justificationWidth, justifyRatio, justStart, justLimit) {
+Clazz.newMeth(C$, 'getJustifiedLine$F$F$I$I',  function (justificationWidth, justifyRatio, justStart, justLimit) {
 var newComponents=Clazz.array($I$(19), [this.fComponents.length]);
 System.arraycopy$O$I$O$I$I(this.fComponents, 0, newComponents, 0, this.fComponents.length);
 var leftHang=0;
@@ -825,7 +741,7 @@ while (infoStart < infoLimit && infos[infoStart] == null  ){
 while (infoLimit > infoStart && infos[infoLimit - 1] == null  ){
 --infoLimit;
 }
-var justifier=Clazz.new_($I$(28).c$$java_awt_font_GlyphJustificationInfoA$I$I,[infos, infoStart, infoLimit]);
+var justifier=Clazz.new_($I$(28,1).c$$java_awt_font_GlyphJustificationInfoA$I$I,[infos, infoStart, infoLimit]);
 var deltas=justifier.justify$F(justifyDelta);
 var canRejustify=rejustify == false ;
 var wantRejustify=false;
@@ -839,7 +755,7 @@ if (compLimit > justStart) {
 var rangeMin=Math.max(0, justStart - compStart);
 var rangeMax=Math.min(compLength, justLimit - compStart);
 newComponents[i]=comp.applyJustificationDeltas$FA$I$ZA(deltas, infoPositions[i] * 2, flags);
-wantRejustify|=flags[0];
+wantRejustify=!!(wantRejustify|(flags[0]));
 if (compLimit >= justLimit) {
 break;
 }}}
@@ -848,7 +764,7 @@ rejustify=wantRejustify && !rejustify ;
 return Clazz.new_(C$.c$$java_awt_font_FontRenderContext$sun_font_TextLineComponentA$FA$CA$I$I$IA$BA$Z,[this.frc, newComponents, this.fBaselineOffsets, this.fChars, this.fCharsStart, this.fCharsLimit, this.fCharLogicalOrder, this.fCharLevels, this.fIsDirectionLTR]);
 });
 
-Clazz.newMeth(C$, 'getAdvanceBetween$sun_font_TextLineComponentA$I$I', function (components, start, limit) {
+Clazz.newMeth(C$, 'getAdvanceBetween$sun_font_TextLineComponentA$I$I',  function (components, start, limit) {
 var advance=0;
 var tlcStart=0;
 for (var i=0; i < components.length; i++) {
@@ -858,7 +774,7 @@ var tlcLimit=tlcStart + tlcLength;
 if (tlcLimit > start) {
 var measureStart=Math.max(0, start - tlcStart);
 var measureLimit=Math.min(tlcLength, limit - tlcStart);
-advance += comp.getAdvanceBetween$I$I(measureStart, measureLimit);
+advance+=comp.getAdvanceBetween$I$I(measureStart, measureLimit);
 if (tlcLimit >= limit) {
 break;
 }}tlcStart=tlcLimit;
@@ -866,31 +782,92 @@ break;
 return advance;
 }, 1);
 
-Clazz.newMeth(C$, 'getLayoutPath$', function () {
+Clazz.newMeth(C$, 'getLayoutPath$',  function () {
 return this.lp;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.fgPosAdvF=((P$.TextLine$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "TextLine$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I',  function (line, componentIndex, indexInArray) {
+var tlc=line.fComponents[componentIndex];
+var vi=p$1.getComponentVisualIndex$I.apply(line, [componentIndex]);
+return line.locs[vi * 2] + tlc.getCharX$I(indexInArray) + tlc.getCharAdvance$I(indexInArray) ;
+});
+})()
+), Clazz.new_($I$(1,1),[this, null],P$.TextLine$1));
+C$.fgAdvanceF=((P$.TextLine$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "TextLine$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I',  function (line, componentIndex, indexInArray) {
+var tlc=line.fComponents[componentIndex];
+return tlc.getCharAdvance$I(indexInArray);
+});
+})()
+), Clazz.new_($I$(1,1),[this, null],P$.TextLine$2));
+C$.fgXPositionF=((P$.TextLine$3||
+(function(){/*a*/var C$=Clazz.newClass(P$, "TextLine$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I',  function (line, componentIndex, indexInArray) {
+var vi=p$1.getComponentVisualIndex$I.apply(line, [componentIndex]);
+var tlc=line.fComponents[componentIndex];
+return line.locs[vi * 2] + tlc.getCharX$I(indexInArray);
+});
+})()
+), Clazz.new_($I$(1,1),[this, null],P$.TextLine$3));
+C$.fgYPositionF=((P$.TextLine$4||
+(function(){/*a*/var C$=Clazz.newClass(P$, "TextLine$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load(['java.awt.font.TextLine','.Function']), null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]]
+
+Clazz.newMeth(C$, 'computeFunction$java_awt_font_TextLine$I$I',  function (line, componentIndex, indexInArray) {
+var tlc=line.fComponents[componentIndex];
+var charPos=tlc.getCharY$I(indexInArray);
+return charPos + p$1.getComponentShift$I.apply(line, [componentIndex]);
+});
+})()
+), Clazz.new_($I$(1,1),[this, null],P$.TextLine$4));
+};
 var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.TextLine, "TextLineMetrics", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TextLine, "TextLineMetrics", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ascent=0;
-this.descent=0;
-this.leading=0;
-this.advance=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$F$F$F$F', function (ascent, descent, leading, advance) {
-C$.$init$.apply(this);
+C$.$fields$=[['F',['ascent','descent','leading','advance']]]
+
+Clazz.newMeth(C$, 'c$$F$F$F$F',  function (ascent, descent, leading, advance) {
+;C$.$init$.apply(this);
 this.ascent=ascent;
 this.descent=descent;
 this.leading=leading;
@@ -900,19 +877,18 @@ this.advance=advance;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.TextLine, "Function", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.TextLine, "Function", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

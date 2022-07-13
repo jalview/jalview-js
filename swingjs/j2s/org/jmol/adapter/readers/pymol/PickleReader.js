@@ -1,50 +1,28 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pymol"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','org.jmol.util.Logger','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PickleReader");
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pymol"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','org.jmol.util.Logger','javajs.util.AU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PickleReader");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.binaryDoc=null;
-this.stack=null;
-this.marks=null;
-this.build=null;
-this.memo=null;
-this.logging=false;
-this.id=0;
-this.markCount=0;
-this.filePt=0;
-this.emptyListPt=0;
-this.thisSection=null;
-this.inMovie=false;
-this.inNames=false;
-this.thisName=null;
-this.lastMark=0;
-this.retrieveCount=0;
-this.ipt=0;
-this.aTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.stack=Clazz.new_($I$(1));
-this.marks=Clazz.new_($I$(1));
-this.build=Clazz.new_($I$(1));
-this.memo=Clazz.new_($I$(2));
+this.stack=Clazz.new_($I$(1,1));
+this.marks=Clazz.new_($I$(1,1));
+this.build=Clazz.new_($I$(1,1));
+this.memo=Clazz.new_($I$(2,1));
 this.ipt=0;
 this.aTemp=Clazz.array(Byte.TYPE, [16]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['logging','inMovie','inNames'],'I',['id','markCount','filePt','emptyListPt','lastMark','retrieveCount','ipt'],'S',['thisName'],'O',['vwr','org.jmol.viewer.Viewer','binaryDoc','javajs.api.GenericBinaryDocument','stack','javajs.util.Lst','+marks','+build','memo','java.util.Map','thisSection','java.lang.Object','aTemp','byte[]']]]
 
 Clazz.newMeth(C$, 'c$$javajs_api_GenericBinaryDocument$org_jmol_viewer_Viewer', function (doc, vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.binaryDoc=doc;
 this.vwr=vwr;
 this.stack.ensureCapacity$I(1000);
 }, 1);
 
 Clazz.newMeth(C$, 'log$S', function (s) {
-this.vwr.log$S(s + "\0");
+this.vwr.log$S(s + "\u0000");
 }, p$1);
 
 Clazz.newMeth(C$, 'getMap$Z', function (logging) {
@@ -60,24 +38,24 @@ var l;
 this.ipt=0;
 var going=true;
 while (going){
-b=($b$[0] = this.binaryDoc.readByte$(), $b$[0]);
+b=this.binaryDoc.readByte$();
 this.ipt++;
 switch (b) {
 case 125:
-p$1.push$O.apply(this, [Clazz.new_($I$(2))]);
+p$1.push$O.apply(this, [Clazz.new_($I$(2,1))]);
 break;
 case 97:
 o=p$1.pop.apply(this, []);
-(p$1.peek.apply(this, [])).addLast$TV(o);
+(p$1.peek.apply(this, [])).addLast$O(o);
 break;
 case 101:
 l=p$1.getObjects$I.apply(this, [p$1.getMark.apply(this, [])]);
 if (this.inNames && this.markCount == 2 ) {
 var pt=(this.binaryDoc.getPosition$()|0);
-var l2=Clazz.new_($I$(1));
-l2.addLast$TV(Integer.valueOf$I(this.filePt));
-l2.addLast$TV(Integer.valueOf$I(pt - this.filePt));
-l.addLast$TV(l2);
+var l2=Clazz.new_($I$(1,1));
+l2.addLast$O(Integer.valueOf$I(this.filePt));
+l2.addLast$O(Integer.valueOf$I(pt - this.filePt));
+l.addLast$O(l2);
 }(p$1.peek.apply(this, [])).addAll$java_util_Collection(l);
 break;
 case 71:
@@ -129,7 +107,7 @@ a=Clazz.array(Byte.TYPE, [i]);
 this.binaryDoc.readByteArray$BA$I$I(a, 0, i);
 p$1.push$O.apply(this, [a]);
 break;
-case 87:
+case 88:
 i=this.binaryDoc.readIntLE$();
 a=Clazz.array(Byte.TYPE, [i]);
 this.binaryDoc.readByteArray$BA$I$I(a, 0, i);
@@ -137,18 +115,18 @@ p$1.push$O.apply(this, [a]);
 break;
 case 93:
 this.emptyListPt=(this.binaryDoc.getPosition$()|0) - 1;
-p$1.push$O.apply(this, [Clazz.new_($I$(1))]);
+p$1.push$O.apply(this, [Clazz.new_($I$(1,1))]);
 break;
 case 99:
-l=Clazz.new_($I$(1));
-l.addLast$TV("global");
-l.addLast$TV(p$1.readStringAsBytes.apply(this, []));
-l.addLast$TV(p$1.readStringAsBytes.apply(this, []));
+l=Clazz.new_($I$(1,1));
+l.addLast$O("global");
+l.addLast$O(p$1.readStringAsBytes.apply(this, []));
+l.addLast$O(p$1.readStringAsBytes.apply(this, []));
 p$1.push$O.apply(this, [l]);
 break;
 case 98:
 o=p$1.pop.apply(this, []);
-this.build.addLast$TV(o);
+this.build.addLast$O(o);
 break;
 case 40:
 p$1.putMark$I.apply(this, [this.stack.size$()]);
@@ -162,20 +140,23 @@ break;
 case 115:
 o=p$1.pop.apply(this, []);
 var s=p$1.bytesToString$O.apply(this, [p$1.pop.apply(this, [])]);
-(p$1.peek.apply(this, [])).put$TK$TV(s, o);
+(p$1.peek.apply(this, [])).put$O$O(s, o);
 break;
 case 117:
 mark=p$1.getMark.apply(this, []);
 l=p$1.getObjects$I.apply(this, [mark]);
 o=p$1.peek.apply(this, []);
 if (Clazz.instanceOf(o, "javajs.util.Lst")) {
-for (i=0; i < l.size$(); i++) (o).addLast$TV(l.get$I(i));
-
+for (i=0; i < l.size$(); i++) {
+var oo=l.get$I(i);
+(o).addLast$O(oo);
+}
 } else {
 map=o;
 for (i=l.size$(); --i >= 0; ) {
 o=l.get$I(i);
-map.put$TK$TV(p$1.bytesToString$O.apply(this, [l.get$I(--i)]), o);
+var key=p$1.bytesToString$O.apply(this, [l.get$I(--i)]);
+map.put$O$O(key, o);
 }
 }break;
 case 46:
@@ -183,6 +164,15 @@ going=false;
 break;
 case 116:
 p$1.push$O.apply(this, [p$1.getObjects$I.apply(this, [p$1.getMark.apply(this, [])])]);
+break;
+case 76:
+var val= String.instantialize(p$1.readStringAsBytes.apply(this, []));
+if (val != null  && val.endsWith$S("L") ) {
+val=val.substring$I$I(0, val.length$() - 1);
+}p$1.push$O.apply(this, [Long.valueOf$S(val)]);
+break;
+case 82:
+p$1.pop.apply(this, []);
 break;
 case 73:
 s=p$1.bytesToString$O.apply(this, [p$1.readStringAsBytes.apply(this, [])]);
@@ -197,17 +187,20 @@ throw e;
 }
 }
 break;
+case 41:
+p$1.push$O.apply(this, [Clazz.new_($I$(1,1))]);
+break;
 default:
-$I$(3).error$S("Pickle reader error: " + b + " " + this.binaryDoc.getPosition$() );
+$I$(3,"error$S",["Pickle reader error: " + b + " " + this.binaryDoc.getPosition$() ]);
 }
 }
 if (logging) p$1.log$S.apply(this, [""]);
-$I$(3).info$S("PyMOL Pickle reader cached " + this.memo.size$() + " tokens; retrieved " + this.retrieveCount );
+$I$(3,"info$S",["PyMOL Pickle reader cached " + this.memo.size$() + " tokens; retrieved " + this.retrieveCount ]);
 map=this.stack.removeItemAt$I(0);
 if (map.size$() == 0) for (i=this.stack.size$(); --i >= 0; ) {
 o=this.stack.get$I(i--);
 a=this.stack.get$I(i);
-map.put$TK$TV(p$1.bytesToString$O.apply(this, [a]), o);
+map.put$O$O(p$1.bytesToString$O.apply(this, [a]), o);
 }
 this.memo=null;
 return map;
@@ -229,8 +222,7 @@ Clazz.newMeth(C$, 'putMemo$I$Z', function (i, doCheck) {
 var o=p$1.peek.apply(this, []);
 if ($I$(4).isAB$O(o)) o=p$1.bytesToString$O.apply(this, [o]);
 if (Clazz.instanceOf(o, "java.lang.String")) {
-if (doCheck && this.markCount >= 6  || this.markCount == 3 && this.inMovie  ) return;
-this.memo.put$TK$TV(Integer.valueOf$I(i), o);
+this.memo.put$O$O(Integer.valueOf$I(i), o);
 }}, p$1);
 
 Clazz.newMeth(C$, 'getMemo$I', function (i) {
@@ -242,10 +234,12 @@ return o;
 
 Clazz.newMeth(C$, 'getObjects$I', function (mark) {
 var n=this.stack.size$() - mark;
-var args=Clazz.new_($I$(1));
+var args=Clazz.new_($I$(1,1));
 args.ensureCapacity$I(n);
-for (var i=mark; i < this.stack.size$(); ++i) args.addLast$TV(this.stack.get$I(i));
-
+for (var i=mark; i < this.stack.size$(); ++i) {
+var oo=this.stack.get$I(i);
+args.addLast$O(oo);
+}
 for (var i=this.stack.size$(); --i >= mark; ) this.stack.removeItemAt$I(i);
 
 return args;
@@ -255,17 +249,17 @@ Clazz.newMeth(C$, 'readStringAsBytes', function () {
 var n=0;
 var a=this.aTemp;
 while (true){
-var b=($b$[0] = this.binaryDoc.readByte$(), $b$[0]);
+var b=this.binaryDoc.readByte$();
 if (b == 10) break;
 if (n >= a.length) a=this.aTemp=$I$(4).arrayCopyByte$BA$I(a, a.length * 2);
-a[n++]=(b|0);
+a[n++]=b;
 }
 return $I$(4).arrayCopyByte$BA$I(a, n);
 }, p$1);
 
 Clazz.newMeth(C$, 'putMark$I', function (i) {
 if (this.logging) p$1.log$S.apply(this, ["\n " + Integer.toHexString$I((this.binaryDoc.getPosition$()|0)) + " [" ]);
-this.marks.addLast$TV(Integer.valueOf$I(this.lastMark=i));
+this.marks.addLast$O(Integer.valueOf$I(this.lastMark=i));
 this.markCount++;
 switch (this.markCount) {
 case 2:
@@ -286,7 +280,7 @@ return this.marks.removeItemAt$I(--this.markCount).intValue$();
 
 Clazz.newMeth(C$, 'push$O', function (o) {
 if (this.logging && (Clazz.instanceOf(o, "java.lang.String") || Clazz.instanceOf(o, "java.lang.Double") || Clazz.instanceOf(o, "java.lang.Integer")  ) ) p$1.log$S.apply(this, [(Clazz.instanceOf(o, "java.lang.String") ? "'" + o + "'"  : o) + ", "]);
-this.stack.addLast$TV(o);
+this.stack.addLast$O(o);
 }, p$1);
 
 Clazz.newMeth(C$, 'peek', function () {
@@ -296,8 +290,7 @@ return this.stack.get$I(this.stack.size$() - 1);
 Clazz.newMeth(C$, 'pop', function () {
 return this.stack.removeItemAt$I(this.stack.size$() - 1);
 }, p$1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

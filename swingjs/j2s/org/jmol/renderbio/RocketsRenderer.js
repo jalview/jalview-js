@@ -1,21 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),I$=[[0,'javajs.api.Interface','javajs.util.P3','org.jmol.c.STR']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RocketsRenderer", null, 'org.jmol.renderbio.StrandsRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),I$=[[0,'javajs.api.Interface','javajs.util.P3','org.jmol.c.STR']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RocketsRenderer", null, 'org.jmol.renderbio.StrandsRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isRockets=false;
-this.helixRockets=false;
-this.renderArrowHeads=false;
-this.cordMidPoints=null;
-this.rr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.helixRockets=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isRockets','helixRockets','renderArrowHeads'],'O',['cordMidPoints','javajs.util.P3[]','rr','org.jmol.renderbio.RocketRenderer']]]
 
 Clazz.newMeth(C$, 'renderBioShape$org_jmol_shapebio_BioShape', function (bioShape) {
 if (!this.setupRR$org_jmol_shapebio_BioShape$Z(bioShape, true)) return;
@@ -48,8 +40,8 @@ this.cordMidPoints=this.vwr.allocTempPoints$I(midPointCount);
 var proteinstructurePrev=null;
 var point;
 var ptLastRocket=-10;
-var pt1=Clazz.new_($I$(2));
-var pt2=Clazz.new_($I$(2));
+var pt1=Clazz.new_($I$(2,1));
+var pt2=Clazz.new_($I$(2,1));
 for (var i=0; i <= this.monomerCount; ++i) {
 point=this.cordMidPoints[i];
 if (i < this.monomerCount && (this.helixRockets && this.structureTypes[i] === $I$(3).HELIX   || this.isRockets && this.structureTypes[i] === $I$(3).SHEET   ) ) {
@@ -76,4 +68,4 @@ this.calcScreenControlPoints$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:10 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

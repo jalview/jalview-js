@@ -1,80 +1,58 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuilder','org.json.XMLTokener','org.json.JSONObject','Boolean','java.io.StringReader','org.json.JSONArray']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XML");
-C$.AMP=null;
-C$.APOS=null;
-C$.BANG=null;
-C$.EQ=null;
-C$.GT=null;
-C$.LT=null;
-C$.QUEST=null;
-C$.QUOT=null;
-C$.SLASH=null;
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuilder','org.json.XMLTokener','org.json.JSONObject','java.io.StringReader','org.json.JSONArray']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XML");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.AMP=new Character('&');
-C$.APOS=new Character('\'');
-C$.BANG=new Character('!');
-C$.EQ=new Character('=');
-C$.GT=new Character('>');
-C$.LT=new Character('<');
-C$.QUEST=new Character('?');
-C$.QUOT=new Character('"');
-C$.SLASH=new Character('/');
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'codePointIterator$S', function (string) {
+C$.$fields$=[[]
+,['O',['AMP','Character','+APOS','+BANG','+EQ','+GT','+LT','+QUEST','+QUOT','+SLASH']]]
+
+Clazz.newMeth(C$, 'codePointIterator$S',  function (string) {
 return ((P$.XML$1||
-(function(){var C$=Clazz.newClass(P$, "XML$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Iterable', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "XML$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Iterable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'iterator$', function () {
+Clazz.newMeth(C$, 'iterator$',  function () {
 return ((P$.XML$1$1||
-(function(){var C$=Clazz.newClass(P$, "XML$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "XML$1$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Iterator', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextIndex=0;
-this.length=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nextIndex=0;
 this.length=this.$finals$.string.length$();
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'hasNext$', function () {
+C$.$fields$=[['I',['nextIndex','length']]]
+
+Clazz.newMeth(C$, 'hasNext$',  function () {
 return this.nextIndex < this.length;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
+Clazz.newMeth(C$, 'next$',  function () {
 var result=this.$finals$.string.codePointAt$I(this.nextIndex);
 this.nextIndex+=Character.charCount$I(result);
-return new Integer(result);
+return Integer.valueOf$I(result);
 });
 
-Clazz.newMeth(C$, 'remove$', function () {
+Clazz.newMeth(C$, 'remove$',  function () {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException'));
 });
 })()
-), Clazz.new_(P$.XML$1$1.$init$, [this, {string: this.$finals$.string}]));
+), Clazz.new_(P$.XML$1$1.$init$,[this, {string:this.$finals$.string}]));
 });
 })()
-), Clazz.new_(P$.XML$1.$init$, [this, {string: string}]));
+), Clazz.new_(P$.XML$1.$init$,[this, {string:string}]));
 }, 1);
 
-Clazz.newMeth(C$, 'escape$S', function (string) {
-var sb=Clazz.new_($I$(1).c$$I,[string.length$()]);
+Clazz.newMeth(C$, 'escape$S',  function (string) {
+var sb=Clazz.new_([string.length$()],$I$(1,1).c$$I);
 for (var cp, $cp = C$.codePointIterator$S(string).iterator$(); $cp.hasNext$()&&((cp=($cp.next$()).intValue$()),1);) {
 switch (cp) {
 case 38:
@@ -104,12 +82,12 @@ sb.appendCodePoint$I(cp);
 return sb.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'mustEscape$I', function (cp) {
+Clazz.newMeth(C$, 'mustEscape$I',  function (cp) {
 return (Character.isISOControl$I(cp) && cp != 9  && cp != 10  && cp != 13 ) || !((cp >= 32 && cp <= 55295 ) || (cp >= 57344 && cp <= 65533 ) || (cp >= 65536 && cp <= 1114111 )  ) ;
 }, 1);
 
-Clazz.newMeth(C$, 'unescape$S', function (string) {
-var sb=Clazz.new_($I$(1).c$$I,[string.length$()]);
+Clazz.newMeth(C$, 'unescape$S',  function (string) {
+var sb=Clazz.new_([string.length$()],$I$(1,1).c$$I);
 for (var i=0, length=string.length$(); i < length; i++) {
 var c=string.charAt$I(i);
 if (c == "&") {
@@ -126,7 +104,7 @@ sb.append$C(c);
 return sb.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'noSpace$S', function (string) {
+Clazz.newMeth(C$, 'noSpace$S',  function (string) {
 var i;
 var length=string.length$();
 if (length == 0) {
@@ -137,7 +115,7 @@ throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["'" + string + "' co
 }}
 }, 1);
 
-Clazz.newMeth(C$, 'parse$org_json_XMLTokener$org_json_JSONObject$S$Z', function (x, context, name, keepStrings) {
+Clazz.newMeth(C$, 'parse$org_json_XMLTokener$org_json_JSONObject$S$Z',  function (x, context, name, keepStrings) {
 var c;
 var i;
 var jsonobject=null;
@@ -189,7 +167,7 @@ throw x.syntaxError$S("Misshaped tag");
 } else {
 tagName=token;
 token=null;
-jsonobject=Clazz.new_($I$(3));
+jsonobject=Clazz.new_($I$(3,1));
 for (; ; ) {
 if (token == null ) {
 token=x.nextToken$();
@@ -238,13 +216,13 @@ throw x.syntaxError$S("Misshaped tag");
 }}
 }}, 1);
 
-Clazz.newMeth(C$, 'stringToValue$S', function (string) {
+Clazz.newMeth(C$, 'stringToValue$S',  function (string) {
 if (string.equals$O("")) {
 return string;
 }if (string.equalsIgnoreCase$S("true")) {
-return $I$(4).TRUE;
+return Boolean.TRUE;
 }if (string.equalsIgnoreCase$S("false")) {
-return $I$(4).FALSE;
+return Boolean.FALSE;
 }if (string.equalsIgnoreCase$S("null")) {
 return $I$(3).NULL;
 }var initial=string.charAt$I(0);
@@ -257,7 +235,7 @@ return d;
 }} else {
 var myLong=Long.valueOf$S(string);
 if (string.equals$O(myLong.toString())) {
-if (myLong.longValue$() == myLong.intValue$()) {
+if (Long.$eq(myLong.longValue$(),myLong.intValue$() )) {
 return Integer.valueOf$I(myLong.intValue$());
 }return myLong;
 }}} catch (ignore) {
@@ -269,17 +247,17 @@ throw ignore;
 }return string;
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONObject$S', function (string) {
+Clazz.newMeth(C$, 'toJSONObject$S',  function (string) {
 return C$.toJSONObject$S$Z(string, false);
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONObject$java_io_Reader', function (reader) {
+Clazz.newMeth(C$, 'toJSONObject$java_io_Reader',  function (reader) {
 return C$.toJSONObject$java_io_Reader$Z(reader, false);
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONObject$java_io_Reader$Z', function (reader, keepStrings) {
-var jo=Clazz.new_($I$(3));
-var x=Clazz.new_($I$(2).c$$java_io_Reader,[reader]);
+Clazz.newMeth(C$, 'toJSONObject$java_io_Reader$Z',  function (reader, keepStrings) {
+var jo=Clazz.new_($I$(3,1));
+var x=Clazz.new_($I$(2,1).c$$java_io_Reader,[reader]);
 while (x.more$()){
 x.skipPast$S("<");
 if (x.more$()) {
@@ -288,16 +266,16 @@ C$.parse$org_json_XMLTokener$org_json_JSONObject$S$Z(x, jo, null, keepStrings);
 return jo;
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONObject$S$Z', function (string, keepStrings) {
-return C$.toJSONObject$java_io_Reader$Z(Clazz.new_($I$(5).c$$S,[string]), keepStrings);
+Clazz.newMeth(C$, 'toJSONObject$S$Z',  function (string, keepStrings) {
+return C$.toJSONObject$java_io_Reader$Z(Clazz.new_($I$(4,1).c$$S,[string]), keepStrings);
 }, 1);
 
-Clazz.newMeth(C$, 'toString$O', function (object) {
+Clazz.newMeth(C$, 'toString$O',  function (object) {
 return C$.toString$O$S(object, null);
 }, 1);
 
-Clazz.newMeth(C$, 'toString$O$S', function (object, tagName) {
-var sb=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'toString$O$S',  function (object, tagName) {
+var sb=Clazz.new_($I$(1,1));
 var ja;
 var jo;
 var string;
@@ -312,7 +290,7 @@ var value=jo.opt$S(key);
 if (value == null ) {
 value="";
 } else if (value.getClass$().isArray$()) {
-value=Clazz.new_($I$(6).c$$O,[value]);
+value=Clazz.new_($I$(5,1).c$$O,[value]);
 }if ("content".equals$O(key)) {
 if (Clazz.instanceOf(value, "org.json.JSONArray")) {
 ja=value;
@@ -355,7 +333,7 @@ sb.append$C(">");
 }return sb.toString();
 }if (object != null  && (Clazz.instanceOf(object, "org.json.JSONArray") || object.getClass$().isArray$() ) ) {
 if (object.getClass$().isArray$()) {
-ja=Clazz.new_($I$(6).c$$O,[object]);
+ja=Clazz.new_($I$(5,1).c$$O,[object]);
 } else {
 ja=object;
 }var jaLength=ja.length$();
@@ -368,6 +346,18 @@ return sb.toString();
 return (tagName == null ) ? "\"" + string + "\""  : (string.length$() == 0) ? "<" + tagName + "/>"  : "<" + tagName + ">" + string + "</" + tagName + ">" ;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.AMP=Character.valueOf$C('&');
+C$.APOS=Character.valueOf$C('\'');
+C$.BANG=Character.valueOf$C('!');
+C$.EQ=Character.valueOf$C('=');
+C$.GT=Character.valueOf$C('>');
+C$.LT=Character.valueOf$C('<');
+C$.QUEST=Character.valueOf$C('?');
+C$.QUOT=Character.valueOf$C('\"');
+C$.SLASH=Character.valueOf$C('/');
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

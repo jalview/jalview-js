@@ -1,38 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shape"),p$1={},I$=[[0,'org.jmol.shape.Mesh','javajs.util.PT','javajs.util.AU','org.jmol.util.C','org.jmol.viewer.StateManager','org.jmol.util.Logger','org.jmol.script.T','javajs.util.Lst','javajs.util.P3','javajs.util.SB','org.jmol.util.Escape','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeshCollection", null, 'org.jmol.shape.Shape');
+(function(){var P$=Clazz.newPackage("org.jmol.shape"),p$1={},I$=[[0,'org.jmol.shape.Mesh','javajs.util.PT','javajs.util.AU','org.jmol.util.C','org.jmol.viewer.StateManager','org.jmol.util.Logger','org.jmol.script.T','javajs.util.Lst','javajs.util.P3','javajs.util.SB','org.jmol.util.Escape','java.util.Hashtable']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MeshCollection", null, 'org.jmol.shape.Shape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.meshCount=0;
-this.meshes=null;
-this.currentMesh=null;
-this.isFixed=false;
-this.nUnnamed=0;
-this.colix=0;
-this.explicitID=false;
-this.previousMeshID=null;
-this.linkedMesh=null;
-this.modelIndex=0;
-this.displayWithinDistance2=0;
-this.isDisplayWithinNot=false;
-this.displayWithinPoints=null;
-this.bsDisplay=null;
-this.title=null;
-this.pickedMesh=null;
-this.pickedModel=0;
-this.pickedVertex=0;
-this.pickedPt=null;
-this.connections=null;
-this.htObjects=null;
-this.color=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.meshes=Clazz.array($I$(1), [4]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isFixed','explicitID','isDisplayWithinNot'],'F',['displayWithinDistance2'],'I',['meshCount','nUnnamed','modelIndex','pickedModel','pickedVertex','color'],'H',['colix'],'S',['previousMeshID'],'O',['meshes','org.jmol.shape.Mesh[]','currentMesh','org.jmol.shape.Mesh','+linkedMesh','displayWithinPoints','javajs.util.Lst','bsDisplay','javajs.util.BS','title','String[]','pickedMesh','org.jmol.shape.Mesh','pickedPt','javajs.util.T3','connections','int[]','htObjects','java.util.Map']]]
 
 Clazz.newMeth(C$, 'setMesh$S', function (thisID) {
 this.linkedMesh=null;
@@ -48,7 +23,7 @@ this.linkedMesh=this.currentMesh.linkedMesh;
 }if (this.currentMesh.thisID == null ) {
 if (this.nUnnamed == 0 || this.getMesh$S(this.myType + this.nUnnamed) != null  ) this.nUnnamed++;
 this.currentMesh.thisID=this.myType + this.nUnnamed;
-if (this.htObjects != null ) this.htObjects.put$TK$TV(this.currentMesh.thisID.toUpperCase$(), this.currentMesh);
+if (this.htObjects != null ) this.htObjects.put$O$O(this.currentMesh.thisID.toUpperCase$(), this.currentMesh);
 }this.previousMeshID=this.currentMesh.thisID;
 return this.currentMesh;
 }, p$1);
@@ -56,10 +31,10 @@ return this.currentMesh;
 Clazz.newMeth(C$, 'allocMesh$S$org_jmol_shape_Mesh', function (thisID, m) {
 var index=this.meshCount++;
 this.meshes=$I$(3).ensureLength$O$I(this.meshes, this.meshCount * 2);
-this.currentMesh=this.meshes[index]=(m == null  ? Clazz.new_($I$(1)).mesh1$org_jmol_viewer_Viewer$S$H$I(this.vwr, thisID, this.colix, index) : m);
+this.currentMesh=this.meshes[index]=(m == null  ? Clazz.new_($I$(1,1)).mesh1$org_jmol_viewer_Viewer$S$H$I(this.vwr, thisID, this.colix, index) : m);
 this.currentMesh.color=this.color;
 this.currentMesh.index=index;
-if (thisID != null  && this.htObjects != null  ) this.htObjects.put$TK$TV(thisID.toUpperCase$(), this.currentMesh);
+if (thisID != null  && this.htObjects != null  ) this.htObjects.put$O$O(thisID.toUpperCase$(), this.currentMesh);
 this.previousMeshID=null;
 });
 
@@ -84,33 +59,33 @@ this.color=-1;
 });
 
 Clazz.newMeth(C$, 'setPropMC$S$O$javajs_util_BS', function (propertyName, value, bs) {
-if ("init" == propertyName) {
+if ("init" === propertyName ) {
 this.title=null;
 return;
-}if ("link" == propertyName) {
+}if ("link" === propertyName ) {
 if (this.meshCount >= 2 && this.currentMesh != null  ) this.currentMesh.linkedMesh=this.meshes[this.meshCount - 2];
 return;
-}if ("lattice" == propertyName) {
+}if ("lattice" === propertyName ) {
 if (this.currentMesh != null ) this.currentMesh.lattice=value;
 return;
-}if ("symops" == propertyName) {
+}if ("symops" === propertyName ) {
 if (this.currentMesh != null ) {
 this.currentMesh.symops=value;
 if (this.currentMesh.symops == null ) return;
 var n=this.currentMesh.symops.length;
 this.currentMesh.symopColixes=Clazz.array(Short.TYPE, [n]);
-for (var i=n; --i >= 0; ) this.currentMesh.symopColixes[i]=$I$(4).getColix$I(this.vwr.cm.ce.getArgbMinMax$F$F$F(i + 1, 1, n));
+for (var i=n; --i >= 0; ) this.currentMesh.symopColixes[i]=$I$(4,"getColix$I",[this.vwr.cm.ce.getArgbMinMax$F$F$F(i + 1, 1, n)]);
 
 }return;
-}if ("variables" == propertyName) {
+}if ("variables" === propertyName ) {
 if (this.currentMesh != null  && this.currentMesh.scriptCommand != null   && !this.currentMesh.scriptCommand.startsWith$S("{") ) this.currentMesh.scriptCommand="{\n" + $I$(5).getVariableList$java_util_Map$I$Z$Z(value, 0, false, false) + "\n" + this.currentMesh.scriptCommand ;
 return;
-}if ("thisID" == propertyName) {
+}if ("thisID" === propertyName ) {
 var id=value;
 p$1.setMesh$S.apply(this, [id]);
 this.checkExplicit$S(id);
 return;
-}if ("title" == propertyName) {
+}if ("title" === propertyName ) {
 if (value == null ) {
 this.title=null;
 } else if (Clazz.instanceOf(value, "java.lang.String")) {
@@ -129,15 +104,15 @@ this.title[nLine]=lines.substring$I(i0 + 1);
 } else {
 this.title=value;
 }return;
-}if ("delete" == propertyName) {
+}if ("delete" === propertyName ) {
 p$1.deleteMesh.apply(this, []);
 return;
-}if ("reset" == propertyName) {
+}if ("reset" === propertyName ) {
 var thisID=value;
 if (p$1.setMesh$S.apply(this, [thisID]) == null ) return;
 p$1.setMesh$S.apply(this, [thisID]);
 return;
-}if ("color" == propertyName) {
+}if ("color" === propertyName ) {
 if (value == null ) return;
 this.colix=$I$(4).getColixO$O(value);
 this.color=(value).intValue$();
@@ -145,13 +120,13 @@ if (this.currentMesh != null ) {
 this.currentMesh.color=this.color;
 }this.setTokenProperty$I$Z$Z(1765808134, false, false);
 return;
-}if ("translucency" == propertyName) {
+}if ("translucency" === propertyName ) {
 this.setTokenProperty$I$Z$Z(603979967, ((value).equals$O("translucent")), false);
 return;
-}if ("hidden" == propertyName) {
+}if ("hidden" === propertyName ) {
 value=Integer.valueOf$I((value).booleanValue$() ? 1073742334 : 1073742335);
 propertyName="token";
-}if ("token" == propertyName) {
+}if ("token" === propertyName ) {
 var tok=(value).intValue$();
 var tok2=0;
 var test=true;
@@ -208,7 +183,7 @@ test=false;
 tok=1073741960;
 break;
 default:
-$I$(6).error$S("PROBLEM IN MESHCOLLECTION: token? " + $I$(7).nameOf$I(tok));
+$I$(6,"error$S",["PROBLEM IN MESHCOLLECTION: token? " + $I$(7).nameOf$I(tok)]);
 }
 this.setTokenProperty$I$Z$Z(tok, test, false);
 if (tok2 != 0) this.setTokenProperty$I$Z$Z(tok2, test, true);
@@ -256,34 +231,34 @@ m.setTokenProperty$I$Z(tokProp, bProp);
 }, p$1);
 
 Clazz.newMeth(C$, 'getPropDataMC$S$OA', function (property, data) {
-if (property == "keys") {
-var keys=(Clazz.instanceOf(data[1], "javajs.util.Lst") ? data[1] : Clazz.new_($I$(8)));
+if (property === "keys" ) {
+var keys=(Clazz.instanceOf(data[1], "javajs.util.Lst") ? data[1] : Clazz.new_($I$(8,1)));
 data[1]=keys;
-keys.addLast$TV("count");
-keys.addLast$TV("getCenter");
-}if (property == "getNames") {
+keys.addLast$O("count");
+keys.addLast$O("getCenter");
+}if (property === "getNames" ) {
 var map=data[0];
 var withDollar=(data[1]).booleanValue$();
-for (var i=this.meshCount; --i >= 0; ) if (this.meshes[i] != null  && this.meshes[i].vc != 0 ) map.put$TK$TV((withDollar ? "$" : "") + this.meshes[i].thisID, $I$(7).tokenOr);
+for (var i=this.meshCount; --i >= 0; ) if (this.meshes[i] != null  && this.meshes[i].vc != 0 ) map.put$O$O((withDollar ? "$" : "") + this.meshes[i].thisID, $I$(7).tokenOr);
 
 return true;
-}if (property == "getVertices") {
+}if (property === "getVertices" ) {
 var m=this.getMesh$S(data[0]);
 if (m == null ) return false;
 data[1]=m.vs;
 data[2]=m.getVisibleVertexBitSet$();
 return true;
-}if (property == "checkID") {
+}if (property === "checkID" ) {
 var key=data[0];
 var list=this.getMeshList$S$Z(key, true);
 if (list.size$() == 0) return false;
 data[1]=list.get$I(0).thisID;
 return true;
-}if (property == "index") {
+}if (property === "index" ) {
 var m=this.getMesh$S(data[0]);
 data[1]=Integer.valueOf$I(m == null  ? -1 : m.index);
 return true;
-}if (property == "getCenter") {
+}if (property === "getCenter" ) {
 var id=data[0];
 var index=(data[1]).intValue$();
 var m;
@@ -295,12 +270,12 @@ return true;
 });
 
 Clazz.newMeth(C$, 'getMeshList$S$Z', function (key, justOne) {
-var list=Clazz.new_($I$(8));
+var list=Clazz.new_($I$(8,1));
 if (key != null ) key=(key.length$() == 0 ? null : key.toUpperCase$());
 var isWild=$I$(2).isWild$S(key);
 var id;
 for (var i=this.meshCount; --i >= 0; ) if (key == null  || (id=this.meshes[i].thisID.toUpperCase$()).equals$O(key)  || isWild && $I$(2).isMatch$S$S$Z$Z(id, key, true, true)  ) {
-list.addLast$TV(this.meshes[i]);
+list.addLast$O(this.meshes[i]);
 if (justOne) break;
 }
 return list;
@@ -309,21 +284,21 @@ return list;
 Clazz.newMeth(C$, 'getPropMC$S$I', function (property, index) {
 var m=this.currentMesh;
 if (index >= 0 && (index >= this.meshCount || (m=this.meshes[index]) == null  ) ) return null;
-if (property == "count") {
+if (property === "count" ) {
 var n=0;
 for (var i=0; i < this.meshCount; i++) if ((m=this.meshes[i]) != null  && m.vc > 0 ) n++;
 
 return Integer.valueOf$I(n);
-}if (property == "bsVertices") {
+}if (property === "bsVertices" ) {
 if (m == null ) return null;
-var lst=Clazz.new_($I$(8));
-lst.addLast$TV(m.vs);
-lst.addLast$TV(m.getVisibleVBS$());
+var lst=Clazz.new_($I$(8,1));
+lst.addLast$O(m.vs);
+lst.addLast$O(m.getVisibleVBS$());
 return lst;
-}if (property == "ID") return (m == null  ? null : m.thisID);
+}if (property === "ID" ) return (m == null  ? null : m.thisID);
 if (property.startsWith$S("list")) {
 this.clean$();
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 var k=0;
 var isNamed=property.length$() > 5;
 var id=(property.equals$O("list") ? null : isNamed ? property.substring$I(5) : m == null  ? null : m.thisID);
@@ -345,9 +320,9 @@ var info=this.getProperty$S$I("jvxlFileInfo", 0);
 if (info != null ) sb.append$S(info).appendC$C("\n");
 }}
 return sb.toString();
-}if (property == "vertices") return p$1.getVertices$org_jmol_shape_Mesh.apply(this, [m]);
-if (property == "info") return (m == null  ? null : m.getInfo$Z(false));
-if (property == "data") return (m == null  ? null : m.getInfo$Z(true));
+}if (property === "vertices" ) return p$1.getVertices$org_jmol_shape_Mesh.apply(this, [m]);
+if (property === "info" ) return (m == null  ? null : m.getInfo$Z(false));
+if (property === "data" ) return (m == null  ? null : m.getInfo$Z(true));
 return null;
 });
 
@@ -393,7 +368,7 @@ this.htObjects.clear$();
 for (var i=0; i < this.meshCount; i++) {
 var m=this.meshes[i];
 m.index=i;
-this.htObjects.put$TK$TV(m.thisID.toUpperCase$(), m);
+this.htObjects.put$O$O(m.thisID.toUpperCase$(), m);
 }
 });
 
@@ -429,17 +404,17 @@ this.vwr.setStatusAtomPicked$I$S$java_util_Map$Z(flag, "[\"" + this.myType + "\"
 });
 
 Clazz.newMeth(C$, 'getPickedPoint$javajs_util_T3$I', function (v, modelIndex) {
-var map=Clazz.new_($I$(12));
+var map=Clazz.new_($I$(12,1));
 if (v != null ) {
-map.put$TK$TV("pt", v);
-map.put$TK$TV("modelIndex", Integer.valueOf$I(modelIndex));
-map.put$TK$TV("model", this.vwr.getModelNumberDotted$I(modelIndex));
-map.put$TK$TV("id", this.pickedMesh.thisID);
-map.put$TK$TV("vertex", Integer.valueOf$I(this.pickedVertex + 1));
-map.put$TK$TV("type", this.myType);
+map.put$O$O("pt", v);
+map.put$O$O("modelIndex", Integer.valueOf$I(modelIndex));
+map.put$O$O("model", this.vwr.getModelNumberDotted$I(modelIndex));
+map.put$O$O("id", this.pickedMesh.thisID);
+map.put$O$O("vertex", Integer.valueOf$I(this.pickedVertex + 1));
+map.put$O$O("type", this.myType);
 }return map;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:50 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

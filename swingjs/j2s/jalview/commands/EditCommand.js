@@ -1,57 +1,53 @@
-(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,['jalview.commands.EditCommand','.Action'],'java.util.ArrayList',['jalview.commands.EditCommand','.Edit'],'jalview.datamodel.SequenceI','StringBuilder','jalview.util.Comparison','jalview.analysis.AlignSeq','jalview.datamodel.Sequence','jalview.datamodel.Range','Error','java.util.Hashtable','jalview.datamodel.AlignmentAnnotation','jalview.datamodel.Annotation','jalview.datamodel.SequenceFeature','java.util.HashMap','jalview.util.ReverseListIterator','jalview.util.StringUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EditCommand", function(){
+(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,['jalview.commands.EditCommand','.Action'],'java.util.ArrayList',['jalview.commands.EditCommand','.Edit'],'jalview.datamodel.SequenceI','StringBuilder','jalview.util.Comparison','jalview.analysis.AlignSeq','jalview.datamodel.Sequence','jalview.datamodel.Range','java.util.Locale','Error','java.util.Hashtable','jalview.datamodel.AlignmentAnnotation','jalview.datamodel.Annotation','jalview.datamodel.SequenceFeature','java.util.HashMap','jalview.util.ReverseListIterator','jalview.util.StringUtils']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EditCommand", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'jalview.commands.CommandI');
+C$.$classes$=[['Action',1033],['Edit',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.edits=null;
-this.description=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.edits=Clazz.new_($I$(2));
+this.edits=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['S',['description'],'O',['edits','java.util.List']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S', function (desc) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S',  function (desc) {
+;C$.$init$.apply(this);
 this.description=desc;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI', function (desc, command, seqs, position, number, al) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI',  function (desc, command, seqs, position, number, al) {
+;C$.$init$.apply(this);
 this.description=desc;
 if (command === $I$(1).CUT  || command === $I$(1).PASTE  ) {
-this.setEdit$jalview_commands_EditCommand_Edit(Clazz.new_($I$(3).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI, [this, null, command, seqs, position, number, al]));
+this.setEdit$jalview_commands_EditCommand_Edit(Clazz.new_($I$(3,1).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,[this, null, command, seqs, position, number, al]));
 }this.performEdit$I$jalview_datamodel_AlignmentIA(0, null);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$jalview_commands_EditCommand_Action$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI', function (desc, command, replace, seqs, position, number, al) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$jalview_commands_EditCommand_Action$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI',  function (desc, command, replace, seqs, position, number, al) {
+;C$.$init$.apply(this);
 this.description=desc;
 if (command === $I$(1).REPLACE ) {
-this.setEdit$jalview_commands_EditCommand_Edit(Clazz.new_($I$(3).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$S, [this, null, command, seqs, position, number, al, replace]));
+this.setEdit$jalview_commands_EditCommand_Edit(Clazz.new_($I$(3,1).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$S,[this, null, command, seqs, position, number, al, replace]));
 }this.performEdit$I$jalview_datamodel_AlignmentIA(0, null);
 }, 1);
 
-Clazz.newMeth(C$, 'setEdit$jalview_commands_EditCommand_Edit', function (e) {
+Clazz.newMeth(C$, 'setEdit$jalview_commands_EditCommand_Edit',  function (e) {
 this.edits.clear$();
-this.edits.add$TE(e);
+this.edits.add$O(e);
 });
 
-Clazz.newMeth(C$, 'addEdit$jalview_commands_EditCommand_Edit', function (e) {
+Clazz.newMeth(C$, 'addEdit$jalview_commands_EditCommand_Edit',  function (e) {
 if (!C$.expandEdit$java_util_List$jalview_commands_EditCommand_Edit(this.edits, e)) {
-this.edits.add$TE(e);
+this.edits.add$O(e);
 }});
 
-Clazz.newMeth(C$, 'expandEdit$java_util_List$jalview_commands_EditCommand_Edit', function (edits, e) {
+Clazz.newMeth(C$, 'expandEdit$java_util_List$jalview_commands_EditCommand_Edit',  function (edits, e) {
 if (edits == null  || edits.isEmpty$() ) {
 return false;
 }var lastEdit=edits.get$I(edits.size$() - 1);
@@ -69,43 +65,43 @@ if (contiguous) {
 lastEdit.number+=e.number;
 lastEdit.seqs=e.seqs;
 if (action === $I$(1).DELETE_GAP ) {
-lastEdit.position--;
+--lastEdit.position;
 }return true;
 }return false;
 }, 1);
 
-Clazz.newMeth(C$, 'clearEdits$', function () {
+Clazz.newMeth(C$, 'clearEdits$',  function () {
 this.edits.clear$();
 });
 
-Clazz.newMeth(C$, 'getEdit$I', function (i) {
+Clazz.newMeth(C$, 'getEdit$I',  function (i) {
 if (i >= 0 && i < this.edits.size$() ) {
 return this.edits.get$I(i);
 }return null;
 });
 
-Clazz.newMeth(C$, 'getDescription$', function () {
+Clazz.newMeth(C$, 'getDescription$',  function () {
 return this.description;
 });
 
-Clazz.newMeth(C$, 'getSize$', function () {
+Clazz.newMeth(C$, 'getSize$',  function () {
 return this.edits.size$();
 });
 
-Clazz.newMeth(C$, 'getAlignment$', function () {
+Clazz.newMeth(C$, 'getAlignment$',  function () {
 return (this.edits.isEmpty$() ? null : this.edits.get$I(0).al);
 });
 
-Clazz.newMeth(C$, 'appendEdit$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$Z', function (command, seqs, position, number, al, performEdit) {
+Clazz.newMeth(C$, 'appendEdit$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$Z',  function (command, seqs, position, number, al, performEdit) {
 this.appendEdit$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$Z$jalview_datamodel_AlignmentIA(command, seqs, position, number, al, performEdit, null);
 });
 
-Clazz.newMeth(C$, 'appendEdit$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$Z$jalview_datamodel_AlignmentIA', function (command, seqs, position, number, al, performEdit, views) {
-var edit=Clazz.new_($I$(3).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI, [this, null, command, seqs, position, number, al]);
+Clazz.newMeth(C$, 'appendEdit$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$Z$jalview_datamodel_AlignmentIA',  function (command, seqs, position, number, al, performEdit, views) {
+var edit=Clazz.new_($I$(3,1).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI,[this, null, command, seqs, position, number, al]);
 this.appendEdit$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentI$Z$jalview_datamodel_AlignmentIA(edit, al, performEdit, views);
 });
 
-Clazz.newMeth(C$, 'appendEdit$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentI$Z$jalview_datamodel_AlignmentIA', function (edit, al, performEdit, views) {
+Clazz.newMeth(C$, 'appendEdit$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentI$Z$jalview_datamodel_AlignmentIA',  function (edit, al, performEdit, views) {
 if (al.getHeight$() == edit.seqs.length) {
 edit.al=al;
 edit.fullAlignmentHeight=true;
@@ -114,7 +110,7 @@ if (performEdit) {
 C$.performEdit$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA(edit, views);
 }});
 
-Clazz.newMeth(C$, 'performEdit$I$jalview_datamodel_AlignmentIA', function (commandIndex, views) {
+Clazz.newMeth(C$, 'performEdit$I$jalview_datamodel_AlignmentIA',  function (commandIndex, views) {
 var iterator=this.edits.listIterator$I(commandIndex);
 while (iterator.hasNext$()){
 var edit=iterator.next$();
@@ -122,7 +118,7 @@ C$.performEdit$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA(e
 }
 });
 
-Clazz.newMeth(C$, 'performEdit$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA', function (edit, views) {
+Clazz.newMeth(C$, 'performEdit$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA',  function (edit, views) {
 switch (edit.command) {
 case $I$(1).INSERT_GAP:
 C$.insertGap$jalview_commands_EditCommand_Edit(edit);
@@ -146,11 +142,11 @@ break;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'doCommand$jalview_datamodel_AlignmentIA', function (views) {
+Clazz.newMeth(C$, 'doCommand$jalview_datamodel_AlignmentIA',  function (views) {
 this.performEdit$I$jalview_datamodel_AlignmentIA(0, views);
 });
 
-Clazz.newMeth(C$, 'undoCommand$jalview_datamodel_AlignmentIA', function (views) {
+Clazz.newMeth(C$, 'undoCommand$jalview_datamodel_AlignmentIA',  function (views) {
 var iterator=this.edits.listIterator$I(this.edits.size$());
 while (iterator.hasPrevious$()){
 var e=iterator.previous$();
@@ -178,21 +174,21 @@ break;
 }
 });
 
-Clazz.newMeth(C$, 'insertGap$jalview_commands_EditCommand_Edit', function (command) {
+Clazz.newMeth(C$, 'insertGap$jalview_commands_EditCommand_Edit',  function (command) {
 for (var s=0; s < command.seqs.length; s++) {
 command.seqs[s].insertCharAt$I$I$C(command.position, command.number, command.gapChar);
 }
 C$.adjustAnnotations$jalview_commands_EditCommand_Edit$Z$Z$jalview_datamodel_AlignmentIA(command, true, false, null);
 }, 1);
 
-Clazz.newMeth(C$, 'deleteGap$jalview_commands_EditCommand_Edit', function (command) {
+Clazz.newMeth(C$, 'deleteGap$jalview_commands_EditCommand_Edit',  function (command) {
 for (var s=0; s < command.seqs.length; s++) {
 command.seqs[s].deleteChars$I$I(command.position, command.position + command.number);
 }
 C$.adjustAnnotations$jalview_commands_EditCommand_Edit$Z$Z$jalview_datamodel_AlignmentIA(command, false, false, null);
 }, 1);
 
-Clazz.newMeth(C$, 'cut$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA', function (command, views) {
+Clazz.newMeth(C$, 'cut$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA',  function (command, views) {
 var seqDeleted=false;
 command.string=Clazz.array(Character.TYPE, [command.seqs.length, null]);
 for (var i=0; i < command.seqs.length; i++) {
@@ -224,7 +220,7 @@ seqDeleted=true;
 C$.adjustAnnotations$jalview_commands_EditCommand_Edit$Z$Z$jalview_datamodel_AlignmentIA(command, false, seqDeleted, views);
 }, 1);
 
-Clazz.newMeth(C$, 'paste$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA', function (command, views) {
+Clazz.newMeth(C$, 'paste$jalview_commands_EditCommand_Edit$jalview_datamodel_AlignmentIA',  function (command, views) {
 var seqWasDeleted=false;
 for (var i=0; i < command.seqs.length; i++) {
 var newDSNeeded=false;
@@ -235,13 +231,13 @@ if (command.alIndex[i] < command.al.getHeight$()) {
 var sequences=command.al.getSequences$();
 {
 if (!(command.alIndex[i] < 0)) {
-sequences.add$I$TE(command.alIndex[i], sequence);
+sequences.add$I$O(command.alIndex[i], sequence);
 }}} else {
 command.al.addSequence$jalview_datamodel_SequenceI(sequence);
 }seqWasDeleted=true;
 }var newStart=sequence.getStart$();
 var newEnd=sequence.getEnd$();
-var tmp=Clazz.new_($I$(5));
+var tmp=Clazz.new_($I$(5,1));
 tmp.append$CA(sequence.getSequence$());
 var start=0;
 var length=0;
@@ -250,19 +246,19 @@ if (command.position >= tmp.length$()) {
 var len=command.position - tmp.length$();
 while (len > 0){
 tmp.append$C(command.gapChar);
-len--;
+--len;
 }
 }tmp.insert$I$CA(command.position, command.string[i]);
 for (var s=0; s < command.string[i].length; s++) {
 if (!$I$(6).isGap$C(command.string[i][s])) {
-length++;
+++length;
 if (!newDSNeeded) {
 newDSNeeded=true;
 start=sequence.findPosition$I(command.position);
 }if (sequence.getStart$() == start) {
-newStart--;
+--newStart;
 } else {
-newEnd++;
+++newEnd;
 }}}
 command.string[i]=null;
 }sequence.setSequence$S(tmp.toString());
@@ -275,8 +271,8 @@ var ds;
 if (newDSWasNeeded) {
 ds=command.oldds[i];
 } else {
-var ungapped=$I$(7).extractGaps$S$S($I$(6).GapChars, sequence.getSequenceAsString$());
-ds=Clazz.new_($I$(8).c$$S$S$I$I,[sequence.getName$(), ungapped, sequence.getStart$(), sequence.getEnd$()]);
+var ungapped=$I$(7,"extractGaps$S$S",[$I$(6).GapChars, sequence.getSequenceAsString$()]);
+ds=Clazz.new_([sequence.getName$(), ungapped, sequence.getStart$(), sequence.getEnd$()],$I$(8,1).c$$S$S$I$I);
 ds.setDescription$S(sequence.getDescription$());
 }if (command.oldds == null ) {
 command.oldds=Clazz.array($I$(4), [command.seqs.length]);
@@ -292,7 +288,7 @@ C$.adjustAnnotations$jalview_commands_EditCommand_Edit$Z$Z$jalview_datamodel_Ali
 command.string=null;
 }, 1);
 
-Clazz.newMeth(C$, 'replace$jalview_commands_EditCommand_Edit', function (command) {
+Clazz.newMeth(C$, 'replace$jalview_commands_EditCommand_Edit',  function (command) {
 var tmp;
 var oldstring;
 var start=command.position;
@@ -304,16 +300,16 @@ var newStartEndWasNeeded=command.oldStartEnd != null  && command.oldStartEnd[i] 
 var beforeEditedPositions=command.seqs[i].findPositions$I$I(1, start);
 var afterEditedPositions=command.seqs[i].findPositions$I$I(end + 1, command.seqs[i].getLength$());
 oldstring=command.seqs[i].getSequenceAsString$();
-tmp=Clazz.new_($I$(5).c$$S,[oldstring.substring$I$I(0, start)]);
+tmp=Clazz.new_([oldstring.substring$I$I(0, start)],$I$(5,1).c$$S);
 tmp.append$CA(command.string[i]);
-var nogaprep=$I$(7).extractGaps$S$S($I$(6).GapChars,  String.instantialize(command.string[i]));
+var nogaprep=$I$(7,"extractGaps$S$S",[$I$(6).GapChars,  String.instantialize(command.string[i])]);
 if (end < oldstring.length$()) {
 tmp.append$S(oldstring.substring$I(end));
-}var oldstartend=Clazz.new_($I$(9).c$$I$I,[command.seqs[i].getStart$(), command.seqs[i].getEnd$()]);
+}var oldstartend=Clazz.new_([command.seqs[i].getStart$(), command.seqs[i].getEnd$()],$I$(9,1).c$$I$I);
 command.seqs[i].setSequence$S(tmp.toString());
 command.string[i]=oldstring.substring$I$I(start, Math.min(end, oldstring.length$())).toCharArray$();
-var nogapold=$I$(7).extractGaps$S$S($I$(6).GapChars,  String.instantialize(command.string[i]));
-if (!nogaprep.toLowerCase$().equals$O(nogapold.toLowerCase$())) {
+var nogapold=$I$(7,"extractGaps$S$S",[$I$(6).GapChars,  String.instantialize(command.string[i])]);
+if (!nogaprep.toLowerCase$java_util_Locale($I$(10).ROOT).equals$O(nogapold.toLowerCase$java_util_Locale($I$(10).ROOT))) {
 if (newDSWasNeeded || newStartEndWasNeeded ) {
 if (newDSWasNeeded) {
 var oldds=command.seqs[i].getDatasetSequence$();
@@ -331,8 +327,8 @@ var beforeStartOfEdit=-oldds.getStart$() + 1 + (beforeEditedPositions == null  ?
 var afterEndOfEdit=-oldds.getStart$() + 1 + ((afterEditedPositions == null ) ? oldstartend.getEnd$() : afterEditedPositions.getBegin$() - 1) ;
 var fullseq=osp.substring$I$I(0, beforeStartOfEdit) + nogaprep + osp.substring$I(afterEndOfEdit) ;
 if (!fullseq.equalsIgnoreCase$S(osp)) {
-var newds=Clazz.new_($I$(8).c$$jalview_datamodel_SequenceI,[oldds]);
-newds.setSequence$S(fullseq);
+var newds=Clazz.new_($I$(8,1).c$$jalview_datamodel_SequenceI,[oldds]);
+newds.setSequence$S(fullseq.toUpperCase$java_util_Locale($I$(10).ROOT));
 if (command.oldds == null ) {
 command.oldds=Clazz.array($I$(4), [command.seqs.length]);
 }command.oldds[i]=command.seqs[i].getDatasetSequence$();
@@ -343,16 +339,16 @@ command.seqs[i].setDatasetSequence$jalview_datamodel_SequenceI(newds);
 } else {
 if (command.oldStartEnd == null ) {
 command.oldStartEnd=Clazz.array($I$(9), [command.seqs.length]);
-}command.oldStartEnd[i]=Clazz.new_($I$(9).c$$I$I,[command.seqs[i].getStart$(), command.seqs[i].getEnd$()]);
+}command.oldStartEnd[i]=Clazz.new_([command.seqs[i].getStart$(), command.seqs[i].getEnd$()],$I$(9,1).c$$I$I);
 if (beforeEditedPositions != null  && afterEditedPositions == null  ) {
 command.seqs[i].setEnd$I(beforeEditedPositions.getEnd$() + nogaprep.length$() - nogapold.length$());
 } else if (afterEditedPositions != null  && beforeEditedPositions == null  ) {
 command.seqs[i].setStart$I(afterEditedPositions.getBegin$() - nogaprep.length$());
 } else {
-var nogapalseq=$I$(7).extractGaps$S$S($I$(6).GapChars, command.seqs[i].getSequenceAsString$().toUpperCase$());
+var nogapalseq=$I$(7,"extractGaps$S$S",[$I$(6).GapChars, command.seqs[i].getSequenceAsString$().toUpperCase$java_util_Locale($I$(10).ROOT)]);
 var newStart=command.seqs[i].getDatasetSequence$().getSequenceAsString$().indexOf$S(nogapalseq);
 if (newStart == -1) {
-throw Clazz.new_($I$(10).c$$S,["Implementation Error: could not locate start/end in dataset sequence after an edit of the sequence string"]);
+throw Clazz.new_($I$(11,1).c$$S,["Implementation Error: could not locate start/end in dataset sequence after an edit of the sequence string"]);
 }var newEnd=newStart + nogapalseq.length$() - 1;
 command.seqs[i].setStart$I(newStart);
 command.seqs[i].setEnd$I(newEnd);
@@ -361,10 +357,10 @@ oldstring=null;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'adjustAnnotations$jalview_commands_EditCommand_Edit$Z$Z$jalview_datamodel_AlignmentIA', function (command, insert, modifyVisibility, views) {
+Clazz.newMeth(C$, 'adjustAnnotations$jalview_commands_EditCommand_Edit$Z$Z$jalview_datamodel_AlignmentIA',  function (command, insert, modifyVisibility, views) {
 var annotations=null;
 if (modifyVisibility && !insert ) {
-command.deletedAnnotationRows=Clazz.new_($I$(11));
+command.deletedAnnotationRows=Clazz.new_($I$(12,1));
 }if (command.fullAlignmentHeight) {
 annotations=command.al.getAlignmentAnnotation$();
 } else {
@@ -380,18 +376,18 @@ var alen=tmp.length;
 for (var aa=0; aa < tmp.length; aa++) {
 if (!command.al.deleteAnnotation$jalview_datamodel_AlignmentAnnotation(tmp[aa])) {
 tmp[aa]=null;
-alen--;
+--alen;
 }}
 command.seqs[s].setAlignmentAnnotation$jalview_datamodel_AlignmentAnnotationA(null);
 if (alen != tmp.length) {
-var saved=Clazz.array($I$(12), [alen]);
+var saved=Clazz.array($I$(13), [alen]);
 for (var aa=0, aapos=0; aa < tmp.length; aa++) {
 if (tmp[aa] != null ) {
 saved[aapos++]=tmp[aa];
 tmp[aa]=null;
 }}
 tmp=saved;
-command.deletedAnnotationRows.put$TK$TV(command.seqs[s], saved);
+command.deletedAnnotationRows.put$O$O(command.seqs[s], saved);
 for (var alview=0; views != null  && alview < views.length ; alview++) {
 if (views[alview] !== command.al ) {
 var toremove=views[alview].getAlignmentAnnotation$();
@@ -403,7 +399,7 @@ views[alview].deleteAnnotation$jalview_datamodel_AlignmentAnnotation(toremove[aa
 }}
 }}
 } else {
-command.deletedAnnotationRows.put$TK$TV(command.seqs[s], tmp);
+command.deletedAnnotationRows.put$O$O(command.seqs[s], tmp);
 }}} else {
 if (command.deletedAnnotationRows != null  && command.deletedAnnotationRows.containsKey$O(command.seqs[s]) ) {
 var revealed=command.deletedAnnotationRows.get$O(command.seqs[s]);
@@ -419,7 +415,7 @@ for (var vnum=0; views != null  && vnum < views.length ; vnum++) {
 if (views[vnum] !== command.al ) {
 var avwidth=views[vnum].getWidth$() + 1;
 for (var a=0; a < revealed.length; a++) {
-var newann=Clazz.new_($I$(12).c$$jalview_datamodel_AlignmentAnnotation,[revealed[a]]);
+var newann=Clazz.new_($I$(13,1).c$$jalview_datamodel_AlignmentAnnotation,[revealed[a]]);
 command.seqs[s].addAlignmentAnnotation$jalview_datamodel_AlignmentAnnotation(newann);
 newann.padAnnotation$I(avwidth);
 views[vnum].addAnnotation$jalview_datamodel_AlignmentAnnotation(newann);
@@ -432,7 +428,7 @@ continue;
 }if (aSize == 0) {
 annotations=command.seqs[s].getAnnotation$();
 } else {
-tmp=Clazz.array($I$(12), [aSize + command.seqs[s].getAnnotation$().length]);
+tmp=Clazz.array($I$(13), [aSize + command.seqs[s].getAnnotation$().length]);
 System.arraycopy$O$I$O$I$I(annotations, 0, tmp, 0, aSize);
 System.arraycopy$O$I$O$I$I(command.seqs[s].getAnnotation$(), 0, tmp, aSize, command.seqs[s].getAnnotation$().length);
 annotations=tmp;
@@ -441,7 +437,7 @@ annotations=tmp;
 }if (annotations == null ) {
 return;
 }if (!insert) {
-command.deletedAnnotations=Clazz.new_($I$(11));
+command.deletedAnnotations=Clazz.new_($I$(12,1));
 }var aSize;
 var temp;
 for (var a=0; a < annotations.length; a++) {
@@ -450,10 +446,10 @@ continue;
 }var tSize=0;
 aSize=annotations[a].annotations.length;
 if (insert) {
-temp=Clazz.array($I$(13), [aSize + command.number]);
+temp=Clazz.array($I$(14), [aSize + command.number]);
 if (annotations[a].padGaps) {
 for (var aa=0; aa < temp.length; aa++) {
-temp[aa]=Clazz.new_($I$(13).c$$S$S$C$F,[command.gapChar + "", null, " ", 0]);
+temp[aa]=Clazz.new_($I$(14,1).c$$S$S$C$F,[command.gapChar + "", null, " ", 0]);
 }
 }} else {
 if (command.position < aSize) {
@@ -465,7 +461,7 @@ tSize=aSize - command.number;
 tSize=aSize;
 }if (tSize < 0) {
 tSize=aSize;
-}temp=Clazz.array($I$(13), [tSize]);
+}temp=Clazz.array($I$(14), [tSize]);
 }if (insert) {
 if (command.position < annotations[a].annotations.length) {
 System.arraycopy$O$I$O$I$I(annotations[a].annotations, 0, temp, 0, command.position);
@@ -476,7 +472,7 @@ System.arraycopy$O$I$O$I$I(restore, 0, temp, command.position, command.number);
 } else {
 if (command.deletedAnnotations != null  && command.deletedAnnotations.containsKey$O(annotations[a].annotationId) ) {
 var restore=command.deletedAnnotations.get$O(annotations[a].annotationId);
-temp=Clazz.array($I$(13), [annotations[a].annotations.length + restore.length]);
+temp=Clazz.array($I$(14), [annotations[a].annotations.length + restore.length]);
 System.arraycopy$O$I$O$I$I(annotations[a].annotations, 0, temp, 0, annotations[a].annotations.length);
 System.arraycopy$O$I$O$I$I(restore, 0, temp, annotations[a].annotations.length, restore.length);
 } else {
@@ -486,22 +482,22 @@ if (tSize != aSize || command.position < 2 ) {
 var copylen=Math.min(command.position, annotations[a].annotations.length);
 if (copylen > 0) {
 System.arraycopy$O$I$O$I$I(annotations[a].annotations, 0, temp, 0, copylen);
-}var deleted=Clazz.array($I$(13), [command.number]);
+}var deleted=Clazz.array($I$(14), [command.number]);
 if (copylen >= command.position) {
 copylen=Math.min(command.number, annotations[a].annotations.length - command.position);
 if (copylen > 0) {
 System.arraycopy$O$I$O$I$I(annotations[a].annotations, command.position, deleted, 0, copylen);
-}}command.deletedAnnotations.put$TK$TV(annotations[a].annotationId, deleted);
+}}command.deletedAnnotations.put$O$O(annotations[a].annotationId, deleted);
 if (annotations[a].annotations.length > command.position + command.number) {
 System.arraycopy$O$I$O$I$I(annotations[a].annotations, command.position + command.number, temp, command.position, annotations[a].annotations.length - command.position - command.number );
 }} else {
 var dSize=aSize - command.position;
 if (dSize > 0) {
-var deleted=Clazz.array($I$(13), [command.number]);
+var deleted=Clazz.array($I$(14), [command.number]);
 System.arraycopy$O$I$O$I$I(annotations[a].annotations, command.position, deleted, 0, dSize);
-command.deletedAnnotations.put$TK$TV(annotations[a].annotationId, deleted);
+command.deletedAnnotations.put$O$O(annotations[a].annotationId, deleted);
 tSize=Math.min(annotations[a].annotations.length, command.position);
-temp=Clazz.array($I$(13), [tSize]);
+temp=Clazz.array($I$(14), [tSize]);
 System.arraycopy$O$I$O$I$I(annotations[a].annotations, 0, temp, 0, tSize);
 } else {
 temp=annotations[a].annotations;
@@ -509,17 +505,17 @@ temp=annotations[a].annotations;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'undoCutFeatures$jalview_commands_EditCommand_Edit$jalview_datamodel_SequenceI$I$I$Z', function (command, seq, start, length, sameDatasetSequence) {
+Clazz.newMeth(C$, 'undoCutFeatures$jalview_commands_EditCommand_Edit$jalview_datamodel_SequenceI$I$I$Z',  function (command, seq, start, length, sameDatasetSequence) {
 var sequence=seq.getDatasetSequence$();
 if (sequence == null ) {
 sequence=seq;
 }if (!sameDatasetSequence) {
 seq.getFeatures$().shiftFeatures$I$I(start + 1, length);
-var sfs=seq.getFeatures$().findFeatures$I$I$SA(start, start, []);
+var sfs=seq.getFeatures$().findFeatures$I$I$SA(start, start, Clazz.array(String, -1, []));
 for (var sf, $sf = sfs.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
 if (sf.getBegin$() == start) {
 if (!command.truncatedFeatures.containsKey$O(seq) || !command.truncatedFeatures.get$O(seq).contains$O(sf) ) {
-var shifted=Clazz.new_($I$(14).c$$jalview_datamodel_SequenceFeature$I$I$S$F,[sf, sf.getBegin$() + length, sf.getEnd$() + length, sf.getFeatureGroup$(), sf.getScore$()]);
+var shifted=Clazz.new_([sf, sf.getBegin$() + length, sf.getEnd$() + length, sf.getFeatureGroup$(), sf.getScore$()],$I$(15,1).c$$jalview_datamodel_SequenceFeature$I$I$S$F);
 seq.addSequenceFeature$jalview_datamodel_SequenceFeature(shifted);
 seq.deleteFeature$jalview_datamodel_SequenceFeature(sf);
 }}}
@@ -533,12 +529,12 @@ sequence.deleteFeature$jalview_datamodel_SequenceFeature(amended);
 }
 }}, 1);
 
-Clazz.newMeth(C$, 'getEdits$', function () {
+Clazz.newMeth(C$, 'getEdits$',  function () {
 return this.edits;
 });
 
-Clazz.newMeth(C$, 'priorState$Z', function (forUndo) {
-var result=Clazz.new_($I$(15));
+Clazz.newMeth(C$, 'priorState$Z',  function (forUndo) {
+var result=Clazz.new_($I$(16,1));
 if (this.getEdits$() == null ) {
 return result;
 }if (forUndo) {
@@ -546,13 +542,13 @@ for (var e, $e = this.getEdits$().iterator$(); $e.hasNext$()&&((e=($e.next$())),
 for (var seq, $seq = 0, $$seq = e.getSequences$(); $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
 var ds=seq.getDatasetSequence$();
 if (!result.containsKey$O(ds)) {
-var preEdit=Clazz.new_($I$(8).c$$S$S$I$I,["", seq.getSequenceAsString$(), seq.getStart$(), seq.getEnd$()]);
+var preEdit=Clazz.new_(["", seq.getSequenceAsString$(), seq.getStart$(), seq.getEnd$()],$I$(8,1).c$$S$S$I$I);
 preEdit.setDatasetSequence$jalview_datamodel_SequenceI(ds);
-result.put$TK$TV(ds, preEdit);
+result.put$O$O(ds, preEdit);
 }}
 }
 return result;
-}var editList=Clazz.new_($I$(16).c$$java_util_List,[this.getEdits$()]);
+}var editList=Clazz.new_([this.getEdits$()],$I$(17,1).c$$java_util_List);
 while (editList.hasNext$()){
 var oldEdit=editList.next$();
 var action=oldEdit.getAction$();
@@ -563,14 +559,14 @@ for (var seq, $seq = 0, $$seq = oldEdit.getSequences$(); $seq<$$seq.length&&((se
 var ds=seq.getDatasetSequence$();
 var preEdit=result.get$O(ds);
 if (preEdit == null ) {
-preEdit=Clazz.new_($I$(8).c$$S$S$I$I,["", seq.getSequenceAsString$(), seq.getStart$(), seq.getEnd$()]);
+preEdit=Clazz.new_(["", seq.getSequenceAsString$(), seq.getStart$(), seq.getEnd$()],$I$(8,1).c$$S$S$I$I);
 preEdit.setDatasetSequence$jalview_datamodel_SequenceI(ds);
-result.put$TK$TV(ds, preEdit);
+result.put$O$O(ds, preEdit);
 }if (ds != null ) {
 if (action === $I$(1).DELETE_GAP ) {
-preEdit.setSequence$S( String.instantialize($I$(17).insertCharAt$CA$I$I$C(preEdit.getSequence$(), position, number, gap)));
+preEdit.setSequence$S( String.instantialize($I$(18,"insertCharAt$CA$I$I$C",[preEdit.getSequence$(), position, number, gap])));
 } else if (action === $I$(1).INSERT_GAP ) {
-preEdit.setSequence$S( String.instantialize($I$(17).deleteChars$CA$I$I(preEdit.getSequence$(), position, position + number)));
+preEdit.setSequence$S( String.instantialize($I$(18,"deleteChars$CA$I$I",[preEdit.getSequence$(), position, position + number])));
 } else {
 System.err.println$S("Can't undo edit action " + action);
 }}}
@@ -578,18 +574,18 @@ System.err.println$S("Can't undo edit action " + action);
 return result;
 });
 
-Clazz.newMeth(C$, 'getEditIterator$Z', function (forwards) {
+Clazz.newMeth(C$, 'getEditIterator$Z',  function (forwards) {
 if (forwards) {
 return this.getEdits$().iterator$();
 } else {
-return Clazz.new_($I$(16).c$$java_util_List,[this.getEdits$()]);
+return Clazz.new_([this.getEdits$()],$I$(17,1).c$$java_util_List);
 }});
 
-Clazz.newMeth(C$, 'cutFeatures$jalview_commands_EditCommand_Edit$jalview_datamodel_SequenceI$I$I$Z', function (command, seq, fromPosition, toPosition, cutIsInternal) {
+Clazz.newMeth(C$, 'cutFeatures$jalview_commands_EditCommand_Edit$jalview_datamodel_SequenceI$I$I$Z',  function (command, seq, fromPosition, toPosition, cutIsInternal) {
 if (!cutIsInternal) {
 return;
-}var added=Clazz.new_($I$(2));
-var removed=Clazz.new_($I$(2));
+}var added=Clazz.new_($I$(2,1));
+var removed=Clazz.new_($I$(2,1));
 var featureStore=seq.getFeatures$();
 if (toPosition < fromPosition || featureStore == null  ) {
 return;
@@ -597,10 +593,10 @@ return;
 var cutEndPos=toPosition;
 var cutWidth=cutEndPos - cutStartPos + 1;
 {
-var toAmend=featureStore.findFeatures$I$I$SA(cutStartPos, cutEndPos, []);
-for (var contact, $contact = featureStore.getContactFeatures$SA([]).iterator$(); $contact.hasNext$()&&((contact=($contact.next$())),1);) {
+var toAmend=featureStore.findFeatures$I$I$SA(cutStartPos, cutEndPos, Clazz.array(String, -1, []));
+for (var contact, $contact = featureStore.getContactFeatures$SA(Clazz.array(String, -1, [])).iterator$(); $contact.hasNext$()&&((contact=($contact.next$())),1);) {
 if (contact.getBegin$() < cutStartPos && contact.getEnd$() > cutEndPos ) {
-toAmend.add$TE(contact);
+toAmend.add$O(contact);
 }}
 for (var sf, $sf = toAmend.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
 var sfBegin=sf.getBegin$();
@@ -624,122 +620,118 @@ if (sf.isContactFeature$()) {
 toDelete=true;
 }}seq.deleteFeature$jalview_datamodel_SequenceFeature(sf);
 if (!follows) {
-removed.add$TE(sf);
+removed.add$O(sf);
 }if (!toDelete) {
-var copy=Clazz.new_($I$(14).c$$jalview_datamodel_SequenceFeature$I$I$S$F,[sf, newBegin, newEnd, sf.getFeatureGroup$(), sf.getScore$()]);
+var copy=Clazz.new_([sf, newBegin, newEnd, sf.getFeatureGroup$(), sf.getScore$()],$I$(15,1).c$$jalview_datamodel_SequenceFeature$I$I$S$F);
 seq.addSequenceFeature$jalview_datamodel_SequenceFeature(copy);
 if (!follows) {
-added.add$TE(copy);
+added.add$O(copy);
 }}}
 featureStore.shiftFeatures$I$I(cutEndPos + 1, -cutWidth);
 }if (command.deletedFeatures == null ) {
-command.deletedFeatures=Clazz.new_($I$(15));
+command.deletedFeatures=Clazz.new_($I$(16,1));
 }if (command.truncatedFeatures == null ) {
-command.truncatedFeatures=Clazz.new_($I$(15));
-}command.deletedFeatures.put$TK$TV(seq, removed);
-command.truncatedFeatures.put$TK$TV(seq, added);
+command.truncatedFeatures=Clazz.new_($I$(16,1));
+}command.deletedFeatures.put$O$O(seq, removed);
+command.truncatedFeatures.put$O$O(seq, added);
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.EditCommand, "Action", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.EditCommand, "Action", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-$vals=Clazz.array(C$,[0]);
-(P$.EditCommand$Action$1||
-(function(){var C$=Clazz.newClass(P$, "EditCommand$Action$1", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getUndoAction$', function () {
+C$.$static$=function(){C$.$static$=0;
+$vals=Clazz.array(C$,[0]);
+(P$.EditCommand$Action$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "EditCommand$Action$1", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'getUndoAction$',  function () {
 return $I$(1).DELETE_GAP;
 });
 })()
 )
 Clazz.newEnumConst($vals, C$.c$, "INSERT_GAP", 0, [], jalview.commands.EditCommand$Action$1);
 (P$.EditCommand$Action$2||
-(function(){var C$=Clazz.newClass(P$, "EditCommand$Action$2", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EditCommand$Action$2", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getUndoAction$', function () {
+Clazz.newMeth(C$, 'getUndoAction$',  function () {
 return $I$(1).INSERT_GAP;
 });
 })()
 )
 Clazz.newEnumConst($vals, C$.c$, "DELETE_GAP", 1, [], jalview.commands.EditCommand$Action$2);
 (P$.EditCommand$Action$3||
-(function(){var C$=Clazz.newClass(P$, "EditCommand$Action$3", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EditCommand$Action$3", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getUndoAction$', function () {
+Clazz.newMeth(C$, 'getUndoAction$',  function () {
 return $I$(1).PASTE;
 });
 })()
 )
 Clazz.newEnumConst($vals, C$.c$, "CUT", 2, [], jalview.commands.EditCommand$Action$3);
 (P$.EditCommand$Action$4||
-(function(){var C$=Clazz.newClass(P$, "EditCommand$Action$4", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EditCommand$Action$4", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getUndoAction$', function () {
+Clazz.newMeth(C$, 'getUndoAction$',  function () {
 return $I$(1).CUT;
 });
 })()
 )
 Clazz.newEnumConst($vals, C$.c$, "PASTE", 3, [], jalview.commands.EditCommand$Action$4);
 (P$.EditCommand$Action$5||
-(function(){var C$=Clazz.newClass(P$, "EditCommand$Action$5", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EditCommand$Action$5", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getUndoAction$', function () {
+Clazz.newMeth(C$, 'getUndoAction$',  function () {
 return $I$(1).REPLACE;
 });
 })()
 )
 Clazz.newEnumConst($vals, C$.c$, "REPLACE", 4, [], jalview.commands.EditCommand$Action$5);
 (P$.EditCommand$Action$6||
-(function(){var C$=Clazz.newClass(P$, "EditCommand$Action$6", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "EditCommand$Action$6", null, Clazz.load(['jalview.commands.EditCommand','.Action']), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getUndoAction$', function () {
+Clazz.newMeth(C$, 'getUndoAction$',  function () {
 return null;
 });
 })()
 )
 Clazz.newEnumConst($vals, C$.c$, "INSERT_NUC", 5, [], jalview.commands.EditCommand$Action$6);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -747,39 +739,20 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.EditCommand, "Edit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.EditCommand, "Edit", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.oldds=null;
-this.oldStartEnd=null;
-this.fullAlignmentHeight=false;
-this.deletedAnnotationRows=null;
-this.deletedAnnotations=null;
-this.deletedFeatures=null;
-this.truncatedFeatures=null;
-this.al=null;
-this.command=null;
-this.string=null;
-this.seqs=null;
-this.alIndex=null;
-this.position=0;
-this.number=0;
-this.gapChar='\0';
-this.systemGenerated=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.fullAlignmentHeight=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$C', function (cmd, sqs, pos, count, gap) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['fullAlignmentHeight','systemGenerated'],'C',['gapChar'],'I',['position','number'],'O',['oldds','jalview.datamodel.SequenceI[]','oldStartEnd','jalview.datamodel.Range[]','deletedAnnotationRows','java.util.Map','+deletedAnnotations','+deletedFeatures','+truncatedFeatures','al','jalview.datamodel.AlignmentI','command','jalview.commands.EditCommand.Action','string','char[][]','seqs','jalview.datamodel.SequenceI[]','alIndex','int[]']]]
+
+Clazz.newMeth(C$, 'c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$C',  function (cmd, sqs, pos, count, gap) {
+;C$.$init$.apply(this);
 this.command=cmd;
 this.seqs=sqs;
 this.position=pos;
@@ -787,7 +760,7 @@ this.number=count;
 this.gapChar=gap;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI', function (cmd, sqs, pos, count, align) {
+Clazz.newMeth(C$, 'c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI',  function (cmd, sqs, pos, count, align) {
 C$.c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$C.apply(this, [cmd, sqs, pos, count, align.getGapCharacter$()]);
 this.al=align;
 this.alIndex=Clazz.array(Integer.TYPE, [sqs.length]);
@@ -797,7 +770,7 @@ this.alIndex[i]=align.findIndex$jalview_datamodel_SequenceI(sqs[i]);
 this.fullAlignmentHeight=(align.getHeight$() == sqs.length);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$S', function (cmd, sqs, pos, count, align, replace) {
+Clazz.newMeth(C$, 'c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI$S',  function (cmd, sqs, pos, count, align, replace) {
 C$.c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI.apply(this, [cmd, sqs, pos, count, align]);
 this.string=Clazz.array(Character.TYPE, [sqs.length, null]);
 for (var i=0; i < sqs.length; i++) {
@@ -805,35 +778,35 @@ this.string[i]=replace.toCharArray$();
 }
 }, 1);
 
-Clazz.newMeth(C$, 'getSequences$', function () {
+Clazz.newMeth(C$, 'getSequences$',  function () {
 return this.seqs;
 });
 
-Clazz.newMeth(C$, 'getPosition$', function () {
+Clazz.newMeth(C$, 'getPosition$',  function () {
 return this.position;
 });
 
-Clazz.newMeth(C$, 'getAction$', function () {
+Clazz.newMeth(C$, 'getAction$',  function () {
 return this.command;
 });
 
-Clazz.newMeth(C$, 'getNumber$', function () {
+Clazz.newMeth(C$, 'getNumber$',  function () {
 return this.number;
 });
 
-Clazz.newMeth(C$, 'getGapCharacter$', function () {
+Clazz.newMeth(C$, 'getGapCharacter$',  function () {
 return this.gapChar;
 });
 
-Clazz.newMeth(C$, 'setSystemGenerated$Z', function (b) {
+Clazz.newMeth(C$, 'setSystemGenerated$Z',  function (b) {
 this.systemGenerated=b;
 });
 
-Clazz.newMeth(C$, 'isSystemGenerated$', function () {
+Clazz.newMeth(C$, 'isSystemGenerated$',  function () {
 return this.systemGenerated;
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

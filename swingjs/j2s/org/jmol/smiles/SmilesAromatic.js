@@ -1,21 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'org.jmol.util.BSUtil','javajs.util.Lst','org.jmol.smiles.SmilesRing','javajs.util.V3','javajs.util.Measure','org.jmol.util.Logger','javajs.util.BS','java.util.Hashtable','org.jmol.smiles.SmilesRingSet']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmilesAromatic");
-C$.OS_PI_COUNTS=null;
+(function(){var P$=Clazz.newPackage("org.jmol.smiles"),I$=[[0,'org.jmol.util.BSUtil','javajs.util.Lst','org.jmol.smiles.SmilesRing','javajs.util.V3','javajs.util.Measure','org.jmol.util.Logger','javajs.util.BS','java.util.Hashtable','org.jmol.smiles.SmilesRingSet']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SmilesAromatic");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.OS_PI_COUNTS=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [-2, 1, 0]), Clazz.array(Integer.TYPE, -1, [1, 2, 1, -1]), Clazz.array(Integer.TYPE, -1, [2, 1, 2, 1, 1]), Clazz.array(Integer.TYPE, -1, [2, 1]), Clazz.array(Integer.TYPE, -1, [-2, 1, 2, 1, -2]), Clazz.array(Integer.TYPE, -1, [2, 1, 2, 2])]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['OS_PI_COUNTS','int[][]']]]
 
 Clazz.newMeth(C$, 'setAromatic$I$org_jmol_util_NodeA$javajs_util_BS$javajs_util_Lst$javajs_util_BS$I$Z$Z$Z$org_jmol_smiles_VTemp$javajs_util_Lst$javajs_util_Lst$IA$Z', function (n, jmolAtoms, bsSelected, vR, bsAromatic, strictness, isOpenSMILES, justCheckBonding, checkExplicit, v, vOK, lstSP2, eCounts, doTestAromatic) {
 var doCheck=(isOpenSMILES || strictness > 0 );
 if (!doTestAromatic) {
 for (var r=vR.size$(); --r >= 0; ) {
-var bs=$I$(1).copy$javajs_util_BS(vR.get$I(r));
+var bs=$I$(1,"copy$javajs_util_BS",[vR.get$I(r)]);
 bs.and$javajs_util_BS(bsAromatic);
-if (bs.cardinality$() == n) vOK.addLast$TV(bs);
+if (bs.cardinality$() == n) vOK.addLast$O(bs);
 }
 return;
 }for (var r=vR.size$(); --r >= 0; ) {
@@ -24,7 +24,7 @@ var isOK=C$.isSp2Ring$I$org_jmol_util_NodeA$javajs_util_BS$javajs_util_BS$F$Z$Z(
 if (!isOK) continue;
 bsAromatic.or$javajs_util_BS(bs);
 if (doCheck) {
-var edges=Clazz.new_($I$(2));
+var edges=Clazz.new_($I$(2,1));
 for (var i=bs.nextSetBit$I(0); i >= 0; i=bs.nextSetBit$I(i + 1)) {
 var a=jmolAtoms[i];
 var aedges=a.getEdges$();
@@ -32,7 +32,7 @@ var ai=a.getIndex$();
 for (var j=aedges.length; --j >= 0; ) {
 var a2=aedges[j].getOtherNode$org_jmol_util_SimpleNode(a);
 var a2i=a2.getIndex$();
-if (a2i > ai && bs.get$I(a2i) ) edges.addLast$TV(aedges[j]);
+if (a2i > ai && bs.get$I(a2i) ) edges.addLast$O(aedges[j]);
 }
 }
 switch (C$.checkHueckelAromatic$I$org_jmol_util_NodeA$javajs_util_BS$javajs_util_BS$I$IA(n, jmolAtoms, bsAromatic, bs, strictness, eCounts)) {
@@ -41,10 +41,10 @@ continue;
 case 0:
 isOK=false;
 case 1:
-if (lstSP2 != null ) lstSP2.addLast$TV(Clazz.new_($I$(3).c$$I$javajs_util_BS$javajs_util_Lst$Z,[n, bs, edges, isOK]));
+if (lstSP2 != null ) lstSP2.addLast$O(Clazz.new_($I$(3,1).c$$I$javajs_util_BS$javajs_util_Lst$Z,[n, bs, edges, isOK]));
 if (!isOK) continue;
 }
-}vOK.addLast$TV(bs);
+}vOK.addLast$O(bs);
 }
 }, 1);
 
@@ -99,9 +99,9 @@ r1=iAtom;
 r2=iAtom;
 }}
 if (vMean == null ) {
-vMean=Clazz.new_($I$(4));
-vNorm=Clazz.new_($I$(4));
-vTemp=Clazz.new_($I$(4));
+vMean=Clazz.new_($I$(4,1));
+vNorm=Clazz.new_($I$(4,1));
+vTemp=Clazz.new_($I$(4,1));
 }for (var k=0, j=i; k < 2; k++) {
 $I$(5).getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(atoms[r1], atoms[j], atoms[r2], vNorm, vTemp);
 if (!C$.addNormal$javajs_util_V3$javajs_util_V3$F(vNorm, vMean, maxDev)) return false;
@@ -167,7 +167,7 @@ if (n < 0) return -1;
 if (eCounts != null ) eCounts[i]=n;
 npi+=n;
 if (n == 1) n1++;
-if ($I$(6).debuggingHigh) $I$(6).info$S("atom " + atom + " pi=" + n + " npi=" + npi );
+if ($I$(6).debuggingHigh) $I$(6,"info$S",["atom " + atom + " pi=" + n + " npi=" + npi ]);
 continue;
 }
 }}
@@ -213,9 +213,9 @@ i=-1;
 }}, 1);
 
 Clazz.newMeth(C$, 'removeBridgingRings$javajs_util_Lst$javajs_util_Lst', function (lstAromatic, lstSP2) {
-var bs=Clazz.new_($I$(7));
-var bsBad=Clazz.new_($I$(7));
-var bsBad2=Clazz.new_($I$(7));
+var bs=Clazz.new_($I$(7,1));
+var bsBad=Clazz.new_($I$(7,1));
+var bsBad2=Clazz.new_($I$(7,1));
 C$.checkBridges$javajs_util_Lst$javajs_util_BS$javajs_util_Lst$javajs_util_BS$javajs_util_BS(lstAromatic, bsBad, lstAromatic, bsBad, bs);
 C$.checkBridges$javajs_util_Lst$javajs_util_BS$javajs_util_Lst$javajs_util_BS$javajs_util_BS(lstSP2, bsBad2, lstSP2, bsBad2, bs);
 C$.checkBridges$javajs_util_Lst$javajs_util_BS$javajs_util_Lst$javajs_util_BS$javajs_util_BS(lstAromatic, bsBad, lstSP2, bsBad2, bs);
@@ -244,29 +244,33 @@ bsBad2.set$I(j);
 }, 1);
 
 Clazz.newMeth(C$, 'checkFusedRings$javajs_util_Lst$IA$javajs_util_Lst', function (rings, eCounts, lstAromatic) {
-var htEdgeMap=Clazz.new_($I$(8));
+var htEdgeMap=Clazz.new_($I$(8,1));
 for (var i=rings.size$(); --i >= 0; ) {
 var r=rings.get$I(i);
 var edges=r.edges;
 for (var j=edges.size$(); --j >= 0; ) {
-var set=$I$(3).getSetByEdge$org_jmol_util_Edge$java_util_Hashtable(edges.get$I(j), htEdgeMap);
+var set=$I$(3,"getSetByEdge$org_jmol_util_Edge$java_util_Hashtable",[edges.get$I(j), htEdgeMap]);
 if (set == null  || set === r.set  ) continue;
 if (r.set != null ) set.addSet$org_jmol_smiles_SmilesRingSet$java_util_Hashtable(r.set, htEdgeMap);
  else set.addRing$org_jmol_smiles_SmilesRing(r);
 }
-(r.set == null  ? r.set=Clazz.new_($I$(9)) : r.set).addRing$org_jmol_smiles_SmilesRing(r);
+(r.set == null  ? r.set=Clazz.new_($I$(9,1)) : r.set).addRing$org_jmol_smiles_SmilesRing(r);
 r.addEdges$java_util_Hashtable(htEdgeMap);
 }
 var set;
 var r;
 for (var i=rings.size$(); --i >= 0; ) {
 if ((r=rings.get$I(i)).isOK || (set=r.set) == null   || set.isEmpty$() ) continue;
-if ((set.getElectronCount$IA(eCounts) % 4) == 2) for (var j=set.size$(); --j >= 0; ) if (!(r=set.get$I(j)).isOK) lstAromatic.addLast$TV(r);
+if ((set.getElectronCount$IA(eCounts) % 4) == 2) for (var j=set.size$(); --j >= 0; ) if (!(r=set.get$I(j)).isOK) lstAromatic.addLast$O(r);
 
 set.clear$();
 }
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.OS_PI_COUNTS=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, -1, [-2, 1, 0]), Clazz.array(Integer.TYPE, -1, [1, 2, 1, -1]), Clazz.array(Integer.TYPE, -1, [2, 1, 2, 1, 1]), Clazz.array(Integer.TYPE, -1, [2, 1]), Clazz.array(Integer.TYPE, -1, [-2, 1, 2, 1, -2]), Clazz.array(Integer.TYPE, -1, [2, 1, 2, 2])]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

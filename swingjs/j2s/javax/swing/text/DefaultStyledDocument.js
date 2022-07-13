@@ -1,52 +1,44 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.util.Vector','java.util.Stack','javax.swing.text.SimpleAttributeSet',['javax.swing.text.DefaultStyledDocument','.AttributeUndoableEdit'],['javax.swing.text.DefaultStyledDocument','.ElementBuffer','.ElemChanges'],'javax.swing.text.Element',['javax.swing.text.AbstractDocument','.ElementEdit'],'javax.swing.text.StateInvariantError','java.util.ArrayList',['javax.swing.text.AbstractDocument','.DefaultDocumentEvent'],['javax.swing.event.DocumentEvent','.EventType'],['javax.swing.text.DefaultStyledDocument','.ElementBuffer'],'javax.swing.text.GapContent','javax.swing.text.StyleContext','StringBuilder','javax.swing.event.UndoableEditEvent','javax.swing.text.Utilities',['javax.swing.text.DefaultStyledDocument','.StyleChangeUndoableEdit'],'Boolean','java.awt.font.TextAttribute','javax.swing.text.Segment',['javax.swing.text.DefaultStyledDocument','.ElementSpec'],'javax.swing.text.StyleConstants',['javax.swing.text.DefaultStyledDocument','.SectionElement'],['javax.swing.text.AbstractDocument','.BranchElement'],['javax.swing.text.AbstractDocument','.LeafElement'],['javax.swing.text.DefaultStyledDocument','.ChangeUpdateRunnable'],'javax.swing.SwingUtilities','javax.swing.event.DocumentListener',['javax.swing.text.DefaultStyledDocument','.StyleChangeHandler'],['javax.swing.text.DefaultStyledDocument','.StyleContextChangeHandler']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultStyledDocument", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.util.Vector','java.util.Stack','javax.swing.text.SimpleAttributeSet',['javax.swing.text.DefaultStyledDocument','.AttributeUndoableEdit'],['javax.swing.text.DefaultStyledDocument','.ElementBuffer','.ElemChanges'],'javax.swing.text.Element',['javax.swing.text.AbstractDocument','.ElementEdit'],'javax.swing.text.StateInvariantError','java.util.ArrayList',['javax.swing.text.AbstractDocument','.DefaultDocumentEvent'],['javax.swing.event.DocumentEvent','.EventType'],['javax.swing.text.DefaultStyledDocument','.ElementBuffer'],'javax.swing.text.GapContent','javax.swing.text.StyleContext','StringBuilder','javax.swing.event.UndoableEditEvent','javax.swing.text.Utilities',['javax.swing.text.DefaultStyledDocument','.StyleChangeUndoableEdit'],'java.awt.font.TextAttribute','javax.swing.text.Segment',['javax.swing.text.DefaultStyledDocument','.ElementSpec'],'javax.swing.text.StyleConstants',['javax.swing.text.DefaultStyledDocument','.SectionElement'],['javax.swing.text.AbstractDocument','.BranchElement'],['javax.swing.text.AbstractDocument','.LeafElement'],['javax.swing.text.DefaultStyledDocument','.ChangeUpdateRunnable'],'javax.swing.SwingUtilities','javax.swing.event.DocumentListener',['javax.swing.text.DefaultStyledDocument','.StyleChangeHandler'],['javax.swing.text.DefaultStyledDocument','.StyleContextChangeHandler']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultStyledDocument", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.AbstractDocument', 'javax.swing.text.StyledDocument');
+C$.$classes$=[['SectionElement',4],['ElementSpec',9],['ElementBuffer',1],['AttributeUndoableEdit',9],['StyleChangeUndoableEdit',8],['AbstractChangeHandler',1032],['StyleChangeHandler',8],['StyleContextChangeHandler',8],['ChangeUpdateRunnable',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.buffer=null;
-this.listeningStyles=null;
-this.styleChangeListener=null;
-this.styleContextChangeListener=null;
-this.updateRunnable=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_StyleContext', function (c, styles) {
-C$.superclazz.c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_AbstractDocument_AttributeContext.apply(this, [c, styles]);
-C$.$init$.apply(this);
-this.listeningStyles=Clazz.new_($I$(1));
-this.buffer=Clazz.new_($I$(12).c$$javax_swing_text_Element, [this, null, this.createDefaultRoot$()]);
+C$.$fields$=[['O',['buffer','javax.swing.text.DefaultStyledDocument.ElementBuffer','listeningStyles','java.util.Vector','styleChangeListener','javax.swing.event.ChangeListener','+styleContextChangeListener','updateRunnable','javax.swing.text.DefaultStyledDocument.ChangeUpdateRunnable']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_StyleContext',  function (c, styles) {
+;C$.superclazz.c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_AbstractDocument_AttributeContext.apply(this,[c, styles]);C$.$init$.apply(this);
+this.listeningStyles=Clazz.new_($I$(1,1));
+this.buffer=Clazz.new_([this, null, this.createDefaultRoot$()],$I$(12,1).c$$javax_swing_text_Element);
 var defaultStyle=styles.getStyle$S("default");
 this.setLogicalStyle$I$javax_swing_text_Style(0, defaultStyle);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_StyleContext', function (styles) {
-C$.c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_StyleContext.apply(this, [Clazz.new_($I$(13).c$$I,[4096]), styles]);
+Clazz.newMeth(C$, 'c$$javax_swing_text_StyleContext',  function (styles) {
+C$.c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_StyleContext.apply(this, [Clazz.new_($I$(13,1).c$$I,[4096]), styles]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_StyleContext.apply(this, [Clazz.new_($I$(13).c$$I,[4096]), Clazz.new_($I$(14))]);
+Clazz.newMeth(C$, 'c$',  function () {
+C$.c$$javax_swing_text_AbstractDocument_Content$javax_swing_text_StyleContext.apply(this, [Clazz.new_($I$(13,1).c$$I,[4096]), Clazz.new_($I$(14,1))]);
 }, 1);
 
-Clazz.newMeth(C$, 'getDefaultRootElement$', function () {
+Clazz.newMeth(C$, 'getDefaultRootElement$',  function () {
 return this.buffer.getRootElement$();
 });
 
-Clazz.newMeth(C$, 'create$javax_swing_text_DefaultStyledDocument_ElementSpecA', function (data) {
+Clazz.newMeth(C$, 'create$javax_swing_text_DefaultStyledDocument_ElementSpecA',  function (data) {
 try {
 if (this.getLength$() != 0) {
 this.remove$I$I(0, this.getLength$());
 }this.writeLock$();
 var c=this.getContent$();
 var n=data.length;
-var sb=Clazz.new_($I$(15));
+var sb=Clazz.new_($I$(15,1));
 for (var i=0; i < n; i++) {
 var es=data[i];
 if (es.getLength$() > 0) {
@@ -54,16 +46,16 @@ sb.append$CA$I$I(es.getArray$(), es.getOffset$(), es.getLength$());
 }}
 var cEdit=c.insertString$I$S(0, sb.toString());
 var length=sb.length$();
-var evnt=Clazz.new_($I$(10).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, 0, length, $I$(11).INSERT]);
+var evnt=Clazz.new_([this, null, 0, length, $I$(11).INSERT],$I$(10,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 evnt.addEdit$javax_swing_undo_UndoableEdit(cEdit);
 this.buffer.create$I$javax_swing_text_DefaultStyledDocument_ElementSpecA$javax_swing_text_AbstractDocument_DefaultDocumentEvent(length, data, evnt);
 C$.superclazz.prototype.insertUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent$javax_swing_text_AttributeSet.apply(this, [evnt, null]);
 evnt.end$();
 this.fireInsertUpdate$javax_swing_event_DocumentEvent(evnt);
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16).c$$O$javax_swing_undo_UndoableEdit,[this, evnt]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16,1).c$$O$javax_swing_undo_UndoableEdit,[this, evnt]));
 } catch (ble) {
 if (Clazz.exceptionOf(ble,"javax.swing.text.BadLocationException")){
-throw Clazz.new_($I$(8).c$$S,["problem initializing"]);
+throw Clazz.new_($I$(8,1).c$$S,["problem initializing"]);
 } else {
 throw ble;
 }
@@ -72,14 +64,14 @@ this.writeUnlock$();
 }
 });
 
-Clazz.newMeth(C$, 'insert$I$javax_swing_text_DefaultStyledDocument_ElementSpecA', function (offset, data) {
+Clazz.newMeth(C$, 'insert$I$javax_swing_text_DefaultStyledDocument_ElementSpecA',  function (offset, data) {
 if (data == null  || data.length == 0 ) {
 return;
 }try {
 this.writeLock$();
 var c=this.getContent$();
 var n=data.length;
-var sb=Clazz.new_($I$(15));
+var sb=Clazz.new_($I$(15,1));
 for (var i=0; i < n; i++) {
 var es=data[i];
 if (es.getLength$() > 0) {
@@ -89,19 +81,19 @@ if (sb.length$() == 0) {
 return;
 }var cEdit=c.insertString$I$S(offset, sb.toString());
 var length=sb.length$();
-var evnt=Clazz.new_($I$(10).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, offset, length, $I$(11).INSERT]);
+var evnt=Clazz.new_([this, null, offset, length, $I$(11).INSERT],$I$(10,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 evnt.addEdit$javax_swing_undo_UndoableEdit(cEdit);
 this.buffer.insert$I$I$javax_swing_text_DefaultStyledDocument_ElementSpecA$javax_swing_text_AbstractDocument_DefaultDocumentEvent(offset, length, data, evnt);
 C$.superclazz.prototype.insertUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent$javax_swing_text_AttributeSet.apply(this, [evnt, null]);
 evnt.end$();
 this.fireInsertUpdate$javax_swing_event_DocumentEvent(evnt);
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16).c$$O$javax_swing_undo_UndoableEdit,[this, evnt]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16,1).c$$O$javax_swing_undo_UndoableEdit,[this, evnt]));
 } finally {
 this.writeUnlock$();
 }
 });
 
-Clazz.newMeth(C$, 'removeElement$javax_swing_text_Element', function (elem) {
+Clazz.newMeth(C$, 'removeElement$javax_swing_text_Element',  function (elem) {
 try {
 this.writeLock$();
 p$1.removeElementImpl$javax_swing_text_Element.apply(this, [elem]);
@@ -110,7 +102,7 @@ this.writeUnlock$();
 }
 });
 
-Clazz.newMeth(C$, 'removeElementImpl$javax_swing_text_Element', function (elem) {
+Clazz.newMeth(C$, 'removeElementImpl$javax_swing_text_Element',  function (elem) {
 if (elem.getDocument$() !== this ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["element doesn\'t belong to document"]);
 }var parent=elem.getParentElement$();
@@ -130,7 +122,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["can\'t remove the
 }removeTo=lastEndOffset - 1;
 try {
 if (content.getString$I$I(startOffset - 1, 1).charAt$I(0) == "\n") {
-removeFrom--;
+--removeFrom;
 }} catch (ble) {
 if (Clazz.exceptionOf(ble,"javax.swing.text.BadLocationException")){
 throw Clazz.new_(Clazz.load('IllegalStateException').c$$Throwable,[ble]);
@@ -140,7 +132,7 @@ throw ble;
 }
 atEnd=true;
 }var length=removeTo - removeFrom;
-var dde=Clazz.new_($I$(10).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, removeFrom, length, $I$(11).REMOVE]);
+var dde=Clazz.new_([this, null, removeFrom, length, $I$(11).REMOVE],$I$(10,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 var ue=null;
 while (parent.getElementCount$() == 1){
 elem=parent;
@@ -152,7 +144,7 @@ var removed=Clazz.array($I$(6), -1, [elem]);
 var added=Clazz.array($I$(6), -1, []);
 var index=parent.getElementIndex$I(startOffset);
 parent.replace$I$I$javax_swing_text_ElementA(index, 1, added);
-dde.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(7).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[parent, index, removed, added]));
+dde.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(7,1).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[parent, index, removed, added]));
 if (length > 0) {
 try {
 ue=content.remove$I$I(removeFrom, length);
@@ -181,53 +173,53 @@ newElem=this.createLeafElement$javax_swing_text_Element$javax_swing_text_Attribu
 var prevRemoved=Clazz.array($I$(6), -1, [prevLeaf]);
 var prevAdded=Clazz.array($I$(6), -1, [newElem]);
 prevParent.replace$I$I$javax_swing_text_ElementA(prevIndex, 1, prevAdded);
-dde.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(7).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[prevParent, prevIndex, prevRemoved, prevAdded]));
+dde.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(7,1).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[prevParent, prevIndex, prevRemoved, prevAdded]));
 }this.postRemoveUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent(dde);
 dde.end$();
 this.fireRemoveUpdate$javax_swing_event_DocumentEvent(dde);
 if (!(isComposedText && (ue != null ) )) {
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16).c$$O$javax_swing_undo_UndoableEdit,[this, dde]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16,1).c$$O$javax_swing_undo_UndoableEdit,[this, dde]));
 }}, p$1);
 
-Clazz.newMeth(C$, 'addStyle$S$javax_swing_text_Style', function (nm, parent) {
+Clazz.newMeth(C$, 'addStyle$S$javax_swing_text_Style',  function (nm, parent) {
 var styles=this.getAttributeContext$();
 return styles.addStyle$S$javax_swing_text_Style(nm, parent);
 });
 
-Clazz.newMeth(C$, 'removeStyle$S', function (nm) {
+Clazz.newMeth(C$, 'removeStyle$S',  function (nm) {
 var styles=this.getAttributeContext$();
 styles.removeStyle$S(nm);
 });
 
-Clazz.newMeth(C$, 'getStyle$S', function (nm) {
+Clazz.newMeth(C$, 'getStyle$S',  function (nm) {
 var styles=this.getAttributeContext$();
 return styles.getStyle$S(nm);
 });
 
-Clazz.newMeth(C$, 'getStyleNames$', function () {
+Clazz.newMeth(C$, 'getStyleNames$',  function () {
 return (this.getAttributeContext$()).getStyleNames$();
 });
 
-Clazz.newMeth(C$, 'setLogicalStyle$I$javax_swing_text_Style', function (pos, s) {
+Clazz.newMeth(C$, 'setLogicalStyle$I$javax_swing_text_Style',  function (pos, s) {
 var paragraph=this.getParagraphElement$I(pos);
 if ((paragraph != null ) && (Clazz.instanceOf(paragraph, "javax.swing.text.AbstractDocument.AbstractElement")) ) {
 try {
 this.writeLock$();
-var edit=Clazz.new_($I$(18).c$$javax_swing_text_AbstractDocument_AbstractElement$javax_swing_text_Style,[paragraph, s]);
+var edit=Clazz.new_($I$(18,1).c$$javax_swing_text_AbstractDocument_AbstractElement$javax_swing_text_Style,[paragraph, s]);
 (paragraph).setResolveParent$javax_swing_text_AttributeSet(s);
 var p0=paragraph.getStartOffset$();
 var p1=paragraph.getEndOffset$();
-var e=Clazz.new_($I$(10).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, p0, p1 - p0, $I$(11).CHANGE]);
+var e=Clazz.new_([this, null, p0, p1 - p0, $I$(11).CHANGE],$I$(10,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 e.addEdit$javax_swing_undo_UndoableEdit(edit);
 e.end$();
 this.fireChangedUpdate$javax_swing_event_DocumentEvent(e);
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16).c$$O$javax_swing_undo_UndoableEdit,[this, e]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16,1).c$$O$javax_swing_undo_UndoableEdit,[this, e]));
 } finally {
 this.writeUnlock$();
 }
 }});
 
-Clazz.newMeth(C$, 'getLogicalStyle$I', function (p) {
+Clazz.newMeth(C$, 'getLogicalStyle$I',  function (p) {
 var s=null;
 var paragraph=this.getParagraphElement$I(p);
 if (paragraph != null ) {
@@ -238,12 +230,12 @@ s=parent;
 }}return s;
 });
 
-Clazz.newMeth(C$, 'setCharacterAttributes$I$I$javax_swing_text_AttributeSet$Z', function (offset, length, s, replace) {
+Clazz.newMeth(C$, 'setCharacterAttributes$I$I$javax_swing_text_AttributeSet$Z',  function (offset, length, s, replace) {
 if (length == 0) {
 return;
 }try {
 this.writeLock$();
-var changes=Clazz.new_($I$(10).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, offset, length, $I$(11).CHANGE]);
+var changes=Clazz.new_([this, null, offset, length, $I$(11).CHANGE],$I$(10,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 this.buffer.change$I$I$javax_swing_text_AbstractDocument_DefaultDocumentEvent(offset, length, changes);
 var sCopy=s.copyAttributes$();
 var lastEnd;
@@ -253,58 +245,57 @@ lastEnd=run.getEndOffset$();
 if (pos == lastEnd) {
 break;
 }var attr=run.getAttributes$();
-changes.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(4).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z,[run, sCopy, replace]));
+changes.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(4,1).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z,[run, sCopy, replace]));
 if (replace) {
 attr.removeAttributes$javax_swing_text_AttributeSet(attr);
 }attr.addAttributes$javax_swing_text_AttributeSet(s);
 }
 changes.end$();
 this.fireChangedUpdate$javax_swing_event_DocumentEvent(changes);
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16).c$$O$javax_swing_undo_UndoableEdit,[this, changes]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16,1).c$$O$javax_swing_undo_UndoableEdit,[this, changes]));
 } finally {
 this.writeUnlock$();
 }
 });
 
-Clazz.newMeth(C$, 'setParagraphAttributes$I$I$javax_swing_text_AttributeSet$Z', function (offset, length, s, replace) {
+Clazz.newMeth(C$, 'setParagraphAttributes$I$I$javax_swing_text_AttributeSet$Z',  function (offset, length, s, replace) {
 try {
 this.writeLock$();
-var changes=Clazz.new_($I$(10).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, offset, length, $I$(11).CHANGE]);
+var changes=Clazz.new_([this, null, offset, length, $I$(11).CHANGE],$I$(10,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 var sCopy=s.copyAttributes$();
 var section=this.getDefaultRootElement$();
 var index0=section.getElementIndex$I(offset);
 var index1=section.getElementIndex$I(offset + ((length > 0) ? length - 1 : 0));
-var isI18N=$I$(19).TRUE.equals$O(this.getProperty$O("i18n"));
+var isI18N=Boolean.TRUE.equals$O(this.getProperty$O("i18n"));
 var hasRuns=false;
 for (var i=index0; i <= index1; i++) {
 var paragraph=section.getElement$I(i);
 var attr=paragraph.getAttributes$();
-changes.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(4).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z,[paragraph, sCopy, replace]));
+changes.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(4,1).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z,[paragraph, sCopy, replace]));
 if (replace) {
 attr.removeAttributes$javax_swing_text_AttributeSet(attr);
 }attr.addAttributes$javax_swing_text_AttributeSet(s);
 if (isI18N && !hasRuns ) {
-hasRuns=(attr.getAttribute$O($I$(20).RUN_DIRECTION) != null );
+hasRuns=(attr.getAttribute$O($I$(19).RUN_DIRECTION) != null );
 }}
 changes.end$();
 this.fireChangedUpdate$javax_swing_event_DocumentEvent(changes);
-this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16).c$$O$javax_swing_undo_UndoableEdit,[this, changes]));
+this.fireUndoableEditUpdate$javax_swing_event_UndoableEditEvent(Clazz.new_($I$(16,1).c$$O$javax_swing_undo_UndoableEdit,[this, changes]));
 } finally {
 this.writeUnlock$();
 }
 });
 
-Clazz.newMeth(C$, 'getParagraphElement$I', function (pos) {
+Clazz.newMeth(C$, 'getParagraphElement$I',  function (pos) {
 var e;
 for (e=this.getDefaultRootElement$(); !e.isLeaf$(); ) {
 var index=e.getElementIndex$I(pos);
 e=e.getElement$I(index);
 }
-if (e != null ) return e.getParentElement$();
-return e;
+return e.getParentElement$();
 });
 
-Clazz.newMeth(C$, 'getCharacterElement$I', function (pos) {
+Clazz.newMeth(C$, 'getCharacterElement$I',  function (pos) {
 var e;
 for (e=this.getDefaultRootElement$(); !e.isLeaf$(); ) {
 var index=e.getElementIndex$I(pos);
@@ -313,7 +304,7 @@ e=e.getElement$I(index);
 return e;
 });
 
-Clazz.newMeth(C$, 'insertUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent$javax_swing_text_AttributeSet', function (chng, attr) {
+Clazz.newMeth(C$, 'insertUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent$javax_swing_text_AttributeSet',  function (chng, attr) {
 var offset=chng.getOffset$();
 var length=chng.getLength$();
 if (attr == null ) {
@@ -326,8 +317,8 @@ var endOffset=offset + length;
 var insertingAtBoundry=(run.getEndOffset$() == endOffset);
 var cattr=run.getAttributes$();
 try {
-var s=Clazz.new_($I$(21));
-var parseBuffer=Clazz.new_($I$(1));
+var s=Clazz.new_($I$(20,1));
+var parseBuffer=Clazz.new_($I$(1,1));
 var lastStartSpec=null;
 var insertingAfterNewline=false;
 var lastStartDirection=6;
@@ -350,14 +341,14 @@ var lastOffset=s.offset;
 for (var i=s.offset; i < n; i++) {
 if (txt[i] == "\n") {
 var breakOffset=i + 1;
-parseBuffer.addElement$TE(Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H$I,[attr, 3, breakOffset - lastOffset]));
-parseBuffer.addElement$TE(Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H,[null, 2]));
-lastStartSpec=Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H,[pattr, 1]);
-parseBuffer.addElement$TE(lastStartSpec);
+parseBuffer.addElement$O(Clazz.new_($I$(21,1).c$$javax_swing_text_AttributeSet$H$I,[attr, 3, breakOffset - lastOffset]));
+parseBuffer.addElement$O(Clazz.new_($I$(21,1).c$$javax_swing_text_AttributeSet$H,[null, 2]));
+lastStartSpec=Clazz.new_($I$(21,1).c$$javax_swing_text_AttributeSet$H,[pattr, 1]);
+parseBuffer.addElement$O(lastStartSpec);
 lastOffset=breakOffset;
 }}
 if (lastOffset < n) {
-parseBuffer.addElement$TE(Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H$I,[attr, 3, n - lastOffset]));
+parseBuffer.addElement$O(Clazz.new_($I$(21,1).c$$javax_swing_text_AttributeSet$H$I,[attr, 3, n - lastOffset]));
 }var first=parseBuffer.firstElement$();
 var docLength=this.getLength$();
 if (first.getType$() == 3 && cattr.isEqual$javax_swing_text_AttributeSet(attr) ) {
@@ -386,8 +377,10 @@ last.setDirection$H(5);
 var mattr=attr;
 mattr.addAttributes$javax_swing_text_AttributeSet(cattr);
 mattr.addAttribute$O$O("$ename", "content");
-mattr.addAttribute$O$O($I$(23).NameAttribute, "content");
-}var spec=Clazz.array($I$(22), [parseBuffer.size$()]);
+mattr.addAttribute$O$O($I$(22).NameAttribute, "content");
+if (mattr.isDefined$O("CR")) {
+mattr.removeAttribute$O("CR");
+}}var spec=Clazz.array($I$(21), [parseBuffer.size$()]);
 parseBuffer.copyInto$OA(spec);
 this.buffer.insert$I$I$javax_swing_text_DefaultStyledDocument_ElementSpecA$javax_swing_text_AbstractDocument_DefaultDocumentEvent(offset, length, spec, chng);
 } catch (bl) {
@@ -399,54 +392,54 @@ throw bl;
 C$.superclazz.prototype.insertUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent$javax_swing_text_AttributeSet.apply(this, [chng, attr]);
 });
 
-Clazz.newMeth(C$, 'createSpecsForInsertAfterNewline$javax_swing_text_Element$javax_swing_text_Element$javax_swing_text_AttributeSet$java_util_Vector$I$I', function (paragraph, pParagraph, pattr, parseBuffer, offset, endOffset) {
+Clazz.newMeth(C$, 'createSpecsForInsertAfterNewline$javax_swing_text_Element$javax_swing_text_Element$javax_swing_text_AttributeSet$java_util_Vector$I$I',  function (paragraph, pParagraph, pattr, parseBuffer, offset, endOffset) {
 if (paragraph.getParentElement$() === pParagraph.getParentElement$() ) {
-var spec=Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H,[pattr, 2]);
-parseBuffer.addElement$TE(spec);
-spec=Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H,[pattr, 1]);
-parseBuffer.addElement$TE(spec);
+var spec=Clazz.new_($I$(21,1).c$$javax_swing_text_AttributeSet$H,[pattr, 2]);
+parseBuffer.addElement$O(spec);
+spec=Clazz.new_($I$(21,1).c$$javax_swing_text_AttributeSet$H,[pattr, 1]);
+parseBuffer.addElement$O(spec);
 if (pParagraph.getEndOffset$() != endOffset) return 7;
 var parent=pParagraph.getParentElement$();
 if ((parent.getElementIndex$I(offset) + 1) < parent.getElementCount$()) return 5;
 } else {
-var leftParents=Clazz.new_($I$(1));
-var rightParents=Clazz.new_($I$(1));
+var leftParents=Clazz.new_($I$(1,1));
+var rightParents=Clazz.new_($I$(1,1));
 var e=pParagraph;
 while (e != null ){
-leftParents.addElement$TE(e);
+leftParents.addElement$O(e);
 e=e.getParentElement$();
 }
 e=paragraph;
 var leftIndex=-1;
 while (e != null  && (leftIndex=leftParents.indexOf$O(e)) == -1 ){
-rightParents.addElement$TE(e);
+rightParents.addElement$O(e);
 e=e.getParentElement$();
 }
 if (e != null ) {
 for (var counter=0; counter < leftIndex; counter++) {
-parseBuffer.addElement$TE(Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H,[null, 2]));
+parseBuffer.addElement$O(Clazz.new_($I$(21,1).c$$javax_swing_text_AttributeSet$H,[null, 2]));
 }
 var spec;
 for (var counter=rightParents.size$() - 1; counter >= 0; counter--) {
-spec=Clazz.new_($I$(22).c$$javax_swing_text_AttributeSet$H,[rightParents.elementAt$I(counter).getAttributes$(), 1]);
+spec=Clazz.new_([rightParents.elementAt$I(counter).getAttributes$(), 1],$I$(21,1).c$$javax_swing_text_AttributeSet$H);
 if (counter > 0) spec.setDirection$H(5);
-parseBuffer.addElement$TE(spec);
+parseBuffer.addElement$O(spec);
 }
 if (rightParents.size$() > 0) return 5;
 return 7;
 }}return 6;
 });
 
-Clazz.newMeth(C$, 'removeUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent', function (chng) {
+Clazz.newMeth(C$, 'removeUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent',  function (chng) {
 C$.superclazz.prototype.removeUpdate$javax_swing_text_AbstractDocument_DefaultDocumentEvent.apply(this, [chng]);
 this.buffer.remove$I$I$javax_swing_text_AbstractDocument_DefaultDocumentEvent(chng.getOffset$(), chng.getLength$(), chng);
 });
 
-Clazz.newMeth(C$, 'createDefaultRoot$', function () {
+Clazz.newMeth(C$, 'createDefaultRoot$',  function () {
 this.writeLock$();
-var section=Clazz.new_($I$(24), [this, null]);
-var paragraph=Clazz.new_($I$(25).c$$javax_swing_text_Element$javax_swing_text_AttributeSet, [this, null, section, null]);
-var brk=Clazz.new_($I$(26).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I, [this, null, paragraph, null, 0, 1]);
+var section=Clazz.new_($I$(23,1),[this, null]);
+var paragraph=Clazz.new_($I$(24,1).c$$javax_swing_text_Element$javax_swing_text_AttributeSet,[this, null, section, null]);
+var brk=Clazz.new_($I$(25,1).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I,[this, null, paragraph, null, 0, 1]);
 var buff=Clazz.array($I$(6), [1]);
 buff[0]=brk;
 paragraph.replace$I$I$javax_swing_text_ElementA(0, 0, buff);
@@ -456,34 +449,34 @@ this.writeUnlock$();
 return section;
 });
 
-Clazz.newMeth(C$, 'getForeground$javax_swing_text_AttributeSet', function (attr) {
+Clazz.newMeth(C$, 'getForeground$javax_swing_text_AttributeSet',  function (attr) {
 var styles=this.getAttributeContext$();
 return styles.getForeground$javax_swing_text_AttributeSet(attr);
 });
 
-Clazz.newMeth(C$, 'getBackground$javax_swing_text_AttributeSet', function (attr) {
+Clazz.newMeth(C$, 'getBackground$javax_swing_text_AttributeSet',  function (attr) {
 var styles=this.getAttributeContext$();
 return styles.getBackground$javax_swing_text_AttributeSet(attr);
 });
 
-Clazz.newMeth(C$, 'getFont$javax_swing_text_AttributeSet', function (attr) {
+Clazz.newMeth(C$, 'getFont$javax_swing_text_AttributeSet',  function (attr) {
 var styles=this.getAttributeContext$();
 return styles.getFont$javax_swing_text_AttributeSet(attr);
 });
 
-Clazz.newMeth(C$, 'styleChanged$javax_swing_text_Style', function (style) {
+Clazz.newMeth(C$, 'styleChanged$javax_swing_text_Style',  function (style) {
 if (this.getLength$() != 0) {
 if (this.updateRunnable == null ) {
-this.updateRunnable=Clazz.new_($I$(27), [this, null]);
+this.updateRunnable=Clazz.new_($I$(26,1),[this, null]);
 }{
 if (!this.updateRunnable.isPending) {
-$I$(28).invokeLater$Runnable(this.updateRunnable);
+$I$(27).invokeLater$Runnable(this.updateRunnable);
 this.updateRunnable.isPending=true;
 }}}});
 
-Clazz.newMeth(C$, 'addDocumentListener$javax_swing_event_DocumentListener', function (listener) {
+Clazz.newMeth(C$, 'addDocumentListener$javax_swing_event_DocumentListener',  function (listener) {
 {
-var oldDLCount=this.listenerList.getListenerCount$Class(Clazz.getClass($I$(29),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']));
+var oldDLCount=this.listenerList.getListenerCount$Class(Clazz.getClass($I$(28),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent']));
 C$.superclazz.prototype.addDocumentListener$javax_swing_event_DocumentListener.apply(this, [listener]);
 if (oldDLCount == 0) {
 if (this.styleContextChangeListener == null ) {
@@ -494,10 +487,10 @@ styles.addChangeListener$javax_swing_event_ChangeListener(this.styleContextChang
 }this.updateStylesListeningTo$();
 }}});
 
-Clazz.newMeth(C$, 'removeDocumentListener$javax_swing_event_DocumentListener', function (listener) {
+Clazz.newMeth(C$, 'removeDocumentListener$javax_swing_event_DocumentListener',  function (listener) {
 {
 C$.superclazz.prototype.removeDocumentListener$javax_swing_event_DocumentListener.apply(this, [listener]);
-if (this.listenerList.getListenerCount$Class(Clazz.getClass($I$(29),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent'])) == 0) {
+if (this.listenerList.getListenerCount$Class(Clazz.getClass($I$(28),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent'])) == 0) {
 for (var counter=this.listeningStyles.size$() - 1; counter >= 0; counter--) {
 this.listeningStyles.elementAt$I(counter).removeChangeListener$javax_swing_event_ChangeListener(this.styleChangeListener);
 }
@@ -507,15 +500,15 @@ var styles=this.getAttributeContext$();
 styles.removeChangeListener$javax_swing_event_ChangeListener(this.styleContextChangeListener);
 }}}});
 
-Clazz.newMeth(C$, 'createStyleChangeListener$', function () {
-return Clazz.new_($I$(30).c$$javax_swing_text_DefaultStyledDocument,[this]);
+Clazz.newMeth(C$, 'createStyleChangeListener$',  function () {
+return Clazz.new_($I$(29,1).c$$javax_swing_text_DefaultStyledDocument,[this]);
 });
 
-Clazz.newMeth(C$, 'createStyleContextChangeListener$', function () {
-return Clazz.new_($I$(31).c$$javax_swing_text_DefaultStyledDocument,[this]);
+Clazz.newMeth(C$, 'createStyleContextChangeListener$',  function () {
+return Clazz.new_($I$(30,1).c$$javax_swing_text_DefaultStyledDocument,[this]);
 });
 
-Clazz.newMeth(C$, 'updateStylesListeningTo$', function () {
+Clazz.newMeth(C$, 'updateStylesListeningTo$',  function () {
 {
 var styles=this.getAttributeContext$();
 if (this.styleChangeListener == null ) {
@@ -528,7 +521,7 @@ while (styleNames.hasMoreElements$()){
 var name=styleNames.nextElement$();
 var aStyle=styles.getStyle$S(name);
 var index=v.indexOf$O(aStyle);
-this.listeningStyles.addElement$TE(aStyle);
+this.listeningStyles.addElement$O(aStyle);
 if (index == -1) {
 aStyle.addChangeListener$javax_swing_event_ChangeListener(this.styleChangeListener);
 } else {
@@ -542,70 +535,56 @@ if (this.listeningStyles.size$() == 0) {
 this.styleChangeListener=null;
 }}}});
 
-Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
-this.listeningStyles=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream',  function (s) {
+this.listeningStyles=Clazz.new_($I$(1,1));
 s.defaultReadObject$();
-if (this.styleContextChangeListener == null  && this.listenerList.getListenerCount$Class(Clazz.getClass($I$(29),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent'])) > 0 ) {
+if (this.styleContextChangeListener == null  && this.listenerList.getListenerCount$Class(Clazz.getClass($I$(28),['changedUpdate$javax_swing_event_DocumentEvent','insertUpdate$javax_swing_event_DocumentEvent','removeUpdate$javax_swing_event_DocumentEvent'])) > 0 ) {
 this.styleContextChangeListener=this.createStyleContextChangeListener$();
 if (this.styleContextChangeListener != null ) {
 var styles=this.getAttributeContext$();
 styles.addChangeListener$javax_swing_event_ChangeListener(this.styleContextChangeListener);
 }this.updateStylesListeningTo$();
 }}, p$1);
-
-Clazz.newMeth(C$, 'render$Runnable', function (r) {
-});
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "SectionElement", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "SectionElement", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.AbstractDocument','.BranchElement']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this,[null, null]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this, [null, null]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'getName$', function () {
+Clazz.newMeth(C$, 'getName$',  function () {
 return "section";
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "ElementSpec", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "ElementSpec", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.attr=null;
-this.len=0;
-this.type=0;
-this.direction=0;
-this.offs=0;
-this.data=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet$H', function (a, type) {
+C$.$fields$=[['I',['len','offs'],'H',['type','direction'],'O',['attr','javax.swing.text.AttributeSet','data','char[]']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet$H',  function (a, type) {
 C$.c$$javax_swing_text_AttributeSet$H$CA$I$I.apply(this, [a, type, null, 0, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet$H$I', function (a, type, len) {
+Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet$H$I',  function (a, type, len) {
 C$.c$$javax_swing_text_AttributeSet$H$CA$I$I.apply(this, [a, type, null, 0, len]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet$H$CA$I$I', function (a, type, txt, offs, len) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$javax_swing_text_AttributeSet$H$CA$I$I',  function (a, type, txt, offs, len) {
+;C$.$init$.apply(this);
 this.attr=a;
 this.type=type;
 this.data=txt;
@@ -614,39 +593,39 @@ this.len=len;
 this.direction=6;
 }, 1);
 
-Clazz.newMeth(C$, 'setType$H', function (type) {
+Clazz.newMeth(C$, 'setType$H',  function (type) {
 this.type=type;
 });
 
-Clazz.newMeth(C$, 'getType$', function () {
+Clazz.newMeth(C$, 'getType$',  function () {
 return this.type;
 });
 
-Clazz.newMeth(C$, 'setDirection$H', function (direction) {
+Clazz.newMeth(C$, 'setDirection$H',  function (direction) {
 this.direction=direction;
 });
 
-Clazz.newMeth(C$, 'getDirection$', function () {
+Clazz.newMeth(C$, 'getDirection$',  function () {
 return this.direction;
 });
 
-Clazz.newMeth(C$, 'getAttributes$', function () {
+Clazz.newMeth(C$, 'getAttributes$',  function () {
 return this.attr;
 });
 
-Clazz.newMeth(C$, 'getArray$', function () {
+Clazz.newMeth(C$, 'getArray$',  function () {
 return this.data;
 });
 
-Clazz.newMeth(C$, 'getOffset$', function () {
+Clazz.newMeth(C$, 'getOffset$',  function () {
 return this.offs;
 });
 
-Clazz.newMeth(C$, 'getLength$', function () {
+Clazz.newMeth(C$, 'getLength$',  function () {
 return this.len;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 var tlbl="??";
 var plbl="??";
 switch (this.type) {
@@ -680,47 +659,30 @@ return tlbl + ":" + plbl + ":" + this.getLength$() ;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "ElementBuffer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "ElementBuffer", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.io.Serializable');
+C$.$classes$=[['ElemChanges',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.root=null;
-this.pos=0;
-this.offset=0;
-this.length=0;
-this.endOffset=0;
-this.changes=null;
-this.path=null;
-this.insertOp=false;
-this.recreateLeafs=false;
-this.insertPath=null;
-this.createdFracture=false;
-this.fracturedParent=null;
-this.fracturedChild=null;
-this.offsetLastIndex=false;
-this.offsetLastIndexOnReplace=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (root) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['insertOp','recreateLeafs','createdFracture','offsetLastIndex','offsetLastIndexOnReplace'],'I',['pos','offset','length','endOffset'],'O',['root','javax.swing.text.Element','changes','java.util.Vector','path','java.util.Stack','insertPath','javax.swing.text.DefaultStyledDocument.ElementBuffer.ElemChanges[]','fracturedParent','javax.swing.text.Element','+fracturedChild']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_Element',  function (root) {
+;C$.$init$.apply(this);
 this.root=root;
-this.changes=Clazz.new_($I$(1));
-this.path=Clazz.new_($I$(2));
+this.changes=Clazz.new_($I$(1,1));
+this.path=Clazz.new_($I$(2,1));
 }, 1);
 
-Clazz.newMeth(C$, 'getRootElement$', function () {
+Clazz.newMeth(C$, 'getRootElement$',  function () {
 return this.root;
 });
 
-Clazz.newMeth(C$, 'insert$I$I$javax_swing_text_DefaultStyledDocument_ElementSpecA$javax_swing_text_AbstractDocument_DefaultDocumentEvent', function (offset, length, data, de) {
+Clazz.newMeth(C$, 'insert$I$I$javax_swing_text_DefaultStyledDocument_ElementSpecA$javax_swing_text_AbstractDocument_DefaultDocumentEvent',  function (offset, length, data, de) {
 if (length == 0) {
 return;
 }this.insertOp=true;
@@ -730,7 +692,7 @@ this.endEdits$javax_swing_text_AbstractDocument_DefaultDocumentEvent(de);
 this.insertOp=false;
 });
 
-Clazz.newMeth(C$, 'create$I$javax_swing_text_DefaultStyledDocument_ElementSpecA$javax_swing_text_AbstractDocument_DefaultDocumentEvent', function (length, data, de) {
+Clazz.newMeth(C$, 'create$I$javax_swing_text_DefaultStyledDocument_ElementSpecA$javax_swing_text_AbstractDocument_DefaultDocumentEvent',  function (length, data, de) {
 this.insertOp=true;
 this.beginEdits$I$I(this.offset, length);
 var elem=this.root;
@@ -743,8 +705,8 @@ index=elem.getElementIndex$I(0);
 }
 var ec=this.path.peek$();
 var child=ec.parent.getElement$I(ec.index);
-ec.added.addElement$TE(this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), this.b$['javax.swing.text.AbstractDocument'].getLength$.apply(this.b$['javax.swing.text.AbstractDocument'], []), child.getEndOffset$()]));
-ec.removed.addElement$TE(child);
+ec.added.addElement$O(this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), this.b$['javax.swing.text.AbstractDocument'].getLength$.apply(this.b$['javax.swing.text.AbstractDocument'], []), child.getEndOffset$()]));
+ec.removed.addElement$O(child);
 while (this.path.size$() > 1){
 this.pop$();
 }
@@ -755,7 +717,7 @@ newAttrs=data[0].getAttributes$();
 }if (newAttrs == null ) {
 newAttrs=$I$(3).EMPTY;
 }var attr=this.root.getAttributes$();
-de.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(4).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z,[this.root, newAttrs, true]));
+de.addEdit$javax_swing_undo_UndoableEdit(Clazz.new_($I$(4,1).c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z,[this.root, newAttrs, true]));
 attr.removeAttributes$javax_swing_text_AttributeSet(attr);
 attr.addAttributes$javax_swing_text_AttributeSet(newAttrs);
 for (var i=1; i < n; i++) {
@@ -768,19 +730,19 @@ this.endEdits$javax_swing_text_AbstractDocument_DefaultDocumentEvent(de);
 this.insertOp=false;
 });
 
-Clazz.newMeth(C$, 'remove$I$I$javax_swing_text_AbstractDocument_DefaultDocumentEvent', function (offset, length, de) {
+Clazz.newMeth(C$, 'remove$I$I$javax_swing_text_AbstractDocument_DefaultDocumentEvent',  function (offset, length, de) {
 this.beginEdits$I$I(offset, length);
 this.removeUpdate$();
 this.endEdits$javax_swing_text_AbstractDocument_DefaultDocumentEvent(de);
 });
 
-Clazz.newMeth(C$, 'change$I$I$javax_swing_text_AbstractDocument_DefaultDocumentEvent', function (offset, length, de) {
+Clazz.newMeth(C$, 'change$I$I$javax_swing_text_AbstractDocument_DefaultDocumentEvent',  function (offset, length, de) {
 this.beginEdits$I$I(offset, length);
 this.changeUpdate$();
 this.endEdits$javax_swing_text_AbstractDocument_DefaultDocumentEvent(de);
 });
 
-Clazz.newMeth(C$, 'insertUpdate$javax_swing_text_DefaultStyledDocument_ElementSpecA', function (data) {
+Clazz.newMeth(C$, 'insertUpdate$javax_swing_text_DefaultStyledDocument_ElementSpecA',  function (data) {
 var elem=this.root;
 var index=elem.getElementIndex$I(this.offset);
 while (!elem.isLeaf$()){
@@ -810,27 +772,27 @@ while (this.path.size$() != 0){
 this.pop$();
 }
 if (this.offsetLastIndex && this.offsetLastIndexOnReplace ) {
-this.insertPath[this.insertPath.length - 1].index++;
+++this.insertPath[this.insertPath.length - 1].index;
 }for (var counter=this.insertPath.length - 1; counter >= 0; counter--) {
 var change=this.insertPath[counter];
-if (change.parent === this.fracturedParent ) change.added.addElement$TE(this.fracturedChild);
+if (change.parent === this.fracturedParent ) change.added.addElement$O(this.fracturedChild);
 if ((change.added.size$() > 0 || change.removed.size$() > 0 ) && !this.changes.contains$O(change) ) {
-this.changes.addElement$TE(change);
+this.changes.addElement$O(change);
 }}
 if (this.offset == 0 && this.fracturedParent != null   && data[0].getType$() == 2 ) {
 var counter=0;
 while (counter < data.length && data[counter].getType$() == 2 ){
-counter++;
+++counter;
 }
 var change=this.insertPath[this.insertPath.length - counter - 1 ];
-change.removed.insertElementAt$TE$I(change.parent.getElement$I(--change.index), 0);
+change.removed.insertElementAt$O$I(change.parent.getElement$I(--change.index), 0);
 }});
 
-Clazz.newMeth(C$, 'removeUpdate$', function () {
+Clazz.newMeth(C$, 'removeUpdate$',  function () {
 this.removeElements$javax_swing_text_Element$I$I(this.root, this.offset, this.offset + this.length);
 });
 
-Clazz.newMeth(C$, 'changeUpdate$', function () {
+Clazz.newMeth(C$, 'changeUpdate$',  function () {
 var didEnd=this.split$I$I(this.offset, this.length);
 if (!didEnd) {
 while (this.path.size$() != 0){
@@ -842,7 +804,7 @@ this.pop$();
 }
 });
 
-Clazz.newMeth(C$, 'split$I$I', function (offs, len) {
+Clazz.newMeth(C$, 'split$I$I',  function (offs, len) {
 var splitEnd=false;
 var e=this.root;
 var index=e.getElementIndex$I(offs);
@@ -859,13 +821,13 @@ var index1=index0;
 if (((offs + len) < ec.parent.getEndOffset$()) && (len != 0) ) {
 index1=ec.parent.getElementIndex$I(offs + len);
 if (index1 == index0) {
-ec.removed.addElement$TE(child);
+ec.removed.addElement$O(child);
 e=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), child.getStartOffset$(), offs]);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 e=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), offs, offs + len]);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 e=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), offs + len, child.getEndOffset$()]);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 return true;
 } else {
 child=ec.parent.getElement$I(index1);
@@ -874,28 +836,28 @@ index1=index0;
 }}splitEnd=true;
 }this.pos=offs;
 child=ec.parent.getElement$I(index0);
-ec.removed.addElement$TE(child);
+ec.removed.addElement$O(child);
 e=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), child.getStartOffset$(), this.pos]);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 e=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), this.pos, child.getEndOffset$()]);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 for (var i=index0 + 1; i < index1; i++) {
 child=ec.parent.getElement$I(i);
-ec.removed.addElement$TE(child);
-ec.added.addElement$TE(child);
+ec.removed.addElement$O(child);
+ec.added.addElement$O(child);
 }
 if (index1 != index0) {
 child=ec.parent.getElement$I(index1);
 this.pos=offs + len;
-ec.removed.addElement$TE(child);
+ec.removed.addElement$O(child);
 e=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), child.getStartOffset$(), this.pos]);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 e=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), this.pos, child.getEndOffset$()]);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 }}return splitEnd;
 });
 
-Clazz.newMeth(C$, 'endEdits$javax_swing_text_AbstractDocument_DefaultDocumentEvent', function (de) {
+Clazz.newMeth(C$, 'endEdits$javax_swing_text_AbstractDocument_DefaultDocumentEvent',  function (de) {
 var n=this.changes.size$();
 for (var i=0; i < n; i++) {
 var ec=this.changes.elementAt$I(i);
@@ -905,24 +867,24 @@ var added=Clazz.array($I$(6), [ec.added.size$()]);
 ec.added.copyInto$OA(added);
 var index=ec.index;
 (ec.parent).replace$I$I$javax_swing_text_ElementA(index, removed.length, added);
-var ee=Clazz.new_($I$(7).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[ec.parent, index, removed, added]);
+var ee=Clazz.new_($I$(7,1).c$$javax_swing_text_Element$I$javax_swing_text_ElementA$javax_swing_text_ElementA,[ec.parent, index, removed, added]);
 de.addEdit$javax_swing_undo_UndoableEdit(ee);
 }
 this.changes.removeAllElements$();
 this.path.removeAllElements$();
 });
 
-Clazz.newMeth(C$, 'beginEdits$I$I', function (offset, length) {
+Clazz.newMeth(C$, 'beginEdits$I$I',  function (offset, length) {
 this.offset=offset;
 this.length=length;
 this.endOffset=offset + length;
 this.pos=offset;
 if (this.changes == null ) {
-this.changes=Clazz.new_($I$(1));
+this.changes=Clazz.new_($I$(1,1));
 } else {
 this.changes.removeAllElements$();
 }if (this.path == null ) {
-this.path=Clazz.new_($I$(2));
+this.path=Clazz.new_($I$(2,1));
 } else {
 this.path.removeAllElements$();
 }this.fracturedParent=null;
@@ -930,20 +892,20 @@ this.fracturedChild=null;
 this.offsetLastIndex=this.offsetLastIndexOnReplace=false;
 });
 
-Clazz.newMeth(C$, 'push$javax_swing_text_Element$I$Z', function (e, index, isFracture) {
-var ec=Clazz.new_($I$(5).c$$javax_swing_text_Element$I$Z, [this, null, e, index, isFracture]);
-this.path.push$TE(ec);
+Clazz.newMeth(C$, 'push$javax_swing_text_Element$I$Z',  function (e, index, isFracture) {
+var ec=Clazz.new_($I$(5,1).c$$javax_swing_text_Element$I$Z,[this, null, e, index, isFracture]);
+this.path.push$O(ec);
 });
 
-Clazz.newMeth(C$, 'push$javax_swing_text_Element$I', function (e, index) {
+Clazz.newMeth(C$, 'push$javax_swing_text_Element$I',  function (e, index) {
 this.push$javax_swing_text_Element$I$Z(e, index, false);
 });
 
-Clazz.newMeth(C$, 'pop$', function () {
+Clazz.newMeth(C$, 'pop$',  function () {
 var ec=this.path.peek$();
 this.path.pop$();
 if ((ec.added.size$() > 0) || (ec.removed.size$() > 0) ) {
-this.changes.addElement$TE(ec);
+this.changes.addElement$O(ec);
 } else if (!this.path.isEmpty$()) {
 var e=ec.parent;
 if (e.getElementCount$() == 0) {
@@ -951,11 +913,11 @@ ec=this.path.peek$();
 ec.added.removeElement$O(e);
 }}});
 
-Clazz.newMeth(C$, 'advance$I', function (n) {
+Clazz.newMeth(C$, 'advance$I',  function (n) {
 this.pos+=n;
 });
 
-Clazz.newMeth(C$, 'insertElement$javax_swing_text_DefaultStyledDocument_ElementSpec', function (es) {
+Clazz.newMeth(C$, 'insertElement$javax_swing_text_DefaultStyledDocument_ElementSpec',  function (es) {
 var ec=this.path.peek$();
 switch (es.getType$()) {
 case 1:
@@ -964,7 +926,7 @@ case 5:
 var parent=ec.parent.getElement$I(ec.index);
 if (parent.isLeaf$()) {
 if ((ec.index + 1) < ec.parent.getElementCount$()) parent=ec.parent.getElement$I(ec.index + 1);
- else throw Clazz.new_($I$(8).c$$S,["Join next to leaf"]);
+ else throw Clazz.new_($I$(8,1).c$$S,["Join next to leaf"]);
 }this.push$javax_swing_text_Element$I$Z(parent, 0, true);
 break;
 case 7:
@@ -976,7 +938,7 @@ this.push$javax_swing_text_Element$I$Z(this.fracturedChild, 0, true);
 break;
 default:
 var belem=this.b$['javax.swing.text.AbstractDocument'].createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, es.getAttributes$()]);
-ec.added.addElement$TE(belem);
+ec.added.addElement$O(belem);
 this.push$javax_swing_text_Element$I(belem, 0);
 break;
 }
@@ -988,7 +950,7 @@ case 3:
 var len=es.getLength$();
 if (es.getDirection$() != 5) {
 var leaf=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, es.getAttributes$(), this.pos, this.pos + len]);
-ec.added.addElement$TE(leaf);
+ec.added.addElement$O(leaf);
 } else {
 if (!ec.isFracture) {
 var first=null;
@@ -1000,19 +962,19 @@ break;
 }}
 }if (first == null ) first=ec.parent.getElement$I(ec.index + 1);
 var leaf=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, first.getAttributes$(), this.pos, first.getEndOffset$()]);
-ec.added.addElement$TE(leaf);
-ec.removed.addElement$TE(first);
+ec.added.addElement$O(leaf);
+ec.removed.addElement$O(first);
 } else {
 var first=ec.parent.getElement$I(0);
 var leaf=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, first.getAttributes$(), this.pos, first.getEndOffset$()]);
-ec.added.addElement$TE(leaf);
-ec.removed.addElement$TE(first);
+ec.added.addElement$O(leaf);
+ec.removed.addElement$O(first);
 }}this.pos+=len;
 break;
 }
 });
 
-Clazz.newMeth(C$, 'removeElements$javax_swing_text_Element$I$I', function (elem, rmOffs0, rmOffs1) {
+Clazz.newMeth(C$, 'removeElements$javax_swing_text_Element$I$I',  function (elem, rmOffs0, rmOffs1) {
 if (!elem.isLeaf$()) {
 var index0=elem.getElementIndex$I(rmOffs0);
 var index1=elem.getElementIndex$I(rmOffs1);
@@ -1021,19 +983,19 @@ var ec=this.path.peek$();
 if (index0 == index1) {
 var child0=elem.getElement$I(index0);
 if (rmOffs0 <= child0.getStartOffset$() && rmOffs1 >= child0.getEndOffset$() ) {
-ec.removed.addElement$TE(child0);
+ec.removed.addElement$O(child0);
 } else if (this.removeElements$javax_swing_text_Element$I$I(child0, rmOffs0, rmOffs1)) {
-ec.removed.addElement$TE(child0);
+ec.removed.addElement$O(child0);
 }} else {
 var child0=elem.getElement$I(index0);
 var child1=elem.getElement$I(index1);
 var containsOffs1=(rmOffs1 < elem.getEndOffset$());
 if (containsOffs1 && this.canJoin$javax_swing_text_Element$javax_swing_text_Element(child0, child1) ) {
 for (var i=index0; i <= index1; i++) {
-ec.removed.addElement$TE(elem.getElement$I(i));
+ec.removed.addElement$O(elem.getElement$I(i));
 }
 var e=this.join$javax_swing_text_Element$javax_swing_text_Element$javax_swing_text_Element$I$I(elem, child0, child1, rmOffs0, rmOffs1);
-ec.added.addElement$TE(e);
+ec.added.addElement$O(e);
 } else {
 var rmIndex0=index0 + 1;
 var rmIndex1=index1 - 1;
@@ -1042,28 +1004,28 @@ child0=null;
 rmIndex0=index0;
 }if (!containsOffs1) {
 child1=null;
-rmIndex1++;
+++rmIndex1;
 } else if (child1.getStartOffset$() == rmOffs1) {
 child1=null;
 }if (rmIndex0 <= rmIndex1) {
 ec.index=rmIndex0;
 }for (var i=rmIndex0; i <= rmIndex1; i++) {
-ec.removed.addElement$TE(elem.getElement$I(i));
+ec.removed.addElement$O(elem.getElement$I(i));
 }
 if (child0 != null ) {
 if (this.removeElements$javax_swing_text_Element$I$I(child0, rmOffs0, rmOffs1)) {
-ec.removed.insertElementAt$TE$I(child0, 0);
+ec.removed.insertElementAt$O$I(child0, 0);
 ec.index=index0;
 }}if (child1 != null ) {
 if (this.removeElements$javax_swing_text_Element$I$I(child1, rmOffs0, rmOffs1)) {
-ec.removed.addElement$TE(child1);
+ec.removed.addElement$O(child1);
 }}}}this.pop$();
 if (elem.getElementCount$() == (ec.removed.size$() - ec.added.size$())) {
 return true;
 }}return false;
 });
 
-Clazz.newMeth(C$, 'canJoin$javax_swing_text_Element$javax_swing_text_Element', function (e0, e1) {
+Clazz.newMeth(C$, 'canJoin$javax_swing_text_Element$javax_swing_text_Element',  function (e0, e1) {
 if ((e0 == null ) || (e1 == null ) ) {
 return false;
 }var leaf0=e0.isLeaf$();
@@ -1081,7 +1043,7 @@ return name1.equals$O(name0);
 }return true;
 });
 
-Clazz.newMeth(C$, 'join$javax_swing_text_Element$javax_swing_text_Element$javax_swing_text_Element$I$I', function (p, left, right, rmOffs0, rmOffs1) {
+Clazz.newMeth(C$, 'join$javax_swing_text_Element$javax_swing_text_Element$javax_swing_text_Element$I$I',  function (p, left, right, rmOffs0, rmOffs1) {
 if (left.isLeaf$() && right.isLeaf$() ) {
 return this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [p, left.getAttributes$(), left.getStartOffset$(), right.getEndOffset$()]);
 } else if ((!left.isLeaf$()) && (!right.isLeaf$()) ) {
@@ -1094,31 +1056,31 @@ lj=null;
 }var rj=right.getElement$I(rjIndex);
 if (rj.getStartOffset$() == rmOffs1) {
 rj=null;
-}var children=Clazz.new_($I$(1));
+}var children=Clazz.new_($I$(1,1));
 for (var i=0; i < ljIndex; i++) {
-children.addElement$TE(this.clone$javax_swing_text_Element$javax_swing_text_Element(to, left.getElement$I(i)));
+children.addElement$O(this.clone$javax_swing_text_Element$javax_swing_text_Element(to, left.getElement$I(i)));
 }
 if (this.canJoin$javax_swing_text_Element$javax_swing_text_Element(lj, rj)) {
 var e=this.join$javax_swing_text_Element$javax_swing_text_Element$javax_swing_text_Element$I$I(to, lj, rj, rmOffs0, rmOffs1);
-children.addElement$TE(e);
+children.addElement$O(e);
 } else {
 if (lj != null ) {
-children.addElement$TE(this.cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I(to, lj, rmOffs0, rmOffs1));
+children.addElement$O(this.cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I(to, lj, rmOffs0, rmOffs1));
 }if (rj != null ) {
-children.addElement$TE(this.cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I(to, rj, rmOffs0, rmOffs1));
+children.addElement$O(this.cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I(to, rj, rmOffs0, rmOffs1));
 }}var n=right.getElementCount$();
 for (var i=(rj == null ) ? rjIndex : rjIndex + 1; i < n; i++) {
-children.addElement$TE(this.clone$javax_swing_text_Element$javax_swing_text_Element(to, right.getElement$I(i)));
+children.addElement$O(this.clone$javax_swing_text_Element$javax_swing_text_Element(to, right.getElement$I(i)));
 }
 var c=Clazz.array($I$(6), [children.size$()]);
 children.copyInto$OA(c);
 (to).replace$I$I$javax_swing_text_ElementA(0, 0, c);
 return to;
 } else {
-throw Clazz.new_($I$(8).c$$S,["No support to join leaf element with non-leaf element"]);
+throw Clazz.new_($I$(8,1).c$$S,["No support to join leaf element with non-leaf element"]);
 }});
 
-Clazz.newMeth(C$, 'clone$javax_swing_text_Element$javax_swing_text_Element', function (parent, clonee) {
+Clazz.newMeth(C$, 'clone$javax_swing_text_Element$javax_swing_text_Element',  function (parent, clonee) {
 if (clonee.isLeaf$()) {
 return this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [parent, clonee.getAttributes$(), clonee.getStartOffset$(), clonee.getEndOffset$()]);
 }var e=this.b$['javax.swing.text.AbstractDocument'].createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this.b$['javax.swing.text.AbstractDocument'], [parent, clonee.getAttributes$()]);
@@ -1131,24 +1093,24 @@ children[i]=this.clone$javax_swing_text_Element$javax_swing_text_Element(e, clon
 return e;
 });
 
-Clazz.newMeth(C$, 'cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I', function (parent, clonee, rmOffs0, rmOffs1) {
+Clazz.newMeth(C$, 'cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I',  function (parent, clonee, rmOffs0, rmOffs1) {
 if (clonee.isLeaf$()) {
 return this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [parent, clonee.getAttributes$(), clonee.getStartOffset$(), clonee.getEndOffset$()]);
 }var e=this.b$['javax.swing.text.AbstractDocument'].createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this.b$['javax.swing.text.AbstractDocument'], [parent, clonee.getAttributes$()]);
 var n=clonee.getElementCount$();
-var childrenList=Clazz.new_($I$(9).c$$I,[n]);
+var childrenList=Clazz.new_($I$(9,1).c$$I,[n]);
 for (var i=0; i < n; i++) {
 var elem=clonee.getElement$I(i);
 if (elem.getStartOffset$() < rmOffs0 || elem.getEndOffset$() > rmOffs1 ) {
-childrenList.add$TE(this.cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I(e, elem, rmOffs0, rmOffs1));
+childrenList.add$O(this.cloneAsNecessary$javax_swing_text_Element$javax_swing_text_Element$I$I(e, elem, rmOffs0, rmOffs1));
 }}
 var children=Clazz.array($I$(6), [childrenList.size$()]);
-children=childrenList.toArray$TTA(children);
+children=childrenList.toArray$OA(children);
 (e).replace$I$I$javax_swing_text_ElementA(0, 0, children);
 return e;
 });
 
-Clazz.newMeth(C$, 'fracture$I', function (depth) {
+Clazz.newMeth(C$, 'fracture$I',  function (depth) {
 var cLength=this.insertPath.length;
 var lastIndex=-1;
 var needRecreate=this.recreateLeafs;
@@ -1173,7 +1135,7 @@ if (lastIndex == -1) lastIndex=cLength - 1;
 this.fractureFrom$javax_swing_text_DefaultStyledDocument_ElementBuffer_ElemChangesA$I$I(this.insertPath, lastIndex, deepestAlteredIndex);
 }});
 
-Clazz.newMeth(C$, 'fractureFrom$javax_swing_text_DefaultStyledDocument_ElementBuffer_ElemChangesA$I$I', function (changed, startIndex, endFractureIndex) {
+Clazz.newMeth(C$, 'fractureFrom$javax_swing_text_DefaultStyledDocument_ElementBuffer_ElemChangesA$I$I',  function (changed, startIndex, endFractureIndex) {
 var change=changed[startIndex];
 var child;
 var newChild;
@@ -1208,7 +1170,7 @@ var moveStartIndex;
 var kidStartIndex=1;
 if (newChild == null ) {
 if (isEndLeaf) {
-kidsToMove--;
+--kidsToMove;
 moveStartIndex=change.index + 1;
 } else {
 moveStartIndex=change.index;
@@ -1216,7 +1178,7 @@ moveStartIndex=change.index;
 kids=Clazz.array($I$(6), [kidsToMove]);
 } else {
 if (!isEnd) {
-kidsToMove++;
+++kidsToMove;
 moveStartIndex=change.index;
 } else {
 moveStartIndex=change.index + 1;
@@ -1225,14 +1187,14 @@ kids[0]=newChild;
 }for (var counter=kidStartIndex; counter < kidsToMove; counter++) {
 var toMove=change.parent.getElement$I(moveStartIndex++);
 kids[counter]=this.recreateFracturedElement$javax_swing_text_Element$javax_swing_text_Element(parent, toMove);
-change.removed.addElement$TE(toMove);
+change.removed.addElement$O(toMove);
 }
 (parent).replace$I$I$javax_swing_text_ElementA(0, 0, kids);
 parent=newChild;
 }
 });
 
-Clazz.newMeth(C$, 'recreateFracturedElement$javax_swing_text_Element$javax_swing_text_Element', function (parent, toDuplicate) {
+Clazz.newMeth(C$, 'recreateFracturedElement$javax_swing_text_Element$javax_swing_text_Element',  function (parent, toDuplicate) {
 if (toDuplicate.isLeaf$()) {
 return this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [parent, toDuplicate.getAttributes$(), Math.max(toDuplicate.getStartOffset$(), this.endOffset), toDuplicate.getEndOffset$()]);
 }var newParent=this.b$['javax.swing.text.AbstractDocument'].createBranchElement$javax_swing_text_Element$javax_swing_text_AttributeSet.apply(this.b$['javax.swing.text.AbstractDocument'], [parent, toDuplicate.getAttributes$()]);
@@ -1245,18 +1207,18 @@ newKids[counter]=this.recreateFracturedElement$javax_swing_text_Element$javax_sw
 return newParent;
 });
 
-Clazz.newMeth(C$, 'fractureDeepestLeaf$javax_swing_text_DefaultStyledDocument_ElementSpecA', function (specs) {
+Clazz.newMeth(C$, 'fractureDeepestLeaf$javax_swing_text_DefaultStyledDocument_ElementSpecA',  function (specs) {
 var ec=this.path.peek$();
 var child=ec.parent.getElement$I(ec.index);
 if (this.offset != 0) {
 var newChild=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), child.getStartOffset$(), this.offset]);
-ec.added.addElement$TE(newChild);
-}ec.removed.addElement$TE(child);
+ec.added.addElement$O(newChild);
+}ec.removed.addElement$O(child);
 if (child.getEndOffset$() != this.endOffset) this.recreateLeafs=true;
  else this.offsetLastIndex=true;
 });
 
-Clazz.newMeth(C$, 'insertFirstContent$javax_swing_text_DefaultStyledDocument_ElementSpecA', function (specs) {
+Clazz.newMeth(C$, 'insertFirstContent$javax_swing_text_DefaultStyledDocument_ElementSpecA',  function (specs) {
 var firstSpec=specs[0];
 var ec=this.path.peek$();
 var child=ec.parent.getElement$I(ec.index);
@@ -1266,8 +1228,8 @@ switch (firstSpec.getDirection$()) {
 case 4:
 if (child.getEndOffset$() != firstEndOffset && !isOnlyContent ) {
 var newE=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), child.getStartOffset$(), firstEndOffset]);
-ec.added.addElement$TE(newE);
-ec.removed.addElement$TE(child);
+ec.added.addElement$O(newE);
+ec.removed.addElement$O(child);
 if (child.getEndOffset$() != this.endOffset) this.recreateLeafs=true;
  else this.offsetLastIndex=true;
 } else {
@@ -1277,21 +1239,21 @@ this.offsetLastIndexOnReplace=true;
 case 5:
 if (this.offset != 0) {
 var newE=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), child.getStartOffset$(), this.offset]);
-ec.added.addElement$TE(newE);
+ec.added.addElement$O(newE);
 var nextChild=ec.parent.getElement$I(ec.index + 1);
 if (isOnlyContent) newE=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, nextChild.getAttributes$(), this.offset, nextChild.getEndOffset$()]);
  else newE=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, nextChild.getAttributes$(), this.offset, firstEndOffset]);
-ec.added.addElement$TE(newE);
-ec.removed.addElement$TE(child);
-ec.removed.addElement$TE(nextChild);
+ec.added.addElement$O(newE);
+ec.removed.addElement$O(child);
+ec.removed.addElement$O(nextChild);
 }break;
 default:
 if (child.getStartOffset$() != this.offset) {
 var newE=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, child.getAttributes$(), child.getStartOffset$(), this.offset]);
-ec.added.addElement$TE(newE);
-}ec.removed.addElement$TE(child);
+ec.added.addElement$O(newE);
+}ec.removed.addElement$O(child);
 var newE=this.b$['javax.swing.text.AbstractDocument'].createLeafElement$javax_swing_text_Element$javax_swing_text_AttributeSet$I$I.apply(this.b$['javax.swing.text.AbstractDocument'], [ec.parent, firstSpec.getAttributes$(), this.offset, firstEndOffset]);
-ec.added.addElement$TE(newE);
+ec.added.addElement$O(newE);
 if (child.getEndOffset$() != this.endOffset) {
 this.recreateLeafs=true;
 } else {
@@ -1300,35 +1262,27 @@ this.offsetLastIndex=true;
 }
 });
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument.ElementBuffer, "ElemChanges", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument.ElementBuffer, "ElemChanges", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.parent=null;
-this.index=0;
-this.added=null;
-this.removed=null;
-this.isFracture=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_Element$I$Z', function (parent, index, isFracture) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['isFracture'],'I',['index'],'O',['parent','javax.swing.text.Element','added','java.util.Vector','+removed']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_Element$I$Z',  function (parent, index, isFracture) {
+;C$.$init$.apply(this);
 this.parent=parent;
 this.index=index;
 this.isFracture=isFracture;
-this.added=Clazz.new_($I$(1));
-this.removed=Clazz.new_($I$(1));
+this.added=Clazz.new_($I$(1,1));
+this.removed=Clazz.new_($I$(1,1));
 }, 1);
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return "added: " + this.added + "\nremoved: " + this.removed + "\n" ;
 });
 
@@ -1338,41 +1292,33 @@ Clazz.newMeth(C$);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "AttributeUndoableEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "AttributeUndoableEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.newAttributes=null;
-this.copy=null;
-this.isReplacing=false;
-this.element=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z', function (element, newAttributes, isReplacing) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['isReplacing'],'O',['newAttributes','javax.swing.text.AttributeSet','+copy','element','javax.swing.text.Element']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_Element$javax_swing_text_AttributeSet$Z',  function (element, newAttributes, isReplacing) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.element=element;
 this.newAttributes=newAttributes;
 this.isReplacing=isReplacing;
 this.copy=element.getAttributes$().copyAttributes$();
 }, 1);
 
-Clazz.newMeth(C$, 'redo$', function () {
+Clazz.newMeth(C$, 'redo$',  function () {
 C$.superclazz.prototype.redo$.apply(this, []);
 var as=this.element.getAttributes$();
 if (this.isReplacing) as.removeAttributes$javax_swing_text_AttributeSet(as);
 as.addAttributes$javax_swing_text_AttributeSet(this.newAttributes);
 });
 
-Clazz.newMeth(C$, 'undo$', function () {
+Clazz.newMeth(C$, 'undo$',  function () {
 C$.superclazz.prototype.undo$.apply(this, []);
 var as=this.element.getAttributes$();
 as.removeAttributes$javax_swing_text_AttributeSet(as);
@@ -1382,37 +1328,30 @@ as.addAttributes$javax_swing_text_AttributeSet(this.copy);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "StyleChangeUndoableEdit", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "StyleChangeUndoableEdit", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.element=null;
-this.newStyle=null;
-this.oldStyle=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_AbstractElement$javax_swing_text_Style', function (element, newStyle) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['element','javax.swing.text.AbstractDocument.AbstractElement','newStyle','javax.swing.text.Style','oldStyle','javax.swing.text.AttributeSet']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_AbstractDocument_AbstractElement$javax_swing_text_Style',  function (element, newStyle) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.element=element;
 this.newStyle=newStyle;
 this.oldStyle=element.getResolveParent$();
 }, 1);
 
-Clazz.newMeth(C$, 'redo$', function () {
+Clazz.newMeth(C$, 'redo$',  function () {
 C$.superclazz.prototype.redo$.apply(this, []);
 this.element.setResolveParent$javax_swing_text_AttributeSet(this.newStyle);
 });
 
-Clazz.newMeth(C$, 'undo$', function () {
+Clazz.newMeth(C$, 'undo$',  function () {
 C$.superclazz.prototype.undo$.apply(this, []);
 this.element.setResolveParent$javax_swing_text_AttributeSet(this.oldStyle);
 });
@@ -1420,27 +1359,23 @@ this.element.setResolveParent$javax_swing_text_AttributeSet(this.oldStyle);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "AbstractChangeHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "AbstractChangeHandler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'javax.swing.event.ChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doc=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_DefaultStyledDocument', function (d) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['doc','javax.swing.text.DefaultStyledDocument']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_DefaultStyledDocument',  function (d) {
+;C$.$init$.apply(this);
 this.doc=d;
 }, 1);
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent',  function (e) {
 var d=this.doc;
 if (d != null ) {
 this.fireStateChanged$javax_swing_text_DefaultStyledDocument$javax_swing_event_ChangeEvent(d, e);
@@ -1449,22 +1384,20 @@ this.fireStateChanged$javax_swing_text_DefaultStyledDocument$javax_swing_event_C
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "StyleChangeHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "StyleChangeHandler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.text.DefaultStyledDocument','.AbstractChangeHandler']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_DefaultStyledDocument',  function (d) {
+;C$.superclazz.c$$javax_swing_text_DefaultStyledDocument.apply(this,[d]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_DefaultStyledDocument', function (d) {
-C$.superclazz.c$$javax_swing_text_DefaultStyledDocument.apply(this, [d]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'fireStateChanged$javax_swing_text_DefaultStyledDocument$javax_swing_event_ChangeEvent', function (d, e) {
+Clazz.newMeth(C$, 'fireStateChanged$javax_swing_text_DefaultStyledDocument$javax_swing_event_ChangeEvent',  function (d, e) {
 var source=e.getSource$();
 if (Clazz.instanceOf(source, "javax.swing.text.Style")) {
 d.styleChanged$javax_swing_text_Style(source);
@@ -1475,50 +1408,44 @@ d.styleChanged$javax_swing_text_Style(null);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "StyleContextChangeHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "StyleContextChangeHandler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.text.DefaultStyledDocument','.AbstractChangeHandler']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_DefaultStyledDocument',  function (d) {
+;C$.superclazz.c$$javax_swing_text_DefaultStyledDocument.apply(this,[d]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_DefaultStyledDocument', function (d) {
-C$.superclazz.c$$javax_swing_text_DefaultStyledDocument.apply(this, [d]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'fireStateChanged$javax_swing_text_DefaultStyledDocument$javax_swing_event_ChangeEvent', function (d, e) {
+Clazz.newMeth(C$, 'fireStateChanged$javax_swing_text_DefaultStyledDocument$javax_swing_event_ChangeEvent',  function (d, e) {
 d.updateStylesListeningTo$();
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultStyledDocument, "ChangeUpdateRunnable", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultStyledDocument, "ChangeUpdateRunnable", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isPending=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isPending=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'run$', function () {
+C$.$fields$=[['Z',['isPending']]]
+
+Clazz.newMeth(C$, 'run$',  function () {
 {
 this.isPending=false;
 }try {
 this.b$['javax.swing.text.AbstractDocument'].writeLock$.apply(this.b$['javax.swing.text.AbstractDocument'], []);
-var dde=Clazz.new_($I$(10).c$$I$I$javax_swing_event_DocumentEvent_EventType, [this, null, 0, this.b$['javax.swing.text.AbstractDocument'].getLength$.apply(this.b$['javax.swing.text.AbstractDocument'], []), $I$(11).CHANGE]);
+var dde=Clazz.new_([this, null, 0, this.b$['javax.swing.text.AbstractDocument'].getLength$.apply(this.b$['javax.swing.text.AbstractDocument'], []), $I$(11).CHANGE],$I$(10,1).c$$I$I$javax_swing_event_DocumentEvent_EventType);
 dde.end$();
 this.b$['javax.swing.text.AbstractDocument'].fireChangedUpdate$javax_swing_event_DocumentEvent.apply(this.b$['javax.swing.text.AbstractDocument'], [dde]);
 } finally {
@@ -1529,4 +1456,4 @@ this.b$['javax.swing.text.AbstractDocument'].writeUnlock$.apply(this.b$['javax.s
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

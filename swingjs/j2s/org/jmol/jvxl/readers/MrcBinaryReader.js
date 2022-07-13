@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'org.jmol.util.Logger','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MrcBinaryReader", null, 'org.jmol.jvxl.readers.MapFileReader');
-C$.b8=null;
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'org.jmol.util.Logger','javajs.util.SB']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MrcBinaryReader", null, 'org.jmol.jvxl.readers.MapFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.b8=Clazz.array(Byte.TYPE, [8]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.labels=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['labels','String[]']]
+,['O',['b8','byte[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -41,7 +36,7 @@ if (this.n0 < 0 || this.n0 > 256 ) {
 this.setStream$S$Z(null, false);
 this.n0=this.binarydoc.swapBytesI$I(this.n0);
 if (this.n0 < 0 || this.n0 > 1000 ) {
-$I$(1).info$S("nx=" + this.n0 + " not displayable as MRC file" );
+$I$(1,"info$S",["nx=" + this.n0 + " not displayable as MRC file" ]);
 throw Clazz.new_(Clazz.load('Exception').c$$S,["MRC file type not readable"]);
 }$I$(1).info$S("reading little-endian MRC file");
 }this.n1=this.binarydoc.readInt$();
@@ -58,7 +53,7 @@ $I$(1).info$S("MRC header: nx ny nz: " + this.n0 + " " + this.n1 + " " + this.n2
 this.xyzStart[0]=this.binarydoc.readInt$();
 this.xyzStart[1]=this.binarydoc.readInt$();
 this.xyzStart[2]=this.binarydoc.readInt$();
-$I$(1).info$S("MRC header: nxyzStart: " + new Float(this.xyzStart[0]).toString() + " " + new Float(this.xyzStart[1]).toString() + " " + new Float(this.xyzStart[2]).toString() );
+$I$(1,"info$S",["MRC header: nxyzStart: " + new Float(this.xyzStart[0]).toString() + " " + new Float(this.xyzStart[1]).toString() + " " + new Float(this.xyzStart[2]).toString() ]);
 this.na=this.binarydoc.readInt$();
 this.nb=this.binarydoc.readInt$();
 this.nc=this.binarydoc.readInt$();
@@ -89,7 +84,7 @@ this.params.dataXYReversed=true;
 }this.dmin=this.binarydoc.readFloat$();
 this.dmax=this.binarydoc.readFloat$();
 this.dmean=this.binarydoc.readFloat$();
-$I$(1).info$S("MRC header: dmin,dmax,dmean: " + new Float(this.dmin).toString() + "," + new Float(this.dmax).toString() + "," + new Float(this.dmean).toString() );
+$I$(1,"info$S",["MRC header: dmin,dmax,dmean: " + new Float(this.dmin).toString() + "," + new Float(this.dmax).toString() + "," + new Float(this.dmean).toString() ]);
 ispg=this.binarydoc.readInt$();
 nsymbt=this.binarydoc.readInt$();
 $I$(1).info$S("MRC header: ispg,nsymbt: " + ispg + "," + nsymbt );
@@ -101,7 +96,7 @@ $I$(1).info$S("MRC header: origin: " + this.origin);
 this.binarydoc.readByteArray$BA$I$I(map, 0, map.length);
 this.binarydoc.readByteArray$BA$I$I(machst, 0, machst.length);
 rmsDeviation=this.binarydoc.readFloat$();
-$I$(1).info$S("MRC header: rms: " + new Float(rmsDeviation).toString());
+$I$(1,"info$S",["MRC header: rms: " + new Float(rmsDeviation).toString()]);
 nlabel=this.binarydoc.readInt$();
 $I$(1).info$S("MRC header: labels: " + nlabel);
 this.labels=Clazz.array(String, [nlabel]);
@@ -121,13 +116,13 @@ this.binarydoc.seek$J(position);
 break;
 }$I$(1).info$S("MRC file symmetry information: " + s);
 }
-$I$(1).info$S("MRC header: bytes read: " + this.binarydoc.getPosition$() + "\n" );
+$I$(1,"info$S",["MRC header: bytes read: " + this.binarydoc.getPosition$() + "\n" ]);
 this.getVectorsAndOrigin$();
 if (this.params.thePlane == null  && (this.params.cutoffAutomatic || !Float.isNaN$F(this.params.sigma) ) ) {
 var sigma=(this.params.sigma < 0  || Float.isNaN$F(this.params.sigma)  ? 1 : this.params.sigma);
 this.params.cutoff=rmsDeviation * sigma + this.dmean;
-$I$(1).info$S("Cutoff set to (mean + rmsDeviation*" + new Float(sigma).toString() + " = " + new Float(this.params.cutoff).toString() + ")\n" );
-}this.jvxlFileHeaderBuffer=Clazz.new_($I$(2));
+$I$(1,"info$S",["Cutoff set to (mean + rmsDeviation*" + new Float(sigma).toString() + " = " + new Float(this.params.cutoff).toString() + ")\n" ]);
+}this.jvxlFileHeaderBuffer=Clazz.new_($I$(2,1));
 this.jvxlFileHeaderBuffer.append$S("MRC DATA ").append$S(nlabel > 0 ? this.labels[0] : "").append$S("\n");
 this.jvxlFileHeaderBuffer.append$S("see http://ami.scripps.edu/software/mrctools/mrc_specification.php\n");
 });
@@ -181,5 +176,9 @@ break;
 }
 
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.b8=Clazz.array(Byte.TYPE, [8]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

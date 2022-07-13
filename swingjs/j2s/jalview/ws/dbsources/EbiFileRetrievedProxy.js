@@ -1,27 +1,23 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),I$=[[0,'java.io.File','StringBuffer','java.io.BufferedReader','java.io.FileReader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EbiFileRetrievedProxy", null, 'jalview.ws.seqfetcher.DbSourceProxyImpl');
+(function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),I$=[[0,'java.io.File','StringBuffer','java.io.BufferedReader','java.io.FileReader']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EbiFileRetrievedProxy", null, 'jalview.ws.seqfetcher.DbSourceProxyImpl');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.file=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.file=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getRawRecords$', function () {
+C$.$fields$=[['S',['file']]]
+
+Clazz.newMeth(C$, 'getRawRecords$',  function () {
 if (this.file == null ) {
 return null;
 }var bf=null;
 try {
-var f=Clazz.new_($I$(1).c$$S,[this.file]);
+var f=Clazz.new_($I$(1,1).c$$S,[this.file]);
 if (f.exists$()) {
-bf=Clazz.new_($I$(2));
-var breader=Clazz.new_($I$(3).c$$java_io_Reader,[Clazz.new_($I$(4).c$$java_io_File,[f])]);
+bf=Clazz.new_($I$(2,1));
+var breader=Clazz.new_([Clazz.new_($I$(4,1).c$$java_io_File,[f])],$I$(3,1).c$$java_io_Reader);
 var line=null;
 while (breader.ready$() && (line=breader.readLine$()) != null  ){
 bf.append$S(line);
@@ -40,4 +36,4 @@ return bf;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

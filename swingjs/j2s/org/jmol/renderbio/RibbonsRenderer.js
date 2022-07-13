@@ -1,11 +1,10 @@
 (function(){var P$=Clazz.newPackage("org.jmol.renderbio"),I$=[];
-var C$=Clazz.newClass(P$, "RibbonsRenderer", null, 'org.jmol.renderbio.MeshRibbonRenderer');
+/*c*/var C$=Clazz.newClass(P$, "RibbonsRenderer", null, 'org.jmol.renderbio.MeshRibbonRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'renderBioShape$org_jmol_shapebio_BioShape', function (bioShape) {
 if (this.wingVectors == null ) return;
@@ -15,4 +14,4 @@ if (this.wireframeOnly) this.renderStrands$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

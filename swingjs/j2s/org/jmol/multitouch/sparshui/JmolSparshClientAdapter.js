@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.multitouch.sparshui"),I$=[[0,'org.jmol.util.Logger','org.jmol.api.Interface','Thread','com.sparshui.client.ClientServerConnection']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JmolSparshClientAdapter", null, 'org.jmol.multitouch.JmolMultiTouchClientAdapter', 'com.sparshui.client.SparshClient');
+(function(){var P$=Clazz.newPackage("org.jmol.multitouch.sparshui"),I$=[[0,'org.jmol.util.Logger','org.jmol.api.Interface','Thread','com.sparshui.client.ClientServerConnection']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JmolSparshClientAdapter", null, 'org.jmol.multitouch.JmolMultiTouchClientAdapter', 'com.sparshui.client.SparshClient');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.serverConnection=null;
-this.doneHere=false;
-this.gestureServer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doneHere'],'O',['serverConnection','com.sparshui.client.ClientServerConnection','gestureServer','org.jmol.api.JmolGestureServerInterface']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'dispose$', function () {
@@ -58,7 +52,7 @@ throw e1;
 this.isServer=((this.gestureServer.getState$() & 1) != 0);
 var port=5946;
 try {
-this.serverConnection=Clazz.new_($I$(4).c$$S$com_sparshui_client_SparshClient,["127.0.0.1", this]);
+this.serverConnection=Clazz.new_($I$(4,1).c$$S$com_sparshui_client_SparshClient,["127.0.0.1", this]);
 $I$(1).info$S("SparshUI connection established at 127.0.0.1 port " + port);
 return true;
 } catch (e$$) {
@@ -135,4 +129,4 @@ break;
 this.actionManager.processMultitouchEvent$I$I$I$I$javajs_util_P3$J(groupID, type, id, iData, this.ptTemp, time);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,33 +1,21 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.Charset','java.nio.charset.CodingErrorAction','java.nio.ByteBuffer','java.nio.CharBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StreamDecoder", null, 'java.io.Reader');
-C$.channelsAvailable=false;
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.Charset','java.nio.charset.CodingErrorAction','java.nio.ByteBuffer','java.nio.CharBuffer']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StreamDecoder", null, 'java.io.Reader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.channelsAvailable=true;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isOpen=false;
-this.haveLeftoverChar=false;
-this.leftoverChar='\0';
-this.cs=null;
-this.decoder=null;
-this.bb=null;
-this.$in=null;
-this.ch=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isOpen=true;
 this.haveLeftoverChar=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'ensureOpen', function () {
+C$.$fields$=[['Z',['isOpen','haveLeftoverChar'],'C',['leftoverChar'],'O',['cs','java.nio.charset.Charset','decoder','java.nio.charset.CharsetDecoder','bb','java.nio.ByteBuffer','$in','java.io.InputStream','ch','java.nio.channels.ReadableByteChannel']]
+,['Z',['channelsAvailable']]]
+
+Clazz.newMeth(C$, 'ensureOpen',  function () {
 if (!this.isOpen) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }, p$1);
 
-Clazz.newMeth(C$, 'forInputStreamReader$java_io_InputStream$O$S', function ($in, lock, charsetName) {
+Clazz.newMeth(C$, 'forInputStreamReader$java_io_InputStream$O$S',  function ($in, lock, charsetName) {
 var csn=charsetName;
 if (csn == null ) csn=$I$(1).defaultCharset$().name$();
 try {
@@ -41,28 +29,28 @@ throw x;
 throw Clazz.new_(Clazz.load('java.io.UnsupportedEncodingException').c$$S,[csn]);
 }, 1);
 
-Clazz.newMeth(C$, 'forInputStreamReader$java_io_InputStream$O$java_nio_charset_Charset', function ($in, lock, cs) {
+Clazz.newMeth(C$, 'forInputStreamReader$java_io_InputStream$O$java_nio_charset_Charset',  function ($in, lock, cs) {
 return Clazz.new_(C$.c$$java_io_InputStream$O$java_nio_charset_Charset,[$in, lock, cs]);
 }, 1);
 
-Clazz.newMeth(C$, 'forInputStreamReader$java_io_InputStream$O$java_nio_charset_CharsetDecoder', function ($in, lock, dec) {
+Clazz.newMeth(C$, 'forInputStreamReader$java_io_InputStream$O$java_nio_charset_CharsetDecoder',  function ($in, lock, dec) {
 return Clazz.new_(C$.c$$java_io_InputStream$O$java_nio_charset_CharsetDecoder,[$in, lock, dec]);
 }, 1);
 
-Clazz.newMeth(C$, 'forDecoder$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I', function (ch, dec, minBufferCap) {
+Clazz.newMeth(C$, 'forDecoder$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I',  function (ch, dec, minBufferCap) {
 return Clazz.new_(C$.c$$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I,[ch, dec, minBufferCap]);
 }, 1);
 
-Clazz.newMeth(C$, 'getEncoding$', function () {
+Clazz.newMeth(C$, 'getEncoding$',  function () {
 if (p$1.isOpen.apply(this, [])) return this.encodingName$();
 return null;
 });
 
-Clazz.newMeth(C$, 'read$', function () {
+Clazz.newMeth(C$, 'read$',  function () {
 return p$1.read0.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'read0', function () {
+Clazz.newMeth(C$, 'read0',  function () {
 {
 if (this.haveLeftoverChar) {
 this.haveLeftoverChar=false;
@@ -83,7 +71,7 @@ return -1;
 }
 }}, p$1);
 
-Clazz.newMeth(C$, 'read$CA$I$I', function (cbuf, offset, length) {
+Clazz.newMeth(C$, 'read$CA$I$I',  function (cbuf, offset, length) {
 var off=offset;
 var len=length;
 {
@@ -94,8 +82,8 @@ throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
 var n=0;
 if (this.haveLeftoverChar) {
 cbuf[off]=this.leftoverChar;
-off++;
-len--;
+++off;
+--len;
 this.haveLeftoverChar=false;
 n=1;
 if ((len == 0) || !this.implReady$() ) return n;
@@ -107,24 +95,24 @@ return n + 1;
 }return n + this.implRead$CA$I$I(cbuf, off, off + len);
 }});
 
-Clazz.newMeth(C$, 'ready$', function () {
+Clazz.newMeth(C$, 'ready$',  function () {
 {
 p$1.ensureOpen.apply(this, []);
 return this.haveLeftoverChar || this.implReady$() ;
 }});
 
-Clazz.newMeth(C$, 'close$', function () {
+Clazz.newMeth(C$, 'close$',  function () {
 {
 if (!this.isOpen) return;
 this.implClose$();
 this.isOpen=false;
 }});
 
-Clazz.newMeth(C$, 'isOpen', function () {
+Clazz.newMeth(C$, 'isOpen',  function () {
 return this.isOpen;
 }, p$1);
 
-Clazz.newMeth(C$, 'getChannel$java_io_FileInputStream', function ($in) {
+Clazz.newMeth(C$, 'getChannel$java_io_FileInputStream',  function ($in) {
 if (!C$.channelsAvailable) return null;
 try {
 return $in.getChannel$();
@@ -138,13 +126,12 @@ throw x;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_InputStream$O$java_nio_charset_Charset', function ($in, lock, cs) {
+Clazz.newMeth(C$, 'c$$java_io_InputStream$O$java_nio_charset_Charset',  function ($in, lock, cs) {
 C$.c$$java_io_InputStream$O$java_nio_charset_CharsetDecoder.apply(this, [$in, lock, cs.newDecoder$().onMalformedInput$java_nio_charset_CodingErrorAction($I$(2).REPLACE).onUnmappableCharacter$java_nio_charset_CodingErrorAction($I$(2).REPLACE)]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_InputStream$O$java_nio_charset_CharsetDecoder', function ($in, lock, dec) {
-C$.superclazz.c$$O.apply(this, [lock]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_io_InputStream$O$java_nio_charset_CharsetDecoder',  function ($in, lock, dec) {
+;C$.superclazz.c$$O.apply(this,[lock]);C$.$init$.apply(this);
 this.cs=dec.charset$();
 this.decoder=dec;
 if (false && Clazz.instanceOf($in, "java.io.FileInputStream") ) {
@@ -157,17 +144,17 @@ this.bb=$I$(3).allocate$I(8192);
 }this.bb.flip$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I', function (ch, dec, mbc) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$java_nio_channels_ReadableByteChannel$java_nio_charset_CharsetDecoder$I',  function (ch, dec, mbc) {
+Clazz.super_(C$, this);
 this.$in=null;
 this.ch=ch;
 this.decoder=dec;
 this.cs=dec.charset$();
-this.bb=$I$(3).allocate$I(mbc < 0 ? 8192 : (mbc < 32 ? 32 : mbc));
+this.bb=$I$(3,"allocate$I",[mbc < 0 ? 8192 : (mbc < 32 ? 32 : mbc)]);
 this.bb.flip$();
 }, 1);
 
-Clazz.newMeth(C$, 'readBytes', function () {
+Clazz.newMeth(C$, 'readBytes',  function () {
 this.bb.compact$();
 try {
 if (this.ch != null ) {
@@ -192,7 +179,7 @@ Clazz.assert(C$, this, function(){return (rem != 0)}, function(){return rem});
 return rem;
 }, p$1);
 
-Clazz.newMeth(C$, 'implRead$CA$I$I', function (cbuf, off, end) {
+Clazz.newMeth(C$, 'implRead$CA$I$I',  function (cbuf, off, end) {
 Clazz.assert(C$, this, function(){return (end - off > 1)});
 var cb=$I$(4).wrap$CA$I$I(cbuf, off, end - off);
 if (cb.position$() != 0) cb=cb.slice$();
@@ -222,11 +209,11 @@ Clazz.assert(C$, this, function(){return false});
 }return cb.position$();
 });
 
-Clazz.newMeth(C$, 'encodingName$', function () {
+Clazz.newMeth(C$, 'encodingName$',  function () {
 return ((Clazz.instanceOf(this.cs, "sun.nio.cs.HistoricallyNamedCharset")) ? (this.cs).historicalName$() : this.cs.name$());
 });
 
-Clazz.newMeth(C$, 'inReady', function () {
+Clazz.newMeth(C$, 'inReady',  function () {
 try {
 return (((this.$in != null ) && (this.$in.available$() > 0) ) || (Clazz.instanceOf(this.ch, "java.nio.channels.FileChannel")) );
 } catch (x) {
@@ -238,16 +225,20 @@ throw x;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'implReady$', function () {
+Clazz.newMeth(C$, 'implReady$',  function () {
 return this.bb.hasRemaining$() || p$1.inReady.apply(this, []) ;
 });
 
-Clazz.newMeth(C$, 'implClose$', function () {
+Clazz.newMeth(C$, 'implClose$',  function () {
 if (this.ch != null ) this.ch.close$();
  else this.$in.close$();
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.channelsAvailable=true;
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:07 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

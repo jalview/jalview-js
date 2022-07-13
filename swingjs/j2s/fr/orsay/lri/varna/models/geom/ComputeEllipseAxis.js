@@ -1,13 +1,13 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.geom"),I$=[];
-var C$=Clazz.newClass(P$, "ComputeEllipseAxis");
-C$.debug=false;
+/*c*/var C$=Clazz.newClass(P$, "ComputeEllipseAxis");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.debug=false;
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['Z',['debug']]]
 
 Clazz.newMeth(C$, 'computeEllipseAxis$D$D', function (b, l) {
 if (l / 4 <= b  || b <= 0   || l <= 0  ) {
@@ -42,6 +42,10 @@ Clazz.newMeth(C$, 'fprime$D$D', function (a, b) {
 return 3.141592653589793 * (3 - (5 * b + 3 * a) / Math.sqrt(10 * a * b  + 3 * (a * a + b * b)));
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.debug=false;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

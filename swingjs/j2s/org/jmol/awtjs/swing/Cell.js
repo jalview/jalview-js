@@ -1,23 +1,15 @@
 (function(){var P$=Clazz.newPackage("org.jmol.awtjs.swing"),I$=[];
-var C$=Clazz.newClass(P$, "Cell");
+/*c*/var C$=Clazz.newClass(P$, "Cell");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.component=null;
-this.colspan=0;
-this.rowspan=0;
-this.textAlign=0;
-this.c=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['colspan','rowspan','textAlign'],'O',['component','org.jmol.awtjs.swing.JComponent','c','org.jmol.awtjs.swing.GridBagConstraints']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_awtjs_swing_JComponent$org_jmol_awtjs_swing_GridBagConstraints', function (btn, c) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.component=btn;
 this.colspan=c.gridwidth;
 this.rowspan=c.gridheight;
@@ -31,4 +23,4 @@ return "<td id='" + id + "' " + (this.colspan < 2 ? "" : "colspan='" + this.cols
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:57 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

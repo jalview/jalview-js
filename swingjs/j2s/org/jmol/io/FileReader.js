@@ -1,28 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.io"),I$=[[0,'javajs.util.AU','java.io.BufferedReader','org.jmol.util.Logger','javajs.util.PT','org.jmol.api.Interface','javajs.util.Rdr']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileReader");
+(function(){var P$=Clazz.newPackage("org.jmol.io"),I$=[[0,'javajs.util.AU','java.io.BufferedReader','org.jmol.util.Logger','javajs.util.PT','org.jmol.api.Interface','javajs.util.Rdr']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FileReader");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.fileNameIn=null;
-this.fullPathNameIn=null;
-this.nameAsGivenIn=null;
-this.fileTypeIn=null;
-this.atomSetCollection=null;
-this.readerOrDocument=null;
-this.htParams=null;
-this.isAppend=false;
-this.bytesOrStream=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAppend'],'S',['fileNameIn','fullPathNameIn','nameAsGivenIn','fileTypeIn'],'O',['vwr','org.jmol.viewer.Viewer','atomSetCollection','java.lang.Object','+readerOrDocument','htParams','java.util.Map','bytesOrStream','java.lang.Object']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$S$S$S$S$O$java_util_Map$Z', function (vwr, fileName, fullPathName, nameAsGiven, type, reader, htParams, isAppend) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 this.fileNameIn=(fileName == null  ? fullPathName : fileName);
 this.fullPathNameIn=(fullPathName == null  ? this.fileNameIn : fullPathName);
@@ -33,7 +20,7 @@ if ($I$(1).isAB$O(reader) || Clazz.instanceOf(reader, "java.io.BufferedInputStre
 this.bytesOrStream=reader;
 reader=null;
 } else if (Clazz.instanceOf(reader, "java.io.Reader") && !(Clazz.instanceOf(reader, "java.io.BufferedReader")) ) {
-reader=Clazz.new_($I$(2).c$$java_io_Reader,[reader]);
+reader=Clazz.new_($I$(2,1).c$$java_io_Reader,[reader]);
 }}this.readerOrDocument=reader;
 this.htParams=htParams;
 this.isAppend=isAppend;
@@ -60,7 +47,7 @@ name=name.replace$C$C("\\", "/");
 if (name.indexOf$S("|") >= 0 && !name.endsWith$S(".zip") ) {
 subFileList=$I$(4).split$S$S(name, "|");
 name=subFileList[0];
-}if (subFileList != null ) this.htParams.put$TK$TV("subFileList", subFileList);
+}if (subFileList != null ) this.htParams.put$O$O("subFileList", subFileList);
 var zis=t;
 var zipDirectory=this.vwr.fm.getZipDirectory$S$Z$Z(name, true, true);
 this.atomSetCollection=t=this.vwr.fm.getJzu$().getAtomSetCollectionOrBufferedReaderFromZip$org_jmol_viewer_Viewer$java_io_InputStream$S$SA$java_util_Map$I$Z(this.vwr, zis, name, zipDirectory, this.htParams, 1, false);
@@ -91,7 +78,7 @@ this.vwr.fm.setFileInfo$SA(Clazz.array(String, -1, [this.fullPathNameIn, this.fi
 });
 
 Clazz.newMeth(C$, 'getChangeableReader$org_jmol_viewer_Viewer$S$S', function (vwr, nameAsGivenIn, fullPathNameIn) {
-return $I$(6).getBR$S(vwr.getLigandModel$S$S$S$S(nameAsGivenIn, fullPathNameIn, "_file", null));
+return $I$(6,"getBR$S",[vwr.getLigandModel$S$S$S$S(nameAsGivenIn, fullPathNameIn, "_file", null)]);
 }, 1);
 
 Clazz.newMeth(C$, 'getAtomSetCollection$', function () {
@@ -100,4 +87,4 @@ return this.atomSetCollection;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

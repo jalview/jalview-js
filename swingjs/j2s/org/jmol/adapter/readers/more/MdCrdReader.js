@@ -1,19 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MdCrdReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.P3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MdCrdReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ptFloat=0;
-this.lenLine=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.ptFloat=0;
 this.lenLine=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['ptFloat','lenLine']]]
 
 Clazz.newMeth(C$, 'setup$S$java_util_Map$O', function (fullPath, htParams, readerOrDocument) {
 this.requiresBSFilter=true;
@@ -26,7 +21,7 @@ this.initializeTrajectoryFile$();
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 p$1.readCoordinates.apply(this, []);
-$I$(1).info$S("Total number of trajectory steps=" + this.trajectorySteps.size$());
+$I$(1,"info$S",["Total number of trajectory steps=" + this.trajectorySteps.size$()]);
 this.continuing=false;
 return false;
 });
@@ -39,7 +34,7 @@ var floatCount=this.templateAtomCount * 3 + (isPeriodic ? 3 : 0);
 while (true)if (this.doGetModel$I$S(++this.modelNumber, null)) {
 var trajectoryStep=Clazz.array($I$(2), [ac]);
 if (!p$1.getTrajectoryStep$javajs_util_P3A$Z.apply(this, [trajectoryStep, isPeriodic])) return;
-this.trajectorySteps.addLast$TV(trajectoryStep);
+this.trajectorySteps.addLast$O(trajectoryStep);
 if (this.isLastModel$I(this.modelNumber)) return;
 } else {
 if (!p$1.skipFloats$I.apply(this, [floatCount])) return;
@@ -86,4 +81,4 @@ return (this.line != null );
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

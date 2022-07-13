@@ -1,12 +1,31 @@
-(function(){var P$=Clazz.newPackage("swingjs.api.js"),I$=[];
-var C$=Clazz.newClass(P$, "HTML5Canvas", null, 'swingjs.api.js.DOMNode');
+(function(){var P$=Clazz.newPackage("swingjs.api.js"),I$=[[0,'swingjs.api.js.DOMNode']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*i*/var C$=Clazz.newInterface(P$, "HTML5Canvas", null, null, 'swingjs.api.js.DOMNode');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
-Clazz.newMeth(C$, '$init$', function () {
+Clazz.newMeth(C$, 'getDataBufferBytes',  function (canvas, sourceNode, w, h) {
+if (sourceNode != null ) {
+$I$(1).setAttrInt(canvas, "width", w);
+$I$(1).setAttrInt(canvas, "height", h);
+}var ctx=canvas.getContext("2d");
+if (sourceNode != null ) {
+ctx.drawImage(sourceNode, 0, 0, w, h);
+}return ctx.getImageData(0, 0, w, h).data;
 }, 1);
 
-Clazz.newMeth(C$);
+Clazz.newMeth(C$, 'setImageNode',  function (sourceNode, image) {
+{
+image._setImageNode$O$Z(sourceNode, false);
+}
+}, 1);
+
+Clazz.newMeth(C$, 'createCanvas',  function (width, height, id) {
+var canvas=$I$(1,"createElement",["canvas", (id == null  ? "img" + new Double(Math.random()).toString() : id + "")]);
+$I$(1).setStyles(canvas, ["width", width + "px", "height", height + "px"]);
+
+canvas.width = width;
+canvas.height = height;
+return canvas;
+}, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

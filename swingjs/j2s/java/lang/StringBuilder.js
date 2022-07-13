@@ -1,206 +1,167 @@
-(function(){var P$=java.lang,p$1={};
-var C$=Clazz.newClass(P$, "StringBuilder", null, 'AbstractStringBuilder', ['Appendable', 'CharSequence', 'java.io.Serializable']);
+(function(){var P$=java.lang,I$=[];
+/*c*/var C$=Clazz.newClass(P$, "StringBuilder", null, 'AbstractStringBuilder', ['java.io.Serializable', 'CharSequence']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$$I.apply(this,[16]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I',  function (capacity) {
+;C$.superclazz.c$$I.apply(this,[capacity]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (capacity) {
-C$.superclazz.c$$I.apply(this, [capacity]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S',  function (str) {
+;C$.superclazz.c$$I.apply(this,[str.length$() + 16]);C$.$init$.apply(this);
+this.append$S(str);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$CharSequence', function (seq) {
-C$.superclazz.c$$S.apply(this, [seq.toString()]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$CharSequence',  function (seq) {
+C$.c$$I.apply(this, [seq.length$() + 16]);
+this.append$CharSequence(seq);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (str) {
-C$.superclazz.c$$S.apply(this, [str]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'append$Z', function (b) {
-this.append0$S(b ? "true" : "false");
-return this;
+Clazz.newMeth(C$, 'append$O',  function (obj) {
+return C$.superclazz.prototype.append$O.apply(this, [obj]);
 });
 
-Clazz.newMeth(C$, 'append$C', function (c) {
-this.append0$C(c);
-return this;
+Clazz.newMeth(C$, 'append$S',  function (str) {
+return C$.superclazz.prototype.append$S.apply(this, [str]);
 });
 
-Clazz.newMeth(C$, 'append$I', function (i) {
-this.append0$S(Integer.toString$I(i));
-return this;
+Clazz.newMeth(C$, 'append$StringBuffer',  function (sb) {
+return C$.superclazz.prototype.append$StringBuffer.apply(this, [sb]);
 });
 
-Clazz.newMeth(C$, 'append$J', function (lng) {
-this.append0$S(Long.toString$J(lng));
-return this;
+Clazz.newMeth(C$, 'append$CharSequence',  function (s) {
+return C$.superclazz.prototype.append$CharSequence.apply(this, [s]);
 });
 
-Clazz.newMeth(C$, 'append$F', function (f) {
-this.append0$S(Float.toString$F(f));
-return this;
+Clazz.newMeth(C$, 'append$CharSequence$I$I',  function (s, start, end) {
+return C$.superclazz.prototype.append$CharSequence$I$I.apply(this, [s, start, end]);
 });
 
-Clazz.newMeth(C$, 'append$D', function (d) {
-this.append0$S(Double.toString$D(d));
-return this;
+Clazz.newMeth(C$, 'append$CA',  function (str) {
+return C$.superclazz.prototype.append$CA.apply(this, [str]);
 });
 
-Clazz.newMeth(C$, 'append$O', function (obj) {
-if (obj == null ) {
-this.appendNull$();
-} else {
-this.append0$S(obj.toString());
-}return this;
+Clazz.newMeth(C$, 'append$CA$I$I',  function (str, offset, len) {
+return C$.superclazz.prototype.append$CA$I$I.apply(this, [str, offset, len]);
 });
 
-Clazz.newMeth(C$, 'append$S', function (str) {
-this.append0$S(str);
-return this;
+Clazz.newMeth(C$, 'append$Z',  function (b) {
+return C$.superclazz.prototype.append$Z.apply(this, [b]);
 });
 
-Clazz.newMeth(C$, 'append$StringBuffer', function (sb) {
-if (sb == null ) {
-this.appendNull$();
-} else {
-this.append0$CA$I$I(sb.getValue$(), 0, sb.length$());
-}return this;
+Clazz.newMeth(C$, 'append$C',  function (c) {
+return C$.superclazz.prototype.append$C.apply(this, [c]);
 });
 
-Clazz.newMeth(C$, 'append$CA', function (ch) {
-this.append0$CA(ch);
-return this;
+Clazz.newMeth(C$, 'append$I',  function (i) {
+return C$.superclazz.prototype.append$I.apply(this, [i]);
 });
 
-Clazz.newMeth(C$, 'append$CA$I$I', function (str, offset, len) {
-this.append0$CA$I$I(str, offset, len);
-return this;
+Clazz.newMeth(C$, 'append$J',  function (lng) {
+return C$.superclazz.prototype.append$J.apply(this, [lng]);
 });
 
-Clazz.newMeth(C$, 'append$CharSequence', function (csq) {
-if (csq == null ) {
-this.appendNull$();
-} else {
-this.append0$S(csq.toString());
-}return this;
+Clazz.newMeth(C$, 'append$F',  function (f) {
+return C$.superclazz.prototype.append$F.apply(this, [f]);
 });
 
-Clazz.newMeth(C$, 'append$CharSequence$I$I', function (csq, start, end) {
-this.append0$CharSequence$I$I(csq, start, end);
-return this;
+Clazz.newMeth(C$, 'append$D',  function (d) {
+return C$.superclazz.prototype.append$D.apply(this, [d]);
 });
 
-Clazz.newMeth(C$, 'appendCodePoint$I', function (codePoint) {
-this.append0$CA(Character.toChars$I(codePoint));
-return this;
+Clazz.newMeth(C$, 'appendCodePoint$I',  function (codePoint) {
+return C$.superclazz.prototype.appendCodePoint$I.apply(this, [codePoint]);
 });
 
-Clazz.newMeth(C$, 'delete$I$I', function (start, end) {
-this.delete0$I$I(start, end);
-return this;
+Clazz.newMeth(C$, 'delete$I$I',  function (start, end) {
+return C$.superclazz.prototype.delete$I$I.apply(this, [start, end]);
 });
 
-Clazz.newMeth(C$, 'deleteCharAt$I', function (index) {
-this.deleteCharAt0$I(index);
-return this;
+Clazz.newMeth(C$, 'deleteCharAt$I',  function (index) {
+return C$.superclazz.prototype.deleteCharAt$I.apply(this, [index]);
 });
 
-Clazz.newMeth(C$, 'insert$I$Z', function (offset, b) {
-this.insert0$I$S(offset, b ? "true" : "false");
-return this;
+Clazz.newMeth(C$, 'replace$I$I$S',  function (start, end, str) {
+return C$.superclazz.prototype.replace$I$I$S.apply(this, [start, end, str]);
 });
 
-Clazz.newMeth(C$, 'insert$I$C', function (offset, c) {
-this.insert0$I$C(offset, c);
-return this;
+Clazz.newMeth(C$, 'insert$I$CA$I$I',  function (index, str, offset, len) {
+return C$.superclazz.prototype.insert$I$CA$I$I.apply(this, [index, str, offset, len]);
 });
 
-Clazz.newMeth(C$, 'insert$I$I', function (offset, i) {
-this.insert0$I$S(offset, Integer.toString$I(i));
-return this;
+Clazz.newMeth(C$, 'insert$I$O',  function (offset, obj) {
+return C$.superclazz.prototype.insert$I$O.apply(this, [offset, obj]);
 });
 
-Clazz.newMeth(C$, 'insert$I$J', function (offset, l) {
-this.insert0$I$S(offset, Long.toString$J(l));
-return this;
+Clazz.newMeth(C$, 'insert$I$S',  function (offset, str) {
+return C$.superclazz.prototype.insert$I$S.apply(this, [offset, str]);
 });
 
-Clazz.newMeth(C$, 'insert$I$F', function (offset, f) {
-this.insert0$I$S(offset, Float.toString$F(f));
-return this;
+Clazz.newMeth(C$, 'insert$I$CA',  function (offset, str) {
+return C$.superclazz.prototype.insert$I$CA.apply(this, [offset, str]);
 });
 
-Clazz.newMeth(C$, 'insert$I$D', function (offset, d) {
-this.insert0$I$S(offset, Double.toString$D(d));
-return this;
+Clazz.newMeth(C$, 'insert$I$CharSequence',  function (dstOffset, s) {
+return C$.superclazz.prototype.insert$I$CharSequence.apply(this, [dstOffset, s]);
 });
 
-Clazz.newMeth(C$, 'insert$I$O', function (offset, obj) {
-this.insert0$I$S(offset, obj == null  ? "null" : obj.toString());
-return this;
+Clazz.newMeth(C$, 'insert$I$CharSequence$I$I',  function (dstOffset, s, start, end) {
+return C$.superclazz.prototype.insert$I$CharSequence$I$I.apply(this, [dstOffset, s, start, end]);
 });
 
-Clazz.newMeth(C$, 'insert$I$S', function (offset, str) {
-this.insert0$I$S(offset, str);
-return this;
+Clazz.newMeth(C$, 'insert$I$Z',  function (offset, b) {
+return C$.superclazz.prototype.insert$I$Z.apply(this, [offset, b]);
 });
 
-Clazz.newMeth(C$, 'insert$I$CA', function (offset, ch) {
-this.insert0$I$CA(offset, ch);
-return this;
+Clazz.newMeth(C$, 'insert$I$C',  function (offset, c) {
+return C$.superclazz.prototype.insert$I$C.apply(this, [offset, c]);
 });
 
-Clazz.newMeth(C$, 'insert$I$CA$I$I', function (offset, str, strOffset, strLen) {
-this.insert0$I$CA$I$I(offset, str, strOffset, strLen);
-return this;
+Clazz.newMeth(C$, 'insert$I$I',  function (offset, i) {
+return C$.superclazz.prototype.insert$I$I.apply(this, [offset, i]);
 });
 
-Clazz.newMeth(C$, 'insert$I$CharSequence', function (offset, s) {
-this.insert0$I$S(offset, s == null  ? "null" : s.toString());
-return this;
+Clazz.newMeth(C$, 'insert$I$J',  function (offset, l) {
+return C$.superclazz.prototype.insert$I$J.apply(this, [offset, l]);
 });
 
-Clazz.newMeth(C$, 'insert$I$CharSequence$I$I', function (offset, s, start, end) {
-this.insert0$I$CharSequence$I$I(offset, s, start, end);
-return this;
+Clazz.newMeth(C$, 'insert$I$F',  function (offset, f) {
+return C$.superclazz.prototype.insert$I$F.apply(this, [offset, f]);
 });
 
-Clazz.newMeth(C$, 'replace$I$I$S', function (start, end, str) {
-this.replace0$I$I$S(start, end, str);
-return this;
+Clazz.newMeth(C$, 'insert$I$D',  function (offset, d) {
+return C$.superclazz.prototype.insert$I$D.apply(this, [offset, d]);
 });
 
-Clazz.newMeth(C$, 'reverse$', function () {
-this.reverse0$();
-return this;
+Clazz.newMeth(C$, 'indexOf$S',  function (str) {
+return C$.superclazz.prototype.indexOf$S.apply(this, [str]);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-return C$.superclazz.prototype.toString.apply(this, []);
+Clazz.newMeth(C$, 'indexOf$S$I',  function (str, fromIndex) {
+return C$.superclazz.prototype.indexOf$S$I.apply(this, [str, fromIndex]);
 });
 
-Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function ($in) {
-$in.defaultReadObject$();
-var count=$in.readInt$();
-var value=$in.readObject$();
-this.set$CA$I(value, count);
-}, p$1);
+Clazz.newMeth(C$, 'lastIndexOf$S',  function (str) {
+return C$.superclazz.prototype.lastIndexOf$S.apply(this, [str]);
+});
 
-Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (out) {
-out.defaultWriteObject$();
-out.writeInt$I(this.length$());
-out.writeObject$O(this.getValue$());
-}, p$1);
+Clazz.newMeth(C$, 'lastIndexOf$S$I',  function (str, fromIndex) {
+return C$.superclazz.prototype.lastIndexOf$S$I.apply(this, [str, fromIndex]);
+});
+
+Clazz.newMeth(C$, 'reverse$',  function () {
+return C$.superclazz.prototype.reverse$.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'toString',  function () {
+return this.秘s;
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:58 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

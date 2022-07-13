@@ -1,29 +1,7 @@
-(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'java.awt.Color','jalview.schemes.ResidueProperties']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Atom");
+(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'java.awt.Color','jalview.schemes.ResidueProperties']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Atom");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.z=0;
-this.number=0;
-this.name=null;
-this.resName=null;
-this.resNumber=0;
-this.insCode='\0';
-this.resNumIns=null;
-this.type=0;
-this.color=null;
-this.chain=null;
-this.alignmentMapping=0;
-this.atomIndex=0;
-this.occupancy=0;
-this.tfactor=0;
-this.isSelected=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.insCode=" ";
@@ -33,10 +11,12 @@ this.alignmentMapping=-1;
 this.occupancy=0;
 this.tfactor=0;
 this.isSelected=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S', function (str) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['isSelected'],'C',['insCode'],'F',['x','y','z','occupancy','tfactor'],'I',['number','resNumber','type','alignmentMapping','atomIndex'],'S',['name','resName','resNumIns','chain'],'O',['color','java.awt.Color']]]
+
+Clazz.newMeth(C$, 'c$$S',  function (str) {
+;C$.$init$.apply(this);
 this.atomIndex=Integer.parseInt$S(str.substring$I$I(6, 11).trim$());
 this.name=str.substring$I$I(12, 15).trim$();
 this.resName=str.substring$I$I(17, 20);
@@ -60,7 +40,7 @@ this.tfactor=( new Float(tm).floatValue$());
 this.tfactor=1.0;
 }}, 1);
 
-Clazz.newMeth(C$, 'equals$O', function (that) {
+Clazz.newMeth(C$, 'equals$O',  function (that) {
 if (this === that  || that == null  ) {
 return true;
 }if (Clazz.instanceOf(that, "mc_view.Atom")) {
@@ -69,8 +49,8 @@ return other.resName.equals$O(this.resName) && other.resNumber == this.resNumber
 }return false;
 });
 
-Clazz.newMeth(C$, 'c$$F$F$F', function (x, y, z) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$F$F$F',  function (x, y, z) {
+;C$.$init$.apply(this);
 this.x=x;
 this.y=y;
 this.z=z;
@@ -78,4 +58,4 @@ this.z=z;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,72 +1,80 @@
-(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'javax.swing.border.LineBorder','java.awt.Color','java.awt.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScrollPane", null, 'javax.swing.JScrollPane');
+(function(){var P$=Clazz.newPackage("swingjs.a2s"),I$=[[0,'java.awt.Point','java.awt.Dimension']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScrollPane", null, 'javax.swing.JScrollPane');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'isAWT$', function () {
+Clazz.newMeth(C$, 'isAWT$',  function () {
 });
 
-Clazz.newMeth(C$, 'isAWTContainer$', function () {
+Clazz.newMeth(C$, 'isAWTContainer$',  function () {
 });
 
-Clazz.newMeth(C$, 'c$', function () {
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$I.apply(this, [0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (scrollbars) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I',  function (scrollbars) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 switch (scrollbars) {
 case 2:
-this.setVerticalScrollBarPolicy$I(21);
-this.setHorizontalScrollBarPolicy$I(31);
+C$.superclazz.prototype.setVerticalScrollBarPolicy$I.apply(this, [21]);
+C$.superclazz.prototype.setHorizontalScrollBarPolicy$I.apply(this, [31]);
 break;
 case 1:
-this.setVerticalScrollBarPolicy$I(22);
-this.setHorizontalScrollBarPolicy$I(32);
+C$.superclazz.prototype.setVerticalScrollBarPolicy$I.apply(this, [22]);
+C$.superclazz.prototype.setHorizontalScrollBarPolicy$I.apply(this, [32]);
 break;
 case 0:
 break;
 }
-this.setBorder$javax_swing_border_Border(Clazz.new_($I$(1).c$$java_awt_Color,[$I$(2).black]));
+C$.superclazz.prototype.setOpaque$Z.apply(this, [true]);
 }, 1);
 
-Clazz.newMeth(C$, 'add$java_awt_Component', function (c) {
-this.getViewport$().add$java_awt_Component(c);
+Clazz.newMeth(C$, 'add$java_awt_Component',  function (c) {
+C$.superclazz.prototype.getViewport$.apply(this, []).add$java_awt_Component(c);
+if (!C$.superclazz.prototype.isBackgroundSet$.apply(this, []) && c.isBackgroundSet$() ) C$.superclazz.prototype.setBackground$java_awt_Color.apply(this, [c.getBackground$()]);
 return c;
 });
 
-Clazz.newMeth(C$, 'getVAdjustable$', function () {
-return this.getVerticalScrollBar$();
+Clazz.newMeth(C$, 'getVAdjustable$',  function () {
+return C$.superclazz.prototype.getVerticalScrollBar$.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'getHAdjustable$', function () {
-return this.getHorizontalScrollBar$();
+Clazz.newMeth(C$, 'getHAdjustable$',  function () {
+return C$.superclazz.prototype.getHorizontalScrollBar$.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'setScrollPosition$I$I', function (x, y) {
-/*sync org.eclipse.jdt.core.dom.MethodInvocation*/(this.getTreeLock$());
+Clazz.newMeth(C$, 'setScrollPosition$I$I',  function (x, y) {
+/*sync org.eclipse.jdt.core.dom.SuperMethodInvocation*/(C$.superclazz.prototype.getTreeLock$.apply(this, []));
 {
-if (this.getComponentCount$() == 0) {
+if (C$.superclazz.prototype.getComponentCount$.apply(this, []) == 0) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["child is null"]);
-}this.getHorizontalScrollBar$().setValue$I(x);
-this.getVerticalScrollBar$().setValue$I(y);
+}C$.superclazz.prototype.getHorizontalScrollBar$.apply(this, []).setValue$I(x);
+C$.superclazz.prototype.getVerticalScrollBar$.apply(this, []).setValue$I(y);
 }});
 
-Clazz.newMeth(C$, 'setScrollPosition$java_awt_Point', function (p) {
+Clazz.newMeth(C$, 'setScrollPosition$java_awt_Point',  function (p) {
 this.setScrollPosition$I$I(p.x, p.y);
 });
 
-Clazz.newMeth(C$, 'getScrollPosition$', function () {
-/*sync org.eclipse.jdt.core.dom.MethodInvocation*/(this.getTreeLock$());
+Clazz.newMeth(C$, 'getScrollPosition$',  function () {
+/*sync org.eclipse.jdt.core.dom.SuperMethodInvocation*/(C$.superclazz.prototype.getTreeLock$.apply(this, []));
 {
-if (this.getComponentCount$() == 0) {
+if (C$.superclazz.prototype.getComponentCount$.apply(this, []) == 0) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["child is null"]);
-}return Clazz.new_($I$(3).c$$I$I,[this.getHorizontalScrollBar$().getValue$(), this.getVerticalScrollBar$().getValue$()]);
+}return Clazz.new_([C$.superclazz.prototype.getHorizontalScrollBar$.apply(this, []).getValue$(), C$.superclazz.prototype.getVerticalScrollBar$.apply(this, []).getValue$()],$I$(1,1).c$$I$I);
 }});
+
+Clazz.newMeth(C$, 'getViewportSize$',  function () {
+var i=this.getInsets$();
+return Clazz.new_($I$(2,1).c$$I$I,[this.width - i.right - i.left , this.height - i.top - i.bottom ]);
+});
+
+Clazz.newMeth(C$, 'getInsets$',  function () {
+return this.秘getInsets$();
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:20 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

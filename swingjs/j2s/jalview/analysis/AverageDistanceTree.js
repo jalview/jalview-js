@@ -1,18 +1,16 @@
 (function(){var P$=Clazz.newPackage("jalview.analysis"),I$=[];
-var C$=Clazz.newClass(P$, "AverageDistanceTree", null, 'jalview.analysis.TreeBuilder');
+/*c*/var C$=Clazz.newClass(P$, "AverageDistanceTree", null, 'jalview.analysis.TreeBuilder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$jalview_viewmodel_AlignmentViewport$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI',  function (av, sm, scoreParameters) {
+;C$.superclazz.c$$jalview_viewmodel_AlignmentViewport$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI.apply(this,[av, sm, scoreParameters]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_viewmodel_AlignmentViewport$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI', function (av, sm, scoreParameters) {
-C$.superclazz.c$$jalview_viewmodel_AlignmentViewport$jalview_api_analysis_ScoreModelI$jalview_api_analysis_SimilarityParamsI.apply(this, [av, sm, scoreParameters]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'findClusterDistance$I$I', function (i, j) {
+Clazz.newMeth(C$, 'findClusterDistance$I$I',  function (i, j) {
 var noi=this.clusters.elementAt$I(i).cardinality$();
 var noj=this.clusters.elementAt$I(j).cardinality$();
 var newdist=Clazz.array(Double.TYPE, [this.noseqs]);
@@ -28,7 +26,7 @@ this.distances.setValue$I$I$D(ii, i, newdist[ii]);
 }
 });
 
-Clazz.newMeth(C$, 'findMinDistance$', function () {
+Clazz.newMeth(C$, 'findMinDistance$',  function () {
 var min=1.7976931348623157E308;
 for (var i=0; i < (this.noseqs - 1); i++) {
 for (var j=i + 1; j < this.noseqs; j++) {
@@ -42,7 +40,7 @@ min=this.distances.getValue$I$I(i, j);
 return min;
 });
 
-Clazz.newMeth(C$, 'findNewDistances$jalview_datamodel_SequenceNode$jalview_datamodel_SequenceNode$D', function (nodei, nodej, dist) {
+Clazz.newMeth(C$, 'findNewDistances$jalview_datamodel_SequenceNode$jalview_datamodel_SequenceNode$D',  function (nodei, nodej, dist) {
 var ih=0;
 var jh=0;
 var sni=nodei;
@@ -61,4 +59,4 @@ nodej.dist=((dist / 2) - jh);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:25 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

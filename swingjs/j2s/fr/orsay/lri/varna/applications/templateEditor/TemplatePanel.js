@@ -1,47 +1,18 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,'java.awt.Color',['fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','.RelativePosition'],['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','java.util.ArrayList','java.util.Hashtable','fr.orsay.lri.varna.models.templates.RNATemplate','fr.orsay.lri.varna.applications.templateEditor.MouseControler','java.awt.BasicStroke','fr.orsay.lri.varna.applications.templateEditor.Couple','fr.orsay.lri.varna.applications.templateEditor.Connection','java.util.Stack','java.util.HashMap','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','java.awt.RenderingHints','java.awt.Rectangle','java.awt.Dimension','fr.orsay.lri.varna.applications.templateEditor.Helix','fr.orsay.lri.varna.applications.templateEditor.UnpairedRegion','javax.swing.JOptionPane']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TemplatePanel", null, 'javax.swing.JPanel');
-C$.BackgroundColors=null;
-C$.scaleFactorDefault=0;
-C$._colors=null;
-C$.CYCLE_COLOR=null;
-C$.NON_EXISTANT_COLOR=null;
-C$.CONTROL_COLOR=null;
-C$.BACKGROUND_COLOR=null;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,'java.awt.Color',['fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','.RelativePosition'],['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','java.util.ArrayList','java.util.Hashtable','fr.orsay.lri.varna.models.templates.RNATemplate','fr.orsay.lri.varna.applications.templateEditor.MouseControler','java.awt.BasicStroke','fr.orsay.lri.varna.applications.templateEditor.Couple','fr.orsay.lri.varna.applications.templateEditor.Connection','java.util.Stack','java.util.HashMap','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','java.awt.RenderingHints','java.awt.Rectangle','java.awt.Dimension','fr.orsay.lri.varna.applications.templateEditor.Helix','fr.orsay.lri.varna.applications.templateEditor.UnpairedRegion','javax.swing.JOptionPane']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TemplatePanel", null, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.BackgroundColors=Clazz.array($I$(1), -1, [$I$(1).blue, $I$(1).red, $I$(1).cyan, $I$(1).green, $I$(1).lightGray, $I$(1).magenta, $I$(1).PINK]);
-C$.scaleFactorDefault=0.7;
-C$._colors=Clazz.array($I$(1), -1, [$I$(1).gray, $I$(1).pink, $I$(1).cyan, $I$(1).RED, $I$(1).green, $I$(1).orange]);
-C$.CYCLE_COLOR=$I$(1).red;
-C$.NON_EXISTANT_COLOR=$I$(1).gray.brighter$();
-C$.CONTROL_COLOR=$I$(1).gray.darker$();
-C$.BACKGROUND_COLOR=$I$(1).white;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._RNAComponents=null;
-this._RNAConnections=null;
-this._helixToConnection=null;
-this._ui=null;
-this._template=null;
-this._nextBackgroundColor=0;
-this.scaleFactor=0;
-this._editor=null;
-this._selected=null;
-this._relpos=null;
-this._mousePos=null;
-this._solidStroke=null;
-this._dashedStroke=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._nextBackgroundColor=0;
 this.scaleFactor=C$.scaleFactorDefault;
 this._selected=null;
 this._relpos=$I$(2).RP_OUTER;
-this._mousePos=Clazz.new_($I$(3));
-}, 1);
+this._mousePos=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['D',['scaleFactor'],'I',['_nextBackgroundColor'],'O',['_RNAComponents','java.util.ArrayList','+_RNAConnections','_helixToConnection','java.util.Hashtable','_ui','fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','_template','fr.orsay.lri.varna.models.templates.RNATemplate','_editor','fr.orsay.lri.varna.applications.templateEditor.TemplateEditor','_selected','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','_relpos','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement.RelativePosition','_mousePos','java.awt.geom.Point2D.Double','_solidStroke','java.awt.Stroke','+_dashedStroke']]
+,['D',['scaleFactorDefault'],'O',['BackgroundColors','java.awt.Color[]','+_colors','CYCLE_COLOR','java.awt.Color','+NON_EXISTANT_COLOR','+CONTROL_COLOR','+BACKGROUND_COLOR']]]
 
 Clazz.newMeth(C$, 'getScaleFactor$', function () {
 return this.scaleFactor;
@@ -54,11 +25,11 @@ this.scaleFactor=scaleFactor;
 Clazz.newMeth(C$, 'nextBackgroundColor$', function () {
 var c=C$.BackgroundColors[this._nextBackgroundColor++];
 this._nextBackgroundColor=this._nextBackgroundColor % C$.BackgroundColors.length;
-return Clazz.new_($I$(1).c$$I$I$I$I,[c.getRed$(), c.getBlue$(), c.getGreen$(), 50]);
+return Clazz.new_([c.getRed$(), c.getBlue$(), c.getGreen$(), 50],$I$(1,1).c$$I$I$I$I);
 });
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_applications_templateEditor_TemplateEditor', function (parent) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._editor=parent;
 p$1.init.apply(this, []);
 }, 1);
@@ -72,19 +43,19 @@ return this._RNAComponents;
 });
 
 Clazz.newMeth(C$, 'init', function () {
-this._ui=Clazz.new_($I$(4).c$$fr_orsay_lri_varna_applications_templateEditor_TemplatePanel,[this]);
-this._RNAComponents=Clazz.new_($I$(5));
-this._RNAConnections=Clazz.new_($I$(5));
-this._helixToConnection=Clazz.new_($I$(6));
-this._template=Clazz.new_($I$(7));
+this._ui=Clazz.new_($I$(4,1).c$$fr_orsay_lri_varna_applications_templateEditor_TemplatePanel,[this]);
+this._RNAComponents=Clazz.new_($I$(5,1));
+this._RNAConnections=Clazz.new_($I$(5,1));
+this._helixToConnection=Clazz.new_($I$(6,1));
+this._template=Clazz.new_($I$(7,1));
 this.setBackground$java_awt_Color($I$(1).WHITE);
-var mc=Clazz.new_($I$(8).c$$fr_orsay_lri_varna_applications_templateEditor_TemplatePanel$fr_orsay_lri_varna_applications_templateEditor_TemplateEditorPanelUI,[this, this._ui]);
+var mc=Clazz.new_($I$(8,1).c$$fr_orsay_lri_varna_applications_templateEditor_TemplatePanel$fr_orsay_lri_varna_applications_templateEditor_TemplateEditorPanelUI,[this, this._ui]);
 this.addMouseListener$java_awt_event_MouseListener(mc);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(mc);
 this.addMouseWheelListener$java_awt_event_MouseWheelListener(mc);
-this._solidStroke=Clazz.new_($I$(9).c$$F$I$I$F,[1.5, 1, 1, 3.0]);
+this._solidStroke=Clazz.new_($I$(9,1).c$$F$I$I$F,[1.5, 1, 1, 3.0]);
 var dash=Clazz.array(Float.TYPE, -1, [5.0, 5.0]);
-this._dashedStroke=Clazz.new_($I$(9).c$$F$I$I$F$FA$F,[1.5, 1, 1, 3.0, dash, 0]);
+this._dashedStroke=Clazz.new_($I$(9,1).c$$F$I$I$F$FA$F,[1.5, 1, 1, 3.0, dash, 0]);
 }, p$1);
 
 Clazz.newMeth(C$, 'addUndoableEditListener$javax_swing_undo_UndoManager', function (manager) {
@@ -100,7 +71,7 @@ h.toggleFlipped$();
 });
 
 Clazz.newMeth(C$, 'addElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement', function (h) {
-this._RNAComponents.add$TE(h);
+this._RNAComponents.add$O(h);
 });
 
 Clazz.newMeth(C$, 'removeElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement', function (h) {
@@ -181,9 +152,9 @@ return h;
 });
 
 Clazz.newMeth(C$, 'addConnection$fr_orsay_lri_varna_applications_templateEditor_Connection', function (c) {
-this._RNAConnections.add$TE(c);
-this._helixToConnection.put$TK$TV(Clazz.new_($I$(10).c$$TT$TU,[c._h1, c._edge1]), c);
-this._helixToConnection.put$TK$TV(Clazz.new_($I$(10).c$$TT$TU,[c._h2, c._edge2]), c);
+this._RNAConnections.add$O(c);
+this._helixToConnection.put$O$O(Clazz.new_($I$(10,1).c$$O$O,[c._h1, c._edge1]), c);
+this._helixToConnection.put$O$O(Clazz.new_($I$(10,1).c$$O$O,[c._h2, c._edge2]), c);
 try {
 c._h1.attach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c._h2, c._edge1, c._edge2);
 c._h2.attach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c._h1, c._edge2, c._edge1);
@@ -198,47 +169,47 @@ throw e;
 
 Clazz.newMeth(C$, 'addConnection$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition', function (h1, edge1, h2, edge2) {
 if ((h1 !== h2 ) && (this.getPartner$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(h1, edge1) == null ) && (this.getPartner$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(h2, edge2) == null )  ) {
-var c=Clazz.new_($I$(11).c$$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition,[h1, edge1, h2, edge2]);
+var c=Clazz.new_($I$(11,1).c$$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition,[h1, edge1, h2, edge2]);
 this.addConnection$fr_orsay_lri_varna_applications_templateEditor_Connection(c);
 return c;
 }return null;
 });
 
 Clazz.newMeth(C$, 'addGraphicalConnection$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition', function (h1, edge1, h2, edge2) {
-var c=Clazz.new_($I$(11).c$$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition,[h1, edge1, h2, edge2]);
-this._RNAConnections.add$TE(c);
-this._helixToConnection.put$TK$TV(Clazz.new_($I$(10).c$$TT$TU,[c._h1, c._edge1]), c);
-this._helixToConnection.put$TK$TV(Clazz.new_($I$(10).c$$TT$TU,[c._h2, c._edge2]), c);
+var c=Clazz.new_($I$(11,1).c$$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition,[h1, edge1, h2, edge2]);
+this._RNAConnections.add$O(c);
+this._helixToConnection.put$O$O(Clazz.new_($I$(10,1).c$$O$O,[c._h1, c._edge1]), c);
+this._helixToConnection.put$O$O(Clazz.new_($I$(10,1).c$$O$O,[c._h2, c._edge2]), c);
 c._h1.graphicalAttach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c._h2, c._edge1, c._edge2);
 c._h2.graphicalAttach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c._h1, c._edge2, c._edge1);
 });
 
 Clazz.newMeth(C$, 'removeConnection$fr_orsay_lri_varna_applications_templateEditor_Connection', function (c) {
 this._RNAConnections.remove$O(c);
-this._helixToConnection.remove$O(Clazz.new_($I$(10).c$$TT$TU,[c._h1, c._edge1]));
-this._helixToConnection.remove$O(Clazz.new_($I$(10).c$$TT$TU,[c._h2, c._edge2]));
+this._helixToConnection.remove$O(Clazz.new_($I$(10,1).c$$O$O,[c._h1, c._edge1]));
+this._helixToConnection.remove$O(Clazz.new_($I$(10,1).c$$O$O,[c._h2, c._edge2]));
 System.out.println$S("[A]" + c);
 c._h1.detach$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c._edge1);
 });
 
 Clazz.newMeth(C$, 'isInCycle$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition', function (el, edge) {
-var p=Clazz.new_($I$(12));
-var alreadySeen=Clazz.new_($I$(6));
-p.add$TE(Clazz.new_($I$(10).c$$TT$TU,[el, edge]));
+var p=Clazz.new_($I$(12,1));
+var alreadySeen=Clazz.new_($I$(6,1));
+p.add$O(Clazz.new_($I$(10,1).c$$O$O,[el, edge]));
 while (!p.empty$()){
 var c2=p.pop$();
 if (alreadySeen.containsKey$O(c2)) {
 return true;
 } else {
-alreadySeen.put$TK$TV(c2,  new Integer(1));
+alreadySeen.put$O$O(c2,  new Integer(1));
 }var next=c2.first.getConnectedEdge$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c2.second);
-var otherEnd=Clazz.new_($I$(10).c$$TT$TU,[c2.first, next]);
+var otherEnd=Clazz.new_($I$(10,1).c$$O$O,[c2.first, next]);
 if (!alreadySeen.containsKey$O(otherEnd)) {
-p.push$TE(otherEnd);
+p.push$O(otherEnd);
 } else {
 var child=this.getPartner$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c2.first, c2.second);
 if (child != null ) {
-p.push$TE(child);
+p.push$O(child);
 }}}
 return false;
 });
@@ -248,26 +219,26 @@ return C$._colors[n % C$._colors.length];
 }, 1);
 
 Clazz.newMeth(C$, 'buildConnectedComponents$', function () {
-var alreadySeen=Clazz.new_($I$(13));
+var alreadySeen=Clazz.new_($I$(13,1));
 var numConnectedComponents=0;
 for (var el, $el = this._RNAComponents.iterator$(); $el.hasNext$()&&((el=($el.next$())),1);) {
 for (var edge, $edge = el.getConnectedEdges$().iterator$(); $edge.hasNext$()&&((edge=($edge.next$())),1);) {
-var c=Clazz.new_($I$(10).c$$TT$TU,[el, edge]);
+var c=Clazz.new_($I$(10,1).c$$O$O,[el, edge]);
 if (!alreadySeen.containsKey$O(c)) {
-var p=Clazz.new_($I$(12));
-p.add$TE(c);
-p.add$TE(Clazz.new_($I$(10).c$$TT$TU,[el, el.getConnectedEdge$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(edge)]));
+var p=Clazz.new_($I$(12,1));
+p.add$O(c);
+p.add$O(Clazz.new_([el, el.getConnectedEdge$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(edge)],$I$(10,1).c$$O$O));
 while (!p.empty$()){
 var c2=p.pop$();
 if (!alreadySeen.containsKey$O(c2)) {
 c2.first.setMainColor$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition$java_awt_Color(c2.second, C$.getIndexedColor$I(numConnectedComponents));
-alreadySeen.put$TK$TV(c2,  new Integer(numConnectedComponents));
+alreadySeen.put$O$O(c2,  new Integer(numConnectedComponents));
 var next=c2.first.getConnectedEdge$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c2.second);
-var otherEnd=Clazz.new_($I$(10).c$$TT$TU,[c2.first, next]);
-p.push$TE(otherEnd);
+var otherEnd=Clazz.new_($I$(10,1).c$$O$O,[c2.first, next]);
+p.push$O(otherEnd);
 var child=this.getPartner$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(c2.first, c2.second);
 if (child != null ) {
-p.push$TE(child);
+p.push$O(child);
 }}}
 numConnectedComponents+=1;
 }}
@@ -283,15 +254,15 @@ Clazz.newMeth(C$, 'getPartner$fr_orsay_lri_varna_applications_templateEditor_Gra
 var c=this.getConnection$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition(h, edge);
 if (c != null ) {
 if ((c._h1 === h ) && (c._edge1 === edge ) ) {
-return Clazz.new_($I$(10).c$$TT$TU,[c._h2, c._edge2]);
+return Clazz.new_($I$(10,1).c$$O$O,[c._h2, c._edge2]);
 } else {
-return Clazz.new_($I$(10).c$$TT$TU,[c._h1, c._edge1]);
+return Clazz.new_($I$(10,1).c$$O$O,[c._h1, c._edge1]);
 }} else {
 return null;
 }});
 
 Clazz.newMeth(C$, 'getConnection$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement$fr_orsay_lri_varna_applications_templateEditor_GraphicalTemplateElement_RelativePosition', function (h, edge) {
-var target=Clazz.new_($I$(10).c$$TT$TU,[h, edge]);
+var target=Clazz.new_($I$(10,1).c$$O$O,[h, edge]);
 if (this._helixToConnection.containsKey$O(target)) {
 return this._helixToConnection.get$O(target);
 } else {
@@ -357,7 +328,7 @@ maxX=Math.max(maxX, r.x + r.width);
 minY=Math.min(minY, r.y);
 maxY=Math.max(maxY, r.y + r.height);
 }
-var res=Clazz.new_($I$(16));
+var res=Clazz.new_($I$(16,1));
 res.x=minX;
 res.y=minY;
 res.width=maxX - minX;
@@ -375,12 +346,12 @@ h.translate$D$D(rect.x < 0 ? -rect.x : 0, rect.y < 0 ? -rect.y : 0);
 rect=this.getBoundingRectange$();
 }var areaW=(((rect.width + 100) * this.scaleFactor)|0);
 var areaH=(((rect.height + 100) * this.scaleFactor)|0);
-this.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17).c$$I$I,[areaW, areaH]));
+this.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[areaW, areaH]));
 this.revalidate$();
 });
 
 Clazz.newMeth(C$, 'clearTemplate$', function () {
-this.loadTemplate$fr_orsay_lri_varna_models_templates_RNATemplate(Clazz.new_($I$(7)));
+this.loadTemplate$fr_orsay_lri_varna_models_templates_RNATemplate(Clazz.new_($I$(7,1)));
 });
 
 Clazz.newMeth(C$, 'loadTemplate$fr_orsay_lri_varna_models_templates_RNATemplate', function (template) {
@@ -388,23 +359,23 @@ this._template=template;
 this._RNAComponents.clear$();
 this._RNAConnections.clear$();
 this._helixToConnection.clear$();
-var map=Clazz.new_($I$(13));
+var map=Clazz.new_($I$(13,1));
 {
 var iter=template.classicIterator$();
 while (iter.hasNext$()){
 var templateElement=iter.next$();
 if (Clazz.instanceOf(templateElement, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateHelix")) {
 var templateHelix=templateElement;
-var graphicalHelix=Clazz.new_($I$(18).c$$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix,[templateHelix]);
+var graphicalHelix=Clazz.new_($I$(18,1).c$$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix,[templateHelix]);
 graphicalHelix.setDominantColor$java_awt_Color(this.nextBackgroundColor$());
-this._RNAComponents.add$TE(graphicalHelix);
-map.put$TK$TV(templateHelix, graphicalHelix);
+this._RNAComponents.add$O(graphicalHelix);
+map.put$O$O(templateHelix, graphicalHelix);
 } else if (Clazz.instanceOf(templateElement, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence")) {
 var templateSequence=templateElement;
-var graphicalSequence=Clazz.new_($I$(19).c$$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateUnpairedSequence,[templateSequence]);
+var graphicalSequence=Clazz.new_($I$(19,1).c$$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateUnpairedSequence,[templateSequence]);
 graphicalSequence.setDominantColor$java_awt_Color(this.nextBackgroundColor$());
-this._RNAComponents.add$TE(graphicalSequence);
-map.put$TK$TV(templateSequence, graphicalSequence);
+this._RNAComponents.add$O(graphicalSequence);
+map.put$O$O(templateSequence, graphicalSequence);
 }}
 }{
 var iter=template.makeEdgeList$().iterator$();
@@ -427,7 +398,7 @@ this.loadTemplate$fr_orsay_lri_varna_models_templates_RNATemplate(newTemplate);
 } catch (e) {
 if (Clazz.exceptionOf(e,"fr.orsay.lri.varna.exceptions.ExceptionXmlLoading")){
 e.printStackTrace$();
-$I$(20).showMessageDialog$java_awt_Component$O$S$I(this, e.getMessage$(), "Template loading error", 0);
+$I$(20,"showMessageDialog$java_awt_Component$O$S$I",[this, e.getMessage$(), "Template loading error", 0]);
 } else {
 throw e;
 }
@@ -476,6 +447,16 @@ this._editor.getJp$().getHorizontalScrollBar$().setValue$I(newX);
 this._editor.getJp$().getVerticalScrollBar$().setValue$I(newY);
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.BackgroundColors=Clazz.array($I$(1), -1, [$I$(1).blue, $I$(1).red, $I$(1).cyan, $I$(1).green, $I$(1).lightGray, $I$(1).magenta, $I$(1).PINK]);
+C$.scaleFactorDefault=0.7;
+C$._colors=Clazz.array($I$(1), -1, [$I$(1).gray, $I$(1).pink, $I$(1).cyan, $I$(1).RED, $I$(1).green, $I$(1).orange]);
+C$.CYCLE_COLOR=$I$(1).red;
+C$.NON_EXISTANT_COLOR=$I$(1).gray.brighter$();
+C$.CONTROL_COLOR=$I$(1).gray.darker$();
+C$.BACKGROUND_COLOR=$I$(1).white;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

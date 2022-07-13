@@ -1,20 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.AU','javajs.util.Lst','javajs.util.PT','org.jmol.adapter.readers.quantum.BasisFunctionReader','Boolean','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JaguarReader", null, 'org.jmol.adapter.readers.quantum.MOReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.AU','javajs.util.Lst','javajs.util.PT','org.jmol.adapter.readers.quantum.BasisFunctionReader','java.util.Hashtable']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JaguarReader", null, 'org.jmol.adapter.readers.quantum.MOReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.moCount=0;
-this.lumoEnergy=0;
-this.haveLine=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.moCount=0;
 this.lumoEnergy=3.4028235E38;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveLine'],'F',['lumoEnergy'],'I',['moCount']]]
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 if (this.line.startsWith$S(" Input geometry:") || this.line.startsWith$S(" Symmetrized geometry:") || this.line.startsWith$S("  final geometry:")  ) {
@@ -27,8 +21,8 @@ return true;
 this.moCount=this.parseIntAt$S$I(this.line, 32);
 return true;
 }if (this.line.startsWith$S("  basis set:")) {
-this.moData.put$TK$TV("energyUnits", "");
-this.moData.put$TK$TV("calculationType", this.calculationType=this.line.substring$I(13).trim$());
+this.moData.put$O$O("energyUnits", "");
+this.moData.put$O$O("calculationType", this.calculationType=this.line.substring$I(13).trim$());
 if ("sto-3g".equals$O(this.calculationType)) {
 $I$(1).error$S("STO-3G not supported for Jaguar -- unusual SP basis definition.");
 }return true;
@@ -95,17 +89,17 @@ sdata[iFunc][0]=iAtom;
 sdata[iFunc][1]=iType;
 sdata[iFunc][2]=0;
 sdata[iFunc][3]=0;
-sgdata[iFunc]=Clazz.new_($I$(3));
+sgdata[iFunc]=Clazz.new_($I$(3,1));
 }var factor=1;
-sgdata[iFunc].addLast$TV(Clazz.array(Float.TYPE, -1, [this.parseFloatStr$S(tokens[6]), this.parseFloatStr$S(tokens[8]) * factor]));
+sgdata[iFunc].addLast$O(Clazz.array(Float.TYPE, -1, [this.parseFloatStr$S(tokens[6]), this.parseFloatStr$S(tokens[8]) * factor]));
 this.gaussianCount+=jCont;
 for (var i=jCont - 1; --i >= 0; ) {
-tokens=$I$(4).getTokens$S(this.rd$());
-sgdata[iFunc].addLast$TV(Clazz.array(Float.TYPE, -1, [this.parseFloatStr$S(tokens[6]), this.parseFloatStr$S(tokens[8]) * factor]));
+tokens=$I$(4,"getTokens$S",[this.rd$()]);
+sgdata[iFunc].addLast$O(Clazz.array(Float.TYPE, -1, [this.parseFloatStr$S(tokens[6]), this.parseFloatStr$S(tokens[8]) * factor]));
 }
 }}
 var garray=$I$(2).newFloat2$I(this.gaussianCount);
-var sarray=Clazz.new_($I$(3));
+var sarray=Clazz.new_($I$(3,1));
 this.gaussianCount=0;
 for (var i=0; i < this.moCount; i++) if (sgdata[i] != null ) {
 var n=sgdata[i].size$();
@@ -114,12 +108,12 @@ sdata[i][3]=n;
 for (var j=0; j < n; j++) {
 garray[this.gaussianCount++]=sgdata[i].get$I(j);
 }
-sarray.addLast$TV(sdata[i]);
+sarray.addLast$O(sdata[i]);
 }
-this.moData.put$TK$TV("shells", sarray);
-this.moData.put$TK$TV("gaussians", garray);
+this.moData.put$O$O("shells", sarray);
+this.moData.put$O$O("gaussians", garray);
 if (this.debugging) {
-$I$(1).debug$S(sarray.size$() + " slater shells read");
+$I$(1,"debug$S",[sarray.size$() + " slater shells read"]);
 $I$(1).debug$S(this.gaussianCount + " gaussian primitives read");
 }}, p$1);
 
@@ -129,8 +123,8 @@ var iAtom=0;
 var id;
 var iFunc=0;
 var iFuncLast=-1;
-var sarray=Clazz.new_($I$(3));
-var gdata=Clazz.new_($I$(3));
+var sarray=Clazz.new_($I$(3,1));
+var gdata=Clazz.new_($I$(3,1));
 this.gaussianCount=0;
 var sdata=null;
 this.discardLinesUntilContains$S("--------");
@@ -163,23 +157,23 @@ break;
 }}
 } else {
 sdata=Clazz.array(Integer.TYPE, -1, [iAtom, iType, this.gaussianCount + 1, 1, iFunc]);
-sarray.addLast$TV(sdata);
+sarray.addLast$O(sdata);
 iFuncLast=iFunc;
 }this.gaussianCount++;
 var z=this.parseFloatStr$S(tokens[4]);
 var rCoef=this.parseFloatStr$S(tokens[5]);
 if (id.equals$O("XX")) rCoef *= 1.7320508;
-gdata.add$I$TE(gPtr, Clazz.array(Float.TYPE, -1, [z, rCoef, iFunc]));
+gdata.add$I$O(gPtr, Clazz.array(Float.TYPE, -1, [z, rCoef, iFunc]));
 }
 var garray=$I$(2).newFloat2$I(this.gaussianCount);
 for (var i=gdata.size$(); --i >= 0; ) garray[i]=gdata.get$I(i);
 
-this.moData.put$TK$TV("shells", this.shells=sarray);
-this.moData.put$TK$TV("gaussians", garray);
+this.moData.put$O$O("shells", this.shells=sarray);
+this.moData.put$O$O("gaussians", garray);
 if (this.debugging) {
-$I$(1).debug$S(sarray.size$() + " slater shells read");
+$I$(1,"debug$S",[sarray.size$() + " slater shells read"]);
 $I$(1).debug$S(this.gaussianCount + " gaussian primitives read");
-}this.moData.put$TK$TV("isNormalized", $I$(6).TRUE);
+}this.moData.put$O$O("isNormalized", Boolean.TRUE);
 }, p$1);
 
 Clazz.newMeth(C$, 'readJaguarMolecularOrbitals', function () {
@@ -199,23 +193,23 @@ this.fillDataBlock$SAA$I(dataBlock, 0);
 var occ=2;
 for (var iOrb=0; iOrb < n; iOrb++) {
 var coefs=Clazz.array(Float.TYPE, [this.moCount]);
-var mo=Clazz.new_($I$(7));
+var mo=Clazz.new_($I$(6,1));
 var energy=this.parseFloatStr$S(eigenValues[iOrb + 1]);
-mo.put$TK$TV("energy", Float.valueOf$F(energy));
+mo.put$O$O("energy", Float.valueOf$F(energy));
 if (Math.abs(energy - this.lumoEnergy) < 1.0E-4 ) {
-this.moData.put$TK$TV("HOMO", Integer.valueOf$I(nMo));
+this.moData.put$O$O("HOMO", Integer.valueOf$I(nMo));
 this.lumoEnergy=3.4028235E38;
 occ=0;
-}mo.put$TK$TV("occupancy", Float.valueOf$F(occ));
+}mo.put$O$O("occupancy", Float.valueOf$F(occ));
 nMo++;
 for (var i=0, pt=0; i < this.moCount; i++) {
 coefs[pt++]=this.parseFloatStr$S(dataBlock[i][iOrb + 3]);
 }
-mo.put$TK$TV("coefficients", coefs);
+mo.put$O$O("coefficients", coefs);
 this.setMO$java_util_Map(mo);
 }
 }
-this.moData.put$TK$TV("mos", this.orbitals);
+this.moData.put$O$O("mos", this.orbitals);
 this.finalizeMOData$java_util_Map(this.moData);
 }, p$1);
 
@@ -256,4 +250,4 @@ return this.line;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

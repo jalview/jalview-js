@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.Measure','javajs.util.P3','javajs.util.V3','org.jmol.modelset.HBond','org.jmol.util.Logger','org.jmol.c.STR']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AminoPolymer", null, 'org.jmol.modelsetbio.AlphaPolymer');
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.Measure','javajs.util.P3','javajs.util.V3','org.jmol.modelset.HBond','org.jmol.util.Logger','org.jmol.c.STR']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AminoPolymer", null, 'org.jmol.modelsetbio.AlphaPolymer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.structureList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['structureList','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelsetbio_MonomerA$I', function (monomers, pt0) {
-C$.superclazz.c$$org_jmol_modelsetbio_MonomerA$I.apply(this, [monomers, pt0]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$org_jmol_modelsetbio_MonomerA$I.apply(this,[monomers, pt0]);C$.$init$.apply(this);
 this.type=1;
 for (var i=0; i < this.monomerCount; ++i) if (!(monomers[i]).hasOAtom$()) return;
 
@@ -71,8 +66,8 @@ return (psi - psiLast + phiNext - phi);
 Clazz.newMeth(C$, 'calcRasmolHydrogenBonds$org_jmol_modelsetbio_BioPolymer$javajs_util_BS$javajs_util_BS$javajs_util_Lst$I$IAAA$Z$Z', function (polymer, bsA, bsB, vHBonds, nMaxPerResidue, min, checkDistances, dsspIgnoreHydrogens) {
 if (polymer == null ) polymer=this;
 if (!(Clazz.instanceOf(polymer, "org.jmol.modelsetbio.AminoPolymer"))) return;
-var pt=Clazz.new_($I$(2));
-var vNH=Clazz.new_($I$(3));
+var pt=Clazz.new_($I$(2,1));
+var vNH=Clazz.new_($I$(3,1));
 var source;
 var min1=(min == null  ? Clazz.array(Integer.TYPE, [2, 3]) : null);
 for (var i=1; i < this.monomerCount; ++i) {
@@ -165,7 +160,7 @@ break;
 default:
 order=4096;
 }
-vHBonds.addLast$TV(Clazz.new_($I$(4).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[nitrogen, oxygen, order, 1, 0, energy]));
+vHBonds.addLast$O(Clazz.new_($I$(4,1).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[nitrogen, oxygen, order, 1, 0, energy]));
 }, p$1);
 
 Clazz.newMeth(C$, 'calculateStructures$Z', function (alphaOnly) {
@@ -185,7 +180,7 @@ structureTags[i]="s";
 structureTags[i]="t";
 } else {
 structureTags[i]="n";
-}if ($I$(5).debugging) $I$(5).debug$S((0 + this.monomers[0].chain.chainID) + " aminopolymer:" + i + " " + new Float(trailingResidue.getGroupParameter$I(1111490569)).toString() + "," + new Float(leadingResidue.getGroupParameter$I(1111490570)).toString() + " " + structureTags[i] );
+}if ($I$(5).debugging) $I$(5,"debug$S",[(0 + this.monomers[0].chain.chainID) + " aminopolymer:" + i + " " + new Float(trailingResidue.getGroupParameter$I(1111490569)).toString() + "," + new Float(leadingResidue.getGroupParameter$I(1111490570)).toString() + " " + structureTags[i] ]);
 }
 for (var start=0; start < this.monomerCount; ++start) {
 if (structureTags[start] == "4") {
@@ -253,4 +248,4 @@ this.structureList=structureList;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

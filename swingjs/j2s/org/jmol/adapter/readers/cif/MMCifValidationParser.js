@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'org.jmol.script.SV','java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MMCifValidationParser");
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.cif"),p$1={},I$=[[0,'org.jmol.script.SV','java.util.Hashtable','javajs.util.PT','org.jmol.util.Logger','javajs.util.Lst']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MMCifValidationParser");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.asResidues=false;
-this.reader=null;
-this.resMap=null;
-this.atomMap=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['asResidues'],'O',['reader','org.jmol.adapter.smarter.AtomSetCollectionReader','resMap','java.util.Map','+atomMap']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_adapter_smarter_AtomSetCollectionReader', function (reader) {
@@ -43,13 +36,13 @@ var note=this.reader.vwr.getAnnotationParser$Z(false).catalogStructureUnits$org_
 svMap.mapPut$S$org_jmol_script_SV("_note", $I$(1).newS$S(note));
 for (var i=this.reader.asc.atomSetCount; --i >= 0; ) {
 var info=this.reader.asc.getAtomSetAuxiliaryInfo$I(i);
-info.put$TK$TV("rna3d", svMap);
+info.put$O$O("rna3d", svMap);
 }
 return note;
 });
 
 Clazz.newMeth(C$, 'getRna3dMap$S', function (addedData) {
-var map=Clazz.new_($I$(2));
+var map=Clazz.new_($I$(2,1));
 var next=Clazz.array(Integer.TYPE, [1]);
 var id="";
 while ((id=$I$(3).getQuotedStringNext$S$IA(addedData, next)).length$() > 0){
@@ -70,19 +63,19 @@ $I$(4).error$S("MMCif could not read: " + id + " " + units );
 continue;
 }
 var list=map.get$O(type);
-if (list == null ) map.put$TK$TV(type, list=Clazz.new_($I$(5)));
-var m=Clazz.new_($I$(2));
-m.put$TK$TV("index", Integer.valueOf$I($I$(3).parseInt$S(id.substring$I(id.lastIndexOf$S("_") + 1))));
-m.put$TK$TV("units", units);
-list.addLast$TV(m);
+if (list == null ) map.put$O$O(type, list=Clazz.new_($I$(5,1)));
+var m=Clazz.new_($I$(2,1));
+m.put$O$O("index", Integer.valueOf$I($I$(3,"parseInt$S",[id.substring$I(id.lastIndexOf$S("_") + 1)])));
+m.put$O$O("units", units);
+list.addLast$O(m);
 }
 return $I$(1).getVariableMap$java_util_Map(map);
 }, p$1);
 
 Clazz.newMeth(C$, 'mapAtomResIDs$java_util_Map', function (modelMap) {
 var atoms=this.reader.asc.atoms;
-this.resMap=Clazz.new_($I$(2));
-this.atomMap=Clazz.new_($I$(2));
+this.resMap=Clazz.new_($I$(2,1));
+this.atomMap=Clazz.new_($I$(2,1));
 var iresLast=-1;
 var resLast=null;
 var smodel="" + modelMap.get$O("_0");
@@ -95,8 +88,8 @@ var ia=Integer.valueOf$I(i - i0);
 if (ires != iresLast) {
 iresLast=ires;
 if (resLast != null ) resLast[1]=i - i0;
-this.resMap.put$TK$TV(res, resLast=Clazz.array(Integer.TYPE, -1, [i - i0, n]));
-}this.atomMap.put$TK$TV(atom, ia);
+this.resMap.put$O$O(res, resLast=Clazz.array(Integer.TYPE, -1, [i - i0, n]));
+}this.atomMap.put$O$O(atom, ia);
 if (i == n - 1) {
 i0+=n;
 n=this.reader.asc.getAtomSetAtomCount$I(model++);
@@ -138,4 +131,4 @@ this.reader.asc.setAtomProperties$S$O$I$Z(key, f, model, isGroup);
 return note;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

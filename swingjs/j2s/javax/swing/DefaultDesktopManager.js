@@ -1,22 +1,18 @@
 (function(){var P$=Clazz.newPackage("javax.swing"),I$=[];
-var C$=Clazz.newClass(P$, "DefaultDesktopManager", null, null, ['javax.swing.DesktopManager', 'java.io.Serializable']);
+/*c*/var C$=Clazz.newClass(P$, "DefaultDesktopManager", null, null, ['javax.swing.DesktopManager', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dragMode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dragMode=0;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'openFrame$javax_swing_JInternalFrame', function (f) {
+C$.$fields$=[['I',['dragMode']]]
+
+Clazz.newMeth(C$, 'openFrame$javax_swing_JInternalFrame',  function (f) {
 });
 
-Clazz.newMeth(C$, 'closeFrame$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'closeFrame$javax_swing_JInternalFrame',  function (f) {
 var d=f.getDesktopPane$();
 if (d == null ) {
 return;
@@ -51,19 +47,19 @@ throw e2;
 d.requestFocus$();
 }});
 
-Clazz.newMeth(C$, 'maximizeFrame$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'maximizeFrame$javax_swing_JInternalFrame',  function (f) {
 });
 
-Clazz.newMeth(C$, 'minimizeFrame$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'minimizeFrame$javax_swing_JInternalFrame',  function (f) {
 });
 
-Clazz.newMeth(C$, 'iconifyFrame$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'iconifyFrame$javax_swing_JInternalFrame',  function (f) {
 });
 
-Clazz.newMeth(C$, 'deiconifyFrame$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'deiconifyFrame$javax_swing_JInternalFrame',  function (f) {
 });
 
-Clazz.newMeth(C$, 'activateFrame$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'activateFrame$javax_swing_JInternalFrame',  function (f) {
 var p=f.getParent$();
 var d=f.getDesktopPane$();
 var currentlyActiveFrame=(d == null ) ? null : d.getSelectedFrame$();
@@ -88,51 +84,51 @@ d.setSelectedFrame$javax_swing_JInternalFrame(f);
 }}f.moveToFront$();
 });
 
-Clazz.newMeth(C$, 'deactivateFrame$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'deactivateFrame$javax_swing_JInternalFrame',  function (f) {
 var d=f.getDesktopPane$();
 var currentlyActiveFrame=(d == null ) ? null : d.getSelectedFrame$();
 if (currentlyActiveFrame === f ) d.setSelectedFrame$javax_swing_JInternalFrame(null);
 });
 
-Clazz.newMeth(C$, 'beginDraggingFrame$javax_swing_JComponent', function (f) {
+Clazz.newMeth(C$, 'beginDraggingFrame$javax_swing_JComponent',  function (f) {
 });
 
-Clazz.newMeth(C$, 'dragFrame$javax_swing_JComponent$I$I', function (f, newX, newY) {
+Clazz.newMeth(C$, 'dragFrame$javax_swing_JComponent$I$I',  function (f, newX, newY) {
 });
 
-Clazz.newMeth(C$, 'endDraggingFrame$javax_swing_JComponent', function (f) {
+Clazz.newMeth(C$, 'endDraggingFrame$javax_swing_JComponent',  function (f) {
 });
 
-Clazz.newMeth(C$, 'beginResizingFrame$javax_swing_JComponent$I', function (f, direction) {
+Clazz.newMeth(C$, 'beginResizingFrame$javax_swing_JComponent$I',  function (f, direction) {
 });
 
-Clazz.newMeth(C$, 'resizeFrame$javax_swing_JComponent$I$I$I$I', function (f, newX, newY, newWidth, newHeight) {
+Clazz.newMeth(C$, 'resizeFrame$javax_swing_JComponent$I$I$I$I',  function (f, newX, newY, newWidth, newHeight) {
 });
 
-Clazz.newMeth(C$, 'endResizingFrame$javax_swing_JComponent', function (f) {
+Clazz.newMeth(C$, 'endResizingFrame$javax_swing_JComponent',  function (f) {
 });
 
-Clazz.newMeth(C$, 'setBoundsForFrame$javax_swing_JComponent$I$I$I$I', function (f, newX, newY, newWidth, newHeight) {
+Clazz.newMeth(C$, 'setBoundsForFrame$javax_swing_JComponent$I$I$I$I',  function (f, newX, newY, newWidth, newHeight) {
 });
 
-Clazz.newMeth(C$, 'removeIconFor$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'removeIconFor$javax_swing_JInternalFrame',  function (f) {
 });
 
-Clazz.newMeth(C$, 'setPreviousBounds$javax_swing_JInternalFrame$java_awt_Rectangle', function (f, r) {
+Clazz.newMeth(C$, 'setPreviousBounds$javax_swing_JInternalFrame$java_awt_Rectangle',  function (f, r) {
 });
 
-Clazz.newMeth(C$, 'getPreviousBounds$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'getPreviousBounds$javax_swing_JInternalFrame',  function (f) {
 return f.getNormalBounds$();
 });
 
-Clazz.newMeth(C$, 'setWasIcon$javax_swing_JInternalFrame$Boolean', function (f, value) {
+Clazz.newMeth(C$, 'setWasIcon$javax_swing_JInternalFrame$Boolean',  function (f, value) {
 });
 
-Clazz.newMeth(C$, 'wasIcon$javax_swing_JInternalFrame', function (f) {
+Clazz.newMeth(C$, 'wasIcon$javax_swing_JInternalFrame',  function (f) {
 return false;
 });
 
-Clazz.newMeth(C$, 'getDesktopPane$javax_swing_JComponent', function (frame) {
+Clazz.newMeth(C$, 'getDesktopPane$javax_swing_JComponent',  function (frame) {
 if (Clazz.instanceOf(frame, "javax.swing.JInternalFrame")) {
 return (frame).getDesktopPane$();
 }var pane=null;
@@ -150,4 +146,4 @@ return pane;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

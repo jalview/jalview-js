@@ -1,74 +1,26 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,'org.jmol.modelset.Chain','javajs.util.SB','javajs.util.BS','java.util.Hashtable','org.jmol.util.BSUtil','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Model");
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),I$=[[0,'org.jmol.modelset.Chain','javajs.util.SB','javajs.util.BS','java.util.Hashtable','org.jmol.util.BSUtil','javajs.util.AU']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Model");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ms=null;
-this.mat4=null;
-this.modelIndex=0;
-this.fileIndex=0;
-this.isBioModel=false;
-this.isPdbWithMultipleBonds=false;
-this.isModelKit=false;
-this.chains=null;
-this.simpleCage=null;
-this.dssrCache=null;
-this.orientation=null;
-this.auxiliaryInfo=null;
-this.properties=null;
-this.biosymmetry=null;
-this.dataFrames=null;
-this.translation=null;
-this.dataSourceFrame=0;
-this.loadState=null;
-this.loadScript=null;
-this.hasRasmolHBonds=false;
-this.structureTainted=false;
-this.isJmolDataFrame=false;
-this.isTrajectory=false;
-this.trajectoryBaseIndex=0;
-this.altLocCount=0;
-this.insertionCount=0;
-this.act=0;
-this.bondCount=0;
-this.chainCount=0;
-this.groupCount=0;
-this.hydrogenCount=0;
-this.moleculeCount=0;
-this.biosymmetryCount=0;
-this.firstAtomIndex=0;
-this.firstMoleculeIndex=0;
-this.bsAtoms=null;
-this.bsAtomsDeleted=null;
-this.defaultRotationRadius=0;
-this.frameDelay=0;
-this.selectedTrajectory=0;
-this.jmolData=null;
-this.jmolFrameType=null;
-this.pdbID=null;
-this.bsCheck=null;
-this.hasChirality=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.chains=Clazz.array($I$(1), [8]);
 this.dataSourceFrame=-1;
 this.loadState="";
-this.loadScript=Clazz.new_($I$(2));
+this.loadScript=Clazz.new_($I$(2,1));
 this.act=0;
 this.bondCount=-1;
 this.chainCount=0;
 this.groupCount=-1;
-this.bsAtoms=Clazz.new_($I$(3));
-this.bsAtomsDeleted=Clazz.new_($I$(3));
+this.bsAtoms=Clazz.new_($I$(3,1));
+this.bsAtomsDeleted=Clazz.new_($I$(3,1));
 this.selectedTrajectory=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBioModel','isPdbWithMultipleBonds','isModelKit','hasRasmolHBonds','structureTainted','isJmolDataFrame','isTrajectory','hasChirality'],'F',['defaultRotationRadius'],'I',['modelIndex','fileIndex','dataSourceFrame','trajectoryBaseIndex','altLocCount','insertionCount','act','bondCount','chainCount','groupCount','hydrogenCount','moleculeCount','biosymmetryCount','firstAtomIndex','firstMoleculeIndex','selectedTrajectory'],'J',['frameDelay'],'S',['loadState','jmolData','jmolFrameType','pdbID'],'O',['ms','org.jmol.modelset.ModelSet','mat4','javajs.util.M4','chains','org.jmol.modelset.Chain[]','simpleCage','org.jmol.api.SymmetryInterface','dssrCache','java.util.Map','orientation','org.jmol.modelset.Orientation','auxiliaryInfo','java.util.Map','properties','java.util.Properties','biosymmetry','org.jmol.api.SymmetryInterface','dataFrames','java.util.Map','translation','javajs.util.P3','loadScript','javajs.util.SB','bsAtoms','javajs.util.BS','+bsAtomsDeleted','+bsCheck']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_modelset_ModelSet$I$I$S$java_util_Properties$java_util_Map', function (modelSet, modelIndex, trajectoryBaseIndex, jmolData, properties, auxiliaryInfo) {
@@ -77,7 +29,7 @@ this.dataSourceFrame=this.modelIndex=modelIndex;
 this.isTrajectory=(trajectoryBaseIndex >= 0);
 this.trajectoryBaseIndex=(this.isTrajectory ? trajectoryBaseIndex : modelIndex);
 if (auxiliaryInfo == null ) {
-auxiliaryInfo=Clazz.new_($I$(4));
+auxiliaryInfo=Clazz.new_($I$(4,1));
 }this.auxiliaryInfo=auxiliaryInfo;
 if (auxiliaryInfo.containsKey$O("biosymmetryCount")) {
 this.biosymmetryCount=(auxiliaryInfo.get$O("biosymmetryCount")).intValue$();
@@ -88,8 +40,8 @@ this.jmolFrameType="modelSet";
 } else {
 this.jmolData=jmolData;
 this.isJmolDataFrame=true;
-auxiliaryInfo.put$TK$TV("jmolData", jmolData);
-auxiliaryInfo.put$TK$TV("title", jmolData);
+auxiliaryInfo.put$O$O("jmolData", jmolData);
+auxiliaryInfo.put$O$O("title", jmolData);
 this.jmolFrameType=(jmolData.indexOf$S("ramachandran") >= 0 ? "ramachandran" : jmolData.indexOf$S("quaternion") >= 0 ? "quaternion" : "data");
 }return this;
 });
@@ -99,7 +51,7 @@ return this.bsAtoms.cardinality$() - this.bsAtomsDeleted.cardinality$();
 });
 
 Clazz.newMeth(C$, 'isContainedIn$javajs_util_BS', function (bs) {
-if (this.bsCheck == null ) this.bsCheck=Clazz.new_($I$(3));
+if (this.bsCheck == null ) this.bsCheck=Clazz.new_($I$(3,1));
 this.bsCheck.or$javajs_util_BS(bs);
 this.bsCheck.and$javajs_util_BS(this.bsAtoms);
 this.bsCheck.andNot$javajs_util_BS(this.bsAtomsDeleted);
@@ -187,4 +139,4 @@ for (var i=0; i < this.chainCount; ++i) this.chains[i].groups=$I$(6).arrayCopyOb
 
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

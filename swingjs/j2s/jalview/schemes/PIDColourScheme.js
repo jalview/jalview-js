@@ -1,26 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.awt.Color','jalview.util.Comparison','jalview.schemes.JalviewColourScheme']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PIDColourScheme", null, 'jalview.schemes.ResidueColourScheme');
-C$.pidColours=null;
-C$.thresholds=null;
+(function(){var P$=Clazz.newPackage("jalview.schemes"),I$=[[0,'java.awt.Color','jalview.util.Comparison','jalview.schemes.JalviewColourScheme']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PIDColourScheme", null, 'jalview.schemes.ResidueColourScheme');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.pidColours=Clazz.array($I$(1), -1, [Clazz.new_($I$(1).c$$I$I$I,[100, 100, 255]), Clazz.new_($I$(1).c$$I$I$I,[153, 153, 255]), Clazz.new_($I$(1).c$$I$I$I,[204, 204, 255])]);
-C$.thresholds=Clazz.array(Float.TYPE, -1, [80, 60, 40]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.group=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['group','jalview.datamodel.SequenceGroup']]
+,['O',['pidColours','java.awt.Color[]','thresholds','float[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-}, 1);
-
-Clazz.newMeth(C$, 'findColour$C$I$jalview_datamodel_SequenceI$S$F', function (c, j, seq, consensusResidue, pid) {
+Clazz.newMeth(C$, 'findColour$C$I$jalview_datamodel_SequenceI$S$F',  function (c, j, seq, consensusResidue, pid) {
 if ("a" <= c && c <= "z" ) {
 c = String.fromCharCode(c.$c()- (32));
 }if (consensusResidue == null  || $I$(2).isGap$C(c) ) {
@@ -36,16 +29,21 @@ break;
 }return colour;
 });
 
-Clazz.newMeth(C$, 'getSchemeName$', function () {
+Clazz.newMeth(C$, 'getSchemeName$',  function () {
 return $I$(3).PID.toString();
 });
 
-Clazz.newMeth(C$, 'getInstance$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI', function (view, coll) {
+Clazz.newMeth(C$, 'getInstance$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI',  function (view, coll) {
 return Clazz.new_(C$);
 });
 
-Clazz.newMeth(C$, 'isSimple$', function () {
+Clazz.newMeth(C$, 'isSimple$',  function () {
 return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.pidColours=Clazz.array($I$(1), -1, [Clazz.new_($I$(1,1).c$$I$I$I,[100, 100, 255]), Clazz.new_($I$(1,1).c$$I$I$I,[153, 153, 255]), Clazz.new_($I$(1,1).c$$I$I$I,[204, 204, 255])]);
+C$.thresholds=Clazz.array(Float.TYPE, -1, [80, 60, 40]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

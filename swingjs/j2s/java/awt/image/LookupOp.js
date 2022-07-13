@@ -1,31 +1,25 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'sun.awt.image.ImagingLib','java.awt.image.BufferedImage',['java.awt.geom.Point2D','.Float']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LookupOp", null, null, ['java.awt.image.BufferedImageOp', 'java.awt.image.RasterOp']);
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'sun.awt.image.ImagingLib','java.awt.image.ComponentColorModel','java.awt.image.BufferedImage',['java.awt.geom.Point2D','.Float']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LookupOp", null, null, ['java.awt.image.BufferedImageOp', 'java.awt.image.RasterOp']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ltable=null;
-this.swingJStype=0;
-this.hints=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.swingJStype="L".$c();
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_image_LookupTable$java_awt_RenderingHints', function (lookup, hints) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['swingJStype'],'O',['ltable','java.awt.image.LookupTable','hints','java.awt.RenderingHints']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_image_LookupTable$java_awt_RenderingHints',  function (lookup, hints) {
+;C$.$init$.apply(this);
 this.ltable=lookup;
 this.hints=hints;
 }, 1);
 
-Clazz.newMeth(C$, 'getTable$', function () {
+Clazz.newMeth(C$, 'getTable$',  function () {
 return this.ltable;
 });
 
-Clazz.newMeth(C$, 'filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage', function (src, dst) {
+Clazz.newMeth(C$, 'filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage',  function (src, dst) {
 var srcCM=src.getColorModel$();
 var numBands=srcCM.getNumColorComponents$();
 var dstCM;
@@ -71,7 +65,7 @@ dstRaster=dstRaster.createWritableChild$I$I$I$I$I$I$IA(minx, miny, dstRaster.get
 return origDst;
 });
 
-Clazz.newMeth(C$, 'filter$java_awt_image_Raster$java_awt_image_WritableRaster', function (src, dst) {
+Clazz.newMeth(C$, 'filter$java_awt_image_Raster$java_awt_image_WritableRaster',  function (src, dst) {
 var numBands=src.getNumBands$();
 var dstLength=dst.getNumBands$();
 var height=src.getHeight$();
@@ -89,6 +83,8 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Number of arrays 
 return dst;
 }if (Clazz.instanceOf(this.ltable, "java.awt.image.ByteLookupTable")) {
 p$1.byteFilter$java_awt_image_ByteLookupTable$java_awt_image_Raster$java_awt_image_WritableRaster$I$I$I.apply(this, [this.ltable, src, dst, width, height, numBands]);
+} else if (Clazz.instanceOf(this.ltable, "java.awt.image.ShortLookupTable")) {
+p$1.shortFilter$java_awt_image_ShortLookupTable$java_awt_image_Raster$java_awt_image_WritableRaster$I$I$I.apply(this, [this.ltable, src, dst, width, height, numBands]);
 } else {
 var sminX=src.getMinX$();
 var sY=src.getMinY$();
@@ -106,42 +102,75 @@ dst.setPixel$I$I$IA(dX, dY, srcPix);
 }return dst;
 });
 
-Clazz.newMeth(C$, 'getBounds2D$java_awt_image_BufferedImage', function (src) {
+Clazz.newMeth(C$, 'getBounds2D$java_awt_image_BufferedImage',  function (src) {
 return this.getBounds2D$java_awt_image_Raster(src.getRaster$());
 });
 
-Clazz.newMeth(C$, 'getBounds2D$java_awt_image_Raster', function (src) {
+Clazz.newMeth(C$, 'getBounds2D$java_awt_image_Raster',  function (src) {
 return src.getBounds$();
 });
 
-Clazz.newMeth(C$, 'createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel', function (src, destCM) {
+Clazz.newMeth(C$, 'createCompatibleDestImage$java_awt_image_BufferedImage$java_awt_image_ColorModel',  function (src, destCM) {
 var image;
 var w=src.getWidth$();
 var h=src.getHeight$();
+var transferType=0;
 if (destCM == null ) {
 var cm=src.getColorModel$();
-image=Clazz.new_($I$(2).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[cm, cm.createCompatibleWritableRaster$I$I(w, h), cm.isAlphaPremultiplied$(), null]);
+var raster=src.getRaster$();
+if (Clazz.instanceOf(cm, "java.awt.image.ComponentColorModel")) {
+var db=raster.getDataBuffer$();
+var hasAlpha=cm.hasAlpha$();
+var isPre=cm.isAlphaPremultiplied$();
+var trans=cm.getTransparency$();
+var nbits=null;
+if (Clazz.instanceOf(this.ltable, "java.awt.image.ByteLookupTable")) {
+if (db.getDataType$() == 1) {
+if (hasAlpha) {
+nbits=Clazz.array(Integer.TYPE, [2]);
+if (trans == 2) {
+nbits[1]=1;
 } else {
-image=Clazz.new_($I$(2).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable,[destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied$(), null]);
+nbits[1]=8;
+}} else {
+nbits=Clazz.array(Integer.TYPE, [1]);
+}nbits[0]=8;
+}} else if (Clazz.instanceOf(this.ltable, "java.awt.image.ShortLookupTable")) {
+transferType=1;
+if (db.getDataType$() == 0) {
+if (hasAlpha) {
+nbits=Clazz.array(Integer.TYPE, [2]);
+if (trans == 2) {
+nbits[1]=1;
+} else {
+nbits[1]=16;
+}} else {
+nbits=Clazz.array(Integer.TYPE, [1]);
+}nbits[0]=16;
+}}if (nbits != null ) {
+cm=Clazz.new_([cm.getColorSpace$(), nbits, hasAlpha, isPre, trans, transferType],$I$(2,1).c$$java_awt_color_ColorSpace$IA$Z$Z$I$I);
+}}image=Clazz.new_([cm, cm.createCompatibleWritableRaster$I$I(w, h), cm.isAlphaPremultiplied$(), null],$I$(3,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
+} else {
+image=Clazz.new_([destCM, destCM.createCompatibleWritableRaster$I$I(w, h), destCM.isAlphaPremultiplied$(), null],$I$(3,1).c$$java_awt_image_ColorModel$java_awt_image_WritableRaster$Z$java_util_Hashtable);
 }return image;
 });
 
-Clazz.newMeth(C$, 'createCompatibleDestRaster$java_awt_image_Raster', function (src) {
+Clazz.newMeth(C$, 'createCompatibleDestRaster$java_awt_image_Raster',  function (src) {
 return src.createCompatibleWritableRaster$();
 });
 
-Clazz.newMeth(C$, 'getPoint2D$java_awt_geom_Point2D$java_awt_geom_Point2D', function (srcPt, dstPt) {
+Clazz.newMeth(C$, 'getPoint2D$java_awt_geom_Point2D$java_awt_geom_Point2D',  function (srcPt, dstPt) {
 if (dstPt == null ) {
-dstPt=Clazz.new_($I$(3));
+dstPt=Clazz.new_($I$(4,1));
 }dstPt.setLocation$D$D(srcPt.getX$(), srcPt.getY$());
 return dstPt;
 });
 
-Clazz.newMeth(C$, 'getRenderingHints$', function () {
+Clazz.newMeth(C$, 'getRenderingHints$',  function () {
 return this.hints;
 });
 
-Clazz.newMeth(C$, 'byteFilter$java_awt_image_ByteLookupTable$java_awt_image_Raster$java_awt_image_WritableRaster$I$I$I', function (lookup, src, dst, width, height, numBands) {
+Clazz.newMeth(C$, 'byteFilter$java_awt_image_ByteLookupTable$java_awt_image_Raster$java_awt_image_WritableRaster$I$I$I',  function (lookup, src, dst, width, height, numBands) {
 var srcPix=null;
 var table=lookup.getTable$();
 var offset=lookup.getOffset$();
@@ -168,6 +197,34 @@ dst.setSamples$I$I$I$I$I$IA(0, y, width, 1, band, srcPix);
 }
 }, p$1);
 
+Clazz.newMeth(C$, 'shortFilter$java_awt_image_ShortLookupTable$java_awt_image_Raster$java_awt_image_WritableRaster$I$I$I',  function (lookup, src, dst, width, height, numBands) {
+var band;
+var srcPix=null;
+var table=lookup.getTable$();
+var offset=lookup.getOffset$();
+var tidx;
+var step=1;
+if (table.length == 1) {
+step=0;
+}var x=0;
+var y=0;
+var index;
+var maxShort=65535;
+for (y=0; y < height; y++) {
+tidx=0;
+for (band=0; band < numBands; band++, tidx+=step) {
+srcPix=src.getSamples$I$I$I$I$I$IA(0, y, width, 1, band, srcPix);
+for (x=0; x < width; x++) {
+index=srcPix[x] - offset;
+if (index < 0 || index > maxShort ) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["index out of range " + index + " x is " + x + "srcPix[x]=" + srcPix[x] + " offset=" + offset ]);
+}srcPix[x]=table[tidx][index];
+}
+dst.setSamples$I$I$I$I$I$IA(0, y, width, 1, band, srcPix);
+}
+}
+}, p$1);
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

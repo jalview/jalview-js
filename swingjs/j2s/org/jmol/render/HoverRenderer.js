@@ -1,22 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'javajs.util.P3','org.jmol.util.Txt','org.jmol.render.TextRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HoverRenderer", null, 'org.jmol.render.ShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'javajs.util.P3','org.jmol.util.Txt','org.jmol.render.TextRenderer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HoverRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tempXY=null;
-this.ptTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tempXY=Clazz.array(Float.TYPE, [3]);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['tempXY','float[]','ptTemp','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 if (this.tm.isNavigating$()) return false;
-if (this.ptTemp == null ) this.ptTemp=Clazz.new_($I$(1));
+if (this.ptTemp == null ) this.ptTemp=Clazz.new_($I$(1,1));
 var hover=this.shape;
 var antialias=this.g3d.isAntialiased$();
 var text=hover.hoverText;
@@ -44,4 +39,4 @@ return (this.vwr.ms.isJmolDataFrameForModel$I(atom.mi) && label.equals$O("%U")  
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,37 +1,29 @@
-(function(){var P$=java.io,I$=[[0,'java.io.PushbackInputStream']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DataInputStream", null, 'java.io.FilterInputStream', 'java.io.DataInput');
+(function(){var P$=java.io,I$=[[0,'java.io.PushbackInputStream']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DataInputStream", null, 'java.io.FilterInputStream', 'java.io.DataInput');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bytearr=null;
-this.chararr=null;
-this.readBuffer=null;
-this.lineBuffer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bytearr=Clazz.array(Byte.TYPE, [80]);
 this.chararr=Clazz.array(Character.TYPE, [80]);
 this.readBuffer=Clazz.array(Byte.TYPE, [8]);
+},1);
+
+C$.$fields$=[['O',['bytearr','byte[]','chararr','char[]','readBuffer','byte[]','lineBuffer','char[]']]]
+
+Clazz.newMeth(C$, 'c$$java_io_InputStream',  function ($in) {
+;C$.superclazz.c$$java_io_InputStream.apply(this,[$in]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
-C$.superclazz.c$$java_io_InputStream.apply(this, [$in]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'read$BA$I$I', function (b, off, len) {
+Clazz.newMeth(C$, 'read$BA$I$I',  function (b, off, len) {
 return this.$in.read$BA$I$I(b, off, len);
 });
 
-Clazz.newMeth(C$, 'read$BA', function (b) {
+Clazz.newMeth(C$, 'read$BA',  function (b) {
 return this.$in.read$BA$I$I(b, 0, b.length);
 });
 
-Clazz.newMeth(C$, 'readFully$BA$I$I', function (b, off, len) {
+Clazz.newMeth(C$, 'readFully$BA$I$I',  function (b, off, len) {
 if (len < 0) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
 var n=0;
 while (n < len){
@@ -41,55 +33,55 @@ n+=count;
 }
 });
 
-Clazz.newMeth(C$, 'skipBytes$I', function (n) {
+Clazz.newMeth(C$, 'skipBytes$I',  function (n) {
 var total=0;
 var cur=0;
-while ((total < n) && ((cur=(this.$in.skip$J(n - total)|0)) > 0) ){
+while ((total < n) && ((cur=Long.$ival(this.$in.skip$J(n - total))) > 0) ){
 total+=cur;
 }
 return total;
 });
 
-Clazz.newMeth(C$, 'readBoolean$', function () {
+Clazz.newMeth(C$, 'readBoolean$',  function () {
 var ch=this.$in.read$();
 if (ch < 0) throw Clazz.new_(Clazz.load('java.io.EOFException'));
 return (ch != 0);
 });
 
-Clazz.newMeth(C$, 'readByte$', function () {
+Clazz.newMeth(C$, 'readByte$',  function () {
 var ch=this.$in.read$();
 if (ch < 0) throw Clazz.new_(Clazz.load('java.io.EOFException'));
-return $b$[0] = ((ch)|0), $b$[0];
+return ($b$[0] = (ch), $b$[0]);
 });
 
-Clazz.newMeth(C$, 'readUnsignedByte$', function () {
+Clazz.newMeth(C$, 'readUnsignedByte$',  function () {
 var ch=this.$in.read$();
 if (ch < 0) throw Clazz.new_(Clazz.load('java.io.EOFException'));
 return ch;
 });
 
-Clazz.newMeth(C$, 'readShort$', function () {
+Clazz.newMeth(C$, 'readShort$',  function () {
 var ch1=this.$in.read$();
 var ch2=this.$in.read$();
 if ((ch1 | ch2) < 0) throw Clazz.new_(Clazz.load('java.io.EOFException'));
 return ($s$[0] = ((ch1 << 8) + (ch2 << 0)), $s$[0]);
 });
 
-Clazz.newMeth(C$, 'readUnsignedShort$', function () {
+Clazz.newMeth(C$, 'readUnsignedShort$',  function () {
 var ch1=this.$in.read$();
 var ch2=this.$in.read$();
 if ((ch1 | ch2) < 0) throw Clazz.new_(Clazz.load('java.io.EOFException'));
 return (ch1 << 8) + (ch2 << 0);
 });
 
-Clazz.newMeth(C$, 'readChar$', function () {
+Clazz.newMeth(C$, 'readChar$',  function () {
 var ch1=this.$in.read$();
 var ch2=this.$in.read$();
 if ((ch1 | ch2) < 0) throw Clazz.new_(Clazz.load('java.io.EOFException'));
 return String.fromCharCode(((ch1 << 8) + (ch2 << 0)));
 });
 
-Clazz.newMeth(C$, 'readInt$', function () {
+Clazz.newMeth(C$, 'readInt$',  function () {
 var ch1=this.$in.read$();
 var ch2=this.$in.read$();
 var ch3=this.$in.read$();
@@ -98,20 +90,20 @@ if ((ch1 | ch2 | ch3 | ch4 ) < 0) throw Clazz.new_(Clazz.load('java.io.EOFExcept
 return ((ch1 << 24) + (ch2 << 16) + (ch3 << 8) + (ch4 << 0) ) | 0;
 });
 
-Clazz.newMeth(C$, 'readLong$', function () {
+Clazz.newMeth(C$, 'readLong$',  function () {
 this.readFully$BA$I$I(this.readBuffer, 0, 8);
-return ((this.readBuffer[0] << 56) + ((this.readBuffer[1] & 255) << 48) + ((this.readBuffer[2] & 255) << 40) + ((this.readBuffer[3] & 255) << 32) + ((this.readBuffer[4] & 255) << 24) + ((this.readBuffer[5] & 255) << 16) + ((this.readBuffer[6] & 255) << 8) + ((this.readBuffer[7] & 255) << 0) );
+return (Long.$add((Long.$sl(this.readBuffer[0],56)),(Long.$sl((this.readBuffer[1] & 255),48)) , (Long.$sl((this.readBuffer[2] & 255),40)) , (Long.$sl((this.readBuffer[3] & 255),32)) , (Long.$sl((this.readBuffer[4] & 255),24)) , ((this.readBuffer[5] & 255) << 16) , ((this.readBuffer[6] & 255) << 8) , ((this.readBuffer[7] & 255) << 0) ));
 });
 
-Clazz.newMeth(C$, 'readFloat$', function () {
+Clazz.newMeth(C$, 'readFloat$',  function () {
 return Float.intBitsToFloat$I(this.readInt$());
 });
 
-Clazz.newMeth(C$, 'readDouble$', function () {
+Clazz.newMeth(C$, 'readDouble$',  function () {
 return Double.longBitsToDouble$J(this.readLong$());
 });
 
-Clazz.newMeth(C$, 'readLine$', function () {
+Clazz.newMeth(C$, 'readLine$',  function () {
 var buf=this.lineBuffer;
 if (buf == null ) {
 buf=this.lineBuffer=Clazz.array(Character.TYPE, [128]);
@@ -127,8 +119,8 @@ case 13:
 var c2=this.$in.read$();
 if ((c2 != 10 ) && (c2 != -1) ) {
 if (!(Clazz.instanceOf(this.$in, "java.io.PushbackInputStream"))) {
-this.$in=Clazz.new_($I$(1).c$$java_io_InputStream$I,[this.$in, 1]);
-}(this.$in).unreadByte$I(c2);
+this.$in=Clazz.new_($I$(1,1).c$$java_io_InputStream$I,[this.$in, 1]);
+}(this.$in).unread$I(c2);
 }break loop;
 default:
 if (--room < 0) {
@@ -145,11 +137,15 @@ return null;
 }return String.copyValueOf$CA$I$I(buf, 0, offset);
 });
 
-Clazz.newMeth(C$, 'readUTF$', function () {
+Clazz.newMeth(C$, 'readUTF$',  function () {
 return C$.readUTFBytes$java_io_DataInput$I(this, -1);
 });
 
-Clazz.newMeth(C$, 'readUTFBytes$java_io_DataInput$I', function ($in, utflen) {
+Clazz.newMeth(C$, 'readUTF$java_io_DataInput',  function ($in) {
+return C$.readUTFBytes$java_io_DataInput$I($in, -1);
+}, 1);
+
+Clazz.newMeth(C$, 'readUTFBytes$java_io_DataInput$I',  function ($in, utflen) {
 var isByteArray=(utflen >= 0);
 if (!isByteArray) utflen=$in.readUnsignedShort$();
 var bytearr=null;
@@ -173,7 +169,7 @@ $in.readFully$BA$I$I(bytearr, 0, utflen);
 while (count < utflen){
 c=bytearr[count] & 255;
 if (c > 127) break;
-count++;
+++count;
 chararr[chararr_count++]=String.fromCharCode(c);
 }
 while (count < utflen){
@@ -187,7 +183,7 @@ case 4:
 case 5:
 case 6:
 case 7:
-count++;
+++count;
 chararr[chararr_count++]=String.fromCharCode(c);
 break;
 case 12:
@@ -213,7 +209,7 @@ throw Clazz.new_(Clazz.load('java.io.UTFDataFormatException').c$$S,["malformed i
 return  String.instantialize(chararr, 0, chararr_count);
 }, 1);
 
-Clazz.newMeth(C$, 'readFully$BA', function (buffer) {
+Clazz.newMeth(C$, 'readFully$BA',  function (buffer) {
 this.readFully$BA$I$I(buffer, 0, buffer.length);
 });
 var $b$ = new Int8Array(1);
@@ -221,4 +217,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:56 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

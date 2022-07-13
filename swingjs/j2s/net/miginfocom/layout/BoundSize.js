@@ -1,25 +1,13 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.UnitValue','net.miginfocom.layout.LayoutUtil','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BoundSize", null, null, 'java.io.Serializable');
-C$.NULL_SIZE=null;
-C$.ZERO_PIXEL=null;
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.UnitValue','net.miginfocom.layout.LayoutUtil','StringBuilder']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BoundSize", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NULL_SIZE=Clazz.new_(C$.c$$net_miginfocom_layout_UnitValue$S,[null, null]);
-C$.ZERO_PIXEL=Clazz.new_(C$.c$$net_miginfocom_layout_UnitValue$S,[$I$(1).ZERO, "0px"]);
-{
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.min=null;
-this.pref=null;
-this.max=null;
-this.gapPush=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['gapPush'],'O',['min','net.miginfocom.layout.UnitValue','+pref','+max']]
+,['O',['NULL_SIZE','net.miginfocom.layout.BoundSize','+ZERO_PIXEL']]]
 
 Clazz.newMeth(C$, 'c$$net_miginfocom_layout_UnitValue$S', function (minMaxPref, createString) {
 C$.c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S.apply(this, [minMaxPref, minMaxPref, minMaxPref, createString]);
@@ -30,7 +18,7 @@ C$.c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginf
 }, 1);
 
 Clazz.newMeth(C$, 'c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S', function (min, preferred, max, gapPush, createString) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.min=min;
 this.pref=preferred;
 this.max=max;
@@ -85,7 +73,7 @@ Clazz.newMeth(C$, 'getConstraintString$', function () {
 var cs=$I$(2).getCCString$O(this);
 if (cs != null ) return cs;
 if (this.min === this.pref  && this.pref === this.max  ) return this.min != null  ? (this.min.getConstraintString$() + "!") : "null";
-var sb=Clazz.new_($I$(3).c$$I,[16]);
+var sb=Clazz.new_($I$(3,1).c$$I,[16]);
 if (this.min != null ) sb.append$S(this.min.getConstraintString$()).append$C(":");
 if (this.pref != null ) {
 if (this.min == null  && this.max != null  ) sb.append$S(":");
@@ -124,9 +112,16 @@ if (this.getClass$() === Clazz.getClass(C$) ) $I$(2).writeAsXML$java_io_ObjectOu
 }, p$1);
 
 Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function ($in) {
-$I$(2).setSerializedObject$O$O(this, $I$(2).readAsXML$java_io_ObjectInput($in));
+$I$(2,"setSerializedObject$O$O",[this, $I$(2).readAsXML$java_io_ObjectInput($in)]);
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.NULL_SIZE=Clazz.new_(C$.c$$net_miginfocom_layout_UnitValue$S,[null, null]);
+C$.ZERO_PIXEL=Clazz.new_(C$.c$$net_miginfocom_layout_UnitValue$S,[$I$(1).ZERO, "0px"]);
+{
+};
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

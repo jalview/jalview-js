@@ -1,41 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NucleicRenderer");
+(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.C']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NucleicRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cartoonBaseEdges=false;
-this.cartoonBlocks=false;
-this.blockHeight=0;
-this.cartoonLadders=false;
-this.cartoonRibose=false;
-this.rPt=null;
-this.rPt5=null;
-this.rScr=null;
-this.rScr5=null;
-this.basePt=null;
-this.backbonePt=null;
-this.baseScreen=null;
-this.backboneScreen=null;
-this.ptTemp=null;
-this.vwr=null;
-this.tm=null;
-this.g3d=null;
-this.bsr=null;
-this.colix=0;
-this.cartoonSteps=false;
-this.scrBox=null;
-this.triangles=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.triangles=Clazz.array(Integer.TYPE, -1, [1, 0, 3, 1, 3, 2, 0, 4, 7, 0, 7, 3, 4, 5, 6, 4, 6, 7, 5, 1, 2, 5, 2, 6, 2, 3, 7, 2, 7, 6, 0, 1, 5, 0, 5, 4]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['cartoonBaseEdges','cartoonBlocks','cartoonLadders','cartoonRibose','cartoonSteps'],'F',['blockHeight'],'H',['colix'],'O',['rPt','javajs.util.P3[]','+rPt5','+rScr','+rScr5','basePt','javajs.util.P3','+backbonePt','+baseScreen','+backboneScreen','+ptTemp','vwr','org.jmol.viewer.Viewer','tm','org.jmol.viewer.TransformManager','g3d','org.jmol.api.JmolRendererInterface','bsr','org.jmol.renderbio.BioShapeRenderer','scrBox','javajs.util.P3[]','triangles','int[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'renderNucleic$org_jmol_renderbio_BioShapeRenderer', function (renderer) {
@@ -44,8 +19,8 @@ this.rPt=Clazz.array($I$(1), [10]);
 this.rScr=Clazz.array($I$(1), [10]);
 this.rPt5=Clazz.array($I$(1), [5]);
 this.rScr5=Clazz.array($I$(1), [5]);
-this.backboneScreen=Clazz.new_($I$(1));
-this.backbonePt=Clazz.new_($I$(1));
+this.backboneScreen=Clazz.new_($I$(1,1));
+this.backbonePt=Clazz.new_($I$(1,1));
 this.bsr=renderer;
 this.tm=renderer.vwr.tm;
 this.vwr=renderer.vwr;
@@ -81,13 +56,13 @@ if (this.bsr.isPhosphorusOnly) return;
 var nucleotide=this.bsr.monomers[im];
 var thisMad=this.bsr.mad=this.bsr.mads[im];
 if (this.rScr[0] == null ) {
-for (var i=10; --i >= 0; ) this.rScr[i]=Clazz.new_($I$(1));
+for (var i=10; --i >= 0; ) this.rScr[i]=Clazz.new_($I$(1,1));
 
-for (var i=5; --i >= 0; ) this.rScr5[i]=Clazz.new_($I$(1));
+for (var i=5; --i >= 0; ) this.rScr5[i]=Clazz.new_($I$(1,1));
 
-this.baseScreen=Clazz.new_($I$(1));
-this.basePt=Clazz.new_($I$(1));
-this.rPt[9]=Clazz.new_($I$(1));
+this.baseScreen=Clazz.new_($I$(1,1));
+this.basePt=Clazz.new_($I$(1,1));
+this.rPt[9]=Clazz.new_($I$(1,1));
 }if (this.cartoonBlocks) {
 p$1.renderBlock$org_jmol_modelsetbio_NucleicMonomer.apply(this, [nucleotide]);
 return;
@@ -120,7 +95,7 @@ stepPt=this.rPt[pt];
 }var mad=($s$[0] = (thisMad > 1 ? (thisMad/2|0) : thisMad), $s$[0]);
 var r=mad / 2000.0;
 var w=(this.vwr.tm.scaleToScreen$I$I((this.backboneScreen.z|0), mad)|0);
-if (this.cartoonLadders || !this.cartoonRibose ) this.g3d.fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(($b$[0] = 3, $b$[0]), w, this.backboneScreen, stepScreen, this.backbonePt, stepPt, r);
+if (this.cartoonLadders || !this.cartoonRibose ) this.g3d.fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(3, w, this.backboneScreen, stepScreen, this.backbonePt, stepPt, r);
 if (this.cartoonLadders) return;
 p$1.drawEdges$javajs_util_P3A$javajs_util_P3A$I.apply(this, [this.rScr, this.rPt, 6]);
 if (hasRing5) p$1.drawEdges$javajs_util_P3A$javajs_util_P3A$I.apply(this, [this.rScr5, this.rPt5, 5]);
@@ -178,7 +153,7 @@ var atomA=g.getLeadAtom$();
 var cA=this.colix;
 if (this.scrBox == null ) {
 this.scrBox=Clazz.array($I$(1), [8]);
-for (var j=0; j < 8; j++) this.scrBox[j]=Clazz.new_($I$(1));
+for (var j=0; j < 8; j++) this.scrBox[j]=Clazz.new_($I$(1,1));
 
 }var oxyz=g.getDSSRFrame$org_jmol_viewer_Viewer(this.vwr);
 var box=g.dssrBox;
@@ -188,11 +163,11 @@ if (box == null  || lastHeight != this.blockHeight  ) {
 g.dssrBoxHeight=this.blockHeight;
 if (box == null ) {
 box=Clazz.array($I$(1), [8]);
-for (var j=8; --j >= 0; ) box[j]=Clazz.new_($I$(1));
+for (var j=8; --j >= 0; ) box[j]=Clazz.new_($I$(1,1));
 
 g.dssrBox=box;
 }var uc=this.vwr.getSymTemp$().getUnitCell$javajs_util_T3A$Z$S(oxyz, false, null);
-if (this.ptTemp == null ) this.ptTemp=Clazz.new_($I$(1));
+if (this.ptTemp == null ) this.ptTemp=Clazz.new_($I$(1,1));
 this.ptTemp.setT$javajs_util_T3(oxyz[0]);
 uc.toFractional$javajs_util_T3$Z(this.ptTemp, true);
 uc.setOffsetPt$javajs_util_T3($I$(1).new3$F$F$F(this.ptTemp.x - 2.25, this.ptTemp.y + 5.0, this.ptTemp.z - this.blockHeight / 2));
@@ -242,7 +217,7 @@ p$1.renderCyl$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3.apply(
 }, p$1);
 
 Clazz.newMeth(C$, 'renderCyl$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (s1, s2, p1, p2) {
-this.g3d.fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(($b$[0] = 3, $b$[0]), 3, s1, s2, p1, p2, 0.005);
+this.g3d.fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(3, 3, s1, s2, p1, p2, 0.005);
 }, p$1);
 
 Clazz.newMeth(C$, 'renderTriangle$javajs_util_P3A$javajs_util_P3A$I$I$I$Z', function (scr, pt, i, j, k, doShade) {
@@ -270,6 +245,5 @@ p$1.renderTriangle$javajs_util_P3A$javajs_util_P3A$I$I$I$Z.apply(this, [this.rSc
 p$1.renderTriangle$javajs_util_P3A$javajs_util_P3A$I$I$I$Z.apply(this, [this.rScr, this.rPt, 4, 0, 9, true]);
 }, p$1);
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

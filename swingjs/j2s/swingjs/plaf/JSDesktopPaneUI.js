@@ -1,29 +1,22 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},I$=[[0,'java.awt.KeyboardFocusManager','javax.swing.SwingUtilities','javax.swing.UIManager','javax.swing.LookAndFeel','Boolean',['swingjs.plaf.JSDesktopPaneUI','.JSDesktopManager'],'swingjs.plaf.LazyActionMap','sun.swing.DefaultLookup',['swingjs.plaf.JSDesktopPaneUI','.Actions'],['swingjs.plaf.JSDesktopPaneUI','.Handler']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSDesktopPaneUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},I$=[[0,'java.awt.KeyboardFocusManager','javax.swing.SwingUtilities','javax.swing.UIManager','javax.swing.LookAndFeel',['swingjs.plaf.JSDesktopPaneUI','.JSDesktopManager'],'swingjs.plaf.LazyActionMap','sun.swing.DefaultLookup',['swingjs.plaf.JSDesktopPaneUI','.Actions'],['swingjs.plaf.JSDesktopPaneUI','.Handler']]],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSDesktopPaneUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSPanelUI');
+C$.$classes$=[['Handler',2],['JSDesktopManager',2],['Actions',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.handler=null;
-this.pcl=null;
-this.desktop=null;
-this.desktopManager=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['handler','swingjs.plaf.JSDesktopPaneUI.Handler','pcl','java.beans.PropertyChangeListener','desktop','javax.swing.JDesktopPane','desktopManager','javax.swing.DesktopManager']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.isDesktop=true;
 }, 1);
 
-Clazz.newMeth(C$, 'updateDOMNode$', function () {
+Clazz.newMeth(C$, 'updateDOMNode$',  function () {
 var isNew=(this.domNode == null );
 C$.superclazz.prototype.updateDOMNode$.apply(this, []);
 if (isNew) {
@@ -32,7 +25,7 @@ this.$$O(this.domNode).addClass("swingjs-desktop");
 return this.domNode;
 });
 
-Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'installUI$javax_swing_JComponent',  function (c) {
 this.desktop=c;
 this.installDefaults$();
 this.installDesktopManager$();
@@ -40,7 +33,7 @@ this.installListeners$();
 this.installKeyboardActions$();
 });
 
-Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent',  function (c) {
 this.uninstallKeyboardActions$();
 this.uninstallListeners$();
 this.uninstallDesktopManager$();
@@ -49,215 +42,162 @@ this.desktop=null;
 this.handler=null;
 });
 
-Clazz.newMeth(C$, 'installDefaults$', function () {
+Clazz.newMeth(C$, 'installDefaults$',  function () {
 if (this.desktop.getBackground$() == null  || Clazz.instanceOf(this.desktop.getBackground$(), "javax.swing.plaf.UIResource") ) {
 this.desktop.setBackground$java_awt_Color($I$(3).getColor$O("Desktop.background"));
-}$I$(4).installProperty$javax_swing_JComponent$S$O(this.desktop, "opaque", $I$(5).TRUE);
+}$I$(4).installProperty$javax_swing_JComponent$S$O(this.desktop, "opaque", Boolean.TRUE);
 });
 
-Clazz.newMeth(C$, 'uninstallDefaults$', function () {
+Clazz.newMeth(C$, 'uninstallDefaults$',  function () {
 });
 
-Clazz.newMeth(C$, 'installListeners$', function () {
+Clazz.newMeth(C$, 'installListeners$',  function () {
 this.pcl=this.createPropertyChangeListener$();
 this.desktop.addPropertyChangeListener$java_beans_PropertyChangeListener(this.pcl);
 });
 
-Clazz.newMeth(C$, 'uninstallListeners$', function () {
+Clazz.newMeth(C$, 'uninstallListeners$',  function () {
 this.desktop.removePropertyChangeListener$java_beans_PropertyChangeListener(this.pcl);
 this.pcl=null;
 });
 
-Clazz.newMeth(C$, 'installDesktopManager$', function () {
+Clazz.newMeth(C$, 'installDesktopManager$',  function () {
 this.desktopManager=this.desktop.getDesktopManager$();
 if (this.desktopManager == null ) {
-this.desktopManager=Clazz.new_($I$(6), [this, null]);
+this.desktopManager=Clazz.new_($I$(5,1),[this, null]);
 this.desktop.setDesktopManager$javax_swing_DesktopManager(this.desktopManager);
 }});
 
-Clazz.newMeth(C$, 'uninstallDesktopManager$', function () {
+Clazz.newMeth(C$, 'uninstallDesktopManager$',  function () {
 if (Clazz.instanceOf(this.desktop.getDesktopManager$(), "javax.swing.plaf.UIResource")) {
 this.desktop.setDesktopManager$javax_swing_DesktopManager(null);
 }this.desktopManager=null;
 });
 
-Clazz.newMeth(C$, 'installKeyboardActions$', function () {
+Clazz.newMeth(C$, 'installKeyboardActions$',  function () {
 var inputMap=this.getInputMap$I(2);
 if (inputMap != null ) {
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.desktop, 2, inputMap);
 }inputMap=this.getInputMap$I(1);
 if (inputMap != null ) {
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.desktop, 1, inputMap);
-}$I$(7).installLazyActionMap$javax_swing_JComponent$Class$S(this.desktop, Clazz.getClass(C$), "DesktopPane.actionMap");
+}$I$(6,"installLazyActionMap$javax_swing_JComponent$Class$S",[this.desktop, Clazz.getClass(C$), "DesktopPane.actionMap"]);
 this.registerKeyboardActions$();
 });
 
-Clazz.newMeth(C$, 'registerKeyboardActions$', function () {
+Clazz.newMeth(C$, 'registerKeyboardActions$',  function () {
 });
 
-Clazz.newMeth(C$, 'unregisterKeyboardActions$', function () {
+Clazz.newMeth(C$, 'unregisterKeyboardActions$',  function () {
 });
 
-Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
+Clazz.newMeth(C$, 'getInputMap$I',  function (condition) {
 if (condition == 2) {
 return this.createInputMap$I(condition);
 } else if (condition == 1) {
-return $I$(8).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.desktop, this, "Desktop.ancestorInputMap");
+return $I$(7).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.desktop, this, "Desktop.ancestorInputMap");
 }return null;
 });
 
-Clazz.newMeth(C$, 'createInputMap$I', function (condition) {
+Clazz.newMeth(C$, 'createInputMap$I',  function (condition) {
 if (condition == 2) {
-var bindings=$I$(8).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.desktop, this, "Desktop.windowBindings");
+var bindings=$I$(7).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.desktop, this, "Desktop.windowBindings");
 if (bindings != null ) {
 return $I$(4).makeComponentInputMap$javax_swing_JComponent$OA(this.desktop, bindings);
 }}return null;
 });
 
-Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap', function (map) {
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).RESTORE]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).CLOSE]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).MOVE]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).RESIZE]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).LEFT]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).SHRINK_LEFT]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).RIGHT]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).SHRINK_RIGHT]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).UP]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).SHRINK_UP]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).DOWN]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).SHRINK_DOWN]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).ESCAPE]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).MINIMIZE]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).MAXIMIZE]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).NEXT_FRAME]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).PREVIOUS_FRAME]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).NAVIGATE_NEXT]));
-map.put$javax_swing_Action(Clazz.new_($I$(9).c$$S,[$I$(9).NAVIGATE_PREVIOUS]));
+Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap',  function (map) {
+map.put$javax_swing_Action(Clazz.new_([$I$(8).RESTORE],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).CLOSE],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).MOVE],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).RESIZE],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).LEFT],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).SHRINK_LEFT],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).RIGHT],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).SHRINK_RIGHT],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).UP],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).SHRINK_UP],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).DOWN],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).SHRINK_DOWN],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).ESCAPE],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).MINIMIZE],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).MAXIMIZE],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).NEXT_FRAME],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).PREVIOUS_FRAME],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).NAVIGATE_NEXT],$I$(8,1).c$$S));
+map.put$javax_swing_Action(Clazz.new_([$I$(8).NAVIGATE_PREVIOUS],$I$(8,1).c$$S));
 }, 1);
 
-Clazz.newMeth(C$, 'uninstallKeyboardActions$', function () {
+Clazz.newMeth(C$, 'uninstallKeyboardActions$',  function () {
 this.unregisterKeyboardActions$();
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.desktop, 2, null);
 $I$(2).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.desktop, 1, null);
 $I$(2).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(this.desktop, null);
 });
 
-Clazz.newMeth(C$, 'createPropertyChangeListener$', function () {
+Clazz.newMeth(C$, 'createPropertyChangeListener$',  function () {
 return p$2.getHandler.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'getHandler', function () {
+Clazz.newMeth(C$, 'getHandler',  function () {
 if (this.handler == null ) {
-this.handler=Clazz.new_($I$(10), [this, null]);
+this.handler=Clazz.new_($I$(9,1),[this, null]);
 }return this.handler;
 }, p$2);
 ;
-(function(){var C$=Clazz.newClass(P$.JSDesktopPaneUI, "Handler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSDesktopPaneUI, "Handler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.beans.PropertyChangeListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (evt) {
 var propertyName=evt.getPropertyName$();
-if ("desktopManager" == propertyName) {
-this.this$0.installDesktopManager$.apply(this.this$0, []);
+if ("desktopManager" === propertyName ) {
+this.b$['swingjs.plaf.JSDesktopPaneUI'].installDesktopManager$.apply(this.b$['swingjs.plaf.JSDesktopPaneUI'], []);
 }});
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSDesktopPaneUI, "JSDesktopManager", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSDesktopPaneUI, "JSDesktopManager", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.DefaultDesktopManager', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSDesktopPaneUI, "Actions", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSDesktopPaneUI, "Actions", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.swing.UIAction');
-C$.CLOSE=null;
-C$.ESCAPE=null;
-C$.MAXIMIZE=null;
-C$.MINIMIZE=null;
-C$.MOVE=null;
-C$.RESIZE=null;
-C$.RESTORE=null;
-C$.LEFT=null;
-C$.RIGHT=null;
-C$.UP=null;
-C$.DOWN=null;
-C$.SHRINK_LEFT=null;
-C$.SHRINK_RIGHT=null;
-C$.SHRINK_UP=null;
-C$.SHRINK_DOWN=null;
-C$.NEXT_FRAME=null;
-C$.PREVIOUS_FRAME=null;
-C$.NAVIGATE_NEXT=null;
-C$.NAVIGATE_PREVIOUS=null;
-C$.moving=false;
-C$.resizing=false;
-C$.sourceFrame=null;
-C$.focusOwner=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.CLOSE="close";
-C$.ESCAPE="escape";
-C$.MAXIMIZE="maximize";
-C$.MINIMIZE="minimize";
-C$.MOVE="move";
-C$.RESIZE="resize";
-C$.RESTORE="restore";
-C$.LEFT="left";
-C$.RIGHT="right";
-C$.UP="up";
-C$.DOWN="down";
-C$.SHRINK_LEFT="shrinkLeft";
-C$.SHRINK_RIGHT="shrinkRight";
-C$.SHRINK_UP="shrinkUp";
-C$.SHRINK_DOWN="shrinkDown";
-C$.NEXT_FRAME="selectNextFrame";
-C$.PREVIOUS_FRAME="selectPreviousFrame";
-C$.NAVIGATE_NEXT="navigateNext";
-C$.NAVIGATE_PREVIOUS="navigatePrevious";
-C$.moving=false;
-C$.resizing=false;
-C$.sourceFrame=null;
-C$.focusOwner=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.MOVE_RESIZE_INCREMENT=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.MOVE_RESIZE_INCREMENT=10;
+},1);
+
+C$.$fields$=[['I',['MOVE_RESIZE_INCREMENT']]
+,['Z',['moving','resizing'],'S',['CLOSE','ESCAPE','MAXIMIZE','MINIMIZE','MOVE','RESIZE','RESTORE','LEFT','RIGHT','UP','DOWN','SHRINK_LEFT','SHRINK_RIGHT','SHRINK_UP','SHRINK_DOWN','NEXT_FRAME','PREVIOUS_FRAME','NAVIGATE_NEXT','NAVIGATE_PREVIOUS'],'O',['sourceFrame','javax.swing.JInternalFrame','focusOwner','java.awt.Component']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$$S.apply(this,[null]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, [null]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S',  function (name) {
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 var dp=e.getSource$();
 var key=this.getName$();
 if (C$.CLOSE == key || C$.MAXIMIZE == key  || C$.MINIMIZE == key  || C$.RESTORE == key ) {
@@ -369,7 +309,7 @@ sPolicy.setImplicitDownCycleTraversal$Z(idc);
 }
 }}}});
 
-Clazz.newMeth(C$, 'setState$javax_swing_JDesktopPane$S', function (dp, state) {
+Clazz.newMeth(C$, 'setState$javax_swing_JDesktopPane$S',  function (dp, state) {
 if (state == C$.CLOSE) {
 var f=dp.getSelectedFrame$();
 if (f == null ) {
@@ -430,7 +370,7 @@ throw pve;
 }
 }}, p$1);
 
-Clazz.newMeth(C$, 'isEnabled$O', function (sender) {
+Clazz.newMeth(C$, 'isEnabled$O',  function (sender) {
 if (Clazz.instanceOf(sender, "javax.swing.JDesktopPane")) {
 var dp=sender;
 var action=this.getName$();
@@ -448,6 +388,32 @@ return iFrame.isMaximizable$();
 }return true;
 }return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.CLOSE="close";
+C$.ESCAPE="escape";
+C$.MAXIMIZE="maximize";
+C$.MINIMIZE="minimize";
+C$.MOVE="move";
+C$.RESIZE="resize";
+C$.RESTORE="restore";
+C$.LEFT="left";
+C$.RIGHT="right";
+C$.UP="up";
+C$.DOWN="down";
+C$.SHRINK_LEFT="shrinkLeft";
+C$.SHRINK_RIGHT="shrinkRight";
+C$.SHRINK_UP="shrinkUp";
+C$.SHRINK_DOWN="shrinkDown";
+C$.NEXT_FRAME="selectNextFrame";
+C$.PREVIOUS_FRAME="selectPreviousFrame";
+C$.NAVIGATE_NEXT="navigateNext";
+C$.NAVIGATE_PREVIOUS="navigatePrevious";
+C$.moving=false;
+C$.resizing=false;
+C$.sourceFrame=null;
+C$.focusOwner=null;
+};
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:24 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

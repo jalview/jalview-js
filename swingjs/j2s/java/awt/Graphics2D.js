@@ -1,17 +1,16 @@
 (function(){var P$=Clazz.newPackage("java.awt"),I$=[];
-var C$=Clazz.newClass(P$, "Graphics2D", null, 'java.awt.Graphics');
+/*c*/var C$=Clazz.newClass(P$, "Graphics2D", null, 'java.awt.Graphics');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-}, 1);
-
-Clazz.newMeth(C$, 'draw3DRect$I$I$I$I$Z', function (x, y, width, height, raised) {
+Clazz.newMeth(C$, 'draw3DRect$I$I$I$I$Z',  function (x, y, width, height, raised) {
 var p=this.getPaint$();
 var c=this.getColor$();
 var brighter=c.brighter$();
@@ -25,7 +24,7 @@ this.fillRect$I$I$I$I(x + width, y, 1, height);
 this.setPaint$java_awt_Paint(p);
 });
 
-Clazz.newMeth(C$, 'fill3DRect$I$I$I$I$Z', function (x, y, width, height, raised) {
+Clazz.newMeth(C$, 'fill3DRect$I$I$I$I$Z',  function (x, y, width, height, raised) {
 var p=this.getPaint$();
 var c=this.getColor$();
 var brighter=c.brighter$();
@@ -44,4 +43,4 @@ this.fillRect$I$I$I$I(x + width - 1, y, 1, height - 1);
 this.setPaint$java_awt_Paint(p);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

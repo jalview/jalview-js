@@ -1,34 +1,29 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'java.util.ArrayList','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.ConstraintParser','net.miginfocom.layout.LayoutUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AC", null, null, 'java.io.Externalizable');
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'java.util.ArrayList','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.ConstraintParser','net.miginfocom.layout.LayoutUtil']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AC", null, null, 'java.io.Externalizable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cList=null;
-this.curIx=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.cList=Clazz.new_($I$(1).c$$I,[1]);
+this.cList=Clazz.new_($I$(1,1).c$$I,[1]);
 this.curIx=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['curIx'],'O',['cList','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.cList.add$TE(Clazz.new_($I$(2)));
+;C$.$init$.apply(this);
+this.cList.add$O(Clazz.new_($I$(2,1)));
 }, 1);
 
 Clazz.newMeth(C$, 'getConstaints$', function () {
-return this.cList.toArray$TTA(Clazz.array($I$(2), [this.cList.size$()]));
+return this.cList.toArray$OA(Clazz.array($I$(2), [this.cList.size$()]));
 });
 
 Clazz.newMeth(C$, 'setConstaints$net_miginfocom_layout_DimConstraintA', function (constr) {
-if (constr == null  || constr.length < 1 ) constr=Clazz.array($I$(2), -1, [Clazz.new_($I$(2))]);
+if (constr == null  || constr.length < 1 ) constr=Clazz.array($I$(2), -1, [Clazz.new_($I$(2,1))]);
 this.cList.clear$();
 this.cList.ensureCapacity$I(constr.length);
-for (var c, $c = 0, $$c = constr; $c<$$c.length&&((c=($$c[$c])),1);$c++) this.cList.add$TE(c);
+for (var c, $c = 0, $$c = constr; $c<$$c.length&&((c=($$c[$c])),1);$c++) this.cList.add$O(c);
 
 });
 
@@ -212,7 +207,7 @@ return this.shrink$F$IA(w, indexes);
 Clazz.newMeth(C$, 'makeSize$I', function (sz) {
 if (this.cList.size$() <= sz) {
 this.cList.ensureCapacity$I(sz);
-for (var i=this.cList.size$(); i <= sz; i++) this.cList.add$TE(Clazz.new_($I$(2)));
+for (var i=this.cList.size$(); i <= sz; i++) this.cList.add$O(Clazz.new_($I$(2,1)));
 
 }}, p$1);
 
@@ -221,11 +216,11 @@ return $I$(4).getSerializedObject$O(this);
 }, p$1);
 
 Clazz.newMeth(C$, 'readExternal$java_io_ObjectInput', function ($in) {
-$I$(4).setSerializedObject$O$O(this, $I$(4).readAsXML$java_io_ObjectInput($in));
+$I$(4,"setSerializedObject$O$O",[this, $I$(4).readAsXML$java_io_ObjectInput($in)]);
 });
 
 Clazz.newMeth(C$, 'writeExternal$java_io_ObjectOutput', function (out) {
 if (this.getClass$() === Clazz.getClass(C$) ) $I$(4).writeAsXML$java_io_ObjectOutput$O(out, this);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

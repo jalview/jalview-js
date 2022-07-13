@@ -1,62 +1,36 @@
-(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.surfacetool"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','java.util.ArrayList','org.jmol.i18n.GT','org.openscience.jmol.app.surfacetool.Slice','org.openscience.jmol.app.surfacetool.SurfaceToolGUI','org.jmol.util.BoxInfo','org.openscience.jmol.app.surfacetool.SurfaceStatus','javajs.util.SB','javax.swing.JOptionPane','org.jmol.util.Escape','org.jmol.script.T']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SurfaceTool");
+(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.surfacetool"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','java.util.ArrayList','org.jmol.i18n.GT','org.openscience.jmol.app.surfacetool.Slice','org.openscience.jmol.app.surfacetool.SurfaceToolGUI','org.jmol.util.BoxInfo','org.openscience.jmol.app.surfacetool.SurfaceStatus','javajs.util.SB','javax.swing.JOptionPane','org.jmol.util.Escape','org.jmol.script.T']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SurfaceTool");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.gui=null;
-this.useGUI=false;
-this.vwr=null;
-this.negCorner=null;
-this.posCorner=null;
-this.center=null;
-this.boxVec=null;
-this.surfaces=null;
-this.angleUnits=0;
-this.angleUnitsList=null;
-this.angleXY=0;
-this.anglefromZ=0;
-this.positionMin=0;
-this.position=0;
-this.thickness=0;
-this.thicknessMax=0;
-this.slice=null;
-this.leftOn=false;
-this.rightOn=false;
-this.ghostOn=false;
-this.capOn=false;
-this.useMolecular=false;
-this.usePercent=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.negCorner=Clazz.new_($I$(1));
-this.posCorner=Clazz.new_($I$(1));
-this.center=Clazz.new_($I$(1));
-this.boxVec=Clazz.new_($I$(2));
-this.surfaces=Clazz.new_($I$(3));
+this.negCorner=Clazz.new_($I$(1,1));
+this.posCorner=Clazz.new_($I$(1,1));
+this.center=Clazz.new_($I$(1,1));
+this.boxVec=Clazz.new_($I$(2,1));
+this.surfaces=Clazz.new_($I$(3,1));
 this.angleUnits=0;
 this.angleUnitsList=Clazz.array(String, -1, [$I$(4).$$S("Degrees"), $I$(4).$$S("Radians"), $I$(4).$$S("Gradians"), $I$(4).$$S("Circle Fraction"), $I$(4).$$S("Units of Pi")]);
-this.slice=Clazz.new_($I$(5));
+this.slice=Clazz.new_($I$(5,1));
 this.leftOn=false;
 this.rightOn=false;
 this.ghostOn=false;
 this.capOn=false;
 this.useMolecular=false;
 this.usePercent=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['useGUI','leftOn','rightOn','ghostOn','capOn','useMolecular','usePercent'],'F',['angleXY','anglefromZ','positionMin','position','thickness','thicknessMax'],'I',['angleUnits'],'O',['gui','org.openscience.jmol.app.surfacetool.SurfaceToolGUI','vwr','org.jmol.api.JmolViewer','negCorner','javajs.util.P3','+posCorner','+center','boxVec','javajs.util.V3','surfaces','java.util.List','angleUnitsList','String[]','slice','org.openscience.jmol.app.surfacetool.Slice']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_api_JmolViewer$org_openscience_jmol_app_HistoryFile$S$Z', function (vwr, hfile, winName, useGUI) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 this.useGUI=useGUI;
 p$1.updateSurfaceInfo.apply(this, []);
 p$1.chooseBestBoundBox.apply(this, []);
 this.setSurfaceToolParam$();
 p$1.initSlice.apply(this, []);
-this.gui=(useGUI ? Clazz.new_($I$(6).c$$org_jmol_api_JmolViewer$org_openscience_jmol_app_HistoryFile$S$org_openscience_jmol_app_surfacetool_SurfaceTool,[vwr, hfile, winName, this]) : null);
+this.gui=(useGUI ? Clazz.new_($I$(6,1).c$$org_jmol_api_JmolViewer$org_openscience_jmol_app_HistoryFile$S$org_openscience_jmol_app_surfacetool_SurfaceTool,[vwr, hfile, winName, this]) : null);
 }, 1);
 
 Clazz.newMeth(C$, 'toFront$', function () {
@@ -70,7 +44,7 @@ this.setSurfaceToolParam$();
 });
 
 Clazz.newMeth(C$, 'chooseBestBoundBox', function () {
-var box=Clazz.new_($I$(7));
+var box=Clazz.new_($I$(7,1));
 this.vwr.calcAtomsMinMax$javajs_util_BS$org_jmol_util_BoxInfo(null, box);
 this.center.setT$javajs_util_T3(box.getBoundBoxCenter$());
 this.boxVec.setT$javajs_util_T3(box.getBoundBoxCornerVector$());
@@ -171,7 +145,7 @@ meshIndexList[i]=-2;
 meshIndexList[i]=-1;
 }}
 }for (var i=0; i < meshIndexList.length; i++) {
-if (meshIndexList[i] == -1) this.surfaces.add$TE(Clazz.new_($I$(8).c$$org_jmol_shape_Mesh$I,[mc.meshes[i], kind]));
+if (meshIndexList[i] == -1) this.surfaces.add$O(Clazz.new_($I$(8,1).c$$org_jmol_shape_Mesh$I,[mc.meshes[i], kind]));
 }
 }}}, p$1);
 
@@ -205,7 +179,7 @@ this.slice.setSlice$F$F$F$F$javajs_util_P3$javajs_util_V3$Z(this.angleXY, this.a
 
 Clazz.newMeth(C$, 'showSliceBoundaryPlanes$Z', function (onOrOff) {
 this.leftOn=this.rightOn=onOrOff;
-var cmd=Clazz.new_($I$(9));
+var cmd=Clazz.new_($I$(9,1));
 p$1.drawSlicePlane$javajs_util_SB$I$Z.apply(this, [cmd, 1073741996, onOrOff]);
 p$1.drawSlicePlane$javajs_util_SB$I$Z.apply(this, [cmd, 1073742126, onOrOff]);
 this.vwr.evalStringQuiet$S(cmd.toString());
@@ -213,7 +187,7 @@ this.vwr.evalStringQuiet$S(cmd.toString());
 
 Clazz.newMeth(C$, 'setSlice$F$F$F$F', function (angleXY, anglefromZ, position, thickness) {
 if (this.usePercent) {
-$I$(10).showMessageDialog$java_awt_Component$O$S$I(null, $I$(4).$$S("Percentage scaling not implemented yet!"), "Warning", 2);
+$I$(10,"showMessageDialog$java_awt_Component$O$S$I",[null, $I$(4).$$S("Percentage scaling not implemented yet!"), "Warning", 2]);
 }this.angleXY=angleXY;
 this.anglefromZ=anglefromZ;
 this.position=position;
@@ -243,7 +217,7 @@ return (this.anglefromZ);
 
 Clazz.newMeth(C$, 'setSlicePosition$F', function (where) {
 if (this.usePercent) {
-$I$(10).showMessageDialog$java_awt_Component$O$S$I(null, $I$(4).$$S("Percentage scaling not implemented yet!"), "Warning", 2);
+$I$(10,"showMessageDialog$java_awt_Component$O$S$I",[null, $I$(4).$$S("Percentage scaling not implemented yet!"), "Warning", 2]);
 }if (this.position != where ) {
 this.position=where;
 this.slice.setSlice$F$F$F$F$javajs_util_P3$javajs_util_V3$Z(this.angleXY, this.anglefromZ, this.position, this.thickness, this.center, this.boxVec, this.useMolecular);
@@ -255,7 +229,7 @@ return (this.position);
 
 Clazz.newMeth(C$, 'setSliceThickness$F', function (width) {
 if (this.usePercent) {
-$I$(10).showMessageDialog$java_awt_Component$O$S$I(null, $I$(4).$$S("Percentage scaling not implemented yet!"), "Warning", 2);
+$I$(10,"showMessageDialog$java_awt_Component$O$S$I",[null, $I$(4).$$S("Percentage scaling not implemented yet!"), "Warning", 2]);
 }if (this.thickness != width ) {
 this.thickness=width;
 this.slice.setSlice$F$F$F$F$javajs_util_P3$javajs_util_V3$Z(this.angleXY, this.anglefromZ, this.position, this.thickness, this.center, this.boxVec, this.useMolecular);
@@ -289,7 +263,7 @@ idStr="";
 slabCapStr=" slab ";
 break;
 }
-var cmd=Clazz.new_($I$(9));
+var cmd=Clazz.new_($I$(9,1));
 p$1.drawSlicePlane$javajs_util_SB$I$Z.apply(this, [cmd, 1073741996, this.leftOn]);
 p$1.drawSlicePlane$javajs_util_SB$I$Z.apply(this, [cmd, 1073742126, this.rightOn]);
 cmd.append$S(cmdStart).append$S(idStr).append$S(" slab none;");
@@ -382,4 +356,4 @@ return this.surfaces;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

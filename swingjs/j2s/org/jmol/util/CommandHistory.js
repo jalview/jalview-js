@@ -1,27 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CommandHistory");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.Lst']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CommandHistory");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.commandList=null;
-this.maxSize=0;
-this.nextCommand=0;
-this.cursorPos=0;
-this.isOn=false;
-this.lstStates=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.commandList=null;
 this.maxSize=100;
 this.isOn=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isOn'],'I',['maxSize','nextCommand','cursorPos'],'O',['commandList','javajs.util.Lst','+lstStates']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.reset$I(100);
 }, 1);
 
@@ -31,9 +22,9 @@ this.reset$I(this.maxSize);
 
 Clazz.newMeth(C$, 'reset$I', function (maxSize) {
 this.maxSize=maxSize;
-this.commandList=Clazz.new_($I$(1));
+this.commandList=Clazz.new_($I$(1,1));
 this.nextCommand=0;
-this.commandList.addLast$TV("");
+this.commandList.addLast$O("");
 this.cursorPos=0;
 });
 
@@ -136,15 +127,15 @@ if (command.endsWith$S("#--")) return;
 if (this.nextCommand >= this.maxSize) {
 this.commandList.removeItemAt$I(0);
 this.nextCommand=this.maxSize - 1;
-}this.commandList.add$I$TE(this.nextCommand, command);
+}this.commandList.add$I$O(this.nextCommand, command);
 this.nextCommand++;
 this.cursorPos=this.nextCommand;
-this.commandList.add$I$TE(this.nextCommand, "");
+this.commandList.add$I$O(this.nextCommand, "");
 }, p$1);
 
 Clazz.newMeth(C$, 'pushState$S', function (stateInfo) {
-if (this.lstStates == null ) this.lstStates=Clazz.new_($I$(1));
-this.lstStates.addLast$TV(stateInfo);
+if (this.lstStates == null ) this.lstStates=Clazz.new_($I$(1,1));
+this.lstStates.addLast$O(stateInfo);
 });
 
 Clazz.newMeth(C$, 'popState$', function () {
@@ -153,4 +144,4 @@ var s=this.lstStates.removeItemAt$I(this.lstStates.size$() - 1);
 return s;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

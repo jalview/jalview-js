@@ -1,29 +1,15 @@
-(function(){var P$=Clazz.newPackage("gov.nist.jama"),p$1={},I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EigenvalueDecomposition", null, null, 'java.io.Serializable');
-C$.tqleps=0;
+(function(){var P$=Clazz.newPackage("gov.nist.jama"),p$1={},I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EigenvalueDecomposition", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.tqleps=0;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.n=0;
-this.issymmetric=false;
-this.needVectors=false;
-this.d=null;
-this.e=null;
-this.V=null;
-this.H=null;
-this.ort=null;
-this.cdivr=0;
-this.cdivi=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'tred2', function () {
+C$.$fields$=[['Z',['issymmetric','needVectors'],'D',['cdivr','cdivi'],'I',['n'],'O',['d','double[]','+e','V','double[][]','+H','ort','double[]']]
+,['D',['tqleps']]]
+
+Clazz.newMeth(C$, 'tred2',  function () {
 for (var j=0; j < this.n; j++) {
 this.d[j]=this.V[this.n - 1][j];
 }
@@ -42,8 +28,8 @@ this.V[j][i]=0.0;
 }
 } else {
 for (var k=0; k < i; k++) {
-this.d[k] /= scale;
-h += this.d[k] * this.d[k];
+this.d[k]/=scale;
+h+=this.d[k] * this.d[k];
 }
 var f=this.d[i - 1];
 var g=Math.sqrt(h);
@@ -60,25 +46,25 @@ f=this.d[j];
 this.V[j][i]=f;
 g=this.e[j] + this.V[j][j] * f;
 for (var k=j + 1; k <= i - 1; k++) {
-g += this.V[k][j] * this.d[k];
-this.e[k] += this.V[k][j] * f;
+g+=this.V[k][j] * this.d[k];
+this.e[k]+=this.V[k][j] * f;
 }
 this.e[j]=g;
 }
 f=0.0;
 for (var j=0; j < i; j++) {
-this.e[j] /= h;
-f += this.e[j] * this.d[j];
+this.e[j]/=h;
+f+=this.e[j] * this.d[j];
 }
 var hh=f / (h + h);
 for (var j=0; j < i; j++) {
-this.e[j] -= hh * this.d[j];
+this.e[j]-=hh * this.d[j];
 }
 for (var j=0; j < i; j++) {
 f=this.d[j];
 g=this.e[j];
 for (var k=j; k <= i - 1; k++) {
-this.V[k][j] -= (f * this.e[k] + g * this.d[k]);
+this.V[k][j]-=(f * this.e[k] + g * this.d[k]);
 }
 this.d[j]=this.V[i - 1][j];
 this.V[i][j]=0.0;
@@ -96,10 +82,10 @@ this.d[k]=this.V[k][i + 1] / h;
 for (var j=0; j <= i; j++) {
 var g=0.0;
 for (var k=0; k <= i; k++) {
-g += this.V[k][i + 1] * this.V[k][j];
+g+=this.V[k][i + 1] * this.V[k][j];
 }
 for (var k=0; k <= i; k++) {
-this.V[k][j] -= g * this.d[k];
+this.V[k][j]-=g * this.d[k];
 }
 }
 }for (var k=0; k <= i; k++) {
@@ -114,7 +100,7 @@ this.V[this.n - 1][this.n - 1]=1.0;
 this.e[0]=0.0;
 }, p$1);
 
-Clazz.newMeth(C$, 'tql2', function () {
+Clazz.newMeth(C$, 'tql2',  function () {
 for (var i=1; i < this.n; i++) {
 this.e[i - 1]=this.e[i];
 }
@@ -129,7 +115,7 @@ var m=l;
 while (m < this.n){
 if (Math.abs(this.e[m]) <= eps * tst1 ) {
 break;
-}m++;
+}++m;
 }
 if (m > l) {
 var iter=0;
@@ -145,7 +131,7 @@ this.d[l + 1]=this.e[l] * (p + r);
 var dl1=this.d[l + 1];
 var h=g - this.d[l];
 for (var i=l + 2; i < this.n; i++) {
-this.d[i] -= h;
+this.d[i]-=h;
 }
 f=f + h;
 p=this.d[m];
@@ -199,7 +185,7 @@ this.V[j][k]=p;
 }}
 }, p$1);
 
-Clazz.newMeth(C$, 'orthes', function () {
+Clazz.newMeth(C$, 'orthes',  function () {
 var low=0;
 var high=this.n - 1;
 for (var m=low + 1; m <= high - 1; m++) {
@@ -211,7 +197,7 @@ if (scale != 0.0 ) {
 var h=0.0;
 for (var i=high; i >= m; i--) {
 this.ort[i]=this.H[i][m - 1] / scale;
-h += this.ort[i] * this.ort[i];
+h+=this.ort[i] * this.ort[i];
 }
 var g=Math.sqrt(h);
 if (this.ort[m] > 0 ) {
@@ -221,21 +207,21 @@ this.ort[m]=this.ort[m] - g;
 for (var j=m; j < this.n; j++) {
 var f=0.0;
 for (var i=high; i >= m; i--) {
-f += this.ort[i] * this.H[i][j];
+f+=this.ort[i] * this.H[i][j];
 }
 f=f / h;
 for (var i=m; i <= high; i++) {
-this.H[i][j] -= f * this.ort[i];
+this.H[i][j]-=f * this.ort[i];
 }
 }
 for (var i=0; i <= high; i++) {
 var f=0.0;
 for (var j=high; j >= m; j--) {
-f += this.ort[j] * this.H[i][j];
+f+=this.ort[j] * this.H[i][j];
 }
 f=f / h;
 for (var j=m; j <= high; j++) {
-this.H[i][j] -= f * this.ort[j];
+this.H[i][j]-=f * this.ort[j];
 }
 }
 this.ort[m]=scale * this.ort[m];
@@ -255,17 +241,17 @@ this.ort[i]=this.H[i][m - 1];
 for (var j=m; j <= high; j++) {
 var g=0.0;
 for (var i=m; i <= high; i++) {
-g += this.ort[i] * this.V[i][j];
+g+=this.ort[i] * this.V[i][j];
 }
 g=(g / this.ort[m]) / this.H[m][m - 1];
 for (var i=m; i <= high; i++) {
-this.V[i][j] += g * this.ort[i];
+this.V[i][j]+=g * this.ort[i];
 }
 }
 }}
 }, p$1);
 
-Clazz.newMeth(C$, 'cdiv$D$D$D$D', function (xr, xi, yr, yi) {
+Clazz.newMeth(C$, 'cdiv$D$D$D$D',  function (xr, xi, yr, yi) {
 var r;
 var d;
 if (Math.abs(yr) > Math.abs(yi) ) {
@@ -280,7 +266,7 @@ this.cdivr=(r * xr + xi) / d;
 this.cdivi=(r * xi - xr) / d;
 }}, p$1);
 
-Clazz.newMeth(C$, 'hqr2', function () {
+Clazz.newMeth(C$, 'hqr2',  function () {
 var nn=this.n;
 var n=nn - 1;
 var low=0;
@@ -315,13 +301,13 @@ if (s == 0.0 ) {
 s=norm;
 }if (Math.abs(this.H[l][l - 1]) < eps * s ) {
 break;
-}l--;
+}--l;
 }
 if (l == n) {
 this.H[n][n]=this.H[n][n] + exshift;
 this.d[n]=this.H[n][n];
 this.e[n]=0.0;
-n--;
+--n;
 iter=0;
 } else if (l == n - 1) {
 w=this.H[n][n - 1] * this.H[n - 1][n];
@@ -379,9 +365,9 @@ if (l < n) {
 y=this.H[n - 1][n - 1];
 w=this.H[n][n - 1] * this.H[n - 1][n];
 }if (iter == 10) {
-exshift += x;
+exshift+=x;
 for (var i=low; i <= n; i++) {
-this.H[i][i] -= x;
+this.H[i][i]-=x;
 }
 s=Math.abs(this.H[n][n - 1]) + Math.abs(this.H[n - 1][n - 2]);
 x=y=0.75 * s;
@@ -395,9 +381,9 @@ if (y < x ) {
 s=-s;
 }s=x - w / ((y - x) / 2.0 + s);
 for (var i=low; i <= n; i++) {
-this.H[i][i] -= s;
+this.H[i][i]-=s;
 }
-exshift += s;
+exshift+=s;
 x=y=w=0.964;
 }}iter=iter + 1;
 var m=n - 2;
@@ -416,7 +402,7 @@ if (m == l) {
 break;
 }if (Math.abs(this.H[m][m - 1]) * (Math.abs(q) + Math.abs(r)) < eps * (Math.abs(p) * (Math.abs(this.H[m - 1][m - 1]) + Math.abs(z) + Math.abs(this.H[m + 1][m + 1]) )) ) {
 break;
-}m--;
+}--m;
 }
 for (var i=m + 2; i <= n; i++) {
 this.H[i][i - 2]=0.0;
@@ -590,8 +576,8 @@ this.V[i][j]=z;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'c$$gov_nist_jama_Matrix$Z', function (Arg, nv) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$gov_nist_jama_Matrix$Z',  function (Arg, nv) {
+;C$.$init$.apply(this);
 var A=Arg.getArray$();
 this.n=Arg.getColumnDimension$();
 this.V=Clazz.array(Double.TYPE, [this.n, this.n]);
@@ -624,20 +610,20 @@ p$1.orthes.apply(this, []);
 p$1.hqr2.apply(this, []);
 }}, 1);
 
-Clazz.newMeth(C$, 'getV$', function () {
-return Clazz.new_($I$(2).c$$DAA$I$I,[this.V, this.n, this.n]);
+Clazz.newMeth(C$, 'getV$',  function () {
+return Clazz.new_($I$(2,1).c$$DAA$I$I,[this.V, this.n, this.n]);
 });
 
-Clazz.newMeth(C$, 'getRealEigenvalues$', function () {
+Clazz.newMeth(C$, 'getRealEigenvalues$',  function () {
 return this.d;
 });
 
-Clazz.newMeth(C$, 'getImagEigenvalues$', function () {
+Clazz.newMeth(C$, 'getImagEigenvalues$',  function () {
 return this.e;
 });
 
-Clazz.newMeth(C$, 'getD$', function () {
-var X=Clazz.new_($I$(2).c$$I$I,[this.n, this.n]);
+Clazz.newMeth(C$, 'getD$',  function () {
+var X=Clazz.new_($I$(2,1).c$$I$I,[this.n, this.n]);
 var D=X.getArray$();
 for (var i=0; i < this.n; i++) {
 for (var j=0; j < this.n; j++) {
@@ -652,6 +638,10 @@ D[i][i - 1]=this.e[i];
 return X;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.tqleps=0;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

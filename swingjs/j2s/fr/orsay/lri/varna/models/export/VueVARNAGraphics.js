@@ -1,4 +1,4 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),I$=[];
-var C$=Clazz.newInterface(P$, "VueVARNAGraphics");
+/*i*/var C$=Clazz.newInterface(P$, "VueVARNAGraphics");
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

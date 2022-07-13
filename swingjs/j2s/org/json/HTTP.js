@@ -1,15 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'org.json.JSONObject','org.json.HTTPTokener','java.util.Locale','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HTTP");
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'org.json.JSONObject','org.json.HTTPTokener','java.util.Locale','StringBuilder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HTTP");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'toJSONObject$S', function (string) {
-var jo=Clazz.new_($I$(1));
-var x=Clazz.new_($I$(2).c$$S,[string]);
+Clazz.newMeth(C$, 'toJSONObject$S',  function (string) {
+var jo=Clazz.new_($I$(1,1));
+var x=Clazz.new_($I$(2,1).c$$S,[string]);
 var token;
 token=x.nextToken$();
 if (token.toUpperCase$java_util_Locale($I$(3).ROOT).startsWith$S("HTTP")) {
@@ -30,8 +29,8 @@ x.next$();
 return jo;
 }, 1);
 
-Clazz.newMeth(C$, 'toString$org_json_JSONObject', function (jo) {
-var sb=Clazz.new_($I$(4));
+Clazz.newMeth(C$, 'toString$org_json_JSONObject',  function (jo) {
+var sb=Clazz.new_($I$(4,1));
 if (jo.has$S("Status-Code") && jo.has$S("Reason-Phrase") ) {
 sb.append$S(jo.getString$S("HTTP-Version"));
 sb.append$C(" ");
@@ -63,4 +62,4 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

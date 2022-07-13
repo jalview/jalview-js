@@ -1,109 +1,72 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'Thread',['java.util.concurrent.ThreadPoolExecutor','.AbortPolicy'],'java.util.concurrent.atomic.AtomicInteger','java.util.concurrent.locks.ReentrantLock','java.util.HashSet','java.util.ArrayList',['java.util.concurrent.ThreadPoolExecutor','.Worker'],'java.util.concurrent.TimeUnit','Error','java.util.concurrent.Executors']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ThreadPoolExecutor", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'Thread',['java.util.concurrent.ThreadPoolExecutor','.AbortPolicy'],'java.util.concurrent.atomic.AtomicInteger','java.util.concurrent.locks.ReentrantLock','java.util.HashSet','java.util.ArrayList',['java.util.concurrent.ThreadPoolExecutor','.Worker'],'java.util.concurrent.TimeUnit',['javajs.async.SwingJSUtils','.StateHelper'],'Error','java.util.concurrent.Executors','swingjs.JSUtil']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ThreadPoolExecutor", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.concurrent.AbstractExecutorService');
-C$.defaultHandler=null;
+C$.$classes$=[['Worker',18],['CallerRunsPolicy',9],['AbortPolicy',9],['DiscardPolicy',9],['DiscardOldestPolicy',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultHandler=Clazz.new_($I$(2));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ctl=null;
-this.workQueue=null;
-this.mainLock=null;
-this.workers=null;
-this.termination=null;
-this.largestPoolSize=0;
-this.completedTaskCount=0;
-this.threadFactory=null;
-this.handler=null;
-this.keepAliveTime=0;
-this.allowCoreThreadTimeOut=false;
-this.corePoolSize=0;
-this.maximumPoolSize=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.ctl=Clazz.new_($I$(3).c$$I,[C$.ctlOf$I$I(-536870912, 0)]);
-this.mainLock=Clazz.new_($I$(4));
-this.workers=Clazz.new_($I$(5));
-this.termination=this.mainLock.newCondition$();
-}, 1);
+this.ctl=Clazz.new_([C$.ctlOf$I$I(-536870912, 0)],$I$(3,1).c$$I);
+this.mainLock=Clazz.new_($I$(4,1));
+this.workers=Clazz.new_($I$(5,1));
+},1);
 
-Clazz.newMeth(C$, 'runStateOf$I', function (c) {
+C$.$fields$=[['Z',['allowCoreThreadTimeOut','stopped'],'I',['largestPoolSize','corePoolSize','maximumPoolSize'],'J',['completedTaskCount','keepAliveTime'],'O',['ctl','java.util.concurrent.atomic.AtomicInteger','workQueue','java.util.concurrent.BlockingQueue','mainLock','java.util.concurrent.locks.ReentrantLock','workers','java.util.HashSet','threadFactory','java.util.concurrent.ThreadFactory','handler','java.util.concurrent.RejectedExecutionHandler']]
+,['O',['defaultHandler','java.util.concurrent.RejectedExecutionHandler']]]
+
+Clazz.newMeth(C$, 'runStateOf$I',  function (c) {
 return c & ~536870911;
 }, 1);
 
-Clazz.newMeth(C$, 'workerCountOf$I', function (c) {
+Clazz.newMeth(C$, 'workerCountOf$I',  function (c) {
 return c & 536870911;
 }, 1);
 
-Clazz.newMeth(C$, 'ctlOf$I$I', function (rs, wc) {
+Clazz.newMeth(C$, 'ctlOf$I$I',  function (rs, wc) {
 return rs | wc;
 }, 1);
 
-Clazz.newMeth(C$, 'runStateLessThan$I$I', function (c, s) {
+Clazz.newMeth(C$, 'runStateLessThan$I$I',  function (c, s) {
 return c < s;
 }, 1);
 
-Clazz.newMeth(C$, 'runStateAtLeast$I$I', function (c, s) {
+Clazz.newMeth(C$, 'runStateAtLeast$I$I',  function (c, s) {
 return c >= s;
 }, 1);
 
-Clazz.newMeth(C$, 'isRunning$I', function (c) {
+Clazz.newMeth(C$, 'isRunning$I',  function (c) {
 return c < 0;
 }, 1);
 
-Clazz.newMeth(C$, 'compareAndIncrementWorkerCount$I', function (expect) {
+Clazz.newMeth(C$, 'compareAndIncrementWorkerCount$I',  function (expect) {
 return this.ctl.compareAndSet$I$I(expect, expect + 1);
 }, p$1);
 
-Clazz.newMeth(C$, 'compareAndDecrementWorkerCount$I', function (expect) {
+Clazz.newMeth(C$, 'compareAndDecrementWorkerCount$I',  function (expect) {
 return this.ctl.compareAndSet$I$I(expect, expect - 1);
 }, p$1);
 
-Clazz.newMeth(C$, 'decrementWorkerCount', function () {
+Clazz.newMeth(C$, 'decrementWorkerCount',  function () {
 do {
 } while (!p$1.compareAndDecrementWorkerCount$I.apply(this, [this.ctl.get$()]));
 }, p$1);
 
-Clazz.newMeth(C$, 'advanceRunState$I', function (targetState) {
+Clazz.newMeth(C$, 'advanceRunState$I',  function (targetState) {
 for (; ; ) {
 var c=this.ctl.get$();
 if (C$.runStateAtLeast$I$I(c, targetState) || this.ctl.compareAndSet$I$I(c, C$.ctlOf$I$I(targetState, C$.workerCountOf$I(c))) ) break;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'tryTerminate$', function () {
-for (; ; ) {
-var c=this.ctl.get$();
-if (C$.isRunning$I(c) || C$.runStateAtLeast$I$I(c, 1073741824) || (C$.runStateOf$I(c) == 0 && !this.workQueue.isEmpty$() )  ) return;
-if (C$.workerCountOf$I(c) != 0) {
-p$1.interruptIdleWorkers$Z.apply(this, [true]);
-return;
-}var mainLock=this.mainLock;
-mainLock.lock$();
-try {
-if (this.ctl.compareAndSet$I$I(c, C$.ctlOf$I$I(1073741824, 0))) {
-try {
+Clazz.newMeth(C$, 'tryTerminate$',  function () {
 this.terminated$();
-} finally {
-this.ctl.set$I(C$.ctlOf$I$I(1610612736, 0));
-this.termination.signalAll$();
-}
-return;
-}} finally {
-mainLock.unlock$();
-}
-}
 });
 
-Clazz.newMeth(C$, 'checkShutdownAccess', function () {
+Clazz.newMeth(C$, 'checkShutdownAccess',  function () {
 }, p$1);
 
-Clazz.newMeth(C$, 'interruptWorkers', function () {
+Clazz.newMeth(C$, 'interruptWorkers',  function () {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
@@ -115,7 +78,7 @@ mainLock.unlock$();
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'interruptIdleWorkers$Z', function (onlyOne) {
+Clazz.newMeth(C$, 'interruptIdleWorkers$Z',  function (onlyOne) {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
@@ -139,52 +102,39 @@ mainLock.unlock$();
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'interruptIdleWorkers', function () {
+Clazz.newMeth(C$, 'interruptIdleWorkers',  function () {
 p$1.interruptIdleWorkers$Z.apply(this, [false]);
 }, p$1);
 
-Clazz.newMeth(C$, 'reject$Runnable', function (command) {
-this.handler.rejectedExecution$(command, this);
+Clazz.newMeth(C$, 'reject$Runnable',  function (command) {
+this.handler.rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor(command, this);
 });
 
-Clazz.newMeth(C$, 'onShutdown$', function () {
+Clazz.newMeth(C$, 'onShutdown$',  function () {
 });
 
-Clazz.newMeth(C$, 'isRunningOrShutdown$Z', function (shutdownOK) {
-var rs=C$.runStateOf$I(this.ctl.get$());
-return rs == -536870912 || (rs == 0 && shutdownOK ) ;
+Clazz.newMeth(C$, 'isRunningOrShutdown$Z',  function (shutdownOK) {
+return (shutdownOK || !this.stopped );
 });
 
-Clazz.newMeth(C$, 'drainQueue', function () {
+Clazz.newMeth(C$, 'drainQueue',  function () {
 var q=this.workQueue;
-var taskList=Clazz.new_($I$(6));
+var taskList=Clazz.new_($I$(6,1));
 q.drainTo$java_util_Collection(taskList);
 if (!q.isEmpty$()) {
-for (var r, $r = 0, $$r = q.toArray$TTA(Clazz.array(Runnable, [0])); $r<$$r.length&&((r=($$r[$r])),1);$r++) {
-if (q.remove$O(r)) taskList.add$TE(r);
+for (var r, $r = 0, $$r = q.toArray$OA(Clazz.array(Runnable, [0])); $r<$$r.length&&((r=($$r[$r])),1);$r++) {
+if (q.remove$O(r)) taskList.add$O(r);
 }
 }return taskList;
 }, p$1);
 
-Clazz.newMeth(C$, 'addWorker$Runnable$Z', function (firstTask, core) {
- retry : for (; ; ) {
-var c=this.ctl.get$();
-var rs=C$.runStateOf$I(c);
-if (rs >= 0 && !(rs == 0 && firstTask == null   && !this.workQueue.isEmpty$() ) ) return false;
-for (; ; ) {
-var wc=C$.workerCountOf$I(c);
-if (wc >= 536870911 || wc >= (core ? this.corePoolSize : this.maximumPoolSize) ) return false;
-if (p$1.compareAndIncrementWorkerCount$I.apply(this, [c])) break retry;
-c=this.ctl.get$();
-if (C$.runStateOf$I(c) != rs) continue retry;
-}
-}
+Clazz.newMeth(C$, 'addWorker$Runnable$Z',  function (firstTask, core) {
 var workerStarted=false;
 var workerAdded=false;
 var w=null;
 try {
 var mainLock=this.mainLock;
-w=Clazz.new_($I$(7).c$$Runnable, [this, null, firstTask]);
+w=Clazz.new_($I$(7,1).c$$Runnable,[this, null, firstTask]);
 var t=w.thread;
 if (t != null ) {
 mainLock.lock$();
@@ -193,7 +143,7 @@ var c=this.ctl.get$();
 var rs=C$.runStateOf$I(c);
 if (rs < 0 || (rs == 0 && firstTask == null  ) ) {
 if (t.isAlive$()) throw Clazz.new_(Clazz.load('IllegalThreadStateException'));
-this.workers.add$TE(w);
+this.workers.add$O(w);
 var s=this.workers.size$();
 if (s > this.largestPoolSize) this.largestPoolSize=s;
 workerAdded=true;
@@ -209,7 +159,7 @@ if (!workerStarted) p$1.addWorkerFailed$java_util_concurrent_ThreadPoolExecutor_
 return workerStarted;
 }, p$1);
 
-Clazz.newMeth(C$, 'addWorkerFailed$java_util_concurrent_ThreadPoolExecutor_Worker', function (w) {
+Clazz.newMeth(C$, 'addWorkerFailed$java_util_concurrent_ThreadPoolExecutor_Worker',  function (w) {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
@@ -221,12 +171,12 @@ mainLock.unlock$();
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'processWorkerExit$java_util_concurrent_ThreadPoolExecutor_Worker$Z', function (w, completedAbruptly) {
+Clazz.newMeth(C$, 'processWorkerExit$java_util_concurrent_ThreadPoolExecutor_Worker$Z',  function (w, completedAbruptly) {
 if (completedAbruptly) p$1.decrementWorkerCount.apply(this, []);
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
-this.completedTaskCount+=w.completedTasks;
+(this.completedTaskCount=Long.$add(this.completedTaskCount,(w.completedTasks)));
 this.workers.remove$O(w);
 } finally {
 mainLock.unlock$();
@@ -238,10 +188,9 @@ if (!completedAbruptly) {
 var min=this.allowCoreThreadTimeOut ? 0 : this.corePoolSize;
 if (min == 0 && !this.workQueue.isEmpty$() ) min=1;
 if (C$.workerCountOf$I(c) >= min) return;
-}p$1.addWorker$Runnable$Z.apply(this, [null, false]);
-}}, p$1);
+}}}, p$1);
 
-Clazz.newMeth(C$, 'getTask', function () {
+Clazz.newMeth(C$, 'getTask',  function () {
 var timedOut=false;
  retry : for (; ; ) {
 var c=this.ctl.get$();
@@ -272,21 +221,30 @@ throw retry;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'runWorker$java_util_concurrent_ThreadPoolExecutor_Worker', function (w) {
+Clazz.newMeth(C$, 'runWorker$java_util_concurrent_ThreadPoolExecutor_Worker',  function (w) {
 var wt=$I$(1).currentThread$();
 var task=w.firstTask;
 w.firstTask=null;
 w.unlock$();
 var completedAbruptly=true;
 try {
-while (task != null  || (task=p$1.getTask.apply(this, [])) != null  ){
+if (task != null ) {
 w.lock$();
 if ((C$.runStateAtLeast$I$I(this.ctl.get$(), 536870912) || ($I$(1).interrupted$() && C$.runStateAtLeast$I$I(this.ctl.get$(), 536870912) ) ) && !wt.isInterrupted$() ) wt.interrupt$();
+$I$(9,"delayedRun$I$Runnable",[100, ((P$.ThreadPoolExecutor$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "ThreadPoolExecutor$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'run$',  function () {
 try {
-this.beforeExecute$Thread$Runnable(wt, task);
+this.b$['java.util.concurrent.ThreadPoolExecutor'].beforeExecute$Thread$Runnable.apply(this.b$['java.util.concurrent.ThreadPoolExecutor'], [this.$finals$.wt, this.$finals$.task]);
 var thrown=null;
 try {
-task.run$();
+this.$finals$.task.run$();
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"RuntimeException")){
 var x = e$$;
@@ -304,39 +262,40 @@ throw x;
 var x = e$$;
 {
 thrown=x;
-throw Clazz.new_($I$(9).c$$Throwable,[x]);
+throw Clazz.new_($I$(10,1).c$$Throwable,[x]);
 }
 }
 } finally {
-this.afterExecute$Runnable$Throwable(task, thrown);
+this.b$['java.util.concurrent.ThreadPoolExecutor'].afterExecute$Runnable$Throwable.apply(this.b$['java.util.concurrent.ThreadPoolExecutor'], [this.$finals$.task, thrown]);
 }
 } finally {
-task=null;
-w.completedTasks++;
-w.unlock$();
+(this.$finals$.w.completedTasks=Long.$inc(this.$finals$.w.completedTasks,1));
+this.$finals$.w.unlock$();
 }
-}
-completedAbruptly=false;
+});
+})()
+), Clazz.new_(P$.ThreadPoolExecutor$1.$init$,[this, {task:task,w:w,wt:wt}]))]);
+}completedAbruptly=false;
 } finally {
 p$1.processWorkerExit$java_util_concurrent_ThreadPoolExecutor_Worker$Z.apply(this, [w, completedAbruptly]);
 }
 });
 
-Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue', function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue) {
-C$.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler.apply(this, [corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, $I$(10).defaultThreadFactory$(), C$.defaultHandler]);
+Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue',  function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue) {
+C$.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler.apply(this, [corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, $I$(11).defaultThreadFactory$(), C$.defaultHandler]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory', function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory) {
+Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory',  function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory) {
 C$.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler.apply(this, [corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, C$.defaultHandler]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_RejectedExecutionHandler', function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, handler) {
-C$.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler.apply(this, [corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, $I$(10).defaultThreadFactory$(), handler]);
+Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_RejectedExecutionHandler',  function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, handler) {
+C$.c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler.apply(this, [corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, $I$(11).defaultThreadFactory$(), handler]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler', function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler) {
-Clazz.super_(C$, this,1);
-if (corePoolSize < 0 || maximumPoolSize <= 0  || maximumPoolSize < corePoolSize  || keepAliveTime < 0 ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
+Clazz.newMeth(C$, 'c$$I$I$J$java_util_concurrent_TimeUnit$java_util_concurrent_BlockingQueue$java_util_concurrent_ThreadFactory$java_util_concurrent_RejectedExecutionHandler',  function (corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler) {
+Clazz.super_(C$, this);
+if (corePoolSize < 0 || maximumPoolSize <= 0  || maximumPoolSize < corePoolSize  || Long.$lt(keepAliveTime,0 ) ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 if (workQueue == null  || threadFactory == null   || handler == null  ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.corePoolSize=corePoolSize;
 this.maximumPoolSize=maximumPoolSize;
@@ -346,34 +305,27 @@ this.threadFactory=threadFactory;
 this.handler=handler;
 }, 1);
 
-Clazz.newMeth(C$, ['execute$Runnable','execute$'], function (command) {
+Clazz.newMeth(C$, 'execute$Runnable',  function (command) {
 if (command == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var c=this.ctl.get$();
 if (C$.workerCountOf$I(c) < this.corePoolSize) {
 if (p$1.addWorker$Runnable$Z.apply(this, [command, true])) return;
 c=this.ctl.get$();
-}if (C$.isRunning$I(c) && this.workQueue.offer$TE(command) ) {
+}if (C$.isRunning$I(c) && this.workQueue.offer$O(command) ) {
 var recheck=this.ctl.get$();
 if (!C$.isRunning$I(recheck) && this.remove$Runnable(command) ) this.reject$Runnable(command);
  else if (C$.workerCountOf$I(recheck) == 0) p$1.addWorker$Runnable$Z.apply(this, [null, false]);
 } else if (!p$1.addWorker$Runnable$Z.apply(this, [command, false])) this.reject$Runnable(command);
 });
 
-Clazz.newMeth(C$, 'shutdown$', function () {
-var mainLock=this.mainLock;
-mainLock.lock$();
-try {
-p$1.checkShutdownAccess.apply(this, []);
-p$1.advanceRunState$I.apply(this, [0]);
+Clazz.newMeth(C$, 'shutdown$',  function () {
+this.stopped=true;
 p$1.interruptIdleWorkers.apply(this, []);
 this.onShutdown$();
-} finally {
-mainLock.unlock$();
-}
 this.tryTerminate$();
 });
 
-Clazz.newMeth(C$, 'shutdownNow$', function () {
+Clazz.newMeth(C$, 'shutdownNow$',  function () {
 var tasks;
 var mainLock=this.mainLock;
 mainLock.lock$();
@@ -389,57 +341,46 @@ this.tryTerminate$();
 return tasks;
 });
 
-Clazz.newMeth(C$, 'isShutdown$', function () {
-return !C$.isRunning$I(this.ctl.get$());
+Clazz.newMeth(C$, 'isShutdown$',  function () {
+return this.stopped;
 });
 
-Clazz.newMeth(C$, 'isTerminating$', function () {
-var c=this.ctl.get$();
-return !C$.isRunning$I(c) && C$.runStateLessThan$I$I(c, 1610612736) ;
+Clazz.newMeth(C$, 'isTerminating$',  function () {
+return false;
 });
 
-Clazz.newMeth(C$, 'isTerminated$', function () {
-return C$.runStateAtLeast$I$I(this.ctl.get$(), 1610612736);
+Clazz.newMeth(C$, 'isTerminated$',  function () {
+return this.stopped;
 });
 
-Clazz.newMeth(C$, 'awaitTermination$J$java_util_concurrent_TimeUnit', function (timeout, unit) {
-var nanos=unit.toNanos$J(timeout);
-var mainLock=this.mainLock;
-mainLock.lock$();
-try {
-for (; ; ) {
-if (C$.runStateAtLeast$I$I(this.ctl.get$(), 1610612736)) return true;
-if (nanos <= 0) return false;
-nanos=this.termination.awaitNanos$J(nanos);
-}
-} finally {
-mainLock.unlock$();
-}
+Clazz.newMeth(C$, 'awaitTermination$J$java_util_concurrent_TimeUnit',  function (timeout, unit) {
+$I$(12).notImplemented$S("ThreadPoolExecutor.awaitTermination -- Sorry, can\'t wait in JavaScript");
+return false;
 });
 
-Clazz.newMeth(C$, 'finalize$', function () {
+Clazz.newMeth(C$, 'finalize$',  function () {
 this.shutdown$();
 });
 
-Clazz.newMeth(C$, 'setThreadFactory$java_util_concurrent_ThreadFactory', function (threadFactory) {
+Clazz.newMeth(C$, 'setThreadFactory$java_util_concurrent_ThreadFactory',  function (threadFactory) {
 if (threadFactory == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.threadFactory=threadFactory;
 });
 
-Clazz.newMeth(C$, 'getThreadFactory$', function () {
+Clazz.newMeth(C$, 'getThreadFactory$',  function () {
 return this.threadFactory;
 });
 
-Clazz.newMeth(C$, 'setRejectedExecutionHandler$java_util_concurrent_RejectedExecutionHandler', function (handler) {
+Clazz.newMeth(C$, 'setRejectedExecutionHandler$java_util_concurrent_RejectedExecutionHandler',  function (handler) {
 if (handler == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.handler=handler;
 });
 
-Clazz.newMeth(C$, 'getRejectedExecutionHandler$', function () {
+Clazz.newMeth(C$, 'getRejectedExecutionHandler$',  function () {
 return this.handler;
 });
 
-Clazz.newMeth(C$, 'setCorePoolSize$I', function (corePoolSize) {
+Clazz.newMeth(C$, 'setCorePoolSize$I',  function (corePoolSize) {
 if (corePoolSize < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 var delta=corePoolSize - this.corePoolSize;
 this.corePoolSize=corePoolSize;
@@ -451,66 +392,66 @@ if (this.workQueue.isEmpty$()) break;
 }
 }});
 
-Clazz.newMeth(C$, 'getCorePoolSize$', function () {
+Clazz.newMeth(C$, 'getCorePoolSize$',  function () {
 return this.corePoolSize;
 });
 
-Clazz.newMeth(C$, 'prestartCoreThread$', function () {
+Clazz.newMeth(C$, 'prestartCoreThread$',  function () {
 return C$.workerCountOf$I(this.ctl.get$()) < this.corePoolSize && p$1.addWorker$Runnable$Z.apply(this, [null, true]) ;
 });
 
-Clazz.newMeth(C$, 'prestartAllCoreThreads$', function () {
+Clazz.newMeth(C$, 'prestartAllCoreThreads$',  function () {
 var n=0;
 while (p$1.addWorker$Runnable$Z.apply(this, [null, true]))++n;
 
 return n;
 });
 
-Clazz.newMeth(C$, 'allowsCoreThreadTimeOut$', function () {
+Clazz.newMeth(C$, 'allowsCoreThreadTimeOut$',  function () {
 return this.allowCoreThreadTimeOut;
 });
 
-Clazz.newMeth(C$, 'allowCoreThreadTimeOut$Z', function (value) {
-if (value && this.keepAliveTime <= 0 ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Core threads must have nonzero keep alive times"]);
+Clazz.newMeth(C$, 'allowCoreThreadTimeOut$Z',  function (value) {
+if (value && Long.$le(this.keepAliveTime,0 ) ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Core threads must have nonzero keep alive times"]);
 if (value != this.allowCoreThreadTimeOut ) {
 this.allowCoreThreadTimeOut=value;
 if (value) p$1.interruptIdleWorkers.apply(this, []);
 }});
 
-Clazz.newMeth(C$, 'setMaximumPoolSize$I', function (maximumPoolSize) {
+Clazz.newMeth(C$, 'setMaximumPoolSize$I',  function (maximumPoolSize) {
 if (maximumPoolSize <= 0 || maximumPoolSize < this.corePoolSize ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 this.maximumPoolSize=maximumPoolSize;
 if (C$.workerCountOf$I(this.ctl.get$()) > maximumPoolSize) p$1.interruptIdleWorkers.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'getMaximumPoolSize$', function () {
+Clazz.newMeth(C$, 'getMaximumPoolSize$',  function () {
 return this.maximumPoolSize;
 });
 
-Clazz.newMeth(C$, 'setKeepAliveTime$J$java_util_concurrent_TimeUnit', function (time, unit) {
-if (time < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-if (time == 0 && this.allowsCoreThreadTimeOut$() ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Core threads must have nonzero keep alive times"]);
+Clazz.newMeth(C$, 'setKeepAliveTime$J$java_util_concurrent_TimeUnit',  function (time, unit) {
+if (Long.$lt(time,0 )) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
+if (Long.$eq(time,0 ) && this.allowsCoreThreadTimeOut$() ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Core threads must have nonzero keep alive times"]);
 var keepAliveTime=unit.toNanos$J(time);
-var delta=keepAliveTime - this.keepAliveTime;
+var delta=Long.$sub(keepAliveTime,this.keepAliveTime);
 this.keepAliveTime=keepAliveTime;
-if (delta < 0) p$1.interruptIdleWorkers.apply(this, []);
+if (Long.$lt(delta,0 )) p$1.interruptIdleWorkers.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'getKeepAliveTime$java_util_concurrent_TimeUnit', function (unit) {
+Clazz.newMeth(C$, 'getKeepAliveTime$java_util_concurrent_TimeUnit',  function (unit) {
 return unit.convert$J$java_util_concurrent_TimeUnit(this.keepAliveTime, $I$(8).NANOSECONDS);
 });
 
-Clazz.newMeth(C$, 'getQueue$', function () {
+Clazz.newMeth(C$, 'getQueue$',  function () {
 return this.workQueue;
 });
 
-Clazz.newMeth(C$, 'remove$Runnable', function (task) {
+Clazz.newMeth(C$, 'remove$Runnable',  function (task) {
 var removed=this.workQueue.remove$O(task);
 this.tryTerminate$();
 return removed;
 });
 
-Clazz.newMeth(C$, 'purge$', function () {
+Clazz.newMeth(C$, 'purge$',  function () {
 var q=this.workQueue;
 try {
 var it=q.iterator$();
@@ -529,7 +470,7 @@ throw fallThrough;
 this.tryTerminate$();
 });
 
-Clazz.newMeth(C$, 'getPoolSize$', function () {
+Clazz.newMeth(C$, 'getPoolSize$',  function () {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
@@ -539,7 +480,7 @@ mainLock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, 'getActiveCount$', function () {
+Clazz.newMeth(C$, 'getActiveCount$',  function () {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
@@ -552,7 +493,7 @@ mainLock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, 'getLargestPoolSize$', function () {
+Clazz.newMeth(C$, 'getLargestPoolSize$',  function () {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
@@ -562,27 +503,27 @@ mainLock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, 'getTaskCount$', function () {
+Clazz.newMeth(C$, 'getTaskCount$',  function () {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
 var n=this.completedTaskCount;
 for (var w, $w = this.workers.iterator$(); $w.hasNext$()&&((w=($w.next$())),1);) {
-n+=w.completedTasks;
-if (w.isLocked$()) ++n;
+(n=Long.$add(n,(w.completedTasks)));
+if (w.isLocked$()) (n=Long.$inc(n,1));
 }
-return n + this.workQueue.size$();
+return Long.$add(n,this.workQueue.size$());
 } finally {
 mainLock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, 'getCompletedTaskCount$', function () {
+Clazz.newMeth(C$, 'getCompletedTaskCount$',  function () {
 var mainLock=this.mainLock;
 mainLock.lock$();
 try {
 var n=this.completedTaskCount;
-for (var w, $w = this.workers.iterator$(); $w.hasNext$()&&((w=($w.next$())),1);) n+=w.completedTasks;
+for (var w, $w = this.workers.iterator$(); $w.hasNext$()&&((w=($w.next$())),1);) (n=Long.$add(n,(w.completedTasks)));
 
 return n;
 } finally {
@@ -590,77 +531,75 @@ mainLock.unlock$();
 }
 });
 
-Clazz.newMeth(C$, 'beforeExecute$Thread$Runnable', function (t, r) {
+Clazz.newMeth(C$, 'beforeExecute$Thread$Runnable',  function (t, r) {
 });
 
-Clazz.newMeth(C$, 'afterExecute$Runnable$Throwable', function (r, t) {
+Clazz.newMeth(C$, 'afterExecute$Runnable$Throwable',  function (r, t) {
 });
 
-Clazz.newMeth(C$, 'terminated$', function () {
+Clazz.newMeth(C$, 'terminated$',  function () {
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.defaultHandler=Clazz.new_($I$(2,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadPoolExecutor, "Worker", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadPoolExecutor, "Worker", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'java.util.concurrent.locks.AbstractQueuedSynchronizer', 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.thread=null;
-this.firstTask=null;
-this.completedTasks=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$Runnable', function (firstTask) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['J',['completedTasks'],'O',['thread','Thread','firstTask','Runnable']]]
+
+Clazz.newMeth(C$, 'c$$Runnable',  function (firstTask) {
+Clazz.super_(C$, this);
 this.setState$I(-1);
 this.firstTask=firstTask;
-this.thread=this.this$0.getThreadFactory$.apply(this.this$0, []).newThread$(this);
+this.thread=this.b$['java.util.concurrent.ThreadPoolExecutor'].getThreadFactory$.apply(this.b$['java.util.concurrent.ThreadPoolExecutor'], []).newThread$Runnable(this);
 }, 1);
 
-Clazz.newMeth(C$, 'run$', function () {
-this.this$0.runWorker$java_util_concurrent_ThreadPoolExecutor_Worker.apply(this.this$0, [this]);
+Clazz.newMeth(C$, 'run$',  function () {
+this.b$['java.util.concurrent.ThreadPoolExecutor'].runWorker$java_util_concurrent_ThreadPoolExecutor_Worker.apply(this.b$['java.util.concurrent.ThreadPoolExecutor'], [this]);
 });
 
-Clazz.newMeth(C$, 'isHeldExclusively$', function () {
+Clazz.newMeth(C$, 'isHeldExclusively$',  function () {
 return this.getState$() != 0;
 });
 
-Clazz.newMeth(C$, 'tryAcquire$I', function (unused) {
+Clazz.newMeth(C$, 'tryAcquire$I',  function (unused) {
 if (this.compareAndSetState$I$I(0, 1)) {
 this.setExclusiveOwnerThread$Thread($I$(1).currentThread$());
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, 'tryRelease$I', function (unused) {
+Clazz.newMeth(C$, 'tryRelease$I',  function (unused) {
 this.setExclusiveOwnerThread$Thread(null);
 this.setState$I(0);
 return true;
 });
 
-Clazz.newMeth(C$, 'lock$', function () {
+Clazz.newMeth(C$, 'lock$',  function () {
 this.acquire$I(1);
 });
 
-Clazz.newMeth(C$, 'tryLock$', function () {
+Clazz.newMeth(C$, 'tryLock$',  function () {
 return this.tryAcquire$I(1);
 });
 
-Clazz.newMeth(C$, 'unlock$', function () {
+Clazz.newMeth(C$, 'unlock$',  function () {
 this.release$I(1);
 });
 
-Clazz.newMeth(C$, 'isLocked$', function () {
+Clazz.newMeth(C$, 'isLocked$',  function () {
 return this.isHeldExclusively$();
 });
 
-Clazz.newMeth(C$, 'interruptIfStarted$', function () {
+Clazz.newMeth(C$, 'interruptIfStarted$',  function () {
 var t;
 if (this.getState$() >= 0 && (t=this.thread) != null   && !t.isInterrupted$() ) {
 try {
@@ -676,78 +615,74 @@ throw ignore;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadPoolExecutor, "CallerRunsPolicy", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadPoolExecutor, "CallerRunsPolicy", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.concurrent.RejectedExecutionHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, ['rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor','rejectedExecution$'], function (r, e) {
+Clazz.newMeth(C$, 'rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor',  function (r, e) {
 if (!e.isShutdown$()) {
 r.run$();
 }});
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadPoolExecutor, "AbortPolicy", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadPoolExecutor, "AbortPolicy", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.concurrent.RejectedExecutionHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, ['rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor','rejectedExecution$'], function (r, e) {
+Clazz.newMeth(C$, 'rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor',  function (r, e) {
 throw Clazz.new_(Clazz.load('java.util.concurrent.RejectedExecutionException'));
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadPoolExecutor, "DiscardPolicy", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadPoolExecutor, "DiscardPolicy", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.concurrent.RejectedExecutionHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, ['rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor','rejectedExecution$'], function (r, e) {
+Clazz.newMeth(C$, 'rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor',  function (r, e) {
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ThreadPoolExecutor, "DiscardOldestPolicy", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ThreadPoolExecutor, "DiscardOldestPolicy", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.concurrent.RejectedExecutionHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, ['rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor','rejectedExecution$'], function (r, e) {
+Clazz.newMeth(C$, 'rejectedExecution$Runnable$java_util_concurrent_ThreadPoolExecutor',  function (r, e) {
 if (!e.isShutdown$()) {
 e.getQueue$().poll$();
 e.execute$Runnable(r);
@@ -756,4 +691,4 @@ e.execute$Runnable(r);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 17:13:57 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

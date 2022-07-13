@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.PT','javajs.util.AU','javajs.util.SB','org.jmol.script.SV','javajs.util.BS','javajs.util.P3','javajs.util.P4','javajs.util.M3','javajs.util.M4','javajs.util.Lst','javajs.util.V3','javajs.util.T3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Escape");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.PT','javajs.util.AU','javajs.util.SB','org.jmol.script.SV','javajs.util.BS','javajs.util.P3','javajs.util.P4','javajs.util.M3','javajs.util.M4','javajs.util.Lst','javajs.util.V3','javajs.util.T3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Escape");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'escapeColor$I', function (argb) {
 return (argb == 0 ? null : "[x" + C$.getHexColorFromRGB$I(argb) + "]" );
@@ -28,7 +27,7 @@ return "{" + new Float(xyz.x).toString() + " " + new Float(xyz.y).toString() + "
 }, 1);
 
 Clazz.newMeth(C$, 'matrixToScript$O', function (m) {
-return $I$(1).replaceAllCharacters$S$S$S(m.toString(), "\n\r ", "").replace$C$C("\t", " ");
+return $I$(1,"replaceAllCharacters$S$S$S",[m.toString(), "\n\r ", ""]).replace$C$C("\t", " ");
 }, 1);
 
 Clazz.newMeth(C$, 'eP4$javajs_util_P4', function (x) {
@@ -52,7 +51,7 @@ if (Clazz.instanceOf(x, "javajs.util.P4")) return C$.eP4$javajs_util_P4(x);
 if (Clazz.instanceOf(x, "javajs.util.T3")) return C$.eP$javajs_util_T3(x);
 if ($I$(2).isAP$O(x)) return C$.eAP$javajs_util_T3A(x);
 if ($I$(2).isAS$O(x)) return C$.eAS$SA$Z(x, true);
-if (Clazz.instanceOf(x, "javajs.util.M34")) return $I$(1).rep$S$S$S($I$(1).rep$S$S$S(x.toString(), "[\n  ", "["), "] ]", "]]");
+if (Clazz.instanceOf(x, "javajs.util.M34")) return $I$(1,"rep$S$S$S",[$I$(1,"rep$S$S$S",[x.toString(), "[\n  ", "["]), "] ]", "]]"]);
 if (Clazz.instanceOf(x, "javajs.util.A4")) {
 var a=x;
 return "{" + new Float(a.x).toString() + " " + new Float(a.y).toString() + " " + new Float(a.z).toString() + " " + new Float((a.angle * 180.0 / 3.141592653589793)).toString() + "}" ;
@@ -63,7 +62,7 @@ return (s == null  ? $I$(1).toJSON$S$O(null, x) : s);
 
 Clazz.newMeth(C$, 'eV$javajs_util_Lst', function (list) {
 if (list == null ) return $I$(1).esc$S("");
-var s=Clazz.new_($I$(3));
+var s=Clazz.new_($I$(3,1));
 s.append$S("[");
 for (var i=0; i < list.size$(); i++) {
 if (i > 0) s.append$S(", ");
@@ -74,7 +73,7 @@ return s.toString();
 }, 1);
 
 Clazz.newMeth(C$, 'escapeMap$java_util_Map', function (ht) {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 sb.append$S("{ ");
 var sep="";
 for (var entry, $entry = ht.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
@@ -91,7 +90,7 @@ return sb.toString();
 
 Clazz.newMeth(C$, 'escapeFloatA$FA$Z', function (f, asArray) {
 if (asArray) return $I$(1).toJSON$S$O(null, f);
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 for (var i=0; i < f.length; i++) {
 if (i > 0) sb.appendC$C("\n");
 sb.appendF$F(f[i]);
@@ -100,7 +99,7 @@ return sb.toString();
 }, 1);
 
 Clazz.newMeth(C$, 'escapeFloatAA$FAA$Z', function (f, addSemi) {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 var eol=(addSemi ? ";\n" : "\n");
 for (var i=0; i < f.length; i++) if (f[i] != null ) {
 if (i > 0) sb.append$S(eol);
@@ -111,7 +110,7 @@ return sb.toString();
 }, 1);
 
 Clazz.newMeth(C$, 'escapeFloatAAA$FAAA$Z', function (f, addSemi) {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 var eol=(addSemi ? ";\n" : "\n");
 if (f[0] == null  || f[0][0] == null  ) return "0 0 0" + eol;
 sb.appendI$I(f.length).append$S(" ").appendI$I(f[0].length).append$S(" ").appendI$I(f[0][0].length);
@@ -128,7 +127,7 @@ return sb.toString();
 
 Clazz.newMeth(C$, 'eAS$SA$Z', function (list, nicely) {
 if (list == null ) return $I$(1).esc$S("");
-var s=Clazz.new_($I$(3));
+var s=Clazz.new_($I$(3,1));
 s.append$S("[");
 for (var i=0; i < list.length; i++) {
 if (i > 0) s.append$S(", ");
@@ -140,7 +139,7 @@ return s.toString();
 
 Clazz.newMeth(C$, 'eAI$IA', function (ilist) {
 if (ilist == null ) return $I$(1).esc$S("");
-var s=Clazz.new_($I$(3));
+var s=Clazz.new_($I$(3,1));
 s.append$S("[");
 for (var i=0; i < ilist.length; i++) {
 if (i > 0) s.append$S(", ");
@@ -151,7 +150,7 @@ return s.append$S("]").toString();
 
 Clazz.newMeth(C$, 'eAD$DA', function (dlist) {
 if (dlist == null ) return $I$(1).esc$S("");
-var s=Clazz.new_($I$(3));
+var s=Clazz.new_($I$(3,1));
 s.append$S("[");
 for (var i=0; i < dlist.length; i++) {
 if (i > 0) s.append$S(", ");
@@ -162,7 +161,7 @@ return s.append$S("]").toString();
 
 Clazz.newMeth(C$, 'eAF$FA', function (flist) {
 if (flist == null ) return $I$(1).esc$S("");
-var s=Clazz.new_($I$(3));
+var s=Clazz.new_($I$(3,1));
 s.append$S("[");
 for (var i=0; i < flist.length; i++) {
 if (i > 0) s.append$S(", ");
@@ -173,7 +172,7 @@ return s.append$S("]").toString();
 
 Clazz.newMeth(C$, 'eAP$javajs_util_T3A', function (plist) {
 if (plist == null ) return $I$(1).esc$S("");
-var s=Clazz.new_($I$(3));
+var s=Clazz.new_($I$(3,1));
 s.append$S("[");
 for (var i=0; i < plist.length; i++) {
 if (i > 0) s.append$S(", ");
@@ -239,7 +238,7 @@ return strMatrix;
 }, 1);
 
 Clazz.newMeth(C$, 'eBS$javajs_util_BS', function (bs) {
-return $I$(5).escape$javajs_util_BS$C$C(bs, "(", ")");
+return $I$(5,"escape$javajs_util_BS$C$C",[bs, "(", ")"]);
 }, 1);
 
 Clazz.newMeth(C$, 'eBond$javajs_util_BS', function (bs) {
@@ -247,7 +246,7 @@ return $I$(5).escape$javajs_util_BS$C$C(bs, "[", "]");
 }, 1);
 
 Clazz.newMeth(C$, 'toReadable$S$O', function (name, info) {
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 var sep="";
 if (info == null ) return "null";
 if ($I$(1).isNonStringPrimitive$O(info)) return C$.packageReadable$S$S$S(name, null, info.toString());
@@ -257,7 +256,7 @@ if ($I$(2).isAS$O(info)) {
 sb.append$S("[");
 var imax=(info).length;
 for (var i=0; i < imax; i++) {
-sb.append$S(sep).append$S($I$(1).esc$S((info)[i]));
+sb.append$S(sep).append$S($I$(1,"esc$S",[(info)[i]]));
 sep=",";
 }
 sb.append$S("]");
@@ -422,26 +421,26 @@ if (ch.$c() >= 48  && ch.$c() <= 57  ) return ch.$c() - 48;
 
 Clazz.newMeth(C$, 'unescapeStringArray$S', function (data) {
 if (data == null  || !data.startsWith$S("[")  || !data.endsWith$S("]") ) return null;
-var v=Clazz.new_($I$(10));
+var v=Clazz.new_($I$(10,1));
 var next=Clazz.array(Integer.TYPE, [1]);
 next[0]=1;
 while (next[0] < data.length$()){
 var s=$I$(1).getQuotedStringNext$S$IA(data, next);
 if (s == null ) return null;
-v.addLast$TV($I$(1).rep$S$S$S(s, "\\\"", "\""));
+v.addLast$O($I$(1).rep$S$S$S(s, "\\\"", "\""));
 while (next[0] < data.length$() && data.charAt$I(next[0]) != "\"" )next[0]++;
 
 }
-return v.toArray$TTA(Clazz.array(String, [v.size$()]));
+return v.toArray$OA(Clazz.array(String, [v.size$()]));
 }, 1);
 
 Clazz.newMeth(C$, 'escapeHelical$S$I$javajs_util_P3$javajs_util_P3$javajs_util_T3A', function (id, tokType, a, b, pts) {
 switch (tokType) {
 case 134217751:
-return (pts == null  ? Clazz.new_($I$(6)) : pts[0]);
+return (pts == null  ? Clazz.new_($I$(6,1)) : pts[0]);
 case 1073741854:
 case 1665140738:
-return (pts == null  ? Clazz.new_($I$(11)) : pts[tokType == 1073741854 ? 1 : 2]);
+return (pts == null  ? Clazz.new_($I$(11,1)) : pts[tokType == 1073741854 ? 1 : 2]);
 case 134217729:
 return Float.valueOf$F(pts == null  ? NaN : pts[3].x);
 case 135176:
@@ -455,4 +454,4 @@ return (pts == null  ? Clazz.array($I$(12), [0]) : pts);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

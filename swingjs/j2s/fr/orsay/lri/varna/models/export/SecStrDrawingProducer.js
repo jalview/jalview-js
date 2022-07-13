@@ -1,22 +1,10 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),p$1={},I$=[[0,'java.util.Vector','java.awt.Color','fr.orsay.lri.varna.models.export.LineCommand',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.models.export.ArcCommand','fr.orsay.lri.varna.models.export.TextCommand','fr.orsay.lri.varna.models.export.RectangleCommand','fr.orsay.lri.varna.models.export.CircleCommand','fr.orsay.lri.varna.models.export.ColorCommand','fr.orsay.lri.varna.models.export.FillCircleCommand','fr.orsay.lri.varna.models.export.PolygonCommand','fr.orsay.lri.varna.models.export.FillPolygonCommand','fr.orsay.lri.varna.models.export.FontCommand',['java.awt.geom.Rectangle2D','.Double'],'StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SecStrDrawingProducer");
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),p$1={},I$=[[0,'java.util.Vector','java.awt.Color','fr.orsay.lri.varna.models.export.LineCommand',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.models.export.ArcCommand','fr.orsay.lri.varna.models.export.TextCommand','fr.orsay.lri.varna.models.export.RectangleCommand','fr.orsay.lri.varna.models.export.CircleCommand','fr.orsay.lri.varna.models.export.ColorCommand','fr.orsay.lri.varna.models.export.FillCircleCommand','fr.orsay.lri.varna.models.export.PolygonCommand','fr.orsay.lri.varna.models.export.FillPolygonCommand','fr.orsay.lri.varna.models.export.FontCommand',['java.awt.geom.Rectangle2D','.Double'],'StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SecStrDrawingProducer");
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._commands=null;
-this._scale=0;
-this._xmin=0;
-this._ymin=0;
-this._xmax=0;
-this._ymax=0;
-this._curColor=null;
-this._backgroundColor=null;
-this._fontsize=0;
-this._font=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._commands=Clazz.new_($I$(1));
+this._commands=Clazz.new_($I$(1,1));
 this._scale=1.0;
 this._xmin=1.7976931348623157E308;
 this._ymin=1.7976931348623157E308;
@@ -26,7 +14,9 @@ this._curColor=$I$(2).black;
 this._backgroundColor=null;
 this._fontsize=10.0;
 this._font=18;
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_scale','_xmin','_ymin','_xmax','_ymax','_fontsize'],'I',['_font'],'O',['_commands','java.util.Vector','_curColor','java.awt.Color','+_backgroundColor']]]
 
 Clazz.newMeth(C$, 'getCurrentColor$', function () {
 return this._curColor;
@@ -62,24 +52,24 @@ this._ymax=Math.max(this._ymax, y + 10);
 Clazz.newMeth(C$, 'drawLine$D$D$D$D$D', function (x0, y0, x1, y1, thickness) {
 p$1.updateBoundingBox$D$D.apply(this, [x0, y0]);
 p$1.updateBoundingBox$D$D.apply(this, [x1, y1]);
-this._commands.add$TE(Clazz.new_($I$(3).c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D,[Clazz.new_($I$(4).c$$D$D,[x0, y0]), Clazz.new_($I$(4).c$$D$D,[x1, y1]), thickness]));
+this._commands.add$O(Clazz.new_([Clazz.new_($I$(4,1).c$$D$D,[x0, y0]), Clazz.new_($I$(4,1).c$$D$D,[x1, y1]), thickness],$I$(3,1).c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D));
 });
 
 Clazz.newMeth(C$, 'drawArc$java_awt_geom_Point2D_Double$D$D$D$D', function (origine, width, height, startAngle, endAngle) {
 p$1.updateBoundingBox$D$D.apply(this, [origine.x + width / 2.0, origine.y + height / 2.0]);
 p$1.updateBoundingBox$D$D.apply(this, [origine.x - width / 2.0, origine.y - height / 2.0]);
-this._commands.add$TE(Clazz.new_($I$(5).c$$java_awt_geom_Point2D_Double$D$D$D$D,[origine, width, height, startAngle, endAngle]));
+this._commands.add$O(Clazz.new_($I$(5,1).c$$java_awt_geom_Point2D_Double$D$D$D$D,[origine, width, height, startAngle, endAngle]));
 });
 
 Clazz.newMeth(C$, 'drawText$D$D$S', function (x, y, txt) {
 p$1.updateBoundingBox$D$D.apply(this, [x, y]);
-this._commands.add$TE(Clazz.new_($I$(6).c$$java_awt_geom_Point2D_Double$S,[Clazz.new_($I$(4).c$$D$D,[x, y]),  String.instantialize(txt)]));
+this._commands.add$O(Clazz.new_([Clazz.new_($I$(4,1).c$$D$D,[x, y]),  String.instantialize(txt)],$I$(6,1).c$$java_awt_geom_Point2D_Double$S));
 });
 
 Clazz.newMeth(C$, 'drawRectangle$D$D$D$D$D', function (x, y, w, h, thickness) {
 p$1.updateBoundingBox$D$D.apply(this, [x, y]);
 p$1.updateBoundingBox$D$D.apply(this, [x + w, y + h]);
-this._commands.add$TE(Clazz.new_($I$(7).c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D,[Clazz.new_($I$(4).c$$D$D,[x, y]), Clazz.new_($I$(4).c$$D$D,[w, h]), thickness]));
+this._commands.add$O(Clazz.new_([Clazz.new_($I$(4,1).c$$D$D,[x, y]), Clazz.new_($I$(4,1).c$$D$D,[w, h]), thickness],$I$(7,1).c$$java_awt_geom_Point2D_Double$java_awt_geom_Point2D_Double$D));
 });
 
 Clazz.newMeth(C$, 'fillRectangle$D$D$D$D$java_awt_Color', function (x, y, w, h, color) {
@@ -99,12 +89,12 @@ this.fillPolygon$DA$DA$java_awt_Color(xtab, ytab, color);
 Clazz.newMeth(C$, 'drawCircle$D$D$D$D', function (x, y, radius, thickness) {
 p$1.updateBoundingBox$D$D.apply(this, [x - radius, y - radius]);
 p$1.updateBoundingBox$D$D.apply(this, [x + radius, y + radius]);
-this._commands.add$TE(Clazz.new_($I$(8).c$$java_awt_geom_Point2D_Double$D$D,[Clazz.new_($I$(4).c$$D$D,[x, y]), radius, thickness]));
+this._commands.add$O(Clazz.new_([Clazz.new_($I$(4,1).c$$D$D,[x, y]), radius, thickness],$I$(8,1).c$$java_awt_geom_Point2D_Double$D$D));
 });
 
 Clazz.newMeth(C$, 'setColor$java_awt_Color', function (col) {
 this._curColor=col;
-this._commands.add$TE(Clazz.new_($I$(9).c$$java_awt_Color,[col]));
+this._commands.add$O(Clazz.new_($I$(9,1).c$$java_awt_Color,[col]));
 });
 
 Clazz.newMeth(C$, 'setBackgroundColor$java_awt_Color', function (col) {
@@ -118,29 +108,29 @@ this._backgroundColor=null;
 Clazz.newMeth(C$, 'fillCircle$D$D$D$D$java_awt_Color', function (x, y, radius, thickness, color) {
 p$1.updateBoundingBox$D$D.apply(this, [x - radius, y - radius]);
 p$1.updateBoundingBox$D$D.apply(this, [x + radius, y + radius]);
-this._commands.add$TE(Clazz.new_($I$(10).c$$java_awt_geom_Point2D_Double$D$D$java_awt_Color,[Clazz.new_($I$(4).c$$D$D,[x, y]), radius, thickness, color]));
+this._commands.add$O(Clazz.new_([Clazz.new_($I$(4,1).c$$D$D,[x, y]), radius, thickness, color],$I$(10,1).c$$java_awt_geom_Point2D_Double$D$D$java_awt_Color));
 });
 
 Clazz.newMeth(C$, 'drawPolygon$DA$DA$D', function (xtab, ytab, thickness) {
 if (xtab.length == ytab.length) {
 var points=Clazz.array($I$(4), [xtab.length]);
 for (var i=0; i < xtab.length; i++) {
-points[i]=Clazz.new_($I$(4).c$$D$D,[xtab[i], ytab[i]]);
+points[i]=Clazz.new_($I$(4,1).c$$D$D,[xtab[i], ytab[i]]);
 p$1.updateBoundingBox$D$D.apply(this, [xtab[i], ytab[i]]);
 }
-this._commands.add$TE(Clazz.new_($I$(11).c$$java_awt_geom_Point2D_DoubleA$D,[points, thickness]));
+this._commands.add$O(Clazz.new_($I$(11,1).c$$java_awt_geom_Point2D_DoubleA$D,[points, thickness]));
 }});
 
 Clazz.newMeth(C$, 'drawPolygon$java_awt_geom_GeneralPath$D', function (p, thickness) {
 var pi=p.getPathIterator$java_awt_geom_AffineTransform(null);
-var v=Clazz.new_($I$(1));
+var v=Clazz.new_($I$(1,1));
 var coords=Clazz.array(Double.TYPE, [6]);
 while (!pi.isDone$()){
 var code=pi.currentSegment$DA(coords);
 if (code == 0) {
-v.add$TE(Clazz.new_($I$(4).c$$D$D,[coords[0], coords[1]]));
+v.add$O(Clazz.new_($I$(4,1).c$$D$D,[coords[0], coords[1]]));
 }if (code == 1) {
-v.add$TE(Clazz.new_($I$(4).c$$D$D,[coords[0], coords[1]]));
+v.add$O(Clazz.new_($I$(4,1).c$$D$D,[coords[0], coords[1]]));
 }pi.next$();
 }
 var xtab=Clazz.array(Double.TYPE, [v.size$()]);
@@ -154,14 +144,14 @@ this.drawPolygon$DA$DA$D(xtab, ytab, thickness);
 
 Clazz.newMeth(C$, 'fillPolygon$java_awt_geom_GeneralPath$java_awt_Color', function (p, color) {
 var pi=p.getPathIterator$java_awt_geom_AffineTransform(null);
-var v=Clazz.new_($I$(1));
+var v=Clazz.new_($I$(1,1));
 var coords=Clazz.array(Double.TYPE, [6]);
 while (!pi.isDone$()){
 var code=pi.currentSegment$DA(coords);
 if (code == 0) {
-v.add$TE(Clazz.new_($I$(4).c$$D$D,[coords[0], coords[1]]));
+v.add$O(Clazz.new_($I$(4,1).c$$D$D,[coords[0], coords[1]]));
 }if (code == 1) {
-v.add$TE(Clazz.new_($I$(4).c$$D$D,[coords[0], coords[1]]));
+v.add$O(Clazz.new_($I$(4,1).c$$D$D,[coords[0], coords[1]]));
 }pi.next$();
 }
 var xtab=Clazz.array(Double.TYPE, [v.size$()]);
@@ -177,16 +167,16 @@ Clazz.newMeth(C$, 'fillPolygon$DA$DA$java_awt_Color', function (xtab, ytab, colo
 if (xtab.length == ytab.length) {
 var points=Clazz.array($I$(4), [xtab.length]);
 for (var i=0; i < xtab.length; i++) {
-points[i]=Clazz.new_($I$(4).c$$D$D,[xtab[i], ytab[i]]);
+points[i]=Clazz.new_($I$(4,1).c$$D$D,[xtab[i], ytab[i]]);
 p$1.updateBoundingBox$D$D.apply(this, [xtab[i], ytab[i]]);
 }
-this._commands.add$TE(Clazz.new_($I$(12).c$$java_awt_geom_Point2D_DoubleA$java_awt_Color,[points, color]));
+this._commands.add$O(Clazz.new_($I$(12,1).c$$java_awt_geom_Point2D_DoubleA$java_awt_Color,[points, color]));
 }});
 
 Clazz.newMeth(C$, 'setFont$I$D', function (font, size) {
 this._fontsize=size;
 this._font=font;
-this._commands.add$TE(Clazz.new_($I$(13).c$$I$D,[font, size]));
+this._commands.add$O(Clazz.new_($I$(13,1).c$$I$D,[font, size]));
 });
 
 Clazz.newMeth(C$, 'setScale$D', function (sc) {
@@ -198,7 +188,7 @@ return this._scale;
 });
 
 Clazz.newMeth(C$, 'getBoundingBox$', function () {
-return (Clazz.new_($I$(14).c$$D$D$D$D,[this._xmin, this._ymin, this._xmax - this._xmin, this._ymax - this._ymin]));
+return (Clazz.new_($I$(14,1).c$$D$D$D$D,[this._xmin, this._ymin, this._xmax - this._xmin, this._ymax - this._ymin]));
 });
 
 Clazz.newMeth(C$, 'transform$java_awt_geom_Point2D_Double$D$D$D', function (p, factor, dx, dy) {
@@ -206,24 +196,24 @@ return p$1.transform$D$D$D$D$D.apply(this, [p.x, p.y, factor, dx, dy]);
 }, p$1);
 
 Clazz.newMeth(C$, 'transform$D$D$D$D$D', function (x, y, factor, dx, dy) {
-return Clazz.new_($I$(4).c$$D$D,[(x + dx) * factor, (y + dy) * factor]);
+return Clazz.new_([(x + dx) * factor, (y + dy) * factor],$I$(4,1).c$$D$D);
 }, p$1);
 
 Clazz.newMeth(C$, 'export$', function () {
 var oldbb=this.getBoundingBox$();
 var dx=-oldbb.x;
 var dy=-oldbb.y;
-var nbb=Clazz.new_($I$(14).c$$D$D$D$D,[0, 0, oldbb.width * this._scale, oldbb.height * this._scale]);
-var buf=Clazz.new_($I$(15));
+var nbb=Clazz.new_($I$(14,1).c$$D$D$D$D,[0, 0, oldbb.width * this._scale, oldbb.height * this._scale]);
+var buf=Clazz.new_($I$(15,1));
 buf.append$S(this.headerS$java_awt_geom_Rectangle2D_Double(nbb));
 if (this._backgroundColor != null ) {
 var w=oldbb.width * this._scale;
 var h=oldbb.height * this._scale;
 var tab=Clazz.array($I$(4), [4]);
-tab[0]=Clazz.new_($I$(4).c$$D$D,[0, 0]);
-tab[1]=Clazz.new_($I$(4).c$$D$D,[w, 0]);
-tab[2]=Clazz.new_($I$(4).c$$D$D,[w, h]);
-tab[3]=Clazz.new_($I$(4).c$$D$D,[0, h]);
+tab[0]=Clazz.new_($I$(4,1).c$$D$D,[0, 0]);
+tab[1]=Clazz.new_($I$(4,1).c$$D$D,[w, 0]);
+tab[2]=Clazz.new_($I$(4,1).c$$D$D,[w, h]);
+tab[3]=Clazz.new_($I$(4,1).c$$D$D,[0, h]);
 buf.append$S(this.fillPolygonS$java_awt_geom_Point2D_DoubleA$java_awt_Color(tab, this._backgroundColor));
 }for (var i=0; i < this._commands.size$(); i++) {
 var ge=this._commands.elementAt$I(i);
@@ -285,4 +275,4 @@ Clazz.newMeth(C$, 'reset$', function () {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

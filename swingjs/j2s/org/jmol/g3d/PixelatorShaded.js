@@ -1,24 +1,15 @@
 (function(){var P$=Clazz.newPackage("org.jmol.g3d"),I$=[];
-var C$=Clazz.newClass(P$, "PixelatorShaded", null, 'org.jmol.g3d.Pixelator');
+/*c*/var C$=Clazz.newClass(P$, "PixelatorShaded", null, 'org.jmol.g3d.Pixelator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bgRGB=null;
-this.tmp=null;
-this.zSlab=0;
-this.zDepth=0;
-this.zShadePower=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['zSlab','zDepth','zShadePower'],'O',['bgRGB','int[]','+tmp']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_g3d_Graphics3D', function (g) {
-C$.superclazz.c$$org_jmol_g3d_Graphics3D.apply(this, [g]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$org_jmol_g3d_Graphics3D.apply(this,[g]);C$.$init$.apply(this);
 this.tmp=Clazz.array(Integer.TYPE, [3]);
 }, 1);
 
@@ -59,4 +50,4 @@ this.p0.pb[i]=-16777216 | z | (z << 8) | (z << 16) ;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

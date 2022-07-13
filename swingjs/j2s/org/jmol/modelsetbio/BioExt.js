@@ -1,24 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','javajs.util.P3','javajs.util.AU','javajs.util.BS','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Quat','javajs.util.PT','org.jmol.viewer.Viewer','org.jmol.util.BSUtil','org.jmol.modelset.Atom']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BioExt");
-C$.qColor=null;
-C$.pdbRecords=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.Lst','java.util.Hashtable','javajs.util.P3','javajs.util.AU','javajs.util.BS','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.Quat','javajs.util.PT','org.jmol.modelset.LabelToken','org.jmol.viewer.Viewer','org.jmol.util.BSUtil','org.jmol.modelset.Atom']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BioExt");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.qColor=Clazz.array(String, -1, ["yellow", "orange", "purple"]);
-C$.pdbRecords=Clazz.array(String, -1, ["ATOM  ", "MODEL ", "HETATM"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.ms=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['vwr','org.jmol.viewer.Viewer','ms','org.jmol.modelset.ModelSet']]
+,['O',['qColor','String[]','+pdbRecords']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_Viewer$org_jmol_modelset_ModelSet', function (vwr, ms) {
@@ -28,64 +20,64 @@ return this;
 });
 
 Clazz.newMeth(C$, 'getAllPolymerInfo$javajs_util_BS$java_util_Map', function (bs, fullInfo) {
-var modelVector=Clazz.new_($I$(1));
+var modelVector=Clazz.new_($I$(1,1));
 var modelCount=this.ms.mc;
 var models=this.ms.am;
 for (var i=0; i < modelCount; ++i) if (models[i].isBioModel) {
 var m=models[i];
-var modelInfo=Clazz.new_($I$(2));
-var info=Clazz.new_($I$(1));
+var modelInfo=Clazz.new_($I$(2,1));
+var info=Clazz.new_($I$(1,1));
 for (var ip=0; ip < m.bioPolymerCount; ip++) {
 var bp=m.bioPolymers[ip];
-var pInfo=Clazz.new_($I$(2));
-var mInfo=Clazz.new_($I$(1));
+var pInfo=Clazz.new_($I$(2,1));
+var mInfo=Clazz.new_($I$(1,1));
 var sInfo=null;
 var ps;
 var psLast=null;
 var n=0;
-var ptTemp=Clazz.new_($I$(3));
+var ptTemp=Clazz.new_($I$(3,1));
 for (var im=0; im < bp.monomerCount; im++) {
 if (bs.get$I(bp.monomers[im].leadAtomIndex)) {
 var monomerInfo=bp.monomers[im].getMyInfo$javajs_util_P3(ptTemp);
-monomerInfo.put$TK$TV("monomerIndex", Integer.valueOf$I(im));
-mInfo.addLast$TV(monomerInfo);
+monomerInfo.put$O$O("monomerIndex", Integer.valueOf$I(im));
+mInfo.addLast$O(monomerInfo);
 if ((ps=bp.getProteinStructure$I(im)) != null  && ps !== psLast  ) {
-var psInfo=Clazz.new_($I$(2));
+var psInfo=Clazz.new_($I$(2,1));
 psLast=ps;
-psInfo.put$TK$TV("type", ps.type.getBioStructureTypeName$Z(false));
+psInfo.put$O$O("type", ps.type.getBioStructureTypeName$Z(false));
 var leadAtomIndices=bp.getLeadAtomIndices$();
 var iArray=$I$(4).arrayCopyRangeI$IA$I$I(leadAtomIndices, ps.monomerIndexFirst, ps.monomerIndexFirst + ps.nRes);
-psInfo.put$TK$TV("leadAtomIndices", iArray);
+psInfo.put$O$O("leadAtomIndices", iArray);
 ps.calcAxis$();
 if (ps.axisA != null ) {
-psInfo.put$TK$TV("axisA", ps.axisA);
-psInfo.put$TK$TV("axisB", ps.axisB);
-psInfo.put$TK$TV("axisUnitVector", ps.axisUnitVector);
-}psInfo.put$TK$TV("index", Integer.valueOf$I(n++));
-if (sInfo == null ) sInfo=Clazz.new_($I$(1));
-sInfo.addLast$TV(psInfo);
+psInfo.put$O$O("axisA", ps.axisA);
+psInfo.put$O$O("axisB", ps.axisB);
+psInfo.put$O$O("axisUnitVector", ps.axisUnitVector);
+}psInfo.put$O$O("index", Integer.valueOf$I(n++));
+if (sInfo == null ) sInfo=Clazz.new_($I$(1,1));
+sInfo.addLast$O(psInfo);
 }}}
 if (mInfo.size$() > 0) {
-pInfo.put$TK$TV("sequence", bp.getSequence$());
-pInfo.put$TK$TV("monomers", mInfo);
-if (sInfo != null ) pInfo.put$TK$TV("structures", sInfo);
-}if (!pInfo.isEmpty$()) info.addLast$TV(pInfo);
+pInfo.put$O$O("sequence", bp.getSequence$());
+pInfo.put$O$O("monomers", mInfo);
+if (sInfo != null ) pInfo.put$O$O("structures", sInfo);
+}if (!pInfo.isEmpty$()) info.addLast$O(pInfo);
 }
 if (info.size$() > 0) {
-modelInfo.put$TK$TV("modelIndex", Integer.valueOf$I(m.modelIndex));
-modelInfo.put$TK$TV("polymers", info);
-modelVector.addLast$TV(modelInfo);
+modelInfo.put$O$O("modelIndex", Integer.valueOf$I(m.modelIndex));
+modelInfo.put$O$O("polymers", info);
+modelVector.addLast$O(modelInfo);
 }}
-fullInfo.put$TK$TV("models", modelVector);
+fullInfo.put$O$O("models", modelVector);
 });
 
 Clazz.newMeth(C$, 'calculateStraightnessAll$', function () {
 var qtype=this.vwr.getQuaternionFrame$();
-var mStep=this.vwr.getInt$I(553648145);
+var mStep=this.vwr.getInt$I(553648144);
 for (var i=this.ms.mc; --i >= 0; ) if (this.ms.am[i].isBioModel) {
 var m=this.ms.am[i];
-var ptTemp=Clazz.new_($I$(3));
-for (var p=0; p < m.bioPolymerCount; p++) p$1.getPdbData$org_jmol_modelsetbio_BioPolymer$C$C$I$I$javajs_util_BS$javajs_util_BS$Z$Z$Z$org_jmol_modelset_LabelTokenA$javajs_util_OC$javajs_util_SB$javajs_util_BS$javajs_util_P3.apply(this, [m.bioPolymers[p], "S", qtype, mStep, 2, null, null, false, false, false, null, null, null, Clazz.new_($I$(5)), ptTemp]);
+var ptTemp=Clazz.new_($I$(3,1));
+for (var p=0; p < m.bioPolymerCount; p++) p$1.getPdbData$org_jmol_modelsetbio_BioPolymer$C$C$I$I$javajs_util_BS$javajs_util_BS$Z$Z$Z$org_jmol_modelset_LabelTokenA$javajs_util_OC$javajs_util_SB$javajs_util_BS$javajs_util_P3.apply(this, [m.bioPolymers[p], "S", qtype, mStep, 2, null, null, false, false, false, null, null, null, Clazz.new_($I$(5,1)), ptTemp]);
 
 }
 this.ms.haveStraightness=true;
@@ -103,7 +95,7 @@ if (quaternionStraightness) derivType=2;
 var useQuaternionStraightness=(ctype == "S");
 var writeRamachandranStraightness=("rcpCP".indexOf$I(qtype) >= 0);
 if ($I$(6).debugging && (quaternionStraightness || calcRamachandranStraightness ) ) {
-$I$(6).debug$S("For straightness calculation: useQuaternionStraightness = " + useQuaternionStraightness + " and quaternionFrame = " + qtype );
+$I$(6,"debug$S",["For straightness calculation: useQuaternionStraightness = " + useQuaternionStraightness + " and quaternionFrame = " + qtype ]);
 }if (addHeader && !isDraw ) {
 pdbATOM.append$S("REMARK   6    AT GRP CH RESNO  ");
 switch (ctype.$c()) {
@@ -153,7 +145,7 @@ var w=0;
 var strExtra="";
 var val1=NaN;
 var val2=NaN;
-var pt=(isDraw ? Clazz.new_($I$(3)) : null);
+var pt=(isDraw ? Clazz.new_($I$(3,1)) : null);
 var dm=(mStep <= 1 ? 1 : mStep);
 for (var m=m0; m < p.monomerCount; m+=dm) {
 var monomer=p.monomers[m];
@@ -179,18 +171,18 @@ continue;
 if (bsSelected != null  && !bsSelected.get$I(a.getIndex$()) ) continue;
 var aa=monomer;
 pt.set$F$F$F(-x, x, 0.5);
-pdbATOM.append$S("draw ID \"phi").append$S(id).append$S("\" ARROW ARC ").append$S($I$(7).eP$javajs_util_T3(aa.getNitrogenAtom$())).append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7).eP$javajs_util_T3(aa.getCarbonylCarbonAtom$())).append$S($I$(7).eP$javajs_util_T3(pt)).append$S(" \"phi = ").append$S(String.valueOf$I(Math.round(x))).append$S("\" color ").append$S(C$.qColor[2]).append$S("\n");
+pdbATOM.append$S("draw ID \"phi").append$S(id).append$S("\" ARROW ARC ").append$S($I$(7,"eP$javajs_util_T3",[aa.getNitrogenAtom$()])).append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7,"eP$javajs_util_T3",[aa.getCarbonylCarbonAtom$()])).append$S($I$(7).eP$javajs_util_T3(pt)).append$S(" \"phi = ").append$S(String.valueOf$I(Math.round(x))).append$S("\" color ").append$S(C$.qColor[2]).append$S("\n");
 pt.set$F$F$F(0, y, 0.5);
-pdbATOM.append$S("draw ID \"psi").append$S(id).append$S("\" ARROW ARC ").append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7).eP$javajs_util_T3(aa.getCarbonylCarbonAtom$())).append$S($I$(7).eP$javajs_util_T3(aa.getNitrogenAtom$())).append$S($I$(7).eP$javajs_util_T3(pt)).append$S(" \"psi = ").append$S(String.valueOf$I(Math.round(y))).append$S("\" color ").append$S(C$.qColor[1]).append$S("\n");
-pdbATOM.append$S("draw ID \"planeNCC").append$S(id).append$S("\" ").append$S($I$(7).eP$javajs_util_T3(aa.getNitrogenAtom$())).append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7).eP$javajs_util_T3(aa.getCarbonylCarbonAtom$())).append$S(" color ").append$S(C$.qColor[0]).append$S("\n");
-pdbATOM.append$S("draw ID \"planeCNC").append$S(id).append$S("\" ").append$S($I$(7).eP$javajs_util_T3((p.monomers[m - 1]).getCarbonylCarbonAtom$())).append$S($I$(7).eP$javajs_util_T3(aa.getNitrogenAtom$())).append$S($I$(7).eP$javajs_util_T3(a)).append$S(" color ").append$S(C$.qColor[1]).append$S("\n");
-pdbATOM.append$S("draw ID \"planeCCN").append$S(id).append$S("\" ").append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7).eP$javajs_util_T3(aa.getCarbonylCarbonAtom$())).append$S($I$(7).eP$javajs_util_T3((p.monomers[m + 1]).getNitrogenAtom$())).append$S(" color ").append$S(C$.qColor[2]).append$S("\n");
+pdbATOM.append$S("draw ID \"psi").append$S(id).append$S("\" ARROW ARC ").append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7,"eP$javajs_util_T3",[aa.getCarbonylCarbonAtom$()])).append$S($I$(7,"eP$javajs_util_T3",[aa.getNitrogenAtom$()])).append$S($I$(7).eP$javajs_util_T3(pt)).append$S(" \"psi = ").append$S(String.valueOf$I(Math.round(y))).append$S("\" color ").append$S(C$.qColor[1]).append$S("\n");
+pdbATOM.append$S("draw ID \"planeNCC").append$S(id).append$S("\" ").append$S($I$(7,"eP$javajs_util_T3",[aa.getNitrogenAtom$()])).append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7,"eP$javajs_util_T3",[aa.getCarbonylCarbonAtom$()])).append$S(" color ").append$S(C$.qColor[0]).append$S("\n");
+pdbATOM.append$S("draw ID \"planeCNC").append$S(id).append$S("\" ").append$S($I$(7,"eP$javajs_util_T3",[(p.monomers[m - 1]).getCarbonylCarbonAtom$()])).append$S($I$(7,"eP$javajs_util_T3",[aa.getNitrogenAtom$()])).append$S($I$(7).eP$javajs_util_T3(a)).append$S(" color ").append$S(C$.qColor[1]).append$S("\n");
+pdbATOM.append$S("draw ID \"planeCCN").append$S(id).append$S("\" ").append$S($I$(7).eP$javajs_util_T3(a)).append$S($I$(7,"eP$javajs_util_T3",[aa.getCarbonylCarbonAtom$()])).append$S($I$(7,"eP$javajs_util_T3",[(p.monomers[m + 1]).getNitrogenAtom$()])).append$S(" color ").append$S(C$.qColor[2]).append$S("\n");
 continue;
 }if (Float.isNaN$F(angledeg)) {
 strExtra="";
 if (writeRamachandranStraightness) continue;
 } else {
-q=$I$(8).newVA$javajs_util_T3$F($I$(3).new3$F$F$F(1, 0, 0), angledeg);
+q=$I$(8,"newVA$javajs_util_T3$F",[$I$(3).new3$F$F$F(1, 0, 0), angledeg]);
 strExtra=C$.getQInfo$javajs_util_Quat(q);
 if (writeRamachandranStraightness) {
 z=angledeg;
@@ -259,7 +251,7 @@ w=q.q1;
 break;
 }
 var ptCenter=monomer.getQuaternionFrameCenter$C(qtype);
-if (ptCenter == null ) ptCenter=Clazz.new_($I$(3));
+if (ptCenter == null ) ptCenter=Clazz.new_($I$(3,1));
 if (isDraw) {
 if (bsSelected != null  && !bsSelected.get$I(a.getIndex$()) ) continue;
 var deg=(Math.floor(Math.acos(w) * 360 / 3.141592653589793)|0);
@@ -274,30 +266,30 @@ continue;
 }pt.set$F$F$F(x * 2, y * 2, z * 2);
 pdbATOM.append$S("draw ID \"").append$S(prefix).append$S("a").append$S(id).append$S("\" VECTOR ").append$S($I$(7).eP$javajs_util_T3(ptCenter)).append$S($I$(7).eP$javajs_util_T3(pt)).append$S(" \">").append$S(String.valueOf$I(deg)).append$S("\" color ").append$S(C$.qColor[derivType]).append$S("\n");
 continue;
-}strExtra=C$.getQInfo$javajs_util_Quat(q) + $I$(9).sprintf$S$S$OA("  %10.5p %10.5p %10.5p", "p", Clazz.array(java.lang.Object, -1, [ptCenter]));
+}strExtra=C$.getQInfo$javajs_util_Quat(q) + $I$(9,"sprintf$S$S$OA",["  %10.5p %10.5p %10.5p", "p", Clazz.array(java.lang.Object, -1, [ptCenter])]);
 if (qtype == "n" && isAmino ) {
-strExtra += $I$(9).sprintf$S$S$OA("  %10.5p %10.5p %10.5p", "p", Clazz.array(java.lang.Object, -1, [(monomer).getNitrogenHydrogenPoint$()]));
+strExtra += $I$(9,"sprintf$S$S$OA",["  %10.5p %10.5p %10.5p", "p", Clazz.array(java.lang.Object, -1, [(monomer).getNitrogenHydrogenPoint$()])]);
 } else if (derivType == 2 && !Float.isNaN$F(val1) ) {
-strExtra += $I$(9).sprintf$S$S$OA(" %10.5f %10.5f", "F", Clazz.array(java.lang.Object, -1, [Clazz.array(Float.TYPE, -1, [val1, val2])]));
+strExtra += $I$(9,"sprintf$S$S$OA",[" %10.5f %10.5f", "F", Clazz.array(java.lang.Object, -1, [Clazz.array(Float.TYPE, -1, [val1, val2])])]);
 }}if (pdbATOM == null ) continue;
 bsWritten.set$I((a.group).leadAtomIndex);
-pdbATOM.append$S(this.ms.getLabeler$().formatLabelAtomArray$org_jmol_viewer_Viewer$org_jmol_modelset_Atom$org_jmol_modelset_LabelTokenA$C$IA$javajs_util_P3(this.vwr, a, tokens, "\u0000", null, ptTemp));
-pdbATOM.append$S($I$(9).sprintf$S$S$OA("%8.2f%8.2f%8.2f      %6.3f          %2s    %s\n", "ssF", Clazz.array(java.lang.Object, -1, [a.getElementSymbolIso$Z(false).toUpperCase$(), strExtra, Clazz.array(Float.TYPE, -1, [x * factor, y * factor, z * factor, w * factor])])));
+pdbATOM.append$S($I$(10).formatLabelAtomArray$org_jmol_viewer_Viewer$org_jmol_modelset_Atom$org_jmol_modelset_LabelTokenA$C$IA$javajs_util_P3(this.vwr, a, tokens, "\u0000", null, ptTemp));
+pdbATOM.append$S($I$(9,"sprintf$S$S$OA",["%8.2f%8.2f%8.2f      %6.3f          %2s    %s\n", "ssF", Clazz.array(java.lang.Object, -1, [a.getElementSymbolIso$Z(false).toUpperCase$(), strExtra, Clazz.array(Float.TYPE, -1, [x * factor, y * factor, z * factor, w * factor])])]));
 if (atomLast != null  && atomLast.group.getBioPolymerIndexInModel$() == a.group.getBioPolymerIndexInModel$() ) {
-pdbCONECT.append$S("CONECT").append$S($I$(9).formatStringI$S$S$I("%5i", "i", atomLast.getAtomNumber$())).append$S($I$(9).formatStringI$S$S$I("%5i", "i", a.getAtomNumber$())).appendC$C("\n");
+pdbCONECT.append$S("CONECT").append$S($I$(9,"formatStringI$S$S$I",["%5i", "i", atomLast.getAtomNumber$()])).append$S($I$(9,"formatStringI$S$S$I",["%5i", "i", a.getAtomNumber$()])).appendC$C("\n");
 }atomLast=a;
 }}
 }, p$1);
 
 Clazz.newMeth(C$, 'getQInfo$javajs_util_Quat', function (q) {
 var axis=q.toAxisAngle4f$();
-return $I$(9).sprintf$S$S$OA("%10.6f%10.6f%10.6f%10.6f  %6.2f  %10.5f %10.5f %10.5f", "F", Clazz.array(java.lang.Object, -1, [Clazz.array(Float.TYPE, -1, [q.q0, q.q1, q.q2, q.q3, (axis.angle * 180 / 3.141592653589793), axis.x, axis.y, axis.z])]));
+return $I$(9,"sprintf$S$S$OA",["%10.6f%10.6f%10.6f%10.6f  %6.2f  %10.5f %10.5f %10.5f", "F", Clazz.array(java.lang.Object, -1, [Clazz.array(Float.TYPE, -1, [q.q0, q.q1, q.q2, q.q3, (axis.angle * 180 / 3.141592653589793), axis.x, axis.y, axis.z])])]);
 }, 1);
 
 Clazz.newMeth(C$, 'drawQuat$javajs_util_Quat$S$S$javajs_util_P3$F', function (q, prefix, id, ptCenter, scale) {
 var strV=" VECTOR " + $I$(7).eP$javajs_util_T3(ptCenter) + " " ;
 if (scale == 0 ) scale=1.0;
-return "draw " + prefix + "x" + id + strV + $I$(7).eP$javajs_util_T3(q.getVectorScaled$I$F(0, scale)) + " color red\n" + "draw " + prefix + "y" + id + strV + $I$(7).eP$javajs_util_T3(q.getVectorScaled$I$F(1, scale)) + " color green\n" + "draw " + prefix + "z" + id + strV + $I$(7).eP$javajs_util_T3(q.getVectorScaled$I$F(2, scale)) + " color blue\n" ;
+return "draw " + prefix + "x" + id + strV + $I$(7,"eP$javajs_util_T3",[q.getVectorScaled$I$F(0, scale)]) + " color red\n" + "draw " + prefix + "y" + id + strV + $I$(7,"eP$javajs_util_T3",[q.getVectorScaled$I$F(1, scale)]) + " color green\n" + "draw " + prefix + "z" + id + strV + $I$(7,"eP$javajs_util_T3",[q.getVectorScaled$I$F(2, scale)]) + " color blue\n" ;
 }, 1);
 
 Clazz.newMeth(C$, 'get3DStraightness$S$javajs_util_Quat$javajs_util_Quat', function (id, dq, dqnext) {
@@ -316,17 +308,17 @@ Clazz.newMeth(C$, 'getPdbDataM$org_jmol_modelsetbio_BioModel$org_jmol_viewer_Vie
 var bothEnds=false;
 var qtype=(ctype != "R" ? "r" : type.length$() > 13 && type.indexOf$S("ramachandran ") >= 0  ? type.charAt$I(13) : "R");
 if (qtype == "r") qtype=vwr.getQuaternionFrame$();
-var mStep=vwr.getInt$I(553648145);
+var mStep=vwr.getInt$I(553648144);
 var derivType=(type.indexOf$S("diff") < 0 ? 0 : type.indexOf$S("2") < 0 ? 1 : 2);
 if (!isDraw) {
 out.append$S("REMARK   6 Jmol PDB-encoded data: " + type + ";" );
 if (ctype != "R") {
 out.append$S("  quaternionFrame = \"" + qtype + "\"" );
 bothEnds=true;
-}out.append$S("\nREMARK   6 Jmol Version ").append$S($I$(10).getJmolVersion$()).append$S("\n");
+}out.append$S("\nREMARK   6 Jmol Version ").append$S($I$(11).getJmolVersion$()).append$S("\n");
 if (ctype == "R") out.append$S("REMARK   6 Jmol data min = {-180 -180 -180} max = {180 180 180} unScaledXyz = xyz * {1 1 1} + {0 0 0} plotScale = {100 100 100}\n");
  else out.append$S("REMARK   6 Jmol data min = {-1 -1 -1} max = {1 1 1} unScaledXyz = xyz * {0.1 0.1 0.1} + {0 0 0} plotScale = {100 100 100}\n");
-}var ptTemp=Clazz.new_($I$(3));
+}var ptTemp=Clazz.new_($I$(3,1));
 for (var p=0; p < m.bioPolymerCount; p++) p$1.getPdbData$org_jmol_modelsetbio_BioPolymer$C$C$I$I$javajs_util_BS$javajs_util_BS$Z$Z$Z$org_jmol_modelset_LabelTokenA$javajs_util_OC$javajs_util_SB$javajs_util_BS$javajs_util_P3.apply(this, [m.bioPolymers[p], ctype, qtype, mStep, derivType, m.bsAtoms, bsSelected, bothEnds, isDraw, p == 0, tokens, out, pdbCONECT, bsWritten, ptTemp]);
 
 });
@@ -338,18 +330,18 @@ var iAtom=bs1.nextSetBit$I(0);
 if (iAtom < 0) return 0;
 var m=ms.am[ms.at[iAtom].mi];
 if (!m.isBioModel) return 0;
-var vCA=Clazz.new_($I$(1));
+var vCA=Clazz.new_($I$(1,1));
 var bsCheck;
 if (bs1.equals$O(bs2)) {
 bsCheck=bs1;
 } else {
-bsCheck=$I$(11).copy$javajs_util_BS(bs1);
+bsCheck=$I$(12).copy$javajs_util_BS(bs1);
 bsCheck.or$javajs_util_BS(bs2);
 }var atoms=ms.at;
 bsCheck.and$javajs_util_BS(vwr.getModelUndeletedAtomsBitSet$I(m.modelIndex));
 for (var i=bsCheck.nextSetBit$I(0); i >= 0; i=bsCheck.nextSetBit$I(i + 1)) {
 var a=atoms[i];
-if (a.checkVisible$() && a.atomID == 2  && a.group.groupID != 5  && atoms[i].group.leadAtomIndex >= 0 ) vCA.addLast$TV(atoms[i]);
+if (a.checkVisible$() && a.atomID == 2  && a.group.groupID != 5  && atoms[i].group.leadAtomIndex >= 0 ) vCA.addLast$O(atoms[i]);
 }
 if (vCA.size$() == 0) return 0;
 var struts=C$.calculateStruts$org_jmol_modelset_ModelSet$javajs_util_BS$javajs_util_BS$javajs_util_Lst$F$I$Z(ms, bs1, bs2, vCA, vwr.getFloat$I(570425408), vwr.getInt$I(553648184), vwr.getBoolean$I(603979955));
@@ -362,13 +354,13 @@ return struts.size$();
 });
 
 Clazz.newMeth(C$, 'calculateStruts$org_jmol_modelset_ModelSet$javajs_util_BS$javajs_util_BS$javajs_util_Lst$F$I$Z', function (modelSet, bs1, bs2, vCA, thresh, delta, allowMultiple) {
-var vStruts=Clazz.new_($I$(1));
+var vStruts=Clazz.new_($I$(1,1));
 var thresh2=thresh * thresh;
 var n=vCA.size$();
 var nEndMin=3;
-var bsStruts=Clazz.new_($I$(5));
-var bsNotAvailable=Clazz.new_($I$(5));
-var bsNearbyResidues=Clazz.new_($I$(5));
+var bsStruts=Clazz.new_($I$(5,1));
+var bsNotAvailable=Clazz.new_($I$(5,1));
+var bsNearbyResidues=Clazz.new_($I$(5,1));
 var a1=vCA.get$I(0);
 var a2;
 var nBiopolymers=modelSet.getBioPolymerCountInModel$I(a1.mi);
@@ -458,7 +450,7 @@ Clazz.newMeth(C$, 'setStrut$I$I$I$javajs_util_Lst$javajs_util_BS$javajs_util_BS$
 var a1=vCA.get$I(i);
 var a2=vCA.get$I(j);
 if (!bs1.get$I(a1.i) || !bs2.get$I(a2.i) ) return;
-vStruts.addLast$TV(Clazz.array($I$(12), -1, [a1, a2]));
+vStruts.addLast$O(Clazz.array($I$(13), -1, [a1, a2]));
 bsStruts.set$I(i);
 bsStruts.set$I(j);
 for (var k1=Math.max(0, i - delta); k1 <= i + delta && k1 < n ; k1++) {
@@ -502,11 +494,11 @@ if (!(Clazz.instanceOf(g, "org.jmol.modelsetbio.AminoMonomer"))) return false;
 (ms.am[iModel]).isMutated=true;
 var res0=g;
 var ac=ms.ac;
-var bsRes0=Clazz.new_($I$(5));
+var bsRes0=Clazz.new_($I$(5,1));
 res0.setAtomBits$javajs_util_BS(bsRes0);
 var backbone=C$.getMutationBackbone$org_jmol_modelsetbio_AminoMonomer$org_jmol_modelset_AtomA(res0, null);
 fileName=$I$(9).esc$S(fileName);
-var script="try{\n  var atoms0 = {*}\n  var res0 = " + $I$(5).escape$javajs_util_BS$C$C(bsRes0, "(", ")") + "\n" + "  load mutate " + fileName + "\n" + "  var res1 = {!atoms0};var r1 = res1[1];var r0 = res1[0]\n" + "  if ({r1 & within(group, r0)}){\n" + "    var haveHs = ({_H & connected(res0)} != 0)\n" + "    if (!haveHs) {delete _H & res1}\n" + "    var sm = '[*.N][*.CA][*.C][*.O]'\n" + "    var keyatoms = res1.find(sm)\n" + "    var x = compare(res1,res0,sm,'BONDS')\n" + "    if(x){\n" + "      print 'mutating ' + res0[1].label('%n%r') + ' to ' + " + fileName + ".trim('=')\n" + "      rotate branch @x\n" + "      compare res1 res0 SMARTS @sm rotate translate 0\n" + "      var c = {!res0 & connected(res0)}\n" + "      var N2 = {*.N & c}\n" + "      var C0 = {*.C & c}\n" + "      var angleH = ({*.H and res0} ? angle({*.C and res0},{*.CA and res0},{*.N and res0},{*.H and res0}) : 1000)\n" + "      delete res0\n" + "      if (N2) {\n" + "        delete (*.OXT,*.HXT) and res1\n" + "        connect {N2} {keyatoms & *.C}\n" + "      }\n" + "      if (C0) {\n" + "        var h1 = {*.H and res1}\n" + "        var n = (h1 ? 0 + {res1 and _H & connected(*.N)} : 0)\n" + "        switch (n) {\n" + "        case 0:\n" + "          break\n" + "        case 1:\n" + "          delete h1\n" + "          break\n" + "        default:\n" + "          var x = angle({*.C and res1},{*.CA and res1},{*.N and res1},h1)\n" + "          rotate branch {*.CA and res1} {*.N and res1} @{angleH-x}\n" + "          delete *.H2 and res1\n" + "          delete *.H3 and res1\n" + "          break\n" + "        }\n" + "        connect {C0} {keyatoms & *.N}\n" + "      }\n" + "    }\n" + "  }\n" + "}catch(e){print e}\n" ;
+var script="try{\n  var atoms0 = {*}\n  var res0 = " + $I$(5,"escape$javajs_util_BS$C$C",[bsRes0, "(", ")"]) + "\n" + "  load mutate " + fileName + "\n" + "  var res1 = {!atoms0};var r1 = res1[1];var r0 = res1[0]\n" + "  if ({r1 & within(group, r0)}){\n" + "    var haveHs = ({_H & connected(res0)} != 0)\n" + "    if (!haveHs) {delete _H & res1}\n" + "    var sm = '[*.N][*.CA][*.C][*.O]'\n" + "    var keyatoms = res1.find(sm)\n" + "    var x = compare(res1,res0,sm,'BONDS')\n" + "    if(x){\n" + "      print 'mutating ' + res0[1].label('%n%r') + ' to ' + " + fileName + ".trim('=')\n" + "      rotate branch @x\n" + "      compare res1 res0 SMARTS @sm rotate translate 0\n" + "      var c = {!res0 & connected(res0)}\n" + "      var N2 = {*.N & c}\n" + "      var C0 = {*.C & c}\n" + "      var angleH = ({*.H and res0} ? angle({*.C and res0},{*.CA and res0},{*.N and res0},{*.H and res0}) : 1000)\n" + "      delete res0\n" + "      if (N2) {\n" + "        delete (*.OXT,*.HXT) and res1\n" + "        connect {N2} {keyatoms & *.C}\n" + "      }\n" + "      if (C0) {\n" + "        var h1 = {*.H and res1}\n" + "        var n = (h1 ? 0 + {res1 and _H & connected(*.N)} : 0)\n" + "        switch (n) {\n" + "        case 0:\n" + "          break\n" + "        case 1:\n" + "          delete h1\n" + "          break\n" + "        default:\n" + "          var x = angle({*.C and res1},{*.CA and res1},{*.N and res1},h1)\n" + "          rotate branch {*.CA and res1} {*.N and res1} @{angleH-x}\n" + "          delete *.H2 and res1\n" + "          delete *.H3 and res1\n" + "          break\n" + "        }\n" + "        connect {C0} {keyatoms & *.N}\n" + "      }\n" + "    }\n" + "  }\n" + "}catch(e){print e}\n" ;
 try {
 if ($I$(6).debugging) $I$(6).debug$S(script);
 vwr.eval.runScript$S(script);
@@ -521,12 +513,12 @@ throw e;
 ms=vwr.ms;
 if (ms.ac == ac) return false;
 var sb=ms.am[iModel].loadScript;
-var s=$I$(9).rep$S$S$S(sb.toString(), "load mutate ", "mutate ({" + iatom + "})" );
+var s=$I$(9,"rep$S$S$S",[sb.toString(), "load mutate ", "mutate ({" + iatom + "})" ]);
 sb.setLength$I(0);
 sb.append$S(s);
 g=ms.at[ms.ac - 1].group;
 if (g !== ms.at[ac + 1].group  || !(Clazz.instanceOf(g, "org.jmol.modelsetbio.AminoMonomer")) ) {
-var bsAtoms=Clazz.new_($I$(5));
+var bsAtoms=Clazz.new_($I$(5,1));
 g.setAtomBits$javajs_util_BS(bsAtoms);
 vwr.deleteAtoms$javajs_util_BS$Z(bsAtoms, false);
 return false;
@@ -559,7 +551,7 @@ break;
 }}, 1);
 
 Clazz.newMeth(C$, 'getMutationBackbone$org_jmol_modelsetbio_AminoMonomer$org_jmol_modelset_AtomA', function (res1, backbone) {
-var b=Clazz.array($I$(12), -1, [res1.getCarbonylCarbonAtom$(), res1.getCarbonylOxygenAtom$(), res1.getLeadAtom$(), res1.getNitrogenAtom$(), res1.getExplicitNH$()]);
+var b=Clazz.array($I$(13), -1, [res1.getCarbonylCarbonAtom$(), res1.getCarbonylOxygenAtom$(), res1.getLeadAtom$(), res1.getNitrogenAtom$(), res1.getExplicitNH$()]);
 if (backbone == null ) {
 if (b[3].getCovalentHydrogenCount$() > 1) b[4]=null;
 } else {
@@ -581,14 +573,14 @@ switch (ichFound=(info.startsWith$S(strRecord) ? 0 : info.indexOf$S("\n" + strRe
 case -1:
 continue;
 case 0:
-auxiliaryInfo.put$TK$TV("fileHeader", "");
+auxiliaryInfo.put$O$O("fileHeader", "");
 return "";
 default:
 if (ichFound < ichMin) ichMin=++ichFound;
 }
 }
 info=info.substring$I$I(0, ichMin);
-auxiliaryInfo.put$TK$TV("fileHeader", info);
+auxiliaryInfo.put$O$O("fileHeader", info);
 return info;
 });
 
@@ -663,6 +655,11 @@ break;
 }
 }return true;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.qColor=Clazz.array(String, -1, ["yellow", "orange", "purple"]);
+C$.pdbRecords=Clazz.array(String, -1, ["ATOM  ", "MODEL ", "HETATM"]);
+};
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

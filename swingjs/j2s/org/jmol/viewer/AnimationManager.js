@@ -1,53 +1,22 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.util.BSUtil','org.jmol.api.Interface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnimationManager");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.util.BSUtil','org.jmol.api.Interface']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnimationManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.animationThread=null;
-this.vwr=null;
-this.animationOn=false;
-this.animationFps=0;
-this.firstFrameDelayMs=0;
-this.lastFrameDelayMs=0;
-this.bsVisibleModels=null;
-this.animationReplayMode=0;
-this.bsDisplay=null;
-this.animationFrames=null;
-this.isMovie=false;
-this.animationPaused=false;
-this.cmi=0;
-this.caf=0;
-this.morphCount=0;
-this.animationDirection=0;
-this.currentDirection=0;
-this.firstFrameIndex=0;
-this.lastFrameIndex=0;
-this.frameStep=0;
-this.backgroundModelIndex=0;
-this.currentMorphModel=0;
-this.firstFrameDelay=0;
-this.lastFrameDelay=0;
-this.lastFramePainted=0;
-this.lastModelPainted=0;
-this.intAnimThread=0;
-this.cai=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.bsVisibleModels=Clazz.new_($I$(1));
+this.bsVisibleModels=Clazz.new_($I$(1,1));
 this.animationReplayMode=1073742070;
 this.animationDirection=1;
 this.currentDirection=1;
 this.backgroundModelIndex=-1;
 this.lastFrameDelay=1;
 this.cai=-1;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['animationOn','isMovie','animationPaused'],'F',['currentMorphModel','firstFrameDelay','lastFrameDelay'],'I',['animationFps','firstFrameDelayMs','lastFrameDelayMs','animationReplayMode','cmi','caf','morphCount','animationDirection','currentDirection','firstFrameIndex','lastFrameIndex','frameStep','backgroundModelIndex','lastFramePainted','lastModelPainted','intAnimThread','cai'],'O',['animationThread','org.jmol.thread.JmolThread','vwr','org.jmol.viewer.Viewer','bsVisibleModels','javajs.util.BS','+bsDisplay','animationFrames','int[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer', function (vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 }, 1);
 
@@ -406,4 +375,4 @@ return this.frameStep * direction * this.currentDirection ;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

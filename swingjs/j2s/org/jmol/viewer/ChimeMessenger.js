@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),I$=[[0,'org.jmol.util.Logger','org.jmol.c.CBK','java.util.Hashtable','Boolean','org.jmol.c.STR']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ChimeMessenger", null, null, 'org.jmol.viewer.JmolChimeMessenger');
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),I$=[[0,'org.jmol.util.Logger','org.jmol.c.CBK','java.util.Hashtable','org.jmol.c.STR']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ChimeMessenger", null, null, 'org.jmol.viewer.JmolChimeMessenger');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_Viewer', function (vwr) {
@@ -73,7 +69,7 @@ for (var i=modelCount; --i >= 0; ) n+=models[i].getChainCount$Z(false);
 sb.append$S("\nNumber of Chains .... " + n);
 var ng=0;
 var ngHetero=0;
-var map=Clazz.new_($I$(3));
+var map=Clazz.new_($I$(3,1));
 var id;
 var lastid=-1;
 nH=0;
@@ -82,20 +78,20 @@ var isHetero=atoms[i].isHetero$();
 if (isHetero) nHetero++;
 var g=atoms[i].group;
 if (!map.containsKey$O(g)) {
-map.put$TK$TV(g, $I$(4).TRUE);
+map.put$O$O(g, Boolean.TRUE);
 if (isHetero) ngHetero++;
  else ng++;
 }if (atoms[i].mi == 0) {
 if ((id=g.getStrucNo$()) != lastid && id != 0 ) {
 lastid=id;
 switch (g.getProteinStructureType$()) {
-case $I$(5).HELIX:
+case $I$(4).HELIX:
 nH++;
 break;
-case $I$(5).SHEET:
+case $I$(4).SHEET:
 nS++;
 break;
-case $I$(5).TURN:
+case $I$(4).TURN:
 nT++;
 break;
 }
@@ -112,4 +108,4 @@ sb.append$S("\nNumber of Strands ... " + nS);
 sb.append$S("\nNumber of Turns ..... " + nT);
 }});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

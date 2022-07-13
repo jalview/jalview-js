@@ -1,25 +1,7 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),p$1={},I$=[[0,'javax.swing.Timer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ControleurBlinkingThread", null, 'Thread', 'java.awt.event.ActionListener');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),p$1={},I$=[[0,'Thread','javax.swing.Timer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ControleurBlinkingThread", null, 'Thread', 'java.awt.event.ActionListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._period=0;
-this._parent=null;
-this._minVal=0;
-this._maxVal=0;
-this._val=0;
-this._incr=0;
-this._increasing=false;
-this._active=false;
-this.START=0;
-this.LOOP=0;
-this.STOP=0;
-this.nextMode=0;
-this.timer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._increasing=true;
@@ -28,14 +10,16 @@ this.START=0;
 this.LOOP=1;
 this.STOP=-1;
 this.nextMode=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_increasing','_active'],'D',['_minVal','_maxVal','_val','_incr'],'I',['START','LOOP','STOP','nextMode'],'J',['_period'],'O',['_parent','fr.orsay.lri.varna.VARNAPanel','timer','javax.swing.Timer']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_VARNAPanel', function (vp) {
 C$.c$$fr_orsay_lri_varna_VARNAPanel$J$D$D$D$D.apply(this, [vp, 50, 0, 1.0, 0.0, 0.2]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_VARNAPanel$J$D$D$D$D', function (vp, period, minVal, maxVal, val, incr) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._parent=vp;
 this._period=period;
 this._minVal=minVal;
@@ -65,7 +49,7 @@ p$1.stopTimer.apply(this, []);
 this.run$();
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.run$();
 });
 
@@ -98,7 +82,7 @@ this._increasing=true;
 this.nextMode=0;
 continue;
 }
-Thread.sleep$J(0);
+$I$(1).sleep$J(0);
 } catch (e) {
 if (Clazz.exceptionOf(e,"InterruptedException")){
 } else {
@@ -111,7 +95,7 @@ break;
 
 Clazz.newMeth(C$, 'startTimer$J', function (delay) {
 p$1.stopTimer.apply(this, []);
-this.timer=Clazz.new_($I$(1).c$$I$java_awt_event_ActionListener,[(delay|0), this]);
+this.timer=Clazz.new_([(delay|0), this],$I$(2,1).c$$I$java_awt_event_ActionListener);
 this.timer.setRepeats$Z(false);
 this.timer.start$();
 }, p$1);
@@ -124,4 +108,4 @@ this.timer=null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BSUtil");
-C$.emptySet=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.BS']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BSUtil");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.emptySet=Clazz.new_($I$(1));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['emptySet','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'newAndSetBit$I', function (i) {
 var bs=$I$(1).newN$I(i + 1);
@@ -115,7 +115,7 @@ bs.or$javajs_util_BS(bsNew);
 
 Clazz.newMeth(C$, 'offset$javajs_util_BS$I$I', function (bs0, pos, offset) {
 if (bs0 == null ) return;
-var bsTemp=$I$(1).newN$I(bs0.length$() + offset);
+var bsTemp=$I$(1,"newN$I",[bs0.length$() + offset]);
 for (var i=bs0.nextSetBit$I(0); i >= pos; i=bs0.nextSetBit$I(i + 1)) bsTemp.set$I(i + offset);
 
 C$.copy2$javajs_util_BS$javajs_util_BS(bsTemp, bs0);
@@ -124,10 +124,14 @@ C$.copy2$javajs_util_BS$javajs_util_BS(bsTemp, bs0);
 Clazz.newMeth(C$, 'setMapBitSet$java_util_Map$I$I$S', function (ht, i1, i2, key) {
 var bs;
 if (ht.containsKey$O(key)) bs=ht.get$O(key);
- else ht.put$TK$TV(key, bs=Clazz.new_($I$(1)));
+ else ht.put$O$O(key, bs=Clazz.new_($I$(1,1)));
 bs.setBits$I$I(i1, i2 + 1);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.emptySet=Clazz.new_($I$(1,1));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

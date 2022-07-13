@@ -1,45 +1,28 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'jalview.gui.SeqPanel','jalview.gui.IdPanel','jalview.gui.ScalePanel','jalview.gui.IdwidthAdjuster','jalview.gui.AnnotationPanel','jalview.gui.AnnotationLabels','java.awt.event.ComponentAdapter','jalview.gui.PaintRefresher','java.awt.Dimension','java.awt.Container','java.awt.Font','javax.swing.SwingUtilities','jalview.bin.Cache','jalview.analysis.AnnotationSorter','java.awt.Color','jalview.gui.ImageExporter','jalview.util.MessageManager','jalview.bin.Jalview','jalview.math.AlignmentDimension','java.io.PrintWriter','java.io.FileWriter','jalview.io.HTMLOutput','StringBuilder','jalview.schemes.ResidueProperties','jalview.util.Comparison','jalview.gui.OOMWarning','jalview.gui.FeatureRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignmentPanel", null, 'jalview.jbgui.GAlignmentPanel', ['java.awt.event.AdjustmentListener', 'java.awt.print.Printable', 'jalview.api.AlignmentViewPanel', 'jalview.viewmodel.ViewportListenerI']);
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'jalview.gui.SeqPanel','jalview.gui.IdPanel','jalview.gui.ScalePanel','jalview.gui.IdwidthAdjuster','jalview.gui.AnnotationPanel','jalview.gui.AnnotationLabels','java.awt.event.ComponentAdapter','jalview.gui.PaintRefresher','java.awt.Dimension','java.awt.Container','java.awt.Font','javax.swing.SwingUtilities','jalview.bin.Console','jalview.analysis.AnnotationSorter','java.awt.Color','jalview.bin.Cache','jalview.gui.ImageExporter','jalview.util.MessageManager','jalview.bin.Jalview','jalview.math.AlignmentDimension','java.io.PrintWriter','java.io.FileWriter','jalview.io.HTMLOutput','StringBuilder','jalview.schemes.ResidueProperties','jalview.util.Comparison','jalview.gui.OOMWarning','jalview.gui.FeatureRenderer']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignmentPanel", null, 'jalview.jbgui.GAlignmentPanel', ['java.awt.event.AdjustmentListener', 'java.awt.print.Printable', 'jalview.api.AlignmentViewPanel', 'jalview.viewmodel.ViewportListenerI']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.av=null;
-this.overviewPanel=null;
-this.seqPanel=null;
-this.idPanel=null;
-this.idwidthAdjuster=null;
-this.alignFrame=null;
-this.scalePanel=null;
-this.annotationPanel=null;
-this.alabels=null;
-this.hextent=0;
-this.vextent=0;
-this.scrollComplementaryPanel=false;
-this.propertyChangeListener=null;
-this.calculationDialog=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.hextent=0;
 this.vextent=0;
 this.scrollComplementaryPanel=true;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_gui_AlignFrame$jalview_gui_AlignViewport', function (af, av) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['Z',['scrollComplementaryPanel'],'I',['hextent','vextent'],'O',['av','jalview.gui.AlignViewport','overviewPanel','jalview.gui.OverviewPanel','seqPanel','jalview.gui.SeqPanel','idPanel','jalview.gui.IdPanel','idwidthAdjuster','jalview.gui.IdwidthAdjuster','alignFrame','jalview.gui.AlignFrame','scalePanel','jalview.gui.ScalePanel','annotationPanel','jalview.gui.AnnotationPanel','alabels','jalview.gui.AnnotationLabels','propertyChangeListener','java.beans.PropertyChangeListener','calculationDialog','jalview.gui.CalculationChooser']]]
+
+Clazz.newMeth(C$, 'c$$jalview_gui_AlignFrame$jalview_gui_AlignViewport',  function (af, av) {
+Clazz.super_(C$, this);
 this.alignFrame=af;
 this.av=av;
-this.setSeqPanel$jalview_gui_SeqPanel(Clazz.new_($I$(1).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[av, this]));
-this.setIdPanel$jalview_gui_IdPanel(Clazz.new_($I$(2).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[av, this]));
-this.setScalePanel$jalview_gui_ScalePanel(Clazz.new_($I$(3).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[av, this]));
+this.setSeqPanel$jalview_gui_SeqPanel(Clazz.new_($I$(1,1).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[av, this]));
+this.setIdPanel$jalview_gui_IdPanel(Clazz.new_($I$(2,1).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[av, this]));
+this.setScalePanel$jalview_gui_ScalePanel(Clazz.new_($I$(3,1).c$$jalview_gui_AlignViewport$jalview_gui_AlignmentPanel,[av, this]));
 this.idPanelHolder.add$java_awt_Component$O(this.getIdPanel$(), "Center");
-this.idwidthAdjuster=Clazz.new_($I$(4).c$$jalview_gui_AlignmentPanel,[this]);
+this.idwidthAdjuster=Clazz.new_($I$(4,1).c$$jalview_gui_AlignmentPanel,[this]);
 this.idSpaceFillerPanel1.add$java_awt_Component$O(this.idwidthAdjuster, "Center");
-this.setAnnotationPanel$jalview_gui_AnnotationPanel(Clazz.new_($I$(5).c$$jalview_gui_AlignmentPanel,[this]));
-this.setAlabels$jalview_gui_AnnotationLabels(Clazz.new_($I$(6).c$$jalview_gui_AlignmentPanel,[this]));
+this.setAnnotationPanel$jalview_gui_AnnotationPanel(Clazz.new_($I$(5,1).c$$jalview_gui_AlignmentPanel,[this]));
+this.setAlabels$jalview_gui_AnnotationLabels(Clazz.new_($I$(6,1).c$$jalview_gui_AlignmentPanel,[this]));
 this.annotationScroller.setViewportView$java_awt_Component(this.getAnnotationPanel$());
 this.annotationSpaceFillerHolder.add$java_awt_Component$O(this.getAlabels$(), "Center");
 this.scalePanelHolder.add$java_awt_Component$O(this.getScalePanel$(), "Center");
@@ -48,15 +31,14 @@ this.setScrollValues$I$I(0, 0);
 this.hscroll.addAdjustmentListener$java_awt_event_AdjustmentListener(this);
 this.vscroll.addAdjustmentListener$java_awt_event_AdjustmentListener(this);
 this.addComponentListener$java_awt_event_ComponentListener(((P$.AlignmentPanel$1||
-(function(){var C$=Clazz.newClass(P$, "AlignmentPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.ComponentAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignmentPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.ComponentAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'componentResized$java_awt_event_ComponentEvent', function (evt) {
+Clazz.newMeth(C$, 'componentResized$java_awt_event_ComponentEvent',  function (evt) {
 var ranges=this.$finals$.av.getRanges$();
 if (this.$finals$.av.getWrapAlignment$()) {
 var widthInRes=this.b$['jalview.gui.AlignmentPanel'].getSeqPanel$.apply(this.b$['jalview.gui.AlignmentPanel'], []).seqCanvas.getWrappedCanvasWidth$I(this.b$['jalview.gui.AlignmentPanel'].getSeqPanel$.apply(this.b$['jalview.gui.AlignmentPanel'], []).seqCanvas.getWidth$());
@@ -68,24 +50,23 @@ ranges.setViewportWidth$I(widthInRes);
 ranges.setViewportHeight$I(heightInSeq);
 }});
 })()
-), Clazz.new_($I$(7), [this, {av: av}],P$.AlignmentPanel$1)));
+), Clazz.new_($I$(7,1),[this, {av:av}],P$.AlignmentPanel$1)));
 var ap=this;
 this.propertyChangeListener=((P$.AlignmentPanel$2||
-(function(){var C$=Clazz.newClass(P$, "AlignmentPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignmentPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (evt) {
 if (evt.getPropertyName$().equals$O("alignment")) {
-$I$(8).Refresh$java_awt_Component$S$Z$Z(this.$finals$.ap, this.$finals$.av.getSequenceSetId$(), true, true);
+$I$(8,"Refresh$java_awt_Component$S$Z$Z",[this.$finals$.ap, this.$finals$.av.getSequenceSetId$(), true, true]);
 this.b$['jalview.gui.AlignmentPanel'].alignmentChanged$.apply(this.b$['jalview.gui.AlignmentPanel'], []);
 }});
 })()
-), Clazz.new_(P$.AlignmentPanel$2.$init$, [this, {ap: ap, av: av}]));
+), Clazz.new_(P$.AlignmentPanel$2.$init$,[this, {av:av,ap:ap}]));
 av.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
 av.getRanges$().addPropertyChangeListener$jalview_viewmodel_ViewportListenerI(this);
 this.fontChanged$();
@@ -93,11 +74,11 @@ this.adjustAnnotationHeight$();
 this.updateLayout$();
 }, 1);
 
-Clazz.newMeth(C$, 'getAlignViewport$', function () {
+Clazz.newMeth(C$, 'getAlignViewport$',  function () {
 return this.av;
 });
 
-Clazz.newMeth(C$, 'alignmentChanged$', function () {
+Clazz.newMeth(C$, 'alignmentChanged$',  function () {
 this.av.alignmentChanged$jalview_api_AlignmentViewPanel(this);
 if (this.getCalculationDialog$() != null ) {
 this.getCalculationDialog$().validateCalcTypes$();
@@ -105,72 +86,77 @@ this.getCalculationDialog$().validateCalcTypes$();
 this.paintAlignment$Z$Z(true, true);
 });
 
-Clazz.newMeth(C$, 'fontChanged$', function () {
+Clazz.newMeth(C$, 'fontChanged$',  function () {
 var fm=this.getFontMetrics$java_awt_Font(this.av.getFont$());
-this.scalePanelHolder.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(9).c$$I$I,[10, this.av.getCharHeight$() + fm.getDescent$()]));
-this.idSpaceFillerPanel1.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(9).c$$I$I,[10, this.av.getCharHeight$() + fm.getDescent$()]));
+this.scalePanelHolder.setPreferredSize$java_awt_Dimension(Clazz.new_([10, this.av.getCharHeight$() + fm.getDescent$()],$I$(9,1).c$$I$I));
+this.idSpaceFillerPanel1.setPreferredSize$java_awt_Dimension(Clazz.new_([10, this.av.getCharHeight$() + fm.getDescent$()],$I$(9,1).c$$I$I));
 this.idwidthAdjuster.invalidate$();
 this.scalePanelHolder.invalidate$();
 this.getSeqPanel$().seqCanvas.img=null;
 this.getAnnotationPanel$().adjustPanelHeight$();
 var d=this.calculateIdWidth$();
-d.setSize$I$I(d.width + 4, d.height);
 this.getIdPanel$().getIdCanvas$().setPreferredSize$java_awt_Dimension(d);
 this.hscrollFillerPanel.setPreferredSize$java_awt_Dimension(d);
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'calculateIdWidth$', function () {
+Clazz.newMeth(C$, 'calculateIdWidth$',  function () {
+var oldWidth=this.av.getIdWidth$();
 var r=null;
 if (this.av.getIdWidth$() < 0) {
 var afwidth=(this.alignFrame != null  ? this.alignFrame.getWidth$() : 300);
-var maxwidth=Math.max(20, Math.min(afwidth - 200, (2 * afwidth/3|0)));
+var idWidth=Math.min(afwidth - 200, (2 * afwidth/3|0));
+var maxwidth=Math.max(20, idWidth);
 r=this.calculateIdWidth$I(maxwidth);
 this.av.setIdWidth$I(r.width);
 } else {
-r=Clazz.new_($I$(9));
+r=Clazz.new_($I$(9,1));
 r.width=this.av.getIdWidth$();
 r.height=0;
+}if (r.width != oldWidth) {
+this.idPanelHolder.setPreferredSize$java_awt_Dimension(r);
+this.validate$();
 }return r;
 });
 
-Clazz.newMeth(C$, 'calculateIdWidth$I', function (maxwidth) {
-var c=Clazz.new_($I$(10));
-var fm=c.getFontMetrics$java_awt_Font(Clazz.new_($I$(11).c$$S$I$I,[this.av.font.getName$(), 2, this.av.font.getSize$()]));
+Clazz.newMeth(C$, 'calculateIdWidth$I',  function (maxwidth) {
+var c=Clazz.new_($I$(10,1));
+var fm=c.getFontMetrics$java_awt_Font(Clazz.new_([this.av.font.getName$(), 2, this.av.font.getSize$()],$I$(11,1).c$$S$I$I));
 var al=this.av.getAlignment$();
 var i=0;
 var idWidth=0;
-var id;
 while ((i < al.getHeight$()) && (al.getSequenceAt$I(i) != null ) ){
 var s=al.getSequenceAt$I(i);
-id=s.getDisplayId$Z(this.av.getShowJVSuffix$());
-if (fm.stringWidth$S(id) > idWidth) {
-idWidth=fm.stringWidth$S(id);
-}i++;
+var id=s.getDisplayId$Z(this.av.getShowJVSuffix$());
+var stringWidth=fm.stringWidth$S(id);
+idWidth=Math.max(idWidth, stringWidth);
+++i;
 }
 i=0;
 if (al.getAlignmentAnnotation$() != null ) {
 fm=c.getFontMetrics$java_awt_Font(this.getAlabels$().getFont$());
 while (i < al.getAlignmentAnnotation$().length){
 var label=al.getAlignmentAnnotation$()[i].label;
-if (fm.stringWidth$S(label) > idWidth) {
-idWidth=fm.stringWidth$S(label);
-}i++;
+var stringWidth=fm.stringWidth$S(label);
+idWidth=Math.max(idWidth, stringWidth);
+++i;
 }
-}return Clazz.new_($I$(9).c$$I$I,[maxwidth < 0 ? idWidth : Math.min(maxwidth, idWidth), 12]);
+}var w=maxwidth < 0 ? idWidth : Math.min(maxwidth, idWidth);
+w+=4;
+return Clazz.new_($I$(9,1).c$$I$I,[w, 12]);
 });
 
-Clazz.newMeth(C$, 'highlightSearchResults$jalview_datamodel_SearchResultsI', function (results) {
+Clazz.newMeth(C$, 'highlightSearchResults$jalview_datamodel_SearchResultsI',  function (results) {
 var scrolled=this.scrollToPosition$jalview_datamodel_SearchResultsI$I$Z(results, 0, false);
 var fastPaint=!(scrolled && this.av.getWrapAlignment$() );
 this.getSeqPanel$().seqCanvas.highlightSearchResults$jalview_datamodel_SearchResultsI$Z(results, fastPaint);
 });
 
-Clazz.newMeth(C$, 'scrollToPosition$jalview_datamodel_SearchResultsI', function (searchResults) {
+Clazz.newMeth(C$, 'scrollToPosition$jalview_datamodel_SearchResultsI',  function (searchResults) {
 return this.scrollToPosition$jalview_datamodel_SearchResultsI$I$Z(searchResults, 0, false);
 });
 
-Clazz.newMeth(C$, 'scrollToPosition$jalview_datamodel_SearchResultsI$I$Z', function (results, verticalOffset, centre) {
+Clazz.newMeth(C$, 'scrollToPosition$jalview_datamodel_SearchResultsI$I$Z',  function (results, verticalOffset, centre) {
 var startv;
 var endv;
 var starts;
@@ -220,22 +206,22 @@ scrollNeeded=ranges.scrollToWrappedVisible$I(start);
 return scrollNeeded;
 });
 
-Clazz.newMeth(C$, 'getOverviewPanel$', function () {
+Clazz.newMeth(C$, 'getOverviewPanel$',  function () {
 return this.overviewPanel;
 });
 
-Clazz.newMeth(C$, 'setOverviewPanel$jalview_gui_OverviewPanel', function (op) {
+Clazz.newMeth(C$, 'setOverviewPanel$jalview_gui_OverviewPanel',  function (op) {
 this.overviewPanel=op;
 });
 
-Clazz.newMeth(C$, 'setAnnotationVisible$Z', function (b) {
+Clazz.newMeth(C$, 'setAnnotationVisible$Z',  function (b) {
 if (!this.av.getWrapAlignment$()) {
 this.annotationSpaceFillerHolder.setVisible$Z(b);
 this.annotationScroller.setVisible$Z(b);
 }this.repaint$();
 });
 
-Clazz.newMeth(C$, 'adjustAnnotationHeight$', function () {
+Clazz.newMeth(C$, 'adjustAnnotationHeight$',  function () {
 if (this.alignFrame.getHeight$() == 0) {
 System.out.println$S("NEEDS FIXING");
 }this.validateAnnotationDimensions$Z(true);
@@ -243,19 +229,19 @@ this.addNotify$();
 this.paintAlignment$Z$Z(true, this.av.needToUpdateStructureViews$());
 });
 
-Clazz.newMeth(C$, 'validateAnnotationDimensions$Z', function (adjustPanelHeight) {
+Clazz.newMeth(C$, 'validateAnnotationDimensions$Z',  function (adjustPanelHeight) {
 var annotationHeight=this.getAnnotationPanel$().adjustPanelHeight$();
 annotationHeight=this.getAnnotationPanel$().adjustForAlignFrame$Z$I(adjustPanelHeight, annotationHeight);
 this.hscroll.addNotify$();
-this.annotationScroller.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(9).c$$I$I,[this.annotationScroller.getWidth$(), annotationHeight]));
+this.annotationScroller.setPreferredSize$java_awt_Dimension(Clazz.new_([this.annotationScroller.getWidth$(), annotationHeight],$I$(9,1).c$$I$I));
 var e=this.idPanel.getSize$();
-this.alabels.setSize$java_awt_Dimension(Clazz.new_($I$(9).c$$I$I,[e.width, annotationHeight]));
-this.annotationSpaceFillerHolder.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(9).c$$I$I,[this.annotationSpaceFillerHolder.getWidth$(), annotationHeight]));
+this.alabels.setSize$java_awt_Dimension(Clazz.new_($I$(9,1).c$$I$I,[e.width, annotationHeight]));
+this.annotationSpaceFillerHolder.setPreferredSize$java_awt_Dimension(Clazz.new_([this.annotationSpaceFillerHolder.getWidth$(), annotationHeight],$I$(9,1).c$$I$I));
 this.annotationScroller.validate$();
 this.annotationScroller.addNotify$();
 });
 
-Clazz.newMeth(C$, 'updateLayout$', function () {
+Clazz.newMeth(C$, 'updateLayout$',  function () {
 this.fontChanged$();
 this.setAnnotationVisible$Z(this.av.isShowAnnotation$());
 var wrap=this.av.getWrapAlignment$();
@@ -285,7 +271,7 @@ ranges.setViewportHeight$I(heightInSeq);
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'setScrollValues$I$I', function (xpos, ypos) {
+Clazz.newMeth(C$, 'setScrollValues$I$I',  function (xpos, ypos) {
 var x=xpos;
 var y=ypos;
 if (this.av == null  || this.av.getAlignment$() == null  ) {
@@ -313,7 +299,7 @@ x=0;
 this.vscroll.setValues$I$I$I$I(y, this.vextent, 0, height);
 }});
 
-Clazz.newMeth(C$, ['adjustmentValueChanged$java_awt_event_AdjustmentEvent','adjustmentValueChanged$'], function (evt) {
+Clazz.newMeth(C$, 'adjustmentValueChanged$java_awt_event_AdjustmentEvent',  function (evt) {
 if (this.av.getWrapAlignment$()) {
 this.adjustScrollingWrapped$java_awt_event_AdjustmentEvent(evt);
 return;
@@ -337,7 +323,7 @@ return;
 }this.repaint$();
 });
 
-Clazz.newMeth(C$, 'adjustScrollingWrapped$java_awt_event_AdjustmentEvent', function (evt) {
+Clazz.newMeth(C$, 'adjustScrollingWrapped$java_awt_event_AdjustmentEvent',  function (evt) {
 if (evt.getSource$() === this.hscroll ) {
 return;
 }var ranges=this.av.getRanges$();
@@ -352,27 +338,26 @@ var rowSize=ranges.getViewportWidth$();
 var newX=newY > oldY ? oldX + rowSize : oldX - rowSize;
 ranges.setViewportStartAndWidth$I$I(Math.max(0, newX), rowSize);
 }} else {
-$I$(12).invokeLater$Runnable(((P$.AlignmentPanel$3||
-(function(){var C$=Clazz.newClass(P$, "AlignmentPanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(12,"invokeLater$Runnable",[((P$.AlignmentPanel$3||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignmentPanel$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'run$', function () {
-$I$(13).log.warn$O("Unexpected path through code: Wrapped jar file opened with wrap alignment set in preferences");
+Clazz.newMeth(C$, 'run$',  function () {
+$I$(13).warn$S("Unexpected path through code: Wrapped jar file opened with wrap alignment set in preferences");
 this.$finals$.ranges.setStartRes$I(0);
 this.$finals$.ranges.setStartSeq$I(0);
 });
 })()
-), Clazz.new_(P$.AlignmentPanel$3.$init$, [this, {ranges: ranges}])));
+), Clazz.new_(P$.AlignmentPanel$3.$init$,[this, {ranges:ranges}]))]);
 }this.repaint$();
 });
 
-Clazz.newMeth(C$, 'paintAlignment$Z$Z', function (updateOverview, updateStructures) {
-var sorter=Clazz.new_($I$(14).c$$jalview_datamodel_AlignmentI$Z,[this.getAlignment$(), this.av.isShowAutocalculatedAbove$()]);
+Clazz.newMeth(C$, 'paintAlignment$Z$Z',  function (updateOverview, updateStructures) {
+var sorter=Clazz.new_([this.getAlignment$(), this.av.isShowAutocalculatedAbove$()],$I$(14,1).c$$jalview_datamodel_AlignmentI$Z);
 sorter.sort$jalview_datamodel_AlignmentAnnotationA$jalview_analysis_AnnotationSorter_SequenceAnnotationOrder(this.getAlignment$().getAlignmentAnnotation$(), this.av.getSortAnnotationsBy$());
 this.repaint$();
 if (updateStructures) {
@@ -382,18 +367,18 @@ if (this.overviewPanel != null ) {
 this.overviewPanel.updateOverviewImage$();
 }}});
 
-Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics',  function (g) {
 this.invalidate$();
 var d=this.getIdPanel$().getIdCanvas$().getPreferredSize$();
 this.idPanelHolder.setPreferredSize$java_awt_Dimension(d);
-this.hscrollFillerPanel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(9).c$$I$I,[d.width, 12]));
+this.hscrollFillerPanel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(9,1).c$$I$I,[d.width, 12]));
 this.validate$();
 var ranges=this.av.getRanges$();
 this.setScrollValues$I$I(ranges.getStartRes$(), ranges.getStartSeq$());
 C$.superclazz.prototype.paintComponent$java_awt_Graphics.apply(this, [g]);
 });
 
-Clazz.newMeth(C$, 'setScrollingForWrappedPanel$I', function (topLeftColumn) {
+Clazz.newMeth(C$, 'setScrollingForWrappedPanel$I',  function (topLeftColumn) {
 var ranges=this.av.getRanges$();
 var scrollPosition=ranges.getWrappedScrollPosition$I(topLeftColumn);
 var maxScroll=ranges.getWrappedMaxScroll$I(topLeftColumn);
@@ -401,7 +386,7 @@ this.vscroll.setUnitIncrement$I(1);
 this.vscroll.setValues$I$I$I$I(scrollPosition, 1, 0, maxScroll + 1);
 }, p$1);
 
-Clazz.newMeth(C$, ['print$java_awt_Graphics$java_awt_print_PageFormat$I','print$'], function (pg, pf, pi) {
+Clazz.newMeth(C$, 'print$java_awt_Graphics$java_awt_print_PageFormat$I',  function (pg, pf, pi) {
 pg.translate$I$I((pf.getImageableX$()|0), (pf.getImageableY$()|0));
 var pwidth=(pf.getImageableWidth$()|0);
 var pheight=(pf.getImageableHeight$()|0);
@@ -411,7 +396,7 @@ return this.printWrappedAlignment$I$I$I$java_awt_Graphics(pwidth, pheight, pi, p
 return this.printUnwrapped$I$I$I$java_awt_Graphics$java_awt_Graphics(pwidth, pheight, pi, pg, pg);
 }});
 
-Clazz.newMeth(C$, 'printUnwrapped$I$I$I$java_awt_Graphics$java_awt_Graphics', function (pageWidth, pageHeight, pageIndex, idGraphics, alignmentGraphics) {
+Clazz.newMeth(C$, 'printUnwrapped$I$I$I$java_awt_Graphics$java_awt_Graphics',  function (pageWidth, pageHeight, pageIndex, idGraphics, alignmentGraphics) {
 var idWidth=this.getVisibleIdWidth$Z(false);
 var alignmentGraphicsOffset=idGraphics !== alignmentGraphics  ? 0 : idWidth;
 var fm=this.getFontMetrics$java_awt_Font(this.av.getFont$());
@@ -459,7 +444,8 @@ this.getAnnotationPanel$().renderer.drawComponent$jalview_renderer_AwtRenderPane
 }return 0;
 });
 
-Clazz.newMeth(C$, 'printWrappedAlignment$I$I$I$java_awt_Graphics', function (pageWidth, pageHeight, pageNumber, g) {
+Clazz.newMeth(C$, 'printWrappedAlignment$I$I$I$java_awt_Graphics',  function (pageWidth, pageHeight, pageNumber, g) {
+this.getSeqPanel$().seqCanvas.calculateWrappedGeometry$I$I(this.getWidth$(), this.getHeight$());
 var annotationHeight=0;
 if (this.av.isShowAnnotation$()) {
 annotationHeight=this.getAnnotationPanel$().adjustPanelHeight$();
@@ -470,6 +456,7 @@ hgap+=this.av.getCharHeight$();
 var idWidth=this.getVisibleIdWidth$Z(false);
 var maxwidth=this.av.getAlignment$().getVisibleWidth$();
 var resWidth=this.getSeqPanel$().seqCanvas.getWrappedCanvasWidth$I(pageWidth - idWidth);
+this.av.getRanges$().setViewportStartAndWidth$I$I(0, resWidth);
 var totalHeight=cHeight * ((maxwidth/resWidth|0) + 1);
 g.setColor$java_awt_Color($I$(15).white);
 g.fillRect$I$I$I$I(0, 0, pageWidth, pageHeight);
@@ -487,64 +474,63 @@ return 0;
 return 1;
 }});
 
-Clazz.newMeth(C$, 'getVisibleIdWidth$', function () {
+Clazz.newMeth(C$, 'getVisibleIdWidth$',  function () {
 return this.getVisibleIdWidth$Z(true);
 });
 
-Clazz.newMeth(C$, 'getVisibleIdWidth$Z', function (onscreen) {
-if (!onscreen && $I$(13).getDefault$S$Z("FIGURE_AUTOIDWIDTH", false) ) {
-return this.calculateIdWidth$I(-1).width + 4;
-}var idwidth=null;
-if (onscreen || (idwidth=$I$(13).getIntegerProperty$S("FIGURE_FIXEDIDWIDTH")) == null  ) {
-var w=this.getIdPanel$().getWidth$();
-return (w > 0 ? w : this.calculateIdWidth$().width + 4);
-}return idwidth.intValue$() + 4;
+Clazz.newMeth(C$, 'getVisibleIdWidth$Z',  function (onscreen) {
+if (!onscreen && $I$(16).getDefault$S$Z("FIGURE_AUTOIDWIDTH", false) ) {
+return this.calculateIdWidth$I(-1).width;
+}var idwidth=onscreen ? null : $I$(16).getIntegerProperty$S("FIGURE_FIXEDIDWIDTH");
+if (idwidth != null ) {
+return idwidth.intValue$() + 4;
+}var w=this.getIdPanel$().getWidth$();
+return (w > 0 ? w : this.calculateIdWidth$().width);
 });
 
-Clazz.newMeth(C$, 'makeAlignmentImage$jalview_util_ImageMaker_TYPE$java_io_File', function (type, file) {
+Clazz.newMeth(C$, 'makeAlignmentImage$jalview_util_ImageMaker_TYPE$java_io_File',  function (type, file) {
 var borderBottomOffset=5;
 var aDimension=this.getAlignmentDimension$();
 var writer=((P$.AlignmentPanel$4||
-(function(){var C$=Clazz.newClass(P$, "AlignmentPanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.gui.ImageExporter','jalview.gui.ImageExporter.ImageWriterI']], 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AlignmentPanel$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, [['jalview.gui.ImageExporter','jalview.gui.ImageExporter.ImageWriterI']], 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['exportImage$java_awt_Graphics','exportImage$'], function (graphics) {
+Clazz.newMeth(C$, 'exportImage$java_awt_Graphics',  function (graphics) {
 if (this.b$['jalview.gui.AlignmentPanel'].av.getWrapAlignment$()) {
 this.b$['jalview.gui.AlignmentPanel'].printWrappedAlignment$I$I$I$java_awt_Graphics.apply(this.b$['jalview.gui.AlignmentPanel'], [this.$finals$.aDimension.getWidth$(), this.$finals$.aDimension.getHeight$() + 5, 0, graphics]);
 } else {
 this.b$['jalview.gui.AlignmentPanel'].printUnwrapped$I$I$I$java_awt_Graphics$java_awt_Graphics.apply(this.b$['jalview.gui.AlignmentPanel'], [this.$finals$.aDimension.getWidth$(), this.$finals$.aDimension.getHeight$(), 0, graphics, graphics]);
 }});
 })()
-), Clazz.new_(P$.AlignmentPanel$4.$init$, [this, {aDimension: aDimension}]));
+), Clazz.new_(P$.AlignmentPanel$4.$init$,[this, {aDimension:aDimension}]));
 var fileTitle=this.alignFrame.getTitle$();
-var exporter=Clazz.new_($I$(16).c$$jalview_gui_ImageExporter_ImageWriterI$jalview_gui_IProgressIndicator$jalview_util_ImageMaker_TYPE$S,[writer, this.alignFrame, type, fileTitle]);
+var exporter=Clazz.new_($I$(17,1).c$$jalview_gui_ImageExporter_ImageWriterI$jalview_gui_IProgressIndicator$jalview_util_ImageMaker_TYPE$S,[writer, this.alignFrame, type, fileTitle]);
 var imageWidth=aDimension.getWidth$();
 var imageHeight=aDimension.getHeight$() + 5;
-var of=$I$(17).getString$S("label.alignment");
+var of=$I$(18).getString$S("label.alignment");
 exporter.doExport$java_io_File$java_awt_Component$I$I$S(file, this, imageWidth, imageHeight, of);
 });
 
-Clazz.newMeth(C$, 'getAlignmentDimension$', function () {
+Clazz.newMeth(C$, 'getAlignmentDimension$',  function () {
 var maxwidth=this.av.getAlignment$().getVisibleWidth$();
 var height=((this.av.getAlignment$().getHeight$() + 1) * this.av.getCharHeight$()) + this.getScalePanel$().getHeight$();
 var width=this.getVisibleIdWidth$Z(false) + (maxwidth * this.av.getCharWidth$());
 if (this.av.getWrapAlignment$()) {
 height=this.getWrappedHeight$();
-if ($I$(18).isHeadlessMode$()) {
+if ($I$(19).isHeadlessMode$()) {
 width=this.alignFrame.getWidth$() - this.vscroll.getPreferredSize$().width - this.alignFrame.getInsets$().left - this.alignFrame.getInsets$().right - this.getVisibleIdWidth$()  + this.getVisibleIdWidth$Z(false);
 } else {
 width=this.getSeqPanel$().getWidth$() + this.getVisibleIdWidth$Z(false);
 }} else if (this.av.isShowAnnotation$()) {
 height+=this.getAnnotationPanel$().adjustPanelHeight$() + 3;
-}return Clazz.new_($I$(19).c$$I$I,[width, height]);
+}return Clazz.new_($I$(20,1).c$$I$I,[width, height]);
 });
 
-Clazz.newMeth(C$, 'makePNGImageMap$java_io_File$S', function (imgMapFile, imageName) {
+Clazz.newMeth(C$, 'makePNGImageMap$java_io_File$S',  function (imgMapFile, imageName) {
 var idWidth=this.getVisibleIdWidth$Z(false);
 var fm=this.getFontMetrics$java_awt_Font(this.av.getFont$());
 var scaleHeight=this.av.getCharHeight$() + fm.getDescent$();
@@ -552,20 +538,20 @@ if (imgMapFile != null ) {
 try {
 var sSize=this.av.getAlignment$().getHeight$();
 var alwidth=this.av.getAlignment$().getWidth$();
-var out=Clazz.new_($I$(20).c$$java_io_Writer,[Clazz.new_($I$(21).c$$java_io_File,[imgMapFile])]);
-out.println$S($I$(22).getImageMapHTML$());
+var out=Clazz.new_([Clazz.new_($I$(22,1).c$$java_io_File,[imgMapFile])],$I$(21,1).c$$java_io_Writer);
+out.println$S($I$(23).getImageMapHTML$());
 out.println$S("<img src=\"" + imageName + "\" border=\"0\" usemap=\"#Map\" >" + "<map name=\"Map\">" );
 for (var s=0; s < sSize; s++) {
 var sy=s * this.av.getCharHeight$() + scaleHeight;
 var seq=this.av.getAlignment$().getSequenceAt$I(s);
 var groups=this.av.getAlignment$().findAllGroups$jalview_datamodel_SequenceI(seq);
 for (var column=0; column < alwidth; column++) {
-var text=Clazz.new_($I$(23).c$$I,[512]);
+var text=Clazz.new_($I$(24,1).c$$I,[512]);
 var triplet=null;
 if (this.av.getAlignment$().isNucleotide$()) {
-triplet=$I$(24).nucleotideName.get$O(seq.getCharAt$I(column) + "");
+triplet=$I$(25).nucleotideName.get$O(seq.getCharAt$I(column) + "");
 } else {
-triplet=$I$(24).aa2Triplet.get$O(seq.getCharAt$I(column) + "");
+triplet=$I$(25).aa2Triplet.get$O(seq.getCharAt$I(column) + "");
 }if (triplet == null ) {
 continue;
 }var seqPos=seq.findPosition$I(column);
@@ -578,8 +564,8 @@ text.append$S("<br><em>").append$S(groups[g].getName$()).append$S("</em>");
 }}
 if (text.length$() < 1) {
 text.append$S("<area shape=\"rect\" coords=\"").append$I((idWidth + column * this.av.getCharWidth$())).append$S(",").append$I(sy).append$S(",").append$I((idWidth + (column + 1) * this.av.getCharWidth$())).append$S(",").append$I((this.av.getCharHeight$() + sy)).append$S("\"").append$S(" onMouseOver=\"toolTip(\'").append$I(seqPos).append$S(" ").append$S(triplet);
-}if (!$I$(25).isGap$C(seq.getCharAt$I(column))) {
-var features=seq.findFeatures$I$I$SA(column, column, []);
+}if (!$I$(26,"isGap$C",[seq.getCharAt$I(column)])) {
+var features=seq.findFeatures$I$I$SA(column, column, Clazz.array(String, -1, []));
 for (var sf, $sf = features.iterator$(); $sf.hasNext$()&&((sf=($sf.next$())),1);) {
 if (sf.isContactFeature$()) {
 text.append$S("<br>").append$S(sf.getType$()).append$S(" ").append$I(sf.getBegin$()).append$S(":").append$I(sf.getEnd$());
@@ -610,7 +596,7 @@ throw ex;
 }
 }});
 
-Clazz.newMeth(C$, 'getWrappedHeight$', function () {
+Clazz.newMeth(C$, 'getWrappedHeight$',  function () {
 var seqPanelWidth=this.getSeqPanel$().seqCanvas.getWidth$();
 if (System.getProperty$S("java.awt.headless") != null  && System.getProperty$S("java.awt.headless").equals$O("true") ) {
 seqPanelWidth=this.alignFrame.getWidth$() - this.getVisibleIdWidth$() - this.vscroll.getPreferredSize$().width - this.alignFrame.getInsets$().left - this.alignFrame.getInsets$().right ;
@@ -620,6 +606,7 @@ if (this.av.getScaleAboveWrapped$()) {
 hgap+=this.av.getCharHeight$();
 }var annotationHeight=0;
 if (this.av.isShowAnnotation$()) {
+hgap+=3;
 annotationHeight=this.getAnnotationPanel$().adjustPanelHeight$();
 }var cHeight=this.av.getAlignment$().getHeight$() * this.av.getCharHeight$() + hgap + annotationHeight;
 var maxwidth=this.av.getAlignment$().getWidth$();
@@ -629,9 +616,9 @@ maxwidth=this.av.getAlignment$().getHiddenColumns$().absoluteToVisibleColumn$I(m
 return height;
 });
 
-Clazz.newMeth(C$, 'closePanel$', function () {
-$I$(8).RemoveComponent$java_awt_Component(this.getSeqPanel$().seqCanvas);
-$I$(8).RemoveComponent$java_awt_Component(this.getIdPanel$().getIdCanvas$());
+Clazz.newMeth(C$, 'closePanel$',  function () {
+$I$(8,"RemoveComponent$java_awt_Component",[this.getSeqPanel$().seqCanvas]);
+$I$(8,"RemoveComponent$java_awt_Component",[this.getIdPanel$().getIdCanvas$()]);
 $I$(8).RemoveComponent$java_awt_Component(this);
 this.closeChildFrames$();
 if (this.annotationPanel != null ) {
@@ -649,11 +636,11 @@ ssm.removeSelectionListener$jalview_structure_SelectionListener(this.getSeqPanel
 this.av.dispose$();
 this.av=null;
 } else {
-if ($I$(13).log.isDebugEnabled$()) {
-$I$(13).log.warn$O("Closing alignment panel which is already closed.");
+if ($I$(13).isDebugEnabled$()) {
+$I$(13).warn$S("Closing alignment panel which is already closed.");
 }}});
 
-Clazz.newMeth(C$, 'closeChildFrames$', function () {
+Clazz.newMeth(C$, 'closeChildFrames$',  function () {
 if (this.overviewPanel != null ) {
 this.overviewPanel.dispose$();
 this.overviewPanel=null;
@@ -662,28 +649,28 @@ this.calculationDialog.closeFrame$();
 this.calculationDialog=null;
 }});
 
-Clazz.newMeth(C$, 'updateAnnotation$', function () {
+Clazz.newMeth(C$, 'updateAnnotation$',  function () {
 this.updateAnnotation$Z$Z(false, false);
 });
 
-Clazz.newMeth(C$, 'updateAnnotation$Z', function (applyGlobalSettings) {
+Clazz.newMeth(C$, 'updateAnnotation$Z',  function (applyGlobalSettings) {
 this.updateAnnotation$Z$Z(applyGlobalSettings, false);
 });
 
-Clazz.newMeth(C$, 'updateAnnotation$Z$Z', function (applyGlobalSettings, preserveNewGroupSettings) {
+Clazz.newMeth(C$, 'updateAnnotation$Z$Z',  function (applyGlobalSettings, preserveNewGroupSettings) {
 this.av.updateGroupAnnotationSettings$Z$Z(applyGlobalSettings, preserveNewGroupSettings);
 this.adjustAnnotationHeight$();
 });
 
-Clazz.newMeth(C$, 'getAlignment$', function () {
+Clazz.newMeth(C$, 'getAlignment$',  function () {
 return this.av == null  ? null : this.av.getAlignment$();
 });
 
-Clazz.newMeth(C$, 'getViewName$', function () {
+Clazz.newMeth(C$, 'getViewName$',  function () {
 return this.av.getViewName$();
 });
 
-Clazz.newMeth(C$, 'setSelected$Z', function (b) {
+Clazz.newMeth(C$, 'setSelected$Z',  function (b) {
 try {
 if (this.alignFrame.getSplitViewContainer$() != null ) {
 (this.alignFrame.getSplitViewContainer$()).setSelected$Z(b);
@@ -695,87 +682,91 @@ throw ex;
 }
 }
 if (b) {
-this.alignFrame.setDisplayedView$jalview_gui_AlignmentPanel(this);
+this.setAlignFrameView$();
 }});
 
-Clazz.newMeth(C$, 'getStructureSelectionManager$', function () {
+Clazz.newMeth(C$, 'setAlignFrameView$',  function () {
+this.alignFrame.setDisplayedView$jalview_gui_AlignmentPanel(this);
+});
+
+Clazz.newMeth(C$, 'getStructureSelectionManager$',  function () {
 return this.av.getStructureSelectionManager$();
 });
 
-Clazz.newMeth(C$, ['raiseOOMWarning$S$OutOfMemoryError','raiseOOMWarning$'], function (string, error) {
-Clazz.new_($I$(26).c$$S$OutOfMemoryError$java_awt_Component,[string, error, this]);
+Clazz.newMeth(C$, 'raiseOOMWarning$S$OutOfMemoryError',  function (string, error) {
+Clazz.new_($I$(27,1).c$$S$OutOfMemoryError$java_awt_Component,[string, error, this]);
 });
 
-Clazz.newMeth(C$, 'cloneFeatureRenderer$', function () {
-return Clazz.new_($I$(27).c$$jalview_gui_AlignmentPanel,[this]);
+Clazz.newMeth(C$, 'cloneFeatureRenderer$',  function () {
+return Clazz.new_($I$(28,1).c$$jalview_gui_AlignmentPanel,[this]);
 });
 
-Clazz.newMeth(C$, 'getFeatureRenderer$', function () {
+Clazz.newMeth(C$, 'getFeatureRenderer$',  function () {
 return this.seqPanel.seqCanvas.getFeatureRenderer$();
 });
 
-Clazz.newMeth(C$, 'updateFeatureRenderer$jalview_renderer_seqfeatures_FeatureRenderer', function (fr) {
+Clazz.newMeth(C$, 'updateFeatureRenderer$jalview_renderer_seqfeatures_FeatureRenderer',  function (fr) {
 fr.transferSettings$jalview_api_FeatureRenderer(this.getSeqPanel$().seqCanvas.getFeatureRenderer$());
 });
 
-Clazz.newMeth(C$, 'updateFeatureRendererFrom$jalview_api_FeatureRenderer', function (fr) {
+Clazz.newMeth(C$, 'updateFeatureRendererFrom$jalview_api_FeatureRenderer',  function (fr) {
 if (this.getSeqPanel$().seqCanvas.getFeatureRenderer$() != null ) {
 this.getSeqPanel$().seqCanvas.getFeatureRenderer$().transferSettings$jalview_api_FeatureRenderer(fr);
 }});
 
-Clazz.newMeth(C$, 'getScalePanel$', function () {
+Clazz.newMeth(C$, 'getScalePanel$',  function () {
 return this.scalePanel;
 });
 
-Clazz.newMeth(C$, 'setScalePanel$jalview_gui_ScalePanel', function (scalePanel) {
+Clazz.newMeth(C$, 'setScalePanel$jalview_gui_ScalePanel',  function (scalePanel) {
 this.scalePanel=scalePanel;
 });
 
-Clazz.newMeth(C$, 'getSeqPanel$', function () {
+Clazz.newMeth(C$, 'getSeqPanel$',  function () {
 return this.seqPanel;
 });
 
-Clazz.newMeth(C$, 'setSeqPanel$jalview_gui_SeqPanel', function (seqPanel) {
+Clazz.newMeth(C$, 'setSeqPanel$jalview_gui_SeqPanel',  function (seqPanel) {
 this.seqPanel=seqPanel;
 });
 
-Clazz.newMeth(C$, 'getAnnotationPanel$', function () {
+Clazz.newMeth(C$, 'getAnnotationPanel$',  function () {
 return this.annotationPanel;
 });
 
-Clazz.newMeth(C$, 'setAnnotationPanel$jalview_gui_AnnotationPanel', function (annotationPanel) {
+Clazz.newMeth(C$, 'setAnnotationPanel$jalview_gui_AnnotationPanel',  function (annotationPanel) {
 this.annotationPanel=annotationPanel;
 });
 
-Clazz.newMeth(C$, 'getAlabels$', function () {
+Clazz.newMeth(C$, 'getAlabels$',  function () {
 return this.alabels;
 });
 
-Clazz.newMeth(C$, 'setAlabels$jalview_gui_AnnotationLabels', function (alabels) {
+Clazz.newMeth(C$, 'setAlabels$jalview_gui_AnnotationLabels',  function (alabels) {
 this.alabels=alabels;
 });
 
-Clazz.newMeth(C$, 'getIdPanel$', function () {
+Clazz.newMeth(C$, 'getIdPanel$',  function () {
 return this.idPanel;
 });
 
-Clazz.newMeth(C$, 'setIdPanel$jalview_gui_IdPanel', function (idPanel) {
+Clazz.newMeth(C$, 'setIdPanel$jalview_gui_IdPanel',  function (idPanel) {
 this.idPanel=idPanel;
 });
 
-Clazz.newMeth(C$, 'scrollToCentre$jalview_datamodel_SearchResultsI$I', function (sr, verticalOffset) {
+Clazz.newMeth(C$, 'scrollToCentre$jalview_datamodel_SearchResultsI$I',  function (sr, verticalOffset) {
 this.scrollToPosition$jalview_datamodel_SearchResultsI$I$Z(sr, verticalOffset, true);
 });
 
-Clazz.newMeth(C$, 'setToScrollComplementPanel$Z', function (b) {
+Clazz.newMeth(C$, 'setToScrollComplementPanel$Z',  function (b) {
 this.scrollComplementaryPanel=b;
 });
 
-Clazz.newMeth(C$, 'isSetToScrollComplementPanel$', function () {
+Clazz.newMeth(C$, 'isSetToScrollComplementPanel$',  function () {
 return this.scrollComplementaryPanel;
 });
 
-Clazz.newMeth(C$, 'refresh$Z', function (adjustHeight) {
+Clazz.newMeth(C$, 'refresh$Z',  function (adjustHeight) {
 this.validateAnnotationDimensions$Z(adjustHeight);
 this.addNotify$();
 if (adjustHeight) {
@@ -784,7 +775,7 @@ this.paintAlignment$Z$Z(true, false);
 this.repaint$();
 }});
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (evt) {
 var ranges=this.av.getRanges$();
 var x=ranges.getStartRes$();
 var y=ranges.getStartSeq$();
@@ -795,14 +786,14 @@ this.av.scrollComplementaryAlignment$();
 this.setToScrollComplementPanel$Z(true);
 }});
 
-Clazz.newMeth(C$, 'setCalculationDialog$jalview_gui_CalculationChooser', function (calculationChooser) {
+Clazz.newMeth(C$, 'setCalculationDialog$jalview_gui_CalculationChooser',  function (calculationChooser) {
 this.calculationDialog=calculationChooser;
 });
 
-Clazz.newMeth(C$, 'getCalculationDialog$', function () {
+Clazz.newMeth(C$, 'getCalculationDialog$',  function () {
 return this.calculationDialog;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

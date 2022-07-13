@@ -1,23 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'Boolean','javajs.util.SB','org.jmol.util.Logger','javajs.util.BS','org.jmol.util.Escape','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BinaryDcdReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'javajs.util.SB','org.jmol.util.Logger','javajs.util.BS','org.jmol.util.Escape','javajs.util.P3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BinaryDcdReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nModels=0;
-this.nAtoms=0;
-this.nFree=0;
-this.bsFree=null;
-this.xAll=null;
-this.yAll=null;
-this.zAll=null;
-this.crystGroup=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nModels','nAtoms','nFree','crystGroup'],'O',['bsFree','javajs.util.BS','xAll','float[]','+yAll','+zAll']]]
 
 Clazz.newMeth(C$, 'setup$S$java_util_Map$O', function (fullPath, htParams, reader) {
 this.isBinary=true;
@@ -27,7 +16,7 @@ this.setupASCR$S$java_util_Map$O(fullPath, htParams, reader);
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.initializeTrajectoryFile$();
-this.asc.setInfo$S$O("ignoreUnitCell", $I$(1).TRUE);
+this.asc.setInfo$S$O("ignoreUnitCell", Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'processBinaryDocument$', function () {
@@ -50,24 +39,24 @@ this.binaryDoc.readByteArray$BA$I$I(bytes, 0, 32);
 this.binaryDoc.readInt$();
 this.binaryDoc.readInt$();
 this.binaryDoc.readInt$();
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(1,1));
 for (var i=0, n=this.binaryDoc.readInt$(); i < n; i++) sb.append$S(p$1.trimString$S.apply(this, [this.binaryDoc.readString$I(80)])).appendC$C("\n");
 
 this.binaryDoc.readInt$();
-$I$(3).info$S("BinaryDcdReadaer:\n" + sb);
+$I$(2).info$S("BinaryDcdReadaer:\n" + sb);
 this.binaryDoc.readInt$();
 this.nAtoms=this.binaryDoc.readInt$();
 this.binaryDoc.readInt$();
 this.nFree=this.nAtoms - nFixed;
 if (nFixed != 0) {
 this.binaryDoc.readInt$();
-this.bsFree=$I$(4).newN$I(this.nFree);
+this.bsFree=$I$(3).newN$I(this.nFree);
 for (var i=0; i < this.nFree; i++) this.bsFree.set$I(this.binaryDoc.readInt$() - 1);
 
 this.binaryDoc.readInt$();
-$I$(3).info$S("free: " + this.bsFree.cardinality$() + " " + $I$(5).eBS$javajs_util_BS(this.bsFree) );
+$I$(2,"info$S",["free: " + this.bsFree.cardinality$() + " " + $I$(4).eBS$javajs_util_BS(this.bsFree) ]);
 }p$1.readCoordinates.apply(this, []);
-$I$(3).info$S("Total number of trajectory steps=" + this.trajectorySteps.size$());
+$I$(2,"info$S",["Total number of trajectory steps=" + this.trajectorySteps.size$()]);
 });
 
 Clazz.newMeth(C$, 'trimString$S', function (s) {
@@ -97,9 +86,9 @@ return data;
 Clazz.newMeth(C$, 'readCoordinates', function () {
 var ac=(this.bsFilter == null  ? this.templateAtomCount : (this.htParams.get$O("filteredAtomCount")).intValue$());
 for (var i=0; i < this.nModels; i++) if (this.doGetModel$I$S(++this.modelNumber, null)) {
-var trajectoryStep=Clazz.array($I$(6), [ac]);
+var trajectoryStep=Clazz.array($I$(5), [ac]);
 if (!p$1.getTrajectoryStep$javajs_util_P3A.apply(this, [trajectoryStep])) return;
-this.trajectorySteps.addLast$TV(trajectoryStep);
+this.trajectorySteps.addLast$O(trajectoryStep);
 if (this.isLastModel$I(this.modelNumber)) return;
 } else {
 if (this.crystGroup > 0) p$1.readDoubleArray.apply(this, []);
@@ -123,7 +112,7 @@ this.xAll=x;
 this.yAll=y;
 this.zAll=z;
 }for (var i=0, vpt=0; i < this.nAtoms; i++) {
-var pt=Clazz.new_($I$(6));
+var pt=Clazz.new_($I$(5,1));
 if (bs == null  || bs.get$I(i) ) {
 pt.set$F$F$F(x[vpt], y[vpt], z[vpt]);
 vpt++;
@@ -159,4 +148,4 @@ return Clazz.array(Float.TYPE, -1, [a, b, c, alpha, beta, gamma]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.event"),p$1={},I$=[[0,'java.awt.Toolkit','StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "KeyEvent", null, 'java.awt.event.InputEvent');
+(function(){var P$=Clazz.newPackage("java.awt.event"),p$1={},I$=[[0,'java.awt.Toolkit','StringBuilder','java.awt.event.InputEvent']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "KeyEvent", null, 'java.awt.event.InputEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isProxyActive=false;
-this.keyCode=0;
-this.keyChar='\0';
-this.keyLocation=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isProxyActive=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$C$I', function (source, id, when, modifiers, keyCode, keyChar, keyLocation) {
-C$.superclazz.c$$java_awt_Component$I$J$I.apply(this, [source, id, when, modifiers]);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['isProxyActive'],'C',['keyChar'],'I',['keyCode','keyLocation']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$C$I',  function (source, id, when, modifiers, keyCode, keyChar, keyLocation) {
+;C$.superclazz.c$$java_awt_Component$I$J$I.apply(this,[source, id, when, modifiers]);C$.$init$.apply(this);
 if (id == 400) {
 if (keyChar == "\uffff") {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["invalid keyChar"]);
@@ -37,36 +29,35 @@ p$1.setNewModifiers.apply(this, []);
 p$1.setOldModifiers.apply(this, []);
 }}, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$C', function (source, id, when, modifiers, keyCode, keyChar) {
+Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$C',  function (source, id, when, modifiers, keyCode, keyChar) {
 C$.c$$java_awt_Component$I$J$I$I$C$I.apply(this, [source, id, when, modifiers, keyCode, keyChar, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I', function (source, id, when, modifiers, keyCode) {
+Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I',  function (source, id, when, modifiers, keyCode) {
 C$.c$$java_awt_Component$I$J$I$I$C.apply(this, [source, id, when, modifiers, keyCode, String.fromCharCode(keyCode)]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'getKeyCode$', function () {
+Clazz.newMeth(C$, 'getKeyCode$',  function () {
 return this.keyCode;
 });
 
-Clazz.newMeth(C$, 'setKeyCode$I', function (keyCode) {
+Clazz.newMeth(C$, 'setKeyCode$I',  function (keyCode) {
 this.keyCode=keyCode;
 });
 
-Clazz.newMeth(C$, 'getKeyChar$', function () {
+Clazz.newMeth(C$, 'getKeyChar$',  function () {
 return this.keyChar;
 });
 
-Clazz.newMeth(C$, 'setKeyChar$C', function (keyChar) {
+Clazz.newMeth(C$, 'setKeyChar$C',  function (keyChar) {
 this.keyChar=keyChar;
 });
 
-Clazz.newMeth(C$, 'setModifiers$I', function (modifiers) {
+Clazz.newMeth(C$, 'setModifiers$I',  function (modifiers) {
 this.modifiers=modifiers;
 if ((this.getModifiers$() != 0) && (this.getModifiersEx$() == 0) ) {
 p$1.setNewModifiers.apply(this, []);
@@ -74,11 +65,11 @@ p$1.setNewModifiers.apply(this, []);
 p$1.setOldModifiers.apply(this, []);
 }});
 
-Clazz.newMeth(C$, 'getKeyLocation$', function () {
+Clazz.newMeth(C$, 'getKeyLocation$',  function () {
 return this.keyLocation;
 });
 
-Clazz.newMeth(C$, 'getKeyText$I', function (keyCode) {
+Clazz.newMeth(C$, 'getKeyText$I',  function (keyCode) {
 if (keyCode >= 48 && keyCode <= 57  || keyCode >= 65 && keyCode <= 90  ) {
 return String.valueOf$C(String.fromCharCode(keyCode));
 }switch (keyCode) {
@@ -373,8 +364,8 @@ return numpad + "-" + c ;
 return unknown + " keyCode: 0x" + Integer.toString$I$I(keyCode, 16) ;
 }, 1);
 
-Clazz.newMeth(C$, 'getKeyModifiersText$I', function (modifiers) {
-var buf=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'getKeyModifiersText$I',  function (modifiers) {
+var buf=Clazz.new_($I$(2,1));
 if ((modifiers & 4) != 0) {
 buf.append$S($I$(1).getProperty$S$S("AWT.meta", "Meta"));
 buf.append$S("+");
@@ -398,7 +389,7 @@ buf.setLength$I(buf.length$() - 1);
 }return buf.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'isActionKey$', function () {
+Clazz.newMeth(C$, 'isActionKey$',  function () {
 switch (this.keyCode) {
 case 36:
 case 35:
@@ -480,8 +471,8 @@ return true;
 return false;
 });
 
-Clazz.newMeth(C$, 'paramString$', function () {
-var str=Clazz.new_($I$(2).c$$I,[100]);
+Clazz.newMeth(C$, 'paramString$',  function () {
+var str=Clazz.new_($I$(2,1).c$$I,[100]);
 switch (this.id) {
 case 401:
 str.append$S("KEY_PRESSED");
@@ -529,7 +520,7 @@ break;
 if (this.getModifiers$() != 0) {
 str.append$S(",modifiers=").append$S(C$.getKeyModifiersText$I(this.modifiers));
 }if (this.getModifiersEx$() != 0) {
-str.append$S(",extModifiers=").append$S(P$.InputEvent.getModifiersExText$I(this.modifiers));
+str.append$S(",extModifiers=").append$S($I$(3).getModifiersExText$I(this.modifiers));
 }str.append$S(",keyLocation=");
 switch (this.keyLocation) {
 case 0:
@@ -554,7 +545,7 @@ break;
 return str.toString();
 });
 
-Clazz.newMeth(C$, 'setNewModifiers', function () {
+Clazz.newMeth(C$, 'setNewModifiers',  function () {
 if ((this.modifiers & 1) != 0) {
 this.modifiers|=64;
 }if ((this.modifiers & 8) != 0) {
@@ -569,7 +560,7 @@ this.modifiers|=8192;
 this.modifiers|=1024;
 }}, p$1);
 
-Clazz.newMeth(C$, 'setOldModifiers', function () {
+Clazz.newMeth(C$, 'setOldModifiers',  function () {
 if ((this.modifiers & 64) != 0) {
 this.modifiers|=1;
 }if ((this.modifiers & 512) != 0) {
@@ -584,4 +575,4 @@ this.modifiers|=32;
 this.modifiers|=16;
 }}, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:51 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

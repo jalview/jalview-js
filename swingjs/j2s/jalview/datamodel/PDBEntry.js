@@ -1,23 +1,17 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),I$=[[0,'java.util.Hashtable','java.util.Collections','jalview.util.CaseInsensitiveString']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PDBEntry", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.Hashtable','java.util.Collections','jalview.util.CaseInsensitiveString']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PDBEntry", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['Type',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.properties=null;
-this.file=null;
-this.type=null;
-this.id=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+C$.$fields$=[['S',['file','type','id'],'O',['properties','java.util.Hashtable']]]
+
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (obj == null  || !(Clazz.instanceOf(obj, "jalview.datamodel.PDBEntry")) ) {
 return false;
 }if (obj === this ) {
@@ -31,24 +25,24 @@ return this.properties === o.properties  || (this.properties != null  && this.pr
 }return false;
 });
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$S$jalview_datamodel_PDBEntry_Type$S', function (pdbId, chain, type, filePath) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$S$jalview_datamodel_PDBEntry_Type$S',  function (pdbId, chain, type, filePath) {
+;C$.$init$.apply(this);
 this.init$S$S$jalview_datamodel_PDBEntry_Type$S(pdbId, chain, type, filePath);
 }, 1);
 
-Clazz.newMeth(C$, 'init$S$S$jalview_datamodel_PDBEntry_Type$S', function (pdbId, chain, entryType, filePath) {
+Clazz.newMeth(C$, 'init$S$S$jalview_datamodel_PDBEntry_Type$S',  function (pdbId, chain, entryType, filePath) {
 this.id=pdbId;
 this.type=entryType == null  ? null : entryType.toString();
 this.file=filePath;
 this.setChainCode$S(chain);
 });
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry', function (entry) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry',  function (entry) {
+;C$.$init$.apply(this);
 this.file=entry.file;
 this.type=entry.type;
 this.id=entry.id;
@@ -56,8 +50,8 @@ if (entry.properties != null ) {
 this.properties=entry.properties.clone$();
 }}, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_DBRefEntry', function (dbr) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_DBRefEntry',  function (dbr) {
+;C$.$init$.apply(this);
 if (!"PDB".equals$O(dbr.getSource$())) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid source: " + dbr.getSource$()]);
 }var pdbId=dbr.getAccessionId$();
@@ -70,92 +64,99 @@ chainCode=String.valueOf$C(chain);
 }}this.init$S$S$jalview_datamodel_PDBEntry_Type$S(pdbId, chainCode, null, null);
 }, 1);
 
-Clazz.newMeth(C$, 'setFile$S', function (f) {
+Clazz.newMeth(C$, 'setFile$S',  function (f) {
 this.file=f;
 });
 
-Clazz.newMeth(C$, 'getFile$', function () {
+Clazz.newMeth(C$, 'getFile$',  function () {
 return this.file;
 });
 
-Clazz.newMeth(C$, 'setType$S', function (t) {
+Clazz.newMeth(C$, 'setType$S',  function (t) {
 this.type=t;
 });
 
-Clazz.newMeth(C$, 'setType$jalview_datamodel_PDBEntry_Type', function (type) {
+Clazz.newMeth(C$, 'setType$jalview_datamodel_PDBEntry_Type',  function (type) {
 this.type=type == null  ? null : type.toString();
 });
 
-Clazz.newMeth(C$, 'getType$', function () {
+Clazz.newMeth(C$, 'getType$',  function () {
 return this.type;
 });
 
-Clazz.newMeth(C$, 'setId$S', function (id) {
+Clazz.newMeth(C$, 'setId$S',  function (id) {
 this.id=id;
 });
 
-Clazz.newMeth(C$, 'getId$', function () {
+Clazz.newMeth(C$, 'getId$',  function () {
 return this.id;
 });
 
-Clazz.newMeth(C$, 'setProperty$S$O', function (key, value) {
+Clazz.newMeth(C$, 'setProperty$S$O',  function (key, value) {
 if (this.properties == null ) {
-this.properties=Clazz.new_($I$(1));
-}this.properties.put$TK$TV(key, value);
+this.properties=Clazz.new_($I$(1,1));
+}this.properties.put$O$O(key, value);
 });
 
-Clazz.newMeth(C$, 'getProperty$S', function (key) {
+Clazz.newMeth(C$, 'getProperty$S',  function (key) {
 return this.properties == null  ? null : this.properties.get$O(key);
 });
 
-Clazz.newMeth(C$, 'getProperties$', function () {
+Clazz.newMeth(C$, 'getProperties$',  function () {
 if (this.properties == null ) {
 return $I$(2).emptyEnumeration$();
 }return this.properties.keys$();
 });
 
-Clazz.newMeth(C$, 'getChainCode$', function () {
+Clazz.newMeth(C$, 'getChainCode$',  function () {
 return (this.properties == null  || this.properties.get$O("chain_code") == null  ) ? null : this.properties.get$O("chain_code").toString();
 });
 
-Clazz.newMeth(C$, 'setChainCode$S', function (chainCode) {
+Clazz.newMeth(C$, 'setChainCode$S',  function (chainCode) {
 if (chainCode == null ) {
 this.deleteProperty$S("chain_code");
 } else {
-this.setProperty$S$O("chain_code", Clazz.new_($I$(3).c$$S,[chainCode]));
+this.setProperty$S$O("chain_code", Clazz.new_($I$(3,1).c$$S,[chainCode]));
 }});
 
-Clazz.newMeth(C$, 'deleteProperty$S', function (key) {
+Clazz.newMeth(C$, 'deleteProperty$S',  function (key) {
 var result=null;
 if (this.properties != null ) {
 result=this.properties.remove$O(key);
 }return result;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return this.id;
 });
 
-Clazz.newMeth(C$, 'getProps$', function () {
+Clazz.newMeth(C$, 'getProps$',  function () {
 return this.properties;
 });
 
-Clazz.newMeth(C$, 'setProps$java_util_Hashtable', function (props) {
+Clazz.newMeth(C$, 'setProps$java_util_Hashtable',  function (props) {
 this.properties=props;
 });
 
-Clazz.newMeth(C$, 'updateFrom$jalview_datamodel_PDBEntry', function (newEntry) {
+Clazz.newMeth(C$, 'updateFrom$jalview_datamodel_PDBEntry',  function (newEntry) {
 if (this.equals$O(newEntry)) {
 return true;
 }var newId=newEntry.getId$();
 if (newId == null  || this.getId$() == null  ) {
 return false;
-}if (!this.getId$().equalsIgnoreCase$S(newId)) {
+}var idMatches=this.getId$().equalsIgnoreCase$S(newId);
+var newFile=newEntry.getFile$();
+if (newFile != null  && this.getFile$() != null  ) {
+if (!newFile.equals$O(this.getFile$())) {
 return false;
-}var newFile=newEntry.getFile$();
-if (newFile != null  && this.getFile$() != null   && !newFile.equals$O(this.getFile$()) ) {
+} else {
+if (!idMatches) {
+if (!newEntry.fakedPDBId$() && !this.isAuthoritative$() ) {
 return false;
-}var newChain=newEntry.getChainCode$();
+}}}} else {
+if (!idMatches) {
+return false;
+}}var newChain=newEntry.getChainCode$();
 if (newChain != null  && newChain.length$() > 0  && this.getChainCode$() != null   && this.getChainCode$().length$() > 0  && !this.getChainCode$().equalsIgnoreCase$S(newChain) ) {
 return false;
 }var newType=newEntry.getType$();
@@ -170,47 +171,104 @@ this.setChainCode$S(newChain);
 while (newProps.hasMoreElements$()){
 var key=newProps.nextElement$();
 var value=newEntry.getProperty$S(key);
-if (!value.equals$O(this.getProperty$S(key))) {
+if ("faked_pdbid".equals$O(key) || "authoritative_pdbid".equals$O(key) ) {
+continue;
+}if (!value.equals$O(this.getProperty$S(key))) {
 this.setProperty$S$O(key, value);
 }}
 return true;
 });
+
+Clazz.newMeth(C$, 'setAuthoritative$Z',  function (isAuthoritative) {
+this.setProperty$S$O("authoritative_pdbid", Boolean.valueOf$Z(isAuthoritative));
+});
+
+Clazz.newMeth(C$, 'isAuthoritative$',  function () {
+if (p$1._hasProperty$S.apply(this, ["authoritative_pdbid"])) {
+return ((this.getProperty$S("authoritative_pdbid"))).valueOf();
+}return false;
+});
+
+Clazz.newMeth(C$, 'fakedPDBId$',  function () {
+if (p$1._hasProperty$S.apply(this, ["faked_pdbid"])) {
+return true;
+}return false;
+});
+
+Clazz.newMeth(C$, 'setFakedPDBId$Z',  function (faked) {
+if (faked) {
+this.setProperty$S$O("faked_pdbid", Boolean.TRUE);
+} else {
+if (this.properties != null ) {
+this.properties.remove$O("faked_pdbid");
+}}});
+
+Clazz.newMeth(C$, '_hasProperty$S',  function (key) {
+return (this.properties != null  && this.properties.containsKey$O(key) );
+}, p$1);
+
+Clazz.newMeth(C$, 'setRetrievalUrl$S',  function (urlStr) {
+this.setProperty$S$O("RETRIEVE_FROM", urlStr);
+});
+
+Clazz.newMeth(C$, 'hasRetrievalUrl$',  function () {
+return p$1._hasProperty$S.apply(this, ["RETRIEVE_FROM"]);
+});
+
+Clazz.newMeth(C$, 'getRetrievalUrl$',  function () {
+return this.getProperty$S("RETRIEVE_FROM");
+});
+
+Clazz.newMeth(C$, 'setProvider$S',  function (provider) {
+this.setProperty$S$O("PROVIDER", provider);
+});
+
+Clazz.newMeth(C$, 'getProvider$',  function () {
+return this.getProperty$S("PROVIDER");
+});
+
+Clazz.newMeth(C$, 'setProviderPage$S',  function (urlStr) {
+this.setProperty$S$O("PROVIDERPAGE", urlStr);
+});
+
+Clazz.newMeth(C$, 'getProviderPage$',  function () {
+return this.getProperty$S("PROVIDERPAGE");
+});
+
+Clazz.newMeth(C$, 'hasProviderPage$',  function () {
+return p$1._hasProperty$S.apply(this, ["PROVIDERPAGE"]);
+});
+
+Clazz.newMeth(C$, 'hasProvider$',  function () {
+return p$1._hasProperty$S.apply(this, ["PROVIDER"]);
+});
 ;
-(function(){var C$=Clazz.newClass(P$.PDBEntry, "Type", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.PDBEntry, "Type", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-$vals=Clazz.array(C$,[0]);
-Clazz.newEnumConst($vals, C$.c$$S$S, "PDB", 0, ["pdb", "pdb"]);
-Clazz.newEnumConst($vals, C$.c$$S$S, "MMCIF", 1, ["mmcif", "cif"]);
-Clazz.newEnumConst($vals, C$.c$$S$S, "FILE", 2, ["?", "?"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ext=null;
-this.format=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S$S', function (fmt, ex) {
-C$.$init$.apply(this);
+C$.$fields$=[['S',['ext','format']]]
+
+Clazz.newMeth(C$, 'c$$S$S',  function (fmt, ex) {
+;C$.$init$.apply(this);
 this.format=fmt;
 this.ext=ex;
 }, 1);
 
-Clazz.newMeth(C$, 'getFormat$', function () {
+Clazz.newMeth(C$, 'getFormat$',  function () {
 return this.format;
 });
 
-Clazz.newMeth(C$, 'getExtension$', function () {
+Clazz.newMeth(C$, 'getExtension$',  function () {
 return this.ext;
 });
 
-Clazz.newMeth(C$, 'getType$S', function (value) {
+Clazz.newMeth(C$, 'getType$S',  function (value) {
 for (var t, $t = 0, $$t = C$.values$(); $t<$$t.length&&((t=($$t[$t])),1);$t++) {
 if (t.toString().equalsIgnoreCase$S(value)) {
 return t;
@@ -218,9 +276,17 @@ return t;
 return null;
 }, 1);
 
-Clazz.newMeth(C$, 'matches$S', function (t) {
+Clazz.newMeth(C$, 'matches$S',  function (t) {
 return (this.toString().equalsIgnoreCase$S(t));
 });
+
+C$.$static$=function(){C$.$static$=0;
+$vals=Clazz.array(C$,[0]);
+Clazz.newEnumConst($vals, C$.c$$S$S, "PDB", 0, ["pdb", "pdb"]);
+Clazz.newEnumConst($vals, C$.c$$S$S, "MMCIF", 1, ["mmcif", "cif"]);
+Clazz.newEnumConst($vals, C$.c$$S$S, "BCIF", 2, ["bcif", "bcif"]);
+Clazz.newEnumConst($vals, C$.c$$S$S, "FILE", 3, ["?", "?"]);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -228,4 +294,4 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

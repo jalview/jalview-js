@@ -1,65 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.Normix','javajs.util.V3','org.jmol.util.Shader','javajs.util.AU','org.jmol.util.C','javajs.awt.Font','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GData", null, null, 'org.jmol.api.JmolGraphicsInterface');
-C$.normixCount=0;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.Normix','javajs.util.V3','org.jmol.util.Shader','javajs.util.AU','org.jmol.util.C','org.jmol.util.Font','javajs.util.P3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GData", null, null, 'org.jmol.api.JmolGraphicsInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.normixCount=$I$(1).getNormixCount$();
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.apiPlatform=null;
-this.translucentCoverOnly=false;
-this.currentlyRendering=false;
-this.antialiasEnabled=false;
-this.windowWidth=0;
-this.windowHeight=0;
-this.displayMinX=0;
-this.displayMaxX=0;
-this.displayMinY=0;
-this.displayMaxY=0;
-this.displayMinX2=0;
-this.displayMaxX2=0;
-this.displayMinY2=0;
-this.displayMaxY2=0;
-this.antialiasThisFrame=false;
-this.inGreyscaleMode=false;
-this.changeableColixMap=null;
-this.backgroundImage=null;
-this.newWindowWidth=0;
-this.newWindowHeight=0;
-this.newAntialiasing=false;
-this.bgcolor=0;
-this.xLast=0;
-this.yLast=0;
-this.slab=0;
-this.depth=0;
-this.width=0;
-this.height=0;
-this.ambientOcclusion=0;
-this.colixCurrent=0;
-this.argbCurrent=0;
-this.ht3=0;
-this.isPass2=false;
-this.textY=0;
-this.bufferSize=0;
-this.shader=null;
-this.vwr=null;
-this.graphicsForMetrics=null;
-this.argbNoisyUp=0;
-this.argbNoisyDn=0;
-this.transformedVectors=null;
-this.currentFont=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.changeableColixMap=Clazz.array(Short.TYPE, [16]);
 this.transformedVectors=Clazz.array($I$(2), [C$.normixCount]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['translucentCoverOnly','currentlyRendering','antialiasEnabled','antialiasThisFrame','inGreyscaleMode','newAntialiasing','isPass2'],'I',['windowWidth','windowHeight','displayMinX','displayMaxX','displayMinY','displayMaxY','displayMinX2','displayMaxX2','displayMinY2','displayMaxY2','newWindowWidth','newWindowHeight','bgcolor','xLast','yLast','slab','depth','width','height','ambientOcclusion','argbCurrent','ht3','textY','bufferSize','argbNoisyUp','argbNoisyDn'],'H',['colixCurrent'],'O',['apiPlatform','org.jmol.api.GenericPlatform','changeableColixMap','short[]','backgroundImage','java.lang.Object','shader','org.jmol.util.Shader','vwr','org.jmol.viewer.Viewer','graphicsForMetrics','java.lang.Object','transformedVectors','javajs.util.V3[]','currentFont','org.jmol.util.Font']]
+,['H',['normixCount']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.shader=Clazz.new_($I$(3));
+;C$.$init$.apply(this);
+this.shader=Clazz.new_($I$(3,1));
 }, 1);
 
 Clazz.newMeth(C$, 'initialize$org_jmol_viewer_Viewer$org_jmol_api_GenericPlatform', function (vwr, apiPlatform) {
@@ -254,30 +208,30 @@ return code;
 });
 
 Clazz.newMeth(C$, 'getFont3D$F', function (fontSize) {
-return $I$(6).createFont3D$I$I$F$F$javajs_awt_FontManager$O(0, 0, fontSize, fontSize, this.apiPlatform, this.graphicsForMetrics);
+return $I$(6).createFont3D$I$I$F$F$org_jmol_api_FontManager$O(0, 0, fontSize, fontSize, this.apiPlatform, this.graphicsForMetrics);
 });
 
 Clazz.newMeth(C$, 'getFont3DFS$S$F', function (fontFace, fontSize) {
-return $I$(6).createFont3D$I$I$F$F$javajs_awt_FontManager$O($I$(6).getFontFaceID$S(fontFace), 0, fontSize, fontSize, this.apiPlatform, this.graphicsForMetrics);
+return $I$(6,"createFont3D$I$I$F$F$org_jmol_api_FontManager$O",[$I$(6).getFontFaceID$S(fontFace), 0, fontSize, fontSize, this.apiPlatform, this.graphicsForMetrics]);
 });
 
 Clazz.newMeth(C$, 'getFontFidFS$S$F', function (fontFace, fontSize) {
-return $b$[0] = this.getFont3DFSS$S$S$F(fontFace, "Bold", fontSize).fid, $b$[0];
+return this.getFont3DFSS$S$S$F(fontFace, "Bold", fontSize).fid;
 });
 
 Clazz.newMeth(C$, 'getFont3DFSS$S$S$F', function (fontFace, fontStyle, fontSize) {
 var iStyle=$I$(6).getFontStyleID$S(fontStyle);
 if (iStyle < 0) iStyle=0;
-return $I$(6).createFont3D$I$I$F$F$javajs_awt_FontManager$O($I$(6).getFontFaceID$S(fontFace), iStyle, fontSize, fontSize, this.apiPlatform, this.graphicsForMetrics);
+return $I$(6,"createFont3D$I$I$F$F$org_jmol_api_FontManager$O",[$I$(6).getFontFaceID$S(fontFace), iStyle, fontSize, fontSize, this.apiPlatform, this.graphicsForMetrics]);
 });
 
-Clazz.newMeth(C$, 'getFont3DScaled$javajs_awt_Font$F', function (font, scale) {
+Clazz.newMeth(C$, 'getFont3DScaled$org_jmol_util_Font$F', function (font, scale) {
 var newScale=font.fontSizeNominal * scale;
-return (newScale == font.fontSize  ? font : $I$(6).createFont3D$I$I$F$F$javajs_awt_FontManager$O(font.idFontFace, font.idFontStyle, newScale, font.fontSizeNominal, this.apiPlatform, this.graphicsForMetrics));
+return (newScale == font.fontSize  ? font : $I$(6).createFont3D$I$I$F$F$org_jmol_api_FontManager$O(font.idFontFace, font.idFontStyle, newScale, font.fontSizeNominal, this.apiPlatform, this.graphicsForMetrics));
 });
 
 Clazz.newMeth(C$, 'getFontFid$F', function (fontSize) {
-return $b$[0] = this.getFont3D$F(fontSize).fid, $b$[0];
+return this.getFont3D$F(fontSize).fid;
 });
 
 Clazz.newMeth(C$, 'setBackgroundTransparent$Z', function (TF) {
@@ -373,13 +327,13 @@ if ((check & 4) == 4) renderer.drawLineBits$H$H$javajs_util_P3$javajs_util_P3(co
 Clazz.newMeth(C$, 'plotImage$I$I$I$O$org_jmol_api_JmolRendererInterface$H$I$I', function (x, y, z, image, jmolRenderer, bgcolix, width, height) {
 });
 
-Clazz.newMeth(C$, 'plotText$I$I$I$I$I$S$javajs_awt_Font$org_jmol_api_JmolRendererInterface', function (x, y, z, colorArgbOrGray, bgColor, text, font3d, jmolRenderer) {
+Clazz.newMeth(C$, 'plotText$I$I$I$I$I$S$org_jmol_util_Font$org_jmol_api_JmolRendererInterface', function (x, y, z, colorArgbOrGray, bgColor, text, font3d, jmolRenderer) {
 });
 
 Clazz.newMeth(C$, 'renderBackground$org_jmol_api_JmolRendererInterface', function (jmolRenderer) {
 });
 
-Clazz.newMeth(C$, 'setFont$javajs_awt_Font', function (font3d) {
+Clazz.newMeth(C$, 'setFont$org_jmol_util_Font', function (font3d) {
 });
 
 Clazz.newMeth(C$, 'setFontFid$B', function (fid) {
@@ -406,9 +360,6 @@ Clazz.newMeth(C$, 'clear$', function () {
 });
 
 Clazz.newMeth(C$, 'renderAllStrings$O', function (jmolRenderer) {
-});
-
-Clazz.newMeth(C$, 'drawDirect$O', function (g) {
 });
 
 Clazz.newMeth(C$, 'addRenderer$I', function (tok) {
@@ -477,7 +428,10 @@ return this.transformedVectors;
 Clazz.newMeth(C$, 'getFont3DCurrent$', function () {
 return this.currentFont;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.normixCount=$I$(1).getNormixCount$();
+};
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

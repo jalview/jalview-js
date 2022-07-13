@@ -1,62 +1,55 @@
 (function(){var P$=java.util,I$=[];
-var C$=Clazz.newClass(P$, "IntSummaryStatistics", null, null, 'java.util.function.IntConsumer');
+/*c*/var C$=Clazz.newClass(P$, "IntSummaryStatistics", null, null, 'java.util.function.IntConsumer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.count=0;
-this.sum=0;
-this.min=0;
-this.max=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.min=2147483647;
 this.max=-2147483648;
+},1);
+
+C$.$fields$=[['I',['min','max'],'J',['count','sum']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, ['accept$I','accept$'], function (value) {
-++this.count;
-this.sum+=value;
+Clazz.newMeth(C$, 'accept$I',  function (value) {
+(this.count=Long.$inc(this.count,1));
+(this.sum=Long.$add(this.sum,(value)));
 this.min=Math.min(this.min, value);
 this.max=Math.max(this.max, value);
 });
 
-Clazz.newMeth(C$, 'combine$java_util_IntSummaryStatistics', function (other) {
-this.count+=other.count;
-this.sum+=other.sum;
+Clazz.newMeth(C$, 'combine$java_util_IntSummaryStatistics',  function (other) {
+(this.count=Long.$add(this.count,(other.count)));
+(this.sum=Long.$add(this.sum,(other.sum)));
 this.min=Math.min(this.min, other.min);
 this.max=Math.max(this.max, other.max);
 });
 
-Clazz.newMeth(C$, 'getCount$', function () {
+Clazz.newMeth(C$, 'getCount$',  function () {
 return this.count;
 });
 
-Clazz.newMeth(C$, 'getSum$', function () {
+Clazz.newMeth(C$, 'getSum$',  function () {
 return this.sum;
 });
 
-Clazz.newMeth(C$, 'getMin$', function () {
+Clazz.newMeth(C$, 'getMin$',  function () {
 return this.min;
 });
 
-Clazz.newMeth(C$, 'getMax$', function () {
+Clazz.newMeth(C$, 'getMax$',  function () {
 return this.max;
 });
 
-Clazz.newMeth(C$, 'getAverage$', function () {
-return this.getCount$() > 0 ? this.getSum$() / this.getCount$() : 0.0;
+Clazz.newMeth(C$, 'getAverage$',  function () {
+return Long.$gt(this.getCount$(),0 ) ? Long.$dval(this.getSum$()) / this.getCount$() : 0.0;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-return String.format$S$OA("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", [this.getClass$().getSimpleName$(), new Long(this.getCount$()), new Long(this.getSum$()), new Integer(this.getMin$()), new Double(this.getAverage$()), new Integer(this.getMax$())]);
+Clazz.newMeth(C$, 'toString',  function () {
+return String.format$S$OA("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", Clazz.array(java.lang.Object, -1, [this.getClass$().getSimpleName$(), Long.valueOf$J(this.getCount$()), Long.valueOf$J(this.getSum$()), Integer.valueOf$I(this.getMin$()), Double.valueOf$D(this.getAverage$()), Integer.valueOf$I(this.getMax$())]));
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:48 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:12 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,46 +1,25 @@
-(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable',['java.text.DateFormat','.Field'],'java.util.Locale','java.text.DateFormatSymbols','sun.util.resources.LocaleData','java.text.MessageFormat','java.text.NumberFormat','java.util.Calendar','java.util.TimeZone','StringBuilder','java.util.Date','StringBuffer','java.text.CharacterIteratorFieldDelegate','sun.util.calendar.CalendarUtils','java.text.DontCareFieldPosition']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SimpleDateFormat", null, 'java.text.DateFormat');
-C$.cachedLocaleData=null;
-C$.cachedNumberFormatData=null;
-C$.PATTERN_INDEX_TO_CALENDAR_FIELD=null;
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD=null;
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID=null;
+(function(){var P$=Clazz.newPackage("java.text"),p$1={},I$=[[0,'java.util.Hashtable',['java.text.DateFormat','.Field'],'java.util.Locale','java.text.DateFormatSymbols','sun.util.locale.provider.LocaleProviderAdapter','java.text.NumberFormat','java.util.Calendar','java.util.TimeZone','StringBuilder','StringBuffer','java.text.CharacterIteratorFieldDelegate','sun.util.calendar.CalendarUtils','java.text.DontCareFieldPosition','java.text.ParsePosition']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SimpleDateFormat", null, 'java.text.DateFormat');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.cachedLocaleData=Clazz.new_($I$(1).c$$I,[3]);
-C$.cachedNumberFormatData=Clazz.new_($I$(1).c$$I,[3]);
-C$.PATTERN_INDEX_TO_CALENDAR_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 5, 11, 11, 12, 13, 14, 7, 6, 8, 3, 4, 9, 10, 10, 15, 15]);
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17]);
-C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID=Clazz.array($I$(2), -1, [$I$(2).ERA, $I$(2).YEAR, $I$(2).MONTH, $I$(2).DAY_OF_MONTH, $I$(2).HOUR_OF_DAY1, $I$(2).HOUR_OF_DAY0, $I$(2).MINUTE, $I$(2).SECOND, $I$(2).MILLISECOND, $I$(2).DAY_OF_WEEK, $I$(2).DAY_OF_YEAR, $I$(2).DAY_OF_WEEK_IN_MONTH, $I$(2).WEEK_OF_YEAR, $I$(2).WEEK_OF_MONTH, $I$(2).AM_PM, $I$(2).HOUR1, $I$(2).HOUR0, $I$(2).TIME_ZONE, $I$(2).TIME_ZONE]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.serialVersionOnStream=0;
-this.pattern=null;
-this.compiledPattern=null;
-this.zeroDigit='\0';
-this.formatData=null;
-this.defaultCenturyStart=null;
-this.defaultCenturyStartYear=0;
-this.locale=null;
-this.useDateFormatSymbols=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.serialVersionOnStream=1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['Z',['useDateFormatSymbols'],'C',['zeroDigit'],'I',['serialVersionOnStream','defaultCenturyStartYear'],'S',['pattern'],'O',['compiledPattern','char[]','formatData','java.text.DateFormatSymbols','defaultCenturyStart','java.util.Date','locale','java.util.Locale']]
+,['O',['cachedLocaleData','java.util.Hashtable','+cachedNumberFormatData','PATTERN_INDEX_TO_CALENDAR_FIELD','int[]','+PATTERN_INDEX_TO_DATE_FORMAT_FIELD','PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID','java.text.DateFormat.Field[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$I$I$java_util_Locale.apply(this, [3, 3, $I$(3).getDefault$()]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (pattern) {
+Clazz.newMeth(C$, 'c$$S',  function (pattern) {
 C$.c$$S$java_util_Locale.apply(this, [pattern, $I$(3).getDefault$()]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$java_util_Locale', function (pattern, locale) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$S$java_util_Locale',  function (pattern, locale) {
+Clazz.super_(C$, this);
 if (pattern == null  || locale == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }p$1.initializeCalendar$java_util_Locale.apply(this, [locale]);
@@ -50,8 +29,8 @@ this.locale=locale;
 p$1.initialize$java_util_Locale.apply(this, [locale]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$java_text_DateFormatSymbols', function (pattern, formatSymbols) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$S$java_text_DateFormatSymbols',  function (pattern, formatSymbols) {
+Clazz.super_(C$, this);
 if (pattern == null  || formatSymbols == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.pattern=pattern;
@@ -62,69 +41,49 @@ p$1.initialize$java_util_Locale.apply(this, [this.locale]);
 this.useDateFormatSymbols=true;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I$java_util_Locale', function (timeStyle, dateStyle, loc) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$I$I$java_util_Locale',  function (timeStyle, dateStyle, loc) {
+Clazz.super_(C$, this);
 if (loc == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.locale=loc;
 p$1.initializeCalendar$java_util_Locale.apply(this, [loc]);
-var key=p$1.getKey.apply(this, []);
-var dateTimePatterns=C$.cachedLocaleData.get$O(key);
-if (dateTimePatterns == null ) {
-var r=$I$(5).getDateFormatData$java_util_Locale(loc);
-if (!p$1.isGregorianCalendar.apply(this, [])) {
-try {
-dateTimePatterns=r.getStringArray$S(p$1.getCalendarName.apply(this, []) + ".DateTimePatterns");
-} catch (e) {
-if (Clazz.exceptionOf(e,"java.util.MissingResourceException")){
-} else {
-throw e;
-}
-}
-}if (dateTimePatterns == null ) {
-dateTimePatterns=r.getStringArray$S("DateTimePatterns");
-}C$.cachedLocaleData.put$TK$TV(key, dateTimePatterns);
+var key=p$1.getKey.apply(this, []) + timeStyle + dateStyle ;
+this.pattern=C$.cachedLocaleData.get$O(key);
+if (this.pattern == null ) {
+this.pattern=$I$(5).getResourceBundleBased$().getLocaleResources$java_util_Locale(loc).getDateTimePattern$I$I$java_util_Calendar(3, 3, this.calendar);
+C$.cachedLocaleData.put$O$O(key, this.pattern);
 }this.formatData=$I$(4).getInstance$java_util_Locale(loc);
-if ((timeStyle >= 0) && (dateStyle >= 0) ) {
-var dateTimeArgs=Clazz.array(java.lang.Object, -1, [dateTimePatterns[timeStyle], dateTimePatterns[dateStyle + 4]]);
-this.pattern=$I$(6).format$S$OA(dateTimePatterns[8], dateTimeArgs);
-} else if (timeStyle >= 0) {
-this.pattern=dateTimePatterns[timeStyle];
-} else if (dateStyle >= 0) {
-this.pattern=dateTimePatterns[dateStyle + 4];
-} else {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["No date or time style specified"]);
-}p$1.initialize$java_util_Locale.apply(this, [loc]);
+p$1.initialize$java_util_Locale.apply(this, [loc]);
 }, 1);
 
-Clazz.newMeth(C$, 'initialize$java_util_Locale', function (loc) {
+Clazz.newMeth(C$, 'initialize$java_util_Locale',  function (loc) {
 this.compiledPattern=p$1.compile$S.apply(this, [this.pattern]);
 this.numberFormat=C$.cachedNumberFormatData.get$O(loc);
 if (this.numberFormat == null ) {
-this.numberFormat=$I$(7).getIntegerInstance$java_util_Locale(loc);
+this.numberFormat=$I$(6).getIntegerInstance$java_util_Locale(loc);
 this.numberFormat.setGroupingUsed$Z(false);
-C$.cachedNumberFormatData.put$TK$TV(loc, this.numberFormat);
+C$.cachedNumberFormatData.put$O$O(loc, this.numberFormat);
 }this.numberFormat=this.numberFormat.clone$();
 p$1.initializeDefaultCentury.apply(this, []);
 }, p$1);
 
-Clazz.newMeth(C$, 'initializeCalendar$java_util_Locale', function (loc) {
+Clazz.newMeth(C$, 'initializeCalendar$java_util_Locale',  function (loc) {
 if (this.calendar == null ) {
 Clazz.assert(C$, this, function(){return loc != null });
-this.calendar=$I$(8).getInstance$java_util_TimeZone$java_util_Locale($I$(9).getDefault$(), loc);
+this.calendar=$I$(7,"getInstance$java_util_TimeZone$java_util_Locale",[$I$(8).getDefault$(), loc]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'getKey', function () {
-var sb=Clazz.new_($I$(10));
+Clazz.newMeth(C$, 'getKey',  function () {
+var sb=Clazz.new_($I$(9,1));
 sb.append$S(p$1.getCalendarName.apply(this, [])).append$C(".");
 sb.append$S(this.locale.getLanguage$()).append$C("_").append$S(this.locale.getCountry$()).append$C("_").append$S(this.locale.getVariant$());
 return sb.toString();
 }, p$1);
 
-Clazz.newMeth(C$, 'compile$S', function (pattern) {
+Clazz.newMeth(C$, 'compile$S',  function (pattern) {
 var length=pattern.length$();
 var inQuote=false;
-var compiledPattern=Clazz.new_($I$(10).c$$I,[length * 2]);
+var compiledPattern=Clazz.new_($I$(9,1).c$$I,[length * 2]);
 var tmpBuffer=null;
 var count=0;
 var lastTag=-1;
@@ -134,7 +93,7 @@ if (c == "\'") {
 if ((i + 1) < length) {
 c=pattern.charAt$I(i + 1);
 if (c == "\'") {
-i++;
+++i;
 if (count != 0) {
 C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
 lastTag=-1;
@@ -150,7 +109,7 @@ C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
 lastTag=-1;
 count=0;
 }if (tmpBuffer == null ) {
-tmpBuffer=Clazz.new_($I$(10).c$$I,[length]);
+tmpBuffer=Clazz.new_($I$(9,1).c$$I,[length]);
 } else {
 tmpBuffer.setLength$I(0);
 }inQuote=true;
@@ -189,14 +148,14 @@ compiledPattern.append$C(String.fromCharCode((25856 | (j - i))));
 for (; i < j; i++) {
 compiledPattern.append$C(pattern.charAt$I(i));
 }
-i--;
+--i;
 }continue;
 }var tag;
 if ((tag="GyMdkHmsSEDFwWahKzZ".indexOf$I(c)) == -1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal pattern character \'" + c + "'" ]);
 }if (lastTag == -1 || lastTag == tag ) {
 lastTag=tag;
-count++;
+++count;
 continue;
 }C$.encode$I$I$StringBuilder(lastTag, count, compiledPattern);
 lastTag=tag;
@@ -212,7 +171,7 @@ compiledPattern.getChars$I$I$CA$I(0, len, r, 0);
 return r;
 }, p$1);
 
-Clazz.newMeth(C$, 'encode$I$I$StringBuilder', function (tag, length, buffer) {
+Clazz.newMeth(C$, 'encode$I$I$StringBuilder',  function (tag, length, buffer) {
 if (length < 255) {
 buffer.append$C(String.fromCharCode((tag << 8 | length)));
 } else {
@@ -221,32 +180,32 @@ buffer.append$C(String.fromCharCode((length >>> 16)));
 buffer.append$C(String.fromCharCode((length & 65535)));
 }}, 1);
 
-Clazz.newMeth(C$, 'initializeDefaultCentury', function () {
-this.calendar.setTime$java_util_Date(Clazz.new_($I$(11)));
+Clazz.newMeth(C$, 'initializeDefaultCentury',  function () {
+this.calendar.setTime$java_util_Date(Clazz.new_(java.util.Date));
 this.calendar.add$I$I(1, -80);
 p$1.parseAmbiguousDatesAsAfter$java_util_Date.apply(this, [this.calendar.getTime$()]);
 }, p$1);
 
-Clazz.newMeth(C$, 'parseAmbiguousDatesAsAfter$java_util_Date', function (startDate) {
+Clazz.newMeth(C$, 'parseAmbiguousDatesAsAfter$java_util_Date',  function (startDate) {
 this.defaultCenturyStart=startDate;
 this.calendar.setTime$java_util_Date(startDate);
 this.defaultCenturyStartYear=this.calendar.get$I(1);
 }, p$1);
 
-Clazz.newMeth(C$, 'set2DigitYearStart$java_util_Date', function (startDate) {
+Clazz.newMeth(C$, 'set2DigitYearStart$java_util_Date',  function (startDate) {
 p$1.parseAmbiguousDatesAsAfter$java_util_Date.apply(this, [startDate]);
 });
 
-Clazz.newMeth(C$, 'get2DigitYearStart$', function () {
+Clazz.newMeth(C$, 'get2DigitYearStart$',  function () {
 return this.defaultCenturyStart;
 });
 
-Clazz.newMeth(C$, 'format$java_util_Date$StringBuffer$java_text_FieldPosition', function (date, toAppendTo, pos) {
+Clazz.newMeth(C$, 'format$java_util_Date$StringBuffer$java_text_FieldPosition',  function (date, toAppendTo, pos) {
 pos.beginIndex=pos.endIndex=0;
 return p$1.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [date, toAppendTo, pos.getFieldDelegate$()]);
 });
 
-Clazz.newMeth(C$, 'format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate', function (date, toAppendTo, delegate) {
+Clazz.newMeth(C$, 'format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate',  function (date, toAppendTo, delegate) {
 this.calendar.setTime$java_util_Date(date);
 var useDateFormatSymbols=p$1.useDateFormatSymbols.apply(this, []);
 for (var i=0; i < this.compiledPattern.length; ) {
@@ -271,13 +230,13 @@ break;
 return toAppendTo;
 }, p$1);
 
-Clazz.newMeth(C$, 'formatToCharacterIterator$O', function (obj) {
-var sb=Clazz.new_($I$(12));
-var delegate=Clazz.new_($I$(13));
+Clazz.newMeth(C$, 'formatToCharacterIterator$O',  function (obj) {
+var sb=Clazz.new_($I$(10,1));
+var delegate=Clazz.new_($I$(11,1));
 if (Clazz.instanceOf(obj, "java.util.Date")) {
 p$1.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [obj, sb, delegate]);
 } else if (Clazz.instanceOf(obj, "java.lang.Number")) {
-p$1.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [Clazz.new_($I$(11).c$$J,[(obj).longValue$()]), sb, delegate]);
+p$1.format$java_util_Date$StringBuffer$java_text_Format_FieldDelegate.apply(this, [Clazz.new_(java.util.Date.c$$J,[(obj).longValue$()]), sb, delegate]);
 } else if (obj == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["formatToCharacterIterator must be passed non-null object"]);
 } else {
@@ -285,7 +244,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Cannot format giv
 }return delegate.getIterator$S(sb.toString());
 });
 
-Clazz.newMeth(C$, 'subFormat$I$I$java_text_Format_FieldDelegate$StringBuffer$Z', function (patternCharIndex, count, delegate, buffer, useDateFormatSymbols) {
+Clazz.newMeth(C$, 'subFormat$I$I$java_text_Format_FieldDelegate$StringBuffer$Z',  function (patternCharIndex, count, delegate, buffer, useDateFormatSymbols) {
 var maxIntCount=2147483647;
 var current=null;
 var beginOffset=buffer.length$();
@@ -360,9 +319,9 @@ var width=4;
 if (value >= 0) {
 buffer.append$C("+");
 } else {
-width++;
+++width;
 }var num=((value/60|0)) * 100 + (value % 60);
-$I$(14).sprintf0d$StringBuffer$I$I(buffer, num, width);
+$I$(12).sprintf0d$StringBuffer$I$I(buffer, num, width);
 break;
 default:
 if (current == null ) {
@@ -376,7 +335,7 @@ var f=C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID[patternCharIndex];
 delegate.formatted$I$java_text_Format_Field$O$I$I$StringBuffer(fieldID, f, f, beginOffset, buffer.length$(), buffer);
 }, p$1);
 
-Clazz.newMeth(C$, 'zeroPaddingNumber$I$I$I$StringBuffer', function (value, minDigits, maxDigits, buffer) {
+Clazz.newMeth(C$, 'zeroPaddingNumber$I$I$I$StringBuffer',  function (value, minDigits, maxDigits, buffer) {
 try {
 if (this.zeroDigit.$c() == 0 ) {
 this.zeroDigit=(this.numberFormat).getDecimalFormatSymbols$().getZeroDigit$();
@@ -410,32 +369,440 @@ throw e;
 }
 this.numberFormat.setMinimumIntegerDigits$I(minDigits);
 this.numberFormat.setMaximumIntegerDigits$I(maxDigits);
-this.numberFormat.format$J$StringBuffer$java_text_FieldPosition(value, buffer, $I$(15).INSTANCE);
+this.numberFormat.format$J$StringBuffer$java_text_FieldPosition(value, buffer, $I$(13).INSTANCE);
 }, p$1);
 
-Clazz.newMeth(C$, 'parse$S$java_text_ParsePosition', function (text, pos) {
-{
-var i0 = pos.index; pos.index = Math.min(80, text.length()); while (pos.index >= i0) { var d = new Date(text.substring(i0, pos.index)); var x = d.getMilliseconds(); if (!isNaN(x)) return d; pos.index--; } pos.index = i0;
+Clazz.newMeth(C$, 'parse$S$java_text_ParsePosition',  function (text, pos) {
+var start=pos.index;
+var oldStart=start;
+var textLength=text.length$();
+this.calendar.clear$();
+var ambiguousYear=Clazz.array(Boolean.TYPE, -1, [false]);
+for (var i=0; i < this.compiledPattern.length; ) {
+var tag=(this.compiledPattern[i]).$c() >>> 8;
+var count=(this.compiledPattern[i++]).$c() & 255;
+if (count == 255) {
+count=(this.compiledPattern[i++]).$c() << 16;
+count|=this.compiledPattern[i++].$c();
+}switch (tag) {
+case 100:
+if (start >= textLength || text.charAt$I(start) != String.fromCharCode(count) ) {
+pos.index=oldStart;
+pos.errorIndex=start;
 return null;
+}++start;
+break;
+case 101:
+while (count-- > 0){
+if (start >= textLength || text.charAt$I(start) != this.compiledPattern[i++] ) {
+pos.index=oldStart;
+pos.errorIndex=start;
+return null;
+}++start;
 }
+break;
+default:
+var obeyCount=false;
+if (i < this.compiledPattern.length) {
+var nextTag=(this.compiledPattern[i]).$c() >>> 8;
+if (!(nextTag == 100 || nextTag == 101 )) {
+obeyCount=true;
+}}start=p$1.subParse$S$I$I$I$Z$ZA$java_text_ParsePosition.apply(this, [text, start, tag, count, obeyCount, ambiguousYear, pos]);
+if (start < 0) {
+pos.index=oldStart;
+return null;
+}}
+}
+pos.index=start;
+var parsedDate;
+try {
+if (ambiguousYear[0]) {
+var savedCalendar=this.calendar.clone$();
+parsedDate=this.calendar.getTime$();
+if (parsedDate.before$java_util_Date(this.defaultCenturyStart)) {
+savedCalendar.set$I$I(1, this.defaultCenturyStartYear + 100);
+parsedDate=savedCalendar.getTime$();
+}} else parsedDate=this.calendar.getTime$();
+} catch (e) {
+if (Clazz.exceptionOf(e,"IllegalArgumentException")){
+pos.errorIndex=start;
+pos.index=oldStart;
+return null;
+} else {
+throw e;
+}
+}
+return parsedDate;
 });
 
-Clazz.newMeth(C$, 'getCalendarName', function () {
+Clazz.newMeth(C$, 'matchString$S$I$I$SA',  function (text, start, field, data) {
+var i=0;
+var count=data.length;
+if (field == 7) i=1;
+var bestMatchLength=0;
+var bestMatch=-1;
+for (; i < count; ++i) {
+var length=data[i].length$();
+if (length > bestMatchLength && text.regionMatches$Z$I$S$I$I(true, start, data[i], 0, length) ) {
+bestMatch=i;
+bestMatchLength=length;
+}}
+if (bestMatch >= 0) {
+this.calendar.set$I$I(field, bestMatch);
+return start + bestMatchLength;
+}return -start;
+}, p$1);
+
+Clazz.newMeth(C$, 'matchString$S$I$I$java_util_Map',  function (text, start, field, data) {
+if (data != null ) {
+var bestMatch=null;
+for (var name, $name = data.keySet$().iterator$(); $name.hasNext$()&&((name=($name.next$())),1);) {
+var length=name.length$();
+if (bestMatch == null  || length > bestMatch.length$() ) {
+if (text.regionMatches$Z$I$S$I$I(true, start, name, 0, length)) {
+bestMatch=name;
+}}}
+if (bestMatch != null ) {
+this.calendar.set$I$I(field, (data.get$O(bestMatch)).$c());
+return start + bestMatch.length$();
+}}return -start;
+}, p$1);
+
+Clazz.newMeth(C$, 'matchZoneString$S$I$I',  function (text, start, zoneIndex) {
+for (var j=1; j <= 4; ++j) {
+var zoneStrings=this.formatData.getZoneStringsWrapper$();
+var zoneName=zoneStrings[zoneIndex][j];
+if (text.regionMatches$Z$I$S$I$I(true, start, zoneName, 0, zoneName.length$())) {
+return j;
+}}
+return -1;
+}, p$1);
+
+Clazz.newMeth(C$, 'matchDSTString$S$I$I$I',  function (text, start, zoneIndex, standardIndex) {
+var index=standardIndex + 2;
+var zoneStrings=this.formatData.getZoneStringsWrapper$();
+var zoneName=zoneStrings[zoneIndex][index];
+if (text.regionMatches$Z$I$S$I$I(true, start, zoneName, 0, zoneName.length$())) {
+return true;
+}return false;
+}, p$1);
+
+Clazz.newMeth(C$, 'subParseZoneString$S$I',  function (text, start) {
+var useSameName=false;
+var currentTimeZone=this.getTimeZone$();
+var zoneIndex=this.formatData.getZoneIndex$S(currentTimeZone.getID$());
+var tz=null;
+var zoneStrings=this.formatData.getZoneStringsWrapper$();
+var j=0;
+var i=0;
+if ((zoneIndex != -1) && ((j=p$1.matchZoneString$S$I$I.apply(this, [text, start, zoneIndex])) > 0) ) {
+if (j <= 2) {
+useSameName=p$1.matchDSTString$S$I$I$I.apply(this, [text, start, zoneIndex, j]);
+}tz=$I$(8).getTimeZone$S(zoneStrings[zoneIndex][0]);
+i=zoneIndex;
+}if (tz == null ) {
+zoneIndex=this.formatData.getZoneIndex$S($I$(8).getDefault$().getID$());
+if ((zoneIndex != -1) && ((j=p$1.matchZoneString$S$I$I.apply(this, [text, start, zoneIndex])) > 0) ) {
+if (j <= 2) {
+useSameName=p$1.matchDSTString$S$I$I$I.apply(this, [text, start, zoneIndex, j]);
+}tz=$I$(8).getTimeZone$S(zoneStrings[zoneIndex][0]);
+i=zoneIndex;
+}}if (tz == null ) {
+for (i=0; i < zoneStrings.length; i++) {
+if ((j=p$1.matchZoneString$S$I$I.apply(this, [text, start, i])) > 0) {
+if (j <= 2) {
+useSameName=p$1.matchDSTString$S$I$I$I.apply(this, [text, start, i, j]);
+}tz=$I$(8).getTimeZone$S(zoneStrings[i][0]);
+break;
+}}
+}if (tz != null ) {
+if (!tz.equals$O(currentTimeZone)) {
+this.setTimeZone$java_util_TimeZone(tz);
+}if (!useSameName) {
+this.calendar.set$I$I(15, tz.getRawOffset$());
+this.calendar.set$I$I(16, j >= 3 ? tz.getDSTSavings$() : 0);
+}return (start + zoneStrings[i][j].length$());
+}return 0;
+}, p$1);
+
+Clazz.newMeth(C$, 'subParse$S$I$I$I$Z$ZA$java_text_ParsePosition',  function (text, start, patternCharIndex, count, obeyCount, ambiguousYear, origPos) {
+var number=null;
+var value=0;
+var pos=Clazz.new_($I$(14,1).c$$I,[0]);
+pos.index=start;
+var field=C$.PATTERN_INDEX_TO_CALENDAR_FIELD[patternCharIndex];
+for (; ; ) {
+if (pos.index >= text.length$()) {
+origPos.errorIndex=start;
+return -1;
+}var c=text.charAt$I(pos.index);
+if (c != " " && c != "\t" ) break;
+++pos.index;
+}
+if (patternCharIndex == 4 || patternCharIndex == 15  || (patternCharIndex == 2 && count <= 2 )  || patternCharIndex == 1 ) {
+if (obeyCount) {
+if ((start + count) > text.length$()) {
+origPos.errorIndex=start;
+return -1;
+}number=this.numberFormat.parse$S$java_text_ParsePosition(text.substring$I$I(0, start + count), pos);
+} else number=this.numberFormat.parse$S$java_text_ParsePosition(text, pos);
+if (number == null ) {
+if (patternCharIndex != 1 || Clazz.instanceOf(this.calendar, "java.util.GregorianCalendar") ) {
+origPos.errorIndex=pos.index;
+return -1;
+}} else {
+value=number.intValue$();
+}}var useDateFormatSymbols=p$1.useDateFormatSymbols.apply(this, []);
+var index;
+switch (patternCharIndex) {
+case 0:
+if (useDateFormatSymbols) {
+if ((index=p$1.matchString$S$I$I$SA.apply(this, [text, start, 0, this.formatData.getEras$()])) > 0) {
+return index;
+}} else {
+var map=this.calendar.getDisplayNames$I$I$java_util_Locale(field, 0, this.locale);
+if ((index=p$1.matchString$S$I$I$java_util_Map.apply(this, [text, start, field, map])) > 0) {
+return index;
+}}origPos.errorIndex=pos.index;
+return -1;
+case 1:
+if (!(Clazz.instanceOf(this.calendar, "java.util.GregorianCalendar"))) {
+var style=(count >= 4) ? 2 : 1;
+var map=this.calendar.getDisplayNames$I$I$java_util_Locale(field, style, this.locale);
+if (map != null ) {
+if ((index=p$1.matchString$S$I$I$java_util_Map.apply(this, [text, start, field, map])) > 0) {
+return index;
+}}this.calendar.set$I$I(field, value);
+return pos.index;
+}if (count <= 2 && (pos.index - start) == 2  && Character.isDigit$C(text.charAt$I(start))  && Character.isDigit$C(text.charAt$I(start + 1)) ) {
+var ambiguousTwoDigitYear=this.defaultCenturyStartYear % 100;
+ambiguousYear[0]=value == ambiguousTwoDigitYear;
+value+=((this.defaultCenturyStartYear/100|0)) * 100 + (value < ambiguousTwoDigitYear ? 100 : 0);
+}this.calendar.set$I$I(1, value);
+return pos.index;
+case 2:
+if (count <= 2) {
+this.calendar.set$I$I(2, value - 1);
+return pos.index;
+} else {
+if (useDateFormatSymbols) {
+var newStart=0;
+if ((newStart=p$1.matchString$S$I$I$SA.apply(this, [text, start, 2, this.formatData.getMonths$()])) > 0) return newStart;
+ else if ((index=p$1.matchString$S$I$I$SA.apply(this, [text, start, 2, this.formatData.getShortMonths$()])) > 0) {
+return index;
+}} else {
+var map=this.calendar.getDisplayNames$I$I$java_util_Locale(field, 0, this.locale);
+if ((index=p$1.matchString$S$I$I$java_util_Map.apply(this, [text, start, field, map])) > 0) {
+return index;
+}}}origPos.errorIndex=pos.index;
+return -1;
+case 4:
+if (value == this.calendar.getMaximum$I(11) + 1) value=0;
+this.calendar.set$I$I(11, value);
+return pos.index;
+case 9:
+{
+if (useDateFormatSymbols) {
+var newStart=0;
+if ((newStart=p$1.matchString$S$I$I$SA.apply(this, [text, start, 7, this.formatData.getWeekdays$()])) > 0) return newStart;
+ else if ((index=p$1.matchString$S$I$I$SA.apply(this, [text, start, 7, this.formatData.getShortWeekdays$()])) > 0) {
+return index;
+}} else {
+var styles=Clazz.array(Integer.TYPE, -1, [2, 1]);
+for (var style, $style = 0, $$style = styles; $style<$$style.length&&((style=($$style[$style])),1);$style++) {
+var map=this.calendar.getDisplayNames$I$I$java_util_Locale(field, style, this.locale);
+if ((index=p$1.matchString$S$I$I$java_util_Map.apply(this, [text, start, field, map])) > 0) {
+return index;
+}}
+}origPos.errorIndex=pos.index;
+return -1;
+}case 14:
+if (useDateFormatSymbols) {
+if ((index=p$1.matchString$S$I$I$SA.apply(this, [text, start, 9, this.formatData.getAmPmStrings$()])) > 0) {
+return index;
+}} else {
+var map=this.calendar.getDisplayNames$I$I$java_util_Locale(field, 0, this.locale);
+if ((index=p$1.matchString$S$I$I$java_util_Map.apply(this, [text, start, field, map])) > 0) {
+return index;
+}}origPos.errorIndex=pos.index;
+return -1;
+case 15:
+if (value == this.calendar.getLeastMaximum$I(10) + 1) value=0;
+this.calendar.set$I$I(10, value);
+return pos.index;
+case 17:
+case 18:
+{
+var sign=0;
+var offset;
+if ((text.length$() - start) >= "GMT".length$() && text.regionMatches$Z$I$S$I$I(true, start, "GMT", 0, "GMT".length$()) ) {
+var num;
+this.calendar.set$I$I(16, 0);
+pos.index=start + "GMT".length$();
+try {
+if (text.charAt$I(pos.index) == "+") {
+sign=1;
+} else if (text.charAt$I(pos.index) == "-") {
+sign=-1;
+}} catch (e) {
+if (Clazz.exceptionOf(e,"StringIndexOutOfBoundsException")){
+} else {
+throw e;
+}
+}
+if (sign == 0) {
+this.calendar.set$I$I(15, 0);
+return pos.index;
+}try {
+var c=text.charAt$I(++pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+num=c.$c() - 48;
+}if (text.charAt$I(++pos.index) != ":") {
+c=text.charAt$I(pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+num*=10;
+num+=c.$c() - 48;
+++pos.index;
+}}if (num > 23) {
+origPos.errorIndex=pos.index - 1;
+return -1;
+}if (text.charAt$I(pos.index) != ":") {
+origPos.errorIndex=pos.index;
+return -1;
+}} catch (e) {
+if (Clazz.exceptionOf(e,"StringIndexOutOfBoundsException")){
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+throw e;
+}
+}
+offset=num * 60;
+try {
+var c=text.charAt$I(++pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+num=c.$c() - 48;
+c=text.charAt$I(++pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+num*=10;
+num+=c.$c() - 48;
+}}if (num > 59) {
+origPos.errorIndex=pos.index;
+return -1;
+}} catch (e) {
+if (Clazz.exceptionOf(e,"StringIndexOutOfBoundsException")){
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+throw e;
+}
+}
+offset+=num;
+} else {
+var i=p$1.subParseZoneString$S$I.apply(this, [text, pos.index]);
+if (i != 0) {
+return i;
+}try {
+if (text.charAt$I(pos.index) == "+") {
+sign=1;
+} else if (text.charAt$I(pos.index) == "-") {
+sign=-1;
+}if (sign == 0) {
+origPos.errorIndex=pos.index;
+return -1;
+}var hours=0;
+var c=text.charAt$I(++pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+hours=c.$c() - 48;
+c=text.charAt$I(++pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+hours*=10;
+hours+=c.$c() - 48;
+}}if (hours > 23) {
+origPos.errorIndex=pos.index;
+return -1;
+}var minutes=0;
+c=text.charAt$I(++pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+minutes=c.$c() - 48;
+c=text.charAt$I(++pos.index);
+if (c < "0" || c > "9" ) {
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+minutes*=10;
+minutes+=c.$c() - 48;
+}}if (minutes > 59) {
+origPos.errorIndex=pos.index;
+return -1;
+}offset=hours * 60 + minutes;
+} catch (e) {
+if (Clazz.exceptionOf(e,"StringIndexOutOfBoundsException")){
+origPos.errorIndex=pos.index;
+return -1;
+} else {
+throw e;
+}
+}
+}if (sign != 0) {
+offset*=60000 * sign;
+this.calendar.set$I$I(15, offset);
+this.calendar.set$I$I(16, 0);
+return ++pos.index;
+}}origPos.errorIndex=pos.index;
+return -1;
+default:
+if (obeyCount) {
+if ((start + count) > text.length$()) {
+origPos.errorIndex=pos.index;
+return -1;
+}number=this.numberFormat.parse$S$java_text_ParsePosition(text.substring$I$I(0, start + count), pos);
+} else number=this.numberFormat.parse$S$java_text_ParsePosition(text, pos);
+if (number != null ) {
+this.calendar.set$I$I(field, number.intValue$());
+return pos.index;
+}origPos.errorIndex=pos.index;
+return -1;
+}
+}, p$1);
+
+Clazz.newMeth(C$, 'getCalendarName',  function () {
 return this.calendar.getClass$().getName$();
 }, p$1);
 
-Clazz.newMeth(C$, 'useDateFormatSymbols', function () {
+Clazz.newMeth(C$, 'useDateFormatSymbols',  function () {
 if (this.useDateFormatSymbols) {
 return true;
 }return p$1.isGregorianCalendar.apply(this, []) || this.locale == null  ;
 }, p$1);
 
-Clazz.newMeth(C$, 'isGregorianCalendar', function () {
+Clazz.newMeth(C$, 'isGregorianCalendar',  function () {
 return "java.util.GregorianCalendar".equals$O(p$1.getCalendarName.apply(this, []));
 }, p$1);
 
-Clazz.newMeth(C$, 'translatePattern$S$S$S', function (pattern, from, to) {
-var result=Clazz.new_($I$(10));
+Clazz.newMeth(C$, 'translatePattern$S$S$S',  function (pattern, from, to) {
+var result=Clazz.new_($I$(9,1));
 var inQuote=false;
 for (var i=0; i < pattern.length$(); ++i) {
 var c=pattern.charAt$I(i);
@@ -453,49 +820,57 @@ if (inQuote) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Unfi
 return result.toString();
 }, p$1);
 
-Clazz.newMeth(C$, 'toPattern$', function () {
+Clazz.newMeth(C$, 'toPattern$',  function () {
 return this.pattern;
 });
 
-Clazz.newMeth(C$, 'toLocalizedPattern$', function () {
+Clazz.newMeth(C$, 'toLocalizedPattern$',  function () {
 return p$1.translatePattern$S$S$S.apply(this, [this.pattern, "GyMdkHmsSEDFwWahKzZ", this.formatData.getLocalPatternChars$()]);
 });
 
-Clazz.newMeth(C$, 'applyPattern$S', function (pattern) {
+Clazz.newMeth(C$, 'applyPattern$S',  function (pattern) {
 this.compiledPattern=p$1.compile$S.apply(this, [pattern]);
 this.pattern=pattern;
 });
 
-Clazz.newMeth(C$, 'applyLocalizedPattern$S', function (pattern) {
+Clazz.newMeth(C$, 'applyLocalizedPattern$S',  function (pattern) {
 var p=p$1.translatePattern$S$S$S.apply(this, [pattern, this.formatData.getLocalPatternChars$(), "GyMdkHmsSEDFwWahKzZ"]);
 this.compiledPattern=p$1.compile$S.apply(this, [p]);
 this.pattern=p;
 });
 
-Clazz.newMeth(C$, 'getDateFormatSymbols$', function () {
+Clazz.newMeth(C$, 'getDateFormatSymbols$',  function () {
 return this.formatData.clone$();
 });
 
-Clazz.newMeth(C$, 'setDateFormatSymbols$java_text_DateFormatSymbols', function (newFormatSymbols) {
+Clazz.newMeth(C$, 'setDateFormatSymbols$java_text_DateFormatSymbols',  function (newFormatSymbols) {
 this.formatData=newFormatSymbols.clone$();
 this.useDateFormatSymbols=true;
 });
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 var other=C$.superclazz.prototype.clone$.apply(this, []);
 other.formatData=this.formatData.clone$();
 return other;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 return this.pattern.hashCode$();
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!C$.superclazz.prototype.equals$O.apply(this, [obj])) return false;
 var that=obj;
 return (this.pattern.equals$O(that.pattern) && this.formatData.equals$O(that.formatData) );
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+C$.cachedLocaleData=Clazz.new_($I$(1,1).c$$I,[3]);
+C$.cachedNumberFormatData=Clazz.new_($I$(1,1).c$$I,[3]);
+C$.PATTERN_INDEX_TO_CALENDAR_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 5, 11, 11, 12, 13, 14, 7, 6, 8, 3, 4, 9, 10, 10, 15, 15]);
+C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD=Clazz.array(Integer.TYPE, -1, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 17]);
+C$.PATTERN_INDEX_TO_DATE_FORMAT_FIELD_ID=Clazz.array($I$(2), -1, [$I$(2).ERA, $I$(2).YEAR, $I$(2).MONTH, $I$(2).DAY_OF_MONTH, $I$(2).HOUR_OF_DAY1, $I$(2).HOUR_OF_DAY0, $I$(2).MINUTE, $I$(2).SECOND, $I$(2).MILLISECOND, $I$(2).DAY_OF_WEEK, $I$(2).DAY_OF_YEAR, $I$(2).DAY_OF_WEEK_IN_MONTH, $I$(2).WEEK_OF_YEAR, $I$(2).WEEK_OF_MONTH, $I$(2).AM_PM, $I$(2).HOUR1, $I$(2).HOUR0, $I$(2).TIME_ZONE, $I$(2).TIME_ZONE]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:09 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

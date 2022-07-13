@@ -1,46 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.Atom','org.jmol.util.Escape','org.jmol.util.Tensor','javajs.util.P3','javajs.util.M4','javajs.util.Lst','javajs.util.DF']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CastepReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
-C$.lengthUnitIds=null;
-C$.lengthUnitFactors=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.PT','org.jmol.util.Logger','org.jmol.adapter.smarter.Atom','org.jmol.util.Tensor','javajs.util.P3','javajs.util.M4','javajs.util.Lst','javajs.util.DF']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CastepReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.lengthUnitIds=Clazz.array(String, -1, ["bohr", "m", "cm", "nm", "ang", "a0"]);
-C$.lengthUnitFactors=Clazz.array(Float.TYPE, -1, [0.5291772, 1.0E10, 1.0E8, 10.0, 1.0, 0.5291772]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tokens=null;
-this.isPhonon=false;
-this.isTS=false;
-this.isOutput=false;
-this.isCell=false;
-this.a=0;
-this.b=0;
-this.c=0;
-this.alpha=0;
-this.beta=0;
-this.gamma=0;
-this.abc=null;
-this.ac=0;
-this.atomPts=null;
-this.havePhonons=false;
-this.lastQPt=null;
-this.qpt2=0;
-this.desiredQpt=null;
-this.desiredQ=null;
-this.chargeType=null;
-this.isAllQ=false;
-this.haveCharges=false;
-this.tsType=null;
-this.matSupercell=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.abc=Clazz.array($I$(1), [3]);
 this.havePhonons=false;
 this.chargeType="MULL";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isPhonon','isTS','isOutput','isCell','havePhonons','isAllQ','haveCharges'],'F',['a','b','c','alpha','beta','gamma'],'I',['ac','qpt2'],'S',['lastQPt','desiredQ','chargeType','tsType'],'O',['tokens','String[]','abc','javajs.util.V3[]','atomPts','javajs.util.P3[]','desiredQpt','javajs.util.V3','matSupercell','javajs.util.M4']]
+,['O',['lengthUnitIds','String[]','lengthUnitFactors','float[]']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 if (this.filter != null ) {
@@ -56,7 +26,7 @@ this.filter=$I$(2).rep$S$S$S(this.filter, "-PT", "");
 });
 
 Clazz.newMeth(C$, 'setDesiredQpt$S', function (s) {
-this.desiredQpt=Clazz.new_($I$(1));
+this.desiredQpt=Clazz.new_($I$(1,1));
 this.desiredQ="";
 var num=1;
 var denom=1;
@@ -103,7 +73,7 @@ ipt=i + 1;
 break;
 }
 }
-$I$(3).info$S("Looking for q-pt=" + this.desiredQpt);
+$I$(3,"info$S",["Looking for q-pt=" + this.desiredQpt]);
 }, p$1);
 
 Clazz.newMeth(C$, 'readFileData', function () {
@@ -176,7 +146,7 @@ p$1.setLatticeVectors.apply(this, []);
 Clazz.newMeth(C$, 'readOutputAtoms', function () {
 this.readLines$I(2);
 while (this.rd$().indexOf$S("xxx") < 0){
-var atom=Clazz.new_($I$(4));
+var atom=Clazz.new_($I$(4,1));
 this.tokens=this.getTokens$();
 atom.elementSymbol=this.tokens[1];
 atom.atomName=this.tokens[1] + this.tokens[2];
@@ -284,7 +254,7 @@ y=this.parseFloatStr$S(this.tokens[1]) * factor;
 z=this.parseFloatStr$S(this.tokens[2]) * factor;
 this.abc[i]=$I$(1).new3$F$F$F(x, y, z);
 } else {
-$I$(3).warn$S("error reading coordinates of lattice vector " + Integer.toString$I(i + 1) + " in %BLOCK LATTICE_CART in CASTEP .cell file" );
+$I$(3,"warn$S",["error reading coordinates of lattice vector " + Integer.toString$I(i + 1) + " in %BLOCK LATTICE_CART in CASTEP .cell file" ]);
 return;
 }if (p$1.tokenizeCastepCell.apply(this, []) == 0) return;
 }
@@ -372,14 +342,10 @@ return this.asc.getAtomIndex$S(this.tokens[0] + this.tokens[1]);
 }, p$1);
 
 Clazz.newMeth(C$, 'getTensor$org_jmol_adapter_smarter_Atom$S', function (atom, line0) {
-var data=Clazz.array(Float.TYPE, [9]);
-var a=Clazz.array(Double.TYPE, [3, 3]);
-this.fillFloatArray$S$I$FA(line0, 0, data);
-$I$(3).info$S("tensor " + atom.atomName + "\t" + $I$(5).eAF$FA(data) );
-for (var p=0, i=0; i < 3; i++) for (var j=0; j < 3; j++) a[i][j]=data[p++];
-
-
-atom.addTensor$org_jmol_util_Tensor$S$Z((Clazz.new_($I$(6))).setFromAsymmetricTensor$DAA$S$S(a, "charge", atom.atomName + " " + line0 ), null, false);
+line0 += this.rd$() + this.rd$();
+$I$(3).info$S("tensor " + atom.atomName + " " + line0 );
+var a=this.fill3x3$SA$I($I$(2).getTokens$S(line0), 0);
+atom.addTensor$org_jmol_util_Tensor$S$Z((Clazz.new_($I$(5,1))).setFromAsymmetricTensor$DAA$S$S(a, "charge", atom.atomName + " " + line0 ), null, false);
 if (!this.haveCharges) this.appendLoadNote$S("Ellipsoids set \"charge\": Born Effective Charges");
 this.haveCharges=true;
 }, p$1);
@@ -416,16 +382,16 @@ this.tokens=this.getTokens$();
 this.addAtomXYZSymName$SA$I$S$S(this.tokens, 1, this.tokens[4], null).bfactor=this.parseFloatStr$S(this.tokens[5]);
 }
 this.ac=this.asc.ac;
-this.atomPts=Clazz.array($I$(7), [this.ac]);
+this.atomPts=Clazz.array($I$(6), [this.ac]);
 var atoms=this.asc.atoms;
-for (var i=0; i < this.ac; i++) this.atomPts[i]=$I$(7).newP$javajs_util_T3(atoms[i]);
+for (var i=0; i < this.ac; i++) this.atomPts[i]=$I$(6).newP$javajs_util_T3(atoms[i]);
 
 }, p$1);
 
 Clazz.newMeth(C$, 'readPhononFrequencies', function () {
 this.tokens=this.getTokens$();
-var v=Clazz.new_($I$(1));
-var qvec=$I$(1).new3$F$F$F(this.parseFloatStr$S(this.tokens[2]), this.parseFloatStr$S(this.tokens[3]), this.parseFloatStr$S(this.tokens[4]));
+var v=Clazz.new_($I$(1,1));
+var qvec=$I$(1,"new3$F$F$F",[this.parseFloatStr$S(this.tokens[2]), this.parseFloatStr$S(this.tokens[3]), this.parseFloatStr$S(this.tokens[4])]);
 var fcoord=p$1.getFractionalCoord$javajs_util_V3.apply(this, [qvec]);
 var qtoks="{" + this.tokens[2] + " " + this.tokens[3] + " " + this.tokens[4] + "}" ;
 if (fcoord == null ) fcoord=qtoks;
@@ -445,7 +411,7 @@ var nx=1;
 var ny=1;
 var nz=1;
 if (this.ptSupercell != null  && !isOK  && !isSecond ) {
-this.matSupercell=Clazz.new_($I$(8));
+this.matSupercell=Clazz.new_($I$(7,1));
 this.matSupercell.m00=this.ptSupercell.x;
 this.matSupercell.m11=this.ptSupercell.y;
 this.matSupercell.m22=this.ptSupercell.z;
@@ -467,15 +433,15 @@ this.havePhonons=true;
 var qname="q=" + this.lastQPt + " " + fcoord ;
 this.applySymmetryAndSetTrajectory$();
 if (isGammaPoint) qvec=null;
-var freqs=Clazz.new_($I$(9));
+var freqs=Clazz.new_($I$(8,1));
 while (this.rd$() != null  && this.line.indexOf$S("Phonon") < 0 ){
 this.tokens=this.getTokens$();
-freqs.addLast$TV(Float.valueOf$F(this.parseFloatStr$S(this.tokens[1])));
+freqs.addLast$O(Float.valueOf$F(this.parseFloatStr$S(this.tokens[1])));
 }
 this.rd$();
 var frequencyCount=freqs.size$();
 var data=Clazz.array(Float.TYPE, [8]);
-var t=Clazz.new_($I$(1));
+var t=Clazz.new_($I$(1,1));
 this.asc.setCollectionName$S(qname);
 for (var i=0; i < frequencyCount; i++) {
 if (!this.doGetVibration$I(++this.vibrationNumber)) {
@@ -502,7 +468,7 @@ this.asc.addVibrationVectorWithSymmetry$I$F$F$F$Z(k, v.x, v.y, v.z, true);
 }
 if (this.isTrajectory) this.asc.setTrajectory$();
 this.asc.setAtomSetFrequency$I$S$S$S$S(this.vibrationNumber, null, null, "" + new Float(freq).toString(), null);
-this.asc.setAtomSetName$S($I$(10).formatDecimal$F$I(freq, 2) + " cm-1 " + qname );
+this.asc.setAtomSetName$S($I$(9).formatDecimal$F$I(freq, 2) + " cm-1 " + qname );
 }
 }, p$1);
 
@@ -527,6 +493,11 @@ v.z=(cosph * data[6] - sinph * data[7]);
 }v.scale$F(Math.sqrt(1 / atom.bfactor));
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.lengthUnitIds=Clazz.array(String, -1, ["bohr", "m", "cm", "nm", "ang", "a0"]);
+C$.lengthUnitFactors=Clazz.array(Float.TYPE, -1, [0.5291772, 1.0E10, 1.0E8, 10.0, 1.0, 0.5291772]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

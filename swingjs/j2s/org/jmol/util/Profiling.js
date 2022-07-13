@@ -1,12 +1,13 @@
 (function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[];
-var C$=Clazz.newClass(P$, "Profiling");
-C$.start=0;
+/*c*/var C$=Clazz.newClass(P$, "Profiling");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['J',['start']]]
 
 Clazz.newMeth(C$, 'startProfiling$', function () {
 C$.start=C$.getTime$();
@@ -32,4 +33,4 @@ return "ns";
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-03-05 22:54:49 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

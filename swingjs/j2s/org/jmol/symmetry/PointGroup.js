@@ -1,54 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.symmetry.PointGroup','javajs.util.Quat',['org.jmol.symmetry.PointGroup','.Operation'],'javajs.util.V3','org.jmol.util.BSUtil','javajs.util.P3','org.jmol.bspt.Bspt','org.jmol.util.Point3fi','java.util.Hashtable','javajs.util.SB','org.jmol.util.Escape','javajs.util.Lst','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PointGroup", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.symmetry.PointGroup','javajs.util.Quat',['org.jmol.symmetry.PointGroup','.Operation'],'javajs.util.V3','org.jmol.util.BSUtil','javajs.util.P3','org.jmol.bspt.Bspt','org.jmol.util.Point3fi','java.util.Hashtable','javajs.util.SB','org.jmol.util.Escape','javajs.util.Lst','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PointGroup", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.axesMaxN=null;
-C$.nUnique=null;
-C$.maxAxis=0;
-C$.typeNames=null;
+C$.$classes$=[['Operation',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.axesMaxN=Clazz.array(Integer.TYPE, -1, [15, 0, 0, 1, 3, 1, 10, 0, 1, 0, 6, 0, 1, 0, 0, 0, 15, 10, 6, 6, 10, 0, 1]);
-C$.nUnique=Clazz.array(Integer.TYPE, -1, [1, 0, 0, 2, 2, 4, 2, 0, 4, 0, 4, 0, 4, 0, 0, 0, 1, 2, 2, 4, 2, 0, 4]);
-C$.maxAxis=C$.axesMaxN.length;
-C$.typeNames=Clazz.array(String, -1, ["plane", "proper axis", "improper axis", "center of inversion"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isAtoms=false;
-this.drawInfo=null;
-this.info=null;
-this.textInfo=null;
-this.iter=null;
-this.drawType=null;
-this.drawIndex=0;
-this.scale=0;
-this.nAxes=null;
-this.axes=null;
-this.nAtoms=0;
-this.radius=0;
-this.distanceTolerance=0;
-this.distanceTolerance2=0;
-this.linearTolerance=0;
-this.cosTolerance=0;
-this.name=null;
-this.principalAxis=null;
-this.principalPlane=null;
-this.vTemp=null;
-this.centerAtomIndex=0;
-this.haveInversionCenter=false;
-this.center=null;
-this.points=null;
-this.elements=null;
-this.atomMap=null;
-this.bsAtoms=null;
-this.haveVibration=false;
-this.localEnvOnly=false;
-this.maxElement=0;
-this.eCounts=null;
-this.nOps=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.drawType="";
@@ -59,11 +15,14 @@ this.distanceTolerance=0.25;
 this.linearTolerance=8.0;
 this.cosTolerance=0.99;
 this.name="C_1?";
-this.vTemp=Clazz.new_($I$(5));
+this.vTemp=Clazz.new_($I$(5,1));
 this.centerAtomIndex=-1;
 this.maxElement=0;
 this.nOps=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAtoms','haveInversionCenter','haveVibration','localEnvOnly'],'F',['scale','radius','distanceTolerance','distanceTolerance2','linearTolerance','cosTolerance'],'I',['drawIndex','nAtoms','centerAtomIndex','maxElement','nOps'],'S',['drawInfo','textInfo','drawType','name'],'O',['info','java.util.Map','iter','org.jmol.bspt.CubeIterator','nAxes','int[]','axes','org.jmol.symmetry.PointGroup.Operation[][]','principalAxis','org.jmol.symmetry.PointGroup.Operation','+principalPlane','vTemp','javajs.util.V3','center','javajs.util.T3','points','javajs.util.T3[]','elements','int[]','+atomMap','bsAtoms','javajs.util.BS','eCounts','int[]']]
+,['I',['maxAxis'],'O',['axesMaxN','int[]','+nUnique','typeNames','String[]']]]
 
 Clazz.newMeth(C$, 'getName$', function () {
 return this.name;
@@ -86,7 +45,7 @@ return (p$1.set$org_jmol_symmetry_PointGroup$javajs_util_T3A.apply(pg, [pgLast, 
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'isEqual$org_jmol_symmetry_PointGroup', function (pg) {
@@ -125,7 +84,7 @@ p$1.addAxis$I$javajs_util_V3.apply(this, [16, this.vTemp]);
 this.principalAxis=this.axes[16][0];
 if (this.haveInversionCenter) {
 this.axes[0]=Clazz.array($I$(4), [1]);
-this.principalPlane=this.axes[0][this.nAxes[0]++]=Clazz.new_($I$(4).c$$javajs_util_V3, [this, null, this.vTemp]);
+this.principalPlane=this.axes[0][this.nAxes[0]++]=Clazz.new_($I$(4,1).c$$javajs_util_V3,[this, null, this.vTemp]);
 }return true;
 }this.axes[0]=Clazz.array($I$(4), [15]);
 var nPlanes=0;
@@ -246,8 +205,8 @@ if (Clazz.instanceOf(p, "org.jmol.util.Node")) atomIndexMax=Math.max(atomIndexMa
 this.atomMap=Clazz.array(Integer.TYPE, [atomIndexMax + 1]);
 this.nAtoms=0;
 var needCenter=(this.center == null );
-if (needCenter) this.center=Clazz.new_($I$(7));
-var bspt=Clazz.new_($I$(8).c$$I$I,[3, 0]);
+if (needCenter) this.center=Clazz.new_($I$(7,1));
+var bspt=Clazz.new_($I$(8,1).c$$I$I,[3, 0]);
 for (var i=this.bsAtoms.nextSetBit$I(0); i >= 0; i=this.bsAtoms.nextSetBit$I(i + 1), this.nAtoms++) {
 var p=this.points[this.nAtoms]=atomset[i];
 if (Clazz.instanceOf(p, "org.jmol.util.Node")) {
@@ -257,7 +216,7 @@ this.atomMap[(p).i]=this.nAtoms + 1;
 } else if (Clazz.instanceOf(p, "org.jmol.util.Point3fi")) {
 this.elements[this.nAtoms]=Math.max(0, (p).sD);
 } else {
-var newPt=Clazz.new_($I$(9));
+var newPt=Clazz.new_($I$(9,1));
 newPt.setT$javajs_util_T3(p);
 newPt.i=this.nAtoms;
 p=newPt;
@@ -283,11 +242,11 @@ Clazz.newMeth(C$, 'findInversionCenter', function () {
 this.haveInversionCenter=p$1.checkOperation$javajs_util_Quat$javajs_util_T3$I.apply(this, [null, this.center, -1]);
 if (this.haveInversionCenter) {
 this.axes[1]=Clazz.array($I$(4), [1]);
-this.axes[1][0]=Clazz.new_($I$(4), [this, null]);
+this.axes[1][0]=Clazz.new_($I$(4,1),[this, null]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'checkOperation$javajs_util_Quat$javajs_util_T3$I', function (q, center, iOrder) {
-var pt=Clazz.new_($I$(7));
+var pt=Clazz.new_($I$(7,1));
 var nFound=0;
 var isInversion=(iOrder < 14);
  out : for (var i=this.points.length; --i >= 0 && nFound < this.points.length ; ) {
@@ -330,7 +289,7 @@ if (atoms.length < 2) return false;
 for (var i=atoms.length; --i >= 0; ) {
 if (i == this.centerAtomIndex) continue;
 if (v1 == null ) {
-v1=Clazz.new_($I$(5));
+v1=Clazz.new_($I$(5,1));
 v1.sub2$javajs_util_T3$javajs_util_T3(atoms[i], this.center);
 v1.normalize$();
 this.vTemp.setT$javajs_util_T3(v1);
@@ -361,9 +320,9 @@ for (var i=this.points.length; --i >= 0; ) this.eCounts[this.elements[i]]++;
 }, p$1);
 
 Clazz.newMeth(C$, 'findCAxes', function () {
-var v1=Clazz.new_($I$(5));
-var v2=Clazz.new_($I$(5));
-var v3=Clazz.new_($I$(5));
+var v1=Clazz.new_($I$(5,1));
+var v2=Clazz.new_($I$(5,1));
+var v3=Clazz.new_($I$(5,1));
 for (var i=this.points.length; --i >= 0; ) {
 if (i == this.centerAtomIndex) continue;
 var a1=this.points[i];
@@ -392,7 +351,7 @@ p$1.checkAxisOrder$I$javajs_util_V3$javajs_util_T3.apply(this, [iOrder, v3, this
 }}
 }
 var vs=Clazz.array($I$(5), [this.nAxes[16] * 2]);
-for (var i=0; i < vs.length; i++) vs[i]=Clazz.new_($I$(5));
+for (var i=0; i < vs.length; i++) vs[i]=Clazz.new_($I$(5,1));
 
 var n=0;
 for (var i=0; i < this.nAxes[16]; i++) {
@@ -433,7 +392,7 @@ if (this.nAxes[19] == C$.axesMaxN[19]) break out;
 vs=Clazz.array($I$(5), [this.maxElement]);
 for (var i=this.points.length; --i >= 0; ) {
 var e1=this.elements[i];
-if (vs[e1] == null ) vs[e1]=Clazz.new_($I$(5));
+if (vs[e1] == null ) vs[e1]=Clazz.new_($I$(5,1));
  else if (this.haveInversionCenter) continue;
 vs[e1].add$javajs_util_T3(this.points[i]);
 }
@@ -481,7 +440,7 @@ break;
 }
 v.normalize$();
 if (p$1.haveAxis$I$javajs_util_V3.apply(this, [iOrder, v])) return false;
-var q=$I$(3).newVA$javajs_util_T3$F(v, (iOrder < 14 ? 180 : 0) + (360/(iOrder % 14)|0));
+var q=$I$(3,"newVA$javajs_util_T3$F",[v, (iOrder < 14 ? 180 : 0) + (360/(iOrder % 14)|0)]);
 if (!p$1.checkOperation$javajs_util_Quat$javajs_util_T3$I.apply(this, [q, center, iOrder])) return false;
 p$1.addAxis$I$javajs_util_V3.apply(this, [iOrder, v]);
 switch (iOrder) {
@@ -519,7 +478,7 @@ return true;
 Clazz.newMeth(C$, 'addAxis$I$javajs_util_V3', function (iOrder, v) {
 if (p$1.haveAxis$I$javajs_util_V3.apply(this, [iOrder, v])) return;
 if (this.axes[iOrder] == null ) this.axes[iOrder]=Clazz.array($I$(4), [C$.axesMaxN[iOrder]]);
-this.axes[iOrder][this.nAxes[iOrder]++]=Clazz.new_($I$(4).c$$javajs_util_V3$I, [this, null, v, iOrder]);
+this.axes[iOrder][this.nAxes[iOrder]++]=Clazz.new_($I$(4,1).c$$javajs_util_V3$I,[this, null, v, iOrder]);
 }, p$1);
 
 Clazz.newMeth(C$, 'haveAxis$I$javajs_util_V3', function (iOrder, v) {
@@ -532,10 +491,10 @@ return false;
 }, p$1);
 
 Clazz.newMeth(C$, 'findPlanes', function () {
-var pt=Clazz.new_($I$(7));
-var v1=Clazz.new_($I$(5));
-var v2=Clazz.new_($I$(5));
-var v3=Clazz.new_($I$(5));
+var pt=Clazz.new_($I$(7,1));
+var v1=Clazz.new_($I$(5,1));
+var v2=Clazz.new_($I$(5,1));
+var v3=Clazz.new_($I$(5,1));
 var nPlanes=0;
 var haveAxes=(p$1.getHighestOrder.apply(this, []) > 1);
 for (var i=this.points.length; --i >= 0; ) {
@@ -566,7 +525,7 @@ return nPlanes;
 }, p$1);
 
 Clazz.newMeth(C$, 'getPlane$javajs_util_V3', function (v3) {
-if (!p$1.haveAxis$I$javajs_util_V3.apply(this, [0, v3]) && p$1.checkOperation$javajs_util_Quat$javajs_util_T3$I.apply(this, [$I$(3).newVA$javajs_util_T3$F(v3, 180), this.center, -1]) ) this.axes[0][this.nAxes[0]++]=Clazz.new_($I$(4).c$$javajs_util_V3, [this, null, v3]);
+if (!p$1.haveAxis$I$javajs_util_V3.apply(this, [0, v3]) && p$1.checkOperation$javajs_util_Quat$javajs_util_T3$I.apply(this, [$I$(3).newVA$javajs_util_T3$F(v3, 180), this.center, -1]) ) this.axes[0][this.nAxes[0]++]=Clazz.new_($I$(4,1).c$$javajs_util_V3,[this, null, v3]);
 return this.nAxes[0];
 }, p$1);
 
@@ -589,8 +548,8 @@ p$1.checkAxisOrder$I$javajs_util_V3$javajs_util_T3.apply(this, [16, this.vTemp, 
 
 Clazz.newMeth(C$, 'getInfo$I$S$Z$S$I$F', function (modelIndex, drawID, asInfo, type, index, scaleFactor) {
 var asDraw=(drawID != null );
-this.info=(asInfo ? Clazz.new_($I$(10)) : null);
-var v=Clazz.new_($I$(5));
+this.info=(asInfo ? Clazz.new_($I$(10,1)) : null);
+var v=Clazz.new_($I$(5,1));
 var op;
 if (scaleFactor == 0 ) scaleFactor=1;
 this.scale=scaleFactor;
@@ -598,7 +557,7 @@ var nType=Clazz.array(Integer.TYPE, [4, 2]);
 for (var i=1; i < C$.maxAxis; i++) for (var j=this.nAxes[i]; --j >= 0; ) nType[this.axes[i][j].type][0]++;
 
 
-var sb=Clazz.new_($I$(11)).append$S("# ").appendI$I(this.nAtoms).append$S(" atoms\n");
+var sb=Clazz.new_($I$(11,1)).append$S("# ").appendI$I(this.nAtoms).append$S(" atoms\n");
 if (asDraw) {
 drawID="draw " + drawID;
 var haveType=(type != null  && type.length$() > 0 );
@@ -660,23 +619,23 @@ return this.drawInfo;
 var nTotal=1;
 var ctype=(this.haveInversionCenter ? "Ci" : "center");
 if (this.haveInversionCenter) nTotal++;
-if (asInfo) this.info.put$TK$TV(ctype, this.center);
+if (asInfo) this.info.put$O$O(ctype, this.center);
  else sb.append$S("\n\n").append$S(this.name).append$S("\t").append$S(ctype).append$S("\t").append$S($I$(12).eP$javajs_util_T3(this.center));
 for (var i=C$.maxAxis; --i >= 0; ) {
 if (this.nAxes[i] > 0) {
 n=C$.nUnique[i];
 var label=this.axes[i][0].getLabel$();
-if (asInfo) this.info.put$TK$TV("n" + label, Integer.valueOf$I(this.nAxes[i]));
+if (asInfo) this.info.put$O$O("n" + label, Integer.valueOf$I(this.nAxes[i]));
  else sb.append$S("\n\n").append$S(this.name).append$S("\tn").append$S(label).append$S("\t").appendI$I(this.nAxes[i]).append$S("\t").appendI$I(n);
 n*=this.nAxes[i];
 nTotal+=n;
 nType[this.axes[i][0].type][1]+=n;
-var vinfo=(asInfo ? Clazz.new_($I$(13)) : null);
+var vinfo=(asInfo ? Clazz.new_($I$(13,1)) : null);
 for (var j=0; j < this.nAxes[i]; j++) {
-if (asInfo) vinfo.addLast$TV(this.axes[i][j].normalOrAxis);
+if (asInfo) vinfo.addLast$O(this.axes[i][j].normalOrAxis);
  else sb.append$S("\n").append$S(this.name).append$S("\t").append$S(label).append$S("_").appendI$I(j + 1).append$S("\t").appendO$O(this.axes[i][j].normalOrAxis);
 }
-if (asInfo) this.info.put$TK$TV(label, vinfo);
+if (asInfo) this.info.put$O$O(label, vinfo);
 }}
 if (!asInfo) {
 sb.append$S("\n");
@@ -696,65 +655,65 @@ $I$(14).rightJustify$javajs_util_SB$S$S(sb, "    ", nType[2][1] + "\n");
 sb.append$S(this.name).append$S("\t\tTOTAL\t");
 $I$(14).rightJustify$javajs_util_SB$S$S(sb, "    ", nTotal + "\n");
 return (this.textInfo=sb.toString());
-}this.info.put$TK$TV("name", this.name);
-this.info.put$TK$TV("nAtoms", Integer.valueOf$I(this.nAtoms));
-this.info.put$TK$TV("nTotal", Integer.valueOf$I(nTotal));
-this.info.put$TK$TV("nCi", Integer.valueOf$I(this.haveInversionCenter ? 1 : 0));
-this.info.put$TK$TV("nCs", Integer.valueOf$I(this.nAxes[0]));
-this.info.put$TK$TV("nCn", Integer.valueOf$I(nType[1][0]));
-this.info.put$TK$TV("nSn", Integer.valueOf$I(nType[2][0]));
-this.info.put$TK$TV("distanceTolerance", Float.valueOf$F(this.distanceTolerance));
-this.info.put$TK$TV("linearTolerance", Float.valueOf$F(this.linearTolerance));
-this.info.put$TK$TV("points", this.points);
-this.info.put$TK$TV("detail", sb.toString().replace$C$C("\n", ";"));
-if (this.principalAxis != null  && this.principalAxis.index > 0 ) this.info.put$TK$TV("principalAxis", this.principalAxis.normalOrAxis);
-if (this.principalPlane != null  && this.principalPlane.index > 0 ) this.info.put$TK$TV("principalPlane", this.principalPlane.normalOrAxis);
+}this.info.put$O$O("name", this.name);
+this.info.put$O$O("nAtoms", Integer.valueOf$I(this.nAtoms));
+this.info.put$O$O("nTotal", Integer.valueOf$I(nTotal));
+this.info.put$O$O("nCi", Integer.valueOf$I(this.haveInversionCenter ? 1 : 0));
+this.info.put$O$O("nCs", Integer.valueOf$I(this.nAxes[0]));
+this.info.put$O$O("nCn", Integer.valueOf$I(nType[1][0]));
+this.info.put$O$O("nSn", Integer.valueOf$I(nType[2][0]));
+this.info.put$O$O("distanceTolerance", Float.valueOf$F(this.distanceTolerance));
+this.info.put$O$O("linearTolerance", Float.valueOf$F(this.linearTolerance));
+this.info.put$O$O("points", this.points);
+this.info.put$O$O("detail", sb.toString().replace$C$C("\n", ";"));
+if (this.principalAxis != null  && this.principalAxis.index > 0 ) this.info.put$O$O("principalAxis", this.principalAxis.normalOrAxis);
+if (this.principalPlane != null  && this.principalPlane.index > 0 ) this.info.put$O$O("principalPlane", this.principalPlane.normalOrAxis);
 return this.info;
 });
 
 Clazz.newMeth(C$, 'isDrawType$S$I$F', function (type, index, scale) {
 return (this.drawInfo != null  && this.drawType.equals$O(type == null  ? "" : type)  && this.drawIndex == index  && this.scale == scale  );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.axesMaxN=Clazz.array(Integer.TYPE, -1, [15, 0, 0, 1, 3, 1, 10, 0, 1, 0, 6, 0, 1, 0, 0, 0, 15, 10, 6, 6, 10, 0, 1]);
+C$.nUnique=Clazz.array(Integer.TYPE, -1, [1, 0, 0, 2, 2, 4, 2, 0, 4, 0, 4, 0, 4, 0, 0, 0, 1, 2, 2, 4, 2, 0, 4]);
+C$.maxAxis=C$.axesMaxN.length;
+C$.typeNames=Clazz.array(String, -1, ["plane", "proper axis", "improper axis", "center of inversion"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.PointGroup, "Operation", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.PointGroup, "Operation", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=0;
-this.order=0;
-this.index=0;
-this.normalOrAxis=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['type','order','index'],'O',['normalOrAxis','javajs.util.V3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.index=++this.this$0.nOps;
+;C$.$init$.apply(this);
+this.index=++this.b$['org.jmol.symmetry.PointGroup'].nOps;
 this.type=3;
 this.order=1;
-if ($I$(1).debugging) $I$(1).debug$S("new operation -- " + $I$(2).typeNames[this.type]);
+if ($I$(1).debugging) $I$(1,"debug$S",["new operation -- " + $I$(2).typeNames[this.type]]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javajs_util_V3$I', function (v, i) {
-C$.$init$.apply(this);
-this.index=++this.this$0.nOps;
+;C$.$init$.apply(this);
+this.index=++this.b$['org.jmol.symmetry.PointGroup'].nOps;
 this.type=(i < 14 ? 2 : 1);
 this.order=i % 14;
 this.normalOrAxis=$I$(3).newVA$javajs_util_T3$F(v, 180).getNormal$();
-if ($I$(1).debugging) $I$(1).debug$S("new operation -- " + (this.order == i ? "S" : "C") + this.order + " " + this.normalOrAxis );
+if ($I$(1).debugging) $I$(1,"debug$S",["new operation -- " + (this.order == i ? "S" : "C") + this.order + " " + this.normalOrAxis ]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$javajs_util_V3', function (v) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (v == null ) return;
-this.index=++this.this$0.nOps;
+this.index=++this.b$['org.jmol.symmetry.PointGroup'].nOps;
 this.type=0;
 this.normalOrAxis=$I$(3).newVA$javajs_util_T3$F(v, 180).getNormal$();
 if ($I$(1).debugging) $I$(1).debug$S("new operation -- plane " + this.normalOrAxis);
@@ -772,4 +731,4 @@ return "C" + this.order;
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

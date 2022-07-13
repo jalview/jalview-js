@@ -1,20 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.SB','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XsfReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.SB','org.jmol.util.Logger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XsfReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isBXSF=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isBXSF=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBXSF']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -24,7 +20,7 @@ this.init2VFR$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader(sg, 
 Clazz.newMeth(C$, 'readParameters$', function () {
 this.isAngstroms=false;
 this.params.blockCubeData=true;
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(1));
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(1,1));
 this.jvxlFileHeaderBuffer.append$S("XsfReader file\n");
 var needCutoff=this.params.cutoffAutomatic;
 this.isAngstroms=true;
@@ -58,14 +54,14 @@ this.swapXZ$();
 Clazz.newMeth(C$, 'gotoData$I$I', function (n, nPoints) {
 if (!this.params.blockCubeData) return;
 if (n > 0) $I$(2).info$S("skipping " + n + " data sets, " + nPoints + " points each" );
-if (this.isBXSF) $I$(2).info$S(this.rd$());
+if (this.isBXSF) $I$(2,"info$S",[this.rd$()]);
 for (var i=0; i < n; i++) this.skipData$I(nPoints);
 
 });
 
 Clazz.newMeth(C$, 'skipData$I', function (nPoints) {
 this.skipDataVFR$I(nPoints);
-if (this.isBXSF) $I$(2).info$S(this.rd$());
+if (this.isBXSF) $I$(2,"info$S",[this.rd$()]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

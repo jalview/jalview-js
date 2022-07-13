@@ -1,27 +1,21 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),I$=[[0,'fr.orsay.lri.varna.models.treealign.RNANodeValue','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RNANodeValue2", null, null, 'fr.orsay.lri.varna.models.treealign.GraphvizDrawableNodeValue');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),I$=[[0,'fr.orsay.lri.varna.models.treealign.RNANodeValue','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RNANodeValue2", null, null, 'fr.orsay.lri.varna.models.treealign.GraphvizDrawableNodeValue');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.singleNode=false;
-this.node=null;
-this.nodes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.singleNode=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['singleNode'],'O',['node','fr.orsay.lri.varna.models.treealign.RNANodeValue','nodes','java.util.List']]]
 
 Clazz.newMeth(C$, 'c$$Z', function (singleNode) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.singleNode=singleNode;
 if (singleNode) {
-this.node=Clazz.new_($I$(1));
+this.node=Clazz.new_($I$(1,1));
 } else {
-this.nodes=Clazz.new_($I$(2));
+this.nodes=Clazz.new_($I$(2,1));
 }}, 1);
 
 Clazz.newMeth(C$, 'getNode$', function () {
@@ -74,7 +68,7 @@ return this.node.toString();
 } else {
 var s="";
 for (var node, $node = this.nodes.iterator$(); $node.hasNext$()&&((node=($node.next$())),1);) {
-if (s != "") {
+if (s !== "" ) {
 s += " ";
 }s += node.toString();
 }
@@ -87,7 +81,7 @@ return this.node.toGraphvizNodeName$();
 } else {
 var s="";
 for (var node, $node = this.nodes.iterator$(); $node.hasNext$()&&((node=($node.next$())),1);) {
-if (s != "") {
+if (s !== "" ) {
 s += " ";
 }s += node.toGraphvizNodeName$();
 }
@@ -96,4 +90,4 @@ return s;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

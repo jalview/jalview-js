@@ -1,44 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.AU','org.jmol.util.C','javajs.util.CU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Shader");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.AU','org.jmol.util.C','javajs.util.CU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Shader");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xLight=0;
-this.yLight=0;
-this.zLight=0;
-this.lightSource=null;
-this.specularOn=false;
-this.usePhongExponent=false;
-this.ambientPercent=0;
-this.diffusePercent=0;
-this.specularExponent=0;
-this.specularPercent=0;
-this.specularPower=0;
-this.phongExponent=0;
-this.ambientFraction=0;
-this.diffuseFactor=0;
-this.intenseFraction=0;
-this.specularFactor=0;
-this.ashades=null;
-this.ashadesGreyscale=null;
-this.celOn=false;
-this.celPower=0;
-this.celRGB=0;
-this.celZ=0;
-this.useLight=false;
-this.sphereShadeIndexes=null;
-this.seed=0;
-this.sphereShapeCache=null;
-this.ellipsoidShades=null;
-this.nOut=0;
-this.nIn=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.lightSource=Clazz.new_($I$(1));
+this.lightSource=Clazz.new_($I$(1,1));
 this.specularOn=true;
 this.usePhongExponent=false;
 this.ambientPercent=45;
@@ -56,10 +22,12 @@ this.celPower=10;
 this.sphereShadeIndexes=Clazz.array(Byte.TYPE, [65536]);
 this.seed=305419897;
 this.sphereShapeCache=$I$(2).newInt2$I(128);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['specularOn','usePhongExponent','celOn','useLight'],'F',['xLight','yLight','zLight','ambientFraction','diffuseFactor','intenseFraction','specularFactor','celZ'],'I',['ambientPercent','diffusePercent','specularExponent','specularPercent','specularPower','phongExponent','celPower','celRGB','seed','nOut','nIn'],'O',['lightSource','javajs.util.V3','ashades','int[][]','+ashadesGreyscale','sphereShadeIndexes','byte[]','sphereShapeCache','int[][]','ellipsoidShades','byte[][][]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 p$1.setLightSource$F$F$F.apply(this, [-1.0, -1.0, 2.5]);
 }, 1);
 
@@ -73,7 +41,7 @@ this.zLight=this.lightSource.z;
 
 Clazz.newMeth(C$, 'setCel$Z$I$I', function (celShading, celShadingPower, argb) {
 celShading=celShading && celShadingPower != 0 ;
-argb=$I$(3).getArgb$H($I$(3).getBgContrast$I(argb));
+argb=$I$(3,"getArgb$H",[$I$(3).getBgContrast$I(argb)]);
 argb=(argb == -16777216 ? -16514044 : argb == -1 ? -2 : argb + 1);
 if (this.celOn == celShading  && this.celRGB == argb  && this.celPower == celShadingPower ) return;
 this.celOn=celShading;
@@ -144,7 +112,7 @@ red0++;
 grn0++;
 blu0++;
 if (f < 0.1 ) f += 0.1;
-rgb=$I$(4).rgb$I$I$I((Math.floor(red0)|0), (Math.floor(grn0)|0), (Math.floor(blu0)|0));
+rgb=$I$(4,"rgb$I$I$I",[(Math.floor(red0)|0), (Math.floor(grn0)|0), (Math.floor(blu0)|0)]);
 continue;
 }break;
 }
@@ -155,19 +123,19 @@ var grnStep=grn0 * f;
 var bluStep=blu0 * f;
 if (this.celOn) {
 var max=32;
-var _rgb=$I$(4).rgb$I$I$I((Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0));
+var _rgb=$I$(4,"rgb$I$I$I",[(Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0)]);
 if (this.celPower >= 0) for (; i < max; ++i) shades[i]=_rgb;
 
 red += redStep * max;
 grn += grnStep * max;
 blu += bluStep * max;
-_rgb=$I$(4).rgb$I$I$I((Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0));
+_rgb=$I$(4,"rgb$I$I$I",[(Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0)]);
 for (; i < 64; i++) shades[i]=_rgb;
 
 shades[0]=shades[1]=this.celRGB;
 } else {
 for (; i < 52; ++i) {
-shades[i]=$I$(4).rgb$I$I$I((Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0));
+shades[i]=$I$(4,"rgb$I$I$I",[(Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0)]);
 red += redStep;
 grn += grnStep;
 blu += bluStep;
@@ -181,7 +149,7 @@ for (; i < 64; i++) {
 red += redStep;
 grn += grnStep;
 blu += bluStep;
-shades[i]=$I$(4).rgb$I$I$I((Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0));
+shades[i]=$I$(4,"rgb$I$I$I",[(Math.floor(red)|0), (Math.floor(grn)|0), (Math.floor(blu)|0)]);
 }
 }if (greyScale) for (; --i >= 0; ) shades[i]=$I$(4).toFFGGGfromRGB$I(shades[i]);
 
@@ -194,7 +162,7 @@ return Math.round(p$1.getShadeF$F$F$F.apply(this, [(x / magnitude), (y / magnitu
 });
 
 Clazz.newMeth(C$, 'getShadeB$F$F$F', function (x, y, z) {
-return $b$[0] = (Math.round(p$1.getShadeF$F$F$F.apply(this, [x, y, z]) * 63)|0), $b$[0];
+return ($b$[0] = Math.round(p$1.getShadeF$F$F$F.apply(this, [x, y, z]) * 63), $b$[0]);
 });
 
 Clazz.newMeth(C$, 'getShadeFp8$F$F$F', function (x, y, z) {
@@ -221,12 +189,12 @@ for (var n=this.specularExponent; --n >= 0 && k_specular > 1.0E-4  ; ) k_specula
 Clazz.newMeth(C$, 'getShadeN$F$F$F$F', function (x, y, z, r) {
 var fp8ShadeIndex=(Math.floor(p$1.getShadeF$F$F$F.apply(this, [x / r, y / r, z / r]) * 63 * (256) )|0);
 var shadeIndex=fp8ShadeIndex >> 8;
-if (!this.useLight) return $b$[0] = (shadeIndex|0), $b$[0];
+if (!this.useLight) return ($b$[0] = shadeIndex, $b$[0]);
 if ((fp8ShadeIndex & 255) > this.nextRandom8Bit$()) ++shadeIndex;
 var random16bit=this.seed & 65535;
 if (random16bit < 21845 && shadeIndex > 0 ) --shadeIndex;
  else if (random16bit > 43690 && shadeIndex < 63 ) ++shadeIndex;
-return $b$[0] = (shadeIndex|0), $b$[0];
+return ($b$[0] = shadeIndex, $b$[0]);
 });
 
 Clazz.newMeth(C$, 'calcSphereShading', function () {
@@ -240,8 +208,8 @@ var shadeIndex=($b$[0] = 0, $b$[0]);
 var z2=r2 - xF2 - yF * yF ;
 if (z2 > 0 ) {
 var z=Math.sqrt(z2);
-shadeIndex=($b$[0] = this.getShadeN$F$F$F$F(xF, yF, z, 130), $b$[0]);
-}this.sphereShadeIndexes[(j << 8) + i]=(shadeIndex|0);
+shadeIndex=this.getShadeN$F$F$F$F(xF, yF, z, 130);
+}this.sphereShadeIndexes[(j << 8) + i]=shadeIndex;
 }
 }
 }, p$1);
@@ -275,11 +243,11 @@ return (outside ? this.getShadeIndex$F$F$F(i, j, k) : this.ellipsoidShades[i + 2
 
 Clazz.newMeth(C$, 'createEllipsoidShades$', function () {
 this.ellipsoidShades=Clazz.array(Byte.TYPE, [40, 40, 40]);
-for (var ii=0; ii < 40; ii++) for (var jj=0; jj < 40; jj++) for (var kk=0; kk < 40; kk++) this.ellipsoidShades[ii][jj][kk]=((this.getShadeIndex$F$F$F(ii - 20, jj - 20, kk)|0)|0);
+for (var ii=0; ii < 40; ii++) for (var jj=0; jj < 40; jj++) for (var kk=0; kk < 40; kk++) this.ellipsoidShades[ii][jj][kk]=(this.getShadeIndex$F$F$F(ii - 20, jj - 20, kk)|0);
 
 
 
 });
 var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

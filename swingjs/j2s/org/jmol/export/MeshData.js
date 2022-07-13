@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),I$=[[0,'javajs.util.AU','javajs.util.P3','org.jmol.util.MeshSurface','javajs.util.T3','javajs.util.V3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeshData");
+(function(){var P$=Clazz.newPackage("org.jmol.export"),I$=[[0,'javajs.util.AU','javajs.util.P3','org.jmol.util.MeshSurface','javajs.util.T3','javajs.util.V3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MeshData");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getCircleData$', function () {
 var ndeg=10;
@@ -91,4 +90,4 @@ return $I$(3).newMesh$Z$javajs_util_T3A$I$IAA$javajs_util_T3A$I(false, vertexes,
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

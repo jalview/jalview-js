@@ -1,50 +1,52 @@
-(function(){var P$=Clazz.newPackage("intervalstore.impl"),I$=[[0,'java.util.ArrayList','intervalstore.impl.NCListBuilder','intervalstore.impl.NCList','intervalstore.impl.BinarySearcher',['intervalstore.impl.IntervalStore','.IntervalIterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IntervalStore", function(){
+(function(){var P$=Clazz.newPackage("intervalstore.impl"),I$=[[0,'java.util.ArrayList','intervalstore.impl.NCListBuilder','intervalstore.impl.NCList','intervalstore.impl.BinarySearcher',['intervalstore.impl.BinarySearcher','.Compare'],['intervalstore.impl.IntervalStore','.IntervalIterator']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IntervalStore", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractCollection', 'intervalstore.api.IntervalStoreI');
+C$.$classes$=[['IntervalIterator',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nonNested=null;
-this.nested=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['nonNested','java.util.List','nested','intervalstore.impl.NCList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.nonNested=Clazz.new_($I$(1));
+Clazz.super_(C$, this);
+this.nonNested=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'c$$java_util_List', function (intervals) {
 C$.c$.apply(this, []);
-var sublists=Clazz.new_($I$(2)).partitionNestedSublists$java_util_List(intervals);
-var nested=Clazz.new_($I$(1));
+var sublists=Clazz.new_($I$(2,1)).partitionNestedSublists$java_util_List(intervals);
+var nested=Clazz.new_($I$(1,1));
 for (var subrange, $subrange = sublists.iterator$(); $subrange.hasNext$()&&((subrange=($subrange.next$())),1);) {
 var listIndex=subrange.getBegin$();
 var root=intervals.get$I(listIndex);
 while (listIndex <= subrange.getEnd$()){
 var t=intervals.get$I(listIndex);
 if (root.equalsInterval$intervalstore_api_IntervalI(t)) {
-this.nonNested.add$TE(t);
+this.nonNested.add$O(t);
 } else {
-nested.add$TE(t);
+nested.add$O(t);
 }listIndex++;
 }
 }
 if (!nested.isEmpty$()) {
-this.nested=Clazz.new_($I$(3).c$$java_util_List,[nested]);
+this.nested=Clazz.new_($I$(3,1).c$$java_util_List,[nested]);
 }}, 1);
 
-Clazz.newMeth(C$, ['add$TT','add$TE'], function (interval) {
+Clazz.newMeth(C$, ['add$intervalstore_api_IntervalI','add$O'], function (interval) {
+return this.add$intervalstore_api_IntervalI$Z(interval, true);
+});
+
+Clazz.newMeth(C$, 'add$intervalstore_api_IntervalI$Z', function (interval, allowDuplicates) {
 if (interval == null ) {
 return false;
-}if (!this.addNonNestedInterval$TT(interval)) {
-this.addNestedInterval$TT(interval);
+}if (!allowDuplicates && this.contains$O(interval) ) {
+return false;
+}if (!this.addNonNestedInterval$intervalstore_api_IntervalI(interval)) {
+this.addNestedInterval$intervalstore_api_IntervalI(interval);
 }return true;
 });
 
@@ -54,20 +56,9 @@ return true;
 }return this.nested == null  ? false : this.nested.contains$O(entry);
 });
 
-Clazz.newMeth(C$, ['addNonNestedInterval$TT'], function (entry) {
+Clazz.newMeth(C$, 'addNonNestedInterval$intervalstore_api_IntervalI', function (entry) {
 {
-var insertPosition=$I$(4).findFirst$java_util_List$java_util_function_Function(this.nonNested, ((P$.IntervalStore$lambda1||
-(function(){var C$=Clazz.newClass(P$, "IntervalStore$lambda1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Function', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-/*lambda_E*/
-Clazz.newMeth(C$, ['apply$'], function (val) { return (val.getBegin$() >= this.$finals$.entry.getBegin$());});
-})()
-), Clazz.new_(P$.IntervalStore$lambda1.$init$, [this, {entry: entry}])));
+var insertPosition=$I$(4,"findFirst$java_util_List$Z$intervalstore_impl_BinarySearcher_Compare$I",[this.nonNested, true, $I$(5).GE, entry.getBegin$()]);
 if (insertPosition > 0) {
 if (this.nonNested.get$I(insertPosition - 1).properlyContainsInterval$intervalstore_api_IntervalI(entry)) {
 return false;
@@ -75,15 +66,20 @@ return false;
 var following=this.nonNested.get$I(insertPosition);
 if (entry.properlyContainsInterval$intervalstore_api_IntervalI(following) || following.properlyContainsInterval$intervalstore_api_IntervalI(entry) ) {
 return false;
-}}this.nonNested.add$I$TE(insertPosition, entry);
+}}this.nonNested.add$I$O(insertPosition, entry);
 return true;
 }});
 
 Clazz.newMeth(C$, 'findOverlaps$J$J', function (from, to) {
-var result=Clazz.new_($I$(1));
-this.findNonNestedOverlaps$J$J$java_util_List(from, to, result);
+return this.findOverlaps$J$J$java_util_List(from, to, Clazz.new_($I$(1,1)));
+});
+
+Clazz.newMeth(C$, 'findOverlaps$J$J$java_util_List', function (from, to, result) {
+if (result == null ) {
+result=Clazz.new_($I$(1,1));
+}this.findNonNestedOverlaps$J$J$java_util_List(from, to, result);
 if (this.nested != null ) {
-result.addAll$java_util_Collection(this.nested.findOverlaps$J$J(from, to));
+this.nested.findOverlaps$J$J$java_util_List(from, to, result);
 }return result;
 });
 
@@ -120,9 +116,9 @@ if (o == null ) {
 return false;
 }try {
 var entry=o;
-var removed=this.removeNonNested$TT(entry);
+var removed=this.removeNonNested$intervalstore_api_IntervalI(entry);
 if (!removed && this.nested != null  ) {
-removed=this.nested.remove$TT(entry);
+removed=this.nested.remove$intervalstore_api_IntervalI(entry);
 }return removed;
 } catch (e) {
 if (Clazz.exceptionOf(e,"ClassCastException")){
@@ -133,19 +129,8 @@ throw e;
 }
 });
 
-Clazz.newMeth(C$, ['removeNonNested$TT'], function (entry) {
-var startIndex=$I$(4).findFirst$java_util_List$java_util_function_Function(this.nonNested, ((P$.IntervalStore$lambda2||
-(function(){var C$=Clazz.newClass(P$, "IntervalStore$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Function', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-/*lambda_E*/
-Clazz.newMeth(C$, ['apply$'], function (val) { return (val.getBegin$() >= this.$finals$.entry.getBegin$());});
-})()
-), Clazz.new_(P$.IntervalStore$lambda2.$init$, [this, {entry: entry}])));
+Clazz.newMeth(C$, 'removeNonNested$intervalstore_api_IntervalI', function (entry) {
+var startIndex=$I$(4,"findFirst$java_util_List$Z$intervalstore_impl_BinarySearcher_Compare$I",[this.nonNested, true, $I$(5).GE, entry.getBegin$()]);
 var from=entry.getBegin$();
 var i=startIndex;
 var size=this.nonNested.size$();
@@ -167,28 +152,17 @@ return 0;
 }return (this.nonNested.isEmpty$() ? 0 : 1) + (this.nested == null  ? 0 : this.nested.getDepth$());
 });
 
-Clazz.newMeth(C$, ['addNestedInterval$TT'], function (interval) {
+Clazz.newMeth(C$, 'addNestedInterval$intervalstore_api_IntervalI', function (interval) {
 if (this.nested == null ) {
-this.nested=Clazz.new_($I$(3));
-}this.nested.add$TT(interval);
+this.nested=Clazz.new_($I$(3,1));
+}this.nested.add$intervalstore_api_IntervalI(interval);
 });
 
 Clazz.newMeth(C$, 'listContains$java_util_List$O', function (intervals, entry) {
 if (intervals == null  || entry == null   || !(Clazz.instanceOf(entry, "intervalstore.api.IntervalI")) ) {
 return false;
 }var interval=entry;
-var pos=$I$(4).findFirst$java_util_List$java_util_function_Function(intervals, ((P$.IntervalStore$lambda3||
-(function(){var C$=Clazz.newClass(P$, "IntervalStore$lambda3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Function', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-/*lambda_E*/
-Clazz.newMeth(C$, ['apply$'], function (val) { return (val.getBegin$() >= this.$finals$.interval.getBegin$());});
-})()
-), Clazz.new_(P$.IntervalStore$lambda3.$init$, [this, {interval: interval}])));
+var pos=$I$(4,"findFirst$java_util_List$Z$intervalstore_impl_BinarySearcher_Compare$I",[intervals, true, $I$(5).GE, interval.getBegin$()]);
 var len=intervals.size$();
 while (pos < len){
 var sf=intervals.get$I(pos);
@@ -202,27 +176,16 @@ return false;
 });
 
 Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(5).c$$intervalstore_impl_IntervalStore, [this, null, this]);
+return Clazz.new_($I$(6,1).c$$intervalstore_impl_IntervalStore,[this, null, this]);
 });
 
 Clazz.newMeth(C$, 'clear$', function () {
 this.nonNested.clear$();
-this.nested=Clazz.new_($I$(3));
+this.nested=Clazz.new_($I$(3,1));
 });
 
 Clazz.newMeth(C$, 'findNonNestedOverlaps$J$J$java_util_List', function (from, to, result) {
-var startIndex=$I$(4).findFirst$java_util_List$java_util_function_Function(this.nonNested, ((P$.IntervalStore$lambda4||
-(function(){var C$=Clazz.newClass(P$, "IntervalStore$lambda4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.function.Function', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-/*lambda_E*/
-Clazz.newMeth(C$, ['apply$'], function (val) { return (val.getEnd$() >= this.$finals$.from);});
-})()
-), Clazz.new_(P$.IntervalStore$lambda4.$init$, [this, {from: from}])));
+var startIndex=$I$(4,"findFirst$java_util_List$Z$intervalstore_impl_BinarySearcher_Compare$I",[this.nonNested, false, $I$(5).GE, (from|0)]);
 var startIndex1=startIndex;
 var i=startIndex1;
 while (i < this.nonNested.size$()){
@@ -230,7 +193,7 @@ var sf=this.nonNested.get$I(i);
 if (sf.getBegin$() > to) {
 break;
 }if (sf.getBegin$() <= to && sf.getEnd$() >= from ) {
-result.add$TE(sf);
+result.add$O(sf);
 }i++;
 }
 });
@@ -242,24 +205,19 @@ s=s + System.lineSeparator$() + this.nested.toString() ;
 }return s;
 });
 ;
-(function(){var C$=Clazz.newClass(P$.IntervalStore, "IntervalIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.IntervalStore, "IntervalIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.topLevelIterator=null;
-this.nestedIterator=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['topLevelIterator','java.util.Iterator','+nestedIterator']]]
 
 Clazz.newMeth(C$, 'c$$intervalstore_impl_IntervalStore', function (intervalStore) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.topLevelIterator=this.this$0.nonNested.iterator$();
 if (this.this$0.nested != null ) {
 this.nestedIterator=this.this$0.nested.iterator$();
@@ -280,4 +238,4 @@ return this.nestedIterator.next$();
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-03-13 17:03:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

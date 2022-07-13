@@ -1,35 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'org.jmol.api.JmolSelectionListener','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.i18n.GT','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SelectionManager");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'org.jmol.api.JmolSelectionListener','javajs.util.BS','org.jmol.util.BSUtil','org.jmol.i18n.GT','javajs.util.AU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SelectionManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.listeners=null;
-this.bsHidden=null;
-this.bsSelection=null;
-this.bsFixed=null;
-this.bsSubset=null;
-this.bsDeleted=null;
-this.noneSelected=null;
-this.empty=0;
-this.hideNotSelected=false;
-this.bsTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.listeners=Clazz.array($I$(1), [0]);
-this.bsHidden=Clazz.new_($I$(2));
-this.bsSelection=Clazz.new_($I$(2));
-this.bsFixed=Clazz.new_($I$(2));
+this.bsHidden=Clazz.new_($I$(2,1));
+this.bsSelection=Clazz.new_($I$(2,1));
+this.bsFixed=Clazz.new_($I$(2,1));
 this.empty=1;
-this.bsTemp=Clazz.new_($I$(2));
-}, 1);
+this.bsTemp=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['hideNotSelected'],'I',['empty'],'O',['vwr','org.jmol.viewer.Viewer','listeners','org.jmol.api.JmolSelectionListener[]','bsHidden','javajs.util.BS','+bsSelection','+bsFixed','+bsSubset','+bsDeleted','noneSelected','Boolean','bsTemp','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer', function (vwr) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 }, 1);
 
@@ -55,7 +41,7 @@ this.setMotionFixedAtoms$javajs_util_BS(null);
 Clazz.newMeth(C$, 'display$org_jmol_modelset_ModelSet$javajs_util_BS$I$Z', function (modelSet, bs, addRemove, isQuiet) {
 switch (addRemove) {
 default:
-var bsNotSubset=(this.bsSubset == null  ? null : $I$(3).andNot$javajs_util_BS$javajs_util_BS($I$(3).copy$javajs_util_BS(this.bsHidden), this.bsSubset));
+var bsNotSubset=(this.bsSubset == null  ? null : $I$(3,"andNot$javajs_util_BS$javajs_util_BS",[$I$(3).copy$javajs_util_BS(this.bsHidden), this.bsSubset]));
 var bsAll=modelSet.getModelAtomBitSetIncludingDeleted$I$Z(-1, false);
 this.bsHidden.or$javajs_util_BS(bsAll);
 if (bsNotSubset != null ) {
@@ -70,15 +56,15 @@ break;
 }
 $I$(3).andNot$javajs_util_BS$javajs_util_BS(this.bsHidden, this.bsDeleted);
 modelSet.setBsHidden$javajs_util_BS(this.bsHidden);
-if (!isQuiet) this.vwr.reportSelection$S($I$(4).i$S$I($I$(4).$$S("{0} atoms hidden"), this.bsHidden.cardinality$()));
+if (!isQuiet) this.vwr.reportSelection$S($I$(4,"i$S$I",[$I$(4).$$S("{0} atoms hidden"), this.bsHidden.cardinality$()]));
 });
 
 Clazz.newMeth(C$, 'hide$org_jmol_modelset_ModelSet$javajs_util_BS$I$Z', function (modelSet, bs, addRemove, isQuiet) {
-var bsNotSubset=(addRemove == 0 || this.bsSubset == null   ? null : $I$(3).andNot$javajs_util_BS$javajs_util_BS($I$(3).copy$javajs_util_BS(this.bsHidden), this.bsSubset));
+var bsNotSubset=(addRemove == 0 || this.bsSubset == null   ? null : $I$(3,"andNot$javajs_util_BS$javajs_util_BS",[$I$(3).copy$javajs_util_BS(this.bsHidden), this.bsSubset]));
 C$.setBitSet$javajs_util_BS$javajs_util_BS$I(this.bsHidden, bs, addRemove);
 if (bsNotSubset != null ) this.bsHidden.or$javajs_util_BS(bsNotSubset);
 if (modelSet != null ) modelSet.setBsHidden$javajs_util_BS(this.bsHidden);
-if (!isQuiet) this.vwr.reportSelection$S($I$(4).i$S$I($I$(4).$$S("{0} atoms hidden"), this.bsHidden.cardinality$()));
+if (!isQuiet) this.vwr.reportSelection$S($I$(4,"i$S$I",[$I$(4).$$S("{0} atoms hidden"), this.bsHidden.cardinality$()]));
 });
 
 Clazz.newMeth(C$, 'setSelectionSet$javajs_util_BS$I', function (set, addRemove) {
@@ -126,11 +112,11 @@ this.setSelectionSet$javajs_util_BS$I(bs, addRemove);
 if (!this.vwr.getBoolean$I(1612709900)) p$1.excludeSelectionSet$javajs_util_BS.apply(this, [this.vwr.ms.getAtoms$I$O(1612709900, null)]);
 if (!this.vwr.getBoolean$I(1612709894)) p$1.excludeSelectionSet$javajs_util_BS.apply(this, [this.vwr.ms.getAtoms$I$O(1612709894, null)]);
 }p$1.selectionChanged$Z.apply(this, [false]);
-var reportChime=this.vwr.getBoolean$I(603979880);
+var reportChime=this.vwr.getBoolean$I(603979879);
 if (!reportChime && isQuiet ) return;
 var n=this.getSelectionCount$();
 if (reportChime) this.vwr.getChimeMessenger$().reportSelection$I(n);
- else if (!isQuiet) this.vwr.reportSelection$S($I$(4).i$S$I($I$(4).$$S("{0} atoms selected"), n));
+ else if (!isQuiet) this.vwr.reportSelection$S($I$(4,"i$S$I",[$I$(4).$$S("{0} atoms selected"), n]));
 });
 
 Clazz.newMeth(C$, 'selectAll$Z', function (isQuiet) {
@@ -217,7 +203,7 @@ this.listeners[len]=listener;
 Clazz.newMeth(C$, 'selectionChanged$Z', function (isQuiet) {
 if (this.hideNotSelected) this.hide$org_jmol_modelset_ModelSet$javajs_util_BS$I$Z(this.vwr.ms, $I$(3).copyInvert$javajs_util_BS$I(this.bsSelection, this.vwr.ms.ac), 0, isQuiet);
 if (isQuiet || this.listeners.length == 0 ) return;
-for (var i=this.listeners.length; --i >= 0; ) if (this.listeners[i] != null ) this.listeners[i].selectionChanged$(this.bsSelection);
+for (var i=this.listeners.length; --i >= 0; ) if (this.listeners[i] != null ) this.listeners[i].selectionChanged$javajs_util_BS(this.bsSelection);
 
 }, p$1);
 
@@ -261,4 +247,4 @@ return this.bsFixed;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

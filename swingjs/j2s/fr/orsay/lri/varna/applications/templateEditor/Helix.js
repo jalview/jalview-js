@@ -1,42 +1,38 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateHelix'],['java.awt.geom.Point2D','.Double'],'java.util.HashSet',['fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','.RelativePosition'],'java.awt.Polygon','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','java.util.ArrayList',['fr.orsay.lri.varna.models.templates.RNATemplate','.EdgeEndPointPosition']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Helix", null, 'fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateHelix'],['java.awt.geom.Point2D','.Double'],'java.util.HashSet',['fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','.RelativePosition'],'java.awt.Polygon','fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement','java.util.ArrayList',['fr.orsay.lri.varna.models.templates.RNATemplate','.EdgeEndPointPosition']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Helix", null, 'fr.orsay.lri.varna.applications.templateEditor.GraphicalTemplateElement');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._h=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['_h','fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateHelix']]]
 
 Clazz.newMeth(C$, 'c$$D$D$fr_orsay_lri_varna_models_templates_RNATemplate$java_util_List', function (x, y, tmp, existingRNAElements) {
 C$.c$$D$D$S$fr_orsay_lri_varna_models_templates_RNATemplate.apply(this, [x, y, C$.getNextAutomaticCaption$java_util_List(existingRNAElements), tmp]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$D$D$S$fr_orsay_lri_varna_models_templates_RNATemplate', function (x, y, cap, tmp) {
-Clazz.super_(C$, this,1);
-this._h=Clazz.new_($I$(1).c$$S, [tmp, null, cap]);
-this._h.setStartPosition$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[x, y]));
-this._h.setEndPosition$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[x, y]));
+Clazz.super_(C$, this);
+this._h=Clazz.new_($I$(1,1).c$$S,[tmp, null, cap]);
+this._h.setStartPosition$java_awt_geom_Point2D_Double(Clazz.new_($I$(2,1).c$$D$D,[x, y]));
+this._h.setEndPosition$java_awt_geom_Point2D_Double(Clazz.new_($I$(2,1).c$$D$D,[x, y]));
 this._h.setLength$I(1);
 this._h.setCaption$S(cap);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix', function (templateHelix) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._h=templateHelix;
 }, 1);
 
 Clazz.newMeth(C$, 'getNextAutomaticCaption$java_util_List', function (existingRNAElements) {
-var captions=Clazz.new_($I$(3));
+var captions=Clazz.new_($I$(3,1));
 for (var element, $element = existingRNAElements.iterator$(); $element.hasNext$()&&((element=($element.next$())),1);) {
 if (Clazz.instanceOf(element, "fr.orsay.lri.varna.applications.templateEditor.Helix")) {
 var helix=element;
 if (helix.getCaption$() != null ) {
-captions.add$TE(helix.getCaption$());
+captions.add$O(helix.getCaption$());
 }}}
 for (var i=1; ; i++) {
 var candidateCaption="H" + i;
@@ -93,7 +89,7 @@ p$1.updateLength.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'setPos$D$D', function (x, y) {
-this.setPos$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[x, y]));
+this.setPos$java_awt_geom_Point2D_Double(Clazz.new_($I$(2,1).c$$D$D,[x, y]));
 });
 
 Clazz.newMeth(C$, 'getPos$', function () {
@@ -101,15 +97,15 @@ return this._h.getStartPosition$();
 });
 
 Clazz.newMeth(C$, 'moveCenter$D$D', function (x, y) {
-var center=Clazz.new_($I$(2).c$$D$D,[(this._h.getStartPosition$().x + this._h.getEndPosition$().x) / 2.0, (this._h.getStartPosition$().y + this._h.getEndPosition$().y) / 2.0]);
+var center=Clazz.new_([(this._h.getStartPosition$().x + this._h.getEndPosition$().x) / 2.0, (this._h.getStartPosition$().y + this._h.getEndPosition$().y) / 2.0],$I$(2,1).c$$D$D);
 var dx=x - center.x;
 var dy=y - center.y;
-this._h.setStartPosition$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[this._h.getStartPosition$().x + dx, this._h.getStartPosition$().y + dy]));
-this._h.setEndPosition$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[this._h.getEndPosition$().x + dx, this._h.getEndPosition$().y + dy]));
+this._h.setStartPosition$java_awt_geom_Point2D_Double(Clazz.new_([this._h.getStartPosition$().x + dx, this._h.getStartPosition$().y + dy],$I$(2,1).c$$D$D));
+this._h.setEndPosition$java_awt_geom_Point2D_Double(Clazz.new_([this._h.getEndPosition$().x + dx, this._h.getEndPosition$().y + dy],$I$(2,1).c$$D$D));
 });
 
 Clazz.newMeth(C$, 'setExtent$D$D', function (x, y) {
-this.setExtent$java_awt_geom_Point2D_Double(Clazz.new_($I$(2).c$$D$D,[x, y]));
+this.setExtent$java_awt_geom_Point2D_Double(Clazz.new_($I$(2,1).c$$D$D,[x, y]));
 });
 
 Clazz.newMeth(C$, 'updateLength', function () {
@@ -138,7 +134,7 @@ var dx=(this._h.getStartPosition$().x - this._h.getEndPosition$().x) / (this._h.
 var dy=(this._h.getStartPosition$().y - this._h.getEndPosition$().y) / (this._h.getStartPosition$().distance$java_awt_geom_Point2D(this._h.getEndPosition$()));
 var nx=dy;
 var ny=-dx;
-var start5=Clazz.new_($I$(2).c$$D$D,[(this.getPosX$() - 65.0 * nx / 2.0), (this.getPosY$() - 65.0 * ny / 2.0)]);
+var start5=Clazz.new_([(this.getPosX$() - 65.0 * nx / 2.0), (this.getPosY$() - 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
 return start5;
 });
 
@@ -147,7 +143,7 @@ var dx=(this._h.getStartPosition$().x - this._h.getEndPosition$().x) / (this._h.
 var dy=(this._h.getStartPosition$().y - this._h.getEndPosition$().y) / (this._h.getStartPosition$().distance$java_awt_geom_Point2D(this._h.getEndPosition$()));
 var nx=dy;
 var ny=-dx;
-var start3=Clazz.new_($I$(2).c$$D$D,[(this.getPosX$() + 65.0 * nx / 2.0), (this.getPosY$() + 65.0 * ny / 2.0)]);
+var start3=Clazz.new_([(this.getPosX$() + 65.0 * nx / 2.0), (this.getPosY$() + 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
 return start3;
 });
 
@@ -156,7 +152,7 @@ var dx=(this._h.getStartPosition$().x - this._h.getEndPosition$().x) / (this._h.
 var dy=(this._h.getStartPosition$().y - this._h.getEndPosition$().y) / (this._h.getStartPosition$().distance$java_awt_geom_Point2D(this._h.getEndPosition$()));
 var nx=dy;
 var ny=-dx;
-var end5=Clazz.new_($I$(2).c$$D$D,[(this.getExtentX$() - 65.0 * nx / 2.0), (this.getExtentY$() - 65.0 * ny / 2.0)]);
+var end5=Clazz.new_([(this.getExtentX$() - 65.0 * nx / 2.0), (this.getExtentY$() - 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
 return end5;
 });
 
@@ -165,7 +161,7 @@ var dx=(this._h.getStartPosition$().x - this._h.getEndPosition$().x) / (this._h.
 var dy=(this._h.getStartPosition$().y - this._h.getEndPosition$().y) / (this._h.getStartPosition$().distance$java_awt_geom_Point2D(this._h.getEndPosition$()));
 var nx=dy;
 var ny=-dx;
-var end3=Clazz.new_($I$(2).c$$D$D,[(this.getExtentX$() + 65.0 * nx / 2.0), (this.getExtentY$() + 65.0 * ny / 2.0)]);
+var end3=Clazz.new_([(this.getExtentX$() + 65.0 * nx / 2.0), (this.getExtentY$() + 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
 return end3;
 });
 
@@ -194,11 +190,11 @@ var dx=(this._h.getStartPosition$().x - this._h.getEndPosition$().x) / (this._h.
 var dy=(this._h.getStartPosition$().y - this._h.getEndPosition$().y) / (this._h.getStartPosition$().distance$java_awt_geom_Point2D(this._h.getEndPosition$()));
 var nx=dy;
 var ny=-dx;
-var start5=Clazz.new_($I$(2).c$$D$D,[(this.getPosX$() + 65.0 * nx / 2.0), (this.getPosY$() + 65.0 * ny / 2.0)]);
-var end5=Clazz.new_($I$(2).c$$D$D,[(this.getExtentX$() + 65.0 * nx / 2.0), (this.getExtentY$() + 65.0 * ny / 2.0)]);
-var start3=Clazz.new_($I$(2).c$$D$D,[(this.getPosX$() - 65.0 * nx / 2.0), (this.getPosY$() - 65.0 * ny / 2.0)]);
-var end3=Clazz.new_($I$(2).c$$D$D,[(this.getExtentX$() - 65.0 * nx / 2.0), (this.getExtentY$() - 65.0 * ny / 2.0)]);
-var p=Clazz.new_($I$(5));
+var start5=Clazz.new_([(this.getPosX$() + 65.0 * nx / 2.0), (this.getPosY$() + 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
+var end5=Clazz.new_([(this.getExtentX$() + 65.0 * nx / 2.0), (this.getExtentY$() + 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
+var start3=Clazz.new_([(this.getPosX$() - 65.0 * nx / 2.0), (this.getPosY$() - 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
+var end3=Clazz.new_([(this.getExtentX$() - 65.0 * nx / 2.0), (this.getExtentY$() - 65.0 * ny / 2.0)],$I$(2,1).c$$D$D);
+var p=Clazz.new_($I$(5,1));
 p.addPoint$I$I((start5.x|0), (start5.y|0));
 p.addPoint$I$I((end5.x|0), (end5.y|0));
 p.addPoint$I$I((end3.x|0), (end3.y|0));
@@ -207,21 +203,21 @@ return p;
 });
 
 Clazz.newMeth(C$, 'getCenter$', function () {
-return Clazz.new_($I$(2).c$$D$D,[(((this._h.getStartPosition$().x + this._h.getEndPosition$().x) / 2.0)|0), (((this._h.getStartPosition$().y + this._h.getEndPosition$().y) / 2.0)|0)]);
+return Clazz.new_([(((this._h.getStartPosition$().x + this._h.getEndPosition$().x) / 2.0)|0), (((this._h.getStartPosition$().y + this._h.getEndPosition$().y) / 2.0)|0)],$I$(2,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'getCenterEditStart$', function () {
 var dist=this._h.getStartPosition$().distance$java_awt_geom_Point2D(this._h.getEndPosition$());
 var dx=(this._h.getEndPosition$().x - this._h.getStartPosition$().x) / (dist);
 var dy=(this._h.getEndPosition$().y - this._h.getStartPosition$().y) / (dist);
-return Clazz.new_($I$(2).c$$D$D,[((this._h.getStartPosition$().x + (dist - 10.0) * dx)|0), ((this._h.getStartPosition$().y + (dist - 10.0) * dy)|0)]);
+return Clazz.new_([((this._h.getStartPosition$().x + (dist - 10.0) * dx)|0), ((this._h.getStartPosition$().y + (dist - 10.0) * dy)|0)],$I$(2,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'getCenterEditEnd$', function () {
 var dist=this._h.getStartPosition$().distance$java_awt_geom_Point2D(this._h.getEndPosition$());
 var dx=(this._h.getEndPosition$().x - this._h.getStartPosition$().x) / (dist);
 var dy=(this._h.getEndPosition$().y - this._h.getStartPosition$().y) / (dist);
-return Clazz.new_($I$(2).c$$D$D,[((this._h.getStartPosition$().x + (10.0) * dx)|0), ((this._h.getStartPosition$().y + (10.0) * dy)|0)]);
+return Clazz.new_([((this._h.getStartPosition$().x + (10.0) * dx)|0), ((this._h.getStartPosition$().y + (10.0) * dy)|0)],$I$(2,1).c$$D$D);
 });
 
 Clazz.newMeth(C$, 'getSelectionBox$', function () {
@@ -230,11 +226,11 @@ var dy=(this._h.getStartPosition$().y - this._h.getEndPosition$().y) / (this._h.
 var nx=dy;
 var ny=-dx;
 var hbox=this.getBoundingPolygon$();
-var p=Clazz.new_($I$(5));
-var start5=Clazz.new_($I$(2).c$$D$D,[hbox.xpoints[0] + 15.0 * (dx + nx), hbox.ypoints[0] + 15.0 * (dy + ny)]);
-var end5=Clazz.new_($I$(2).c$$D$D,[hbox.xpoints[1] + 15.0 * (-dx + nx), hbox.ypoints[1] + 15.0 * (-dy + ny)]);
-var end3=Clazz.new_($I$(2).c$$D$D,[hbox.xpoints[2] + 15.0 * (-dx - nx), hbox.ypoints[2] + 15.0 * (-dy - ny)]);
-;var start3=Clazz.new_($I$(2).c$$D$D,[hbox.xpoints[3] + 15.0 * (dx - nx), hbox.ypoints[3] + 15.0 * (dy - ny)]);
+var p=Clazz.new_($I$(5,1));
+var start5=Clazz.new_([hbox.xpoints[0] + 15.0 * (dx + nx), hbox.ypoints[0] + 15.0 * (dy + ny)],$I$(2,1).c$$D$D);
+var end5=Clazz.new_([hbox.xpoints[1] + 15.0 * (-dx + nx), hbox.ypoints[1] + 15.0 * (-dy + ny)],$I$(2,1).c$$D$D);
+var end3=Clazz.new_([hbox.xpoints[2] + 15.0 * (-dx - nx), hbox.ypoints[2] + 15.0 * (-dy - ny)],$I$(2,1).c$$D$D);
+;var start3=Clazz.new_([hbox.xpoints[3] + 15.0 * (dx - nx), hbox.ypoints[3] + 15.0 * (dy - ny)],$I$(2,1).c$$D$D);
 ;p.addPoint$I$I((start5.x|0), (start5.y|0));
 p.addPoint$I$I((end5.x|0), (end5.y|0));
 p.addPoint$I$I((end3.x|0), (end3.y|0));
@@ -247,7 +243,7 @@ return this.getSelectionBox$();
 });
 
 Clazz.newMeth(C$, 'getRelativePosition$D$D', function (x, y) {
-var current=Clazz.new_($I$(2).c$$D$D,[x, y]);
+var current=Clazz.new_($I$(2,1).c$$D$D,[x, y]);
 var p=this.getSelectionBox$();
 if (p.contains$java_awt_geom_Point2D(current)) {
 if (this.getCenterEditStart$().distance$java_awt_geom_Point2D(current) < 10.0 ) {
@@ -271,7 +267,7 @@ return $I$(4).RP_CONNECT_START5;
 Clazz.newMeth(C$, 'getClosestEdge$D$D', function (x, y) {
 var result=$I$(4).RP_OUTER;
 var dist=1.7976931348623157E308;
-var current=Clazz.new_($I$(2).c$$D$D,[x, y]);
+var current=Clazz.new_($I$(2,1).c$$D$D,[x, y]);
 var dcand=this.getStart5$().distance$java_awt_geom_Point2D(current);
 if (dcand < dist ) {
 dist=dcand;
@@ -378,8 +374,8 @@ var nbBasePairs=this._h.getLength$();
 g2d.setStroke$java_awt_Stroke(this._solidStroke);
 for (var i=0; i < nbBasePairs; i++) {
 g2d.setColor$java_awt_Color($I$(6).BASE_PAIR_COLOR);
-var p5=Clazz.new_($I$(2).c$$D$D,[(i * start5.x + (nbBasePairs - 1 - i ) * end5.x) / (nbBasePairs - 1), (i * start5.y + (nbBasePairs - 1 - i ) * end5.y) / (nbBasePairs - 1)]);
-var p3=Clazz.new_($I$(2).c$$D$D,[(i * start3.x + (nbBasePairs - 1 - i ) * end3.x) / (nbBasePairs - 1), (i * start3.y + (nbBasePairs - 1 - i ) * end3.y) / (nbBasePairs - 1)]);
+var p5=Clazz.new_([(i * start5.x + (nbBasePairs - 1 - i ) * end5.x) / (nbBasePairs - 1), (i * start5.y + (nbBasePairs - 1 - i ) * end5.y) / (nbBasePairs - 1)],$I$(2,1).c$$D$D);
+var p3=Clazz.new_([(i * start3.x + (nbBasePairs - 1 - i ) * end3.x) / (nbBasePairs - 1), (i * start3.y + (nbBasePairs - 1 - i ) * end3.y) / (nbBasePairs - 1)],$I$(2,1).c$$D$D);
 g2d.drawLine$I$I$I$I((p3.x|0), (p3.y|0), (p5.x|0), (p5.y|0));
 if (i == 0) {
 if (this.isAnchored5End$()) {
@@ -490,11 +486,11 @@ this.updateAttachedUnpairedRegions$();
 });
 
 Clazz.newMeth(C$, 'getConnectedEdges$', function () {
-var result=Clazz.new_($I$(7));
-result.add$TE($I$(4).RP_CONNECT_START5);
-result.add$TE($I$(4).RP_CONNECT_START3);
-result.add$TE($I$(4).RP_CONNECT_END5);
-result.add$TE($I$(4).RP_CONNECT_END3);
+var result=Clazz.new_($I$(7,1));
+result.add$O($I$(4).RP_CONNECT_START5);
+result.add$O($I$(4).RP_CONNECT_START3);
+result.add$O($I$(4).RP_CONNECT_END5);
+result.add$O($I$(4).RP_CONNECT_END3);
 return result;
 });
 
@@ -519,4 +515,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

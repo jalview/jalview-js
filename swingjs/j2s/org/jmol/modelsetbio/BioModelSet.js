@@ -1,19 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'org.jmol.api.Interface','org.jmol.util.BSUtil','javajs.util.BS','org.jmol.modelsetbio.BioResolver','javajs.util.SB','java.util.Hashtable','org.jmol.c.STR','org.jmol.util.Logger','org.jmol.script.T','javajs.util.Lst','org.jmol.util.Escape','Boolean','javajs.util.PT','org.jmol.modelset.Group','javajs.util.AU','java.util.Map']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BioModelSet");
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'org.jmol.api.Interface','org.jmol.util.BSUtil','javajs.util.BS','org.jmol.modelsetbio.BioResolver','javajs.util.SB','java.util.Hashtable','org.jmol.c.STR','org.jmol.util.Logger','org.jmol.script.T','javajs.util.Lst','org.jmol.util.Escape','javajs.util.PT','org.jmol.modelset.Group','javajs.util.AU','java.util.Map']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BioModelSet");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.ms=null;
-this.ext=null;
-this.unitIdSets=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['vwr','org.jmol.viewer.Viewer','ms','org.jmol.modelset.ModelSet','ext','org.jmol.modelsetbio.BioExt','unitIdSets','java.util.Map[]']]]
 
 Clazz.newMeth(C$, 'getBioExt$', function () {
 return (this.ext == null  ? (this.ext=($I$(1).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.modelsetbio.BioExt", this.vwr, "script"))).set$org_jmol_viewer_Viewer$org_jmol_modelset_ModelSet(this.vwr, this.vwr.ms) : this.ext);
@@ -32,8 +25,8 @@ var am=this.ms.am;
 if (vHBonds == null ) {
 var bsAtoms=bsA;
 if (bsB != null  && !bsA.equals$O(bsB) ) (bsAtoms=$I$(2).copy$javajs_util_BS(bsA)).or$javajs_util_BS(bsB);
-var bsDelete=Clazz.new_($I$(3));
-var bsOK=Clazz.new_($I$(3));
+var bsDelete=Clazz.new_($I$(3,1));
+var bsOK=Clazz.new_($I$(3,1));
 var models=this.ms.am;
 var bonds=this.ms.bo;
 for (var i=this.ms.bondCount; --i >= 0; ) {
@@ -92,8 +85,8 @@ return ret;
 });
 
 Clazz.newMeth(C$, 'calculateAllStuctures$javajs_util_BS$Z$Z$Z$Z$I', function (bsAtoms, asDSSP, doReport, dsspIgnoreHydrogen, setStructure, version) {
-var bsAllAtoms=Clazz.new_($I$(3));
-var bsModelsExcluded=$I$(2).copyInvert$javajs_util_BS$I(p$1.modelsOf$javajs_util_BS$javajs_util_BS.apply(this, [bsAtoms, bsAllAtoms]), this.ms.mc);
+var bsAllAtoms=Clazz.new_($I$(3,1));
+var bsModelsExcluded=$I$(2,"copyInvert$javajs_util_BS$I",[p$1.modelsOf$javajs_util_BS$javajs_util_BS.apply(this, [bsAtoms, bsAllAtoms]), this.ms.mc]);
 if (!setStructure) return this.ms.calculateStructuresAllExcept$javajs_util_BS$Z$Z$Z$Z$Z$I(bsModelsExcluded, asDSSP, doReport, dsspIgnoreHydrogen, false, false, version);
 this.ms.recalculatePolymers$javajs_util_BS(bsModelsExcluded);
 var ret=this.ms.calculateStructuresAllExcept$javajs_util_BS$Z$Z$Z$Z$Z$I(bsModelsExcluded, asDSSP, doReport, dsspIgnoreHydrogen, true, false, version);
@@ -112,14 +105,14 @@ return this.getBioExt$().calculateAllstruts$org_jmol_viewer_Viewer$org_jmol_mode
 
 Clazz.newMeth(C$, 'getAllDefaultStructures$javajs_util_BS$javajs_util_BS', function (bsAtoms, bsModified) {
 var bsModels=p$1.modelsOf$javajs_util_BS$javajs_util_BS.apply(this, [bsAtoms, bsModified]);
-var ret=Clazz.new_($I$(5));
+var ret=Clazz.new_($I$(5,1));
 for (var i=bsModels.nextSetBit$I(0); i >= 0; i=bsModels.nextSetBit$I(i + 1)) if (this.ms.am[i].isBioModel && (this.ms.am[i]).defaultStructure != null  ) ret.append$S((this.ms.am[i]).defaultStructure);
 
 return ret.toString();
 });
 
 Clazz.newMeth(C$, 'getAllHeteroList$I', function (modelIndex) {
-var htFull=Clazz.new_($I$(6));
+var htFull=Clazz.new_($I$(6,1));
 var ok=false;
 for (var i=this.ms.mc; --i >= 0; ) if (modelIndex < 0 || i == modelIndex ) {
 var ht=this.ms.getInfo$I$S(i, "hetNames");
@@ -127,7 +120,7 @@ if (ht == null ) continue;
 ok=true;
 for (var entry, $entry = ht.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) {
 var key=entry.getKey$();
-htFull.put$TK$TV(key, entry.getValue$());
+htFull.put$O$O(key, entry.getValue$());
 }
 }
 return (ok ? htFull : null);
@@ -239,14 +232,14 @@ if (structure != null ) structure.setAtomBitsAndClear$javajs_util_BS$javajs_util
 }
 break;
 }
-if (i == 0) $I$(8).error$S("MISSING getAtomBits entry for " + $I$(9).nameOf$I(tokType));
+if (i == 0) $I$(8,"error$S",["MISSING getAtomBits entry for " + $I$(9).nameOf$I(tokType)]);
 return bs;
 });
 
 Clazz.newMeth(C$, 'getAtomBitsStr$I$S$javajs_util_BS', function (tokType, specInfo, bs) {
 switch (tokType) {
 default:
-return Clazz.new_($I$(3));
+return Clazz.new_($I$(3,1));
 case 1073741925:
 return p$1.getAnnotationBits$S$I$S.apply(this, ["domains", 1073741925, specInfo]);
 case 1073742189:
@@ -255,7 +248,7 @@ case 1073742128:
 return p$1.getAnnotationBits$S$I$S.apply(this, ["rna3d", 1073742128, specInfo]);
 case 1073741863:
 var s=specInfo;
-bs=Clazz.new_($I$(3));
+bs=Clazz.new_($I$(3,1));
 return (s.length$() % 2 != 0 ? bs : this.ms.getAtomBitsMDa$I$O$javajs_util_BS(1086324742, p$1.getAllBasePairBits$S.apply(this, [s]), bs));
 case 1111490587:
 return p$1.getAnnotationBits$S$I$S.apply(this, ["dssr", 1111490587, specInfo]);
@@ -287,26 +280,26 @@ for (var i=this.ms.ac; --i >= 0; ) if (Float.isNaN$F(atoms[i].group.getGroupPara
 }var at1=(bsAtoms == null  ? this.ms.ac : bsAtoms.length$()) - 1;
 var im0=atoms[at0].mi;
 var im1=atoms[at1].mi;
-var lstStr=Clazz.new_($I$(10));
-var map=Clazz.new_($I$(6));
-var cmd=Clazz.new_($I$(5));
+var lstStr=Clazz.new_($I$(10,1));
+var map=Clazz.new_($I$(6,1));
+var cmd=Clazz.new_($I$(5,1));
 for (var im=im0; im <= im1; im++) {
 if (!this.ms.am[im].isBioModel) continue;
 var m=this.ms.am[im];
 if (taintedOnly && !m.structureTainted ) continue;
-var bsA=Clazz.new_($I$(3));
+var bsA=Clazz.new_($I$(3,1));
 bsA.or$javajs_util_BS(m.bsAtoms);
 bsA.andNot$javajs_util_BS(m.bsAtomsDeleted);
 var i0=bsA.nextSetBit$I(0);
 if (i0 < 0) continue;
 if (scriptMode) {
-cmd.append$S("  structure none ").append$S($I$(11).eBS$javajs_util_BS(this.ms.getModelAtomBitSetIncludingDeleted$I$Z(im, false))).append$S("    \t# model=" + this.ms.getModelNumberDotted$I(im)).append$S(";\n");
+cmd.append$S("  structure none ").append$S($I$(11,"eBS$javajs_util_BS",[this.ms.getModelAtomBitSetIncludingDeleted$I$Z(im, false)])).append$S("    \t# model=" + this.ms.getModelNumberDotted$I(im)).append$S(";\n");
 }var ps;
 for (var i=i0; i >= 0; i=bsA.nextSetBit$I(i + 1)) {
 var a=atoms[i];
 if (!(Clazz.instanceOf(a.group, "org.jmol.modelsetbio.AlphaMonomer")) || (ps=(a.group).proteinStructure) == null   || map.containsKey$O(ps) ) continue;
-lstStr.addLast$TV(ps);
-map.put$TK$TV(ps, $I$(12).TRUE);
+lstStr.addLast$O(ps);
+map.put$O$O(ps, Boolean.TRUE);
 }
 }
 p$1.getStructureLines$javajs_util_BS$javajs_util_SB$javajs_util_Lst$org_jmol_c_STR$Z$I.apply(this, [bsAtoms, cmd, lstStr, $I$(7).HELIX, scriptMode, mode]);
@@ -316,7 +309,7 @@ return cmd.toString();
 });
 
 Clazz.newMeth(C$, 'getGroupsWithinAll$I$javajs_util_BS', function (nResidues, bs) {
-var bsResult=Clazz.new_($I$(3));
+var bsResult=Clazz.new_($I$(3,1));
 var bsCheck=this.ms.getIterativeModels$Z(false);
 for (var iModel=this.ms.mc; --iModel >= 0; ) if (bsCheck.get$I(iModel) && this.ms.am[iModel].isBioModel ) {
 var m=this.ms.am[iModel];
@@ -329,13 +322,13 @@ return bsResult;
 Clazz.newMeth(C$, 'getIdentifierOrNull$S', function (identifier) {
 var len=identifier.length$();
 var pt=0;
-while (pt < len && $I$(13).isLetter$C(identifier.charAt$I(pt)) )++pt;
+while (pt < len && $I$(12,"isLetter$C",[identifier.charAt$I(pt)]) )++pt;
 
 var bs=this.ms.getSpecNameOrNull$S$Z(identifier.substring$I$I(0, pt), false);
 if (pt == len) return bs;
-if (bs == null ) bs=Clazz.new_($I$(3));
+if (bs == null ) bs=Clazz.new_($I$(3,1));
 var pt0=pt;
-while (pt < len && $I$(13).isDigit$C(identifier.charAt$I(pt)) )++pt;
+while (pt < len && $I$(12,"isDigit$C",[identifier.charAt$I(pt)]) )++pt;
 
 var seqNumber=0;
 try {
@@ -349,7 +342,7 @@ throw nfe;
 }
 var insertionCode=" ";
 if (pt < len && identifier.charAt$I(pt) == "^" ) if (++pt < len) insertionCode=identifier.charAt$I(pt);
-var seqcode=$I$(14).getSeqcodeFor$I$C(seqNumber, insertionCode);
+var seqcode=$I$(13).getSeqcodeFor$I$C(seqNumber, insertionCode);
 var bsInsert=this.ms.getSeqcodeBits$I$Z(seqcode, false);
 if (bsInsert == null ) {
 if (insertionCode != " ") bsInsert=this.ms.getSeqcodeBits$I$Z(Character.toUpperCase$C(identifier.charAt$I(pt)).$c(), false);
@@ -432,7 +425,7 @@ if (g.getStrucNo$() > 1000) g.setStrucNo$I(++lastStrucNo[modelIndex]);
 Clazz.newMeth(C$, 'setAllStructureList$java_util_Map', function (structureList) {
 for (var iModel=this.ms.mc; --iModel >= 0; ) if (this.ms.am[iModel].isBioModel) {
 var m=this.ms.am[iModel];
-m.bioPolymers=$I$(15).arrayCopyObject$O$I(m.bioPolymers, m.bioPolymerCount);
+m.bioPolymers=$I$(14).arrayCopyObject$O$I(m.bioPolymers, m.bioPolymerCount);
 for (var i=m.bioPolymerCount; --i >= 0; ) {
 var bp=m.bioPolymers[i];
 if (Clazz.instanceOf(bp, "org.jmol.modelsetbio.AminoPolymer")) (bp).setStructureList$java_util_Map(structureList);
@@ -443,19 +436,19 @@ if (Clazz.instanceOf(bp, "org.jmol.modelsetbio.AminoPolymer")) (bp).setStructure
 Clazz.newMeth(C$, 'getAllBasePairBits$S', function (specInfo) {
 var bsA=null;
 var bsB=null;
-var vHBonds=Clazz.new_($I$(10));
+var vHBonds=Clazz.new_($I$(10,1));
 if (specInfo.length$() == 0) {
 bsA=bsB=this.vwr.getAllAtoms$();
 this.calcAllRasmolHydrogenBonds$javajs_util_BS$javajs_util_BS$javajs_util_Lst$Z$I$Z$javajs_util_BS$I(bsA, bsB, vHBonds, true, 1, false, null, 0);
 } else {
 for (var i=0; i < specInfo.length$(); ) {
-bsA=this.ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(specInfo.substring$I$I(i, ++i), null, Clazz.new_($I$(3)));
+bsA=this.ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(specInfo.substring$I$I(i, ++i), null, Clazz.new_($I$(3,1)));
 if (bsA.nextSetBit$I(0) < 0) continue;
-bsB=this.ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(specInfo.substring$I$I(i, ++i), null, Clazz.new_($I$(3)));
+bsB=this.ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(specInfo.substring$I$I(i, ++i), null, Clazz.new_($I$(3,1)));
 if (bsB.nextSetBit$I(0) < 0) continue;
 this.calcAllRasmolHydrogenBonds$javajs_util_BS$javajs_util_BS$javajs_util_Lst$Z$I$Z$javajs_util_BS$I(bsA, bsB, vHBonds, true, 1, false, null, 0);
 }
-}var bsAtoms=Clazz.new_($I$(3));
+}var bsAtoms=Clazz.new_($I$(3,1));
 for (var i=vHBonds.size$(); --i >= 0; ) {
 var b=vHBonds.get$I(i);
 bsAtoms.set$I(b.atom1.i);
@@ -467,8 +460,8 @@ return bsAtoms;
 Clazz.newMeth(C$, 'getAllUnitIds$S$javajs_util_BS$javajs_util_BS', function (specInfo, bsSelected, bsResult) {
 var maps=this.unitIdSets;
 if (maps == null ) {
-maps=this.unitIdSets=Clazz.array($I$(16), [7]);
-for (var i=0; i < 7; i++) maps[i]=Clazz.new_($I$(6));
+maps=this.unitIdSets=Clazz.array($I$(15), [7]);
+for (var i=0; i < 7; i++) maps[i]=Clazz.new_($I$(6,1));
 
 for (var i=this.ms.mc; --i >= 0; ) {
 var m=this.ms.am[i];
@@ -480,8 +473,8 @@ p$1.checkMap$java_util_Map$S$javajs_util_BS.apply(this, [maps[0], num, m.bsAtoms
 }
 }var bsModelChain=null;
 var lastModelChain=null;
-var bsTemp=Clazz.new_($I$(3));
-var units=$I$(13).getTokens$S($I$(13).replaceAllCharacters$S$S$S(specInfo, ", \t\n[]\"=", " "));
+var bsTemp=Clazz.new_($I$(3,1));
+var units=$I$(12,"getTokens$S",[$I$(12,"replaceAllCharacters$S$S$S",[specInfo, ", \t\n[]\"=", " "])]);
 var ptrs=Clazz.array(Integer.TYPE, [8]);
 for (var i=units.length; --i >= 0; ) {
 var unit=units[i] + "|";
@@ -512,7 +505,7 @@ return bsResult;
 Clazz.newMeth(C$, 'checkMap$java_util_Map$S$javajs_util_BS', function (map, key, bsAtoms) {
 var bs=$I$(2).copy$javajs_util_BS(bsAtoms);
 var bs0=map.get$O(key);
-if (bs0 == null ) map.put$TK$TV(key, bs0=bs);
+if (bs0 == null ) map.put$O$O(key, bs0=bs);
  else bs0.or$javajs_util_BS(bs);
 return bs0;
 }, p$1);
@@ -528,13 +521,13 @@ case 1073742357:
 o=Integer.valueOf$I(this.vwr.getChainID$S$Z(key, false));
 break;
 case 1094715412:
-o=Integer.valueOf$I($I$(13).parseInt$S(key));
+o=Integer.valueOf$I($I$(12).parseInt$S(key));
 break;
 case 5:
 o=Integer.valueOf$I(key.charAt$I(0).$c());
 break;
 case 1094717448:
-bs=this.ms.getAtomBitsMDa$I$O$javajs_util_BS(tok=1073742355, null, Clazz.new_($I$(3)));
+bs=this.ms.getAtomBitsMDa$I$O$javajs_util_BS(tok=1073742355, null, Clazz.new_($I$(3,1)));
 case 1086326786:
 o=key;
 break;
@@ -542,13 +535,13 @@ case 1073742355:
 o=(key.length$() == 0 ? null : key);
 break;
 }
-map.put$TK$TV(key, bs=this.ms.getAtomBitsMDa$I$O$javajs_util_BS(tok, o, (bs == null  ? Clazz.new_($I$(3)) : bs)));
+map.put$O$O(key, bs=this.ms.getAtomBitsMDa$I$O$javajs_util_BS(tok, o, (bs == null  ? Clazz.new_($I$(3,1)) : bs)));
 }bsTemp.and$javajs_util_BS(bs);
 return (bsTemp.nextSetBit$I(0) >= 0);
 }, p$1);
 
 Clazz.newMeth(C$, 'getAnnotationBits$S$I$S', function (name, tok, specInfo) {
-var bs=Clazz.new_($I$(3));
+var bs=Clazz.new_($I$(3,1));
 var pa=this.vwr.getAnnotationParser$Z(name.equals$O("dssr"));
 var ann;
 for (var i=this.ms.mc; --i >= 0; ) if ((ann=this.ms.getInfo$I$S(i, name)) != null ) bs.or$javajs_util_BS(pa.getAtomBits$org_jmol_viewer_Viewer$S$O$java_util_Map$I$I$javajs_util_BS(this.vwr, specInfo, (this.ms.am[i]).getCachedAnnotationMap$S$O(name + " V ", ann), this.ms.am[i].dssrCache, tok, i, this.ms.am[i].bsAtoms));
@@ -562,7 +555,7 @@ var nHelix=0;
 var nSheet=0;
 var nTurn=0;
 var sid=null;
-var bs=Clazz.new_($I$(3));
+var bs=Clazz.new_($I$(3,1));
 var n=0;
 for (var i=0, ns=lstStr.size$(); i < ns; i++) {
 var ps=lstStr.get$I(i);
@@ -591,7 +584,7 @@ var nx;
 switch (type) {
 case $I$(7).HELIX:
 nx=++nHelix;
-sid=$I$(13).formatStringI$S$S$I("%3N %3N", "N", nx);
+sid=$I$(12).formatStringI$S$S$I("%3N %3N", "N", nx);
 str="HELIX  %ID %3GROUPA %1CA %4RESA  %3GROUPB %1CB %4RESB";
 var stype=null;
 switch (subtype) {
@@ -610,24 +603,24 @@ if (stype != null ) str += stype;
 break;
 case $I$(7).SHEET:
 nx=++nSheet;
-sid=$I$(13).formatStringI$S$S$I("%3N %3A 0", "N", nx);
-sid=$I$(13).formatStringS$S$S$S(sid, "A", "S" + nx);
+sid=$I$(12).formatStringI$S$S$I("%3N %3A 0", "N", nx);
+sid=$I$(12).formatStringS$S$S$S(sid, "A", "S" + nx);
 str="SHEET  %ID %3GROUPA %1CA%4RESA  %3GROUPB %1CB%4RESB";
 break;
 case $I$(7).TURN:
 default:
 nx=++nTurn;
-sid=$I$(13).formatStringI$S$S$I("%3N %3N", "N", nx);
+sid=$I$(12).formatStringI$S$S$I("%3N %3N", "N", nx);
 str="TURN   %ID %3GROUPA %1CA%4RESA  %3GROUPB %1CB%4RESB";
 break;
 }
-str=$I$(13).formatStringS$S$S$S(str, "ID", sid);
-str=$I$(13).formatStringS$S$S$S(str, "GROUPA", m1.getGroup3$());
-str=$I$(13).formatStringS$S$S$S(str, "CA", m1.getLeadAtom$().getChainIDStr$());
-str=$I$(13).formatStringI$S$S$I(str, "RESA", res1);
-str=$I$(13).formatStringS$S$S$S(str, "GROUPB", m2.getGroup3$());
-str=$I$(13).formatStringS$S$S$S(str, "CB", m2.getLeadAtom$().getChainIDStr$());
-str=$I$(13).formatStringI$S$S$I(str, "RESB", res2);
+str=$I$(12).formatStringS$S$S$S(str, "ID", sid);
+str=$I$(12,"formatStringS$S$S$S",[str, "GROUPA", m1.getGroup3$()]);
+str=$I$(12,"formatStringS$S$S$S",[str, "CA", m1.getLeadAtom$().getChainIDStr$()]);
+str=$I$(12).formatStringI$S$S$I(str, "RESA", res1);
+str=$I$(12,"formatStringS$S$S$S",[str, "GROUPB", m2.getGroup3$()]);
+str=$I$(12,"formatStringS$S$S$S",[str, "CB", m2.getLeadAtom$().getChainIDStr$()]);
+str=$I$(12).formatStringI$S$S$I(str, "RESB", res2);
 cmd.append$S(str);
 if (showMode) cmd.append$S(" strucno= ").appendI$I(ps.strucNo);
 cmd.append$S("\n");
@@ -663,4 +656,4 @@ return this.getBioExt$().getAminoAcidValenceAndCharge$S$S$IA(s, atomName, aaRet)
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

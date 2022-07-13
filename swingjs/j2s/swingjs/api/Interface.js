@@ -1,15 +1,15 @@
 (function(){var P$=Clazz.newPackage("swingjs.api"),I$=[];
-var C$=Clazz.newClass(P$, "Interface");
-C$.instances=null;
+/*c*/var C$=Clazz.newClass(P$, "Interface");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instances="";
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getInstanceWithParams$S$ClassA$OA', function (name, classes, params) {
+C$.$fields$=[[]
+,['S',['instances']]]
+
+Clazz.newMeth(C$, 'getInstanceWithParams$S$ClassA$OA',  function (name, classes, params) {
 try {
 var cl=Clazz.forName(name);
 return cl.getConstructor$ClassA(classes).newInstance$OA(params);
@@ -22,15 +22,15 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'getInstance$S$Z', function (name, isQuiet) {
+Clazz.newMeth(C$, 'getInstance$S$Z',  function (name, isQuiet) {
 var x=null;
 {
-Clazz._isQuiet = isQuiet;
+Clazz._isQuietLoad = isQuiet;
 }
 try {
 if (!isQuiet && C$.instances.indexOf$S(name + ";") <= 0 ) {
 System.out.println$S("swingjs.api.Interface creating instance of " + name);
-C$.instances += name + ";";
+C$.instances+=name + ";";
 }var y=Clazz.forName(name);
 if (y != null ) x=y.newInstance$();
 } catch (e) {
@@ -40,12 +40,16 @@ if (e.stack)System.out.println(e.stack);
 }
 } finally {
 {
-Clazz._isQuiet = false;
+Clazz._isQuietLoad = false;
 }
 }
 return x;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.instances="";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:46 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:21 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,43 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BioPolymer", null, null, 'org.jmol.modelset.Structure');
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.BS']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BioPolymer", null, null, 'org.jmol.modelset.Structure');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.model=null;
-this.monomers=null;
-this.hasStructure=false;
-this.leadMidpoints=null;
-this.leadPoints=null;
-this.controlPoints=null;
-this.wingVectors=null;
-this.leadAtomIndices=null;
-this.type=0;
-this.bioPolymerIndexInModel=0;
-this.monomerCount=0;
-this.cyclicFlag=0;
-this.invalidLead=false;
-this.invalidControl=false;
-this.sheetSmoothing=0;
-this.hasWingPoints=false;
-this.reversed=null;
-this.twistedSheets=false;
-this.unitVectorX=null;
-this.selectedMonomerCount=0;
-this.bsSelectedMonomers=null;
-this.haveParameters=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.type=0;
 this.invalidControl=false;
 this.unitVectorX=$I$(1).new3$F$F$F(1, 0, 0);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['hasStructure','invalidLead','invalidControl','hasWingPoints','twistedSheets','haveParameters'],'F',['sheetSmoothing'],'I',['type','bioPolymerIndexInModel','monomerCount','cyclicFlag','selectedMonomerCount'],'O',['model','org.jmol.modelset.Model','monomers','org.jmol.modelsetbio.Monomer[]','leadMidpoints','javajs.util.P3[]','+leadPoints','+controlPoints','wingVectors','javajs.util.V3[]','leadAtomIndices','int[]','reversed','javajs.util.BS','unitVectorX','javajs.util.V3','bsSelectedMonomers','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_modelsetbio_MonomerA', function (monomers) {
@@ -149,7 +124,7 @@ return (!isTraceAlpha ? this.leadMidpoints : sheetSmoothing == 0  ? this.leadPoi
 Clazz.newMeth(C$, 'getControlPoints2$F', function (sheetSmoothing) {
 if (!this.invalidControl && sheetSmoothing == this.sheetSmoothing  ) return this.controlPoints;
 this.getLeadPoints$();
-var v=Clazz.new_($I$(1));
+var v=Clazz.new_($I$(1,1));
 if (this.controlPoints == null ) this.controlPoints=Clazz.array($I$(2), [this.monomerCount + 1]);
 if (!Float.isNaN$F(sheetSmoothing)) this.sheetSmoothing=sheetSmoothing;
 for (var i=0; i < this.monomerCount; i++) this.controlPoints[i]=this.getControlPoint$I$javajs_util_V3(i, v);
@@ -177,10 +152,10 @@ this.sheetSmoothing=1.4E-45;
 }if (this.reversed == null ) this.reversed=$I$(3).newN$I(this.monomerCount);
  else this.reversed.clearAll$();
 this.twistedSheets=this.model.ms.vwr.getBoolean$I(603979968);
-var vectorA=Clazz.new_($I$(1));
-var vectorB=Clazz.new_($I$(1));
-var vectorC=Clazz.new_($I$(1));
-var vectorD=Clazz.new_($I$(1));
+var vectorA=Clazz.new_($I$(1,1));
+var vectorB=Clazz.new_($I$(1,1));
+var vectorC=Clazz.new_($I$(1,1));
+var vectorD=Clazz.new_($I$(1,1));
 var leadPointPrev;
 var leadPoint;
 this.leadMidpoints[0]=p$1.getInitiatorPoint.apply(this, []);
@@ -189,7 +164,7 @@ var previousVectorD=null;
 for (var i=1; i < this.monomerCount; ++i) {
 leadPointPrev=leadPoint;
 this.leadPoints[i]=leadPoint=this.getLeadPoint$I(i);
-var midpoint=Clazz.new_($I$(2));
+var midpoint=Clazz.new_($I$(2,1));
 midpoint.ave$javajs_util_T3$javajs_util_T3(leadPoint, leadPointPrev);
 this.leadMidpoints[i]=midpoint;
 if (this.hasWingPoints) {
@@ -236,7 +211,7 @@ return this.selectedMonomerCount;
 
 Clazz.newMeth(C$, 'calcSelectedMonomersCount$javajs_util_BS', function (bsSelected) {
 this.selectedMonomerCount=0;
-if (this.bsSelectedMonomers == null ) this.bsSelectedMonomers=Clazz.new_($I$(3));
+if (this.bsSelectedMonomers == null ) this.bsSelectedMonomers=Clazz.new_($I$(3,1));
 this.bsSelectedMonomers.clearAll$();
 for (var i=0; i < this.monomerCount; i++) {
 if (this.monomers[i].isSelected$javajs_util_BS(bsSelected)) {
@@ -254,13 +229,13 @@ var points=this.getControlPoints$Z$F$Z(isTraceAlpha, sheetSmoothing, false);
 var vectors=this.getWingVectors$();
 var count=this.monomerCount;
 for (var j=0; j < count; j++) if (bs.get$I(this.monomers[j].leadAtomIndex)) {
-vList.addLast$TV(Clazz.array($I$(2), -1, [points[j], $I$(2).newP$javajs_util_T3(vectors[j])]));
+vList.addLast$O(Clazz.array($I$(2), -1, [points[j], $I$(2).newP$javajs_util_T3(vectors[j])]));
 last=j;
 } else if (last != 2147483646) {
-vList.addLast$TV(Clazz.array($I$(2), -1, [points[j], $I$(2).newP$javajs_util_T3(vectors[j])]));
+vList.addLast$O(Clazz.array($I$(2), -1, [points[j], $I$(2).newP$javajs_util_T3(vectors[j])]));
 last=2147483646;
 }
-if (last + 1 < count) vList.addLast$TV(Clazz.array($I$(2), -1, [points[last + 1], $I$(2).newP$javajs_util_T3(vectors[last + 1])]));
+if (last + 1 < count) vList.addLast$O(Clazz.array($I$(2), -1, [points[last + 1], $I$(2).newP$javajs_util_T3(vectors[last + 1])]));
 return last;
 });
 
@@ -302,7 +277,7 @@ return (this.monomerCount > 0 && Clazz.instanceOf(this, "org.jmol.modelsetbio.Nu
 });
 
 Clazz.newMeth(C$, 'getRangeGroups$I$javajs_util_BS$javajs_util_BS', function (nResidues, bsAtoms, bsResult) {
-var bsTemp=Clazz.new_($I$(3));
+var bsTemp=Clazz.new_($I$(3,1));
 for (var i=0; i < this.monomerCount; i++) {
 if (!this.monomers[i].isSelected$javajs_util_BS(bsAtoms)) continue;
 bsTemp.setBits$I$I(Math.max(0, i - nResidues), i + nResidues + 1 );
@@ -323,4 +298,4 @@ Clazz.newMeth(C$, 'isCyclic$', function () {
 return ((this.cyclicFlag == 0 ? (this.cyclicFlag=(this.monomerCount >= 4 && this.monomers[0].isConnectedAfter$org_jmol_modelsetbio_Monomer(this.monomers[this.monomerCount - 1]) ) ? 1 : -1) : this.cyclicFlag) == 1);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

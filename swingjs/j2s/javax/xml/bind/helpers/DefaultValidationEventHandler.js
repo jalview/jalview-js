@@ -1,13 +1,12 @@
-(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),p$1={},I$=[[0,'javax.xml.bind.helpers.Messages','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultValidationEventHandler", null, null, 'javax.xml.bind.ValidationEventHandler');
+(function(){var P$=Clazz.newPackage("javax.xml.bind.helpers"),p$1={},I$=[[0,'javax.xml.bind.helpers.Messages','StringBuffer']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultValidationEventHandler", null, null, 'javax.xml.bind.ValidationEventHandler');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['handleEvent$javax_xml_bind_ValidationEvent','handleEvent$'], function (event) {
+Clazz.newMeth(C$, 'handleEvent$javax_xml_bind_ValidationEvent',  function (event) {
 if (event == null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }var severity=null;
@@ -26,15 +25,15 @@ severity=$I$(1).format$S("DefaultValidationEventHandler.FatalError");
 retVal=false;
 break;
 default:
-Clazz.assert(C$, this, function(){return false}, function(){return $I$(1).format$S$O("DefaultValidationEventHandler.UnrecognizedSeverity", new Integer(event.getSeverity$()))});
+Clazz.assert(C$, this, function(){return false}, function(){return $I$(1,"format$S$O",["DefaultValidationEventHandler.UnrecognizedSeverity", Integer.valueOf$I(event.getSeverity$())])});
 }
 var location=p$1.getLocation$javax_xml_bind_ValidationEvent.apply(this, [event]);
-System.out.println$S($I$(1).format$S$O$O$O("DefaultValidationEventHandler.SeverityMessage", severity, event.getMessage$(), location));
+System.out.println$S($I$(1,"format$S$O$O$O",["DefaultValidationEventHandler.SeverityMessage", severity, event.getMessage$(), location]));
 return retVal;
 });
 
-Clazz.newMeth(C$, 'getLocation$javax_xml_bind_ValidationEvent', function (event) {
-var msg=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'getLocation$javax_xml_bind_ValidationEvent',  function (event) {
+var msg=Clazz.new_($I$(2,1));
 var locator=event.getLocator$();
 if (locator != null ) {
 var url=locator.getURL$();
@@ -52,8 +51,11 @@ msg.append$S(" node: " + node.toString());
 msg.append$S($I$(1).format$S("DefaultValidationEventHandler.LocationUnavailable"));
 }return msg.toString();
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:55 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

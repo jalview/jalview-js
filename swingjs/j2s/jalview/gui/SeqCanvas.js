@@ -1,60 +1,43 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'jalview.gui.FeatureRenderer','jalview.gui.SequenceRenderer','java.awt.BorderLayout','jalview.gui.PaintRefresher','java.awt.Color','jalview.renderer.ScaleRenderer','jalview.util.Comparison','java.awt.image.BufferedImage','java.awt.RenderingHints','jalview.gui.AnnotationPanel','java.awt.BasicStroke']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SeqCanvas", null, 'javax.swing.JPanel', 'jalview.viewmodel.ViewportListenerI');
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'jalview.gui.FeatureRenderer','jalview.gui.SequenceRenderer','java.awt.BorderLayout','jalview.gui.PaintRefresher','java.awt.Color','jalview.renderer.ScaleRenderer','jalview.util.Comparison','java.awt.image.BufferedImage','java.awt.RenderingHints','jalview.gui.AnnotationPanel','java.awt.BasicStroke']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SeqCanvas", null, 'javax.swing.JPanel', 'jalview.viewmodel.ViewportListenerI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fr=null;
-this.img=null;
-this.av=null;
-this.cursorX=0;
-this.cursorY=0;
-this.seqRdr=null;
-this.fastPaint=false;
-this.fastpainting=false;
-this.annotations=null;
-this.labelWidthEast=0;
-this.labelWidthWest=0;
-this.wrappedSpaceAboveAlignment=0;
-this.wrappedRepeatHeightPx=0;
-this.wrappedVisibleWidths=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.cursorX=0;
 this.cursorY=0;
 this.fastPaint=false;
 this.fastpainting=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel', function (ap) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['Z',['fastPaint','fastpainting'],'I',['cursorX','cursorY','labelWidthEast','labelWidthWest','wrappedSpaceAboveAlignment','wrappedRepeatHeightPx','wrappedVisibleWidths'],'O',['fr','jalview.gui.FeatureRenderer','img','java.awt.image.BufferedImage','av','jalview.gui.AlignViewport','seqRdr','jalview.gui.SequenceRenderer','annotations','jalview.gui.AnnotationPanel']]]
+
+Clazz.newMeth(C$, 'c$$jalview_gui_AlignmentPanel',  function (ap) {
+Clazz.super_(C$, this);
 this.av=ap.av;
-this.fr=Clazz.new_($I$(1).c$$jalview_gui_AlignmentPanel,[ap]);
-this.seqRdr=Clazz.new_($I$(2).c$$jalview_api_AlignViewportI,[this.av]);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3)));
-$I$(4).Register$java_awt_Component$S(this, this.av.getSequenceSetId$());
+this.fr=Clazz.new_($I$(1,1).c$$jalview_gui_AlignmentPanel,[ap]);
+this.seqRdr=Clazz.new_($I$(2,1).c$$jalview_api_AlignViewportI,[this.av]);
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3,1)));
+$I$(4,"Register$java_awt_Component$S",[this, this.av.getSequenceSetId$()]);
 this.setBackground$java_awt_Color($I$(5).white);
 this.av.getRanges$().addPropertyChangeListener$jalview_viewmodel_ViewportListenerI(this);
 }, 1);
 
-Clazz.newMeth(C$, 'getSequenceRenderer$', function () {
+Clazz.newMeth(C$, 'getSequenceRenderer$',  function () {
 return this.seqRdr;
 });
 
-Clazz.newMeth(C$, 'getFeatureRenderer$', function () {
+Clazz.newMeth(C$, 'getFeatureRenderer$',  function () {
 return this.fr;
 });
 
-Clazz.newMeth(C$, 'drawNorthScale$java_awt_Graphics$I$I$I', function (g, startx, endx, ypos) {
+Clazz.newMeth(C$, 'drawNorthScale$java_awt_Graphics$I$I$I',  function (g, startx, endx, ypos) {
 var charHeight=this.av.getCharHeight$();
 var charWidth=this.av.getCharWidth$();
 g.setColor$java_awt_Color($I$(5).white);
 g.fillRect$I$I$I$I(0, ypos - charHeight - (charHeight/2|0) , this.getWidth$(), (charHeight * 3/2|0) + 2);
 g.setColor$java_awt_Color($I$(5).black);
-var marks=Clazz.new_($I$(6)).calculateMarks$jalview_api_AlignViewportI$I$I(this.av, startx, endx);
+var marks=Clazz.new_($I$(6,1)).calculateMarks$jalview_api_AlignViewportI$I$I(this.av, startx, endx);
 for (var mark, $mark = marks.iterator$(); $mark.hasNext$()&&((mark=($mark.next$())),1);) {
 var mpos=mark.column;
 if (mpos < 0) {
@@ -68,7 +51,7 @@ g.drawLine$I$I$I$I(xpos, (ypos + 2) - ((charHeight/2|0)), xpos, ypos - 2);
 }}
 }, p$1);
 
-Clazz.newMeth(C$, 'drawVerticalScale$java_awt_Graphics$I$I$I$Z', function (g, startx, endx, ypos, left) {
+Clazz.newMeth(C$, 'drawVerticalScale$java_awt_Graphics$I$I$I$Z',  function (g, startx, endx, ypos, left) {
 var charHeight=this.av.getCharHeight$();
 var charWidth=this.av.getCharWidth$();
 var yPos=ypos + charHeight;
@@ -84,13 +67,13 @@ var seq=this.av.getAlignment$().getSequenceAt$I(i);
 var index=left ? startX : endX;
 var value=-1;
 while (index >= startX && index <= endX ){
-if (!$I$(7).isGap$C(seq.getCharAt$I(index))) {
+if (!$I$(7,"isGap$C",[seq.getCharAt$I(index)])) {
 value=seq.findPosition$I(index);
 break;
 }if (left) {
-index++;
+++index;
 } else {
-index--;
+--index;
 }}
 g.setColor$java_awt_Color($I$(5).white);
 var y=(yPos + (i * charHeight)) - ((charHeight/5|0));
@@ -106,7 +89,7 @@ g.drawString$S$I$I(valueAsString, xOffset, y);
 }}
 });
 
-Clazz.newMeth(C$, 'fastPaint$I$I', function (horizontal, vertical) {
+Clazz.newMeth(C$, 'fastPaint$I$I',  function (horizontal, vertical) {
 if (this.fastpainting || this.img == null  ) {
 return;
 }this.fastpainting=true;
@@ -150,7 +133,7 @@ this.fastpainting=false;
 }
 });
 
-Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics',  function (g) {
 var charHeight=this.av.getCharHeight$();
 var charWidth=this.av.getCharWidth$();
 var width=this.getWidth$();
@@ -172,7 +155,7 @@ p$1.drawSelectionGroup$java_awt_Graphics2D$I$I$I$I.apply(this, [g, startRes, end
 this.fastPaint=false;
 } else {
 if (this.img == null  || width != this.img.getWidth$()  || height != this.img.getHeight$() ) {
-this.img=Clazz.new_($I$(8).c$$I$I$I,[width, height, 1]);
+this.img=Clazz.new_($I$(8,1).c$$I$I$I,[width, height, 1]);
 }var gg=this.img.getGraphics$();
 gg.setFont$java_awt_Font(this.av.getFont$());
 if (this.av.antiAlias) {
@@ -180,7 +163,7 @@ gg.setRenderingHint$java_awt_RenderingHints_Key$O($I$(9).KEY_ANTIALIASING, $I$(9
 }gg.setColor$java_awt_Color($I$(5).white);
 gg.fillRect$I$I$I$I(0, 0, this.img.getWidth$(), this.img.getHeight$());
 if (this.av.getWrapAlignment$()) {
-this.drawWrappedPanel$java_awt_Graphics$I$I$I(gg, width, height, ranges.getStartRes$());
+this.drawWrappedPanel$java_awt_Graphics$I$I$I(gg, this.getWidth$(), this.getHeight$(), ranges.getStartRes$());
 } else {
 this.drawPanel$java_awt_Graphics$I$I$I$I$I(gg, startRes, endRes, startSeq, endSeq, 0);
 }p$1.drawSelectionGroup$java_awt_Graphics2D$I$I$I$I.apply(this, [gg, startRes, endRes, startSeq, endSeq]);
@@ -190,19 +173,19 @@ gg.dispose$();
 p$1.drawCursor$java_awt_Graphics$I$I$I$I.apply(this, [g, startRes, endRes, startSeq, endSeq]);
 }});
 
-Clazz.newMeth(C$, 'drawPanelForPrinting$java_awt_Graphics$I$I$I$I', function (g1, startRes, endRes, startSeq, endSeq) {
+Clazz.newMeth(C$, 'drawPanelForPrinting$java_awt_Graphics$I$I$I$I',  function (g1, startRes, endRes, startSeq, endSeq) {
 this.drawPanel$java_awt_Graphics$I$I$I$I$I(g1, startRes, endRes, startSeq, endSeq, 0);
 p$1.drawSelectionGroup$java_awt_Graphics2D$I$I$I$I.apply(this, [g1, startRes, endRes, startSeq, endSeq]);
 });
 
-Clazz.newMeth(C$, 'drawWrappedPanelForPrinting$java_awt_Graphics$I$I$I', function (g, canvasWidth, canvasHeight, startRes) {
+Clazz.newMeth(C$, 'drawWrappedPanelForPrinting$java_awt_Graphics$I$I$I',  function (g, canvasWidth, canvasHeight, startRes) {
 this.drawWrappedPanel$java_awt_Graphics$I$I$I(g, canvasWidth, canvasHeight, startRes);
 var group=this.av.getSelectionGroup$();
 if (group != null ) {
 p$1.drawWrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I.apply(this, [g, group, canvasWidth, canvasHeight, startRes]);
 }});
 
-Clazz.newMeth(C$, 'getWrappedCanvasWidth$I', function (canvasWidth) {
+Clazz.newMeth(C$, 'getWrappedCanvasWidth$I',  function (canvasWidth) {
 var charWidth=this.av.getCharWidth$();
 var fm=this.getFontMetrics$java_awt_Font(this.av.getFont$());
 var labelWidth=0;
@@ -213,7 +196,7 @@ this.labelWidthWest=this.av.getScaleLeftWrapped$() ? labelWidth : 0;
 return ((canvasWidth - this.labelWidthEast - this.labelWidthWest )/charWidth|0);
 });
 
-Clazz.newMeth(C$, 'getLabelWidth$java_awt_FontMetrics', function (fm) {
+Clazz.newMeth(C$, 'getLabelWidth$java_awt_FontMetrics',  function (fm) {
 var maxWidth=0;
 var alignment=this.av.getAlignment$();
 for (var i=0; i < alignment.getHeight$(); i++) {
@@ -221,12 +204,12 @@ maxWidth=Math.max(maxWidth, alignment.getSequenceAt$I(i).getEnd$());
 }
 var length=0;
 for (var i=maxWidth; i > 0; i=(i/(10)|0)) {
-length++;
+++length;
 }
 return fm.stringWidth$S("0000000000".substring$I$I(0, length)) + this.av.getCharWidth$();
 });
 
-Clazz.newMeth(C$, 'drawWrappedPanel$java_awt_Graphics$I$I$I', function (g, canvasWidth, canvasHeight, startColumn) {
+Clazz.newMeth(C$, 'drawWrappedPanel$java_awt_Graphics$I$I$I',  function (g, canvasWidth, canvasHeight, startColumn) {
 var wrappedWidthInResidues=this.calculateWrappedGeometry$I$I(canvasWidth, canvasHeight);
 this.av.setWrappedWidth$I(wrappedWidthInResidues);
 var ranges=this.av.getRanges$();
@@ -241,12 +224,12 @@ var endColumn=Math.min(maxWidth, start + wrappedWidthInResidues - 1);
 this.drawWrappedWidth$java_awt_Graphics$I$I$I$I(g, ypos, start, endColumn, canvasHeight);
 ypos+=this.wrappedRepeatHeightPx;
 start+=wrappedWidthInResidues;
-currentWidth++;
+++currentWidth;
 }
 this.drawWrappedDecorators$java_awt_Graphics$I(g, startColumn);
 });
 
-Clazz.newMeth(C$, 'calculateWrappedGeometry$I$I', function (canvasWidth, canvasHeight) {
+Clazz.newMeth(C$, 'calculateWrappedGeometry$I$I',  function (canvasWidth, canvasHeight) {
 var charHeight=this.av.getCharHeight$();
 this.wrappedSpaceAboveAlignment=charHeight * (this.av.getScaleAboveWrapped$() ? 2 : 1);
 this.wrappedRepeatHeightPx=this.wrappedSpaceAboveAlignment;
@@ -258,18 +241,19 @@ this.wrappedRepeatHeightPx+=3;
 this.wrappedVisibleWidths=(canvasHeight/this.wrappedRepeatHeightPx|0);
 var remainder=canvasHeight % this.wrappedRepeatHeightPx;
 if (remainder >= (this.wrappedSpaceAboveAlignment + charHeight)) {
-this.wrappedVisibleWidths++;
+++this.wrappedVisibleWidths;
 }var wrappedWidthInResidues=this.getWrappedCanvasWidth$I(canvasWidth);
+this.av.setWrappedWidth$I(wrappedWidthInResidues);
 var xMax=ranges.getVisibleAlignmentWidth$();
 var startToEnd=xMax - ranges.getStartRes$();
 var maxWidths=(startToEnd/wrappedWidthInResidues|0);
 if (startToEnd % wrappedWidthInResidues > 0) {
-maxWidths++;
+++maxWidths;
 }this.wrappedVisibleWidths=Math.min(this.wrappedVisibleWidths, maxWidths);
 return wrappedWidthInResidues;
 });
 
-Clazz.newMeth(C$, 'drawWrappedWidth$java_awt_Graphics$I$I$I$I', function (g, ypos, startColumn, endColumn, canvasHeight) {
+Clazz.newMeth(C$, 'drawWrappedWidth$java_awt_Graphics$I$I$I$I',  function (g, ypos, startColumn, endColumn, canvasHeight) {
 var ranges=this.av.getRanges$();
 var viewportWidth=ranges.getViewportWidth$();
 var endx=Math.min(startColumn + viewportWidth - 1, endColumn);
@@ -284,13 +268,13 @@ if (this.av.isShowAnnotation$()) {
 var yShift=cHeight + ypos + 3 ;
 g.translate$I$I(0, yShift);
 if (this.annotations == null ) {
-this.annotations=Clazz.new_($I$(10).c$$jalview_gui_AlignViewport,[this.av]);
+this.annotations=Clazz.new_($I$(10,1).c$$jalview_gui_AlignViewport,[this.av]);
 }this.annotations.renderer.drawComponent$jalview_renderer_AwtRenderPanelI$jalview_api_AlignViewportI$java_awt_Graphics$I$I$I(this.annotations, this.av, g, -1, startColumn, endx + 1);
 g.translate$I$I(0, -yShift);
 }g.translate$I$I(-xOffset, 0);
 });
 
-Clazz.newMeth(C$, 'drawWrappedDecorators$java_awt_Graphics$I', function (g, startColumn) {
+Clazz.newMeth(C$, 'drawWrappedDecorators$java_awt_Graphics$I',  function (g, startColumn) {
 var charWidth=this.av.getCharWidth$();
 g.setFont$java_awt_Font(this.av.getFont$());
 g.setColor$java_awt_Color($I$(5).black);
@@ -322,11 +306,11 @@ this.drawHiddenColumnMarkers$java_awt_Graphics$I$I$I(g, ypos, startCol, endColum
 }g.translate$I$I(-this.labelWidthWest, 0);
 ypos+=this.wrappedRepeatHeightPx;
 startCol+=viewportWidth;
-widthsDrawn++;
+++widthsDrawn;
 }
 });
 
-Clazz.newMeth(C$, 'drawHiddenColumnMarkers$java_awt_Graphics$I$I$I', function (g, ypos, startColumn, endColumn) {
+Clazz.newMeth(C$, 'drawHiddenColumnMarkers$java_awt_Graphics$I$I$I',  function (g, ypos, startColumn, endColumn) {
 var charHeight=this.av.getCharHeight$();
 var charWidth=this.av.getCharWidth$();
 g.setColor$java_awt_Color($I$(5).blue);
@@ -334,7 +318,7 @@ var res;
 var hidden=this.av.getAlignment$().getHiddenColumns$();
 var it=hidden.getStartRegionIterator$I$I(startColumn, endColumn);
 while (it.hasNext$()){
-res=(it.next$()).intValue$() - startColumn;
+res=((it.next$()).$c() - startColumn)|0;
 if (res < 0 || res > endColumn - startColumn + 1 ) {
 continue;
 }var xMiddle=res * charWidth;
@@ -345,42 +329,36 @@ g.fillPolygon$IA$IA$I(xPoints, yPoints, 3);
 }
 });
 
-Clazz.newMeth(C$, 'drawWrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I', function (g, group, canvasWidth, canvasHeight, startRes) {
-var charHeight=this.av.getCharHeight$();
-var charWidth=this.av.getCharWidth$();
-var hgap=charHeight;
-if (this.av.getScaleAboveWrapped$()) {
-hgap+=charHeight;
-}var cWidth=((canvasWidth - this.labelWidthEast - this.labelWidthWest )/charWidth|0);
-var cHeight=this.av.getAlignment$().getHeight$() * charHeight;
-var startx=startRes;
-var endx;
-var ypos=hgap;
-var maxwidth=this.av.getAlignment$().getVisibleWidth$();
-g.setStroke$java_awt_Stroke(Clazz.new_($I$(11).c$$F$I$I$F$FA$F,[1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0]));
+Clazz.newMeth(C$, 'drawWrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I',  function (g, group, canvasWidth, canvasHeight, startRes) {
+g.setStroke$java_awt_Stroke(Clazz.new_([1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0],$I$(11,1).c$$F$I$I$F$FA$F));
 g.setColor$java_awt_Color($I$(5).RED);
+var charWidth=this.av.getCharWidth$();
+var cWidth=((canvasWidth - this.labelWidthEast - this.labelWidthWest )/charWidth|0);
+var startx=startRes;
+var maxwidth=this.av.getAlignment$().getVisibleWidth$();
+var ypos=this.wrappedSpaceAboveAlignment;
 while ((ypos <= canvasHeight) && (startx < maxwidth) ){
-endx=startx + cWidth - 1;
+var endx=startx + cWidth - 1;
 if (endx > maxwidth) {
 endx=maxwidth;
 }g.translate$I$I(this.labelWidthWest, 0);
 p$1.drawUnwrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I.apply(this, [g, group, startx, endx, 0, this.av.getAlignment$().getHeight$() - 1, ypos]);
 g.translate$I$I(-this.labelWidthWest, 0);
-ypos+=cHeight + this.getAnnotationHeight$() + hgap ;
+ypos+=this.wrappedRepeatHeightPx;
 startx+=cWidth;
 }
-g.setStroke$java_awt_Stroke(Clazz.new_($I$(11)));
+g.setStroke$java_awt_Stroke(Clazz.new_($I$(11,1)));
 }, p$1);
 
-Clazz.newMeth(C$, 'getAnnotationHeight$', function () {
+Clazz.newMeth(C$, 'getAnnotationHeight$',  function () {
 if (!this.av.isShowAnnotation$()) {
 return 0;
 }if (this.annotations == null ) {
-this.annotations=Clazz.new_($I$(10).c$$jalview_gui_AlignViewport,[this.av]);
+this.annotations=Clazz.new_($I$(10,1).c$$jalview_gui_AlignViewport,[this.av]);
 }return this.annotations.adjustPanelHeight$();
 });
 
-Clazz.newMeth(C$, 'drawPanel$java_awt_Graphics$I$I$I$I$I', function (g1, startRes, endRes, startSeq, endSeq, yOffset) {
+Clazz.newMeth(C$, 'drawPanel$java_awt_Graphics$I$I$I$I$I',  function (g1, startRes, endRes, startSeq, endSeq, yOffset) {
 var charHeight=this.av.getCharHeight$();
 var charWidth=this.av.getCharWidth$();
 if (!this.av.hasHiddenColumns$()) {
@@ -405,7 +383,7 @@ screenY+=blockEnd - blockStart + 1;
 }
 }});
 
-Clazz.newMeth(C$, 'draw$java_awt_Graphics$I$I$I$I$I', function (g, startRes, endRes, startSeq, endSeq, offset) {
+Clazz.newMeth(C$, 'draw$java_awt_Graphics$I$I$I$I$I',  function (g, startRes, endRes, startSeq, endSeq, offset) {
 var charHeight=this.av.getCharHeight$();
 var charWidth=this.av.getCharWidth$();
 g.setFont$java_awt_Font(this.av.getFont$());
@@ -430,7 +408,7 @@ if (this.av.getSelectionGroup$() != null  || this.av.getAlignment$().getGroups$(
 this.drawGroupsBoundaries$java_awt_Graphics$I$I$I$I$I(g, startRes, endRes, startSeq, endSeq, offset);
 }}, p$1);
 
-Clazz.newMeth(C$, 'drawGroupsBoundaries$java_awt_Graphics$I$I$I$I$I', function (g1, startRes, endRes, startSeq, endSeq, offset) {
+Clazz.newMeth(C$, 'drawGroupsBoundaries$java_awt_Graphics$I$I$I$I$I',  function (g1, startRes, endRes, startSeq, endSeq, offset) {
 var g=g1;
 var group=null;
 var groupIndex=-1;
@@ -441,27 +419,27 @@ groupIndex=0;
 do {
 g.setColor$java_awt_Color(group.getOutlineColour$());
 p$1.drawPartialGroupOutline$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I.apply(this, [g, group, startRes, endRes, startSeq, endSeq, offset]);
-groupIndex++;
+++groupIndex;
 if (groupIndex >= this.av.getAlignment$().getGroups$().size$()) {
 break;
 }group=this.av.getAlignment$().getGroups$().get$I(groupIndex);
 } while (groupIndex < this.av.getAlignment$().getGroups$().size$());
 }});
 
-Clazz.newMeth(C$, 'drawSelectionGroup$java_awt_Graphics2D$I$I$I$I', function (g, startRes, endRes, startSeq, endSeq) {
+Clazz.newMeth(C$, 'drawSelectionGroup$java_awt_Graphics2D$I$I$I$I',  function (g, startRes, endRes, startSeq, endSeq) {
 var group=this.av.getSelectionGroup$();
 if (group == null ) {
 return;
-}g.setStroke$java_awt_Stroke(Clazz.new_($I$(11).c$$F$I$I$F$FA$F,[1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0]));
+}g.setStroke$java_awt_Stroke(Clazz.new_([1, 0, 1, 3.0, Clazz.array(Float.TYPE, -1, [5.0, 3.0]), 0.0],$I$(11,1).c$$F$I$I$F$FA$F));
 g.setColor$java_awt_Color($I$(5).RED);
 if (!this.av.getWrapAlignment$()) {
 p$1.drawUnwrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I.apply(this, [g, group, startRes, endRes, startSeq, endSeq, 0]);
 } else {
 p$1.drawWrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I.apply(this, [g, group, this.getWidth$(), this.getHeight$(), this.av.getRanges$().getStartRes$()]);
-}g.setStroke$java_awt_Stroke(Clazz.new_($I$(11)));
+}g.setStroke$java_awt_Stroke(Clazz.new_($I$(11,1)));
 }, p$1);
 
-Clazz.newMeth(C$, 'drawCursor$java_awt_Graphics$I$I$I$I', function (g, startRes, endRes, startSeq, endSeq) {
+Clazz.newMeth(C$, 'drawCursor$java_awt_Graphics$I$I$I$I',  function (g, startRes, endRes, startSeq, endSeq) {
 var cursor_ypos=this.cursorY;
 if (cursor_ypos >= startSeq && cursor_ypos <= endSeq ) {
 var yoffset=0;
@@ -495,7 +473,7 @@ var s=seq.getCharAt$I(this.cursorX);
 this.seqRdr.drawCursor$java_awt_Graphics$C$I$I(g, s, xoffset + (cursor_xpos - startx) * this.av.getCharWidth$(), yoffset + (cursor_ypos - startSeq) * this.av.getCharHeight$());
 }}}}, p$1);
 
-Clazz.newMeth(C$, 'drawUnwrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I', function (g, group, startRes, endRes, startSeq, endSeq, offset) {
+Clazz.newMeth(C$, 'drawUnwrappedSelection$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I',  function (g, group, startRes, endRes, startSeq, endSeq, offset) {
 var charWidth=this.av.getCharWidth$();
 if (!this.av.hasHiddenColumns$()) {
 p$1.drawPartialGroupOutline$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I.apply(this, [g, group, startRes, endRes, startSeq, endSeq, offset]);
@@ -516,7 +494,7 @@ screenY+=blockEnd - blockStart + 1;
 }
 }}, p$1);
 
-Clazz.newMeth(C$, 'drawPartialGroupOutline$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I', function (g, group, startRes, endRes, startSeq, endSeq, verticalOffset) {
+Clazz.newMeth(C$, 'drawPartialGroupOutline$java_awt_Graphics2D$jalview_datamodel_SequenceGroup$I$I$I$I$I',  function (g, group, startRes, endRes, startSeq, endSeq, verticalOffset) {
 var charHeight=this.av.getCharHeight$();
 var charWidth=this.av.getCharWidth$();
 var visWidth=(endRes - startRes + 1) * charWidth;
@@ -553,7 +531,7 @@ p$1.drawVerticals$java_awt_Graphics2D$I$I$I$I$I.apply(this, [g, sx, xwidth, visW
 p$1.drawHorizontals$java_awt_Graphics2D$I$I$I$I$I.apply(this, [g, sx, xwidth, visWidth, top, bottom]);
 }}}, p$1);
 
-Clazz.newMeth(C$, 'drawHorizontals$java_awt_Graphics2D$I$I$I$I$I', function (g, sx, xwidth, visWidth, top, bottom) {
+Clazz.newMeth(C$, 'drawHorizontals$java_awt_Graphics2D$I$I$I$I$I',  function (g, sx, xwidth, visWidth, top, bottom) {
 var width=xwidth;
 var startx=sx;
 if (startx < 0) {
@@ -567,18 +545,18 @@ g.drawLine$I$I$I$I(startx, top, startx + width, top);
 g.drawLine$I$I$I$I(startx, bottom - 1, startx + width, bottom - 1);
 }}, p$1);
 
-Clazz.newMeth(C$, 'drawVerticals$java_awt_Graphics2D$I$I$I$I$I', function (g, sx, xwidth, visWidth, oldY, sy) {
+Clazz.newMeth(C$, 'drawVerticals$java_awt_Graphics2D$I$I$I$I$I',  function (g, sx, xwidth, visWidth, oldY, sy) {
 if (sx >= 0 && sx < visWidth ) {
 g.drawLine$I$I$I$I(sx, oldY, sx, sy);
 }if (sx + xwidth < visWidth) {
 g.drawLine$I$I$I$I(sx + xwidth, oldY, sx + xwidth, sy);
 }}, p$1);
 
-Clazz.newMeth(C$, 'highlightSearchResults$jalview_datamodel_SearchResultsI', function (results) {
+Clazz.newMeth(C$, 'highlightSearchResults$jalview_datamodel_SearchResultsI',  function (results) {
 return this.highlightSearchResults$jalview_datamodel_SearchResultsI$Z(results, false);
 });
 
-Clazz.newMeth(C$, 'highlightSearchResults$jalview_datamodel_SearchResultsI$Z', function (results, doFastPaint) {
+Clazz.newMeth(C$, 'highlightSearchResults$jalview_datamodel_SearchResultsI$Z',  function (results, doFastPaint) {
 if (this.fastpainting) {
 return false;
 }var wrapped=this.av.getWrapAlignment$();
@@ -592,11 +570,11 @@ var drawn=false;
 if (wrapped) {
 redrawn=this.drawMappedPositionsWrapped$jalview_datamodel_SearchResultsI(previous);
 drawn=this.drawMappedPositionsWrapped$jalview_datamodel_SearchResultsI(results);
-redrawn|=drawn;
+redrawn=!!(redrawn|(drawn));
 } else {
 redrawn=this.drawMappedPositions$jalview_datamodel_SearchResultsI(previous);
 drawn=this.drawMappedPositions$jalview_datamodel_SearchResultsI(results);
-redrawn|=drawn;
+redrawn=!!(redrawn|(drawn));
 }if (redrawn) {
 this.repaint$();
 }return drawn;
@@ -605,7 +583,7 @@ this.fastpainting=false;
 }
 });
 
-Clazz.newMeth(C$, 'drawMappedPositions$jalview_datamodel_SearchResultsI', function (results) {
+Clazz.newMeth(C$, 'drawMappedPositions$jalview_datamodel_SearchResultsI',  function (results) {
 if ((results == null ) || (this.img == null ) ) {
 return false;
 }var firstSeq=2147483647;
@@ -651,7 +629,7 @@ gg.dispose$();
 }return matchFound;
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (evt) {
 var eventName=evt.getPropertyName$();
 if (eventName.equals$O("Sequence group changed")) {
 this.fastPaint=true;
@@ -664,7 +642,7 @@ return;
 }var scrollX=0;
 if (eventName.equals$O("startres") || eventName.equals$O("startresandseq") ) {
 if (eventName.equals$O("startres")) {
-scrollX=((evt.getNewValue$()).objectValue$()|0) - ((evt.getOldValue$()).objectValue$()|0);
+scrollX=((evt.getNewValue$()).valueOf()|0) - ((evt.getOldValue$()).valueOf()|0);
 } else {
 scrollX=(evt.getNewValue$())[0] - (evt.getOldValue$())[0];
 }var vpRanges=this.av.getRanges$();
@@ -679,20 +657,20 @@ this.fastPaintWrapped$I(scrollX);
 } else {
 this.fastPaint$I$I(scrollX, 0);
 }} else if (eventName.equals$O("startseq")) {
-this.fastPaint$I$I(0, ((evt.getNewValue$()).objectValue$()|0) - ((evt.getOldValue$()).objectValue$()|0));
+this.fastPaint$I$I(0, ((evt.getNewValue$()).valueOf()|0) - ((evt.getOldValue$()).valueOf()|0));
 } else if (eventName.equals$O("startresandseq")) {
 if (this.av.getWrapAlignment$()) {
 this.fastPaintWrapped$I(scrollX);
 } else {
 this.fastPaint$I$I(scrollX, 0);
 }} else if (eventName.equals$O("startseq")) {
-this.fastPaint$I$I(0, ((evt.getNewValue$()).objectValue$()|0) - ((evt.getOldValue$()).objectValue$()|0));
+this.fastPaint$I$I(0, ((evt.getNewValue$()).valueOf()|0) - ((evt.getOldValue$()).valueOf()|0));
 } else if (eventName.equals$O("startresandseq")) {
 if (this.av.getWrapAlignment$()) {
 this.fastPaintWrapped$I(scrollX);
 }}});
 
-Clazz.newMeth(C$, 'fastPaintWrapped$I', function (scrollX) {
+Clazz.newMeth(C$, 'fastPaintWrapped$I',  function (scrollX) {
 var ranges=this.av.getRanges$();
 if (Math.abs(scrollX) >= ranges.getViewportWidth$()) {
 this.fastPaint=false;
@@ -719,7 +697,7 @@ this.fastpainting=false;
 }
 });
 
-Clazz.newMeth(C$, 'fastPaintWrappedAddRight$I', function (columns) {
+Clazz.newMeth(C$, 'fastPaintWrappedAddRight$I',  function (columns) {
 if (columns == 0) {
 return;
 }var gg=this.img.getGraphics$();
@@ -763,7 +741,7 @@ gg.fillRect$I$I$I$I(0, canvasHeight - heightBelow, this.getWidth$(), heightBelow
 }gg.dispose$();
 });
 
-Clazz.newMeth(C$, 'shiftWrappedAlignment$I', function (positions) {
+Clazz.newMeth(C$, 'shiftWrappedAlignment$I',  function (positions) {
 if (positions == 0) {
 return;
 }var gg=this.img.getGraphics$();
@@ -799,7 +777,7 @@ xpos+=viewportWidth;
 }gg.dispose$();
 });
 
-Clazz.newMeth(C$, 'drawMappedPositionsWrapped$jalview_datamodel_SearchResultsI', function (results) {
+Clazz.newMeth(C$, 'drawMappedPositionsWrapped$jalview_datamodel_SearchResultsI',  function (results) {
 if ((results == null ) || (this.img == null ) ) {
 return false;
 }var charHeight=this.av.getCharHeight$();
@@ -811,7 +789,7 @@ var ranges=this.av.getRanges$();
 var canvasHeight=this.getHeight$();
 var repeats=(canvasHeight/wrappedHeight|0);
 if ((canvasHeight/wrappedHeight|0) > 0) {
-repeats++;
+++repeats;
 }var firstVisibleColumn=ranges.getStartRes$();
 var lastVisibleColumn=ranges.getStartRes$() + repeats * ranges.getViewportWidth$() - 1;
 var alignment=this.av.getAlignment$();
@@ -851,10 +829,10 @@ gg.dispose$();
 return matchFound;
 });
 
-Clazz.newMeth(C$, 'getLabelWidthWest$', function () {
+Clazz.newMeth(C$, 'getLabelWidthWest$',  function () {
 return this.labelWidthWest;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:35 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

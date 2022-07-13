@@ -1,15 +1,17 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),I$=[[0,'net.miginfocom.layout.LC','Boolean','net.miginfocom.layout.LayoutUtil','net.miginfocom.layout.UnitValue','net.miginfocom.layout.AC','net.miginfocom.layout.BoundSize','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.ResizeConstraint','java.util.HashMap','net.miginfocom.layout.CC','net.miginfocom.layout.PlatformDefaults','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ConstraintParser");
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),I$=[[0,'net.miginfocom.layout.LC','Boolean','net.miginfocom.layout.LayoutUtil','net.miginfocom.layout.UnitValue','net.miginfocom.layout.AC','net.miginfocom.layout.BoundSize','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.ResizeConstraint','java.util.HashMap','net.miginfocom.layout.CC','net.miginfocom.layout.PlatformDefaults','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ConstraintParser");
+
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'parseLayoutConstraint$S', function (s) {
-var lc=Clazz.new_($I$(1));
+var lc=Clazz.new_($I$(1,1));
 if (s.isEmpty$()) return lc;
 var parts=C$.toTrimmedTokens$S$C(s, ",");
 for (var i=0; i < parts.length; i++) {
@@ -171,7 +173,7 @@ return C$.parseAxisConstraint$S$Z(s, true);
 
 Clazz.newMeth(C$, 'parseAxisConstraint$S$Z', function (s, isCols) {
 s=s.trim$();
-if (s.length$() == 0) return Clazz.new_($I$(5));
+if (s.length$() == 0) return Clazz.new_($I$(5,1));
 s=s.toLowerCase$();
 var parts=C$.getRowColAndGapsTrimmed$S(s);
 var gaps=Clazz.array($I$(6), [(parts.size$() >> 1) + 1]);
@@ -182,13 +184,13 @@ for (var i=0, gIx=0; i < colSpecs.length; i++, gIx++) {
 if (gIx >= gaps.length - 1) gIx=gaps.length - 2;
 colSpecs[i]=C$.parseDimConstraint$S$net_miginfocom_layout_BoundSize$net_miginfocom_layout_BoundSize$Z(parts.get$I((i << 1) + 1), gaps[gIx], gaps[gIx + 1], isCols);
 }
-var ac=Clazz.new_($I$(5));
+var ac=Clazz.new_($I$(5,1));
 ac.setConstaints$net_miginfocom_layout_DimConstraintA(colSpecs);
 return ac;
 }, 1);
 
 Clazz.newMeth(C$, 'parseDimConstraint$S$net_miginfocom_layout_BoundSize$net_miginfocom_layout_BoundSize$Z', function (s, gapBefore, gapAfter, isCols) {
-var dimConstraint=Clazz.new_($I$(7));
+var dimConstraint=Clazz.new_($I$(7,1));
 dimConstraint.setGapBefore$net_miginfocom_layout_BoundSize(gapBefore);
 dimConstraint.setGapAfter$net_miginfocom_layout_BoundSize(gapAfter);
 var parts=C$.toTrimmedTokens$S$C(s, ",");
@@ -248,16 +250,16 @@ return dimConstraint;
 }, 1);
 
 Clazz.newMeth(C$, 'parseComponentConstraints$java_util_Map', function (constrMap) {
-var flowConstrMap=Clazz.new_($I$(9));
+var flowConstrMap=Clazz.new_($I$(9,1));
 for (var it=constrMap.entrySet$().iterator$(); it.hasNext$(); ) {
 var entry=it.next$();
-flowConstrMap.put$TK$TV(entry.getKey$(), C$.parseComponentConstraint$S(entry.getValue$()));
+flowConstrMap.put$O$O(entry.getKey$(), C$.parseComponentConstraint$S(entry.getValue$()));
 }
 return flowConstrMap;
 }, 1);
 
 Clazz.newMeth(C$, 'parseComponentConstraint$S', function (s) {
-var cc=Clazz.new_($I$(10));
+var cc=Clazz.new_($I$(10,1));
 if (s == null  || s.isEmpty$() ) return cc;
 var parts=C$.toTrimmedTokens$S$C(s, ",");
 for (var part, $part = 0, $$part = parts; $part<$$part.length&&((part=($$part[$part])),1);$part++) {
@@ -468,7 +470,7 @@ if (uvStr.length$() > 0) {
 var uv=C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(uvStr, null, isHor);
 var isMin=part.charAt$I(3) == "n";
 var dc=isHor ? cc.getHorizontal$() : cc.getVertical$();
-dc.setSize$net_miginfocom_layout_BoundSize(Clazz.new_($I$(6).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[isMin ? uv : dc.getSize$().getMin$(), dc.getSize$().getPreferred$(), isMin ? (dc.getSize$().getMax$()) : uv, uvStr]));
+dc.setSize$net_miginfocom_layout_BoundSize(Clazz.new_([isMin ? uv : dc.getSize$().getMin$(), dc.getSize$().getPreferred$(), isMin ? (dc.getSize$().getMax$()) : uv, uvStr],$I$(6,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S));
 continue;
 }}if (part.equals$O("west")) {
 cc.setDockSide$I(1);
@@ -509,10 +511,10 @@ continue;
 cc.setDockSide$I(3);
 continue;
 }if (part.equals$O("dock center")) {
-cc.getHorizontal$().setGrow$Float(new Float(100));
-cc.getVertical$().setGrow$Float(new Float(100));
-cc.setPushX$Float(new Float(100));
-cc.setPushY$Float(new Float(100));
+cc.getHorizontal$().setGrow$Float(new Float(100.0));
+cc.getVertical$().setGrow$Float(new Float(100.0));
+cc.setPushX$Float(new Float(100.0));
+cc.setPushY$Float(new Float(100.0));
 continue;
 }}if (c == "v") {
 ix=C$.startsWithLenient$S$SA$IA$Z(part, Clazz.array(String, -1, ["visualpadding", "vp"]), Clazz.array(Integer.TYPE, -1, [3, 2]), true);
@@ -626,18 +628,18 @@ if (s.endsWith$S("push")) {
 push=true;
 var l=s.length$();
 s=s.substring$I$I(0, l - (s.endsWith$S(":push") ? 5 : 4));
-if (s.length$() == 0) return Clazz.new_($I$(6).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S,[null, null, null, true, cs]);
+if (s.length$() == 0) return Clazz.new_($I$(6,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S,[null, null, null, true, cs]);
 }var sizes=C$.toTrimmedTokens$S$C(s, ":");
 var s0=sizes[0];
 if (sizes.length == 1) {
 var hasEM=s0.endsWith$S("!");
 if (hasEM) s0=s0.substring$I$I(0, s0.length$() - 1);
 var uv=C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(s0, null, isHor);
-return Clazz.new_($I$(6).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S,[((isGap || hasEM ) ? uv : null), uv, (hasEM ? uv : null), push, cs]);
+return Clazz.new_([((isGap || hasEM ) ? uv : null), uv, (hasEM ? uv : null), push, cs],$I$(6,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S);
 } else if (sizes.length == 2) {
-return Clazz.new_($I$(6).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S,[C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(s0, null, isHor), C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(sizes[1], null, isHor), null, push, cs]);
+return Clazz.new_([C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(s0, null, isHor), C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(sizes[1], null, isHor), null, push, cs],$I$(6,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S);
 } else if (sizes.length == 3) {
-return Clazz.new_($I$(6).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S,[C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(s0, null, isHor), C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(sizes[1], null, isHor), C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(sizes[2], null, isHor), push, cs]);
+return Clazz.new_([C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(s0, null, isHor), C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(sizes[1], null, isHor), C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(sizes[2], null, isHor), push, cs],$I$(6,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$S);
 } else {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Min:Preferred:Max size section must contain 0, 1 or 2 colons. '" + cs + "'" ]);
 }}, 1);
@@ -687,12 +689,12 @@ uvs=Clazz.array(String, -1, [first, last]);
 var sub1=C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(uvs[0], null, isHor);
 var sub2=C$.parseUnitValue$S$net_miginfocom_layout_UnitValue$Z(uvs[1], null, isHor);
 if (sub1 == null  || sub2 == null  ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Malformed UnitValue. Must be two sub-values: '" + s + "'" ]);
-return Clazz.new_($I$(4).c$$Z$I$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[isHor, oper, sub1, sub2, cs]);
+return Clazz.new_($I$(4,1).c$$Z$I$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[isHor, oper, sub1, sub2, cs]);
 } else {
 try {
 var numParts=C$.getNumTextParts$S(s);
 var value=numParts[0].length$() > 0 ? Float.parseFloat$S(numParts[0]) : 1;
-return Clazz.new_($I$(4).c$$F$S$Z$I$S,[value, numParts[1], isHor, oper, cs]);
+return Clazz.new_($I$(4,1).c$$F$S$Z$I$S,[value, numParts[1], isHor, oper, cs]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S$Throwable,["Malformed UnitValue: '" + s + "'" , e]);
@@ -817,7 +819,7 @@ return retArr;
 
 Clazz.newMeth(C$, 'getRowColAndGapsTrimmed$S', function (s) {
 if (s.indexOf$I("|") != -1) s=s.replaceAll$S$S("\\|", "][");
-var retList=Clazz.new_($I$(12).c$$I,[Math.max(s.length$() >> 3, 3)]);
+var retList=Clazz.new_([Math.max(s.length$() >> 3, 3)],$I$(12,1).c$$I);
 var s0=0;
 var s1=0;
 var st=0;
@@ -830,16 +832,16 @@ s1++;
 } else {
 continue;
 }if (s0 != s1 && (s0 - 1) != s1 ) break;
-retList.add$TE(s.substring$I$I(st, i).trim$());
+retList.add$O(s.substring$I$I(st, i).trim$());
 st=i + 1;
 }
 if (s0 != s1) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["'[' and ']' mismatch in row/column format string: " + s]);
 if (s0 == 0) {
-retList.add$TE("");
-retList.add$TE(s);
-retList.add$TE("");
+retList.add$O("");
+retList.add$O(s);
+retList.add$O("");
 } else if (retList.size$() % 2 == 0) {
-retList.add$TE(s.substring$I$I(st, s.length$()));
+retList.add$O(s.substring$I$I(st, s.length$()));
 }return retList;
 }, 1);
 
@@ -847,4 +849,4 @@ Clazz.newMeth(C$, 'prepare$S', function (s) {
 return s != null  ? s.trim$().toLowerCase$() : "";
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

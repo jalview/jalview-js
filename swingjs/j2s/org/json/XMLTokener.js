@@ -1,35 +1,26 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'java.util.HashMap','org.json.XML','StringBuilder','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XMLTokener", null, 'org.json.JSONTokener');
-C$.entity=null;
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'java.util.HashMap','org.json.XML','StringBuilder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XMLTokener", null, 'org.json.JSONTokener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-C$.entity=Clazz.new_($I$(1).c$$I,[8]);
-C$.entity.put$TK$TV("amp", $I$(2).AMP);
-C$.entity.put$TK$TV("apos", $I$(2).APOS);
-C$.entity.put$TK$TV("gt", $I$(2).GT);
-C$.entity.put$TK$TV("lt", $I$(2).LT);
-C$.entity.put$TK$TV("quot", $I$(2).QUOT);
-};
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['entity','java.util.HashMap']]]
+
+Clazz.newMeth(C$, 'c$$java_io_Reader',  function (r) {
+;C$.superclazz.c$$java_io_Reader.apply(this,[r]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_Reader', function (r) {
-C$.superclazz.c$$java_io_Reader.apply(this, [r]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S',  function (s) {
+;C$.superclazz.c$$S.apply(this,[s]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (s) {
-C$.superclazz.c$$S.apply(this, [s]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'nextCDATA$', function () {
+Clazz.newMeth(C$, 'nextCDATA$',  function () {
 var c;
 var i;
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 while (this.more$()){
 c=this.next$();
 sb.append$C(c);
@@ -41,7 +32,7 @@ return sb.toString();
 throw this.syntaxError$S("Unclosed CDATA");
 });
 
-Clazz.newMeth(C$, 'nextContent$', function () {
+Clazz.newMeth(C$, 'nextContent$',  function () {
 var c;
 var sb;
 do {
@@ -51,7 +42,7 @@ if (c.$c() == 0 ) {
 return null;
 }if (c == "<") {
 return $I$(2).LT;
-}sb=Clazz.new_($I$(3));
+}sb=Clazz.new_($I$(3,1));
 for (; ; ) {
 if (c.$c() == 0 ) {
 return sb.toString().trim$();
@@ -66,8 +57,8 @@ sb.append$C(c);
 }
 });
 
-Clazz.newMeth(C$, 'nextEntity$C', function (ampersand) {
-var sb=Clazz.new_($I$(3));
+Clazz.newMeth(C$, 'nextEntity$C',  function (ampersand) {
+var sb=Clazz.new_($I$(3,1));
 for (; ; ) {
 var c=this.next$();
 if (Character.isLetterOrDigit$C(c) || c == "#" ) {
@@ -81,7 +72,7 @@ var string=sb.toString();
 return C$.unescapeEntity$S(string);
 });
 
-Clazz.newMeth(C$, 'unescapeEntity$S', function (e) {
+Clazz.newMeth(C$, 'unescapeEntity$S',  function (e) {
 if (e == null  || e.isEmpty$() ) {
 return "";
 }if (e.charAt$I(0) == "#") {
@@ -97,7 +88,7 @@ return '&' + e + ';' ;
 }return knownEntity.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'nextMeta$', function () {
+Clazz.newMeth(C$, 'nextMeta$',  function () {
 var c;
 var q;
 do {
@@ -126,13 +117,13 @@ c=this.next$();
 if (c.$c() == 0 ) {
 throw this.syntaxError$S("Unterminated string");
 }if (c == q) {
-return $I$(4).TRUE;
+return Boolean.TRUE;
 }}
 default:
 for (; ; ) {
 c=this.next$();
 if (Character.isWhitespace$C(c)) {
-return $I$(4).TRUE;
+return Boolean.TRUE;
 }switch (c.$c()) {
 case 0:
 case 60:
@@ -144,13 +135,13 @@ case 63:
 case 34:
 case 39:
 this.back$();
-return $I$(4).TRUE;
+return Boolean.TRUE;
 }
 }
 }
 });
 
-Clazz.newMeth(C$, 'nextToken$', function () {
+Clazz.newMeth(C$, 'nextToken$',  function () {
 var c;
 var q;
 var sb;
@@ -175,7 +166,7 @@ return $I$(2).QUEST;
 case 34:
 case 39:
 q=c;
-sb=Clazz.new_($I$(3));
+sb=Clazz.new_($I$(3,1));
 for (; ; ) {
 c=this.next$();
 if (c.$c() == 0 ) {
@@ -188,7 +179,7 @@ sb.append$O(this.nextEntity$C(c));
 sb.append$C(c);
 }}
 default:
-sb=Clazz.new_($I$(3));
+sb=Clazz.new_($I$(3,1));
 for (; ; ) {
 sb.append$C(c);
 c=this.next$();
@@ -215,7 +206,7 @@ throw this.syntaxError$S("Bad character in a name");
 }
 });
 
-Clazz.newMeth(C$, 'skipPast$S', function (to) {
+Clazz.newMeth(C$, 'skipPast$S',  function (to) {
 var b;
 var c;
 var i;
@@ -252,6 +243,17 @@ offset-=length;
 }}
 });
 
+C$.$static$=function(){C$.$static$=0;
+{
+C$.entity=Clazz.new_($I$(1,1).c$$I,[8]);
+C$.entity.put$O$O("amp", $I$(2).AMP);
+C$.entity.put$O$O("apos", $I$(2).APOS);
+C$.entity.put$O$O("gt", $I$(2).GT);
+C$.entity.put$O$O("lt", $I$(2).LT);
+C$.entity.put$O$O("quot", $I$(2).QUOT);
+};
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,21 +1,20 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.io.FileParse','jalview.io.FileFormat']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IdentifyFile");
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'jalview.io.FileParse','jalview.io.FileFormat','java.util.Locale']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IdentifyFile");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'identify$O$jalview_io_DataSourceType', function (file, protocol) {
+Clazz.newMeth(C$, 'identify$O$jalview_io_DataSourceType',  function (file, protocol) {
 return (Clazz.instanceOf(file, "java.io.File") ? this.identify$java_io_File$jalview_io_DataSourceType(file, protocol) : this.identify$S$jalview_io_DataSourceType(file, protocol));
 });
 
-Clazz.newMeth(C$, 'identify$java_io_File$jalview_io_DataSourceType', function (file, sourceType) {
+Clazz.newMeth(C$, 'identify$java_io_File$jalview_io_DataSourceType',  function (file, sourceType) {
 var emessage="UNIDENTIFIED FILE PARSING ERROR";
 var parser=null;
 try {
-parser=Clazz.new_($I$(1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
+parser=Clazz.new_($I$(1,1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
 if (parser.isValid$()) {
 return this.identify$jalview_io_FileParse(parser);
 }} catch (e) {
@@ -32,11 +31,11 @@ throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,[parser.error
 }throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,[emessage]);
 });
 
-Clazz.newMeth(C$, 'identify$S$jalview_io_DataSourceType', function (file, sourceType) {
+Clazz.newMeth(C$, 'identify$S$jalview_io_DataSourceType',  function (file, sourceType) {
 var emessage="UNIDENTIFIED FILE PARSING ERROR";
 var parser=null;
 try {
-parser=Clazz.new_($I$(1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
+parser=Clazz.new_($I$(1,1).c$$O$jalview_io_DataSourceType,[file, sourceType]);
 if (parser.isValid$()) {
 return this.identify$jalview_io_FileParse(parser);
 }} catch (e) {
@@ -53,16 +52,16 @@ throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,[parser.error
 }throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,[emessage]);
 });
 
-Clazz.newMeth(C$, 'identify$jalview_io_FileParse', function (source) {
+Clazz.newMeth(C$, 'identify$jalview_io_FileParse',  function (source) {
 return this.identify$jalview_io_FileParse$Z(source, true);
 });
 
-Clazz.newMeth(C$, 'identify$jalview_io_AlignmentFileReaderI$Z', function (file, closeSource) {
-var fp=Clazz.new_($I$(1).c$$O$jalview_io_DataSourceType,[file.getInFile$(), file.getDataSourceType$()]);
+Clazz.newMeth(C$, 'identify$jalview_io_AlignmentFileReaderI$Z',  function (file, closeSource) {
+var fp=Clazz.new_([file.getInFile$(), file.getDataSourceType$()],$I$(1,1).c$$O$jalview_io_DataSourceType);
 return this.identify$jalview_io_FileParse$Z(fp, closeSource);
 });
 
-Clazz.newMeth(C$, 'identify$jalview_io_FileParse$Z', function (source, closeSource) {
+Clazz.newMeth(C$, 'identify$jalview_io_FileParse$Z',  function (source, closeSource) {
 var reply=$I$(2).Pfam;
 var data;
 var bytesRead=0;
@@ -89,11 +88,18 @@ reply=$I$(2).Jalview;
 }}if (!lineswereskipped && data.startsWith$S("PK") ) {
 reply=$I$(2).Jalview;
 break;
-}}data=data.toUpperCase$();
+}}data=data.toUpperCase$java_util_Locale($I$(3).ROOT);
 if (data.startsWith$S("SCOREMATRIX")) {
 reply=$I$(2).ScoreMatrix;
 break;
-}if (data.startsWith$S("H ") && !aaIndexHeaderRead ) {
+}if (data.startsWith$S("LOCUS")) {
+reply=$I$(2).GenBank;
+break;
+}if (data.startsWith$S("ID ")) {
+if (data.substring$I(2).trim$().split$S(";").length == 7) {
+reply=$I$(2).Embl;
+break;
+}}if (data.startsWith$S("H ") && !aaIndexHeaderRead ) {
 aaIndexHeaderRead=true;
 }if (data.startsWith$S("D ") && aaIndexHeaderRead ) {
 reply=$I$(2).ScoreMatrix;
@@ -160,7 +166,7 @@ reply=$I$(2).Json;
 break;
 }var lessThan=data.indexOf$S("<");
 if ((lessThan > -1)) {
-var upper=data.toUpperCase$();
+var upper=data.toUpperCase$java_util_Locale($I$(3).ROOT);
 if (upper.substring$I(lessThan).startsWith$S("<HTML")) {
 reply=$I$(2).Html;
 break;
@@ -210,7 +216,7 @@ throw Clazz.new_(Clazz.load('jalview.io.FileFormatException').c$$S,["EMPTY DATA 
 return reply;
 });
 
-Clazz.newMeth(C$, 'looksLikeJnetData$S', function (data) {
+Clazz.newMeth(C$, 'looksLikeJnetData$S',  function (data) {
 var firstChar=data.charAt$I(0);
 var colonPos=data.indexOf$S(":");
 var commaPos=data.indexOf$S(",");
@@ -218,7 +224,7 @@ var isJnet=firstChar != "*" && firstChar != " "  && colonPos > -1  && commaPos >
 return isJnet;
 });
 
-Clazz.newMeth(C$, 'looksLikeFeatureData$S', function (data) {
+Clazz.newMeth(C$, 'looksLikeFeatureData$S',  function (data) {
 if (data == null ) {
 return false;
 }var columns=data.split$S("\t");
@@ -240,4 +246,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:37 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

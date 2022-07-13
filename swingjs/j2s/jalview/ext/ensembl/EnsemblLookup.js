@@ -1,41 +1,38 @@
-(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'java.net.URL','java.util.Arrays','java.util.Collections','jalview.util.MapList','jalview.bin.Cache']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EnsemblLookup", null, 'jalview.ext.ensembl.EnsemblRestClient');
+(function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'java.net.URL','java.util.Arrays','java.util.Collections','jalview.datamodel.Mapping','jalview.util.MapList','jalview.datamodel.GeneLocus','jalview.bin.Console']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EnsemblLookup", null, 'jalview.ext.ensembl.EnsemblRestClient');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S',  function (d) {
+;C$.superclazz.c$$S.apply(this,[d]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (d) {
-C$.superclazz.c$$S.apply(this, [d]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'getDbName$', function () {
+Clazz.newMeth(C$, 'getDbName$',  function () {
 return "ENSEMBL";
 });
 
-Clazz.newMeth(C$, 'getSequenceRecords$S', function (queries) {
+Clazz.newMeth(C$, 'getSequenceRecords$S',  function (queries) {
 return null;
 });
 
-Clazz.newMeth(C$, 'getUrl$java_util_List', function (ids) {
+Clazz.newMeth(C$, 'getUrl$java_util_List',  function (ids) {
 var identifier=ids.get$I(0);
 return this.getUrl$S$S(identifier, null);
 });
 
-Clazz.newMeth(C$, 'getUrl$S$S', function (identifier, objectType) {
+Clazz.newMeth(C$, 'getUrl$S$S',  function (identifier, objectType) {
 var url=this.getDomain$() + "/lookup/id/" + identifier + "?content-type=application/json" ;
 if (objectType != null ) {
-url += "&" + "object_type" + "=" + objectType ;
+url+="&" + "object_type" + "=" + objectType ;
 }try {
-return Clazz.new_($I$(1).c$$S,[url]);
+return Clazz.new_($I$(1,1).c$$S,[url]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return null;
@@ -45,19 +42,19 @@ throw e;
 }
 });
 
-Clazz.newMeth(C$, 'useGetRequest$', function () {
+Clazz.newMeth(C$, 'useGetRequest$',  function () {
 return true;
 });
 
-Clazz.newMeth(C$, 'getGeneId$S', function (identifier) {
+Clazz.newMeth(C$, 'getGeneId$S',  function (identifier) {
 return this.getGeneId$S$S(identifier, null);
 });
 
-Clazz.newMeth(C$, 'getGeneId$S$S', function (identifier, objectType) {
+Clazz.newMeth(C$, 'getGeneId$S$S',  function (identifier, objectType) {
 return this.parseGeneId$java_util_Map(this.getResult$S$S(identifier, objectType));
 });
 
-Clazz.newMeth(C$, 'parseGeneId$java_util_Map', function (val) {
+Clazz.newMeth(C$, 'parseGeneId$java_util_Map',  function (val) {
 if (val == null ) {
 return null;
 }var geneId=null;
@@ -72,7 +69,7 @@ geneId=this.getGeneId$S$S(transcriptId, "Transcript");
 }return geneId;
 });
 
-Clazz.newMeth(C$, 'getSpecies$S', function (identifier) {
+Clazz.newMeth(C$, 'getSpecies$S',  function (identifier) {
 var species=null;
 var json=this.getResult$S$S(identifier, null);
 if (json != null ) {
@@ -82,8 +79,8 @@ species=o.toString();
 }}return species;
 });
 
-Clazz.newMeth(C$, 'getResult$S$S', function (identifier, objectType) {
-var ids=$I$(2).asList$TTA(Clazz.array(String, -1, [identifier]));
+Clazz.newMeth(C$, 'getResult$S$S',  function (identifier, objectType) {
+var ids=$I$(2,"asList$OA",[Clazz.array(String, -1, [identifier])]);
 try {
 return this.getJSON$java_net_URL$java_util_List$I$I$S(this.getUrl$S$S(identifier, objectType), ids, -1, 1, null);
 } catch (e) {
@@ -96,11 +93,11 @@ throw e;
 }
 });
 
-Clazz.newMeth(C$, 'getGeneLoci$S', function (geneId) {
+Clazz.newMeth(C$, 'getGeneLoci$S',  function (geneId) {
 return this.parseGeneLoci$java_util_Map(this.getResult$S$S(geneId, "Gene"));
 });
 
-Clazz.newMeth(C$, 'parseGeneLoci$java_util_Map', function (json) {
+Clazz.newMeth(C$, 'parseGeneLoci$java_util_Map',  function (json) {
 if (json == null ) {
 return null;
 }try {
@@ -114,38 +111,13 @@ var fromEnd=end - start + 1;
 var reverseStrand="-1".equals$O(strand);
 var toStart=reverseStrand ? end : start;
 var toEnd=reverseStrand ? start : end;
-var fromRange=$I$(3).singletonList$TT(Clazz.array(Integer.TYPE, -1, [1, fromEnd]));
-var toRange=$I$(3).singletonList$TT(Clazz.array(Integer.TYPE, -1, [toStart, toEnd]));
-var map=Clazz.new_($I$(4).c$$java_util_List$java_util_List$I$I,[fromRange, toRange, 1, 1]);
-return ((P$.EnsemblLookup$1||
-(function(){var C$=Clazz.newClass(P$, "EnsemblLookup$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.datamodel.GeneLociI', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'getSpeciesId$', function () {
-return this.$finals$.species == null  ? "" : this.$finals$.species;
-});
-
-Clazz.newMeth(C$, 'getAssemblyId$', function () {
-return this.$finals$.assembly;
-});
-
-Clazz.newMeth(C$, 'getChromosomeId$', function () {
-return this.$finals$.chromosome;
-});
-
-Clazz.newMeth(C$, 'getMap$', function () {
-return this.$finals$.map;
-});
-})()
-), Clazz.new_(P$.EnsemblLookup$1.$init$, [this, {species: species, assembly: assembly, chromosome: chromosome, map: map}]));
+var fromRange=$I$(3,"singletonList$O",[Clazz.array(Integer.TYPE, -1, [1, fromEnd])]);
+var toRange=$I$(3,"singletonList$O",[Clazz.array(Integer.TYPE, -1, [toStart, toEnd])]);
+var map=Clazz.new_([Clazz.new_($I$(5,1).c$$java_util_List$java_util_List$I$I,[fromRange, toRange, 1, 1])],$I$(4,1).c$$jalview_util_MapList);
+return Clazz.new_([species == null  ? "" : species, assembly, chromosome, map],$I$(6,1).c$$S$S$S$jalview_datamodel_Mapping);
 } catch (e) {
 if (Clazz.exceptionOf(e,"NullPointerException") || Clazz.exceptionOf(e,"NumberFormatException")){
-$I$(5).log.error$O("Error looking up gene loci: " + e.getMessage$());
+$I$(7,"error$S",["Error looking up gene loci: " + e.getMessage$()]);
 e.printStackTrace$();
 } else {
 throw e;
@@ -154,4 +126,4 @@ throw e;
 return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

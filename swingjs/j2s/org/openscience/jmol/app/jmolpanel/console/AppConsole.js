@@ -1,48 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.jmolpanel.console"),p$1={},I$=[[0,'Thread','org.jmol.util.Logger',['org.openscience.jmol.app.jmolpanel.console.AppConsole','.ConsoleDocument'],'java.awt.event.KeyEvent','java.awt.EventQueue','javajs.util.PT','javax.swing.text.SimpleAttributeSet','javax.swing.text.StyleConstants','java.awt.Color','javax.swing.JPanel','org.jmol.viewer.Viewer','javax.swing.UIManager','javax.swing.KeyStroke','org.jmol.awt.Platform','javax.swing.JDialog','org.jmol.awt.FileDropper','java.awt.Font','org.jmol.i18n.GT',['org.openscience.jmol.app.jmolpanel.console.AppConsole','.ConsoleTextPane'],'java.awt.dnd.DropTarget','javax.swing.JScrollPane','java.awt.BorderLayout','javax.swing.JSplitPane','java.awt.Dimension',['org.openscience.jmol.app.jmolpanel.console.AppConsole','.ExecuteCommandThread'],'org.openscience.jmol.app.jmolpanel.HelpDialog']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AppConsole", function(){
+(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.jmolpanel.console"),p$1={},I$=[[0,'org.jmol.util.Logger',['org.openscience.jmol.app.jmolpanel.console.AppConsole','.ConsoleDocument'],'javax.swing.Timer','java.awt.EventQueue','javajs.util.PT','javax.swing.text.SimpleAttributeSet','javax.swing.text.StyleConstants','java.awt.Color','javax.swing.JPanel','org.jmol.viewer.Viewer','javax.swing.UIManager','javax.swing.KeyStroke','org.jmol.awt.Platform','javax.swing.JDialog','org.jmol.awt.FileDropper','java.awt.Font','org.jmol.i18n.GT',['org.openscience.jmol.app.jmolpanel.console.AppConsole','.ConsoleTextPane'],'java.awt.dnd.DropTarget','javax.swing.JScrollPane','java.awt.BorderLayout','javax.swing.JSplitPane','java.awt.Dimension',['org.openscience.jmol.app.jmolpanel.console.AppConsole','.ExecuteCommandThread']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AppConsole", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.console.JmolConsole', ['org.openscience.jmol.app.jmolpanel.console.EnterListener', 'org.jmol.api.JmolDropEditor']);
-C$.MAXUNDO=0;
+C$.$classes$=[['ExecuteCommandThread',0],['ConsoleTextPane',0],['ConsoleDocument',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.MAXUNDO=10;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fontSize=0;
-this.jcd=null;
-this.console=null;
-this.varButton=null;
-this.haltButton=null;
-this.closeButton=null;
-this.clearButton=null;
-this.stepButton=null;
-this.helpButton=null;
-this.undoButton=null;
-this.redoButton=null;
-this.checkButton=null;
-this.topButton=null;
-this.fontButton=null;
-this.buttonPanel=null;
-this.vBar=null;
-this.hBar=null;
-this.isError=false;
-this.execThread=null;
-this.undoStack=null;
-this.undoPointer=0;
-this.undoSaved=false;
-this.dontsave=false;
-this.statusListener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.buttonPanel=Clazz.new_($I$(10));
+this.buttonPanel=Clazz.new_($I$(9,1));
 this.isError=false;
 this.undoStack=Clazz.array(String, [C$.MAXUNDO + 1]);
 this.undoPointer=0;
 this.undoSaved=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isError','undoSaved','dontsave'],'I',['fontSize','undoPointer'],'O',['jcd','javax.swing.JDialog','console','org.openscience.jmol.app.jmolpanel.console.AppConsole.ConsoleTextPane','varButton','org.jmol.api.JmolAbstractButton','+haltButton','+closeButton','+clearButton','+stepButton','+helpButton','+undoButton','+redoButton','+checkButton','+topButton','+fontButton','buttonPanel','javax.swing.JPanel','vBar','javax.swing.JScrollBar','+hBar','execThread','org.openscience.jmol.app.jmolpanel.console.AppConsole.ExecuteCommandThread','undoStack','String[]','statusListener','org.jmol.api.JmolStatusListener']]
+,['I',['MAXUNDO']]]
 
 Clazz.newMeth(C$, 'loadContent$S', function (script) {
 this.getScriptEditor$().setVisible$Z(true);
@@ -55,7 +28,7 @@ this.getScriptEditor$().loadFile$S(fileName);
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'start$org_jmol_viewer_Viewer', function (vwr) {
@@ -63,23 +36,23 @@ p$1.setup$org_jmol_viewer_Viewer$java_awt_Container$S.apply(this, [vwr, null, nu
 });
 
 Clazz.newMeth(C$, 'c$$org_jmol_api_JmolViewer$java_awt_Container$S', function (vwr, externalContainer, enabledButtons) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.setup$org_jmol_viewer_Viewer$java_awt_Container$S.apply(this, [vwr, externalContainer, enabledButtons]);
 }, 1);
 
 Clazz.newMeth(C$, 'setup$org_jmol_viewer_Viewer$java_awt_Container$S', function (vwr, externalContainer, enabledButtons) {
 System.out.println$S("appConsole " + System.getProperty$S("os.name"));
-if ($I$(11).isJS) {
-var im=$I$(12).get$O("TextPane.focusInputMap");
-im.put$javax_swing_KeyStroke$O($I$(13).getKeyStroke$I$I(65, 256), "select-all");
-im.put$javax_swing_KeyStroke$O($I$(13).getKeyStroke$I$I(67, 256), "copy-to-clipboard");
-im.put$javax_swing_KeyStroke$O($I$(13).getKeyStroke$I$I(86, 256), "paste-from-clipboard");
+if (!$I$(10).isJS) {
+var im=$I$(11).get$O("TextPane.focusInputMap");
+im.put$javax_swing_KeyStroke$O($I$(12).getKeyStroke$I$I(65, 256), "select-all");
+im.put$javax_swing_KeyStroke$O($I$(12).getKeyStroke$I$I(67, 256), "copy-to-clipboard");
+im.put$javax_swing_KeyStroke$O($I$(12).getKeyStroke$I$I(86, 256), "paste-from-clipboard");
 }this.setViewer$org_jmol_viewer_Viewer(vwr);
-var w=$I$(14).getWindow$java_awt_Container(vwr.display);
+var w=$I$(13).getWindow$java_awt_Container(vwr.display);
 this.vwrFrame=(Clazz.instanceOf(w, "javax.swing.JFrame") ? w : null);
 if (externalContainer == null ) {
-this.jcd=Clazz.new_($I$(15).c$$java_awt_Frame$S$Z,[this.vwrFrame, null, false]);
-this.jcd.setSize$I$I(645, 400);
+this.jcd=Clazz.new_($I$(14,1).c$$java_awt_Frame$S$Z,[this.vwrFrame, null, false]);
+this.jcd.setSize$I$I(700, 400);
 this.jcd.setLocationRelativeTo$java_awt_Component(this.vwrFrame);
 this.externalContainer=this.jcd;
 } else {
@@ -87,14 +60,14 @@ this.externalContainer=externalContainer;
 vwr.setConsole$org_jmol_api_JmolAppConsoleInterface(this);
 }this.addWindowListener$();
 this.layoutWindow$S(enabledButtons);
-Clazz.new_($I$(16).c$$org_jmol_api_JmolStatusListener$org_jmol_viewer_Viewer$org_jmol_api_JmolDropEditor,[this.statusListener, vwr, this]);
+Clazz.new_($I$(15,1).c$$org_jmol_api_JmolStatusListener$org_jmol_viewer_Viewer$org_jmol_api_JmolDropEditor,[this.statusListener, vwr, this]);
 }, p$1);
 
 Clazz.newMeth(C$, 'updateFontSize$', function () {
-var scale=$I$(6).parseInt$S("" + this.vwr.getProperty$S$S$O("DATA_API", "getPreference", "consoleFontScale"));
+var scale=$I$(5,"parseInt$S",["" + this.vwr.getProperty$S$S$O("DATA_API", "getPreference", "consoleFontScale")]);
 scale=(scale < 0 ? 1 : scale) % 5;
 this.fontSize=scale * 4 + 12;
-if (this.console != null ) this.console.setFont$java_awt_Font(Clazz.new_($I$(17).c$$S$I$I,["dialog", 0, this.fontSize]));
+if (this.console != null ) this.console.setFont$java_awt_Font(Clazz.new_($I$(16,1).c$$S$I$I,["dialog", 0, this.fontSize]));
 });
 
 Clazz.newMeth(C$, 'sendConsoleEcho$S', function (strEcho) {
@@ -123,46 +96,46 @@ return b;
 });
 
 Clazz.newMeth(C$, 'setupLabels0$java_util_Map', function (labels) {
-labels.put$TK$TV("Check", $I$(18).$$S("Check"));
-labels.put$TK$TV("Clear", $I$(18).$$S("Clear"));
-labels.put$TK$TV("Close", $I$(18).$$S("Close"));
-labels.put$TK$TV("Halt", $I$(18).$$S("Halt"));
-labels.put$TK$TV("Help", $I$(18).$$S("Help"));
-labels.put$TK$TV("Editor", $I$(18).$$S("Editor"));
-labels.put$TK$TV("History", $I$(18).$$S("History"));
-labels.put$TK$TV("State", $I$(18).$$S("State"));
-labels.put$TK$TV("Step", $I$(18).$$S("Step"));
-labels.put$TK$TV("Top", $I$(18).$$S("Top"));
-labels.put$TK$TV("Undo", $I$(18).$$S("Undo"));
-labels.put$TK$TV("Redo", $I$(18).$$S("Redo"));
-labels.put$TK$TV("Font", $I$(18).$$S("Font"));
-labels.put$TK$TV("Variables", $I$(18).$$S("Variables"));
+labels.put$O$O("Check", $I$(17).$$S("Check"));
+labels.put$O$O("Clear", $I$(17).$$S("Clear"));
+labels.put$O$O("Close", $I$(17).$$S("Close"));
+labels.put$O$O("Halt", $I$(17).$$S("Halt"));
+labels.put$O$O("Help", $I$(17).$$S("Help"));
+labels.put$O$O("Editor", $I$(17).$$S("Editor"));
+labels.put$O$O("History", $I$(17).$$S("History"));
+labels.put$O$O("State", $I$(17).$$S("State"));
+labels.put$O$O("Step", $I$(17).$$S("Step"));
+labels.put$O$O("Top", $I$(17).$$S("Top"));
+labels.put$O$O("Undo", $I$(17).$$S("Undo"));
+labels.put$O$O("Redo", $I$(17).$$S("Redo"));
+labels.put$O$O("Font", $I$(17).$$S("Font"));
+labels.put$O$O("Variables", $I$(17).$$S("Variables"));
 });
 
 Clazz.newMeth(C$, 'layoutWindow$S', function (enabledButtons) {
 this.setTitle$();
-this.console=Clazz.new_($I$(19).c$$org_openscience_jmol_app_jmolpanel_console_AppConsole, [this, null, this]);
-this.console.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_($I$(20).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this.console, Clazz.new_($I$(16).c$$org_jmol_api_JmolStatusListener$org_jmol_viewer_Viewer$org_jmol_api_JmolDropEditor,[null, this.vwr, this])]));
+this.console=Clazz.new_($I$(18,1).c$$org_openscience_jmol_app_jmolpanel_console_AppConsole,[this, null, this]);
+this.console.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_([this.console, Clazz.new_($I$(15,1).c$$org_jmol_api_JmolStatusListener$org_jmol_viewer_Viewer$org_jmol_api_JmolDropEditor,[null, this.vwr, this])],$I$(19,1).c$$java_awt_Component$java_awt_dnd_DropTargetListener));
 this.console.setPrompt$();
 this.console.setDragEnabled$Z(true);
 if (enabledButtons == null ) enabledButtons="Editor Variables Clear History State UndoRedo Close Font Help";
-var consolePane=Clazz.new_($I$(21).c$$java_awt_Component,[this.console]);
+var consolePane=Clazz.new_($I$(20,1).c$$java_awt_Component,[this.console]);
 this.vBar=consolePane.getVerticalScrollBar$();
 this.hBar=consolePane.getHorizontalScrollBar$();
-var tokens=$I$(6).getTokens$S(enabledButtons);
+var tokens=$I$(5).getTokens$S(enabledButtons);
 for (var i=0; i < tokens.length; i++) p$1.enableButton$S.apply(this, [tokens[i]]);
 
 C$.setEnabled$org_jmol_api_JmolAbstractButton$Z(this.undoButton, false);
 C$.setEnabled$org_jmol_api_JmolAbstractButton$Z(this.redoButton, false);
-var buttonPanelWrapper=Clazz.new_($I$(10));
-buttonPanelWrapper.setLayout$java_awt_LayoutManager(Clazz.new_($I$(22)));
+var buttonPanelWrapper=Clazz.new_($I$(9,1));
+buttonPanelWrapper.setLayout$java_awt_LayoutManager(Clazz.new_($I$(21,1)));
 buttonPanelWrapper.add$java_awt_Component$O(this.buttonPanel, "Center");
-var spane=Clazz.new_($I$(23).c$$I$java_awt_Component$java_awt_Component,[0, consolePane, buttonPanelWrapper]);
-consolePane.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(24).c$$I$I,[300, 300]));
-consolePane.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(24).c$$I$I,[5000, 5000]));
-buttonPanelWrapper.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(24).c$$I$I,[60, 60]));
-buttonPanelWrapper.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(24).c$$I$I,[1000, 60]));
-buttonPanelWrapper.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(24).c$$I$I,[60, 60]));
+var spane=Clazz.new_($I$(22,1).c$$I$java_awt_Component$java_awt_Component,[0, consolePane, buttonPanelWrapper]);
+consolePane.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(23,1).c$$I$I,[300, 300]));
+consolePane.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(23,1).c$$I$I,[5000, 5000]));
+buttonPanelWrapper.setMinimumSize$java_awt_Dimension(Clazz.new_($I$(23,1).c$$I$I,[60, 60]));
+buttonPanelWrapper.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(23,1).c$$I$I,[1000, 60]));
+buttonPanelWrapper.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(23,1).c$$I$I,[60, 60]));
 spane.setDividerSize$I(0);
 spane.setResizeWeight$D(0.95);
 this.getPane$().add$java_awt_Component(spane);
@@ -213,7 +186,7 @@ this.varButton=this.setButton$S("Variables");
 break;
 case 120:
 this.fontButton=this.setButton$S("Font");
-this.fontButton.setToolTipText$S($I$(18).$$S("toggle font size"));
+this.fontButton.setToolTipText$S($I$(17).$$S("toggle font size"));
 }
 }, p$1);
 
@@ -245,14 +218,14 @@ return;
 System.exit$I(0);
 } else if (strCommand.startsWith$S("font console")) {
 var s=strCommand.substring$I(12);
-if ($I$(6).parseInt$S(s) > 0) s="sansserif-" + s;
-this.console.setFont$java_awt_Font($I$(17).decode$S(s));
+if ($I$(5).parseInt$S(s) > 0) s="sansserif-" + s;
+this.console.setFont$java_awt_Font($I$(16).decode$S(s));
 strCommand=" ";
 } else if (strCommand.length$() == 0) {
 strCommand="!resume";
 p$1.undoSetEnabled.apply(this, []);
 }if (strCommand.length$() > 0) {
-this.execThread=Clazz.new_($I$(25).c$$S, [this, null, strCommand]);
+this.execThread=Clazz.new_($I$(24,1).c$$S,[this, null, strCommand]);
 this.execThread.start$();
 }});
 
@@ -294,7 +267,7 @@ if (this.undoButton == null ) return;
 if (!this.vwr.getBooleanProperty$S("undo") || !this.vwr.getBooleanProperty$S("preserveState") ) return;
 for (var i=this.undoPointer + 1; i <= C$.MAXUNDO; i++) this.undoStack[i]=null;
 
-$I$(2).startTimer$S("(console");
+$I$(1,"startTimer$S",["(console"]);
 try {
 this.undoStack[this.undoPointer]=this.vwr.getProperty$S$S$O("readable", "stateInfo", null);
 if (incrementPtr && this.undoPointer == C$.MAXUNDO ) {
@@ -309,10 +282,10 @@ this.dontsave=true;
 throw e;
 }
 }
-if (this.dontsave || $I$(2).checkTimer$S$Z("(console", false) > 2000 ) {
+if (this.dontsave || $I$(1,"checkTimer$S$Z",["(console", false]) > 2000 ) {
 this.vwr.setBooleanProperty$S$Z("undo", false);
 p$1.undoClear.apply(this, []);
-$I$(2).info$S("command processing slow; undo disabled");
+$I$(1).info$S("command processing slow; undo disabled");
 } else {
 p$1.undoSetEnabled.apply(this, []);
 }this.undoSaved=true;
@@ -340,7 +313,7 @@ for (var i=0; i < info.size$(); i++) {
 var statusRecordSet=info.get$I(i);
 for (var j=0; j < statusRecordSet.size$(); j++) {
 var statusRecord=statusRecordSet.get$I(j);
-$I$(2).info$S("msg#=" + statusRecord.get$I(0) + " " + statusRecord.get$I(1) + " intInfo=" + statusRecord.get$I(2) + " stringInfo=" + statusRecord.get$I(3) );
+$I$(1,"info$S",["msg#=" + statusRecord.get$I(0) + " " + statusRecord.get$I(1) + " intInfo=" + statusRecord.get$I(2) + " stringInfo=" + statusRecord.get$I(3) ]);
 }
 }
 }this.console.appendNewline$();
@@ -362,7 +335,7 @@ Clazz.newMeth(C$, 'clearContent$S', function (text) {
 this.console.clearContent$S(text);
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.console.grabFocus$();
 var source=e.getSource$();
 if (source === this.topButton ) {
@@ -396,9 +369,7 @@ var d=this.vwr.getProperty$S$S$O("DATA_API", "getPreference", null);
 if (d != null ) d.setFontScale$I(-1);
 return;
 }if (source === this.helpButton ) {
-var url=this.getClass$().getClassLoader$().getResource$S("org/openscience/jmol/Data/guide/ch04.html");
-if (url == null ) this.vwr.script$S("help");
- else (Clazz.new_($I$(26).c$$javax_swing_JFrame$java_net_URL,[null, url])).setVisible$Z(true);
+this.vwr.script$S("help");
 }C$.superclazz.prototype.actionPerformed$java_awt_event_ActionEvent.apply(this, [e]);
 });
 
@@ -409,45 +380,34 @@ return this.console.getText$();
 Clazz.newMeth(C$, 'setStatusListener$org_jmol_api_JmolStatusListener', function (myStatusListener) {
 this.statusListener=myStatusListener;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.MAXUNDO=10;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.AppConsole, "ExecuteCommandThread", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AppConsole, "ExecuteCommandThread", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'Thread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.strCommand=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['strCommand']]]
 
 Clazz.newMeth(C$, 'c$$S', function (command) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.strCommand=command;
 this.setName$S("appConsoleExecuteCommandThread");
 }, 1);
 
 Clazz.newMeth(C$, 'run$', function () {
 try {
-while (this.this$0.console.checking){
-try {
-$I$(1).sleep$J(100);
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-break;
-} else {
-throw e;
-}
-}
-}
-this.this$0.executeCommand$S.apply(this.this$0, [this.strCommand]);
+this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].executeCommand$S.apply(this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'], [this.strCommand]);
 } catch (ie) {
 if (Clazz.exceptionOf(ie,"Exception")){
-$I$(2).errorEx$S$Throwable("execution command interrupted!", ie);
+$I$(1).errorEx$S$Throwable("execution command interrupted!", ie);
 } else {
 throw ie;
 }
@@ -457,32 +417,25 @@ throw ie;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AppConsole, "ConsoleTextPane", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AppConsole, "ConsoleTextPane", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
-}, 'javax.swing.JTextPane');
+}, 'javax.swing.JTextPane', 'java.awt.event.KeyListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.consoleDoc=null;
-this.enterListener=null;
-this.checking=false;
-this.pageUpBuffer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.checking=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['checking','checkingCommand'],'S',['pageUpBuffer'],'O',['consoleDoc','org.openscience.jmol.app.jmolpanel.console.AppConsole.ConsoleDocument','enterListener','org.openscience.jmol.app.jmolpanel.console.EnterListener','checkTimer','javax.swing.Timer']]]
 
 Clazz.newMeth(C$, 'c$$org_openscience_jmol_app_jmolpanel_console_AppConsole', function (appConsole) {
-C$.superclazz.c$$javax_swing_text_StyledDocument.apply(this, [Clazz.new_($I$(3), [this, null])]);
-C$.$init$.apply(this);
-this.this$0.updateFontSize$.apply(this.this$0, []);
+;C$.superclazz.c$$javax_swing_text_StyledDocument.apply(this,[Clazz.new_($I$(2,1),[this, null])]);C$.$init$.apply(this);
+this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].updateFontSize$.apply(this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'], []);
 this.consoleDoc=this.getDocument$();
 this.consoleDoc.setConsoleTextPane$org_openscience_jmol_app_jmolpanel_console_AppConsole_ConsoleTextPane(this);
 this.enterListener=appConsole;
+this.addKeyListener$java_awt_event_KeyListener(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getCommandString$', function () {
@@ -524,7 +477,19 @@ if (text != null ) this.consoleDoc.outputEcho$S(text);
 this.setPrompt$();
 });
 
-Clazz.newMeth(C$, 'processKeyEvent$java_awt_event_KeyEvent', function (ke) {
+Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent', function (e) {
+this.processKey$java_awt_event_KeyEvent(e);
+});
+
+Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (e) {
+this.processKey$java_awt_event_KeyEvent(e);
+});
+
+Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent', function (e) {
+this.processKey$java_awt_event_KeyEvent(e);
+});
+
+Clazz.newMeth(C$, 'processKey$java_awt_event_KeyEvent', function (ke) {
 var kcode=ke.getKeyCode$();
 var kid=ke.getID$();
 if (kid == 401) {
@@ -532,7 +497,7 @@ switch (kcode) {
 case 67:
 if (ke.isControlDown$() && ke.isAltDown$() ) {
 ke.consume$();
-this.this$0.vwr.script$S("!quit");
+this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].vwr.script$S("!quit");
 return;
 }break;
 case 9:
@@ -547,7 +512,7 @@ if (Clazz.exceptionOf(e,"javax.swing.text.BadLocationException")){
 throw e;
 }
 }
-this.this$0.nTab++;
+this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].nTab++;
 return;
 }break;
 case 27:
@@ -562,33 +527,53 @@ throw e;
 }
 break;
 }
-this.this$0.nTab=0;
-}if ((kcode == 33 || kcode == 34 ) && ke.isControlDown$() ) {
-if (kid == 401) this.recallCommand$Z$Z(kcode == 33, true);
+this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].nTab=0;
+}if ((kcode == 38 || kcode == 40 ) && ke.isControlDown$() && this.consoleDoc.isAtEnd$()  ) {
+if (kid == 401) {
+this.recallCommand$Z$Z(kcode == 38, true);
+}ke.consume$();
 return;
 }this.pageUpBuffer=null;
-if (kcode == 38 && kid == 401  && !ke.isControlDown$() ) {
+if (kcode == 38 && kid == 401  && this.consoleDoc.isAtEnd$() ) {
 this.recallCommand$Z$Z(true, false);
-} else if (kcode == 40 && kid == 401  && !ke.isControlDown$() ) {
+ke.consume$();
+} else if (kcode == 40 && kid == 401  && this.consoleDoc.isAtEnd$() ) {
 this.recallCommand$Z$Z(false, false);
-} else if ((kcode == 40 || kcode == 38 ) && kid == 401  && ke.isControlDown$() ) {
-C$.superclazz.prototype.processKeyEvent$java_awt_event_KeyEvent.apply(this, [Clazz.new_($I$(4).c$$java_awt_Component$I$J$I$I$C$I,[ke.getSource$(), kid, ke.getWhen$(), 0, kcode, ke.getKeyChar$(), ke.getKeyLocation$()])]);
+ke.consume$();
 } else {
-C$.superclazz.prototype.processKeyEvent$java_awt_event_KeyEvent.apply(this, [ke]);
-if (kid == 402 && ke.getModifiers$() < 2  && (kcode == 32 || kcode > 40 && kcode < 400   || kcode == 8 ) ) this.checkCommand$();
-}});
+if (!this.checkingCommand && kid == 402  && ke.getModifiers$() < 2  && (kcode == 32 || kcode > 40 && kcode < 400   || kcode == 8 ) ) {
+this.checkingCommand=true;
+if (this.checkTimer == null ) {
+this.checkTimer=Clazz.new_([100, ((P$.AppConsole$ConsoleTextPane$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AppConsole$ConsoleTextPane$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-Clazz.newMeth(C$, 'recallCommand$Z$Z', function (up, pageup) {
-var cmd=(pageup ? this.this$0.vwr.historyFind$S$I(this.pageUpBuffer == null  ? (this.pageUpBuffer=this.consoleDoc.getCommandString$()) : this.pageUpBuffer, up ? -1 : 1) : this.this$0.vwr.getSetHistory$I(up ? -1 : 1));
-if (cmd == null ) {
-$I$(5).invokeLater$Runnable(((P$.AppConsole$ConsoleTextPane$1||
-(function(){var C$=Clazz.newClass(P$, "AppConsole$ConsoleTextPane$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
-
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
+this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole.ConsoleTextPane'].checkingCommand=false;
+this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole.ConsoleTextPane'].checkCommand$.apply(this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole.ConsoleTextPane'], []);
+});
+})()
+), Clazz.new_(P$.AppConsole$ConsoleTextPane$1.$init$,[this, null]))],$I$(3,1).c$$I$java_awt_event_ActionListener);
+this.checkTimer.setRepeats$Z(false);
+this.checkTimer.start$();
+} else {
+this.checkTimer.restart$();
+}}}});
+
+Clazz.newMeth(C$, 'recallCommand$Z$Z', function (up, pageup) {
+var cmd=(pageup ? this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].vwr.historyFind$S$I(this.pageUpBuffer == null  ? (this.pageUpBuffer=this.consoleDoc.getCommandString$()) : this.pageUpBuffer, up ? -1 : 1) : this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].vwr.getSetHistory$I(up ? -1 : 1));
+if (cmd == null ) {
+$I$(4,"invokeLater$Runnable",[((P$.AppConsole$ConsoleTextPane$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AppConsole$ConsoleTextPane$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 try {
@@ -597,14 +582,14 @@ this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].hBar.setValue$I
 }
 });
 })()
-), Clazz.new_(P$.AppConsole$ConsoleTextPane$1.$init$, [this, null])));
+), Clazz.new_(P$.AppConsole$ConsoleTextPane$2.$init$,[this, null]))]);
 return;
 }var isError=false;
 try {
 if (cmd.endsWith$S("#??")) {
 isError=true;
 cmd=cmd.substring$I$I(0, cmd.indexOf$S("#??"));
-}cmd=$I$(6).trim$S$S(cmd, ";");
+}cmd=$I$(5).trim$S$S(cmd, ";");
 this.consoleDoc.replaceCommand$S$Z(cmd, isError);
 } catch (e) {
 if (Clazz.exceptionOf(e,"javax.swing.text.BadLocationException")){
@@ -617,53 +602,41 @@ throw e;
 
 Clazz.newMeth(C$, 'checkCommand$', function () {
 var strCommand=this.consoleDoc.getCommandString$();
-if (strCommand.length$() == 0 || strCommand.charAt$I(0) == "!"  || this.this$0.vwr.isScriptExecuting$()  || this.this$0.vwr.getBooleanProperty$S("executionPaused") ) return;
+if (strCommand.length$() == 0 || strCommand.charAt$I(0) == "!"  || this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].vwr.isScriptExecuting$()  || this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].vwr.getBooleanProperty$S("executionPaused") ) return;
 this.checking=true;
-this.consoleDoc.colorCommand$javax_swing_text_SimpleAttributeSet(Clazz.instanceOf(this.this$0.vwr.scriptCheck$S(strCommand), "java.lang.String") ? this.consoleDoc.attError : this.consoleDoc.attUserInput);
+var res=this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].vwr.scriptCheck$S(strCommand);
+this.consoleDoc.colorCommand$javax_swing_text_SimpleAttributeSet(Clazz.instanceOf(res, "java.lang.String") ? this.consoleDoc.attError : this.consoleDoc.attUserInput);
 this.checking=false;
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.AppConsole, "ConsoleDocument", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AppConsole, "ConsoleDocument", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.text.DefaultStyledDocument');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.consoleTextPane=null;
-this.attError=null;
-this.attEcho=null;
-this.attPrompt=null;
-this.attUserInput=null;
-this.attStatus=null;
-this.positionBeforePrompt=null;
-this.positionAfterPrompt=null;
-this.offsetAfterPrompt=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['offsetAfterPrompt'],'O',['consoleTextPane','org.openscience.jmol.app.jmolpanel.console.AppConsole.ConsoleTextPane','attError','javax.swing.text.SimpleAttributeSet','+attEcho','+attPrompt','+attUserInput','+attStatus','positionBeforePrompt','javax.swing.text.Position','+positionAfterPrompt']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.attError=Clazz.new_($I$(7));
-$I$(8).setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color(this.attError, $I$(9).red);
-this.attPrompt=Clazz.new_($I$(7));
-$I$(8).setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color(this.attPrompt, $I$(9).magenta);
-this.attUserInput=Clazz.new_($I$(7));
-$I$(8).setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color(this.attUserInput, $I$(9).black);
-this.attEcho=Clazz.new_($I$(7));
-$I$(8).setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color(this.attEcho, $I$(9).blue);
-$I$(8).setBold$javax_swing_text_MutableAttributeSet$Z(this.attEcho, true);
-this.attStatus=Clazz.new_($I$(7));
-$I$(8).setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color(this.attStatus, $I$(9).black);
-$I$(8).setItalic$javax_swing_text_MutableAttributeSet$Z(this.attStatus, true);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.attError=Clazz.new_($I$(6,1));
+$I$(7,"setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color",[this.attError, $I$(8).red]);
+this.attPrompt=Clazz.new_($I$(6,1));
+$I$(7,"setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color",[this.attPrompt, $I$(8).magenta]);
+this.attUserInput=Clazz.new_($I$(6,1));
+$I$(7,"setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color",[this.attUserInput, $I$(8).black]);
+this.attEcho=Clazz.new_($I$(6,1));
+$I$(7,"setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color",[this.attEcho, $I$(8).blue]);
+$I$(7).setBold$javax_swing_text_MutableAttributeSet$Z(this.attEcho, true);
+this.attStatus=Clazz.new_($I$(6,1));
+$I$(7,"setForeground$javax_swing_text_MutableAttributeSet$java_awt_Color",[this.attStatus, $I$(8).black]);
+$I$(7).setItalic$javax_swing_text_MutableAttributeSet$Z(this.attStatus, true);
 }, 1);
 
 Clazz.newMeth(C$, 'setConsoleTextPane$org_openscience_jmol_app_jmolpanel_console_AppConsole_ConsoleTextPane', function (consoleTextPane) {
@@ -679,7 +652,7 @@ try {
 C$.superclazz.prototype.remove$I$I.apply(this, [0, this.getLength$()]);
 } catch (exception) {
 if (Clazz.exceptionOf(exception,"javax.swing.text.BadLocationException")){
-$I$(2).errorEx$S$Throwable("Could not clear script window content", exception);
+$I$(1).errorEx$S$Throwable("Could not clear script window content", exception);
 } else {
 throw exception;
 }
@@ -747,14 +720,13 @@ this.consoleTextPane.setCaretPosition$I(this.getLength$());
 throw e;
 }
 }
-$I$(5).invokeLater$Runnable(((P$.AppConsole$ConsoleDocument$1||
-(function(){var C$=Clazz.newClass(P$, "AppConsole$ConsoleDocument$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(4,"invokeLater$Runnable",[((P$.AppConsole$ConsoleDocument$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "AppConsole$ConsoleDocument$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'run$', function () {
 try {
@@ -763,7 +735,7 @@ this.b$['org.openscience.jmol.app.jmolpanel.console.AppConsole'].vBar.setValue$I
 }
 });
 })()
-), Clazz.new_(P$.AppConsole$ConsoleDocument$1.$init$, [this, null])));
+), Clazz.new_(P$.AppConsole$ConsoleDocument$1.$init$,[this, null]))]);
 });
 
 Clazz.newMeth(C$, 'outputError$S', function (strError) {
@@ -806,7 +778,7 @@ throw e;
 
 Clazz.newMeth(C$, 'insertString$I$S$javax_swing_text_AttributeSet', function (offs, str, a) {
 var ichNewline=str.indexOf$I("\n");
-if (ichNewline != 0) {
+if (ichNewline != 0 || str !== "\n"  && str.length$() > 0  ) {
 if (offs < this.offsetAfterPrompt) {
 offs=this.getLength$();
 }C$.superclazz.prototype.insertString$I$S$javax_swing_text_AttributeSet.apply(this, [offs, str, a === this.attError  ? a : this.attUserInput]);
@@ -862,4 +834,4 @@ this.setCharacterAttributes$I$I$javax_swing_text_AttributeSet$Z(this.offsetAfter
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

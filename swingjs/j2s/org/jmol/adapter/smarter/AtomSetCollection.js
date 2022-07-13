@@ -1,55 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.adapter.smarter.Atom','org.jmol.adapter.smarter.Bond','org.jmol.adapter.smarter.Structure','Boolean','java.util.Properties','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Lst','javajs.util.P3','javajs.util.V3','javajs.util.BS','javajs.util.AU','java.util.Collections','org.jmol.util.Logger','org.jmol.api.Interface','org.jmol.util.BSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AtomSetCollection");
-C$.globalBooleans=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.adapter.smarter.Atom','org.jmol.adapter.smarter.Bond','org.jmol.adapter.smarter.Structure','java.util.Properties','org.jmol.adapter.smarter.SmarterJmolAdapter','javajs.util.Lst','javajs.util.P3','javajs.util.V3','javajs.util.BS','javajs.util.AU','java.util.Collections','org.jmol.util.Logger','org.jmol.api.Interface','org.jmol.util.BSUtil']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AtomSetCollection");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.globalBooleans=Clazz.array(String, -1, ["someModelsHaveFractionalCoordinates", "someModelsHaveSymmetry", "someModelsHaveUnitcells", "someModelsHaveCONECT", "isPDB", "someModelsHaveDomains", "someModelsHaveValidations"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.reader=null;
-this.bsAtoms=null;
-this.fileTypeName=null;
-this.collectionName=null;
-this.atomSetInfo=null;
-this.atoms=null;
-this.ac=0;
-this.bonds=null;
-this.bondCount=0;
-this.structures=null;
-this.structureCount=0;
-this.atomSetCount=0;
-this.iSet=0;
-this.atomSetNumbers=null;
-this.atomSetAtomIndexes=null;
-this.atomSetAtomCounts=null;
-this.atomSetBondCounts=null;
-this.atomSetAuxiliaryInfo=null;
-this.errorMessage=null;
-this.coordinatesAreFractional=false;
-this.isTrajectory=false;
-this.trajectoryStepCount=0;
-this.trajectorySteps=null;
-this.vibrationSteps=null;
-this.trajectoryNames=null;
-this.doFixPeriodic=false;
-this.allowMultiple=false;
-this.readerList=null;
-this.bsStructuredModels=null;
-this.haveAnisou=false;
-this.baseSymmetryAtomCount=0;
-this.checkLatticeOnly=false;
-this.xtalSymmetry=null;
-this.bondIndex0=0;
-this.checkSpecial=false;
-this.atomSymbolicMap=null;
-this.haveUnitCell=false;
-this.vibScale=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.atomSetInfo=Clazz.new_($I$(1));
+this.atomSetInfo=Clazz.new_($I$(1,1));
 this.atoms=Clazz.array($I$(2), [256]);
 this.bonds=Clazz.array($I$(3), [256]);
 this.structures=Clazz.array($I$(4), [16]);
@@ -61,8 +16,11 @@ this.atomSetBondCounts=Clazz.array(Integer.TYPE, [16]);
 this.atomSetAuxiliaryInfo=Clazz.array($I$(1), [16]);
 this.trajectoryStepCount=0;
 this.checkSpecial=true;
-this.atomSymbolicMap=Clazz.new_($I$(1));
-}, 1);
+this.atomSymbolicMap=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['coordinatesAreFractional','isTrajectory','doFixPeriodic','allowMultiple','haveAnisou','checkLatticeOnly','checkSpecial','haveUnitCell'],'I',['ac','bondCount','structureCount','atomSetCount','iSet','trajectoryStepCount','baseSymmetryAtomCount','bondIndex0','vibScale'],'S',['fileTypeName','collectionName','errorMessage'],'O',['reader','org.jmol.adapter.smarter.AtomSetCollectionReader','bsAtoms','javajs.util.BS','atomSetInfo','java.util.Map','atoms','org.jmol.adapter.smarter.Atom[]','bonds','org.jmol.adapter.smarter.Bond[]','structures','org.jmol.adapter.smarter.Structure[]','atomSetNumbers','int[]','+atomSetAtomIndexes','+atomSetAtomCounts','+atomSetBondCounts','atomSetAuxiliaryInfo','java.util.Map[]','trajectorySteps','javajs.util.Lst','+vibrationSteps','+trajectoryNames','+readerList','bsStructuredModels','javajs.util.BS','xtalSymmetry','org.jmol.adapter.smarter.XtalSymmetry','atomSymbolicMap','java.util.Map']]
+,['O',['globalBooleans','String[]']]]
 
 Clazz.newMeth(C$, 'setCollectionName$S', function (collectionName) {
 if (collectionName != null  && (collectionName=collectionName.trim$()).length$() > 0 ) this.collectionName=collectionName;
@@ -73,30 +31,30 @@ this.atomSetInfo.remove$O(C$.globalBooleans[globalIndex]);
 });
 
 Clazz.newMeth(C$, 'setGlobalBoolean$I', function (globalIndex) {
-this.setInfo$S$O(C$.globalBooleans[globalIndex], $I$(5).TRUE);
+this.setInfo$S$O(C$.globalBooleans[globalIndex], Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'getGlobalBoolean$I', function (globalIndex) {
-return (this.atomSetInfo.get$O(C$.globalBooleans[globalIndex]) === $I$(5).TRUE );
+return (this.atomSetInfo.get$O(C$.globalBooleans[globalIndex]) === Boolean.TRUE );
 });
 
 Clazz.newMeth(C$, 'c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst', function (fileTypeName, reader, array, list) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.fileTypeName=fileTypeName;
 this.reader=reader;
 this.allowMultiple=(reader == null  || reader.desiredVibrationNumber < 0 );
-var p=Clazz.new_($I$(6));
-p.put$TK$TV("PATH_KEY", ".PATH");
-p.put$TK$TV("PATH_SEPARATOR", $I$(7).PATH_SEPARATOR);
+var p=Clazz.new_($I$(5,1));
+p.put$O$O("PATH_KEY", ".PATH");
+p.put$O$O("PATH_SEPARATOR", $I$(6).PATH_SEPARATOR);
 this.setInfo$S$O("properties", p);
 if (array != null ) {
 var n=0;
-this.readerList=Clazz.new_($I$(8));
+this.readerList=Clazz.new_($I$(7,1));
 for (var i=0; i < array.length; i++) if (array[i] != null  && (array[i].ac > 0 || array[i].reader != null  && array[i].reader.mustFinalizeModelSet  ) ) this.appendAtomSetCollection$I$org_jmol_adapter_smarter_AtomSetCollection(n++, array[i]);
 
-if (n > 1) this.setInfo$S$O("isMultiFile", $I$(5).TRUE);
+if (n > 1) this.setInfo$S$O("isMultiFile", Boolean.TRUE);
 } else if (list != null ) {
-this.setInfo$S$O("isMultiFile", $I$(5).TRUE);
+this.setInfo$S$O("isMultiFile", Boolean.TRUE);
 p$1.appendAtomSetCollectionList$javajs_util_Lst.apply(this, [list]);
 }}, 1);
 
@@ -113,17 +71,17 @@ if (Clazz.instanceOf(o, "javajs.util.Lst")) p$1.appendAtomSetCollectionList$java
 }, p$1);
 
 Clazz.newMeth(C$, 'setTrajectory$', function () {
-if (!this.isTrajectory) this.trajectorySteps=Clazz.new_($I$(8));
+if (!this.isTrajectory) this.trajectorySteps=Clazz.new_($I$(7,1));
 this.isTrajectory=true;
 var n=(this.bsAtoms == null  ? this.ac : this.bsAtoms.cardinality$());
-if (n == 0) return;
-var trajectoryStep=Clazz.array($I$(9), [n]);
+if (n <= 1) return;
+var trajectoryStep=Clazz.array($I$(8), [n]);
 var haveVibrations=(n > 0 && this.atoms[0].vib != null   && !Float.isNaN$F(this.atoms[0].vib.z) );
-var vibrationStep=(haveVibrations ? Clazz.array($I$(10), [n]) : null);
+var vibrationStep=(haveVibrations ? Clazz.array($I$(9), [n]) : null);
 var prevSteps=(this.trajectoryStepCount == 0 ? null : this.trajectorySteps.get$I(this.trajectoryStepCount - 1));
 for (var i=0, ii=0; i < this.ac; i++) {
 if (this.bsAtoms != null  && !this.bsAtoms.get$I(i) ) continue;
-var pt=$I$(9).newP$javajs_util_T3(this.atoms[i]);
+var pt=$I$(8).newP$javajs_util_T3(this.atoms[i]);
 if (this.doFixPeriodic && prevSteps != null  ) pt=C$.fixPeriodic$javajs_util_P3$javajs_util_P3(pt, prevSteps[i]);
 trajectoryStep[ii]=pt;
 if (haveVibrations) vibrationStep[ii]=this.atoms[i].vib;
@@ -131,20 +89,20 @@ ii++;
 }
 if (haveVibrations) {
 if (this.vibrationSteps == null ) {
-this.vibrationSteps=Clazz.new_($I$(8));
-for (var i=0; i < this.trajectoryStepCount; i++) this.vibrationSteps.addLast$TV(null);
+this.vibrationSteps=Clazz.new_($I$(7,1));
+for (var i=0; i < this.trajectoryStepCount; i++) this.vibrationSteps.addLast$O(null);
 
-}this.vibrationSteps.addLast$TV(vibrationStep);
-}this.trajectorySteps.addLast$TV(trajectoryStep);
+}this.vibrationSteps.addLast$O(vibrationStep);
+}this.trajectorySteps.addLast$O(trajectoryStep);
 this.trajectoryStepCount++;
 });
 
 Clazz.newMeth(C$, 'appendAtomSetCollection$I$org_jmol_adapter_smarter_AtomSetCollection', function (collectionIndex, collection) {
-if (collection.reader != null  && collection.reader.mustFinalizeModelSet ) this.readerList.addLast$TV(collection.reader);
+if (collection.reader != null  && collection.reader.mustFinalizeModelSet ) this.readerList.addLast$O(collection.reader);
 var existingAtomsCount=this.ac;
 this.setInfo$S$O("loadState", collection.atomSetInfo.get$O("loadState"));
 if (collection.bsAtoms != null ) {
-if (this.bsAtoms == null ) this.bsAtoms=Clazz.new_($I$(11));
+if (this.bsAtoms == null ) this.bsAtoms=Clazz.new_($I$(10,1));
 for (var i=collection.bsAtoms.nextSetBit$I(0); i >= 0; i=collection.bsAtoms.nextSetBit$I(i + 1)) this.bsAtoms.set$I(existingAtomsCount + i);
 
 }var clonedAtoms=0;
@@ -186,7 +144,7 @@ s.modelStartEnd[1]+=atomSetCount0;
 });
 
 Clazz.newMeth(C$, 'setNoAutoBond$', function () {
-this.setInfo$S$O("noAutoBond", $I$(5).TRUE);
+this.setInfo$S$O("noAutoBond", Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'freeze$Z', function (reverseModels) {
@@ -221,10 +179,10 @@ this.structures[i].modelStartEnd[1]=this.atomSetCount - 1 - m ;
 for (var i=0; i < this.bondCount; i++) this.bonds[i].atomSetIndex=this.atomSetCount - 1 - this.atoms[this.bonds[i].atomIndex1].atomSetIndex ;
 
 p$1.reverseSets$org_jmol_adapter_smarter_AtomSetObjectA$I.apply(this, [this.bonds, this.bondCount]);
-var lists=$I$(12).createArrayOfArrayList$I(this.atomSetCount);
-for (var i=0; i < this.atomSetCount; i++) lists[i]=Clazz.new_($I$(8));
+var lists=$I$(11).createArrayOfArrayList$I(this.atomSetCount);
+for (var i=0; i < this.atomSetCount; i++) lists[i]=Clazz.new_($I$(7,1));
 
-for (var i=0; i < this.ac; i++) lists[this.atoms[i].atomSetIndex].addLast$TV(this.atoms[i]);
+for (var i=0; i < this.ac; i++) lists[this.atoms[i].atomSetIndex].addLast$O(this.atoms[i]);
 
 var newIndex=Clazz.array(Integer.TYPE, [this.ac]);
 var n=this.ac;
@@ -247,13 +205,13 @@ conect[1]=this.atomSetAtomCounts[i];
 }, p$1);
 
 Clazz.newMeth(C$, 'reverseSets$org_jmol_adapter_smarter_AtomSetObjectA$I', function (o, n) {
-var lists=$I$(12).createArrayOfArrayList$I(this.atomSetCount);
-for (var i=0; i < this.atomSetCount; i++) lists[i]=Clazz.new_($I$(8));
+var lists=$I$(11).createArrayOfArrayList$I(this.atomSetCount);
+for (var i=0; i < this.atomSetCount; i++) lists[i]=Clazz.new_($I$(7,1));
 
 for (var i=0; i < n; i++) {
 var index=o[i].atomSetIndex;
 if (index < 0) return;
-lists[o[i].atomSetIndex].addLast$TV(o[i]);
+lists[o[i].atomSetIndex].addLast$O(o[i]);
 }
 for (var i=this.atomSetCount; --i >= 0; ) for (var j=lists[i].size$(); --j >= 0; ) o[--n]=lists[i].get$I(j);
 
@@ -262,18 +220,18 @@ for (var i=this.atomSetCount; --i >= 0; ) for (var j=lists[i].size$(); --j >= 0;
 
 Clazz.newMeth(C$, 'reverseObject$OA', function (o) {
 var n=this.atomSetCount;
-for (var i=(n/2|0); --i >= 0; ) $I$(12).swap$OA$I$I(o, i, n - 1 - i );
+for (var i=(n/2|0); --i >= 0; ) $I$(11).swap$OA$I$I(o, i, n - 1 - i );
 
 }, p$1);
 
 Clazz.newMeth(C$, 'reverseList$javajs_util_Lst', function (list) {
 if (list == null ) return;
-$I$(13).reverse$java_util_List(list);
+$I$(12).reverse$java_util_List(list);
 }, 1);
 
 Clazz.newMeth(C$, 'reverseArray$IA', function (a) {
 var n=this.atomSetCount;
-for (var i=(n/2|0); --i >= 0; ) $I$(12).swapInt$IA$I$I(a, i, n - 1 - i );
+for (var i=(n/2|0); --i >= 0; ) $I$(11).swapInt$IA$I$I(a, i, n - 1 - i );
 
 }, p$1);
 
@@ -303,10 +261,10 @@ if (this.reader != null ) this.reader.finalizeModelSet$();
 this.atoms=null;
 this.atomSetAtomCounts=Clazz.array(Integer.TYPE, [16]);
 this.atomSetAuxiliaryInfo=Clazz.array($I$(1), [16]);
-this.atomSetInfo=Clazz.new_($I$(1));
+this.atomSetInfo=Clazz.new_($I$(1,1));
 this.atomSetCount=0;
 this.atomSetNumbers=Clazz.array(Integer.TYPE, [16]);
-this.atomSymbolicMap=Clazz.new_($I$(1));
+this.atomSymbolicMap=Clazz.new_($I$(1,1));
 this.bonds=null;
 this.iSet=-1;
 this.readerList=null;
@@ -398,13 +356,13 @@ return this.ac - this.atomSetAtomCounts[this.iSet];
 });
 
 Clazz.newMeth(C$, 'addNewAtom$', function () {
-return this.addAtom$org_jmol_adapter_smarter_Atom(Clazz.new_($I$(2)));
+return this.addAtom$org_jmol_adapter_smarter_Atom(Clazz.new_($I$(2,1)));
 });
 
 Clazz.newMeth(C$, 'addAtom$org_jmol_adapter_smarter_Atom', function (atom) {
 if (this.ac == this.atoms.length) {
-if (this.ac > 200000) this.atoms=$I$(12).ensureLength$O$I(this.atoms, this.ac + 50000);
- else this.atoms=$I$(12).doubleLength$O(this.atoms);
+if (this.ac > 200000) this.atoms=$I$(11).ensureLength$O$I(this.atoms, this.ac + 50000);
+ else this.atoms=$I$(11).doubleLength$O(this.atoms);
 }if (this.atomSetCount == 0) this.newAtomSet$();
 atom.index=this.ac;
 this.atoms[this.ac++]=atom;
@@ -415,12 +373,12 @@ return atom;
 
 Clazz.newMeth(C$, 'addAtomWithMappedName$org_jmol_adapter_smarter_Atom', function (atom) {
 var atomName=this.addAtom$org_jmol_adapter_smarter_Atom(atom).atomName;
-if (atomName != null ) this.atomSymbolicMap.put$TK$TV(atomName, atom);
+if (atomName != null ) this.atomSymbolicMap.put$O$O(atomName, atom);
 });
 
 Clazz.newMeth(C$, 'addAtomWithMappedSerialNumber$org_jmol_adapter_smarter_Atom', function (atom) {
 var atomSerial=this.addAtom$org_jmol_adapter_smarter_Atom(atom).atomSerial;
-if (atomSerial != -2147483648) this.atomSymbolicMap.put$TK$TV("" + atomSerial, atom);
+if (atomSerial != -2147483648) this.atomSymbolicMap.put$O$O("" + atomSerial, atom);
 });
 
 Clazz.newMeth(C$, 'getAtomFromName$S', function (atomName) {
@@ -433,7 +391,7 @@ return (a == null  ? -1 : a.index);
 });
 
 Clazz.newMeth(C$, 'addNewBondWithOrder$I$I$I', function (atomIndex1, atomIndex2, order) {
-if (atomIndex1 >= 0 && atomIndex1 < this.ac  && atomIndex2 >= 0  && atomIndex2 < this.ac  && atomIndex1 != atomIndex2 ) this.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(3).c$$I$I$I,[atomIndex1, atomIndex2, order]));
+if (atomIndex1 >= 0 && atomIndex1 < this.ac  && atomIndex2 >= 0  && atomIndex2 < this.ac  && atomIndex1 != atomIndex2 ) this.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(3,1).c$$I$I$I,[atomIndex1, atomIndex2, order]));
 });
 
 Clazz.newMeth(C$, 'addNewBondFromNames$S$S$I', function (atomName1, atomName2, order) {
@@ -447,18 +405,18 @@ if (atom1 != null  && atom2 != null  ) this.addNewBondWithOrder$I$I$I(atom1.inde
 Clazz.newMeth(C$, 'addBond$org_jmol_adapter_smarter_Bond', function (bond) {
 if (this.trajectoryStepCount > 0) return;
 if (bond.atomIndex1 < 0 || bond.atomIndex2 < 0  || bond.order < 0  || bond.atomIndex1 == bond.atomIndex2  || this.atoms[bond.atomIndex1].atomSetIndex != this.atoms[bond.atomIndex2].atomSetIndex ) {
-if ($I$(14).debugging) {
-$I$(14).debug$S(">>>>>>BAD BOND:" + bond.atomIndex1 + "-" + bond.atomIndex2 + " order=" + bond.order );
+if ($I$(13).debugging) {
+$I$(13,"debug$S",[">>>>>>BAD BOND:" + bond.atomIndex1 + "-" + bond.atomIndex2 + " order=" + bond.order ]);
 }return;
-}if (this.bondCount == this.bonds.length) this.bonds=$I$(12).arrayCopyObject$O$I(this.bonds, this.bondCount + 1024);
+}if (this.bondCount == this.bonds.length) this.bonds=$I$(11).arrayCopyObject$O$I(this.bonds, this.bondCount + 1024);
 this.bonds[this.bondCount++]=bond;
 this.atomSetBondCounts[this.iSet]++;
 });
 
 Clazz.newMeth(C$, 'finalizeStructures$', function () {
 if (this.structureCount == 0) return;
-this.bsStructuredModels=Clazz.new_($I$(11));
-var map=Clazz.new_($I$(1));
+this.bsStructuredModels=Clazz.new_($I$(10,1));
+var map=Clazz.new_($I$(1,1));
 for (var i=0; i < this.structureCount; i++) {
 var s=this.structures[i];
 if (s.modelStartEnd[0] == -1) {
@@ -469,7 +427,7 @@ if (s.strandCount == 0) continue;
 var key=s.structureID + " " + s.modelStartEnd[0] ;
 var v=map.get$O(key);
 var count=(v == null  ? 0 : v.intValue$()) + 1;
-map.put$TK$TV(key, Integer.valueOf$I(count));
+map.put$O$O(key, Integer.valueOf$I(count));
 }
 for (var i=0; i < this.structureCount; i++) {
 var s=this.structures[i];
@@ -478,7 +436,7 @@ if (s.strandCount == 1) s.strandCount=map.get$O(s.structureID + " " + s.modelSta
 });
 
 Clazz.newMeth(C$, 'addStructure$org_jmol_adapter_smarter_Structure', function (structure) {
-if (this.structureCount == this.structures.length) this.structures=$I$(12).arrayCopyObject$O$I(this.structures, this.structureCount + 32);
+if (this.structureCount == this.structures.length) this.structures=$I$(11).arrayCopyObject$O$I(this.structures, this.structureCount + 32);
 this.structures[this.structureCount++]=structure;
 });
 
@@ -495,12 +453,12 @@ if (this.atoms[i].atomSite == atomSite) this.addVibrationVector$I$F$F$F(i, vx, v
 
 Clazz.newMeth(C$, 'addVibrationVector$I$F$F$F', function (iatom, x, y, z) {
 if (!this.allowMultiple) iatom=iatom % this.ac;
-return (this.atoms[iatom].vib=$I$(10).new3$F$F$F(x, y, z));
+return (this.atoms[iatom].vib=$I$(9).new3$F$F$F(x, y, z));
 });
 
 Clazz.newMeth(C$, 'setCoordinatesAreFractional$Z', function (tf) {
 this.coordinatesAreFractional=tf;
-this.setCurrentModelInfo$S$O("coordinatesAreFractional", $I$(5).valueOf$Z(tf));
+this.setCurrentModelInfo$S$O("coordinatesAreFractional", Boolean.valueOf$Z(tf));
 if (tf) this.setGlobalBoolean$I(0);
 });
 
@@ -517,7 +475,7 @@ data[i]=val;
 });
 
 Clazz.newMeth(C$, 'getXSymmetry$', function () {
-if (this.xtalSymmetry == null ) this.xtalSymmetry=($I$(15).getOption$S$org_jmol_viewer_Viewer$S("adapter.smarter.XtalSymmetry", this.reader.vwr, "file")).set$org_jmol_adapter_smarter_AtomSetCollectionReader(this.reader);
+if (this.xtalSymmetry == null ) this.xtalSymmetry=($I$(14).getOption$S$org_jmol_viewer_Viewer$S("adapter.smarter.XtalSymmetry", this.reader.vwr, "file")).set$org_jmol_adapter_smarter_AtomSetCollectionReader(this.reader);
 return this.xtalSymmetry;
 });
 
@@ -535,7 +493,7 @@ if (this.haveAnisou) this.getXSymmetry$().setTensors$();
 
 Clazz.newMeth(C$, 'setInfo$S$O', function (key, value) {
 if (value == null ) this.atomSetInfo.remove$O(key);
- else this.atomSetInfo.put$TK$TV(key, value);
+ else this.atomSetInfo.put$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'setAtomSetCollectionPartialCharges$S', function (auxKey) {
@@ -544,7 +502,7 @@ var atomData=this.atomSetInfo.get$O(auxKey);
 var n=atomData.size$();
 for (var i=this.ac; --i >= 0; ) this.atoms[i].partialCharge=atomData.get$I(i % n).floatValue$();
 
-$I$(14).info$S("Setting partial charges type " + auxKey);
+$I$(13).info$S("Setting partial charges type " + auxKey);
 return true;
 });
 
@@ -584,7 +542,7 @@ var n=(this.bsAtoms == null  ? this.ac : this.bsAtoms.cardinality$());
 if (this.vibrationSteps != null  && vibrations != null   && vibrations.length < n  || trajectory.length < n ) {
 this.errorMessage="File cannot be loaded as a trajectory";
 return;
-}var v=Clazz.new_($I$(10));
+}var v=Clazz.new_($I$(9,1));
 for (var i=0, ii=0; i < this.ac; i++) {
 if (this.bsAtoms != null  && !this.bsAtoms.get$I(i) ) continue;
 if (this.vibrationSteps != null ) this.atoms[i].vib=(vibrations == null  ? v : vibrations[ii]);
@@ -593,6 +551,7 @@ ii++;
 }
 this.setInfo$S$O("trajectorySteps", this.trajectorySteps);
 if (this.vibrationSteps != null ) this.setInfo$S$O("vibrationSteps", this.vibrationSteps);
+if (this.ac == 0) this.ac=trajectory.length;
 }, p$1);
 
 Clazz.newMeth(C$, 'newAtomSet$', function () {
@@ -605,13 +564,13 @@ this.bondIndex0=this.bondCount;
 if (this.isTrajectory) this.reader.discardPreviousAtoms$();
 this.iSet=this.atomSetCount++;
 if (this.atomSetCount > this.atomSetNumbers.length) {
-this.atomSetAtomIndexes=$I$(12).doubleLengthI$IA(this.atomSetAtomIndexes);
-this.atomSetAtomCounts=$I$(12).doubleLengthI$IA(this.atomSetAtomCounts);
-this.atomSetBondCounts=$I$(12).doubleLengthI$IA(this.atomSetBondCounts);
-this.atomSetAuxiliaryInfo=$I$(12).doubleLength$O(this.atomSetAuxiliaryInfo);
+this.atomSetAtomIndexes=$I$(11).doubleLengthI$IA(this.atomSetAtomIndexes);
+this.atomSetAtomCounts=$I$(11).doubleLengthI$IA(this.atomSetAtomCounts);
+this.atomSetBondCounts=$I$(11).doubleLengthI$IA(this.atomSetBondCounts);
+this.atomSetAuxiliaryInfo=$I$(11).doubleLength$O(this.atomSetAuxiliaryInfo);
 }this.atomSetAtomIndexes[this.iSet]=this.ac;
 if (this.atomSetCount + this.trajectoryStepCount > this.atomSetNumbers.length) {
-this.atomSetNumbers=$I$(12).doubleLengthI$IA(this.atomSetNumbers);
+this.atomSetNumbers=$I$(11).doubleLengthI$IA(this.atomSetNumbers);
 }if (this.isTrajectory) {
 this.atomSetNumbers[this.iSet + this.trajectoryStepCount]=this.atomSetCount + this.trajectoryStepCount;
 } else {
@@ -647,10 +606,10 @@ if (!this.allowMultiple) this.setCollectionName$S(atomSetName);
 Clazz.newMeth(C$, 'setTrajectoryName$S', function (name) {
 if (this.trajectoryStepCount == 0) return;
 if (this.trajectoryNames == null ) {
-this.trajectoryNames=Clazz.new_($I$(8));
-}for (var i=this.trajectoryNames.size$(); i < this.trajectoryStepCount; i++) this.trajectoryNames.addLast$TV(null);
+this.trajectoryNames=Clazz.new_($I$(7,1));
+}for (var i=this.trajectoryNames.size$(); i < this.trajectoryStepCount; i++) this.trajectoryNames.addLast$O(null);
 
-this.trajectoryNames.set$I$TE(this.trajectoryStepCount - 1, name);
+this.trajectoryNames.set$I$O(this.trajectoryStepCount - 1, name);
 }, p$1);
 
 Clazz.newMeth(C$, 'setCurrentAtomSetNumber$I', function (atomSetNumber) {
@@ -667,17 +626,17 @@ this.setAtomSetModelPropertyForSet$S$S$I(key, value, this.iSet);
 
 Clazz.newMeth(C$, 'setAtomSetModelPropertyForSet$S$S$I', function (key, value, atomSetIndex) {
 var p=this.getAtomSetAuxiliaryInfoValue$I$S(atomSetIndex, "modelProperties");
-if (p == null ) this.setModelInfoForSet$S$O$I("modelProperties", p=Clazz.new_($I$(6)), atomSetIndex);
-p.put$TK$TV(key, value);
-if (key.startsWith$S(".")) p.put$TK$TV(key.substring$I(1), value);
+if (p == null ) this.setModelInfoForSet$S$O$I("modelProperties", p=Clazz.new_($I$(5,1)), atomSetIndex);
+p.put$O$O(key, value);
+if (key.startsWith$S(".")) p.put$O$O(key.substring$I(1), value);
 });
 
 Clazz.newMeth(C$, 'setAtomProperties$S$O$I$Z', function (key, data, atomSetIndex, isGroup) {
 if (Clazz.instanceOf(data, "java.lang.String") && !(data).endsWith$S("\n") ) data=data + "\n";
 if (atomSetIndex < 0) atomSetIndex=this.iSet;
 var p=this.getAtomSetAuxiliaryInfoValue$I$S(atomSetIndex, "atomProperties");
-if (p == null ) this.setModelInfoForSet$S$O$I("atomProperties", p=Clazz.new_($I$(1)), atomSetIndex);
-p.put$TK$TV(key, data);
+if (p == null ) this.setModelInfoForSet$S$O$I("atomProperties", p=Clazz.new_($I$(1,1)), atomSetIndex);
+p.put$O$O(key, data);
 });
 
 Clazz.newMeth(C$, 'setAtomSetPartialCharges$S', function (auxKey) {
@@ -700,9 +659,9 @@ this.setModelInfoForSet$S$O$I(key, value, this.iSet);
 
 Clazz.newMeth(C$, 'setModelInfoForSet$S$O$I', function (key, value, atomSetIndex) {
 if (atomSetIndex < 0) return;
-if (this.atomSetAuxiliaryInfo[atomSetIndex] == null ) this.atomSetAuxiliaryInfo[atomSetIndex]=Clazz.new_($I$(1));
+if (this.atomSetAuxiliaryInfo[atomSetIndex] == null ) this.atomSetAuxiliaryInfo[atomSetIndex]=Clazz.new_($I$(1,1));
 if (value == null ) this.atomSetAuxiliaryInfo[atomSetIndex].remove$O(key);
- else this.atomSetAuxiliaryInfo[atomSetIndex].put$TK$TV(key, value);
+ else this.atomSetAuxiliaryInfo[atomSetIndex].put$O$O(key, value);
 });
 
 Clazz.newMeth(C$, 'getAtomSetNumber$I', function (atomSetIndex) {
@@ -722,7 +681,7 @@ return (i < 0 ? null : this.atomSetAuxiliaryInfo[i]);
 
 Clazz.newMeth(C$, 'setAtomSetEnergy$S$F', function (energyString, value) {
 if (this.iSet < 0) return;
-$I$(14).info$S("Energy for model " + (this.iSet + 1) + " = " + energyString );
+$I$(13,"info$S",["Energy for model " + (this.iSet + 1) + " = " + energyString ]);
 this.setCurrentModelInfo$S$O("EnergyString", energyString);
 this.setCurrentModelInfo$S$O("Energy", Float.valueOf$F(value));
 this.setAtomSetModelProperty$S$S("Energy", "" + new Float(value).toString());
@@ -737,7 +696,7 @@ this.setAtomSetModelProperty$S$S("Frequency", freq);
 this.setAtomSetModelProperty$S$S("Mode", "" + mode);
 this.setModelInfoForSet$S$O$I("vibrationalMode", Integer.valueOf$I(mode), this.iSet);
 if (label != null ) this.setAtomSetModelProperty$S$S("FrequencyLabel", label);
-this.setAtomSetModelProperty$S$S(".PATH", (pathKey == null  ? "" : pathKey + $I$(7).PATH_SEPARATOR + "Frequencies" ) + "Frequencies");
+this.setAtomSetModelProperty$S$S(".PATH", (pathKey == null  ? "" : pathKey + $I$(6).PATH_SEPARATOR + "Frequencies" ) + "Frequencies");
 return name;
 });
 
@@ -750,7 +709,7 @@ return info;
 });
 
 Clazz.newMeth(C$, 'centralize$', function () {
-var pt=Clazz.new_($I$(9));
+var pt=Clazz.new_($I$(8,1));
 for (var i=0; i < this.atomSetCount; i++) {
 var n=this.atomSetAtomCounts[i];
 var atom0=this.atomSetAtomIndexes[i];
@@ -765,14 +724,14 @@ for (var j=atom0 + n; --j >= atom0; ) this.atoms[j].sub$javajs_util_T3(pt);
 
 Clazz.newMeth(C$, 'mergeTrajectories$org_jmol_adapter_smarter_AtomSetCollection', function (a) {
 if (!this.isTrajectory || !a.isTrajectory || this.vibrationSteps != null   ) return;
-for (var i=0; i < a.trajectoryStepCount; i++) this.trajectorySteps.add$I$TE(this.trajectoryStepCount++, a.trajectorySteps.get$I(i));
+for (var i=0; i < a.trajectoryStepCount; i++) this.trajectorySteps.add$I$O(this.trajectoryStepCount++, a.trajectorySteps.get$I(i));
 
 this.setInfo$S$O("trajectorySteps", this.trajectorySteps);
 this.setInfo$S$O("ignoreUnitCell", a.atomSetInfo.get$O("ignoreUnitCell"));
 });
 
 Clazz.newMeth(C$, 'removeAtomSet$I', function (imodel) {
-if (this.bsAtoms == null ) this.bsAtoms=$I$(16).newBitSet2$I$I(0, this.ac);
+if (this.bsAtoms == null ) this.bsAtoms=$I$(15).newBitSet2$I$I(0, this.ac);
 var i0=this.atomSetAtomIndexes[imodel];
 var nAtoms=this.atomSetAtomCounts[imodel];
 var i1=i0 + nAtoms;
@@ -832,6 +791,10 @@ while (this.atomSetCount > 0 && this.atomSetAtomCounts[this.atomSetCount - 1] ==
 
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.globalBooleans=Clazz.array(String, -1, ["someModelsHaveFractionalCoordinates", "someModelsHaveSymmetry", "someModelsHaveUnitcells", "someModelsHaveCONECT", "isPDB", "someModelsHaveDomains", "someModelsHaveValidations"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

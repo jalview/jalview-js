@@ -1,31 +1,23 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel.features"),I$=[[0,'jalview.util.matcher.Condition','jalview.util.matcher.Matcher','StringBuilder','jalview.util.MessageManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FeatureMatcher", null, null, 'jalview.datamodel.features.FeatureMatcherI');
-C$.NULL_MATCHER=null;
+(function(){var P$=Clazz.newPackage("jalview.datamodel.features"),I$=[[0,'jalview.util.matcher.Condition','java.util.Locale','jalview.util.matcher.Matcher','StringBuilder','jalview.util.MessageManager']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FeatureMatcher", null, null, 'jalview.datamodel.features.FeatureMatcherI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NULL_MATCHER=C$.byLabel$jalview_util_matcher_Condition$S($I$(1).values$()[0], "");
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.byLabel=false;
-this.byScore=false;
-this.key=null;
-this.matcher=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'fromAttributeDisplayName$S', function (attribute) {
+C$.$fields$=[['Z',['byLabel','byScore'],'O',['key','String[]','matcher','jalview.util.matcher.MatcherI']]
+,['O',['NULL_MATCHER','jalview.datamodel.features.FeatureMatcherI']]]
+
+Clazz.newMeth(C$, 'fromAttributeDisplayName$S',  function (attribute) {
 return attribute == null  ? null : attribute.split$S(":");
 }, 1);
 
-Clazz.newMeth(C$, 'toAttributeDisplayName$SA', function (attName) {
+Clazz.newMeth(C$, 'toAttributeDisplayName$SA',  function (attName) {
 return attName == null  ? "" : String.join$CharSequence$CharSequenceA(":", attName);
 }, 1);
 
-Clazz.newMeth(C$, 'fromString$S', function (descriptor) {
+Clazz.newMeth(C$, 'fromString$S',  function (descriptor) {
 var invalidFormat="Invalid matcher format: " + descriptor;
 var attName=null;
 var byScore=false;
@@ -48,10 +40,10 @@ System.err.println$S(invalidFormat);
 return null;
 }firstField=descriptor.substring$I$I(0, nextSpacePos);
 leftToParse=descriptor.substring$I(nextSpacePos + 1).trim$();
-}var lower=firstField.toLowerCase$();
-if (lower.startsWith$S("Label".toLowerCase$())) {
+}var lower=firstField.toLowerCase$java_util_Locale($I$(2).ROOT);
+if (lower.startsWith$S("Label".toLowerCase$java_util_Locale($I$(2).ROOT))) {
 byLabel=true;
-} else if (lower.startsWith$S("Score".toLowerCase$())) {
+} else if (lower.startsWith$S("Score".toLowerCase$java_util_Locale($I$(2).ROOT))) {
 byScore=true;
 } else {
 attName=firstField;
@@ -62,7 +54,7 @@ if (cond == null  || cond.needsAPattern$() ) {
 System.err.println$S(invalidFormat);
 return null;
 }} else {
-cond=$I$(1).fromString$S(leftToParse.substring$I$I(0, nextSpacePos));
+cond=$I$(1,"fromString$S",[leftToParse.substring$I$I(0, nextSpacePos)]);
 leftToParse=leftToParse.substring$I(nextSpacePos + 1).trim$();
 if (leftToParse.startsWith$S("\'")) {
 if (leftToParse.endsWith$S("\'")) {
@@ -89,49 +81,49 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'byLabel$jalview_util_matcher_Condition$S', function (cond, pattern) {
-return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2).c$$jalview_util_matcher_Condition$S,[cond, pattern]), true, false, null]);
+Clazz.newMeth(C$, 'byLabel$jalview_util_matcher_Condition$S',  function (cond, pattern) {
+return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(3,1).c$$jalview_util_matcher_Condition$S,[cond, pattern]), true, false, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'byScore$jalview_util_matcher_Condition$S', function (cond, pattern) {
-return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, true, null]);
+Clazz.newMeth(C$, 'byScore$jalview_util_matcher_Condition$S',  function (cond, pattern) {
+return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(3,1).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, true, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'byAttribute$jalview_util_matcher_Condition$S$SA', function (cond, pattern, attName) {
-return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(2).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, false, attName]);
+Clazz.newMeth(C$, 'byAttribute$jalview_util_matcher_Condition$S$SA',  function (cond, pattern, attName) {
+return Clazz.new_(C$.c$$jalview_util_matcher_Matcher$Z$Z$SA,[Clazz.new_($I$(3,1).c$$jalview_util_matcher_Condition$S,[cond, pattern]), false, false, attName]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_util_matcher_Matcher$Z$Z$SA', function (m, forLabel, forScore, theKey) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_util_matcher_Matcher$Z$Z$SA',  function (m, forLabel, forScore, theKey) {
+;C$.$init$.apply(this);
 this.key=theKey;
 this.matcher=m;
 this.byLabel=forLabel;
 this.byScore=forScore;
 }, 1);
 
-Clazz.newMeth(C$, 'matches$jalview_datamodel_SequenceFeature', function (feature) {
+Clazz.newMeth(C$, 'matches$jalview_datamodel_SequenceFeature',  function (feature) {
 var value=this.byLabel ? feature.getDescription$() : (this.byScore ? String.valueOf$F(feature.getScore$()) : feature.getValueAsString$SA(this.key));
 return this.matcher.matches$S(value);
 });
 
-Clazz.newMeth(C$, 'getAttribute$', function () {
+Clazz.newMeth(C$, 'getAttribute$',  function () {
 return this.key;
 });
 
-Clazz.newMeth(C$, 'getMatcher$', function () {
+Clazz.newMeth(C$, 'getMatcher$',  function () {
 return this.matcher;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(3));
+Clazz.newMeth(C$, 'toString',  function () {
+var sb=Clazz.new_($I$(4,1));
 if (this.byLabel) {
-sb.append$S($I$(4).getString$S("label.label"));
+sb.append$S($I$(5).getString$S("label.label"));
 } else if (this.byScore) {
-sb.append$S($I$(4).getString$S("label.score"));
+sb.append$S($I$(5).getString$S("label.score"));
 } else {
 sb.append$S(String.join$CharSequence$CharSequenceA(":", this.key));
 }var condition=this.matcher.getCondition$();
-sb.append$S(" ").append$S(condition.toString().toLowerCase$());
+sb.append$S(" ").append$S(condition.toString().toLowerCase$java_util_Locale($I$(2).ROOT));
 if (condition.isNumeric$()) {
 sb.append$S(" ").append$S(this.matcher.getPattern$());
 } else if (condition.needsAPattern$()) {
@@ -139,20 +131,20 @@ sb.append$S(" \'").append$S(this.matcher.getPattern$()).append$S("\'");
 }return sb.toString();
 });
 
-Clazz.newMeth(C$, 'isByLabel$', function () {
+Clazz.newMeth(C$, 'isByLabel$',  function () {
 return this.byLabel;
 });
 
-Clazz.newMeth(C$, 'isByScore$', function () {
+Clazz.newMeth(C$, 'isByScore$',  function () {
 return this.byScore;
 });
 
-Clazz.newMeth(C$, 'isByAttribute$', function () {
+Clazz.newMeth(C$, 'isByAttribute$',  function () {
 return this.getAttribute$() != null ;
 });
 
-Clazz.newMeth(C$, 'toStableString$', function () {
-var sb=Clazz.new_($I$(3));
+Clazz.newMeth(C$, 'toStableString$',  function () {
+var sb=Clazz.new_($I$(4,1));
 if (this.byLabel) {
 sb.append$S("Label");
 } else if (this.byScore) {
@@ -174,6 +166,10 @@ sb.append$S(" ").append$S(pattern);
 }}return sb.toString();
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.NULL_MATCHER=C$.byLabel$jalview_util_matcher_Condition$S($I$(1).values$()[0], "");
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

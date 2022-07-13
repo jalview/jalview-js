@@ -1,24 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PyMOLMeshReader", null, 'org.jmol.jvxl.readers.MapFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.SB']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PyMOLMeshReader", null, 'org.jmol.jvxl.readers.MapFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.data=null;
-this.voxelList=null;
-this.surfaceName=null;
-this.pymolType=0;
-this.isMesh=false;
-this.pt=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isMesh'],'I',['pymolType','pt'],'S',['surfaceName'],'O',['data','javajs.util.Lst','+voxelList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, brNull) {
@@ -31,14 +22,14 @@ if (this.data == null ) return;
 this.pymolType=(p$1.getFloat$javajs_util_Lst$I.apply(this, [C$.getList$javajs_util_Lst$I(this.data, 0), 0])|0);
 this.isMesh=(this.pymolType == 3);
 this.surfaceName=this.data.get$I(this.data.size$() - 1);
-$I$(1).info$S("PyMOLMeshReader for " + this.params.calculationType + " pymolType=" + this.pymolType + "; isMesh=" + this.isMesh + " surfaceName=" + this.surfaceName );
+$I$(1,"info$S",["PyMOLMeshReader for " + this.params.calculationType + " pymolType=" + this.pymolType + "; isMesh=" + this.isMesh + " surfaceName=" + this.surfaceName ]);
 this.data=C$.getList$javajs_util_Lst$I(C$.getList$javajs_util_Lst$I(this.data, 2), 0);
 if (this.isMesh && this.params.thePlane == null   && this.params.cutoffAutomatic ) {
 this.params.cutoff=p$1.getFloat$javajs_util_Lst$I.apply(this, [this.data, 8]);
 this.params.cutoffAutomatic=false;
 }if (this.isMesh) this.data=C$.getList$javajs_util_Lst$I(C$.getList$javajs_util_Lst$I(map.get$O(this.surfaceName), 2), 0);
 this.voxelList=C$.getList$javajs_util_Lst$I(C$.getList$javajs_util_Lst$I(C$.getList$javajs_util_Lst$I(this.data, 14), 2), 6);
-$I$(1).info$S("PyMOLMeshReader: Number of grid points = " + this.voxelList.size$());
+$I$(1,"info$S",["PyMOLMeshReader: Number of grid points = " + this.voxelList.size$()]);
 });
 
 Clazz.newMeth(C$, 'getList$javajs_util_Lst$I', function (list, i) {
@@ -47,7 +38,7 @@ return list.get$I(i);
 
 Clazz.newMeth(C$, 'readParameters$', function () {
 var t;
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(2));
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(2,1));
 this.jvxlFileHeaderBuffer.append$S("PyMOL surface reader\n");
 this.jvxlFileHeaderBuffer.append$S(this.surfaceName + " (" + this.params.calculationType + ")\n" );
 var s=C$.getList$javajs_util_Lst$I(this.data, 1);
@@ -114,7 +105,7 @@ if (this.dmin != 3.4028235E38 ) {
 if (this.params.cutoff > this.dmax ) this.params.cutoff=this.dmax / 4;
 }} else {
 this.params.cutoff=p$1.calculateCutoff.apply(this, []);
-}$I$(1).info$S("MapReader: setting cutoff to default value of " + new Float(this.params.cutoff).toString() + (this.boundingBox == null  ? " (no BOUNDBOX parameter)\n" : "\n") );
+}$I$(1,"info$S",["MapReader: setting cutoff to default value of " + new Float(this.params.cutoff).toString() + (this.boundingBox == null  ? " (no BOUNDBOX parameter)\n" : "\n") ]);
 });
 
 Clazz.newMeth(C$, 'calculateCutoff', function () {
@@ -128,8 +119,8 @@ sum2 += v * v;
 }
 var mean=sum / n;
 var rmsd=Math.sqrt(sum2 / n);
-$I$(1).info$S("PyMOLMeshReader rmsd=" + new Float(rmsd).toString() + " mean=" + new Float(mean).toString() );
+$I$(1,"info$S",["PyMOLMeshReader rmsd=" + new Float(rmsd).toString() + " mean=" + new Float(mean).toString() ]);
 return this.params.sigma * rmsd + mean;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

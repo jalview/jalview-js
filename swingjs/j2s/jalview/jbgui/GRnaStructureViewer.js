@@ -1,14 +1,13 @@
 (function(){var P$=Clazz.newPackage("jalview.jbgui"),p$1={};
-var C$=Clazz.newClass(P$, "GRnaStructureViewer", null, 'javax.swing.JInternalFrame');
+/*c*/var C$=Clazz.newClass(P$, "GRnaStructureViewer", null, 'javax.swing.JInternalFrame');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 try {
 p$1.jbInit.apply(this, []);
 } catch (ex) {
@@ -20,8 +19,8 @@ throw ex;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'jbInit', function () {
+Clazz.newMeth(C$, 'jbInit',  function () {
 this.setName$S("jalview-rnastructureviewer");
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:39 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

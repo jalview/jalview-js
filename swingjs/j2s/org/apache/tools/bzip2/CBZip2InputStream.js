@@ -1,54 +1,25 @@
-(function(){var P$=Clazz.newPackage("org.apache.tools.bzip2"),p$1={},I$=[[0,'org.apache.tools.bzip2.CRC',['org.apache.tools.bzip2.CBZip2InputStream','.Data'],'org.apache.tools.bzip2.BZip2Constants']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CBZip2InputStream", function(){
+(function(){var P$=Clazz.newPackage("org.apache.tools.bzip2"),p$1={},I$=[[0,'org.apache.tools.bzip2.CRC',['org.apache.tools.bzip2.CBZip2InputStream','.Data'],'org.apache.tools.bzip2.BZip2Constants']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CBZip2InputStream", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.io.InputStream', 'org.apache.tools.bzip2.BZip2Constants');
+C$.$classes$=[['Data',26]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.last=0;
-this.origPtr=0;
-this.blockSize100k=0;
-this.blockRandomised=false;
-this.bsBuff=0;
-this.bsLive=0;
-this.crc=null;
-this.nInUse=0;
-this.$in=null;
-this.decompressConcatenated=false;
-this.currentChar=0;
-this.currentState=0;
-this.storedBlockCRC=0;
-this.storedCombinedCRC=0;
-this.computedBlockCRC=0;
-this.computedCombinedCRC=0;
-this.su_count=0;
-this.su_ch2=0;
-this.su_chPrev=0;
-this.su_i2=0;
-this.su_j2=0;
-this.su_rNToGo=0;
-this.su_rTPos=0;
-this.su_tPos=0;
-this.su_z='\0';
-this.data=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.crc=Clazz.new_($I$(1));
+this.crc=Clazz.new_($I$(1,1));
 this.currentChar=-1;
 this.currentState=1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_io_InputStream', function ($in) {
+C$.$fields$=[['Z',['blockRandomised','decompressConcatenated'],'C',['su_z'],'I',['last','origPtr','blockSize100k','bsBuff','bsLive','nInUse','currentChar','currentState','storedBlockCRC','storedCombinedCRC','computedBlockCRC','computedCombinedCRC','su_count','su_ch2','su_chPrev','su_i2','su_j2','su_rNToGo','su_rTPos','su_tPos'],'O',['crc','org.apache.tools.bzip2.CRC','$in','java.io.InputStream','data','org.apache.tools.bzip2.CBZip2InputStream.Data']]]
+
+Clazz.newMeth(C$, 'c$$java_io_InputStream',  function ($in) {
 C$.c$$java_io_InputStream$Z.apply(this, [$in, false]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_InputStream$Z', function ($in, decompressConcatenated) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_io_InputStream$Z',  function ($in, decompressConcatenated) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.$in=$in;
 this.decompressConcatenated=decompressConcatenated;
 p$1.init$Z.apply(this, [true]);
@@ -56,12 +27,12 @@ p$1.initBlock.apply(this, []);
 p$1.setupBlock.apply(this, []);
 }, 1);
 
-Clazz.newMeth(C$, 'read$', function () {
+Clazz.newMeth(C$, 'read$',  function () {
 if (this.$in == null ) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["stream closed"]);
 return p$1.read0.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'read$BA$I$I', function (dest, offs, len) {
+Clazz.newMeth(C$, 'read$BA$I$I',  function (dest, offs, len) {
 if (offs < 0) {
 throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["offs(" + offs + ") < 0." ]);
 }if (len < 0) {
@@ -73,23 +44,23 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["stream closed"]);
 }var hi=offs + len;
 var destOffs=offs;
 for (var b; (destOffs < hi) && ((b=p$1.read0.apply(this, [])) >= 0) ; ) {
-dest[destOffs++]=((b|0)|0);
+dest[destOffs++]=(b|0);
 }
 return (destOffs == offs) ? -1 : (destOffs - offs);
 });
 
-Clazz.newMeth(C$, 'makeMaps', function () {
+Clazz.newMeth(C$, 'makeMaps',  function () {
 var inUse=this.data.inUse;
 var seqToUnseq=this.data.seqToUnseq;
 var nInUseShadow=0;
 for (var i=0; i < 256; i++) {
 if (inUse[i]) {
-seqToUnseq[nInUseShadow++]=((i|0)|0);
+seqToUnseq[nInUseShadow++]=(i|0);
 }}
 this.nInUse=nInUseShadow;
 }, p$1);
 
-Clazz.newMeth(C$, 'read0', function () {
+Clazz.newMeth(C$, 'read0',  function () {
 var retChar=this.currentChar;
 switch (this.currentState) {
 case 0:
@@ -118,7 +89,7 @@ throw Clazz.new_(Clazz.load('IllegalStateException'));
 return retChar;
 }, p$1);
 
-Clazz.newMeth(C$, 'init$Z', function (isFirstStream) {
+Clazz.newMeth(C$, 'init$Z',  function (isFirstStream) {
 if (null == this.$in ) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["No InputStream"]);
 }if (isFirstStream) {
@@ -143,7 +114,7 @@ this.computedCombinedCRC=0;
 return true;
 }, p$1);
 
-Clazz.newMeth(C$, 'initBlock', function () {
+Clazz.newMeth(C$, 'initBlock',  function () {
 var magic0;
 var magic1;
 var magic2;
@@ -168,13 +139,13 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["bad block header"]);
 }this.storedBlockCRC=p$1.bsGetInt.apply(this, []);
 this.blockRandomised=p$1.bsR$I.apply(this, [1]) == 1;
 if (this.data == null ) {
-this.data=Clazz.new_($I$(2).c$$I,[this.blockSize100k]);
+this.data=Clazz.new_($I$(2,1).c$$I,[this.blockSize100k]);
 }p$1.getAndMoveToFrontDecode.apply(this, []);
 this.crc.initialiseCRC$();
 this.currentState=1;
 }, p$1);
 
-Clazz.newMeth(C$, 'endBlock', function () {
+Clazz.newMeth(C$, 'endBlock',  function () {
 this.computedBlockCRC=this.crc.getFinalCRC$();
 if (this.storedBlockCRC != this.computedBlockCRC) {
 this.computedCombinedCRC=(this.storedCombinedCRC << 1) | (this.storedCombinedCRC >>> 31);
@@ -184,7 +155,7 @@ C$.reportCRCError$();
 this.computedCombinedCRC^=this.computedBlockCRC;
 }, p$1);
 
-Clazz.newMeth(C$, 'complete', function () {
+Clazz.newMeth(C$, 'complete',  function () {
 this.storedCombinedCRC=p$1.bsGetInt.apply(this, []);
 this.currentState=0;
 this.data=null;
@@ -193,7 +164,7 @@ C$.reportCRCError$();
 }return !this.decompressConcatenated || !p$1.init$Z.apply(this, [false]) ;
 }, p$1);
 
-Clazz.newMeth(C$, 'close$', function () {
+Clazz.newMeth(C$, 'close$',  function () {
 var inShadow=this.$in;
 if (inShadow != null ) {
 try {
@@ -205,7 +176,7 @@ this.$in=null;
 }
 }});
 
-Clazz.newMeth(C$, 'bsR$I', function (n) {
+Clazz.newMeth(C$, 'bsR$I',  function (n) {
 var bsLiveShadow=this.bsLive;
 var bsBuffShadow=this.bsBuff;
 if (bsLiveShadow < n) {
@@ -222,7 +193,7 @@ this.bsBuff=bsBuffShadow;
 return (bsBuffShadow >> (bsLiveShadow - n)) & ((1 << n) - 1);
 }, p$1);
 
-Clazz.newMeth(C$, 'bsGetBit', function () {
+Clazz.newMeth(C$, 'bsGetBit',  function () {
 var bsLiveShadow=this.bsLive;
 var bsBuffShadow=this.bsBuff;
 if (bsLiveShadow < 1) {
@@ -236,15 +207,15 @@ this.bsBuff=bsBuffShadow;
 return ((bsBuffShadow >> (bsLiveShadow - 1)) & 1) != 0;
 }, p$1);
 
-Clazz.newMeth(C$, 'bsGetUByte', function () {
+Clazz.newMeth(C$, 'bsGetUByte',  function () {
 return String.fromCharCode(p$1.bsR$I.apply(this, [8]));
 }, p$1);
 
-Clazz.newMeth(C$, 'bsGetInt', function () {
+Clazz.newMeth(C$, 'bsGetInt',  function () {
 return (((((p$1.bsR$I.apply(this, [8]) << 8) | p$1.bsR$I.apply(this, [8])) << 8) | p$1.bsR$I.apply(this, [8])) << 8) | p$1.bsR$I.apply(this, [8]);
 }, p$1);
 
-Clazz.newMeth(C$, 'hbCreateDecodeTables$IA$IA$IA$CA$I$I$I', function (limit, base, perm, length, minLen, maxLen, alphaSize) {
+Clazz.newMeth(C$, 'hbCreateDecodeTables$IA$IA$IA$CA$I$I$I',  function (limit, base, perm, length, minLen, maxLen, alphaSize) {
 for (var i=minLen, pp=0; i <= maxLen; i++) {
 for (var j=0; j < alphaSize; j++) {
 if ((length[j]).$c() == i ) {
@@ -256,7 +227,7 @@ base[i]=0;
 limit[i]=0;
 }
 for (var i=0; i < alphaSize; i++) {
-base[(length[i]).$c() + 1]++;
+++base[(length[i]).$c() + 1];
 }
 for (var i=1, b=base[0]; i < 23; i++) {
 b+=base[i];
@@ -274,7 +245,7 @@ base[i]=((limit[i - 1] + 1) << 1) - base[i];
 }
 }, 1);
 
-Clazz.newMeth(C$, 'recvDecodingTables', function () {
+Clazz.newMeth(C$, 'recvDecodingTables',  function () {
 var dataShadow=this.data;
 var inUse=dataShadow.inUse;
 var pos=dataShadow.recvDecodingTables_pos;
@@ -303,22 +274,22 @@ var nSelectors=p$1.bsR$I.apply(this, [15]);
 for (var i=0; i < nSelectors; i++) {
 var j=0;
 while (p$1.bsGetBit.apply(this, [])){
-j++;
+++j;
 }
-selectorMtf[i]=((j|0)|0);
+selectorMtf[i]=(j|0);
 }
 for (var v=nGroups; --v >= 0; ) {
-pos[v]=((v|0)|0);
+pos[v]=(v|0);
 }
 for (var i=0; i < nSelectors; i++) {
 var v=selectorMtf[i] & 255;
-var tmp=($b$[0] = pos[v], $b$[0]);
+var tmp=pos[v];
 while (v > 0){
-pos[v]=(pos[v - 1]|0);
-v--;
+pos[v]=pos[v - 1];
+--v;
 }
-pos[0]=(tmp|0);
-selector[i]=(tmp|0);
+pos[0]=tmp;
+selector[i]=tmp;
 }
 var len=dataShadow.temp_charArray2d;
 for (var t=0; t < nGroups; t++) {
@@ -334,7 +305,7 @@ len_t[i]=String.fromCharCode(curr);
 p$1.createHuffmanDecodingTables$I$I.apply(this, [alphaSize, nGroups]);
 }, p$1);
 
-Clazz.newMeth(C$, 'createHuffmanDecodingTables$I$I', function (alphaSize, nGroups) {
+Clazz.newMeth(C$, 'createHuffmanDecodingTables$I$I',  function (alphaSize, nGroups) {
 var dataShadow=this.data;
 var len=dataShadow.temp_charArray2d;
 var minLens=dataShadow.minLens;
@@ -357,7 +328,7 @@ minLens[t]=minLen;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'getAndMoveToFrontDecode', function () {
+Clazz.newMeth(C$, 'getAndMoveToFrontDecode',  function () {
 this.origPtr=p$1.bsR$I.apply(this, [24]);
 p$1.recvDecodingTables.apply(this, []);
 var inShadow=this.$in;
@@ -406,7 +377,7 @@ limit_zt=limit[zt];
 perm_zt=perm[zt];
 minLens_zt=minLens[zt];
 } else {
-groupPos--;
+--groupPos;
 }var zn=minLens_zt;
 while (bsLiveShadow < zn){
 var thech=this.$in.read$();
@@ -418,7 +389,7 @@ continue;
 var zvec=(bsBuffShadow >> (bsLiveShadow - zn)) & ((1 << zn) - 1);
 bsLiveShadow-=zn;
 while (zvec > limit_zt[zn]){
-zn++;
+++zn;
 while (bsLiveShadow < 1){
 var thech=this.$in.read$();
 if (thech < 0) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["unexpected end of stream"]);
@@ -426,15 +397,15 @@ bsBuffShadow=(bsBuffShadow << 8) | thech;
 bsLiveShadow+=8;
 continue;
 }
-bsLiveShadow--;
+--bsLiveShadow;
 zvec=(zvec << 1) | ((bsBuffShadow >> bsLiveShadow) & 1);
 }
 nextSym=perm_zt[zvec - base_zt[zn]];
 }
-var ch=($b$[0] = seqToUnseq[(yy[0]).$c()], $b$[0]);
+var ch=seqToUnseq[(yy[0]).$c()];
 unzftab[ch & 255]+=s + 1;
 while (s-- >= 0){
-ll8[++lastShadow]=(ch|0);
+ll8[++lastShadow]=ch;
 }
 if (lastShadow >= limitLast) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["block overrun"]);
@@ -442,8 +413,8 @@ throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["block overrun"]);
 if (++lastShadow >= limitLast) {
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["block overrun"]);
 }var tmp=yy[nextSym - 1];
-unzftab[seqToUnseq[tmp.$c()] & 255]++;
-ll8[lastShadow]=(seqToUnseq[tmp.$c()]|0);
+++unzftab[seqToUnseq[tmp.$c()] & 255];
+ll8[lastShadow]=seqToUnseq[tmp.$c()];
 if (nextSym <= 16) {
 for (var j=nextSym - 1; j > 0; ) {
 yy[j]=yy[--j];
@@ -459,7 +430,7 @@ limit_zt=limit[zt];
 perm_zt=perm[zt];
 minLens_zt=minLens[zt];
 } else {
-groupPos--;
+--groupPos;
 }var zn=minLens_zt;
 while (bsLiveShadow < zn){
 var thech=this.$in.read$();
@@ -471,7 +442,7 @@ continue;
 var zvec=(bsBuffShadow >> (bsLiveShadow - zn)) & ((1 << zn) - 1);
 bsLiveShadow-=zn;
 while (zvec > limit_zt[zn]){
-zn++;
+++zn;
 while (bsLiveShadow < 1){
 var thech=this.$in.read$();
 if (thech < 0) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["unexpected end of stream"]);
@@ -479,7 +450,7 @@ bsBuffShadow=(bsBuffShadow << 8) | thech;
 bsLiveShadow+=8;
 continue;
 }
-bsLiveShadow--;
+--bsLiveShadow;
 zvec=(zvec << 1) | ((bsBuffShadow >> bsLiveShadow) & 1);
 }
 nextSym=perm_zt[zvec - base_zt[zn]];
@@ -489,7 +460,7 @@ this.bsLive=bsLiveShadow;
 this.bsBuff=bsBuffShadow;
 }, p$1);
 
-Clazz.newMeth(C$, 'getAndMoveToFrontDecode0$I', function (groupNo) {
+Clazz.newMeth(C$, 'getAndMoveToFrontDecode0$I',  function (groupNo) {
 var inShadow=this.$in;
 var dataShadow=this.data;
 var zt=dataShadow.selector[groupNo] & 255;
@@ -499,7 +470,7 @@ var zvec=p$1.bsR$I.apply(this, [zn]);
 var bsLiveShadow=this.bsLive;
 var bsBuffShadow=this.bsBuff;
 while (zvec > limit_zt[zn]){
-zn++;
+++zn;
 while (bsLiveShadow < 1){
 var thech=this.$in.read$();
 if (thech < 0) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["unexpected end of stream"]);
@@ -507,7 +478,7 @@ bsBuffShadow=(bsBuffShadow << 8) | thech;
 bsLiveShadow+=8;
 continue;
 }
-bsLiveShadow--;
+--bsLiveShadow;
 zvec=(zvec << 1) | ((bsBuffShadow >> bsLiveShadow) & 1);
 }
 this.bsLive=bsLiveShadow;
@@ -515,7 +486,7 @@ this.bsBuff=bsBuffShadow;
 return dataShadow.perm[zt][zvec - dataShadow.base[zt][zn]];
 }, p$1);
 
-Clazz.newMeth(C$, 'setupBlock', function () {
+Clazz.newMeth(C$, 'setupBlock',  function () {
 if (this.data == null ) {
 return;
 }var cftab=this.data.cftab;
@@ -544,7 +515,7 @@ p$1.setupRandPartA.apply(this, []);
 p$1.setupNoRandPartA.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'setupRandPartA', function () {
+Clazz.newMeth(C$, 'setupRandPartA',  function () {
 if (this.su_i2 <= this.last) {
 this.su_chPrev=this.su_ch2;
 var su_ch2Shadow=this.data.ll8[this.su_tPos] & 255;
@@ -554,9 +525,9 @@ this.su_rNToGo=$I$(3).rNums[this.su_rTPos] - 1;
 if (++this.su_rTPos == 512) {
 this.su_rTPos=0;
 }} else {
-this.su_rNToGo--;
+--this.su_rNToGo;
 }this.su_ch2=su_ch2Shadow^=(this.su_rNToGo == 1) ? 1 : 0;
-this.su_i2++;
+++this.su_i2;
 this.currentChar=su_ch2Shadow;
 this.currentState=3;
 this.crc.updateCRC$I(su_ch2Shadow);
@@ -566,13 +537,13 @@ p$1.initBlock.apply(this, []);
 p$1.setupBlock.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'setupNoRandPartA', function () {
+Clazz.newMeth(C$, 'setupNoRandPartA',  function () {
 if (this.su_i2 <= this.last) {
 this.su_chPrev=this.su_ch2;
 var su_ch2Shadow=this.data.ll8[this.su_tPos] & 255;
 this.su_ch2=su_ch2Shadow;
 this.su_tPos=this.data.tt[this.su_tPos];
-this.su_i2++;
+++this.su_i2;
 this.currentChar=su_ch2Shadow;
 this.currentState=6;
 this.crc.updateCRC$I(su_ch2Shadow);
@@ -583,7 +554,7 @@ p$1.initBlock.apply(this, []);
 p$1.setupBlock.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'setupRandPartB', function () {
+Clazz.newMeth(C$, 'setupRandPartB',  function () {
 if (this.su_ch2 != this.su_chPrev) {
 this.currentState=2;
 this.su_count=1;
@@ -596,7 +567,7 @@ this.su_rNToGo=$I$(3).rNums[this.su_rTPos] - 1;
 if (++this.su_rTPos == 512) {
 this.su_rTPos=0;
 }} else {
-this.su_rNToGo--;
+--this.su_rNToGo;
 }this.su_j2=0;
 this.currentState=4;
 if (this.su_rNToGo == 1) {
@@ -607,19 +578,19 @@ this.currentState=2;
 p$1.setupRandPartA.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'setupRandPartC', function () {
+Clazz.newMeth(C$, 'setupRandPartC',  function () {
 if (this.su_j2 < (this.su_z).$c() ) {
 this.currentChar=this.su_ch2;
 this.crc.updateCRC$I(this.su_ch2);
-this.su_j2++;
+++this.su_j2;
 } else {
 this.currentState=2;
-this.su_i2++;
+++this.su_i2;
 this.su_count=0;
 p$1.setupRandPartA.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'setupNoRandPartB', function () {
+Clazz.newMeth(C$, 'setupNoRandPartB',  function () {
 if (this.su_ch2 != this.su_chPrev) {
 this.su_count=1;
 p$1.setupNoRandPartA.apply(this, []);
@@ -632,49 +603,28 @@ p$1.setupNoRandPartC.apply(this, []);
 p$1.setupNoRandPartA.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'setupNoRandPartC', function () {
+Clazz.newMeth(C$, 'setupNoRandPartC',  function () {
 if (this.su_j2 < (this.su_z).$c() ) {
 var su_ch2Shadow=this.su_ch2;
 this.currentChar=su_ch2Shadow;
 this.crc.updateCRC$I(su_ch2Shadow);
-this.su_j2++;
+++this.su_j2;
 this.currentState=7;
 } else {
-this.su_i2++;
+++this.su_i2;
 this.su_count=0;
 p$1.setupNoRandPartA.apply(this, []);
 }}, p$1);
 
-Clazz.newMeth(C$, 'reportCRCError$', function () {
+Clazz.newMeth(C$, 'reportCRCError$',  function () {
 System.err.println$S("BZip2 CRC error");
 }, 1);
-var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.CBZip2InputStream, "Data", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.CBZip2InputStream, "Data", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inUse=null;
-this.seqToUnseq=null;
-this.selector=null;
-this.selectorMtf=null;
-this.unzftab=null;
-this.limit=null;
-this.base=null;
-this.perm=null;
-this.minLens=null;
-this.cftab=null;
-this.getAndMoveToFrontDecode_yy=null;
-this.temp_charArray2d=null;
-this.recvDecodingTables_pos=null;
-this.tt=null;
-this.ll8=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.inUse=Clazz.array(Boolean.TYPE, [256]);
@@ -690,14 +640,16 @@ this.cftab=Clazz.array(Integer.TYPE, [257]);
 this.getAndMoveToFrontDecode_yy=Clazz.array(Character.TYPE, [256]);
 this.temp_charArray2d=Clazz.array(Character.TYPE, [6, 258]);
 this.recvDecodingTables_pos=Clazz.array(Byte.TYPE, [6]);
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I', function (blockSize100k) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['inUse','boolean[]','seqToUnseq','byte[]','+selector','+selectorMtf','unzftab','int[]','limit','int[][]','+base','+perm','minLens','int[]','+cftab','getAndMoveToFrontDecode_yy','char[]','temp_charArray2d','char[][]','recvDecodingTables_pos','byte[]','tt','int[]','ll8','byte[]']]]
+
+Clazz.newMeth(C$, 'c$$I',  function (blockSize100k) {
+;C$.$init$.apply(this);
 this.ll8=Clazz.array(Byte.TYPE, [blockSize100k * 100000]);
 }, 1);
 
-Clazz.newMeth(C$, 'initTT$I', function (length) {
+Clazz.newMeth(C$, 'initTT$I',  function (length) {
 var ttShadow=this.tt;
 if ((ttShadow == null ) || (ttShadow.length < length) ) {
 this.tt=ttShadow=Clazz.array(Integer.TYPE, [length]);
@@ -709,4 +661,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:58 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

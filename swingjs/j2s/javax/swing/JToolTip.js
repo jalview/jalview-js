@@ -1,55 +1,50 @@
 (function(){var P$=Clazz.newPackage("javax.swing");
-var C$=Clazz.newClass(P$, "JToolTip", null, 'javax.swing.JComponent');
+/*c*/var C$=Clazz.newClass(P$, "JToolTip", null, 'javax.swing.JLabel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tipText=null;
-this.$component=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['O',['$component','javax.swing.JComponent']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 this.setOpaque$Z(true);
 this.updateUI$();
 }, 1);
 
-Clazz.newMeth(C$, 'getUIClassID$', function () {
+Clazz.newMeth(C$, 'getUIClassID$',  function () {
 return "ToolTipUI";
 });
 
-Clazz.newMeth(C$, 'setTipText$S', function (tipText) {
-var oldValue=this.tipText;
-this.tipText=tipText;
+Clazz.newMeth(C$, 'setTipText$S',  function (tipText) {
+var oldValue=this.getText$();
+C$.superclazz.prototype.setText$S.apply(this, [tipText]);
 this.firePropertyChange$S$O$O("tiptext", oldValue, tipText);
 });
 
-Clazz.newMeth(C$, 'getTipText$', function () {
-return this.tipText;
+Clazz.newMeth(C$, 'getTipText$',  function () {
+return this.getText$();
 });
 
-Clazz.newMeth(C$, 'setComponent$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'setComponent$javax_swing_JComponent',  function (c) {
 var oldValue=this.$component;
 this.$component=c;
 this.firePropertyChange$S$O$O("component", oldValue, c);
 });
 
-Clazz.newMeth(C$, 'getComponent$', function () {
+Clazz.newMeth(C$, 'getComponent$',  function () {
 return this.$component;
 });
 
-Clazz.newMeth(C$, 'alwaysOnTop$', function () {
+Clazz.newMeth(C$, 'alwaysOnTop$',  function () {
 return true;
 });
 
-Clazz.newMeth(C$, 'paramString$', function () {
-var tipTextString=(this.tipText != null  ? this.tipText : "");
-return C$.superclazz.prototype.paramString$.apply(this, []) + ",tipText=" + tipTextString ;
+Clazz.newMeth(C$, 'paramString$',  function () {
+var tipText=this.getText$();
+return C$.superclazz.prototype.paramString$.apply(this, []) + ",tipText=" + (tipText != null  ? tipText : "") ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:38 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

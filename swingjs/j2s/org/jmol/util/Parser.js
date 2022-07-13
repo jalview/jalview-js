@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Parser");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Parser");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'parseStringInfestedFloatArray$S$javajs_util_BS$FA', function (str, bs, data) {
 return C$.parseFloatArrayBsData$SA$javajs_util_BS$FA($I$(1).getTokens$S(str), bs, data);
@@ -46,10 +45,10 @@ var tokens=(fieldColumnCount <= 0 ? $I$(1).getTokens$S(line) : null);
 if (fieldColumnCount <= 0) {
 if (tokens.length < minLen || Float.isNaN$F(f=$I$(1).parseFloat$S(tokens[field - 1])) ) continue;
 } else {
-if (line.length$() < minLen || Float.isNaN$F(f=$I$(1).parseFloat$S(line.substring$I$I(field - 1, field + fieldColumnCount - 1))) ) continue;
+if (line.length$() < minLen || Float.isNaN$F(f=$I$(1,"parseFloat$S",[line.substring$I$I(field - 1, field + fieldColumnCount - 1)])) ) continue;
 }var iData;
 if (isMatch) {
-iData=$I$(1).parseInt$S(tokens == null  ? line.substring$I$I(fieldMatch - 1, fieldMatch + fieldMatchColumnCount - 1) : tokens[fieldMatch - 1]);
+iData=$I$(1,"parseInt$S",[tokens == null  ? line.substring$I$I(fieldMatch - 1, fieldMatch + fieldMatchColumnCount - 1) : tokens[fieldMatch - 1]]);
 if (iData == -2147483648 || iData < 0  || iData >= len  || (iData=matchData[iData]) < 0 ) continue;
 if (haveBitSet) bs.set$I(iData);
 } else {
@@ -85,4 +84,4 @@ return lines;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

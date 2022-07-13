@@ -1,113 +1,121 @@
 (function(){var P$=Clazz.newPackage("jalview.json.binding.biojson.v1");
-var C$=Clazz.newClass(P$, "SequenceFeaturesPojo");
+/*c*/var C$=Clazz.newClass(P$, "SequenceFeaturesPojo");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xStart=0;
-this.xEnd=0;
-this.sequenceRef=null;
-this.type=null;
-this.score=null;
-this.description=null;
-this.otherDetails=null;
-this.fillColor=null;
-this.featureGroup=null;
-this.links=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['I',['xStart','xEnd'],'S',['sequenceRef','type','description','fillColor','featureGroup'],'O',['score','Float','otherDetails','java.util.Map','links','java.util.Vector']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S', function (sequenceRef) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S',  function (sequenceRef) {
+;C$.$init$.apply(this);
 this.sequenceRef=sequenceRef;
 }, 1);
 
-Clazz.newMeth(C$, 'getFillColor$', function () {
+Clazz.newMeth(C$, 'getFillColor$',  function () {
 return "#" + this.fillColor;
 });
 
-Clazz.newMeth(C$, 'setFillColor$S', function (fillColor) {
+Clazz.newMeth(C$, 'setFillColor$S',  function (fillColor) {
 this.fillColor=fillColor;
 });
 
-Clazz.newMeth(C$, 'getXstart$', function () {
+Clazz.newMeth(C$, 'getXstart$',  function () {
 return this.xStart;
 });
 
-Clazz.newMeth(C$, 'setXstart$I', function (xStart) {
+Clazz.newMeth(C$, 'setXstart$I',  function (xStart) {
 this.xStart=xStart;
 });
 
-Clazz.newMeth(C$, 'getXend$', function () {
+Clazz.newMeth(C$, 'getXend$',  function () {
 return this.xEnd;
 });
 
-Clazz.newMeth(C$, 'setXend$I', function (xend) {
+Clazz.newMeth(C$, 'setXend$I',  function (xend) {
 this.xEnd=xend;
 });
 
-Clazz.newMeth(C$, 'getType$', function () {
+Clazz.newMeth(C$, 'getType$',  function () {
 return this.type;
 });
 
-Clazz.newMeth(C$, 'setType$S', function (type) {
+Clazz.newMeth(C$, 'setType$S',  function (type) {
 this.type=type;
 });
 
-Clazz.newMeth(C$, 'getScore$', function () {
+Clazz.newMeth(C$, 'getScore$',  function () {
 return this.score;
 });
 
-Clazz.newMeth(C$, 'setScore$Float', function (score) {
+Clazz.newMeth(C$, 'setScore$Float',  function (score) {
 this.score=score;
 });
 
-Clazz.newMeth(C$, 'getDescription$', function () {
+Clazz.newMeth(C$, 'getDescription$',  function () {
 return this.description;
 });
 
-Clazz.newMeth(C$, 'setDescription$S', function (description) {
+Clazz.newMeth(C$, 'setDescription$S',  function (description) {
 this.description=description;
 });
 
-Clazz.newMeth(C$, 'getOtherDetails$', function () {
+Clazz.newMeth(C$, 'getOtherDetails$',  function () {
 return this.otherDetails;
 });
 
-Clazz.newMeth(C$, 'setOtherDetails$java_util_Map', function (otherDetails) {
+Clazz.newMeth(C$, 'setOtherDetails$java_util_Map',  function (otherDetails) {
 this.otherDetails=otherDetails;
 });
 
-Clazz.newMeth(C$, 'getLinks$', function () {
+Clazz.newMeth(C$, 'getLinks$',  function () {
 return this.links;
 });
 
-Clazz.newMeth(C$, 'setLinks$java_util_Vector', function (links) {
+Clazz.newMeth(C$, 'setLinks$java_util_Vector',  function (links) {
 this.links=links;
 });
 
-Clazz.newMeth(C$, 'getFeatureGroup$', function () {
+Clazz.newMeth(C$, 'getFeatureGroup$',  function () {
 return this.featureGroup;
 });
 
-Clazz.newMeth(C$, 'setFeatureGroup$S', function (featureGroup) {
+Clazz.newMeth(C$, 'setFeatureGroup$S',  function (featureGroup) {
 this.featureGroup=featureGroup;
 });
 
-Clazz.newMeth(C$, 'getSequenceRef$', function () {
+Clazz.newMeth(C$, 'getSequenceRef$',  function () {
 return this.sequenceRef;
 });
 
-Clazz.newMeth(C$, 'setSequenceRef$S', function (sequenceRef) {
+Clazz.newMeth(C$, 'setSequenceRef$S',  function (sequenceRef) {
 this.sequenceRef=sequenceRef;
 });
+C$.$getAnn$ = function(){ return [
+[['xStart','int',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="Start residue position for the sequence feature" ']],
+  [['xEnd','.',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="End residue position for the sequence feature" ']],
+  [['sequenceRef','String',null,['com.github.reinert.jjschema.Attributes']],['required="true" minItems="1" maxItems="2147483647" description="Reference to the sequence in the alignment<br> (more like a foreign key)" ']],
+  [['type','.',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="The name or type of the SequenceFeature" ']],
+  [['score','Float',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Score" ']],
+  [['description','String',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Description for the feature" ']],
+  [['otherDetails','java.util.Map',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Additional metadata for the feature" ']],
+  [['fillColor','String',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="Fill colour" ']],
+  [['featureGroup','.',null,['com.github.reinert.jjschema.Attributes']],['required="true" description="Feature group" ']],
+  [['links','java.util.Vector',null,['com.github.reinert.jjschema.Attributes']],['required="false" description="URL links associated to the feature" ']],
+  [['M:getFillColor','String'],['@XmlElement']],
+  [['M:getXstart','int'],['@XmlElement']],
+  [['M:getXend','int'],['@XmlElement']],
+  [['M:getType','String'],['@XmlElement']],
+  [['M:getScore','Float'],['@XmlElement']],
+  [['M:getDescription','String'],['@XmlElement']],
+  [['M:getOtherDetails','java.util.Map<java.lang.String,java.lang.Object>'],['@XmlElement']],
+  [['M:getLinks','java.util.Vector<java.lang.String>'],['@XmlElement']],
+  [['M:getFeatureGroup','String'],['@XmlElement']],
+  [['M:getSequenceRef','String'],['@XmlElement']]]}
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:39 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

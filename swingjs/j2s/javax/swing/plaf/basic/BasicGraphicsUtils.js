@@ -1,17 +1,15 @@
-(function(){var P$=Clazz.newPackage("javax.swing.plaf.basic"),I$=[[0,'java.awt.Insets']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BasicGraphicsUtils");
-C$.GROOVE_INSETS=null;
-C$.ETCHED_INSETS=null;
+(function(){var P$=Clazz.newPackage("javax.swing.plaf.basic"),I$=[[0,'java.awt.Insets','java.awt.Toolkit']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BasicGraphicsUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.GROOVE_INSETS=Clazz.new_($I$(1).c$$I$I$I$I,[2, 2, 2, 2]);
-C$.ETCHED_INSETS=Clazz.new_($I$(1).c$$I$I$I$I,[2, 2, 2, 2]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'drawEtchedRect$java_awt_Graphics$I$I$I$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (g, x, y, w, h, shadow, darkShadow, highlight, lightHighlight) {
+C$.$fields$=[[]
+,['O',['GROOVE_INSETS','java.awt.Insets','+ETCHED_INSETS']]]
+
+Clazz.newMeth(C$, 'drawEtchedRect$java_awt_Graphics$I$I$I$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color',  function (g, x, y, w, h, shadow, darkShadow, highlight, lightHighlight) {
 var oldColor=g.getColor$();
 g.translate$I$I(x, y);
 g.setColor$java_awt_Color(shadow);
@@ -30,11 +28,11 @@ g.translate$I$I(-x, -y);
 g.setColor$java_awt_Color(oldColor);
 }, 1);
 
-Clazz.newMeth(C$, 'getEtchedInsets$', function () {
+Clazz.newMeth(C$, 'getEtchedInsets$',  function () {
 return C$.ETCHED_INSETS;
 }, 1);
 
-Clazz.newMeth(C$, 'drawGroove$java_awt_Graphics$I$I$I$I$java_awt_Color$java_awt_Color', function (g, x, y, w, h, shadow, highlight) {
+Clazz.newMeth(C$, 'drawGroove$java_awt_Graphics$I$I$I$I$java_awt_Color$java_awt_Color',  function (g, x, y, w, h, shadow, highlight) {
 var oldColor=g.getColor$();
 g.translate$I$I(x, y);
 g.setColor$java_awt_Color(shadow);
@@ -48,11 +46,11 @@ g.translate$I$I(-x, -y);
 g.setColor$java_awt_Color(oldColor);
 }, 1);
 
-Clazz.newMeth(C$, 'getGrooveInsets$', function () {
+Clazz.newMeth(C$, 'getGrooveInsets$',  function () {
 return C$.GROOVE_INSETS;
 }, 1);
 
-Clazz.newMeth(C$, 'drawBezel$java_awt_Graphics$I$I$I$I$Z$Z$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (g, x, y, w, h, isPressed, isDefault, shadow, darkShadow, highlight, lightHighlight) {
+Clazz.newMeth(C$, 'drawBezel$java_awt_Graphics$I$I$I$I$Z$Z$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color',  function (g, x, y, w, h, isPressed, isDefault, shadow, darkShadow, highlight, lightHighlight) {
 var oldColor=g.getColor$();
 g.translate$I$I(x, y);
 if (isPressed && isDefault ) {
@@ -94,7 +92,7 @@ g.drawLine$I$I$I$I(w - 1, h - 1, w - 1, 0);
 g.setColor$java_awt_Color(oldColor);
 }, 1);
 
-Clazz.newMeth(C$, 'drawLoweredBezel$java_awt_Graphics$I$I$I$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color', function (g, x, y, w, h, shadow, darkShadow, highlight, lightHighlight) {
+Clazz.newMeth(C$, 'drawLoweredBezel$java_awt_Graphics$I$I$I$I$java_awt_Color$java_awt_Color$java_awt_Color$java_awt_Color',  function (g, x, y, w, h, shadow, darkShadow, highlight, lightHighlight) {
 g.setColor$java_awt_Color(darkShadow);
 g.drawLine$I$I$I$I(0, 0, 0, h - 1);
 g.drawLine$I$I$I$I(1, 0, w - 2, 0);
@@ -109,7 +107,7 @@ g.drawLine$I$I$I$I(1, h - 2, w - 2, h - 2);
 g.drawLine$I$I$I$I(w - 2, h - 2, w - 2, 1);
 }, 1);
 
-Clazz.newMeth(C$, 'drawDashedRect$java_awt_Graphics$I$I$I$I', function (g, x, y, width, height) {
+Clazz.newMeth(C$, 'drawDashedRect$java_awt_Graphics$I$I$I$I',  function (g, x, y, width, height) {
 var vx;
 var vy;
 for (vx=x; vx < (x + width); vx+=2) {
@@ -122,10 +120,19 @@ g.fillRect$I$I$I$I(x + width - 1, vy, 1, 1);
 }
 }, 1);
 
-Clazz.newMeth(C$, 'isLeftToRight$java_awt_Component', function (c) {
+Clazz.newMeth(C$, 'isLeftToRight$java_awt_Component',  function (c) {
 return c.getComponentOrientation$().isLeftToRight$();
 }, 1);
 
+Clazz.newMeth(C$, 'isMenuShortcutKeyDown$java_awt_event_InputEvent',  function (event) {
+return (event.getModifiers$() & $I$(2).getDefaultToolkit$().getMenuShortcutKeyMask$()) != 0;
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.GROOVE_INSETS=Clazz.new_($I$(1,1).c$$I$I$I$I,[2, 2, 2, 2]);
+C$.ETCHED_INSETS=Clazz.new_($I$(1,1).c$$I$I$I$I,[2, 2, 2, 2]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,17 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'java.awt.Toolkit','java.awt.datatransfer.DataFlavor','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AwtClipboard", null, null, 'java.awt.datatransfer.Transferable');
+(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'java.awt.Toolkit','java.awt.datatransfer.DataFlavor','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AwtClipboard", null, null, 'java.awt.datatransfer.Transferable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.image=null;
-this.text=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['text'],'O',['image','java.awt.Image']]]
 
 Clazz.newMeth(C$, 'setClipboard$O', function (textOrImage) {
 var sel=Clazz.new_(C$.c$$O,[textOrImage]);
@@ -19,7 +14,7 @@ $I$(1).getDefaultToolkit$().getSystemClipboard$().setContents$java_awt_datatrans
 }, 1);
 
 Clazz.newMeth(C$, 'c$$O', function (image) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (Clazz.instanceOf(image, "java.lang.String")) this.text=image;
  else this.image=image;
 }, 1);
@@ -54,11 +49,11 @@ var fileList=o;
 var length=fileList.size$();
 if (length == 0) return null;
 if (length == 1) {
-result="LoAd " + $I$(3).esc$S(fileList.get$I(0).getAbsolutePath$().replace$C$C("\\", "/"));
+result="LoAd " + $I$(3,"esc$S",[fileList.get$I(0).getAbsolutePath$().replace$C$C("\\", "/")]);
 if (result.endsWith$S(".pse\"")) result += " filter 'DORESIZE'";
 } else {
 result="LoAd files ";
-for (var i=0; i < length; i++) result += " " + $I$(3).esc$S(fileList.get$I(i).getAbsolutePath$().replace$C$C("\\", "/"));
+for (var i=0; i < length; i++) result += " " + $I$(3,"esc$S",[fileList.get$I(i).getAbsolutePath$().replace$C$C("\\", "/")]);
 
 }}} catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
@@ -72,4 +67,4 @@ return result;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

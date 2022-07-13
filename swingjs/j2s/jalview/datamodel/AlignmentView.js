@@ -1,21 +1,10 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.ArrayList','jalview.datamodel.CigarArray',['jalview.datamodel.AlignmentView','.ScGroup'],'jalview.datamodel.SequenceGroup','Error','jalview.datamodel.HiddenColumns','jalview.datamodel.SeqCigar','jalview.datamodel.Alignment','jalview.util.ShiftList','jalview.datamodel.SequenceI','jalview.datamodel.AlignmentI','jalview.util.MessageManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignmentView", function(){
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.ArrayList','jalview.datamodel.CigarArray',['jalview.datamodel.AlignmentView','.ScGroup'],'jalview.datamodel.SequenceGroup','Error','jalview.datamodel.HiddenColumns','jalview.datamodel.SeqCigar','jalview.datamodel.Alignment','jalview.util.ShiftList','jalview.datamodel.SequenceI','jalview.datamodel.AlignmentI','jalview.util.MessageManager']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignmentView", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['ScGroup',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequences=null;
-this.contigs=null;
-this.width=0;
-this.firstCol=0;
-this.scGroups=null;
-this.isNa=false;
-this.selected=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.sequences=null;
@@ -24,23 +13,25 @@ this.width=0;
 this.firstCol=0;
 this.scGroups=null;
 this.isNa=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'isNa$', function () {
+C$.$fields$=[['Z',['isNa'],'I',['width','firstCol'],'O',['sequences','jalview.datamodel.SeqCigar[]','contigs','int[]','scGroups','java.util.List','selected','jalview.datamodel.AlignmentView.ScGroup']]]
+
+Clazz.newMeth(C$, 'isNa$',  function () {
 return this.isNa;
 });
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup$Z$Z$Z', function (alignment, hidden, selection, hasHiddenColumns, selectedRegionOnly, recordGroups) {
-C$.c$$jalview_datamodel_CigarArray$I.apply(this, [Clazz.new_($I$(2).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup,[alignment, (hasHiddenColumns ? hidden : null), (selectedRegionOnly ? selection : null)]), (selectedRegionOnly && selection != null  ) ? selection.getStartRes$() : 0]);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup$Z$Z$Z',  function (alignment, hidden, selection, hasHiddenColumns, selectedRegionOnly, recordGroups) {
+C$.c$$jalview_datamodel_CigarArray$I.apply(this, [Clazz.new_([alignment, (hasHiddenColumns ? hidden : null), (selectedRegionOnly ? selection : null)],$I$(2,1).c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup), (selectedRegionOnly && selection != null  ) ? selection.getStartRes$() : 0]);
 this.isNa=alignment.isNucleotide$();
 var selseqs;
 if (selection != null  && selection.getSize$() > 0 ) {
-this.selected=Clazz.new_($I$(3), [this, null]);
+this.selected=Clazz.new_($I$(3,1),[this, null]);
 selseqs=selection.getSequencesInOrder$jalview_datamodel_AlignmentI$Z(alignment, selectedRegionOnly);
 } else {
 selseqs=alignment.getSequencesArray$();
-}var seqsets=Clazz.new_($I$(1));
-var grps=Clazz.new_($I$(1));
+}var seqsets=Clazz.new_($I$(1,1));
+var grps=Clazz.new_($I$(1,1));
 var gg=alignment.getGroups$();
 grps.addAll$java_util_Collection(gg);
 var sgrps=null;
@@ -49,7 +40,7 @@ if (grps != null ) {
 if (selection != null  && selectedRegionOnly ) {
 var ssel=selection.getStartRes$();
 var esel=selection.getEndRes$();
-var isg=Clazz.new_($I$(1));
+var isg=Clazz.new_($I$(1,1));
 for (var sg, $sg = grps.iterator$(); $sg.hasNext$()&&((sg=($sg.next$())),1);) {
 if (!(sg.getStartRes$() > esel || sg.getEndRes$() < ssel )) {
 if (sg.getStartRes$() < ssel) {
@@ -58,17 +49,17 @@ sg.setStartRes$I(ssel);
 sg.setEndRes$I(esel);
 }sg.setStartRes$I(sg.getStartRes$() - ssel + 1);
 sg.setEndRes$I(sg.getEndRes$() - ssel + 1);
-isg.add$TE(sg);
+isg.add$O(sg);
 }}
 grps=isg;
 }sgrps=Clazz.array($I$(3), [grps.size$()]);
 addedgps=Clazz.array(Boolean.TYPE, [grps.size$()]);
 for (var g=0; g < sgrps.length; g++) {
 var sg=grps.get$I(g);
-sgrps[g]=Clazz.new_($I$(3), [this, null]);
-sgrps[g].sg=Clazz.new_($I$(4).c$$jalview_datamodel_SequenceGroup,[sg]);
+sgrps[g]=Clazz.new_($I$(3,1),[this, null]);
+sgrps[g].sg=Clazz.new_($I$(4,1).c$$jalview_datamodel_SequenceGroup,[sg]);
 addedgps[g]=false;
-seqsets.add$TE(sg.getSequences$());
+seqsets.add$O(sg.getSequences$());
 }
 }var csi=0;
 for (var i=0; i < selseqs.length; i++) {
@@ -82,11 +73,11 @@ sgrps[sg].sg.deleteSequence$jalview_datamodel_SequenceI$Z(selseqs[i], false);
 sgrps[sg].add$jalview_datamodel_SeqCigar(this.sequences[csi]);
 if (!addedgps[sg]) {
 if (this.scGroups == null ) {
-this.scGroups=Clazz.new_($I$(1));
+this.scGroups=Clazz.new_($I$(1,1));
 }addedgps[sg]=true;
-this.scGroups.add$TE(sgrps[sg]);
+this.scGroups.add$O(sgrps[sg]);
 }}}
-}csi++;
+}++csi;
 }}
 for (var sg=0; sg < sgrps.length; sg++) {
 var sqs=sgrps[sg].sg.getSequencesAsArray$java_util_Map(null);
@@ -97,49 +88,49 @@ sgrps[sg]=null;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_CigarArray', function (seqcigararray) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_CigarArray',  function (seqcigararray) {
+;C$.$init$.apply(this);
 if (!seqcigararray.isSeqCigarArray$()) {
-throw Clazz.new_($I$(5).c$$S,["Implementation Error - can only make an alignment view from a CigarArray of sequences."]);
+throw Clazz.new_($I$(5,1).c$$S,["Implementation Error - can only make an alignment view from a CigarArray of sequences."]);
 }this.contigs=seqcigararray.getDeletedRegions$();
 this.sequences=seqcigararray.getSeqCigarArray$();
 this.width=seqcigararray.getWidth$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_CigarArray$I', function (sdata, firstcol) {
+Clazz.newMeth(C$, 'c$$jalview_datamodel_CigarArray$I',  function (sdata, firstcol) {
 C$.c$$jalview_datamodel_CigarArray.apply(this, [sdata]);
 this.firstCol=firstcol;
 }, 1);
 
-Clazz.newMeth(C$, 'setSequences$jalview_datamodel_SeqCigarA', function (sequences) {
+Clazz.newMeth(C$, 'setSequences$jalview_datamodel_SeqCigarA',  function (sequences) {
 this.sequences=sequences;
 });
 
-Clazz.newMeth(C$, 'setContigs$IA', function (contigs) {
+Clazz.newMeth(C$, 'setContigs$IA',  function (contigs) {
 this.contigs=contigs;
 });
 
-Clazz.newMeth(C$, 'getSequences$', function () {
+Clazz.newMeth(C$, 'getSequences$',  function () {
 return this.sequences;
 });
 
-Clazz.newMeth(C$, 'getContigs$', function () {
+Clazz.newMeth(C$, 'getContigs$',  function () {
 return this.contigs;
 });
 
-Clazz.newMeth(C$, 'getAlignmentAndHiddenColumns$C', function (gapCharacter) {
-var hidden=Clazz.new_($I$(6));
+Clazz.newMeth(C$, 'getAlignmentAndHiddenColumns$C',  function (gapCharacter) {
+var hidden=Clazz.new_($I$(6,1));
 return Clazz.array(java.lang.Object, -1, [$I$(7).createAlignmentSequences$jalview_datamodel_SeqCigarA$C$jalview_datamodel_HiddenColumns$IA(this.sequences, gapCharacter, hidden, this.contigs), hidden]);
 });
 
-Clazz.newMeth(C$, 'getVisibleAlignment$C', function (c) {
+Clazz.newMeth(C$, 'getVisibleAlignment$C',  function (c) {
 var aln=p$1.getVisibleSeqs$C.apply(this, [c]);
-var vcal=Clazz.new_($I$(8).c$$jalview_datamodel_SequenceIA,[aln]);
+var vcal=Clazz.new_($I$(8,1).c$$jalview_datamodel_SequenceIA,[aln]);
 p$1.addPrunedGroupsInOrder$jalview_datamodel_AlignmentI$I$I$Z.apply(this, [vcal, -1, -1, true]);
 return vcal;
 });
 
-Clazz.newMeth(C$, 'addPrunedGroupsInOrder$jalview_datamodel_AlignmentI$I$I$Z', function (vcal, gstart, gend, viscontigs) {
+Clazz.newMeth(C$, 'addPrunedGroupsInOrder$jalview_datamodel_AlignmentI$I$I$Z',  function (vcal, gstart, gend, viscontigs) {
 var r=false;
 if (gstart > -1 && gstart <= gend ) {
 r=true;
@@ -155,7 +146,7 @@ if (r) {
 if (sg.getStartRes$() > gend || sg.getEndRes$() < gstart ) {
 nsg[g]=null;
 continue;
-}}nsg[g]=Clazz.new_($I$(4).c$$jalview_datamodel_SequenceGroup,[sg]);
+}}nsg[g]=Clazz.new_($I$(4,1).c$$jalview_datamodel_SequenceGroup,[sg]);
 if (r && !viscontigs ) {
 if (nsg[g].getStartRes$() < gstart) {
 nsg[g].setStartRes$I(0);
@@ -168,7 +159,7 @@ nsg[g].setEndRes$I(gend - gstart);
 if (viscontigs) {
 if (this.contigs != null ) {
 var p=0;
-var prune=Clazz.new_($I$(9));
+var prune=Clazz.new_($I$(9,1));
 if (r) {
 prune.addShift$I$I(gstart, -gstart);
 }for (var h=0; h < this.contigs.length; h+=3) {
@@ -204,7 +195,7 @@ vcal.addGroup$jalview_datamodel_SequenceGroup(nsg[g]);
 }
 }}}}, p$1);
 
-Clazz.newMeth(C$, 'getVisibleSeqs$C', function (c) {
+Clazz.newMeth(C$, 'getVisibleSeqs$C',  function (c) {
 var aln=Clazz.array($I$(10), [this.sequences.length]);
 for (var i=0, j=this.sequences.length; i < j; i++) {
 aln[i]=this.sequences[i].getSeq$C(c);
@@ -213,36 +204,36 @@ aln[i].setSequence$S(p$1.getASequenceString$C$I.apply(this, [c, i]));
 return aln;
 }, p$1);
 
-Clazz.newMeth(C$, 'getVisibleContigAlignments$C', function (c) {
+Clazz.newMeth(C$, 'getVisibleContigAlignments$C',  function (c) {
 var nvc=0;
 var vcontigs=this.getVisibleContigs$();
 var contigviews=this.getVisibleContigs$C(c);
 var vcals=Clazz.array($I$(11), [contigviews.length]);
 for (nvc=0; nvc < contigviews.length; nvc++) {
-vcals[nvc]=Clazz.new_($I$(8).c$$jalview_datamodel_SequenceIA,[contigviews[nvc]]);
+vcals[nvc]=Clazz.new_($I$(8,1).c$$jalview_datamodel_SequenceIA,[contigviews[nvc]]);
 if (this.scGroups != null  && this.scGroups.size$() > 0 ) {
 p$1.addPrunedGroupsInOrder$jalview_datamodel_AlignmentI$I$I$Z.apply(this, [vcals[nvc], vcontigs[nvc * 2], vcontigs[nvc * 2 + 1], true]);
 }}
 return vcals;
 });
 
-Clazz.newMeth(C$, 'getASequenceString$C$I', function (c, n) {
+Clazz.newMeth(C$, 'getASequenceString$C$I',  function (c, n) {
 var sqn;
 var fullseq=this.sequences[n].getSequenceString$C(c);
 if (this.contigs != null ) {
 sqn="";
 var p=0;
 for (var h=0; h < this.contigs.length; h+=3) {
-sqn += fullseq.substring$I$I(p, this.contigs[h + 1]);
+sqn+=fullseq.substring$I$I(p, this.contigs[h + 1]);
 p=this.contigs[h + 1] + this.contigs[h + 2];
 }
-sqn += fullseq.substring$I(p);
+sqn+=fullseq.substring$I(p);
 } else {
 sqn=fullseq;
 }return sqn;
 }, p$1);
 
-Clazz.newMeth(C$, 'getSequenceStrings$C', function (c) {
+Clazz.newMeth(C$, 'getSequenceStrings$C',  function (c) {
 var seqs=Clazz.array(String, [this.sequences.length]);
 for (var n=0; n < this.sequences.length; n++) {
 seqs[n]=p$1.getASequenceString$C$I.apply(this, [c, n]);
@@ -250,15 +241,15 @@ seqs[n]=p$1.getASequenceString$C$I.apply(this, [c, n]);
 return seqs;
 });
 
-Clazz.newMeth(C$, 'getWidth$', function () {
+Clazz.newMeth(C$, 'getWidth$',  function () {
 return this.width;
 });
 
-Clazz.newMeth(C$, 'setWidth$I', function (width) {
+Clazz.newMeth(C$, 'setWidth$I',  function (width) {
 this.width=width;
 });
 
-Clazz.newMeth(C$, 'getVisibleContigs$C', function (gapCharacter) {
+Clazz.newMeth(C$, 'getVisibleContigs$C',  function (gapCharacter) {
 var smsa;
 var njobs=1;
 if (this.sequences == null  || this.width <= 0 ) {
@@ -269,12 +260,12 @@ njobs=0;
 var fwidth=this.width;
 for (var contig=0; contig < this.contigs.length; contig+=3) {
 if ((this.contigs[contig + 1] - start) > 0) {
-njobs++;
+++njobs;
 }fwidth+=this.contigs[contig + 2];
 start=this.contigs[contig + 1] + this.contigs[contig + 2];
 }
 if (start < fwidth) {
-njobs++;
+++njobs;
 }smsa=Clazz.array($I$(10), [njobs, null]);
 start=0;
 var j=0;
@@ -285,7 +276,7 @@ for (var s=0; s < mseq.length; s++) {
 mseq[s]=this.sequences[s].getSeq$C(gapCharacter).getSubSequence$I$I(start, this.contigs[contig + 1]);
 }
 smsa[j]=mseq;
-j++;
+++j;
 }start=this.contigs[contig + 1] + this.contigs[contig + 2];
 }
 if (start < fwidth) {
@@ -294,7 +285,7 @@ for (var s=0; s < mseq.length; s++) {
 mseq[s]=this.sequences[s].getSeq$C(gapCharacter).getSubSequence$I$I(start, fwidth + 1);
 }
 smsa[j]=mseq;
-j++;
+++j;
 }} else {
 smsa=Clazz.array($I$(10), [1, null]);
 smsa[0]=Clazz.array($I$(10), [this.sequences.length]);
@@ -304,14 +295,14 @@ smsa[0][s]=this.sequences[s].getSeq$C(gapCharacter);
 }return smsa;
 });
 
-Clazz.newMeth(C$, 'getUpdatedView$jalview_datamodel_SequenceIAA$jalview_datamodel_AlignmentOrderA$C', function (nvismsa, orders, gapCharacter) {
+Clazz.newMeth(C$, 'getUpdatedView$jalview_datamodel_SequenceIAA$jalview_datamodel_AlignmentOrderA$C',  function (nvismsa, orders, gapCharacter) {
 if (this.sequences == null  || this.width <= 0 ) {
-throw Clazz.new_($I$(5).c$$S,[$I$(12).getString$S("error.empty_view_cannot_be_updated")]);
+throw Clazz.new_([$I$(12).getString$S("error.empty_view_cannot_be_updated")],$I$(5,1).c$$S);
 }if (nvismsa == null ) {
-throw Clazz.new_($I$(5).c$$S,["nvismsa==null. use getAlignmentAndColumnSelection() instead."]);
+throw Clazz.new_(["nvismsa==null. use getAlignmentAndColumnSelection() instead."],$I$(5,1).c$$S);
 }if (this.contigs != null  && this.contigs.length > 0 ) {
 var alignment=Clazz.array($I$(10), [this.sequences.length]);
-var hidden=Clazz.new_($I$(6));
+var hidden=Clazz.new_($I$(6,1));
 if (this.contigs != null  && this.contigs.length > 0 ) {
 var start=0;
 var nwidth=0;
@@ -324,9 +315,9 @@ var swidth=0;
 if (nvismsa[j] != null ) {
 var mseq=nvismsa[j];
 var order=(orders == null ) ? null : orders[j];
-j++;
+++j;
 if (mseq.length != this.sequences.length) {
-throw Clazz.new_($I$(5).c$$S,[$I$(12).formatMessage$S$SA("error.mismatch_between_number_of_sequences_in_block", Clazz.array(String, -1, [Integer.valueOf$I(j).toString(), Integer.valueOf$I(mseq.length).toString(), Integer.valueOf$I(this.sequences.length).toString()]))]);
+throw Clazz.new_([$I$(12,"formatMessage$S$SA",["error.mismatch_between_number_of_sequences_in_block", Clazz.array(String, -1, [Integer.valueOf$I(j).toString(), Integer.valueOf$I(mseq.length).toString(), Integer.valueOf$I(this.sequences.length).toString()])])],$I$(5,1).c$$S);
 }swidth=mseq[0].getLength$();
 for (var s=0; s < mseq.length; s++) {
 if (alignment[s] == null ) {
@@ -351,7 +342,7 @@ alignment[s].setSequence$S(alignment[s].getSequenceAsString$() + oseq.getSequenc
 if (oseq.getEnd$() >= oseq.getStart$()) {
 alignment[s].setEnd$I(oseq.getEnd$());
 }}}
-}j++;
+}++j;
 }nwidth+=swidth;
 }start=this.contigs[contig + 1] + this.contigs[contig + 2];
 for (var s=0; s < this.sequences.length; s++) {
@@ -398,30 +389,30 @@ alignment[s].setEnd$I(oseq.getEnd$());
 }}}
 nwidth+=swidth;
 } else {
-throw Clazz.new_($I$(5).c$$S,[$I$(12).getString$S("error.padding_not_yet_implemented")]);
+throw Clazz.new_([$I$(12).getString$S("error.padding_not_yet_implemented")],$I$(5,1).c$$S);
 }}}}}return Clazz.array(java.lang.Object, -1, [alignment, hidden]);
 } else {
 if (nvismsa.length != 1) {
-throw Clazz.new_($I$(5).c$$S,[$I$(12).formatMessage$S$SA("error.mismatch_between_visible_blocks_to_update_and_number_of_contigs_in_view", Clazz.array(String, -1, [Integer.valueOf$I(nvismsa.length).toString()]))]);
+throw Clazz.new_([$I$(12,"formatMessage$S$SA",["error.mismatch_between_visible_blocks_to_update_and_number_of_contigs_in_view", Clazz.array(String, -1, [Integer.valueOf$I(nvismsa.length).toString()])])],$I$(5,1).c$$S);
 }if (nvismsa[0] != null ) {
-return Clazz.array(java.lang.Object, -1, [nvismsa[0], Clazz.new_($I$(6))]);
+return Clazz.array(java.lang.Object, -1, [nvismsa[0], Clazz.new_($I$(6,1))]);
 } else {
 return this.getAlignmentAndHiddenColumns$C(gapCharacter);
 }}});
 
-Clazz.newMeth(C$, 'getVisibleContigs$', function () {
+Clazz.newMeth(C$, 'getVisibleContigs$',  function () {
 if (this.contigs != null  && this.contigs.length > 0 ) {
 var start=0;
 var nvis=0;
 var fwidth=this.width;
 for (var contig=0; contig < this.contigs.length; contig+=3) {
 if ((this.contigs[contig + 1] - start) > 0) {
-nvis++;
+++nvis;
 }fwidth+=this.contigs[contig + 2];
 start=this.contigs[contig + 1] + this.contigs[contig + 2];
 }
 if (start < fwidth) {
-nvis++;
+++nvis;
 }var viscontigs=Clazz.array(Integer.TYPE, [nvis * 2]);
 nvis=0;
 start=0;
@@ -441,11 +432,11 @@ nvis+=2;
 return Clazz.array(Integer.TYPE, -1, [0, this.width - 1]);
 }});
 
-Clazz.newMeth(C$, 'getAlignmentOrigin$', function () {
+Clazz.newMeth(C$, 'getAlignmentOrigin$',  function () {
 return this.firstCol;
 });
 
-Clazz.newMeth(C$, 'getVisibleContigMapFor$IA', function (gapMap) {
+Clazz.newMeth(C$, 'getVisibleContigMapFor$IA',  function (gapMap) {
 var delMap=null;
 var viscontigs=this.getVisibleContigs$();
 var spos=0;
@@ -454,7 +445,7 @@ if (viscontigs != null ) {
 delMap=Clazz.array(Integer.TYPE, [gapMap.length]);
 for (var contig=0; contig < viscontigs.length; contig+=2) {
 while (spos < gapMap.length && gapMap[spos] < viscontigs[contig] ){
-spos++;
+++spos;
 }
 while (spos < gapMap.length && gapMap[spos] <= viscontigs[contig + 1] ){
 delMap[i++]=spos++;
@@ -466,7 +457,7 @@ delMap=tmap;
 }return delMap;
 });
 
-Clazz.newMeth(C$, 'getEditedSequences$C$Z', function (gc, $delete) {
+Clazz.newMeth(C$, 'getEditedSequences$C$Z',  function (gc, $delete) {
 var msf=this.getSequences$();
 var aln=Clazz.array($I$(10), [msf.length]);
 for (var i=0, j=msf.length; i < j; i++) {
@@ -481,7 +472,7 @@ sqs[i]=null;
 }return aln;
 });
 
-Clazz.newMeth(C$, 'summariseAlignmentView$jalview_datamodel_AlignmentView$java_io_PrintStream', function (view, os) {
+Clazz.newMeth(C$, 'summariseAlignmentView$jalview_datamodel_AlignmentView$java_io_PrintStream',  function (view, os) {
 os.print$S("View has " + view.sequences.length + " of which " );
 if (view.selected == null ) {
 os.print$S("None");
@@ -521,7 +512,7 @@ os.println$S("Group " + (i++) + " begins at column " + sg.getStartRes$() + " and
 }
 }}}}, 1);
 
-Clazz.newMeth(C$, 'testSelectionViews$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup', function (alignment, hidden, selection) {
+Clazz.newMeth(C$, 'testSelectionViews$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup',  function (alignment, hidden, selection) {
 System.out.println$S("Testing standard view creation:\n");
 var view=null;
 try {
@@ -622,48 +613,43 @@ throw e;
 }
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.AlignmentView, "ScGroup", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AlignmentView, "ScGroup", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.seqs=null;
-this.sg=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['seqs','java.util.List','sg','jalview.datamodel.SequenceGroup']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
+this.seqs=Clazz.new_($I$(1,1));
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.seqs=Clazz.new_($I$(1));
-}, 1);
-
-Clazz.newMeth(C$, 'add$jalview_datamodel_SeqCigar', function (seq) {
+Clazz.newMeth(C$, 'add$jalview_datamodel_SeqCigar',  function (seq) {
 if (!seq.isMemberOf$O(this)) {
-this.seqs.add$TE(seq);
+this.seqs.add$O(seq);
 seq.setGroupMembership$O(this);
 return true;
 } else {
 return false;
 }});
 
-Clazz.newMeth(C$, 'remove$jalview_datamodel_SeqCigar', function (seq) {
+Clazz.newMeth(C$, 'remove$jalview_datamodel_SeqCigar',  function (seq) {
 if (seq.removeGroupMembership$O(this)) {
 this.seqs.remove$O(seq);
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, 'size$', function () {
+Clazz.newMeth(C$, 'size$',  function () {
 return this.seqs.size$();
 });
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

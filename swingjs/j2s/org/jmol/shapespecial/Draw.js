@@ -1,73 +1,33 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),p$1={},I$=[[0,'org.jmol.shapespecial.DrawMesh','javajs.util.V3','javajs.util.P3i','java.util.Hashtable','javajs.util.AU','org.jmol.util.MeshSurface','javajs.util.Lst','javajs.util.P3','org.jmol.util.Logger',['org.jmol.shapespecial.Draw','.EnumDrawType'],'javajs.util.BS','org.jmol.script.SV','org.jmol.util.BSUtil','javajs.util.Measure','org.jmol.util.C','javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Draw", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.shapespecial"),p$1={},I$=[[0,'org.jmol.shapespecial.DrawMesh','javajs.util.V3','javajs.util.P3i','java.util.Hashtable','javajs.util.AU','org.jmol.util.MeshSurface','javajs.util.Lst','javajs.util.P3','org.jmol.util.Logger',['org.jmol.shapespecial.Draw','.EnumDrawType'],'javajs.util.BS','org.jmol.script.SV','org.jmol.util.BSUtil','javajs.util.Measure','org.jmol.util.C','javajs.util.SB','javajs.util.PT','org.jmol.shape.Shape','org.jmol.util.Escape']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Draw", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.shape.MeshCollection');
+C$.$classes$=[['EnumDrawType',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dmeshes=null;
-this.thisMesh=null;
-this.ptList=null;
-this.offset=null;
-this.nPoints=0;
-this.diameter=0;
-this.width=0;
-this.newScale=0;
-this.length=0;
-this.isCurve=false;
-this.isArc=false;
-this.isArrow=false;
-this.isLine=false;
-this.isVector=false;
-this.isCircle=false;
-this.isPerpendicular=false;
-this.isCylinder=false;
-this.isVertices=false;
-this.isPlane=false;
-this.isReversed=false;
-this.isRotated45=false;
-this.isCrossed=false;
-this.isValid=false;
-this.noHead=false;
-this.isBarb=false;
-this.indicatedModelIndex=0;
-this.modelInfo=null;
-this.makePoints=false;
-this.plane=null;
-this.bsAllModels=null;
-this.polygon=null;
-this.vData=null;
-this.intersectID=null;
-this.boundBox=null;
-this.lineData=null;
-this.slabData=null;
-this.vAB=null;
-this.ptXY=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dmeshes=Clazz.array($I$(1), [4]);
-this.offset=Clazz.new_($I$(2));
+this.offset=Clazz.new_($I$(2,1));
 this.indicatedModelIndex=-1;
-this.vAB=Clazz.new_($I$(2));
-this.ptXY=Clazz.new_($I$(3));
-}, 1);
+this.vAB=Clazz.new_($I$(2,1));
+this.ptXY=Clazz.new_($I$(3,1));
+},1);
+
+C$.$fields$=[['Z',['isCurve','isArc','isArrow','isLine','isVector','isCircle','isPerpendicular','isCylinder','isVertices','isPlane','isReversed','isRotated45','isCrossed','isValid','noHead','isBarb','makePoints'],'F',['width','newScale','length'],'I',['nPoints','diameter','indicatedModelIndex'],'S',['intersectID'],'O',['dmeshes','org.jmol.shapespecial.DrawMesh[]','thisMesh','org.jmol.shapespecial.DrawMesh','ptList','javajs.util.P3[]','offset','javajs.util.V3','modelInfo','int[]','plane','javajs.util.P4','bsAllModels','javajs.util.BS','polygon','javajs.util.Lst','+vData','boundBox','javajs.util.P3[]','lineData','javajs.util.Lst','slabData','org.jmol.util.MeshSurface','vAB','javajs.util.V3','ptXY','javajs.util.P3i']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.htObjects=Clazz.new_($I$(4));
+Clazz.super_(C$, this);
+this.htObjects=Clazz.new_($I$(4,1));
 }, 1);
 
 Clazz.newMeth(C$, 'allocMesh$S$org_jmol_shape_Mesh', function (thisID, m) {
 var index=this.meshCount++;
 this.meshes=this.dmeshes=$I$(5).ensureLength$O$I(this.dmeshes, this.meshCount * 2);
-this.currentMesh=this.thisMesh=this.dmeshes[index]=(m == null  ? Clazz.new_($I$(1).c$$org_jmol_viewer_Viewer$S$H$I,[this.vwr, thisID, this.colix, index]) : m);
+this.currentMesh=this.thisMesh=this.dmeshes[index]=(m == null  ? Clazz.new_($I$(1,1).c$$org_jmol_viewer_Viewer$S$H$I,[this.vwr, thisID, this.colix, index]) : m);
 this.currentMesh.color=this.color;
 this.currentMesh.index=index;
-if (thisID != null  && thisID != "+PREVIOUS_MESH+"  && this.htObjects != null  ) this.htObjects.put$TK$TV(thisID.toUpperCase$(), this.currentMesh);
+if (thisID != null  && thisID != "+PREVIOUS_MESH+"  && this.htObjects != null  ) this.htObjects.put$O$O(thisID.toUpperCase$(), this.currentMesh);
 });
 
 Clazz.newMeth(C$, 'setPropertySuper$S$O$javajs_util_BS', function (propertyName, value, bs) {
@@ -82,27 +42,27 @@ this.myType="draw";
 });
 
 Clazz.newMeth(C$, 'setProperty$S$O$javajs_util_BS', function (propertyName, value, bs) {
-if ("init" == propertyName) {
+if ("init" === propertyName ) {
 p$1.initDraw.apply(this, []);
 p$1.setPropertySuper$S$O$javajs_util_BS.apply(this, ["init", value, bs]);
 return;
-}if ("length" == propertyName) {
+}if ("length" === propertyName ) {
 this.length=(value).floatValue$();
 return;
-}if ("fixed" == propertyName) {
+}if ("fixed" === propertyName ) {
 this.isFixed=(value).booleanValue$();
 return;
-}if ("intersect" == propertyName) {
+}if ("intersect" === propertyName ) {
 if (Clazz.instanceOf(value, "java.lang.String")) this.intersectID=value;
  else this.boundBox=value;
 return;
-}if ("slab" == propertyName) {
+}if ("slab" === propertyName ) {
 var meshIndex=this.getIndexFromName$S(value);
 if (meshIndex < 0) {
 return;
 }var m=this.meshes[meshIndex];
 if (m.checkByteCount != 1) return;
-var ms=Clazz.new_($I$(6));
+var ms=Clazz.new_($I$(6,1));
 ms.vs=m.vs;
 ms.vvs=Clazz.array(Float.TYPE, [m.vc]);
 ms.vc=m.vc;
@@ -110,128 +70,128 @@ ms.pis=m.pis;
 ms.pc=m.pc;
 ms.dataOnly=true;
 this.slabData=ms;
-}if ("lineData" == propertyName) {
-this.lineData=Clazz.new_($I$(7));
+}if ("lineData" === propertyName ) {
+this.lineData=Clazz.new_($I$(7,1));
 if (this.indicatedModelIndex < 0) this.indicatedModelIndex=this.vwr.am.cmi;
 var fdata=value;
 var n=(fdata.length/6|0);
-for (var i=0, pt=0; i < n; i++) this.lineData.addLast$TV(Clazz.array($I$(8), -1, [$I$(8).new3$F$F$F(fdata[pt++], fdata[pt++], fdata[pt++]), $I$(8).new3$F$F$F(fdata[pt++], fdata[pt++], fdata[pt++])]));
+for (var i=0, pt=0; i < n; i++) this.lineData.addLast$O(Clazz.array($I$(8), -1, [$I$(8).new3$F$F$F(fdata[pt++], fdata[pt++], fdata[pt++]), $I$(8).new3$F$F$F(fdata[pt++], fdata[pt++], fdata[pt++])]));
 
 return;
-}if ("modelIndex" == propertyName) {
+}if ("modelIndex" === propertyName ) {
 this.indicatedModelIndex=(value).intValue$();
 if (this.indicatedModelIndex < 0 || this.indicatedModelIndex >= this.vwr.ms.mc ) return;
-this.vData.addLast$TV(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(4), (this.modelInfo=Clazz.array(Integer.TYPE, -1, [this.indicatedModelIndex, 0]))]));
+this.vData.addLast$O(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(4), (this.modelInfo=Clazz.array(Integer.TYPE, -1, [this.indicatedModelIndex, 0]))]));
 return;
-}if ("planedef" == propertyName) {
+}if ("planedef" === propertyName ) {
 this.plane=value;
 if (this.intersectID != null  || this.boundBox != null   || this.slabData != null  ) return;
 if (this.isCircle || this.isArc ) this.isPlane=true;
-this.vData.addLast$TV(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(1), $I$(8).new3$F$F$F(NaN, NaN, NaN)]));
+this.vData.addLast$O(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(1), $I$(8).new3$F$F$F(NaN, NaN, NaN)]));
 return;
-}if ("perp" == propertyName) {
+}if ("perp" === propertyName ) {
 this.isPerpendicular=true;
 return;
-}if ("cylinder" == propertyName) {
+}if ("cylinder" === propertyName ) {
 this.isCylinder=true;
 return;
-}if ("plane" == propertyName) {
+}if ("plane" === propertyName ) {
 this.isPlane=true;
 return;
-}if ("curve" == propertyName) {
+}if ("curve" === propertyName ) {
 this.isCurve=true;
 return;
-}if ("arrow" == propertyName) {
+}if ("arrow" === propertyName ) {
 this.isArrow=true;
 return;
-}if ("line" == propertyName) {
+}if ("line" === propertyName ) {
 this.isLine=true;
 this.isCurve=true;
 return;
-}if ("arc" == propertyName) {
+}if ("arc" === propertyName ) {
 this.isCurve=true;
 this.isArc=true;
 if (this.isArrow) {
 this.isArrow=false;
 this.isVector=true;
 }return;
-}if ("circle" == propertyName) {
+}if ("circle" === propertyName ) {
 this.isCircle=true;
 return;
-}if ("vector" == propertyName) {
+}if ("vector" === propertyName ) {
 this.isArrow=true;
 this.isVector=true;
 return;
-}if ("vertices" == propertyName) {
+}if ("vertices" === propertyName ) {
 this.isVertices=true;
 return;
-}if ("reverse" == propertyName) {
+}if ("reverse" === propertyName ) {
 this.isReversed=true;
 return;
-}if ("nohead" == propertyName) {
+}if ("nohead" === propertyName ) {
 this.noHead=true;
 return;
-}if ("isbarb" == propertyName) {
+}if ("isbarb" === propertyName ) {
 this.isBarb=true;
 return;
-}if ("rotate45" == propertyName) {
+}if ("rotate45" === propertyName ) {
 this.isRotated45=true;
 return;
-}if ("crossed" == propertyName) {
+}if ("crossed" === propertyName ) {
 this.isCrossed=true;
 return;
-}if ("points" == propertyName) {
+}if ("points" === propertyName ) {
 this.newScale=(value).floatValue$() / 100;
 if (this.newScale == 0 ) this.newScale=1;
 return;
-}if ("scale" == propertyName) {
+}if ("scale" === propertyName ) {
 this.newScale=(value).floatValue$() / 100;
 if (this.newScale == 0 ) this.newScale=0.01;
 if (this.thisMesh != null ) {
 p$1.scale$org_jmol_shape_Mesh$F.apply(this, [this.thisMesh, this.newScale]);
 this.thisMesh.initialize$I$javajs_util_T3A$javajs_util_P4(1073741964, null, null);
 }return;
-}if ("diameter" == propertyName) {
+}if ("diameter" === propertyName ) {
 this.diameter=(value).intValue$();
 return;
-}if ("width" == propertyName) {
+}if ("width" === propertyName ) {
 this.width=(value).floatValue$();
 return;
-}if ("identifier" == propertyName) {
+}if ("identifier" === propertyName ) {
 var thisID=value;
 var meshIndex=this.getIndexFromName$S(thisID);
 if (meshIndex >= 0) {
-this.vData.addLast$TV(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(2), Clazz.array(Integer.TYPE, -1, [meshIndex, this.isReversed ? 1 : 0, this.isVertices ? 1 : 0])]));
+this.vData.addLast$O(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(2), Clazz.array(Integer.TYPE, -1, [meshIndex, this.isReversed ? 1 : 0, this.isVertices ? 1 : 0])]));
 this.isReversed=this.isVertices=false;
 } else {
 $I$(9).error$S("draw identifier " + value + " not found" );
 this.isValid=false;
 }return;
-}if ("polygon" == propertyName) {
+}if ("polygon" === propertyName ) {
 this.polygon=value;
-if (this.polygon == null ) this.polygon=Clazz.new_($I$(7));
+if (this.polygon == null ) this.polygon=Clazz.new_($I$(7,1));
 return;
-}if ("coord" == propertyName) {
-this.vData.addLast$TV(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(1), value]));
+}if ("coord" === propertyName ) {
+this.vData.addLast$O(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(1), value]));
 if (this.indicatedModelIndex >= 0) this.modelInfo[1]++;
 return;
-}if ("offset" == propertyName) {
+}if ("offset" === propertyName ) {
 this.offset=$I$(2).newV$javajs_util_T3(value);
 if (this.thisMesh != null ) this.thisMesh.offset$javajs_util_V3(this.offset);
 return;
-}if ("atomSet" == propertyName) {
+}if ("atomSet" === propertyName ) {
 var bsAtoms=value;
 if (bsAtoms.isEmpty$()) return;
-this.vData.addLast$TV(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(3), bsAtoms]));
+this.vData.addLast$O(Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(3), bsAtoms]));
 if (this.isCircle && this.diameter == 0  && this.width == 0  ) this.width=this.vwr.ms.calcRotationRadiusBs$javajs_util_BS(bsAtoms) * 2.0;
 return;
-}if ("coords" == propertyName) {
+}if ("coords" === propertyName ) {
 p$1.addPoints$I$O.apply(this, [1, value]);
 return;
-}if ("modelBasedPoints" == propertyName) {
+}if ("modelBasedPoints" === propertyName ) {
 p$1.addPoints$I$O.apply(this, [5, value]);
 return;
-}if ("set" == propertyName) {
+}if ("set" === propertyName ) {
 if (this.thisMesh == null ) {
 this.allocMesh$S$org_jmol_shape_Mesh(null, null);
 this.thisMesh.colix=this.colix;
@@ -248,7 +208,7 @@ this.thisMesh.visible=true;
 this.vData=null;
 this.lineData=null;
 return;
-}if (propertyName == "deleteModelAtoms") {
+}if (propertyName === "deleteModelAtoms" ) {
 p$1.deleteModels$I.apply(this, [((value)[2])[0]]);
 return;
 }p$1.setPropertySuper$S$O$javajs_util_BS.apply(this, [propertyName, value, bs]);
@@ -297,23 +257,23 @@ this.offset=null;
 this.plane=null;
 this.polygon=null;
 this.slabData=null;
-this.vData=Clazz.new_($I$(7));
+this.vData=Clazz.new_($I$(7,1));
 this.width=0;
 p$1.setPropertySuper$S$O$javajs_util_BS.apply(this, ["thisID", "+PREVIOUS_MESH+", null]);
 }, p$1);
 
 Clazz.newMeth(C$, 'getPropertyData$S$OA', function (property, data) {
-if (property == "keys") {
-var keys=(Clazz.instanceOf(data[1], "javajs.util.Lst") ? data[1] : Clazz.new_($I$(7)));
+if (property === "keys" ) {
+var keys=(Clazz.instanceOf(data[1], "javajs.util.Lst") ? data[1] : Clazz.new_($I$(7,1)));
 data[1]=keys;
-keys.addLast$TV("getSpinAxis");
-}if (property == "getCenter") {
+keys.addLast$O("getSpinAxis");
+}if (property === "getCenter" ) {
 var id=data[0];
 var index=(data[1]).intValue$();
 var modelIndex=(data[2]).intValue$();
 data[2]=p$1.getSpinCenter$S$I$I.apply(this, [id, index, modelIndex]);
 return (data[2] != null );
-}if (property == "getSpinAxis") {
+}if (property === "getSpinAxis" ) {
 var id=data[0];
 var index=(data[1]).intValue$();
 data[2]=p$1.getSpinAxis$S$I.apply(this, [id, index]);
@@ -324,8 +284,8 @@ return (data[2] != null );
 Clazz.newMeth(C$, 'getProperty$S$I', function (property, index) {
 var m=this.thisMesh;
 if (index >= 0 && (index >= this.meshCount || (m=this.meshes[index]) == null  ) ) return null;
-if (property == "command") return p$1.getCommand$org_jmol_shape_Mesh.apply(this, [m]);
-if (property == "type") return Integer.valueOf$I(m == null  ? $I$(10).NONE.id : m.drawType.id);
+if (property === "command" ) return p$1.getCommand$org_jmol_shape_Mesh.apply(this, [m]);
+if (property === "type" ) return Integer.valueOf$I(m == null  ? $I$(10).NONE.id : m.drawType.id);
 return this.getPropMC$S$I(property, index);
 });
 
@@ -367,7 +327,7 @@ if (this.intersectID != null  || this.boundBox != null  ) {
 if (this.boundBox != null ) {
 if (this.plane == null ) {
 }} else if (this.plane != null  && this.intersectID != null  ) {
-var vData=Clazz.new_($I$(7));
+var vData=Clazz.new_($I$(7,1));
 var data=Clazz.array(java.lang.Object, -1, [this.intersectID, this.plane, vData, null]);
 this.vwr.shm.getShapePropertyData$I$S$OA(24, "intersectPlane", data);
 if (vData.size$() > 0) {
@@ -375,9 +335,9 @@ this.indicatedModelIndex=(data[3]).intValue$();
 this.lineData=vData;
 }}} else if (this.slabData != null  && this.plane != null  ) {
 this.slabData.getMeshSlicer$().getIntersection$F$javajs_util_P4$javajs_util_P3A$javajs_util_Lst$FA$javajs_util_BS$org_jmol_util_MeshSurface$Z$Z$I$Z(0, this.plane, null, null, null, null, null, false, true, 134217750, false);
-this.polygon=Clazz.new_($I$(7));
-this.polygon.addLast$TV(this.slabData.vs);
-this.polygon.addLast$TV(this.slabData.pis);
+this.polygon=Clazz.new_($I$(7,1));
+this.polygon.addLast$O(this.slabData.vs);
+this.polygon.addLast$O(this.slabData.pis);
 }if (this.polygon == null  && (this.lineData != null  ? this.lineData.size$() == 0 : (this.vData.size$() == 0) == (connections == null ) )  || !this.isArrow && connections != null   ) return false;
 var modelCount=this.vwr.ms.mc;
 if (this.polygon != null  || this.lineData != null   || this.indicatedModelIndex < 0 && (this.isFixed || this.isArrow || this.isCurve || this.isCircle || this.isCylinder || modelCount == 1  )  ) {
@@ -413,7 +373,7 @@ p$1.setPolygon$I.apply(this, [0]);
 this.thisMesh.modelIndex=-1;
 this.thisMesh.setPolygonCount$I(modelCount);
 this.thisMesh.ptCenters=Clazz.array($I$(8), [modelCount]);
-this.thisMesh.modelFlags=Clazz.new_($I$(11));
+this.thisMesh.modelFlags=Clazz.new_($I$(11,1));
 this.thisMesh.drawTypes=Clazz.array($I$(10), [modelCount]);
 this.thisMesh.drawVertexCounts=Clazz.array(Integer.TYPE, [modelCount]);
 this.thisMesh.vc=0;
@@ -447,7 +407,7 @@ this.thisMesh.setCenter$I(-1);
 if (this.offset != null ) this.thisMesh.offset$javajs_util_V3(this.offset);
 if (this.thisMesh.thisID == null ) {
 this.thisMesh.thisID=this.thisMesh.drawType.$name + (++this.nUnnamed);
-this.htObjects.put$TK$TV(this.thisMesh.thisID, this.thisMesh);
+this.htObjects.put$O$O(this.thisMesh.thisID, this.thisMesh);
 }this.clean$();
 return true;
 }, p$1);
@@ -461,7 +421,7 @@ Clazz.newMeth(C$, 'addPoints$I$O', function (type, value) {
 var pts=value;
 var key=Integer.valueOf$I(type);
 var isModelPoints=(type == 5);
-if (isModelPoints) this.vData.addLast$TV(Clazz.array(java.lang.Object, -1, [key, pts]));
+if (isModelPoints) this.vData.addLast$O(Clazz.array(java.lang.Object, -1, [key, pts]));
 for (var i=0, n=pts.size$(); i < n; i++) {
 var o=pts.get$I(i);
 var pt;
@@ -480,9 +440,9 @@ default:
 pt=$I$(12).ptValue$org_jmol_script_SV(v);
 }
 }if (isModelPoints) {
-pts.set$I$TE(i, $I$(12).getVariable$O(pt));
+pts.set$I$O(i, $I$(12).getVariable$O(pt));
 } else {
-this.vData.addLast$TV(Clazz.array(java.lang.Object, -1, [key, pt]));
+this.vData.addLast$O(Clazz.array(java.lang.Object, -1, [key, pt]));
 }}
 }, p$1);
 
@@ -542,7 +502,7 @@ var m=this.dmeshes[idInfo[0]];
 var isReversed=(idInfo[1] == 1);
 var isVertices=(idInfo[2] == 1);
 if (m.modelIndex > 0 && m.modelIndex != iModel ) return false;
-if (this.bsAllModels == null ) this.bsAllModels=Clazz.new_($I$(11));
+if (this.bsAllModels == null ) this.bsAllModels=Clazz.new_($I$(11,1));
 if (this.isPlane && !this.isCircle  || this.isPerpendicular  || isVertices ) {
 if (isReversed) {
 if (iModel < 0 || iModel >= m.pc ) for (var ipt=m.drawVertexCount; --ipt >= 0; ) p$1.addPoint$javajs_util_T3$I.apply(this, [m.vs[ipt], iModel]);
@@ -560,7 +520,7 @@ if (iModel < 0 || m.ptCenters == null   || m.ptCenters[iModel] == null  ) p$1.ad
 }break;
 case 5:
 var modelBasedPoints=info[1];
-if (this.bsAllModels == null ) this.bsAllModels=Clazz.new_($I$(11));
+if (this.bsAllModels == null ) this.bsAllModels=Clazz.new_($I$(11,1));
 for (var j=0; j < modelBasedPoints.size$(); j++) if (iModel < 0 || j == iModel ) {
 var point=modelBasedPoints.get$I(j);
 this.bsAllModels.set$I(j);
@@ -640,11 +600,11 @@ nVertices=4;
 }this.plane=null;
 } else if (drawType === $I$(10).POINT ) {
 var pt;
-var center=Clazz.new_($I$(8));
-var normal=Clazz.new_($I$(2));
+var center=Clazz.new_($I$(8,1));
+var normal=Clazz.new_($I$(2,1));
 if (nVertices == 2 && this.plane != null  ) {
 this.ptList[1]=$I$(8).newP$javajs_util_T3(this.ptList[0]);
-var vTemp=Clazz.new_($I$(2));
+var vTemp=Clazz.new_($I$(2,1));
 $I$(14).getPlaneProjection$javajs_util_P3$javajs_util_P4$javajs_util_P3$javajs_util_V3(this.ptList[1], this.plane, this.ptList[1], vTemp);
 nVertices=-2;
 if (this.isArrow) drawType=$I$(10).ARROW;
@@ -659,7 +619,7 @@ this.ptList[3].sub$javajs_util_T3(pt);
 nVertices=4;
 } else if (nVertices >= 3 && !this.isPlane  && this.isPerpendicular ) {
 $I$(14).calcNormalizedNormal$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(this.ptList[0], this.ptList[1], this.ptList[2], normal, this.vAB);
-center=Clazz.new_($I$(8));
+center=Clazz.new_($I$(8,1));
 $I$(14).calcAveragePointN$javajs_util_P3A$I$javajs_util_P3(this.ptList, nVertices, center);
 dist=(this.length == 3.4028235E38  ? this.ptList[0].distance$javajs_util_T3(center) : this.length);
 normal.scale$F(dist);
@@ -737,7 +697,7 @@ var f=newScale / dmesh.scale;
 dmesh.scale=newScale;
 dmesh.isScaleSet=true;
 if (dmesh.isRenderScalable$()) return;
-var diff=Clazz.new_($I$(2));
+var diff=Clazz.new_($I$(2,1));
 var iptlast=-1;
 var ipt=0;
 try {
@@ -773,7 +733,7 @@ if (m.vs == null ) return;
 var n=0;
 for (var i=m.pc; --i >= 0; ) {
 var p=m.pis[i];
-m.axes[i]=Clazz.new_($I$(2));
+m.axes[i]=Clazz.new_($I$(2,1));
 if (p == null  || p.length == 0 ) {
 } else if (m.drawVertexCount == 2 || m.drawVertexCount < 0 && m.drawVertexCounts[i] == 2  ) {
 m.axes[i].sub2$javajs_util_T3$javajs_util_T3(m.vs[p[0]], m.vs[p[1]]);
@@ -861,12 +821,12 @@ if (this.vwr.gdata.isAntialiased$()) {
 x<<=1;
 y<<=1;
 }var action=moveAll ? 8 : 9;
-if (this.vwr.acm.userActionEnabled$I(action) && !this.vwr.acm.userAction$I$OA(action, Clazz.array(java.lang.Object, -1, ["draw", mesh.thisID, Clazz.array(Integer.TYPE, -1, [x, y, iVertex])])) ) return;
-var pt=Clazz.new_($I$(8));
+if (this.vwr.acm.userActionEnabled$I(action) && !this.vwr.acm.userAction$I$OA(action, Clazz.array(java.lang.Object, -1, [mesh.thisID, Clazz.array(Integer.TYPE, -1, [x, y, iVertex])])) ) return;
+var pt=Clazz.new_($I$(8,1));
 var ptVertex=vertexes[iVertex];
-var coord=$I$(8).newP$javajs_util_T3(mesh.altVertices == null  ? mesh.vs[ptVertex] : mesh.altVertices[ptVertex]);
-var newcoord=Clazz.new_($I$(8));
-var move=Clazz.new_($I$(2));
+var coord=$I$(8,"newP$javajs_util_T3",[mesh.altVertices == null  ? mesh.vs[ptVertex] : mesh.altVertices[ptVertex]]);
+var newcoord=Clazz.new_($I$(8,1));
+var move=Clazz.new_($I$(2,1));
 this.vwr.tm.transformPt3f$javajs_util_T3$javajs_util_P3(coord, pt);
 pt.x=x;
 pt.y=y;
@@ -874,7 +834,7 @@ this.vwr.tm.unTransformPoint$javajs_util_T3$javajs_util_T3(pt, newcoord);
 move.sub2$javajs_util_T3$javajs_util_T3(newcoord, coord);
 if (mesh.isDrawPolygon) iVertex=ptVertex;
 var n=(!moveAll ? iVertex + 1 : mesh.isDrawPolygon ? mesh.vs.length : vertexes.length);
-var bsMoved=Clazz.new_($I$(11));
+var bsMoved=Clazz.new_($I$(11,1));
 for (var i=(moveAll ? 0 : iVertex); i < n; i++) if (moveAll || i == iVertex ) {
 var k=(mesh.isDrawPolygon ? i : vertexes[i]);
 if (bsMoved.get$I(k)) continue;
@@ -926,7 +886,7 @@ return (this.pickedMesh != null );
 
 Clazz.newMeth(C$, 'getCommand$org_jmol_shape_Mesh', function (mesh) {
 if (mesh != null ) return p$1.getCommand2$org_jmol_shape_Mesh$I.apply(this, [mesh, mesh.modelIndex]);
-var sb=Clazz.new_($I$(16));
+var sb=Clazz.new_($I$(16,1));
 var key=(this.explicitID && this.previousMeshID != null   && $I$(17).isWild$S(this.previousMeshID)  ? this.previousMeshID : null);
 var list=this.getMeshList$S$Z(key, false);
 for (var i=list.size$(); --i >= 0; ) {
@@ -939,9 +899,9 @@ return sb.toString();
 Clazz.newMeth(C$, 'getCommand2$org_jmol_shape_Mesh$I', function (mesh, iModel) {
 var dmesh=mesh;
 if (!dmesh.isValid || dmesh.drawType === $I$(10).NONE  && dmesh.lineData == null   && dmesh.drawVertexCount == 0  && dmesh.drawVertexCounts == null   ) return "";
-var str=Clazz.new_($I$(16));
+var str=Clazz.new_($I$(16,1));
 var modelCount=this.vwr.ms.mc;
-if (!dmesh.isFixed && iModel >= 0  && modelCount > 1 ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(str, "frame " + this.vwr.getModelNumberDotted$I(iModel));
+if (!dmesh.isFixed && iModel >= 0  && modelCount > 1 ) $I$(18,"appendCmd$javajs_util_SB$S",[str, "frame " + this.vwr.getModelNumberDotted$I(iModel)]);
 str.append$S("  draw ID ").append$S($I$(17).esc$S(dmesh.thisID));
 if (dmesh.isFixed) str.append$S(" fixed");
 if (iModel < 0) iModel=0;
@@ -955,10 +915,10 @@ str.append$S("  lineData [");
 var n=dmesh.lineData.size$();
 for (var j=0; j < n; ) {
 var pts=dmesh.lineData.get$I(j);
-var s=$I$(18).eP$javajs_util_T3(pts[0]);
+var s=$I$(19).eP$javajs_util_T3(pts[0]);
 str.append$S(s.substring$I$I(1, s.length$() - 1));
 str.append$S(",");
-s=$I$(18).eP$javajs_util_T3(pts[1]);
+s=$I$(19).eP$javajs_util_T3(pts[1]);
 str.append$S(s.substring$I$I(1, s.length$() - 1));
 if (++j < n) str.append$S(", ");
 }
@@ -983,7 +943,7 @@ str.append$S(dmesh.isVector ? " ARROW ARC" : " ARC");
 break;
 case $I$(10).ARROW:
 str.append$S(dmesh.isVector ? " VECTOR" : " ARROW");
-if (dmesh.connectedAtoms != null ) str.append$S(" connect ").append$S($I$(18).eAI$IA(dmesh.connectedAtoms));
+if (dmesh.connectedAtoms != null ) str.append$S(" connect ").append$S($I$(19).eAI$IA(dmesh.connectedAtoms));
 break;
 case $I$(10).CIRCLE:
 str.append$S(" CIRCLE");
@@ -1012,28 +972,28 @@ str.append$S(s);
 str.append$S(" ] ");
 }
 } else if (dmesh.drawType === $I$(10).POLYGON ) {
-for (var i=0; i < dmesh.vc; i++) str.append$S(" ").append$S($I$(18).eP$javajs_util_T3(dmesh.vs[i]));
+for (var i=0; i < dmesh.vc; i++) str.append$S(" ").append$S($I$(19).eP$javajs_util_T3(dmesh.vs[i]));
 
 str.append$S(" ").appendI$I(dmesh.pc);
 for (var i=0; i < dmesh.pc; i++) if (dmesh.pis[i] == null ) str.append$S(" [0 0 0 0]");
- else str.append$S(" ").append$S($I$(18).eAI$IA(dmesh.pis[i]));
+ else str.append$S(" ").append$S($I$(19).eAI$IA(dmesh.pis[i]));
 
 } else {
 var s=C$.getVertexList$org_jmol_shapespecial_DrawMesh$I$I(dmesh, iModel, nVertices);
 if (s.indexOf$S("NaN") >= 0) return "";
 str.append$S(s);
 }}if (dmesh.mat4 != null ) {
-var v=Clazz.new_($I$(2));
+var v=Clazz.new_($I$(2,1));
 dmesh.mat4.getTranslation$javajs_util_T3(v);
-str.append$S(" offset ").append$S($I$(18).eP$javajs_util_T3(v));
+str.append$S(" offset ").append$S($I$(19).eP$javajs_util_T3(v));
 }if (dmesh.title != null ) {
 var s="";
 for (var i=0; i < dmesh.title.length; i++) s += "|" + dmesh.title[i];
 
-str.append$S($I$(17).esc$S(s.substring$I(1)));
+str.append$S($I$(17,"esc$S",[s.substring$I(1)]));
 }str.append$S(";\n");
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(str, dmesh.getState$S("draw"));
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(str, org.jmol.shape.Shape.getColorCommandUnk$S$H$Z("draw", dmesh.colix, this.translucentAllowed));
+$I$(18,"appendCmd$javajs_util_SB$S",[str, dmesh.getState$S("draw")]);
+$I$(18,"appendCmd$javajs_util_SB$S",[str, $I$(18).getColorCommandUnk$S$H$Z("draw", dmesh.colix, this.translucentAllowed)]);
 return str.toString();
 }, p$1);
 
@@ -1053,9 +1013,9 @@ str += (i == 0 ? " " : " ,") + "[" + (pt.x|0) + " " + (pt.y|0) + (pt.z < 0  ? " 
 } else if (adjustPt && i == 1 ) {
 var pt1=$I$(8).newP$javajs_util_T3(pt);
 pt1.sub$javajs_util_T3(mesh.vs[mesh.pis[iModel][0]]);
-str += " " + $I$(18).eP$javajs_util_T3(pt1);
+str += " " + $I$(19).eP$javajs_util_T3(pt1);
 } else {
-str += " " + $I$(18).eP$javajs_util_T3(pt);
+str += " " + $I$(19).eP$javajs_util_T3(pt);
 }}
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -1068,58 +1028,58 @@ return str;
 }, 1);
 
 Clazz.newMeth(C$, 'getShapeDetail$', function () {
-var V=Clazz.new_($I$(7));
+var V=Clazz.new_($I$(7,1));
 for (var i=0; i < this.meshCount; i++) {
 var mesh=this.dmeshes[i];
 if (mesh.vc == 0) continue;
-var info=Clazz.new_($I$(4));
-info.put$TK$TV("visible", mesh.visible ? $I$(19).TRUE : $I$(19).FALSE);
-info.put$TK$TV("fixed", mesh.ptCenters == null  ? $I$(19).TRUE : $I$(19).FALSE);
-info.put$TK$TV("ID", (mesh.thisID == null  ? "<noid>" : mesh.thisID));
-info.put$TK$TV("drawType", mesh.drawType.$name);
-if (mesh.diameter > 0) info.put$TK$TV("diameter", Integer.valueOf$I(mesh.diameter));
-if (mesh.width != 0 ) info.put$TK$TV("width", Float.valueOf$F(mesh.width));
-info.put$TK$TV("scale", Float.valueOf$F(mesh.scale));
+var info=Clazz.new_($I$(4,1));
+info.put$O$O("visible", mesh.visible ? Boolean.TRUE : Boolean.FALSE);
+info.put$O$O("fixed", mesh.ptCenters == null  ? Boolean.TRUE : Boolean.FALSE);
+info.put$O$O("ID", (mesh.thisID == null  ? "<noid>" : mesh.thisID));
+info.put$O$O("drawType", mesh.drawType.$name);
+if (mesh.diameter > 0) info.put$O$O("diameter", Integer.valueOf$I(mesh.diameter));
+if (mesh.width != 0 ) info.put$O$O("width", Float.valueOf$F(mesh.width));
+info.put$O$O("scale", Float.valueOf$F(mesh.scale));
 if (mesh.drawType === $I$(10).MULTIPLE ) {
-var m=Clazz.new_($I$(7));
+var m=Clazz.new_($I$(7,1));
 var modelCount=this.vwr.ms.mc;
 for (var k=0; k < modelCount; k++) {
 if (mesh.ptCenters[k] == null ) continue;
-var mInfo=Clazz.new_($I$(4));
-mInfo.put$TK$TV("modelIndex", Integer.valueOf$I(k));
-mInfo.put$TK$TV("command", p$1.getCommand2$org_jmol_shape_Mesh$I.apply(this, [mesh, k]));
-mInfo.put$TK$TV("center", mesh.ptCenters[k]);
+var mInfo=Clazz.new_($I$(4,1));
+mInfo.put$O$O("modelIndex", Integer.valueOf$I(k));
+mInfo.put$O$O("command", p$1.getCommand2$org_jmol_shape_Mesh$I.apply(this, [mesh, k]));
+mInfo.put$O$O("center", mesh.ptCenters[k]);
 var nPoints=mesh.drawVertexCounts[k];
-mInfo.put$TK$TV("vertexCount", Integer.valueOf$I(nPoints));
-if (nPoints > 1) mInfo.put$TK$TV("axis", mesh.axes[k]);
-var v=Clazz.new_($I$(7));
-for (var ipt=0; ipt < nPoints; ipt++) v.addLast$TV(mesh.vs[mesh.pis[k][ipt]]);
+mInfo.put$O$O("vertexCount", Integer.valueOf$I(nPoints));
+if (nPoints > 1) mInfo.put$O$O("axis", mesh.axes[k]);
+var v=Clazz.new_($I$(7,1));
+for (var ipt=0; ipt < nPoints; ipt++) v.addLast$O(mesh.vs[mesh.pis[k][ipt]]);
 
-mInfo.put$TK$TV("vertices", v);
+mInfo.put$O$O("vertices", v);
 if (mesh.drawTypes[k] === $I$(10).LINE ) {
 var d=mesh.vs[mesh.pis[k][0]].distance$javajs_util_T3(mesh.vs[mesh.pis[k][1]]);
-mInfo.put$TK$TV("length_Ang", Float.valueOf$F(d));
-}m.addLast$TV(mInfo);
+mInfo.put$O$O("length_Ang", Float.valueOf$F(d));
+}m.addLast$O(mInfo);
 }
-info.put$TK$TV("models", m);
+info.put$O$O("models", m);
 } else {
-info.put$TK$TV("command", p$1.getCommand$org_jmol_shape_Mesh.apply(this, [mesh]));
-info.put$TK$TV("center", mesh.ptCenter);
-if (mesh.drawVertexCount > 1) info.put$TK$TV("axis", mesh.axis);
-var v=Clazz.new_($I$(7));
-for (var j=0; j < mesh.vc; j++) v.addLast$TV(mesh.vs[j]);
+info.put$O$O("command", p$1.getCommand$org_jmol_shape_Mesh.apply(this, [mesh]));
+info.put$O$O("center", mesh.ptCenter);
+if (mesh.drawVertexCount > 1) info.put$O$O("axis", mesh.axis);
+var v=Clazz.new_($I$(7,1));
+for (var j=0; j < mesh.vc; j++) v.addLast$O(mesh.vs[j]);
 
-info.put$TK$TV("vertices", v);
-if (mesh.drawType === $I$(10).LINE ) info.put$TK$TV("length_Ang", Float.valueOf$F(mesh.vs[0].distance$javajs_util_T3(mesh.vs[1])));
-}V.addLast$TV(info);
+info.put$O$O("vertices", v);
+if (mesh.drawType === $I$(10).LINE ) info.put$O$O("length_Ang", Float.valueOf$F(mesh.vs[0].distance$javajs_util_T3(mesh.vs[1])));
+}V.addLast$O(info);
 }
 return V;
 });
 
 Clazz.newMeth(C$, 'getShapeState$', function () {
-var s=Clazz.new_($I$(16));
+var s=Clazz.new_($I$(16,1));
 s.append$S("\n");
-org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(s, this.myType + " delete");
+$I$(18).appendCmd$javajs_util_SB$S(s, this.myType + " delete");
 for (var i=0; i < this.meshCount; i++) {
 var mesh=this.dmeshes[i];
 if (mesh.vc == 0 && mesh.lineData == null  ) continue;
@@ -1130,41 +1090,22 @@ return s.toString();
 });
 
 Clazz.newMeth(C$, 'randomPoint$', function () {
-return $I$(8).new3$F$F$F(Math.random(), Math.random(), Math.random());
+return $I$(8,"new3$F$F$F",[Math.random(), Math.random(), Math.random()]);
 }, 1);
 ;
-(function(){var C$=Clazz.newClass(P$.Draw, "EnumDrawType", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.Draw, "EnumDrawType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-$vals=Clazz.array(C$,[0]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "MULTIPLE", 0, [-1, "multiple"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "NONE", 1, [0, "none"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "POINT", 2, [1, "point"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "LINE", 3, [2, "line"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "PLANE", 4, [4, "plane"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "CYLINDER", 5, [14, "cylinder"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "ARROW", 6, [15, "arrow"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "CIRCLE", 7, [16, "circle"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "CURVE", 8, [17, "curve"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "CIRCULARPLANE", 9, [18, "circularPlane"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "ARC", 10, [19, "arc"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "LINE_SEGMENT", 11, [20, "lineSegment"]);
-Clazz.newEnumConst($vals, C$.c$$I$S, "POLYGON", 12, [21, "polygon"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=0;
-this.$name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['id'],'S',['$name']]]
 
 Clazz.newMeth(C$, 'c$$I$S', function (id, name) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.id=id;
 this.$name=name;
 }, 1);
@@ -1182,10 +1123,27 @@ return C$.NONE;
 }
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+$vals=Clazz.array(C$,[0]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "MULTIPLE", 0, [-1, "multiple"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "NONE", 1, [0, "none"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "POINT", 2, [1, "point"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "LINE", 3, [2, "line"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "PLANE", 4, [4, "plane"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "CYLINDER", 5, [14, "cylinder"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "ARROW", 6, [15, "arrow"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "CIRCLE", 7, [16, "circle"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "CURVE", 8, [17, "curve"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "CIRCULARPLANE", 9, [18, "circularPlane"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "ARC", 10, [19, "arc"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "LINE_SEGMENT", 11, [20, "lineSegment"]);
+Clazz.newEnumConst($vals, C$.c$$I$S, "POLYGON", 12, [21, "polygon"]);
+};
+
 Clazz.newMeth(C$);
 var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:21:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

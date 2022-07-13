@@ -1,49 +1,42 @@
 (function(){var P$=Clazz.newPackage("vamsas.objects.simple"),I$=[];
-var C$=Clazz.newClass(P$, "Msfalignment", null, null, 'java.io.Serializable');
+/*c*/var C$=Clazz.newClass(P$, "Msfalignment", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.msf=null;
-this.notes=null;
-this.__equalsCalc=null;
-this.__hashCodeCalc=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.__equalsCalc=null;
 this.__hashCodeCalc=false;
+},1);
+
+C$.$fields$=[['Z',['__hashCodeCalc'],'S',['msf','notes'],'O',['__equalsCalc','java.lang.Object']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S$S', function (msf, notes) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$S',  function (msf, notes) {
+;C$.$init$.apply(this);
 this.msf=msf;
 this.notes=notes;
 }, 1);
 
-Clazz.newMeth(C$, 'getMsf$', function () {
+Clazz.newMeth(C$, 'getMsf$',  function () {
 return this.msf;
 });
 
-Clazz.newMeth(C$, 'setMsf$S', function (msf) {
+Clazz.newMeth(C$, 'setMsf$S',  function (msf) {
 this.msf=msf;
 });
 
-Clazz.newMeth(C$, 'getNotes$', function () {
+Clazz.newMeth(C$, 'getNotes$',  function () {
 return this.notes;
 });
 
-Clazz.newMeth(C$, 'setNotes$S', function (notes) {
+Clazz.newMeth(C$, 'setNotes$S',  function (notes) {
 this.notes=notes;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (obj == null ) {
 return false;
 }if (!(Clazz.instanceOf(obj, "vamsas.objects.simple.Msfalignment"))) {
@@ -60,7 +53,7 @@ this.__equalsCalc=null;
 return _equals;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 if (this.__hashCodeCalc) {
 return 0;
 }this.__hashCodeCalc=true;
@@ -73,4 +66,4 @@ _hashCode+=this.getNotes$().hashCode$();
 return _hashCode;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

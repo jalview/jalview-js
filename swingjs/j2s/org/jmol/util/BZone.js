@@ -1,57 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.Lst','javajs.util.P4','javajs.util.V3','javajs.util.Measure','java.util.Hashtable','Boolean','org.jmol.bspt.PointIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BZone");
-C$.bzColors=null;
-C$.ptInner=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.Lst','javajs.util.P4','javajs.util.V3','javajs.util.Measure','java.util.Hashtable','org.jmol.bspt.PointIterator']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BZone");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.bzColors=Clazz.array(String, -1, ["red", "green", "skyblue", "orange", "yellow", "indigo", "violet"]);
-C$.ptInner=$I$(1).new3$F$F$F(NaN, 0, 0);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bzDrawPointsAndEdges=false;
-this.bzSavePmeshes=false;
-this.bzones=null;
-this.bzGamma=null;
-this.bzFaceCenters=null;
-this.bzLatticePts=null;
-this.bzLatticePtsAll=null;
-this.bzPlanePts=null;
-this.subzones=null;
-this.isWignerSeitz=false;
-this.vwr=null;
-this.eval=null;
-this.id=null;
-this.index=0;
-this.color=null;
-this.latticePts=null;
-this.newLatticePts=null;
-this.newPlanePts=null;
-this.planes=null;
-this.newPlanes=null;
-this.volume=0;
-this.zoneIndex=0;
-this.offset=null;
-this.center=null;
-this.planesUnused=null;
-this.ptsUnused=null;
-this.pmeshes=null;
-this.areas=null;
-this.faces=null;
-this.faceIndices=null;
-this.faceCenters=null;
-this.totalArea=0;
-this.ret=null;
-this.polyid=null;
-this.pts=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bzDrawPointsAndEdges=false;
 this.bzSavePmeshes=false;
 this.bzones=null;
-this.bzGamma=Clazz.new_($I$(1));
+this.bzGamma=Clazz.new_($I$(1,1));
 this.bzFaceCenters=null;
 this.bzLatticePts=null;
 this.bzLatticePtsAll=null;
@@ -59,10 +15,13 @@ this.bzPlanePts=null;
 this.subzones=null;
 this.volume=0;
 this.ret=Clazz.array(java.lang.Object, [1]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['bzDrawPointsAndEdges','bzSavePmeshes','isWignerSeitz'],'D',['totalArea'],'F',['volume'],'I',['index','zoneIndex'],'S',['id','color','polyid'],'O',['bzones','javajs.util.Lst','bzGamma','javajs.util.P3','bzFaceCenters','javajs.util.Lst','+bzLatticePts','bzLatticePtsAll','javajs.util.P3[]','bzPlanePts','javajs.util.Lst','+subzones','vwr','org.jmol.viewer.Viewer','eval','org.jmol.api.JmolScriptEvaluator','latticePts','javajs.util.Lst','+newLatticePts','+newPlanePts','+planes','+newPlanes','offset','javajs.util.P3','+center','planesUnused','javajs.util.Lst','+ptsUnused','+pmeshes','+areas','+faces','+faceIndices','+faceCenters','ret','Object[]','pts','javajs.util.P3[]']]
+,['O',['bzColors','String[]','ptInner','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_viewer_Viewer', function (vwr) {
@@ -96,16 +55,16 @@ p$1.cmd$S.apply(this, ["unitcell 'reciprocal' " + new Float(scale).toString()]);
 p$1.cmd$S.apply(this, ["pmesh fbz* delete"]);
 if (!this.isWignerSeitz) {
 p$1.cmd$S.apply(this, ["axes unitcell; axes on; axes scale 2.0;axes 0.01;axes labels \"b1\" \"b2\" \"b3\" \"\""]);
-}this.bzones=Clazz.new_($I$(2));
-this.bzLatticePts=Clazz.new_($I$(2));
-this.bzPlanePts=Clazz.new_($I$(2));
-this.bzFaceCenters=Clazz.new_($I$(2));
-var wasPrecise=this.vwr.getBoolean$I(603979875);
+}this.bzones=Clazz.new_($I$(2,1));
+this.bzLatticePts=Clazz.new_($I$(2,1));
+this.bzPlanePts=Clazz.new_($I$(2,1));
+this.bzFaceCenters=Clazz.new_($I$(2,1));
+var wasPrecise=this.vwr.getBoolean$I(603979874);
 this.vwr.setBooleanProperty$S$Z("legacyJavaFloat", true);
 p$1.getLatticePoints$I.apply(this, [n]);
-this.bzones.addLast$TV(null);
+this.bzones.addLast$O(null);
 for (var i=1; i <= n; i++) {
-this.bzones.add$I$TE(i, p$1.newBZ$I.apply(this, [i]));
+this.bzones.add$I$O(i, p$1.newBZ$I.apply(this, [i]));
 p$1.createNextBZ$org_jmol_util_BZone$org_jmol_util_BZone$S.apply(this, [this.bzones.get$I(i), this.bzones.get$I(i - 1), id]);
 if (discardPrev && i > 1 ) p$1.cmd$S.apply(this, ["polyhedra id \"pbz" + (i - 1) + "_*\" delete" ]);
 }
@@ -133,20 +92,20 @@ subzone.index=index;
 subzone.id=zone.id + id + index + "_" ;
 subzone.zoneIndex=zone.index;
 subzone.newLatticePts=zone.newLatticePts;
-subzone.planes=Clazz.new_($I$(2));
-subzone.latticePts=Clazz.new_($I$(2));
-subzone.planesUnused=Clazz.new_($I$(2));
-subzone.ptsUnused=Clazz.new_($I$(2));
-subzone.pmeshes=Clazz.new_($I$(2));
-subzone.areas=Clazz.new_($I$(2));
-subzone.faces=Clazz.new_($I$(2));
-subzone.faceIndices=Clazz.new_($I$(2));
-subzone.faceCenters=Clazz.new_($I$(2));
+subzone.planes=Clazz.new_($I$(2,1));
+subzone.latticePts=Clazz.new_($I$(2,1));
+subzone.planesUnused=Clazz.new_($I$(2,1));
+subzone.ptsUnused=Clazz.new_($I$(2,1));
+subzone.pmeshes=Clazz.new_($I$(2,1));
+subzone.areas=Clazz.new_($I$(2,1));
+subzone.faces=Clazz.new_($I$(2,1));
+subzone.faceIndices=Clazz.new_($I$(2,1));
+subzone.faceCenters=Clazz.new_($I$(2,1));
 subzone.volume=0;
 subzone.color=zone.color;
-subzone.offset=Clazz.new_($I$(1));
-subzone.center=Clazz.new_($I$(1));
-zone.subzones.addLast$TV(subzone);
+subzone.offset=Clazz.new_($I$(1,1));
+subzone.center=Clazz.new_($I$(1,1));
+zone.subzones.addLast$O(subzone);
 return subzone;
 }, p$1);
 
@@ -178,21 +137,21 @@ p$1.addBZ$javajs_util_Lst$javajs_util_Lst$javajs_util_Lst$javajs_util_Lst$I.appl
 
 Clazz.newMeth(C$, 'addBZ$javajs_util_Lst$javajs_util_Lst$javajs_util_Lst$javajs_util_Lst$I', function (planes, pts, planes0, pts0, j) {
 if (j >= 0) {
-var pt4=$I$(3).newPt$javajs_util_P4(planes0.get$I(j));
+var pt4=$I$(3,"newPt$javajs_util_P4",[planes0.get$I(j)]);
 pt4.scale4$F(-1.0);
-planes.addLast$TV(pt4);
-pts.addLast$TV(pts0.get$I(j));
+planes.addLast$O(pt4);
+pts.addLast$O(pts0.get$I(j));
 }var n=planes0.size$();
 for (var k=0; k < n; k++) {
 if (k != j) {
-planes.addLast$TV(planes0.get$I(k));
-pts.addLast$TV(pts0.get$I(k));
+planes.addLast$O(planes0.get$I(k));
+pts.addLast$O(pts0.get$I(k));
 }}
 }, p$1);
 
 Clazz.newMeth(C$, 'getNewLatticePoints$org_jmol_util_BZone', function (zone) {
-var unusedPts=Clazz.new_($I$(2));
-var unusedLatticePts=Clazz.new_($I$(2));
+var unusedPts=Clazz.new_($I$(2,1));
+var unusedLatticePts=Clazz.new_($I$(2,1));
 var centers=zone.newPlanePts;
 var zoneLPs=zone.newLatticePts;
 var planes=zone.newPlanes;
@@ -207,12 +166,12 @@ var inSphere=p$1.within$F$javajs_util_P3$javajs_util_Lst.apply(this, [radius, ce
 if (inSphere.size$() == 1) {
 ap=centers;
 al=zoneLPs;
-planes.addLast$TV(p$1.plane$javajs_util_P3$javajs_util_P3$F.apply(this, [this.bzGamma, p, 1]));
+planes.addLast$O(p$1.plane$javajs_util_P3$javajs_util_P3$F.apply(this, [this.bzGamma, p, 1]));
 } else {
 ap=unusedPts;
 al=unusedLatticePts;
-}ap.addLast$TV(p);
-al.addLast$TV(this.bzLatticePts.get$I(i));
+}ap.addLast$O(p);
+al.addLast$O(this.bzLatticePts.get$I(i));
 }
 this.bzPlanePts=unusedPts;
 this.bzLatticePts=unusedLatticePts;
@@ -220,19 +179,19 @@ this.bzLatticePts=unusedLatticePts;
 
 Clazz.newMeth(C$, 'plane$javajs_util_P3$javajs_util_P3$F', function (pt1, pt2, f) {
 var norm=$I$(4).newVsub$javajs_util_T3$javajs_util_T3(pt2, pt1);
-var pt3=Clazz.new_($I$(1));
+var pt3=Clazz.new_($I$(1,1));
 pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(f, norm, pt1);
-var plane=Clazz.new_($I$(3));
+var plane=Clazz.new_($I$(3,1));
 $I$(5).getPlaneThroughPoint$javajs_util_T3$javajs_util_V3$javajs_util_P4(pt3, norm, plane);
 return plane;
 }, p$1);
 
 Clazz.newMeth(C$, 'within$F$javajs_util_P3$javajs_util_Lst', function (radius, center, pts) {
-var ret=Clazz.new_($I$(2));
+var ret=Clazz.new_($I$(2,1));
 var r2=radius * radius;
 for (var i=0, n=pts.size$(); i < n; i++) {
 var pt=pts.get$I(i);
-if (center.distanceSquared$javajs_util_T3(pt) < r2 ) ret.addLast$TV(pt);
+if (center.distanceSquared$javajs_util_T3(pt) < r2 ) ret.addLast$O(pt);
 }
 return ret;
 }, p$1);
@@ -242,10 +201,10 @@ var bzone=Clazz.new_(C$);
 bzone.id="bz" + i + "_" ;
 bzone.index=i;
 bzone.color=p$1.bzColor$I.apply(this, [i]);
-bzone.subzones=Clazz.new_($I$(2));
-bzone.newLatticePts=Clazz.new_($I$(2));
-bzone.newPlanePts=Clazz.new_($I$(2));
-bzone.newPlanes=Clazz.new_($I$(2));
+bzone.subzones=Clazz.new_($I$(2,1));
+bzone.newLatticePts=Clazz.new_($I$(2,1));
+bzone.newPlanePts=Clazz.new_($I$(2,1));
+bzone.newPlanes=Clazz.new_($I$(2,1));
 bzone.volume=0;
 return bzone;
 }, p$1);
@@ -256,29 +215,29 @@ return C$.bzColors[(i - 1) % C$.bzColors.length];
 
 Clazz.newMeth(C$, 'getLatticePoints$I', function (n) {
 var minmax=Clazz.array(Integer.TYPE, [3, 3]);
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(1,1));
 var abc=Clazz.array(Float.TYPE, -1, [p$1.newPoint$I$I$I$javajs_util_P3.apply(this, [1, 0, 0, pt]).length$(), p$1.newPoint$I$I$I$javajs_util_P3.apply(this, [0, 1, 0, pt]).length$(), p$1.newPoint$I$I$I$javajs_util_P3.apply(this, [0, 0, 1, pt]).length$()]);
 var abcmax=Math.max(abc[0], Math.max(abc[1], abc[2]));
 for (var i=0; i < 3; i++) {
 var m=((n * abcmax / abc[i])|0);
 minmax[i]=Clazz.array(Integer.TYPE, -1, [-m, m]);
 }
-var pts=Clazz.new_($I$(2));
+var pts=Clazz.new_($I$(2,1));
 for (var i=minmax[0][0]; i <= minmax[0][1]; i++) {
 for (var j=minmax[1][0]; j <= minmax[1][1]; j++) {
 for (var k=minmax[2][0]; k <= minmax[2][1]; k++) {
 if (i != 0 || j != 0  || k != 0 ) {
-var lppt=p$1.newPoint$I$I$I$javajs_util_P3.apply(this, [i, j, k, Clazz.new_($I$(1))]);
-pts.addLast$TV($I$(1).newP$javajs_util_T3(lppt));
-this.bzLatticePts.addLast$TV(lppt);
+var lppt=p$1.newPoint$I$I$I$javajs_util_P3.apply(this, [i, j, k, Clazz.new_($I$(1,1))]);
+pts.addLast$O($I$(1).newP$javajs_util_T3(lppt));
+this.bzLatticePts.addLast$O(lppt);
 var ppt=$I$(1).newP$javajs_util_T3(lppt);
 ppt.scale$F(0.5);
-this.bzPlanePts.addLast$TV(ppt);
+this.bzPlanePts.addLast$O(ppt);
 System.out.println$S("draw ID 'pt" + i + j + k + "' " + lppt );
 }}
 }
 }
-this.bzLatticePtsAll=pts.toArray$TTA(Clazz.array($I$(1), [pts.size$()]));
+this.bzLatticePtsAll=pts.toArray$OA(Clazz.array($I$(1), [pts.size$()]));
 }, p$1);
 
 Clazz.newMeth(C$, 'newPoint$I$I$I$javajs_util_P3', function (i, j, k, pt) {
@@ -312,8 +271,8 @@ this.ptsUnused=subzone.ptsUnused;
 this.faces=subzone.faces;
 this.faceCenters=subzone.faceCenters;
 var nPlanes=this.planes.size$();
-var planesUsed=Clazz.new_($I$(2));
-var ptsUsed=Clazz.new_($I$(2));
+var planesUsed=Clazz.new_($I$(2,1));
+var ptsUsed=Clazz.new_($I$(2,1));
 var totalArea=0;
 for (var i=0; i < nPlanes; i++) {
 var pid="f" + subzone.id + i ;
@@ -338,20 +297,20 @@ area=0;
 totalArea=0;
 i=nPlanes;
 }}if (area > 0 ) {
-this.faces.addLast$TV(p$1.cleanFace$javajs_util_P3A.apply(this, [face]));
-this.faceCenters.addLast$TV(a);
-this.bzFaceCenters.addLast$TV(a);
+this.faces.addLast$O(p$1.cleanFace$javajs_util_P3A.apply(this, [face]));
+this.faceCenters.addLast$O(a);
+this.bzFaceCenters.addLast$O(a);
 if (this.bzSavePmeshes) {
-subzone.pmeshes.addLast$TV(pid);
+subzone.pmeshes.addLast$O(pid);
 } else {
 p$1.cmd$S.apply(this, ["pmesh ID " + pid + " delete" ]);
-}planesUsed.addLast$TV(this.planes.get$I(i));
-ptsUsed.addLast$TV(this.latticePts.get$I(i));
-subzone.areas.addLast$TV(Double.valueOf$D(area));
+}planesUsed.addLast$O(this.planes.get$I(i));
+ptsUsed.addLast$O(this.latticePts.get$I(i));
+subzone.areas.addLast$O(Double.valueOf$D(area));
 } else {
 p$1.cmd$S.apply(this, ["pmesh ID " + pid + " delete" ]);
-this.planesUnused.addLast$TV(this.planes.get$I(i));
-this.ptsUnused.addLast$TV(this.latticePts.get$I(i));
+this.planesUnused.addLast$O(this.planes.get$I(i));
+this.ptsUnused.addLast$O(this.latticePts.get$I(i));
 }subzone.planes=planesUsed;
 subzone.latticePts=ptsUsed;
 }
@@ -384,11 +343,11 @@ var pts=p$1.cleanFace$javajs_util_P3A.apply(this, [apts]);
 subzone.pts=pts;
 subzone.center=p$1.average$javajs_util_P3A.apply(this, [pts]);
 subzone.offset=p$1.closest$javajs_util_P3$javajs_util_P3A.apply(this, [subzone.center, this.bzLatticePtsAll]);
-subzone.faceIndices=Clazz.new_($I$(2));
+subzone.faceIndices=Clazz.new_($I$(2,1));
 var ifaces=subzone.faceIndices;
 var faces=subzone.faces;
 for (var i=0, n=faces.size$(); i < n; i++) {
-ifaces.addLast$TV(p$1.faceIndices$javajs_util_P3A$javajs_util_P3A.apply(this, [faces.get$I(i), pts]));
+ifaces.addLast$O(p$1.faceIndices$javajs_util_P3A$javajs_util_P3A.apply(this, [faces.get$I(i), pts]));
 }
 for (var i=ifaces.size$(); --i >= 0; ) {
 if (ifaces.get$I(i).length < 3) {
@@ -397,42 +356,42 @@ subzone.faceIndices.removeItemAt$I(i);
 subzone.faceCenters.removeItemAt$I(i);
 subzone.planes.removeItemAt$I(i);
 }}
-var p=Clazz.new_($I$(6));
-p.put$TK$TV("id", id);
-p.put$TK$TV("center", subzone.center);
-var lst=Clazz.new_($I$(2));
-for (var i=0, n=pts.length; i < n; i++) lst.addLast$TV(pts[i]);
+var p=Clazz.new_($I$(6,1));
+p.put$O$O("id", id);
+p.put$O$O("center", subzone.center);
+var lst=Clazz.new_($I$(2,1));
+for (var i=0, n=pts.length; i < n; i++) lst.addLast$O(pts[i]);
 
-p.put$TK$TV("vertices", lst);
-p.put$TK$TV("faces", ifaces);
-p.put$TK$TV("color", subzone.color);
-this.vwr.setShapeProperty$I$S$O(21, "init", $I$(7).TRUE);
+p.put$O$O("vertices", lst);
+p.put$O$O("faces", ifaces);
+p.put$O$O("color", subzone.color);
+this.vwr.setShapeProperty$I$S$O(21, "init", Boolean.TRUE);
 this.vwr.setShapeProperty$I$S$O(21, "info", p);
 this.vwr.setShapeProperty$I$S$O(21, "generate", null);
-this.vwr.setShapeProperty$I$S$O(21, "init", $I$(7).FALSE);
+this.vwr.setShapeProperty$I$S$O(21, "init", Boolean.FALSE);
 if (this.bzDrawPointsAndEdges) {
 p$1.cmd$S.apply(this, ["color $" + id + " translucent" ]);
 p$1.cmd$S.apply(this, ["draw pts points " + pts + " dots nofill nomesh" ]);
 }}, p$1);
 
 Clazz.newMeth(C$, 'faceIndices$javajs_util_P3A$javajs_util_P3A', function (p3s, pts) {
-$I$(8).withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA(0, null, pts, p3s, this.ret);
+$I$(7).withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA(0, null, pts, p3s, this.ret);
 return this.ret[0];
 }, p$1);
 
 Clazz.newMeth(C$, 'closest$javajs_util_P3$javajs_util_P3A', function (center, ap3) {
-$I$(8).withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA(0, center, ap3, null, this.ret);
+$I$(7).withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA(0, center, ap3, null, this.ret);
 return this.ret[0];
 }, p$1);
 
 Clazz.newMeth(C$, 'cleanFace$javajs_util_P3A', function (face) {
-$I$(8).withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA(0.01, C$.ptInner, face, null, this.ret);
+$I$(7).withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA(0.01, C$.ptInner, face, null, this.ret);
 var l=this.ret[0];
-return l.toArray$TTA(Clazz.array($I$(1), [l.size$()]));
+return l.toArray$OA(Clazz.array($I$(1), [l.size$()]));
 }, p$1);
 
 Clazz.newMeth(C$, 'average$javajs_util_P3A', function (face) {
-var a=Clazz.new_($I$(1));
+var a=Clazz.new_($I$(1,1));
 for (var i=face.length; --i >= 0; ) a.add$javajs_util_T3(face[i]);
 
 a.scale$F(1.0 / face.length);
@@ -463,5 +422,10 @@ Clazz.newMeth(C$, 'finalizeZone$org_jmol_util_BZone', function (zone) {
 for (var i=zone.subzones.size$(); --i >= 0; ) if (zone.subzones.get$I(i).totalArea == 0 ) zone.subzones.removeItemAt$I(i);
 
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.bzColors=Clazz.array(String, -1, ["red", "green", "skyblue", "orange", "yellow", "indigo", "violet"]);
+C$.ptInner=$I$(1).new3$F$F$F(NaN, 0, 0);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

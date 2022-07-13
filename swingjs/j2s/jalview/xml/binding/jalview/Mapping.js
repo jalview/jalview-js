@@ -1,37 +1,42 @@
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[];
-var C$=Clazz.newClass(P$, "Mapping", null, 'jalview.xml.binding.jalview.MapListType');
+/*c*/var C$=Clazz.newClass(P$, "Mapping", null, 'jalview.xml.binding.jalview.MapListType');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequence=null;
-this.dseqFor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getSequence$', function () {
+C$.$fields$=[['S',['dseqFor','mappingType'],'O',['sequence','jalview.xml.binding.jalview.Sequence']]]
+
+Clazz.newMeth(C$, 'getSequence$',  function () {
 return this.sequence;
 });
 
-Clazz.newMeth(C$, 'setSequence$jalview_xml_binding_jalview_Sequence', function (value) {
+Clazz.newMeth(C$, 'setSequence$jalview_xml_binding_jalview_Sequence',  function (value) {
 this.sequence=value;
 });
 
-Clazz.newMeth(C$, 'getDseqFor$', function () {
+Clazz.newMeth(C$, 'getDseqFor$',  function () {
 return this.dseqFor;
 });
 
-Clazz.newMeth(C$, 'setDseqFor$S', function (value) {
+Clazz.newMeth(C$, 'setDseqFor$S',  function (value) {
 this.dseqFor=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.Mapping'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"sequence"  "dseqFor"  } )','@XmlRootElement(name="Mapping" )']],
-  [['sequence','jalview.xml.binding.jalview.Sequence'],['@XmlElement(name="Sequence" )']],
-  [['dseqFor','String'],['@XmlElement']]];
+
+Clazz.newMeth(C$, 'getMappingType$',  function () {
+return this.mappingType;
+});
+
+Clazz.newMeth(C$, 'setMappingType$S',  function (value) {
+this.mappingType=value;
+});
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.Mapping',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType','javax.xml.bind.annotation.XmlRootElement']],['XmlAccessType.FIELD','name="" propOrder={"sequence"  "dseqFor"  } ','name="Mapping" ']],
+  [['sequence','jalview.xml.binding.jalview.Sequence',null,['javax.xml.bind.annotation.XmlElement']],['name="Sequence" ']],
+  [['mappingType','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="mappingType" ']],
+  [['dseqFor','String'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

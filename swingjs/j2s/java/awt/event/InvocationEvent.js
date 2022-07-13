@@ -1,42 +1,32 @@
 (function(){var P$=Clazz.newPackage("java.awt.event"),I$=[];
-var C$=Clazz.newClass(P$, "InvocationEvent", null, 'java.awt.AWTEvent', 'java.awt.ActiveEvent');
+/*c*/var C$=Clazz.newClass(P$, "InvocationEvent", null, 'java.awt.AWTEvent', 'java.awt.ActiveEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.runnable=null;
-this.notifier=null;
-this.catchExceptions=false;
-this.exception=null;
-this.throwable=null;
-this.when=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.exception=null;
 this.throwable=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$O$Runnable', function (source, runnable) {
+C$.$fields$=[['Z',['catchExceptions'],'J',['when'],'O',['runnable','Runnable','notifier','java.lang.Object','exception','Exception','throwable','Throwable']]]
+
+Clazz.newMeth(C$, 'c$$O$Runnable',  function (source, runnable) {
 C$.c$$O$I$Runnable$O$Z.apply(this, [source, 1200, runnable, null, false]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$O$Runnable$O$Z', function (source, runnable, notifier, catchThrowables) {
+Clazz.newMeth(C$, 'c$$O$Runnable$O$Z',  function (source, runnable, notifier, catchThrowables) {
 C$.c$$O$I$Runnable$O$Z.apply(this, [source, 1200, runnable, notifier, catchThrowables]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$O$I$Runnable$O$Z', function (source, id, runnable, notifier, catchThrowables) {
-C$.superclazz.c$$O$I.apply(this, [source, id]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$O$I$Runnable$O$Z',  function (source, id, runnable, notifier, catchThrowables) {
+;C$.superclazz.c$$O$I.apply(this,[source, id]);C$.$init$.apply(this);
 this.runnable=runnable;
 this.notifier=notifier;
 this.catchExceptions=catchThrowables;
 this.when=System.currentTimeMillis$();
 }, 1);
 
-Clazz.newMeth(C$, 'dispatch$', function () {
+Clazz.newMeth(C$, 'dispatch$',  function () {
 if (this.catchExceptions) {
 try {
 this.runnable.run$();
@@ -44,6 +34,11 @@ this.runnable.run$();
 if (Clazz.instanceOf(t, "java.lang.Exception")) {
 this.exception=t;
 }this.throwable=t;
+System.err.println$S("InvocationException: " + t);
+try {
+t.printStackTrace$();
+} catch (e) {
+}
 }
 } else {
 this.runnable.run$();
@@ -52,19 +47,19 @@ this.runnable.run$();
 this.notifier.notifyAll$();
 }}});
 
-Clazz.newMeth(C$, 'getException$', function () {
+Clazz.newMeth(C$, 'getException$',  function () {
 return (this.catchExceptions) ? this.exception : null;
 });
 
-Clazz.newMeth(C$, 'getThrowable$', function () {
+Clazz.newMeth(C$, 'getThrowable$',  function () {
 return (this.catchExceptions) ? this.throwable : null;
 });
 
-Clazz.newMeth(C$, 'getWhen$', function () {
+Clazz.newMeth(C$, 'getWhen$',  function () {
 return this.when;
 });
 
-Clazz.newMeth(C$, 'paramString$', function () {
+Clazz.newMeth(C$, 'paramString$',  function () {
 var typeStr;
 switch (this.id) {
 case 1200:
@@ -73,9 +68,9 @@ break;
 default:
 typeStr="unknown type";
 }
-return typeStr + ",runnable=" + this.runnable + ",notifier=" + this.notifier + ",catchExceptions=" + this.catchExceptions + ",when=" + this.when ;
+return typeStr + ",runnable=" + this.runnable + ",notifier=" + this.notifier + ",catchExceptions=" + this.catchExceptions + ",when=" + Long.$s(this.when) ;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:51 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

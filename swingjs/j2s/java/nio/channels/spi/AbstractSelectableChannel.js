@@ -1,18 +1,7 @@
-(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),p$1={},I$=[[0,'Thread','java.nio.channels.SelectionKey']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractSelectableChannel", null, 'java.nio.channels.SelectableChannel');
+(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),p$1={},I$=[[0,'Thread','java.nio.channels.SelectionKey']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractSelectableChannel", null, 'java.nio.channels.SelectableChannel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.provider=null;
-this.keys=null;
-this.keyCount=0;
-this.keyLock=null;
-this.regLock=null;
-this.blocking=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.keys=null;
@@ -20,18 +9,20 @@ this.keyCount=0;
 this.keyLock= Clazz.new_();
 this.regLock= Clazz.new_();
 this.blocking=true;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_nio_channels_spi_SelectorProvider', function (provider) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['Z',['blocking'],'I',['keyCount'],'O',['provider','java.nio.channels.spi.SelectorProvider','keys','java.nio.channels.SelectionKey[]','keyLock','java.lang.Object','+regLock']]]
+
+Clazz.newMeth(C$, 'c$$java_nio_channels_spi_SelectorProvider',  function (provider) {
+Clazz.super_(C$, this);
 this.provider=provider;
 }, 1);
 
-Clazz.newMeth(C$, 'provider$', function () {
+Clazz.newMeth(C$, 'provider$',  function () {
 return this.provider;
 });
 
-Clazz.newMeth(C$, 'addKey$java_nio_channels_SelectionKey', function (k) {
+Clazz.newMeth(C$, 'addKey$java_nio_channels_SelectionKey',  function (k) {
 Clazz.assert(C$, this, function(){return $I$(1).holdsLock$O(this.keyLock)});
 var i=0;
 if ((this.keys != null ) && (this.keyCount < this.keys.length) ) {
@@ -47,10 +38,10 @@ for (i=0; i < this.keys.length; i++) ks[i]=this.keys[i];
 this.keys=ks;
 i=this.keyCount;
 }this.keys[i]=k;
-this.keyCount++;
+++this.keyCount;
 }, p$1);
 
-Clazz.newMeth(C$, 'findKey$java_nio_channels_Selector', function (sel) {
+Clazz.newMeth(C$, 'findKey$java_nio_channels_Selector',  function (sel) {
 {
 if (this.keys == null ) return null;
 for (var i=0; i < this.keys.length; i++) if ((this.keys[i] != null ) && (this.keys[i].selector$() === sel ) ) return this.keys[i];
@@ -58,16 +49,16 @@ for (var i=0; i < this.keys.length; i++) if ((this.keys[i] != null ) && (this.ke
 return null;
 }}, p$1);
 
-Clazz.newMeth(C$, 'removeKey$java_nio_channels_SelectionKey', function (k) {
+Clazz.newMeth(C$, 'removeKey$java_nio_channels_SelectionKey',  function (k) {
 {
 for (var i=0; i < this.keys.length; i++) if (this.keys[i] === k ) {
 this.keys[i]=null;
-this.keyCount--;
+--this.keyCount;
 }
 (k).invalidate$();
 }});
 
-Clazz.newMeth(C$, 'haveValidKeys', function () {
+Clazz.newMeth(C$, 'haveValidKeys',  function () {
 {
 if (this.keyCount == 0) return false;
 for (var i=0; i < this.keys.length; i++) {
@@ -76,16 +67,16 @@ if ((this.keys[i] != null ) && this.keys[i].isValid$() ) return true;
 return false;
 }}, p$1);
 
-Clazz.newMeth(C$, 'isRegistered$', function () {
+Clazz.newMeth(C$, 'isRegistered$',  function () {
 {
 return this.keyCount != 0;
 }});
 
-Clazz.newMeth(C$, 'keyFor$java_nio_channels_Selector', function (sel) {
+Clazz.newMeth(C$, 'keyFor$java_nio_channels_Selector',  function (sel) {
 return p$1.findKey$java_nio_channels_Selector.apply(this, [sel]);
 });
 
-Clazz.newMeth(C$, 'register$java_nio_channels_Selector$I$O', function (sel, ops, att) {
+Clazz.newMeth(C$, 'register$java_nio_channels_Selector$I$O',  function (sel, ops, att) {
 {
 if (!this.isOpen$()) throw Clazz.new_(Clazz.load('java.nio.channels.ClosedChannelException'));
 if ((ops & ~this.validOps$()) != 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
@@ -102,7 +93,7 @@ p$1.addKey$java_nio_channels_SelectionKey.apply(this, [k]);
 }}return k;
 }});
 
-Clazz.newMeth(C$, 'implCloseChannel$', function () {
+Clazz.newMeth(C$, 'implCloseChannel$',  function () {
 this.implCloseSelectableChannel$();
 {
 var count=(this.keys == null ) ? 0 : this.keys.length;
@@ -112,16 +103,16 @@ if (k != null ) k.cancel$();
 }
 }});
 
-Clazz.newMeth(C$, 'isBlocking$', function () {
+Clazz.newMeth(C$, 'isBlocking$',  function () {
 {
 return this.blocking;
 }});
 
-Clazz.newMeth(C$, 'blockingLock$', function () {
+Clazz.newMeth(C$, 'blockingLock$',  function () {
 return this.regLock;
 });
 
-Clazz.newMeth(C$, 'configureBlocking$Z', function (block) {
+Clazz.newMeth(C$, 'configureBlocking$Z',  function (block) {
 {
 if (!this.isOpen$()) throw Clazz.new_(Clazz.load('java.nio.channels.ClosedChannelException'));
 if (this.blocking == block ) return this;
@@ -130,8 +121,11 @@ this.implConfigureBlocking$Z(block);
 this.blocking=block;
 }return this;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:02 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

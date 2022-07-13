@@ -1,77 +1,80 @@
 (function(){var P$=java.lang,I$=[];
-var C$=Clazz.newClass(P$, "CharacterDataPrivateUse", null, 'CharacterData');
-C$.instance=null;
+/*c*/var C$=Clazz.newClass(P$, "CharacterDataPrivateUse", null, 'CharacterData');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.instance=Clazz.new_(C$);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getProperties$I', function (ch) {
+C$.$fields$=[[]
+,['O',['instance','CharacterData']]]
+
+Clazz.newMeth(C$, 'getProperties$I',  function (ch) {
 return 0;
 });
 
-Clazz.newMeth(C$, 'getType$I', function (ch) {
-return (ch & 65534) == 65534 ? ($b$[0] = 0, $b$[0]) : ($b$[0] = 18, $b$[0]);
+Clazz.newMeth(C$, 'getType$I',  function (ch) {
+return (ch & 65534) == 65534 ? 0 : 18;
 });
 
-Clazz.newMeth(C$, 'isJavaIdentifierStart$I', function (ch) {
+Clazz.newMeth(C$, 'isJavaIdentifierStart$I',  function (ch) {
 return false;
 });
 
-Clazz.newMeth(C$, 'isJavaIdentifierPart$I', function (ch) {
+Clazz.newMeth(C$, 'isJavaIdentifierPart$I',  function (ch) {
 return false;
 });
 
-Clazz.newMeth(C$, 'isUnicodeIdentifierStart$I', function (ch) {
+Clazz.newMeth(C$, 'isUnicodeIdentifierStart$I',  function (ch) {
 return false;
 });
 
-Clazz.newMeth(C$, 'isUnicodeIdentifierPart$I', function (ch) {
+Clazz.newMeth(C$, 'isUnicodeIdentifierPart$I',  function (ch) {
 return false;
 });
 
-Clazz.newMeth(C$, 'isIdentifierIgnorable$I', function (ch) {
+Clazz.newMeth(C$, 'isIdentifierIgnorable$I',  function (ch) {
 return false;
 });
 
-Clazz.newMeth(C$, 'toLowerCase$I', function (ch) {
+Clazz.newMeth(C$, 'toLowerCase$I',  function (ch) {
 return ch;
 });
 
-Clazz.newMeth(C$, 'toUpperCase$I', function (ch) {
+Clazz.newMeth(C$, 'toUpperCase$I',  function (ch) {
 return ch;
 });
 
-Clazz.newMeth(C$, 'toTitleCase$I', function (ch) {
+Clazz.newMeth(C$, 'toTitleCase$I',  function (ch) {
 return ch;
 });
 
-Clazz.newMeth(C$, 'digit$I$I', function (ch, radix) {
+Clazz.newMeth(C$, 'digit$I$I',  function (ch, radix) {
 return -1;
 });
 
-Clazz.newMeth(C$, 'getNumericValue$I', function (ch) {
+Clazz.newMeth(C$, 'getNumericValue$I',  function (ch) {
 return -1;
 });
 
-Clazz.newMeth(C$, 'isWhitespace$I', function (ch) {
+Clazz.newMeth(C$, 'isWhitespace$I',  function (ch) {
 return false;
 });
 
-Clazz.newMeth(C$, 'getDirectionality$I', function (ch) {
-return $b$[0] = (ch & 65534) == 65534 ? (-1|0) : (0|0), $b$[0];
+Clazz.newMeth(C$, 'getDirectionality$I',  function (ch) {
+return (ch & 65534) == 65534 ? -1 : 0;
 });
 
-Clazz.newMeth(C$, 'isMirrored$I', function (ch) {
+Clazz.newMeth(C$, 'isMirrored$I',  function (ch) {
 return false;
 });
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 }, 1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.instance=Clazz.new_(C$);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:57 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

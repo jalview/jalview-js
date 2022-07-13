@@ -1,28 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.PT','javajs.util.P3','javajs.util.CU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "KinemageReader", null, 'org.jmol.jvxl.readers.PmeshReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.PT','javajs.util.P3','javajs.util.CU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "KinemageReader", null, 'org.jmol.jvxl.readers.PmeshReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nDots=0;
-this.vMin=0;
-this.vMax=0;
-this.pointType=0;
-this.findString=null;
-this.lastAtom=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nDots=0;
 this.vMin=-3.4028235E38;
 this.vMax=3.4028235E38;
 this.lastAtom="";
-}, 1);
+},1);
+
+C$.$fields$=[['F',['vMin','vMax'],'I',['nDots','pointType'],'S',['findString','lastAtom']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -50,12 +41,12 @@ if (this.line.indexOf$S("contact}") >= 0 || this.line.indexOf$S("overlap}") >= 0
 if (this.line.indexOf$S("@dotlist") == 0) {
 n0=this.nDots;
 p$1.readDots.apply(this, []);
-if (this.nDots > n0) $I$(1).info$S("dots: " + (this.nDots - n0) + "/" + this.nDots );
+if (this.nDots > n0) $I$(1,"info$S",["dots: " + (this.nDots - n0) + "/" + this.nDots ]);
 continue;
 } else if (this.line.indexOf$S("@vectorlist") == 0) {
 n0=this.nPolygons;
 p$1.readVectors.apply(this, []);
-if (this.nPolygons > n0) $I$(1).info$S("lines: " + (this.nPolygons - n0) + "/" + this.nPolygons );
+if (this.nPolygons > n0) $I$(1,"info$S",["lines: " + (this.nPolygons - n0) + "/" + this.nPolygons ]);
 continue;
 }}}this.rd$();
 }
@@ -89,7 +80,7 @@ var atom=line.substring$I$I(0, line.indexOf$S("}") + 1);
 if (atom.length$() < 4) atom=this.lastAtom;
  else this.lastAtom=atom;
 if (atom.indexOf$S(this.findString) < 0) return -1;
-}var tokens=$I$(2).getTokens$S(line.substring$I(line.indexOf$S("}") + 1));
+}var tokens=$I$(2,"getTokens$S",[line.substring$I(line.indexOf$S("}") + 1)]);
 var value=p$1.assignValueFromGapColorForKin$S.apply(this, [tokens[0]]);
 if (Float.isNaN$F(value)) return -1;
 if (checkType && this.pointType != 0 ) {
@@ -110,8 +101,8 @@ default:
 return -1;
 }
 }retColor[0]=p$1.getColor$S.apply(this, [tokens[0]]);
-tokens=$I$(2).getTokens$S(tokens[i].replace$C$C(",", " "));
-var pt=$I$(3).new3$F$F$F($I$(2).parseFloat$S(tokens[0]), $I$(2).parseFloat$S(tokens[1]), $I$(2).parseFloat$S(tokens[2]));
+tokens=$I$(2,"getTokens$S",[tokens[i].replace$C$C(",", " ")]);
+var pt=$I$(3,"new3$F$F$F",[$I$(2).parseFloat$S(tokens[0]), $I$(2).parseFloat$S(tokens[1]), $I$(2).parseFloat$S(tokens[2])]);
 if (this.isAnisotropic) this.setVertexAnisotropy$javajs_util_T3(pt);
 return this.addVertexCopy$javajs_util_T3$F$I$Z(pt, value, this.nVertices++, false);
 }, p$1);
@@ -131,4 +122,4 @@ Clazz.newMeth(C$, 'readPolygons$', function () {
 return true;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,15 @@
-(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BasicStroke", null, null, ['java.awt.Stroke', 'Cloneable']);
+(function(){var P$=Clazz.newPackage("java.awt"),I$=[[0,'java.util.Arrays']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BasicStroke", null, null, ['java.awt.Stroke', 'Cloneable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.width=0;
-this.join=0;
-this.cap=0;
-this.miterlimit=0;
-this.dash=null;
-this.dash_phase=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$F$I$I$F$FA$F', function (width, cap, join, miterlimit, dash, dash_phase) {
-C$.$init$.apply(this);
+C$.$fields$=[['F',['width','miterlimit','dash_phase'],'I',['join','cap'],'O',['dash','float[]']]]
+
+Clazz.newMeth(C$, 'c$$F$I$I$F$FA$F',  function (width, cap, join, miterlimit, dash, dash_phase) {
+;C$.$init$.apply(this);
 if (width < 0.0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["negative width"]);
 }if (cap != 0 && cap != 1  && cap != 2 ) {
@@ -50,53 +41,53 @@ this.dash=dash.clone$();
 }this.dash_phase=dash_phase;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$F$I$I$F', function (width, cap, join, miterlimit) {
+Clazz.newMeth(C$, 'c$$F$I$I$F',  function (width, cap, join, miterlimit) {
 C$.c$$F$I$I$F$FA$F.apply(this, [width, cap, join, miterlimit, null, 0.0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$F$I$I', function (width, cap, join) {
+Clazz.newMeth(C$, 'c$$F$I$I',  function (width, cap, join) {
 C$.c$$F$I$I$F$FA$F.apply(this, [width, cap, join, 10.0, null, 0.0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$F', function (width) {
+Clazz.newMeth(C$, 'c$$F',  function (width) {
 C$.c$$F$I$I$F$FA$F.apply(this, [width, 2, 0, 10.0, null, 0.0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$F$I$I$F$FA$F.apply(this, [1.0, 2, 0, 10.0, null, 0.0]);
 }, 1);
 
-Clazz.newMeth(C$, ['createStrokedShape$java_awt_Shape','createStrokedShape$'], function (s) {
+Clazz.newMeth(C$, 'createStrokedShape$java_awt_Shape',  function (s) {
 return s;
 });
 
-Clazz.newMeth(C$, 'getLineWidth$', function () {
+Clazz.newMeth(C$, 'getLineWidth$',  function () {
 return this.width;
 });
 
-Clazz.newMeth(C$, 'getEndCap$', function () {
+Clazz.newMeth(C$, 'getEndCap$',  function () {
 return this.cap;
 });
 
-Clazz.newMeth(C$, 'getLineJoin$', function () {
+Clazz.newMeth(C$, 'getLineJoin$',  function () {
 return this.join;
 });
 
-Clazz.newMeth(C$, 'getMiterLimit$', function () {
+Clazz.newMeth(C$, 'getMiterLimit$',  function () {
 return this.miterlimit;
 });
 
-Clazz.newMeth(C$, 'getDashArray$', function () {
+Clazz.newMeth(C$, 'getDashArray$',  function () {
 if (this.dash == null ) {
 return null;
 }return this.dash.clone$();
 });
 
-Clazz.newMeth(C$, 'getDashPhase$', function () {
+Clazz.newMeth(C$, 'getDashPhase$',  function () {
 return this.dash_phase;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 var hash=Float.floatToIntBits$F(this.width);
 hash=hash * 31 + this.join;
 hash=hash * 31 + this.cap;
@@ -109,7 +100,7 @@ hash=hash * 31 + Float.floatToIntBits$F(this.dash[i]);
 }return hash;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!(Clazz.instanceOf(obj, "java.awt.BasicStroke"))) {
 return false;
 }var bs=obj;
@@ -131,8 +122,8 @@ return false;
 }return true;
 });
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 return Clazz.new_(C$.c$$F$I$I$F$FA$F,[this.width, this.cap, this.join, this.miterlimit, this.dash, this.dash_phase]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

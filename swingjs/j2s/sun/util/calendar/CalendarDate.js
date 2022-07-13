@@ -1,48 +1,28 @@
-(function(){var P$=Clazz.newPackage("sun.util.calendar"),I$=[[0,'java.util.TimeZone','InternalError','StringBuilder','sun.util.calendar.CalendarUtils']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CalendarDate", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("sun.util.calendar"),I$=[[0,'java.util.TimeZone','InternalError','StringBuilder','sun.util.calendar.CalendarUtils']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CalendarDate", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.era=null;
-this.year=0;
-this.month=0;
-this.dayOfMonth=0;
-this.dayOfWeek=0;
-this.leapYear=false;
-this.hours=0;
-this.minutes=0;
-this.seconds=0;
-this.millis=0;
-this.fraction=0;
-this.normalized=false;
-this.zoneinfo=null;
-this.zoneOffset=0;
-this.daylightSaving=0;
-this.forceStandardTime=false;
-this.locale=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dayOfWeek=-2147483648;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['Z',['leapYear','normalized','forceStandardTime'],'I',['year','month','dayOfMonth','dayOfWeek','hours','minutes','seconds','millis','zoneOffset','daylightSaving'],'J',['fraction'],'O',['era','sun.util.calendar.Era','zoneinfo','java.util.TimeZone','locale','java.util.Locale']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$java_util_TimeZone.apply(this, [$I$(1).getDefault$()]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_util_TimeZone', function (zone) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_TimeZone',  function (zone) {
+;C$.$init$.apply(this);
 this.zoneinfo=zone;
 }, 1);
 
-Clazz.newMeth(C$, 'getEra$', function () {
+Clazz.newMeth(C$, 'getEra$',  function () {
 return this.era;
 });
 
-Clazz.newMeth(C$, 'setEra$sun_util_calendar_Era', function (era) {
+Clazz.newMeth(C$, 'setEra$sun_util_calendar_Era',  function (era) {
 if (this.era === era ) {
 return this;
 }this.era=era;
@@ -50,167 +30,167 @@ this.normalized=false;
 return this;
 });
 
-Clazz.newMeth(C$, 'getYear$', function () {
+Clazz.newMeth(C$, 'getYear$',  function () {
 return this.year;
 });
 
-Clazz.newMeth(C$, 'setYear$I', function (year) {
+Clazz.newMeth(C$, 'setYear$I',  function (year) {
 if (this.year != year) {
 this.year=year;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'addYear$I', function (n) {
+Clazz.newMeth(C$, 'addYear$I',  function (n) {
 if (n != 0) {
 this.year+=n;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'isLeapYear$', function () {
+Clazz.newMeth(C$, 'isLeapYear$',  function () {
 return this.leapYear;
 });
 
-Clazz.newMeth(C$, 'setLeapYear$Z', function (leapYear) {
+Clazz.newMeth(C$, 'setLeapYear$Z',  function (leapYear) {
 this.leapYear=leapYear;
 });
 
-Clazz.newMeth(C$, 'getMonth$', function () {
+Clazz.newMeth(C$, 'getMonth$',  function () {
 return this.month;
 });
 
-Clazz.newMeth(C$, 'setMonth$I', function (month) {
+Clazz.newMeth(C$, 'setMonth$I',  function (month) {
 if (this.month != month) {
 this.month=month;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'addMonth$I', function (n) {
+Clazz.newMeth(C$, 'addMonth$I',  function (n) {
 if (n != 0) {
 this.month+=n;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'getDayOfMonth$', function () {
+Clazz.newMeth(C$, 'getDayOfMonth$',  function () {
 return this.dayOfMonth;
 });
 
-Clazz.newMeth(C$, 'setDayOfMonth$I', function (date) {
+Clazz.newMeth(C$, 'setDayOfMonth$I',  function (date) {
 if (this.dayOfMonth != date) {
 this.dayOfMonth=date;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'addDayOfMonth$I', function (n) {
+Clazz.newMeth(C$, 'addDayOfMonth$I',  function (n) {
 if (n != 0) {
 this.dayOfMonth+=n;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'getDayOfWeek$', function () {
+Clazz.newMeth(C$, 'getDayOfWeek$',  function () {
 if (!this.isNormalized$()) {
 this.dayOfWeek=-2147483648;
 }return this.dayOfWeek;
 });
 
-Clazz.newMeth(C$, 'getHours$', function () {
+Clazz.newMeth(C$, 'getHours$',  function () {
 return this.hours;
 });
 
-Clazz.newMeth(C$, 'setHours$I', function (hours) {
+Clazz.newMeth(C$, 'setHours$I',  function (hours) {
 if (this.hours != hours) {
 this.hours=hours;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'addHours$I', function (n) {
+Clazz.newMeth(C$, 'addHours$I',  function (n) {
 if (n != 0) {
 this.hours+=n;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'getMinutes$', function () {
+Clazz.newMeth(C$, 'getMinutes$',  function () {
 return this.minutes;
 });
 
-Clazz.newMeth(C$, 'setMinutes$I', function (minutes) {
+Clazz.newMeth(C$, 'setMinutes$I',  function (minutes) {
 if (this.minutes != minutes) {
 this.minutes=minutes;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'addMinutes$I', function (n) {
+Clazz.newMeth(C$, 'addMinutes$I',  function (n) {
 if (n != 0) {
 this.minutes+=n;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'getSeconds$', function () {
+Clazz.newMeth(C$, 'getSeconds$',  function () {
 return this.seconds;
 });
 
-Clazz.newMeth(C$, 'setSeconds$I', function (seconds) {
+Clazz.newMeth(C$, 'setSeconds$I',  function (seconds) {
 if (this.seconds != seconds) {
 this.seconds=seconds;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'addSeconds$I', function (n) {
+Clazz.newMeth(C$, 'addSeconds$I',  function (n) {
 if (n != 0) {
 this.seconds+=n;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'getMillis$', function () {
+Clazz.newMeth(C$, 'getMillis$',  function () {
 return this.millis;
 });
 
-Clazz.newMeth(C$, 'setMillis$I', function (millis) {
+Clazz.newMeth(C$, 'setMillis$I',  function (millis) {
 if (this.millis != millis) {
 this.millis=millis;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'addMillis$I', function (n) {
+Clazz.newMeth(C$, 'addMillis$I',  function (n) {
 if (n != 0) {
 this.millis+=n;
 this.normalized=false;
 }return this;
 });
 
-Clazz.newMeth(C$, 'getTimeOfDay$', function () {
+Clazz.newMeth(C$, 'getTimeOfDay$',  function () {
 if (!this.isNormalized$()) {
-return this.fraction=-9223372036854775808;
+return this.fraction=[0,549755813888,-1];
 }return this.fraction;
 });
 
-Clazz.newMeth(C$, 'setDate$I$I$I', function (year, month, dayOfMonth) {
+Clazz.newMeth(C$, 'setDate$I$I$I',  function (year, month, dayOfMonth) {
 this.setYear$I(year);
 this.setMonth$I(month);
 this.setDayOfMonth$I(dayOfMonth);
 return this;
 });
 
-Clazz.newMeth(C$, 'addDate$I$I$I', function (year, month, dayOfMonth) {
+Clazz.newMeth(C$, 'addDate$I$I$I',  function (year, month, dayOfMonth) {
 this.addYear$I(year);
 this.addMonth$I(month);
 this.addDayOfMonth$I(dayOfMonth);
 return this;
 });
 
-Clazz.newMeth(C$, 'setTimeOfDay$I$I$I$I', function (hours, minutes, seconds, millis) {
+Clazz.newMeth(C$, 'setTimeOfDay$I$I$I$I',  function (hours, minutes, seconds, millis) {
 this.setHours$I(hours);
 this.setMinutes$I(minutes);
 this.setSeconds$I(seconds);
@@ -218,7 +198,7 @@ this.setMillis$I(millis);
 return this;
 });
 
-Clazz.newMeth(C$, 'addTimeOfDay$I$I$I$I', function (hours, minutes, seconds, millis) {
+Clazz.newMeth(C$, 'addTimeOfDay$I$I$I$I',  function (hours, minutes, seconds, millis) {
 this.addHours$I(hours);
 this.addMinutes$I(minutes);
 this.addSeconds$I(seconds);
@@ -226,46 +206,46 @@ this.addMillis$I(millis);
 return this;
 });
 
-Clazz.newMeth(C$, 'setTimeOfDay$J', function (fraction) {
+Clazz.newMeth(C$, 'setTimeOfDay$J',  function (fraction) {
 this.fraction=fraction;
 });
 
-Clazz.newMeth(C$, 'isNormalized$', function () {
+Clazz.newMeth(C$, 'isNormalized$',  function () {
 return this.normalized;
 });
 
-Clazz.newMeth(C$, 'isStandardTime$', function () {
+Clazz.newMeth(C$, 'isStandardTime$',  function () {
 return this.forceStandardTime;
 });
 
-Clazz.newMeth(C$, 'setStandardTime$Z', function (standardTime) {
+Clazz.newMeth(C$, 'setStandardTime$Z',  function (standardTime) {
 this.forceStandardTime=standardTime;
 });
 
-Clazz.newMeth(C$, 'isDaylightTime$', function () {
+Clazz.newMeth(C$, 'isDaylightTime$',  function () {
 if (this.isStandardTime$()) {
 return false;
 }return this.daylightSaving != 0;
 });
 
-Clazz.newMeth(C$, 'setLocale$java_util_Locale', function (loc) {
+Clazz.newMeth(C$, 'setLocale$java_util_Locale',  function (loc) {
 this.locale=loc;
 });
 
-Clazz.newMeth(C$, 'getZone$', function () {
+Clazz.newMeth(C$, 'getZone$',  function () {
 return this.zoneinfo;
 });
 
-Clazz.newMeth(C$, 'setZone$java_util_TimeZone', function (zoneinfo) {
+Clazz.newMeth(C$, 'setZone$java_util_TimeZone',  function (zoneinfo) {
 this.zoneinfo=zoneinfo;
 return this;
 });
 
-Clazz.newMeth(C$, 'isSameDate$sun_util_calendar_CalendarDate', function (date) {
+Clazz.newMeth(C$, 'isSameDate$sun_util_calendar_CalendarDate',  function (date) {
 return this.getDayOfWeek$() == date.getDayOfWeek$() && this.getMonth$() == date.getMonth$()  && this.getYear$() == date.getYear$()  && this.getEra$() === date.getEra$()  ;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!(Clazz.instanceOf(obj, "sun.util.calendar.CalendarDate"))) {
 return false;
 }var that=obj;
@@ -280,33 +260,33 @@ return false;
 }return (this.getEra$() === that.getEra$()  && this.year == that.year  && this.month == that.month  && this.dayOfMonth == that.dayOfMonth  && this.hours == that.hours  && this.minutes == that.minutes  && this.seconds == that.seconds  && this.millis == that.millis  && this.zoneOffset == that.zoneOffset );
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
-var hash=(((((this.year - 1970) * 12) + (this.month - 1)) * 30) + this.dayOfMonth) * 24;
-hash=((((((hash + this.hours) * 60) + this.minutes) * 60) + this.seconds) * 1000) + this.millis;
-hash-=this.zoneOffset;
+Clazz.newMeth(C$, 'hashCode$',  function () {
+var hash=Long.$mul((Long.$add((Long.$mul((Long.$add((Long.$mul((Long.$sub(this.year,1970)),12)),(this.month - 1))),30)),this.dayOfMonth)),24);
+hash=Long.$add((Long.$mul((Long.$add((Long.$mul((Long.$add((Long.$mul((Long.$add(hash,this.hours)),60)),this.minutes)),60)),this.seconds)),1000)),this.millis);
+(hash=Long.$sub(hash,(this.zoneOffset)));
 var normalized=this.isNormalized$() ? 1 : 0;
 var era=0;
 var e=this.getEra$();
 if (e != null ) {
 era=e.hashCode$();
 }var zone=this.zoneinfo != null  ? this.zoneinfo.hashCode$() : 0;
-return (hash|0) * ((hash >> 32)|0) ^ era ^ normalized ^ zone;
+return Long.$ival(hash) * Long.$ival((Long.$sr(hash,32))) ^ era ^ normalized ^ zone;
 });
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(2));
+throw Clazz.new_($I$(2,1));
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-var sb=Clazz.new_($I$(3));
+Clazz.newMeth(C$, 'toString',  function () {
+var sb=Clazz.new_($I$(3,1));
 $I$(4).sprintf0d$StringBuilder$I$I(sb, this.year, 4).append$C("-");
 $I$(4).sprintf0d$StringBuilder$I$I(sb, this.month, 2).append$C("-");
 $I$(4).sprintf0d$StringBuilder$I$I(sb, this.dayOfMonth, 2).append$C("T");
@@ -327,35 +307,35 @@ offset=-this.zoneOffset;
 sign="-";
 }offset=(offset/60000|0);
 sb.append$C(sign);
-$I$(4).sprintf0d$StringBuilder$I$I(sb, (offset/60|0), 2);
+$I$(4,"sprintf0d$StringBuilder$I$I",[sb, (offset/60|0), 2]);
 $I$(4).sprintf0d$StringBuilder$I$I(sb, offset % 60, 2);
 } else {
 sb.append$S(" local time");
 }return sb.toString();
 });
 
-Clazz.newMeth(C$, 'setDayOfWeek$I', function (dayOfWeek) {
+Clazz.newMeth(C$, 'setDayOfWeek$I',  function (dayOfWeek) {
 this.dayOfWeek=dayOfWeek;
 });
 
-Clazz.newMeth(C$, 'setNormalized$Z', function (normalized) {
+Clazz.newMeth(C$, 'setNormalized$Z',  function (normalized) {
 this.normalized=normalized;
 });
 
-Clazz.newMeth(C$, 'getZoneOffset$', function () {
+Clazz.newMeth(C$, 'getZoneOffset$',  function () {
 return this.zoneOffset;
 });
 
-Clazz.newMeth(C$, 'setZoneOffset$I', function (offset) {
+Clazz.newMeth(C$, 'setZoneOffset$I',  function (offset) {
 this.zoneOffset=offset;
 });
 
-Clazz.newMeth(C$, 'getDaylightSaving$', function () {
+Clazz.newMeth(C$, 'getDaylightSaving$',  function () {
 return this.daylightSaving;
 });
 
-Clazz.newMeth(C$, 'setDaylightSaving$I', function (daylightSaving) {
+Clazz.newMeth(C$, 'setDaylightSaving$I',  function (daylightSaving) {
 this.daylightSaving=daylightSaving;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:14 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

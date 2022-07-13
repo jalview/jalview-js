@@ -1,21 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'org.jmol.adapter.smarter.Atom','org.jmol.util.Logger','javajs.util.Lst','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MdTopReader", null, 'org.jmol.adapter.readers.more.ForceFieldReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'org.jmol.adapter.readers.more.ForceFieldReader','org.jmol.adapter.smarter.Atom','org.jmol.util.Logger','javajs.util.Lst','org.jmol.adapter.smarter.AtomSetCollectionReader']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MdTopReader", null, 'org.jmol.adapter.readers.more.ForceFieldReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nAtoms=0;
-this.ac=0;
-this.$atomTypes=null;
-this.group3s=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nAtoms=0;
 this.ac=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nAtoms','ac'],'O',['$atomTypes','String[]','+group3s']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.setIsPDB$();
@@ -43,13 +36,13 @@ for (var i=0; i < this.ac; i++) {
 atom=atoms[i];
 atom.isHetero=this.vwr.getJBR$().isHetero$S(atom.group3);
 var atomType=this.$atomTypes[i];
-if (!this.getElementSymbol$org_jmol_adapter_smarter_Atom$S(atom, atomType)) atom.elementSymbol=P$.ForceFieldReader.deducePdbElementSymbol$Z$S$S(atom.isHetero, atom.atomName, atom.group3);
+if (!this.getElementSymbol$org_jmol_adapter_smarter_Atom$S(atom, atomType)) atom.elementSymbol=$I$(1).deducePdbElementSymbol$Z$S$S(atom.isHetero, atom.atomName, atom.group3);
 }
 var atoms2=null;
 if (this.filter == null ) {
 this.nAtoms=this.ac;
 } else {
-atoms2=Clazz.array($I$(1), [atoms.length]);
+atoms2=Clazz.array($I$(2), [atoms.length]);
 this.nAtoms=0;
 for (var i=0; i < this.ac; i++) if (this.filterAtom$org_jmol_adapter_smarter_Atom$I(atoms[i], i)) atoms2[this.nAtoms++]=atoms[i];
 
@@ -62,15 +55,15 @@ if (atoms2 != null ) {
 this.discardPreviousAtoms$();
 for (var i=0; i < this.nAtoms; i++) this.asc.addAtom$org_jmol_adapter_smarter_Atom(atoms2[i]);
 
-}$I$(2).info$S("Total number of atoms used=" + this.nAtoms);
+}$I$(3,"info$S",["Total number of atoms used=" + this.nAtoms]);
 this.setModelPDB$Z(true);
-this.htParams.put$TK$TV("defaultType", "mdcrd");
+this.htParams.put$O$O("defaultType", "mdcrd");
 });
 
 Clazz.newMeth(C$, 'getDataBlock', function () {
-var vdata=Clazz.new_($I$(3));
+var vdata=Clazz.new_($I$(4,1));
 this.discardLinesUntilContains$S("FORMAT");
-var n=org.jmol.adapter.smarter.AtomSetCollectionReader.getFortranFormatLengths$S(this.line.substring$I(this.line.indexOf$S("("))).get$I(0).intValue$();
+var n=$I$(5,"getFortranFormatLengths$S",[this.line.substring$I(this.line.indexOf$S("("))]).get$I(0).intValue$();
 var i=0;
 var len=0;
 while (true){
@@ -79,10 +72,10 @@ if (this.rd$() == null ) break;
 i=0;
 len=this.line.length$();
 if (len == 0 || this.line.indexOf$S("FLAG") >= 0 ) break;
-}vdata.addLast$TV(this.line.substring$I$I(i, i + n).trim$());
+}vdata.addLast$O(this.line.substring$I$I(i, i + n).trim$());
 i+=n;
 }
-return vdata.toArray$TTA(Clazz.array(String, [vdata.size$()]));
+return vdata.toArray$OA(Clazz.array(String, [vdata.size$()]));
 }, p$1);
 
 Clazz.newMeth(C$, 'getPointers', function () {
@@ -90,11 +83,11 @@ var tokens=p$1.getDataBlock.apply(this, []);
 this.ac=this.parseIntStr$S(tokens[0]);
 var isPeriodic=(tokens[27].charAt$I(0) != "0");
 if (isPeriodic) {
-$I$(2).info$S("Periodic type: " + tokens[27]);
-this.htParams.put$TK$TV("isPeriodic", $I$(4).TRUE);
-}$I$(2).info$S("Total number of atoms read=" + this.ac);
-this.htParams.put$TK$TV("templateAtomCount", Integer.valueOf$I(this.ac));
-for (var i=0; i < this.ac; i++) this.asc.addAtom$org_jmol_adapter_smarter_Atom(Clazz.new_($I$(1)));
+$I$(3).info$S("Periodic type: " + tokens[27]);
+this.htParams.put$O$O("isPeriodic", Boolean.TRUE);
+}$I$(3,"info$S",["Total number of atoms read=" + this.ac]);
+this.htParams.put$O$O("templateAtomCount", Integer.valueOf$I(this.ac));
+for (var i=0; i < this.ac; i++) this.asc.addAtom$org_jmol_adapter_smarter_Atom(Clazz.new_($I$(2,1)));
 
 }, p$1);
 
@@ -112,7 +105,7 @@ for (var i=this.ac; --i >= 0; ) atoms[i].partialCharge=this.parseFloatStr$S(data
 
 Clazz.newMeth(C$, 'getResiduePointers', function () {
 var resPtrs=p$1.getDataBlock.apply(this, []);
-$I$(2).info$S("Total number of residues=" + resPtrs.length);
+$I$(3,"info$S",["Total number of residues=" + resPtrs.length]);
 var pt1=this.ac;
 var pt2;
 var atoms=this.asc.atoms;
@@ -142,4 +135,4 @@ Clazz.newMeth(C$, 'getMasses', function () {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

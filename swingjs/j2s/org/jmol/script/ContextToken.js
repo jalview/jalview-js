@@ -1,19 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[[0,'java.util.Hashtable','org.jmol.script.SV']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ContextToken", null, 'org.jmol.script.T');
+(function(){var P$=Clazz.newPackage("org.jmol.script"),I$=[[0,'java.util.Hashtable','org.jmol.script.SV']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ContextToken", null, 'org.jmol.script.T');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.contextVariables=null;
-this.forVars=null;
-this.name0=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.name0=null;
-}, 1);
+},1);
+
+C$.$fields$=[['S',['name0'],'O',['contextVariables','java.util.Map','forVars','org.jmol.script.SV[]']]]
 
 Clazz.newMeth(C$, 'newContext$Z', function (isOpen) {
 var ct=(isOpen ? C$.newCmd$I$O(1275335685, "{") : C$.newCmd$I$O(1275334681, "}"));
@@ -29,10 +23,10 @@ return ct;
 }, 1);
 
 Clazz.newMeth(C$, 'addName$S', function (name) {
-if (this.contextVariables == null ) this.contextVariables=Clazz.new_($I$(1));
-this.contextVariables.put$TK$TV(name, $I$(2).newS$S("").setName$S(name));
+if (this.contextVariables == null ) this.contextVariables=Clazz.new_($I$(1,1));
+this.contextVariables.put$O$O(name, $I$(2).newS$S("").setName$S(name));
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:43 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

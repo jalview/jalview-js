@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.minimize"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MinimizationThread", null, 'org.jmol.thread.JmolThread');
+(function(){var P$=Clazz.newPackage("org.jmol.minimize"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MinimizationThread", null, 'org.jmol.thread.JmolThread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.minimizer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['minimizer','org.jmol.minimize.Minimizer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setManager$O$org_jmol_viewer_Viewer$O', function (manager, vwr, options) {
@@ -54,7 +50,7 @@ return;
 });
 
 Clazz.newMeth(C$, 'oops$Exception', function (e) {
-if (this.minimizer.minimizationOn$()) $I$(1).error$S(e.toString());
+if (this.minimizer.minimizationOn$()) $I$(1,"error$S",[e.toString()]);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:56 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

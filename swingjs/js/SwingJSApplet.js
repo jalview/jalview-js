@@ -14,16 +14,26 @@ if(typeof(jQuery)=="undefined") alert ("Note -- jQuery is required for SwingJS, 
 
 if (typeof(SwingJS) == "undefined") {
 
-  SwingJS = {};
+  SwingJS = {eventID:0};
 
 (function (SwingJS, $, J2S) {
 
 	SwingJS.getApplet = function(id, Info, checkOnly) {
+		if (arguments.length == 1 && typeof id == "object") {
+			// allow for getApplet(Info)
+			Info = id;
+			id = null;
+		}
 		return SwingJS._Applet._get(id, Info, checkOnly);
 	}
 
   	// optional Info here	
 	SwingJS.getAppletHtml = function(applet, Info) {
+		if (arguments.length == 1 && typeof applet == "object" && !applet._code) {
+			// allow for getApplet(Info)
+			Info = applet;
+			applet = null;
+		}
 		if (Info) {
 			var d = SwingJS._document;
 			SwingJS._document = null;
@@ -98,12 +108,16 @@ if (typeof(SwingJS) == "undefined") {
 			jarPath: "java",
 			jarFile: "[code].jar",
 			j2sPath: "j2s",
+			spinnerImage: "core/Spinner.gif",
 			disableJ2SLoadMonitor: false,
 			disableInitialConsole: false,
 			debug: false
 		};	 
+		id || (id = Info.name) || (id = "j2sApplet" + J2S._defaultID++);
     
 		J2S._addDefaultInfo(Info, DefaultInfo);
+		
+		
     Info.jarFile && Info.code && Info.jarFile.replace(/\[code\]/,Info.code);
 		J2S._debugAlert = Info.debug;
 		Info.serverURL && (J2S._serverUrl = Info.serverURL);

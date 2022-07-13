@@ -1,6 +1,6 @@
 /*
- * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
- * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * Jalview - A Sequence Alignment Editor and Viewer (2.11.2.3)
+ * Copyright (C) 2022 The Jalview Authors
  * 
  * This file is part of Jalview.
  * 
@@ -75,7 +75,6 @@ Space Group;spacegroup;String;g6;50;400;95;false;false
 Cath Code;cath_code;String;g2;50;400;95;false;false
 Tax Id;tax_id;String;g2;50;400;95;false;false
 Tax Query;tax_query;String;g2;50;400;95;false;false
-Interacting Entity Id;interacting_entity_id;String;g2;50;400;95;false;false
 Interacting Molecules;interacting_molecules;String;g6;50;400;95;false;false
 Pubmed Id;pubmed_id;int;g2;50;400;95;false;false
 Status;status;String;g6;50;400;95;false;false

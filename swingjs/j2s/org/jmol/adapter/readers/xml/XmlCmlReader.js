@@ -1,42 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'org.jmol.adapter.smarter.Atom','org.jmol.adapter.smarter.Bond','javajs.util.Lst','java.util.Hashtable','javajs.util.BS','javajs.util.PT','org.jmol.api.JmolAdapter','org.jmol.util.Logger','java.util.Properties','java.util.StringTokenizer','org.jmol.util.BSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XmlCmlReader", null, 'org.jmol.adapter.readers.xml.XmlReader');
-C$.unitCellParamTags=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xml"),p$1={},I$=[[0,'org.jmol.adapter.smarter.Atom','org.jmol.adapter.smarter.Bond','javajs.util.Lst','java.util.Hashtable','javajs.util.BS','javajs.util.PT','org.jmol.api.JmolAdapter','org.jmol.util.Logger','org.jmol.adapter.smarter.AtomSetCollectionReader','java.util.Properties','java.util.StringTokenizer','org.jmol.util.BSUtil']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XmlCmlReader", null, 'org.jmol.adapter.readers.xml.XmlReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.unitCellParamTags=Clazz.array(String, -1, ["a", "b", "c", "alpha", "beta", "gamma"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.scalarDictRef=null;
-this.scalarDictValue=null;
-this.scalarTitle=null;
-this.cellParameterType=null;
-this.checkedSerial=false;
-this.isSerial=false;
-this.moleculeNesting=0;
-this.latticeVectorPtr=0;
-this.embeddedCrystal=false;
-this.atomIdNames=null;
-this.tokens=null;
-this.aaLen=0;
-this.atomArray=null;
-this.bondCount=0;
-this.bondArray=null;
-this.tokenCount=0;
-this.moduleNestingLevel=0;
-this.haveMolecule=false;
-this.localSpaceGroupName=null;
-this.processing=false;
-this.state=0;
-this.atomIndex0=0;
-this.joinList=null;
-this.mapRtoA=null;
-this.deleteAtoms=null;
-this.moleculeID=null;
-this.htModelAtomMap=null;
-this.optimize2d=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.moleculeNesting=0;
@@ -49,10 +14,13 @@ this.moduleNestingLevel=0;
 this.haveMolecule=false;
 this.processing=true;
 this.state=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['checkedSerial','isSerial','embeddedCrystal','haveMolecule','processing','optimize2d'],'I',['moleculeNesting','latticeVectorPtr','aaLen','bondCount','tokenCount','moduleNestingLevel','state','atomIndex0'],'S',['scalarDictRef','scalarDictValue','scalarTitle','cellParameterType','localSpaceGroupName','moleculeID'],'O',['atomIdNames','java.util.Properties','tokens','String[]','atomArray','org.jmol.adapter.smarter.Atom[]','bondArray','org.jmol.adapter.smarter.Bond[]','joinList','javajs.util.Lst','mapRtoA','java.util.Map','deleteAtoms','javajs.util.BS','htModelAtomMap','java.util.Map']]
+,['O',['unitCellParamTags','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'processXml$org_jmol_adapter_readers_xml_XmlReader$O', function (parent, saxReader) {
@@ -124,9 +92,9 @@ this.setKeepChars$Z(true);
 case 5:
 case 6:
 if (name.equals$O("fragmentlist")) {
-this.joinList=Clazz.new_($I$(3));
-this.mapRtoA=Clazz.new_($I$(4));
-if (this.deleteAtoms == null ) this.deleteAtoms=Clazz.new_($I$(5));
+this.joinList=Clazz.new_($I$(3,1));
+this.mapRtoA=Clazz.new_($I$(4,1));
+if (this.deleteAtoms == null ) this.deleteAtoms=Clazz.new_($I$(5,1));
 } else if (name.equals$O("crystal")) {
 this.state=2;
 this.embeddedCrystal=true;
@@ -139,7 +107,7 @@ this.tokenCount=0;
 if ((val=this.atts.get$O("atomrefs2")) != null ) {
 p$1.breakOutTokens$S.apply(this, [val]);
 if ((val=this.atts.get$O("order")) != null ) order=p$1.parseBondToken$S.apply(this, [val]);
-if (this.tokenCount == 2 && order > 0 ) this.joinList.addLast$TV(Clazz.array(String, -1, [this.tokens[0], this.tokens[1], "" + order]));
+if (this.tokenCount == 2 && order > 0 ) this.joinList.addLast$O(Clazz.array(String, -1, [this.tokens[0], this.tokens[1], "" + order]));
 }} else if (name.equals$O("bondarray")) {
 this.state=10;
 this.bondCount=0;
@@ -214,7 +182,7 @@ p$1.addNewBond$S$S$I.apply(this, [this.tokens[0], this.tokens[1], order]);
 case 7:
 if (name.equals$O("atom")) {
 this.state=8;
-this.atom=Clazz.new_($I$(1));
+this.atom=Clazz.new_($I$(1,1));
 this.parent.setFractionalCoordinates$Z(false);
 var id=this.atts.get$O("id");
 if ((val=this.atts.get$O("name")) != null ) this.atom.atomName=val;
@@ -222,9 +190,9 @@ if ((val=this.atts.get$O("name")) != null ) this.atom.atomName=val;
  else if ((val=this.atts.get$O("label")) != null ) this.atom.atomName=val;
  else this.atom.atomName=id;
 if (!this.checkedSerial) {
-this.isSerial=(id != null  && id.length$() > 1  && id.startsWith$S("a")  && $I$(6).parseInt$S(id.substring$I(1)) != -2147483648 );
+this.isSerial=(id != null  && id.length$() > 1  && id.startsWith$S("a")  && $I$(6,"parseInt$S",[id.substring$I(1)]) != -2147483648 );
 this.checkedSerial=true;
-}if (this.isSerial) this.atom.atomSerial=$I$(6).parseInt$S(id.substring$I(1));
+}if (this.isSerial) this.atom.atomSerial=$I$(6,"parseInt$S",[id.substring$I(1)]);
 if ((val=this.atts.get$O("xfract")) != null  && (this.parent.iHaveUnitCell || !this.atts.containsKey$O("x3") ) ) {
 this.parent.setFractionalCoordinates$Z(true);
 this.atom.set$F$F$F(this.parseFloatStr$S(val), this.parseFloatStr$S(this.atts.get$O("yfract")), this.parseFloatStr$S(this.atts.get$O("zfract")));
@@ -301,7 +269,7 @@ this.embeddedCrystal=false;
 } else {
 this.state=0;
 }} else if (name.equals$O("cellparameter") && this.keepChars ) {
-var tokens=$I$(6).getTokens$S(this.chars.toString());
+var tokens=$I$(6,"getTokens$S",[this.chars.toString()]);
 this.setKeepChars$Z(false);
 if (tokens.length != 3 || this.cellParameterType == null  ) {
 } else if (this.cellParameterType.equals$O("length")) {
@@ -312,7 +280,7 @@ break;
 for (var i=0; i < 3; i++) this.parent.setUnitCellItem$I$F(i + 3, this.parseFloatStr$S(tokens[i]));
 
 break;
-}$I$(8).error$S("bad cellParameter information: parameterType=" + this.cellParameterType + " data=" + this.chars );
+}$I$(8,"error$S",["bad cellParameter information: parameterType=" + this.cellParameterType + " data=" + this.chars ]);
 this.parent.setFractionalCoordinates$Z(false);
 }break;
 case 3:
@@ -330,7 +298,7 @@ this.setKeepChars$Z(false);
 this.state=4;
 }break;
 case 18:
-var values=org.jmol.adapter.smarter.AtomSetCollectionReader.getTokensFloat$S$FA$I(this.chars.toString(), null, 3);
+var values=$I$(9,"getTokensFloat$S$FA$I",[this.chars.toString(), null, 3]);
 this.parent.addExplicitLatticeVector$I$FA$I(this.latticeVectorPtr, values, 0);
 this.latticeVectorPtr=(this.latticeVectorPtr + 1) % 3;
 this.setKeepChars$Z(false);
@@ -389,8 +357,8 @@ this.state=8;
 if ("jmol:charge".equals$O(this.scalarDictRef)) {
 this.atom.partialCharge=this.parseFloatStr$S(this.chars.toString());
 } else if (this.scalarDictRef != null  && "_atom_site_label".equals$O(this.scalarDictValue) ) {
-if (this.atomIdNames == null ) this.atomIdNames=Clazz.new_($I$(9));
-this.atomIdNames.put$TK$TV(this.atom.atomName, this.chars.toString());
+if (this.atomIdNames == null ) this.atomIdNames=Clazz.new_($I$(10,1));
+this.atomIdNames.put$O$O(this.atom.atomName, this.chars.toString());
 }}this.setKeepChars$Z(false);
 this.scalarTitle=null;
 this.scalarDictRef=null;
@@ -436,10 +404,10 @@ var a1=this.asc.getAtomFromName$S(a1name);
 var a2=this.asc.getAtomFromName$S(a2name);
 if (a1 == null  || a2 == null  ) return true;
 if ("R".equals$O(a1.elementSymbol)) {
-this.mapRtoA.put$TK$TV(a1, a2.atomName);
+this.mapRtoA.put$O$O(a1, a2.atomName);
 return true;
 } else if ("R".equals$O(a2.elementSymbol)) {
-this.mapRtoA.put$TK$TV(a2, a1.atomName);
+this.mapRtoA.put$O$O(a2, a1.atomName);
 return true;
 }return false;
 }, p$1);
@@ -485,7 +453,7 @@ return;
 Clazz.newMeth(C$, 'addAtom$org_jmol_adapter_smarter_Atom', function (atom) {
 if ((atom.elementSymbol == null  && atom.elementNumber < 0 ) || Float.isNaN$F(atom.z) ) return;
 this.parent.setAtomCoord$org_jmol_adapter_smarter_Atom(atom);
-if (this.htModelAtomMap != null ) this.htModelAtomMap.put$TK$TV(this.moleculeID + atom.atomName, atom);
+if (this.htModelAtomMap != null ) this.htModelAtomMap.put$O$O(this.moleculeID + atom.atomName, atom);
 if (this.isSerial) this.asc.addAtomWithMappedSerialNumber$org_jmol_adapter_smarter_Atom(atom);
  else this.asc.addAtomWithMappedName$org_jmol_adapter_smarter_Atom(atom);
 }, p$1);
@@ -514,7 +482,7 @@ return 1;
 }, p$1);
 
 Clazz.newMeth(C$, 'breakOutTokens$S', function (str) {
-var st=Clazz.new_($I$(10).c$$S,[str]);
+var st=Clazz.new_($I$(11,1).c$$S,[str]);
 this.tokenCount=st.countTokens$();
 if (this.tokenCount > this.tokens.length) this.tokens=Clazz.array(String, [this.tokenCount]);
 for (var i=0; i < this.tokenCount; ++i) {
@@ -538,7 +506,7 @@ this.checkAtomArrayLength$I(this.tokenCount);
 Clazz.newMeth(C$, 'checkAtomArrayLength$I', function (newAtomCount) {
 if (this.aaLen == 0) {
 if (newAtomCount > this.atomArray.length) this.atomArray=Clazz.array($I$(1), [newAtomCount]);
-for (var i=newAtomCount; --i >= 0; ) this.atomArray[i]=Clazz.new_($I$(1));
+for (var i=newAtomCount; --i >= 0; ) this.atomArray[i]=Clazz.new_($I$(1,1));
 
 this.aaLen=newAtomCount;
 } else if (newAtomCount != this.aaLen) {
@@ -553,7 +521,7 @@ this.checkBondArrayLength$I(this.tokenCount);
 Clazz.newMeth(C$, 'checkBondArrayLength$I', function (newBondCount) {
 if (this.bondCount == 0) {
 if (newBondCount > this.bondArray.length) this.bondArray=Clazz.array($I$(2), [newBondCount]);
-for (var i=newBondCount; --i >= 0; ) this.bondArray[i]=Clazz.new_($I$(2).c$$I$I$I,[-1, -1, 1]);
+for (var i=newBondCount; --i >= 0; ) this.bondArray[i]=Clazz.new_($I$(2,1).c$$I$I$I,[-1, -1, 1]);
 
 this.bondCount=newBondCount;
 } else if (newBondCount != this.bondCount) {
@@ -563,7 +531,7 @@ throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["bad bond attribu
 Clazz.newMeth(C$, 'createNewAtomSet', function () {
 this.asc.newAtomSet$();
 var val;
-if (this.htModelAtomMap != null ) this.htModelAtomMap.put$TK$TV("" + this.asc.iSet, "" + this.moleculeID);
+if (this.htModelAtomMap != null ) this.htModelAtomMap.put$O$O("" + this.asc.iSet, "" + this.moleculeID);
 var collectionName=((val=this.atts.get$O("title")) != null  || (val=this.atts.get$O("id")) != null   ? val : null);
 if (collectionName != null ) {
 this.asc.setAtomSetName$S(collectionName);
@@ -578,9 +546,13 @@ this.parent.applySymmetryAndSetTrajectory$();
 
 Clazz.newMeth(C$, 'endDocument$', function () {
 if (this.deleteAtoms != null ) {
-var bs=(this.asc.bsAtoms == null  ? this.asc.bsAtoms=$I$(11).newBitSet2$I$I(0, this.asc.ac) : this.asc.bsAtoms);
+var bs=(this.asc.bsAtoms == null  ? this.asc.bsAtoms=$I$(12).newBitSet2$I$I(0, this.asc.ac) : this.asc.bsAtoms);
 bs.andNot$javajs_util_BS(this.deleteAtoms);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.unitCellParamTags=Clazz.array(String, -1, ["a", "b", "c", "alpha", "beta", "gamma"]);
+};
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

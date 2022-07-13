@@ -1,34 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.multitouch.sparshui"),p$1={},I$=[[0,'java.util.ArrayList','com.sparshui.common.Location','org.jmol.util.Logger','com.sparshui.common.messages.events.ZoomEvent','com.sparshui.common.messages.events.RotateEvent','com.sparshui.common.messages.events.DragEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TwoPointGesture", null, null, 'com.sparshui.gestures.Gesture');
+(function(){var P$=Clazz.newPackage("org.jmol.multitouch.sparshui"),p$1={},I$=[[0,'java.util.ArrayList','com.sparshui.common.Location','org.jmol.util.Logger','com.sparshui.common.messages.events.ZoomEvent','com.sparshui.common.messages.events.RotateEvent','com.sparshui.common.messages.events.DragEvent']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TwoPointGesture", null, null, 'com.sparshui.gestures.Gesture');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._myType=0;
-this._offset=null;
-this._offsetCentroid=null;
-this._traces1=null;
-this._traces2=null;
-this._id1=0;
-this._id2=0;
-this._nTraces=0;
-this._scale=0;
-this._rotation=0;
-this.time=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._myType=9;
 this._offset=null;
 this._offsetCentroid=null;
-this._traces1=Clazz.new_($I$(1));
-this._traces2=Clazz.new_($I$(1));
+this._traces1=Clazz.new_($I$(1,1));
+this._traces2=Clazz.new_($I$(1,1));
 this._id1=-1;
 this._id2=-1;
 this._nTraces=0;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['_scale','_rotation'],'I',['_myType','_id1','_id2','_nTraces'],'J',['time'],'O',['_offset','com.sparshui.common.Location','+_offsetCentroid','_traces1','java.util.List','+_traces2']]]
 
 Clazz.newMeth(C$, 'getName$', function () {
 return "TwoPointGesture";
@@ -56,7 +42,7 @@ case 1:
 events=this.processDeath$com_sparshui_server_TouchPoint(changedPoint);
 break;
 }
-return (events != null ) ? events : Clazz.new_($I$(1));
+return (events != null ) ? events : Clazz.new_($I$(1,1));
 }, p$1);
 
 Clazz.newMeth(C$, 'processBirth$com_sparshui_server_TouchPoint', function (touchPoint) {
@@ -65,17 +51,17 @@ var id=touchPoint.getID$();
 switch (this._nTraces) {
 case 0:
 this._traces1.clear$();
-this._traces1.add$TE($I$(2).pixelLocation$com_sparshui_common_Location(location));
+this._traces1.add$O($I$(2).pixelLocation$com_sparshui_common_Location(location));
 this._id1=id;
 this._nTraces=1;
 break;
 case 1:
 this._traces2.clear$();
-this._traces2.add$TE($I$(2).pixelLocation$com_sparshui_common_Location(location));
+this._traces2.add$O($I$(2).pixelLocation$com_sparshui_common_Location(location));
 this._id2=id;
 var o=this._traces1.get$I(this._traces1.size$() - 1);
 this._traces1.clear$();
-this._traces1.add$TE(o);
+this._traces1.add$O(o);
 this._nTraces=2;
 break;
 default:
@@ -120,7 +106,7 @@ return null;
 });
 
 Clazz.newMeth(C$, 'processMove$com_sparshui_server_TouchPoint', function (touchPoint) {
-var events=Clazz.new_($I$(1));
+var events=Clazz.new_($I$(1,1));
 if (!p$1.updateLocations$com_sparshui_server_TouchPoint.apply(this, [touchPoint])) return events;
 if (this._myType == 9) p$1.checkType.apply(this, []);
 var locationLast=$I$(2).screenLocation$com_sparshui_common_Location(this._offsetCentroid);
@@ -129,36 +115,36 @@ var location=$I$(2).screenLocation$com_sparshui_common_Location(this._offsetCent
 var event=null;
 switch (this._myType) {
 case 5:
-event=Clazz.new_($I$(4).c$$F$com_sparshui_common_Location$J,[this._scale, location, this.time]);
+event=Clazz.new_($I$(4,1).c$$F$com_sparshui_common_Location$J,[this._scale, location, this.time]);
 break;
 case 2:
-event=Clazz.new_($I$(5).c$$F$com_sparshui_common_Location$J,[this._rotation, location, this.time]);
+event=Clazz.new_($I$(5,1).c$$F$com_sparshui_common_Location$J,[this._rotation, location, this.time]);
 break;
 case 1:
 if (locationLast != null ) {
 var dxy=locationLast.getVector$com_sparshui_common_Location(location);
-event=Clazz.new_($I$(6).c$$F$F$I$J,[dxy.x, dxy.y, 2, this.time]);
+event=Clazz.new_($I$(6,1).c$$F$F$I$J,[dxy.x, dxy.y, 2, this.time]);
 }break;
 }
-if (event != null ) events.add$TE(event);
+if (event != null ) events.add$O(event);
 return events;
 });
 
 Clazz.newMeth(C$, 'updateLocations$com_sparshui_server_TouchPoint', function (touchPoint) {
-var location=$I$(2).pixelLocation$com_sparshui_common_Location(touchPoint.getLocation$());
+var location=$I$(2,"pixelLocation$com_sparshui_common_Location",[touchPoint.getLocation$()]);
 var id=touchPoint.getID$();
 if (id == this._id1) {
 if (this._traces1.size$() > 2) {
 while (this._traces1.size$() > 2){
 this._traces1.remove$I(0);
 }
-}this._traces1.add$TE(location);
+}this._traces1.add$O(location);
 } else if (id == this._id2) {
 if (this._traces2.size$() > 2) {
 while (this._traces2.size$() > 2){
 this._traces2.remove$I(0);
 }
-}this._traces2.add$TE(location);
+}this._traces2.add$O(location);
 } else {
 $I$(3).error$S("TwoPointGesture updateLocation error: no trace with id " + id);
 return false;
@@ -213,7 +199,7 @@ return true;
 case 5:
 if (Math.abs(d12 - d00) < 2 ) return false;
 this._scale=(d12 < d00  ? -1 : 1);
-this._offsetCentroid=$I$(2).getCentroid$com_sparshui_common_Location$com_sparshui_common_Location$F(loc10, loc20, d1 / (d1 + d2));
+this._offsetCentroid=$I$(2,"getCentroid$com_sparshui_common_Location$com_sparshui_common_Location$F",[loc10, loc20, d1 / (d1 + d2)]);
 return true;
 case 1:
 this._offsetCentroid=$I$(2).getCenter$com_sparshui_common_Location$com_sparshui_common_Location(loc11, loc21);
@@ -225,4 +211,4 @@ return false;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,43 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.AU','javajs.util.V3','javajs.util.M4','org.jmol.util.Escape','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SimpleUnitCell");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.AU','javajs.util.V3','javajs.util.M4','org.jmol.util.Escape','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SimpleUnitCell");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.unitCellParams=null;
-this.matrixCartesianToFractional=null;
-this.matrixFractionalToCartesian=null;
-this.volume=0;
-this.na=0;
-this.nb=0;
-this.nc=0;
-this.a=0;
-this.b=0;
-this.c=0;
-this.alpha=0;
-this.beta=0;
-this.gamma=0;
-this.cosAlpha=0;
-this.sinAlpha=0;
-this.cosBeta=0;
-this.sinBeta=0;
-this.cosGamma=0;
-this.sinGamma=0;
-this.cA_=0;
-this.cB_=0;
-this.a_=0;
-this.b_=0;
-this.c_=0;
-this.dimension=0;
-this.fractionalOrigin=null;
-this.matrixCtoFNoOffset=null;
-this.matrixFtoCNoOffset=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['volume','cosAlpha','sinAlpha','cosBeta','sinBeta','cosGamma','sinGamma','cA_','cB_','a_','b_','c_'],'F',['a','b','c','alpha','beta','gamma'],'I',['na','nb','nc','dimension'],'O',['unitCellParams','float[]','matrixCartesianToFractional','javajs.util.M4','+matrixFractionalToCartesian','fractionalOrigin','javajs.util.P3','matrixCtoFNoOffset','javajs.util.M4','+matrixFtoCNoOffset']]]
 
 Clazz.newMeth(C$, 'isSupercell$', function () {
 return (this.na > 1 || this.nb > 1  || this.nc > 1 );
@@ -48,8 +17,8 @@ return (parameters != null  && (parameters[0] > 0  || parameters.length > 14 && 
 }, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.fractionalOrigin=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.fractionalOrigin=Clazz.new_($I$(1,1));
 }, 1);
 
 Clazz.newMeth(C$, 'newA$FA', function (params) {
@@ -142,14 +111,14 @@ this.matrixCartesianToFractional.getTranslation$javajs_util_T3(this.fractionalOr
 this.matrixFractionalToCartesian=$I$(4).newM4$javajs_util_M4(this.matrixCartesianToFractional).invert$();
 if (params[0] == 1 ) p$1.setParamsFromMatrix.apply(this, []);
 } else if (params.length > 14 && !Float.isNaN$F(params[14]) ) {
-var m=this.matrixFractionalToCartesian=Clazz.new_($I$(4));
+var m=this.matrixFractionalToCartesian=Clazz.new_($I$(4,1));
 m.setColumn4$I$F$F$F$F(0, params[6] * fa, params[7] * fa, params[8] * fa, 0);
 m.setColumn4$I$F$F$F$F(1, params[9] * fb, params[10] * fb, params[11] * fb, 0);
 m.setColumn4$I$F$F$F$F(2, params[12] * fc, params[13] * fc, params[14] * fc, 0);
 m.setColumn4$I$F$F$F$F(3, 0, 0, 0, 1);
 this.matrixCartesianToFractional=$I$(4).newM4$javajs_util_M4(this.matrixFractionalToCartesian).invert$();
 } else {
-var m=this.matrixFractionalToCartesian=Clazz.new_($I$(4));
+var m=this.matrixFractionalToCartesian=Clazz.new_($I$(4,1));
 if (rotateHex) {
 m.setColumn4$I$F$F$F$F(0, (-this.b * this.cosGamma), (-this.b * this.sinGamma), 0, 0);
 m.setColumn4$I$F$F$F$F(1, (-this.b * this.cosGamma), (this.b * this.sinGamma), 0, 0);
@@ -294,9 +263,9 @@ return f;
 Clazz.newMeth(C$, 'getReciprocal$javajs_util_T3A$javajs_util_T3A$F', function (abc, ret, scale) {
 var rabc=Clazz.array($I$(1), [4]);
 var off=(abc.length == 4 ? 1 : 0);
-rabc[0]=(off == 1 ? $I$(1).newP$javajs_util_T3(abc[0]) : Clazz.new_($I$(1)));
+rabc[0]=(off == 1 ? $I$(1).newP$javajs_util_T3(abc[0]) : Clazz.new_($I$(1,1)));
 for (var i=0; i < 3; i++) {
-rabc[i + 1]=Clazz.new_($I$(1));
+rabc[i + 1]=Clazz.new_($I$(1,1));
 rabc[i + 1].cross$javajs_util_T3$javajs_util_T3(abc[((i + off) % 3) + off], abc[((i + off + 1 ) % 3) + off]);
 rabc[i + 1].scale$F(scale / abc[i + off].dot$javajs_util_T3(rabc[i + 1]));
 }
@@ -309,7 +278,7 @@ return ret;
 Clazz.newMeth(C$, 'setOabc$S$FA$javajs_util_T3A', function (abcabg, params, ucnew) {
 if (abcabg != null ) {
 if (params == null ) params=Clazz.array(Float.TYPE, [6]);
-var tokens=$I$(6).split$S$S(abcabg.replace$C$C(",", "="), "=");
+var tokens=$I$(6,"split$S$S",[abcabg.replace$C$C(",", "="), "="]);
 if (tokens.length >= 12) for (var i=0; i < 6; i++) params[i]=$I$(6).parseFloat$S(tokens[i * 2 + 1]);
 
 }if (ucnew == null ) return null;
@@ -322,7 +291,7 @@ return ucnew;
 
 Clazz.newMeth(C$, 'setMinMaxLatticeParameters$I$javajs_util_P3i$javajs_util_P3i$I', function (dimension, minXYZ, maxXYZ, kcode) {
 if (maxXYZ.x <= maxXYZ.y && maxXYZ.y >= 555 ) {
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(1,1));
 C$.ijkToPoint3f$I$javajs_util_P3$I$I(maxXYZ.x, pt, 0, kcode);
 minXYZ.x=(pt.x|0);
 minXYZ.y=(pt.y|0);
@@ -341,4 +310,4 @@ maxXYZ.z=1;
 }
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

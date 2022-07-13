@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'javajs.util.BS','java.util.Hashtable','org.jmol.symmetry.SpaceGroup','org.jmol.script.T','javajs.util.PT','javajs.util.V3','javajs.util.P3','javajs.util.Measure','javajs.util.Quat','org.jmol.symmetry.SymmetryOperation','javajs.util.SB','org.jmol.util.Escape','javajs.util.P4','org.jmol.util.Logger','javajs.util.M4','org.jmol.symmetry.Symmetry']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SymmetryDesc");
-C$.keys=null;
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'javajs.util.BS','java.util.Hashtable','org.jmol.symmetry.SpaceGroup','org.jmol.script.T','javajs.util.PT','javajs.util.V3','javajs.util.P3','javajs.util.Measure','javajs.util.Quat','org.jmol.symmetry.SymmetryOperation','javajs.util.SB','org.jmol.util.Escape','javajs.util.P4','org.jmol.util.Logger','javajs.util.M4','org.jmol.symmetry.Symmetry','javajs.util.Lst']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SymmetryDesc");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.keys=Clazz.array(String, -1, ["xyz", "xyzOriginal", "label", null, "fractionalTranslation", "cartesianTranslation", "inversionCenter", null, "axisVector", "rotationAngle", "matrix", "unitTranslation", "centeringVector", "timeReversal", "plane", "_type", "id"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.modelSet=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['modelSet','org.jmol.modelset.ModelSet']]
+,['O',['keys','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_modelset_ModelSet', function (modelSet) {
@@ -23,27 +18,27 @@ this.modelSet=modelSet;
 return this;
 });
 
-Clazz.newMeth(C$, 'getSymopInfo$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I', function (iAtom, xyz, op, pt, pt2, id, type, scaleFactor, nth) {
+Clazz.newMeth(C$, 'getSymopInfo$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I$I', function (iAtom, xyz, op, pt, pt2, id, type, scaleFactor, nth, options) {
 if (type == 0) type=C$.getType$S(id);
-var ret=(type == 1140850689 ? Clazz.new_($I$(1)) : "");
+var ret=(type == 1140850689 ? Clazz.new_($I$(1,1)) : "");
 if (iAtom < 0) return ret;
 var iModel=this.modelSet.at[iAtom].mi;
 var uc=this.modelSet.am[iModel].biosymmetry;
 if (uc == null  && (uc=this.modelSet.getUnitCell$I(iModel)) == null  ) return ret;
-if (type != 135176 || op != 2147483647 ) return p$1.getSymmetryInfo$org_jmol_symmetry_Symmetry$I$I$org_jmol_symmetry_Symmetry$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I.apply(this, [uc, iModel, iAtom, uc, xyz, op, pt, pt2, id, type, scaleFactor, nth]);
-var s="";
+if (type != 135176 || op != 2147483647 ) {
+return p$1.getSymmetryInfo$org_jmol_symmetry_Symmetry$I$I$org_jmol_symmetry_Symmetry$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I$I.apply(this, [uc, iModel, iAtom, uc, xyz, op, pt, pt2, id, type, scaleFactor, nth, options]);
+}var s="";
 var ops=uc.getSymmetryOperations$();
 if (ops != null ) {
 if (id == null ) id="sg";
 var n=ops.length;
-for (op=0; op < n; op++) s += p$1.getSymmetryInfo$org_jmol_symmetry_Symmetry$I$I$org_jmol_symmetry_Symmetry$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I.apply(this, [uc, iModel, iAtom, uc, xyz, op, pt, pt2, id + op, 135176, scaleFactor, nth]);
+for (op=0; op < n; op++) s += p$1.getSymmetryInfo$org_jmol_symmetry_Symmetry$I$I$org_jmol_symmetry_Symmetry$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I$I.apply(this, [uc, iModel, iAtom, uc, xyz, op, pt, pt2, id + op, 135176, scaleFactor, nth, options]);
 
 }return s;
 });
 
-Clazz.newMeth(C$, 'getSpaceGroupInfo$org_jmol_symmetry_Symmetry$I$S$I$javajs_util_P3$javajs_util_P3$S$F$I$Z$Z', function (sym, modelIndex, sgName, symOp, pt1, pt2, drawID, scaleFactor, nth, isFull, isForModel) {
+Clazz.newMeth(C$, 'getSpaceGroupInfo$org_jmol_symmetry_Symmetry$I$S$I$javajs_util_P3$javajs_util_P3$S$F$I$Z$Z$I$org_jmol_api_SymmetryInterface', function (sym, modelIndex, sgName, symOp, pt1, pt2, drawID, scaleFactor, nth, isFull, isForModel, options, cellInfo) {
 var info=null;
-var cellInfo=null;
 var isStandard=(pt1 == null  && drawID == null   && nth <= 0 );
 var isBio=false;
 var sgNote=null;
@@ -53,16 +48,16 @@ if (isForModel || !haveName ) {
 var saveModelInfo=(isStandard && symOp == 0 );
 if (modelIndex < 0) modelIndex=(Clazz.instanceOf(pt1, "org.jmol.modelset.Atom") ? (pt1).mi : this.modelSet.vwr.am.cmi);
 if (modelIndex < 0) sgNote="no single current model";
- else if (!(isBio=(cellInfo=this.modelSet.am[modelIndex].biosymmetry) != null ) && (cellInfo=this.modelSet.getUnitCell$I(modelIndex)) == null  ) sgNote="not applicable";
+ else if (cellInfo == null  && !(isBio=(cellInfo=this.modelSet.am[modelIndex].biosymmetry) != null )  && (cellInfo=this.modelSet.getUnitCell$I(modelIndex)) == null  ) sgNote="not applicable";
 if (sgNote != null ) {
-info=Clazz.new_($I$(2));
-info.put$TK$TV("spaceGroupInfo", "");
-info.put$TK$TV("spaceGroupNote", sgNote);
-info.put$TK$TV("symmetryInfo", "");
+info=Clazz.new_($I$(2,1));
+info.put$O$O("spaceGroupInfo", "");
+info.put$O$O("spaceGroupNote", sgNote);
+info.put$O$O("symmetryInfo", "");
 } else if (isStandard) {
 info=this.modelSet.getInfo$I$S(modelIndex, "spaceGroupInfo");
 }if (info != null ) return info;
-info=Clazz.new_($I$(2));
+info=Clazz.new_($I$(2,1));
 sgName=cellInfo.getSpaceGroupName$();
 var ops=cellInfo.getSymmetryOperations$();
 var sg=(isBio ? (cellInfo).spaceGroup : null);
@@ -83,30 +78,32 @@ op=sym.getSpaceGroupOperation$I(i);
 if (op == null ) continue;
 if (op.timeReversal != 0 || op.modDim > 0 ) isStandard=false;
 if (slist != null ) slist += ";" + op.xyz;
-var ret=(symOp > 0 && symOp - 1 != iop  ? null : p$1.createInfoArray$org_jmol_symmetry_SymmetryOperation$org_jmol_api_SymmetryInterface$javajs_util_P3$javajs_util_P3$S$F.apply(this, [op, cellInfo, pt1, pt2, drawID, scaleFactor]));
+var ret=(symOp > 0 && symOp - 1 != iop  ? null : p$1.createInfoArray$org_jmol_symmetry_SymmetryOperation$org_jmol_api_SymmetryInterface$javajs_util_P3$javajs_util_P3$S$F$I.apply(this, [op, cellInfo, pt1, pt2, drawID, scaleFactor, options]));
 if (ret != null ) {
 if (nth > 0 && ++nop != nth ) continue;
 infolist[i]=ret;
 sops += "\n" + (i + 1) + "\t" + ret[0] + "\t" + ret[2] ;
 opCount++;
-}info.put$TK$TV("operations", infolist);
-}
-info.put$TK$TV("symmetryInfo", (sops.length$() == 0 ? "" : sops.substring$I(1)));
+}}
+info.put$O$O("operations", infolist);
+info.put$O$O("symmetryInfo", (sops.length$() == 0 ? "" : sops.substring$I(1)));
 }sgNote=(opCount == 0 ? "\n no symmetry operations" : nth <= 0 && symOp <= 0  ? "\n" + opCount + " symmetry operation" + (opCount == 1 ? ":\n" : "s:\n")  : "");
 if (slist != null ) sgName=slist.substring$I(slist.indexOf$S(";") + 1);
 if (saveModelInfo) this.modelSet.setInfo$I$O$O(modelIndex, "spaceGroupInfo", info);
 } else {
-info=Clazz.new_($I$(2));
-}info.put$TK$TV("spaceGroupName", sgName);
-info.put$TK$TV("spaceGroupNote", sgNote == null  ? "" : sgNote);
+info=Clazz.new_($I$(2,1));
+}info.put$O$O("spaceGroupName", sgName);
+info.put$O$O("spaceGroupNote", sgNote == null  ? "" : sgNote);
 var data;
 if (isBio) {
 data=sgName;
 } else {
 if (haveName && !haveRawName ) sym.setSpaceGroupName$S(sgName);
 data=sym.getSpaceGroupInfoObj$S$org_jmol_api_SymmetryInterface$Z(sgName, cellInfo, isFull);
-if (data == null  || data.equals$O("?") ) data="could not identify space group from name: " + sgName + "\nformat: show spacegroup \"2\" or \"P 2c\" " + "or \"C m m m\" or \"x, y, z;-x ,-y, -z\"" ;
-}info.put$TK$TV("spaceGroupInfo", data);
+if (data == null  || data.equals$O("?") ) {
+data="?";
+info.put$O$O("spaceGroupNote", "could not identify space group from name: " + sgName + "\nformat: show spacegroup \"2\" or \"P 2c\" " + "or \"C m m m\" or \"x, y, z;-x ,-y, -z\"" );
+}}info.put$O$O("spaceGroupInfo", data);
 return info;
 });
 
@@ -125,64 +122,88 @@ for (type=0; type < C$.keys.length; type++) if (id.equalsIgnoreCase$S(C$.keys[ty
 return 1073741961;
 }, 1);
 
+Clazz.newMeth(C$, 'nullReturn$I', function (type) {
+switch (type) {
+case 135176:
+return "draw ID sym_* delete";
+case 1073741961:
+case 1825200146:
+case 1145047050:
+case 1073742078:
+return "";
+case 1140850689:
+return Clazz.new_($I$(1,1));
+default:
+return null;
+}
+}, 1);
+
 Clazz.newMeth(C$, 'getInfo$OA$I', function (info, type) {
-if (info == null ) return "";
 if (type < 0 && type >= -C$.keys.length ) return info[-1 - type];
 switch (type) {
 case 1073742327:
-return info;
-case 1275068418:
-var lst=Clazz.new_($I$(2));
-for (var j=0, n=info.length; j < n; j++) if (C$.keys[j] != null  && info[j] != null  ) lst.put$TK$TV(C$.keys[j], info[j]);
-
-return lst;
-case 134217729:
-return info[9];
-case 1073741854:
-return info[8];
-case 12289:
-return info[6];
-case 135176:
-return info[3] + "\nprint " + $I$(5).esc$S(info[0] + " " + info[2] ) ;
-case 1073741961:
-return info[0] + "  \t" + info[2] ;
 case 1073741982:
 return info;
+case 1275068418:
+var lst=Clazz.new_($I$(2,1));
+for (var j=0, n=info.length; j < n; j++) {
+var key=(j == 3 ? "draw" : j == 7 ? "axispoint" : C$.keys[j]);
+if (info[j] != null ) lst.put$O$O(key, info[j]);
+}
+return lst;
+case 1073741961:
+return info[0] + "  \t" + info[2] ;
+case 1145047050:
+return info[0];
+case 1073742078:
+return info[1];
 default:
 case 1825200146:
 return info[2];
-case 12:
-return info[10];
+case 135176:
+return info[3] + "\nprint " + $I$(5).esc$S(info[0] + " " + info[2] ) ;
+case 1145047051:
+return info[4];
+case 1073742178:
+return info[5];
+case 12289:
+return info[6];
 case 134217751:
 return info[7];
+case 1073741854:
+return info[8];
+case 134217729:
+return info[9];
+case 12:
+return info[10];
+case 1814695966:
+return info[11];
+case 4160:
+return info[12];
 case 268435633:
 return info[13];
 case 134217750:
 return info[14];
-case 1073742178:
-return info[5];
-case 1814695966:
-return info[11];
-case 1145047050:
-return info[0];
+case 1140850696:
+return info[15];
 case 1073741974:
 return info[16];
 }
 }, 1);
 
-Clazz.newMeth(C$, 'createInfoArray$org_jmol_symmetry_SymmetryOperation$org_jmol_api_SymmetryInterface$javajs_util_P3$javajs_util_P3$S$F', function (op, uc, pta00, ptTarget, id, scaleFactor) {
+Clazz.newMeth(C$, 'createInfoArray$org_jmol_symmetry_SymmetryOperation$org_jmol_api_SymmetryInterface$javajs_util_P3$javajs_util_P3$S$F$I', function (op, uc, pta00, ptTarget, id, scaleFactor, options) {
 if (!op.isFinalized) op.doFinalize$();
 var isTimeReversed=(op.timeReversal == -1);
 if (scaleFactor == 0 ) scaleFactor=1.0;
-var vtemp=Clazz.new_($I$(6));
-var ptemp=Clazz.new_($I$(7));
-var ptemp2=Clazz.new_($I$(7));
-var pta01=Clazz.new_($I$(7));
-var pta02=Clazz.new_($I$(7));
-var ftrans=Clazz.new_($I$(6));
-var vtrans=Clazz.new_($I$(6));
+var vtemp=Clazz.new_($I$(6,1));
+var ptemp=Clazz.new_($I$(7,1));
+var ptemp2=Clazz.new_($I$(7,1));
+var pta01=Clazz.new_($I$(7,1));
+var pta02=Clazz.new_($I$(7,1));
+var ftrans=Clazz.new_($I$(6,1));
+var vtrans=Clazz.new_($I$(6,1));
 var plane=null;
-if (pta00 == null  || Float.isNaN$F(pta00.x) ) pta00=Clazz.new_($I$(7));
+if (pta00 == null  || Float.isNaN$F(pta00.x) ) pta00=Clazz.new_($I$(7,1));
 if (ptTarget != null ) {
 C$.setFractional$org_jmol_api_SymmetryInterface$javajs_util_T3$javajs_util_P3$javajs_util_P3(uc, pta00, pta01, ptemp);
 op.rotTrans$javajs_util_T3(pta01);
@@ -215,11 +236,11 @@ if (haveInversion) {
 pt1.sub2$javajs_util_T3$javajs_util_T3(pt0, vt1);
 pt2.sub2$javajs_util_T3$javajs_util_T3(pt0, vt2);
 pt3.sub2$javajs_util_T3$javajs_util_T3(pt0, vt3);
-}var info=$I$(8).computeHelicalAxis$javajs_util_P3$javajs_util_P3$javajs_util_Quat(pta00, pt0, $I$(9).getQuaternionFrame$javajs_util_P3$javajs_util_T3$javajs_util_T3(pt0, pt1, pt2).div$javajs_util_Quat($I$(9).getQuaternionFrame$javajs_util_P3$javajs_util_T3$javajs_util_T3(pta00, pta01, pta02)));
+}var info=$I$(8,"computeHelicalAxis$javajs_util_P3$javajs_util_P3$javajs_util_Quat",[pta00, pt0, $I$(9).getQuaternionFrame$javajs_util_P3$javajs_util_T3$javajs_util_T3(pt0, pt1, pt2).div$javajs_util_Quat($I$(9).getQuaternionFrame$javajs_util_P3$javajs_util_T3$javajs_util_T3(pta00, pta01, pta02))]);
 var pa1=info[0];
 var ax1=info[1];
-var ang1=(Math.abs($I$(5).approx$F$F((info[3]).x, 1))|0);
-var pitch1=$I$(10).approxF$F((info[3]).y);
+var ang1=(Math.abs($I$(5,"approx$F$F",[(info[3]).x, 1]))|0);
+var pitch1=$I$(10,"approxF$F",[(info[3]).y]);
 if (haveInversion) {
 pt1.add2$javajs_util_T3$javajs_util_T3(pt0, vt1);
 pt2.add2$javajs_util_T3$javajs_util_T3(pt0, vt2);
@@ -242,7 +263,7 @@ ipt.scale$F(0.5);
 ptinv=pt0;
 isInversionOnly=true;
 } else if (haveInversion) {
-var d=(pitch1 == 0  ? Clazz.new_($I$(6)) : ax1);
+var d=(pitch1 == 0  ? Clazz.new_($I$(6,1)) : ax1);
 var f=0;
 switch (ang1) {
 case 60:
@@ -279,9 +300,9 @@ vtemp.sub$javajs_util_T3(pa1);
 vtemp.sub$javajs_util_T3(d);
 vtemp.scale$F(f);
 pa1.add$javajs_util_T3(vtemp);
-ipt=Clazz.new_($I$(7));
+ipt=Clazz.new_($I$(7,1));
 ipt.scaleAdd2$F$javajs_util_T3$javajs_util_T3(0.5, d, pa1);
-ptinv=Clazz.new_($I$(7));
+ptinv=Clazz.new_($I$(7,1));
 ptinv.scaleAdd2$F$javajs_util_T3$javajs_util_T3(-2, ipt, pta00);
 ptinv.scale$F(-1);
 }} else if (trans != null ) {
@@ -293,7 +314,7 @@ trans.setT$javajs_util_T3(ptemp);
 }var ang=ang1;
 C$.approx0$javajs_util_T3(ax1);
 if (isRotation) {
-var ptr=Clazz.new_($I$(7));
+var ptr=Clazz.new_($I$(7,1));
 vtemp.setT$javajs_util_T3(ax1);
 var ang2=ang1;
 if (haveInversion) {
@@ -374,14 +395,14 @@ var xyzNew=(op.isBio ? op.xyzOriginal : $I$(10).getXYZFromMatrix$javajs_util_M4$
 if (id != null ) {
 var opType=null;
 var drawid="\ndraw ID " + id + "_" ;
-var draw1=Clazz.new_($I$(11));
+var draw1=Clazz.new_($I$(11,1));
 draw1.append$S(drawid).append$S("* delete");
 C$.drawLine$javajs_util_SB$S$F$javajs_util_P3$javajs_util_P3$S(draw1, drawid + "frame1X", 0.15, pta00, pta01, "red");
 C$.drawLine$javajs_util_SB$S$F$javajs_util_P3$javajs_util_P3$S(draw1, drawid + "frame1Y", 0.15, pta00, pta02, "green");
 C$.drawLine$javajs_util_SB$S$F$javajs_util_P3$javajs_util_P3$S(draw1, drawid + "frame1Z", 0.15, pta00, pta03, "blue");
 var color;
 if (isRotation) {
-var ptr=Clazz.new_($I$(7));
+var ptr=Clazz.new_($I$(7,1));
 color="red";
 ang=ang1;
 var scale=1.0;
@@ -456,7 +477,7 @@ opType=drawid + "inv";
 draw1.append$S(drawid).append$S("invPoint diameter 0.4 ").append$S($I$(12).eP$javajs_util_T3(ipt));
 ptemp.sub2$javajs_util_T3$javajs_util_T3(ptinv, pta00);
 C$.drawVector$javajs_util_SB$S$S$S$javajs_util_T3$javajs_util_T3$S(draw1, drawid, "invArrow", "vector", pta00, ptemp, isTimeReversed ? "gray" : "cyan");
-if (!isInversionOnly) {
+if (!isInversionOnly && options != 1073742066 ) {
 C$.drawFrameLine$S$javajs_util_P3$javajs_util_V3$F$javajs_util_P3$javajs_util_SB$S$S("X", ptinv, vt1, 0.15, ptemp, draw1, opType, "red");
 C$.drawFrameLine$S$javajs_util_P3$javajs_util_V3$F$javajs_util_P3$javajs_util_SB$S$S("Y", ptinv, vt2, 0.15, ptemp, draw1, opType, "green");
 C$.drawFrameLine$S$javajs_util_P3$javajs_util_V3$F$javajs_util_P3$javajs_util_SB$S$S("Z", ptinv, vt3, 0.15, ptemp, draw1, opType, "blue");
@@ -478,10 +499,11 @@ draw1.append$S("\nvar p0 = " + $I$(12).eP$javajs_util_T3(ptemp2));
 draw1.append$S("\nvar set2 = within(0.2,p0);if(!set2){set2 = within(0.2,p0.uxyz.xyz)}");
 if (Clazz.instanceOf(pta00, "org.jmol.modelset.Atom")) draw1.append$S("\n set2 &= {_" + (pta00).getElementSymbol$() + "}" );
 draw1.append$S("\nsym_target = set2;if (set2) {");
+if (options != 1073742066 && ptTarget == null  ) {
 draw1.append$S(drawid).append$S("offsetFrameX diameter 0.20 @{set2.xyz} @{set2.xyz + ").append$S($I$(12).eP$javajs_util_T3(vt1)).append$S("*0.9} color red");
 draw1.append$S(drawid).append$S("offsetFrameY diameter 0.20 @{set2.xyz} @{set2.xyz + ").append$S($I$(12).eP$javajs_util_T3(vt2)).append$S("*0.9} color green");
 draw1.append$S(drawid).append$S("offsetFrameZ diameter 0.20 @{set2.xyz} @{set2.xyz + ").append$S($I$(12).eP$javajs_util_T3(vt3)).append$S("*0.9} color purple");
-draw1.append$S("\n}\n");
+}draw1.append$S("\n}\n");
 cmds=draw1.toString();
 if ($I$(14).debugging) $I$(14).info$S(cmds);
 draw1=null;
@@ -568,43 +590,53 @@ pt.z=$I$(10).approxF$F(pt.z);
 }return pt;
 }, 1);
 
-Clazz.newMeth(C$, 'getSymmetryInfo$org_jmol_symmetry_Symmetry$I$I$org_jmol_symmetry_Symmetry$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I', function (sym, iModel, iatom, uc, xyz, op, pt, pt2, id, type, scaleFactor, nth) {
+Clazz.newMeth(C$, 'getSymmetryInfo$org_jmol_symmetry_Symmetry$I$I$org_jmol_symmetry_Symmetry$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I$I', function (sym, iModel, iatom, uc, xyz, op, pt, pt2, id, type, scaleFactor, nth, options) {
 if (type == 1073741994) return uc.getLatticeType$();
-var ret=(type == 135176 ? "draw ID sym_* delete" : type == 1140850689 ? Clazz.new_($I$(1)) : "");
+var nullRet=C$.nullReturn$I(type);
 var iop=op;
+var offset=(options == 1073742066 && (type == 1140850689 || type == 134217751 )  ? pt2 : null);
+if (offset != null ) pt2=null;
 var info=null;
 if (pt2 == null ) {
 if (xyz == null ) {
 var ops=uc.getSymmetryOperations$();
-if (ops == null  || op == 0  || Math.abs(op) > ops.length ) return ret;
+if (ops == null  || op == 0  || Math.abs(op) > ops.length ) return nullRet;
 iop=Math.abs(op) - 1;
 xyz=ops[iop].xyz;
 } else {
 iop=op=0;
-}var symTemp=Clazz.new_($I$(16));
+}var symTemp=Clazz.new_($I$(16,1));
 symTemp.setSpaceGroup$Z(false);
 var isBio=uc.isBio$();
 var i=(isBio ? symTemp.addBioMoleculeOperation$javajs_util_M4$Z(uc.spaceGroup.finalOperations[iop], op < 0) : symTemp.addSpaceGroupOperation$S$I((op < 0 ? "!" : "=") + xyz, Math.abs(op)));
-if (i < 0) return ret;
+if (i < 0) return nullRet;
 var opTemp=symTemp.getSpaceGroupOperation$I(i);
 opTemp.index=op - 1;
 if (!isBio) opTemp.getCentering$();
 if (pt == null  && iatom >= 0 ) pt=this.modelSet.at[iatom];
 if (type == 134217751 || type == 1140850689 ) {
-if (isBio) return ret;
-symTemp.setUnitCell$FA$Z(uc.getUnitCellParams$(), false);
+if (isBio) return nullRet;
+symTemp.setUnitCell$org_jmol_symmetry_Symmetry(uc);
 pt=$I$(7).newP$javajs_util_T3(pt);
 uc.toFractional$javajs_util_T3$Z(pt, false);
-if (Float.isNaN$F(pt.x)) return ret;
-var sympt=Clazz.new_($I$(7));
+if (Float.isNaN$F(pt.x)) return nullRet;
+var sympt=Clazz.new_($I$(7,1));
 symTemp.newSpaceGroupPoint$I$javajs_util_P3$javajs_util_P3$I$I$I$javajs_util_M4(i, pt, sympt, 0, 0, 0, null);
-symTemp.toCartesian$javajs_util_T3$Z(sympt, false);
+if (options == 1073742066) {
+uc.unitize$javajs_util_T3(sympt);
+if (options == 1073742066) sympt.add$javajs_util_T3(offset);
+}symTemp.toCartesian$javajs_util_T3$Z(sympt, false);
 return (type == 1140850689 ? p$1.getAtom$org_jmol_symmetry_Symmetry$I$I$javajs_util_T3.apply(this, [uc, iModel, iatom, sympt]) : sympt);
-}info=p$1.createInfoArray$org_jmol_symmetry_SymmetryOperation$org_jmol_api_SymmetryInterface$javajs_util_P3$javajs_util_P3$S$F.apply(this, [opTemp, uc, pt, pt2, (id == null  ? "sym" : id), scaleFactor]);
+}info=p$1.createInfoArray$org_jmol_symmetry_SymmetryOperation$org_jmol_api_SymmetryInterface$javajs_util_P3$javajs_util_P3$S$F$I.apply(this, [opTemp, uc, pt, null, (id == null  ? "sym" : id), scaleFactor, options]);
 } else {
 var stype="info";
 var asString=false;
 switch (type) {
+case 1275068418:
+id=stype=null;
+asString=false;
+if (nth == 0) nth=-1;
+break;
 case 1073742001:
 id=stype=null;
 asString=true;
@@ -620,20 +652,26 @@ id=stype=null;
 default:
 if (nth == 0) nth=1;
 }
-ret=p$1.getSymopInfoForPoints$org_jmol_symmetry_Symmetry$I$I$javajs_util_P3$javajs_util_P3$S$S$F$I$Z.apply(this, [sym, iModel, op, pt, pt2, id, stype, scaleFactor, nth, asString]);
-if (asString) return ret;
-if (Clazz.instanceOf(ret, "java.lang.String")) return null;
-info=ret;
+var ret1=p$1.getSymopInfoForPoints$org_jmol_symmetry_Symmetry$I$I$javajs_util_P3$javajs_util_P3$S$S$F$I$Z$I.apply(this, [sym, iModel, op, pt, pt2, id, stype, scaleFactor, nth, asString, options]);
+if (asString) return ret1;
+if (Clazz.instanceOf(ret1, "java.lang.String")) return nullRet;
+info=ret1;
 if (type == 1140850689) {
 if (!(Clazz.instanceOf(pt, "org.jmol.modelset.Atom")) && !(Clazz.instanceOf(pt2, "org.jmol.modelset.Atom")) ) iatom=-1;
-return (info == null  ? Clazz.new_($I$(1)) : p$1.getAtom$org_jmol_symmetry_Symmetry$I$I$javajs_util_T3.apply(this, [uc, iModel, iatom, info[7]]));
-}}return C$.getInfo$OA$I(info, type);
+return (info == null  ? nullRet : p$1.getAtom$org_jmol_symmetry_Symmetry$I$I$javajs_util_T3.apply(this, [uc, iModel, iatom, info[7]]));
+}}if (info == null ) return nullRet;
+if (nth < 0 && op <= 0  && (type == 1275068418 || info.length > 0 && Clazz.instanceOf(info[0], Clazz.array(java.lang.Object, -1))  ) ) {
+var lst=Clazz.new_($I$(17,1));
+for (var i=0; i < info.length; i++) lst.addLast$O(C$.getInfo$OA$I(info[i], type));
+
+return lst;
+}return C$.getInfo$OA$I(info, type);
 }, p$1);
 
 Clazz.newMeth(C$, 'getAtom$org_jmol_symmetry_Symmetry$I$I$javajs_util_T3', function (uc, iModel, iAtom, sympt) {
 var bsElement=null;
-if (iAtom >= 0) this.modelSet.getAtomBitsMDa$I$O$javajs_util_BS(1094715402, Integer.valueOf$I(this.modelSet.at[iAtom].getElementNumber$()), bsElement=Clazz.new_($I$(1)));
-var bsResult=Clazz.new_($I$(1));
+if (iAtom >= 0) this.modelSet.getAtomBitsMDa$I$O$javajs_util_BS(1094715402, Integer.valueOf$I(this.modelSet.at[iAtom].getElementNumber$()), bsElement=Clazz.new_($I$(1,1)));
+var bsResult=Clazz.new_($I$(1,1));
 this.modelSet.getAtomsWithin$F$javajs_util_T3$javajs_util_BS$I(0.02, sympt, bsResult, iModel);
 if (bsElement != null ) bsResult.and$javajs_util_BS(bsElement);
 if (bsResult.isEmpty$()) {
@@ -645,30 +683,42 @@ if (bsElement != null ) bsResult.and$javajs_util_BS(bsElement);
 }return bsResult;
 }, p$1);
 
-Clazz.newMeth(C$, 'getSymopInfoForPoints$org_jmol_symmetry_Symmetry$I$I$javajs_util_P3$javajs_util_P3$S$S$F$I$Z', function (sym, modelIndex, symOp, pt1, pt2, drawID, stype, scaleFactor, nth, asString) {
-var strOperations="";
-var infolist;
+Clazz.newMeth(C$, 'getSymopInfoForPoints$org_jmol_symmetry_Symmetry$I$I$javajs_util_P3$javajs_util_P3$S$S$F$I$Z$I', function (sym, modelIndex, symOp, pt1, pt2, drawID, stype, scaleFactor, nth, asString, options) {
 var ret=(asString ? "" : null);
-var sginfo=this.getSpaceGroupInfo$org_jmol_symmetry_Symmetry$I$S$I$javajs_util_P3$javajs_util_P3$S$F$I$Z$Z(sym, modelIndex, null, symOp, pt1, pt2, drawID, scaleFactor, nth, false, true);
+var sginfo=this.getSpaceGroupInfo$org_jmol_symmetry_Symmetry$I$S$I$javajs_util_P3$javajs_util_P3$S$F$I$Z$Z$I$org_jmol_api_SymmetryInterface(sym, modelIndex, null, symOp, pt1, pt2, drawID, scaleFactor, nth, false, true, options, null);
 if (sginfo == null ) return ret;
-strOperations=sginfo.get$O("symmetryInfo");
-infolist=sginfo.get$O("operations");
+var infolist=sginfo.get$O("operations");
 if (infolist == null ) return ret;
-var sb=Clazz.new_($I$(11));
+var sb=(asString ? Clazz.new_($I$(11,1)) : null);
 symOp--;
+var isAll=(!asString && symOp < 0 );
+var strOperations=sginfo.get$O("symmetryInfo");
 var labelOnly="label".equals$O(stype);
+var n=0;
 for (var i=0; i < infolist.length; i++) {
 if (infolist[i] == null  || symOp >= 0 && symOp != i  ) continue;
-if (!asString) return infolist[i];
-if (drawID != null ) return (infolist[i][3]) + "\nprint " + $I$(5).esc$S(strOperations) ;
+if (!asString) {
+if (!isAll) return infolist[i];
+infolist[n++]=infolist[i];
+continue;
+}if (drawID != null ) return (infolist[i][3]) + "\nprint " + $I$(5).esc$S(strOperations) ;
 if (sb.length$() > 0) sb.appendC$C("\n");
 if (!labelOnly) {
 if (symOp < 0) sb.appendI$I(i + 1).appendC$C("\t");
 sb.append$S(infolist[i][0]).appendC$C("\t");
 }sb.append$S(infolist[i][2]);
 }
-if (sb.length$() == 0) return (drawID != null  ? "draw " + drawID + "* delete"  : ret);
+if (!asString) {
+var a=Clazz.array(java.lang.Object, [n]);
+for (var i=0; i < n; i++) a[i]=infolist[i];
+
+return a;
+}if (sb.length$() == 0) return (drawID != null  ? "draw " + drawID + "* delete"  : ret);
 return sb.toString();
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.keys=Clazz.array(String, -1, ["xyz", "xyzOriginal", "label", null, "fractionalTranslation", "cartesianTranslation", "inversionCenter", null, "axisVector", "rotationAngle", "matrix", "unitTranslation", "centeringVector", "timeReversal", "plane", "_type", "id"]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

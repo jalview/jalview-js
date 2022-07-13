@@ -1,28 +1,24 @@
-(function(){var P$=Clazz.newPackage("sun.swing.table"),I$=[[0,'sun.swing.DefaultLookup','javax.swing.SortOrder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultTableCellHeaderRenderer", null, 'javax.swing.table.DefaultTableCellRenderer', 'javax.swing.plaf.UIResource');
+(function(){var P$=Clazz.newPackage("sun.swing.table"),I$=[[0,'sun.swing.DefaultLookup','javax.swing.SortOrder','javax.swing.border.EmptyBorder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultTableCellHeaderRenderer", null, 'javax.swing.table.DefaultTableCellRenderer', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.horizontalTextPositionSet=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['Z',['horizontalTextPositionSet']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 this.setHorizontalAlignment$I(0);
 }, 1);
 
-Clazz.newMeth(C$, 'setHorizontalTextPosition$I', function (textPosition) {
+Clazz.newMeth(C$, 'setHorizontalTextPosition$I',  function (textPosition) {
 this.horizontalTextPositionSet=true;
 C$.superclazz.prototype.setHorizontalTextPosition$I.apply(this, [textPosition]);
 });
 
-Clazz.newMeth(C$, ['getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I','getTableCellRendererComponent$'], function (table, value, isSelected, hasFocus, row, column) {
+Clazz.newMeth(C$, 'getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I',  function (table, value, isSelected, hasFocus, row, column) {
 var sortIcon=null;
 var isPaintingForPrint=false;
 if (table != null ) {
@@ -59,16 +55,11 @@ break;
 }
 }}}this.setText$S(value == null  ? "" : value.toString());
 this.setIcon$javax_swing_Icon(sortIcon);
-var border=null;
-if (hasFocus) {
-border=$I$(1).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.focusCellBorder");
-}if (border == null ) {
-border=$I$(1).getBorder$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this, this.ui, "TableHeader.cellBorder");
-}this.setBorder$javax_swing_border_Border(border);
+this.setBorder$javax_swing_border_Border(Clazz.new_($I$(3,1).c$$I$I$I$I,[8, 5, 7, 5]));
 return this;
 });
 
-Clazz.newMeth(C$, 'getColumnSortOrder$javax_swing_JTable$I', function (table, column) {
+Clazz.newMeth(C$, 'getColumnSortOrder$javax_swing_JTable$I',  function (table, column) {
 var rv=null;
 if (table == null  || table.getRowSorter$() == null  ) {
 return rv;
@@ -77,8 +68,5 @@ if (sortKeys.size$() > 0 && sortKeys.get$I(0).getColumn$() == table.convertColum
 rv=sortKeys.get$I(0).getSortOrder$();
 }return rv;
 }, 1);
-
-Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
-});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:40 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:09 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

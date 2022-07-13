@@ -1,41 +1,33 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FlowLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FlowLayout", null, null, ['java.awt.LayoutManager', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.align=0;
-this.newAlign=0;
-this.hgap=0;
-this.vgap=0;
-this.alignOnBaseline=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['Z',['alignOnBaseline'],'I',['align','newAlign','hgap','vgap']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$I$I$I.apply(this, [1, 5, 5]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (align) {
+Clazz.newMeth(C$, 'c$$I',  function (align) {
 C$.c$$I$I$I.apply(this, [align, 5, 5]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I$I', function (align, hgap, vgap) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I$I$I',  function (align, hgap, vgap) {
+;C$.$init$.apply(this);
 this.hgap=hgap;
 this.vgap=vgap;
 this.setAlignment$I(align);
 }, 1);
 
-Clazz.newMeth(C$, 'getAlignment$', function () {
+Clazz.newMeth(C$, 'getAlignment$',  function () {
 return this.newAlign;
 });
 
-Clazz.newMeth(C$, 'setAlignment$I', function (align) {
+Clazz.newMeth(C$, 'setAlignment$I',  function (align) {
 this.newAlign=align;
 switch (align) {
 case 3:
@@ -50,40 +42,40 @@ break;
 }
 });
 
-Clazz.newMeth(C$, 'getHgap$', function () {
+Clazz.newMeth(C$, 'getHgap$',  function () {
 return this.hgap;
 });
 
-Clazz.newMeth(C$, 'setHgap$I', function (hgap) {
+Clazz.newMeth(C$, 'setHgap$I',  function (hgap) {
 this.hgap=hgap;
 });
 
-Clazz.newMeth(C$, 'getVgap$', function () {
+Clazz.newMeth(C$, 'getVgap$',  function () {
 return this.vgap;
 });
 
-Clazz.newMeth(C$, 'setVgap$I', function (vgap) {
+Clazz.newMeth(C$, 'setVgap$I',  function (vgap) {
 this.vgap=vgap;
 });
 
-Clazz.newMeth(C$, 'setAlignOnBaseline$Z', function (alignOnBaseline) {
+Clazz.newMeth(C$, 'setAlignOnBaseline$Z',  function (alignOnBaseline) {
 this.alignOnBaseline=alignOnBaseline;
 });
 
-Clazz.newMeth(C$, 'getAlignOnBaseline$', function () {
+Clazz.newMeth(C$, 'getAlignOnBaseline$',  function () {
 return this.alignOnBaseline;
 });
 
-Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
+Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component',  function (name, comp) {
 });
 
-Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component',  function (comp) {
 });
 
-Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container',  function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var nmembers=target.getComponentCount$();
 var firstVisibleComponent=true;
 var useBaseline=this.getAlignOnBaseline$();
@@ -113,11 +105,11 @@ dim.height+=insets.top + insets.bottom + this.vgap * 2 ;
 return dim;
 }});
 
-Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container',  function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
 var useBaseline=this.getAlignOnBaseline$();
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var nmembers=target.getComponentCount$();
 var maxAscent=0;
 var maxDescent=0;
@@ -146,7 +138,7 @@ dim.height+=insets.top + insets.bottom + this.vgap * 2 ;
 return dim;
 }});
 
-Clazz.newMeth(C$, 'moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA', function (target, x, y, width, height, rowStart, rowEnd, ltr, useBaseline, ascent, descent) {
+Clazz.newMeth(C$, 'moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA',  function (target, x, y, width, height, rowStart, rowEnd, ltr, useBaseline, ascent, descent) {
 switch (this.newAlign) {
 case 0:
 x+=ltr ? 0 : width;
@@ -196,7 +188,7 @@ m.setLocation$I$I(target.width - x - m.width , cy);
 return height;
 }, p$1);
 
-Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'layoutContainer$java_awt_Container',  function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
 var insets=target.getInsets$();
@@ -240,7 +232,7 @@ start=i;
 p$1.moveComponents$java_awt_Container$I$I$I$I$I$I$Z$Z$IA$IA.apply(this, [target, insets.left + this.hgap, y, maxwidth - x, rowh, start, nmembers, ltr, useBaseline, ascent, descent]);
 }});
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 var str="";
 switch (this.align) {
 case 0:
@@ -262,4 +254,4 @@ break;
 return this.getClass$().getName$() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + str + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

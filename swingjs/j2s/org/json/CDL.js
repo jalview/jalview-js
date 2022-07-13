@@ -1,13 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuffer','org.json.JSONArray','StringBuilder','org.json.JSONTokener']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CDL");
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuffer','org.json.JSONArray','StringBuilder','org.json.JSONTokener']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CDL");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getValue$org_json_JSONTokener', function (x) {
+Clazz.newMeth(C$, 'getValue$org_json_JSONTokener',  function (x) {
 var c;
 var q;
 var sb;
@@ -20,7 +19,7 @@ return null;
 case 34:
 case 39:
 q=c;
-sb=Clazz.new_($I$(1));
+sb=Clazz.new_($I$(1,1));
 for (; ; ) {
 c=x.next$();
 if (c == q) {
@@ -43,8 +42,8 @@ return x.nextTo$C(",");
 }
 }, 1);
 
-Clazz.newMeth(C$, 'rowToJSONArray$org_json_JSONTokener', function (x) {
-var ja=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'rowToJSONArray$org_json_JSONTokener',  function (x) {
+var ja=Clazz.new_($I$(2,1));
 for (; ; ) {
 var value=C$.getValue$org_json_JSONTokener(x);
 var c=x.next$();
@@ -63,13 +62,13 @@ return ja;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'rowToJSONObject$org_json_JSONArray$org_json_JSONTokener', function (names, x) {
+Clazz.newMeth(C$, 'rowToJSONObject$org_json_JSONArray$org_json_JSONTokener',  function (names, x) {
 var ja=C$.rowToJSONArray$org_json_JSONTokener(x);
 return ja != null  ? ja.toJSONObject$org_json_JSONArray(names) : null;
 }, 1);
 
-Clazz.newMeth(C$, 'rowToString$org_json_JSONArray', function (ja) {
-var sb=Clazz.new_($I$(3));
+Clazz.newMeth(C$, 'rowToString$org_json_JSONArray',  function (ja) {
+var sb=Clazz.new_($I$(3,1));
 for (var i=0; i < ja.length$(); i+=1) {
 if (i > 0) {
 sb.append$C(",");
@@ -92,22 +91,22 @@ sb.append$C("\n");
 return sb.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONArray$S', function (string) {
-return C$.toJSONArray$org_json_JSONTokener(Clazz.new_($I$(4).c$$S,[string]));
+Clazz.newMeth(C$, 'toJSONArray$S',  function (string) {
+return C$.toJSONArray$org_json_JSONTokener(Clazz.new_($I$(4,1).c$$S,[string]));
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONArray$org_json_JSONTokener', function (x) {
+Clazz.newMeth(C$, 'toJSONArray$org_json_JSONTokener',  function (x) {
 return C$.toJSONArray$org_json_JSONArray$org_json_JSONTokener(C$.rowToJSONArray$org_json_JSONTokener(x), x);
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONArray$org_json_JSONArray$S', function (names, string) {
-return C$.toJSONArray$org_json_JSONArray$org_json_JSONTokener(names, Clazz.new_($I$(4).c$$S,[string]));
+Clazz.newMeth(C$, 'toJSONArray$org_json_JSONArray$S',  function (names, string) {
+return C$.toJSONArray$org_json_JSONArray$org_json_JSONTokener(names, Clazz.new_($I$(4,1).c$$S,[string]));
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONArray$org_json_JSONArray$org_json_JSONTokener', function (names, x) {
+Clazz.newMeth(C$, 'toJSONArray$org_json_JSONArray$org_json_JSONTokener',  function (names, x) {
 if (names == null  || names.length$() == 0 ) {
 return null;
-}var ja=Clazz.new_($I$(2));
+}var ja=Clazz.new_($I$(2,1));
 for (; ; ) {
 var jo=C$.rowToJSONObject$org_json_JSONArray$org_json_JSONTokener(names, x);
 if (jo == null ) {
@@ -119,7 +118,7 @@ return null;
 }return ja;
 }, 1);
 
-Clazz.newMeth(C$, 'toString$org_json_JSONArray', function (ja) {
+Clazz.newMeth(C$, 'toString$org_json_JSONArray',  function (ja) {
 var jo=ja.optJSONObject$I(0);
 if (jo != null ) {
 var names=jo.names$();
@@ -128,10 +127,10 @@ return C$.rowToString$org_json_JSONArray(names) + C$.toString$org_json_JSONArray
 }}return null;
 }, 1);
 
-Clazz.newMeth(C$, 'toString$org_json_JSONArray$org_json_JSONArray', function (names, ja) {
+Clazz.newMeth(C$, 'toString$org_json_JSONArray$org_json_JSONArray',  function (names, ja) {
 if (names == null  || names.length$() == 0 ) {
 return null;
-}var sb=Clazz.new_($I$(1));
+}var sb=Clazz.new_($I$(1,1));
 for (var i=0; i < ja.length$(); i+=1) {
 var jo=ja.optJSONObject$I(i);
 if (jo != null ) {
@@ -142,4 +141,4 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

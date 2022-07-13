@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuilder','org.json.JSONObject','org.json.JSONTokener','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Cookie");
+(function(){var P$=Clazz.newPackage("org.json"),I$=[[0,'StringBuilder','org.json.JSONObject','org.json.JSONTokener']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Cookie");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'escape$S', function (string) {
+Clazz.newMeth(C$, 'escape$S',  function (string) {
 var c;
 var s=string.trim$();
 var length=s.length$();
-var sb=Clazz.new_($I$(1).c$$I,[length]);
+var sb=Clazz.new_($I$(1,1).c$$I,[length]);
 for (var i=0; i < length; i+=1) {
 c=s.charAt$I(i);
 if (c < " " || c == "+"  || c == "%"  || c == "="  || c == ";" ) {
@@ -24,11 +23,11 @@ sb.append$C(c);
 return sb.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONObject$S', function (string) {
+Clazz.newMeth(C$, 'toJSONObject$S',  function (string) {
 var name;
-var jo=Clazz.new_($I$(2));
+var jo=Clazz.new_($I$(2,1));
 var value;
-var x=Clazz.new_($I$(3).c$$S,[string]);
+var x=Clazz.new_($I$(3,1).c$$S,[string]);
 jo.put$S$O("name", x.nextTo$C("="));
 x.next$C("=");
 jo.put$S$O("value", x.nextTo$C(";"));
@@ -37,7 +36,7 @@ while (x.more$()){
 name=C$.unescape$S(x.nextTo$S("=;"));
 if (x.next$() != "=") {
 if (name.equals$O("secure")) {
-value=$I$(4).TRUE;
+value=Boolean.TRUE;
 } else {
 throw x.syntaxError$S("Missing \'=\' in cookie parameter.");
 }} else {
@@ -48,8 +47,8 @@ x.next$();
 return jo;
 }, 1);
 
-Clazz.newMeth(C$, 'toString$org_json_JSONObject', function (jo) {
-var sb=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'toString$org_json_JSONObject',  function (jo) {
+var sb=Clazz.new_($I$(1,1));
 sb.append$S(C$.escape$S(jo.getString$S("name")));
 sb.append$S("=");
 sb.append$S(C$.escape$S(jo.getString$S("value")));
@@ -67,16 +66,16 @@ sb.append$S(";secure");
 }return sb.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'unescape$S', function (string) {
+Clazz.newMeth(C$, 'unescape$S',  function (string) {
 var length=string.length$();
-var sb=Clazz.new_($I$(1).c$$I,[length]);
+var sb=Clazz.new_($I$(1,1).c$$I,[length]);
 for (var i=0; i < length; ++i) {
 var c=string.charAt$I(i);
 if (c == "+") {
 c=" ";
 } else if (c == "%" && i + 2 < length ) {
-var d=$I$(3).dehexchar$C(string.charAt$I(i + 1));
-var e=$I$(3).dehexchar$C(string.charAt$I(i + 2));
+var d=$I$(3,"dehexchar$C",[string.charAt$I(i + 1)]);
+var e=$I$(3,"dehexchar$C",[string.charAt$I(i + 2)]);
 if (d >= 0 && e >= 0 ) {
 c=String.fromCharCode((d * 16 + e));
 i+=2;
@@ -87,4 +86,4 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

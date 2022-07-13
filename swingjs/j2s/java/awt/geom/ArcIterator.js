@@ -1,29 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[];
-var C$=Clazz.newClass(P$, "ArcIterator", null, null, 'java.awt.geom.PathIterator');
+/*c*/var C$=Clazz.newClass(P$, "ArcIterator", null, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.w=0;
-this.h=0;
-this.angStRad=0;
-this.increment=0;
-this.cv=0;
-this.affine=null;
-this.index=0;
-this.arcSegs=0;
-this.lineSegs=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_geom_Arc2D$java_awt_geom_AffineTransform', function (a, at) {
-C$.$init$.apply(this);
+C$.$fields$=[['D',['x','y','w','h','angStRad','increment','cv'],'I',['index','arcSegs','lineSegs'],'O',['affine','java.awt.geom.AffineTransform']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_geom_Arc2D$java_awt_geom_AffineTransform',  function (a, at) {
+;C$.$init$.apply(this);
 this.w=a.getWidth$() / 2;
 this.h=a.getHeight$() / 2;
 this.x=a.getX$() + this.w;
@@ -59,24 +45,24 @@ if (this.w < 0  || this.h < 0  ) {
 this.arcSegs=this.lineSegs=-1;
 }}, 1);
 
-Clazz.newMeth(C$, 'getWindingRule$', function () {
+Clazz.newMeth(C$, 'getWindingRule$',  function () {
 return 1;
 });
 
-Clazz.newMeth(C$, 'isDone$', function () {
+Clazz.newMeth(C$, 'isDone$',  function () {
 return this.index > this.arcSegs + this.lineSegs;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
-this.index++;
+Clazz.newMeth(C$, 'next$',  function () {
+++this.index;
 });
 
-Clazz.newMeth(C$, 'btan$D', function (increment) {
-increment /= 2.0;
+Clazz.newMeth(C$, 'btan$D',  function (increment) {
+increment/=2.0;
 return 1.3333333333333333 * Math.sin(increment) / (1.0 + Math.cos(increment));
 }, 1);
 
-Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
+Clazz.newMeth(C$, 'currentSegment$FA',  function (coords) {
 if (this.isDone$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["arc iterator out of bounds"]);
 }var angle=this.angStRad;
@@ -94,12 +80,12 @@ coords[1]=this.y;
 if (this.affine != null ) {
 this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 1);
 }return 1;
-}angle += this.increment * (this.index - 1);
+}angle+=this.increment * (this.index - 1);
 var relx=Math.cos(angle);
 var rely=Math.sin(angle);
 coords[0]=(this.x + (relx - this.cv * rely) * this.w);
 coords[1]=(this.y + (rely + this.cv * relx) * this.h);
-angle += this.increment;
+angle+=this.increment;
 relx=Math.cos(angle);
 rely=Math.sin(angle);
 coords[2]=(this.x + (relx + this.cv * rely) * this.w);
@@ -111,7 +97,7 @@ this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 3);
 }return 3;
 });
 
-Clazz.newMeth(C$, 'currentSegment$DA', function (coords) {
+Clazz.newMeth(C$, 'currentSegment$DA',  function (coords) {
 if (this.isDone$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["arc iterator out of bounds"]);
 }var angle=this.angStRad;
@@ -129,12 +115,12 @@ coords[1]=this.y;
 if (this.affine != null ) {
 this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 1);
 }return 1;
-}angle += this.increment * (this.index - 1);
+}angle+=this.increment * (this.index - 1);
 var relx=Math.cos(angle);
 var rely=Math.sin(angle);
 coords[0]=this.x + (relx - this.cv * rely) * this.w;
 coords[1]=this.y + (rely + this.cv * relx) * this.h;
-angle += this.increment;
+angle+=this.increment;
 relx=Math.cos(angle);
 rely=Math.sin(angle);
 coords[2]=this.x + (relx + this.cv * rely) * this.w;
@@ -148,4 +134,4 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 3);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:52 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

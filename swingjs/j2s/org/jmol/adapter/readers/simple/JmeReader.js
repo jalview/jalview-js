@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.adapter.smarter.Bond']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JmeReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.simple"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.adapter.smarter.Bond']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JmeReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.asc.setCollectionName$S("JME");
@@ -57,10 +56,10 @@ case -2:
 order=1041;
 break;
 }
-this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(2).c$$I$I$I,[atomIndex1, atomIndex2, order]));
+this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(2,1).c$$I$I$I,[atomIndex1, atomIndex2, order]));
 }
 }, p$1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:26 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

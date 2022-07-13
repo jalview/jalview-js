@@ -1,27 +1,23 @@
 (function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[];
-var C$=Clazz.newClass(P$, "BackMatch", null, 'com.stevesoft.pat.Pattern');
+/*c*/var C$=Clazz.newClass(P$, "BackMatch", null, 'com.stevesoft.pat.Pattern');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I', function (id) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['I',['id']]]
+
+Clazz.newMeth(C$, 'c$$I',  function (id) {
+Clazz.super_(C$, this);
 this.id=id;
 }, 1);
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return "\\" + (this.id) + this.nextString$() ;
 });
 
-Clazz.newMeth(C$, 'matchInternal$I$com_stevesoft_pat_Pthings', function (pos, p) {
+Clazz.newMeth(C$, 'matchInternal$I$com_stevesoft_pat_Pthings',  function (pos, p) {
 var i1=p.marks[this.id];
 var i2=p.marks[this.id + p.nMarks];
 var imax=i2 - i1;
@@ -37,10 +33,10 @@ return -1;
 return this.nextMatch$I$com_stevesoft_pat_Pthings(pos + imax, p);
 });
 
-Clazz.newMeth(C$, 'clone1$java_util_Hashtable', function (h) {
+Clazz.newMeth(C$, 'clone1$java_util_Hashtable',  function (h) {
 return Clazz.new_(C$.c$$I,[this.id]);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:23 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

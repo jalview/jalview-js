@@ -1,62 +1,48 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'javajs.util.P3','javajs.util.V3','Boolean','org.jmol.viewer.JC']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Axes", null, 'org.jmol.shape.FontLineShape');
+(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'javajs.util.P3','javajs.util.V3','org.jmol.viewer.JC']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Axes", null, 'org.jmol.shape.FontLineShape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.axisXY=null;
-this.scale=0;
-this.fixedOrigin=null;
-this.originPoint=null;
-this.axisPoints=null;
-this.labels=null;
-this.axisType=null;
-this.pt0=null;
-this.fixedOriginUC=null;
-this.ptTemp=null;
-this.corner=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.axisXY=Clazz.new_($I$(1));
-this.originPoint=Clazz.new_($I$(1));
+this.axisXY=Clazz.new_($I$(1,1));
+this.originPoint=Clazz.new_($I$(1,1));
 this.axisPoints=Clazz.array($I$(1), [6]);
 {
-for (var i=6; --i >= 0; ) this.axisPoints[i]=Clazz.new_($I$(1));
+for (var i=6; --i >= 0; ) this.axisPoints[i]=Clazz.new_($I$(1,1));
 
 }
-this.pt0=Clazz.new_($I$(1));
-this.fixedOriginUC=Clazz.new_($I$(1));
-this.ptTemp=Clazz.new_($I$(1));
-this.corner=Clazz.new_($I$(2));
-}, 1);
+this.pt0=Clazz.new_($I$(1,1));
+this.fixedOriginUC=Clazz.new_($I$(1,1));
+this.ptTemp=Clazz.new_($I$(1,1));
+this.corner=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['F',['scale'],'S',['axisType'],'O',['axisXY','javajs.util.P3','+fixedOrigin','+originPoint','axisPoints','javajs.util.P3[]','labels','String[]','pt0','javajs.util.P3','+fixedOriginUC','+ptTemp','corner','javajs.util.V3']]]
 
 Clazz.newMeth(C$, 'setProperty$S$O$javajs_util_BS', function (propertyName, value, bs) {
-if ("position" == propertyName) {
+if ("position" === propertyName ) {
 var doSetScale=(this.axisXY.z == 0  && (value).z != 0  );
 this.axisXY=value;
 this.setScale$F(doSetScale ? 1 : this.scale);
 return;
-}if ("origin" == propertyName) {
+}if ("origin" === propertyName ) {
 if (value == null  || (value).length$() == 0  ) {
 this.fixedOrigin=null;
 } else {
-if (this.fixedOrigin == null ) this.fixedOrigin=Clazz.new_($I$(1));
+if (this.fixedOrigin == null ) this.fixedOrigin=Clazz.new_($I$(1,1));
 this.fixedOrigin.setT$javajs_util_T3(value);
 }this.reinitShape$();
 return;
-}if ("labels" == propertyName) {
+}if ("labels" === propertyName ) {
 this.labels=value;
 return;
-}if ("labelsOn" == propertyName) {
+}if ("labelsOn" === propertyName ) {
 this.labels=null;
 return;
-}if ("labelsOff" == propertyName) {
+}if ("labelsOff" === propertyName ) {
 this.labels=Clazz.array(String, -1, ["", "", ""]);
 return;
-}if ("type" == propertyName) {
+}if ("type" === propertyName ) {
 this.axisType=value;
 if (this.axisType.equals$O("abc")) this.axisType=null;
 }this.setPropFLS$S$O(propertyName, value);
@@ -65,7 +51,7 @@ if (this.axisType.equals$O("abc")) this.axisType=null;
 Clazz.newMeth(C$, 'initShape$', function () {
 this.translucentAllowed=false;
 this.myType="axes";
-this.font3d=this.vwr.gdata.getFont3D$F(14);
+this.font3d=this.vwr.gdata.getFont3D$F(16);
 var axesMode=this.vwr.g.axesMode;
 if (axesMode == 603979808 && this.ms.unitCells != null  ) {
 var unitcell=this.vwr.getCurrentUnitCell$();
@@ -102,8 +88,8 @@ return this.ptTemp;
 });
 
 Clazz.newMeth(C$, 'getProperty$S$I', function (property, index) {
-if (property == "origin") return this.fixedOrigin;
-if (property == "axesTypeXY") return (this.axisXY.z == 0  ? $I$(3).FALSE : $I$(3).TRUE);
+if (property === "origin" ) return this.fixedOrigin;
+if (property === "axesTypeXY" ) return (this.axisXY.z == 0  ? Boolean.FALSE : Boolean.TRUE);
 return null;
 });
 
@@ -112,7 +98,7 @@ this.scale=scale;
 this.corner.setT$javajs_util_T3(this.vwr.getBoundBoxCornerVector$());
 for (var i=6; --i >= 0; ) {
 var axisPoint=this.axisPoints[i];
-axisPoint.setT$javajs_util_T3($I$(4).unitAxisVectors[i]);
+axisPoint.setT$javajs_util_T3($I$(3).unitAxisVectors[i]);
 if (this.corner.x < 1.5 ) this.corner.x=1.5;
 if (this.corner.y < 1.5 ) this.corner.y=1.5;
 if (this.corner.z < 1.5 ) this.corner.z=1.5;
@@ -126,4 +112,4 @@ axisPoint.z *= this.corner.z * scale;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

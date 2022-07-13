@@ -1,63 +1,51 @@
-(function(){var P$=java.io,p$1={},I$=[[0,'java.io.File','java.io.FileDescriptor','javajs.util.OC','java.io.ByteArrayOutputStream',['swingjs.JSFileSystem','.JSFileChannel']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileOutputStream", null, 'java.io.OutputStream');
+(function(){var P$=java.io,p$1={},I$=[[0,'java.io.File','java.io.FileDescriptor','java.io.ByteArrayOutputStream','swingjs.JSUtil',['swingjs.JSFileSystem','.JSFileChannel']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FileOutputStream", null, 'java.io.OutputStream');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fd=null;
-this.append=false;
-this.out=null;
-this.channel=null;
-this.path=null;
-this.closeLock=null;
-this.closed=false;
-this._file=null;
-this._bytes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.closeLock= Clazz.new_();
 this.closed=false;
-}, 1);
+this.bos=null;
+},1);
 
-Clazz.newMeth(C$, '_getFile$', function () {
+C$.$fields$=[['Z',['append','closed'],'S',['path'],'O',['fd','java.io.FileDescriptor','channel','swingjs.JSFileSystem.JSFileChannel','closeLock','java.lang.Object','_file','java.io.File','秘bytes','byte[]','bos','java.io.ByteArrayOutputStream']]]
+
+Clazz.newMeth(C$, '_getFile$',  function () {
 return this._file;
 });
 
-Clazz.newMeth(C$, '_getBytes$', function () {
-return this._bytes;
+Clazz.newMeth(C$, '_getBytes$',  function () {
+return this.秘bytes;
 });
 
-Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.c$$java_io_File$Z.apply(this, [name != null  ? Clazz.new_($I$(1).c$$S,[name]) : null, false]);
+Clazz.newMeth(C$, 'c$$S',  function (name) {
+C$.c$$S$Z.apply(this, [name, false]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$Z', function (name, append) {
-C$.c$$java_io_File$Z.apply(this, [name != null  ? Clazz.new_($I$(1).c$$S,[name]) : null, append]);
+Clazz.newMeth(C$, 'c$$S$Z',  function (name, append) {
+C$.c$$java_io_File$Z.apply(this, [name == null  ? null : Clazz.new_($I$(1,1).c$$S,[name]), append]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_File', function (file) {
+Clazz.newMeth(C$, 'c$$java_io_File',  function (file) {
 C$.c$$java_io_File$Z.apply(this, [file, false]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_File$Z', function (file, append) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$java_io_File$Z',  function (file, append) {
+Clazz.super_(C$, this);
 this._file=file;
 var name=(file != null  ? file.getPath$() : null);
 if (name == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
-}this.fd=Clazz.new_($I$(2));
+}this.fd=Clazz.new_($I$(2,1));
 this.fd.attach$java_io_Closeable(this);
 this.append=append;
 this.path=name;
 p$1.open$S$Z.apply(this, [name, append]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_FileDescriptor', function (fdObj) {
-Clazz.super_(C$, this,1);
-var security=System.getSecurityManager$();
+Clazz.newMeth(C$, 'c$$java_io_FileDescriptor',  function (fdObj) {
+Clazz.super_(C$, this);
 if (fdObj == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.fd=fdObj;
@@ -66,76 +54,79 @@ this.path=null;
 this.fd.attach$java_io_Closeable(this);
 }, 1);
 
-Clazz.newMeth(C$, 'open0$S$Z', function (name, append) {
-this.out=Clazz.new_($I$(3));
-var bos=null;
-if (append && this._file != null   && this._file._bytes != null  ) {
-bos=Clazz.new_($I$(4));
-bos.write$BA$I$I(this._file._bytes, 0, this._file._bytes.length);
-}this.out.setParams$javajs_api_BytePoster$S$Z$java_io_OutputStream(null, name, false, bos);
-this.out.setTemp$Z(this._file != null  && Clazz.instanceOf(this._file, "swingjs.JSTempFile") );
-}, p$1);
+Clazz.newMeth(C$, 'open0$S$Z',  function (name, append) {
+this.bos=Clazz.new_($I$(3,1));
+if (append && this._file != null   && this._file.秘bytes != null  ) {
+this.bos.write$BA$I$I(this._file.秘bytes, 0, this._file.秘bytes.length);
+}}, p$1);
 
-Clazz.newMeth(C$, 'open$S$Z', function (name, append) {
+Clazz.newMeth(C$, 'open$S$Z',  function (name, append) {
 p$1.open0$S$Z.apply(this, [name, append]);
 }, p$1);
 
-Clazz.newMeth(C$, 'writeBytes$BA$I$I', function (b, off, len) {
-this.out.write$BA$I$I(b, off, len);
-}, p$1);
-
-Clazz.newMeth(C$, 'write$I', function (b) {
-this.out.writeByteAsInt$I(b);
+Clazz.newMeth(C$, 'write$I',  function (b) {
+if (this.channel == null ) this.bos.write$I(b);
+ else this.channel.write$I(b);
 });
 
-Clazz.newMeth(C$, 'write$BA', function (b) {
-p$1.writeBytes$BA$I$I.apply(this, [b, 0, b.length]);
+Clazz.newMeth(C$, '秘setBytes$BA',  function (b) {
+this.bos.buf=b;
+this.bos.count=b.length;
+return true;
 });
 
-Clazz.newMeth(C$, 'write$BA$I$I', function (b, off, len) {
-p$1.writeBytes$BA$I$I.apply(this, [b, off, len]);
+Clazz.newMeth(C$, 'write$BA',  function (b) {
+this.write$BA$I$I(b, 0, b.length);
 });
 
-Clazz.newMeth(C$, 'close$', function () {
-this.out.closeChannel$();
-this._bytes=this.out.toByteArray$();
-if (this._file != null  && this._bytes != null  ) this._file._bytes=this._bytes;
-if (Clazz.instanceOf(this._file, "swingjs.JSTempFile")) (this._file).cacheBytes$();
-{
-if (this.closed) {
-return;
-}this.closed=true;
-}if (this.channel != null ) {
-this.channel.close$();
-}this.fd.closeAll$java_io_Closeable(((P$.FileOutputStream$1||
-(function(){var C$=Clazz.newClass(P$, "FileOutputStream$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.io.Closeable', 1);
+Clazz.newMeth(C$, 'write$BA$I$I',  function (b, off, len) {
+if (this.channel == null ) this.bos.write$BA$I$I(b, off, len);
+ else this.channel.writeBytes$BA$I$I(b, off, len);
+});
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+Clazz.newMeth(C$, 'close$',  function () {
+this.closed=true;
+this.fd.closeAll$java_io_Closeable(((P$.FileOutputStream$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "FileOutputStream$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.io.Closeable', 1);
+
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'close$', function () {
-p$1.close0.apply(this.b$['java.io.FileOutputStream'], []);
-});
+Clazz.newMeth(C$, 'close$',  function () {
+if (this.b$['java.io.FileOutputStream'].channel == null ) {
+this.b$['java.io.FileOutputStream'].bos.close$();
+this.b$['java.io.FileOutputStream'].fd._file.秘bytes=this.b$['java.io.FileOutputStream'].秘bytes=this.b$['java.io.FileOutputStream'].bos.toByteArray$();
+$I$(4).saveFile$S$O$S$S(this.b$['java.io.FileOutputStream'].path, this.b$['java.io.FileOutputStream'].秘bytes, null, null);
+} else {
+this.b$['java.io.FileOutputStream'].channel.close$();
+}});
 })()
-), Clazz.new_(P$.FileOutputStream$1.$init$, [this, null])));
+), Clazz.new_(P$.FileOutputStream$1.$init$,[this, null])));
 });
 
-Clazz.newMeth(C$, 'getFD$', function () {
+Clazz.newMeth(C$, 'getFD$',  function () {
 if (this.fd != null ) {
 return this.fd;
 }throw Clazz.new_(Clazz.load('java.io.IOException'));
 });
 
-Clazz.newMeth(C$, 'getChannel$', function () {
+Clazz.newMeth(C$, 'getChannel$',  function () {
 if (this.channel == null ) {
+try {
 this.channel=$I$(5).open$java_io_FileDescriptor$S$Z$Z$Z$O(this.fd, this.path, false, true, this.append, null);
+} catch (e) {
+if (Clazz.exceptionOf(e,"java.io.IOException")){
+e.printStackTrace$();
+} else {
+throw e;
+}
+}
 }return this.channel;
 });
 
-Clazz.newMeth(C$, 'finalize$', function () {
+Clazz.newMeth(C$, 'finalize$',  function () {
 if (this.fd != null ) {
 if (this.fd === $I$(2).out  || this.fd === $I$(2).err  ) {
 this.flush$();
@@ -143,10 +134,6 @@ this.flush$();
 this.close$();
 }}});
 
-Clazz.newMeth(C$, 'close0', function () {
-this.out.closeChannel$();
-}, p$1);
-
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 17:14:02 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

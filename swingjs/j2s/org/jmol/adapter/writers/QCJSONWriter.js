@@ -1,28 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.writers"),p$1={},I$=[[0,'javajs.util.PT','java.util.Hashtable','java.util.Date','org.qcschema.QCSchemaUnits',['org.jmol.adapter.writers.QCJSONWriter','.SparseArray'],'javajs.util.P3','javajs.util.DF','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "QCJSONWriter", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.writers"),p$1={},I$=[[0,'javajs.util.PT','java.util.Hashtable','org.qcschema.QCSchemaUnits',['org.jmol.adapter.writers.QCJSONWriter','.SparseArray'],'javajs.util.P3','javajs.util.DF']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "QCJSONWriter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.util.JSONWriter');
-C$.integrationKeyMap=null;
+C$.$classes$=[['SparseArray',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.moBases=null;
-this.htBasisMap=null;
-this.filterMOs=false;
-this.vwr=null;
-this.basisID=0;
-this.shells=null;
-this.dfCoefMaps=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.moBases=Clazz.new_($I$(2));
-this.htBasisMap=Clazz.new_($I$(2));
+this.moBases=Clazz.new_($I$(2,1));
+this.htBasisMap=Clazz.new_($I$(2,1));
 this.basisID=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['filterMOs'],'I',['basisID'],'O',['+moBases','+htBasisMap','vwr','org.jmol.viewer.Viewer','shells','javajs.util.Lst','dfCoefMaps','int[][]']]
+,['O',['integrationKeyMap','java.util.Map']]]
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_Viewer$java_io_OutputStream', function (viewer, os) {
 this.vwr=viewer;
@@ -45,7 +36,7 @@ this.closeSchema$();
 
 Clazz.newMeth(C$, 'writeSchemaMetadata$', function () {
 this.mapOpen$();
-this.mapAddKeyValue$S$O$S("__jmol_created", Clazz.new_($I$(3)), ",\n");
+this.mapAddKeyValue$S$O$S("__jmol_created", Clazz.new_(java.util.Date), ",\n");
 this.mapAddKeyValue$S$O$S("__jmol_source", this.vwr.getP$S("_modelFile"), "");
 this.mapClose$();
 });
@@ -55,7 +46,7 @@ this.arrayOpen$Z(false);
 });
 
 Clazz.newMeth(C$, 'writeMagic$', function () {
-this.writeString$S($I$(4).version);
+this.writeString$S($I$(3).version);
 });
 
 Clazz.newMeth(C$, 'closeSchema$', function () {
@@ -148,11 +139,11 @@ this.mapAddMapAllExcept$S$java_util_Map$S("__jmol_info", this.vwr.ms.am[modelInd
 });
 
 Clazz.newMeth(C$, 'writeAtoms$I', function (modelIndex) {
-var symbols=Clazz.new_($I$(5).c$$S, [this, null, "_RLE_"]);
-var numbers=Clazz.new_($I$(5).c$$S, [this, null, "_RLE_"]);
-var charges=Clazz.new_($I$(5).c$$S, [this, null, "_RLE_"]);
-var names=Clazz.new_($I$(5).c$$S, [this, null, "_RLE_"]);
-var types=Clazz.new_($I$(5).c$$S, [this, null, "_RLE_"]);
+var symbols=Clazz.new_($I$(4,1).c$$S,[this, null, "_RLE_"]);
+var numbers=Clazz.new_($I$(4,1).c$$S,[this, null, "_RLE_"]);
+var charges=Clazz.new_($I$(4,1).c$$S,[this, null, "_RLE_"]);
+var names=Clazz.new_($I$(4,1).c$$S,[this, null, "_RLE_"]);
+var types=Clazz.new_($I$(4,1).c$$S,[this, null, "_RLE_"]);
 this.mapAddKey$S("atoms");
 this.mapOpen$();
 {
@@ -169,14 +160,14 @@ this.arrayOpen$Z(true);
 this.oc.append$S("\n");
 var bs=this.vwr.getModelUndeletedAtomsBitSet$I(modelIndex);
 var last=bs.length$() - 1;
-var pt=Clazz.new_($I$(6));
+var pt=Clazz.new_($I$(5,1));
 for (var i=bs.nextSetBit$I(0); i >= 0; i=bs.nextSetBit$I(i + 1)) {
 var a=this.vwr.ms.at[i];
 this.append$S("");
 pt.setT$javajs_util_T3(a);
 if (isFractional) unitCell.toFractional$javajs_util_T3$Z(pt, false);
 this.oc.append$S(p$1.formatNumber$F.apply(this, [pt.x])).append$S(",\t").append$S(p$1.formatNumber$F.apply(this, [pt.y])).append$S(",\t").append$S(p$1.formatNumber$F.apply(this, [pt.z])).append$S(i < last ? ",\n" : "\n");
-symbols.add$S($I$(1).esc$S(a.getElementSymbol$()));
+symbols.add$S($I$(1,"esc$S",[a.getElementSymbol$()]));
 numbers.add$S("" + a.getElementNumber$());
 charges.add$S("" + new Float(a.getPartialCharge$()).toString());
 var name=a.getAtomName$();
@@ -196,11 +187,11 @@ this.mapAddKeyValueRaw$S$O$S("atom_number", numbers, "\n");
 });
 
 Clazz.newMeth(C$, 'formatNumber$F', function (x) {
-return (x < 0  ? "" : " ") + $I$(7).formatDecimal$F$I(x, -6);
+return (x < 0  ? "" : " ") + $I$(6).formatDecimal$F$I(x, -6);
 }, p$1);
 
 Clazz.newMeth(C$, 'writePrefix_Units$S$S', function (prefix, units) {
-this.mapAddKeyValueRaw$S$O$S(prefix + "_units", $I$(4).getUnitsJSON$S$Z(units, false), ",\n");
+this.mapAddKeyValueRaw$S$O$S(prefix + "_units", $I$(3).getUnitsJSON$S$Z(units, false), ",\n");
 }, p$1);
 
 Clazz.newMeth(C$, 'writeBonds$I', function (modelIndex) {
@@ -261,7 +252,7 @@ return modelIndex;
 });
 
 Clazz.newMeth(C$, 'writeMapKeyValueUnits$S$O$S', function (key, value, units) {
-this.mapAddKeyValueRaw$S$O$S(key, "{\"value\":" + value + ",\"units\":" + $I$(4).getUnitsJSON$S$Z(units, false) + "}" , ",\n");
+this.mapAddKeyValueRaw$S$O$S(key, "{\"value\":" + value + ",\"units\":" + $I$(3).getUnitsJSON$S$Z(units, false) + "}" , ",\n");
 }, p$1);
 
 Clazz.newMeth(C$, 'haveMOData$I', function (modelIndex) {
@@ -274,16 +265,16 @@ return this.vwr.ms.am[modelIndex].auxiliaryInfo.get$O(key);
 
 Clazz.newMeth(C$, 'writeMOData$I', function (modelIndex) {
 var moData=p$1.getAuxiliaryData$I$S.apply(this, [modelIndex, "moData"]);
-var moDataJSON=Clazz.new_($I$(2));
-moDataJSON.put$TK$TV("orbitals", moData.get$O("mos"));
+var moDataJSON=Clazz.new_($I$(2,1));
+moDataJSON.put$O$O("orbitals", moData.get$O("mos"));
 var units=moData.get$O("EnergyUnits");
 if (units == null ) units="?";
-moDataJSON.put$TK$TV("orbitals_energy_units", $I$(4).getUnitsJSON$S$Z(units, true));
-moDataJSON.put$TK$TV("__jmol_normalized", $I$(8).valueOf$Z(moData.get$O("isNormalized") === $I$(8).TRUE ));
+moDataJSON.put$O$O("orbitals_energy_units", $I$(3).getUnitsJSON$S$Z(units, true));
+moDataJSON.put$O$O("__jmol_normalized", Boolean.valueOf$Z(moData.get$O("isNormalized") === Boolean.TRUE ));
 var type=moData.get$O("calculationType");
-moDataJSON.put$TK$TV("__jmol_calculation_type", type == null  ? "?" : type);
+moDataJSON.put$O$O("__jmol_calculation_type", type == null  ? "?" : type);
 p$1.setDFCoord$java_util_Map.apply(this, [moData]);
-moDataJSON.put$TK$TV("basis_id", p$1.addBasis$java_util_Map.apply(this, [moData]));
+moDataJSON.put$O$O("basis_id", p$1.addBasis$java_util_Map.apply(this, [moData]));
 this.filterMOs=true;
 this.setModifyKeys$java_util_Map(C$.fixIntegration$());
 this.mapAddKeyValue$S$O$S("molecular_orbitals", moDataJSON, "\n");
@@ -294,8 +285,8 @@ this.append$S("");
 
 Clazz.newMeth(C$, 'fixIntegration$', function () {
 if (C$.integrationKeyMap == null ) {
-C$.integrationKeyMap=Clazz.new_($I$(2));
-C$.integrationKeyMap.put$TK$TV("integration", "__jmol_integration");
+C$.integrationKeyMap=Clazz.new_($I$(2,1));
+C$.integrationKeyMap.put$O$O("integration", "__jmol_integration");
 }return C$.integrationKeyMap;
 }, 1);
 
@@ -348,13 +339,13 @@ hash^=slaters.hashCode$();
 }var strHash="" + hash;
 var key=this.htBasisMap.get$O(strHash);
 if (key == null ) {
-this.htBasisMap.put$TK$TV(strHash, key="MOBASIS_" + ++this.basisID);
-var map=Clazz.new_($I$(2));
-if (gaussians != null ) map.put$TK$TV("gaussians", gaussians);
+this.htBasisMap.put$O$O(strHash, key="MOBASIS_" + ++this.basisID);
+var map=Clazz.new_($I$(2,1));
+if (gaussians != null ) map.put$O$O("gaussians", gaussians);
 if (this.shells != null ) {
-map.put$TK$TV("shells", this.shells);
-}if (slaters != null ) map.put$TK$TV("slaters", slaters);
-this.moBases.put$TK$TV(key, map);
+map.put$O$O("shells", this.shells);
+}if (slaters != null ) map.put$O$O("slaters", slaters);
+this.moBases.put$O$O(key, map);
 }return key;
 }, p$1);
 
@@ -382,32 +373,23 @@ this.oc.append$S(o.toString());
 C$.superclazz.prototype.writeObject$O.apply(this, [o]);
 }});
 ;
-(function(){var C$=Clazz.newClass(P$.QCJSONWriter, "SparseArray", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.QCJSONWriter, "SparseArray", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javajs.util.SB');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.repeatCount=0;
-this.elementCount=0;
-this.lastElement=null;
-this.sep=null;
-this.type=null;
-this.isRLE=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.repeatCount=0;
 this.elementCount=0;
 this.lastElement=null;
 this.sep="";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isRLE'],'I',['repeatCount','elementCount'],'S',['lastElement','sep','type']]]
 
 Clazz.newMeth(C$, 'c$$S', function (type) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.type=type;
 this.isRLE=(type.equals$O("_RLE_"));
 }, 1);
@@ -477,4 +459,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:29 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

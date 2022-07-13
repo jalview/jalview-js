@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),p$1={},I$=[[0,'org.jmol.script.SV','javajs.util.P3','javajs.util.T3','org.jmol.util.SimpleUnitCell','javajs.util.Lst','java.util.Hashtable','javajs.util.AU','javajs.util.CU','javajs.util.SB','javajs.util.V3','org.jmol.util.Escape','javajs.util.M4','org.jmol.util.JmolMolecule','org.jmol.api.Interface','javajs.util.Measure','javajs.util.BS','org.jmol.script.ScriptParam','org.jmol.modelset.BondSet','org.jmol.util.BSUtil','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','org.jmol.util.Parser','org.jmol.script.T','javajs.util.Quat','org.jmol.viewer.JC','javajs.util.PT','org.jmol.util.Logger','org.jmol.viewer.FileManager','org.jmol.viewer.Viewer','java.util.Date','org.jmol.util.Point3fi','javajs.util.P4','java.util.Random','org.jmol.bspt.PointIterator','javajs.util.OC','javajs.util.Rdr','javajs.util.ZipTools','org.jmol.i18n.GT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MathExt");
+(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),p$1={},I$=[[0,'org.jmol.script.SV','javajs.util.P3','javajs.util.T3','org.jmol.util.SimpleUnitCell','javajs.util.Lst','java.util.Hashtable','javajs.util.AU','javajs.util.CU','javajs.util.SB','javajs.util.V3','org.jmol.util.Escape','javajs.util.M4','org.jmol.util.JmolMolecule','org.jmol.api.Interface','javajs.util.Measure','javajs.util.BS','org.jmol.script.ScriptParam','org.jmol.modelset.BondSet','org.jmol.util.BSUtil','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','org.jmol.util.Parser','org.jmol.script.T','javajs.util.Quat','org.jmol.viewer.JC','javajs.util.PT','org.jmol.util.Logger','org.jmol.viewer.FileManager','org.jmol.viewer.Viewer','org.jmol.util.Point3fi','org.jmol.modelset.Measurement','javajs.util.P4','java.util.Random','org.jmol.bspt.PointIterator','javajs.util.OC','javajs.util.Rdr','javajs.util.ZipTools','org.jmol.i18n.GT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MathExt");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.e=null;
-this.rand=null;
-this.pm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['vwr','org.jmol.viewer.Viewer','e','org.jmol.script.ScriptEval','rand','java.util.Random','pm','org.jmol.api.JmolPatternMatcher']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$O', function (se) {
@@ -89,6 +82,7 @@ return p$1.evaluateFormat$org_jmol_script_ScriptMathProcessor$I$org_jmol_script_
 case 134320141:
 return p$1.evaluateUserFunction$org_jmol_script_ScriptMathProcessor$S$org_jmol_script_SVA$I$Z.apply(this, [mp, op.value, args, op.intValue, op.tok == 268435665]);
 case 1275068449:
+case 1275068437:
 case 1275082245:
 case 1275072526:
 return p$1.evaluateGetProperty$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$I$Z.apply(this, [mp, args, tok, op.tok == 268435665]);
@@ -128,6 +122,8 @@ return p$1.evaluateSubstructure$org_jmol_script_ScriptMathProcessor$org_jmol_scr
 case 1275068444:
 case 1275068425:
 return p$1.evaluateSort$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$I.apply(this, [mp, args, tok]);
+case 134217764:
+return p$1.evaluateSpacegroup$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA.apply(this, [mp, args]);
 case 1296041986:
 return p$1.evaluateSymop$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$Z.apply(this, [mp, args, op.tok == 268435665]);
 case 1275068445:
@@ -139,6 +135,21 @@ return p$1.evaluateWrite$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA
 }
 return false;
 });
+
+Clazz.newMeth(C$, 'evaluateSpacegroup$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA', function (mp, args) {
+var unitCell=null;
+switch (args.length) {
+case 0:
+return mp.addXObj$O(this.vwr.getSymTemp$().getSpaceGroupInfo$org_jmol_modelset_ModelSet$S$I$Z$FA(this.vwr.ms, null, this.vwr.am.cmi, true, null));
+case 2:
+unitCell=$I$(1).flistValue$org_jmol_script_T$I(args[1], 0);
+if (unitCell.length < 6) unitCell=null;
+case 1:
+return mp.addXObj$O(this.vwr.getSymTemp$().getSpaceGroupInfo$org_jmol_modelset_ModelSet$S$I$Z$FA(this.vwr.ms, "" + args[0].asString$(), -2147483648, true, unitCell));
+default:
+return false;
+}
+}, p$1);
 
 Clazz.newMeth(C$, 'evaluatePointGroup$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA', function (mp, args) {
 var pts=null;
@@ -165,7 +176,7 @@ var lst=this.vwr.ms.generateCrystalClass$I$javajs_util_P3(iatom, $I$(2).new3$F$F
 pts=Clazz.array($I$(3), [lst.size$()]);
 for (var i=pts.length; --i >= 0; ) pts[i]=lst.get$I(i);
 
-center=Clazz.new_($I$(2));
+center=Clazz.new_($I$(2,1));
 if (args.length == 2) distanceTolerance=0;
 } else {
 center=this.vwr.ms.at[iatom];
@@ -176,7 +187,7 @@ switch (args[0].tok) {
 case 7:
 var points=args[0].getList$();
 pts=Clazz.array($I$(3), [points.size$()]);
-for (var i=pts.length; --i >= 0; ) pts[i]=$I$(1).ptValue$org_jmol_script_SV(points.get$I(i));
+for (var i=pts.length; --i >= 0; ) pts[i]=$I$(1,"ptValue$org_jmol_script_SV",[points.get$I(i)]);
 
 break;
 case 10:
@@ -198,7 +209,7 @@ return mp.addXMap$java_util_Map(pointGroup.getPointGroupInfo$I$S$Z$S$I$F(-1, nul
 }, p$1);
 
 Clazz.newMeth(C$, 'evaluateUnitCell$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$Z', function (mp, args, isSelector) {
-var x1=(isSelector ? $I$(1).getBitSet$org_jmol_script_SV$Z(mp.getX$(), true) : null);
+var x1=(isSelector ? $I$(1,"getBitSet$org_jmol_script_SV$Z",[mp.getX$(), true]) : null);
 var iatom=((x1 == null  ? this.vwr.getAllAtoms$() : x1).nextSetBit$I(0));
 var lastParam=args.length - 1;
 var scale=1;
@@ -220,7 +231,7 @@ case 4:
 var s=args[0].asString$();
 if (s.indexOf$S("a=") == 0) {
 ucnew=Clazz.array($I$(2), [4]);
-for (var i=0; i < 4; i++) ucnew[i]=Clazz.new_($I$(2));
+for (var i=0; i < 4; i++) ucnew[i]=Clazz.new_($I$(2,1));
 
 $I$(4).setOabc$S$FA$javajs_util_T3A(s, null, ucnew);
 } else if (s.indexOf$S(",") >= 0) {
@@ -239,12 +250,12 @@ ucnew=Clazz.array($I$(2), [4]);
 if (haveUC) {
 switch (uc.size$()) {
 case 3:
-ucnew[0]=Clazz.new_($I$(2));
-for (var i=0; i < 3; i++) ucnew[i + 1]=$I$(2).newP$javajs_util_T3($I$(1).ptValue$org_jmol_script_SV(uc.get$I(i)));
+ucnew[0]=Clazz.new_($I$(2,1));
+for (var i=0; i < 3; i++) ucnew[i + 1]=$I$(2,"newP$javajs_util_T3",[$I$(1,"ptValue$org_jmol_script_SV",[uc.get$I(i)])]);
 
 break;
 case 4:
-for (var i=0; i < 4; i++) ucnew[i]=$I$(2).newP$javajs_util_T3($I$(1).ptValue$org_jmol_script_SV(uc.get$I(i)));
+for (var i=0; i < 4; i++) ucnew[i]=$I$(2,"newP$javajs_util_T3",[$I$(1,"ptValue$org_jmol_script_SV",[uc.get$I(i)])]);
 
 break;
 case 6:
@@ -260,13 +271,13 @@ return false;
 ucnew[0]=$I$(1).ptValue$org_jmol_script_SV(args[0]);
 switch (lastParam) {
 case 3:
-for (var i=1; i < 4; i++) (ucnew[i]=$I$(2).newP$javajs_util_T3($I$(1).ptValue$org_jmol_script_SV(args[i]))).sub$javajs_util_T3(ucnew[0]);
+for (var i=1; i < 4; i++) (ucnew[i]=$I$(2,"newP$javajs_util_T3",[$I$(1).ptValue$org_jmol_script_SV(args[i])])).sub$javajs_util_T3(ucnew[0]);
 
 break;
 case 1:
 var l=args[1].getList$();
 if (l != null  && l.size$() == 3 ) {
-for (var i=0; i < 3; i++) ucnew[i + 1]=$I$(1).ptValue$org_jmol_script_SV(l.get$I(i));
+for (var i=0; i < 3; i++) ucnew[i + 1]=$I$(1,"ptValue$org_jmol_script_SV",[l.get$I(i)]);
 
 break;
 }default:
@@ -277,7 +288,7 @@ var toPrimitive="primitive".equalsIgnoreCase$S(op);
 if (toPrimitive || "conventional".equalsIgnoreCase$S(op) ) {
 var stype=(++ptParam > lastParam ? "" : args[ptParam].asString$().toUpperCase$());
 if (stype.equals$O("BCC")) stype="I";
- else if (stype.length$() == 0) stype=this.vwr.getSymTemp$().getSymmetryInfoAtom$org_jmol_modelset_ModelSet$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I(this.vwr.ms, iatom, null, 0, null, null, null, 1073741994, 0, -1);
+ else if (stype.length$() == 0) stype=this.vwr.getSymmetryInfo$I$S$I$javajs_util_P3$javajs_util_P3$I$S$F$I$I(iatom, null, 0, null, null, 1073741994, null, 0, -1, 0);
 if (stype == null  || stype.length$() == 0 ) return false;
 if (u == null ) u=this.vwr.getSymTemp$();
 var m3=this.vwr.getModelForAtomIndex$I(iatom).auxiliaryInfo.get$O("primitiveToCrystal");
@@ -295,7 +306,7 @@ if (isSelector) {
 var x1=mp.getX$();
 switch (args.length == 1 ? x1.tok : 0) {
 case 6:
-var lst=Clazz.new_($I$(5));
+var lst=Clazz.new_($I$(5,1));
 var id=args[0].asString$();
 var map=x1.getMap$();
 var keys=x1.getKeys$Z(false);
@@ -305,12 +316,12 @@ for (var i=0, n=keys.length; i < n; i++) {
 var m=map.get$O(keys[i]);
 var m1=m.getMap$();
 var m2=$I$(1).deepCopy$O$Z$Z(m1, true, false);
-m2.put$TK$TV(id, $I$(1).newS$S(keys[i]));
-lst.addLast$TV($I$(1).newV$I$O(6, m2));
+m2.put$O$O(id, $I$(1).newS$S(keys[i]));
+lst.addLast$O($I$(1).newV$I$O(6, m2));
 }
 return mp.addXList$javajs_util_Lst(lst);
 case 7:
-var map1=Clazz.new_($I$(6));
+var map1=Clazz.new_($I$(6,1));
 var lst1=x1.getList$();
 var id1=args[0].asString$();
 for (var i=0, n=lst1.size$(); i < n; i++) {
@@ -319,9 +330,9 @@ if (m0 == null  || m0.get$O(id1) == null  ) return false;
 }
 for (var i=0, n=lst1.size$(); i < n; i++) {
 var m=lst1.get$I(i);
-var m1=$I$(1).deepCopy$O$Z$Z(m.getMap$(), true, false);
+var m1=$I$(1,"deepCopy$O$Z$Z",[m.getMap$(), true, false]);
 var mid=m1.remove$O(id1);
-map1.put$TK$TV(mid.asString$(), $I$(1).newV$I$O(6, m1));
+map1.put$O$O(mid.asString$(), $I$(1).newV$I$O(6, m1));
 }
 return mp.addXObj$O(map1);
 }
@@ -350,9 +361,9 @@ data=x1.value;
 } else {
 var list=x1.getList$();
 data=Clazz.array(Float.TYPE, [list.size$()]);
-if (key != null ) maps=$I$(7).createArrayOfHashtable$I(list.size$());
+if (key != null ) maps=$I$(7,"createArrayOfHashtable$I",[list.size$()]);
 try {
-for (var i=list.size$(); --i >= 0; ) data[i]=$I$(1).fValue$org_jmol_script_T(key == null  ? list.get$I(i) : (maps[i]=list.get$I(i).getMap$()).get$O(key));
+for (var i=list.size$(); --i >= 0; ) data[i]=$I$(1,"fValue$org_jmol_script_T",[key == null  ? list.get$I(i) : (maps[i]=list.get$I(i).getMap$()).get$O(key)]);
 
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -372,15 +383,15 @@ array[bin]++;
 if (key != null ) {
 var map=maps[i];
 if (map == null ) continue;
-map.put$TK$TV("_bin", $I$(1).newI$I(bin));
+map.put$O$O("_bin", $I$(1).newI$I(bin));
 var v1=f0 + df * bin;
 var v2=v1 + df;
-map.put$TK$TV("_binMin", $I$(1).newF$F(bin == 0 ? -3.4028235E38 : v1));
-map.put$TK$TV("_binMax", $I$(1).newF$F(bin == nbins - 1 ? 3.4028235E38 : v2));
+map.put$O$O("_binMin", $I$(1,"newF$F",[bin == 0 ? -3.4028235E38 : v1]));
+map.put$O$O("_binMax", $I$(1,"newF$F",[bin == nbins - 1 ? 3.4028235E38 : v2]));
 }}
 if (addBins) {
-var lst=Clazz.new_($I$(5));
-for (var i=0; i < nbins; i++) lst.addLast$TV(Clazz.array(Float.TYPE, -1, [f0 + df * i, array[i]]));
+var lst=Clazz.new_($I$(5,1));
+for (var i=0; i < nbins; i++) lst.addLast$O(Clazz.array(Float.TYPE, -1, [f0 + df * i, array[i]]));
 
 return mp.addXList$javajs_util_Lst(lst);
 }return mp.addXAI$IA(array);
@@ -394,24 +405,24 @@ return mp.addXMap$java_util_Map(this.vwr.fm.cacheList$());
 Clazz.newMeth(C$, 'evaluateColor$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA', function (mp, args) {
 var colorScheme=(args.length > 0 ? $I$(1).sValue$org_jmol_script_T(args[0]) : "");
 var isIsosurface=colorScheme.startsWith$S("$");
-if (args.length == 2 && colorScheme.equalsIgnoreCase$S("TOHSL") ) return mp.addXPt$javajs_util_P3($I$(8).rgbToHSL$javajs_util_P3$Z($I$(2).newP$javajs_util_T3(args[1].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[1]) : $I$(8).colorPtFromString$S(args[1].asString$())), true));
+if (args.length == 2 && colorScheme.equalsIgnoreCase$S("TOHSL") ) return mp.addXPt$javajs_util_P3($I$(8,"rgbToHSL$javajs_util_P3$Z",[$I$(2,"newP$javajs_util_T3",[args[1].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[1]) : $I$(8,"colorPtFromString$S",[args[1].asString$()])]), true]));
 if (args.length == 2 && colorScheme.equalsIgnoreCase$S("TORGB") ) {
-var pt=$I$(2).newP$javajs_util_T3(args[1].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[1]) : $I$(8).colorPtFromString$S(args[1].asString$()));
+var pt=$I$(2,"newP$javajs_util_T3",[args[1].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[1]) : $I$(8,"colorPtFromString$S",[args[1].asString$()])]);
 return mp.addXPt$javajs_util_P3(args[1].tok == 8 ? $I$(8).hslToRGB$javajs_util_P3(pt) : pt);
 }if (args.length == 4 && (args[3].tok == 1073742335 || args[3].tok == 1073742334 ) ) {
-var pt1=$I$(2).newP$javajs_util_T3(args[0].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[0]) : $I$(8).colorPtFromString$S(args[0].asString$()));
-var pt2=$I$(2).newP$javajs_util_T3(args[1].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[1]) : $I$(8).colorPtFromString$S(args[1].asString$()));
+var pt1=$I$(2,"newP$javajs_util_T3",[args[0].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[0]) : $I$(8,"colorPtFromString$S",[args[0].asString$()])]);
+var pt2=$I$(2,"newP$javajs_util_T3",[args[1].tok == 8 ? $I$(1).ptValue$org_jmol_script_SV(args[1]) : $I$(8,"colorPtFromString$S",[args[1].asString$()])]);
 var usingHSL=(args[3].tok == 1073742335);
 if (usingHSL) {
 pt1=$I$(8).rgbToHSL$javajs_util_P3$Z(pt1, false);
 pt2=$I$(8).rgbToHSL$javajs_util_P3$Z(pt2, false);
-}var sb=Clazz.new_($I$(9));
+}var sb=Clazz.new_($I$(9,1));
 var vd=$I$(10).newVsub$javajs_util_T3$javajs_util_T3(pt2, pt1);
 var n=args[2].asInt$();
 if (n < 2) n=20;
 vd.scale$F(1.0 / (n - 1));
 for (var i=0; i < n; i++) {
-sb.append$S($I$(11).escapeColor$I($I$(8).colorPtToFFRGB$javajs_util_T3(usingHSL ? $I$(8).hslToRGB$javajs_util_P3(pt1) : pt1)));
+sb.append$S($I$(11,"escapeColor$I",[$I$(8,"colorPtToFFRGB$javajs_util_T3",[usingHSL ? $I$(8).hslToRGB$javajs_util_P3(pt1) : pt1])]));
 pt1.add$javajs_util_T3(vd);
 }
 return mp.addXStr$S(sb.toString());
@@ -435,7 +446,7 @@ ce=data[1];
 } else {
 ce.setRange$F$F$Z(lo, hi, lo > hi );
 }var key=ce.getColorKey$();
-if (getValue) return mp.addXPt$javajs_util_P3($I$(8).colorPtFromInt$I$javajs_util_P3(ce.getArgb$F(hi == 3.4028235E38  ? lo : value), null));
+if (getValue) return mp.addXPt$javajs_util_P3($I$(8,"colorPtFromInt$I$javajs_util_P3",[ce.getArgb$F(hi == 3.4028235E38  ? lo : value), null]));
 return mp.addX$org_jmol_script_SV($I$(1).getVariableMap$java_util_Map(key));
 }, p$1);
 
@@ -451,7 +462,7 @@ var bs1=(args[0].tok == 10 ? args[0].value : null);
 var bs2=(args[1].tok == 10 ? args[1].value : null);
 var smiles1=(bs1 == null  ? $I$(1).sValue$org_jmol_script_T(args[0]) : "");
 var smiles2=(bs2 == null  ? $I$(1).sValue$org_jmol_script_T(args[1]) : "");
-var m=Clazz.new_($I$(12));
+var m=Clazz.new_($I$(12,1));
 stddev=NaN;
 var ptsA;
 var ptsB;
@@ -508,8 +519,8 @@ check=((ret).nextSetBit$I(0) >= 0);
 stddev=this.e.getSmilesExt$().getSmilesCorrelation$javajs_util_BS$javajs_util_BS$S$javajs_util_Lst$javajs_util_Lst$javajs_util_M4$javajs_util_Lst$Z$IAA$javajs_util_P3$Z$I(bs1, bs2, smiles1, null, null, null, null, false, null, null, false, 1);
 return mp.addXStr$S(stddev < 0.2  ? "IDENTICAL" : "IDENTICAL or CONFORMATIONAL ISOMERS (RMSD=" + new Float(stddev).toString() + ")" );
 }if (isSmiles) {
-ptsA=Clazz.new_($I$(5));
-ptsB=Clazz.new_($I$(5));
+ptsA=Clazz.new_($I$(5,1));
+ptsB=Clazz.new_($I$(5,1));
 sOpt=$I$(1).sValue$org_jmol_script_T(args[2]);
 var isMap=sOpt.equalsIgnoreCase$S("MAP");
 isSmiles=sOpt.equalsIgnoreCase$S("SMILES");
@@ -532,10 +543,10 @@ if (isMap) {
 var nAtoms=ptsA.size$();
 if (nAtoms == 0) return mp.addXStr$S("");
 var nMatch=(ptsB.size$()/nAtoms|0);
-var ret=Clazz.new_($I$(5));
+var ret=Clazz.new_($I$(5,1));
 for (var i=0, pt=0; i < nMatch; i++) {
 var a=$I$(7).newInt2$I(nAtoms);
-ret.addLast$TV(a);
+ret.addLast$O(a);
 for (var j=0; j < nAtoms; j++, pt++) a[j]=Clazz.array(Integer.TYPE, -1, [(ptsA.get$I(j)).i, (ptsB.get$I(pt)).i]);
 
 }
@@ -589,23 +600,23 @@ case 4:
 smiles=$I$(1).sValue$org_jmol_script_T(args[0]);
 break;
 }
-}if (intValue == 1275203608) atoms1=$I$(1).getBitSet$org_jmol_script_SV$Z(mp.getX$(), true);
+}if (intValue == 1275203608) atoms1=$I$(1,"getBitSet$org_jmol_script_SV$Z",[mp.getX$(), true]);
 var data=Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(nv), smiles, atoms1]);
 if (!this.vwr.shm.getShapePropertyData$I$S$OA(21, "getCenters", data)) data[1]=null;
-return mp.addXBs$javajs_util_BS(data[1] == null  ? Clazz.new_($I$(16)) : data[1]);
+return mp.addXBs$javajs_util_BS(data[1] == null  ? Clazz.new_($I$(16,1)) : data[1]);
 case 1228931587:
 var x1=mp.getX$();
 if (x1.tok != 10 || args.length != 1  || args[0].tok != 10 ) return false;
 atoms1=x1.value;
 atoms2=args[0].value;
-var list=Clazz.new_($I$(5));
+var list=Clazz.new_($I$(5,1));
 var atoms=this.vwr.ms.at;
 for (var i=atoms1.nextSetBit$I(0); i >= 0; i=atoms1.nextSetBit$I(i + 1)) {
 var n=0;
 var b=atoms[i].bonds;
 for (var j=b.length; --j >= 0; ) if (atoms2.get$I(b[j].getOtherAtom$org_jmol_modelset_Atom(atoms[i]).i)) n++;
 
-list.addLast$TV(Integer.valueOf$I(n));
+list.addLast$O(Integer.valueOf$I(n));
 }
 return mp.addXList$javajs_util_Lst(list);
 }
@@ -651,9 +662,9 @@ fmin=0.1;
 }if (atoms1 == null ) atoms1=this.vwr.getAllAtoms$();
 if (haveDecimal && atoms2 == null  ) atoms2=atoms1;
 if (atoms2 != null ) {
-var bsBonds=Clazz.new_($I$(16));
+var bsBonds=Clazz.new_($I$(16,1));
 this.vwr.makeConnections$F$F$I$I$javajs_util_BS$javajs_util_BS$javajs_util_BS$Z$Z$F(fmin, fmax, order, 1086324745, atoms1, atoms2, bsBonds, isBonds, false, 0);
-return mp.addX$org_jmol_script_SV($I$(1).newV$I$O(10, $I$(18).newBS$javajs_util_BS$IA(bsBonds, this.vwr.ms.getAtomIndices$javajs_util_BS(this.vwr.ms.getAtoms$I$O(1677721602, bsBonds)))));
+return mp.addX$org_jmol_script_SV($I$(1,"newV$I$O",[10, $I$(18,"newBS$javajs_util_BS$IA",[bsBonds, this.vwr.ms.getAtomIndices$javajs_util_BS(this.vwr.ms.getAtoms$I$O(1677721602, bsBonds))])]));
 }return mp.addXBs$javajs_util_BS(this.vwr.ms.getAtomsConnected$F$F$I$javajs_util_BS(min, max, order, atoms1));
 }, p$1);
 
@@ -675,7 +686,7 @@ return false;
 if (i == args.length || !(Clazz.instanceOf(args[i].value, "javajs.util.BS")) ) return false;
 var bsA=$I$(19).copy$javajs_util_BS(args[i++].value);
 var bsB=(i < args.length ? $I$(19).copy$javajs_util_BS(args[i].value) : null);
-var rd=Clazz.new_($I$(20).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, (distance > 10  ? distance / 100 : distance), (distance > 10  ? $I$(21).FACTOR : $I$(21).OFFSET), $I$(22).AUTO]);
+var rd=Clazz.new_([null, (distance > 10  ? distance / 100 : distance), (distance > 10  ? $I$(21).FACTOR : $I$(21).OFFSET), $I$(22).AUTO],$I$(20,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
 bsB=this.setContactBitSets$javajs_util_BS$javajs_util_BS$Z$F$org_jmol_atomdata_RadiusData$Z(bsA, bsB, true, NaN, rd, false);
 bsB.or$javajs_util_BS(bsA);
 return mp.addXBs$javajs_util_BS(bsB);
@@ -696,7 +707,7 @@ case 4:
 var iField=args[1].asInt$();
 var nBytes=args[2].asInt$();
 var firstLine=args[3].asInt$();
-var f=$I$(23).parseFloatArrayFromMatchAndField$S$javajs_util_BS$I$I$IA$I$I$FA$I($I$(1).sValue$org_jmol_script_T(args[0]), null, 0, 0, null, iField, nBytes, null, firstLine);
+var f=$I$(23,"parseFloatArrayFromMatchAndField$S$javajs_util_BS$I$I$IA$I$I$FA$I",[$I$(1).sValue$org_jmol_script_T(args[0]), null, 0, 0, null, iField, nBytes, null, firstLine]);
 return mp.addXStr$S($I$(11).escapeFloatA$FA$Z(f, false));
 default:
 return false;
@@ -743,7 +754,7 @@ default:
 return false;
 }
 if (tok == 1275069442) {
-var a=$I$(2).newP$javajs_util_T3(mp.ptValue$org_jmol_script_SV$javajs_util_BS(x1, null));
+var a=$I$(2,"newP$javajs_util_T3",[mp.ptValue$org_jmol_script_SV$javajs_util_BS(x1, null)]);
 a.cross$javajs_util_T3$javajs_util_T3(a, mp.ptValue$org_jmol_script_SV$javajs_util_BS(x2, null));
 return mp.addXPt$javajs_util_P3(a);
 }var pt2=(x2.tok == 7 ? null : mp.ptValue$org_jmol_script_SV$javajs_util_BS(x2, null));
@@ -780,9 +791,9 @@ if (minMax == 32 ? d >= dMinMax  : d <= dMinMax ) continue;
 dMinMax=d;
 iMinMax=i;
 }
-return mp.addXBs$javajs_util_BS(iMinMax == 2147483647 ? Clazz.new_($I$(16)) : $I$(19).newAndSetBit$I(iMinMax));
+return mp.addXBs$javajs_util_BS(iMinMax == 2147483647 ? Clazz.new_($I$(16,1)) : $I$(19).newAndSetBit$I(iMinMax));
 }for (var i=list1.size$(); --i >= 0; ) {
-var pt=$I$(1).ptValue$org_jmol_script_SV(list1.get$I(i));
+var pt=$I$(1,"ptValue$org_jmol_script_SV",[list1.get$I(i)]);
 var d=(isPoint2 ? pt.distanceSquared$javajs_util_T3(pt2) : (this.e.getBitsetProperty$javajs_util_BS$javajs_util_Lst$I$javajs_util_P3$javajs_util_P4$O$O$Z$I$Z(bs2, list2, op, pt, plane2, x1.value, null, false, 2147483647, false)).floatValue$());
 if (minMax == 32 ? d >= dMinMax  : d <= dMinMax ) continue;
 dMinMax=d;
@@ -806,7 +817,7 @@ if (isAtomSet1) {
 for (var i=bs1.nextSetBit$I(0), p=0; i >= 0; i=bs1.nextSetBit$I(i + 1)) data[p++]=(this.e.getBitsetProperty$javajs_util_BS$javajs_util_Lst$I$javajs_util_P3$javajs_util_P4$O$O$Z$I$Z(bs2, list2, op, atoms[i], plane2, x1.value, null, false, x1.index, false)).floatValue$();
 
 return mp.addXAF$FA(data);
-}for (var i=data.length; --i >= 0; ) data[i]=(this.e.getBitsetProperty$javajs_util_BS$javajs_util_Lst$I$javajs_util_P3$javajs_util_P4$O$O$Z$I$Z(bs2, list2, op, $I$(1).ptValue$org_jmol_script_SV(list1.get$I(i)), plane2, null, null, false, 2147483647, false)).floatValue$();
+}for (var i=data.length; --i >= 0; ) data[i]=(this.e.getBitsetProperty$javajs_util_BS$javajs_util_Lst$I$javajs_util_P3$javajs_util_P4$O$O$Z$I$Z(bs2, list2, op, $I$(1,"ptValue$org_jmol_script_SV",[list1.get$I(i)]), plane2, null, null, false, 2147483647, false)).floatValue$();
 
 return mp.addXAF$FA(data);
 }return mp.addXObj$O(this.e.getBitsetProperty$javajs_util_BS$javajs_util_Lst$I$javajs_util_P3$javajs_util_P4$O$O$Z$I$Z(bs1, list1, op, pt2, plane2, x1.value, null, false, x1.index, false));
@@ -815,7 +826,7 @@ return mp.addXAF$FA(data);
 }var pt1=mp.ptValue$org_jmol_script_SV$javajs_util_BS(x1, null);
 var plane1=mp.planeValue$org_jmol_script_T(x1);
 if (isDist) {
-if (plane2 != null  && x3 != null  ) f=$I$(15).directedDistanceToPlane$javajs_util_P3$javajs_util_P4$javajs_util_P3(pt1, plane2, $I$(1).ptValue$org_jmol_script_SV(x3));
+if (plane2 != null  && x3 != null  ) f=$I$(15,"directedDistanceToPlane$javajs_util_P3$javajs_util_P4$javajs_util_P3",[pt1, plane2, $I$(1).ptValue$org_jmol_script_SV(x3)]);
  else f=(plane1 == null  ? (plane2 == null  ? pt2.distance$javajs_util_T3(pt1) : $I$(15).distanceToPlane$javajs_util_P4$javajs_util_T3(plane2, pt1)) : $I$(15).distanceToPlane$javajs_util_P4$javajs_util_T3(plane1, pt2));
 } else {
 if (plane1 != null  && plane2 != null  ) {
@@ -866,7 +877,7 @@ return false;
 
 Clazz.newMeth(C$, 'getHelixData$javajs_util_BS$I', function (bs, tokType) {
 var iAtom=bs.nextSetBit$I(0);
-return (iAtom < 0 ? "null" : this.vwr.ms.at[iAtom].group.getHelixData$I$C$I(tokType, this.vwr.getQuaternionFrame$(), this.vwr.getInt$I(553648145)));
+return (iAtom < 0 ? "null" : this.vwr.ms.at[iAtom].group.getHelixData$I$C$I(tokType, this.vwr.getQuaternionFrame$(), this.vwr.getInt$I(553648144)));
 }, p$1);
 
 Clazz.newMeth(C$, 'evaluateFind$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA', function (mp, args) {
@@ -902,7 +913,7 @@ if (isChemical) {
 var bsAtoms=(x1.tok == 10 ? x1.value : null);
 var data=(bsAtoms == null  ? $I$(1).sValue$org_jmol_script_T(x1) : this.vwr.getOpenSmiles$javajs_util_BS(bsAtoms));
 data=(data.length$() == 0 ? "" : this.vwr.getChemicalInfo$S$S$javajs_util_BS(data, flags.toLowerCase$(), bsAtoms)).trim$();
-if (data.startsWith$S("InChI")) data=$I$(27).rep$S$S$S($I$(27).rep$S$S$S(data, "InChI=", ""), "InChIKey=", "");
+if (data.startsWith$S("InChI")) data=$I$(27,"rep$S$S$S",[$I$(27,"rep$S$S$S",[data, "InChI=", ""]), "InChIKey=", ""]);
 return mp.addXStr$S(data);
 }if (isSmiles || isSMARTS || x1.tok == 10  ) {
 var iPt=(isSmiles || isSMARTS  ? 2 : 1);
@@ -945,7 +956,7 @@ return mp.addXInt$I(!allMappings && len > 0  ? 1 : len);
 case 10:
 var bs=x1.value;
 if (isMF && flags.length$() != 0 ) return mp.addXBs$javajs_util_BS($I$(13).getBitSetForMF$org_jmol_modelset_AtomA$javajs_util_BS$S(this.vwr.ms.at, bs, flags));
-if (isMF || isCF ) return mp.addXStr$S($I$(13).getMolecularFormulaAtoms$org_jmol_util_NodeA$javajs_util_BS$FA$Z(this.vwr.ms.at, bs, (isMF ? null : this.vwr.ms.getCellWeights$javajs_util_BS(bs)), isON));
+if (isMF || isCF ) return mp.addXStr$S($I$(13,"getMolecularFormulaAtoms$org_jmol_util_NodeA$javajs_util_BS$FA$Z",[this.vwr.ms.at, bs, (isMF ? null : this.vwr.ms.getCellWeights$javajs_util_BS(bs)), isON]));
 if (isSequence || isSeq ) {
 var isHH=(argLast.asString$().equalsIgnoreCase$S("H"));
 isAll|=isHH;
@@ -965,11 +976,11 @@ ret=this.vwr.ms.generateCrystalClass$I$javajs_util_P3(bs.nextSetBit$I(0), (args.
 var smilesFlags=(isSmiles ? (flags.indexOf$S("OPEN") >= 0 ? 5 : 1) : 2) | (isON && sFind.length$() == 0  ? 22020096 : 0);
 if (flags.indexOf$S("/MOLECULE/") >= 0) {
 var mols=this.vwr.ms.getMolecules$();
-var molList=Clazz.new_($I$(5));
+var molList=Clazz.new_($I$(5,1));
 for (var i=0; i < mols.length; i++) {
 if (mols[i].atomList.intersects$javajs_util_BS(bs)) {
 var bsRet=this.e.getSmilesExt$().getSmilesMatches$S$S$javajs_util_BS$javajs_util_BS$I$Z$Z(sFind, null, mols[i].atomList, bsMatch3D, smilesFlags, !isON, false);
-if (!bsRet.isEmpty$()) molList.addLast$TV(bsRet);
+if (!bsRet.isEmpty$()) molList.addLast$O(bsRet);
 }}
 ret=molList;
 } else {
@@ -996,7 +1007,7 @@ var pattern=null;
 var svlist=(isList ? x1.getList$() : null);
 if (isPattern) {
 try {
-pattern=pm.compile$(sFind, isCaseInsensitive);
+pattern=pm.compile$S$Z(sFind, isCaseInsensitive);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 this.e.evalError$S$S(ex.toString(), null);
@@ -1007,10 +1018,10 @@ throw ex;
 }var list=(checkEmpty ? null : $I$(1).strListValue$org_jmol_script_T(x1));
 var nlist=(checkEmpty ? svlist.size$() : list.length);
 if ($I$(28).debugging) $I$(28).debug$S("finding " + sFind);
-var bs=Clazz.new_($I$(16));
+var bs=Clazz.new_($I$(16,1));
 var n=0;
 var matcher=null;
-var v=(asMatch ? Clazz.new_($I$(5)) : null);
+var v=(asMatch ? Clazz.new_($I$(5,1)) : null);
 var what="";
 for (var i=0; i < nlist; i++) {
 var isMatch;
@@ -1034,11 +1045,11 @@ what=list[i];
 matcher=pattern.matcher$CharSequence(what);
 isMatch=matcher.find$();
 } else {
-isMatch=($I$(1).sValue$org_jmol_script_T(svlist.get$I(i)).indexOf$S(sFind) >= 0);
+isMatch=($I$(1,"sValue$org_jmol_script_T",[svlist.get$I(i)]).indexOf$S(sFind) >= 0);
 }if (asMatch && isMatch  || !asMatch && isMatch == !isReverse   ) {
 n++;
 bs.set$I(i);
-if (asMatch) v.addLast$TV(isReverse ? what.substring$I$I(0, matcher.start$()) + what.substring$I(matcher.end$()) : matcher.group$());
+if (asMatch) v.addLast$O(isReverse ? what.substring$I$I(0, matcher.start$()) + what.substring$I(matcher.end$()) : matcher.group$());
 }}
 if (!isList) {
 return (asMatch ? mp.addXStr$S(v.size$() == 1 ? v.get$I(0) : "") : isReverse ? mp.addXBool$Z(n == 1) : asMatch ? mp.addXStr$S(n == 0 ? "" : matcher.group$()) : mp.addXInt$I(n == 0 ? 0 : matcher.start$() + 1));
@@ -1049,8 +1060,8 @@ if (n > 0) for (var i=list.length; --i >= 0; ) if (bs.get$I(i)) {
 listNew[n]=(asMatch ? v.get$I(n) : list[i]);
 }
 return mp.addXAS$SA(listNew);
-}var l=Clazz.new_($I$(5));
-for (var i=bs.nextSetBit$I(0); i >= 0; i=bs.nextSetBit$I(i + 1)) l.addLast$TV(svlist.get$I(i));
+}var l=Clazz.new_($I$(5,1));
+for (var i=bs.nextSetBit$I(0); i >= 0; i=bs.nextSetBit$I(i + 1)) l.addLast$O(svlist.get$I(i));
 
 return mp.addXList$javajs_util_Lst(l);
 }if (isSequence) {
@@ -1059,19 +1070,21 @@ return mp.addXStr$S(this.vwr.getJBR$().toStdAmino3$S($I$(1).sValue$org_jmol_scri
 }, p$1);
 
 Clazz.newMeth(C$, 'evaluateGetProperty$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$I$Z', function (mp, args, tok0, isAtomProperty) {
+var nargs=args.length;
 var isSelect=(isAtomProperty && tok0 == 1275082245 );
+var isPivot=(isAtomProperty && tok0 == 1275068437  && nargs > 0 );
 var isAuxiliary=(tok0 == 1275068449);
 var pt=0;
-var tok=(args.length == 0 ? 0 : args[0].tok);
-if (args.length == 2 && (tok == 7 || tok == 6  || tok == 14 ) ) {
+var tok=(nargs == 0 ? 0 : args[0].tok);
+if (nargs == 2 && (tok == 7 || tok == 6  || tok == 14 ) ) {
 return mp.addXObj$O(this.vwr.extractProperty$O$O$I(args[0].value, args[1].value.toString(), -1));
-}var bsSelect=(isAtomProperty && args.length == 1  && args[0].tok == 10  ? args[0].value : null);
-var pname=(bsSelect == null  && args.length > 0  ? $I$(1).sValue$org_jmol_script_T(args[pt++]) : "");
+}var bsSelect=(isAtomProperty && nargs == 1  && args[0].tok == 10  ? args[0].value : null);
+var pname=(bsSelect == null  && nargs > 0  ? $I$(1).sValue$org_jmol_script_T(args[pt++]) : "");
 var propertyName=pname;
 var lc=propertyName.toLowerCase$();
 if (!isSelect && lc.indexOf$S("[select ") < 0 ) propertyName=lc;
 var isJSON=false;
-if (propertyName.equals$O("json") && args.length > pt ) {
+if (propertyName.equals$O("json") && nargs > pt ) {
 isJSON=true;
 propertyName=$I$(1).sValue$org_jmol_script_T(args[pt++]);
 }var x=null;
@@ -1094,36 +1107,58 @@ if (data[1] != null  && !pname.equals$O("index") ) {
 var index=(data[1]).intValue$();
 data[1]=this.vwr.shm.getShapePropertyIndex$I$S$I(shapeID, pname.intern$(), index);
 }}} else {
-shapeID=$I$(26).shapeTokenIndex$I($I$(24).getTokFromName$S(name));
+shapeID=$I$(26,"shapeTokenIndex$I",[$I$(24).getTokFromName$S(name)]);
 if (shapeID >= 0) {
 data[0]=pname;
 data[1]=Integer.valueOf$I(-1);
 this.vwr.shm.getShapePropertyData$I$S$OA(shapeID, pname.intern$(), data);
 }}return (data[1] == null  ? mp.addXStr$S("") : mp.addXObj$O(data[1]));
 case 7:
-if (bsSelect != null ) {
+if (isPivot) {
+var lstx=x.getList$();
+var map=Clazz.new_($I$(6,1));
+var sep=(nargs > 1 ? $I$(1).sValue$org_jmol_script_T(args[nargs - 1]) : null);
+if (sep != null ) nargs--;
+var keys=Clazz.array(String, [nargs]);
+for (var i=0; i < nargs; i++) keys[i]=$I$(1).sValue$org_jmol_script_T(args[i]);
+
+for (var i=0, n=lstx.size$(); i < n; i++) {
+var sv=lstx.get$I(i);
+if (sv.tok != 6) continue;
+var mapi=sv.getMap$();
+var key="";
+for (var j=0; j < nargs; j++) {
+var obj=mapi.get$O(keys[j]);
+key += (j == 0 ? "" : sep) + $I$(1).sValue$org_jmol_script_T(obj);
+}
+var vlist=map.get$O(key);
+if (vlist == null ) map.put$O$O(key, vlist=$I$(1,"newV$I$O",[7, Clazz.new_($I$(5,1))]));
+vlist.getList$().addLast$O(sv);
+}
+return mp.addXMap$java_util_Map(map);
+}if (bsSelect != null ) {
 var l0=x.getList$();
-var lst=Clazz.new_($I$(5));
-for (var i=bsSelect.nextSetBit$I(0); i >= 0; i=bsSelect.nextSetBit$I(i + 1)) lst.addLast$TV(l0.get$I(i));
+var lst=Clazz.new_($I$(5,1));
+for (var i=bsSelect.nextSetBit$I(0); i >= 0; i=bsSelect.nextSetBit$I(i + 1)) lst.addLast$O(l0.get$I(i));
 
 return mp.addXList$javajs_util_Lst(lst);
 }default:
 if (isSelect) propertyName="[SELECT " + propertyName + "]" ;
 return mp.addXObj$O(this.vwr.extractProperty$O$O$I(x, propertyName, -1));
 }
-if (!lc.startsWith$S("bondinfo") && !lc.startsWith$S("atominfo") ) propertyName="atomInfo." + propertyName;
+if (!lc.startsWith$S("bondinfo") && !lc.startsWith$S("atominfo") && !lc.startsWith$S("modelkitinfo")  ) propertyName="atomInfo." + propertyName;
 }var propertyValue="";
-if (propertyName.equalsIgnoreCase$S("fileContents") && args.length >= 2 ) {
+if (propertyName.equalsIgnoreCase$S("fileContents") && nargs >= 2 ) {
 var s=$I$(1).sValue$org_jmol_script_T(args[1]);
-for (var i=2; i < args.length; i++) s += "|" + $I$(1).sValue$org_jmol_script_T(args[i]);
+for (var i=2; i < nargs; i++) s += "|" + $I$(1).sValue$org_jmol_script_T(args[i]);
 
 propertyValue=s;
-pt=args.length;
-} else if (args.length > pt) {
+pt=nargs;
+} else if (nargs > pt) {
 switch (args[pt].tok) {
 case 10:
 propertyValue=args[pt++].value;
-if (propertyName.equalsIgnoreCase$S("bondInfo") && args.length > pt  && args[pt].tok == 10 ) propertyValue=Clazz.array($I$(16), -1, [propertyValue, args[pt].value]);
+if (propertyName.equalsIgnoreCase$S("bondInfo") && nargs > pt  && args[pt].tok == 10 ) propertyValue=Clazz.array($I$(16), -1, [propertyValue, args[pt].value]);
 break;
 case 6:
 case 4:
@@ -1138,7 +1173,7 @@ propertyValue=bs;
 }if (isAuxiliary && !isAtomProperty ) propertyName="auxiliaryInfo.models." + propertyName;
 propertyName=$I$(27).rep$S$S$S(propertyName, ".[", "[");
 var property=this.vwr.getProperty$S$S$O(null, propertyName, propertyValue);
-if (pt < args.length) property=this.vwr.extractProperty$O$O$I(property, args, pt);
+if (pt < nargs) property=this.vwr.extractProperty$O$O$I(property, args, pt);
 return mp.addXObj$O(isJSON ? $I$(1).safeJSON$S$O("value", property) : $I$(1).isVariableType$O(property) ? property : $I$(11).toReadable$S$O(propertyName, property));
 }, p$1);
 
@@ -1150,7 +1185,7 @@ if (args.length == 2) {
 var listIn=x1.getList$();
 var formatList=args[1].getList$();
 if (listIn == null  || formatList == null  ) return false;
-x1=$I$(1).getVariableList$javajs_util_Lst(p$1.getSublist$javajs_util_Lst$javajs_util_Lst.apply(this, [listIn, formatList]));
+x1=$I$(1,"getVariableList$javajs_util_Lst",[p$1.getSublist$javajs_util_Lst$javajs_util_Lst.apply(this, [listIn, formatList])]);
 }args=Clazz.array($I$(1), -1, [args[0], x1]);
 x1=null;
 }if (x1 == null ) {
@@ -1174,11 +1209,11 @@ var listOut=p$1.getSublist$javajs_util_Lst$javajs_util_Lst.apply(this, [listIn, 
 return mp.addXList$javajs_util_Lst(listOut);
 }var bs=(x1.tok == 10 ? x1.value : null);
 var asArray=$I$(24).tokAttr$I$I(intValue, 480);
-return mp.addXObj$O(format == null  ? "" : bs == null  ? $I$(1).sprintf$S$org_jmol_script_SV($I$(27).formatCheck$S(format), x1) : this.e.getCmdExt$().getBitsetIdent$javajs_util_BS$S$O$Z$I$Z(bs, format, x1.value, true, x1.index, asArray));
+return mp.addXObj$O(format == null  ? "" : bs == null  ? $I$(1,"sprintf$S$org_jmol_script_SV",[$I$(27).formatCheck$S(format), x1]) : this.e.getCmdExt$().getBitsetIdent$javajs_util_BS$S$O$Z$I$Z(bs, format, x1.value, true, x1.index, asArray));
 }, p$1);
 
 Clazz.newMeth(C$, 'getSublist$javajs_util_Lst$javajs_util_Lst', function (listIn, formatList) {
-var listOut=Clazz.new_($I$(5));
+var listOut=Clazz.new_($I$(5,1));
 var map;
 var v;
 var list;
@@ -1187,20 +1222,20 @@ var element=listIn.get$I(i);
 switch (element.tok) {
 case 6:
 map=element.getMap$();
-list=Clazz.new_($I$(5));
+list=Clazz.new_($I$(5,1));
 for (var j=0, n1=formatList.size$(); j < n1; j++) {
-v=map.get$O($I$(1).sValue$org_jmol_script_T(formatList.get$I(j)));
-list.addLast$TV(v == null  ? $I$(1).newS$S("") : v);
+v=map.get$O($I$(1,"sValue$org_jmol_script_T",[formatList.get$I(j)]));
+list.addLast$O(v == null  ? $I$(1).newS$S("") : v);
 }
-listOut.addLast$TV($I$(1).getVariableList$javajs_util_Lst(list));
+listOut.addLast$O($I$(1).getVariableList$javajs_util_Lst(list));
 break;
 case 7:
-map=Clazz.new_($I$(6));
+map=Clazz.new_($I$(6,1));
 list=element.getList$();
 for (var j=0, n1=Math.min(list.size$(), formatList.size$()); j < n1; j++) {
-map.put$TK$TV($I$(1).sValue$org_jmol_script_T(formatList.get$I(j)), list.get$I(j));
+map.put$O$O($I$(1,"sValue$org_jmol_script_T",[formatList.get$I(j)]), list.get$I(j));
 }
-listOut.addLast$TV($I$(1).getVariable$O(map));
+listOut.addLast$O($I$(1).getVariable$O(map));
 }
 }
 return listOut;
@@ -1232,8 +1267,8 @@ if (len == 2) {
 var tab=$I$(1).sValue$org_jmol_script_T(args[0]);
 x2=args[1];
 if (tok == 1275069441) {
-sList1=(isArray1 ? $I$(1).strListValue$org_jmol_script_T(x1) : $I$(27).split$S$S($I$(1).sValue$org_jmol_script_T(x1), "\n"));
-sList2=(x2.tok == 7 ? $I$(1).strListValue$org_jmol_script_T(x2) : $I$(27).split$S$S($I$(1).sValue$org_jmol_script_T(x2), "\n"));
+sList1=(isArray1 ? $I$(1).strListValue$org_jmol_script_T(x1) : $I$(27,"split$S$S",[$I$(1).sValue$org_jmol_script_T(x1), "\n"]));
+sList2=(x2.tok == 7 ? $I$(1).strListValue$org_jmol_script_T(x2) : $I$(27,"split$S$S",[$I$(1).sValue$org_jmol_script_T(x2), "\n"]));
 sList3=Clazz.array(String, [len=Math.max(sList1.length, sList2.length)]);
 for (var i=0; i < len; i++) sList3[i]=(i >= sList1.length ? "" : sList1[i]) + tab + (i >= sList2.length ? "" : sList2[i]) ;
 
@@ -1248,16 +1283,16 @@ for (var i=l.size$(); --i >= 0; ) {
 var a=l.get$I(i).getList$();
 if (a == null ) s2[i]=l.get$I(i);
  else {
-var sb=Clazz.new_($I$(9));
+var sb=Clazz.new_($I$(9,1));
 for (var j=0, n=a.size$(); j < n; j++) {
 if (j > 0) sb.append$S(tab);
 var sv=a.get$I(j);
 sb.append$S(isCSV && sv.tok == 4  ? "\"" + $I$(27).rep$S$S$S(sv.value, "\"", "\"\"") + "\""  : "" + sv.asString$());
 }
-s2[i]=$I$(1).newS$S(sb.toString());
+s2[i]=$I$(1,"newS$S",[sb.toString()]);
 }}
 return mp.addXAV$org_jmol_script_SVA(s2);
-}var sa=Clazz.new_($I$(5));
+}var sa=Clazz.new_($I$(5,1));
 if (isCSV) tab="\u0000";
 var next=Clazz.array(Integer.TYPE, [2]);
 for (var i=0, nl=l.size$(); i < nl; i++) {
@@ -1279,11 +1314,11 @@ break;
 next[1]=last=next[0] + s.length$();
 }
 }var linaa=line.split$S(tab);
-var la=Clazz.new_($I$(5));
+var la=Clazz.new_($I$(5,1));
 for (var j=0, n=linaa.length; j < n; j++) {
 var s=linaa[j];
 if (s.indexOf$S(".") < 0) try {
-la.addLast$TV($I$(1).newI$I(Integer.parseInt$S(s)));
+la.addLast$O($I$(1,"newI$I",[Integer.parseInt$S(s)]));
 continue;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -1292,7 +1327,7 @@ throw e;
 }
 }
  else try {
-la.addLast$TV($I$(1).getVariable$O(Float.valueOf$F(Float.parseFloat$S(s))));
+la.addLast$O($I$(1,"getVariable$O",[Float.valueOf$F(Float.parseFloat$S(s))]));
 continue;
 } catch (ee) {
 if (Clazz.exceptionOf(ee,"Exception")){
@@ -1300,9 +1335,9 @@ if (Clazz.exceptionOf(ee,"Exception")){
 throw ee;
 }
 }
-la.addLast$TV($I$(1).newS$S(s));
+la.addLast$O($I$(1).newS$S(s));
 }
-sa.addLast$TV($I$(1).getVariableList$javajs_util_Lst(la));
+sa.addLast$O($I$(1).getVariableList$javajs_util_Lst(la));
 }
 return mp.addXObj$O($I$(1).getVariableList$javajs_util_Lst(sa));
 }x2=(len == 0 ? $I$(1).newV$I$O(1073742327, "all") : args[0]);
@@ -1319,25 +1354,25 @@ len=alist1.size$();
 } else if (isScalar1) {
 len=2147483647;
 } else {
-sList1=($I$(27).split$S$S($I$(1).sValue$org_jmol_script_T(x1), "\n"));
+sList1=($I$(27,"split$S$S",[$I$(1).sValue$org_jmol_script_T(x1), "\n"]));
 list1=Clazz.array(Float.TYPE, [len=sList1.length]);
 $I$(27).parseFloatArrayData$SA$FA(sList1, list1);
 }if (isAll && tok != 1275069446 ) {
 var sum=0.0;
 if (isArray1) {
-for (var i=len; --i >= 0; ) sum += $I$(1).fValue$org_jmol_script_T(alist1.get$I(i));
+for (var i=len; --i >= 0; ) sum += $I$(1,"fValue$org_jmol_script_T",[alist1.get$I(i)]);
 
 } else if (!isScalar1) {
 for (var i=len; --i >= 0; ) sum += list1[i];
 
 }return mp.addXFloat$F(sum);
 }if (tok == 1275069446 && x2.tok == 4 ) {
-var sb=Clazz.new_($I$(9));
+var sb=Clazz.new_($I$(9,1));
 if (isScalar1) {
 sb.append$S($I$(1).sValue$org_jmol_script_T(x1));
 } else {
 var s=(isAll ? "" : x2.value.toString());
-for (var i=0; i < len; i++) sb.append$S(i > 0 ? s : "").append$S($I$(1).sValue$org_jmol_script_T(alist1.get$I(i)));
+for (var i=0; i < len; i++) sb.append$S(i > 0 ? s : "").append$S($I$(1,"sValue$org_jmol_script_T",[alist1.get$I(i)]));
 
 }return mp.addXStr$S(sb.toString());
 }var scalar=null;
@@ -1346,30 +1381,30 @@ scalar=x2;
 } else if (x2.tok == 7) {
 len=Math.min(len, alist2.size$());
 } else {
-sList2=$I$(27).split$S$S($I$(1).sValue$org_jmol_script_T(x2), "\n");
+sList2=$I$(27,"split$S$S",[$I$(1).sValue$org_jmol_script_T(x2), "\n"]);
 list2=Clazz.array(Float.TYPE, [sList2.length]);
 $I$(27).parseFloatArrayData$SA$FA(sList2, list2);
 len=Math.min(len, list2.length);
 }var token=p$1.opTokenFor$I.apply(this, [tok]);
 var olist=Clazz.array($I$(1), [len]);
 if (isArray1 && isAll ) {
-var llist=Clazz.new_($I$(5));
+var llist=Clazz.new_($I$(5,1));
 return mp.addXList$javajs_util_Lst(p$1.addAllLists$javajs_util_Lst$javajs_util_Lst.apply(this, [x1.getList$(), llist]));
 }var a=(isScalar1 ? x1 : null);
 var b;
 for (var i=0; i < len; i++) {
 if (isScalar2) b=scalar;
  else if (x2.tok == 7) b=alist2.get$I(i);
- else if (Float.isNaN$F(list2[i])) b=$I$(1).getVariable$O($I$(1).unescapePointOrBitsetAsVariable$O(sList2[i]));
+ else if (Float.isNaN$F(list2[i])) b=$I$(1,"getVariable$O",[$I$(1).unescapePointOrBitsetAsVariable$O(sList2[i])]);
  else b=$I$(1).newF$F(list2[i]);
 if (!isScalar1) {
 if (isArray1) a=alist1.get$I(i);
- else if (Float.isNaN$F(list1[i])) a=$I$(1).getVariable$O($I$(1).unescapePointOrBitsetAsVariable$O(sList1[i]));
+ else if (Float.isNaN$F(list1[i])) a=$I$(1,"getVariable$O",[$I$(1).unescapePointOrBitsetAsVariable$O(sList1[i])]);
  else a=$I$(1).newF$F(list1[i]);
 }if (tok == 1275069446) {
 if (a.tok != 7) {
-var l=Clazz.new_($I$(5));
-l.addLast$TV(a);
+var l=Clazz.new_($I$(5,1));
+l.addLast$O(a);
 a=$I$(1).getVariableList$javajs_util_Lst(l);
 }}if (!mp.binaryOp$org_jmol_script_T$org_jmol_script_SV$org_jmol_script_SV(token, a, b)) return false;
 olist[i]=mp.getX$();
@@ -1382,14 +1417,14 @@ var n=list.size$();
 for (var i=0; i < n; i++) {
 var v=list.get$I(i);
 if (v.tok == 7) p$1.addAllLists$javajs_util_Lst$javajs_util_Lst.apply(this, [v.getList$(), l]);
- else l.addLast$TV(v);
+ else l.addLast$O(v);
 }
 return l;
 }, p$1);
 
 Clazz.newMeth(C$, 'evaluateLoad$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$Z', function (mp, args, isFile) {
 if (args.length < 1 || args.length > 3 ) return false;
-var file=$I$(29).fixDOSName$S($I$(1).sValue$org_jmol_script_T(args[0]));
+var file=$I$(29,"fixDOSName$S",[$I$(1).sValue$org_jmol_script_T(args[0])]);
 var asBytes=(args.length > 1 && args[1].tok == 1073742335 );
 var async=(this.vwr.async || args.length > 2 && args[args.length - 1].tok == 1073742335  );
 var nBytesMax=(args.length > 1 && args[1].tok == 2  ? args[1].asInt$() : -1);
@@ -1413,7 +1448,7 @@ throw e;
 
 Clazz.newMeth(C$, 'evaluateMath$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$I', function (mp, args, tok) {
 if (tok == 134217749) {
-if (args.length == 1 && args[0].tok == 4 ) return mp.addXStr$S((Clazz.new_($I$(31))) + "\t" + $I$(1).sValue$org_jmol_script_T(args[0]) );
+if (args.length == 1 && args[0].tok == 4 ) return mp.addXStr$S((Clazz.new_(java.util.Date)) + "\t" + $I$(1).sValue$org_jmol_script_T(args[0]) );
 return mp.addXInt$I(((System.currentTimeMillis$()|0) & 2147483647) - (args.length == 0 ? 0 : args[0].asInt$()));
 }if (args.length != 1) return false;
 if (tok == 134218250) {
@@ -1437,7 +1472,8 @@ Clazz.newMeth(C$, 'evaluateMeasure$org_jmol_script_ScriptMathProcessor$org_jmol_
 var nPoints=0;
 switch (tok) {
 case 1745489939:
-var points=Clazz.new_($I$(5));
+var property=null;
+var points=Clazz.new_($I$(5,1));
 var rangeMinMax=Clazz.array(Float.TYPE, -1, [3.4028235E38, 3.4028235E38]);
 var strFormat=null;
 var units=null;
@@ -1449,20 +1485,20 @@ var rd=null;
 var nBitSets=0;
 var vdw=3.4028235E38;
 var asMinArray=false;
-var asArray=false;
+var asFloatArray=false;
 for (var i=0; i < args.length; i++) {
 switch (args[i].tok) {
 case 10:
 var bs=args[i].value;
 if (bs.length$() == 0) isNull=true;
-points.addLast$TV(bs);
+points.addLast$O(bs);
 nPoints++;
 nBitSets++;
 break;
 case 8:
-var v=Clazz.new_($I$(32));
+var v=Clazz.new_($I$(31,1));
 v.setT$javajs_util_T3(args[i].value);
-points.addLast$TV(v);
+points.addLast$O(v);
 nPoints++;
 break;
 case 2:
@@ -1471,12 +1507,15 @@ rangeMinMax[rPt++ % 2]=$I$(1).fValue$org_jmol_script_T(args[i]);
 break;
 case 4:
 var s=$I$(1).sValue$org_jmol_script_T(args[i]);
-if (s.equalsIgnoreCase$S("vdw") || s.equalsIgnoreCase$S("vanderwaals") ) vdw=(i + 1 < args.length && args[i + 1].tok == 2  ? args[++i].asInt$() : 100) / 100.0;
+if (s.startsWith$S("property_")) {
+property=s;
+break;
+}if (s.equalsIgnoreCase$S("vdw") || s.equalsIgnoreCase$S("vanderwaals") ) vdw=(i + 1 < args.length && args[i + 1].tok == 2  ? args[++i].asInt$() : 100) / 100.0;
  else if (s.equalsIgnoreCase$S("notConnected")) isNotConnected=true;
  else if (s.equalsIgnoreCase$S("connected")) isAllConnected=true;
  else if (s.equalsIgnoreCase$S("minArray")) asMinArray=(nBitSets >= 1);
- else if (s.equalsIgnoreCase$S("asArray")) asArray=(nBitSets >= 1);
- else if ($I$(27).isOneOf$S$S(s.toLowerCase$(), ";nm;nanometers;pm;picometers;angstroms;ang;au;") || s.endsWith$S("hz") ) units=s.toLowerCase$();
+ else if (s.equalsIgnoreCase$S("asArray") || s.length$() == 0 ) asFloatArray=(nBitSets >= 1);
+ else if ($I$(32).isUnits$S(s)) units=s.toLowerCase$();
  else strFormat=nPoints + ":" + s ;
 break;
 default:
@@ -1486,8 +1525,9 @@ return false;
 if (nPoints < 2 || nPoints > 4  || rPt > 2  || isNotConnected && isAllConnected  ) return false;
 if (isNull) return mp.addXStr$S("");
 if (vdw != 3.4028235E38  && (nBitSets != 2 || nPoints != 2 ) ) return mp.addXStr$S("");
-rd=(vdw == 3.4028235E38  ? Clazz.new_($I$(20).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[rangeMinMax, 0, null, null]) : Clazz.new_($I$(20).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, vdw, $I$(21).FACTOR, $I$(22).AUTO]));
-return mp.addXObj$O((this.vwr.newMeasurementData$S$javajs_util_Lst(null, points)).set$I$java_util_Map$org_jmol_atomdata_RadiusData$S$S$org_jmol_modelset_TickInfo$Z$Z$Boolean$Z$I$H$org_jmol_modelset_Text(0, null, rd, strFormat, units, null, isAllConnected, isNotConnected, null, true, 0, 0, null).getMeasurements$Z$Z(asArray, asMinArray));
+rd=(vdw == 3.4028235E38  ? Clazz.new_($I$(20,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[rangeMinMax, 0, null, null]) : Clazz.new_([null, vdw, $I$(21).FACTOR, $I$(22).AUTO],$I$(20,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW));
+var obj=(this.vwr.newMeasurementData$S$javajs_util_Lst(null, points)).set$I$java_util_Map$org_jmol_atomdata_RadiusData$S$S$S$org_jmol_modelset_TickInfo$Z$Z$Boolean$Z$I$H$org_jmol_modelset_Text$F(0, null, rd, property, strFormat, units, null, isAllConnected, isNotConnected, null, true, 0, 0, null, NaN).getMeasurements$Z$Z(asFloatArray, asMinArray);
+return mp.addXObj$O(obj);
 case 134217729:
 if ((nPoints=args.length) != 3 && nPoints != 4 ) return false;
 break;
@@ -1537,12 +1577,12 @@ return false;
 }
 if (t456 == null  && t < 1000000.0  ) t456=$I$(2).new3$F$F$F(t, t, t);
 var x=mp.getX$();
-var bs=(x.tok == 10 ? x.value : Clazz.new_($I$(16)));
+var bs=(x.tok == 10 ? x.value : Clazz.new_($I$(16,1)));
 return mp.addXList$javajs_util_Lst(this.vwr.ms.getModulationList$javajs_util_BS$C$javajs_util_P3(bs, (type + "D").toUpperCase$().charAt$I(0), t456));
 }, p$1);
 
 Clazz.newMeth(C$, 'evaluatePlane$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$I', function (mp, args, tok) {
-if (tok == 134219265 && args.length != 3  || tok == 134217763 && args.length != 2  && args.length != 3   || args.length == 0  || args.length > 4 ) return false;
+if (tok == 134219265 && args.length != 3  || tok == 134217763 && args.length != 2  && args.length != 3  && args.length != 4   || args.length == 0  || args.length > 4 ) return false;
 var pt1;
 var pt2;
 var pt3;
@@ -1555,16 +1595,16 @@ if (args[0].tok == 10) {
 var bs=args[0].value;
 if (bs.cardinality$() == 3) {
 var pts=this.vwr.ms.getAtomPointVector$javajs_util_BS(bs);
-return mp.addXPt4$javajs_util_P4($I$(15).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(pts.get$I(0), pts.get$I(1), pts.get$I(2), Clazz.new_($I$(10)), Clazz.new_($I$(10)), Clazz.new_($I$(33))));
-}}var pt=$I$(11).uP$S($I$(1).sValue$org_jmol_script_T(args[0]));
+return mp.addXPt4$javajs_util_P4($I$(15,"getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4",[pts.get$I(0), pts.get$I(1), pts.get$I(2), Clazz.new_($I$(10,1)), Clazz.new_($I$(10,1)), Clazz.new_($I$(33,1))]));
+}}var pt=$I$(11,"uP$S",[$I$(1).sValue$org_jmol_script_T(args[0])]);
 if (Clazz.instanceOf(pt, "javajs.util.P4")) return mp.addXPt4$javajs_util_P4(pt);
 return mp.addXStr$S("" + pt);
 case 2:
 if (tok == 134217763) {
 if (args[1].tok != 9) return false;
-pt3=Clazz.new_($I$(2));
-norm=Clazz.new_($I$(10));
-vTemp=Clazz.new_($I$(10));
+pt3=Clazz.new_($I$(2,1));
+norm=Clazz.new_($I$(10,1));
+vTemp=Clazz.new_($I$(10,1));
 plane=args[1].value;
 if (args[0].tok == 9) {
 var list=$I$(15).getIntersectionPP$javajs_util_P4$javajs_util_P4(args[0].value, plane);
@@ -1577,7 +1617,7 @@ return mp.addXPt$javajs_util_P3($I$(15).getIntersection$javajs_util_P3$javajs_ut
 case 4:
 switch (tok) {
 case 134219265:
-return mp.addXPt4$javajs_util_P4(this.e.getHklPlane$javajs_util_P3($I$(2).new3$F$F$F($I$(1).fValue$org_jmol_script_T(args[0]), $I$(1).fValue$org_jmol_script_T(args[1]), $I$(1).fValue$org_jmol_script_T(args[2]))));
+return mp.addXPt4$javajs_util_P4(this.e.getHklPlane$javajs_util_P3($I$(2,"new3$F$F$F",[$I$(1).fValue$org_jmol_script_T(args[0]), $I$(1).fValue$org_jmol_script_T(args[1]), $I$(1).fValue$org_jmol_script_T(args[2])])));
 case 134217763:
 pt1=mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[0], null);
 pt2=mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[1], null);
@@ -1585,17 +1625,33 @@ if (pt1 == null  || pt2 == null  ) return mp.addXStr$S("");
 var vLine=$I$(10).newV$javajs_util_T3(pt2);
 vLine.normalize$();
 if (args[2].tok == 9) {
-pt3=Clazz.new_($I$(2));
-norm=Clazz.new_($I$(10));
-vTemp=Clazz.new_($I$(10));
+pt3=Clazz.new_($I$(2,1));
+norm=Clazz.new_($I$(10,1));
+vTemp=Clazz.new_($I$(10,1));
 pt1=$I$(15).getIntersection$javajs_util_P3$javajs_util_V3$javajs_util_P4$javajs_util_P3$javajs_util_V3$javajs_util_V3(pt1, vLine, args[2].value, pt3, norm, vTemp);
 if (pt1 == null ) return mp.addXStr$S("");
 return mp.addXPt$javajs_util_P3(pt1);
 }pt3=mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[2], null);
 if (pt3 == null ) return mp.addXStr$S("");
-var v=Clazz.new_($I$(10));
+var v=Clazz.new_($I$(10,1));
+pt3=$I$(2).newP$javajs_util_T3(pt3);
+if (args.length == 3) {
 $I$(15).projectOntoAxis$javajs_util_P3$javajs_util_P3$javajs_util_V3$javajs_util_V3(pt3, pt1, vLine, v);
 return mp.addXPt$javajs_util_P3(pt3);
+}var r=$I$(1).fValue$org_jmol_script_T(args[3]);
+var ptCenter=$I$(2).newP$javajs_util_T3(pt3);
+$I$(15).projectOntoAxis$javajs_util_P3$javajs_util_P3$javajs_util_V3$javajs_util_V3(pt3, pt1, vLine, v);
+var d=ptCenter.distance$javajs_util_T3(pt3);
+var l=Clazz.new_($I$(5,1));
+if (d == r ) {
+l.addLast$O(pt3);
+} else if (d < r ) {
+d=Math.sqrt(r * r - d * d);
+v.scaleAdd2$F$javajs_util_T3$javajs_util_T3(d, vLine, pt3);
+l.addLast$O($I$(2).newP$javajs_util_T3(v));
+v.scaleAdd2$F$javajs_util_T3$javajs_util_T3(-d, vLine, pt3);
+l.addLast$O($I$(2).newP$javajs_util_T3(v));
+}return mp.addXList$javajs_util_Lst(l);
 }
 switch (args[0].tok) {
 case 2:
@@ -1613,7 +1669,7 @@ q=$I$(25).newVA$javajs_util_T3$F(pt2, theta);
 q.getMatrix$().rotate$javajs_util_T3(norm);
 pt2.setT$javajs_util_T3(norm);
 pt2.scale$F(r);
-plane=Clazz.new_($I$(33));
+plane=Clazz.new_($I$(33,1));
 $I$(15).getPlaneThroughPoint$javajs_util_T3$javajs_util_V3$javajs_util_P4(pt2, norm, plane);
 return mp.addXPt4$javajs_util_P4(plane);
 }break;
@@ -1625,7 +1681,7 @@ if (pt2 == null ) return false;
 pt3=(args.length > 2 && (args[2].tok == 10 || args[2].tok == 8 )  ? mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[2], null) : null);
 norm=$I$(10).newV$javajs_util_T3(pt2);
 if (pt3 == null ) {
-plane=Clazz.new_($I$(33));
+plane=Clazz.new_($I$(33,1));
 if (args.length == 2 || args[2].tok != 2 && args[2].tok != 3  && !args[2].asBoolean$()  ) {
 pt3=$I$(2).newP$javajs_util_T3(pt1);
 pt3.add$javajs_util_T3(pt2);
@@ -1636,11 +1692,11 @@ norm.normalize$();
 pt3=pt1;
 } else {
 norm.sub$javajs_util_T3(pt1);
-pt3=Clazz.new_($I$(2));
+pt3=Clazz.new_($I$(2,1));
 pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(args[2].asFloat$(), norm, pt1);
 }$I$(15).getPlaneThroughPoint$javajs_util_T3$javajs_util_V3$javajs_util_P4(pt3, norm, plane);
 return mp.addXPt4$javajs_util_P4(plane);
-}var vAB=Clazz.new_($I$(10));
+}var vAB=Clazz.new_($I$(10,1));
 var ptref=(args.length == 4 ? mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[3], null) : null);
 var nd=$I$(15).getDirectedNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3(pt1, pt2, pt3, ptref, norm, vAB);
 return mp.addXPt4$javajs_util_P4($I$(33).new4$F$F$F$F(norm.x, norm.y, norm.z, nd));
@@ -1692,19 +1748,19 @@ case 8:
 var sv=args[0].getList$();
 if (sv == null  || sv.size$() != 4 ) return false;
 var pt1=$I$(1).ptValue$org_jmol_script_SV(args[1]);
-pt3=$I$(2).newP$javajs_util_T3($I$(1).ptValue$org_jmol_script_SV(sv.get$I(0)));
-pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(pt1.x, $I$(1).ptValue$org_jmol_script_SV(sv.get$I(1)), pt3);
-pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(pt1.y, $I$(1).ptValue$org_jmol_script_SV(sv.get$I(2)), pt3);
-pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(pt1.z, $I$(1).ptValue$org_jmol_script_SV(sv.get$I(3)), pt3);
+pt3=$I$(2,"newP$javajs_util_T3",[$I$(1,"ptValue$org_jmol_script_SV",[sv.get$I(0)])]);
+pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(pt1.x, $I$(1,"ptValue$org_jmol_script_SV",[sv.get$I(1)]), pt3);
+pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(pt1.y, $I$(1,"ptValue$org_jmol_script_SV",[sv.get$I(2)]), pt3);
+pt3.scaleAdd2$F$javajs_util_T3$javajs_util_T3(pt1.z, $I$(1,"ptValue$org_jmol_script_SV",[sv.get$I(3)]), pt3);
 break;
 default:
 return false;
 }
 return mp.addXPt$javajs_util_P3(pt3);
 case 3:
-return mp.addXPt$javajs_util_P3($I$(2).new3$F$F$F(args[0].asFloat$(), args[1].asFloat$(), args[2].asFloat$()));
+return mp.addXPt$javajs_util_P3($I$(2,"new3$F$F$F",[args[0].asFloat$(), args[1].asFloat$(), args[2].asFloat$()]));
 case 4:
-return mp.addXPt4$javajs_util_P4($I$(33).new4$F$F$F$F(args[0].asFloat$(), args[1].asFloat$(), args[2].asFloat$(), args[3].asFloat$()));
+return mp.addXPt4$javajs_util_P4($I$(33,"new4$F$F$F$F",[args[0].asFloat$(), args[1].asFloat$(), args[2].asFloat$(), args[3].asFloat$()]));
 }
 }, p$1);
 
@@ -1774,10 +1830,10 @@ q=$I$(25).newM$javajs_util_M3(args[0].value);
 p4=args[0].value;
 } else {
 var s=$I$(1).sValue$org_jmol_script_T(args[0]);
-var v=$I$(11).uP$S(s.equalsIgnoreCase$S("best") ? this.vwr.getOrientationText$I$S$javajs_util_BS(1073741864, "best", null).toString() : s);
+var v=$I$(11,"uP$S",[s.equalsIgnoreCase$S("best") ? this.vwr.getOrientationText$I$S$javajs_util_BS(1073741864, "best", null).toString() : s]);
 if (!(Clazz.instanceOf(v, "javajs.util.P4"))) return false;
 p4=v;
-}if (tok == 134217731) q=$I$(25).newVA$javajs_util_T3$F($I$(2).new3$F$F$F(p4.x, p4.y, p4.z), p4.w);
+}if (tok == 134217731) q=$I$(25,"newVA$javajs_util_T3$F",[$I$(2).new3$F$F$F(p4.x, p4.y, p4.z), p4.w]);
 break;
 case 2:
 if (tok == 134221850) {
@@ -1798,27 +1854,27 @@ qs=$I$(25).div$javajs_util_QuatA$javajs_util_QuatA$I$Z(data2, data1, nMax, isRel
 break;
 }}var pt1=mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[1], null);
 p4=mp.planeValue$org_jmol_script_T(args[0]);
-if (pt1 != null ) q=$I$(25).getQuaternionFrame$javajs_util_P3$javajs_util_T3$javajs_util_T3($I$(2).new3$F$F$F(0, 0, 0), pt0, pt1);
- else q=$I$(25).newVA$javajs_util_T3$F(pt0, $I$(1).fValue$org_jmol_script_T(args[1]));
+if (pt1 != null ) q=$I$(25,"getQuaternionFrame$javajs_util_P3$javajs_util_T3$javajs_util_T3",[$I$(2).new3$F$F$F(0, 0, 0), pt0, pt1]);
+ else q=$I$(25,"newVA$javajs_util_T3$F",[pt0, $I$(1).fValue$org_jmol_script_T(args[1])]);
 break;
 case 3:
 if (args[0].tok == 9) {
 var pt=(args[2].tok == 8 ? args[2].value : this.vwr.ms.getAtomSetCenter$javajs_util_BS(args[2].value));
-return mp.addXStr$S($I$(11).drawQuat$javajs_util_Quat$S$S$javajs_util_P3$F($I$(25).newP4$javajs_util_P4(args[0].value), "q", $I$(1).sValue$org_jmol_script_T(args[1]), pt, 1.0));
+return mp.addXStr$S($I$(11,"drawQuat$javajs_util_Quat$S$S$javajs_util_P3$F",[$I$(25).newP4$javajs_util_P4(args[0].value), "q", $I$(1).sValue$org_jmol_script_T(args[1]), pt, 1.0]));
 }var pts=Clazz.array($I$(2), [3]);
 for (var i=0; i < 3; i++) pts[i]=(args[i].tok == 8 ? args[i].value : this.vwr.ms.getAtomSetCenter$javajs_util_BS(args[i].value));
 
 q=$I$(25).getQuaternionFrame$javajs_util_P3$javajs_util_T3$javajs_util_T3(pts[0], pts[1], pts[2]);
 break;
 case 4:
-if (tok == 134221850) p4=$I$(33).new4$F$F$F$F($I$(1).fValue$org_jmol_script_T(args[1]), $I$(1).fValue$org_jmol_script_T(args[2]), $I$(1).fValue$org_jmol_script_T(args[3]), $I$(1).fValue$org_jmol_script_T(args[0]));
- else q=$I$(25).newVA$javajs_util_T3$F($I$(2).new3$F$F$F($I$(1).fValue$org_jmol_script_T(args[0]), $I$(1).fValue$org_jmol_script_T(args[1]), $I$(1).fValue$org_jmol_script_T(args[2])), $I$(1).fValue$org_jmol_script_T(args[3]));
+if (tok == 134221850) p4=$I$(33,"new4$F$F$F$F",[$I$(1).fValue$org_jmol_script_T(args[1]), $I$(1).fValue$org_jmol_script_T(args[2]), $I$(1).fValue$org_jmol_script_T(args[3]), $I$(1).fValue$org_jmol_script_T(args[0])]);
+ else q=$I$(25,"newVA$javajs_util_T3$F",[$I$(2,"new3$F$F$F",[$I$(1).fValue$org_jmol_script_T(args[0]), $I$(1).fValue$org_jmol_script_T(args[1]), $I$(1).fValue$org_jmol_script_T(args[2])]), $I$(1).fValue$org_jmol_script_T(args[3])]);
 break;
 }
 if (qs != null ) {
 if (nMax != 2147483647) {
-var list=Clazz.new_($I$(5));
-for (var i=0; i < qs.length; i++) list.addLast$TV(qs[i].toPoint4f$());
+var list=Clazz.new_($I$(5,1));
+for (var i=0; i < qs.length; i++) list.addLast$O(qs[i].toPoint4f$());
 
 return mp.addXList$javajs_util_Lst(list);
 }q=(qs.length > 0 ? qs[0] : null);
@@ -1827,7 +1883,7 @@ return mp.addXList$javajs_util_Lst(list);
 
 Clazz.newMeth(C$, 'evaluateRandom$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA', function (mp, args) {
 if (args.length > 3) return false;
-if (this.rand == null ) this.rand=Clazz.new_($I$(34));
+if (this.rand == null ) this.rand=Clazz.new_($I$(34,1));
 var lower=0;
 var upper=1;
 switch (args.length) {
@@ -1881,11 +1937,11 @@ return mp.addXAF$FA(f);
 }
 case 7:
 var l1=x1.getList$();
-var l2=Clazz.new_($I$(5));
+var l2=Clazz.new_($I$(5,1));
 for (var i=0, len=l1.size$(); i < len; i++) {
 var l3=l1.get$I(i).getList$();
 if (l3 == null ) return mp.addXStr$S("");
-l2.addLast$TV(n < l3.size$() ? l3.get$I(n) : $I$(1).newS$S(""));
+l2.addLast$O(n < l3.size$() ? l3.get$I(n) : $I$(1).newS$S(""));
 }
 return mp.addXList$javajs_util_Lst(l2);
 }
@@ -1897,7 +1953,7 @@ var x1=mp.getX$();
 switch (args.length) {
 case 1:
 var lst=args[0].getList$();
-if (lst != null ) for (var i=0, n=lst.size$(); i < n; i++) if ($I$(1).areEqual$org_jmol_script_SV$org_jmol_script_SV(x1, lst.get$I(i))) return mp.addXInt$I(i + 1);
+if (lst != null ) for (var i=0, n=lst.size$(); i < n; i++) if ($I$(1,"areEqual$org_jmol_script_SV$org_jmol_script_SV",[x1, lst.get$I(i)])) return mp.addXInt$I(i + 1);
 
 break;
 default:
@@ -1940,13 +1996,13 @@ return mp.addXStr$S(sFind == null  ? $I$(27).clean$S(s) : isAll ? $I$(27).replac
 Clazz.newMeth(C$, 'evaluateScript$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$I', function (mp, args, tok) {
 if ((tok == 134222350 || tok == 134238732 ) && args.length != 1  || args.length == 0 ) return false;
 var s=$I$(1).sValue$org_jmol_script_T(args[0]);
-var sb=Clazz.new_($I$(9));
+var sb=Clazz.new_($I$(9,1));
 switch (tok) {
 case 134218759:
 return (args.length == 2 ? s.equalsIgnoreCase$S("JSON") && mp.addXObj$O(this.vwr.parseJSONMap$S($I$(1).sValue$org_jmol_script_T(args[1])))  : mp.addXObj$O(this.vwr.evaluateExpressionAsVariable$O(s)));
 case 134222850:
 var appID=(args.length == 2 ? $I$(1).sValue$org_jmol_script_T(args[1]) : ".");
-if (!appID.equals$O(".")) sb.append$S(this.vwr.jsEval$S(appID + "\1" + s ));
+if (!appID.equals$O(".")) sb.append$S(this.vwr.jsEval$S(appID + "\u0001" + s ));
 if (appID.equals$O(".") || appID.equals$O("*") ) this.e.runScriptBuffer$S$javajs_util_SB$Z(s, sb, true);
 break;
 case 134222350:
@@ -1981,7 +2037,7 @@ n++;
 i=pt;
 }
 return mp.addXInt$I(n);
-}var counts=Clazz.new_($I$(5));
+}var counts=Clazz.new_($I$(5,1));
 var last=null;
 var count=null;
 var xList=$I$(1).getVariable$O(x.value).sortOrReverse$I(0).getList$();
@@ -1993,10 +2049,10 @@ if ($I$(1).areEqual$org_jmol_script_SV$org_jmol_script_SV(a, last)) {
 count.intValue++;
 continue;
 } else if (last != null ) {
-var y=Clazz.new_($I$(5));
-y.addLast$TV(last);
-y.addLast$TV(count);
-counts.addLast$TV($I$(1).getVariableList$javajs_util_Lst(y));
+var y=Clazz.new_($I$(5,1));
+y.addLast$O(last);
+y.addLast$O(count);
+counts.addLast$O($I$(1).getVariableList$javajs_util_Lst(y));
 }count=$I$(1).newI$I(1);
 last=a;
 }
@@ -2013,12 +2069,12 @@ case 0:
 break;
 case 1:
 if (args[0].tok == 1073742335) {
-return mp.addX$org_jmol_script_SV($I$(1).getVariable$O($I$(27).getTokens$S(x.asString$())));
+return mp.addX$org_jmol_script_SV($I$(1,"getVariable$O",[$I$(27,"getTokens$S",[x.asString$()])]));
 }break;
 case 2:
 if (x.tok == 7) break;
 if (tok == 1275069447) {
-x=$I$(1).getVariable$O($I$(27).split$S$S($I$(27).rep$S$S$S(x.value, "\n\r", "\n").replace$C$C("\r", "\n"), "\n"));
+x=$I$(1,"getVariable$O",[$I$(27,"split$S$S",[$I$(27).rep$S$S$S(x.value, "\n\r", "\n").replace$C$C("\r", "\n"), "\n"])]);
 break;
 }default:
 return false;
@@ -2032,11 +2088,11 @@ case 1275069447:
 if (x.tok == 10) {
 var bsSelected=x.value;
 var modelCount=this.vwr.ms.mc;
-var lst=Clazz.new_($I$(5));
+var lst=Clazz.new_($I$(5,1));
 for (var i=0; i < modelCount; i++) {
 var bs=this.vwr.getModelUndeletedAtomsBitSet$I(i);
 bs.and$javajs_util_BS(bsSelected);
-lst.addLast$TV($I$(1).getVariable$O(bs));
+lst.addLast$O($I$(1).getVariable$O(bs));
 }
 return mp.addXList$javajs_util_Lst(lst);
 }return mp.addXAS$SA($I$(27).split$S$S(s, sArg));
@@ -2055,7 +2111,7 @@ return mp.addXStr$S("");
 
 Clazz.newMeth(C$, 'evaluateSubstructure$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA$I$Z', function (mp, args, tok, isSelector) {
 if (args.length == 0 || isSelector && args.length > 1  ) return false;
-var bs=Clazz.new_($I$(16));
+var bs=Clazz.new_($I$(16,1));
 var pattern=$I$(1).sValue$org_jmol_script_T(args[0]);
 if (pattern.length$() > 0) try {
 var bsSelected=(isSelector ? mp.getX$().value : args.length == 2 && args[1].tok == 10  ? args[1].value : null);
@@ -2078,9 +2134,9 @@ if (bsAtoms == null  && this.vwr.ms.mc == 1 ) bsAtoms=this.vwr.getModelUndeleted
 var narg=args.length;
 if (narg == 0) {
 if (bsAtoms.isEmpty$()) return false;
-var ops=$I$(27).split$S$S($I$(27).trim$S$S(this.vwr.getSymTemp$().getSpaceGroupInfo$org_jmol_modelset_ModelSet$S$I$Z(this.vwr.ms, null, this.vwr.ms.at[bsAtoms.nextSetBit$I(0)].mi, false).get$O("symmetryInfo"), "\n"), "\n");
-var lst=Clazz.new_($I$(5));
-for (var i=0, n=ops.length; i < n; i++) lst.addLast$TV($I$(27).split$S$S(ops[i], "\t"));
+var ops=$I$(27,"split$S$S",[$I$(27,"trim$S$S",[this.vwr.getSymTemp$().getSpaceGroupInfo$org_jmol_modelset_ModelSet$S$I$Z$FA(this.vwr.ms, null, this.vwr.ms.at[bsAtoms.nextSetBit$I(0)].mi, false, null).get$O("symmetryInfo"), "\n"]), "\n"]);
+var lst=Clazz.new_($I$(5,1));
+for (var i=0, n=ops.length; i < n; i++) lst.addLast$O($I$(27).split$S$S(ops[i], "\t"));
 
 return mp.addXList$javajs_util_Lst(lst);
 }var xyz=null;
@@ -2101,28 +2157,31 @@ apt++;
 break;
 }
 if (bsAtoms == null ) {
-if (apt < narg && args[apt].tok == 10 ) (bsAtoms=Clazz.new_($I$(16))).or$javajs_util_BS(args[apt].value);
-if (apt + 1 < narg && args[apt + 1].tok == 10 ) (bsAtoms == null  ? (bsAtoms=Clazz.new_($I$(16))) : bsAtoms).or$javajs_util_BS(args[apt + 1].value);
+if (apt < narg && args[apt].tok == 10 ) (bsAtoms=Clazz.new_($I$(16,1))).or$javajs_util_BS(args[apt].value);
+if (apt + 1 < narg && args[apt + 1].tok == 10 ) (bsAtoms == null  ? (bsAtoms=Clazz.new_($I$(16,1))) : bsAtoms).or$javajs_util_BS(args[apt + 1].value);
 }var pt1=null;
 var pt2=null;
 if ((pt1=(narg > apt ? mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[apt], bsAtoms) : null)) != null ) apt++;
 if ((pt2=(narg > apt ? mp.ptValue$org_jmol_script_SV$javajs_util_BS(args[apt], bsAtoms) : null)) != null ) apt++;
-var nth=(pt2 != null  && args.length > apt  && iOp == -2147483648  && args[apt].tok == 2  ? args[apt].intValue : 0);
-if (nth > 0) apt++;
+var nth=(pt2 != null  && args.length > apt  && iOp == -2147483648  && args[apt].tok == 2  ? args[apt].intValue : -1);
+if (nth >= 0) apt++;
 if (iOp == -2147483648) iOp=0;
 var desc=(narg == apt ? (pt2 != null  ? "all" : pt1 != null  ? "point" : "matrix") : $I$(1).sValue$org_jmol_script_T(args[apt++]).toLowerCase$());
-return (bsAtoms != null  && !bsAtoms.isEmpty$()  && apt == args.length  && mp.addXObj$O(this.vwr.getSymTemp$().getSymmetryInfoAtom$org_jmol_modelset_ModelSet$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I(this.vwr.ms, bsAtoms.nextSetBit$I(0), xyz, iOp, pt1, pt2, desc, 0, 0, nth)) );
+return (bsAtoms != null  && !bsAtoms.isEmpty$()  && apt == args.length  && mp.addXObj$O(this.vwr.getSymmetryInfo$I$S$I$javajs_util_P3$javajs_util_P3$I$S$F$I$I(bsAtoms.nextSetBit$I(0), xyz, iOp, pt1, pt2, 0, desc, 0, nth, 0)) );
 }, p$1);
 
 Clazz.newMeth(C$, 'evaluateTensor$org_jmol_script_ScriptMathProcessor$org_jmol_script_SVA', function (mp, args) {
-var x=mp.getX$();
-if (args.length > 2 || x.tok != 10 ) return false;
+var isTensor=(args.length == 2 && args[1].tok == 1275068445 );
+var x=(isTensor ? null : mp.getX$());
+if (args.length > 2 || !isTensor && x.tok != 10  ) return false;
 var bs=x.value;
-var tensorType=(args.length == 0 ? null : $I$(1).sValue$org_jmol_script_T(args[0]).toLowerCase$());
+var tensorType=(isTensor || args.length == 0  ? null : $I$(1).sValue$org_jmol_script_T(args[0]).toLowerCase$());
 var calc=this.vwr.getNMRCalculation$();
 if ("unique".equals$O(tensorType)) return mp.addXBs$javajs_util_BS(calc.getUniqueTensorSet$javajs_util_BS(bs));
 var infoType=(args.length < 2 ? null : $I$(1).sValue$org_jmol_script_T(args[1]).toLowerCase$());
-return mp.addXList$javajs_util_Lst(calc.getTensorInfo$S$S$javajs_util_BS(tensorType, infoType, bs));
+if (isTensor) {
+return mp.addXObj$O((args[0].value).getInfo$S(infoType));
+}return mp.addXList$javajs_util_Lst(calc.getTensorInfo$S$S$javajs_util_BS(tensorType, infoType, bs));
 }, p$1);
 
 Clazz.newMeth(C$, 'evaluateUserFunction$org_jmol_script_ScriptMathProcessor$S$org_jmol_script_SVA$I$Z', function (mp, name, args, tok, isSelector) {
@@ -2141,9 +2200,9 @@ return false;
 }
 }name=name.toLowerCase$();
 mp.wasX=false;
-var params=Clazz.new_($I$(5));
+var params=Clazz.new_($I$(5,1));
 for (var i=0; i < args.length; i++) {
-params.addLast$TV(args[i]);
+params.addLast$O(args[i]);
 }
 if (isSelector) {
 return mp.addXObj$O(this.e.getBitsetProperty$javajs_util_BS$javajs_util_Lst$I$javajs_util_P3$javajs_util_P4$O$O$Z$I$Z(x1.value, null, tok, null, null, x1.value, Clazz.array(java.lang.Object, -1, [name, params]), false, x1.index, false));
@@ -2309,12 +2368,12 @@ return ((bs != null  || pt != null  ) && mp.addXObj$O(this.vwr.ms.getUnitCellPoi
 if (args[last].tok == 7) {
 var sv=args[last].getList$();
 var ap3=Clazz.array($I$(2), [sv.size$()]);
-for (var i=ap3.length; --i >= 0; ) ap3[i]=$I$(1).ptValue$org_jmol_script_SV(sv.get$I(i));
+for (var i=ap3.length; --i >= 0; ) ap3[i]=$I$(1,"ptValue$org_jmol_script_SV",[sv.get$I(i)]);
 
 var ap31=null;
 if (pts1 != null ) {
 ap31=Clazz.array($I$(2), [pts1.size$()]);
-for (var i=ap31.length; --i >= 0; ) ap31[i]=$I$(1).ptValue$org_jmol_script_SV(pts1.get$I(i));
+for (var i=ap31.length; --i >= 0; ) ap31[i]=$I$(1,"ptValue$org_jmol_script_SV",[pts1.get$I(i)]);
 
 }var ret=Clazz.array(java.lang.Object, [1]);
 switch ($I$(35).withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA(distance, pt, ap3, ap31, ret)) {
@@ -2330,12 +2389,12 @@ default:
 return false;
 }
 }return mp.addXBs$javajs_util_BS(this.vwr.getAtomsNearPt$F$javajs_util_P3(distance, pt));
-}if (tok == 1086324744) return mp.addXBs$javajs_util_BS(this.vwr.ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(withinStr, bs, Clazz.new_($I$(16))));
-if (bs == null ) bs=Clazz.new_($I$(16));
+}if (tok == 1086324744) return mp.addXBs$javajs_util_BS(this.vwr.ms.getSequenceBits$S$javajs_util_BS$javajs_util_BS(withinStr, bs, Clazz.new_($I$(16,1))));
+if (bs == null ) bs=Clazz.new_($I$(16,1));
 if (!isDistance) return mp.addXBs$javajs_util_BS(this.vwr.ms.getAtoms$I$O(tok, bs));
 if (isWithinGroup) return mp.addXBs$javajs_util_BS(this.vwr.getGroupsWithin$I$javajs_util_BS((distance|0), bs));
 if (isVdw) {
-rd=Clazz.new_($I$(20).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, (distance > 10  ? distance / 100 : distance), (distance > 10  ? $I$(21).FACTOR : $I$(21).OFFSET), $I$(22).AUTO]);
+rd=Clazz.new_([null, (distance > 10  ? distance / 100 : distance), (distance > 10  ? $I$(21).FACTOR : $I$(21).OFFSET), $I$(22).AUTO],$I$(20,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
 if (distance < 0 ) distance=0;
 }return mp.addXBs$javajs_util_BS(this.vwr.ms.getAtomsWithinRadius$F$javajs_util_BS$Z$org_jmol_atomdata_RadiusData(distance, bs, isWithinModelSet, rd));
 }, p$1);
@@ -2349,12 +2408,12 @@ var type=args[0].asString$().toUpperCase$();
 if (type.equals$O("PNGJ")) {
 return mp.addXMap$java_util_Map(this.vwr.fm.getFileAsMap$S$S(null, "PNGJ"));
 }if ($I$(27).isOneOf$S$S(type, ";ZIP;ZIPALL;JMOL;")) {
-var params=Clazz.new_($I$(6));
-var oc=Clazz.new_($I$(36));
-params.put$TK$TV("outputChannel", oc);
+var params=Clazz.new_($I$(6,1));
+var oc=Clazz.new_($I$(36,1));
+params.put$O$O("outputChannel", oc);
 this.vwr.createZip$S$S$java_util_Map(null, type, params);
-var bis=$I$(37).getBIS$BA(oc.toByteArray$());
-params=Clazz.new_($I$(6));
+var bis=$I$(37,"getBIS$BA",[oc.toByteArray$()]);
+params=Clazz.new_($I$(6,1));
 $I$(38).readFileAsMap$java_io_BufferedInputStream$java_util_Map$S(bis, params, null);
 return mp.addXMap$java_util_Map(params);
 }break;
@@ -2370,11 +2429,11 @@ data[2]=Integer.valueOf$I(-1);
 if (this.e.getShapePropertyData$I$S$OA(22, "getCenter", data)) return this.vwr.getAtomsNearPt$F$javajs_util_P3(distance, data[2]);
 data[1]=Float.valueOf$F(distance);
 if (this.e.getShapePropertyData$I$S$OA(21, "getAtomsWithin", data)) return data[2];
-return Clazz.new_($I$(16));
+return Clazz.new_($I$(16,1));
 }, p$1);
 
 Clazz.newMeth(C$, 'getAtomsNearPts$F$javajs_util_T3A$javajs_util_BS', function (distance, points, bsInclude) {
-var bsResult=Clazz.new_($I$(16));
+var bsResult=Clazz.new_($I$(16,1));
 if (points.length == 0 || bsInclude != null  && bsInclude.isEmpty$()  ) return bsResult;
 if (bsInclude == null ) bsInclude=$I$(19).setAll$I(points.length);
 var at=this.vwr.ms.at;
@@ -2395,7 +2454,7 @@ var ndata=0;
 var htPivot=null;
 while (true){
 if ($I$(7).isAF$O(floatOrSVArray)) {
-if (tok == 1140850707) return "NaN";
+if (tok == 1275068437) return "NaN";
 data=floatOrSVArray;
 ndata=data.length;
 if (ndata == 0) break;
@@ -2403,7 +2462,7 @@ if (ndata == 0) break;
 sv=floatOrSVArray;
 ndata=sv.size$();
 if (ndata == 0) {
-if (tok != 1140850707) break;
+if (tok != 1275068437) break;
 } else {
 var sv0=sv.get$I(0);
 if (sv0.tok == 8) return p$1.getMinMaxPoint$O$I.apply(this, [sv, tok]);
@@ -2418,8 +2477,8 @@ break;
 var minMax;
 var isMin=false;
 switch (tok) {
-case 1140850707:
-htPivot=Clazz.new_($I$(6));
+case 1275068437:
+htPivot=Clazz.new_($I$(6,1));
 sum=minMax=0;
 break;
 case 32:
@@ -2437,7 +2496,7 @@ sum=minMax=0;
 var sum2=0;
 var n=0;
 var isInt=true;
-var isPivot=(tok == 1140850707);
+var isPivot=(tok == 1275068437);
 for (var i=ndata; --i >= 0; ) {
 var svi=(sv == null  ? $I$(1).vF : sv.get$I(i));
 var v=(isPivot ? 1 : data == null  ? $I$(1).fValue$org_jmol_script_T(svi) : data[i]);
@@ -2451,11 +2510,11 @@ case 128:
 case 96:
 sum += v;
 break;
-case 1140850707:
+case 1275068437:
 isInt&=(svi.tok == 2);
 var key=svi.asString$();
 var ii=htPivot.get$O(key);
-htPivot.put$TK$TV(key, (ii == null  ?  new Integer(1) :  new Integer(ii.intValue$() + 1)));
+htPivot.put$O$O(key, (ii == null  ?  new Integer(1) :  new Integer(ii.intValue$() + 1)));
 break;
 case 32:
 case 64:
@@ -2466,7 +2525,7 @@ if (isInt) minMax=svi.intValue;
 }break;
 }
 }
-if (tok == 1140850707) {
+if (tok == 1275068437) {
 return htPivot;
 }if (n == 0) break;
 switch (tok) {
@@ -2503,11 +2562,11 @@ ndata=data.length;
 sv=pointOrSVArray;
 ndata=sv.size$();
 }if (sv == null  && data == null  ) return "NaN";
-var result=Clazz.new_($I$(2));
+var result=Clazz.new_($I$(2,1));
 var fdata=Clazz.array(Float.TYPE, [ndata]);
 for (var xyz=0; xyz < 3; xyz++) {
 for (var i=0; i < ndata; i++) {
-var pt=(data == null  ? $I$(1).ptValue$org_jmol_script_SV(sv.get$I(i)) : data[i]);
+var pt=(data == null  ? $I$(1,"ptValue$org_jmol_script_SV",[sv.get$I(i)]) : data[i]);
 if (pt == null ) return "NaN";
 switch (xyz) {
 case 0:
@@ -2617,4 +2676,4 @@ if (bs.equals$O(bsA)) bsB.andNot$javajs_util_BS(bsA);
 }}return bsB;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:18:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:46 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

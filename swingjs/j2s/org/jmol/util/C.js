@@ -1,26 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.Int2IntHash','javajs.util.AU','javajs.util.CU','org.jmol.c.PAL','org.jmol.util.Logger','javajs.util.PT','org.jmol.util.Escape','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "C");
-C$.colixMax=0;
-C$.argbs=null;
-C$.argbsGreyscale=null;
-C$.colixHash=null;
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.util.Int2IntHash','javajs.util.AU','javajs.util.CU','org.jmol.c.PAL','org.jmol.util.Logger','javajs.util.PT','org.jmol.util.Escape','javajs.util.SB']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "C");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.colixMax=4;
-C$.argbs=Clazz.array(Integer.TYPE, [128]);
-C$.colixHash=Clazz.new_($I$(1).c$$I,[256]);
-{
-var predefinedArgbs=Clazz.array(Integer.TYPE, -1, [-16777216, -23296, -16181, -16776961, -1, -16711681, -65536, -16744448, -8355712, -4144960, -16711936, -8388608, -16777088, -8355840, -8388480, -16744320, -65281, -256, -38476, -10496]);
-for (var i=0; i < predefinedArgbs.length; ++i) C$.getColix$I(predefinedArgbs[i]);
-
-};
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['I',['colixMax'],'O',['argbs','int[]','+argbsGreyscale','colixHash','org.jmol.util.Int2IntHash']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getColix$I', function (argb) {
@@ -78,7 +68,7 @@ if (Clazz.instanceOf(obj, "java.lang.Integer")) return C$.getColix$I((obj).intVa
 if (Clazz.instanceOf(obj, "java.lang.String")) return C$.getColixS$S(obj);
 if (Clazz.instanceOf(obj, "java.lang.Byte")) return ((obj).byteValue$() == 0 ? 0 : 2);
 if ($I$(5).debugging) {
-$I$(5).debug$S("?? getColix(" + obj + ")" );
+$I$(5,"debug$S",["?? getColix(" + obj + ")" ]);
 }return 22;
 }, 1);
 
@@ -191,12 +181,12 @@ return colixes;
 }, 1);
 
 Clazz.newMeth(C$, 'getHexCode$H', function (colix) {
-return $I$(7).escapeColor$I(C$.getArgb$H(colix));
+return $I$(7,"escapeColor$I",[C$.getArgb$H(colix)]);
 }, 1);
 
 Clazz.newMeth(C$, 'getHexCodes$HA', function (colixes) {
 if (colixes == null ) return null;
-var s=Clazz.new_($I$(8));
+var s=Clazz.new_($I$(8,1));
 for (var i=0; i < colixes.length; i++) s.append$S(i == 0 ? "" : " ").append$S(C$.getHexCode$H(colixes[i]));
 
 return s.toString();
@@ -210,6 +200,17 @@ return (a == 255 ? C$.getColix$I(argb) : C$.getColixTranslucent3$H$Z$F(C$.getCol
 Clazz.newMeth(C$, 'getBgContrast$I', function (argb) {
 return (($I$(3).toFFGGGfromRGB$I(argb) & 255) < 128 ? 8 : 4);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.colixMax=4;
+C$.argbs=Clazz.array(Integer.TYPE, [128]);
+C$.colixHash=Clazz.new_($I$(1,1).c$$I,[256]);
+{
+var predefinedArgbs=Clazz.array(Integer.TYPE, -1, [-16777216, -23296, -16181, -16776961, -1, -16711681, -65536, -16744448, -8355712, -4144960, -16711936, -8388608, -16777088, -8355840, -8388480, -16744320, -65281, -256, -38476, -10496]);
+for (var i=0; i < predefinedArgbs.length; ++i) C$.getColix$I(predefinedArgbs[i]);
+
+};
+};
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

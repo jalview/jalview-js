@@ -1,14 +1,12 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),I$=[];
-var C$=Clazz.newClass(P$, "TreeAlignResult");
+/*c*/var C$=Clazz.newClass(P$, "TreeAlignResult");
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.alignment=null;
-this.distance=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['distance'],'O',['alignment','fr.orsay.lri.varna.models.treealign.Tree']]]
 
 Clazz.newMeth(C$, 'getAlignment$', function () {
 return this.alignment;
@@ -28,4 +26,4 @@ this.distance=distance;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,22 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.popup"),p$1={},I$=[[0,'java.util.Properties','java.io.BufferedReader','java.io.StringReader','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PopupResource");
+(function(){var P$=Clazz.newPackage("org.jmol.popup"),p$1={},I$=[[0,'java.util.Properties','java.io.BufferedReader','java.io.StringReader','javajs.util.SB']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PopupResource");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.structure=null;
-this.words=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['structure','java.util.Properties','+words']]]
 
 Clazz.newMeth(C$, 'c$$S$java_util_Properties', function (menuStructure, menuText) {
-C$.$init$.apply(this);
-this.structure=Clazz.new_($I$(1));
-this.words=Clazz.new_($I$(1));
+;C$.$init$.apply(this);
+this.structure=Clazz.new_($I$(1,1));
+this.words=Clazz.new_($I$(1,1));
 this.buildStructure$S(menuStructure);
 p$1.localize$Z$java_util_Properties.apply(this, [menuStructure != null , menuText]);
 }, 1);
@@ -31,7 +26,7 @@ return (str == null  ? key : str);
 });
 
 Clazz.newMeth(C$, 'setStructure$S$org_jmol_api_Translator', function (slist, gt) {
-var br=Clazz.new_($I$(2).c$$java_io_Reader,[Clazz.new_($I$(3).c$$S,[slist])]);
+var br=Clazz.new_([Clazz.new_($I$(3,1).c$$S,[slist])],$I$(2,1).c$$java_io_Reader);
 var line;
 var pt;
 try {
@@ -49,7 +44,7 @@ label=name.substring$I(pt + 1).trim$();
 name=name.substring$I$I(0, pt).trim$();
 }if (name.length$() == 0) continue;
 if (value.length$() > 0) this.structure.setProperty$S$S(name, value);
-if (label != null  && label.length$() > 0 ) this.words.setProperty$S$S(name, (gt == null  ? label : gt.translate$(label)));
+if (label != null  && label.length$() > 0 ) this.words.setProperty$S$S(name, (gt == null  ? label : gt.translate$S(label)));
 }
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -95,7 +90,7 @@ return "# " + this.getMenuName$() + ".mnu " + title + "\n\n" + "# Part I -- Menu
 
 Clazz.newMeth(C$, 'dumpWords', function () {
 var wordContents=this.getWordContents$();
-var s=Clazz.new_($I$(4));
+var s=Clazz.new_($I$(4,1));
 for (var i=0; i < wordContents.length; i++) {
 var key=wordContents[i++];
 if (this.structure.getProperty$S(key) == null ) s.append$S(key).append$S(" | ").append$S(wordContents[i]).appendC$C("\n");
@@ -105,7 +100,7 @@ return s.toString();
 
 Clazz.newMeth(C$, 'dumpStructure$SAA', function (items) {
 var previous="";
-var s=Clazz.new_($I$(4));
+var s=Clazz.new_($I$(4,1));
 for (var i=0; i < items.length; i++) {
 var key=items[i][0];
 var label=this.words.getProperty$S(key);
@@ -117,4 +112,4 @@ return s.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,41 +1,7 @@
-(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.InfTree','swingjs.jzlib.InfCodes']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "InfBlocks");
-C$.inflate_mask=null;
-C$.border=null;
+(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.InfTree','swingjs.jzlib.InfCodes']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "InfBlocks");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.inflate_mask=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535]);
-C$.border=Clazz.array(Integer.TYPE, -1, [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mode=0;
-this.left=0;
-this.table=0;
-this.index=0;
-this.blens=null;
-this.bb=null;
-this.tb=null;
-this.bl=null;
-this.bd=null;
-this.tl=null;
-this.td=null;
-this.tli=null;
-this.tdi=null;
-this.codes=null;
-this.last=0;
-this.bitk=0;
-this.bitb=0;
-this.hufts=null;
-this.window=null;
-this.end=0;
-this.read=0;
-this.write=0;
-this.check=false;
-this.inftree=null;
-this.z=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bb=Clazz.array(Integer.TYPE, [1]);
@@ -44,13 +10,16 @@ this.bl=Clazz.array(Integer.TYPE, [1]);
 this.bd=Clazz.array(Integer.TYPE, [1]);
 this.tli=Clazz.array(Integer.TYPE, [1]);
 this.tdi=Clazz.array(Integer.TYPE, [1]);
-this.inftree=Clazz.new_($I$(1));
-}, 1);
+this.inftree=Clazz.new_($I$(1,1));
+},1);
 
-Clazz.newMeth(C$, 'c$$swingjs_jzlib_ZStream$I', function (z, w) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['check'],'I',['mode','left','table','index','last','bitk','bitb','end','read','write'],'O',['+blens','+bb','+tb','+bl','+bd','tl','int[][]','+td','tli','int[]','+tdi','codes','swingjs.jzlib.InfCodes','hufts','int[]','window','byte[]','inftree','swingjs.jzlib.InfTree','z','swingjs.jzlib.ZStream']]
+,['O',['inflate_mask','int[]','+border']]]
+
+Clazz.newMeth(C$, 'c$$swingjs_jzlib_ZStream$I',  function (z, w) {
+;C$.$init$.apply(this);
 this.z=z;
-this.codes=Clazz.new_($I$(2).c$$swingjs_jzlib_ZStream$swingjs_jzlib_InfBlocks,[this.z, this]);
+this.codes=Clazz.new_($I$(2,1).c$$swingjs_jzlib_ZStream$swingjs_jzlib_InfBlocks,[this.z, this]);
 this.hufts=Clazz.array(Integer.TYPE, [4320]);
 this.window=Clazz.array(Byte.TYPE, [w]);
 this.end=w;
@@ -61,7 +30,7 @@ this.td=Clazz.array(Integer.TYPE, [1, null]);
 this.reset$();
 }, 1);
 
-Clazz.newMeth(C$, 'reset$', function () {
+Clazz.newMeth(C$, 'reset$',  function () {
 if (this.mode == 6) {
 this.codes.free$swingjs_jzlib_ZStream(this.z);
 }this.mode=0;
@@ -72,7 +41,7 @@ if (this.check) {
 this.z.checksum.reset$();
 }});
 
-Clazz.newMeth(C$, 'proc$I', function (r) {
+Clazz.newMeth(C$, 'proc$I',  function (r) {
 var t;
 var b;
 var k;
@@ -81,7 +50,7 @@ var n;
 var q;
 var m;
 {
-p=this.z.next_in_index;
+p=this.z.in_index;
 n=this.z.avail_in;
 b=this.bitb;
 k=this.bitk;
@@ -98,12 +67,12 @@ r=0;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
-}n--;
-b|=(this.z.next_in[p++] & 255) << k;
+}--n;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 t=(b & 7);
@@ -143,8 +112,8 @@ r=-3;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }
@@ -157,12 +126,12 @@ r=0;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
-}n--;
-b|=(this.z.next_in[p++] & 255) << k;
+}--n;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 if ((((~b) >>> 16) & 65535) != (b & 65535)) {
@@ -172,8 +141,8 @@ r=-3;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }this.left=(b & 65535);
@@ -185,8 +154,8 @@ if (n == 0) {
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }if (m == 0) {
@@ -205,15 +174,15 @@ m=(q < this.read ? this.read - q - 1  : this.end - q);
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }}}r=0;
 t=this.left;
 if (t > n) t=n;
 if (t > m) t=m;
-System.arraycopy$O$I$O$I$I(this.z.next_in, p, this.window, q, t);
+System.arraycopy$O$I$O$I$I(this.z.$in, p, this.window, q, t);
 p+=t;
 n-=t;
 q+=t;
@@ -229,12 +198,12 @@ r=0;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
-}n--;
-b|=(this.z.next_in[p++] & 255) << k;
+}--n;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 this.table=t=(b & 16383);
@@ -245,8 +214,8 @@ r=-3;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }t=258 + (t & 31) + ((t >> 5) & 31) ;
@@ -270,12 +239,12 @@ r=0;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
-}n--;
-b|=(this.z.next_in[p++] & 255) << k;
+}--n;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 this.blens[C$.border[this.index++]]=b & 7;
@@ -296,8 +265,8 @@ this.mode=9;
 }this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }this.index=0;
@@ -318,12 +287,12 @@ r=0;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
-}n--;
-b|=(this.z.next_in[p++] & 255) << k;
+}--n;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 t=this.hufts[(this.tb[0] + (b & C$.inflate_mask[t])) * 3 + 1];
@@ -342,12 +311,12 @@ r=0;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
-}n--;
-b|=(this.z.next_in[p++] & 255) << k;
+}--n;
+b|=(this.z.$in[p++] & 255) << k;
 k+=8;
 }
 b>>>=(t);
@@ -365,8 +334,8 @@ r=-3;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }c=c == 16 ? this.blens[i - 1] : 0;
@@ -389,8 +358,8 @@ this.mode=9;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }this.codes.init$I$I$IA$I$IA$I(this.bl[0], this.bd[0], this.hufts, this.tli[0], this.hufts, this.tdi[0]);
@@ -399,14 +368,14 @@ case 6:
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 if ((r=this.codes.proc$I(r)) != 1) {
 return this.inflate_flush$I(r);
 }r=0;
 this.codes.free$swingjs_jzlib_ZStream(this.z);
-p=this.z.next_in_index;
+p=this.z.in_index;
 n=this.z.avail_in;
 b=this.bitb;
 k=this.bitk;
@@ -425,8 +394,8 @@ if (this.read != this.write) {
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }this.mode=8;
@@ -435,8 +404,8 @@ r=1;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 case 9:
@@ -444,8 +413,8 @@ r=-3;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 default:
@@ -453,30 +422,30 @@ r=-2;
 this.bitb=b;
 this.bitk=k;
 this.z.avail_in=n;
-this.z.total_in+=p - this.z.next_in_index;
-this.z.next_in_index=p;
+(this.z.total_in=Long.$add(this.z.total_in,(p - this.z.in_index)));
+this.z.in_index=p;
 this.write=q;
 return this.inflate_flush$I(r);
 }
 }
 });
 
-Clazz.newMeth(C$, 'free$', function () {
+Clazz.newMeth(C$, 'free$',  function () {
 this.reset$();
 this.window=null;
 this.hufts=null;
 });
 
-Clazz.newMeth(C$, 'set_dictionary$BA$I$I', function (d, start, n) {
+Clazz.newMeth(C$, 'set_dictionary$BA$I$I',  function (d, start, n) {
 System.arraycopy$O$I$O$I$I(d, start, this.window, 0, n);
 this.read=this.write=n;
 });
 
-Clazz.newMeth(C$, 'sync_point$', function () {
+Clazz.newMeth(C$, 'sync_point$',  function () {
 return this.mode == 1 ? 1 : 0;
 });
 
-Clazz.newMeth(C$, 'inflate_flush$I', function (r) {
+Clazz.newMeth(C$, 'inflate_flush$I',  function (r) {
 var n;
 var p;
 var q;
@@ -486,7 +455,7 @@ n=((q <= this.write ? this.write : this.end) - q);
 if (n > this.z.avail_out) n=this.z.avail_out;
 if (n != 0 && r == -5 ) r=0;
 this.z.avail_out-=n;
-this.z.total_out+=n;
+(this.z.total_out=Long.$add(this.z.total_out,(n)));
 if (this.check && n > 0 ) {
 this.z.checksum.update$BA$I$I(this.window, q, n);
 }System.arraycopy$O$I$O$I$I(this.window, q, this.z.next_out, p, n);
@@ -499,7 +468,7 @@ n=this.write - q;
 if (n > this.z.avail_out) n=this.z.avail_out;
 if (n != 0 && r == -5 ) r=0;
 this.z.avail_out-=n;
-this.z.total_out+=n;
+(this.z.total_out=Long.$add(this.z.total_out,(n)));
 if (this.check && n > 0 ) {
 this.z.checksum.update$BA$I$I(this.window, q, n);
 }System.arraycopy$O$I$O$I$I(this.window, q, this.z.next_out, p, n);
@@ -510,6 +479,11 @@ this.read=q;
 return r;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.inflate_mask=Clazz.array(Integer.TYPE, -1, [0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535]);
+C$.border=Clazz.array(Integer.TYPE, -1, [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:21 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.util.Parser','javajs.util.AU','org.jmol.util.Logger','javajs.util.PT','javajs.util.BS','org.jmol.script.T','org.jmol.util.BSUtil','javajs.util.SB','org.jmol.util.Elements','org.jmol.c.VDW','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DataManager", null, null, 'org.jmol.api.JmolDataManager');
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.util.Parser','javajs.util.AU','org.jmol.util.Logger','javajs.util.PT','javajs.util.BS','org.jmol.script.T','org.jmol.util.BSUtil','javajs.util.SB','org.jmol.util.Elements','org.jmol.c.VDW','org.jmol.util.Escape']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DataManager", null, null, 'org.jmol.api.JmolDataManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dataValues=null;
-this.vwr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.dataValues=Clazz.new_($I$(1));
-}, 1);
+this.dataValues=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['dataValues','java.util.Map','vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_Viewer', function (vwr) {
@@ -51,13 +46,15 @@ if (data[2] != null  && arrayCount > 0 ) {
 var createNew=(matchField != 0 || field != -2147483648 && field != 2147483647  );
 var oldData=this.dataValues.get$O(type);
 var bs;
-var f=(oldData == null  || createNew  ? Clazz.array(Float.TYPE, [actualAtomCount]) : $I$(3).ensureLengthA$FA$I((oldData[1]), actualAtomCount));
+var f=(oldData == null  || createNew  ? Clazz.array(Float.TYPE, [actualAtomCount]) : $I$(3,"ensureLengthA$FA$I",[(oldData[1]), actualAtomCount]));
+var ff=null;
 if (depth == -1) {
 $I$(4).error$S("Cannot determine data type for " + val);
 return;
 }var stringData=(depth == 0 ? val : null);
 var floatData=(depth == 1 ? val : null);
 var strData=null;
+var ffData=(depth == 2 ? val : null);
 if (field == -2147483648 && (strData=$I$(5).getTokens$S(stringData)).length > 1 ) field=0;
 if (field == -2147483648) {
 bs=data[2];
@@ -67,28 +64,40 @@ bs=data[2];
 if (floatData != null ) {
 var n=floatData.length;
 if (n == bs.cardinality$()) {
-for (var i=bs.nextSetBit$I(0), pt=0; i >= 0; i=bs.nextSetBit$I(i + 1), pt++) f[i]=floatData[pt];
-
+p$1.fillSparseArray$FA$javajs_util_BS$FA.apply(this, [floatData, bs, f]);
 } else {
 for (var i=bs.nextSetBit$I(0); i >= 0 && i < n ; i=bs.nextSetBit$I(i + 1)) f[i]=floatData[i];
 
-}} else {
-$I$(2).parseFloatArrayBsData$SA$javajs_util_BS$FA(strData == null  ? $I$(5).getTokens$S(stringData) : strData, bs, f);
-}} else if (matchField <= 0) {
+}} else if (stringData != null ) {
+$I$(2,"parseFloatArrayBsData$SA$javajs_util_BS$FA",[strData == null  ? $I$(5).getTokens$S(stringData) : strData, bs, f]);
+} else if (ffData != null ) {
+var n=ffData.length;
+ff=(oldData == null  || createNew  ? $I$(3).newFloat2$I(actualAtomCount) : $I$(3).ensureLength$O$I(oldData[1], actualAtomCount));
+if (n == bs.cardinality$()) {
+for (var i=bs.nextSetBit$I(0), pt=0; i >= 0; i=bs.nextSetBit$I(i + 1), pt++) p$1.fillSparseArray$FA$javajs_util_BS$FA.apply(this, [ffData[pt], bs, ff[i]=Clazz.array(Float.TYPE, [actualAtomCount])]);
+
+} else {
+for (var i=bs.nextSetBit$I(0); i >= 0 && i < n ; i=bs.nextSetBit$I(i + 1)) ff[i]=ffData[i];
+
+}}} else if (matchField <= 0) {
 bs=data[2];
 $I$(2).parseFloatArrayFromMatchAndField$S$javajs_util_BS$I$I$IA$I$I$FA$I(stringData, bs, 0, 0, null, field, fieldColumnCount, f, 1);
 } else {
 var iData=data[2];
 $I$(2).parseFloatArrayFromMatchAndField$S$javajs_util_BS$I$I$IA$I$I$FA$I(stringData, null, matchField, matchFieldColumnCount, iData, field, fieldColumnCount, f, 1);
-bs=Clazz.new_($I$(6));
+bs=Clazz.new_($I$(6,1));
 for (var i=iData.length; --i >= 0; ) if (iData[i] >= 0) bs.set$I(iData[i]);
 
 }if (oldData != null  && Clazz.instanceOf(oldData[2], "javajs.util.BS")  && !createNew ) bs.or$javajs_util_BS((oldData[2]));
-data[3]=Integer.valueOf$I(1);
 data[2]=bs;
+if (ff == null ) {
+data[3]=Integer.valueOf$I(1);
 data[1]=f;
-if (type.indexOf$S("property_atom.") == 0) {
-var tok=$I$(7).getSettableTokFromString$S(type=type.substring$I(14));
+} else {
+data[3]=Integer.valueOf$I(2);
+data[1]=ff;
+}if (type.indexOf$S("property_atom.") == 0) {
+var tok=$I$(7,"getSettableTokFromString$S",[type=type.substring$I(14)]);
 if (tok == 0) {
 $I$(4).error$S("Unknown atom property: " + type);
 return;
@@ -98,8 +107,13 @@ for (var n=0, i=bs.nextSetBit$I(0); n < nValues; i=bs.nextSetBit$I(i + 1)) fValu
 
 this.vwr.setAtomProperty$javajs_util_BS$I$I$F$S$FA$SA(bs, tok, 0, 0, null, fValues, null);
 return;
-}}this.dataValues.put$TK$TV(type, data);
+}}this.dataValues.put$O$O(type, data);
 });
+
+Clazz.newMeth(C$, 'fillSparseArray$FA$javajs_util_BS$FA', function (floatData, bs, f) {
+for (var i=bs.nextSetBit$I(0), pt=0; i >= 0; i=bs.nextSetBit$I(i + 1), pt++) f[i]=floatData[pt];
+
+}, p$1);
 
 Clazz.newMeth(C$, 'getType$OA', function (data) {
 return (data[3]).intValue$();
@@ -130,7 +144,13 @@ default:
 var data=this.dataValues.get$O(label);
 if (data == null  || p$1.getType$OA.apply(this, [data]) != dataType ) return null;
 if (bsSelected == null ) return data[1];
-var f=data[1];
+if (data[3] === Integer.valueOf$I(2) ) {
+var ff=data[1];
+var fnew=Clazz.array(Float.TYPE, [bsSelected.cardinality$(), null]);
+for (var i=0, n=ff.length, p=bsSelected.nextSetBit$I(0); p >= 0 && i < n ; p=bsSelected.nextSetBit$I(p + 1)) fnew[i++]=ff[p];
+
+return fnew;
+}var f=data[1];
 var fnew=Clazz.array(Float.TYPE, [bsSelected.cardinality$()]);
 for (var i=0, n=f.length, p=bsSelected.nextSetBit$I(0); p >= 0 && i < n ; p=bsSelected.nextSetBit$I(p + 1)) fnew[i++]=f[p];
 
@@ -149,7 +169,7 @@ obj[1]=$I$(3).deleteElements$O$I$I(obj[1], firstAtomIndex, nAtoms);
 });
 
 Clazz.newMeth(C$, 'getDefaultVdwNameOrData$org_jmol_c_VDW$javajs_util_BS', function (type, bs) {
-var sb=Clazz.new_($I$(9));
+var sb=Clazz.new_($I$(9,1));
 sb.append$S(type.getVdwLabel$()).append$S("\n");
 var isAll=(bs == null );
 var i0=(isAll ? 1 : bs.nextSetBit$I(0));
@@ -193,4 +213,4 @@ o[3]=Integer.valueOf$I(0);
 return o;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,15 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.json.simple"),I$=[[0,'org.json.simple.parser.JSONParser','java.io.StringReader','org.json.simple.JSONObject','org.json.simple.JSONArray','java.io.StringWriter','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONValue");
+(function(){var P$=Clazz.newPackage("org.json.simple"),I$=[[0,'org.json.simple.parser.JSONParser','java.io.StringReader','org.json.simple.JSONObject','org.json.simple.JSONArray','java.io.StringWriter','StringBuffer']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONValue");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'parse$java_io_Reader', function ($in) {
+Clazz.newMeth(C$, 'parse$java_io_Reader',  function ($in) {
 try {
-var parser=Clazz.new_($I$(1));
+var parser=Clazz.new_($I$(1,1));
 return parser.parse$java_io_Reader($in);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -20,22 +19,22 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'parse$S', function (s) {
-var $in=Clazz.new_($I$(2).c$$S,[s]);
+Clazz.newMeth(C$, 'parse$S',  function (s) {
+var $in=Clazz.new_($I$(2,1).c$$S,[s]);
 return C$.parse$java_io_Reader($in);
 }, 1);
 
-Clazz.newMeth(C$, 'parseWithException$java_io_Reader', function ($in) {
-var parser=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'parseWithException$java_io_Reader',  function ($in) {
+var parser=Clazz.new_($I$(1,1));
 return parser.parse$java_io_Reader($in);
 }, 1);
 
-Clazz.newMeth(C$, 'parseWithException$S', function (s) {
-var parser=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'parseWithException$S',  function (s) {
+var parser=Clazz.new_($I$(1,1));
 return parser.parse$S(s);
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$O$java_io_Writer', function (value, out) {
+Clazz.newMeth(C$, 'writeJSONString$O$java_io_Writer',  function (value, out) {
 if (value == null ) {
 out.write$S("null");
 return;
@@ -59,7 +58,7 @@ return;
 out.write$S(value.toString());
 return;
 }if ((Clazz.instanceOf(value, "org.json.simple.JSONStreamAware"))) {
-(value).writeJSONString$(out);
+(value).writeJSONString$java_io_Writer(out);
 return;
 }if ((Clazz.instanceOf(value, "org.json.simple.JSONAware"))) {
 out.write$S((value).toJSONString$());
@@ -100,8 +99,8 @@ return;
 }out.write$S(value.toString());
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONString$O', function (value) {
-var writer=Clazz.new_($I$(5));
+Clazz.newMeth(C$, 'toJSONString$O',  function (value) {
+var writer=Clazz.new_($I$(5,1));
 try {
 C$.writeJSONString$O$java_io_Writer(value, writer);
 return writer.toString();
@@ -114,14 +113,14 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'escape$S', function (s) {
+Clazz.newMeth(C$, 'escape$S',  function (s) {
 if (s == null ) return null;
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 C$.escape$S$StringBuffer(s, sb);
 return sb.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'escape$S$StringBuffer', function (s, sb) {
+Clazz.newMeth(C$, 'escape$S$StringBuffer',  function (s, sb) {
 var len=s.length$();
 for (var i=0; i < len; i++) {
 var ch=s.charAt$I(i);
@@ -166,4 +165,4 @@ sb.append$C(ch);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

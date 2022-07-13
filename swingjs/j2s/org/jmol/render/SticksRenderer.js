@@ -1,66 +1,18 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.BS','org.jmol.render.FontLineShapeRenderer','org.jmol.util.Edge','org.jmol.util.C','org.jmol.c.PAL','javajs.util.M3','javajs.util.A4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SticksRenderer", null, 'org.jmol.render.FontLineShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.BS','org.jmol.render.FontLineShapeRenderer','org.jmol.util.Edge','org.jmol.util.C','org.jmol.c.PAL','javajs.util.M3','javajs.util.A4']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SticksRenderer", null, 'org.jmol.render.FontLineShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.showMultipleBonds=false;
-this.multipleBondSpacing=0;
-this.multipleBondRadiusFactor=0;
-this.bondsPerp=false;
-this.useBananas=false;
-this.modeMultipleBond=0;
-this.isCartesian=false;
-this.endcaps=0;
-this.ssbondsBackbone=false;
-this.hbondsBackbone=false;
-this.bondsBackbone=false;
-this.hbondsSolid=false;
-this.a=null;
-this.b=null;
-this.bond=null;
-this.xA=0;
-this.yA=0;
-this.zA=0;
-this.xB=0;
-this.yB=0;
-this.zB=0;
-this.dx=0;
-this.dy=0;
-this.mag2d=0;
-this.bondOrder=0;
-this.wireframeOnly=false;
-this.isAntialiased=false;
-this.slabbing=false;
-this.slabByAtom=false;
-this.x=null;
-this.y=null;
-this.z=null;
-this.p1=null;
-this.p2=null;
-this.bsForPass2=null;
-this.isPass2=false;
-this.rTheta=0;
-this.xAxis1=0;
-this.yAxis1=0;
-this.xAxis2=0;
-this.yAxis2=0;
-this.dxStep=0;
-this.dyStep=0;
-this.rot=null;
-this.a4=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.x=Clazz.new_($I$(1));
-this.y=Clazz.new_($I$(1));
-this.z=Clazz.new_($I$(1));
-this.p1=Clazz.new_($I$(2));
-this.p2=Clazz.new_($I$(2));
+this.x=Clazz.new_($I$(1,1));
+this.y=Clazz.new_($I$(1,1));
+this.z=Clazz.new_($I$(1,1));
+this.p1=Clazz.new_($I$(2,1));
+this.p2=Clazz.new_($I$(2,1));
 this.bsForPass2=$I$(3).newN$I(64);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['showMultipleBonds','bondsPerp','useBananas','isCartesian','ssbondsBackbone','hbondsBackbone','bondsBackbone','hbondsSolid','wireframeOnly','isAntialiased','slabbing','slabByAtom','isPass2'],'B',['modeMultipleBond','endcaps'],'D',['rTheta'],'F',['multipleBondSpacing','multipleBondRadiusFactor'],'I',['xA','yA','zA','xB','yB','zB','dx','dy','mag2d','bondOrder','xAxis1','yAxis1','xAxis2','yAxis2','dxStep','dyStep'],'O',['a','org.jmol.modelset.Atom','+b','bond','org.jmol.modelset.Bond','x','javajs.util.V3','+y','+z','p1','javajs.util.P3','+p2','bsForPass2','javajs.util.BS','rot','javajs.util.M3','a4','javajs.util.A4']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 var bonds=this.ms.bo;
@@ -69,7 +21,7 @@ this.isPass2=this.vwr.gdata.isPass2;
 if (!this.isPass2) this.bsForPass2.clearAll$();
 this.slabbing=this.tm.slabEnabled;
 this.slabByAtom=this.vwr.getBoolean$I(603979939);
-this.endcaps=($b$[0] = 3, $b$[0]);
+this.endcaps=3;
 this.dashDots=(this.vwr.getBoolean$I(603979893) ? $I$(4).sixdots : $I$(4).dashes);
 this.isCartesian=(this.exportType == 1);
 p$1.getMultipleBondSettings$Z.apply(this, [false]);
@@ -103,7 +55,7 @@ this.bondsPerp=(this.useBananas || this.multipleBondSpacing > 0  && this.multipl
 if (this.useBananas) this.multipleBondSpacing=(this.multipleBondSpacing < 0  ? -this.multipleBondSpacing * 0.4 : this.multipleBondSpacing);
 this.multipleBondRadiusFactor=Math.abs(this.multipleBondRadiusFactor);
 if (this.multipleBondSpacing == 0  && this.isCartesian ) this.multipleBondSpacing=0.2;
-this.modeMultipleBond=($b$[0] = this.vwr.g.modeMultipleBond, $b$[0]);
+this.modeMultipleBond=this.vwr.g.modeMultipleBond;
 this.showMultipleBonds=(this.multipleBondSpacing != 0  && this.modeMultipleBond != 0  && this.vwr.getBoolean$I(603979928) );
 }, p$1);
 
@@ -131,8 +83,8 @@ this.colixA=atomA0.colixAtom;
 this.colixB=atomB0.colixAtom;
 if (((this.colix=this.bond.colix) & -30721) == 2) {
 this.colix=($s$[0] = (this.colix & ~-30721), $s$[0]);
-this.colixA=$I$(6).getColixInherited$H$H(($s$[0] = (this.colix | this.vwr.cm.getColixAtomPalette$org_jmol_modelset_Atom$B(atomA0, ($I$(7).CPK.id|0))), $s$[0]), this.colixA);
-this.colixB=$I$(6).getColixInherited$H$H(($s$[0] = (this.colix | this.vwr.cm.getColixAtomPalette$org_jmol_modelset_Atom$B(atomB0, ($I$(7).CPK.id|0))), $s$[0]), this.colixB);
+this.colixA=$I$(6,"getColixInherited$H$H",[($s$[0] = (this.colix | this.vwr.cm.getColixAtomPalette$org_jmol_modelset_Atom$B(atomA0, $I$(7).CPK.id)), $s$[0]), this.colixA]);
+this.colixB=$I$(6,"getColixInherited$H$H",[($s$[0] = (this.colix | this.vwr.cm.getColixAtomPalette$org_jmol_modelset_Atom$B(atomB0, $I$(7).CPK.id)), $s$[0]), this.colixB]);
 } else {
 this.colixA=$I$(6).getColixInherited$H$H(this.colix, this.colixA);
 this.colixB=$I$(6).getColixInherited$H$H(this.colix, this.colixB);
@@ -267,7 +219,7 @@ return needTranslucent;
 Clazz.newMeth(C$, 'drawBond$I', function (dottedMask) {
 var isDashed=(dottedMask & 1) != 0;
 if (this.isCartesian && this.bondOrder == 1  && !isDashed ) {
-this.g3d.drawBond$javajs_util_P3$javajs_util_P3$H$H$B$H$I(this.a, this.b, this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.mad, -1);
+this.g3d.drawBond$javajs_util_P3$javajs_util_P3$H$H$B$H$I(this.a, this.b, this.colixA, this.colixB, this.endcaps, this.mad, -1);
 return;
 }var isEndOn=(this.dx == 0 && this.dy == 0 );
 if (isEndOn && this.asLineOnly && !this.isCartesian  ) return;
@@ -278,13 +230,13 @@ var space=(this.width/8|0) + 3;
 var step=this.width + space;
 var y=this.yA - ((this.bondOrder - 1) * step/2|0);
 do {
-this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.width, this.xA, y, this.zA, this.xB, y, this.zB);
+this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, this.endcaps, this.width, this.xA, y, this.zA, this.xB, y, this.zB);
 y+=step;
 } while (--this.bondOrder > 0);
 return;
 }if (this.bondOrder == 1) {
 if (isDashed) this.drawDashed$I$I$I$I$I$I$IA(this.xA, this.yA, this.zA, this.xB, this.yB, this.zB, this.dashDots);
- else this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.width, this.xA, this.yA, this.zA, this.xB, this.yB, this.zB);
+ else this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, this.endcaps, this.width, this.xA, this.yA, this.zA, this.xB, this.yB, this.zB);
 return;
 }if (doFixedSpacing) {
 if (!isPiBonded) this.z.setT$javajs_util_T3($I$(2).getUnlikely$());
@@ -320,12 +272,12 @@ return;
 this.p2.sub2$javajs_util_T3$javajs_util_T3(this.b, this.x);
 while (true){
 if (this.isCartesian) {
-this.g3d.drawBond$javajs_util_P3$javajs_util_P3$H$H$B$H$I(this.p1, this.p2, this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.mad, -2);
+this.g3d.drawBond$javajs_util_P3$javajs_util_P3$H$H$B$H$I(this.p1, this.p2, this.colixA, this.colixB, this.endcaps, this.mad, -2);
 } else {
 this.tm.transformPtScr$javajs_util_T3$javajs_util_P3i(this.p1, this.s1);
 this.tm.transformPtScr$javajs_util_T3$javajs_util_P3i(this.p2, this.s2);
 if (isDashed) this.drawDashed$I$I$I$I$I$I$IA(this.s1.x, this.s1.y, this.s1.z, this.s2.x, this.s2.y, this.s2.z, this.dashDots);
- else this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.width, this.s1.x, this.s1.y, this.s1.z, this.s2.x, this.s2.y, this.s2.z);
+ else this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, this.endcaps, this.width, this.s1.x, this.s1.y, this.s1.z, this.s2.x, this.s2.y, this.s2.z);
 }dottedMask>>=1;
 isDashed=(dottedMask & 1) != 0;
 if (--this.bondOrder <= 0) break;
@@ -339,19 +291,19 @@ var dyB=this.dy * this.dy;
 this.mag2d=(Math.round(Math.sqrt(dxB + dyB))|0);
 p$1.resetAxisCoordinates.apply(this, []);
 if (this.isCartesian && this.bondOrder == 3 ) {
-this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.width, this.xAxis1, this.yAxis1, this.zA, this.xAxis2, this.yAxis2, this.zB);
+this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, this.endcaps, this.width, this.xAxis1, this.yAxis1, this.zA, this.xAxis2, this.yAxis2, this.zB);
 p$1.stepAxisCoordinates.apply(this, []);
 this.x.sub2$javajs_util_T3$javajs_util_T3(this.b, this.a);
 this.x.scale$F(0.05);
 this.p1.sub2$javajs_util_T3$javajs_util_T3(this.a, this.x);
 this.p2.add2$javajs_util_T3$javajs_util_T3(this.b, this.x);
-this.g3d.drawBond$javajs_util_P3$javajs_util_P3$H$H$B$H$I(this.p1, this.p2, this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.mad, -2);
+this.g3d.drawBond$javajs_util_P3$javajs_util_P3$H$H$B$H$I(this.p1, this.p2, this.colixA, this.colixB, this.endcaps, this.mad, -2);
 p$1.stepAxisCoordinates.apply(this, []);
-this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.width, this.xAxis1, this.yAxis1, this.zA, this.xAxis2, this.yAxis2, this.zB);
+this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, this.endcaps, this.width, this.xAxis1, this.yAxis1, this.zA, this.xAxis2, this.yAxis2, this.zB);
 return;
 }while (true){
 if ((dottedMask & 1) != 0) this.drawDashed$I$I$I$I$I$I$IA(this.xAxis1, this.yAxis1, this.zA, this.xAxis2, this.yAxis2, this.zB, this.dashDots);
- else this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, ($b$[0] = this.endcaps, $b$[0]), this.width, this.xAxis1, this.yAxis1, this.zA, this.xAxis2, this.yAxis2, this.zB);
+ else this.fillCylinder$H$H$B$I$I$I$I$I$I$I(this.colixA, this.colixB, this.endcaps, this.width, this.xAxis1, this.yAxis1, this.zA, this.xAxis2, this.yAxis2, this.zB);
 dottedMask>>=1;
 if (--this.bondOrder <= 0) break;
 p$1.stepAxisCoordinates.apply(this, []);
@@ -391,11 +343,11 @@ return ((this.dx * dyAC - this.dy * dxAC) < 0 ? 2 : 1);
 }, p$1);
 
 Clazz.newMeth(C$, 'drawBanana$org_jmol_modelset_Atom$org_jmol_modelset_Atom$javajs_util_V3$I', function (a, b, x, deg) {
-this.g3d.addRenderer$I(553648146);
+this.g3d.addRenderer$I(553648145);
 this.vectorT.sub2$javajs_util_T3$javajs_util_T3(b, a);
 if (this.rot == null ) {
-this.rot=Clazz.new_($I$(8));
-this.a4=Clazz.new_($I$(9));
+this.rot=Clazz.new_($I$(8,1));
+this.a4=Clazz.new_($I$(9,1));
 }this.a4.setVA$javajs_util_V3$F(this.vectorT, (deg * 3.141592653589793 / 180));
 this.rot.setAA$javajs_util_A4(this.a4);
 this.pointT.setT$javajs_util_T3(a);
@@ -412,9 +364,8 @@ this.g3d.fillHermite$I$I$I$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs
 this.g3d.setC$H(this.colixB);
 this.g3d.fillHermite$I$I$I$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3(5, w, w, w, this.pointT, this.pointT2, this.pointT3, this.pointT3);
 }, p$1);
-var $b$ = new Int8Array(1);
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

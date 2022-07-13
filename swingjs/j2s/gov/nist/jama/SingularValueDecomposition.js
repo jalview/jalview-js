@@ -1,23 +1,15 @@
-(function(){var P$=Clazz.newPackage("gov.nist.jama"),I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SingularValueDecomposition", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("gov.nist.jama"),I$=[[0,'gov.nist.jama.util.Maths','gov.nist.jama.Matrix']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SingularValueDecomposition", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.U=null;
-this.V=null;
-this.s=null;
-this.m=0;
-this.n=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$gov_nist_jama_Matrix', function (Arg) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['m','n'],'O',['U','double[][]','+V','s','double[]']]]
+
+Clazz.newMeth(C$, 'c$$gov_nist_jama_Matrix',  function (Arg) {
+;C$.$init$.apply(this);
 var A=Arg.getArrayCopy$();
 this.m=Arg.getRowDimension$();
 this.n=Arg.getColumnDimension$();
@@ -41,19 +33,19 @@ if (this.s[k] != 0.0 ) {
 if (A[k][k] < 0.0 ) {
 this.s[k]=-this.s[k];
 }for (var i=k; i < this.m; i++) {
-A[i][k] /= this.s[k];
+A[i][k]/=this.s[k];
 }
-A[k][k] += 1.0;
+A[k][k]+=1.0;
 }this.s[k]=-this.s[k];
 }for (var j=k + 1; j < this.n; j++) {
 if (!!((k < nct) & (this.s[k] != 0.0 ))) {
 var t=0;
 for (var i=k; i < this.m; i++) {
-t += A[i][k] * A[i][j];
+t+=A[i][k] * A[i][j];
 }
 t=-t / A[k][k];
 for (var i=k; i < this.m; i++) {
-A[i][j] += t * A[i][k];
+A[i][j]+=t * A[i][k];
 }
 }e[j]=A[k][j];
 }
@@ -70,9 +62,9 @@ if (e[k] != 0.0 ) {
 if (e[k + 1] < 0.0 ) {
 e[k]=-e[k];
 }for (var i=k + 1; i < this.n; i++) {
-e[i] /= e[k];
+e[i]/=e[k];
 }
-e[k + 1] += 1.0;
+e[k + 1]+=1.0;
 }e[k]=-e[k];
 if (!!((k + 1 < this.m) & (e[k] != 0.0 ))) {
 for (var i=k + 1; i < this.m; i++) {
@@ -80,13 +72,13 @@ work[i]=0.0;
 }
 for (var j=k + 1; j < this.n; j++) {
 for (var i=k + 1; i < this.m; i++) {
-work[i] += e[j] * A[i][j];
+work[i]+=e[j] * A[i][j];
 }
 }
 for (var j=k + 1; j < this.n; j++) {
 var t=-e[j] / e[k + 1];
 for (var i=k + 1; i < this.m; i++) {
-A[i][j] += t * work[i];
+A[i][j]+=t * work[i];
 }
 }
 }if (wantv) {
@@ -114,11 +106,11 @@ if (this.s[k] != 0.0 ) {
 for (var j=k + 1; j < nu; j++) {
 var t=0;
 for (var i=k; i < this.m; i++) {
-t += this.U[i][k] * this.U[i][j];
+t+=this.U[i][k] * this.U[i][j];
 }
 t=-t / this.U[k][k];
 for (var i=k; i < this.m; i++) {
-this.U[i][j] += t * this.U[i][k];
+this.U[i][j]+=t * this.U[i][k];
 }
 }
 for (var i=k; i < this.m; i++) {
@@ -140,11 +132,11 @@ if (!!((k < nrt) & (e[k] != 0.0 ))) {
 for (var j=k + 1; j < nu; j++) {
 var t=0;
 for (var i=k + 1; i < this.n; i++) {
-t += this.V[i][k] * this.V[i][j];
+t+=this.V[i][k] * this.V[i][j];
 }
 t=-t / this.V[k + 1][k];
 for (var i=k + 1; i < this.n; i++) {
-this.V[i][j] += t * this.V[i][k];
+this.V[i][j]+=t * this.V[i][k];
 }
 }
 }for (var i=0; i < this.n; i++) {
@@ -185,7 +177,7 @@ kase=1;
 } else {
 kase=2;
 k=ks;
-}}k++;
+}}++k;
 switch (kase) {
 case 1:
 {
@@ -304,29 +296,29 @@ t=this.U[i][k + 1];
 this.U[i][k + 1]=this.U[i][k];
 this.U[i][k]=t;
 }
-}k++;
+}++k;
 }
 iter=0;
-p--;
+--p;
 }break;
 }
 }
 }, 1);
 
-Clazz.newMeth(C$, 'getU$', function () {
-return Clazz.new_($I$(2).c$$DAA$I$I,[this.U, this.m, Math.min(this.m + 1, this.n)]);
+Clazz.newMeth(C$, 'getU$',  function () {
+return Clazz.new_([this.U, this.m, Math.min(this.m + 1, this.n)],$I$(2,1).c$$DAA$I$I);
 });
 
-Clazz.newMeth(C$, 'getV$', function () {
-return Clazz.new_($I$(2).c$$DAA$I$I,[this.V, this.n, this.n]);
+Clazz.newMeth(C$, 'getV$',  function () {
+return Clazz.new_($I$(2,1).c$$DAA$I$I,[this.V, this.n, this.n]);
 });
 
-Clazz.newMeth(C$, 'getSingularValues$', function () {
+Clazz.newMeth(C$, 'getSingularValues$',  function () {
 return this.s;
 });
 
-Clazz.newMeth(C$, 'getS$', function () {
-var X=Clazz.new_($I$(2).c$$I$I,[this.n, this.n]);
+Clazz.newMeth(C$, 'getS$',  function () {
+var X=Clazz.new_($I$(2,1).c$$I$I,[this.n, this.n]);
 var S=X.getArray$();
 for (var i=0; i < this.n; i++) {
 for (var j=0; j < this.n; j++) {
@@ -337,25 +329,25 @@ S[i][i]=this.s[i];
 return X;
 });
 
-Clazz.newMeth(C$, 'norm2$', function () {
+Clazz.newMeth(C$, 'norm2$',  function () {
 return this.s[0];
 });
 
-Clazz.newMeth(C$, 'cond$', function () {
+Clazz.newMeth(C$, 'cond$',  function () {
 return this.s[0] / this.s[Math.min(this.m, this.n) - 1];
 });
 
-Clazz.newMeth(C$, 'rank$', function () {
+Clazz.newMeth(C$, 'rank$',  function () {
 var eps=Math.pow(2.0, -52.0);
 var tol=Math.max(this.m, this.n) * this.s[0] * eps ;
 var r=0;
 for (var i=0; i < this.s.length; i++) {
 if (this.s[i] > tol ) {
-r++;
+++r;
 }}
 return r;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

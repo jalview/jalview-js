@@ -1,66 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pymol"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.P3','Boolean','javajs.util.Lst','org.jmol.util.Logger','org.jmol.adapter.readers.pymol.PickleReader','org.jmol.util.BSUtil','org.jmol.adapter.readers.pymol.PyMOLScene','javajs.util.PT','java.util.Hashtable','org.jmol.adapter.readers.pymol.PyMOL','javajs.util.AU','javajs.util.BC','org.jmol.adapter.smarter.Bond','org.jmol.adapter.smarter.Atom','org.jmol.util.BoxInfo','javajs.util.V3','org.jmol.c.STR','org.jmol.adapter.smarter.Structure','javajs.util.CU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PyMOLReader", null, 'org.jmol.adapter.readers.pdb.PdbReader', 'org.jmol.api.PymolAtomReader');
-C$.nucleic=null;
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pymol"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.P3','javajs.util.Lst','org.jmol.util.Logger','org.jmol.adapter.readers.pymol.PickleReader','org.jmol.util.BSUtil','org.jmol.adapter.readers.pymol.PyMOLScene','javajs.util.PT','java.util.Hashtable','org.jmol.adapter.readers.pymol.PyMOL','javajs.util.AU','javajs.util.BC','org.jmol.adapter.smarter.Bond','org.jmol.adapter.smarter.Atom','org.jmol.util.BoxInfo','javajs.util.V3','org.jmol.c.STR','org.jmol.adapter.smarter.Structure','javajs.util.CU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PyMOLReader", null, 'org.jmol.adapter.readers.pdb.PdbReader', 'org.jmol.api.PymolAtomReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nucleic=" A C G T U ADE THY CYT GUA URI DA DC DG DT DU ";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.allowSurface=false;
-this.doResize=false;
-this.doCache=false;
-this.isStateScript=false;
-this.sourcePNGJ=false;
-this.ac0=0;
-this.$ac=0;
-this.stateCount=0;
-this.structureCount=0;
-this.isHidden=false;
-this.bsStructureDefined=null;
-this.bsBytesExcluded=null;
-this.atomMap=null;
-this.ssMapSeq=null;
-this.pymolScene=null;
-this.xyzMin=null;
-this.xyzMax=null;
-this.nModels=0;
-this.logging=false;
-this.reps=null;
-this.isMovie=false;
-this.pymolFrame=0;
-this.allStates=false;
-this.totalAtomCount=0;
-this.pymolVersion=0;
-this.trajectoryStep=null;
-this.trajectoryPtr=0;
-this.objectName=null;
-this.volumeData=null;
-this.mapObjects=null;
-this.haveMeasurements=false;
-this.frames=null;
-this.uniqueSettings=null;
-this.atoms=null;
-this.haveScenes=false;
-this.baseModelIndex=0;
-this.sceneOrder=null;
-this.bondCount=0;
-this.haveBinaryArrays=false;
-this.ptTemp=null;
-this.aTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.allowSurface=true;
-this.bsStructureDefined=Clazz.new_($I$(1));
+this.bsStructureDefined=Clazz.new_($I$(1,1));
 this.xyzMin=$I$(2).new3$F$F$F(1000000.0, 1000000.0, 1000000.0);
 this.xyzMax=$I$(2).new3$F$F$F(-1000000.0, -1000000.0, -1000000.0);
 this.reps=Clazz.array($I$(1), [23]);
 this.haveBinaryArrays=true;
-this.ptTemp=Clazz.new_($I$(2));
+this.ptTemp=Clazz.new_($I$(2,1));
 this.aTemp=Clazz.array(Byte.TYPE, [16]);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['allowSurface','doResize','doCache','isStateScript','sourcePNGJ','isHidden','logging','isMovie','allStates','haveMeasurements','haveScenes','haveBinaryArrays'],'I',['ac0','$ac','stateCount','structureCount','nModels','pymolFrame','totalAtomCount','pymolVersion','trajectoryPtr','baseModelIndex','bondCount'],'S',['objectName'],'O',['bsStructureDefined','javajs.util.BS','+bsBytesExcluded','atomMap','int[]','ssMapSeq','java.util.Map','pymolScene','org.jmol.adapter.readers.pymol.PyMOLScene','xyzMin','javajs.util.P3','+xyzMax','reps','javajs.util.BS[]','trajectoryStep','javajs.util.P3[]','volumeData','java.util.Map','mapObjects','javajs.util.Lst','frames','int[]','uniqueSettings','java.util.Hashtable','atoms','org.jmol.adapter.smarter.Atom[]','sceneOrder','javajs.util.Lst','ptTemp','javajs.util.P3','aTemp','byte[]']]
+,['S',['nucleic']]]
 
 Clazz.newMeth(C$, 'setup$S$java_util_Map$O', function (fullPath, htParams, reader) {
 this.isBinary=this.mustFinalizeModelSet=true;
@@ -70,10 +25,10 @@ this.setupASCR$S$java_util_Map$O(fullPath, htParams, reader);
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.baseAtomIndex=(this.htParams.get$O("baseAtomIndex")).intValue$();
 this.baseModelIndex=(this.htParams.get$O("baseModelIndex")).intValue$();
-this.asc.setInfo$S$O("noAutoBond", $I$(3).TRUE);
-this.asc.setCurrentModelInfo$S$O("pdbNoHydrogens", $I$(3).TRUE);
-this.asc.setInfo$S$O("isPyMOL", $I$(3).TRUE);
-if (this.isTrajectory) this.trajectorySteps=Clazz.new_($I$(4));
+this.asc.setInfo$S$O("noAutoBond", Boolean.TRUE);
+this.asc.setCurrentModelInfo$S$O("pdbNoHydrogens", Boolean.TRUE);
+this.asc.setInfo$S$O("isPyMOL", Boolean.TRUE);
+if (this.isTrajectory) this.trajectorySteps=Clazz.new_($I$(3,1));
 this.isStateScript=this.htParams.containsKey$O("isStateScript");
 this.sourcePNGJ=this.htParams.containsKey$O("sourcePNGJ");
 this.doResize=this.checkFilterKey$S("DORESIZE");
@@ -81,16 +36,16 @@ this.allowSurface=!this.checkFilterKey$S("NOSURFACE");
 this.doCache=this.checkFilterKey$S("DOCACHE");
 if (this.doCache && this.sourcePNGJ ) this.doCache=false;
  else if (this.sourcePNGJ && !this.doCache ) this.sourcePNGJ=false;
-if (this.doCache) this.bsBytesExcluded=Clazz.new_($I$(1));
+if (this.doCache) this.bsBytesExcluded=Clazz.new_($I$(1,1));
 C$.superclazz.prototype.initializeReader$.apply(this, []);
 });
 
 Clazz.newMeth(C$, 'processBinaryDocument$', function () {
 var logFile=this.vwr.getLogFileName$();
 this.logging=(logFile.length$() > 0);
-$I$(5).info$S(this.logging ? "PyMOL (1) file data streaming to " + logFile : "To view raw PyMOL file data, use \'set logFile \"some_filename\" ");
-var reader=Clazz.new_($I$(6).c$$javajs_api_GenericBinaryDocument$org_jmol_viewer_Viewer,[this.binaryDoc, this.vwr]);
-var map=reader.getMap$Z(this.logging && $I$(5).debuggingHigh );
+$I$(4,"info$S",[this.logging ? "PyMOL (1) file data streaming to " + logFile : "To view raw PyMOL file data, use \'set logFile \"some_filename\" "]);
+var reader=Clazz.new_($I$(5,1).c$$javajs_api_GenericBinaryDocument$org_jmol_viewer_Viewer,[this.binaryDoc, this.vwr]);
+var map=reader.getMap$Z(this.logging && $I$(4).debuggingHigh );
 reader=null;
 p$1.process$java_util_Map.apply(this, [map]);
 });
@@ -112,14 +67,14 @@ this.setLoadNote$();
 var scenes=Clazz.array(String, [this.sceneOrder.size$()]);
 for (var i=scenes.length; --i >= 0; ) scenes[i]=C$.stringAt$javajs_util_Lst$I(this.sceneOrder, i);
 
-this.vwr.ms.msInfo.put$TK$TV("scenes", scenes);
-}this.vwr.ms.setTrajectoryBs$javajs_util_BS($I$(7).newBitSet2$I$I(this.baseModelIndex, this.vwr.ms.mc));
+this.vwr.ms.msInfo.put$O$O("scenes", scenes);
+}this.vwr.ms.setTrajectoryBs$javajs_util_BS($I$(6).newBitSet2$I$I(this.baseModelIndex, this.vwr.ms.mc));
 if (!this.isStateScript) this.pymolScene.setFrameObject$I$O(0, null);
 if (this.bsBytesExcluded != null ) {
 var nExcluded=this.bsBytesExcluded.cardinality$();
 var bytes0=this.vwr.fm.getFileAsBytes$S$javajs_util_OC(this.filePath, null);
 var bytes=Clazz.array(Byte.TYPE, [bytes0.length - nExcluded]);
-for (var i=this.bsBytesExcluded.nextClearBit$I(0), n=bytes0.length, pt=0; i < n; i=this.bsBytesExcluded.nextClearBit$I(i + 1)) bytes[pt++]=(bytes0[i]|0);
+for (var i=this.bsBytesExcluded.nextClearBit$I(0), n=bytes0.length, pt=0; i < n; i=this.bsBytesExcluded.nextClearBit$I(i + 1)) bytes[pt++]=bytes0[i];
 
 bytes0=null;
 var fileName=this.filePath;
@@ -135,20 +90,20 @@ this.haveBinaryArrays=(lst != null  && C$.floatAt$javajs_util_Lst$I(lst, 2) == 1
 this.sceneOrder=C$.getMapList$java_util_Map$S(map, "scene_order");
 this.haveScenes=p$1.getFrameScenes$java_util_Map.apply(this, [map]);
 var file=C$.listAt$javajs_util_Lst$I(settings, 440);
-if (file != null  && file.size$() > 2 ) $I$(5).info$S("PyMOL session file: " + file.get$I(2));
+if (file != null  && file.size$() > 2 ) $I$(4,"info$S",["PyMOL session file: " + file.get$I(2)]);
 p$1.setUniqueSettings$javajs_util_Lst.apply(this, [C$.getMapList$java_util_Map$S(map, "unique_settings")]);
-this.pymolScene=Clazz.new_($I$(8).c$$org_jmol_api_PymolAtomReader$org_jmol_viewer_Viewer$javajs_util_Lst$java_util_Map$I$Z$I$I$Z$S,[this, this.vwr, settings, this.uniqueSettings, this.pymolVersion, this.haveScenes, this.baseAtomIndex, this.baseModelIndex, this.doCache, this.filePath]);
+this.pymolScene=Clazz.new_($I$(7,1).c$$org_jmol_api_PymolAtomReader$org_jmol_viewer_Viewer$javajs_util_Lst$java_util_Map$I$Z$I$I$Z$S,[this, this.vwr, settings, this.uniqueSettings, this.pymolVersion, this.haveScenes, this.baseAtomIndex, this.baseModelIndex, this.doCache, this.filePath]);
 var logFile=this.vwr.getLogFileName$();
 this.logging=(logFile.length$() > 0);
-$I$(5).info$S(this.logging ? "PyMOL file data streaming to " + logFile : "To view raw PyMOL file data, use \'set logFile \"some_filename\" ");
+$I$(4).info$S(this.logging ? "PyMOL file data streaming to " + logFile : "To view raw PyMOL file data, use \'set logFile \"some_filename\" ");
 var names=C$.getMapList$java_util_Map$S(map, "names");
 for (var e, $e = map.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var name=e.getKey$();
-$I$(5).info$S(name);
+$I$(4).info$S(name);
 if (name.equals$O("names")) {
 for (var i=1; i < names.size$(); i++) {
 var obj=C$.listAt$javajs_util_Lst$I(names, i);
-$I$(5).info$S("  " + C$.stringAt$javajs_util_Lst$I(obj, 0));
+$I$(4,"info$S",["  " + C$.stringAt$javajs_util_Lst$I(obj, 0)]);
 }
 }}
 if (this.logging) {
@@ -157,7 +112,7 @@ for (var e, $e = map.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1
 var name=e.getKey$();
 if (!"names".equals$O(name)) {
 this.vwr.log$S("\n===" + name + "===" );
-this.vwr.log$S($I$(9).rep$S$S$S(e.getValue$().toString(), "[", "\n["));
+this.vwr.log$S($I$(8,"rep$S$S$S",[e.getValue$().toString(), "[", "\n["]));
 }}
 this.vwr.log$S("\n===names===");
 for (var i=1; i < names.size$(); i++) {
@@ -165,7 +120,7 @@ this.vwr.log$S("");
 var list=names.get$I(i);
 this.vwr.log$S(" =" + C$.bytesToString$O(list.get$I(0)) + "=" );
 try {
-this.vwr.log$S($I$(9).rep$S$S$S(list.toString(), "[", "\n["));
+this.vwr.log$S($I$(8,"rep$S$S$S",[list.toString(), "[", "\n["]));
 } catch (e) {
 }
 }
@@ -217,7 +172,7 @@ this.model$I(this.nModels);
 this.pymolScene.currentAtomSetIndex=this.asc.iSet;
 if (this.isTrajectory) {
 this.trajectoryStep=Clazz.array($I$(2), [this.totalAtomCount]);
-this.trajectorySteps.addLast$TV(this.trajectoryStep);
+this.trajectorySteps.addLast$O(this.trajectoryStep);
 this.trajectoryPtr=0;
 }for (var i=1; i < n; i++) p$1.processObject$javajs_util_Lst$Z$I.apply(this, [C$.listAt$javajs_util_Lst$I(names, i), true, j]);
 
@@ -235,7 +190,7 @@ this.pymolScene.finalizeVisibility$();
 if (!this.isStateScript) {
 this.vwr.initialize$Z$Z(false, true);
 this.addJmolScript$S(this.pymolScene.getViewScript$javajs_util_Lst(C$.getMapList$java_util_Map$S(map, "view")).toString());
-}if (this.$ac == 0) this.asc.setInfo$S$O("dataOnly", $I$(3).TRUE);
+}if (this.$ac == 0) this.asc.setInfo$S$O("dataOnly", Boolean.TRUE);
 this.pymolScene.offsetObjects$();
 }, p$1);
 
@@ -244,12 +199,12 @@ var n=settings.size$();
 for (var i=0; i < n; i++) {
 var i2=C$.intAt$javajs_util_Lst$I(settings.get$I(i), 0);
 if (i2 == -1) {
-$I$(5).info$S("PyMOL reader adding null setting #" + i);
-settings.set$I$TE(i, Clazz.new_($I$(4)));
+$I$(4).info$S("PyMOL reader adding null setting #" + i);
+settings.set$I$O(i, Clazz.new_($I$(3,1)));
 } else {
 while (i < i2){
-$I$(5).info$S("PyMOL reader adding null setting #" + i);
-settings.add$I$TE(i++, Clazz.new_($I$(4)));
+$I$(4).info$S("PyMOL reader adding null setting #" + i);
+settings.add$I$O(i++, Clazz.new_($I$(3,1)));
 n++;
 }
 }}
@@ -268,7 +223,7 @@ return (this.sceneOrder != null  && this.sceneOrder.size$() != 0 );
 }, p$1);
 
 Clazz.newMeth(C$, 'setUniqueSettings$javajs_util_Lst', function (list) {
-this.uniqueSettings=Clazz.new_($I$(10));
+this.uniqueSettings=Clazz.new_($I$(9,1));
 var max=0;
 if (list != null  && list.size$() != 0 ) {
 for (var i=list.size$(); --i >= 0; ) {
@@ -279,7 +234,7 @@ var mySettings=atomSettings.get$I(1);
 for (var j=mySettings.size$(); --j >= 0; ) {
 var setting=mySettings.get$I(j);
 var uid=(id << 10) + C$.intAt$javajs_util_Lst$I(setting, 0);
-this.uniqueSettings.put$TK$TV(Integer.valueOf$I(uid), setting);
+this.uniqueSettings.put$O$O(Integer.valueOf$I(uid), setting);
 }
 }
 }return max;
@@ -289,7 +244,7 @@ Clazz.newMeth(C$, 'addColors$javajs_util_Lst$Z', function (colors, isClamped) {
 if (colors == null  || colors.size$() == 0 ) return;
 for (var i=colors.size$(); --i >= 0; ) {
 var c=C$.listAt$javajs_util_Lst$I(colors, i);
-$I$(11).addColor$Integer$I(c.get$I(1), isClamped ? C$.colorSettingClamped$javajs_util_Lst$javajs_util_P3(c, this.ptTemp) : C$.getColorPt$O$javajs_util_P3(c.get$I(2), this.ptTemp));
+$I$(10,"addColor$Integer$I",[c.get$I(1), isClamped ? C$.colorSettingClamped$javajs_util_Lst$javajs_util_P3(c, this.ptTemp) : C$.getColorPt$O$javajs_util_P3(c.get$I(2), this.ptTemp)]);
 }
 }, p$1);
 
@@ -326,8 +281,8 @@ if (this.isTrajectory && m != nAtoms ) this.isTrajectory=false;
 }}
 }}
 this.totalAtomCount=n;
-$I$(5).info$S("PyMOL total atom count = " + this.totalAtomCount);
-$I$(5).info$S("PyMOL state count = " + this.stateCount);
+$I$(4,"info$S",["PyMOL total atom count = " + this.totalAtomCount]);
+$I$(4,"info$S",["PyMOL state count = " + this.stateCount]);
 }, p$1);
 
 Clazz.newMeth(C$, 'checkObject$javajs_util_Lst', function (execObject) {
@@ -337,9 +292,9 @@ return (this.objectName.indexOf$S("_") != 0);
 }, p$1);
 
 Clazz.newMeth(C$, 'processMovie$javajs_util_Lst$I', function (mov, frameCount) {
-var movie=Clazz.new_($I$(10));
-movie.put$TK$TV("frameCount", Integer.valueOf$I(frameCount));
-movie.put$TK$TV("currentFrame", Integer.valueOf$I(this.pymolFrame - 1));
+var movie=Clazz.new_($I$(9,1));
+movie.put$O$O("frameCount", Integer.valueOf$I(frameCount));
+movie.put$O$O("currentFrame", Integer.valueOf$I(this.pymolFrame - 1));
 var haveCommands=false;
 var haveViews=false;
 var haveFrames=false;
@@ -348,7 +303,7 @@ for (var i=list.size$(); --i >= 0; ) if (C$.intAt$javajs_util_Lst$I(list, i) != 
 this.frames=Clazz.array(Integer.TYPE, [list.size$()]);
 for (var j=this.frames.length; --j >= 0; ) this.frames[j]=C$.intAt$javajs_util_Lst$I(list, j) + 1;
 
-movie.put$TK$TV("frames", this.frames);
+movie.put$O$O("frames", this.frames);
 haveFrames=true;
 break;
 }
@@ -357,7 +312,7 @@ var cmd;
 for (var i=cmds.size$(); --i >= 0; ) if ((cmd=C$.stringAt$javajs_util_Lst$I(cmds, i)) != null  && cmd.length$() > 1 ) {
 cmds=C$.fixMovieCommands$javajs_util_Lst(cmds);
 if (cmds != null ) {
-movie.put$TK$TV("commands", cmds);
+movie.put$O$O("commands", cmds);
 haveCommands=true;
 break;
 }}
@@ -367,7 +322,7 @@ for (var i=views.size$(); --i >= 0; ) if ((view=C$.listAt$javajs_util_Lst$I(view
 haveViews=true;
 views=C$.fixMovieViews$javajs_util_Lst(views);
 if (views != null ) {
-movie.put$TK$TV("views", views);
+movie.put$O$O("views", views);
 break;
 }}
 this.appendLoadNote$S("PyMOL movie frameCount = " + frameCount);
@@ -401,7 +356,7 @@ if (iState > 0 && (idxToAtm == null  || idxToAtm.size$() == 0 ) ) return;
 stateSettings=C$.listAt$javajs_util_Lst$I(state, 7);
 } else if (iState > 0) {
 return;
-}$I$(5).info$S("PyMOL model " + (this.nModels) + " Object " + this.objectName + (this.isHidden ? " (hidden)" : " (visible)") );
+}$I$(4,"info$S",["PyMOL model " + (this.nModels) + " Object " + this.objectName + (this.isHidden ? " (hidden)" : " (visible)") ]);
 if (!this.isHidden && !this.isMovie && !this.allStates  ) {
 if (this.pymolFrame > 0 && this.pymolFrame != this.nModels ) {
 this.pymolFrame=this.nModels;
@@ -409,7 +364,7 @@ this.allStates=true;
 this.pymolScene.setFrameObject$I$O(4115, Integer.valueOf$I(-1));
 }}var objectHeader=C$.listAt$javajs_util_Lst$I(pymolObject, 0);
 var parentGroupName=(execObject.size$() < 8 ? null : C$.stringAt$javajs_util_Lst$I(execObject, 6));
-if (" ".equals$O(parentGroupName)) parentGroupName=null;
+if ("".equals$O(parentGroupName.trim$())) parentGroupName=null;
 this.pymolScene.setReaderObjectInfo$S$I$S$Z$javajs_util_Lst$javajs_util_Lst$S(this.objectName, type, parentGroupName, this.isHidden, C$.listAt$javajs_util_Lst$I(objectHeader, 8), stateSettings, (moleculeOnly ? "_" + (iState + 1) : ""));
 var bsAtoms=null;
 var doExclude=(this.bsBytesExcluded != null );
@@ -464,15 +419,15 @@ if (doExclude) {
 var i0=C$.intAt$javajs_util_Lst$I(startLen, 0);
 var len=C$.intAt$javajs_util_Lst$I(startLen, 1);
 this.bsBytesExcluded.setBits$I$I(i0, i0 + len);
-$I$(5).info$S("cached PSE file excludes PyMOL object type " + type + " name=" + this.objectName + " len=" + len );
-}if (msg != null ) $I$(5).error$S("Unprocessed object type " + msg + " " + this.objectName );
+$I$(4,"info$S",["cached PSE file excludes PyMOL object type " + type + " name=" + this.objectName + " len=" + len ]);
+}if (msg != null ) $I$(4).error$S("Unprocessed object type " + msg + " " + this.objectName );
 }, p$1);
 
 Clazz.newMeth(C$, 'processCGO$javajs_util_Lst', function (pymolObject) {
 if (this.isStateScript) return;
 if (this.isHidden) return;
 var data=C$.sublistAt$javajs_util_Lst$IA(pymolObject, [2, 0]);
-var color=$I$(11).getRGB$I(C$.intAt$javajs_util_Lst$I(C$.listAt$javajs_util_Lst$I(pymolObject, 0), 2));
+var color=$I$(10,"getRGB$I",[C$.intAt$javajs_util_Lst$I(C$.listAt$javajs_util_Lst$I(pymolObject, 0), 2)]);
 var name=this.pymolScene.addCGO$javajs_util_Lst$I(data, color);
 if (name != null ) this.appendLoadNote$S("CGO " + name);
 }, p$1);
@@ -485,19 +440,19 @@ Clazz.newMeth(C$, 'processMap$javajs_util_Lst$Z$Z', function (pymolObject, isObj
 if (isObject) {
 if (this.sourcePNGJ) return;
 if (this.isHidden && !isGadget ) return;
-if (this.mapObjects == null ) this.mapObjects=Clazz.new_($I$(4));
-this.mapObjects.addLast$TV(pymolObject);
+if (this.mapObjects == null ) this.mapObjects=Clazz.new_($I$(3,1));
+this.mapObjects.addLast$O(pymolObject);
 } else {
-if (this.volumeData == null ) this.volumeData=Clazz.new_($I$(10));
-this.volumeData.put$TK$TV(this.objectName, pymolObject);
+if (this.volumeData == null ) this.volumeData=Clazz.new_($I$(9,1));
+this.volumeData.put$O$O(this.objectName, pymolObject);
 if (!this.isHidden && !this.isStateScript ) this.pymolScene.addIsosurface$S(this.objectName);
-}pymolObject.addLast$TV(this.objectName);
+}pymolObject.addLast$O(this.objectName);
 }, p$1);
 
 Clazz.newMeth(C$, 'processMeasure$javajs_util_Lst', function (pymolObject) {
 if (this.isStateScript) return;
 if (this.isHidden) return;
-$I$(5).info$S("PyMOL measure " + this.objectName);
+$I$(4).info$S("PyMOL measure " + this.objectName);
 var measure=C$.sublistAt$javajs_util_Lst$IA(pymolObject, [2, 0]);
 var pt;
 var nCoord=(Clazz.instanceOf(measure.get$I(pt=1), "javajs.util.Lst") ? 2 : Clazz.instanceOf(measure.get$I(pt=4), "javajs.util.Lst") ? 3 : Clazz.instanceOf(measure.get$I(pt=6), "javajs.util.Lst") ? 4 : 0);
@@ -523,7 +478,7 @@ var labelArray=null;
 var nBonds=C$.intAt$javajs_util_Lst$I(pymolObject, 2);
 var nAtoms=C$.intAt$javajs_util_Lst$I(pymolObject, 3);
 var n=nAtoms;
-if (this.haveBinaryArrays && $I$(12).isAB$O(state.get$I(3)) ) {
+if (this.haveBinaryArrays && $I$(11,"isAB$O",[state.get$I(3)]) ) {
 idxToAtm=coords=labelPositions=null;
 idxArray=Clazz.array(Integer.TYPE, [nAtoms]);
 coordsArray=Clazz.array(Float.TYPE, [nAtoms * 3]);
@@ -541,7 +496,7 @@ if (idxToAtm != null ) n=idxToAtm.size$();
 }if (n == 0) return null;
 this.$ac=this.ac0=this.asc.ac;
 if (nAtoms == 0) return null;
-this.ssMapSeq=Clazz.new_($I$(10));
+this.ssMapSeq=Clazz.new_($I$(9,1));
 if (iState == 0) p$1.processMolCryst$javajs_util_Lst.apply(this, [C$.listAt$javajs_util_Lst$I(pymolObject, 10)]);
 var bonds=p$1.getBondList$javajs_util_Lst.apply(this, [C$.listAt$javajs_util_Lst$I(pymolObject, 6)]);
 var pymolAtoms=C$.listAt$javajs_util_Lst$I(pymolObject, 7);
@@ -559,7 +514,7 @@ var ver=C$.intAt$javajs_util_Lst$I(pymolAtoms, 0);
 atomArray=pymolAtoms.get$I(1);
 lexStr=p$1.getLexStr$BA.apply(this, [pymolAtoms.get$I(2)]);
 System.out.println$S("PyMOL atom dump version " + ver);
-vArray=(this.haveBinaryArrays ? $I$(11).getVArray$I(ver) : null);
+vArray=(this.haveBinaryArrays ? $I$(10).getVArray$I(ver) : null);
 }for (var idx=0; idx < n; idx++) {
 var a=p$1.addAtom$javajs_util_Lst$I$BA$IA$SA$I$javajs_util_Lst$FA$javajs_util_Lst$FA$javajs_util_BS$I.apply(this, [pymolAtoms, (idxToAtm != null  ? C$.intAt$javajs_util_Lst$I(idxToAtm, idx) : idxArray != null  ? idxArray[idx] : idx), atomArray, vArray, lexStr, idx, coords, coordsArray, labelPositions, labelArray, bsAtoms, iState]);
 if (a != null ) this.trajectoryStep[this.trajectoryPtr++]=a;
@@ -569,19 +524,19 @@ p$1.addMolStructures.apply(this, []);
 this.atoms=this.asc.atoms;
 if (!this.isStateScript) p$1.createShapeObjects.apply(this, []);
 this.ssMapSeq=null;
-$I$(5).info$S("reading " + (this.$ac - this.ac0) + " atoms and " + nBonds + " bonds" );
-$I$(5).info$S("----------");
+$I$(4,"info$S",["reading " + (this.$ac - this.ac0) + " atoms and " + nBonds + " bonds" ]);
+$I$(4).info$S("----------");
 return bsAtoms;
 }, p$1);
 
 Clazz.newMeth(C$, 'getLexStr$BA', function (lex) {
 var pt=0;
-var n=$I$(13).bytesToInt$BA$I$Z(lex, pt, false);
+var n=$I$(12).bytesToInt$BA$I$Z(lex, pt, false);
 var index=Clazz.array(Integer.TYPE, [n]);
 var imax=0;
 for (var i=0; i < n; i++) {
 pt+=4;
-var ipt=index[i]=$I$(13).bytesToInt$BA$I$Z(lex, pt, false);
+var ipt=index[i]=$I$(12).bytesToInt$BA$I$Z(lex, pt, false);
 if (ipt > imax) imax=ipt;
 }
 var tokens=Clazz.array(String, [imax + 1]);
@@ -599,11 +554,11 @@ try {
 var a=this.aTemp;
 var apt=0;
 var b=($b$[0] = 0, $b$[0]);
-while ((b=($b$[0] = lex[pt++], $b$[0])) != 0){
-if (apt >= a.length) a=this.aTemp=$I$(12).doubleLengthByte$BA(a);
-a[apt++]=(b|0);
+while ((b=lex[pt++]) != 0){
+if (apt >= a.length) a=this.aTemp=$I$(11).doubleLengthByte$BA(a);
+a[apt++]=b;
 }
-return  String.instantialize($I$(12).arrayCopyByte$BA$I(a, apt), "UTF-8");
+return  String.instantialize($I$(11).arrayCopyByte$BA$I(a, apt), "UTF-8");
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.UnsupportedEncodingException")){
 return null;
@@ -630,11 +585,11 @@ var len=0;
 if (this.haveBinaryArrays && n == 2 ) {
 var ver=C$.intAt$javajs_util_Lst$I(bonds, 0);
 System.out.println$S("PyMOL bond dump version " + ver);
-vArray=$I$(11).getVArrayB$I(ver);
+vArray=$I$(10).getVArrayB$I(ver);
 b=bonds.get$I(1);
 len=vArray[0];
 n=(b.length/len|0);
-}var bondList=Clazz.new_($I$(4));
+}var bondList=Clazz.new_($I$(3,1));
 bondList.ensureCapacity$I(n);
 var ia;
 var ib;
@@ -642,9 +597,9 @@ var order;
 var uid=-1;
 for (var i=0, apt=0; i < n; i++) {
 if (this.haveBinaryArrays) {
-ia=$I$(13).bytesToInt$BA$I$Z(b, apt + vArray[1], false);
-ib=$I$(13).bytesToInt$BA$I$Z(b, apt + vArray[2], false);
-uid=(b[apt + vArray[6]] == 0 ? -1 : $I$(13).bytesToInt$BA$I$Z(b, apt + vArray[5], false));
+ia=$I$(12).bytesToInt$BA$I$Z(b, apt + vArray[1], false);
+ib=$I$(12).bytesToInt$BA$I$Z(b, apt + vArray[2], false);
+uid=(b[apt + vArray[6]] == 0 ? -1 : $I$(12).bytesToInt$BA$I$Z(b, apt + vArray[5], false));
 order=b[apt + vArray[3]];
 apt+=len;
 } else {
@@ -655,21 +610,21 @@ order=C$.intAt$javajs_util_Lst$I(lst, 2);
 uid=(lst.size$() > 6 && C$.intAt$javajs_util_Lst$I(lst, 6) != 0  ? C$.intAt$javajs_util_Lst$I(lst, 5) : -1);
 }if (order < 1 || order > 3 ) order=1;
 order|=(asSingle || order == 1  ? 65536 : 98304);
-var bond=Clazz.new_($I$(14).c$$I$I$I,[ia, ib, order]);
+var bond=Clazz.new_($I$(13,1).c$$I$I$I,[ia, ib, order]);
 bond.uniqueID=uid;
-bondList.addLast$TV(bond);
+bondList.addLast$O(bond);
 }
 return bondList;
 }, p$1);
 
 Clazz.newMeth(C$, 'fillIntArrayFromBytes$BA$IA', function (b, array) {
-for (var i=0, pt=0; i < b.length; i+=4) array[pt++]=$I$(13).bytesToInt$BA$I$Z(b, i, false);
+for (var i=0, pt=0; i < b.length; i+=4) array[pt++]=$I$(12).bytesToInt$BA$I$Z(b, i, false);
 
 }, p$1);
 
 Clazz.newMeth(C$, 'fillFloatArrayFromBytes$BA$FA', function (b, array) {
 try {
-for (var i=0, pt=0; i < b.length; i+=4) array[pt++]=$I$(13).bytesToFloat$BA$I$Z(b, i, false);
+for (var i=0, pt=0; i < b.length; i+=4) array[pt++]=$I$(12).bytesToFloat$BA$I$Z(b, i, false);
 
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -722,7 +677,7 @@ altLoc=p$1.atomStr$BA$I$I$SA.apply(this, [atomArray, pt, vArray[40], null]);
 if ((vpt=vArray[42]) == 0) {
 resi=p$1.atomStr$BA$I$I$SA.apply(this, [atomArray, pt, vArray[38], null]);
 } else {
-var b=($b$[0] = atomArray[pt + vpt], $b$[0]);
+var b=atomArray[pt + vpt];
 insCode=(b == 0 ? " " : "" + String.fromCharCode(b));
 }bfactor=p$1.atomFloat$BA$I$I.apply(this, [atomArray, pt, vArray[4]]);
 occupancy=p$1.atomFloat$BA$I$I.apply(this, [atomArray, pt, vArray[5]]);
@@ -738,7 +693,7 @@ flags=p$1.atomInt$BA$I$I.apply(this, [atomArray, pt, vArray[11]]);
 uniqueID=p$1.atomInt$BA$I$I.apply(this, [atomArray, pt, vArray[13]]);
 if (uniqueID == 0) uniqueID=-1;
 anisou=Clazz.array(Float.TYPE, [8]);
-if ((vpt=vArray[45]) > 0) for (var i=0; i < 6; i++) anisou[i]=$I$(13).bytesToShort$BA$I$Z(atomArray, pt + vpt + (i << 1) , false);
+if ((vpt=vArray[45]) > 0) for (var i=0; i < 6; i++) anisou[i]=$I$(12,"bytesToShort$BA$I$Z",[atomArray, pt + vpt + (i << 1) , false]);
 
 bonded=p$1.atomBool$BA$I$I$I.apply(this, [atomArray, pt, vArray[22], vArray[47]]);
 isHetero=p$1.atomBool$BA$I$I$I.apply(this, [atomArray, pt, vArray[21], vArray[46]]);
@@ -746,13 +701,16 @@ isHetero=p$1.atomBool$BA$I$I$I.apply(this, [atomArray, pt, vArray[21], vArray[46
 var a=C$.listAt$javajs_util_Lst$I(pymolAtoms, apt);
 seqNo=C$.intAt$javajs_util_Lst$I(a, 0);
 chainID=C$.stringAt$javajs_util_Lst$I(a, 1);
+if (chainID.length$() == 0) chainID=" ";
 altLoc=C$.stringAt$javajs_util_Lst$I(a, 2);
 resi=C$.stringAt$javajs_util_Lst$I(a, 3);
 group3=C$.stringAt$javajs_util_Lst$I(a, 5);
 name=C$.stringAt$javajs_util_Lst$I(a, 6);
 sym=C$.stringAt$javajs_util_Lst$I(a, 7);
 label=C$.stringAt$javajs_util_Lst$I(a, 9);
-ssType=C$.stringAt$javajs_util_Lst$I(a, 10).substring$I$I(0, 1);
+ssType=C$.stringAt$javajs_util_Lst$I(a, 10);
+if (ssType.length$() == 0) ssType=" ";
+ssType=ssType.substring$I$I(0, 1);
 bfactor=C$.floatAt$javajs_util_Lst$I(a, 14);
 occupancy=C$.floatAt$javajs_util_Lst$I(a, 15);
 radius=C$.floatAt$javajs_util_Lst$I(a, 16);
@@ -771,12 +729,12 @@ if (a.size$() > 46) anisou=C$.floatsAt$javajs_util_Lst$I$FA$I(a, 41, Clazz.array
 }if (insCode == null ) {
 var len=resi.length$();
 var ch=(len > 0 ? resi.charAt$I(len - 1) : " ");
-insCode=($I$(9).isDigit$C(ch) ? " " : "" + ch);
+insCode=($I$(8).isDigit$C(ch) ? " " : "" + ch);
 }if (group3.length$() > 3) group3=group3.substring$I$I(0, 3);
 if (group3.equals$O(" ")) group3="UNK";
 if (sym.equals$O("A")) sym="C";
 var ichain=this.vwr.getChainID$S$Z(chainID, true);
-var atom=this.processAtom$org_jmol_adapter_smarter_Atom$S$C$S$I$I$C$Z$S(Clazz.new_($I$(15)), name, altLoc.charAt$I(0), group3, ichain, seqNo, insCode.charAt$I(0), isHetero, sym);
+var atom=this.processAtom$org_jmol_adapter_smarter_Atom$S$C$S$I$I$C$Z$S(Clazz.new_($I$(14,1)), name, (altLoc.length$() == 0 ? " " : altLoc.charAt$I(0)), group3, ichain, seqNo, insCode.charAt$I(0), isHetero, sym);
 if (!this.filterPDBAtom$org_jmol_adapter_smarter_Atom$I(atom, this.fileAtomIndex++)) return null;
 var x;
 var y;
@@ -790,24 +748,24 @@ z=coordArray[++icoord];
 x=C$.floatAt$javajs_util_Lst$I(coords, icoord);
 y=C$.floatAt$javajs_util_Lst$I(coords, ++icoord);
 z=C$.floatAt$javajs_util_Lst$I(coords, ++icoord);
-}$I$(16).addPointXYZ$F$F$F$javajs_util_P3$javajs_util_P3$F(x, y, z, this.xyzMin, this.xyzMax, 0);
+}$I$(15).addPointXYZ$F$F$F$javajs_util_P3$javajs_util_P3$F(x, y, z, this.xyzMin, this.xyzMax, 0);
 if (this.isTrajectory && iState > 0 ) return null;
 var isNucleic=(C$.nucleic.indexOf$S(group3) >= 0);
 if (bsState != null ) bsState.set$I(this.$ac);
 if (seqNo >= -1000 && (!ssType.equals$O(" ") || name.equals$O("CA") || isNucleic  ) ) {
 var bs=this.ssMapSeq.get$O(ssType);
-if (bs == null ) this.ssMapSeq.put$TK$TV(ssType, bs=Clazz.new_($I$(1)));
+if (bs == null ) this.ssMapSeq.put$O$O(ssType, bs=Clazz.new_($I$(1,1)));
 bs.set$I(seqNo - -1000);
 ssType += ichain;
 bs=this.ssMapSeq.get$O(ssType);
-if (bs == null ) this.ssMapSeq.put$TK$TV(ssType, bs=Clazz.new_($I$(1)));
+if (bs == null ) this.ssMapSeq.put$O$O(ssType, bs=Clazz.new_($I$(1,1)));
 bs.set$I(seqNo - -1000);
 }atom.bfactor=bfactor;
 atom.foccupancy=occupancy;
 atom.radius=radius;
 if (atom.radius == 0 ) atom.radius=1;
 atom.partialCharge=partialCharge;
-atom.vib=$I$(17).new3$F$F$F(uniqueID, cartoonType, NaN);
+atom.vib=$I$(16).new3$F$F$F(uniqueID, cartoonType, NaN);
 if (anisou != null  && anisou[0] != 0  ) this.asc.setAnisoBorU$org_jmol_adapter_smarter_Atom$FA$I(atom, anisou, 12);
 this.pymolScene.setAtomColor$I(atomColor);
 this.processAtom2$org_jmol_adapter_smarter_Atom$I$F$F$F$I(atom, serNo, x, y, z, formalCharge);
@@ -823,13 +781,18 @@ var labelOffset=C$.listAt$javajs_util_Lst$I(labelPositions, apt);
 if (labelOffset != null ) {
 for (var i=0; i < 7; i++) labelPos[i]=C$.floatAt$javajs_util_Lst$I(labelOffset, i);
 
-}}this.pymolScene.addLabel$I$I$I$FA$S(this.$ac, uniqueID, atomColor, labelPos, label);
+}}var isAllZero=true;
+for (var i=0; i < 7; i++) {
+if (labelPos[i] != 0 ) isAllZero=false;
+}
+if (isAllZero) labelPos[0]=1;
+this.pymolScene.addLabel$I$I$I$FA$S(this.$ac, uniqueID, atomColor, labelPos, label);
 }if (this.isHidden) this.pymolScene.bsHidden.set$I(this.$ac);
 if (isNucleic) this.pymolScene.bsNucleic.set$I(this.$ac);
 for (var i=0; i < 21; i++) if (bsReps == null  ? ((intReps & (1 << i)) != 0) : bsReps.get$I(i)) this.reps[i].set$I(this.$ac);
 
 if (atom.elementSymbol.equals$O("H")) this.pymolScene.bsHydrogen.set$I(this.$ac);
-if ((flags & $I$(11).FLAG_NOSURFACE) != 0) this.pymolScene.bsNoSurface.set$I(this.$ac);
+if ((flags & $I$(10).FLAG_NOSURFACE) != 0) this.pymolScene.bsNoSurface.set$I(this.$ac);
 this.atomMap[apt]=this.$ac++;
 return null;
 }, p$1);
@@ -840,7 +803,7 @@ return ((atomArray[pt + offset] & mask) != 0);
 
 Clazz.newMeth(C$, 'atomFloat$BA$I$I', function (atomArray, pt, offset) {
 try {
-return $I$(13).bytesToFloat$BA$I$Z(atomArray, pt + offset, false);
+return $I$(12).bytesToFloat$BA$I$Z(atomArray, pt + offset, false);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 return 0;
@@ -851,13 +814,13 @@ throw e;
 }, p$1);
 
 Clazz.newMeth(C$, 'atomStr$BA$I$I$SA', function (atomArray, pt, offset, lexStr) {
-if (offset < 0) return lexStr[$I$(13).bytesToInt$BA$I$Z(atomArray, pt - offset, false)];
+if (offset < 0) return lexStr[$I$(12).bytesToInt$BA$I$Z(atomArray, pt - offset, false)];
 var s=p$1.getCStr$BA$I.apply(this, [atomArray, pt + offset]);
 return (s.length$() == 0 ? " " : s);
 }, p$1);
 
 Clazz.newMeth(C$, 'atomInt$BA$I$I', function (atomArray, pt, offset) {
-return $I$(13).bytesToInt$BA$I$Z(atomArray, pt + offset, false);
+return $I$(12).bytesToInt$BA$I$Z(atomArray, pt + offset, false);
 }, p$1);
 
 Clazz.newMeth(C$, 'addBonds$javajs_util_Lst', function (bonds) {
@@ -873,10 +836,10 @@ this.asc.addBond$org_jmol_adapter_smarter_Bond(bond);
 }, p$1);
 
 Clazz.newMeth(C$, 'addMolStructures', function () {
-p$1.addMolSS$S$org_jmol_c_STR.apply(this, ["H", $I$(18).HELIX]);
-p$1.addMolSS$S$org_jmol_c_STR.apply(this, ["S", $I$(18).SHEET]);
-p$1.addMolSS$S$org_jmol_c_STR.apply(this, ["L", $I$(18).TURN]);
-p$1.addMolSS$S$org_jmol_c_STR.apply(this, [" ", $I$(18).NONE]);
+p$1.addMolSS$S$org_jmol_c_STR.apply(this, ["H", $I$(17).HELIX]);
+p$1.addMolSS$S$org_jmol_c_STR.apply(this, ["S", $I$(17).SHEET]);
+p$1.addMolSS$S$org_jmol_c_STR.apply(this, ["L", $I$(17).TURN]);
+p$1.addMolSS$S$org_jmol_c_STR.apply(this, [" ", $I$(17).NONE]);
 }, p$1);
 
 Clazz.newMeth(C$, 'addMolSS$S$org_jmol_c_STR', function (ssType, type) {
@@ -911,11 +874,11 @@ if (istart < 0) istart=i;
 continue;
 } else if (istart < 0) {
 continue;
-}if (type !== $I$(18).NONE ) {
+}if (type !== $I$(17).NONE ) {
 var pt=this.bsStructureDefined.nextSetBit$I(istart);
 if (pt >= 0 && pt <= iend ) continue;
 this.bsStructureDefined.setBits$I$I(istart, iend + 1);
-var structure=Clazz.new_($I$(19).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA,[imodel, type, type, type.toString(), ++this.structureCount, type === $I$(18).SHEET  ? 1 : 0, null]);
+var structure=Clazz.new_([imodel, type, type, type.toString(), ++this.structureCount, type === $I$(17).SHEET  ? 1 : 0, null],$I$(18,1).c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA);
 var a=atoms[istart];
 var b=atoms[iend];
 var i0=this.asc.getAtomSetAtomIndex$I(thisModel);
@@ -945,16 +908,16 @@ var root=objName.substring$I$I(0, objName.length$() - 3);
 mapName=root + "map";
 var isosurfaceName=this.pymolScene.getObjectID$S(root + "chg");
 if (isosurfaceName == null ) continue;
-obj.addLast$TV(isosurfaceName);
+obj.addLast$O(isosurfaceName);
 this.pymolScene.mepList += ";" + isosurfaceName + ";" ;
 } else {
 tok=1073742018;
 mapName=C$.stringAt$javajs_util_Lst$I(C$.sublistAt$javajs_util_Lst$IA(obj, [2, 0]), 1);
 }var surface=this.volumeData.get$O(mapName);
 if (surface == null ) continue;
-obj.addLast$TV(mapName);
-this.volumeData.put$TK$TV(objName, obj);
-this.volumeData.put$TK$TV("__pymolSurfaceData__", obj);
+obj.addLast$O(mapName);
+this.volumeData.put$O$O(objName, obj);
+this.volumeData.put$O$O("__pymolSurfaceData__", obj);
 if (!this.isStateScript) this.pymolScene.addMesh$I$javajs_util_Lst$S$Z(tok, obj, objName, isMep);
 this.appendLoadNote$S("PyMOL object " + objName + " references map " + mapName );
 }
@@ -1037,15 +1000,17 @@ return mesh;
 }, 1);
 
 Clazz.newMeth(C$, 'listToMap$javajs_util_Lst', function (list) {
-var map=Clazz.new_($I$(10));
+var map=Clazz.new_($I$(9,1));
 for (var i=list.size$(); --i >= 0; ) {
 var item=C$.listAt$javajs_util_Lst$I(list, i);
-if (item != null  && item.size$() > 0 ) map.put$TK$TV(C$.stringAt$javajs_util_Lst$I(item, 0), item);
+if (item != null  && item.size$() > 0 ) map.put$O$O(C$.stringAt$javajs_util_Lst$I(item, 0), item);
 }
 return map;
 }, 1);
 
 Clazz.newMeth(C$, 'stringAt$javajs_util_Lst$I', function (list, i) {
+var o=list.get$I(i);
+if (Clazz.instanceOf(o, "java.lang.String")) return o;
 var a=list.get$I(i);
 return (a.length == 0 ? " " : C$.bytesToString$O(a));
 }, 1);
@@ -1067,7 +1032,7 @@ return C$.getColorPt$O$javajs_util_P3(c.get$I(c.size$() < 6 || C$.intAt$javajs_u
 }, 1);
 
 Clazz.newMeth(C$, 'getColorPt$O$javajs_util_P3', function (o, ptTemp) {
-return (o == null  ? 0 : Clazz.instanceOf(o, "java.lang.Integer") ? (o).intValue$() : $I$(20).colorPtToFFRGB$javajs_util_T3(C$.pointAt$javajs_util_Lst$I$javajs_util_P3(o, 0, ptTemp)));
+return (o == null  ? 0 : Clazz.instanceOf(o, "java.lang.Integer") ? (o).intValue$() : $I$(19,"colorPtToFFRGB$javajs_util_T3",[C$.pointAt$javajs_util_Lst$I$javajs_util_P3(o, 0, ptTemp)]));
 }, 1);
 
 Clazz.newMeth(C$, 'getMapList$java_util_Map$S', function (map, key) {
@@ -1076,7 +1041,7 @@ return map.get$O(key);
 
 Clazz.newMeth(C$, 'getBsReps$javajs_util_Lst', function (list) {
 if (list == null ) return null;
-var bsReps=Clazz.new_($I$(1));
+var bsReps=Clazz.new_($I$(1,1));
 var n=Math.min(list.size$(), 21);
 for (var i=0; i < n; i++) {
 if (C$.intAt$javajs_util_Lst$I(list, i) == 1) bsReps.set$I(i);
@@ -1103,8 +1068,12 @@ return this.atoms[iAtom].sequenceNumber;
 Clazz.newMeth(C$, 'compareAtoms$I$I', function (iPrev, i) {
 return this.atoms[iPrev].chainID != this.atoms[i].chainID;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.nucleic=" A C G T U ADE THY CYT GUA URI DA DC DG DT DU ";
+};
 var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

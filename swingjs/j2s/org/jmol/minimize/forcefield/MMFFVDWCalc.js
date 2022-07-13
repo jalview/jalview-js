@@ -1,11 +1,10 @@
 (function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),I$=[];
-var C$=Clazz.newClass(P$, "MMFFVDWCalc", null, 'org.jmol.minimize.forcefield.Calculation');
+/*c*/var C$=Clazz.newClass(P$, "MMFFVDWCalc", null, 'org.jmol.minimize.forcefield.Calculation');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'setData$javajs_util_Lst$I$I$D', function (calc, ia, ib, dd) {
 this.a=this.calcs.minAtoms[ia];
@@ -32,7 +31,7 @@ var eps=((181.16 * G_a * G_b * alpha_a * alpha_b ) / (Math.sqrt(alpha_a / N_a) +
 if (DA_a + DA_b == 133) {
 rs *= 0.8;
 eps *= 0.5;
-}calc.addLast$TV(Clazz.array(java.lang.Object, -1, [Clazz.array(Integer.TYPE, -1, [ia, ib]), Clazz.array(Double.TYPE, -1, [rs, eps])]));
+}calc.addLast$O(Clazz.array(java.lang.Object, -1, [Clazz.array(Integer.TYPE, -1, [ia, ib]), Clazz.array(Double.TYPE, -1, [rs, eps])]));
 });
 
 Clazz.newMeth(C$, 'compute$OA', function (dataIn) {
@@ -53,4 +52,4 @@ return this.energy;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

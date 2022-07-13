@@ -1,39 +1,35 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.text.NumberFormat','StringBuffer',['java.text.NumberFormat','.Field']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NumberFormatter", null, 'javax.swing.text.InternationalFormatter');
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'java.text.NumberFormat','StringBuffer',['java.text.NumberFormat','.Field']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NumberFormatter", null, 'javax.swing.text.InternationalFormatter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.specialChars=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['S',['specialChars']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 p$1.setN$java_text_NumberFormat.apply(this, [$I$(1).getNumberInstance$()]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_text_NumberFormat', function (format) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$java_text_NumberFormat',  function (format) {
+Clazz.super_(C$, this);
 p$1.setN$java_text_NumberFormat.apply(this, [format]);
 }, 1);
 
-Clazz.newMeth(C$, 'setN$java_text_NumberFormat', function (format) {
+Clazz.newMeth(C$, 'setN$java_text_NumberFormat',  function (format) {
 this.setFormat$java_text_Format(format);
 this.setAllowsInvalid$Z(true);
 this.setCommitsOnValidEdit$Z(false);
 this.setOverwriteMode$Z(false);
 }, p$1);
 
-Clazz.newMeth(C$, 'setFormat$java_text_Format', function (format) {
+Clazz.newMeth(C$, 'setFormat$java_text_Format',  function (format) {
 C$.superclazz.prototype.setFormat$java_text_Format.apply(this, [format]);
 var dfs=p$1.getDecimalFormatSymbols.apply(this, []);
 if (dfs != null ) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 sb.append$S(dfs.getCurrencySymbol$());
 sb.append$C(dfs.getDecimalSeparator$());
 sb.append$C(dfs.getGroupingSeparator$());
@@ -49,14 +45,14 @@ this.specialChars=sb.toString();
 this.specialChars="";
 }});
 
-Clazz.newMeth(C$, 'stringToValueParse$S$java_text_Format', function (text, f) {
+Clazz.newMeth(C$, 'stringToValueParse$S$java_text_Format',  function (text, f) {
 if (f == null ) {
 return text;
 }var value=f.parseObject$S(text);
 return p$1.convertValueToValueClass$O$Class.apply(this, [value, this.getValueClass$()]);
 });
 
-Clazz.newMeth(C$, 'convertValueToValueClass$O$Class', function (value, valueClass) {
+Clazz.newMeth(C$, 'convertValueToValueClass$O$Class',  function (value, valueClass) {
 if (valueClass != null  && (Clazz.instanceOf(value, "java.lang.Number")) ) {
 if (valueClass === Clazz.getClass(Integer) ) {
 return  new Integer((value).intValue$());
@@ -67,38 +63,38 @@ return  new Float((value).floatValue$());
 } else if (valueClass === Clazz.getClass(Double) ) {
 return  new Double((value).doubleValue$());
 } else if (valueClass === Clazz.getClass(Byte) ) {
-return  new Byte(($b$[0] = (value).byteValue$(), $b$[0]));
+return  new Byte((value).byteValue$());
 } else if (valueClass === Clazz.getClass(Short) ) {
 return  new Short((value).shortValue$());
 }}return value;
 }, p$1);
 
-Clazz.newMeth(C$, 'getPositiveSign', function () {
+Clazz.newMeth(C$, 'getPositiveSign',  function () {
 return "+";
 }, p$1);
 
-Clazz.newMeth(C$, 'getMinusSign', function () {
+Clazz.newMeth(C$, 'getMinusSign',  function () {
 var dfs=p$1.getDecimalFormatSymbols.apply(this, []);
 if (dfs != null ) {
 return dfs.getMinusSign$();
 }return "-";
 }, p$1);
 
-Clazz.newMeth(C$, 'getDecimalSeparator', function () {
+Clazz.newMeth(C$, 'getDecimalSeparator',  function () {
 var dfs=p$1.getDecimalFormatSymbols.apply(this, []);
 if (dfs != null ) {
 return dfs.getDecimalSeparator$();
 }return ".";
 }, p$1);
 
-Clazz.newMeth(C$, 'getDecimalFormatSymbols', function () {
+Clazz.newMeth(C$, 'getDecimalFormatSymbols',  function () {
 var f=this.getFormat$();
 if (Clazz.instanceOf(f, "java.text.DecimalFormat")) {
 return (f).getDecimalFormatSymbols$();
 }return null;
 }, p$1);
 
-Clazz.newMeth(C$, 'isLegalInsertText$S', function (text) {
+Clazz.newMeth(C$, 'isLegalInsertText$S',  function (text) {
 if (this.getAllowsInvalid$()) {
 return true;
 }for (var counter=text.length$() - 1; counter >= 0; counter--) {
@@ -109,32 +105,32 @@ return false;
 return true;
 });
 
-Clazz.newMeth(C$, 'isLiteral$java_util_Map', function (attrs) {
+Clazz.newMeth(C$, 'isLiteral$java_util_Map',  function (attrs) {
 if (!C$.superclazz.prototype.isLiteral$java_util_Map.apply(this, [attrs])) {
 if (attrs == null ) {
 return false;
 }var size=attrs.size$();
 if (attrs.get$O($I$(3).GROUPING_SEPARATOR) != null ) {
-size--;
+--size;
 if (attrs.get$O($I$(3).INTEGER) != null ) {
-size--;
+--size;
 }}if (attrs.get$O($I$(3).EXPONENT_SYMBOL) != null ) {
-size--;
+--size;
 }if (attrs.get$O($I$(3).PERCENT) != null ) {
-size--;
+--size;
 }if (attrs.get$O($I$(3).PERMILLE) != null ) {
-size--;
+--size;
 }if (attrs.get$O($I$(3).CURRENCY) != null ) {
-size--;
+--size;
 }if (attrs.get$O($I$(3).SIGN) != null ) {
-size--;
+--size;
 }if (size == 0) {
 return true;
 }return false;
 }return true;
 });
 
-Clazz.newMeth(C$, 'isNavigatable$I', function (index) {
+Clazz.newMeth(C$, 'isNavigatable$I',  function (index) {
 if (!C$.superclazz.prototype.isNavigatable$I.apply(this, [index])) {
 if (this.getBufferedChar$I(index) == p$1.getDecimalSeparator.apply(this, [])) {
 return true;
@@ -142,7 +138,7 @@ return true;
 }return true;
 });
 
-Clazz.newMeth(C$, 'getFieldFrom$I$I', function (index, direction) {
+Clazz.newMeth(C$, 'getFieldFrom$I$I',  function (index, direction) {
 if (this.isValidMask$()) {
 var max=this.getFormattedTextField$().getDocument$().getLength$();
 var iterator=this.getIterator$();
@@ -163,13 +159,13 @@ return key;
 }return null;
 }, p$1);
 
-Clazz.newMeth(C$, 'replace$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet', function (fb, offset, length, string, attr) {
+Clazz.newMeth(C$, 'replace$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet',  function (fb, offset, length, string, attr) {
 if (!this.getAllowsInvalid$() && length == 0  && string != null   && string.length$() == 1  && p$1.toggleSignIfNecessary$javax_swing_text_DocumentFilter_FilterBypass$I$C.apply(this, [fb, offset, string.charAt$I(0)]) ) {
 return;
 }C$.superclazz.prototype.replace$javax_swing_text_DocumentFilter_FilterBypass$I$I$S$javax_swing_text_AttributeSet.apply(this, [fb, offset, length, string, attr]);
 });
 
-Clazz.newMeth(C$, 'toggleSignIfNecessary$javax_swing_text_DocumentFilter_FilterBypass$I$C', function (fb, offset, aChar) {
+Clazz.newMeth(C$, 'toggleSignIfNecessary$javax_swing_text_DocumentFilter_FilterBypass$I$C',  function (fb, offset, aChar) {
 if (aChar == p$1.getMinusSign.apply(this, []) || aChar == p$1.getPositiveSign.apply(this, []) ) {
 var field=p$1.getFieldFrom$I$I.apply(this, [offset, -1]);
 var newValue;
@@ -196,7 +192,7 @@ throw pe;
 }return false;
 }, p$1);
 
-Clazz.newMeth(C$, 'toggleSign$Z', function (positive) {
+Clazz.newMeth(C$, 'toggleSign$Z',  function (positive) {
 var value=this.stringToValue$S(this.getFormattedTextField$().getText$());
 if (value != null ) {
 var string=value.toString();
@@ -222,7 +218,7 @@ return cons.newInstance$OA(Clazz.array(java.lang.Object, -1, [string]));
 }}}return null;
 }, p$1);
 
-Clazz.newMeth(C$, 'toggleExponentSign$I$C', function (offset, aChar) {
+Clazz.newMeth(C$, 'toggleExponentSign$I$C',  function (offset, aChar) {
 var string=this.getFormattedTextField$().getText$();
 var replaceLength=0;
 var loc=this.getAttributeStart$java_text_AttributedCharacterIterator_Attribute($I$(3).EXPONENT_SIGN);
@@ -235,6 +231,5 @@ string=this.getReplaceString$I$I$S(offset, replaceLength, null);
 string=this.getReplaceString$I$I$S(offset, replaceLength,  String.instantialize(Clazz.array(Character.TYPE, -1, [aChar])));
 }return this.stringToValue$S(string);
 }, p$1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

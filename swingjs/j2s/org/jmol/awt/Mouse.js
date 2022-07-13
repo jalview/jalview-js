@@ -1,28 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awt"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','org.jmol.util.Elements']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Mouse", null, null, ['java.awt.event.MouseWheelListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.KeyListener', 'org.jmol.api.GenericMouseInterface']);
+(function(){var P$=Clazz.newPackage("org.jmol.awt"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','org.jmol.util.Elements']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Mouse", null, null, ['java.awt.event.MouseWheelListener', 'java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'java.awt.event.KeyListener', 'org.jmol.api.GenericMouseInterface']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.manager=null;
-this.keyBuffer=null;
-this.isMouseDown=false;
-this.wheeling=false;
-this.modifiersDown=0;
-this.xWhenPressed=0;
-this.yWhenPressed=0;
-this.modifiersWhenPressed10=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.keyBuffer="";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isMouseDown','wheeling'],'I',['modifiersDown','xWhenPressed','yWhenPressed','modifiersWhenPressed10'],'S',['keyBuffer'],'O',['vwr','org.jmol.viewer.Viewer','manager','org.jmol.api.EventManager']]]
 
 Clazz.newMeth(C$, 'c$$D$org_jmol_api_PlatformViewer$O', function (privateKey, vwr, odisplay) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
 this.manager=this.vwr.acm;
 var display=odisplay;
@@ -103,7 +91,7 @@ Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (e) {
 p$1.mouseMoved$J$I$I$I.apply(this, [e.getWhen$(), e.getX$(), e.getY$(), e.getModifiers$()]);
 });
 
-Clazz.newMeth(C$, ['mouseWheelMoved$java_awt_event_MouseWheelEvent','mouseWheelMoved$'], function (e) {
+Clazz.newMeth(C$, 'mouseWheelMoved$java_awt_event_MouseWheelEvent', function (e) {
 e.consume$();
 p$1.mouseWheel$J$I$I.apply(this, [e.getWhen$(), e.getWheelRotation$(), e.getModifiers$()]);
 });
@@ -198,7 +186,7 @@ return;
 if (this.keyBuffer.length$() > 0) this.keyBuffer=this.keyBuffer.substring$I$I(0, this.keyBuffer.length$() - 1);
 } else {
 this.keyBuffer += ch;
-}if (this.vwr.getBooleanProperty$S("showKeyStrokes")) this.vwr.evalStringQuietSync$S$Z$Z("!set echo _KEYSTROKES; set echo bottom left;echo " + $I$(1).esc$S("\1" + this.keyBuffer), true, true);
+}if (this.vwr.getBooleanProperty$S("showKeyStrokes")) this.vwr.evalStringQuietSync$S$Z$Z("!set echo _KEYSTROKES; set echo bottom left;echo " + $I$(1).esc$S("\u0001" + this.keyBuffer), true, true);
 }, p$1);
 
 Clazz.newMeth(C$, 'checkElementSelected$C', function (ch) {
@@ -206,9 +194,9 @@ if ($I$(1).isUpperCase$C(ch)) {
 this.keyBuffer="";
 }this.keyBuffer += ch;
 var elemno=$I$(3).elementNumberFromSymbol$S$Z(this.keyBuffer, true);
-if (elemno <= 0) elemno=$I$(3).elementNumberFromSymbol$S$Z(this.keyBuffer.toUpperCase$(), true);
+if (elemno <= 0) elemno=$I$(3,"elementNumberFromSymbol$S$Z",[this.keyBuffer.toUpperCase$(), true]);
 System.out.println$S("CHECKELEME " + ch + " " + this.keyBuffer + " " + elemno );
-if (elemno > 0) this.vwr.assignAtom$I$S(-1, $I$(3).elementSymbolFromNumber$I(elemno));
+if (elemno > 0) this.vwr.assignAtom$I$S$javajs_util_P3(-1, $I$(3).elementSymbolFromNumber$I(elemno), null);
 if (!$I$(1).isUpperCase$C(ch)) this.keyBuffer="";
 }, p$1);
 
@@ -276,4 +264,4 @@ Clazz.newMeth(C$, 'processTwoPointGesture$FAAA', function (touches) {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

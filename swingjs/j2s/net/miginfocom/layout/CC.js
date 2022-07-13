@@ -1,42 +1,7 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.BoundSize','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.AnimSpec','java.util.ArrayList','net.miginfocom.layout.LayoutUtil','net.miginfocom.layout.ConstraintParser','net.miginfocom.layout.ResizeConstraint','Boolean','net.miginfocom.layout.UnitValue']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CC", null, null, 'java.io.Externalizable');
-C$.DEF_GAP=null;
-C$.DOCK_SIDES=null;
-C$.EMPTY_ARR=null;
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},I$=[[0,'net.miginfocom.layout.BoundSize','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.AnimSpec','java.util.ArrayList','net.miginfocom.layout.LayoutUtil','net.miginfocom.layout.ConstraintParser','net.miginfocom.layout.ResizeConstraint','Boolean','net.miginfocom.layout.UnitValue']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CC", null, null, 'java.io.Externalizable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEF_GAP=$I$(1).NULL_SIZE;
-C$.DOCK_SIDES=Clazz.array(String, -1, ["north", "west", "south", "east"]);
-C$.EMPTY_ARR=Clazz.array(String, [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dock=0;
-this.pos=null;
-this.padding=null;
-this.visualPadding=null;
-this.flowX=null;
-this.skip=0;
-this.split=0;
-this.spanX=0;
-this.spanY=0;
-this.cellX=0;
-this.cellY=0;
-this.tag=null;
-this.id=null;
-this.hideMode=0;
-this.hor=null;
-this.ver=null;
-this.newline=null;
-this.wrap=null;
-this.boundsInGrid=false;
-this.external=false;
-this.pushX=null;
-this.pushY=null;
-this.animSpec=null;
-this.linkTargets=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.dock=-1;
@@ -53,8 +18,8 @@ this.cellY=0;
 this.tag=null;
 this.id=null;
 this.hideMode=-1;
-this.hor=Clazz.new_($I$(2));
-this.ver=Clazz.new_($I$(2));
+this.hor=Clazz.new_($I$(2,1));
+this.ver=Clazz.new_($I$(2,1));
 this.newline=null;
 this.wrap=null;
 this.boundsInGrid=true;
@@ -63,19 +28,22 @@ this.pushX=null;
 this.pushY=null;
 this.animSpec=$I$(3).DEF;
 this.linkTargets=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['boundsInGrid','external'],'I',['dock','skip','split','spanX','spanY','cellX','cellY','hideMode'],'S',['tag','id'],'O',['pos','net.miginfocom.layout.UnitValue[]','+padding','+visualPadding','flowX','Boolean','hor','net.miginfocom.layout.DimConstraint','+ver','newline','net.miginfocom.layout.BoundSize','+wrap','pushX','Float','+pushY','animSpec','net.miginfocom.layout.AnimSpec','linkTargets','String[]']]
+,['O',['DEF_GAP','net.miginfocom.layout.BoundSize','DOCK_SIDES','String[]','+EMPTY_ARR']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getLinkTargets$', function () {
 if (this.linkTargets == null ) {
-var targets=Clazz.new_($I$(4).c$$I,[2]);
+var targets=Clazz.new_($I$(4,1).c$$I,[2]);
 if (this.pos != null ) {
 for (var i=0; i < this.pos.length; i++) p$1.addLinkTargetIDs$java_util_ArrayList$net_miginfocom_layout_UnitValue.apply(this, [targets, this.pos[i]]);
 
-}this.linkTargets=targets.size$() == 0 ? C$.EMPTY_ARR : targets.toArray$TTA(Clazz.array(String, [targets.size$()]));
+}this.linkTargets=targets.size$() == 0 ? C$.EMPTY_ARR : targets.toArray$OA(Clazz.array(String, [targets.size$()]));
 }return this.linkTargets;
 });
 
@@ -83,7 +51,7 @@ Clazz.newMeth(C$, 'addLinkTargetIDs$java_util_ArrayList$net_miginfocom_layout_Un
 if (uv != null ) {
 var linkId=uv.getLinkTargetId$();
 if (linkId != null ) {
-targets.add$TE(linkId);
+targets.add$O(linkId);
 } else {
 for (var i=uv.getSubUnitCount$() - 1; i >= 0; i--) {
 var subUv=uv.getSubUnitValue$I(i);
@@ -102,7 +70,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'minWidth$S', function (size) {
-this.hor.setSize$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.hor.getSize$(), $I$(6).parseUnitValue$S$Z(size, true), null, null));
+this.hor.setSize$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.hor.getSize$(), $I$(6).parseUnitValue$S$Z(size, true), null, null]));
 return this;
 });
 
@@ -112,7 +80,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'maxWidth$S', function (size) {
-this.hor.setSize$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.hor.getSize$(), null, null, $I$(6).parseUnitValue$S$Z(size, true)));
+this.hor.setSize$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.hor.getSize$(), null, null, $I$(6).parseUnitValue$S$Z(size, true)]));
 return this;
 });
 
@@ -235,7 +203,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'minHeight$S', function (size) {
-this.ver.setSize$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.ver.getSize$(), $I$(6).parseUnitValue$S$Z(size, false), null, null));
+this.ver.setSize$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.ver.getSize$(), $I$(6).parseUnitValue$S$Z(size, false), null, null]));
 return this;
 });
 
@@ -245,7 +213,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'maxHeight$S', function (size) {
-this.ver.setSize$net_miginfocom_layout_BoundSize($I$(5).derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(this.ver.getSize$(), null, null, $I$(6).parseUnitValue$S$Z(size, false)));
+this.ver.setSize$net_miginfocom_layout_BoundSize($I$(5,"derive$net_miginfocom_layout_BoundSize$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue",[this.ver.getSize$(), null, null, $I$(6).parseUnitValue$S$Z(size, false)]));
 return this;
 });
 
@@ -471,7 +439,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'newline$S', function (gapSize) {
-var bs=$I$(6).parseBoundSize$S$Z$Z(gapSize, true, (this.flowX != null  && (this.flowX).booleanValue$() === false  ));
+var bs=$I$(6,"parseBoundSize$S$Z$Z",[gapSize, true, (this.flowX != null  && (this.flowX).valueOf() === false  )]);
 if (bs != null ) {
 this.setNewlineGapSize$net_miginfocom_layout_BoundSize(bs);
 } else {
@@ -485,7 +453,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'wrap$S', function (gapSize) {
-var bs=$I$(6).parseBoundSize$S$Z$Z(gapSize, true, (this.flowX != null  && (this.flowX).booleanValue$() === false  ));
+var bs=$I$(6,"parseBoundSize$S$Z$Z",[gapSize, true, (this.flowX != null  && (this.flowX).valueOf() === false  )]);
 if (bs != null ) {
 this.setWrapGapSize$net_miginfocom_layout_BoundSize(bs);
 } else {
@@ -532,7 +500,7 @@ return p$1.corrPos$S$I.apply(this, [y2, 3]);
 Clazz.newMeth(C$, 'corrPos$S$I', function (uv, ix) {
 var b=this.getPos$();
 if (b == null ) b=Clazz.array($I$(9), [4]);
-b[ix]=$I$(6).parseUnitValue$S$Z(uv, (ix % 2 == 0));
+b[ix]=$I$(6,"parseUnitValue$S$Z",[uv, (ix % 2 == 0)]);
 this.setPos$net_miginfocom_layout_UnitValueA(b);
 this.setBoundsInGrid$Z(true);
 return this;
@@ -555,7 +523,7 @@ return this;
 });
 
 Clazz.newMeth(C$, 'pad$I$I$I$I', function (top, left, bottom, right) {
-this.setPadding$net_miginfocom_layout_UnitValueA(Clazz.array($I$(9), -1, [Clazz.new_($I$(9).c$$F,[top]), Clazz.new_($I$(9).c$$F,[left]), Clazz.new_($I$(9).c$$F,[bottom]), Clazz.new_($I$(9).c$$F,[right])]));
+this.setPadding$net_miginfocom_layout_UnitValueA(Clazz.array($I$(9), -1, [Clazz.new_($I$(9,1).c$$F,[top]), Clazz.new_($I$(9,1).c$$F,[left]), Clazz.new_($I$(9,1).c$$F,[bottom]), Clazz.new_($I$(9,1).c$$F,[right])]));
 return this;
 });
 
@@ -569,7 +537,7 @@ return this.hor;
 });
 
 Clazz.newMeth(C$, 'setHorizontal$net_miginfocom_layout_DimConstraint', function (h) {
-this.hor=h != null  ? h : Clazz.new_($I$(2));
+this.hor=h != null  ? h : Clazz.new_($I$(2,1));
 });
 
 Clazz.newMeth(C$, 'getVertical$', function () {
@@ -577,7 +545,7 @@ return this.ver;
 });
 
 Clazz.newMeth(C$, 'setVertical$net_miginfocom_layout_DimConstraint', function (v) {
-this.ver=v != null  ? v : Clazz.new_($I$(2));
+this.ver=v != null  ? v : Clazz.new_($I$(2,1));
 });
 
 Clazz.newMeth(C$, 'getDimConstraint$Z', function (isHor) {
@@ -773,11 +741,17 @@ return $I$(5).getSerializedObject$O(this);
 }, p$1);
 
 Clazz.newMeth(C$, 'readExternal$java_io_ObjectInput', function ($in) {
-$I$(5).setSerializedObject$O$O(this, $I$(5).readAsXML$java_io_ObjectInput($in));
+$I$(5,"setSerializedObject$O$O",[this, $I$(5).readAsXML$java_io_ObjectInput($in)]);
 });
 
 Clazz.newMeth(C$, 'writeExternal$java_io_ObjectOutput', function (out) {
 if (this.getClass$() === Clazz.getClass(C$) ) $I$(5).writeAsXML$java_io_ObjectOutput$O(out, this);
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.DEF_GAP=$I$(1).NULL_SIZE;
+C$.DOCK_SIDES=Clazz.array(String, -1, ["north", "west", "south", "east"]);
+C$.EMPTY_ARR=Clazz.array(String, [0]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

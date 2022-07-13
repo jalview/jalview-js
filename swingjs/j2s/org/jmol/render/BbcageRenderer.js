@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'org.jmol.util.BoxInfo']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BbcageRenderer", null, 'org.jmol.render.CageRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),I$=[[0,'org.jmol.util.BoxInfo']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BbcageRenderer", null, 'org.jmol.render.CageRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initRenderer$', function () {
 this.tickEdges=$I$(1).bbcageTickEdges;
@@ -22,4 +21,4 @@ this.renderCage$I$javajs_util_P3A$IAA$javajs_util_P3A$I$I$I$F(this.vwr.getObject
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

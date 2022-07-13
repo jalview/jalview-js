@@ -1,15 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.dssx"),p$1={},I$=[[0,'org.jmol.script.SV','javajs.util.Lst','javajs.util.PT','javajs.util.BS','org.jmol.util.Logger','javajs.util.AU','Boolean','java.util.Hashtable','javajs.util.SB','org.jmol.modelsetbio.BioResolver','org.jmol.modelset.Group','org.jmol.util.BSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationParser", null, null, 'org.jmol.api.JmolAnnotationParser');
-C$.pdbAtomForH=null;
+(function(){var P$=Clazz.newPackage("org.jmol.dssx"),p$1={},I$=[[0,'org.jmol.script.SV','javajs.util.Lst','javajs.util.PT','javajs.util.BS','org.jmol.util.Logger','javajs.util.AU','java.util.Hashtable','javajs.util.SB','org.jmol.modelsetbio.BioResolver','org.jmol.modelset.Group','org.jmol.util.BSUtil']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationParser", null, null, 'org.jmol.api.JmolAnnotationParser');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['pdbAtomForH','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getAnnotationKVPairs$org_jmol_script_SV$S$S$javajs_util_SB$S$Z$Z$I', function (a, match, dotPath, sb, pre, showDetail, isMappingOnly, type) {
@@ -56,7 +57,7 @@ var data=map0.getMap$();
 if (data == null ) return null;
 try {
 map0.mapPut$S$org_jmol_script_SV("_map", $I$(1).newV$I$O(6, data));
-var list=Clazz.new_($I$(2));
+var list=Clazz.new_($I$(2,1));
 var set=data.entrySet$();
 var sv;
 var map;
@@ -71,18 +72,18 @@ for (var j=structures.size$(); --j >= 0; ) {
 var struc=structures.get$I(j);
 map=struc.getMap$();
 sv=map.get$O("units");
-map.put$TK$TV("_isres", $I$(1).vT);
-var units=(sv == null  || sv.tok == 7  ? sv.getList$() : sv.tok == 4 ? Clazz.new_($I$(2)) : null);
+map.put$O$O("_isres", $I$(1).vT);
+var units=(sv == null  || sv.tok == 7  ? sv.getList$() : sv.tok == 4 ? Clazz.new_($I$(2,1)) : null);
 if (units != null ) {
 if (sv.tok == 4) {
-var svl=$I$(3).split$S$S(sv.asString$(), ",");
-for (var i=svl.length; --i >= 0; ) units.addLast$TV($I$(1).newS$S(svl[i].trim$()));
+var svl=$I$(3,"split$S$S",[sv.asString$(), ","]);
+for (var i=svl.length; --i >= 0; ) units.addLast$O($I$(1,"newS$S",[svl[i].trim$()]));
 
 }if (units.size$() > 0) {
-var bsAtoms=Clazz.new_($I$(4));
-map.put$TK$TV("_atoms", $I$(1).getVariable$O(bsAtoms));
-map.put$TK$TV("_path", svPath);
-list.addLast$TV(struc);
+var bsAtoms=Clazz.new_($I$(4,1));
+map.put$O$O("_atoms", $I$(1).getVariable$O(bsAtoms));
+map.put$O$O("_path", svPath);
+list.addLast$O(struc);
 for (var k=units.size$(); --k >= 0; ) {
 p$1.catalogUnit$org_jmol_viewer_Viewer$FAA$S$F$javajs_util_BS$IA$java_util_Map$java_util_Map$java_util_Map.apply(this, [viewer, null, units.get$I(k).asString$(), 0, bsAtoms, modelAtomIndices, resMap, null, modelMap]);
 }
@@ -103,12 +104,12 @@ return note;
 Clazz.newMeth(C$, 'catalogValidations$org_jmol_viewer_Viewer$org_jmol_script_SV$IA$java_util_Map$java_util_Map$java_util_Map', function (viewer, map0, modelAtomIndices, resMap, atomMap, modelMap) {
 var data=map0.getMap$();
 if (data == null ) return null;
-var retProperties=Clazz.new_($I$(2));
+var retProperties=Clazz.new_($I$(2,1));
 var nModels=modelAtomIndices.length - 1;
 try {
 data=p$1.getMainItem$java_util_Map.apply(this, [data]).getMap$();
 map0.mapPut$S$org_jmol_script_SV("_map", $I$(1).newV$I$O(6, data));
-var list=Clazz.new_($I$(2));
+var list=Clazz.new_($I$(2,1));
 map0.mapPut$S$org_jmol_script_SV("_list", $I$(1).newV$I$O(7, list));
 var set=data.entrySet$();
 var sv;
@@ -133,30 +134,30 @@ map=out.getMap$();
 sv=map.get$O("units");
 var svv=map.get$O("value");
 var val=(svv == null  ? 1 : $I$(1).fValue$org_jmol_script_T(svv));
-var units=(val == 0  || sv == null   || sv.tok == 7  ? sv.getList$() : sv.tok == 4 ? Clazz.new_($I$(2)) : null);
+var units=(val == 0  || sv == null   || sv.tok == 7  ? sv.getList$() : sv.tok == 4 ? Clazz.new_($I$(2,1)) : null);
 if (units != null ) {
 if (sv.tok == 4) {
-var svl=$I$(3).split$S$S(sv.asString$(), ",");
-for (var i=svl.length; --i >= 0; ) units.addLast$TV($I$(1).newS$S(svl[i].trim$()));
+var svl=$I$(3,"split$S$S",[sv.asString$(), ","]);
+for (var i=svl.length; --i >= 0; ) units.addLast$O($I$(1,"newS$S",[svl[i].trim$()]));
 
 }if (units.size$() > 0) {
-var bsAtoms=Clazz.new_($I$(4));
-map.put$TK$TV("_atoms", $I$(1).getVariable$O(bsAtoms));
-map.put$TK$TV("_path", svPath);
+var bsAtoms=Clazz.new_($I$(4,1));
+map.put$O$O("_atoms", $I$(1).getVariable$O(bsAtoms));
+map.put$O$O("_path", svPath);
 hasUnit=true;
-list.addLast$TV(out);
+list.addLast$O(out);
 for (var k=units.size$(); --k >= 0; ) {
 var ret=p$1.catalogUnit$org_jmol_viewer_Viewer$FAA$S$F$javajs_util_BS$IA$java_util_Map$java_util_Map$java_util_Map.apply(this, [viewer, floats, units.get$I(k).asString$(), val, bsAtoms, modelAtomIndices, resMap, atomMap, modelMap]);
-if (ret) map.put$TK$TV("_isres", $I$(1).vT);
+if (ret) map.put$O$O("_isres", $I$(1).vT);
 isRes|=ret;
 }
 }}}
 if (hasUnit) {
 for (var m=nModels; --m >= 0; ) if (floats[m] != null ) {
-retProperties.addLast$TV(key);
-retProperties.addLast$TV(floats[m]);
-retProperties.addLast$TV(Integer.valueOf$I(m));
-retProperties.addLast$TV($I$(7).valueOf$Z(isRes));
+retProperties.addLast$O(key);
+retProperties.addLast$O(floats[m]);
+retProperties.addLast$O(Integer.valueOf$I(m));
+retProperties.addLast$O(Boolean.valueOf$Z(isRes));
 }
 }}}
 return retProperties;
@@ -184,12 +185,12 @@ var _list=map.get$O("_list");
 if (_list != null ) return _list.getList$();
 var dataKey=p$1.getDataKey$I.apply(this, [type]);
 var main=p$1.getMainItem$java_util_Map.apply(this, [map]);
-map.put$TK$TV("_map", main);
+map.put$O$O("_map", main);
 var noSingles=true;
-var _cat=Clazz.new_($I$(8));
-map.put$TK$TV("_cat", $I$(1).newV$I$O(6, _cat));
-var list=Clazz.new_($I$(2));
-map.put$TK$TV("_list", _list=$I$(1).newV$I$O(7, list));
+var _cat=Clazz.new_($I$(7,1));
+map.put$O$O("_cat", $I$(1).newV$I$O(6, _cat));
+var list=Clazz.new_($I$(2,1));
+map.put$O$O("_list", _list=$I$(1).newV$I$O(7, list));
 for (var e, $e = main.getMap$().entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var _dbName=e.getKey$();
 var _dbMap=e.getValue$();
@@ -201,7 +202,7 @@ var _domainList=_domainMap.mapGet$S(dataKey);
 var _mapList=_domainList.getList$();
 for (var i=_mapList.size$(); --i >= 0; ) {
 var mapping=_mapList.get$I(i);
-list.addLast$TV(mapping);
+list.addLast$O(mapping);
 var mmap=mapping.getMap$();
 var _chain=mmap.get$O("chain_id");
 var start=mmap.get$O("start");
@@ -216,11 +217,11 @@ rescode += "&seqid>=" + res1 + "&seqid<=" + res2 ;
 } else {
 res2=1;
 rescode += "&seqid>0";
-}var _atoms=(noSingles && res1 >= res2  ? $I$(1).getVariable$O(Clazz.new_($I$(4))) : _cat.get$O(rescode));
-if (_atoms == null ) _cat.put$TK$TV(rescode, _atoms=$I$(1).newS$S(rescode));
-mmap.put$TK$TV("_atoms", _atoms);
-mmap.put$TK$TV("_path", $I$(1).newS$S(_dbName + "." + _domainName ));
-mmap.put$TK$TV("domain", _domainMap);
+}var _atoms=(noSingles && res1 >= res2  ? $I$(1,"getVariable$O",[Clazz.new_($I$(4,1))]) : _cat.get$O(rescode));
+if (_atoms == null ) _cat.put$O$O(rescode, _atoms=$I$(1).newS$S(rescode));
+mmap.put$O$O("_atoms", _atoms);
+mmap.put$O$O("_path", $I$(1).newS$S(_dbName + "." + _domainName ));
+mmap.put$O$O("domain", _domainMap);
 }
 }
 }
@@ -249,14 +250,14 @@ Clazz.newMeth(C$, 'setAnnotationAtoms$org_jmol_viewer_Viewer$java_util_Map$I', f
 var _atoms=mapping.get$O("_atoms");
 if (_atoms.tok != 10) {
 var bs2=vwr.getAtomBitSet$O(_atoms.value);
-if (i >= 0) $I$(5).info$S("#" + (i + 1) + " found " + bs2.cardinality$() + " atoms for " + _atoms.value );
+if (i >= 0) $I$(5,"info$S",["#" + (i + 1) + " found " + bs2.cardinality$() + " atoms for " + _atoms.value ]);
 _atoms.tok=10;
 _atoms.value=bs2;
 }return _atoms.value;
 }, p$1);
 
 Clazz.newMeth(C$, 'catalogUnit$org_jmol_viewer_Viewer$FAA$S$F$javajs_util_BS$IA$java_util_Map$java_util_Map$java_util_Map', function (viewer, vals, unitID, val, bsAtoms, modelAtomIndices, resMap, atomMap, modelMap) {
-var s=$I$(3).split$S$S(unitID + (vals == null  ? "||||" : "|||"), "|");
+var s=$I$(3,"split$S$S",[unitID + (vals == null  ? "||||" : "|||"), "|"]);
 if (s.length < 8 || s[1].length$() == 0  || s[2].length$() == 0  || s[3].length$() == 0  || s[4].length$() == 0 ) return false;
 var sm=(s[1].length$() == 0 ? "1" : s[1]);
 var m=(modelMap == null  ? $I$(3).parseInt$S(sm) - 1 : -1);
@@ -284,18 +285,18 @@ if (vals != null ) vals[m][j] += Math.abs(val);
 }, p$1);
 
 Clazz.newMeth(C$, 'getAtomBits$org_jmol_viewer_Viewer$S$O$java_util_Map$I$I$javajs_util_BS', function (vwr, key, dbObj, annotationCache, type, modelIndex, bsModel) {
-if (dbObj == null ) return Clazz.new_($I$(4));
+if (dbObj == null ) return Clazz.new_($I$(4,1));
 var doCache=!key.contains$CharSequence("NOCACHE");
 if (!doCache) {
 key=$I$(3).rep$S$S$S(key, "NOCACHE", "").trim$();
 }var bs=(doCache ? annotationCache.get$O(key) : null);
 if (bs != null ) return bs;
-bs=Clazz.new_($I$(4));
-if (doCache) annotationCache.put$TK$TV(key, bs);
+bs=Clazz.new_($I$(4,1));
+if (doCache) annotationCache.put$O$O(key, bs);
 try {
 var list=this.initializeAnnotation$org_jmol_script_SV$I$I(dbObj, type, modelIndex);
 var pt=key.toLowerCase$().indexOf$S(" where ");
-var path=$I$(3).rep$S$S$S((pt < 0 ? key : key.substring$I$I(0, pt)), " ", "");
+var path=$I$(3,"rep$S$S$S",[(pt < 0 ? key : key.substring$I$I(0, pt)), " ", ""]);
 var newKey=(pt < 0 ? "" : key.substring$I(pt + 7).trim$());
 if (path.indexOf$S(".") < 0) {
 path=" _path like '" + path + "*'" ;
@@ -324,13 +325,13 @@ var map=null;
 var list=null;
 try {
 var ia=atom.i;
-l=Clazz.new_($I$(2));
+l=Clazz.new_($I$(2,1));
 list=(vwr.ms.getModelAuxiliaryInfo$I(atom.mi).get$O("validation")).mapGet$S("_list").getList$();
 for (i=0, n=list.size$(); i < n; i++) {
 map=list.get$I(i).getMap$();
 if (map.get$O("_path").value.equals$O(type) && (map.get$O("_atoms").value).get$I(ia) ) {
 var v=map.get$O("value");
-l.addLast$TV(v.tok == 3 ? v.value : Float.valueOf$F(v.asFloat$()));
+l.addLast$O(v.tok == 3 ? v.value : Float.valueOf$F(v.asFloat$()));
 }}
 return l;
 } catch (e) {
@@ -343,7 +344,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'getAnnotationInfo$org_jmol_viewer_Viewer$org_jmol_script_SV$S$I$I', function (vwr, a, match, type, modelIndex) {
-var sb=Clazz.new_($I$(9));
+var sb=Clazz.new_($I$(8,1));
 if ("".equals$O(match)) match=null;
 var isDetail=(match != null  && (match.equals$O("all") || match.endsWith$S(" all") ) );
 if (isDetail) {
@@ -372,10 +373,10 @@ return sb.toString();
 Clazz.newMeth(C$, 'getAttachedAtomForPDBH$S$S', function (group3, name) {
 if (name.charAt$I(0) == "H") {
 if (C$.pdbAtomForH == null ) {
-C$.pdbAtomForH=Clazz.new_($I$(8));
+C$.pdbAtomForH=Clazz.new_($I$(7,1));
 p$1.assignPDBH$S$S.apply(this, ["", "N H H1 H2 H3 CB HB2 HB3 CD HD2 HD3 CG HG2 HG3 C2\' H2\'\' H2\' C5\' H5\'\' H5\' OXT HXT"]);
-for (var i=$I$(10).pdbBondInfo.length; --i >= 1; ) {
-p$1.assignPDBH$S$S.apply(this, [$I$(11).group3Names[i], $I$(10).pdbBondInfo[i]]);
+for (var i=$I$(9).pdbBondInfo.length; --i >= 1; ) {
+p$1.assignPDBH$S$S.apply(this, [$I$(10).group3Names[i], $I$(9).pdbBondInfo[i]]);
 }
 }var a=C$.pdbAtomForH.get$O(name);
 if (a == null ) a=C$.pdbAtomForH.get$O(group3 + name);
@@ -384,7 +385,7 @@ if (a != null ) return a;
 });
 
 Clazz.newMeth(C$, 'assignPDBH$S$S', function (group3, sNames) {
-var names=$I$(3).getTokens$S($I$(3).rep$S$S$S(sNames, "@", " "));
+var names=$I$(3,"getTokens$S",[$I$(3).rep$S$S$S(sNames, "@", " ")]);
 var a=null;
 for (var i=0, n=names.length; i < n; i++) {
 var s=names[i];
@@ -394,11 +395,11 @@ continue;
 }s=group3 + s;
 if (s.indexOf$S("?") >= 0) {
 s=s.substring$I$I(0, s.length$() - 1);
-C$.pdbAtomForH.put$TK$TV(s + "1", a);
-C$.pdbAtomForH.put$TK$TV(s + "2", a);
-C$.pdbAtomForH.put$TK$TV(s + "3", a);
+C$.pdbAtomForH.put$O$O(s + "1", a);
+C$.pdbAtomForH.put$O$O(s + "2", a);
+C$.pdbAtomForH.put$O$O(s + "3", a);
 } else {
-C$.pdbAtomForH.put$TK$TV(s, a);
+C$.pdbAtomForH.put$O$O(s, a);
 }}
 }, p$1);
 
@@ -407,7 +408,7 @@ var _list=this.initializeAnnotation$org_jmol_script_SV$I$I(dbObj, type, modelInd
 for (var i=_list.size$(); --i >= 0; ) {
 var m=_list.get$I(i).getMap$();
 var _atoms=m.get$O("_atoms");
-if (_atoms != null  && _atoms.tok == 10 ) $I$(12).shiftBits$javajs_util_BS$javajs_util_BS$Z$I(_atoms.value, bsAddedMask, _list.get$I(i).mapGet$S("_isres") != null , (_atoms.value).length$() + margin);
+if (_atoms != null  && _atoms.tok == 10 ) $I$(11,"shiftBits$javajs_util_BS$javajs_util_BS$Z$I",[_atoms.value, bsAddedMask, _list.get$I(i).mapGet$S("_isres") != null , (_atoms.value).length$() + margin]);
 }
 });
 
@@ -436,4 +437,4 @@ Clazz.newMeth(C$, 'getDSSRFrame$java_util_Map', function (dssrNT) {
 return null;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:21 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

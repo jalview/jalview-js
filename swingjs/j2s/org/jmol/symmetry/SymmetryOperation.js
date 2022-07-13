@@ -1,47 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'javajs.util.Matrix','javajs.util.SB','org.jmol.util.Parser','javajs.util.M4','org.jmol.util.Logger','javajs.util.P3','javajs.util.PT','javajs.util.V3','java.util.Hashtable','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SymmetryOperation", null, 'javajs.util.M4');
-C$.atomTest=null;
-C$.twelfths=null;
-C$.fortyeigths=null;
-C$.labelsXYZ=null;
-C$.labelsXn=null;
-C$.labelsXnSub=null;
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),p$1={},I$=[[0,'javajs.util.Matrix','javajs.util.SB','org.jmol.util.Parser','javajs.util.M4','org.jmol.util.Logger','javajs.util.P3','javajs.util.PT','javajs.util.V3','java.util.Hashtable']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SymmetryOperation", null, 'javajs.util.M4');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.twelfths=Clazz.array(String, -1, ["0", "1/12", "1/6", "1/4", "1/3", "5/12", "1/2", "7/12", "2/3", "3/4", "5/6", "11/12"]);
-C$.fortyeigths=Clazz.array(String, -1, ["0", "1/48", "1/24", "1/16", "1/12", "5/48", "1/8", "7/48", "1/6", "3/16", "5/24", "11/48", "1/4", "13/48", "7/24", "5/16", "1/3", "17/48", "3/8", "19/48", "5/12", "7/16", "11/24", "23/48", "1/2", "25/48", "13/24", "9/16", "7/12", "29/48", "15/24", "31/48", "2/3", "11/12", "17/16", "35/48", "3/4", "37/48", "19/24", "13/16", "5/6", "41/48", "7/8", "43/48", "11/12", "15/16", "23/24", "47/48"]);
-C$.labelsXYZ=Clazz.array(String, -1, ["x", "y", "z"]);
-C$.labelsXn=Clazz.array(String, -1, ["x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10", "x11", "x12", "x13"]);
-C$.labelsXnSub=Clazz.array(String, -1, ["x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xyzOriginal=null;
-this.xyz=null;
-this.doNormalize=false;
-this.isFinalized=false;
-this.opId=0;
-this.centering=null;
-this.myLabels=null;
-this.modDim=0;
-this.linearRotTrans=null;
-this.rsvs=null;
-this.isBio=false;
-this.sigma=null;
-this.index=0;
-this.subsystemCode=null;
-this.timeReversal=0;
-this.unCentered=false;
-this.isCenteringOp=false;
-this.magOp=0;
-this.info=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.doNormalize=true;
 this.magOp=3.4028235E38;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doNormalize','isFinalized','isBio','unCentered','isCenteringOp'],'F',['magOp'],'I',['opId','modDim','index','timeReversal'],'S',['xyzOriginal','xyz','subsystemCode'],'O',['centering','javajs.util.V3','myLabels','String[]','linearRotTrans','float[]','rsvs','javajs.util.Matrix','+sigma','info','java.util.Hashtable']]
+,['O',['atomTest','javajs.util.P3','twelfths','String[]','+fortyeigths','+labelsXYZ','+labelsXn','+labelsXnSub']]]
 
 Clazz.newMeth(C$, 'setSigma$S$javajs_util_Matrix', function (subsystemCode, sigma) {
 this.subsystemCode=subsystemCode;
@@ -49,7 +17,7 @@ this.sigma=sigma;
 });
 
 Clazz.newMeth(C$, 'c$$org_jmol_symmetry_SymmetryOperation$javajs_util_P3A$I$I$Z', function (op, atoms, atomIndex, countOrId, doNormalize) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.doNormalize=doNormalize;
 if (op == null ) {
 this.opId=countOrId;
@@ -71,7 +39,7 @@ if (doNormalize && this.sigma == null  ) C$.setOffset$javajs_util_M4$javajs_util
 
 Clazz.newMeth(C$, 'setGamma$Z', function (isReverse) {
 var n=3 + this.modDim;
-var a=(this.rsvs=Clazz.new_($I$(1).c$$DAA$I$I,[null, n + 1, n + 1])).getArray$();
+var a=(this.rsvs=Clazz.new_($I$(1,1).c$$DAA$I$I,[null, n + 1, n + 1])).getArray$();
 var t=Clazz.array(Double.TYPE, [n]);
 var pt=0;
 for (var i=0; i < n; i++) {
@@ -120,7 +88,7 @@ return "\n" + this.xyz + "\ninternal matrix representation:\n" + this.toString()
 });
 
 Clazz.newMeth(C$, 'dumpSeitz$javajs_util_M4$Z', function (s, isCanonical) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 var r=Clazz.array(Float.TYPE, [4]);
 for (var i=0; i < 3; i++) {
 s.getRow$I$FA(i, r);
@@ -319,7 +287,7 @@ i=rotPt;
 }iValue=C$.normalizeTwelfths$F$Z(iValue, doNormalize);
 linearRotTrans[tpt0 + nRows - 1]=iValue;
 strT += C$.xyzFraction12$F$Z$Z(iValue, false, true);
-strOut += (strOut == "" ? "" : ",") + strT;
+strOut += (strOut === ""  ? "" : ",") + strT;
 if (rowPt == nRows - 2) return strOut;
 iValue=0;
 strT="";
@@ -530,7 +498,7 @@ if (count == 0) return;
 var x=0;
 var y=0;
 var z=0;
-if (C$.atomTest == null ) C$.atomTest=Clazz.new_($I$(6));
+if (C$.atomTest == null ) C$.atomTest=Clazz.new_($I$(6,1));
 for (var i=atomIndex, i2=i + count; i < i2; i++) {
 C$.newPoint$javajs_util_M4$javajs_util_P3$javajs_util_P3$I$I$I(m, atoms[i], C$.atomTest, 0, 0, 0);
 x += C$.atomTest.x;
@@ -598,7 +566,7 @@ s += (r < 0  ? "-" : s.endsWith$S(",") ? "" : "+") + (Math.abs(r) == 1  ? "" : "
 }}
 s += C$.xyzFraction12$F$Z$Z(((va[i][0] * (is12ths ? 1 : 12))|0), false, true);
 }
-return $I$(7).rep$S$S$S(s.substring$I(1), ",+", ",");
+return $I$(7,"rep$S$S$S",[s.substring$I(1), ",+", ","]);
 }, 1);
 
 Clazz.newMeth(C$, 'toString', function () {
@@ -637,27 +605,35 @@ if (!addMag) return xyz + (this.timeReversal > 0 ? " +1" : " -1");
 var m2=$I$(4).newM4$javajs_util_M4(m);
 m2.m03=m2.m13=m2.m23=0;
 if (this.getMagneticOp$() < 0 ) m2.scale$F(-1);
-xyz += "(" + $I$(7).rep$S$S$S($I$(7).rep$S$S$S($I$(7).rep$S$S$S(C$.getXYZFromMatrix$javajs_util_M4$Z$Z$Z(m2, false, false, false), "x", "mx"), "y", "my"), "z", "mz") + ")" ;
+xyz += "(" + $I$(7,"rep$S$S$S",[$I$(7,"rep$S$S$S",[$I$(7,"rep$S$S$S",[C$.getXYZFromMatrix$javajs_util_M4$Z$Z$Z(m2, false, false, false), "x", "mx"]), "y", "my"]), "z", "mz"]) + ")" ;
 return xyz;
 });
 
 Clazz.newMeth(C$, 'getInfo$', function () {
 if (this.info == null ) {
-this.info=Clazz.new_($I$(9));
-this.info.put$TK$TV("xyz", this.xyz);
-if (this.centering != null ) this.info.put$TK$TV("centering", this.centering);
-this.info.put$TK$TV("index", Integer.valueOf$I(this.index));
-this.info.put$TK$TV("isCenteringOp", $I$(10).valueOf$Z(this.isCenteringOp));
-if (this.linearRotTrans != null ) this.info.put$TK$TV("linearRotTrans", this.linearRotTrans);
-this.info.put$TK$TV("modulationDimension", Integer.valueOf$I(this.modDim));
-this.info.put$TK$TV("matrix", $I$(4).newM4$javajs_util_M4(this));
-if (this.magOp != 3.4028235E38 ) this.info.put$TK$TV("magOp", Float.valueOf$F(this.magOp));
-this.info.put$TK$TV("id", Integer.valueOf$I(this.opId));
-this.info.put$TK$TV("timeReversal", Integer.valueOf$I(this.timeReversal));
-if (this.xyzOriginal != null ) this.info.put$TK$TV("xyzOriginal", this.xyzOriginal);
+this.info=Clazz.new_($I$(9,1));
+this.info.put$O$O("xyz", this.xyz);
+if (this.centering != null ) this.info.put$O$O("centering", this.centering);
+this.info.put$O$O("index", Integer.valueOf$I(this.index));
+this.info.put$O$O("isCenteringOp", Boolean.valueOf$Z(this.isCenteringOp));
+if (this.linearRotTrans != null ) this.info.put$O$O("linearRotTrans", this.linearRotTrans);
+this.info.put$O$O("modulationDimension", Integer.valueOf$I(this.modDim));
+this.info.put$O$O("matrix", $I$(4).newM4$javajs_util_M4(this));
+if (this.magOp != 3.4028235E38 ) this.info.put$O$O("magOp", Float.valueOf$F(this.magOp));
+this.info.put$O$O("id", Integer.valueOf$I(this.opId));
+this.info.put$O$O("timeReversal", Integer.valueOf$I(this.timeReversal));
+if (this.xyzOriginal != null ) this.info.put$O$O("xyzOriginal", this.xyzOriginal);
 }return this.info;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.twelfths=Clazz.array(String, -1, ["0", "1/12", "1/6", "1/4", "1/3", "5/12", "1/2", "7/12", "2/3", "3/4", "5/6", "11/12"]);
+C$.fortyeigths=Clazz.array(String, -1, ["0", "1/48", "1/24", "1/16", "1/12", "5/48", "1/8", "7/48", "1/6", "3/16", "5/24", "11/48", "1/4", "13/48", "7/24", "5/16", "1/3", "17/48", "3/8", "19/48", "5/12", "7/16", "11/24", "23/48", "1/2", "25/48", "13/24", "9/16", "7/12", "29/48", "15/24", "31/48", "2/3", "11/12", "17/16", "35/48", "3/4", "37/48", "19/24", "13/16", "5/6", "41/48", "7/8", "43/48", "11/12", "15/16", "23/24", "47/48"]);
+C$.labelsXYZ=Clazz.array(String, -1, ["x", "y", "z"]);
+C$.labelsXn=Clazz.array(String, -1, ["x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10", "x11", "x12", "x13"]);
+C$.labelsXnSub=Clazz.array(String, -1, ["x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

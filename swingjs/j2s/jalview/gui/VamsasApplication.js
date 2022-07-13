@@ -1,29 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'uk.ac.vamsas.client.simpleclient.SimpleClientFactory','Error','jalview.util.MessageManager','jalview.gui.JvOptionPane','jalview.gui.Desktop','jalview.bin.Cache','uk.ac.vamsas.client.ClientHandle','Thread','jalview.io.VamsasAppDatastore','java.util.IdentityHashMap','java.util.Hashtable','uk.ac.vamsas.objects.core.Entry','java.util.Date','jalview.structure.StructureSelectionManager','jalview.datamodel.Alignment','jalview.datamodel.Sequence','jalview.datamodel.SequenceGroup','uk.ac.vamsas.objects.utils.Range','jalview.datamodel.ColumnSelection','uk.ac.vamsas.client.picking.MouseOverMessage','uk.ac.vamsas.client.picking.SelectionMessage','uk.ac.vamsas.objects.core.Input','uk.ac.vamsas.objects.core.Pos','uk.ac.vamsas.objects.core.Seg']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VamsasApplication", null, null, ['jalview.structure.SelectionSource', 'jalview.structure.VamsasSource']);
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'uk.ac.vamsas.client.simpleclient.SimpleClientFactory','Error','jalview.util.MessageManager','jalview.gui.JvOptionPane','jalview.gui.Desktop','jalview.bin.Console','uk.ac.vamsas.client.ClientHandle','jalview.bin.Cache','Thread','jalview.io.VamsasAppDatastore','java.util.IdentityHashMap','java.util.Hashtable','uk.ac.vamsas.objects.core.Entry','jalview.structure.StructureSelectionManager','jalview.datamodel.Alignment','jalview.datamodel.Sequence','jalview.datamodel.SequenceGroup','uk.ac.vamsas.objects.utils.Range','jalview.datamodel.ColumnSelection','uk.ac.vamsas.client.picking.MouseOverMessage','uk.ac.vamsas.client.picking.SelectionMessage','uk.ac.vamsas.objects.core.Input','uk.ac.vamsas.objects.core.Pos','uk.ac.vamsas.objects.core.Seg']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VamsasApplication", null, null, ['jalview.structure.SelectionSource', 'jalview.structure.VamsasSource']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vclient=null;
-this.app=null;
-this.user=null;
-this.jdesktop=null;
-this.inInitialUpdate=false;
-this.promptUser=false;
-this.firstUpdate=false;
-this.jv2vobj=null;
-this.vobj2jv=null;
-this.alRedoState=null;
-this.errorsDuringUpdate=false;
-this.errorsDuringAppUpdate=false;
-this._backup_vobj2jv=null;
-this._backup_jv2vobj=null;
-this.joinedSession=false;
-this.picker=null;
-this.selecter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.vclient=null;
@@ -40,45 +18,47 @@ this.errorsDuringUpdate=false;
 this.errorsDuringAppUpdate=false;
 this.joinedSession=false;
 this.picker=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_gui_Desktop$java_io_File$S', function (jdesktop, sessionPath, sessionName) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['inInitialUpdate','promptUser','firstUpdate','errorsDuringUpdate','errorsDuringAppUpdate','joinedSession'],'O',['vclient','uk.ac.vamsas.client.IClient','app','uk.ac.vamsas.client.ClientHandle','user','uk.ac.vamsas.client.UserHandle','jdesktop','jalview.gui.Desktop','jv2vobj','java.util.IdentityHashMap','vobj2jv','java.util.Hashtable','+alRedoState','+_backup_vobj2jv','_backup_jv2vobj','java.util.IdentityHashMap','picker','jalview.structure.VamsasListener','selecter','jalview.structure.SelectionListener']]]
+
+Clazz.newMeth(C$, 'c$$jalview_gui_Desktop$java_io_File$S',  function (jdesktop, sessionPath, sessionName) {
+;C$.$init$.apply(this);
 this.jdesktop=jdesktop;
 p$1.initClientSession$S$java_io_File$S.apply(this, [null, sessionPath, sessionName]);
 }, 1);
 
-Clazz.newMeth(C$, 'getClientFactory$', function () {
-return Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'getClientFactory$',  function () {
+return Clazz.new_($I$(1,1));
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_gui_Desktop', function (jdesktop) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_gui_Desktop',  function (jdesktop) {
+;C$.$init$.apply(this);
 this.jdesktop=jdesktop;
 p$1.initClientSession$S$java_io_File.apply(this, [null, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_gui_Desktop$S', function (jdesktop, sessionUrl) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_gui_Desktop$S',  function (jdesktop, sessionUrl) {
+;C$.$init$.apply(this);
 this.jdesktop=jdesktop;
 p$1.initClientSession$S$java_io_File.apply(this, [sessionUrl, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'getSessionList$', function () {
+Clazz.newMeth(C$, 'getSessionList$',  function () {
 return C$.getClientFactory$().getCurrentSessions$();
 }, 1);
 
-Clazz.newMeth(C$, 'initClientSession$S$java_io_File', function (sess, vamsasDocument) {
+Clazz.newMeth(C$, 'initClientSession$S$java_io_File',  function (sess, vamsasDocument) {
 p$1.initClientSession$S$java_io_File$S.apply(this, [sess, vamsasDocument, null]);
 }, p$1);
 
-Clazz.newMeth(C$, 'initClientSession$S$java_io_File$S', function (sess, vamsasDocument, newDocSessionName) {
+Clazz.newMeth(C$, 'initClientSession$S$java_io_File$S',  function (sess, vamsasDocument, newDocSessionName) {
 try {
 this.app=p$1.getJalviewHandle.apply(this, []);
 var clientfactory=C$.getClientFactory$();
 if (vamsasDocument != null ) {
 if (sess != null ) {
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error_cannot_import_vamsas_doc")]);
+throw Clazz.new_([$I$(3).getString$S("error.implementation_error_cannot_import_vamsas_doc")],$I$(2,1).c$$S);
 }try {
 if (newDocSessionName != null ) {
 this.vclient=clientfactory.openAsNewSessionIClient$uk_ac_vamsas_client_ClientHandle$java_io_File$S(this.app, vamsasDocument, newDocSessionName);
@@ -86,7 +66,7 @@ this.vclient=clientfactory.openAsNewSessionIClient$uk_ac_vamsas_client_ClientHan
 this.vclient=clientfactory.openAsNewSessionIClient$uk_ac_vamsas_client_ClientHandle$java_io_File(this.app, vamsasDocument);
 }} catch (e) {
 if (Clazz.exceptionOf(e,"uk.ac.vamsas.client.InvalidSessionDocumentException")){
-$I$(4).showInternalMessageDialog$java_awt_Component$S$S$I($I$(5).desktop, $I$(3).getString$S("label.vamsas_doc_couldnt_be_opened_as_new_session"), $I$(3).getString$S("label.vamsas_document_import_failed"), 0);
+$I$(4,"showInternalMessageDialog$java_awt_Component$S$S$I",[$I$(5).desktop, $I$(3).getString$S("label.vamsas_doc_couldnt_be_opened_as_new_session"), $I$(3).getString$S("label.vamsas_document_import_failed"), 0]);
 } else {
 throw e;
 }
@@ -100,7 +80,7 @@ this.vclient=clientfactory.getIClient$uk_ac_vamsas_client_ClientHandle$S(this.ap
 this.user=this.vclient.getUserHandle$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Couldn\'t instantiate vamsas client !", e);
+$I$(6).error$S$Throwable("Couldn\'t instantiate vamsas client !", e);
 return false;
 } else {
 throw e;
@@ -109,7 +89,7 @@ throw e;
 return true;
 }, p$1);
 
-Clazz.newMeth(C$, 'setVclientConfig', function () {
+Clazz.newMeth(C$, 'setVclientConfig',  function () {
 if (this.vclient == null ) {
 return;
 }try {
@@ -121,12 +101,12 @@ cfg._validateupdatedroots=true;
 if (Clazz.exceptionOf(e$$,"Error")){
 var e = e$$;
 {
-$I$(6).log.warn$O$Throwable("Probable SERIOUS VAMSAS client incompatibility - carrying on regardless", e);
+$I$(6).warn$S$Throwable("Probable SERIOUS VAMSAS client incompatibility - carrying on regardless", e);
 }
 } else if (Clazz.exceptionOf(e$$,"Exception")){
 var e = e$$;
 {
-$I$(6).log.warn$O$Throwable("Probable VAMSAS client incompatibility - carrying on regardless", e);
+$I$(6).warn$S$Throwable("Probable VAMSAS client incompatibility - carrying on regardless", e);
 }
 } else {
 throw e$$;
@@ -134,28 +114,28 @@ throw e$$;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'getJalviewHandle', function () {
-return Clazz.new_($I$(7).c$$S$S,["jalview.bin.Jalview", $I$(6).getProperty$S("VERSION")]);
+Clazz.newMeth(C$, 'getJalviewHandle',  function () {
+return Clazz.new_(["jalview.bin.Jalview", $I$(8).getProperty$S("VERSION")],$I$(7,1).c$$S$S);
 }, p$1);
 
-Clazz.newMeth(C$, 'inSession$', function () {
+Clazz.newMeth(C$, 'inSession$',  function () {
 return (this.vclient != null );
 });
 
-Clazz.newMeth(C$, 'initial_update$', function () {
+Clazz.newMeth(C$, 'initial_update$',  function () {
 if (!this.inSession$()) {
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error_vamsas_operation_not_init")]);
+throw Clazz.new_($I$(2,1).c$$S,["Implementation error! Vamsas Operations when client not initialised and connected"]);
 }p$1.addDocumentUpdateHandler.apply(this, []);
 p$1.addStoreDocumentHandler.apply(this, []);
 p$1.startSession.apply(this, []);
 this.inInitialUpdate=true;
-$I$(6).log.debug$O("Jalview loading the Vamsas Session for the first time.");
+$I$(6).debug$S("Jalview loading the Vamsas Session for the first time.");
 this.dealWithDocumentUpdate$Z(false);
 this.inInitialUpdate=false;
-$I$(6).log.debug$O("... finished update for the first time.");
+$I$(6).debug$S("... finished update for the first time.");
 });
 
-Clazz.newMeth(C$, 'updateJalviewGui$', function () {
+Clazz.newMeth(C$, 'updateJalviewGui$',  function () {
 var frames=this.jdesktop.getAllFrames$();
 if (frames == null ) {
 return;
@@ -167,50 +147,49 @@ af.alignPanel.alignmentChanged$();
 }}
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.warn$O$Throwable("Exception whilst refreshing jalview windows after a vamsas document update.", e);
+$I$(6).warn$S$Throwable("Exception whilst refreshing jalview windows after a vamsas document update.", e);
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'push_update$', function () {
-var udthread=Clazz.new_($I$(8).c$$Runnable,[((P$.VamsasApplication$1||
-(function(){var C$=Clazz.newClass(P$, "VamsasApplication$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+Clazz.newMeth(C$, 'push_update$',  function () {
+var udthread=Clazz.new_([((P$.VamsasApplication$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasApplication$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'run$', function () {
-$I$(6).log.info$O("Jalview updating to the Vamsas Session.");
+Clazz.newMeth(C$, 'run$',  function () {
+$I$(6).info$S("Jalview updating to the Vamsas Session.");
 this.b$['jalview.gui.VamsasApplication'].dealWithDocumentUpdate$Z.apply(this.b$['jalview.gui.VamsasApplication'], [true]);
-$I$(6).log.info$O("Jalview finished updating to the Vamsas Session.");
+$I$(6).info$S("Jalview finished updating to the Vamsas Session.");
 });
 })()
-), Clazz.new_(P$.VamsasApplication$1.$init$, [this, null]))]);
+), Clazz.new_(P$.VamsasApplication$1.$init$,[this, null]))],$I$(9,1).c$$Runnable);
 udthread.start$();
 });
 
-Clazz.newMeth(C$, 'end_session$', function () {
+Clazz.newMeth(C$, 'end_session$',  function () {
 this.end_session$Z(true);
 });
 
-Clazz.newMeth(C$, 'end_session$Z', function (promptUser) {
+Clazz.newMeth(C$, 'end_session$Z',  function (promptUser) {
 if (!this.inSession$()) {
-throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.jalview_no_connected_vamsas_session")]);
-}$I$(6).log.info$O("Jalview disconnecting from the Vamsas Session.");
+throw Clazz.new_($I$(2,1).c$$S,["Jalview not connected to Vamsas session"]);
+}$I$(6).info$S("Jalview disconnecting from the Vamsas Session.");
 try {
 if (this.joinedSession) {
 var ourprompt=this.promptUser;
 this.promptUser=promptUser;
 this.vclient.finalizeClient$();
-$I$(6).log.info$O("Jalview has left the session.");
+$I$(6).info$S("Jalview has left the session.");
 this.promptUser=ourprompt;
 } else {
-$I$(6).log.warn$O("JV Client leaving a session that\'s its not joined yet.");
+$I$(6).warn$S("JV Client leaving a session that\'s its not joined yet.");
 }this.joinedSession=false;
 this.vclient=null;
 this.app=null;
@@ -219,22 +198,22 @@ this.jv2vobj=null;
 this.vobj2jv=null;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Vamsas Session finalization threw exceptions!", e);
+$I$(6).error$S$Throwable("Vamsas Session finalization threw exceptions!", e);
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'updateJalview$uk_ac_vamsas_client_IClientDocument', function (cdoc) {
-$I$(6).log.debug$O("Jalview updating from sesion document ..");
+Clazz.newMeth(C$, 'updateJalview$uk_ac_vamsas_client_IClientDocument',  function (cdoc) {
+$I$(6).debug$S("Jalview updating from sesion document ..");
 p$1.ensureJvVamsas.apply(this, []);
-var vds=Clazz.new_($I$(9).c$$uk_ac_vamsas_client_IClientDocument$java_util_Hashtable$java_util_IdentityHashMap$uk_ac_vamsas_objects_core_Entry$java_util_Hashtable,[cdoc, this.vobj2jv, this.jv2vobj, p$1.baseProvEntry.apply(this, []), this.alRedoState]);
+var vds=Clazz.new_([cdoc, this.vobj2jv, this.jv2vobj, p$1.baseProvEntry.apply(this, []), this.alRedoState],$I$(10,1).c$$uk_ac_vamsas_client_IClientDocument$java_util_Hashtable$java_util_IdentityHashMap$uk_ac_vamsas_objects_core_Entry$java_util_Hashtable);
 try {
 vds.updateToJalview$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Failed to update Jalview from vamsas document.", e);
+$I$(6).error$S$Throwable("Failed to update Jalview from vamsas document.", e);
 } else {
 throw e;
 }
@@ -244,34 +223,34 @@ if (this.firstUpdate) {
 vds.updateJalviewFromAppdata$();
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Exception when updating Jalview settings from Appdata.", e);
+$I$(6).error$S$Throwable("Exception when updating Jalview settings from Appdata.", e);
 } else {
 throw e;
 }
 }
-$I$(6).log.debug$O(".. finished updating from sesion document.");
+$I$(6).debug$S(".. finished updating from sesion document.");
 });
 
-Clazz.newMeth(C$, 'ensureJvVamsas', function () {
+Clazz.newMeth(C$, 'ensureJvVamsas',  function () {
 if (this.jv2vobj == null ) {
-this.jv2vobj=Clazz.new_($I$(10));
-this.vobj2jv=Clazz.new_($I$(11));
-this.alRedoState=Clazz.new_($I$(11));
+this.jv2vobj=Clazz.new_($I$(11,1));
+this.vobj2jv=Clazz.new_($I$(12,1));
+this.alRedoState=Clazz.new_($I$(12,1));
 this.firstUpdate=true;
 }}, p$1);
 
-Clazz.newMeth(C$, 'updateVamsasDocument$uk_ac_vamsas_client_IClientDocument', function (doc) {
+Clazz.newMeth(C$, 'updateVamsasDocument$uk_ac_vamsas_client_IClientDocument',  function (doc) {
 var storedviews=0;
 p$1.ensureJvVamsas.apply(this, []);
 this.errorsDuringUpdate=false;
 this.errorsDuringAppUpdate=false;
 this.backup_objectMapping$();
-var vds=Clazz.new_($I$(9).c$$uk_ac_vamsas_client_IClientDocument$java_util_Hashtable$java_util_IdentityHashMap$uk_ac_vamsas_objects_core_Entry$java_util_Hashtable,[doc, this.vobj2jv, this.jv2vobj, p$1.baseProvEntry.apply(this, []), this.alRedoState]);
+var vds=Clazz.new_([doc, this.vobj2jv, this.jv2vobj, p$1.baseProvEntry.apply(this, []), this.alRedoState],$I$(10,1).c$$uk_ac_vamsas_client_IClientDocument$java_util_Hashtable$java_util_IdentityHashMap$uk_ac_vamsas_objects_core_Entry$java_util_Hashtable);
 var frames=$I$(5).desktop.getAllFrames$();
 if (frames == null ) {
 return 0;
-}var skipList=Clazz.new_($I$(11));
-var viewset=Clazz.new_($I$(11));
+}var skipList=Clazz.new_($I$(12,1));
+var viewset=Clazz.new_($I$(12,1));
 try {
 for (var i=frames.length - 1; i > -1; i--) {
 if (Clazz.instanceOf(frames[i], "jalview.gui.AlignFrame")) {
@@ -283,17 +262,17 @@ stored=vds.storeVAMSAS$jalview_gui_AlignViewport$S(af.getViewport$(), af.getTitl
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 this.errorsDuringUpdate=true;
-$I$(6).log.error$O$Throwable("Exception synchronizing " + af.getTitle$() + " " + (af.getViewport$().getViewName$() == null  ? "" : " view " + af.getViewport$().getViewName$()) + " to document." , e);
+$I$(6,"error$S$Throwable",["Exception synchronizing " + af.getTitle$() + " " + (af.getViewport$().getViewName$() == null  ? "" : " view " + af.getViewport$().getViewName$()) + " to document." , e]);
 stored=false;
 } else {
 throw e;
 }
 }
 if (!stored) {
-skipList.put$TK$TV(af.getViewport$().getSequenceSetId$(), af);
+skipList.put$O$O(af.getViewport$().getSequenceSetId$(), af);
 } else {
-storedviews++;
-viewset.put$TK$TV(af.getViewport$().getSequenceSetId$(), af);
+++storedviews;
+viewset.put$O$O(af.getViewport$().getSequenceSetId$(), af);
 }}}}
 var aframes=viewset.values$().iterator$();
 while (aframes.hasNext$()){
@@ -302,7 +281,7 @@ vds.storeSequenceMappings$jalview_viewmodel_AlignmentViewport$S(af.getViewport$(
 }
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Exception synchronizing Views to Document :", e);
+$I$(6).error$S$Throwable("Exception synchronizing Views to Document :", e);
 this.errorsDuringUpdate=true;
 } else {
 throw e;
@@ -314,7 +293,7 @@ vds.setSkipList$java_util_Hashtable(skipList);
 vds.updateJalviewClientAppdata$();
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Client Appdata Write exception", e);
+$I$(6).error$S$Throwable("Client Appdata Write exception", e);
 this.errorsDuringAppUpdate=true;
 } else {
 throw e;
@@ -324,42 +303,42 @@ vds.clearSkipList$();
 return storedviews;
 });
 
-Clazz.newMeth(C$, 'baseProvEntry', function () {
-var pentry=Clazz.new_($I$(12));
+Clazz.newMeth(C$, 'baseProvEntry',  function () {
+var pentry=Clazz.new_($I$(13,1));
 pentry.setUser$S(this.user.getFullName$());
 pentry.setApp$S(this.app.getClientUrn$());
-pentry.setDate$java_util_Date(Clazz.new_($I$(13)));
+pentry.setDate$java_util_Date(Clazz.new_(java.util.Date));
 pentry.setAction$S("created");
 return pentry;
 }, p$1);
 
-Clazz.newMeth(C$, 'dealWithDocumentUpdate$Z', function (fromJalview) {
+Clazz.newMeth(C$, 'dealWithDocumentUpdate$Z',  function (fromJalview) {
 var storedviews=0;
-$I$(6).log.debug$O("Updating jalview from changed vamsas document.");
+$I$(6).debug$S("Updating jalview from changed vamsas document.");
 this.disableGui$Z(true);
 try {
 var time=System.currentTimeMillis$();
 var cdoc=this.vclient.getClientDocument$();
-if ($I$(6).log.isDebugEnabled$()) {
-$I$(6).log.debug$O("Time taken to get ClientDocument = " + (System.currentTimeMillis$() - time));
+if ($I$(6).isDebugEnabled$()) {
+$I$(6,"debug$S",["Time taken to get ClientDocument = " + (Long.$s(Long.$sub(System.currentTimeMillis$(),time)))]);
 time=System.currentTimeMillis$();
 }if (fromJalview) {
 storedviews+=this.updateVamsasDocument$uk_ac_vamsas_client_IClientDocument(cdoc);
-if ($I$(6).log.isDebugEnabled$()) {
-$I$(6).log.debug$O("Time taken to update Vamsas Document from jalview\t= " + (System.currentTimeMillis$() - time));
+if ($I$(6).isDebugEnabled$()) {
+$I$(6,"debug$S",["Time taken to update Vamsas Document from jalview\t= " + (Long.$s(Long.$sub(System.currentTimeMillis$(),time)))]);
 time=System.currentTimeMillis$();
 }cdoc.setVamsasRoots$uk_ac_vamsas_objects_core_VAMSASA(cdoc.getVamsasRoots$());
-if ($I$(6).log.isDebugEnabled$()) {
-$I$(6).log.debug$O("Time taken to set Document Roots\t\t= " + (System.currentTimeMillis$() - time));
+if ($I$(6).isDebugEnabled$()) {
+$I$(6,"debug$S",["Time taken to set Document Roots\t\t= " + (Long.$s(Long.$sub(System.currentTimeMillis$(),time)))]);
 time=System.currentTimeMillis$();
 }} else {
 this.updateJalview$uk_ac_vamsas_client_IClientDocument(cdoc);
-if ($I$(6).log.isDebugEnabled$()) {
-$I$(6).log.debug$O("Time taken to update Jalview from vamsas document Roots\t= " + (System.currentTimeMillis$() - time));
+if ($I$(6).isDebugEnabled$()) {
+$I$(6,"debug$S",["Time taken to update Jalview from vamsas document Roots\t= " + (Long.$s(Long.$sub(System.currentTimeMillis$(),time)))]);
 time=System.currentTimeMillis$();
 }}this.vclient.updateDocument$uk_ac_vamsas_client_IClientDocument(cdoc);
-if ($I$(6).log.isDebugEnabled$()) {
-$I$(6).log.debug$O("Time taken to update Session Document\t= " + (System.currentTimeMillis$() - time));
+if ($I$(6).isDebugEnabled$()) {
+$I$(6,"debug$S",["Time taken to update Session Document\t= " + (Long.$s(Long.$sub(System.currentTimeMillis$(),time)))]);
 time=System.currentTimeMillis$();
 }cdoc=null;
 } catch (ee) {
@@ -372,95 +351,92 @@ storedviews=0;
 throw ee;
 }
 }
-$I$(6).log.debug$O("Finished updating from document change.");
+$I$(6).debug$S("Finished updating from document change.");
 this.disableGui$Z(false);
 return storedviews;
 });
 
-Clazz.newMeth(C$, 'addDocumentUpdateHandler', function () {
+Clazz.newMeth(C$, 'addDocumentUpdateHandler',  function () {
 var client=this;
 this.vclient.addDocumentUpdateHandler$java_beans_PropertyChangeListener(((P$.VamsasApplication$2||
-(function(){var C$=Clazz.newClass(P$, "VamsasApplication$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasApplication$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
-$I$(6).log.debug$O("Dealing with document update event.");
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (evt) {
+$I$(6).debug$S("Dealing with document update event.");
 this.$finals$.client.dealWithDocumentUpdate$Z(false);
-$I$(6).log.debug$O("finished dealing with event.");
+$I$(6).debug$S("finished dealing with event.");
 });
 })()
-), Clazz.new_(P$.VamsasApplication$2.$init$, [this, {client: client}])));
-$I$(6).log.debug$O("Added Jalview handler for vamsas document updates.");
+), Clazz.new_(P$.VamsasApplication$2.$init$,[this, {client:client}])));
+$I$(6).debug$S("Added Jalview handler for vamsas document updates.");
 }, p$1);
 
-Clazz.newMeth(C$, 'addStoreDocumentHandler', function () {
+Clazz.newMeth(C$, 'addStoreDocumentHandler',  function () {
 var client=this;
 this.vclient.addVorbaEventHandler$S$java_beans_PropertyChangeListener("uk.ac.vamas.client.DocumentRequestToCloseEvent", ((P$.VamsasApplication$3||
-(function(){var C$=Clazz.newClass(P$, "VamsasApplication$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasApplication$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (evt) {
 if (this.$finals$.client.promptUser) {
-$I$(6).log.debug$O("Asking user if the vamsas session should be stored.");
-var reply=$I$(4).showInternalConfirmDialog$java_awt_Component$O$S$I$I($I$(5).desktop, "The current VAMSAS session has unsaved data - do you want to save it ?", "VAMSAS Session Shutdown", 0, 3);
+$I$(6).debug$S("Asking user if the vamsas session should be stored.");
+var reply=$I$(4,"showInternalConfirmDialog$java_awt_Component$O$S$I$I",[$I$(5).desktop, "The current VAMSAS session has unsaved data - do you want to save it ?", "VAMSAS Session Shutdown", 0, 3]);
 if (reply == 0) {
-$I$(6).log.debug$O("Prompting for vamsas store filename.");
+$I$(6).debug$S("Prompting for vamsas store filename.");
 $I$(5).instance.vamsasSave_actionPerformed$java_awt_event_ActionEvent(null);
-$I$(6).log.debug$O("Finished attempt at storing document.");
-}$I$(6).log.debug$O("finished dealing with REQUESTTOCLOSE event.");
+$I$(6).debug$S("Finished attempt at storing document.");
+}$I$(6).debug$S("finished dealing with REQUESTTOCLOSE event.");
 } else {
-$I$(6).log.debug$O("Ignoring store document request (promptUser==false)");
+$I$(6,"debug$S",["Ignoring store document request (promptUser==false)"]);
 }});
 })()
-), Clazz.new_(P$.VamsasApplication$3.$init$, [this, {client: client}])));
-$I$(6).log.debug$O("Added Jalview handler for vamsas document updates.");
+), Clazz.new_(P$.VamsasApplication$3.$init$,[this, {client:client}])));
+$I$(6).debug$S("Added Jalview handler for vamsas document updates.");
 }, p$1);
 
-Clazz.newMeth(C$, 'disableGui$Z', function (b) {
-$I$(5).instance.setVamsasUpdate$Z(b);
+Clazz.newMeth(C$, 'disableGui$Z',  function (b) {
 });
 
-Clazz.newMeth(C$, 'backup_objectMapping$', function () {
-this._backup_vobj2jv=Clazz.new_($I$(11).c$$java_util_Map,[this.vobj2jv]);
-this._backup_jv2vobj=Clazz.new_($I$(10).c$$java_util_Map,[this.jv2vobj]);
+Clazz.newMeth(C$, 'backup_objectMapping$',  function () {
+this._backup_vobj2jv=Clazz.new_($I$(12,1).c$$java_util_Map,[this.vobj2jv]);
+this._backup_jv2vobj=Clazz.new_($I$(11,1).c$$java_util_Map,[this.jv2vobj]);
 });
 
-Clazz.newMeth(C$, 'recover_objectMappingBackup$', function () {
+Clazz.newMeth(C$, 'recover_objectMappingBackup$',  function () {
 if (this._backup_vobj2jv == null ) {
 if (this.inInitialUpdate) {
 return;
-}throw Clazz.new_($I$(2).c$$S,[$I$(3).getString$S("error.implementation_error_cannot_recover_vamsas_object_mappings")]);
+}throw Clazz.new_($I$(2,1).c$$S,["IMPLEMENTATION ERROR: Cannot recover vamsas object mappings - no backup was made"]);
 }this.jv2vobj.clear$();
 var el=this._backup_jv2vobj.entrySet$().iterator$();
 while (el.hasNext$()){
 var mp=el.next$();
-this.jv2vobj.put$TK$TV(mp.getKey$(), mp.getValue$());
+this.jv2vobj.put$O$O(mp.getKey$(), mp.getValue$());
 }
 el=this._backup_vobj2jv.entrySet$().iterator$();
 while (el.hasNext$()){
 var mp=el.next$();
-this.vobj2jv.put$TK$TV(mp.getKey$(), mp.getValue$());
+this.vobj2jv.put$O$O(mp.getKey$(), mp.getValue$());
 }
 });
 
-Clazz.newMeth(C$, 'startSession', function () {
+Clazz.newMeth(C$, 'startSession',  function () {
 if (this.inSession$()) {
 try {
 this.vclient.joinSession$();
 this.joinedSession=true;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Failed to join vamsas session.", e);
+$I$(6).error$S$Throwable("Failed to join vamsas session.", e);
 this.vclient=null;
 } else {
 throw e;
@@ -468,24 +444,20 @@ throw e;
 }
 try {
 var pm=this.vclient.getPickManager$();
-var ssm=$I$(14).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider($I$(5).instance);
+var ssm=$I$(14,"getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider",[$I$(5).instance]);
 var me=this;
 pm.registerMessageHandler$uk_ac_vamsas_client_picking_IMessageHandler(((P$.VamsasApplication$4||
-(function(){var C$=Clazz.newClass(P$, "VamsasApplication$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'uk.ac.vamsas.client.picking.IMessageHandler', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasApplication$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'uk.ac.vamsas.client.picking.IMessageHandler', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.last=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.last=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['handleMessage$uk_ac_vamsas_client_picking_Message','handleMessage$'], function (message) {
+C$.$fields$=[['S',['last']]]
+
+Clazz.newMeth(C$, 'handleMessage$uk_ac_vamsas_client_picking_Message',  function (message) {
 if (this.b$['jalview.gui.VamsasApplication'].vobj2jv == null ) {
 return;
 }if (Clazz.instanceOf(message, "uk.ac.vamsas.client.picking.MouseOverMessage")) {
@@ -526,7 +498,7 @@ var seq;
 var aligned=(jvobjs[0]).getDatasetSequence$() != null ;
 var maxWidth=0;
 if (aligned) {
-jselection=Clazz.new_($I$(17));
+jselection=Clazz.new_($I$(17,1));
 jselection.addSequence$jalview_datamodel_SequenceI$Z(seq=jvobjs[0], false);
 maxWidth=seq.getLength$();
 }for (var c=1; aligned && jvobjs.length > 1  && c < jvobjs.length ; c++) {
@@ -545,11 +517,11 @@ if (jvobjs.length == 1) {
 jselection.setStartRes$I(0);
 jselection.setEndRes$I(maxWidth);
 if (sm.getRanges$() != null ) {
-var prange=$I$(18).getBounds$uk_ac_vamsas_objects_core_RangeType(sm.getRanges$());
+var prange=$I$(18,"getBounds$uk_ac_vamsas_objects_core_RangeType",[sm.getRanges$()]);
 jselection.setStartRes$I(prange[0] - 1);
 jselection.setEndRes$I(prange[1] - 1);
-prange=$I$(18).getIntervals$uk_ac_vamsas_objects_core_RangeType(sm.getRanges$());
-colsel=Clazz.new_($I$(19));
+prange=$I$(18,"getIntervals$uk_ac_vamsas_objects_core_RangeType",[sm.getRanges$()]);
+colsel=Clazz.new_($I$(19,1));
 for (var p=0; p < prange.length; p+=2) {
 var d=(prange[p] <= prange[p + 1]) ? 1 : -1;
 var l=(d < 0) ? 1 : 0;
@@ -572,25 +544,20 @@ jvobjs[c]=null;
 return;
 }});
 })()
-), Clazz.new_(P$.VamsasApplication$4.$init$, [this, {ssm: ssm, me: me}])));
+), Clazz.new_(P$.VamsasApplication$4.$init$,[this, {ssm:ssm,me:me}])));
 this.picker=((P$.VamsasApplication$5||
-(function(){var C$=Clazz.newClass(P$, "VamsasApplication$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.structure.VamsasListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasApplication$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.structure.VamsasListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.last=null;
-this.i=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.last=null;
 this.i=-1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['mouseOverSequence$jalview_datamodel_SequenceI$I$jalview_structure_VamsasSource','mouseOverSequence$'], function (seq, index, source) {
+C$.$fields$=[['I',['i'],'O',['last','jalview.datamodel.SequenceI']]]
+
+Clazz.newMeth(C$, 'mouseOverSequence$jalview_datamodel_SequenceI$I$jalview_structure_VamsasSource',  function (seq, index, source) {
 if (this.b$['jalview.gui.VamsasApplication'].jv2vobj == null ) {
 return;
 }if (seq !== this.last  || this.i != index ) {
@@ -598,23 +565,22 @@ var v=this.b$['jalview.gui.VamsasApplication'].jv2vobj.get$O(seq);
 if (v != null ) {
 this.last=seq;
 this.i=index;
-var message=Clazz.new_($I$(20).c$$S$I,[v.getId$(), index]);
+var message=Clazz.new_([v.getId$(), index],$I$(20,1).c$$S$I);
 this.$finals$.pm.sendMessage$uk_ac_vamsas_client_picking_Message(message);
 }}});
 })()
-), Clazz.new_(P$.VamsasApplication$5.$init$, [this, {pm: pm}]));
+), Clazz.new_(P$.VamsasApplication$5.$init$,[this, {pm:pm}]));
 this.selecter=((P$.VamsasApplication$6||
-(function(){var C$=Clazz.newClass(P$, "VamsasApplication$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.structure.SelectionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VamsasApplication$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'jalview.structure.SelectionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['selection$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_structure_SelectionSource','selection$'], function (seqsel, colsel, hidden, source) {
+Clazz.newMeth(C$, 'selection$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_structure_SelectionSource',  function (seqsel, colsel, hidden, source) {
 if (this.b$['jalview.gui.VamsasApplication'].vobj2jv == null ) {
-$I$(6).log.warn$O("Selection listener still active for dead session.");
+$I$(6).warn$S("Selection listener still active for dead session.");
 return;
 }if (source !== this.$finals$.me ) {
 var visal=null;
@@ -623,9 +589,9 @@ visal=(source).getAlignment$();
 }var sm=null;
 if ((seqsel == null  || seqsel.getSize$() == 0 ) && (colsel == null  || colsel.getSelected$() == null   || colsel.getSelected$().size$() == 0 ) ) {
 if (Clazz.instanceOf(source, "jalview.gui.AlignViewport")) {
-sm=Clazz.new_($I$(21).c$$S$SA$uk_ac_vamsas_objects_core_RangeType$Z,["jalview", Clazz.array(String, -1, [(source).getSequenceSetId$()]), null, true]);
+sm=Clazz.new_(["jalview", Clazz.array(String, -1, [(source).getSequenceSetId$()]), null, true],$I$(21,1).c$$S$SA$uk_ac_vamsas_objects_core_RangeType$Z);
 } else {
-sm=Clazz.new_($I$(21).c$$S$SA$uk_ac_vamsas_objects_core_RangeType$Z,["jalview", null, null, true]);
+sm=Clazz.new_($I$(21,1).c$$S$SA$uk_ac_vamsas_objects_core_RangeType$Z,["jalview", null, null, true]);
 }} else {
 var vobj=Clazz.array(String, [seqsel.getSize$()]);
 var o=0;
@@ -641,10 +607,10 @@ System.arraycopy$O$I$O$I$I(t, 0, vobj, 0, o);
 t=null;
 }var range=null;
 if (seqsel != null  && colsel != null  ) {
-range=Clazz.new_($I$(22));
+range=Clazz.new_($I$(22,1));
 if (colsel.getSelected$() != null  && colsel.getSelected$().size$() > 0  && visal != null   && seqsel.getSize$() == visal.getHeight$() ) {
 for (var ival, $ival = colsel.getSelected$().iterator$(); $ival.hasNext$()&&((ival=($ival.next$())),1);) {
-var p=Clazz.new_($I$(23));
+var p=Clazz.new_($I$(23,1));
 p.setI$I(ival.intValue$() + 1);
 range.addPos$uk_ac_vamsas_objects_core_Pos(p);
 }
@@ -652,35 +618,35 @@ range.addPos$uk_ac_vamsas_objects_core_Pos(p);
 var intervals=hidden.getVisContigsIterator$I$I$Z(seqsel.getStartRes$(), seqsel.getEndRes$() + 1, false);
 while (intervals.hasNext$()){
 var region=intervals.next$();
-var s=Clazz.new_($I$(24));
+var s=Clazz.new_($I$(24,1));
 s.setStart$I(region[0] + 1);
 s.setEnd$I(region[1] + 1);
 s.setInclusive$Z(true);
 range.addSeg$uk_ac_vamsas_objects_core_Seg(s);
 }
 }}if (vobj.length > 0) {
-sm=Clazz.new_($I$(21).c$$S$SA$uk_ac_vamsas_objects_core_RangeType,["jalview", vobj, range]);
+sm=Clazz.new_($I$(21,1).c$$S$SA$uk_ac_vamsas_objects_core_RangeType,["jalview", vobj, range]);
 } else {
 sm=null;
 }}if (sm != null ) {
 sm.validate$();
-$I$(6).log.debug$O("Selection Message\n" + sm.getRawMessage$());
+$I$(6,"debug$S",["Selection Message\n" + sm.getRawMessage$()]);
 this.$finals$.pm.sendMessage$uk_ac_vamsas_client_picking_Message(sm);
 }}});
 })()
-), Clazz.new_(P$.VamsasApplication$6.$init$, [this, {me: me, pm: pm}]));
+), Clazz.new_(P$.VamsasApplication$6.$init$,[this, {me:me,pm:pm}]));
 ssm.addStructureViewerListener$O(this.picker);
 ssm.addSelectionListener$jalview_structure_SelectionListener(this.selecter);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(6).log.error$O$Throwable("Failed to init Vamsas Picking", e);
+$I$(6).error$S$Throwable("Failed to init Vamsas Picking", e);
 } else {
 throw e;
 }
 }
 }}, p$1);
 
-Clazz.newMeth(C$, 'getCurrentSession$', function () {
+Clazz.newMeth(C$, 'getCurrentSession$',  function () {
 if (this.vclient != null ) {
 return (this.vclient.getSessionUrn$());
 }return null;
@@ -688,4 +654,4 @@ return (this.vclient.getSessionUrn$());
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

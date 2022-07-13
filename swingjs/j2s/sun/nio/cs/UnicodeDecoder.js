@@ -1,37 +1,30 @@
-(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.CoderResult']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "UnicodeDecoder", null, 'java.nio.charset.CharsetDecoder');
+(function(){var P$=Clazz.newPackage("sun.nio.cs"),p$1={},I$=[[0,'java.nio.charset.CoderResult']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "UnicodeDecoder", null, 'java.nio.charset.CharsetDecoder');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.expectedByteOrder=0;
-this.currentByteOrder=0;
-this.defaultByteOrder=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultByteOrder=1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$I', function (cs, bo) {
-C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this, [cs, 0.5, 1.0]);
-C$.$init$.apply(this);
+C$.$fields$=[['I',['expectedByteOrder','currentByteOrder','defaultByteOrder']]]
+
+Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$I',  function (cs, bo) {
+;C$.superclazz.c$$java_nio_charset_Charset$F$F.apply(this,[cs, 0.5, 1.0]);C$.$init$.apply(this);
 this.expectedByteOrder=this.currentByteOrder=bo;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$I$I', function (cs, bo, defaultBO) {
+Clazz.newMeth(C$, 'c$$java_nio_charset_Charset$I$I',  function (cs, bo, defaultBO) {
 C$.c$$java_nio_charset_Charset$I.apply(this, [cs, bo]);
 this.defaultByteOrder=defaultBO;
 }, 1);
 
-Clazz.newMeth(C$, 'decode$I$I', function (b1, b2) {
+Clazz.newMeth(C$, 'decode$I$I',  function (b1, b2) {
 if (this.currentByteOrder == 1) return String.fromCharCode(((b1 << 8) | b2));
  else return String.fromCharCode(((b2 << 8) | b1));
 }, p$1);
 
-Clazz.newMeth(C$, 'decodeLoop$java_nio_ByteBuffer$java_nio_CharBuffer', function (src, dst) {
+Clazz.newMeth(C$, 'decodeLoop$java_nio_ByteBuffer$java_nio_CharBuffer',  function (src, dst) {
 var mark=src.position$();
 try {
 while (src.remaining$() > 1){
@@ -73,10 +66,10 @@ src.position$I(mark);
 }
 });
 
-Clazz.newMeth(C$, 'implReset$', function () {
+Clazz.newMeth(C$, 'implReset$',  function () {
 this.currentByteOrder=this.expectedByteOrder;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:07 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

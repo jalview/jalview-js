@@ -1,27 +1,28 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'java.util.Hashtable','java.util.Vector','jalview.appletgui.AlignmentPanel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PaintRefresher");
-C$.components=null;
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),I$=[[0,'java.util.Hashtable','java.util.Vector','jalview.appletgui.AlignmentPanel']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PaintRefresher");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'Register$java_awt_Component$S', function (comp, seqSetId) {
+C$.$fields$=[[]
+,['O',['components','java.util.Map']]]
+
+Clazz.newMeth(C$, 'Register$java_awt_Component$S',  function (comp, seqSetId) {
 if (C$.components == null ) {
-C$.components=Clazz.new_($I$(1));
+C$.components=Clazz.new_($I$(1,1));
 }if (C$.components.containsKey$O(seqSetId)) {
 var comps=C$.components.get$O(seqSetId);
 if (!comps.contains$O(comp)) {
-comps.addElement$TE(comp);
+comps.addElement$O(comp);
 }} else {
-var vcoms=Clazz.new_($I$(2));
-vcoms.addElement$TE(comp);
-C$.components.put$TK$TV(seqSetId, vcoms);
+var vcoms=Clazz.new_($I$(2,1));
+vcoms.addElement$O(comp);
+C$.components.put$O$O(seqSetId, vcoms);
 }}, 1);
 
-Clazz.newMeth(C$, 'RemoveComponent$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'RemoveComponent$java_awt_Component',  function (comp) {
 if (C$.components == null ) {
 return;
 }var it=C$.components.keySet$().iterator$();
@@ -33,11 +34,11 @@ it.remove$();
 }}
 }, 1);
 
-Clazz.newMeth(C$, 'Refresh$java_awt_Component$S', function (source, id) {
+Clazz.newMeth(C$, 'Refresh$java_awt_Component$S',  function (source, id) {
 C$.Refresh$java_awt_Component$S$Z$Z(source, id, false, false);
 }, 1);
 
-Clazz.newMeth(C$, 'Refresh$java_awt_Component$S$Z$Z', function (source, id, alignmentChanged, validateSequences) {
+Clazz.newMeth(C$, 'Refresh$java_awt_Component$S$Z$Z',  function (source, id, alignmentChanged, validateSequences) {
 if (C$.components == null ) {
 return;
 }var comp;
@@ -59,7 +60,7 @@ C$.validateSequences$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentI((
 }
 }, 1);
 
-Clazz.newMeth(C$, 'validateSequences$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentI', function (source, comp) {
+Clazz.newMeth(C$, 'validateSequences$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentI',  function (source, comp) {
 var a1;
 if (source.getHiddenSequences$().getSize$() > 0) {
 a1=source.getHiddenSequences$().getFullAlignment$().getSequencesArray$();
@@ -88,7 +89,7 @@ if (!exists) {
 if (i < comp.getHeight$()) {
 var alsq=comp.getSequences$();
 {
-alsq.add$I$TE(i, a1[i]);
+alsq.add$I$O(i, a1[i]);
 }} else {
 comp.addSequence$jalview_datamodel_SequenceI(a1[i]);
 }if (comp.getHiddenSequences$().getSize$() > 0) {
@@ -111,14 +112,14 @@ comp.deleteSequence$jalview_datamodel_SequenceI(a2[j]);
 }}
 }, 1);
 
-Clazz.newMeth(C$, 'getAssociatedPanels$S', function (id) {
+Clazz.newMeth(C$, 'getAssociatedPanels$S',  function (id) {
 var comps=C$.components.get$O(id);
-var tmp=Clazz.new_($I$(2));
+var tmp=Clazz.new_($I$(2,1));
 var i;
 var iSize=comps.size$();
 for (i=0; i < iSize; i++) {
 if (Clazz.instanceOf(comps.elementAt$I(i), "jalview.appletgui.AlignmentPanel")) {
-tmp.addElement$TE(comps.elementAt$I(i));
+tmp.addElement$O(comps.elementAt$I(i));
 }}
 var result=Clazz.array($I$(3), [tmp.size$()]);
 for (var ix=0; ix < result.length; ix++) {
@@ -129,4 +130,4 @@ return result;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:28 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

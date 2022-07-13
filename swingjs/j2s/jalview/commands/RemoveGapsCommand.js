@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'jalview.util.Comparison',['jalview.commands.EditCommand','.Action'],'jalview.datamodel.SequenceI']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RemoveGapsCommand", null, 'jalview.commands.EditCommand');
+(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'jalview.util.Comparison',['jalview.commands.EditCommand','.Action'],'jalview.datamodel.SequenceI']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RemoveGapsCommand", null, 'jalview.commands.EditCommand');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI', function (description, seqs, al) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI',  function (description, seqs, al) {
+Clazz.super_(C$, this);
 this.description=description;
 var width=0;
 for (var i=0; i < seqs.length; i++) {
@@ -18,13 +17,13 @@ width=seqs[i].getLength$();
 this.findGaps$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI(seqs, 0, width, al);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI', function (description, seqs, start, end, al) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI',  function (description, seqs, start, end, al) {
+Clazz.super_(C$, this);
 this.description=description;
 this.findGaps$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI(seqs, start, end, al);
 }, 1);
 
-Clazz.newMeth(C$, 'findGaps$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI', function (seqs, start, end, al) {
+Clazz.newMeth(C$, 'findGaps$jalview_datamodel_SequenceIA$I$I$jalview_datamodel_AlignmentI',  function (seqs, start, end, al) {
 var startCol=-1;
 var endCol=-1;
 var deletedCols=0;
@@ -61,4 +60,4 @@ this.performEdit$I$jalview_datamodel_AlignmentIA(0, null);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

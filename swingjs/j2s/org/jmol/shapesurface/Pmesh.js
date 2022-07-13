@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.V3','javajs.util.Measure','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Pmesh", null, 'org.jmol.shapesurface.Isosurface');
+(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.V3','javajs.util.Measure','javajs.util.P3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Pmesh", null, 'org.jmol.shapesurface.Isosurface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initShape$', function () {
 C$.superclazz.prototype.initShape$.apply(this, []);
@@ -13,7 +12,7 @@ this.myType="pmesh";
 });
 
 Clazz.newMeth(C$, 'getProperty$S$I', function (property, index) {
-if (property == "face") {
+if (property === "face" ) {
 var m=this.currentMesh;
 if (index >= 0 && (index >= this.meshCount || (m=this.meshes[index]) == null  ) ) return null;
 return m == null  ? null : p$1.getFace$org_jmol_shape_Mesh.apply(this, [m]);
@@ -23,7 +22,7 @@ return m == null  ? null : p$1.getFace$org_jmol_shape_Mesh.apply(this, [m]);
 Clazz.newMeth(C$, 'getFace$org_jmol_shape_Mesh', function (m) {
 if (m.haveQuads) return null;
 var vs=m.vs;
-var htEdges=Clazz.new_($I$(1));
+var htEdges=Clazz.new_($I$(1,1));
 var v1=0;
 var v0;
 var v01;
@@ -43,15 +42,15 @@ n--;
 } else {
 n++;
 edge0=Clazz.array(Integer.TYPE, -1, [v1, v2]);
-htEdges.put$TK$TV(v1 + "_" + v2 , edge0);
-htEdges.put$TK$TV("" + v1, edge0);
+htEdges.put$O$O(v1 + "_" + v2 , edge0);
+htEdges.put$O$O("" + v1, edge0);
 }}
 }
 if (n == 0) return null;
 var a=Clazz.array(Integer.TYPE, [n, 2]);
 a[0]=edge0;
-var vectorBA=Clazz.new_($I$(2));
-var vectorBC=Clazz.new_($I$(2));
+var vectorBA=Clazz.new_($I$(2,1));
+var vectorBC=Clazz.new_($I$(2,1));
 v01=v0=a[0][0];
 v1=a[0][1];
 var pt=0;
@@ -79,4 +78,4 @@ return pts;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:57 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,47 +1,35 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.util.Point3fi','org.jmol.render.FontLineShapeRenderer','javajs.util.P3','javajs.util.Measure','javajs.util.A4','javajs.util.M3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeasuresRenderer", null, 'org.jmol.render.LabelsRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.util.Point3fi','org.jmol.shape.Measures','org.jmol.render.FontLineShapeRenderer','javajs.util.P3','javajs.util.Measure','javajs.util.A4','javajs.util.M3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MeasuresRenderer", null, 'org.jmol.render.LabelsRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.doJustify=false;
-this.modulating=false;
-this.mad0=0;
-this.mpts=null;
-this.m=null;
-this.p=null;
-this.count=0;
-this.aaT=null;
-this.matrixT=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doJustify','modulating'],'I',['count'],'H',['mad0'],'O',['mpts','java.util.Map','m','org.jmol.modelset.Measurement','p','org.jmol.util.Point3fi[]','aaT','javajs.util.A4','matrixT','javajs.util.M3']]]
 
 Clazz.newMeth(C$, 'initRenderer$', function () {
-this.mpts=Clazz.new_($I$(1));
+this.mpts=Clazz.new_($I$(1,1));
 this.p=Clazz.array($I$(2), [4]);
 });
 
 Clazz.newMeth(C$, 'render$', function () {
 if (!this.g3d.checkTranslucent$Z(false)) return false;
-if (this.atomPt == null ) this.atomPt=Clazz.new_($I$(2));
+if (this.atomPt == null ) this.atomPt=Clazz.new_($I$(2,1));
 var measures=this.shape;
 if (measures.ms !== this.ms ) {
 System.out.println$S("!measure wrong modelset!");
 measures.clear$();
 return false;
-}this.doJustify=this.vwr.getBoolean$I(603979871);
+}this.doJustify=this.vwr.getBoolean$I(603979870);
 this.modulating=this.ms.bsModulated != null ;
 this.imageFontScaling=this.vwr.imageFontScaling;
 this.mad0=measures.mad;
-this.font3d=this.vwr.gdata.getFont3DScaled$javajs_awt_Font$F(measures.font3d, this.imageFontScaling);
+this.font3d=this.vwr.gdata.getFont3DScaled$org_jmol_util_Font$F($I$(3).font3d, this.imageFontScaling);
 this.m=measures.mPending;
 if (!this.isExport && this.m != null   && (this.count=this.m.count) != 0 ) p$1.renderPendingMeasurement.apply(this, []);
 if (!this.vwr.getBoolean$I(603979926)) return false;
-var showMeasurementLabels=this.vwr.getBoolean$I(603979879);
+var showMeasurementLabels=this.vwr.getBoolean$I(603979878);
 measures.setVisibilityInfo$();
 for (var i=measures.measurementCount; --i >= 0; ) {
 this.m=measures.measurements.get$I(i);
@@ -82,11 +70,11 @@ var v=this.ms.getModulation$I(i);
 if (v == null ) {
 pt=this.ms.at[i];
 } else {
-if (pt == null ) pt=Clazz.new_($I$(2));
+if (pt == null ) pt=Clazz.new_($I$(2,1));
 pt.setT$javajs_util_T3(this.ms.at[i]);
 if (this.vwr.tm.vibrationOn) this.vwr.tm.getVibrationPoint$org_jmol_util_Vibration$javajs_util_T3$F(v, pt, NaN);
 pt.sD=($s$[0] = -1, $s$[0]);
-}if (ii != null ) this.mpts.put$TK$TV(ii, pt);
+}if (ii != null ) this.mpts.put$O$O(ii, pt);
 return pt;
 }, p$1);
 
@@ -104,7 +92,7 @@ this.mad=this.mad0;
 } else {
 this.mad=($s$[0] = this.m.mad, $s$[0]);
 this.dotsOrDashes=true;
-this.dashDots=(this.mad < 0 ? null : $I$(3).ndots);
+this.dashDots=(this.mad < 0 ? null : $I$(4).ndots);
 }switch (this.count) {
 case 1:
 this.drawLine$I$I$I$I$I$I$I(this.p[0].sX, this.p[0].sY, this.p[0].sZ, this.m.traceX, this.m.traceY, this.p[0].sZ, this.mad);
@@ -128,8 +116,8 @@ this.drawLine$I$I$I$I$I$I$I(a.sX, a.sY, a.sZ, b.sX, b.sY, b.sZ, this.mad);
 this.tickA=a;
 this.tickB=b;
 if (this.tickAs == null ) {
-this.tickAs=Clazz.new_($I$(4));
-this.tickBs=Clazz.new_($I$(4));
+this.tickAs=Clazz.new_($I$(5,1));
+this.tickBs=Clazz.new_($I$(5,1));
 }this.tickAs.set$F$F$F(a.sX, a.sY, a.sZ);
 this.tickBs.set$F$F$F(b.sX, b.sY, b.sZ);
 this.drawTicks$I$Z(this.mad, s != null );
@@ -145,7 +133,7 @@ var x=((a.sX + b.sX)/2|0);
 var y=((a.sY + b.sY)/2|0);
 if (this.m.text == null ) {
 this.g3d.setC$H(this.labelColix);
-this.drawString$I$I$I$I$Z$Z$Z$I$S(x, y, z, radius, this.doJustify && (x - a.sX) * (y - a.sY) > 0 , false, false, (this.doJustify ? 0 : 2147483647), s);
+this.drawString$I$I$I$I$Z$Z$Z$I$S(x, y, z, radius, this.doJustify && (x - a.sX) * (y - a.sY) > 0 , false, true, (this.doJustify ? 0 : 2147483647), s);
 } else {
 this.atomPt.ave$javajs_util_T3$javajs_util_T3(a, b);
 this.atomPt.sX=((a.sX + b.sX)/2|0);
@@ -172,15 +160,15 @@ this.atomPt.setT$javajs_util_T3(b);
 this.renderLabelOrMeasure$org_jmol_modelset_Text$S(this.m.text, s);
 }return;
 }if (this.m.isTainted$()) {
-var radians=$I$(5).computeAngle$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$Z(this.p[0], this.p[1], this.p[2], this.vectorT2, this.vectorT3, false);
+var radians=$I$(6).computeAngle$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$Z(this.p[0], this.p[1], this.p[2], this.vectorT2, this.vectorT3, false);
 this.vectorT.cross$javajs_util_T3$javajs_util_T3(this.vectorT2, this.vectorT3);
-this.m.renderAxis=$I$(6).new4$F$F$F$F(this.vectorT.x, this.vectorT.y, this.vectorT.z, radians);
+this.m.renderAxis=$I$(7).new4$F$F$F$F(this.vectorT.x, this.vectorT.y, this.vectorT.z, radians);
 this.vectorT2.normalize$();
 this.vectorT2.scale$F(0.5);
-this.m.renderArc=$I$(4).newP$javajs_util_T3(this.vectorT2);
+this.m.renderArc=$I$(5).newP$javajs_util_T3(this.vectorT2);
 }if (this.aaT == null ) {
-this.aaT=Clazz.new_($I$(6));
-this.matrixT=Clazz.new_($I$(7));
+this.aaT=Clazz.new_($I$(7,1));
+this.matrixT=Clazz.new_($I$(8,1));
 }var dotCount=(Math.floor((this.m.renderAxis.angle / (6.283185307179586)) * 64)|0);
 var stepAngle=this.m.renderAxis.angle / dotCount;
 this.aaT.setAA$javajs_util_A4(this.m.renderAxis);
@@ -261,11 +249,11 @@ y<<=1;
 
 Clazz.newMeth(C$, 'drawLine$I$I$I$I$I$I$I', function (x1, y1, z1, x2, y2, z2, mad) {
 var diameter=((mad >= 20 && this.exportType != 1  ? this.vwr.tm.scaleToScreen$I$I(((z1 + z2)/2|0), mad) : mad)|0);
-if (this.dotsOrDashes && (this.dashDots == null  || this.dashDots === $I$(3).ndots  ) ) this.width=diameter;
+if (this.dotsOrDashes && (this.dashDots == null  || this.dashDots === $I$(4).ndots  ) ) this.width=diameter;
 return this.drawLine2$I$I$I$I$I$I$I(x1, y1, z1, x2, y2, z2, diameter);
 });
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

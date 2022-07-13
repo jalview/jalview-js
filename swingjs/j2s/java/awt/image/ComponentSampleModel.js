@@ -1,27 +1,17 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBufferByte','java.awt.image.DataBufferUShort','java.awt.image.DataBufferShort','java.awt.image.DataBufferInt','java.awt.image.DataBuffer','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ComponentSampleModel", null, 'java.awt.image.SampleModel');
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.DataBufferByte','java.awt.image.DataBufferUShort','java.awt.image.DataBufferShort','java.awt.image.DataBufferInt','java.awt.image.DataBuffer','java.util.Arrays']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ComponentSampleModel", null, 'java.awt.image.SampleModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bandOffsets=null;
-this.bankIndices=null;
-this.$numBands=0;
-this.numBanks=0;
-this.scanlineStride=0;
-this.pixelStride=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.$numBands=1;
 this.numBanks=1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA', function (dataType, w, h, pixelStride, scanlineStride, bandOffsets) {
-C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, bandOffsets.length]);
-C$.$init$.apply(this);
+C$.$fields$=[['I',['$numBands','numBanks','scanlineStride','pixelStride'],'O',['bandOffsets','int[]','+bankIndices']]]
+
+Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA',  function (dataType, w, h, pixelStride, scanlineStride, bandOffsets) {
+;C$.superclazz.c$$I$I$I$I.apply(this,[dataType, w, h, bandOffsets.length]);C$.$init$.apply(this);
 this.dataType=dataType;
 this.pixelStride=pixelStride;
 this.scanlineStride=scanlineStride;
@@ -41,9 +31,8 @@ this.bankIndices[i]=0;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA$IA', function (dataType, w, h, pixelStride, scanlineStride, bankIndices, bandOffsets) {
-C$.superclazz.c$$I$I$I$I.apply(this, [dataType, w, h, bandOffsets.length]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I$I$I$I$I$IA$IA',  function (dataType, w, h, pixelStride, scanlineStride, bankIndices, bandOffsets) {
+;C$.superclazz.c$$I$I$I$I.apply(this,[dataType, w, h, bandOffsets.length]);C$.$init$.apply(this);
 this.dataType=dataType;
 this.pixelStride=pixelStride;
 this.scanlineStride=scanlineStride;
@@ -70,18 +59,18 @@ if (bandOffsets.length != bankIndices.length) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Length of bandOffsets must equal length of bankIndices."]);
 }}, 1);
 
-Clazz.newMeth(C$, 'getBufferSize', function () {
+Clazz.newMeth(C$, 'getBufferSize',  function () {
 var maxBandOff=this.bandOffsets[0];
 for (var i=1; i < this.bandOffsets.length; i++) maxBandOff=Math.max(maxBandOff, this.bandOffsets[i]);
 
 var size=0;
-if (maxBandOff >= 0) size+=maxBandOff + 1;
-if (this.pixelStride > 0) size+=this.pixelStride * (this.width - 1);
-if (this.scanlineStride > 0) size+=this.scanlineStride * (this.height - 1);
+if (maxBandOff >= 0) (size=Long.$add(size,(maxBandOff + 1)));
+if (this.pixelStride > 0) (size=Long.$add(size,(this.pixelStride * (this.width - 1))));
+if (this.scanlineStride > 0) (size=Long.$add(size,(this.scanlineStride * (this.height - 1))));
 return size;
 }, p$1);
 
-Clazz.newMeth(C$, 'orderBands$IA$I', function (orig, step) {
+Clazz.newMeth(C$, 'orderBands$IA$I',  function (orig, step) {
 var map=Clazz.array(Integer.TYPE, [orig.length]);
 var ret=Clazz.array(Integer.TYPE, [orig.length]);
 for (var i=0; i < map.length; i++) map[i]=i;
@@ -98,7 +87,7 @@ map[index]=map[i];
 return ret;
 });
 
-Clazz.newMeth(C$, 'createCompatibleSampleModel$I$I', function (w, h) {
+Clazz.newMeth(C$, 'createCompatibleSampleModel$I$I',  function (w, h) {
 var minBandOff=this.bandOffsets[0];
 var maxBandOff=this.bandOffsets[0];
 for (var i=1; i < this.bandOffsets.length; i++) {
@@ -151,7 +140,7 @@ pStride*=-1;
 return Clazz.new_(C$.c$$I$I$I$I$I$IA$IA,[this.dataType, w, h, pStride, lStride, this.bankIndices, bandOff]);
 });
 
-Clazz.newMeth(C$, 'createSubsetSampleModel$IA', function (bands) {
+Clazz.newMeth(C$, 'createSubsetSampleModel$IA',  function (bands) {
 if (bands.length > this.bankIndices.length) throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["There are only " + this.bankIndices.length + " bands" ]);
 var newBankIndices=Clazz.array(Integer.TYPE, [bands.length]);
 var newBandOffsets=Clazz.array(Integer.TYPE, [bands.length]);
@@ -162,37 +151,37 @@ newBandOffsets[i]=this.bandOffsets[bands[i]];
 return Clazz.new_(C$.c$$I$I$I$I$I$IA$IA,[this.dataType, this.width, this.height, this.pixelStride, this.scanlineStride, newBankIndices, newBandOffsets]);
 });
 
-Clazz.newMeth(C$, 'createDataBuffer$', function () {
+Clazz.newMeth(C$, 'createDataBuffer$',  function () {
 var dataBuffer=null;
-var size=(p$1.getBufferSize.apply(this, [])|0);
+var size=Long.$ival(p$1.getBufferSize.apply(this, []));
 switch (this.dataType) {
 case 0:
-dataBuffer=Clazz.new_($I$(1).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(1,1).c$$I$I,[size, this.numBanks]);
 break;
 case 1:
-dataBuffer=Clazz.new_($I$(2).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(2,1).c$$I$I,[size, this.numBanks]);
 break;
 case 2:
-dataBuffer=Clazz.new_($I$(3).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(3,1).c$$I$I,[size, this.numBanks]);
 break;
 case 3:
-dataBuffer=Clazz.new_($I$(4).c$$I$I,[size, this.numBanks]);
+dataBuffer=Clazz.new_($I$(4,1).c$$I$I,[size, this.numBanks]);
 break;
 }
 return dataBuffer;
 });
 
-Clazz.newMeth(C$, 'getOffset$I$I', function (x, y) {
+Clazz.newMeth(C$, 'getOffset$I$I',  function (x, y) {
 var offset=y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[0];
 return offset;
 });
 
-Clazz.newMeth(C$, 'getOffset$I$I$I', function (x, y, b) {
+Clazz.newMeth(C$, 'getOffset$I$I$I',  function (x, y, b) {
 var offset=y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b];
 return offset;
 });
 
-Clazz.newMeth(C$, 'getSampleSize$', function () {
+Clazz.newMeth(C$, 'getSampleSize$',  function () {
 var sampleSize=Clazz.array(Integer.TYPE, [this.$numBands]);
 var sizeInBits=this.getSampleSize$I(0);
 for (var i=0; i < this.$numBands; i++) sampleSize[i]=sizeInBits;
@@ -200,34 +189,35 @@ for (var i=0; i < this.$numBands; i++) sampleSize[i]=sizeInBits;
 return sampleSize;
 });
 
-Clazz.newMeth(C$, 'getSampleSize$I', function (band) {
+Clazz.newMeth(C$, 'getSampleSize$I',  function (band) {
 return $I$(5).getDataTypeSize$I(this.dataType);
 });
 
-Clazz.newMeth(C$, 'getBankIndices$', function () {
+Clazz.newMeth(C$, 'getBankIndices$',  function () {
 return this.bankIndices.clone$();
 });
 
-Clazz.newMeth(C$, 'getBandOffsets$', function () {
+Clazz.newMeth(C$, 'getBandOffsets$',  function () {
 return this.bandOffsets.clone$();
 });
 
-Clazz.newMeth(C$, 'getScanlineStride$', function () {
+Clazz.newMeth(C$, 'getScanlineStride$',  function () {
 return this.scanlineStride;
 });
 
-Clazz.newMeth(C$, 'getPixelStride$', function () {
+Clazz.newMeth(C$, 'getPixelStride$',  function () {
 return this.pixelStride;
 });
 
-Clazz.newMeth(C$, 'getNumDataElements$', function () {
+Clazz.newMeth(C$, 'getNumDataElements$',  function () {
 return this.getNumBands$();
 });
 
-Clazz.newMeth(C$, 'getDataElements$I$I$O$java_awt_image_DataBuffer', function (x, y, obj, data) {
+Clazz.newMeth(C$, 'getDataElements$I$I$O$java_awt_image_DataBuffer',  function (x, y, obj, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
-}var type=this.getTransferType$();
+}data.秘setDoCheckImage$Z(false);
+var type=this.getTransferType$();
 var numDataElems=this.getNumDataElements$();
 var pixelOffset=y * this.scanlineStride + x * this.pixelStride;
 switch (type) {
@@ -236,7 +226,7 @@ var bdata;
 if (obj == null ) bdata=Clazz.array(Byte.TYPE, [numDataElems]);
  else bdata=obj;
 for (var i=0; i < numDataElems; i++) {
-bdata[i]=((data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0)|0);
+bdata[i]=(data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i])|0);
 }
 obj=bdata;
 break;
@@ -259,11 +249,30 @@ idata[i]=data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i]
 }
 obj=idata;
 break;
+case 4:
+var fdata;
+if (obj == null ) fdata=Clazz.array(Float.TYPE, [numDataElems]);
+ else fdata=obj;
+for (var i=0; i < numDataElems; i++) {
+fdata[i]=data.getElemFloat$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i]);
 }
+obj=fdata;
+break;
+case 5:
+var ddata;
+if (obj == null ) ddata=Clazz.array(Double.TYPE, [numDataElems]);
+ else ddata=obj;
+for (var i=0; i < numDataElems; i++) {
+ddata[i]=data.getElemDouble$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i]);
+}
+obj=ddata;
+break;
+}
+data.秘setDoCheckImage$Z(true);
 return obj;
 });
 
-Clazz.newMeth(C$, 'getPixel$I$I$IA$java_awt_image_DataBuffer', function (x, y, iArray, data) {
+Clazz.newMeth(C$, 'getPixel$I$I$IA$java_awt_image_DataBuffer',  function (x, y, iArray, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var pixels;
@@ -278,10 +287,11 @@ pixels[i]=data.getElem$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i
 return pixels;
 });
 
-Clazz.newMeth(C$, 'getPixels$I$I$I$I$IA$java_awt_image_DataBuffer', function (x, y, w, h, iArray, data) {
+Clazz.newMeth(C$, 'getPixels$I$I$I$I$IA$java_awt_image_DataBuffer',  function (x, y, w, h, iArray, data) {
 if ((x < 0) || (y < 0) || (x + w > this.width) || (y + h > this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
-}var pixels;
+}data.秘setDoCheckImage$Z(false);
+var pixels;
 if (iArray != null ) {
 pixels=iArray;
 } else {
@@ -298,34 +308,36 @@ pixelOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
 }
+data.秘setDoCheckImage$Z(true);
 return pixels;
 });
 
-Clazz.newMeth(C$, 'getSample$I$I$I$java_awt_image_DataBuffer', function (x, y, b, data) {
+Clazz.newMeth(C$, 'getSample$I$I$I$java_awt_image_DataBuffer',  function (x, y, b, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var sample=data.getElem$I$I(this.bankIndices[b], y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b]);
 return sample;
 });
 
-Clazz.newMeth(C$, 'getSampleFloat$I$I$I$java_awt_image_DataBuffer', function (x, y, b, data) {
+Clazz.newMeth(C$, 'getSampleFloat$I$I$I$java_awt_image_DataBuffer',  function (x, y, b, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var sample=data.getElemFloat$I$I(this.bankIndices[b], y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b]);
 return sample;
 });
 
-Clazz.newMeth(C$, 'getSampleDouble$I$I$I$java_awt_image_DataBuffer', function (x, y, b, data) {
+Clazz.newMeth(C$, 'getSampleDouble$I$I$I$java_awt_image_DataBuffer',  function (x, y, b, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var sample=data.getElemDouble$I$I(this.bankIndices[b], y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b]);
 return sample;
 });
 
-Clazz.newMeth(C$, 'getSamples$I$I$I$I$I$IA$java_awt_image_DataBuffer', function (x, y, w, h, b, iArray, data) {
+Clazz.newMeth(C$, 'getSamples$I$I$I$I$I$IA$java_awt_image_DataBuffer',  function (x, y, w, h, b, iArray, data) {
 if ((x < 0) || (y < 0) || (x + w > this.width) || (y + h > this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
-}var samples;
+}data.秘setDoCheckImage$Z(false);
+var samples;
 if (iArray != null ) {
 samples=iArray;
 } else {
@@ -340,27 +352,29 @@ sampleOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
 }
+data.秘setDoCheckImage$Z(true);
 return samples;
 });
 
-Clazz.newMeth(C$, 'setDataElements$I$I$O$java_awt_image_DataBuffer', function (x, y, obj, data) {
+Clazz.newMeth(C$, 'setDataElements$I$I$O$java_awt_image_DataBuffer',  function (x, y, obj, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
-}var type=this.getTransferType$();
+}data.秘setDoCheckImage$Z(false);
+var type=this.getTransferType$();
 var numDataElems=this.getNumDataElements$();
 var pixelOffset=y * this.scanlineStride + x * this.pixelStride;
 switch (type) {
 case 0:
 var barray=obj;
 for (var i=0; i < numDataElems; i++) {
-data.setElem$I$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i], (barray[i]) & 255);
+data.setElem$I$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i], ((barray[i]|0)) & 255);
 }
 break;
 case 1:
 case 2:
 var sarray=obj;
 for (var i=0; i < numDataElems; i++) {
-data.setElem$I$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i], (sarray[i]) & 65535);
+data.setElem$I$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i], ((sarray[i]|0)) & 65535);
 }
 break;
 case 3:
@@ -369,10 +383,23 @@ for (var i=0; i < numDataElems; i++) {
 data.setElem$I$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i], iarray[i]);
 }
 break;
+case 4:
+var farray=obj;
+for (var i=0; i < numDataElems; i++) {
+data.setElemFloat$I$I$F(this.bankIndices[i], pixelOffset + this.bandOffsets[i], farray[i]);
 }
+break;
+case 5:
+var darray=obj;
+for (var i=0; i < numDataElems; i++) {
+data.setElemDouble$I$I$D(this.bankIndices[i], pixelOffset + this.bandOffsets[i], darray[i]);
+}
+break;
+}
+data.秘setDoCheckImage$Z(true);
 });
 
-Clazz.newMeth(C$, 'setPixel$I$I$IA$java_awt_image_DataBuffer', function (x, y, iArray, data) {
+Clazz.newMeth(C$, 'setPixel$I$I$IA$java_awt_image_DataBuffer',  function (x, y, iArray, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var pixelOffset=y * this.scanlineStride + x * this.pixelStride;
@@ -381,10 +408,11 @@ data.setElem$I$I$I(this.bankIndices[i], pixelOffset + this.bandOffsets[i], iArra
 }
 });
 
-Clazz.newMeth(C$, 'setPixels$I$I$I$I$IA$java_awt_image_DataBuffer', function (x, y, w, h, iArray, data) {
+Clazz.newMeth(C$, 'setPixels$I$I$I$I$IA$java_awt_image_DataBuffer',  function (x, y, w, h, iArray, data) {
 if ((x < 0) || (y < 0) || (x + w > this.width) || (y + h > this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
-}var lineOffset=y * this.scanlineStride + x * this.pixelStride;
+}data.秘setDoCheckImage$Z(false);
+var lineOffset=y * this.scanlineStride + x * this.pixelStride;
 var srcOffset=0;
 for (var i=0; i < h; i++) {
 var pixelOffset=lineOffset;
@@ -396,27 +424,29 @@ pixelOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
 }
+data.秘setDoCheckImage$Z(true);
 });
 
-Clazz.newMeth(C$, 'setSample$I$I$I$I$java_awt_image_DataBuffer', function (x, y, b, s, data) {
+Clazz.newMeth(C$, 'setSample$I$I$I$I$java_awt_image_DataBuffer',  function (x, y, b, s, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }data.setElem$I$I$I(this.bankIndices[b], y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b], s);
 });
 
-Clazz.newMeth(C$, 'setSample$I$I$I$F$java_awt_image_DataBuffer', function (x, y, b, s, data) {
+Clazz.newMeth(C$, 'setSample$I$I$I$F$java_awt_image_DataBuffer',  function (x, y, b, s, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }data.setElemFloat$I$I$F(this.bankIndices[b], y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b], s);
 });
 
-Clazz.newMeth(C$, 'setSample$I$I$I$D$java_awt_image_DataBuffer', function (x, y, b, s, data) {
+Clazz.newMeth(C$, 'setSample$I$I$I$D$java_awt_image_DataBuffer',  function (x, y, b, s, data) {
 if ((x < 0) || (y < 0) || (x >= this.width) || (y >= this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }data.setElemDouble$I$I$D(this.bankIndices[b], y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b], s);
 });
 
-Clazz.newMeth(C$, 'setSamples$I$I$I$I$I$IA$java_awt_image_DataBuffer', function (x, y, w, h, b, iArray, data) {
+Clazz.newMeth(C$, 'setSamples$I$I$I$I$I$IA$java_awt_image_DataBuffer',  function (x, y, w, h, b, iArray, data) {
+data.秘setDoCheckImage$Z(false);
 if ((x < 0) || (y < 0) || (x + w > this.width) || (y + h > this.height)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var lineOffset=y * this.scanlineStride + x * this.pixelStride + this.bandOffsets[b];
@@ -429,16 +459,17 @@ sampleOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
 }
+data.秘setDoCheckImage$Z(true);
 });
 
-Clazz.newMeth(C$, 'equals$O', function (o) {
+Clazz.newMeth(C$, 'equals$O',  function (o) {
 if ((o == null ) || !(Clazz.instanceOf(o, "java.awt.image.ComponentSampleModel")) ) {
 return false;
 }var that=o;
 return this.width == that.width && this.height == that.height  && this.$numBands == that.$numBands  && this.dataType == that.dataType  && $I$(6).equals$IA$IA(this.bandOffsets, that.bandOffsets)  && $I$(6).equals$IA$IA(this.bankIndices, that.bankIndices)  && this.$numBands == that.$numBands  && this.numBanks == that.numBanks  && this.scanlineStride == that.scanlineStride  && this.pixelStride == that.pixelStride ;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 var hash=0;
 hash=this.width;
 hash<<=8;
@@ -468,4 +499,4 @@ return hash;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:54 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

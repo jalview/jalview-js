@@ -1,112 +1,109 @@
-(function(){var P$=Clazz.newPackage("java.util.jar"),I$=[[0,'sun.misc.ASCIICaseInsensitiveComparator','java.util.HashMap',['java.util.jar.Attributes','.Name'],'StringBuffer','java.util.jar.Manifest','sun.util.logging.PlatformLogger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Attributes", function(){
+(function(){var P$=Clazz.newPackage("java.util.jar"),I$=[[0,'sun.misc.ASCIICaseInsensitiveComparator','java.util.HashMap',['java.util.jar.Attributes','.Name'],'StringBuffer','java.util.jar.Manifest']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Attributes", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.util.Map', 'Cloneable']);
+C$.$classes$=[['Name',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.map=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['O',['map','java.util.Map']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$I.apply(this, [11]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (size) {
-C$.$init$.apply(this);
-this.map=Clazz.new_($I$(2).c$$I,[size]);
+Clazz.newMeth(C$, 'c$$I',  function (size) {
+;C$.$init$.apply(this);
+this.map=Clazz.new_($I$(2,1).c$$I,[size]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_util_jar_Attributes', function (attr) {
-C$.$init$.apply(this);
-this.map=Clazz.new_($I$(2).c$$java_util_Map,[attr]);
+Clazz.newMeth(C$, 'c$$java_util_jar_Attributes',  function (attr) {
+;C$.$init$.apply(this);
+this.map=Clazz.new_($I$(2,1).c$$java_util_Map,[attr]);
 }, 1);
 
-Clazz.newMeth(C$, 'get$O', function (name) {
+Clazz.newMeth(C$, 'get$O',  function (name) {
 return this.map.get$O(name);
 });
 
-Clazz.newMeth(C$, 'getValue$S', function (name) {
-return this.get$O(Clazz.new_($I$(3).c$$S,[name]));
+Clazz.newMeth(C$, 'getValue$S',  function (name) {
+return this.get$O(Clazz.new_($I$(3,1).c$$S,[name]));
 });
 
-Clazz.newMeth(C$, 'getValue$java_util_jar_Attributes_Name', function (name) {
+Clazz.newMeth(C$, 'getValue$java_util_jar_Attributes_Name',  function (name) {
 return this.get$O(name);
 });
 
-Clazz.newMeth(C$, ['put$O$O','put$TK$TV'], function (name, value) {
-return this.map.put$TK$TV(name, value);
+Clazz.newMeth(C$, 'put$O$O',  function (name, value) {
+return this.map.put$O$O(name, value);
 });
 
-Clazz.newMeth(C$, 'putValue$S$S', function (name, value) {
-return this.put$O$O(Clazz.new_($I$(3).c$$S,[name]), value);
+Clazz.newMeth(C$, 'putValue$S$S',  function (name, value) {
+return this.put$O$O(Clazz.new_($I$(3,1).c$$S,[name]), value);
 });
 
-Clazz.newMeth(C$, 'remove$O', function (name) {
+Clazz.newMeth(C$, 'remove$O',  function (name) {
 return this.map.remove$O(name);
 });
 
-Clazz.newMeth(C$, 'containsValue$O', function (value) {
+Clazz.newMeth(C$, 'containsValue$O',  function (value) {
 return this.map.containsValue$O(value);
 });
 
-Clazz.newMeth(C$, 'containsKey$O', function (name) {
+Clazz.newMeth(C$, 'containsKey$O',  function (name) {
 return this.map.containsKey$O(name);
 });
 
-Clazz.newMeth(C$, 'putAll$java_util_Map', function (attr) {
+Clazz.newMeth(C$, 'putAll$java_util_Map',  function (attr) {
 if (!Clazz.getClass(C$).isInstance$O(attr)) throw Clazz.new_(Clazz.load('ClassCastException'));
 for (var me, $me = (attr).entrySet$().iterator$(); $me.hasNext$()&&((me=($me.next$())),1);) this.put$O$O(me.getKey$(), me.getValue$());
 
 });
 
-Clazz.newMeth(C$, 'clear$', function () {
+Clazz.newMeth(C$, 'clear$',  function () {
 this.map.clear$();
 });
 
-Clazz.newMeth(C$, 'size$', function () {
+Clazz.newMeth(C$, 'size$',  function () {
 return this.map.size$();
 });
 
-Clazz.newMeth(C$, 'isEmpty$', function () {
+Clazz.newMeth(C$, 'isEmpty$',  function () {
 return this.map.isEmpty$();
 });
 
-Clazz.newMeth(C$, 'keySet$', function () {
+Clazz.newMeth(C$, 'keySet$',  function () {
 return this.map.keySet$();
 });
 
-Clazz.newMeth(C$, 'values$', function () {
+Clazz.newMeth(C$, 'values$',  function () {
 return this.map.values$();
 });
 
-Clazz.newMeth(C$, 'entrySet$', function () {
+Clazz.newMeth(C$, 'entrySet$',  function () {
 return this.map.entrySet$();
 });
 
-Clazz.newMeth(C$, 'equals$O', function (o) {
+Clazz.newMeth(C$, 'equals$O',  function (o) {
 return this.map.equals$O(o);
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 return this.map.hashCode$();
 });
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 return Clazz.new_(C$.c$$java_util_jar_Attributes,[this]);
 });
 
-Clazz.newMeth(C$, 'write$java_io_DataOutputStream', function (os) {
+Clazz.newMeth(C$, 'write$java_io_DataOutputStream',  function (os) {
 var it=this.entrySet$().iterator$();
 while (it.hasNext$()){
 var e=it.next$();
-var buffer=Clazz.new_($I$(4).c$$S,[(e.getKey$()).toString()]);
+var buffer=Clazz.new_([(e.getKey$()).toString()],$I$(4,1).c$$S);
 buffer.append$S(": ");
 var value=e.getValue$();
 if (value != null ) {
@@ -120,7 +117,7 @@ os.writeBytes$S(buffer.toString());
 os.writeBytes$S("\r\n");
 });
 
-Clazz.newMeth(C$, 'writeMain$java_io_DataOutputStream', function (out) {
+Clazz.newMeth(C$, 'writeMain$java_io_DataOutputStream',  function (out) {
 var vername=$I$(3).MANIFEST_VERSION.toString();
 var version=this.getValue$S(vername);
 if (version == null ) {
@@ -133,7 +130,7 @@ while (it.hasNext$()){
 var e=it.next$();
 var name=(e.getKey$()).toString();
 if ((version != null ) && !(name.equalsIgnoreCase$S(vername)) ) {
-var buffer=Clazz.new_($I$(4).c$$S,[name]);
+var buffer=Clazz.new_($I$(4,1).c$$S,[name]);
 buffer.append$S(": ");
 var value=e.getValue$();
 if (value != null ) {
@@ -147,7 +144,7 @@ out.writeBytes$S(buffer.toString());
 out.writeBytes$S("\r\n");
 });
 
-Clazz.newMeth(C$, 'read$java_util_jar_Manifest_FastInputStream$BA', function (is, lbuf) {
+Clazz.newMeth(C$, 'read$java_util_jar_Manifest_FastInputStream$BA',  function (is, lbuf) {
 var name=null;
 var value=null;
 var lastline=null;
@@ -188,7 +185,7 @@ continue;
 }value= String.instantialize(lbuf, i, len - i, "UTF8");
 }try {
 if ((this.putValue$S$S(name, value) != null ) && (!lineContinued) ) {
-$I$(6).getLogger$S("java.util.jar").warning$S("Duplicate name in Manifest: " + name + ".\n" + "Ensure that the manifest does not " + "have duplicate entries, and\n" + "that blank lines separate " + "individual sections in both your\n" + "manifest and in the META-INF/MANIFEST.MF " + "entry in the jar file." );
+System.out.println$S("java.util.jarDuplicate name in Manifest: " + name + ".\n" + "Ensure that the manifest does not " + "have duplicate entries, and\n" + "that blank lines separate " + "individual sections in both your\n" + "manifest and in the META-INF/MANIFEST.MF " + "entry in the jar file." );
 }} catch (e) {
 if (Clazz.exceptionOf(e,"IllegalArgumentException")){
 throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["invalid header field name: " + name]);
@@ -199,28 +196,70 @@ throw e;
 }
 });
 ;
-(function(){var C$=Clazz.newClass(P$.Attributes, "Name", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Attributes, "Name", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
-C$.MANIFEST_VERSION=null;
-C$.SIGNATURE_VERSION=null;
-C$.CONTENT_TYPE=null;
-C$.CLASS_PATH=null;
-C$.MAIN_CLASS=null;
-C$.SEALED=null;
-C$.EXTENSION_LIST=null;
-C$.EXTENSION_NAME=null;
-C$.EXTENSION_INSTALLATION=null;
-C$.IMPLEMENTATION_TITLE=null;
-C$.IMPLEMENTATION_VERSION=null;
-C$.IMPLEMENTATION_VENDOR=null;
-C$.IMPLEMENTATION_VENDOR_ID=null;
-C$.IMPLEMENTATION_URL=null;
-C$.SPECIFICATION_TITLE=null;
-C$.SPECIFICATION_VERSION=null;
-C$.SPECIFICATION_VENDOR=null;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+this.hashCode=-1;
+},1);
+
+C$.$fields$=[['I',['hashCode'],'S',['name']]
+,['O',['MANIFEST_VERSION','java.util.jar.Attributes.Name','+SIGNATURE_VERSION','+CONTENT_TYPE','+CLASS_PATH','+MAIN_CLASS','+SEALED','+EXTENSION_LIST','+EXTENSION_NAME','+EXTENSION_INSTALLATION','+IMPLEMENTATION_TITLE','+IMPLEMENTATION_VERSION','+IMPLEMENTATION_VENDOR','+IMPLEMENTATION_VENDOR_ID','+IMPLEMENTATION_URL','+SPECIFICATION_TITLE','+SPECIFICATION_VERSION','+SPECIFICATION_VENDOR']]]
+
+Clazz.newMeth(C$, 'c$$S',  function (name) {
+;C$.$init$.apply(this);
+if (name == null ) {
+throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["name"]);
+}if (!C$.isValid$S(name)) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[name]);
+}this.name=name.intern$();
+}, 1);
+
+Clazz.newMeth(C$, 'isValid$S',  function (name) {
+var len=name.length$();
+if (len > 70 || len == 0 ) {
+return false;
+}for (var i=0; i < len; i++) {
+if (!C$.isValid$C(name.charAt$I(i))) {
+return false;
+}}
+return true;
+}, 1);
+
+Clazz.newMeth(C$, 'isValid$C',  function (c) {
+return C$.isAlpha$C(c) || C$.isDigit$C(c) || c == "_"   || c == "-" ;
+}, 1);
+
+Clazz.newMeth(C$, 'isAlpha$C',  function (c) {
+return (c >= "a" && c <= "z" ) || (c >= "A" && c <= "Z" ) ;
+}, 1);
+
+Clazz.newMeth(C$, 'isDigit$C',  function (c) {
+return c >= "0" && c <= "9" ;
+}, 1);
+
+Clazz.newMeth(C$, 'equals$O',  function (o) {
+if (Clazz.instanceOf(o, "java.util.jar.Attributes.Name")) {
+var c=$I$(1).CASE_INSENSITIVE_ORDER;
+return c.compare$O$O(this.name, (o).name) == 0;
+} else {
+return false;
+}});
+
+Clazz.newMeth(C$, 'hashCode$',  function () {
+if (this.hashCode == -1) {
+this.hashCode=$I$(1).lowerCaseHashCode$S(this.name);
+}return this.hashCode;
+});
+
+Clazz.newMeth(C$, 'toString',  function () {
+return this.name;
+});
+
+C$.$static$=function(){C$.$static$=0;
 C$.MANIFEST_VERSION=Clazz.new_(C$.c$$S,["Manifest-Version"]);
 C$.SIGNATURE_VERSION=Clazz.new_(C$.c$$S,["Signature-Version"]);
 C$.CONTENT_TYPE=Clazz.new_(C$.c$$S,["Content-Type"]);
@@ -238,69 +277,9 @@ C$.IMPLEMENTATION_URL=Clazz.new_(C$.c$$S,["Implementation-URL"]);
 C$.SPECIFICATION_TITLE=Clazz.new_(C$.c$$S,["Specification-Title"]);
 C$.SPECIFICATION_VERSION=Clazz.new_(C$.c$$S,["Specification-Version"]);
 C$.SPECIFICATION_VENDOR=Clazz.new_(C$.c$$S,["Specification-Vendor"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.hashCode=0;
-}, 1);
-
-Clazz.newMeth(C$, '$init$', function () {
-this.hashCode=-1;
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.$init$.apply(this);
-if (name == null ) {
-throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["name"]);
-}if (!C$.isValid$S(name)) {
-throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[name]);
-}this.name=name.intern$();
-}, 1);
-
-Clazz.newMeth(C$, 'isValid$S', function (name) {
-var len=name.length$();
-if (len > 70 || len == 0 ) {
-return false;
-}for (var i=0; i < len; i++) {
-if (!C$.isValid$C(name.charAt$I(i))) {
-return false;
-}}
-return true;
-}, 1);
-
-Clazz.newMeth(C$, 'isValid$C', function (c) {
-return C$.isAlpha$C(c) || C$.isDigit$C(c) || c == "_"   || c == "-" ;
-}, 1);
-
-Clazz.newMeth(C$, 'isAlpha$C', function (c) {
-return (c >= "a" && c <= "z" ) || (c >= "A" && c <= "Z" ) ;
-}, 1);
-
-Clazz.newMeth(C$, 'isDigit$C', function (c) {
-return c >= "0" && c <= "9" ;
-}, 1);
-
-Clazz.newMeth(C$, 'equals$O', function (o) {
-if (Clazz.instanceOf(o, "java.util.jar.Attributes.Name")) {
-var c=$I$(1).CASE_INSENSITIVE_ORDER;
-return c.compare$(this.name, (o).name) == 0;
-} else {
-return false;
-}});
-
-Clazz.newMeth(C$, 'hashCode$', function () {
-if (this.hashCode == -1) {
-this.hashCode=$I$(1).lowerCaseHashCode$S(this.name);
-}return this.hashCode;
-});
-
-Clazz.newMeth(C$, 'toString', function () {
-return this.name;
-});
+};
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:19 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

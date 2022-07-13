@@ -1,43 +1,31 @@
 (function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[];
-var C$=Clazz.newClass(P$, "Bits");
-C$.upper=null;
-C$.lower=null;
-C$.title=null;
-C$.currency=null;
-C$.decimal_digit=null;
-C$.math=null;
-C$.letter=null;
-C$.white=null;
-C$.punct=null;
+/*c*/var C$=Clazz.newClass(P$, "Bits");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.carray=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$CA', function (carray) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['carray','char[]']]
+,['O',['upper','com.stevesoft.pat.Bits','+lower','+title','+currency','+decimal_digit','+math','+letter','+white','+punct']]]
+
+Clazz.newMeth(C$, 'c$$CA',  function (carray) {
+;C$.$init$.apply(this);
 this.carray=carray;
 }, 1);
 
-Clazz.newMeth(C$, 'get$I', function (i) {
+Clazz.newMeth(C$, 'get$I',  function (i) {
 return (((this.carray[i >> 4]).$c()) & (1 << (i & 15))) != 0;
 });
 
-Clazz.newMeth(C$, 'set$I$Z', function (i, b) {
+Clazz.newMeth(C$, 'set$I$Z',  function (i, b) {
 if (b) {
 this.carray[$k$=i >> 4] = String.fromCharCode((this.carray[$k$]).$c()| (1 << (i & 15)));
 } else {
 this.carray[$k$=i >> 4] = String.fromCharCode((this.carray[$k$]).$c()& (String.fromCharCode(~(1 << (i & 15)))));
 }});
 
-Clazz.newMeth(C$, 'upper_f$', function () {
+Clazz.newMeth(C$, 'upper_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.upper=Clazz.new_(C$.c$$CA,[data]);
 data[4]="\ufffe";
@@ -152,7 +140,7 @@ data[4157]="\u541c";
 data[4158]="U";
 }, 1);
 
-Clazz.newMeth(C$, 'lower_f$', function () {
+Clazz.newMeth(C$, 'lower_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.lower=Clazz.new_(C$.c$$CA,[data]);
 data[6]="\ufffe";
@@ -292,7 +280,7 @@ data[4157]="c";
 data[4158]="\u00a8";
 }, 1);
 
-Clazz.newMeth(C$, 'title_f$', function () {
+Clazz.newMeth(C$, 'title_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.title=Clazz.new_(C$.c$$CA,[data]);
 data[6]="\ufffe";
@@ -432,7 +420,7 @@ data[4157]="c";
 data[4158]="\u00a8";
 }, 1);
 
-Clazz.newMeth(C$, 'currency_f$', function () {
+Clazz.newMeth(C$, 'currency_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.currency=Clazz.new_(C$.c$$CA,[data]);
 data[2]="\u0010";
@@ -447,7 +435,7 @@ data[4098]="\u0010";
 data[4106]="<";
 }, 1);
 
-Clazz.newMeth(C$, 'decimal_digit_f$', function () {
+Clazz.newMeth(C$, 'decimal_digit_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.decimal_digit=Clazz.new_(C$.c$$CA,[data]);
 data[3]="\u03ff";
@@ -469,7 +457,7 @@ data[4081]="\u03ff";
 data[4099]="\u03ff";
 }, 1);
 
-Clazz.newMeth(C$, 'math_f$', function () {
+Clazz.newMeth(C$, 'math_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.math=Clazz.new_(C$.c$$CA,[data]);
 data[2]="\u0800";
@@ -517,7 +505,7 @@ data[4109]="\u0080";
 data[4111]="\u0080";
 }, 1);
 
-Clazz.newMeth(C$, 'letter_f$', function () {
+Clazz.newMeth(C$, 'letter_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.letter=Clazz.new_(C$.c$$CA,[data]);
 data[4]="\ufffe";
@@ -2887,7 +2875,7 @@ data[4157]="\u547f";
 data[4158]="\u00fd";
 }, 1);
 
-Clazz.newMeth(C$, 'white_f$', function () {
+Clazz.newMeth(C$, 'white_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.white=Clazz.new_(C$.c$$CA,[data]);
 data[0]="\u3e00";
@@ -2901,7 +2889,7 @@ data[4097]="\uf000";
 data[4098]="\u0001";
 }, 1);
 
-Clazz.newMeth(C$, 'punct_f$', function () {
+Clazz.newMeth(C$, 'punct_f$',  function () {
 var data=Clazz.array(Character.TYPE, [4159]);
 C$.punct=Clazz.new_(C$.c$$CA,[data]);
 data[2]="\uf7ee";
@@ -2968,4 +2956,4 @@ var $k$;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:23 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

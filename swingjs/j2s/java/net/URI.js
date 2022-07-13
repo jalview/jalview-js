@@ -1,109 +1,10 @@
-(function(){var P$=Clazz.newPackage("java.net"),p$1={},p$2={},I$=[[0,'java.net.URI',['java.net.URI','.Parser'],'java.net.URL','StringBuffer','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "URI", function(){
+(function(){var P$=Clazz.newPackage("java.net"),p$1={},p$2={},I$=[[0,'java.net.URI',['java.net.URI','.Parser'],'java.net.URL','StringBuffer','InternalError']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "URI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['Comparable', 'java.io.Serializable']);
-C$.L_DIGIT=0;
-C$.H_UPALPHA=0;
-C$.H_LOWALPHA=0;
-C$.H_ALPHA=0;
-C$.L_ALPHANUM=0;
-C$.H_ALPHANUM=0;
-C$.L_HEX=0;
-C$.H_HEX=0;
-C$.L_MARK=0;
-C$.H_MARK=0;
-C$.L_UNRESERVED=0;
-C$.H_UNRESERVED=0;
-C$.L_RESERVED=0;
-C$.H_RESERVED=0;
-C$.L_URIC=0;
-C$.H_URIC=0;
-C$.L_PCHAR=0;
-C$.H_PCHAR=0;
-C$.L_PATH=0;
-C$.H_PATH=0;
-C$.L_DASH=0;
-C$.H_DASH=0;
-C$.L_DOT=0;
-C$.H_DOT=0;
-C$.L_USERINFO=0;
-C$.H_USERINFO=0;
-C$.L_REG_NAME=0;
-C$.H_REG_NAME=0;
-C$.L_SERVER=0;
-C$.H_SERVER=0;
-C$.L_SERVER_PERCENT=0;
-C$.H_SERVER_PERCENT=0;
-C$.L_LEFT_BRACKET=0;
-C$.H_LEFT_BRACKET=0;
-C$.L_SCHEME=0;
-C$.H_SCHEME=0;
-C$.L_URIC_NO_SLASH=0;
-C$.H_URIC_NO_SLASH=0;
-C$.hexDigits=null;
+C$.$classes$=[['Parser',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.L_DIGIT=C$.lowMask$C$C("0", "9");
-C$.H_UPALPHA=C$.highMask$C$C("A", "Z");
-C$.H_LOWALPHA=C$.highMask$C$C("a", "z");
-C$.H_ALPHA=C$.H_LOWALPHA | C$.H_UPALPHA;
-C$.L_ALPHANUM=C$.L_DIGIT | 0;
-C$.H_ALPHANUM=0 | C$.H_ALPHA;
-C$.L_HEX=C$.L_DIGIT;
-C$.H_HEX=C$.highMask$C$C("A", "F") | C$.highMask$C$C("a", "f");
-C$.L_MARK=C$.lowMask$S("-_.!~*\'()");
-C$.H_MARK=C$.highMask$S("-_.!~*\'()");
-C$.L_UNRESERVED=C$.L_ALPHANUM | C$.L_MARK;
-C$.H_UNRESERVED=C$.H_ALPHANUM | C$.H_MARK;
-C$.L_RESERVED=C$.lowMask$S(";/?:@&=+$,[]");
-C$.H_RESERVED=C$.highMask$S(";/?:@&=+$,[]");
-C$.L_URIC=C$.L_RESERVED | C$.L_UNRESERVED | 1 ;
-C$.H_URIC=C$.H_RESERVED | C$.H_UNRESERVED | 0 ;
-C$.L_PCHAR=C$.L_UNRESERVED | 1 | C$.lowMask$S(":@&=+$,") ;
-C$.H_PCHAR=C$.H_UNRESERVED | 0 | C$.highMask$S(":@&=+$,") ;
-C$.L_PATH=C$.L_PCHAR | C$.lowMask$S(";/");
-C$.H_PATH=C$.H_PCHAR | C$.highMask$S(";/");
-C$.L_DASH=C$.lowMask$S("-");
-C$.H_DASH=C$.highMask$S("-");
-C$.L_DOT=C$.lowMask$S(".");
-C$.H_DOT=C$.highMask$S(".");
-C$.L_USERINFO=C$.L_UNRESERVED | 1 | C$.lowMask$S(";:&=+$,") ;
-C$.H_USERINFO=C$.H_UNRESERVED | 0 | C$.highMask$S(";:&=+$,") ;
-C$.L_REG_NAME=C$.L_UNRESERVED | 1 | C$.lowMask$S("$,;:@&=+") ;
-C$.H_REG_NAME=C$.H_UNRESERVED | 0 | C$.highMask$S("$,;:@&=+") ;
-C$.L_SERVER=C$.L_USERINFO | C$.L_ALPHANUM | C$.L_DASH | C$.lowMask$S(".:@[]") ;
-C$.H_SERVER=C$.H_USERINFO | C$.H_ALPHANUM | C$.H_DASH | C$.highMask$S(".:@[]") ;
-C$.L_SERVER_PERCENT=C$.L_SERVER | C$.lowMask$S("%");
-C$.H_SERVER_PERCENT=C$.H_SERVER | C$.highMask$S("%");
-C$.L_LEFT_BRACKET=C$.lowMask$S("[");
-C$.H_LEFT_BRACKET=C$.highMask$S("[");
-C$.L_SCHEME=0 | C$.L_DIGIT | C$.lowMask$S("+-.") ;
-C$.H_SCHEME=C$.H_ALPHA | 0 | C$.highMask$S("+-.") ;
-C$.L_URIC_NO_SLASH=C$.L_UNRESERVED | 1 | C$.lowMask$S(";?:@&=+$,") ;
-C$.H_URIC_NO_SLASH=C$.H_UNRESERVED | 0 | C$.highMask$S(";?:@&=+$,") ;
-C$.hexDigits=Clazz.array(Character.TYPE, -1, ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.scheme=null;
-this.fragment=null;
-this.authority=null;
-this.userInfo=null;
-this.host=null;
-this.port=0;
-this.path=null;
-this.query=null;
-this.schemeSpecificPart=null;
-this.hash=0;
-this.decodedUserInfo=null;
-this.decodedAuthority=null;
-this.decodedPath=null;
-this.decodedQuery=null;
-this.decodedFragment=null;
-this.decodedSchemeSpecificPart=null;
-this.string=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.port=-1;
@@ -113,41 +14,44 @@ this.decodedPath=null;
 this.decodedQuery=null;
 this.decodedFragment=null;
 this.decodedSchemeSpecificPart=null;
+},1);
+
+C$.$fields$=[['I',['port','hash'],'S',['scheme','fragment','authority','userInfo','host','path','query','schemeSpecificPart','decodedUserInfo','decodedAuthority','decodedPath','decodedQuery','decodedFragment','decodedSchemeSpecificPart','string'],'O',['秘bytes','byte[]']]
+,['J',['L_DIGIT','H_UPALPHA','H_LOWALPHA','H_ALPHA','L_ALPHANUM','H_ALPHANUM','L_HEX','H_HEX','L_MARK','H_MARK','L_UNRESERVED','H_UNRESERVED','L_RESERVED','H_RESERVED','L_URIC','H_URIC','L_PCHAR','H_PCHAR','L_PATH','H_PATH','L_DASH','H_DASH','L_DOT','H_DOT','L_USERINFO','H_USERINFO','L_REG_NAME','H_REG_NAME','L_SERVER','H_SERVER','L_SERVER_PERCENT','H_SERVER_PERCENT','L_LEFT_BRACKET','H_LEFT_BRACKET','L_SCHEME','H_SCHEME','L_URIC_NO_SLASH','H_URIC_NO_SLASH'],'O',['hexDigits','char[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S',  function (str) {
+;C$.$init$.apply(this);
+Clazz.new_($I$(2,1).c$$S,[this, null, str]).parse$Z(false);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (str) {
-C$.$init$.apply(this);
-Clazz.new_($I$(2).c$$S, [this, null, str]).parse$Z(false);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S$S$S$I$S$S$S', function (scheme, userInfo, host, port, path, query, fragment) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$S$S$I$S$S$S',  function (scheme, userInfo, host, port, path, query, fragment) {
+;C$.$init$.apply(this);
 var s=p$2.toString$S$S$S$S$S$I$S$S$S.apply(this, [scheme, null, null, userInfo, host, port, path, query, fragment]);
 C$.checkPath$S$S$S(s, scheme, path);
-Clazz.new_($I$(2).c$$S, [this, null, s]).parse$Z(true);
+Clazz.new_($I$(2,1).c$$S,[this, null, s]).parse$Z(true);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$S$S$S$S', function (scheme, authority, path, query, fragment) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$S$S$S$S',  function (scheme, authority, path, query, fragment) {
+;C$.$init$.apply(this);
 var s=p$2.toString$S$S$S$S$S$I$S$S$S.apply(this, [scheme, null, authority, null, null, -1, path, query, fragment]);
 C$.checkPath$S$S$S(s, scheme, path);
-Clazz.new_($I$(2).c$$S, [this, null, s]).parse$Z(false);
+Clazz.new_($I$(2,1).c$$S,[this, null, s]).parse$Z(false);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$S$S$S', function (scheme, host, path, fragment) {
+Clazz.newMeth(C$, 'c$$S$S$S$S',  function (scheme, host, path, fragment) {
 C$.c$$S$S$S$I$S$S$S.apply(this, [scheme, null, host, -1, path, null, fragment]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$S$S', function (scheme, ssp, fragment) {
-C$.$init$.apply(this);
-Clazz.new_($I$(2).c$$S, [this, null, p$2.toString$S$S$S$S$S$I$S$S$S.apply(this, [scheme, ssp, null, null, null, -1, null, null, fragment])]).parse$Z(false);
+Clazz.newMeth(C$, 'c$$S$S$S',  function (scheme, ssp, fragment) {
+;C$.$init$.apply(this);
+Clazz.new_([this, null, p$2.toString$S$S$S$S$S$I$S$S$S.apply(this, [scheme, ssp, null, null, null, -1, null, null, fragment])],$I$(2,1).c$$S).parse$Z(false);
 }, 1);
 
-Clazz.newMeth(C$, 'create$S', function (str) {
+Clazz.newMeth(C$, 'create$S',  function (str) {
 try {
 return Clazz.new_(C$.c$$S,[str]);
 } catch (x) {
@@ -161,110 +65,110 @@ throw x;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'parseServerAuthority$', function () {
+Clazz.newMeth(C$, 'parseServerAuthority$',  function () {
 if ((this.host != null ) || (this.authority == null ) ) return this;
 p$2.defineString.apply(this, []);
-Clazz.new_($I$(2).c$$S, [this, null, this.string]).parse$Z(true);
+Clazz.new_($I$(2,1).c$$S,[this, null, this.string]).parse$Z(true);
 return this;
 });
 
-Clazz.newMeth(C$, 'normalize$', function () {
+Clazz.newMeth(C$, 'normalize$',  function () {
 return C$.normalize$java_net_URI(this);
 });
 
-Clazz.newMeth(C$, 'resolve$java_net_URI', function (uri) {
+Clazz.newMeth(C$, 'resolve$java_net_URI',  function (uri) {
 return C$.resolve$java_net_URI$java_net_URI(this, uri);
 });
 
-Clazz.newMeth(C$, 'resolve$S', function (str) {
+Clazz.newMeth(C$, 'resolve$S',  function (str) {
 return this.resolve$java_net_URI(C$.create$S(str));
 });
 
-Clazz.newMeth(C$, 'relativize$java_net_URI', function (uri) {
+Clazz.newMeth(C$, 'relativize$java_net_URI',  function (uri) {
 return C$.relativize$java_net_URI$java_net_URI(this, uri);
 });
 
-Clazz.newMeth(C$, 'toURL$', function () {
+Clazz.newMeth(C$, 'toURL$',  function () {
 if (!this.isAbsolute$()) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["URI is not absolute"]);
-return Clazz.new_($I$(3).c$$S,[this.toString()]);
+return Clazz.new_([this.toString()],$I$(3,1).c$$S);
 });
 
-Clazz.newMeth(C$, 'getScheme$', function () {
+Clazz.newMeth(C$, 'getScheme$',  function () {
 return this.scheme;
 });
 
-Clazz.newMeth(C$, 'isAbsolute$', function () {
+Clazz.newMeth(C$, 'isAbsolute$',  function () {
 return this.scheme != null ;
 });
 
-Clazz.newMeth(C$, 'isOpaque$', function () {
+Clazz.newMeth(C$, 'isOpaque$',  function () {
 return this.path == null ;
 });
 
-Clazz.newMeth(C$, 'getRawSchemeSpecificPart$', function () {
+Clazz.newMeth(C$, 'getRawSchemeSpecificPart$',  function () {
 p$2.defineSchemeSpecificPart.apply(this, []);
 return this.schemeSpecificPart;
 });
 
-Clazz.newMeth(C$, 'getSchemeSpecificPart$', function () {
+Clazz.newMeth(C$, 'getSchemeSpecificPart$',  function () {
 if (this.decodedSchemeSpecificPart == null ) this.decodedSchemeSpecificPart=C$.decode$S(this.getRawSchemeSpecificPart$());
 return this.decodedSchemeSpecificPart;
 });
 
-Clazz.newMeth(C$, 'getRawAuthority$', function () {
+Clazz.newMeth(C$, 'getRawAuthority$',  function () {
 return this.authority;
 });
 
-Clazz.newMeth(C$, 'getAuthority$', function () {
+Clazz.newMeth(C$, 'getAuthority$',  function () {
 if (this.decodedAuthority == null ) this.decodedAuthority=C$.decode$S(this.authority);
 return this.decodedAuthority;
 });
 
-Clazz.newMeth(C$, 'getRawUserInfo$', function () {
+Clazz.newMeth(C$, 'getRawUserInfo$',  function () {
 return this.userInfo;
 });
 
-Clazz.newMeth(C$, 'getUserInfo$', function () {
+Clazz.newMeth(C$, 'getUserInfo$',  function () {
 if ((this.decodedUserInfo == null ) && (this.userInfo != null ) ) this.decodedUserInfo=C$.decode$S(this.userInfo);
 return this.decodedUserInfo;
 });
 
-Clazz.newMeth(C$, 'getHost$', function () {
+Clazz.newMeth(C$, 'getHost$',  function () {
 return this.host;
 });
 
-Clazz.newMeth(C$, 'getPort$', function () {
+Clazz.newMeth(C$, 'getPort$',  function () {
 return this.port;
 });
 
-Clazz.newMeth(C$, 'getRawPath$', function () {
+Clazz.newMeth(C$, 'getRawPath$',  function () {
 return this.path;
 });
 
-Clazz.newMeth(C$, 'getPath$', function () {
+Clazz.newMeth(C$, 'getPath$',  function () {
 if ((this.decodedPath == null ) && (this.path != null ) ) this.decodedPath=C$.decode$S(this.path);
 return this.decodedPath;
 });
 
-Clazz.newMeth(C$, 'getRawQuery$', function () {
+Clazz.newMeth(C$, 'getRawQuery$',  function () {
 return this.query;
 });
 
-Clazz.newMeth(C$, 'getQuery$', function () {
+Clazz.newMeth(C$, 'getQuery$',  function () {
 if ((this.decodedQuery == null ) && (this.query != null ) ) this.decodedQuery=C$.decode$S(this.query);
 return this.decodedQuery;
 });
 
-Clazz.newMeth(C$, 'getRawFragment$', function () {
+Clazz.newMeth(C$, 'getRawFragment$',  function () {
 return this.fragment;
 });
 
-Clazz.newMeth(C$, 'getFragment$', function () {
+Clazz.newMeth(C$, 'getFragment$',  function () {
 if ((this.decodedFragment == null ) && (this.fragment != null ) ) this.decodedFragment=C$.decode$S(this.fragment);
 return this.decodedFragment;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (ob) {
+Clazz.newMeth(C$, 'equals$O',  function (ob) {
 if (ob === this ) return true;
 if (!(Clazz.instanceOf(ob, "java.net.URI"))) return false;
 var that=ob;
@@ -286,7 +190,7 @@ return false;
 }return true;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 if (this.hash != 0) return this.hash;
 var h=C$.hashIgnoringCase$I$S(0, this.scheme);
 h=C$.hash$I$S(h, this.fragment);
@@ -305,14 +209,14 @@ h=C$.hash$I$S(h, this.authority);
 return h;
 });
 
-Clazz.newMeth(C$, ['compareTo$java_net_URI','compareTo$','compareTo$TT'], function (that) {
+Clazz.newMeth(C$, ['compareTo$java_net_URI','compareTo$O'],  function (that) {
 var c;
 if ((c=C$.compareIgnoringCase$S$S(this.scheme, that.scheme)) != 0) return c;
 if (this.isOpaque$()) {
 if (that.isOpaque$()) {
 if ((c=C$.compare$S$S(this.schemeSpecificPart, that.schemeSpecificPart)) != 0) return c;
 return C$.compare$S$S(this.fragment, that.fragment);
-}return +1;
+}return 1;
 } else if (that.isOpaque$()) {
 return -1;
 }if ((this.host != null ) && (that.host != null ) ) {
@@ -326,26 +230,26 @@ if ((c=C$.compare$S$S(this.query, that.query)) != 0) return c;
 return C$.compare$S$S(this.fragment, that.fragment);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 p$2.defineString.apply(this, []);
 return this.string;
 });
 
-Clazz.newMeth(C$, 'toASCIIString$', function () {
+Clazz.newMeth(C$, 'toASCIIString$',  function () {
 p$2.defineString.apply(this, []);
 return C$.encode$S(this.string);
 });
 
-Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (os) {
+Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream',  function (os) {
 p$2.defineString.apply(this, []);
 os.defaultWriteObject$();
 }, p$2);
 
-Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (is) {
+Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream',  function (is) {
 this.port=-1;
 is.defaultReadObject$();
 try {
-Clazz.new_($I$(2).c$$S, [this, null, this.string]).parse$Z(false);
+Clazz.new_($I$(2,1).c$$S,[this, null, this.string]).parse$Z(false);
 } catch (x) {
 if (Clazz.exceptionOf(x,"java.net.URISyntaxException")){
 var y=Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,["Invalid URI"]);
@@ -357,12 +261,12 @@ throw x;
 }
 }, p$2);
 
-Clazz.newMeth(C$, 'toLower$C', function (c) {
+Clazz.newMeth(C$, 'toLower$C',  function (c) {
 if ((c >= "A") && (c <= "Z") ) return c.$c() + (32);
 return c.$c();
 }, 1);
 
-Clazz.newMeth(C$, 'equal$S$S', function (s, t) {
+Clazz.newMeth(C$, 'equal$S$S',  function (s, t) {
 if (s == t) return true;
 if ((s != null ) && (t != null ) ) {
 if (s.length$() != t.length$()) return false;
@@ -373,19 +277,19 @@ var c=s.charAt$I(i);
 var d=t.charAt$I(i);
 if (c != "%") {
 if (c != d) return false;
-i++;
+++i;
 continue;
-}i++;
+}++i;
 if (C$.toLower$C(s.charAt$I(i)) != C$.toLower$C(t.charAt$I(i))) return false;
-i++;
+++i;
 if (C$.toLower$C(s.charAt$I(i)) != C$.toLower$C(t.charAt$I(i))) return false;
-i++;
+++i;
 }
 return true;
 }return false;
 }, 1);
 
-Clazz.newMeth(C$, 'equalIgnoringCase$S$S', function (s, t) {
+Clazz.newMeth(C$, 'equalIgnoringCase$S$S',  function (s, t) {
 if (s == t) return true;
 if ((s != null ) && (t != null ) ) {
 var n=s.length$();
@@ -397,12 +301,12 @@ return true;
 }return false;
 }, 1);
 
-Clazz.newMeth(C$, 'hash$I$S', function (hash, s) {
+Clazz.newMeth(C$, 'hash$I$S',  function (hash, s) {
 if (s == null ) return hash;
 return hash * 127 + s.hashCode$();
 }, 1);
 
-Clazz.newMeth(C$, 'hashIgnoringCase$I$S', function (hash, s) {
+Clazz.newMeth(C$, 'hashIgnoringCase$I$S',  function (hash, s) {
 if (s == null ) return hash;
 var h=hash;
 var n=s.length$();
@@ -411,16 +315,16 @@ for (var i=0; i < n; i++) h=31 * h + C$.toLower$C(s.charAt$I(i));
 return h;
 }, 1);
 
-Clazz.newMeth(C$, 'compare$S$S', function (s, t) {
+Clazz.newMeth(C$, 'compare$S$S',  function (s, t) {
 if (s == t) return 0;
 if (s != null ) {
 if (t != null ) return s.compareTo$S(t);
- else return +1;
+ else return 1;
 } else {
 return -1;
 }}, 1);
 
-Clazz.newMeth(C$, 'compareIgnoringCase$S$S', function (s, t) {
+Clazz.newMeth(C$, 'compareIgnoringCase$S$S',  function (s, t) {
 if (s == t) return 0;
 if (s != null ) {
 if (t != null ) {
@@ -432,17 +336,17 @@ var c=C$.toLower$C(s.charAt$I(i)) - C$.toLower$C(t.charAt$I(i));
 if (c != 0) return c;
 }
 return sn - tn;
-}return +1;
+}return 1;
 } else {
 return -1;
 }}, 1);
 
-Clazz.newMeth(C$, 'checkPath$S$S$S', function (s, scheme, path) {
+Clazz.newMeth(C$, 'checkPath$S$S$S',  function (s, scheme, path) {
 if (scheme != null ) {
 if ((path != null ) && ((path.length$() > 0) && (path.charAt$I(0) != "/") ) ) throw Clazz.new_(Clazz.load('java.net.URISyntaxException').c$$S$S,[s, "Relative path in absolute URI"]);
 }}, 1);
 
-Clazz.newMeth(C$, 'appendAuthority$StringBuffer$S$S$S$I', function (sb, authority, userInfo, host, port) {
+Clazz.newMeth(C$, 'appendAuthority$StringBuffer$S$S$S$I',  function (sb, authority, userInfo, host, port) {
 if (host != null ) {
 sb.append$S("//");
 if (userInfo != null ) {
@@ -469,12 +373,12 @@ doquote="";
 dontquote=authority.substring$I$I(0, end + 1);
 doquote=authority.substring$I(end + 1);
 }sb.append$S(dontquote);
-sb.append$S(C$.quote$S$J$J(doquote, C$.L_REG_NAME | C$.L_SERVER, C$.H_REG_NAME | C$.H_SERVER));
+sb.append$S(C$.quote$S$J$J(doquote, Long.$or(C$.L_REG_NAME,C$.L_SERVER), Long.$or(C$.H_REG_NAME,C$.H_SERVER)));
 }} else {
-sb.append$S(C$.quote$S$J$J(authority, C$.L_REG_NAME | C$.L_SERVER, C$.H_REG_NAME | C$.H_SERVER));
+sb.append$S(C$.quote$S$J$J(authority, Long.$or(C$.L_REG_NAME,C$.L_SERVER), Long.$or(C$.H_REG_NAME,C$.H_SERVER)));
 }}}, p$2);
 
-Clazz.newMeth(C$, 'appendSchemeSpecificPart$StringBuffer$S$S$S$S$I$S$S', function (sb, opaquePart, authority, userInfo, host, port, path, query) {
+Clazz.newMeth(C$, 'appendSchemeSpecificPart$StringBuffer$S$S$S$S$I$S$S',  function (sb, opaquePart, authority, userInfo, host, port, path, query) {
 if (opaquePart != null ) {
 if (opaquePart.startsWith$S("//[")) {
 var end=opaquePart.indexOf$S("]");
@@ -499,14 +403,14 @@ sb.append$C("?");
 sb.append$S(C$.quote$S$J$J(query, C$.L_URIC, C$.H_URIC));
 }}}, p$2);
 
-Clazz.newMeth(C$, 'appendFragment$StringBuffer$S', function (sb, fragment) {
+Clazz.newMeth(C$, 'appendFragment$StringBuffer$S',  function (sb, fragment) {
 if (fragment != null ) {
 sb.append$C("#");
 sb.append$S(C$.quote$S$J$J(fragment, C$.L_URIC, C$.H_URIC));
 }}, p$2);
 
-Clazz.newMeth(C$, 'toString$S$S$S$S$S$I$S$S$S', function (scheme, opaquePart, authority, userInfo, host, port, path, query, fragment) {
-var sb=Clazz.new_($I$(4));
+Clazz.newMeth(C$, 'toString$S$S$S$S$S$I$S$S$S',  function (scheme, opaquePart, authority, userInfo, host, port, path, query, fragment) {
+var sb=Clazz.new_($I$(4,1));
 if (scheme != null ) {
 sb.append$S(scheme);
 sb.append$C(":");
@@ -515,17 +419,17 @@ p$2.appendFragment$StringBuffer$S.apply(this, [sb, fragment]);
 return sb.toString();
 }, p$2);
 
-Clazz.newMeth(C$, 'defineSchemeSpecificPart', function () {
+Clazz.newMeth(C$, 'defineSchemeSpecificPart',  function () {
 if (this.schemeSpecificPart != null ) return;
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 p$2.appendSchemeSpecificPart$StringBuffer$S$S$S$S$I$S$S.apply(this, [sb, null, this.getAuthority$(), this.getUserInfo$(), this.host, this.port, this.getPath$(), this.getQuery$()]);
 if (sb.length$() == 0) return;
 this.schemeSpecificPart=sb.toString();
 }, p$2);
 
-Clazz.newMeth(C$, 'defineString', function () {
+Clazz.newMeth(C$, 'defineString',  function () {
 if (this.string != null ) return;
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 if (this.scheme != null ) {
 sb.append$S(this.scheme);
 sb.append$C(":");
@@ -557,14 +461,14 @@ sb.append$S(this.fragment);
 }this.string=sb.toString();
 }, p$2);
 
-Clazz.newMeth(C$, 'resolvePath$S$S$Z', function (base, child, absolute) {
+Clazz.newMeth(C$, 'resolvePath$S$S$Z',  function (base, child, absolute) {
 var i=base.lastIndexOf$I("/");
 var cn=child.length$();
 var path="";
 if (cn == 0) {
 if (i >= 0) path=base.substring$I$I(0, i + 1);
 } else {
-var sb=Clazz.new_($I$(4).c$$I,[base.length$() + cn]);
+var sb=Clazz.new_([base.length$() + cn],$I$(4,1).c$$I);
 if (i >= 0) sb.append$S(base.substring$I$I(0, i + 1));
 sb.append$S(child);
 path=sb.toString();
@@ -572,7 +476,7 @@ path=sb.toString();
 return np;
 }, 1);
 
-Clazz.newMeth(C$, 'resolve$java_net_URI$java_net_URI', function (base, child) {
+Clazz.newMeth(C$, 'resolve$java_net_URI$java_net_URI',  function (base, child) {
 if (child.isOpaque$() || base.isOpaque$() ) return child;
 if ((child.scheme == null ) && (child.authority == null ) && child.path.equals$O("") && (child.fragment != null ) && (child.query == null )  ) {
 if ((base.fragment != null ) && child.fragment.equals$O(base.fragment) ) {
@@ -612,7 +516,7 @@ ru.path=child.path;
 }return ru;
 }, 1);
 
-Clazz.newMeth(C$, 'normalize$java_net_URI', function (u) {
+Clazz.newMeth(C$, 'normalize$java_net_URI',  function (u) {
 if (u.isOpaque$() || (u.path == null ) || (u.path.length$() == 0)  ) return u;
 var np=C$.normalize$S(u.path);
 if (np == u.path) return u;
@@ -628,7 +532,7 @@ v.query=u.query;
 return v;
 }, 1);
 
-Clazz.newMeth(C$, 'relativize$java_net_URI$java_net_URI', function (base, child) {
+Clazz.newMeth(C$, 'relativize$java_net_URI$java_net_URI',  function (base, child) {
 if (child.isOpaque$() || base.isOpaque$() ) return child;
 if (!C$.equalIgnoringCase$S$S(base.scheme, child.scheme) || !C$.equal$S$S(base.authority, child.authority) ) return child;
 var bp=C$.normalize$S(base.path);
@@ -643,26 +547,26 @@ v.fragment=child.fragment;
 return v;
 }, 1);
 
-Clazz.newMeth(C$, 'needsNormalization$S', function (path) {
+Clazz.newMeth(C$, 'needsNormalization$S',  function (path) {
 var normal=true;
 var ns=0;
 var end=path.length$() - 1;
 var p=0;
 while (p <= end){
 if (path.charAt$I(p) != "/") break;
-p++;
+++p;
 }
 if (p > 1) normal=false;
 while (p <= end){
 if ((path.charAt$I(p) == ".") && ((p == end) || ((path.charAt$I(p + 1) == "/") || ((path.charAt$I(p + 1) == ".") && ((p + 1 == end) || (path.charAt$I(p + 2) == "/") ) ) ) ) ) {
 normal=false;
-}ns++;
+}++ns;
 while (p <= end){
 if (path.charAt$I(p++) != "/") continue;
 while (p <= end){
 if (path.charAt$I(p) != "/") break;
 normal=false;
-p++;
+++p;
 }
 break;
 }
@@ -670,14 +574,14 @@ break;
 return normal ? -1 : ns;
 }, 1);
 
-Clazz.newMeth(C$, 'split$CA$IA', function (path, segs) {
+Clazz.newMeth(C$, 'split$CA$IA',  function (path, segs) {
 var end=path.length - 1;
 var p=0;
 var i=0;
 while (p <= end){
 if (path[p] != "/") break;
 path[p]="\u0000";
-p++;
+++p;
 }
 while (p <= end){
 segs[i++]=p++;
@@ -691,10 +595,10 @@ path[p++]="\u0000";
 break;
 }
 }
-if (i != segs.length) throw Clazz.new_($I$(5));
+if (i != segs.length) throw Clazz.new_($I$(5,1));
 }, 1);
 
-Clazz.newMeth(C$, 'join$CA$IA', function (path, segs) {
+Clazz.newMeth(C$, 'join$CA$IA',  function (path, segs) {
 var ns=segs.length;
 var end=path.length - 1;
 var p=0;
@@ -704,7 +608,7 @@ path[p++]="/";
 var q=segs[i];
 if (q == -1) continue;
 if (p == q) {
-while ((p <= end) && (path[p] != "\u0000") )p++;
+while ((p <= end) && (path[p] != "\u0000") )++p;
 
 if (p <= end) {
 path[p++]="/";
@@ -713,12 +617,12 @@ while ((q <= end) && (path[q] != "\u0000") )path[p++]=path[q++];
 
 if (q <= end) {
 path[p++]="/";
-}} else throw Clazz.new_($I$(5));
+}} else throw Clazz.new_($I$(5,1));
 }
 return p;
 }, 1);
 
-Clazz.newMeth(C$, 'removeDots$CA$IA', function (path, segs) {
+Clazz.newMeth(C$, 'removeDots$CA$IA',  function (path, segs) {
 var ns=segs.length;
 var end=path.length - 1;
 for (var i=0; i < ns; i++) {
@@ -735,7 +639,7 @@ break;
 } else if ((path[p + 1] == ".") && ((p + 1 == end) || (path[p + 2] == "\u0000") ) ) {
 dots=2;
 break;
-}}i++;
+}}++i;
 } while (i < ns);
 if ((i > ns) || (dots == 0) ) break;
 if (dots == 1) {
@@ -753,17 +657,17 @@ segs[j]=-1;
 }}}}
 }, 1);
 
-Clazz.newMeth(C$, 'maybeAddLeadingDot$CA$IA', function (path, segs) {
+Clazz.newMeth(C$, 'maybeAddLeadingDot$CA$IA',  function (path, segs) {
 if (path[0] == "\u0000") return;
 var ns=segs.length;
 var f=0;
 while (f < ns){
 if (segs[f] >= 0) break;
-f++;
+++f;
 }
 if ((f >= ns) || (f == 0) ) return;
 var p=segs[f];
-while ((p < path.length) && (path[p] != ":") && (path[p] != "\u0000")  )p++;
+while ((p < path.length) && (path[p] != ":") && (path[p] != "\u0000")  )++p;
 
 if (p >= path.length || path[p] == "\u0000" ) return;
 path[0]=".";
@@ -771,7 +675,7 @@ path[1]="\u0000";
 segs[0]=0;
 }, 1);
 
-Clazz.newMeth(C$, 'normalize$S', function (ps) {
+Clazz.newMeth(C$, 'normalize$S',  function (ps) {
 var ns=C$.needsNormalization$S(ps);
 if (ns < 0) return ps;
 var path=ps.toCharArray$();
@@ -785,77 +689,77 @@ return ps;
 }return s;
 }, 1);
 
-Clazz.newMeth(C$, 'lowMask$S', function (chars) {
+Clazz.newMeth(C$, 'lowMask$S',  function (chars) {
 var n=chars.length$();
 var m=0;
 for (var i=0; i < n; i++) {
 var c=chars.charAt$I(i);
-if (c.$c() < 64 ) m|=(1 << c.$c());
+if (c.$c() < 64 ) (m=Long.$or(m,((Long.$sl(1,c.$c())))));
 }
 return m;
 }, 1);
 
-Clazz.newMeth(C$, 'highMask$S', function (chars) {
+Clazz.newMeth(C$, 'highMask$S',  function (chars) {
 var n=chars.length$();
 var m=0;
 for (var i=0; i < n; i++) {
 var c=chars.charAt$I(i);
-if ((c.$c() >= 64 ) && (c.$c() < 128 ) ) m|=(1 << (c.$c() - 64));
+if ((c.$c() >= 64 ) && (c.$c() < 128 ) ) (m=Long.$or(m,((Long.$sl(1,(c.$c() - 64))))));
 }
 return m;
 }, 1);
 
-Clazz.newMeth(C$, 'lowMask$C$C', function (first, last) {
+Clazz.newMeth(C$, 'lowMask$C$C',  function (first, last) {
 var m=0;
 var f=Math.max(Math.min(first.$c(), 63), 0);
 var l=Math.max(Math.min(last.$c(), 63), 0);
-for (var i=f; i <= l; i++) m|=1 << i;
+for (var i=f; i <= l; i++) (m=Long.$or(m,(Long.$sl(1,i))));
 
 return m;
 }, 1);
 
-Clazz.newMeth(C$, 'highMask$C$C', function (first, last) {
+Clazz.newMeth(C$, 'highMask$C$C',  function (first, last) {
 var m=0;
 var f=Math.max(Math.min(first.$c(), 127), 64) - 64;
 var l=Math.max(Math.min(last.$c(), 127), 64) - 64;
-for (var i=f; i <= l; i++) m|=1 << i;
+for (var i=f; i <= l; i++) (m=Long.$or(m,(Long.$sl(1,i))));
 
 return m;
 }, 1);
 
-Clazz.newMeth(C$, 'match$C$J$J', function (c, lowMask, highMask) {
-if (c.$c() < 64 ) return ((1 << c.$c()) & lowMask) != 0;
-if (c.$c() < 128 ) return ((1 << (c.$c() - 64)) & highMask) != 0;
+Clazz.newMeth(C$, 'match$C$J$J',  function (c, lowMask, highMask) {
+if (c.$c() < 64 ) return Long.$ne((Long.$and((Long.$sl(1,c.$c())),lowMask)),0 );
+if (c.$c() < 128 ) return Long.$ne((Long.$and((Long.$sl(1,(c.$c() - 64))),highMask)),0 );
 return false;
 }, 1);
 
-Clazz.newMeth(C$, 'appendEscape$StringBuffer$B', function (sb, b) {
+Clazz.newMeth(C$, 'appendEscape$StringBuffer$B',  function (sb, b) {
 sb.append$C("%");
 sb.append$C(C$.hexDigits[(b >> 4) & 15]);
 sb.append$C(C$.hexDigits[(b >> 0) & 15]);
 }, 1);
 
-Clazz.newMeth(C$, 'appendEncoded$StringBuffer$C', function (sb, c) {
+Clazz.newMeth(C$, 'appendEncoded$StringBuffer$C',  function (sb, c) {
 sb.append$C(c);
 }, 1);
 
-Clazz.newMeth(C$, 'quote$S$J$J', function (s, lowMask, highMask) {
+Clazz.newMeth(C$, 'quote$S$J$J',  function (s, lowMask, highMask) {
 var n=s.length$();
 var sb=null;
-var allowNonASCII=((lowMask & 1) != 0);
+var allowNonASCII=(Long.$ne((Long.$and(lowMask,1)),0 ));
 for (var i=0; i < s.length$(); i++) {
 var c=s.charAt$I(i);
 if (c < "\u0080") {
 if (!C$.match$C$J$J(c, lowMask, highMask)) {
 if (sb == null ) {
-sb=Clazz.new_($I$(4));
+sb=Clazz.new_($I$(4,1));
 sb.append$S(s.substring$I$I(0, i));
-}C$.appendEscape$StringBuffer$B(sb, ($b$[0] = (c.$c()|0), $b$[0]));
+}C$.appendEscape$StringBuffer$B(sb, ($b$[0] = c.$c(), $b$[0]));
 } else {
 if (sb != null ) sb.append$C(c);
 }} else if (allowNonASCII && (Character.isSpaceChar$C(c) || Character.isISOControl$C(c) ) ) {
 if (sb == null ) {
-sb=Clazz.new_($I$(4));
+sb=Clazz.new_($I$(4,1));
 sb.append$S(s.substring$I$I(0, i));
 }C$.appendEncoded$StringBuffer$C(sb, c);
 } else {
@@ -864,69 +768,105 @@ if (sb != null ) sb.append$C(c);
 return (sb == null ) ? s : sb.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'encode$S', function (s) {
+Clazz.newMeth(C$, 'encode$S',  function (s) {
 return (1?encodeURI(s):null);
 }, 1);
 
-Clazz.newMeth(C$, 'decode$S', function (s) {
+Clazz.newMeth(C$, 'decode$S',  function (s) {
 return (s!=null?decodeURI(s):null);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.L_DIGIT=C$.lowMask$C$C("0", "9");
+C$.H_UPALPHA=C$.highMask$C$C("A", "Z");
+C$.H_LOWALPHA=C$.highMask$C$C("a", "z");
+C$.H_ALPHA=Long.$or(C$.H_LOWALPHA,C$.H_UPALPHA);
+C$.L_ALPHANUM=Long.$or(C$.L_DIGIT,0);
+C$.H_ALPHANUM=Long.$or(0,C$.H_ALPHA);
+C$.L_HEX=C$.L_DIGIT;
+C$.H_HEX=Long.$or(C$.highMask$C$C("A", "F"),C$.highMask$C$C("a", "f"));
+C$.L_MARK=C$.lowMask$S("-_.!~*\'()");
+C$.H_MARK=C$.highMask$S("-_.!~*\'()");
+C$.L_UNRESERVED=Long.$or(C$.L_ALPHANUM,C$.L_MARK);
+C$.H_UNRESERVED=Long.$or(C$.H_ALPHANUM,C$.H_MARK);
+C$.L_RESERVED=C$.lowMask$S(";/?:@&=+$,[]");
+C$.H_RESERVED=C$.highMask$S(";/?:@&=+$,[]");
+C$.L_URIC=Long.$or(C$.L_RESERVED,C$.L_UNRESERVED , 1 );
+C$.H_URIC=Long.$or(C$.H_RESERVED,C$.H_UNRESERVED , 0 );
+C$.L_PCHAR=Long.$or(C$.L_UNRESERVED,1 , C$.lowMask$S(":@&=+$,") );
+C$.H_PCHAR=Long.$or(C$.H_UNRESERVED,0 , C$.highMask$S(":@&=+$,") );
+C$.L_PATH=Long.$or(C$.L_PCHAR,C$.lowMask$S(";/"));
+C$.H_PATH=Long.$or(C$.H_PCHAR,C$.highMask$S(";/"));
+C$.L_DASH=C$.lowMask$S("-");
+C$.H_DASH=C$.highMask$S("-");
+C$.L_DOT=C$.lowMask$S(".");
+C$.H_DOT=C$.highMask$S(".");
+C$.L_USERINFO=Long.$or(C$.L_UNRESERVED,1 , C$.lowMask$S(";:&=+$,") );
+C$.H_USERINFO=Long.$or(C$.H_UNRESERVED,0 , C$.highMask$S(";:&=+$,") );
+C$.L_REG_NAME=Long.$or(C$.L_UNRESERVED,1 , C$.lowMask$S("$,;:@&=+") );
+C$.H_REG_NAME=Long.$or(C$.H_UNRESERVED,0 , C$.highMask$S("$,;:@&=+") );
+C$.L_SERVER=Long.$or(C$.L_USERINFO,C$.L_ALPHANUM , C$.L_DASH , C$.lowMask$S(".:@[]") );
+C$.H_SERVER=Long.$or(C$.H_USERINFO,C$.H_ALPHANUM , C$.H_DASH , C$.highMask$S(".:@[]") );
+C$.L_SERVER_PERCENT=Long.$or(C$.L_SERVER,C$.lowMask$S("%"));
+C$.H_SERVER_PERCENT=Long.$or(C$.H_SERVER,C$.highMask$S("%"));
+C$.L_LEFT_BRACKET=C$.lowMask$S("[");
+C$.H_LEFT_BRACKET=C$.highMask$S("[");
+C$.L_SCHEME=Long.$or(0,C$.L_DIGIT , C$.lowMask$S("+-.") );
+C$.H_SCHEME=Long.$or(C$.H_ALPHA,0 , C$.highMask$S("+-.") );
+C$.L_URIC_NO_SLASH=Long.$or(C$.L_UNRESERVED,1 , C$.lowMask$S(";?:@&=+$,") );
+C$.H_URIC_NO_SLASH=Long.$or(C$.H_UNRESERVED,0 , C$.highMask$S(";?:@&=+$,") );
+C$.hexDigits=Clazz.array(Character.TYPE, -1, ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]);
+};
 var $b$ = new Int8Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.URI, "Parser", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.URI, "Parser", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.input=null;
-this.requireServerAuthority=false;
-this.ipv6byteCount=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.requireServerAuthority=false;
 this.ipv6byteCount=0;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S', function (s) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['requireServerAuthority'],'I',['ipv6byteCount'],'S',['input']]]
+
+Clazz.newMeth(C$, 'c$$S',  function (s) {
+;C$.$init$.apply(this);
 this.input=s;
-this.this$0.string=s;
+this.b$['java.net.URI'].string=s;
 }, 1);
 
-Clazz.newMeth(C$, 'fail$S', function (reason) {
+Clazz.newMeth(C$, 'fail$S',  function (reason) {
 throw Clazz.new_(Clazz.load('java.net.URISyntaxException').c$$S$S,[this.input, reason]);
 }, p$1);
 
-Clazz.newMeth(C$, 'fail$S$I', function (reason, p) {
+Clazz.newMeth(C$, 'fail$S$I',  function (reason, p) {
 throw Clazz.new_(Clazz.load('java.net.URISyntaxException').c$$S$S$I,[this.input, reason, p]);
 }, p$1);
 
-Clazz.newMeth(C$, 'failExpecting$S$I', function (expected, p) {
+Clazz.newMeth(C$, 'failExpecting$S$I',  function (expected, p) {
 p$1.fail$S$I.apply(this, ["Expected " + expected, p]);
 }, p$1);
 
-Clazz.newMeth(C$, 'failExpecting$S$S$I', function (expected, prior, p) {
+Clazz.newMeth(C$, 'failExpecting$S$S$I',  function (expected, prior, p) {
 p$1.fail$S$I.apply(this, ["Expected " + expected + " following " + prior , p]);
 }, p$1);
 
-Clazz.newMeth(C$, 'substring$I$I', function (start, end) {
+Clazz.newMeth(C$, 'substring$I$I',  function (start, end) {
 return this.input.substring$I$I(start, end);
 }, p$1);
 
-Clazz.newMeth(C$, 'charAt$I', function (p) {
+Clazz.newMeth(C$, 'charAt$I',  function (p) {
 return this.input.charAt$I(p);
 }, p$1);
 
-Clazz.newMeth(C$, 'at$I$I$C', function (start, end, c) {
+Clazz.newMeth(C$, 'at$I$I$C',  function (start, end, c) {
 return (start < end) && (p$1.charAt$I.apply(this, [start]) == c) ;
 }, p$1);
 
-Clazz.newMeth(C$, 'at$I$I$S', function (start, end, s) {
+Clazz.newMeth(C$, 'at$I$I$S',  function (start, end, s) {
 var p=start;
 var sn=s.length$();
 if (sn > end - p) return false;
@@ -934,32 +874,32 @@ var i=0;
 while (i < sn){
 if (p$1.charAt$I.apply(this, [p++]) != s.charAt$I(i)) {
 break;
-}i++;
+}++i;
 }
 return (i == sn);
 }, p$1);
 
-Clazz.newMeth(C$, 'scan$I$I$C', function (start, end, c) {
+Clazz.newMeth(C$, 'scan$I$I$C',  function (start, end, c) {
 if ((start < end) && (p$1.charAt$I.apply(this, [start]) == c) ) return start + 1;
 return start;
 }, p$1);
 
-Clazz.newMeth(C$, 'scan$I$I$S$S', function (start, end, err, stop) {
+Clazz.newMeth(C$, 'scan$I$I$S$S',  function (start, end, err, stop) {
 var p=start;
 while (p < end){
 var c=p$1.charAt$I.apply(this, [p]);
 if (err.indexOf$I(c) >= 0) return -1;
 if (stop.indexOf$I(c) >= 0) break;
-p++;
+++p;
 }
 return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'scanEscape$I$I$C', function (start, n, first) {
+Clazz.newMeth(C$, 'scanEscape$I$I$C',  function (start, n, first) {
 var p=start;
 var c=first;
 if (c == "%") {
-if ((p + 3 <= n) && P$.URI.match$C$J$J(p$1.charAt$I.apply(this, [p + 1]), $I$(1).L_HEX, $I$(1).H_HEX) && P$.URI.match$C$J$J(p$1.charAt$I.apply(this, [p + 2]), $I$(1).L_HEX, $I$(1).H_HEX)  ) {
+if ((p + 3 <= n) && $I$(1,"match$C$J$J",[p$1.charAt$I.apply(this, [p + 1]), $I$(1).L_HEX, $I$(1).H_HEX]) && $I$(1,"match$C$J$J",[p$1.charAt$I.apply(this, [p + 2]), $I$(1).L_HEX, $I$(1).H_HEX])  ) {
 return p + 3;
 }p$1.fail$S$I.apply(this, ["Malformed escape pair", p]);
 } else if ((c.$c() > 128 ) && !Character.isSpaceChar$C(c) && !Character.isISOControl$C(c)  ) {
@@ -967,14 +907,14 @@ return p + 1;
 }return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'scan$I$I$J$J', function (start, n, lowMask, highMask) {
+Clazz.newMeth(C$, 'scan$I$I$J$J',  function (start, n, lowMask, highMask) {
 var p=start;
 while (p < n){
 var c=p$1.charAt$I.apply(this, [p]);
-if (P$.URI.match$C$J$J(c, lowMask, highMask)) {
-p++;
+if ($I$(1).match$C$J$J(c, lowMask, highMask)) {
+++p;
 continue;
-}if ((lowMask & 1) != 0) {
+}if (Long.$ne((Long.$and(lowMask,1)),0 )) {
 var q=p$1.scanEscape$I$I$C.apply(this, [p, n, c]);
 if (q > p) {
 p=q;
@@ -984,16 +924,16 @@ continue;
 return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'checkChars$I$I$J$J$S', function (start, end, lowMask, highMask, what) {
+Clazz.newMeth(C$, 'checkChars$I$I$J$J$S',  function (start, end, lowMask, highMask, what) {
 var p=p$1.scan$I$I$J$J.apply(this, [start, end, lowMask, highMask]);
 if (p < end) p$1.fail$S$I.apply(this, ["Illegal character in " + what, p]);
 }, p$1);
 
-Clazz.newMeth(C$, 'checkChar$I$J$J$S', function (p, lowMask, highMask, what) {
+Clazz.newMeth(C$, 'checkChar$I$J$J$S',  function (p, lowMask, highMask, what) {
 p$1.checkChars$I$I$J$J$S.apply(this, [p, p + 1, lowMask, highMask, what]);
 }, p$1);
 
-Clazz.newMeth(C$, 'parse$Z', function (rsa) {
+Clazz.newMeth(C$, 'parse$Z',  function (rsa) {
 this.requireServerAuthority=rsa;
 var ssp;
 var n=this.input.length$();
@@ -1002,8 +942,8 @@ if ((p >= 0) && p$1.at$I$I$C.apply(this, [p, n, ":"]) ) {
 if (p == 0) p$1.failExpecting$S$I.apply(this, ["scheme name", 0]);
 p$1.checkChar$I$J$J$S.apply(this, [0, 0, $I$(1).H_ALPHA, "scheme name"]);
 p$1.checkChars$I$I$J$J$S.apply(this, [1, p, $I$(1).L_SCHEME, $I$(1).H_SCHEME, "scheme name"]);
-this.this$0.scheme=p$1.substring$I$I.apply(this, [0, p]);
-p++;
+this.b$['java.net.URI'].scheme=p$1.substring$I$I.apply(this, [0, p]);
+++p;
 ssp=p;
 if (p$1.at$I$I$C.apply(this, [p, n, "/"])) {
 p=p$1.parseHierarchical$I$I.apply(this, [p, n]);
@@ -1015,15 +955,15 @@ p=q;
 }} else {
 ssp=0;
 p=p$1.parseHierarchical$I$I.apply(this, [0, n]);
-}this.this$0.schemeSpecificPart=p$1.substring$I$I.apply(this, [ssp, p]);
+}this.b$['java.net.URI'].schemeSpecificPart=p$1.substring$I$I.apply(this, [ssp, p]);
 if (p$1.at$I$I$C.apply(this, [p, n, "#"])) {
 p$1.checkChars$I$I$J$J$S.apply(this, [p + 1, n, $I$(1).L_URIC, $I$(1).H_URIC, "fragment"]);
-this.this$0.fragment=p$1.substring$I$I.apply(this, [p + 1, n]);
+this.b$['java.net.URI'].fragment=p$1.substring$I$I.apply(this, [p + 1, n]);
 p=n;
 }if (p < n) p$1.fail$S$I.apply(this, ["end of URI", p]);
 });
 
-Clazz.newMeth(C$, 'parseHierarchical$I$I', function (start, n) {
+Clazz.newMeth(C$, 'parseHierarchical$I$I',  function (start, n) {
 var p=start;
 if (p$1.at$I$I$C.apply(this, [p, n, "/"]) && p$1.at$I$I$C.apply(this, [p + 1, n, "/"]) ) {
 p+=2;
@@ -1034,18 +974,18 @@ p=p$1.parseAuthority$I$I.apply(this, [p, q]);
 } else p$1.failExpecting$S$I.apply(this, ["authority", p]);
 }var q=p$1.scan$I$I$S$S.apply(this, [p, n, "", "?#"]);
 p$1.checkChars$I$I$J$J$S.apply(this, [p, q, $I$(1).L_PATH, $I$(1).H_PATH, "path"]);
-this.this$0.path=p$1.substring$I$I.apply(this, [p, q]);
+this.b$['java.net.URI'].path=p$1.substring$I$I.apply(this, [p, q]);
 p=q;
 if (p$1.at$I$I$C.apply(this, [p, n, "?"])) {
-p++;
+++p;
 q=p$1.scan$I$I$S$S.apply(this, [p, n, "", "#"]);
 p$1.checkChars$I$I$J$J$S.apply(this, [p, q, $I$(1).L_URIC, $I$(1).H_URIC, "query"]);
-this.this$0.query=p$1.substring$I$I.apply(this, [p, q]);
+this.b$['java.net.URI'].query=p$1.substring$I$I.apply(this, [p, q]);
 p=q;
 }return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'parseAuthority$I$I', function (start, n) {
+Clazz.newMeth(C$, 'parseAuthority$I$I',  function (start, n) {
 var p=start;
 var q=p;
 var ex=null;
@@ -1057,18 +997,18 @@ serverChars=(p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_SERVER_PERCENT, $I$(1)
 serverChars=(p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_SERVER, $I$(1).H_SERVER]) == n);
 }regChars=(p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_REG_NAME, $I$(1).H_REG_NAME]) == n);
 if (regChars && !serverChars ) {
-this.this$0.authority=p$1.substring$I$I.apply(this, [p, n]);
+this.b$['java.net.URI'].authority=p$1.substring$I$I.apply(this, [p, n]);
 return n;
 }if (serverChars) {
 try {
 q=p$1.parseServer$I$I.apply(this, [p, n]);
 if (q < n) p$1.failExpecting$S$I.apply(this, ["end of authority", q]);
-this.this$0.authority=p$1.substring$I$I.apply(this, [p, n]);
+this.b$['java.net.URI'].authority=p$1.substring$I$I.apply(this, [p, n]);
 } catch (x) {
 if (Clazz.exceptionOf(x,"java.net.URISyntaxException")){
-this.this$0.userInfo=null;
-this.this$0.host=null;
-this.this$0.port=-1;
+this.b$['java.net.URI'].userInfo=null;
+this.b$['java.net.URI'].host=null;
+this.b$['java.net.URI'].port=-1;
 if (this.requireServerAuthority) {
 throw x;
 } else {
@@ -1080,7 +1020,7 @@ throw x;
 }
 }if (q < n) {
 if (regChars) {
-this.this$0.authority=p$1.substring$I$I.apply(this, [p, n]);
+this.b$['java.net.URI'].authority=p$1.substring$I$I.apply(this, [p, n]);
 } else if (ex != null ) {
 throw ex;
 } else {
@@ -1088,16 +1028,16 @@ p$1.fail$S$I.apply(this, ["Illegal character in authority", q]);
 }}return n;
 }, p$1);
 
-Clazz.newMeth(C$, 'parseServer$I$I', function (start, n) {
+Clazz.newMeth(C$, 'parseServer$I$I',  function (start, n) {
 var p=start;
 var q;
 q=p$1.scan$I$I$S$S.apply(this, [p, n, "/?#", "@"]);
 if ((q >= p) && p$1.at$I$I$C.apply(this, [q, n, "@"]) ) {
 p$1.checkChars$I$I$J$J$S.apply(this, [p, q, $I$(1).L_USERINFO, $I$(1).H_USERINFO, "user info"]);
-this.this$0.userInfo=p$1.substring$I$I.apply(this, [p, q]);
+this.b$['java.net.URI'].userInfo=p$1.substring$I$I.apply(this, [p, q]);
 p=q + 1;
 }if (p$1.at$I$I$C.apply(this, [p, n, "["])) {
-p++;
+++p;
 q=p$1.scan$I$I$S$S.apply(this, [p, n, "/?#", "]"]);
 if ((q > p) && p$1.at$I$I$C.apply(this, [q, n, "]"]) ) {
 var r=p$1.scan$I$I$S$S.apply(this, [p, q, "", "%"]);
@@ -1108,7 +1048,7 @@ p$1.fail$S.apply(this, ["scope id expected"]);
 }p$1.checkChars$I$I$J$J$S.apply(this, [r + 1, q, $I$(1).L_ALPHANUM, $I$(1).H_ALPHANUM, "scope id"]);
 } else {
 p$1.parseIPv6Reference$I$I.apply(this, [p, q]);
-}this.this$0.host=p$1.substring$I$I.apply(this, [p - 1, q + 1]);
+}this.b$['java.net.URI'].host=p$1.substring$I$I.apply(this, [p - 1, q + 1]);
 p=q + 1;
 } else {
 p$1.failExpecting$S$I.apply(this, ["closing bracket for IPv6 address", q]);
@@ -1117,12 +1057,12 @@ q=p$1.parseIPv4Address$I$I.apply(this, [p, n]);
 if (q <= p) q=p$1.parseHostname$I$I.apply(this, [p, n]);
 p=q;
 }if (p$1.at$I$I$C.apply(this, [p, n, ":"])) {
-p++;
+++p;
 q=p$1.scan$I$I$S$S.apply(this, [p, n, "", "/"]);
 if (q > p) {
 p$1.checkChars$I$I$J$J$S.apply(this, [p, q, $I$(1).L_DIGIT, 0, "port number"]);
 try {
-this.this$0.port=Integer.parseInt$S(p$1.substring$I$I.apply(this, [p, q]));
+this.b$['java.net.URI'].port=Integer.parseInt$S(p$1.substring$I$I.apply(this, [p, q]));
 } catch (x) {
 if (Clazz.exceptionOf(x,"NumberFormatException")){
 p$1.fail$S$I.apply(this, ["Malformed port number", p]);
@@ -1135,7 +1075,7 @@ p=q;
 return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'scanByte$I$I', function (start, n) {
+Clazz.newMeth(C$, 'scanByte$I$I',  function (start, n) {
 var p=start;
 var q=p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_DIGIT, 0]);
 if (q <= p) return q;
@@ -1143,10 +1083,10 @@ if (Integer.parseInt$S(p$1.substring$I$I.apply(this, [p, q])) > 255) return p;
 return q;
 }, p$1);
 
-Clazz.newMeth(C$, 'scanIPv4Address$I$I$Z', function (start, n, strict) {
+Clazz.newMeth(C$, 'scanIPv4Address$I$I$Z',  function (start, n, strict) {
 var p=start;
 var q;
-var m=p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_DIGIT | $I$(1).L_DOT, 0 | $I$(1).H_DOT]);
+var m=p$1.scan$I$I$J$J.apply(this, [p, n, Long.$or($I$(1).L_DIGIT,$I$(1).L_DOT), Long.$or(0,$I$(1).H_DOT)]);
 if ((m <= p) || (strict && (m != n) ) ) return -1;
 for (; ; ) {
 if ((q=p$1.scanByte$I$I.apply(this, [p, m])) <= p) break;
@@ -1170,13 +1110,13 @@ p$1.fail$S$I.apply(this, ["Malformed IPv4 address", q]);
 return -1;
 }, p$1);
 
-Clazz.newMeth(C$, 'takeIPv4Address$I$I$S', function (start, n, expected) {
+Clazz.newMeth(C$, 'takeIPv4Address$I$I$S',  function (start, n, expected) {
 var p=p$1.scanIPv4Address$I$I$Z.apply(this, [start, n, true]);
 if (p <= start) p$1.failExpecting$S$I.apply(this, [expected, start]);
 return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'parseIPv4Address$I$I', function (start, n) {
+Clazz.newMeth(C$, 'parseIPv4Address$I$I',  function (start, n) {
 var p;
 try {
 p=p$1.scanIPv4Address$I$I$Z.apply(this, [start, n, false]);
@@ -1198,11 +1138,11 @@ throw e$$;
 if (p > start && p < n ) {
 if (p$1.charAt$I.apply(this, [p]) != ":") {
 p=-1;
-}}if (p > start) this.this$0.host=p$1.substring$I$I.apply(this, [start, p]);
+}}if (p > start) this.b$['java.net.URI'].host=p$1.substring$I$I.apply(this, [start, p]);
 return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'parseHostname$I$I', function (start, n) {
+Clazz.newMeth(C$, 'parseHostname$I$I',  function (start, n) {
 var p=start;
 var q;
 var l=-1;
@@ -1212,7 +1152,7 @@ if (q <= p) break;
 l=p;
 if (q > p) {
 p=q;
-q=p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_ALPHANUM | $I$(1).L_DASH, $I$(1).H_ALPHANUM | $I$(1).H_DASH]);
+q=p$1.scan$I$I$J$J.apply(this, [p, n, Long.$or($I$(1).L_ALPHANUM,$I$(1).L_DASH), Long.$or($I$(1).H_ALPHANUM,$I$(1).H_DASH)]);
 if (q > p) {
 if (p$1.charAt$I.apply(this, [q - 1]) == "-") p$1.fail$S$I.apply(this, ["Illegal character in hostname", q - 1]);
 p=q;
@@ -1222,13 +1162,13 @@ p=q;
 } while (p < n);
 if ((p < n) && !p$1.at$I$I$C.apply(this, [p, n, ":"]) ) p$1.fail$S$I.apply(this, ["Illegal character in hostname", p]);
 if (l < 0) p$1.failExpecting$S$I.apply(this, ["hostname", start]);
-if (l > start && !P$.URI.match$C$J$J(p$1.charAt$I.apply(this, [l]), 0, $I$(1).H_ALPHA) ) {
+if (l > start && !$I$(1,"match$C$J$J",[p$1.charAt$I.apply(this, [l]), 0, $I$(1).H_ALPHA]) ) {
 p$1.fail$S$I.apply(this, ["Illegal character in hostname", l]);
-}this.this$0.host=p$1.substring$I$I.apply(this, [start, p]);
+}this.b$['java.net.URI'].host=p$1.substring$I$I.apply(this, [start, p]);
 return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'parseIPv6Reference$I$I', function (start, n) {
+Clazz.newMeth(C$, 'parseIPv6Reference$I$I',  function (start, n) {
 var p=start;
 var q;
 var compressedZeros=false;
@@ -1251,7 +1191,7 @@ if (compressedZeros && this.ipv6byteCount == 16 ) p$1.fail$S$I.apply(this, ["Mal
 return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'scanHexPost$I$I', function (start, n) {
+Clazz.newMeth(C$, 'scanHexPost$I$I',  function (start, n) {
 var p=start;
 var q;
 if (p == n) return p;
@@ -1259,7 +1199,7 @@ q=p$1.scanHexSeq$I$I.apply(this, [p, n]);
 if (q > p) {
 p=q;
 if (p$1.at$I$I$C.apply(this, [p, n, ":"])) {
-p++;
+++p;
 p=p$1.takeIPv4Address$I$I$S.apply(this, [p, n, "hex digits or IPv4 address"]);
 this.ipv6byteCount+=4;
 }} else {
@@ -1268,7 +1208,7 @@ this.ipv6byteCount+=4;
 }return p;
 }, p$1);
 
-Clazz.newMeth(C$, 'scanHexSeq$I$I', function (start, n) {
+Clazz.newMeth(C$, 'scanHexSeq$I$I',  function (start, n) {
 var p=start;
 var q;
 q=p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_HEX, $I$(1).H_HEX]);
@@ -1280,11 +1220,11 @@ p=q;
 while (p < n){
 if (!p$1.at$I$I$C.apply(this, [p, n, ":"])) break;
 if (p$1.at$I$I$C.apply(this, [p + 1, n, ":"])) break;
-p++;
+++p;
 q=p$1.scan$I$I$J$J.apply(this, [p, n, $I$(1).L_HEX, $I$(1).H_HEX]);
 if (q <= p) p$1.failExpecting$S$I.apply(this, ["digits for an IPv6 address", p]);
 if (p$1.at$I$I$C.apply(this, [q, n, "."])) {
-p--;
+--p;
 break;
 }if (q > p + 4) p$1.fail$S$I.apply(this, ["IPv6 hexadecimal digit sequence too long", p]);
 this.ipv6byteCount+=2;
@@ -1296,4 +1236,4 @@ return p;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:00 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,30 +1,26 @@
-(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'sun.awt.geom.Order0','sun.awt.geom.Order1','sun.awt.geom.Order2','sun.awt.geom.Order3','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Curve");
+(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'sun.awt.geom.Order0','sun.awt.geom.Order1','sun.awt.geom.Order2','sun.awt.geom.Order3','InternalError']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Curve");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.direction=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['I',['direction']]]
+
+Clazz.newMeth(C$, 'insertMove$java_util_Vector$D$D',  function (curves, x, y) {
+curves.add$O(Clazz.new_($I$(1,1).c$$D$D,[x, y]));
 }, 1);
 
-Clazz.newMeth(C$, 'insertMove$java_util_Vector$D$D', function (curves, x, y) {
-curves.add$TE(Clazz.new_($I$(1).c$$D$D,[x, y]));
-}, 1);
-
-Clazz.newMeth(C$, 'insertLine$java_util_Vector$D$D$D$D', function (curves, x0, y0, x1, y1) {
+Clazz.newMeth(C$, 'insertLine$java_util_Vector$D$D$D$D',  function (curves, x0, y0, x1, y1) {
 if (y0 < y1 ) {
-curves.add$TE(Clazz.new_($I$(2).c$$D$D$D$D$I,[x0, y0, x1, y1, 1]));
+curves.add$O(Clazz.new_($I$(2,1).c$$D$D$D$D$I,[x0, y0, x1, y1, 1]));
 } else if (y0 > y1 ) {
-curves.add$TE(Clazz.new_($I$(2).c$$D$D$D$D$I,[x1, y1, x0, y0, -1]));
+curves.add$O(Clazz.new_($I$(2,1).c$$D$D$D$D$I,[x1, y1, x0, y0, -1]));
 } else {
 }}, 1);
 
-Clazz.newMeth(C$, 'insertQuad$java_util_Vector$D$D$DA', function (curves, x0, y0, coords) {
+Clazz.newMeth(C$, 'insertQuad$java_util_Vector$D$D$DA',  function (curves, x0, y0, coords) {
 var y1=coords[3];
 if (y0 > y1 ) {
 $I$(3).insert$java_util_Vector$DA$D$D$D$D$D$D$I(curves, coords, coords[2], y1, coords[0], coords[1], x0, y0, -1);
@@ -34,7 +30,7 @@ return;
 $I$(3).insert$java_util_Vector$DA$D$D$D$D$D$D$I(curves, coords, x0, y0, coords[0], coords[1], coords[2], y1, 1);
 }}, 1);
 
-Clazz.newMeth(C$, 'insertCubic$java_util_Vector$D$D$DA', function (curves, x0, y0, coords) {
+Clazz.newMeth(C$, 'insertCubic$java_util_Vector$D$D$DA',  function (curves, x0, y0, coords) {
 var y1=coords[5];
 if (y0 > y1 ) {
 $I$(4).insert$java_util_Vector$DA$D$D$D$D$D$D$D$D$I(curves, coords, coords[4], y1, coords[2], coords[3], coords[0], coords[1], x0, y0, -1);
@@ -44,7 +40,7 @@ return;
 $I$(4).insert$java_util_Vector$DA$D$D$D$D$D$D$D$D$I(curves, coords, x0, y0, coords[0], coords[1], coords[2], coords[3], coords[4], y1, 1);
 }}, 1);
 
-Clazz.newMeth(C$, 'pointCrossingsForPath$java_awt_geom_PathIterator$D$D', function (pi, px, py) {
+Clazz.newMeth(C$, 'pointCrossingsForPath$java_awt_geom_PathIterator$D$D',  function (pi, px, py) {
 if (pi.isDone$()) {
 return 0;
 }var coords=Clazz.array(Double.TYPE, [6]);
@@ -101,7 +97,7 @@ crossings+=C$.pointCrossingsForLine$D$D$D$D$D$D(px, py, curx, cury, movx, movy);
 }return crossings;
 }, 1);
 
-Clazz.newMeth(C$, 'pointCrossingsForLine$D$D$D$D$D$D', function (px, py, x0, y0, x1, y1) {
+Clazz.newMeth(C$, 'pointCrossingsForLine$D$D$D$D$D$D',  function (px, py, x0, y0, x1, y1) {
 if (py < y0  && py < y1  ) return 0;
 if (py >= y0  && py >= y1  ) return 0;
 if (px >= x0  && px >= x1  ) return 0;
@@ -111,7 +107,7 @@ if (px >= xintercept ) return 0;
 return (y0 < y1 ) ? 1 : -1;
 }, 1);
 
-Clazz.newMeth(C$, 'pointCrossingsForQuad$D$D$D$D$D$D$D$D$I', function (px, py, x0, y0, xc, yc, x1, y1, level) {
+Clazz.newMeth(C$, 'pointCrossingsForQuad$D$D$D$D$D$D$D$D$I',  function (px, py, x0, y0, xc, yc, x1, y1, level) {
 if (py < y0  && py < yc   && py < y1  ) return 0;
 if (py >= y0  && py >= yc   && py >= y1  ) return 0;
 if (px >= x0  && px >= xc   && px >= x1  ) return 0;
@@ -133,7 +129,7 @@ return 0;
 }return (C$.pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, x0, y0, x0c, y0c, xc, yc, level + 1) + C$.pointCrossingsForQuad$D$D$D$D$D$D$D$D$I(px, py, xc, yc, xc1, yc1, x1, y1, level + 1));
 }, 1);
 
-Clazz.newMeth(C$, 'pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I', function (px, py, x0, y0, xc0, yc0, xc1, yc1, x1, y1, level) {
+Clazz.newMeth(C$, 'pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I',  function (px, py, x0, y0, xc0, yc0, xc1, yc1, x1, y1, level) {
 if (py < y0  && py < yc0   && py < yc1   && py < y1  ) return 0;
 if (py >= y0  && py >= yc0   && py >= yc1   && py >= y1  ) return 0;
 if (px >= x0  && px >= xc0   && px >= xc1   && px >= x1  ) return 0;
@@ -161,7 +157,7 @@ return 0;
 }return (C$.pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, x0, y0, xc0, yc0, xc0m, yc0m, xmid, ymid, level + 1) + C$.pointCrossingsForCubic$D$D$D$D$D$D$D$D$D$D$I(px, py, xmid, ymid, xmc1, ymc1, xc1, yc1, x1, y1, level + 1));
 }, 1);
 
-Clazz.newMeth(C$, 'rectCrossingsForPath$java_awt_geom_PathIterator$D$D$D$D', function (pi, rxmin, rymin, rxmax, rymax) {
+Clazz.newMeth(C$, 'rectCrossingsForPath$java_awt_geom_PathIterator$D$D$D$D',  function (pi, rxmin, rymin, rxmax, rymax) {
 if (rxmax <= rxmin  || rymax <= rymin  ) {
 return 0;
 }if (pi.isDone$()) {
@@ -222,53 +218,53 @@ crossings=C$.rectCrossingsForLine$I$D$D$D$D$D$D$D$D(crossings, rxmin, rymin, rxm
 }return crossings;
 }, 1);
 
-Clazz.newMeth(C$, 'rectCrossingsForLine$I$D$D$D$D$D$D$D$D', function (crossings, rxmin, rymin, rxmax, rymax, x0, y0, x1, y1) {
+Clazz.newMeth(C$, 'rectCrossingsForLine$I$D$D$D$D$D$D$D$D',  function (crossings, rxmin, rymin, rxmax, rymax, x0, y0, x1, y1) {
 if (y0 >= rymax  && y1 >= rymax  ) return crossings;
 if (y0 <= rymin  && y1 <= rymin  ) return crossings;
 if (x0 <= rxmin  && x1 <= rxmin  ) return crossings;
 if (x0 >= rxmax  && x1 >= rxmax  ) {
 if (y0 < y1 ) {
-if (y0 <= rymin ) crossings++;
-if (y1 >= rymax ) crossings++;
+if (y0 <= rymin ) ++crossings;
+if (y1 >= rymax ) ++crossings;
 } else if (y1 < y0 ) {
-if (y1 <= rymin ) crossings--;
-if (y0 >= rymax ) crossings--;
+if (y1 <= rymin ) --crossings;
+if (y0 >= rymax ) --crossings;
 }return crossings;
 }if ((x0 > rxmin  && x0 < rxmax   && y0 > rymin   && y0 < rymax  ) || (x1 > rxmin  && x1 < rxmax   && y1 > rymin   && y1 < rymax  ) ) {
 return -2147483648;
 }var xi0=x0;
 if (y0 < rymin ) {
-xi0 += ((rymin - y0) * (x1 - x0) / (y1 - y0));
+xi0+=((rymin - y0) * (x1 - x0) / (y1 - y0));
 } else if (y0 > rymax ) {
-xi0 += ((rymax - y0) * (x1 - x0) / (y1 - y0));
+xi0+=((rymax - y0) * (x1 - x0) / (y1 - y0));
 }var xi1=x1;
 if (y1 < rymin ) {
-xi1 += ((rymin - y1) * (x0 - x1) / (y0 - y1));
+xi1+=((rymin - y1) * (x0 - x1) / (y0 - y1));
 } else if (y1 > rymax ) {
-xi1 += ((rymax - y1) * (x0 - x1) / (y0 - y1));
+xi1+=((rymax - y1) * (x0 - x1) / (y0 - y1));
 }if (xi0 <= rxmin  && xi1 <= rxmin  ) return crossings;
 if (xi0 >= rxmax  && xi1 >= rxmax  ) {
 if (y0 < y1 ) {
-if (y0 <= rymin ) crossings++;
-if (y1 >= rymax ) crossings++;
+if (y0 <= rymin ) ++crossings;
+if (y1 >= rymax ) ++crossings;
 } else if (y1 < y0 ) {
-if (y1 <= rymin ) crossings--;
-if (y0 >= rymax ) crossings--;
+if (y1 <= rymin ) --crossings;
+if (y0 >= rymax ) --crossings;
 }return crossings;
 }return -2147483648;
 }, 1);
 
-Clazz.newMeth(C$, 'rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I', function (crossings, rxmin, rymin, rxmax, rymax, x0, y0, xc, yc, x1, y1, level) {
+Clazz.newMeth(C$, 'rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I',  function (crossings, rxmin, rymin, rxmax, rymax, x0, y0, xc, yc, x1, y1, level) {
 if (y0 >= rymax  && yc >= rymax   && y1 >= rymax  ) return crossings;
 if (y0 <= rymin  && yc <= rymin   && y1 <= rymin  ) return crossings;
 if (x0 <= rxmin  && xc <= rxmin   && x1 <= rxmin  ) return crossings;
 if (x0 >= rxmax  && xc >= rxmax   && x1 >= rxmax  ) {
 if (y0 < y1 ) {
-if (y0 <= rymin  && y1 > rymin  ) crossings++;
-if (y0 < rymax  && y1 >= rymax  ) crossings++;
+if (y0 <= rymin  && y1 > rymin  ) ++crossings;
+if (y0 < rymax  && y1 >= rymax  ) ++crossings;
 } else if (y1 < y0 ) {
-if (y1 <= rymin  && y0 > rymin  ) crossings--;
-if (y1 < rymax  && y0 >= rymax  ) crossings--;
+if (y1 <= rymin  && y0 > rymin  ) --crossings;
+if (y1 < rymax  && y0 >= rymax  ) --crossings;
 }return crossings;
 }if ((x0 < rxmax  && x0 > rxmin   && y0 < rymax   && y0 > rymin  ) || (x1 < rxmax  && x1 > rxmin   && y1 < rymax   && y1 > rymin  ) ) {
 return -2147483648;
@@ -288,7 +284,7 @@ crossings=C$.rectCrossingsForQuad$I$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin, rymi
 }return crossings;
 }, 1);
 
-Clazz.newMeth(C$, 'rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I', function (crossings, rxmin, rymin, rxmax, rymax, x0, y0, xc0, yc0, xc1, yc1, x1, y1, level) {
+Clazz.newMeth(C$, 'rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I',  function (crossings, rxmin, rymin, rxmax, rymax, x0, y0, xc0, yc0, xc1, yc1, x1, y1, level) {
 if (y0 >= rymax  && yc0 >= rymax   && yc1 >= rymax   && y1 >= rymax  ) {
 return crossings;
 }if (y0 <= rymin  && yc0 <= rymin   && yc1 <= rymin   && y1 <= rymin  ) {
@@ -297,11 +293,11 @@ return crossings;
 return crossings;
 }if (x0 >= rxmax  && xc0 >= rxmax   && xc1 >= rxmax   && x1 >= rxmax  ) {
 if (y0 < y1 ) {
-if (y0 <= rymin  && y1 > rymin  ) crossings++;
-if (y0 < rymax  && y1 >= rymax  ) crossings++;
+if (y0 <= rymin  && y1 > rymin  ) ++crossings;
+if (y0 < rymax  && y1 >= rymax  ) ++crossings;
 } else if (y1 < y0 ) {
-if (y1 <= rymin  && y0 > rymin  ) crossings--;
-if (y1 < rymax  && y0 >= rymax  ) crossings--;
+if (y1 <= rymin  && y0 > rymin  ) --crossings;
+if (y1 < rymax  && y0 >= rymax  ) --crossings;
 }return crossings;
 }if ((x0 > rxmin  && x0 < rxmax   && y0 > rymin   && y0 < rymax  ) || (x1 > rxmin  && x1 < rxmax   && y1 > rymin   && y1 < rymax  ) ) {
 return -2147483648;
@@ -327,24 +323,24 @@ crossings=C$.rectCrossingsForCubic$I$D$D$D$D$D$D$D$D$D$D$D$D$I(crossings, rxmin,
 }return crossings;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (direction) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I',  function (direction) {
+;C$.$init$.apply(this);
 this.direction=direction;
 }, 1);
 
-Clazz.newMeth(C$, 'getDirection$', function () {
+Clazz.newMeth(C$, 'getDirection$',  function () {
 return this.direction;
 });
 
-Clazz.newMeth(C$, 'getWithDirection$I', function (direction) {
+Clazz.newMeth(C$, 'getWithDirection$I',  function (direction) {
 return (this.direction == direction ? this : this.getReversedCurve$());
 });
 
-Clazz.newMeth(C$, 'round$D', function (v) {
+Clazz.newMeth(C$, 'round$D',  function (v) {
 return v;
 }, 1);
 
-Clazz.newMeth(C$, 'orderof$D$D', function (x1, x2) {
+Clazz.newMeth(C$, 'orderof$D$D',  function (x1, x2) {
 if (x1 < x2 ) {
 return -1;
 }if (x1 > x2 ) {
@@ -352,38 +348,38 @@ return 1;
 }return 0;
 }, 1);
 
-Clazz.newMeth(C$, 'signeddiffbits$D$D', function (y1, y2) {
-return (Double.doubleToLongBits$D(y1) - Double.doubleToLongBits$D(y2));
+Clazz.newMeth(C$, 'signeddiffbits$D$D',  function (y1, y2) {
+return (Long.$sub(Double.doubleToLongBits$D(y1),Double.doubleToLongBits$D(y2)));
 }, 1);
 
-Clazz.newMeth(C$, 'diffbits$D$D', function (y1, y2) {
-return Math.abs(Double.doubleToLongBits$D(y1) - Double.doubleToLongBits$D(y2));
+Clazz.newMeth(C$, 'diffbits$D$D',  function (y1, y2) {
+return Math.abs$J(Long.$sub(Double.doubleToLongBits$D(y1),Double.doubleToLongBits$D(y2)));
 }, 1);
 
-Clazz.newMeth(C$, 'prev$D', function (v) {
-return Double.longBitsToDouble$J(Double.doubleToLongBits$D(v) - 1);
+Clazz.newMeth(C$, 'prev$D',  function (v) {
+return Double.longBitsToDouble$J(Long.$sub(Double.doubleToLongBits$D(v),1));
 }, 1);
 
-Clazz.newMeth(C$, 'next$D', function (v) {
-return Double.longBitsToDouble$J(Double.doubleToLongBits$D(v) + 1);
+Clazz.newMeth(C$, 'next$D',  function (v) {
+return Double.longBitsToDouble$J(Long.$add(Double.doubleToLongBits$D(v),1));
 }, 1);
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return ("Curve[" + this.getOrder$() + ", " + ("(" + new Double(C$.round$D(this.getX0$())).toString() + ", " + new Double(C$.round$D(this.getY0$())).toString() + "), " ) + this.controlPointString$() + ("(" + new Double(C$.round$D(this.getX1$())).toString() + ", " + new Double(C$.round$D(this.getY1$())).toString() + "), " ) + (this.direction == 1 ? "D" : "U") + "]" );
 });
 
-Clazz.newMeth(C$, 'controlPointString$', function () {
+Clazz.newMeth(C$, 'controlPointString$',  function () {
 return "";
 });
 
-Clazz.newMeth(C$, 'crossingsFor$D$D', function (x, y) {
+Clazz.newMeth(C$, 'crossingsFor$D$D',  function (x, y) {
 if (y >= this.getYTop$()  && y < this.getYBot$()  ) {
 if (x < this.getXMax$()  && (x < this.getXMin$()  || x < this.XforY$D(y)  ) ) {
 return 1;
 }}return 0;
 });
 
-Clazz.newMeth(C$, 'accumulateCrossings$sun_awt_geom_Crossings', function (c) {
+Clazz.newMeth(C$, 'accumulateCrossings$sun_awt_geom_Crossings',  function (c) {
 var xhi=c.getXHi$();
 if (this.getXMin$() >= xhi ) {
 return false;
@@ -433,11 +429,11 @@ c.record$D$D$I(ystart, yend, this.direction);
 }return false;
 });
 
-Clazz.newMeth(C$, 'getSubCurve$D$D', function (ystart, yend) {
+Clazz.newMeth(C$, 'getSubCurve$D$D',  function (ystart, yend) {
 return this.getSubCurve$D$D$I(ystart, yend, this.direction);
 });
 
-Clazz.newMeth(C$, 'compareTo$sun_awt_geom_Curve$DA', function (that, yrange) {
+Clazz.newMeth(C$, 'compareTo$sun_awt_geom_Curve$DA',  function (that, yrange) {
 var y0=yrange[0];
 var y1=yrange[1];
 y1=Math.min(Math.min(y1, this.getYBot$()), that.getYBot$());
@@ -445,7 +441,7 @@ if (y1 <= yrange[0] ) {
 System.err.println$S("this == " + this);
 System.err.println$S("that == " + that);
 System.out.println$S("target range = " + new Double(yrange[0]).toString() + "=>" + new Double(yrange[1]).toString() );
-throw Clazz.new_($I$(5).c$$S,["sun.awt.geom.Curve backstepping from " + new Double(yrange[0]).toString() + " to " + new Double(y1).toString() ]);
+throw Clazz.new_(["sun.awt.geom.Curve backstepping from " + new Double(yrange[0]).toString() + " to " + new Double(y1).toString() ],$I$(5,1).c$$S);
 }yrange[1]=y1;
 if (this.getXMax$() <= that.getXMin$() ) {
 if (this.getXMin$() == that.getXMax$() ) {
@@ -479,12 +475,12 @@ var maxbump=Math.min(ymin * 1.0E13, (y1 - y0) * 0.1);
 var y=y0 + bump;
 while (y <= y1 ){
 if (this.fairlyClose$D$D(this.XforY$D(y), that.XforY$D(y))) {
-if ((bump *= 2) > maxbump ) {
+if ((bump*=2) > maxbump ) {
 bump=maxbump;
 }} else {
-y -= bump;
+y-=bump;
 while (true){
-bump /= 2;
+bump/=2;
 var newy=y + bump;
 if (newy <= y ) {
 break;
@@ -492,7 +488,7 @@ break;
 y=newy;
 }}
 break;
-}y += bump;
+}y+=bump;
 }
 if (y > y0 ) {
 if (y < y1 ) {
@@ -539,7 +535,7 @@ var ymid=(yrange[0] + yrange[1]) / 2;
 return C$.orderof$D$D(this.XforY$D(ymid), that.XforY$D(ymid));
 });
 
-Clazz.newMeth(C$, 'findIntersect$sun_awt_geom_Curve$DA$D$I$I$D$D$D$D$D$D$D$D$D$D$D$D', function (that, yrange, ymin, slevel, tlevel, s0, xs0, ys0, s1, xs1, ys1, t0, xt0, yt0, t1, xt1, yt1) {
+Clazz.newMeth(C$, 'findIntersect$sun_awt_geom_Curve$DA$D$I$I$D$D$D$D$D$D$D$D$D$D$D$D',  function (that, yrange, ymin, slevel, tlevel, s0, xs0, ys0, s1, xs1, ys1, t0, xt0, yt0, t1, xt1, yt1) {
 if (ys0 > yt1  || yt0 > ys1  ) {
 return false;
 }if (Math.min(xs0, xs1) > Math.max(xt0, xt1)  || Math.max(xs0, xs1) < Math.min(xt0, xt1)  ) {
@@ -551,7 +547,7 @@ var ys=this.YforT$D(s);
 if (s == s0  || s == s1  ) {
 System.out.println$S("s0 = " + new Double(s0).toString());
 System.out.println$S("s1 = " + new Double(s1).toString());
-throw Clazz.new_($I$(5).c$$S,["no s progress!"]);
+throw Clazz.new_($I$(5,1).c$$S,["no s progress!"]);
 }if (t1 - t0 > 0.001 ) {
 var t=(t0 + t1) / 2;
 var xt=that.XforT$D(t);
@@ -559,7 +555,7 @@ var yt=that.YforT$D(t);
 if (t == t0  || t == t1  ) {
 System.out.println$S("t0 = " + new Double(t0).toString());
 System.out.println$S("t1 = " + new Double(t1).toString());
-throw Clazz.new_($I$(5).c$$S,["no t progress!"]);
+throw Clazz.new_($I$(5,1).c$$S,["no t progress!"]);
 }if (ys >= yt0  && yt >= ys0  ) {
 if (this.findIntersect$sun_awt_geom_Curve$DA$D$I$I$D$D$D$D$D$D$D$D$D$D$D$D(that, yrange, ymin, slevel + 1, tlevel + 1, s0, xs0, ys0, s, xs, ys, t0, xt0, yt0, t, xt, yt)) {
 return true;
@@ -586,7 +582,7 @@ var yt=that.YforT$D(t);
 if (t == t0  || t == t1  ) {
 System.out.println$S("t0 = " + new Double(t0).toString());
 System.out.println$S("t1 = " + new Double(t1).toString());
-throw Clazz.new_($I$(5).c$$S,["no t progress!"]);
+throw Clazz.new_($I$(5,1).c$$S,["no t progress!"]);
 }if (yt >= ys0 ) {
 if (this.findIntersect$sun_awt_geom_Curve$DA$D$I$I$D$D$D$D$D$D$D$D$D$D$D$D(that, yrange, ymin, slevel, tlevel + 1, s0, xs0, ys0, s1, xs1, ys1, t0, xt0, yt0, t, xt, yt)) {
 return true;
@@ -617,7 +613,7 @@ return true;
 }}}}return false;
 });
 
-Clazz.newMeth(C$, 'refineTforY$D$D$D', function (t0, yt0, y0) {
+Clazz.newMeth(C$, 'refineTforY$D$D$D',  function (t0, yt0, y0) {
 var t1=1;
 while (true){
 var th=(t0 + t1) / 2;
@@ -634,10 +630,10 @@ return t1;
 }}
 });
 
-Clazz.newMeth(C$, 'fairlyClose$D$D', function (v1, v2) {
+Clazz.newMeth(C$, 'fairlyClose$D$D',  function (v1, v2) {
 return (Math.abs(v1 - v2) < Math.max(Math.abs(v1), Math.abs(v2)) * 1.0E-10 );
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:03 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

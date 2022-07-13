@@ -1,26 +1,19 @@
-(function(){var P$=Clazz.newPackage("jalview.workers"),I$=[[0,'Thread','jalview.datamodel.Annotation','java.util.Hashtable','jalview.analysis.StructureFrequency']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StrucConsensusThread", null, 'jalview.workers.AlignCalcWorker');
+(function(){var P$=Clazz.newPackage("jalview.workers"),I$=[[0,'Thread','jalview.datamodel.Annotation','java.util.Hashtable','jalview.analysis.StructureFrequency']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StrucConsensusThread", null, 'jalview.workers.AlignCalcWorker');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.strucConsensus=null;
-this.hStrucConsensus=null;
-this.nseq=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nseq=-1;
+},1);
+
+C$.$fields$=[['J',['nseq'],'O',['strucConsensus','jalview.datamodel.AlignmentAnnotation','hStrucConsensus','java.util.Hashtable[]']]]
+
+Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel',  function (alignViewport, alignPanel) {
+;C$.superclazz.c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel.apply(this,[alignViewport, alignPanel]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel', function (alignViewport, alignPanel) {
-C$.superclazz.c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel.apply(this, [alignViewport, alignPanel]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'run$', function () {
+Clazz.newMeth(C$, 'run$',  function () {
 try {
 if (this.calcMan.isPending$jalview_api_AlignCalcWorkerI(this)) {
 return;
@@ -64,7 +57,7 @@ return;
 }try {
 var arr=alignment.getSequencesArray$();
 this.nseq=arr.length;
-$I$(4).calculate$jalview_datamodel_SequenceIA$I$I$java_util_HashtableA$Z$jalview_datamodel_AlignmentAnnotation(arr, 0, alignment.getWidth$(), this.hStrucConsensus, true, rnaStruc);
+$I$(4,"calculate$jalview_datamodel_SequenceIA$I$I$java_util_HashtableA$Z$jalview_datamodel_AlignmentAnnotation",[arr, 0, alignment.getWidth$(), this.hStrucConsensus, true, rnaStruc]);
 } catch (x) {
 if (Clazz.exceptionOf(x,"ArrayIndexOutOfBoundsException")){
 this.calcMan.workerComplete$jalview_api_AlignCalcWorkerI(this);
@@ -78,7 +71,7 @@ this.updateResultAnnotation$Z(true);
 } catch (error) {
 if (Clazz.exceptionOf(error,"OutOfMemoryError")){
 this.calcMan.disableWorker$jalview_api_AlignCalcWorkerI(this);
-this.ap.raiseOOMWarning$("calculating RNA structure consensus", error);
+this.ap.raiseOOMWarning$S$OutOfMemoryError("calculating RNA structure consensus", error);
 } else {
 throw error;
 }
@@ -89,15 +82,15 @@ this.ap.paintAlignment$Z$Z(true, true);
 }}
 });
 
-Clazz.newMeth(C$, 'updateAnnotation$', function () {
+Clazz.newMeth(C$, 'updateAnnotation$',  function () {
 this.updateResultAnnotation$Z(false);
 });
 
-Clazz.newMeth(C$, 'updateResultAnnotation$Z', function (immediate) {
+Clazz.newMeth(C$, 'updateResultAnnotation$Z',  function (immediate) {
 if (immediate || !this.calcMan.isWorking$jalview_api_AlignCalcWorkerI(this) && this.strucConsensus != null   && this.hStrucConsensus != null   ) {
-$I$(4).completeConsensus$jalview_datamodel_AlignmentAnnotation$java_util_HashtableA$I$I$Z$Z$J(this.strucConsensus, this.hStrucConsensus, 0, this.hStrucConsensus.length, this.alignViewport.isIgnoreGapsConsensus$(), this.alignViewport.isShowSequenceLogo$(), this.nseq);
+$I$(4,"completeConsensus$jalview_datamodel_AlignmentAnnotation$java_util_HashtableA$I$I$Z$Z$J",[this.strucConsensus, this.hStrucConsensus, 0, this.hStrucConsensus.length, this.alignViewport.isIgnoreGapsConsensus$(), this.alignViewport.isShowSequenceLogo$(), this.nseq]);
 }});
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

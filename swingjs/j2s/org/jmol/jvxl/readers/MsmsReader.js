@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','javajs.util.Rdr']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MsmsReader", null, 'org.jmol.jvxl.readers.PmeshReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','javajs.util.Rdr']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MsmsReader", null, 'org.jmol.jvxl.readers.PmeshReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fileName=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['fileName']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -37,7 +33,7 @@ this.br.close$();
 this.fileName=$I$(1).rep$S$S$S(this.fileName, ".vert", ".face");
 $I$(2).info$S("reading from file " + this.fileName);
 try {
-this.br=$I$(3).getBufferedReader$java_io_BufferedInputStream$S(this.sg.atomDataServer.getBufferedInputStream$S(this.fileName), null);
+this.br=$I$(3,"getBufferedReader$java_io_BufferedInputStream$S",[this.sg.atomDataServer.getBufferedInputStream$S(this.fileName), null]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 $I$(2).info$S("Note: file " + this.fileName + " was not found" );
@@ -59,4 +55,4 @@ this.tokens=this.getTokens$();
 this.iToken=0;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

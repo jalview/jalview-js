@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.newGUI");
-var C$=Clazz.newClass(P$, "Watcher", null, 'Thread');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.newGUI"),I$=[[0,'Thread']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Watcher", null, 'Thread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._model=null;
-this._terminated=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._terminated=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_terminated'],'O',['_model','fr.orsay.lri.varna.applications.newGUI.VARNAGUITreeModel']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_applications_newGUI_VARNAGUITreeModel', function (model) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._model=model;
 }, 1);
 
@@ -27,7 +22,7 @@ this._model.addFolder$S(path);
 System.out.println$S("Watching [" + path + "]" );
 }
 try {
-this.sleep$J(1000);
+$I$(1).sleep$J(1000);
 } catch (e) {
 if (Clazz.exceptionOf(e,"InterruptedException")){
 } else {
@@ -43,4 +38,4 @@ this._terminated=true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

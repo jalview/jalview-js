@@ -1,99 +1,85 @@
-(function(){var P$=java.lang.reflect,I$=[[0,'java.lang.annotation.Annotation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AccessibleObject", null, null, 'java.lang.reflect.AnnotatedElement');
-C$.emptyArgs=null;
+(function(){var P$=java.lang.reflect,I$=[];
+/*c*/var C$=Clazz.newClass(P$, "AccessibleObject", null, null, 'java.lang.reflect.AnnotatedElement');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.emptyArgs=Clazz.array(java.lang.Object, [0]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+this.accessible=true;
+},1);
+
+C$.$fields$=[['Z',['accessible']]
+,['O',['emptyArgs','Object[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'isAccessible$', function () {
-return false;
+Clazz.newMeth(C$, 'isAccessible$',  function () {
+return this.accessible;
 });
 
-Clazz.newMeth(C$, 'setAccessible$reflect_AccessibleObjectA$Z', function (objects, flag) {
+Clazz.newMeth(C$, 'setAccessible$java_lang_reflect_AccessibleObjectA$Z',  function (objects, flag) {
 return;
 }, 1);
 
-Clazz.newMeth(C$, 'setAccessible$Z', function (flag) {
-return;
+Clazz.newMeth(C$, 'setAccessible$Z',  function (flag) {
+this.accessible=flag;
 });
 
-Clazz.newMeth(C$, 'isAnnotationPresent$Class', function (annotationType) {
-return false;
+Clazz.newMeth(C$, 'getAnnotations$',  function () {
+return this.getDeclaredAnnotations$();
 });
 
-Clazz.newMeth(C$, 'getDeclaredAnnotations$', function () {
-return Clazz.array($I$(1), [0]);
+Clazz.newMeth(C$, 'getDeclaredAnnotation$Class',  function (annotationClass) {
+return this.getAnnotation$Class(annotationClass);
 });
 
-Clazz.newMeth(C$, 'getAnnotations$', function () {
-return Clazz.array($I$(1), [0]);
+Clazz.newMeth(C$, 'getDeclaredAnnotationsByType$Class',  function (annotationClass) {
+return this.getAnnotationsByType$Class(annotationClass);
 });
 
-Clazz.newMeth(C$, 'getAnnotation$Class', function (annotationType) {
-return null;
-});
-
-Clazz.newMeth(C$, 'marshallArguments$ClassA$OA', function (parameterTypes, args) {
+Clazz.newMeth(C$, 'marshallArguments$ClassA$OA',  function (parameterTypes, args) {
 return null;
 }, 1);
 
-Clazz.newMeth(C$, 'invokeV$O$OA', function (receiver, args) {
+Clazz.newMeth(C$, 'invokeV$O$OA',  function (receiver, args) {
 return;
 });
 
-Clazz.newMeth(C$, 'invokeL$O$OA', function (receiver, args) {
+Clazz.newMeth(C$, 'invokeL$O$OA',  function (receiver, args) {
 return null;
 });
 
-Clazz.newMeth(C$, 'invokeI$O$OA', function (receiver, args) {
+Clazz.newMeth(C$, 'invokeI$O$OA',  function (receiver, args) {
 return 0;
 });
 
-Clazz.newMeth(C$, 'invokeJ$O$OA', function (receiver, args) {
+Clazz.newMeth(C$, 'invokeJ$O$OA',  function (receiver, args) {
 return 0;
 });
 
-Clazz.newMeth(C$, 'invokeF$O$OA', function (receiver, args) {
+Clazz.newMeth(C$, 'invokeF$O$OA',  function (receiver, args) {
 return 0.0;
 });
 
-Clazz.newMeth(C$, 'invokeD$O$OA', function (receiver, args) {
+Clazz.newMeth(C$, 'invokeD$O$OA',  function (receiver, args) {
 return 0.0;
 });
 
-Clazz.newMeth(C$, 'getParameterTypesImpl$', function () {
-return null;
+Clazz.newMeth(C$, 'isAnnotationPresent$Class',  function (annotationClass) {
+return this.getAnnotation$Class(annotationClass) != null ;
 });
 
-Clazz.newMeth(C$, 'getModifiers$', function () {
-return 0;
-});
-
-Clazz.newMeth(C$, 'getExceptionTypesImpl$', function () {
-return null;
-});
-
-Clazz.newMeth(C$, 'getSignature$', function () {
-return "__FIELD__";
-});
-
-Clazz.newMeth(C$, 'checkAccessibility$Class$O', function (senderClass, receiver) {
-return true;
-});
-
-Clazz.newMeth(C$, 'initializeClass$Class', function (clazz) {
-}, 1);
-
-Clazz.newMeth(C$, 'getStackClass$I', function (depth) {
+Clazz.newMeth(C$, 'getStackClass$I',  function (depth) {
 return null;
 }, 1);
+
+Clazz.newMeth(C$, 'isSynthetic$',  function () {
+return false;
+});
+
+C$.$static$=function(){C$.$static$=0;
+C$.emptyArgs=Clazz.array(java.lang.Object, [0]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

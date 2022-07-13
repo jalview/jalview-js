@@ -1,63 +1,56 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ReferenceType");
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ReferenceType");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.citation=null;
-this.scope=null;
-this.source=null;
-this.evidence=null;
-this.key=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getCitation$', function () {
+C$.$fields$=[['S',['key'],'O',['citation','jalview.xml.binding.uniprot.CitationType','scope','java.util.List','source','jalview.xml.binding.uniprot.SourceDataType','evidence','java.util.List']]]
+
+Clazz.newMeth(C$, 'getCitation$',  function () {
 return this.citation;
 });
 
-Clazz.newMeth(C$, 'setCitation$jalview_xml_binding_uniprot_CitationType', function (value) {
+Clazz.newMeth(C$, 'setCitation$jalview_xml_binding_uniprot_CitationType',  function (value) {
 this.citation=value;
 });
 
-Clazz.newMeth(C$, 'getScope$', function () {
+Clazz.newMeth(C$, 'getScope$',  function () {
 if (this.scope == null ) {
-this.scope=Clazz.new_($I$(1));
+this.scope=Clazz.new_($I$(1,1));
 }return this.scope;
 });
 
-Clazz.newMeth(C$, 'getSource$', function () {
+Clazz.newMeth(C$, 'getSource$',  function () {
 return this.source;
 });
 
-Clazz.newMeth(C$, 'setSource$jalview_xml_binding_uniprot_SourceDataType', function (value) {
+Clazz.newMeth(C$, 'setSource$jalview_xml_binding_uniprot_SourceDataType',  function (value) {
 this.source=value;
 });
 
-Clazz.newMeth(C$, 'getEvidence$', function () {
+Clazz.newMeth(C$, 'getEvidence$',  function () {
 if (this.evidence == null ) {
-this.evidence=Clazz.new_($I$(1));
+this.evidence=Clazz.new_($I$(1,1));
 }return this.evidence;
 });
 
-Clazz.newMeth(C$, 'getKey$', function () {
+Clazz.newMeth(C$, 'getKey$',  function () {
 return this.key;
 });
 
-Clazz.newMeth(C$, 'setKey$S', function (value) {
+Clazz.newMeth(C$, 'setKey$S',  function (value) {
 this.key=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.uniprot.ReferenceType'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="referenceType" propOrder={"citation"  "scope"  "source"  } )']],
-  [['citation','jalview.xml.binding.uniprot.CitationType'],['@XmlElement(required="true" )']],
-  [['scope','java.util.List<java.lang.String>'],['@XmlElement(required="true" )']],
-  [['evidence','java.util.List<java.lang.Integer>'],['@XmlAttribute(name="evidence" )']],
-  [['key','String'],['@XmlAttribute(name="key" required="true" )']],
-  [['source','jalview.xml.binding.uniprot.SourceDataType'],['@XmlElement']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.uniprot.ReferenceType',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="referenceType" propOrder={"citation"  "scope"  "source"  } ']],
+  [['citation','jalview.xml.binding.uniprot.CitationType',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['scope','java.util.List<java.lang.String>',null,['javax.xml.bind.annotation.XmlElement']],['required="true" ']],
+  [['evidence','java.util.List<java.lang.Integer>',null,['javax.xml.bind.annotation.XmlAttribute']],['name="evidence" ']],
+  [['key','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="key" required="true" ']],
+  [['source','jalview.xml.binding.uniprot.SourceDataType'],['@XmlElement']]]}
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

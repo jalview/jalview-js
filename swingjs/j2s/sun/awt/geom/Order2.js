@@ -1,31 +1,14 @@
-(function(){var P$=Clazz.newPackage("sun.awt.geom");
-var C$=Clazz.newClass(P$, "Order2", null, 'sun.awt.geom.Curve');
+(function(){var P$=Clazz.newPackage("sun.awt.geom"),I$=[[0,'sun.awt.geom.Curve']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Order2", null, 'sun.awt.geom.Curve');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x0=0;
-this.y0=0;
-this.cx0=0;
-this.cy0=0;
-this.x1=0;
-this.y1=0;
-this.xmin=0;
-this.xmax=0;
-this.xcoeff0=0;
-this.xcoeff1=0;
-this.xcoeff2=0;
-this.ycoeff0=0;
-this.ycoeff1=0;
-this.ycoeff2=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'insert$java_util_Vector$DA$D$D$D$D$D$D$I', function (curves, tmp, x0, y0, cx0, cy0, x1, y1, direction) {
+C$.$fields$=[['D',['x0','y0','cx0','cy0','x1','y1','xmin','xmax','xcoeff0','xcoeff1','xcoeff2','ycoeff0','ycoeff1','ycoeff2']]]
+
+Clazz.newMeth(C$, 'insert$java_util_Vector$DA$D$D$D$D$D$D$I',  function (curves, tmp, x0, y0, cx0, cy0, x1, y1, direction) {
 var numparams=C$.getHorizontalParams$D$D$D$DA(y0, cy0, y1, tmp);
 if (numparams == 0) {
 C$.addInstance$java_util_Vector$D$D$D$D$D$D$I(curves, x0, y0, cx0, cy0, x1, y1, direction);
@@ -44,18 +27,18 @@ C$.addInstance$java_util_Vector$D$D$D$D$D$D$I(curves, tmp[i0], tmp[i0 + 1], tmp[
 C$.addInstance$java_util_Vector$D$D$D$D$D$D$I(curves, tmp[i1], tmp[i1 + 1], tmp[i1 + 2], tmp[i1 + 3], tmp[i1 + 4], tmp[i1 + 5], direction);
 }, 1);
 
-Clazz.newMeth(C$, 'addInstance$java_util_Vector$D$D$D$D$D$D$I', function (curves, x0, y0, cx0, cy0, x1, y1, direction) {
+Clazz.newMeth(C$, 'addInstance$java_util_Vector$D$D$D$D$D$D$I',  function (curves, x0, y0, cx0, cy0, x1, y1, direction) {
 if (y0 > y1 ) {
-curves.add$TE(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x1, y1, cx0, cy0, x0, y0, -direction]));
+curves.add$O(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x1, y1, cx0, cy0, x0, y0, -direction]));
 } else if (y1 > y0 ) {
-curves.add$TE(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x0, y0, cx0, cy0, x1, y1, direction]));
+curves.add$O(Clazz.new_(C$.c$$D$D$D$D$D$D$I,[x0, y0, cx0, cy0, x1, y1, direction]));
 }}, 1);
 
-Clazz.newMeth(C$, 'getHorizontalParams$D$D$D$DA', function (c0, cp, c1, ret) {
+Clazz.newMeth(C$, 'getHorizontalParams$D$D$D$DA',  function (c0, cp, c1, ret) {
 if (c0 <= cp  && cp <= c1  ) {
 return 0;
-}c0 -= cp;
-c1 -= cp;
+}c0-=cp;
+c1-=cp;
 var denom=c0 + c1;
 if (denom == 0 ) {
 return 0;
@@ -66,7 +49,7 @@ return 0;
 return 1;
 }, 1);
 
-Clazz.newMeth(C$, 'split$DA$I$D', function (coords, pos, t) {
+Clazz.newMeth(C$, 'split$DA$I$D',  function (coords, pos, t) {
 var x0;
 var y0;
 var cx;
@@ -93,9 +76,8 @@ coords[pos + 6]=x1;
 coords[pos + 7]=y1;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (x0, y0, cx0, cy0, x1, y1, direction) {
-C$.superclazz.c$$I.apply(this, [direction]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I',  function (x0, y0, cx0, cy0, x1, y1, direction) {
+;C$.superclazz.c$$I.apply(this,[direction]);C$.$init$.apply(this);
 if (cy0 < y0 ) {
 cy0=y0;
 } else if (cy0 > y1 ) {
@@ -116,59 +98,59 @@ this.ycoeff1=cy0 + cy0 - y0 - y0;
 this.ycoeff2=y0 - cy0 - cy0  + y1;
 }, 1);
 
-Clazz.newMeth(C$, 'getOrder$', function () {
+Clazz.newMeth(C$, 'getOrder$',  function () {
 return 2;
 });
 
-Clazz.newMeth(C$, 'getXTop$', function () {
+Clazz.newMeth(C$, 'getXTop$',  function () {
 return this.x0;
 });
 
-Clazz.newMeth(C$, 'getYTop$', function () {
+Clazz.newMeth(C$, 'getYTop$',  function () {
 return this.y0;
 });
 
-Clazz.newMeth(C$, 'getXBot$', function () {
+Clazz.newMeth(C$, 'getXBot$',  function () {
 return this.x1;
 });
 
-Clazz.newMeth(C$, 'getYBot$', function () {
+Clazz.newMeth(C$, 'getYBot$',  function () {
 return this.y1;
 });
 
-Clazz.newMeth(C$, 'getXMin$', function () {
+Clazz.newMeth(C$, 'getXMin$',  function () {
 return this.xmin;
 });
 
-Clazz.newMeth(C$, 'getXMax$', function () {
+Clazz.newMeth(C$, 'getXMax$',  function () {
 return this.xmax;
 });
 
-Clazz.newMeth(C$, 'getX0$', function () {
+Clazz.newMeth(C$, 'getX0$',  function () {
 return (this.direction == 1) ? this.x0 : this.x1;
 });
 
-Clazz.newMeth(C$, 'getY0$', function () {
+Clazz.newMeth(C$, 'getY0$',  function () {
 return (this.direction == 1) ? this.y0 : this.y1;
 });
 
-Clazz.newMeth(C$, 'getCX0$', function () {
+Clazz.newMeth(C$, 'getCX0$',  function () {
 return this.cx0;
 });
 
-Clazz.newMeth(C$, 'getCY0$', function () {
+Clazz.newMeth(C$, 'getCY0$',  function () {
 return this.cy0;
 });
 
-Clazz.newMeth(C$, 'getX1$', function () {
+Clazz.newMeth(C$, 'getX1$',  function () {
 return (this.direction == -1) ? this.x0 : this.x1;
 });
 
-Clazz.newMeth(C$, 'getY1$', function () {
+Clazz.newMeth(C$, 'getY1$',  function () {
 return (this.direction == -1) ? this.y0 : this.y1;
 });
 
-Clazz.newMeth(C$, 'XforY$D', function (y) {
+Clazz.newMeth(C$, 'XforY$D',  function (y) {
 if (y <= this.y0 ) {
 return this.x0;
 }if (y >= this.y1 ) {
@@ -176,7 +158,7 @@ return this.x1;
 }return this.XforT$D(this.TforY$D(y));
 });
 
-Clazz.newMeth(C$, 'TforY$D', function (y) {
+Clazz.newMeth(C$, 'TforY$D',  function (y) {
 if (y <= this.y0 ) {
 return 0;
 }if (y >= this.y1 ) {
@@ -184,8 +166,8 @@ return 1;
 }return C$.TforY$D$D$D$D(y, this.ycoeff0, this.ycoeff1, this.ycoeff2);
 });
 
-Clazz.newMeth(C$, 'TforY$D$D$D$D', function (y, ycoeff0, ycoeff1, ycoeff2) {
-ycoeff0 -= y;
+Clazz.newMeth(C$, 'TforY$D$D$D$D',  function (y, ycoeff0, ycoeff1, ycoeff2) {
+ycoeff0-=y;
 if (ycoeff2 == 0.0 ) {
 var root=-ycoeff0 / ycoeff1;
 if (root >= 0  && root <= 1  ) {
@@ -209,15 +191,15 @@ var y1=ycoeff0 + ycoeff1 + ycoeff2 ;
 return (0 < (y0 + y1) / 2 ) ? 0.0 : 1.0;
 }, 1);
 
-Clazz.newMeth(C$, 'XforT$D', function (t) {
+Clazz.newMeth(C$, 'XforT$D',  function (t) {
 return (this.xcoeff2 * t + this.xcoeff1) * t + this.xcoeff0;
 });
 
-Clazz.newMeth(C$, 'YforT$D', function (t) {
+Clazz.newMeth(C$, 'YforT$D',  function (t) {
 return (this.ycoeff2 * t + this.ycoeff1) * t + this.ycoeff0;
 });
 
-Clazz.newMeth(C$, 'dXforT$D$I', function (t, deriv) {
+Clazz.newMeth(C$, 'dXforT$D$I',  function (t, deriv) {
 switch (deriv) {
 case 0:
 return (this.xcoeff2 * t + this.xcoeff1) * t + this.xcoeff0;
@@ -230,7 +212,7 @@ return 0;
 }
 });
 
-Clazz.newMeth(C$, 'dYforT$D$I', function (t, deriv) {
+Clazz.newMeth(C$, 'dYforT$D$I',  function (t, deriv) {
 switch (deriv) {
 case 0:
 return (this.ycoeff2 * t + this.ycoeff1) * t + this.ycoeff0;
@@ -243,14 +225,14 @@ return 0;
 }
 });
 
-Clazz.newMeth(C$, 'nextVertical$D$D', function (t0, t1) {
+Clazz.newMeth(C$, 'nextVertical$D$D',  function (t0, t1) {
 var t=-this.xcoeff1 / (2 * this.xcoeff2);
 if (t > t0  && t < t1  ) {
 return t;
 }return t1;
 });
 
-Clazz.newMeth(C$, 'enlarge$java_awt_geom_Rectangle2D', function (r) {
+Clazz.newMeth(C$, 'enlarge$java_awt_geom_Rectangle2D',  function (r) {
 r.add$D$D(this.x0, this.y0);
 var t=-this.xcoeff1 / (2 * this.xcoeff2);
 if (t > 0  && t < 1  ) {
@@ -258,7 +240,7 @@ r.add$D$D(this.XforT$D(t), this.YforT$D(t));
 }r.add$D$D(this.x1, this.y1);
 });
 
-Clazz.newMeth(C$, 'getSubCurve$D$D$I', function (ystart, yend, dir) {
+Clazz.newMeth(C$, 'getSubCurve$D$D$I',  function (ystart, yend, dir) {
 var t0;
 var t1;
 if (ystart <= this.y0 ) {
@@ -289,11 +271,11 @@ i=4;
 }return Clazz.new_(C$.c$$D$D$D$D$D$D$I,[eqn[i + 0], ystart, eqn[i + 2], eqn[i + 3], eqn[i + 4], yend, dir]);
 });
 
-Clazz.newMeth(C$, 'getReversedCurve$', function () {
+Clazz.newMeth(C$, 'getReversedCurve$',  function () {
 return Clazz.new_(C$.c$$D$D$D$D$D$D$I,[this.x0, this.y0, this.cx0, this.cy0, this.x1, this.y1, -this.direction]);
 });
 
-Clazz.newMeth(C$, 'getSegment$DA', function (coords) {
+Clazz.newMeth(C$, 'getSegment$DA',  function (coords) {
 coords[0]=this.cx0;
 coords[1]=this.cy0;
 if (this.direction == 1) {
@@ -305,10 +287,10 @@ coords[3]=this.y0;
 }return 2;
 });
 
-Clazz.newMeth(C$, 'controlPointString$', function () {
-return ("(" + new Double(P$.Curve.round$D(this.cx0)).toString() + ", " + new Double(P$.Curve.round$D(this.cy0)).toString() + "), " );
+Clazz.newMeth(C$, 'controlPointString$',  function () {
+return ("(" + new Double($I$(1).round$D(this.cx0)).toString() + ", " + new Double($I$(1).round$D(this.cy0)).toString() + "), " );
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:03 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
