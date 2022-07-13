@@ -1,0 +1,126 @@
+package jalview.structure;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StructureCommand implements StructureCommandI
+{
+  private String command;
+
+  private List<String> parameters;
+
+  public StructureCommand(String cmd, String... params)
+  {
+    command = cmd;
+    if (params != null)
+    {
+      for (String p : params)
+      {
+        addParameter(p);
+      }
+    }
+  }
+
+  @Override
+  public void addParameter(String param)
+  {
+    if (parameters == null)
+    {
+      parameters = new ArrayList<>();
+    }
+    parameters.add(param);
+  }
+
+  @Override
+  public String getCommand()
+  {
+    return command;
+  }
+
+  @Override
+  public List<String> getParameters()
+  {
+    return parameters;
+  }
+
+  @Override
+  public boolean hasParameters()
+  {
+    return parameters != null && !parameters.isEmpty();
+  }
+
+  @Override
+  public String toString()
+  {
+    if (!hasParameters())
+    {
+      return command;
+    }
+    StringBuilder sb = new StringBuilder(32);
+    sb.append(command).append("(");
+    boolean first = true;
+    for (String p : parameters)
+    {
+      if (!first)
+      {
+        sb.append(",");
+      }
+      first = false;
+      sb.append(p);
+    }
+    sb.append(")");
+    return sb.toString();
+  }
+
+  @Override
+  public int hashCode()
+  {
+    int h = command.hashCode();
+    if (parameters != null)
+    {
+      for (String p : parameters)
+      {
+        h = h * 37 + p.hashCode();
+      }
+    }
+    return h;
+  }
+
+  /**
+   * Answers true if {@code obj} is a {@code StructureCommand} with the same
+   * command and parameters as this one, else false
+   */
+  @Override
+  public boolean equals(Object obj)
+  {
+    if (obj == null || !(obj instanceof StructureCommand))
+    {
+      return false;
+    }
+    StructureCommand sc = (StructureCommand) obj;
+
+    if (!command.equals(sc.command))
+    {
+      return false;
+    }
+    if (parameters == null || sc.parameters == null)
+    {
+      return (parameters == null) && (sc.parameters == null);
+    }
+
+    int j = parameters.size();
+    if (j != sc.parameters.size())
+    {
+      return false;
+    }
+    for (int i = 0; i < j; i++)
+    {
+      if (!parameters.get(i).equals(sc.parameters.get(i)))
+      {
+        return false;
+      }
+    }
+    return true;
+  }
+
+}

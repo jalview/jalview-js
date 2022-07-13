@@ -1,0 +1,14 @@
+package jalview.structure;
+
+import java.util.List;
+
+public interface StructureCommandI
+{
+  String getCommand();
+
+  List<String> getParameters();
+
+  void addParameter(String param);
+
+  boolean hasParameters();
+}
