@@ -1,22 +1,15 @@
-(function(){var P$=java.lang,I$=[[0,'StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StackTraceElement", null, null, 'java.io.Serializable');
+(function(){var P$=java.lang,I$=[[0,'StringBuilder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StackTraceElement", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.declaringClass=null;
-this.methodName=null;
-this.fileName=null;
-this.lineNumber=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S$S$S$I', function (cls, method, file, line) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['lineNumber'],'S',['declaringClass','methodName','fileName']]]
+
+Clazz.newMeth(C$, 'c$$S$S$S$I',  function (cls, method, file, line) {
+;C$.$init$.apply(this);
 if (cls == null  || method == null  ) {
 throw Clazz.new_(Clazz.load('NullPointerException'));
 }this.declaringClass=cls;
@@ -25,11 +18,11 @@ this.fileName=file;
 this.lineNumber=line;
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!(Clazz.instanceOf(obj, "java.lang.StackTraceElement"))) {
 return false;
 }var castObj=obj;
@@ -51,34 +44,34 @@ return false;
 }return true;
 });
 
-Clazz.newMeth(C$, 'getClassName$', function () {
+Clazz.newMeth(C$, 'getClassName$',  function () {
 return (this.declaringClass == null ) ? "<unknown class>" : this.declaringClass;
 });
 
-Clazz.newMeth(C$, 'getFileName$', function () {
+Clazz.newMeth(C$, 'getFileName$',  function () {
 return this.fileName;
 });
 
-Clazz.newMeth(C$, 'getLineNumber$', function () {
+Clazz.newMeth(C$, 'getLineNumber$',  function () {
 return this.lineNumber;
 });
 
-Clazz.newMeth(C$, 'getMethodName$', function () {
+Clazz.newMeth(C$, 'getMethodName$',  function () {
 return (this.methodName == null ) ? "<unknown method>" : this.methodName;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 if (this.methodName == null ) {
 return 0;
 }return this.methodName.hashCode$() ^ this.declaringClass.hashCode$();
 });
 
-Clazz.newMeth(C$, 'isNativeMethod$', function () {
+Clazz.newMeth(C$, 'isNativeMethod$',  function () {
 return this.lineNumber == -2;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-var buf=Clazz.new_($I$(1).c$$I,[80]);
+Clazz.newMeth(C$, 'toString',  function () {
+var buf=Clazz.new_($I$(1,1).c$$I,[80]);
 buf.append$S(this.getClassName$());
 buf.append$C(".");
 buf.append$S(this.getMethodName$());
@@ -99,4 +92,4 @@ buf.append$I(lineNum);
 }}return buf.toString();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:58 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

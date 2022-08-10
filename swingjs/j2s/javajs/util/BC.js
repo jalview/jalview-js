@@ -1,40 +1,41 @@
 (function(){var P$=Clazz.newPackage("javajs.util"),I$=[];
-var C$=Clazz.newClass(P$, "BC");
-C$.fracIEEE=null;
+/*c*/var C$=Clazz.newClass(P$, "BC");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['fracIEEE','float[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'bytesToFloat$BA$I$Z', function (bytes, j, isBigEndian) {
+Clazz.newMeth(C$, 'bytesToFloat$BA$I$Z',  function (bytes, j, isBigEndian) {
 return C$.intToFloat$I(C$.bytesToInt$BA$I$Z(bytes, j, isBigEndian));
 }, 1);
 
-Clazz.newMeth(C$, 'bytesToShort$BA$I$Z', function (bytes, j, isBigEndian) {
+Clazz.newMeth(C$, 'bytesToShort$BA$I$Z',  function (bytes, j, isBigEndian) {
 var n=(isBigEndian ? (bytes[j + 1] & 255) | (bytes[j] & 255) << 8 : (bytes[j++] & 255) | (bytes[j++] & 255) << 8);
 return (n > 32767 ? n - 65536 : n);
 }, 1);
 
-Clazz.newMeth(C$, 'bytesToInt$BA$I$Z', function (bytes, j, isBigEndian) {
+Clazz.newMeth(C$, 'bytesToInt$BA$I$Z',  function (bytes, j, isBigEndian) {
 var n=(isBigEndian ? (bytes[j + 3] & 255) | (bytes[j + 2] & 255) << 8 | (bytes[j + 1] & 255) << 16 | (bytes[j] & 255) << 24 : (bytes[j++] & 255) | (bytes[j++] & 255) << 8 | (bytes[j++] & 255) << 16 | (bytes[j++] & 255) << 24);
 return ((n|0) ||n);
 }, 1);
 
-Clazz.newMeth(C$, 'intToSignedInt$I', function (n) {
+Clazz.newMeth(C$, 'intToSignedInt$I',  function (n) {
 return (n ||n);
 }, 1);
 
-Clazz.newMeth(C$, 'intToFloat$I', function (x) {
+Clazz.newMeth(C$, 'intToFloat$I',  function (x) {
 return Float.intBitsToFloat$I(x);
 }, 1);
 
-Clazz.newMeth(C$, 'bytesToDoubleToFloat$BA$I$Z', function (bytes, j, isBigEndian) {
+Clazz.newMeth(C$, 'bytesToDoubleToFloat$BA$I$Z',  function (bytes, j, isBigEndian) {
 {
 if (C$.fracIEEE == null ) C$.setFracIEEE$();
 {
@@ -56,16 +57,26 @@ return s * (C$.shiftIEEE$D$I(b2, e) +C$.shiftIEEE$D$I(b3, e - 8) + C$.shiftIEEE$
 }
 }}, 1);
 
-Clazz.newMeth(C$, 'setFracIEEE$', function () {
+Clazz.newMeth(C$, 'setFracIEEE$',  function () {
 C$.fracIEEE=Clazz.array(Float.TYPE, [270]);
 for (var i=0; i < 270; i++) C$.fracIEEE[i]=Math.pow(2, i - 141);
 
 }, 1);
 
-Clazz.newMeth(C$, 'shiftIEEE$D$I', function (f, i) {
+Clazz.newMeth(C$, 'shiftIEEE$D$I',  function (f, i) {
 if (f == 0  || i < -140 ) return 0;
 if (i > 128) return 3.4028235E38;
 return f * C$.fracIEEE[i + 140];
 }, 1);
+
+Clazz.newMeth(C$, 'bytesToFloats$BA$I$FA$I$I',  function (src, srcpos, dst, dstpos, nfloats) {
+var f=new Float32Array(src.buffer) ||null;
+System.arraycopy$O$I$O$I$I(f, srcpos << 2, dst, dstpos, nfloats);
+}, 1);
+
+Clazz.newMeth(C$, 'bytesToDouble$BA$I$DA$I$I',  function (src, srcpos, dst, dstpos, ndoubles) {
+var f=new Float64Array(src.buffer) ||null;
+System.arraycopy$O$I$O$I$I(f, srcpos << 2, dst, dstpos, ndoubles);
+}, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:25 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

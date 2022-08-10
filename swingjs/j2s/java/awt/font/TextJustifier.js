@@ -1,23 +1,16 @@
 (function(){var P$=Clazz.newPackage("java.awt.font"),I$=[];
-var C$=Clazz.newClass(P$, "TextJustifier");
-C$.DEBUG=false;
+/*c*/var C$=Clazz.newClass(P$, "TextJustifier");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEBUG=false;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.info=null;
-this.start=0;
-this.limit=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_font_GlyphJustificationInfoA$I$I', function (info, start, limit) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['start','limit'],'O',['info','java.awt.font.GlyphJustificationInfo[]']]
+,['Z',['DEBUG']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_font_GlyphJustificationInfoA$I$I',  function (info, start, limit) {
+;C$.$init$.apply(this);
 this.info=info;
 this.start=start;
 this.limit=limit;
@@ -29,7 +22,7 @@ System.out.println$S("w: " + new Float(gji.weight).toString() + ", gp: " + gji.g
 }
 }}, 1);
 
-Clazz.newMeth(C$, 'justify$F', function (delta) {
+Clazz.newMeth(C$, 'justify$F',  function (delta) {
 var deltas=Clazz.array(Float.TYPE, [this.info.length * 2]);
 var grow=delta > 0 ;
 if (C$.DEBUG) System.out.println$S("delta: " + new Float(delta).toString());
@@ -46,25 +39,25 @@ if ((grow ? gi.growPriority : gi.shrinkPriority) == p) {
 if (fallbackPriority == -1) {
 fallbackPriority=p;
 }if (i != this.start) {
-weight += gi.weight;
+weight+=gi.weight;
 if (grow) {
-gslimit += gi.growLeftLimit;
+gslimit+=gi.growLeftLimit;
 if (gi.growAbsorb) {
-absorbweight += gi.weight;
+absorbweight+=gi.weight;
 }} else {
-gslimit += gi.shrinkLeftLimit;
+gslimit+=gi.shrinkLeftLimit;
 if (gi.shrinkAbsorb) {
-absorbweight += gi.weight;
+absorbweight+=gi.weight;
 }}}if (i + 1 != this.limit) {
-weight += gi.weight;
+weight+=gi.weight;
 if (grow) {
-gslimit += gi.growRightLimit;
+gslimit+=gi.growRightLimit;
 if (gi.growAbsorb) {
-absorbweight += gi.weight;
+absorbweight+=gi.weight;
 }} else {
-gslimit += gi.shrinkRightLimit;
+gslimit+=gi.shrinkRightLimit;
 if (gi.shrinkAbsorb) {
-absorbweight += gi.weight;
+absorbweight+=gi.weight;
 }}}}}
 if (!grow) {
 gslimit=-gslimit;
@@ -85,33 +78,33 @@ var d;
 if (hitLimit) {
 d=grow ? gi.growLeftLimit : -gi.shrinkLeftLimit;
 if (absorbing) {
-d += gi.weight * weightedAbsorb;
+d+=gi.weight * weightedAbsorb;
 }} else {
 d=gi.weight * weightedDelta;
-}deltas[n] += d;
-}n++;
+}deltas[n]+=d;
+}++n;
 if (i + 1 != this.limit) {
 var d;
 if (hitLimit) {
 d=grow ? gi.growRightLimit : -gi.shrinkRightLimit;
 if (absorbing) {
-d += gi.weight * weightedAbsorb;
+d+=gi.weight * weightedAbsorb;
 }} else {
 d=gi.weight * weightedDelta;
-}deltas[n] += d;
-}n++;
+}deltas[n]+=d;
+}++n;
 } else {
 n+=2;
 }}
 if (!lastPass && hitLimit && !absorbing  ) {
-delta -= gslimit;
+delta-=gslimit;
 } else {
 delta=0;
 }}
 if (C$.DEBUG) {
 var total=0;
 for (var i=0; i < deltas.length; i++) {
-total += deltas[i];
+total+=deltas[i];
 System.out.print$S(new Float(deltas[i]).toString() + ", ");
 if (i % 20 == 9) {
 System.out.println$();
@@ -121,6 +114,10 @@ System.out.println$();
 }return deltas;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.DEBUG=false;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:52 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

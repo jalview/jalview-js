@@ -1,24 +1,7 @@
-(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.ZStream','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GZIPHeader", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("swingjs.jzlib"),I$=[[0,'swingjs.jzlib.ZStream','InternalError']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GZIPHeader", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.text=false;
-this.fhcrc=false;
-this.time=0;
-this.xflags=0;
-this.os=0;
-this.extra=null;
-this.name=null;
-this.comment=null;
-this.hcrc=0;
-this.crc=0;
-this.done=false;
-this.mtime=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.text=false;
@@ -26,68 +9,70 @@ this.fhcrc=false;
 this.os=255;
 this.done=false;
 this.mtime=0;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'setModifiedTime$J', function (mtime) {
+C$.$fields$=[['Z',['text','fhcrc','done'],'I',['xflags','os','hcrc'],'J',['time','crc','mtime'],'O',['extra','byte[]','+name','+comment']]]
+
+Clazz.newMeth(C$, 'setModifiedTime$J',  function (mtime) {
 this.mtime=mtime;
 });
 
-Clazz.newMeth(C$, 'getModifiedTime$', function () {
+Clazz.newMeth(C$, 'getModifiedTime$',  function () {
 return this.mtime;
 });
 
-Clazz.newMeth(C$, 'setOS$I', function (os) {
+Clazz.newMeth(C$, 'setOS$I',  function (os) {
 if ((0 <= os && os <= 13 ) || os == 255 ) this.os=os;
  else throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["os: " + os]);
 });
 
-Clazz.newMeth(C$, 'getOS$', function () {
+Clazz.newMeth(C$, 'getOS$',  function () {
 return this.os;
 });
 
-Clazz.newMeth(C$, 'setName$S', function (name) {
+Clazz.newMeth(C$, 'setName$S',  function (name) {
 this.name=$I$(1).getBytes$S(name);
 });
 
-Clazz.newMeth(C$, 'getName$', function () {
+Clazz.newMeth(C$, 'getName$',  function () {
 if (this.name == null ) return "";
 try {
 return  String.instantialize(this.name, "ISO-8859-1");
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.UnsupportedEncodingException")){
-throw Clazz.new_($I$(2).c$$S,[e.toString()]);
+throw Clazz.new_([e.toString()],$I$(2,1).c$$S);
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'setComment$S', function (comment) {
+Clazz.newMeth(C$, 'setComment$S',  function (comment) {
 this.comment=$I$(1).getBytes$S(comment);
 });
 
-Clazz.newMeth(C$, 'getComment$', function () {
+Clazz.newMeth(C$, 'getComment$',  function () {
 if (this.comment == null ) return "";
 try {
 return  String.instantialize(this.comment, "ISO-8859-1");
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.UnsupportedEncodingException")){
-throw Clazz.new_($I$(2).c$$S,[e.toString()]);
+throw Clazz.new_([e.toString()],$I$(2,1).c$$S);
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'setCRC$J', function (crc) {
+Clazz.newMeth(C$, 'setCRC$J',  function (crc) {
 this.crc=crc;
 });
 
-Clazz.newMeth(C$, 'getCRC$', function () {
+Clazz.newMeth(C$, 'getCRC$',  function () {
 return this.crc;
 });
 
-Clazz.newMeth(C$, 'put$swingjs_jzlib_Deflate', function (d) {
+Clazz.newMeth(C$, 'put$swingjs_jzlib_Deflate',  function (d) {
 var flag=0;
 if (this.text) {
 flag|=1;
@@ -105,27 +90,27 @@ xfl|=4;
 } else if (d.level == 9) {
 xfl|=2;
 }d.put_short$I(-29921);
-d.put_byteB$B(($b$[0] = 8, $b$[0]));
-d.put_byteB$B(($b$[0] = (flag|0), $b$[0]));
-d.put_byteB$B(($b$[0] = (this.mtime|0), $b$[0]));
-d.put_byteB$B(($b$[0] = ((this.mtime >> 8)|0), $b$[0]));
-d.put_byteB$B(($b$[0] = ((this.mtime >> 16)|0), $b$[0]));
-d.put_byteB$B(($b$[0] = ((this.mtime >> 24)|0), $b$[0]));
-d.put_byteB$B(($b$[0] = (xfl|0), $b$[0]));
-d.put_byteB$B(($b$[0] = (this.os|0), $b$[0]));
+d.put_byteB$B(8);
+d.put_byteB$B(($b$[0] = flag, $b$[0]));
+d.put_byteB$B(($b$[0] = this.mtime, $b$[0]));
+d.put_byteB$B(($b$[0] = (Long.$sr(this.mtime,8)), $b$[0]));
+d.put_byteB$B(($b$[0] = (Long.$sr(this.mtime,16)), $b$[0]));
+d.put_byteB$B(($b$[0] = (Long.$sr(this.mtime,24)), $b$[0]));
+d.put_byteB$B(($b$[0] = xfl, $b$[0]));
+d.put_byteB$B(($b$[0] = this.os, $b$[0]));
 if (this.extra != null ) {
-d.put_byteB$B(($b$[0] = (this.extra.length|0), $b$[0]));
-d.put_byteB$B(($b$[0] = ((this.extra.length >> 8)|0), $b$[0]));
+d.put_byteB$B(($b$[0] = this.extra.length, $b$[0]));
+d.put_byteB$B(($b$[0] = (this.extra.length >> 8), $b$[0]));
 d.put_byte$BA$I$I(this.extra, 0, this.extra.length);
 }if (this.name != null ) {
 d.put_byte$BA$I$I(this.name, 0, this.name.length);
-d.put_byteB$B(($b$[0] = 0, $b$[0]));
+d.put_byteB$B(0);
 }if (this.comment != null ) {
 d.put_byte$BA$I$I(this.comment, 0, this.comment.length);
-d.put_byteB$B(($b$[0] = 0, $b$[0]));
+d.put_byteB$B(0);
 }});
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 var gheader=Clazz.clone(this);
 var tmp;
 if (gheader.extra != null ) {
@@ -146,4 +131,4 @@ var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:21 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

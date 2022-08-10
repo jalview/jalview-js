@@ -1,0 +1,63 @@
+/*
+ * Jalview - A Sequence Alignment Editor and Viewer (2.11.2.3)
+ * Copyright (C) 2022 The Jalview Authors
+ * 
+ * This file is part of Jalview.
+ * 
+ * Jalview is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *  
+ * Jalview is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty 
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+ * PURPOSE.  See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Jalview.  If not, see <http://www.gnu.org/licenses/>.
+ * The Jalview Authors are detailed in the 'AUTHORS' file.
+ */
+
+tdbeacons_data_columns
+#
+_group.id
+_group.name
+_group.sort_order
+g1;ModelInfo;1
+g2;Quality;2
+g3;Miscellaneous;3
+
+#
+_data_column.primary_key;model_url
+_data_column.default_response_page_size;100
+#
+_data_column.name
+_data_column.code
+_data_column.group_id
+_data_column.data_type  | _data_column.isFormated | _data_column.significantDigit
+_data_column.min_col_width
+_data_column.max_col_width
+_data_column.preferred_col_width
+_data_column.is_shown_by_default
+_data_column.is_searchable
+Uniprot Id;id;String;g1;80;150;85;false;false
+Uniprot Start;uniprot_start;Integer;g1;80;150;85;true;false
+Uniprot End;uniprot_end;Integer;g1;80;150;85;true;false
+Provider;provider;String;g1;80;150;85;true;false
+Model id;model_identifier;String;g3;80;150;85;true;false
+Model Category;model_category;String;g1;80;150;85;true;false
+Model Type;model_type;String;g1;80;150;85;false;false
+Title;model_title;String;g1;100;150;105;true;false
+Resolution;resolution;double|T|3;g2;80;150;85;true;false
+Confidence;confidence_avg_local_score;double|T|2;g2;100;150;105;true;false
+Confidence Score Type;confidence_type;String;g2;100;150;105;true;false
+Confidence Score Version;confidence_version;String;g2;100;150;105;true;false
+Coverage;coverage;double|T|2;g2;80;150;85;true;false
+Sequence Identity;sequence_identity;double|T|1;g2;80;150;85;false;false
+Created Date;created;string;g3;80;150;85;true;false
+UniProt Accession;uniprot_accession;String;g1;50;400;95;false;true
+Url;model_url;String;g3;100;150;105;true;false
+Model Format;model_format;String;g3;20;60;20;true;false
+Page URL;model_page_url;String;g3;100;150;105;true;false
+Ensemble Sample Url;ensembl_sample_url;String;g3;100;150;105;false;false

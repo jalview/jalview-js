@@ -1,43 +1,34 @@
-(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,'java.text.BreakIterator','java.awt.font.TextMeasurer','java.awt.font.CharArrayIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LineBreakMeasurer");
+(function(){var P$=Clazz.newPackage("java.awt.font"),I$=[[0,'java.text.BreakIterator','java.awt.font.TextMeasurer','java.awt.font.CharArrayIterator']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LineBreakMeasurer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.breakIter=null;
-this.start=0;
-this.pos=0;
-this.limit=0;
-this.measurer=null;
-this.charIter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext', function (text, frc) {
+C$.$fields$=[['I',['start','pos','limit'],'O',['breakIter','java.text.BreakIterator','measurer','java.awt.font.TextMeasurer','charIter','java.awt.font.CharArrayIterator']]]
+
+Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext',  function (text, frc) {
 C$.c$$java_text_AttributedCharacterIterator$java_text_BreakIterator$java_awt_font_FontRenderContext.apply(this, [text, $I$(1).getLineInstance$(), frc]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$java_text_BreakIterator$java_awt_font_FontRenderContext', function (text, breakIter, frc) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$java_text_BreakIterator$java_awt_font_FontRenderContext',  function (text, breakIter, frc) {
+;C$.$init$.apply(this);
 if (text.getEndIndex$() - text.getBeginIndex$() < 1) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Text must contain at least one character."]);
 }this.breakIter=breakIter;
-this.measurer=Clazz.new_($I$(2).c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext,[text, frc]);
+this.measurer=Clazz.new_($I$(2,1).c$$java_text_AttributedCharacterIterator$java_awt_font_FontRenderContext,[text, frc]);
 this.limit=text.getEndIndex$();
 this.pos=this.start=text.getBeginIndex$();
-this.charIter=Clazz.new_($I$(3).c$$CA$I,[this.measurer.getChars$(), this.start]);
+this.charIter=Clazz.new_([this.measurer.getChars$(), this.start],$I$(3,1).c$$CA$I);
 this.breakIter.setText$java_text_CharacterIterator(this.charIter);
 }, 1);
 
-Clazz.newMeth(C$, 'nextOffset$F', function (wrappingWidth) {
+Clazz.newMeth(C$, 'nextOffset$F',  function (wrappingWidth) {
 return this.nextOffset$F$I$Z(wrappingWidth, this.limit, false);
 });
 
-Clazz.newMeth(C$, 'nextOffset$F$I$Z', function (wrappingWidth, offsetLimit, requireNextWord) {
+Clazz.newMeth(C$, 'nextOffset$F$I$Z',  function (wrappingWidth, offsetLimit, requireNextWord) {
 var nextOffset=this.pos;
 if (this.pos < this.limit) {
 if (offsetLimit <= this.pos) {
@@ -64,11 +55,11 @@ nextOffset=offsetLimit;
 }return nextOffset;
 });
 
-Clazz.newMeth(C$, 'nextLayout$F', function (wrappingWidth) {
+Clazz.newMeth(C$, 'nextLayout$F',  function (wrappingWidth) {
 return this.nextLayout$F$I$Z(wrappingWidth, this.limit, false);
 });
 
-Clazz.newMeth(C$, 'nextLayout$F$I$Z', function (wrappingWidth, offsetLimit, requireNextWord) {
+Clazz.newMeth(C$, 'nextLayout$F$I$Z',  function (wrappingWidth, offsetLimit, requireNextWord) {
 if (this.pos < this.limit) {
 var layoutLimit=this.nextOffset$F$I$Z(wrappingWidth, offsetLimit, requireNextWord);
 if (layoutLimit == this.pos) {
@@ -80,17 +71,17 @@ return result;
 return null;
 }});
 
-Clazz.newMeth(C$, 'getPosition$', function () {
+Clazz.newMeth(C$, 'getPosition$',  function () {
 return this.pos;
 });
 
-Clazz.newMeth(C$, 'setPosition$I', function (newPosition) {
+Clazz.newMeth(C$, 'setPosition$I',  function (newPosition) {
 if (newPosition < this.start || newPosition > this.limit ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["position is out of range"]);
 }this.pos=newPosition;
 });
 
-Clazz.newMeth(C$, 'insertChar$java_text_AttributedCharacterIterator$I', function (newParagraph, insertPos) {
+Clazz.newMeth(C$, 'insertChar$java_text_AttributedCharacterIterator$I',  function (newParagraph, insertPos) {
 this.measurer.insertChar$java_text_AttributedCharacterIterator$I(newParagraph, insertPos);
 this.limit=newParagraph.getEndIndex$();
 this.pos=this.start=newParagraph.getBeginIndex$();
@@ -98,7 +89,7 @@ this.charIter.reset$CA$I(this.measurer.getChars$(), newParagraph.getBeginIndex$(
 this.breakIter.setText$java_text_CharacterIterator(this.charIter);
 });
 
-Clazz.newMeth(C$, 'deleteChar$java_text_AttributedCharacterIterator$I', function (newParagraph, deletePos) {
+Clazz.newMeth(C$, 'deleteChar$java_text_AttributedCharacterIterator$I',  function (newParagraph, deletePos) {
 this.measurer.deleteChar$java_text_AttributedCharacterIterator$I(newParagraph, deletePos);
 this.limit=newParagraph.getEndIndex$();
 this.pos=this.start=newParagraph.getBeginIndex$();
@@ -108,4 +99,4 @@ this.breakIter.setText$java_text_CharacterIterator(this.charIter);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:52 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

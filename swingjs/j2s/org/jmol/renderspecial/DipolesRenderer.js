@@ -1,39 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DipolesRenderer", null, 'org.jmol.render.ShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','org.jmol.util.C']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DipolesRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dipoleVectorScale=0;
-this.offset=null;
-this.screens3f=null;
-this.points=null;
-this.cross0=null;
-this.cross1=null;
-this.diameter=0;
-this.headWidthPixels=0;
-this.crossWidthPixels=0;
-this.offsetSide=0;
-this.colixA=0;
-this.colixB=0;
-this.noCross=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.offset=Clazz.new_($I$(1));
+this.offset=Clazz.new_($I$(1,1));
 this.screens3f=Clazz.array($I$(2), [6]);
 this.points=Clazz.array($I$(2), [6]);
 {
 for (var i=0; i < 6; i++) {
-this.screens3f[i]=Clazz.new_($I$(2));
-this.points[i]=Clazz.new_($I$(2));
+this.screens3f[i]=Clazz.new_($I$(2,1));
+this.points[i]=Clazz.new_($I$(2,1));
 }
 }
-this.cross0=Clazz.new_($I$(2));
-this.cross1=Clazz.new_($I$(2));
-}, 1);
+this.cross0=Clazz.new_($I$(2,1));
+this.cross1=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['noCross'],'F',['dipoleVectorScale','offsetSide'],'I',['diameter','headWidthPixels','crossWidthPixels'],'H',['colixA','colixB'],'O',['offset','javajs.util.V3','screens3f','javajs.util.P3[]','+points','cross0','javajs.util.P3','+cross1']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 var dipoles=this.shape;
@@ -117,26 +101,25 @@ this.crossWidthPixels=this.headWidthPixels;
 this.colix=this.colixA;
 if (this.colix == this.colixB) {
 if (!this.g3d.setC$H(this.colix)) return true;
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens3f[0], this.screens3f[4]);
-if (!this.noCross) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.crossWidthPixels, this.cross0, this.cross1);
-this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(($b$[0] = 2, $b$[0]), this.headWidthPixels, this.screens3f[4], this.screens3f[5], false);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens3f[0], this.screens3f[4]);
+if (!this.noCross) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.crossWidthPixels, this.cross0, this.cross1);
+this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(2, this.headWidthPixels, this.screens3f[4], this.screens3f[5], false);
 return false;
 }var needTranslucent=false;
 if (this.g3d.setC$H(this.colix)) {
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens3f[0], this.screens3f[3]);
-if (!this.noCross) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.crossWidthPixels, this.cross0, this.cross1);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens3f[0], this.screens3f[3]);
+if (!this.noCross) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.crossWidthPixels, this.cross0, this.cross1);
 } else {
 needTranslucent=true;
 }this.colix=this.colixB;
 if (this.g3d.setC$H(this.colix)) {
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screens3f[3], this.screens3f[4]);
-this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(($b$[0] = 2, $b$[0]), this.headWidthPixels, this.screens3f[4], this.screens3f[5], false);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screens3f[3], this.screens3f[4]);
+this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(2, this.headWidthPixels, this.screens3f[4], this.screens3f[5], false);
 } else {
 needTranslucent=true;
 }return needTranslucent;
 }, p$1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

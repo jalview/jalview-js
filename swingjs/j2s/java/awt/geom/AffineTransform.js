@@ -1,28 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'InternalError',['java.awt.geom.Point2D','.Double'],['java.awt.geom.Point2D','.Float'],'javajs.util.AU',['java.awt.geom.Path2D','.Double']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AffineTransform", null, null, ['Cloneable', 'java.io.Serializable']);
-C$.rot90conversion=null;
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'InternalError',['java.awt.geom.Point2D','.Double'],['java.awt.geom.Point2D','.Float'],'javajs.util.AU',['java.awt.geom.Path2D','.Double']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AffineTransform", null, null, ['Cloneable', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.rot90conversion=Clazz.array(Integer.TYPE, -1, [4, 5, 4, 5, 2, 3, 6, 7]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.m00=0;
-this.m10=0;
-this.m01=0;
-this.m11=0;
-this.m02=0;
-this.m12=0;
-this.state=0;
-this.type=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I', function (m00, m10, m01, m11, m02, m12, state) {
-C$.$init$.apply(this);
+C$.$fields$=[['D',['m00','m10','m01','m11','m02','m12'],'I',['state','type']]
+,['O',['rot90conversion','int[]']]]
+
+Clazz.newMeth(C$, 'c$$D$D$D$D$D$D$I',  function (m00, m10, m01, m11, m02, m12, state) {
+;C$.$init$.apply(this);
 this.m00=m00;
 this.m10=m10;
 this.m01=m01;
@@ -33,13 +21,13 @@ this.state=state;
 this.type=-1;
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 this.m00=this.m11=1.0;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform', function (Tx) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_geom_AffineTransform',  function (Tx) {
+;C$.$init$.apply(this);
 this.m00=Tx.m00;
 this.m10=Tx.m10;
 this.m01=Tx.m01;
@@ -50,8 +38,8 @@ this.state=Tx.state;
 this.type=Tx.type;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$F$F$F$F$F$F', function (m00, m10, m01, m11, m02, m12) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$F$F$F$F$F$F',  function (m00, m10, m01, m11, m02, m12) {
+;C$.$init$.apply(this);
 this.m00=m00;
 this.m10=m10;
 this.m01=m01;
@@ -61,8 +49,8 @@ this.m12=m12;
 this.updateState$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$FA', function (flatmatrix) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$FA',  function (flatmatrix) {
+;C$.$init$.apply(this);
 this.m00=flatmatrix[0];
 this.m10=flatmatrix[1];
 this.m01=flatmatrix[2];
@@ -73,8 +61,8 @@ this.m12=flatmatrix[5];
 }this.updateState$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$D$D$D$D$D$D', function (m00, m10, m01, m11, m02, m12) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$D$D$D$D$D$D',  function (m00, m10, m01, m11, m02, m12) {
+;C$.$init$.apply(this);
 this.m00=m00;
 this.m10=m10;
 this.m01=m01;
@@ -84,8 +72,8 @@ this.m12=m12;
 this.updateState$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$DA', function (flatmatrix) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$DA',  function (flatmatrix) {
+;C$.$init$.apply(this);
 this.m00=flatmatrix[0];
 this.m10=flatmatrix[1];
 this.m01=flatmatrix[2];
@@ -96,67 +84,67 @@ this.m12=flatmatrix[5];
 }this.updateState$();
 }, 1);
 
-Clazz.newMeth(C$, 'getTranslateInstance$D$D', function (tx, ty) {
+Clazz.newMeth(C$, 'getTranslateInstance$D$D',  function (tx, ty) {
 var Tx=Clazz.new_(C$);
 Tx.setToTranslation$D$D(tx, ty);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getRotateInstance$D', function (theta) {
+Clazz.newMeth(C$, 'getRotateInstance$D',  function (theta) {
 var Tx=Clazz.new_(C$);
 p$1.setToRotationTheta$D.apply(Tx, [theta]);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getRotateInstance$D$D$D', function (theta, anchorx, anchory) {
+Clazz.newMeth(C$, 'getRotateInstance$D$D$D',  function (theta, anchorx, anchory) {
 var Tx=Clazz.new_(C$);
 p$1.setToRotationThetaXY$D$D$D.apply(Tx, [theta, anchorx, anchory]);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getRotateInstance$D$D', function (vecx, vecy) {
+Clazz.newMeth(C$, 'getRotateInstance$D$D',  function (vecx, vecy) {
 var Tx=Clazz.new_(C$);
 p$1.setToRotationXY$D$D.apply(Tx, [vecx, vecy]);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getRotateInstance$D$D$D$D', function (vecx, vecy, anchorx, anchory) {
+Clazz.newMeth(C$, 'getRotateInstance$D$D$D$D',  function (vecx, vecy, anchorx, anchory) {
 var Tx=Clazz.new_(C$);
 p$1.setToRotationV2XY$D$D$D$D.apply(Tx, [vecx, vecy, anchorx, anchory]);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getQuadrantRotateInstance$I', function (numquadrants) {
+Clazz.newMeth(C$, 'getQuadrantRotateInstance$I',  function (numquadrants) {
 var Tx=Clazz.new_(C$);
 Tx.setToQuadrantRotation$I(numquadrants);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getQuadrantRotateInstance$I$D$D', function (numquadrants, anchorx, anchory) {
+Clazz.newMeth(C$, 'getQuadrantRotateInstance$I$D$D',  function (numquadrants, anchorx, anchory) {
 var Tx=Clazz.new_(C$);
 Tx.setToQuadrantRotation$I$D$D(numquadrants, anchorx, anchory);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getScaleInstance$D$D', function (sx, sy) {
+Clazz.newMeth(C$, 'getScaleInstance$D$D',  function (sx, sy) {
 var Tx=Clazz.new_(C$);
 Tx.setToScale$D$D(sx, sy);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getShearInstance$D$D', function (shx, shy) {
+Clazz.newMeth(C$, 'getShearInstance$D$D',  function (shx, shy) {
 var Tx=Clazz.new_(C$);
 Tx.setToShear$D$D(shx, shy);
 return Tx;
 }, 1);
 
-Clazz.newMeth(C$, 'getType$', function () {
+Clazz.newMeth(C$, 'getType$',  function () {
 if (this.type == -1) {
 p$1.calculateType.apply(this, []);
 }return this.type;
 });
 
-Clazz.newMeth(C$, 'calculateType', function () {
+Clazz.newMeth(C$, 'calculateType',  function () {
 var ret=0;
 var sgn0;
 var sgn1;
@@ -245,7 +233,7 @@ break;
 this.type=ret;
 }, p$1);
 
-Clazz.newMeth(C$, 'getDeterminant$', function () {
+Clazz.newMeth(C$, 'getDeterminant$',  function () {
 switch (this.state) {
 default:
 p$1.stateError.apply(this, []);
@@ -264,7 +252,7 @@ return 1.0;
 }
 });
 
-Clazz.newMeth(C$, 'updateState$', function () {
+Clazz.newMeth(C$, 'updateState$',  function () {
 if (this.m01 == 0.0  && this.m10 == 0.0  ) {
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
 if (this.m02 == 0.0  && this.m12 == 0.0  ) {
@@ -297,11 +285,11 @@ this.state=(7);
 this.type=-1;
 }}}});
 
-Clazz.newMeth(C$, 'stateError', function () {
-throw Clazz.new_($I$(1).c$$S,["missing case in transform state switch"]);
+Clazz.newMeth(C$, 'stateError',  function () {
+throw Clazz.new_($I$(1,1).c$$S,["missing case in transform state switch"]);
 }, p$1);
 
-Clazz.newMeth(C$, 'getMatrix$DA', function (flatmatrix) {
+Clazz.newMeth(C$, 'getMatrix$DA',  function (flatmatrix) {
 flatmatrix[0]=this.m00;
 flatmatrix[1]=this.m10;
 flatmatrix[2]=this.m01;
@@ -311,31 +299,31 @@ flatmatrix[4]=this.m02;
 flatmatrix[5]=this.m12;
 }});
 
-Clazz.newMeth(C$, 'getScaleX$', function () {
+Clazz.newMeth(C$, 'getScaleX$',  function () {
 return this.m00;
 });
 
-Clazz.newMeth(C$, 'getScaleY$', function () {
+Clazz.newMeth(C$, 'getScaleY$',  function () {
 return this.m11;
 });
 
-Clazz.newMeth(C$, 'getShearX$', function () {
+Clazz.newMeth(C$, 'getShearX$',  function () {
 return this.m01;
 });
 
-Clazz.newMeth(C$, 'getShearY$', function () {
+Clazz.newMeth(C$, 'getShearY$',  function () {
 return this.m10;
 });
 
-Clazz.newMeth(C$, 'getTranslateX$', function () {
+Clazz.newMeth(C$, 'getTranslateX$',  function () {
 return this.m02;
 });
 
-Clazz.newMeth(C$, 'getTranslateY$', function () {
+Clazz.newMeth(C$, 'getTranslateY$',  function () {
 return this.m12;
 });
 
-Clazz.newMeth(C$, 'translate$D$D', function (tx, ty) {
+Clazz.newMeth(C$, 'translate$D$D',  function (tx, ty) {
 switch (this.state) {
 default:
 p$1.stateError.apply(this, []);
@@ -401,7 +389,7 @@ this.type=1;
 }
 });
 
-Clazz.newMeth(C$, 'rotate90', function () {
+Clazz.newMeth(C$, 'rotate90',  function () {
 var M0=this.m00;
 this.m00=this.m01;
 this.m01=-M0;
@@ -415,7 +403,7 @@ state-=2;
 this.type=-1;
 }, p$1);
 
-Clazz.newMeth(C$, 'rotate180', function () {
+Clazz.newMeth(C$, 'rotate180',  function () {
 this.m00=-this.m00;
 this.m11=-this.m11;
 var state=this.state;
@@ -430,7 +418,7 @@ this.state=state | 2;
 }}this.type=-1;
 }, p$1);
 
-Clazz.newMeth(C$, 'rotate270', function () {
+Clazz.newMeth(C$, 'rotate270',  function () {
 var M0=this.m00;
 this.m00=-this.m01;
 this.m01=M0;
@@ -444,7 +432,7 @@ state-=2;
 this.type=-1;
 }, p$1);
 
-Clazz.newMeth(C$, 'rotate$D', function (theta) {
+Clazz.newMeth(C$, 'rotate$D',  function (theta) {
 var sin=Math.sin(theta);
 if (sin == 1.0 ) {
 p$1.rotate90.apply(this, []);
@@ -468,13 +456,13 @@ this.m11=-sin * M0 + cos * M1;
 this.updateState$();
 }}});
 
-Clazz.newMeth(C$, 'rotate$D$D$D', function (theta, anchorx, anchory) {
+Clazz.newMeth(C$, 'rotate$D$D$D',  function (theta, anchorx, anchory) {
 this.translate$D$D(anchorx, anchory);
 this.rotate$D(theta);
 this.translate$D$D(-anchorx, -anchory);
 });
 
-Clazz.newMeth(C$, 'rotate$D$D', function (vecx, vecy) {
+Clazz.newMeth(C$, 'rotate$D$D',  function (vecx, vecy) {
 if (vecy == 0.0 ) {
 if (vecx < 0.0 ) {
 p$1.rotate180.apply(this, []);
@@ -500,13 +488,13 @@ this.m11=-sin * M0 + cos * M1;
 this.updateState$();
 }});
 
-Clazz.newMeth(C$, 'rotate$D$D$D$D', function (vecx, vecy, anchorx, anchory) {
+Clazz.newMeth(C$, 'rotate$D$D$D$D',  function (vecx, vecy, anchorx, anchory) {
 this.translate$D$D(anchorx, anchory);
 this.rotate$D$D(vecx, vecy);
 this.translate$D$D(-anchorx, -anchory);
 });
 
-Clazz.newMeth(C$, 'quadrantRotate$I', function (numquadrants) {
+Clazz.newMeth(C$, 'quadrantRotate$I',  function (numquadrants) {
 switch (numquadrants & 3) {
 case 0:
 break;
@@ -522,23 +510,23 @@ break;
 }
 });
 
-Clazz.newMeth(C$, 'quadrantRotate$I$D$D', function (numquadrants, anchorx, anchory) {
+Clazz.newMeth(C$, 'quadrantRotate$I$D$D',  function (numquadrants, anchorx, anchory) {
 switch (numquadrants & 3) {
 case 0:
 return;
 case 1:
-this.m02 += anchorx * (this.m00 - this.m01) + anchory * (this.m01 + this.m00);
-this.m12 += anchorx * (this.m10 - this.m11) + anchory * (this.m11 + this.m10);
+this.m02+=anchorx * (this.m00 - this.m01) + anchory * (this.m01 + this.m00);
+this.m12+=anchorx * (this.m10 - this.m11) + anchory * (this.m11 + this.m10);
 p$1.rotate90.apply(this, []);
 break;
 case 2:
-this.m02 += anchorx * (this.m00 + this.m00) + anchory * (this.m01 + this.m01);
-this.m12 += anchorx * (this.m10 + this.m10) + anchory * (this.m11 + this.m11);
+this.m02+=anchorx * (this.m00 + this.m00) + anchory * (this.m01 + this.m01);
+this.m12+=anchorx * (this.m10 + this.m10) + anchory * (this.m11 + this.m11);
 p$1.rotate180.apply(this, []);
 break;
 case 3:
-this.m02 += anchorx * (this.m00 + this.m01) + anchory * (this.m01 - this.m00);
-this.m12 += anchorx * (this.m10 + this.m11) + anchory * (this.m11 - this.m10);
+this.m02+=anchorx * (this.m00 + this.m01) + anchory * (this.m01 - this.m00);
+this.m12+=anchorx * (this.m10 + this.m11) + anchory * (this.m11 - this.m10);
 p$1.rotate270.apply(this, []);
 break;
 }
@@ -548,19 +536,19 @@ this.state&=~1;
 this.state|=1;
 }});
 
-Clazz.newMeth(C$, 'scale$D$D', function (sx, sy) {
+Clazz.newMeth(C$, 'scale$D$D',  function (sx, sy) {
 var state=this.state;
 switch (state) {
 default:
 p$1.stateError.apply(this, []);
 case (7):
 case (6):
-this.m00 *= sx;
-this.m11 *= sy;
+this.m00*=sx;
+this.m11*=sy;
 case (5):
 case (4):
-this.m01 *= sy;
-this.m10 *= sx;
+this.m01*=sy;
+this.m10*=sx;
 if (this.m01 == 0  && this.m10 == 0  ) {
 state&=1;
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
@@ -572,8 +560,8 @@ this.type=-1;
 }return;
 case (3):
 case (2):
-this.m00 *= sx;
-this.m11 *= sy;
+this.m00*=sx;
+this.m11*=sy;
 if (this.m00 == 1.0  && this.m11 == 1.0  ) {
 this.state=(state&=1);
 this.type=(state == 0 ? 0 : 1);
@@ -591,7 +579,7 @@ this.type=-1;
 }
 });
 
-Clazz.newMeth(C$, 'shear$D$D', function (shx, shy) {
+Clazz.newMeth(C$, 'shear$D$D',  function (shx, shy) {
 var state=this.state;
 switch (state) {
 default:
@@ -637,14 +625,14 @@ this.type=-1;
 }
 });
 
-Clazz.newMeth(C$, 'setToIdentity$', function () {
+Clazz.newMeth(C$, 'setToIdentity$',  function () {
 this.m00=this.m11=1.0;
 this.m10=this.m01=this.m02=this.m12=0.0;
 this.state=0;
 this.type=0;
 });
 
-Clazz.newMeth(C$, 'setToTranslation$D$D', function (tx, ty) {
+Clazz.newMeth(C$, 'setToTranslation$D$D',  function (tx, ty) {
 this.m00=1.0;
 this.m10=0.0;
 this.m01=0.0;
@@ -659,11 +647,11 @@ this.state=0;
 this.type=0;
 }});
 
-Clazz.newMeth(C$, 'setToRotation$D', function (theta) {
+Clazz.newMeth(C$, 'setToRotation$D',  function (theta) {
 p$1.setToRotationTheta$D.apply(this, [theta]);
 });
 
-Clazz.newMeth(C$, 'setToRotationTheta$D', function (theta) {
+Clazz.newMeth(C$, 'setToRotationTheta$D',  function (theta) {
 var sin=Math.sin(theta);
 var cos;
 if (sin == 1.0  || sin == -1.0  ) {
@@ -691,11 +679,11 @@ this.m02=0.0;
 this.m12=0.0;
 }, p$1);
 
-Clazz.newMeth(C$, 'setToRotation$D$D$D', function (theta, anchorx, anchory) {
+Clazz.newMeth(C$, 'setToRotation$D$D$D',  function (theta, anchorx, anchory) {
 p$1.setToRotationThetaXY$D$D$D.apply(this, [theta, anchorx, anchory]);
 });
 
-Clazz.newMeth(C$, 'setToRotationThetaXY$D$D$D', function (theta, anchorx, anchory) {
+Clazz.newMeth(C$, 'setToRotationThetaXY$D$D$D',  function (theta, anchorx, anchory) {
 p$1.setToRotationTheta$D.apply(this, [theta]);
 var sin=this.m10;
 var oneMinusCos=1.0 - this.m00;
@@ -706,11 +694,11 @@ this.state|=1;
 this.type|=1;
 }}, p$1);
 
-Clazz.newMeth(C$, 'setToRotation$D$D', function (vecx, vecy) {
+Clazz.newMeth(C$, 'setToRotation$D$D',  function (vecx, vecy) {
 p$1.setToRotationXY$D$D.apply(this, [vecx, vecy]);
 });
 
-Clazz.newMeth(C$, 'setToRotationXY$D$D', function (vecx, vecy) {
+Clazz.newMeth(C$, 'setToRotationXY$D$D',  function (vecx, vecy) {
 var sin;
 var cos;
 if (vecy == 0 ) {
@@ -742,11 +730,11 @@ this.m02=0.0;
 this.m12=0.0;
 }, p$1);
 
-Clazz.newMeth(C$, 'setToRotation$D$D$D$D', function (vecx, vecy, anchorx, anchory) {
+Clazz.newMeth(C$, 'setToRotation$D$D$D$D',  function (vecx, vecy, anchorx, anchory) {
 p$1.setToRotationV2XY$D$D$D$D.apply(this, [vecx, vecy, anchorx, anchory]);
 });
 
-Clazz.newMeth(C$, 'setToRotationV2XY$D$D$D$D', function (vecx, vecy, anchorx, anchory) {
+Clazz.newMeth(C$, 'setToRotationV2XY$D$D$D$D',  function (vecx, vecy, anchorx, anchory) {
 p$1.setToRotationXY$D$D.apply(this, [vecx, vecy]);
 var sin=this.m10;
 var oneMinusCos=1.0 - this.m00;
@@ -757,7 +745,7 @@ this.state|=1;
 this.type|=1;
 }}, p$1);
 
-Clazz.newMeth(C$, 'setToQuadrantRotation$I', function (numquadrants) {
+Clazz.newMeth(C$, 'setToQuadrantRotation$I',  function (numquadrants) {
 switch (numquadrants & 3) {
 case 0:
 this.m00=1.0;
@@ -802,7 +790,7 @@ break;
 }
 });
 
-Clazz.newMeth(C$, 'setToQuadrantRotation$I$D$D', function (numquadrants, anchorx, anchory) {
+Clazz.newMeth(C$, 'setToQuadrantRotation$I$D$D',  function (numquadrants, anchorx, anchory) {
 switch (numquadrants & 3) {
 case 0:
 this.m00=1.0;
@@ -859,7 +847,7 @@ this.type=9;
 }
 });
 
-Clazz.newMeth(C$, 'setToScale$D$D', function (sx, sy) {
+Clazz.newMeth(C$, 'setToScale$D$D',  function (sx, sy) {
 this.m00=sx;
 this.m10=0.0;
 this.m01=0.0;
@@ -874,7 +862,7 @@ this.state=0;
 this.type=0;
 }});
 
-Clazz.newMeth(C$, 'setToShear$D$D', function (shx, shy) {
+Clazz.newMeth(C$, 'setToShear$D$D',  function (shx, shy) {
 this.m00=1.0;
 this.m01=shx;
 this.m10=shy;
@@ -889,7 +877,7 @@ this.state=0;
 this.type=0;
 }});
 
-Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform', function (t) {
+Clazz.newMeth(C$, 'setTransform$java_awt_geom_AffineTransform',  function (t) {
 this.m00=t.m00;
 this.m10=t.m10;
 this.m01=t.m01;
@@ -900,7 +888,7 @@ this.state=t.state;
 this.type=t.type;
 });
 
-Clazz.newMeth(C$, 'setTransform$D$D$D$D$D$D', function (m00, m10, m01, m11, m02, m12) {
+Clazz.newMeth(C$, 'setTransform$D$D$D$D$D$D',  function (m00, m10, m01, m11, m02, m12) {
 this.m00=m00;
 this.m10=m10;
 this.m01=m01;
@@ -910,7 +898,7 @@ this.m12=m12;
 this.updateState$();
 });
 
-Clazz.newMeth(C$, 'concatenate$java_awt_geom_AffineTransform', function (Tx) {
+Clazz.newMeth(C$, 'concatenate$java_awt_geom_AffineTransform',  function (Tx) {
 var M0;
 var M1;
 var T00;
@@ -1035,12 +1023,12 @@ M0=this.m00;
 M1=this.m01;
 this.m00=T00 * M0 + T10 * M1;
 this.m01=T01 * M0 + T11 * M1;
-this.m02 += T02 * M0 + T12 * M1;
+this.m02+=T02 * M0 + T12 * M1;
 M0=this.m10;
 M1=this.m11;
 this.m10=T00 * M0 + T10 * M1;
 this.m11=T01 * M0 + T11 * M1;
-this.m12 += T02 * M0 + T12 * M1;
+this.m12+=T02 * M0 + T12 * M1;
 this.type=-1;
 return;
 case (5):
@@ -1048,30 +1036,30 @@ case (4):
 M0=this.m01;
 this.m00=T10 * M0;
 this.m01=T11 * M0;
-this.m02 += T12 * M0;
+this.m02+=T12 * M0;
 M0=this.m10;
 this.m10=T00 * M0;
 this.m11=T01 * M0;
-this.m12 += T02 * M0;
+this.m12+=T02 * M0;
 break;
 case (3):
 case (2):
 M0=this.m00;
 this.m00=T00 * M0;
 this.m01=T01 * M0;
-this.m02 += T02 * M0;
+this.m02+=T02 * M0;
 M0=this.m11;
 this.m10=T10 * M0;
 this.m11=T11 * M0;
-this.m12 += T12 * M0;
+this.m12+=T12 * M0;
 break;
 case (1):
 this.m00=T00;
 this.m01=T01;
-this.m02 += T02;
+this.m02+=T02;
 this.m10=T10;
 this.m11=T11;
-this.m12 += T12;
+this.m12+=T12;
 this.state=txstate | 1;
 this.type=-1;
 return;
@@ -1079,7 +1067,7 @@ return;
 this.updateState$();
 });
 
-Clazz.newMeth(C$, 'preConcatenate$java_awt_geom_AffineTransform', function (Tx) {
+Clazz.newMeth(C$, 'preConcatenate$java_awt_geom_AffineTransform',  function (Tx) {
 var M0;
 var M1;
 var T00;
@@ -1177,8 +1165,8 @@ p$1.stateError.apply(this, []);
 case (7):
 M0=this.m02;
 M1=this.m12;
-T02 += M0 * T00 + M1 * T01;
-T12 += M0 * T10 + M1 * T11;
+T02+=M0 * T00 + M1 * T01;
+T12+=M0 * T10 + M1 * T11;
 case (6):
 this.m02=T02;
 this.m12=T12;
@@ -1194,8 +1182,8 @@ break;
 case (5):
 M0=this.m02;
 M1=this.m12;
-T02 += M0 * T00 + M1 * T01;
-T12 += M0 * T10 + M1 * T11;
+T02+=M0 * T00 + M1 * T01;
+T12+=M0 * T10 + M1 * T11;
 case (4):
 this.m02=T02;
 this.m12=T12;
@@ -1209,8 +1197,8 @@ break;
 case (3):
 M0=this.m02;
 M1=this.m12;
-T02 += M0 * T00 + M1 * T01;
-T12 += M0 * T10 + M1 * T11;
+T02+=M0 * T00 + M1 * T01;
+T12+=M0 * T10 + M1 * T11;
 case (2):
 this.m02=T02;
 this.m12=T12;
@@ -1224,8 +1212,8 @@ break;
 case (1):
 M0=this.m02;
 M1=this.m12;
-T02 += M0 * T00 + M1 * T01;
-T12 += M0 * T10 + M1 * T11;
+T02+=M0 * T00 + M1 * T01;
+T12+=M0 * T10 + M1 * T11;
 case (0):
 this.m02=T02;
 this.m12=T12;
@@ -1240,7 +1228,7 @@ return;
 this.updateState$();
 });
 
-Clazz.newMeth(C$, 'createInverse$', function () {
+Clazz.newMeth(C$, 'createInverse$',  function () {
 var det;
 switch (this.state) {
 default:
@@ -1278,7 +1266,7 @@ return Clazz.new_(C$);
 }
 });
 
-Clazz.newMeth(C$, 'invert$', function () {
+Clazz.newMeth(C$, 'invert$',  function () {
 var M00;
 var M01;
 var M02;
@@ -1368,12 +1356,12 @@ break;
 }
 });
 
-Clazz.newMeth(C$, 'transform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
+Clazz.newMeth(C$, 'transform$java_awt_geom_Point2D$java_awt_geom_Point2D',  function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst=Clazz.new_($I$(2));
+ptDst=Clazz.new_($I$(2,1));
 } else {
-ptDst=Clazz.new_($I$(3));
+ptDst=Clazz.new_($I$(3,1));
 }}var x=ptSrc.getX$();
 var y=ptSrc.getY$();
 switch (this.state) {
@@ -1406,11 +1394,11 @@ return ptDst;
 }
 });
 
-Clazz.newMeth(C$, 'transform$java_awt_geom_Point2DA$I$java_awt_geom_Point2DA$I$I', function (ptSrc, srcOff, ptDst, dstOff, numPts) {
+Clazz.newMeth(C$, 'transform$java_awt_geom_Point2DA$I$java_awt_geom_Point2DA$I$I',  function (ptSrc, srcOff, ptDst, dstOff, numPts) {
 p$1.transformPts$java_awt_geom_Point2DA$I$java_awt_geom_Point2DA$I$I.apply(this, [ptSrc, srcOff, ptDst, dstOff, numPts]);
 });
 
-Clazz.newMeth(C$, 'transformPts$java_awt_geom_Point2DA$I$java_awt_geom_Point2DA$I$I', function (ptSrc, srcOff, ptDst, dstOff, numPts) {
+Clazz.newMeth(C$, 'transformPts$java_awt_geom_Point2DA$I$java_awt_geom_Point2DA$I$I',  function (ptSrc, srcOff, ptDst, dstOff, numPts) {
 var state=this.state;
 while (--numPts >= 0){
 var src=ptSrc[srcOff++];
@@ -1419,9 +1407,9 @@ var y=src.getY$();
 var dst=ptDst[dstOff++];
 if (dst == null ) {
 if (Clazz.instanceOf(src, "java.awt.geom.Point2D.Double")) {
-dst=Clazz.new_($I$(2));
+dst=Clazz.new_($I$(2,1));
 } else {
-dst=Clazz.new_($I$(3));
+dst=Clazz.new_($I$(3,1));
 }ptDst[dstOff - 1]=dst;
 }switch (state) {
 default:
@@ -1454,7 +1442,7 @@ break;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'transform$FA$I$FA$I$I', function (srcPts, srcOff, dstPts, dstOff, numPts) {
+Clazz.newMeth(C$, 'transform$FA$I$FA$I$I',  function (srcPts, srcOff, dstPts, dstOff, numPts) {
 var M00;
 var M01;
 var M02;
@@ -1546,7 +1534,7 @@ System.arraycopy$O$I$O$I$I(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 }
 });
 
-Clazz.newMeth(C$, 'transform$DA$I$DA$I$I', function (srcPts, srcOff, dstPts, dstOff, numPts) {
+Clazz.newMeth(C$, 'transform$DA$I$DA$I$I',  function (srcPts, srcOff, dstPts, dstOff, numPts) {
 if (numPts == 0) return;
 if (!$I$(4).isAD$O(srcPts)) {
 var src=srcPts;
@@ -1644,7 +1632,7 @@ System.arraycopy$O$I$O$I$I(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 }
 });
 
-Clazz.newMeth(C$, 'transform$FA$I$DA$I$I', function (srcPts, srcOff, dstPts, dstOff, numPts) {
+Clazz.newMeth(C$, 'transform$FA$I$DA$I$I',  function (srcPts, srcOff, dstPts, dstOff, numPts) {
 var M00;
 var M01;
 var M02;
@@ -1735,7 +1723,7 @@ return;
 }
 });
 
-Clazz.newMeth(C$, 'transform$DA$I$FA$I$I', function (srcPts, srcOff, dstPts, dstOff, numPts) {
+Clazz.newMeth(C$, 'transform$DA$I$FA$I$I',  function (srcPts, srcOff, dstPts, dstOff, numPts) {
 var M00;
 var M01;
 var M02;
@@ -1826,20 +1814,20 @@ return;
 }
 });
 
-Clazz.newMeth(C$, 'inverseTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
+Clazz.newMeth(C$, 'inverseTransform$java_awt_geom_Point2D$java_awt_geom_Point2D',  function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst=Clazz.new_($I$(2));
+ptDst=Clazz.new_($I$(2,1));
 } else {
-ptDst=Clazz.new_($I$(3));
+ptDst=Clazz.new_($I$(3,1));
 }}var x=ptSrc.getX$();
 var y=ptSrc.getY$();
 switch (this.state) {
 default:
 p$1.stateError.apply(this, []);
 case (7):
-x -= this.m02;
-y -= this.m12;
+x-=this.m02;
+y-=this.m12;
 case (6):
 var det=this.m00 * this.m11 - this.m01 * this.m10;
 if (Math.abs(det) <= 4.9E-324 ) {
@@ -1847,16 +1835,16 @@ throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$
 }ptDst.setLocation$D$D((x * this.m11 - y * this.m01) / det, (y * this.m00 - x * this.m10) / det);
 return ptDst;
 case (5):
-x -= this.m02;
-y -= this.m12;
+x-=this.m02;
+y-=this.m12;
 case (4):
 if (this.m01 == 0.0  || this.m10 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
 }ptDst.setLocation$D$D(y / this.m10, x / this.m01);
 return ptDst;
 case (3):
-x -= this.m02;
-y -= this.m12;
+x-=this.m02;
+y-=this.m12;
 case (2):
 if (this.m00 == 0.0  || this.m11 == 0.0  ) {
 throw Clazz.new_(Clazz.load('java.awt.geom.NoninvertibleTransformException').c$$S,["Determinant is 0"]);
@@ -1871,7 +1859,7 @@ return ptDst;
 }
 });
 
-Clazz.newMeth(C$, 'inverseTransform$DA$I$DA$I$I', function (srcPts, srcOff, dstPts, dstOff, numPts) {
+Clazz.newMeth(C$, 'inverseTransform$DA$I$DA$I$I',  function (srcPts, srcOff, dstPts, dstOff, numPts) {
 var M00;
 var M01;
 var M02;
@@ -1978,12 +1966,12 @@ System.arraycopy$O$I$O$I$I(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 }
 });
 
-Clazz.newMeth(C$, 'deltaTransform$java_awt_geom_Point2D$java_awt_geom_Point2D', function (ptSrc, ptDst) {
+Clazz.newMeth(C$, 'deltaTransform$java_awt_geom_Point2D$java_awt_geom_Point2D',  function (ptSrc, ptDst) {
 if (ptDst == null ) {
 if (Clazz.instanceOf(ptSrc, "java.awt.geom.Point2D.Double")) {
-ptDst=Clazz.new_($I$(2));
+ptDst=Clazz.new_($I$(2,1));
 } else {
-ptDst=Clazz.new_($I$(3));
+ptDst=Clazz.new_($I$(3,1));
 }}var x=ptSrc.getX$();
 var y=ptSrc.getY$();
 switch (this.state) {
@@ -2008,7 +1996,7 @@ return ptDst;
 }
 });
 
-Clazz.newMeth(C$, 'deltaTransform$DA$I$DA$I$I', function (srcPts, srcOff, dstPts, dstOff, numPts) {
+Clazz.newMeth(C$, 'deltaTransform$DA$I$DA$I$I',  function (srcPts, srcOff, dstPts, dstOff, numPts) {
 var M00;
 var M01;
 var M10;
@@ -2059,51 +2047,55 @@ System.arraycopy$O$I$O$I$I(srcPts, srcOff, dstPts, dstOff, numPts * 2);
 }
 });
 
-Clazz.newMeth(C$, 'createTransformedShape$java_awt_Shape', function (pSrc) {
+Clazz.newMeth(C$, 'createTransformedShape$java_awt_Shape',  function (pSrc) {
 if (pSrc == null ) {
 return null;
-}return Clazz.new_($I$(5).c$$java_awt_Shape$java_awt_geom_AffineTransform,[pSrc, this]);
+}return Clazz.new_($I$(5,1).c$$java_awt_Shape$java_awt_geom_AffineTransform,[pSrc, this]);
 });
 
-Clazz.newMeth(C$, '_matround$D', function (matval) {
+Clazz.newMeth(C$, '_matround$D',  function (matval) {
 return Math.rint(matval * 1.0E15) / 1.0E15;
 }, 1);
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return ("AffineTransform[[" + new Double(C$._matround$D(this.m00)).toString() + ", " + new Double(C$._matround$D(this.m01)).toString() + ", " + new Double(C$._matround$D(this.m02)).toString() + "], [" + new Double(C$._matround$D(this.m10)).toString() + ", " + new Double(C$._matround$D(this.m11)).toString() + ", " + new Double(C$._matround$D(this.m12)).toString() + "]]" );
 });
 
-Clazz.newMeth(C$, 'isIdentity$', function () {
+Clazz.newMeth(C$, 'isIdentity$',  function () {
 return (this.state == 0 || (this.getType$() == 0) );
 });
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 try {
 return Clazz.clone(this);
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(1));
+throw Clazz.new_($I$(1,1));
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 var bits=Double.doubleToLongBits$D(this.m00);
-bits=bits * 31 + Double.doubleToLongBits$D(this.m01);
-bits=bits * 31 + Double.doubleToLongBits$D(this.m02);
-bits=bits * 31 + Double.doubleToLongBits$D(this.m10);
-bits=bits * 31 + Double.doubleToLongBits$D(this.m11);
-bits=bits * 31 + Double.doubleToLongBits$D(this.m12);
-return (((bits|0)) ^ (((bits >> 32)|0)));
+bits=Long.$add(Long.$mul(bits,31),Double.doubleToLongBits$D(this.m01));
+bits=Long.$add(Long.$mul(bits,31),Double.doubleToLongBits$D(this.m02));
+bits=Long.$add(Long.$mul(bits,31),Double.doubleToLongBits$D(this.m10));
+bits=Long.$add(Long.$mul(bits,31),Double.doubleToLongBits$D(this.m11));
+bits=Long.$add(Long.$mul(bits,31),Double.doubleToLongBits$D(this.m12));
+return ((Long.$ival(bits)) ^ (Long.$ival((Long.$sr(bits,32)))));
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!(Clazz.instanceOf(obj, "java.awt.geom.AffineTransform"))) {
 return false;
 }var a=obj;
 return ((this.m00 == a.m00 ) && (this.m01 == a.m01 ) && (this.m02 == a.m02 ) && (this.m10 == a.m10 ) && (this.m11 == a.m11 ) && (this.m12 == a.m12 )  );
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.rot90conversion=Clazz.array(Integer.TYPE, -1, [4, 5, 4, 5, 2, 3, 6, 7]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:52 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,32 +1,27 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ModeleStrand");
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ModeleStrand");
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._strand=null;
-this.hasBeenPlaced=false;
-this.strandLeft=false;
-this.strandRight=false;
-this.levelPosition=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._strand=Clazz.new_($I$(1));
+this._strand=Clazz.new_($I$(1,1));
 this.hasBeenPlaced=false;
 this.strandLeft=false;
 this.strandRight=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['hasBeenPlaced','strandLeft','strandRight'],'I',['levelPosition'],'O',['_strand','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'addBase$fr_orsay_lri_varna_models_rna_ModeleBase', function (mb) {
-this._strand.add$TE(mb);
+this._strand.add$O(mb);
 });
 
 Clazz.newMeth(C$, 'addBase$I$fr_orsay_lri_varna_models_rna_ModeleBase', function (index, mb) {
-this._strand.add$I$TE(index, mb);
+this._strand.add$I$O(index, mb);
 });
 
 Clazz.newMeth(C$, 'sizeStrand$', function () {
@@ -83,4 +78,4 @@ exist=true;
 return exist;
 });
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

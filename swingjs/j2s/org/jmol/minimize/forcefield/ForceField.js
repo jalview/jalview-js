@@ -1,32 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.viewer.Viewer','javajs.util.PT','org.jmol.minimize.Util','org.jmol.viewer.FileManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ForceField");
+(function(){var P$=Clazz.newPackage("org.jmol.minimize.forcefield"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.viewer.Viewer','javajs.util.PT','org.jmol.minimize.Util','org.jmol.viewer.FileManager']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ForceField");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.calc=null;
-this.criterion=0;
-this.e0=0;
-this.dE=0;
-this.currentStep=0;
-this.stepMax=0;
-this.coordSaved=null;
-this.minAtomCount=0;
-this.minBondCount=0;
-this.minAtoms=null;
-this.minBonds=null;
-this.minAngles=null;
-this.minTorsions=null;
-this.minPositions=null;
-this.bsFixed=null;
-this.minimizer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['criterion','e0','dE'],'I',['currentStep','stepMax','minAtomCount','minBondCount'],'S',['name'],'O',['calc','org.jmol.minimize.forcefield.Calculations','coordSaved','double[][]','minAtoms','org.jmol.minimize.MinAtom[]','minBonds','org.jmol.minimize.MinBond[]','minAngles','org.jmol.minimize.MinAngle[]','minTorsions','org.jmol.minimize.MinTorsion[]','minPositions','org.jmol.minimize.MinPosition[]','bsFixed','javajs.util.BS','minimizer','org.jmol.minimize.Minimizer']]]
 
 Clazz.newMeth(C$, 'setModelFields$', function () {
 this.minAtoms=this.minimizer.minAtoms;
@@ -59,7 +39,7 @@ if (this.calc.loggingEnabled) this.calc.appendLogData$S(this.calc.getAtomList$S(
 this.dE=0;
 this.calc.setPreliminary$Z(stepMax > 0);
 this.e0=this.energyFull$Z$Z(false, false);
-s=$I$(3).sprintf$S$S$OA(" Initial " + this.name + " E = %10.3f " + this.minimizer.units + " criterion = %8.6f max steps = " + stepMax , "ff", Clazz.array(java.lang.Object, -1, [Float.valueOf$F(this.toUserUnits$D(this.e0)), Float.valueOf$F(this.toUserUnits$D(criterion))]));
+s=$I$(3,"sprintf$S$S$OA",[" Initial " + this.name + " E = %10.3f " + this.minimizer.units + " criterion = %8.6f max steps = " + stepMax , "ff", Clazz.array(java.lang.Object, -1, [Float.valueOf$F(this.toUserUnits$D(this.e0)), Float.valueOf$F(this.toUserUnits$D(criterion))])]);
 this.minimizer.report$S$Z(s, false);
 this.calc.appendLogData$S(s);
 });
@@ -84,14 +64,14 @@ var e1=this.energyFull$Z$Z(false, false);
 this.dE=e1 - this.e0;
 var done=$I$(4).isNear3$D$D$D(e1, this.e0, this.criterion);
 if (done || this.currentStep % 10 == 0  || this.stepMax <= this.currentStep ) {
-var s=$I$(3).sprintf$S$S$OA(this.name + " Step %-4d E = %10.6f    dE = %8.6f ", "Fi", Clazz.array(java.lang.Object, -1, [Clazz.array(Float.TYPE, -1, [e1, (this.dE), this.criterion]), Integer.valueOf$I(this.currentStep)]));
+var s=$I$(3,"sprintf$S$S$OA",[this.name + " Step %-4d E = %10.6f    dE = %8.6f ", "Fi", Clazz.array(java.lang.Object, -1, [Clazz.array(Float.TYPE, -1, [e1, (this.dE), this.criterion]), Integer.valueOf$I(this.currentStep)])]);
 this.minimizer.report$S$Z(s, false);
 this.calc.appendLogData$S(s);
 }this.e0=e1;
 if (done || this.stepMax <= this.currentStep ) {
 if (this.calc.loggingEnabled) this.calc.appendLogData$S(this.calc.getAtomList$S("F I N A L  G E O M E T R Y"));
 if (done) {
-var s=$I$(3).formatStringF$S$S$F("\n    " + this.name + " STEEPEST DESCENT HAS CONVERGED: E = %8.5f " + this.minimizer.units + " after " + this.currentStep + " steps" , "f", this.toUserUnits$D(e1));
+var s=$I$(3,"formatStringF$S$S$F",["\n    " + this.name + " STEEPEST DESCENT HAS CONVERGED: E = %8.5f " + this.minimizer.units + " after " + this.currentStep + " steps" , "f", this.toUserUnits$D(e1)]);
 this.calc.appendLogData$S(s);
 this.minimizer.report$S$Z(s, true);
 $I$(1).info$S(s);
@@ -135,7 +115,7 @@ Clazz.newMeth(C$, 'energyFull$Z$Z', function (gradients, isSilent) {
 var energy;
 if (gradients) p$1.clearForces.apply(this, []);
 energy=this.energyBond$Z(gradients) + this.energyAngle$Z(gradients) + this.energyTorsion$Z(gradients) + this.energyStretchBend$Z(gradients) + this.energyOOP$Z(gradients) + this.energyVDW$Z(gradients) + this.energyES$Z(gradients) ;
-if (!isSilent && this.calc.loggingEnabled ) this.calc.appendLogData$S($I$(3).sprintf$S$S$OA("\nTOTAL %s ENERGY = %8.3f %s/mol\n", "sfs", Clazz.array(java.lang.Object, -1, [this.name, Float.valueOf$F(this.toUserUnits$D(energy)), this.minimizer.units])));
+if (!isSilent && this.calc.loggingEnabled ) this.calc.appendLogData$S($I$(3,"sprintf$S$S$OA",["\nTOTAL %s ENERGY = %8.3f %s/mol\n", "sfs", Clazz.array(java.lang.Object, -1, [this.name, Float.valueOf$F(this.toUserUnits$D(energy)), this.minimizer.units])]));
 return energy;
 });
 
@@ -271,4 +251,4 @@ return $I$(5).getBufferedReaderForResource$org_jmol_viewer_Viewer$O$S$S(this.min
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

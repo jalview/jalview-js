@@ -1,46 +1,28 @@
-(function(){var P$=Clazz.newPackage("org.jmol.console"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.i18n.GT','org.jmol.viewer.Viewer','org.jmol.script.T','javajs.util.PT','Boolean','org.jmol.c.CBK']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GenericConsole", null, null, ['org.jmol.api.JmolAppConsoleInterface', 'org.jmol.api.JmolCallbackListener']);
-C$.labels=null;
+(function(){var P$=Clazz.newPackage("org.jmol.console"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.i18n.GT','org.jmol.viewer.Viewer','org.jmol.script.T','javajs.util.PT','org.jmol.c.CBK']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GenericConsole", null, null, ['org.jmol.api.JmolAppConsoleInterface', 'org.jmol.api.JmolCallbackListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.input=null;
-this.output=null;
-this.vwr=null;
-this.menuMap=null;
-this.editButton=null;
-this.runButton=null;
-this.historyButton=null;
-this.stateButton=null;
-this.clearOutButton=null;
-this.clearInButton=null;
-this.loadButton=null;
-this.defaultMessage=null;
-this.label1=null;
-this.nTab=0;
-this.incompleteCmd=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.menuMap=Clazz.new_($I$(1));
+this.menuMap=Clazz.new_($I$(1,1));
 this.nTab=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nTab'],'S',['defaultMessage','incompleteCmd'],'O',['input','org.jmol.api.js.GenericConsoleTextArea','+output','vwr','org.jmol.viewer.Viewer','menuMap','java.util.Map','editButton','org.jmol.api.JmolAbstractButton','+runButton','+historyButton','+stateButton','+clearOutButton','+clearInButton','+loadButton','+label1']]
+,['O',['labels','java.util.Map']]]
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_viewer_Viewer', function (vwr) {
 this.vwr=vwr;
 if (C$.labels == null ) {
-var l=Clazz.new_($I$(1));
-l.put$TK$TV("title", $I$(2).$$S("Jmol Script Console") + " " + $I$(3).getJmolVersion$() );
+var l=Clazz.new_($I$(1,1));
+l.put$O$O("title", $I$(2).$$S("Jmol Script Console") + " " + $I$(3).getJmolVersion$() );
 this.setupLabels$java_util_Map(l);
 C$.labels=l;
 }});
 
 Clazz.newMeth(C$, 'addButton$org_jmol_api_JmolAbstractButton$S', function (b, label) {
 b.addConsoleListener$O(this);
-this.menuMap.put$TK$TV(label, b);
+this.menuMap.put$O$O(label, b);
 return b;
 });
 
@@ -49,28 +31,28 @@ return null;
 });
 
 Clazz.newMeth(C$, 'setupLabels$java_util_Map', function (labels) {
-labels.put$TK$TV("saveas", $I$(2).$$S("&Save As..."));
-labels.put$TK$TV("file", $I$(2).$$S("&File"));
-labels.put$TK$TV("close", $I$(2).$$S("&Close"));
+labels.put$O$O("saveas", $I$(2).$$S("&Save As..."));
+labels.put$O$O("file", $I$(2).$$S("&File"));
+labels.put$O$O("close", $I$(2).$$S("&Close"));
 this.setupLabels0$java_util_Map(labels);
 });
 
 Clazz.newMeth(C$, 'setupLabels0$java_util_Map', function (labels) {
-labels.put$TK$TV("help", $I$(2).$$S("&Help"));
-labels.put$TK$TV("search", $I$(2).$$S("&Search..."));
-labels.put$TK$TV("commands", $I$(2).$$S("&Commands"));
-labels.put$TK$TV("functions", $I$(2).$$S("Math &Functions"));
-labels.put$TK$TV("parameters", $I$(2).$$S("Set &Parameters"));
-labels.put$TK$TV("more", $I$(2).$$S("&More"));
-labels.put$TK$TV("Editor", $I$(2).$$S("Editor"));
-labels.put$TK$TV("State", $I$(2).$$S("State"));
-labels.put$TK$TV("Run", $I$(2).$$S("Run"));
-labels.put$TK$TV("Clear Output", $I$(2).$$S("Clear Output"));
-labels.put$TK$TV("Clear Input", $I$(2).$$S("Clear Input"));
-labels.put$TK$TV("History", $I$(2).$$S("History"));
-labels.put$TK$TV("Load", $I$(2).$$S("Load"));
-labels.put$TK$TV("label1", $I$(2).$$S("press CTRL-ENTER for new line or paste model data and press Load"));
-labels.put$TK$TV("default", $I$(2).$$S("Messages will appear here. Enter commands in the box below. Click the console Help menu item for on-line help, which will appear in a new browser window."));
+labels.put$O$O("help", $I$(2).$$S("&Help"));
+labels.put$O$O("search", $I$(2).$$S("&Search..."));
+labels.put$O$O("commands", $I$(2).$$S("&Commands"));
+labels.put$O$O("functions", $I$(2).$$S("Math &Functions"));
+labels.put$O$O("parameters", $I$(2).$$S("Set &Parameters"));
+labels.put$O$O("more", $I$(2).$$S("&More"));
+labels.put$O$O("Editor", $I$(2).$$S("Editor"));
+labels.put$O$O("State", $I$(2).$$S("State"));
+labels.put$O$O("Run", $I$(2).$$S("Run"));
+labels.put$O$O("Clear Output", $I$(2).$$S("Clear Output"));
+labels.put$O$O("Clear Input", $I$(2).$$S("Clear Input"));
+labels.put$O$O("History", $I$(2).$$S("History"));
+labels.put$O$O("Load", $I$(2).$$S("Load"));
+labels.put$O$O("label1", $I$(2).$$S("press CTRL-ENTER for new line or paste model data and press Load"));
+labels.put$O$O("default", $I$(2).$$S("Messages will appear here. Enter commands in the box below. Click the console Help menu item for on-line help, which will appear in a new browser window."));
 });
 
 Clazz.newMeth(C$, 'setLabels$', function () {
@@ -111,7 +93,7 @@ var inBrace=(splitCmd[3] != null );
 var notThis=splitCmd[asCommand ? 1 : 2];
 var s=splitCmd[1];
 if (notThis.length$() == 0) return null;
-var token=$I$(4).getTokenFromName$S(s.trim$().toLowerCase$());
+var token=$I$(4,"getTokenFromName$S",[s.trim$().toLowerCase$()]);
 var cmdtok=(token == null  ? 0 : token.tok);
 var isSelect=$I$(4).tokAttr$I$I(cmdtok, 12288);
 splitCmd=C$.splitCommandLine$S(strCommand);
@@ -127,9 +109,9 @@ var map=null;
 if (!asCommand) {
 notThis=s;
 if (inBrace || splitCmd[2].startsWith$S("$") || isSelect  ) {
-map=Clazz.new_($I$(1));
+map=Clazz.new_($I$(1,1));
 this.vwr.getObjectMap$java_util_Map$C(map, inBrace || isSelect  ? "{" : splitCmd[2].startsWith$S("$") ? "$" : "0");
-}}cmd=$I$(4).completeCommand$java_util_Map$Z$Z$S$I(map, s.equalsIgnoreCase$S("set "), asCommand, asCommand ? splitCmd[1] : splitCmd[2], this.nTab);
+}}cmd=$I$(4,"completeCommand$java_util_Map$Z$Z$S$I",[map, s.equalsIgnoreCase$S("set "), asCommand, asCommand ? splitCmd[1] : splitCmd[2], this.nTab]);
 cmd=splitCmd[0] + (cmd == null  ? notThis : asCommand ? cmd : splitCmd[1] + cmd);
 }return (cmd == null  || cmd.equals$O(strCommand)  ? null : cmd);
 });
@@ -165,7 +147,7 @@ if (strErrorMessage != null  && !strErrorMessage.equals$O("pending") ) p$1.outpu
 });
 
 Clazz.newMeth(C$, 'destroyConsole$', function () {
-if (this.vwr.isApplet) this.vwr.getProperty$S$S$O("DATA_API", "getAppConsole", $I$(6).FALSE);
+if (this.vwr.isApplet) this.vwr.getProperty$S$S$O("DATA_API", "getAppConsole", Boolean.FALSE);
 });
 
 Clazz.newMeth(C$, 'setAbstractButtonLabels$java_util_Map$java_util_Map', function (menuMap, labels) {
@@ -203,32 +185,33 @@ return " ";
 Clazz.newMeth(C$, 'map$O$S$S$java_util_Map', function (button, key, label, menuMap) {
 var mnemonic=C$.getMnemonic$S(label);
 if (mnemonic != " ") (button).setMnemonic$C(mnemonic);
-if (menuMap != null ) menuMap.put$TK$TV(key, button);
+if (menuMap != null ) menuMap.put$O$O(key, button);
 }, 1);
 
 Clazz.newMeth(C$, 'notifyEnabled$org_jmol_c_CBK', function (type) {
 switch (type) {
-case $I$(7).ECHO:
-case $I$(7).MEASURE:
-case $I$(7).MESSAGE:
-case $I$(7).PICK:
+case $I$(6).ECHO:
+case $I$(6).MEASURE:
+case $I$(6).MESSAGE:
+case $I$(6).PICK:
 return true;
-case $I$(7).ANIMFRAME:
-case $I$(7).APPLETREADY:
-case $I$(7).ATOMMOVED:
-case $I$(7).CLICK:
-case $I$(7).DRAGDROP:
-case $I$(7).ERROR:
-case $I$(7).EVAL:
-case $I$(7).HOVER:
-case $I$(7).IMAGE:
-case $I$(7).LOADSTRUCT:
-case $I$(7).MINIMIZATION:
-case $I$(7).SERVICE:
-case $I$(7).RESIZE:
-case $I$(7).SCRIPT:
-case $I$(7).SYNC:
-case $I$(7).STRUCTUREMODIFIED:
+case $I$(6).ANIMFRAME:
+case $I$(6).APPLETREADY:
+case $I$(6).ATOMMOVED:
+case $I$(6).CLICK:
+case $I$(6).DRAGDROP:
+case $I$(6).ERROR:
+case $I$(6).EVAL:
+case $I$(6).HOVER:
+case $I$(6).IMAGE:
+case $I$(6).LOADSTRUCT:
+case $I$(6).MINIMIZATION:
+case $I$(6).SERVICE:
+case $I$(6).RESIZE:
+case $I$(6).SCRIPT:
+case $I$(6).SYNC:
+case $I$(6).STRUCTUREMODIFIED:
+case $I$(6).AUDIO:
 break;
 }
 return false;
@@ -237,18 +220,18 @@ return false;
 Clazz.newMeth(C$, 'notifyCallback$org_jmol_c_CBK$OA', function (type, data) {
 var strInfo=(data == null  || data[1] == null   ? null : data[1].toString());
 switch (type) {
-case $I$(7).ECHO:
+case $I$(6).ECHO:
 this.sendConsoleEcho$S(strInfo);
 break;
-case $I$(7).MEASURE:
+case $I$(6).MEASURE:
 var mystatus=data[3];
 if (mystatus.indexOf$S("Picked") >= 0 || mystatus.indexOf$S("Sequence") >= 0 ) this.sendConsoleMessage$S(strInfo);
  else if (mystatus.indexOf$S("Completed") >= 0) this.sendConsoleEcho$S(strInfo.substring$I$I(strInfo.lastIndexOf$S(",") + 2, strInfo.length$() - 1));
 break;
-case $I$(7).MESSAGE:
+case $I$(6).MESSAGE:
 this.sendConsoleMessage$S(data == null  ? null : strInfo);
 break;
-case $I$(7).PICK:
+case $I$(6).PICK:
 this.sendConsoleMessage$S(strInfo);
 break;
 }
@@ -398,4 +381,4 @@ return sout;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:31 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

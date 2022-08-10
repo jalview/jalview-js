@@ -1,155 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.M4','javajs.util.V3','javajs.util.A4','javajs.util.M3','javajs.util.P3i','org.jmol.util.Point3fi','org.jmol.c.STER','org.jmol.api.Interface','javajs.util.SB','javajs.util.Quat','java.util.Hashtable','org.jmol.util.Escape','javajs.util.P4','org.jmol.util.Logger','Boolean']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TransformManager");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.M4','javajs.util.V3','javajs.util.A4','javajs.util.M3','javajs.util.P3i','org.jmol.util.Point3fi','org.jmol.c.STER','org.jmol.api.Interface','javajs.util.SB','javajs.util.Quat','java.util.Hashtable','org.jmol.util.Escape','javajs.util.P4','org.jmol.util.Logger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TransformManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.movetoThread=null;
-this.vibrationThread=null;
-this.spinThread=null;
-this.perspectiveModel=0;
-this.cameraScaleFactor=0;
-this.referencePlaneOffset=0;
-this.aperatureAngle=0;
-this.cameraDistanceFromCenter=0;
-this.modelCenterOffset=0;
-this.modelRadius=0;
-this.modelRadiusPixels=0;
-this.navigationCenter=null;
-this.navigationOffset=null;
-this.navigationShiftXY=null;
-this.navigationDepthPercent=0;
-this.matrixTemp=null;
-this.vectorTemp=null;
-this.haveNotifiedNaN=false;
-this.spinX=0;
-this.spinY=0;
-this.spinZ=0;
-this.spinFps=0;
-this.navX=0;
-this.navY=0;
-this.navZ=0;
-this.navFps=0;
-this.isSpinInternal=false;
-this.isSpinFixed=false;
-this.isSpinSelected=false;
-this.doTransform4D=false;
-this.fixedRotationOffset=null;
-this.fixedRotationCenter=null;
-this.perspectiveOffset=null;
-this.perspectiveShiftXY=null;
-this.rotationCenterDefault=null;
-this.rotationRadiusDefault=0;
-this.fixedRotationAxis=null;
-this.internalRotationAxis=null;
-this.internalTranslation=null;
-this.internalRotationCenter=null;
-this.internalRotationAngle=0;
-this.matrixRotate=null;
-this.matrixTemp3=null;
-this.matrixTemp4=null;
-this.axisangleT=null;
-this.vectorT=null;
-this.vectorT2=null;
-this.pointT2=null;
-this.rotationAxis=null;
-this.rotationRate=0;
-this.fixedTranslation=null;
-this.camera=null;
-this.cameraSetting=null;
-this.xTranslationFraction=0;
-this.yTranslationFraction=0;
-this.prevZoomSetting=0;
-this.previousX=0;
-this.previousY=0;
-this.zoomEnabled=false;
-this.zmPct=0;
-this.zmPctSet=0;
-this.zoomRatio=0;
-this.slabEnabled=false;
-this.zShadeEnabled=false;
-this.internalSlab=false;
-this.slabPercentSetting=0;
-this.depthPercentSetting=0;
-this.slabValue=0;
-this.depthValue=0;
-this.zSlabPercentSetting=0;
-this.zDepthPercentSetting=0;
-this.zSlabPoint=null;
-this.zSlabValue=0;
-this.zDepthValue=0;
-this.slabRange=0;
-this.slabPlane=null;
-this.depthPlane=null;
-this.perspectiveDepth=false;
-this.scale3D=false;
-this.cameraDepth=0;
-this.cameraDepthSetting=0;
-this.visualRangeAngstroms=0;
-this.cameraDistance=0;
-this.width=0;
-this.height=0;
-this.screenPixelCount=0;
-this.scalePixelsPerAngstrom=0;
-this.scaleDefaultPixelsPerAngstrom=0;
-this.scale3DAngstromsPerInch=0;
-this.antialias=false;
-this.useZoomLarge=false;
-this.zoomHeight=false;
-this.screenWidth=0;
-this.screenHeight=0;
-this.matrixTransform=null;
-this.matrixTransformInv=null;
-this.fScrPt=null;
-this.iScrPt=null;
-this.ptVibTemp=null;
-this.navigating=false;
-this.mode=0;
-this.defaultMode=0;
-this.untransformedPoint=null;
-this.ptTest1=null;
-this.ptTest2=null;
-this.ptTest3=null;
-this.aaTest1=null;
-this.matrixTest=null;
-this.spinOn=false;
-this.navOn=false;
-this.spinIsGesture=false;
-this.vibrationOn=false;
-this.vibrationPeriod=0;
-this.vibrationPeriodMs=0;
-this.vibrationScale=0;
-this.vibrationT=null;
-this.stereoMode=null;
-this.stereoColors=null;
-this.stereoDoubleDTI=false;
-this.stereoDoubleFull=false;
-this.stereoDegrees=0;
-this.stereoRadians=0;
-this.stereoFrame=false;
-this.matrixStereo=null;
-this.windowCentered=false;
-this.frameOffset=null;
-this.frameOffsets=null;
-this.bsFrameOffsets=null;
-this.bsSelectedAtoms=null;
-this.ptOffset=null;
-this.navMode=0;
-this.zoomFactor=0;
-this.navigationSlabOffset=0;
-this.nav=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.perspectiveModel=11;
-this.navigationCenter=Clazz.new_($I$(1));
-this.navigationOffset=Clazz.new_($I$(1));
-this.navigationShiftXY=Clazz.new_($I$(1));
-this.matrixTemp=Clazz.new_($I$(2));
-this.vectorTemp=Clazz.new_($I$(3));
+this.navigationCenter=Clazz.new_($I$(1,1));
+this.navigationOffset=Clazz.new_($I$(1,1));
+this.navigationShiftXY=Clazz.new_($I$(1,1));
+this.matrixTemp=Clazz.new_($I$(2,1));
+this.vectorTemp=Clazz.new_($I$(3,1));
 this.haveNotifiedNaN=false;
 this.spinY=30;
 this.spinFps=30;
@@ -157,27 +17,27 @@ this.navFps=NaN;
 this.isSpinInternal=false;
 this.isSpinFixed=false;
 this.isSpinSelected=false;
-this.fixedRotationOffset=Clazz.new_($I$(1));
-this.fixedRotationCenter=Clazz.new_($I$(1));
-this.perspectiveOffset=Clazz.new_($I$(1));
-this.perspectiveShiftXY=Clazz.new_($I$(1));
-this.rotationCenterDefault=Clazz.new_($I$(1));
-this.fixedRotationAxis=Clazz.new_($I$(4));
-this.internalRotationAxis=Clazz.new_($I$(4));
+this.fixedRotationOffset=Clazz.new_($I$(1,1));
+this.fixedRotationCenter=Clazz.new_($I$(1,1));
+this.perspectiveOffset=Clazz.new_($I$(1,1));
+this.perspectiveShiftXY=Clazz.new_($I$(1,1));
+this.rotationCenterDefault=Clazz.new_($I$(1,1));
+this.fixedRotationAxis=Clazz.new_($I$(4,1));
+this.internalRotationAxis=Clazz.new_($I$(4,1));
 this.internalRotationCenter=$I$(1).new3$F$F$F(0, 0, 0);
 this.internalRotationAngle=0;
-this.matrixRotate=Clazz.new_($I$(5));
-this.matrixTemp3=Clazz.new_($I$(5));
-this.matrixTemp4=Clazz.new_($I$(2));
-this.axisangleT=Clazz.new_($I$(4));
-this.vectorT=Clazz.new_($I$(3));
-this.vectorT2=Clazz.new_($I$(3));
-this.pointT2=Clazz.new_($I$(1));
-this.rotationAxis=Clazz.new_($I$(3));
+this.matrixRotate=Clazz.new_($I$(5,1));
+this.matrixTemp3=Clazz.new_($I$(5,1));
+this.matrixTemp4=Clazz.new_($I$(2,1));
+this.axisangleT=Clazz.new_($I$(4,1));
+this.vectorT=Clazz.new_($I$(3,1));
+this.vectorT2=Clazz.new_($I$(3,1));
+this.pointT2=Clazz.new_($I$(1,1));
+this.rotationAxis=Clazz.new_($I$(3,1));
 this.rotationRate=0;
-this.fixedTranslation=Clazz.new_($I$(1));
-this.camera=Clazz.new_($I$(1));
-this.cameraSetting=Clazz.new_($I$(1));
+this.fixedTranslation=Clazz.new_($I$(1,1));
+this.camera=Clazz.new_($I$(1,1));
+this.cameraSetting=Clazz.new_($I$(1,1));
 this.xTranslationFraction=0.5;
 this.yTranslationFraction=0.5;
 this.zoomEnabled=true;
@@ -193,32 +53,34 @@ this.scale3D=false;
 this.cameraDepth=3.0;
 this.cameraDepthSetting=3.0;
 this.cameraDistance=1000.0;
-this.matrixTransform=Clazz.new_($I$(2));
-this.matrixTransformInv=Clazz.new_($I$(2));
-this.fScrPt=Clazz.new_($I$(1));
-this.iScrPt=Clazz.new_($I$(6));
-this.ptVibTemp=Clazz.new_($I$(7));
+this.matrixTransform=Clazz.new_($I$(2,1));
+this.matrixTransformInv=Clazz.new_($I$(2,1));
+this.fScrPt=Clazz.new_($I$(1,1));
+this.iScrPt=Clazz.new_($I$(6,1));
+this.ptVibTemp=Clazz.new_($I$(7,1));
 this.navigating=false;
 this.mode=0;
 this.defaultMode=0;
-this.untransformedPoint=Clazz.new_($I$(1));
-this.ptTest1=Clazz.new_($I$(1));
-this.ptTest2=Clazz.new_($I$(1));
-this.ptTest3=Clazz.new_($I$(1));
-this.aaTest1=Clazz.new_($I$(4));
-this.matrixTest=Clazz.new_($I$(5));
-this.vibrationT=Clazz.new_($I$(1));
+this.untransformedPoint=Clazz.new_($I$(1,1));
+this.ptTest1=Clazz.new_($I$(1,1));
+this.ptTest2=Clazz.new_($I$(1,1));
+this.ptTest3=Clazz.new_($I$(1,1));
+this.aaTest1=Clazz.new_($I$(4,1));
+this.matrixTest=Clazz.new_($I$(5,1));
+this.vibrationT=Clazz.new_($I$(1,1));
 this.stereoMode=$I$(8).NONE;
 this.stereoDegrees=NaN;
-this.matrixStereo=Clazz.new_($I$(5));
-this.frameOffset=Clazz.new_($I$(1));
-this.ptOffset=Clazz.new_($I$(1));
+this.matrixStereo=Clazz.new_($I$(5,1));
+this.frameOffset=Clazz.new_($I$(1,1));
+this.ptOffset=Clazz.new_($I$(1,1));
 this.navMode=1;
 this.zoomFactor=3.4028235E38;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveNotifiedNaN','isSpinInternal','isSpinFixed','isSpinSelected','doTransform4D','zoomEnabled','slabEnabled','zShadeEnabled','internalSlab','perspectiveDepth','scale3D','antialias','useZoomLarge','zoomHeight','navigating','spinOn','navOn','spinIsGesture','vibrationOn','stereoDoubleDTI','stereoDoubleFull','stereoFrame','windowCentered'],'F',['cameraScaleFactor','referencePlaneOffset','aperatureAngle','cameraDistanceFromCenter','modelCenterOffset','modelRadius','modelRadiusPixels','navigationDepthPercent','spinX','spinY','spinZ','spinFps','navX','navY','navZ','navFps','rotationRadiusDefault','internalRotationAngle','rotationRate','xTranslationFraction','yTranslationFraction','prevZoomSetting','previousX','previousY','zmPct','zmPctSet','zoomRatio','slabRange','cameraDepth','cameraDepthSetting','visualRangeAngstroms','cameraDistance','scalePixelsPerAngstrom','scaleDefaultPixelsPerAngstrom','scale3DAngstromsPerInch','vibrationPeriod','vibrationScale','stereoDegrees','stereoRadians','zoomFactor','navigationSlabOffset'],'I',['perspectiveModel','slabPercentSetting','depthPercentSetting','slabValue','depthValue','zSlabPercentSetting','zDepthPercentSetting','zSlabValue','zDepthValue','width','height','screenPixelCount','screenWidth','screenHeight','mode','defaultMode','vibrationPeriodMs','navMode'],'O',['vwr','org.jmol.viewer.Viewer','movetoThread','org.jmol.thread.JmolThread','+vibrationThread','+spinThread','navigationCenter','javajs.util.P3','+navigationOffset','+navigationShiftXY','matrixTemp','javajs.util.M4','vectorTemp','javajs.util.V3','fixedRotationOffset','javajs.util.P3','+fixedRotationCenter','+perspectiveOffset','+perspectiveShiftXY','+rotationCenterDefault','fixedRotationAxis','javajs.util.A4','+internalRotationAxis','internalTranslation','javajs.util.V3','internalRotationCenter','javajs.util.P3','matrixRotate','javajs.util.M3','+matrixTemp3','matrixTemp4','javajs.util.M4','axisangleT','javajs.util.A4','vectorT','javajs.util.V3','+vectorT2','pointT2','javajs.util.P3','rotationAxis','javajs.util.V3','fixedTranslation','javajs.util.P3','+camera','+cameraSetting','+zSlabPoint','slabPlane','javajs.util.P4','+depthPlane','matrixTransform','javajs.util.M4','+matrixTransformInv','fScrPt','javajs.util.P3','iScrPt','javajs.util.P3i','ptVibTemp','org.jmol.util.Point3fi','untransformedPoint','javajs.util.P3','+ptTest1','+ptTest2','+ptTest3','aaTest1','javajs.util.A4','matrixTest','javajs.util.M3','vibrationT','javajs.util.P3','stereoMode','org.jmol.c.STER','stereoColors','int[]','matrixStereo','javajs.util.M3','frameOffset','javajs.util.P3','frameOffsets','javajs.util.P3[]','bsFrameOffsets','javajs.util.BS','+bsSelectedAtoms','ptOffset','javajs.util.P3','nav','org.jmol.api.JmolNavigatorInterface']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getTransformManager$org_jmol_viewer_Viewer$I$I$Z', function (vwr, width, height, is4D) {
@@ -304,7 +166,7 @@ if (this.spinThread != null  && this.spinIsGesture ) p$1.clearSpin.apply(this, [
 return;
 }p$1.clearSpin.apply(this, []);
 var pt1=$I$(1).newP$javajs_util_T3(this.fixedRotationCenter);
-var ptScreen=Clazz.new_($I$(1));
+var ptScreen=Clazz.new_($I$(1,1));
 this.transformPt3f$javajs_util_T3$javajs_util_P3(pt1, ptScreen);
 var pt2=$I$(1).new3$F$F$F(-yDelta, xDelta, 0);
 pt2.add$javajs_util_T3(ptScreen);
@@ -438,7 +300,7 @@ this.axisangleT.angle=-this.internalRotationAngle;
 this.matrixTemp4.setToAA$javajs_util_A4(this.axisangleT);
 this.vectorT.setT$javajs_util_T3(this.internalRotationCenter);
 this.pointT2.sub2$javajs_util_T3$javajs_util_T3(this.fixedRotationCenter, this.vectorT);
-var pt=this.matrixTemp4.rotTrans2$javajs_util_T3$javajs_util_T3(this.pointT2, Clazz.new_($I$(1)));
+var pt=this.matrixTemp4.rotTrans2$javajs_util_T3$javajs_util_T3(this.pointT2, Clazz.new_($I$(1,1)));
 pt.add$javajs_util_T3(this.vectorT);
 p$1.setRotationCenterAndRadiusXYZ$javajs_util_T3$Z.apply(this, [pt, false]);
 });
@@ -526,7 +388,7 @@ var q=this.getRotationQ$();
 if (isBest) q=q.inv$();
 return q.toString();
 case 1073742178:
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 var d=this.getTranslationXPercent$();
 C$.truncate2$javajs_util_SB$F(sb, (isBest ? -d : d));
 d=this.getTranslationYPercent$();
@@ -542,26 +404,26 @@ return $I$(11).newM$javajs_util_M3(this.matrixRotate);
 });
 
 Clazz.newMeth(C$, 'getOrientationInfo$', function () {
-var info=Clazz.new_($I$(12));
-info.put$TK$TV("moveTo", this.getMoveToText$F$Z(1, false));
-info.put$TK$TV("center", "center " + p$1.getCenterText.apply(this, []));
-info.put$TK$TV("centerPt", this.fixedRotationCenter);
-var aa=Clazz.new_($I$(4));
+var info=Clazz.new_($I$(12,1));
+info.put$O$O("moveTo", this.getMoveToText$F$Z(1, false));
+info.put$O$O("center", "center " + p$1.getCenterText.apply(this, []));
+info.put$O$O("centerPt", this.fixedRotationCenter);
+var aa=Clazz.new_($I$(4,1));
 aa.setM$javajs_util_M3(this.matrixRotate);
-info.put$TK$TV("axisAngle", aa);
-info.put$TK$TV("quaternion", this.getRotationQ$().toPoint4f$());
-info.put$TK$TV("rotationMatrix", this.matrixRotate);
-info.put$TK$TV("rotateZYZ", p$1.getRotateZyzText$Z.apply(this, [false]));
-info.put$TK$TV("rotateXYZ", p$1.getRotateXyzText.apply(this, []));
-info.put$TK$TV("transXPercent", Float.valueOf$F(this.getTranslationXPercent$()));
-info.put$TK$TV("transYPercent", Float.valueOf$F(this.getTranslationYPercent$()));
-info.put$TK$TV("zoom", Float.valueOf$F(this.zmPct));
-info.put$TK$TV("modelRadius", Float.valueOf$F(this.modelRadius));
+info.put$O$O("axisAngle", aa);
+info.put$O$O("quaternion", this.getRotationQ$().toPoint4f$());
+info.put$O$O("rotationMatrix", this.matrixRotate);
+info.put$O$O("rotateZYZ", p$1.getRotateZyzText$Z.apply(this, [false]));
+info.put$O$O("rotateXYZ", p$1.getRotateXyzText.apply(this, []));
+info.put$O$O("transXPercent", Float.valueOf$F(this.getTranslationXPercent$()));
+info.put$O$O("transYPercent", Float.valueOf$F(this.getTranslationYPercent$()));
+info.put$O$O("zoom", Float.valueOf$F(this.zmPct));
+info.put$O$O("modelRadius", Float.valueOf$F(this.modelRadius));
 if (this.mode == 1) {
-info.put$TK$TV("navigationCenter", "navigate center " + $I$(13).eP$javajs_util_T3(this.navigationCenter));
-info.put$TK$TV("navigationOffsetXPercent", Float.valueOf$F(this.getNavigationOffsetPercent$C("X")));
-info.put$TK$TV("navigationOffsetYPercent", Float.valueOf$F(this.getNavigationOffsetPercent$C("Y")));
-info.put$TK$TV("navigationDepthPercent", Float.valueOf$F(this.navigationDepthPercent));
+info.put$O$O("navigationCenter", "navigate center " + $I$(13).eP$javajs_util_T3(this.navigationCenter));
+info.put$O$O("navigationOffsetXPercent", Float.valueOf$F(this.getNavigationOffsetPercent$C("X")));
+info.put$O$O("navigationOffsetYPercent", Float.valueOf$F(this.getNavigationOffsetPercent$C("Y")));
+info.put$O$O("navigationDepthPercent", Float.valueOf$F(this.navigationDepthPercent));
 }return info;
 });
 
@@ -610,7 +472,7 @@ this.zmPctSet=newZoomPercent;
 Clazz.newMeth(C$, 'resetXYCenter$I$I', function (x, y) {
 if (x == 2147483647 || y == 2147483647 ) return;
 if (this.windowCentered) this.vwr.setBooleanProperty$S$Z("windowCentered", false);
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(1,1));
 this.transformPt3f$javajs_util_T3$javajs_util_P3(this.fixedRotationCenter, pt);
 pt.set$F$F$F(x, y, pt.z);
 this.unTransformPoint$javajs_util_T3$javajs_util_T3(pt, pt);
@@ -743,19 +605,19 @@ if (this.depthPlane != null ) return this.depthPlane;
 } else if (this.slabPlane != null ) {
 return this.slabPlane;
 }var m=this.matrixTransform;
-var plane=$I$(14).new4$F$F$F$F(-m.m20, -m.m21, -m.m22, -m.m23 + (isDepth ? this.depthValue : this.slabValue));
+var plane=$I$(14,"new4$F$F$F$F",[-m.m20, -m.m21, -m.m22, -m.m23 + (isDepth ? this.depthValue : this.slabValue)]);
 return plane;
 }, p$1);
 
 Clazz.newMeth(C$, 'getCameraFactors$', function () {
 this.aperatureAngle=(Math.atan2(this.screenPixelCount / 2.0, this.referencePlaneOffset) * 2 * 180  / 3.141592653589793);
 this.cameraDistanceFromCenter=this.referencePlaneOffset / this.scalePixelsPerAngstrom;
-var ptRef=$I$(1).new3$F$F$F((this.screenWidth/2|0), (this.screenHeight/2|0), this.referencePlaneOffset);
+var ptRef=$I$(1,"new3$F$F$F",[(this.screenWidth/2|0), (this.screenHeight/2|0), this.referencePlaneOffset]);
 this.unTransformPoint$javajs_util_T3$javajs_util_T3(ptRef, ptRef);
-var ptCamera=$I$(1).new3$F$F$F((this.screenWidth/2|0), (this.screenHeight/2|0), 0);
+var ptCamera=$I$(1,"new3$F$F$F",[(this.screenWidth/2|0), (this.screenHeight/2|0), 0]);
 this.unTransformPoint$javajs_util_T3$javajs_util_T3(ptCamera, ptCamera);
 ptCamera.sub$javajs_util_T3(this.fixedRotationCenter);
-var pt=$I$(1).new3$F$F$F((this.screenWidth/2|0), (this.screenHeight/2|0), this.cameraDistanceFromCenter * this.scalePixelsPerAngstrom);
+var pt=$I$(1,"new3$F$F$F",[(this.screenWidth/2|0), (this.screenHeight/2|0), this.cameraDistanceFromCenter * this.scalePixelsPerAngstrom]);
 this.unTransformPoint$javajs_util_T3$javajs_util_T3(pt, pt);
 pt.sub$javajs_util_T3(this.fixedRotationCenter);
 ptCamera.add$javajs_util_T3(pt);
@@ -892,8 +754,8 @@ if (Clazz.exceptionOf(e,"Exception")){
 throw e;
 }
 }
-}this.vwr.g.setO$S$O("_slabPlane", $I$(13).eP4$javajs_util_P4(p$1.getSlabDepthPlane$Z.apply(this, [false])));
-this.vwr.g.setO$S$O("_depthPlane", $I$(13).eP4$javajs_util_P4(p$1.getSlabDepthPlane$Z.apply(this, [true])));
+}this.vwr.g.setO$S$O("_slabPlane", $I$(13,"eP4$javajs_util_P4",[p$1.getSlabDepthPlane$Z.apply(this, [false])]));
+this.vwr.g.setO$S$O("_depthPlane", $I$(13,"eP4$javajs_util_P4",[p$1.getSlabDepthPlane$Z.apply(this, [true])]));
 if (this.slabEnabled) return;
 this.slabValue=0;
 this.depthValue=2147483647;
@@ -1087,7 +949,7 @@ return true;
 
 Clazz.newMeth(C$, 'moveTo$org_jmol_api_JmolScriptEvaluator$F$javajs_util_P3$javajs_util_T3$F$javajs_util_M3$F$F$F$F$javajs_util_P3$F$F$F$F$F$F', function (eval, floatSecondsTotal, center, rotAxis, degrees, matrixEnd, zoom, xTrans, yTrans, newRotationRadius, navCenter, xNav, yNav, navDepth, cameraDepth, cameraX, cameraY) {
 if (matrixEnd == null ) {
-matrixEnd=Clazz.new_($I$(5));
+matrixEnd=Clazz.new_($I$(5,1));
 var axis=$I$(3).newV$javajs_util_T3(rotAxis);
 if (Float.isNaN$F(degrees)) {
 matrixEnd.m00=NaN;
@@ -1096,7 +958,7 @@ matrixEnd.setScale$F(1);
 } else {
 if (axis.x == 0  && axis.y == 0   && axis.z == 0  ) {
 return;
-}var aaMoveTo=Clazz.new_($I$(4));
+}var aaMoveTo=Clazz.new_($I$(4,1));
 aaMoveTo.setVA$javajs_util_V3$F(axis, (degrees / 57.29577951308232));
 matrixEnd.setAA$javajs_util_A4(aaMoveTo);
 }}if (cameraX == this.cameraSetting.x ) cameraX=NaN;
@@ -1151,7 +1013,7 @@ this.movetoThread=null;
 Clazz.newMeth(C$, 'getRotationText$', function () {
 this.axisangleT.setM$javajs_util_M3(this.matrixRotate);
 var degrees=(this.axisangleT.angle * 57.29577951308232);
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 this.vectorT.set$F$F$F(this.axisangleT.x, this.axisangleT.y, this.axisangleT.z);
 if (degrees < 0.01 ) return "{0 0 1 0}";
 this.vectorT.normalize$();
@@ -1167,7 +1029,7 @@ return sb.toString();
 
 Clazz.newMeth(C$, 'getMoveToText$F$Z', function (timespan, addComments) {
 this.finalizeTransformParameters$();
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 sb.append$S("moveto ");
 if (addComments) sb.append$S("/* time, axisAngle */ ");
 sb.appendF$F(timespan);
@@ -1194,7 +1056,7 @@ return $I$(13).eP$javajs_util_T3(this.fixedRotationCenter);
 }, p$1);
 
 Clazz.newMeth(C$, 'getRotateXyzText', function () {
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 var m20=this.matrixRotate.m20;
 var rY=-(Math.asin(m20) * 57.29577951308232);
 var rX;
@@ -1251,7 +1113,7 @@ sb.append$S(";");
 }}, p$1);
 
 Clazz.newMeth(C$, 'getRotateZyzText$Z', function (iAddComment) {
-var sb=Clazz.new_($I$(10));
+var sb=Clazz.new_($I$(10,1));
 var m=this.vwr.ms.getInfoM$S("defaultOrientationMatrix");
 if (m == null ) {
 m=this.matrixRotate;
@@ -1338,7 +1200,7 @@ this.vwr.g.setB$S$Z("_spinning", spinOn);
 if (spinOn) {
 if (this.spinThread == null ) {
 this.spinThread=$I$(9).getOption$S$org_jmol_viewer_Viewer$S("thread.SpinThread", this.vwr, "tm");
-this.spinThread.setManager$O$org_jmol_viewer_Viewer$O(this, this.vwr, Clazz.array(java.lang.Object, -1, [Float.valueOf$F(endDegrees), endPositions, dihedralList, bsAtoms, isGesture ? $I$(16).TRUE : null]));
+this.spinThread.setManager$O$org_jmol_viewer_Viewer$O(this, this.vwr, Clazz.array(java.lang.Object, -1, [Float.valueOf$F(endDegrees), endPositions, dihedralList, bsAtoms, isGesture ? Boolean.TRUE : null]));
 this.spinIsGesture=isGesture;
 if ((Float.isNaN$F(endDegrees) || endDegrees == 3.4028235E38   || !this.vwr.g.waitForMoveTo )) {
 this.spinThread.start$();
@@ -1715,4 +1577,4 @@ Clazz.newMeth(C$, 'getNavigationState$', function () {
 return (this.mode == 1 && p$1.getNav.apply(this, [])  ? this.nav.getNavigationState$() : "");
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

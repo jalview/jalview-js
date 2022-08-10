@@ -1,27 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.io"),I$=[[0,'org.jmol.util.Logger','javajs.util.PT','org.jmol.io.FileReader','javajs.util.Rdr','org.jmol.api.Interface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FilesReader", null, null, 'org.jmol.api.JmolFilesReaderInterface');
+(function(){var P$=Clazz.newPackage("org.jmol.io"),I$=[[0,'org.jmol.util.Logger','javajs.util.PT','org.jmol.io.FileReader','javajs.util.Rdr','org.jmol.api.Interface']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FilesReader", null, null, 'org.jmol.api.JmolFilesReaderInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fm=null;
-this.vwr=null;
-this.fullPathNamesIn=null;
-this.namesAsGivenIn=null;
-this.fileTypesIn=null;
-this.atomSetCollection=null;
-this.dataReaders=null;
-this.htParams=null;
-this.isAppend=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isAppend'],'O',['fm','org.jmol.viewer.FileManager','vwr','org.jmol.viewer.Viewer','fullPathNamesIn','String[]','+namesAsGivenIn','+fileTypesIn','atomSetCollection','java.lang.Object','dataReaders','javajs.util.DataReader[]','htParams','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_FileManager$org_jmol_viewer_Viewer$SA$SA$SA$javajs_util_DataReaderA$java_util_Map$Z', function (fileManager, vwr, name, nameAsGiven, types, readers, htParams, isAppend) {
@@ -60,7 +48,7 @@ name=subFileList[0];
 }if (name.contains$CharSequence("#_DOCACHE_")) return $I$(3).getChangeableReader$org_jmol_viewer_Viewer$S$S(this.vwr, this.namesAsGivenIn[i], name);
 var t=this.fm.getUnzippedReaderOrStreamFromName$S$O$Z$Z$Z$Z$java_util_Map(name, null, true, forceBinary, false, true, this.htParams);
 if (Clazz.instanceOf(t, "java.io.BufferedInputStream") && $I$(4).isZipS$java_io_InputStream(t) ) {
-if (subFileList != null ) this.htParams.put$TK$TV("subFileList", subFileList);
+if (subFileList != null ) this.htParams.put$O$O("subFileList", subFileList);
 var zipDirectory=this.fm.getZipDirectory$S$Z$Z(name, true, true);
 t=this.fm.getBufferedInputStreamOrErrorMessageFromName$S$S$Z$Z$BA$Z$Z(name, this.fullPathNamesIn[i], false, false, null, false, true);
 t=this.fm.getJzu$().getAtomSetCollectionOrBufferedReaderFromZip$org_jmol_viewer_Viewer$java_io_InputStream$S$SA$java_util_Map$I$Z(this.vwr, t, name, zipDirectory, this.htParams, 1, true);
@@ -71,4 +59,4 @@ Clazz.newMeth(C$, 'getAtomSetCollection$', function () {
 return this.atomSetCollection;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

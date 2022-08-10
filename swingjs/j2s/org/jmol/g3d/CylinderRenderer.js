@@ -1,67 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.P3i','javajs.util.P3','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CylinderRenderer");
+(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.P3i','javajs.util.P3','javajs.util.AU']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CylinderRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.g3d=null;
-this.line3d=null;
-this.shader=null;
-this.colixA=0;
-this.colixB=0;
-this.shadesA=null;
-this.shadesB=null;
-this.xA=0;
-this.yA=0;
-this.zA=0;
-this.dxB=0;
-this.dyB=0;
-this.dzB=0;
-this.xAf=0;
-this.yAf=0;
-this.zAf=0;
-this.dxBf=0;
-this.dyBf=0;
-this.dzBf=0;
-this.tEvenDiameter=false;
-this.diameter=0;
-this.endcaps=0;
-this.endCapHidden=false;
-this.xEndcap=0;
-this.yEndcap=0;
-this.zEndcap=0;
-this.argbEndcap=0;
-this.colixEndcap=0;
-this.endcapShadeIndex=0;
-this.radius=0;
-this.radius2=0;
-this.cosTheta=0;
-this.cosPhi=0;
-this.sinPhi=0;
-this.clipped=false;
-this.rasterCount=0;
-this.xyztRaster=null;
-this.xyzfRaster=null;
-this.ptA0=null;
-this.ptB0=null;
-this.ptA0i=null;
-this.ptB0i=null;
-this.xTip=0;
-this.yTip=0;
-this.zTip=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.xyztRaster=Clazz.array(Float.TYPE, -2, [Clazz.array(Float.TYPE, [32]), Clazz.array(Float.TYPE, [32]), Clazz.array(Float.TYPE, [32]), Clazz.array(Float.TYPE, [32])]);
 this.xyzfRaster=Clazz.array(Integer.TYPE, -2, [Clazz.array(Integer.TYPE, [32]), Clazz.array(Integer.TYPE, [32]), Clazz.array(Integer.TYPE, [32]), Clazz.array(Integer.TYPE, [32])]);
-this.ptA0i=Clazz.new_($I$(1));
-this.ptB0i=Clazz.new_($I$(1));
-}, 1);
+this.ptA0i=Clazz.new_($I$(1,1));
+this.ptB0i=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['tEvenDiameter','endCapHidden','clipped'],'B',['endcaps'],'F',['xAf','yAf','zAf','dxBf','dyBf','dzBf','radius','radius2','cosTheta','cosPhi','sinPhi','xTip','yTip','zTip'],'I',['xA','yA','zA','dxB','dyB','dzB','diameter','xEndcap','yEndcap','zEndcap','argbEndcap','endcapShadeIndex','rasterCount'],'H',['colixA','colixB','colixEndcap'],'O',['g3d','org.jmol.g3d.Graphics3D','line3d','org.jmol.g3d.LineRenderer','shader','org.jmol.util.Shader','shadesA','int[]','+shadesB','xyztRaster','float[][]','xyzfRaster','int[][]','ptA0','javajs.util.P3','+ptB0','ptA0i','javajs.util.P3i','+ptB0i']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_g3d_Graphics3D', function (g3d) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.g3d=g3d;
 this.line3d=g3d.line3d;
 this.shader=g3d.shader;
@@ -88,7 +40,7 @@ this.diameter=diameter;
 this.xA=xa;
 this.yA=ya;
 this.zA=za;
-this.endcaps=($b$[0] = endcaps, $b$[0]);
+this.endcaps=endcaps;
 this.shadesA=g.getShades$H(this.colixA=colixA);
 this.shadesB=g.getShades$H(this.colixB=colixB);
 p$1.calcArgbEndcap$Z$Z.apply(this, [true, false]);
@@ -130,8 +82,8 @@ if (endcaps == 3) p$1.renderSphericalEndcaps.apply(this, []);
 Clazz.newMeth(C$, 'renderBitsFloat$H$H$I$B$I$javajs_util_P3$javajs_util_P3', function (colixA, colixB, screen, endcaps, diameter, ptA, ptB) {
 var g=this.g3d;
 if (this.ptA0 == null ) {
-this.ptA0=Clazz.new_($I$(2));
-this.ptB0=Clazz.new_($I$(2));
+this.ptA0=Clazz.new_($I$(2,1));
+this.ptB0=Clazz.new_($I$(2,1));
 }this.ptA0.setT$javajs_util_T3(ptA);
 var r=(diameter/2|0) + 1;
 var ixA=Math.round(ptA.x);
@@ -164,7 +116,7 @@ this.dyB=(this.dyBf|0);
 this.dzB=(this.dzBf|0);
 this.shadesA=g.getShades$H(this.colixA=colixA);
 this.shadesB=g.getShades$H(this.colixB=colixB);
-this.endcaps=($b$[0] = endcaps, $b$[0]);
+this.endcaps=endcaps;
 p$1.calcArgbEndcap$Z$Z.apply(this, [true, true]);
 var xyzf=this.xyzfRaster;
 if (diameter > 0) p$1.generateBaseEllipsePrecisely$Z.apply(this, [false]);
@@ -249,7 +201,7 @@ this.dyB=(this.dyBf|0);
 this.dzB=(this.dzBf|0);
 this.shadesA=g.getShades$H(this.colixA=colixA);
 this.shadesB=g.getShades$H(this.colixB=colixB);
-this.endcaps=($b$[0] = endcaps, $b$[0]);
+this.endcaps=endcaps;
 p$1.calcArgbEndcap$Z$Z.apply(this, [true, true]);
 var xyzf=this.xyzfRaster;
 if (diameter > 0) p$1.generateBaseEllipsePrecisely$Z.apply(this, [false]);
@@ -321,7 +273,7 @@ this.diameter=diameter;
 if (diameter <= 1) {
 if (diameter == 1) this.line3d.plotLineDeltaOld$I$I$I$I$I$I$I$I$Z(this.colixA, this.colixA, this.xA, this.yA, this.zA, this.dxB, this.dyB, this.dzB, this.clipped);
 return;
-}this.endcaps=($b$[0] = endcap, $b$[0]);
+}this.endcaps=endcap;
 p$1.calcArgbEndcap$Z$Z.apply(this, [false, true]);
 p$1.generateBaseEllipsePrecisely$Z.apply(this, [isBarb]);
 if (!isBarb && this.endcaps == 2 ) p$1.renderFlatEndcap$Z$Z$IAA.apply(this, [false, true, this.xyzfRaster]);
@@ -592,8 +544,7 @@ this.zEndcap+=this.dzB;
 this.argbEndcap=shadesEndcap[this.endcapShadeIndex];
 this.endCapHidden=(this.endcaps == 1);
 }, p$1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

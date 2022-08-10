@@ -1,30 +1,26 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'StringBuffer','java.io.StringWriter','java.io.PrintWriter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AlignmentProperties");
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'StringBuffer','java.io.StringWriter','java.io.PrintWriter']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AlignmentProperties");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.alignment=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI', function (alignment) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['alignment','jalview.datamodel.AlignmentI']]]
+
+Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI',  function (alignment) {
+;C$.$init$.apply(this);
 this.alignment=alignment;
 }, 1);
 
-Clazz.newMeth(C$, 'writeProperties$java_io_PrintWriter$Z', function (pw, html) {
+Clazz.newMeth(C$, 'writeProperties$java_io_PrintWriter$Z',  function (pw, html) {
 var nl=html ? "<br>" : System.getProperty$S("line.separator");
 var avg=0;
 var min=2147483647;
 var max=0;
 for (var i=0; i < this.alignment.getHeight$(); i++) {
 var size=1 + this.alignment.getSequenceAt$I(i).getEnd$() - this.alignment.getSequenceAt$I(i).getStart$();
-avg += size;
+avg+=size;
 if (size > max) {
 max=size;
 }if (size < min) {
@@ -50,7 +46,7 @@ while (en.hasMoreElements$()){
 var key=en.nextElement$().toString();
 var vals=props.get$O(key).toString();
 if (html) {
-var val=Clazz.new_($I$(1));
+var val=Clazz.new_($I$(1,1));
 var pos=0;
 var npos;
 do {
@@ -70,20 +66,20 @@ if (html) {
 pw.print$S("</table>");
 }}});
 
-Clazz.newMeth(C$, 'formatAsString$', function () {
+Clazz.newMeth(C$, 'formatAsString$',  function () {
 return this.formatReport$Z(false);
 });
 
-Clazz.newMeth(C$, 'formatReport$Z', function (html) {
-var content=Clazz.new_($I$(2));
-this.writeProperties$java_io_PrintWriter$Z(Clazz.new_($I$(3).c$$java_io_Writer,[content]), html);
+Clazz.newMeth(C$, 'formatReport$Z',  function (html) {
+var content=Clazz.new_($I$(2,1));
+this.writeProperties$java_io_PrintWriter$Z(Clazz.new_($I$(3,1).c$$java_io_Writer,[content]), html);
 return content.getBuffer$();
 });
 
-Clazz.newMeth(C$, 'formatAsHtml$', function () {
+Clazz.newMeth(C$, 'formatAsHtml$',  function () {
 return this.formatReport$Z(true);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:37 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

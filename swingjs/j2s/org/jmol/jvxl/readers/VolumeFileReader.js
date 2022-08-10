@@ -1,36 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.SB','javajs.util.AU','org.jmol.api.Interface','org.jmol.atomdata.AtomData','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VolumeFileReader", null, 'org.jmol.jvxl.readers.SurfaceFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.SB','javajs.util.AU','org.jmol.api.Interface','org.jmol.atomdata.AtomData','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VolumeFileReader", null, 'org.jmol.jvxl.readers.SurfaceFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.endOfData=false;
-this.negativeAtomCount=false;
-this.ac=0;
-this.nSurfaces=0;
-this.isAngstroms=false;
-this.canDownsample=false;
-this.downsampleRemainders=null;
-this.getNCIPlanes=false;
-this.nData=0;
-this.readerClosed=false;
-this.downsampleFactor=0;
-this.nSkipX=0;
-this.nSkipY=0;
-this.nSkipZ=0;
-this.yzPlanesRaw=null;
-this.iPlaneNCI=0;
-this.boundingBox=null;
-this.isScaledAlready=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['endOfData','negativeAtomCount','isAngstroms','canDownsample','getNCIPlanes','readerClosed','isScaledAlready'],'I',['ac','nSurfaces','nData','downsampleFactor','nSkipX','nSkipY','nSkipZ','iPlaneNCI'],'O',['downsampleRemainders','int[]','yzPlanesRaw','float[][]','boundingBox','javajs.util.P3[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -63,7 +42,7 @@ this.readerClosed=true;
 this.closeReaderSFR$();
 if (this.nData == 0 || this.dataMax == -3.4028235E38  ) return;
 this.dataMean /= this.nData;
-$I$(1).info$S("VolumeFileReader closing file: " + this.nData + " points read \ndata min/max/mean = " + new Float(this.dataMin).toString() + "/" + new Float(this.dataMax).toString() + "/" + new Float(this.dataMean).toString() );
+$I$(1,"info$S",["VolumeFileReader closing file: " + this.nData + " points read \ndata min/max/mean = " + new Float(this.dataMin).toString() + "/" + new Float(this.dataMax).toString() + "/" + new Float(this.dataMean).toString() ]);
 });
 
 Clazz.newMeth(C$, 'readVolumeParameters$Z', function (isMapData) {
@@ -96,7 +75,7 @@ var downsampling=(this.canDownsample && downsampleFactor > 1 );
 if (downsampleFactor > 1 && !this.canDownsample ) this.jvxlData.msg += "\ncannot downsample this file type";
 if (downsampling) {
 this.downsampleRemainders=Clazz.array(Integer.TYPE, [3]);
-$I$(1).info$S("downsample factor = " + downsampleFactor);
+$I$(1,"info$S",["downsample factor = " + downsampleFactor]);
 for (var i=0; i < 3; ++i) {
 var n=this.voxelCounts[i];
 this.downsampleRemainders[i]=n % downsampleFactor;
@@ -105,7 +84,7 @@ if (this.isPeriodic) {
 this.voxelCounts[i]++;
 this.downsampleRemainders[i]--;
 }this.volumetricVectors[i].scale$F(downsampleFactor);
-$I$(1).info$S("downsampling axis " + (i + 1) + " from " + n + " to " + this.voxelCounts[i] );
+$I$(1,"info$S",["downsampling axis " + (i + 1) + " from " + n + " to " + this.voxelCounts[i] ]);
 }
 }if (!this.vertexDataOnly) for (var i=0; i < 3; ++i) {
 if (!this.isAngstroms) this.volumetricVectors[i].scale$F(0.5291772);
@@ -118,7 +97,7 @@ this.volumeData.setVolumetricXml$();
 return this.nSurfaces;
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(1).error$S(e.toString());
+$I$(1,"error$S",[e.toString()]);
 return 0;
 } else {
 throw e;
@@ -127,7 +106,7 @@ throw e;
 }, p$1);
 
 Clazz.newMeth(C$, 'skipComments$Z', function (allowBlankLines) {
-var sb=Clazz.new_($I$(2));
+var sb=Clazz.new_($I$(2,1));
 while (this.rd$() != null  && (allowBlankLines && this.line.length$() == 0  || this.line.indexOf$S("#") == 0 ) )sb.append$S(this.line).appendC$C("\n");
 
 return sb.toString();
@@ -215,7 +194,7 @@ Clazz.newMeth(C$, 'getPlaneNCI$I', function (x) {
 var plane;
 if (this.iPlaneNCI == 0) {
 this.qpc=$I$(4).getOption$S$org_jmol_viewer_Viewer$S("quantum.NciCalculation", this.sg.atomDataServer, null);
-var atomData=Clazz.new_($I$(5));
+var atomData=Clazz.new_($I$(5,1));
 atomData.modelIndex=-1;
 atomData.bsSelected=this.params.bsSelected;
 this.sg.fillAtomData$org_jmol_atomdata_AtomData$I(atomData, 1);
@@ -315,7 +294,7 @@ if (Float.isNaN$F(voxelValue)) {
 while (this.rd$() != null  && Float.isNaN$F(voxelValue=this.parseFloatStr$S(this.line)) ){
 }
 if (this.line == null ) {
-if (!this.endOfData) $I$(1).warn$S("end of file reading cube voxel data? nBytes=" + this.nBytes + " nDataPoints=" + this.nDataPoints + " (line):" + this.line );
+if (!this.endOfData) $I$(1,"warn$S",["end of file reading cube voxel data? nBytes=" + this.nBytes + " nDataPoints=" + this.nDataPoints + " (line):" + this.line ]);
 this.endOfData=true;
 this.line="0 0 0 0 0 0 0 0 0 0";
 }}return voxelValue;
@@ -394,7 +373,7 @@ if (this.isScaledAlready) return;
 this.isScaledAlready=true;
 if (this.isAnisotropic) this.setVolumetricAnisotropy$();
 if (Float.isNaN$F(scale)) return;
-$I$(1).info$S("applying scaling factor of " + new Float(scale).toString());
+$I$(1,"info$S",["applying scaling factor of " + new Float(scale).toString()]);
 this.volumetricOrigin.scaleAdd2$F$javajs_util_T3$javajs_util_T3((1 - scale) / 2, this.volumetricVectors[0], this.volumetricOrigin);
 this.volumetricOrigin.scaleAdd2$F$javajs_util_T3$javajs_util_T3((1 - scale) / 2, this.volumetricVectors[1], this.volumetricOrigin);
 this.volumetricOrigin.scaleAdd2$F$javajs_util_T3$javajs_util_T3((1 - scale) / 2, this.volumetricVectors[2], this.volumetricOrigin);
@@ -413,4 +392,4 @@ this.voxelCounts[2]=n;
 this.params.insideOut=!this.params.insideOut;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

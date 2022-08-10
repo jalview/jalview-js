@@ -1,22 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.Geodesic']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GeoSurfaceRenderer", null, 'org.jmol.renderspecial.DotsRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.util.Geodesic']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GeoSurfaceRenderer", null, 'org.jmol.renderspecial.DotsRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.requireTranslucent=false;
-this.facePt1=null;
-this.facePt2=null;
-this.facePt3=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.facePt1=Clazz.new_($I$(1));
-this.facePt2=Clazz.new_($I$(1));
-this.facePt3=Clazz.new_($I$(1));
-}, 1);
+this.facePt1=Clazz.new_($I$(1,1));
+this.facePt2=Clazz.new_($I$(1,1));
+this.facePt3=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['requireTranslucent'],'O',['facePt1','javajs.util.P3','+facePt2','+facePt3']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 var gs=this.shape;
@@ -63,4 +56,4 @@ this.g3d.fillTriangle3CNBits$javajs_util_P3$H$H$javajs_util_P3$H$H$javajs_util_P
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

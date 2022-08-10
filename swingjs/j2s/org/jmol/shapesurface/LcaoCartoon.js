@@ -1,31 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.V3','org.jmol.util.C','javajs.util.SB','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LcaoCartoon", null, 'org.jmol.shapesurface.Isosurface');
+(function(){var P$=Clazz.newPackage("org.jmol.shapesurface"),p$1={},I$=[[0,'javajs.util.PT','javajs.util.V3','org.jmol.util.C','javajs.util.SB','org.jmol.shape.Shape','org.jmol.util.Escape']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LcaoCartoon", null, 'org.jmol.shapesurface.Isosurface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.thisType=null;
-this.myColorPt=0;
-this.lcaoID=null;
-this.thisSet=null;
-this.isMolecular=false;
-this.rotationAxis=null;
-this.lcaoScale=null;
-this.lcaoTranslucent=false;
-this.lcaoTranslucentLevel=0;
-this.lcaoColorPos=null;
-this.lcaoColorNeg=null;
-this.isLonePair=false;
-this.isRadical=false;
-this.cappingObject=null;
-this.slabbingObject=null;
-this.fullCommand=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isMolecular','lcaoTranslucent','isLonePair','isRadical'],'F',['lcaoTranslucentLevel'],'I',['myColorPt'],'S',['thisType','lcaoID','fullCommand'],'O',['thisSet','javajs.util.BS','rotationAxis','javajs.util.V3','lcaoScale','Float','lcaoColorPos','Integer','+lcaoColorNeg','cappingObject','java.lang.Object','+slabbingObject']]]
 
 Clazz.newMeth(C$, 'initShape$', function () {
 C$.superclazz.prototype.initShape$.apply(this, []);
@@ -35,7 +16,7 @@ this.allowMesh=false;
 
 Clazz.newMeth(C$, 'setProperty$S$O$javajs_util_BS', function (propertyName, value, bs) {
 var setInfo=false;
-if ("init" == propertyName) {
+if ("init" === propertyName ) {
 this.myColorPt=0;
 this.lcaoID=null;
 this.thisSet=bs;
@@ -45,68 +26,68 @@ this.rotationAxis=null;
 this.fullCommand=value;
 this.setPropI$S$O$javajs_util_BS("init", null, null);
 return;
-}if ("lcaoID" == propertyName) {
+}if ("lcaoID" === propertyName ) {
 this.lcaoID=value;
 return;
-}if ("thisID" == propertyName) {
+}if ("thisID" === propertyName ) {
 this.lcaoID=value;
-}if ("selectType" == propertyName) {
+}if ("selectType" === propertyName ) {
 this.thisType=value;
 return;
-}if ("rotationAxis" == propertyName) {
+}if ("rotationAxis" === propertyName ) {
 this.rotationAxis=value;
 return;
-}if ("scale" == propertyName) {
+}if ("scale" === propertyName ) {
 this.lcaoScale=value;
-}if ("colorRGB" == propertyName) {
+}if ("colorRGB" === propertyName ) {
 this.lcaoColorPos=value;
 if (this.myColorPt++ == 0) this.lcaoColorNeg=this.lcaoColorPos;
-}if ("select" == propertyName) {
+}if ("select" === propertyName ) {
 this.thisSet=value;
-}if ("translucentLevel" == propertyName) {
+}if ("translucentLevel" === propertyName ) {
 this.lcaoTranslucentLevel=(value).floatValue$();
-}if ("settranslucency" == propertyName) {
+}if ("settranslucency" === propertyName ) {
 this.lcaoTranslucent=((value).equals$O("translucent"));
 return;
-}if ("translucency" == propertyName) {
+}if ("translucency" === propertyName ) {
 this.lcaoTranslucent=((value).equals$O("translucent"));
 if (this.lcaoID == null ) return;
-}if ("molecular" == propertyName) {
+}if ("molecular" === propertyName ) {
 this.isMolecular=true;
 if (value == null ) return;
 propertyName="create";
-}if ("create" == propertyName) {
+}if ("create" === propertyName ) {
 this.myColorPt=0;
 this.thisType=value;
 p$1.createLcaoCartoon.apply(this, []);
 return;
-}if ("lonePair" == propertyName) {
+}if ("lonePair" === propertyName ) {
 this.isLonePair=true;
 return;
-}if ("lp" == propertyName) {
+}if ("lp" === propertyName ) {
 this.isLonePair=setInfo=true;
-}if ("radical" == propertyName) {
+}if ("radical" === propertyName ) {
 this.isRadical=true;
 return;
-}if ("rad" == propertyName) {
+}if ("rad" === propertyName ) {
 this.isRadical=setInfo=true;
-}if ("delete" == propertyName) {
+}if ("delete" === propertyName ) {
 p$1.deleteLcaoCartoon.apply(this, []);
 return;
-}if ("on" == propertyName) {
+}if ("on" === propertyName ) {
 p$1.setLcaoOn$Z.apply(this, [true]);
 return;
-}if ("off" == propertyName) {
+}if ("off" === propertyName ) {
 p$1.setLcaoOn$Z.apply(this, [false]);
 return;
-}if ("slab" == propertyName) {
+}if ("slab" === propertyName ) {
 this.slabbingObject=value;
-}if ("cap" == propertyName) {
+}if ("cap" === propertyName ) {
 this.cappingObject=value;
-}if ("lobe" == propertyName || "sphere" == propertyName ) {
+}if ("lobe" === propertyName  || "sphere" === propertyName  ) {
 this.getCapSlabInfo$S(this.fullCommand);
 }this.setPropI$S$O$javajs_util_BS(propertyName, value, bs);
-if (setInfo || "lobe" == propertyName  || "sphere" == propertyName ) {
+if (setInfo || "lobe" === propertyName   || "sphere" === propertyName  ) {
 this.setScriptInfo$S(null);
 }});
 
@@ -169,7 +150,7 @@ this.setPropI$S$O$javajs_util_BS("colorRGB", this.lcaoColorPos, null);
 if (this.cappingObject != null ) this.setPropI$S$O$javajs_util_BS("cap", this.cappingObject, null);
 this.setPropI$S$O$javajs_util_BS("lcaoType", this.thisType, null);
 this.setPropI$S$O$javajs_util_BS("atomIndex", Integer.valueOf$I(iAtom), null);
-var axes=Clazz.array($I$(2), -1, [Clazz.new_($I$(2)), Clazz.new_($I$(2)), $I$(2).newV$javajs_util_T3(this.ms.at[iAtom]), Clazz.new_($I$(2))]);
+var axes=Clazz.array($I$(2), -1, [Clazz.new_($I$(2,1)), Clazz.new_($I$(2,1)), $I$(2).newV$javajs_util_T3(this.ms.at[iAtom]), Clazz.new_($I$(2,1))]);
 if (this.rotationAxis != null ) axes[3].setT$javajs_util_T3(this.rotationAxis);
 if (this.isMolecular) {
 if (this.thisType.indexOf$S("px") >= 0) {
@@ -194,15 +175,15 @@ this.setPropI$S$O$javajs_util_BS("translucency", "translucent", null);
 }, p$1);
 
 Clazz.newMeth(C$, 'getID$S$I', function (id, i) {
-return (id != null  ? id : (this.isLonePair || this.isRadical  ? "lp_" : "lcao_") + (i + 1) + "_" ) + (this.thisType == null  ? "" : $I$(1).rep$S$S$S(this.thisType, "-", (this.thisType.indexOf$S("-p") == 0 ? "" : "_")));
+return (id != null  ? id : (this.isLonePair || this.isRadical  ? "lp_" : "lcao_") + (i + 1) + "_" ) + (this.thisType == null  ? "" : $I$(1,"rep$S$S$S",[this.thisType, "-", (this.thisType.indexOf$S("-p") == 0 ? "" : "_")]));
 }, p$1);
 
 Clazz.newMeth(C$, 'getShapeState$', function () {
-var sb=Clazz.new_($I$(4));
-if (this.lcaoScale != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "lcaoCartoon scale " + new Float(this.lcaoScale.floatValue$()).toString());
-if (this.lcaoColorNeg != null ) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "lcaoCartoon color " + $I$(5).escapeColor$I(this.lcaoColorNeg.intValue$()) + " " + $I$(5).escapeColor$I(this.lcaoColorPos.intValue$()) );
-if (this.lcaoTranslucent) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "lcaoCartoon translucent " + new Float(this.translucentLevel).toString());
-for (var i=this.meshCount; --i >= 0; ) if (!this.meshes[i].visible) org.jmol.shape.Shape.appendCmd$javajs_util_SB$S(sb, "lcaoCartoon ID " + this.meshes[i].thisID + " off" );
+var sb=Clazz.new_($I$(4,1));
+if (this.lcaoScale != null ) $I$(5,"appendCmd$javajs_util_SB$S",[sb, "lcaoCartoon scale " + new Float(this.lcaoScale.floatValue$()).toString()]);
+if (this.lcaoColorNeg != null ) $I$(5,"appendCmd$javajs_util_SB$S",[sb, "lcaoCartoon color " + $I$(6,"escapeColor$I",[this.lcaoColorNeg.intValue$()]) + " " + $I$(6,"escapeColor$I",[this.lcaoColorPos.intValue$()]) ]);
+if (this.lcaoTranslucent) $I$(5,"appendCmd$javajs_util_SB$S",[sb, "lcaoCartoon translucent " + new Float(this.translucentLevel).toString()]);
+for (var i=this.meshCount; --i >= 0; ) if (!this.meshes[i].visible) $I$(5).appendCmd$javajs_util_SB$S(sb, "lcaoCartoon ID " + this.meshes[i].thisID + " off" );
 
 return C$.superclazz.prototype.getShapeState$.apply(this, []) + sb.toString();
 });
@@ -218,4 +199,4 @@ C$.superclazz.prototype.merge$org_jmol_shape_MeshCollection.apply(this, [shape])
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:49 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

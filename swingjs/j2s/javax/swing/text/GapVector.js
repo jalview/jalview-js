@@ -1,43 +1,37 @@
 (function(){var P$=Clazz.newPackage("javax.swing.text");
-var C$=Clazz.newClass(P$, "GapVector");
+/*c*/var C$=Clazz.newClass(P$, "GapVector");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.array=null;
-this.g0=0;
-this.g1=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['I',['g0','g1'],'O',['array','java.lang.Object']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$I.apply(this, [10]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (initialLength) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I',  function (initialLength) {
+;C$.$init$.apply(this);
 this.array=this.allocateArray$I(initialLength);
 this.g0=0;
 this.g1=initialLength;
 }, 1);
 
-Clazz.newMeth(C$, 'getArray$', function () {
+Clazz.newMeth(C$, 'getArray$',  function () {
 return this.array;
 });
 
-Clazz.newMeth(C$, 'getGapStart$', function () {
+Clazz.newMeth(C$, 'getGapStart$',  function () {
 return this.g0;
 });
 
-Clazz.newMeth(C$, 'getGapEnd$', function () {
+Clazz.newMeth(C$, 'getGapEnd$',  function () {
 return this.g1;
 });
 
-Clazz.newMeth(C$, 'replace$I$I$O$I', function (position, rmSize, addItems, addSize) {
+Clazz.newMeth(C$, 'replace$I$I$O$I',  function (position, rmSize, addItems, addSize) {
 var addOffset=0;
 if (addSize == 0) {
 this.close$I$I(position, rmSize);
@@ -52,7 +46,7 @@ addSize=rmSize;
 }System.arraycopy$O$I$O$I$I(addItems, addOffset, this.array, position, addSize);
 });
 
-Clazz.newMeth(C$, 'close$I$I', function (position, nItems) {
+Clazz.newMeth(C$, 'close$I$I',  function (position, nItems) {
 if (nItems == 0) return;
 var end=position + nItems;
 var new_gs=(this.g1 - this.g0) + nItems;
@@ -69,7 +63,7 @@ this.shiftGapStartDown$I(position);
 this.shiftGapEndUp$I(this.g0 + new_gs);
 }});
 
-Clazz.newMeth(C$, 'open$I$I', function (position, nItems) {
+Clazz.newMeth(C$, 'open$I$I',  function (position, nItems) {
 var gapSize=this.g1 - this.g0;
 if (nItems == 0) {
 if (position > this.g0) position+=gapSize;
@@ -82,13 +76,13 @@ gapSize=this.g1 - this.g0;
 return position;
 });
 
-Clazz.newMeth(C$, 'resize$I', function (nsize) {
+Clazz.newMeth(C$, 'resize$I',  function (nsize) {
 var narray=this.allocateArray$I(nsize);
 System.arraycopy$O$I$O$I$I(this.array, 0, narray, 0, Math.min(nsize, this.getArrayLength$()));
 this.array=narray;
 });
 
-Clazz.newMeth(C$, 'shiftEnd$I', function (newSize) {
+Clazz.newMeth(C$, 'shiftEnd$I',  function (newSize) {
 var oldSize=this.getArrayLength$();
 var oldGapEnd=this.g1;
 var upperSize=oldSize - oldGapEnd;
@@ -100,11 +94,11 @@ if (upperSize != 0) {
 System.arraycopy$O$I$O$I$I(this.array, oldGapEnd, this.array, newGapEnd, upperSize);
 }});
 
-Clazz.newMeth(C$, 'getNewArraySize$I', function (reqSize) {
+Clazz.newMeth(C$, 'getNewArraySize$I',  function (reqSize) {
 return (reqSize + 1) * 2;
 });
 
-Clazz.newMeth(C$, 'shiftGap$I', function (newGapStart) {
+Clazz.newMeth(C$, 'shiftGap$I',  function (newGapStart) {
 if (newGapStart == this.g0) {
 return;
 }var oldGapStart=this.g0;
@@ -119,12 +113,12 @@ System.arraycopy$O$I$O$I$I(this.array, oldGapEnd, this.array, oldGapStart, dg);
 System.arraycopy$O$I$O$I$I(this.array, newGapStart, this.array, newGapEnd, -dg);
 }});
 
-Clazz.newMeth(C$, 'shiftGapStartDown$I', function (newGapStart) {
+Clazz.newMeth(C$, 'shiftGapStartDown$I',  function (newGapStart) {
 this.g0=newGapStart;
 });
 
-Clazz.newMeth(C$, 'shiftGapEndUp$I', function (newGapEnd) {
+Clazz.newMeth(C$, 'shiftGapEndUp$I',  function (newGapEnd) {
 this.g1=newGapEnd;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

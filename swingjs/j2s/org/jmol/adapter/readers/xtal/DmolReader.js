@@ -1,18 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','javajs.util.DF']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DmolReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.util.Logger','javajs.util.DF']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DmolReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.unitCellData=null;
-this.totE=null;
-this.geomOpt=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['geomOpt'],'O',['unitCellData','float[]','totE','Double']]]
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 if (this.line.contains$CharSequence("** GEOMETRY OPTIMIZATION IN DELOCALIZED COORDINATES **")) {
@@ -33,7 +27,7 @@ p$1.readFreq.apply(this, []);
 Clazz.newMeth(C$, 'readCellParam', function () {
 this.unitCellData=Clazz.array(Float.TYPE, [9]);
 for (var n=0, i=0; n < 3; n++) {
-var tokens=$I$(1).getTokens$S(this.rd$());
+var tokens=$I$(1,"getTokens$S",[this.rd$()]);
 this.unitCellData[i++]=this.parseFloatStr$S(!this.geomOpt ? tokens[0] : tokens[4]) * 0.5291772;
 this.unitCellData[i++]=this.parseFloatStr$S(!this.geomOpt ? tokens[1] : tokens[5]) * 0.5291772;
 this.unitCellData[i++]=this.parseFloatStr$S(!this.geomOpt ? tokens[2] : tokens[6]) * 0.5291772;
@@ -71,7 +65,7 @@ this.setAtomCoord$org_jmol_adapter_smarter_Atom(atom);
 
 Clazz.newMeth(C$, 'readEnergy', function () {
 this.rd$();
-if (this.line.contains$CharSequence("Ef")) this.totE=Double.valueOf$D(Double.parseDouble$S($I$(1).getTokens$S(this.line.substring$I$I(this.line.indexOf$S("Ef") + 1, this.line.indexOf$S("Ha")))[1]));
+if (this.line.contains$CharSequence("Ef")) this.totE=Double.valueOf$D(Double.parseDouble$S($I$(1,"getTokens$S",[this.line.substring$I$I(this.line.indexOf$S("Ef") + 1, this.line.indexOf$S("Ha"))])[1]));
 }, p$1);
 
 Clazz.newMeth(C$, 'setEnergy', function () {
@@ -89,7 +83,7 @@ var frequencyCount=(tokens.length/2|0);
 var frequencies=Clazz.array(Float.TYPE, [frequencyCount]);
 for (var i=1, n=0; i < tokens.length; i+=2, n++) {
 frequencies[n]=this.parseFloatStr$S(tokens[i]);
-if (this.debugging) $I$(2).debug$S((this.vibrationNumber + n) + " frequency=" + new Float(frequencies[n]).toString() );
+if (this.debugging) $I$(2,"debug$S",[(this.vibrationNumber + n) + " frequency=" + new Float(frequencies[n]).toString() ]);
 }
 var ignore=Clazz.array(Boolean.TYPE, [frequencyCount]);
 var iAtom0=0;
@@ -110,4 +104,4 @@ this.readLines$I(2);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

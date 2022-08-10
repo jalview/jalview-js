@@ -1,14 +1,13 @@
 (function(){var P$=Clazz.newPackage("org.jmol.viewer.binding"),p$1={};
-var C$=Clazz.newClass(P$, "JmolBinding", null, 'org.jmol.viewer.binding.Binding');
+/*c*/var C$=Clazz.newClass(P$, "JmolBinding", null, 'org.jmol.viewer.binding.Binding');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.set$S("toggle");
 }, 1);
 
@@ -79,4 +78,4 @@ this.bindAction$I$I(33040, 0);
 this.bindAction$I$I(33043, 1);
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:20:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:54 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

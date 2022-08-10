@@ -1,23 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.appletjs"),I$=[[0,'java.util.Hashtable','org.jmol.util.Parser','org.jmol.util.Logger','javajs.util.PT','org.jmol.awtjs2d.Platform']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Jmol", null, 'org.jmol.util.GenericApplet', 'javajs.api.JSInterface');
+(function(){var P$=Clazz.newPackage("org.jmol.appletjs"),I$=[[0,'java.util.Hashtable','org.jmol.util.Parser','org.jmol.util.Logger','javajs.util.PT','org.jmol.awtjs2d.Platform']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Jmol", null, 'org.jmol.util.GenericApplet', 'javajs.api.JSInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.htParams=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['htParams','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Map', function (vwrOptions) {
-Clazz.super_(C$, this,1);
-this.htParams=Clazz.new_($I$(1));
-if (vwrOptions == null ) vwrOptions=Clazz.new_($I$(1));
+Clazz.super_(C$, this);
+this.htParams=Clazz.new_($I$(1,1));
+if (vwrOptions == null ) vwrOptions=Clazz.new_($I$(1,1));
 this.vwrOptions=vwrOptions;
-for (var entry, $entry = vwrOptions.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) this.htParams.put$TK$TV(entry.getKey$().toLowerCase$(), entry.getValue$());
+for (var entry, $entry = vwrOptions.entrySet$().iterator$(); $entry.hasNext$()&&((entry=($entry.next$())),1);) this.htParams.put$O$O(entry.getKey$().toLowerCase$(), entry.getValue$());
 
 this.documentBase="" + vwrOptions.get$O("documentBase");
 this.codeBase="" + vwrOptions.get$O("codePath");
@@ -34,7 +30,7 @@ return null;
 
 Clazz.newMeth(C$, 'initOptions$', function () {
 this.vwrOptions.remove$O("debug");
-this.vwrOptions.put$TK$TV("fullName", this.fullName);
+this.vwrOptions.put$O$O("fullName", this.fullName);
 this.haveDocumentAccess="true".equalsIgnoreCase$S("" + this.getValue$S$S("allowjavascript", "true"));
 this.mayScript=true;
 });
@@ -108,7 +104,7 @@ return fxyz;
 });
 
 Clazz.newMeth(C$, 'doShowDocument$java_net_URL', function (url) {
-var surl=$I$(4).split$S$S(url.toString(), "?POST?");
+var surl=$I$(4,"split$S$S",[url.toString(), "?POST?"]);
 if (surl.length == 1) {
 {
 window.open(surl[0]);
@@ -158,7 +154,7 @@ return window.eval(strEval);
 }
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(3).error$S("# error evaluating " + strEval + ":" + e.toString() );
+$I$(3,"error$S",["# error evaluating " + strEval + ":" + e.toString() ]);
 } else {
 throw e;
 }
@@ -243,4 +239,4 @@ jmol.resizeApplet(this.viewer.html5Applet, Clazz.array(Integer.TYPE, -1, [width,
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

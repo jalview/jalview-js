@@ -1,29 +1,17 @@
-(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ChangeCaseCommand", null, null, 'jalview.commands.CommandI');
-C$.TO_LOWER=0;
-C$.TO_UPPER=0;
-C$.TOGGLE_CASE=0;
+(function(){var P$=Clazz.newPackage("jalview.commands"),I$=[[0,'StringBuffer','java.util.Locale']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ChangeCaseCommand", null, null, 'jalview.commands.CommandI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.TO_LOWER=0;
-C$.TO_UPPER=1;
-C$.TOGGLE_CASE=2;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.description=null;
-this.caseChange=0;
-this.seqs=null;
-this.regions=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.caseChange=-1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$java_util_List$I', function (description, seqs, regions, caseChange) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['caseChange'],'S',['description'],'O',['seqs','jalview.datamodel.SequenceI[]','regions','java.util.List']]
+,['I',['TO_LOWER','TO_UPPER','TOGGLE_CASE']]]
+
+Clazz.newMeth(C$, 'c$$S$jalview_datamodel_SequenceIA$java_util_List$I',  function (description, seqs, regions, caseChange) {
+;C$.$init$.apply(this);
 this.description=description;
 this.seqs=seqs;
 this.regions=regions;
@@ -31,23 +19,23 @@ this.caseChange=caseChange;
 this.doCommand$jalview_datamodel_AlignmentIA(null);
 }, 1);
 
-Clazz.newMeth(C$, 'getDescription$', function () {
+Clazz.newMeth(C$, 'getDescription$',  function () {
 return this.description;
 });
 
-Clazz.newMeth(C$, 'getSize$', function () {
+Clazz.newMeth(C$, 'getSize$',  function () {
 return 1;
 });
 
-Clazz.newMeth(C$, 'doCommand$jalview_datamodel_AlignmentIA', function (views) {
+Clazz.newMeth(C$, 'doCommand$jalview_datamodel_AlignmentIA',  function (views) {
 this.changeCase$Z(true);
 });
 
-Clazz.newMeth(C$, 'undoCommand$jalview_datamodel_AlignmentIA', function (views) {
+Clazz.newMeth(C$, 'undoCommand$jalview_datamodel_AlignmentIA',  function (views) {
 this.changeCase$Z(false);
 });
 
-Clazz.newMeth(C$, 'changeCase$Z', function (doCommand) {
+Clazz.newMeth(C$, 'changeCase$Z',  function (doCommand) {
 var sequence;
 var start;
 var end;
@@ -56,7 +44,7 @@ for (var r, $r = this.regions.iterator$(); $r.hasNext$()&&((r=($r.next$())),1);)
 start=r[0];
 for (var s=0; s < this.seqs.length; s++) {
 sequence=this.seqs[s].getSequenceAsString$();
-var newSeq=Clazz.new_($I$(1));
+var newSeq=Clazz.new_($I$(1,1));
 if (r[1] > sequence.length$()) {
 end=sequence.length$();
 } else {
@@ -64,9 +52,9 @@ end=r[1];
 }if (start > 0) {
 newSeq.append$S(sequence.substring$I$I(0, start));
 }if ((this.caseChange == C$.TO_UPPER && doCommand ) || (this.caseChange == C$.TO_LOWER && !doCommand ) ) {
-newSeq.append$S(sequence.substring$I$I(start, end).toUpperCase$());
+newSeq.append$S(sequence.substring$I$I(start, end).toUpperCase$java_util_Locale($I$(2).ROOT));
 } else if ((this.caseChange == C$.TO_LOWER && doCommand ) || (this.caseChange == C$.TO_UPPER && !doCommand ) ) {
-newSeq.append$S(sequence.substring$I$I(start, end).toLowerCase$());
+newSeq.append$S(sequence.substring$I$I(start, end).toLowerCase$java_util_Locale($I$(2).ROOT));
 } else {
 for (var c=start; c < end; c++) {
 nextChar=sequence.charAt$I(c);
@@ -83,6 +71,12 @@ newSeq.append$S(sequence.substring$I(end));
 }
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.TO_LOWER=0;
+C$.TO_UPPER=1;
+C$.TOGGLE_CASE=2;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,22 +1,17 @@
-(function(){var P$=java.util,p$1={},p$2={},I$=[[0,'java.util.Objects',['java.util.ArrayDeque','.DeqIterator'],['java.util.ArrayDeque','.DescendingIterator'],'java.lang.reflect.Array','java.util.Arrays','AssertionError',['java.util.ArrayDeque','.DeqSpliterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ArrayDeque", function(){
+(function(){var P$=java.util,p$1={},p$2={},I$=[[0,'java.util.Objects',['java.util.ArrayDeque','.DeqIterator'],['java.util.ArrayDeque','.DescendingIterator'],'java.lang.reflect.Array','java.util.Arrays','AssertionError',['java.util.ArrayDeque','.DeqSpliterator']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ArrayDeque", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractCollection', ['java.util.Deque', 'Cloneable', 'java.io.Serializable']);
+C$.$classes$=[['DeqIterator',2],['DescendingIterator',2],['DeqSpliterator',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.elements=null;
-this.head=0;
-this.tail=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'allocateElements$I', function (numElements) {
+C$.$fields$=[['I',['head','tail'],'O',['elements','Object[]']]]
+
+Clazz.newMeth(C$, 'allocateElements$I',  function (numElements) {
 var initialCapacity=8;
 if (numElements >= initialCapacity) {
 initialCapacity=numElements;
@@ -25,12 +20,12 @@ initialCapacity|=(initialCapacity >>> 2);
 initialCapacity|=(initialCapacity >>> 4);
 initialCapacity|=(initialCapacity >>> 8);
 initialCapacity|=(initialCapacity >>> 16);
-initialCapacity++;
+++initialCapacity;
 if (initialCapacity < 0) initialCapacity>>>=1;
 }this.elements=Clazz.array(java.lang.Object, [initialCapacity]);
 }, p$1);
 
-Clazz.newMeth(C$, 'doubleCapacity', function () {
+Clazz.newMeth(C$, 'doubleCapacity',  function () {
 Clazz.assert(C$, this, function(){return this.head == this.tail});
 var p=this.head;
 var n=this.elements.length;
@@ -45,7 +40,7 @@ this.head=0;
 this.tail=n;
 }, p$1);
 
-Clazz.newMeth(C$, 'copyElements$TTA', function (a) {
+Clazz.newMeth(C$, 'copyElements$OA',  function (a) {
 if (this.head < this.tail) {
 System.arraycopy$O$I$O$I$I(this.elements, this.head, a, 0, this.size$());
 } else if (this.head > this.tail) {
@@ -55,57 +50,57 @@ System.arraycopy$O$I$O$I$I(this.elements, 0, a, headPortionLen, this.tail);
 }return a;
 }, p$1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 this.elements=Clazz.array(java.lang.Object, [16]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (numElements) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$I',  function (numElements) {
+Clazz.super_(C$, this);
 p$1.allocateElements$I.apply(this, [numElements]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$java_util_Collection',  function (c) {
+Clazz.super_(C$, this);
 p$1.allocateElements$I.apply(this, [c.size$()]);
 this.addAll$java_util_Collection(c);
 }, 1);
 
-Clazz.newMeth(C$, ['addFirst$TE'], function (e) {
+Clazz.newMeth(C$, 'addFirst$O',  function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.elements[this.head=(this.head - 1) & (this.elements.length - 1)]=e;
 if (this.head == this.tail) p$1.doubleCapacity.apply(this, []);
 });
 
-Clazz.newMeth(C$, ['addLast$TE'], function (e) {
+Clazz.newMeth(C$, 'addLast$O',  function (e) {
 if (e == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 this.elements[this.tail]=e;
 if ((this.tail=(this.tail + 1) & (this.elements.length - 1)) == this.head) p$1.doubleCapacity.apply(this, []);
 });
 
-Clazz.newMeth(C$, ['offerFirst$TE'], function (e) {
-this.addFirst$TE(e);
+Clazz.newMeth(C$, 'offerFirst$O',  function (e) {
+this.addFirst$O(e);
 return true;
 });
 
-Clazz.newMeth(C$, ['offerLast$TE'], function (e) {
-this.addLast$TE(e);
+Clazz.newMeth(C$, 'offerLast$O',  function (e) {
+this.addLast$O(e);
 return true;
 });
 
-Clazz.newMeth(C$, 'removeFirst$', function () {
+Clazz.newMeth(C$, 'removeFirst$',  function () {
 var x=this.pollFirst$();
 if (x == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 return x;
 });
 
-Clazz.newMeth(C$, 'removeLast$', function () {
+Clazz.newMeth(C$, 'removeLast$',  function () {
 var x=this.pollLast$();
 if (x == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 return x;
 });
 
-Clazz.newMeth(C$, 'pollFirst$', function () {
+Clazz.newMeth(C$, 'pollFirst$',  function () {
 var h=this.head;
 var result=this.elements[h];
 if (result == null ) return null;
@@ -114,7 +109,7 @@ this.head=(h + 1) & (this.elements.length - 1);
 return result;
 });
 
-Clazz.newMeth(C$, 'pollLast$', function () {
+Clazz.newMeth(C$, 'pollLast$',  function () {
 var t=(this.tail - 1) & (this.elements.length - 1);
 var result=this.elements[t];
 if (result == null ) return null;
@@ -123,27 +118,27 @@ this.tail=t;
 return result;
 });
 
-Clazz.newMeth(C$, 'getFirst$', function () {
+Clazz.newMeth(C$, 'getFirst$',  function () {
 var result=this.elements[this.head];
 if (result == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 return result;
 });
 
-Clazz.newMeth(C$, 'getLast$', function () {
+Clazz.newMeth(C$, 'getLast$',  function () {
 var result=this.elements[(this.tail - 1) & (this.elements.length - 1)];
 if (result == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 return result;
 });
 
-Clazz.newMeth(C$, 'peekFirst$', function () {
+Clazz.newMeth(C$, 'peekFirst$',  function () {
 return this.elements[this.head];
 });
 
-Clazz.newMeth(C$, 'peekLast$', function () {
+Clazz.newMeth(C$, 'peekLast$',  function () {
 return this.elements[(this.tail - 1) & (this.elements.length - 1)];
 });
 
-Clazz.newMeth(C$, 'removeFirstOccurrence$O', function (o) {
+Clazz.newMeth(C$, 'removeFirstOccurrence$O',  function (o) {
 if (o == null ) return false;
 var mask=this.elements.length - 1;
 var i=this.head;
@@ -157,7 +152,7 @@ return true;
 return false;
 });
 
-Clazz.newMeth(C$, 'removeLastOccurrence$O', function (o) {
+Clazz.newMeth(C$, 'removeLastOccurrence$O',  function (o) {
 if (o == null ) return false;
 var mask=this.elements.length - 1;
 var i=(this.tail - 1) & mask;
@@ -171,46 +166,46 @@ return true;
 return false;
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-this.addLast$TE(e);
+Clazz.newMeth(C$, 'add$O',  function (e) {
+this.addLast$O(e);
 return true;
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
-return this.offerLast$TE(e);
+Clazz.newMeth(C$, 'offer$O',  function (e) {
+return this.offerLast$O(e);
 });
 
-Clazz.newMeth(C$, 'remove$', function () {
+Clazz.newMeth(C$, 'remove$',  function () {
 return this.removeFirst$();
 });
 
-Clazz.newMeth(C$, 'poll$', function () {
+Clazz.newMeth(C$, 'poll$',  function () {
 return this.pollFirst$();
 });
 
-Clazz.newMeth(C$, 'element$', function () {
+Clazz.newMeth(C$, 'element$',  function () {
 return this.getFirst$();
 });
 
-Clazz.newMeth(C$, 'peek$', function () {
+Clazz.newMeth(C$, 'peek$',  function () {
 return this.peekFirst$();
 });
 
-Clazz.newMeth(C$, ['push$TE'], function (e) {
-this.addFirst$TE(e);
+Clazz.newMeth(C$, 'push$O',  function (e) {
+this.addFirst$O(e);
 });
 
-Clazz.newMeth(C$, 'pop$', function () {
+Clazz.newMeth(C$, 'pop$',  function () {
 return this.removeFirst$();
 });
 
-Clazz.newMeth(C$, 'checkInvariants', function () {
+Clazz.newMeth(C$, 'checkInvariants',  function () {
 Clazz.assert(C$, this, function(){return this.elements[this.tail] == null });
 Clazz.assert(C$, this, function(){return this.head == this.tail ? this.elements[this.head] == null  : (this.elements[this.head] != null  && this.elements[(this.tail - 1) & (this.elements.length - 1)] != null  )});
 Clazz.assert(C$, this, function(){return this.elements[(this.head - 1) & (this.elements.length - 1)] == null });
 }, p$1);
 
-Clazz.newMeth(C$, 'delete$I', function (i) {
+Clazz.newMeth(C$, 'delete$I',  function (i) {
 p$1.checkInvariants.apply(this, []);
 var elements=this.elements;
 var mask=elements.length - 1;
@@ -241,23 +236,23 @@ this.tail=(t - 1) & mask;
 }return true;
 }}, p$1);
 
-Clazz.newMeth(C$, 'size$', function () {
+Clazz.newMeth(C$, 'size$',  function () {
 return (this.tail - this.head) & (this.elements.length - 1);
 });
 
-Clazz.newMeth(C$, 'isEmpty$', function () {
+Clazz.newMeth(C$, 'isEmpty$',  function () {
 return this.head == this.tail;
 });
 
-Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(2), [this, null]);
+Clazz.newMeth(C$, 'iterator$',  function () {
+return Clazz.new_($I$(2,1),[this, null]);
 });
 
-Clazz.newMeth(C$, 'descendingIterator$', function () {
-return Clazz.new_($I$(3), [this, null]);
+Clazz.newMeth(C$, 'descendingIterator$',  function () {
+return Clazz.new_($I$(3,1),[this, null]);
 });
 
-Clazz.newMeth(C$, 'contains$O', function (o) {
+Clazz.newMeth(C$, 'contains$O',  function (o) {
 if (o == null ) return false;
 var mask=this.elements.length - 1;
 var i=this.head;
@@ -269,11 +264,11 @@ i=(i + 1) & mask;
 return false;
 });
 
-Clazz.newMeth(C$, 'remove$O', function (o) {
+Clazz.newMeth(C$, 'remove$O',  function (o) {
 return this.removeFirstOccurrence$O(o);
 });
 
-Clazz.newMeth(C$, 'clear$', function () {
+Clazz.newMeth(C$, 'clear$',  function () {
 var h=this.head;
 var t=this.tail;
 if (h != t) {
@@ -286,33 +281,33 @@ i=(i + 1) & mask;
 } while (i != t);
 }});
 
-Clazz.newMeth(C$, 'toArray$', function () {
-return p$1.copyElements$TTA.apply(this, [Clazz.array(java.lang.Object, [this.size$()])]);
+Clazz.newMeth(C$, 'toArray$',  function () {
+return p$1.copyElements$OA.apply(this, [Clazz.array(java.lang.Object, [this.size$()])]);
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
+Clazz.newMeth(C$, 'toArray$OA',  function (a) {
 var size=this.size$();
 if (a.length < size) a=Clazz.array(a.getClass$().getComponentType$(), size);
-p$1.copyElements$TTA.apply(this, [a]);
+p$1.copyElements$OA.apply(this, [a]);
 if (a.length > size) a[size]=null;
 return a;
 });
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 try {
 var result=Clazz.clone(this);
-result.elements=$I$(5).copyOf$TTA$I(this.elements, this.elements.length);
+result.elements=$I$(5).copyOf$OA$I(this.elements, this.elements.length);
 return result;
 } catch (e) {
 if (Clazz.exceptionOf(e,"CloneNotSupportedException")){
-throw Clazz.new_($I$(6));
+throw Clazz.new_($I$(6,1));
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
+Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream',  function (s) {
 s.defaultWriteObject$();
 s.writeInt$I(this.size$());
 var mask=this.elements.length - 1;
@@ -320,7 +315,7 @@ for (var i=this.head; i != this.tail; i=(i + 1) & mask) s.writeObject$O(this.ele
 
 }, p$1);
 
-Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
+Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream',  function (s) {
 s.defaultReadObject$();
 var size=s.readInt$();
 p$1.allocateElements$I.apply(this, [size]);
@@ -330,55 +325,52 @@ for (var i=0; i < size; i++) this.elements[i]=s.readObject$();
 
 }, p$1);
 
-Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(7).c$$java_util_ArrayDeque$I$I,[this, -1, -1]);
+Clazz.newMeth(C$, 'spliterator$',  function () {
+return Clazz.new_($I$(7,1).c$$java_util_ArrayDeque$I$I,[this, -1, -1]);
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.ArrayDeque, "DeqIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ArrayDeque, "DeqIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cursor=0;
-this.fence=0;
-this.lastRet=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.cursor=this.this$0.head;
-this.fence=this.this$0.tail;
+this.cursor=this.b$['java.util.ArrayDeque'].head;
+this.fence=this.b$['java.util.ArrayDeque'].tail;
 this.lastRet=-1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'hasNext$', function () {
+C$.$fields$=[['I',['cursor','fence','lastRet']]]
+
+Clazz.newMeth(C$, 'hasNext$',  function () {
 return this.cursor != this.fence;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
+Clazz.newMeth(C$, 'next$',  function () {
 if (this.cursor == this.fence) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
-var result=this.this$0.elements[this.cursor];
-if (this.this$0.tail != this.fence || result == null  ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+var result=this.b$['java.util.ArrayDeque'].elements[this.cursor];
+if (this.b$['java.util.ArrayDeque'].tail != this.fence || result == null  ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 this.lastRet=this.cursor;
-this.cursor=(this.cursor + 1) & (this.this$0.elements.length - 1);
+this.cursor=(this.cursor + 1) & (this.b$['java.util.ArrayDeque'].elements.length - 1);
 return result;
 });
 
-Clazz.newMeth(C$, 'remove$', function () {
+Clazz.newMeth(C$, 'remove$',  function () {
 if (this.lastRet < 0) throw Clazz.new_(Clazz.load('IllegalStateException'));
 if (p$1.delete$I.apply(this.b$['java.util.ArrayDeque'], [this.lastRet])) {
-this.cursor=(this.cursor - 1) & (this.this$0.elements.length - 1);
-this.fence=this.this$0.tail;
+this.cursor=(this.cursor - 1) & (this.b$['java.util.ArrayDeque'].elements.length - 1);
+this.fence=this.b$['java.util.ArrayDeque'].tail;
 }this.lastRet=-1;
 });
 
-Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
-$I$(1).requireNonNull$TT(action);
-var a=this.this$0.elements;
+Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer',  function (action) {
+$I$(1).requireNonNull$O(action);
+var a=this.b$['java.util.ArrayDeque'].elements;
 var m=a.length - 1;
 var f=this.fence;
 var i=this.cursor;
@@ -387,82 +379,70 @@ while (i != f){
 var e=a[i];
 i=(i + 1) & m;
 if (e == null ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-action.accept$(e);
+action.accept$O(e);
 }
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ArrayDeque, "DescendingIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ArrayDeque, "DescendingIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cursor=0;
-this.fence=0;
-this.lastRet=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.cursor=this.this$0.tail;
-this.fence=this.this$0.head;
+this.cursor=this.b$['java.util.ArrayDeque'].tail;
+this.fence=this.b$['java.util.ArrayDeque'].head;
 this.lastRet=-1;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'hasNext$', function () {
+C$.$fields$=[['I',['cursor','fence','lastRet']]]
+
+Clazz.newMeth(C$, 'hasNext$',  function () {
 return this.cursor != this.fence;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
+Clazz.newMeth(C$, 'next$',  function () {
 if (this.cursor == this.fence) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
-this.cursor=(this.cursor - 1) & (this.this$0.elements.length - 1);
-var result=this.this$0.elements[this.cursor];
-if (this.this$0.head != this.fence || result == null  ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
+this.cursor=(this.cursor - 1) & (this.b$['java.util.ArrayDeque'].elements.length - 1);
+var result=this.b$['java.util.ArrayDeque'].elements[this.cursor];
+if (this.b$['java.util.ArrayDeque'].head != this.fence || result == null  ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
 this.lastRet=this.cursor;
 return result;
 });
 
-Clazz.newMeth(C$, 'remove$', function () {
+Clazz.newMeth(C$, 'remove$',  function () {
 if (this.lastRet < 0) throw Clazz.new_(Clazz.load('IllegalStateException'));
 if (!p$1.delete$I.apply(this.b$['java.util.ArrayDeque'], [this.lastRet])) {
-this.cursor=(this.cursor + 1) & (this.this$0.elements.length - 1);
-this.fence=this.this$0.head;
+this.cursor=(this.cursor + 1) & (this.b$['java.util.ArrayDeque'].elements.length - 1);
+this.fence=this.b$['java.util.ArrayDeque'].head;
 }this.lastRet=-1;
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ArrayDeque, "DeqSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ArrayDeque, "DeqSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Spliterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.deq=null;
-this.fence=0;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_util_ArrayDeque$I$I', function (deq, origin, fence) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['fence','index'],'O',['deq','java.util.ArrayDeque']]]
+
+Clazz.newMeth(C$, 'c$$java_util_ArrayDeque$I$I',  function (deq, origin, fence) {
+;C$.$init$.apply(this);
 this.deq=deq;
 this.index=origin;
 this.fence=fence;
 }, 1);
 
-Clazz.newMeth(C$, 'getFence', function () {
+Clazz.newMeth(C$, 'getFence',  function () {
 var t;
 if ((t=this.fence) < 0) {
 t=this.fence=this.deq.tail;
@@ -470,7 +450,7 @@ this.index=this.deq.head;
 }return t;
 }, p$2);
 
-Clazz.newMeth(C$, 'trySplit$', function () {
+Clazz.newMeth(C$, 'trySplit$',  function () {
 var t=p$2.getFence.apply(this, []);
 var h=this.index;
 var n=this.deq.elements.length;
@@ -481,7 +461,7 @@ return Clazz.new_(C$.c$$java_util_ArrayDeque$I$I,[this.deq, h, this.index=m]);
 }return null;
 });
 
-Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (consumer) {
+Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer',  function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var a=this.deq.elements;
 var m=a.length - 1;
@@ -492,11 +472,11 @@ while (i != f){
 var e=a[i];
 i=(i + 1) & m;
 if (e == null ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-consumer.accept$(e);
+consumer.accept$O(e);
 }
 });
 
-Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (consumer) {
+Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer',  function (consumer) {
 if (consumer == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var a=this.deq.elements;
 var m=a.length - 1;
@@ -506,22 +486,22 @@ if (i != this.fence) {
 var e=a[i];
 this.index=(i + 1) & m;
 if (e == null ) throw Clazz.new_(Clazz.load('java.util.ConcurrentModificationException'));
-consumer.accept$(e);
+consumer.accept$O(e);
 return true;
 }return false;
 });
 
-Clazz.newMeth(C$, 'estimateSize$', function () {
+Clazz.newMeth(C$, 'estimateSize$',  function () {
 var n=p$2.getFence.apply(this, []) - this.index;
 if (n < 0) n+=this.deq.elements.length;
 return n;
 });
 
-Clazz.newMeth(C$, 'characteristics$', function () {
+Clazz.newMeth(C$, 'characteristics$',  function () {
 return 16720;
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:44 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:10 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,28 +1,10 @@
-(function(){var P$=Clazz.newPackage("javax.xml.sax.helpers"),p$1={},I$=[[0,'javax.xml.sax.helpers.ParserFactory','javax.xml.sax.helpers.AttributesImpl','javax.xml.sax.helpers.NamespaceSupport',['javax.xml.sax.helpers.ParserAdapter','.AttributeListAdapter'],'javax.xml.sax.InputSource','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ParserAdapter", function(){
+(function(){var P$=Clazz.newPackage("javax.xml.sax.helpers"),p$1={},I$=[[0,'javax.xml.sax.helpers.ParserFactory','javax.xml.sax.helpers.AttributesImpl','javax.xml.sax.helpers.NamespaceSupport',['javax.xml.sax.helpers.ParserAdapter','.AttributeListAdapter'],'javax.xml.sax.InputSource','java.util.Vector']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ParserAdapter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['javax.xml.sax.XMLReader', 'javax.xml.sax.DocumentHandler']);
+C$.$classes$=[['AttributeListAdapter',16]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nsSupport=null;
-this.attAdapter=null;
-this.parsing=false;
-this.nameParts=null;
-this.parser=null;
-this.atts=null;
-this.namespaces=false;
-this.prefixes=false;
-this.uris=false;
-this.locator=null;
-this.entityResolver=null;
-this.dtdHandler=null;
-this.contentHandler=null;
-this.errorHandler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.parsing=false;
@@ -36,10 +18,12 @@ this.entityResolver=null;
 this.dtdHandler=null;
 this.contentHandler=null;
 this.errorHandler=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['parsing','namespaces','prefixes','uris'],'O',['nsSupport','javax.xml.sax.helpers.NamespaceSupport','attAdapter','javax.xml.sax.helpers.ParserAdapter.AttributeListAdapter','nameParts','String[]','parser','javax.xml.sax.Parser','atts','javax.xml.sax.helpers.AttributesImpl','locator','javax.xml.sax.Locator','entityResolver','javax.xml.sax.EntityResolver','dtdHandler','javax.xml.sax.DTDHandler','contentHandler','javax.xml.sax.ContentHandler','errorHandler','javax.xml.sax.ErrorHandler']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 var driver=System.getProperty$S("javax.xml.sax.parser");
 try {
 p$1.setup$javax_xml_sax_Parser.apply(this, [$I$(1).makeParser$()]);
@@ -75,21 +59,21 @@ throw e$$;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_xml_sax_Parser', function (parser) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$javax_xml_sax_Parser',  function (parser) {
+;C$.$init$.apply(this);
 p$1.setup$javax_xml_sax_Parser.apply(this, [parser]);
 }, 1);
 
-Clazz.newMeth(C$, 'setup$javax_xml_sax_Parser', function (parser) {
+Clazz.newMeth(C$, 'setup$javax_xml_sax_Parser',  function (parser) {
 if (parser == null ) {
 throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Parser argument must not be null"]);
 }this.parser=parser;
-this.atts=Clazz.new_($I$(2));
-this.nsSupport=Clazz.new_($I$(3));
-this.attAdapter=Clazz.new_($I$(4), [this, null]);
+this.atts=Clazz.new_($I$(2,1));
+this.nsSupport=Clazz.new_($I$(3,1));
+this.attAdapter=Clazz.new_($I$(4,1),[this, null]);
 }, p$1);
 
-Clazz.newMeth(C$, 'setFeature$S$Z', function (name, value) {
+Clazz.newMeth(C$, 'setFeature$S$Z',  function (name, value) {
 if (name.equals$O("http://xml.org/sax/features/namespaces")) {
 p$1.checkNotParsing$S$S.apply(this, ["feature", name]);
 this.namespaces=value;
@@ -107,7 +91,7 @@ this.uris=value;
 throw Clazz.new_(Clazz.load('javax.xml.sax.SAXNotRecognizedException').c$$S,["Feature: " + name]);
 }});
 
-Clazz.newMeth(C$, 'getFeature$S', function (name) {
+Clazz.newMeth(C$, 'getFeature$S',  function (name) {
 if (name.equals$O("http://xml.org/sax/features/namespaces")) {
 return this.namespaces;
 } else if (name.equals$O("http://xml.org/sax/features/namespace-prefixes")) {
@@ -118,51 +102,51 @@ return this.uris;
 throw Clazz.new_(Clazz.load('javax.xml.sax.SAXNotRecognizedException').c$$S,["Feature: " + name]);
 }});
 
-Clazz.newMeth(C$, 'setProperty$S$O', function (name, value) {
+Clazz.newMeth(C$, 'setProperty$S$O',  function (name, value) {
 throw Clazz.new_(Clazz.load('javax.xml.sax.SAXNotRecognizedException').c$$S,["Property: " + name]);
 });
 
-Clazz.newMeth(C$, 'getProperty$S', function (name) {
+Clazz.newMeth(C$, 'getProperty$S',  function (name) {
 throw Clazz.new_(Clazz.load('javax.xml.sax.SAXNotRecognizedException').c$$S,["Property: " + name]);
 });
 
-Clazz.newMeth(C$, 'setEntityResolver$javax_xml_sax_EntityResolver', function (resolver) {
+Clazz.newMeth(C$, 'setEntityResolver$javax_xml_sax_EntityResolver',  function (resolver) {
 this.entityResolver=resolver;
 });
 
-Clazz.newMeth(C$, 'getEntityResolver$', function () {
+Clazz.newMeth(C$, 'getEntityResolver$',  function () {
 return this.entityResolver;
 });
 
-Clazz.newMeth(C$, 'setDTDHandler$javax_xml_sax_DTDHandler', function (handler) {
+Clazz.newMeth(C$, 'setDTDHandler$javax_xml_sax_DTDHandler',  function (handler) {
 this.dtdHandler=handler;
 });
 
-Clazz.newMeth(C$, 'getDTDHandler$', function () {
+Clazz.newMeth(C$, 'getDTDHandler$',  function () {
 return this.dtdHandler;
 });
 
-Clazz.newMeth(C$, 'setContentHandler$javax_xml_sax_ContentHandler', function (handler) {
+Clazz.newMeth(C$, 'setContentHandler$javax_xml_sax_ContentHandler',  function (handler) {
 this.contentHandler=handler;
 });
 
-Clazz.newMeth(C$, 'getContentHandler$', function () {
+Clazz.newMeth(C$, 'getContentHandler$',  function () {
 return this.contentHandler;
 });
 
-Clazz.newMeth(C$, 'setErrorHandler$javax_xml_sax_ErrorHandler', function (handler) {
+Clazz.newMeth(C$, 'setErrorHandler$javax_xml_sax_ErrorHandler',  function (handler) {
 this.errorHandler=handler;
 });
 
-Clazz.newMeth(C$, 'getErrorHandler$', function () {
+Clazz.newMeth(C$, 'getErrorHandler$',  function () {
 return this.errorHandler;
 });
 
-Clazz.newMeth(C$, 'parse$S', function (systemId) {
-this.parse$javax_xml_sax_InputSource(Clazz.new_($I$(5).c$$S,[systemId]));
+Clazz.newMeth(C$, 'parse$S',  function (systemId) {
+this.parse$javax_xml_sax_InputSource(Clazz.new_($I$(5,1).c$$S,[systemId]));
 });
 
-Clazz.newMeth(C$, 'parse$javax_xml_sax_InputSource', function (input) {
+Clazz.newMeth(C$, 'parse$javax_xml_sax_InputSource',  function (input) {
 if (this.parsing) {
 throw Clazz.new_(Clazz.load('javax.xml.sax.SAXException').c$$S,["Parser is already in use"]);
 }p$1.setupParser.apply(this, []);
@@ -175,23 +159,23 @@ this.parsing=false;
 this.parsing=false;
 });
 
-Clazz.newMeth(C$, 'setDocumentLocator$javax_xml_sax_Locator', function (locator) {
+Clazz.newMeth(C$, 'setDocumentLocator$javax_xml_sax_Locator',  function (locator) {
 this.locator=locator;
 if (this.contentHandler != null ) {
 this.contentHandler.setDocumentLocator$javax_xml_sax_Locator(locator);
 }});
 
-Clazz.newMeth(C$, 'startDocument$', function () {
+Clazz.newMeth(C$, 'startDocument$',  function () {
 if (this.contentHandler != null ) {
 this.contentHandler.startDocument$();
 }});
 
-Clazz.newMeth(C$, 'endDocument$', function () {
+Clazz.newMeth(C$, 'endDocument$',  function () {
 if (this.contentHandler != null ) {
 this.contentHandler.endDocument$();
 }});
 
-Clazz.newMeth(C$, 'startElement$S$javax_xml_sax_AttributeList', function (qName, qAtts) {
+Clazz.newMeth(C$, 'startElement$S$javax_xml_sax_AttributeList',  function (qName, qAtts) {
 var exceptions=null;
 if (!this.namespaces) {
 if (this.contentHandler != null ) {
@@ -240,8 +224,8 @@ var attName=p$1.processName$S$Z$Z.apply(this, [attQName, true, true]);
 this.atts.addAttribute$S$S$S$S$S(attName[0], attName[1], attName[2], type, value);
 } catch (e) {
 if (Clazz.exceptionOf(e,"javax.xml.sax.SAXException")){
-if (exceptions == null ) exceptions=Clazz.new_($I$(6));
-exceptions.addElement$TE(e);
+if (exceptions == null ) exceptions=Clazz.new_($I$(6,1));
+exceptions.addElement$O(e);
 this.atts.addAttribute$S$S$S$S$S("", attQName, attQName, type, value);
 } else {
 throw e;
@@ -256,7 +240,7 @@ var name=p$1.processName$S$Z$Z.apply(this, [qName, false, false]);
 this.contentHandler.startElement$S$S$S$javax_xml_sax_Attributes(name[0], name[1], name[2], this.atts);
 }});
 
-Clazz.newMeth(C$, 'endElement$S', function (qName) {
+Clazz.newMeth(C$, 'endElement$S',  function (qName) {
 if (!this.namespaces) {
 if (this.contentHandler != null ) {
 this.contentHandler.endElement$S$S$S("", "", qName.intern$());
@@ -272,22 +256,22 @@ this.contentHandler.endPrefixMapping$S(prefix);
 }this.nsSupport.popContext$();
 });
 
-Clazz.newMeth(C$, 'characters$CA$I$I', function (ch, start, length) {
+Clazz.newMeth(C$, 'characters$CA$I$I',  function (ch, start, length) {
 if (this.contentHandler != null ) {
 this.contentHandler.characters$CA$I$I(ch, start, length);
 }});
 
-Clazz.newMeth(C$, 'ignorableWhitespace$CA$I$I', function (ch, start, length) {
+Clazz.newMeth(C$, 'ignorableWhitespace$CA$I$I',  function (ch, start, length) {
 if (this.contentHandler != null ) {
 this.contentHandler.ignorableWhitespace$CA$I$I(ch, start, length);
 }});
 
-Clazz.newMeth(C$, 'processingInstruction$S$S', function (target, data) {
+Clazz.newMeth(C$, 'processingInstruction$S$S',  function (target, data) {
 if (this.contentHandler != null ) {
 this.contentHandler.processingInstruction$S$S(target, data);
 }});
 
-Clazz.newMeth(C$, 'setupParser', function () {
+Clazz.newMeth(C$, 'setupParser',  function () {
 if (!this.prefixes && !this.namespaces ) throw Clazz.new_(Clazz.load('IllegalStateException'));
 this.nsSupport.reset$();
 if (this.uris) this.nsSupport.setNamespaceDeclUris$Z(true);
@@ -301,7 +285,7 @@ this.parser.setErrorHandler$javax_xml_sax_ErrorHandler(this.errorHandler);
 this.locator=null;
 }, p$1);
 
-Clazz.newMeth(C$, 'processName$S$Z$Z', function (qName, isAttribute, useException) {
+Clazz.newMeth(C$, 'processName$S$Z$Z',  function (qName, isAttribute, useException) {
 var parts=this.nsSupport.processName$S$SA$Z(qName, this.nameParts, isAttribute);
 if (parts == null ) {
 if (useException) throw p$1.makeException$S.apply(this, ["Undeclared prefix: " + qName]);
@@ -312,75 +296,71 @@ parts[2]=qName.intern$();
 }return parts;
 }, p$1);
 
-Clazz.newMeth(C$, 'reportError$S', function (message) {
+Clazz.newMeth(C$, 'reportError$S',  function (message) {
 if (this.errorHandler != null ) this.errorHandler.error$javax_xml_sax_SAXParseException(p$1.makeException$S.apply(this, [message]));
 });
 
-Clazz.newMeth(C$, 'makeException$S', function (message) {
+Clazz.newMeth(C$, 'makeException$S',  function (message) {
 if (this.locator != null ) {
 return Clazz.new_(Clazz.load('javax.xml.sax.SAXParseException').c$$S$javax_xml_sax_Locator,[message, this.locator]);
 } else {
 return Clazz.new_(Clazz.load('javax.xml.sax.SAXParseException').c$$S$S$S$I$I,[message, null, null, -1, -1]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'checkNotParsing$S$S', function (type, name) {
+Clazz.newMeth(C$, 'checkNotParsing$S$S',  function (type, name) {
 if (this.parsing) {
 throw Clazz.new_(Clazz.load('javax.xml.sax.SAXNotSupportedException').c$$S,["Cannot change " + type + ' ' + name + " while parsing" ]);
 }}, p$1);
 ;
-(function(){var C$=Clazz.newClass(P$.ParserAdapter, "AttributeListAdapter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ParserAdapter, "AttributeListAdapter", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.xml.sax.Attributes');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.qAtts=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['qAtts','javax.xml.sax.AttributeList']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'setAttributeList$javax_xml_sax_AttributeList', function (qAtts) {
+Clazz.newMeth(C$, 'setAttributeList$javax_xml_sax_AttributeList',  function (qAtts) {
 this.qAtts=qAtts;
 });
 
-Clazz.newMeth(C$, 'getLength$', function () {
+Clazz.newMeth(C$, 'getLength$',  function () {
 return this.qAtts.getLength$();
 });
 
-Clazz.newMeth(C$, 'getURI$I', function (i) {
+Clazz.newMeth(C$, 'getURI$I',  function (i) {
 return "";
 });
 
-Clazz.newMeth(C$, 'getLocalName$I', function (i) {
+Clazz.newMeth(C$, 'getLocalName$I',  function (i) {
 return "";
 });
 
-Clazz.newMeth(C$, 'getQName$I', function (i) {
+Clazz.newMeth(C$, 'getQName$I',  function (i) {
 return this.qAtts.getName$I(i).intern$();
 });
 
-Clazz.newMeth(C$, 'getType$I', function (i) {
+Clazz.newMeth(C$, 'getType$I',  function (i) {
 return this.qAtts.getType$I(i).intern$();
 });
 
-Clazz.newMeth(C$, 'getValue$I', function (i) {
+Clazz.newMeth(C$, 'getValue$I',  function (i) {
 return this.qAtts.getValue$I(i);
 });
 
-Clazz.newMeth(C$, 'getIndex$S$S', function (uri, localName) {
+Clazz.newMeth(C$, 'getIndex$S$S',  function (uri, localName) {
 return -1;
 });
 
-Clazz.newMeth(C$, 'getIndex$S', function (qName) {
-var max=this.this$0.atts.getLength$();
+Clazz.newMeth(C$, 'getIndex$S',  function (qName) {
+var max=this.b$['javax.xml.sax.helpers.ParserAdapter'].atts.getLength$();
 for (var i=0; i < max; i++) {
 if (this.qAtts.getName$I(i).equals$O(qName)) {
 return i;
@@ -388,21 +368,21 @@ return i;
 return -1;
 });
 
-Clazz.newMeth(C$, 'getType$S$S', function (uri, localName) {
+Clazz.newMeth(C$, 'getType$S$S',  function (uri, localName) {
 return null;
 });
 
-Clazz.newMeth(C$, 'getType$S', function (qName) {
+Clazz.newMeth(C$, 'getType$S',  function (qName) {
 return this.qAtts.getType$S(qName).intern$();
 });
 
-Clazz.newMeth(C$, 'getValue$S$S', function (uri, localName) {
+Clazz.newMeth(C$, 'getValue$S$S',  function (uri, localName) {
 return null;
 });
 
-Clazz.newMeth(C$, 'getValue$S', function (qName) {
+Clazz.newMeth(C$, 'getValue$S',  function (qName) {
 return this.qAtts.getValue$S(qName);
 });
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:56 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

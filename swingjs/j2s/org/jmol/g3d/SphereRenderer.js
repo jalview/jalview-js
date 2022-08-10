@@ -1,39 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SphereRenderer");
+(function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={},I$=[[0,'javajs.util.P3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SphereRenderer");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.g3d=null;
-this.shader=null;
-this.zroot=null;
-this.mat=null;
-this.coef=null;
-this.mDeriv=null;
-this.selectedOctant=0;
-this.planeShade=0;
-this.zbuf=null;
-this.width=0;
-this.height=0;
-this.depth=0;
-this.slab=0;
-this.offsetPbufBeginLine=0;
-this.ptTemp=null;
-this.planeShades=null;
-this.dxyz=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.zroot=Clazz.array(Double.TYPE, [2]);
-this.ptTemp=Clazz.new_($I$(1));
+this.ptTemp=Clazz.new_($I$(1,1));
 this.planeShades=Clazz.array(Integer.TYPE, [3]);
 this.dxyz=Clazz.array(Float.TYPE, [3, 3]);
-}, 1);
+},1);
+
+C$.$fields$=[['I',['selectedOctant','planeShade','width','height','depth','slab','offsetPbufBeginLine'],'O',['g3d','org.jmol.g3d.Graphics3D','shader','org.jmol.util.Shader','zroot','double[]','mat','javajs.util.M3','coef','double[]','mDeriv','javajs.util.M4','zbuf','int[]','ptTemp','javajs.util.P3','planeShades','int[]','dxyz','float[][]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_g3d_Graphics3D', function (g3d) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.g3d=g3d;
 this.shader=g3d.shader;
 }, 1);
@@ -398,4 +378,4 @@ randu=((randu + xC + yC ) | 1) & 2147483647;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

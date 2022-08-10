@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.xml.datatype"),p$1={},I$=[[0,'javax.xml.datatype.DatatypeConstants','java.util.GregorianCalendar','java.math.BigDecimal','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Duration");
+(function(){var P$=Clazz.newPackage("javax.xml.datatype"),p$1={},I$=[[0,'javax.xml.datatype.DatatypeConstants','java.util.GregorianCalendar','java.math.BigDecimal','StringBuffer']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Duration");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'getXMLSchemaType$', function () {
+Clazz.newMeth(C$, 'getXMLSchemaType$',  function () {
 var yearSet=this.isSet$javax_xml_datatype_DatatypeConstants_Field($I$(1).YEARS);
 var monthSet=this.isSet$javax_xml_datatype_DatatypeConstants_Field($I$(1).MONTHS);
 var daySet=this.isSet$javax_xml_datatype_DatatypeConstants_Field($I$(1).DAYS);
@@ -24,83 +23,79 @@ return $I$(1).DURATION;
 return $I$(1).DURATION_DAYTIME;
 }if (yearSet && monthSet && !daySet && !hourSet && !minuteSet && !secondSet  ) {
 return $I$(1).DURATION_YEARMONTH;
-}throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["javax.xml.datatype.Duration exception"]);
+}throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["javax.xml.datatype.Duration#getXMLSchemaType(): this Duration does not match one of the XML Schema date/time datatypes: year set = " + yearSet + " month set = " + monthSet + " day set = " + daySet + " hour set = " + hourSet + " minute set = " + minuteSet + " second set = " + secondSet ]);
 });
 
-Clazz.newMeth(C$, 'getYears$', function () {
+Clazz.newMeth(C$, 'getYears$',  function () {
 return this.getField$javax_xml_datatype_DatatypeConstants_Field($I$(1).YEARS).intValue$();
 });
 
-Clazz.newMeth(C$, 'getMonths$', function () {
+Clazz.newMeth(C$, 'getMonths$',  function () {
 return this.getField$javax_xml_datatype_DatatypeConstants_Field($I$(1).MONTHS).intValue$();
 });
 
-Clazz.newMeth(C$, 'getDays$', function () {
+Clazz.newMeth(C$, 'getDays$',  function () {
 return this.getField$javax_xml_datatype_DatatypeConstants_Field($I$(1).DAYS).intValue$();
 });
 
-Clazz.newMeth(C$, 'getHours$', function () {
+Clazz.newMeth(C$, 'getHours$',  function () {
 return this.getField$javax_xml_datatype_DatatypeConstants_Field($I$(1).HOURS).intValue$();
 });
 
-Clazz.newMeth(C$, 'getMinutes$', function () {
+Clazz.newMeth(C$, 'getMinutes$',  function () {
 return this.getField$javax_xml_datatype_DatatypeConstants_Field($I$(1).MINUTES).intValue$();
 });
 
-Clazz.newMeth(C$, 'getSeconds$', function () {
+Clazz.newMeth(C$, 'getSeconds$',  function () {
 return this.getField$javax_xml_datatype_DatatypeConstants_Field($I$(1).SECONDS).intValue$();
 });
 
-Clazz.newMeth(C$, 'getTimeInMillis$java_util_Calendar', function (startInstant) {
+Clazz.newMeth(C$, 'getTimeInMillis$java_util_Calendar',  function (startInstant) {
 var cal=startInstant.clone$();
 this.addTo$java_util_Calendar(cal);
-return C$.getCalendarTimeInMillis$java_util_Calendar(cal) - C$.getCalendarTimeInMillis$java_util_Calendar(startInstant);
+return Long.$sub(C$.getCalendarTimeInMillis$java_util_Calendar(cal),C$.getCalendarTimeInMillis$java_util_Calendar(startInstant));
 });
 
-Clazz.newMeth(C$, 'getTimeInMillis$java_util_Date', function (startInstant) {
-var cal=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'getTimeInMillis$java_util_Date',  function (startInstant) {
+var cal=Clazz.new_($I$(2,1));
 cal.setTime$java_util_Date(startInstant);
 this.addTo$java_util_Calendar(cal);
-return C$.getCalendarTimeInMillis$java_util_Calendar(cal) - startInstant.getTime$();
+return Long.$sub(C$.getCalendarTimeInMillis$java_util_Calendar(cal),startInstant.getTime$());
 });
 
-Clazz.newMeth(C$, 'getCalendarTimeInMillis$java_util_Calendar', function (cal) {
-return cal.getTime$().getTime$();
-}, 1);
-
-Clazz.newMeth(C$, 'addTo$java_util_Date', function (date) {
+Clazz.newMeth(C$, 'addTo$java_util_Date',  function (date) {
 if (date == null ) {
-throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Duration.addTo(Date): date is null"]);
-}var cal=Clazz.new_($I$(2));
+throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Cannot call " + this.getClass$().getName$() + "#addTo(Date date) with date == null." ]);
+}var cal=Clazz.new_($I$(2,1));
 cal.setTime$java_util_Date(date);
 this.addTo$java_util_Calendar(cal);
 date.setTime$J(C$.getCalendarTimeInMillis$java_util_Calendar(cal));
 });
 
-Clazz.newMeth(C$, 'subtract$javax_xml_datatype_Duration', function (rhs) {
+Clazz.newMeth(C$, 'subtract$javax_xml_datatype_Duration',  function (rhs) {
 return this.add$javax_xml_datatype_Duration(rhs.negate$());
 });
 
-Clazz.newMeth(C$, 'multiply$I', function (factor) {
-return this.multiply$java_math_BigDecimal(Clazz.new_($I$(3).c$$S,[String.valueOf$I(factor)]));
+Clazz.newMeth(C$, 'multiply$I',  function (factor) {
+return this.multiply$java_math_BigDecimal(Clazz.new_([String.valueOf$I(factor)],$I$(3,1).c$$S));
 });
 
-Clazz.newMeth(C$, 'isLongerThan$javax_xml_datatype_Duration', function (duration) {
+Clazz.newMeth(C$, 'isLongerThan$javax_xml_datatype_Duration',  function (duration) {
 return this.compare$javax_xml_datatype_Duration(duration) == 1;
 });
 
-Clazz.newMeth(C$, 'isShorterThan$javax_xml_datatype_Duration', function (duration) {
+Clazz.newMeth(C$, 'isShorterThan$javax_xml_datatype_Duration',  function (duration) {
 return this.compare$javax_xml_datatype_Duration(duration) == -1;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (duration) {
+Clazz.newMeth(C$, 'equals$O',  function (duration) {
 if (duration == null  || !(Clazz.instanceOf(duration, "javax.xml.datatype.Duration")) ) {
 return false;
 }return this.compare$javax_xml_datatype_Duration(duration) == 0;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-var buf=Clazz.new_($I$(4));
+Clazz.newMeth(C$, 'toString',  function () {
+var buf=Clazz.new_($I$(4,1));
 if (this.getSign$() < 0) {
 buf.append$C("-");
 }buf.append$C("P");
@@ -127,7 +122,7 @@ buf.append$S(p$1.toString$java_math_BigDecimal.apply(this, [seconds]) + "S");
 }}return buf.toString();
 });
 
-Clazz.newMeth(C$, 'toString$java_math_BigDecimal', function (bd) {
+Clazz.newMeth(C$, 'toString$java_math_BigDecimal',  function (bd) {
 var intString=bd.unscaledValue$().toString();
 var scale=bd.scale$();
 if (scale == 0) {
@@ -137,10 +132,10 @@ var insertionPoint=intString.length$() - scale;
 if (insertionPoint == 0) {
 return "0." + intString;
 } else if (insertionPoint > 0) {
-buf=Clazz.new_($I$(4).c$$S,[intString]);
+buf=Clazz.new_($I$(4,1).c$$S,[intString]);
 buf.insert$I$C(insertionPoint, ".");
 } else {
-buf=Clazz.new_($I$(4).c$$I,[3 - insertionPoint + intString.length$()]);
+buf=Clazz.new_([3 - insertionPoint + intString.length$()],$I$(4,1).c$$I);
 buf.append$S("0.");
 for (var i=0; i < -insertionPoint; i++) {
 buf.append$C("0");
@@ -148,5 +143,9 @@ buf.append$C("0");
 buf.append$S(intString);
 }return buf.toString();
 }, p$1);
+
+Clazz.newMeth(C$, 'getCalendarTimeInMillis$java_util_Calendar',  function (cal) {
+return cal.getTime$().getTime$();
+}, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:55 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

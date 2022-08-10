@@ -1,35 +1,29 @@
-(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.CaseMgr']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StringBufferLike", null, null, 'com.stevesoft.pat.BasicStringBufferLike');
+(function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.CaseMgr']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StringBufferLike", null, null, 'com.stevesoft.pat.BasicStringBufferLike');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sbl=null;
-this.mode='\0';
-this.altMode='\0';
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.mode="E";
 this.altMode=" ";
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$com_stevesoft_pat_BasicStringBufferLike', function (sbl) {
-C$.$init$.apply(this);
+C$.$fields$=[['C',['mode','altMode'],'O',['sbl','com.stevesoft.pat.BasicStringBufferLike']]]
+
+Clazz.newMeth(C$, 'c$$com_stevesoft_pat_BasicStringBufferLike',  function (sbl) {
+;C$.$init$.apply(this);
 this.sbl=sbl;
 }, 1);
 
-Clazz.newMeth(C$, 'toStringLike$', function () {
+Clazz.newMeth(C$, 'toStringLike$',  function () {
 return this.sbl.toStringLike$();
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return this.sbl.toString();
 });
 
-Clazz.newMeth(C$, 'append$C', function (c) {
+Clazz.newMeth(C$, 'append$C',  function (c) {
 switch (this.mode.$c()) {
 case 117:
 this.mode=this.altMode;
@@ -53,23 +47,23 @@ break;
 }
 });
 
-Clazz.newMeth(C$, 'append$S', function (s) {
+Clazz.newMeth(C$, 'append$S',  function (s) {
 for (var i=0; i < s.length$(); i++) {
 this.append$C(s.charAt$I(i));
 }
 });
 
-Clazz.newMeth(C$, 'setMode$C', function (c) {
+Clazz.newMeth(C$, 'setMode$C',  function (c) {
 if (c == "u" || c == "l" ) {
 if (this.altMode == " ") {
 this.altMode=this.mode;
 }}this.mode=c;
 });
 
-Clazz.newMeth(C$, 'unwrap$', function () {
+Clazz.newMeth(C$, 'unwrap$',  function () {
 return this.sbl.unwrap$();
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:24 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

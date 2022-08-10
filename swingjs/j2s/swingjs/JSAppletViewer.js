@@ -1,100 +1,72 @@
-(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'java.net.URL','swingjs.api.Interface','java.awt.Dimension','javajs.util.Lst','java.awt.Insets','swingjs.JSThreadGroup','swingjs.JSAppletThread','Thread','sun.awt.SunToolkit','java.awt.Toolkit','swingjs.JSGraphicsConfiguration','sun.applet.AppletEventMulticaster','sun.applet.AppletEvent','javax.swing.JFrame','javax.swing.SwingUtilities','javax.imageio.ImageIO','swingjs.JSUtil','java.awt.Font','swingjs.JSFocusPeer','javajs.util.PT','swingjs.JSFrameViewer','java.util.ArrayList','swingjs.JSToolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSAppletViewer", null, 'swingjs.JSFrameViewer', ['java.applet.AppletStub', 'java.applet.AppletContext']);
+(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,'java.net.URL','swingjs.api.Interface','java.awt.Dimension','javajs.util.Lst','java.awt.Insets','swingjs.JSThreadGroup','swingjs.JSAppletThread','Thread','sun.awt.SunToolkit','java.awt.Toolkit','swingjs.JSGraphicsConfiguration','sun.applet.AppletEventMulticaster','sun.applet.AppletEvent','javax.swing.JFrame','javax.swing.SwingUtilities','javax.imageio.ImageIO','java.util.ArrayList','swingjs.JSUtil','java.awt.Font','javajs.util.PT','swingjs.JSFrameViewer','swingjs.JSToolkit']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSAppletViewer", null, 'swingjs.JSFrameViewer', ['java.applet.AppletStub', 'java.applet.AppletContext']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-try {
-$I$(1).setURLStreamHandlerFactory$java_net_URLStreamHandlerFactory($I$(2).getInstance$S$Z("javajs.util.AjaxURLStreamHandlerFactory", false));
-} catch (e) {
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.maximumSize=0;
-this.graphicsConfig=null;
-this.threadGroup=null;
-this.myThread=null;
-this.haveFrames=false;
-this.defaultAppletSize=null;
-this.currentAppletSize=null;
-this.nextStatus=0;
-this.status=0;
-this.listeners=null;
-this.allWindows=null;
-this.sharedOwnerFrame=null;
-this.appContext=null;
-this.timerQueue=null;
-this.isResizable=false;
-this.haveResizable=false;
-this.addFrame=false;
-this.jAppletFrame=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.maximumSize=2147483647;
 this.haveFrames=false;
-this.defaultAppletSize=Clazz.new_($I$(3).c$$I$I,[10, 10]);
-this.currentAppletSize=Clazz.new_($I$(3).c$$I$I,[10, 10]);
+this.defaultAppletSize=Clazz.new_($I$(3,1).c$$I$I,[10, 10]);
+this.currentAppletSize=Clazz.new_($I$(3,1).c$$I$I,[10, 10]);
 this.status=0;
-this.allWindows=Clazz.new_($I$(4));
-}, 1);
+this.allWindows=Clazz.new_($I$(4,1));
+},1);
 
-Clazz.newMeth(C$, 'addWindow$java_awt_Window', function (window) {
+C$.$fields$=[['Z',['haveFrames','isResizable','haveResizable','addFrame'],'I',['maximumSize','nextStatus','status'],'O',['graphicsConfig','java.awt.GraphicsConfiguration','threadGroup','swingjs.JSThreadGroup','myThread','javajs.util.JSThread','defaultAppletSize','java.awt.Dimension','+currentAppletSize','listeners','sun.applet.AppletListener','allWindows','javajs.util.Lst','sharedOwnerFrame','java.awt.JSFrame','appContext','sun.awt.AppContext','timerQueue','java.util.ArrayList','jAppletFrame','javax.swing.JFrame']]]
+
+Clazz.newMeth(C$, 'addWindow$java_awt_Window',  function (window) {
 this.allWindows.removeObj$O(window);
-this.allWindows.addLast$TV(window);
+this.allWindows.addLast$O(window);
 });
 
-Clazz.newMeth(C$, 'c$$java_util_Hashtable', function (params) {
-C$.superclazz.c$$java_util_Hashtable.apply(this, [params]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_Hashtable',  function (params) {
+;C$.superclazz.c$$java_util_Hashtable.apply(this,[params]);C$.$init$.apply(this);
 System.out.println$S("JSAppletViewer initializing2");
 this.isApplet=true;
 this.appletViewer=this;
 p$1.setDisplayParams$java_util_Hashtable.apply(this, [params]);
 }, 1);
 
-Clazz.newMeth(C$, 'setDisplayParams$java_util_Hashtable', function (params) {
+Clazz.newMeth(C$, 'setDisplayParams$java_util_Hashtable',  function (params) {
 this.display=params.get$O("display");
 var s="" + params.get$O("isResizable");
 this.isResizable="true".equalsIgnoreCase$S(s);
 this.haveResizable=(this.isResizable || "false".equalsIgnoreCase$S(s) );
 this.addFrame="true".equalsIgnoreCase$S("" + params.get$O("addFrame"));
-this.insets=Clazz.new_($I$(5).c$$I$I$I$I,[0, 0, 0, 0]);
-this.threadGroup=Clazz.new_($I$(6).c$$S,[this.appletName]);
-this.myThread=Clazz.new_($I$(7).c$$swingjs_JSAppletViewer$ThreadGroup$S,[this, this.threadGroup, this.appletName]);
-$I$(8).thisThread=(this.myThread);
+this.insets=Clazz.new_($I$(5,1).c$$I$I$I$I,[0, 0, 0, 0]);
+this.threadGroup=Clazz.new_($I$(6,1).c$$S,[this.appletName]);
+this.myThread=Clazz.new_($I$(7,1).c$$swingjs_JSAppletViewer$ThreadGroup$S,[this, this.threadGroup, this.appletName]);
+$I$(8).秘thisThread=this.myThread;
 this.appContext=$I$(9).createNewAppContext$();
 $I$(10).getDefaultToolkit$();
-Clazz.new_($I$(11)).getDevice$();
+Clazz.new_($I$(11,1)).getDevice$();
 }, p$1);
 
-Clazz.newMeth(C$, 'start$', function () {
+Clazz.newMeth(C$, 'start$',  function () {
 if (this.status == 0) this.myThread.start$();
  else this.showStatus$S("already started");
 });
 
-Clazz.newMeth(C$, 'addAppletListener$sun_applet_AppletListener', function (l) {
+Clazz.newMeth(C$, 'addAppletListener$sun_applet_AppletListener',  function (l) {
 this.listeners=$I$(12).add$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
 });
 
-Clazz.newMeth(C$, 'removeAppletListener$sun_applet_AppletListener', function (l) {
+Clazz.newMeth(C$, 'removeAppletListener$sun_applet_AppletListener',  function (l) {
 this.listeners=$I$(12).remove$sun_applet_AppletListener$sun_applet_AppletListener(this.listeners, l);
 });
 
-Clazz.newMeth(C$, 'dispatchAppletEvent$I$O', function (id, argument) {
+Clazz.newMeth(C$, 'dispatchAppletEvent$I$O',  function (id, argument) {
 if (this.listeners != null ) {
-var evt=Clazz.new_($I$(13).c$$O$I$O,[this, id, argument]);
-this.listeners.appletStateChanged$(evt);
+var evt=Clazz.new_($I$(13,1).c$$O$I$O,[this, id, argument]);
+this.listeners.appletStateChanged$sun_applet_AppletEvent(evt);
 }});
 
-Clazz.newMeth(C$, 'isActive$', function () {
+Clazz.newMeth(C$, 'isActive$',  function () {
 return true;
 });
 
-Clazz.newMeth(C$, 'appletResize$I$I', function (width, height) {
-var currentSize=Clazz.new_($I$(3).c$$I$I,[this.currentAppletSize.width, this.currentAppletSize.height]);
+Clazz.newMeth(C$, 'appletResize$I$I',  function (width, height) {
+var currentSize=Clazz.new_($I$(3,1).c$$I$I,[this.currentAppletSize.width, this.currentAppletSize.height]);
 this.currentAppletSize.width=width;
 this.currentAppletSize.height=height;
 this.applet.getRootPane$().setBounds$I$I$I$I(0, 0, this.getWidth$(), this.getHeight$());
@@ -102,32 +74,31 @@ this.applet.getContentPane$().setBounds$I$I$I$I(0, 0, this.getWidth$(), this.get
 this.applet.setBounds$I$I$I$I(0, 0, width, height);
 (this.applet.getContentPane$()).revalidate$();
 if (this.addFrame) {
-this.jAppletFrame=Clazz.new_($I$(14).c$$S,["SwingJS Applet Viewer"]);
+this.jAppletFrame=Clazz.new_($I$(14,1).c$$S,["SwingJS Applet Viewer"]);
 var pane=this.applet.getContentPane$();
 this.jAppletFrame.setContentPane$java_awt_Container(pane);
 this.applet.setVisible$Z(false);
 this.jAppletFrame.pack$();
 this.jAppletFrame.setDefaultCloseOperation$I(2);
-}$I$(15).invokeLater$Runnable(((P$.JSAppletViewer$1||
-(function(){var C$=Clazz.newClass(P$, "JSAppletViewer$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+}$I$(15,"invokeLater$Runnable",[((P$.JSAppletViewer$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JSAppletViewer$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'run$', function () {
+Clazz.newMeth(C$, 'run$',  function () {
 this.b$['swingjs.JSAppletViewer'].applet.repaint$I$I$I$I(0, 0, this.b$['swingjs.JSAppletViewer'].getWidth$.apply(this.b$['swingjs.JSAppletViewer'], []), this.b$['swingjs.JSAppletViewer'].getHeight$.apply(this.b$['swingjs.JSAppletViewer'], []));
 this.b$['swingjs.JSAppletViewer'].dispatchAppletEvent$I$O.apply(this.b$['swingjs.JSAppletViewer'], [51234, this.$finals$.currentSize]);
 });
 })()
-), Clazz.new_(P$.JSAppletViewer$1.$init$, [this, {currentSize: currentSize}])));
+), Clazz.new_(P$.JSAppletViewer$1.$init$,[this, {currentSize:currentSize}]))]);
 });
 
-Clazz.newMeth(C$, 'getDocumentBase$', function () {
+Clazz.newMeth(C$, 'getDocumentBase$',  function () {
 try {
-return Clazz.new_($I$(1).c$$S,[this.params.get$O("documentBase")]);
+return Clazz.new_([this.params.get$O("documentbase")],$I$(1,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return null;
@@ -137,9 +108,9 @@ throw e;
 }
 });
 
-Clazz.newMeth(C$, 'getCodeBase$', function () {
+Clazz.newMeth(C$, 'getCodeBase$',  function () {
 try {
-return Clazz.new_($I$(1).c$$S,[this.params.get$O("codePath")]);
+return Clazz.new_([this.params.get$O("codepath")],$I$(1,1).c$$S);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.net.MalformedURLException")){
 return null;
@@ -149,31 +120,31 @@ throw e;
 }
 });
 
-Clazz.newMeth(C$, 'getParameter$S', function (name) {
-var s=this.params.get$O(name);
-System.out.println$S("get parameter: " + name + " = " + s );
-return (s == null  ? null : "" + s);
+Clazz.newMeth(C$, 'getParameter$S',  function (name) {
+var s=C$.superclazz.prototype.getParameter$S.apply(this, [name]);
+System.out.println$S("JSApp get parameter: " + name + " = " + s );
+return s;
 });
 
-Clazz.newMeth(C$, 'getAppletContext$', function () {
+Clazz.newMeth(C$, 'getAppletContext$',  function () {
 return this;
 });
 
-Clazz.newMeth(C$, 'getHeight$', function () {
+Clazz.newMeth(C$, 'getHeight$',  function () {
 return this.html5Applet._getHeight();
 });
 
-Clazz.newMeth(C$, 'getWidth$', function () {
+Clazz.newMeth(C$, 'getWidth$',  function () {
 return this.html5Applet._getWidth();
 });
 
-Clazz.newMeth(C$, 'setBounds$I$I$I$I', function (x, y, width, height) {
+Clazz.newMeth(C$, 'setBounds$I$I$I$I',  function (x, y, width, height) {
 this.applet.reshape$I$I$I$I(x, y, width, height);
 this.currentAppletSize.width=width;
 this.currentAppletSize.height=height;
 });
 
-Clazz.newMeth(C$, 'getImage$java_net_URL', function (url) {
+Clazz.newMeth(C$, 'getImage$java_net_URL',  function (url) {
 try {
 return $I$(16).read$java_net_URL(url);
 } catch (t) {
@@ -181,46 +152,72 @@ return null;
 }
 });
 
-Clazz.newMeth(C$, 'getApplet$S', function (name) {
+Clazz.newMeth(C$, 'getApplet$S',  function (name) {
 var applet=null;
-{
-applet = SwingJS._applets[name]; applet && (applet = applet._applet);
-}
-return applet;
-});
+name=name.toLowerCase$();
 
-Clazz.newMeth(C$, 'getApplets$', function () {
+var applets = J2S._applets;
+for (var a in applets) { if (a.toLowerCase() == "." + name) { return applets[a]._applet;
+} }
 return null;
 });
 
-Clazz.newMeth(C$, 'showDocument$java_net_URL', function (url) {
-$I$(17).showWebPage$java_net_URL$O(url, null);
-});
+Clazz.newMeth(C$, 'getApplets$',  function () {
+var appletList=Clazz.new_($I$(17,1));
 
-Clazz.newMeth(C$, 'showDocument$java_net_URL$S', function (url, target) {
-$I$(17).showWebPage$java_net_URL$O(url, target);
-});
-
-Clazz.newMeth(C$, 'showStatus$S', function (status) {
-$I$(17).log$S(status);
-{
-Clazz._LoaderProgressMonitor.showStatus(status, true);
+var applets = J2S._applets;
+for (var a in applets) { var app = applets[a]._applet;
+if (app && !appletList.contains$O(app)) appletList.add$O(app);
 }
+return ((P$.JSAppletViewer$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JSAppletViewer$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.util.Enumeration', 1);
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+this.i=0;
+},1);
+
+C$.$fields$=[['I',['i']]]
+
+Clazz.newMeth(C$, 'hasMoreElements$',  function () {
+return this.i < this.$finals$.appletList.size$();
 });
 
-Clazz.newMeth(C$, 'showAppletStatus$S', function (status) {
+Clazz.newMeth(C$, 'nextElement$',  function () {
+if (this.i >= this.$finals$.appletList.size$()) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
+return this.$finals$.appletList.get$I(this.i++);
+});
+})()
+), Clazz.new_(P$.JSAppletViewer$2.$init$,[this, {appletList:appletList}]));
+});
+
+Clazz.newMeth(C$, 'showDocument$java_net_URL',  function (url) {
+$I$(18).showWebPage$java_net_URL$O(url, null);
+});
+
+Clazz.newMeth(C$, 'showDocument$java_net_URL$S',  function (url, target) {
+$I$(18).showWebPage$java_net_URL$O(url, target);
+});
+
+Clazz.newMeth(C$, 'showStatus$S',  function (status) {
+$I$(18).log$S(status);
+
+Clazz._LoaderProgressMonitor.showStatus(status, true);
+});
+
+Clazz.newMeth(C$, 'showAppletStatus$S',  function (status) {
 this.getAppletContext$().showStatus$S(this.htmlName + " " + status );
 }, p$1);
 
-Clazz.newMeth(C$, 'showAppletException$Throwable', function (t) {
-{
-this.showAppletStatus$S("error " + (t.getMessage ? t.getMessage$() : t));
+Clazz.newMeth(C$, 'showAppletException$Throwable',  function (t) {
+
+p$1.showAppletStatus$S("error " + (t.getMessage ? t.getMessage$() : t));
 if (t.printStackTrace$) t.printStackTrace$();
 else System.out.println(t.stack);
-}
 }, p$1);
 
-Clazz.newMeth(C$, 'run1$I', function (mode) {
+Clazz.newMeth(C$, 'run1$I',  function (mode) {
 System.out.println$S("JSAppletViewer thread run1 mode=" + mode + " status=" + this.nextStatus );
 var ok=false;
 switch (mode) {
@@ -247,8 +244,8 @@ if (this.status != 1 && this.status != 5 ) {
 p$1.showAppletStatus$S.apply(this, ["notloaded"]);
 break;
 }System.out.println$S("JSAppletViewer init");
-this.applet.setFont$java_awt_Font(Clazz.new_($I$(18).c$$S$I$I,["Dialog", 0, 12]));
-this.applet.resizeOriginal$I$I(this.defaultAppletSize.width, this.defaultAppletSize.height);
+this.applet.setFont$java_awt_Font(Clazz.new_($I$(19,1).c$$S$I$I,["Dialog", 0, 12]));
+this.applet.秘resizeOriginal$I$I(this.defaultAppletSize.width, this.defaultAppletSize.height);
 this.applet.init$();
 this.applet.validate$();
 this.status=2;
@@ -263,7 +260,7 @@ this.status=7;
 break;
 }this.applet.getRootPane$().addNotify$();
 System.out.println$S("JSAppletViewer start" + this.currentAppletSize);
-this.applet.resizeOriginal$I$I(this.currentAppletSize.width, this.currentAppletSize.height);
+this.applet.秘resizeOriginal$I$I(this.currentAppletSize.width, this.currentAppletSize.height);
 this.applet.start$();
 this.status=3;
 p$1.showAppletStatus$S.apply(this, ["started"]);
@@ -273,14 +270,14 @@ break;
 case 35:
 this.applet.getContentPane$().setBounds$java_awt_Rectangle(this.applet.getBounds$());
 this.applet.setVisible$Z(true);
+this.applet.秘setProxy$java_awt_Container(this.applet);
 this.applet.validate$();
 p$1.showAppletStatus$S.apply(this, ["ready"]);
-$I$(17).readyCallback$S$S$java_awt_JSComponent$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
+$I$(18).readyCallback$S$S$java_awt_JSComponent$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
 if (this.isResizable && !this.addFrame && this.resizer == null   ) {
-this.resizer=($I$(17).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer$javax_swing_RootPaneContainer(this, this.top);
+this.resizer=($I$(18).getInstance$S("swingjs.plaf.Resizer")).set$swingjs_JSFrameViewer$javax_swing_RootPaneContainer(this, this.top);
 if (this.resizer != null ) this.resizer.show$();
-}$I$(19).setFocusLast$java_applet_JSApplet(this.applet);
-this.applet.repaint$();
+}this.applet.秘repaint$();
 break;
 case 4:
 if (this.status == 3) {
@@ -314,8 +311,7 @@ case 76:
 p$1.showAppletStatus$S.apply(this, ["running " + this.main]);
 var args=this.params.get$O("args");
 if (Clazz.instanceOf(args, "java.lang.String")) args=$I$(20).split$S$S(args, " ");
-(this.applet).runMain$S$SA(this.main, args);
-$I$(17).readyCallback$S$S$java_awt_JSComponent$swingjs_JSAppletViewer(this.appletName, this.fullName, this.applet, this);
+(this.applet).runMain$swingjs_JSAppletViewer$SA(this, args);
 break;
 case 6:
 break;
@@ -331,7 +327,7 @@ break;
 return (ok ? 1 : 2);
 });
 
-Clazz.newMeth(C$, 'runLoader', function () {
+Clazz.newMeth(C$, 'runLoader',  function () {
 this.dispatchAppletEvent$I$O(51235, null);
 this.status=1;
 this.main=this.getParameter$S("main");
@@ -340,16 +336,19 @@ try {
 if (code == null  && this.main == null  ) {
 System.err.println$S("runloader.err-- \"code\" or \"main\" must be specified.");
 throw Clazz.new_(Clazz.load('InstantiationException').c$$S,["\"code\" or \"main\" must be specified."]);
-}if (code == null ) code="swingjs.JSApplet";
+}if (code == null ) code="swingjs.JSDummyApplet";
  else if (code.indexOf$S(".") < 0) code="_." + code;
-this.top=this.applet=$I$(17).getInstance$S(code);
+this.top=this.applet=$I$(18).getInstance$S(code);
 if (this.applet == null ) {
 System.out.println$S(code + " could not be launched");
 this.status=7;
 } else if (!(Clazz.instanceOf(this.applet, "javax.swing.JApplet"))) {
-$I$(17).alert$O(code + " is not a JApplet!?");
+$I$(18).alert$O(code + " is not a JApplet!?");
 this.status=7;
-}} catch (e$$) {
+}var name=this.htmlName;
+
+J2S._applets["." + name] = {_applet:this.applet};
+} catch (e$$) {
 if (Clazz.exceptionOf(e$$,"InstantiationException")){
 var e = e$$;
 {
@@ -391,26 +390,34 @@ this.applet.setDispatcher$();
 p$1.showAppletStatus$S.apply(this, ["loaded"]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'newFrameViewer$Z', function (forceNew) {
-return (this.haveFrames || forceNew  ? Clazz.new_($I$(21)) : null);
+Clazz.newMeth(C$, 'newFrameViewer$Z',  function (forceNew) {
+return (this.haveFrames || forceNew  ? Clazz.new_($I$(21,1)) : null);
 });
 
-Clazz.newMeth(C$, 'getTimerQueue$', function () {
-return (this.timerQueue == null  ? (this.timerQueue=Clazz.new_($I$(22))) : this.timerQueue);
-});
-
-Clazz.newMeth(C$, 'exit$', function () {
+Clazz.newMeth(C$, 'exit$',  function () {
 for (var i=this.allWindows.size$(); --i >= 0; ) try {
 this.allWindows.get$I(i).dispose$();
 } catch (e) {
 }
 
+if (this.isApplet && this.applet != null  ) {
+this.applet.setVisible$Z(false);
+this.html5Applet._show(false);
+}});
+
+Clazz.newMeth(C$, 'getAudioClip$java_net_URL',  function (url) {
+return $I$(22).getAudioClip$java_net_URL(url);
 });
 
-Clazz.newMeth(C$, 'getAudioClip$java_net_URL', function (url) {
-return $I$(23).getAudioClip$java_net_URL(url);
-});
+C$.$static$=function(){C$.$static$=0;
+{
+if ($I$(1).秘factory == null ) try {
+$I$(1,"setURLStreamHandlerFactory$java_net_URLStreamHandlerFactory",[$I$(2).getInstance$S$Z("javajs.util.AjaxURLStreamHandlerFactory", false)]);
+} catch (e) {
+}
+};
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-18 23:03:43 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 17:14:00 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,121 +1,46 @@
-(function(){var P$=Clazz.newPackage("swingjs.jzlib"),p$1={},I$=[[0,['swingjs.jzlib.Deflate','.Config'],'swingjs.jzlib.Tree','swingjs.jzlib.StaticTree','swingjs.jzlib.CRC32','swingjs.jzlib.GZIPHeader']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Deflate", function(){
+(function(){var P$=Clazz.newPackage("swingjs.jzlib"),p$1={},I$=[[0,['swingjs.jzlib.Deflate','.Config'],'swingjs.jzlib.Tree','swingjs.jzlib.StaticTree','swingjs.jzlib.CRC32','swingjs.jzlib.GZIPHeader']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Deflate", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.config_table=null;
-C$.z_errmsg=null;
+C$.$classes$=[['Config',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-{
-C$.config_table=Clazz.array($I$(1), [10]);
-C$.config_table[0]=Clazz.new_($I$(1).c$$I$I$I$I$I,[0, 0, 0, 0, 0]);
-C$.config_table[1]=Clazz.new_($I$(1).c$$I$I$I$I$I,[4, 4, 8, 4, 1]);
-C$.config_table[2]=Clazz.new_($I$(1).c$$I$I$I$I$I,[4, 5, 16, 8, 1]);
-C$.config_table[3]=Clazz.new_($I$(1).c$$I$I$I$I$I,[4, 6, 32, 32, 1]);
-C$.config_table[4]=Clazz.new_($I$(1).c$$I$I$I$I$I,[4, 4, 16, 16, 2]);
-C$.config_table[5]=Clazz.new_($I$(1).c$$I$I$I$I$I,[8, 16, 32, 32, 2]);
-C$.config_table[6]=Clazz.new_($I$(1).c$$I$I$I$I$I,[8, 16, 128, 128, 2]);
-C$.config_table[7]=Clazz.new_($I$(1).c$$I$I$I$I$I,[8, 32, 128, 256, 2]);
-C$.config_table[8]=Clazz.new_($I$(1).c$$I$I$I$I$I,[32, 128, 258, 1024, 2]);
-C$.config_table[9]=Clazz.new_($I$(1).c$$I$I$I$I$I,[32, 258, 258, 4096, 2]);
-};
-C$.z_errmsg=Clazz.array(String, -1, ["need dictionary", "stream end", "", "file error", "stream error", "data error", "insufficient memory", "buffer error", "incompatible version", ""]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.strm=null;
-this.status=0;
-this.pending_buf=null;
-this.pending_buf_size=0;
-this.pending_out=0;
-this.pending=0;
-this.wrap=0;
-this.data_type=0;
-this.method=0;
-this.last_flush=0;
-this.w_size=0;
-this.w_bits=0;
-this.w_mask=0;
-this.window=null;
-this.window_size=0;
-this.prev=null;
-this.head=null;
-this.ins_h=0;
-this.hash_size=0;
-this.hash_bits=0;
-this.hash_mask=0;
-this.hash_shift=0;
-this.block_start=0;
-this.match_length=0;
-this.prev_match=0;
-this.match_available=0;
-this.strstart=0;
-this.match_start=0;
-this.lookahead=0;
-this.prev_length=0;
-this.max_chain_length=0;
-this.max_lazy_match=0;
-this.level=0;
-this.strategy=0;
-this.good_match=0;
-this.nice_match=0;
-this.dyn_ltree=null;
-this.dyn_dtree=null;
-this.bl_tree=null;
-this.l_desc=null;
-this.d_desc=null;
-this.bl_desc=null;
-this.bl_count=null;
-this.heap=null;
-this.heap_len=0;
-this.heap_max=0;
-this.depth=null;
-this.l_buf=0;
-this.lit_bufsize=0;
-this.last_lit=0;
-this.d_buf=0;
-this.opt_len=0;
-this.static_len=0;
-this.matches=0;
-this.last_eob_len=0;
-this.bi_buf=0;
-this.bi_valid=0;
-this.gheader=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.wrap=1;
-this.l_desc=Clazz.new_($I$(2));
-this.d_desc=Clazz.new_($I$(2));
-this.bl_desc=Clazz.new_($I$(2));
+this.l_desc=Clazz.new_($I$(2,1));
+this.d_desc=Clazz.new_($I$(2,1));
+this.bl_desc=Clazz.new_($I$(2,1));
 this.bl_count=Clazz.array(Integer.TYPE, [16]);
 this.heap=Clazz.array(Integer.TYPE, [573]);
 this.depth=Clazz.array(Byte.TYPE, [573]);
 this.gheader=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$swingjs_jzlib_ZStream', function (strm) {
-C$.$init$.apply(this);
+C$.$fields$=[['B',['data_type','method'],'I',['status','pending_buf_size','pending_out','pending','wrap','last_flush','w_size','w_bits','w_mask','window_size','ins_h','hash_size','hash_bits','hash_mask','hash_shift','block_start','match_length','prev_match','match_available','strstart','match_start','lookahead','prev_length','max_chain_length','max_lazy_match','level','strategy','good_match','nice_match','heap_len','heap_max','l_buf','lit_bufsize','last_lit','d_buf','opt_len','static_len','matches','last_eob_len','bi_buf','bi_valid'],'O',['strm','swingjs.jzlib.ZStream','pending_buf','byte[]','+window','prev','int[]','+head','+dyn_ltree','+dyn_dtree','+bl_tree','l_desc','swingjs.jzlib.Tree','+d_desc','+bl_desc','bl_count','int[]','+heap','depth','byte[]','gheader','swingjs.jzlib.GZIPHeader']]
+,['O',['config_table','swingjs.jzlib.Deflate.Config[]','z_errmsg','String[]']]]
+
+Clazz.newMeth(C$, 'c$$swingjs_jzlib_ZStream',  function (strm) {
+;C$.$init$.apply(this);
 this.strm=strm;
 this.dyn_ltree=Clazz.array(Integer.TYPE, [1146]);
 this.dyn_dtree=Clazz.array(Integer.TYPE, [122]);
 this.bl_tree=Clazz.array(Integer.TYPE, [78]);
 }, 1);
 
-Clazz.newMeth(C$, 'deflateInit$I', function (level) {
+Clazz.newMeth(C$, 'deflateInit$I',  function (level) {
 return this.deflateInit2$I$I(level, 15);
 });
 
-Clazz.newMeth(C$, 'deflateInit2$I$I', function (level, bits) {
+Clazz.newMeth(C$, 'deflateInit2$I$I',  function (level, bits) {
 return p$1.deflateInit5$I$I$I$I$I.apply(this, [level, 8, bits, 8, 0]);
 });
 
-Clazz.newMeth(C$, 'deflateInit3$I$I$I', function (level, bits, memlevel) {
+Clazz.newMeth(C$, 'deflateInit3$I$I$I',  function (level, bits, memlevel) {
 return p$1.deflateInit5$I$I$I$I$I.apply(this, [level, 8, bits, memlevel, 0]);
 });
 
-Clazz.newMeth(C$, 'lm_init$', function () {
+Clazz.newMeth(C$, 'lm_init$',  function () {
 this.window_size=2 * this.w_size;
 this.head[this.hash_size - 1]=0;
 for (var i=0; i < this.hash_size - 1; i++) {
@@ -133,7 +58,7 @@ this.match_available=0;
 this.ins_h=0;
 });
 
-Clazz.newMeth(C$, 'tr_init$', function () {
+Clazz.newMeth(C$, 'tr_init$',  function () {
 this.l_desc.dyn_tree=this.dyn_ltree;
 this.l_desc.stat_desc=$I$(3).static_l_desc;
 this.d_desc.dyn_tree=this.dyn_dtree;
@@ -146,7 +71,7 @@ this.last_eob_len=8;
 this.init_block$();
 });
 
-Clazz.newMeth(C$, 'init_block$', function () {
+Clazz.newMeth(C$, 'init_block$',  function () {
 for (var i=0; i < 286; i++) this.dyn_ltree[i * 2]=0;
 
 for (var i=0; i < 30; i++) this.dyn_dtree[i * 2]=0;
@@ -158,12 +83,12 @@ this.opt_len=this.static_len=0;
 this.last_lit=this.matches=0;
 });
 
-Clazz.newMeth(C$, 'pqdownheap$IA$I', function (tree, k) {
+Clazz.newMeth(C$, 'pqdownheap$IA$I',  function (tree, k) {
 var v=this.heap[k];
 var j=k << 1;
 while (j <= this.heap_len){
 if (j < this.heap_len && C$.smaller$IA$I$I$BA(tree, this.heap[j + 1], this.heap[j], this.depth) ) {
-j++;
+++j;
 }if (C$.smaller$IA$I$I$BA(tree, v, this.heap[j], this.depth)) break;
 this.heap[k]=this.heap[j];
 k=j;
@@ -172,13 +97,13 @@ j<<=1;
 this.heap[k]=v;
 });
 
-Clazz.newMeth(C$, 'smaller$IA$I$I$BA', function (tree, n, m, depth) {
+Clazz.newMeth(C$, 'smaller$IA$I$I$BA',  function (tree, n, m, depth) {
 var tn2=tree[n * 2];
 var tm2=tree[m * 2];
 return (tn2 < tm2 || (tn2 == tm2 && depth[n] <= depth[m] ) );
 }, 1);
 
-Clazz.newMeth(C$, 'scan_tree$IA$I', function (tree, max_code) {
+Clazz.newMeth(C$, 'scan_tree$IA$I',  function (tree, max_code) {
 var n;
 var prevlen=-1;
 var curlen;
@@ -198,12 +123,12 @@ continue;
 } else if (count < min_count) {
 this.bl_tree[curlen * 2]+=count;
 } else if (curlen != 0) {
-if (curlen != prevlen) this.bl_tree[curlen * 2]++;
-this.bl_tree[32]++;
+if (curlen != prevlen) ++this.bl_tree[curlen * 2];
+++this.bl_tree[32];
 } else if (count <= 10) {
-this.bl_tree[34]++;
+++this.bl_tree[34];
 } else {
-this.bl_tree[36]++;
+++this.bl_tree[36];
 }count=0;
 prevlen=curlen;
 if (nextlen == 0) {
@@ -218,7 +143,7 @@ min_count=4;
 }}
 });
 
-Clazz.newMeth(C$, 'build_bl_tree$', function () {
+Clazz.newMeth(C$, 'build_bl_tree$',  function () {
 var max_blindex;
 this.scan_tree$IA$I(this.dyn_ltree, this.l_desc.max_code);
 this.scan_tree$IA$I(this.dyn_dtree, this.d_desc.max_code);
@@ -230,7 +155,7 @@ this.opt_len+=3 * (max_blindex + 1) + 5 + 5 + 4;
 return max_blindex;
 });
 
-Clazz.newMeth(C$, 'send_all_trees$I$I$I', function (lcodes, dcodes, blcodes) {
+Clazz.newMeth(C$, 'send_all_trees$I$I$I',  function (lcodes, dcodes, blcodes) {
 var rank;
 this.send_bits$I$I(lcodes - 257, 5);
 this.send_bits$I$I(dcodes - 1, 5);
@@ -242,7 +167,7 @@ this.send_tree$IA$I(this.dyn_ltree, lcodes - 1);
 this.send_tree$IA$I(this.dyn_dtree, dcodes - 1);
 });
 
-Clazz.newMeth(C$, 'send_tree$IA$I', function (tree, max_code) {
+Clazz.newMeth(C$, 'send_tree$IA$I',  function (tree, max_code) {
 var n;
 var prevlen=-1;
 var curlen;
@@ -265,7 +190,7 @@ this.send_code$I$IA(curlen, this.bl_tree);
 } else if (curlen != 0) {
 if (curlen != prevlen) {
 this.send_code$I$IA(curlen, this.bl_tree);
-count--;
+--count;
 }this.send_code$I$IA(16, this.bl_tree);
 this.send_bits$I$I(count - 3, 2);
 } else if (count <= 10) {
@@ -288,33 +213,33 @@ min_count=4;
 }}
 });
 
-Clazz.newMeth(C$, 'put_byte$BA$I$I', function (p, start, len) {
+Clazz.newMeth(C$, 'put_byte$BA$I$I',  function (p, start, len) {
 System.arraycopy$O$I$O$I$I(p, start, this.pending_buf, this.pending, len);
 this.pending+=len;
 });
 
-Clazz.newMeth(C$, 'put_byteB$B', function (c) {
+Clazz.newMeth(C$, 'put_byteB$B',  function (c) {
 {
 this.pending_buf[this.pending++] = c&0xff;
 }
 });
 
-Clazz.newMeth(C$, 'put_short$I', function (w) {
-this.put_byteB$B(($b$[0] = ((w)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = ((w >>> 8)|0), $b$[0]));
+Clazz.newMeth(C$, 'put_short$I',  function (w) {
+this.put_byteB$B(($b$[0] = (w), $b$[0]));
+this.put_byteB$B(($b$[0] = (w >>> 8), $b$[0]));
 });
 
-Clazz.newMeth(C$, 'putintMSB$I', function (b) {
-this.put_byteB$B(($b$[0] = ((b >> 8)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = ((b)|0), $b$[0]));
+Clazz.newMeth(C$, 'putintMSB$I',  function (b) {
+this.put_byteB$B(($b$[0] = (b >> 8), $b$[0]));
+this.put_byteB$B(($b$[0] = (b), $b$[0]));
 });
 
-Clazz.newMeth(C$, 'send_code$I$IA', function (c, tree) {
+Clazz.newMeth(C$, 'send_code$I$IA',  function (c, tree) {
 var c2=c * 2;
 this.send_bits$I$I((tree[c2] & 65535), (tree[c2 + 1] & 65535));
 });
 
-Clazz.newMeth(C$, 'send_bits$I$I', function (value, length) {
+Clazz.newMeth(C$, 'send_bits$I$I',  function (value, length) {
 var len=length;
 if (this.bi_valid > 16 - len) {
 var val=value;
@@ -327,7 +252,7 @@ this.bi_buf|=(((value) << this.bi_valid) & 65535);
 this.bi_valid+=len;
 }});
 
-Clazz.newMeth(C$, '_tr_align$', function () {
+Clazz.newMeth(C$, '_tr_align$',  function () {
 this.send_bits$I$I(2, 3);
 this.send_code$I$IA(256, $I$(3).static_ltree);
 this.bi_flush$();
@@ -338,31 +263,31 @@ this.bi_flush$();
 }this.last_eob_len=7;
 });
 
-Clazz.newMeth(C$, '_tr_tally$I$I', function (dist, lc) {
-this.pending_buf[this.d_buf + this.last_lit * 2]=(((dist >>> 8)|0)|0);
-this.pending_buf[this.d_buf + this.last_lit * 2 + 1]=((dist|0)|0);
-this.pending_buf[this.l_buf + this.last_lit]=((lc|0)|0);
-this.last_lit++;
+Clazz.newMeth(C$, '_tr_tally$I$I',  function (dist, lc) {
+this.pending_buf[this.d_buf + this.last_lit * 2]=((dist >>> 8)|0);
+this.pending_buf[this.d_buf + this.last_lit * 2 + 1]=(dist|0);
+this.pending_buf[this.l_buf + this.last_lit]=(lc|0);
+++this.last_lit;
 if (dist == 0) {
-this.dyn_ltree[lc * 2]++;
+++this.dyn_ltree[lc * 2];
 } else {
-this.matches++;
-dist--;
-this.dyn_ltree[($I$(2)._length_code[lc] + 256 + 1 ) * 2]++;
-this.dyn_dtree[$I$(2).d_code$I(dist) * 2]++;
+++this.matches;
+--dist;
+++this.dyn_ltree[($I$(2)._length_code[lc] + 256 + 1 ) * 2];
+++this.dyn_dtree[$I$(2).d_code$I(dist) * 2];
 }if ((this.last_lit & 8191) == 0 && this.level > 2 ) {
 var out_length=this.last_lit * 8;
 var in_length=this.strstart - this.block_start;
 var dcode;
 for (dcode=0; dcode < 30; dcode++) {
-out_length+=this.dyn_dtree[dcode * 2] * (5 + $I$(2).extra_dbits[dcode]);
+out_length=Long.$ival(Long.$add(out_length,(Long.$mul(this.dyn_dtree[dcode * 2],(Long.$add(5,$I$(2).extra_dbits[dcode]))))));
 }
 out_length>>>=3;
 if ((this.matches < ((this.last_lit/2|0))) && out_length < (in_length/2|0) ) return true;
 }return (this.last_lit == this.lit_bufsize - 1);
 });
 
-Clazz.newMeth(C$, 'compress_block$IA$IA', function (ltree, dtree) {
+Clazz.newMeth(C$, 'compress_block$IA$IA',  function (ltree, dtree) {
 var dist;
 var lc;
 var lx=0;
@@ -372,7 +297,7 @@ if (this.last_lit != 0) {
 do {
 dist=((this.pending_buf[this.d_buf + lx * 2] << 8) & 65280) | (this.pending_buf[this.d_buf + lx * 2 + 1] & 255);
 lc=(this.pending_buf[this.l_buf + lx]) & 255;
-lx++;
+++lx;
 if (dist == 0) {
 this.send_code$I$IA(lc, ltree);
 } else {
@@ -382,7 +307,7 @@ extra=$I$(2).extra_lbits[code];
 if (extra != 0) {
 lc-=$I$(2).base_length[code];
 this.send_bits$I$I(lc, extra);
-}dist--;
+}--dist;
 code=$I$(2).d_code$I(dist);
 this.send_code$I$IA(code, dtree);
 extra=$I$(2).extra_dbits[code];
@@ -394,46 +319,46 @@ this.send_bits$I$I(dist, extra);
 this.last_eob_len=ltree[513];
 });
 
-Clazz.newMeth(C$, 'set_data_type$', function () {
+Clazz.newMeth(C$, 'set_data_type$',  function () {
 var n=0;
 var ascii_freq=0;
 var bin_freq=0;
 while (n < 7){
 bin_freq+=this.dyn_ltree[n * 2];
-n++;
+++n;
 }
 while (n < 128){
 ascii_freq+=this.dyn_ltree[n * 2];
-n++;
+++n;
 }
 while (n < 256){
 bin_freq+=this.dyn_ltree[n * 2];
-n++;
+++n;
 }
-this.data_type=($b$[0] = ((bin_freq > (ascii_freq >>> 2) ? 0 : 1)|0), $b$[0]);
+this.data_type=($b$[0] = (bin_freq > (ascii_freq >>> 2) ? 0 : 1), $b$[0]);
 });
 
-Clazz.newMeth(C$, 'bi_flush$', function () {
+Clazz.newMeth(C$, 'bi_flush$',  function () {
 if (this.bi_valid == 16) {
 this.put_short$I(this.bi_buf);
 this.bi_buf=0;
 this.bi_valid=0;
 } else if (this.bi_valid >= 8) {
-this.put_byteB$B(($b$[0] = (this.bi_buf|0), $b$[0]));
+this.put_byteB$B(($b$[0] = this.bi_buf, $b$[0]));
 this.bi_buf>>>=8;
 this.bi_valid-=8;
 }});
 
-Clazz.newMeth(C$, 'bi_windup$', function () {
+Clazz.newMeth(C$, 'bi_windup$',  function () {
 if (this.bi_valid > 8) {
 this.put_short$I(this.bi_buf);
 } else if (this.bi_valid > 0) {
-this.put_byteB$B(($b$[0] = (this.bi_buf|0), $b$[0]));
+this.put_byteB$B(($b$[0] = this.bi_buf, $b$[0]));
 }this.bi_buf=0;
 this.bi_valid=0;
 });
 
-Clazz.newMeth(C$, 'copy_block$I$I$Z', function (buf, len, header) {
+Clazz.newMeth(C$, 'copy_block$I$I$Z',  function (buf, len, header) {
 this.bi_windup$();
 this.last_eob_len=8;
 if (header) {
@@ -442,13 +367,13 @@ this.put_short$I(($s$[0] = ~len, $s$[0]));
 }this.put_byte$BA$I$I(this.window, buf, len);
 });
 
-Clazz.newMeth(C$, 'flush_block_only$Z', function (eof) {
+Clazz.newMeth(C$, 'flush_block_only$Z',  function (eof) {
 this._tr_flush_block$I$I$Z(this.block_start >= 0 ? this.block_start : -1, this.strstart - this.block_start, eof);
 this.block_start=this.strstart;
 this.strm.flush_pending$();
 });
 
-Clazz.newMeth(C$, 'deflate_stored$I', function (flush) {
+Clazz.newMeth(C$, 'deflate_stored$I',  function (flush) {
 var max_block_size=65535;
 var max_start;
 if (max_block_size > this.pending_buf_size - 5) {
@@ -475,12 +400,12 @@ if (this.strm.avail_out == 0) return (flush == 4) ? 2 : 0;
 return flush == 4 ? 3 : 1;
 });
 
-Clazz.newMeth(C$, '_tr_stored_block$I$I$Z', function (buf, stored_len, eof) {
+Clazz.newMeth(C$, '_tr_stored_block$I$I$Z',  function (buf, stored_len, eof) {
 this.send_bits$I$I((0) + (eof ? 1 : 0), 3);
 this.copy_block$I$I$Z(buf, stored_len, true);
 });
 
-Clazz.newMeth(C$, '_tr_flush_block$I$I$Z', function (buf, stored_len, eof) {
+Clazz.newMeth(C$, '_tr_flush_block$I$I$Z',  function (buf, stored_len, eof) {
 var opt_lenb;
 var static_lenb;
 var max_blindex=0;
@@ -508,7 +433,7 @@ if (eof) {
 this.bi_windup$();
 }});
 
-Clazz.newMeth(C$, 'fill_window$', function () {
+Clazz.newMeth(C$, 'fill_window$',  function () {
 var n;
 var m;
 var p;
@@ -518,7 +443,7 @@ more=(this.window_size - this.lookahead - this.strstart );
 if (more == 0 && this.strstart == 0  && this.lookahead == 0 ) {
 more=this.w_size;
 } else if (more == -1) {
-more--;
+--more;
 } else if (this.strstart >= this.w_size + this.w_size - 262) {
 System.arraycopy$O$I$O$I$I(this.window, this.w_size, this.window, 0, this.w_size);
 this.match_start-=this.w_size;
@@ -546,7 +471,7 @@ this.ins_h=(((this.ins_h) << this.hash_shift) ^ (this.window[this.strstart + 1] 
 }} while (this.lookahead < 262 && this.strm.avail_in != 0 );
 });
 
-Clazz.newMeth(C$, 'deflate_fast$I', function (flush) {
+Clazz.newMeth(C$, 'deflate_fast$I',  function (flush) {
 var hash_head=0;
 var bflush;
 while (true){
@@ -560,22 +485,22 @@ this.ins_h=(((this.ins_h) << this.hash_shift) ^ (this.window[(this.strstart) + (
 hash_head=(this.head[this.ins_h] & 65535);
 this.prev[this.strstart & this.w_mask]=this.head[this.ins_h];
 this.head[this.ins_h]=this.strstart;
-}if (hash_head != 0 && ((this.strstart - hash_head) & 65535) <= this.w_size - 262 ) {
+}if (Long.$ne(hash_head,0 ) && ((this.strstart - hash_head) & 65535) <= this.w_size - 262 ) {
 if (this.strategy != 2) {
 this.match_length=this.longest_match$I(hash_head);
 }}if (this.match_length >= 3) {
 bflush=this._tr_tally$I$I(this.strstart - this.match_start, this.match_length - 3);
 this.lookahead-=this.match_length;
 if (this.match_length <= this.max_lazy_match && this.lookahead >= 3 ) {
-this.match_length--;
+--this.match_length;
 do {
-this.strstart++;
+++this.strstart;
 this.ins_h=((this.ins_h << this.hash_shift) ^ (this.window[(this.strstart) + (2)] & 255)) & this.hash_mask;
 hash_head=(this.head[this.ins_h] & 65535);
 this.prev[this.strstart & this.w_mask]=this.head[this.ins_h];
 this.head[this.ins_h]=this.strstart;
 } while (--this.match_length != 0);
-this.strstart++;
+++this.strstart;
 } else {
 this.strstart+=this.match_length;
 this.match_length=0;
@@ -583,8 +508,8 @@ this.ins_h=this.window[this.strstart] & 255;
 this.ins_h=(((this.ins_h) << this.hash_shift) ^ (this.window[this.strstart + 1] & 255)) & this.hash_mask;
 }} else {
 bflush=this._tr_tally$I$I(0, this.window[this.strstart] & 255);
-this.lookahead--;
-this.strstart++;
+--this.lookahead;
+++this.strstart;
 }if (bflush) {
 this.flush_block_only$Z(false);
 if (this.strm.avail_out == 0) return 0;
@@ -596,7 +521,7 @@ return 0;
 }return flush == 4 ? 3 : 1;
 });
 
-Clazz.newMeth(C$, 'deflate_slow$I', function (flush) {
+Clazz.newMeth(C$, 'deflate_slow$I',  function (flush) {
 var hash_head=0;
 var bflush;
 while (true){
@@ -632,7 +557,7 @@ this.head[this.ins_h]=this.strstart;
 }} while (--this.prev_length != 0);
 this.match_available=0;
 this.match_length=2;
-this.strstart++;
+++this.strstart;
 if (bflush) {
 this.flush_block_only$Z(false);
 if (this.strm.avail_out == 0) return 0;
@@ -640,13 +565,13 @@ if (this.strm.avail_out == 0) return 0;
 bflush=this._tr_tally$I$I(0, this.window[this.strstart - 1] & 255);
 if (bflush) {
 this.flush_block_only$Z(false);
-}this.strstart++;
-this.lookahead--;
+}++this.strstart;
+--this.lookahead;
 if (this.strm.avail_out == 0) return 0;
 } else {
 this.match_available=1;
-this.strstart++;
-this.lookahead--;
+++this.strstart;
+--this.lookahead;
 }}
 if (this.match_available != 0) {
 bflush=this._tr_tally$I$I(0, this.window[this.strstart - 1] & 255);
@@ -658,7 +583,7 @@ return 0;
 }return flush == 4 ? 3 : 1;
 });
 
-Clazz.newMeth(C$, 'longest_match$I', function (cur_match) {
+Clazz.newMeth(C$, 'longest_match$I',  function (cur_match) {
 var chain_length=this.max_chain_length;
 var scan=this.strstart;
 var match;
@@ -668,8 +593,8 @@ var limit=this.strstart > (this.w_size - 262) ? this.strstart - (this.w_size - 2
 var nice_match=this.nice_match;
 var wmask=this.w_mask;
 var strend=this.strstart + 258;
-var scan_end1=($b$[0] = this.window[scan + best_len - 1], $b$[0]);
-var scan_end=($b$[0] = this.window[scan + best_len], $b$[0]);
+var scan_end1=this.window[scan + best_len - 1];
+var scan_end=this.window[scan + best_len];
 if (this.prev_length >= this.good_match) {
 chain_length>>=2;
 }if (nice_match > this.lookahead) nice_match=this.lookahead;
@@ -677,7 +602,7 @@ do {
 match=cur_match;
 if (this.window[match + best_len] != scan_end || this.window[match + best_len - 1] != scan_end1  || this.window[match] != this.window[scan]  || this.window[++match] != this.window[scan + 1] ) continue;
 scan+=2;
-match++;
+++match;
 do {
 } while (this.window[++scan] == this.window[++match] && this.window[++scan] == this.window[++match]  && this.window[++scan] == this.window[++match]  && this.window[++scan] == this.window[++match]  && this.window[++scan] == this.window[++match]  && this.window[++scan] == this.window[++match]  && this.window[++scan] == this.window[++match]  && this.window[++scan] == this.window[++match]  && scan < strend );
 len=258 - (strend - scan);
@@ -686,14 +611,14 @@ if (len > best_len) {
 this.match_start=cur_match;
 best_len=len;
 if (len >= nice_match) break;
-scan_end1=($b$[0] = this.window[scan + best_len - 1], $b$[0]);
-scan_end=($b$[0] = this.window[scan + best_len], $b$[0]);
+scan_end1=this.window[scan + best_len - 1];
+scan_end=this.window[scan + best_len];
 }} while ((cur_match=(this.prev[cur_match & wmask] & 65535)) > limit && --chain_length != 0 );
 if (best_len <= this.lookahead) return best_len;
 return this.lookahead;
 });
 
-Clazz.newMeth(C$, 'deflateInit5$I$I$I$I$I', function (level, method, windowBits, memLevel, strategy) {
+Clazz.newMeth(C$, 'deflateInit5$I$I$I$I$I',  function (level, method, windowBits, memLevel, strategy) {
 var wrap=1;
 this.strm.msg=null;
 if (level == -1) level=6;
@@ -703,7 +628,7 @@ windowBits=-windowBits;
 } else if (windowBits > 15) {
 wrap=2;
 windowBits-=16;
-this.strm.checksum=Clazz.new_($I$(4));
+this.strm.checksum=Clazz.new_($I$(4,1));
 }if (memLevel < 1 || memLevel > 9  || method != 8  || windowBits < 9  || windowBits > 15  || level < 0  || level > 9  || strategy < 0  || strategy > 2 ) {
 return -2;
 }this.strm.dstate=this;
@@ -725,11 +650,11 @@ this.d_buf=(this.lit_bufsize/2|0);
 this.l_buf=(3) * this.lit_bufsize;
 this.level=level;
 this.strategy=strategy;
-this.method=($b$[0] = (method|0), $b$[0]);
+this.method=($b$[0] = method, $b$[0]);
 return this.deflateReset$();
 }, p$1);
 
-Clazz.newMeth(C$, 'deflateReset$', function () {
+Clazz.newMeth(C$, 'deflateReset$',  function () {
 this.strm.total_in=this.strm.total_out=0;
 this.strm.msg=null;
 this.strm.data_type=2;
@@ -745,7 +670,7 @@ this.lm_init$();
 return 0;
 });
 
-Clazz.newMeth(C$, 'deflateEnd$', function () {
+Clazz.newMeth(C$, 'deflateEnd$',  function () {
 if (this.status != 42 && this.status != 113  && this.status != 666 ) {
 return -2;
 }this.pending_buf=null;
@@ -755,13 +680,13 @@ this.window=null;
 return this.status == 113 ? -3 : 0;
 });
 
-Clazz.newMeth(C$, 'deflateParams$I$I', function (_level, _strategy) {
+Clazz.newMeth(C$, 'deflateParams$I$I',  function (_level, _strategy) {
 var err=0;
 if (_level == -1) {
 _level=6;
 }if (_level < 0 || _level > 9  || _strategy < 0  || _strategy > 2 ) {
 return -2;
-}if (C$.config_table[this.level].func != C$.config_table[_level].func && this.strm.total_in != 0 ) {
+}if (C$.config_table[this.level].func != C$.config_table[_level].func && Long.$ne(this.strm.total_in,0 ) ) {
 err=this.strm.deflate$I(1);
 }if (this.level != _level) {
 this.level=_level;
@@ -773,15 +698,15 @@ this.max_chain_length=C$.config_table[this.level].max_chain;
 return err;
 });
 
-Clazz.newMeth(C$, 'deflateSetDictionary$BA$I', function (dictionary, dictLength) {
-var length=dictLength;
-var index=0;
+Clazz.newMeth(C$, 'deflateSetDictionary$BA$I$I',  function (dictionary, off, len) {
+var length=len;
+var index=off;
 if (dictionary == null  || this.status != 42 ) return -2;
-this.strm.checksum.update$BA$I$I(dictionary, 0, dictLength);
+this.strm.checksum.update$BA$I$I(dictionary, off, len);
 if (length < 3) return 0;
 if (length > this.w_size - 262) {
 length=this.w_size - 262;
-index=dictLength - length;
+index=len - length;
 }System.arraycopy$O$I$O$I$I(dictionary, index, this.window, 0, length);
 this.strstart=length;
 this.block_start=length;
@@ -795,11 +720,11 @@ this.head[this.ins_h]=n;
 return 0;
 });
 
-Clazz.newMeth(C$, 'deflate$I', function (flush) {
+Clazz.newMeth(C$, 'deflate$I',  function (flush) {
 var old_flush;
 if (flush > 4 || flush < 0 ) {
 return -2;
-}if (this.strm.next_out == null  || (this.strm.next_in == null  && this.strm.avail_in != 0 )  || (this.status == 666 && flush != 4 ) ) {
+}if (this.strm.next_out == null  || (this.strm.$in == null  && this.strm.avail_in != 0 )  || (this.status == 666 && flush != 4 ) ) {
 this.strm.msg=C$.z_errmsg[4];
 return -2;
 }if (this.strm.avail_out == 0) {
@@ -823,8 +748,8 @@ this.status=113;
 this.putintMSB$I(header);
 if (this.strstart != 0) {
 var adler=this.strm.checksum.getValue$();
-this.putintMSB$I(((adler >>> 16)|0));
-this.putintMSB$I(((adler & 65535)|0));
+this.putintMSB$I(Long.$ival((Long.$usr(adler,16))));
+this.putintMSB$I(Long.$ival((Long.$and(adler,65535))));
 }this.strm.checksum.reset$();
 }}if (this.pending != 0) {
 this.strm.flush_pending$();
@@ -873,61 +798,70 @@ return 0;
 if (this.wrap <= 0) return 1;
 if (this.wrap == 2) {
 var adler=this.strm.checksum.getValue$();
-this.put_byteB$B(($b$[0] = ((adler & 255)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = (((adler >> 8) & 255)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = (((adler >> 16) & 255)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = (((adler >> 24) & 255)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = ((this.strm.total_in & 255)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = (((this.strm.total_in >> 8) & 255)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = (((this.strm.total_in >> 16) & 255)|0), $b$[0]));
-this.put_byteB$B(($b$[0] = (((this.strm.total_in >> 24) & 255)|0), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and(adler,255)), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and((Long.$sr(adler,8)),255)), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and((Long.$sr(adler,16)),255)), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and((Long.$sr(adler,24)),255)), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and(this.strm.total_in,255)), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and((Long.$sr(this.strm.total_in,8)),255)), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and((Long.$sr(this.strm.total_in,16)),255)), $b$[0]));
+this.put_byteB$B(($b$[0] = (Long.$and((Long.$sr(this.strm.total_in,24)),255)), $b$[0]));
 this.getGZIPHeader$().setCRC$J(adler);
 } else {
 var adler=this.strm.checksum.getValue$();
-this.putintMSB$I(((adler >>> 16)|0));
-this.putintMSB$I(((adler & 65535)|0));
+this.putintMSB$I(Long.$ival((Long.$usr(adler,16))));
+this.putintMSB$I(Long.$ival((Long.$and(adler,65535))));
 }this.strm.flush_pending$();
 if (this.wrap > 0) this.wrap=-this.wrap;
 return this.pending != 0 ? 0 : 1;
 });
 
-Clazz.newMeth(C$, 'getGZIPHeader$', function () {
+Clazz.newMeth(C$, 'getGZIPHeader$',  function () {
 if (this.gheader == null ) {
-this.gheader=Clazz.new_($I$(5));
+this.gheader=Clazz.new_($I$(5,1));
 }return this.gheader;
 });
 
-Clazz.newMeth(C$, 'getBytesRead$', function () {
+Clazz.newMeth(C$, 'getBytesRead$',  function () {
 return this.strm.total_in;
 });
 
-Clazz.newMeth(C$, 'getBytesWritten$', function () {
+Clazz.newMeth(C$, 'getBytesWritten$',  function () {
 return this.strm.total_out;
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+C$.config_table=Clazz.array($I$(1), [10]);
+C$.config_table[0]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[0, 0, 0, 0, 0]);
+C$.config_table[1]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[4, 4, 8, 4, 1]);
+C$.config_table[2]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[4, 5, 16, 8, 1]);
+C$.config_table[3]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[4, 6, 32, 32, 1]);
+C$.config_table[4]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[4, 4, 16, 16, 2]);
+C$.config_table[5]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[8, 16, 32, 32, 2]);
+C$.config_table[6]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[8, 16, 128, 128, 2]);
+C$.config_table[7]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[8, 32, 128, 256, 2]);
+C$.config_table[8]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[32, 128, 258, 1024, 2]);
+C$.config_table[9]=Clazz.new_($I$(1,1).c$$I$I$I$I$I,[32, 258, 258, 4096, 2]);
+};
+C$.z_errmsg=Clazz.array(String, -1, ["need dictionary", "stream end", "", "file error", "stream error", "data error", "insufficient memory", "buffer error", "incompatible version", ""]);
+};
 var $b$ = new Int8Array(1);
 var $s$ = new Int16Array(1);
 ;
-(function(){var C$=Clazz.newClass(P$.Deflate, "Config", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Deflate, "Config", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.good_length=0;
-this.max_lazy=0;
-this.nice_length=0;
-this.max_chain=0;
-this.func=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I$I$I$I$I', function (good_length, max_lazy, nice_length, max_chain, func) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['good_length','max_lazy','nice_length','max_chain','func']]]
+
+Clazz.newMeth(C$, 'c$$I$I$I$I$I',  function (good_length, max_lazy, nice_length, max_chain, func) {
+;C$.$init$.apply(this);
 this.good_length=good_length;
 this.max_lazy=max_lazy;
 this.nice_length=nice_length;
@@ -940,4 +874,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:47 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:21 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

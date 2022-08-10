@@ -1,110 +1,99 @@
-(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SequenceSet", function(){
+(function(){var P$=Clazz.newPackage("jalview.xml.binding.jalview"),I$=[[0,'java.util.ArrayList']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SequenceSet", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['SequenceSetProperties',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sequence=null;
-this.annotation=null;
-this.sequenceSetProperties=null;
-this.alcodonFrame=null;
-this.gapChar=null;
-this.datasetId=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getSequence$', function () {
+C$.$fields$=[['S',['gapChar','datasetId'],'O',['sequence','java.util.List','+annotation','+sequenceSetProperties','+alcodonFrame']]]
+
+Clazz.newMeth(C$, 'getSequence$',  function () {
 if (this.sequence == null ) {
-this.sequence=Clazz.new_($I$(1));
+this.sequence=Clazz.new_($I$(1,1));
 }return this.sequence;
 });
 
-Clazz.newMeth(C$, 'getAnnotation$', function () {
+Clazz.newMeth(C$, 'getAnnotation$',  function () {
 if (this.annotation == null ) {
-this.annotation=Clazz.new_($I$(1));
+this.annotation=Clazz.new_($I$(1,1));
 }return this.annotation;
 });
 
-Clazz.newMeth(C$, 'getSequenceSetProperties$', function () {
+Clazz.newMeth(C$, 'getSequenceSetProperties$',  function () {
 if (this.sequenceSetProperties == null ) {
-this.sequenceSetProperties=Clazz.new_($I$(1));
+this.sequenceSetProperties=Clazz.new_($I$(1,1));
 }return this.sequenceSetProperties;
 });
 
-Clazz.newMeth(C$, 'getAlcodonFrame$', function () {
+Clazz.newMeth(C$, 'getAlcodonFrame$',  function () {
 if (this.alcodonFrame == null ) {
-this.alcodonFrame=Clazz.new_($I$(1));
+this.alcodonFrame=Clazz.new_($I$(1,1));
 }return this.alcodonFrame;
 });
 
-Clazz.newMeth(C$, 'getGapChar$', function () {
+Clazz.newMeth(C$, 'getGapChar$',  function () {
 return this.gapChar;
 });
 
-Clazz.newMeth(C$, 'setGapChar$S', function (value) {
+Clazz.newMeth(C$, 'setGapChar$S',  function (value) {
 this.gapChar=value;
 });
 
-Clazz.newMeth(C$, 'getDatasetId$', function () {
+Clazz.newMeth(C$, 'getDatasetId$',  function () {
 return this.datasetId;
 });
 
-Clazz.newMeth(C$, 'setDatasetId$S', function (value) {
+Clazz.newMeth(C$, 'setDatasetId$S',  function (value) {
 this.datasetId=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.SequenceSet'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" propOrder={"sequence"  "annotation"  "sequenceSetProperties"  "alcodonFrame"  } )','@XmlRootElement(name="SequenceSet" )']],
-  [['sequence','java.util.List<jalview.xml.binding.jalview.Sequence>'],['@XmlElement(name="Sequence" )']],
-  [['annotation','java.util.List<jalview.xml.binding.jalview.Annotation>'],['@XmlElement(name="Annotation" )']],
-  [['alcodonFrame','java.util.List<jalview.xml.binding.jalview.AlcodonFrame>'],['@XmlElement(name="AlcodonFrame" )']],
-  [['gapChar','String'],['@XmlAttribute(name="gapChar" required="true" )']],
-  [['datasetId','.'],['@XmlAttribute(name="datasetId" )']],
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.SequenceSet',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType','javax.xml.bind.annotation.XmlRootElement']],['XmlAccessType.FIELD','name="" propOrder={"sequence"  "annotation"  "sequenceSetProperties"  "alcodonFrame"  } ','name="SequenceSet" ']],
+  [['sequence','java.util.List<jalview.xml.binding.jalview.Sequence>',null,['javax.xml.bind.annotation.XmlElement']],['name="Sequence" ']],
+  [['annotation','java.util.List<jalview.xml.binding.jalview.Annotation>',null,['javax.xml.bind.annotation.XmlElement']],['name="Annotation" ']],
+  [['alcodonFrame','java.util.List<jalview.xml.binding.jalview.AlcodonFrame>',null,['javax.xml.bind.annotation.XmlElement']],['name="AlcodonFrame" ']],
+  [['gapChar','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="gapChar" required="true" ']],
+  [['datasetId','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="datasetId" ']],
   [['null','jalview.xml.binding.jalview.SequenceSet.SequenceSetProperties'],['!XmlInner']],
-  [['sequenceSetProperties','java.util.List<jalview.xml.binding.jalview.SequenceSet.SequenceSetProperties>'],['@XmlElement']]];
+  [['sequenceSetProperties','java.util.List<jalview.xml.binding.jalview.SequenceSet.SequenceSetProperties>'],['@XmlElement']]]}
 ;
-(function(){var C$=Clazz.newClass(P$.SequenceSet, "SequenceSetProperties", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.SequenceSet, "SequenceSetProperties", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.key=null;
-this.value=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getKey$', function () {
+C$.$fields$=[['S',['key','value']]]
+
+Clazz.newMeth(C$, 'getKey$',  function () {
 return this.key;
 });
 
-Clazz.newMeth(C$, 'setKey$S', function (value) {
+Clazz.newMeth(C$, 'setKey$S',  function (value) {
 this.key=value;
 });
 
-Clazz.newMeth(C$, 'getValue$', function () {
+Clazz.newMeth(C$, 'getValue$',  function () {
 return this.value;
 });
 
-Clazz.newMeth(C$, 'setValue$S', function (value) {
+Clazz.newMeth(C$, 'setValue$S',  function (value) {
 this.value=value;
 });
-C$.__ANN__ = [[[null,'jalview.xml.binding.jalview.SequenceSet.SequenceSetProperties'],['@XmlAccessorType(XmlAccessType.FIELD)','@XmlType(name="" )']],
-  [['key','String'],['@XmlAttribute(name="key" )']],
-  [['value','.'],['@XmlAttribute(name="value" )']]];
+C$.$getAnn$ = function(){ return [
+[[null,'jalview.xml.binding.jalview.SequenceSet.SequenceSetProperties',null,['javax.xml.bind.annotation.XmlAccessorType','javax.xml.bind.annotation.XmlType']],['XmlAccessType.FIELD','name="" ']],
+  [['key','String',null,['javax.xml.bind.annotation.XmlAttribute']],['name="key" ']],
+  [['value','.',null,['javax.xml.bind.annotation.XmlAttribute']],['name="value" ']]]}
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

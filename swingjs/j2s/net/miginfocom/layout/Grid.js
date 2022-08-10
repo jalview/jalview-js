@@ -1,60 +1,16 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},p$2={},p$3={},p$4={},I$=[[0,'java.util.ArrayList','java.util.Arrays','net.miginfocom.layout.UnitValue','net.miginfocom.layout.ResizeConstraint','net.miginfocom.layout.LayoutUtil','java.lang.ref.WeakReference','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.CC','java.util.LinkedHashMap','java.util.TreeSet','net.miginfocom.layout.LinkHandler',['net.miginfocom.layout.Grid','.CompWrap'],['net.miginfocom.layout.Grid','.Cell'],'java.util.HashMap','Boolean','net.miginfocom.layout.PlatformDefaults',['net.miginfocom.layout.Grid','.LinkedDimGroup'],['net.miginfocom.layout.Grid','.AboveBelow'],['net.miginfocom.layout.Grid','.FlowSizeSpec'],'java.util.WeakHashMap',['net.miginfocom.layout.Grid','.WeakCell']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Grid", function(){
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),p$1={},p$2={},p$3={},p$4={},I$=[[0,'java.util.ArrayList','net.miginfocom.layout.Grid','java.util.Arrays','net.miginfocom.layout.UnitValue','net.miginfocom.layout.ResizeConstraint','net.miginfocom.layout.LayoutUtil','java.lang.ref.WeakReference','net.miginfocom.layout.DimConstraint','net.miginfocom.layout.CC','java.util.LinkedHashMap','java.util.TreeSet','net.miginfocom.layout.LinkHandler',['net.miginfocom.layout.Grid','.CompWrap'],['net.miginfocom.layout.Grid','.Cell'],'java.util.HashMap','Boolean','net.miginfocom.layout.PlatformDefaults',['net.miginfocom.layout.Grid','.LinkedDimGroup'],['net.miginfocom.layout.Grid','.AboveBelow'],['net.miginfocom.layout.Grid','.FlowSizeSpec'],'java.util.WeakHashMap',['net.miginfocom.layout.Grid','.WeakCell']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Grid", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.GROW_100=null;
-C$.DOCK_DIM_CONSTRAINT=null;
-C$.GAP_RC_CONST=null;
-C$.GAP_RC_CONST_PUSH=null;
-C$.DEF_CC=null;
-C$.PARENT_ROWCOL_SIZES_MAP=null;
-C$.PARENT_GRIDPOS_MAP=null;
+C$.$classes$=[['Cell',10],['LinkedDimGroup',10],['CompWrap',18],['AboveBelow',10],['FlowSizeSpec',26],['WeakCell',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.GROW_100=Clazz.array(Float, -1, [$I$(4).WEIGHT_100]);
-C$.DOCK_DIM_CONSTRAINT=Clazz.new_($I$(7));
-{
-C$.DOCK_DIM_CONSTRAINT.setGrowPriority$I(0);
-};
-C$.GAP_RC_CONST=Clazz.new_($I$(4).c$$I$Float$I$Float,[200, $I$(4).WEIGHT_100, 50, null]);
-C$.GAP_RC_CONST_PUSH=Clazz.new_($I$(4).c$$I$Float$I$Float,[200, $I$(4).WEIGHT_100, 50, $I$(4).WEIGHT_100]);
-C$.DEF_CC=Clazz.new_($I$(8));
-C$.PARENT_ROWCOL_SIZES_MAP=null;
-C$.PARENT_GRIDPOS_MAP=null;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.lc=null;
-this.container=null;
-this.grid=null;
-this.wrapGapMap=null;
-this.rowIndexes=null;
-this.colIndexes=null;
-this.rowConstr=null;
-this.colConstr=null;
-this.colFlowSpecs=null;
-this.rowFlowSpecs=null;
-this.colGroupLists=null;
-this.rowGroupLists=null;
-this.width=null;
-this.height=null;
-this.debugRects=null;
-this.linkTargetIDs=null;
-this.dockOffY=0;
-this.dockOffX=0;
-this.pushXs=null;
-this.pushYs=null;
-this.callbackList=null;
-this.lastRefWidth=0;
-this.lastRefHeight=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.grid=Clazz.new_($I$(9));
+this.grid=Clazz.new_($I$(10,1));
 this.wrapGapMap=null;
-this.rowIndexes=Clazz.new_($I$(10));
-this.colIndexes=Clazz.new_($I$(10));
+this.rowIndexes=Clazz.new_($I$(11,1));
+this.colIndexes=Clazz.new_($I$(11,1));
 this.colFlowSpecs=null;
 this.rowFlowSpecs=null;
 this.width=null;
@@ -63,10 +19,13 @@ this.debugRects=null;
 this.linkTargetIDs=null;
 this.lastRefWidth=0;
 this.lastRefHeight=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['dockOffY','dockOffX','lastRefWidth','lastRefHeight'],'O',['lc','net.miginfocom.layout.LC','container','net.miginfocom.layout.ContainerWrapper','grid','java.util.LinkedHashMap','wrapGapMap','java.util.HashMap','rowIndexes','java.util.TreeSet','+colIndexes','rowConstr','net.miginfocom.layout.AC','+colConstr','colFlowSpecs','net.miginfocom.layout.Grid.FlowSizeSpec','+rowFlowSpecs','colGroupLists','java.util.ArrayList[]','+rowGroupLists','width','int[]','+height','debugRects','java.util.ArrayList','linkTargetIDs','java.util.HashMap','pushXs','Float[]','+pushYs','callbackList','java.util.ArrayList']]
+,['O',['GROW_100','Float[]','DOCK_DIM_CONSTRAINT','net.miginfocom.layout.DimConstraint','GAP_RC_CONST','net.miginfocom.layout.ResizeConstraint','+GAP_RC_CONST_PUSH','DEF_CC','net.miginfocom.layout.CC','PARENT_ROWCOL_SIZES_MAP','java.util.WeakHashMap[]','PARENT_GRIDPOS_MAP','java.util.WeakHashMap']]]
 
 Clazz.newMeth(C$, 'c$$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_LC$net_miginfocom_layout_AC$net_miginfocom_layout_AC$java_util_Map$java_util_ArrayList', function (container, lc, rowConstr, colConstr, ccMap, callbackList) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.lc=lc;
 this.rowConstr=rowConstr;
 this.colConstr=colConstr;
@@ -80,12 +39,12 @@ var hasPushX=false;
 var hasPushY=false;
 var hitEndOfRow=false;
 var cellXY=Clazz.array(Integer.TYPE, [2]);
-var spannedRects=Clazz.new_($I$(1).c$$I,[2]);
+var spannedRects=Clazz.new_($I$(1,1).c$$I,[2]);
 var specs=(lc.isFlowX$() ? rowConstr : colConstr).getConstaints$();
 var sizeGroupsX=0;
 var sizeGroupsY=0;
 var dockInsets=null;
-$I$(11).clearTemporaryBounds$O(container.getLayout$());
+$I$(12,"clearTemporaryBounds$O",[container.getLayout$()]);
 for (var i=0; i < comps.length; ) {
 var comp=comps[i];
 var rootCc=C$.getCC$net_miginfocom_layout_ComponentWrapper$java_util_Map(comp, ccMap);
@@ -98,19 +57,19 @@ continue;
 }if (rootCc.getHorizontal$().getSizeGroup$() != null ) sizeGroupsX++;
 if (rootCc.getVertical$().getSizeGroup$() != null ) sizeGroupsY++;
 if (p$3.getPos$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC.apply(this, [comp, rootCc]) != null  || rootCc.isExternal$() ) {
-var cw=Clazz.new_($I$(12).c$$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$Z, [this, null, comp, rootCc, hideMode, useVisualPadding]);
+var cw=Clazz.new_($I$(13,1).c$$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$Z,[this, null, comp, rootCc, hideMode, useVisualPadding]);
 var cell=this.grid.get$O(null);
 if (cell == null ) {
-this.grid.put$TK$TV(null, Clazz.new_($I$(13).c$$net_miginfocom_layout_Grid_CompWrap,[cw]));
+this.grid.put$O$O(null, Clazz.new_($I$(14,1).c$$net_miginfocom_layout_Grid_CompWrap,[cw]));
 } else {
-cell.compWraps.add$TE(cw);
+cell.compWraps.add$O(cw);
 }if (!rootCc.isBoundsInGrid$() || rootCc.isExternal$() ) {
 p$3.setLinkedBounds$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$I$I$I$Z.apply(this, [comp, rootCc, comp.getX$(), comp.getY$(), comp.getWidth$(), comp.getHeight$(), rootCc.isExternal$()]);
 i++;
 continue;
 }}if (rootCc.getDockSide$() != -1) {
 if (dockInsets == null ) dockInsets=Clazz.array(Integer.TYPE, -1, [-32767, -32767, 32767, 32767]);
-p$3.addDockingCell$IA$I$net_miginfocom_layout_Grid_CompWrap.apply(this, [dockInsets, rootCc.getDockSide$(), Clazz.new_($I$(12).c$$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$Z, [this, null, comp, rootCc, hideMode, useVisualPadding])]);
+p$3.addDockingCell$IA$I$net_miginfocom_layout_Grid_CompWrap.apply(this, [dockInsets, rootCc.getDockSide$(), Clazz.new_($I$(13,1).c$$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$Z,[this, null, comp, rootCc, hideMode, useVisualPadding])]);
 i++;
 continue;
 }var cellFlowX=rootCc.getFlowX$();
@@ -120,7 +79,7 @@ p$3.wrap$IA$net_miginfocom_layout_BoundSize.apply(this, [cellXY, rootCc.getNewli
 } else if (hitEndOfRow) {
 p$3.wrap$IA$net_miginfocom_layout_BoundSize.apply(this, [cellXY, null]);
 }hitEndOfRow=false;
-var isRowInGridMode=!lc.isNoGrid$() && !($I$(5).getIndexSafe$OA$I(specs, lc.isFlowX$() ? cellXY[1] : cellXY[0])).isNoGrid$() ;
+var isRowInGridMode=!lc.isNoGrid$() && !($I$(6,"getIndexSafe$OA$I",[specs, lc.isFlowX$() ? cellXY[1] : cellXY[0]])).isNoGrid$() ;
 var cx=rootCc.getCellX$();
 var cy=rootCc.getCellY$();
 if ((cx < 0 || cy < 0 ) && isRowInGridMode && rootCc.getSkip$() == 0  ) {
@@ -147,9 +106,9 @@ if (Math.abs(p$3.increase$IA$I.apply(this, [cellXY, 1])) >= wrap) p$3.wrap$IA$ne
 if (cell == null ) {
 var spanx=Math.min(!isRowInGridMode && lc.isFlowX$()  ? 2097051 : rootCc.getSpanX$(), 30000 - cellXY[0]);
 var spany=Math.min(!isRowInGridMode && !lc.isFlowX$()  ? 2097051 : rootCc.getSpanY$(), 30000 - cellXY[1]);
-cell=Clazz.new_($I$(13).c$$I$I$Z,[spanx, spany, cellFlowX != null  ? (cellFlowX).booleanValue$() : lc.isFlowX$()]);
+cell=Clazz.new_([spanx, spany, cellFlowX != null  ? (cellFlowX).valueOf() : lc.isFlowX$()],$I$(14,1).c$$I$I$Z);
 p$3.setCell$I$I$net_miginfocom_layout_Grid_Cell.apply(this, [cellXY[1], cellXY[0], cell]);
-if (spanx > 1 || spany > 1 ) spannedRects.add$TE(Clazz.array(Integer.TYPE, -1, [cellXY[0], cellXY[1], spanx, spany]));
+if (spanx > 1 || spany > 1 ) spannedRects.add$O(Clazz.array(Integer.TYPE, -1, [cellXY[0], cellXY[1], spanx, spany]));
 }var wrapHandled=false;
 var splitLeft=isRowInGridMode ? rootCc.getSplit$() - 1 : 2097051;
 var splitExit=false;
@@ -171,8 +130,8 @@ if (cc.isNewline$() || !cc.isBoundsInGrid$() || cc.getDockSide$() != -1  ) break
 if (splitLeft > 0 && cc.getSkip$() > 0 ) {
 splitExit=true;
 break;
-}}var cw=Clazz.new_($I$(12).c$$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$Z, [this, null, compAdd, cc, hideMode, useVisualPadding]);
-cell.compWraps.add$TE(cw);
+}}var cw=Clazz.new_($I$(13,1).c$$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$Z,[this, null, compAdd, cc, hideMode, useVisualPadding]);
+cell.compWraps.add$O(cw);
 cell.hasTagged|=cc.getTag$() != null ;
 hasTagged|=cell.hasTagged;
 if (cc !== rootCc ) {
@@ -195,9 +154,9 @@ hitEndOfRow=true;
 p$3.increase$IA$I.apply(this, [cellXY, splitExit ? span - 1 : span]);
 }}}
 if (sizeGroupsX > 0 || sizeGroupsY > 0 ) {
-var sizeGroupMapX=sizeGroupsX > 0 ? Clazz.new_($I$(14).c$$I,[sizeGroupsX]) : null;
-var sizeGroupMapY=sizeGroupsY > 0 ? Clazz.new_($I$(14).c$$I,[sizeGroupsY]) : null;
-var sizeGroupCWs=Clazz.new_($I$(1).c$$I,[Math.max(sizeGroupsX, sizeGroupsY)]);
+var sizeGroupMapX=sizeGroupsX > 0 ? Clazz.new_($I$(15,1).c$$I,[sizeGroupsX]) : null;
+var sizeGroupMapY=sizeGroupsY > 0 ? Clazz.new_($I$(15,1).c$$I,[sizeGroupsY]) : null;
+var sizeGroupCWs=Clazz.new_([Math.max(sizeGroupsX, sizeGroupsY)],$I$(1,1).c$$I);
 for (var cell, $cell = this.grid.values$().iterator$(); $cell.hasNext$()&&((cell=($cell.next$())),1);) {
 for (var i=0; i < cell.compWraps.size$(); i++) {
 var cw=cell.compWraps.get$I(i);
@@ -206,7 +165,7 @@ var sgy=cw.cc.getVertical$().getSizeGroup$();
 if (sgx != null  || sgy != null  ) {
 if (sgx != null  && sizeGroupMapX != null  ) C$.addToSizeGroup$java_util_HashMap$S$IA(sizeGroupMapX, sgx, p$2.getSizes$Z.apply(cw, [true]));
 if (sgy != null  && sizeGroupMapY != null  ) C$.addToSizeGroup$java_util_HashMap$S$IA(sizeGroupMapY, sgy, p$2.getSizes$Z.apply(cw, [false]));
-sizeGroupCWs.add$TE(cw);
+sizeGroupCWs.add$O(cw);
 }}
 }
 for (var cw, $cw = sizeGroupCWs.iterator$(); $cw.hasNext$()&&((cw=($cw.next$())),1);) {
@@ -214,7 +173,7 @@ if (sizeGroupMapX != null ) p$2.setForcedSizes$IA$Z.apply(cw, [sizeGroupMapX.get
 if (sizeGroupMapY != null ) p$2.setForcedSizes$IA$Z.apply(cw, [sizeGroupMapY.get$O(cw.cc.getVertical$().getSizeGroup$()), false]);
 }
 }if (hasTagged) C$.sortCellsByPlatform$java_util_Collection$net_miginfocom_layout_ContainerWrapper(this.grid.values$(), container);
-var ltr=$I$(5).isLeftToRight$net_miginfocom_layout_LC$net_miginfocom_layout_ContainerWrapper(lc, container);
+var ltr=$I$(6).isLeftToRight$net_miginfocom_layout_LC$net_miginfocom_layout_ContainerWrapper(lc, container);
 for (var cell, $cell = this.grid.values$().iterator$(); $cell.hasNext$()&&((cell=($cell.next$())),1);) {
 var cws=cell.compWraps;
 for (var i=0, lastI=cws.size$() - 1; i <= lastI; i++) {
@@ -234,13 +193,13 @@ this.colGroupLists=p$3.divideIntoLinkedGroups$Z.apply(this, [false]);
 this.rowGroupLists=p$3.divideIntoLinkedGroups$Z.apply(this, [true]);
 this.pushXs=hasPushX || lc.isFillX$()  ? p$3.getDefaultPushWeights$Z.apply(this, [false]) : null;
 this.pushYs=hasPushY || lc.isFillY$()  ? p$3.getDefaultPushWeights$Z.apply(this, [true]) : null;
-if ($I$(5).isDesignTime$net_miginfocom_layout_ContainerWrapper(container)) C$.saveGrid$net_miginfocom_layout_ComponentWrapper$java_util_LinkedHashMap(container, this.grid);
+if ($I$(6).isDesignTime$net_miginfocom_layout_ContainerWrapper(container)) C$.saveGrid$net_miginfocom_layout_ComponentWrapper$java_util_LinkedHashMap(container, this.grid);
 }, 1);
 
 Clazz.newMeth(C$, 'ensureIndexSizes$I$I', function (colCount, rowCount) {
-for (var i=0; i < colCount; i++) this.colIndexes.add$TE(new Integer(i));
+for (var i=0; i < colCount; i++) this.colIndexes.add$O(new Integer(i));
 
-for (var i=0; i < rowCount; i++) this.rowIndexes.add$TE(new Integer(i));
+for (var i=0; i < rowCount; i++) this.rowIndexes.add$O(new Integer(i));
 
 }, p$3);
 
@@ -252,8 +211,8 @@ return cc != null  ? cc : C$.DEF_CC;
 Clazz.newMeth(C$, 'addLinkIDs$net_miginfocom_layout_CC', function (cc) {
 var linkIDs=cc.getLinkTargets$();
 for (var linkID, $linkID = 0, $$linkID = linkIDs; $linkID<$$linkID.length&&((linkID=($$linkID[$linkID])),1);$linkID++) {
-if (this.linkTargetIDs == null ) this.linkTargetIDs=Clazz.new_($I$(14));
-this.linkTargetIDs.put$TK$TV(linkID, null);
+if (this.linkTargetIDs == null ) this.linkTargetIDs=Clazz.new_($I$(15,1));
+this.linkTargetIDs.put$O$O(linkID, null);
 }
 }, p$3);
 
@@ -278,7 +237,7 @@ return p$3.layoutImpl$IA$net_miginfocom_layout_UnitValue$net_miginfocom_layout_U
 });
 
 Clazz.newMeth(C$, 'layoutImpl$IA$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$Z$Z', function (bounds, alignX, alignY, debug, trialRun) {
-if (debug) this.debugRects=Clazz.new_($I$(1));
+if (debug) this.debugRects=Clazz.new_($I$(1,1));
 if (this.colFlowSpecs == null ) p$3.checkSizeCalcs$I$I.apply(this, [bounds[2], bounds[3]]);
 p$3.resetLinkValues$Z$Z.apply(this, [true, true]);
 p$3.layoutInOneDim$I$net_miginfocom_layout_UnitValue$Z$FloatA.apply(this, [bounds[2], alignX, false, this.pushXs]);
@@ -304,8 +263,8 @@ if (cw.cc.getVertical$().getEndGroup$() != null ) endGrpYMap=C$.addToEndGroup$ja
 }if (this.linkTargetIDs != null  && (this.linkTargetIDs.containsKey$O("visual") || this.linkTargetIDs.containsKey$O("container") ) ) {
 layoutAgain=true;
 }}if (this.linkTargetIDs == null  || j == 1 ) {
-if (cw.cc.getHorizontal$().getEndGroup$() != null ) cw.w=(endGrpXMap.get$O(cw.cc.getHorizontal$().getEndGroup$())).intValue$() - cw.x;
-if (cw.cc.getVertical$().getEndGroup$() != null ) cw.h=(endGrpYMap.get$O(cw.cc.getVertical$().getEndGroup$())).intValue$() - cw.y;
+if (cw.cc.getHorizontal$().getEndGroup$() != null ) cw.w=(endGrpXMap.get$O(cw.cc.getHorizontal$().getEndGroup$())).valueOf() - cw.x;
+if (cw.cc.getVertical$().getEndGroup$() != null ) cw.h=(endGrpYMap.get$O(cw.cc.getVertical$().getEndGroup$())).valueOf() - cw.y;
 cw.x+=bounds[0];
 cw.y+=bounds[1];
 if (!trialRun) p$2.transferBounds$Z.apply(cw, [addVisualPadding]);
@@ -326,7 +285,7 @@ var compWraps=cell.compWraps;
 for (var cw, $cw = compWraps.iterator$(); $cw.hasNext$()&&((cw=($cw.next$())),1);) {
 var hGrp=C$.getGroupContaining$java_util_ArrayListA$net_miginfocom_layout_Grid_CompWrap(this.colGroupLists, cw);
 var vGrp=C$.getGroupContaining$java_util_ArrayListA$net_miginfocom_layout_Grid_CompWrap(this.rowGroupLists, cw);
-if (hGrp != null  && vGrp != null  ) this.debugRects.add$TE(Clazz.array(Integer.TYPE, -1, [hGrp.lStart + bounds[0] - (hGrp.fromEnd ? hGrp.lSize : 0), vGrp.lStart + bounds[1] - (vGrp.fromEnd ? vGrp.lSize : 0), hGrp.lSize, vGrp.lSize]));
+if (hGrp != null  && vGrp != null  ) this.debugRects.add$O(Clazz.array(Integer.TYPE, -1, [hGrp.lStart + bounds[0] - (hGrp.fromEnd ? hGrp.lSize : 0), vGrp.lStart + bounds[1] - (vGrp.fromEnd ? vGrp.lSize : 0), hGrp.lSize, vGrp.lSize]));
 }
 }
 }return layoutAgain;
@@ -335,11 +294,11 @@ if (hGrp != null  && vGrp != null  ) this.debugRects.add$TE(Clazz.array(Integer.
 Clazz.newMeth(C$, 'paintDebug$', function () {
 if (this.debugRects != null ) {
 this.container.paintDebugOutline$Z(this.lc.isVisualPadding$());
-var painted=Clazz.new_($I$(1));
+var painted=Clazz.new_($I$(1,1));
 for (var r, $r = this.debugRects.iterator$(); $r.hasNext$()&&((r=($r.next$())),1);) {
 if (!painted.contains$O(r)) {
 this.container.paintDebugCell$I$I$I$I(r[0], r[1], r[2], r[3]);
-painted.add$TE(r);
+painted.add$O(r);
 }}
 for (var cell, $cell = this.grid.values$().iterator$(); $cell.hasNext$()&&((cell=($cell.next$())),1);) {
 var compWraps=cell.compWraps;
@@ -422,7 +381,7 @@ if (bs != null ) return bs;
 Clazz.newMeth(C$, 'getDockInsets$java_util_TreeSet', function (set) {
 var c=0;
 for (var i, $i = set.iterator$(); $i.hasNext$()&&((i=($i.next$())),1);) {
-if ((i).intValue$() < -30000 ) {
+if ((i).valueOf() < -30000 ) {
 c++;
 } else {
 break;
@@ -440,11 +399,11 @@ gid=id.substring$I$I(0, grIx);
 id=id.substring$I(grIx + 1);
 }var lay=this.container.getLayout$();
 var changed=false;
-if (external || (this.linkTargetIDs != null  && this.linkTargetIDs.containsKey$O(id) ) ) changed=$I$(11).setBounds$O$S$I$I$I$I$Z$Z(lay, id, x, y, w, h, !external, false);
+if (external || (this.linkTargetIDs != null  && this.linkTargetIDs.containsKey$O(id) ) ) changed=$I$(12).setBounds$O$S$I$I$I$I$Z$Z(lay, id, x, y, w, h, !external, false);
 if (gid != null  && (external || (this.linkTargetIDs != null  && this.linkTargetIDs.containsKey$O(gid) ) ) ) {
-if (this.linkTargetIDs == null ) this.linkTargetIDs=Clazz.new_($I$(14).c$$I,[4]);
-this.linkTargetIDs.put$TK$TV(gid, $I$(15).TRUE);
-changed|=$I$(11).setBounds$O$S$I$I$I$I$Z$Z(lay, gid, x, y, w, h, !external, true);
+if (this.linkTargetIDs == null ) this.linkTargetIDs=Clazz.new_($I$(15,1).c$$I,[4]);
+this.linkTargetIDs.put$O$O(gid, $I$(16).TRUE);
+changed|=$I$(12).setBounds$O$S$I$I$I$I$Z$Z(lay, gid, x, y, w, h, !external, true);
 }return changed;
 }, p$3);
 
@@ -457,18 +416,18 @@ var flowx=this.lc.isFlowX$();
 cellXY[0]=flowx ? 0 : cellXY[0] + 1;
 cellXY[1]=flowx ? cellXY[1] + 1 : 0;
 if (gapSize != null ) {
-if (this.wrapGapMap == null ) this.wrapGapMap=Clazz.new_($I$(14).c$$I,[8]);
-this.wrapGapMap.put$TK$TV(new Integer(cellXY[flowx ? 1 : 0]), gapSize);
+if (this.wrapGapMap == null ) this.wrapGapMap=Clazz.new_($I$(15,1).c$$I,[8]);
+this.wrapGapMap.put$O$O(new Integer(cellXY[flowx ? 1 : 0]), gapSize);
 }if (flowx) {
-this.rowIndexes.add$TE(new Integer(cellXY[1]));
+this.rowIndexes.add$O(new Integer(cellXY[1]));
 } else {
-this.colIndexes.add$TE(new Integer(cellXY[0]));
+this.colIndexes.add$O(new Integer(cellXY[0]));
 }}, p$3);
 
 Clazz.newMeth(C$, 'sortCellsByPlatform$java_util_Collection$net_miginfocom_layout_ContainerWrapper', function (cells, parent) {
-var order=$I$(16).getButtonOrder$();
+var order=$I$(17).getButtonOrder$();
 var orderLo=order.toLowerCase$();
-var unrelSize=$I$(16).convertToPixels$F$S$Z$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(1, "u", true, 0, parent, null);
+var unrelSize=$I$(17).convertToPixels$F$S$Z$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(1, "u", true, 0, parent, null);
 if (unrelSize == -87654312) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["\'unrelated\' not recognized by PlatformDefaults!"]);
 var gapUnrel=Clazz.array(Integer.TYPE, -1, [unrelSize, unrelSize, -2147471302]);
 var flGap=Clazz.array(Integer.TYPE, -1, [0, 0, -2147471302]);
@@ -477,20 +436,20 @@ if (!cell.hasTagged) continue;
 var prevCW=null;
 var nextUnrel=false;
 var nextPush=false;
-var sortedList=Clazz.new_($I$(1).c$$I,[cell.compWraps.size$()]);
+var sortedList=Clazz.new_([cell.compWraps.size$()],$I$(1,1).c$$I);
 for (var i=0, iSz=orderLo.length$(); i < iSz; i++) {
 var c=orderLo.charAt$I(i);
 if (c == "+" || c == "_" ) {
 nextUnrel=true;
 if (c == "+") nextPush=true;
 } else {
-var tag=$I$(16).getTagForChar$C(c);
+var tag=$I$(17).getTagForChar$C(c);
 if (tag != null ) {
 for (var j=0, jSz=cell.compWraps.size$(); j < jSz; j++) {
 var cw=cell.compWraps.get$I(j);
 if (tag.equals$O(cw.cc.getTag$())) {
-if (Character.isUpperCase$C(order.charAt$I(i))) cw.adjustMinHorSizeUp$I(($I$(16).getMinimumButtonWidthIncludingPadding$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, parent, cw.comp)|0));
-sortedList.add$TE(cw);
+if (Character.isUpperCase$C(order.charAt$I(i))) cw.adjustMinHorSizeUp$I(($I$(17).getMinimumButtonWidthIncludingPadding$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, parent, cw.comp)|0));
+sortedList.add$O(cw);
 if (nextUnrel) {
 p$2.mergeGapSizes$IA$Z$Z.apply((prevCW != null  ? prevCW : cw), [gapUnrel, cell.flowx, prevCW == null ]);
 if (nextPush) {
@@ -528,7 +487,7 @@ for (var c=0; c < grp._compWraps.size$(); c++) {
 var cw=grp._compWraps.get$I(c);
 var hideMode=cw.comp.isVisible$() ? -1 : cw.cc.getHideMode$() != -1 ? cw.cc.getHideMode$() : this.lc.getHideMode$();
 var pushWeight=hideMode < 2 ? (isRows ? cw.cc.getPushY$() : cw.cc.getPushX$()) : null;
-if (rowPushWeight == null  || (pushWeight != null  && (pushWeight).floatValue$() > (rowPushWeight).floatValue$()  ) ) rowPushWeight=pushWeight;
+if (rowPushWeight == null  || (pushWeight != null  && (pushWeight).valueOf() > (rowPushWeight).valueOf()  ) ) rowPushWeight=pushWeight;
 }
 }
 if (rowPushWeight != null ) {
@@ -541,22 +500,22 @@ return pushWeightArr;
 Clazz.newMeth(C$, 'clearGroupLinkBounds', function () {
 if (this.linkTargetIDs == null ) return;
 for (var o, $o = this.linkTargetIDs.entrySet$().iterator$(); $o.hasNext$()&&((o=($o.next$())),1);) {
-if (o.getValue$() === $I$(15).TRUE ) $I$(11).clearBounds$O$S(this.container.getLayout$(), o.getKey$());
+if (o.getValue$() === $I$(16).TRUE ) $I$(12,"clearBounds$O$S",[this.container.getLayout$(), o.getKey$()]);
 }
 }, p$3);
 
 Clazz.newMeth(C$, 'resetLinkValues$Z$Z', function (parentSize, compLinks) {
 var lay=this.container.getLayout$();
-if (compLinks) $I$(11).clearTemporaryBounds$O(lay);
+if (compLinks) $I$(12).clearTemporaryBounds$O(lay);
 var defIns=!p$3.hasDocks.apply(this, []);
 var parW=parentSize ? this.lc.getWidth$().constrain$I$F$net_miginfocom_layout_ContainerWrapper(this.container.getWidth$(), C$.getParentSize$net_miginfocom_layout_ComponentWrapper$Z(this.container, true), this.container) : 0;
 var parH=parentSize ? this.lc.getHeight$().constrain$I$F$net_miginfocom_layout_ContainerWrapper(this.container.getHeight$(), C$.getParentSize$net_miginfocom_layout_ComponentWrapper$Z(this.container, false), this.container) : 0;
-var insX=$I$(5).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 0, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null);
-var insY=$I$(5).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 1, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null);
-var visW=parW - insX - $I$(5).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 2, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null) ;
-var visH=parH - insY - $I$(5).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 3, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null) ;
-$I$(11).setBounds$O$S$I$I$I$I$Z$Z(lay, "visual", insX, insY, visW, visH, true, false);
-$I$(11).setBounds$O$S$I$I$I$I$Z$Z(lay, "container", 0, 0, parW, parH, true, false);
+var insX=$I$(6).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 0, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null);
+var insY=$I$(6).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 1, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null);
+var visW=parW - insX - $I$(6).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 2, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null) ;
+var visH=parH - insY - $I$(6).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, 3, defIns).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null) ;
+$I$(12).setBounds$O$S$I$I$I$I$Z$Z(lay, "visual", insX, insY, visW, visH, true, false);
+$I$(12).setBounds$O$S$I$I$I$I$Z$Z(lay, "container", 0, 0, parW, parH, true, false);
 }, p$3);
 
 Clazz.newMeth(C$, 'getGroupContaining$java_util_ArrayListA$net_miginfocom_layout_Grid_CompWrap', function (groupLists, cw) {
@@ -600,7 +559,7 @@ if (!doAgain) break;
 maxEnd=0;
 p$3.clearGroupLinkBounds.apply(this, []);
 }
-maxEnd+=$I$(5).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, isHor ? 3 : 2, !p$3.hasDocks.apply(this, [])).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null);
+maxEnd+=$I$(6,"getInsets$net_miginfocom_layout_LC$I$Z",[this.lc, isHor ? 3 : 2, !p$3.hasDocks.apply(this, [])]).getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(0, this.container, null);
 if (curSizes[0] < maxEnd) curSizes[0]=maxEnd;
 if (curSizes[1] < maxEnd) curSizes[1]=maxEnd;
 }, p$3);
@@ -640,19 +599,19 @@ sz+=-p + (uv != null  ? uv.getPixels$F$net_miginfocom_layout_ContainerWrapper$ne
 }, p$3);
 
 Clazz.newMeth(C$, 'layoutInOneDim$I$net_miginfocom_layout_UnitValue$Z$FloatA', function (refSize, align, isRows, defaultPushWeights) {
-var fromEnd=!(isRows ? this.lc.isTopToBottom$() : $I$(5).isLeftToRight$net_miginfocom_layout_LC$net_miginfocom_layout_ContainerWrapper(this.lc, this.container));
+var fromEnd=!(isRows ? this.lc.isTopToBottom$() : $I$(6).isLeftToRight$net_miginfocom_layout_LC$net_miginfocom_layout_ContainerWrapper(this.lc, this.container));
 var primDCs=(isRows ? this.rowConstr : this.colConstr).getConstaints$();
 var fss=isRows ? this.rowFlowSpecs : this.colFlowSpecs;
 var rowCols=isRows ? this.rowGroupLists : this.colGroupLists;
-var rowColSizes=$I$(5).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(fss.sizes, fss.resConstsInclGaps, defaultPushWeights, 1, refSize);
-if ($I$(5).isDesignTime$net_miginfocom_layout_ContainerWrapper(this.container)) {
+var rowColSizes=$I$(6).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(fss.sizes, fss.resConstsInclGaps, defaultPushWeights, 1, refSize);
+if ($I$(6).isDesignTime$net_miginfocom_layout_ContainerWrapper(this.container)) {
 var indexes=isRows ? this.rowIndexes : this.colIndexes;
 var ixArr=Clazz.array(Integer.TYPE, [indexes.size$()]);
 var ix=0;
-for (var i, $i = indexes.iterator$(); $i.hasNext$()&&((i=($i.next$())),1);) ixArr[ix++]=(i).intValue$();
+for (var i, $i = indexes.iterator$(); $i.hasNext$()&&((i=($i.next$())),1);) ixArr[ix++]=(i).valueOf();
 
 C$.putSizesAndIndexes$O$IA$IA$Z(this.container.getComponent$(), rowColSizes, ixArr, isRows);
-}var curPos=align != null  ? align.getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(refSize - $I$(5).sum$IA(rowColSizes), this.container, null) : 0;
+}var curPos=align != null  ? align.getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(refSize - $I$(6).sum$IA(rowColSizes), this.container, null) : 0;
 if (fromEnd) curPos=refSize - curPos;
 for (var i=0; i < rowCols.length; i++) {
 var linkedGroups=rowCols[i];
@@ -664,7 +623,7 @@ var primDC=scIx >= 0 ? primDCs[scIx >= primDCs.length ? primDCs.length - 1 : scI
 var rowSize=rowColSizes[bIx2];
 for (var group, $group = linkedGroups.iterator$(); $group.hasNext$()&&((group=($group.next$())),1);) {
 var groupSize=rowSize;
-if (group.span > 1) groupSize=$I$(5).sum$IA$I$I(rowColSizes, bIx2, Math.min((group.span << 1) - 1, rowColSizes.length - bIx2 - 1 ));
+if (group.span > 1) groupSize=$I$(6,"sum$IA$I$I",[rowColSizes, bIx2, Math.min((group.span << 1) - 1, rowColSizes.length - bIx2 - 1 )]);
 p$1.layout$net_miginfocom_layout_DimConstraint$I$I$I.apply(group, [primDC, curPos, groupSize, group.span]);
 }
 curPos+=(fromEnd ? -rowSize : rowSize);
@@ -674,7 +633,7 @@ curPos+=(fromEnd ? -rowSize : rowSize);
 Clazz.newMeth(C$, 'addToSizeGroup$java_util_HashMap$S$IA', function (sizeGroups, sizeGroup, size) {
 var sgSize=sizeGroups.get$O(sizeGroup);
 if (sgSize == null ) {
-sizeGroups.put$TK$TV(sizeGroup, Clazz.array(Integer.TYPE, -1, [size[0], size[1], size[2]]));
+sizeGroups.put$O$O(sizeGroup, Clazz.array(Integer.TYPE, -1, [size[0], size[1], size[2]]));
 } else {
 sgSize[0]=Math.max(size[0], sgSize[0]);
 sgSize[1]=Math.max(size[1], sgSize[1]);
@@ -683,9 +642,9 @@ sgSize[2]=Math.min(size[2], sgSize[2]);
 
 Clazz.newMeth(C$, 'addToEndGroup$java_util_HashMap$S$I', function (endGroups, endGroup, end) {
 if (endGroup != null ) {
-if (endGroups == null ) endGroups=Clazz.new_($I$(14).c$$I,[4]);
+if (endGroups == null ) endGroups=Clazz.new_($I$(15,1).c$$I,[4]);
 var oldEnd=endGroups.get$O(endGroup);
-if (oldEnd == null  || end > (oldEnd).intValue$()  ) endGroups.put$TK$TV(endGroup, new Integer(end));
+if (oldEnd == null  || end > (oldEnd).valueOf()  ) endGroups.put$O$O(endGroup, new Integer(end));
 }return endGroups;
 }, 1);
 
@@ -698,11 +657,11 @@ if (!cSz.isUnset$()) containerSize=cSz.constrain$I$F$net_miginfocom_layout_Conta
 var primDCs=(isHor ? this.colConstr : this.rowConstr).getConstaints$();
 var primIndexes=isHor ? this.colIndexes : this.rowIndexes;
 var rowColBoundSizes=Clazz.array(Integer.TYPE, [primIndexes.size$(), null]);
-var sizeGroupMap=Clazz.new_($I$(14).c$$I,[4]);
-var allDCs=Clazz.array($I$(7), [primIndexes.size$()]);
+var sizeGroupMap=Clazz.new_($I$(15,1).c$$I,[4]);
+var allDCs=Clazz.array($I$(8), [primIndexes.size$()]);
 var primIt=primIndexes.iterator$();
 for (var r=0; r < rowColBoundSizes.length; r++) {
-var cellIx=(primIt.next$()).intValue$();
+var cellIx=(primIt.next$()).valueOf();
 var rowColSizes=Clazz.array(Integer.TYPE, [3]);
 if (cellIx >= -30000 && cellIx <= 30000 ) {
 allDCs[r]=primDCs[cellIx >= primDCs.length ? primDCs.length - 1 : cellIx];
@@ -726,7 +685,7 @@ rowColSize=groupSizes[2];
 } else {
 rowColSize=uv.getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(containerSize, this.container, null);
 }} else if (cellIx >= -30000 && cellIx <= 30000  && rowColSize == 0 ) {
-rowColSize=$I$(5).isDesignTime$net_miginfocom_layout_ContainerWrapper(this.container) ? $I$(5).getDesignTimeEmptySize$() : 0;
+rowColSize=$I$(6).isDesignTime$net_miginfocom_layout_ContainerWrapper(this.container) ? $I$(6).getDesignTimeEmptySize$() : 0;
 }rowColSizes[sType]=rowColSize;
 }
 C$.correctMinMax$IA(rowColSizes);
@@ -776,21 +735,21 @@ return retSizes;
 }, p$3);
 
 Clazz.newMeth(C$, 'getRowResizeConstraints$net_miginfocom_layout_DimConstraintA', function (specs) {
-var resConsts=Clazz.array($I$(4), [specs.length]);
+var resConsts=Clazz.array($I$(5), [specs.length]);
 for (var i=0; i < resConsts.length; i++) resConsts[i]=specs[i].resize;
 
 return resConsts;
 }, 1);
 
 Clazz.newMeth(C$, 'getComponentResizeConstraints$java_util_ArrayList$Z', function (compWraps, isHor) {
-var resConsts=Clazz.array($I$(4), [compWraps.size$()]);
+var resConsts=Clazz.array($I$(5), [compWraps.size$()]);
 for (var i=0; i < resConsts.length; i++) {
 var fc=compWraps.get$I(i).cc;
 resConsts[i]=fc.getDimConstraint$Z(isHor).resize;
 var dock=fc.getDockSide$();
 if (isHor ? (dock == 0 || dock == 2 ) : (dock == 1 || dock == 3 )) {
 var dc=resConsts[i];
-resConsts[i]=Clazz.new_($I$(4).c$$I$Float$I$Float,[dc.shrinkPrio, dc.shrink, dc.growPrio, $I$(4).WEIGHT_100]);
+resConsts[i]=Clazz.new_([dc.shrinkPrio, dc.shrink, dc.growPrio, $I$(5).WEIGHT_100],$I$(5,1).c$$I$Float$I$Float);
 }}
 return resConsts;
 }, 1);
@@ -807,11 +766,11 @@ return barr;
 
 Clazz.newMeth(C$, 'getRowGaps$net_miginfocom_layout_DimConstraintA$I$Z$ZA', function (specs, refSize, isHor, fillInPushGaps) {
 var defGap=isHor ? this.lc.getGridGapX$() : this.lc.getGridGapY$();
-if (defGap == null ) defGap=isHor ? $I$(16).getGridGapX$() : $I$(16).getGridGapY$();
+if (defGap == null ) defGap=isHor ? $I$(17).getGridGapX$() : $I$(17).getGridGapY$();
 var defGapArr=defGap.getPixelSizes$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(refSize, this.container, null);
 var defIns=!p$3.hasDocks.apply(this, []);
-var firstGap=$I$(5).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, isHor ? 1 : 0, defIns);
-var lastGap=$I$(5).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, isHor ? 3 : 2, defIns);
+var firstGap=$I$(6).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, isHor ? 1 : 0, defIns);
+var lastGap=$I$(6).getInsets$net_miginfocom_layout_LC$I$Z(this.lc, isHor ? 3 : 2, defIns);
 var retValues=Clazz.array(Integer.TYPE, [specs.length + 1, null]);
 for (var i=0, wgIx=0; i < retValues.length; i++) {
 var specBefore=i > 0 ? specs[i - 1] : null;
@@ -855,7 +814,7 @@ return retValues;
 }, 1);
 
 Clazz.newMeth(C$, 'hasDocks', function () {
-return (this.dockOffX > 0 || this.dockOffY > 0  || (this.rowIndexes.last$()).intValue$() > 30000   || (this.colIndexes.last$()).intValue$() > 30000  );
+return (this.dockOffX > 0 || this.dockOffY > 0  || (this.rowIndexes.last$()).valueOf() > 30000   || (this.colIndexes.last$()).valueOf() > 30000  );
 }, p$3);
 
 Clazz.newMeth(C$, 'adjustMinPrefForSpanningComps$net_miginfocom_layout_DimConstraintA$FloatA$net_miginfocom_layout_Grid_FlowSizeSpec$java_util_ArrayListA', function (specs, defPush, fss, groupsLists) {
@@ -883,7 +842,7 @@ for (var eagerness=0, newRowSize=0; eagerness < 4 && newRowSize < cSize ; eagern
 }, p$3);
 
 Clazz.newMeth(C$, 'divideIntoLinkedGroups$Z', function (isRows) {
-var fromEnd=!(isRows ? this.lc.isTopToBottom$() : $I$(5).isLeftToRight$net_miginfocom_layout_LC$net_miginfocom_layout_ContainerWrapper(this.lc, this.container));
+var fromEnd=!(isRows ? this.lc.isTopToBottom$() : $I$(6).isLeftToRight$net_miginfocom_layout_LC$net_miginfocom_layout_ContainerWrapper(this.lc, this.container));
 var primIndexes=isRows ? this.rowIndexes : this.colIndexes;
 var secIndexes=isRows ? this.colIndexes : this.rowIndexes;
 var primDCs=(isRows ? this.rowConstr : this.colConstr).getConstaints$();
@@ -895,23 +854,23 @@ if (i >= -30000 && i <= 30000 ) {
 dc=primDCs[i >= primDCs.length ? primDCs.length - 1 : i];
 } else {
 dc=C$.DOCK_DIM_CONSTRAINT;
-}var groupList=Clazz.new_($I$(1).c$$I,[4]);
+}var groupList=Clazz.new_($I$(1,1).c$$I,[4]);
 groupLists[gIx++]=groupList;
 for (var ix, $ix = secIndexes.iterator$(); $ix.hasNext$()&&((ix=($ix.next$())),1);) {
-var cell=isRows ? p$3.getCell$I$I.apply(this, [i, (ix).intValue$()]) : p$3.getCell$I$I.apply(this, [(ix).intValue$(), i]);
+var cell=isRows ? p$3.getCell$I$I.apply(this, [i, (ix).valueOf()]) : p$3.getCell$I$I.apply(this, [(ix).valueOf(), i]);
 if (cell == null  || cell.compWraps.size$() == 0 ) continue;
 var span=(isRows ? cell.spany : cell.spanx);
 if (span > 1) span=C$.convertSpanToSparseGrid$I$I$java_util_TreeSet(i, span, primIndexes);
 var isPar=(cell.flowx == isRows );
 if ((!isPar && cell.compWraps.size$() > 1 ) || span > 1 ) {
 var linkType=isPar ? 1 : 0;
-var lg=Clazz.new_($I$(17).c$$S$I$I$Z$Z,["p," + ix, span, linkType, !isRows, fromEnd]);
+var lg=Clazz.new_($I$(18,1).c$$S$I$I$Z$Z,["p," + ix, span, linkType, !isRows, fromEnd]);
 p$1.setCompWraps$java_util_ArrayList.apply(lg, [cell.compWraps]);
-groupList.add$TE(lg);
+groupList.add$O(lg);
 } else {
 for (var cwIx=0; cwIx < cell.compWraps.size$(); cwIx++) {
 var cw=cell.compWraps.get$I(cwIx);
-var rowBaselineAlign=(isRows && this.lc.isTopToBottom$() && dc.getAlignOrDefault$Z(!isRows) === $I$(3).BASELINE_IDENTITY   );
+var rowBaselineAlign=(isRows && this.lc.isTopToBottom$() && dc.getAlignOrDefault$Z(!isRows) === $I$(4).BASELINE_IDENTITY   );
 var isBaseline=isRows && p$2.isBaselineAlign$Z.apply(cw, [rowBaselineAlign]) ;
 var linkCtx=isBaseline ? "baseline" : null;
 var foundList=false;
@@ -924,9 +883,9 @@ break;
 }}
 if (!foundList) {
 var linkType=isBaseline ? 2 : 1;
-var lg=Clazz.new_($I$(17).c$$S$I$I$Z$Z,[linkCtx, 1, linkType, !isRows, fromEnd]);
+var lg=Clazz.new_($I$(18,1).c$$S$I$I$Z$Z,[linkCtx, 1, linkType, !isRows, fromEnd]);
 p$1.addCompWrap$net_miginfocom_layout_Grid_CompWrap.apply(lg, [cw]);
-groupList.add$TE(lg);
+groupList.add$O(lg);
 }}
 }}
 }
@@ -937,8 +896,8 @@ Clazz.newMeth(C$, 'convertSpanToSparseGrid$I$I$java_util_TreeSet', function (cur
 var lastIx=curIx + span;
 var retSpan=1;
 for (var ix, $ix = indexes.iterator$(); $ix.hasNext$()&&((ix=($ix.next$())),1);) {
-if ((ix).intValue$() <= curIx ) continue;
-if ((ix).intValue$() >= lastIx ) break;
+if ((ix).valueOf() <= curIx ) continue;
+if ((ix).valueOf() >= lastIx ) break;
 retSpan++;
 }
 return retSpan;
@@ -959,9 +918,9 @@ return this.grid.get$O(new Integer((r << 16) + (c & 65535)));
 Clazz.newMeth(C$, 'setCell$I$I$net_miginfocom_layout_Grid_Cell', function (r, c, cell) {
 if (c < 0 || r < 0 ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Cell position cannot be negative. row: " + r + ", col: " + c ]);
 if (c > 30000 || r > 30000 ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Cell position out of bounds. Out of cells. row: " + r + ", col: " + c ]);
-this.rowIndexes.add$TE(new Integer(r));
-this.colIndexes.add$TE(new Integer(c));
-this.grid.put$TK$TV(new Integer((r << 16) + (c & 65535)), cell);
+this.rowIndexes.add$O(new Integer(r));
+this.colIndexes.add$O(new Integer(c));
+this.grid.put$O$O(new Integer((r << 16) + (c & 65535)), cell);
 }, p$3);
 
 Clazz.newMeth(C$, 'addDockingCell$IA$I$net_miginfocom_layout_Grid_CompWrap', function (dockInsets, side, cw) {
@@ -975,21 +934,21 @@ case 2:
 r=side == 0 ? dockInsets[0]++ : dockInsets[2]--;
 c=dockInsets[1];
 spanx=dockInsets[3] - dockInsets[1] + 1;
-this.colIndexes.add$TE(new Integer(dockInsets[3]));
+this.colIndexes.add$O(new Integer(dockInsets[3]));
 break;
 case 1:
 case 3:
 c=side == 1 ? dockInsets[1]++ : dockInsets[3]--;
 r=dockInsets[0];
 spany=dockInsets[2] - dockInsets[0] + 1;
-this.rowIndexes.add$TE(new Integer(dockInsets[2]));
+this.rowIndexes.add$O(new Integer(dockInsets[2]));
 break;
 default:
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Internal error 123."]);
 }
-this.rowIndexes.add$TE(new Integer(r));
-this.colIndexes.add$TE(new Integer(c));
-this.grid.put$TK$TV(new Integer((r << 16) + (c & 65535)), Clazz.new_($I$(13).c$$net_miginfocom_layout_Grid_CompWrap$I$I$Z,[cw, spanx, spany, spanx > 1]));
+this.rowIndexes.add$O(new Integer(r));
+this.colIndexes.add$O(new Integer(c));
+this.grid.put$O$O(new Integer((r << 16) + (c & 65535)), Clazz.new_($I$(14,1).c$$net_miginfocom_layout_Grid_CompWrap$I$I$Z,[cw, spanx, spany, spanx > 1]));
 }, p$3);
 
 Clazz.newMeth(C$, 'layoutBaseline$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$I$I', function (parent, compWraps, dc, start, size, sizeType, spanCount) {
@@ -998,7 +957,7 @@ var blRowSize=aboveBelow.sum$();
 var cc=compWraps.get$I(0).cc;
 var align=cc.getVertical$().getAlign$();
 if (spanCount == 1 && align == null  ) align=dc.getAlignOrDefault$Z(false);
-if (align === $I$(3).BASELINE_IDENTITY ) align=$I$(3).CENTER;
+if (align === $I$(4).BASELINE_IDENTITY ) align=$I$(4).CENTER;
 var offset=start + aboveBelow.maxAbove + (align != null  ? Math.max(0, align.getPixels$F$net_miginfocom_layout_ContainerWrapper$net_miginfocom_layout_ComponentWrapper(size - blRowSize, parent, null)) : 0) ;
 for (var cw, $cw = compWraps.iterator$(); $cw.hasNext$()&&((cw=($cw.next$())),1);) {
 cw.y+=offset;
@@ -1009,12 +968,12 @@ if (cw.y + cw.h > start + size) cw.h=start + size - cw.y;
 Clazz.newMeth(C$, 'layoutSerial$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$Z$I$Z', function (parent, compWraps, dc, start, size, isHor, spanCount, fromEnd) {
 var fss=C$.mergeSizesGapsAndResConstrs$net_miginfocom_layout_ResizeConstraintA$ZA$IAA$IAA(C$.getComponentResizeConstraints$java_util_ArrayList$Z(compWraps, isHor), C$.getComponentGapPush$java_util_ArrayList$Z(compWraps, isHor), C$.getComponentSizes$java_util_ArrayList$Z(compWraps, isHor), C$.getGaps$java_util_ArrayList$Z(compWraps, isHor));
 var pushW=dc.isFill$() ? C$.GROW_100 : null;
-var sizes=$I$(5).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(fss.sizes, fss.resConstsInclGaps, pushW, 1, size);
+var sizes=$I$(6).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(fss.sizes, fss.resConstsInclGaps, pushW, 1, size);
 C$.setCompWrapBounds$net_miginfocom_layout_ContainerWrapper$IA$java_util_ArrayList$net_miginfocom_layout_UnitValue$I$I$Z$Z(parent, sizes, compWraps, dc.getAlignOrDefault$Z(isHor), start, size, isHor, fromEnd);
 }, 1);
 
 Clazz.newMeth(C$, 'setCompWrapBounds$net_miginfocom_layout_ContainerWrapper$IA$java_util_ArrayList$net_miginfocom_layout_UnitValue$I$I$Z$Z', function (parent, allSizes, compWraps, rowAlign, start, size, isHor, fromEnd) {
-var totSize=$I$(5).sum$IA(allSizes);
+var totSize=$I$(6).sum$IA(allSizes);
 var cc=compWraps.get$I(0).cc;
 var align=C$.correctAlign$net_miginfocom_layout_CC$net_miginfocom_layout_UnitValue$Z$Z(cc, rowAlign, isHor, fromEnd);
 var cSt=start;
@@ -1040,10 +999,10 @@ var sizes=Clazz.array(Integer.TYPE, [compWraps.size$(), null]);
 for (var i=0; i < sizes.length; i++) {
 var cw=compWraps.get$I(i);
 var cDc=cw.cc.getDimConstraint$Z(isHor);
-var resConstr=Clazz.array($I$(4), -1, [p$2.isPushGap$Z$Z.apply(cw, [isHor, true]) ? C$.GAP_RC_CONST_PUSH : C$.GAP_RC_CONST, cDc.resize, p$2.isPushGap$Z$Z.apply(cw, [isHor, false]) ? C$.GAP_RC_CONST_PUSH : C$.GAP_RC_CONST]);
+var resConstr=Clazz.array($I$(5), -1, [p$2.isPushGap$Z$Z.apply(cw, [isHor, true]) ? C$.GAP_RC_CONST_PUSH : C$.GAP_RC_CONST, cDc.resize, p$2.isPushGap$Z$Z.apply(cw, [isHor, false]) ? C$.GAP_RC_CONST_PUSH : C$.GAP_RC_CONST]);
 var sz=Clazz.array(Integer.TYPE, -2, [p$2.getGaps$Z$Z.apply(cw, [isHor, true]), p$2.getSizes$Z.apply(cw, [isHor]), p$2.getGaps$Z$Z.apply(cw, [isHor, false])]);
 var pushW=dc.isFill$() ? C$.GROW_100 : null;
-sizes[i]=$I$(5).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(sz, resConstr, pushW, 1, size);
+sizes[i]=$I$(6).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(sz, resConstr, pushW, 1, size);
 }
 var rowAlign=dc.getAlignOrDefault$Z(isHor);
 C$.setCompWrapBounds$net_miginfocom_layout_ContainerWrapper$IAA$java_util_ArrayList$net_miginfocom_layout_UnitValue$I$I$Z$Z(parent, sizes, compWraps, rowAlign, start, size, isHor, fromEnd);
@@ -1069,10 +1028,10 @@ cSt+=(fromEnd ? -al : al);
 Clazz.newMeth(C$, 'correctAlign$net_miginfocom_layout_CC$net_miginfocom_layout_UnitValue$Z$Z', function (cc, rowAlign, isHor, fromEnd) {
 var align=(isHor ? cc.getHorizontal$() : cc.getVertical$()).getAlign$();
 if (align == null ) align=rowAlign;
-if (align === $I$(3).BASELINE_IDENTITY ) align=$I$(3).CENTER;
+if (align === $I$(4).BASELINE_IDENTITY ) align=$I$(4).CENTER;
 if (fromEnd) {
-if (align === $I$(3).LEFT ) align=$I$(3).RIGHT;
- else if (align === $I$(3).RIGHT ) align=$I$(3).LEFT;
+if (align === $I$(4).LEFT ) align=$I$(4).RIGHT;
+ else if (align === $I$(4).RIGHT ) align=$I$(4).LEFT;
 }return align;
 }, 1);
 
@@ -1081,14 +1040,14 @@ var maxAbove=-2147483648;
 var maxBelow=-2147483648;
 for (var cw, $cw = compWraps.iterator$(); $cw.hasNext$()&&((cw=($cw.next$())),1);) {
 var height=p$2.getSize$I$Z.apply(cw, [sType, false]);
-if (height >= 2097051) return Clazz.new_($I$(18).c$$I$I,[1048525, 1048525]);
+if (height >= 2097051) return Clazz.new_($I$(19,1).c$$I$I,[1048525, 1048525]);
 var baseline=p$2.getBaseline$I.apply(cw, [sType]);
 var above=baseline + p$2.getGapBefore$I$Z.apply(cw, [sType, false]);
 maxAbove=Math.max(above, maxAbove);
 maxBelow=Math.max(height - baseline + p$2.getGapAfter$I$Z.apply(cw, [sType, false]), maxBelow);
 if (centerBaseline) p$2.setDimBounds$I$I$Z.apply(cw, [-baseline, height, false]);
 }
-return Clazz.new_($I$(18).c$$I$I,[maxAbove, maxBelow]);
+return Clazz.new_($I$(19,1).c$$I$I,[maxAbove, maxBelow]);
 }, 1);
 
 Clazz.newMeth(C$, 'getTotalSizeParallel$java_util_ArrayList$I$Z', function (compWraps, sType, isHor) {
@@ -1134,7 +1093,7 @@ return compSizes;
 
 Clazz.newMeth(C$, 'mergeSizesGapsAndResConstrs$net_miginfocom_layout_ResizeConstraintA$ZA$IAA$IAA', function (resConstr, gapPush, minPrefMaxSizes, gapSizes) {
 var sizes=Clazz.array(Integer.TYPE, [(minPrefMaxSizes.length << 1) + 1, null]);
-var resConstsInclGaps=Clazz.array($I$(4), [sizes.length]);
+var resConstsInclGaps=Clazz.array($I$(5), [sizes.length]);
 sizes[0]=gapSizes[0];
 for (var i=0, crIx=1; i < minPrefMaxSizes.length; i++, crIx+=2) {
 resConstsInclGaps[crIx]=resConstr[i];
@@ -1146,7 +1105,7 @@ if (i == (minPrefMaxSizes.length - 1) && sizes[crIx + 1] != null  ) resConstsInc
 for (var i=0; i < sizes.length; i++) {
 if (sizes[i] == null ) sizes[i]=Clazz.array(Integer.TYPE, [3]);
 }
-return Clazz.new_($I$(19).c$$IAA$net_miginfocom_layout_ResizeConstraintA,[sizes, resConstsInclGaps]);
+return Clazz.new_($I$(20,1).c$$IAA$net_miginfocom_layout_ResizeConstraintA,[sizes, resConstsInclGaps]);
 }, 1);
 
 Clazz.newMeth(C$, 'mergeSizes$IA$IA', function (oldValues, newValues) {
@@ -1180,7 +1139,7 @@ var growLastArr=Clazz.array(Float, [len]);
 for (var i=ix + len - 1; i >= 0; i-=2) {
 var specIx=(i >> 1);
 if (specs[specIx] !== C$.DOCK_DIM_CONSTRAINT ) {
-growLastArr[i - ix]=$I$(4).WEIGHT_100;
+growLastArr[i - ix]=$I$(5).WEIGHT_100;
 return growLastArr;
 }}
 return growLastArr;
@@ -1190,8 +1149,8 @@ return newArr;
 }, 1);
 
 Clazz.newMeth(C$, 'putSizesAndIndexes$O$IA$IA$Z', function (parComp, sizes, ixArr, isRows) {
-if (C$.PARENT_ROWCOL_SIZES_MAP == null ) C$.PARENT_ROWCOL_SIZES_MAP=Clazz.array($I$(20), -1, [Clazz.new_($I$(20).c$$I,[4]), Clazz.new_($I$(20).c$$I,[4])]);
-C$.PARENT_ROWCOL_SIZES_MAP[isRows ? 0 : 1].put$TK$TV(parComp, Clazz.array(Integer.TYPE, -2, [ixArr, sizes]));
+if (C$.PARENT_ROWCOL_SIZES_MAP == null ) C$.PARENT_ROWCOL_SIZES_MAP=Clazz.array($I$(21), -1, [Clazz.new_($I$(21,1).c$$I,[4]), Clazz.new_($I$(21,1).c$$I,[4])]);
+C$.PARENT_ROWCOL_SIZES_MAP[isRows ? 0 : 1].put$O$O(parComp, Clazz.array(Integer.TYPE, -2, [ixArr, sizes]));
 }, 1);
 
 Clazz.newMeth(C$, 'getSizesAndIndexes$O$Z', function (parComp, isRows) {
@@ -1200,48 +1159,56 @@ return C$.PARENT_ROWCOL_SIZES_MAP[isRows ? 0 : 1].get$O(parComp);
 }, 1);
 
 Clazz.newMeth(C$, 'saveGrid$net_miginfocom_layout_ComponentWrapper$java_util_LinkedHashMap', function (parComp, grid) {
-if (C$.PARENT_GRIDPOS_MAP == null ) C$.PARENT_GRIDPOS_MAP=Clazz.new_($I$(20).c$$I,[4]);
-var weakCells=Clazz.new_($I$(1).c$$I,[grid.size$()]);
+if (C$.PARENT_GRIDPOS_MAP == null ) C$.PARENT_GRIDPOS_MAP=Clazz.new_($I$(21,1).c$$I,[4]);
+var weakCells=Clazz.new_([grid.size$()],$I$(1,1).c$$I);
 for (var e, $e = grid.entrySet$().iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 var cell=e.getValue$();
 var xyInt=e.getKey$();
 if (xyInt != null ) {
-var x=((xyInt).intValue$() << 16) >> 16;
-var y=(xyInt).intValue$() >> 16;
-for (var cw, $cw = cell.compWraps.iterator$(); $cw.hasNext$()&&((cw=($cw.next$())),1);) weakCells.add$TE(Clazz.new_($I$(21).c$$O$I$I$I$I,[cw.comp.getComponent$(), x, y, cell.spanx, cell.spany]));
+var x=((xyInt).valueOf() << 16) >> 16;
+var y=(xyInt).valueOf() >> 16;
+for (var cw, $cw = cell.compWraps.iterator$(); $cw.hasNext$()&&((cw=($cw.next$())),1);) weakCells.add$O(Clazz.new_([cw.comp.getComponent$(), x, y, cell.spanx, cell.spany],$I$(22,1).c$$O$I$I$I$I));
 
 }}
-C$.PARENT_GRIDPOS_MAP.put$TK$TV(parComp.getComponent$(), weakCells);
+C$.PARENT_GRIDPOS_MAP.put$O$O(parComp.getComponent$(), weakCells);
 }, 1);
 
 Clazz.newMeth(C$, 'getGridPositions$O', function (parComp) {
 var weakCells=C$.PARENT_GRIDPOS_MAP != null  ? C$.PARENT_GRIDPOS_MAP.get$O(parComp) : null;
 if (weakCells == null ) return null;
-var retMap=Clazz.new_($I$(14));
+var retMap=Clazz.new_($I$(15,1));
 for (var wc, $wc = weakCells.iterator$(); $wc.hasNext$()&&((wc=($wc.next$())),1);) {
 var component=wc.componentRef.get$();
-if (component != null ) retMap.put$TK$TV(component, Clazz.array(Integer.TYPE, -1, [wc.x, wc.y, wc.spanX, wc.spanY]));
+if (component != null ) retMap.put$O$O(component, Clazz.array(Integer.TYPE, -1, [wc.x, wc.y, wc.spanX, wc.spanY]));
 }
 return retMap;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.GROW_100=Clazz.array(Float, -1, [$I$(5).WEIGHT_100]);
+C$.DOCK_DIM_CONSTRAINT=Clazz.new_($I$(8,1));
+{
+C$.DOCK_DIM_CONSTRAINT.setGrowPriority$I(0);
+};
+C$.GAP_RC_CONST=Clazz.new_([200, $I$(5).WEIGHT_100, 50, null],$I$(5,1).c$$I$Float$I$Float);
+C$.GAP_RC_CONST_PUSH=Clazz.new_([200, $I$(5).WEIGHT_100, 50, $I$(5).WEIGHT_100],$I$(5,1).c$$I$Float$I$Float);
+C$.DEF_CC=Clazz.new_($I$(9,1));
+C$.PARENT_ROWCOL_SIZES_MAP=null;
+C$.PARENT_GRIDPOS_MAP=null;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.Grid, "Cell", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Grid, "Cell", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.spanx=0;
-this.spany=0;
-this.flowx=false;
-this.compWraps=null;
-this.hasTagged=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.compWraps=Clazz.new_($I$(1).c$$I,[2]);
+this.compWraps=Clazz.new_($I$(1,1).c$$I,[2]);
 this.hasTagged=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['flowx','hasTagged'],'I',['spanx','spany'],'O',['compWraps','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$$net_miginfocom_layout_Grid_CompWrap', function (cw) {
 C$.c$$net_miginfocom_layout_Grid_CompWrap$I$I$Z.apply(this, [cw, 1, 1, true]);
@@ -1252,8 +1219,8 @@ C$.c$$net_miginfocom_layout_Grid_CompWrap$I$I$Z.apply(this, [null, spanx, spany,
 }, 1);
 
 Clazz.newMeth(C$, 'c$$net_miginfocom_layout_Grid_CompWrap$I$I$Z', function (cw, spanx, spany, flowx) {
-C$.$init$.apply(this);
-if (cw != null ) this.compWraps.add$TE(cw);
+;C$.$init$.apply(this);
+if (cw != null ) this.compWraps.add$O(cw);
 this.spanx=spanx;
 this.spany=spany;
 this.flowx=flowx;
@@ -1262,30 +1229,22 @@ this.flowx=flowx;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Grid, "LinkedDimGroup", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Grid, "LinkedDimGroup", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.linkCtx=null;
-this.span=0;
-this.linkType=0;
-this.isHor=false;
-this.fromEnd=false;
-this._compWraps=null;
-this.lStart=0;
-this.lSize=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._compWraps=Clazz.new_($I$(1).c$$I,[4]);
+this._compWraps=Clazz.new_($I$(1,1).c$$I,[4]);
 this.lStart=0;
 this.lSize=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isHor','fromEnd'],'I',['span','linkType','lStart','lSize'],'S',['linkCtx'],'O',['_compWraps','java.util.ArrayList']]]
 
 Clazz.newMeth(C$, 'c$$S$I$I$Z$Z', function (linkCtx, span, linkType, isHor, fromEnd) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.linkCtx=linkCtx;
 this.span=span;
 this.linkType=linkType;
@@ -1294,7 +1253,7 @@ this.fromEnd=fromEnd;
 }, 1);
 
 Clazz.newMeth(C$, 'addCompWrap$net_miginfocom_layout_Grid_CompWrap', function (cw) {
-this._compWraps.add$TE(cw);
+this._compWraps.add$O(cw);
 }, p$1);
 
 Clazz.newMeth(C$, 'setCompWraps$java_util_ArrayList', function (cws) {
@@ -1309,11 +1268,11 @@ this.lSize=size;
 if (this._compWraps.isEmpty$()) return;
 var parent=this._compWraps.get$I(0).comp.getParent$();
 if (this.linkType == 1) {
-P$.Grid.layoutParallel$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$Z$Z(parent, this._compWraps, dc, start, size, this.isHor, this.fromEnd);
+$I$(2).layoutParallel$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$Z$Z(parent, this._compWraps, dc, start, size, this.isHor, this.fromEnd);
 } else if (this.linkType == 2) {
-P$.Grid.layoutBaseline$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$I$I(parent, this._compWraps, dc, start, size, 1, spanCount);
+$I$(2).layoutBaseline$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$I$I(parent, this._compWraps, dc, start, size, 1, spanCount);
 } else {
-P$.Grid.layoutSerial$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$Z$I$Z(parent, this._compWraps, dc, start, size, this.isHor, spanCount, this.fromEnd);
+$I$(2).layoutSerial$net_miginfocom_layout_ContainerWrapper$java_util_ArrayList$net_miginfocom_layout_DimConstraint$I$I$Z$I$Z(parent, this._compWraps, dc, start, size, this.isHor, spanCount, this.fromEnd);
 }}, p$1);
 
 Clazz.newMeth(C$, 'getMinPrefMax', function () {
@@ -1321,12 +1280,12 @@ var sizes=Clazz.array(Integer.TYPE, [3]);
 if (!this._compWraps.isEmpty$()) {
 for (var sType=0; sType <= 1; sType++) {
 if (this.linkType == 1) {
-sizes[sType]=P$.Grid.getTotalSizeParallel$java_util_ArrayList$I$Z(this._compWraps, sType, this.isHor);
+sizes[sType]=$I$(2).getTotalSizeParallel$java_util_ArrayList$I$Z(this._compWraps, sType, this.isHor);
 } else if (this.linkType == 2) {
-var aboveBelow=P$.Grid.getBaselineAboveBelow$java_util_ArrayList$I$Z(this._compWraps, sType, false);
+var aboveBelow=$I$(2).getBaselineAboveBelow$java_util_ArrayList$I$Z(this._compWraps, sType, false);
 sizes[sType]=aboveBelow.sum$();
 } else {
-sizes[sType]=P$.Grid.getTotalSizeSerial$java_util_ArrayList$I$Z(this._compWraps, sType, this.isHor);
+sizes[sType]=$I$(2).getTotalSizeSerial$java_util_ArrayList$I$Z(this._compWraps, sType, this.isHor);
 }}
 sizes[2]=2097051;
 }return sizes;
@@ -1335,27 +1294,11 @@ sizes[2]=2097051;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Grid, "CompWrap", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Grid, "CompWrap", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.comp=null;
-this.cc=null;
-this.eHideMode=0;
-this.useVisualPadding=false;
-this.sizesOk=false;
-this.isAbsolute=false;
-this.gaps=null;
-this.horSizes=null;
-this.verSizes=null;
-this.x=0;
-this.y=0;
-this.w=0;
-this.h=0;
-this.forcedPushGaps=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.sizesOk=false;
@@ -1366,10 +1309,12 @@ this.y=-2147471302;
 this.w=-2147471302;
 this.h=-2147471302;
 this.forcedPushGaps=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['useVisualPadding','sizesOk','isAbsolute'],'I',['eHideMode','x','y','w','h','forcedPushGaps'],'O',['comp','net.miginfocom.layout.ComponentWrapper','cc','net.miginfocom.layout.CC','gaps','int[][]','horSizes','int[]','+verSizes']]]
 
 Clazz.newMeth(C$, 'c$$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_CC$I$Z', function (c, cc, eHideMode, useVisualPadding) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.comp=c;
 this.cc=cc;
 this.eHideMode=eHideMode;
@@ -1411,11 +1356,11 @@ this.horSizes[i]=p$2.getSize$net_miginfocom_layout_BoundSize$I$Z$Z$I.apply(this,
 break;
 }
 }
-P$.Grid.correctMinMax$IA(this.horSizes);
-P$.Grid.correctMinMax$IA(this.verSizes);
+$I$(2).correctMinMax$IA(this.horSizes);
+$I$(2).correctMinMax$IA(this.verSizes);
 } else {
-$I$(2).fill$IA$I(this.horSizes, 0);
-$I$(2).fill$IA$I(this.verSizes, 0);
+$I$(3).fill$IA$I(this.horSizes, 0);
+$I$(3).fill$IA$I(this.verSizes, 0);
 }this.sizesOk=true;
 }, p$2);
 
@@ -1547,14 +1492,14 @@ return this.gaps[p$2.getGapIx$Z$Z.apply(this, [isHor, isTL])];
 
 Clazz.newMeth(C$, 'filter$I$I', function (sizeType, size) {
 if (size == -2147471302) return sizeType != 2 ? 0 : 2097051;
-return P$.Grid.constrainSize$I(size);
+return $I$(2).constrainSize$I(size);
 }, p$2);
 
 Clazz.newMeth(C$, 'isBaselineAlign$Z', function (defValue) {
 var g=this.cc.getVertical$().getGrow$();
 if (g != null  && g.intValue$() != 0 ) return false;
 var al=this.cc.getVertical$().getAlign$();
-return (al != null  ? al === $I$(3).BASELINE_IDENTITY  : defValue) && this.comp.hasBaseline$() ;
+return (al != null  ? al === $I$(4).BASELINE_IDENTITY  : defValue) && this.comp.hasBaseline$() ;
 }, p$2);
 
 Clazz.newMeth(C$, 'getBaseline$I', function (sizeType) {
@@ -1564,27 +1509,25 @@ return this.comp.getBaseline$I$I(p$2.getSize$I$Z.apply(this, [sizeType, true]), 
 Clazz.newMeth(C$, 'adjustMinHorSizeUp$I', function (minSize) {
 var sz=p$2.getSizes$Z.apply(this, [true]);
 if (sz[0] < minSize) sz[0]=minSize;
-P$.Grid.correctMinMax$IA(sz);
+$I$(2).correctMinMax$IA(sz);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Grid, "AboveBelow", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Grid, "AboveBelow", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.maxAbove=0;
-this.maxBelow=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['maxAbove','maxBelow']]]
 
 Clazz.newMeth(C$, 'c$$I$I', function (maxAbove, maxBelow) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.maxAbove=maxAbove;
 this.maxBelow=maxBelow;
 }, 1);
@@ -1596,41 +1539,39 @@ return this.maxAbove + this.maxBelow;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Grid, "FlowSizeSpec", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Grid, "FlowSizeSpec", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sizes=null;
-this.resConstsInclGaps=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['sizes','int[][]','resConstsInclGaps','net.miginfocom.layout.ResizeConstraint[]']]]
 
 Clazz.newMeth(C$, 'c$$IAA$net_miginfocom_layout_ResizeConstraintA', function (sizes, resConstsInclGaps) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.sizes=sizes;
 this.resConstsInclGaps=resConstsInclGaps;
 }, 1);
 
 Clazz.newMeth(C$, 'expandSizes$net_miginfocom_layout_DimConstraintA$FloatA$I$I$I$I$I', function (specs, defGrow, targetSize, fromIx, len, sizeType, eagerness) {
-var resConstr=Clazz.array($I$(4), [len]);
+var resConstr=Clazz.array($I$(5), [len]);
 var sizesToExpand=Clazz.array(Integer.TYPE, [len, null]);
 for (var i=0; i < len; i++) {
 var minPrefMax=this.sizes[i + fromIx];
 sizesToExpand[i]=Clazz.array(Integer.TYPE, -1, [minPrefMax[sizeType], minPrefMax[1], minPrefMax[2]]);
 if (eagerness <= 1 && i % 2 == 0 ) {
 var cIx=(i + fromIx - 1) >> 1;
-var spec=$I$(5).getIndexSafe$OA$I(specs, cIx);
+var spec=$I$(6).getIndexSafe$OA$I(specs, cIx);
 var sz=spec.getSize$();
 if ((sizeType == 0 && sz.getMin$() != null   && sz.getMin$().getUnit$() != 13 ) || (sizeType == 1 && sz.getPreferred$() != null   && sz.getPreferred$().getUnit$() != 14 ) ) {
 continue;
-}}resConstr[i]=$I$(5).getIndexSafe$OA$I(this.resConstsInclGaps, i + fromIx);
+}}resConstr[i]=$I$(6).getIndexSafe$OA$I(this.resConstsInclGaps, i + fromIx);
 }
-var growW=(eagerness == 1 || eagerness == 3 ) ? P$.Grid.extractSubArray$net_miginfocom_layout_DimConstraintA$FloatA$I$I(specs, defGrow, fromIx, len) : null;
-var newSizes=$I$(5).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(sizesToExpand, resConstr, growW, 1, targetSize);
+var growW=(eagerness == 1 || eagerness == 3 ) ? $I$(2).extractSubArray$net_miginfocom_layout_DimConstraintA$FloatA$I$I(specs, defGrow, fromIx, len) : null;
+var newSizes=$I$(6).calculateSerial$IAA$net_miginfocom_layout_ResizeConstraintA$FloatA$I$I(sizesToExpand, resConstr, growW, 1, targetSize);
 var newSize=0;
 for (var i=0; i < len; i++) {
 var s=newSizes[i];
@@ -1643,25 +1584,20 @@ return newSize;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.Grid, "WeakCell", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.Grid, "WeakCell", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.componentRef=null;
-this.x=0;
-this.y=0;
-this.spanX=0;
-this.spanY=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['x','y','spanX','spanY'],'O',['componentRef','java.lang.ref.WeakReference']]]
 
 Clazz.newMeth(C$, 'c$$O$I$I$I$I', function (component, x, y, spanX, spanY) {
-C$.$init$.apply(this);
-this.componentRef=Clazz.new_($I$(6).c$$TT,[component]);
+;C$.$init$.apply(this);
+this.componentRef=Clazz.new_($I$(7,1).c$$O,[component]);
 this.x=x;
 this.y=y;
 this.spanX=spanX;
@@ -1673,4 +1609,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

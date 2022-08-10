@@ -1,19 +1,7 @@
-(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'javax.swing.SwingUtilities','javax.swing.JColorChooser','java.awt.Dimension','java.awt.Color']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultPreviewPanel", null, 'javax.swing.JPanel');
+(function(){var P$=Clazz.newPackage("javax.swing.colorchooser"),p$1={},I$=[[0,'javax.swing.SwingUtilities','javax.swing.JColorChooser','java.awt.Dimension','java.awt.Color']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultPreviewPanel", null, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.squareSize=0;
-this.squareGap=0;
-this.innerGap=0;
-this.textGap=0;
-this.sampleText=null;
-this.swatchWidth=0;
-this.oldColor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.squareSize=25;
@@ -23,13 +11,15 @@ this.textGap=5;
 this.sampleText="Sample Text";
 this.swatchWidth=50;
 this.oldColor=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getColorChooser', function () {
-return $I$(1).getAncestorOfClass$Class$java_awt_Component(Clazz.getClass($I$(2)), this);
+C$.$fields$=[['I',['squareSize','squareGap','innerGap','textGap','swatchWidth'],'S',['sampleText'],'O',['oldColor','java.awt.Color']]]
+
+Clazz.newMeth(C$, 'getColorChooser',  function () {
+return $I$(1,"getAncestorOfClass$Class$java_awt_Component",[Clazz.getClass($I$(2)), this]);
 }, p$1);
 
-Clazz.newMeth(C$, 'getPreferredSize$', function () {
+Clazz.newMeth(C$, 'getPreferredSize$',  function () {
 var host=p$1.getColorChooser.apply(this, []);
 if (host == null ) {
 host=this;
@@ -38,10 +28,10 @@ var height=fm.getHeight$();
 var width=fm.stringWidth$S(this.sampleText);
 var y=height * 5 + this.textGap * 2;
 var x=this.squareSize * 3 + this.squareGap * 2 + this.swatchWidth + width + this.textGap * 3;
-return Clazz.new_($I$(3).c$$I$I,[x, y]);
+return Clazz.new_($I$(3,1).c$$I$I,[x, y]);
 });
 
-Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'paintComponent$java_awt_Graphics',  function (g) {
 if (this.oldColor == null ) this.oldColor=this.getForeground$();
 g.setColor$java_awt_Color(this.getBackground$());
 g.fillRect$I$I$I$I(0, 0, this.getWidth$(), this.getHeight$());
@@ -55,7 +45,7 @@ var textWidth=p$1.paintText$java_awt_Graphics$I.apply(this, [g, swatchWidth]);
 p$1.paintSquares$java_awt_Graphics$I.apply(this, [g, swatchWidth + textWidth]);
 }});
 
-Clazz.newMeth(C$, 'paintSwatch$java_awt_Graphics$I', function (g, offsetX) {
+Clazz.newMeth(C$, 'paintSwatch$java_awt_Graphics$I',  function (g, offsetX) {
 var swatchX=offsetX;
 g.setColor$java_awt_Color(this.oldColor);
 g.fillRect$I$I$I$I(swatchX, 0, this.swatchWidth, (this.squareSize) + ((this.squareGap/2|0)));
@@ -64,7 +54,7 @@ g.fillRect$I$I$I$I(swatchX, (this.squareSize) + ((this.squareGap/2|0)), this.swa
 return (swatchX + this.swatchWidth);
 }, p$1);
 
-Clazz.newMeth(C$, 'paintText$java_awt_Graphics$I', function (g, offsetX) {
+Clazz.newMeth(C$, 'paintText$java_awt_Graphics$I',  function (g, offsetX) {
 g.setFont$java_awt_Font(this.getFont$());
 var fm=this.getFont$().getFontMetrics$();
 var ascent=fm.getAscent$();
@@ -84,7 +74,7 @@ g.drawString$S$I$I(this.sampleText, textXOffset + ((this.textGap/2|0)), ((height
 return width + this.textGap * 3;
 }, p$1);
 
-Clazz.newMeth(C$, 'paintSquares$java_awt_Graphics$I', function (g, offsetX) {
+Clazz.newMeth(C$, 'paintSquares$java_awt_Graphics$I',  function (g, offsetX) {
 var squareXOffset=offsetX;
 var color=this.getForeground$();
 g.setColor$java_awt_Color($I$(4).white);
@@ -128,4 +118,4 @@ return (this.squareSize * 3 + this.squareGap * 2);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

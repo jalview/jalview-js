@@ -1,35 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),I$=[[0,'org.jmol.c.STR']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Structure");
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),I$=[[0,'org.jmol.c.STR']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Structure");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.structureType=null;
-this.substructureType=null;
-this.structureID=null;
-this.serialID=0;
-this.strandCount=0;
-this.startSequenceNumber=0;
-this.startChainID=0;
-this.startChainStr=null;
-this.startInsertionCode='\0';
-this.endSequenceNumber=0;
-this.endChainID=0;
-this.endChainStr=null;
-this.endInsertionCode='\0';
-this.atomStartEnd=null;
-this.modelStartEnd=null;
-this.bsAll=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.startInsertionCode="\u0000";
 this.endInsertionCode="\u0000";
 this.atomStartEnd=Clazz.array(Integer.TYPE, [2]);
 this.modelStartEnd=Clazz.array(Integer.TYPE, -1, [-1, -1]);
-}, 1);
+},1);
+
+C$.$fields$=[['C',['startInsertionCode','endInsertionCode'],'I',['serialID','strandCount','startSequenceNumber','startChainID','endSequenceNumber','endChainID'],'S',['structureID','startChainStr','endChainStr'],'O',['structureType','org.jmol.c.STR','+substructureType','atomStartEnd','int[]','+modelStartEnd','bsAll','javajs.util.BS[]']]]
 
 Clazz.newMeth(C$, 'getHelixType$I', function (type) {
 switch (type) {
@@ -44,7 +25,7 @@ return $I$(1).HELIX;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$I$org_jmol_c_STR$org_jmol_c_STR$S$I$I$javajs_util_BSA', function (modelIndex, structureType, substructureType, structureID, serialID, strandCount, bsAll) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (bsAll != null ) {
 this.modelStartEnd=Clazz.array(Integer.TYPE, -1, [0, modelIndex]);
 this.bsAll=bsAll;
@@ -71,4 +52,4 @@ this.atomStartEnd[1]=iend;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:29 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

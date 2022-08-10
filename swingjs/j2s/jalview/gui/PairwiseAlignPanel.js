@@ -1,23 +1,17 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.Vector','jalview.analysis.AlignSeq','jalview.datamodel.SequenceI','jalview.gui.AlignFrame','jalview.datamodel.Alignment','jalview.gui.Desktop','jalview.util.MessageManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PairwiseAlignPanel", null, 'jalview.jbgui.GPairwiseAlignPanel');
+(function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.Vector','jalview.analysis.AlignSeq','jalview.datamodel.SequenceI','jalview.gui.AlignFrame','jalview.datamodel.Alignment','jalview.gui.Desktop','jalview.util.MessageManager']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PairwiseAlignPanel", null, 'jalview.jbgui.GPairwiseAlignPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.av=null;
-this.sequences=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_viewmodel_AlignmentViewport', function (viewport) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['av','jalview.viewmodel.AlignmentViewport','sequences','java.util.Vector']]]
+
+Clazz.newMeth(C$, 'c$$jalview_viewmodel_AlignmentViewport',  function (viewport) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.av=viewport;
-this.sequences=Clazz.new_($I$(1));
+this.sequences=Clazz.new_($I$(1,1));
 var selectionGroup=viewport.getSelectionGroup$();
 var isSelection=selectionGroup != null  && selectionGroup.getSize$() > 0 ;
 var view=viewport.getAlignmentView$Z(isSelection);
@@ -34,7 +28,7 @@ var count=seqs.length;
 var first=true;
 for (var i=1; i < count; i++) {
 for (var j=0; j < i; j++) {
-var as=Clazz.new_($I$(2).c$$jalview_datamodel_SequenceI$S$jalview_datamodel_SequenceI$S$S,[seqs[i], seqStrings[i], seqs[j], seqStrings[j], type]);
+var as=Clazz.new_($I$(2,1).c$$jalview_datamodel_SequenceI$S$jalview_datamodel_SequenceI$S$S,[seqs[i], seqStrings[i], seqs[j], seqStrings[j], type]);
 if (as.s1str.length$() == 0 || as.s2str.length$() == 0 ) {
 continue;
 }as.calcScoreMatrix$();
@@ -47,43 +41,43 @@ as.printAlignment$java_io_PrintStream(System.out);
 scores[i][j]=as.getMaxScore$() / as.getASeq1$().length;
 totscore=totscore + scores[i][j];
 this.textarea.append$S(as.getOutput$());
-this.sequences.add$TE(as.getAlignedSeq1$());
-this.sequences.add$TE(as.getAlignedSeq2$());
+this.sequences.add$O(as.getAlignedSeq1$());
+this.sequences.add$O(as.getAlignedSeq2$());
 }
 }
 if (count > 2) {
 this.printScoreMatrix$jalview_datamodel_SequenceIA$FAA$D(seqs, scores, totscore);
 }}, 1);
 
-Clazz.newMeth(C$, 'printScoreMatrix$jalview_datamodel_SequenceIA$FAA$D', function (seqs, scores, totscore) {
+Clazz.newMeth(C$, 'printScoreMatrix$jalview_datamodel_SequenceIA$FAA$D',  function (seqs, scores, totscore) {
 System.out.println$S("Pairwise alignment scaled similarity score matrix\n");
 for (var i=0; i < seqs.length; i++) {
-System.out.println$S(String.format$S$OA("%3d %s", [new Integer(i + 1), seqs[i].getDisplayId$Z(true)]));
+System.out.println$S(String.format$S$OA("%3d %s", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(i + 1), seqs[i].getDisplayId$Z(true)])));
 }
 System.out.print$S("\n ");
 for (var i=0; i < seqs.length; i++) {
-System.out.print$S(String.format$S$OA("%7d", [new Integer(i + 1)]));
+System.out.print$S(String.format$S$OA("%7d", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(i + 1)])));
 }
 System.out.println$();
 for (var i=0; i < seqs.length; i++) {
-System.out.print$S(String.format$S$OA("%3d", [new Integer(i + 1)]));
+System.out.print$S(String.format$S$OA("%3d", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(i + 1)])));
 for (var j=0; j < i; j++) {
-System.out.print$S(String.format$S$OA("%7.3f", [new Double(scores[i][j] / totscore)]));
+System.out.print$S(String.format$S$OA("%7.3f", Clazz.array(java.lang.Object, -1, [Double.valueOf$D(scores[i][j] / totscore)])));
 }
 System.out.println$();
 }
 System.out.println$S("\n");
 });
 
-Clazz.newMeth(C$, 'viewInEditorButton_actionPerformed$java_awt_event_ActionEvent', function (e) {
+Clazz.newMeth(C$, 'viewInEditorButton_actionPerformed$java_awt_event_ActionEvent',  function (e) {
 var seq=Clazz.array($I$(3), [this.sequences.size$()]);
 for (var i=0; i < this.sequences.size$(); i++) {
 seq[i]=this.sequences.elementAt$I(i);
 }
-var af=Clazz.new_($I$(4).c$$jalview_datamodel_AlignmentI$I$I,[Clazz.new_($I$(5).c$$jalview_datamodel_SequenceIA,[seq]), 700, 500]);
-$I$(6).addInternalFrame$javax_swing_JInternalFrame$S$I$I(af, $I$(7).getString$S("label.pairwise_aligned_sequences"), 700, 500);
+var af=Clazz.new_([Clazz.new_($I$(5,1).c$$jalview_datamodel_SequenceIA,[seq]), 700, 500],$I$(4,1).c$$jalview_datamodel_AlignmentI$I$I);
+$I$(6,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[af, $I$(7).getString$S("label.pairwise_aligned_sequences"), 700, 500]);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:35 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

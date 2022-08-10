@@ -1,35 +1,34 @@
-(function(){var P$=Clazz.newPackage("jalview.ws.ebi"),I$=[[0,'Error','jalview.util.MessageManager','java.io.File','StringBuilder','java.util.StringTokenizer','java.net.URL','jalview.util.Platform','java.io.BufferedReader','java.io.InputStreamReader','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EBIFetchClient");
+(function(){var P$=Clazz.newPackage("jalview.ws.ebi"),I$=[[0,'jalview.util.Platform','Error','jalview.util.MessageManager','java.io.File','StringBuilder','java.util.StringTokenizer','java.net.URL','java.io.BufferedReader','java.io.InputStreamReader','java.util.ArrayList','java.util.Locale']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EBIFetchClient");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'getSupportedDBs$', function () {
-throw Clazz.new_($I$(1).c$$S,[$I$(2).getString$S("error.not_yet_implemented")]);
+Clazz.newMeth(C$, 'getSupportedDBs$',  function () {
+throw Clazz.new_([$I$(3).getString$S("error.not_yet_implemented")],$I$(2,1).c$$S);
 });
 
-Clazz.newMeth(C$, 'getSupportedFormats$', function () {
-throw Clazz.new_($I$(1).c$$S,[$I$(2).getString$S("error.not_yet_implemented")]);
+Clazz.newMeth(C$, 'getSupportedFormats$',  function () {
+throw Clazz.new_([$I$(3).getString$S("error.not_yet_implemented")],$I$(2,1).c$$S);
 });
 
-Clazz.newMeth(C$, 'getSupportedStyles$', function () {
-throw Clazz.new_($I$(1).c$$S,[$I$(2).getString$S("error.not_yet_implemented")]);
+Clazz.newMeth(C$, 'getSupportedStyles$',  function () {
+throw Clazz.new_([$I$(3).getString$S("error.not_yet_implemented")],$I$(2,1).c$$S);
 });
 
-Clazz.newMeth(C$, 'fetchDataAsFile$S$S$S', function (ids, format, ext) {
+Clazz.newMeth(C$, 'fetchDataAsFile$S$S$S',  function (ids, format, ext) {
 var outFile=null;
 try {
-outFile=$I$(3).createTempFile$S$S("jalview", "." + ext);
+outFile=$I$(4).createTempFile$S$S("jalview", "." + ext);
 outFile.deleteOnExit$();
 this.fetchData$S$S$java_io_File(ids, format, outFile);
-if (outFile.length$() == 0) {
+if (Long.$eq(outFile.length$(),0 )) {
 outFile.delete$();
 return null;
 }} catch (ex) {
@@ -41,8 +40,8 @@ throw ex;
 return outFile;
 });
 
-Clazz.newMeth(C$, 'fetchData$S$S$java_io_File', function (ids, format, outFile) {
-var querystring=Clazz.new_($I$(4).c$$I,[ids.length$()]);
+Clazz.newMeth(C$, 'fetchData$S$S$java_io_File',  function (ids, format, outFile) {
+var querystring=Clazz.new_([ids.length$()],$I$(5,1).c$$I);
 var database=C$.parseIds$S$StringBuilder(ids, querystring);
 if (database == null ) {
 System.err.println$S("Invalid Query string : '" + ids + "'" );
@@ -52,9 +51,9 @@ return null;
 return (rslt != null  && rslt.length > 0  ? rslt : null);
 });
 
-Clazz.newMeth(C$, 'parseIds$S$StringBuilder', function (ids, queryString) {
+Clazz.newMeth(C$, 'parseIds$S$StringBuilder',  function (ids, queryString) {
 var database=null;
-var queries=Clazz.new_($I$(5).c$$S$S,[ids, ";"]);
+var queries=Clazz.new_($I$(6,1).c$$S$S,[ids, ";"]);
 var appending=queryString.length$() > 0;
 while (queries.hasMoreTokens$()){
 var query=queries.nextToken$();
@@ -72,23 +71,24 @@ appending=true;
 return database;
 }, 1);
 
-Clazz.newMeth(C$, 'fetchBatch$S$S$S$java_io_File', function (ids, database, format, outFile) {
+Clazz.newMeth(C$, 'fetchBatch$S$S$S$java_io_File',  function (ids, database, format, outFile) {
 var url=C$.buildUrl$S$S$S(ids, database, format);
 var is=null;
+var br=null;
 try {
-var rcall=Clazz.new_($I$(6).c$$S,[url]);
+var rcall=Clazz.new_($I$(7,1).c$$S,[url]);
 var conn=rcall.openConnection$();
 var responseCode=conn.getResponseCode$();
 if (responseCode == 200) {
 is=conn.getInputStream$();
 if (outFile != null ) {
-$I$(7).streamToFile$java_io_InputStream$java_io_File(is, outFile);
+$I$(1).streamToFile$java_io_InputStream$java_io_File(is, outFile);
 return null;
-}var br=Clazz.new_($I$(8).c$$java_io_Reader,[Clazz.new_($I$(9).c$$java_io_InputStream,[is])]);
+}br=Clazz.new_([Clazz.new_($I$(9,1).c$$java_io_InputStream,[is])],$I$(8,1).c$$java_io_Reader);
 var rtn;
-var arl=Clazz.new_($I$(10));
+var arl=Clazz.new_($I$(10,1));
 while ((rtn=br.readLine$()) != null ){
-arl.add$TE(rtn);
+arl.add$O(rtn);
 }
 return arl.toArray$();
 }System.err.println$S("Warning: response code " + responseCode + " for " + url );
@@ -119,17 +119,32 @@ if (Clazz.exceptionOf(e,"java.io.IOException")){
 throw e;
 }
 }
+}if (br != null ) {
+try {
+br.close$();
+} catch (e) {
+if (Clazz.exceptionOf(e,"java.io.IOException")){
+} else {
+throw e;
+}
+}
 }}
 return null;
 });
 
-Clazz.newMeth(C$, 'buildUrl$S$S$S', function (ids, database, format) {
+Clazz.newMeth(C$, 'buildUrl$S$S$S',  function (ids, database, format) {
 var url;
 if (database.equalsIgnoreCase$S("EMBL") || database.equalsIgnoreCase$S("EMBLCDS") ) {
-url="https://www.ebi.ac.uk/ena/data/view/" + ids.toLowerCase$() + (format != null  ? "&" + format : "") ;
+url="https://www.ebi.ac.uk/ena/browser/api/embl/" + ids.toLowerCase$java_util_Locale($I$(11).ROOT) + "?download=true&gzip=true" ;
 } else {
-url="https://www.ebi.ac.uk/Tools/dbfetch/dbfetch/" + database.toLowerCase$() + "/" + ids.toLowerCase$() + (format != null  ? "/" + format : "") ;
+url="https://www.ebi.ac.uk/Tools/dbfetch/dbfetch/" + database.toLowerCase$java_util_Locale($I$(11).ROOT) + "/" + ids.toLowerCase$java_util_Locale($I$(11).ROOT) + (format != null  ? "/" + format : "") ;
 }return url;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+{
+$I$(1).addJ2SDirectDatabaseCall$S("https://www.ebi.ac.uk/");
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

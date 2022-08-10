@@ -1,52 +1,33 @@
 (function(){var P$=Clazz.newPackage("javajs.util"),I$=[];
-var C$=Clazz.newClass(P$, "CompoundDocHeader");
+/*c*/var C$=Clazz.newClass(P$, "CompoundDocHeader");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cd=null;
-this.magicNumbers=null;
-this.uniqueID16=null;
-this.revNumber=0;
-this.verNumber=0;
-this.sectorPower=0;
-this.shortSectorPower=0;
-this.unused=null;
-this.nSATsectors=0;
-this.SID_DIR_start=0;
-this.minBytesStandardStream=0;
-this.SID_SSAT_start=0;
-this.nSSATsectors=0;
-this.SID_MSAT_next=0;
-this.nAdditionalMATsectors=0;
-this.MSAT0=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.magicNumbers=Clazz.array(Byte.TYPE, [8]);
 this.uniqueID16=Clazz.array(Byte.TYPE, [16]);
 this.unused=Clazz.array(Byte.TYPE, [10]);
 this.MSAT0=Clazz.array(Integer.TYPE, [109]);
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javajs_util_CompoundDocument', function (compoundDocument) {
-C$.$init$.apply(this);
+C$.$fields$=[['B',['revNumber','verNumber'],'I',['nSATsectors','SID_DIR_start','minBytesStandardStream','SID_SSAT_start','nSSATsectors','SID_MSAT_next','nAdditionalMATsectors'],'H',['sectorPower','shortSectorPower'],'O',['cd','javajs.util.CompoundDocument','magicNumbers','byte[]','+uniqueID16','+unused','MSAT0','int[]']]]
+
+Clazz.newMeth(C$, 'c$$javajs_util_CompoundDocument',  function (compoundDocument) {
+;C$.$init$.apply(this);
 this.cd=compoundDocument;
 }, 1);
 
-Clazz.newMeth(C$, 'readData$', function () {
+Clazz.newMeth(C$, 'readData$',  function () {
 try {
 this.cd.readByteArray$BA$I$I(this.magicNumbers, 0, 8);
 if ((this.magicNumbers[0] & 255) != 208 || (this.magicNumbers[1] & 255) != 207  || (this.magicNumbers[2] & 255) != 17  || (this.magicNumbers[3] & 255) != 224  || (this.magicNumbers[4] & 255) != 161  || (this.magicNumbers[5] & 255) != 177  || (this.magicNumbers[6] & 255) != 26  || (this.magicNumbers[7] & 255) != 225 ) return false;
 this.cd.readByteArray$BA$I$I(this.uniqueID16, 0, 16);
-this.revNumber=($b$[0] = this.cd.readByte$(), $b$[0]);
+this.revNumber=this.cd.readByte$();
 this.cd.readByte$();
-this.verNumber=($b$[0] = this.cd.readByte$(), $b$[0]);
+this.verNumber=this.cd.readByte$();
 this.cd.readByte$();
-var b1=($b$[0] = this.cd.readByte$(), $b$[0]);
-var b2=($b$[0] = this.cd.readByte$(), $b$[0]);
+var b1=this.cd.readByte$();
+var b2=this.cd.readByte$();
 this.cd.isBigEndian=(b1 == -1 && b2 == -2 );
 this.sectorPower=this.cd.readShort$();
 this.shortSectorPower=this.cd.readShort$();
@@ -71,8 +52,7 @@ throw e;
 }
 return true;
 });
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:25 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

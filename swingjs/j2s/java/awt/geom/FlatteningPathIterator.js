@@ -1,37 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'java.awt.geom.QuadCurve2D','java.awt.geom.CubicCurve2D']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FlatteningPathIterator", null, null, 'java.awt.geom.PathIterator');
+(function(){var P$=Clazz.newPackage("java.awt.geom"),p$1={},I$=[[0,'java.awt.geom.QuadCurve2D','java.awt.geom.CubicCurve2D']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FlatteningPathIterator", null, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.src=null;
-this.squareflat=0;
-this.limit=0;
-this.hold=null;
-this.curx=0;
-this.cury=0;
-this.movx=0;
-this.movy=0;
-this.holdType=0;
-this.holdEnd=0;
-this.holdIndex=0;
-this.levels=null;
-this.levelIndex=0;
-this.done=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.hold=Clazz.array(Double.TYPE, [14]);
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_geom_PathIterator$D', function (src, flatness) {
+C$.$fields$=[['Z',['done'],'D',['squareflat','curx','cury','movx','movy'],'I',['limit','holdType','holdEnd','holdIndex','levelIndex'],'O',['src','java.awt.geom.PathIterator','hold','double[]','levels','int[]']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_geom_PathIterator$D',  function (src, flatness) {
 C$.c$$java_awt_geom_PathIterator$D$I.apply(this, [src, flatness, 10]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_geom_PathIterator$D$I', function (src, flatness, limit) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_geom_PathIterator$D$I',  function (src, flatness, limit) {
+;C$.$init$.apply(this);
 if (flatness < 0.0 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["flatness must be >= 0"]);
 }if (limit < 0) {
@@ -43,23 +26,23 @@ this.levels=Clazz.array(Integer.TYPE, [limit + 1]);
 p$1.next$Z.apply(this, [false]);
 }, 1);
 
-Clazz.newMeth(C$, 'getFlatness$', function () {
+Clazz.newMeth(C$, 'getFlatness$',  function () {
 return Math.sqrt(this.squareflat);
 });
 
-Clazz.newMeth(C$, 'getRecursionLimit$', function () {
+Clazz.newMeth(C$, 'getRecursionLimit$',  function () {
 return this.limit;
 });
 
-Clazz.newMeth(C$, 'getWindingRule$', function () {
+Clazz.newMeth(C$, 'getWindingRule$',  function () {
 return this.src.getWindingRule$();
 });
 
-Clazz.newMeth(C$, 'isDone$', function () {
+Clazz.newMeth(C$, 'isDone$',  function () {
 return this.done;
 });
 
-Clazz.newMeth(C$, 'ensureHoldCapacity$I', function (want) {
+Clazz.newMeth(C$, 'ensureHoldCapacity$I',  function (want) {
 if (this.holdIndex - want < 0) {
 var have=this.hold.length - this.holdIndex;
 var newsize=this.hold.length + 24;
@@ -70,11 +53,11 @@ this.holdIndex+=24;
 this.holdEnd+=24;
 }});
 
-Clazz.newMeth(C$, 'next$', function () {
+Clazz.newMeth(C$, 'next$',  function () {
 p$1.next$Z.apply(this, [true]);
 });
 
-Clazz.newMeth(C$, 'next$Z', function (doNext) {
+Clazz.newMeth(C$, 'next$Z',  function (doNext) {
 var level;
 if (this.holdIndex >= this.holdEnd) {
 if (doNext) {
@@ -119,13 +102,13 @@ break;
 }this.ensureHoldCapacity$I(4);
 $I$(1).subdivide$DA$I$DA$I$DA$I(this.hold, this.holdIndex, this.hold, this.holdIndex - 4, this.hold, this.holdIndex);
 this.holdIndex-=4;
-level++;
+++level;
 this.levels[this.levelIndex]=level;
-this.levelIndex++;
+++this.levelIndex;
 this.levels[this.levelIndex]=level;
 }
 this.holdIndex+=4;
-this.levelIndex--;
+--this.levelIndex;
 break;
 case 3:
 if (this.holdIndex >= this.holdEnd) {
@@ -146,18 +129,18 @@ break;
 }this.ensureHoldCapacity$I(6);
 $I$(2).subdivide$DA$I$DA$I$DA$I(this.hold, this.holdIndex, this.hold, this.holdIndex - 6, this.hold, this.holdIndex);
 this.holdIndex-=6;
-level++;
+++level;
 this.levels[this.levelIndex]=level;
-this.levelIndex++;
+++this.levelIndex;
 this.levels[this.levelIndex]=level;
 }
 this.holdIndex+=6;
-this.levelIndex--;
+--this.levelIndex;
 break;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
+Clazz.newMeth(C$, 'currentSegment$FA',  function (coords) {
 if (this.isDone$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["flattening iterator out of bounds"]);
 }var type=this.holdType;
@@ -169,7 +152,7 @@ type=1;
 }}return type;
 });
 
-Clazz.newMeth(C$, 'currentSegment$DA', function (coords) {
+Clazz.newMeth(C$, 'currentSegment$DA',  function (coords) {
 if (this.isDone$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["flattening iterator out of bounds"]);
 }var type=this.holdType;
@@ -183,4 +166,4 @@ type=1;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:53 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

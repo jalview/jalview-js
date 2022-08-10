@@ -1,46 +1,47 @@
 (function(){var P$=Clazz.newPackage("javax.xml.datatype"),I$=[];
-var C$=Clazz.newClass(P$, "XMLGregorianCalendar", null, null, 'Cloneable');
+/*c*/var C$=Clazz.newClass(P$, "XMLGregorianCalendar", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'getMillisecond$', function () {
-var f=this.getFractionalSecond$();
-return (f == null  ? -2147483648 : f.movePointRight$I(3).intValue$());
-});
-
-Clazz.newMeth(C$, 'setTime$I$I$I', function (hour, minute, second) {
+Clazz.newMeth(C$, 'setTime$I$I$I',  function (hour, minute, second) {
 this.setTime$I$I$I$java_math_BigDecimal(hour, minute, second, null);
 });
 
-Clazz.newMeth(C$, 'setTime$I$I$I$java_math_BigDecimal', function (hour, minute, second, fractional) {
+Clazz.newMeth(C$, 'setTime$I$I$I$java_math_BigDecimal',  function (hour, minute, second, fractional) {
 this.setHour$I(hour);
 this.setMinute$I(minute);
 this.setSecond$I(second);
 this.setFractionalSecond$java_math_BigDecimal(fractional);
 });
 
-Clazz.newMeth(C$, 'setTime$I$I$I$I', function (hour, minute, second, millisecond) {
+Clazz.newMeth(C$, 'setTime$I$I$I$I',  function (hour, minute, second, millisecond) {
 this.setHour$I(hour);
 this.setMinute$I(minute);
 this.setSecond$I(second);
 this.setMillisecond$I(millisecond);
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'getMillisecond$',  function () {
+var fractionalSeconds=this.getFractionalSecond$();
+if (fractionalSeconds == null ) {
+return -2147483648;
+}return this.getFractionalSecond$().movePointRight$I(3).intValue$();
+});
+
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (obj == null  || !(Clazz.instanceOf(obj, "javax.xml.datatype.XMLGregorianCalendar")) ) {
 return false;
 }return this.compare$javax_xml_datatype_XMLGregorianCalendar(obj) == 0;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 var timezone=this.getTimezone$();
 if (timezone == -2147483648) {
 timezone=0;
@@ -50,8 +51,8 @@ gc=this.normalize$();
 }return gc.getYear$() + gc.getMonth$() + gc.getDay$() + gc.getHour$() + gc.getMinute$() + gc.getSecond$() ;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return this.toXMLFormat$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:55 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

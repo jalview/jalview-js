@@ -1,45 +1,35 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awt"),p$1={},I$=[[0,'java.beans.PropertyChangeSupport','java.awt.dnd.DropTarget','org.jmol.viewer.FileManager','javax.swing.JOptionPane','org.jmol.i18n.GT','javajs.util.SB','javajs.util.PT','org.jmol.util.Logger','java.awt.datatransfer.DataFlavor','java.beans.PropertyChangeEvent']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FileDropper", null, null, 'java.awt.dnd.DropTargetListener');
+(function(){var P$=Clazz.newPackage("org.jmol.awt"),p$1={},I$=[[0,'java.beans.PropertyChangeSupport','java.awt.dnd.DropTarget','org.jmol.viewer.FileManager','javax.swing.JOptionPane','org.jmol.i18n.GT','javajs.util.SB','javajs.util.PT','org.jmol.util.Logger','java.awt.datatransfer.DataFlavor','java.beans.PropertyChangeEvent']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FileDropper", null, null, 'java.awt.dnd.DropTargetListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.fd_oldFileName=null;
-this.fd_propSupport=null;
-this.vwr=null;
-this.pcl=null;
-this.statusListener=null;
-this.dropListener=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['fd_oldFileName'],'O',['fd_propSupport','java.beans.PropertyChangeSupport','vwr','org.jmol.viewer.Viewer','pcl','java.beans.PropertyChangeListener','statusListener','org.jmol.api.JmolStatusListener','dropListener','org.jmol.api.JmolDropEditor']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_api_JmolStatusListener$org_jmol_viewer_Viewer$org_jmol_api_JmolDropEditor', function (statusListener, vwr, dropListener) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.statusListener=statusListener;
 this.dropListener=dropListener;
 this.fd_oldFileName="";
-this.fd_propSupport=Clazz.new_($I$(1).c$$O,[this]);
+this.fd_propSupport=Clazz.new_($I$(1,1).c$$O,[this]);
 this.vwr=vwr;
 this.addPropertyChangeListener$java_beans_PropertyChangeListener((this.pcl=((P$.FileDropper$1||
-(function(){var C$=Clazz.newClass(P$, "FileDropper$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "FileDropper$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.beans.PropertyChangeListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (evt) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent', function (evt) {
 this.b$['org.jmol.awt.FileDropper'].doDrop$java_beans_PropertyChangeEvent.apply(this.b$['org.jmol.awt.FileDropper'], [evt]);
 });
 })()
-), Clazz.new_(P$.FileDropper$1.$init$, [this, null]))));
+), Clazz.new_(P$.FileDropper$1.$init$,[this, null]))));
 var display=vwr.display;
-display.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_($I$(2).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[display, this]));
+display.setDropTarget$java_awt_dnd_DropTarget(Clazz.new_($I$(2,1).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[display, this]));
 display.setEnabled$Z(true);
 }, 1);
 
@@ -63,7 +53,7 @@ if (!this.vwr.setStatusDragDropped$I$I$I$S(0, x, y, fname)) return;
 var flags=1;
 var isScript=$I$(3).isScriptType$S(fname);
 var isSurface=$I$(3).isSurfaceType$S(fname);
-switch (this.vwr.ms.ac > 0 && !isScript  && !isSurface  ? $I$(4).showConfirmDialog$java_awt_Component$O(null, $I$(5).$$S("Would you like to replace the current model with the selected model?")) : 0) {
+switch (this.vwr.ms.ac > 0 && !isScript  && !isSurface  ? $I$(4,"showConfirmDialog$java_awt_Component$O",[null, $I$(5).$$S("Would you like to replace the current model with the selected model?")]) : 0) {
 case 2:
 return;
 case 0:
@@ -82,7 +72,7 @@ if (data.indexOf$S("preferredWidthHeight") >= 0) this.vwr.sm.resizeInnerPanelStr
 }, p$1);
 
 Clazz.newMeth(C$, 'loadFiles$java_util_List', function (fileList) {
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 for (var i=0; i < fileList.size$(); ++i) {
 var f=fileList.get$I(i);
 var fname=f.getAbsolutePath$();
@@ -165,8 +155,8 @@ var flavor=df[i];
 var o=null;
 if (true) {
 $I$(8).info$S("df " + i + " flavor " + flavor );
-$I$(8).info$S("  class: " + flavor.getRepresentationClass$().getName$());
-$I$(8).info$S("  mime : " + flavor.getMimeType$());
+$I$(8,"info$S",["  class: " + flavor.getRepresentationClass$().getName$()]);
+$I$(8,"info$S",["  mime : " + flavor.getMimeType$()]);
 }if (flavor.getMimeType$().startsWith$S("text/uri-list") && flavor.getRepresentationClass$().getName$().equals$O("java.lang.String") ) {
 try {
 if (!isAccepted) dtde.acceptDrop$I(3);
@@ -181,7 +171,7 @@ throw e;
 }
 if (Clazz.instanceOf(o, "java.lang.String")) {
 if ($I$(8).debugging) {
-$I$(8).debug$S("  String: " + o.toString());
+$I$(8,"debug$S",["  String: " + o.toString()]);
 }p$1.loadFile$S$I$I.apply(this, [o.toString(), 0, 0]);
 dtde.getDropTargetContext$().dropComplete$Z(true);
 return;
@@ -204,7 +194,7 @@ $I$(8).debug$S("  String: " + content);
 }if (content.startsWith$S("file:/")) {
 p$1.loadFile$S$I$I.apply(this, [content, 0, 0]);
 } else {
-var pce=Clazz.new_($I$(10).c$$O$S$O$O,[this, "inline", this.fd_oldFileName, content]);
+var pce=Clazz.new_($I$(10,1).c$$O$S$O$O,[this, "inline", this.fd_oldFileName, content]);
 this.fd_propSupport.firePropertyChange$java_beans_PropertyChangeEvent(pce);
 }dtde.getDropTargetContext$().dropComplete$Z(true);
 return;
@@ -214,4 +204,4 @@ if (!isAccepted) dtde.rejectDrop$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:57 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

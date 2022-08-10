@@ -1,15 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.bspt"),I$=[[0,'javajs.util.Lst','org.jmol.bspt.Bspt','org.jmol.util.Point3fi','org.jmol.util.BSUtil','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PointIterator");
+(function(){var P$=Clazz.newPackage("org.jmol.bspt"),I$=[[0,'javajs.util.Lst','org.jmol.bspt.Bspt','org.jmol.util.Point3fi','org.jmol.util.BSUtil','javajs.util.P3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PointIterator");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'withinDistPoints$F$javajs_util_P3$javajs_util_P3A$javajs_util_P3A$OA', function (distance, pt, ap3, ap31, ret) {
-var pts=Clazz.new_($I$(1));
-var bspt=Clazz.new_($I$(2).c$$I$I,[3, 0]);
+var pts=Clazz.new_($I$(1,1));
+var bspt=Clazz.new_($I$(2,1).c$$I$I,[3, 0]);
 var iter;
 if (pt != null  && Float.isNaN$F(pt.x) ) {
 var pt3=Clazz.array($I$(3), [ap3.length]);
@@ -17,7 +16,7 @@ var p;
 for (var i=pt3.length; --i >= 0; ) {
 var p3=ap3[i];
 if (p3 == null ) return 0;
-p=Clazz.new_($I$(3));
+p=Clazz.new_($I$(3,1));
 p.setT$javajs_util_T3(p3);
 p.i=i;
 pt3[i]=p;
@@ -34,7 +33,7 @@ var pt2=iter.nextElement$();
 if (bsp.get$I(pt2.i) && pt2.distanceSquared$javajs_util_T3(p) <= d2   && (++n > 1) ) bsp.clear$I(pt2.i);
 }
 }
-for (var i=bsp.nextSetBit$I(0); i >= 0; i=bsp.nextSetBit$I(i + 1)) pts.addLast$TV($I$(5).newP$javajs_util_T3(pt3[i]));
+for (var i=bsp.nextSetBit$I(0); i >= 0; i=bsp.nextSetBit$I(i + 1)) pts.addLast$O($I$(5).newP$javajs_util_T3(pt3[i]));
 
 ret[0]=pts;
 return 1073742001;
@@ -74,7 +73,7 @@ iter.initialize$javajs_util_T3$F$Z(pt, distance, false);
 var d2=distance * distance;
 while (iter.hasMoreElements$()){
 var pt2=iter.nextElement$();
-if (pt2.distanceSquared$javajs_util_T3(pt) <= d2 ) pts.addLast$TV(pt2);
+if (pt2.distanceSquared$javajs_util_T3(pt) <= d2 ) pts.addLast$O(pt2);
 }
 iter.release$();
 ret[0]=pts;
@@ -83,4 +82,4 @@ return 1073742001;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:31 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,42 +1,27 @@
-(function(){var P$=Clazz.newPackage("org.jmol.i18n"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.i18n.Resource','org.jmol.util.Logger','java.text.MessageFormat','javajs.util.PT','org.jmol.i18n.Language']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GT", null, null, 'org.jmol.api.Translator');
-C$.ignoreApplicationBundle=false;
-C$.getTextWrapper=null;
-C$.languageList=null;
-C$.allowDebug=false;
-C$.vwr=null;
-C$.htLanguages=null;
+(function(){var P$=Clazz.newPackage("org.jmol.i18n"),p$1={},I$=[[0,'java.util.Hashtable','org.jmol.i18n.Resource','org.jmol.util.Logger','java.text.MessageFormat','javajs.util.PT','org.jmol.i18n.Language']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GT", null, null, 'org.jmol.api.Translator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.ignoreApplicationBundle=false;
-C$.allowDebug=false;
-C$.htLanguages=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.resources=null;
-this.resourceCount=0;
-this.doTranslate=false;
-this.language=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.resources=null;
 this.resourceCount=0;
 this.doTranslate=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['doTranslate'],'I',['resourceCount'],'S',['language'],'O',['resources','org.jmol.i18n.Resource[]']]
+,['Z',['ignoreApplicationBundle','allowDebug'],'O',['getTextWrapper','org.jmol.i18n.GT','languageList','org.jmol.i18n.Language[]','vwr','org.jmol.viewer.Viewer','htLanguages','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, ['translate$S','translate$'], function (s) {
+Clazz.newMeth(C$, 'translate$S', function (s) {
 return C$.$$S(s);
 });
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$S', function (vwr, langCode) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 
 {}
 this.resources=null;
@@ -124,7 +109,7 @@ Clazz.newMeth(C$, 'o$S$O', function (s, o) {
 if (Clazz.instanceOf(o, Clazz.array(java.lang.Object, -1))) {
 if ((o).length != 1) return $I$(4).format$S$OA(s, o);
 o=(o)[0];
-}return $I$(5).rep$S$S$S(s, "{0}", o.toString());
+}return $I$(5,"rep$S$S$S",[s, "{0}", o.toString()]);
 }, 1);
 
 Clazz.newMeth(C$, 'i$S$I', function (s, n) {
@@ -154,8 +139,8 @@ Clazz.newMeth(C$, 'getSupported$S', function (code) {
 if (code == null ) return null;
 var s=C$.htLanguages.get$O(code);
 if (s != null ) return (s.length$() == 0 ? null : s);
-s=$I$(6).getSupported$org_jmol_i18n_LanguageA$S(C$.getLanguageList$org_jmol_i18n_GT(this), code);
-C$.htLanguages.put$TK$TV(code, (s == null  ? "" : s));
+s=$I$(6,"getSupported$org_jmol_i18n_LanguageA$S",[C$.getLanguageList$org_jmol_i18n_GT(this), code]);
+C$.htLanguages.put$O$O(code, (s == null  ? "" : s));
 return s;
 }, p$1);
 
@@ -202,5 +187,11 @@ if (s.startsWith$S("[")) s=s.substring$I(s.indexOf$S("]") + 1);
  else if (s.endsWith$S("]")) s=s.substring$I$I(0, s.indexOf$S("["));
 }return s;
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.ignoreApplicationBundle=false;
+C$.allowDebug=false;
+C$.htLanguages=Clazz.new_($I$(1,1));
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

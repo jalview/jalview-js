@@ -1,0 +1,24 @@
+package jalview.javascript.web;
+
+import com.sun.jersey.api.client.config.ClientConfig;
+
+/**
+ * A JavaScript-only proxy for com.sun.jersey.api.client.Client
+ * 
+ * @author hansonr
+ *
+ */
+public class Client
+{
+
+  public static Client create(ClientConfig clientConfig)
+  {
+    return new Client();
+  }
+
+  public WebResource resource(String endpoint)
+  {
+    return new WebResource(endpoint);
+  }
+
+}

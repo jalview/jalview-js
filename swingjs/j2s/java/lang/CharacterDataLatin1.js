@@ -1,10 +1,158 @@
 (function(){var P$=java.lang,I$=[];
-var C$=Clazz.newClass(P$, "CharacterDataLatin1", null, 'CharacterData');
-C$.sharpsMap=null;
-C$.instance=null;
-C$.A=null;
+/*c*/var C$=Clazz.newClass(P$, "CharacterDataLatin1", null, 'CharacterData');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['sharpsMap','char[]','instance','CharacterDataLatin1','A','int[]']]]
+
+Clazz.newMeth(C$, 'getProperties$I',  function (ch) {
+var offset=String.fromCharCode(ch);
+var props=C$.A[offset.$c()];
+return props;
+});
+
+Clazz.newMeth(C$, 'getType$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return (props & 31);
+});
+
+Clazz.newMeth(C$, 'isJavaIdentifierStart$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return ((props & 28672) >= 20480);
+});
+
+Clazz.newMeth(C$, 'isJavaIdentifierPart$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return ((props & 12288) != 0);
+});
+
+Clazz.newMeth(C$, 'isUnicodeIdentifierStart$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return ((props & 28672) == 28672);
+});
+
+Clazz.newMeth(C$, 'isUnicodeIdentifierPart$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return ((props & 4096) != 0);
+});
+
+Clazz.newMeth(C$, 'isIdentifierIgnorable$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return ((props & 28672) == 4096);
+});
+
+Clazz.newMeth(C$, 'toLowerCase$I',  function (ch) {
+var mapChar=ch;
+var val=this.getProperties$I(ch);
+if (((val & 131072) != 0) && ((val & 133955584) != 133955584) ) {
+var offset=val << 5 >> (23);
+mapChar=ch + offset;
+}return mapChar;
+});
+
+Clazz.newMeth(C$, 'toUpperCase$I',  function (ch) {
+var mapChar=ch;
+var val=this.getProperties$I(ch);
+if ((val & 65536) != 0) {
+if ((val & 133955584) != 133955584) {
+var offset=val << 5 >> (23);
+mapChar=ch - offset;
+} else if (ch == 181) {
+mapChar=924;
+}}return mapChar;
+});
+
+Clazz.newMeth(C$, 'toTitleCase$I',  function (ch) {
+return this.toUpperCase$I(ch);
+});
+
+Clazz.newMeth(C$, 'digit$I$I',  function (ch, radix) {
+var value=-1;
+if (radix >= 2 && radix <= 36 ) {
+var val=this.getProperties$I(ch);
+var kind=val & 31;
+if (kind == 9) {
+value=ch + ((val & 992) >> 5) & 31;
+} else if ((val & 3072) == 3072) {
+value=(ch + ((val & 992) >> 5) & 31) + 10;
+}}return (value < radix) ? value : -1;
+});
+
+Clazz.newMeth(C$, 'getNumericValue$I',  function (ch) {
+var val=this.getProperties$I(ch);
+var retval=-1;
+switch (val & 3072) {
+default:
+case (0):
+retval=-1;
+break;
+case (1024):
+retval=ch + ((val & 992) >> 5) & 31;
+break;
+case (2048):
+retval=-2;
+break;
+case (3072):
+retval=(ch + ((val & 992) >> 5) & 31) + 10;
+break;
+}
+return retval;
+});
+
+Clazz.newMeth(C$, 'isWhitespace$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return ((props & 28672) == 16384);
+});
+
+Clazz.newMeth(C$, 'getDirectionality$I',  function (ch) {
+var val=this.getProperties$I(ch);
+var directionality=($b$[0] = ((val & 2013265920) >> 27), $b$[0]);
+if (directionality == 15) {
+directionality=($b$[0] = -1, $b$[0]);
+}return directionality;
+});
+
+Clazz.newMeth(C$, 'isMirrored$I',  function (ch) {
+var props=this.getProperties$I(ch);
+return ((props & -2147483648) != 0);
+});
+
+Clazz.newMeth(C$, 'toUpperCaseEx$I',  function (ch) {
+var mapChar=ch;
+var val=this.getProperties$I(ch);
+if ((val & 65536) != 0) {
+if ((val & 133955584) != 133955584) {
+var offset=val << 5 >> (23);
+mapChar=ch - offset;
+} else {
+switch (ch) {
+case 181:
+mapChar=924;
+break;
+default:
+mapChar=-1;
+break;
+}
+}}return mapChar;
+});
+
+Clazz.newMeth(C$, 'toUpperCaseCharArray$I',  function (ch) {
+var upperMap=Clazz.array(Character.TYPE, -1, [String.fromCharCode(ch)]);
+if (ch == 223) {
+upperMap=C$.sharpsMap;
+}return upperMap;
+});
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
+}, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
 C$.sharpsMap=Clazz.array(Character.TYPE, -1, ["S", "S"]);
 C$.instance=Clazz.new_(C$);
 C$.A=Clazz.array(Integer.TYPE, [256]);
@@ -19,153 +167,7 @@ var entry=(data[i++]).$c() << 16;
 C$.A[j++]=entry | (data[i++]).$c();
 }
 }};
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
-
-Clazz.newMeth(C$, 'getProperties$I', function (ch) {
-var offset=String.fromCharCode(ch);
-var props=C$.A[offset.$c()];
-return props;
-});
-
-Clazz.newMeth(C$, 'getType$I', function (ch) {
-var props=this.getProperties$I(ch);
-return (props & 31);
-});
-
-Clazz.newMeth(C$, 'isJavaIdentifierStart$I', function (ch) {
-var props=this.getProperties$I(ch);
-return ((props & 28672) >= 20480);
-});
-
-Clazz.newMeth(C$, 'isJavaIdentifierPart$I', function (ch) {
-var props=this.getProperties$I(ch);
-return ((props & 12288) != 0);
-});
-
-Clazz.newMeth(C$, 'isUnicodeIdentifierStart$I', function (ch) {
-var props=this.getProperties$I(ch);
-return ((props & 28672) == 28672);
-});
-
-Clazz.newMeth(C$, 'isUnicodeIdentifierPart$I', function (ch) {
-var props=this.getProperties$I(ch);
-return ((props & 4096) != 0);
-});
-
-Clazz.newMeth(C$, 'isIdentifierIgnorable$I', function (ch) {
-var props=this.getProperties$I(ch);
-return ((props & 28672) == 4096);
-});
-
-Clazz.newMeth(C$, 'toLowerCase$I', function (ch) {
-var mapChar=ch;
-var val=this.getProperties$I(ch);
-if (((val & 131072) != 0) && ((val & 133955584) != 133955584) ) {
-var offset=val << 5 >> (23);
-mapChar=ch + offset;
-}return mapChar;
-});
-
-Clazz.newMeth(C$, 'toUpperCase$I', function (ch) {
-var mapChar=ch;
-var val=this.getProperties$I(ch);
-if ((val & 65536) != 0) {
-if ((val & 133955584) != 133955584) {
-var offset=val << 5 >> (23);
-mapChar=ch - offset;
-} else if (ch == 181) {
-mapChar=924;
-}}return mapChar;
-});
-
-Clazz.newMeth(C$, 'toTitleCase$I', function (ch) {
-return this.toUpperCase$I(ch);
-});
-
-Clazz.newMeth(C$, 'digit$I$I', function (ch, radix) {
-var value=-1;
-if (radix >= 2 && radix <= 36 ) {
-var val=this.getProperties$I(ch);
-var kind=val & 31;
-if (kind == 9) {
-value=ch + ((val & 992) >> 5) & 31;
-} else if ((val & 3072) == 3072) {
-value=(ch + ((val & 992) >> 5) & 31) + 10;
-}}return (value < radix) ? value : -1;
-});
-
-Clazz.newMeth(C$, 'getNumericValue$I', function (ch) {
-var val=this.getProperties$I(ch);
-var retval=-1;
-switch (val & 3072) {
-default:
-case (0x00000000):
-retval=-1;
-break;
-case (0x00000400):
-retval=ch + ((val & 992) >> 5) & 31;
-break;
-case (0x00000800):
-retval=-2;
-break;
-case (0x00000C00):
-retval=(ch + ((val & 992) >> 5) & 31) + 10;
-break;
-}
-return retval;
-});
-
-Clazz.newMeth(C$, 'isWhitespace$I', function (ch) {
-var props=this.getProperties$I(ch);
-return ((props & 28672) == 16384);
-});
-
-Clazz.newMeth(C$, 'getDirectionality$I', function (ch) {
-var val=this.getProperties$I(ch);
-var directionality=($b$[0] = (((val & 2013265920) >> 27)|0), $b$[0]);
-if (directionality == 15) {
-directionality=($b$[0] = -1, $b$[0]);
-}return $b$[0] = directionality, $b$[0];
-});
-
-Clazz.newMeth(C$, 'isMirrored$I', function (ch) {
-var props=this.getProperties$I(ch);
-return ((props & -2147483648) != 0);
-});
-
-Clazz.newMeth(C$, 'toUpperCaseEx$I', function (ch) {
-var mapChar=ch;
-var val=this.getProperties$I(ch);
-if ((val & 65536) != 0) {
-if ((val & 133955584) != 133955584) {
-var offset=val << 5 >> (23);
-mapChar=ch - offset;
-} else {
-switch (ch) {
-case 0x00B5:
-mapChar=924;
-break;
-default:
-mapChar=-1;
-break;
-}
-}}return mapChar;
-});
-
-Clazz.newMeth(C$, 'toUpperCaseCharArray$I', function (ch) {
-var upperMap=Clazz.array(Character.TYPE, -1, [String.fromCharCode(ch)]);
-if (ch == 223) {
-upperMap=C$.sharpsMap;
-}return upperMap;
-});
-
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-}, 1);
-C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:57 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

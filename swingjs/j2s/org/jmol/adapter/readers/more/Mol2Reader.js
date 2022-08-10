@@ -1,17 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.adapter.smarter.Bond']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Mol2Reader", null, 'org.jmol.adapter.readers.more.ForceFieldReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'javajs.util.PT','org.jmol.adapter.smarter.Bond']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Mol2Reader", null, 'org.jmol.adapter.readers.more.ForceFieldReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nAtoms=0;
-this.ac=0;
-this.isPDB=false;
-this.lastSequenceNumber=0;
-this.chainID=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nAtoms=0;
@@ -19,7 +9,9 @@ this.ac=0;
 this.isPDB=false;
 this.lastSequenceNumber=2147483647;
 this.chainID=64;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isPDB'],'I',['nAtoms','ac','lastSequenceNumber','chainID']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.setUserAtomTypes$();
@@ -85,7 +77,7 @@ if (ac == 0) return;
 var i0=this.asc.ac;
 for (var i=0; i < ac; ++i) {
 var atom=this.asc.addNewAtom$();
-var tokens=$I$(1).getTokens$S(this.rd$());
+var tokens=$I$(1,"getTokens$S",[this.rd$()]);
 var atomType=tokens[5];
 var name=tokens[1];
 var pt=atomType.indexOf$S(".");
@@ -94,7 +86,7 @@ atom.elementSymbol=atomType.substring$I$I(0, pt);
 } else {
 atom.atomName=name;
 atom.elementSymbol=atom.getElementSymbol$();
-}atom.atomName=name + '\0' + atomType ;
+}atom.atomName=name + '\u0000' + atomType ;
 atom.set$F$F$F(this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3]), this.parseFloatStr$S(tokens[4]));
 if (tokens.length > 6) {
 atom.sequenceNumber=this.parseIntStr$S(tokens[6]);
@@ -147,12 +139,12 @@ return ++pt;
 
 Clazz.newMeth(C$, 'readBonds$I', function (bondCount) {
 for (var i=0; i < bondCount; ++i) {
-var tokens=$I$(1).getTokens$S(this.rd$());
+var tokens=$I$(1,"getTokens$S",[this.rd$()]);
 var atomIndex1=this.parseIntStr$S(tokens[1]);
 var atomIndex2=this.parseIntStr$S(tokens[2]);
 var order=this.parseIntStr$S(tokens[3]);
 if (order == -2147483648) order=(tokens[3].equals$O("ar") ? 515 : tokens[3].equals$O("am") ? 1 : 17);
-this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(2).c$$I$I$I,[this.nAtoms + atomIndex1 - 1, this.nAtoms + atomIndex2 - 1, order]));
+this.asc.addBond$org_jmol_adapter_smarter_Bond(Clazz.new_($I$(2,1).c$$I$I$I,[this.nAtoms + atomIndex1 - 1, this.nAtoms + atomIndex2 - 1, order]));
 }
 }, p$1);
 
@@ -169,7 +161,7 @@ if (tokens.length < 6) return;
 var name="";
 for (var i=6; i < tokens.length; i++) name += " " + tokens[i];
 
-if (name == "") name=" P1";
+if (name === "" ) name=" P1";
  else name += " *";
 name=name.substring$I(1);
 this.setSpaceGroupName$S(name);
@@ -183,4 +175,4 @@ for (var i=0; i < this.ac; ++i) this.setAtomCoord$org_jmol_adapter_smarter_Atom(
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

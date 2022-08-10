@@ -1,44 +1,36 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.LookAndFeel','javax.swing.JComponent','javax.swing.text.PlainDocument','java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JTextArea", null, 'javax.swing.text.JTextComponent');
+(function(){var P$=Clazz.newPackage("javax.swing"),I$=[[0,'javax.swing.text.PlainDocument','java.awt.Dimension']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JTextArea", null, 'javax.swing.text.JTextComponent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.rows=0;
-this.columns=0;
-this.columnWidth=0;
-this.rowHeight=0;
-this.wrap=false;
-this.word=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['Z',['wrap','word'],'I',['rows','columns','columnWidth','rowHeight']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$javax_swing_text_Document$S$I$I.apply(this, [null, null, 0, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (text) {
+Clazz.newMeth(C$, 'c$$S',  function (text) {
 C$.c$$javax_swing_text_Document$S$I$I.apply(this, [null, text, 0, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I', function (rows, columns) {
+Clazz.newMeth(C$, 'c$$I$I',  function (rows, columns) {
 C$.c$$javax_swing_text_Document$S$I$I.apply(this, [null, null, rows, columns]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$I$I', function (text, rows, columns) {
+Clazz.newMeth(C$, 'c$$S$I$I',  function (text, rows, columns) {
 C$.c$$javax_swing_text_Document$S$I$I.apply(this, [null, text, rows, columns]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_Document', function (doc) {
+Clazz.newMeth(C$, 'c$$javax_swing_text_Document',  function (doc) {
 C$.c$$javax_swing_text_Document$S$I$I.apply(this, [doc, null, 0, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_Document$S$I$I', function (doc, text, rows, columns) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$javax_swing_text_Document$S$I$I',  function (doc, text, rows, columns) {
+Clazz.super_(C$, this);
+this.setFocusTraversalKeysEnabled$Z(false);
 this.rows=rows;
 this.columns=columns;
 if (doc == null ) {
@@ -51,19 +43,17 @@ this.select$I$I(0, 0);
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["rows: " + rows]);
 }if (columns < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["columns: " + columns]);
-}$I$(1).installProperty$javax_swing_JComponent$S$O(this, "focusTraversalKeysForward", $I$(2).getManagingFocusForwardTraversalKeys$());
-$I$(1).installProperty$javax_swing_JComponent$S$O(this, "focusTraversalKeysBackward", $I$(2).getManagingFocusBackwardTraversalKeys$());
-}, 1);
+}}, 1);
 
-Clazz.newMeth(C$, 'getUIClassID$', function () {
+Clazz.newMeth(C$, 'getUIClassID$',  function () {
 return "TextAreaUI";
 });
 
-Clazz.newMeth(C$, 'createDefaultModel$', function () {
-return Clazz.new_($I$(3));
+Clazz.newMeth(C$, 'createDefaultModel$',  function () {
+return Clazz.new_($I$(1,1));
 });
 
-Clazz.newMeth(C$, 'setTabSize$I', function (size) {
+Clazz.newMeth(C$, 'setTabSize$I',  function (size) {
 var doc=this.getDocument$();
 if (doc != null ) {
 var old=this.getTabSize$();
@@ -71,7 +61,7 @@ doc.putProperty$O$O("tabSize",  new Integer(size));
 this.firePropertyChange$S$I$I("tabSize", old, size);
 }});
 
-Clazz.newMeth(C$, 'getTabSize$', function () {
+Clazz.newMeth(C$, 'getTabSize$',  function () {
 var size=8;
 var doc=this.getDocument$();
 if (doc != null ) {
@@ -81,27 +71,27 @@ size=i.intValue$();
 }}return size;
 });
 
-Clazz.newMeth(C$, 'setLineWrap$Z', function (wrap) {
+Clazz.newMeth(C$, 'setLineWrap$Z',  function (wrap) {
 var old=this.wrap;
 this.wrap=wrap;
 this.firePropertyChange$S$Z$Z("lineWrap", old, wrap);
 });
 
-Clazz.newMeth(C$, 'getLineWrap$', function () {
+Clazz.newMeth(C$, 'getLineWrap$',  function () {
 return this.wrap;
 });
 
-Clazz.newMeth(C$, 'setWrapStyleWord$Z', function (word) {
+Clazz.newMeth(C$, 'setWrapStyleWord$Z',  function (word) {
 var old=this.word;
 this.word=word;
 this.firePropertyChange$S$Z$Z("wrapStyleWord", old, word);
 });
 
-Clazz.newMeth(C$, 'getWrapStyleWord$', function () {
+Clazz.newMeth(C$, 'getWrapStyleWord$',  function () {
 return this.word;
 });
 
-Clazz.newMeth(C$, 'getLineOfOffset$I', function (offset) {
+Clazz.newMeth(C$, 'getLineOfOffset$I',  function (offset) {
 var doc=this.getDocument$();
 if (offset < 0) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Can\'t translate offset to line", -1]);
@@ -112,12 +102,12 @@ var map=this.getDocument$().getDefaultRootElement$();
 return map.getElementIndex$I(offset);
 }});
 
-Clazz.newMeth(C$, 'getLineCount$', function () {
+Clazz.newMeth(C$, 'getLineCount$',  function () {
 var map=this.getDocument$().getDefaultRootElement$();
 return map.getElementCount$();
 });
 
-Clazz.newMeth(C$, 'getLineStartOffset$I', function (line) {
+Clazz.newMeth(C$, 'getLineStartOffset$I',  function (line) {
 var lineCount=this.getLineCount$();
 if (line < 0) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Negative line", -1]);
@@ -129,7 +119,7 @@ var lineElem=map.getElement$I(line);
 return lineElem.getStartOffset$();
 }});
 
-Clazz.newMeth(C$, 'getLineEndOffset$I', function (line) {
+Clazz.newMeth(C$, 'getLineEndOffset$I',  function (line) {
 var lineCount=this.getLineCount$();
 if (line < 0) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Negative line", -1]);
@@ -142,7 +132,7 @@ var endOffset=lineElem.getEndOffset$();
 return ((line == lineCount - 1) ? (endOffset - 1) : endOffset);
 }});
 
-Clazz.newMeth(C$, 'insert$S$I', function (str, pos) {
+Clazz.newMeth(C$, 'insert$S$I',  function (str, pos) {
 var doc=this.getDocument$();
 if (doc != null ) {
 try {
@@ -156,7 +146,7 @@ throw e;
 }
 }});
 
-Clazz.newMeth(C$, 'append$S', function (str) {
+Clazz.newMeth(C$, 'append$S',  function (str) {
 var doc=this.getDocument$();
 if (doc != null ) {
 try {
@@ -169,14 +159,14 @@ throw e;
 }
 }});
 
-Clazz.newMeth(C$, 'replaceRange$S$I$I', function (str, start, end) {
+Clazz.newMeth(C$, 'replaceRange$S$I$I',  function (str, start, end) {
 if (end < start) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["end before start"]);
 }var doc=this.getDocument$();
 if (doc != null ) {
 try {
-if (Clazz.instanceOf(doc, "swingjs.api.JSMinimalAbstractDocument")) {
-(doc).replace$I$I$S$javax_swing_text_AttributeSet(start, end - start, str, null);
+if (Clazz.instanceOf(doc, "javax.swing.text.AbstractDocument")) {
+(doc).replace$I$I$S$javax_swing_text_AttributeSet$javax_swing_text_JTextComponent(start, end - start, str, null, this);
 } else {
 doc.remove$I$I(start, end - start);
 doc.insertString$I$S$javax_swing_text_AttributeSet(start, str, null);
@@ -189,11 +179,11 @@ throw e;
 }
 }});
 
-Clazz.newMeth(C$, 'getRows$', function () {
+Clazz.newMeth(C$, 'getRows$',  function () {
 return this.rows;
 });
 
-Clazz.newMeth(C$, 'setRows$I', function (rows) {
+Clazz.newMeth(C$, 'setRows$I',  function (rows) {
 var oldVal=this.rows;
 if (rows < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["rows less than zero."]);
@@ -202,18 +192,18 @@ this.rows=rows;
 this.invalidate$();
 }});
 
-Clazz.newMeth(C$, 'getRowHeight$', function () {
+Clazz.newMeth(C$, 'getRowHeight$',  function () {
 if (this.rowHeight == 0) {
 var metrics=this.getFontMetrics$java_awt_Font(this.getFont$());
 this.rowHeight=metrics.getHeight$();
 }return this.rowHeight;
 });
 
-Clazz.newMeth(C$, 'getColumns$', function () {
+Clazz.newMeth(C$, 'getColumns$',  function () {
 return this.columns;
 });
 
-Clazz.newMeth(C$, 'setColumns$I', function (columns) {
+Clazz.newMeth(C$, 'setColumns$I',  function (columns) {
 var oldVal=this.columns;
 if (columns < 0) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["columns less than zero."]);
@@ -222,22 +212,22 @@ this.columns=columns;
 this.invalidate$();
 }});
 
-Clazz.newMeth(C$, 'getColumnWidth$', function () {
+Clazz.newMeth(C$, 'getColumnWidth$',  function () {
 if (this.columnWidth == 0) {
 var metrics=this.getFontMetrics$java_awt_Font(this.getFont$());
 this.columnWidth=metrics.charWidth$C("m");
 }return this.columnWidth;
 });
 
-Clazz.newMeth(C$, 'getPreferredSize$', function () {
+Clazz.newMeth(C$, 'getPreferredSize$',  function () {
 return this.getSizeJS$java_awt_Dimension$I$I$I(this.getPrefSizeJComp$(), 400, this.rows, this.columns);
 });
 
-Clazz.newMeth(C$, 'getSizeJS$java_awt_Dimension$I$I$I', function (d, n, rows, columns) {
+Clazz.newMeth(C$, 'getSizeJS$java_awt_Dimension$I$I$I',  function (d, n, rows, columns) {
 var w=10;
 var h=10;
 if (d == null ) {
-d=Clazz.new_($I$(4).c$$I$I,[n, n]);
+d=Clazz.new_($I$(2,1).c$$I$I,[n, n]);
 } else {
 w=d.width;
 h=d.height;
@@ -249,37 +239,37 @@ d.height=Math.max(h, rows * this.getRowHeight$() + insets.top + insets.bottom);
 }return d;
 });
 
-Clazz.newMeth(C$, 'getJ2SWidth$I', function (columns) {
+Clazz.newMeth(C$, 'getJ2SWidth$I',  function (columns) {
 var insets=this.getInsets$();
 return columns * this.getColumnWidth$() + insets.left + insets.right;
 });
 
-Clazz.newMeth(C$, 'setFont$java_awt_Font', function (f) {
+Clazz.newMeth(C$, 'setFont$java_awt_Font',  function (f) {
 C$.superclazz.prototype.setFont$java_awt_Font.apply(this, [f]);
 this.rowHeight=0;
 this.columnWidth=0;
 });
 
-Clazz.newMeth(C$, 'paramString$', function () {
+Clazz.newMeth(C$, 'paramString$',  function () {
 var wrapString=(this.wrap ? "true" : "false");
 var wordString=(this.word ? "true" : "false");
 return C$.superclazz.prototype.paramString$.apply(this, []) + ",colums=" + this.columns + ",columWidth=" + this.columnWidth + ",rows=" + this.rows + ",rowHeight=" + this.rowHeight + ",word=" + wordString + ",wrap=" + wrapString ;
 });
 
-Clazz.newMeth(C$, 'getScrollableTracksViewportWidth$', function () {
+Clazz.newMeth(C$, 'getScrollableTracksViewportWidth$',  function () {
 return (this.wrap) ? true : C$.superclazz.prototype.getScrollableTracksViewportWidth$.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'getPreferredScrollableViewportSize$', function () {
+Clazz.newMeth(C$, 'getPreferredScrollableViewportSize$',  function () {
 var size=C$.superclazz.prototype.getPreferredScrollableViewportSize$.apply(this, []);
-size=(size == null ) ? Clazz.new_($I$(4).c$$I$I,[400, 400]) : size;
+size=(size == null ) ? Clazz.new_($I$(2,1).c$$I$I,[400, 400]) : size;
 var insets=this.getInsets$();
 size.width=(this.columns == 0) ? size.width : this.columns * this.getColumnWidth$() + insets.left + insets.right;
 size.height=(this.rows == 0) ? size.height : this.rows * this.getRowHeight$() + insets.top + insets.bottom;
 return size;
 });
 
-Clazz.newMeth(C$, 'getScrollableUnitIncrement$java_awt_Rectangle$I$I', function (visibleRect, orientation, direction) {
+Clazz.newMeth(C$, 'getScrollableUnitIncrement$java_awt_Rectangle$I$I',  function (visibleRect, orientation, direction) {
 switch (orientation) {
 case 1:
 return this.getRowHeight$();
@@ -289,5 +279,11 @@ default:
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid orientation: " + orientation]);
 }
 });
+
+Clazz.newMeth(C$, 'scrollRectToVisible$java_awt_Rectangle',  function (aRect) {
+if (Clazz.instanceOf(this.parent, "javax.swing.JViewport")) {
+(this.parent).scrollRectToVisible$java_awt_Rectangle(aRect);
+}(this.秘getUI$()).scrollToVisible$java_awt_Rectangle(aRect);
+});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:37 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

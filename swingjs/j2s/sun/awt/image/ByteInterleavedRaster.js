@@ -1,58 +1,65 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.awt.Rectangle','java.awt.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ByteInterleavedRaster", null, 'sun.awt.image.ByteComponentRaster');
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.awt.Rectangle','sun.awt.image.SunWritableRaster','java.awt.Point']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ByteInterleavedRaster", null, 'sun.awt.image.ByteComponentRaster');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inOrder=false;
-this.dbOffset=0;
-this.dbOffsetPacked=0;
-this.packed=false;
-this.bitMasks=null;
-this.bitOffsets=null;
-this.$maxX=0;
-this.$maxY=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.packed=false;
+},1);
+
+C$.$fields$=[['Z',['inOrder','packed'],'I',['dbOffset','dbOffsetPacked','$maxX','$maxY'],'O',['bitMasks','int[]','+bitOffsets']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_Point',  function (sampleModel, origin) {
+C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster.apply(this, [sampleModel, sampleModel.createDataBuffer$(), Clazz.new_([origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()],$I$(1,1).c$$I$I$I$I), origin, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_Point', function (sampleModel, origin) {
-Clazz.super_(C$, this,1);
-p$1.setByteInterRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster.apply(this, [sampleModel, sampleModel.createDataBuffer$(), Clazz.new_($I$(1).c$$I$I$I$I,[origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()]), origin, null]);
+Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point',  function (sampleModel, dataBuffer, origin) {
+C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster.apply(this, [sampleModel, dataBuffer, Clazz.new_([origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()],$I$(1,1).c$$I$I$I$I), origin, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point', function (sampleModel, dataBuffer, origin) {
-Clazz.super_(C$, this,1);
-this.setParams$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point(sampleModel, dataBuffer, origin);
-}, 1);
+Clazz.newMeth(C$, 'isInterleaved$java_awt_image_ComponentSampleModel',  function (sm) {
+var numBands=this.sampleModel.getNumBands$();
+if (numBands == 1) {
+return true;
+}var bankIndices=sm.getBankIndices$();
+for (var i=0; i < numBands; i++) {
+if (bankIndices[i] != 0) {
+return false;
+}}
+var bandOffsets=sm.getBandOffsets$();
+var minOffset=bandOffsets[0];
+var maxOffset=minOffset;
+for (var i=1; i < numBands; i++) {
+var offset=bandOffsets[i];
+if (offset < minOffset) {
+minOffset=offset;
+}if (offset > maxOffset) {
+maxOffset=offset;
+}}
+if (maxOffset - minOffset >= sm.getPixelStride$()) {
+return false;
+}return true;
+}, p$1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-}, 1);
-
-Clazz.newMeth(C$, 'setParams$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Point', function (sampleModel, dataBuffer, origin) {
-p$1.setByteInterRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster.apply(this, [sampleModel, dataBuffer, Clazz.new_($I$(1).c$$I$I$I$I,[origin.x, origin.y, sampleModel.getWidth$(), sampleModel.getHeight$()]), origin, null]);
-});
-
-Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster', function (sampleModel, dataBuffer, aRegion, origin, parent) {
-Clazz.super_(C$, this,1);
-p$1.setByteInterRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster.apply(this, [sampleModel, dataBuffer, aRegion, origin, parent]);
-}, 1);
-
-Clazz.newMeth(C$, 'setByteInterRaster$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster', function (sampleModel, dataBuffer, aRegion, origin, parent) {
+Clazz.newMeth(C$, 'c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster',  function (sampleModel, dataBuffer, aRegion, origin, parent) {
+;C$.superclazz.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteComponentRaster.apply(this,[sampleModel, dataBuffer, aRegion, origin, parent]);C$.$init$.apply(this);
 this.$maxX=this.minX + this.width;
 this.$maxY=this.minY + this.height;
 if (!(Clazz.instanceOf(dataBuffer, "java.awt.image.DataBufferByte"))) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["ByteInterleavedRasters must have byte DataBuffers"]);
 }var dbb=dataBuffer;
-this.data=P$.SunWritableRaster.stealData$java_awt_image_DataBufferByte$I(dbb, 0);
+this.data=$I$(2).stealData$java_awt_image_DataBufferByte$I(dbb, 0);
 var xOffset=aRegion.x - origin.x;
 var yOffset=aRegion.y - origin.y;
-if (Clazz.instanceOf(sampleModel, "java.awt.image.SinglePixelPackedSampleModel")) {
+if (Clazz.instanceOf(sampleModel, "java.awt.image.PixelInterleavedSampleModel") || (Clazz.instanceOf(sampleModel, "java.awt.image.ComponentSampleModel") && p$1.isInterleaved$java_awt_image_ComponentSampleModel.apply(this, [sampleModel]) ) ) {
+var csm=sampleModel;
+this.scanlineStride=csm.getScanlineStride$();
+this.pixelStride=csm.getPixelStride$();
+this.dataOffsets=csm.getBandOffsets$();
+for (var i=0; i < this.getNumDataElements$(); i++) {
+this.dataOffsets[i]+=xOffset * this.pixelStride + yOffset * this.scanlineStride;
+}
+} else if (Clazz.instanceOf(sampleModel, "java.awt.image.SinglePixelPackedSampleModel")) {
 var sppsm=sampleModel;
 this.packed=true;
 this.bitMasks=sppsm.getBitMasks$();
@@ -76,29 +83,29 @@ this.inOrder=false;
 break;
 }}
 }this.verify$();
-}, p$1);
+}, 1);
 
-Clazz.newMeth(C$, 'getDataOffsets$', function () {
+Clazz.newMeth(C$, 'getDataOffsets$',  function () {
 return this.dataOffsets.clone$();
 });
 
-Clazz.newMeth(C$, 'getDataOffset$I', function (band) {
+Clazz.newMeth(C$, 'getDataOffset$I',  function (band) {
 return this.dataOffsets[band];
 });
 
-Clazz.newMeth(C$, 'getScanlineStride$', function () {
+Clazz.newMeth(C$, 'getScanlineStride$',  function () {
 return this.scanlineStride;
 });
 
-Clazz.newMeth(C$, 'getPixelStride$', function () {
+Clazz.newMeth(C$, 'getPixelStride$',  function () {
 return this.pixelStride;
 });
 
-Clazz.newMeth(C$, 'getDataStorage$', function () {
+Clazz.newMeth(C$, 'getDataStorage$',  function () {
 return this.data;
 });
 
-Clazz.newMeth(C$, 'getDataElements$I$I$O', function (x, y, obj) {
+Clazz.newMeth(C$, 'getDataElements$I$I$O',  function (x, y, obj) {
 if ((x < this.minX) || (y < this.minY) || (x >= this.$maxX) || (y >= this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var outData;
@@ -108,16 +115,16 @@ outData=Clazz.array(Byte.TYPE, [this.numDataElements]);
 outData=obj;
 }var off=(y - this.minY) * this.scanlineStride + (x - this.minX) * this.pixelStride;
 for (var band=0; band < this.numDataElements; band++) {
-outData[band]=(this.data[this.dataOffsets[band] + off]|0);
+outData[band]=this.data[this.dataOffsets[band] + off];
 }
 return outData;
 });
 
-Clazz.newMeth(C$, 'getDataElements$I$I$I$I$O', function (x, y, w, h, obj) {
+Clazz.newMeth(C$, 'getDataElements$I$I$I$I$O',  function (x, y, w, h, obj) {
 return this.getByteData$I$I$I$I$BA(x, y, w, h, obj);
 });
 
-Clazz.newMeth(C$, 'getByteData$I$I$I$I$I$BA', function (x, y, w, h, band, outData) {
+Clazz.newMeth(C$, 'getByteData$I$I$I$I$I$BA',  function (x, y, w, h, band, outData) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }if (outData == null ) {
@@ -139,13 +146,13 @@ off+=w;
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-outData[off++]=(this.data[xoff]|0);
+outData[off++]=this.data[xoff];
 }
 }
 }return outData;
 });
 
-Clazz.newMeth(C$, 'getByteData$I$I$I$I$BA', function (x, y, w, h, outData) {
+Clazz.newMeth(C$, 'getByteData$I$I$I$I$BA',  function (x, y, w, h, outData) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }if (outData == null ) {
@@ -170,7 +177,7 @@ yoff+=this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-outData[off++]=(this.data[xoff]|0);
+outData[off++]=this.data[xoff];
 }
 }
 } else if (this.numDataElements == 2) {
@@ -179,8 +186,8 @@ var d1=this.dataOffsets[1] - this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-outData[off++]=(this.data[xoff]|0);
-outData[off++]=(this.data[xoff + d1]|0);
+outData[off++]=this.data[xoff];
+outData[off++]=this.data[xoff + d1];
 }
 }
 } else if (this.numDataElements == 3) {
@@ -190,9 +197,9 @@ var d2=this.dataOffsets[2] - this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-outData[off++]=(this.data[xoff]|0);
-outData[off++]=(this.data[xoff + d1]|0);
-outData[off++]=(this.data[xoff + d2]|0);
+outData[off++]=this.data[xoff];
+outData[off++]=this.data[xoff + d1];
+outData[off++]=this.data[xoff + d2];
 }
 }
 } else if (this.numDataElements == 4) {
@@ -203,10 +210,10 @@ var d3=this.dataOffsets[3] - this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-outData[off++]=(this.data[xoff]|0);
-outData[off++]=(this.data[xoff + d1]|0);
-outData[off++]=(this.data[xoff + d2]|0);
-outData[off++]=(this.data[xoff + d3]|0);
+outData[off++]=this.data[xoff];
+outData[off++]=this.data[xoff + d1];
+outData[off++]=this.data[xoff + d2];
+outData[off++]=this.data[xoff + d3];
 }
 }
 } else {
@@ -214,25 +221,25 @@ for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
 for (var c=0; c < this.numDataElements; c++) {
-outData[off++]=(this.data[this.dataOffsets[c] + xoff]|0);
+outData[off++]=this.data[this.dataOffsets[c] + xoff];
 }
 }
 }
 }return outData;
 });
 
-Clazz.newMeth(C$, 'setDataElements$I$I$O', function (x, y, obj) {
+Clazz.newMeth(C$, 'setDataElements$I$I$O',  function (x, y, obj) {
 if ((x < this.minX) || (y < this.minY) || (x >= this.$maxX) || (y >= this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var inData=obj;
 var off=(y - this.minY) * this.scanlineStride + (x - this.minX) * this.pixelStride;
 for (var i=0; i < this.numDataElements; i++) {
-this.data[this.dataOffsets[i] + off]=(inData[i]|0);
+this.data[this.dataOffsets[i] + off]=inData[i];
 }
 this.markDirty$();
 });
 
-Clazz.newMeth(C$, 'setDataElements$I$I$java_awt_image_Raster', function (x, y, inRaster) {
+Clazz.newMeth(C$, 'setDataElements$I$I$java_awt_image_Raster',  function (x, y, inRaster) {
 var srcOffX=inRaster.getMinX$();
 var srcOffY=inRaster.getMinY$();
 var dstOffX=x + srcOffX;
@@ -244,7 +251,7 @@ throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate 
 }p$1.setDataElements$I$I$I$I$I$I$java_awt_image_Raster.apply(this, [dstOffX, dstOffY, srcOffX, srcOffY, width, height, inRaster]);
 });
 
-Clazz.newMeth(C$, 'setDataElements$I$I$I$I$I$I$java_awt_image_Raster', function (dstX, dstY, srcX, srcY, width, height, inRaster) {
+Clazz.newMeth(C$, 'setDataElements$I$I$I$I$I$I$java_awt_image_Raster',  function (dstX, dstY, srcX, srcY, width, height, inRaster) {
 if (width <= 0 || height <= 0 ) {
 return;
 }var srcOffX=inRaster.getMinX$();
@@ -273,11 +280,11 @@ this.setDataElements$I$I$I$I$O(dstX, dstY + startY, width, 1, tdata);
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'setDataElements$I$I$I$I$O', function (x, y, w, h, obj) {
+Clazz.newMeth(C$, 'setDataElements$I$I$I$I$O',  function (x, y, w, h, obj) {
 this.putByteData$I$I$I$I$BA(x, y, w, h, obj);
 });
 
-Clazz.newMeth(C$, 'putByteData$I$I$I$I$I$BA', function (x, y, w, h, band, inData) {
+Clazz.newMeth(C$, 'putByteData$I$I$I$I$I$BA',  function (x, y, w, h, band, inData) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var yoff=(y - this.minY) * this.scanlineStride + (x - this.minX) * this.pixelStride + this.dataOffsets[band];
@@ -297,13 +304,13 @@ off+=w;
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-this.data[xoff]=(inData[off++]|0);
+this.data[xoff]=inData[off++];
 }
 }
 }this.markDirty$();
 });
 
-Clazz.newMeth(C$, 'putByteData$I$I$I$I$BA', function (x, y, w, h, inData) {
+Clazz.newMeth(C$, 'putByteData$I$I$I$I$BA',  function (x, y, w, h, inData) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var yoff=(y - this.minY) * this.scanlineStride + (x - this.minX) * this.pixelStride;
@@ -326,7 +333,7 @@ yoff+=this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-this.data[xoff]=(inData[off++]|0);
+this.data[xoff]=inData[off++];
 }
 }
 } else if (this.numDataElements == 2) {
@@ -335,8 +342,8 @@ var d1=this.dataOffsets[1] - this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-this.data[xoff]=(inData[off++]|0);
-this.data[xoff + d1]=(inData[off++]|0);
+this.data[xoff]=inData[off++];
+this.data[xoff + d1]=inData[off++];
 }
 }
 } else if (this.numDataElements == 3) {
@@ -346,9 +353,9 @@ var d2=this.dataOffsets[2] - this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-this.data[xoff]=(inData[off++]|0);
-this.data[xoff + d1]=(inData[off++]|0);
-this.data[xoff + d2]=(inData[off++]|0);
+this.data[xoff]=inData[off++];
+this.data[xoff + d1]=inData[off++];
+this.data[xoff + d2]=inData[off++];
 }
 }
 } else if (this.numDataElements == 4) {
@@ -359,10 +366,10 @@ var d3=this.dataOffsets[3] - this.dataOffsets[0];
 for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
-this.data[xoff]=(inData[off++]|0);
-this.data[xoff + d1]=(inData[off++]|0);
-this.data[xoff + d2]=(inData[off++]|0);
-this.data[xoff + d3]=(inData[off++]|0);
+this.data[xoff]=inData[off++];
+this.data[xoff + d1]=inData[off++];
+this.data[xoff + d2]=inData[off++];
+this.data[xoff + d3]=inData[off++];
 }
 }
 } else {
@@ -370,42 +377,42 @@ for (ystart=0; ystart < h; ystart++, yoff+=this.scanlineStride) {
 xoff=yoff;
 for (xstart=0; xstart < w; xstart++, xoff+=this.pixelStride) {
 for (var c=0; c < this.numDataElements; c++) {
-this.data[this.dataOffsets[c] + xoff]=(inData[off++]|0);
+this.data[this.dataOffsets[c] + xoff]=inData[off++];
 }
 }
 }
 }this.markDirty$();
 });
 
-Clazz.newMeth(C$, 'getSample$I$I$I', function (x, y, b) {
+Clazz.newMeth(C$, 'getSample$I$I$I',  function (x, y, b) {
 if ((x < this.minX) || (y < this.minY) || (x >= this.$maxX) || (y >= this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }if (this.packed) {
 var offset=y * this.scanlineStride + x + this.dbOffsetPacked;
-var sample=($b$[0] = this.data[offset], $b$[0]);
+var sample=this.data[offset];
 return (sample & this.bitMasks[b]) >>> this.bitOffsets[b];
 } else {
 var offset=y * this.scanlineStride + x * this.pixelStride + this.dbOffset;
 return this.data[offset + this.dataOffsets[b]] & 255;
 }});
 
-Clazz.newMeth(C$, 'setSample$I$I$I$I', function (x, y, b, s) {
+Clazz.newMeth(C$, 'setSample$I$I$I$I',  function (x, y, b, s) {
 if ((x < this.minX) || (y < this.minY) || (x >= this.$maxX) || (y >= this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }if (this.packed) {
 var offset=y * this.scanlineStride + x + this.dbOffsetPacked;
 var bitMask=this.bitMasks[b];
-var value=($b$[0] = this.data[offset], $b$[0]);
+var value=this.data[offset];
 value=($b$[0] = value&(~bitMask), $b$[0]);
 value=($b$[0] = value|((s << this.bitOffsets[b]) & bitMask), $b$[0]);
-this.data[offset]=(value|0);
+this.data[offset]=value;
 } else {
 var offset=y * this.scanlineStride + x * this.pixelStride + this.dbOffset;
-this.data[offset + this.dataOffsets[b]]=((s|0)|0);
+this.data[offset + this.dataOffsets[b]]=(s|0);
 }this.markDirty$();
 });
 
-Clazz.newMeth(C$, 'getSamples$I$I$I$I$I$IA', function (x, y, w, h, b, iArray) {
+Clazz.newMeth(C$, 'getSamples$I$I$I$I$I$IA',  function (x, y, w, h, b, iArray) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var samples;
@@ -440,7 +447,7 @@ lineOffset+=this.scanlineStride;
 }return samples;
 });
 
-Clazz.newMeth(C$, 'setSamples$I$I$I$I$I$IA', function (x, y, w, h, b, iArray) {
+Clazz.newMeth(C$, 'setSamples$I$I$I$I$I$IA',  function (x, y, w, h, b, iArray) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var lineOffset=y * this.scanlineStride + x * this.pixelStride;
@@ -451,11 +458,11 @@ var bitMask=this.bitMasks[b];
 for (var j=0; j < h; j++) {
 var sampleOffset=lineOffset;
 for (var i=0; i < w; i++) {
-var value=($b$[0] = this.data[sampleOffset], $b$[0]);
+var value=this.data[sampleOffset];
 value=($b$[0] = value&(~bitMask), $b$[0]);
 var sample=iArray[srcOffset++];
 value=($b$[0] = value|((sample << this.bitOffsets[b]) & bitMask), $b$[0]);
-this.data[sampleOffset++]=(value|0);
+this.data[sampleOffset++]=value;
 }
 lineOffset+=this.scanlineStride;
 }
@@ -464,7 +471,7 @@ lineOffset+=this.dbOffset + this.dataOffsets[b];
 for (var i=0; i < h; i++) {
 var sampleOffset=lineOffset;
 for (var j=0; j < w; j++) {
-this.data[sampleOffset]=((iArray[srcOffset++]|0)|0);
+this.data[sampleOffset]=(iArray[srcOffset++]|0);
 sampleOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
@@ -472,7 +479,7 @@ lineOffset+=this.scanlineStride;
 }this.markDirty$();
 });
 
-Clazz.newMeth(C$, 'getPixels$I$I$I$I$IA', function (x, y, w, h, iArray) {
+Clazz.newMeth(C$, 'getPixels$I$I$I$I$IA',  function (x, y, w, h, iArray) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var pixels;
@@ -558,7 +565,7 @@ lineOffset+=this.scanlineStride;
 }}return pixels;
 });
 
-Clazz.newMeth(C$, 'setPixels$I$I$I$I$IA', function (x, y, w, h, iArray) {
+Clazz.newMeth(C$, 'setPixels$I$I$I$I$IA',  function (x, y, w, h, iArray) {
 if ((x < this.minX) || (y < this.minY) || (x + w > this.$maxX) || (y + h > this.$maxY)  ) {
 throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["Coordinate out of bounds!"]);
 }var lineOffset=y * this.scanlineStride + x * this.pixelStride;
@@ -572,7 +579,7 @@ for (var k=0; k < this.numBands; k++) {
 var srcValue=iArray[srcOffset++];
 value|=((srcValue << this.bitOffsets[k]) & this.bitMasks[k]);
 }
-this.data[lineOffset + i]=((value|0)|0);
+this.data[lineOffset + i]=(value|0);
 }
 lineOffset+=this.scanlineStride;
 }
@@ -583,7 +590,7 @@ if (this.numBands == 1) {
 for (var j=0; j < h; j++) {
 var pixelOffset=lineOffset + d0;
 for (var i=0; i < w; i++) {
-this.data[pixelOffset]=((iArray[srcOffset++]|0)|0);
+this.data[pixelOffset]=(iArray[srcOffset++]|0);
 pixelOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
@@ -593,8 +600,8 @@ var d1=this.dataOffsets[1] - d0;
 for (var j=0; j < h; j++) {
 var pixelOffset=lineOffset + d0;
 for (var i=0; i < w; i++) {
-this.data[pixelOffset]=((iArray[srcOffset++]|0)|0);
-this.data[pixelOffset + d1]=((iArray[srcOffset++]|0)|0);
+this.data[pixelOffset]=(iArray[srcOffset++]|0);
+this.data[pixelOffset + d1]=(iArray[srcOffset++]|0);
 pixelOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
@@ -605,9 +612,9 @@ var d2=this.dataOffsets[2] - d0;
 for (var j=0; j < h; j++) {
 var pixelOffset=lineOffset + d0;
 for (var i=0; i < w; i++) {
-this.data[pixelOffset]=((iArray[srcOffset++]|0)|0);
-this.data[pixelOffset + d1]=((iArray[srcOffset++]|0)|0);
-this.data[pixelOffset + d2]=((iArray[srcOffset++]|0)|0);
+this.data[pixelOffset]=(iArray[srcOffset++]|0);
+this.data[pixelOffset + d1]=(iArray[srcOffset++]|0);
+this.data[pixelOffset + d2]=(iArray[srcOffset++]|0);
 pixelOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
@@ -619,10 +626,10 @@ var d3=this.dataOffsets[3] - d0;
 for (var j=0; j < h; j++) {
 var pixelOffset=lineOffset + d0;
 for (var i=0; i < w; i++) {
-this.data[pixelOffset]=((iArray[srcOffset++]|0)|0);
-this.data[pixelOffset + d1]=((iArray[srcOffset++]|0)|0);
-this.data[pixelOffset + d2]=((iArray[srcOffset++]|0)|0);
-this.data[pixelOffset + d3]=((iArray[srcOffset++]|0)|0);
+this.data[pixelOffset]=(iArray[srcOffset++]|0);
+this.data[pixelOffset + d1]=(iArray[srcOffset++]|0);
+this.data[pixelOffset + d2]=(iArray[srcOffset++]|0);
+this.data[pixelOffset + d3]=(iArray[srcOffset++]|0);
 pixelOffset+=this.pixelStride;
 }
 lineOffset+=this.scanlineStride;
@@ -632,7 +639,7 @@ for (var j=0; j < h; j++) {
 var pixelOffset=lineOffset;
 for (var i=0; i < w; i++) {
 for (var k=0; k < this.numBands; k++) {
-this.data[pixelOffset + this.dataOffsets[k]]=((iArray[srcOffset++]|0)|0);
+this.data[pixelOffset + this.dataOffsets[k]]=(iArray[srcOffset++]|0);
 }
 pixelOffset+=this.pixelStride;
 }
@@ -641,7 +648,7 @@ lineOffset+=this.scanlineStride;
 }}this.markDirty$();
 });
 
-Clazz.newMeth(C$, 'setRect$I$I$java_awt_image_Raster', function (dx, dy, srcRaster) {
+Clazz.newMeth(C$, 'setRect$I$I$java_awt_image_Raster',  function (dx, dy, srcRaster) {
 if (!(Clazz.instanceOf(srcRaster, "sun.awt.image.ByteInterleavedRaster"))) {
 C$.superclazz.prototype.setRect$I$I$java_awt_image_Raster.apply(this, [dx, dy, srcRaster]);
 return;
@@ -668,12 +675,12 @@ height=this.$maxY - dstOffY;
 }p$1.setDataElements$I$I$I$I$I$I$java_awt_image_Raster.apply(this, [dstOffX, dstOffY, srcOffX, srcOffY, width, height, srcRaster]);
 });
 
-Clazz.newMeth(C$, 'createChild$I$I$I$I$I$I$IA', function (x, y, width, height, x0, y0, bandList) {
+Clazz.newMeth(C$, 'createChild$I$I$I$I$I$I$IA',  function (x, y, width, height, x0, y0, bandList) {
 var newRaster=this.createWritableChild$I$I$I$I$I$I$IA(x, y, width, height, x0, y0, bandList);
 return newRaster;
 });
 
-Clazz.newMeth(C$, 'createWritableChild$I$I$I$I$I$I$IA', function (x, y, width, height, x0, y0, bandList) {
+Clazz.newMeth(C$, 'createWritableChild$I$I$I$I$I$I$IA',  function (x, y, width, height, x0, y0, bandList) {
 if (x < this.minX) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["x lies outside the raster"]);
 }if (y < this.minY) {
@@ -687,23 +694,25 @@ if (bandList != null ) sm=this.sampleModel.createSubsetSampleModel$IA(bandList);
  else sm=this.sampleModel;
 var deltaX=x0 - x;
 var deltaY=y0 - y;
-return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster,[sm, this.dataBuffer, Clazz.new_($I$(1).c$$I$I$I$I,[x0, y0, width, height]), Clazz.new_($I$(2).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
+return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_image_DataBuffer$java_awt_Rectangle$java_awt_Point$sun_awt_image_ByteInterleavedRaster,[sm, this.dataBuffer, Clazz.new_($I$(1,1).c$$I$I$I$I,[x0, y0, width, height]), Clazz.new_($I$(3,1).c$$I$I,[this.sampleModelTranslateX + deltaX, this.sampleModelTranslateY + deltaY]), this]);
 });
 
-Clazz.newMeth(C$, 'createCompatibleWritableRaster$I$I', function (w, h) {
+Clazz.newMeth(C$, 'createCompatibleWritableRaster$I$I',  function (w, h) {
 if (w <= 0 || h <= 0 ) {
 throw Clazz.new_(Clazz.load('java.awt.image.RasterFormatException').c$$S,["negative " + ((w <= 0) ? "width" : "height")]);
 }var sm=this.sampleModel.createCompatibleSampleModel$I$I(w, h);
-return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_Point,[sm, Clazz.new_($I$(2).c$$I$I,[0, 0])]);
+return Clazz.new_(C$.c$$java_awt_image_SampleModel$java_awt_Point,[sm, Clazz.new_($I$(3,1).c$$I$I,[0, 0])]);
 });
 
-Clazz.newMeth(C$, 'createCompatibleWritableRaster$', function () {
+Clazz.newMeth(C$, 'createCompatibleWritableRaster$',  function () {
 return this.createCompatibleWritableRaster$I$I(this.width, this.height);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-return  String.instantialize("ByteInterleavedRaster: width = " + this.width + " height = " + this.height + " #numDataElements " + this.numDataElements + " dataOff[0] = " + this.dataOffsets[0] );
+Clazz.newMeth(C$, 'toString',  function () {
+return ("ByteInterleavedRaster: width = " + this.width + " height = " + this.height + " #numDataElements " + this.numDataElements + " dataOff[0] = " + this.dataOffsets[0] );
 });
 var $b$ = new Int8Array(1);
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:35 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:03 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,68 +1,27 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3i','javajs.util.P3','javajs.util.V3','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FontLineShapeRenderer", null, 'org.jmol.render.ShapeRenderer');
-C$.dashes=null;
-C$.hDashes=null;
-C$.ndots=null;
-C$.sixdots=null;
-C$.fourdots=null;
-C$.twodots=null;
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.P3i','javajs.util.P3','javajs.util.V3','javajs.util.PT']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FontLineShapeRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.dashes=Clazz.array(Integer.TYPE, -1, [12, 0, 0, 2, 5, 7, 10]);
-C$.hDashes=Clazz.array(Integer.TYPE, -1, [10, 7, 6, 1, 3, 4, 6, 7, 9]);
-C$.ndots=Clazz.array(Integer.TYPE, -1, [0, 3, 1000]);
-C$.sixdots=Clazz.array(Integer.TYPE, -1, [12, 3, 6, 1, 3, 5, 7, 9, 11]);
-C$.fourdots=Clazz.array(Integer.TYPE, -1, [13, 3, 5, 2, 5, 8, 11]);
-C$.twodots=Clazz.array(Integer.TYPE, -1, [12, 3, 4, 3, 9]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.imageFontScaling=0;
-this.tickA=null;
-this.tickB=null;
-this.tickAs=null;
-this.tickBs=null;
-this.font3d=null;
-this.pt0i=null;
-this.pt2i=null;
-this.s1=null;
-this.s2=null;
-this.pointT=null;
-this.pointT2=null;
-this.pointT3=null;
-this.vectorT=null;
-this.vectorT2=null;
-this.vectorT3=null;
-this.tickInfo=null;
-this.draw000=false;
-this.width=0;
-this.endcap=0;
-this.pt0=null;
-this.pt1=null;
-this.colixA=0;
-this.colixB=0;
-this.dotsOrDashes=false;
-this.dashDots=null;
-this.asLineOnly=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.pt0i=Clazz.new_($I$(1));
-this.pt2i=Clazz.new_($I$(1));
-this.s1=Clazz.new_($I$(1));
-this.s2=Clazz.new_($I$(1));
-this.pointT=Clazz.new_($I$(2));
-this.pointT2=Clazz.new_($I$(2));
-this.pointT3=Clazz.new_($I$(2));
-this.vectorT=Clazz.new_($I$(3));
-this.vectorT2=Clazz.new_($I$(3));
-this.vectorT3=Clazz.new_($I$(3));
+this.pt0i=Clazz.new_($I$(1,1));
+this.pt2i=Clazz.new_($I$(1,1));
+this.s1=Clazz.new_($I$(1,1));
+this.s2=Clazz.new_($I$(1,1));
+this.pointT=Clazz.new_($I$(2,1));
+this.pointT2=Clazz.new_($I$(2,1));
+this.pointT3=Clazz.new_($I$(2,1));
+this.vectorT=Clazz.new_($I$(3,1));
+this.vectorT2=Clazz.new_($I$(3,1));
+this.vectorT3=Clazz.new_($I$(3,1));
 this.draw000=true;
-this.endcap=($b$[0] = 3, $b$[0]);
-this.pt0=Clazz.new_($I$(2));
-this.pt1=Clazz.new_($I$(2));
-}, 1);
+this.endcap=3;
+this.pt0=Clazz.new_($I$(2,1));
+this.pt1=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['draw000','dotsOrDashes','asLineOnly'],'B',['endcap'],'F',['imageFontScaling'],'I',['width'],'H',['colixA','colixB'],'O',['tickA','javajs.util.P3','+tickB','+tickAs','+tickBs','font3d','org.jmol.util.Font','pt0i','javajs.util.P3i','+pt2i','+s1','+s2','pointT','javajs.util.P3','+pointT2','+pointT3','vectorT','javajs.util.V3','+vectorT2','+vectorT3','tickInfo','org.jmol.modelset.TickInfo','pt0','javajs.util.P3','+pt1','dashDots','int[]']]
+,['O',['dashes','int[]','+hDashes','+ndots','+sixdots','+fourdots','+twodots']]]
 
 Clazz.newMeth(C$, 'getDiameter$I$I', function (z, mad10OrPixels) {
 var diameter;
@@ -83,7 +42,7 @@ return diameter;
 
 Clazz.newMeth(C$, 'renderLine$javajs_util_P3$javajs_util_P3$I$Z', function (p0, p1, diameter, drawTicks) {
 if (diameter < 0) this.g3d.drawDashedLineBits$I$I$javajs_util_P3$javajs_util_P3(8, 4, p0, p1);
- else this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = this.endcap, $b$[0]), diameter, p0, p1);
+ else this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(this.endcap, diameter, p0, p1);
 if (!drawTicks || this.tickInfo == null  ) return;
 this.checkTickTemps$();
 this.tickAs.setT$javajs_util_T3(p0);
@@ -93,10 +52,10 @@ this.drawTicks$I$Z(diameter, true);
 
 Clazz.newMeth(C$, 'checkTickTemps$', function () {
 if (this.tickA == null ) {
-this.tickA=Clazz.new_($I$(2));
-this.tickB=Clazz.new_($I$(2));
-this.tickAs=Clazz.new_($I$(2));
-this.tickBs=Clazz.new_($I$(2));
+this.tickA=Clazz.new_($I$(2,1));
+this.tickB=Clazz.new_($I$(2,1));
+this.tickAs=Clazz.new_($I$(2,1));
+this.tickBs=Clazz.new_($I$(2,1));
 }});
 
 Clazz.newMeth(C$, 'drawTicks$I$Z', function (diameter, withLabels) {
@@ -181,7 +140,7 @@ if (this.dashDots != null ) this.drawDashed$I$I$I$I$I$I$IA(x1, y1, z1, x2, y2, z
 if (diameter < 0) {
 this.g3d.drawDashedLineBits$I$I$javajs_util_P3$javajs_util_P3(8, 4, this.pt0, this.pt1);
 return 1;
-}this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), diameter, this.pt0, this.pt1);
+}this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, diameter, this.pt0, this.pt1);
 }return ((diameter + 1)/2|0);
 });
 
@@ -199,7 +158,7 @@ if (centerY) yT+=(height/2|0);
  else yT-=(radius/2|0);
 var zT=z - radius - 2 ;
 if (zT < 1) zT=1;
-this.g3d.drawString$S$javajs_awt_Font$I$I$I$I$H(sVal, this.font3d, xT, yT, zT, zT, 0);
+this.g3d.drawString$S$org_jmol_util_Font$I$I$I$I$H(sVal, this.font3d, xT, yT, zT, zT, 0);
 });
 
 Clazz.newMeth(C$, 'drawDashed$I$I$I$I$I$I$IA', function (xA, yA, zA, xB, yB, zB, array) {
@@ -242,16 +201,24 @@ if (pt == ptE) colixE=this.colixB;
 var xE=(Math.floor(xA + dx * i / f)|0);
 var yE=(Math.floor(yA + dy * i / f)|0);
 var zE=(Math.floor(zA + dz * i / f)|0);
-this.fillCylinder$H$H$B$I$I$I$I$I$I$I(colixS, colixE, ($b$[0] = 2, $b$[0]), this.width, xS, yS, zS, xE, yE, zE);
+this.fillCylinder$H$H$B$I$I$I$I$I$I$I(colixS, colixE, 2, this.width, xS, yS, zS, xE, yE, zE);
 }
 });
 
 Clazz.newMeth(C$, 'fillCylinder$H$H$B$I$I$I$I$I$I$I', function (colixA, colixB, endcaps, diameter, xA, yA, zA, xB, yB, zB) {
 if (this.asLineOnly) this.g3d.drawLine$H$H$I$I$I$I$I$I(colixA, colixB, xA, yA, zA, xB, yB, zB);
- else this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, ($b$[0] = endcaps, $b$[0]), (!this.isExport || this.mad == 1  ? diameter : this.mad), xA, yA, zA, xB, yB, zB);
+ else this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, endcaps, (!this.isExport || this.mad == 1  ? diameter : this.mad), xA, yA, zA, xB, yB, zB);
 });
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.dashes=Clazz.array(Integer.TYPE, -1, [12, 0, 0, 2, 5, 7, 10]);
+C$.hDashes=Clazz.array(Integer.TYPE, -1, [10, 7, 6, 1, 3, 4, 6, 7, 9]);
+C$.ndots=Clazz.array(Integer.TYPE, -1, [0, 3, 1000]);
+C$.sixdots=Clazz.array(Integer.TYPE, -1, [12, 3, 6, 1, 3, 5, 7, 9, 11]);
+C$.fourdots=Clazz.array(Integer.TYPE, -1, [13, 3, 5, 2, 5, 8, 11]);
+C$.twodots=Clazz.array(Integer.TYPE, -1, [12, 3, 4, 3, 9]);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

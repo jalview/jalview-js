@@ -1,56 +1,28 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'sun.misc.Unsafe','Error','java.util.Spliterators',['java.util.concurrent.ConcurrentLinkedDeque','.Node'],'java.util.ArrayList',['java.util.concurrent.ConcurrentLinkedDeque','.Itr'],['java.util.concurrent.ConcurrentLinkedDeque','.DescendingItr'],['java.util.concurrent.ConcurrentLinkedDeque','.CLDSpliterator']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ConcurrentLinkedDeque", function(){
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'sun.misc.Unsafe','Error','java.util.Spliterators',['java.util.concurrent.ConcurrentLinkedDeque','.Node'],'java.util.ArrayList',['java.util.concurrent.ConcurrentLinkedDeque','.Itr'],['java.util.concurrent.ConcurrentLinkedDeque','.DescendingItr'],['java.util.concurrent.ConcurrentLinkedDeque','.CLDSpliterator']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ConcurrentLinkedDeque", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.util.AbstractCollection', ['java.util.Deque', 'java.io.Serializable']);
-C$.PREV_TERMINATOR=null;
-C$.NEXT_TERMINATOR=null;
-C$.UNSAFE=null;
-C$.headOffset=0;
-C$.tailOffset=0;
+C$.$classes$=[['Node',24],['AbstractItr',1026],['Itr',2],['DescendingItr',2],['CLDSpliterator',24]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.headOffset=0;
-C$.tailOffset=0;
-{
-C$.PREV_TERMINATOR=Clazz.new_($I$(4));
-C$.PREV_TERMINATOR.next=C$.PREV_TERMINATOR;
-C$.NEXT_TERMINATOR=Clazz.new_($I$(4));
-C$.NEXT_TERMINATOR.prev=C$.NEXT_TERMINATOR;
-try {
-C$.UNSAFE=$I$(1).getUnsafe$();
-var k=Clazz.getClass(C$);
-C$.headOffset=C$.UNSAFE.objectFieldOffset$reflect_Field(k.getDeclaredField$S("head"));
-C$.tailOffset=C$.UNSAFE.objectFieldOffset$reflect_Field(k.getDeclaredField$S("tail"));
-} catch (e) {
-if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_($I$(2).c$$Throwable,[e]);
-} else {
-throw e;
-}
-}
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.head=null;
-this.tail=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'prevTerminator$', function () {
+C$.$fields$=[['O',['head','java.util.concurrent.ConcurrentLinkedDeque.Node','+tail']]
+,['J',['headOffset','tailOffset'],'O',['PREV_TERMINATOR','java.util.concurrent.ConcurrentLinkedDeque.Node','+NEXT_TERMINATOR','UNSAFE','sun.misc.Unsafe']]]
+
+Clazz.newMeth(C$, 'prevTerminator$',  function () {
 return C$.PREV_TERMINATOR;
 });
 
-Clazz.newMeth(C$, 'nextTerminator$', function () {
+Clazz.newMeth(C$, 'nextTerminator$',  function () {
 return C$.NEXT_TERMINATOR;
 });
 
-Clazz.newMeth(C$, ['linkFirst$TE'], function (e) {
+Clazz.newMeth(C$, 'linkFirst$O',  function (e) {
 C$.checkNotNull$O(e);
-var newNode=Clazz.new_($I$(4).c$$TE,[e]);
+var newNode=Clazz.new_($I$(4,1).c$$O,[e]);
  restartFromHead : for (; ; ) for (var h=this.head, p=h, q; ; ) {
 if ((q=p.prev) != null  && (q=(p=q).prev) != null  ) p=(h !== (h=this.head) ) ? h : q;
  else if (p.next === p ) continue restartFromHead;
@@ -63,9 +35,9 @@ return;
 
 }, p$1);
 
-Clazz.newMeth(C$, ['linkLast$TE'], function (e) {
+Clazz.newMeth(C$, 'linkLast$O',  function (e) {
 C$.checkNotNull$O(e);
-var newNode=Clazz.new_($I$(4).c$$TE,[e]);
+var newNode=Clazz.new_($I$(4,1).c$$O,[e]);
  restartFromTail : for (; ; ) for (var t=this.tail, p=t, q; ; ) {
 if ((q=p.next) != null  && (q=(p=q).next) != null  ) p=(t !== (t=this.tail) ) ? t : q;
  else if (p.prev === p ) continue restartFromTail;
@@ -78,7 +50,7 @@ return;
 
 }, p$1);
 
-Clazz.newMeth(C$, 'unlink$java_util_concurrent_ConcurrentLinkedDeque_Node', function (x) {
+Clazz.newMeth(C$, 'unlink$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (x) {
 var prev=x.prev;
 var next=x.next;
 if (prev == null ) {
@@ -129,7 +101,7 @@ x.lazySetPrev$java_util_concurrent_ConcurrentLinkedDeque_Node(isFirst ? this.pre
 x.lazySetNext$java_util_concurrent_ConcurrentLinkedDeque_Node(isLast ? this.nextTerminator$() : x);
 }}});
 
-Clazz.newMeth(C$, 'unlinkFirst$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node', function (first, next) {
+Clazz.newMeth(C$, 'unlinkFirst$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (first, next) {
 for (var o=null, p=next, q; ; ) {
 if (p.item != null  || (q=p.next) == null  ) {
 if (o != null  && p.prev !== p   && first.casNext$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node(next, p) ) {
@@ -147,7 +119,7 @@ p=q;
 }}
 }, p$1);
 
-Clazz.newMeth(C$, 'unlinkLast$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node', function (last, prev) {
+Clazz.newMeth(C$, 'unlinkLast$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (last, prev) {
 for (var o=null, p=prev, q; ; ) {
 if (p.item != null  || (q=p.prev) == null  ) {
 if (o != null  && p.next !== p   && last.casPrev$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node(prev, p) ) {
@@ -165,7 +137,7 @@ p=q;
 }}
 }, p$1);
 
-Clazz.newMeth(C$, 'updateHead', function () {
+Clazz.newMeth(C$, 'updateHead',  function () {
 var h;
 var p;
 var q;
@@ -180,7 +152,7 @@ if (p$1.casHead$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concur
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'updateTail', function () {
+Clazz.newMeth(C$, 'updateTail',  function () {
 var t;
 var p;
 var q;
@@ -195,7 +167,7 @@ if (p$1.casTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concur
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'skipDeletedPredecessors$java_util_concurrent_ConcurrentLinkedDeque_Node', function (x) {
+Clazz.newMeth(C$, 'skipDeletedPredecessors$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (x) {
  whileActive : do {
 var prev=x.prev;
 var p=prev;
@@ -212,7 +184,7 @@ if (prev === p  || x.casPrev$java_util_concurrent_ConcurrentLinkedDeque_Node$jav
 } while (x.item != null  || x.next == null  );
 }, p$1);
 
-Clazz.newMeth(C$, 'skipDeletedSuccessors$java_util_concurrent_ConcurrentLinkedDeque_Node', function (x) {
+Clazz.newMeth(C$, 'skipDeletedSuccessors$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (x) {
  whileActive : do {
 var next=x.next;
 var p=next;
@@ -229,17 +201,17 @@ if (next === p  || x.casNext$java_util_concurrent_ConcurrentLinkedDeque_Node$jav
 } while (x.item != null  || x.prev == null  );
 }, p$1);
 
-Clazz.newMeth(C$, 'succ$java_util_concurrent_ConcurrentLinkedDeque_Node', function (p) {
+Clazz.newMeth(C$, 'succ$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (p) {
 var q=p.next;
 return (p === q ) ? this.first$() : q;
 });
 
-Clazz.newMeth(C$, 'pred$java_util_concurrent_ConcurrentLinkedDeque_Node', function (p) {
+Clazz.newMeth(C$, 'pred$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (p) {
 var q=p.prev;
 return (p === q ) ? this.last$() : q;
 });
 
-Clazz.newMeth(C$, 'first$', function () {
+Clazz.newMeth(C$, 'first$',  function () {
  restartFromHead : for (; ; ) for (var h=this.head, p=h, q; ; ) {
 if ((q=p.prev) != null  && (q=(p=q).prev) != null  ) p=(h !== (h=this.head) ) ? h : q;
  else if (p === h  || p$1.casHead$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node.apply(this, [h, p]) ) return p;
@@ -248,7 +220,7 @@ if ((q=p.prev) != null  && (q=(p=q).prev) != null  ) p=(h !== (h=this.head) ) ? 
 
 });
 
-Clazz.newMeth(C$, 'last$', function () {
+Clazz.newMeth(C$, 'last$',  function () {
  restartFromTail : for (; ; ) for (var t=this.tail, p=t, q; ; ) {
 if ((q=p.next) != null  && (q=(p=q).next) != null  ) p=(t !== (t=this.tail) ) ? t : q;
  else if (p === t  || p$1.casTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node.apply(this, [t, p]) ) return p;
@@ -257,36 +229,36 @@ if ((q=p.next) != null  && (q=(p=q).next) != null  ) p=(t !== (t=this.tail) ) ? 
 
 });
 
-Clazz.newMeth(C$, 'checkNotNull$O', function (v) {
+Clazz.newMeth(C$, 'checkNotNull$O',  function (v) {
 if (v == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 }, 1);
 
-Clazz.newMeth(C$, ['screenNullResult$TE'], function (v) {
+Clazz.newMeth(C$, 'screenNullResult$O',  function (v) {
 if (v == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 return v;
 }, p$1);
 
-Clazz.newMeth(C$, 'toArrayList', function () {
-var list=Clazz.new_($I$(5));
+Clazz.newMeth(C$, 'toArrayList',  function () {
+var list=Clazz.new_($I$(5,1));
 for (var p=this.first$(); p != null ; p=this.succ$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
-if (item != null ) list.add$TE(item);
+if (item != null ) list.add$O(item);
 }
 return list;
 }, p$1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.head=this.tail=Clazz.new_($I$(4).c$$TE,[null]);
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
+this.head=this.tail=Clazz.new_($I$(4,1).c$$O,[null]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$java_util_Collection',  function (c) {
+Clazz.super_(C$, this);
 var h=null;
 var t=null;
 for (var e, $e = c.iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 C$.checkNotNull$O(e);
-var newNode=Clazz.new_($I$(4).c$$TE,[e]);
+var newNode=Clazz.new_($I$(4,1).c$$O,[e]);
 if (h == null ) h=t=newNode;
  else {
 t.lazySetNext$java_util_concurrent_ConcurrentLinkedDeque_Node(newNode);
@@ -296,11 +268,11 @@ t=newNode;
 p$1.initHeadTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node.apply(this, [h, t]);
 }, 1);
 
-Clazz.newMeth(C$, 'initHeadTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node', function (h, t) {
+Clazz.newMeth(C$, 'initHeadTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (h, t) {
 if (h === t ) {
-if (h == null ) h=t=Clazz.new_($I$(4).c$$TE,[null]);
+if (h == null ) h=t=Clazz.new_($I$(4,1).c$$O,[null]);
  else {
-var newNode=Clazz.new_($I$(4).c$$TE,[null]);
+var newNode=Clazz.new_($I$(4,1).c$$O,[null]);
 t.lazySetNext$java_util_concurrent_ConcurrentLinkedDeque_Node(newNode);
 newNode.lazySetPrev$java_util_concurrent_ConcurrentLinkedDeque_Node(t);
 t=newNode;
@@ -308,25 +280,25 @@ t=newNode;
 this.tail=t;
 }, p$1);
 
-Clazz.newMeth(C$, ['addFirst$TE'], function (e) {
-p$1.linkFirst$TE.apply(this, [e]);
+Clazz.newMeth(C$, 'addFirst$O',  function (e) {
+p$1.linkFirst$O.apply(this, [e]);
 });
 
-Clazz.newMeth(C$, ['addLast$TE'], function (e) {
-p$1.linkLast$TE.apply(this, [e]);
+Clazz.newMeth(C$, 'addLast$O',  function (e) {
+p$1.linkLast$O.apply(this, [e]);
 });
 
-Clazz.newMeth(C$, ['offerFirst$TE'], function (e) {
-p$1.linkFirst$TE.apply(this, [e]);
+Clazz.newMeth(C$, 'offerFirst$O',  function (e) {
+p$1.linkFirst$O.apply(this, [e]);
 return true;
 });
 
-Clazz.newMeth(C$, ['offerLast$TE'], function (e) {
-p$1.linkLast$TE.apply(this, [e]);
+Clazz.newMeth(C$, 'offerLast$O',  function (e) {
+p$1.linkLast$O.apply(this, [e]);
 return true;
 });
 
-Clazz.newMeth(C$, 'peekFirst$', function () {
+Clazz.newMeth(C$, 'peekFirst$',  function () {
 for (var p=this.first$(); p != null ; p=this.succ$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
 if (item != null ) return item;
@@ -334,7 +306,7 @@ if (item != null ) return item;
 return null;
 });
 
-Clazz.newMeth(C$, 'peekLast$', function () {
+Clazz.newMeth(C$, 'peekLast$',  function () {
 for (var p=this.last$(); p != null ; p=this.pred$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
 if (item != null ) return item;
@@ -342,97 +314,97 @@ if (item != null ) return item;
 return null;
 });
 
-Clazz.newMeth(C$, 'getFirst$', function () {
-return p$1.screenNullResult$TE.apply(this, [this.peekFirst$()]);
+Clazz.newMeth(C$, 'getFirst$',  function () {
+return p$1.screenNullResult$O.apply(this, [this.peekFirst$()]);
 });
 
-Clazz.newMeth(C$, 'getLast$', function () {
-return p$1.screenNullResult$TE.apply(this, [this.peekLast$()]);
+Clazz.newMeth(C$, 'getLast$',  function () {
+return p$1.screenNullResult$O.apply(this, [this.peekLast$()]);
 });
 
-Clazz.newMeth(C$, 'pollFirst$', function () {
+Clazz.newMeth(C$, 'pollFirst$',  function () {
 for (var p=this.first$(); p != null ; p=this.succ$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
-if (item != null  && p.casItem$TE$TE(item, null) ) {
+if (item != null  && p.casItem$O$O(item, null) ) {
 this.unlink$java_util_concurrent_ConcurrentLinkedDeque_Node(p);
 return item;
 }}
 return null;
 });
 
-Clazz.newMeth(C$, 'pollLast$', function () {
+Clazz.newMeth(C$, 'pollLast$',  function () {
 for (var p=this.last$(); p != null ; p=this.pred$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
-if (item != null  && p.casItem$TE$TE(item, null) ) {
+if (item != null  && p.casItem$O$O(item, null) ) {
 this.unlink$java_util_concurrent_ConcurrentLinkedDeque_Node(p);
 return item;
 }}
 return null;
 });
 
-Clazz.newMeth(C$, 'removeFirst$', function () {
-return p$1.screenNullResult$TE.apply(this, [this.pollFirst$()]);
+Clazz.newMeth(C$, 'removeFirst$',  function () {
+return p$1.screenNullResult$O.apply(this, [this.pollFirst$()]);
 });
 
-Clazz.newMeth(C$, 'removeLast$', function () {
-return p$1.screenNullResult$TE.apply(this, [this.pollLast$()]);
+Clazz.newMeth(C$, 'removeLast$',  function () {
+return p$1.screenNullResult$O.apply(this, [this.pollLast$()]);
 });
 
-Clazz.newMeth(C$, ['offer$TE'], function (e) {
-return this.offerLast$TE(e);
+Clazz.newMeth(C$, 'offer$O',  function (e) {
+return this.offerLast$O(e);
 });
 
-Clazz.newMeth(C$, ['add$TE'], function (e) {
-return this.offerLast$TE(e);
+Clazz.newMeth(C$, 'add$O',  function (e) {
+return this.offerLast$O(e);
 });
 
-Clazz.newMeth(C$, 'poll$', function () {
+Clazz.newMeth(C$, 'poll$',  function () {
 return this.pollFirst$();
 });
 
-Clazz.newMeth(C$, 'peek$', function () {
+Clazz.newMeth(C$, 'peek$',  function () {
 return this.peekFirst$();
 });
 
-Clazz.newMeth(C$, 'remove$', function () {
+Clazz.newMeth(C$, 'remove$',  function () {
 return this.removeFirst$();
 });
 
-Clazz.newMeth(C$, 'pop$', function () {
+Clazz.newMeth(C$, 'pop$',  function () {
 return this.removeFirst$();
 });
 
-Clazz.newMeth(C$, 'element$', function () {
+Clazz.newMeth(C$, 'element$',  function () {
 return this.getFirst$();
 });
 
-Clazz.newMeth(C$, ['push$TE'], function (e) {
-this.addFirst$TE(e);
+Clazz.newMeth(C$, 'push$O',  function (e) {
+this.addFirst$O(e);
 });
 
-Clazz.newMeth(C$, 'removeFirstOccurrence$O', function (o) {
+Clazz.newMeth(C$, 'removeFirstOccurrence$O',  function (o) {
 C$.checkNotNull$O(o);
 for (var p=this.first$(); p != null ; p=this.succ$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
-if (item != null  && o.equals$O(item)  && p.casItem$TE$TE(item, null) ) {
+if (item != null  && o.equals$O(item)  && p.casItem$O$O(item, null) ) {
 this.unlink$java_util_concurrent_ConcurrentLinkedDeque_Node(p);
 return true;
 }}
 return false;
 });
 
-Clazz.newMeth(C$, 'removeLastOccurrence$O', function (o) {
+Clazz.newMeth(C$, 'removeLastOccurrence$O',  function (o) {
 C$.checkNotNull$O(o);
 for (var p=this.last$(); p != null ; p=this.pred$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
-if (item != null  && o.equals$O(item)  && p.casItem$TE$TE(item, null) ) {
+if (item != null  && o.equals$O(item)  && p.casItem$O$O(item, null) ) {
 this.unlink$java_util_concurrent_ConcurrentLinkedDeque_Node(p);
 return true;
 }}
 return false;
 });
 
-Clazz.newMeth(C$, 'contains$O', function (o) {
+Clazz.newMeth(C$, 'contains$O',  function (o) {
 if (o == null ) return false;
 for (var p=this.first$(); p != null ; p=this.succ$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
@@ -441,28 +413,28 @@ if (item != null  && o.equals$O(item) ) return true;
 return false;
 });
 
-Clazz.newMeth(C$, 'isEmpty$', function () {
+Clazz.newMeth(C$, 'isEmpty$',  function () {
 return this.peekFirst$() == null ;
 });
 
-Clazz.newMeth(C$, 'size$', function () {
+Clazz.newMeth(C$, 'size$',  function () {
 var count=0;
 for (var p=this.first$(); p != null ; p=this.succ$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) if (p.item != null ) if (++count == 2147483647) break;
 
 return count;
 });
 
-Clazz.newMeth(C$, 'remove$O', function (o) {
+Clazz.newMeth(C$, 'remove$O',  function (o) {
 return this.removeFirstOccurrence$O(o);
 });
 
-Clazz.newMeth(C$, 'addAll$java_util_Collection', function (c) {
+Clazz.newMeth(C$, 'addAll$java_util_Collection',  function (c) {
 if (c === this ) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 var beginningOfTheEnd=null;
 var last=null;
 for (var e, $e = c.iterator$(); $e.hasNext$()&&((e=($e.next$())),1);) {
 C$.checkNotNull$O(e);
-var newNode=Clazz.new_($I$(4).c$$TE,[e]);
+var newNode=Clazz.new_($I$(4,1).c$$O,[e]);
 if (beginningOfTheEnd == null ) beginningOfTheEnd=last=newNode;
  else {
 last.lazySetNext$java_util_concurrent_ConcurrentLinkedDeque_Node(newNode);
@@ -484,31 +456,31 @@ if (last.next == null ) p$1.casTail$java_util_concurrent_ConcurrentLinkedDeque_N
 
 });
 
-Clazz.newMeth(C$, 'clear$', function () {
+Clazz.newMeth(C$, 'clear$',  function () {
 while (this.pollFirst$() != null );
 });
 
-Clazz.newMeth(C$, 'toArray$', function () {
+Clazz.newMeth(C$, 'toArray$',  function () {
 return p$1.toArrayList.apply(this, []).toArray$();
 });
 
-Clazz.newMeth(C$, 'toArray$TTA', function (a) {
-return p$1.toArrayList.apply(this, []).toArray$TTA(a);
+Clazz.newMeth(C$, 'toArray$OA',  function (a) {
+return p$1.toArrayList.apply(this, []).toArray$OA(a);
 });
 
-Clazz.newMeth(C$, 'iterator$', function () {
-return Clazz.new_($I$(6), [this, null]);
+Clazz.newMeth(C$, 'iterator$',  function () {
+return Clazz.new_($I$(6,1),[this, null]);
 });
 
-Clazz.newMeth(C$, 'descendingIterator$', function () {
-return Clazz.new_($I$(7), [this, null]);
+Clazz.newMeth(C$, 'descendingIterator$',  function () {
+return Clazz.new_($I$(7,1),[this, null]);
 });
 
-Clazz.newMeth(C$, 'spliterator$', function () {
-return Clazz.new_($I$(8).c$$java_util_concurrent_ConcurrentLinkedDeque,[this]);
+Clazz.newMeth(C$, 'spliterator$',  function () {
+return Clazz.new_($I$(8,1).c$$java_util_concurrent_ConcurrentLinkedDeque,[this]);
 });
 
-Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream', function (s) {
+Clazz.newMeth(C$, 'writeObject$java_io_ObjectOutputStream',  function (s) {
 s.defaultWriteObject$();
 for (var p=this.first$(); p != null ; p=this.succ$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
 var item=p.item;
@@ -517,13 +489,13 @@ if (item != null ) s.writeObject$O(item);
 s.writeObject$O(null);
 }, p$1);
 
-Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream', function (s) {
+Clazz.newMeth(C$, 'readObject$java_io_ObjectInputStream',  function (s) {
 s.defaultReadObject$();
 var h=null;
 var t=null;
 var item;
 while ((item=s.readObject$()) != null ){
-var newNode=Clazz.new_($I$(4).c$$TE,[item]);
+var newNode=Clazz.new_($I$(4,1).c$$O,[item]);
 if (h == null ) h=t=newNode;
  else {
 t.lazySetNext$java_util_concurrent_ConcurrentLinkedDeque_Node(newNode);
@@ -533,106 +505,112 @@ t=newNode;
 p$1.initHeadTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node.apply(this, [h, t]);
 }, p$1);
 
-Clazz.newMeth(C$, 'casHead$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node', function (cmp, val) {
+Clazz.newMeth(C$, 'casHead$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (cmp, val) {
 return C$.UNSAFE.compareAndSwapObject$O$J$O$O(this, C$.headOffset, cmp, val);
 }, p$1);
 
-Clazz.newMeth(C$, 'casTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node', function (cmp, val) {
+Clazz.newMeth(C$, 'casTail$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (cmp, val) {
 return C$.UNSAFE.compareAndSwapObject$O$J$O$O(this, C$.tailOffset, cmp, val);
 }, p$1);
-;
-(function(){var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "Node", function(){
-Clazz.newInstance(this, arguments[0],false,C$);
-});
-C$.UNSAFE=null;
-C$.prevOffset=0;
-C$.itemOffset=0;
-C$.nextOffset=0;
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.prevOffset=0;
-C$.itemOffset=0;
-C$.nextOffset=0;
+C$.$static$=function(){C$.$static$=0;
 {
+C$.PREV_TERMINATOR=Clazz.new_($I$(4,1));
+C$.PREV_TERMINATOR.next=C$.PREV_TERMINATOR;
+C$.NEXT_TERMINATOR=Clazz.new_($I$(4,1));
+C$.NEXT_TERMINATOR.prev=C$.NEXT_TERMINATOR;
 try {
 C$.UNSAFE=$I$(1).getUnsafe$();
 var k=Clazz.getClass(C$);
-C$.prevOffset=C$.UNSAFE.objectFieldOffset$reflect_Field(k.getDeclaredField$S("prev"));
-C$.itemOffset=C$.UNSAFE.objectFieldOffset$reflect_Field(k.getDeclaredField$S("item"));
-C$.nextOffset=C$.UNSAFE.objectFieldOffset$reflect_Field(k.getDeclaredField$S("next"));
+C$.headOffset=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(k.getDeclaredField$S("head"));
+C$.tailOffset=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(k.getDeclaredField$S("tail"));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-throw Clazz.new_($I$(2).c$$Throwable,[e]);
+throw Clazz.new_($I$(2,1).c$$Throwable,[e]);
 } else {
 throw e;
 }
 }
 };
-}
+};
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "Node", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+});
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.prev=null;
-this.item=null;
-this.next=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['prev','java.util.concurrent.ConcurrentLinkedDeque.Node','item','<E>','next','java.util.concurrent.ConcurrentLinkedDeque.Node']]
+,['J',['prevOffset','itemOffset','nextOffset'],'O',['UNSAFE','sun.misc.Unsafe']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$TE', function (item) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$O',  function (item) {
+;C$.$init$.apply(this);
 C$.UNSAFE.putObject$O$J$O(this, C$.itemOffset, item);
 }, 1);
 
-Clazz.newMeth(C$, 'casItem$TE$TE', function (cmp, val) {
+Clazz.newMeth(C$, 'casItem$O$O',  function (cmp, val) {
 return C$.UNSAFE.compareAndSwapObject$O$J$O$O(this, C$.itemOffset, cmp, val);
 });
 
-Clazz.newMeth(C$, 'lazySetNext$java_util_concurrent_ConcurrentLinkedDeque_Node', function (val) {
+Clazz.newMeth(C$, 'lazySetNext$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (val) {
 C$.UNSAFE.putOrderedObject$O$J$O(this, C$.nextOffset, val);
 });
 
-Clazz.newMeth(C$, 'casNext$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node', function (cmp, val) {
+Clazz.newMeth(C$, 'casNext$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (cmp, val) {
 return C$.UNSAFE.compareAndSwapObject$O$J$O$O(this, C$.nextOffset, cmp, val);
 });
 
-Clazz.newMeth(C$, 'lazySetPrev$java_util_concurrent_ConcurrentLinkedDeque_Node', function (val) {
+Clazz.newMeth(C$, 'lazySetPrev$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (val) {
 C$.UNSAFE.putOrderedObject$O$J$O(this, C$.prevOffset, val);
 });
 
-Clazz.newMeth(C$, 'casPrev$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node', function (cmp, val) {
+Clazz.newMeth(C$, 'casPrev$java_util_concurrent_ConcurrentLinkedDeque_Node$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (cmp, val) {
 return C$.UNSAFE.compareAndSwapObject$O$J$O$O(this, C$.prevOffset, cmp, val);
 });
+
+C$.$static$=function(){C$.$static$=0;
+{
+try {
+C$.UNSAFE=$I$(1).getUnsafe$();
+var k=Clazz.getClass(C$);
+C$.prevOffset=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(k.getDeclaredField$S("prev"));
+C$.itemOffset=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(k.getDeclaredField$S("item"));
+C$.nextOffset=C$.UNSAFE.objectFieldOffset$java_lang_reflect_Field(k.getDeclaredField$S("next"));
+} catch (e) {
+if (Clazz.exceptionOf(e,"Exception")){
+throw Clazz.new_($I$(2,1).c$$Throwable,[e]);
+} else {
+throw e;
+}
+}
+};
+};
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "AbstractItr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "AbstractItr", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextNode=null;
-this.nextItem=null;
-this.lastRet=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['nextNode','java.util.concurrent.ConcurrentLinkedDeque.Node','nextItem','<E>','lastRet','java.util.concurrent.ConcurrentLinkedDeque.Node']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 p$1.advance.apply(this, []);
 }, 1);
 
-Clazz.newMeth(C$, 'advance', function () {
+Clazz.newMeth(C$, 'advance',  function () {
 this.lastRet=this.nextNode;
 var p=(this.nextNode == null ) ? this.startNode$() : this.nextNode$java_util_concurrent_ConcurrentLinkedDeque_Node(this.nextNode);
 for (; ; p=this.nextNode$java_util_concurrent_ConcurrentLinkedDeque_Node(p)) {
@@ -648,18 +626,18 @@ break;
 }}
 }, p$1);
 
-Clazz.newMeth(C$, 'hasNext$', function () {
+Clazz.newMeth(C$, 'hasNext$',  function () {
 return this.nextItem != null ;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
+Clazz.newMeth(C$, 'next$',  function () {
 var item=this.nextItem;
 if (item == null ) throw Clazz.new_(Clazz.load('java.util.NoSuchElementException'));
 p$1.advance.apply(this, []);
 return item;
 });
 
-Clazz.newMeth(C$, 'remove$', function () {
+Clazz.newMeth(C$, 'remove$',  function () {
 var l=this.lastRet;
 if (l == null ) throw Clazz.new_(Clazz.load('IllegalStateException'));
 l.item=null;
@@ -668,72 +646,63 @@ this.lastRet=null;
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "Itr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "Itr", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.concurrent.ConcurrentLinkedDeque','.AbstractItr']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'startNode$', function () {
+Clazz.newMeth(C$, 'startNode$',  function () {
 return this.b$['java.util.concurrent.ConcurrentLinkedDeque'].first$.apply(this.b$['java.util.concurrent.ConcurrentLinkedDeque'], []);
 });
 
-Clazz.newMeth(C$, 'nextNode$java_util_concurrent_ConcurrentLinkedDeque_Node', function (p) {
+Clazz.newMeth(C$, 'nextNode$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (p) {
 return this.b$['java.util.concurrent.ConcurrentLinkedDeque'].succ$java_util_concurrent_ConcurrentLinkedDeque_Node.apply(this.b$['java.util.concurrent.ConcurrentLinkedDeque'], [p]);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "DescendingItr", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "DescendingItr", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['java.util.concurrent.ConcurrentLinkedDeque','.AbstractItr']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'startNode$', function () {
+Clazz.newMeth(C$, 'startNode$',  function () {
 return this.b$['java.util.concurrent.ConcurrentLinkedDeque'].last$.apply(this.b$['java.util.concurrent.ConcurrentLinkedDeque'], []);
 });
 
-Clazz.newMeth(C$, 'nextNode$java_util_concurrent_ConcurrentLinkedDeque_Node', function (p) {
+Clazz.newMeth(C$, 'nextNode$java_util_concurrent_ConcurrentLinkedDeque_Node',  function (p) {
 return this.b$['java.util.concurrent.ConcurrentLinkedDeque'].pred$java_util_concurrent_ConcurrentLinkedDeque_Node.apply(this.b$['java.util.concurrent.ConcurrentLinkedDeque'], [p]);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "CLDSpliterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ConcurrentLinkedDeque, "CLDSpliterator", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, 'java.util.Spliterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queue=null;
-this.current=null;
-this.batch=0;
-this.exhausted=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_util_concurrent_ConcurrentLinkedDeque', function (queue) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['exhausted'],'I',['batch'],'O',['queue','java.util.concurrent.ConcurrentLinkedDeque','current','java.util.concurrent.ConcurrentLinkedDeque.Node']]]
+
+Clazz.newMeth(C$, 'c$$java_util_concurrent_ConcurrentLinkedDeque',  function (queue) {
+;C$.$init$.apply(this);
 this.queue=queue;
 }, 1);
 
-Clazz.newMeth(C$, 'trySplit$', function () {
+Clazz.newMeth(C$, 'trySplit$',  function () {
 var p;
 var q=this.queue;
 var b=this.batch;
@@ -754,7 +723,7 @@ return $I$(3).spliterator$OA$I$I$I(a, 0, i, 4368);
 }}}return null;
 });
 
-Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer', function (action) {
+Clazz.newMeth(C$, 'forEachRemaining$java_util_function_Consumer',  function (action) {
 var p;
 if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var q=this.queue;
@@ -763,11 +732,11 @@ this.exhausted=true;
 do {
 var e=p.item;
 if (p === (p=p.next) ) p=q.first$();
-if (e != null ) action.accept$(e);
+if (e != null ) action.accept$O(e);
 } while (p != null );
 }});
 
-Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer', function (action) {
+Clazz.newMeth(C$, 'tryAdvance$java_util_function_Consumer',  function (action) {
 var p;
 if (action == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var q=this.queue;
@@ -779,20 +748,20 @@ if (p === (p=p.next) ) p=q.first$();
 } while (e == null  && p != null  );
 if ((this.current=p) == null ) this.exhausted=true;
 if (e != null ) {
-action.accept$(e);
+action.accept$O(e);
 return true;
 }}return false;
 });
 
-Clazz.newMeth(C$, 'estimateSize$', function () {
-return 9223372036854775807;
+Clazz.newMeth(C$, 'estimateSize$',  function () {
+return [16777215,549755813887,1];
 });
 
-Clazz.newMeth(C$, 'characteristics$', function () {
+Clazz.newMeth(C$, 'characteristics$',  function () {
 return 4368;
 });
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:17 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

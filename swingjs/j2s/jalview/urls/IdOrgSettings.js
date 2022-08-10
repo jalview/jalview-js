@@ -1,30 +1,30 @@
 (function(){var P$=Clazz.newPackage("jalview.urls"),I$=[];
-var C$=Clazz.newClass(P$, "IdOrgSettings");
-C$.url=null;
-C$.location=null;
+/*c*/var C$=Clazz.newClass(P$, "IdOrgSettings");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'setUrl$S', function (seturl) {
+C$.$fields$=[[]
+,['S',['url','location']]]
+
+Clazz.newMeth(C$, 'setUrl$S',  function (seturl) {
 C$.url=seturl;
 }, 1);
 
-Clazz.newMeth(C$, 'setDownloadLocation$S', function (setloc) {
+Clazz.newMeth(C$, 'setDownloadLocation$S',  function (setloc) {
 C$.location=setloc;
 }, 1);
 
-Clazz.newMeth(C$, 'getUrl$', function () {
+Clazz.newMeth(C$, 'getUrl$',  function () {
 return C$.url;
 }, 1);
 
-Clazz.newMeth(C$, 'getDownloadLocation$', function () {
+Clazz.newMeth(C$, 'getDownloadLocation$',  function () {
 return C$.location;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

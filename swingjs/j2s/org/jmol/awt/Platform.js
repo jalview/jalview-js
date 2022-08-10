@@ -1,19 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'org.jmol.awt.Display','org.jmol.api.Interface','org.jmol.awt.Mouse','org.jmol.awt.Image','org.jmol.awt.AwtFont','java.awt.GraphicsEnvironment','org.jmol.viewer.Viewer','java.text.SimpleDateFormat','java.util.Date','org.jmol.awt.AwtFile','javajs.util.Rdr']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Platform", null, null, 'org.jmol.api.GenericPlatform');
+(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'org.jmol.awt.Display','org.jmol.api.Interface','org.jmol.awt.Mouse','org.jmol.awt.Image','org.jmol.awt.AwtFont','java.awt.GraphicsEnvironment','java.text.SimpleDateFormat','org.jmol.awt.AwtFile','javajs.util.Rdr']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Platform", null, null, 'org.jmol.api.GenericPlatform');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['vwr','org.jmol.api.PlatformViewer']]]
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_api_PlatformViewer$O', function (vwr, display) {
 this.vwr=vwr;
+});
+
+Clazz.newMeth(C$, 'isSingleThreaded$', function () {
+return false;
 });
 
 Clazz.newMeth(C$, 'convertPointFromScreen$O$javajs_util_P3', function (display, ptTemp) {
@@ -25,7 +25,7 @@ $I$(1).getFullScreenDimensions$O$IA(display, widthHeight);
 });
 
 Clazz.newMeth(C$, 'getMenuPopup$S$C', function (menuStructure, type) {
-var jmolpopup=$I$(2).getOption$S$org_jmol_viewer_Viewer$S(type == "j" ? "popup.JmolAwtPopup" : "modelkit.ModelKitPopup", null, null);
+var jmolpopup=$I$(2,"getOption$S$org_jmol_viewer_Viewer$S",[type == "j" ? "awt.AwtJmolPopup" : "awt.AwtModelKitPopup", null, null]);
 if (jmolpopup != null ) jmolpopup.jpiInitialize$org_jmol_api_PlatformViewer$S(this.vwr, menuStructure);
 return jmolpopup;
 });
@@ -36,10 +36,6 @@ return $I$(1).hasFocus$O(display);
 
 Clazz.newMeth(C$, 'prompt$S$S$SA$Z', function (label, data, list, asButtons) {
 return $I$(1).prompt$S$S$SA$Z(label, data, list, asButtons);
-});
-
-Clazz.newMeth(C$, 'renderScreenImage$O$O', function (g, size) {
-$I$(1).renderScreenImage$org_jmol_api_PlatformViewer$O$O(this.vwr, g, size);
 });
 
 Clazz.newMeth(C$, 'requestFocusInWindow$O', function (display) {
@@ -60,7 +56,7 @@ if (c == 12) (display).requestFocus$();
 });
 
 Clazz.newMeth(C$, 'getMouseManager$D$O', function (privateKey, display) {
-return Clazz.new_($I$(3).c$$D$org_jmol_api_PlatformViewer$O,[privateKey, this.vwr, display]);
+return Clazz.new_($I$(3,1).c$$D$org_jmol_api_PlatformViewer$O,[privateKey, this.vwr, display]);
 });
 
 Clazz.newMeth(C$, 'allocateRgbImage$I$I$IA$I$Z$Z', function (windowWidth, windowHeight, pBuffer, windowSize, backgroundTransparent, isImageWrite) {
@@ -76,20 +72,20 @@ $I$(4).disposeGraphics$O(gOffscreen);
 });
 
 Clazz.newMeth(C$, 'drawImage$O$O$I$I$I$I$Z', function (g, img, x, y, width, height, isDTI) {
-if (isDTI) $I$(1).drawImageDTI$O$O$I$I$I$I(g, img, x, y, width, height);
- else $I$(1).drawImage$O$O$I$I$I$I(g, img, x, y, width, height);
+if (isDTI) $I$(4).drawImageDTI$O$O$I$I$I$I(g, img, x, y, width, height);
+ else $I$(4).drawImage$O$O$I$I$I$I(g, img, x, y, width, height);
 });
 
-Clazz.newMeth(C$, 'grabPixels$O$I$I$IA$I$I', function (imageobj, width, height, pixels, startRow, nRows) {
-return $I$(4).grabPixels$O$I$I$IA$I$I(imageobj, width, height, pixels, startRow, nRows);
+Clazz.newMeth(C$, 'grabPixels$O$I$I$IA', function (imageobj, width, height, pixels) {
+return $I$(4).grabPixels$O$I$I$IA(imageobj, width, height, pixels);
 });
 
 Clazz.newMeth(C$, 'drawImageToBuffer$O$O$O$I$I$I', function (gOffscreen, imageOffscreen, imageobj, width, height, bgcolor) {
 return $I$(4).drawImageToBuffer$O$O$O$I$I$I(gOffscreen, imageOffscreen, imageobj, width, height, bgcolor);
 });
 
-Clazz.newMeth(C$, 'getTextPixels$S$javajs_awt_Font$O$O$I$I$I', function (text, font3d, gObj, image, width, height, ascent) {
-return $I$(4).getTextPixels$S$javajs_awt_Font$O$O$I$I$I(text, font3d, gObj, image, width, height, ascent);
+Clazz.newMeth(C$, 'getTextPixels$S$org_jmol_util_Font$O$O$I$I$I', function (text, font3d, gObj, image, width, height, ascent) {
+return $I$(4).getTextPixels$S$org_jmol_util_Font$O$O$I$I$I(text, font3d, gObj, image, width, height, ascent);
 });
 
 Clazz.newMeth(C$, 'flushImage$O', function (imagePixelBuffer) {
@@ -125,8 +121,8 @@ $I$(4).waitForDisplay$org_jmol_api_PlatformViewer$O(this.vwr, image);
 return true;
 });
 
-Clazz.newMeth(C$, 'fontStringWidth$javajs_awt_Font$S', function (font, text) {
-return $I$(5).stringWidth$O$S(font.getFontMetrics$(), text);
+Clazz.newMeth(C$, 'fontStringWidth$org_jmol_util_Font$S', function (font, text) {
+return $I$(5,"stringWidth$O$S",[font.getFontMetrics$(), text]);
 });
 
 Clazz.newMeth(C$, 'getFontAscent$O', function (fontMetrics) {
@@ -137,8 +133,8 @@ Clazz.newMeth(C$, 'getFontDescent$O', function (fontMetrics) {
 return $I$(5).getDescent$O(fontMetrics);
 });
 
-Clazz.newMeth(C$, 'getFontMetrics$javajs_awt_Font$O', function (font, graphics) {
-return $I$(5).getFontMetrics$javajs_awt_Font$O(font, graphics);
+Clazz.newMeth(C$, 'getFontMetrics$org_jmol_util_Font$O', function (font, graphics) {
+return $I$(5).getFontMetrics$org_jmol_util_Font$O(font, graphics);
 });
 
 Clazz.newMeth(C$, 'newFont$S$Z$Z$F', function (fontFace, isBold, isItalic, fontSize) {
@@ -153,10 +149,6 @@ return obj[0];
 
 Clazz.newMeth(C$, 'isHeadless$', function () {
 return $I$(6).isHeadless$();
-});
-
-Clazz.newMeth(C$, 'isSingleThreaded$', function () {
-return $I$(7).isSwingJS;
 });
 
 Clazz.newMeth(C$, 'notifyEndOfRendering$', function () {
@@ -176,24 +168,24 @@ Clazz.newMeth(C$, 'getDateFormat$S', function (isoType) {
 if (isoType == null ) {
 isoType="EEE, d MMM yyyy HH:mm:ss Z";
 } else if (isoType.contains$CharSequence("8824")) {
-return "D:" + Clazz.new_($I$(8).c$$S,["YYYYMMddHHmmssX"]).format$java_util_Date(Clazz.new_($I$(9))) + "'00'" ;
+return "D:" + Clazz.new_($I$(7,1).c$$S,["YYYYMMddHHmmssX"]).format$java_util_Date(Clazz.new_(java.util.Date)) + "'00'" ;
 } else if (isoType.contains$CharSequence("8601")) {
-return Clazz.new_($I$(8).c$$S,["yyyy-MM-dd\'T\'HH:mm:ss"]).format$java_util_Date(Clazz.new_($I$(9)));
-}return Clazz.new_($I$(8).c$$S,[isoType]).format$java_util_Date(Clazz.new_($I$(9)));
+return Clazz.new_($I$(7,1).c$$S,["yyyy-MM-dd\'T\'HH:mm:ss"]).format$java_util_Date(Clazz.new_(java.util.Date));
+}return Clazz.new_($I$(7,1).c$$S,[isoType]).format$java_util_Date(Clazz.new_(java.util.Date));
 });
 
 Clazz.newMeth(C$, 'newFile$S', function (name) {
-return Clazz.new_($I$(10).c$$S,[name]);
+return Clazz.new_($I$(8,1).c$$S,[name]);
 });
 
 Clazz.newMeth(C$, 'getBufferedFileInputStream$S', function (name) {
-return $I$(10).getBufferedFileInputStream$S(name);
+return $I$(8).getBufferedFileInputStream$S(name);
 });
 
 Clazz.newMeth(C$, 'getURLContents$java_net_URL$BA$S$Z', function (url, outputBytes, post, asString) {
-var ret=$I$(10).getURLContents$java_net_URL$BA$S(url, outputBytes, post);
+var ret=$I$(8).getURLContents$java_net_URL$BA$S(url, outputBytes, post);
 try {
-return (!asString ? ret : Clazz.instanceOf(ret, "java.lang.String") ? ret :  String.instantialize($I$(11).getStreamAsBytes$java_io_BufferedInputStream$javajs_util_OC(ret, null)));
+return (!asString ? ret : Clazz.instanceOf(ret, "java.lang.String") ? ret :  String.instantialize($I$(9).getStreamAsBytes$java_io_BufferedInputStream$javajs_util_OC(ret, null)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 return "" + e;
@@ -204,7 +196,7 @@ throw e;
 });
 
 Clazz.newMeth(C$, 'getLocalUrl$S', function (fileName) {
-return $I$(10).getLocalUrl$org_jmol_api_GenericFileInterface(this.newFile$S(fileName));
+return $I$(8,"getLocalUrl$org_jmol_api_GenericFileInterface",[this.newFile$S(fileName)]);
 });
 
 Clazz.newMeth(C$, 'getImageDialog$S$java_util_Map', function (title, imageMap) {
@@ -215,6 +207,10 @@ Clazz.newMeth(C$, 'forceAsyncLoad$S', function (filename) {
 return false;
 });
 
+Clazz.newMeth(C$, 'isJS$', function () {
+return false;
+});
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:58 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

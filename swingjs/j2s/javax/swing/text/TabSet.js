@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'javax.swing.text.TabStop','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TabSet");
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,'javax.swing.text.TabStop','StringBuffer']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TabSet");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.tabs=null;
-this.hashCode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.hashCode=2147483647;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_TabStopA', function (tabs) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['hashCode'],'O',['tabs','javax.swing.text.TabStop[]']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_TabStopA',  function (tabs) {
+;C$.$init$.apply(this);
 if (tabs != null ) {
 var tabCount=tabs.length;
 this.tabs=Clazz.array($I$(1), [tabCount]);
@@ -23,28 +18,28 @@ System.arraycopy$O$I$O$I$I(tabs, 0, this.tabs, 0, tabCount);
 } else this.tabs=null;
 }, 1);
 
-Clazz.newMeth(C$, 'getTabCount$', function () {
+Clazz.newMeth(C$, 'getTabCount$',  function () {
 return (this.tabs == null ) ? 0 : this.tabs.length;
 });
 
-Clazz.newMeth(C$, 'getTab$I', function (index) {
+Clazz.newMeth(C$, 'getTab$I',  function (index) {
 var numTabs=this.getTabCount$();
 if (index < 0 || index >= numTabs ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[index + " is outside the range of tabs"]);
 return this.tabs[index];
 });
 
-Clazz.newMeth(C$, 'getTabAfter$F', function (location) {
+Clazz.newMeth(C$, 'getTabAfter$F',  function (location) {
 var index=this.getTabIndexAfter$F(location);
 return (index == -1) ? null : this.tabs[index];
 });
 
-Clazz.newMeth(C$, 'getTabIndex$javax_swing_text_TabStop', function (tab) {
+Clazz.newMeth(C$, 'getTabIndex$javax_swing_text_TabStop',  function (tab) {
 for (var counter=this.getTabCount$() - 1; counter >= 0; counter--) if (this.getTab$I(counter) === tab ) return counter;
 
 return -1;
 });
 
-Clazz.newMeth(C$, 'getTabIndexAfter$F', function (location) {
+Clazz.newMeth(C$, 'getTabIndexAfter$F',  function (location) {
 var current;
 var min;
 var max;
@@ -62,7 +57,7 @@ max=current;
 return -1;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (o) {
+Clazz.newMeth(C$, 'equals$O',  function (o) {
 if (o === this ) {
 return true;
 }if (Clazz.instanceOf(o, "javax.swing.text.TabSet")) {
@@ -80,7 +75,7 @@ return true;
 }return false;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 if (this.hashCode == 2147483647) {
 this.hashCode=0;
 var len=this.getTabCount$();
@@ -93,9 +88,9 @@ this.hashCode-=1;
 }}return this.hashCode;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 var tabCount=this.getTabCount$();
-var buffer=Clazz.new_($I$(2).c$$S,["[ "]);
+var buffer=Clazz.new_($I$(2,1).c$$S,["[ "]);
 for (var counter=0; counter < tabCount; counter++) {
 if (counter > 0) buffer.append$S(" - ");
 buffer.append$S(this.getTab$I(counter).toString());
@@ -106,4 +101,4 @@ return buffer.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:49 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

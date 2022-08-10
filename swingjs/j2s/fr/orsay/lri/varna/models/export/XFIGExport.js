@@ -1,27 +1,19 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),p$1={},I$=[[0,'StringBuffer','java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XFIGExport", null, 'fr.orsay.lri.varna.models.export.SecStrDrawingProducer');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),p$1={},I$=[[0,'StringBuffer','java.util.Hashtable']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XFIGExport", null, 'fr.orsay.lri.varna.models.export.SecStrDrawingProducer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$_font=0;
-this.buf=null;
-this._definedCols=null;
-this._nextColCode=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.$_font=0;
-this.buf=Clazz.new_($I$(1));
-this._definedCols=Clazz.new_($I$(2));
+this.buf=Clazz.new_($I$(1,1));
+this._definedCols=Clazz.new_($I$(2,1));
 this._nextColCode=32;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['$_font','_nextColCode'],'O',['buf','StringBuffer','_definedCols','java.util.Hashtable']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 C$.superclazz.prototype.setScale$D.apply(this, [20.0]);
 }, 1);
 
@@ -29,7 +21,7 @@ Clazz.newMeth(C$, 'ensureColorDefinition$java_awt_Color', function (col) {
 if (!this._definedCols.containsKey$O(col)) {
 if (this._nextColCode < 543) {
 var curColorCode=this._nextColCode;
-this._definedCols.put$TK$TV(col, new Integer(curColorCode));
+this._definedCols.put$O$O(col, new Integer(curColorCode));
 this._nextColCode++;
 var RGBR=Integer.toHexString$I(col.getRed$());
 if (RGBR.length$() < 2) {
@@ -48,13 +40,13 @@ return "0 " + curColorCode + " " + RGBHex + "\n" ;
 
 Clazz.newMeth(C$, 'getColorCode$java_awt_Color', function (col) {
 if (this._definedCols.containsKey$O(col)) {
-return (this._definedCols.get$O(col)).intValue$();
+return (this._definedCols.get$O(col)).valueOf();
 }return 0;
 }, p$1);
 
 Clazz.newMeth(C$, 'getCurColorCode', function () {
 if (this._definedCols.containsKey$O(this._curColor)) {
-return (this._definedCols.get$O(this._curColor)).intValue$();
+return (this._definedCols.get$O(this._curColor)).valueOf();
 }return 0;
 }, p$1);
 
@@ -75,7 +67,7 @@ return ("2 2 0 " + (thickness|0) + " " + p$1.getCurColorCode.apply(this, []) + "
 });
 
 Clazz.newMeth(C$, 'drawTextS$java_awt_geom_Point2D_Double$S', function (p, txt) {
-return ("4 1 " + p$1.getCurColorCode.apply(this, []) + " 40 -1 " + this.$_font + " " + (this._fontsize|0) + " 0.0000 6 " + new Double(4 * this._fontsize).toString()  + " " + ((2 * this._fontsize)|0) + " " + ((p.x)|0) + " " + (-(p.y - 6 * this._fontsize)|0) + " " + txt + "\\001\n");
+return ("4 1 " + p$1.getCurColorCode.apply(this, []) + " 40 -1 " + this.$_font + " " + (this._fontsize|0) + " 0.0000 6 " + new Double(4 * this._fontsize).toString()  + " " + ((2 * this._fontsize)|0) + " " + ((p.x)|0) + " " + (-(p.y - 6 * this._fontsize)|0) + " " + txt + "\\u0001\n");
 });
 
 Clazz.newMeth(C$, 'fillCircleS$java_awt_geom_Point2D_Double$D$D$java_awt_Color', function (p, radius, thickness, col) {
@@ -165,4 +157,4 @@ Clazz.newMeth(C$, 'drawBackboneEndS$I', function (index) {
 return "";
 });
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

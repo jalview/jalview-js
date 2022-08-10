@@ -1,14 +1,15 @@
-(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'sun.nio.cs.StandardCharsets']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSCharSet");
-C$.aliases=null;
+(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'sun.nio.cs.StandardCharsets']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSCharSet");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'lookupName$S', function (charsetName) {
+C$.$fields$=[[]
+,['O',['aliases','String[][]']]]
+
+Clazz.newMeth(C$, 'lookupName$S',  function (charsetName) {
 if (C$.aliases == null ) {
 var sep=";";
 var sets=$I$(1).SWINGJS_ALIASES;
@@ -27,4 +28,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:16 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

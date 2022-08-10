@@ -1,24 +1,26 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.factories"),I$=[[0,'java.io.BufferedReader','java.io.FileReader','java.net.URL','java.io.InputStreamReader','java.util.LinkedHashMap','fr.orsay.lri.varna.factories.RNAAlignment','StringBuffer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StockholmIO");
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.factories"),I$=[[0,'java.io.BufferedReader','java.io.FileReader','java.net.URL','java.io.InputStreamReader','java.util.LinkedHashMap','fr.orsay.lri.varna.factories.RNAAlignment','StringBuffer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StockholmIO");
+
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'readAlignementFromFile$S', function (path) {
-return C$.readAlignement$java_io_BufferedReader(Clazz.new_($I$(1).c$$java_io_Reader,[Clazz.new_($I$(2).c$$S,[path])]));
+return C$.readAlignement$java_io_BufferedReader(Clazz.new_([Clazz.new_($I$(2,1).c$$S,[path])],$I$(1,1).c$$java_io_Reader));
 }, 1);
 
 Clazz.newMeth(C$, 'readAlignementFromURL$S', function (url) {
-var urlAb=Clazz.new_($I$(3).c$$S,[url]);
+var urlAb=Clazz.new_($I$(3,1).c$$S,[url]);
 var urlConn=urlAb.openConnection$();
 urlConn.setUseCaches$Z(false);
-var r=Clazz.new_($I$(4).c$$java_io_InputStream$S,[urlConn.getInputStream$(), "UTF-8"]);
-return C$.readAlignement$java_io_BufferedReader(Clazz.new_($I$(1).c$$java_io_Reader,[r]));
+var r=Clazz.new_([urlConn.getInputStream$(), "UTF-8"],$I$(4,1).c$$java_io_InputStream$S);
+return C$.readAlignement$java_io_BufferedReader(Clazz.new_($I$(1,1).c$$java_io_Reader,[r]));
 }, 1);
 
 Clazz.newMeth(C$, 'readAlignement$java_io_BufferedReader', function (r) {
-var rawSeqs=Clazz.new_($I$(5));
-var result=Clazz.new_($I$(6));
+var rawSeqs=Clazz.new_($I$(5,1));
+var result=Clazz.new_($I$(6,1));
 var line=r.readLine$();
 var str="";
 while (line != null ){
@@ -28,7 +30,7 @@ if (data.length > 1) {
 var seqName=data[0].trim$();
 var seq=data[1].trim$();
 if (!rawSeqs.containsKey$O(seqName)) {
-rawSeqs.put$TK$TV(seqName, Clazz.new_($I$(7)));
+rawSeqs.put$O$O(seqName, Clazz.new_($I$(7,1)));
 }var val=rawSeqs.get$O(seqName);
 val.append$S(seq);
 }} else if (line.startsWith$S("#")) {
@@ -50,4 +52,4 @@ return result;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:44 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

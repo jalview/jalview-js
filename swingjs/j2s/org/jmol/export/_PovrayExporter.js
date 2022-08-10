@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'org.jmol.viewer.Viewer','javajs.util.Measure','javajs.util.P4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "_PovrayExporter", null, 'org.jmol.export.__RayTracerExporter');
+(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'org.jmol.viewer.Viewer','org.jmol.export.___Exporter','javajs.util.Measure','javajs.util.P4']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "_PovrayExporter", null, 'org.jmol.export.__RayTracerExporter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.haveMacros=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveMacros']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.commentChar="// ";
 }, 1);
 
@@ -130,7 +126,7 @@ return i[0] + "," + i[1] + "," + i[2] ;
 }, p$1);
 
 Clazz.newMeth(C$, 'color4$H', function (colix) {
-return this.rgbFractionalFromColix$H(colix) + "," + P$.___Exporter.translucencyFractionalFromColix$H(colix) ;
+return this.rgbFractionalFromColix$H(colix) + "," + $I$(2).translucencyFractionalFromColix$H(colix) ;
 }, p$1);
 
 Clazz.newMeth(C$, 'getAuxiliaryFileData', function () {
@@ -151,7 +147,7 @@ Clazz.newMeth(C$, 'outputCone$javajs_util_P3$javajs_util_P3$F$H$Z', function (sc
 if (isBarb) {
 if (!this.haveMacros) p$1.writeMacros2.apply(this, []);
 this.tempP1.set$F$F$F(screenBase.x, screenTip.y, 12345.679);
-var plane=$I$(2).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(screenBase, screenTip, this.tempP1, this.tempV1, this.tempV2, Clazz.new_($I$(3)));
+var plane=$I$(3,"getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4",[screenBase, screenTip, this.tempP1, this.tempV1, this.tempV2, Clazz.new_($I$(4,1))]);
 this.output$S("barb(" + this.getTriad$javajs_util_T3(screenBase) + "," + new Float(radius).toString() + "," + this.getTriad$javajs_util_T3(screenTip) + ",0" + "," + p$1.color4$H.apply(this, [colix]) + "," + new Float(plane.x).toString() + "," + new Float(plane.y).toString() + "," + new Float(plane.z).toString() + "," + new Float(-plane.w).toString() + ")\n" );
 } else {
 this.output$S("b(" + this.getTriad$javajs_util_T3(screenBase) + "," + new Float(radius).toString() + "," + this.getTriad$javajs_util_T3(screenTip) + ",0" + "," + p$1.color4$H.apply(this, [colix]) + ")\n" );
@@ -181,7 +177,7 @@ for (var j=0; j <= 3; j++) this.outputVertex$javajs_util_T3$javajs_util_T3(verti
 
 this.output$S("\n");
 this.output$S("pigment{rgbt<" + p$1.color4$H.apply(this, [colix=polygonColixes[i]]) + ">}\n" );
-this.output$S("  translucentFinish(" + P$.___Exporter.translucencyFractionalFromColix$H(colix) + ")\n" );
+this.output$S("  translucentFinish(" + $I$(2).translucencyFractionalFromColix$H(colix) + ")\n" );
 this.output$S("  check_shadow()\n");
 this.output$S("  clip()\n");
 this.output$S("}\n");
@@ -196,7 +192,7 @@ var haveNormals=(normals != null );
 if (haveNormals) {
 this.output$S("normal_vectors { " + nVertices);
 for (var i=0; i < nVertices; i++) {
-P$.___Exporter.setTempVertex$javajs_util_T3$javajs_util_T3$javajs_util_T3(vertices[i], offset, this.tempP2);
+$I$(2).setTempVertex$javajs_util_T3$javajs_util_T3$javajs_util_T3(vertices[i], offset, this.tempP2);
 this.output$javajs_util_T3(this.getScreenNormal$javajs_util_T3$javajs_util_T3$F(this.tempP2, normals[i], 1));
 this.output$S("\n");
 }
@@ -204,7 +200,7 @@ this.output$S("\n}\n");
 }if (colixes != null ) {
 var nColix=colorList.size$();
 this.output$S("texture_list { " + nColix);
-var finish=">} translucentFinish(" + P$.___Exporter.translucencyFractionalFromColix$H(colixes[0]) + ")}" ;
+var finish=">} translucentFinish(" + $I$(2).translucencyFractionalFromColix$H(colixes[0]) + ")}" ;
 for (var i=0; i < nColix; i++) this.output$S("\n, texture{pigment{rgbt<" + p$1.color4$H.apply(this, [colorList.get$I(i).shortValue$()]) + finish );
 
 this.output$S("\n}\n");
@@ -228,7 +224,7 @@ this.output$S("," + htColixes.get$O(Short.valueOf$H(colixes[indices[i][3]])));
 this.output$S("\n}\n");
 if (colixes == null ) {
 this.output$S("pigment{rgbt<" + p$1.color4$H.apply(this, [colix]) + ">}\n" );
-this.output$S("  translucentFinish(" + P$.___Exporter.translucencyFractionalFromColix$H(colix) + ")\n" );
+this.output$S("  translucentFinish(" + $I$(2).translucencyFractionalFromColix$H(colix) + ")\n" );
 }this.output$S("  check_shadow()\n");
 this.output$S("  clip()\n");
 this.output$S("}\n");
@@ -250,4 +246,4 @@ if (!this.haveMacros) p$1.writeMacros2.apply(this, []);
 this.output$S("r(" + this.getTriad$javajs_util_T3(ptA) + "," + this.getTriad$javajs_util_T3(ptB) + "," + this.getTriad$javajs_util_T3(ptC) + "," + p$1.color4$H.apply(this, [colix]) + ")\n" );
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:13 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

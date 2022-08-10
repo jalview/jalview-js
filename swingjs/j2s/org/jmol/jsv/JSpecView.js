@@ -1,16 +1,12 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jsv"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.BS','javajs.util.PT','org.jmol.util.Logger','org.jmol.viewer.FileManager','org.jmol.util.Escape','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSpecView", null, null, 'org.jmol.api.JmolJSpecView');
+(function(){var P$=Clazz.newPackage("org.jmol.jsv"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.BS','javajs.util.PT','org.jmol.util.Logger','org.jmol.viewer.FileManager','org.jmol.util.Escape','javajs.util.Lst']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSpecView", null, null, 'org.jmol.api.JmolJSpecView');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['vwr','org.jmol.viewer.Viewer']]]
 
 Clazz.newMeth(C$, 'setViewer$org_jmol_viewer_Viewer', function (vwr) {
 this.vwr=vwr;
@@ -38,7 +34,7 @@ return null;
 }
 var peaks=this.vwr.ms.getInfo$I$S(iModel, "jdxAtomSelect_" + type);
 if (peaks == null ) return null;
-this.vwr.ms.htPeaks=Clazz.new_($I$(1));
+this.vwr.ms.htPeaks=Clazz.new_($I$(1,1));
 var htPeaks=this.vwr.ms.htPeaks;
 for (var i=0; i < peaks.size$(); i++) {
 var peak=peaks.get$I(i);
@@ -46,12 +42,12 @@ System.out.println$S("Jmol JSpecView.java peak=" + peak);
 var bsPeak=htPeaks.get$O(peak);
 System.out.println$S("Jmol JSpecView.java bspeak=" + bsPeak);
 if (bsPeak == null ) {
-htPeaks.put$TK$TV(peak, bsPeak=Clazz.new_($I$(2)));
+htPeaks.put$O$O(peak, bsPeak=Clazz.new_($I$(2,1)));
 var satoms=$I$(3).getQuotedAttribute$S$S(peak, "atoms");
 var select=$I$(3).getQuotedAttribute$S$S(peak, "select");
 System.out.println$S("Jmol JSpecView.java satoms select " + satoms + " " + select );
 var script="";
-if (satoms != null ) script += "visible & (atomno=" + $I$(3).rep$S$S$S(satoms, ",", " or atomno=") + ")" ;
+if (satoms != null ) script += "visible & (atomno=" + $I$(3,"rep$S$S$S",[satoms, ",", " or atomno="]) + ")" ;
  else if (select != null ) script += "visible & (" + select + ")" ;
 System.out.println$S("Jmol JSpecView.java script : " + script);
 bsPeak.or$javajs_util_BS(this.vwr.getAtomBitSet$O(script));
@@ -84,7 +80,7 @@ return modelIndex;
 });
 
 Clazz.newMeth(C$, 'processSync$S$I', function (script, jsvMode) {
-if ($I$(4).debugging) $I$(4).info$S("org.jmol.jsv.JSpecView jsvMode=" + jsvMode + " script=" + script );
+if ($I$(4).debugging) $I$(4,"info$S",["org.jmol.jsv.JSpecView jsvMode=" + jsvMode + " script=" + script ]);
 switch (jsvMode) {
 default:
 return null;
@@ -102,7 +98,7 @@ return null;
 case 14:
 var filename=$I$(3).getQuotedAttribute$S$S(script, "file");
 var isSimulation=(filename != null  && filename.startsWith$S($I$(5).SIMULATION_PROTOCOL) );
-var id=(!isSimulation || this.vwr.isApplet  ? "" : $I$(3).getQuotedAttribute$S$S(filename.replace$C$C("\'", "\""), "id"));
+var id=(!isSimulation || this.vwr.isApplet  ? "" : $I$(3,"getQuotedAttribute$S$S",[filename.replace$C$C("\'", "\""), "id"]));
 if (isSimulation && !this.vwr.isApplet && (filename.startsWith$S($I$(5).SIMULATION_PROTOCOL + "C13/MOL=") || filename.startsWith$S($I$(5).SIMULATION_PROTOCOL + "H1/MOL=") )  ) filename=null;
  else filename=$I$(3).rep$S$S$S(filename, "#molfile", "");
 var modelID=(isSimulation ? "molfile" : $I$(3).getQuotedAttribute$S$S(script, "model"));
@@ -127,12 +123,12 @@ if (atoms != null ) script += ";select visible & (@" + $I$(3).rep$S$S$S(atoms, "
 if (script2 != null ) script += ";" + script2;
 return script;
 case 7:
-var list=$I$(6).unescapeStringArray$S(script.substring$I(7));
-var peaks=Clazz.new_($I$(7));
+var list=$I$(6,"unescapeStringArray$S",[script.substring$I(7)]);
+var peaks=Clazz.new_($I$(7,1));
 var type="1HNMR";
 for (var i=0; i < list.length; i++) {
 if (i == 0 && list[i].indexOf$S($I$(5).SIMULATION_PROTOCOL + "C13/") >= 0 ) type="13CNMR";
-peaks.addLast$TV(list[i]);
+peaks.addLast$O(list[i]);
 }
 this.vwr.ms.setInfo$I$O$O(this.vwr.am.cmi, "jdxAtomSelect_" + type, peaks);
 return null;
@@ -141,4 +137,4 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:09 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

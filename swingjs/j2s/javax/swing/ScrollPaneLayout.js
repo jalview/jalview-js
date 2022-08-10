@@ -1,32 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.Dimension','javax.swing.SwingUtilities','java.awt.Rectangle','java.awt.Insets','javax.swing.UIManager']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScrollPaneLayout", function(){
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.awt.Dimension','javax.swing.SwingUtilities','java.awt.Rectangle','java.awt.Insets','javax.swing.UIManager']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScrollPaneLayout", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, ['java.awt.LayoutManager', 'javax.swing.ScrollPaneConstants']);
+C$.$classes$=[['UIResource',9]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.viewport=null;
-this.vsb=null;
-this.hsb=null;
-this.rowHead=null;
-this.colHead=null;
-this.lowerLeft=null;
-this.lowerRight=null;
-this.upperLeft=null;
-this.upperRight=null;
-this.vsbPolicy=0;
-this.hsbPolicy=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.vsbPolicy=20;
 this.hsbPolicy=30;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'syncWithScrollPane$javax_swing_JScrollPane', function (sp) {
+C$.$fields$=[['I',['vsbPolicy','hsbPolicy'],'O',['viewport','javax.swing.JViewport','vsb','javax.swing.JScrollBar','+hsb','rowHead','javax.swing.JViewport','+colHead','lowerLeft','java.awt.Component','+lowerRight','+upperLeft','+upperRight']]]
+
+Clazz.newMeth(C$, 'syncWithScrollPane$javax_swing_JScrollPane',  function (sp) {
 this.viewport=sp.getViewport$();
 this.vsb=sp.getVerticalScrollBar$();
 this.hsb=sp.getHorizontalScrollBar$();
@@ -40,13 +27,13 @@ this.vsbPolicy=sp.getVerticalScrollBarPolicy$();
 this.hsbPolicy=sp.getHorizontalScrollBarPolicy$();
 });
 
-Clazz.newMeth(C$, 'addSingletonComponent$java_awt_Component$java_awt_Component', function (oldC, newC) {
+Clazz.newMeth(C$, 'addSingletonComponent$java_awt_Component$java_awt_Component',  function (oldC, newC) {
 if ((oldC != null ) && (oldC !== newC ) ) {
 oldC.getParent$().remove$java_awt_Component(oldC);
 }return newC;
 });
 
-Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (s, c) {
+Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component',  function (s, c) {
 if (s.equals$O("VIEWPORT")) {
 this.viewport=this.addSingletonComponent$java_awt_Component$java_awt_Component(this.viewport, c);
 } else if (s.equals$O("VERTICAL_SCROLLBAR")) {
@@ -69,7 +56,7 @@ this.upperRight=this.addSingletonComponent$java_awt_Component$java_awt_Component
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["invalid layout key " + s]);
 }});
 
-Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (c) {
+Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component',  function (c) {
 if (c === this.viewport ) {
 this.viewport=null;
 } else if (c === this.vsb ) {
@@ -90,11 +77,11 @@ this.upperLeft=null;
 this.upperRight=null;
 }});
 
-Clazz.newMeth(C$, 'getVerticalScrollBarPolicy$', function () {
+Clazz.newMeth(C$, 'getVerticalScrollBarPolicy$',  function () {
 return this.vsbPolicy;
 });
 
-Clazz.newMeth(C$, 'setVerticalScrollBarPolicy$I', function (x) {
+Clazz.newMeth(C$, 'setVerticalScrollBarPolicy$I',  function (x) {
 switch (x) {
 case 20:
 case 21:
@@ -106,11 +93,11 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["invalid verticalS
 }
 });
 
-Clazz.newMeth(C$, 'getHorizontalScrollBarPolicy$', function () {
+Clazz.newMeth(C$, 'getHorizontalScrollBarPolicy$',  function () {
 return this.hsbPolicy;
 });
 
-Clazz.newMeth(C$, 'setHorizontalScrollBarPolicy$I', function (x) {
+Clazz.newMeth(C$, 'setHorizontalScrollBarPolicy$I',  function (x) {
 switch (x) {
 case 30:
 case 31:
@@ -122,27 +109,27 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["invalid horizonta
 }
 });
 
-Clazz.newMeth(C$, 'getViewport$', function () {
+Clazz.newMeth(C$, 'getViewport$',  function () {
 return this.viewport;
 });
 
-Clazz.newMeth(C$, 'getHorizontalScrollBar$', function () {
+Clazz.newMeth(C$, 'getHorizontalScrollBar$',  function () {
 return this.hsb;
 });
 
-Clazz.newMeth(C$, 'getVerticalScrollBar$', function () {
+Clazz.newMeth(C$, 'getVerticalScrollBar$',  function () {
 return this.vsb;
 });
 
-Clazz.newMeth(C$, 'getRowHeader$', function () {
+Clazz.newMeth(C$, 'getRowHeader$',  function () {
 return this.rowHead;
 });
 
-Clazz.newMeth(C$, 'getColumnHeader$', function () {
+Clazz.newMeth(C$, 'getColumnHeader$',  function () {
 return this.colHead;
 });
 
-Clazz.newMeth(C$, 'getCorner$S', function (key) {
+Clazz.newMeth(C$, 'getCorner$S',  function (key) {
 if (key.equals$O("LOWER_LEFT_CORNER")) {
 return this.lowerLeft;
 } else if (key.equals$O("LOWER_RIGHT_CORNER")) {
@@ -155,11 +142,11 @@ return this.upperRight;
 return null;
 }});
 
-Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
-var scrollPane=parent;
+Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container',  function (container) {
+var scrollPane=container;
 this.vsbPolicy=scrollPane.getVerticalScrollBarPolicy$();
 this.hsbPolicy=scrollPane.getHorizontalScrollBarPolicy$();
-var insets=parent.getInsets$();
+var insets=container.getInsets$();
 var prefWidth=insets.left + insets.right;
 var prefHeight=insets.top + insets.bottom;
 var extentSize=null;
@@ -175,7 +162,7 @@ prefWidth+=extentSize.width;
 prefHeight+=extentSize.height;
 }var viewportBorder=scrollPane.getViewportBorder$();
 if (viewportBorder != null ) {
-var vpbInsets=viewportBorder.getBorderInsets$java_awt_Component(parent);
+var vpbInsets=viewportBorder.getBorderInsets$java_awt_Component(container);
 prefWidth+=vpbInsets.left + vpbInsets.right;
 prefHeight+=vpbInsets.top + vpbInsets.bottom;
 }if ((this.rowHead != null ) && this.rowHead.isVisible$() ) {
@@ -200,10 +187,10 @@ if (Clazz.instanceOf(view, "javax.swing.Scrollable")) {
 canScroll=!(view).getScrollableTracksViewportWidth$();
 }if (canScroll && (viewSize.width > extentSize.width) ) {
 prefHeight+=this.hsb.getPreferredSize$().height;
-}}}return Clazz.new_($I$(1).c$$I$I,[prefWidth, prefHeight]);
+}}}return Clazz.new_($I$(1,1).c$$I$I,[prefWidth, prefHeight]);
 });
 
-Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container',  function (parent) {
 var scrollPane=parent;
 this.vsbPolicy=scrollPane.getVerticalScrollBarPolicy$();
 this.hsbPolicy=scrollPane.getHorizontalScrollBarPolicy$();
@@ -235,10 +222,10 @@ minHeight=Math.max(minHeight, size.height);
 var size=this.hsb.getMinimumSize$();
 minWidth=Math.max(minWidth, size.width);
 minHeight+=size.height;
-}return Clazz.new_($I$(1).c$$I$I,[minWidth, minHeight]);
+}return Clazz.new_($I$(1,1).c$$I$I,[minWidth, minHeight]);
 });
 
-Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'layoutContainer$java_awt_Container',  function (parent) {
 var scrollPane=parent;
 this.vsbPolicy=scrollPane.getVerticalScrollBarPolicy$();
 this.hsbPolicy=scrollPane.getHorizontalScrollBarPolicy$();
@@ -250,13 +237,13 @@ availR.y=insets.top;
 availR.width-=insets.left + insets.right;
 availR.height-=insets.top + insets.bottom;
 var leftToRight=$I$(2).isLeftToRight$java_awt_Component(scrollPane);
-var colHeadR=Clazz.new_($I$(3).c$$I$I$I$I,[0, availR.y, 0, 0]);
+var colHeadR=Clazz.new_($I$(3,1).c$$I$I$I$I,[0, availR.y, 0, 0]);
 if ((this.colHead != null ) && (this.colHead.isVisible$()) ) {
 var colHeadHeight=Math.min(availR.height, this.colHead.getPreferredSize$().height);
 colHeadR.height=colHeadHeight;
 availR.y+=colHeadHeight;
 availR.height-=colHeadHeight;
-}var rowHeadR=Clazz.new_($I$(3).c$$I$I$I$I,[0, 0, 0, 0]);
+}var rowHeadR=Clazz.new_($I$(3,1).c$$I$I$I$I,[0, 0, 0, 0]);
 if ((this.rowHead != null ) && (this.rowHead.isVisible$()) ) {
 var rowHeadWidth=Math.min(availR.width, this.rowHead.getPreferredSize$().width);
 rowHeadR.width=rowHeadWidth;
@@ -275,10 +262,10 @@ availR.y+=vpbInsets.top;
 availR.width-=vpbInsets.left + vpbInsets.right;
 availR.height-=vpbInsets.top + vpbInsets.bottom;
 } else {
-vpbInsets=Clazz.new_($I$(4).c$$I$I$I$I,[0, 0, 0, 0]);
+vpbInsets=Clazz.new_($I$(4,1).c$$I$I$I$I,[0, 0, 0, 0]);
 }var view=(this.viewport != null ) ? this.viewport.getView$() : null;
-var viewPrefSize=(view != null ) ? view.getPreferredSize$() : Clazz.new_($I$(1).c$$I$I,[0, 0]);
-var extentSize=(this.viewport != null ) ? this.viewport.toViewCoordinates$java_awt_Dimension(availR.getSize$()) : Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var viewPrefSize=(view != null ) ? view.getPreferredSize$() : Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
+var extentSize=(this.viewport != null ) ? this.viewport.toViewCoordinates$java_awt_Dimension(availR.getSize$()) : Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var viewTracksViewportWidth=false;
 var viewTracksViewportHeight=false;
 var isEmpty=(availR.width < 0 || availR.height < 0 );
@@ -289,7 +276,7 @@ viewTracksViewportWidth=sv.getScrollableTracksViewportWidth$();
 viewTracksViewportHeight=sv.getScrollableTracksViewportHeight$();
 } else {
 sv=null;
-}var vsbR=Clazz.new_($I$(3).c$$I$I$I$I,[0, availR.y - vpbInsets.top, 0, 0]);
+}var vsbR=Clazz.new_($I$(3,1).c$$I$I$I$I,[0, availR.y - vpbInsets.top, 0, 0]);
 var nobars=(Clazz.instanceOf(view, "javax.swing.JEditorPane") || Clazz.instanceOf(view, "javax.swing.JTextArea") );
 var vsbNeeded;
 if (isEmpty || nobars ) {
@@ -303,7 +290,7 @@ vsbNeeded=!viewTracksViewportHeight && (viewPrefSize.height > extentSize.height)
 }if ((this.vsb != null ) && vsbNeeded ) {
 p$1.adjustForVSB$Z$java_awt_Rectangle$java_awt_Rectangle$java_awt_Insets$Z.apply(this, [true, availR, vsbR, vpbInsets, leftToRight]);
 extentSize=this.viewport.toViewCoordinates$java_awt_Dimension(availR.getSize$());
-}var hsbR=Clazz.new_($I$(3).c$$I$I$I$I,[availR.x - vpbInsets.left, 0, 0, 0]);
+}var hsbR=Clazz.new_($I$(3,1).c$$I$I$I$I,[availR.x - vpbInsets.left, 0, 0, 0]);
 var hsbNeeded;
 if (isEmpty || nobars ) {
 hsbNeeded=false;
@@ -387,7 +374,7 @@ this.upperLeft.setBounds$I$I$I$I(leftToRight ? rowHeadR.x : vsbR.x, colHeadR.y, 
 this.upperRight.setBounds$I$I$I$I(leftToRight ? vsbR.x : rowHeadR.x, colHeadR.y, leftToRight ? vsbR.width : rowHeadR.width, colHeadR.height);
 }});
 
-Clazz.newMeth(C$, 'adjustForVSB$Z$java_awt_Rectangle$java_awt_Rectangle$java_awt_Insets$Z', function (wantsVSB, available, vsbR, vpbInsets, leftToRight) {
+Clazz.newMeth(C$, 'adjustForVSB$Z$java_awt_Rectangle$java_awt_Rectangle$java_awt_Insets$Z',  function (wantsVSB, available, vsbR, vpbInsets, leftToRight) {
 var oldWidth=vsbR.width;
 if (wantsVSB) {
 var vsbWidth=Math.max(0, Math.min(this.vsb.getPreferredSize$().width, available.width));
@@ -402,7 +389,7 @@ available.x+=vsbWidth;
 available.width+=oldWidth;
 }}, p$1);
 
-Clazz.newMeth(C$, 'adjustForHSB$Z$java_awt_Rectangle$java_awt_Rectangle$java_awt_Insets', function (wantsHSB, available, hsbR, vpbInsets) {
+Clazz.newMeth(C$, 'adjustForHSB$Z$java_awt_Rectangle$java_awt_Rectangle$java_awt_Insets',  function (wantsHSB, available, hsbR, vpbInsets) {
 var oldHeight=hsbR.height;
 if (wantsHSB) {
 var hsbHeight=Math.max(0, Math.min(available.height, this.hsb.getPreferredSize$().height));
@@ -413,23 +400,22 @@ hsbR.height=hsbHeight;
 available.height+=oldHeight;
 }}, p$1);
 
-Clazz.newMeth(C$, 'getViewportBorderBounds$javax_swing_JScrollPane', function (scrollpane) {
+Clazz.newMeth(C$, 'getViewportBorderBounds$javax_swing_JScrollPane',  function (scrollpane) {
 return scrollpane.getViewportBorderBounds$();
 });
 ;
-(function(){var C$=Clazz.newClass(P$.ScrollPaneLayout, "UIResource", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ScrollPaneLayout, "UIResource", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.ScrollPaneLayout', 'javax.swing.plaf.UIResource');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$);
 })()
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

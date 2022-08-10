@@ -1,28 +1,7 @@
-(function(){var P$=Clazz.newPackage("jalview.schemes"),p$1={},I$=[[0,'jalview.datamodel.GraphLine','jalview.schemes.ColourSchemeProperty','java.util.IdentityHashMap','java.awt.Color','jalview.util.Comparison','jalview.renderer.AnnotationRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationColourGradient", null, 'jalview.schemes.FollowerColourScheme');
+(function(){var P$=Clazz.newPackage("jalview.schemes"),p$1={},I$=[[0,'jalview.datamodel.GraphLine','jalview.schemes.ColourSchemeProperty','java.util.IdentityHashMap','java.awt.Color','jalview.util.Comparison','jalview.renderer.AnnotationRenderer']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationColourGradient", null, 'jalview.schemes.FollowerColourScheme');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.annotation=null;
-this.aboveAnnotationThreshold=0;
-this.thresholdIsMinMax=false;
-this.annotationThreshold=null;
-this.redMin=0;
-this.greenMin=0;
-this.blueMin=0;
-this.redRange=0;
-this.greenRange=0;
-this.blueRange=0;
-this.predefinedColours=false;
-this.seqAssociated=false;
-this.noGradient=false;
-this.seqannot=null;
-this.aamin=0;
-this.aamax=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.thresholdIsMinMax=false;
@@ -32,12 +11,14 @@ this.noGradient=false;
 this.seqannot=null;
 this.aamin=0.0;
 this.aamax=0.0;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getInstance$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI', function (view, sg) {
+C$.$fields$=[['Z',['thresholdIsMinMax','predefinedColours','seqAssociated','noGradient'],'F',['aamin','aamax'],'I',['aboveAnnotationThreshold','redMin','greenMin','blueMin','redRange','greenRange','blueRange'],'O',['annotation','jalview.datamodel.AlignmentAnnotation','annotationThreshold','jalview.datamodel.GraphLine','seqannot','java.util.IdentityHashMap']]]
+
+Clazz.newMeth(C$, 'getInstance$jalview_api_AlignViewportI$jalview_datamodel_AnnotatedCollectionI',  function (view, sg) {
 var acg=Clazz.new_(C$.c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I,[this.annotation, this.getColourScheme$(), this.aboveAnnotationThreshold]);
 acg.thresholdIsMinMax=this.thresholdIsMinMax;
-acg.annotationThreshold=(this.annotationThreshold == null ) ? null : Clazz.new_($I$(1).c$$jalview_datamodel_GraphLine,[this.annotationThreshold]);
+acg.annotationThreshold=(this.annotationThreshold == null ) ? null : Clazz.new_($I$(1,1).c$$jalview_datamodel_GraphLine,[this.annotationThreshold]);
 acg.redMin=this.redMin;
 acg.greenMin=this.greenMin;
 acg.blueMin=this.blueMin;
@@ -50,8 +31,8 @@ acg.noGradient=this.noGradient;
 return acg;
 });
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I', function (annotation, originalColour, aboveThreshold) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation$jalview_schemes_ColourSchemeI$I',  function (annotation, originalColour, aboveThreshold) {
+Clazz.super_(C$, this);
 if (Clazz.instanceOf(originalColour, "jalview.schemes.AnnotationColourGradient")) {
 this.setColourScheme$jalview_schemes_ColourSchemeI((originalColour).getColourScheme$());
 } else {
@@ -70,8 +51,8 @@ this.noGradient=true;
 p$1.checkLimits.apply(this, []);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation$java_awt_Color$java_awt_Color$I', function (annotation, minColour, maxColour, aboveThreshold) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentAnnotation$java_awt_Color$java_awt_Color$I',  function (annotation, minColour, maxColour, aboveThreshold) {
+Clazz.super_(C$, this);
 this.annotation=annotation;
 this.aboveAnnotationThreshold=aboveThreshold;
 if (aboveThreshold != -1 && annotation.threshold != null  ) {
@@ -86,21 +67,21 @@ this.noGradient=false;
 p$1.checkLimits.apply(this, []);
 }, 1);
 
-Clazz.newMeth(C$, 'checkLimits', function () {
+Clazz.newMeth(C$, 'checkLimits',  function () {
 this.aamax=this.annotation.graphMax;
 this.aamin=this.annotation.graphMin;
 if (this.annotation.isRNA$()) {
 $I$(2).resetRnaHelicesShading$();
-$I$(2).initRnaHelicesShading$I(1 + (this.aamax|0));
+$I$(2,"initRnaHelicesShading$I",[1 + (this.aamax|0)]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map', function (alignment, hiddenReps) {
+Clazz.newMeth(C$, 'alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map',  function (alignment, hiddenReps) {
 C$.superclazz.prototype.alignmentChanged$jalview_datamodel_AnnotatedCollectionI$java_util_Map.apply(this, [alignment, hiddenReps]);
 if (this.seqAssociated && this.annotation.getCalcId$() != null  ) {
 if (this.seqannot != null ) {
 this.seqannot.clear$();
 } else {
-this.seqannot=Clazz.new_($I$(3));
+this.seqannot=Clazz.new_($I$(3,1));
 }var alcontext=Clazz.instanceOf(alignment, "jalview.datamodel.AlignmentI") ? alignment : alignment.getContext$();
 var f=true;
 var rna=false;
@@ -108,7 +89,7 @@ for (var alan, $alan = alcontext.findAnnotation$S(this.annotation.getCalcId$()).
 if (alan.sequenceRef != null  && (alan.label != null  && this.annotation != null   && alan.label.equals$O(this.annotation.label) ) ) {
 if (!rna && alan.isRNA$() ) {
 rna=true;
-}this.seqannot.put$TK$TV(alan.sequenceRef, alan);
+}this.seqannot.put$O$O(alan.sequenceRef, alan);
 if (f || alan.graphMax > this.aamax  ) {
 this.aamax=alan.graphMax;
 }if (f || alan.graphMin < this.aamin  ) {
@@ -116,37 +97,37 @@ this.aamin=alan.graphMin;
 }f=false;
 }}
 if (rna) {
-$I$(2).initRnaHelicesShading$I(1 + (this.aamax|0));
+$I$(2,"initRnaHelicesShading$I",[1 + (this.aamax|0)]);
 }}});
 
-Clazz.newMeth(C$, 'getAnnotation$', function () {
+Clazz.newMeth(C$, 'getAnnotation$',  function () {
 return this.annotation;
 });
 
-Clazz.newMeth(C$, 'getAboveThreshold$', function () {
+Clazz.newMeth(C$, 'getAboveThreshold$',  function () {
 return this.aboveAnnotationThreshold;
 });
 
-Clazz.newMeth(C$, 'getAnnotationThreshold$', function () {
+Clazz.newMeth(C$, 'getAnnotationThreshold$',  function () {
 if (this.annotationThreshold == null ) {
 return 0;
 } else {
 return this.annotationThreshold.value;
 }});
 
-Clazz.newMeth(C$, 'getMinColour$', function () {
-return Clazz.new_($I$(4).c$$I$I$I,[this.redMin, this.greenMin, this.blueMin]);
+Clazz.newMeth(C$, 'getMinColour$',  function () {
+return Clazz.new_($I$(4,1).c$$I$I$I,[this.redMin, this.greenMin, this.blueMin]);
 });
 
-Clazz.newMeth(C$, 'getMaxColour$', function () {
-return Clazz.new_($I$(4).c$$I$I$I,[this.redMin + this.redRange, this.greenMin + this.greenRange, this.blueMin + this.blueRange]);
+Clazz.newMeth(C$, 'getMaxColour$',  function () {
+return Clazz.new_($I$(4,1).c$$I$I$I,[this.redMin + this.redRange, this.greenMin + this.greenRange, this.blueMin + this.blueRange]);
 });
 
-Clazz.newMeth(C$, 'findColour$C', function (c) {
+Clazz.newMeth(C$, 'findColour$C',  function (c) {
 return $I$(4).red;
 });
 
-Clazz.newMeth(C$, 'findColour$C$I$jalview_datamodel_SequenceI', function (c, j, seq) {
+Clazz.newMeth(C$, 'findColour$C$I$jalview_datamodel_SequenceI',  function (c, j, seq) {
 var ann=(this.seqAssociated && this.seqannot != null   ? this.seqannot.get$O(seq) : this.annotation);
 if (ann == null  || ann.annotations == null   || j >= ann.annotations.length  || ann.annotations[j] == null   || $I$(5).isGap$C(c) ) {
 return $I$(4).white;
@@ -179,7 +160,7 @@ result=this.shadeCalculation$jalview_datamodel_AlignmentAnnotation$I(ann, j);
 }return result;
 });
 
-Clazz.newMeth(C$, 'shadeCalculation$jalview_datamodel_AlignmentAnnotation$I', function (ann, col) {
+Clazz.newMeth(C$, 'shadeCalculation$jalview_datamodel_AlignmentAnnotation$I',  function (ann, col) {
 var range=1.0;
 var value=ann.annotations[col].value;
 if (this.thresholdIsMinMax && ann.threshold != null   && this.aboveAnnotationThreshold == 1  && value >= ann.threshold.value  ) {
@@ -194,41 +175,41 @@ range=0.0;
 }}var dr=((this.redRange * range + this.redMin)|0);
 var dg=((this.greenRange * range + this.greenMin)|0);
 var db=((this.blueRange * range + this.blueMin)|0);
-return Clazz.new_($I$(4).c$$I$I$I,[dr, dg, db]);
+return Clazz.new_($I$(4,1).c$$I$I$I,[dr, dg, db]);
 });
 
-Clazz.newMeth(C$, 'isPredefinedColours$', function () {
+Clazz.newMeth(C$, 'isPredefinedColours$',  function () {
 return this.predefinedColours;
 });
 
-Clazz.newMeth(C$, 'setPredefinedColours$Z', function (predefinedColours) {
+Clazz.newMeth(C$, 'setPredefinedColours$Z',  function (predefinedColours) {
 this.predefinedColours=predefinedColours;
 });
 
-Clazz.newMeth(C$, 'isSeqAssociated$', function () {
+Clazz.newMeth(C$, 'isSeqAssociated$',  function () {
 return this.seqAssociated;
 });
 
-Clazz.newMeth(C$, 'setSeqAssociated$Z', function (sassoc) {
+Clazz.newMeth(C$, 'setSeqAssociated$Z',  function (sassoc) {
 this.seqAssociated=sassoc;
 });
 
-Clazz.newMeth(C$, 'isThresholdIsMinMax$', function () {
+Clazz.newMeth(C$, 'isThresholdIsMinMax$',  function () {
 return this.thresholdIsMinMax;
 });
 
-Clazz.newMeth(C$, 'setThresholdIsMinMax$Z', function (minMax) {
+Clazz.newMeth(C$, 'setThresholdIsMinMax$Z',  function (minMax) {
 this.thresholdIsMinMax=minMax;
 });
 
-Clazz.newMeth(C$, 'getSchemeName$', function () {
+Clazz.newMeth(C$, 'getSchemeName$',  function () {
 return "Annotation";
 });
 
-Clazz.newMeth(C$, 'isSimple$', function () {
+Clazz.newMeth(C$, 'isSimple$',  function () {
 return false;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

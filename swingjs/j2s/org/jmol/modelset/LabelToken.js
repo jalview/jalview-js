@@ -1,36 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.SB','java.util.Hashtable','org.jmol.util.Edge','javajs.util.PT','org.jmol.viewer.JC','org.jmol.script.T','javajs.util.AU','org.jmol.script.SV']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "LabelToken");
-C$.labelTokenIds=null;
-C$.twoCharLabelTokenIds=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={},I$=[[0,'javajs.util.SB','java.util.Hashtable','org.jmol.util.Edge','javajs.util.PT','org.jmol.viewer.JC','org.jmol.script.T','javajs.util.AU','org.jmol.script.SV']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "LabelToken");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.labelTokenIds=Clazz.array(Integer.TYPE, -1, [1086324739, 1086326786, 1086326785, 1111492620, 1631586315, 1086326788, 1094713347, 1086324746, 1086326789, 1111490569, 1094713357, 1094713361, 1111492618, 1094715393, 1094713363, 1094715402, 1094717454, 1086324743, 1094713360, 1086324742, 79, 1088421903, 1111492619, 1111490570, 81, 1128269825, 1094715412, 1086324747, 1094713366, 1086326788, 1111490574, 1111492620, 1086324745, 1111490575, 1648363544, 1145047055, 1140850705, 1111492612, 1111492609, 1111492629, 1111492613, 1111492610, 1111492630, 1111492614, 1111492611, 1111492631, 1114249217, 1112152066, 1112150019, 1112150020, 1112150021, 1112152070, 1112152071, 1112152073, 1112152074, 1112152076, 1649022989, 1112152078, 1111490561, 1111490562, 1094713346, 1228931587, 1765808134, 1094713356, 1111490564, 1228935687, 1287653388, 1825200146, 1111490567, 1094713359, 1111490565, 1111490568, 1094713362, 1715472409, 1665140738, 1113589787, 1086324748, 1086324744, 1112152075, 1639976963, 1237320707, 1094713367, 1086324749, 1086326798, 1111490576, 1111490577, 1111490578, 1111490579, 1094715417, 1648361473, 1111492626, 1111492627, 1111492628, 1312817669, 1145045006, 1145047051, 1145047050, 1145047053, 1111492615, 1111492616, 1111492617, 1113589786, 1111490571, 1111490572, 1111490573, 1145047052, 1111490566, 1111490563, 1094713351, 1094713365, 1111490583, 1111490584, 1111490585, 1111490586, 1145045008, 1296041986, 1073877011, 1086324752, 1086324753]);
-C$.twoCharLabelTokenIds=Clazz.array(Integer.TYPE, -1, [1111492612, 1111492613, 1111492614, 1111490577, 1111490578, 1111490579, 1111492626, 1111492627, 1111492628]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.text=null;
-this.key=null;
-this.data=null;
-this.tok=0;
-this.pt=0;
-this.ch1='\0';
-this.width=0;
-this.precision=0;
-this.alignLeft=false;
-this.zeroPad=false;
-this.intAsFloat=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.pt=-1;
 this.ch1="\u0000";
 this.precision=2147483647;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['alignLeft','zeroPad','intAsFloat'],'C',['ch1'],'I',['tok','pt','width','precision'],'S',['text','key'],'O',['data','java.lang.Object']]
+,['O',['labelTokenIds','int[]','+twoCharLabelTokenIds']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$S$I', function (text, pt) {
@@ -72,7 +55,7 @@ return (strFormat == null  || strFormat.length$() == 0  ? null : C$.formatLabelA
 
 Clazz.newMeth(C$, 'formatLabelAtomArray$org_jmol_viewer_Viewer$org_jmol_modelset_Atom$org_jmol_modelset_LabelTokenA$C$IA$javajs_util_P3', function (vwr, atom, tokens, chAtom, indices, ptTemp) {
 if (atom == null ) return null;
-var strLabel=(chAtom > "0" ? null : Clazz.new_($I$(1)));
+var strLabel=(chAtom > "0" ? null : Clazz.new_($I$(1,1)));
 if (tokens != null ) for (var i=0; i < tokens.length; i++) {
 var t=tokens[i];
 if (t == null ) break;
@@ -88,21 +71,21 @@ return (strLabel == null  ? null : strLabel.toString().intern$());
 }, 1);
 
 Clazz.newMeth(C$, 'getBondLabelValues$', function () {
-var htValues=Clazz.new_($I$(2));
-htValues.put$TK$TV("#", "");
-htValues.put$TK$TV("ORDER", "");
-htValues.put$TK$TV("TYPE", "");
-htValues.put$TK$TV("LENGTH", Float.valueOf$F(0));
-htValues.put$TK$TV("ENERGY", Float.valueOf$F(0));
+var htValues=Clazz.new_($I$(2,1));
+htValues.put$O$O("#", "");
+htValues.put$O$O("ORDER", "");
+htValues.put$O$O("TYPE", "");
+htValues.put$O$O("LENGTH", Float.valueOf$F(0));
+htValues.put$O$O("ENERGY", Float.valueOf$F(0));
 return htValues;
 }, 1);
 
 Clazz.newMeth(C$, 'formatLabelBond$org_jmol_viewer_Viewer$org_jmol_modelset_Bond$org_jmol_modelset_LabelTokenA$java_util_Map$IA$javajs_util_P3', function (vwr, bond, tokens, values, indices, ptTemp) {
-values.put$TK$TV("#", "" + (bond.index + 1));
-values.put$TK$TV("ORDER", "" + $I$(3).getBondOrderNumberFromOrder$I(bond.order));
-values.put$TK$TV("TYPE", $I$(3).getBondOrderNameFromOrder$I(bond.order));
-values.put$TK$TV("LENGTH", Float.valueOf$F(bond.atom1.distance$javajs_util_T3(bond.atom2)));
-values.put$TK$TV("ENERGY", Float.valueOf$F(bond.getEnergy$()));
+values.put$O$O("#", "" + (bond.index + 1));
+values.put$O$O("ORDER", "" + $I$(3).getBondOrderNumberFromOrder$I(bond.order));
+values.put$O$O("TYPE", $I$(3).getBondOrderNameFromOrder$I(bond.order));
+values.put$O$O("LENGTH", Float.valueOf$F(bond.atom1.distance$javajs_util_T3(bond.atom2)));
+values.put$O$O("ENERGY", Float.valueOf$F(bond.getEnergy$()));
 C$.setValues$org_jmol_modelset_LabelTokenA$java_util_Map(tokens, values);
 C$.formatLabelAtomArray$org_jmol_viewer_Viewer$org_jmol_modelset_Atom$org_jmol_modelset_LabelTokenA$C$IA$javajs_util_P3(vwr, bond.atom1, tokens, "1", indices, ptTemp);
 C$.formatLabelAtomArray$org_jmol_viewer_Viewer$org_jmol_modelset_Atom$org_jmol_modelset_LabelTokenA$C$IA$javajs_util_P3(vwr, bond.atom2, tokens, "2", indices, ptTemp);
@@ -110,10 +93,10 @@ return C$.getLabel$org_jmol_modelset_LabelTokenA(tokens);
 }, 1);
 
 Clazz.newMeth(C$, 'formatLabelMeasure$org_jmol_viewer_Viewer$org_jmol_modelset_Measurement$S$F$S', function (vwr, m, label, value, units) {
-var htValues=Clazz.new_($I$(2));
-htValues.put$TK$TV("#", "" + (m.index + 1));
-htValues.put$TK$TV("VALUE", Float.valueOf$F(value));
-htValues.put$TK$TV("UNITS", units);
+var htValues=Clazz.new_($I$(2,1));
+htValues.put$O$O("#", "" + (m.index + 1));
+htValues.put$O$O("VALUE", Float.valueOf$F(value));
+htValues.put$O$O("UNITS", units);
 var tokens=C$.compile$org_jmol_viewer_Viewer$S$C$java_util_Map(vwr, label, "\u0001", htValues);
 if (tokens == null ) return "";
 C$.setValues$org_jmol_modelset_LabelTokenA$java_util_Map(tokens, htValues);
@@ -136,7 +119,7 @@ lt.text=(Clazz.instanceOf(value, "java.lang.Float") ? p$1.format$F$S$javajs_util
 }, 1);
 
 Clazz.newMeth(C$, 'getLabel$org_jmol_modelset_LabelTokenA', function (tokens) {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 for (var i=0; i < tokens.length; i++) {
 var lt=tokens[i];
 if (lt == null ) break;
@@ -157,7 +140,7 @@ lt.alignLeft=true;
 }if (ich < cch && strFormat.charAt$I(ich) == "0" ) {
 lt.zeroPad=true;
 ++ich;
-}while (ich < cch && $I$(4).isDigit$C(ch=strFormat.charAt$I(ich)) ){
+}while (ich < cch && $I$(4,"isDigit$C",[ch=strFormat.charAt$I(ich)]) ){
 lt.width=(10 * lt.width) + (ch.$c() - 48);
 ++ich;
 }
@@ -168,7 +151,7 @@ if (ich < cch && strFormat.charAt$I(ich) == "." ) {
 if (ich < cch && (ch=strFormat.charAt$I(ich)) == "-" ) {
 isNegative=true;
 ++ich;
-}if (ich < cch && $I$(4).isDigit$C(ch=strFormat.charAt$I(ich)) ) {
+}if (ich < cch && $I$(4,"isDigit$C",[ch=strFormat.charAt$I(ich)]) ) {
 lt.precision=ch.$c() - 48;
 if (isNegative) lt.precision=-1 - lt.precision;
 ++ich;
@@ -192,7 +175,7 @@ lt.tok=1073742189;
 lt.data=vwr.getDataObj$S$javajs_util_BS$I("property_" + propertyName.substring$I(11), null, 1);
 } else if (propertyName.startsWith$S("unitid")) {
 lt.tok=1073741974;
-lt.data=Integer.valueOf$I($I$(5).getUnitIDFlags$S(propertyName.substring$I(6)));
+lt.data=Integer.valueOf$I($I$(5,"getUnitIDFlags$S",[propertyName.substring$I(6)]));
 } else {
 var token=$I$(6).getTokenFromName$S(propertyName);
 if (token != null  && C$.isLabelPropertyTok$I(token.tok) ) lt.tok=token.tok;
@@ -230,7 +213,7 @@ ich++;
 lt.tok=C$.labelTokenIds[i];
 }}
 lt.text=strFormat.substring$I$I(lt.pt, ich);
-if (ich < cch && chAtom != 0   && $I$(4).isDigit$C(ch=strFormat.charAt$I(ich)) ) {
+if (ich < cch && chAtom != 0   && $I$(4,"isDigit$C",[ch=strFormat.charAt$I(ich)]) ) {
 ich++;
 lt.ch1=ch;
 if (ch.$c() != chAtom  && chAtom != 1  ) lt.tok=0;
@@ -279,7 +262,7 @@ var sdata=data;
 o=(iatom < sdata.length ? sdata[iatom] : null);
 } else if (Clazz.instanceOf(data, "javajs.util.Lst")) {
 var list=data;
-o=(iatom < list.size$() ? $I$(8).oValue$O(list.get$I(iatom)) : null);
+o=(iatom < list.size$() ? $I$(8,"oValue$O",[list.get$I(iatom)]) : null);
 }if (o == null ) {
 strT="";
 } else if (Clazz.instanceOf(o, "java.lang.Float")) {
@@ -392,5 +375,10 @@ this.precision=2;
 } else {
 return this.text;
 }}, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.labelTokenIds=Clazz.array(Integer.TYPE, -1, [1086324739, 1086326786, 1086326785, 1111492620, 1631586315, 1086326788, 1094713347, 1086324746, 1086326789, 1111490569, 1094713357, 1094713361, 1111492618, 1094715393, 1094713363, 1094715402, 1094717454, 1086324743, 1094713360, 1086324742, 79, 1088421903, 1111492619, 1111490570, 81, 1128269825, 1094715412, 1086324747, 1094713366, 1086326788, 1111490574, 1111492620, 1086324745, 1111490575, 1648363544, 1145047055, 1140850705, 1111492612, 1111492609, 1111492629, 1111492613, 1111492610, 1111492630, 1111492614, 1111492611, 1111492631, 1114249217, 1112152066, 1112150019, 1112150020, 1112150021, 1112152070, 1112152071, 1112152073, 1112152074, 1112152076, 1649022989, 1112152078, 1111490561, 1111490562, 1094713346, 1228931587, 1765808134, 1094713356, 1111490564, 1228935687, 1287653388, 1825200146, 1111490567, 1094713359, 1111490565, 1111490568, 1094713362, 1715472409, 1665140738, 1113589787, 1086324748, 1086324744, 1112152075, 1639976963, 1237320707, 1094713367, 1086324749, 1086326798, 1111490576, 1111490577, 1111490578, 1111490579, 1094715417, 1648361473, 1111492626, 1111492627, 1111492628, 1312817669, 1145045006, 1145047051, 1145047050, 1145047053, 1111492615, 1111492616, 1111492617, 1113589786, 1111490571, 1111490572, 1111490573, 1145047052, 1111490566, 1111490563, 1094713351, 1094713365, 1111490583, 1111490584, 1111490585, 1111490586, 1145045008, 1296041986, 1073877011, 1086324752, 1086324753]);
+C$.twoCharLabelTokenIds=Clazz.array(Integer.TYPE, -1, [1111492612, 1111492613, 1111492614, 1111490577, 1111490578, 1111490579, 1111492626, 1111492627, 1111492628]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:52 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

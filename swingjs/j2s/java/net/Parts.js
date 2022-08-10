@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.net"),I$=[];
-var C$=Clazz.newClass(P$, "Parts");
+/*c*/var C$=Clazz.newClass(P$, "Parts");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.path=null;
-this.query=null;
-this.ref=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S', function (file) {
-C$.$init$.apply(this);
+C$.$fields$=[['S',['path','query','ref']]]
+
+Clazz.newMeth(C$, 'c$$S',  function (file) {
+;C$.$init$.apply(this);
 var ind=file.indexOf$I("#");
 this.ref=ind < 0 ? null : file.substring$I(ind + 1);
 file=ind < 0 ? file : file.substring$I$I(0, ind);
@@ -27,18 +21,18 @@ this.path=file.substring$I$I(0, q);
 this.path=file;
 }}, 1);
 
-Clazz.newMeth(C$, 'getPath$', function () {
+Clazz.newMeth(C$, 'getPath$',  function () {
 return this.path;
 });
 
-Clazz.newMeth(C$, 'getQuery$', function () {
+Clazz.newMeth(C$, 'getQuery$',  function () {
 return this.query;
 });
 
-Clazz.newMeth(C$, 'getRef$', function () {
+Clazz.newMeth(C$, 'getRef$',  function () {
 return this.ref;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:00 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

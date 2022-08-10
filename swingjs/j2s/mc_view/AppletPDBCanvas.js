@@ -1,69 +1,11 @@
-(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'mc_view.MCMatrix','java.awt.Font','StringBuffer','jalview.structure.StructureSelectionManager','jalview.io.DataSourceType','jalview.analysis.AlignSeq','java.io.PrintStream','java.awt.Dimension','java.awt.event.KeyAdapter','java.util.Vector','java.awt.Color','jalview.util.MessageManager','jalview.appletgui.SequenceRenderer','jalview.appletgui.FeatureRenderer','jalview.renderer.seqfeatures.FeatureColourFinder','mc_view.Zsort']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AppletPDBCanvas", null, 'java.awt.Panel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'jalview.structure.StructureListener']);
+(function(){var P$=Clazz.newPackage("mc_view"),I$=[[0,'mc_view.MCMatrix','java.awt.Font','StringBuffer','jalview.structure.StructureSelectionManager','jalview.io.DataSourceType','jalview.analysis.AlignSeq','java.io.PrintStream','java.awt.Dimension','java.awt.event.KeyAdapter','java.util.Vector','java.awt.Color','jalview.util.MessageManager','jalview.appletgui.SequenceRenderer','jalview.appletgui.FeatureRenderer','jalview.renderer.seqfeatures.FeatureColourFinder','mc_view.Zsort']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AppletPDBCanvas", null, 'java.awt.Panel', ['java.awt.event.MouseListener', 'java.awt.event.MouseMotionListener', 'jalview.structure.StructureListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.idmat=null;
-this.objmat=null;
-this.redrawneeded=false;
-this.omx=0;
-this.mx=0;
-this.omy=0;
-this.my=0;
-this.pdb=null;
-this.pdbentry=null;
-this.bsize=0;
-this.img=null;
-this.ig=null;
-this.prefsize=null;
-this.centre=null;
-this.$width=null;
-this.maxwidth=0;
-this.scale=0;
-this.inStr=null;
-this.inType=null;
-this.bysequence=false;
-this.depthcue=false;
-this.wire=false;
-this.bymolecule=false;
-this.zbuffer=false;
-this.dragging=false;
-this.xstart=0;
-this.xend=0;
-this.ystart=0;
-this.yend=0;
-this.xmid=0;
-this.ymid=0;
-this.$font=null;
-this.sequence=null;
-this.mappingDetails=null;
-this.appletToolTip=null;
-this.toolx=0;
-this.tooly=0;
-this.mainchain=null;
-this.highlightRes=null;
-this.pdbAction=false;
-this.highlightBond1=null;
-this.highlightBond2=null;
-this.errorLoading=false;
-this.seqColoursReady=false;
-this.fr=null;
-this.ap=null;
-this.ssm=null;
-this.visiblebonds=null;
-this.zsort=null;
-this.foundchain=0;
-this.lastMessage=null;
-this.resetLastRes=null;
-this.eval=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.idmat=Clazz.new_($I$(1).c$$I$I,[3, 3]);
-this.objmat=Clazz.new_($I$(1).c$$I$I,[3, 3]);
+this.idmat=Clazz.new_($I$(1,1).c$$I$I,[3, 3]);
+this.objmat=Clazz.new_($I$(1,1).c$$I$I,[3, 3]);
 this.redrawneeded=true;
 this.omx=0;
 this.mx=0;
@@ -76,19 +18,21 @@ this.depthcue=true;
 this.wire=false;
 this.bymolecule=false;
 this.zbuffer=true;
-this.$font=Clazz.new_($I$(2).c$$S$I$I,["Helvetica", 0, 10]);
-this.mappingDetails=Clazz.new_($I$(3));
+this.$font=Clazz.new_($I$(2,1).c$$S$I$I,["Helvetica", 0, 10]);
+this.mappingDetails=Clazz.new_($I$(3,1));
 this.appletToolTip=null;
 this.pdbAction=false;
 this.errorLoading=false;
 this.seqColoursReady=false;
 this.foundchain=-1;
-this.resetLastRes=Clazz.new_($I$(3));
-this.eval=Clazz.new_($I$(3));
-}, 1);
+this.resetLastRes=Clazz.new_($I$(3,1));
+this.eval=Clazz.new_($I$(3,1));
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType', function (pdbentry, seq, chains, ap, protocol) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['Z',['redrawneeded','bysequence','depthcue','wire','bymolecule','zbuffer','dragging','pdbAction','errorLoading','seqColoursReady'],'F',['maxwidth','scale'],'I',['omx','mx','omy','my','bsize','xstart','xend','ystart','yend','xmid','ymid','toolx','tooly','foundchain'],'S',['inStr','inType','appletToolTip','lastMessage'],'O',['idmat','mc_view.MCMatrix','+objmat','pdb','jalview.io.StructureFile','pdbentry','jalview.datamodel.PDBEntry','img','java.awt.Image','ig','java.awt.Graphics','prefsize','java.awt.Dimension','centre','float[]','+$width','$font','java.awt.Font','sequence','jalview.datamodel.SequenceI[]','mappingDetails','StringBuffer','mainchain','mc_view.PDBChain','highlightRes','java.util.Vector','highlightBond1','mc_view.Bond','+highlightBond2','fr','jalview.appletgui.FeatureRenderer','ap','jalview.appletgui.AlignmentPanel','ssm','jalview.structure.StructureSelectionManager','visiblebonds','java.util.Vector','zsort','mc_view.Zsort','resetLastRes','StringBuffer','+eval']]]
+
+Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_appletgui_AlignmentPanel$jalview_io_DataSourceType',  function (pdbentry, seq, chains, ap, protocol) {
+Clazz.super_(C$, this);
 this.ap=ap;
 this.pdbentry=pdbentry;
 this.sequence=seq;
@@ -118,27 +62,26 @@ var sequence=seq[0];
 for (var i=0; i < this.pdb.getChains$().size$(); i++) {
 this.mappingDetails.append$S("\n\nPDB Sequence is :\nSequence = " + this.pdb.getChains$().elementAt$I(i).sequence.getSequenceAsString$());
 this.mappingDetails.append$S("\nNo of residues = " + this.pdb.getChains$().elementAt$I(i).residues.size$() + "\n\n" );
-var as=Clazz.new_($I$(6).c$$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$S,[sequence, this.pdb.getChains$().elementAt$I(i).sequence, this.pdb.getChains$().elementAt$I(i).isNa ? "dna" : "pep"]);
+var as=Clazz.new_([sequence, this.pdb.getChains$().elementAt$I(i).sequence, this.pdb.getChains$().elementAt$I(i).isNa ? "dna" : "pep"],$I$(6,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI$S);
 as.calcScoreMatrix$();
 as.traceAlignment$();
 var ps=((P$.AppletPDBCanvas$1||
-(function(){var C$=Clazz.newClass(P$, "AppletPDBCanvas$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AppletPDBCanvas$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.io.PrintStream'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'print$S', function (x) {
+Clazz.newMeth(C$, 'print$S',  function (x) {
 this.b$['mc_view.AppletPDBCanvas'].mappingDetails.append$S(x);
 });
 
-Clazz.newMeth(C$, 'println$', function () {
+Clazz.newMeth(C$, 'println$',  function () {
 this.b$['mc_view.AppletPDBCanvas'].mappingDetails.append$S("\n");
 });
 })()
-), Clazz.new_($I$(7).c$$java_io_OutputStream, [this, null, System.out],P$.AppletPDBCanvas$1));
+), Clazz.new_($I$(7,1).c$$java_io_OutputStream,[this, null, System.out],P$.AppletPDBCanvas$1));
 as.printAlignment$java_io_PrintStream(ps);
 if (as.maxscore > max ) {
 max=as.maxscore;
@@ -157,7 +100,7 @@ this.mainchain.seqstart=seqstart;
 this.mainchain.seqend=seqend;
 this.mainchain.isVisible=true;
 this.pdb=this.pdb;
-this.prefsize=Clazz.new_($I$(8).c$$I$I,[this.getSize$().width, this.getSize$().height]);
+this.prefsize=Clazz.new_([this.getSize$().width, this.getSize$().height],$I$(8,1).c$$I$I);
 for (var i=0; i < 3; i++) {
 for (var j=0; j < 3; j++) {
 if (i != j) {
@@ -171,33 +114,32 @@ this.objmat.addElement$I$I$F(i, j, 1);
 this.addMouseMotionListener$java_awt_event_MouseMotionListener(this);
 this.addMouseListener$java_awt_event_MouseListener(this);
 this.addKeyListener$java_awt_event_KeyListener(((P$.AppletPDBCanvas$2||
-(function(){var C$=Clazz.newClass(P$, "AppletPDBCanvas$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "AppletPDBCanvas$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.KeyAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (evt) {
+Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent',  function (evt) {
 this.b$['mc_view.AppletPDBCanvas'].doKeyPressed$java_awt_event_KeyEvent.apply(this.b$['mc_view.AppletPDBCanvas'], [evt]);
 });
 })()
-), Clazz.new_($I$(9), [this, null],P$.AppletPDBCanvas$2)));
+), Clazz.new_($I$(9,1),[this, null],P$.AppletPDBCanvas$2)));
 this.findCentre$();
 this.findWidth$();
 this.setupBonds$();
 this.scale=this.findScale$();
 }, 1);
 
-Clazz.newMeth(C$, 'setupBonds$', function () {
+Clazz.newMeth(C$, 'setupBonds$',  function () {
 this.seqColoursReady=false;
-this.visiblebonds=Clazz.new_($I$(10));
+this.visiblebonds=Clazz.new_($I$(10,1));
 for (var ii=0; ii < this.pdb.getChains$().size$(); ii++) {
 if (this.pdb.getChains$().elementAt$I(ii).isVisible) {
 var tmp=this.pdb.getChains$().elementAt$I(ii).bonds;
 for (var i=0; i < tmp.size$(); i++) {
-this.visiblebonds.addElement$TE(tmp.elementAt$I(i));
+this.visiblebonds.addElement$O(tmp.elementAt$I(i));
 }
 }}
 this.seqColoursReady=true;
@@ -206,7 +148,7 @@ this.redrawneeded=true;
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'findWidth$', function () {
+Clazz.newMeth(C$, 'findWidth$',  function () {
 var max=Clazz.array(Float.TYPE, [3]);
 var min=Clazz.array(Float.TYPE, [3]);
 max[0]=-1.0E30;
@@ -255,7 +197,7 @@ this.maxwidth=this.$width[1];
 this.maxwidth=this.$width[2];
 }});
 
-Clazz.newMeth(C$, 'findScale$', function () {
+Clazz.newMeth(C$, 'findScale$',  function () {
 var dim;
 var width;
 var height;
@@ -272,7 +214,7 @@ dim=height;
 }return (dim / (1.5 * this.maxwidth));
 });
 
-Clazz.newMeth(C$, 'findCentre$', function () {
+Clazz.newMeth(C$, 'findCentre$',  function () {
 var xtot=0;
 var ytot=0;
 var ztot=0;
@@ -292,17 +234,17 @@ this.centre[1]=ytot / (2 * bsize);
 this.centre[2]=ztot / (2 * bsize);
 });
 
-Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'paint$java_awt_Graphics',  function (g) {
 if (this.errorLoading) {
 g.setColor$java_awt_Color($I$(11).white);
 g.fillRect$I$I$I$I(0, 0, this.getSize$().width, this.getSize$().height);
 g.setColor$java_awt_Color($I$(11).black);
-g.setFont$java_awt_Font(Clazz.new_($I$(2).c$$S$I$I,["Verdana", 1, 14]));
+g.setFont$java_awt_Font(Clazz.new_($I$(2,1).c$$S$I$I,["Verdana", 1, 14]));
 g.drawString$S$I$I($I$(12).getString$S("label.error_loading_pdb_data"), 50, (this.getSize$().height/2|0));
 return;
 }if (!this.seqColoursReady) {
 g.setColor$java_awt_Color($I$(11).black);
-g.setFont$java_awt_Font(Clazz.new_($I$(2).c$$S$I$I,["Verdana", 1, 14]));
+g.setFont$java_awt_Font(Clazz.new_($I$(2,1).c$$S$I$I,["Verdana", 1, 14]));
 g.drawString$S$I$I($I$(12).getString$S("label.fetching_pdb_data"), 50, (this.getSize$().height/2|0));
 return;
 }if ((this.img == null ) || (this.prefsize.width != this.getSize$().width) || (this.prefsize.height != this.getSize$().height)  ) {
@@ -330,30 +272,30 @@ this.ig.drawString$S$I$I(this.appletToolTip, this.toolx, this.tooly);
 this.pdbAction=false;
 });
 
-Clazz.newMeth(C$, 'drawAll$java_awt_Graphics$I$I', function (g, width, height) {
+Clazz.newMeth(C$, 'drawAll$java_awt_Graphics$I$I',  function (g, width, height) {
 this.ig.setColor$java_awt_Color($I$(11).black);
 this.ig.fillRect$I$I$I$I(0, 0, width, height);
 this.drawScene$java_awt_Graphics(this.ig);
 this.drawLabels$java_awt_Graphics(this.ig);
 });
 
-Clazz.newMeth(C$, 'setColours$jalview_schemes_ColourSchemeI', function (cs) {
+Clazz.newMeth(C$, 'setColours$jalview_schemes_ColourSchemeI',  function (cs) {
 this.bysequence=false;
 this.pdb.setColours$jalview_schemes_ColourSchemeI(cs);
 this.redrawneeded=true;
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'colourBySequence$', function () {
-var sr=Clazz.new_($I$(13).c$$jalview_appletgui_AlignViewport,[this.ap.av]);
+Clazz.newMeth(C$, 'colourBySequence$',  function () {
+var sr=Clazz.new_($I$(13,1).c$$jalview_appletgui_AlignViewport,[this.ap.av]);
 var mapping=this.ssm.getMapping$S(this.pdbentry.getFile$());
 var showFeatures=false;
 if (this.ap.av.isShowSequenceFeatures$()) {
 if (this.fr == null ) {
-this.fr=Clazz.new_($I$(14).c$$jalview_viewmodel_AlignmentViewport,[this.ap.av]);
+this.fr=Clazz.new_($I$(14,1).c$$jalview_viewmodel_AlignmentViewport,[this.ap.av]);
 }this.fr.transferSettings$jalview_api_FeatureRenderer(this.ap.getFeatureRenderer$());
 showFeatures=true;
-}var finder=Clazz.new_($I$(15).c$$jalview_api_FeatureRenderer,[this.fr]);
+}var finder=Clazz.new_($I$(15,1).c$$jalview_api_FeatureRenderer,[this.fr]);
 var chain;
 if (this.bysequence && this.pdb != null  ) {
 for (var ii=0; ii < this.pdb.getChains$().size$(); ii++) {
@@ -381,10 +323,10 @@ tmp.endCol=sr.getResidueColour$jalview_datamodel_SequenceI$I$jalview_renderer_se
 }
 }});
 
-Clazz.newMeth(C$, 'drawScene$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'drawScene$java_awt_Graphics',  function (g) {
 if (this.zbuffer) {
 if (this.zsort == null ) {
-this.zsort=Clazz.new_($I$(16));
+this.zsort=Clazz.new_($I$(16,1));
 }this.zsort.sort$java_util_Vector(this.visiblebonds);
 }var tmpBond=null;
 for (var i=0; i < this.visiblebonds.size$(); i++) {
@@ -437,7 +379,7 @@ this.drawLine$java_awt_Graphics$I$I$I$I(g, this.xstart, this.ystart, this.xmid, 
 }}
 });
 
-Clazz.newMeth(C$, 'drawLine$java_awt_Graphics$I$I$I$I', function (g, x1, y1, x2, y2) {
+Clazz.newMeth(C$, 'drawLine$java_awt_Graphics$I$I$I$I',  function (g, x1, y1, x2, y2) {
 if (!this.wire) {
 if ((Math.abs(y2 - y1) / Math.abs(x2 - x1)) < 0.5 ) {
 g.drawLine$I$I$I$I(x1, y1, x2, y2);
@@ -452,15 +394,15 @@ g.drawLine$I$I$I$I(x1 - 1, y1, x2 - 1, y2);
 g.drawLine$I$I$I$I(x1, y1, x2, y2);
 }});
 
-Clazz.newMeth(C$, 'minimumsize$', function () {
+Clazz.newMeth(C$, 'minimumsize$',  function () {
 return this.prefsize;
 });
 
-Clazz.newMeth(C$, 'preferredsize$', function () {
+Clazz.newMeth(C$, 'preferredsize$',  function () {
 return this.prefsize;
 });
 
-Clazz.newMeth(C$, 'doKeyPressed$java_awt_event_KeyEvent', function (evt) {
+Clazz.newMeth(C$, 'doKeyPressed$java_awt_event_KeyEvent',  function (evt) {
 if (evt.getKeyCode$() == 38) {
 this.scale=(this.scale * 1.1);
 this.redrawneeded=true;
@@ -471,7 +413,7 @@ this.redrawneeded=true;
 this.repaint$();
 }});
 
-Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent',  function (e) {
 this.pdbAction=true;
 var fatom=this.findAtom$I$I(e.getX$(), e.getY$());
 if (fatom != null ) {
@@ -483,12 +425,12 @@ var chain=this.pdb.getChains$().elementAt$I(this.foundchain);
 if (chain === this.mainchain ) {
 if (fatom.alignmentMapping != -1) {
 if (this.highlightRes == null ) {
-this.highlightRes=Clazz.new_($I$(10));
+this.highlightRes=Clazz.new_($I$(10,1));
 }var atomString=Integer.toString$I(fatom.alignmentMapping);
 if (this.highlightRes.contains$O(atomString)) {
 this.highlightRes.removeElement$O(atomString);
 } else {
-this.highlightRes.addElement$TE(atomString);
+this.highlightRes.addElement$O(atomString);
 }}}}}this.mx=e.getX$();
 this.my=e.getY$();
 this.omx=this.mx;
@@ -496,7 +438,7 @@ this.omy=this.my;
 this.dragging=false;
 });
 
-Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent',  function (e) {
 this.pdbAction=true;
 if (this.highlightBond1 != null ) {
 this.highlightBond1.at2.isSelected=false;
@@ -522,21 +464,21 @@ this.redrawneeded=true;
 this.repaint$();
 }});
 
-Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (evt) {
+Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent',  function (evt) {
 var x=evt.getX$();
 var y=evt.getY$();
 this.mx=x;
 this.my=y;
-var objmat=Clazz.new_($I$(1).c$$I$I,[3, 3]);
+var objmat=Clazz.new_($I$(1,1).c$$I$I,[3, 3]);
 objmat.setIdentity$();
 if ((evt.getModifiers$() & 4) != 0) {
 objmat.rotatez$F(((this.mx - this.omx)));
@@ -559,12 +501,12 @@ this.redrawneeded=true;
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent', function (evt) {
+Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent',  function (evt) {
 this.dragging=false;
 return;
 });
 
-Clazz.newMeth(C$, 'drawLabels$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'drawLabels$java_awt_Graphics',  function (g) {
 for (var chain, $chain = this.pdb.getChains$().iterator$(); $chain.hasNext$()&&((chain=($chain.next$())),1);) {
 if (chain.isVisible) {
 for (var tmpBond, $tmpBond = chain.bonds.iterator$(); $tmpBond.hasNext$()&&((tmpBond=($tmpBond.next$())),1);) {
@@ -576,7 +518,7 @@ this.labelAtom$java_awt_Graphics$mc_view_Bond$I(g, tmpBond, 2);
 }}
 });
 
-Clazz.newMeth(C$, 'labelAtom$java_awt_Graphics$mc_view_Bond$I', function (g, b, n) {
+Clazz.newMeth(C$, 'labelAtom$java_awt_Graphics$mc_view_Bond$I',  function (g, b, n) {
 g.setFont$java_awt_Font(this.$font);
 if (n == 1) {
 var xstart=((((b.start[0] - this.centre[0]) * this.scale) + ((this.getSize$().width/2|0)))|0);
@@ -590,7 +532,7 @@ g.setColor$java_awt_Color($I$(11).red);
 g.drawString$S$I$I(b.at2.resName + "-" + b.at2.resNumber , xstart, ystart);
 }});
 
-Clazz.newMeth(C$, 'findAtom$I$I', function (x, y) {
+Clazz.newMeth(C$, 'findAtom$I$I',  function (x, y) {
 var fatom=null;
 this.foundchain=-1;
 for (var ii=0; ii < this.pdb.getChains$().size$(); ii++) {
@@ -622,11 +564,11 @@ chain=this.pdb.getChains$().elementAt$I(this.foundchain);
 return fatom;
 });
 
-Clazz.newMeth(C$, 'update$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'update$java_awt_Graphics',  function (g) {
 this.paint$java_awt_Graphics(g);
 });
 
-Clazz.newMeth(C$, 'highlightRes$I', function (ii) {
+Clazz.newMeth(C$, 'highlightRes$I',  function (ii) {
 if (!this.seqColoursReady) {
 return;
 }if (this.highlightRes != null  && this.highlightRes.contains$O((ii - 1) + "") ) {
@@ -654,7 +596,7 @@ this.redrawneeded=true;
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'setAllchainsVisible$Z', function (b) {
+Clazz.newMeth(C$, 'setAllchainsVisible$Z',  function (b) {
 for (var ii=0; ii < this.pdb.getChains$().size$(); ii++) {
 var chain=this.pdb.getChains$().elementAt$I(ii);
 chain.isVisible=b;
@@ -664,17 +606,17 @@ this.findCentre$();
 this.setupBonds$();
 });
 
-Clazz.newMeth(C$, 'getStructureFiles$', function () {
+Clazz.newMeth(C$, 'getStructureFiles$',  function () {
 return Clazz.array(String, -1, [this.pdbentry.getFile$()]);
 });
 
-Clazz.newMeth(C$, 'mouseOverStructure$I$S', function (pdbResNum, chain) {
+Clazz.newMeth(C$, 'mouseOverStructure$I$S',  function (pdbResNum, chain) {
 if (this.lastMessage == null  || !this.lastMessage.equals$O(pdbResNum + chain) ) {
 this.ssm.mouseOverStructure$I$S$S(pdbResNum, chain, this.pdbentry.getFile$());
 }this.lastMessage=pdbResNum + chain;
 });
 
-Clazz.newMeth(C$, 'highlightAtoms$java_util_List', function (atoms) {
+Clazz.newMeth(C$, 'highlightAtoms$java_util_List',  function (atoms) {
 if (!this.seqColoursReady) {
 return;
 }for (var atom, $atom = atoms.iterator$(); $atom.hasNext$()&&((atom=($atom.next$())),1);) {
@@ -687,7 +629,7 @@ this.redrawneeded=true;
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'highlightAtom$I', function (atomIndex) {
+Clazz.newMeth(C$, 'highlightAtom$I',  function (atomIndex) {
 var index=-1;
 var tmpBond;
 for (index=0; index < this.mainchain.bonds.size$(); index++) {
@@ -709,20 +651,20 @@ this.highlightBond2.at1.isSelected=true;
 }}
 });
 
-Clazz.newMeth(C$, 'getColour$I$I$S$S', function (atomIndex, pdbResNum, chain, pdbfile) {
+Clazz.newMeth(C$, 'getColour$I$I$S$S',  function (atomIndex, pdbResNum, chain, pdbfile) {
 return $I$(11).white;
 });
 
-Clazz.newMeth(C$, 'updateColours$O', function (source) {
+Clazz.newMeth(C$, 'updateColours$O',  function (source) {
 this.colourBySequence$();
 this.redrawneeded=true;
 this.repaint$();
 });
 
-Clazz.newMeth(C$, 'releaseReferences$O', function (svl) {
+Clazz.newMeth(C$, 'releaseReferences$O',  function (svl) {
 });
 
-Clazz.newMeth(C$, 'isListeningFor$jalview_datamodel_SequenceI', function (seq) {
+Clazz.newMeth(C$, 'isListeningFor$jalview_datamodel_SequenceI',  function (seq) {
 if (this.sequence != null ) {
 for (var s, $s = 0, $$s = this.sequence; $s<$$s.length&&((s=($$s[$s])),1);$s++) {
 if (s === seq ) {
@@ -733,4 +675,4 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

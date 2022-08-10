@@ -1,26 +1,21 @@
-(function(){var P$=java.util,p$1={},p$2={},p$3={},I$=[[0,'java.util.concurrent.atomic.AtomicInteger','java.util.TaskQueue','java.util.TimerThread','java.util.TimerTask','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TaskQueue");
+(function(){var P$=java.util,p$1={},p$2={},p$3={},I$=[[0,'java.util.concurrent.atomic.AtomicInteger','java.util.TaskQueue','java.util.TimerThread','java.util.TimerTask','java.util.Arrays']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TaskQueue");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queue=null;
-this.size=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.queue=Clazz.array($I$(4), [128]);
 this.size=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['size'],'O',['queue','java.util.TimerTask[]']]]
 
 Clazz.newMeth(C$, 'size$', function () {
 return this.size;
 });
 
 Clazz.newMeth(C$, 'add$java_util_TimerTask', function (task) {
-if (this.size + 1 == this.queue.length) this.queue=$I$(5).copyOf$TTA$I(this.queue, 2 * this.queue.length);
+if (this.size + 1 == this.queue.length) this.queue=$I$(5).copyOf$OA$I(this.queue, 2 * this.queue.length);
 this.queue[++this.size]=task;
 p$3.fixUp$I.apply(this, [this.size]);
 });
@@ -87,8 +82,11 @@ Clazz.newMeth(C$, 'heapify$', function () {
 for (var i=(this.size/2|0); i >= 1; i--) p$3.fixDown$I.apply(this, [i]);
 
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:50 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-12-19 07:39:32 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,37 +1,16 @@
 (function(){var P$=Clazz.newPackage("org.jmol.g3d"),p$1={};
-var C$=Clazz.newClass(P$, "Platform3D");
-C$.backgroundTransparent=false;
+/*c*/var C$=Clazz.newClass(P$, "Platform3D");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.backgroundTransparent=false;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.windowWidth=0;
-this.windowHeight=0;
-this.windowSize=0;
-this.bufferWidth=0;
-this.bufferHeight=0;
-this.bufferSize=0;
-this.bufferSizeT=0;
-this.bufferedImage=null;
-this.pBuffer=null;
-this.pBufferT=null;
-this.zBuffer=null;
-this.zBufferT=null;
-this.widthOffscreen=0;
-this.heightOffscreen=0;
-this.offscreenImage=null;
-this.graphicsForTextOrImage=null;
-this.apiPlatform=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['windowWidth','windowHeight','windowSize','bufferWidth','bufferHeight','bufferSize','bufferSizeT','widthOffscreen','heightOffscreen'],'O',['bufferedImage','java.lang.Object','pBuffer','int[]','+pBufferT','+zBuffer','+zBufferT','offscreenImage','java.lang.Object','+graphicsForTextOrImage','apiPlatform','org.jmol.api.GenericPlatform']]
+,['Z',['backgroundTransparent']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_api_GenericPlatform', function (apiPlatform) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.apiPlatform=apiPlatform;
 }, 1);
 
@@ -128,6 +107,10 @@ Clazz.newMeth(C$, 'setBackgroundTransparent$Z', function (tf) {
 C$.backgroundTransparent=tf;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.backgroundTransparent=false;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

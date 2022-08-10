@@ -1,6 +1,6 @@
 /*
- * Jalview - A Sequence Alignment Editor and Viewer ($$Version-Rel$$)
- * Copyright (C) $$Year-Rel$$ The Jalview Authors
+ * Jalview - A Sequence Alignment Editor and Viewer (2.11.2.3)
+ * Copyright (C) 2022 The Jalview Authors
  * 
  * This file is part of Jalview.
  * 

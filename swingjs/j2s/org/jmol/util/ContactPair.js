@@ -1,24 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'org.jmol.modelset.Atom','javajs.util.V3','javajs.util.P3','org.jmol.script.T']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ContactPair");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),p$1={},I$=[[0,'org.jmol.modelset.Atom','javajs.util.V3','javajs.util.P3','org.jmol.script.T']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ContactPair");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.radii=null;
-this.vdws=null;
-this.myAtoms=null;
-this.pt=null;
-this.volume=0;
-this.vdwVolume=0;
-this.score=0;
-this.d=0;
-this.chord=0;
-this.contactType=0;
-this.xVdwClash=0;
-this.oldType=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.radii=Clazz.array(Float.TYPE, [2]);
@@ -28,10 +11,12 @@ this.volume=0;
 this.vdwVolume=0;
 this.xVdwClash=NaN;
 this.oldType=0;
-}, 1);
+},1);
+
+C$.$fields$=[['D',['volume','vdwVolume'],'F',['score','d','chord','xVdwClash'],'I',['contactType','oldType'],'O',['radii','float[]','+vdws','myAtoms','org.jmol.modelset.Atom[]','pt','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelset_AtomA$I$I$F$F$F$F', function (atoms, i1, i2, R, r, vdwA, vdwB) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.radii[0]=R;
 this.radii[1]=r;
 this.vdws[0]=vdwA;
@@ -41,7 +26,7 @@ this.myAtoms[1]=atoms[i2];
 var v=$I$(2).newVsub$javajs_util_T3$javajs_util_T3(this.myAtoms[1], this.myAtoms[0]);
 this.d=v.length$();
 var f=(R - r + this.d) / (2 * this.d);
-this.pt=Clazz.new_($I$(3));
+this.pt=Clazz.new_($I$(3,1));
 this.pt.scaleAdd2$F$javajs_util_T3$javajs_util_T3(f, v, this.myAtoms[0]);
 this.score=this.d - vdwA - vdwB ;
 this.contactType=(this.score < 0  ? 1073741881 : 1648363544);
@@ -94,4 +79,4 @@ return "type=" + $I$(4).nameOf$I(this.contactType) + " " + this.myAtoms[0] + " "
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:51 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

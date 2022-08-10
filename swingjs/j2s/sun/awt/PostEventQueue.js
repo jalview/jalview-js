@@ -1,31 +1,25 @@
-(function(){var P$=Clazz.newPackage("sun.awt"),I$=[[0,'sun.awt.EventQueueItem','sun.awt.SunToolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PostEventQueue");
+(function(){var P$=Clazz.newPackage("sun.awt"),I$=[[0,'sun.awt.EventQueueItem','sun.awt.SunToolkit']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PostEventQueue");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.queueHead=null;
-this.queueTail=null;
-this.eventQueue=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.queueHead=null;
 this.queueTail=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_EventQueue', function (eq) {
-C$.$init$.apply(this);
+C$.$fields$=[['O',['queueHead','sun.awt.EventQueueItem','+queueTail','eventQueue','java.awt.EventQueue']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_EventQueue',  function (eq) {
+;C$.$init$.apply(this);
 this.eventQueue=eq;
 }, 1);
 
-Clazz.newMeth(C$, 'noEvents$', function () {
+Clazz.newMeth(C$, 'noEvents$',  function () {
 return this.queueHead == null ;
 });
 
-Clazz.newMeth(C$, 'flush$', function () {
+Clazz.newMeth(C$, 'flush$',  function () {
 if (this.queueHead != null ) {
 var tempQueue;
 {
@@ -37,8 +31,8 @@ tempQueue=tempQueue.next;
 }
 }}});
 
-Clazz.newMeth(C$, 'postEvent$java_awt_AWTEvent', function (event) {
-var item=Clazz.new_($I$(1).c$$java_awt_AWTEvent,[event]);
+Clazz.newMeth(C$, 'postEvent$java_awt_AWTEvent',  function (event) {
+var item=Clazz.new_($I$(1,1).c$$java_awt_AWTEvent,[event]);
 {
 if (this.queueHead == null ) {
 this.queueHead=this.queueTail=item;
@@ -50,4 +44,4 @@ this.queueTail=item;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:02 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

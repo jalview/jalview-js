@@ -1,30 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),I$=[[0,'javajs.util.V3','javajs.util.P3i','org.jmol.shapespecial.Dots','org.jmol.util.Geodesic','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DotsRenderer", null, 'org.jmol.render.ShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),I$=[[0,'javajs.util.V3','javajs.util.P3i','org.jmol.shapespecial.Dots','org.jmol.util.Geodesic','org.jmol.util.C']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DotsRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.iShowSolid=false;
-this.screenLevel=0;
-this.screenDotCount=0;
-this.scrCoords=null;
-this.faceMap=null;
-this.v3temp=null;
-this.scrTemp=null;
-this.dotScale=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.faceMap=null;
-this.v3temp=Clazz.new_($I$(1));
-this.scrTemp=Clazz.new_($I$(2));
-}, 1);
+this.v3temp=Clazz.new_($I$(1,1));
+this.scrTemp=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['iShowSolid'],'I',['screenLevel','screenDotCount','dotScale'],'O',['scrCoords','int[]','+faceMap','v3temp','javajs.util.V3','scrTemp','javajs.util.P3i']]]
 
 Clazz.newMeth(C$, 'initRenderer$', function () {
 this.screenLevel=$I$(3).MAX_LEVEL;
-this.screenDotCount=$I$(4).getVertexCount$I($I$(3).MAX_LEVEL);
+this.screenDotCount=$I$(4,"getVertexCount$I",[$I$(3).MAX_LEVEL]);
 this.scrCoords=Clazz.array(Integer.TYPE, [3 * this.screenDotCount]);
 });
 
@@ -37,10 +26,10 @@ Clazz.newMeth(C$, 'render1$org_jmol_shapespecial_Dots', function (dots) {
 if (!this.iShowSolid && !this.g3d.setC$H(4) ) return;
 var sppa=(this.vwr.getScalePixelsPerAngstrom$Z(true)|0);
 this.screenLevel=(this.iShowSolid || sppa > 20  ? 3 : sppa > 10 ? 2 : sppa > 5 ? 1 : 0);
-if (!this.iShowSolid) this.screenLevel+=this.vwr.getInt$I(553648142) - 3;
+if (!this.iShowSolid) this.screenLevel+=this.vwr.getInt$I(553648141) - 3;
 this.screenLevel=Math.max(Math.min(this.screenLevel, $I$(3).MAX_LEVEL), 0);
 this.screenDotCount=$I$(4).getVertexCount$I(this.screenLevel);
-this.dotScale=this.vwr.getInt$I(553648143);
+this.dotScale=this.vwr.getInt$I(553648142);
 var maps=dots.ec.getDotsConvexMaps$();
 for (var i=dots.ec.getDotsConvexMax$(); --i >= 0; ) {
 var atom=this.ms.at[i];
@@ -88,4 +77,4 @@ this.g3d.drawPoints$I$IA$I(nPoints, this.scrCoords, this.dotScale);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,16 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),I$=[[0,'org.jmol.export.UseTable','javajs.util.PT','org.jmol.viewer.Viewer','javajs.util.Lst']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "_X3dExporter", null, 'org.jmol.export._VrmlExporter');
+(function(){var P$=Clazz.newPackage("org.jmol.export"),I$=[[0,'org.jmol.export.UseTable','javajs.util.PT','org.jmol.viewer.Viewer','org.jmol.export.___Exporter','javajs.util.Lst']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "_X3dExporter", null, 'org.jmol.export._VrmlExporter');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-this.useTable=Clazz.new_($I$(1).c$$S,["USE=\'"]);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
+this.useTable=Clazz.new_(["USE=\'"],$I$(1,1).c$$S);
 }, 1);
 
 Clazz.newMeth(C$, 'outputHeader$', function () {
@@ -56,7 +54,7 @@ this.output$S("</Transform>\n");
 });
 
 Clazz.newMeth(C$, 'outputAttr$S$F$F$F', function (attr, x, y, z) {
-this.output$S(" " + attr + "='" + P$.___Exporter.round$D(x) + " " + P$.___Exporter.round$D(y) + " " + P$.___Exporter.round$D(z) + "'" );
+this.output$S(" " + attr + "='" + $I$(4).round$D(x) + " " + $I$(4).round$D(y) + " " + $I$(4).round$D(z) + "'" );
 });
 
 Clazz.newMeth(C$, 'outputRotation$javajs_util_A4', function (a) {
@@ -78,7 +76,7 @@ if (def.charAt$I(0) == "_") {
 var color=this.rgbFractionalFromColix$H(colix);
 this.output$S("DEF='" + def + "'><Material diffuseColor='" );
 if (isText) this.output$S("0 0 0' specularColor='0 0 0' ambientIntensity='0.0' shininess='0.0' emissiveColor='" + color + "'/>" );
- else this.output$S(color + "' transparency='" + P$.___Exporter.translucencyFractionalFromColix$H(colix) + "'/>" );
+ else this.output$S(color + "' transparency='" + $I$(4).translucencyFractionalFromColix$H(colix) + "'/>" );
 } else this.output$S(def + ">");
 this.output$S("</Appearance>");
 });
@@ -154,7 +152,7 @@ this.output$S("rotation=\'1 0 0 1.5708\'");
 var height=pt1.distance$javajs_util_T3(pt2);
 this.outputAttr$S$F$F$F("scale", radius, height, radius);
 this.output$S(">");
-this.outputCylinderChildScaled$H$B(colix, ($b$[0] = 2, $b$[0]));
+this.outputCylinderChildScaled$H$B(colix, 2);
 this.popMatrix$();
 this.output$S("</Billboard>");
 this.popMatrix$();
@@ -175,13 +173,13 @@ this.output$S(" crossSection=\'");
 var rpd=0.017453292;
 var scale=0.02 / radius;
 for (var i=0; i <= 360; i+=10) {
-this.output$S(P$.___Exporter.round$D(Math.cos(i * rpd) * scale) + " ");
-this.output$S(P$.___Exporter.round$D(Math.sin(i * rpd) * scale) + " ");
+this.output$S($I$(4,"round$D",[Math.cos(i * rpd) * scale]) + " ");
+this.output$S($I$(4,"round$D",[Math.sin(i * rpd) * scale]) + " ");
 }
 this.output$S("\' spine=\'");
 for (var i=0; i <= 360; i+=10) {
-this.output$S(P$.___Exporter.round$D(Math.cos(i * rpd)) + " ");
-this.output$S(P$.___Exporter.round$D(Math.sin(i * rpd)) + " 0 ");
+this.output$S($I$(4,"round$D",[Math.cos(i * rpd)]) + " ");
+this.output$S($I$(4,"round$D",[Math.sin(i * rpd)]) + " 0 ");
 }
 this.output$S("\'/>");
 this.outputAppearance$H$Z(colix, false);
@@ -203,7 +201,7 @@ this.outputIndices$IAA$IA$I$javajs_util_BS$I(indices, map, nPolygons, bsPolygons
 this.output$S("\'\n");
 var vNormals=null;
 if (normals != null ) {
-vNormals=Clazz.new_($I$(4));
+vNormals=Clazz.new_($I$(5,1));
 map=this.getNormalMap$javajs_util_T3A$I$javajs_util_BS$javajs_util_Lst(normals, nVertices, null, vNormals);
 this.output$S("  solid=\'false\'\n  normalPerVertex=\'true\'\n  normalIndex=\'\n");
 this.outputIndices$IAA$IA$I$javajs_util_BS$I(indices, map, nPolygons, bsPolygons, faceVertexMax);
@@ -231,8 +229,7 @@ this.output$S("\'/>\n");
 Clazz.newMeth(C$, 'outputTextPixel$javajs_util_P3$I', function (pt, argb) {
 });
 
-Clazz.newMeth(C$, 'plotText$I$I$I$H$S$javajs_awt_Font', function (x, y, z, colix, text, font3d) {
+Clazz.newMeth(C$, 'plotText$I$I$I$H$S$org_jmol_util_Font', function (x, y, z, colix, text, font3d) {
 });
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

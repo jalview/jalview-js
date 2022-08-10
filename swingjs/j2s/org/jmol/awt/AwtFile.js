@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'java.io.File','java.io.BufferedInputStream','java.io.FileInputStream','org.jmol.viewer.Viewer','java.io.OutputStreamWriter','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AwtFile", null, 'java.io.File', 'org.jmol.api.GenericFileInterface');
-C$.urlPrefixPairs=null;
+(function(){var P$=Clazz.newPackage("org.jmol.awt"),I$=[[0,'java.io.File','java.io.BufferedInputStream','java.io.FileInputStream','org.jmol.viewer.Viewer','java.io.OutputStreamWriter','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AwtFile", null, 'java.io.File', 'org.jmol.api.GenericFileInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.urlPrefixPairs=Clazz.array(String, -1, ["http:", "http://", "www.", "http://www.", "https:", "https://", "ftp:", "ftp://", "file:", "file:///"]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['urlPrefixPairs','String[]']]]
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getParentAsFile$', function () {
@@ -29,9 +28,9 @@ return f;
 });
 
 Clazz.newMeth(C$, 'getBufferedFileInputStream$S', function (name) {
-var file=Clazz.new_($I$(1).c$$S,[name]);
+var file=Clazz.new_($I$(1,1).c$$S,[name]);
 try {
-return Clazz.new_($I$(2).c$$java_io_InputStream,[Clazz.new_($I$(3).c$$java_io_File,[file])]);
+return Clazz.new_([Clazz.new_($I$(3,1).c$$java_io_File,[file])],$I$(2,1).c$$java_io_InputStream);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 return e.toString();
@@ -55,13 +54,13 @@ if (type != null ) {
 conn.setRequestProperty$S$S("Content-Type", type);
 conn.setDoOutput$Z(true);
 if (outputBytes == null ) {
-var wr=Clazz.new_($I$(5).c$$java_io_OutputStream,[conn.getOutputStream$()]);
+var wr=Clazz.new_([conn.getOutputStream$()],$I$(5,1).c$$java_io_OutputStream);
 wr.write$S(post);
 wr.flush$();
 } else {
 conn.getOutputStream$().write$BA(outputBytes);
 conn.getOutputStream$().flush$();
-}}return Clazz.new_($I$(2).c$$java_io_InputStream,[conn.getInputStream$()]);
+}}return Clazz.new_([conn.getInputStream$()],$I$(2,1).c$$java_io_InputStream);
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
 return e.toString();
@@ -90,11 +89,15 @@ if (path == null ) return null;
 path=path.replace$C$C("\\", "/");
 for (var i=0; i < C$.urlPrefixPairs.length; i++) if (path.indexOf$S(C$.urlPrefixPairs[i]) == 0) return null;
 
-for (var i=0; i < C$.urlPrefixPairs.length; i+=2) if (path.indexOf$S(C$.urlPrefixPairs[i]) > 0) return C$.urlPrefixPairs[i + 1] + $I$(6).trim$S$S(path.substring$I(path.indexOf$S(C$.urlPrefixPairs[i]) + C$.urlPrefixPairs[i].length$()), "/");
+for (var i=0; i < C$.urlPrefixPairs.length; i+=2) if (path.indexOf$S(C$.urlPrefixPairs[i]) > 0) return C$.urlPrefixPairs[i + 1] + $I$(6,"trim$S$S",[path.substring$I(path.indexOf$S(C$.urlPrefixPairs[i]) + C$.urlPrefixPairs[i].length$()), "/"]);
 
 return null;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.urlPrefixPairs=Clazz.array(String, -1, ["http:", "http://", "www.", "http://www.", "https:", "https://", "ftp:", "ftp://", "file:", "file:///"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

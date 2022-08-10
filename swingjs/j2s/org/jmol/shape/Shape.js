@@ -1,26 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'org.jmol.viewer.JC','org.jmol.util.Logger','org.jmol.util.C','org.jmol.c.PAL']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Shape");
+(function(){var P$=Clazz.newPackage("org.jmol.shape"),I$=[[0,'org.jmol.viewer.JC','org.jmol.util.Logger','org.jmol.util.C','org.jmol.c.PAL']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Shape");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.myType=null;
-this.vwr=null;
-this.ms=null;
-this.shapeID=0;
-this.vf=0;
-this.translucentLevel=0;
-this.translucentAllowed=false;
-this.isBioShape=false;
-this.bsSizeSet=null;
-this.bsColixSet=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.translucentAllowed=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['translucentAllowed','isBioShape'],'F',['translucentLevel'],'I',['shapeID','vf'],'S',['myType'],'O',['vwr','org.jmol.viewer.Viewer','ms','org.jmol.modelset.ModelSet','bsSizeSet','javajs.util.BS','+bsColixSet']]]
 
 Clazz.newMeth(C$, 'initializeShape$org_jmol_viewer_Viewer$org_jmol_modelset_ModelSet$I', function (vwr, modelSet, shapeID) {
 this.vwr=vwr;
@@ -64,7 +51,7 @@ Clazz.newMeth(C$, 'setSizeRD$org_jmol_atomdata_RadiusData$javajs_util_BS', funct
 });
 
 Clazz.newMeth(C$, 'setPropS$S$O$javajs_util_BS', function (propertyName, value, bsSelected) {
-if (propertyName == "setProperties") {
+if (propertyName === "setProperties" ) {
 if (bsSelected == null ) bsSelected=this.vwr.bsA$();
 var propertyList=value;
 while (propertyList.size$() > 0){
@@ -72,12 +59,12 @@ var data=propertyList.removeItemAt$I(0);
 this.setProperty$S$O$javajs_util_BS((data[0]).intern$(), data[1], bsSelected);
 }
 return;
-}if (propertyName == "translucentLevel") {
+}if (propertyName === "translucentLevel" ) {
 this.translucentLevel=(value).floatValue$();
 return;
-}if (propertyName == "refreshTrajectories") {
+}if (propertyName === "refreshTrajectories" ) {
 return;
-}$I$(2).warn$S("unassigned " + $I$(1).shapeClassBases[this.shapeID] + " + shape setProperty:" + propertyName + ":" + value );
+}$I$(2,"warn$S",["unassigned " + $I$(1).shapeClassBases[this.shapeID] + " + shape setProperty:" + propertyName + ":" + value ]);
 });
 
 Clazz.newMeth(C$, 'getPropertyData$S$OA', function (property, data) {
@@ -132,11 +119,11 @@ return (d2 < dmin2 ? d2 : -1);
 });
 
 Clazz.newMeth(C$, 'getColixI$H$B$I', function (colix, paletteID, atomIndex) {
-return this.getColixA$H$B$org_jmol_modelset_Atom(colix, ($b$[0] = paletteID, $b$[0]), this.ms.at[atomIndex]);
+return this.getColixA$H$B$org_jmol_modelset_Atom(colix, paletteID, this.ms.at[atomIndex]);
 });
 
 Clazz.newMeth(C$, 'getColixA$H$B$org_jmol_modelset_Atom', function (colix, paletteID, atom) {
-return (colix == 2 ? this.vwr.cm.getColixAtomPalette$org_jmol_modelset_Atom$B(atom, ($b$[0] = paletteID, $b$[0])) : colix);
+return (colix == 2 ? this.vwr.cm.getColixAtomPalette$org_jmol_modelset_Atom$B(atom, paletteID) : colix);
 });
 
 Clazz.newMeth(C$, 'getColixB$H$I$org_jmol_modelset_Bond', function (colix, pid, bond) {
@@ -148,21 +135,21 @@ return null;
 });
 
 Clazz.newMeth(C$, 'getColix$HA$I$org_jmol_modelset_Atom', function (colixes, i, atom) {
-return $I$(3).getColixInherited$H$H((colixes == null  || i >= colixes.length  ? 0 : colixes[i]), atom.colixAtom);
+return $I$(3,"getColixInherited$H$H",[(colixes == null  || i >= colixes.length  ? 0 : colixes[i]), atom.colixAtom]);
 }, 1);
 
-Clazz.newMeth(C$, 'getFontCommand$S$javajs_awt_Font', function (type, font) {
+Clazz.newMeth(C$, 'getFontCommand$S$org_jmol_util_Font', function (type, font) {
 if (font == null ) return "";
 return "font " + type + " " + font.getInfo$() ;
 }, 1);
 
 Clazz.newMeth(C$, 'getColorCommandUnk$S$H$Z', function (type, colix, translucentAllowed) {
-return C$.getColorCommand$S$B$H$Z(type, ($b$[0] = $I$(4).UNKNOWN.id, $b$[0]), colix, translucentAllowed);
+return C$.getColorCommand$S$B$H$Z(type, $I$(4).UNKNOWN.id, colix, translucentAllowed);
 }, 1);
 
 Clazz.newMeth(C$, 'getColorCommand$S$B$H$Z', function (type, pid, colix, translucentAllowed) {
 if (pid == $I$(4).UNKNOWN.id && colix == 0 ) return "";
-var s=(pid == $I$(4).UNKNOWN.id && colix == 0  ? "" : (translucentAllowed ? C$.getTranslucentLabel$H(colix) + " " : "") + (pid != $I$(4).UNKNOWN.id && !$I$(4).isPaletteVariable$B(($b$[0] = pid, $b$[0]))  ? $I$(4).getPaletteName$B(($b$[0] = pid, $b$[0])) : C$.encodeColor$H(colix)));
+var s=(pid == $I$(4).UNKNOWN.id && colix == 0  ? "" : (translucentAllowed ? C$.getTranslucentLabel$H(colix) + " " : "") + (pid != $I$(4).UNKNOWN.id && !$I$(4).isPaletteVariable$B(pid)  ? $I$(4).getPaletteName$B(pid) : C$.encodeColor$H(colix)));
 return "color " + type + " " + s ;
 }, 1);
 
@@ -178,8 +165,7 @@ Clazz.newMeth(C$, 'appendCmd$javajs_util_SB$S', function (s, cmd) {
 if (cmd.length$() == 0) return;
 s.append$S("  ").append$S(cmd).append$S(";\n");
 }, 1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

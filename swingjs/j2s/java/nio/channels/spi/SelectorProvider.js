@@ -1,23 +1,21 @@
-(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),I$=[[0,'RuntimePermission','java.util.ServiceConfigurationError','java.util.ServiceLoader','java.security.AccessController','java.nio.channels.spi.SelectorProvider','sun.nio.ch.DefaultSelectorProvider']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SelectorProvider");
-C$.lock=null;
-C$.provider=null;
+(function(){var P$=Clazz.newPackage("java.nio.channels.spi"),I$=[[0,'RuntimePermission','java.util.ServiceConfigurationError','java.util.ServiceLoader','java.security.AccessController','java.nio.channels.spi.SelectorProvider','sun.nio.ch.DefaultSelectorProvider']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SelectorProvider");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.lock= Clazz.new_();
-C$.provider=null;
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+C$.$fields$=[[]
+,['O',['lock','java.lang.Object','provider','java.nio.channels.spi.SelectorProvider']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 var sm=System.getSecurityManager$();
-if (sm != null ) sm.checkPermission$java_security_Permission(Clazz.new_($I$(1).c$$S,["selectorProvider"]));
+if (sm != null ) sm.checkPermission$java_security_Permission(Clazz.new_($I$(1,1).c$$S,["selectorProvider"]));
 }, 1);
 
-Clazz.newMeth(C$, 'loadProviderFromProperty$', function () {
+Clazz.newMeth(C$, 'loadProviderFromProperty$',  function () {
 var cn=System.getProperty$S("java.nio.channels.spi.SelectorProvider");
 if (cn == null ) return false;
 try {
@@ -28,22 +26,22 @@ return true;
 if (Clazz.exceptionOf(e$$,"ClassNotFoundException")){
 var x = e$$;
 {
-throw Clazz.new_($I$(2).c$$S$Throwable,[null, x]);
+throw Clazz.new_($I$(2,1).c$$S$Throwable,[null, x]);
 }
 } else if (Clazz.exceptionOf(e$$,"IllegalAccessException")){
 var x = e$$;
 {
-throw Clazz.new_($I$(2).c$$S$Throwable,[null, x]);
+throw Clazz.new_($I$(2,1).c$$S$Throwable,[null, x]);
 }
 } else if (Clazz.exceptionOf(e$$,"InstantiationException")){
 var x = e$$;
 {
-throw Clazz.new_($I$(2).c$$S$Throwable,[null, x]);
+throw Clazz.new_($I$(2,1).c$$S$Throwable,[null, x]);
 }
 } else if (Clazz.exceptionOf(e$$,"SecurityException")){
 var x = e$$;
 {
-throw Clazz.new_($I$(2).c$$S$Throwable,[null, x]);
+throw Clazz.new_($I$(2,1).c$$S$Throwable,[null, x]);
 }
 } else {
 throw e$$;
@@ -51,8 +49,8 @@ throw e$$;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'loadProviderAsService$', function () {
-var sl=$I$(3).load$Class$ClassLoader(Clazz.getClass(C$), ClassLoader.getSystemClassLoader$());
+Clazz.newMeth(C$, 'loadProviderAsService$',  function () {
+var sl=$I$(3,"load$Class$ClassLoader",[Clazz.getClass(C$), ClassLoader.getSystemClassLoader$()]);
 var i=sl.iterator$();
 for (; ; ) {
 try {
@@ -71,30 +69,34 @@ throw sce;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'provider$', function () {
+Clazz.newMeth(C$, 'provider$',  function () {
 {
 if (C$.provider != null ) return C$.provider;
-return $I$(4).doPrivileged$java_security_PrivilegedAction(((P$.SelectorProvider$1||
-(function(){var C$=Clazz.newClass(P$, "SelectorProvider$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
+return $I$(4,"doPrivileged$java_security_PrivilegedAction",[((P$.SelectorProvider$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "SelectorProvider$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.security.PrivilegedAction', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'run$', function () {
-if (P$.SelectorProvider.loadProviderFromProperty$()) return $I$(5).provider;
-if (P$.SelectorProvider.loadProviderAsService$()) return $I$(5).provider;
+Clazz.newMeth(C$, 'run$',  function () {
+if ($I$(5).loadProviderFromProperty$()) return $I$(5).provider;
+if ($I$(5).loadProviderAsService$()) return $I$(5).provider;
 $I$(5).provider=$I$(6).create$();
 return $I$(5).provider;
 });
 })()
-), Clazz.new_(P$.SelectorProvider$1.$init$, [this, null])));
+), Clazz.new_(P$.SelectorProvider$1.$init$,[this, null]))]);
 }}, 1);
 
-Clazz.newMeth(C$, 'inheritedChannel$', function () {
+Clazz.newMeth(C$, 'inheritedChannel$',  function () {
 return null;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.lock= Clazz.new_();
+C$.provider=null;
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:39 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:02 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

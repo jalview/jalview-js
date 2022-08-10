@@ -1,49 +1,42 @@
 (function(){var P$=Clazz.newPackage("vamsas.objects.simple"),I$=[];
-var C$=Clazz.newClass(P$, "JpredResult", null, 'vamsas.objects.simple.Result', 'java.io.Serializable');
+/*c*/var C$=Clazz.newClass(P$, "JpredResult", null, 'vamsas.objects.simple.Result', 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.aligfile=null;
-this.predfile=null;
-this.$__equalsCalc=null;
-this.$__hashCodeCalc=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.$__equalsCalc=null;
 this.$__hashCodeCalc=false;
+},1);
+
+C$.$fields$=[['Z',['$__hashCodeCalc'],'S',['aligfile','predfile'],'O',['$__equalsCalc','java.lang.Object']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S$S', function (aligfile, predfile) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$S$S',  function (aligfile, predfile) {
+Clazz.super_(C$, this);
 this.aligfile=aligfile;
 this.predfile=predfile;
 }, 1);
 
-Clazz.newMeth(C$, 'getAligfile$', function () {
+Clazz.newMeth(C$, 'getAligfile$',  function () {
 return this.aligfile;
 });
 
-Clazz.newMeth(C$, 'setAligfile$S', function (aligfile) {
+Clazz.newMeth(C$, 'setAligfile$S',  function (aligfile) {
 this.aligfile=aligfile;
 });
 
-Clazz.newMeth(C$, 'getPredfile$', function () {
+Clazz.newMeth(C$, 'getPredfile$',  function () {
 return this.predfile;
 });
 
-Clazz.newMeth(C$, 'setPredfile$S', function (predfile) {
+Clazz.newMeth(C$, 'setPredfile$S',  function (predfile) {
 this.predfile=predfile;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (obj == null ) {
 return false;
 }if (!(Clazz.instanceOf(obj, "vamsas.objects.simple.JpredResult"))) {
@@ -60,7 +53,7 @@ this.$__equalsCalc=null;
 return _equals;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 if (this.$__hashCodeCalc) {
 return 0;
 }this.$__hashCodeCalc=true;
@@ -73,4 +66,4 @@ _hashCode+=this.getPredfile$().hashCode$();
 return _hashCode;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:20 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

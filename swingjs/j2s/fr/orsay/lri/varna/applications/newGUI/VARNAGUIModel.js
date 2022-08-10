@@ -1,20 +1,7 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.newGUI"),p$1={},I$=[[0,'java.awt.datatransfer.DataFlavor','java.util.Date','java.io.File','java.util.regex.Pattern','fr.orsay.lri.varna.factories.RNAFactory','fr.orsay.lri.varna.exceptions.ExceptionFileFormatOrSyntax']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VARNAGUIModel", null, null, 'Comparable');
-C$.Flavor=null;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.newGUI"),p$1={},I$=[[0,'java.awt.datatransfer.DataFlavor','java.util.Date','java.io.File','java.util.regex.Pattern','fr.orsay.lri.varna.factories.RNAFactory','fr.orsay.lri.varna.exceptions.ExceptionFileFormatOrSyntax']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VARNAGUIModel", null, null, 'Comparable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.Flavor=Clazz.new_($I$(1).c$$Class$S,[Clazz.getClass(C$), "VARNA Object"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._lastModified=null;
-this._outOfSync=false;
-this._r=null;
-this._caption=null;
-this._path=null;
-this._folder=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._outOfSync=false;
@@ -22,10 +9,13 @@ this._r=null;
 this._caption="";
 this._path="";
 this._folder="";
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_outOfSync'],'S',['_caption','_path','_folder'],'O',['_lastModified','java.util.Date','_r','fr.orsay.lri.varna.models.rna.RNA']]
+,['O',['Flavor','java.awt.datatransfer.DataFlavor']]]
 
 Clazz.newMeth(C$, 'lastModif$S', function (path) {
-return Clazz.new_($I$(2).c$$J,[Clazz.new_($I$(3).c$$S,[path]).lastModified$()]);
+return Clazz.new_([Clazz.new_($I$(3,1).c$$S,[path]).lastModified$()],$I$(2,1).c$$J);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (folder, path) {
@@ -33,12 +23,12 @@ C$.c$$S$S$java_util_Date.apply(this, [folder, path, C$.lastModif$S(path)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$java_util_Date', function (folder, path, lastModified) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._lastModified=lastModified;
 this._outOfSync=false;
 this._folder=folder;
 this._path=path;
-var s=path.split$S($I$(4).quote$S($I$(3).separator));
+var s=path.split$S($I$(4,"quote$S",[$I$(3).separator]));
 if (s.length > 0) this._caption=s[s.length - 1];
 }, 1);
 
@@ -101,7 +91,7 @@ if (r.size$() > 0) {
 this._r=r.iterator$().next$();
 this._r.drawRNARadiate$();
 } else {
-throw Clazz.new_($I$(6).c$$S,["No valid RNA defined in this file."]);
+throw Clazz.new_($I$(6,1).c$$S,["No valid RNA defined in this file."]);
 }return this._r;
 }, p$1);
 
@@ -121,10 +111,14 @@ Clazz.newMeth(C$, 'getFolder$', function () {
 return this._folder;
 });
 
-Clazz.newMeth(C$, ['compareTo$fr_orsay_lri_varna_applications_newGUI_VARNAGUIModel','compareTo$','compareTo$TT'], function (o) {
+Clazz.newMeth(C$, ['compareTo$fr_orsay_lri_varna_applications_newGUI_VARNAGUIModel','compareTo$O'], function (o) {
 return this._caption.compareTo$S(o._caption);
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.Flavor=Clazz.new_([Clazz.getClass(C$), "VARNA Object"],$I$(1,1).c$$Class$S);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

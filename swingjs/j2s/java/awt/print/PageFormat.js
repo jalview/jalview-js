@@ -1,25 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.awt.print"),I$=[[0,'java.awt.print.Paper','InternalError']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PageFormat", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("java.awt.print"),I$=[[0,'java.awt.print.Paper','InternalError']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PageFormat", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mPaper=null;
-this.mOrientation=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.mOrientation=1;
+},1);
+
+C$.$fields$=[['I',['mOrientation'],'O',['mPaper','java.awt.print.Paper']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
+this.mPaper=Clazz.new_($I$(1,1));
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.mPaper=Clazz.new_($I$(1));
-}, 1);
-
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 var newPage;
 try {
 newPage=Clazz.clone(this);
@@ -35,7 +30,7 @@ throw e;
 return newPage;
 });
 
-Clazz.newMeth(C$, 'getWidth$', function () {
+Clazz.newMeth(C$, 'getWidth$',  function () {
 var width;
 var orientation=this.getOrientation$();
 if (orientation == 1) {
@@ -45,7 +40,7 @@ width=this.mPaper.getHeight$();
 }return width;
 });
 
-Clazz.newMeth(C$, 'getHeight$', function () {
+Clazz.newMeth(C$, 'getHeight$',  function () {
 var height;
 var orientation=this.getOrientation$();
 if (orientation == 1) {
@@ -55,7 +50,7 @@ height=this.mPaper.getWidth$();
 }return height;
 });
 
-Clazz.newMeth(C$, 'getImageableX$', function () {
+Clazz.newMeth(C$, 'getImageableX$',  function () {
 var x;
 switch (this.getOrientation$()) {
 case 0:
@@ -68,12 +63,12 @@ case 2:
 x=this.mPaper.getImageableY$();
 break;
 default:
-throw Clazz.new_($I$(2).c$$S,["unrecognized orientation"]);
+throw Clazz.new_($I$(2,1).c$$S,["unrecognized orientation"]);
 }
 return x;
 });
 
-Clazz.newMeth(C$, 'getImageableY$', function () {
+Clazz.newMeth(C$, 'getImageableY$',  function () {
 var y;
 switch (this.getOrientation$()) {
 case 0:
@@ -86,12 +81,12 @@ case 2:
 y=this.mPaper.getWidth$() - (this.mPaper.getImageableX$() + this.mPaper.getImageableWidth$());
 break;
 default:
-throw Clazz.new_($I$(2).c$$S,["unrecognized orientation"]);
+throw Clazz.new_($I$(2,1).c$$S,["unrecognized orientation"]);
 }
 return y;
 });
 
-Clazz.newMeth(C$, 'getImageableWidth$', function () {
+Clazz.newMeth(C$, 'getImageableWidth$',  function () {
 var width;
 if (this.getOrientation$() == 1) {
 width=this.mPaper.getImageableWidth$();
@@ -100,7 +95,7 @@ width=this.mPaper.getImageableHeight$();
 }return width;
 });
 
-Clazz.newMeth(C$, 'getImageableHeight$', function () {
+Clazz.newMeth(C$, 'getImageableHeight$',  function () {
 var height;
 if (this.getOrientation$() == 1) {
 height=this.mPaper.getImageableHeight$();
@@ -109,26 +104,26 @@ height=this.mPaper.getImageableWidth$();
 }return height;
 });
 
-Clazz.newMeth(C$, 'getPaper$', function () {
+Clazz.newMeth(C$, 'getPaper$',  function () {
 return this.mPaper.clone$();
 });
 
-Clazz.newMeth(C$, 'setPaper$java_awt_print_Paper', function (paper) {
+Clazz.newMeth(C$, 'setPaper$java_awt_print_Paper',  function (paper) {
 this.mPaper=paper.clone$();
 });
 
-Clazz.newMeth(C$, 'setOrientation$I', function (orientation) {
+Clazz.newMeth(C$, 'setOrientation$I',  function (orientation) {
 if (0 <= orientation && orientation <= 2 ) {
 this.mOrientation=orientation;
 } else {
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }});
 
-Clazz.newMeth(C$, 'getOrientation$', function () {
+Clazz.newMeth(C$, 'getOrientation$',  function () {
 return this.mOrientation;
 });
 
-Clazz.newMeth(C$, 'getMatrix$', function () {
+Clazz.newMeth(C$, 'getMatrix$',  function () {
 var matrix=Clazz.array(Double.TYPE, [6]);
 switch (this.mOrientation) {
 case 0:
@@ -161,4 +156,4 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 return matrix;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:55 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

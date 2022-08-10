@@ -1,27 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,'java.io.BufferedReader','java.io.InputStreamReader','java.io.StringReader','StringBuilder','org.json.JSONObject','org.json.JSONArray']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONTokener");
+(function(){var P$=Clazz.newPackage("org.json"),p$1={},I$=[[0,'java.io.BufferedReader','java.io.InputStreamReader','java.io.StringReader','StringBuilder','org.json.JSONObject','org.json.JSONArray']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONTokener");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.character=0;
-this.eof=false;
-this.index=0;
-this.line=0;
-this.previous='\0';
-this.reader=null;
-this.usePrevious=false;
-this.characterPreviousLine=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_io_Reader', function (reader) {
-C$.$init$.apply(this);
-this.reader=reader.markSupported$() ? reader : Clazz.new_($I$(1).c$$java_io_Reader,[reader]);
+C$.$fields$=[['Z',['eof','usePrevious'],'C',['previous'],'J',['character','index','line','characterPreviousLine'],'O',['reader','java.io.Reader']]]
+
+Clazz.newMeth(C$, 'c$$java_io_Reader',  function (reader) {
+;C$.$init$.apply(this);
+this.reader=reader.markSupported$() ? reader : Clazz.new_($I$(1,1).c$$java_io_Reader,[reader]);
 this.eof=false;
 this.usePrevious=false;
 this.previous=String.fromCharCode(0);
@@ -31,32 +20,32 @@ this.characterPreviousLine=0;
 this.line=1;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_InputStream', function (inputStream) {
-C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(2).c$$java_io_InputStream,[inputStream])]);
+Clazz.newMeth(C$, 'c$$java_io_InputStream',  function (inputStream) {
+C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(2,1).c$$java_io_InputStream,[inputStream])]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (s) {
-C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(3).c$$S,[s])]);
+Clazz.newMeth(C$, 'c$$S',  function (s) {
+C$.c$$java_io_Reader.apply(this, [Clazz.new_($I$(3,1).c$$S,[s])]);
 }, 1);
 
-Clazz.newMeth(C$, 'back$', function () {
-if (this.usePrevious || this.index <= 0 ) {
+Clazz.newMeth(C$, 'back$',  function () {
+if (this.usePrevious || Long.$le(this.index,0 ) ) {
 throw Clazz.new_(Clazz.load('org.json.JSONException').c$$S,["Stepping back two steps is not supported"]);
 }p$1.decrementIndexes.apply(this, []);
 this.usePrevious=true;
 this.eof=false;
 });
 
-Clazz.newMeth(C$, 'decrementIndexes', function () {
-this.index--;
+Clazz.newMeth(C$, 'decrementIndexes',  function () {
+(this.index=Long.$inc(this.index,-1));
 if (this.previous == "\r" || this.previous == "\n" ) {
-this.line--;
+(this.line=Long.$inc(this.line,-1));
 this.character=this.characterPreviousLine;
-} else if (this.character > 0) {
-this.character--;
+} else if (Long.$gt(this.character,0 )) {
+(this.character=Long.$inc(this.character,-1));
 }}, p$1);
 
-Clazz.newMeth(C$, 'dehexchar$C', function (c) {
+Clazz.newMeth(C$, 'dehexchar$C',  function (c) {
 if (c >= "0" && c <= "9" ) {
 return c.$c() - 48;
 }if (c >= "A" && c <= "F" ) {
@@ -66,11 +55,11 @@ return c.$c() - (87);
 }return -1;
 }, 1);
 
-Clazz.newMeth(C$, 'end$', function () {
+Clazz.newMeth(C$, 'end$',  function () {
 return this.eof && !this.usePrevious ;
 });
 
-Clazz.newMeth(C$, 'more$', function () {
+Clazz.newMeth(C$, 'more$',  function () {
 if (this.usePrevious) {
 return true;
 }try {
@@ -97,7 +86,7 @@ throw e;
 return true;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
+Clazz.newMeth(C$, 'next$',  function () {
 var c;
 if (this.usePrevious) {
 this.usePrevious=false;
@@ -120,23 +109,23 @@ this.previous=String.fromCharCode(c);
 return this.previous;
 });
 
-Clazz.newMeth(C$, 'incrementIndexes$I', function (c) {
+Clazz.newMeth(C$, 'incrementIndexes$I',  function (c) {
 if (c > 0) {
-this.index++;
+(this.index=Long.$inc(this.index,1));
 if (c == 13 ) {
-this.line++;
+(this.line=Long.$inc(this.line,1));
 this.characterPreviousLine=this.character;
 this.character=0;
 } else if (c == 10 ) {
 if (this.previous != "\r") {
-this.line++;
+(this.line=Long.$inc(this.line,1));
 this.characterPreviousLine=this.character;
 }this.character=0;
 } else {
-this.character++;
+(this.character=Long.$inc(this.character,1));
 }}}, p$1);
 
-Clazz.newMeth(C$, 'next$C', function (c) {
+Clazz.newMeth(C$, 'next$C',  function (c) {
 var n=this.next$();
 if (n != c) {
 if (n.$c() > 0 ) {
@@ -145,7 +134,7 @@ throw this.syntaxError$S("Expected '" + c + "' and instead saw '" + n + "'" );
 }return n;
 });
 
-Clazz.newMeth(C$, 'next$I', function (n) {
+Clazz.newMeth(C$, 'next$I',  function (n) {
 if (n == 0) {
 return "";
 }var chars=Clazz.array(Character.TYPE, [n]);
@@ -159,7 +148,7 @@ throw this.syntaxError$S("Substring bounds error");
 return  String.instantialize(chars);
 });
 
-Clazz.newMeth(C$, 'nextClean$', function () {
+Clazz.newMeth(C$, 'nextClean$',  function () {
 for (; ; ) {
 var c=this.next$();
 if (c.$c() == 0  || c > " " ) {
@@ -167,9 +156,9 @@ return c;
 }}
 });
 
-Clazz.newMeth(C$, 'nextString$C', function (quote) {
+Clazz.newMeth(C$, 'nextString$C',  function (quote) {
 var c;
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 for (; ; ) {
 c=this.next$();
 switch (c.$c()) {
@@ -224,8 +213,8 @@ return sb.toString();
 }
 });
 
-Clazz.newMeth(C$, 'nextTo$C', function (delimiter) {
-var sb=Clazz.new_($I$(4));
+Clazz.newMeth(C$, 'nextTo$C',  function (delimiter) {
+var sb=Clazz.new_($I$(4,1));
 for (; ; ) {
 var c=this.next$();
 if (c == delimiter || c.$c() == 0   || c == "\n"  || c == "\r" ) {
@@ -236,9 +225,9 @@ this.back$();
 }
 });
 
-Clazz.newMeth(C$, 'nextTo$S', function (delimiters) {
+Clazz.newMeth(C$, 'nextTo$S',  function (delimiters) {
 var c;
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 for (; ; ) {
 c=this.next$();
 if (delimiters.indexOf$I(c) >= 0 || c.$c() == 0   || c == "\n"  || c == "\r" ) {
@@ -249,7 +238,7 @@ this.back$();
 }
 });
 
-Clazz.newMeth(C$, 'nextValue$', function () {
+Clazz.newMeth(C$, 'nextValue$',  function () {
 var c=this.nextClean$();
 var string;
 switch (c.$c()) {
@@ -258,12 +247,12 @@ case 39:
 return this.nextString$C(c);
 case 123:
 this.back$();
-return Clazz.new_($I$(5).c$$org_json_JSONTokener,[this]);
+return Clazz.new_($I$(5,1).c$$org_json_JSONTokener,[this]);
 case 91:
 this.back$();
-return Clazz.new_($I$(6).c$$org_json_JSONTokener,[this]);
+return Clazz.new_($I$(6,1).c$$org_json_JSONTokener,[this]);
 }
-var sb=Clazz.new_($I$(4));
+var sb=Clazz.new_($I$(4,1));
 while (c >= " " && ",:]}/\\\"[{;=#".indexOf$I(c) < 0 ){
 sb.append$C(c);
 c=this.next$();
@@ -275,7 +264,7 @@ throw this.syntaxError$S("Missing value");
 }return $I$(5).stringToValue$S(string);
 });
 
-Clazz.newMeth(C$, 'skipTo$C', function (to) {
+Clazz.newMeth(C$, 'skipTo$C',  function (to) {
 var c;
 try {
 var startIndex=this.index;
@@ -303,18 +292,18 @@ this.back$();
 return c;
 });
 
-Clazz.newMeth(C$, 'syntaxError$S', function (message) {
+Clazz.newMeth(C$, 'syntaxError$S',  function (message) {
 return Clazz.new_(Clazz.load('org.json.JSONException').c$$S,[message + this.toString()]);
 });
 
-Clazz.newMeth(C$, 'syntaxError$S$Throwable', function (message, causedBy) {
+Clazz.newMeth(C$, 'syntaxError$S$Throwable',  function (message, causedBy) {
 return Clazz.new_(Clazz.load('org.json.JSONException').c$$S$Throwable,[message + this.toString(), causedBy]);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-return " at " + this.index + " [character " + this.character + " line " + this.line + "]" ;
+Clazz.newMeth(C$, 'toString',  function () {
+return " at " + Long.$s(this.index) + " [character " + Long.$s(this.character) + " line " + Long.$s(this.line) + "]" ;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

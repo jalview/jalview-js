@@ -1,34 +1,19 @@
-(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.ColorModel','swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PixelGrabber", null, null, 'java.awt.image.ImageConsumer');
+(function(){var P$=Clazz.newPackage("java.awt.image"),p$1={},I$=[[0,'java.awt.image.ColorModel','swingjs.JSUtil']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PixelGrabber", null, null, 'java.awt.image.ImageConsumer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.producer=null;
-this.dstX=0;
-this.dstY=0;
-this.dstW=0;
-this.dstH=0;
-this.imageModel=null;
-this.bytePixels=null;
-this.intPixels=null;
-this.dstOff=0;
-this.dstScan=0;
-this.grabbing=false;
-this.flags=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$IA$I$I', function (img, x, y, w, h, pix, off, scansize) {
+C$.$fields$=[['Z',['grabbing'],'I',['dstX','dstY','dstW','dstH','dstOff','dstScan','flags'],'O',['producer','java.awt.image.ImageProducer','imageModel','java.awt.image.ColorModel','bytePixels','byte[]','intPixels','int[]']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$IA$I$I',  function (img, x, y, w, h, pix, off, scansize) {
 C$.c$$java_awt_image_ImageProducer$I$I$I$I$IA$I$I.apply(this, [img.getSource$(), x, y, w, h, pix, off, scansize]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer$I$I$I$I$IA$I$I', function (ip, x, y, w, h, pix, off, scansize) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_image_ImageProducer$I$I$I$I$IA$I$I',  function (ip, x, y, w, h, pix, off, scansize) {
+;C$.$init$.apply(this);
 this.producer=ip;
 this.dstX=x;
 this.dstY=y;
@@ -40,8 +25,8 @@ this.intPixels=pix;
 this.imageModel=$I$(1).getRGBdefault$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$Z', function (img, x, y, w, h, forceRGB) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_Image$I$I$I$I$Z',  function (img, x, y, w, h, forceRGB) {
+;C$.$init$.apply(this);
 this.producer=img.getSource$();
 this.dstX=x;
 this.dstY=y;
@@ -51,7 +36,7 @@ if (forceRGB) {
 this.imageModel=$I$(1).getRGBdefault$();
 }}, 1);
 
-Clazz.newMeth(C$, 'startGrabbing$', function () {
+Clazz.newMeth(C$, 'startGrabbing$',  function () {
 if ((this.flags & 112) != 0) {
 return;
 }if (!this.grabbing) {
@@ -60,29 +45,29 @@ this.flags&=~(128);
 this.producer.startProduction$java_awt_image_ImageConsumer(this);
 }});
 
-Clazz.newMeth(C$, 'abortGrabbing$', function () {
+Clazz.newMeth(C$, 'abortGrabbing$',  function () {
 this.imageComplete$I(4);
 });
 
-Clazz.newMeth(C$, 'grabPixels$', function () {
+Clazz.newMeth(C$, 'grabPixels$',  function () {
 return this.grabPixels$J(0);
 });
 
-Clazz.newMeth(C$, 'grabPixels$J', function (ms) {
+Clazz.newMeth(C$, 'grabPixels$J',  function (ms) {
 if ((this.flags & 112) != 0) {
 return (this.flags & 48) != 0;
-}var end=ms + System.currentTimeMillis$();
+}var end=Long.$add(ms,System.currentTimeMillis$());
 if (!this.grabbing) {
 this.grabbing=true;
 this.flags&=~(128);
 this.producer.startProduction$java_awt_image_ImageConsumer(this);
 }while (this.grabbing){
 var timeout;
-if (ms == 0) {
+if (Long.$eq(ms,0 )) {
 timeout=0;
 } else {
-timeout=end - System.currentTimeMillis$();
-if (timeout <= 0) {
+timeout=Long.$sub(end,System.currentTimeMillis$());
+if (Long.$le(timeout,0 )) {
 break;
 }}$I$(2).warn$S("wait in PixelGrabber.grabPixels");
 this.wait$J(timeout);
@@ -90,27 +75,27 @@ this.wait$J(timeout);
 return (this.flags & 48) != 0;
 });
 
-Clazz.newMeth(C$, 'getStatus$', function () {
+Clazz.newMeth(C$, 'getStatus$',  function () {
 return this.flags;
 });
 
-Clazz.newMeth(C$, 'getWidth$', function () {
+Clazz.newMeth(C$, 'getWidth$',  function () {
 return (this.dstW < 0) ? -1 : this.dstW;
 });
 
-Clazz.newMeth(C$, 'getHeight$', function () {
+Clazz.newMeth(C$, 'getHeight$',  function () {
 return (this.dstH < 0) ? -1 : this.dstH;
 });
 
-Clazz.newMeth(C$, 'getPixels$', function () {
+Clazz.newMeth(C$, 'getPixels$',  function () {
 return (this.bytePixels == null ) ? (this.intPixels) : (this.bytePixels);
 });
 
-Clazz.newMeth(C$, 'getColorModel$', function () {
+Clazz.newMeth(C$, 'getColorModel$',  function () {
 return this.imageModel;
 });
 
-Clazz.newMeth(C$, 'setDimensions$I$I', function (width, height) {
+Clazz.newMeth(C$, 'setDimensions$I$I',  function (width, height) {
 if (this.dstW < 0) {
 this.dstW=width - this.dstX;
 }if (this.dstH < 0) {
@@ -124,19 +109,19 @@ this.dstOff=0;
 }this.flags|=(3);
 });
 
-Clazz.newMeth(C$, 'setHints$I', function (hints) {
+Clazz.newMeth(C$, 'setHints$I',  function (hints) {
 return;
 });
 
-Clazz.newMeth(C$, 'setProperties$java_util_Hashtable', function (props) {
+Clazz.newMeth(C$, 'setProperties$java_util_Hashtable',  function (props) {
 return;
 });
 
-Clazz.newMeth(C$, 'setColorModel$java_awt_image_ColorModel', function (model) {
+Clazz.newMeth(C$, 'setColorModel$java_awt_image_ColorModel',  function (model) {
 return;
 });
 
-Clazz.newMeth(C$, 'convertToRGB', function () {
+Clazz.newMeth(C$, 'convertToRGB',  function () {
 var size=this.dstW * this.dstH;
 var newpixels=Clazz.array(Integer.TYPE, [size]);
 if (this.bytePixels != null ) {
@@ -154,7 +139,7 @@ this.dstOff=0;
 this.imageModel=$I$(1).getRGBdefault$();
 }, p$1);
 
-Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I', function (srcX, srcY, srcW, srcH, model, pixels, srcOff, srcScan) {
+Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I',  function (srcX, srcY, srcW, srcH, model, pixels, srcOff, srcScan) {
 if (srcY < this.dstY) {
 var diff=this.dstY - srcY;
 if (diff >= srcH) {
@@ -205,7 +190,7 @@ dstPtr+=dstRem;
 }this.flags|=8;
 });
 
-Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I', function (srcX, srcY, srcW, srcH, model, pixels, srcOff, srcScan) {
+Clazz.newMeth(C$, 'setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I',  function (srcX, srcY, srcW, srcH, model, pixels, srcOff, srcScan) {
 if (srcY < this.dstY) {
 var diff=this.dstY - srcY;
 if (diff >= srcH) {
@@ -258,7 +243,7 @@ dstPtr+=dstRem;
 }this.flags|=8;
 });
 
-Clazz.newMeth(C$, 'imageComplete$I', function (status) {
+Clazz.newMeth(C$, 'imageComplete$I',  function (status) {
 this.grabbing=false;
 switch (status) {
 default:
@@ -278,10 +263,10 @@ break;
 this.producer.removeConsumer$java_awt_image_ImageConsumer(this);
 });
 
-Clazz.newMeth(C$, 'status$', function () {
+Clazz.newMeth(C$, 'status$',  function () {
 return this.flags;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 17:14:01 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

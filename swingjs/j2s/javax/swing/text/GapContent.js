@@ -1,74 +1,68 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.GapContent','.MarkData'],['javax.swing.text.GapContent','.MarkVector'],['javax.swing.text.GapContent','.InsertUndo'],['javax.swing.text.GapContent','.RemoveUndo'],'javax.swing.text.Segment',['javax.swing.text.GapContent','.StickyPosition'],'java.util.Vector',['javax.swing.text.GapContent','.UndoPosRef']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GapContent", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),I$=[[0,['javax.swing.text.GapContent','.MarkData'],['javax.swing.text.GapContent','.MarkVector'],['javax.swing.text.GapContent','.InsertUndo'],['javax.swing.text.GapContent','.RemoveUndo'],'javax.swing.text.Segment',['javax.swing.text.GapContent','.StickyPosition'],'java.util.Vector',['javax.swing.text.GapContent','.UndoPosRef']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GapContent", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.GapVector', [['javax.swing.text.AbstractDocument','javax.swing.text.AbstractDocument.Content']]);
-C$.empty=null;
+C$.$classes$=[['MarkData',16],['StickyPosition',16],['MarkVector',8],['UndoPosRef',16],['InsertUndo',0],['RemoveUndo',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.empty=Clazz.array(Character.TYPE, [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.marks=null;
-this.search=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['O',['marks','javax.swing.text.GapContent.MarkVector','search','javax.swing.text.GapContent.MarkData']]
+,['O',['empty','char[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$I.apply(this, [10]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (initialLength) {
-C$.superclazz.c$$I.apply(this, [Math.max(initialLength, 2)]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I',  function (initialLength) {
+;C$.superclazz.c$$I.apply(this,[Math.max(initialLength, 2)]);C$.$init$.apply(this);
 var implied=Clazz.array(Character.TYPE, [1]);
 implied[0]="\n";
 this.replace$I$I$O$I(0, 0, implied, implied.length);
-this.marks=Clazz.new_($I$(2));
-this.search=Clazz.new_($I$(1).c$$I, [this, null, 0]);
+this.marks=Clazz.new_($I$(2,1));
+this.search=Clazz.new_($I$(1,1).c$$I,[this, null, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'allocateArray$I', function (len) {
+Clazz.newMeth(C$, 'allocateArray$I',  function (len) {
 return Clazz.array(Character.TYPE, [len]);
 });
 
-Clazz.newMeth(C$, 'getArrayLength$', function () {
+Clazz.newMeth(C$, 'getArrayLength$',  function () {
 var carray=this.getArray$();
 return carray.length;
 });
 
-Clazz.newMeth(C$, 'length$', function () {
+Clazz.newMeth(C$, 'length$',  function () {
 var len=this.getArrayLength$() - (this.getGapEnd$() - this.getGapStart$());
 return len;
 });
 
-Clazz.newMeth(C$, 'insertString$I$S', function (where, str) {
+Clazz.newMeth(C$, 'insertString$I$S',  function (where, str) {
 if (where > this.length$() || where < 0 ) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Invalid insert", this.length$()]);
 }var chars=str.toCharArray$();
 this.replace$I$I$O$I(where, 0, chars, chars.length);
-return Clazz.new_($I$(3).c$$I$I, [this, null, where, str.length$()]);
+return Clazz.new_([this, null, where, str.length$()],$I$(3,1).c$$I$I);
 });
 
-Clazz.newMeth(C$, 'remove$I$I', function (where, nitems) {
+Clazz.newMeth(C$, 'remove$I$I',  function (where, nitems) {
 if (where + nitems >= this.length$()) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Invalid remove", this.length$() + 1]);
 }var removedString=this.getString$I$I(where, nitems);
-var edit=Clazz.new_($I$(4).c$$I$S, [this, null, where, removedString]);
+var edit=Clazz.new_($I$(4,1).c$$I$S,[this, null, where, removedString]);
 this.replace$I$I$O$I(where, nitems, C$.empty, 0);
 return edit;
 });
 
-Clazz.newMeth(C$, 'getString$I$I', function (where, len) {
-var s=Clazz.new_($I$(5));
+Clazz.newMeth(C$, 'getString$I$I',  function (where, len) {
+var s=Clazz.new_($I$(5,1));
 this.getChars$I$I$javax_swing_text_Segment(where, len, s);
 return  String.instantialize(s.array, s.offset, s.count);
 });
 
-Clazz.newMeth(C$, 'getChars$I$I$javax_swing_text_Segment', function (where, len, chars) {
+Clazz.newMeth(C$, 'getChars$I$I$javax_swing_text_Segment',  function (where, len, chars) {
 var end=where + len;
 if (where < 0 || end < 0 ) {
 throw Clazz.new_(Clazz.load('javax.swing.text.BadLocationException').c$$S$I,["Invalid location", -1]);
@@ -97,7 +91,7 @@ System.arraycopy$O$I$O$I$I(array, g1, chars.array, before, len - before);
 }chars.count=len;
 });
 
-Clazz.newMeth(C$, 'createPosition$I', function (offset) {
+Clazz.newMeth(C$, 'createPosition$I',  function (offset) {
 var g0=this.getGapStart$();
 var g1=this.getGapEnd$();
 var index=(offset < g0) ? offset : offset + (g1 - g0);
@@ -107,14 +101,14 @@ var m;
 var position;
 if (sortIndex < this.marks.size$() && (m=this.marks.elementAt$I(sortIndex)).index == index  && (position=m.getPosition$()) != null  ) {
 } else {
-position=Clazz.new_($I$(6), [this, null]);
-m=Clazz.new_($I$(1).c$$I$javax_swing_text_GapContent_StickyPosition, [this, null, index, position]);
+position=Clazz.new_($I$(6,1),[this, null]);
+m=Clazz.new_($I$(1,1).c$$I$javax_swing_text_GapContent_StickyPosition,[this, null, index, position]);
 position.setMark$javax_swing_text_GapContent_MarkData(m);
 this.marks.insertElementAt$javax_swing_text_GapContent_MarkData$I(m, sortIndex);
 }return position;
 });
 
-Clazz.newMeth(C$, 'shiftEnd$I', function (newSize) {
+Clazz.newMeth(C$, 'shiftEnd$I',  function (newSize) {
 var oldGapEnd=this.getGapEnd$();
 C$.superclazz.prototype.shiftEnd$I.apply(this, [newSize]);
 var dg=this.getGapEnd$() - oldGapEnd;
@@ -126,14 +120,14 @@ mark.index+=dg;
 }
 });
 
-Clazz.newMeth(C$, 'getNewArraySize$I', function (reqSize) {
+Clazz.newMeth(C$, 'getNewArraySize$I',  function (reqSize) {
 if (reqSize < 524288) {
 return C$.superclazz.prototype.getNewArraySize$I.apply(this, [reqSize]);
 } else {
 return reqSize + 524288;
 }});
 
-Clazz.newMeth(C$, 'shiftGap$I', function (newGapStart) {
+Clazz.newMeth(C$, 'shiftGap$I',  function (newGapStart) {
 var oldGapStart=this.getGapStart$();
 var dg=newGapStart - oldGapStart;
 var oldGapEnd=this.getGapEnd$();
@@ -161,7 +155,7 @@ break;
 }this.resetMarksAtZero$();
 });
 
-Clazz.newMeth(C$, 'resetMarksAtZero$', function () {
+Clazz.newMeth(C$, 'resetMarksAtZero$',  function () {
 if (this.marks != null  && this.getGapStart$() == 0 ) {
 var g1=this.getGapEnd$();
 for (var counter=0, maxCounter=this.marks.size$(); counter < maxCounter; counter++) {
@@ -173,7 +167,7 @@ break;
 }}
 }});
 
-Clazz.newMeth(C$, 'shiftGapStartDown$I', function (newGapStart) {
+Clazz.newMeth(C$, 'shiftGapStartDown$I',  function (newGapStart) {
 var adjustIndex=this.findMarkAdjustIndex$I(newGapStart);
 var n=this.marks.size$();
 var g0=this.getGapStart$();
@@ -188,7 +182,7 @@ C$.superclazz.prototype.shiftGapStartDown$I.apply(this, [newGapStart]);
 this.resetMarksAtZero$();
 });
 
-Clazz.newMeth(C$, 'shiftGapEndUp$I', function (newGapEnd) {
+Clazz.newMeth(C$, 'shiftGapEndUp$I',  function (newGapEnd) {
 var adjustIndex=this.findMarkAdjustIndex$I(this.getGapEnd$());
 var n=this.marks.size$();
 for (var i=adjustIndex; i < n; i++) {
@@ -201,7 +195,7 @@ C$.superclazz.prototype.shiftGapEndUp$I.apply(this, [newGapEnd]);
 this.resetMarksAtZero$();
 });
 
-Clazz.newMeth(C$, 'compare$javax_swing_text_GapContent_MarkData$javax_swing_text_GapContent_MarkData', function (o1, o2) {
+Clazz.newMeth(C$, 'compare$javax_swing_text_GapContent_MarkData$javax_swing_text_GapContent_MarkData',  function (o1, o2) {
 if (o1.index < o2.index) {
 return -1;
 } else if (o1.index > o2.index) {
@@ -210,7 +204,7 @@ return 1;
 return 0;
 }});
 
-Clazz.newMeth(C$, 'findMarkAdjustIndex$I', function (searchIndex) {
+Clazz.newMeth(C$, 'findMarkAdjustIndex$I',  function (searchIndex) {
 this.search.index=Math.max(searchIndex, 1);
 var index=this.findSortIndex$javax_swing_text_GapContent_MarkData(this.search);
 for (var i=index - 1; i >= 0; i--) {
@@ -222,7 +216,7 @@ break;
 return index;
 });
 
-Clazz.newMeth(C$, 'findSortIndex$javax_swing_text_GapContent_MarkData', function (o) {
+Clazz.newMeth(C$, 'findSortIndex$javax_swing_text_GapContent_MarkData',  function (o) {
 var lower=0;
 var upper=this.marks.size$() - 1;
 var mid=0;
@@ -246,9 +240,9 @@ lower=mid + 1;
 return (cmp < 0) ? mid : mid + 1;
 });
 
-Clazz.newMeth(C$, 'removeUnusedMarks$', function () {
+Clazz.newMeth(C$, 'removeUnusedMarks$',  function () {
 var n=this.marks.size$();
-var cleaned=Clazz.new_($I$(2).c$$I,[n]);
+var cleaned=Clazz.new_($I$(2,1).c$$I,[n]);
 for (var i=0; i < n; i++) {
 var mark=this.marks.elementAt$I(i);
 if (mark != null ) {
@@ -257,7 +251,7 @@ cleaned.addElement$javax_swing_text_GapContent_MarkData(mark);
 this.marks=cleaned;
 });
 
-Clazz.newMeth(C$, 'getPositionsInRange$java_util_Vector$I$I', function (v, offset, length) {
+Clazz.newMeth(C$, 'getPositionsInRange$java_util_Vector$I$I',  function (v, offset, length) {
 var endOffset=offset + length;
 var startIndex;
 var endIndex;
@@ -275,14 +269,14 @@ endIndex=this.findMarkAdjustIndex$I(endOffset + 1);
 }} else {
 startIndex=this.findMarkAdjustIndex$I(offset + (g1 - g0));
 endIndex=this.findMarkAdjustIndex$I(endOffset + (g1 - g0) + 1 );
-}var placeIn=(v == null ) ? Clazz.new_($I$(7).c$$I,[Math.max(1, endIndex - startIndex)]) : v;
+}var placeIn=(v == null ) ? Clazz.new_([Math.max(1, endIndex - startIndex)],$I$(7,1).c$$I) : v;
 for (var counter=startIndex; counter < endIndex; counter++) {
-placeIn.addElement$TE(Clazz.new_($I$(8).c$$javax_swing_text_GapContent_MarkData, [this, null, this.marks.elementAt$I(counter)]));
+placeIn.addElement$O(Clazz.new_([this, null, this.marks.elementAt$I(counter)],$I$(8,1).c$$javax_swing_text_GapContent_MarkData));
 }
 return placeIn;
 });
 
-Clazz.newMeth(C$, 'updateUndoPositions$java_util_Vector$I$I', function (positions, offset, length) {
+Clazz.newMeth(C$, 'updateUndoPositions$java_util_Vector$I$I',  function (positions, offset, length) {
 var endOffset=offset + length;
 var g1=this.getGapEnd$();
 var startIndex;
@@ -323,130 +317,119 @@ sorted[addIndex++]=mark;
 }}
 }this.marks.replaceRange$I$I$OA(startIndex, endIndex, sorted);
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.empty=Clazz.array(Character.TYPE, [0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.GapContent, "MarkData", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GapContent, "MarkData", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ref=null;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I', function (index) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['index'],'O',['ref','javax.swing.text.GapContent.StickyPosition']]]
+
+Clazz.newMeth(C$, 'c$$I',  function (index) {
+;C$.$init$.apply(this);
 this.index=index;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$javax_swing_text_GapContent_StickyPosition', function (index, position) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I$javax_swing_text_GapContent_StickyPosition',  function (index, position) {
+;C$.$init$.apply(this);
 this.ref=position;
 this.index=index;
 }, 1);
 
-Clazz.newMeth(C$, 'getOffset$', function () {
+Clazz.newMeth(C$, 'getOffset$',  function () {
 var g0=this.b$['javax.swing.text.GapVector'].getGapStart$.apply(this.b$['javax.swing.text.GapVector'], []);
 var g1=this.b$['javax.swing.text.GapVector'].getGapEnd$.apply(this.b$['javax.swing.text.GapVector'], []);
 var offs=(this.index < g0) ? this.index : this.index - (g1 - g0);
 return Math.max(offs, 0);
 });
 
-Clazz.newMeth(C$, 'getPosition$', function () {
+Clazz.newMeth(C$, 'getPosition$',  function () {
 return this.ref;
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GapContent, "StickyPosition", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GapContent, "StickyPosition", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.text.Position');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.mark=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['mark','javax.swing.text.GapContent.MarkData']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'setMark$javax_swing_text_GapContent_MarkData', function (mark) {
+Clazz.newMeth(C$, 'setMark$javax_swing_text_GapContent_MarkData',  function (mark) {
 this.mark=mark;
 });
 
-Clazz.newMeth(C$, 'getOffset$', function () {
+Clazz.newMeth(C$, 'getOffset$',  function () {
 return this.mark.getOffset$();
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return Integer.toString$I(this.getOffset$());
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GapContent, "MarkVector", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GapContent, "MarkVector", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.text.GapVector');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.oneMark=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.oneMark=Clazz.array($I$(1), [1]);
+},1);
+
+C$.$fields$=[['O',['oneMark','javax.swing.text.GapContent.MarkData[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I',  function (size) {
+;C$.superclazz.c$$I.apply(this,[size]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I', function (size) {
-C$.superclazz.c$$I.apply(this, [size]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'allocateArray$I', function (len) {
+Clazz.newMeth(C$, 'allocateArray$I',  function (len) {
 return Clazz.array($I$(1), [len]);
 });
 
-Clazz.newMeth(C$, 'getArrayLength$', function () {
+Clazz.newMeth(C$, 'getArrayLength$',  function () {
 var marks=this.getArray$();
 return marks.length;
 });
 
-Clazz.newMeth(C$, 'size$', function () {
+Clazz.newMeth(C$, 'size$',  function () {
 var len=this.getArrayLength$() - (this.getGapEnd$() - this.getGapStart$());
 return len;
 });
 
-Clazz.newMeth(C$, 'insertElementAt$javax_swing_text_GapContent_MarkData$I', function (m, index) {
+Clazz.newMeth(C$, 'insertElementAt$javax_swing_text_GapContent_MarkData$I',  function (m, index) {
 this.oneMark[0]=m;
 this.replace$I$I$O$I(index, 0, this.oneMark, 1);
 });
 
-Clazz.newMeth(C$, 'addElement$javax_swing_text_GapContent_MarkData', function (m) {
+Clazz.newMeth(C$, 'addElement$javax_swing_text_GapContent_MarkData',  function (m) {
 this.insertElementAt$javax_swing_text_GapContent_MarkData$I(m, this.size$());
 });
 
-Clazz.newMeth(C$, 'elementAt$I', function (index) {
+Clazz.newMeth(C$, 'elementAt$I',  function (index) {
 var g0=this.getGapStart$();
 var g1=this.getGapEnd$();
 var array=this.getArray$();
@@ -457,7 +440,7 @@ index+=g1 - g0;
 return array[index];
 }});
 
-Clazz.newMeth(C$, 'replaceRange$I$I$OA', function (start, end, marks) {
+Clazz.newMeth(C$, 'replaceRange$I$I$OA',  function (start, end, marks) {
 var g0=this.getGapStart$();
 var g1=this.getGapEnd$();
 var index=start;
@@ -482,29 +465,24 @@ array[index++]=marks[newIndex++];
 });
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GapContent, "UndoPosRef", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GapContent, "UndoPosRef", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.undoLocation=0;
-this.rec=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_GapContent_MarkData', function (rec) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['undoLocation'],'O',['rec','javax.swing.text.GapContent.MarkData']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_GapContent_MarkData',  function (rec) {
+;C$.$init$.apply(this);
 this.rec=rec;
 this.undoLocation=rec.getOffset$();
 }, 1);
 
-Clazz.newMeth(C$, 'resetLocation$I$I', function (endOffset, g1) {
+Clazz.newMeth(C$, 'resetLocation$I$I',  function (endOffset, g1) {
 if (this.undoLocation != endOffset) {
 this.rec.index=this.undoLocation;
 } else {
@@ -514,37 +492,29 @@ this.rec.index=g1;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GapContent, "InsertUndo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GapContent, "InsertUndo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.length=0;
-this.string=null;
-this.posRefs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I$I', function (offset, length) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+C$.$fields$=[['I',['offset','length'],'S',['string'],'O',['posRefs','java.util.Vector']]]
+
+Clazz.newMeth(C$, 'c$$I$I',  function (offset, length) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.offset=offset;
 this.length=length;
 }, 1);
 
-Clazz.newMeth(C$, 'undo$', function () {
+Clazz.newMeth(C$, 'undo$',  function () {
 C$.superclazz.prototype.undo$.apply(this, []);
 try {
-this.posRefs=this.this$0.getPositionsInRange$java_util_Vector$I$I.apply(this.this$0, [null, this.offset, this.length]);
-this.string=this.this$0.getString$I$I.apply(this.this$0, [this.offset, this.length]);
-this.this$0.remove$I$I.apply(this.this$0, [this.offset, this.length]);
+this.posRefs=this.b$['javax.swing.text.GapContent'].getPositionsInRange$java_util_Vector$I$I.apply(this.b$['javax.swing.text.GapContent'], [null, this.offset, this.length]);
+this.string=this.b$['javax.swing.text.GapContent'].getString$I$I.apply(this.b$['javax.swing.text.GapContent'], [this.offset, this.length]);
+this.b$['javax.swing.text.GapContent'].remove$I$I.apply(this.b$['javax.swing.text.GapContent'], [this.offset, this.length]);
 } catch (bl) {
 if (Clazz.exceptionOf(bl,"javax.swing.text.BadLocationException")){
 throw Clazz.new_(Clazz.load('javax.swing.undo.CannotUndoException'));
@@ -554,13 +524,13 @@ throw bl;
 }
 });
 
-Clazz.newMeth(C$, 'redo$', function () {
+Clazz.newMeth(C$, 'redo$',  function () {
 C$.superclazz.prototype.redo$.apply(this, []);
 try {
-this.this$0.insertString$I$S.apply(this.this$0, [this.offset, this.string]);
+this.b$['javax.swing.text.GapContent'].insertString$I$S.apply(this.b$['javax.swing.text.GapContent'], [this.offset, this.string]);
 this.string=null;
 if (this.posRefs != null ) {
-this.this$0.updateUndoPositions$java_util_Vector$I$I.apply(this.this$0, [this.posRefs, this.offset, this.length]);
+this.b$['javax.swing.text.GapContent'].updateUndoPositions$java_util_Vector$I$I.apply(this.b$['javax.swing.text.GapContent'], [this.posRefs, this.offset, this.length]);
 this.posRefs=null;
 }} catch (bl) {
 if (Clazz.exceptionOf(bl,"javax.swing.text.BadLocationException")){
@@ -574,39 +544,31 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.GapContent, "RemoveUndo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.GapContent, "RemoveUndo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.undo.AbstractUndoableEdit');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.offset=0;
-this.length=0;
-this.string=null;
-this.posRefs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I$S', function (offset, string) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+C$.$fields$=[['I',['offset','length'],'S',['string'],'O',['posRefs','java.util.Vector']]]
+
+Clazz.newMeth(C$, 'c$$I$S',  function (offset, string) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.offset=offset;
 this.string=string;
 this.length=string.length$();
-this.posRefs=this.this$0.getPositionsInRange$java_util_Vector$I$I.apply(this.this$0, [null, offset, this.length]);
+this.posRefs=this.b$['javax.swing.text.GapContent'].getPositionsInRange$java_util_Vector$I$I.apply(this.b$['javax.swing.text.GapContent'], [null, offset, this.length]);
 }, 1);
 
-Clazz.newMeth(C$, 'undo$', function () {
+Clazz.newMeth(C$, 'undo$',  function () {
 C$.superclazz.prototype.undo$.apply(this, []);
 try {
-this.this$0.insertString$I$S.apply(this.this$0, [this.offset, this.string]);
+this.b$['javax.swing.text.GapContent'].insertString$I$S.apply(this.b$['javax.swing.text.GapContent'], [this.offset, this.string]);
 if (this.posRefs != null ) {
-this.this$0.updateUndoPositions$java_util_Vector$I$I.apply(this.this$0, [this.posRefs, this.offset, this.length]);
+this.b$['javax.swing.text.GapContent'].updateUndoPositions$java_util_Vector$I$I.apply(this.b$['javax.swing.text.GapContent'], [this.posRefs, this.offset, this.length]);
 this.posRefs=null;
 }this.string=null;
 } catch (bl) {
@@ -618,12 +580,12 @@ throw bl;
 }
 });
 
-Clazz.newMeth(C$, 'redo$', function () {
+Clazz.newMeth(C$, 'redo$',  function () {
 C$.superclazz.prototype.redo$.apply(this, []);
 try {
-this.string=this.this$0.getString$I$I.apply(this.this$0, [this.offset, this.length]);
-this.posRefs=this.this$0.getPositionsInRange$java_util_Vector$I$I.apply(this.this$0, [null, this.offset, this.length]);
-this.this$0.remove$I$I.apply(this.this$0, [this.offset, this.length]);
+this.string=this.b$['javax.swing.text.GapContent'].getString$I$I.apply(this.b$['javax.swing.text.GapContent'], [this.offset, this.length]);
+this.posRefs=this.b$['javax.swing.text.GapContent'].getPositionsInRange$java_util_Vector$I$I.apply(this.b$['javax.swing.text.GapContent'], [null, this.offset, this.length]);
+this.b$['javax.swing.text.GapContent'].remove$I$I.apply(this.b$['javax.swing.text.GapContent'], [this.offset, this.length]);
 } catch (bl) {
 if (Clazz.exceptionOf(bl,"javax.swing.text.BadLocationException")){
 throw Clazz.new_(Clazz.load('javax.swing.undo.CannotRedoException'));
@@ -636,4 +598,4 @@ throw bl;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:24 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

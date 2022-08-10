@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("org.jmol.modelset"),p$1={};
-var C$=Clazz.newClass(P$, "AtomIteratorWithinModelSet", null, 'org.jmol.modelset.AtomIteratorWithinModel');
+/*c*/var C$=Clazz.newClass(P$, "AtomIteratorWithinModelSet", null, 'org.jmol.modelset.AtomIteratorWithinModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bsModels=null;
-this.center=null;
-this.distance=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['F',['distance'],'O',['bsModels','javajs.util.BS','center','javajs.util.T3']]]
 
 Clazz.newMeth(C$, 'c$$javajs_util_BS', function (bsModels) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.bsModels=bsModels;
 }, 1);
 
@@ -39,4 +33,4 @@ return this.hasNext$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:38 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,42 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.P3','java.util.Random','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.V3','javajs.util.Measure','org.jmol.util.MeshSurface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsoShapeReader", null, 'org.jmol.jvxl.readers.VolumeDataReader');
-C$.fact=null;
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.P3','java.util.Random','javajs.util.SB','org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.V3','javajs.util.Measure','org.jmol.util.MeshSurface']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IsoShapeReader", null, 'org.jmol.jvxl.readers.VolumeDataReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.fact=Clazz.array(Float.TYPE, [20]);
-{
-C$.fact[0]=1;
-for (var i=1; i < 20; i++) C$.fact[i]=C$.fact[i - 1] * i;
-
-};
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.psi_n=0;
-this.psi_l=0;
-this.psi_m=0;
-this.psi_Znuc=0;
-this.sphere_radiusAngstroms=0;
-this.monteCarloCount=0;
-this.random=null;
-this.allowNegative=false;
-this.rfactor=null;
-this.pfactor=null;
-this.radius=0;
-this.ptPsi=null;
-this.psi_normalization=0;
-this.aoMax=0;
-this.aoMax2=0;
-this.angMax2=0;
-this.planeU=null;
-this.planeV=null;
-this.planeCenter=null;
-this.planeRadius=0;
-this.rnl=0;
-this.surfaceDone=false;
-this.nTries=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.psi_n=2;
@@ -46,12 +11,15 @@ this.psi_Znuc=1;
 this.allowNegative=true;
 this.rfactor=Clazz.array(Double.TYPE, [10]);
 this.pfactor=Clazz.array(Double.TYPE, [10]);
-this.ptPsi=Clazz.new_($I$(1));
+this.ptPsi=Clazz.new_($I$(1,1));
 this.psi_normalization=1 / (2 * Math.sqrt(3.141592653589793));
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['allowNegative','surfaceDone'],'D',['psi_normalization','aoMax','aoMax2','angMax2','rnl'],'F',['psi_Znuc','sphere_radiusAngstroms','radius','planeRadius'],'I',['psi_n','psi_l','psi_m','monteCarloCount','nTries'],'O',['random','java.util.Random','rfactor','double[]','+pfactor','ptPsi','javajs.util.P3','planeU','javajs.util.V3','+planeV','planeCenter','javajs.util.P3']]
+,['O',['fact','float[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$org_jmol_jvxl_readers_SurfaceGenerator', function (sg) {
@@ -84,7 +52,7 @@ this.maxGrid=40;
 type="hydrogen-like orbital";
 if (this.monteCarloCount > 0) {
 this.vertexDataOnly=true;
-this.random=Clazz.new_($I$(2).c$$J,[this.params.randomSeed]);
+this.random=Clazz.new_($I$(2,1).c$$J,[this.params.randomSeed]);
 } else {
 this.isQuiet=false;
 }break;
@@ -157,7 +125,7 @@ return (this.allowNegative || value >= 0   ? value : 0);
 });
 
 Clazz.newMeth(C$, 'setHeader$S', function (line1) {
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(3));
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(3,1));
 this.jvxlFileHeaderBuffer.append$S(line1);
 if (this.sphere_radiusAngstroms > 0 ) {
 this.jvxlFileHeaderBuffer.append$S(" rad=").appendF$F(this.sphere_radiusAngstroms);
@@ -187,7 +155,7 @@ if (this.params.distance == 0 ) {
 for (var ir=0; ir < 1000; ir++) {
 var r=ir / 10.0;
 d=Math.abs(p$1.radialPart$D.apply(this, [r]));
-if ($I$(5).debugging) $I$(5).debug$S("R\t" + new Float(r).toString() + "\t" + new Double(d).toString() );
+if ($I$(5).debugging) $I$(5,"debug$S",["R\t" + new Float(r).toString() + "\t" + new Double(d).toString() ]);
 if (d >= this.aoMax ) {
 rmax=r;
 this.aoMax=d;
@@ -200,21 +168,21 @@ this.aoMax2=d;
 this.aoMax=Math.abs(p$1.radialPart$D.apply(this, [this.params.distance]));
 this.aoMax2=this.aoMax * this.aoMax * this.params.distance * this.params.distance ;
 rmax=rmax2=this.params.distance;
-}$I$(5).info$S("Atomic Orbital radial max = " + new Double(this.aoMax).toString() + " at " + new Float(rmax).toString() );
-$I$(5).info$S("Atomic Orbital r2R2 max = " + new Double(this.aoMax2).toString() + " at " + new Float(rmax2).toString() );
+}$I$(5,"info$S",["Atomic Orbital radial max = " + new Double(this.aoMax).toString() + " at " + new Float(rmax).toString() ]);
+$I$(5,"info$S",["Atomic Orbital r2R2 max = " + new Double(this.aoMax2).toString() + " at " + new Float(rmax2).toString() ]);
 if (this.monteCarloCount >= 0) {
 this.angMax2=0;
 for (var ang=0; ang < 180 ; ang += 1) {
 var th=ang / (6.283185307179586);
 d=Math.abs(p$1.angularPart$D$D$I.apply(this, [th, 0, 0]));
-if ($I$(5).debugging) $I$(5).debug$S("A\t" + new Float(ang).toString() + "\t" + new Double(d).toString() );
+if ($I$(5).debugging) $I$(5,"debug$S",["A\t" + new Float(ang).toString() + "\t" + new Double(d).toString() ]);
 if (d > this.angMax2 ) {
 this.angMax2=d;
 }}
 this.angMax2 *= this.angMax2;
 if (this.psi_m != 0) {
 this.angMax2 *= 2;
-}$I$(5).info$S("Atomic Orbital phi^2theta^2 max = " + new Double(this.angMax2).toString());
+}$I$(5,"info$S",["Atomic Orbital phi^2theta^2 max = " + new Double(this.angMax2).toString()]);
 }var min;
 if (this.params.cutoff == 0 ) {
 min=(this.monteCarloCount > 0 ? this.aoMax * 0.01 : 0.01);
@@ -238,10 +206,10 @@ var aMax=0;
 for (var i=3; --i >= 0; ) if (this.anisotropy[i] > aMax ) aMax=this.anisotropy[i];
 
 this.radius *= aMax;
-}$I$(5).info$S("Atomic Orbital radial extent set to " + new Float(this.radius).toString() + " for cutoff " + new Float(this.params.cutoff).toString() );
+}$I$(5,"info$S",["Atomic Orbital radial extent set to " + new Float(this.radius).toString() + " for cutoff " + new Float(this.params.cutoff).toString() ]);
 if (this.params.thePlane != null  && this.monteCarloCount > 0 ) {
-this.planeCenter=Clazz.new_($I$(1));
-this.planeU=Clazz.new_($I$(6));
+this.planeCenter=Clazz.new_($I$(1,1));
+this.planeU=Clazz.new_($I$(6,1));
 $I$(7).getPlaneProjection$javajs_util_P3$javajs_util_P4$javajs_util_P3$javajs_util_V3(this.center, this.params.thePlane, this.planeCenter, this.planeU);
 this.planeU.set$F$F$F(this.params.thePlane.x, this.params.thePlane.y, this.params.thePlane.z);
 this.planeU.normalize$();
@@ -343,7 +311,7 @@ if (value * value <= this.aoMax2 * this.random.nextFloat$() ) continue;
 this.addVC$javajs_util_T3$F$I$Z(this.ptPsi, value, 0, true);
 i++;
 }
-if (this.params.distance == 0 ) $I$(5).info$S("Atomic Orbital mean radius = " + new Float(rave / this.monteCarloCount).toString() + " for " + this.monteCarloCount + " points (" + this.nTries + " tries)");
+if (this.params.distance == 0 ) $I$(5,"info$S",["Atomic Orbital mean radius = " + new Float(rave / this.monteCarloCount).toString() + " for " + this.monteCarloCount + " points (" + this.nTries + " tries)"]);
 }, p$1);
 
 Clazz.newMeth(C$, 'readSurfaceData$Z', function (isMapData) {
@@ -384,5 +352,14 @@ var face=faces[i];
 this.addTriangleCheck$I$I$I$I$I$Z$I(face[0], face[1], face[2], 7, 7, false, 0);
 }
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.fact=Clazz.array(Float.TYPE, [20]);
+{
+C$.fact[0]=1;
+for (var i=1; i < 20; i++) C$.fact[i]=C$.fact[i - 1] * i;
+
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

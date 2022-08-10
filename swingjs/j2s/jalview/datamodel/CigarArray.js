@@ -1,32 +1,25 @@
-(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'jalview.datamodel.CigarSimple','jalview.datamodel.SeqCigar','StringBuffer','java.util.Vector']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CigarArray", null, 'jalview.datamodel.CigarBase');
+(function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'jalview.datamodel.CigarSimple','jalview.datamodel.SeqCigar','StringBuffer','java.util.Vector']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CigarArray", null, 'jalview.datamodel.CigarBase');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.refCigars=null;
-this.seqcigararray=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.refCigars=null;
 this.seqcigararray=false;
+},1);
+
+C$.$fields$=[['Z',['seqcigararray'],'O',['refCigars','jalview.datamodel.CigarSimple[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'isSeqCigarArray$', function () {
+Clazz.newMeth(C$, 'isSeqCigarArray$',  function () {
 return this.seqcigararray;
 });
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_CigarSimpleA', function (cigars) {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_datamodel_CigarSimpleA',  function (cigars) {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.seqcigararray=true;
 if (cigars != null  && cigars.length > 0 ) {
 this.refCigars=Clazz.array($I$(1), [cigars.length]);
@@ -37,12 +30,12 @@ this.seqcigararray=false;
 }}
 }}, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup', function (alignment, hidden, selectionGroup) {
+Clazz.newMeth(C$, 'c$$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup',  function (alignment, hidden, selectionGroup) {
 C$.c$$jalview_datamodel_CigarSimpleA.apply(this, [C$.constructSeqCigarArray$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceGroup(alignment, selectionGroup)]);
 p$1.constructFromAlignment$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup.apply(this, [alignment, hidden, selectionGroup]);
 }, 1);
 
-Clazz.newMeth(C$, '_calcStartEndBounds$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceGroup', function (alignment, selectionGroup) {
+Clazz.newMeth(C$, '_calcStartEndBounds$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceGroup',  function (alignment, selectionGroup) {
 var startend=Clazz.array(Integer.TYPE, -1, [0, 0, 0]);
 if (selectionGroup != null ) {
 startend[0]=selectionGroup.getSize$();
@@ -54,7 +47,7 @@ startend[2]=alignment.getWidth$() - 1;
 }return startend;
 }, 1);
 
-Clazz.newMeth(C$, 'constructSeqCigarArray$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceGroup', function (alignment, selectionGroup) {
+Clazz.newMeth(C$, 'constructSeqCigarArray$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceGroup',  function (alignment, selectionGroup) {
 var seqs=null;
 var i;
 var iSize;
@@ -72,12 +65,12 @@ seqs=alignment.getSequencesArray$();
 end=alignment.getWidth$() - 1;
 }var selseqs=Clazz.array($I$(2), [iSize]);
 for (i=0; i < iSize; i++) {
-selseqs[i]=Clazz.new_($I$(2).c$$jalview_datamodel_SequenceI$I$I,[seqs[i], start, end]);
+selseqs[i]=Clazz.new_($I$(2,1).c$$jalview_datamodel_SequenceI$I$I,[seqs[i], start, end]);
 }
 return selseqs;
 }, 1);
 
-Clazz.newMeth(C$, 'constructFromAlignment$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup', function (alignment, hidden, selectionGroup) {
+Clazz.newMeth(C$, 'constructFromAlignment$jalview_datamodel_AlignmentI$jalview_datamodel_HiddenColumns$jalview_datamodel_SequenceGroup',  function (alignment, hidden, selectionGroup) {
 var _startend=C$._calcStartEndBounds$jalview_datamodel_AlignmentI$jalview_datamodel_SequenceGroup(alignment, selectionGroup);
 var start=_startend[1];
 var end=_startend[2];
@@ -106,7 +99,7 @@ this.addOperation$C$I("M", end - last + 1);
 this.addOperation$C$I("M", end - start + 1);
 }}, p$1);
 
-Clazz.newMeth(C$, 'getArrayofSequenceAndDeletions$C', function (GapChar) {
+Clazz.newMeth(C$, 'getArrayofSequenceAndDeletions$C',  function (GapChar) {
 if (this.refCigars == null  || this.refCigars.length == 0  || this.length == 0 ) {
 return null;
 }var sqanddels=Clazz.array(java.lang.Object, [this.refCigars.length, null]);
@@ -120,10 +113,10 @@ sqanddels[c]=null;
 return sqanddels;
 });
 
-Clazz.newMeth(C$, 'getSequenceString$C', function (GapChar) {
+Clazz.newMeth(C$, 'getSequenceString$C',  function (GapChar) {
 if (this.length == 0 || this.refCigars == null  ) {
 return "";
-}var seqStrings=Clazz.new_($I$(3));
+}var seqStrings=Clazz.new_($I$(3,1));
 var sqanddels=this.getArrayofSequenceAndDeletions$C(GapChar);
 for (var c=0; c < this.refCigars.length; c++) {
 if (sqanddels[c] != null ) {
@@ -134,7 +127,7 @@ sqanddels[c][0]=null;
 return seqStrings.toString();
 });
 
-Clazz.newMeth(C$, 'getSequenceStrings$C', function (GapChar) {
+Clazz.newMeth(C$, 'getSequenceStrings$C',  function (GapChar) {
 if (this.length == 0 || this.refCigars == null   || this.refCigars.length == 0 ) {
 return null;
 }var sqanddels=this.getArrayofSequenceAndDeletions$C(GapChar);
@@ -145,7 +138,7 @@ seqs[c]=sqanddels[c][0];
 return seqs;
 });
 
-Clazz.newMeth(C$, 'applyDeletions$', function () {
+Clazz.newMeth(C$, 'applyDeletions$',  function () {
 var delpos=null;
 if (this.length == 0) {
 return null;
@@ -160,14 +153,14 @@ cursor+=this.range[i];
 }vcursor+=this.range[i++];
 } else {
 if (delpos == null ) {
-delpos=Clazz.new_($I$(4));
+delpos=Clazz.new_($I$(4,1));
 }var delstart=cursor;
 var delend=cursor + this.range[i] - 1;
-delpos.addElement$TE(Clazz.array(Integer.TYPE, -1, [vcursor + offset, this.range[i]]));
+delpos.addElement$O(Clazz.array(Integer.TYPE, -1, [vcursor + offset, this.range[i]]));
 offset+=this.range[i] - 1;
 System.arraycopy$O$I$O$I$I(this.operation, i + 1, this.operation, i, this.length - i);
 System.arraycopy$O$I$O$I$I(this.range, i + 1, this.range, i, this.length - i);
-this.length--;
+--this.length;
 for (var s=0; s < this.refCigars.length; s++) {
 var d=this.refCigars[s].deleteRange$I$I(delstart, delend);
 }
@@ -178,14 +171,14 @@ for (var k=0, l=delpos.size$(); k < l; k++) {
 var dr=(delpos.elementAt$I(k));
 pos[k * 2]=dr[0];
 pos[k * 2 + 1]=dr[1];
-delpos.setElementAt$TE$I(null, k);
+delpos.setElementAt$O$I(null, k);
 }
 delpos=null;
 return pos;
 }return null;
 });
 
-Clazz.newMeth(C$, 'getSeqCigarArray$', function () {
+Clazz.newMeth(C$, 'getSeqCigarArray$',  function () {
 if (!this.isSeqCigarArray$()) {
 return null;
 }var sa=Clazz.array($I$(2), [this.refCigars.length]);
@@ -195,4 +188,4 @@ sa[i]=this.refCigars[i];
 return sa;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

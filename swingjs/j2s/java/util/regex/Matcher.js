@@ -1,329 +1,458 @@
-// BH 9/24/2017 4:21:05 PM new syntax for decorateAsClass
-//Udo Borkowski 6/13/2016 12:39:12 AM "matches"
-//BH 12/25/2016 7:28:07 AM fix for find() not updating this.leftBound
-//BH fix for String not having .length() or .subSequence()
-//BH fix for not reinitializing correctly
-//BH note that start(groupIndex) is not implemented for groupIndex > 0
-(function(){Clazz.newPackage("java.util.regex");
+(function(){var P$=Clazz.newPackage("java.util.regex"),p$1={},I$=[[0,['java.util.regex.Matcher','.RegExp'],'StringBuilder','java.util.regex.ASCII',['java.util.regex.Matcher','.Value'],'StringBuffer','java.util.Objects']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Matcher", function(){
+Clazz.newInstance(this, arguments,0,C$);
+}, null, 'java.util.regex.MatchResult');
+C$.$classes$=[['Value',0],['RegExp',1032]];
 
-var C$=Clazz.newClass(java.util.regex,"Matcher",function(){
-  Clazz.newInstance(this,arguments);
-},null,"java.util.regex.MatchResult");
+C$.$clinit$=2;
 
+Clazz.newMeth(C$, '$init$', function () {
+this.acceptMode=-1;
+this.first=-1;
+this.last=0;
+this.oldLast=-1;
+this.appendPos=0;
+this.transparentBounds=false;
+this.anchoringBounds=true;
+},1);
 
-C$.$clinit$ = function() {
-delete C$.$clinit$;
-Clazz.load(C$, 1);
-};
+C$.$fields$=[['Z',['hitEnd','requireEnd','transparentBounds','anchoringBounds'],'I',['leftBound','rightBound','lookbehindTo','acceptMode','first','last','oldLast','appendPos','groupCount'],'S',['processedRepl','replacement','strString'],'O',['pat','java.util.regex.Pattern','cs','CharSequence','replacementParts','Object[]','results','String[]']]]
 
-(function(){
-
-  var C$=Clazz.newClass(java.util.regex,"Matcher$1",function(){
-    Clazz.newInstance(this, arguments[0], true);
-  });
-  
-  C$.$clinit$ = function() {delete C$.$clinit$;Clazz.load(C$, 1);}
-
-  Clazz.newMeth(C$, "$init$", function() {
-      this.grN=0;
-  }, 1);
-  Clazz.newMeth(C$,"toString", function(){
-    return this.b$["java.util.regex.Matcher"].group$I(this.grN);
-  });
-})();
-
-Clazz.newMeth(C$, 'c$$java_util_regex_Pattern$CharSequence', function(pat,cs){
-  this.pat=pat;
-  this.charSeq=cs;
-  this.leftBound=0;
-  this.rightBound=this.charSeq.length$();
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$,"reset$CharSequence",function(newSequence){
-  if(newSequence==null){
-    throw new NullPointerException("Empty new sequence!");
-  }
-  this.charSeq=newSequence;
-  this.strString = null;
-  return this.reset$();
-});
-
-Clazz.newMeth(C$,"reset$",function(){
-  this.leftBound=0;
-  this.rightBound=this.charSeq.length$();
-  this.appendPos=0;
-  this.replacement=null;
-  {
-    var flags=""+(this.pat.regexp.ignoreCase?"i":"")
-    +(this.pat.regexp.global?"g":"")
-    +(this.pat.regexp.multiline?"m":"");
-    this.pat.regexp=new RegExp(this.pat.regexp.source,flags);
-  }
-  return this;
-});
-
-Clazz.newMeth(C$,"find$",function(){
-  // 'find next'
-  if (this.strString == null)
-    this.strString = this.charSeq.toString();
-  var s = (this.rightBound == this.strString.length ? this.strString : this.charSeq.subSequence$I$I(0,this.rightBound));
-  this.pat.regexp.lastIndex = this.leftBound;
-  {
-  this.results=this.pat.regexp.exec(s);
-  this.leftBound = this.pat.regexp.lastIndex;
-  }
-  return (this.results != null);
-});
-
-Clazz.newMeth(C$,"find$I",function(startIndex){
-  var stringLength=this.charSeq.length$();
-  if(startIndex<0||startIndex>stringLength)
-    throw new IndexOutOfBoundsException$S("Out of bound "+startIndex);
-  this.leftBound = startIndex;
-  this.rightBound = stringLength;
-  return this.find$();
-});
-
-Clazz.newMeth(C$,"start$",function(){
-  return this.start$I(0);
-});
-
-Clazz.newMeth(C$,"start$I",  function(groupIndex){
-  return this.startImpl$I(groupIndex);
-});
-
-Clazz.newMeth(C$,"startImpl$I",  function(groupIndex){
-  // BH SAEM
-  // NOTE: TODO groupIndex is not implemented!
-  return this.pat.regexp.lastIndex - this.results[0].length;
-});
-
-Clazz.newMeth(C$,"end$",function(){
-  return this.end$I(0);
-});
-
-Clazz.newMeth(C$,"end$I",function(groupIndex){
-  return this.pat.regexp.lastIndex;
-});
-
-
-Clazz.newMeth(C$,"appendReplacement$StringBuffer$S",function(sb,replacement){
-  this.processedRepl=this.processReplacement$S(replacement);
-  sb.append$S(this.charSeq.subSequence$I$I(this.appendPos,this.start$()));
-  sb.append$S(this.processedRepl);
-  this.appendPos=this.end$();
-  return this;
-});
-
-Clazz.newMeth(C$,"processReplacement$S",function(replacement){
-  if(this.replacement!=null&&this.replacement.equals$O(replacement)){
-    if(this.replacementParts==null){
-      return this.processedRepl;
-    }else{
-      var sb=new StringBuffer();
-      for(var i=0;i<this.replacementParts.length;i++){
-        sb.append$S(this.replacementParts[i]);
-      }
-      return sb.toString();
-    }
-  }else{
-    this.replacement=replacement;
-    var repl=replacement.toCharArray();
-    var res=new StringBuffer();
-    this.replacementParts=null;
-    var index=0;
-    var replacementPos=0;
-    var nextBackSlashed=false;
-    while(index<repl.length){
-      if((repl[index]).charCodeAt(0)==('\\').charCodeAt(0)&&!nextBackSlashed){ //' )){ 
-        nextBackSlashed=true;
-        index++;
-      }
-      if(nextBackSlashed){
-        res.append$(repl[index]);
-        nextBackSlashed=false;
-      }else{
-        if((repl[index]).charCodeAt(0)==('$').charCodeAt(0)){
-          if(this.replacementParts==null){
-            this.replacementParts=Clazz.array(String, 0);
-          }
-          try{
-            var gr=Integer.parseInt$S(String.instantialize(repl,++index,1));
-            if(replacementPos!=res.length$()){
-              this.replacementParts[this.replacementParts.length]=res.subSequence$I$I(replacementPos,res.length$());
-              replacementPos=res.length$();
-            }
-            this.replacementParts[this.replacementParts.length]= Clazz.new_(Clazz.load("java.util.regex.Matcher$1").c$,[this]);
-            var group=this.group$I(gr);
-            replacementPos+=group.length;
-            res.append$S(group);
-          }catch(e$$){
-            if(Clazz.instanceOf(e$$,IndexOutOfBoundsException)){
-              var iob=e$$;
-              {
-              throw iob;
-              }
-            }else if(Clazz.instanceOf(e$$,Exception)){
-              var e=e$$;
-              {
-              throw new IllegalArgumentException("Illegal regular expression format");
-              }
-            }else{
-              throw e$$;
-            }
-          }
-        }else{
-          res.append$S(repl[index]);
-        }
-      }
-      index++;
-    }
-    if(this.replacementParts!=null&&replacementPos!=res.length$()){
-      this.replacementParts[this.replacementParts.length]=res.subSequence$I$I(replacementPos,res.length$());
-    }
-    return res.toString();
-  }
-});
-
-
-Clazz.newMeth(C$,"region$I$I",function(leftBound,rightBound){
-  if(leftBound>rightBound||leftBound<0||rightBound<0||leftBound>this.charSeq.length$()||rightBound>this.charSeq.length$()){
-    throw Clazz.new_(IndexOutOfBoundsException.c$, [leftBound+" is out of bound of "+rightBound]);
-  }
-  this.leftBound=leftBound;
-  this.rightBound=rightBound;
-  this.results=null;
-  this.appendPos=0;
-  this.replacement=null;
-  return this;
-});
-
-Clazz.newMeth(C$,"appendTail$StringBuffer",function(sb){
-  return sb.append$S(this.charSeq.subSequence$I$I(this.appendPos,this.charSeq.length$()));
-},"StringBuffer");
-
-Clazz.newMeth(C$,"replaceFirst$S",function(replacement){
-  this.reset$();
-  if(this.find$()){
-    var sb=new StringBuffer();
-    this.appendReplacement$StringBuffer$S(sb,replacement);
-    return this.appendTail$StringBuffer(sb).toString();
-  }
-  return this.charSeq.toString();
-});
-
-Clazz.newMeth(C$,"replaceAll$S", function(replacement){
-  var sb=new StringBuffer();
-  this.reset$();
-  while(this.find$()){
-    this.appendReplacement$StringBuffer$S(sb,replacement);
-  }
-  return this.appendTail$StringBuffer(sb).toString();
-});
-
-Clazz.newMeth(C$,"pattern$",function(){
-  return this.pat;
-});
-
-Clazz.newMeth(C$,"group$I",function(groupIndex){
-  if(this.results==null||groupIndex<0||groupIndex>this.results.length){
-    return null;
-  }
-  return this.results[groupIndex];
-});
-
-Clazz.newMeth(C$,"group$",function(){
-  return this.group$I(0);
-});
-
-Clazz.newMeth(C$,"matches$",function(){
-  // UB: the find must match the complete input and not modify the RE object
-  var old_lastIndex = this.pat.regexp.lastIndex;
-  try {
-    this.find$();
-    var r = this.results;
-    return r && r.length > 0 && r[0].length === r.input.length;
-  } finally {
-    // Restore the old state of the RE object
-    this.pat.regexp.lastIndex = old_lastIndex;
-  }
-});
-
-Clazz.newMeth(C$,"quoteReplacement$S",function(string){
-  if(string.indexOf('\\') < 0 && string.indexOf ('$')<0) ; // '))
-    return string;
-  var res= Clazz.new_(StringBuffer, [string.length*2]);
-  var ch;
-  var len=string.length;
-  for(var i=0;i<len;i++){
-    switch(ch=string.charAt(i)){
-    case'$':
-      res.append$S('\\'); // ');
-      res.append$S('$');
-      break;
-    case'\\': // '
-      res.append$S('\\'); // ')
-      res.append$S('\\'); // ')
-      break;
-    default:
-      res.append$S(ch);
-    }
-  }
-  return res.toString();
+Clazz.newMeth(C$, 'c$$java_util_regex_Pattern$CharSequence',  function (parent, text) {
+;C$.$init$.apply(this);
+this.pat=parent;
+this.cs=text;
+this.reset$();
 }, 1);
 
-Clazz.newMeth(C$,"lookingAt$",function(){
-  return false;
+Clazz.newMeth(C$, 'toMatchResult$',  function () {
+var result=Clazz.new_(C$.c$$java_util_regex_Pattern$CharSequence,[this.pat, this.cs.toString()]);
+result.first=this.first;
+result.last=this.last;
+result.groupCount=this.groupCount;
+result.results=this.results.clone$();
+return result;
 });
 
-Clazz.newMeth(C$,"groupCount$",function(){
-  return this.results==null?0:this.results.length;
+Clazz.newMeth(C$, 'usePattern$java_util_regex_Pattern',  function (newPattern) {
+if (newPattern == null ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Pattern cannot be null"]);
+this.pat=newPattern;
+p$1.clearGroups.apply(this, []);
+return this;
 });
 
-
-Clazz.newMeth(C$,"toMatchResult$",function(){
-  return this;
+Clazz.newMeth(C$, 'reset$',  function () {
+this.first=-1;
+this.last=0;
+this.groupCount=0;
+this.oldLast=-1;
+p$1.clearGroups.apply(this, []);
+this.appendPos=0;
+this.leftBound=0;
+this.rightBound=this.getTextLength$();
+this.strString=null;
+this.pat.regexp=$I$(1).clone$java_util_regex_Matcher_RegExp(this.pat.regexp);
+return this;
 });
 
-Clazz.newMeth(C$,"useAnchoringBounds$Z",function(value){
-  return this;
+Clazz.newMeth(C$, 'reset$CharSequence',  function (input) {
+this.cs=input;
+return this.reset$();
 });
 
-Clazz.newMeth(C$,"hasAnchoringBounds$",function(){
-  return false;
+Clazz.newMeth(C$, 'find$',  function () {
+var nextSearchIndex=this.last;
+if (nextSearchIndex == this.first) ++nextSearchIndex;
+if (nextSearchIndex < this.leftBound) nextSearchIndex=this.leftBound;
+if (nextSearchIndex > this.rightBound) {
+p$1.clearGroups.apply(this, []);
+return false;
+}return this.search$I$I(nextSearchIndex, -1);
 });
 
-Clazz.newMeth(C$,"useTransparentBounds$Z",function(value){
-  return this;
+Clazz.newMeth(C$, 'search$I$I',  function (from, anchor) {
+if (this.strString == null ) this.strString=this.cs.toString();
+this.hitEnd=false;
+this.requireEnd=this.pat.pattern$().endsWith$S("$");
+from=(from < 0 ? 0 : from);
+this.first=from;
+this.oldLast=(this.oldLast < 0 ? from : this.oldLast);
+p$1.clearGroups.apply(this, []);
+var s=(this.rightBound == this.strString.length$() ? this.strString : this.strString.substring$I$I(0, this.rightBound));
+var rg=this.pat.regexp;
+rg.lastIndex=from;
+this.acceptMode=(anchor == -1 ? 0 : anchor);
+this.results=p$1.execRE$java_util_regex_Matcher_RegExp$S.apply(this, [rg, s]);
+var result=p$1.checkRE$SA$S.apply(this, [this.results, s]);
+this.oldLast=this.last;
+return result;
 });
 
-Clazz.newMeth(C$,"hasTransparentBounds$",function(){
-  return false;
+Clazz.newMeth(C$, 'clearGroups',  function () {
+}, p$1);
+
+Clazz.newMeth(C$, 'find$I',  function (start) {
+var limit=this.getTextLength$();
+if ((start < 0) || (start > limit) ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["Illegal start index"]);
+this.reset$();
+return this.search$I$I(start, -1);
 });
 
-Clazz.newMeth(C$,"regionStart$",function(){
-  return this.leftBound;
+Clazz.newMeth(C$, 'lookingAt$',  function () {
+return this.match$I$I(this.leftBound, 2);
 });
 
-Clazz.newMeth(C$,"regionEnd$",function(){
-  return this.rightBound;
+Clazz.newMeth(C$, 'appendReplacement$StringBuffer$S',  function (sb, replacement) {
+if (this.first < 0) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No match available"]);
+this.processedRepl=p$1.processRepl$S.apply(this, [replacement]);
+sb.append$CharSequence$I$I(this.cs, this.appendPos, this.first);
+sb.append$S(this.processedRepl);
+this.appendPos=this.last;
+return this;
 });
 
-Clazz.newMeth(C$,"requireEnd$",function(){
-  return false;
+Clazz.newMeth(C$, 'processRepl$S',  function (replacement) {
+if (this.replacement != null  && this.replacement.equals$O(replacement) ) {
+return (this.replacementParts == null  ? this.processedRepl : 1 ? this.replacementParts.join("") :null);
+}this.replacement=replacement;
+var index=0;
+var replacementPos=0;
+var res=Clazz.new_($I$(2,1));
+var len=replacement.length$();
+while (index < len){
+var nextChar=replacement.charAt$I(index);
+switch (nextChar.$c()) {
+case 92:
+++index;
+if (index == replacement.length$()) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["character to be escaped is missing"]);
+nextChar=replacement.charAt$I(index);
+res.append$C(nextChar);
+++index;
+break;
+case 36:
+++index;
+if (index == len) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal group reference: group index is missing"]);
+nextChar=replacement.charAt$I(index);
+var gr=-1;
+if (nextChar == "{") {
+++index;
+var gsb=Clazz.new_($I$(2,1));
+while (index < replacement.length$()){
+nextChar=replacement.charAt$I(index);
+if ($I$(3,"isLower$I",[nextChar.$c()]) || $I$(3,"isUpper$I",[nextChar.$c()]) || $I$(3,"isDigit$I",[nextChar.$c()])  ) {
+gsb.append$C(nextChar);
+++index;
+} else {
+break;
+}}
+if (gsb.length$() == 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["named capturing group has 0 length name"]);
+if (nextChar != "}") throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["named capturing group is missing trailing \'}\'"]);
+var gname=gsb.toString();
+if ($I$(3,"isDigit$I",[gname.charAt$I(0).$c()])) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["capturing group name {" + gname + "} starts with digit character" ]);
+if (this.pat.namedGroups == null  || !this.pat.namedGroups$().containsKey$O(gname) ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["No group with name {" + gname + "}" ]);
+gr=(this.pat.namedGroups$().get$O(gname)).$c();
+++index;
+} else {
+if (this.replacementParts == null ) this.replacementParts=Clazz.array(String, [0]);
+gr=nextChar.$c() - 48;
+if ((gr < 0) || (gr > 9) ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Illegal group reference"]);
+++index;
+var done=false;
+while (!done){
+if (index >= replacement.length$()) {
+break;
+}var nextDigit=(replacement.charCodeAt$I(index)) - 48;
+if ((nextDigit < 0) || (nextDigit > 9) ) {
+break;
+}var newRefNum=(gr * 10) + nextDigit;
+if (this.groupCount$() < newRefNum) {
+done=true;
+} else {
+gr=newRefNum;
+++index;
+}}
+}var n=res.length$();
+if (replacementPos != n) {
+this.replacementParts[this.replacementParts.length]=res.substring$I$I(replacementPos, n);
+replacementPos=n;
+}var g=(this.replacementParts[this.replacementParts.length]=Clazz.new_($I$(4,1).c$$I,[this, null, gr])).toString();
+res.append$S(g);
+replacementPos=res.length$();
+break;
+default:
+res.append$C(nextChar);
+++index;
+break;
+}
+}
+if (this.replacementParts != null  && replacementPos != res.length$() ) {
+this.replacementParts[this.replacementParts.length]=res.substring$I$I(replacementPos, res.length$());
+}return res.toString();
+}, p$1);
+
+Clazz.newMeth(C$, 'region$I$I',  function (start, end) {
+if ((start < 0) || (start > this.getTextLength$()) ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["start"]);
+if ((end < 0) || (end > this.getTextLength$()) ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["end"]);
+if (start > end) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["start > end"]);
+this.reset$();
+this.leftBound=start;
+this.rightBound=end;
+return this;
 });
 
-Clazz.newMeth(C$,"hitEnd$",function(){
-  return false;
+Clazz.newMeth(C$, 'appendTail$StringBuffer',  function (sb) {
+return sb.append$CharSequence$I$I(this.cs, this.appendPos, this.getTextLength$());
 });
 
-Clazz.newMeth(C$,"usePattern$java.util_regex_Pattern",function(pat){
-  if(pat==null){
-    throw new IllegalArgumentException("Empty pattern!");
-  }
-  this.pat=pat;
-  this.results=null;
-  return this;
+Clazz.newMeth(C$, 'replaceFirst$S',  function (replacement) {
+if (replacement == null ) throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["replacement"]);
+this.reset$();
+if (!this.find$()) return this.cs.toString();
+var sb=Clazz.new_($I$(5,1));
+this.appendReplacement$StringBuffer$S(sb, replacement);
+return this.appendTail$StringBuffer(sb).toString();
 });
 
+Clazz.newMeth(C$, 'replaceAll$S',  function (replacement) {
+this.reset$();
+var result=this.find$();
+if (!result) {
+return this.cs.toString();
+}var sb=Clazz.new_($I$(5,1));
+do {
+this.appendReplacement$StringBuffer$S(sb, replacement);
+result=this.find$();
+} while (result);
+return this.appendTail$StringBuffer(sb).toString();
+});
+
+Clazz.newMeth(C$, 'pattern$',  function () {
+return this.pat;
+});
+
+Clazz.newMeth(C$, 'group$',  function () {
+return this.group$I(0);
+});
+
+Clazz.newMeth(C$, 'group$I',  function (group) {
+if (this.first < 0) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No match found"]);
+if (group < 0 || group > this.groupCount$() ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["No group " + group]);
+return this.results[group] == null  ? null : this.results[group];
+});
+
+Clazz.newMeth(C$, 'group$S',  function (name) {
+var group=this.getMatchedGroupIndex$S(name);
+return group < 0 || group >= this.results.length  ? null : this.group$I(group);
+});
+
+Clazz.newMeth(C$, 'groupCount$',  function () {
+return this.groupCount;
+});
+
+Clazz.newMeth(C$, 'matches$',  function () {
+return this.match$I$I(this.leftBound, 1);
+});
+
+Clazz.newMeth(C$, 'match$I$I',  function (from, anchor) {
+this.hitEnd=false;
+from=Math.max(0, from);
+this.first=from;
+this.oldLast=(this.oldLast < 0 ? from : this.oldLast);
+p$1.clearGroups.apply(this, []);
+var result=this.search$I$I(from, anchor);
+this.oldLast=from;
+this.pat.regexp.lastIndex=from;
+return result;
+});
+
+Clazz.newMeth(C$, 'indexRE$SA',  function (results) {
+return results.index ||0;
+}, p$1);
+
+Clazz.newMeth(C$, 'execRE$java_util_regex_Matcher_RegExp$S',  function (rg, s) {
+return 1 ? rg.exec(s) :null;
+}, p$1);
+
+Clazz.newMeth(C$, 'checkRE$SA$S',  function (r, s) {
+this.hitEnd=(r == null );
+if (this.hitEnd) {
+this.requireEnd=false;
+this.first=-1;
+return false;
+}this.groupCount=r.length - 1;
+var f0=this.first;
+this.first=p$1.indexRE$SA.apply(this, [r]);
+this.last=this.first + r[0].length$();
+this.hitEnd=(this.last == s.length$());
+if (this.hitEnd && this.requireEnd$() && this.last != this.strString.length$()  ) {
+return false;
+}if (this.groupCount < 0) return false;
+switch (this.acceptMode) {
+case 2:
+return this.first == f0;
+case 1:
+return this.first == f0 && this.last == r.input.length ||0 ;
+default:
+return true;
+}
+}, p$1);
+
+Clazz.newMeth(C$, 'quoteReplacement$S',  function (s) {
+if ((s.indexOf$I("\\") == -1) && (s.indexOf$I("$") == -1) ) return s;
+var sb="";
+for (var i=0; i < s.length$(); i++) {
+var c=s.charAt$I(i);
+if (c == "\\" || c == "$" ) {
+sb+="\\";
+}sb+=c;
+}
+return sb;
+}, 1);
+
+Clazz.newMeth(C$, 'regionStart$',  function () {
+return this.leftBound;
+});
+
+Clazz.newMeth(C$, 'regionEnd$',  function () {
+return this.rightBound;
+});
+
+Clazz.newMeth(C$, 'hasTransparentBounds$',  function () {
+return this.transparentBounds;
+});
+
+Clazz.newMeth(C$, 'useTransparentBounds$Z',  function (b) {
+this.transparentBounds=b;
+return this;
+});
+
+Clazz.newMeth(C$, 'hasAnchoringBounds$',  function () {
+return this.anchoringBounds;
+});
+
+Clazz.newMeth(C$, 'useAnchoringBounds$Z',  function (b) {
+this.anchoringBounds=b;
+return this;
+});
+
+Clazz.newMeth(C$, 'toString',  function () {
+var sb=Clazz.new_($I$(2,1));
+sb.append$S("java.util.regex.Matcher");
+sb.append$S("[pattern=" + this.pattern$());
+sb.append$S(" region=");
+sb.append$S(this.regionStart$() + "," + this.regionEnd$() );
+sb.append$S(" lastmatch=");
+if ((this.first >= 0) && (this.group$() != null ) ) {
+sb.append$S(this.group$());
+}sb.append$S("]");
+return sb.toString();
+});
+
+Clazz.newMeth(C$, 'hitEnd$',  function () {
+return this.hitEnd;
+});
+
+Clazz.newMeth(C$, 'requireEnd$',  function () {
+return this.requireEnd;
+});
+
+Clazz.newMeth(C$, 'getTextLength$',  function () {
+return this.cs.length$();
+});
+
+Clazz.newMeth(C$, 'getSubSequence$I$I',  function (beginIndex, endIndex) {
+return this.cs.subSequence$I$I(beginIndex, endIndex);
+});
+
+Clazz.newMeth(C$, 'charAt$I',  function (i) {
+return this.cs.charAt$I(i);
+});
+
+Clazz.newMeth(C$, 'getMatchedGroupIndex$S',  function (name) {
+$I$(6).requireNonNull$O$S(name, "Group name");
+if (this.first < 0) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No match found"]);
+if (this.pat.namedGroups == null ) this.pat.秘setNameGroups$();
+if (this.pat.namedGroups == null  || !this.pat.namedGroups$().containsKey$O(name) ) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["No group with name <" + name + ">" ]);
+return (this.pat.namedGroups$().get$O(name)).$c();
+});
+
+Clazz.newMeth(C$, 'start$',  function () {
+if (this.first < 0) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No match available"]);
+return this.first;
+});
+
+Clazz.newMeth(C$, 'start$I',  function (group) {
+if (this.first < 0) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No match available"]);
+if (group < 0 || group > this.groupCount$() ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["No group " + group]);
+return -1;
+});
+
+Clazz.newMeth(C$, 'start$S',  function (name) {
+this.getMatchedGroupIndex$S(name);
+return -1;
+});
+
+Clazz.newMeth(C$, 'end$',  function () {
+if (this.first < 0) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No match available"]);
+return this.last;
+});
+
+Clazz.newMeth(C$, 'end$I',  function (group) {
+if (this.first < 0) throw Clazz.new_(Clazz.load('IllegalStateException').c$$S,["No match available"]);
+if (group < 0 || group > this.groupCount$() ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["No group " + group]);
+return -1;
+});
+
+Clazz.newMeth(C$, 'end$S',  function (name) {
+this.getMatchedGroupIndex$S(name);
+return -1;
+});
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.Matcher, "Value", function(){
+Clazz.newInstance(this, arguments[0],true,C$);
+});
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['I',['grN']]]
+
+Clazz.newMeth(C$, 'c$$I',  function (grN) {
+;C$.$init$.apply(this);
+this.grN=grN;
+}, 1);
+
+Clazz.newMeth(C$, 'toString',  function () {
+return this.b$['java.util.regex.Matcher'].group$I.apply(this.b$['java.util.regex.Matcher'], [this.grN]).toString();
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.Matcher, "RegExp", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+});
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['I',['lastIndex']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
+}, 1);
+
+Clazz.newMeth(C$, 'clone$java_util_regex_Matcher_RegExp',  function (rg) {
+return 1?new RegExp(rg.source, rg.flags):null;
+}, 1);
+})()
 })();
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:21 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,33 +1,20 @@
-(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),p$1={},I$=[[0,'java.util.Arrays','StringBuilder','jalview.math.Matrix','jalview.util.Comparison']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ScoreMatrix", null, 'jalview.analysis.scoremodels.SimilarityScoreModel', 'jalview.api.analysis.PairwiseScoreModelI');
-C$.scoreGapAsAny=false;
+(function(){var P$=Clazz.newPackage("jalview.analysis.scoremodels"),p$1={},I$=[[0,'java.util.Arrays','StringBuilder','jalview.math.Matrix','jalview.util.Comparison']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ScoreMatrix", null, 'jalview.analysis.scoremodels.SimilarityScoreModel', 'jalview.api.analysis.PairwiseScoreModelI');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.scoreGapAsAny=false;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.name=null;
-this.description=null;
-this.symbols=null;
-this.matrix=null;
-this.symbolIndex=null;
-this.peptide=false;
-this.minValue=0;
-this.maxValue=0;
-this.symmetric=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S$CA$FAA', function (theName, alphabet, values) {
+C$.$fields$=[['Z',['peptide','symmetric'],'F',['minValue','maxValue'],'S',['name','description'],'O',['symbols','char[]','matrix','float[][]','symbolIndex','short[]']]
+,['Z',['scoreGapAsAny']]]
+
+Clazz.newMeth(C$, 'c$$S$CA$FAA',  function (theName, alphabet, values) {
 C$.c$$S$S$CA$FAA.apply(this, [theName, null, alphabet, values]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$S$CA$FAA', function (theName, theDescription, alphabet, values) {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$S$S$CA$FAA',  function (theName, theDescription, alphabet, values) {
+Clazz.super_(C$, this);
 if (alphabet.length != values.length) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["score matrix size must match alphabet size"]);
 }for (var row, $row = 0, $$row = values; $row<$$row.length&&((row=($$row[$row])),1);$row++) {
@@ -44,7 +31,7 @@ this.symmetric=p$1.checkSymmetry.apply(this, []);
 this.peptide=alphabet.length >= 20;
 }, 1);
 
-Clazz.newMeth(C$, 'checkSymmetry', function () {
+Clazz.newMeth(C$, 'checkSymmetry',  function () {
 for (var i=0; i < this.matrix.length; i++) {
 for (var j=i; j < this.matrix.length; j++) {
 if (this.matrix[i][j] != this.matrix[j][i] ) {
@@ -54,7 +41,7 @@ return false;
 return true;
 }, p$1);
 
-Clazz.newMeth(C$, 'findMinMax$', function () {
+Clazz.newMeth(C$, 'findMinMax$',  function () {
 var min=3.4028235E38;
 var max=-3.4028235E38;
 if (this.matrix != null ) {
@@ -69,7 +56,7 @@ max=Math.max(max, f);
 this.maxValue=max;
 });
 
-Clazz.newMeth(C$, 'buildSymbolIndex$CA', function (alphabet) {
+Clazz.newMeth(C$, 'buildSymbolIndex$CA',  function (alphabet) {
 var index=Clazz.array(Short.TYPE, [128]);
 $I$(1).fill$HA$H(index, -1);
 var pos=($s$[0] = 0, $s$[0]);
@@ -80,28 +67,28 @@ index[c.$c()]=pos;
 var lowerCase=($s$[0] = (c.$c() + (32)), $s$[0]);
 if (index[lowerCase] == -1) {
 index[lowerCase]=pos;
-}}($s$[0]=pos,pos=(++$s$[0],$s$[0]));
+}}(($s$[0]=++pos,pos=$s$[0],$s$[0]));
 }
 return index;
 });
 
-Clazz.newMeth(C$, 'getName$', function () {
+Clazz.newMeth(C$, 'getName$',  function () {
 return this.name;
 });
 
-Clazz.newMeth(C$, 'getDescription$', function () {
+Clazz.newMeth(C$, 'getDescription$',  function () {
 return this.description;
 });
 
-Clazz.newMeth(C$, 'isDNA$', function () {
+Clazz.newMeth(C$, 'isDNA$',  function () {
 return !this.peptide;
 });
 
-Clazz.newMeth(C$, 'isProtein$', function () {
+Clazz.newMeth(C$, 'isProtein$',  function () {
 return this.peptide;
 });
 
-Clazz.newMeth(C$, 'getMatrix$', function () {
+Clazz.newMeth(C$, 'getMatrix$',  function () {
 var v=Clazz.array(Float.TYPE, [this.matrix.length, this.matrix.length]);
 for (var i=0; i < this.matrix.length; i++) {
 v[i]=$I$(1).copyOf$FA$I(this.matrix[i], this.matrix[i].length);
@@ -109,19 +96,19 @@ v[i]=$I$(1).copyOf$FA$I(this.matrix[i], this.matrix[i].length);
 return v;
 });
 
-Clazz.newMeth(C$, 'getMatrixIndex$C', function (c) {
+Clazz.newMeth(C$, 'getMatrixIndex$C',  function (c) {
 if (c.$c() < this.symbolIndex.length ) {
 return this.symbolIndex[c.$c()];
 } else {
 return -1;
 }});
 
-Clazz.newMeth(C$, ['getPairwiseScore$C$C','getPairwiseScore$'], function (c, d) {
+Clazz.newMeth(C$, 'getPairwiseScore$C$C',  function (c, d) {
 if (c.$c() >= this.symbolIndex.length ) {
-System.err.println$S(String.format$S$OA("Unexpected character %s in getPairwiseScore", [new Character(c)]));
+System.err.println$S(String.format$S$OA("Unexpected character %s in getPairwiseScore", Clazz.array(java.lang.Object, -1, [Character.valueOf$C(c)])));
 return 0;
 }if (d.$c() >= this.symbolIndex.length ) {
-System.err.println$S(String.format$S$OA("Unexpected character %s in getPairwiseScore", [new Character(d)]));
+System.err.println$S(String.format$S$OA("Unexpected character %s in getPairwiseScore", Clazz.array(java.lang.Object, -1, [Character.valueOf$C(d)])));
 return 0;
 }var cIndex=this.symbolIndex[c.$c()];
 var dIndex=this.symbolIndex[d.$c()];
@@ -130,12 +117,12 @@ return this.matrix[cIndex][dIndex];
 }return c == d ? 1 : this.getMinimumScore$();
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return this.outputMatrix$Z(false);
 });
 
-Clazz.newMeth(C$, 'outputMatrix$Z', function (html) {
-var sb=Clazz.new_($I$(2).c$$I,[512]);
+Clazz.newMeth(C$, 'outputMatrix$Z',  function (html) {
+var sb=Clazz.new_($I$(2,1).c$$I,[512]);
 if (html) {
 sb.append$S("<table border=\"1\">");
 sb.append$S(html ? "<tr><th></th>" : "");
@@ -162,17 +149,17 @@ sb.append$S("</table>");
 }return sb.toString();
 });
 
-Clazz.newMeth(C$, 'getSize$', function () {
+Clazz.newMeth(C$, 'getSize$',  function () {
 return this.symbols.length;
 });
 
-Clazz.newMeth(C$, 'findSimilarities$jalview_datamodel_AlignmentView$jalview_api_analysis_SimilarityParamsI', function (seqstrings, options) {
+Clazz.newMeth(C$, 'findSimilarities$jalview_datamodel_AlignmentView$jalview_api_analysis_SimilarityParamsI',  function (seqstrings, options) {
 var gapChar=C$.scoreGapAsAny ? (seqstrings.isNa$() ? "N" : "X") : "-";
 var seqs=seqstrings.getSequenceStrings$C(gapChar);
 return this.findSimilarities$SA$jalview_api_analysis_SimilarityParamsI(seqs, options);
 });
 
-Clazz.newMeth(C$, 'findSimilarities$SA$jalview_api_analysis_SimilarityParamsI', function (seqs, params) {
+Clazz.newMeth(C$, 'findSimilarities$SA$jalview_api_analysis_SimilarityParamsI',  function (seqs, params) {
 var values=Clazz.array(Double.TYPE, [seqs.length, seqs.length]);
 for (var row=0; row < seqs.length; row++) {
 for (var col=this.symmetric ? row : 0; col < seqs.length; col++) {
@@ -182,10 +169,10 @@ if (this.symmetric) {
 values[col][row]=total;
 }}
 }
-return Clazz.new_($I$(3).c$$DAA,[values]);
+return Clazz.new_($I$(3,1).c$$DAA,[values]);
 });
 
-Clazz.newMeth(C$, 'computeSimilarity$S$S$jalview_api_analysis_SimilarityParamsI', function (seq1, seq2, params) {
+Clazz.newMeth(C$, 'computeSimilarity$S$S$jalview_api_analysis_SimilarityParamsI',  function (seq1, seq2, params) {
 var len1=seq1.length$();
 var len2=seq2.length$();
 var total=0;
@@ -205,12 +192,12 @@ continue;
 if (!params.includeGaps$()) {
 continue;
 }}var score=this.getPairwiseScore$C$C(c1, c2);
-total += score;
+total+=score;
 }
 return total;
 });
 
-Clazz.newMeth(C$, 'hashCode$', function () {
+Clazz.newMeth(C$, 'hashCode$',  function () {
 var hs=$I$(1).hashCode$CA(this.symbols);
 for (var row, $row = 0, $$row = this.matrix; $row<$$row.length&&((row=($$row[$row])),1);$row++) {
 hs=hs * 31 + $I$(1).hashCode$FA(row);
@@ -218,7 +205,7 @@ hs=hs * 31 + $I$(1).hashCode$FA(row);
 return hs;
 });
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!(Clazz.instanceOf(obj, "jalview.analysis.scoremodels.ScoreMatrix"))) {
 return false;
 }var sm=obj;
@@ -227,27 +214,31 @@ return true;
 }return false;
 });
 
-Clazz.newMeth(C$, 'getSymbols$', function () {
+Clazz.newMeth(C$, 'getSymbols$',  function () {
 return  String.instantialize(this.symbols);
 });
 
-Clazz.newMeth(C$, 'getMinimumScore$', function () {
+Clazz.newMeth(C$, 'getMinimumScore$',  function () {
 return this.minValue;
 });
 
-Clazz.newMeth(C$, 'getMaximumScore$', function () {
+Clazz.newMeth(C$, 'getMaximumScore$',  function () {
 return this.maxValue;
 });
 
-Clazz.newMeth(C$, 'getInstance$jalview_api_AlignmentViewPanel', function (avp) {
+Clazz.newMeth(C$, 'getInstance$jalview_api_AlignmentViewPanel',  function (avp) {
 return this;
 });
 
-Clazz.newMeth(C$, 'isSymmetric$', function () {
+Clazz.newMeth(C$, 'isSymmetric$',  function () {
 return this.symmetric;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.scoreGapAsAny=false;
+};
 var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:26 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

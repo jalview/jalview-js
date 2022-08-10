@@ -1,31 +1,32 @@
 (function(){var P$=Clazz.newPackage("jalview.javascript.json"),I$=[];
-var C$=Clazz.newClass(P$, "JSON");
+/*c*/var C$=Clazz.newClass(P$, "JSON");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'setAjax$OA', function (keyValues) {
+Clazz.newMeth(C$, 'setAjax$OA',  function (keyValues) {
 return swingjs.JSUtil.setAjax$OA(keyValues) ||null;
 }, 1);
 
-Clazz.newMeth(C$, 'setAjax$java_net_URL', function (url) {
+Clazz.newMeth(C$, 'setAjax$java_net_URL',  function (url) {
 
 swingjs.JSUtil.setAjax$java_net_URL(url);
 }, 1);
 
-Clazz.newMeth(C$, 'getJSONReader$java_io_InputStream', function (is) {
+Clazz.newMeth(C$, 'getJSONReader$java_io_InputStream',  function (is) {
 return swingjs.JSUtil.getJSONReader$O(is) ||null;
 }, 1);
 
-Clazz.newMeth(C$, 'parse$O', function (obj) {
+Clazz.newMeth(C$, 'parse$O',  function (obj) {
 return swingjs.JSUtil.parseJSON$O(obj) ||null;
 }, 1);
 
-Clazz.newMeth(C$, 'stringify$O', function (obj) {
+Clazz.newMeth(C$, 'stringify$O',  function (obj) {
 return swingjs.JSUtil.stringifyJSON$O(obj) ||null;
 }, 1);
+
+Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:39 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,29 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.M3','javajs.util.A4','javajs.util.Quat','javajs.util.PT','org.jmol.c.STR','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AminoMonomer", null, 'org.jmol.modelsetbio.AlphaMonomer');
-C$.interestingAminoAtomIDs=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'org.jmol.modelsetbio.Monomer','javajs.util.V3','javajs.util.P3','org.jmol.util.Logger','org.jmol.util.Escape','javajs.util.M3','javajs.util.A4','javajs.util.Quat','javajs.util.PT','org.jmol.c.STR','javajs.util.BS']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AminoMonomer", null, 'org.jmol.modelsetbio.AlphaMonomer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.interestingAminoAtomIDs=Clazz.array(Byte.TYPE, -1, [2, ~4, 1, 3, ~64]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nhChecked=false;
-this.ptTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nhChecked=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['nhChecked'],'O',['ptTemp','javajs.util.P3']]
+,['O',['interestingAminoAtomIDs','byte[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'validateAndAllocate$org_jmol_modelset_Chain$S$I$I$I$IA$org_jmol_modelset_AtomA', function (chain, group3, seqcode, firstAtomIndex, lastAtomIndex, specialAtomIndexes, atoms) {
-var offsets=P$.Monomer.scanForOffsets$I$IA$BA(firstAtomIndex, specialAtomIndexes, C$.interestingAminoAtomIDs);
+var offsets=$I$(1).scanForOffsets$I$IA$BA(firstAtomIndex, specialAtomIndexes, C$.interestingAminoAtomIDs);
 if (offsets == null ) return null;
-P$.Monomer.checkOptional$BA$B$I$I(offsets, ($b$[0] = 1, $b$[0]), firstAtomIndex, specialAtomIndexes[5]);
+$I$(1).checkOptional$BA$B$I$I(offsets, 1, firstAtomIndex, specialAtomIndexes[5]);
 if (atoms[firstAtomIndex].isHetero$() && !C$.isBondedCorrectly$I$BA$org_jmol_modelset_AtomA(firstAtomIndex, offsets, atoms) ) return null;
 return Clazz.new_(C$).set2$org_jmol_modelset_Chain$S$I$I$I$BA(chain, group3, seqcode, firstAtomIndex, lastAtomIndex, offsets);
 }, 1);
@@ -35,7 +29,7 @@ return (atomIndex1 != atomIndex2 && atoms[atomIndex1].isBonded$org_jmol_modelset
 }, 1);
 
 Clazz.newMeth(C$, 'isBondedCorrectly$I$BA$org_jmol_modelset_AtomA', function (firstAtomIndex, offsets, atoms) {
-return (C$.isBondedCorrectlyRange$I$I$I$BA$org_jmol_modelset_AtomA(2, 0, firstAtomIndex, offsets, atoms) && C$.isBondedCorrectlyRange$I$I$I$BA$org_jmol_modelset_AtomA(0, 3, firstAtomIndex, offsets, atoms) && (!P$.Monomer.have$BA$B(offsets, ($b$[0] = 1, $b$[0])) || C$.isBondedCorrectlyRange$I$I$I$BA$org_jmol_modelset_AtomA(3, 1, firstAtomIndex, offsets, atoms) )  );
+return (C$.isBondedCorrectlyRange$I$I$I$BA$org_jmol_modelset_AtomA(2, 0, firstAtomIndex, offsets, atoms) && C$.isBondedCorrectlyRange$I$I$I$BA$org_jmol_modelset_AtomA(0, 3, firstAtomIndex, offsets, atoms) && (!$I$(1).have$BA$B(offsets, 1) || C$.isBondedCorrectlyRange$I$I$I$BA$org_jmol_modelset_AtomA(3, 1, firstAtomIndex, offsets, atoms) )  );
 }, 1);
 
 Clazz.newMeth(C$, 'isAminoMonomer$', function () {
@@ -59,11 +53,11 @@ return this.getNitrogenAtom$();
 });
 
 Clazz.newMeth(C$, 'getTerminatorAtom$', function () {
-return this.getAtomFromOffsetIndex$I(P$.Monomer.have$BA$B(this.offsets, ($b$[0] = 4, $b$[0])) ? ($b$[0] = 4, $b$[0]) : ($b$[0] = 3, $b$[0]));
+return this.getAtomFromOffsetIndex$I($I$(1).have$BA$B(this.offsets, 4) ? 4 : 3);
 });
 
 Clazz.newMeth(C$, 'hasOAtom$', function () {
-return P$.Monomer.have$BA$B(this.offsets, ($b$[0] = 1, $b$[0]));
+return $I$(1).have$BA$B(this.offsets, 1);
 });
 
 Clazz.newMeth(C$, 'isConnectedAfter$org_jmol_modelsetbio_Monomer', function (possiblyPreviousMonomer) {
@@ -122,7 +116,7 @@ return true;
 if (jmolHPoint) {
 vNH.sub2$javajs_util_T3$javajs_util_T3(nitrogenPoint, this.getLeadAtom$());
 vNH.normalize$();
-var v=$I$(1).newVsub$javajs_util_T3$javajs_util_T3(nitrogenPoint, prev.getCarbonylCarbonAtom$());
+var v=$I$(2,"newVsub$javajs_util_T3$javajs_util_T3",[nitrogenPoint, prev.getCarbonylCarbonAtom$()]);
 v.normalize$();
 vNH.add$javajs_util_T3(v);
 } else {
@@ -131,8 +125,8 @@ if (oxygen == null ) return false;
 vNH.sub2$javajs_util_T3$javajs_util_T3(prev.getCarbonylCarbonAtom$(), oxygen);
 }vNH.normalize$();
 aminoHydrogenPoint.add2$javajs_util_T3$javajs_util_T3(nitrogenPoint, vNH);
-this.nitrogenHydrogenPoint=$I$(2).newP$javajs_util_T3(aminoHydrogenPoint);
-if ($I$(3).debugging) $I$(3).debug$S("draw ID \"pta" + this.monomerIndex + "_" + nitrogenPoint.i + "\" " + $I$(4).eP$javajs_util_T3(nitrogenPoint) + $I$(4).eP$javajs_util_T3(aminoHydrogenPoint) + " # " + nitrogenPoint );
+this.nitrogenHydrogenPoint=$I$(3).newP$javajs_util_T3(aminoHydrogenPoint);
+if ($I$(4).debugging) $I$(4,"debug$S",["draw ID \"pta" + this.monomerIndex + "_" + nitrogenPoint.i + "\" " + $I$(5).eP$javajs_util_T3(nitrogenPoint) + $I$(5).eP$javajs_util_T3(aminoHydrogenPoint) + " # " + nitrogenPoint ]);
 return true;
 });
 
@@ -153,7 +147,7 @@ return this.getCarbonylCarbonAtom$();
 case 113:
 if (this.monomerIndex == this.bioPolymer.monomerCount - 1) return null;
 var mNext=(this.bioPolymer.monomers[this.monomerIndex + 1]);
-var pt=Clazz.new_($I$(2));
+var pt=Clazz.new_($I$(3,1));
 pt.ave$javajs_util_T3$javajs_util_T3(this.getCarbonylCarbonAtom$(), mNext.getNitrogenAtom$());
 return pt;
 }
@@ -163,19 +157,19 @@ Clazz.newMeth(C$, 'getQuaternion$C', function (qType) {
 if (this.monomerIndex < 0) return null;
 var ptC=this.getCarbonylCarbonAtom$();
 var ptCa=this.getLeadAtom$();
-var vA=Clazz.new_($I$(1));
-var vB=Clazz.new_($I$(1));
+var vA=Clazz.new_($I$(2,1));
+var vB=Clazz.new_($I$(2,1));
 var vC=null;
 switch (qType.$c()) {
 case 97:
 case 110:
 if (this.monomerIndex == 0 || this.groupID == 15 ) return null;
-vC=Clazz.new_($I$(1));
-if (this.ptTemp == null ) this.ptTemp=Clazz.new_($I$(2));
+vC=Clazz.new_($I$(2,1));
+if (this.ptTemp == null ) this.ptTemp=Clazz.new_($I$(3,1));
 this.getNHPoint$javajs_util_P3$javajs_util_V3$Z$Z(this.ptTemp, vC, true, false);
 vB.sub2$javajs_util_T3$javajs_util_T3(ptCa, this.getNitrogenAtom$());
 vB.cross$javajs_util_T3$javajs_util_T3(vC, vB);
-Clazz.new_($I$(5)).setAA$javajs_util_A4($I$(6).newVA$javajs_util_V3$F(vB, -0.29670596)).rotate$javajs_util_T3(vC);
+Clazz.new_($I$(6,1)).setAA$javajs_util_A4($I$(7).newVA$javajs_util_V3$F(vB, -0.29670596)).rotate$javajs_util_T3(vC);
 vA.cross$javajs_util_T3$javajs_util_T3(vB, vC);
 break;
 case 98:
@@ -199,7 +193,7 @@ break;
 default:
 return null;
 }
-return $I$(7).getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z(vA, vB, vC, false);
+return $I$(8).getQuaternionFrameV$javajs_util_V3$javajs_util_V3$javajs_util_V3$Z(vA, vB, vC, false);
 });
 
 Clazz.newMeth(C$, 'getStructureId$', function () {
@@ -210,14 +204,14 @@ return this.proteinStructure.structureID;
 Clazz.newMeth(C$, 'getProteinStructureTag$', function () {
 if (this.proteinStructure == null  || this.proteinStructure.structureID == null  ) return null;
 var tag="%3N %3ID";
-tag=$I$(8).formatStringI$S$S$I(tag, "N", this.proteinStructure.serialID);
-tag=$I$(8).formatStringS$S$S$S(tag, "ID", this.proteinStructure.structureID);
-if (this.proteinStructure.type === $I$(9).SHEET ) tag += $I$(8).formatStringI$S$S$I("%2SC", "SC", this.proteinStructure.strandCount);
+tag=$I$(9).formatStringI$S$S$I(tag, "N", this.proteinStructure.serialID);
+tag=$I$(9).formatStringS$S$S$S(tag, "ID", this.proteinStructure.structureID);
+if (this.proteinStructure.type === $I$(10).SHEET ) tag += $I$(9).formatStringI$S$S$I("%2SC", "SC", this.proteinStructure.strandCount);
 return tag;
 });
 
 Clazz.newMeth(C$, 'getBSSideChain$', function () {
-var bs=Clazz.new_($I$(10));
+var bs=Clazz.new_($I$(11,1));
 this.setAtomBits$javajs_util_BS(bs);
 p$1.clear$javajs_util_BS$org_jmol_modelset_Atom$Z.apply(this, [bs, this.getLeadAtom$(), true]);
 p$1.clear$javajs_util_BS$org_jmol_modelset_Atom$Z.apply(this, [bs, this.getCarbonylCarbonAtom$(), false]);
@@ -235,7 +229,10 @@ var h;
 for (var j=b.length; --j >= 0; ) if ((h=b[j].getOtherAtom$org_jmol_modelset_Atom(a)).getElementNumber$() == 1) bs.clear$I(h.i);
 
 }, p$1);
-var $b$ = new Int8Array(1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.interestingAminoAtomIDs=Clazz.array(Byte.TYPE, -1, [2, ~4, 1, 3, ~64]);
+};
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,44 +1,26 @@
-(function(){var P$=Clazz.newPackage("org.jmol.shapebio"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.shape.Mesh','org.jmol.c.STR','org.jmol.util.Logger','javajs.util.AU','org.jmol.c.PAL','org.jmol.util.C','org.jmol.util.BSUtil','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BioShape", null, 'org.jmol.shape.AtomShape');
+(function(){var P$=Clazz.newPackage("org.jmol.shapebio"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.shape.Mesh','org.jmol.c.STR','org.jmol.util.Logger','javajs.util.AU','org.jmol.c.PAL','org.jmol.util.C','org.jmol.util.BSUtil','javajs.util.PT','org.jmol.shape.Shape']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BioShape", null, 'org.jmol.shape.AtomShape');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.modelIndex=0;
-this.modelVisibilityFlags=0;
-this.shape=null;
-this.bioPolymer=null;
-this.meshes=null;
-this.meshReady=null;
-this.colixesBack=null;
-this.monomers=null;
-this.wingVectors=null;
-this.leadAtomIndices=null;
-this.hasBfactorRange=false;
-this.bfactorMin=0;
-this.bfactorMax=0;
-this.range=0;
-this.floatRange=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.modelVisibilityFlags=0;
 this.hasBfactorRange=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['hasBfactorRange'],'F',['floatRange'],'I',['modelIndex','modelVisibilityFlags','bfactorMin','bfactorMax','range'],'O',['shape','org.jmol.shapebio.BioShapeCollection','bioPolymer','org.jmol.modelsetbio.BioPolymer','meshes','org.jmol.shape.Mesh[]','meshReady','boolean[]','colixesBack','short[]','monomers','org.jmol.modelsetbio.Monomer[]','wingVectors','javajs.util.V3[]','leadAtomIndices','int[]']]]
 
 Clazz.newMeth(C$, 'setProperty$S$O$javajs_util_BS', function (propertyName, value, bsSelected) {
 this.setPropAS$S$O$javajs_util_BS(propertyName, value, bsSelected);
 });
 
 Clazz.newMeth(C$, 'c$$org_jmol_shapebio_BioShapeCollection$I$org_jmol_modelsetbio_BioPolymer', function (shape, modelIndex, bioPolymer) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.shape=shape;
 this.modelIndex=modelIndex;
 this.bioPolymer=bioPolymer;
 this.isActive=shape.isActive;
-this.bsSizeDefault=Clazz.new_($I$(1));
+this.bsSizeDefault=Clazz.new_($I$(1,1));
 this.monomerCount=bioPolymer.monomerCount;
 if (this.monomerCount > 0) {
 this.colixes=Clazz.array(Short.TYPE, [this.monomerCount]);
@@ -74,7 +56,7 @@ this.bioPolymer.findNearestAtomIndex$I$I$org_jmol_modelset_AtomA$HA$I$javajs_uti
 Clazz.newMeth(C$, 'setMad$H$javajs_util_BS$FA', function (mad, bsSelected, values) {
 if (this.monomerCount < 2) return;
 this.isActive=true;
-if (this.bsSizeSet == null ) this.bsSizeSet=Clazz.new_($I$(1));
+if (this.bsSizeSet == null ) this.bsSizeSet=Clazz.new_($I$(1,1));
 var flag=this.shape.vf;
 var setRingVis=(flag == 32768 && Clazz.instanceOf(this.bioPolymer, "org.jmol.modelsetbio.NucleicPolymer") );
 for (var i=this.monomerCount; --i >= 0; ) {
@@ -118,14 +100,14 @@ var bfactor100=atom.getBfactor100$();
 var scaled=bfactor100 - this.bfactorMin;
 if (this.range == 0) return 0;
 var percentile=scaled / this.floatRange;
-if (percentile < 0  || percentile > 1  ) $I$(4).error$S("Que ha ocurrido? " + new Float(percentile).toString());
+if (percentile < 0  || percentile > 1  ) $I$(4,"error$S",["Que ha ocurrido? " + new Float(percentile).toString()]);
 return ($s$[0] = ((1750 * percentile) + 250), $s$[0]);
 }case -4:
 {
 var atom=this.monomers[groupIndex].getLeadAtom$();
 return ($s$[0] = (2 * this.calcMeanPositionalDisplacement$I(atom.getBfactor100$())), $s$[0]);
 }}
-$I$(4).error$S("unrecognized setMad(" + mad + ")" );
+$I$(4,"error$S",["unrecognized setMad(" + mad + ")" ]);
 return $s$[0] = 0, $s$[0];
 }, p$1);
 
@@ -148,9 +130,9 @@ if (this.bsColixSet == null ) this.bsColixSet=$I$(1).newN$I(this.monomerCount);
 for (var i=this.monomerCount; --i >= 0; ) {
 var atomIndex=this.leadAtomIndices[i];
 if (bsSelected.get$I(atomIndex)) {
-this.colixes[i]=this.shape.getColixI$H$B$I(colix, (pid|0), atomIndex);
+this.colixes[i]=this.shape.getColixI$H$B$I(colix, pid, atomIndex);
 if (this.colixesBack != null  && this.colixesBack.length > i ) this.colixesBack[i]=0;
-this.paletteIDs[i]=(pid|0);
+this.paletteIDs[i]=pid;
 this.bsColixSet.setBitTo$I$Z(i, this.colixes[i] != 0);
 }}
 });
@@ -168,9 +150,9 @@ if (this.bsColixSet == null ) this.bsColixSet=$I$(1).newN$I(this.monomerCount);
 for (var i=this.monomerCount; --i >= 0; ) {
 var atomIndex=this.leadAtomIndices[i];
 if (bsSelected.get$I(atomIndex) && i < this.colixes.length  && atomIndex < atomColixes.length ) {
-this.colixes[i]=this.shape.getColixI$H$B$I(atomColixes[atomIndex], ($I$(6).UNKNOWN.id|0), atomIndex);
+this.colixes[i]=this.shape.getColixI$H$B$I(atomColixes[atomIndex], $I$(6).UNKNOWN.id, atomIndex);
 if (this.colixesBack != null  && i < this.colixesBack.length ) this.colixesBack[i]=0;
-this.paletteIDs[i]=($I$(6).UNKNOWN.id|0);
+this.paletteIDs[i]=$I$(6).UNKNOWN.id;
 this.bsColixSet.set$I(i);
 }}
 });
@@ -189,9 +171,9 @@ var pt=atomMap[atomIndex];
 var colix=(c == null  ? 0 : c[pt]);
 var f=(atrans == null  ? 0 : atrans[pt]);
 if (f > 0.01 ) colix=$I$(7).getColixTranslucent3$H$Z$F(colix, true, f);
-this.colixes[i]=this.shape.getColixI$H$B$I(colix, ($I$(6).UNKNOWN.id|0), atomIndex);
+this.colixes[i]=this.shape.getColixI$H$B$I(colix, $I$(6).UNKNOWN.id, atomIndex);
 if (this.colixesBack != null  && i < this.colixesBack.length ) this.colixesBack[i]=(0|0);
-this.paletteIDs[i]=($I$(6).UNKNOWN.id|0);
+this.paletteIDs[i]=$I$(6).UNKNOWN.id;
 this.bsColixSet.set$I(i);
 }}
 });
@@ -228,11 +210,11 @@ var atomIndex1=this.monomers[i].firstAtomIndex;
 var atomIndex2=this.monomers[i].lastAtomIndex;
 if (this.bsSizeSet != null  && (this.bsSizeSet.get$I(i) || this.bsColixSet != null  && this.bsColixSet.get$I(i)  ) ) {
 if (this.bsSizeDefault.get$I(i)) {
-$I$(8).setMapBitSet$java_util_Map$I$I$S(temp, atomIndex1, atomIndex2, type + (this.bsSizeSet.get$I(i) ? " on" : " off"));
+$I$(8,"setMapBitSet$java_util_Map$I$I$S",[temp, atomIndex1, atomIndex2, type + (this.bsSizeSet.get$I(i) ? " on" : " off")]);
 } else {
-$I$(8).setMapBitSet$java_util_Map$I$I$S(temp, atomIndex1, atomIndex2, type + " " + $I$(9).escF$F(this.mads[i] / 2000.0) );
+$I$(8,"setMapBitSet$java_util_Map$I$I$S",[temp, atomIndex1, atomIndex2, type + " " + $I$(9).escF$F(this.mads[i] / 2000.0) ]);
 }}if (this.bsColixSet == null  || !this.bsColixSet.get$I(i) ) continue;
-var s=org.jmol.shape.Shape.getColorCommand$S$B$H$Z(type, ($b$[0] = this.paletteIDs[i], $b$[0]), this.colixes[i], translucentAllowed);
+var s=$I$(10).getColorCommand$S$B$H$Z(type, this.paletteIDs[i], this.colixes[i], translucentAllowed);
 if (this.colixesBack != null  && this.colixesBack.length > i  && this.colixesBack[i] != 0 ) s += " " + $I$(7).getHexCode$H(this.colixesBack[i]);
 $I$(8).setMapBitSet$java_util_Map$I$I$S(temp2, atomIndex1, atomIndex2, s);
 }
@@ -242,8 +224,7 @@ Clazz.newMeth(C$, 'getShapeState$', function () {
 return null;
 });
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:48 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

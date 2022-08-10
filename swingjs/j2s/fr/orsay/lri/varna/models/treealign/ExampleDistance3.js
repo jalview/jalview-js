@@ -1,15 +1,15 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),p$1={},I$=[[0,['fr.orsay.lri.varna.models.treealign.ExampleDistance3','.SequenceAlignResult'],'java.util.ArrayList','Error']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ExampleDistance3", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),p$1={},I$=[[0,['fr.orsay.lri.varna.models.treealign.ExampleDistance3','.SequenceAlignResult'],'java.util.ArrayList','Error']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ExampleDistance3", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'fr.orsay.lri.varna.models.treealign.TreeAlignLabelDistanceSymmetric');
+C$.$classes$=[['SequenceAlignResult',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['f$fr_orsay_lri_varna_models_treealign_RNANodeValue2$fr_orsay_lri_varna_models_treealign_RNANodeValue2','f$','f$TValueType1$TValueType2'], function (v1, v2) {
+Clazz.newMeth(C$, ['f$fr_orsay_lri_varna_models_treealign_RNANodeValue2$fr_orsay_lri_varna_models_treealign_RNANodeValue2','f$O$O'], function (v1, v2) {
 if (v1 == null ) {
 if (v2 == null ) {
 return 0;
@@ -44,7 +44,7 @@ return this.alignSequences$CA$CA(A, B);
 });
 
 Clazz.newMeth(C$, 'alignSequences$CA$CA', function (A, B) {
-var result=Clazz.new_($I$(1), [this, null]);
+var result=Clazz.new_($I$(1,1),[this, null]);
 var la=A.length;
 var lb=B.length;
 var F=Clazz.array(Double.TYPE, [la + 1, lb + 1]);
@@ -81,64 +81,62 @@ return result;
 });
 
 Clazz.newMeth(C$, 'computeAlignment$DAA$IAA$CA$CA', function (F, decisions, A, B) {
-var AlignmentA=Clazz.new_($I$(2).c$$I,[A.length + B.length]);
-var AlignmentB=Clazz.new_($I$(2).c$$I,[A.length + B.length]);
+var AlignmentA=Clazz.new_($I$(2,1).c$$I,[A.length + B.length]);
+var AlignmentB=Clazz.new_($I$(2,1).c$$I,[A.length + B.length]);
 var i=A.length;
 var j=B.length;
 while (i > 0 && j > 0 ){
 var decision=decisions[i][j];
 switch (decision) {
 case 1:
-AlignmentA.add$TE(new Integer(i - 1));
-AlignmentB.add$TE(new Integer(j - 1));
+AlignmentA.add$O(new Integer(i - 1));
+AlignmentB.add$O(new Integer(j - 1));
 i=i - 1;
 j=j - 1;
 break;
 case 2:
-AlignmentA.add$TE(new Integer(i - 1));
-AlignmentB.add$TE(new Integer(-1));
+AlignmentA.add$O(new Integer(i - 1));
+AlignmentB.add$O(new Integer(-1));
 i=i - 1;
 break;
 case 3:
-AlignmentA.add$TE(new Integer(-1));
-AlignmentB.add$TE(new Integer(j - 1));
+AlignmentA.add$O(new Integer(-1));
+AlignmentB.add$O(new Integer(j - 1));
 j=j - 1;
 break;
 default:
-throw (Clazz.new_($I$(3).c$$S,["Bug in ExampleDistance3: decision = " + decision]));
+throw (Clazz.new_(["Bug in ExampleDistance3: decision = " + decision],$I$(3,1).c$$S));
 }
 }
 while (i > 0){
-AlignmentA.add$TE(new Integer(i - 1));
-AlignmentB.add$TE(new Integer(-1));
+AlignmentA.add$O(new Integer(i - 1));
+AlignmentB.add$O(new Integer(-1));
 i=i - 1;
 }
 while (j > 0){
-AlignmentA.add$TE(new Integer(-1));
-AlignmentB.add$TE(new Integer(j - 1));
+AlignmentA.add$O(new Integer(-1));
+AlignmentB.add$O(new Integer(j - 1));
 j=j - 1;
 }
 var l=AlignmentA.size$();
 var result=Clazz.array(Integer.TYPE, [2, l]);
 for (i=0; i < l; i++) {
-result[0][i]=(AlignmentA.get$I(l - 1 - i )).intValue$();
-result[1][i]=(AlignmentB.get$I(l - 1 - i )).intValue$();
+result[0][i]=(AlignmentA.get$I(l - 1 - i )).valueOf();
+result[1][i]=(AlignmentB.get$I(l - 1 - i )).valueOf();
 }
 return result;
 }, p$1);
 ;
-(function(){var C$=Clazz.newClass(P$.ExampleDistance3, "SequenceAlignResult", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.ExampleDistance3, "SequenceAlignResult", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.distance=0;
-this.alignment=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['distance'],'O',['alignment','int[][]']]]
 
 Clazz.newMeth(C$, 'getDistance$', function () {
 return this.distance;
@@ -161,4 +159,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

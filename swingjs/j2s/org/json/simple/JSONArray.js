@@ -1,23 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.json.simple"),I$=[[0,'org.json.simple.JSONValue','java.io.StringWriter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSONArray", null, 'java.util.ArrayList', ['org.json.simple.JSONAware', 'org.json.simple.JSONStreamAware']);
+(function(){var P$=Clazz.newPackage("org.json.simple"),I$=[[0,'org.json.simple.JSONValue','java.io.StringWriter']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSONArray", null, 'java.util.ArrayList', ['org.json.simple.JSONAware', 'org.json.simple.JSONStreamAware']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_Collection',  function (c) {
+;C$.superclazz.c$$java_util_Collection.apply(this,[c]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_util_Collection', function (c) {
-C$.superclazz.c$$java_util_Collection.apply(this, [c]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'writeJSONString$java_util_Collection$java_io_Writer', function (collection, out) {
+Clazz.newMeth(C$, 'writeJSONString$java_util_Collection$java_io_Writer',  function (collection, out) {
 if (collection == null ) {
 out.write$S("null");
 return;
@@ -36,12 +33,12 @@ continue;
 out.write$I("]".$c());
 }, 1);
 
-Clazz.newMeth(C$, ['writeJSONString$java_io_Writer','writeJSONString$'], function (out) {
+Clazz.newMeth(C$, 'writeJSONString$java_io_Writer',  function (out) {
 C$.writeJSONString$java_util_Collection$java_io_Writer(this, out);
 });
 
-Clazz.newMeth(C$, 'toJSONString$java_util_Collection', function (collection) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$java_util_Collection',  function (collection) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$java_util_Collection$java_io_Writer(collection, writer);
 return writer.toString();
@@ -54,7 +51,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$BA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$BA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -69,8 +66,8 @@ out.write$S(String.valueOf$I(array[i]));
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$BA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$BA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$BA$java_io_Writer(array, writer);
 return writer.toString();
@@ -83,7 +80,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$HA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$HA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -98,8 +95,8 @@ out.write$S(String.valueOf$I(array[i]));
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$HA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$HA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$HA$java_io_Writer(array, writer);
 return writer.toString();
@@ -112,7 +109,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$IA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$IA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -127,8 +124,8 @@ out.write$S(String.valueOf$I(array[i]));
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$IA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$IA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$IA$java_io_Writer(array, writer);
 return writer.toString();
@@ -141,7 +138,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$JA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$JA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -156,8 +153,8 @@ out.write$S(String.valueOf$J(array[i]));
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$JA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$JA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$JA$java_io_Writer(array, writer);
 return writer.toString();
@@ -170,7 +167,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$FA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$FA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -185,8 +182,8 @@ out.write$S(String.valueOf$F(array[i]));
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$FA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$FA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$FA$java_io_Writer(array, writer);
 return writer.toString();
@@ -199,7 +196,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$DA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$DA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -214,8 +211,8 @@ out.write$S(String.valueOf$D(array[i]));
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$DA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$DA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$DA$java_io_Writer(array, writer);
 return writer.toString();
@@ -228,7 +225,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$ZA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$ZA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -243,8 +240,8 @@ out.write$S(String.valueOf$Z(array[i]));
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$ZA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$ZA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$ZA$java_io_Writer(array, writer);
 return writer.toString();
@@ -257,7 +254,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$CA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$CA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -272,8 +269,8 @@ out.write$S(String.valueOf$C(array[i]));
 out.write$S("\"]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$CA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$CA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$CA$java_io_Writer(array, writer);
 return writer.toString();
@@ -286,7 +283,7 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'writeJSONString$OA$java_io_Writer', function (array, out) {
+Clazz.newMeth(C$, 'writeJSONString$OA$java_io_Writer',  function (array, out) {
 if (array == null ) {
 out.write$S("null");
 } else if (array.length == 0) {
@@ -301,8 +298,8 @@ $I$(1).writeJSONString$O$java_io_Writer(array[i], out);
 out.write$S("]");
 }}, 1);
 
-Clazz.newMeth(C$, 'toJSONString$OA', function (array) {
-var writer=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'toJSONString$OA',  function (array) {
+var writer=Clazz.new_($I$(2,1));
 try {
 C$.writeJSONString$OA$java_io_Writer(array, writer);
 return writer.toString();
@@ -315,12 +312,12 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'toJSONString$', function () {
+Clazz.newMeth(C$, 'toJSONString$',  function () {
 return C$.toJSONString$java_util_Collection(this);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return this.toJSONString$();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:32 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

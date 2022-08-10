@@ -1,48 +1,29 @@
-(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.api.Interface','org.jmol.g3d.HermiteRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Export3D", null, null, 'org.jmol.api.JmolRendererInterface');
+(function(){var P$=Clazz.newPackage("org.jmol.export"),p$1={},I$=[[0,'javajs.util.P3','org.jmol.api.Interface','org.jmol.g3d.HermiteRenderer']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Export3D", null, null, 'org.jmol.api.JmolRendererInterface');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.exporter=null;
-this.privateKey=0;
-this.gdata=null;
-this.colix=0;
-this.hermite3d=null;
-this.width=0;
-this.height=0;
-this.slab=0;
-this.depth=0;
-this.exportName=null;
-this.webGL=false;
-this.isCartesian=false;
-this.ptA=null;
-this.ptB=null;
-this.ptC=null;
-this.ptD=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.ptA=Clazz.new_($I$(1));
-this.ptB=Clazz.new_($I$(1));
-this.ptC=Clazz.new_($I$(1));
-this.ptD=Clazz.new_($I$(1));
-}, 1);
+this.ptA=Clazz.new_($I$(1,1));
+this.ptB=Clazz.new_($I$(1,1));
+this.ptC=Clazz.new_($I$(1,1));
+this.ptD=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['webGL','isCartesian'],'D',['privateKey'],'I',['width','height','slab','depth'],'H',['colix'],'S',['exportName'],'O',['exporter','org.jmol.export.___Exporter','gdata','org.jmol.util.GData','hermite3d','org.jmol.g3d.HermiteRenderer','ptA','javajs.util.P3','+ptB','+ptC','+ptD']]]
 
 Clazz.newMeth(C$, 'isWebGL$', function () {
 return this.webGL;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'initializeExporter$org_jmol_viewer_Viewer$D$org_jmol_util_GData$java_util_Map', function (vwr, privateKey, gdata, params) {
 this.exportName=params.get$O("type");
 this.webGL=this.exportName.equals$O("JS");
-if ((this.exporter=$I$(2).getOption$S$org_jmol_viewer_Viewer$S("export." + (this.webGL ? "" : "_") + this.exportName + "Exporter" , vwr, "export")) == null ) return null;
+if ((this.exporter=$I$(2,"getOption$S$org_jmol_viewer_Viewer$S",["export." + (this.webGL ? "" : "_") + this.exportName + "Exporter" , vwr, "export"])) == null ) return null;
 this.exporter.export3D=this;
 this.isCartesian=(this.exporter.exportType == 1);
 this.gdata=gdata;
@@ -156,16 +137,16 @@ this.ptD.set$F$F$F(x, y + heightFill, z);
 this.fillQuadrilateral$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z(this.ptA, this.ptB, this.ptC, this.ptD, false);
 });
 
-Clazz.newMeth(C$, 'drawString$S$javajs_awt_Font$I$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, zSlab, bgcolix) {
-if (str != null  && !this.gdata.isClippedZ$I(zSlab) ) this.drawStringNoSlab$S$javajs_awt_Font$I$I$I$H(str, font3d, xBaseline, yBaseline, z, bgcolix);
+Clazz.newMeth(C$, 'drawString$S$org_jmol_util_Font$I$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, zSlab, bgcolix) {
+if (str != null  && !this.gdata.isClippedZ$I(zSlab) ) this.drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H(str, font3d, xBaseline, yBaseline, z, bgcolix);
 });
 
-Clazz.newMeth(C$, 'drawStringNoSlab$S$javajs_awt_Font$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, bgcolix) {
+Clazz.newMeth(C$, 'drawStringNoSlab$S$org_jmol_util_Font$I$I$I$H', function (str, font3d, xBaseline, yBaseline, z, bgcolix) {
 if (str == null ) return;
 z=Math.max(this.slab, z);
 if (font3d == null ) font3d=this.gdata.getFont3DCurrent$();
- else this.gdata.setFont$javajs_awt_Font(font3d);
-this.exporter.plotText$I$I$I$H$S$javajs_awt_Font(xBaseline, yBaseline, z, this.colix, str, font3d);
+ else this.gdata.setFont$org_jmol_util_Font(font3d);
+this.exporter.plotText$I$I$I$H$S$org_jmol_util_Font(xBaseline, yBaseline, z, this.colix, str, font3d);
 });
 
 Clazz.newMeth(C$, 'drawImage$O$I$I$I$I$H$I$I', function (objImage, x, y, z, zSlab, bgcolix, width, height) {
@@ -199,60 +180,60 @@ this.exporter.drawPixel$H$I$I$I$I(this.colix, x, y, z, scale);
 });
 
 Clazz.newMeth(C$, 'drawDashedLineBits$I$I$javajs_util_P3$javajs_util_P3', function (run, rise, pointA, pointB) {
-this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, ($b$[0] = 2, $b$[0]), this.exporter.lineWidthMad, pointA, pointB);
+this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, 2, this.exporter.lineWidthMad, pointA, pointB);
 });
 
 Clazz.newMeth(C$, 'drawLineXYZ$I$I$I$I$I$I', function (x1, y1, z1, x2, y2, z2) {
 this.ptA.set$F$F$F(x1, y1, z1);
 this.ptB.set$F$F$F(x2, y2, z2);
-this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, ($b$[0] = 2, $b$[0]), this.exporter.lineWidthMad, this.ptA, this.ptB);
+this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, 2, this.exporter.lineWidthMad, this.ptA, this.ptB);
 });
 
 Clazz.newMeth(C$, 'drawLine$H$H$I$I$I$I$I$I', function (colixA, colixB, xA, yA, zA, xB, yB, zB) {
-this.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, ($b$[0] = 2, $b$[0]), this.exporter.lineWidthMad, xA, yA, zA, xB, yB, zB);
+this.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, 2, this.exporter.lineWidthMad, xA, yA, zA, xB, yB, zB);
 });
 
 Clazz.newMeth(C$, 'drawLineBits$H$H$javajs_util_P3$javajs_util_P3', function (colixA, colixB, pointA, pointB) {
-this.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixA, colixB, ($b$[0] = 2, $b$[0]), this.exporter.lineWidthMad, pointA, pointB);
+this.fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3(colixA, colixB, 2, this.exporter.lineWidthMad, pointA, pointB);
 });
 
 Clazz.newMeth(C$, 'drawLineAB$javajs_util_P3$javajs_util_P3', function (pointA, pointB) {
-this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, ($b$[0] = 2, $b$[0]), this.exporter.lineWidthMad, pointA, pointB);
+this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, 2, this.exporter.lineWidthMad, pointA, pointB);
 });
 
 Clazz.newMeth(C$, 'drawBond$javajs_util_P3$javajs_util_P3$H$H$B$H$I', function (atomA, atomB, colixA, colixB, endcaps, mad, bondOrder) {
 if (mad == 1) mad=this.exporter.lineWidthMad;
-this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(atomA, atomB, colixA, colixB, ($b$[0] = endcaps, $b$[0]), mad, bondOrder);
+this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(atomA, atomB, colixA, colixB, endcaps, mad, bondOrder);
 });
 
 Clazz.newMeth(C$, 'fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I', function (colixA, colixB, endcaps, mad, xA, yA, zA, xB, yB, zB) {
 this.ptA.set$F$F$F(xA, yA, zA);
 this.ptB.set$F$F$F(xB, yB, zB);
-this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(this.ptA, this.ptB, colixA, colixB, ($b$[0] = endcaps, $b$[0]), mad, 1);
+this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(this.ptA, this.ptB, colixA, colixB, endcaps, mad, 1);
 });
 
 Clazz.newMeth(C$, 'fillCylinderScreen3I$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F', function (endcaps, diameter, pointA, pointB, pt0f, pt1f, radius) {
 if (diameter <= 0) return;
-this.exporter.fillCylinderScreen$H$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(this.colix, ($b$[0] = endcaps, $b$[0]), diameter, pointA, pointB, pt0f, pt1f, radius);
+this.exporter.fillCylinderScreen$H$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(this.colix, endcaps, diameter, pointA, pointB, pt0f, pt1f, radius);
 });
 
 Clazz.newMeth(C$, 'fillCylinder$B$I$javajs_util_P3i$javajs_util_P3i', function (endcaps, diameter, pointA, pointB) {
 if (diameter <= 0) return;
 this.ptA.set$F$F$F(pointA.x, pointA.y, pointA.z);
 this.ptB.set$F$F$F(pointB.x, pointB.y, pointB.z);
-this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, ($b$[0] = endcaps, $b$[0]), diameter, this.ptA, this.ptB);
+this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, endcaps, diameter, this.ptA, this.ptB);
 });
 
 Clazz.newMeth(C$, 'fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3', function (endcaps, diameter, pointA, pointB) {
 if (diameter <= 0) return;
 if (this.isCartesian) {
-this.exporter.fillCylinderScreen$H$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(this.colix, ($b$[0] = endcaps, $b$[0]), diameter, pointA, pointB, null, null, 0);
+this.exporter.fillCylinderScreen$H$B$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$F(this.colix, endcaps, diameter, pointA, pointB, null, null, 0);
 } else {
-this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, ($b$[0] = endcaps, $b$[0]), diameter, pointA, pointB);
+this.exporter.fillCylinderScreenMad$H$B$I$javajs_util_P3$javajs_util_P3(this.colix, endcaps, diameter, pointA, pointB);
 }});
 
 Clazz.newMeth(C$, 'fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z', function (endcap, screenDiameter, pointBase, screenTip, isBarb) {
-this.exporter.fillConeScreen$H$B$I$javajs_util_P3$javajs_util_P3$Z(this.colix, ($b$[0] = endcap, $b$[0]), screenDiameter, pointBase, screenTip, isBarb);
+this.exporter.fillConeScreen$H$B$I$javajs_util_P3$javajs_util_P3$Z(this.colix, endcap, screenDiameter, pointBase, screenTip, isBarb);
 });
 
 Clazz.newMeth(C$, 'drawHermite4$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (tension, s0, s1, s2, s3) {
@@ -270,11 +251,11 @@ if ((check & 4) == 4) this.drawLine$H$H$I$I$I$I$I$I(colixA, colixC, screenA.x, s
 });
 
 Clazz.newMeth(C$, 'drawLineBits$javajs_util_P3$javajs_util_P3$H$H', function (screenA, screenB, colixA, colixB) {
-this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(screenA, screenB, colixA, colixB, ($b$[0] = 2, $b$[0]), this.exporter.lineWidthMad, 1);
+this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(screenA, screenB, colixA, colixB, 2, this.exporter.lineWidthMad, 1);
 });
 
 Clazz.newMeth(C$, 'fillCylinderBits2$H$H$B$I$javajs_util_P3$javajs_util_P3', function (colixA, colixB, endcaps, mad, screenA, screenB) {
-this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(screenA, screenB, colixA, colixB, ($b$[0] = endcaps, $b$[0]), mad, 1);
+this.exporter.drawCylinder$javajs_util_P3$javajs_util_P3$H$H$B$I$I(screenA, screenB, colixA, colixB, endcaps, mad, 1);
 });
 
 Clazz.newMeth(C$, 'fillTriangle3CNBits$javajs_util_P3$H$H$javajs_util_P3$H$H$javajs_util_P3$H$H$Z', function (pA, colixA, nA, pB, colixB, nB, pC, colixC, nC, twoSided) {
@@ -368,7 +349,7 @@ Clazz.newMeth(C$, 'volumeRender$Z', function (TF) {
 });
 
 Clazz.newMeth(C$, 'addRenderer$I', function (tok) {
-if (tok == 553648146) this.hermite3d=Clazz.new_($I$(3)).set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData(this, this.gdata);
+if (tok == 553648145) this.hermite3d=Clazz.new_($I$(3,1)).set$org_jmol_api_JmolRendererInterface$org_jmol_util_GData(this, this.gdata);
 });
 
 Clazz.newMeth(C$, 'plotImagePixel$I$I$I$I$B$I$I$I$IA$O$I', function (argb, x, y, z, shade, bgargb, width, height, pbuf, p, transpLog) {
@@ -396,6 +377,5 @@ if (this.webGL) {
 return;
 }this.gdata.renderAllStrings$O(this);
 });
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:33 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

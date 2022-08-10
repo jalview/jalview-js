@@ -1,16 +1,14 @@
-(function(){var P$=Clazz.newPackage("org.jmol.api"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Interface");
+(function(){var P$=Clazz.newPackage("org.jmol.api"),I$=[[0,'org.jmol.util.Logger']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Interface");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getInterface$S$org_jmol_viewer_Viewer$S', function (name, vwr, state) {
 try {
-var x=null;
-x=Clazz.forName(name);
+var x=Clazz.forName(name);
 return (x == null  ? null : x.newInstance$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -36,4 +34,4 @@ return C$.getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.symmetry.Symmetry", 
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:29 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

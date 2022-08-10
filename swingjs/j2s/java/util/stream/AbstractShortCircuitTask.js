@@ -1,31 +1,24 @@
-(function(){var P$=Clazz.newPackage("java.util.stream"),I$=[[0,'java.util.concurrent.atomic.AtomicReference']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractShortCircuitTask", null, 'java.util.stream.AbstractTask');
+(function(){var P$=Clazz.newPackage("java.util.stream"),I$=[[0,'java.util.concurrent.atomic.AtomicReference']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractShortCircuitTask", null, 'java.util.stream.AbstractTask');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sharedResult=null;
-this.canceled=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['Z',['canceled'],'O',['sharedResult','java.util.concurrent.atomic.AtomicReference']]]
+
+Clazz.newMeth(C$, 'c$$java_util_stream_PipelineHelper$java_util_Spliterator',  function (helper, spliterator) {
+;C$.superclazz.c$$java_util_stream_PipelineHelper$java_util_Spliterator.apply(this,[helper, spliterator]);C$.$init$.apply(this);
+this.sharedResult=Clazz.new_($I$(1,1).c$$O,[null]);
 }, 1);
 
-Clazz.newMeth(C$, ['c$$java_util_stream_PipelineHelper$java_util_Spliterator','c$null'], function (helper, spliterator) {
-C$.superclazz.c$$java_util_stream_PipelineHelper$java_util_Spliterator.apply(this, [helper, spliterator]);
-C$.$init$.apply(this);
-this.sharedResult=Clazz.new_($I$(1).c$$TV,[null]);
-}, 1);
-
-Clazz.newMeth(C$, ['c$$TK$java_util_Spliterator'], function (parent, spliterator) {
-C$.superclazz.c$$TK$java_util_Spliterator.apply(this, [parent, spliterator]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_util_stream_AbstractShortCircuitTask$java_util_Spliterator',  function (parent, spliterator) {
+;C$.superclazz.c$$java_util_stream_AbstractTask$java_util_Spliterator.apply(this,[parent, spliterator]);C$.$init$.apply(this);
 this.sharedResult=parent.sharedResult;
 }, 1);
 
-Clazz.newMeth(C$, 'compute$', function () {
+Clazz.newMeth(C$, 'compute$',  function () {
 var rs=this.spliterator;
 var ls;
 var sizeEstimate=rs.estimateSize$();
@@ -38,7 +31,7 @@ while ((result=sr.get$()) == null ){
 if (task.taskCanceled$()) {
 result=task.getEmptyResult$();
 break;
-}if (sizeEstimate <= sizeThreshold || (ls=rs.trySplit$()) == null  ) {
+}if (Long.$le(sizeEstimate,sizeThreshold ) || (ls=rs.trySplit$()) == null  ) {
 result=task.doLeaf$();
 break;
 }var leftChild;
@@ -59,36 +52,36 @@ taskToFork=leftChild;
 }taskToFork.fork$();
 sizeEstimate=rs.estimateSize$();
 }
-task.setLocalResult$TR(result);
+task.setLocalResult$O(result);
 task.tryComplete$();
 });
 
-Clazz.newMeth(C$, ['shortCircuit$TR'], function (result) {
-if (result != null ) this.sharedResult.compareAndSet$TV$TV(null, result);
+Clazz.newMeth(C$, 'shortCircuit$O',  function (result) {
+if (result != null ) this.sharedResult.compareAndSet$O$O(null, result);
 });
 
-Clazz.newMeth(C$, ['setLocalResult$TR'], function (localResult) {
+Clazz.newMeth(C$, 'setLocalResult$O',  function (localResult) {
 if (this.isRoot$()) {
-if (localResult != null ) this.sharedResult.compareAndSet$TV$TV(null, localResult);
-} else C$.superclazz.prototype.setLocalResult$TR.apply(this, [localResult]);
+if (localResult != null ) this.sharedResult.compareAndSet$O$O(null, localResult);
+} else C$.superclazz.prototype.setLocalResult$O.apply(this, [localResult]);
 });
 
-Clazz.newMeth(C$, 'getRawResult$', function () {
+Clazz.newMeth(C$, 'getRawResult$',  function () {
 return this.getLocalResult$();
 });
 
-Clazz.newMeth(C$, 'getLocalResult$', function () {
+Clazz.newMeth(C$, 'getLocalResult$',  function () {
 if (this.isRoot$()) {
 var answer=this.sharedResult.get$();
 return (answer == null ) ? this.getEmptyResult$() : answer;
 } else return C$.superclazz.prototype.getLocalResult$.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'cancel$', function () {
+Clazz.newMeth(C$, 'cancel$',  function () {
 this.canceled=true;
 });
 
-Clazz.newMeth(C$, 'taskCanceled$', function () {
+Clazz.newMeth(C$, 'taskCanceled$',  function () {
 var cancel=this.canceled;
 if (!cancel) {
 for (var parent=this.getParent$(); !cancel && parent != null  ; parent=parent.getParent$()) cancel=parent.canceled;
@@ -96,7 +89,7 @@ for (var parent=this.getParent$(); !cancel && parent != null  ; parent=parent.ge
 }return cancel;
 });
 
-Clazz.newMeth(C$, 'cancelLaterNodes$', function () {
+Clazz.newMeth(C$, 'cancelLaterNodes$',  function () {
 for (var parent=this.getParent$(), node=this; parent != null ; node=parent, parent=parent.getParent$()) {
 if (parent.leftChild === node ) {
 var rightSibling=parent.rightChild;
@@ -106,4 +99,4 @@ if (!rightSibling.canceled) rightSibling.cancel$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:21 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

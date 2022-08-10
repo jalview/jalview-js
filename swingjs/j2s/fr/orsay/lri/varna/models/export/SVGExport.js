@@ -1,25 +1,18 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),p$1={},I$=[[0,['java.awt.geom.Rectangle2D','.Double'],['java.awt.geom.Point2D','.Double']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SVGExport", null, 'fr.orsay.lri.varna.models.export.SecStrDrawingProducer');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),p$1={},I$=[[0,['java.awt.geom.Rectangle2D','.Double'],['java.awt.geom.Point2D','.Double']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SVGExport", null, 'fr.orsay.lri.varna.models.export.SecStrDrawingProducer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.$_fontsize=0;
-this._bb=null;
-this._thickness=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.$_fontsize=10.0;
-this._bb=Clazz.new_($I$(1).c$$D$D$D$D,[0, 0, 10, 10]);
+this._bb=Clazz.new_($I$(1,1).c$$D$D$D$D,[0, 0, 10, 10]);
 this._thickness=2.0;
-}, 1);
+},1);
+
+C$.$fields$=[['D',['$_fontsize','_thickness'],'O',['_bb','java.awt.geom.Rectangle2D.Double']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 C$.superclazz.prototype.setScale$D.apply(this, [0.5]);
 }, 1);
 
@@ -70,7 +63,7 @@ return "";
 
 Clazz.newMeth(C$, 'polarToCartesian$java_awt_geom_Point2D_Double$D$D$D', function (center, radiusX, radiusY, angleInDegrees) {
 var angleInRadians=(angleInDegrees) * 3.141592653589793 / 180.0;
-return Clazz.new_($I$(2).c$$D$D,[center.x + (radiusX * Math.cos(angleInRadians)), this._bb.height - (center.y + (radiusY * Math.sin(angleInRadians)))]);
+return Clazz.new_([center.x + (radiusX * Math.cos(angleInRadians)), this._bb.height - (center.y + (radiusY * Math.sin(angleInRadians)))],$I$(2,1).c$$D$D);
 }, p$1);
 
 Clazz.newMeth(C$, 'drawArcS$java_awt_geom_Point2D_Double$D$D$D$D', function (o, width, height, startAngle, endAngle) {
@@ -130,4 +123,4 @@ Clazz.newMeth(C$, 'drawBackboneEndS$I', function (index) {
 return "";
 });
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

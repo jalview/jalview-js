@@ -1,71 +1,21 @@
-(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.api.Interface','javajs.util.T3','javajs.util.AU','javajs.util.P3','org.jmol.util.C','org.jmol.util.TempArray','org.jmol.util.Geodesic','javajs.util.V3','org.jmol.util.BoxInfo']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MeshSurface");
+(function(){var P$=Clazz.newPackage("org.jmol.util"),I$=[[0,'org.jmol.api.Interface','javajs.util.T3','javajs.util.AU','javajs.util.P3','org.jmol.util.C','org.jmol.util.TempArray','org.jmol.util.Geodesic','javajs.util.V3','org.jmol.util.BoxInfo']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MeshSurface");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.slicer=null;
-this.oabc=null;
-this.meshType=null;
-this.vc=0;
-this.vs=null;
-this.vvs=null;
-this.vertexSource=null;
-this.surfaceAtoms=null;
-this.pc=0;
-this.pis=null;
-this.colorsExplicit=false;
-this.isDrawPolygon=false;
-this.haveQuads=false;
-this.colix=0;
-this.colixBack=0;
-this.isColorSolid=false;
-this.offset=null;
-this.altVertices=null;
-this.pcs=null;
-this.vcs=null;
-this.normals=null;
-this.normalsTemp=null;
-this.normalCount=0;
-this.normixCount=0;
-this.bsPolygons=null;
-this.mat4=null;
-this.surfaceSet=null;
-this.vertexSets=null;
-this.nSets=0;
-this.dataOnly=false;
-this.lastColor=0;
-this.lastColix=0;
-this.iA=0;
-this.iB=0;
-this.iC=0;
-this.polygonCount0=0;
-this.vertexCount0=0;
-this.bsSlabDisplay=null;
-this.bsSlabGhost=null;
-this.slabMeshType=0;
-this.slabColix=0;
-this.bsDisplay=null;
-this.slabOptions=null;
-this.mergeVertexCount0=0;
-this.mergePolygonCount0=0;
-this.isMerged=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isColorSolid=true;
 this.nSets=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['colorsExplicit','isDrawPolygon','haveQuads','isColorSolid','dataOnly','isMerged'],'I',['vc','pc','normalCount','normixCount','nSets','lastColor','iA','iB','iC','polygonCount0','vertexCount0','slabMeshType','mergeVertexCount0','mergePolygonCount0'],'H',['colix','colixBack','lastColix','slabColix'],'S',['meshType'],'O',['vwr','org.jmol.viewer.Viewer','slicer','org.jmol.util.MeshSlicer','oabc','javajs.util.V3[]','vs','javajs.util.T3[]','vvs','float[]','vertexSource','int[]','surfaceAtoms','javajs.util.BS','pis','int[][]','offset','javajs.util.P3','altVertices','javajs.util.T3[]','pcs','short[]','+vcs','normals','javajs.util.T3[]','normalsTemp','javajs.util.V3[]','bsPolygons','javajs.util.BS','mat4','javajs.util.M4','surfaceSet','javajs.util.BS[]','vertexSets','int[]','bsSlabDisplay','javajs.util.BS','+bsSlabGhost','+bsDisplay','slabOptions','javajs.util.SB']]]
 
 Clazz.newMeth(C$, 'getMeshSlicer$', function () {
 return (this.slicer == null  ? this.slicer=($I$(1).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.util.MeshSlicer", this.vwr, "script")).set$org_jmol_util_MeshSurface(this) : this.slicer);
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'newMesh$Z$javajs_util_T3A$I$IAA$javajs_util_T3A$I', function (isAlt, vertices, vertexCount, polygonIndexes, normals, nNormals) {
@@ -142,7 +92,7 @@ if (this.pcs == null ) {
 this.pcs=Clazz.array(Short.TYPE, [25]);
 } else if (this.pc >= this.pcs.length) {
 this.pcs=$I$(3).doubleLengthShort$HA(this.pcs);
-}this.pcs[this.pc]=(isExplicit ? (2047|0) : color == this.lastColor ? this.lastColix : (this.lastColix=$I$(5).getColix$I(this.lastColor=color)));
+}this.pcs[this.pc]=(isExplicit ? (2047|0) : color == this.lastColor ? this.lastColix : (this.lastColix=$I$(5,"getColix$I",[this.lastColor=color])));
 }}return this.addPolygon$IA$javajs_util_BS(polygon, bs);
 });
 
@@ -237,4 +187,4 @@ var factor=(ra < rb  ? 1 : -1);
 return (((q) + factor * Math.sqrt(q * q + p)) / 2);
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:52 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

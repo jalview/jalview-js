@@ -1,19 +1,10 @@
 (function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.treealign"),I$=[];
-var C$=Clazz.newClass(P$, "RNANodeValue", function(){
+/*c*/var C$=Clazz.newClass(P$, "RNANodeValue", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'fr.orsay.lri.varna.models.treealign.GraphvizDrawableNodeValue');
+C$.$classes$=[['Origin',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.leftBasePosition=0;
-this.rightBasePosition=0;
-this.leftNucleotide=null;
-this.rightNucleotide=null;
-this.origin=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.leftBasePosition=-1;
@@ -21,7 +12,9 @@ this.rightBasePosition=-1;
 this.leftNucleotide="_";
 this.rightNucleotide="_";
 this.origin=null;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['leftBasePosition','rightBasePosition'],'S',['leftNucleotide','rightNucleotide'],'O',['origin','fr.orsay.lri.varna.models.treealign.RNANodeValue.Origin']]]
 
 Clazz.newMeth(C$, 'getOrigin$', function () {
 return this.origin;
@@ -89,20 +82,22 @@ return Integer.toString$I(this.leftBasePosition);
 return "(" + this.leftBasePosition + "," + this.rightBasePosition + ")" ;
 }});
 ;
-(function(){var C$=Clazz.newClass(P$.RNANodeValue, "Origin", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.RNANodeValue, "Origin", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "BASE_PAIR_FROM_HELIX", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "BASE_FROM_HELIX_STRAND5", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "BASE_FROM_HELIX_STRAND3", 2, []);
 Clazz.newEnumConst($vals, C$.c$, "BASE_FROM_UNPAIRED_REGION", 3, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -112,4 +107,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

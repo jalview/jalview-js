@@ -1,31 +1,24 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'sun.awt.image.ImageConsumerQueue','sun.awt.image.ImageFetcher','Thread']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "InputStreamImageSource", null, null, ['java.awt.image.ImageProducer', 'sun.awt.image.ImageFetchable']);
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'sun.awt.image.ImageConsumerQueue','sun.awt.image.ImageFetcher','Thread']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "InputStreamImageSource", null, null, ['java.awt.image.ImageProducer', 'sun.awt.image.ImageFetchable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.consumers=null;
-this.decoder=null;
-this.decoders=null;
-this.awaitingFetch=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.awaitingFetch=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'countConsumers$sun_awt_image_ImageConsumerQueue', function (cq) {
+C$.$fields$=[['Z',['awaitingFetch'],'O',['consumers','sun.awt.image.ImageConsumerQueue','decoder','sun.awt.image.ImageDecoder','+decoders']]]
+
+Clazz.newMeth(C$, 'countConsumers$sun_awt_image_ImageConsumerQueue',  function (cq) {
 var i=0;
 while (cq != null ){
-i++;
+++i;
 cq=cq.next;
 }
 return i;
 });
 
-Clazz.newMeth(C$, 'countConsumers$', function () {
+Clazz.newMeth(C$, 'countConsumers$',  function () {
 var id=this.decoders;
 var i=this.countConsumers$sun_awt_image_ImageConsumerQueue(this.consumers);
 while (id != null ){
@@ -35,18 +28,18 @@ id=id.next;
 return i;
 });
 
-Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer',  function (ic) {
 this.addConsumer$java_awt_image_ImageConsumer$Z(ic, false);
 });
 
-Clazz.newMeth(C$, 'printQueue$sun_awt_image_ImageConsumerQueue$S', function (cq, prefix) {
+Clazz.newMeth(C$, 'printQueue$sun_awt_image_ImageConsumerQueue$S',  function (cq, prefix) {
 while (cq != null ){
 System.out.println$S(prefix + cq);
 cq=cq.next;
 }
 });
 
-Clazz.newMeth(C$, 'printQueues$S', function (title) {
+Clazz.newMeth(C$, 'printQueues$S',  function (title) {
 System.out.println$S(title + "[ -----------");
 this.printQueue$sun_awt_image_ImageConsumerQueue$S(this.consumers, "  ");
 for (var id=this.decoders; id != null ; id=id.next) {
@@ -56,7 +49,7 @@ this.printQueue$sun_awt_image_ImageConsumerQueue$S(id.queue, "      ");
 System.out.println$S("----------- ]" + title);
 });
 
-Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer$Z', function (ic, produce) {
+Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer$Z',  function (ic, produce) {
 for (var id=this.decoders; id != null ; id=id.next) {
 if (id.isConsumer$java_awt_image_ImageConsumer(ic)) {
 return;
@@ -66,7 +59,7 @@ while (cq != null  && cq.consumer !== ic  ){
 cq=cq.next;
 }
 if (cq == null ) {
-cq=Clazz.new_($I$(1).c$$sun_awt_image_InputStreamImageSource$java_awt_image_ImageConsumer,[this, ic]);
+cq=Clazz.new_($I$(1,1).c$$sun_awt_image_InputStreamImageSource$java_awt_image_ImageConsumer,[this, ic]);
 cq.next=this.consumers;
 this.consumers=cq;
 } else {
@@ -85,7 +78,7 @@ throw Clazz.new_(Clazz.load('SecurityException').c$$S,["Applets are trading imag
 p$1.startProduction.apply(this, []);
 }});
 
-Clazz.newMeth(C$, 'isConsumer$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'isConsumer$java_awt_image_ImageConsumer',  function (ic) {
 for (var id=this.decoders; id != null ; id=id.next) {
 if (id.isConsumer$java_awt_image_ImageConsumer(ic)) {
 return true;
@@ -93,7 +86,7 @@ return true;
 return $I$(1).isConsumer$sun_awt_image_ImageConsumerQueue$java_awt_image_ImageConsumer(this.consumers, ic);
 });
 
-Clazz.newMeth(C$, 'errorAllConsumers$sun_awt_image_ImageConsumerQueue$Z', function (cq, needReload) {
+Clazz.newMeth(C$, 'errorAllConsumers$sun_awt_image_ImageConsumerQueue$Z',  function (cq, needReload) {
 while (cq != null ){
 if (cq.interested) {
 p$1.errorConsumer$sun_awt_image_ImageConsumerQueue$Z.apply(this, [cq, needReload]);
@@ -101,40 +94,40 @@ p$1.errorConsumer$sun_awt_image_ImageConsumerQueue$Z.apply(this, [cq, needReload
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'errorConsumer$sun_awt_image_ImageConsumerQueue$Z', function (cq, needReload) {
+Clazz.newMeth(C$, 'errorConsumer$sun_awt_image_ImageConsumerQueue$Z',  function (cq, needReload) {
 cq.consumer.imageComplete$I(1);
 this.removeConsumer$java_awt_image_ImageConsumer(cq.consumer);
 }, p$1);
 
-Clazz.newMeth(C$, 'removeConsumer$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'removeConsumer$java_awt_image_ImageConsumer',  function (ic) {
 for (var id=this.decoders; id != null ; id=id.next) {
 id.removeConsumer$java_awt_image_ImageConsumer(ic);
 }
 this.consumers=$I$(1).removeConsumer$sun_awt_image_ImageConsumerQueue$java_awt_image_ImageConsumer$Z(this.consumers, ic, false);
 });
 
-Clazz.newMeth(C$, 'startProduction$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'startProduction$java_awt_image_ImageConsumer',  function (ic) {
 this.addConsumer$java_awt_image_ImageConsumer$Z(ic, true);
 });
 
-Clazz.newMeth(C$, 'startProduction', function () {
+Clazz.newMeth(C$, 'startProduction',  function () {
 if (!this.awaitingFetch) {
 $I$(2).add$sun_awt_image_ImageFetchable(this);
 this.awaitingFetch=true;
 }}, p$1);
 
-Clazz.newMeth(C$, 'requestTopDownLeftRightResend$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'requestTopDownLeftRightResend$java_awt_image_ImageConsumer',  function (ic) {
 });
 
-Clazz.newMeth(C$, 'decoderForType$java_io_InputStream$S', function (is, content_type) {
+Clazz.newMeth(C$, 'decoderForType$java_io_InputStream$S',  function (is, content_type) {
 return null;
 });
 
-Clazz.newMeth(C$, 'getDecoder$java_io_InputStream', function (is) {
+Clazz.newMeth(C$, 'getDecoder$java_io_InputStream',  function (is) {
 return null;
 });
 
-Clazz.newMeth(C$, 'doFetch$', function () {
+Clazz.newMeth(C$, 'doFetch$',  function () {
 {
 if (this.consumers == null ) {
 this.awaitingFetch=false;
@@ -169,7 +162,7 @@ p$1.errorAllConsumers$sun_awt_image_ImageConsumerQueue$Z.apply(this, [imgd.queue
 }}
 }});
 
-Clazz.newMeth(C$, 'badDecoder', function () {
+Clazz.newMeth(C$, 'badDecoder',  function () {
 var cq;
 {
 cq=this.consumers;
@@ -178,7 +171,7 @@ this.awaitingFetch=false;
 }p$1.errorAllConsumers$sun_awt_image_ImageConsumerQueue$Z.apply(this, [cq, false]);
 }, p$1);
 
-Clazz.newMeth(C$, 'setDecoder$sun_awt_image_ImageDecoder', function (mydecoder) {
+Clazz.newMeth(C$, 'setDecoder$sun_awt_image_ImageDecoder',  function (mydecoder) {
 var cq;
 {
 mydecoder.next=this.decoders;
@@ -190,7 +183,7 @@ this.consumers=null;
 this.awaitingFetch=false;
 }}, p$1);
 
-Clazz.newMeth(C$, 'removeDecoder$sun_awt_image_ImageDecoder', function (mydecoder) {
+Clazz.newMeth(C$, 'removeDecoder$sun_awt_image_ImageDecoder',  function (mydecoder) {
 this.doneDecoding$sun_awt_image_ImageDecoder(mydecoder);
 var idprev=null;
 for (var id=this.decoders; id != null ; id=id.next) {
@@ -204,21 +197,21 @@ idprev.next=id.next;
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'doneDecoding$sun_awt_image_ImageDecoder', function (mydecoder) {
+Clazz.newMeth(C$, 'doneDecoding$sun_awt_image_ImageDecoder',  function (mydecoder) {
 if (this.decoder === mydecoder ) {
 this.decoder=null;
 if (this.consumers != null ) {
 p$1.startProduction.apply(this, []);
 }}});
 
-Clazz.newMeth(C$, 'latchConsumers$sun_awt_image_ImageDecoder', function (id) {
+Clazz.newMeth(C$, 'latchConsumers$sun_awt_image_ImageDecoder',  function (id) {
 this.doneDecoding$sun_awt_image_ImageDecoder(id);
 });
 
-Clazz.newMeth(C$, 'flush$', function () {
+Clazz.newMeth(C$, 'flush$',  function () {
 this.decoder=null;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:03 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,29 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.CU','javajs.util.P4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Pmesh4Reader", null, 'org.jmol.jvxl.readers.PolygonFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.CU','javajs.util.P4']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Pmesh4Reader", null, 'org.jmol.jvxl.readers.PolygonFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nPolygons=0;
-this.pmeshError=null;
-this.type=null;
-this.color=0;
-this.transparency=0;
-this.nX=0;
-this.nY=0;
-this.tokens=null;
-this.iToken=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.tokens=Clazz.array(String, [0]);
 this.iToken=0;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['transparency'],'I',['nPolygons','color','nX','nY','iToken'],'S',['pmeshError','type'],'O',['tokens','String[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -39,7 +27,7 @@ $I$(1).jvxlCreateHeaderWithoutTitleOrAtoms$org_jmol_jvxl_data_VolumeData$javajs_
 Clazz.newMeth(C$, 'getSurfaceData$', function () {
 this.rd$();
 if (p$1.readVerticesAndPolygons.apply(this, [])) $I$(2).info$S(this.type + " file contains " + this.nVertices + " 4D vertices and " + this.nPolygons + " polygons for " + this.nTriangles + " triangles" );
- else $I$(2).error$S(this.params.fileName + ": " + (this.pmeshError == null  ? "Error reading pmesh4 data " : this.pmeshError) );
+ else $I$(2,"error$S",[this.params.fileName + ": " + (this.pmeshError == null  ? "Error reading pmesh4 data " : this.pmeshError) ]);
 });
 
 Clazz.newMeth(C$, 'readVerticesAndPolygons', function () {
@@ -61,7 +49,7 @@ return false;
 }, p$1);
 
 Clazz.newMeth(C$, 'readColor', function () {
-this.color=$I$(3).colorTriadToFFRGB$F$F$F(p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []));
+this.color=$I$(3,"colorTriadToFFRGB$F$F$F",[p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, [])]);
 this.transparency=p$1.getFloat.apply(this, []);
 }, p$1);
 
@@ -70,7 +58,7 @@ this.nVertices=this.nX * this.nY;
 this.iToken=2147483647;
 this.pmeshError=this.type + " ERROR: invalid vertex list";
 for (var i=0; i < this.nVertices; i++) {
-var pt=$I$(4).new4$F$F$F$F(p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []));
+var pt=$I$(4,"new4$F$F$F$F",[p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, []), p$1.getFloat.apply(this, [])]);
 if ($I$(2).debugging) $I$(2).debug$S(i + ": " + pt );
 this.addVertexCopy$javajs_util_T3$F$I$Z(pt, 0, i, false);
 this.iToken=2147483647;
@@ -106,4 +94,4 @@ Clazz.newMeth(C$, 'getFloat', function () {
 return this.parseFloatStr$S(p$1.nextToken.apply(this, []));
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,26 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.viewer.Viewer','org.jmol.util.Logger','Thread','org.jmol.viewer.JC','org.jmol.api.Interface','org.jmol.render.ShapeRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RepaintManager", null, null, 'org.jmol.api.JmolRepaintManager');
+(function(){var P$=Clazz.newPackage("org.jmol.render"),p$1={},I$=[[0,'javajs.util.BS','org.jmol.viewer.Viewer','org.jmol.util.Logger','Thread','org.jmol.viewer.JC','org.jmol.api.Interface','org.jmol.render.ShapeRenderer']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RepaintManager", null, null, 'org.jmol.api.JmolRepaintManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.shapeManager=null;
-this.renderers=null;
-this.bsTranslucent=null;
-this.holdRepaint=0;
-this.repaintPending=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bsTranslucent=$I$(1).newN$I(37);
 this.holdRepaint=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['repaintPending'],'I',['holdRepaint'],'O',['vwr','org.jmol.viewer.Viewer','shapeManager','org.jmol.viewer.ShapeManager','renderers','org.jmol.render.ShapeRenderer[]','bsTranslucent','javajs.util.BS']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'set$org_jmol_viewer_Viewer$org_jmol_viewer_ShapeManager', function (vwr, shapeManager) {
@@ -46,8 +37,12 @@ p$1.repaintNow$S.apply(this, [why]);
 }}});
 
 Clazz.newMeth(C$, 'requestRepaintAndWait$S', function (why) {
-var jmol=(!$I$(2).isJS || $I$(2).isSwingJS  ? null : (self.Jmol && Jmol.repaint ? Jmol : null) ||null);
-if (jmol == null ) {
+var jmol=null;
+if ($I$(2).isJS && !$I$(2).isSwingJS ) {
+{
+jmol = (self.Jmol && Jmol.repaint ? Jmol : null)
+}
+}if (jmol == null ) {
 try {
 p$1.repaintNow$S.apply(this, [why]);
 if (!$I$(2).isJS) this.wait$J(this.vwr.g.repaintWaitMs);
@@ -151,7 +146,7 @@ this.shapeManager.finalizeAtoms$javajs_util_BS$Z(null, true);
 var exporter3D=this.vwr.initializeExporter$java_util_Map(params);
 isOK=(exporter3D != null );
 if (!isOK) {
-$I$(3).error$S("Cannot export " + params.get$O("type"));
+$I$(3,"error$S",["Cannot export " + params.get$O("type")]);
 return null;
 }if (this.renderers == null ) this.renderers=Clazz.array($I$(7), [37]);
 p$1.getAllRenderers.apply(this, []);
@@ -181,4 +176,4 @@ throw e;
 return msg;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

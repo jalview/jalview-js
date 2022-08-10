@@ -1,21 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'javajs.util.Measure','javajs.util.V3','javajs.util.P4','org.jmol.modelset.HBond']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NucleicPolymer", null, 'org.jmol.modelsetbio.PhosphorusPolymer');
-C$.htGroup1=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'javajs.util.Measure','javajs.util.V3','javajs.util.P4','org.jmol.modelset.HBond']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NucleicPolymer", null, 'org.jmol.modelsetbio.PhosphorusPolymer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isDssrSet=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isDssrSet']]
+,['O',['htGroup1','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelsetbio_MonomerA', function (monomers) {
-C$.superclazz.c$$org_jmol_modelsetbio_MonomerA.apply(this, [monomers]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$org_jmol_modelsetbio_MonomerA.apply(this,[monomers]);C$.$init$.apply(this);
 this.type=2;
 this.hasWingPoints=true;
 }, 1);
@@ -48,8 +43,8 @@ return true;
 
 Clazz.newMeth(C$, 'calcRasmolHydrogenBonds$org_jmol_modelsetbio_BioPolymer$javajs_util_BS$javajs_util_BS$javajs_util_Lst$I$IAAA$Z$Z', function (polymer, bsA, bsB, vAtoms, nMaxPerResidue, min, checkDistances, dsspIgnoreHydrogens) {
 var other=polymer;
-var vNorm=Clazz.new_($I$(2));
-var vAB=Clazz.new_($I$(2));
+var vNorm=Clazz.new_($I$(2,1));
+var vAB=Clazz.new_($I$(2,1));
 for (var i=this.monomerCount; --i >= 0; ) {
 var myNucleotide=this.monomers[i];
 if (!myNucleotide.isPurine$()) continue;
@@ -58,7 +53,7 @@ var isInA=bsA.get$I(myN3.i);
 if (!isInA && !bsB.get$I(myN3.i) ) continue;
 var myN1=myNucleotide.getN1$();
 var myN9=myNucleotide.getN0$();
-var plane=$I$(1).getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(myN3, myN1, myN9, vNorm, vAB, Clazz.new_($I$(3)));
+var plane=$I$(1,"getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4",[myN3, myN1, myN9, vNorm, vAB, Clazz.new_($I$(3,1))]);
 var bestN3=null;
 var minDist2=25;
 var bestNucleotide=null;
@@ -90,10 +85,10 @@ n+=C$.addHydrogenBond$javajs_util_Lst$org_jmol_modelset_Atom$org_jmol_modelset_A
 
 Clazz.newMeth(C$, 'addHydrogenBond$javajs_util_Lst$org_jmol_modelset_Atom$org_jmol_modelset_Atom', function (vAtoms, atom1, atom2) {
 if (atom1 == null  || atom2 == null  ) return 0;
-vAtoms.addLast$TV(Clazz.new_($I$(4).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[atom1, atom2, 18432, 1, 0, 0]));
+vAtoms.addLast$O(Clazz.new_($I$(4,1).c$$org_jmol_modelset_Atom$org_jmol_modelset_Atom$I$H$H$F,[atom1, atom2, 18432, 1, 0, 0]));
 return 1;
 }, 1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

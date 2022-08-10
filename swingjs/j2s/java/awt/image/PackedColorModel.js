@@ -1,22 +1,15 @@
 (function(){var P$=Clazz.newPackage("java.awt.image"),p$1={};
-var C$=Clazz.newClass(P$, "PackedColorModel", null, 'java.awt.image.ColorModel');
+/*c*/var C$=Clazz.newClass(P$, "PackedColorModel", null, 'java.awt.image.ColorModel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.maskArray=null;
-this.maskOffsets=null;
-this.scaleFactors=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$I$IA$I$Z$I$I', function (space, bits, colorMaskArray, alphaMask, isAlphaPremultiplied, trans, transferType) {
-C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this, [bits, C$.createBitsArray$IA$I(colorMaskArray, alphaMask), space, (alphaMask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);
-C$.$init$.apply(this);
+C$.$fields$=[['O',['maskArray','int[]','+maskOffsets','scaleFactors','float[]']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$I$IA$I$Z$I$I',  function (space, bits, colorMaskArray, alphaMask, isAlphaPremultiplied, trans, transferType) {
+;C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this,[bits, C$.createBitsArray$IA$I(colorMaskArray, alphaMask), space, (alphaMask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);C$.$init$.apply(this);
 if (bits < 1 || bits > 32 ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Number of bits must be between 1 and 32."]);
 }this.maskArray=Clazz.array(Integer.TYPE, [this.numComponents]);
@@ -31,9 +24,8 @@ if (this.nBits[this.numComponents - 1] == 1) {
 this.transparency=2;
 }}}, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$I$I$I$I$I$Z$I$I', function (space, bits, rmask, gmask, bmask, amask, isAlphaPremultiplied, trans, transferType) {
-C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this, [bits, C$.createBitsArray$I$I$I$I(rmask, gmask, bmask, amask), space, (amask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_color_ColorSpace$I$I$I$I$I$Z$I$I',  function (space, bits, rmask, gmask, bmask, amask, isAlphaPremultiplied, trans, transferType) {
+;C$.superclazz.c$$I$IA$java_awt_color_ColorSpace$Z$Z$I$I.apply(this,[bits, C$.createBitsArray$I$I$I$I(rmask, gmask, bmask, amask), space, (amask == 0 ? false : true), isAlphaPremultiplied, trans, transferType]);C$.$init$.apply(this);
 if (space.getType$() != 5) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["ColorSpace must be TYPE_RGB."]);
 }this.maskArray=Clazz.array(Integer.TYPE, [this.numComponents]);
@@ -48,22 +40,22 @@ if (this.nBits[3] == 1) {
 this.transparency=2;
 }}}, 1);
 
-Clazz.newMeth(C$, 'getMask$I', function (index) {
+Clazz.newMeth(C$, 'getMask$I',  function (index) {
 return this.maskArray[index];
 });
 
-Clazz.newMeth(C$, 'getMasks$', function () {
+Clazz.newMeth(C$, 'getMasks$',  function () {
 return this.maskArray.clone$();
 });
 
-Clazz.newMeth(C$, 'DecomposeMask$I$I$S', function (mask, idx, componentName) {
+Clazz.newMeth(C$, 'DecomposeMask$I$I$S',  function (mask, idx, componentName) {
 var off=0;
 var count=this.nBits[idx];
 this.maskArray[idx]=mask;
 if (mask != 0) {
 while ((mask & 1) == 0){
 mask>>>=1;
-off++;
+++off;
 }
 }if (off + count > this.pixel_bits) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,[componentName + " mask " + Integer.toHexString$I(this.maskArray[idx]) + " overflows pixel (expecting " + this.pixel_bits + " bits" ]);
@@ -74,7 +66,7 @@ this.scaleFactors[idx]=256.0;
 this.scaleFactors[idx]=255.0 / ((1 << count) - 1);
 }}, p$1);
 
-Clazz.newMeth(C$, 'equals$O', function (obj) {
+Clazz.newMeth(C$, 'equals$O',  function (obj) {
 if (!(Clazz.instanceOf(obj, "java.awt.image.PackedColorModel"))) {
 return false;
 }if (!C$.superclazz.prototype.equals$O.apply(this, [obj])) {
@@ -90,7 +82,7 @@ return false;
 return true;
 });
 
-Clazz.newMeth(C$, 'createBitsArray$IA$I', function (colorMaskArray, alphaMask) {
+Clazz.newMeth(C$, 'createBitsArray$IA$I',  function (colorMaskArray, alphaMask) {
 var numColors=colorMaskArray.length;
 var numAlpha=(alphaMask == 0 ? 0 : 1);
 var arr=Clazz.array(Integer.TYPE, [numColors + numAlpha]);
@@ -106,7 +98,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Noncontiguous alp
 }}return arr;
 }, 1);
 
-Clazz.newMeth(C$, 'createBitsArray$I$I$I$I', function (rmask, gmask, bmask, amask) {
+Clazz.newMeth(C$, 'createBitsArray$I$I$I$I',  function (rmask, gmask, bmask, amask) {
 var arr=Clazz.array(Integer.TYPE, [3 + (amask == 0 ? 0 : 1)]);
 arr[0]=C$.countBits$I(rmask);
 arr[1]=C$.countBits$I(gmask);
@@ -124,7 +116,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Noncontiguous alp
 }}return arr;
 }, 1);
 
-Clazz.newMeth(C$, 'countBits$I', function (mask) {
+Clazz.newMeth(C$, 'countBits$I',  function (mask) {
 var count=0;
 if (mask != 0) {
 while ((mask & 1) == 0){
@@ -132,7 +124,7 @@ mask>>>=1;
 }
 while ((mask & 1) == 1){
 mask>>>=1;
-count++;
+++count;
 }
 }if (mask != 0) {
 return -1;
@@ -141,4 +133,4 @@ return -1;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:31 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

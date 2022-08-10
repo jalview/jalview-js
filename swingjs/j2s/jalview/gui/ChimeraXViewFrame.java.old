@@ -1,0 +1,64 @@
+package jalview.gui;
+
+import jalview.datamodel.PDBEntry;
+import jalview.datamodel.SequenceI;
+import jalview.datamodel.StructureViewerModel;
+import jalview.gui.StructureViewer.ViewerType;
+
+/**
+ * A class for the gui frame through which Jalview interacts with the ChimeraX
+ * structure viewer. Mostly the same as ChimeraViewFrame with a few overrides
+ * for the differences.
+ * 
+ * @author gmcarstairs
+ *
+ */
+public class ChimeraXViewFrame extends ChimeraViewFrame
+{
+
+  public ChimeraXViewFrame(PDBEntry pdb, SequenceI[] seqsForPdb,
+          String[] chains, AlignmentPanel ap)
+  {
+    super(pdb, seqsForPdb, chains, ap);
+  }
+
+  public ChimeraXViewFrame(PDBEntry[] pdbsForFile, boolean superposeAdded,
+          SequenceI[][] theSeqs, AlignmentPanel ap)
+  {
+    super(pdbsForFile, superposeAdded, theSeqs, ap);
+  }
+
+  /**
+   * Constructor given a session file to be loaded
+   * 
+   * @param viewerData
+   * @param alignPanel
+   * @param sessionFile
+   * @param vid
+   */
+  public ChimeraXViewFrame(StructureViewerModel viewerData,
+          AlignmentPanel alignPanel, String sessionFile, String vid)
+  {
+    super(viewerData, alignPanel, sessionFile, vid);
+  }
+
+  @Override
+  public ViewerType getViewerType()
+  {
+    return ViewerType.CHIMERAX;
+  }
+
+  @Override
+  protected String getViewerName()
+  {
+    return "ChimeraX";
+  }
+
+  @Override
+  protected JalviewChimeraBindingModel newBindingModel(AlignmentPanel ap,
+          PDBEntry[] pdbentrys, SequenceI[][] seqs)
+  {
+    return new JalviewChimeraXBindingModel(this,
+            ap.getStructureSelectionManager(), pdbentrys, seqs, null);
+  }
+}

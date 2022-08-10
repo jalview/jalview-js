@@ -1,28 +1,16 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,'fr.orsay.lri.varna.VARNAPanel','javax.swing.JPanel','java.awt.GridLayout','javax.swing.JToolBar','javax.swing.JButton','javax.swing.UIManager','fr.orsay.lri.varna.models.templates.DrawRNATemplateMethod','javax.swing.JComboBox','fr.orsay.lri.varna.models.templates.DrawRNATemplateCurveMethod','java.awt.FlowLayout','javax.swing.JLabel','javax.swing.ButtonGroup','javax.swing.JToggleButton','java.awt.BorderLayout','fr.orsay.lri.varna.applications.templateEditor.TemplatePanel','java.awt.Dimension','javax.swing.undo.UndoManager','javax.swing.JScrollPane','javax.swing.BoxLayout','java.awt.dnd.DropTarget',['fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','.Tool'],'javax.swing.JOptionPane','javax.swing.JFileChooser','fr.orsay.lri.varna.applications.FileNameExtensionFilter','java.io.File','fr.orsay.lri.varna.models.templates.Benchmark','java.net.URL','java.io.InputStreamReader','java.io.BufferedReader','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TemplateEditor", null, 'javax.swing.JFrame', ['java.awt.event.KeyListener', 'java.awt.event.ActionListener', 'java.awt.dnd.DropTargetListener']);
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.templateEditor"),p$1={},I$=[[0,'fr.orsay.lri.varna.VARNAPanel','javax.swing.JPanel','java.awt.GridLayout','javax.swing.JToolBar','javax.swing.JButton','javax.swing.UIManager','fr.orsay.lri.varna.models.templates.DrawRNATemplateMethod','javax.swing.JComboBox','fr.orsay.lri.varna.models.templates.DrawRNATemplateCurveMethod','java.awt.FlowLayout','javax.swing.JLabel','javax.swing.ButtonGroup','javax.swing.JToggleButton','java.awt.BorderLayout','fr.orsay.lri.varna.applications.templateEditor.TemplatePanel','java.awt.Dimension','javax.swing.undo.UndoManager','javax.swing.JScrollPane','javax.swing.BoxLayout','java.awt.dnd.DropTarget',['fr.orsay.lri.varna.applications.templateEditor.TemplateEditorPanelUI','.Tool'],'javax.swing.JOptionPane','javax.swing.JFileChooser','fr.orsay.lri.varna.applications.FileNameExtensionFilter','java.io.File','fr.orsay.lri.varna.models.templates.Benchmark','java.net.URL','java.io.InputStreamReader','java.io.BufferedReader','java.util.ArrayList']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TemplateEditor", null, 'javax.swing.JFrame', ['java.awt.event.KeyListener', 'java.awt.event.ActionListener', 'java.awt.dnd.DropTargetListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._sk=null;
-this._vp=null;
-this.currentFilePath=null;
-this.saveButton=null;
-this.jp=null;
-this.manager=null;
-this.flipButton=null;
-this.ellipseMethodList=null;
-this.applyMethodList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.currentFilePath=null;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['_sk','fr.orsay.lri.varna.applications.templateEditor.TemplatePanel','_vp','fr.orsay.lri.varna.VARNAPanel','currentFilePath','java.io.File','saveButton','javax.swing.JButton','jp','javax.swing.JScrollPane','manager','javax.swing.undo.UndoManager','flipButton','javax.swing.JButton','ellipseMethodList','javax.swing.JComboBox','+applyMethodList']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 p$1.init.apply(this, []);
 p$1.clearCurrentFilePath.apply(this, []);
 }, 1);
@@ -33,7 +21,7 @@ return this.jp;
 
 Clazz.newMeth(C$, 'init', function () {
 try {
-this._vp=Clazz.new_($I$(1).c$$S$S,[" ", "."]);
+this._vp=Clazz.new_($I$(1,1).c$$S$S,[" ", "."]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"fr.orsay.lri.varna.exceptions.ExceptionNonEqualLength")){
 e.printStackTrace$();
@@ -42,53 +30,53 @@ throw e;
 }
 }
 this._vp.setNumPeriod$I(0);
-var p=Clazz.new_($I$(2));
-p.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3).c$$I$I,[1, 2]));
-var systemBar=Clazz.new_($I$(4));
-var optionsBar=Clazz.new_($I$(4));
-var newButton=Clazz.new_($I$(5).c$$S$javax_swing_Icon,["New", $I$(6).getIcon$O("FileView.fileIcon")]);
+var p=Clazz.new_($I$(2,1));
+p.setLayout$java_awt_LayoutManager(Clazz.new_($I$(3,1).c$$I$I,[1, 2]));
+var systemBar=Clazz.new_($I$(4,1));
+var optionsBar=Clazz.new_($I$(4,1));
+var newButton=Clazz.new_(["New", $I$(6).getIcon$O("FileView.fileIcon")],$I$(5,1).c$$S$javax_swing_Icon);
 newButton.setActionCommand$S("new");
 newButton.addActionListener$java_awt_event_ActionListener(this);
 newButton.addKeyListener$java_awt_event_KeyListener(this);
-var loadButton=Clazz.new_($I$(5).c$$S$javax_swing_Icon,["Open...", $I$(6).getIcon$O("FileView.directoryIcon")]);
+var loadButton=Clazz.new_(["Open...", $I$(6).getIcon$O("FileView.directoryIcon")],$I$(5,1).c$$S$javax_swing_Icon);
 loadButton.setActionCommand$S("open");
 loadButton.addActionListener$java_awt_event_ActionListener(this);
 loadButton.addKeyListener$java_awt_event_KeyListener(this);
-this.saveButton=Clazz.new_($I$(5).c$$S$javax_swing_Icon,["Save", $I$(6).getIcon$O("FileView.floppyDriveIcon")]);
+this.saveButton=Clazz.new_(["Save", $I$(6).getIcon$O("FileView.floppyDriveIcon")],$I$(5,1).c$$S$javax_swing_Icon);
 this.saveButton.setActionCommand$S("save");
 this.saveButton.addActionListener$java_awt_event_ActionListener(this);
 this.saveButton.addKeyListener$java_awt_event_KeyListener(this);
 this.saveButton.setEnabled$Z(false);
-var saveAsButton=Clazz.new_($I$(5).c$$S$javax_swing_Icon,["Save As...", $I$(6).getIcon$O("FileView.floppyDriveIcon")]);
+var saveAsButton=Clazz.new_(["Save As...", $I$(6).getIcon$O("FileView.floppyDriveIcon")],$I$(5,1).c$$S$javax_swing_Icon);
 saveAsButton.setActionCommand$S("save as");
 saveAsButton.addActionListener$java_awt_event_ActionListener(this);
 saveAsButton.addKeyListener$java_awt_event_KeyListener(this);
-var undoButton=Clazz.new_($I$(5).c$$S,["Undo"]);
+var undoButton=Clazz.new_($I$(5,1).c$$S,["Undo"]);
 undoButton.setActionCommand$S("undo");
 undoButton.addActionListener$java_awt_event_ActionListener(this);
 undoButton.addKeyListener$java_awt_event_KeyListener(this);
-var redoButton=Clazz.new_($I$(5).c$$S,["Redo"]);
+var redoButton=Clazz.new_($I$(5,1).c$$S,["Redo"]);
 redoButton.setActionCommand$S("redo");
 redoButton.addActionListener$java_awt_event_ActionListener(this);
 redoButton.addKeyListener$java_awt_event_KeyListener(this);
-var benchmarkButton=Clazz.new_($I$(5).c$$S,["Benchmark"]);
+var benchmarkButton=Clazz.new_($I$(5,1).c$$S,["Benchmark"]);
 benchmarkButton.setActionCommand$S("benchmark");
 benchmarkButton.addActionListener$java_awt_event_ActionListener(this);
 benchmarkButton.addKeyListener$java_awt_event_KeyListener(this);
 var applyMethods=$I$(7).values$();
-this.applyMethodList=Clazz.new_($I$(8).c$$TEA,[applyMethods]);
+this.applyMethodList=Clazz.new_($I$(8,1).c$$OA,[applyMethods]);
 this.applyMethodList.setSelectedItem$O($I$(7).getDefault$());
 var ellipseMethods=$I$(9).values$();
-this.ellipseMethodList=Clazz.new_($I$(8).c$$TEA,[ellipseMethods]);
+this.ellipseMethodList=Clazz.new_($I$(8,1).c$$OA,[ellipseMethods]);
 this.ellipseMethodList.setSelectedItem$O($I$(9).getDefault$());
-var applyButton=Clazz.new_($I$(5).c$$S,["Apply"]);
+var applyButton=Clazz.new_($I$(5,1).c$$S,["Apply"]);
 applyButton.setActionCommand$S("apply");
 applyButton.addActionListener$java_awt_event_ActionListener(this);
 applyButton.addKeyListener$java_awt_event_KeyListener(this);
-var retrieveButton=Clazz.new_($I$(5).c$$S,["Retrieve Templates"]);
+var retrieveButton=Clazz.new_($I$(5,1).c$$S,["Retrieve Templates"]);
 retrieveButton.setActionCommand$S("retrieve");
 retrieveButton.addActionListener$java_awt_event_ActionListener(this);
-this.flipButton=Clazz.new_($I$(5).c$$S,["Flip helix"]);
+this.flipButton=Clazz.new_($I$(5,1).c$$S,["Flip helix"]);
 this.flipButton.setActionCommand$S("flip");
 this.flipButton.addActionListener$java_awt_event_ActionListener(this);
 this.flipButton.addKeyListener$java_awt_event_KeyListener(this);
@@ -102,30 +90,30 @@ systemBar.addSeparator$();
 systemBar.addSeparator$();
 systemBar.add$java_awt_Component(benchmarkButton);
 systemBar.addKeyListener$java_awt_event_KeyListener(this);
-optionsBar.setLayout$java_awt_LayoutManager(Clazz.new_($I$(10).c$$I,[0]));
-optionsBar.add$java_awt_Component(Clazz.new_($I$(11).c$$S,["Single-Stranded "]));
+optionsBar.setLayout$java_awt_LayoutManager(Clazz.new_($I$(10,1).c$$I,[0]));
+optionsBar.add$java_awt_Component(Clazz.new_($I$(11,1).c$$S,["Single-Stranded "]));
 optionsBar.add$java_awt_Component(this.ellipseMethodList);
 optionsBar.addSeparator$();
-optionsBar.add$java_awt_Component(Clazz.new_($I$(11).c$$S,["Layout "]));
+optionsBar.add$java_awt_Component(Clazz.new_($I$(11,1).c$$S,["Layout "]));
 optionsBar.add$java_awt_Component(this.applyMethodList);
 optionsBar.addSeparator$();
 optionsBar.add$java_awt_Component(applyButton);
 optionsBar.addSeparator$();
 optionsBar.add$java_awt_Component(retrieveButton);
 optionsBar.doLayout$();
-var toolBar=Clazz.new_($I$(4));
-var bg=Clazz.new_($I$(12));
+var toolBar=Clazz.new_($I$(4,1));
+var bg=Clazz.new_($I$(12,1));
 toolBar.setOrientation$I(1);
-var selectButton=Clazz.new_($I$(13).c$$S,["Select"]);
+var selectButton=Clazz.new_($I$(13,1).c$$S,["Select"]);
 selectButton.setActionCommand$S("select");
 selectButton.addActionListener$java_awt_event_ActionListener(this);
 selectButton.addKeyListener$java_awt_event_KeyListener(this);
-var helixButton=Clazz.new_($I$(13).c$$S,["Helix"]);
+var helixButton=Clazz.new_($I$(13,1).c$$S,["Helix"]);
 helixButton.setActionCommand$S("helix");
 helixButton.addActionListener$java_awt_event_ActionListener(this);
 helixButton.addKeyListener$java_awt_event_KeyListener(this);
 helixButton.setSelected$Z(true);
-var unpairedButton=Clazz.new_($I$(13).c$$S,["Unpaired"]);
+var unpairedButton=Clazz.new_($I$(13,1).c$$S,["Unpaired"]);
 unpairedButton.setActionCommand$S("unpaired");
 unpairedButton.addActionListener$java_awt_event_ActionListener(this);
 unpairedButton.addKeyListener$java_awt_event_KeyListener(this);
@@ -135,25 +123,25 @@ bg.add$javax_swing_AbstractButton(unpairedButton);
 toolBar.add$java_awt_Component(undoButton);
 toolBar.add$java_awt_Component(redoButton);
 toolBar.addSeparator$();
-toolBar.add$java_awt_Component(Clazz.new_($I$(11).c$$S,["Tools:"]));
+toolBar.add$java_awt_Component(Clazz.new_($I$(11,1).c$$S,["Tools:"]));
 toolBar.add$java_awt_Component(selectButton);
 toolBar.add$java_awt_Component(helixButton);
 toolBar.add$java_awt_Component(unpairedButton);
 toolBar.addSeparator$();
 toolBar.add$java_awt_Component(this.flipButton);
 systemBar.addKeyListener$java_awt_event_KeyListener(this);
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14)));
-this._sk=Clazz.new_($I$(15).c$$fr_orsay_lri_varna_applications_templateEditor_TemplateEditor,[this]);
-this._sk.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[800, 600]));
-this.manager=Clazz.new_($I$(17));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(14,1)));
+this._sk=Clazz.new_($I$(15,1).c$$fr_orsay_lri_varna_applications_templateEditor_TemplateEditor,[this]);
+this._sk.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(16,1).c$$I$I,[800, 600]));
+this.manager=Clazz.new_($I$(17,1));
 this.manager.setLimit$I(2000);
 this._sk.addUndoableEditListener$javax_swing_undo_UndoManager(this.manager);
 this._sk.addKeyListener$java_awt_event_KeyListener(this);
-this.jp=Clazz.new_($I$(18).c$$java_awt_Component$I$I,[this._sk, 22, 32]);
+this.jp=Clazz.new_($I$(18,1).c$$java_awt_Component$I$I,[this._sk, 22, 32]);
 p.add$java_awt_Component(this.jp);
 p.add$java_awt_Component(this._vp);
-var bars=Clazz.new_($I$(2));
-var barsLayout=Clazz.new_($I$(19).c$$java_awt_Container$I,[bars, 1]);
+var bars=Clazz.new_($I$(2,1));
+var barsLayout=Clazz.new_($I$(19,1).c$$java_awt_Container$I,[bars, 1]);
 bars.setLayout$java_awt_LayoutManager(barsLayout);
 systemBar.setAlignmentX$F(0);
 bars.add$java_awt_Component(systemBar);
@@ -163,8 +151,8 @@ this.getContentPane$().add$java_awt_Component$O(bars, "First");
 this.getContentPane$().add$java_awt_Component$O(toolBar, "West");
 this.getContentPane$().add$java_awt_Component$O(p, "Center");
 this.addKeyListener$java_awt_event_KeyListener(this);
-Clazz.new_($I$(20).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this._vp, this]);
-Clazz.new_($I$(20).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this._sk, this]);
+Clazz.new_($I$(20,1).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this._vp, this]);
+Clazz.new_($I$(20,1).c$$java_awt_Component$java_awt_dnd_DropTargetListener,[this._sk, this]);
 this.pack$();
 this._sk.requestFocusInWindow$();
 }, p$1);
@@ -190,7 +178,7 @@ try {
 var lfs=$I$(6).getInstalledLookAndFeels$();
 var i=1;
 var info=lfs[i % lfs.length];
-$I$(6).setLookAndFeel$S(info.getClassName$());
+$I$(6,"setLookAndFeel$S",[info.getClassName$()]);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -256,7 +244,7 @@ Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent', function (e) {
 System.out.println$O(e);
 });
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 if (e.getActionCommand$().equals$O("undo")) {
 this.undo$();
 } else if (e.getActionCommand$().equals$O("redo")) {
@@ -288,7 +276,7 @@ this._vp.repaint$();
 } catch (e1) {
 if (Clazz.exceptionOf(e1,"fr.orsay.lri.varna.models.templates.RNATemplateDrawingAlgorithmException")){
 e1.printStackTrace$();
-$I$(22).showMessageDialog$java_awt_Component$O$S$I(this, e1.getMessage$(), "Template-based RNA drawing error", 0);
+$I$(22,"showMessageDialog$java_awt_Component$O$S$I",[this, e1.getMessage$(), "Template-based RNA drawing error", 0]);
 } else {
 throw e1;
 }
@@ -313,17 +301,17 @@ throw e$$;
 }
 }
 } else if (e.getActionCommand$().equals$O("save as")) {
-var chooser=Clazz.new_($I$(23));
-var filter=Clazz.new_($I$(24).c$$S$S,["VARNA RNA template (.xml)", "xml"]);
+var chooser=Clazz.new_($I$(23,1));
+var filter=Clazz.new_(["VARNA RNA template (.xml)", "xml"],$I$(24,1).c$$S$S);
 chooser.setFileFilter$javax_swing_filechooser_FileFilter(filter);
 if (chooser.showSaveDialog$java_awt_Component(this._sk) == 0) {
 var path=chooser.getSelectedFile$().getAbsolutePath$();
 if (!path.toLowerCase$().endsWith$S(".xml")) {
 path=path + ".xml";
 }try {
-this._sk.getTemplate$().toXMLFile$java_io_File(Clazz.new_($I$(25).c$$S,[path]));
+this._sk.getTemplate$().toXMLFile$java_io_File(Clazz.new_($I$(25,1).c$$S,[path]));
 System.out.println$S("Template saved in " + path);
-p$1.setCurrentFilePath$java_io_File.apply(this, [Clazz.new_($I$(25).c$$S,[path])]);
+p$1.setCurrentFilePath$java_io_File.apply(this, [Clazz.new_($I$(25,1).c$$S,[path])]);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"fr.orsay.lri.varna.exceptions.ExceptionXMLGeneration")){
 var e1 = e$$;
@@ -342,14 +330,14 @@ throw e$$;
 }} else if (e.getActionCommand$().equals$O("new")) {
 this.clearTemplate$();
 } else if (e.getActionCommand$().equals$O("open")) {
-var chooser=Clazz.new_($I$(23));
-var filter=Clazz.new_($I$(24).c$$S$S,["VARNA RNA template (.xml)", "xml"]);
+var chooser=Clazz.new_($I$(23,1));
+var filter=Clazz.new_(["VARNA RNA template (.xml)", "xml"],$I$(24,1).c$$S$S);
 chooser.setFileFilter$javax_swing_filechooser_FileFilter(filter);
 if (chooser.showOpenDialog$java_awt_Component(this._sk) == 0) {
 var templatePath=chooser.getSelectedFile$();
 this.loadTemplate$java_io_File(templatePath);
 }} else if (e.getActionCommand$().equals$O("benchmark")) {
-Clazz.new_($I$(26).c$$fr_orsay_lri_varna_models_rna_RNA,[this._vp.getRNA$()]).printAll$();
+Clazz.new_([this._vp.getRNA$()],$I$(26,1).c$$fr_orsay_lri_varna_models_rna_RNA).printAll$();
 }});
 
 Clazz.newMeth(C$, 'getStraightBulges', function () {
@@ -419,14 +407,14 @@ this.flipButton.setEnabled$Z(false);
 Clazz.newMeth(C$, 'retrieveTemplates$', function () {
 var u;
 try {
-u=Clazz.new_($I$(27).c$$S,["http://127.0.0.1/VARNA/templateShare/actions.php?action=retrieve&nbHelices=3&nbMultiLoops=1&length=50"]);
+u=Clazz.new_(["http://127.0.0.1/VARNA/templateShare/actions.php?action=retrieve&nbHelices=3&nbMultiLoops=1&length=50"],$I$(27,1).c$$S);
 var uc=u.openConnection$();
-var isr=Clazz.new_($I$(28).c$$java_io_InputStream,[uc.getInputStream$()]);
-var b=Clazz.new_($I$(29).c$$java_io_Reader,[isr]);
-var res=Clazz.new_($I$(30));
+var isr=Clazz.new_([uc.getInputStream$()],$I$(28,1).c$$java_io_InputStream);
+var b=Clazz.new_($I$(29,1).c$$java_io_Reader,[isr]);
+var res=Clazz.new_($I$(30,1));
 var s=b.readLine$();
 while (s != null ){
-res.add$TE(s);
+res.add$O(s);
 s=b.readLine$();
 }
 } catch (e$$) {
@@ -446,4 +434,4 @@ throw e$$;
 }
 });
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:43 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:19 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,24 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.PT','org.jmol.api.JmolAdapter','javajs.util.Lst','java.util.Hashtable',['org.jmol.adapter.readers.quantum.AdfReader','.SymmetryData'],'org.jmol.quantum.SlaterData','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AdfReader", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.quantum"),p$1={},I$=[[0,'org.jmol.util.Logger','javajs.util.PT','org.jmol.api.JmolAdapter','javajs.util.Lst','java.util.Hashtable',['org.jmol.adapter.readers.quantum.AdfReader','.SymmetryData'],'org.jmol.quantum.SlaterData','javajs.util.AU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AdfReader", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'org.jmol.adapter.readers.quantum.SlaterReader');
+C$.$classes$=[['SymmetryData',2]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.htSymmetries=null;
-this.vSymmetries=null;
-this.energy=null;
-this.nXX=0;
-this.symLine=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.energy=null;
 this.nXX=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['nXX'],'S',['energy','symLine'],'O',['htSymmetries','java.util.Map','vSymmetries','javajs.util.Lst']]]
 
 Clazz.newMeth(C$, 'checkLine$', function () {
 if (this.line.indexOf$S("Irreducible Representations, including subspecies") >= 0) {
@@ -36,7 +29,7 @@ if (this.doReadMolecularOrbitals) p$1.readMolecularOrbitals$S.apply(this, [$I$(2
 return true;
 }if (!this.doProcessLines) return true;
 if (this.line.indexOf$S("Energy:") >= 0) {
-var tokens=$I$(2).getTokens$S(this.line.substring$I(this.line.indexOf$S("Energy:")));
+var tokens=$I$(2,"getTokens$S",[this.line.substring$I(this.line.indexOf$S("Energy:"))]);
 this.energy=tokens[1];
 return true;
 }if (this.line.indexOf$S("Vibrations") >= 0) {
@@ -96,8 +89,8 @@ this.fillFrequencyData$I$I$I$ZA$Z$I$I$IA$I$SAA(iAtom0, ac, ac, ignore, true, 0, 
 }, p$1);
 
 Clazz.newMeth(C$, 'readSymmetries', function () {
-this.vSymmetries=Clazz.new_($I$(4));
-this.htSymmetries=Clazz.new_($I$(5));
+this.vSymmetries=Clazz.new_($I$(4,1));
+this.htSymmetries=Clazz.new_($I$(5,1));
 this.rd$();
 var index=0;
 var syms="";
@@ -105,9 +98,9 @@ while (this.rd$() != null  && this.line.length$() > 1 )syms += this.line;
 
 var tokens=$I$(2).getTokens$S(syms);
 for (var i=0; i < tokens.length; i++) {
-var sd=Clazz.new_($I$(6).c$$I$S, [this, null, index++, tokens[i]]);
-this.htSymmetries.put$TK$TV(tokens[i], sd);
-this.vSymmetries.addLast$TV(sd);
+var sd=Clazz.new_($I$(6,1).c$$I$S,[this, null, index++, tokens[i]]);
+this.htSymmetries.put$O$O(tokens[i], sd);
+this.vSymmetries.addLast$O(sd);
 }
 }, p$1);
 
@@ -162,7 +155,7 @@ var r=this.parseIntStr$S(tokens[pt++]);
 var zeta=this.parseFloatStr$S(tokens[pt++]);
 for (var i=0; i < nAtoms; i++) {
 var ptBF=this.parseIntStr$S(tokens[pt++]) - 1;
-this.slaterArray[ptBF]=Clazz.new_($I$(7).c$$I$I$I$I$I$D$D,[atomList[i], x, y, z, r, zeta, 1]);
+this.slaterArray[ptBF]=Clazz.new_($I$(7,1).c$$I$I$I$I$I$D$D,[atomList[i], x, y, z, r, zeta, 1]);
 this.slaterArray[ptBF].index=ptBF;
 }
 }
@@ -179,7 +172,7 @@ var nBF=this.slaterArray.length;
 sd.coefs=Clazz.array(Float.TYPE, [sd.nSFO, nBF]);
 while (n < sd.nBF){
 this.rd$();
-var nLine=$I$(2).getTokens$S(this.rd$()).length;
+var nLine=$I$(2,"getTokens$S",[this.rd$()]).length;
 this.rd$();
 sd.mos=$I$(8).createArrayOfHashtable$I(sd.nSFO);
 var data=Clazz.array(String, [sd.nSFO, null]);
@@ -191,9 +184,9 @@ for (var i=0; i < sd.nSFO; i++) sd.coefs[i][pt]=this.parseFloatStr$S(data[i][j])
 }
 }
 for (var i=0; i < sd.nSFO; i++) {
-var mo=Clazz.new_($I$(5));
-mo.put$TK$TV("coefficients", sd.coefs[i]);
-mo.put$TK$TV("id", sym + " " + (i + 1) );
+var mo=Clazz.new_($I$(5,1));
+mo.put$O$O("coefficients", sd.coefs[i]);
+mo.put$O$O("id", sym + " " + (i + 1) );
 sd.mos[i]=mo;
 }
 if (!isLast) return;
@@ -229,35 +222,25 @@ break;
 }
 if (sd == null ) return;
 }var mo=sd.mos[moPt - 1];
-mo.put$TK$TV("occupancy", Float.valueOf$F(occ > 2  ? 2 : occ));
-mo.put$TK$TV("energy", Float.valueOf$F(energy));
-mo.put$TK$TV("symmetry", sd.sym + "_" + moPt );
+mo.put$O$O("occupancy", Float.valueOf$F(occ > 2  ? 2 : occ));
+mo.put$O$O("energy", Float.valueOf$F(energy));
+mo.put$O$O("symmetry", sd.sym + "_" + moPt );
 this.setMO$java_util_Map(mo);
 }, p$1);
 ;
-(function(){var C$=Clazz.newClass(P$.AdfReader, "SymmetryData", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.AdfReader, "SymmetryData", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.index=0;
-this.sym=null;
-this.nSFO=0;
-this.nBF=0;
-this.coefs=null;
-this.mos=null;
-this.basisFunctions=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['I',['index','nSFO','nBF'],'S',['sym'],'O',['coefs','float[][]','mos','java.util.Map[]','basisFunctions','int[]']]]
 
 Clazz.newMeth(C$, 'c$$I$S', function (index, sym) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 $I$(1).info$S("ADF reader creating SymmetryData " + sym + " " + index );
 this.index=index;
 this.sym=sym;
@@ -268,4 +251,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

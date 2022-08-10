@@ -1,45 +1,30 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.Segment','javax.swing.text.SegmentCache','javax.swing.text.Utilities',['javax.swing.text.Position','.Bias'],['javax.swing.event.DocumentEvent','.EventType'],'java.awt.Rectangle']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PlainView", null, 'javax.swing.text.View', 'javax.swing.text.TabExpander');
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,'javax.swing.text.Segment','javax.swing.text.SegmentCache','javax.swing.text.Utilities',['javax.swing.text.Position','.Bias'],['javax.swing.event.DocumentEvent','.EventType'],'java.awt.Rectangle']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PlainView", null, 'javax.swing.text.View', 'javax.swing.text.TabExpander');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.metrics=null;
-this.longLine=null;
-this.font=null;
-this.lineBuffer=null;
-this.tabSize=0;
-this.tabBase=0;
-this.sel0=0;
-this.sel1=0;
-this.unselected=null;
-this.selected=null;
-this.firstLineOffset=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['I',['tabSize','tabBase','sel0','sel1','firstLineOffset'],'O',['metrics','java.awt.FontMetrics','longLine','javax.swing.text.Element','font','java.awt.Font','lineBuffer','javax.swing.text.Segment','unselected','java.awt.Color','+selected']]]
+
+Clazz.newMeth(C$, 'c$$javax_swing_text_Element',  function (elem) {
+;C$.superclazz.c$$javax_swing_text_Element.apply(this,[elem]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_text_Element', function (elem) {
-C$.superclazz.c$$javax_swing_text_Element.apply(this, [elem]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'getTabSize$', function () {
+Clazz.newMeth(C$, 'getTabSize$',  function () {
 var i=this.getDocument$().getProperty$O("tabSize");
 var size=(i != null ) ? i.intValue$() : 8;
 return size;
 });
 
-Clazz.newMeth(C$, 'getLineBuffer$', function () {
+Clazz.newMeth(C$, 'getLineBuffer$',  function () {
 if (this.lineBuffer == null ) {
-this.lineBuffer=Clazz.new_($I$(1));
+this.lineBuffer=Clazz.new_($I$(1,1));
 }return this.lineBuffer;
 });
 
-Clazz.newMeth(C$, 'updateMetrics$', function () {
+Clazz.newMeth(C$, 'updateMetrics$',  function () {
 var host=this.getContainer$();
 var f=host.getFont$();
 if (this.font !== f ) {
@@ -47,7 +32,7 @@ p$1.calculateLongestLine.apply(this, []);
 this.tabSize=this.getTabSize$() * this.metrics.charWidth$C("m");
 }});
 
-Clazz.newMeth(C$, 'getPreferredSpan$I', function (axis) {
+Clazz.newMeth(C$, 'getPreferredSpan$I',  function (axis) {
 this.updateMetrics$();
 switch (axis) {
 case 0:
@@ -59,14 +44,14 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Invalid axis: " +
 }
 });
 
-Clazz.newMeth(C$, 'paint$java_awt_Graphics$java_awt_Shape', function (g, a) {
+Clazz.newMeth(C$, 'paint$java_awt_Graphics$java_awt_Shape',  function (g, a) {
 });
 
-Clazz.newMeth(C$, 'adjustPaintRegion$java_awt_Shape', function (a) {
+Clazz.newMeth(C$, 'adjustPaintRegion$java_awt_Shape',  function (a) {
 return a;
 });
 
-Clazz.newMeth(C$, 'modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias', function (pos, a, b) {
+Clazz.newMeth(C$, 'modelToView$I$java_awt_Shape$javax_swing_text_Position_Bias',  function (pos, a, b) {
 var doc=this.getDocument$();
 var map=this.getElement$();
 var lineIndex=map.getElementIndex$I(pos);
@@ -86,7 +71,7 @@ lineArea.height=this.metrics.getHeight$();
 return lineArea;
 });
 
-Clazz.newMeth(C$, 'viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA', function (fx, fy, a, bias) {
+Clazz.newMeth(C$, 'viewToModel$F$F$java_awt_Shape$javax_swing_text_Position_BiasA',  function (fx, fy, a, bias) {
 bias[0]=$I$(4).Forward;
 var alloc=a.getBounds$();
 var doc=this.getDocument$();
@@ -129,31 +114,31 @@ throw e;
 }
 }}});
 
-Clazz.newMeth(C$, 'insertUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (changes, a, f) {
+Clazz.newMeth(C$, 'insertUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory',  function (changes, a, f) {
 this.updateDamage$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory(changes, a, f);
 });
 
-Clazz.newMeth(C$, 'removeUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (changes, a, f) {
+Clazz.newMeth(C$, 'removeUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory',  function (changes, a, f) {
 this.updateDamage$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory(changes, a, f);
 });
 
-Clazz.newMeth(C$, 'changedUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (changes, a, f) {
+Clazz.newMeth(C$, 'changedUpdate$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory',  function (changes, a, f) {
 this.updateDamage$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory(changes, a, f);
 });
 
-Clazz.newMeth(C$, 'setSize$F$F', function (width, height) {
+Clazz.newMeth(C$, 'setSize$F$F',  function (width, height) {
 C$.superclazz.prototype.setSize$F$F.apply(this, [width, height]);
 this.updateMetrics$();
 });
 
-Clazz.newMeth(C$, ['nextTabStop$F$I','nextTabStop$'], function (x, tabOffset) {
+Clazz.newMeth(C$, 'nextTabStop$F$I',  function (x, tabOffset) {
 if (this.tabSize == 0) {
 return x;
 }var ntabs=((((x|0)) - this.tabBase)/this.tabSize|0);
 return this.tabBase + ((ntabs + 1) * this.tabSize);
 });
 
-Clazz.newMeth(C$, 'updateDamage$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory', function (changes, a, f) {
+Clazz.newMeth(C$, 'updateDamage$javax_swing_event_DocumentEvent$java_awt_Shape$javax_swing_text_ViewFactory',  function (changes, a, f) {
 var host=this.getContainer$();
 this.updateMetrics$();
 var elem=this.getElement$();
@@ -176,7 +161,7 @@ p$1.calculateLongestLine.apply(this, []);
 break;
 }}
 }this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, true);
-host.repaint$();
+(host).秘repaint$();
 } else {
 var map=this.getElement$();
 var line=map.getElementIndex$I(changes.getOffset$());
@@ -195,7 +180,7 @@ p$1.calculateLongestLine.apply(this, []);
 this.preferenceChanged$javax_swing_text_View$Z$Z(null, true, false);
 }}}});
 
-Clazz.newMeth(C$, 'damageLineRange$I$I$java_awt_Shape$java_awt_Component', function (line0, line1, a, host) {
+Clazz.newMeth(C$, 'damageLineRange$I$I$java_awt_Shape$java_awt_Component',  function (line0, line1, a, host) {
 if (a != null ) {
 var area0=this.lineToRect$java_awt_Shape$I(a, line0);
 var area1=this.lineToRect$java_awt_Shape$I(a, line1);
@@ -203,10 +188,10 @@ if ((area0 != null ) && (area1 != null ) ) {
 var damage=area0.union$java_awt_Rectangle(area1);
 host.repaint$I$I$I$I(damage.x, damage.y, damage.width, damage.height);
 } else {
-host.repaint$();
+(host).秘repaint$();
 }}});
 
-Clazz.newMeth(C$, 'lineToRect$java_awt_Shape$I', function (a, line) {
+Clazz.newMeth(C$, 'lineToRect$java_awt_Shape$I',  function (a, line) {
 var r=null;
 this.updateMetrics$();
 if (this.metrics != null ) {
@@ -214,11 +199,11 @@ var alloc=a.getBounds$();
 if (line == 0) {
 alloc.x+=this.firstLineOffset;
 alloc.width-=this.firstLineOffset;
-}r=Clazz.new_($I$(6).c$$I$I$I$I,[alloc.x, alloc.y + (line * this.metrics.getHeight$()), alloc.width, this.metrics.getHeight$()]);
+}r=Clazz.new_([alloc.x, alloc.y + (line * this.metrics.getHeight$()), alloc.width, this.metrics.getHeight$()],$I$(6,1).c$$I$I$I$I);
 }return r;
 });
 
-Clazz.newMeth(C$, 'calculateLongestLine', function () {
+Clazz.newMeth(C$, 'calculateLongestLine',  function () {
 var c=this.getContainer$();
 this.font=c.getFont$();
 this.metrics=c.getFontMetrics$java_awt_Font(this.font);
@@ -234,7 +219,7 @@ this.longLine=line;
 }}
 }, p$1);
 
-Clazz.newMeth(C$, 'getLineWidth$javax_swing_text_Element', function (line) {
+Clazz.newMeth(C$, 'getLineWidth$javax_swing_text_Element',  function (line) {
 if (line == null ) {
 return 0;
 }var p0=line.getStartOffset$();
@@ -257,4 +242,4 @@ return w;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:25 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

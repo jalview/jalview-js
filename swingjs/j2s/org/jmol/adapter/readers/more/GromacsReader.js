@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.adapter.smarter.Atom','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GromacsReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.more"),p$1={},I$=[[0,'org.jmol.util.Logger','org.jmol.adapter.smarter.Atom','javajs.util.P3']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GromacsReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.setIsPDB$();
@@ -30,7 +29,7 @@ var len=this.line.length$();
 if (len != 44 && len != 68 ) {
 $I$(1).warn$S("line cannot be read for GROMACS atom data: " + this.line);
 continue;
-}var atom=Clazz.new_($I$(2));
+}var atom=Clazz.new_($I$(2,1));
 atom.sequenceNumber=this.parseIntRange$S$I$I(this.line, 0, 5);
 p$1.setAtomName$org_jmol_adapter_smarter_Atom$S$S.apply(this, [atom, this.parseTokenRange$S$I$I(this.line, 5, 9).trim$(), this.line.substring$I$I(11, 15).trim$()]);
 atom.atomSerial=this.parseIntRange$S$I$I(this.line, 15, 20);
@@ -90,4 +89,4 @@ atoms[i].add$javajs_util_T3(pt);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

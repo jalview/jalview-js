@@ -1,24 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "XmlReader");
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','javajs.util.P3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "XmlReader");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.br=null;
-this.line=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['line'],'O',['br','java.io.BufferedReader']]]
 
 Clazz.newMeth(C$, 'getLine$', function () {
 return this.line;
 });
 
 Clazz.newMeth(C$, 'c$$java_io_BufferedReader', function (br) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.br=br;
 }, 1);
 
@@ -40,7 +35,7 @@ Clazz.newMeth(C$, 'getXmlData$S$S$Z$Z', function (name, data, withTag, allowSelf
 var closer="</" + name + ">" ;
 var tag="<" + name;
 if (data == null ) {
-var sb=Clazz.new_($I$(1));
+var sb=Clazz.new_($I$(1,1));
 try {
 if (this.line == null ) this.line=this.br.readLine$();
 while (this.line.indexOf$S(tag) < 0){
@@ -87,13 +82,13 @@ if ((ch=data.charAt$I(pt1)) == "\"") quoted=!quoted;
  else if (!quoted && (ch == ">" || ch == "/" ) ) break;
 }
 if (pt1 >= pt2) return "";
-while ($I$(2).isWhitespace$C(data.charAt$I(++pt1))){
+while ($I$(2,"isWhitespace$C",[data.charAt$I(++pt1)])){
 }
 return C$.unwrapCdata$S(data.substring$I$I(pt1, pt2));
 }, 1);
 
 Clazz.newMeth(C$, 'unwrapCdata$S', function (s) {
-return (s.startsWith$S("<![CDATA[") && s.endsWith$S("]]>")  ? $I$(2).rep$S$S$S(s.substring$I$I(9, s.length$() - 3), "]]]]><![CDATA[>", "]]>") : s);
+return (s.startsWith$S("<![CDATA[") && s.endsWith$S("]]>")  ? $I$(2,"rep$S$S$S",[s.substring$I$I(9, s.length$() - 3), "]]]]><![CDATA[>", "]]>"]) : s);
 }, 1);
 
 Clazz.newMeth(C$, 'getXmlAttrib$S$S', function (data, what) {
@@ -108,7 +103,7 @@ Clazz.newMeth(C$, 'getXmlPoint$S$S', function (data, key) {
 var spt=C$.getXmlAttrib$S$S(data, key).replace$C$C("(", "{").replace$C$C(")", "}");
 var value=$I$(3).uP$S(spt);
 if (Clazz.instanceOf(value, "javajs.util.P3")) return value;
-return Clazz.new_($I$(4));
+return Clazz.new_($I$(4,1));
 });
 
 Clazz.newMeth(C$, 'setNext$S$S$IA$I', function (data, what, next, offset) {
@@ -133,4 +128,4 @@ return (this.line.indexOf$S("<" + name) >= 0);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

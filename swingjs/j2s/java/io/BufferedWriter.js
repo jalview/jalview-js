@@ -1,30 +1,20 @@
 (function(){var P$=java.io,p$1={};
-var C$=Clazz.newClass(P$, "BufferedWriter", null, 'java.io.Writer');
-C$.defaultCharBufferSize=0;
+/*c*/var C$=Clazz.newClass(P$, "BufferedWriter", null, 'java.io.Writer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.defaultCharBufferSize=8192;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.out=null;
-this.cb=null;
-this.nChars=0;
-this.nextChar=0;
-this.lineSeparator=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_io_Writer', function (out) {
+C$.$fields$=[['I',['nChars','nextChar'],'S',['lineSeparator'],'O',['out','java.io.Writer','cb','char[]']]
+,['I',['defaultCharBufferSize']]]
+
+Clazz.newMeth(C$, 'c$$java_io_Writer',  function (out) {
 C$.c$$java_io_Writer$I.apply(this, [out, C$.defaultCharBufferSize]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_io_Writer$I', function (out, sz) {
-C$.superclazz.c$$O.apply(this, [out]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_io_Writer$I',  function (out, sz) {
+;C$.superclazz.c$$O.apply(this,[out]);C$.$init$.apply(this);
 if (sz <= 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Buffer size <= 0"]);
 this.out=out;
 this.cb=Clazz.array(Character.TYPE, [sz]);
@@ -33,11 +23,11 @@ this.nextChar=0;
 this.lineSeparator=System.lineSeparator$();
 }, 1);
 
-Clazz.newMeth(C$, 'ensureOpen', function () {
+Clazz.newMeth(C$, 'ensureOpen',  function () {
 if (this.out == null ) throw Clazz.new_(Clazz.load('java.io.IOException').c$$S,["Stream closed"]);
 }, p$1);
 
-Clazz.newMeth(C$, 'flushBuffer$', function () {
+Clazz.newMeth(C$, 'flushBuffer$',  function () {
 {
 p$1.ensureOpen.apply(this, []);
 if (this.nextChar == 0) return;
@@ -45,19 +35,19 @@ this.out.write$CA$I$I(this.cb, 0, this.nextChar);
 this.nextChar=0;
 }});
 
-Clazz.newMeth(C$, 'write$I', function (c) {
+Clazz.newMeth(C$, 'write$I',  function (c) {
 {
 p$1.ensureOpen.apply(this, []);
 if (this.nextChar >= this.nChars) this.flushBuffer$();
 this.cb[this.nextChar++]=String.fromCharCode(c);
 }});
 
-Clazz.newMeth(C$, 'min$I$I', function (a, b) {
+Clazz.newMeth(C$, 'min$I$I',  function (a, b) {
 if (a < b) return a;
 return b;
 }, p$1);
 
-Clazz.newMeth(C$, 'write$CA$I$I', function (cbuf, off, len) {
+Clazz.newMeth(C$, 'write$CA$I$I',  function (cbuf, off, len) {
 {
 p$1.ensureOpen.apply(this, []);
 if ((off < 0) || (off > cbuf.length) || (len < 0) || ((off + len) > cbuf.length) || ((off + len) < 0)  ) {
@@ -79,7 +69,7 @@ if (this.nextChar >= this.nChars) this.flushBuffer$();
 }
 }});
 
-Clazz.newMeth(C$, 'write$S$I$I', function (s, off, len) {
+Clazz.newMeth(C$, 'write$S$I$I',  function (s, off, len) {
 {
 p$1.ensureOpen.apply(this, []);
 var b=off;
@@ -93,17 +83,17 @@ if (this.nextChar >= this.nChars) this.flushBuffer$();
 }
 }});
 
-Clazz.newMeth(C$, 'newLine$', function () {
+Clazz.newMeth(C$, 'newLine$',  function () {
 this.write$S(this.lineSeparator);
 });
 
-Clazz.newMeth(C$, 'flush$', function () {
+Clazz.newMeth(C$, 'flush$',  function () {
 {
 this.flushBuffer$();
 this.out.flush$();
 }});
 
-Clazz.newMeth(C$, 'close$', function () {
+Clazz.newMeth(C$, 'close$',  function () {
 {
 if (this.out == null ) {
 return;
@@ -116,6 +106,10 @@ this.cb=null;
 }
 }});
 
+C$.$static$=function(){C$.$static$=0;
+C$.defaultCharBufferSize=8192;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:56 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

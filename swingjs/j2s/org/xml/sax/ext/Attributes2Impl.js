@@ -1,62 +1,56 @@
 (function(){var P$=Clazz.newPackage("org.xml.sax.ext"),I$=[];
-var C$=Clazz.newClass(P$, "Attributes2Impl", null, 'org.xml.sax.helpers.AttributesImpl', 'org.xml.sax.ext.Attributes2');
+/*c*/var C$=Clazz.newClass(P$, "Attributes2Impl", null, 'org.xml.sax.helpers.AttributesImpl', 'org.xml.sax.ext.Attributes2');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.declared=null;
-this.specified=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['declared','boolean[]','+specified']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$org_xml_sax_Attributes',  function (atts) {
+;C$.superclazz.c$$org_xml_sax_Attributes.apply(this,[atts]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$org_xml_sax_Attributes', function (atts) {
-C$.superclazz.c$$org_xml_sax_Attributes.apply(this, [atts]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'isDeclared$I', function (index) {
+Clazz.newMeth(C$, 'isDeclared$I',  function (index) {
 if (index < 0 || index >= this.getLength$() ) throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["No attribute at index: " + index]);
 return this.declared[index];
 });
 
-Clazz.newMeth(C$, 'isDeclared$S$S', function (uri, localName) {
+Clazz.newMeth(C$, 'isDeclared$S$S',  function (uri, localName) {
 var index=this.getIndex$S$S(uri, localName);
 if (index < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["No such attribute: local=" + localName + ", namespace=" + uri ]);
 return this.declared[index];
 });
 
-Clazz.newMeth(C$, 'isDeclared$S', function (qName) {
+Clazz.newMeth(C$, 'isDeclared$S',  function (qName) {
 var index=this.getIndex$S(qName);
 if (index < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["No such attribute: " + qName]);
 return this.declared[index];
 });
 
-Clazz.newMeth(C$, 'isSpecified$I', function (index) {
+Clazz.newMeth(C$, 'isSpecified$I',  function (index) {
 if (index < 0 || index >= this.getLength$() ) throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["No attribute at index: " + index]);
 return this.specified[index];
 });
 
-Clazz.newMeth(C$, 'isSpecified$S$S', function (uri, localName) {
+Clazz.newMeth(C$, 'isSpecified$S$S',  function (uri, localName) {
 var index=this.getIndex$S$S(uri, localName);
 if (index < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["No such attribute: local=" + localName + ", namespace=" + uri ]);
 return this.specified[index];
 });
 
-Clazz.newMeth(C$, 'isSpecified$S', function (qName) {
+Clazz.newMeth(C$, 'isSpecified$S',  function (qName) {
 var index=this.getIndex$S(qName);
 if (index < 0) throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["No such attribute: " + qName]);
 return this.specified[index];
 });
 
-Clazz.newMeth(C$, 'setAttributes$org_xml_sax_Attributes', function (atts) {
+Clazz.newMeth(C$, 'setAttributes$org_xml_sax_Attributes',  function (atts) {
 var length=atts.getLength$();
 C$.superclazz.prototype.setAttributes$org_xml_sax_Attributes.apply(this, [atts]);
 this.declared=Clazz.array(Boolean.TYPE, [length]);
@@ -74,7 +68,7 @@ this.specified[i]=true;
 }
 }});
 
-Clazz.newMeth(C$, 'addAttribute$S$S$S$S$S', function (uri, localName, qName, type, value) {
+Clazz.newMeth(C$, 'addAttribute$S$S$S$S$S',  function (uri, localName, qName, type, value) {
 C$.superclazz.prototype.addAttribute$S$S$S$S$S.apply(this, [uri, localName, qName, type, value]);
 var length=this.getLength$();
 if (length < this.specified.length) {
@@ -89,7 +83,7 @@ this.specified=newFlags;
 this.declared[length - 1]=!"CDATA".equals$O(type);
 });
 
-Clazz.newMeth(C$, 'removeAttribute$I', function (index) {
+Clazz.newMeth(C$, 'removeAttribute$I',  function (index) {
 var origMax=this.getLength$() - 1;
 C$.superclazz.prototype.removeAttribute$I.apply(this, [index]);
 if (index != origMax) {
@@ -97,14 +91,14 @@ System.arraycopy$O$I$O$I$I(this.declared, index + 1, this.declared, index, origM
 System.arraycopy$O$I$O$I$I(this.specified, index + 1, this.specified, index, origMax - index);
 }});
 
-Clazz.newMeth(C$, 'setDeclared$I$Z', function (index, value) {
+Clazz.newMeth(C$, 'setDeclared$I$Z',  function (index, value) {
 if (index < 0 || index >= this.getLength$() ) throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["No attribute at index: " + index]);
 this.declared[index]=value;
 });
 
-Clazz.newMeth(C$, 'setSpecified$I$Z', function (index, value) {
+Clazz.newMeth(C$, 'setSpecified$I$Z',  function (index, value) {
 if (index < 0 || index >= this.getLength$() ) throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$S,["No attribute at index: " + index]);
 this.specified[index]=value;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:01 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

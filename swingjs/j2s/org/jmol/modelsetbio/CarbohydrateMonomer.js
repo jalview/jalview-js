@@ -1,16 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'org.jmol.c.STR']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "CarbohydrateMonomer", null, 'org.jmol.modelsetbio.Monomer');
-C$.alphaOffsets=null;
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),I$=[[0,'org.jmol.c.STR']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "CarbohydrateMonomer", null, 'org.jmol.modelsetbio.Monomer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.alphaOffsets=Clazz.array(Byte.TYPE, -1, [0]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['alphaOffsets','byte[]']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'validateAndAllocate$org_jmol_modelset_Chain$S$I$I$I', function (chain, group3, seqcode, firstIndex, lastIndex) {
@@ -53,6 +53,10 @@ for (var i=this.firstAtomIndex; i <= this.lastAtomIndex; i++) if (this.getCrossL
 
 return false;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.alphaOffsets=Clazz.array(Byte.TYPE, -1, [0]);
+};
 var $s$ = new Int16Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:15 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

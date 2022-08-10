@@ -1,26 +1,18 @@
 (function(){var P$=Clazz.newPackage("java.awt.dnd"),p$1={};
-var C$=Clazz.newClass(P$, "DragSourceDragEvent", null, 'java.awt.dnd.DragSourceEvent');
+/*c*/var C$=Clazz.newClass(P$, "DragSourceDragEvent", null, 'java.awt.dnd.DragSourceEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.targetActions=0;
-this.dropAction=0;
-this.gestureModifiers=0;
-this.invalidModifiers=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.targetActions=0;
 this.dropAction=0;
 this.gestureModifiers=0;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext$I$I$I', function (dsc, dropAction, action, modifiers) {
-C$.superclazz.c$$java_awt_dnd_DragSourceContext.apply(this, [dsc]);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['invalidModifiers'],'I',['targetActions','dropAction','gestureModifiers']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext$I$I$I',  function (dsc, dropAction, action, modifiers) {
+;C$.superclazz.c$$java_awt_dnd_DragSourceContext.apply(this,[dsc]);C$.$init$.apply(this);
 this.targetActions=action;
 this.gestureModifiers=modifiers;
 this.dropAction=dropAction;
@@ -34,9 +26,8 @@ p$1.setOldModifiers.apply(this, []);
 this.invalidModifiers=true;
 }}, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext$I$I$I$I$I', function (dsc, dropAction, action, modifiers, x, y) {
-C$.superclazz.c$$java_awt_dnd_DragSourceContext$I$I.apply(this, [dsc, x, y]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_dnd_DragSourceContext$I$I$I$I$I',  function (dsc, dropAction, action, modifiers, x, y) {
+;C$.superclazz.c$$java_awt_dnd_DragSourceContext$I$I.apply(this,[dsc, x, y]);C$.$init$.apply(this);
 this.targetActions=action;
 this.gestureModifiers=modifiers;
 this.dropAction=dropAction;
@@ -50,27 +41,27 @@ p$1.setOldModifiers.apply(this, []);
 this.invalidModifiers=true;
 }}, 1);
 
-Clazz.newMeth(C$, 'getTargetActions$', function () {
+Clazz.newMeth(C$, 'getTargetActions$',  function () {
 return this.targetActions;
 });
 
-Clazz.newMeth(C$, 'getGestureModifiers$', function () {
+Clazz.newMeth(C$, 'getGestureModifiers$',  function () {
 return this.invalidModifiers ? this.gestureModifiers : this.gestureModifiers & 63;
 });
 
-Clazz.newMeth(C$, 'getGestureModifiersEx$', function () {
+Clazz.newMeth(C$, 'getGestureModifiersEx$',  function () {
 return this.invalidModifiers ? this.gestureModifiers : this.gestureModifiers & 16320;
 });
 
-Clazz.newMeth(C$, 'getUserAction$', function () {
+Clazz.newMeth(C$, 'getUserAction$',  function () {
 return this.dropAction;
 });
 
-Clazz.newMeth(C$, 'getDropAction$', function () {
+Clazz.newMeth(C$, 'getDropAction$',  function () {
 return this.targetActions & this.getDragSourceContext$().getSourceActions$();
 });
 
-Clazz.newMeth(C$, 'setNewModifiers', function () {
+Clazz.newMeth(C$, 'setNewModifiers',  function () {
 if ((this.gestureModifiers & 16) != 0) {
 this.gestureModifiers|=1024;
 }if ((this.gestureModifiers & 8) != 0) {
@@ -85,7 +76,7 @@ this.gestureModifiers|=128;
 this.gestureModifiers|=8192;
 }}, p$1);
 
-Clazz.newMeth(C$, 'setOldModifiers', function () {
+Clazz.newMeth(C$, 'setOldModifiers',  function () {
 if ((this.gestureModifiers & 1024) != 0) {
 this.gestureModifiers|=16;
 }if ((this.gestureModifiers & 2048) != 0) {
@@ -102,4 +93,4 @@ this.gestureModifiers|=32;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:27 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:51 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

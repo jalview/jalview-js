@@ -1,23 +1,17 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.P3','org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.CU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NffReader", null, 'org.jmol.jvxl.readers.PolygonFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'java.util.Hashtable','javajs.util.P3','org.jmol.jvxl.data.JvxlCoder','org.jmol.util.Logger','javajs.util.CU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NffReader", null, 'org.jmol.jvxl.readers.PolygonFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nPolygons=0;
-this.vertexMap=null;
-this.pt=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.vertexMap=Clazz.new_($I$(1));
-this.pt=Clazz.new_($I$(2));
-}, 1);
+this.vertexMap=Clazz.new_($I$(1,1));
+this.pt=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['I',['nPolygons'],'O',['vertexMap','java.util.Map','pt','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -45,7 +39,7 @@ case 35:
 this.vertexMap.clear$();
 continue;
 case 102:
-color=$I$(5).colorTriadToFFRGB$F$F$F(this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3]));
+color=$I$(5,"colorTriadToFFRGB$F$F$F",[this.parseFloatStr$S(tokens[1]), this.parseFloatStr$S(tokens[2]), this.parseFloatStr$S(tokens[3])]);
 continue;
 case 112:
 if (this.line.equals$O("pp 3")) {
@@ -74,8 +68,8 @@ this.pt.set$F$F$F(this.parseFloatStr$S(tokens[0]), this.parseFloatStr$S(tokens[1
 if (!Float.isNaN$F(this.params.scale)) this.pt.scale$F(this.params.scale);
 if (this.isAnisotropic) this.setVertexAnisotropy$javajs_util_T3(this.pt);
 i=Integer.valueOf$I(this.addVertexCopy$javajs_util_T3$F$I$Z(this.pt, 0, this.nVertices++, true));
-this.vertexMap.put$TK$TV(this.line, i);
+this.vertexMap.put$O$O(this.line, i);
 }return i.intValue$();
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:00 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:35 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

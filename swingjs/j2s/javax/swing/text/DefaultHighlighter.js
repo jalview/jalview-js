@@ -1,34 +1,25 @@
-(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['javax.swing.text.Position','.Bias'],'java.util.Vector','javax.swing.SwingUtilities',['javax.swing.text.Highlighter','.Highlight'],['javax.swing.text.DefaultHighlighter','.DefaultHighlightPainter'],['javax.swing.text.DefaultHighlighter','.SafeDamager'],['javax.swing.text.DefaultHighlighter','.LayeredHighlightInfo'],['javax.swing.text.DefaultHighlighter','.HighlightInfo']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "DefaultHighlighter", function(){
+(function(){var P$=Clazz.newPackage("javax.swing.text"),p$1={},I$=[[0,['javax.swing.text.Position','.Bias'],'java.util.Vector','javax.swing.SwingUtilities',['javax.swing.text.Highlighter','.Highlight'],['javax.swing.text.DefaultHighlighter','.DefaultHighlightPainter'],['javax.swing.text.DefaultHighlighter','.SafeDamager'],['javax.swing.text.DefaultHighlighter','.LayeredHighlightInfo'],['javax.swing.text.DefaultHighlighter','.HighlightInfo']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "DefaultHighlighter", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.text.LayeredHighlighter');
-C$.noHighlights=null;
-C$.DefaultPainter=null;
+C$.$classes$=[['DefaultHighlightPainter',9],['HighlightInfo',0],['LayeredHighlightInfo',0],['SafeDamager',0]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.noHighlights=Clazz.array($I$(4), [0]);
-C$.DefaultPainter=Clazz.new_($I$(5).c$$java_awt_Color,[null]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.highlights=null;
-this.component=null;
-this.drawsLayeredHighlights=false;
-this.safeDamager=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.highlights=Clazz.new_($I$(2));
-this.safeDamager=Clazz.new_($I$(6), [this, null]);
-}, 1);
+this.highlights=Clazz.new_($I$(2,1));
+this.safeDamager=Clazz.new_($I$(6,1),[this, null]);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['Z',['drawsLayeredHighlights'],'O',['highlights','java.util.Vector','component','javax.swing.text.JTextComponent','safeDamager','javax.swing.text.DefaultHighlighter.SafeDamager']]
+,['O',['noHighlights','javax.swing.text.Highlighter.Highlight[]','DefaultPainter','javax.swing.text.LayeredHighlighter.LayerPainter']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 this.drawsLayeredHighlights=true;
 }, 1);
 
-Clazz.newMeth(C$, 'paint$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'paint$java_awt_Graphics',  function (g) {
 var len=this.highlights.size$();
 for (var i=0; i < len; i++) {
 var info=this.highlights.elementAt$I(i);
@@ -43,32 +34,32 @@ for (; i < len; i++) {
 info=this.highlights.elementAt$I(i);
 if (!(Clazz.instanceOf(info, "javax.swing.text.DefaultHighlighter.LayeredHighlightInfo"))) {
 var p=info.getPainter$();
-p.paint$(g, info.getStartOffset$(), info.getEndOffset$(), a, this.component);
+p.paint$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent(g, info.getStartOffset$(), info.getEndOffset$(), a, this.component);
 }}
 }}
 });
 
-Clazz.newMeth(C$, 'install$javax_swing_text_JTextComponent', function (c) {
+Clazz.newMeth(C$, 'install$javax_swing_text_JTextComponent',  function (c) {
 this.component=c;
 this.removeAllHighlights$();
 });
 
-Clazz.newMeth(C$, 'deinstall$javax_swing_text_JTextComponent', function (c) {
+Clazz.newMeth(C$, 'deinstall$javax_swing_text_JTextComponent',  function (c) {
 this.component=null;
 });
 
-Clazz.newMeth(C$, 'addHighlight$I$I$javax_swing_text_Highlighter_HighlightPainter', function (p0, p1, p) {
+Clazz.newMeth(C$, 'addHighlight$I$I$javax_swing_text_Highlighter_HighlightPainter',  function (p0, p1, p) {
 var doc=this.component.getDocument$();
-var i=(this.getDrawsLayeredHighlights$() && (Clazz.instanceOf(p, "javax.swing.text.LayeredHighlighter.LayerPainter")) ) ? Clazz.new_($I$(7), [this, null]) : Clazz.new_($I$(8), [this, null]);
+var i=(this.getDrawsLayeredHighlights$() && (Clazz.instanceOf(p, "javax.swing.text.LayeredHighlighter.LayerPainter")) ) ? Clazz.new_($I$(7,1),[this, null]) : Clazz.new_($I$(8,1),[this, null]);
 i.painter=p;
 i.p0=doc.createPosition$I(p0);
 i.p1=doc.createPosition$I(p1);
-this.highlights.addElement$TE(i);
+this.highlights.addElement$O(i);
 p$1.safeDamageRange$I$I.apply(this, [p0, p1]);
 return i;
 });
 
-Clazz.newMeth(C$, 'removeHighlight$O', function (tag) {
+Clazz.newMeth(C$, 'removeHighlight$O',  function (tag) {
 if (Clazz.instanceOf(tag, "javax.swing.text.DefaultHighlighter.LayeredHighlightInfo")) {
 var lhi=tag;
 if (lhi.width > 0 && lhi.height > 0 ) {
@@ -79,7 +70,7 @@ p$1.safeDamageRange$javax_swing_text_Position$javax_swing_text_Position.apply(th
 }this.highlights.removeElement$O(tag);
 });
 
-Clazz.newMeth(C$, 'removeAllHighlights$', function () {
+Clazz.newMeth(C$, 'removeAllHighlights$',  function () {
 var mapper=this.component.getUI$();
 if (this.getDrawsLayeredHighlights$()) {
 var len=this.highlights.size$();
@@ -139,7 +130,7 @@ throw e;
 this.highlights.removeAllElements$();
 }}});
 
-Clazz.newMeth(C$, 'changeHighlight$O$I$I', function (tag, p0, p1) {
+Clazz.newMeth(C$, 'changeHighlight$O$I$I',  function (tag, p0, p1) {
 var doc=this.component.getDocument$();
 if (Clazz.instanceOf(tag, "javax.swing.text.DefaultHighlighter.LayeredHighlightInfo")) {
 var lhi=tag;
@@ -164,7 +155,7 @@ p$1.safeDamageRange$I$I.apply(this, [p0, p1]);
 info.p1=doc.createPosition$I(p1);
 }});
 
-Clazz.newMeth(C$, 'getHighlights$', function () {
+Clazz.newMeth(C$, 'getHighlights$',  function () {
 var size=this.highlights.size$();
 if (size == 0) {
 return C$.noHighlights;
@@ -173,7 +164,7 @@ this.highlights.copyInto$OA(h);
 return h;
 });
 
-Clazz.newMeth(C$, 'paintLayeredHighlights$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent$javax_swing_text_View', function (g, p0, p1, viewBounds, editor, view) {
+Clazz.newMeth(C$, 'paintLayeredHighlights$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent$javax_swing_text_View',  function (g, p0, p1, viewBounds, editor, view) {
 for (var counter=this.highlights.size$() - 1; counter >= 0; counter--) {
 var tag=this.highlights.elementAt$I(counter);
 if (Clazz.instanceOf(tag, "javax.swing.text.DefaultHighlighter.LayeredHighlightInfo")) {
@@ -185,48 +176,49 @@ lhi.paintLayeredHighlights$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text
 }}}
 });
 
-Clazz.newMeth(C$, 'safeDamageRange$javax_swing_text_Position$javax_swing_text_Position', function (p0, p1) {
+Clazz.newMeth(C$, 'safeDamageRange$javax_swing_text_Position$javax_swing_text_Position',  function (p0, p1) {
 this.safeDamager.damageRange$javax_swing_text_Position$javax_swing_text_Position(p0, p1);
 }, p$1);
 
-Clazz.newMeth(C$, 'safeDamageRange$I$I', function (a0, a1) {
+Clazz.newMeth(C$, 'safeDamageRange$I$I',  function (a0, a1) {
 var doc=this.component.getDocument$();
 p$1.safeDamageRange$javax_swing_text_Position$javax_swing_text_Position.apply(this, [doc.createPosition$I(a0), doc.createPosition$I(a1)]);
 }, p$1);
 
-Clazz.newMeth(C$, 'setDrawsLayeredHighlights$Z', function (newValue) {
+Clazz.newMeth(C$, 'setDrawsLayeredHighlights$Z',  function (newValue) {
 this.drawsLayeredHighlights=newValue;
 });
 
-Clazz.newMeth(C$, 'getDrawsLayeredHighlights$', function () {
+Clazz.newMeth(C$, 'getDrawsLayeredHighlights$',  function () {
 return this.drawsLayeredHighlights;
 });
+
+C$.$static$=function(){C$.$static$=0;
+C$.noHighlights=Clazz.array($I$(4), [0]);
+C$.DefaultPainter=Clazz.new_($I$(5,1).c$$java_awt_Color,[null]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultHighlighter, "DefaultHighlightPainter", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultHighlighter, "DefaultHighlightPainter", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, ['javax.swing.text.LayeredHighlighter','.LayerPainter']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.color=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Color', function (c) {
-Clazz.super_(C$, this,1);
+C$.$fields$=[['O',['color','java.awt.Color']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_Color',  function (c) {
+Clazz.super_(C$, this);
 this.color=c;
 }, 1);
 
-Clazz.newMeth(C$, 'getColor$', function () {
+Clazz.newMeth(C$, 'getColor$',  function () {
 return this.color;
 });
 
-Clazz.newMeth(C$, ['paint$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent','paint$'], function (g, offs0, offs1, bounds, c) {
+Clazz.newMeth(C$, 'paint$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent',  function (g, offs0, offs1, bounds, c) {
 var alloc=bounds.getBounds$();
 try {
 var mapper=c.getUI$();
@@ -254,7 +246,7 @@ throw e;
 }
 });
 
-Clazz.newMeth(C$, 'paintLayer$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent$javax_swing_text_View', function (g, offs0, offs1, bounds, c, view) {
+Clazz.newMeth(C$, 'paintLayer$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent$javax_swing_text_View',  function (g, offs0, offs1, bounds, c, view) {
 var color=this.getColor$();
 if (color == null ) {
 g.setColor$java_awt_Color(c.getSelectionColor$());
@@ -286,57 +278,44 @@ g.fillRect$I$I$I$I(r.x, r.y, r.width, r.height);
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultHighlighter, "HighlightInfo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultHighlighter, "HighlightInfo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, [['javax.swing.text.Highlighter','javax.swing.text.Highlighter.Highlight']]);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.p0=null;
-this.p1=null;
-this.painter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getStartOffset$', function () {
+C$.$fields$=[['O',['p0','javax.swing.text.Position','+p1','painter','javax.swing.text.Highlighter.HighlightPainter']]]
+
+Clazz.newMeth(C$, 'getStartOffset$',  function () {
 return this.p0.getOffset$();
 });
 
-Clazz.newMeth(C$, 'getEndOffset$', function () {
+Clazz.newMeth(C$, 'getEndOffset$',  function () {
 return this.p1.getOffset$();
 });
 
-Clazz.newMeth(C$, 'getPainter$', function () {
+Clazz.newMeth(C$, 'getPainter$',  function () {
 return this.painter;
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultHighlighter, "LayeredHighlightInfo", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultHighlighter, "LayeredHighlightInfo", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['javax.swing.text.DefaultHighlighter','.HighlightInfo']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.width=0;
-this.height=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'union$java_awt_Shape', function (bounds) {
+C$.$fields$=[['I',['x','y','width','height']]]
+
+Clazz.newMeth(C$, 'union$java_awt_Shape',  function (bounds) {
 if (bounds == null ) return;
 var alloc;
 if (Clazz.instanceOf(bounds, "java.awt.Rectangle")) {
@@ -357,7 +336,7 @@ this.y=Math.min(this.y, alloc.y);
 this.height-=this.y;
 }});
 
-Clazz.newMeth(C$, 'paintLayeredHighlights$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent$javax_swing_text_View', function (g, p0, p1, viewBounds, editor, view) {
+Clazz.newMeth(C$, 'paintLayeredHighlights$java_awt_Graphics$I$I$java_awt_Shape$javax_swing_text_JTextComponent$javax_swing_text_View',  function (g, p0, p1, viewBounds, editor, view) {
 var start=this.getStartOffset$();
 var end=this.getEndOffset$();
 p0=Math.max(start, p0);
@@ -368,53 +347,47 @@ this.union$java_awt_Shape((this.painter).paintLayer$java_awt_Graphics$I$I$java_a
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.DefaultHighlighter, "SafeDamager", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.DefaultHighlighter, "SafeDamager", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'Runnable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.p0=null;
-this.p1=null;
-this.lastDoc=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.p0=Clazz.new_($I$(2).c$$I,[10]);
-this.p1=Clazz.new_($I$(2).c$$I,[10]);
+this.p0=Clazz.new_($I$(2,1).c$$I,[10]);
+this.p1=Clazz.new_($I$(2,1).c$$I,[10]);
 this.lastDoc=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'run$', function () {
-if (this.this$0.component != null ) {
-var mapper=this.this$0.component.getUI$();
-if (mapper != null  && this.lastDoc === this.this$0.component.getDocument$()  ) {
+C$.$fields$=[['O',['p0','java.util.Vector','+p1','lastDoc','javax.swing.text.Document']]]
+
+Clazz.newMeth(C$, 'run$',  function () {
+if (this.b$['javax.swing.text.DefaultHighlighter'].component != null ) {
+var mapper=this.b$['javax.swing.text.DefaultHighlighter'].component.getUI$();
+if (mapper != null  && this.lastDoc === this.b$['javax.swing.text.DefaultHighlighter'].component.getDocument$()  ) {
 var len=this.p0.size$();
 for (var i=0; i < len; i++) {
-mapper.damageRange$javax_swing_text_JTextComponent$I$I(this.this$0.component, (this.p0.get$I(i)).getOffset$(), (this.p1.get$I(i)).getOffset$());
+mapper.damageRange$javax_swing_text_JTextComponent$I$I(this.b$['javax.swing.text.DefaultHighlighter'].component, (this.p0.get$I(i)).getOffset$(), (this.p1.get$I(i)).getOffset$());
 }
 }}this.p0.clear$();
 this.p1.clear$();
 this.lastDoc=null;
 });
 
-Clazz.newMeth(C$, 'damageRange$javax_swing_text_Position$javax_swing_text_Position', function (pos0, pos1) {
-if (this.this$0.component == null ) {
+Clazz.newMeth(C$, 'damageRange$javax_swing_text_Position$javax_swing_text_Position',  function (pos0, pos1) {
+if (this.b$['javax.swing.text.DefaultHighlighter'].component == null ) {
 this.p0.clear$();
 this.lastDoc=null;
 return;
 }var addToQueue=this.p0.isEmpty$();
-var curDoc=this.this$0.component.getDocument$();
+var curDoc=this.b$['javax.swing.text.DefaultHighlighter'].component.getDocument$();
 if (curDoc !== this.lastDoc ) {
 if (!this.p0.isEmpty$()) {
 this.p0.clear$();
 this.p1.clear$();
 }this.lastDoc=curDoc;
-}this.p0.add$TE(pos0);
-this.p1.add$TE(pos1);
+}this.p0.add$O(pos0);
+this.p1.add$O(pos1);
 if (addToQueue) {
 $I$(3).invokeLater$Runnable(this);
 }});
@@ -422,4 +395,4 @@ $I$(3).invokeLater$Runnable(this);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:23 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

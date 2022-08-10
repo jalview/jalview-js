@@ -1,40 +1,39 @@
 (function(){var P$=java.lang.reflect,I$=[];
-var C$=Clazz.newClass(P$, "Array");
+/*c*/var C$=Clazz.newClass(P$, "Array");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'newInstance$Class$I', function (componentType, length) {
+Clazz.newMeth(C$, 'newInstance$Class$I',  function (componentType, length) {
 return C$.newArray$Class$I(componentType, length);
 }, 1);
 
-Clazz.newMeth(C$, 'newInstance$Class$IA', function (componentType, dimensions) {
+Clazz.newMeth(C$, 'newInstance$Class$IA',  function (componentType, dimensions) {
 return C$.multiNewArray$Class$IA(componentType, dimensions);
 }, 1);
 
-Clazz.newMeth(C$, 'getAval$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getAval$O$I',  function (array, index) {
 C$.checkArray$O$I$Z(array, index, true);
 return (array)[index];
 }, 1);
 
-Clazz.newMeth(C$, 'checkArray$O$I$Z', function (array, index, checkIndex) {
+Clazz.newMeth(C$, 'checkArray$O$I$Z',  function (array, index, checkIndex) {
 if (array == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 if (checkIndex && (index < 0 || index >= (array).length ) ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getLength$O', function (array) {
+Clazz.newMeth(C$, 'getLength$O',  function (array) {
 C$.checkArray$O$I$Z(array, 0, false);
 return (array).length;
 }, 1);
 
-Clazz.newMeth(C$, 'get$O$I', function (array, index) {
+Clazz.newMeth(C$, 'get$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 {
 switch (array.__ARRAYTYPE){ case "BA": return new Byte(x);
@@ -42,7 +41,7 @@ case "CA": return new Character(x); case "HA": return new Short(x); case "IA": r
 }
 }, 1);
 
-Clazz.newMeth(C$, 'getBoolean$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getBoolean$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
 var val=false;
@@ -56,21 +55,21 @@ return val;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getByte$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getByte$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
-var val=($b$[0] = 0, $b$[0]);
+var val=0;
 {
 type = array.__ARRAYTYPE; val = x;
 }
 switch (type) {
 case "BA":
-return $b$[0] = val, $b$[0];
+return val;
 }
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getChar$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getChar$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
 var val="\u0000";
@@ -84,7 +83,7 @@ return val;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getShort$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getShort$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
 var val=0;
@@ -99,7 +98,7 @@ return val;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getInt$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getInt$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
 var val=0;
@@ -115,7 +114,7 @@ return val;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getLong$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getLong$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
 var val=0;
@@ -132,7 +131,7 @@ return val;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getFloat$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getFloat$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
 var val=0;
@@ -150,7 +149,7 @@ return val;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'getDouble$O$I', function (array, index) {
+Clazz.newMeth(C$, 'getDouble$O$I',  function (array, index) {
 var x=C$.getAval$O$I(array, index);
 var type="";
 var val=0;
@@ -169,7 +168,7 @@ return val;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'set$O$I$O', function (array, index, value) {
+Clazz.newMeth(C$, 'set$O$I$O',  function (array, index, value) {
 C$.checkArray$O$I$Z(array, index, true);
 var type="";
 {
@@ -178,7 +177,7 @@ type = array.__ARRAYTYPE;
 try {
 switch (type) {
 case "BA":
-(array)[index]=((value).byteValue$()|0);
+(array)[index]=(value).byteValue$();
 return;
 case "CA":
 (array)[index]=(value).charValue$();
@@ -210,7 +209,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }
 }, 1);
 
-Clazz.newMeth(C$, 'setBoolean$O$I$Z', function (array, index, z) {
+Clazz.newMeth(C$, 'setBoolean$O$I$Z',  function (array, index, z) {
 C$.checkArray$O$I$Z(array, index, true);
 var type="";
 {
@@ -224,7 +223,7 @@ return;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'setByte$O$I$B', function (array, index, b) {
+Clazz.newMeth(C$, 'setByte$O$I$B',  function (array, index, b) {
 var type="";
 {
 type = array.__ARRAYTYPE;
@@ -236,13 +235,13 @@ case "IA":
 case "JA":
 case "FA":
 case "DA":
-(array)[index]=(b|0);
+(array)[index]=b;
 return;
 }
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'setChar$O$I$C', function (array, index, c) {
+Clazz.newMeth(C$, 'setChar$O$I$C',  function (array, index, c) {
 var type="";
 {
 type = array.__ARRAYTYPE;
@@ -255,7 +254,7 @@ return;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'setShort$O$I$H', function (array, index, s) {
+Clazz.newMeth(C$, 'setShort$O$I$H',  function (array, index, s) {
 var type="";
 {
 type = array.__ARRAYTYPE;
@@ -272,7 +271,7 @@ return;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'setInt$O$I$I', function (array, index, i) {
+Clazz.newMeth(C$, 'setInt$O$I$I',  function (array, index, i) {
 var type="";
 {
 type = array.__ARRAYTYPE;
@@ -288,7 +287,7 @@ return;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'setLong$O$I$J', function (array, index, l) {
+Clazz.newMeth(C$, 'setLong$O$I$J',  function (array, index, l) {
 var type="";
 {
 type = array.__ARRAYTYPE;
@@ -303,7 +302,7 @@ return;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'setFloat$O$I$F', function (array, index, f) {
+Clazz.newMeth(C$, 'setFloat$O$I$F',  function (array, index, f) {
 var type="";
 {
 type = array.__ARRAYTYPE;
@@ -317,7 +316,7 @@ return;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'setDouble$O$I$D', function (array, index, d) {
+Clazz.newMeth(C$, 'setDouble$O$I$D',  function (array, index, d) {
 var type="";
 {
 type = array.__ARRAYTYPE;
@@ -330,17 +329,16 @@ return;
 throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }, 1);
 
-Clazz.newMeth(C$, 'newArray$Class$I', function (componentType, length) {
+Clazz.newMeth(C$, 'newArray$Class$I',  function (componentType, length) {
 {
 return Clazz.array(componentType, length);
 }
 }, 1);
 
-Clazz.newMeth(C$, 'multiNewArray$Class$IA', function (componentType, dimensions) {
+Clazz.newMeth(C$, 'multiNewArray$Class$IA',  function (componentType, dimensions) {
 {
 return Clazz.array(componentType, dimensions);
 }
 }, 1);
-var $b$ = new Int8Array(1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:59 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

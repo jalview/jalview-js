@@ -1,67 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.quantum"),p$1={},I$=[[0,'javajs.util.AU','javajs.util.BS','org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.util.BSUtil','javajs.util.Eigen']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NciCalculation", null, 'org.jmol.quantum.QuantumPlaneCalculation');
-C$.c=0;
-C$.rpower=0;
-C$.coef1=null;
-C$.coef2=null;
-C$.coef3=null;
-C$.zeta1=null;
-C$.zeta2=null;
-C$.zeta3=null;
-C$.dMax=null;
+(function(){var P$=Clazz.newPackage("org.jmol.quantum"),p$1={},I$=[[0,'javajs.util.AU','javajs.util.BS','org.jmol.util.Logger','org.jmol.util.Escape','org.jmol.util.BSUtil','javajs.util.Eigen']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NciCalculation", null, 'org.jmol.quantum.QuantumPlaneCalculation');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.c=(1 / (2 * Math.pow(29.608813203268074, 0.3333333333333333)));
-C$.rpower=-1.3333333333333333;
-C$.coef1=Clazz.array(Double.TYPE, -1, [0, 0.2815, 2.437, 11.84, 31.34, 67.82, 120.2, 190.9, 289.5, 406.3, 561.3, 760.8, 1016.0, 1319.0, 1658.0, 2042.0, 2501.0, 3024.0, 3625.0]);
-C$.coef2=Clazz.array(Double.TYPE, -1, [0, 0.0, 0.0, 0.06332, 0.3694, 0.8527, 1.172, 2.247, 2.879, 3.049, 6.984, 22.42, 37.17, 57.95, 87.16, 115.7, 158.0, 205.5, 260.0]);
-C$.coef3=Clazz.array(Double.TYPE, -1, [0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06358, 0.3331, 0.8878, 0.7888, 1.465, 2.17, 3.369, 5.211]);
-C$.zeta1=Clazz.array(Double.TYPE, -1, [0, 0.5288, 0.3379, 0.1912, 0.139, 0.1059, 0.0884, 0.0767, 0.0669, 0.0608, 0.0549, 0.0496, 0.0449, 0.0411, 0.0382, 0.0358, 0.0335, 0.0315, 0.0296]);
-C$.zeta2=Clazz.array(Double.TYPE, -1, [0, 1.0, 1.0, 0.9992, 0.6945, 0.53, 0.548, 0.4532, 0.3974, 0.3994, 0.3447, 0.2511, 0.215, 0.1874, 0.1654, 0.1509, 0.1369, 0.1259, 0.1168]);
-C$.zeta3=Clazz.array(Double.TYPE, -1, [0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0236, 0.7753, 0.5962, 0.6995, 0.5851, 0.5149, 0.4974, 0.4412]);
-C$.dMax=Clazz.array(Double.TYPE, -1, [0, 2.982502423, 2.635120936, 4.144887422, 4.105800759, 3.576656363, 3.872424373, 3.497503547, 3.165369971, 3.204214082, 3.051069564, 4.251312809, 4.503309314, 4.047465141, 4.666024968, 4.265151411, 3.955710076, 4.040067606, 3.776022242]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.havePoints=false;
-this.isReducedDensity=false;
-this.DEFAULT_RHOPLOT_SCF=0;
-this.DEFAULT_RHOPLOT_PRO=0;
-this.DEFAULT_RHOPARAM=0;
-this.rhoMin=0;
-this.rhoPlot=0;
-this.rhoParam=0;
-this.dataScaling=0;
-this.dataIsReducedDensity=false;
-this.eigen=null;
-this.rhoMolecules=null;
-this.type=0;
-this.nMolecules=0;
-this.isPromolecular=false;
-this.bsOK=null;
-this.noValuesAtAll=false;
-this.useAbsolute=false;
-this.hess=null;
-this.grad=0;
-this.gxTemp=0;
-this.gyTemp=0;
-this.gzTemp=0;
-this.gxxTemp=0;
-this.gyyTemp=0;
-this.gzzTemp=0;
-this.gxyTemp=0;
-this.gyzTemp=0;
-this.gxzTemp=0;
-this.eigenValues=null;
-this.test1=0;
-this.yzPlanesRaw=null;
-this.yzCount=0;
-this.yzPlanesRho=null;
-this.p0=null;
-this.p1=null;
-this.p2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.DEFAULT_RHOPLOT_SCF=0.05;
@@ -70,27 +10,30 @@ this.DEFAULT_RHOPARAM=0.95;
 this.dataScaling=1;
 this.eigenValues=Clazz.array(Float.TYPE, [3]);
 this.yzPlanesRho=$I$(1).newFloat2$I(2);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['havePoints','isReducedDensity','dataIsReducedDensity','isPromolecular','noValuesAtAll','useAbsolute'],'D',['DEFAULT_RHOPLOT_SCF','DEFAULT_RHOPLOT_PRO','DEFAULT_RHOPARAM','rhoMin','rhoPlot','rhoParam','grad','gxTemp','gyTemp','gzTemp','gxxTemp','gyyTemp','gzzTemp','gxyTemp','gyzTemp','gxzTemp','test1'],'F',['dataScaling'],'I',['type','nMolecules','yzCount'],'O',['eigen','javajs.util.Eigen','rhoMolecules','double[]','bsOK','javajs.util.BS','hess','double[][]','eigenValues','float[]','yzPlanesRaw','float[][]','+yzPlanesRho','p0','float[]','+p1','+p2']]
+,['D',['c','rpower'],'O',['coef1','double[]','+coef2','+coef3','+zeta1','+zeta2','+zeta3','+dMax']]]
 
 Clazz.newMeth(C$, 'getNoValue$', function () {
 return 100.0;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'setupCalculation$org_jmol_jvxl_data_VolumeData$javajs_util_BS$javajs_util_BS$javajs_util_BSA$javajs_util_T3A$I$Z$javajs_util_T3A$FA$I', function (volumeData, bsSelected, bsExcluded, bsMolecules, atomCoordAngstroms, firstAtomOffset, isReducedDensity, points, parameters, testFlags) {
 this.useAbsolute=(testFlags == 2);
 this.bsExcluded=bsExcluded;
-var bsLigand=Clazz.new_($I$(2));
+var bsLigand=Clazz.new_($I$(2,1));
 bsLigand.or$javajs_util_BS(bsSelected);
 if (bsExcluded != null ) {
 bsLigand.andNot$javajs_util_BS(bsExcluded);
 }this.isPromolecular=(firstAtomOffset >= 0);
 this.havePoints=(points != null );
 this.isReducedDensity=isReducedDensity;
-if (parameters != null ) $I$(3).info$S("NCI calculation parameters = " + $I$(4).eAF$FA(parameters));
+if (parameters != null ) $I$(3,"info$S",["NCI calculation parameters = " + $I$(4).eAF$FA(parameters)]);
 this.type=(C$.getParameter$FA$I$D$S(parameters, 1, 0, "type")|0);
 if (this.type != 0 && bsMolecules == null  ) this.type=0;
 this.rhoMin=C$.getParameter$FA$I$D$S(parameters, 2, 1.0E-5, "rhoMin");
@@ -122,7 +65,7 @@ break;
 }
 this.nMolecules=0;
 if (!this.isPromolecular && this.type == 0 ) atomCoordAngstroms=null;
-$I$(3).info$S("NCI calculation type = " + (this.isPromolecular ? "promolecular " : "SCF(CUBE) ") + stype );
+$I$(3,"info$S",["NCI calculation type = " + (this.isPromolecular ? "promolecular " : "SCF(CUBE) ") + stype ]);
 this.voxelData=volumeData.getVoxelData$();
 this.countsXYZ=volumeData.getVoxelCounts$();
 this.initialize$I$I$I$javajs_util_T3A(this.countsXYZ[0], this.countsXYZ[1], this.countsXYZ[2], points);
@@ -138,7 +81,7 @@ if (this.qmAtoms[i].znuc < 1) {
 this.qmAtoms[i]=null;
 } else if (this.qmAtoms[i].znuc > 18) {
 this.qmAtoms[i].znuc=18;
-$I$(3).info$S("NCI calculation just setting nuclear charge for " + this.qmAtoms[i].atom + " to 18 (argon)" );
+$I$(3,"info$S",["NCI calculation just setting nuclear charge for " + this.qmAtoms[i].atom + " to 18 (argon)" ]);
 }}
 this.nMolecules=0;
 if (this.type != 0) {
@@ -149,7 +92,7 @@ if (bs.nextSetBit$I(0) < 0) continue;
 for (var j=bs.nextSetBit$I(0); j >= 0; j=bs.nextSetBit$I(j + 1)) this.qmAtoms[qmMap[j]].iMolecule=this.nMolecules;
 
 this.nMolecules++;
-$I$(3).info$S("Molecule " + (this.nMolecules) + " (" + bs.cardinality$() + " atoms): " + $I$(4).eBS$javajs_util_BS(bs) );
+$I$(3,"info$S",["Molecule " + (this.nMolecules) + " (" + bs.cardinality$() + " atoms): " + $I$(4).eBS$javajs_util_BS(bs) ]);
 }
 this.rhoMolecules=Clazz.array(Double.TYPE, [this.nMolecules]);
 }if (this.nMolecules == 0) this.nMolecules=1;
@@ -165,7 +108,7 @@ return true;
 Clazz.newMeth(C$, 'getParameter$FA$I$D$S', function (parameters, i, def, name) {
 var param=(parameters == null  || parameters.length < i + 1  ? 0 : parameters[i]);
 if (param == 0 ) param=def;
-$I$(3).info$S("NCI calculation parameters[" + i + "] (" + name + ") = " + new Double(param).toString() );
+$I$(3,"info$S",["NCI calculation parameters[" + i + "] (" + name + ") = " + new Double(param).toString() ]);
 return param;
 }, 1);
 
@@ -177,7 +120,7 @@ for (var ix=0, index=0; ix < this.countsXYZ[0]; ix++) for (var iy=0; iy < this.c
 
 
 
-$I$(3).info$S("NCI calculation SCF " + (this.type == 1 ? "intra" : "inter") + "molecular grid points = " + this.bsOK.cardinality$() );
+$I$(3,"info$S",["NCI calculation SCF " + (this.type == 1 ? "intra" : "inter") + "molecular grid points = " + this.bsOK.cardinality$() ]);
 }, p$1);
 
 Clazz.newMeth(C$, 'createCube$', function () {
@@ -192,7 +135,7 @@ this.initializeOnePointQC$();
 });
 
 Clazz.newMeth(C$, 'initializeEigen', function () {
-this.eigen=Clazz.new_($I$(6)).set$I(3);
+this.eigen=Clazz.new_($I$(6,1)).set$I(3);
 this.hess=Clazz.array(Double.TYPE, [3, 3]);
 }, p$1);
 
@@ -385,5 +328,17 @@ this.gyzTemp=((p1[i + this.nZ + 1 ] - p1[i - this.nZ + 1]) - (p1[i + this.nZ - 1
 if (Double.isNaN$D(this.gxxTemp) || Double.isNaN$D(this.gyyTemp) || Double.isNaN$D(this.gzzTemp) || Double.isNaN$D(this.gxyTemp) || Double.isNaN$D(this.gxzTemp) || Double.isNaN$D(this.gyzTemp)  ) return NaN;
 return p$1.getValue$D$Z.apply(this, [rho, false]);
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.c=(1 / (2 * Math.pow(29.608813203268074, 0.3333333333333333)));
+C$.rpower=-1.3333333333333333;
+C$.coef1=Clazz.array(Double.TYPE, -1, [0, 0.2815, 2.437, 11.84, 31.34, 67.82, 120.2, 190.9, 289.5, 406.3, 561.3, 760.8, 1016.0, 1319.0, 1658.0, 2042.0, 2501.0, 3024.0, 3625.0]);
+C$.coef2=Clazz.array(Double.TYPE, -1, [0, 0.0, 0.0, 0.06332, 0.3694, 0.8527, 1.172, 2.247, 2.879, 3.049, 6.984, 22.42, 37.17, 57.95, 87.16, 115.7, 158.0, 205.5, 260.0]);
+C$.coef3=Clazz.array(Double.TYPE, -1, [0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06358, 0.3331, 0.8878, 0.7888, 1.465, 2.17, 3.369, 5.211]);
+C$.zeta1=Clazz.array(Double.TYPE, -1, [0, 0.5288, 0.3379, 0.1912, 0.139, 0.1059, 0.0884, 0.0767, 0.0669, 0.0608, 0.0549, 0.0496, 0.0449, 0.0411, 0.0382, 0.0358, 0.0335, 0.0315, 0.0296]);
+C$.zeta2=Clazz.array(Double.TYPE, -1, [0, 1.0, 1.0, 0.9992, 0.6945, 0.53, 0.548, 0.4532, 0.3974, 0.3994, 0.3447, 0.2511, 0.215, 0.1874, 0.1654, 0.1509, 0.1369, 0.1259, 0.1168]);
+C$.zeta3=Clazz.array(Double.TYPE, -1, [0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0236, 0.7753, 0.5962, 0.6995, 0.5851, 0.5149, 0.4974, 0.4412]);
+C$.dMax=Clazz.array(Double.TYPE, -1, [0, 2.982502423, 2.635120936, 4.144887422, 4.105800759, 3.576656363, 3.872424373, 3.497503547, 3.165369971, 3.204214082, 3.051069564, 4.251312809, 4.503309314, 4.047465141, 4.666024968, 4.265151411, 3.955710076, 4.040067606, 3.776022242]);
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

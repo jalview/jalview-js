@@ -1,77 +1,67 @@
-(function(){var P$=Clazz.newPackage("java.awt.event"),I$=[[0,'swingjs.JSToolkit','StringBuilder','java.awt.Toolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "InputEvent", null, 'java.awt.event.ComponentEvent');
+(function(){var P$=Clazz.newPackage("java.awt.event"),I$=[[0,'swingjs.JSMouse','StringBuilder','java.awt.Toolkit']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "InputEvent", null, 'java.awt.event.ComponentEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.when=0;
-this.modifiers=0;
-this.canAccessSystemClipboard=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I', function (source, id, when, modifiers) {
-C$.superclazz.c$$java_awt_Component$I.apply(this, [source, id]);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['canAccessSystemClipboard'],'I',['modifiers'],'J',['when']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I',  function (source, id, when, modifiers) {
+;C$.superclazz.c$$java_awt_Component$I.apply(this,[source, id]);C$.$init$.apply(this);
 this.when=when;
 this.modifiers=modifiers;
 this.canAccessSystemClipboard=false;
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'isShiftDown$', function () {
+Clazz.newMeth(C$, 'isShiftDown$',  function () {
 return (this.modifiers & 1) != 0;
 });
 
-Clazz.newMeth(C$, 'isControlDown$', function () {
+Clazz.newMeth(C$, 'isControlDown$',  function () {
 return (this.modifiers & 2) != 0;
 });
 
-Clazz.newMeth(C$, 'isMetaDown$', function () {
+Clazz.newMeth(C$, 'isMetaDown$',  function () {
 return (this.modifiers & 4) != 0;
 });
 
-Clazz.newMeth(C$, 'isAltDown$', function () {
+Clazz.newMeth(C$, 'isAltDown$',  function () {
 return (this.modifiers & 8) != 0;
 });
 
-Clazz.newMeth(C$, 'isAltGraphDown$', function () {
+Clazz.newMeth(C$, 'isAltGraphDown$',  function () {
 return (this.modifiers & 32) != 0;
 });
 
-Clazz.newMeth(C$, 'getWhen$', function () {
+Clazz.newMeth(C$, 'getWhen$',  function () {
 return this.when;
 });
 
-Clazz.newMeth(C$, 'getModifiers$', function () {
+Clazz.newMeth(C$, 'getModifiers$',  function () {
 return this.modifiers & (-16321);
 });
 
-Clazz.newMeth(C$, 'getModifiersEx$', function () {
+Clazz.newMeth(C$, 'getModifiersEx$',  function () {
 return this.modifiers & ~63;
 });
 
-Clazz.newMeth(C$, 'consume$', function () {
-var ui=(this.source).getUI$();
-if (this.bdata != null  && ui != null   && ui.buttonListener == null   && ((!this.bdata.doPropagate ||false)) ) {
-$I$(1).consumeEvent$O(this);
-}this.consumed=true;
+Clazz.newMeth(C$, 'consume$',  function () {
+$I$(1).checkConsume$java_awt_event_InputEvent(this);
+this.consumed=true;
 });
 
-Clazz.newMeth(C$, 'isConsumed$', function () {
+Clazz.newMeth(C$, 'isConsumed$',  function () {
 return this.consumed;
 });
 
-Clazz.newMeth(C$, 'getModifiersExText$I', function (modifiers) {
-var buf=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'getModifiersExText$I',  function (modifiers) {
+var buf=Clazz.new_($I$(2,1));
 if ((modifiers & 256) != 0) {
 buf.append$S($I$(3).getProperty$S$S("AWT.meta", "Meta"));
 buf.append$S("+");
@@ -101,4 +91,4 @@ buf.setLength$I(buf.length$() - 1);
 }return buf.toString();
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:51 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

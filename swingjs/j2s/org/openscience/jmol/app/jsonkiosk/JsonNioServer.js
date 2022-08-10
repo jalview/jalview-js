@@ -1,4 +1,4 @@
 (function(){var P$=Clazz.newPackage("org.openscience.jmol.app.jsonkiosk"),I$=[];
-var C$=Clazz.newInterface(P$, "JsonNioServer");
+/*i*/var C$=Clazz.newInterface(P$, "JsonNioServer");
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:57 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

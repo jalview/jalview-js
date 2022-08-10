@@ -1,50 +1,40 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),I$=[[0,'java.awt.Color','javax.swing.text.DefaultHighlighter',['javax.swing.text.DefaultHighlighter','.DefaultHighlightPainter'],'java.util.ArrayList','java.util.Stack']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ControleurDemoTextField", null, null, 'javax.swing.event.CaretListener');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),I$=[[0,'java.awt.Color','javax.swing.text.DefaultHighlighter',['javax.swing.text.DefaultHighlighter','.DefaultHighlightPainter'],'java.util.ArrayList','java.util.Stack']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ControleurDemoTextField", null, null, 'javax.swing.event.CaretListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._vod=null;
-this._oldSeq=null;
-this._oldStruct=null;
-this._hilit=null;
-this._painter=null;
-this.COLORERROR=null;
-this.COLORWARNING=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.COLORERROR=$I$(1).RED;
 this.COLORWARNING=$I$(1).ORANGE;
-}, 1);
+},1);
+
+C$.$fields$=[['S',['_oldSeq','_oldStruct'],'O',['_vod','fr.orsay.lri.varna.applications.VARNAOnlineDemo','_hilit','javax.swing.text.Highlighter','_painter','javax.swing.text.Highlighter.HighlightPainter','COLORERROR','java.awt.Color','+COLORWARNING']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_applications_VARNAOnlineDemo', function (VOD) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._vod=VOD;
 this._oldSeq=this._vod.get_seq$().getText$();
 this._oldStruct=this._vod.get_struct$().getText$();
-this._hilit=Clazz.new_($I$(2));
-this._painter=Clazz.new_($I$(3).c$$java_awt_Color,[$I$(1).BLACK]);
+this._hilit=Clazz.new_($I$(2,1));
+this._painter=Clazz.new_([$I$(1).BLACK],$I$(3,1).c$$java_awt_Color);
 this._vod.get_struct$().setHighlighter$javax_swing_text_Highlighter(this._hilit);
 }, 1);
 
-Clazz.newMeth(C$, ['caretUpdate$javax_swing_event_CaretEvent','caretUpdate$'], function (e) {
+Clazz.newMeth(C$, 'caretUpdate$javax_swing_event_CaretEvent', function (e) {
 if (this._oldStruct != this._vod.get_struct$().getText$() || this._oldSeq != this._vod.get_seq$().getText$() ) {
-var infos=Clazz.new_($I$(4));
+var infos=Clazz.new_($I$(4,1));
 this._vod.get_info$().removeAll$();
 this._hilit.removeAllHighlights$();
 this._oldStruct=this._vod.get_struct$().getText$();
 this._oldSeq=this._vod.get_seq$().getText$();
 var nbPO=0;
 var nbPF=0;
-var p=Clazz.new_($I$(5));
+var p=Clazz.new_($I$(5,1));
 var pb=false;
 for (var i=0; i < this._vod.get_struct$().getText$().length$(); i++) {
 if (this._vod.get_struct$().getText$().charAt$I(i) == "(") {
 nbPO++;
-p.push$TE(new Integer(i));
+p.push$O(new Integer(i));
 } else if (this._vod.get_struct$().getText$().charAt$I(i) == ")") {
 nbPF++;
 if (p.size$() == 0) {
@@ -62,11 +52,11 @@ pb=true;
 }}
 if (pb || p.size$() > 0 ) {
 if (pb) {
-infos.add$TE("too many closing parentheses");
+infos.add$O("too many closing parentheses");
 }if (p.size$() > 0) {
 var indice;
 while (!p.isEmpty$()){
-indice=(p.pop$()).intValue$();
+indice=(p.pop$()).valueOf();
 try {
 this._hilit.addHighlight$I$I$javax_swing_text_Highlighter_HighlightPainter(indice, indice + 1, this._painter);
 } catch (e1) {
@@ -77,7 +67,7 @@ throw e1;
 }
 }
 }
-infos.add$TE("too many opening parentheses");
+infos.add$O("too many opening parentheses");
 }this._vod.get_info$().setForeground$java_awt_Color(this.COLORERROR);
 this._vod.get_seq$().setForeground$java_awt_Color(this.COLORERROR);
 this._vod.get_struct$().setForeground$java_awt_Color(this.COLORERROR);
@@ -92,7 +82,7 @@ throw e1;
 }
 }
 if (this._vod.get_seq$().getText$().length$() != this._vod.get_struct$().getText$().length$()) {
-infos.add$TE("different lenghts");
+infos.add$O("different lenghts");
 this._vod.get_seq$().setForeground$java_awt_Color(this.COLORWARNING);
 this._vod.get_struct$().setForeground$java_awt_Color(this.COLORWARNING);
 } else {
@@ -111,4 +101,4 @@ info += ".";
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:44 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

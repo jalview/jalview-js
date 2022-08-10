@@ -1,39 +1,19 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.swing"),p$1={},I$=[[0,'java.awt.Color','net.miginfocom.layout.PlatformDefaults','java.util.IdentityHashMap','java.awt.Font',['java.awt.geom.Point2D','.Float'],'java.awt.Point','javax.swing.SwingUtilities','net.miginfocom.swing.SwingContainerWrapper','Boolean','java.awt.BasicStroke']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SwingComponentWrapper", null, null, 'net.miginfocom.layout.ComponentWrapper');
-C$.maxSet=false;
-C$.vp=false;
-C$.DB_COMP_OUTLINE=null;
-C$.VISUAL_PADDING_PROPERTY=null;
-C$.FM_MAP=null;
-C$.SUBST_FONT=null;
-C$.isJava9orLater=false;
+(function(){var P$=Clazz.newPackage("net.miginfocom.swing"),p$1={},I$=[[0,'java.awt.Color','net.miginfocom.layout.PlatformDefaults','java.util.IdentityHashMap','java.awt.Font',['java.awt.geom.Point2D','.Float'],'java.awt.Point','javax.swing.SwingUtilities','net.miginfocom.swing.SwingContainerWrapper','Boolean','java.awt.BasicStroke']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SwingComponentWrapper", null, null, 'net.miginfocom.layout.ComponentWrapper');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.maxSet=false;
-C$.vp=true;
-C$.DB_COMP_OUTLINE=Clazz.new_($I$(1).c$$I$I$I,[0, 0, 200]);
-C$.VISUAL_PADDING_PROPERTY=$I$(2).VISUAL_PADDING_PROPERTY;
-C$.FM_MAP=Clazz.new_($I$(3).c$$I,[4]);
-C$.SUBST_FONT=Clazz.new_($I$(4).c$$S$I$I,["sansserif", 0, 11]);
-C$.isJava9orLater=true;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.c=null;
-this.compType=0;
-this.bl=null;
-this.prefCalled=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.compType=-1;
 this.bl=null;
 this.prefCalled=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['prefCalled'],'I',['compType'],'O',['c','java.awt.Component','bl','Boolean']]
+,['Z',['maxSet','vp','isJava9orLater'],'S',['VISUAL_PADDING_PROPERTY'],'O',['DB_COMP_OUTLINE','java.awt.Color','FM_MAP','java.util.IdentityHashMap','SUBST_FONT','java.awt.Font']]]
 
 Clazz.newMeth(C$, 'c$$java_awt_Component', function (c) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.c=c;
 }, 1);
 
@@ -61,12 +41,12 @@ var fm=this.c.getFontMetrics$java_awt_Font(font != null  ? font : C$.SUBST_FONT)
 var p=C$.FM_MAP.get$O(fm);
 if (p == null ) {
 var r=fm.getStringBounds$S$java_awt_Graphics("X", this.c.getGraphics$());
-p=Clazz.new_($I$(5).c$$F$F,[(r.getWidth$()) / 6.0, (r.getHeight$()) / 13.277344]);
-C$.FM_MAP.put$TK$TV(fm, p);
+p=Clazz.new_([(r.getWidth$()) / 6.0, (r.getHeight$()) / 13.277344],$I$(5,1).c$$F$F);
+C$.FM_MAP.put$O$O(fm, p);
 }return isHor ? p.x : p.y;
 case 101:
 var s=isHor ? $I$(2).getHorizontalScaleFactor$() : $I$(2).getVerticalScaleFactor$();
-var scaleFactor=(s != null ) ? (s).floatValue$() : 1.0;
+var scaleFactor=(s != null ) ? (s).valueOf() : 1.0;
 var screenScale=C$.isJava9orLater ? 1.0 : (isHor ? this.getHorizontalScreenDPI$() : this.getVerticalScreenDPI$()) / $I$(2).getDefaultDPI$();
 return scaleFactor * screenScale;
 default:
@@ -91,13 +71,13 @@ return this.c.getWidth$();
 });
 
 Clazz.newMeth(C$, 'getScreenLocationX$', function () {
-var p=Clazz.new_($I$(6));
+var p=Clazz.new_($I$(6,1));
 $I$(7).convertPointToScreen$java_awt_Point$java_awt_Component(p, this.c);
 return p.x;
 });
 
 Clazz.newMeth(C$, 'getScreenLocationY$', function () {
-var p=Clazz.new_($I$(6));
+var p=Clazz.new_($I$(6,1));
 $I$(7).convertPointToScreen$java_awt_Point$java_awt_Component(p, this.c);
 return p.y;
 });
@@ -142,7 +122,7 @@ return c.isMaximumSizeSet$();
 
 Clazz.newMeth(C$, 'getParent$', function () {
 var p=this.c.getParent$();
-return p != null  ? Clazz.new_($I$(8).c$$java_awt_Container,[p]) : null;
+return p != null  ? Clazz.new_($I$(8,1).c$$java_awt_Container,[p]) : null;
 });
 
 Clazz.newMeth(C$, 'getHorizontalScreenDPI$', function () {
@@ -200,7 +180,7 @@ this.bl=new Boolean(this.getBaseline$I$I(8192, 8192) > -1);
 } catch (ex) {
 this.bl=$I$(9).FALSE;
 }
-}return (this.bl).booleanValue$();
+}return (this.bl).valueOf();
 });
 
 Clazz.newMeth(C$, 'getLinkId$', function () {
@@ -371,7 +351,7 @@ if (this.c.isShowing$() == false ) return;
 var g=this.c.getGraphics$();
 if (g == null ) return;
 g.setPaint$java_awt_Paint(C$.DB_COMP_OUTLINE);
-g.setStroke$java_awt_Stroke(Clazz.new_($I$(10).c$$F$I$I$F$FA$F,[1.0, 2, 0, 10.0, Clazz.array(Float.TYPE, -1, [2.0, 4.0]), 0]));
+g.setStroke$java_awt_Stroke(Clazz.new_([1.0, 2, 0, 10.0, Clazz.array(Float.TYPE, -1, [2.0, 4.0]), 0],$I$(10,1).c$$F$I$I$F$FA$F));
 g.drawRect$I$I$I$I(0, 0, this.getWidth$() - 1, this.getHeight$() - 1);
 if (showVisualPadding && C$.isVisualPaddingEnabled$() ) {
 var padding=this.getVisualPadding$();
@@ -455,6 +435,16 @@ Clazz.newMeth(C$, 'getContentBias$', function () {
 return Clazz.instanceOf(this.c, "javax.swing.JTextArea") || Clazz.instanceOf(this.c, "javax.swing.JEditorPane") || (Clazz.instanceOf(this.c, "javax.swing.JComponent") && $I$(9).TRUE.equals$O((this.c).getClientProperty$O("migLayout.dynamicAspectRatio")) )   ? 0 : -1;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.maxSet=false;
+C$.vp=true;
+C$.DB_COMP_OUTLINE=Clazz.new_($I$(1,1).c$$I$I$I,[0, 0, 200]);
+C$.VISUAL_PADDING_PROPERTY=$I$(2).VISUAL_PADDING_PROPERTY;
+C$.FM_MAP=Clazz.new_($I$(3,1).c$$I,[4]);
+C$.SUBST_FONT=Clazz.new_($I$(4,1).c$$S$I$I,["sansserif", 0, 11]);
+C$.isJava9orLater=true;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:08:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:27 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,70 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.P3','javajs.api.Interface','org.jmol.c.STR','org.jmol.util.C']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BioShapeRenderer", null, 'org.jmol.render.ShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.BS','javajs.util.P3','javajs.api.Interface','org.jmol.c.STR','org.jmol.util.C']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BioShapeRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.invalidateMesh=false;
-this.invalidateSheets=false;
-this.isTraceAlpha=false;
-this.ribbonBorder=false;
-this.haveControlPointScreens=false;
-this.aspectRatio=0;
-this.hermiteLevel=0;
-this.sheetSmoothing=0;
-this.cartoonsFancy=false;
-this.monomerCount=0;
-this.monomers=null;
-this.isNucleic=false;
-this.isPhosphorusOnly=false;
-this.isCarbohydrate=false;
-this.bsVisible=null;
-this.ribbonTopScreens=null;
-this.ribbonBottomScreens=null;
-this.controlPoints=null;
-this.controlPointScreens=null;
-this.leadAtomIndices=null;
-this.wingVectors=null;
-this.mads=null;
-this.colixes=null;
-this.colixesBack=null;
-this.structureTypes=null;
-this.isHighRes=false;
-this.wireframeOnly=false;
-this.needTranslucent=false;
-this.meshRenderer=null;
-this.bioShape=null;
-this.pointT=null;
-this.iPrev=0;
-this.iNext=0;
-this.iNext2=0;
-this.iNext3=0;
-this.diameterBeg=0;
-this.diameterMid=0;
-this.diameterEnd=0;
-this.madBeg=0;
-this.madMid=0;
-this.madEnd=0;
-this.colixBack=0;
-this.reversed=null;
-this.isCyclic=false;
-this.screenArrowTop=null;
-this.screenArrowTopPrev=null;
-this.screenArrowBot=null;
-this.screenArrowBotPrev=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.ribbonBorder=false;
-this.bsVisible=Clazz.new_($I$(1));
-this.pointT=Clazz.new_($I$(2));
-this.screenArrowTop=Clazz.new_($I$(2));
-this.screenArrowTopPrev=Clazz.new_($I$(2));
-this.screenArrowBot=Clazz.new_($I$(2));
-this.screenArrowBotPrev=Clazz.new_($I$(2));
-}, 1);
+this.bsVisible=Clazz.new_($I$(1,1));
+this.pointT=Clazz.new_($I$(2,1));
+this.screenArrowTop=Clazz.new_($I$(2,1));
+this.screenArrowTopPrev=Clazz.new_($I$(2,1));
+this.screenArrowBot=Clazz.new_($I$(2,1));
+this.screenArrowBotPrev=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['invalidateMesh','invalidateSheets','isTraceAlpha','ribbonBorder','haveControlPointScreens','cartoonsFancy','isNucleic','isPhosphorusOnly','isCarbohydrate','isHighRes','wireframeOnly','needTranslucent','isCyclic'],'F',['aspectRatio','sheetSmoothing'],'I',['hermiteLevel','monomerCount','iPrev','iNext','iNext2','iNext3','diameterBeg','diameterMid','diameterEnd'],'H',['madBeg','madMid','madEnd','colixBack'],'O',['monomers','org.jmol.modelsetbio.Monomer[]','bsVisible','javajs.util.BS','ribbonTopScreens','javajs.util.P3[]','+ribbonBottomScreens','+controlPoints','+controlPointScreens','leadAtomIndices','int[]','wingVectors','javajs.util.V3[]','mads','short[]','+colixes','+colixesBack','structureTypes','org.jmol.c.STR[]','meshRenderer','org.jmol.renderbio.BioMeshRenderer','bioShape','org.jmol.shapebio.BioShape','pointT','javajs.util.P3','reversed','javajs.util.BS','screenArrowTop','javajs.util.P3','+screenArrowTopPrev','+screenArrowBot','+screenArrowBotPrev']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 if (this.shape == null ) return false;
@@ -76,7 +25,7 @@ return this.needTranslucent;
 Clazz.newMeth(C$, 'setGlobals', function () {
 this.invalidateMesh=false;
 this.needTranslucent=false;
-this.g3d.addRenderer$I(553648146);
+this.g3d.addRenderer$I(553648145);
 var TF=(!this.isExport && !this.vwr.checkMotionRendering$I(1112152066) );
 if (TF != this.wireframeOnly ) this.invalidateMesh=true;
 this.wireframeOnly=TF;
@@ -209,7 +158,7 @@ this.tm.transformPtScrT3$javajs_util_T3$javajs_util_T3(this.pointT, screen);
 }, p$1);
 
 Clazz.newMeth(C$, 'getLeadColix$I', function (i) {
-return $I$(5).getColixInherited$H$H(this.colixes[i], this.monomers[i].getLeadAtom$().colixAtom);
+return $I$(5,"getColixInherited$H$H",[this.colixes[i], this.monomers[i].getLeadAtom$().colixAtom]);
 });
 
 Clazz.newMeth(C$, 'getLeadColixBack$I', function (i) {
@@ -312,7 +261,7 @@ p$1.calc1Screen$javajs_util_P3$javajs_util_V3$H$F$javajs_util_P3.apply(this, [cp
 this.g3d.drawHermite7$Z$Z$I$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$I$H(true, this.ribbonBorder, this.isNucleic ? 4 : 7, this.screenArrowTopPrev, this.screenArrowTop, this.controlPointScreens[this.iNext], this.controlPointScreens[this.iNext2], this.screenArrowBotPrev, this.screenArrowBot, this.controlPointScreens[this.iNext], this.controlPointScreens[this.iNext2], (this.aspectRatio|0), this.colixBack);
 this.g3d.setC$H(this.colix);
 if (this.ribbonBorder && this.aspectRatio == 0  ) {
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 3, $b$[0]), 3, this.screenArrowTop, this.screenArrowBot);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(3, 3, this.screenArrowTop, this.screenArrowBot);
 }});
 
 Clazz.newMeth(C$, 'drawSegmentAB$org_jmol_modelset_Atom$org_jmol_modelset_Atom$H$H$F', function (atomA, atomB, colixA, colixB, max) {
@@ -328,11 +277,10 @@ if (mad < 0) {
 this.g3d.drawLine$H$H$I$I$I$I$I$I(colixA, colixB, xA, yA, zA, xB, yB, zB);
 } else {
 var width=((this.isExport ? mad : this.vwr.tm.scaleToScreen$I$I(((zA + zB)/2|0), mad))|0);
-this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, ($b$[0] = 3, $b$[0]), width, xA, yA, zA, xB, yB, zB);
+this.g3d.fillCylinderXYZ$H$H$B$I$I$I$I$I$I$I(colixA, colixB, 3, width, xA, yA, zA, xB, yB, zB);
 }});
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

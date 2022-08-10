@@ -1,43 +1,32 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},I$=[[0,'javax.swing.Timer','javax.swing.UIManager',['java.text.DateFormat','.Field'],'javax.swing.SwingUtilities','java.awt.KeyboardFocusManager','swingjs.plaf.JSSpinnerUI','java.awt.Dimension','sun.swing.DefaultLookup',['swingjs.plaf.JSSpinnerUI','.ArrowButtonHandler'],'javax.swing.LookAndFeel','Boolean',['swingjs.plaf.JSSpinnerUI','.Handler'],'swingjs.plaf.BasicArrowButton','javax.swing.border.CompoundBorder','swingjs.plaf.LazyActionMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSSpinnerUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},I$=[[0,'javax.swing.Timer','javax.swing.UIManager',['java.text.DateFormat','.Field'],'javax.swing.SwingUtilities','java.awt.KeyboardFocusManager','swingjs.plaf.JSSpinnerUI','java.awt.Dimension','sun.swing.DefaultLookup',['swingjs.plaf.JSSpinnerUI','.ArrowButtonHandler'],'javax.swing.LookAndFeel',['swingjs.plaf.JSSpinnerUI','.Handler'],'swingjs.plaf.BasicArrowButton','javax.swing.border.CompoundBorder','swingjs.plaf.LazyActionMap']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSSpinnerUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSPanelUI');
-C$.nextButtonHandler=null;
-C$.previousButtonHandler=null;
-C$.zeroSize=null;
+C$.$classes$=[['ArrowButtonHandler',10],['Handler',10]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.nextButtonHandler=Clazz.new_($I$(9).c$$S$Z,["increment", true]);
-C$.previousButtonHandler=Clazz.new_($I$(9).c$$S$Z,["decrement", false]);
-C$.zeroSize=Clazz.new_($I$(7).c$$I$I,[0, 0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.up=null;
-this.dn=null;
-this.spinner=null;
-this.handler=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'updateDOMNode$', function () {
+C$.$fields$=[['O',['up','swingjs.api.js.DOMNode','+dn','spinner','javax.swing.JSpinner','handler','swingjs.plaf.JSSpinnerUI.Handler']]
+,['O',['nextButtonHandler','swingjs.plaf.JSSpinnerUI.ArrowButtonHandler','+previousButtonHandler','zeroSize','java.awt.Dimension']]]
+
+Clazz.newMeth(C$, 'updateDOMNode$',  function () {
 this.spinner=this.jc;
 return C$.superclazz.prototype.updateDOMNode$.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'createUI$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'createUI$javax_swing_JComponent',  function (c) {
 return Clazz.new_(C$);
 }, 1);
 
-Clazz.newMeth(C$, 'maybeAdd$java_awt_Component$S', function (c, s) {
+Clazz.newMeth(C$, 'maybeAdd$java_awt_Component$S',  function (c, s) {
 if (c != null ) {
 this.spinner.add$java_awt_Component$O(c, s);
 }}, p$3);
 
-Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'installUI$javax_swing_JComponent',  function (c) {
 this.spinner=c;
 this.installDefaults$();
 this.installListeners$();
@@ -48,14 +37,14 @@ p$3.updateEnabledState.apply(this, []);
 this.installKeyboardActions$();
 });
 
-Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent',  function (c) {
 this.uninstallDefaults$();
 this.uninstallListeners$();
 this.spinner=null;
 c.removeAll$();
 });
 
-Clazz.newMeth(C$, 'installListeners$', function () {
+Clazz.newMeth(C$, 'installListeners$',  function () {
 this.spinner.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
 if ($I$(8).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.spinner, this, "Spinner.disableOnBoundaryValues", false)) {
 this.spinner.addChangeListener$javax_swing_event_ChangeListener(p$3.getHandler.apply(this, []));
@@ -67,7 +56,7 @@ tf.addFocusListener$java_awt_event_FocusListener(C$.nextButtonHandler);
 tf.addFocusListener$java_awt_event_FocusListener(C$.previousButtonHandler);
 }}});
 
-Clazz.newMeth(C$, 'uninstallListeners$', function () {
+Clazz.newMeth(C$, 'uninstallListeners$',  function () {
 this.spinner.removePropertyChangeListener$java_beans_PropertyChangeListener(this);
 this.spinner.removeChangeListener$javax_swing_event_ChangeListener(this.handler);
 var editor=this.spinner.getEditor$();
@@ -80,60 +69,60 @@ tf.removeFocusListener$java_awt_event_FocusListener(C$.previousButtonHandler);
 }}this.handler=null;
 });
 
-Clazz.newMeth(C$, 'installDefaults$', function () {
+Clazz.newMeth(C$, 'installDefaults$',  function () {
 this.spinner.setLayout$java_awt_LayoutManager(this.createLayout$());
 $I$(10).installBorder$javax_swing_JComponent$S(this.spinner, "Spinner.border");
 $I$(10).installColorsAndFont$javax_swing_JComponent$S$S$S(this.spinner, "Spinner.background", "Spinner.foreground", "Spinner.font");
-$I$(10).installProperty$javax_swing_JComponent$S$O(this.spinner, "opaque", $I$(11).TRUE);
+$I$(10).installProperty$javax_swing_JComponent$S$O(this.spinner, "opaque", Boolean.TRUE);
 });
 
-Clazz.newMeth(C$, 'uninstallDefaults$', function () {
+Clazz.newMeth(C$, 'uninstallDefaults$',  function () {
 this.spinner.setLayout$java_awt_LayoutManager(null);
 });
 
-Clazz.newMeth(C$, 'getHandler', function () {
+Clazz.newMeth(C$, 'getHandler',  function () {
 if (this.handler == null ) {
-this.handler=Clazz.new_($I$(12));
+this.handler=Clazz.new_($I$(11,1));
 }return this.handler;
 }, p$3);
 
-Clazz.newMeth(C$, 'installNextButtonListeners$java_awt_Component', function (c) {
+Clazz.newMeth(C$, 'installNextButtonListeners$java_awt_Component',  function (c) {
 p$3.installButtonListeners$java_awt_Component$swingjs_plaf_JSSpinnerUI_ArrowButtonHandler.apply(this, [c, C$.nextButtonHandler]);
 });
 
-Clazz.newMeth(C$, 'installPreviousButtonListeners$java_awt_Component', function (c) {
+Clazz.newMeth(C$, 'installPreviousButtonListeners$java_awt_Component',  function (c) {
 p$3.installButtonListeners$java_awt_Component$swingjs_plaf_JSSpinnerUI_ArrowButtonHandler.apply(this, [c, C$.previousButtonHandler]);
 });
 
-Clazz.newMeth(C$, 'installButtonListeners$java_awt_Component$swingjs_plaf_JSSpinnerUI_ArrowButtonHandler', function (c, handler) {
+Clazz.newMeth(C$, 'installButtonListeners$java_awt_Component$swingjs_plaf_JSSpinnerUI_ArrowButtonHandler',  function (c, handler) {
 if (Clazz.instanceOf(c, "javax.swing.JButton")) {
 (c).addActionListener$java_awt_event_ActionListener(handler);
 }c.addMouseListener$java_awt_event_MouseListener(handler);
 }, p$3);
 
-Clazz.newMeth(C$, 'createLayout$', function () {
+Clazz.newMeth(C$, 'createLayout$',  function () {
 return p$3.getHandler.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'createPreviousButton$', function () {
+Clazz.newMeth(C$, 'createPreviousButton$',  function () {
 var c=p$3.createArrowButton$I.apply(this, [5]);
 c.setName$S("Spinner.previousButton");
 this.installPreviousButtonListeners$java_awt_Component(c);
 return c;
 });
 
-Clazz.newMeth(C$, 'createNextButton$', function () {
+Clazz.newMeth(C$, 'createNextButton$',  function () {
 var c=p$3.createArrowButton$I.apply(this, [1]);
 c.setName$S("Spinner.nextButton");
 this.installNextButtonListeners$java_awt_Component(c);
 return c;
 });
 
-Clazz.newMeth(C$, 'createArrowButton$I', function (direction) {
-var b=Clazz.new_($I$(13).c$$I,[direction]);
+Clazz.newMeth(C$, 'createArrowButton$I',  function (direction) {
+var b=Clazz.new_($I$(12,1).c$$I,[direction]);
 var buttonBorder=$I$(2).getBorder$O("Spinner.arrowButtonBorder");
 if (Clazz.instanceOf(buttonBorder, "javax.swing.plaf.UIResource")) {
-b.setBorder$javax_swing_border_Border(Clazz.new_($I$(14).c$$javax_swing_border_Border$javax_swing_border_Border,[buttonBorder, null]));
+b.setBorder$javax_swing_border_Border(Clazz.new_($I$(13,1).c$$javax_swing_border_Border$javax_swing_border_Border,[buttonBorder, null]));
 } else {
 b.setBorder$javax_swing_border_Border(buttonBorder);
 }b.setText$S("\u0000");
@@ -141,7 +130,7 @@ b.setInheritsPopupMenu$Z(true);
 return b;
 }, p$3);
 
-Clazz.newMeth(C$, 'createEditor$', function () {
+Clazz.newMeth(C$, 'createEditor$',  function () {
 var editor=this.spinner.getEditor$();
 p$3.maybeRemoveEditorBorder$javax_swing_JComponent.apply(this, [editor]);
 p$3.installEditorBorderListener$javax_swing_JComponent.apply(this, [editor]);
@@ -150,7 +139,7 @@ p$3.updateEditorAlignment$javax_swing_JComponent.apply(this, [editor]);
 return editor;
 });
 
-Clazz.newMeth(C$, 'replaceEditor$javax_swing_JComponent$javax_swing_JComponent', function (oldEditor, newEditor) {
+Clazz.newMeth(C$, 'replaceEditor$javax_swing_JComponent$javax_swing_JComponent',  function (oldEditor, newEditor) {
 this.spinner.remove$java_awt_Component(oldEditor);
 p$3.maybeRemoveEditorBorder$javax_swing_JComponent.apply(this, [newEditor]);
 p$3.installEditorBorderListener$javax_swing_JComponent.apply(this, [newEditor]);
@@ -158,14 +147,14 @@ newEditor.setInheritsPopupMenu$Z(true);
 this.spinner.add$java_awt_Component$O(newEditor, "Editor");
 });
 
-Clazz.newMeth(C$, 'updateEditorAlignment$javax_swing_JComponent', function (editor) {
+Clazz.newMeth(C$, 'updateEditorAlignment$javax_swing_JComponent',  function (editor) {
 if (Clazz.instanceOf(editor, "javax.swing.JSpinner.DefaultEditor")) {
 var alignment=$I$(2).getInt$O("Spinner.editorAlignment");
 var text=(editor).getTextField$();
 text.setHorizontalAlignment$I(alignment);
 }}, p$3);
 
-Clazz.newMeth(C$, 'maybeRemoveEditorBorder$javax_swing_JComponent', function (editor) {
+Clazz.newMeth(C$, 'maybeRemoveEditorBorder$javax_swing_JComponent',  function (editor) {
 if (!$I$(2).getBoolean$O("Spinner.editorBorderPainted")) {
 if (Clazz.instanceOf(editor, "javax.swing.JPanel") && editor.getBorder$() == null   && editor.getComponentCount$() > 0 ) {
 editor=editor.getComponent$I(0);
@@ -173,7 +162,7 @@ editor=editor.getComponent$I(0);
 editor.setBorder$javax_swing_border_Border(null);
 }}}, p$3);
 
-Clazz.newMeth(C$, 'installEditorBorderListener$javax_swing_JComponent', function (editor) {
+Clazz.newMeth(C$, 'installEditorBorderListener$javax_swing_JComponent',  function (editor) {
 if (!$I$(2).getBoolean$O("Spinner.editorBorderPainted")) {
 if (Clazz.instanceOf(editor, "javax.swing.JPanel") && editor.getBorder$() == null   && editor.getComponentCount$() > 0 ) {
 editor=editor.getComponent$I(0);
@@ -181,7 +170,7 @@ editor=editor.getComponent$I(0);
 editor.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
 }}}, p$3);
 
-Clazz.newMeth(C$, 'removeEditorBorderListener$javax_swing_JComponent', function (editor) {
+Clazz.newMeth(C$, 'removeEditorBorderListener$javax_swing_JComponent',  function (editor) {
 if (!$I$(2).getBoolean$O("Spinner.editorBorderPainted")) {
 if (Clazz.instanceOf(editor, "javax.swing.JPanel") && editor.getComponentCount$() > 0 ) {
 editor=editor.getComponent$I(0);
@@ -189,18 +178,18 @@ editor=editor.getComponent$I(0);
 editor.removePropertyChangeListener$java_beans_PropertyChangeListener(this);
 }}}, p$3);
 
-Clazz.newMeth(C$, 'updateEnabledState', function () {
+Clazz.newMeth(C$, 'updateEnabledState',  function () {
 p$3.updateEnabledState$java_awt_Container$Z.apply(this, [this.spinner, this.spinner.isEnabled$()]);
 }, p$3);
 
-Clazz.newMeth(C$, 'updateEnabledState$java_awt_Container$Z', function (c, enabled) {
+Clazz.newMeth(C$, 'updateEnabledState$java_awt_Container$Z',  function (c, enabled) {
 for (var counter=c.getComponentCount$() - 1; counter >= 0; counter--) {
 var child=c.getComponent$I(counter);
 if ($I$(8).getBoolean$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S$Z(this.spinner, this, "Spinner.disableOnBoundaryValues", false)) {
 var model=this.spinner.getModel$();
-if (child.getName$() == "Spinner.nextButton" && model.getNextValue$() == null  ) {
+if (child.getName$() === "Spinner.nextButton"  && model.getNextValue$() == null  ) {
 child.setEnabled$Z(false);
-} else if (child.getName$() == "Spinner.previousButton" && model.getPreviousValue$() == null  ) {
+} else if (child.getName$() === "Spinner.previousButton"  && model.getPreviousValue$() == null  ) {
 child.setEnabled$Z(false);
 } else {
 child.setEnabled$Z(enabled);
@@ -211,24 +200,24 @@ p$3.updateEnabledState$java_awt_Container$Z.apply(this, [child, enabled]);
 }}
 }, p$3);
 
-Clazz.newMeth(C$, 'installKeyboardActions$', function () {
+Clazz.newMeth(C$, 'installKeyboardActions$',  function () {
 var iMap=p$3.getInputMap$I.apply(this, [1]);
 $I$(4).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.spinner, 1, iMap);
-$I$(15).installLazyActionMap$javax_swing_JComponent$Class$S(this.spinner, Clazz.getClass(C$), "Spinner.actionMap");
+$I$(14,"installLazyActionMap$javax_swing_JComponent$Class$S",[this.spinner, Clazz.getClass(C$), "Spinner.actionMap"]);
 });
 
-Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
+Clazz.newMeth(C$, 'getInputMap$I',  function (condition) {
 if (condition == 1) {
 return $I$(8).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.spinner, this, "Spinner.ancestorInputMap");
 }return null;
 }, p$3);
 
-Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap', function (map) {
+Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap',  function (map) {
 map.put$O$javax_swing_Action("increment", C$.nextButtonHandler);
 map.put$O$javax_swing_Action("decrement", C$.previousButtonHandler);
 }, 1);
 
-Clazz.newMeth(C$, 'getBaseline$javax_swing_JComponent$I$I', function (c, width, height) {
+Clazz.newMeth(C$, 'getBaseline$javax_swing_JComponent$I$I',  function (c, width, height) {
 C$.superclazz.prototype.getBaseline$javax_swing_JComponent$I$I.apply(this, [c, width, height]);
 var editor=this.spinner.getEditor$();
 var insets=this.spinner.getInsets$();
@@ -241,12 +230,12 @@ return insets.top + baseline;
 }}return -1;
 });
 
-Clazz.newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent',  function (c) {
 C$.superclazz.prototype.getBaselineResizeBehavior$javax_swing_JComponent.apply(this, [c]);
 return this.spinner.getEditor$().getBaselineResizeBehavior$();
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (e) {
 var prop=e.getPropertyName$();
 var ui=this;
 if (Clazz.instanceOf(e.getSource$(), "javax.swing.JSpinner")) {
@@ -287,7 +276,7 @@ p$3.maybeRemoveEditorBorder$javax_swing_JComponent.apply(ui, [c]);
 }}C$.superclazz.prototype.propertyChange$java_beans_PropertyChangeEvent.apply(this, [e]);
 });
 
-Clazz.newMeth(C$, 'updateToolTipTextForChildren$javax_swing_JComponent', function (spinner) {
+Clazz.newMeth(C$, 'updateToolTipTextForChildren$javax_swing_JComponent',  function (spinner) {
 var toolTipText=spinner.getToolTipText$();
 var children=spinner.getComponents$();
 for (var i=0; i < children.length; i++) {
@@ -299,36 +288,34 @@ tf.setToolTipText$S(toolTipText);
 (children[i]).setToolTipText$S(spinner.getToolTipText$());
 }}
 }, p$3);
+
+C$.$static$=function(){C$.$static$=0;
+C$.nextButtonHandler=Clazz.new_($I$(9,1).c$$S$Z,["increment", true]);
+C$.previousButtonHandler=Clazz.new_($I$(9,1).c$$S$Z,["decrement", false]);
+C$.zeroSize=Clazz.new_($I$(7,1).c$$I$I,[0, 0]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSSpinnerUI, "ArrowButtonHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSSpinnerUI, "ArrowButtonHandler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'javax.swing.AbstractAction', ['java.awt.event.FocusListener', 'java.awt.event.MouseListener', 'javax.swing.plaf.UIResource']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.autoRepeatTimer=null;
-this.isNext=false;
-this.spinner=null;
-this.arrowButton=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.spinner=null;
 this.arrowButton=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$S$Z', function (name, isNext) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['isNext'],'O',['autoRepeatTimer','javax.swing.Timer','spinner','javax.swing.JSpinner','arrowButton','javax.swing.JButton']]]
+
+Clazz.newMeth(C$, 'c$$S$Z',  function (name, isNext) {
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 this.isNext=isNext;
-this.autoRepeatTimer=Clazz.new_($I$(1).c$$I$java_awt_event_ActionListener,[60, this]);
+this.autoRepeatTimer=Clazz.new_($I$(1,1).c$$I$java_awt_event_ActionListener,[60, this]);
 this.autoRepeatTimer.setInitialDelay$I(300);
 }, 1);
 
-Clazz.newMeth(C$, 'eventToSpinner$java_awt_AWTEvent', function (e) {
+Clazz.newMeth(C$, 'eventToSpinner$java_awt_AWTEvent',  function (e) {
 var src=e.getSource$();
 while ((Clazz.instanceOf(src, "java.awt.Component")) && !(Clazz.instanceOf(src, "javax.swing.JSpinner")) ){
 src=(src).getParent$();
@@ -336,7 +323,7 @@ src=(src).getParent$();
 return (Clazz.instanceOf(src, "javax.swing.JSpinner")) ? src : null;
 }, p$1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 var spinner=this.spinner;
 if (!(Clazz.instanceOf(e.getSource$(), "javax.swing.Timer"))) {
 spinner=p$1.eventToSpinner$java_awt_AWTEvent.apply(this, [e]);
@@ -374,7 +361,7 @@ throw e$$;
 }
 }});
 
-Clazz.newMeth(C$, 'select$javax_swing_JSpinner', function (spinner) {
+Clazz.newMeth(C$, 'select$javax_swing_JSpinner',  function (spinner) {
 var editor=spinner.getEditor$();
 if (Clazz.instanceOf(editor, "javax.swing.JSpinner.DateEditor")) {
 var dateEditor=editor;
@@ -383,7 +370,7 @@ var format=dateEditor.getFormat$();
 var value;
 if (format != null  && (value=spinner.getValue$()) != null  ) {
 var model=dateEditor.getModel$();
-var field=$I$(3).ofCalendarField$I(model.getCalendarField$());
+var field=$I$(3,"ofCalendarField$I",[model.getCalendarField$()]);
 if (field != null ) {
 try {
 var iterator=format.formatToCharacterIterator$O(value);
@@ -397,7 +384,7 @@ throw iae;
 }
 }}}}, p$1);
 
-Clazz.newMeth(C$, 'select$javax_swing_JFormattedTextField$java_text_AttributedCharacterIterator$java_text_DateFormat_Field', function (ftf, iterator, field) {
+Clazz.newMeth(C$, 'select$javax_swing_JFormattedTextField$java_text_AttributedCharacterIterator$java_text_DateFormat_Field',  function (ftf, iterator, field) {
 var max=ftf.getDocument$().getLength$();
 iterator.first$();
 do {
@@ -412,7 +399,7 @@ ftf.select$I$I(start, end);
 return false;
 }, p$1);
 
-Clazz.newMeth(C$, 'getCalendarField$javax_swing_JSpinner', function (spinner) {
+Clazz.newMeth(C$, 'getCalendarField$javax_swing_JSpinner',  function (spinner) {
 var editor=spinner.getEditor$();
 if (Clazz.instanceOf(editor, "javax.swing.JSpinner.DateEditor")) {
 var dateEditor=editor;
@@ -434,33 +421,33 @@ return calendarField;
 }}return -1;
 }, p$1);
 
-Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent',  function (e) {
 if ($I$(4).isLeftMouseButton$java_awt_event_MouseEvent(e) && e.getComponent$().isEnabled$() ) {
 this.spinner=p$1.eventToSpinner$java_awt_AWTEvent.apply(this, [e]);
 this.autoRepeatTimer.start$();
 p$1.focusSpinnerIfNecessary.apply(this, []);
 }});
 
-Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent',  function (e) {
 this.autoRepeatTimer.stop$();
 this.arrowButton=null;
 this.spinner=null;
 });
 
-Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent',  function (e) {
 if (this.spinner != null  && !this.autoRepeatTimer.isRunning$()  && this.spinner === p$1.eventToSpinner$java_awt_AWTEvent.apply(this, [e])  ) {
 this.autoRepeatTimer.start$();
 }});
 
-Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent',  function (e) {
 if (this.autoRepeatTimer.isRunning$()) {
 this.autoRepeatTimer.stop$();
 }});
 
-Clazz.newMeth(C$, 'focusSpinnerIfNecessary', function () {
+Clazz.newMeth(C$, 'focusSpinnerIfNecessary',  function () {
 var fo=$I$(5).getCurrentKeyboardFocusManager$().getFocusOwner$();
 if (this.spinner.isRequestFocusEnabled$() && (fo == null  || !$I$(4).isDescendingFrom$java_awt_Component$java_awt_Component(fo, this.spinner) ) ) {
 var root=this.spinner;
@@ -473,10 +460,10 @@ if (child != null  && $I$(4).isDescendingFrom$java_awt_Component$java_awt_Compon
 child.requestFocus$();
 }}}}, p$1);
 
-Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
+Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
+Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent',  function (e) {
 if (this.spinner === p$1.eventToSpinner$java_awt_AWTEvent.apply(this, [e]) ) {
 if (this.autoRepeatTimer.isRunning$()) {
 this.autoRepeatTimer.stop$();
@@ -491,27 +478,21 @@ this.arrowButton=null;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSSpinnerUI, "Handler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSSpinnerUI, "Handler", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, null, ['java.awt.LayoutManager', 'javax.swing.event.ChangeListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.nextButton=null;
-this.previousButton=null;
-this.editor=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.nextButton=null;
 this.previousButton=null;
 this.editor=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, c) {
+C$.$fields$=[['O',['nextButton','java.awt.Component','+previousButton','+editor']]]
+
+Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component',  function (name, c) {
 if ("Next".equals$O(name)) {
 this.nextButton=c;
 } else if ("Previous".equals$O(name)) {
@@ -520,7 +501,7 @@ this.previousButton=c;
 this.editor=c;
 }});
 
-Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (c) {
+Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component',  function (c) {
 if (c === this.nextButton ) {
 this.nextButton=null;
 } else if (c === this.previousButton ) {
@@ -529,16 +510,16 @@ this.previousButton=null;
 this.editor=null;
 }});
 
-Clazz.newMeth(C$, 'preferredSize$java_awt_Component', function (c) {
+Clazz.newMeth(C$, 'preferredSize$java_awt_Component',  function (c) {
 return (c == null ) ? $I$(6).zeroSize : c.getPreferredSize$();
 }, p$2);
 
-Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container',  function (parent) {
 var nextD=p$2.preferredSize$java_awt_Component.apply(this, [this.nextButton]);
 var previousD=p$2.preferredSize$java_awt_Component.apply(this, [this.previousButton]);
 var editorD=p$2.preferredSize$java_awt_Component.apply(this, [this.editor]);
 editorD.height=(((editorD.height + 1)/2|0)) * 2;
-var size=Clazz.new_($I$(7).c$$I$I,[editorD.width, editorD.height]);
+var size=Clazz.new_($I$(7,1).c$$I$I,[editorD.width, editorD.height]);
 size.width+=Math.max(nextD.width, previousD.width);
 var insets=parent.getInsets$();
 size.width+=insets.left + insets.right;
@@ -546,16 +527,16 @@ size.height+=insets.top + insets.bottom;
 return size;
 });
 
-Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container',  function (parent) {
 return this.preferredLayoutSize$java_awt_Container(parent);
 });
 
-Clazz.newMeth(C$, 'setBounds$java_awt_Component$I$I$I$I', function (c, x, y, width, height) {
+Clazz.newMeth(C$, 'setBounds$java_awt_Component$I$I$I$I',  function (c, x, y, width, height) {
 if (c != null ) {
 c.setBounds$I$I$I$I(x, y, width, height);
 }}, p$2);
 
-Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'layoutContainer$java_awt_Container',  function (parent) {
 var width=parent.getWidth$();
 var height=parent.getHeight$();
 var insets=parent.getInsets$();
@@ -589,7 +570,7 @@ p$2.setBounds$java_awt_Component$I$I$I$I.apply(this, [this.nextButton, buttonsX,
 p$2.setBounds$java_awt_Component$I$I$I$I.apply(this, [this.previousButton, buttonsX, previousY, buttonsWidth, previousHeight]);
 });
 
-Clazz.newMeth(C$, ['stateChanged$javax_swing_event_ChangeEvent','stateChanged$'], function (e) {
+Clazz.newMeth(C$, 'stateChanged$javax_swing_event_ChangeEvent',  function (e) {
 if (Clazz.instanceOf(e.getSource$(), "javax.swing.JSpinner")) {
 var spinner=e.getSource$();
 var ui=spinner.getUI$();
@@ -602,4 +583,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:53 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:27 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

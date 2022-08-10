@@ -1,25 +1,21 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.Hashtable','jalview.bin.Cache','java.util.StringTokenizer','java.util.ArrayList','jalview.ws.params.WsParamSetI','java.io.InputStreamReader','java.io.FileInputStream','java.io.File','javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','jalview.xml.binding.jalview.WebServiceParameterSet','Error','jalview.util.MessageManager','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.gui.Desktop','java.io.PrintWriter','java.io.OutputStreamWriter','java.io.FileOutputStream','jalview.xml.binding.jalview.ObjectFactory','jalview.gui.JvOptionPane']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "WsParamSetManager", null, null, 'jalview.ws.params.ParamManager');
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.Hashtable','jalview.bin.Cache','java.util.StringTokenizer','java.util.ArrayList','jalview.bin.Console','jalview.ws.params.WsParamSetI','java.io.InputStreamReader','java.io.FileInputStream','java.io.File','javax.xml.bind.JAXBContext','javax.xml.stream.XMLInputFactory','jalview.xml.binding.jalview.WebServiceParameterSet','Error','jalview.util.MessageManager','jalview.io.JalviewFileChooser','jalview.io.JalviewFileView','jalview.gui.Desktop','java.io.PrintWriter','java.io.OutputStreamWriter','java.io.FileOutputStream','jalview.xml.binding.jalview.ObjectFactory','jalview.gui.JvOptionPane']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "WsParamSetManager", null, null, 'jalview.ws.params.ParamManager');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.paramparsers=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.paramparsers=Clazz.new_($I$(1));
-}, 1);
+this.paramparsers=Clazz.new_($I$(1,1));
+},1);
 
-Clazz.newMeth(C$, 'getParameterSet$S$S$Z$Z', function (name, serviceUrl, modifiable, unmodifiable) {
+C$.$fields$=[['O',['paramparsers','java.util.Hashtable']]]
+
+Clazz.newMeth(C$, 'getParameterSet$S$S$Z$Z',  function (name, serviceUrl, modifiable, unmodifiable) {
 var files=$I$(2).getProperty$S("WS_PARAM_FILES");
 if (files == null ) {
 return null;
-}var st=Clazz.new_($I$(3).c$$S$S,[files, "|"]);
+}var st=Clazz.new_($I$(3,1).c$$S$S,[files, "|"]);
 var pfile=null;
-var params=Clazz.new_($I$(4));
+var params=Clazz.new_($I$(4,1));
 while (st.hasMoreTokens$()){
 pfile=st.nextToken$();
 try {
@@ -33,31 +29,31 @@ add=true;
 }}
 } else {
 add=true;
-}add&=(modifiable == p.isModifiable$()  || unmodifiable == !p.isModifiable$()  );
-add&=name == null  || p.getName$().equals$O(name) ;
+}add=!!(add&((modifiable == p.isModifiable$()  || unmodifiable == !p.isModifiable$()  )));
+add=!!(add&(name == null  || p.getName$().equals$O(name) ));
 if (add) {
-params.add$TE(p);
+params.add$O(p);
 }}
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-$I$(2).log.info$O$Throwable("Failed to parse parameter file " + pfile + " (Check that all JALVIEW_WSPARAMFILES entries are valid!)" , e);
+$I$(5,"info$S$Throwable",["Failed to parse parameter file " + pfile + " (Check that all JALVIEW_WSPARAMFILES entries are valid!)" , e]);
 } else {
 throw e;
 }
 }
 }
-return params.toArray$TTA(Clazz.array($I$(5), [0]));
+return params.toArray$OA(Clazz.array($I$(6), [0]));
 });
 
-Clazz.newMeth(C$, 'parseParamFile$S', function (filename) {
-var psets=Clazz.new_($I$(4));
-var is=Clazz.new_($I$(6).c$$java_io_InputStream$S,[Clazz.new_($I$(7).c$$java_io_File,[Clazz.new_($I$(8).c$$S,[filename])]), "UTF-8"]);
+Clazz.newMeth(C$, 'parseParamFile$S',  function (filename) {
+var psets=Clazz.new_($I$(4,1));
+var is=Clazz.new_([Clazz.new_([Clazz.new_($I$(9,1).c$$S,[filename])],$I$(8,1).c$$java_io_File), "UTF-8"],$I$(7,1).c$$java_io_InputStream$S);
 var wspset=null;
 try {
-var jc=$I$(9).newInstance$S("jalview.xml.binding.jalview");
+var jc=$I$(10).newInstance$S("jalview.xml.binding.jalview");
 var um=jc.createUnmarshaller$();
-var streamReader=$I$(10).newInstance$().createXMLStreamReader$java_io_Reader(is);
-var jbe=um.unmarshal$javax_xml_stream_XMLStreamReader$Class(streamReader, Clazz.getClass($I$(11)));
+var streamReader=$I$(11).newInstance$().createXMLStreamReader$java_io_Reader(is);
+var jbe=um.unmarshal$javax_xml_stream_XMLStreamReader$Class(streamReader, Clazz.getClass($I$(12)));
 wspset=jbe.getValue$();
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
@@ -68,25 +64,25 @@ throw ex;
 }
 if (wspset != null  && wspset.getParameters$().length$() > 0 ) {
 var urls=wspset.getServiceURL$();
-var urlArray=urls.toArray$TTA(Clazz.array(String, [urls.size$()]));
+var urlArray=urls.toArray$OA(Clazz.array(String, [urls.size$()]));
 for (var url, $url = urls.iterator$(); $url.hasNext$()&&((url=($url.next$())),1);) {
 var parser=this.paramparsers.get$O(url);
 if (parser != null ) {
 var pset=parser.parseServiceParameterFile$S$S$SA$S(wspset.getName$(), wspset.getDescription$(), urlArray, wspset.getParameters$());
 if (pset != null ) {
 pset.setSourceFile$S(filename);
-psets.add$TE(pset);
+psets.add$O(pset);
 break;
 }}}
-}return psets.toArray$TTA(Clazz.array($I$(5), [0]));
+}return psets.toArray$OA(Clazz.array($I$(6), [0]));
 }, p$1);
 
-Clazz.newMeth(C$, 'storeParameterSet$jalview_ws_params_WsParamSetI', function (parameterSet) {
+Clazz.newMeth(C$, 'storeParameterSet$jalview_ws_params_WsParamSetI',  function (parameterSet) {
 var filename=parameterSet.getSourceFile$();
 var outfile=null;
 try {
-if (filename != null  && !((outfile=Clazz.new_($I$(8).c$$S,[filename])).canWrite$()) ) {
-$I$(2).log.warn$O("Can't write to " + filename + " - Prompting for new file to write to." );
+if (filename != null  && !((outfile=Clazz.new_($I$(9,1).c$$S,[filename])).canWrite$()) ) {
+$I$(5).warn$S("Can't write to " + filename + " - Prompting for new file to write to." );
 filename=null;
 }} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -101,20 +97,20 @@ if (parser == null ) {
 parser=this.paramparsers.get$O(urls);
 }}
 if (parser == null ) {
-throw Clazz.new_($I$(12).c$$S,[$I$(13).getString$S("error.implementation_error_cannot_find_marshaller_for_param_set")]);
+throw Clazz.new_([$I$(14).getString$S("error.implementation_error_cannot_find_marshaller_for_param_set")],$I$(13,1).c$$S);
 }if (filename == null ) {
-var chooser=Clazz.new_($I$(14).c$$S$S,["wsparams", "Web Service Parameter File"]);
-chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(15)));
-chooser.setDialogTitle$S($I$(13).getString$S("label.choose_filename_for_param_file"));
-chooser.setToolTipText$S($I$(13).getString$S("action.save"));
-var value=chooser.showSaveDialog$java_awt_Component($I$(16).instance);
+var chooser=Clazz.new_($I$(15,1).c$$S$S,["wsparams", "Web Service Parameter File"]);
+chooser.setFileView$javax_swing_filechooser_FileView(Clazz.new_($I$(16,1)));
+chooser.setDialogTitle$S($I$(14).getString$S("label.choose_filename_for_param_file"));
+chooser.setToolTipText$S($I$(14).getString$S("action.save"));
+var value=chooser.showSaveDialog$java_awt_Component($I$(17).instance);
 if (value == 0) {
 outfile=chooser.getSelectedFile$();
-$I$(2).setProperty$S$S("LAST_DIRECTORY", outfile.getParent$());
+$I$(2,"setProperty$S$S",["LAST_DIRECTORY", outfile.getParent$()]);
 filename=outfile.getAbsolutePath$();
 if (!filename.endsWith$S(".wsparams")) {
 filename=filename.concat$S(".wsparams");
-outfile=Clazz.new_($I$(8).c$$S,[filename]);
+outfile=Clazz.new_($I$(9,1).c$$S,[filename]);
 }}}if (outfile != null ) {
 var paramFiles=$I$(2).getDefault$S$S("WS_PARAM_FILES", filename);
 if (paramFiles.indexOf$S(filename) == -1) {
@@ -122,38 +118,38 @@ if (paramFiles.length$() > 0) {
 paramFiles=paramFiles.concat$S("|");
 }paramFiles=paramFiles.concat$S(filename);
 }$I$(2).setProperty$S$S("WS_PARAM_FILES", paramFiles);
-var paramxml=Clazz.new_($I$(11));
+var paramxml=Clazz.new_($I$(12,1));
 paramxml.setName$S(parameterSet.getName$());
 paramxml.setDescription$S(parameterSet.getDescription$());
 for (var url, $url = 0, $$url = parameterSet.getApplicableUrls$(); $url<$$url.length&&((url=($$url[$url])),1);$url++) {
-paramxml.getServiceURL$().add$TE(url);
+paramxml.getServiceURL$().add$O(url);
 }
 paramxml.setVersion$S("1.0");
 try {
 paramxml.setParameters$S(parser.generateServiceParameterFile$jalview_ws_params_WsParamSetI(parameterSet));
-var out=Clazz.new_($I$(17).c$$java_io_Writer,[Clazz.new_($I$(18).c$$java_io_OutputStream$S,[Clazz.new_($I$(19).c$$java_io_File,[outfile]), "UTF-8"])]);
-var jaxbContext=$I$(9).newInstance$ClassA([Clazz.getClass($I$(11))]);
+var out=Clazz.new_([Clazz.new_([Clazz.new_($I$(20,1).c$$java_io_File,[outfile]), "UTF-8"],$I$(19,1).c$$java_io_OutputStream$S)],$I$(18,1).c$$java_io_Writer);
+var jaxbContext=$I$(10,"newInstance$ClassA",[Clazz.array(Class, -1, [Clazz.getClass($I$(12))])]);
 var jaxbMarshaller=jaxbContext.createMarshaller$();
-jaxbMarshaller.marshal$O$java_io_Writer(Clazz.new_($I$(20)).createWebServiceParameterSet$jalview_xml_binding_jalview_WebServiceParameterSet(paramxml), out);
+jaxbMarshaller.marshal$O$java_io_Writer(Clazz.new_($I$(21,1)).createWebServiceParameterSet$jalview_xml_binding_jalview_WebServiceParameterSet(paramxml), out);
 out.close$();
 parameterSet.setSourceFile$S(filename);
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(2).log.error$O$Throwable("Couldn't write parameter file to " + outfile, e);
+$I$(5).error$S$Throwable("Couldn't write parameter file to " + outfile, e);
 } else {
 throw e;
 }
 }
 }});
 
-Clazz.newMeth(C$, 'deleteParameterSet$jalview_ws_params_WsParamSetI', function (parameterSet) {
+Clazz.newMeth(C$, 'deleteParameterSet$jalview_ws_params_WsParamSetI',  function (parameterSet) {
 var filename=parameterSet.getSourceFile$();
 if (filename == null  || filename.trim$().length$() < 1 ) {
 return;
 }var paramFiles=$I$(2).getDefault$S$S("WS_PARAM_FILES", "");
 if (paramFiles.indexOf$S(filename) > -1) {
 var nparamFiles= String.instantialize();
-var st=Clazz.new_($I$(3).c$$S$S,[paramFiles, "|"]);
+var st=Clazz.new_($I$(3,1).c$$S$S,[paramFiles, "|"]);
 while (st.hasMoreElements$()){
 var fl=st.nextToken$();
 if (!fl.equals$O(filename)) {
@@ -161,23 +157,23 @@ nparamFiles=nparamFiles.concat$S("|").concat$S(fl);
 }}
 $I$(2).setProperty$S$S("WS_PARAM_FILES", nparamFiles);
 }try {
-var pfile=Clazz.new_($I$(8).c$$S,[filename]);
+var pfile=Clazz.new_($I$(9,1).c$$S,[filename]);
 if (pfile.exists$() && pfile.canWrite$() ) {
-if ($I$(21).showConfirmDialog$java_awt_Component$O$S$I($I$(16).instance, "Delete the preset\'s file, too ?", "Delete User Preset ?", 2) == 0) {
+if ($I$(22,"showConfirmDialog$java_awt_Component$O$S$I",[$I$(17).instance, "Delete the preset\'s file, too ?", "Delete User Preset ?", 2]) == 0) {
 pfile.delete$();
 }}} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(2).log.error$O$Throwable("Exception when trying to delete webservice user preset: ", e);
+$I$(5).error$S$Throwable("Exception when trying to delete webservice user preset: ", e);
 } else {
 throw e;
 }
 }
 });
 
-Clazz.newMeth(C$, 'registerParser$S$jalview_ws_params_ParamDatastoreI', function (hosturl, paramdataStore) {
-this.paramparsers.put$TK$TV(hosturl, paramdataStore);
+Clazz.newMeth(C$, 'registerParser$S$jalview_ws_params_ParamDatastoreI',  function (hosturl, paramdataStore) {
+this.paramparsers.put$O$O(hosturl, paramdataStore);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

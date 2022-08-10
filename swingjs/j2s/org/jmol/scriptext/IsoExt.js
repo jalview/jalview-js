@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),p$1={},I$=[[0,'Boolean','org.jmol.script.T','javajs.util.P3','javajs.util.Lst','javajs.util.AU','org.jmol.api.Interface','org.jmol.script.SV','org.jmol.util.Escape','javajs.util.Quat','org.jmol.viewer.JC','org.jmol.util.Logger','javajs.util.BS','javajs.util.SB','javajs.util.M4','org.jmol.util.BSUtil','javajs.util.PT','org.jmol.util.Parser','org.jmol.util.C','javajs.util.V3','org.jmol.script.ScriptInterruption','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','org.jmol.util.TempArray','org.jmol.util.BoxInfo','org.jmol.script.ScriptEval','org.jmol.util.Triangulator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "IsoExt", null, 'org.jmol.scriptext.ScriptExt');
+(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),p$1={},I$=[[0,'org.jmol.script.T','javajs.util.P3','javajs.util.Lst','javajs.util.AU','org.jmol.api.Interface','org.jmol.script.SV','org.jmol.util.Escape','javajs.util.Quat','org.jmol.viewer.JC','org.jmol.adapter.readers.quantum.GenNBOReader','org.jmol.util.Logger','javajs.util.BS','javajs.util.SB','javajs.util.M4','org.jmol.util.BSUtil','javajs.util.PT','org.jmol.util.Parser','org.jmol.util.C','javajs.util.V3','org.jmol.script.ScriptInterruption','org.jmol.atomdata.RadiusData',['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','org.jmol.util.TempArray','org.jmol.util.BoxInfo','org.jmol.script.ScriptEval','org.jmol.util.Triangulator']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "IsoExt", null, 'org.jmol.scriptext.ScriptExt');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'dispatch$I$Z$org_jmol_script_TA', function (iTok, b, st) {
@@ -90,7 +89,7 @@ propertyName="atomBitset";
 if (propertyName == null ) propertyName=(iHaveAtoms || iHaveCoord  ? "endSet" : "startSet");
 propertyValue=bsSelected=this.atomExpressionAt$I(i);
 i=eval.iToken;
-if (this.tokAt$I(i + 1) == 0 && propertyName == "startSet" ) propertyName="atomBitset";
+if (this.tokAt$I(i + 1) == 0 && propertyName === "startSet"  ) propertyName="atomBitset";
 iHaveAtoms=true;
 getCharges=true;
 break;
@@ -119,11 +118,11 @@ i=eval.iToken;
 break;
 case 1275069442:
 propertyName="cross";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 break;
 case 1073742040:
 propertyName="cross";
-propertyValue=$I$(1).FALSE;
+propertyValue=Boolean.FALSE;
 break;
 case 1073742066:
 if (this.isFloatParameter$I(i + 1)) {
@@ -152,7 +151,7 @@ propertyName="width";
 propertyValue=Float.valueOf$F(this.floatParameter$I(++i));
 break;
 default:
-if (eval.theTok == 268435633 || $I$(2).tokAttr$I$I(eval.theTok, 1073741824) ) {
+if (eval.theTok == 268435633 || $I$(1).tokAttr$I$I(eval.theTok, 1073741824) ) {
 this.setShapeId$I$I$Z(17, i, idSeen);
 i=eval.iToken;
 break;
@@ -231,11 +230,11 @@ break;
 case 1275203608:
 type=":poly";
 break;
-case 1073742152:
-if (center == null ) center=Clazz.new_($I$(3));
-var crpts=this.vwr.ms.generateCrystalClass$I$javajs_util_P3(this.vwr.bsA$().nextSetBit$I(0), $I$(3).new3$F$F$F(NaN, NaN, NaN));
+case 134217764:
+if (center == null ) center=Clazz.new_($I$(2,1));
+var crpts=this.vwr.ms.generateCrystalClass$I$javajs_util_P3(this.vwr.bsA$().nextSetBit$I(0), $I$(2).new3$F$F$F(NaN, NaN, NaN));
 if (pts != null ) this.invArg$();
-pts=Clazz.array($I$(3), [crpts.size$()]);
+pts=Clazz.array($I$(2), [crpts.size$()]);
 for (var j=crpts.size$(); --j >= 0; ) pts[j]=crpts.get$I(j);
 
 i++;
@@ -332,7 +331,7 @@ tok=eval.theTok;
 var isPoints=(tok == 134217751);
 propertyName="polygon";
 havePoints=true;
-var v=Clazz.new_($I$(4));
+var v=Clazz.new_($I$(3,1));
 var nVertices=0;
 var nTriangles=0;
 var points=null;
@@ -345,11 +344,11 @@ var faces;
 if (tok == 1275203608) {
 faces=this.getIntArray2$I(i);
 } else {
-faces=$I$(5).newInt2$I(1);
+faces=$I$(4).newInt2$I(1);
 faces[0]=eval.expandFloatArray$FA$I(eval.floatParameterSet$I$I$I(i, -1, 2147483647), -1);
 }points=this.getAllPoints$I(this.e.iToken + 1);
 try {
-polygons=($I$(6).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.util.MeshCapper", this.vwr, "script")).set$org_jmol_util_MeshSlicer(null).triangulateFaces$IAA$javajs_util_P3A$IAA(faces, points, null);
+polygons=($I$(5).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.util.MeshCapper", this.vwr, "script")).set$org_jmol_util_MeshSlicer(null).triangulateFaces$IAA$javajs_util_P3A$IAA(faces, points, null);
 } catch (e) {
 this.invArg$();
 }
@@ -358,14 +357,14 @@ this.invArg$();
 nVertices=points.length;
 }if (points == null ) {
 nVertices=Math.max(0, this.intParameter$I(i));
-points=Clazz.array($I$(3), [nVertices]);
+points=Clazz.array($I$(2), [nVertices]);
 for (var j=0; j < nVertices; j++) points[j]=this.centerParameter$I(++eval.iToken);
 
 }i=eval.iToken;
 switch (this.tokAt$I(i + 1)) {
 case 11:
 case 12:
-vpolygons=$I$(7).newT$org_jmol_script_T(this.getToken$I(++i)).toArray$().getList$();
+vpolygons=$I$(6,"newT$org_jmol_script_T",[this.getToken$I(++i)]).toArray$().getList$();
 nTriangles=vpolygons.size$();
 break;
 case 7:
@@ -377,30 +376,31 @@ nTriangles=this.intParameter$I(++i);
 if (nTriangles < 0) isPoints=true;
 break;
 default:
-if (polygons == null  && !isPoints  && !this.chk ) polygons=($I$(6).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.util.MeshCapper", this.vwr, "script")).set$org_jmol_util_MeshSlicer(null).triangulatePolygon$javajs_util_P3A$I(points, -1);
+if (polygons == null  && !isPoints  && !this.chk ) polygons=($I$(5).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.util.MeshCapper", this.vwr, "script")).set$org_jmol_util_MeshSlicer(null).triangulatePolygon$javajs_util_P3A$I(points, -1);
 }
 if (polygons == null  && !isPoints ) {
-polygons=$I$(5).newInt2$I(nTriangles);
+polygons=$I$(4).newInt2$I(nTriangles);
 for (var j=0; j < nTriangles; j++) {
-var f=(vpolygons == null  ? eval.floatParameterSet$I$I$I(++eval.iToken, 3, 4) : $I$(7).flistValue$org_jmol_script_T$I(vpolygons.get$I(j), 0));
+var f=(vpolygons == null  ? eval.floatParameterSet$I$I$I(++eval.iToken, 3, 4) : $I$(6,"flistValue$org_jmol_script_T$I",[vpolygons.get$I(j), 0]));
 if (f.length < 3 || f.length > 4 ) this.invArg$();
 polygons[j]=Clazz.array(Integer.TYPE, -1, [(f[0]|0), (f[1]|0), (f[2]|0), (f.length == 3 ? 7 : (f[3]|0))]);
 }
 }if (nVertices > 0) {
-v.addLast$TV(points);
-v.addLast$TV(polygons);
+v.addLast$O(points);
+v.addLast$O(polygons);
 } else {
 v=null;
 }propertyValue=v;
 i=eval.iToken;
 break;
-case 1073742152:
+case 134217764:
 case 1296041986:
 var xyz=null;
 var iSym=2147483647;
 plane=null;
 var target=null;
 var bsAtoms=null;
+var options=0;
 if (tok == 1296041986) {
 iSym=0;
 switch (this.tokAt$I(++i)) {
@@ -408,7 +408,7 @@ case 4:
 xyz=this.stringParameter$I(i);
 break;
 case 12:
-xyz=$I$(7).sValue$org_jmol_script_T(this.getToken$I(i));
+xyz=$I$(6,"sValue$org_jmol_script_T",[this.getToken$I(i)]);
 break;
 case 2:
 default:
@@ -424,12 +424,30 @@ center=this.centerParameter$I(++i);
 bsAtoms=(eval.isAtomExpression$I(i) ? this.atomExpressionAt$I(i) : null);
 i=eval.iToken;
 }var nth=(target != null  && this.tokAt$I(i + 1) == 2  ? eval.getToken$I(++i).intValue : -1);
-eval.checkLast$I(eval.iToken);
+if (this.tokAt$I(i + 1) == 1814695966) {
+target=Clazz.new_($I$(2,1));
+options=1073742066;
+i++;
+eval.iToken=i;
+} else if (this.tokAt$I(i + 1) == 1073742066) {
+i++;
+target=this.getPoint3f$I$Z(i + 1, false);
+options=1073742066;
+i=eval.iToken;
+}eval.checkLast$I(eval.iToken);
 if (!this.chk) {
 var s="";
 if (bsAtoms == null  && this.vwr.am.cmi >= 0 ) bsAtoms=this.vwr.getModelUndeletedAtomsBitSet$I(this.vwr.am.cmi);
-if (bsAtoms != null ) s=this.vwr.getSymTemp$().getSymmetryInfoAtom$org_jmol_modelset_ModelSet$I$S$I$javajs_util_P3$javajs_util_P3$S$I$F$I(this.vwr.ms, bsAtoms.nextSetBit$I(0), xyz, iSym, center, target, thisId, 135176, intScale / 100.0, nth);
-eval.runScript$S(s.length$() > 0 ? s : "draw ID \"sym_" + thisId + "*\" delete" );
+if (bsAtoms != null ) {
+s=null;
+var iatom=bsAtoms.nextSetBit$I(0);
+if (options != 0) {
+var o=this.vwr.getSymmetryInfo$I$S$I$javajs_util_P3$javajs_util_P3$I$S$F$I$I(iatom, xyz, iSym, center, target, 134217751, null, intScale / 100.0, nth, options);
+if (Clazz.instanceOf(o, "javajs.util.P3")) target=o;
+ else s="";
+}if (thisId == null ) thisId="sym";
+if (s == null ) s=this.vwr.getSymmetryInfo$I$S$I$javajs_util_P3$javajs_util_P3$I$S$F$I$I(iatom, xyz, iSym, center, target, 135176, thisId, intScale / 100.0, nth, options);
+}eval.runBufferedSafely$S$javajs_util_SB(s.length$() > 0 ? s : "draw ID \"" + thisId + "_*\" delete" , eval.outputBuffer);
 }return;
 case 4115:
 isFrame=true;
@@ -441,7 +459,7 @@ if (eval.theTok == 9 || !eval.isPoint3f$I(i) ) {
 propertyValue=eval.getPoint4f$I(i);
 if (isFrame) {
 eval.checkLast$I(eval.iToken);
-if (!this.chk) eval.runScript$S($I$(8).drawQuat$javajs_util_Quat$S$S$javajs_util_P3$F($I$(9).newP4$javajs_util_P4(propertyValue), (thisId == null  ? "frame" : thisId), " " + swidth, (center == null  ? Clazz.new_($I$(3)) : center), intScale / 100.0));
+if (!this.chk) eval.runScript$S($I$(7,"drawQuat$javajs_util_Quat$S$S$javajs_util_P3$F",[$I$(8).newP4$javajs_util_P4(propertyValue), (thisId == null  ? "frame" : thisId), " " + swidth, (center == null  ? Clazz.new_($I$(2,1)) : center), intScale / 100.0]));
 return;
 }propertyName="planedef";
 } else {
@@ -459,10 +477,10 @@ this.setShapeProperty$I$S$O(22, "plane", null);
 plane=eval.hklParameter$I(++i);
 i=eval.iToken;
 propertyName="coords";
-var list=Clazz.new_($I$(4));
-list.addLast$TV($I$(3).newP$javajs_util_T3(eval.pt1));
-list.addLast$TV($I$(3).newP$javajs_util_T3(eval.pt2));
-list.addLast$TV($I$(3).newP$javajs_util_T3(eval.pt3));
+var list=Clazz.new_($I$(3,1));
+list.addLast$O($I$(2).newP$javajs_util_T3(eval.pt1));
+list.addLast$O($I$(2).newP$javajs_util_T3(eval.pt2));
+list.addLast$O($I$(2).newP$javajs_util_T3(eval.pt3));
 propertyValue=list;
 } else {
 propertyName="plane";
@@ -560,11 +578,11 @@ i=eval.iToken;
 break;
 case 1073742027:
 propertyName="fixed";
-propertyValue=$I$(1).FALSE;
+propertyValue=Boolean.FALSE;
 break;
 case 12293:
 propertyName="fixed";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 break;
 case 1073742066:
 var pt=this.getPoint3f$I$Z(++i, true);
@@ -582,7 +600,7 @@ swidth=propertyName + " " + propertyValue ;
 break;
 case 1073741998:
 propertyName="line";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 iArray=i + 1;
 break;
 case 1073741908:
@@ -649,7 +667,7 @@ i=eval.iToken;
 continue;
 default:
 if (!eval.setMeshDisplayProperty$I$I$I(22, 0, eval.theTok)) {
-if (eval.theTok == 268435633 || $I$(2).tokAttr$I$I(eval.theTok, 1073741824) ) {
+if (eval.theTok == 268435633 || $I$(1).tokAttr$I$I(eval.theTok, 1073741824) ) {
 thisId=this.setShapeId$I$I$Z(22, i, idSeen);
 i=eval.iToken;
 break;
@@ -675,7 +693,7 @@ var offset=2147483647;
 var isNegOffset=false;
 var nboType=null;
 var bsModels=this.vwr.getVisibleFramesBitSet$();
-var propertyList=Clazz.new_($I$(4));
+var propertyList=Clazz.new_($I$(3,1));
 var isBeta=false;
 var isNBO=(this.tokAt$I(0) == 1073877011);
 var i0=1;
@@ -721,7 +739,7 @@ propertyValue=p$1.getCapSlabObject$I$Z.apply(this, [i, false]);
 i=eval.iToken;
 break;
 case 1073741914:
-linearSquared=$I$(1).TRUE;
+linearSquared=Boolean.TRUE;
 linearCombination=Clazz.array(Float.TYPE, -1, [1]);
 offset=moNumber=0;
 break;
@@ -798,8 +816,8 @@ propertyName="resolution";
 propertyValue=Float.valueOf$F(this.floatParameter$I(i + 1));
 break;
 case 1073742156:
-if (linearCombination == null ) squared=$I$(1).TRUE;
- else linearSquared=$I$(1).TRUE;
+if (linearCombination == null ) squared=Boolean.TRUE;
+ else linearSquared=Boolean.TRUE;
 ignoreSquared=false;
 break;
 case 1073742168:
@@ -815,7 +833,7 @@ if (eval.isArrayParameter$I(i)) {
 linearCombination=eval.floatParameterSet$I$I$I(i, 1, 2147483647);
 if (this.tokAt$I(eval.iToken + 1) == 1073742156) {
 ignoreSquared=false;
-linearSquared=$I$(1).TRUE;
+linearSquared=Boolean.TRUE;
 eval.iToken++;
 }break;
 }var ipt=eval.iToken;
@@ -844,22 +862,22 @@ moLabel=this.getShapeProperty$I$S(iShape, "moLabel");
 } else {
 moNumber=(this.getShapeProperty$I$S(iShape, "moNumber")).intValue$();
 moLabel="" + moNumber;
-}this.showString$S($I$(2).nameOf$I(this.tokAt$I(0)) + " " + moLabel + " " + (isBeta ? "beta " : "") + this.getShapeProperty$I$S(iShape, "message") );
+}this.showString$S($I$(1,"nameOf$I",[this.tokAt$I(0)]) + " " + moLabel + " " + (isBeta ? "beta " : "") + this.getShapeProperty$I$S(iShape, "message") );
 }propertyList.clear$();
 }
 }, p$1);
 
 Clazz.newMeth(C$, 'setNBOType$java_util_Map$S', function (moData, type) {
-var ext=$I$(10).getNBOTypeFromName$S(type);
+var ext=$I$(9).getNBOTypeFromName$S(type);
 if (ext < 0) this.invArg$();
 if (!moData.containsKey$O("nboLabels")) this.error$I(27);
 if (this.chk) return;
-if (!($I$(6).getInterface$S$org_jmol_viewer_Viewer$S("org.jmol.adapter.readers.quantum.GenNBOReader", this.vwr, "script")).readNBOCoefficients$java_util_Map$S$org_jmol_viewer_Viewer(moData, type, this.vwr)) this.error$I(27);
+if (!$I$(10).readNBOCoefficients$java_util_Map$S$org_jmol_viewer_Viewer(moData, type, this.vwr)) this.error$I(27);
 }, p$1);
 
 Clazz.newMeth(C$, 'moCombo$javajs_util_Lst', function (propertyList) {
 if (this.tokAt$I(this.e.iToken + 1) != 1073742156) return null;
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", $I$(1).TRUE]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", Boolean.TRUE]);
 this.e.iToken++;
 return Clazz.array(Float.TYPE, [0]);
 }, p$1);
@@ -926,8 +944,8 @@ if (f == null ) this.error$I(28);
 if (!this.chk) $I$(11).info$S("MO " + moNumber);
 }if (moNumber < 1 || moNumber > nOrb ) eval.errorStr$I$S(26, "" + nOrb);
 }moNumber=Math.abs(moNumber);
-moData.put$TK$TV("lastMoNumber", Integer.valueOf$I(moNumber));
-moData.put$TK$TV("lastMoCount", Integer.valueOf$I(1));
+moData.put$O$O("lastMoNumber", Integer.valueOf$I(moNumber));
+moData.put$O$O("lastMoCount", Integer.valueOf$I(1));
 if (isNegOffset && lc == null  ) lc=Clazz.array(Float.TYPE, -1, [-100, moNumber]);
 if (lc != null  && lc.length < 2 ) {
 mo=mos.get$I(moNumber - 1);
@@ -950,9 +968,9 @@ for (var i=0, pt=0; i < n; i+=2) {
 lc[i]=1;
 lc[i + 1]=(pt=bs.nextSetBit$I(pt + 1));
 }
-moData.put$TK$TV("lastMoNumber", Integer.valueOf$I(bs.nextSetBit$I(0)));
-moData.put$TK$TV("lastMoCount", Integer.valueOf$I((n/2|0)));
-}p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", $I$(1).TRUE]);
+moData.put$O$O("lastMoNumber", Integer.valueOf$I(bs.nextSetBit$I(0)));
+moData.put$O$O("lastMoCount", Integer.valueOf$I((n/2|0)));
+}p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", Boolean.TRUE]);
 }p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "moData", moData]);
 if (title != null ) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "title", title]);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "molecularOrbital", lc != null  ? lc : Integer.valueOf$I(Math.abs(moNumber))]);
@@ -1003,7 +1021,7 @@ var smoothingPower=2147483647;
 var bs=null;
 var bsSelect=null;
 var bsIgnore=null;
-var sbCommand=Clazz.new_($I$(13));
+var sbCommand=Clazz.new_($I$(13,1));
 var pt;
 var plane=null;
 var lattice=null;
@@ -1025,7 +1043,7 @@ var colorScheme=null;
 var mepOrMlp=null;
 var symops=null;
 var discreteColixes=null;
-var propertyList=Clazz.new_($I$(4));
+var propertyList=Clazz.new_($I$(3,1));
 var defaultMesh=false;
 if (isPmesh || isPlot3d ) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "fileType", "Pmesh"]);
 for (var i=eval.iToken; i < this.slen; ++i) {
@@ -1040,10 +1058,10 @@ sbCommand.append$S(" silent");
 propertyName="silent";
 break;
 case 603979868:
-smoothing=(this.getToken$I(++i).tok == 1073742335 ? $I$(1).TRUE : eval.theTok == 1073742334 ? $I$(1).FALSE : null);
+smoothing=(this.getToken$I(++i).tok == 1073742335 ? Boolean.TRUE : eval.theTok == 1073742334 ? Boolean.FALSE : null);
 if (smoothing == null ) this.invArg$();
 continue;
-case 553648149:
+case 553648148:
 smoothingPower=this.intParameter$I(++i);
 continue;
 case 4128:
@@ -1061,7 +1079,7 @@ break;
 case 1088421903:
 if (modelIndex < 0) modelIndex=Math.min(this.vwr.am.cmi, 0);
 var needIgnore=(bsIgnore == null );
-if (bsSelect == null ) bsSelect=$I$(15).copy$javajs_util_BS(this.vwr.bsA$());
+if (bsSelect == null ) bsSelect=$I$(15,"copy$javajs_util_BS",[this.vwr.bsA$()]);
 bsSelect.and$javajs_util_BS(this.vwr.ms.getAtoms$I$O(1296041986, Integer.valueOf$I(1)));
 if (!needIgnore) bsSelect.andNot$javajs_util_BS(bsIgnore);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "select", bsSelect]);
@@ -1070,7 +1088,7 @@ bsIgnore=$I$(15).copy$javajs_util_BS(bsSelect);
 $I$(15).invertInPlace$javajs_util_BS$I(bsIgnore, this.vwr.ms.ac);
 isFrontOnly=true;
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "ignore", bsIgnore]);
-sbCommand.append$S(" ignore ").append$S($I$(8).eBS$javajs_util_BS(bsIgnore));
+sbCommand.append$S(" ignore ").append$S($I$(7).eBS$javajs_util_BS(bsIgnore));
 }sbCommand.append$S(" symmetry");
 if (color == 0) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "colorRGB", Integer.valueOf$I(1296041986)]);
 symops=this.vwr.ms.getSymMatrices$I(modelIndex);
@@ -1099,19 +1117,19 @@ case 134217751:
 propertyName=eval.theToken.value.toString();
 sbCommand.append$S(" ").appendO$O(eval.theToken.value);
 propertyValue=this.centerParameter$I(++i);
-sbCommand.append$S(" ").append$S($I$(8).eP$javajs_util_T3(propertyValue));
+sbCommand.append$S(" ").append$S($I$(7).eP$javajs_util_T3(propertyValue));
 i=eval.iToken;
 break;
 case 1678381065:
 if (eval.fullCommand.indexOf$S("# BBOX=") >= 0) {
-var bbox=$I$(16).split$S$S($I$(16).getQuotedAttribute$S$S(eval.fullCommand, "# BBOX"), ",");
-pts=Clazz.array($I$(3), -1, [$I$(8).uP$S(bbox[0]), $I$(8).uP$S(bbox[1])]);
+var bbox=$I$(16,"split$S$S",[$I$(16).getQuotedAttribute$S$S(eval.fullCommand, "# BBOX"), ","]);
+pts=Clazz.array($I$(2), -1, [$I$(7).uP$S(bbox[0]), $I$(7).uP$S(bbox[1])]);
 } else if (eval.isCenterParameter$I(i + 1)) {
-pts=Clazz.array($I$(3), -1, [this.getPoint3f$I$Z(i + 1, true), this.getPoint3f$I$Z(eval.iToken + 1, true)]);
+pts=Clazz.array($I$(2), -1, [this.getPoint3f$I$Z(i + 1, true), this.getPoint3f$I$Z(eval.iToken + 1, true)]);
 i=eval.iToken;
 } else {
 pts=this.vwr.ms.getBBoxVertices$();
-}sbCommand.append$S(" boundBox " + $I$(8).eP$javajs_util_T3(pts[0]) + " " + $I$(8).eP$javajs_util_T3(pts[pts.length - 1]) );
+}sbCommand.append$S(" boundBox " + $I$(7).eP$javajs_util_T3(pts[0]) + " " + $I$(7).eP$javajs_util_T3(pts[pts.length - 1]) );
 propertyName="boundingBox";
 propertyValue=pts;
 break;
@@ -1124,7 +1142,7 @@ break;
 case 134217763:
 bsSelect=this.atomExpressionAt$I(++i);
 if (this.chk) {
-bs=Clazz.new_($I$(12));
+bs=Clazz.new_($I$(12,1));
 } else if (this.tokAt$I(eval.iToken + 1) == 1073742325 || this.tokAt$I(eval.iToken + 1) == 10 ) {
 bs=this.atomExpressionAt$I(++eval.iToken);
 bs.and$javajs_util_BS(this.vwr.ms.getAtomsWithinRadius$F$javajs_util_BS$Z$org_jmol_atomdata_RadiusData(5.0, bsSelect, false, null));
@@ -1132,7 +1150,7 @@ bs.and$javajs_util_BS(this.vwr.ms.getAtomsWithinRadius$F$javajs_util_BS$Z$org_jm
 bs=this.vwr.ms.getAtomsWithinRadius$F$javajs_util_BS$Z$org_jmol_atomdata_RadiusData(5.0, bsSelect, true, null);
 bs.andNot$javajs_util_BS(this.vwr.ms.getAtoms$I$O(1094713360, bsSelect));
 }bs.andNot$javajs_util_BS(bsSelect);
-sbCommand.append$S(" intersection ").append$S($I$(8).eBS$javajs_util_BS(bsSelect)).append$S(" ").append$S($I$(8).eBS$javajs_util_BS(bs));
+sbCommand.append$S(" intersection ").append$S($I$(7).eBS$javajs_util_BS(bsSelect)).append$S(" ").append$S($I$(7).eBS$javajs_util_BS(bs));
 i=eval.iToken;
 if (this.tokAt$I(i + 1) == 134320141) {
 i++;
@@ -1160,7 +1178,7 @@ if (tok == 1073742327) {
 sbCommand.append$S(" all");
 } else {
 propertyValue=this.st[i].value;
-sbCommand.append$S(" ").append$S($I$(8).eBS$javajs_util_BS(propertyValue));
+sbCommand.append$S(" ").append$S($I$(7).eBS$javajs_util_BS(propertyValue));
 }eval.checkLast$I(i);
 break;
 } else if (tok != 134217759) {
@@ -1189,20 +1207,20 @@ ptc=eval.centerParameter$I$OA(++i, ret);
 bs=(Clazz.instanceOf(ret[0], "javajs.util.BS") ? ret[0] : null);
 }if (isDisplay) eval.checkLast$I(eval.iToken);
 i=eval.iToken;
-if (eval.fullCommand.indexOf$S("# WITHIN=") >= 0) bs=$I$(12).unescape$S($I$(16).getQuotedAttribute$S$S(eval.fullCommand, "# WITHIN"));
+if (eval.fullCommand.indexOf$S("# WITHIN=") >= 0) bs=$I$(12,"unescape$S",[$I$(16).getQuotedAttribute$S$S(eval.fullCommand, "# WITHIN")]);
 if (!this.chk) {
 if (bs != null  && modelIndex >= 0 ) {
 bs.and$javajs_util_BS(this.vwr.getModelUndeletedAtomsBitSet$I(modelIndex));
-}if (ptc == null ) ptc=(bs == null  ? Clazz.new_($I$(3)) : this.vwr.ms.getAtomSetCenter$javajs_util_BS(bs));
+}if (ptc == null ) ptc=(bs == null  ? Clazz.new_($I$(2,1)) : this.vwr.ms.getAtomSetCenter$javajs_util_BS(bs));
 pts=p$1.getWithinDistanceVector$javajs_util_Lst$F$javajs_util_P3$javajs_util_BS$Z.apply(this, [propertyList, distance, ptc, bs, isDisplay]);
-sbCommand.append$S(" within ").appendF$F(distance).append$S(" ").append$S(bs == null  ? $I$(8).eP$javajs_util_T3(ptc) : $I$(8).eBS$javajs_util_BS(bs));
+sbCommand.append$S(" within ").appendF$F(distance).append$S(" ").append$S(bs == null  ? $I$(7).eP$javajs_util_T3(ptc) : $I$(7).eBS$javajs_util_BS(bs));
 }continue;
 case 1073742083:
 propertyName="parameters";
 var fparams=eval.floatParameterSet$I$I$I(++i, 1, 10);
 i=eval.iToken;
 propertyValue=fparams;
-sbCommand.append$S(" parameters ").append$S($I$(8).eAF$FA(fparams));
+sbCommand.append$S(" parameters ").append$S($I$(7).eAF$FA(fparams));
 break;
 case 1715472409:
 case 1073742190:
@@ -1216,15 +1234,15 @@ sbCommand.append$S(" vdw");
 surfaceObjectSeen=true;
 }propertyName="property";
 if (smoothing == null ) {
-var allowSmoothing=$I$(2).tokAttr$I$I(tokProperty, 1111490560);
-smoothing=(allowSmoothing && this.vwr.getIsosurfacePropertySmoothing$Z(false) == 1  ? $I$(1).TRUE : $I$(1).FALSE);
+var allowSmoothing=$I$(1).tokAttr$I$I(tokProperty, 1111490560);
+smoothing=(allowSmoothing && this.vwr.getIsosurfacePropertySmoothing$Z(false) == 1  ? Boolean.TRUE : Boolean.FALSE);
 }p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "propertySmoothing", smoothing]);
 sbCommand.append$S(" isosurfacePropertySmoothing " + smoothing);
-if (smoothing === $I$(1).TRUE ) {
+if (smoothing === Boolean.TRUE ) {
 if (smoothingPower == 2147483647) smoothingPower=this.vwr.getIsosurfacePropertySmoothing$Z(true);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "propertySmoothingPower", Integer.valueOf$I(smoothingPower)]);
 sbCommand.append$S(" isosurfacePropertySmoothingPower " + smoothingPower);
-}if (this.vwr.g.rangeSelected) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "rangeSelected", $I$(1).TRUE]);
+}if (this.vwr.g.rangeSelected) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "rangeSelected", Boolean.TRUE]);
 } else {
 propertyName=mepOrMlp;
 }str=this.paramAsStr$I(i);
@@ -1244,8 +1262,8 @@ if (vname.length$() == 0) {
 data=eval.floatParameterSet$I$I$I(i, ac, ac);
 } else {
 data=Clazz.array(Float.TYPE, [ac]);
-if (!this.chk) $I$(17).parseStringInfestedFloatArray$S$javajs_util_BS$FA("" + eval.getParameter$S$I$Z(vname, 4, true), null, data);
-}if (!this.chk) sbCommand.append$S(" \"\" ").append$S($I$(8).eAF$FA(data));
+if (!this.chk) $I$(17,"parseStringInfestedFloatArray$S$javajs_util_BS$FA",["" + eval.getParameter$S$I$Z(vname, 4, true), null, data]);
+}if (!this.chk) sbCommand.append$S(" \"\" ").append$S($I$(7).eAF$FA(data));
 } else {
 this.getToken$I(++i);
 if (!this.chk) {
@@ -1253,7 +1271,7 @@ sbCommand.append$S(" " + eval.theToken.value);
 var atoms=this.vwr.ms.at;
 this.vwr.autoCalculate$I$S(tokProperty, null);
 if (tokProperty != 1765808134) {
-pt=Clazz.new_($I$(3));
+pt=Clazz.new_($I$(2,1));
 for (var iAtom=ac; --iAtom >= 0; ) data[iAtom]=atoms[iAtom].atomPropertyFloat$org_jmol_viewer_Viewer$I$javajs_util_P3(this.vwr, tokProperty, pt);
 
 }}if (tokProperty == 1765808134) colorScheme="inherit";
@@ -1270,7 +1288,7 @@ modelIndex=(eval.theTok == 1094713359 ? this.intParameter$I(++i) : eval.modelNum
 sbCommand.append$S(" modelIndex " + modelIndex);
 if (modelIndex < 0) {
 propertyName="fixed";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 break;
 }propertyName="modelIndex";
 propertyValue=Integer.valueOf$I(modelIndex);
@@ -1286,10 +1304,10 @@ i++;
 bsIgnore=$I$(15).copy$javajs_util_BS(bs1);
 $I$(15).invertInPlace$javajs_util_BS$I(bsIgnore, this.vwr.ms.ac);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "ignore", bsIgnore]);
-sbCommand.append$S(" ignore ").append$S($I$(8).eBS$javajs_util_BS(bsIgnore));
+sbCommand.append$S(" ignore ").append$S($I$(7).eBS$javajs_util_BS(bsIgnore));
 isFrontOnly=true;
 }if (surfaceObjectSeen || isMapped ) {
-sbCommand.append$S(" select " + $I$(8).eBS$javajs_util_BS(bs1));
+sbCommand.append$S(" select " + $I$(7).eBS$javajs_util_BS(bs1));
 } else {
 bsSelect=propertyValue;
 if (modelIndex < 0 && bsSelect.nextSetBit$I(0) >= 0 ) modelIndex=this.vwr.ms.at[bsSelect.nextSetBit$I(0)].mi;
@@ -1300,7 +1318,7 @@ break;
 case 12289:
 propertyName="center";
 propertyValue=this.centerParameter$I(++i);
-sbCommand.append$S(" center " + $I$(8).eP$javajs_util_T3(propertyValue));
+sbCommand.append$S(" center " + $I$(7).eP$javajs_util_T3(propertyValue));
 i=eval.iToken;
 break;
 case 1073742147:
@@ -1309,7 +1327,7 @@ idSeen=true;
 if (eval.theTok == 1073742147) {
 isSign=true;
 sbCommand.append$S(" sign");
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sign", $I$(1).TRUE]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sign", Boolean.TRUE]);
 } else {
 if (this.tokAt$I(i + 1) == 1073741914) {
 i++;
@@ -1330,7 +1348,7 @@ i++;
 sbCommand.append$S(" color mesh");
 color=eval.getArgbParam$I(++i);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "meshcolor", Integer.valueOf$I(color)]);
-sbCommand.append$S(" ").append$S($I$(8).escapeColor$I(color));
+sbCommand.append$S(" ").append$S($I$(7).escapeColor$I(color));
 i=eval.iToken;
 continue;
 }if ((eval.theTok=this.tokAt$I(i + 1)) == 603979967 || eval.theTok == 1073742074 ) {
@@ -1364,7 +1382,7 @@ break;
 }}sbCommand.append$S(" color");
 }if (eval.isColorParam$I(i + 1)) {
 color=eval.getArgbParam$I(++i);
-sbCommand.append$S(" ").append$S($I$(8).escapeColor$I(color));
+sbCommand.append$S(" ").append$S($I$(7).escapeColor$I(color));
 i=eval.iToken;
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "colorRGB", Integer.valueOf$I(color)]);
 idSeen=true;
@@ -1372,7 +1390,7 @@ if (eval.isColorParam$I(i + 1)) {
 color=eval.getArgbParam$I(++i);
 i=eval.iToken;
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "colorRGB", Integer.valueOf$I(color)]);
-sbCommand.append$S(" ").append$S($I$(8).escapeColor$I(color));
+sbCommand.append$S(" ").append$S($I$(7).escapeColor$I(color));
 isBicolor=true;
 } else if (isSign) {
 this.invPO$();
@@ -1404,7 +1422,7 @@ planeSeen=true;
 propertyName="plane";
 propertyValue=eval.planeParameter$I(i);
 i=eval.iToken;
-sbCommand.append$S(" plane ").append$S($I$(8).eP4$javajs_util_P4(propertyValue));
+sbCommand.append$S(" plane ").append$S($I$(7).eP4$javajs_util_P4(propertyValue));
 break;
 case 1073742138:
 propertyName="scale";
@@ -1421,14 +1439,14 @@ surfaceObjectSeen=true;
 propertyValue=eval.getPoint4f$I(i);
 propertyName="ellipsoid";
 i=eval.iToken;
-sbCommand.append$S(" ellipsoid ").append$S($I$(8).eP4$javajs_util_P4(propertyValue));
+sbCommand.append$S(" ellipsoid ").append$S($I$(7).eP4$javajs_util_P4(propertyValue));
 break;
 case 134219265:
 planeSeen=true;
 propertyName="plane";
 propertyValue=eval.hklParameter$I(++i);
 i=eval.iToken;
-sbCommand.append$S(" plane ").append$S($I$(8).eP4$javajs_util_P4(propertyValue));
+sbCommand.append$S(" plane ").append$S($I$(7).eP4$javajs_util_P4(propertyValue));
 break;
 case 135182:
 surfaceObjectSeen=true;
@@ -1448,7 +1466,7 @@ if (atomIndex < 0) this.error$I(14);
 sbCommand.append$S(" ({").appendI$I(atomIndex).append$S("})");
 modelIndex=this.vwr.ms.at[atomIndex].mi;
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "modelIndex", Integer.valueOf$I(modelIndex)]);
-var axes=Clazz.array($I$(19), -1, [Clazz.new_($I$(19)), Clazz.new_($I$(19)), $I$(19).newV$javajs_util_T3(this.vwr.ms.at[atomIndex]), Clazz.new_($I$(19))]);
+var axes=Clazz.array($I$(19), -1, [Clazz.new_($I$(19,1)), Clazz.new_($I$(19,1)), $I$(19).newV$javajs_util_T3(this.vwr.ms.at[atomIndex]), Clazz.new_($I$(19,1))]);
 if (!lcaoType.equalsIgnoreCase$S("s") && this.vwr.getHybridizationAndAxes$I$javajs_util_V3$javajs_util_V3$S(atomIndex, axes[0], axes[1], lcaoType) == null  ) return;
 propertyValue=axes;
 break;
@@ -1472,7 +1490,7 @@ eval.bad$();
 break;
 case 1073741914:
 sbCommand.append$S("[1] squared ");
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", $I$(1).TRUE]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", Boolean.TRUE]);
 linearCombination=Clazz.array(Float.TYPE, -1, [1]);
 offset=moNumber=0;
 i++;
@@ -1500,7 +1518,7 @@ i=eval.iToken;
 }}
 var squared=(this.tokAt$I(i + 1) == 1073742156);
 if (squared) {
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", $I$(1).TRUE]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "squareLinear", Boolean.TRUE]);
 sbCommand.append$S(" squared");
 if (linearCombination == null ) linearCombination=Clazz.array(Float.TYPE, [0]);
 } else if (this.tokAt$I(i + 1) == 134217751) {
@@ -1518,7 +1536,7 @@ propertyName="nci";
 sbCommand.append$S(" " + propertyName);
 var tok=this.tokAt$I(i + 1);
 var isPromolecular=(tok != 1228935687 && tok != 4  && tok != 1073742032 );
-propertyValue=$I$(1).valueOf$Z(isPromolecular);
+propertyValue=Boolean.valueOf$Z(isPromolecular);
 if (isPromolecular) surfaceObjectSeen=true;
 break;
 case 1073742016:
@@ -1543,7 +1561,7 @@ continue;
 data=(fname == null  && isMep  ? this.vwr.getOrCalcPartialCharges$javajs_util_BS$javajs_util_BS(bsSelect, bsIgnore) : p$1.getAtomicPotentials$javajs_util_BS$javajs_util_BS$S.apply(this, [bsSelect, bsIgnore, fname]));
 } catch (e1) {
 if (Clazz.exceptionOf(e1,"org.jmol.viewer.JmolAsyncException")){
-throw Clazz.new_($I$(20).c$$org_jmol_script_ScriptEval$S$I,[this.e, "partialcharge", 1]);
+throw Clazz.new_($I$(20,1).c$$org_jmol_script_ScriptEval$S$I,[this.e, "partialcharge", 1]);
 } else {
 throw e1;
 }
@@ -1573,8 +1591,8 @@ i=eval.iToken;
 }break;
 case 1073741828:
 propertyName="addHydrogens";
-propertyValue=$I$(1).TRUE;
-sbCommand.append$S(" mp.addHydrogens");
+propertyValue=Boolean.TRUE;
+sbCommand.append$S(" addHydrogens");
 break;
 case 1073741836:
 propertyName="angstroms";
@@ -1583,7 +1601,7 @@ break;
 case 1073741837:
 propertyName="anisotropy";
 propertyValue=this.getPoint3f$I$Z(++i, false);
-sbCommand.append$S(" anisotropy").append$S($I$(8).eP$javajs_util_T3(propertyValue));
+sbCommand.append$S(" anisotropy").append$S($I$(7).eP$javajs_util_T3(propertyValue));
 i=eval.iToken;
 break;
 case 1073741842:
@@ -1617,7 +1635,7 @@ continue;
 case 1073741868:
 sbCommand.append$S(" blockData");
 propertyName="blockData";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 break;
 case 1073741875:
 case 554176565:
@@ -1647,7 +1665,7 @@ sbCommand.append$S(" contour");
 switch (this.tokAt$I(i + 1)) {
 case 1073741920:
 propertyValue=eval.floatParameterSet$I$I$I(i + 2, 1, 2147483647);
-sbCommand.append$S(" discrete ").append$S($I$(8).eAF$FA(propertyValue));
+sbCommand.append$S(" discrete ").append$S($I$(7).eAF$FA(propertyValue));
 i=eval.iToken;
 break;
 case 1073741981:
@@ -1656,7 +1674,7 @@ if (pt.z <= 0  || pt.y < pt.x  ) this.invArg$();
 if (pt.z == (pt.z|0)  && pt.z > (pt.y - pt.x)  ) pt.z=(pt.y - pt.x) / pt.z;
 propertyValue=pt;
 i=eval.iToken;
-sbCommand.append$S(" increment ").append$S($I$(8).eP$javajs_util_T3(pt));
+sbCommand.append$S(" increment ").append$S($I$(7).eP$javajs_util_T3(pt));
 break;
 default:
 propertyValue=Integer.valueOf$I(this.tokAt$I(i + 1) == 2 ? this.intParameter$I(++i) : 0);
@@ -1681,7 +1699,7 @@ sbCommand.appendO$O(propertyValue);
 propertyName="cutoffRange";
 propertyValue=eval.floatParameterSet$I$I$I(i, 2, 2);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "cutoff", Float.valueOf$F(0)]);
-sbCommand.append$S($I$(8).eAF$FA(propertyValue));
+sbCommand.append$S($I$(7).eAF$FA(propertyValue));
 i=eval.iToken;
 }break;
 case 1073741928:
@@ -1692,7 +1710,7 @@ break;
 case 1073741931:
 propertyName="eccentricity";
 propertyValue=eval.getPoint4f$I(++i);
-sbCommand.append$S(" eccentricity ").append$S($I$(8).eP4$javajs_util_P4(propertyValue));
+sbCommand.append$S(" eccentricity ").append$S($I$(7).eP4$javajs_util_P4(propertyValue));
 i=eval.iToken;
 break;
 case 1073741932:
@@ -1704,23 +1722,23 @@ case 536870916:
 case 1073742041:
 sbCommand.append$S(" ").appendO$O(eval.theToken.value);
 propertyName="debug";
-propertyValue=(eval.theTok == 536870916 ? $I$(1).TRUE : $I$(1).FALSE);
+propertyValue=(eval.theTok == 536870916 ? Boolean.TRUE : Boolean.FALSE);
 break;
 case 12293:
 sbCommand.append$S(" fixed");
 propertyName="fixed";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 break;
 case 1073741962:
 sbCommand.append$S(" fullPlane");
 propertyName="fullPlane";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 break;
 case 1073741966:
 case 1073741968:
 var isFxyz=(eval.theTok == 1073741968);
 propertyName="" + eval.theToken.value;
-var vxy=Clazz.new_($I$(4));
+var vxy=Clazz.new_($I$(3,1));
 propertyValue=vxy;
 isFxy=surfaceObjectSeen=true;
 sbCommand.append$S(" ").append$S(propertyName);
@@ -1729,31 +1747,31 @@ if (name.equals$O("=")) {
 sbCommand.append$S(" =");
 name=this.paramAsStr$I(++i);
 sbCommand.append$S(" ").append$S($I$(16).esc$S(name));
-vxy.addLast$TV(name);
+vxy.addLast$O(name);
 if (!this.chk) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "func", p$1.createFunction$S$S$S.apply(this, ["__iso__", "x,y,z", name])]);
 break;
-}var dName=$I$(16).getQuotedAttribute$S$S(eval.fullCommand, "# DATA" + (isFxy ? "2" : ""));
+}var dName=$I$(16,"getQuotedAttribute$S$S",[eval.fullCommand, "# DATA" + (isFxy ? "2" : "")]);
 if (dName == null ) dName="inline";
  else name=dName;
 var isXYZ=(name.indexOf$S("data2d_") == 0);
 var isXYZV=(name.indexOf$S("data3d_") == 0);
 isInline=name.equals$O("inline");
 sbCommand.append$S(" inline");
-vxy.addLast$TV(name);
+vxy.addLast$O(name);
 var pt3=this.getPoint3f$I$Z(++i, false);
-sbCommand.append$S(" ").append$S($I$(8).eP$javajs_util_T3(pt3));
-vxy.addLast$TV(pt3);
+sbCommand.append$S(" ").append$S($I$(7).eP$javajs_util_T3(pt3));
+vxy.addLast$O(pt3);
 var pt4;
 ptX=++eval.iToken;
-vxy.addLast$TV(pt4=eval.getPoint4f$I(ptX));
-sbCommand.append$S(" ").append$S($I$(8).eP4$javajs_util_P4(pt4));
+vxy.addLast$O(pt4=eval.getPoint4f$I(ptX));
+sbCommand.append$S(" ").append$S($I$(7).eP4$javajs_util_P4(pt4));
 nX=(pt4.x|0);
 ptY=++eval.iToken;
-vxy.addLast$TV(pt4=eval.getPoint4f$I(ptY));
-sbCommand.append$S(" ").append$S($I$(8).eP4$javajs_util_P4(pt4));
+vxy.addLast$O(pt4=eval.getPoint4f$I(ptY));
+sbCommand.append$S(" ").append$S($I$(7).eP4$javajs_util_P4(pt4));
 nY=(pt4.x|0);
-vxy.addLast$TV(pt4=eval.getPoint4f$I(++eval.iToken));
-sbCommand.append$S(" ").append$S($I$(8).eP4$javajs_util_P4(pt4));
+vxy.addLast$O(pt4=eval.getPoint4f$I(++eval.iToken));
+sbCommand.append$S(" ").append$S($I$(7).eP4$javajs_util_P4(pt4));
 nZ=(pt4.x|0);
 if (nX == 0 || nY == 0  || nZ == 0 ) this.invArg$();
 if (!this.chk) {
@@ -1778,8 +1796,8 @@ eval.errorStr$I$S(53, "xyzdata is null.");
 }if (xyzdata.length != nX || xyzdata[0].length != nY  || xyzdata[0][0].length != nZ ) {
 eval.iToken=ptX;
 eval.errorStr$I$S(53, "xyzdata[" + xyzdata.length + "][" + xyzdata[0].length + "][" + xyzdata[0][0].length + "] is not of size [" + nX + "][" + nY + "][" + nZ + "]" );
-}vxy.addLast$TV(xyzdata);
-sbCommand.append$S(" ").append$S($I$(8).e$O(xyzdata));
+}vxy.addLast$O(xyzdata);
+sbCommand.append$S(" ").append$S($I$(7).e$O(xyzdata));
 } else {
 if (isInline) {
 nX=Math.abs(nX);
@@ -1807,8 +1825,8 @@ eval.errorStr$I$S(53, "fdata[" + j + "] is null." );
 eval.iToken=ptY;
 eval.errorStr$I$S(53, "fdata[" + j + "] is not the right length: " + fdata[j].length + " " + nY + "." );
 }}
-vxy.addLast$TV(fdata);
-sbCommand.append$S(" ").append$S($I$(8).e$O(fdata));
+vxy.addLast$O(fdata);
+sbCommand.append$S(" ").append$S($I$(7).e$O(fdata));
 }}i=eval.iToken;
 break;
 case 1073741970:
@@ -1818,7 +1836,7 @@ break;
 case 1073741976:
 propertyName="ignore";
 propertyValue=bsIgnore=this.atomExpressionAt$I(++i);
-sbCommand.append$S(" ignore ").append$S($I$(8).eBS$javajs_util_BS(bsIgnore));
+sbCommand.append$S(" ignore ").append$S($I$(7).eBS$javajs_util_BS(bsIgnore));
 i=eval.iToken;
 break;
 case 1073741985:
@@ -1830,13 +1848,13 @@ case 1073741986:
 case 1073742100:
 sbCommand.append$S(" ").appendO$O(eval.theToken.value);
 propertyName="pocket";
-propertyValue=(eval.theTok == 1073742100 ? $I$(1).TRUE : $I$(1).FALSE);
+propertyValue=(eval.theTok == 1073742100 ? Boolean.TRUE : Boolean.FALSE);
 break;
 case 1073742002:
 propertyName="lobe";
 propertyValue=eval.getPoint4f$I(++i);
 i=eval.iToken;
-sbCommand.append$S(" lobe ").append$S($I$(8).eP4$javajs_util_P4(propertyValue));
+sbCommand.append$S(" lobe ").append$S($I$(7).eP4$javajs_util_P4(propertyValue));
 surfaceObjectSeen=true;
 break;
 case 1073742004:
@@ -1844,7 +1862,7 @@ case 1073742006:
 propertyName="lp";
 propertyValue=eval.getPoint4f$I(++i);
 i=eval.iToken;
-sbCommand.append$S(" lp ").append$S($I$(8).eP4$javajs_util_P4(propertyValue));
+sbCommand.append$S(" lp ").append$S($I$(7).eP4$javajs_util_P4(propertyValue));
 surfaceObjectSeen=true;
 break;
 case 4125:
@@ -1852,7 +1870,7 @@ if (isMapped || this.slen == i + 1 ) this.invArg$();
 isMapped=true;
 if ((isCavity || haveRadius || haveIntersection  ) && !surfaceObjectSeen ) {
 surfaceObjectSeen=true;
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "bsSolvent", (haveRadius || haveIntersection  ? Clazz.new_($I$(12)) : eval.lookupIdentifierValue$S("solvent"))]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "bsSolvent", (haveRadius || haveIntersection  ? Clazz.new_($I$(12,1)) : eval.lookupIdentifierValue$S("solvent"))]);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sasurface", Float.valueOf$F(0)]);
 }if (sbCommand.length$() == 0) {
 plane=this.getShapeProperty$I$S(24, "plane");
@@ -1861,13 +1879,13 @@ if (this.getShapeProperty$I$S(24, "contours") != null ) {
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "nocontour", null]);
 }} else {
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "plane", plane]);
-sbCommand.append$S("plane ").append$S($I$(8).eP4$javajs_util_P4(plane));
+sbCommand.append$S("plane ").append$S($I$(7).eP4$javajs_util_P4(plane));
 planeSeen=true;
 plane=null;
 }} else if (!surfaceObjectSeen && !planeSeen ) {
 this.invArg$();
 }sbCommand.append$S("; isosurface map");
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "map", (surfaceObjectSeen ? $I$(1).TRUE : $I$(1).FALSE)]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "map", (surfaceObjectSeen ? Boolean.TRUE : Boolean.FALSE)]);
 break;
 case 1073742014:
 propertyName="maxset";
@@ -1884,11 +1902,11 @@ surfaceObjectSeen=true;
 propertyName="rad";
 propertyValue=eval.getPoint4f$I(++i);
 i=eval.iToken;
-sbCommand.append$S(" radical ").append$S($I$(8).eP4$javajs_util_P4(propertyValue));
+sbCommand.append$S(" radical ").append$S($I$(7).eP4$javajs_util_P4(propertyValue));
 break;
 case 1073742027:
 propertyName="fixed";
-propertyValue=$I$(1).FALSE;
+propertyValue=Boolean.FALSE;
 sbCommand.append$S(" modelBased");
 break;
 case 1073742028:
@@ -1941,7 +1959,7 @@ sbCommand.append$S(" resolution ").appendO$O(propertyValue);
 break;
 case 1073742124:
 propertyName="reverseColor";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 sbCommand.append$S(" reversecolor");
 break;
 case 1073742127:
@@ -1964,7 +1982,7 @@ surfaceObjectSeen=true;
 break;
 case 1073742156:
 propertyName="squareData";
-propertyValue=$I$(1).TRUE;
+propertyValue=Boolean.TRUE;
 sbCommand.append$S(" squared");
 break;
 case 1073741984:
@@ -2035,7 +2053,7 @@ if (Float.isNaN$F(sigma)) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [
 if (!isSign) {
 isSign=true;
 sbCommand.append$S(" sign");
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sign", $I$(1).TRUE]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sign", Boolean.TRUE]);
 }}if (!Float.isNaN$F(sigma)) this.showString$S("using cutoff = " + new Float(sigma).toString() + " sigma" );
 filename=this.vwr.setLoadFormat$S$C$Z(filename, (isFull || pts == null   ? "_" : "-"), false);
 checkWithin=!isFull;
@@ -2046,7 +2064,7 @@ if (modelIndex < 0) modelIndex=this.vwr.am.cmi;
 bs=this.vwr.getModelUndeletedAtomsBitSet$I(modelIndex);
 if (bs.nextSetBit$I(0) >= 0) {
 pts=p$1.getWithinDistanceVector$javajs_util_Lst$F$javajs_util_P3$javajs_util_BS$Z.apply(this, [propertyList, 2.0, null, bs, false]);
-sbCommand.append$S(" within 2.0 ").append$S($I$(8).eBS$javajs_util_BS(bs));
+sbCommand.append$S(" within 2.0 ").append$S($I$(7).eBS$javajs_util_BS(bs));
 }}if (pts != null  && filename.indexOf$S("/0,0,0/0,0,0?") >= 0 ) {
 filename=filename.replace$CharSequence$CharSequence("0,0,0/0,0,0", new Float(pts[0].x).toString() + "," + new Float(pts[0].y).toString() + "," + new Float(pts[0].z).toString() + "/" + new Float(pts[pts.length - 1].x).toString() + "," + new Float(pts[pts.length - 1].y).toString() + "," + new Float(pts[pts.length - 1].z).toString() );
 }if (firstPass) defaultMesh=true;
@@ -2073,7 +2091,7 @@ if (this.tokAt$I(i + 1) == 1073741848) i+=2;
 localName=this.vwr.fm.getFilePath$S$Z$Z(this.stringParameter$I(eval.iToken=(i=i + 2)), false, false);
 fullPathNameOrError=this.vwr.getFullPathNameOrError$S(localName);
 localName=fullPathNameOrError[0];
-if (this.vwr.fm.getPathForAllFiles$() != "") {
+if (this.vwr.fm.getPathForAllFiles$() !== "" ) {
 filename=localName;
 localName=null;
 } else {
@@ -2128,7 +2146,7 @@ if (pt.x <= 0  || pt.y <= 0   || pt.z <= 0  ) break;
 pt.x=(pt.x|0);
 pt.y=(pt.y|0);
 pt.z=(pt.z|0);
-sbCommand.append$S(" lattice ").append$S($I$(8).eP$javajs_util_T3(pt));
+sbCommand.append$S(" lattice ").append$S($I$(7).eP$javajs_util_T3(pt));
 if (isMapped) {
 propertyName="mapLattice";
 propertyValue=pt;
@@ -2144,7 +2162,7 @@ if (eval.theTok == 1073741824) {
 propertyName="thisID";
 propertyValue=str;
 }if (!eval.setMeshDisplayProperty$I$I$I(iShape, 0, eval.theTok)) {
-if ($I$(2).tokAttr$I$I(eval.theTok, 1073741824) && !idSeen ) {
+if ($I$(1).tokAttr$I$I(eval.theTok, 1073741824) && !idSeen ) {
 this.setShapeId$I$I$Z(iShape, i, idSeen);
 i=eval.iToken;
 break;
@@ -2160,7 +2178,7 @@ if (propertyName != null ) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, 
 if (!this.chk) {
 if ((isCavity || haveRadius ) && !surfaceObjectSeen ) {
 surfaceObjectSeen=true;
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "bsSolvent", (haveRadius ? Clazz.new_($I$(12)) : eval.lookupIdentifierValue$S("solvent"))]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "bsSolvent", (haveRadius ? Clazz.new_($I$(12,1)) : eval.lookupIdentifierValue$S("solvent"))]);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sasurface", Float.valueOf$F(0)]);
 }if (planeSeen && !surfaceObjectSeen && !isMapped  ) {
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "nomap", Float.valueOf$F(0)]);
@@ -2177,22 +2195,22 @@ ce.isTranslucent=isColorSchemeTranslucent;
 ce.hi=3.4028235E38;
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "remapColor", ce]);
 }}if (surfaceObjectSeen && !isLcaoCartoon && sbCommand.indexOf$S(";") != 0  ) {
-propertyList.add$I$TE(0, Clazz.array(java.lang.Object, -1, ["newObject", null]));
+propertyList.add$I$O(0, Clazz.array(java.lang.Object, -1, ["newObject", null]));
 var needSelect=(bsSelect == null );
-if (needSelect) bsSelect=$I$(15).copy$javajs_util_BS(this.vwr.bsA$());
+if (needSelect) bsSelect=$I$(15,"copy$javajs_util_BS",[this.vwr.bsA$()]);
 if (modelIndex < 0) modelIndex=this.vwr.am.cmi;
 bsSelect.and$javajs_util_BS(this.vwr.getModelUndeletedAtomsBitSet$I(modelIndex));
 if (onlyOneModel != null ) {
 var bsModels=this.vwr.ms.getModelBS$javajs_util_BS$Z(bsSelect, false);
 if (bsModels.cardinality$() > 1) eval.errorStr$I$S(30, "ISOSURFACE " + onlyOneModel);
 if (needSelect) {
-propertyList.add$I$TE(0, Clazz.array(java.lang.Object, -1, ["select", bsSelect]));
+propertyList.add$I$O(0, Clazz.array(java.lang.Object, -1, ["select", bsSelect]));
 if (sbCommand.indexOf$S("; isosurface map") == 0) {
-sbCommand=Clazz.new_($I$(13)).append$S("; isosurface map select ").append$S($I$(8).eBS$javajs_util_BS(bsSelect)).append$S(sbCommand.substring$I(16));
+sbCommand=Clazz.new_($I$(13,1)).append$S("; isosurface map select ").append$S($I$(7).eBS$javajs_util_BS(bsSelect)).append$S(sbCommand.substring$I(16));
 }}}}if (haveIntersection && !haveSlab ) {
 if (!surfaceObjectSeen) p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sasurface", Float.valueOf$F(0)]);
 if (!isMapped) {
-p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "map", $I$(1).TRUE]);
+p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "map", Boolean.TRUE]);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "select", bs]);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "sasurface", Float.valueOf$F(0)]);
 }p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "slab", p$1.getCapSlabObject$I$Z.apply(this, [-100, false])]);
@@ -2207,7 +2225,7 @@ isFrontOnly=true;
 sbCommand.append$S(" mesh nofill frontOnly");
 }}if (lattice != null ) {
 this.setShapeProperty$I$S$O(iShape, "lattice", lattice);
-if (fixLattice) this.setShapeProperty$I$S$O(iShape, "fixLattice", $I$(1).TRUE);
+if (fixLattice) this.setShapeProperty$I$S$O(iShape, "fixLattice", Boolean.TRUE);
 }if (symops != null ) this.setShapeProperty$I$S$O(iShape, "symops", symops);
 if (isFrontOnly) this.setShapeProperty$I$S$O(iShape, "token", Integer.valueOf$I(1073741960));
 if (iptDisplayProperty > 0) {
@@ -2218,18 +2236,18 @@ var volume=null;
 if (doCalcArea) {
 area=this.getShapeProperty$I$S(iShape, "area");
 if (Clazz.instanceOf(area, "java.lang.Float")) this.vwr.setFloatProperty$S$F("isosurfaceArea", (area).floatValue$());
- else this.vwr.g.setUserVariable$S$org_jmol_script_SV("isosurfaceArea", $I$(7).getVariableAD$DA(area));
+ else this.vwr.g.setUserVariable$S$org_jmol_script_SV("isosurfaceArea", $I$(6).getVariableAD$DA(area));
 }if (doCalcVolume) {
 volume=(doCalcVolume ? this.getShapeProperty$I$S(iShape, "volume") : null);
 if (Clazz.instanceOf(volume, "java.lang.Float")) this.vwr.setFloatProperty$S$F("isosurfaceVolume", (volume).floatValue$());
- else this.vwr.g.setUserVariable$S$org_jmol_script_SV("isosurfaceVolume", $I$(7).getVariableAD$DA(volume));
+ else this.vwr.g.setUserVariable$S$org_jmol_script_SV("isosurfaceVolume", $I$(6).getVariableAD$DA(volume));
 }if (!isLcaoCartoon) {
 var s=null;
 if (isMapped && !surfaceObjectSeen ) {
 this.setShapeProperty$I$S$O(iShape, "finalize", sbCommand.toString());
 } else if (surfaceObjectSeen) {
 cmd=sbCommand.toString();
-this.setShapeProperty$I$S$O(iShape, "finalize", (cmd.indexOf$S("; isosurface map") == 0 ? "" : " select " + $I$(8).eBS$javajs_util_BS(bsSelect) + " " ) + cmd);
+this.setShapeProperty$I$S$O(iShape, "finalize", (cmd.indexOf$S("; isosurface map") == 0 ? "" : " select " + $I$(7).eBS$javajs_util_BS(bsSelect) + " " ) + cmd);
 s=this.getShapeProperty$I$S(iShape, "ID");
 if (s != null  && !eval.tQuiet  && !isSilent ) {
 cutoff=(this.getShapeProperty$I$S(iShape, "cutoff")).floatValue$();
@@ -2238,8 +2256,8 @@ s += " created " + this.getShapeProperty$I$S(iShape, "message");
 }}var sarea;
 var svol;
 if (doCalcArea || doCalcVolume ) {
-sarea=(doCalcArea ? "isosurfaceArea = " + (Clazz.instanceOf(area, "java.lang.Float") ? "" + area : $I$(8).eAD$DA(area)) : null);
-svol=(doCalcVolume ? "isosurfaceVolume = " + (Clazz.instanceOf(volume, "java.lang.Float") ? "" + volume : $I$(8).eAD$DA(volume)) : null);
+sarea=(doCalcArea ? "isosurfaceArea = " + (Clazz.instanceOf(area, "java.lang.Float") ? "" + area : $I$(7).eAD$DA(area)) : null);
+svol=(doCalcVolume ? "isosurfaceVolume = " + (Clazz.instanceOf(volume, "java.lang.Float") ? "" + volume : $I$(7).eAD$DA(volume)) : null);
 if (s == null ) {
 if (doCalcArea) this.showString$S(sarea);
 if (doCalcVolume) this.showString$S(svol);
@@ -2377,7 +2395,7 @@ if (idSeen) this.invArg$();
 propertyName="lcaoID";
 break;
 default:
-if (eval.theTok == 268435633 || $I$(2).tokAttr$I$I(eval.theTok, 1073741824) ) {
+if (eval.theTok == 268435633 || $I$(1).tokAttr$I$I(eval.theTok, 1073741824) ) {
 if (eval.theTok != 268435633) propertyValue=this.paramAsStr$I(i);
 if (idSeen) this.invArg$();
 propertyName="lcaoID";
@@ -2406,7 +2424,7 @@ var bs=null;
 var rd=null;
 var params=null;
 var colorDensity=false;
-var sbCommand=Clazz.new_($I$(13));
+var sbCommand=Clazz.new_($I$(13,1));
 var minSet=2147483647;
 var displayType=134217750;
 var contactType=0;
@@ -2425,7 +2443,7 @@ switch (tok=this.getToken$I(i).tok) {
 default:
 okNoAtoms=true;
 if (!eval.setMeshDisplayProperty$I$I$I(25, 0, eval.theTok)) {
-if (eval.theTok != 268435633 && !$I$(2).tokAttr$I$I(eval.theTok, 1073741824) ) this.invArg$();
+if (eval.theTok != 268435633 && !$I$(1).tokAttr$I$I(eval.theTok, 1073741824) ) this.invArg$();
 thisId=this.setShapeId$I$I$Z(25, i, idSeen);
 i=eval.iToken;
 break;
@@ -2501,7 +2519,7 @@ i=eval.iToken;
 break;
 case 1073741990:
 case 1073741989:
-intramolecular=(tok == 1073741989 ? $I$(1).TRUE : $I$(1).FALSE);
+intramolecular=(tok == 1073741989 ? Boolean.TRUE : Boolean.FALSE);
 sbCommand.append$S(" ").appendO$O(eval.theToken.value);
 break;
 case 1073742020:
@@ -2535,11 +2553,11 @@ case 12290:
 case 10:
 case 1073742325:
 if (isWild || bsB != null  ) this.invArg$();
-bs=$I$(15).copy$javajs_util_BS(this.atomExpressionAt$I(i));
+bs=$I$(15,"copy$javajs_util_BS",[this.atomExpressionAt$I(i)]);
 i=eval.iToken;
 if (bsA == null ) bsA=bs;
  else bsB=bs;
-sbCommand.append$S(" ").append$S($I$(8).eBS$javajs_util_BS(bs));
+sbCommand.append$S(" ").append$S($I$(7).eBS$javajs_util_BS(bs));
 break;
 }
 idSeen=(eval.theTok != 12291);
@@ -2547,8 +2565,8 @@ idSeen=(eval.theTok != 12291);
 if (!okNoAtoms && bsA == null  ) this.error$I(13);
 if (this.chk) return false;
 if (bsA != null ) {
-if (contactType == 1648363544 && rd == null  ) rd=Clazz.new_($I$(21).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 0, $I$(22).OFFSET, $I$(23).AUTO]);
-var rd1=(rd == null  ? Clazz.new_($I$(21).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW,[null, 0.26, $I$(22).OFFSET, $I$(23).AUTO]) : rd);
+if (contactType == 1648363544 && rd == null  ) rd=Clazz.new_([null, 0, $I$(22).OFFSET, $I$(23).AUTO],$I$(21,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW);
+var rd1=(rd == null  ? Clazz.new_([null, 0.26, $I$(22).OFFSET, $I$(23).AUTO],$I$(21,1).c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW) : rd);
 if (displayType == 1073742036 && bsB == null   && intramolecular != null   && intramolecular.booleanValue$() ) bsB=bsA;
  else bsB=eval.getMathExt$().setContactBitSets$javajs_util_BS$javajs_util_BS$Z$F$org_jmol_atomdata_RadiusData$Z(bsA, bsB, localOnly, distance, rd1, true);
 switch (displayType) {
@@ -2569,10 +2587,10 @@ sbCommand.append$S(" minSet ").appendI$I(minSet);
 if (params == null ) params=Clazz.array(Float.TYPE, -1, [0.5, 2]);
 }
 if (intramolecular != null ) {
-params=(params == null  ? Clazz.array(Float.TYPE, [2]) : $I$(5).ensureLengthA$FA$I(params, 2));
+params=(params == null  ? Clazz.array(Float.TYPE, [2]) : $I$(4).ensureLengthA$FA$I(params, 2));
 params[1]=(intramolecular.booleanValue$() ? 1 : 2);
-}if (params != null ) sbCommand.append$S(" parameters ").append$S($I$(8).eAF$FA(params));
-this.setShapeProperty$I$S$O(25, "set", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(contactType), Integer.valueOf$I(displayType), $I$(1).valueOf$Z(colorDensity), $I$(1).valueOf$Z(colorByType), bsA, bsB, rd, Float.valueOf$F(saProbeRadius), params, Integer.valueOf$I(modelIndex), sbCommand.toString()]));
+}if (params != null ) sbCommand.append$S(" parameters ").append$S($I$(7).eAF$FA(params));
+this.setShapeProperty$I$S$O(25, "set", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(contactType), Integer.valueOf$I(displayType), Boolean.valueOf$Z(colorDensity), Boolean.valueOf$Z(colorByType), bsA, bsB, rd, Float.valueOf$F(saProbeRadius), params, Integer.valueOf$I(modelIndex), sbCommand.toString()]));
 if (colorpt > 0) eval.setMeshDisplayProperty$I$I$I(25, colorpt, 0);
 }if (iptDisplayProperty > 0) {
 if (!eval.setMeshDisplayProperty$I$I$I(25, iptDisplayProperty, 0)) this.invArg$();
@@ -2581,7 +2599,7 @@ if (bsA != null  && (displayType == 1073742036 || localOnly ) ) {
 var volume=this.getShapeProperty$I$S(25, "volume");
 var v;
 var isFull=(displayType == 1073741961);
-if ($I$(5).isAD$O(volume)) {
+if ($I$(4).isAD$O(volume)) {
 var vs=volume;
 v=0;
 for (var i=0; i < vs.length; i++) v += (isFull ? vs[i] : Math.abs(vs[i]));
@@ -2620,7 +2638,7 @@ case 268435520:
 case 1073742195:
 case 7:
 if (data != null  || isWild ) this.invArg$();
-data=Clazz.new_($I$(4));
+data=Clazz.new_($I$(3,1));
 var ai=Clazz.array(Integer.TYPE, -1, [i, this.slen]);
 if (!eval.getShapePropertyData$I$S$OA(23, "data", Clazz.array(java.lang.Object, -1, [this.st, ai, data, this.vwr]))) this.invArg$();
 i=ai[0];
@@ -2661,7 +2679,7 @@ i=eval.iToken;
 break;
 default:
 if (!eval.setMeshDisplayProperty$I$I$I(23, 0, eval.theTok)) {
-if (eval.theTok == 268435633 || $I$(2).tokAttr$I$I(eval.theTok, 1073741824) ) {
+if (eval.theTok == 268435633 || $I$(1).tokAttr$I$I(eval.theTok, 1073741824) ) {
 thisId=this.setShapeId$I$I$Z(23, i, idSeen);
 i=eval.iToken;
 break;
@@ -2684,7 +2702,7 @@ return true;
 
 Clazz.newMeth(C$, 'getAtomicPotentials$javajs_util_BS$javajs_util_BS$S', function (bsSelected, bsIgnore, fileName) {
 var potentials=Clazz.array(Float.TYPE, [this.vwr.ms.ac]);
-var m=$I$(6).getOption$S$org_jmol_viewer_Viewer$S("quantum.MlpCalculation", this.vwr, "script");
+var m=$I$(5).getOption$S$org_jmol_viewer_Viewer$S("quantum.MlpCalculation", this.vwr, "script");
 m.set$org_jmol_viewer_Viewer(this.vwr);
 var data=(fileName == null  ? null : this.vwr.getFileAsString3$S$Z$S(fileName, false, null));
 try {
@@ -2716,10 +2734,10 @@ var slabMeshType=null;
 if (tok == 603979967) {
 var slabTranslucency=(this.isFloatParameter$I(++i + 1) ? this.floatParameter$I(++i) : 0.5);
 if (eval.isColorParam$I(i + 1)) {
-slabColix=Short.valueOf$H($I$(18).getColixTranslucent3$H$Z$F($I$(18).getColix$I(eval.getArgbParam$I(i + 1)), slabTranslucency != 0 , slabTranslucency));
+slabColix=Short.valueOf$H($I$(18,"getColixTranslucent3$H$Z$F",[$I$(18,"getColix$I",[eval.getArgbParam$I(i + 1)]), slabTranslucency != 0 , slabTranslucency]));
 i=eval.iToken;
 } else {
-slabColix=Short.valueOf$H($I$(18).getColixTranslucent3$H$Z$F(1, slabTranslucency != 0 , slabTranslucency));
+slabColix=Short.valueOf$H($I$(18,"getColixTranslucent3$H$Z$F",[1, slabTranslucency != 0 , slabTranslucency]));
 }switch (tok=this.tokAt$I(i + 1)) {
 case 1073742018:
 case 1073741938:
@@ -2755,11 +2773,11 @@ if (eval.isCenterParameter$I(++i)) {
 var ret=Clazz.array(java.lang.Object, [1]);
 var pt=eval.centerParameter$I$OA(i, ret);
 if (this.chk || !(Clazz.instanceOf(ret[0], "javajs.util.BS")) ) {
-pts=Clazz.array($I$(3), -1, [pt]);
+pts=Clazz.array($I$(2), -1, [pt]);
 } else {
 var atoms=this.vwr.ms.at;
 bs=ret[0];
-pts=Clazz.array($I$(3), [bs.cardinality$()]);
+pts=Clazz.array($I$(2), [bs.cardinality$()]);
 for (var k=0, j=bs.nextSetBit$I(0); j >= 0; j=bs.nextSetBit$I(j + 1), k++) pts[k]=atoms[j];
 
 }} else {
@@ -2774,7 +2792,7 @@ tok=1678381065;
 }break;
 case 1678381065:
 eval.iToken=i + 1;
-data=$I$(25).toOABC$javajs_util_P3A$javajs_util_T3(this.vwr.ms.getBBoxVertices$(), null);
+data=$I$(25,"toOABC$javajs_util_P3A$javajs_util_T3",[this.vwr.ms.getBBoxVertices$(), null]);
 break;
 case 1073741872:
 case 1814695966:
@@ -2783,7 +2801,7 @@ var unitCell=this.vwr.getCurrentUnitCell$();
 if (unitCell == null ) {
 if (tok == 1814695966) this.invArg$();
 } else {
-pts=$I$(25).toOABC$javajs_util_P3A$javajs_util_T3(unitCell.getUnitCellVerticesNoOffset$(), unitCell.getCartesianOffset$());
+pts=$I$(25,"toOABC$javajs_util_P3A$javajs_util_T3",[unitCell.getUnitCellVerticesNoOffset$(), unitCell.getCartesianOffset$()]);
 var iType=(unitCell.getUnitCellInfoType$I(6)|0);
 var v1=null;
 var v2=null;
@@ -2855,7 +2873,7 @@ for (var i=0; i < nAllowed; i++) {
 if (eval.isColorParam$I(eval.iToken + 1)) {
 var color=eval.getArgbParam$I(++eval.iToken);
 this.setShapeProperty$I$S$O(iShape, "colorRGB", Integer.valueOf$I(color));
-if (sb != null ) sb.append$S(" ").append$S($I$(8).escapeColor$I(color));
+if (sb != null ) sb.append$S(" ").append$S($I$(7).escapeColor$I(color));
 } else if (eval.iToken < index) {
 this.invArg$();
 } else {
@@ -2865,11 +2883,11 @@ return translucency;
 }, p$1);
 
 Clazz.newMeth(C$, 'createFunction$S$S$S', function (fname, xyz, ret) {
-var e=(Clazz.new_($I$(26))).setViewer$org_jmol_viewer_Viewer(this.vwr);
+var e=(Clazz.new_($I$(26,1))).setViewer$org_jmol_viewer_Viewer(this.vwr);
 try {
 e.compileScript$S$S$Z(null, "function " + fname + "(" + xyz + ") { return " + ret + "}" , false);
-var params=Clazz.new_($I$(4));
-for (var i=0; i < xyz.length$(); i+=2) params.addLast$TV($I$(7).newF$F(0).setName$S(xyz.substring$I$I(i, i + 1)));
+var params=Clazz.new_($I$(3,1));
+for (var i=0; i < xyz.length$(); i+=2) params.addLast$O($I$(6).newF$F(0).setName$S(xyz.substring$I$I(i, i + 1)));
 
 return Clazz.array(java.lang.Object, -1, [e.aatoken[0][1].value, params]);
 } catch (ex) {
@@ -2882,21 +2900,21 @@ throw ex;
 }, p$1);
 
 Clazz.newMeth(C$, 'getWithinDistanceVector$javajs_util_Lst$F$javajs_util_P3$javajs_util_BS$Z', function (propertyList, distance, ptc, bs, isShow) {
-var v=Clazz.new_($I$(4));
-var pts=Clazz.array($I$(3), [2]);
+var v=Clazz.new_($I$(3,1));
+var pts=Clazz.array($I$(2), [2]);
 if (bs == null ) {
-var pt1=$I$(3).new3$F$F$F(distance, distance, distance);
-var pt0=$I$(3).newP$javajs_util_T3(ptc);
+var pt1=$I$(2).new3$F$F$F(distance, distance, distance);
+var pt0=$I$(2).newP$javajs_util_T3(ptc);
 pt0.sub$javajs_util_T3(pt1);
 pt1.add$javajs_util_T3(ptc);
 pts[0]=pt0;
 pts[1]=pt1;
-v.addLast$TV(ptc);
+v.addLast$O(ptc);
 } else {
 var bbox=this.vwr.ms.getBoxInfo$javajs_util_BS$F(bs, -Math.abs(distance * 2));
 pts[0]=bbox.getBoundBoxVertices$()[0];
 pts[1]=bbox.getBoundBoxVertices$()[7];
-if (bs.cardinality$() == 1) v.addLast$TV(this.vwr.ms.at[bs.nextSetBit$I(0)]);
+if (bs.cardinality$() == 1) v.addLast$O(this.vwr.ms.at[bs.nextSetBit$I(0)]);
 }if (v.size$() == 1 && !isShow ) {
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "withinDistance", Float.valueOf$F(distance)]);
 p$1.addShapeProperty$javajs_util_Lst$S$O.apply(this, [propertyList, "withinPoint", v.get$I(0)]);
@@ -2906,7 +2924,7 @@ return pts;
 
 Clazz.newMeth(C$, 'addShapeProperty$javajs_util_Lst$S$O', function (propertyList, key, value) {
 if (this.chk) return;
-propertyList.addLast$TV(Clazz.array(java.lang.Object, -1, [key, value]));
+propertyList.addLast$O(Clazz.array(java.lang.Object, -1, [key, value]));
 }, p$1);
 
 Clazz.newMeth(C$, 'floatArraySetXYZ$I$I$I$I', function (i, nX, nY, nZ) {
@@ -2914,7 +2932,7 @@ var eval=this.e;
 var tok=this.tokAt$I(i++);
 if (tok == 1073742195) tok=this.tokAt$I(i++);
 if (tok != 268435520 || nX <= 0 ) this.invArg$();
-var fparams=$I$(5).newFloat3$I$I(nX, -1);
+var fparams=$I$(4).newFloat3$I$I(nX, -1);
 var n=0;
 while (tok != 268435521){
 tok=this.getToken$I(i).tok;
@@ -2942,7 +2960,7 @@ Clazz.newMeth(C$, 'floatArraySet$I$I$I', function (i, nX, nY) {
 var tok=this.tokAt$I(i++);
 if (tok == 1073742195) tok=this.tokAt$I(i++);
 if (tok != 268435520) this.invArg$();
-var fparams=$I$(5).newFloat2$I(nX);
+var fparams=$I$(4).newFloat2$I(nX);
 var n=0;
 while (tok != 268435521){
 tok=this.getToken$I(i).tok;
@@ -3010,15 +3028,15 @@ if (uc == null ) return null;
 pts=uc.getCanonicalCopy$F$Z(scale, true);
 break;
 case 1678381065:
-pts=$I$(25).getCanonicalCopy$javajs_util_P3A$F(this.vwr.ms.getBoxInfo$().getBoundBoxVertices$(), scale);
+pts=$I$(25,"getCanonicalCopy$javajs_util_P3A$F",[this.vwr.ms.getBoxInfo$().getBoundBoxVertices$(), scale]);
 break;
 }
 var t=this.vwr.getTriangulator$();
 if (plane != null ) return t.intersectPlane$javajs_util_P4$javajs_util_T3A$I(plane, pts, flags);
-var v=Clazz.new_($I$(4));
-v.addLast$TV(pts);
-v.addLast$TV($I$(27).fullCubePolygon);
+var v=Clazz.new_($I$(3,1));
+v.addLast$O(pts);
+v.addLast$O($I$(27).fullCubePolygon);
 return v;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:18:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:45 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

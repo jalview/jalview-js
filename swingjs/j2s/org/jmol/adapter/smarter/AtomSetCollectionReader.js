@@ -1,136 +1,7 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'javajs.util.SB','org.jmol.util.Logger','org.jmol.adapter.smarter.AtomSetCollection','org.jmol.adapter.smarter.Atom','javajs.util.Lst','javajs.util.PT','Boolean','org.jmol.util.BSUtil','javajs.util.P3','javajs.util.BS','javajs.util.M3','javajs.util.V3','javajs.util.Quat','org.jmol.api.JmolAdapter','org.jmol.api.Interface']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AtomSetCollectionReader", null, null, 'javajs.api.GenericLineReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.smarter"),p$1={},I$=[[0,'javajs.util.SB','org.jmol.util.Logger','org.jmol.adapter.smarter.AtomSetCollection','org.jmol.adapter.smarter.Atom','javajs.util.Lst','javajs.util.PT','org.jmol.util.BSUtil','javajs.util.P3','javajs.util.BS','javajs.util.M3','javajs.util.V3','javajs.util.Quat','org.jmol.api.JmolAdapter','org.jmol.api.Interface']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AtomSetCollectionReader", null, null, 'javajs.api.GenericLineReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.isBinary=false;
-this.debugging=false;
-this.requiresBSFilter=false;
-this.primitiveToCrystal=null;
-this.asc=null;
-this.reader=null;
-this.binaryDoc=null;
-this.readerName=null;
-this.htParams=null;
-this.trajectorySteps=null;
-this.domains=null;
-this.validation=null;
-this.dssr=null;
-this.isConcatenated=false;
-this.addedData=null;
-this.addedDataKey=null;
-this.fixJavaFloat=false;
-this.thisBiomolecule=null;
-this.lstNCS=null;
-this.line=null;
-this.prevline=null;
-this.next=null;
-this.ptLine=0;
-this.latticeType=null;
-this.latticeCells=null;
-this.fillRange=null;
-this.doProcessLines=false;
-this.iHaveUnitCell=false;
-this.iHaveSymmetryOperators=false;
-this.continuing=false;
-this.vwr=null;
-this.doApplySymmetry=false;
-this.ignoreFileSymmetryOperators=false;
-this.isTrajectory=false;
-this.applySymmetryToBonds=false;
-this.doCheckUnitCell=false;
-this.getHeader=false;
-this.isSequential=false;
-this.isMolecular=false;
-this.templateAtomCount=0;
-this.modelNumber=0;
-this.vibrationNumber=0;
-this.desiredVibrationNumber=0;
-this.bsModels=null;
-this.useFileModelNumbers=false;
-this.havePartialChargeFilter=false;
-this.calculationType=null;
-this.sgName=null;
-this.ignoreFileUnitCell=false;
-this.ignoreFileSpaceGroupName=false;
-this.unitCellParams=null;
-this.desiredModelNumber=0;
-this.symmetry=null;
-this.out=null;
-this.iHaveFractionalCoordinates=false;
-this.doPackUnitCell=false;
-this.ptSupercell=null;
-this.mustFinalizeModelSet=false;
-this.forcePacked=false;
-this.packingError=0;
-this.rotateHexCell=false;
-this.isPrimitive=false;
-this.modDim=0;
-this.loadNote=null;
-this.doConvertToFractional=false;
-this.fileCoordinatesAreFractional=false;
-this.merging=false;
-this.symmetryRange=0;
-this.firstLastStep=null;
-this.lastModelNumber=0;
-this.desiredSpaceGroupIndex=0;
-this.fileScaling=null;
-this.latticeScaling=0;
-this.fileOffset=null;
-this.fileOffsetFractional=null;
-this.unitCellOffset=null;
-this.unitCellOffsetFractional=false;
-this.moreUnitCellInfo=null;
-this.filePath=null;
-this.fileName=null;
-this.stateScriptVersionInt=0;
-this.baseAtomIndex=0;
-this.isFinalized=false;
-this.haveModel=false;
-this.previousSpaceGroup=null;
-this.previousUnitCell=null;
-this.nMatrixElements=0;
-this.matUnitCellOrientation=null;
-this.bsFilter=null;
-this.filter=null;
-this.haveAtomFilter=false;
-this.filterAltLoc=false;
-this.filterGroup3=false;
-this.filterChain=false;
-this.filterAtomName=false;
-this.filterAtomType=false;
-this.filterAtomTypeStr=null;
-this.filterAtomNameTerminator=null;
-this.filterElement=false;
-this.filterHetero=false;
-this.filterEveryNth=false;
-this.filterSymop=null;
-this.filterN=0;
-this.nFiltered=0;
-this.doSetOrientation=false;
-this.doCentralize=false;
-this.addVibrations=false;
-this.useAltNames=false;
-this.ignoreStructure=false;
-this.isDSSP1=false;
-this.allowPDBFilter=false;
-this.doReadMolecularOrbitals=false;
-this.reverseModels=false;
-this.nameRequired=null;
-this.doCentroidUnitCell=false;
-this.centroidPacked=false;
-this.strSupercell=null;
-this.filter1=null;
-this.filter2=null;
-this.matRot=null;
-this.ms=null;
-this.vibsFractional=false;
-this.previousScript=null;
-this.siteScript=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.fixJavaFloat=true;
@@ -140,7 +11,7 @@ this.desiredVibrationNumber=-2147483648;
 this.calculationType="?";
 this.desiredModelNumber=-2147483648;
 this.packingError=0.02;
-this.loadNote=Clazz.new_($I$(1));
+this.loadNote=Clazz.new_($I$(1,1));
 this.lastModelNumber=2147483647;
 this.desiredSpaceGroupIndex=-1;
 this.latticeScaling=NaN;
@@ -148,7 +19,9 @@ this.stateScriptVersionInt=2147483647;
 this.nMatrixElements=0;
 this.filterAtomNameTerminator=";";
 this.vibsFractional=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isBinary','debugging','requiresBSFilter','isConcatenated','fixJavaFloat','doProcessLines','iHaveUnitCell','iHaveSymmetryOperators','continuing','doApplySymmetry','ignoreFileSymmetryOperators','isTrajectory','applySymmetryToBonds','doCheckUnitCell','getHeader','isSequential','isMolecular','useFileModelNumbers','havePartialChargeFilter','ignoreFileUnitCell','ignoreFileSpaceGroupName','iHaveFractionalCoordinates','doPackUnitCell','mustFinalizeModelSet','forcePacked','rotateHexCell','isPrimitive','doConvertToFractional','fileCoordinatesAreFractional','merging','unitCellOffsetFractional','isFinalized','haveModel','haveAtomFilter','filterAltLoc','filterGroup3','filterChain','filterAtomName','filterAtomType','filterElement','filterHetero','filterEveryNth','doSetOrientation','doCentralize','addVibrations','useAltNames','ignoreStructure','isDSSP1','allowPDBFilter','doReadMolecularOrbitals','reverseModels','doCentroidUnitCell','centroidPacked','vibsFractional'],'F',['packingError','symmetryRange','latticeScaling'],'I',['ptLine','templateAtomCount','modelNumber','vibrationNumber','desiredVibrationNumber','desiredModelNumber','modDim','lastModelNumber','desiredSpaceGroupIndex','stateScriptVersionInt','baseAtomIndex','nMatrixElements','filterN','nFiltered'],'S',['readerName','addedData','addedDataKey','line','prevline','latticeType','calculationType','sgName','filePath','fileName','previousSpaceGroup','filter','filterAtomTypeStr','filterAtomNameTerminator','filterSymop','nameRequired','strSupercell','filter1','filter2','previousScript','siteScript'],'O',['primitiveToCrystal','javajs.util.M3','asc','org.jmol.adapter.smarter.AtomSetCollection','reader','java.io.BufferedReader','binaryDoc','javajs.api.GenericBinaryDocument','htParams','java.util.Map','trajectorySteps','javajs.util.Lst','domains','java.lang.Object','+validation','+dssr','thisBiomolecule','java.util.Map','lstNCS','javajs.util.Lst','next','int[]','+latticeCells','fillRange','java.lang.Object','vwr','org.jmol.viewer.Viewer','bsModels','javajs.util.BS','unitCellParams','float[]','symmetry','org.jmol.api.SymmetryInterface','out','javajs.util.OC','ptSupercell','javajs.util.P3','loadNote','javajs.util.SB','firstLastStep','int[]','fileScaling','javajs.util.P3','+fileOffset','+fileOffsetFractional','+unitCellOffset','moreUnitCellInfo','javajs.util.Lst','previousUnitCell','float[]','matUnitCellOrientation','javajs.util.M3','bsFilter','javajs.util.BS','matRot','javajs.util.M3','ms','org.jmol.adapter.smarter.MSInterface']]]
 
 Clazz.newMeth(C$, 'setup$S$java_util_Map$O', function (fullPath, htParams, readerOrDocument) {
 this.setupASCR$S$java_util_Map$O(fullPath, htParams, readerOrDocument);
@@ -167,7 +40,7 @@ if (Clazz.instanceOf(readerOrDocument, "java.io.BufferedReader")) this.reader=re
 
 Clazz.newMeth(C$, 'readData$', function () {
 p$1.initialize.apply(this, []);
-this.asc=Clazz.new_($I$(3).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,[this.readerName, this, null, null]);
+this.asc=Clazz.new_($I$(3,1).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,[this.readerName, this, null, null]);
 try {
 this.initializeReader$();
 if (this.binaryDoc == null ) {
@@ -194,8 +67,8 @@ try {
 var baseModelIndex=(this.htParams.get$O("baseModelIndex")).intValue$();
 this.baseAtomIndex+=this.asc.ac;
 baseModelIndex+=this.asc.atomSetCount;
-this.htParams.put$TK$TV("baseAtomIndex", Integer.valueOf$I(this.baseAtomIndex));
-this.htParams.put$TK$TV("baseModelIndex", Integer.valueOf$I(baseModelIndex));
+this.htParams.put$O$O("baseAtomIndex", Integer.valueOf$I(this.baseAtomIndex));
+this.htParams.put$O$O("baseModelIndex", Integer.valueOf$I(baseModelIndex));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -206,7 +79,7 @@ throw e;
 
 Clazz.newMeth(C$, 'readDataObject$O', function (node) {
 p$1.initialize.apply(this, []);
-this.asc=Clazz.new_($I$(3).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,[this.readerName, this, null, null]);
+this.asc=Clazz.new_($I$(3,1).c$$S$org_jmol_adapter_smarter_AtomSetCollectionReader$org_jmol_adapter_smarter_AtomSetCollectionA$javajs_util_Lst,[this.readerName, this, null, null]);
 this.initializeReader$();
 this.processDOM$O(node);
 return p$1.finish.apply(this, []);
@@ -237,16 +110,16 @@ return (this.desiredModelNumber > 0 || modelNumber >= this.lastModelNumber );
 
 Clazz.newMeth(C$, 'appendLoadNote$S', function (info) {
 if (info == null ) {
-this.loadNote=Clazz.new_($I$(1));
+this.loadNote=Clazz.new_($I$(1,1));
 return;
 }this.loadNote.append$S(info).append$S("\n");
 $I$(2).info$S(info);
 });
 
 Clazz.newMeth(C$, 'initializeTrajectoryFile$', function () {
-this.asc.addAtom$org_jmol_adapter_smarter_Atom(Clazz.new_($I$(4)));
+this.asc.addAtom$org_jmol_adapter_smarter_Atom(Clazz.new_($I$(4,1)));
 this.trajectorySteps=this.htParams.get$O("trajectorySteps");
-if (this.trajectorySteps == null ) this.htParams.put$TK$TV("trajectorySteps", this.trajectorySteps=Clazz.new_($I$(5)));
+if (this.trajectorySteps == null ) this.htParams.put$O$O("trajectorySteps", this.trajectorySteps=Clazz.new_($I$(5,1)));
 });
 
 Clazz.newMeth(C$, 'finalizeSubclassReader$', function () {
@@ -270,24 +143,24 @@ if (pt >= 0) s=s.substring$I(pt + 2);
 pt=s.indexOf$S("_metadata");
 if (pt < 0) pt=s.indexOf$S("metadata");
 if (pt >= 0) s=s.substring$I$I(0, pt);
-s=$I$(6).rep$S$S$S($I$(6).replaceAllCharacters$S$S$S(s, "{}", "").trim$(), "\n", "\n  ") + "\n\nUse SHOW DOMAINS for details.";
+s=$I$(6,"rep$S$S$S",[$I$(6).replaceAllCharacters$S$S$S(s, "{}", "").trim$(), "\n", "\n  "]) + "\n\nUse SHOW DOMAINS for details.";
 this.appendLoadNote$S("\nDomains loaded:\n   " + s);
 for (var i=this.asc.atomSetCount; --i >= 0; ) {
 info=this.asc.getAtomSetAuxiliaryInfo$I(i);
-info.put$TK$TV("domains", this.domains);
+info.put$O$O("domains", this.domains);
 }
 }if (this.validation != null ) {
 for (var i=this.asc.atomSetCount; --i >= 0; ) {
 info=this.asc.getAtomSetAuxiliaryInfo$I(i);
-info.put$TK$TV("validation", this.validation);
+info.put$O$O("validation", this.validation);
 }
 }if (this.dssr != null ) {
-info.put$TK$TV("dssrJSON", $I$(7).TRUE);
+info.put$O$O("dssrJSON", Boolean.TRUE);
 for (var i=this.asc.atomSetCount; --i >= 0; ) {
 info=this.asc.getAtomSetAuxiliaryInfo$I(i);
-info.put$TK$TV("dssr", this.dssr);
+info.put$O$O("dssr", this.dssr);
 }
-}}}if (!this.fixJavaFloat) this.asc.setInfo$S$O("legacyJavaFloat", $I$(7).TRUE);
+}}}if (!this.fixJavaFloat) this.asc.setInfo$S$O("legacyJavaFloat", Boolean.TRUE);
 this.setLoadNote$();
 });
 
@@ -300,13 +173,13 @@ return s;
 Clazz.newMeth(C$, 'setIsPDB$', function () {
 this.asc.setGlobalBoolean$I(4);
 if (this.htParams.get$O("pdbNoHydrogens") != null ) this.asc.setInfo$S$O("pdbNoHydrogens", this.htParams.get$O("pdbNoHydrogens"));
-if (this.checkFilterKey$S("ADDHYDROGENS")) this.asc.setInfo$S$O("pdbAddHydrogens", $I$(7).TRUE);
+if (this.checkFilterKey$S("ADDHYDROGENS")) this.asc.setInfo$S$O("pdbAddHydrogens", Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'setModelPDB$Z', function (isPDB) {
 if (isPDB) this.asc.setGlobalBoolean$I(4);
  else this.asc.clearGlobalBoolean$I(4);
-this.asc.setCurrentModelInfo$S$O("isPDB", isPDB ? $I$(7).TRUE : null);
+this.asc.setCurrentModelInfo$S$O("isPDB", isPDB ? Boolean.TRUE : null);
 });
 
 Clazz.newMeth(C$, 'finish', function () {
@@ -314,10 +187,10 @@ var s=this.htParams.get$O("loadState");
 this.asc.setInfo$S$O("loadState", s == null  ? "" : s);
 s=this.htParams.get$O("smilesString");
 if (s != null ) this.asc.setInfo$S$O("smilesString", s);
-if (!this.htParams.containsKey$O("templateAtomCount")) this.htParams.put$TK$TV("templateAtomCount", Integer.valueOf$I(this.asc.ac));
+if (!this.htParams.containsKey$O("templateAtomCount")) this.htParams.put$O$O("templateAtomCount", Integer.valueOf$I(this.asc.ac));
 if (this.bsFilter != null ) {
-this.htParams.put$TK$TV("filteredAtomCount", Integer.valueOf$I($I$(8).cardinalityOf$javajs_util_BS(this.bsFilter)));
-this.htParams.put$TK$TV("bsFilter", this.bsFilter);
+this.htParams.put$O$O("filteredAtomCount", Integer.valueOf$I($I$(7).cardinalityOf$javajs_util_BS(this.bsFilter)));
+this.htParams.put$O$O("bsFilter", this.bsFilter);
 }if (!this.calculationType.equals$O("?")) this.asc.setInfo$S$O("calculationType", this.calculationType);
 var name=this.asc.fileTypeName;
 var fileType=name;
@@ -334,11 +207,7 @@ return this.asc;
 }, p$1);
 
 Clazz.newMeth(C$, 'setError$Throwable', function (e) {
-var s;
-{
-if (e.getMessage) s = e.getMessage();
-else s = e.toString();
-}
+var s=e.getMessage$();
 if (this.line == null ) this.asc.errorMessage="Error reading file at end of file \n" + s;
  else this.asc.errorMessage="Error reading file at line " + this.ptLine + ":\n" + this.line + "\n" + s ;
 e.printStackTrace$();
@@ -391,7 +260,7 @@ if (this.bsModels == null  && this.firstLastStep != null  ) {
 if (this.firstLastStep[0] < 0) this.firstLastStep[0]=0;
 if (this.firstLastStep[2] == 0 || this.firstLastStep[1] < this.firstLastStep[0] ) this.firstLastStep[1]=-1;
 if (this.firstLastStep[2] < 1) this.firstLastStep[2]=1;
-this.bsModels=$I$(8).newAndSetBit$I(this.firstLastStep[0]);
+this.bsModels=$I$(7).newAndSetBit$I(this.firstLastStep[0]);
 if (this.firstLastStep[1] > this.firstLastStep[0]) {
 for (var i=this.firstLastStep[0]; i <= this.firstLastStep[1]; i+=this.firstLastStep[2]) this.bsModels.set$I(i);
 
@@ -404,9 +273,9 @@ if (this.desiredSpaceGroupIndex == -2) this.sgName=this.htParams.get$O("spaceGro
 this.ignoreFileSpaceGroupName=(this.desiredSpaceGroupIndex == -2 || this.desiredSpaceGroupIndex >= 0 );
 this.ignoreFileSymmetryOperators=(this.desiredSpaceGroupIndex != -1);
 }if (this.htParams.containsKey$O("unitCellOffset")) {
-this.fileScaling=$I$(9).new3$F$F$F(1, 1, 1);
+this.fileScaling=$I$(8).new3$F$F$F(1, 1, 1);
 this.fileOffset=this.htParams.get$O("unitCellOffset");
-this.fileOffsetFractional=$I$(9).newP$javajs_util_T3(this.fileOffset);
+this.fileOffsetFractional=$I$(8).newP$javajs_util_T3(this.fileOffset);
 this.unitCellOffsetFractional=this.htParams.containsKey$O("unitCellOffsetFractional");
 }if (this.htParams.containsKey$O("unitcell")) {
 var fParams=this.htParams.get$O("unitcell");
@@ -431,7 +300,7 @@ this.doApplySymmetry=false;
 var pt=this.htParams.get$O("lattice");
 if (pt == null  || pt.length$() == 0  ) {
 if (!this.forcePacked && this.strSupercell == null  ) return;
-pt=$I$(9).new3$F$F$F(1, 1, 1);
+pt=$I$(8).new3$F$F$F(1, 1, 1);
 }this.latticeCells[0]=(pt.x|0);
 this.latticeCells[1]=(pt.y|0);
 this.latticeCells[2]=(pt.z|0);
@@ -526,11 +395,11 @@ p$1.checkUnitCell$I.apply(this, [6]);
 
 Clazz.newMeth(C$, 'setUnitCellItem$I$F', function (i, x) {
 if (this.ignoreFileUnitCell) return;
-if (i == 0 && x == 1   || i == 3 && x == 0   ) return;
+if (i == 0 && x == 1   && !this.checkFilterKey$S("TOPOS")  || i == 3 && x == 0   ) return;
 if (!Float.isNaN$F(x) && i >= 6  && Float.isNaN$F(this.unitCellParams[6]) ) p$1.initializeCartesianToFractional.apply(this, []);
 this.unitCellParams[i]=x;
 if (this.debugging) {
-$I$(2).debug$S("setunitcellitem " + i + " " + new Float(x).toString() );
+$I$(2,"debug$S",["setunitcellitem " + i + " " + new Float(x).toString() ]);
 }if (i < 6 || Float.isNaN$F(x) ) this.iHaveUnitCell=p$1.checkUnitCell$I.apply(this, [6]);
  else if (++this.nMatrixElements == 12) this.iHaveUnitCell=p$1.checkUnitCell$I.apply(this, [22]);
 });
@@ -642,7 +511,7 @@ if (this.nameRequired != null ) {
 if (this.nameRequired.startsWith$S("\'")) this.nameRequired=$I$(6).split$S$S(this.nameRequired, "\'")[1];
  else if (this.nameRequired.startsWith$S("\"")) this.nameRequired=$I$(6).split$S$S(this.nameRequired, "\"")[1];
 this.filter=$I$(6).rep$S$S$S(this.filter, this.nameRequired, "");
-filter0=this.filter=$I$(6).rep$S$S$S(this.filter, "NAME=", "");
+filter0=this.filter=$I$(6,"rep$S$S$S",[this.filter, "NAME=", ""]);
 }this.filterAtomName=this.checkFilterKey$S("*.") || this.checkFilterKey$S("!.") ;
 this.filterElement=this.checkFilterKey$S("_");
 this.filterGroup3=this.checkFilterKey$S("[");
@@ -654,8 +523,8 @@ if (this.filterEveryNth) this.filterN=this.parseIntAt$S$I(this.filter, this.filt
 if (this.filterN == -2147483648) this.filterEveryNth=false;
 this.haveAtomFilter=this.filterAtomName || this.filterAtomType || this.filterElement || this.filterGroup3 || this.filterChain || this.filterAltLoc || this.filterHetero || this.filterEveryNth || this.checkFilterKey$S("/=")  ;
 if (this.bsFilter == null ) {
-this.bsFilter=Clazz.new_($I$(10));
-this.htParams.put$TK$TV("bsFilter", this.bsFilter);
+this.bsFilter=Clazz.new_($I$(9,1));
+this.htParams.put$O$O("bsFilter", this.bsFilter);
 this.filter=(";" + this.filter + ";" ).replace$C$C(",", ";");
 var s=this.getFilter$S("LATTICESCALING=");
 if (s != null  && this.unitCellParams.length > 25 ) this.unitCellParams[25]=this.latticeScaling=this.parseFloatStr$S(s);
@@ -689,7 +558,7 @@ return isOK;
 });
 
 Clazz.newMeth(C$, 'checkFilter$org_jmol_adapter_smarter_Atom$S', function (atom, f) {
-return (!this.filterGroup3 || atom.group3 == null   || !this.filterReject$S$S$S(f, "[", atom.group3.toUpperCase$() + "]") ) && (!this.filterAtomName || p$1.allowAtomName$S$S.apply(this, [atom.atomName, f]) ) && (this.filterAtomTypeStr == null  || atom.atomName == null   || atom.atomName.toUpperCase$().indexOf$S("\0" + this.filterAtomTypeStr) >= 0 ) && (!this.filterElement || atom.elementSymbol == null   || !this.filterReject$S$S$S(f, "_", atom.elementSymbol.toUpperCase$() + ";") ) && (!this.filterChain || atom.chainID == 0  || !this.filterReject$S$S$S(f, ":", "" + this.vwr.getChainIDStr$I(atom.chainID)) ) && (!this.filterAltLoc || atom.altLoc == "\u0000"  || !this.filterReject$S$S$S(f, "%", "" + atom.altLoc) ) && (!this.filterHetero || !this.allowPDBFilter || !this.filterReject$S$S$S(f, "HETATM", atom.isHetero ? "-Y" : "-N")  )  ;
+return (!this.filterGroup3 || atom.group3 == null   || !this.filterReject$S$S$S(f, "[", atom.group3.toUpperCase$() + "]") ) && (!this.filterAtomName || p$1.allowAtomName$S$S.apply(this, [atom.atomName, f]) ) && (this.filterAtomTypeStr == null  || atom.atomName == null   || atom.atomName.toUpperCase$().indexOf$S("\u0000" + this.filterAtomTypeStr) >= 0 ) && (!this.filterElement || atom.elementSymbol == null   || !this.filterReject$S$S$S(f, "_", atom.elementSymbol.toUpperCase$() + ";") ) && (!this.filterChain || atom.chainID == 0  || !this.filterReject$S$S$S(f, ":", "" + this.vwr.getChainIDStr$I(atom.chainID)) ) && (!this.filterAltLoc || atom.altLoc == "\u0000"  || !this.filterReject$S$S$S(f, "%", "" + atom.altLoc) ) && (!this.filterHetero || !this.allowPDBFilter || !this.filterReject$S$S$S(f, "HETATM", atom.isHetero ? "-Y" : "-N")  )  ;
 }, p$1);
 
 Clazz.newMeth(C$, 'rejectAtomName$S', function (name) {
@@ -705,8 +574,8 @@ return (f.indexOf$S(code) >= 0 && (f.indexOf$S("!" + code) >= 0) == (f.indexOf$S
 });
 
 Clazz.newMeth(C$, 'set2D$', function () {
-this.asc.setInfo$S$O("is2D", $I$(7).TRUE);
-if (!this.checkFilterKey$S("NOMIN")) this.asc.setInfo$S$O("doMinimize", $I$(7).TRUE);
+this.asc.setInfo$S$O("is2D", Boolean.TRUE);
+if (!this.checkFilterKey$S("NOMIN")) this.asc.setInfo$S$O("doMinimize", Boolean.TRUE);
 });
 
 Clazz.newMeth(C$, 'doGetVibration$I', function (vibrationNumber) {
@@ -715,8 +584,8 @@ return this.addVibrations && (this.desiredVibrationNumber <= 0 || vibrationNumbe
 
 Clazz.newMeth(C$, 'setTransform$F$F$F$F$F$F$F$F$F', function (x1, y1, z1, x2, y2, z2, x3, y3, z3) {
 if (this.matRot != null  || !this.doSetOrientation ) return;
-this.matRot=Clazz.new_($I$(11));
-var v=$I$(12).new3$F$F$F(x1, y1, z1);
+this.matRot=Clazz.new_($I$(10,1));
+var v=$I$(11).new3$F$F$F(x1, y1, z1);
 v.normalize$();
 this.matRot.setColumnV$I$javajs_util_T3(0, v);
 v.set$F$F$F(x2, y2, z2);
@@ -725,10 +594,10 @@ this.matRot.setColumnV$I$javajs_util_T3(1, v);
 v.set$F$F$F(x3, y3, z3);
 v.normalize$();
 this.matRot.setColumnV$I$javajs_util_T3(2, v);
-this.asc.setInfo$S$O("defaultOrientationMatrix", $I$(11).newM3$javajs_util_M3(this.matRot));
-var q=$I$(13).newM$javajs_util_M3(this.matRot);
+this.asc.setInfo$S$O("defaultOrientationMatrix", $I$(10).newM3$javajs_util_M3(this.matRot));
+var q=$I$(12).newM$javajs_util_M3(this.matRot);
 this.asc.setInfo$S$O("defaultOrientationQuaternion", q);
-$I$(2).info$S("defaultOrientationMatrix = " + this.matRot);
+$I$(2,"info$S",["defaultOrientationMatrix = " + this.matRot]);
 });
 
 Clazz.newMeth(C$, 'setAtomCoordXYZ$org_jmol_adapter_smarter_Atom$F$F$F', function (atom, x, y, z) {
@@ -775,7 +644,7 @@ for (var entry, $entry = htSites.entrySet$().iterator$(); $entry.hasNext$()&&((e
 var name=entry.getKey$();
 var htSite=entry.getValue$();
 var ch;
-for (var i=name.length$(); --i >= 0; ) if (!$I$(6).isLetterOrDigit$C(ch=name.charAt$I(i)) && ch != "\'" ) name=name.substring$I$I(0, i) + "_" + name.substring$I(i + 1) ;
+for (var i=name.length$(); --i >= 0; ) if (!$I$(6,"isLetterOrDigit$C",[ch=name.charAt$I(i)]) && ch != "\'" ) name=name.substring$I$I(0, i) + "_" + name.substring$I(i + 1) ;
 
 var groups=htSite.get$O("groups");
 if (groups.length$() == 0) continue;
@@ -813,19 +682,34 @@ Clazz.newMeth(C$, 'finalizeMOData$java_util_Map', function (moData) {
 this.asc.setCurrentModelInfo$S$O("moData", moData);
 if (moData == null ) return;
 var orbitals=moData.get$O("mos");
-if (orbitals != null ) $I$(2).info$S(orbitals.size$() + " molecular orbitals read in model " + this.asc.atomSetCount );
+if (orbitals != null ) $I$(2,"info$S",[orbitals.size$() + " molecular orbitals read in model " + this.asc.atomSetCount ]);
 });
 
 Clazz.newMeth(C$, 'getElementSymbol$I', function (elementNumber) {
-return $I$(14).getElementSymbol$I(elementNumber);
+return $I$(13).getElementSymbol$I(elementNumber);
 }, 1);
 
 Clazz.newMeth(C$, 'fillDataBlock$SAA$I', function (data, minLineLen) {
 var nLines=data.length;
 for (var i=0; i < nLines; i++) {
-data[i]=$I$(6).getTokens$S(this.discardLinesUntilNonBlank$());
+data[i]=$I$(6,"getTokens$S",[this.discardLinesUntilNonBlank$()]);
 if (data[i].length < minLineLen) --i;
 }
+});
+
+Clazz.newMeth(C$, 'fill3x3$SA$I', function (tokens, pt) {
+var a=Clazz.array(Double.TYPE, [3, 3]);
+var needTokens=(tokens == null );
+var pt0=pt;
+for (var i=0; i < 3; i++) {
+if (needTokens || pt >= tokens.length ) {
+while ((tokens=$I$(6,"getTokens$S",[this.rd$()])).length < 3){
+}
+pt=(pt0 < 0 ? tokens.length + pt0 : pt0);
+}for (var j=0; j < 3; j++) a[i][j]=Double.valueOf$S(tokens[pt++]).doubleValue$();
+
+}
+return a;
 });
 
 Clazz.newMeth(C$, 'fillFloatArray$S$I$FA', function (s, width, data) {
@@ -878,7 +762,7 @@ if (ignore[jj]) continue;
 var iAtom=(atomIndexes == null  ? atomPt : atomIndexes[atomPt]);
 if (iAtom < 0) continue;
 iAtom+=iAtom0 + modelAtomCount * j++;
-if (this.debugging) $I$(2).debug$S("atom " + iAtom + " vib" + j + ": " + new Float(vx).toString() + " " + new Float(vy).toString() + " " + new Float(vz).toString() );
+if (this.debugging) $I$(2,"debug$S",["atom " + iAtom + " vib" + j + ": " + new Float(vx).toString() + " " + new Float(vy).toString() + " " + new Float(vz).toString() ]);
 this.asc.addVibrationVectorWithSymmetry$I$F$F$F$Z(iAtom, vx, vy, vz, withSymmetry);
 }
 }
@@ -996,7 +880,7 @@ return $I$(6).getTokens$S(this.line);
 
 Clazz.newMeth(C$, 'getTokensFloat$S$FA$I', function (s, f, n) {
 if (f == null ) f=Clazz.array(Float.TYPE, [n]);
-$I$(6).parseFloatArrayDataN$SA$FA$I($I$(6).getTokens$S(s), f, n);
+$I$(6,"parseFloatArrayDataN$SA$FA$I",[$I$(6).getTokens$S(s), f, n]);
 return f;
 }, 1);
 
@@ -1052,7 +936,7 @@ return $I$(6).parseTokenRange$S$I$IA(s, iEnd, this.next);
 });
 
 Clazz.newMeth(C$, 'getFortranFormatLengths$S', function (s) {
-var vdata=Clazz.new_($I$(5));
+var vdata=Clazz.new_($I$(5,1));
 var n=0;
 var c=0;
 var factor=1;
@@ -1066,7 +950,7 @@ case 46:
 inN=false;
 continue;
 case 44:
-for (var j=0; j < c; j++) vdata.addLast$TV(Integer.valueOf$I(n * factor));
+for (var j=0; j < c; j++) vdata.addLast$O(Integer.valueOf$I(n * factor));
 
 inN=false;
 inCount=true;
@@ -1094,7 +978,7 @@ return vdata;
 }, 1);
 
 Clazz.newMeth(C$, 'read3Vectors$Z', function (isBohr) {
-var vectors=Clazz.array($I$(12), [3]);
+var vectors=Clazz.array($I$(11), [3]);
 var f=Clazz.array(Float.TYPE, [3]);
 for (var i=0; i < 3; i++) {
 if (i > 0 || Float.isNaN$F(this.parseFloatStr$S(this.line)) ) {
@@ -1103,7 +987,7 @@ if (i == 0 && this.line != null  ) {
 i=-1;
 continue;
 }}this.fillFloatArray$S$I$FA(this.line, 0, f);
-vectors[i]=Clazz.new_($I$(12));
+vectors[i]=Clazz.new_($I$(11,1));
 vectors[i].setA$FA(f);
 if (isBohr) vectors[i].scale$F(0.5291772);
 }
@@ -1116,7 +1000,7 @@ if (isotope == -2147483648) {
 atom.elementSymbol=str;
 } else {
 str=str.substring$I(("" + isotope).length$());
-atom.elementNumber=($s$[0] = (str.length$() == 0 ? isotope : ((isotope << 7) + $I$(14).getElementNumber$S(str))), $s$[0]);
+atom.elementNumber=($s$[0] = (str.length$() == 0 ? isotope : ((isotope << 7) + $I$(13).getElementNumber$S(str))), $s$[0]);
 }});
 
 Clazz.newMeth(C$, 'finalizeModelSet$', function () {
@@ -1132,13 +1016,13 @@ return this.line;
 });
 
 Clazz.newMeth(C$, 'appendUunitCellInfo$S', function (info) {
-if (this.moreUnitCellInfo == null ) this.moreUnitCellInfo=Clazz.new_($I$(5));
-this.moreUnitCellInfo.addLast$TV(info);
+if (this.moreUnitCellInfo == null ) this.moreUnitCellInfo=Clazz.new_($I$(5,1));
+this.moreUnitCellInfo.addLast$O(info);
 this.appendLoadNote$S(info);
 });
 
 Clazz.newMeth(C$, 'getInterface$S', function (className) {
-var o=$I$(15).getInterface$S$org_jmol_viewer_Viewer$S(className, this.vwr, "file");
+var o=$I$(14).getInterface$S$org_jmol_viewer_Viewer$S(className, this.vwr, "file");
 if (o == null ) throw Clazz.new_(Clazz.load('NullPointerException').c$$S,["Interface"]);
 return o;
 });
@@ -1155,4 +1039,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:29 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

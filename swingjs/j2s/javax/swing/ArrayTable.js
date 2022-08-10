@@ -1,23 +1,19 @@
-(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ArrayTable", null, null, 'Cloneable');
+(function(){var P$=Clazz.newPackage("javax.swing"),p$1={},I$=[[0,'java.util.Hashtable']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ArrayTable", null, null, 'Cloneable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.table=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.table=null;
+},1);
+
+C$.$fields$=[['O',['table','java.lang.Object']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'put$O$O', function (key, value) {
+Clazz.newMeth(C$, 'put$O$O',  function (key, value) {
 if (this.table == null ) {
 this.table=Clazz.array(java.lang.Object, -1, [key, value]);
 } else {
@@ -41,10 +37,10 @@ this.table=tmp;
 }} else {
 if ((size == 8) && p$1.isArray.apply(this, []) ) {
 p$1.grow.apply(this, []);
-}(this.table).put$TK$TV(key, value);
+}(this.table).put$O$O(key, value);
 }}});
 
-Clazz.newMeth(C$, 'get$O', function (key) {
+Clazz.newMeth(C$, 'get$O',  function (key) {
 var value=null;
 if (this.table != null ) {
 if (p$1.isArray.apply(this, [])) {
@@ -59,7 +55,7 @@ value=(this.table).get$O(key);
 }}return value;
 });
 
-Clazz.newMeth(C$, 'size$', function () {
+Clazz.newMeth(C$, 'size$',  function () {
 var size;
 if (this.table == null ) return 0;
 if (p$1.isArray.apply(this, [])) {
@@ -69,7 +65,7 @@ size=(this.table).size$();
 }return size;
 });
 
-Clazz.newMeth(C$, 'containsKey$O', function (key) {
+Clazz.newMeth(C$, 'containsKey$O',  function (key) {
 var contains=false;
 if (this.table != null ) {
 if (p$1.isArray.apply(this, [])) {
@@ -84,7 +80,7 @@ contains=(this.table).containsKey$O(key);
 }}return contains;
 });
 
-Clazz.newMeth(C$, 'remove$O', function (key) {
+Clazz.newMeth(C$, 'remove$O',  function (key) {
 var value=null;
 if (key == null ) {
 return null;
@@ -110,11 +106,11 @@ p$1.shrink.apply(this, []);
 }}return value;
 });
 
-Clazz.newMeth(C$, 'clear$', function () {
+Clazz.newMeth(C$, 'clear$',  function () {
 this.table=null;
 });
 
-Clazz.newMeth(C$, 'clone$', function () {
+Clazz.newMeth(C$, 'clone$',  function () {
 var newArrayTable=Clazz.new_(C$);
 if (p$1.isArray.apply(this, [])) {
 var array=this.table;
@@ -131,7 +127,7 @@ newArrayTable.put$O$O(o, tmp.get$O(o));
 }return newArrayTable;
 });
 
-Clazz.newMeth(C$, 'getKeys$OA', function (keys) {
+Clazz.newMeth(C$, 'getKeys$OA',  function (keys) {
 if (this.table == null ) {
 return null;
 }if (p$1.isArray.apply(this, [])) {
@@ -153,20 +149,20 @@ keys[--counter]=enum_.nextElement$();
 }return keys;
 });
 
-Clazz.newMeth(C$, 'isArray', function () {
+Clazz.newMeth(C$, 'isArray',  function () {
 return (Clazz.instanceOf(this.table, Clazz.array(java.lang.Object, -1)));
 }, p$1);
 
-Clazz.newMeth(C$, 'grow', function () {
+Clazz.newMeth(C$, 'grow',  function () {
 var array=this.table;
-var tmp=Clazz.new_($I$(1).c$$I,[(array.length/2|0)]);
+var tmp=Clazz.new_([(array.length/2|0)],$I$(1,1).c$$I);
 for (var i=0; i < array.length; i+=2) {
-tmp.put$TK$TV(array[i], array[i + 1]);
+tmp.put$O$O(array[i], array[i + 1]);
 }
 this.table=tmp;
 }, p$1);
 
-Clazz.newMeth(C$, 'shrink', function () {
+Clazz.newMeth(C$, 'shrink',  function () {
 var tmp=this.table;
 var array=Clazz.array(java.lang.Object, [tmp.size$() * 2]);
 var keys=tmp.keys$();
@@ -180,4 +176,4 @@ j+=2;
 this.table=array;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

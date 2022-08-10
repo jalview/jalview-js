@@ -1,57 +1,24 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.data"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','javajs.util.M3','java.util.Hashtable','org.jmol.util.Logger','javajs.util.SB','org.jmol.util.Escape']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VolumeData");
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.data"),p$1={},I$=[[0,'javajs.util.P3','javajs.util.V3','javajs.util.M3','java.util.Hashtable','org.jmol.util.Logger','javajs.util.SB','org.jmol.util.Escape']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VolumeData");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.sr=null;
-this.doIterate=false;
-this.volumetricOrigin=null;
-this.origin=null;
-this.volumetricVectors=null;
-this.voxelCounts=null;
-this.nPoints=0;
-this.voxelData=null;
-this.voxelMap=null;
-this.volumetricVectorLengths=null;
-this.maxVectorLength=0;
-this.minToPlaneDistance=0;
-this.yzCount=0;
-this.unitVolumetricVectors=null;
-this.volumetricMatrix=null;
-this.inverseMatrix=null;
-this.thePlane=null;
-this.thePlaneNormalMag=0;
-this.ptXyzTemp=null;
-this.xmlData=null;
-this.mappingPlane=null;
-this.mappingPlaneNormalMag=0;
-this.minGrid=0;
-this.maxGrid=0;
-this.voxelVolume=0;
-this.oabc=null;
-this.isPeriodic=false;
-this.isSquared=false;
-this.edgeVector=null;
-this.ptTemp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.doIterate=true;
-this.volumetricOrigin=Clazz.new_($I$(1));
+this.volumetricOrigin=Clazz.new_($I$(1,1));
 this.origin=Clazz.array(Float.TYPE, [3]);
 this.volumetricVectors=Clazz.array($I$(2), [3]);
 this.voxelCounts=Clazz.array(Integer.TYPE, [3]);
 this.volumetricVectorLengths=Clazz.array(Float.TYPE, [3]);
 this.unitVolumetricVectors=Clazz.array($I$(2), [3]);
-this.volumetricMatrix=Clazz.new_($I$(3));
-this.inverseMatrix=Clazz.new_($I$(3));
-this.ptXyzTemp=Clazz.new_($I$(1));
-this.edgeVector=Clazz.new_($I$(2));
-this.ptTemp=Clazz.new_($I$(1));
-}, 1);
+this.volumetricMatrix=Clazz.new_($I$(3,1));
+this.inverseMatrix=Clazz.new_($I$(3,1));
+this.ptXyzTemp=Clazz.new_($I$(1,1));
+this.edgeVector=Clazz.new_($I$(2,1));
+this.ptTemp=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['doIterate','isPeriodic','isSquared'],'F',['maxVectorLength','minToPlaneDistance','thePlaneNormalMag','mappingPlaneNormalMag','minGrid','maxGrid','voxelVolume'],'I',['nPoints','yzCount'],'S',['xmlData'],'O',['sr','org.jmol.jvxl.readers.SurfaceReader','volumetricOrigin','javajs.util.P3','origin','float[]','volumetricVectors','javajs.util.V3[]','voxelCounts','int[]','voxelData','float[][][]','voxelMap','java.util.Map','volumetricVectorLengths','float[]','unitVolumetricVectors','javajs.util.V3[]','volumetricMatrix','javajs.util.M3','+inverseMatrix','thePlane','javajs.util.P4','ptXyzTemp','javajs.util.P3','mappingPlane','javajs.util.P4','oabc','javajs.util.V3[]','edgeVector','javajs.util.V3','ptTemp','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'getVoxelData$', function () {
 return this.voxelData;
@@ -67,13 +34,13 @@ return (this.thePlane != null );
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.volumetricVectors[0]=Clazz.new_($I$(2));
-this.volumetricVectors[1]=Clazz.new_($I$(2));
-this.volumetricVectors[2]=Clazz.new_($I$(2));
-this.unitVolumetricVectors[0]=Clazz.new_($I$(2));
-this.unitVolumetricVectors[1]=Clazz.new_($I$(2));
-this.unitVolumetricVectors[2]=Clazz.new_($I$(2));
+;C$.$init$.apply(this);
+this.volumetricVectors[0]=Clazz.new_($I$(2,1));
+this.volumetricVectors[1]=Clazz.new_($I$(2,1));
+this.volumetricVectors[2]=Clazz.new_($I$(2,1));
+this.unitVolumetricVectors[0]=Clazz.new_($I$(2,1));
+this.unitVolumetricVectors[1]=Clazz.new_($I$(2,1));
+this.unitVolumetricVectors[2]=Clazz.new_($I$(2,1));
 }, 1);
 
 Clazz.newMeth(C$, 'setMappingPlane$javajs_util_P4', function (plane) {
@@ -156,7 +123,7 @@ this.voxelData[ix][iy][iz]=value;
 });
 
 Clazz.newMeth(C$, 'setVoxelMap$', function () {
-this.voxelMap=Clazz.new_($I$(4));
+this.voxelMap=Clazz.new_($I$(4,1));
 this.getYzCount$();
 });
 
@@ -227,7 +194,7 @@ this.origin[2]=this.volumetricOrigin.z;
 this.oabc=Clazz.array($I$(2), [4]);
 this.oabc[0]=$I$(2).newV$javajs_util_T3(this.volumetricOrigin);
 for (var i=0; i < 3; i++) {
-var v=this.oabc[i + 1]=Clazz.new_($I$(2));
+var v=this.oabc[i + 1]=Clazz.new_($I$(2,1));
 v.scaleAdd2$F$javajs_util_T3$javajs_util_T3(this.voxelCounts[i] - 1, this.volumetricVectors[i], v);
 }
 return p$1.setMatrix.apply(this, []);
@@ -292,7 +259,7 @@ return (!this.isPeriodic && x < 0   || xLower == xMax  ? xLower : xLower + 1);
 }, p$1);
 
 Clazz.newMeth(C$, 'offsetCenter$javajs_util_P3', function (center) {
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(1,1));
 pt.scaleAdd2$F$javajs_util_T3$javajs_util_T3((this.voxelCounts[0] - 1) / 2.0, this.volumetricVectors[0], pt);
 pt.scaleAdd2$F$javajs_util_T3$javajs_util_T3((this.voxelCounts[1] - 1) / 2.0, this.volumetricVectors[1], pt);
 pt.scaleAdd2$F$javajs_util_T3$javajs_util_T3((this.voxelCounts[2] - 1) / 2.0, this.volumetricVectors[2], pt);
@@ -348,7 +315,7 @@ if (d >= 0  || d > value  ) this.voxelData[x][y][z]=d;
 });
 
 Clazz.newMeth(C$, 'setVolumetricXml$', function () {
-var sb=Clazz.new_($I$(6));
+var sb=Clazz.new_($I$(6,1));
 if (this.voxelCounts[0] == 0) {
 sb.append$S("<jvxlVolumeData>\n");
 } else {
@@ -361,7 +328,7 @@ return this.xmlData=sb.toString();
 
 Clazz.newMeth(C$, 'setVoxelMapValue$I$I$I$F', function (x, y, z, v) {
 if (this.voxelMap == null ) return;
-this.voxelMap.put$TK$TV(Integer.valueOf$I(this.getPointIndex$I$I$I(x, y, z)), Float.valueOf$F(v));
+this.voxelMap.put$O$O(Integer.valueOf$I(this.getPointIndex$I$I$I(x, y, z)), Float.valueOf$F(v));
 });
 
 Clazz.newMeth(C$, 'calculateFractionalPoint$F$javajs_util_P3$javajs_util_P3$F$F$javajs_util_P3', function (cutoff, pointA, pointB, valueA, valueB, pt) {
@@ -389,4 +356,4 @@ v=this.lookupInterpolatedVoxelValue$javajs_util_T3$Z(this.ptTemp, false);
 return v0;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

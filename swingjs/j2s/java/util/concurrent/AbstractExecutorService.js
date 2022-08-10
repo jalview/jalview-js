@@ -1,52 +1,51 @@
-(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.FutureTask','java.util.ArrayList','java.util.concurrent.ExecutorCompletionService','java.util.concurrent.TimeUnit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractExecutorService", null, null, 'java.util.concurrent.ExecutorService');
+(function(){var P$=Clazz.newPackage("java.util.concurrent"),p$1={},I$=[[0,'java.util.concurrent.FutureTask','java.util.ArrayList','java.util.concurrent.ExecutorCompletionService','java.util.concurrent.TimeUnit']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AbstractExecutorService", null, null, 'java.util.concurrent.ExecutorService');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'newTaskFor$Runnable$TT', function (runnable, value) {
-return Clazz.new_($I$(1).c$$Runnable$TV,[runnable, value]);
+Clazz.newMeth(C$, 'newTaskFor$Runnable$O',  function (runnable, value) {
+return Clazz.new_($I$(1,1).c$$Runnable$O,[runnable, value]);
 });
 
-Clazz.newMeth(C$, 'newTaskFor$java_util_concurrent_Callable', function (callable) {
-return Clazz.new_($I$(1).c$$java_util_concurrent_Callable,[callable]);
+Clazz.newMeth(C$, 'newTaskFor$java_util_concurrent_Callable',  function (callable) {
+return Clazz.new_($I$(1,1).c$$java_util_concurrent_Callable,[callable]);
 });
 
-Clazz.newMeth(C$, 'submit$Runnable', function (task) {
+Clazz.newMeth(C$, 'submit$Runnable',  function (task) {
 if (task == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-var ftask=this.newTaskFor$Runnable$TT(task, null);
-this.execute$(ftask);
+var ftask=this.newTaskFor$Runnable$O(task, null);
+this.execute$Runnable(ftask);
 return ftask;
 });
 
-Clazz.newMeth(C$, 'submit$Runnable$TT', function (task, result) {
+Clazz.newMeth(C$, 'submit$Runnable$O',  function (task, result) {
 if (task == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-var ftask=this.newTaskFor$Runnable$TT(task, result);
-this.execute$(ftask);
+var ftask=this.newTaskFor$Runnable$O(task, result);
+this.execute$Runnable(ftask);
 return ftask;
 });
 
-Clazz.newMeth(C$, 'submit$java_util_concurrent_Callable', function (task) {
+Clazz.newMeth(C$, 'submit$java_util_concurrent_Callable',  function (task) {
 if (task == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var ftask=this.newTaskFor$java_util_concurrent_Callable(task);
-this.execute$(ftask);
+this.execute$Runnable(ftask);
 return ftask;
 });
 
-Clazz.newMeth(C$, 'doInvokeAny$java_util_Collection$Z$J', function (tasks, timed, nanos) {
+Clazz.newMeth(C$, 'doInvokeAny$java_util_Collection$Z$J',  function (tasks, timed, nanos) {
 if (tasks == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var ntasks=tasks.size$();
 if (ntasks == 0) throw Clazz.new_(Clazz.load('IllegalArgumentException'));
-var futures=Clazz.new_($I$(2).c$$I,[ntasks]);
-var ecs=Clazz.new_($I$(3).c$$java_util_concurrent_Executor,[this]);
+var futures=Clazz.new_($I$(2,1).c$$I,[ntasks]);
+var ecs=Clazz.new_($I$(3,1).c$$java_util_concurrent_Executor,[this]);
 try {
 var ee=null;
 var lastTime=(timed) ? System.nanoTime$() : 0;
 var it=tasks.iterator$();
-futures.add$TE(ecs.submit$java_util_concurrent_Callable(it.next$()));
+futures.add$O(ecs.submit$java_util_concurrent_Callable(it.next$()));
 --ntasks;
 var active=1;
 for (; ; ) {
@@ -54,14 +53,14 @@ var f=ecs.poll$();
 if (f == null ) {
 if (ntasks > 0) {
 --ntasks;
-futures.add$TE(ecs.submit$java_util_concurrent_Callable(it.next$()));
+futures.add$O(ecs.submit$java_util_concurrent_Callable(it.next$()));
 ++active;
 } else if (active == 0) break;
  else if (timed) {
 f=ecs.poll$J$java_util_concurrent_TimeUnit(nanos, $I$(4).NANOSECONDS);
 if (f == null ) throw Clazz.new_(Clazz.load('java.util.concurrent.TimeoutException'));
 var now=System.nanoTime$();
-nanos-=now - lastTime;
+(nanos=Long.$sub(nanos,(Long.$sub(now,lastTime))));
 lastTime=now;
 } else f=ecs.take$();
 }if (f != null ) {
@@ -97,7 +96,7 @@ for (var f, $f = futures.iterator$(); $f.hasNext$()&&((f=($f.next$())),1);) f.ca
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'invokeAny$java_util_Collection', function (tasks) {
+Clazz.newMeth(C$, 'invokeAny$java_util_Collection',  function (tasks) {
 try {
 return p$1.doInvokeAny$java_util_Collection$Z$J.apply(this, [tasks, false, 0]);
 } catch (cannotHappen) {
@@ -110,19 +109,19 @@ throw cannotHappen;
 }
 });
 
-Clazz.newMeth(C$, 'invokeAny$java_util_Collection$J$java_util_concurrent_TimeUnit', function (tasks, timeout, unit) {
+Clazz.newMeth(C$, 'invokeAny$java_util_Collection$J$java_util_concurrent_TimeUnit',  function (tasks, timeout, unit) {
 return p$1.doInvokeAny$java_util_Collection$Z$J.apply(this, [tasks, true, unit.toNanos$J(timeout)]);
 });
 
-Clazz.newMeth(C$, 'invokeAll$java_util_Collection', function (tasks) {
+Clazz.newMeth(C$, 'invokeAll$java_util_Collection',  function (tasks) {
 if (tasks == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-var futures=Clazz.new_($I$(2).c$$I,[tasks.size$()]);
+var futures=Clazz.new_([tasks.size$()],$I$(2,1).c$$I);
 var done=false;
 try {
 for (var t, $t = tasks.iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) {
 var f=this.newTaskFor$java_util_concurrent_Callable(t);
-futures.add$TE(f);
-this.execute$(f);
+futures.add$O(f);
+this.execute$Runnable(f);
 }
 for (var f, $f = futures.iterator$(); $f.hasNext$()&&((f=($f.next$())),1);) {
 if (!f.isDone$()) {
@@ -150,26 +149,26 @@ if (!done) for (var f, $f = futures.iterator$(); $f.hasNext$()&&((f=($f.next$())
 }
 });
 
-Clazz.newMeth(C$, 'invokeAll$java_util_Collection$J$java_util_concurrent_TimeUnit', function (tasks, timeout, unit) {
+Clazz.newMeth(C$, 'invokeAll$java_util_Collection$J$java_util_concurrent_TimeUnit',  function (tasks, timeout, unit) {
 if (tasks == null  || unit == null  ) throw Clazz.new_(Clazz.load('NullPointerException'));
 var nanos=unit.toNanos$J(timeout);
-var futures=Clazz.new_($I$(2).c$$I,[tasks.size$()]);
+var futures=Clazz.new_([tasks.size$()],$I$(2,1).c$$I);
 var done=false;
 try {
-for (var t, $t = tasks.iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) futures.add$TE(this.newTaskFor$java_util_concurrent_Callable(t));
+for (var t, $t = tasks.iterator$(); $t.hasNext$()&&((t=($t.next$())),1);) futures.add$O(this.newTaskFor$java_util_concurrent_Callable(t));
 
 var lastTime=System.nanoTime$();
 var it=futures.iterator$();
 while (it.hasNext$()){
-this.execute$((it.next$()));
+this.execute$Runnable((it.next$()));
 var now=System.nanoTime$();
-nanos-=now - lastTime;
+(nanos=Long.$sub(nanos,(Long.$sub(now,lastTime))));
 lastTime=now;
-if (nanos <= 0) return futures;
+if (Long.$le(nanos,0 )) return futures;
 }
 for (var f, $f = futures.iterator$(); $f.hasNext$()&&((f=($f.next$())),1);) {
 if (!f.isDone$()) {
-if (nanos <= 0) return futures;
+if (Long.$le(nanos,0 )) return futures;
 try {
 f.get$J$java_util_concurrent_TimeUnit(nanos, $I$(4).NANOSECONDS);
 } catch (e$$) {
@@ -191,7 +190,7 @@ throw e$$;
 }
 }
 var now=System.nanoTime$();
-nanos-=now - lastTime;
+(nanos=Long.$sub(nanos,(Long.$sub(now,lastTime))));
 lastTime=now;
 }}
 done=true;
@@ -201,8 +200,11 @@ if (!done) for (var f, $f = futures.iterator$(); $f.hasNext$()&&((f=($f.next$())
 
 }
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:50 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:16 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

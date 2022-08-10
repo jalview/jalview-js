@@ -1,23 +1,18 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),p$1={},p$2={},p$3={},p$4={},p$5={},I$=[[0,['fr.orsay.lri.varna.models.templates.RNATemplate','.EdgeEndPointPosition'],'java.util.LinkedList','java.util.ArrayList','java.util.Hashtable','fr.orsay.lri.varna.exceptions.ExceptionInvalidRNATemplate','java.util.Stack','java.awt.Point','java.util.HashSet','fr.orsay.lri.varna.models.treealign.Tree','fr.orsay.lri.varna.models.templates.RNANodeValueTemplateBrokenBasePair','fr.orsay.lri.varna.models.templates.RNANodeValueTemplateBasePair','fr.orsay.lri.varna.models.templates.RNANodeValueTemplateSequence','java.util.HashMap','javax.xml.parsers.DocumentBuilderFactory','Boolean','fr.orsay.lri.varna.exceptions.ExceptionXMLGeneration',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.exceptions.ExceptionXmlLoading',['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateHelix'],['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateUnpairedSequence'],'fr.orsay.lri.varna.exceptions.ExceptionEdgeEndpointAlreadyConnected','fr.orsay.lri.varna.models.templates.RNATemplate',['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateElement','.EdgeEndPoint'],['fr.orsay.lri.varna.models.templates.RNATemplate','.RNAIterator'],['fr.orsay.lri.varna.models.templates.RNATemplate','.VertexIterator'],['fr.orsay.lri.varna.models.templates.RNATemplate','.MakeEdgeList'],['fr.orsay.lri.varna.models.templates.RNATemplate','.RemovePseudoKnots'],['fr.orsay.lri.varna.models.templates.RNATemplate','.ConvertToTree'],'fr.orsay.lri.varna.models.templates.RNATemplateAlign','java.util.Arrays','fr.orsay.lri.varna.models.rna.RNA','javax.xml.transform.dom.DOMSource','javax.xml.transform.stream.StreamResult','javax.xml.transform.TransformerFactory',['fr.orsay.lri.varna.models.templates.RNATemplate','.ConvertToXml'],['fr.orsay.lri.varna.models.templates.RNATemplate','.LoadFromXml'],['fr.orsay.lri.varna.models.templates.RNATemplate','.In1Is']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RNATemplate", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.templates"),p$1={},p$2={},p$3={},p$4={},p$5={},I$=[[0,['fr.orsay.lri.varna.models.templates.RNATemplate','.EdgeEndPointPosition'],'java.util.LinkedList','java.util.ArrayList','java.util.Hashtable','fr.orsay.lri.varna.exceptions.ExceptionInvalidRNATemplate','java.util.Stack','java.awt.Point','java.util.HashSet','fr.orsay.lri.varna.models.treealign.Tree','fr.orsay.lri.varna.models.templates.RNANodeValueTemplateBrokenBasePair','fr.orsay.lri.varna.models.templates.RNANodeValueTemplateBasePair','fr.orsay.lri.varna.models.templates.RNANodeValueTemplateSequence','java.util.HashMap','javax.xml.parsers.DocumentBuilderFactory','Boolean','fr.orsay.lri.varna.exceptions.ExceptionXMLGeneration',['java.awt.geom.Point2D','.Double'],'fr.orsay.lri.varna.exceptions.ExceptionXmlLoading',['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateHelix'],['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateUnpairedSequence'],'fr.orsay.lri.varna.exceptions.ExceptionEdgeEndpointAlreadyConnected','fr.orsay.lri.varna.models.templates.RNATemplate',['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateElement','.EdgeEndPoint'],['fr.orsay.lri.varna.models.templates.RNATemplate','.RNAIterator'],['fr.orsay.lri.varna.models.templates.RNATemplate','.VertexIterator'],['fr.orsay.lri.varna.models.templates.RNATemplate','.MakeEdgeList'],['fr.orsay.lri.varna.models.templates.RNATemplate','.RemovePseudoKnots'],['fr.orsay.lri.varna.models.templates.RNATemplate','.ConvertToTree'],'fr.orsay.lri.varna.models.templates.RNATemplateAlign','java.util.Arrays','fr.orsay.lri.varna.models.rna.RNA','javax.xml.transform.dom.DOMSource','javax.xml.transform.stream.StreamResult','javax.xml.transform.TransformerFactory',['fr.orsay.lri.varna.models.templates.RNATemplate','.ConvertToXml'],['fr.orsay.lri.varna.models.templates.RNATemplate','.LoadFromXml'],['fr.orsay.lri.varna.models.templates.RNATemplate','.In1Is']]],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RNATemplate", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
-C$.NEXT_ID=0;
+C$.$classes$=[['RNAIterator',2],['VertexIterator',2],['MakeEdgeList',2],['RemovePseudoKnots',2],['ConvertToTree',2],['ConvertToXml',2],['LoadFromXml',2],['In1Is',25],['EdgeEndPointPosition',25],['RNATemplateElement',1025],['RNATemplateHelix',1],['RNATemplateUnpairedSequence',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NEXT_ID=1;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.elements=null;
-this.template=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.elements=Clazz.new_($I$(3));
+this.elements=Clazz.new_($I$(3,1));
 this.template=this;
-}, 1);
+},1);
+
+C$.$fields$=[['O',['elements','java.util.Collection','template','fr.orsay.lri.varna.models.templates.RNATemplate']]
+,['I',['NEXT_ID']]]
 
 Clazz.newMeth(C$, 'isEmpty$', function () {
 return this.elements.isEmpty$();
@@ -31,12 +26,12 @@ Clazz.newMeth(C$, 'getFirstEndPoint$', function () {
 if (this.elements.isEmpty$()) {
 return null;
 } else {
-var knownEndPoints=Clazz.new_($I$(8));
+var knownEndPoints=Clazz.new_($I$(8,1));
 var currentEndPoint=this.getAnyEndPoint$();
 while (true){
 if (knownEndPoints.contains$O(currentEndPoint)) {
 return currentEndPoint;
-}knownEndPoints.add$TE(currentEndPoint);
+}knownEndPoints.add$O(currentEndPoint);
 var previousEndPoint=currentEndPoint.getPreviousEndPoint$();
 if (previousEndPoint == null ) {
 return currentEndPoint;
@@ -60,7 +55,7 @@ return this.getAny$().getIn1EndPoint$();
 }});
 
 Clazz.newMeth(C$, 'rnaIterator$', function () {
-return Clazz.new_($I$(24), [this, null]);
+return Clazz.new_($I$(24,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'classicIterator$', function () {
@@ -68,21 +63,21 @@ return this.elements.iterator$();
 });
 
 Clazz.newMeth(C$, 'vertexIterator$', function () {
-return Clazz.new_($I$(25), [this, null]);
+return Clazz.new_($I$(25,1),[this, null]);
 });
 
 Clazz.newMeth(C$, 'makeEdgeList$', function () {
-var listMaker=Clazz.new_($I$(26), [this, null]);
+var listMaker=Clazz.new_($I$(26,1),[this, null]);
 return listMaker.make$();
 });
 
 Clazz.newMeth(C$, 'connectedComponentIsCyclic$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint', function (endPoint) {
-var knownEndPoints=Clazz.new_($I$(8));
+var knownEndPoints=Clazz.new_($I$(8,1));
 var currentEndPoint=endPoint;
 while (true){
 if (knownEndPoints.contains$O(currentEndPoint)) {
 return true;
-}knownEndPoints.add$TE(currentEndPoint);
+}knownEndPoints.add$O(currentEndPoint);
 var previousEndPoint=currentEndPoint.getPreviousEndPoint$();
 if (previousEndPoint == null ) {
 return false;
@@ -101,12 +96,12 @@ n+=4;
 } else if (Clazz.instanceOf(element, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence")) {
 n+=2;
 }}
-var knownEndPoints=Clazz.new_($I$(8));
+var knownEndPoints=Clazz.new_($I$(8,1));
 var currentEndPoint=this.getFirstEndPoint$();
 while (true){
 if (knownEndPoints.contains$O(currentEndPoint)) {
 break;
-}knownEndPoints.add$TE(currentEndPoint);
+}knownEndPoints.add$O(currentEndPoint);
 var nextEndPoint=currentEndPoint.getNextEndPoint$();
 if (nextEndPoint == null ) {
 break;
@@ -118,25 +113,25 @@ return (knownEndPoints.size$() == n);
 
 Clazz.newMeth(C$, 'checkIsValidTemplate$', function () {
 if (this.isEmpty$()) {
-throw (Clazz.new_($I$(5).c$$S,["The template is empty."]));
+throw (Clazz.new_($I$(5,1).c$$S,["The template is empty."]));
 }if (!this.isConnected$()) {
-throw (Clazz.new_($I$(5).c$$S,["The template is a non-connected graph."]));
+throw (Clazz.new_($I$(5,1).c$$S,["The template is a non-connected graph."]));
 }if (this.connectedComponentIsCyclic$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint(this.getAnyEndPoint$())) {
-throw (Clazz.new_($I$(5).c$$S,["The template is cyclic."]));
+throw (Clazz.new_($I$(5,1).c$$S,["The template is cyclic."]));
 }});
 
 Clazz.newMeth(C$, 'toTree$', function () {
 this.computeIn1Is$();
-var pseudoKnotKiller=Clazz.new_($I$(27), [this, null]);
+var pseudoKnotKiller=Clazz.new_($I$(27,1),[this, null]);
 var removedHelixes=pseudoKnotKiller.removePseudoKnots$();
-var converter=Clazz.new_($I$(28).c$$java_util_Set, [this, null, removedHelixes]);
+var converter=Clazz.new_($I$(28,1).c$$java_util_Set,[this, null, removedHelixes]);
 return converter.convert$();
 });
 
 Clazz.newMeth(C$, 'toRNA$', function () {
 this.checkIsValidTemplate$();
-var str=Clazz.new_($I$(3));
-var helixes=Clazz.new_($I$(13));
+var str=Clazz.new_($I$(3,1));
+var helixes=Clazz.new_($I$(13,1));
 var iter=this.rnaIterator$();
 while (iter.hasNext$()){
 var element=iter.next$();
@@ -147,31 +142,31 @@ if (helixes.containsKey$O(helix)) {
 var firstBase=str.size$();
 var helixMembers=helixes.get$O(helix);
 for (var i=0; i < n; i++) {
-var indexOfAssociatedBase=(helixMembers.get$I(n - 1 - i )).intValue$();
-str.set$I$TE(indexOfAssociatedBase, new Integer(firstBase + i));
-str.add$TE(new Integer(indexOfAssociatedBase));
+var indexOfAssociatedBase=(helixMembers.get$I(n - 1 - i )).valueOf();
+str.set$I$O(indexOfAssociatedBase, new Integer(firstBase + i));
+str.add$O(new Integer(indexOfAssociatedBase));
 }
 } else {
 var firstBase=str.size$();
-var helixMembers=Clazz.new_($I$(3));
+var helixMembers=Clazz.new_($I$(3,1));
 for (var i=0; i < n; i++) {
-str.add$TE(new Integer(-1));
-helixMembers.add$TE(new Integer(firstBase + i));
+str.add$O(new Integer(-1));
+helixMembers.add$O(new Integer(firstBase + i));
 }
-helixes.put$TK$TV(helix, helixMembers);
+helixes.put$O$O(helix, helixMembers);
 }} else if (Clazz.instanceOf(element, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence")) {
 var sequence=element;
 var n=sequence.getLength$();
 for (var i=0; i < n; i++) {
-str.add$TE(new Integer(-1));
+str.add$O(new Integer(-1));
 }
 } else {
-throw (Clazz.new_($I$(5).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
+throw (Clazz.new_($I$(5,1).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
 }}
 var strAsArray=$I$(29).intArrayFromList$java_util_List(str);
 var seqAsArray=Clazz.array(String, [strAsArray.length]);
 $I$(30).fill$OA$O(seqAsArray, " ");
-var rna=Clazz.new_($I$(31));
+var rna=Clazz.new_($I$(31,1));
 try {
 rna.setRNA$SA$IA(seqAsArray, strAsArray);
 } catch (e) {
@@ -187,8 +182,8 @@ return rna;
 Clazz.newMeth(C$, 'toXMLFile$java_io_File', function (file) {
 try {
 var xmlDocument=this.toXMLDocument$();
-var source=Clazz.new_($I$(32).c$$org_w3c_dom_Node,[xmlDocument]);
-var result=Clazz.new_($I$(33).c$$java_io_File,[file]);
+var source=Clazz.new_($I$(32,1).c$$org_w3c_dom_Node,[xmlDocument]);
+var result=Clazz.new_($I$(33,1).c$$java_io_File,[file]);
 var transformer;
 transformer=$I$(34).newInstance$().newTransformer$();
 transformer.setOutputProperty$S$S("indent", "yes");
@@ -197,17 +192,17 @@ transformer.transform$javax_xml_transform_Source$javax_xml_transform_Result(sour
 if (Clazz.exceptionOf(e$$,"javax.xml.transform.TransformerConfigurationException")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(16).c$$S,["TransformerConfigurationException: " + e.getMessage$()]));
+throw (Clazz.new_(["TransformerConfigurationException: " + e.getMessage$()],$I$(16,1).c$$S));
 }
 } else if (Clazz.exceptionOf(e$$,"javax.xml.transform.TransformerFactoryConfigurationError")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(16).c$$S,["TransformerFactoryConfigurationError: " + e.getMessage$()]));
+throw (Clazz.new_(["TransformerFactoryConfigurationError: " + e.getMessage$()],$I$(16,1).c$$S));
 }
 } else if (Clazz.exceptionOf(e$$,"javax.xml.transform.TransformerException")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(16).c$$S,["TransformerException: " + e.getMessage$()]));
+throw (Clazz.new_(["TransformerException: " + e.getMessage$()],$I$(16,1).c$$S));
 }
 } else {
 throw e$$;
@@ -216,7 +211,7 @@ throw e$$;
 });
 
 Clazz.newMeth(C$, 'toXMLDocument$', function () {
-var converter=Clazz.new_($I$(35), [this, null]);
+var converter=Clazz.new_($I$(35,1),[this, null]);
 return converter.toXMLDocument$();
 });
 
@@ -231,17 +226,17 @@ return C$.fromXMLDocument$org_w3c_dom_Document(xmlDocument);
 if (Clazz.exceptionOf(e$$,"javax.xml.parsers.ParserConfigurationException")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(18).c$$S,["ParserConfigurationException: " + e.getMessage$()]));
+throw (Clazz.new_(["ParserConfigurationException: " + e.getMessage$()],$I$(18,1).c$$S));
 }
 } else if (Clazz.exceptionOf(e$$,"org.xml.sax.SAXException")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(18).c$$S,["SAXException: " + e.getMessage$()]));
+throw (Clazz.new_(["SAXException: " + e.getMessage$()],$I$(18,1).c$$S));
 }
 } else if (Clazz.exceptionOf(e$$,"java.io.IOException")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(18).c$$S,["IOException: " + e.getMessage$()]));
+throw (Clazz.new_(["IOException: " + e.getMessage$()],$I$(18,1).c$$S));
 }
 } else {
 throw e$$;
@@ -251,7 +246,7 @@ throw e$$;
 
 Clazz.newMeth(C$, 'fromXMLDocument$org_w3c_dom_Document', function (xmlDocument) {
 var template=Clazz.new_(C$);
-var loader=Clazz.new_($I$(36).c$$org_w3c_dom_Document, [template, null, xmlDocument]);
+var loader=Clazz.new_($I$(36,1).c$$org_w3c_dom_Document,[template, null, xmlDocument]);
 loader.load$();
 return template;
 }, 1);
@@ -259,7 +254,7 @@ return template;
 Clazz.newMeth(C$, 'computeIn1Is$', function () {
 this.checkIsValidTemplate$();
 var iter=this.vertexIterator$();
-var knownHelices=Clazz.new_($I$(8));
+var knownHelices=Clazz.new_($I$(8,1));
 while (iter.hasNext$()){
 var endPoint=iter.next$();
 var templateElement=endPoint.getElement$();
@@ -276,7 +271,7 @@ case $I$(1).OUT2:
 helix.setIn1Is$fr_orsay_lri_varna_models_templates_RNATemplate_In1Is($I$(37).IN1_IS_3PRIME);
 break;
 }
-knownHelices.add$TE(helix);
+knownHelices.add$O(helix);
 }}}
 });
 
@@ -288,22 +283,22 @@ return true;
 } else {
 return false;
 }});
+
+C$.$static$=function(){C$.$static$=0;
+C$.NEXT_ID=1;
+};
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "RNAIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "RNAIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.iter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.iter=this.this$0.vertexIterator$.apply(this.this$0, []);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['iter','java.util.Iterator']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return this.iter.hasNext$();
@@ -329,21 +324,17 @@ throw (Clazz.new_(Clazz.load('UnsupportedOperationException')));
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "VertexIterator", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "VertexIterator", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.util.Iterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.endpoint=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.endpoint=this.this$0.getFirstEndPoint$.apply(this.this$0, []);
-}, 1);
+},1);
+
+C$.$fields$=[['O',['endpoint','fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateElement.EdgeEndPoint']]]
 
 Clazz.newMeth(C$, 'hasNext$', function () {
 return (this.endpoint != null );
@@ -364,22 +355,21 @@ throw (Clazz.new_(Clazz.load('UnsupportedOperationException')));
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "MakeEdgeList", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "MakeEdgeList", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.list=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.list=Clazz.new_($I$(2));
-}, 1);
+this.list=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['O',['list','java.util.List']]]
 
 Clazz.newMeth(C$, 'addEdgeIfNecessary$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint', function (endPoint) {
 if (endPoint.isConnected$()) {
-this.list.add$TE(endPoint);
+this.list.add$O(endPoint);
 }}, p$1);
 
 Clazz.newMeth(C$, 'make$', function () {
@@ -398,59 +388,56 @@ return this.list;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "RemovePseudoKnots", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "RemovePseudoKnots", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.helixesSeq=null;
-this.helixesStruct=null;
-this.helixesStructWithoutPseudoKnots=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['helixesSeq','java.util.ArrayList','+helixesStruct','helixesStructWithoutPseudoKnots','int[]']]]
 
 Clazz.newMeth(C$, 'initArrays', function () {
-this.helixesSeq=Clazz.new_($I$(3));
-this.helixesStruct=Clazz.new_($I$(3));
-var knownHelixes=Clazz.new_($I$(4));
+this.helixesSeq=Clazz.new_($I$(3,1));
+this.helixesStruct=Clazz.new_($I$(3,1));
+var knownHelixes=Clazz.new_($I$(4,1));
 var iter=this.this$0.rnaIterator$.apply(this.this$0, []);
 while (iter.hasNext$()){
 var element=iter.next$();
 if (Clazz.instanceOf(element, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateHelix")) {
-this.helixesSeq.add$TE(element);
+this.helixesSeq.add$O(element);
 var index=this.helixesSeq.size$() - 1;
 if (knownHelixes.containsKey$O(element)) {
-var otherOccurenceIndex=(knownHelixes.get$O(element)).intValue$();
-this.helixesStruct.add$TE(new Integer(otherOccurenceIndex));
-if ((this.helixesStruct.get$I(otherOccurenceIndex)).intValue$() !== -1 ) {
-throw (Clazz.new_($I$(5).c$$S,["We met an helix 3 times. Is there a cycle?"]));
-}this.helixesStruct.set$I$TE(otherOccurenceIndex, new Integer(index));
+var otherOccurenceIndex=(knownHelixes.get$O(element)).valueOf();
+this.helixesStruct.add$O(new Integer(otherOccurenceIndex));
+if ((this.helixesStruct.get$I(otherOccurenceIndex)).valueOf() !== -1 ) {
+throw (Clazz.new_($I$(5,1).c$$S,["We met an helix 3 times. Is there a cycle?"]));
+}this.helixesStruct.set$I$O(otherOccurenceIndex, new Integer(index));
 } else {
-knownHelixes.put$TK$TV(element, new Integer(index));
-this.helixesStruct.add$TE(new Integer(-1));
+knownHelixes.put$O$O(element, new Integer(index));
+this.helixesStruct.add$O(new Integer(-1));
 }}}
 }, p$2);
 
 Clazz.newMeth(C$, 'isSelfCrossing', function () {
-var intervals=Clazz.new_($I$(6));
-intervals.add$TE(Clazz.new_($I$(7).c$$I$I,[0, this.helixesStruct.size$() - 1]));
+var intervals=Clazz.new_($I$(6,1));
+intervals.add$O(Clazz.new_([0, this.helixesStruct.size$() - 1],$I$(7,1).c$$I$I));
 while (!intervals.empty$()){
 var p=intervals.pop$();
 if (p.x <= p.y) {
-if ((this.helixesStruct.get$I(p.x)).intValue$() === -1 ) {
-intervals.push$TE(Clazz.new_($I$(7).c$$I$I,[p.x + 1, p.y]));
+if ((this.helixesStruct.get$I(p.x)).valueOf() === -1 ) {
+intervals.push$O(Clazz.new_($I$(7,1).c$$I$I,[p.x + 1, p.y]));
 } else {
 var i=p.x;
 var j=p.y;
-var k=(this.helixesStruct.get$I(i)).intValue$();
+var k=(this.helixesStruct.get$I(i)).valueOf();
 if ((k <= i) || (k > j) ) {
 return true;
 } else {
-intervals.push$TE(Clazz.new_($I$(7).c$$I$I,[i + 1, k - 1]));
-intervals.push$TE(Clazz.new_($I$(7).c$$I$I,[k + 1, j]));
+intervals.push$O(Clazz.new_($I$(7,1).c$$I$I,[i + 1, k - 1]));
+intervals.push$O(Clazz.new_($I$(7,1).c$$I$I,[k + 1, j]));
 }}}}
 return false;
 }, p$2);
@@ -459,7 +446,7 @@ Clazz.newMeth(C$, 'removePseudoKnotsAux', function () {
 if (!p$2.isSelfCrossing.apply(this, [])) {
 this.helixesStructWithoutPseudoKnots=Clazz.array(Integer.TYPE, [this.helixesStruct.size$()]);
 for (var i=0; i < this.helixesStructWithoutPseudoKnots.length; i++) {
-this.helixesStructWithoutPseudoKnots[i]=(this.helixesStruct.get$I(i)).intValue$();
+this.helixesStructWithoutPseudoKnots[i]=(this.helixesStruct.get$I(i)).valueOf();
 }
 } else {
 var length=this.helixesStruct.size$();
@@ -477,7 +464,7 @@ for (var i=0; i < length - n; i++) {
 var j=i + n;
 tab[i][j]=tab[i + 1][j];
 backtrack[i][j]=(-1|0);
-var k=(this.helixesStruct.get$I(i)).intValue$();
+var k=(this.helixesStruct.get$I(i)).valueOf();
 Clazz.assert(C$, this, function(){return k != -1});
 if ((k <= j) && (i < k) ) {
 var tmp=this.helixesSeq.get$I(i).getLength$();
@@ -490,31 +477,31 @@ tab[i][j]=(tmp|0);
 backtrack[i][j]=(k|0);
 }}}
 }
-var intervals=Clazz.new_($I$(6));
-intervals.add$TE(Clazz.new_($I$(7).c$$I$I,[0, length - 1]));
+var intervals=Clazz.new_($I$(6,1));
+intervals.add$O(Clazz.new_($I$(7,1).c$$I$I,[0, length - 1]));
 while (!intervals.empty$()){
 var p=intervals.pop$();
 if (p.x <= p.y) {
 if (backtrack[p.x][p.y] == -1) {
 result[p.x]=-1;
-intervals.push$TE(Clazz.new_($I$(7).c$$I$I,[p.x + 1, p.y]));
+intervals.push$O(Clazz.new_($I$(7,1).c$$I$I,[p.x + 1, p.y]));
 } else {
 var i=p.x;
 var j=p.y;
 var k=backtrack[i][j];
 result[i]=k;
 result[k]=i;
-intervals.push$TE(Clazz.new_($I$(7).c$$I$I,[i + 1, k - 1]));
-intervals.push$TE(Clazz.new_($I$(7).c$$I$I,[k + 1, j]));
+intervals.push$O(Clazz.new_($I$(7,1).c$$I$I,[i + 1, k - 1]));
+intervals.push$O(Clazz.new_($I$(7,1).c$$I$I,[k + 1, j]));
 }}}
 this.helixesStructWithoutPseudoKnots=result;
 }}, p$2);
 
 Clazz.newMeth(C$, 'makeSet', function () {
-var removedHelixes=Clazz.new_($I$(8));
+var removedHelixes=Clazz.new_($I$(8,1));
 for (var i=0; i < this.helixesStructWithoutPseudoKnots.length; i++) {
 if (this.helixesStructWithoutPseudoKnots[i] < 0) {
-removedHelixes.add$TE(this.helixesSeq.get$I(i));
+removedHelixes.add$O(this.helixesSeq.get$I(i));
 }}
 return removedHelixes;
 }, p$2);
@@ -524,35 +511,35 @@ p$2.initArrays.apply(this, []);
 p$2.removePseudoKnotsAux.apply(this, []);
 return p$2.makeSet.apply(this, []);
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "ConvertToTree", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "ConvertToTree", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.removedHelixes=null;
-this.iter=null;
-this.knownHelixes=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.iter=this.this$0.template.rnaIterator$();
-this.knownHelixes=Clazz.new_($I$(8));
-}, 1);
+this.knownHelixes=Clazz.new_($I$(8,1));
+},1);
+
+C$.$fields$=[['O',['removedHelixes','java.util.Set','iter','java.util.Iterator','knownHelixes','java.util.Set']]]
 
 Clazz.newMeth(C$, 'c$$java_util_Set', function (removedHelixes) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.removedHelixes=removedHelixes;
 }, 1);
 
 Clazz.newMeth(C$, 'convert$', function () {
-var root=Clazz.new_($I$(9));
-root.setValue$TT(null);
+var root=Clazz.new_($I$(9,1));
+root.setValue$O(null);
 p$3.makeChildren$fr_orsay_lri_varna_models_treealign_Tree.apply(this, [root]);
 return root;
 });
@@ -569,40 +556,40 @@ var firstPartOfHelix;
 if (this.knownHelixes.contains$O(helix)) {
 firstPartOfHelix=false;
 } else {
-this.knownHelixes.add$TE(helix);
+this.knownHelixes.add$O(helix);
 firstPartOfHelix=true;
 }var helixLength=helix.getLength$();
 if (helixLength < 1) {
-throw (Clazz.new_($I$(5).c$$S,["Helix length < 1"]));
+throw (Clazz.new_($I$(5,1).c$$S,["Helix length < 1"]));
 }var firstPosition=firstPartOfHelix ? 0 : helixLength;
 var afterLastPosition=firstPartOfHelix ? helixLength : 2 * helixLength;
 for (var i=firstPosition; i < afterLastPosition; i++) {
-var value=Clazz.new_($I$(10));
+var value=Clazz.new_($I$(10,1));
 value.setHelix$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix(helix);
 value.setPositionInHelix$I(i);
-var child=Clazz.new_($I$(9));
-child.setValue$TT(value);
-father.getChildren$().add$TE(child);
+var child=Clazz.new_($I$(9,1));
+child.setValue$O(value);
+father.getChildren$().add$O(child);
 }
 } else {
 if (this.knownHelixes.contains$O(helix)) {
 if ((!(Clazz.instanceOf(father.getValue$(), "fr.orsay.lri.varna.models.templates.RNANodeValueTemplateBasePair"))) || (father.getValue$()).getHelix$() !== helix  ) {
-throw (Clazz.new_($I$(5).c$$S,["Unexpected helix. Looks like there still are pseudoknots even after we removed them so something is wrong about the template."]));
+throw (Clazz.new_($I$(5,1).c$$S,["Unexpected helix. Looks like there still are pseudoknots even after we removed them so something is wrong about the template."]));
 } else {
 return;
 }} else {
-this.knownHelixes.add$TE(helix);
+this.knownHelixes.add$O(helix);
 var helixLength=helix.getLength$();
 if (helixLength < 1) {
-throw (Clazz.new_($I$(5).c$$S,["Helix length < 1"]));
+throw (Clazz.new_($I$(5,1).c$$S,["Helix length < 1"]));
 }var lastChild=father;
 for (var i=0; i < helixLength; i++) {
-var value=Clazz.new_($I$(11));
+var value=Clazz.new_($I$(11,1));
 value.setHelix$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateHelix(helix);
 value.setPositionInHelix$I(i);
-var child=Clazz.new_($I$(9));
-child.setValue$TT(value);
-lastChild.getChildren$().add$TE(child);
+var child=Clazz.new_($I$(9,1));
+child.setValue$O(value);
+lastChild.getChildren$().add$O(child);
 lastChild=child;
 }
 p$3.makeChildren$fr_orsay_lri_varna_models_treealign_Tree.apply(this, [lastChild]);
@@ -610,20 +597,20 @@ p$3.makeChildren$fr_orsay_lri_varna_models_treealign_Tree.apply(this, [lastChild
 var sequence=element;
 var seqLength=sequence.getLength$();
 if (seqLength < 1) {
-throw (Clazz.new_($I$(5).c$$S,["Non-paired sequence length < 1"]));
-}var value=Clazz.new_($I$(12));
+throw (Clazz.new_($I$(5,1).c$$S,["Non-paired sequence length < 1"]));
+}var value=Clazz.new_($I$(12,1));
 value.setSequence$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateUnpairedSequence(sequence);
-var child=Clazz.new_($I$(9));
-child.setValue$TT(value);
-children.add$TE(child);
+var child=Clazz.new_($I$(9,1));
+child.setValue$O(value);
+children.add$O(child);
 } else {
-throw (Clazz.new_($I$(5).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
+throw (Clazz.new_($I$(5,1).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
 }} catch (e) {
 if (Clazz.exceptionOf(e,"java.util.NoSuchElementException")){
 if (father.getValue$() == null ) {
 return;
 } else {
-throw (Clazz.new_($I$(5).c$$S,["Unexpected end of template endpoint list."]));
+throw (Clazz.new_($I$(5,1).c$$S,["Unexpected end of template endpoint list."]));
 }} else {
 throw e;
 }
@@ -634,20 +621,17 @@ throw e;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "ConvertToXml", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "ConvertToXml", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.elementNames=null;
-this.connectionsXmlElement=null;
-this.document=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.elementNames=Clazz.new_($I$(13));
-}, 1);
+this.elementNames=Clazz.new_($I$(13,1));
+},1);
+
+C$.$fields$=[['O',['elementNames','java.util.Map','connectionsXmlElement','org.w3c.dom.Element','document','org.w3c.dom.Document']]]
 
 Clazz.newMeth(C$, 'addConnectionIfNecessary$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint', function (endPoint) {
 if (endPoint != null  && endPoint.isConnected$() ) {
@@ -687,15 +671,15 @@ for (var templateElement, $templateElement = this.this$0.elements.iterator$(); $
 if (Clazz.instanceOf(templateElement, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateHelix")) {
 var helix=templateElement;
 if (!this.elementNames.containsKey$O(helix)) {
-this.elementNames.put$TK$TV(helix, "H ID " + nextHelix);
+this.elementNames.put$O$O(helix, "H ID " + nextHelix);
 nextHelix++;
 }} else if (Clazz.instanceOf(templateElement, "fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateUnpairedSequence")) {
 var sequence=templateElement;
 if (!this.elementNames.containsKey$O(sequence)) {
-this.elementNames.put$TK$TV(sequence, "S ID " + nextNonPairedSequence);
+this.elementNames.put$O$O(sequence, "S ID " + nextNonPairedSequence);
 nextNonPairedSequence++;
 }} else {
-throw (Clazz.new_($I$(5).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
+throw (Clazz.new_($I$(5,1).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
 }}
 }for (var templateElement, $templateElement = this.this$0.elements.iterator$(); $templateElement.hasNext$()&&((templateElement=($templateElement.next$())),1);) {
 var elementXmlName=this.elementNames.get$O(templateElement);
@@ -705,7 +689,7 @@ var helix=templateElement;
 xmlElement=this.document.createElement$S("helix");
 xmlElement.setAttribute$S$S("id", elementXmlName);
 xmlElement.setAttribute$S$S("length", Integer.toString$I(helix.getLength$()));
-xmlElement.setAttribute$S$S("flipped", $I$(15).toString$Z(helix.isFlipped$()));
+xmlElement.setAttribute$S$S("flipped", $I$(15,"toString$Z",[helix.isFlipped$()]));
 if (helix.hasCaption$()) {
 xmlElement.setAttribute$S$S("caption", helix.getCaption$());
 }{
@@ -747,13 +731,13 @@ outTangentVectorXmlElement.setAttribute$S$S("length", Double.toString$D(sequence
 xmlElement.appendChild$org_w3c_dom_Node(outTangentVectorXmlElement);
 }p$4.addConnectionIfNecessary$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint.apply(this, [sequence.getOut$()]);
 } else {
-throw (Clazz.new_($I$(5).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
+throw (Clazz.new_($I$(5,1).c$$S,["We have an endpoint which is neither an helix nor a sequence. What is that?"]));
 }elementsXmlElement.appendChild$org_w3c_dom_Node(xmlElement);
 }
 return this.document;
 } catch (e) {
 if (Clazz.exceptionOf(e,"javax.xml.parsers.ParserConfigurationException")){
-throw (Clazz.new_($I$(16).c$$S,["ParserConfigurationException: " + e.getMessage$()]));
+throw (Clazz.new_(["ParserConfigurationException: " + e.getMessage$()],$I$(16,1).c$$S));
 } else {
 throw e;
 }
@@ -763,27 +747,25 @@ throw e;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "LoadFromXml", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "LoadFromXml", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.xmlDocument=null;
-this.elementNames=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.elementNames=Clazz.new_($I$(13));
-}, 1);
+this.elementNames=Clazz.new_($I$(13,1));
+},1);
+
+C$.$fields$=[['O',['xmlDocument','org.w3c.dom.Document','elementNames','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$$org_w3c_dom_Document', function (xmlDocument) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.xmlDocument=xmlDocument;
 }, 1);
 
 Clazz.newMeth(C$, 'pointFromXml$org_w3c_dom_Element', function (xmlPoint) {
-var point=Clazz.new_($I$(17));
+var point=Clazz.new_($I$(17,1));
 point.x=Double.parseDouble$S(xmlPoint.getAttribute$S("x"));
 point.y=Double.parseDouble$S(xmlPoint.getAttribute$S("y"));
 return point;
@@ -799,16 +781,16 @@ return Double.parseDouble$S(xmlVector.getAttribute$S("angle"));
 
 Clazz.newMeth(C$, 'endPointFromXml$org_w3c_dom_Element', function (xmlEdgeEndPoint) {
 var elementId=xmlEdgeEndPoint.getAttribute$S("endpoint");
-if (elementId == null  || elementId == "" ) throw (Clazz.new_($I$(18).c$$S,["Missing endpoint attribute on " + xmlEdgeEndPoint]));
+if (elementId == null  || elementId === ""  ) throw (Clazz.new_($I$(18,1).c$$S,["Missing endpoint attribute on " + xmlEdgeEndPoint]));
 var positionOnElement=xmlEdgeEndPoint.getAttribute$S("position");
-if (positionOnElement == null  || positionOnElement == "" ) throw (Clazz.new_($I$(18).c$$S,["Missing position attribute on " + xmlEdgeEndPoint]));
+if (positionOnElement == null  || positionOnElement === ""  ) throw (Clazz.new_($I$(18,1).c$$S,["Missing position attribute on " + xmlEdgeEndPoint]));
 if (this.elementNames.containsKey$O(elementId)) {
 var templateElement=this.elementNames.get$O(elementId);
 var relativePosition=$I$(1).valueOf$S(positionOnElement);
-if (relativePosition == null ) throw (Clazz.new_($I$(18).c$$S,["Could not compute relativePosition"]));
+if (relativePosition == null ) throw (Clazz.new_($I$(18,1).c$$S,["Could not compute relativePosition"]));
 return templateElement.getEndPointFromPosition$fr_orsay_lri_varna_models_templates_RNATemplate_EdgeEndPointPosition(relativePosition);
 } else {
-throw (Clazz.new_($I$(18).c$$S,["Edge is connected on unkown element: " + elementId]));
+throw (Clazz.new_($I$(18,1).c$$S,["Edge is connected on unkown element: " + elementId]));
 }}, p$5);
 
 Clazz.newMeth(C$, 'connectErrMsg$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$S', function (v1, v2, reason) {
@@ -817,23 +799,23 @@ return "Error while connecting\n" + v1.toString() + " to\n" + v2.toString() + " 
 
 Clazz.newMeth(C$, 'connect$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint', function (v1, v2) {
 if (v1 == null  || v2 == null  ) {
-throw (Clazz.new_($I$(18).c$$S,["Invalid edge: missing endpoint\n v1 = " + v1 + "\n v2 = " + v2 ]));
+throw (Clazz.new_(["Invalid edge: missing endpoint\n v1 = " + v1 + "\n v2 = " + v2 ],$I$(18,1).c$$S));
 }if (v2.isConnected$()) {
-throw (Clazz.new_($I$(18).c$$S,[p$5.connectErrMsg$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$S.apply(this, [v1, v2, "Second vertex is already connected to " + v2.getOtherElement$().toString()])]));
+throw (Clazz.new_([p$5.connectErrMsg$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$S.apply(this, [v1, v2, "Second vertex is already connected to " + v2.getOtherElement$().toString()])],$I$(18,1).c$$S));
 }if (v1.isConnected$()) {
-throw (Clazz.new_($I$(18).c$$S,[p$5.connectErrMsg$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$S.apply(this, [v1, v2, "First vertex is already connected to " + v1.getOtherElement$().toString()])]));
+throw (Clazz.new_([p$5.connectErrMsg$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$S.apply(this, [v1, v2, "First vertex is already connected to " + v1.getOtherElement$().toString()])],$I$(18,1).c$$S));
 }try {
 v1.connectTo$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint(v2);
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"fr.orsay.lri.varna.exceptions.ExceptionEdgeEndpointAlreadyConnected")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(18).c$$S,["A vertex is on two edges at the same time: " + e.getMessage$()]));
+throw (Clazz.new_(["A vertex is on two edges at the same time: " + e.getMessage$()],$I$(18,1).c$$S));
 }
 } else if (Clazz.exceptionOf(e$$,"fr.orsay.lri.varna.exceptions.ExceptionInvalidRNATemplate")){
 var e = e$$;
 {
-throw (Clazz.new_($I$(18).c$$S,["ExceptionInvalidRNATemplate: " + e.getMessage$()]));
+throw (Clazz.new_(["ExceptionInvalidRNATemplate: " + e.getMessage$()],$I$(18,1).c$$S));
 }
 } else {
 throw e$$;
@@ -850,43 +832,43 @@ var xmlElementsChild=xmlElementsChildren.item$I(i);
 if (Clazz.instanceOf(xmlElementsChild, "org.w3c.dom.Element")) {
 var xmlTemplateElement=xmlElementsChild;
 var tagName=xmlTemplateElement.getTagName$();
-if (tagName == "helix") {
-var helix=Clazz.new_($I$(19).c$$S, [this, null, xmlTemplateElement.getAttribute$S("id")]);
-helix.setFlipped$Z($I$(15).parseBoolean$S(xmlTemplateElement.getAttribute$S("flipped")));
+if (tagName === "helix" ) {
+var helix=Clazz.new_([this, null, xmlTemplateElement.getAttribute$S("id")],$I$(19,1).c$$S);
+helix.setFlipped$Z($I$(15,"parseBoolean$S",[xmlTemplateElement.getAttribute$S("flipped")]));
 helix.setLength$I(Integer.parseInt$S(xmlTemplateElement.getAttribute$S("length")));
 if (xmlTemplateElement.hasAttribute$S("caption")) {
 helix.setCaption$S(xmlTemplateElement.getAttribute$S("caption"));
-}this.elementNames.put$TK$TV(xmlTemplateElement.getAttribute$S("id"), helix);
+}this.elementNames.put$O$O(xmlTemplateElement.getAttribute$S("id"), helix);
 var xmlHelixChildren=xmlTemplateElement.getChildNodes$();
 for (var j=0; j < xmlHelixChildren.getLength$(); j++) {
 var xmlHelixChild=xmlHelixChildren.item$I(j);
 if (Clazz.instanceOf(xmlHelixChild, "org.w3c.dom.Element")) {
 var xmlHelixChildElement=xmlHelixChild;
 var helixChildTagName=xmlHelixChildElement.getTagName$();
-if (helixChildTagName == "startPosition") {
+if (helixChildTagName === "startPosition" ) {
 helix.setStartPosition$java_awt_geom_Point2D_Double(p$5.pointFromXml$org_w3c_dom_Element.apply(this, [xmlHelixChildElement]));
-} else if (helixChildTagName == "endPosition") {
+} else if (helixChildTagName === "endPosition" ) {
 helix.setEndPosition$java_awt_geom_Point2D_Double(p$5.pointFromXml$org_w3c_dom_Element.apply(this, [xmlHelixChildElement]));
 }}}
-} else if (tagName == "sequence") {
-var sequence=Clazz.new_($I$(20).c$$S, [this, null, xmlTemplateElement.getAttribute$S("id")]);
+} else if (tagName === "sequence" ) {
+var sequence=Clazz.new_([this, null, xmlTemplateElement.getAttribute$S("id")],$I$(20,1).c$$S);
 sequence.setLength$I(Integer.parseInt$S(xmlTemplateElement.getAttribute$S("length")));
-this.elementNames.put$TK$TV(xmlTemplateElement.getAttribute$S("id"), sequence);
+this.elementNames.put$O$O(xmlTemplateElement.getAttribute$S("id"), sequence);
 var xmlSequenceChildren=xmlTemplateElement.getChildNodes$();
 for (var j=0; j < xmlSequenceChildren.getLength$(); j++) {
 var xmlSequenceChild=xmlSequenceChildren.item$I(j);
 if (Clazz.instanceOf(xmlSequenceChild, "org.w3c.dom.Element")) {
 var xmlSequenceChildElement=xmlSequenceChild;
 var sequenceChildTagName=xmlSequenceChildElement.getTagName$();
-if (sequenceChildTagName == "inTangentVector") {
+if (sequenceChildTagName === "inTangentVector" ) {
 sequence.setInTangentVectorLength$D(p$5.vectorLengthFromXml$org_w3c_dom_Element.apply(this, [xmlSequenceChildElement]));
 sequence.setInTangentVectorAngle$D(p$5.vectorAngleFromXml$org_w3c_dom_Element.apply(this, [xmlSequenceChildElement]));
-} else if (sequenceChildTagName == "outTangentVector") {
+} else if (sequenceChildTagName === "outTangentVector" ) {
 sequence.setOutTangentVectorLength$D(p$5.vectorLengthFromXml$org_w3c_dom_Element.apply(this, [xmlSequenceChildElement]));
 sequence.setOutTangentVectorAngle$D(p$5.vectorAngleFromXml$org_w3c_dom_Element.apply(this, [xmlSequenceChildElement]));
-} else if (sequenceChildTagName == "vertex5") {
+} else if (sequenceChildTagName === "vertex5" ) {
 sequence.setVertex5$java_awt_geom_Point2D_Double(p$5.pointFromXml$org_w3c_dom_Element.apply(this, [xmlSequenceChildElement]));
-} else if (sequenceChildTagName == "vertex3") {
+} else if (sequenceChildTagName === "vertex3" ) {
 sequence.setVertex3$java_awt_geom_Point2D_Double(p$5.pointFromXml$org_w3c_dom_Element.apply(this, [xmlSequenceChildElement]));
 }}}
 }}}
@@ -897,7 +879,7 @@ for (var i=0; i < xmlEdgesChildren.getLength$(); i++) {
 var xmlEdgesChild=xmlEdgesChildren.item$I(i);
 if (Clazz.instanceOf(xmlEdgesChild, "org.w3c.dom.Element")) {
 var xmlTemplateEdge=xmlEdgesChild;
-if (xmlTemplateEdge.getTagName$() == "edge") {
+if (xmlTemplateEdge.getTagName$() === "edge" ) {
 var v1=null;
 var v2=null;
 var xmlEdgeChildren=xmlTemplateEdge.getChildNodes$();
@@ -906,13 +888,13 @@ var xmlEdgeChild=xmlEdgeChildren.item$I(j);
 if (Clazz.instanceOf(xmlEdgeChild, "org.w3c.dom.Element")) {
 var xmlEdgeChildElement=xmlEdgeChild;
 var edgeChildTagName=xmlEdgeChildElement.getTagName$();
-if (edgeChildTagName == "from") {
+if (edgeChildTagName === "from" ) {
 v1=p$5.endPointFromXml$org_w3c_dom_Element.apply(this, [xmlEdgeChildElement]);
-} else if (edgeChildTagName == "to") {
+} else if (edgeChildTagName === "to" ) {
 v2=p$5.endPointFromXml$org_w3c_dom_Element.apply(this, [xmlEdgeChildElement]);
 }}}
-if (v1 == null ) throw (Clazz.new_($I$(18).c$$S,["Invalid edge: missing \"from\" declaration"]));
-if (v2 == null ) throw (Clazz.new_($I$(18).c$$S,["Invalid edge: missing \"to\" declaration"]));
+if (v1 == null ) throw (Clazz.new_($I$(18,1).c$$S,["Invalid edge: missing \"from\" declaration"]));
+if (v2 == null ) throw (Clazz.new_($I$(18,1).c$$S,["Invalid edge: missing \"to\" declaration"]));
 p$5.connect$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint.apply(this, [v1, v2]);
 }}}
 }});
@@ -920,18 +902,20 @@ p$5.connect$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_E
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "In1Is", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.RNATemplate, "In1Is", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "IN1_IS_5PRIME", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "IN1_IS_3PRIME", 1, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -939,20 +923,22 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "EdgeEndPointPosition", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.RNATemplate, "EdgeEndPointPosition", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "IN1", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "IN2", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "OUT1", 2, []);
 Clazz.newEnumConst($vals, C$.c$, "OUT2", 3, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -960,28 +946,27 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "RNATemplateElement", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "RNATemplateElement", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
+C$.$classes$=[['EdgeEndPoint',1]];
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._id=0;
-this.element=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._id=$I$(22).NEXT_ID++;
 this.element=this;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['_id'],'O',['element','fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateElement']]]
 
 Clazz.newMeth(C$, 'getName$', function () {
 return "RNATemplate" + this._id;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.this$0.elements.add$TE(this);
+;C$.$init$.apply(this);
+this.this$0.elements.add$O(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getParentTemplate$', function () {
@@ -998,20 +983,19 @@ var otherEndPoint=otherElement.getEndPointFromPosition$fr_orsay_lri_varna_models
 this.connectTo$fr_orsay_lri_varna_models_templates_RNATemplate_EdgeEndPointPosition$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint(positionHere, otherEndPoint);
 });
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate.RNATemplateElement, "EdgeEndPoint", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate.RNATemplateElement, "EdgeEndPoint", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 });
 
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.otherEndPoint=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['otherEndPoint','fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateElement.EdgeEndPoint']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'getNextEndPoint$', function () {
@@ -1050,9 +1034,9 @@ return (this.otherEndPoint != null );
 
 Clazz.newMeth(C$, 'connectTo$fr_orsay_lri_varna_models_templates_RNATemplate_RNATemplateElement_EdgeEndPoint', function (otherEndPoint) {
 if (this.otherEndPoint != null  || otherEndPoint.otherEndPoint != null  ) {
-throw (Clazz.new_($I$(21)));
+throw (Clazz.new_($I$(21,1)));
 }if (this.b$['fr.orsay.lri.varna.models.templates.RNATemplate'].template !== otherEndPoint.getElement$().getParentTemplate$() ) {
-throw (Clazz.new_($I$(5).c$$S,["Elements from different templates cannot be connected with each other."]));
+throw (Clazz.new_($I$(5,1).c$$S,["Elements from different templates cannot be connected with each other."]));
 }this.otherEndPoint=otherEndPoint;
 otherEndPoint.otherEndPoint=this;
 });
@@ -1063,33 +1047,19 @@ return "Edge endpoint on element " + this.this$0.element.toString() + " at posit
 })()
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "RNATemplateHelix", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "RNATemplateHelix", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateElement']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.length=0;
-this.startPosition=null;
-this.endPosition=null;
-this.flipped=false;
-this.in1Is=null;
-this.caption=null;
-this.in1=null;
-this.out1=null;
-this.in2=null;
-this.out2=null;
-this._name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.flipped=false;
 this.in1Is=null;
 this.caption=null;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['flipped'],'I',['length'],'S',['caption','_name'],'O',['startPosition','java.awt.geom.Point2D.Double','+endPosition','in1Is','fr.orsay.lri.varna.models.templates.RNATemplate.In1Is','in1','fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateElement.EdgeEndPoint','+out1','+in2','+out2']]]
 
 Clazz.newMeth(C$, 'isFlipped$', function () {
 return this.flipped;
@@ -1120,11 +1090,11 @@ return this.caption != null ;
 });
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-Clazz.super_(C$, this,1);
-this.in1=Clazz.new_($I$(23), [this, null]);
-this.out1=Clazz.new_($I$(23), [this, null]);
-this.in2=Clazz.new_($I$(23), [this, null]);
-this.out2=Clazz.new_($I$(23), [this, null]);
+Clazz.super_(C$, this);
+this.in1=Clazz.new_($I$(23,1),[this, null]);
+this.out1=Clazz.new_($I$(23,1),[this, null]);
+this.in2=Clazz.new_($I$(23,1),[this, null]);
+this.out2=Clazz.new_($I$(23,1),[this, null]);
 this._name=name;
 }, 1);
 
@@ -1236,33 +1206,20 @@ return null;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.RNATemplate, "RNATemplateUnpairedSequence", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.RNATemplate, "RNATemplateUnpairedSequence", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, ['fr.orsay.lri.varna.models.templates.RNATemplate','.RNATemplateElement']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.length=0;
-this.inTangentVectorAngle=0;
-this.inTangentVectorLength=0;
-this.outTangentVectorAngle=0;
-this.outTangentVectorLength=0;
-this.vertex5=null;
-this.vertex3=null;
-this.$in=null;
-this.out=null;
-this._name=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.inTangentVectorAngle=1.5707963267948966;
 this.inTangentVectorLength=100.0;
 this.outTangentVectorAngle=1.5707963267948966;
 this.outTangentVectorLength=100.0;
-}, 1);
+},1);
+
+C$.$fields$=[['D',['inTangentVectorAngle','inTangentVectorLength','outTangentVectorAngle','outTangentVectorLength'],'I',['length'],'S',['_name'],'O',['vertex5','java.awt.geom.Point2D.Double','+vertex3','$in','fr.orsay.lri.varna.models.templates.RNATemplate.RNATemplateElement.EdgeEndPoint','+out']]]
 
 Clazz.newMeth(C$, 'getVertex5$', function () {
 return this.vertex5;
@@ -1281,9 +1238,9 @@ this.vertex3=vertex3;
 });
 
 Clazz.newMeth(C$, 'c$$S', function (name) {
-Clazz.super_(C$, this,1);
-this.$in=Clazz.new_($I$(23), [this, null]);
-this.out=Clazz.new_($I$(23), [this, null]);
+Clazz.super_(C$, this);
+this.$in=Clazz.new_($I$(23,1),[this, null]);
+this.out=Clazz.new_($I$(23,1),[this, null]);
 this._name=name;
 }, 1);
 
@@ -1391,4 +1348,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:46 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:22 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

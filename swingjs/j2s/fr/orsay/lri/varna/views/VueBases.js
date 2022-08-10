@@ -1,27 +1,17 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.views"),p$1={},I$=[[0,'java.util.ArrayList','java.util.Hashtable','java.awt.GridLayout','fr.orsay.lri.varna.models.BaseList','fr.orsay.lri.varna.components.BaseTableModel','javax.swing.JTable','java.awt.Dimension','javax.swing.JScrollPane','java.awt.Color','fr.orsay.lri.varna.components.ColorRenderer','fr.orsay.lri.varna.components.BaseSpecialColorEditor','javax.swing.JOptionPane']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VueBases", null, 'javax.swing.JPanel');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.views"),p$1={},I$=[[0,'java.util.ArrayList','java.util.Hashtable','java.awt.GridLayout','fr.orsay.lri.varna.models.BaseList','fr.orsay.lri.varna.components.BaseTableModel','javax.swing.JTable','java.awt.Dimension','javax.swing.JScrollPane','java.awt.Color','fr.orsay.lri.varna.components.ColorRenderer','fr.orsay.lri.varna.components.BaseSpecialColorEditor','javax.swing.JOptionPane']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VueBases", null, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._mode=0;
-this._vp=null;
-this.data=null;
-this.revdata=null;
-this.table=null;
-this.specialTableModel=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.data=Clazz.new_($I$(1));
-this.revdata=Clazz.new_($I$(2));
-}, 1);
+this.data=Clazz.new_($I$(1,1));
+this.revdata=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['I',['_mode'],'O',['_vp','fr.orsay.lri.varna.VARNAPanel','data','java.util.ArrayList','revdata','java.util.Hashtable','table','javax.swing.JTable','specialTableModel','fr.orsay.lri.varna.components.BaseTableModel']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_VARNAPanel$I', function (vp, mode) {
-C$.superclazz.c$$java_awt_LayoutManager.apply(this, [Clazz.new_($I$(3).c$$I$I,[1, 0])]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_LayoutManager.apply(this,[Clazz.new_($I$(3,1).c$$I$I,[1, 0])]);C$.$init$.apply(this);
 this._vp=vp;
 switch (mode) {
 case (1):
@@ -43,9 +33,9 @@ break;
 
 Clazz.newMeth(C$, 'locateOrAddList$S', function (caption) {
 if (!this.revdata.containsKey$O(caption)) {
-var mbl=Clazz.new_($I$(4).c$$S,[caption]);
-this.revdata.put$TK$TV(caption, mbl);
-this.data.add$TE(mbl);
+var mbl=Clazz.new_($I$(4,1).c$$S,[caption]);
+this.revdata.put$O$O(caption, mbl);
+this.data.add$O(mbl);
 }return this.revdata.get$O(caption);
 }, p$1);
 
@@ -84,26 +74,25 @@ p$1.createView.apply(this, []);
 }, p$1);
 
 Clazz.newMeth(C$, 'createView', function () {
-this.specialTableModel=Clazz.new_($I$(5).c$$java_util_ArrayList,[this.data]);
-this.table=Clazz.new_($I$(6).c$$javax_swing_table_TableModel,[this.specialTableModel]);
-this.table.setPreferredScrollableViewportSize$java_awt_Dimension(Clazz.new_($I$(7).c$$I$I,[500, 300]));
-var scrollPane=Clazz.new_($I$(8).c$$java_awt_Component,[this.table]);
-this.table.setDefaultRenderer$Class$javax_swing_table_TableCellRenderer(Clazz.getClass($I$(9)), Clazz.new_($I$(10).c$$Z,[true]));
-this.table.setDefaultEditor$Class$javax_swing_table_TableCellEditor(Clazz.getClass($I$(9)), Clazz.new_($I$(11).c$$fr_orsay_lri_varna_views_VueBases,[this]));
+this.specialTableModel=Clazz.new_($I$(5,1).c$$java_util_ArrayList,[this.data]);
+this.table=Clazz.new_($I$(6,1).c$$javax_swing_table_TableModel,[this.specialTableModel]);
+this.table.setPreferredScrollableViewportSize$java_awt_Dimension(Clazz.new_($I$(7,1).c$$I$I,[500, 300]));
+var scrollPane=Clazz.new_($I$(8,1).c$$java_awt_Component,[this.table]);
+this.table.setDefaultRenderer$Class$javax_swing_table_TableCellRenderer(Clazz.getClass($I$(9)), Clazz.new_($I$(10,1).c$$Z,[true]));
+this.table.setDefaultEditor$Class$javax_swing_table_TableCellEditor(Clazz.getClass($I$(9)), Clazz.new_($I$(11,1).c$$fr_orsay_lri_varna_views_VueBases,[this]));
 this.specialTableModel.addTableModelListener$javax_swing_event_TableModelListener(((P$.VueBases$1||
-(function(){var C$=Clazz.newClass(P$, "VueBases$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.TableModelListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "VueBases$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.TableModelListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['tableChanged$javax_swing_event_TableModelEvent','tableChanged$'], function (e) {
+Clazz.newMeth(C$, 'tableChanged$javax_swing_event_TableModelEvent', function (e) {
 this.b$['fr.orsay.lri.varna.views.VueBases']._vp.repaint$();
 });
 })()
-), Clazz.new_(P$.VueBases$1.$init$, [this, null])));
+), Clazz.new_(P$.VueBases$1.$init$,[this, null])));
 this.add$java_awt_Component(scrollPane);
 this.UIvueBases$();
 }, p$1);
@@ -148,4 +137,4 @@ this.specialTableModel=specialTableModel;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:47 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:23 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

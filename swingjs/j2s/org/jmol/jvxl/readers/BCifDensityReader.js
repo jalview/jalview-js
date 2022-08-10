@@ -1,35 +1,26 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.AU','java.io.BufferedInputStream','java.io.ByteArrayInputStream','javajs.util.P3','javajs.util.MessagePackReader','javajs.util.BC','org.jmol.util.Logger','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BCifDensityReader", null, 'org.jmol.jvxl.readers.MapFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.AU','java.io.BufferedInputStream','java.io.ByteArrayInputStream','javajs.util.P3','javajs.util.MessagePackReader','javajs.util.BC','org.jmol.util.Logger','javajs.util.SB']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BCifDensityReader", null, 'org.jmol.jvxl.readers.MapFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.pt=0;
-this.checkSum=0;
-this.values=null;
-this.cifData=null;
-this.thisData=null;
-this.isDiff=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isDiff'],'F',['checkSum'],'I',['pt'],'O',['values','float[]','cifData','java.util.Map','+thisData']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'getCifData$S$O', function (fileName, data) {
 this.binarydoc=this.newBinaryDocument$();
-if ($I$(1).isAB$O(data)) this.binarydoc.setStream$java_io_BufferedInputStream$Z(Clazz.new_($I$(2).c$$java_io_InputStream,[Clazz.new_($I$(3).c$$BA,[data])]), true);
+if ($I$(1).isAB$O(data)) this.binarydoc.setStream$java_io_BufferedInputStream$Z(Clazz.new_([Clazz.new_($I$(3,1).c$$BA,[data])],$I$(2,1).c$$java_io_InputStream), true);
  else this.setStream$S$Z(fileName, true);
 this.nSurfaces=1;
 });
 
 Clazz.newMeth(C$, 'readCifP3$S$javajs_util_P3', function (key, p3) {
-if (p3 == null ) p3=Clazz.new_($I$(4));
+if (p3 == null ) p3=Clazz.new_($I$(4,1));
 var x=this.getCifFloat$S(key + "[0]");
 if (Float.isNaN$F(x)) {
 p3.x=NaN;
@@ -42,7 +33,7 @@ p3.z=this.getCifFloat$S(key + "[2]");
 
 Clazz.newMeth(C$, 'getCifMap$S', function (type) {
 if (this.cifData == null ) try {
-this.cifData=(Clazz.new_($I$(5).c$$javajs_api_GenericBinaryDocumentReader$Z,[this.binarydoc, true])).readMap$();
+this.cifData=(Clazz.new_($I$(5,1).c$$javajs_api_GenericBinaryDocumentReader$Z,[this.binarydoc, true])).readMap$();
 System.out.println$S("BCifDensityReader BCIF encoder " + this.cifData.get$O("encoder") + " BCIF version " + this.cifData.get$O("version") );
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -62,7 +53,7 @@ var catName=cat.get$O("name");
 var columns=cat.get$O("columns");
 for (var k=columns.length; --k >= 0; ) {
 var col=columns[k];
-map.put$TK$TV(catName + "_" + col.get$O("name") , col.get$O("data"));
+map.put$O$O(catName + "_" + col.get$O("name") , col.get$O("data"));
 }
 }
 map.remove$O("categories");
@@ -180,8 +171,8 @@ var sigma=(this.params.sigma < 0  || Float.isNaN$F(this.params.sigma)  ? 1 : thi
 this.dmean=this.getCifFloat$S("_volume_data_3d_info_mean_sampled");
 var rmsDeviation=this.getCifFloat$S("_volume_data_3d_info_sigma_sampled");
 this.params.cutoff=rmsDeviation * sigma + this.dmean;
-$I$(7).info$S("Cutoff set to (mean + rmsDeviation*" + new Float(sigma).toString() + " = " + new Float(this.params.cutoff).toString() + ")\n" );
-}this.jvxlFileHeaderBuffer=Clazz.new_($I$(8));
+$I$(7,"info$S",["Cutoff set to (mean + rmsDeviation*" + new Float(sigma).toString() + " = " + new Float(this.params.cutoff).toString() + ")\n" ]);
+}this.jvxlFileHeaderBuffer=Clazz.new_($I$(8,1));
 this.jvxlFileHeaderBuffer.append$S("CifDensity reader\n");
 this.jvxlFileHeaderBuffer.append$S("see http://www.ebi.ac.uk/pdbe/densities/x-ray/1cbs/dbox/\n");
 });
@@ -214,4 +205,4 @@ System.out.println$S("CifDensityReader checkSum=" + new Float(this.checkSum).toS
 C$.superclazz.prototype.closeReader$.apply(this, []);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:04 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:34 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

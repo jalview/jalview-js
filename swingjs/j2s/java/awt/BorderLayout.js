@@ -1,54 +1,40 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BorderLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.awt.Dimension']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BorderLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.hgap=0;
-this.vgap=0;
-this.north=null;
-this.west=null;
-this.east=null;
-this.south=null;
-this.center=null;
-this.firstLine=null;
-this.lastLine=null;
-this.firstItem=null;
-this.lastItem=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$', function () {
+C$.$fields$=[['I',['hgap','vgap'],'O',['north','java.awt.Component','+west','+east','+south','+center','+firstLine','+lastLine','+firstItem','+lastItem']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
 C$.c$$I$I.apply(this, [0, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$I$I', function (hgap, vgap) {
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$I$I',  function (hgap, vgap) {
+;C$.$init$.apply(this);
 this.hgap=hgap;
 this.vgap=vgap;
 }, 1);
 
-Clazz.newMeth(C$, 'getHgap$', function () {
+Clazz.newMeth(C$, 'getHgap$',  function () {
 return this.hgap;
 });
 
-Clazz.newMeth(C$, 'setHgap$I', function (hgap) {
+Clazz.newMeth(C$, 'setHgap$I',  function (hgap) {
 this.hgap=hgap;
 });
 
-Clazz.newMeth(C$, 'getVgap$', function () {
+Clazz.newMeth(C$, 'getVgap$',  function () {
 return this.vgap;
 });
 
-Clazz.newMeth(C$, 'setVgap$I', function (vgap) {
+Clazz.newMeth(C$, 'setVgap$I',  function (vgap) {
 this.vgap=vgap;
 });
 
-Clazz.newMeth(C$, 'addLayoutComponent$java_awt_Component$O', function (comp, constraints) {
+Clazz.newMeth(C$, 'addLayoutComponent$java_awt_Component$O',  function (comp, constraints) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(comp.getTreeLock$());
 {
 if ((constraints == null ) || (Clazz.instanceOf(constraints, "java.lang.String")) ) {
@@ -57,7 +43,7 @@ this.addLayoutComponent$S$java_awt_Component(constraints, comp);
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["cannot add to layout: constraint must be a string (or null)"]);
 }}});
 
-Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
+Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component',  function (name, comp) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(comp.getTreeLock$());
 {
 if (name == null ) {
@@ -84,7 +70,7 @@ this.lastItem=comp;
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["cannot add to layout: unknown constraint: " + name]);
 }}});
 
-Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component',  function (comp) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(comp.getTreeLock$());
 {
 if (comp === this.center ) {
@@ -107,7 +93,7 @@ this.firstItem=null;
 this.lastItem=null;
 }}});
 
-Clazz.newMeth(C$, 'getLayoutComponent$O', function (constraints) {
+Clazz.newMeth(C$, 'getLayoutComponent$O',  function (constraints) {
 if ("Center".equals$O(constraints)) {
 return this.center;
 } else if ("North".equals$O(constraints)) {
@@ -130,7 +116,7 @@ return this.lastItem;
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["cannot get component: unknown constraint: " + constraints]);
 }});
 
-Clazz.newMeth(C$, 'getLayoutComponent$java_awt_Container$O', function (target, constraints) {
+Clazz.newMeth(C$, 'getLayoutComponent$java_awt_Container$O',  function (target, constraints) {
 var ltr=target.getComponentOrientation$().isLeftToRight$();
 var result=null;
 if ("North".equals$O(constraints)) {
@@ -152,7 +138,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["cannot get compon
 }return result;
 });
 
-Clazz.newMeth(C$, 'getConstraints$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'getConstraints$java_awt_Component',  function (comp) {
 if (comp == null ) {
 return null;
 }if (comp === this.center ) {
@@ -176,10 +162,10 @@ return "After";
 }return null;
 });
 
-Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container',  function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var ltr=target.getComponentOrientation$().isLeftToRight$();
 var c=null;
 if ((c=p$1.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
@@ -208,10 +194,10 @@ dim.height+=insets.top + insets.bottom;
 return dim;
 }});
 
-Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container',  function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
-var dim=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var dim=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 var ltr=target.getComponentOrientation$().isLeftToRight$();
 var c=null;
 if ((c=p$1.getChild$S$Z.apply(this, ["East", ltr])) != null ) {
@@ -240,22 +226,22 @@ dim.height+=insets.top + insets.bottom;
 return dim;
 }});
 
-Clazz.newMeth(C$, 'maximumLayoutSize$java_awt_Container', function (target) {
-return Clazz.new_($I$(1).c$$I$I,[2147483647, 2147483647]);
+Clazz.newMeth(C$, 'maximumLayoutSize$java_awt_Container',  function (target) {
+return Clazz.new_($I$(1,1).c$$I$I,[2147483647, 2147483647]);
 });
 
-Clazz.newMeth(C$, 'getLayoutAlignmentX$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'getLayoutAlignmentX$java_awt_Container',  function (parent) {
 return 0.5;
 });
 
-Clazz.newMeth(C$, 'getLayoutAlignmentY$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'getLayoutAlignmentY$java_awt_Container',  function (parent) {
 return 0.5;
 });
 
-Clazz.newMeth(C$, 'invalidateLayout$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'invalidateLayout$java_awt_Container',  function (target) {
 });
 
-Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'layoutContainer$java_awt_Container',  function (target) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(target.getTreeLock$());
 {
 var insets=target.getInsets$();
@@ -289,7 +275,7 @@ left+=d.width + this.hgap;
 c.setBounds$I$I$I$I(left, top, right - left, bottom - top);
 }}});
 
-Clazz.newMeth(C$, 'getChild$S$Z', function (key, ltr) {
+Clazz.newMeth(C$, 'getChild$S$Z',  function (key, ltr) {
 var result=null;
 if (key == "North") {
 result=(this.firstLine != null ) ? this.firstLine : this.north;
@@ -310,8 +296,8 @@ result=null;
 }return result;
 }, p$1);
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return this.getClass$().getName$() + "[hgap=" + this.hgap + ",vgap=" + this.vgap + "]" ;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

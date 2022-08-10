@@ -1,19 +1,15 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),I$=[[0,'java.awt.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ControleurVARNAPanelKeys", null, null, ['java.awt.event.KeyListener', 'java.awt.event.FocusListener']);
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.controlers"),I$=[[0,'java.awt.Point']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ControleurVARNAPanelKeys", null, null, ['java.awt.event.KeyListener', 'java.awt.event.FocusListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._vp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['_vp','fr.orsay.lri.varna.VARNAPanel']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_VARNAPanel', function (vp) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._vp=vp;
 }, 1);
 
@@ -209,22 +205,22 @@ ui.UIMOTIFView$();
 }break;
 case (40):
 if (this._vp.getZoom$() > 1 ) {
-this._vp.setTranslation$java_awt_Point(Clazz.new_($I$(1).c$$I$I,[this._vp.getTranslation$().x, this._vp.getTranslation$().y - 5]));
+this._vp.setTranslation$java_awt_Point(Clazz.new_([this._vp.getTranslation$().x, this._vp.getTranslation$().y - 5],$I$(1,1).c$$I$I));
 this._vp.checkTranslation$();
 }break;
 case (38):
 if (this._vp.getZoom$() > 1 ) {
-this._vp.setTranslation$java_awt_Point(Clazz.new_($I$(1).c$$I$I,[this._vp.getTranslation$().x, this._vp.getTranslation$().y + 5]));
+this._vp.setTranslation$java_awt_Point(Clazz.new_([this._vp.getTranslation$().x, this._vp.getTranslation$().y + 5],$I$(1,1).c$$I$I));
 this._vp.checkTranslation$();
 }break;
 case (37):
 if (this._vp.getZoom$() > 1 ) {
-this._vp.setTranslation$java_awt_Point(Clazz.new_($I$(1).c$$I$I,[this._vp.getTranslation$().x + 5, this._vp.getTranslation$().y]));
+this._vp.setTranslation$java_awt_Point(Clazz.new_([this._vp.getTranslation$().x + 5, this._vp.getTranslation$().y],$I$(1,1).c$$I$I));
 this._vp.checkTranslation$();
 }break;
 case (39):
 if (this._vp.getZoom$() > 1 ) {
-this._vp.setTranslation$java_awt_Point(Clazz.new_($I$(1).c$$I$I,[this._vp.getTranslation$().x - 5, this._vp.getTranslation$().y]));
+this._vp.setTranslation$java_awt_Point(Clazz.new_([this._vp.getTranslation$().x - 5, this._vp.getTranslation$().y],$I$(1,1).c$$I$I));
 this._vp.checkTranslation$();
 }break;
 case (61):
@@ -303,4 +299,4 @@ this._vp.repaint$();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:44 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:20 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

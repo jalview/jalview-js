@@ -1,21 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.SB','org.jmol.viewer.Viewer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PltFormattedReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.SB','org.jmol.viewer.Viewer']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PltFormattedReader", null, 'org.jmol.jvxl.readers.VolumeFileReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
 this.init2VFR$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader(sg, br);
 this.isAngstroms=true;
 this.jvxlData.wasCubic=true;
-this.jvxlFileHeaderBuffer=Clazz.new_($I$(1));
+this.jvxlFileHeaderBuffer=Clazz.new_($I$(1,1));
 this.nSurfaces=1;
 });
 
@@ -42,4 +41,4 @@ this.volumetricVectors[1].set$F$F$F(0, (ymax - ymin) / this.nPointsY, 0);
 this.volumetricVectors[2].set$F$F$F((zmax - zmin) / this.nPointsZ, 0, 0);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:02 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

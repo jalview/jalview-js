@@ -1,28 +1,28 @@
-(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.T3','javajs.util.Lst','javajs.util.Quat','javajs.api.Interface','javajs.util.P4']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Measure");
-C$.axisY=null;
+(function(){var P$=Clazz.newPackage("javajs.util"),I$=[[0,'javajs.util.V3','javajs.util.P3','javajs.util.T3','javajs.util.Lst','javajs.util.Quat','javajs.api.Interface','javajs.util.P4']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Measure");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.axisY=$I$(1).new3$F$F$F(0, 1, 0);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'computeAngle$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$Z', function (pointA, pointB, pointC, vectorBA, vectorBC, asDegrees) {
+C$.$fields$=[[]
+,['O',['axisY','javajs.util.V3']]]
+
+Clazz.newMeth(C$, 'computeAngle$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$Z',  function (pointA, pointB, pointC, vectorBA, vectorBC, asDegrees) {
 vectorBA.sub2$javajs_util_T3$javajs_util_T3(pointA, pointB);
 vectorBC.sub2$javajs_util_T3$javajs_util_T3(pointC, pointB);
 var angle=vectorBA.angle$javajs_util_V3(vectorBC);
 return (asDegrees ? angle / 0.017453292 : angle);
 }, 1);
 
-Clazz.newMeth(C$, 'computeAngleABC$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z', function (pointA, pointB, pointC, asDegrees) {
-var vectorBA=Clazz.new_($I$(1));
-var vectorBC=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'computeAngleABC$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z',  function (pointA, pointB, pointC, asDegrees) {
+var vectorBA=Clazz.new_($I$(1,1));
+var vectorBC=Clazz.new_($I$(1,1));
 return C$.computeAngle$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$Z(pointA, pointB, pointC, vectorBA, vectorBC, asDegrees);
 }, 1);
 
-Clazz.newMeth(C$, 'computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z', function (p1, p2, p3, p4, asDegrees) {
+Clazz.newMeth(C$, 'computeTorsion$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$Z',  function (p1, p2, p3, p4, asDegrees) {
 var ijx=p1.x - p2.x;
 var ijy=p1.y - p2.y;
 var ijz=p1.z - p2.z;
@@ -56,17 +56,17 @@ torsion=(dot / absDot > 0 ) ? torsion : -torsion;
 return (asDegrees ? torsion / 0.017453292 : torsion);
 }, 1);
 
-Clazz.newMeth(C$, 'computeHelicalAxis$javajs_util_P3$javajs_util_P3$javajs_util_Quat', function (a, b, dq) {
-var vab=Clazz.new_($I$(1));
+Clazz.newMeth(C$, 'computeHelicalAxis$javajs_util_P3$javajs_util_P3$javajs_util_Quat',  function (a, b, dq) {
+var vab=Clazz.new_($I$(1,1));
 vab.sub2$javajs_util_T3$javajs_util_T3(b, a);
 var theta=dq.getTheta$();
 var n=dq.getNormal$();
 var v_dot_n=vab.dot$javajs_util_T3(n);
 if (Math.abs(v_dot_n) < 1.0E-4 ) v_dot_n=0;
-var va_prime_d=Clazz.new_($I$(1));
+var va_prime_d=Clazz.new_($I$(1,1));
 va_prime_d.cross$javajs_util_T3$javajs_util_T3(vab, n);
 if (va_prime_d.dot$javajs_util_T3(va_prime_d) != 0 ) va_prime_d.normalize$();
-var vda=Clazz.new_($I$(1));
+var vda=Clazz.new_($I$(1,1));
 var vcb=$I$(1).newV$javajs_util_T3(n);
 if (v_dot_n == 0 ) v_dot_n=1.4E-45;
 vcb.scale$F(v_dot_n);
@@ -87,42 +87,42 @@ var pitch=Math.abs(v_dot_n == 1.4E-45  ? 0 : n.length$() * (theta == 0  ? 1 : 36
 return Clazz.array($I$(3), -1, [pt_a_prime, n, r, $I$(2).new3$F$F$F(theta, pitch, residuesPerTurn), pt_b_prime]);
 }, 1);
 
-Clazz.newMeth(C$, 'getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4', function (pointA, pointB, pointC, vNorm, vAB, plane) {
+Clazz.newMeth(C$, 'getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4',  function (pointA, pointB, pointC, vNorm, vAB, plane) {
 var w=C$.getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(pointA, pointB, pointC, vNorm, vAB);
 plane.set4$F$F$F$F(vNorm.x, vNorm.y, vNorm.z, w);
 return plane;
 }, 1);
 
-Clazz.newMeth(C$, 'getPlaneThroughPoint$javajs_util_T3$javajs_util_V3$javajs_util_P4', function (pt, normal, plane) {
+Clazz.newMeth(C$, 'getPlaneThroughPoint$javajs_util_T3$javajs_util_V3$javajs_util_P4',  function (pt, normal, plane) {
 plane.set4$F$F$F$F(normal.x, normal.y, normal.z, -normal.dot$javajs_util_T3(pt));
 }, 1);
 
-Clazz.newMeth(C$, 'distanceToPlane$javajs_util_P4$javajs_util_T3', function (plane, pt) {
+Clazz.newMeth(C$, 'distanceToPlane$javajs_util_P4$javajs_util_T3',  function (plane, pt) {
 return (plane == null  ? NaN : (plane.dot$javajs_util_T3(pt) + plane.w) / Math.sqrt(plane.dot$javajs_util_T3(plane)));
 }, 1);
 
-Clazz.newMeth(C$, 'directedDistanceToPlane$javajs_util_P3$javajs_util_P4$javajs_util_P3', function (pt, plane, ptref) {
+Clazz.newMeth(C$, 'directedDistanceToPlane$javajs_util_P3$javajs_util_P4$javajs_util_P3',  function (pt, plane, ptref) {
 var f=plane.dot$javajs_util_T3(pt) + plane.w;
 var f1=plane.dot$javajs_util_T3(ptref) + plane.w;
 return Math.signum(f1) * f / Math.sqrt(plane.dot$javajs_util_T3(plane));
 }, 1);
 
-Clazz.newMeth(C$, 'distanceToPlaneD$javajs_util_P4$F$javajs_util_P3', function (plane, d, pt) {
+Clazz.newMeth(C$, 'distanceToPlaneD$javajs_util_P4$F$javajs_util_P3',  function (plane, d, pt) {
 return (plane == null  ? NaN : (plane.dot$javajs_util_T3(pt) + plane.w) / d);
 }, 1);
 
-Clazz.newMeth(C$, 'distanceToPlaneV$javajs_util_V3$F$javajs_util_P3', function (norm, w, pt) {
+Clazz.newMeth(C$, 'distanceToPlaneV$javajs_util_V3$F$javajs_util_P3',  function (norm, w, pt) {
 return (norm == null  ? NaN : (norm.dot$javajs_util_T3(pt) + w) / Math.sqrt(norm.dot$javajs_util_T3(norm)));
 }, 1);
 
-Clazz.newMeth(C$, 'calcNormalizedNormal$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3', function (pointA, pointB, pointC, vNormNorm, vAB) {
+Clazz.newMeth(C$, 'calcNormalizedNormal$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3',  function (pointA, pointB, pointC, vNormNorm, vAB) {
 vAB.sub2$javajs_util_T3$javajs_util_T3(pointB, pointA);
 vNormNorm.sub2$javajs_util_T3$javajs_util_T3(pointC, pointA);
 vNormNorm.cross$javajs_util_T3$javajs_util_T3(vAB, vNormNorm);
 vNormNorm.normalize$();
 }, 1);
 
-Clazz.newMeth(C$, 'getDirectedNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3', function (pointA, pointB, pointC, ptRef, vNorm, vAB) {
+Clazz.newMeth(C$, 'getDirectedNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3',  function (pointA, pointB, pointC, ptRef, vNorm, vAB) {
 var nd=C$.getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(pointA, pointB, pointC, vNorm, vAB);
 if (ptRef != null ) {
 var pt0=$I$(2).newP$javajs_util_T3(pointA);
@@ -135,13 +135,13 @@ nd=-nd;
 }}return nd;
 }, 1);
 
-Clazz.newMeth(C$, 'getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3', function (pointA, pointB, pointC, vNorm, vTemp) {
+Clazz.newMeth(C$, 'getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3',  function (pointA, pointB, pointC, vNorm, vTemp) {
 C$.calcNormalizedNormal$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(pointA, pointB, pointC, vNorm, vTemp);
 vTemp.setT$javajs_util_T3(pointA);
 return -vTemp.dot$javajs_util_T3(vNorm);
 }, 1);
 
-Clazz.newMeth(C$, 'getPlaneProjection$javajs_util_P3$javajs_util_P4$javajs_util_P3$javajs_util_V3', function (pt, plane, ptProj, vNorm) {
+Clazz.newMeth(C$, 'getPlaneProjection$javajs_util_P3$javajs_util_P4$javajs_util_P3$javajs_util_V3',  function (pt, plane, ptProj, vNorm) {
 var dist=C$.distanceToPlane$javajs_util_P4$javajs_util_T3(plane, pt);
 vNorm.set$F$F$F(plane.x, plane.y, plane.z);
 vNorm.normalize$();
@@ -149,35 +149,35 @@ vNorm.scale$F(-dist);
 ptProj.add2$javajs_util_T3$javajs_util_T3(pt, vNorm);
 }, 1);
 
-Clazz.newMeth(C$, 'getNormalFromCenter$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z$javajs_util_V3$javajs_util_V3', function (ptCenter, ptA, ptB, ptC, isOutward, normal, vTemp) {
+Clazz.newMeth(C$, 'getNormalFromCenter$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$Z$javajs_util_V3$javajs_util_V3',  function (ptCenter, ptA, ptB, ptC, isOutward, normal, vTemp) {
 var d=C$.getNormalThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3(ptA, ptB, ptC, normal, vTemp);
 var isReversed=(C$.distanceToPlaneV$javajs_util_V3$F$javajs_util_P3(normal, d, ptCenter) > 0 );
 if (isReversed == isOutward ) normal.scale$F(-1.0);
 return !isReversed;
 }, 1);
 
-Clazz.newMeth(C$, 'getNormalToLine$javajs_util_P3$javajs_util_P3$javajs_util_V3', function (pointA, pointB, vNormNorm) {
+Clazz.newMeth(C$, 'getNormalToLine$javajs_util_P3$javajs_util_P3$javajs_util_V3',  function (pointA, pointB, vNormNorm) {
 vNormNorm.sub2$javajs_util_T3$javajs_util_T3(pointA, pointB);
 vNormNorm.cross$javajs_util_T3$javajs_util_T3(vNormNorm, C$.axisY);
 vNormNorm.normalize$();
 if (Float.isNaN$F(vNormNorm.x)) vNormNorm.set$F$F$F(1, 0, 0);
 }, 1);
 
-Clazz.newMeth(C$, 'getBisectingPlane$javajs_util_P3$javajs_util_V3$javajs_util_T3$javajs_util_V3$javajs_util_P4', function (pointA, vAB, ptTemp, vTemp, plane) {
+Clazz.newMeth(C$, 'getBisectingPlane$javajs_util_P3$javajs_util_V3$javajs_util_T3$javajs_util_V3$javajs_util_P4',  function (pointA, vAB, ptTemp, vTemp, plane) {
 ptTemp.scaleAdd2$F$javajs_util_T3$javajs_util_T3(0.5, vAB, pointA);
 vTemp.setT$javajs_util_T3(vAB);
 vTemp.normalize$();
 C$.getPlaneThroughPoint$javajs_util_T3$javajs_util_V3$javajs_util_P4(ptTemp, vTemp, plane);
 }, 1);
 
-Clazz.newMeth(C$, 'projectOntoAxis$javajs_util_P3$javajs_util_P3$javajs_util_V3$javajs_util_V3', function (point, axisA, axisUnitVector, vectorProjection) {
+Clazz.newMeth(C$, 'projectOntoAxis$javajs_util_P3$javajs_util_P3$javajs_util_V3$javajs_util_V3',  function (point, axisA, axisUnitVector, vectorProjection) {
 vectorProjection.sub2$javajs_util_T3$javajs_util_T3(point, axisA);
 var projectedLength=vectorProjection.dot$javajs_util_T3(axisUnitVector);
 point.scaleAdd2$F$javajs_util_T3$javajs_util_T3(projectedLength, axisUnitVector, axisA);
 vectorProjection.sub2$javajs_util_T3$javajs_util_T3(point, axisA);
 }, 1);
 
-Clazz.newMeth(C$, 'calcBestAxisThroughPoints$javajs_util_P3A$javajs_util_P3$javajs_util_V3$javajs_util_V3$I', function (points, axisA, axisUnitVector, vectorProjection, nTriesMax) {
+Clazz.newMeth(C$, 'calcBestAxisThroughPoints$javajs_util_P3A$javajs_util_P3$javajs_util_V3$javajs_util_V3$I',  function (points, axisA, axisUnitVector, vectorProjection, nTriesMax) {
 var nPoints=points.length;
 axisA.setT$javajs_util_T3(points[0]);
 axisUnitVector.sub2$javajs_util_T3$javajs_util_T3(points[nPoints - 1], axisA);
@@ -191,11 +191,11 @@ C$.projectOntoAxis$javajs_util_P3$javajs_util_P3$javajs_util_V3$javajs_util_V3(t
 axisA.setT$javajs_util_T3(tempA);
 }, 1);
 
-Clazz.newMeth(C$, 'findAxis$javajs_util_P3A$I$javajs_util_P3$javajs_util_V3$javajs_util_V3', function (points, nPoints, axisA, axisUnitVector, vectorProjection) {
-var sumXiYi=Clazz.new_($I$(1));
-var vTemp=Clazz.new_($I$(1));
-var pt=Clazz.new_($I$(2));
-var ptProj=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'findAxis$javajs_util_P3A$I$javajs_util_P3$javajs_util_V3$javajs_util_V3',  function (points, nPoints, axisA, axisUnitVector, vectorProjection) {
+var sumXiYi=Clazz.new_($I$(1,1));
+var vTemp=Clazz.new_($I$(1,1));
+var pt=Clazz.new_($I$(2,1));
+var ptProj=Clazz.new_($I$(2,1));
 var a=$I$(1).newV$javajs_util_T3(axisUnitVector);
 var sum_Xi2=0;
 for (var i=nPoints; --i >= 0; ) {
@@ -205,7 +205,7 @@ C$.projectOntoAxis$javajs_util_P3$javajs_util_P3$javajs_util_V3$javajs_util_V3(p
 vTemp.sub2$javajs_util_T3$javajs_util_T3(pt, ptProj);
 vTemp.cross$javajs_util_T3$javajs_util_T3(vectorProjection, vTemp);
 sumXiYi.add$javajs_util_T3(vTemp);
-sum_Xi2 += vectorProjection.lengthSquared$();
+sum_Xi2+=vectorProjection.lengthSquared$();
 }
 var m=$I$(1).newV$javajs_util_T3(sumXiYi);
 m.scale$F(1 / sum_Xi2);
@@ -216,30 +216,30 @@ vTemp.sub2$javajs_util_T3$javajs_util_T3(axisUnitVector, a);
 return vTemp.length$();
 }, 1);
 
-Clazz.newMeth(C$, 'calcAveragePoint$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (pointA, pointB, pointC) {
+Clazz.newMeth(C$, 'calcAveragePoint$javajs_util_P3$javajs_util_P3$javajs_util_P3',  function (pointA, pointB, pointC) {
 pointC.set$F$F$F((pointA.x + pointB.x) / 2, (pointA.y + pointB.y) / 2, (pointA.z + pointB.z) / 2);
 }, 1);
 
-Clazz.newMeth(C$, 'calcAveragePointN$javajs_util_P3A$I$javajs_util_P3', function (points, nPoints, averagePoint) {
+Clazz.newMeth(C$, 'calcAveragePointN$javajs_util_P3A$I$javajs_util_P3',  function (points, nPoints, averagePoint) {
 averagePoint.setT$javajs_util_T3(points[0]);
 for (var i=1; i < nPoints; i++) averagePoint.add$javajs_util_T3(points[i]);
 
 averagePoint.scale$F(1.0 / nPoints);
 }, 1);
 
-Clazz.newMeth(C$, 'transformPoints$javajs_util_Lst$javajs_util_M4$javajs_util_P3', function (vPts, m4, center) {
-var v=Clazz.new_($I$(4));
+Clazz.newMeth(C$, 'transformPoints$javajs_util_Lst$javajs_util_M4$javajs_util_P3',  function (vPts, m4, center) {
+var v=Clazz.new_($I$(4,1));
 for (var i=0; i < vPts.size$(); i++) {
-var pt=$I$(2).newP$javajs_util_T3(vPts.get$I(i));
+var pt=$I$(2,"newP$javajs_util_T3",[vPts.get$I(i)]);
 pt.sub$javajs_util_T3(center);
 m4.rotTrans$javajs_util_T3(pt);
 pt.add$javajs_util_T3(center);
-v.addLast$TV(pt);
+v.addLast$O(pt);
 }
 return v;
 }, 1);
 
-Clazz.newMeth(C$, 'isInTetrahedron$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P4$javajs_util_V3$javajs_util_V3$Z', function (pt, ptA, ptB, ptC, ptD, plane, vTemp, vTemp2, fullyEnclosed) {
+Clazz.newMeth(C$, 'isInTetrahedron$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P3$javajs_util_P4$javajs_util_V3$javajs_util_V3$Z',  function (pt, ptA, ptB, ptC, ptD, plane, vTemp, vTemp2, fullyEnclosed) {
 var b=(C$.distanceToPlane$javajs_util_P4$javajs_util_T3(C$.getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(ptC, ptD, ptA, vTemp, vTemp2, plane), pt) >= 0 );
 if (b != (C$.distanceToPlane$javajs_util_P4$javajs_util_T3(C$.getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(ptA, ptD, ptB, vTemp, vTemp2, plane), pt) >= 0 ) ) return false;
 if (b != (C$.distanceToPlane$javajs_util_P4$javajs_util_T3(C$.getPlaneThroughPoints$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_V3$javajs_util_V3$javajs_util_P4(ptB, ptD, ptC, vTemp, vTemp2, plane), pt) >= 0 ) ) return false;
@@ -249,7 +249,7 @@ var d1=C$.distanceToPlane$javajs_util_P4$javajs_util_T3(plane, ptD);
 return d1 * d <= 0  || Math.abs(d1) > Math.abs(d)  ;
 }, 1);
 
-Clazz.newMeth(C$, 'getIntersectionPP$javajs_util_P4$javajs_util_P4', function (plane1, plane2) {
+Clazz.newMeth(C$, 'getIntersectionPP$javajs_util_P4$javajs_util_P4',  function (plane1, plane2) {
 var a1=plane1.x;
 var b1=plane1.y;
 var c1=plane1.z;
@@ -260,7 +260,7 @@ var c2=plane2.z;
 var d2=plane2.w;
 var norm1=$I$(1).new3$F$F$F(a1, b1, c1);
 var norm2=$I$(1).new3$F$F$F(a2, b2, c2);
-var nxn=Clazz.new_($I$(1));
+var nxn=Clazz.new_($I$(1,1));
 nxn.cross$javajs_util_T3$javajs_util_T3(norm1, norm2);
 var ax=Math.abs(nxn.x);
 var ay=Math.abs(nxn.y);
@@ -293,14 +293,14 @@ x=(b1 * d2 - b2 * d1) / diff;
 y=(a2 * d1 - d2 * a1) / diff;
 z=0;
 }
-var list=Clazz.new_($I$(4));
-list.addLast$TV($I$(2).new3$F$F$F(x, y, z));
+var list=Clazz.new_($I$(4,1));
+list.addLast$O($I$(2).new3$F$F$F(x, y, z));
 nxn.normalize$();
-list.addLast$TV(nxn);
+list.addLast$O(nxn);
 return list;
 }, 1);
 
-Clazz.newMeth(C$, 'getIntersection$javajs_util_P3$javajs_util_V3$javajs_util_P4$javajs_util_P3$javajs_util_V3$javajs_util_V3', function (pt1, v, plane, ptRet, tempNorm, vTemp) {
+Clazz.newMeth(C$, 'getIntersection$javajs_util_P3$javajs_util_V3$javajs_util_P4$javajs_util_P3$javajs_util_V3$javajs_util_V3',  function (pt1, v, plane, ptRet, tempNorm, vTemp) {
 C$.getPlaneProjection$javajs_util_P3$javajs_util_P4$javajs_util_P3$javajs_util_V3(pt1, plane, ptRet, tempNorm);
 tempNorm.set$F$F$F(plane.x, plane.y, plane.z);
 tempNorm.normalize$();
@@ -312,9 +312,9 @@ ptRet.scaleAdd2$F$javajs_util_T3$javajs_util_T3(vTemp.dot$javajs_util_T3(tempNor
 return ptRet;
 }, 1);
 
-Clazz.newMeth(C$, 'calculateQuaternionRotation$javajs_util_P3AA$FA', function (centerAndPoints, retStddev) {
+Clazz.newMeth(C$, 'calculateQuaternionRotation$javajs_util_P3AA$FA',  function (centerAndPoints, retStddev) {
 retStddev[1]=NaN;
-var q=Clazz.new_($I$(5));
+var q=Clazz.new_($I$(5,1));
 var ptsA=centerAndPoints[0];
 var ptsB=centerAndPoints[1];
 var nPts=ptsA.length - 1;
@@ -328,22 +328,22 @@ var Syz=0;
 var Szx=0;
 var Szy=0;
 var Szz=0;
-var ptA=Clazz.new_($I$(2));
-var ptB=Clazz.new_($I$(2));
+var ptA=Clazz.new_($I$(2,1));
+var ptB=Clazz.new_($I$(2,1));
 var ptA0=ptsA[0];
 var ptB0=ptsB[0];
 for (var i=nPts + 1; --i >= 1; ) {
 ptA.sub2$javajs_util_T3$javajs_util_T3(ptsA[i], ptA0);
 ptB.sub2$javajs_util_T3$javajs_util_T3(ptsB[i], ptB0);
-Sxx += ptA.x * ptB.x;
-Sxy += ptA.x * ptB.y;
-Sxz += ptA.x * ptB.z;
-Syx += ptA.y * ptB.x;
-Syy += ptA.y * ptB.y;
-Syz += ptA.y * ptB.z;
-Szx += ptA.z * ptB.x;
-Szy += ptA.z * ptB.y;
-Szz += ptA.z * ptB.z;
+Sxx+=ptA.x * ptB.x;
+Sxy+=ptA.x * ptB.y;
+Sxz+=ptA.x * ptB.z;
+Syx+=ptA.y * ptB.x;
+Syy+=ptA.y * ptB.y;
+Syz+=ptA.y * ptB.z;
+Szx+=ptA.z * ptB.x;
+Szy+=ptA.z * ptB.y;
+Szz+=ptA.z * ptB.z;
 }
 retStddev[0]=C$.getRmsd$javajs_util_P3AA$javajs_util_Quat(centerAndPoints, q);
 var N=Clazz.array(Double.TYPE, [4, 4]);
@@ -358,12 +358,12 @@ N[2][2]=-Sxx + Syy - Szz;
 N[2][3]=N[3][2]=Syz + Szy;
 N[3][3]=-Sxx - Syy + Szz;
 var v=($I$(6).getInterface$S("javajs.util.Eigen")).setM$DAA(N).getEigenvectorsFloatTransposed$()[3];
-q=$I$(5).newP4$javajs_util_P4($I$(7).new4$F$F$F$F(v[1], v[2], v[3], v[0]));
+q=$I$(5,"newP4$javajs_util_P4",[$I$(7).new4$F$F$F$F(v[1], v[2], v[3], v[0])]);
 retStddev[1]=C$.getRmsd$javajs_util_P3AA$javajs_util_Quat(centerAndPoints, q);
 return q;
 }, 1);
 
-Clazz.newMeth(C$, 'getTransformMatrix4$javajs_util_Lst$javajs_util_Lst$javajs_util_M4$javajs_util_P3', function (ptsA, ptsB, m, centerA) {
+Clazz.newMeth(C$, 'getTransformMatrix4$javajs_util_Lst$javajs_util_Lst$javajs_util_M4$javajs_util_P3',  function (ptsA, ptsB, m, centerA) {
 var cptsA=C$.getCenterAndPoints$javajs_util_Lst(ptsA);
 var cptsB=C$.getCenterAndPoints$javajs_util_Lst(ptsB);
 var retStddev=Clazz.array(Float.TYPE, [2]);
@@ -376,10 +376,10 @@ m.setMV$javajs_util_M3$javajs_util_T3(r, t);
 return retStddev[1];
 }, 1);
 
-Clazz.newMeth(C$, 'getCenterAndPoints$javajs_util_Lst', function (vPts) {
+Clazz.newMeth(C$, 'getCenterAndPoints$javajs_util_Lst',  function (vPts) {
 var n=vPts.size$();
 var pts=Clazz.array($I$(2), [n + 1]);
-pts[0]=Clazz.new_($I$(2));
+pts[0]=Clazz.new_($I$(2,1));
 if (n > 0) {
 for (var i=0; i < n; i++) {
 pts[0].add$javajs_util_T3(pts[i + 1]=vPts.get$I(i));
@@ -388,22 +388,26 @@ pts[0].scale$F(1.0 / n);
 }return pts;
 }, 1);
 
-Clazz.newMeth(C$, 'getRmsd$javajs_util_P3AA$javajs_util_Quat', function (centerAndPoints, q) {
+Clazz.newMeth(C$, 'getRmsd$javajs_util_P3AA$javajs_util_Quat',  function (centerAndPoints, q) {
 var sum2=0;
 var ptsA=centerAndPoints[0];
 var ptsB=centerAndPoints[1];
 var cA=ptsA[0];
 var cB=ptsB[0];
 var n=ptsA.length - 1;
-var ptAnew=Clazz.new_($I$(2));
+var ptAnew=Clazz.new_($I$(2,1));
 for (var i=n + 1; --i >= 1; ) {
 ptAnew.sub2$javajs_util_T3$javajs_util_T3(ptsA[i], cA);
 q.transform2$javajs_util_T3$javajs_util_T3(ptAnew, ptAnew).add$javajs_util_T3(cB);
-sum2 += ptAnew.distanceSquared$javajs_util_T3(ptsB[i]);
+sum2+=ptAnew.distanceSquared$javajs_util_T3(ptsB[i]);
 }
 return Math.sqrt(sum2 / n);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.axisY=$I$(1).new3$F$F$F(0, 1, 0);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:01 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:26 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

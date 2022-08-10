@@ -1,26 +1,21 @@
-(function(){var P$=Clazz.newPackage("jalview.workers"),I$=[[0,'java.util.ArrayList','Thread','jalview.renderer.seqfeatures.FeatureRenderer']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AnnotationWorker", null, 'jalview.workers.AlignCalcWorker');
+(function(){var P$=Clazz.newPackage("jalview.workers"),I$=[[0,'java.util.ArrayList','Thread','jalview.renderer.seqfeatures.FeatureRenderer']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "AnnotationWorker", null, 'jalview.workers.AlignCalcWorker');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.counter=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel$jalview_workers_AnnotationProviderI', function (viewport, panel, counter) {
-C$.superclazz.c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel.apply(this, [viewport, panel]);
-C$.$init$.apply(this);
-this.ourAnnots=Clazz.new_($I$(1));
+C$.$fields$=[['O',['counter','jalview.workers.AnnotationProviderI']]]
+
+Clazz.newMeth(C$, 'c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel$jalview_workers_AnnotationProviderI',  function (viewport, panel, counter) {
+;C$.superclazz.c$$jalview_api_AlignViewportI$jalview_api_AlignmentViewPanel.apply(this,[viewport, panel]);C$.$init$.apply(this);
+this.ourAnnots=Clazz.new_($I$(1,1));
 this.counter=counter;
 this.calcMan.registerWorker$jalview_api_AlignCalcWorkerI(this);
 }, 1);
 
-Clazz.newMeth(C$, 'run$', function () {
+Clazz.newMeth(C$, 'run$',  function () {
 try {
 this.calcMan.notifyStart$jalview_api_AlignCalcWorkerI(this);
 while (!this.calcMan.notifyWorking$jalview_api_AlignCalcWorkerI(this)){
@@ -40,7 +35,7 @@ return;
 }var alignment=this.alignViewport.getAlignment$();
 if (alignment != null ) {
 try {
-var anns=this.counter.calculateAnnotation$(alignment, Clazz.new_($I$(3).c$$jalview_api_AlignViewportI,[this.alignViewport]));
+var anns=this.counter.calculateAnnotation$jalview_datamodel_AlignmentI$jalview_api_FeatureRenderer(alignment, Clazz.new_($I$(3,1).c$$jalview_api_AlignViewportI,[this.alignViewport]));
 for (var ann, $ann = anns.iterator$(); $ann.hasNext$()&&((ann=($ann.next$())),1);) {
 var theAnn=alignment.findOrCreateAnnotation$S$S$Z$jalview_datamodel_SequenceI$jalview_datamodel_SequenceGroup(ann.label, ann.description, false, null, null);
 theAnn.showAllColLabels=true;
@@ -50,7 +45,7 @@ theAnn.annotations=ann.annotations;
 this.setGraphMinMax$jalview_datamodel_AlignmentAnnotation$jalview_datamodel_AnnotationA(theAnn, theAnn.annotations);
 theAnn.validateRangeAndDisplay$();
 if (!this.ourAnnots.contains$O(theAnn)) {
-this.ourAnnots.add$TE(theAnn);
+this.ourAnnots.add$O(theAnn);
 }}
 } catch (x) {
 if (Clazz.exceptionOf(x,"IndexOutOfBoundsException")){
@@ -61,7 +56,7 @@ throw x;
 }
 }} catch (error) {
 if (Clazz.exceptionOf(error,"OutOfMemoryError")){
-this.ap.raiseOOMWarning$("calculating annotations", error);
+this.ap.raiseOOMWarning$S$OutOfMemoryError("calculating annotations", error);
 this.calcMan.disableWorker$jalview_api_AlignCalcWorkerI(this);
 } else {
 throw error;
@@ -74,13 +69,13 @@ this.ap.adjustAnnotationHeight$();
 this.ap.paintAlignment$Z$Z(true, true);
 }});
 
-Clazz.newMeth(C$, 'updateAnnotation$', function () {
+Clazz.newMeth(C$, 'updateAnnotation$',  function () {
 });
 
-Clazz.newMeth(C$, 'isDeletable$', function () {
+Clazz.newMeth(C$, 'isDeletable$',  function () {
 return true;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

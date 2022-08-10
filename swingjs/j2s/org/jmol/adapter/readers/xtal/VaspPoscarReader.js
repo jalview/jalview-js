@@ -1,29 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),I$=[[0,'org.jmol.util.Logger','org.jmol.util.Parser','javajs.util.M3','javajs.util.PT','javajs.util.SB','javajs.util.Lst','org.jmol.api.JmolAdapter']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VaspPoscarReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.xtal"),I$=[[0,'org.jmol.util.Logger','org.jmol.util.Parser','javajs.util.M3','javajs.util.PT','javajs.util.SB','javajs.util.Lst','org.jmol.api.JmolAdapter']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VaspPoscarReader", null, 'org.jmol.adapter.smarter.AtomSetCollectionReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.atomLabels=null;
-this.haveAtomLabels=false;
-this.atomsLabeledInline=false;
-this.scaleFac=0;
-this.ac=0;
-this.title=null;
-this.quiet=false;
-this.defaultLabels=null;
-this.elementLabel=null;
-this.radiusPt=0;
-this.elementPt=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.haveAtomLabels=true;
 this.radiusPt=-2147483648;
 this.elementPt=-2147483648;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['haveAtomLabels','atomsLabeledInline','quiet'],'F',['scaleFac'],'I',['ac','radiusPt','elementPt'],'S',['title'],'O',['atomLabels','javajs.util.Lst','defaultLabels','String[]','+elementLabel']]]
 
 Clazz.newMeth(C$, 'initializeReader$', function () {
 this.isPrimitive=true;
@@ -36,7 +22,7 @@ this.title=this.rd$().trim$();
 var pt=this.title.indexOf$S("--params");
 if ((pt=this.title.indexOf$S$I("& ", pt + 1)) >= 0) {
 this.latticeType=this.title.substring$I$I(pt + 2, pt + 3);
-$I$(1).info$S("AFLOW lattice:" + this.latticeType + " title=" + this.title );
+$I$(1,"info$S",["AFLOW lattice:" + this.latticeType + " title=" + this.title ]);
 }this.readUnitCellVectors$();
 this.readMolecularFormula$();
 this.readCoordinates$();
@@ -68,12 +54,12 @@ this.addExplicitLatticeVector$I$FA$I(2, unitCellData, 6);
 });
 
 Clazz.newMeth(C$, 'readMolecularFormula$', function () {
-if (this.elementLabel == null ) this.elementLabel=$I$(4).getTokens$S(this.discardLinesUntilNonBlank$());
+if (this.elementLabel == null ) this.elementLabel=$I$(4,"getTokens$S",[this.discardLinesUntilNonBlank$()]);
 var elementCounts;
 if ($I$(4).parseInt$S(this.elementLabel[0]) == -2147483648) {
 this.atomsLabeledInline=false;
-elementCounts=$I$(4).getTokens$S(this.rdline$());
-while (this.line != null  && (elementCounts.length == 0 || this.parseIntStr$S(elementCounts[0]) == -2147483648 ) )elementCounts=$I$(4).getTokens$S(this.rdline$());
+elementCounts=$I$(4,"getTokens$S",[this.rdline$()]);
+while (this.line != null  && (elementCounts.length == 0 || this.parseIntStr$S(elementCounts[0]) == -2147483648 ) )elementCounts=$I$(4,"getTokens$S",[this.rdline$()]);
 
 } else {
 elementCounts=this.elementLabel;
@@ -82,15 +68,15 @@ if (this.elementLabel.length != elementCounts.length || this.elementLabel[0].len
 this.elementLabel=$I$(4).split$S$S("Al B C Db Eu F Ga Hf I K Li Mn N O P Ru S Te U V W Xe Yb Zn", " ");
 this.haveAtomLabels=false;
 }}var labels=this.elementLabel;
-var mf=Clazz.new_($I$(5));
-this.atomLabels=Clazz.new_($I$(6));
+var mf=Clazz.new_($I$(5,1));
+this.atomLabels=Clazz.new_($I$(6,1));
 this.ac=0;
 for (var i=0; i < elementCounts.length; i++) {
 var n=Integer.parseInt$S(elementCounts[i]);
 this.ac+=n;
 var label=labels[i];
 mf.append$S(" ").append$S(label).appendI$I(n);
-for (var j=n; --j >= 0; ) this.atomLabels.addLast$TV(label);
+for (var j=n; --j >= 0; ) this.atomLabels.addLast$O(label);
 
 }
 var s=mf.toString();
@@ -106,7 +92,7 @@ var isCartesian=(this.line.toLowerCase$().contains$CharSequence("cartesian"));
 if (isCartesian) this.setFractionalCoordinates$Z(false);
 for (var i=0; i < this.ac; i++) {
 var radius=NaN;
-var tokens=$I$(4).getTokens$S(this.rdline$());
+var tokens=$I$(4,"getTokens$S",[this.rdline$()]);
 if (this.radiusPt == -2147483648) {
 for (var j=tokens.length; --j > 2; ) if (tokens[j].equals$O("radius")) {
 this.radiusPt=j + 1;
@@ -131,7 +117,7 @@ default:
 s=(token.length$() > 2 ? token.substring$I$I(0, 2) : null);
 if (s != null  && $I$(7).getElementNumber$S(s) >= 0 ) return s;
 case 1:
-if ($I$(7).getElementNumber$S(s=token.substring$I(0)) >= 0) return s;
+if ($I$(7,"getElementNumber$S",[s=token.substring$I(0)]) >= 0) return s;
 case 0:
 return null;
 }
@@ -145,4 +131,4 @@ return this.line;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:28 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

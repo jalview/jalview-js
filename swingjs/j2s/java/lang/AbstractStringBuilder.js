@@ -1,444 +1,353 @@
-(function(){var P$=java.lang,p$1={},I$=[[0,'org.apache.harmony.luni.util.Msg']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "AbstractStringBuilder");
+(function(){var P$=java.lang,p$1={};
+/*c*/var C$=Clazz.newClass(P$, "AbstractStringBuilder", null, null, ['Appendable', 'CharSequence']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.value=null;
-this.count=0;
-this.shared=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['S',['秘s']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'getValue$', function () {
-return this.value;
+Clazz.newMeth(C$, 'c$$I',  function (capacity) {
+;C$.$init$.apply(this);
+this.秘s="";
+}, 1);
+
+Clazz.newMeth(C$, 'length$',  function () {
+return this.秘s.length$();
 });
 
-Clazz.newMeth(C$, 'shareValue$', function () {
-this.shared=true;
-return this.value;
+Clazz.newMeth(C$, 'capacity$',  function () {
+return 2147483647;
 });
 
-Clazz.newMeth(C$, 'set$CA$I', function (val, len) {
-if (val == null ) val=Clazz.array(Character.TYPE, [0]);
-if (val.length < len) throw Clazz.new_(Clazz.load('java.io.InvalidObjectException').c$$S,[$I$(1).getString$S("K0199")]);
-this.shared=false;
-this.value=val;
-this.count=len;
+Clazz.newMeth(C$, 'ensureCapacity$I',  function (minimumCapacity) {
 });
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.value=Clazz.array(Character.TYPE, [16]);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$I', function (capacity) {
-C$.$init$.apply(this);
-if (capacity < 0) throw Clazz.new_(Clazz.load('NegativeArraySizeException'));
-this.value=Clazz.array(Character.TYPE, [capacity]);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S', function (string) {
-C$.$init$.apply(this);
-if (string == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-this.count=string.length$();
-this.shared=false;
-this.value=Clazz.array(Character.TYPE, [this.count + 16]);
-string.getChars$I$I$CA$I(0, this.count, this.value, 0);
-}, 1);
-
-Clazz.newMeth(C$, 'enlargeBuffer$I', function (min) {
-var twice=(this.value.length << 1) + 2;
-var newData=Clazz.array(Character.TYPE, [min > twice ? min : twice]);
-System.arraycopy$O$I$O$I$I(this.value, 0, newData, 0, this.count);
-this.value=newData;
-this.shared=false;
+Clazz.newMeth(C$, 'ensureCapacityInternal$I',  function (minimumCapacity) {
 }, p$1);
 
-Clazz.newMeth(C$, 'appendNull$', function () {
-var newSize=this.count + 4;
-if (newSize > this.value.length) {
-p$1.enlargeBuffer$I.apply(this, [newSize]);
-} else if (this.shared) {
-this.value=this.value.clone$();
-this.shared=false;
-}this.value[this.count++]="n";
-this.value[this.count++]="u";
-this.value[this.count++]="l";
-this.value[this.count++]="l";
+Clazz.newMeth(C$, 'expandCapacity$I',  function (minimumCapacity) {
 });
 
-Clazz.newMeth(C$, 'append0$CA', function (chars) {
-var newSize=this.count + chars.length;
-if (newSize > this.value.length) {
-p$1.enlargeBuffer$I.apply(this, [newSize]);
-} else if (this.shared) {
-this.value=this.value.clone$();
-this.shared=false;
-}System.arraycopy$O$I$O$I$I(chars, 0, this.value, this.count, chars.length);
-this.count=newSize;
+Clazz.newMeth(C$, 'trimToSize$',  function () {
 });
 
-Clazz.newMeth(C$, 'append0$CA$I$I', function (chars, start, length) {
-if (chars == null ) {
-throw Clazz.new_(Clazz.load('NullPointerException'));
-}if (start >= 0 && 0 <= length  && length <= chars.length - start ) {
-var newSize=this.count + length;
-if (newSize > this.value.length) {
-p$1.enlargeBuffer$I.apply(this, [newSize]);
-} else if (this.shared) {
-this.value=this.value.clone$();
-this.shared=false;
-}System.arraycopy$O$I$O$I$I(chars, start, this.value, this.count, length);
-this.count=newSize;
-} else {
-throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException'));
-}});
-
-Clazz.newMeth(C$, 'append0$C', function (ch) {
-if (this.count == this.value.length) {
-p$1.enlargeBuffer$I.apply(this, [this.count + 1]);
-}if (this.shared) {
-this.value=this.value.clone$();
-this.shared=false;
-}this.value[this.count++]=ch;
+Clazz.newMeth(C$, 'setLength$I',  function (newLength) {
+if (newLength < 0) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[newLength]);
+p$1.ensureCapacityInternal$I.apply(this, [newLength]);
+if (this.秘s.length$() > newLength) this.秘s=this.秘s.substring$I$I(0, newLength);
 });
 
-Clazz.newMeth(C$, 'append0$S', function (string) {
-if (string == null ) {
-this.appendNull$();
-return;
-}var adding=string.length$();
-var newSize=this.count + adding;
-if (newSize > this.value.length) {
-p$1.enlargeBuffer$I.apply(this, [newSize]);
-} else if (this.shared) {
-this.value=this.value.clone$();
-this.shared=false;
-}string.getChars$I$I$CA$I(0, adding, this.value, this.count);
-this.count=newSize;
+Clazz.newMeth(C$, 'charAt$I',  function (index) {
+if ((index < 0) || (index >= this.秘s.length$()) ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
+return this.秘s.charAt$I(index);
 });
 
-Clazz.newMeth(C$, 'append0$CharSequence$I$I', function (s, start, end) {
-if (s == null ) s="null";
-if (start < 0 || end < 0  || start > end  || end > s.length$() ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
-this.append0$S(s.subSequence$I$I(start, end).toString());
-});
-
-Clazz.newMeth(C$, 'capacity$', function () {
-return this.value.length;
-});
-
-Clazz.newMeth(C$, 'charAt$I', function (index) {
-if (index < 0 || index >= this.count ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
-return this.value[index];
-});
-
-Clazz.newMeth(C$, 'delete0$I$I', function (start, end) {
-if (start >= 0) {
-if (end > this.count) {
-end=this.count;
-}if (end == start) {
-return;
-}if (end > start) {
-var length=this.count - end;
-if (length > 0) {
-if (!this.shared) {
-System.arraycopy$O$I$O$I$I(this.value, end, this.value, start, length);
-} else {
-var newData=Clazz.array(Character.TYPE, [this.value.length]);
-System.arraycopy$O$I$O$I$I(this.value, 0, newData, 0, start);
-System.arraycopy$O$I$O$I$I(this.value, end, newData, start, length);
-this.value=newData;
-this.shared=false;
-}}this.count-=end - start;
-return;
-}}throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException'));
-});
-
-Clazz.newMeth(C$, 'deleteCharAt0$I', function (location) {
-if (0 > location || location >= this.count ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[location]);
-var length=this.count - location - 1 ;
-if (length > 0) {
-if (!this.shared) {
-System.arraycopy$O$I$O$I$I(this.value, location + 1, this.value, location, length);
-} else {
-var newData=Clazz.array(Character.TYPE, [this.value.length]);
-System.arraycopy$O$I$O$I$I(this.value, 0, newData, 0, location);
-System.arraycopy$O$I$O$I$I(this.value, location + 1, newData, location, length);
-this.value=newData;
-this.shared=false;
-}}this.count--;
-});
-
-Clazz.newMeth(C$, 'ensureCapacity$I', function (min) {
-if (min > this.value.length) {
-p$1.enlargeBuffer$I.apply(this, [min]);
-}});
-
-Clazz.newMeth(C$, 'getChars$I$I$CA$I', function (start, end, dest, destStart) {
-if (start > this.count || end > this.count  || start > end ) {
-throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException'));
-}System.arraycopy$O$I$O$I$I(this.value, start, dest, destStart, end - start);
-});
-
-Clazz.newMeth(C$, 'insert0$I$CA', function (index, chars) {
-if (0 > index || index > this.count ) {
+Clazz.newMeth(C$, 'codePointAt$I',  function (index) {
+if ((index < 0) || (index >= this.秘s.length$()) ) {
 throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
-}if (chars.length != 0) {
-p$1.move$I$I.apply(this, [chars.length, index]);
-System.arraycopy$O$I$O$I$I(chars, 0, this.value, index, chars.length);
-this.count+=chars.length;
-}});
-
-Clazz.newMeth(C$, 'insert0$I$CA$I$I', function (index, chars, start, length) {
-if (0 <= index && index <= this.count ) {
-if (start >= 0 && 0 <= length  && length <= chars.length - start ) {
-if (length != 0) {
-p$1.move$I$I.apply(this, [length, index]);
-System.arraycopy$O$I$O$I$I(chars, start, this.value, index, length);
-this.count+=length;
-}return;
-}throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$S,["offset " + start + ", len " + length + ", array.length " + chars.length ]);
-}throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
+}return this.秘s.codePointAt$I(index);
 });
 
-Clazz.newMeth(C$, 'insert0$I$C', function (index, ch) {
-if (0 > index || index > this.count ) {
-throw Clazz.new_(Clazz.load('ArrayIndexOutOfBoundsException').c$$I,[index]);
-}p$1.move$I$I.apply(this, [1, index]);
-this.value[index]=ch;
-this.count++;
-});
-
-Clazz.newMeth(C$, 'insert0$I$S', function (index, string) {
-if (0 <= index && index <= this.count ) {
-if (string == null ) string="null";
-var min=string.length$();
-if (min != 0) {
-p$1.move$I$I.apply(this, [min, index]);
-string.getChars$I$I$CA$I(0, min, this.value, index);
-this.count+=min;
-}} else {
+Clazz.newMeth(C$, 'codePointBefore$I',  function (index) {
+var i=index - 1;
+if ((i < 0) || (i >= this.秘s.length$()) ) {
 throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
-}});
-
-Clazz.newMeth(C$, 'insert0$I$CharSequence$I$I', function (index, s, start, end) {
-if (s == null ) s="null";
-if (index < 0 || index > this.count  || start < 0  || end < 0  || start > end  || end > s.length$() ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
-this.insert0$I$S(index, s.subSequence$I$I(start, end).toString());
+}return this.秘s.codePointAt$I(i);
 });
 
-Clazz.newMeth(C$, 'length$', function () {
-return this.count;
+Clazz.newMeth(C$, 'codePointCount$I$I',  function (beginIndex, endIndex) {
+if (beginIndex < 0 || endIndex > this.秘s.length$()  || beginIndex > endIndex ) {
+throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
+}return endIndex - beginIndex;
 });
 
-Clazz.newMeth(C$, 'move$I$I', function (size, index) {
-var newSize;
-if (this.value.length - this.count >= size) {
-if (!this.shared) {
-System.arraycopy$O$I$O$I$I(this.value, index, this.value, index + size, this.count - index);
-return;
-}newSize=this.value.length;
-} else {
-var a=this.count + size;
-var b=(this.value.length << 1) + 2;
-newSize=a > b ? a : b;
-}var newData=Clazz.array(Character.TYPE, [newSize]);
-System.arraycopy$O$I$O$I$I(this.value, 0, newData, 0, index);
-System.arraycopy$O$I$O$I$I(this.value, index, newData, index + size, this.count - index);
-this.value=newData;
-this.shared=false;
-}, p$1);
-
-Clazz.newMeth(C$, 'replace0$I$I$S', function (start, end, string) {
-if (start >= 0) {
-if (end > this.count) end=this.count;
-if (end > start) {
-var stringLength=string.length$();
-var diff=end - start - stringLength ;
-if (diff > 0) {
-if (!this.shared) {
-System.arraycopy$O$I$O$I$I(this.value, end, this.value, start + stringLength, this.count - end);
-} else {
-var newData=Clazz.array(Character.TYPE, [this.value.length]);
-System.arraycopy$O$I$O$I$I(this.value, 0, newData, 0, start);
-System.arraycopy$O$I$O$I$I(this.value, end, newData, start + stringLength, this.count - end);
-this.value=newData;
-this.shared=false;
-}} else if (diff < 0) {
-p$1.move$I$I.apply(this, [-diff, end]);
-} else if (this.shared) {
-this.value=this.value.clone$();
-this.shared=false;
-}string.getChars$I$I$CA$I(0, stringLength, this.value, start);
-this.count-=diff;
-return;
-}if (start == end) {
-if (string == null ) throw Clazz.new_(Clazz.load('NullPointerException'));
-this.insert0$I$S(start, string);
-return;
-}}throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException'));
+Clazz.newMeth(C$, 'offsetByCodePoints$I$I',  function (index, codePointOffset) {
+if (index < 0 || index + codePointOffset > this.秘s.length$() ) {
+throw Clazz.new_(Clazz.load('IndexOutOfBoundsException'));
+}return index + codePointOffset;
 });
 
-Clazz.newMeth(C$, 'reverse0$', function () {
-if (this.count < 2) {
-return;
-}if (!this.shared) {
-for (var i=0, end=this.count, mid=(this.count/2|0); i < mid; i++) {
-var temp=this.value[--end];
-this.value[end]=this.value[i];
-this.value[i]=temp;
+Clazz.newMeth(C$, 'getChars$I$I$CA$I',  function (srcBegin, srcEnd, dst, pt) {
+if (srcBegin < 0) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[srcBegin]);
+if ((srcEnd < 0) || (srcEnd > this.秘s.length$()) ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[srcEnd]);
+if (srcBegin > srcEnd || pt < 0  || pt + (srcEnd - srcBegin) > dst.length ) {
+throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$S,[srcBegin > srcEnd ? "srcBegin > srcEnd" : pt < 0 ? "pt < 0" : "pt + len > dst.length"]);
+}var s=this.秘s;
+for (var i=srcBegin; i < srcEnd; i++) {
+
+dst[pt++] = s[i];
 }
-} else {
-var newData=Clazz.array(Character.TYPE, [this.value.length]);
-for (var i=0, end=this.count; i < this.count; i++) {
-newData[--end]=this.value[i];
+});
+
+Clazz.newMeth(C$, 'setCharAt$I$C',  function (index, ch) {
+if ((index < 0) || (index >= this.秘s.length$()) ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
+
+this.秘s = this.秘s.substring(0, index) + ch + this.秘s.substring(index + 1);
+});
+
+Clazz.newMeth(C$, 'append$O',  function (obj) {
+
+this.秘s += (obj == null ? null : obj.toString());
+return this;
+});
+
+Clazz.newMeth(C$, 'append$S',  function (str) {
+
+this.秘s += str;
+return this;
+});
+
+Clazz.newMeth(C$, 'append$StringBuffer',  function (sb) {
+if (sb == null ) return this.appendNull$();
+
+this.秘s += sb.秘s;
+return this;
+});
+
+Clazz.newMeth(C$, 'append$AbstractStringBuilder',  function (asb) {
+if (asb == null ) return this.appendNull$();
+return this.append$S(asb.toString());
+});
+
+Clazz.newMeth(C$, 'append$CharSequence',  function (s) {
+if (s == null ) return this.appendNull$();
+if (Clazz.instanceOf(s, "java.lang.String")) return this.append$S(s);
+if (Clazz.instanceOf(s, "java.lang.AbstractStringBuilder")) return this.append$S((s).toString());
+return this.append$S(s.toString());
+});
+
+Clazz.newMeth(C$, 'appendNull$',  function () {
+
+this.秘s += "null";
+return this;
+});
+
+Clazz.newMeth(C$, 'append$CharSequence$I$I',  function (cs, start, end) {
+if (cs == null ) cs="null";
+if ((start < 0) || (start > end) || (end > cs.length$())  ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["start " + start + ", end " + end + ", s.length() " + cs.length$() ]);
+if (Clazz.instanceOf(cs, "java.lang.String")) {
+return this.append$S((cs).substring$I$I(start, end));
+}if (Clazz.instanceOf(cs, "java.lang.AbstractStringBuilder")) {
+return this.append$S((cs).substring$I$I(start, end));
+}for (var i=start; i < end; i++) {
+var c=cs.charAt$I(i);
+
+this.秘s += c;
 }
-this.value=newData;
-this.shared=false;
-}});
-
-Clazz.newMeth(C$, 'setCharAt$I$C', function (index, ch) {
-if (0 > index || index >= this.count ) {
-throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
-}if (this.shared) {
-this.value=this.value.clone$();
-this.shared=false;
-}this.value[index]=ch;
+return this;
 });
 
-Clazz.newMeth(C$, 'setLength$I', function (length) {
-if (length < 0) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[length]);
-if (this.count < length) {
-if (length > this.value.length) {
-p$1.enlargeBuffer$I.apply(this, [length]);
-} else {
-if (this.shared) {
-var newData=Clazz.array(Character.TYPE, [this.value.length]);
-System.arraycopy$O$I$O$I$I(this.value, 0, newData, 0, this.count);
-this.value=newData;
-this.shared=false;
-} else {
-for (var i=this.count; i < length; i++) {
-this.value[i]=String.fromCharCode(0);
+Clazz.newMeth(C$, 'append$CA',  function (str) {
+
+this.秘s += str.join("");
+return this;
+});
+
+Clazz.newMeth(C$, 'append$CA$I$I',  function (str, offset, len) {
+
+this.秘s += str.slice(offset, offset + len).join("");
+return this;
+});
+
+Clazz.newMeth(C$, 'append$Z',  function (b) {
+
+this.秘s += b;
+return this;
+});
+
+Clazz.newMeth(C$, 'append$C',  function (c) {
+
+this.秘s += c;
+return this;
+});
+
+Clazz.newMeth(C$, 'append$I',  function (i) {
+
+this.秘s += i;
+return this;
+});
+
+Clazz.newMeth(C$, 'append$J',  function (l) {
+var s=Long.toString$J(l);
+
+this.秘s += s;
+return this;
+});
+
+Clazz.newMeth(C$, 'append$F',  function (f) {
+
+this.秘s += f;
+return this;
+});
+
+Clazz.newMeth(C$, 'append$D',  function (d) {
+
+this.秘s += d;
+return this;
+});
+
+Clazz.newMeth(C$, 'delete$I$I',  function (start, end) {
+if (start < 0) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[start]);
+if (end > this.秘s.length$()) end=this.秘s.length$();
+if (start > end) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException'));
+
+this.秘s = this.秘s.substring(0, start)+this.秘s.substring(end);
+return this;
+});
+
+Clazz.newMeth(C$, 'appendCodePoint$I',  function (c) {
+try {
+
+this.秘s += String.fromCodePoint(c);
+} catch (t) {
+throw Clazz.new_(Clazz.load('IllegalArgumentException'));
 }
-}}}this.count=length;
+return this;
 });
 
-Clazz.newMeth(C$, 'substring$I', function (start) {
-if (0 <= start && start <= this.count ) {
-if (start == this.count) return "";
-this.shared=true;
-return  String.instantialize(this.value, start, this.count - start);
-}throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[start]);
+Clazz.newMeth(C$, 'deleteCharAt$I',  function (index) {
+if ((index < 0) || (index >= this.秘s.length$()) ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
+
+this.秘s = this.秘s.substring(0, index) + this.秘s.substring(index + 1);
+return this;
 });
 
-Clazz.newMeth(C$, 'substring$I$I', function (start, end) {
-if (0 <= start && start <= end  && end <= this.count ) {
-if (start == end) return "";
-this.shared=true;
-return  String.instantialize(this.value, start, end - start);
-}throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException'));
+Clazz.newMeth(C$, 'replace$I$I$S',  function (start, end, str) {
+if (start < 0) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[start]);
+var len=this.秘s.length$();
+if (start > len) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$S,["start > length()"]);
+if (start > end) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$S,["start > end"]);
+if (end > len) end=len;
+
+this.秘s = this.秘s.substring(0, start) + str + this.秘s.substring(end);
+return this;
 });
 
-Clazz.newMeth(C$, 'toString', function () {
-if (this.count == 0) return "";
-if (this.count >= 256 && this.count <= (this.value.length >> 1) ) return  String.instantialize(this.value, 0, this.count);
-this.shared=true;
-return  String.instantialize(this.value, 0, this.count);
+Clazz.newMeth(C$, 'substring$I',  function (start) {
+return this.substring$I$I(start, this.秘s.length$());
 });
 
-Clazz.newMeth(C$, 'subSequence$I$I', function (start, end) {
+Clazz.newMeth(C$, 'subSequence$I$I',  function (start, end) {
 return this.substring$I$I(start, end);
 });
 
-Clazz.newMeth(C$, 'indexOf$S', function (string) {
-return this.indexOf$S$I(string, 0);
-});
-
-Clazz.newMeth(C$, 'indexOf$S$I', function (subString, start) {
-if (start < 0) start=0;
-var subCount=subString.length$();
-if (subCount > 0) {
-if (subCount + start > this.count) return -1;
-var firstChar=subString.charAt$I(0);
-while (true){
-var i=start;
-var found=false;
-for (; i < this.count; i++) if (this.value[i] == firstChar) {
-found=true;
-break;
+Clazz.newMeth(C$, 'substring$I$I',  function (start, end) {
+if (start < 0) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[start]);
+if (end > this.秘s.length$()) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[end]);
+if (start > end) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[end - start]);
+{
+return this.秘s.substring(start, end);
 }
-if (!found || subCount + i > this.count ) return -1;
-var o1=i;
-var o2=0;
-while (++o2 < subCount && this.value[++o1] == subString.charAt$I(o2) ){
+});
+
+Clazz.newMeth(C$, 'insert$I$CA$I$I',  function (index, str, offset, len) {
+if ((index < 0) || (index > this.秘s.length$()) ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
+if ((offset < 0) || (len < 0) || (offset + len > str.length)  ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$S,["offset " + offset + ", len " + len + ", str.length " + str.length ]);
+
+this.秘s = this.秘s.substring(0, index) + str.slice(offset, offset + len).join("") + this.秘s.substring(index);
+return this;
+});
+
+Clazz.newMeth(C$, 'insert$I$O',  function (index, obj) {
+return this.insert$I$S(index, "" + obj);
+});
+
+Clazz.newMeth(C$, 'insert$I$S',  function (index, str) {
+if ((index < 0) || (index > this.秘s.length$()) ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
+if (str == null ) str="null";
+
+this.秘s = this.秘s.substring(0, index) + str + this.秘s.substring(index);
+return this;
+});
+
+Clazz.newMeth(C$, 'insert$I$CA',  function (index, str) {
+if ((index < 0) || (index > this.length$()) ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
+
+this.秘s = this.秘s.substring(0, index) + str.join() + this.秘s.substring(index);
+return this;
+});
+
+Clazz.newMeth(C$, 'insert$I$CharSequence',  function (index, s) {
+if (s == null ) s="null";
+if (Clazz.instanceOf(s, "java.lang.String")) return this.insert$I$S(index, s);
+if (Clazz.instanceOf(s, "java.lang.AbstractStringBuilder")) return this.insert$I$S(index, (s).toString());
+return this.insert$I$CharSequence$I$I(index, s, 0, s.length$());
+});
+
+Clazz.newMeth(C$, 'insert$I$CharSequence$I$I',  function (index, cs, start, end) {
+if (cs == null ) cs="null";
+if ((index < 0) || (index > this.length$()) ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["index " + index]);
+if ((start < 0) || (end < 0) || (start > end) || (end > cs.length$())  ) throw Clazz.new_(Clazz.load('IndexOutOfBoundsException').c$$S,["start " + start + ", end " + end + ", s.length() " + cs.length$() ]);
+if (Clazz.instanceOf(cs, "java.lang.String")) return this.insert$I$S(index, (cs).substring$I$I(start, end));
+if (Clazz.instanceOf(cs, "java.lang.AbstractStringBuilder")) return this.insert$I$S(index, (cs).substring$I$I(start, end));
+var c=Clazz.array(Character.TYPE, [end - start]);
+for (var i=start, pt=0; i < end; i++) c[pt++]=cs.charAt$I(i);
+
+return this.insert$I$CA(index, c);
+});
+
+Clazz.newMeth(C$, 'insert$I$Z',  function (index, b) {
+return this.insert$I$S(index, b ? "true" : "false");
+});
+
+Clazz.newMeth(C$, 'insert$I$C',  function (index, c) {
+
+this.秘s = this.秘s.substring(0, index) + c + this.秘s.substring(index);
+return this;
+});
+
+Clazz.newMeth(C$, 'insert$I$I',  function (index, i) {
+return this.insert$I$S(index, "" + i);
+});
+
+Clazz.newMeth(C$, 'insert$I$J',  function (index, l) {
+return this.insert$I$S(index, "" + Long.$s(l));
+});
+
+Clazz.newMeth(C$, 'insert$I$F',  function (index, f) {
+return this.insert$I$S(index, "" + new Float(f).toString());
+});
+
+Clazz.newMeth(C$, 'insert$I$D',  function (index, d) {
+return this.insert$I$S(index, "" + new Double(d).toString());
+});
+
+Clazz.newMeth(C$, 'indexOf$S',  function (str) {
+return this.indexOf$S$I(str, 0);
+});
+
+Clazz.newMeth(C$, 'indexOf$S$I',  function (str, fromIndex) {
+{
+return this.秘s.indexOf(str, fromIndex);
 }
-if (o2 == subCount) return i;
-start=i + 1;
+});
+
+Clazz.newMeth(C$, 'lastIndexOf$S',  function (str) {
+return this.lastIndexOf$S$I(str, this.秘s.length$());
+});
+
+Clazz.newMeth(C$, 'lastIndexOf$S$I',  function (str, fromIndex) {
+{
+return this.秘s.lastIndexOf(str, fromIndex);
 }
-}return (start < this.count || start == 0 ) ? start : this.count;
 });
 
-Clazz.newMeth(C$, 'lastIndexOf$S', function (string) {
-return this.lastIndexOf$S$I(string, this.count);
+Clazz.newMeth(C$, 'reverse$',  function () {
+
+this.秘s.split("").reverse().join("");
+return this;
 });
 
-Clazz.newMeth(C$, 'lastIndexOf$S$I', function (subString, start) {
-var subCount=subString.length$();
-if (subCount <= this.count && start >= 0 ) {
-if (subCount > 0) {
-if (start > this.count - subCount) start=this.count - subCount;
-var firstChar=subString.charAt$I(0);
-while (true){
-var i=start;
-var found=false;
-for (; i >= 0; --i) if (this.value[i] == firstChar) {
-found=true;
-break;
+Clazz.newMeth(C$, 'getValue$',  function () {
+{
+return this.秘s.split("");
 }
-if (!found) return -1;
-var o1=i;
-var o2=0;
-while (++o2 < subCount && this.value[++o1] == subString.charAt$I(o2) ){
-}
-if (o2 == subCount) return i;
-start=i - 1;
-}
-}return start < this.count ? start : this.count;
-}return -1;
-});
-
-Clazz.newMeth(C$, 'trimToSize$', function () {
-if (this.count < this.value.length) {
-var newValue=Clazz.array(Character.TYPE, [this.count]);
-System.arraycopy$O$I$O$I$I(this.value, 0, newValue, 0, this.count);
-this.value=newValue;
-this.shared=false;
-}});
-
-Clazz.newMeth(C$, 'codePointAt$I', function (index) {
-if (index < 0 || index >= this.count ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
-return Character.codePointAt$CA$I$I(this.value, index, this.count);
-});
-
-Clazz.newMeth(C$, 'codePointBefore$I', function (index) {
-if (index < 1 || index > this.count ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException').c$$I,[index]);
-return Character.codePointBefore$CA$I(this.value, index);
-});
-
-Clazz.newMeth(C$, 'codePointCount$I$I', function (beginIndex, endIndex) {
-if (beginIndex < 0 || endIndex > this.count  || beginIndex > endIndex ) throw Clazz.new_(Clazz.load('StringIndexOutOfBoundsException'));
-return Character.codePointCount$CA$I$I(this.value, beginIndex, endIndex - beginIndex);
-});
-
-Clazz.newMeth(C$, 'offsetByCodePoints$I$I', function (index, codePointOffset) {
-return Character.offsetByCodePoints$CA$I$I$I$I(this.value, 0, this.count, index, codePointOffset);
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:34 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:57 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

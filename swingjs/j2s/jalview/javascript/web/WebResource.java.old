@@ -1,0 +1,79 @@
+package jalview.javascript.web;
+
+import jalview.util.Platform;
+
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+/*
+ *  A JavaScript-only proxy for com.sun.jersey.api.client.WebResource
+ * 
+ */
+public class WebResource
+{
+
+  private String endpoint, params = "";
+
+  public WebResource(String endpoint)
+  {
+    this.endpoint = endpoint;
+  }
+
+  public WebResource queryParam(String key, String value)
+  {
+    params += (params == "" ? "?" : "&") + key + "="
+            + Platform.encodeURI(value);
+    return this;
+  }
+
+  public URI getURI()
+  {
+    try
+    {
+      return new URI(endpoint + params);
+    } catch (URISyntaxException e)
+    {
+      e.printStackTrace();
+      return null;
+    }
+  }
+
+  public Builder accept(String... encoding)
+  {
+    return new Builder(getURI(), encoding);
+  }
+
+  public static class Builder
+  {
+    private URI uri;
+
+    private String[] encoding;
+
+    public Builder(URI uri, String... encoding)
+    {
+      this.uri = uri;
+      this.encoding = encoding; // application/json
+    }
+
+    /**
+     * Get the response
+     * 
+     * @param c
+     *          must be ClientResponse
+     * @return
+     */
+    public ClientResponse get(Class<?> c)
+    {
+      try
+      {
+        return new ClientResponse(new URL(uri.toString()), encoding);
+      } catch (MalformedURLException e)
+      {
+        return null;
+      }
+    }
+  }
+
+}

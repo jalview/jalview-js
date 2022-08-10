@@ -1,40 +1,37 @@
-(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'java.util.ArrayList','java.util.Hashtable','java.util.StringTokenizer','StringBuilder','jalview.util.Comparison','jalview.datamodel.SequenceI','jalview.datamodel.Sequence','jalview.util.Format']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MSFfile", null, 'jalview.io.AlignFile');
+(function(){var P$=Clazz.newPackage("jalview.io"),I$=[[0,'java.util.ArrayList','java.util.Hashtable','java.util.StringTokenizer','StringBuilder','java.util.Locale','jalview.util.Comparison','jalview.datamodel.SequenceI','jalview.datamodel.Sequence','jalview.util.Format']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MSFfile", null, 'jalview.io.AlignFile');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$',  function () {
+Clazz.super_(C$, this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.newMeth(C$, 'c$$S$jalview_io_DataSourceType',  function (inFile, type) {
+;C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this,[inFile, type]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$jalview_io_DataSourceType', function (inFile, type) {
-C$.superclazz.c$$O$jalview_io_DataSourceType.apply(this, [inFile, type]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$jalview_io_FileParse',  function (source) {
+;C$.superclazz.c$$jalview_io_FileParse.apply(this,[source]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_io_FileParse', function (source) {
-C$.superclazz.c$$jalview_io_FileParse.apply(this, [source]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'parse$', function () {
+Clazz.newMeth(C$, 'parse$',  function () {
 var seqFlag=false;
-var headers=Clazz.new_($I$(1));
-var seqhash=Clazz.new_($I$(2));
+var headers=Clazz.new_($I$(1,1));
+var seqhash=Clazz.new_($I$(2,1));
 try {
 var line;
 while ((line=this.nextLine$()) != null ){
-var str=Clazz.new_($I$(3).c$$S,[line]);
+var str=Clazz.new_($I$(3,1).c$$S,[line]);
 var key=null;
 while (str.hasMoreTokens$()){
 var inStr=str.nextToken$();
 if (inStr.indexOf$S("Name:") != -1) {
 key=str.nextToken$();
-headers.add$TE(key);
+headers.add$O(key);
 }if (inStr.indexOf$S("//") != -1) {
 seqFlag=true;
 }if ((inStr.indexOf$S("//") == -1) && seqFlag ) {
@@ -43,8 +40,8 @@ var tempseq;
 if (seqhash.containsKey$O(key)) {
 tempseq=seqhash.get$O(key);
 } else {
-tempseq=Clazz.new_($I$(4).c$$I,[64]);
-seqhash.put$TK$TV(key, tempseq);
+tempseq=Clazz.new_($I$(4,1).c$$I,[64]);
+seqhash.put$O$O(key, tempseq);
 }while (str.hasMoreTokens$()){
 var sequenceBlock=str.nextToken$();
 tempseq.append$S(sequenceBlock);
@@ -69,15 +66,15 @@ this.maxLength=head.length$();
 }seq=seq.replace$C$C("~", ".");
 var newSeq=this.parseId$S(head);
 newSeq.setSequence$S(seq);
-this.seqs.addElement$TE(newSeq);
+this.seqs.addElement$O(newSeq);
 } else {
 System.err.println$S("MSFFile Parser: Can't find sequence for " + headers.get$I(i));
 }}
 });
 
-Clazz.newMeth(C$, 'checkSum$S', function (seq) {
+Clazz.newMeth(C$, 'checkSum$S',  function (seq) {
 var check=0;
-var sequence=seq.toUpperCase$();
+var sequence=seq.toUpperCase$java_util_Locale($I$(5).ROOT);
 for (var i=0; i < sequence.length$(); i++) {
 try {
 var value=sequence.charAt$I(i).$c();
@@ -95,10 +92,10 @@ throw e;
 return check % 10000;
 });
 
-Clazz.newMeth(C$, 'print$jalview_datamodel_SequenceIA$Z', function (sqs, jvSuffix) {
-var is_NA=$I$(5).isNucleotide$jalview_datamodel_SequenceIA(sqs);
-var s=Clazz.array($I$(6), [sqs.length]);
-var out=Clazz.new_($I$(4).c$$I,[256]);
+Clazz.newMeth(C$, 'print$jalview_datamodel_SequenceIA$Z',  function (sqs, jvSuffix) {
+var is_NA=$I$(6).isNucleotide$jalview_datamodel_SequenceIA(sqs);
+var s=Clazz.array($I$(7), [sqs.length]);
+var out=Clazz.new_($I$(4,1).c$$I,[256]);
 out.append$S("!!").append$S(is_NA ? "NA" : "AA").append$S("_MULTIPLE_ALIGNMENT 1.0");
 out.append$S(this.newline);
 out.append$S(this.newline);
@@ -107,7 +104,7 @@ var maxid=0;
 var i=0;
 while ((i < sqs.length) && (sqs[i] != null ) ){
 var seqString=sqs[i].getSequenceAsString$().replace$C$C("-", ".");
-var sb=Clazz.new_($I$(4).c$$S,[seqString]);
+var sb=Clazz.new_($I$(4,1).c$$S,[seqString]);
 for (var ii=0; ii < sb.length$(); ii++) {
 if (sb.charAt$I(ii) == ".") {
 sb.setCharAt$I$C(ii, "~");
@@ -120,20 +117,20 @@ sb.setCharAt$I$C(ii, "~");
 } else {
 break;
 }}
-s[i]=Clazz.new_($I$(7).c$$S$S$I$I,[sqs[i].getName$(), sb.toString(), sqs[i].getStart$(), sqs[i].getEnd$()]);
+s[i]=Clazz.new_([sqs[i].getName$(), sb.toString(), sqs[i].getStart$(), sqs[i].getEnd$()],$I$(8,1).c$$S$S$I$I);
 if (sb.length$() > max) {
 max=sb.length$();
-}i++;
+}++i;
 }
-var maxLenpad=Clazz.new_($I$(8).c$$S,["%" + ( String.instantialize("" + max)).length$() + "d" ]);
-var maxChkpad=Clazz.new_($I$(8).c$$S,["%" + ( String.instantialize("1" + max)).length$() + "d" ]);
+var maxLenpad=Clazz.new_(["%" + ( String.instantialize("" + max)).length$() + "d" ],$I$(9,1).c$$S);
+var maxChkpad=Clazz.new_(["%" + ( String.instantialize("1" + max)).length$() + "d" ],$I$(9,1).c$$S);
 i=0;
 var bigChecksum=0;
 var checksums=Clazz.array(Integer.TYPE, [s.length]);
 while (i < s.length){
 checksums[i]=this.checkSum$S(s[i].getSequenceAsString$());
 bigChecksum+=checksums[i];
-i++;
+++i;
 }
 var maxNB=0;
 out.append$S("   MSF: " + s[0].getLength$() + "   Type: " + (is_NA ? "N" : "P") + "    Check:  " + (bigChecksum % 10000) + "   .." );
@@ -148,19 +145,19 @@ nameBlock[i]= String.instantialize("  Name: " + this.printId$jalview_datamodel_S
 idBlock[i]= String.instantialize("Len: " + maxLenpad.form$J(s[i].getLength$()) + "  Check: " + maxChkpad.form$J(checksums[i]) + "  Weight: 1.00" + this.newline );
 if (s[i].getName$().length$() > maxid) {
 maxid=s[i].getName$().length$();
-}if (nameBlock[i].length$() > maxNB) {
+}if (Long.$gt(nameBlock[i].length$(),maxNB )) {
 maxNB=nameBlock[i].length$();
-}i++;
+}++i;
 }
 if (maxid < 10) {
 maxid=10;
-}if (maxNB < 15) {
+}if (Long.$lt(maxNB,15 )) {
 maxNB=15;
-}var nbFormat=Clazz.new_($I$(8).c$$S,["%-" + maxNB + "s" ]);
+}var nbFormat=Clazz.new_(["%-" + Long.$s(maxNB) + "s" ],$I$(9,1).c$$S);
 for (i=0; (i < s.length) && (s[i] != null ) ; i++) {
 out.append$S(nbFormat.form$S(nameBlock[i]) + idBlock[i]);
 }
-maxid++;
+++maxid;
 out.append$S(this.newline);
 out.append$S(this.newline);
 out.append$S("//");
@@ -172,7 +169,7 @@ for (i=0; i < nochunks; i++) {
 var j=0;
 while ((j < s.length) && (s[j] != null ) ){
 var name=this.printId$jalview_datamodel_SequenceI$Z(s[j], jvSuffix);
-out.append$S(Clazz.new_($I$(8).c$$S,["%-" + maxid + "s" ]).form$S(name + " "));
+out.append$S(Clazz.new_($I$(9,1).c$$S,["%-" + maxid + "s" ]).form$S(name + " "));
 for (var k=0; k < 5; k++) {
 var start=(i * 50) + (k * 10);
 var end=start + 10;
@@ -191,11 +188,11 @@ out.append$S(this.newline);
 if (k == 0) {
 out.append$S(this.newline);
 }}}}
-j++;
+++j;
 }
 out.append$S(this.newline);
 }
 return out.toString();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:14 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:37 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

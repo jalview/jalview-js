@@ -1,18 +1,16 @@
 (function(){var P$=Clazz.newPackage("javax.swing.event"),I$=[];
-var C$=Clazz.newClass(P$, "InternalFrameEvent", null, 'java.awt.AWTEvent');
+/*c*/var C$=Clazz.newClass(P$, "InternalFrameEvent", null, 'java.awt.AWTEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$javax_swing_JInternalFrame$I',  function (source, id) {
+;C$.superclazz.c$$O$I.apply(this,[source, id]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$javax_swing_JInternalFrame$I', function (source, id) {
-C$.superclazz.c$$O$I.apply(this, [source, id]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'paramString$', function () {
+Clazz.newMeth(C$, 'paramString$',  function () {
 var typeStr;
 switch (this.id) {
 case 25549:
@@ -42,10 +40,10 @@ typeStr="unknown type";
 return typeStr;
 });
 
-Clazz.newMeth(C$, 'getInternalFrame$', function () {
+Clazz.newMeth(C$, 'getInternalFrame$',  function () {
 return (Clazz.instanceOf(this.source, "javax.swing.JInternalFrame")) ? this.source : null;
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

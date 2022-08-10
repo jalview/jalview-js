@@ -1,13 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.api"),I$=[[0,'org.jmol.util.Elements','org.jmol.api.JmolViewer','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JmolAdapter");
-C$.cellParamNames=null;
+(function(){var P$=Clazz.newPackage("org.jmol.api"),I$=[[0,'org.jmol.util.Elements','org.jmol.api.JmolViewer','javajs.util.PT']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JmolAdapter");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.cellParamNames=Clazz.array(String, -1, ["_cell_length_a", "_cell_length_b", "_cell_length_c", "_cell_angle_alpha", "_cell_angle_beta", "_cell_angle_gamma"]);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['O',['cellParamNames','String[]']]]
 
 Clazz.newMeth(C$, 'getElementSymbol$I', function (elementNumber) {
 return $I$(1).elementSymbolFromNumber$I(elementNumber);
@@ -55,6 +55,10 @@ Clazz.newMeth(C$, 'canonizeAlternateLocationID$C', function (altLoc) {
 return C$.canonizeAlphaDigit$C(altLoc);
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.cellParamNames=Clazz.array(String, -1, ["_cell_length_a", "_cell_length_b", "_cell_length_c", "_cell_angle_alpha", "_cell_angle_beta", "_cell_angle_gamma"]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:51 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:29 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

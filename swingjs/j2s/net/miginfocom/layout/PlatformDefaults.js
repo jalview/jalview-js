@@ -1,95 +1,13 @@
-(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),I$=[[0,'net.miginfocom.layout.UnitValue','java.util.HashMap','java.awt.Toolkit','net.miginfocom.layout.LayoutUtil','net.miginfocom.layout.BoundSize']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "PlatformDefaults");
-C$.VISUAL_PADDING_PROPERTY=null;
-C$.DEF_H_UNIT=0;
-C$.DEF_V_UNIT=0;
-C$.GAP_PROVIDER=null;
-C$.MOD_COUNT=0;
-C$.LPX6=null;
-C$.LPX7=null;
-C$.LPX11=null;
-C$.LPX12=null;
-C$.LPX16=null;
-C$.LPX18=null;
-C$.LPX20=null;
-C$.LPY6=null;
-C$.LPY7=null;
-C$.LPY11=null;
-C$.LPY12=null;
-C$.LPY16=null;
-C$.LPY18=null;
-C$.LPY20=null;
-C$.CUR_PLAF=0;
-C$.PANEL_INS=null;
-C$.DIALOG_INS=null;
-C$.BUTTON_FORMAT=null;
-C$.HOR_DEFS=null;
-C$.VER_DEFS=null;
-C$.DEF_VGAP=null;
-C$.DEF_HGAP=null;
-C$.RELATED_X=null;
-C$.RELATED_Y=null;
-C$.UNRELATED_X=null;
-C$.UNRELATED_Y=null;
-C$.BUTT_WIDTH=null;
-C$.BUTT_PADDING=null;
-C$.horScale=null;
-C$.verScale=null;
-C$.LP_BASE=0;
-C$.BASE_DPI_FORCED=null;
-C$.BASE_DPI=0;
-C$.dra=false;
-C$.VISUAL_BOUNDS=null;
+(function(){var P$=Clazz.newPackage("net.miginfocom.layout"),I$=[[0,'net.miginfocom.layout.UnitValue','java.util.HashMap','java.awt.Toolkit','net.miginfocom.layout.LayoutUtil','net.miginfocom.layout.BoundSize']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "PlatformDefaults");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.VISUAL_PADDING_PROPERTY="visualPadding";
-C$.DEF_H_UNIT=1;
-C$.DEF_V_UNIT=2;
-C$.GAP_PROVIDER=null;
-C$.MOD_COUNT=0;
-C$.LPX6=Clazz.new_($I$(1).c$$F$I$S,[6, 1, null]);
-C$.LPX7=Clazz.new_($I$(1).c$$F$I$S,[7, 1, null]);
-C$.LPX11=Clazz.new_($I$(1).c$$F$I$S,[11, 1, null]);
-C$.LPX12=Clazz.new_($I$(1).c$$F$I$S,[12, 1, null]);
-C$.LPX16=Clazz.new_($I$(1).c$$F$I$S,[16, 1, null]);
-C$.LPX18=Clazz.new_($I$(1).c$$F$I$S,[18, 1, null]);
-C$.LPX20=Clazz.new_($I$(1).c$$F$I$S,[20, 1, null]);
-C$.LPY6=Clazz.new_($I$(1).c$$F$I$S,[6, 2, null]);
-C$.LPY7=Clazz.new_($I$(1).c$$F$I$S,[7, 2, null]);
-C$.LPY11=Clazz.new_($I$(1).c$$F$I$S,[11, 2, null]);
-C$.LPY12=Clazz.new_($I$(1).c$$F$I$S,[12, 2, null]);
-C$.LPY16=Clazz.new_($I$(1).c$$F$I$S,[16, 2, null]);
-C$.LPY18=Clazz.new_($I$(1).c$$F$I$S,[18, 2, null]);
-C$.LPY20=Clazz.new_($I$(1).c$$F$I$S,[20, 2, null]);
-C$.CUR_PLAF=0;
-C$.PANEL_INS=Clazz.array($I$(1), [4]);
-C$.DIALOG_INS=Clazz.array($I$(1), [4]);
-C$.BUTTON_FORMAT=null;
-C$.HOR_DEFS=Clazz.new_($I$(2).c$$I,[32]);
-C$.VER_DEFS=Clazz.new_($I$(2).c$$I,[32]);
-C$.DEF_VGAP=null;
-C$.DEF_HGAP=null;
-C$.RELATED_X=null;
-C$.RELATED_Y=null;
-C$.UNRELATED_X=null;
-C$.UNRELATED_Y=null;
-C$.BUTT_WIDTH=null;
-C$.BUTT_PADDING=null;
-C$.horScale=null;
-C$.verScale=null;
-C$.LP_BASE=101;
-C$.BASE_DPI_FORCED=null;
-C$.BASE_DPI=96;
-C$.dra=true;
-C$.VISUAL_BOUNDS=Clazz.new_($I$(2).c$$I,[64]);
-{
-C$.setPlatform$I(C$.getCurrentPlatform$());
-C$.MOD_COUNT=0;
-};
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['Z',['dra'],'I',['DEF_H_UNIT','DEF_V_UNIT','MOD_COUNT','CUR_PLAF','LP_BASE','BASE_DPI'],'S',['VISUAL_PADDING_PROPERTY','BUTTON_FORMAT'],'O',['GAP_PROVIDER','net.miginfocom.layout.InCellGapProvider','LPX6','net.miginfocom.layout.UnitValue','+LPX7','+LPX11','+LPX12','+LPX16','+LPX18','+LPX20','+LPY6','+LPY7','+LPY11','+LPY12','+LPY16','+LPY18','+LPY20','PANEL_INS','net.miginfocom.layout.UnitValue[]','+DIALOG_INS','HOR_DEFS','java.util.HashMap','+VER_DEFS','DEF_VGAP','net.miginfocom.layout.BoundSize','+DEF_HGAP','+RELATED_X','+RELATED_Y','+UNRELATED_X','+UNRELATED_Y','BUTT_WIDTH','net.miginfocom.layout.UnitValue','+BUTT_PADDING','horScale','Float','+verScale','BASE_DPI_FORCED','Integer','VISUAL_BOUNDS','java.util.HashMap']]]
 
 Clazz.newMeth(C$, 'getCurrentPlatform$', function () {
 if (true ||false) return 0;
@@ -103,7 +21,7 @@ return 0;
 }}, 1);
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'setPlatform$I', function (plaf) {
@@ -115,7 +33,7 @@ C$.setUnrelatedGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitVal
 C$.setParagraphGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX20, C$.LPY20);
 C$.setIndentGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX11, C$.LPY11);
 C$.setGridCellGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX7, C$.LPY7);
-C$.setMinimumButtonWidth$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1).c$$F$I$S,[75, 1, null]));
+C$.setMinimumButtonWidth$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1,1).c$$F$I$S,[75, 1, null]));
 C$.setButtonOrder$S("L_E+U+YNBXOCAH_I_R");
 C$.setDialogInsets$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPY11, C$.LPX11, C$.LPY11, C$.LPX11);
 C$.setPanelInsets$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPY7, C$.LPX7, C$.LPY7, C$.LPX7);
@@ -156,8 +74,8 @@ C$.setUnrelatedGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitVal
 C$.setParagraphGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX20, C$.LPY20);
 C$.setIndentGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX11, C$.LPY11);
 C$.setGridCellGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX7, C$.LPY7);
-C$.setMinimumButtonWidth$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1).c$$F$I$S,[70, 1, null]));
-C$.setMinimumButtonPadding$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1).c$$F$I$S,[8, 1, null]));
+C$.setMinimumButtonWidth$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1,1).c$$F$I$S,[70, 1, null]));
+C$.setMinimumButtonPadding$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1,1).c$$F$I$S,[8, 1, null]));
 C$.setButtonOrder$S("L_HE+U+NYBXCOA_I_R");
 C$.setDialogInsets$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPY20, C$.LPX20, C$.LPY20, C$.LPX20);
 C$.setPanelInsets$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPY16, C$.LPX16, C$.LPY16, C$.LPX16);
@@ -168,7 +86,7 @@ C$.setUnrelatedGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitVal
 C$.setParagraphGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX18, C$.LPY18);
 C$.setIndentGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX12, C$.LPY12);
 C$.setGridCellGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPX6, C$.LPY6);
-C$.setMinimumButtonWidth$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1).c$$F$I$S,[85, 1, null]));
+C$.setMinimumButtonWidth$net_miginfocom_layout_UnitValue(Clazz.new_($I$(1,1).c$$F$I$S,[85, 1, null]));
 C$.setButtonOrder$S("L_HE+UNYACBXO_I_R");
 C$.setDialogInsets$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPY12, C$.LPX12, C$.LPY12, C$.LPX12);
 C$.setPanelInsets$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(C$.LPY6, C$.LPX6, C$.LPY6, C$.LPX6);
@@ -177,11 +95,11 @@ default:
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Unknown platform: " + plaf]);
 }
 C$.CUR_PLAF=plaf;
-C$.BASE_DPI=C$.BASE_DPI_FORCED != null  ? (C$.BASE_DPI_FORCED).intValue$() : C$.getPlatformDPI$I(plaf);
+C$.BASE_DPI=C$.BASE_DPI_FORCED != null  ? (C$.BASE_DPI_FORCED).valueOf() : C$.getPlatformDPI$I(plaf);
 }, 1);
 
 Clazz.newMeth(C$, 'setDefaultVisualPadding$S$IA', function (key, insets) {
-C$.VISUAL_BOUNDS.put$TK$TV(key, insets);
+C$.VISUAL_BOUNDS.put$O$O(key, insets);
 }, 1);
 
 Clazz.newMeth(C$, 'getDefaultVisualPadding$S', function (key) {
@@ -213,7 +131,7 @@ return C$.BASE_DPI;
 }, 1);
 
 Clazz.newMeth(C$, 'setDefaultDPI$Integer', function (dpi) {
-C$.BASE_DPI=dpi != null  ? (dpi).intValue$() : C$.getPlatformDPI$I(C$.CUR_PLAF);
+C$.BASE_DPI=dpi != null  ? (dpi).valueOf() : C$.getPlatformDPI$I(C$.CUR_PLAF);
 C$.BASE_DPI_FORCED=dpi;
 }, 1);
 
@@ -250,14 +168,14 @@ C$.MOD_COUNT++;
 
 Clazz.newMeth(C$, 'setRelatedGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue', function (x, y) {
 C$.setUnitValue$SA$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(Clazz.array(String, -1, ["r", "rel", "related"]), x, y);
-C$.RELATED_X=Clazz.new_($I$(5).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[x, x, null, "rel:rel"]);
-C$.RELATED_Y=Clazz.new_($I$(5).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[y, y, null, "rel:rel"]);
+C$.RELATED_X=Clazz.new_($I$(5,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[x, x, null, "rel:rel"]);
+C$.RELATED_Y=Clazz.new_($I$(5,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[y, y, null, "rel:rel"]);
 }, 1);
 
 Clazz.newMeth(C$, 'setUnrelatedGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue', function (x, y) {
 C$.setUnitValue$SA$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue(Clazz.array(String, -1, ["u", "unrel", "unrelated"]), x, y);
-C$.UNRELATED_X=Clazz.new_($I$(5).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[x, x, null, "unrel:unrel"]);
-C$.UNRELATED_Y=Clazz.new_($I$(5).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[y, y, null, "unrel:unrel"]);
+C$.UNRELATED_X=Clazz.new_($I$(5,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[x, x, null, "unrel:unrel"]);
+C$.UNRELATED_Y=Clazz.new_($I$(5,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[y, y, null, "unrel:unrel"]);
 }, 1);
 
 Clazz.newMeth(C$, 'setParagraphGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue', function (x, y) {
@@ -269,8 +187,8 @@ C$.setUnitValue$SA$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitVal
 }, 1);
 
 Clazz.newMeth(C$, 'setGridCellGap$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue', function (x, y) {
-if (x != null ) C$.DEF_HGAP=Clazz.new_($I$(5).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[x, x, null, null]);
-if (y != null ) C$.DEF_VGAP=Clazz.new_($I$(5).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[y, y, null, null]);
+if (x != null ) C$.DEF_HGAP=Clazz.new_($I$(5,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[x, x, null, null]);
+if (y != null ) C$.DEF_VGAP=Clazz.new_($I$(5,1).c$$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue$S,[y, y, null, null]);
 C$.MOD_COUNT++;
 }, 1);
 
@@ -311,8 +229,8 @@ return C$.VER_DEFS.get$O(unit);
 Clazz.newMeth(C$, 'setUnitValue$SA$net_miginfocom_layout_UnitValue$net_miginfocom_layout_UnitValue', function (unitStrings, x, y) {
 for (var unitString, $unitString = 0, $$unitString = unitStrings; $unitString<$$unitString.length&&((unitString=($$unitString[$unitString])),1);$unitString++) {
 var s=unitString.toLowerCase$().trim$();
-if (x != null ) C$.HOR_DEFS.put$TK$TV(s, x);
-if (y != null ) C$.VER_DEFS.put$TK$TV(s, y);
+if (x != null ) C$.HOR_DEFS.put$O$O(s, x);
+if (y != null ) C$.VER_DEFS.put$O$O(s, y);
 }
 C$.MOD_COUNT++;
 }, 1);
@@ -401,7 +319,7 @@ return C$.CUR_PLAF == 1 ? 1.0 : 0.0;
 }, 1);
 
 Clazz.newMeth(C$, 'getDefaultComponentGap$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_ComponentWrapper$I$S$Z', function (comp, adjacentComp, adjacentSide, tag, isLTR) {
-if (C$.GAP_PROVIDER != null ) return C$.GAP_PROVIDER.getDefaultGap$(comp, adjacentComp, adjacentSide, tag, isLTR);
+if (C$.GAP_PROVIDER != null ) return C$.GAP_PROVIDER.getDefaultGap$net_miginfocom_layout_ComponentWrapper$net_miginfocom_layout_ComponentWrapper$I$S$Z(comp, adjacentComp, adjacentSide, tag, isLTR);
 if (adjacentComp == null ) return null;
 return (adjacentSide == 2 || adjacentSide == 4 ) ? C$.RELATED_X : C$.RELATED_Y;
 }, 1);
@@ -451,5 +369,52 @@ return C$.dra;
 Clazz.newMeth(C$, 'setDefaultRowAlignmentBaseline$Z', function (b) {
 C$.dra=b;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.VISUAL_PADDING_PROPERTY="visualPadding";
+C$.DEF_H_UNIT=1;
+C$.DEF_V_UNIT=2;
+C$.GAP_PROVIDER=null;
+C$.MOD_COUNT=0;
+C$.LPX6=Clazz.new_($I$(1,1).c$$F$I$S,[6, 1, null]);
+C$.LPX7=Clazz.new_($I$(1,1).c$$F$I$S,[7, 1, null]);
+C$.LPX11=Clazz.new_($I$(1,1).c$$F$I$S,[11, 1, null]);
+C$.LPX12=Clazz.new_($I$(1,1).c$$F$I$S,[12, 1, null]);
+C$.LPX16=Clazz.new_($I$(1,1).c$$F$I$S,[16, 1, null]);
+C$.LPX18=Clazz.new_($I$(1,1).c$$F$I$S,[18, 1, null]);
+C$.LPX20=Clazz.new_($I$(1,1).c$$F$I$S,[20, 1, null]);
+C$.LPY6=Clazz.new_($I$(1,1).c$$F$I$S,[6, 2, null]);
+C$.LPY7=Clazz.new_($I$(1,1).c$$F$I$S,[7, 2, null]);
+C$.LPY11=Clazz.new_($I$(1,1).c$$F$I$S,[11, 2, null]);
+C$.LPY12=Clazz.new_($I$(1,1).c$$F$I$S,[12, 2, null]);
+C$.LPY16=Clazz.new_($I$(1,1).c$$F$I$S,[16, 2, null]);
+C$.LPY18=Clazz.new_($I$(1,1).c$$F$I$S,[18, 2, null]);
+C$.LPY20=Clazz.new_($I$(1,1).c$$F$I$S,[20, 2, null]);
+C$.CUR_PLAF=0;
+C$.PANEL_INS=Clazz.array($I$(1), [4]);
+C$.DIALOG_INS=Clazz.array($I$(1), [4]);
+C$.BUTTON_FORMAT=null;
+C$.HOR_DEFS=Clazz.new_($I$(2,1).c$$I,[32]);
+C$.VER_DEFS=Clazz.new_($I$(2,1).c$$I,[32]);
+C$.DEF_VGAP=null;
+C$.DEF_HGAP=null;
+C$.RELATED_X=null;
+C$.RELATED_Y=null;
+C$.UNRELATED_X=null;
+C$.UNRELATED_Y=null;
+C$.BUTT_WIDTH=null;
+C$.BUTT_PADDING=null;
+C$.horScale=null;
+C$.verScale=null;
+C$.LP_BASE=101;
+C$.BASE_DPI_FORCED=null;
+C$.BASE_DPI=96;
+C$.dra=true;
+C$.VISUAL_BOUNDS=Clazz.new_($I$(2,1).c$$I,[64]);
+{
+C$.setPlatform$I(C$.getCurrentPlatform$());
+C$.MOD_COUNT=0;
+};
+};
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-02-03 08:07:33 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:25 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

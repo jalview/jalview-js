@@ -1,34 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.M4','org.jmol.symmetry.HallRotation','org.jmol.util.Logger','org.jmol.symmetry.HallTranslation','javajs.util.SB','org.jmol.symmetry.SymmetryOperation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "HallRotationTerm");
+(function(){var P$=Clazz.newPackage("org.jmol.symmetry"),I$=[[0,'javajs.util.M4','org.jmol.symmetry.HallRotation','org.jmol.util.Logger','org.jmol.symmetry.HallTranslation','javajs.util.SB','org.jmol.symmetry.SymmetryOperation']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "HallRotationTerm");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.inputCode=null;
-this.primitiveCode=null;
-this.lookupCode=null;
-this.translationString=null;
-this.rotation=null;
-this.translation=null;
-this.seitzMatrix12ths=null;
-this.isImproper=false;
-this.order=0;
-this.axisType='\0';
-this.diagonalReferenceAxis='\0';
-this.allPositive=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.seitzMatrix12ths=Clazz.new_($I$(1));
+this.seitzMatrix12ths=Clazz.new_($I$(1,1));
 this.axisType="\u0000";
 this.diagonalReferenceAxis="\u0000";
 this.allPositive=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isImproper','allPositive'],'C',['axisType','diagonalReferenceAxis'],'I',['order'],'S',['inputCode','primitiveCode','lookupCode','translationString'],'O',['rotation','org.jmol.symmetry.HallRotation','translation','org.jmol.symmetry.HallTranslation','seitzMatrix12ths','javajs.util.M4']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_symmetry_HallInfo$S$I$C', function (hallInfo, code, prevOrder, prevAxisType) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.inputCode=code;
 code += "   ";
 if (code.charAt$I(0) == "-") {
@@ -82,7 +67,7 @@ this.rotation=$I$(2).lookup$S(this.lookupCode);
 if (this.rotation == null ) {
 $I$(3).error$S("Rotation lookup could not find " + this.inputCode + " ? " + this.lookupCode );
 return;
-}this.translation=Clazz.new_($I$(4).c$$C$javajs_util_P3i,["\u0000", null]);
+}this.translation=Clazz.new_($I$(4,1).c$$C$javajs_util_P3i,["\u0000", null]);
 this.translationString="";
 var len=code.length$();
 for (var i=ptr; i < len; i++) {
@@ -122,11 +107,11 @@ m2.m23=-v.z;
 this.seitzMatrix12ths.mul2$javajs_util_M4$javajs_util_M4(m1, this.seitzMatrix12ths);
 this.seitzMatrix12ths.mul$javajs_util_M4(m2);
 }if ($I$(3).debugging) {
-$I$(3).debug$S("code = " + code + "; primitive code =" + this.primitiveCode + "\n Seitz Matrix(12ths):" + this.seitzMatrix12ths );
+$I$(3,"debug$S",["code = " + code + "; primitive code =" + this.primitiveCode + "\n Seitz Matrix(12ths):" + this.seitzMatrix12ths ]);
 }}, 1);
 
 Clazz.newMeth(C$, 'dumpInfo$S', function (vectorCode) {
-var sb=Clazz.new_($I$(5));
+var sb=Clazz.new_($I$(5,1));
 sb.append$S("\ninput code: ").append$S(this.inputCode).append$S("; primitive code: ").append$S(this.primitiveCode).append$S("\norder: ").appendI$I(this.order).append$S(this.isImproper ? " (improper axis)" : "");
 if (this.axisType != "_") {
 sb.append$S("; axisType: ").appendC$C(this.axisType);
@@ -143,4 +128,4 @@ return $I$(6).getXYZFromMatrix$javajs_util_M4$Z$Z$Z(this.seitzMatrix12ths, true,
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:12 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:50 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

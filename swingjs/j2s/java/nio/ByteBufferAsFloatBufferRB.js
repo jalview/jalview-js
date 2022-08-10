@@ -1,23 +1,20 @@
-(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ByteBufferAsFloatBufferRB", null, 'java.nio.ByteBufferAsFloatBufferB');
+(function(){var P$=Clazz.newPackage("java.nio"),I$=[[0,'java.nio.ByteOrder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ByteBufferAsFloatBufferRB", null, 'java.nio.ByteBufferAsFloatBufferB');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer',  function (paramByteBuffer) {
+;C$.superclazz.c$$java_nio_ByteBuffer.apply(this,[paramByteBuffer]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer', function (paramByteBuffer) {
-C$.superclazz.c$$java_nio_ByteBuffer.apply(this, [paramByteBuffer]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer$I$I$I$I$I',  function (paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5) {
+;C$.superclazz.c$$java_nio_ByteBuffer$I$I$I$I$I.apply(this,[paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_nio_ByteBuffer$I$I$I$I$I', function (paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5) {
-C$.superclazz.c$$java_nio_ByteBuffer$I$I$I$I$I.apply(this, [paramByteBuffer, paramInt1, paramInt2, paramInt3, paramInt4, paramInt5]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'slice$', function () {
+Clazz.newMeth(C$, 'slice$',  function () {
 var i=this.position$();
 var j=this.limit$();
 Clazz.assert(C$, this, function(){return (i <= j)});
@@ -27,39 +24,42 @@ Clazz.assert(C$, this, function(){return (m >= 0)});
 return Clazz.new_(C$.c$$java_nio_ByteBuffer$I$I$I$I$I,[this.bb, -1, 0, k, k, m]);
 });
 
-Clazz.newMeth(C$, 'duplicate$', function () {
+Clazz.newMeth(C$, 'duplicate$',  function () {
 return Clazz.new_(C$.c$$java_nio_ByteBuffer$I$I$I$I$I,[this.bb, this.markValue$(), this.position$(), this.limit$(), this.capacity$(), this.$offset]);
 });
 
-Clazz.newMeth(C$, 'asReadOnlyBuffer$', function () {
+Clazz.newMeth(C$, 'asReadOnlyBuffer$',  function () {
 return this.duplicate$();
 });
 
-Clazz.newMeth(C$, 'put$F', function (paramFloat) {
+Clazz.newMeth(C$, 'put$F',  function (paramFloat) {
 throw Clazz.new_(Clazz.load('java.nio.ReadOnlyBufferException'));
 });
 
-Clazz.newMeth(C$, 'put$I$F', function (paramInt, paramFloat) {
+Clazz.newMeth(C$, 'put$I$F',  function (paramInt, paramFloat) {
 throw Clazz.new_(Clazz.load('java.nio.ReadOnlyBufferException'));
 });
 
-Clazz.newMeth(C$, 'compact$', function () {
+Clazz.newMeth(C$, 'compact$',  function () {
 throw Clazz.new_(Clazz.load('java.nio.ReadOnlyBufferException'));
 });
 
-Clazz.newMeth(C$, 'isDirect$', function () {
+Clazz.newMeth(C$, 'isDirect$',  function () {
 return this.bb.isDirect$();
 });
 
-Clazz.newMeth(C$, 'isReadOnly$', function () {
+Clazz.newMeth(C$, 'isReadOnly$',  function () {
 return true;
 });
 
-Clazz.newMeth(C$, 'order$', function () {
+Clazz.newMeth(C$, 'order$',  function () {
 return $I$(1).BIG_ENDIAN;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:38 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:01 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

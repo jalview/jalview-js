@@ -1,34 +1,19 @@
-(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pymol"),p$1={},I$=[[0,'org.jmol.util.BSUtil','javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','org.jmol.adapter.readers.pymol.PyMOLReader','javajs.util.P3']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JmolObject");
+(function(){var P$=Clazz.newPackage("org.jmol.adapter.readers.pymol"),p$1={},I$=[[0,'org.jmol.util.BSUtil','javajs.util.SB','javajs.util.PT','org.jmol.util.Escape','org.jmol.adapter.readers.pymol.PyMOLReader','javajs.util.P3']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JmolObject");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.id=0;
-this.bsAtoms=null;
-this.info=null;
-this.size=0;
-this.colors=null;
-this.modelIndex=0;
-this.jmolName=null;
-this.argb=0;
-this.translucency=0;
-this.visible=false;
-this.rd=null;
-this.cacheID=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.size=-1;
 this.modelIndex=-2147483648;
 this.translucency=0;
 this.visible=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['visible'],'F',['translucency'],'I',['id','size','modelIndex','argb'],'S',['jmolName','cacheID'],'O',['bsAtoms','javajs.util.BS','info','java.lang.Object','colors','Object[]','rd','org.jmol.atomdata.RadiusData']]]
 
 Clazz.newMeth(C$, 'c$$I$S$javajs_util_BS$O', function (id, branchNameID, bsAtoms, info) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.id=id;
 this.bsAtoms=bsAtoms;
 this.info=info;
@@ -175,7 +160,7 @@ sID=(this.bsAtoms == null  ? this.info : this.jmolName);
 if (sm.getShapeIdFromObjectName$S(sID) >= 0) {
 sm.vwr.setObjectProp$S$I(sID, 1610625028);
 return;
-}sb=Clazz.new_($I$(2));
+}sb=Clazz.new_($I$(2,1));
 sb.append$S("isosurface ID ").append$S($I$(3).esc$S(sID));
 if (this.modelIndex < 0) this.modelIndex=sm.vwr.am.cmi;
 if (this.bsAtoms == null ) {
@@ -208,9 +193,9 @@ case 1073742016:
 var mep=this.info;
 sID=mep.get$I(mep.size$() - 2).toString();
 var mapID=mep.get$I(mep.size$() - 1).toString();
-var min=$I$(5).floatAt$javajs_util_Lst$I($I$(5).listAt$javajs_util_Lst$I(mep, 3), 0);
-var max=$I$(5).floatAt$javajs_util_Lst$I($I$(5).listAt$javajs_util_Lst$I(mep, 3), 2);
-sb=Clazz.new_($I$(2));
+var min=$I$(5,"floatAt$javajs_util_Lst$I",[$I$(5).listAt$javajs_util_Lst$I(mep, 3), 0]);
+var max=$I$(5,"floatAt$javajs_util_Lst$I",[$I$(5).listAt$javajs_util_Lst$I(mep, 3), 2]);
+sb=Clazz.new_($I$(2,1));
 sb.append$S(";isosurface ID ").append$S($I$(3).esc$S(sID)).append$S(" map ").append$S($I$(3).esc$S(this.cacheID)).append$S(" ").append$S($I$(3).esc$S(mapID)).append$S(";color isosurface range " + new Float(min).toString() + " " + new Float(max).toString() + ";isosurface colorscheme rwb;set isosurfacekey true" );
 if (this.translucency > 0 ) sb.append$S(";color isosurface translucent " + new Float(this.translucency).toString());
 if (doCache) sb.append$S(";isosurface cache");
@@ -219,13 +204,13 @@ case 1073742018:
 this.modelIndex=sm.vwr.am.cmi;
 var mesh=this.info;
 sID=mesh.get$I(mesh.size$() - 2).toString();
-sb=Clazz.new_($I$(2));
+sb=Clazz.new_($I$(2,1));
 sb.append$S("isosurface ID ").append$S($I$(3).esc$S(sID)).append$S(" model ").append$S(m.getModelNumberDotted$I(this.modelIndex)).append$S(" color ").append$S($I$(4).escapeColor$I(this.argb)).append$S("  ").append$S($I$(3).esc$S(this.cacheID)).append$S(" ").append$S($I$(3).esc$S(sID)).append$S(" mesh nofill frontonly");
 var list=$I$(5).sublistAt$javajs_util_Lst$IA(mesh, [2, 0]);
 var within=$I$(5).floatAt$javajs_util_Lst$I(list, 11);
 list=$I$(5).listAt$javajs_util_Lst$I(list, 12);
 if (within > 0 ) {
-var pt=Clazz.new_($I$(6));
+var pt=Clazz.new_($I$(6,1));
 sb.append$S(";isosurface slab within ").appendF$F(within).append$S(" [ ");
 for (var j=list.size$() - 3; j >= 0; j-=3) {
 $I$(5).pointAt$javajs_util_Lst$I$javajs_util_P3(list, j, pt);
@@ -272,4 +257,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:19 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:24 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,47 +1,32 @@
-(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.webexport"),I$=[[0,'java.util.Properties','java.awt.BorderLayout','org.openscience.jmol.app.jmolpanel.JmolPanel','org.jmol.i18n.GT','javajs.util.PT','javax.swing.JTabbedPane','javax.swing.JFileChooser','org.openscience.jmol.app.webexport.WebPanel','javax.swing.JPanel','org.openscience.jmol.app.jmolpanel.GuiMap','javax.swing.JEditorPane','javax.swing.JScrollPane','java.awt.Dimension','org.openscience.jmol.app.webexport.PopInJmol','org.openscience.jmol.app.webexport.ScriptButtons','org.openscience.jmol.app.webexport.LogPanel','org.jmol.viewer.Viewer','java.text.DateFormat','java.util.Date','javax.swing.JFrame','javax.swing.ImageIcon','javax.swing.JDialog','javax.swing.filechooser.FileSystemView','java.io.File']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "WebExport", null, 'javax.swing.JPanel', 'java.awt.event.WindowListener');
-C$.showMoleculesAndOrbitals=false;
-C$.runStatus=0;
-C$.webPanels=null;
-C$.webExport=null;
-C$.webFrame=null;
-C$.windowName=null;
-C$.remoteAppletPath=null;
-C$.localAppletPath=null;
-C$.prop=null;
-C$.pageAuthorName=null;
-C$.popInWidth=0;
-C$.popInHeight=0;
-C$.scriptButtonPercent=0;
+(function(){var P$=Clazz.newPackage("org.openscience.jmol.app.webexport"),I$=[[0,'java.util.Properties','java.awt.BorderLayout','org.openscience.jmol.app.jmolpanel.JmolPanel','org.jmol.i18n.GT','javajs.util.PT','javax.swing.JTabbedPane','javax.swing.JFileChooser','org.openscience.jmol.app.webexport.WebPanel','javax.swing.JPanel','org.openscience.jmol.app.jmolpanel.GuiMap','javax.swing.JEditorPane','javax.swing.JScrollPane','java.awt.Dimension','org.openscience.jmol.app.webexport.PopInJmol','org.openscience.jmol.app.webexport.ScriptButtons','org.openscience.jmol.app.webexport.LogPanel','org.jmol.viewer.Viewer','java.text.DateFormat','javax.swing.JFrame','javax.swing.ImageIcon','javax.swing.JDialog','javax.swing.filechooser.FileSystemView','java.io.File']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "WebExport", null, 'javax.swing.JPanel', 'java.awt.event.WindowListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.showMoleculesAndOrbitals=false;
-C$.runStatus=1;
-C$.prop=Clazz.new_($I$(1));
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[[]
+,['Z',['showMoleculesAndOrbitals'],'I',['runStatus','popInWidth','popInHeight','scriptButtonPercent'],'S',['windowName','remoteAppletPath','localAppletPath','pageAuthorName'],'O',['webPanels','org.openscience.jmol.app.webexport.WebPanel[]','webExport','org.openscience.jmol.app.webexport.WebExport','webFrame','javax.swing.JFrame','prop','java.util.Properties']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$org_openscience_jmol_app_HistoryFile', function (vwr, hxxFile) {
-C$.superclazz.c$$java_awt_LayoutManager.apply(this, [Clazz.new_($I$(2))]);
-C$.$init$.apply(this);
+;C$.superclazz.c$$java_awt_LayoutManager.apply(this,[Clazz.new_($I$(2,1))]);C$.$init$.apply(this);
 C$.remoteAppletPath=$I$(3).getJmolProperty$S$S("webMakerAppletPath", "http://chemapps.stolaf.edu/jmol/jsmol");
 C$.localAppletPath=$I$(3).getJmolProperty$S$S("webMakerLocalAppletPath", "http://chemapps.stolaf.edu/jmol/jsmol");
-C$.pageAuthorName=$I$(3).getJmolProperty$S$S("webMakerPageAuthorName", $I$(4).$$S("Jmol Web Page Maker"));
-C$.popInWidth=$I$(5).parseInt$S($I$(3).getJmolProperty$S$S("webMakerPopInWidth", "300"));
-C$.popInHeight=$I$(5).parseInt$S($I$(3).getJmolProperty$S$S("webMakerPopInHeight", "300"));
-C$.scriptButtonPercent=$I$(5).parseInt$S($I$(3).getJmolProperty$S$S("webMakerScriptButtonPercent", "60"));
-var mainTabs=Clazz.new_($I$(6));
-var fc=Clazz.new_($I$(7));
+C$.pageAuthorName=$I$(3,"getJmolProperty$S$S",["webMakerPageAuthorName", $I$(4).$$S("Jmol Web Page Maker")]);
+C$.popInWidth=$I$(5,"parseInt$S",[$I$(3).getJmolProperty$S$S("webMakerPopInWidth", "300")]);
+C$.popInHeight=$I$(5,"parseInt$S",[$I$(3).getJmolProperty$S$S("webMakerPopInHeight", "300")]);
+C$.scriptButtonPercent=$I$(5,"parseInt$S",[$I$(3).getJmolProperty$S$S("webMakerScriptButtonPercent", "60")]);
+var mainTabs=Clazz.new_($I$(6,1));
+var fc=Clazz.new_($I$(7,1));
 C$.webPanels=Clazz.array($I$(8), [2]);
 if (C$.runStatus != 0) {
-var introPanel=Clazz.new_($I$(9));
+var introPanel=Clazz.new_($I$(9,1));
 var introFileName="WebExportIntro";
 var url=$I$(10).getHtmlResource$O$S(this, introFileName);
 if (url == null ) {
-System.err.println$S($I$(4).o$S$O($I$(4).$$S("Couldn\'t find file: {0}"), introFileName + ".html"));
-}var intro=Clazz.new_($I$(11));
+System.err.println$S($I$(4,"o$S$O",[$I$(4).$$S("Couldn\'t find file: {0}"), introFileName + ".html"]));
+}var intro=Clazz.new_($I$(11,1));
 if (url != null ) {
 try {
 intro.setPage$java_net_URL(url);
@@ -53,21 +38,21 @@ throw e;
 }
 }
 }intro.setEditable$Z(false);
-var introPane=Clazz.new_($I$(12).c$$java_awt_Component,[intro]);
-introPane.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[450, 350]));
-introPane.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[400, 300]));
-introPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(2)));
+var introPane=Clazz.new_($I$(12,1).c$$java_awt_Component,[intro]);
+introPane.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(13,1).c$$I$I,[450, 350]));
+introPane.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(13,1).c$$I$I,[400, 300]));
+introPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(2,1)));
 introPanel.add$java_awt_Component(introPane);
-introPanel.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[450, 350]));
-introPanel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(13).c$$I$I,[400, 300]));
+introPanel.setMaximumSize$java_awt_Dimension(Clazz.new_($I$(13,1).c$$I$I,[450, 350]));
+introPanel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(13,1).c$$I$I,[400, 300]));
 mainTabs.add$S$java_awt_Component($I$(4).$$S("Introduction"), introPanel);
-C$.webPanels[0]=Clazz.new_($I$(14).c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$org_openscience_jmol_app_webexport_WebPanelA$I,[vwr, fc, C$.webPanels, 0]);
-C$.webPanels[1]=Clazz.new_($I$(15).c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$org_openscience_jmol_app_webexport_WebPanelA$I,[vwr, fc, C$.webPanels, 1]);
+C$.webPanels[0]=Clazz.new_($I$(14,1).c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$org_openscience_jmol_app_webexport_WebPanelA$I,[vwr, fc, C$.webPanels, 0]);
+C$.webPanels[1]=Clazz.new_($I$(15,1).c$$org_jmol_viewer_Viewer$javax_swing_JFileChooser$org_openscience_jmol_app_webexport_WebPanelA$I,[vwr, fc, C$.webPanels, 1]);
 var w=Integer.parseInt$S($I$(3).getJmolProperty$S$S("webMakerInfoWidth", "300"));
 var h=Integer.parseInt$S($I$(3).getJmolProperty$S$S("webMakerInfoHeight", "350"));
 mainTabs.addTab$S$java_awt_Component($I$(4).$$S("Pop-In Jmol"), C$.webPanels[0].getPanel$I$I(w, h));
 mainTabs.addTab$S$java_awt_Component($I$(4).$$S("ScriptButton Jmol"), C$.webPanels[1].getPanel$I$I(w, h));
-}C$.showMoleculesAndOrbitals=(C$.runStatus == 0 || $I$(8).checkOption$O(vwr.getP$S("webMakerAllTabs")) );
+}C$.showMoleculesAndOrbitals=(C$.runStatus == 0 || $I$(8,"checkOption$O",[vwr.getP$S("webMakerAllTabs")]) );
 if (C$.showMoleculesAndOrbitals) {
 }mainTabs.addTab$S$java_awt_Component($I$(4).$$S("Log"), $I$(16).getPanel$());
 this.add$java_awt_Component(mainTabs);
@@ -75,7 +60,7 @@ this.add$java_awt_Component$O($I$(16).getMiniPanel$(), "South");
 }, 1);
 
 Clazz.newMeth(C$, 'TimeStamp_WebLink$', function () {
-return $I$(4).o$S$O($I$(4).$$S("Page skeleton and JavaScript generated by the Export to Web module of {0} on {1}."), Clazz.array(String, -1, [" <a href=\"http://jmol.sourceforge.net\">Jmol " + $I$(17).getJmolVersion$() + "</a> " , $I$(18).getDateInstance$().format$java_util_Date(Clazz.new_($I$(19)))]));
+return $I$(4,"o$S$O",[$I$(4).$$S("Page skeleton and JavaScript generated by the Export to Web module of {0} on {1}."), Clazz.array(String, -1, [" <a href=\"http://jmol.sourceforge.net\">Jmol " + $I$(17).getJmolVersion$() + "</a> " , $I$(18).getDateInstance$().format$java_util_Date(Clazz.new_(java.util.Date))])]);
 }, 1);
 
 Clazz.newMeth(C$, 'dispose$', function () {
@@ -89,16 +74,16 @@ if (C$.webFrame != null ) {
 C$.webFrame.setVisible$Z(true);
 C$.webFrame.toFront$();
 return C$.webExport;
-}C$.webFrame=Clazz.new_($I$(20).c$$S,[$I$(4).$$S("Jmol Web Page Maker")]);
+}C$.webFrame=Clazz.new_([$I$(4).$$S("Jmol Web Page Maker")],$I$(19,1).c$$S);
 var imageName="org/openscience/jmol/app/images/icon.png";
 var imageUrl=vwr.getClass$().getClassLoader$().getResource$S(imageName);
-var jmolIcon=Clazz.new_($I$(21).c$$java_net_URL,[imageUrl]);
+var jmolIcon=Clazz.new_($I$(20,1).c$$java_net_URL,[imageUrl]);
 C$.webFrame.setIconImage$java_awt_Image(jmolIcon.getImage$());
 C$.windowName=wName;
 if (historyFile != null ) historyFile.repositionWindow$S$java_awt_Component$I$I$Z(C$.windowName, C$.webFrame, 700, 400, true);
 if (C$.runStatus == 0) {
-$I$(20).setDefaultLookAndFeelDecorated$Z(true);
-$I$(22).setDefaultLookAndFeelDecorated$Z(true);
+$I$(19).setDefaultLookAndFeelDecorated$Z(true);
+$I$(21).setDefaultLookAndFeelDecorated$Z(true);
 C$.webFrame.setDefaultCloseOperation$I(3);
 } else {
 C$.webFrame.setDefaultCloseOperation$I(2);
@@ -213,11 +198,11 @@ Clazz.newMeth(C$, 'windowStateChanged$java_awt_event_WindowEvent', function (e) 
 });
 
 Clazz.newMeth(C$, 'cleanUp$', function () {
-var Directories=$I$(23).getFileSystemView$();
+var Directories=$I$(22).getFileSystemView$();
 var homedir=Directories.getHomeDirectory$();
 var homedirpath=homedir.getPath$();
 var scratchpath=homedirpath + "/.jmol_WPM";
-var scratchdir=Clazz.new_($I$(24).c$$S,[scratchpath]);
+var scratchdir=Clazz.new_($I$(23,1).c$$S,[scratchpath]);
 if (scratchdir.exists$()) {
 var dirListing=null;
 dirListing=scratchdir.listFiles$();
@@ -227,6 +212,12 @@ dirListing[i].delete$();
 }C$.saveHistory$();
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.showMoleculesAndOrbitals=false;
+C$.runStatus=1;
+C$.prop=Clazz.new_($I$(1,1));
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:58 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

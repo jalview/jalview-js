@@ -1,126 +1,48 @@
-(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},I$=[[0,'swingjs.plaf.JSTableUI','Boolean','javax.swing.KeyStroke','javax.swing.SwingUtilities','sun.swing.SwingUtilities2','java.awt.Rectangle','StringBuilder','swingjs.api.js.DOMNode','swingjs.plaf.CellHolder','java.awt.event.MouseEvent',['swingjs.plaf.JSTableUI','.Handler'],'javax.swing.CellRendererPane','javax.swing.LookAndFeel','javax.swing.UIManager','swingjs.plaf.LazyActionMap','sun.swing.DefaultLookup',['swingjs.plaf.JSTableUI','.Actions'],'javax.swing.TransferHandler','javax.swing.table.DefaultTableCellRenderer',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Dimension','java.awt.Point']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSTableUI", function(){
+(function(){var P$=Clazz.newPackage("swingjs.plaf"),p$1={},p$2={},p$3={},I$=[[0,'swingjs.plaf.JSTableUI','javax.swing.KeyStroke','javax.swing.SwingUtilities','sun.swing.SwingUtilities2','StringBuffer','swingjs.plaf.BasicTransferable','java.awt.Rectangle','StringBuilder',['swingjs.plaf.JSTableUI','.TableTransferHandler'],'java.util.BitSet','swingjs.plaf.JSComponentUI','swingjs.api.js.DOMNode','swingjs.plaf.CellHolder','java.awt.event.MouseEvent',['swingjs.plaf.JSTableUI','.Handler'],'javax.swing.CellRendererPane','javax.swing.LookAndFeel','javax.swing.UIManager','swingjs.plaf.LazyActionMap','sun.swing.DefaultLookup',['swingjs.plaf.JSTableUI','.Actions'],'javax.swing.TransferHandler','javax.swing.table.DefaultTableCellRenderer',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Dimension','java.awt.Point','java.awt.event.ActionEvent','java.awt.EventQueue']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSTableUI", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'swingjs.plaf.JSPanelUI');
-C$.tmpRect=null;
-C$.cellRect=null;
-C$.minCell=null;
-C$.maxCell=null;
-C$.BASELINE_COMPONENT_KEY=null;
+C$.$classes$=[['Actions',10],['KeyHandler',1],['FocusHandler',1],['MouseInputHandler',1],['Handler',2],['TableTransferHandler',8]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.tmpRect=Clazz.new_($I$(6));
-C$.cellRect=Clazz.new_($I$(6));
-C$.minCell=Clazz.new_($I$(6));
-C$.maxCell=Clazz.new_($I$(6));
-C$.BASELINE_COMPONENT_KEY=Clazz.new_($I$(7).c$$S,["Table.baselineComponent"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.header=null;
-this.table=null;
-this.oldrc=0;
-this.oldrh=0;
-this.currentRowMin=0;
-this.currentRowMax=0;
-this.isScrolling=false;
-this.justLaidOut=false;
-this.working=false;
-this.oldWidth=0;
-this.oldHeight=0;
-this.oldFont=null;
-this.havePainted=false;
-this.cw=null;
-this.editorComp=null;
-this.rendererPane=null;
-this.keyListener=null;
-this.focusListener=null;
-this.mouseInputListener=null;
-this.handler=null;
-this.isFileList=false;
-this.dragging=false;
-this.lastWidth=0;
-this.resized=false;
-this.repaintAll=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.currentRowMin=-1;
 this.currentRowMax=-1;
 this.cw=Clazz.array(Integer.TYPE, [10]);
+this.cwOld=Clazz.array(Integer.TYPE, [10]);
 this.isFileList=false;
-}, 1);
+this.myClip=Clazz.new_($I$(7,1));
+this.bsRowTainted=Clazz.new_($I$(10,1));
+},1);
 
-Clazz.newMeth(C$, 'setScrolling$', function () {
+C$.$fields$=[['Z',['working','isScrolling','justLaidOut','havePainted','isFileList','dragging','isNewModel','resized','repaintAll'],'I',['oldrc','oldrh','currentRowMin','currentRowMax','oldWidth','oldHeight','lastWidth','lastRowCount','lastColCount'],'O',['header','javax.swing.JTable','+table','oldFont','java.lang.Object','tableNode','swingjs.api.js.DOMNode','cw','int[]','+cwOld','editorComp','javax.swing.JComponent','rendererPane','javax.swing.CellRendererPane','keyListener','java.awt.event.KeyListener','focusListener','java.awt.event.FocusListener','mouseInputListener','javax.swing.event.MouseInputListener','handler','swingjs.plaf.JSTableUI.Handler','myClip','java.awt.Rectangle','bsRowTainted','java.util.BitSet']]
+,['O',['tmpRect','java.awt.Rectangle','+cellRect','+minCell','+maxCell','BASELINE_COMPONENT_KEY','StringBuilder','defaultTransferHandler','javax.swing.TransferHandler']]]
+
+Clazz.newMeth(C$, 'setScrolling$',  function () {
 this.isScrolling=true;
 });
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.isTable=true;
 }, 1);
 
-Clazz.newMeth(C$, 'beginLayout$', function () {
-C$.superclazz.prototype.beginLayout$.apply(this, []);
+Clazz.newMeth(C$, 'getDOMNode$',  function () {
+return this.updateDOMNode$();
 });
 
-Clazz.newMeth(C$, 'endLayout$', function () {
-C$.superclazz.prototype.endLayout$.apply(this, []);
-this.currentRowMin=this.currentRowMax=-1;
-this.justLaidOut=true;
-this.setUIDisabled$Z(p$2.getHeaderUI.apply(this, []).setUIDisabled$Z(false));
-});
-
-Clazz.newMeth(C$, 'endValidate$', function () {
-});
-
-Clazz.newMeth(C$, 'update$java_awt_Graphics$javax_swing_JComponent', function (g, c) {
-if (this.isUIDisabled) return;
-if (!this.isScrolling) this.setHTMLElement$();
-this.paint$java_awt_Graphics$javax_swing_JComponent(g, c);
-});
-
-Clazz.newMeth(C$, 'getContainerHeight$', function () {
-return this.height=this.table.getParent$().getHeight$();
-});
-
-Clazz.newMeth(C$, 'setTainted$', function () {
-if (!this.working) this.isTainted=true;
-});
-
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (e) {
-var prop=e.getPropertyName$();
-switch (prop) {
-case "model":
-this.currentRowMin=this.currentRowMax=-1;
-this.isLaidOut=false;
-this.setUIDisabled$Z(p$2.getHeaderUI.apply(this, []).setUIDisabled$Z(true));
-var sp=p$2.getScrollPane.apply(this, []);
-if (sp != null ) {
-sp.getVerticalScrollBar$().setValue$I(0);
-}return;
-case "autoCreateRowSorter":
-case "rowSorter":
-case "sorter":
-case "autoResizeMode":
-return;
-case "tableCellEditor":
-return;
-}
-System.out.println$S("JTableUI property not handled: " + prop);
-C$.superclazz.prototype.propertyChange$java_beans_PropertyChangeEvent.apply(this, [e]);
-});
-
-Clazz.newMeth(C$, 'updateDOMNode$', function () {
+Clazz.newMeth(C$, 'updateDOMNode$',  function () {
 var rc=this.table.getRowCount$();
 var rh=this.table.getRowHeight$();
 var rebuild=(rc != this.oldrc || rh != this.oldrh );
 this.oldrh=rh;
 this.oldrc=rc;
 if (this.domNode == null ) {
-this.domNode=P$.JSComponentUI.newDOMObject$S$S$SA("div", this.id, []);
+this.domNode=$I$(11,"newDOMObject$S$S$SA",["div", this.id, Clazz.array(String, -1, [])]);
+this.tableNode=this.domNode;
+this.enableJSKeys$Z(true);
+$I$(12).setStyle(this.tableNode, "outline", "none");
 }if (rebuild) {
 this.currentRowMin=this.currentRowMax=-1;
 }var d=this.getPreferredSize$javax_swing_JComponent(this.jc);
@@ -129,45 +51,129 @@ var h=d.height;
 if (w != this.oldWidth || h != this.oldHeight ) {
 this.oldWidth=w;
 this.oldHeight=h;
-$I$(8).setStyles(this.domNode, ["width", w + "px", "height", h + "px"]);
+$I$(12).setStyles(this.tableNode, ["width", w + "px", "height", h + "px"]);
 }var font=this.c.getFont$();
 if (!font.equals$O(this.oldFont)) {
 this.oldFont=font;
-this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.domNode, this.c.getFont$());
+this.setCssFont$swingjs_api_js_DOMNode$java_awt_Font(this.tableNode, this.c.getFont$());
 }return this.updateDOMNodeCUI$();
 });
 
-Clazz.newMeth(C$, 'getCellComponent$javax_swing_table_TableCellRenderer$I$I$I$I$swingjs_api_js_DOMNode$Z', function (renderer, row, col, w, h, td, fullPaint) {
-var cNoPrep=renderer.getComponent$ && renderer.getComponent$() ||null;
-var c=(cNoPrep == null  ? this.table.prepareRenderer$javax_swing_table_TableCellRenderer$I$I(renderer, row, col) : cNoPrep);
-if (c != null ) {
-var ui=(c.getUI$());
-var wasDisabled=ui.isUIDisabled;
-ui.setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(c, w, h, null);
-ui.setTargetParent$javax_swing_JComponent(this.table);
-if (fullPaint && wasDisabled  || cNoPrep != null  ) {
-if (wasDisabled) $I$(9).restoreUI$swingjs_plaf_JSComponentUI$swingjs_api_js_DOMNode$I$I$I$I(ui, td, row, col, w, h);
-ui.setTainted$();
-this.table.prepareRenderer$javax_swing_table_TableCellRenderer$I$I(renderer, row, col);
-}}return c;
+Clazz.newMeth(C$, 'beginLayout$',  function () {
+C$.superclazz.prototype.beginLayout$.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'setBounds$I$I$I$I$I',  function (x, y, w, h, op) {
+p$2.enableTable$Z.apply(this, [true]);
+C$.superclazz.prototype.setBounds$I$I$I$I$I.apply(this, [x, y, w, h, op]);
+});
+
+Clazz.newMeth(C$, 'endLayout$',  function () {
+C$.superclazz.prototype.endLayout$.apply(this, []);
+this.currentRowMin=this.currentRowMax=-1;
+this.justLaidOut=true;
+p$2.enableTable$Z.apply(this, [true]);
+});
+
+Clazz.newMeth(C$, 'endValidate$',  function () {
+});
+
+Clazz.newMeth(C$, 'update$java_awt_Graphics$javax_swing_JComponent',  function (g, c) {
+if (this.isUIDisabled) return;
+this.paint$java_awt_Graphics$javax_swing_JComponent(g, c);
+});
+
+Clazz.newMeth(C$, 'updateCursorImmediately$',  function () {
+if (this.isUIDisabled) return;
+this.setCursor$();
+});
+
+Clazz.newMeth(C$, 'getContainerHeight$',  function () {
+return this.height=this.table.getParent$().getHeight$();
+});
+
+Clazz.newMeth(C$, 'setTainted$',  function () {
+if (!this.working) this.isTainted=true;
+});
+
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (e) {
+var prop=e.getPropertyName$();
+switch (prop) {
+case "model":
+this.currentRowMin=this.currentRowMax=-1;
+this.isLaidOut=false;
+this.setHTMLElement$();
+p$2.enableTable$Z.apply(this, [false]);
+var sp=this.getScrollPane$();
+if (sp != null ) {
+sp.getVerticalScrollBar$().setValue$I(0);
+}if (this.table.getRowCount$() == 0) {
+p$2.setHidden$Z.apply(this, [true]);
+}return;
+case "autoCreateRowSorter":
+case "rowSorter":
+case "sorter":
+case "autoResizeMode":
+case "tableCellEditor":
+case "gridColor":
+case "preferredSize":
+case "background":
+case "ancestor":
+case "tableData":
+case "ToolTipText":
+return;
+}
+C$.superclazz.prototype.propertyChange$java_beans_PropertyChangeEvent.apply(this, [e]);
+});
+
+Clazz.newMeth(C$, 'enableTable$Z',  function (b) {
+var hui=p$2.getHeaderUI.apply(this, []);
+if (hui != null ) hui.setUIDisabled$Z(!b);
+this.setUIDisabled$Z(!b);
 }, p$2);
 
-Clazz.newMeth(C$, 'getChildren$', function () {
+Clazz.newMeth(C$, 'getHeaderUI',  function () {
+var th=this.table.getTableHeader$();
+return (th == null  ? null : th.getUI$());
+}, p$2);
+
+Clazz.newMeth(C$, 'getCellRendererComponent$javax_swing_table_TableCellRenderer$I$I$I$I$swingjs_api_js_DOMNode$Z',  function (renderer, row, col, w, h, td, fullPaint) {
+var cNoPrep=renderer.秘getComponent$ && renderer.秘getComponent$() ||null;
+var c=(cNoPrep == null  ? this.table.prepareRenderer$javax_swing_table_TableCellRenderer$I$I(renderer, row, col) : cNoPrep);
+if (c != null ) {
+if (C$.prepareCellRendererUI$java_awt_JSComponent$Z$I$I$swingjs_api_js_DOMNode$Z$javax_swing_JComponent(c, cNoPrep != null , w, h, td, fullPaint, this.table)) this.table.prepareRenderer$javax_swing_table_TableCellRenderer$I$I(renderer, row, col);
+}return c;
+}, p$2);
+
+Clazz.newMeth(C$, 'prepareCellRendererUI$java_awt_JSComponent$Z$I$I$swingjs_api_js_DOMNode$Z$javax_swing_JComponent',  function (c, forcePrep, w, h, td, fullPaint, table) {
+var ui=c.秘getUI$();
+var wasDisabled=ui.isUIDisabled;
+c.秘reshape$I$I$I$I$Z(c.getX$(), c.getY$(), w, h, false);
+ui.setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(c, w, h, null);
+ui.setTargetParent$javax_swing_JComponent(table);
+if (fullPaint && wasDisabled  || forcePrep ) {
+if (wasDisabled) {
+ui.restoreCellNodes$swingjs_api_js_DOMNode(td);
+}ui.setTainted$();
+return true;
+}return false;
+}, 1);
+
+Clazz.newMeth(C$, 'getChildren$',  function () {
 return null;
 });
 
-Clazz.newMeth(C$, 'getChildCount$', function () {
+Clazz.newMeth(C$, 'getChildCount$',  function () {
 return this.table.getRowCount$() * this.table.getColumnCount$();
 });
 
-Clazz.newMeth(C$, 'addChildrenToDOM$java_awt_ComponentA$I', function (children, n) {
+Clazz.newMeth(C$, 'addChildrenToDOM$java_awt_ComponentA$I',  function (children, n) {
 if (this.currentRowMin == -1) {
 p$2.setHidden$Z.apply(this, [true]);
 this.havePainted=false;
-var nrows=this.table.getRowCount$();
 var ncols=this.table.getColumnCount$();
-var h=this.table.getRowHeight$();
-var cw=p$2.getColumnWidths.apply(this, []);
+var rowCount=this.table.getRowCount$();
+p$2.getColumnWidths$Z.apply(this, [true]);
 var rminy;
 var rmaxy;
 var rminx;
@@ -175,49 +181,63 @@ var rmaxx;
 this.table.computeVisibleRect$java_awt_Rectangle(C$.tmpRect);
 rminx=C$.tmpRect.x;
 rmaxx=C$.tmpRect.x + C$.tmpRect.width;
-this.$$O(this.domNode).empty();
+var h=this.table.getRowHeight$();
+if (this.getScrollPane$() == null ) {
+var height=0;
+if (rowCount > 0 && ncols > 0 ) {
+var r=this.table.getCellRect$I$I$Z(rowCount - 1, 0, true);
+height=r.y + r.height;
+$I$(12).setStyles(this.outerNode, ["overflow", "hidden", "height", height + "px"]);
+}}this.$$O(this.tableNode).empty();
+this.addLocalCanvas$Z(true);
 rminy=C$.tmpRect.y;
 rmaxy=C$.tmpRect.y + C$.tmpRect.height;
 if (C$.tmpRect.height != 0) {
 this.currentRowMin=0;
-p$2.addElements$I$I$I$I$IA$I$I$I$I$I.apply(this, [rminx, rminy, rmaxx, rmaxy, cw, h, 0, nrows, 0, ncols]);
+p$2.addElements$I$I$I$I$I$I$I$I$I.apply(this, [rminx, rminy, rmaxx, rmaxy, h, 0, rowCount, 0, ncols]);
 }}});
 
-Clazz.newMeth(C$, 'setHidden$Z', function (b) {
-$I$(8).setStyles(this.domNode, ["visibility", b ? "hidden" : "visible"]);
+Clazz.newMeth(C$, 'setHidden$Z',  function (b) {
+$I$(12).setStyle(this.domNode, "visibility", b ? "hidden" : "visible");
+if (b && this.outerNode != null   && $I$(12).getStyle(this.outerNode, "width") == null  ) $I$(12).setStyle(this.outerNode, "width", "inherit");
 }, p$2);
 
-Clazz.newMeth(C$, 'getColumnWidths', function () {
+Clazz.newMeth(C$, 'getColumnWidths$Z',  function (isNew) {
 var ncols=this.table.getColumnCount$();
-if (ncols > this.cw.length) this.cw=Clazz.array(Integer.TYPE, [ncols]);
-for (var col=0; col < ncols; col++) this.cw[col]=this.table.getColumnModel$().getColumn$I(col).getWidth$();
-
-return this.cw;
+if (ncols > this.cw.length) {
+this.cw=Clazz.array(Integer.TYPE, [ncols]);
+this.cwOld=Clazz.array(Integer.TYPE, [ncols]);
+}if (isNew) this.bsRowTainted.clear$();
+var colTainted=false;
+var cm=this.table.getColumnModel$();
+for (var col=0; col < ncols; col++) {
+var w=this.cw[col]=cm.getColumn$I(col).getWidth$();
+if (!isNew && this.cwOld[col] != w ) {
+colTainted=true;
+}this.cwOld[col]=w;
+}
+if (colTainted) this.bsRowTainted.set$I$I(0, this.table.getRowCount$());
 }, p$2);
 
-Clazz.newMeth(C$, 'addElements$I$I$I$I$IA$I$I$I$I$I', function (rminx, rminy, rmaxx, rmaxy, cw, h, row1, row2, col1, col2) {
+Clazz.newMeth(C$, 'addElements$I$I$I$I$I$I$I$I$I',  function (rminx, rminy, rmaxx, rmaxy, h, row1, row2, col1, col2) {
 var col;
 var tx0;
-for (col=0, tx0=0; col < col1; tx0+=cw[col++]) {
+for (col=0, tx0=0; col < col1; tx0+=this.cw[col++]) {
 }
 for (var row=row1, ty=row1 * h; row < row2 && ty < rmaxy ; row++, ty+=h) {
 if (ty + h < rminy) continue;
 var rid=this.id + "_tab_row" + row ;
-var tr=$I$(8).getElement(rid);
+var tr=$I$(12).getElement(rid);
 var rowExists=(tr != null );
 if (!rowExists) {
-tr=$I$(8).createElement("div", rid);
-this.domNode.appendChild(tr);
-}$I$(8).setStyles(tr, ["height", h + "px"]);
+tr=$I$(12).createElement("div", rid);
+this.tableNode.appendChild(tr);
+}$I$(12).setStyle(tr, "height", h + "px");
 col=col1;
 for (var w, tx=tx0; col < col2 && tx < rmaxx ; col++, tx+=w) {
-w=cw[col];
+w=this.cw[col];
 if (tx + w < rminx) continue;
-var td=$I$(9).findCellNode$swingjs_plaf_JSComponentUI$S$I$I(this, null, row, col);
-if (td == null ) {
-td=$I$(9).createCellOuterNode$swingjs_plaf_JSComponentUI$I$I(this, row, col);
-tr.appendChild(td);
-}$I$(8).setStyles(td, ["width", w + "px", "height", h + "px", "left", tx + "px", "top", ty + "px"]);
+var td=$I$(13).findOrCreateNode$swingjs_plaf_JSComponentUI$I$I$I$I$I$swingjs_api_js_DOMNode(this, row, col, tx, ty, w, tr);
 p$2.updateCellNode$swingjs_api_js_DOMNode$I$I$I$I.apply(this, [td, row, col, w, h]);
 if (rminx < 0) return td;
 }
@@ -225,12 +245,12 @@ if (rminx < 0) return td;
 return null;
 }, p$2);
 
-Clazz.newMeth(C$, 'updateCellNode$swingjs_api_js_DOMNode$I$I$I$I', function (td, row, col, w, h) {
-var cell=p$2.getCellComponent$javax_swing_table_TableCellRenderer$I$I$I$I$swingjs_api_js_DOMNode$Z.apply(this, [this.table.getCellRenderer$I$I(row, col), row, col, w, h, td, true]);
-if (cell != null ) $I$(9).updateCellNode$swingjs_api_js_DOMNode$java_awt_JSComponent$I$I(td, cell, 0, 0);
+Clazz.newMeth(C$, 'updateCellNode$swingjs_api_js_DOMNode$I$I$I$I',  function (td, row, col, w, h) {
+var c=p$2.getCellRendererComponent$javax_swing_table_TableCellRenderer$I$I$I$I$swingjs_api_js_DOMNode$Z.apply(this, [this.table.getCellRenderer$I$I(row, col), row, col, w, h, td, true]);
+if (c != null ) $I$(13).updateCellNode$swingjs_api_js_DOMNode$java_awt_JSComponent$I$I(td, c, -1, -1);
 }, p$2);
 
-Clazz.newMeth(C$, 'prepareDOMEditor$Z$I$I', function (starting, row, col) {
+Clazz.newMeth(C$, 'prepareDOMEditor$Z$I$I',  function (starting, row, col) {
 if (this.editorComp != null ) {
 this.editorComp.setVisible$Z(true);
 this.editorComp.setVisible$Z(false);
@@ -241,48 +261,80 @@ this.editorComp.setVisible$Z(false);
 this.editorComp.setVisible$Z(true);
 p$2.notifyEntry$Z.apply(this, [false]);
 }} else {
-var td=$I$(9).findCellNode$swingjs_plaf_JSComponentUI$S$I$I(this, null, this.table.getEditingRow$(), this.table.getEditingColumn$());
-p$2.updateCellNode$swingjs_api_js_DOMNode$I$I$I$I.apply(this, [td, row, col, 0, 0]);
+row=this.table.getEditingRow$();
+col=this.table.getEditingColumn$();
+if (col >= this.table.getColumnCount$()) return;
+var td=$I$(13).findCellNode$swingjs_plaf_JSComponentUI$S$I$I(this, null, row, col);
+if (td == null ) {
+td=p$2.addElement$I$I$I.apply(this, [row, col, this.table.getRowHeight$()]);
+}p$2.updateCellNode$swingjs_api_js_DOMNode$I$I$I$I.apply(this, [td, row, col, 0, 0]);
 this.repaintCell$I$I(row, col);
 p$2.notifyEntry$Z.apply(this, [true]);
 }});
 
-Clazz.newMeth(C$, 'notifyEntry$Z', function (isEntry) {
-this.table.dispatchEvent$java_awt_AWTEvent(Clazz.new_($I$(10).c$$java_awt_Component$I$J$I$I$I$I$Z,[this.table, (isEntry ? 504 : 505), System.currentTimeMillis$(), 0, -1, -1, 0, false]));
+Clazz.newMeth(C$, 'addElement$I$I$I',  function (row, col, h) {
+return p$2.addElements$I$I$I$I$I$I$I$I$I.apply(this, [-2147483648, -2147483648, 2147483647, 2147483647, h, row, row + 1, col, col + 1]);
 }, p$2);
 
-Clazz.newMeth(C$, 'pointOutsidePrefSize$I$I$java_awt_Point', function (row, column, p) {
+Clazz.newMeth(C$, 'notifyEntry$Z',  function (isEntry) {
+this.table.dispatchEvent$java_awt_AWTEvent(Clazz.new_([this.table, (isEntry ? 504 : 505), System.currentTimeMillis$(), 0, -1, -1, 0, false],$I$(14,1).c$$java_awt_Component$I$J$I$I$I$I$Z));
+}, p$2);
+
+Clazz.newMeth(C$, 'rebuildTable$',  function () {
+this.setTainted$();
+this.currentRowMin=-1;
+this.setHTMLElement$();
+p$2.rebuildHeader.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'rebuildHeader',  function () {
+var ui=p$2.getHeaderUI.apply(this, []);
+if (ui != null ) {
+ui.setTainted$();
+ui.setHTMLElement$();
+this.table.getTableHeader$().秘repaint$();
+}}, p$2);
+
+Clazz.newMeth(C$, 'pointOutsidePrefSize$I$I$java_awt_Point',  function (row, column, p) {
 if (!this.isFileList) {
 return false;
-}return $I$(5).pointOutsidePrefSize$javax_swing_JTable$I$I$java_awt_Point(this.table, row, column, p);
+}return $I$(4).pointOutsidePrefSize$javax_swing_JTable$I$I$java_awt_Point(this.table, row, column, p);
 }, p$2);
 
-Clazz.newMeth(C$, 'repaintCell$I$I', function (lr, lc) {
+Clazz.newMeth(C$, 'newModel$',  function () {
+this.isNewModel=true;
+});
+
+Clazz.newMeth(C$, 'haveSrollPane$',  function () {
+return (Clazz.instanceOf(this.table.getParent$().getParent$(), "javax.swing.JScrollPane"));
+});
+
+Clazz.newMeth(C$, 'repaintCell$I$I',  function (lr, lc) {
 this.table._getCellRect$I$I$Z$java_awt_Rectangle(lr, lc, false, C$.tmpRect);
 this.table.repaint$java_awt_Rectangle(C$.tmpRect);
 });
 
-Clazz.newMeth(C$, 'getHandler', function () {
+Clazz.newMeth(C$, 'getHandler',  function () {
 if (this.handler == null ) {
-this.handler=Clazz.new_($I$(11), [this, null]);
+this.handler=Clazz.new_($I$(15,1),[this, null]);
 }return this.handler;
 }, p$2);
 
-Clazz.newMeth(C$, 'createKeyListener$', function () {
-return null;
-});
-
-Clazz.newMeth(C$, 'createFocusListener$', function () {
+Clazz.newMeth(C$, 'createKeyListener$',  function () {
 return p$2.getHandler.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'createMouseInputListener$', function () {
+Clazz.newMeth(C$, 'createFocusListener$',  function () {
 return p$2.getHandler.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'installUI$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'createMouseInputListener$',  function () {
+return p$2.getHandler.apply(this, []);
+});
+
+Clazz.newMeth(C$, 'installUI$javax_swing_JComponent',  function (c) {
 this.table=c;
-this.rendererPane=Clazz.new_($I$(12));
+this.rendererPane=Clazz.new_($I$(16,1));
 this.table.add$java_awt_Component(this.rendererPane);
 this.installDefaults$();
 p$2.installDefaults2.apply(this, []);
@@ -290,34 +342,43 @@ this.installListeners$();
 this.installKeyboardActions$();
 });
 
-Clazz.newMeth(C$, 'installDefaults$', function () {
-$I$(13).installColorsAndFont$javax_swing_JComponent$S$S$S(this.table, "Table.background", "Table.foreground", "Table.font");
-$I$(13).installProperty$javax_swing_JComponent$S$O(this.table, "opaque", $I$(2).TRUE);
+Clazz.newMeth(C$, 'installDefaults$',  function () {
+$I$(17).installColorsAndFont$javax_swing_JComponent$S$S$S(this.table, "Table.background", "Table.foreground", "Table.font");
+$I$(17).installProperty$javax_swing_JComponent$S$O(this.table, "opaque", Boolean.TRUE);
 var sbg=this.table.getSelectionBackground$();
 if (sbg == null  || Clazz.instanceOf(sbg, "javax.swing.plaf.UIResource") ) {
-this.table.setSelectionBackground$java_awt_Color($I$(14).getColor$O("Table.selectionBackground"));
+this.table.setSelectionBackground$java_awt_Color($I$(18).getColor$O("Table.selectionBackground"));
 }var sfg=this.table.getSelectionForeground$();
 if (sfg == null  || Clazz.instanceOf(sfg, "javax.swing.plaf.UIResource") ) {
-this.table.setSelectionForeground$java_awt_Color($I$(14).getColor$O("Table.selectionForeground"));
+this.table.setSelectionForeground$java_awt_Color($I$(18).getColor$O("Table.selectionForeground"));
 }var gridColor=this.table.getGridColor$();
 if (gridColor == null  || Clazz.instanceOf(gridColor, "javax.swing.plaf.UIResource") ) {
-this.table.setGridColor$java_awt_Color($I$(14).getColor$O("Table.gridColor"));
-}var sp=p$2.getScrollPane.apply(this, []);
+this.table.setGridColor$java_awt_Color($I$(18).getColor$O("Table.gridColor"));
+}var sp=this.getScrollPane$();
 if (sp != null ) {
 sp.addPropertyChangeListener$java_beans_PropertyChangeListener(this);
-$I$(13).installBorder$javax_swing_JComponent$S(sp, "Table.scrollPaneBorder");
-}this.isFileList=$I$(2).TRUE.equals$O(this.table.getClientProperty$O("Table.isFileList"));
+$I$(17).installBorder$javax_swing_JComponent$S(sp, "Table.scrollPaneBorder");
+}this.isFileList=Boolean.TRUE.equals$O(this.table.getClientProperty$O("Table.isFileList"));
 });
 
-Clazz.newMeth(C$, 'getScrollPane', function () {
+Clazz.newMeth(C$, 'getScrollPane$',  function () {
 var parent;
-return ((parent=this.table.getParent$()) == null  ? null : parent.getParent$());
+parent=((parent=this.table.getParent$()) == null  ? null : parent.getParent$());
+return (Clazz.instanceOf(parent, "javax.swing.JScrollPane") ? parent : null);
+});
+
+Clazz.newMeth(C$, 'installDefaults2',  function () {
 }, p$2);
 
-Clazz.newMeth(C$, 'installDefaults2', function () {
-}, p$2);
+Clazz.newMeth(C$, 'installDefaultTransferHandlerIfNecessary$',  function () {
+var th=this.table.getTransferHandler$();
+if (th == null  || Clazz.instanceOf(th, "javax.swing.plaf.UIResource") ) {
+this.table.setTransferHandler$javax_swing_TransferHandler(C$.defaultTransferHandler);
+if (Clazz.instanceOf(this.table.getDropTarget$(), "javax.swing.plaf.UIResource")) {
+this.table.setDropTarget$java_awt_dnd_DropTarget(null);
+}}});
 
-Clazz.newMeth(C$, 'installListeners$', function () {
+Clazz.newMeth(C$, 'installListeners$',  function () {
 this.focusListener=this.createFocusListener$();
 this.keyListener=this.createKeyListener$();
 this.mouseInputListener=this.createMouseInputListener$();
@@ -330,17 +391,17 @@ if (this.isFileList) {
 this.table.getSelectionModel$().addListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this, []));
 }});
 
-Clazz.newMeth(C$, 'installKeyboardActions$', function () {
-$I$(15).installLazyActionMap$javax_swing_JComponent$Class$S(this.table, Clazz.getClass(C$), "Table.actionMap");
+Clazz.newMeth(C$, 'installKeyboardActions$',  function () {
+$I$(19,"installLazyActionMap$javax_swing_JComponent$Class$S",[this.table, Clazz.getClass(C$), "Table.actionMap"]);
 var inputMap=this.getInputMap$I(1);
-$I$(4).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.table, 1, inputMap);
+$I$(3).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.table, 1, inputMap);
 });
 
-Clazz.newMeth(C$, 'getInputMap$I', function (condition) {
+Clazz.newMeth(C$, 'getInputMap$I',  function (condition) {
 if (condition == 1) {
-var keyMap=$I$(16).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.table, this, "Table.ancestorInputMap");
+var keyMap=$I$(20).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.table, this, "Table.ancestorInputMap");
 var rtlKeyMap;
-if (this.table.getComponentOrientation$().isLeftToRight$() || ((rtlKeyMap=$I$(16).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.table, this, "Table.ancestorInputMap.RightToLeft")) == null ) ) {
+if (this.table.getComponentOrientation$().isLeftToRight$() || ((rtlKeyMap=$I$(20).get$javax_swing_JComponent$javax_swing_plaf_ComponentUI$S(this.table, this, "Table.ancestorInputMap.RightToLeft")) == null ) ) {
 return keyMap;
 } else {
 rtlKeyMap.setParent$javax_swing_InputMap(keyMap);
@@ -348,54 +409,54 @@ return rtlKeyMap;
 }}return null;
 });
 
-Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap', function (map) {
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextColumn", 1, 0, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextColumnChangeLead", 1, 0, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousColumn", -1, 0, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousColumnChangeLead", -1, 0, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextRow", 0, 1, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextRowChangeLead", 0, 1, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousRow", 0, -1, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousRowChangeLead", 0, -1, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextColumnExtendSelection", 1, 0, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousColumnExtendSelection", -1, 0, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextRowExtendSelection", 0, 1, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousRowExtendSelection", 0, -1, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollUpChangeSelection", false, false, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollDownChangeSelection", false, true, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectFirstColumn", false, false, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectLastColumn", false, true, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollUpExtendSelection", true, false, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollDownExtendSelection", true, true, true, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectFirstColumnExtendSelection", true, false, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectLastColumnExtendSelection", true, true, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectFirstRow", false, false, true, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectLastRow", false, true, true, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectFirstRowExtendSelection", true, false, true, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["selectLastRowExtendSelection", true, true, true, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextColumnCell", 1, 0, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousColumnCell", -1, 0, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectNextRowCell", 0, 1, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$I$I$Z$Z,["selectPreviousRowCell", 0, -1, false, true]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["selectAll"]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["clearSelection"]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["cancel"]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["startEditing"]));
-map.put$O$javax_swing_Action($I$(18).getCutAction$().getValue$S("Name"), $I$(18).getCutAction$());
-map.put$O$javax_swing_Action($I$(18).getCopyAction$().getValue$S("Name"), $I$(18).getCopyAction$());
-map.put$O$javax_swing_Action($I$(18).getPasteAction$().getValue$S("Name"), $I$(18).getPasteAction$());
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollLeftChangeSelection", false, false, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollRightChangeSelection", false, true, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollLeftExtendSelection", true, false, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S$Z$Z$Z$Z,["scrollRightExtendSelection", true, true, false, false]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["addToSelection"]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["toggleAndAnchor"]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["extendTo"]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["moveSelectionTo"]));
-map.put$javax_swing_Action(Clazz.new_($I$(17).c$$S,["focusHeader"]));
+Clazz.newMeth(C$, 'loadActionMap$swingjs_plaf_LazyActionMap',  function (map) {
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextColumn", 1, 0, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextColumnChangeLead", 1, 0, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousColumn", -1, 0, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousColumnChangeLead", -1, 0, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextRow", 0, 1, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextRowChangeLead", 0, 1, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousRow", 0, -1, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousRowChangeLead", 0, -1, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextColumnExtendSelection", 1, 0, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousColumnExtendSelection", -1, 0, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextRowExtendSelection", 0, 1, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousRowExtendSelection", 0, -1, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollUpChangeSelection", false, false, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollDownChangeSelection", false, true, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectFirstColumn", false, false, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectLastColumn", false, true, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollUpExtendSelection", true, false, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollDownExtendSelection", true, true, true, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectFirstColumnExtendSelection", true, false, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectLastColumnExtendSelection", true, true, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectFirstRow", false, false, true, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectLastRow", false, true, true, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectFirstRowExtendSelection", true, false, true, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["selectLastRowExtendSelection", true, true, true, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextColumnCell", 1, 0, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousColumnCell", -1, 0, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectNextRowCell", 0, 1, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$I$I$Z$Z,["selectPreviousRowCell", 0, -1, false, true]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["selectAll"]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["clearSelection"]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["cancel"]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["startEditing"]));
+map.put$O$javax_swing_Action($I$(22).getCutAction$().getValue$S("Name"), $I$(22).getCutAction$());
+map.put$O$javax_swing_Action($I$(22).getCopyAction$().getValue$S("Name"), $I$(22).getCopyAction$());
+map.put$O$javax_swing_Action($I$(22).getPasteAction$().getValue$S("Name"), $I$(22).getPasteAction$());
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollLeftChangeSelection", false, false, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollRightChangeSelection", false, true, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollLeftExtendSelection", true, false, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S$Z$Z$Z$Z,["scrollRightExtendSelection", true, true, false, false]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["addToSelection"]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["toggleAndAnchor"]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["extendTo"]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["moveSelectionTo"]));
+map.put$javax_swing_Action(Clazz.new_($I$(21,1).c$$S,["focusHeader"]));
 }, 1);
 
-Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'uninstallUI$javax_swing_JComponent',  function (c) {
 this.uninstallDefaults$();
 this.uninstallListeners$();
 this.uninstallKeyboardActions$();
@@ -404,10 +465,10 @@ this.rendererPane=null;
 this.table=null;
 });
 
-Clazz.newMeth(C$, 'uninstallDefaults$', function () {
+Clazz.newMeth(C$, 'uninstallDefaults$',  function () {
 });
 
-Clazz.newMeth(C$, 'uninstallListeners$', function () {
+Clazz.newMeth(C$, 'uninstallListeners$',  function () {
 this.table.removeFocusListener$java_awt_event_FocusListener(this.focusListener);
 this.table.removeKeyListener$java_awt_event_KeyListener(this.keyListener);
 this.table.removeMouseListener$java_awt_event_MouseListener(this.mouseInputListener);
@@ -421,17 +482,17 @@ this.mouseInputListener=null;
 this.handler=null;
 });
 
-Clazz.newMeth(C$, 'uninstallKeyboardActions$', function () {
-$I$(4).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.table, 1, null);
-$I$(4).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(this.table, null);
+Clazz.newMeth(C$, 'uninstallKeyboardActions$',  function () {
+$I$(3).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.table, 1, null);
+$I$(3).replaceUIActionMap$javax_swing_JComponent$javax_swing_ActionMap(this.table, null);
 });
 
-Clazz.newMeth(C$, 'getBaseline$javax_swing_JComponent$I$I', function (c, width, height) {
+Clazz.newMeth(C$, 'getBaseline$javax_swing_JComponent$I$I',  function (c, width, height) {
 C$.superclazz.prototype.getBaseline$javax_swing_JComponent$I$I.apply(this, [c, width, height]);
-var lafDefaults=$I$(14).getLookAndFeelDefaults$();
+var lafDefaults=$I$(18).getLookAndFeelDefaults$();
 var renderer=lafDefaults.get$O(C$.BASELINE_COMPONENT_KEY);
 if (renderer == null ) {
-var tcr=Clazz.new_($I$(19));
+var tcr=Clazz.new_($I$(23,1));
 renderer=tcr.getTableCellRendererComponent$javax_swing_JTable$O$Z$Z$I$I(this.table, "a", false, false, -1, -1);
 lafDefaults.put$O$O(C$.BASELINE_COMPONENT_KEY, renderer);
 }renderer.setFont$java_awt_Font(this.table.getFont$());
@@ -439,74 +500,81 @@ var rowMargin=this.table.getRowMargin$();
 return renderer.getBaseline$I$I(2147483647, this.table.getRowHeight$() - rowMargin) + (rowMargin/2|0);
 });
 
-Clazz.newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent', function (c) {
+Clazz.newMeth(C$, 'getBaselineResizeBehavior$javax_swing_JComponent',  function (c) {
 C$.superclazz.prototype.getBaselineResizeBehavior$javax_swing_JComponent.apply(this, [c]);
-return $I$(20).CONSTANT_ASCENT;
+return $I$(24).CONSTANT_ASCENT;
 });
 
-Clazz.newMeth(C$, 'createTableSize$J', function (width) {
+Clazz.newMeth(C$, 'createTableSize$J',  function (width) {
 var height=0;
 var rowCount=this.table.getRowCount$();
 if (rowCount > 0 && this.table.getColumnCount$() > 0 ) {
 this.table._getCellRect$I$I$Z$java_awt_Rectangle(rowCount - 1, 0, true, C$.cellRect);
 height=C$.cellRect.y + C$.cellRect.height;
-}var tmp=Math.abs(width);
-if (tmp > 2147483647) {
+}var tmp=Math.abs$J(width);
+if (Long.$gt(tmp,2147483647 )) {
 tmp=2147483647;
-}return Clazz.new_($I$(21).c$$I$I,[(tmp|0), height]);
+}return Clazz.new_([Long.$ival(tmp), height],$I$(25,1).c$$I$I);
 }, p$2);
 
-Clazz.newMeth(C$, 'getMinimumSize$javax_swing_JComponent', function (jc) {
+Clazz.newMeth(C$, 'getMinimumSize$javax_swing_JComponent',  function (jc) {
 var width=0;
 var enumeration=this.table.getColumnModel$().getColumns$();
 while (enumeration.hasMoreElements$()){
 var aColumn=enumeration.nextElement$();
-width=width + aColumn.getMinWidth$();
+width=Long.$add(width,aColumn.getMinWidth$());
 }
 return p$2.createTableSize$J.apply(this, [width]);
 });
 
-Clazz.newMeth(C$, 'getPreferredSize$javax_swing_JComponent', function (jc) {
+Clazz.newMeth(C$, 'getPreferredSize$javax_swing_JComponent',  function (jc) {
 var width=0;
 var enumeration=this.table.getColumnModel$().getColumns$();
 while (enumeration.hasMoreElements$()){
 var aColumn=enumeration.nextElement$();
-width=width + aColumn.getPreferredWidth$();
+width=Long.$add(width,aColumn.getPreferredWidth$());
 }
 return p$2.createTableSize$J.apply(this, [width]);
 });
 
-Clazz.newMeth(C$, 'getMaximumSize$javax_swing_JComponent', function (jc) {
+Clazz.newMeth(C$, 'getMaximumSize$javax_swing_JComponent',  function (jc) {
 var width=0;
 var enumeration=this.table.getColumnModel$().getColumns$();
 while (enumeration.hasMoreElements$()){
 var aColumn=enumeration.nextElement$();
-width=width + aColumn.getMaxWidth$();
+width=Long.$add(width,aColumn.getMaxWidth$());
 }
 return p$2.createTableSize$J.apply(this, [width]);
 });
 
-Clazz.newMeth(C$, 'paint$java_awt_Graphics$javax_swing_JComponent', function (g, c) {
+Clazz.newMeth(C$, 'paint$java_awt_Graphics$javax_swing_JComponent',  function (g, c) {
 C$.superclazz.prototype.paint$java_awt_Graphics$javax_swing_JComponent.apply(this, [g, c]);
-var clip=g.getClipBounds$();
+var rc=this.table.getRowCount$();
+var cc=this.table.getColumnCount$();
+p$2.checkRemoveCells$I$I.apply(this, [rc, cc]);
+var clip=g.getClipBounds$java_awt_Rectangle(this.myClip);
+var rh=this.table.getRowHeight$();
+if (this.getScrollPane$() != null ) {
+$I$(12,"setStyles",[this.outerNode, ["overflow", "hidden", "height", (rc * rh) + "px"]]);
+}this.table.computeVisibleRect$java_awt_Rectangle(C$.tmpRect);
+if (rc <= 0 || cc <= 0  || !C$.tmpRect.intersects$java_awt_Rectangle(clip) ) {
+p$2.paintDropLines$java_awt_Graphics.apply(this, [g]);
+return;
+}clip=C$.tmpRect.intersection$java_awt_Rectangle(clip);
 var upperLeft=clip.getLocation$();
-var lowerRight=Clazz.new_($I$(22).c$$I$I,[clip.x + clip.width - 1, clip.y + clip.height - 1]);
+var lowerRight=Clazz.new_($I$(26,1).c$$I$I,[clip.x + clip.width - 1, clip.y + clip.height - 1]);
 var rMin=this.table.rowAtPoint$java_awt_Point(upperLeft);
 var rMax=this.table.rowAtPoint$java_awt_Point(lowerRight);
 if (rMin == -1) {
 rMin=0;
 }if (rMax == -1) {
-rMax=this.table.getRowCount$() - 1;
-}this.table.computeVisibleRect$java_awt_Rectangle(C$.tmpRect);
-if (this.table.getRowCount$() <= 0 || this.table.getColumnCount$() <= 0  || !C$.tmpRect.intersects$java_awt_Rectangle(clip) ) {
-p$2.paintDropLines$java_awt_Graphics.apply(this, [g]);
-return;
+rMax=rc - 1;
 }this.resized=(C$.tmpRect.width != this.lastWidth);
 if (this.resized) {
 if (rMax - rMin > 1) {
-var sp=p$2.getScrollPane.apply(this, []);
+var sp=this.getScrollPane$();
 if (sp != null ) {
-var val=Math.max(1, (rMax - rMin - 1 ) * this.table.getRowHeight$());
+var val=Math.max(1, (rMax - rMin - 1 ) * rh);
 sp.getVerticalScrollBar$().setBlockIncrement$I(val);
 sp.getVerticalScrollBar$().setUnitIncrement$I(((val + 1)/2|0));
 }}var was0=(this.lastWidth == 0);
@@ -514,8 +582,9 @@ this.lastWidth=C$.tmpRect.width;
 this.repaintAll=true;
 if (!was0) {
 this.rebuildTable$();
-p$2.getHeaderUI.apply(this, []).paint$java_awt_Graphics$javax_swing_JComponent(g, c);
-this.table.repaint$java_awt_Rectangle(C$.tmpRect);
+var hui=p$2.getHeaderUI.apply(this, []);
+if (hui != null ) hui.paint$java_awt_Graphics$javax_swing_JComponent(g, c);
+this.table.repaint$();
 return;
 }}this.working=true;
 var ltr=this.table.getComponentOrientation$().isLeftToRight$();
@@ -546,67 +615,94 @@ this.repaintAll=false;
 p$2.setHidden$Z.apply(this, [false]);
 });
 
-Clazz.newMeth(C$, 'paintCells$java_awt_Graphics$I$I$I$I$I$I', function (g, rMin0, rMax0, rMin, rMax, cMin, cMax) {
+Clazz.newMeth(C$, 'checkRemoveCells$I$I',  function (nrows, ncols) {
+if (nrows < this.lastRowCount) {
+for (var r=nrows; r < this.lastRowCount; r++) {
+var node=$I$(13).findCellNode$swingjs_plaf_JSComponentUI$S$I$I(this, null, r, -1);
+if (node != null ) {
+$I$(12).remove(node);
+}}
+}if (ncols < this.lastColCount) {
+for (var r=0; r < nrows; r++) {
+for (var c=ncols; c < this.lastColCount; c++) {
+var node=$I$(13).findCellNode$swingjs_plaf_JSComponentUI$S$I$I(this, null, r, c);
+if (node != null ) {
+$I$(12).remove(node);
+}}
+}
+}this.lastColCount=ncols;
+this.lastRowCount=nrows;
+}, p$2);
+
+Clazz.newMeth(C$, 'paintCells$java_awt_Graphics$I$I$I$I$I$I',  function (g, rMin0, rMax0, rMin, rMax, cMin, cMax) {
 var cm=this.table.getColumnModel$();
 var columnMargin=cm.getColumnMargin$();
 var h=this.table.getRowHeight$();
-var cw=p$2.getColumnWidths.apply(this, []);
-var aColumn;
-var columnWidth;
 var forceNew=(this.dragging || this.justLaidOut );
+p$2.getColumnWidths$Z.apply(this, [false]);
+var columnWidth;
 if (this.table.getComponentOrientation$().isLeftToRight$()) {
 for (var row=rMin0; row <= rMax0; row++) {
 this.table._getCellRect$I$I$Z$java_awt_Rectangle(row, cMin, false, C$.cellRect);
-var tr=$I$(8).getElement(this.id + "_tab_row" + row );
+var colTainted=this.bsRowTainted.get$I(row);
+var tr=$I$(12).getElement(this.id + "_tab_row" + row );
 for (var column=cMin; column <= cMax; column++) {
-aColumn=cm.getColumn$I(column);
-columnWidth=aColumn.getWidth$();
+columnWidth=this.cw[column];
 C$.cellRect.width=columnWidth - columnMargin;
-p$2.paintCell$java_awt_Graphics$java_awt_Rectangle$I$I$IA$I$swingjs_api_js_DOMNode$Z.apply(this, [g, C$.cellRect, row, column, cw, h, tr, forceNew]);
+p$2.paintCell$java_awt_Graphics$java_awt_Rectangle$I$I$I$swingjs_api_js_DOMNode$Z$Z.apply(this, [g, C$.cellRect, row, column, h, tr, forceNew, colTainted]);
 C$.cellRect.x+=columnWidth;
 }
+if (colTainted) this.bsRowTainted.clear$I(row);
 }
 } else {
 for (var row=rMin0; row <= rMax0; row++) {
 this.table._getCellRect$I$I$Z$java_awt_Rectangle(row, cMin, false, C$.cellRect);
-aColumn=cm.getColumn$I(cMin);
-var tr=$I$(8).getElement(this.id + "_tab_row" + row );
+var tr=$I$(12).getElement(this.id + "_tab_row" + row );
+var colTainted=this.bsRowTainted.get$I(row);
 for (var column=cMin; column <= cMax; column++) {
-aColumn=cm.getColumn$I(column);
-columnWidth=aColumn.getWidth$();
+columnWidth=this.cw[column];
 C$.cellRect.width=columnWidth - columnMargin;
 if (column != cMin) C$.cellRect.x-=columnWidth;
-p$2.paintCell$java_awt_Graphics$java_awt_Rectangle$I$I$IA$I$swingjs_api_js_DOMNode$Z.apply(this, [g, C$.cellRect, row, column, cw, h, tr, forceNew]);
+p$2.paintCell$java_awt_Graphics$java_awt_Rectangle$I$I$I$swingjs_api_js_DOMNode$Z$Z.apply(this, [g, C$.cellRect, row, column, h, tr, forceNew, colTainted]);
 }
+if (colTainted) this.bsRowTainted.clear$I(row);
 }
-}this.isScrolling=false;
+}this.rendererPane.removeAll$();
+this.isScrolling=false;
 this.justLaidOut=false;
 this.havePainted=true;
 }, p$2);
 
-Clazz.newMeth(C$, 'paintCell$java_awt_Graphics$java_awt_Rectangle$I$I$IA$I$swingjs_api_js_DOMNode$Z', function (g, cellRect, row, col, cw, h, tr, forceNew) {
+Clazz.newMeth(C$, 'paintCell$java_awt_Graphics$java_awt_Rectangle$I$I$I$swingjs_api_js_DOMNode$Z$Z',  function (g, cellRect, row, col, h, tr, forceNew, colTainted) {
 if (this.table.isEditing$() && this.table.getEditingRow$() == row  && this.table.getEditingColumn$() == col ) {
 var component=this.table.getEditorComponent$();
-component.setBounds$java_awt_Rectangle(cellRect);
-component.validate$();
+if (Clazz.instanceOf(component, "javax.swing.JTextField")) {
+component.setBounds$java_awt_Rectangle(Clazz.new_($I$(7,1).c$$I$I$I$I,[cellRect.x - 2, cellRect.y - 2, cellRect.width, cellRect.height]));
 } else {
-var td=(forceNew || tr == null   ? null : $I$(9).findCellNode$swingjs_plaf_JSComponentUI$S$I$I(this, null, row, col));
+component.setBounds$java_awt_Rectangle(cellRect);
+}component.validate$();
+return;
+}var td=(forceNew || tr == null   ? null : $I$(13).findCellNode$swingjs_plaf_JSComponentUI$S$I$I(this, null, row, col));
 var newtd=(td == null );
 if (newtd) {
-td=p$2.addElements$I$I$I$I$IA$I$I$I$I$I.apply(this, [-2147483648, -2147483648, 2147483647, 2147483647, cw, h, row, row + 1, col, col + 1]);
+td=p$2.addElement$I$I$I.apply(this, [row, col, h]);
+} else if (colTainted) {
+$I$(12).setStyles(td, ["left", cellRect.x + "px", "width", this.cw[col] + "px", "display", null]);
+} else {
+$I$(12).setStyle(td, "display", null);
 }var fullPaint=(newtd || !this.havePainted || !this.isScrolling || this.table.getSelectedRowCount$() > 0  );
-var renderer=this.table.getCellRenderer$I$I(row, col);
+var renderer=(fullPaint ? this.table.getCellRenderer$I$I(row, col) : this.table.getCellRendererOrNull$I$I$Z(row, col, this.isScrolling));
 if (!fullPaint) {
 
-if (renderer.__CLASS_NAME__.indexOf("javax.swing.") == 0) return;
-}var comp=p$2.getCellComponent$javax_swing_table_TableCellRenderer$I$I$I$I$swingjs_api_js_DOMNode$Z.apply(this, [renderer, row, col, cw[col], h, td, fullPaint]);
+if (!renderer || renderer.__CLASS_NAME__.indexOf("javax.swing.") == 0) return;
+}var comp=p$2.getCellRendererComponent$javax_swing_table_TableCellRenderer$I$I$I$I$swingjs_api_js_DOMNode$Z.apply(this, [renderer, row, col, this.cw[col], h, td, fullPaint]);
 if (comp == null ) return;
-var ui=(comp).getUI$();
-this.rendererPane.paintComponent$java_awt_Graphics$java_awt_Component$java_awt_Container$I$I$I$I$Z(g, comp, this.table, cellRect.x, cellRect.y, cellRect.width, cellRect.height, fullPaint && !this.isScrolling );
-ui.setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(null, 0, 0, td);
-}}, p$2);
+var shouldValidate=fullPaint && !this.isScrolling ;
+this.rendererPane.paintComponent$java_awt_Graphics$java_awt_Component$java_awt_Container$I$I$I$I$Z(g, comp, this.table, cellRect.x, cellRect.y, cellRect.width, cellRect.height, shouldValidate);
+comp.秘getUI$().setRenderer$java_awt_JSComponent$I$I$swingjs_api_js_DOMNode(null, 0, 0, td);
+}, p$2);
 
-Clazz.newMeth(C$, 'paintGrid$java_awt_Graphics$I$I$I$I', function (g, rMin, rMax, cMin, cMax) {
+Clazz.newMeth(C$, 'paintGrid$java_awt_Graphics$I$I$I$I',  function (g, rMin, rMax, cMin, cMax) {
 g.setColor$java_awt_Color(this.table.getGridColor$());
 this.table._getCellRect$I$I$Z$java_awt_Rectangle(rMin, cMin, true, C$.minCell);
 this.table._getCellRect$I$I$Z$java_awt_Rectangle(rMax, cMax, true, C$.maxCell);
@@ -638,72 +734,56 @@ g.drawLine$I$I$I$I(x - 1, 0, x - 1, tableHeight - 1);
 }
 }}}, p$2);
 
-Clazz.newMeth(C$, 'paintDropLines$java_awt_Graphics', function (g) {
+Clazz.newMeth(C$, 'paintDropLines$java_awt_Graphics',  function (g) {
 }, p$2);
 
-Clazz.newMeth(C$, 'paintDraggedArea$java_awt_Graphics$I$I$javax_swing_table_TableColumn$I', function (g, rMin, rMax, draggedColumn, distance) {
-this.rebuildTable$();
-}, p$2);
-
-Clazz.newMeth(C$, 'getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel', function (table, row, model) {
+Clazz.newMeth(C$, 'getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel',  function (table, row, model) {
 var index=model.getLeadSelectionIndex$();
 var compare=row ? table.getRowCount$() : table.getColumnCount$();
 return index < compare ? index : -1;
 }, 1);
 
-Clazz.newMeth(C$, 'getAdjustedLead$javax_swing_JTable$Z', function (table, row) {
+Clazz.newMeth(C$, 'getAdjustedLead$javax_swing_JTable$Z',  function (table, row) {
 return row ? C$.getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, row, table.getSelectionModel$()) : C$.getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, row, table.getColumnModel$().getSelectionModel$());
 }, 1);
 
-Clazz.newMeth(C$, 'rebuildTable$', function () {
-this.setTainted$();
-this.currentRowMin=-1;
-this.setHTMLElement$();
-p$2.rebuildHeader.apply(this, []);
+Clazz.newMeth(C$, 'invokeAction$S$javax_swing_Action',  function (name, altAction) {
+var map=this.table.getActionMap$();
+var action=null;
+if (map != null ) {
+action=map.get$O(name);
+}this.installDefaultTransferHandlerIfNecessary$();
+if (action == null ) {
+action=altAction;
+}action.actionPerformed$java_awt_event_ActionEvent(Clazz.new_([this, 1001, action.getValue$S("Name"), $I$(28).getMostRecentEventTime$(), 0],$I$(27,1).c$$O$I$S$J$I));
 });
 
-Clazz.newMeth(C$, 'rebuildHeader', function () {
-var ui=p$2.getHeaderUI.apply(this, []);
-ui.setTainted$();
-ui.setHTMLElement$();
-this.table.getTableHeader$().repaint$();
-}, p$2);
-
-Clazz.newMeth(C$, 'getHeaderUI', function () {
-return this.table.getTableHeader$().getUI$();
-}, p$2);
+C$.$static$=function(){C$.$static$=0;
+C$.tmpRect=Clazz.new_($I$(7,1));
+C$.cellRect=Clazz.new_($I$(7,1));
+C$.minCell=Clazz.new_($I$(7,1));
+C$.maxCell=Clazz.new_($I$(7,1));
+C$.BASELINE_COMPONENT_KEY=Clazz.new_($I$(8,1).c$$S,["Table.baselineComponent"]);
+C$.defaultTransferHandler=Clazz.new_($I$(9,1));
+};
 ;
-(function(){var C$=Clazz.newClass(P$.JSTableUI, "Actions", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableUI, "Actions", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'sun.swing.UIAction');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dx=0;
-this.dy=0;
-this.extend=false;
-this.inSelection=false;
-this.forwards=false;
-this.vertically=false;
-this.toLimit=false;
-this.leadRow=0;
-this.leadColumn=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['Z',['extend','inSelection','forwards','vertically','toLimit'],'I',['dx','dy','leadRow','leadColumn']]]
+
+Clazz.newMeth(C$, 'c$$S',  function (name) {
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S', function (name) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'c$$S$I$I$Z$Z', function (name, dx, dy, extend, inSelection) {
-C$.superclazz.c$$S.apply(this, [name]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$S$I$I$Z$Z',  function (name, dx, dy, extend, inSelection) {
+;C$.superclazz.c$$S.apply(this,[name]);C$.$init$.apply(this);
 if (inSelection) {
 this.inSelection=true;
 dx=C$.sign$I(dx);
@@ -714,27 +794,27 @@ this.dy=dy;
 this.extend=extend;
 }, 1);
 
-Clazz.newMeth(C$, 'c$$S$Z$Z$Z$Z', function (name, extend, forwards, vertically, toLimit) {
+Clazz.newMeth(C$, 'c$$S$Z$Z$Z$Z',  function (name, extend, forwards, vertically, toLimit) {
 C$.c$$S$I$I$Z$Z.apply(this, [name, 0, 0, extend, false]);
 this.forwards=forwards;
 this.vertically=vertically;
 this.toLimit=toLimit;
 }, 1);
 
-Clazz.newMeth(C$, 'clipToRange$I$I$I', function (i, a, b) {
+Clazz.newMeth(C$, 'clipToRange$I$I$I',  function (i, a, b) {
 return Math.min(Math.max(i, a), b - 1);
 }, 1);
 
-Clazz.newMeth(C$, 'moveWithinTableRange$javax_swing_JTable$I$I', function (table, dx, dy) {
+Clazz.newMeth(C$, 'moveWithinTableRange$javax_swing_JTable$I$I',  function (table, dx, dy) {
 this.leadRow=C$.clipToRange$I$I$I(this.leadRow + dy, 0, table.getRowCount$());
 this.leadColumn=C$.clipToRange$I$I$I(this.leadColumn + dx, 0, table.getColumnCount$());
 }, p$1);
 
-Clazz.newMeth(C$, 'sign$I', function (num) {
+Clazz.newMeth(C$, 'sign$I',  function (num) {
 return (num < 0) ? -1 : ((num == 0) ? 0 : 1);
 }, 1);
 
-Clazz.newMeth(C$, 'moveWithinSelectedRange$javax_swing_JTable$I$I$javax_swing_ListSelectionModel$javax_swing_ListSelectionModel', function (table, dx, dy, rsm, csm) {
+Clazz.newMeth(C$, 'moveWithinSelectedRange$javax_swing_JTable$I$I$javax_swing_ListSelectionModel$javax_swing_ListSelectionModel',  function (table, dx, dy, rsm, csm) {
 var totalCount;
 var minX;
 var maxX;
@@ -792,40 +872,40 @@ p$1.calcNextPos$I$I$I$I$I$I.apply(this, [dx, minX, maxX, dy, minY, maxY]);
 return stayInSelection;
 }, p$1);
 
-Clazz.newMeth(C$, 'calcNextPos$I$I$I$I$I$I', function (dx, minX, maxX, dy, minY, maxY) {
+Clazz.newMeth(C$, 'calcNextPos$I$I$I$I$I$I',  function (dx, minX, maxX, dy, minY, maxY) {
 if (dx != 0) {
 this.leadColumn+=dx;
 if (this.leadColumn > maxX) {
 this.leadColumn=minX;
-this.leadRow++;
+++this.leadRow;
 if (this.leadRow > maxY) {
 this.leadRow=minY;
 }} else if (this.leadColumn < minX) {
 this.leadColumn=maxX;
-this.leadRow--;
+--this.leadRow;
 if (this.leadRow < minY) {
 this.leadRow=maxY;
 }}} else {
 this.leadRow+=dy;
 if (this.leadRow > maxY) {
 this.leadRow=minY;
-this.leadColumn++;
+++this.leadColumn;
 if (this.leadColumn > maxX) {
 this.leadColumn=minX;
 }} else if (this.leadRow < minY) {
 this.leadRow=maxY;
-this.leadColumn--;
+--this.leadColumn;
 if (this.leadColumn < minX) {
 this.leadColumn=maxX;
 }}}}, p$1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 var key=this.getName$();
 var table=e.getSource$();
 var rsm=table.getSelectionModel$();
-this.leadRow=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, true, rsm);
+this.leadRow=$I$(1).getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, true, rsm);
 var csm=table.getColumnModel$().getSelectionModel$();
-this.leadColumn=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, false, csm);
+this.leadColumn=$I$(1).getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, false, csm);
 if (key == "scrollLeftChangeSelection" || key == "scrollLeftExtendSelection"  || key == "scrollRightChangeSelection"  || key == "scrollRightExtendSelection"  || key == "scrollUpChangeSelection"  || key == "scrollUpExtendSelection"  || key == "scrollDownChangeSelection"  || key == "scrollDownExtendSelection"  || key == "selectFirstColumn"  || key == "selectFirstColumnExtendSelection"  || key == "selectFirstRow"  || key == "selectFirstRowExtendSelection"  || key == "selectLastColumn"  || key == "selectLastColumnExtendSelection"  || key == "selectLastRow"  || key == "selectLastRowExtendSelection" ) {
 if (this.toLimit) {
 if (this.vertically) {
@@ -837,7 +917,7 @@ var colCount=table.getColumnCount$();
 this.dx=this.forwards ? colCount : -colCount;
 this.dy=0;
 }} else {
-if (!(Clazz.instanceOf(table.getParent$().getParent$(), "javax.swing.JScrollPane"))) {
+if ((table.秘getUI$()).getScrollPane$() == null ) {
 return;
 }var delta=table.getParent$().getSize$();
 if (this.vertically) {
@@ -875,11 +955,11 @@ changeLead=(csm.getSelectionMode$() == 2);
 p$1.moveWithinTableRange$javax_swing_JTable$I$I.apply(this, [table, this.dx, this.dy]);
 if (this.dy != 0) {
 (rsm).moveLeadSelectionIndex$I(this.leadRow);
-if (P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, false, csm) == -1 && table.getColumnCount$() > 0 ) {
+if ($I$(1).getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, false, csm) == -1 && table.getColumnCount$() > 0 ) {
 (csm).moveLeadSelectionIndex$I(0);
 }} else {
 (csm).moveLeadSelectionIndex$I(this.leadColumn);
-if (P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, true, rsm) == -1 && table.getRowCount$() > 0 ) {
+if ($I$(1).getAdjustedLead$javax_swing_JTable$Z$javax_swing_ListSelectionModel(table, true, rsm) == -1 && table.getRowCount$() > 0 ) {
 (rsm).moveLeadSelectionIndex$I(0);
 }}table._getCellRect$I$I$Z$java_awt_Rectangle(this.leadRow, this.leadColumn, false, $I$(1).tmpRect);
 table.scrollRectToVisible$java_awt_Rectangle($I$(1).tmpRect);
@@ -947,9 +1027,9 @@ thUI.selectColumn$I(col);
 }th.requestFocusInWindow$();
 }}});
 
-Clazz.newMeth(C$, 'isEnabled$O', function (sender) {
+Clazz.newMeth(C$, 'isEnabled$O',  function (sender) {
 var key=this.getName$();
-if (Clazz.instanceOf(sender, "javax.swing.JTable") && $I$(2).TRUE.equals$O((sender).getClientProperty$O("Table.isFileList")) ) {
+if (Clazz.instanceOf(sender, "javax.swing.JTable") && Boolean.TRUE.equals$O((sender).getClientProperty$O("Table.isFileList")) ) {
 if (key == "selectNextColumn" || key == "selectNextColumnCell"  || key == "selectNextColumnExtendSelection"  || key == "selectNextColumnChangeLead"  || key == "selectPreviousColumn"  || key == "selectPreviousColumnCell"  || key == "selectPreviousColumnExtendSelection"  || key == "selectPreviousColumnChangeLead"  || key == "scrollLeftChangeSelection"  || key == "scrollLeftExtendSelection"  || key == "scrollRightChangeSelection"  || key == "scrollRightExtendSelection"  || key == "selectFirstColumn"  || key == "selectFirstColumnExtendSelection"  || key == "selectLastColumn"  || key == "selectLastColumnExtendSelection"  || key == "selectNextRowCell"  || key == "selectPreviousRowCell" ) {
 return false;
 }}if (key == "cancel" && Clazz.instanceOf(sender, "javax.swing.JTable") ) {
@@ -960,170 +1040,158 @@ return sender != null  && Clazz.instanceOf((sender).getSelectionModel$(), "javax
 return sender != null  && Clazz.instanceOf((sender).getColumnModel$().getSelectionModel$(), "javax.swing.DefaultListSelectionModel") ;
 } else if (key == "addToSelection" && Clazz.instanceOf(sender, "javax.swing.JTable") ) {
 var table=sender;
-var leadRow=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z(table, true);
-var leadCol=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z(table, false);
+var leadRow=$I$(1).getAdjustedLead$javax_swing_JTable$Z(table, true);
+var leadCol=$I$(1).getAdjustedLead$javax_swing_JTable$Z(table, false);
 return !(table.isEditing$() || table.isCellSelected$I$I(leadRow, leadCol) );
 } else if (key == "focusHeader" && Clazz.instanceOf(sender, "javax.swing.JTable") ) {
 var table=sender;
 return table.getTableHeader$() != null ;
 }return true;
 });
+
+C$.$static$=function(){C$.$static$=0;
 C$.$_ASSERT_ENABLED_ = ClassLoader.getClassAssertionStatus$(C$);
+};
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTableUI, "KeyHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableUI, "KeyHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.awt.event.KeyListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).keyPressed$java_awt_event_KeyEvent(e);
+Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).keyPressed$java_awt_event_KeyEvent(e);
 });
 
-Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).keyReleased$java_awt_event_KeyEvent(e);
+Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).keyReleased$java_awt_event_KeyEvent(e);
 });
 
-Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).keyTyped$java_awt_event_KeyEvent(e);
+Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).keyTyped$java_awt_event_KeyEvent(e);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTableUI, "FocusHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableUI, "FocusHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'java.awt.event.FocusListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).focusGained$java_awt_event_FocusEvent(e);
+Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).focusGained$java_awt_event_FocusEvent(e);
 });
 
-Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).focusLost$java_awt_event_FocusEvent(e);
+Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).focusLost$java_awt_event_FocusEvent(e);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTableUI, "MouseInputHandler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableUI, "MouseInputHandler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, null, 'javax.swing.event.MouseInputListener');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).mouseClicked$java_awt_event_MouseEvent(e);
+Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).mouseClicked$java_awt_event_MouseEvent(e);
 });
 
-Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).mousePressed$java_awt_event_MouseEvent(e);
+Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).mousePressed$java_awt_event_MouseEvent(e);
 });
 
-Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).mouseReleased$java_awt_event_MouseEvent(e);
+Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).mouseReleased$java_awt_event_MouseEvent(e);
 });
 
-Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).mouseEntered$java_awt_event_MouseEvent(e);
+Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).mouseEntered$java_awt_event_MouseEvent(e);
 });
 
-Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).mouseExited$java_awt_event_MouseEvent(e);
+Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).mouseExited$java_awt_event_MouseEvent(e);
 });
 
-Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).mouseMoved$java_awt_event_MouseEvent(e);
+Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).mouseMoved$java_awt_event_MouseEvent(e);
 });
 
-Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (e) {
-p$2.getHandler.apply(this.this$0, []).mouseDragged$java_awt_event_MouseEvent(e);
+Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent',  function (e) {
+p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []).mouseDragged$java_awt_event_MouseEvent(e);
 });
 
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.JSTableUI, "Handler", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableUI, "Handler", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
-}, null, ['java.awt.event.FocusListener', 'javax.swing.event.MouseInputListener', 'java.beans.PropertyChangeListener', 'javax.swing.event.ListSelectionListener', 'java.awt.event.ActionListener']);
+}, null, ['java.awt.event.KeyListener', 'java.awt.event.FocusListener', 'javax.swing.event.MouseInputListener', 'java.beans.PropertyChangeListener', 'javax.swing.event.ListSelectionListener', 'java.awt.event.ActionListener']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.dispatchComponent=null;
-this.pressedRow=0;
-this.pressedCol=0;
-this.pressedEvent=null;
-this.dragPressDidSelection=false;
-this.dragStarted=false;
-this.shouldStartTimer=false;
-this.outsidePrefSize=false;
-this.timer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.timer=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'repaintLeadCell', function () {
-var lr=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z(this.this$0.table, true);
-var lc=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z(this.this$0.table, false);
+C$.$fields$=[['Z',['dragPressDidSelection','dragStarted','outsidePrefSize'],'I',['pressedRow','pressedCol'],'O',['dispatchComponent','java.awt.Component','pressedEvent','java.awt.event.MouseEvent','timer','javax.swing.Timer']]]
+
+Clazz.newMeth(C$, 'repaintLeadCell',  function () {
+var lr=$I$(1).getAdjustedLead$javax_swing_JTable$Z(this.b$['swingjs.plaf.JSTableUI'].table, true);
+var lc=$I$(1).getAdjustedLead$javax_swing_JTable$Z(this.b$['swingjs.plaf.JSTableUI'].table, false);
 if (lr < 0 || lc < 0 ) {
 return;
-}this.this$0.repaintCell$I$I.apply(this.this$0, [lr, lc]);
+}this.b$['swingjs.plaf.JSTableUI'].repaintCell$I$I.apply(this.b$['swingjs.plaf.JSTableUI'], [lr, lc]);
 }, p$3);
 
-Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent', function (e) {
+Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent',  function (e) {
 p$3.repaintLeadCell.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent', function (e) {
+Clazz.newMeth(C$, 'focusLost$java_awt_event_FocusEvent',  function (e) {
 p$3.repaintLeadCell.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent', function (e) {
+Clazz.newMeth(C$, 'keyPressed$java_awt_event_KeyEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent', function (e) {
+Clazz.newMeth(C$, 'keyReleased$java_awt_event_KeyEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent', function (e) {
-var keyStroke=$I$(3).getKeyStroke$I$I(e.getKeyChar$().$c(), e.getModifiers$());
-var map=this.this$0.table.getInputMap$I(0);
+Clazz.newMeth(C$, 'keyTyped$java_awt_event_KeyEvent',  function (e) {
+var keyStroke=$I$(2,"getKeyStroke$I$I",[e.getKeyChar$().$c(), e.getModifiers$()]);
+var map=this.b$['swingjs.plaf.JSTableUI'].table.getInputMap$I(0);
 if (map != null  && map.get$javax_swing_KeyStroke(keyStroke) != null  ) {
 return;
-}map=this.this$0.table.getInputMap$I(1);
+}map=this.b$['swingjs.plaf.JSTableUI'].table.getInputMap$I(1);
 if (map != null  && map.get$javax_swing_KeyStroke(keyStroke) != null  ) {
 return;
-}keyStroke=$I$(3).getKeyStrokeForEvent$java_awt_event_KeyEvent(e);
+}keyStroke=$I$(2).getKeyStrokeForEvent$java_awt_event_KeyEvent(e);
 if (e.getKeyChar$() == "\r") {
 return;
-}var leadRow=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z(this.this$0.table, true);
-var leadColumn=P$.JSTableUI.getAdjustedLead$javax_swing_JTable$Z(this.this$0.table, false);
-if (leadRow != -1 && leadColumn != -1  && !this.this$0.table.isEditing$() ) {
-if (!this.this$0.table.editCellAt$I$I(leadRow, leadColumn)) {
+}var leadRow=$I$(1).getAdjustedLead$javax_swing_JTable$Z(this.b$['swingjs.plaf.JSTableUI'].table, true);
+var leadColumn=$I$(1).getAdjustedLead$javax_swing_JTable$Z(this.b$['swingjs.plaf.JSTableUI'].table, false);
+if (leadRow != -1 && leadColumn != -1  && !this.b$['swingjs.plaf.JSTableUI'].table.isEditing$() ) {
+if (!this.b$['swingjs.plaf.JSTableUI'].table.editCellAt$I$I(leadRow, leadColumn)) {
 return;
-}}var editorComp=this.this$0.table.getEditorComponent$();
-if (this.this$0.table.isEditing$() && editorComp != null  ) {
+}}var editorComp=this.b$['swingjs.plaf.JSTableUI'].table.getEditorComponent$();
+if (this.b$['swingjs.plaf.JSTableUI'].table.isEditing$() && editorComp != null  ) {
 if (Clazz.instanceOf(editorComp, "javax.swing.JComponent")) {
 var component=editorComp;
 map=component.getInputMap$I(0);
@@ -1134,216 +1202,281 @@ binding=(map != null ) ? map.get$javax_swing_KeyStroke(keyStroke) : null;
 }if (binding != null ) {
 var am=component.getActionMap$();
 var action=(am != null ) ? am.get$O(binding) : null;
-if (action != null  && $I$(4).notifyAction$javax_swing_Action$javax_swing_KeyStroke$java_awt_event_KeyEvent$O$I(action, keyStroke, e, component, e.getModifiers$()) ) {
+if (action != null  && $I$(3,"notifyAction$javax_swing_Action$javax_swing_KeyStroke$java_awt_event_KeyEvent$O$I",[action, keyStroke, e, component, e.getModifiers$()]) ) {
 e.consume$();
 }}}}});
 
-Clazz.newMeth(C$, 'repostEvent$java_awt_event_MouseEvent', function (e) {
-if (this.dispatchComponent == null  || !this.this$0.table.isEditing$() ) {
+Clazz.newMeth(C$, 'repostEvent$java_awt_event_MouseEvent',  function (e) {
+if (this.dispatchComponent == null  || !this.b$['swingjs.plaf.JSTableUI'].table.isEditing$() ) {
 return false;
-}var e2=$I$(4).convertMouseEvent$java_awt_Component$java_awt_event_MouseEvent$java_awt_Component(this.this$0.table, e, this.dispatchComponent);
+}var row=this.b$['swingjs.plaf.JSTableUI'].table.getEditingRow$();
+var column=this.b$['swingjs.plaf.JSTableUI'].table.getEditingColumn$();
+if (Clazz.instanceOf(this.dispatchComponent, "javax.swing.JCheckBox")) (this.dispatchComponent).setSelected$Z((this.b$['swingjs.plaf.JSTableUI'].table.getValueAt$I$I(row, column)).booleanValue$());
+var e2=$I$(3).convertMouseEvent$java_awt_Component$java_awt_event_MouseEvent$java_awt_Component(this.b$['swingjs.plaf.JSTableUI'].table, e, this.dispatchComponent);
 this.dispatchComponent.dispatchEvent$java_awt_AWTEvent(e2);
 return true;
 }, p$3);
 
-Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseClicked$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'setDispatchComponent$java_awt_event_MouseEvent', function (e) {
-var editorComponent=this.this$0.table.getEditorComponent$();
+Clazz.newMeth(C$, 'setDispatchComponent$java_awt_event_MouseEvent',  function (e) {
+var editorComponent=this.b$['swingjs.plaf.JSTableUI'].table.getEditorComponent$();
 var p=e.getPoint$();
-var p2=$I$(4).convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(this.this$0.table, p, editorComponent);
-this.dispatchComponent=$I$(4).getDeepestComponentAt$java_awt_Component$I$I(editorComponent, p2.x, p2.y);
+var p2=$I$(3).convertPoint$java_awt_Component$java_awt_Point$java_awt_Component(this.b$['swingjs.plaf.JSTableUI'].table, p, editorComponent);
+this.dispatchComponent=$I$(3).getDeepestComponentAt$java_awt_Component$I$I(editorComponent, p2.x, p2.y);
+if (this.dispatchComponent == null  && this.b$['swingjs.plaf.JSTableUI'].table.isEditing$() ) {
+this.dispatchComponent=this.b$['swingjs.plaf.JSTableUI'].table.getEditorComponent$();
+}$I$(4,"setSkipClickCount$java_awt_Component$I",[this.dispatchComponent, e.getClickCount$() - 1]);
 }, p$3);
 
-Clazz.newMeth(C$, 'setValueIsAdjusting$Z', function (flag) {
-this.this$0.table.getSelectionModel$().setValueIsAdjusting$Z(flag);
-this.this$0.table.getColumnModel$().getSelectionModel$().setValueIsAdjusting$Z(flag);
+Clazz.newMeth(C$, 'setValueIsAdjusting$Z',  function (flag) {
+this.b$['swingjs.plaf.JSTableUI'].table.getSelectionModel$().setValueIsAdjusting$Z(flag);
+this.b$['swingjs.plaf.JSTableUI'].table.getColumnModel$().getSelectionModel$().setValueIsAdjusting$Z(flag);
 }, p$3);
 
-Clazz.newMeth(C$, 'canStartDrag', function () {
+Clazz.newMeth(C$, 'canStartDrag',  function () {
 if (this.pressedRow == -1 || this.pressedCol == -1 ) {
 return false;
-}if (this.this$0.isFileList) {
+}if (this.b$['swingjs.plaf.JSTableUI'].isFileList) {
 return !this.outsidePrefSize;
-}if ((this.this$0.table.getSelectionModel$().getSelectionMode$() == 0) && (this.this$0.table.getColumnModel$().getSelectionModel$().getSelectionMode$() == 0) ) {
+}if ((this.b$['swingjs.plaf.JSTableUI'].table.getSelectionModel$().getSelectionMode$() == 0) && (this.b$['swingjs.plaf.JSTableUI'].table.getColumnModel$().getSelectionModel$().getSelectionMode$() == 0) ) {
 return true;
-}return this.this$0.table.isCellSelected$I$I(this.pressedRow, this.pressedCol);
+}return this.b$['swingjs.plaf.JSTableUI'].table.isCellSelected$I$I(this.pressedRow, this.pressedCol);
 }, p$3);
 
-Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent', function (e) {
-if ($I$(5).shouldIgnore$java_awt_event_MouseEvent$javax_swing_JComponent(e, this.this$0.table)) {
+Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent',  function (e) {
+if ($I$(4).shouldIgnore$java_awt_event_MouseEvent$javax_swing_JComponent(e, this.b$['swingjs.plaf.JSTableUI'].table)) {
 return;
-}if (this.this$0.table.isEditing$()) {
-if (!this.this$0.table.getCellEditor$().stopCellEditing$()) {
-var editorComponent=this.this$0.table.getEditorComponent$();
+}if (this.b$['swingjs.plaf.JSTableUI'].table.isEditing$()) {
+if (!this.b$['swingjs.plaf.JSTableUI'].table.getCellEditor$().stopCellEditing$()) {
+var editorComponent=this.b$['swingjs.plaf.JSTableUI'].table.getEditorComponent$();
 if (editorComponent != null  && !editorComponent.hasFocus$() ) {
-$I$(5).compositeRequestFocus$java_awt_Component(editorComponent);
+$I$(4).compositeRequestFocus$java_awt_Component(editorComponent);
 }return;
 }}var p=e.getPoint$();
-this.pressedRow=this.this$0.table.rowAtPoint$java_awt_Point(p);
-this.pressedCol=this.this$0.table.columnAtPoint$java_awt_Point(p);
-this.outsidePrefSize=p$2.pointOutsidePrefSize$I$I$java_awt_Point.apply(this.this$0, [this.pressedRow, this.pressedCol, p]);
-if (this.this$0.isFileList) {
-this.shouldStartTimer=this.this$0.table.isCellSelected$I$I(this.pressedRow, this.pressedCol) && !e.isShiftDown$() && !e.isControlDown$() && !this.outsidePrefSize  ;
-}if (this.this$0.table.getDragEnabled$()) {
+this.pressedRow=this.b$['swingjs.plaf.JSTableUI'].table.rowAtPoint$java_awt_Point(p);
+this.pressedCol=this.b$['swingjs.plaf.JSTableUI'].table.columnAtPoint$java_awt_Point(p);
+this.outsidePrefSize=p$2.pointOutsidePrefSize$I$I$java_awt_Point.apply(this.b$['swingjs.plaf.JSTableUI'], [this.pressedRow, this.pressedCol, p]);
+if (this.b$['swingjs.plaf.JSTableUI'].table.getDragEnabled$()) {
 p$3.mousePressedDND$java_awt_event_MouseEvent.apply(this, [e]);
 } else {
-$I$(5).adjustFocus$javax_swing_JComponent(this.this$0.table);
-if (!this.this$0.isFileList) {
+$I$(4).adjustFocus$javax_swing_JComponent(this.b$['swingjs.plaf.JSTableUI'].table);
+if (!this.b$['swingjs.plaf.JSTableUI'].isFileList) {
 p$3.setValueIsAdjusting$Z.apply(this, [true]);
 }p$3.adjustSelection$java_awt_event_MouseEvent.apply(this, [e]);
 }});
 
-Clazz.newMeth(C$, 'mousePressedDND$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mousePressedDND$java_awt_event_MouseEvent',  function (e) {
 this.pressedEvent=e;
 var grabFocus=true;
 this.dragStarted=false;
 if (p$3.canStartDrag.apply(this, [])) {
 this.dragPressDidSelection=false;
-if (e.isControlDown$() && this.this$0.isFileList ) {
+if (e.isControlDown$() && this.b$['swingjs.plaf.JSTableUI'].isFileList ) {
 return;
-} else if (!e.isShiftDown$() && this.this$0.table.isCellSelected$I$I(this.pressedRow, this.pressedCol) ) {
-this.this$0.table.getSelectionModel$().addSelectionInterval$I$I(this.pressedRow, this.pressedRow);
-this.this$0.table.getColumnModel$().getSelectionModel$().addSelectionInterval$I$I(this.pressedCol, this.pressedCol);
+} else if (!e.isShiftDown$() && this.b$['swingjs.plaf.JSTableUI'].table.isCellSelected$I$I(this.pressedRow, this.pressedCol) ) {
+this.b$['swingjs.plaf.JSTableUI'].table.getSelectionModel$().addSelectionInterval$I$I(this.pressedRow, this.pressedRow);
+this.b$['swingjs.plaf.JSTableUI'].table.getColumnModel$().getSelectionModel$().addSelectionInterval$I$I(this.pressedCol, this.pressedCol);
 return;
 }this.dragPressDidSelection=true;
 grabFocus=false;
-} else if (!this.this$0.isFileList) {
+} else if (!this.b$['swingjs.plaf.JSTableUI'].isFileList) {
 p$3.setValueIsAdjusting$Z.apply(this, [true]);
 }if (grabFocus) {
-$I$(5).adjustFocus$javax_swing_JComponent(this.this$0.table);
+$I$(4).adjustFocus$javax_swing_JComponent(this.b$['swingjs.plaf.JSTableUI'].table);
 }p$3.adjustSelection$java_awt_event_MouseEvent.apply(this, [e]);
 }, p$3);
 
-Clazz.newMeth(C$, 'adjustSelection$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'adjustSelection$java_awt_event_MouseEvent',  function (e) {
 if (this.outsidePrefSize) {
-if (e.getID$() == 501 && (!e.isShiftDown$() || this.this$0.table.getSelectionModel$().getSelectionMode$() == 0 ) ) {
-this.this$0.table.clearSelection$();
-var tce=this.this$0.table.getCellEditor$();
+if (e.getID$() == 501 && (!e.isShiftDown$() || this.b$['swingjs.plaf.JSTableUI'].table.getSelectionModel$().getSelectionMode$() == 0 ) ) {
+this.b$['swingjs.plaf.JSTableUI'].table.clearSelection$();
+var tce=this.b$['swingjs.plaf.JSTableUI'].table.getCellEditor$();
 if (tce != null ) {
 tce.stopCellEditing$();
 }}return;
 }if ((this.pressedCol == -1) || (this.pressedRow == -1) ) {
 return;
-}var dragEnabled=this.this$0.table.getDragEnabled$();
-if (!dragEnabled && !this.this$0.isFileList && this.this$0.table.editCellAt$I$I$java_util_EventObject(this.pressedRow, this.pressedCol, e)  ) {
+}var dragEnabled=this.b$['swingjs.plaf.JSTableUI'].table.getDragEnabled$();
+if (!dragEnabled && !this.b$['swingjs.plaf.JSTableUI'].isFileList && this.b$['swingjs.plaf.JSTableUI'].table.editCellAt$I$I$java_util_EventObject(this.pressedRow, this.pressedCol, e)  ) {
 p$3.setDispatchComponent$java_awt_event_MouseEvent.apply(this, [e]);
 p$3.repostEvent$java_awt_event_MouseEvent.apply(this, [e]);
-}var editor=this.this$0.table.getCellEditor$();
+}var editor=this.b$['swingjs.plaf.JSTableUI'].table.getCellEditor$();
 if (dragEnabled || editor == null   || editor.shouldSelectCell$java_util_EventObject(e) ) {
-this.this$0.table.changeSelection$I$I$Z$Z(this.pressedRow, this.pressedCol, e.isControlDown$(), e.isShiftDown$());
+this.b$['swingjs.plaf.JSTableUI'].table.changeSelection$I$I$Z$Z(this.pressedRow, this.pressedCol, e.isControlDown$(), e.isShiftDown$());
 }}, p$3);
 
-Clazz.newMeth(C$, ['valueChanged$javax_swing_event_ListSelectionEvent','valueChanged$'], function (e) {
+Clazz.newMeth(C$, 'valueChanged$javax_swing_event_ListSelectionEvent',  function (e) {
 if (this.timer != null ) {
 this.timer.stop$();
 this.timer=null;
 }});
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (ae) {
-this.this$0.table.editCellAt$I$I$java_util_EventObject(this.pressedRow, this.pressedCol, null);
-var editorComponent=this.this$0.table.getEditorComponent$();
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (ae) {
+this.b$['swingjs.plaf.JSTableUI'].table.editCellAt$I$I$java_util_EventObject(this.pressedRow, this.pressedCol, null);
+var editorComponent=this.b$['swingjs.plaf.JSTableUI'].table.getEditorComponent$();
 if (editorComponent != null  && !editorComponent.hasFocus$() ) {
-$I$(5).compositeRequestFocus$java_awt_Component(editorComponent);
+$I$(4).compositeRequestFocus$java_awt_Component(editorComponent);
 }return;
 });
 
-Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent', function (e) {
-this.this$0.dragging=false;
-if ($I$(5).shouldIgnore$java_awt_event_MouseEvent$javax_swing_JComponent(e, this.this$0.table)) {
+Clazz.newMeth(C$, 'mouseReleased$java_awt_event_MouseEvent',  function (e) {
+this.b$['swingjs.plaf.JSTableUI'].dragging=false;
+if ($I$(4).shouldIgnore$java_awt_event_MouseEvent$javax_swing_JComponent(e, this.b$['swingjs.plaf.JSTableUI'].table)) {
 return;
-}if (this.this$0.table.getDragEnabled$()) {
+}if (this.b$['swingjs.plaf.JSTableUI'].table.getDragEnabled$()) {
 p$3.mouseReleasedDND$java_awt_event_MouseEvent.apply(this, [e]);
 } else {
 }this.pressedEvent=null;
 p$3.repostEvent$java_awt_event_MouseEvent.apply(this, [e]);
 this.dispatchComponent=null;
 p$3.setValueIsAdjusting$Z.apply(this, [false]);
-p$2.notifyEntry$Z.apply(this.this$0, [true]);
+p$2.notifyEntry$Z.apply(this.b$['swingjs.plaf.JSTableUI'], [true]);
 });
 
-Clazz.newMeth(C$, 'mouseReleasedDND$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseReleasedDND$java_awt_event_MouseEvent',  function (e) {
 var me=e;
 if (me != null ) {
-$I$(5).adjustFocus$javax_swing_JComponent(this.this$0.table);
+$I$(4).adjustFocus$javax_swing_JComponent(this.b$['swingjs.plaf.JSTableUI'].table);
 if (!this.dragPressDidSelection) {
 p$3.adjustSelection$java_awt_event_MouseEvent.apply(this, [me]);
 }}if (!this.dragStarted) {
 var p=e.getPoint$();
-if (this.pressedEvent != null  && this.this$0.table.rowAtPoint$java_awt_Point(p) == this.pressedRow  && this.this$0.table.columnAtPoint$java_awt_Point(p) == this.pressedCol  && this.this$0.table.editCellAt$I$I$java_util_EventObject(this.pressedRow, this.pressedCol, this.pressedEvent) ) {
+if (this.pressedEvent != null  && this.b$['swingjs.plaf.JSTableUI'].table.rowAtPoint$java_awt_Point(p) == this.pressedRow  && this.b$['swingjs.plaf.JSTableUI'].table.columnAtPoint$java_awt_Point(p) == this.pressedCol  && this.b$['swingjs.plaf.JSTableUI'].table.editCellAt$I$I$java_util_EventObject(this.pressedRow, this.pressedCol, this.pressedEvent) ) {
 p$3.setDispatchComponent$java_awt_event_MouseEvent.apply(this, [this.pressedEvent]);
 p$3.repostEvent$java_awt_event_MouseEvent.apply(this, [this.pressedEvent]);
-var ce=this.this$0.table.getCellEditor$();
+var ce=this.b$['swingjs.plaf.JSTableUI'].table.getCellEditor$();
 if (ce != null ) {
 ce.shouldSelectCell$java_util_EventObject(this.pressedEvent);
-}}}this.this$0.rebuildTable$.apply(this.this$0, []);
+}}}this.b$['swingjs.plaf.JSTableUI'].rebuildTable$.apply(this.b$['swingjs.plaf.JSTableUI'], []);
 }, p$3);
 
-Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent', function (e) {
+Clazz.newMeth(C$, 'mouseMoved$java_awt_event_MouseEvent',  function (e) {
 });
 
-Clazz.newMeth(C$, 'dragStarting$java_awt_event_MouseEvent', function (me) {
-this.dragStarted=true;
-if (me.isControlDown$() && this.this$0.isFileList ) {
-this.this$0.table.getSelectionModel$().addSelectionInterval$I$I(this.pressedRow, this.pressedRow);
-this.this$0.table.getColumnModel$().getSelectionModel$().addSelectionInterval$I$I(this.pressedCol, this.pressedCol);
-}this.pressedEvent=null;
-});
-
-Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent', function (e) {
-if ($I$(5).shouldIgnore$java_awt_event_MouseEvent$javax_swing_JComponent(e, this.this$0.table)) {
+Clazz.newMeth(C$, 'mouseDragged$java_awt_event_MouseEvent',  function (e) {
+if ($I$(4).shouldIgnore$java_awt_event_MouseEvent$javax_swing_JComponent(e, this.b$['swingjs.plaf.JSTableUI'].table)) {
 return;
-}this.this$0.dragging=true;
-if (this.this$0.table.getDragEnabled$()) {
+}this.b$['swingjs.plaf.JSTableUI'].dragging=true;
+if (this.b$['swingjs.plaf.JSTableUI'].table.getDragEnabled$()) {
 return;
 }p$3.repostEvent$java_awt_event_MouseEvent.apply(this, [e]);
-if (this.this$0.isFileList || this.this$0.table.isEditing$() ) {
+if (this.b$['swingjs.plaf.JSTableUI'].isFileList || this.b$['swingjs.plaf.JSTableUI'].table.isEditing$() ) {
 return;
 }var p=e.getPoint$();
-var row=this.this$0.table.rowAtPoint$java_awt_Point(p);
-var column=this.this$0.table.columnAtPoint$java_awt_Point(p);
+var row=this.b$['swingjs.plaf.JSTableUI'].table.rowAtPoint$java_awt_Point(p);
+var column=this.b$['swingjs.plaf.JSTableUI'].table.columnAtPoint$java_awt_Point(p);
 if ((column == -1) || (row == -1) ) {
 return;
-}this.this$0.table.changeSelection$I$I$Z$Z(row, column, e.isControlDown$(), true);
+}this.b$['swingjs.plaf.JSTableUI'].table.changeSelection$I$I$Z$Z(row, column, e.isControlDown$(), true);
 });
 
-Clazz.newMeth(C$, ['propertyChange$java_beans_PropertyChangeEvent','propertyChange$'], function (event) {
-var changeName=event.getPropertyName$();
-if ("tableCellEditor" == changeName) {
-this.this$0.prepareDOMEditor$Z$I$I.apply(this.this$0, [event.getNewValue$() != null , this.pressedRow, this.pressedCol]);
-} else if ("componentOrientation" == changeName) {
-var inputMap=this.this$0.getInputMap$I.apply(this.this$0, [1]);
-$I$(4).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.this$0.table, 1, inputMap);
-var header=this.this$0.table.getTableHeader$();
+Clazz.newMeth(C$, 'propertyChange$java_beans_PropertyChangeEvent',  function (event) {
+switch (event.getPropertyName$()) {
+case "tableCellEditor":
+this.b$['swingjs.plaf.JSTableUI'].prepareDOMEditor$Z$I$I.apply(this.b$['swingjs.plaf.JSTableUI'], [event.getNewValue$() != null , this.pressedRow, this.pressedCol]);
+break;
+case "componentOrientation":
+var inputMap=this.b$['swingjs.plaf.JSTableUI'].getInputMap$I.apply(this.b$['swingjs.plaf.JSTableUI'], [1]);
+$I$(3).replaceUIInputMap$javax_swing_JComponent$I$javax_swing_InputMap(this.b$['swingjs.plaf.JSTableUI'].table, 1, inputMap);
+var header=this.b$['swingjs.plaf.JSTableUI'].table.getTableHeader$();
 if (header != null ) {
 header.setComponentOrientation$java_awt_ComponentOrientation(event.getNewValue$());
-}} else if ("model" == changeName) {
-} else if ("dropLocation" == changeName) {
-this.this$0.rebuildTable$.apply(this.this$0, []);
-} else if ("Table.isFileList" == changeName) {
-this.this$0.isFileList=$I$(2).TRUE.equals$O(this.this$0.table.getClientProperty$O("Table.isFileList"));
-this.this$0.table.revalidate$();
-this.this$0.table.repaint$();
-if (this.this$0.isFileList) {
-this.this$0.table.getSelectionModel$().addListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.this$0, []));
+}break;
+case "model":
+this.b$['swingjs.plaf.JSTableUI'].newModel$.apply(this.b$['swingjs.plaf.JSTableUI'], []);
+break;
+case "dropLocation":
+this.b$['swingjs.plaf.JSTableUI'].rebuildTable$.apply(this.b$['swingjs.plaf.JSTableUI'], []);
+break;
+case "Table.isFileList":
+this.b$['swingjs.plaf.JSTableUI'].isFileList=Boolean.TRUE.equals$O(this.b$['swingjs.plaf.JSTableUI'].table.getClientProperty$O("Table.isFileList"));
+this.b$['swingjs.plaf.JSTableUI'].table.revalidate$();
+this.b$['swingjs.plaf.JSTableUI'].table.秘repaint$();
+if (this.b$['swingjs.plaf.JSTableUI'].isFileList) {
+this.b$['swingjs.plaf.JSTableUI'].table.getSelectionModel$().addListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []));
 } else {
-this.this$0.table.getSelectionModel$().removeListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.this$0, []));
+this.b$['swingjs.plaf.JSTableUI'].table.getSelectionModel$().removeListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []));
 this.timer=null;
-}} else if ("selectionModel" == changeName) {
-if (this.this$0.isFileList) {
+}break;
+case "selectionModel":
+if (this.b$['swingjs.plaf.JSTableUI'].isFileList) {
 var old=event.getOldValue$();
-old.removeListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.this$0, []));
-this.this$0.table.getSelectionModel$().addListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.this$0, []));
-}}});
+old.removeListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []));
+this.b$['swingjs.plaf.JSTableUI'].table.getSelectionModel$().addListSelectionListener$javax_swing_event_ListSelectionListener(p$2.getHandler.apply(this.b$['swingjs.plaf.JSTableUI'], []));
+}break;
+}
+});
+
+Clazz.newMeth(C$);
+})()
+;
+(function(){/*c*/var C$=Clazz.newClass(P$.JSTableUI, "TableTransferHandler", function(){
+Clazz.newInstance(this, arguments[0],false,C$);
+}, 'javax.swing.TransferHandler', 'javax.swing.plaf.UIResource');
+
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+Clazz.newMeth(C$, 'createTransferable$javax_swing_JComponent',  function (c) {
+if (Clazz.instanceOf(c, "javax.swing.JTable")) {
+var table=c;
+var rows;
+var cols;
+if (!table.getRowSelectionAllowed$() && !table.getColumnSelectionAllowed$() ) {
+return null;
+}if (!table.getRowSelectionAllowed$()) {
+var rowCount=table.getRowCount$();
+rows=Clazz.array(Integer.TYPE, [rowCount]);
+for (var counter=0; counter < rowCount; counter++) {
+rows[counter]=counter;
+}
+} else {
+rows=table.getSelectedRows$();
+}if (!table.getColumnSelectionAllowed$()) {
+var colCount=table.getColumnCount$();
+cols=Clazz.array(Integer.TYPE, [colCount]);
+for (var counter=0; counter < colCount; counter++) {
+cols[counter]=counter;
+}
+} else {
+cols=table.getSelectedColumns$();
+}if (rows == null  || cols == null   || rows.length == 0  || cols.length == 0 ) {
+return null;
+}var plainBuf=Clazz.new_($I$(5,1));
+var htmlBuf=Clazz.new_($I$(5,1));
+htmlBuf.append$S("<html>\n<body>\n<table>\n");
+for (var row=0; row < rows.length; row++) {
+htmlBuf.append$S("<tr>\n");
+for (var col=0; col < cols.length; col++) {
+var obj=table.getValueAt$I$I(rows[row], cols[col]);
+var val=((obj == null ) ? "" : obj.toString());
+plainBuf.append$S(val + "\t");
+htmlBuf.append$S("  <td>" + val + "</td>\n" );
+}
+plainBuf.deleteCharAt$I(plainBuf.length$() - 1).append$S("\n");
+htmlBuf.append$S("</tr>\n");
+}
+plainBuf.deleteCharAt$I(plainBuf.length$() - 1);
+htmlBuf.append$S("</table>\n</body>\n</html>");
+return Clazz.new_([plainBuf.toString(), htmlBuf.toString()],$I$(6,1).c$$S$S);
+}return null;
+});
+
+Clazz.newMeth(C$, 'getSourceActions$javax_swing_JComponent',  function (c) {
+return 1;
+});
 
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:27 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,24 +1,20 @@
-(function(){var P$=Clazz.newPackage("sun.misc"),p$1={},I$=[[0,'Thread','java.util.Arrays']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Resource");
+(function(){var P$=Clazz.newPackage("sun.misc"),p$1={},I$=[[0,'Thread','java.util.Arrays','java.nio.ByteBuffer']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Resource");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.cis=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'cachedInputStream', function () {
+C$.$fields$=[['O',['cis','java.io.InputStream']]]
+
+Clazz.newMeth(C$, 'cachedInputStream',  function () {
 if (this.cis == null ) {
 this.cis=this.getInputStream$();
 }return this.cis;
 }, p$1);
 
-Clazz.newMeth(C$, 'getBytes$', function () {
+Clazz.newMeth(C$, 'getBytes$',  function () {
 var b;
 var $in=p$1.cachedInputStream.apply(this, []);
 var isInterrupted=$I$(1).interrupted$();
@@ -91,6 +87,23 @@ $I$(1).currentThread$().interrupt$();
 return b;
 });
 
+Clazz.newMeth(C$, 'getByteBuffer$',  function () {
+var bytes;
+try {
+bytes=this.getBytes$();
+var bb=$I$(3).allocate$I(bytes.length);
+bb.put$BA(bytes);
+bb.reset$();
+return bb;
+} catch (e) {
+if (Clazz.exceptionOf(e,"java.io.IOException")){
+return null;
+} else {
+throw e;
+}
+}
+});
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:10:06 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

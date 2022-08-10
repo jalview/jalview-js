@@ -1,47 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.A4','javajs.util.P3','javajs.util.M3','javajs.util.BS','org.jmol.util.Logger','org.jmol.shape.Mesh','org.jmol.util.GData','org.jmol.util.Normix']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BioMeshRenderer", null, 'org.jmol.render.MeshRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderbio"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.A4','javajs.util.P3','javajs.util.M3','javajs.util.BS','org.jmol.util.Logger','org.jmol.shape.Mesh','org.jmol.util.GData','org.jmol.util.Normix']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BioMeshRenderer", null, 'org.jmol.render.MeshRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.meshes=null;
-this.meshReady=null;
-this.bsRenderMesh=null;
-this.bsr=null;
-this.doCap0=false;
-this.doCap1=false;
-this.controlHermites=null;
-this.wingHermites=null;
-this.radiusHermites=null;
-this.norm=null;
-this.wing=null;
-this.wing1=null;
-this.wingT=null;
-this.aa=null;
-this.pt=null;
-this.pt1=null;
-this.ptPrev=null;
-this.ptNext=null;
-this.mat=null;
-this.bsTemp=null;
-this.norml=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.norm=Clazz.new_($I$(1));
-this.wing=Clazz.new_($I$(1));
-this.wing1=Clazz.new_($I$(1));
-this.wingT=Clazz.new_($I$(1));
-this.aa=Clazz.new_($I$(2));
-this.pt=Clazz.new_($I$(3));
-this.pt1=Clazz.new_($I$(3));
-this.ptPrev=Clazz.new_($I$(3));
-this.ptNext=Clazz.new_($I$(3));
-this.mat=Clazz.new_($I$(4));
-this.norml=Clazz.new_($I$(1));
-}, 1);
+this.norm=Clazz.new_($I$(1,1));
+this.wing=Clazz.new_($I$(1,1));
+this.wing1=Clazz.new_($I$(1,1));
+this.wingT=Clazz.new_($I$(1,1));
+this.aa=Clazz.new_($I$(2,1));
+this.pt=Clazz.new_($I$(3,1));
+this.pt1=Clazz.new_($I$(3,1));
+this.ptPrev=Clazz.new_($I$(3,1));
+this.ptNext=Clazz.new_($I$(3,1));
+this.mat=Clazz.new_($I$(4,1));
+this.norml=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['Z',['doCap0','doCap1'],'O',['meshes','org.jmol.shape.Mesh[]','meshReady','boolean[]','bsRenderMesh','javajs.util.BS','bsr','org.jmol.renderbio.BioShapeRenderer','controlHermites','javajs.util.P3[]','wingHermites','javajs.util.V3[]','radiusHermites','javajs.util.P3[]','norm','javajs.util.V3','+wing','+wing1','+wingT','aa','javajs.util.A4','pt','javajs.util.P3','+pt1','+ptPrev','+ptNext','mat','javajs.util.M3','bsTemp','javajs.util.BS','norml','javajs.util.V3']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 return false;
@@ -73,7 +49,7 @@ this.bsRenderMesh.set$I(i);
 if (Clazz.exceptionOf(e,"Exception")){
 this.bsRenderMesh.clear$I(i);
 this.meshes[i]=null;
-$I$(6).error$S("render mesh error hermiteRibbon: " + e.toString());
+$I$(6,"error$S",["render mesh error hermiteRibbon: " + e.toString()]);
 } else {
 throw e;
 }
@@ -90,7 +66,7 @@ return;
 if (Clazz.exceptionOf(e,"Exception")){
 this.bsRenderMesh.clear$I(i);
 this.meshes[i]=null;
-$I$(6).error$S("render mesh error hermiteConic: " + e.toString());
+$I$(6,"error$S",["render mesh error hermiteConic: " + e.toString()]);
 } else {
 throw e;
 }
@@ -109,7 +85,7 @@ return;
 if (Clazz.exceptionOf(e,"Exception")){
 this.bsRenderMesh.clear$I(i);
 this.meshes[i]=null;
-$I$(6).error$S("render mesh error hermiteArrowHead: " + e.toString());
+$I$(6,"error$S",["render mesh error hermiteArrowHead: " + e.toString()]);
 } else {
 throw e;
 }
@@ -126,7 +102,7 @@ var isElliptical=(this.bsr.cartoonsFancy || this.bsr.hermiteLevel >= 6 );
 var nHermites=(this.bsr.hermiteLevel + 1) * 2 + 1;
 var nPer=(isFlatMesh ? 4 : (this.bsr.hermiteLevel + 1) * 4 - 2);
 var angle=((isFlatMesh ? 3.141592653589793 / (nPer - 1) : 6.283185307179586 / nPer));
-var mesh=this.meshes[i]=Clazz.new_($I$(7)).mesh1$org_jmol_viewer_Viewer$S$H$I(this.vwr, "mesh_" + this.shapeID + "_" + i , 0, i);
+var mesh=this.meshes[i]=Clazz.new_($I$(7,1)).mesh1$org_jmol_viewer_Viewer$S$H$I(this.vwr, "mesh_" + this.shapeID + "_" + i , 0, i);
 var variableRadius=(madBeg != madMid || madMid != madEnd );
 if (this.controlHermites == null  || this.controlHermites.length < nHermites + 1 ) {
 this.controlHermites=Clazz.array($I$(3), [nHermites + 1]);
@@ -146,7 +122,7 @@ this.radiusHermites=Clazz.array($I$(3), [((nHermites + 1) >> 1) + 1]);
 this.pt.set$F$F$F(radius1, radius2, 0);
 this.pt1.set$F$F$F(radius2, radius3, 0);
 this.ptNext.set$F$F$F(radius3, radius3, 0);
-$I$(8).getHermiteList$I$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3A$I$I$Z(4, this.ptPrev, this.pt, this.pt1, this.ptNext, this.ptNext, this.radiusHermites, 0, (nHermites + 1) >> 1, true);
+$I$(8,"getHermiteList$I$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3$javajs_util_T3A$I$I$Z",[4, this.ptPrev, this.pt, this.pt1, this.ptNext, this.ptNext, this.radiusHermites, 0, (nHermites + 1) >> 1, true]);
 }var nPoints=0;
 var iMid=nHermites >> 1;
 var kpt1=((nPer + 2)/4|0);
@@ -285,4 +261,4 @@ return (this.bsr.isHighRes && d > 3  || d >= 8 );
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:41 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

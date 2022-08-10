@@ -1,26 +1,16 @@
 (function(){var P$=Clazz.newPackage("java.awt.geom"),I$=[];
-var C$=Clazz.newClass(P$, "EllipseIterator", null, null, 'java.awt.geom.PathIterator');
-C$.ctrlpts=null;
+/*c*/var C$=Clazz.newClass(P$, "EllipseIterator", null, null, 'java.awt.geom.PathIterator');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.ctrlpts=Clazz.array(Double.TYPE, -2, [Clazz.array(Double.TYPE, -1, [1.0, 0.7761423749153966, 0.7761423749153966, 1.0, 0.5, 1.0]), Clazz.array(Double.TYPE, -1, [0.22385762508460333, 1.0, 0.0, 0.7761423749153966, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [0.0, 0.22385762508460333, 0.22385762508460333, 0.0, 0.5, 0.0]), Clazz.array(Double.TYPE, -1, [0.7761423749153966, 0.0, 1.0, 0.22385762508460333, 1.0, 0.5])]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.w=0;
-this.h=0;
-this.affine=null;
-this.index=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_geom_Ellipse2D$java_awt_geom_AffineTransform', function (e, at) {
-C$.$init$.apply(this);
+C$.$fields$=[['D',['x','y','w','h'],'I',['index'],'O',['affine','java.awt.geom.AffineTransform']]
+,['O',['ctrlpts','double[][]']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_geom_Ellipse2D$java_awt_geom_AffineTransform',  function (e, at) {
+;C$.$init$.apply(this);
 this.x=e.getX$();
 this.y=e.getY$();
 this.w=e.getWidth$();
@@ -30,19 +20,19 @@ if (this.w < 0  || this.h < 0  ) {
 this.index=6;
 }}, 1);
 
-Clazz.newMeth(C$, 'getWindingRule$', function () {
+Clazz.newMeth(C$, 'getWindingRule$',  function () {
 return 1;
 });
 
-Clazz.newMeth(C$, 'isDone$', function () {
+Clazz.newMeth(C$, 'isDone$',  function () {
 return this.index > 5;
 });
 
-Clazz.newMeth(C$, 'next$', function () {
-this.index++;
+Clazz.newMeth(C$, 'next$',  function () {
+++this.index;
 });
 
-Clazz.newMeth(C$, 'currentSegment$FA', function (coords) {
+Clazz.newMeth(C$, 'currentSegment$FA',  function (coords) {
 if (this.isDone$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["ellipse iterator out of bounds"]);
 }if (this.index == 5) {
@@ -66,7 +56,7 @@ this.affine.transform$FA$I$FA$I$I(coords, 0, coords, 0, 3);
 }return 3;
 });
 
-Clazz.newMeth(C$, 'currentSegment$DA', function (coords) {
+Clazz.newMeth(C$, 'currentSegment$DA',  function (coords) {
 if (this.isDone$()) {
 throw Clazz.new_(Clazz.load('java.util.NoSuchElementException').c$$S,["ellipse iterator out of bounds"]);
 }if (this.index == 5) {
@@ -90,6 +80,10 @@ this.affine.transform$DA$I$DA$I$I(coords, 0, coords, 0, 3);
 }return 3;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.ctrlpts=Clazz.array(Double.TYPE, -2, [Clazz.array(Double.TYPE, -1, [1.0, 0.7761423749153966, 0.7761423749153966, 1.0, 0.5, 1.0]), Clazz.array(Double.TYPE, -1, [0.22385762508460333, 1.0, 0.0, 0.7761423749153966, 0.0, 0.5]), Clazz.array(Double.TYPE, -1, [0.0, 0.22385762508460333, 0.22385762508460333, 0.0, 0.5, 0.0]), Clazz.array(Double.TYPE, -1, [0.7761423749153966, 0.0, 1.0, 0.22385762508460333, 1.0, 0.5])]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:53 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

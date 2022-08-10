@@ -1,40 +1,19 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.annotations"),p$1={},I$=[[0,'java.awt.Color','java.awt.Font','org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.utils.XMLUtils',['fr.orsay.lri.varna.models.annotations.TextAnnotation','.AnchorType'],'fr.orsay.lri.varna.models.rna.VARNAPoint','java.text.DecimalFormat',['java.awt.geom.Point2D','.Double'],'java.util.Collections','fr.orsay.lri.varna.models.VARNAConfigLoader','java.util.ArrayList']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "TextAnnotation", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.annotations"),p$1={},I$=[[0,'java.awt.Color','java.awt.Font','org.xml.sax.helpers.AttributesImpl','fr.orsay.lri.varna.utils.XMLUtils',['fr.orsay.lri.varna.models.annotations.TextAnnotation','.AnchorType'],'fr.orsay.lri.varna.models.rna.VARNAPoint','java.text.DecimalFormat',['java.awt.geom.Point2D','.Double'],'java.util.Collections','fr.orsay.lri.varna.models.VARNAConfigLoader','java.util.ArrayList']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "TextAnnotation", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, null, 'java.io.Serializable');
-C$.DEFAULTCOLOR=null;
-C$.DEFAULTFONT=null;
-C$.XML_ELEMENT_NAME=null;
-C$.XML_VAR_TYPE_NAME=null;
-C$.XML_VAR_COLOR_NAME=null;
-C$.XML_VAR_ANGLE_NAME=null;
-C$.XML_VAR_TEXT_NAME=null;
+C$.$classes$=[['AnchorType',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.DEFAULTCOLOR=$I$(1).black;
-C$.DEFAULTFONT=Clazz.new_($I$(2).c$$S$I$I,["Arial", 0, 12]);
-C$.XML_ELEMENT_NAME="textAnnotation";
-C$.XML_VAR_TYPE_NAME="type";
-C$.XML_VAR_COLOR_NAME="color";
-C$.XML_VAR_ANGLE_NAME="angle";
-C$.XML_VAR_TEXT_NAME="text";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._text=null;
-this._typeAnchor=null;
-this._color=null;
-this._angle=0;
-this._anchor=null;
-this._font=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_angle'],'S',['_text'],'O',['_typeAnchor','fr.orsay.lri.varna.models.annotations.TextAnnotation.AnchorType','_color','java.awt.Color','_anchor','java.lang.Object','_font','java.awt.Font']]
+,['S',['XML_ELEMENT_NAME','XML_VAR_TYPE_NAME','XML_VAR_COLOR_NAME','XML_VAR_ANGLE_NAME','XML_VAR_TEXT_NAME'],'O',['DEFAULTCOLOR','java.awt.Color','DEFAULTFONT','java.awt.Font']]]
 
 Clazz.newMeth(C$, 'toXML$javax_xml_transform_sax_TransformerHandler', function (hd) {
-var atts=Clazz.new_($I$(3));
+var atts=Clazz.new_($I$(3,1));
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_TYPE_NAME, "CDATA", "" + this._typeAnchor);
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_COLOR_NAME, "CDATA", "" + $I$(4).toHTMLNotation$java_awt_Color(this._color));
 atts.addAttribute$S$S$S$S$S("", "", C$.XML_VAR_ANGLE_NAME, "CDATA", "" + new Double(this._angle).toString());
@@ -62,7 +41,7 @@ hd.endElement$S$S$S("", "", C$.XML_ELEMENT_NAME);
 });
 
 Clazz.newMeth(C$, 'c$$S', function (texte) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._text=texte;
 this._color=C$.DEFAULTCOLOR;
 this._font=C$.DEFAULTFONT;
@@ -71,7 +50,7 @@ this._angle=0;
 
 Clazz.newMeth(C$, 'c$$S$D$D', function (texte, x, y) {
 C$.c$$S.apply(this, [texte]);
-this._anchor=Clazz.new_($I$(6).c$$D$D,[x, y]);
+this._anchor=Clazz.new_($I$(6,1).c$$D$D,[x, y]);
 this._typeAnchor=$I$(5).POSITION;
 }, 1);
 
@@ -90,7 +69,7 @@ if (type === $I$(5).HELIX ) this._typeAnchor=$I$(5).HELIX;
 }, 1);
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_annotations_TextAnnotation', function (textAnnotation) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._anchor=textAnnotation.getAncrage$();
 this._font=textAnnotation.getFont$();
 this._text=textAnnotation.getTexte$();
@@ -123,7 +102,7 @@ this._typeAnchor=$I$(5).BASE;
 });
 
 Clazz.newMeth(C$, 'setAncrage$D$D', function (x, y) {
-this._anchor=Clazz.new_($I$(6).c$$D$D,[x, y]);
+this._anchor=Clazz.new_($I$(6,1).c$$D$D,[x, y]);
 this._typeAnchor=$I$(5).POSITION;
 });
 
@@ -184,7 +163,7 @@ Clazz.newMeth(C$, 'toString', function () {
 var tmp="[" + this._text + "] " ;
 switch (this._typeAnchor) {
 case $I$(5).POSITION:
-var formatter=Clazz.new_($I$(7).c$$S,[".00"]);
+var formatter=Clazz.new_($I$(7,1).c$$S,[".00"]);
 return tmp + " at (" + formatter.format$D(this.getCenterPosition$().x) + "," + formatter.format$D(this.getCenterPosition$().y) + ")" ;
 case $I$(5).BASE:
 return tmp + " on base " + (this._anchor).getBaseNumber$() ;
@@ -208,7 +187,7 @@ return p$1.calculLoopHelix.apply(this, []);
 case $I$(5).LOOP:
 return p$1.calculLoop.apply(this, []);
 default:
-return Clazz.new_($I$(8).c$$D$D,[0.0, 0.0]);
+return Clazz.new_($I$(8,1).c$$D$D,[0.0, 0.0]);
 }
 });
 
@@ -220,7 +199,7 @@ for (var base, $base = liste.iterator$(); $base.hasNext$()&&((base=($base.next$(
 totalX += base.getCoords$().x;
 totalY += base.getCoords$().y;
 }
-return Clazz.new_($I$(8).c$$D$D,[totalX / liste.size$(), totalY / liste.size$()]);
+return Clazz.new_([totalX / liste.size$(), totalY / liste.size$()],$I$(8,1).c$$D$D);
 }, p$1);
 
 Clazz.newMeth(C$, 'calculLoopHelix', function () {
@@ -236,7 +215,7 @@ totalX += base.getCoords$().x;
 totalY += base.getCoords$().y;
 num += 1;
 }}
-return Clazz.new_($I$(8).c$$D$D,[totalX / num, totalY / num]);
+return Clazz.new_($I$(8,1).c$$D$D,[totalX / num, totalY / num]);
 }, p$1);
 
 Clazz.newMeth(C$, 'extractedArrayListModeleBaseFromAncrage', function () {
@@ -342,7 +321,7 @@ color=$I$(10).getSafeColor$S$java_awt_Color(value, color);
 switch (type) {
 case $I$(5).POSITION:
 if ((x != -1) && (y != -1) ) {
-var p=vp.panelToLogicPoint$java_awt_geom_Point2D_Double(Clazz.new_($I$(8).c$$D$D,[x, y]));
+var p=vp.panelToLogicPoint$java_awt_geom_Point2D_Double(Clazz.new_($I$(8,1).c$$D$D,[x, y]));
 ann=Clazz.new_(C$.c$$S$D$D,[text, p.x, p.y]);
 }break;
 case $I$(5).BASE:
@@ -353,21 +332,21 @@ ann=Clazz.new_(C$.c$$S$fr_orsay_lri_varna_models_rna_ModeleBase,[text, mb]);
 }break;
 case $I$(5).HELIX:
 if (anchor != -1) {
-var mbl=Clazz.new_($I$(11));
+var mbl=Clazz.new_($I$(11,1));
 var index=vp.getRNA$().getIndexFromBaseNumber$I(anchor);
 var il=vp.getRNA$().findHelix$I(index);
 for (var k, $k = il.iterator$(); $k.hasNext$()&&((k=($k.next$()).intValue$()),1);) {
-mbl.add$TE(vp.getRNA$().get_listeBases$().get$I(k));
+mbl.add$O(vp.getRNA$().get_listeBases$().get$I(k));
 }
 ann=Clazz.new_(C$.c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType,[text, mbl, type]);
 }break;
 case $I$(5).LOOP:
 if (anchor != -1) {
-var mbl=Clazz.new_($I$(11));
+var mbl=Clazz.new_($I$(11,1));
 var index=vp.getRNA$().getIndexFromBaseNumber$I(anchor);
 var il=vp.getRNA$().findLoop$I(index);
 for (var k, $k = il.iterator$(); $k.hasNext$()&&((k=($k.next$()).intValue$()),1);) {
-mbl.add$TE(vp.getRNA$().get_listeBases$().get$I(k));
+mbl.add$O(vp.getRNA$().get_listeBases$().get$I(k));
 }
 ann=Clazz.new_(C$.c$$S$java_util_ArrayList$fr_orsay_lri_varna_models_annotations_TextAnnotation_AnchorType,[text, mbl, type]);
 }break;
@@ -384,21 +363,33 @@ throw e;
 }
 return ann;
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.DEFAULTCOLOR=$I$(1).black;
+C$.DEFAULTFONT=Clazz.new_($I$(2,1).c$$S$I$I,["Arial", 0, 12]);
+C$.XML_ELEMENT_NAME="textAnnotation";
+C$.XML_VAR_TYPE_NAME="type";
+C$.XML_VAR_COLOR_NAME="color";
+C$.XML_VAR_ANGLE_NAME="angle";
+C$.XML_VAR_TEXT_NAME="text";
+};
 ;
-(function(){var C$=Clazz.newClass(P$.TextAnnotation, "AnchorType", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.TextAnnotation, "AnchorType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "POSITION", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "BASE", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "HELIX", 2, []);
 Clazz.newEnumConst($vals, C$.c$, "LOOP", 3, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -408,4 +399,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:30:02 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

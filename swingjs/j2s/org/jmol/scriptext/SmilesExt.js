@@ -1,20 +1,15 @@
-(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),I$=[[0,'javajs.util.Lst','javajs.util.M4','javajs.util.P3','org.jmol.util.Logger','org.jmol.api.Interface','javajs.util.Measure','javajs.util.BS','javajs.util.AU']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SmilesExt");
+(function(){var P$=Clazz.newPackage("org.jmol.scriptext"),I$=[[0,'javajs.util.Lst','javajs.util.M4','javajs.util.P3','org.jmol.util.Logger','org.jmol.api.Interface','javajs.util.Measure','javajs.util.BS','javajs.util.AU']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SmilesExt");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.e=null;
-this.sm=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['e','org.jmol.script.ScriptEval','sm','org.jmol.api.SmilesMatcherInterface']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'init$O', function (se) {
@@ -27,17 +22,17 @@ Clazz.newMeth(C$, 'getSmilesCorrelation$javajs_util_BS$javajs_util_BS$S$javajs_u
 var tolerance=(mapSet == null  ? 0.1 : 3.4028235E38);
 try {
 if (ptsA == null ) {
-ptsA=Clazz.new_($I$(1));
-ptsB=Clazz.new_($I$(1));
-}var m=Clazz.new_($I$(2));
-var c=Clazz.new_($I$(3));
+ptsA=Clazz.new_($I$(1,1));
+ptsB=Clazz.new_($I$(1,1));
+}var m=Clazz.new_($I$(2,1));
+var c=Clazz.new_($I$(3,1));
 var atoms=this.e.vwr.ms.at;
 var ac=this.e.vwr.ms.ac;
 var maps=this.sm.getCorrelationMaps$S$org_jmol_util_NodeA$I$javajs_util_BS$I(smiles, atoms, ac, bsA, flags | 8);
 if (maps == null ) this.e.evalError$S$S(this.sm.getLastException$(), null);
 if (maps.length == 0) return NaN;
 var mapFirst=maps[0];
-for (var i=0; i < mapFirst.length; i++) ptsA.addLast$TV(atoms[mapFirst[i]]);
+for (var i=0; i < mapFirst.length; i++) ptsA.addLast$O(atoms[mapFirst[i]]);
 
 maps=this.sm.getCorrelationMaps$S$org_jmol_util_NodeA$I$javajs_util_BS$I(smiles, atoms, ac, bsB, flags);
 if (maps == null ) this.e.evalError$S$S(this.sm.getLastException$(), null);
@@ -48,17 +43,17 @@ var lowestStdDev=3.4028235E38;
 var mapBest=null;
 for (var i=0; i < maps.length; i++) {
 ptsB.clear$();
-for (var j=0; j < maps[i].length; j++) ptsB.addLast$TV(atoms[maps[i][j]]);
+for (var j=0; j < maps[i].length; j++) ptsB.addLast$O(atoms[maps[i][j]]);
 
 $I$(5).getInterface$S$org_jmol_viewer_Viewer$S("javajs.util.Eigen", this.e.vwr, "script");
 var stddev=(ptsB.size$() == 1 ? 0 : $I$(6).getTransformMatrix4$javajs_util_Lst$javajs_util_Lst$javajs_util_M4$javajs_util_P3(ptsA, ptsB, m, null));
-$I$(4).info$S("getSmilesCorrelation stddev=" + new Float(stddev).toString());
+$I$(4,"info$S",["getSmilesCorrelation stddev=" + new Float(stddev).toString()]);
 if (vReturn != null ) {
 if (stddev < tolerance ) {
-var bs=Clazz.new_($I$(7));
+var bs=Clazz.new_($I$(7,1));
 for (var j=0; j < maps[i].length; j++) bs.set$I(maps[i][j]);
 
-vReturn.addLast$TV(bs);
+vReturn.addLast$O(bs);
 }}if (stddev < lowestStdDev ) {
 mapBest=maps[i];
 if (m4 != null ) m4.setM4$javajs_util_M4(m);
@@ -69,10 +64,10 @@ if (mapSet != null ) {
 mapSet[0]=mapFirst;
 mapSet[1]=mapBest;
 }ptsB.clear$();
-for (var i=0; i < mapBest.length; i++) ptsB.addLast$TV(atoms[mapBest[i]]);
+for (var i=0; i < mapBest.length; i++) ptsB.addLast$O(atoms[mapBest[i]]);
 
 return lowestStdDev;
-}for (var i=0; i < maps.length; i++) for (var j=0; j < maps[i].length; j++) ptsB.addLast$TV(atoms[maps[i][j]]);
+}for (var i=0; i < maps.length; i++) for (var j=0; j < maps[i].length; j++) ptsB.addLast$O(atoms[maps[i][j]]);
 
 
 } catch (ex) {
@@ -108,7 +103,7 @@ return this.e.vwr.calculateChiralityForSmiles$S(smiles);
 } else {
 var map=this.sm.find$S$S$I(pattern, smiles, (isSmarts ? 2 : 1) | (firstMatchOnly ? 8 : 0));
 if (!asOneBitset) return (!firstMatchOnly ? map : map.length == 0 ? Clazz.array(Integer.TYPE, [0]) : map[0]);
-var bs=Clazz.new_($I$(7));
+var bs=Clazz.new_($I$(7,1));
 for (var j=0; j < map.length; j++) {
 var a=map[j];
 for (var k=a.length; --k >= 0; ) if (a[k] >= 0) bs.set$I(a[k]);
@@ -129,18 +124,18 @@ throw ex;
 }
 }
 } else {
-var vReturn=Clazz.new_($I$(1));
+var vReturn=Clazz.new_($I$(1,1));
 var stddev=this.getSmilesCorrelation$javajs_util_BS$javajs_util_BS$S$javajs_util_Lst$javajs_util_Lst$javajs_util_M4$javajs_util_Lst$Z$IAA$javajs_util_P3$Z$I(bsMatch3D, bsSelected, pattern, null, null, null, vReturn, false, null, null, false, flags);
-if (Float.isNaN$F(stddev)) return (asOneBitset ? Clazz.new_($I$(7)) : Clazz.array(String, -1, []));
+if (Float.isNaN$F(stddev)) return (asOneBitset ? Clazz.new_($I$(7,1)) : Clazz.array(String, -1, []));
 this.e.showString$S("RMSD " + new Float(stddev).toString() + " Angstroms" );
-b=vReturn.toArray$TTA(Clazz.array($I$(7), [vReturn.size$()]));
+b=vReturn.toArray$OA(Clazz.array($I$(7), [vReturn.size$()]));
 }if (asOneBitset) {
-var bs=Clazz.new_($I$(7));
+var bs=Clazz.new_($I$(7,1));
 for (var j=0; j < b.length; j++) bs.or$javajs_util_BS(b[j]);
 
 return bs;
-}var list=Clazz.new_($I$(1));
-for (var j=0; j < b.length; j++) list.addLast$TV(b[j]);
+}var list=Clazz.new_($I$(1,1));
+for (var j=0; j < b.length; j++) list.addLast$O(b[j]);
 
 return list;
 });
@@ -180,4 +175,4 @@ if (v - diff[i][0] > 180 ) v -= 360;
 }
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-16 07:18:03 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:47 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

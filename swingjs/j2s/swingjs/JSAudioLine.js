@@ -1,41 +1,27 @@
-(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,['javax.sound.sampled.AudioFormat','.Encoding'],'swingjs.JSUtil']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSAudioLine", null, null, 'javax.sound.sampled.SourceDataLine');
+(function(){var P$=Clazz.newPackage("swingjs"),p$1={},I$=[[0,['javax.sound.sampled.AudioFormat','.Encoding'],'swingjs.JSUtil']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSAudioLine", null, null, 'javax.sound.sampled.SourceDataLine');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.info=null;
-this.bOpen=false;
-this.auctx=null;
-this.audioBuffer=null;
-this.nChannels=0;
-this.sampleRate=0;
-this.sampleSizeInBytes=0;
-this.isBigEndian=false;
-this.isUnsignedPCM=false;
-this.startTime=0;
-this.bStopped=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$javax_sound_sampled_Line_Info', function (info) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['bOpen','isBigEndian','isUnsignedPCM','bStopped'],'I',['nChannels','sampleRate','sampleSizeInBytes','startTime'],'O',['info','javax.sound.sampled.DataLine.Info','auctx','swingjs.api.js.HTML5AudioContext','audioBuffer','java.lang.Object']]]
+
+Clazz.newMeth(C$, 'c$$javax_sound_sampled_Line_Info',  function (info) {
+;C$.$init$.apply(this);
 this.info=info;
 }, 1);
 
-Clazz.newMeth(C$, 'open$', function () {
+Clazz.newMeth(C$, 'open$',  function () {
 this.open$javax_sound_sampled_AudioFormat$I(null, -1);
 });
 
-Clazz.newMeth(C$, 'open$javax_sound_sampled_AudioFormat', function (format) {
+Clazz.newMeth(C$, 'open$javax_sound_sampled_AudioFormat',  function (format) {
 this.open$javax_sound_sampled_AudioFormat$I(format, -1);
 });
 
-Clazz.newMeth(C$, 'open$javax_sound_sampled_AudioFormat$I', function (format, bufferSizeBytes) {
+Clazz.newMeth(C$, 'open$javax_sound_sampled_AudioFormat$I',  function (format, bufferSizeBytes) {
 {
 window.AudioContext = window.AudioContext || window.webkitAudioContext; this.auctx = new AudioContext();
 }
@@ -52,104 +38,104 @@ this.bOpen=true;
 this.bStopped=false;
 });
 
-Clazz.newMeth(C$, 'getLineInfo$', function () {
+Clazz.newMeth(C$, 'getLineInfo$',  function () {
 return this.info;
 });
 
-Clazz.newMeth(C$, 'isOpen$', function () {
+Clazz.newMeth(C$, 'isOpen$',  function () {
 return this.bOpen;
 });
 
-Clazz.newMeth(C$, 'close$', function () {
+Clazz.newMeth(C$, 'close$',  function () {
 if (this.auctx != null ) this.auctx.close();
 this.auctx=null;
 this.bOpen=false;
 });
 
-Clazz.newMeth(C$, 'start$', function () {
+Clazz.newMeth(C$, 'start$',  function () {
 this.auctx.resume();
 this.bStopped=false;
 });
 
-Clazz.newMeth(C$, 'stop$', function () {
+Clazz.newMeth(C$, 'stop$',  function () {
 this.bStopped=true;
 this.auctx.suspend();
 });
 
-Clazz.newMeth(C$, 'drain$', function () {
+Clazz.newMeth(C$, 'drain$',  function () {
 this.flush$();
 });
 
-Clazz.newMeth(C$, 'flush$', function () {
+Clazz.newMeth(C$, 'flush$',  function () {
 this.startTime=0;
 this.close$();
 });
 
-Clazz.newMeth(C$, 'isRunning$', function () {
+Clazz.newMeth(C$, 'isRunning$',  function () {
 return !this.bStopped;
 });
 
-Clazz.newMeth(C$, 'isActive$', function () {
+Clazz.newMeth(C$, 'isActive$',  function () {
 return !this.bStopped;
 });
 
-Clazz.newMeth(C$, 'getFormat$', function () {
+Clazz.newMeth(C$, 'getFormat$',  function () {
 return this.info.getFormats$()[0];
 });
 
-Clazz.newMeth(C$, 'getBufferSize$', function () {
+Clazz.newMeth(C$, 'getBufferSize$',  function () {
 return 2147483647;
 });
 
-Clazz.newMeth(C$, 'available$', function () {
+Clazz.newMeth(C$, 'available$',  function () {
 return 2147483647;
 });
 
-Clazz.newMeth(C$, 'getFramePosition$', function () {
+Clazz.newMeth(C$, 'getFramePosition$',  function () {
 $I$(2).notImplemented$S(null);
 return 0;
 });
 
-Clazz.newMeth(C$, 'getLongFramePosition$', function () {
+Clazz.newMeth(C$, 'getLongFramePosition$',  function () {
 $I$(2).notImplemented$S(null);
 return 0;
 });
 
-Clazz.newMeth(C$, 'getMicrosecondPosition$', function () {
+Clazz.newMeth(C$, 'getMicrosecondPosition$',  function () {
 {
 return this.auctx.currentTime * 1000000;
 }
 return 0;
 });
 
-Clazz.newMeth(C$, 'getLevel$', function () {
+Clazz.newMeth(C$, 'getLevel$',  function () {
 $I$(2).notImplemented$S(null);
 return 0;
 });
 
-Clazz.newMeth(C$, 'getControls$', function () {
+Clazz.newMeth(C$, 'getControls$',  function () {
 $I$(2).notImplemented$S(null);
 return null;
 });
 
-Clazz.newMeth(C$, 'isControlSupported$javax_sound_sampled_Control_Type', function (control) {
+Clazz.newMeth(C$, 'isControlSupported$javax_sound_sampled_Control_Type',  function (control) {
 $I$(2).notImplemented$S(null);
 return false;
 });
 
-Clazz.newMeth(C$, 'getControl$javax_sound_sampled_Control_Type', function (control) {
+Clazz.newMeth(C$, 'getControl$javax_sound_sampled_Control_Type',  function (control) {
 $I$(2).notImplemented$S(null);
 return null;
 });
 
-Clazz.newMeth(C$, 'addLineListener$javax_sound_sampled_LineListener', function (listener) {
+Clazz.newMeth(C$, 'addLineListener$javax_sound_sampled_LineListener',  function (listener) {
 $I$(2).notImplemented$S(null);
 });
 
-Clazz.newMeth(C$, 'removeLineListener$javax_sound_sampled_LineListener', function (listener) {
+Clazz.newMeth(C$, 'removeLineListener$javax_sound_sampled_LineListener',  function (listener) {
 });
 
-Clazz.newMeth(C$, 'write$BA$I$I', function (b, off, len) {
+Clazz.newMeth(C$, 'write$BA$I$I',  function (b, off, len) {
 if (!this.bOpen) try {
 this.open$javax_sound_sampled_AudioFormat(this.getFormat$());
 } catch (e) {
@@ -171,7 +157,7 @@ this.startTime += this.audioBuffer.duration;
 return len;
 });
 
-Clazz.newMeth(C$, 'setChannelData$I$BA$I$I', function (ich, b, offset, len) {
+Clazz.newMeth(C$, 'setChannelData$I$BA$I$I',  function (ich, b, offset, len) {
 var data=null;
 var ab=this.audioBuffer;
 var abLen=0;
@@ -205,4 +191,4 @@ data[pt++]=(unsigned ? f - 1 : f);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:41 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 17:14:00 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,17 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.net"),I$=[];
-var C$=Clazz.newClass(P$, "URLStreamHandler");
+(function(){var P$=Clazz.newPackage("java.net"),I$=[[0,'javajs.util.SB']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "URLStreamHandler");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'openConnection$java_net_URL$java_net_Proxy', function (u, p) {
+Clazz.newMeth(C$, 'openConnection$java_net_URL$java_net_Proxy',  function (u, p) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["Method not implemented."]);
 });
 
-Clazz.newMeth(C$, 'parseURL$java_net_URL$S$I$I', function (u, spec, start, limit) {
+Clazz.newMeth(C$, 'parseURL$java_net_URL$S$I$I',  function (u, spec, start, limit) {
 var protocol=u.getProtocol$();
 var authority=u.getAuthority$();
 var userInfo=u.getUserInfo$();
@@ -101,17 +100,17 @@ if (path.endsWith$S("/.")) path=path.substring$I$I(0, path.length$() - 1);
 }this.setURL$java_net_URL$S$S$I$S$S$S$S$S(u, protocol, host, port, authority, userInfo, path, query, ref);
 });
 
-Clazz.newMeth(C$, 'getDefaultPort$', function () {
+Clazz.newMeth(C$, 'getDefaultPort$',  function () {
 return -1;
 });
 
-Clazz.newMeth(C$, 'equals2$java_net_URL$java_net_URL', function (u1, u2) {
+Clazz.newMeth(C$, 'equals2$java_net_URL$java_net_URL',  function (u1, u2) {
 var ref1=u1.getRef$();
 var ref2=u2.getRef$();
 return (ref1 == ref2 || (ref1 != null  && ref1.equals$O(ref2) ) ) && this.sameFile$java_net_URL$java_net_URL(u1, u2) ;
 });
 
-Clazz.newMeth(C$, 'hashCode$java_net_URL', function (u) {
+Clazz.newMeth(C$, 'hashCode$java_net_URL',  function (u) {
 var h=0;
 var protocol=u.getProtocol$();
 if (protocol != null ) h+=protocol.hashCode$();
@@ -125,7 +124,7 @@ if (ref != null ) h+=ref.hashCode$();
 return h;
 });
 
-Clazz.newMeth(C$, 'sameFile$java_net_URL$java_net_URL', function (u1, u2) {
+Clazz.newMeth(C$, 'sameFile$java_net_URL$java_net_URL',  function (u1, u2) {
 if (!((u1.getProtocol$() == u2.getProtocol$()) || (u1.getProtocol$() != null  && u1.getProtocol$().equalsIgnoreCase$S(u2.getProtocol$()) ) )) return false;
 if (!(u1.getFile$() == u2.getFile$() || (u1.getFile$() != null  && u1.getFile$().equals$O(u2.getFile$()) ) )) return false;
 var port1;
@@ -137,22 +136,37 @@ if (!this.hostsEqual$java_net_URL$java_net_URL(u1, u2)) return false;
 return true;
 });
 
-Clazz.newMeth(C$, 'hostsEqual$java_net_URL$java_net_URL', function (u1, u2) {
+Clazz.newMeth(C$, 'hostsEqual$java_net_URL$java_net_URL',  function (u1, u2) {
 if (u1.getHost$() != null  && u2.getHost$() != null  ) return u1.getHost$().equalsIgnoreCase$S(u2.getHost$());
 return u1.getHost$() == null  && u2.getHost$() == null  ;
 });
 
-Clazz.newMeth(C$, 'toExternalForm$java_net_URL', function (u) {
-return "";
+Clazz.newMeth(C$, 'toExternalForm$java_net_URL',  function (u) {
+var result=Clazz.new_($I$(1,1));
+var p=u.getProtocol$();
+result.append$S(p);
+result.append$S(":");
+if (u.getAuthority$() != null  && u.getAuthority$().length$() > 0 ) {
+result.append$S("//");
+result.append$S(u.getAuthority$());
+}if (u.getPath$() != null ) {
+result.append$S(u.getPath$());
+}if (u.getQuery$() != null ) {
+result.append$S("?");
+result.append$S(u.getQuery$());
+}if (u.getRef$() != null ) {
+result.append$S("#");
+result.append$S(u.getRef$());
+}return result.toString();
 });
 
-Clazz.newMeth(C$, 'setURL$java_net_URL$S$S$I$S$S$S$S$S', function (u, protocol, host, port, authority, userInfo, path, query, ref) {
+Clazz.newMeth(C$, 'setURL$java_net_URL$S$S$I$S$S$S$S$S',  function (u, protocol, host, port, authority, userInfo, path, query, ref) {
 if (this !== u.handler ) {
 throw Clazz.new_(Clazz.load('SecurityException').c$$S,["handler for url different from this handler"]);
 }u.set$S$S$I$S$S$S$S$S(u.getProtocol$(), host, port, authority, userInfo, path, query, ref);
 });
 
-Clazz.newMeth(C$, 'setURLDeprecated$java_net_URL$S$S$I$S$S', function (u, protocol, host, port, file, ref) {
+Clazz.newMeth(C$, 'setURLDeprecated$java_net_URL$S$S$I$S$S',  function (u, protocol, host, port, file, ref) {
 var authority=null;
 var userInfo=null;
 if (host != null  && host.length$() != 0 ) {
@@ -174,4 +188,4 @@ path=file.substring$I$I(0, q);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:37 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:00 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

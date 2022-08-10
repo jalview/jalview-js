@@ -1,33 +1,22 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.fragseq"),p$1={},I$=[[0,'java.util.Random','java.util.ArrayList','java.util.Date','java.io.File','java.util.regex.Pattern','fr.orsay.lri.varna.applications.fragseq.FragSeqRNASecStrModel','fr.orsay.lri.varna.applications.fragseq.FragSeqAnnotationDataModel','fr.orsay.lri.varna.factories.RNAFactory']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "FragSeqFileModel", null, null, 'Comparable');
-C$._rnd=null;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications.fragseq"),p$1={},I$=[[0,'java.util.Random','java.util.ArrayList','java.util.Date','java.io.File','java.util.regex.Pattern','fr.orsay.lri.varna.applications.fragseq.FragSeqRNASecStrModel','fr.orsay.lri.varna.applications.fragseq.FragSeqAnnotationDataModel','fr.orsay.lri.varna.factories.RNAFactory']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "FragSeqFileModel", null, null, 'Comparable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$._rnd=Clazz.new_($I$(1));
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._models=null;
-this._lastModified=null;
-this._outOfSync=false;
-this._caption=null;
-this._path=null;
-this._folder=null;
-this._cached=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._models=Clazz.new_($I$(2));
+this._models=Clazz.new_($I$(2,1));
 this._outOfSync=false;
 this._caption="";
 this._path="";
 this._folder="";
 this._cached=false;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['_outOfSync','_cached'],'S',['_caption','_path','_folder'],'O',['_models','java.util.ArrayList','_lastModified','java.util.Date']]
+,['O',['_rnd','java.util.Random']]]
 
 Clazz.newMeth(C$, 'lastModif$S', function (path) {
-return Clazz.new_($I$(3).c$$J,[Clazz.new_($I$(4).c$$S,[path]).lastModified$()]);
+return Clazz.new_([Clazz.new_($I$(4,1).c$$S,[path]).lastModified$()],$I$(3,1).c$$J);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S', function (folder, path) {
@@ -35,12 +24,12 @@ C$.c$$S$S$java_util_Date.apply(this, [folder, path, C$.lastModif$S(path)]);
 }, 1);
 
 Clazz.newMeth(C$, 'c$$S$S$java_util_Date', function (folder, path, lastModified) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._lastModified=lastModified;
 this._outOfSync=false;
 this._folder=folder;
 this._path=path;
-var s=path.split$S($I$(5).quote$S($I$(4).separator));
+var s=path.split$S($I$(5,"quote$S",[$I$(4).separator]));
 if (s.length > 0) this._caption=s[s.length - 1];
 }, 1);
 
@@ -49,10 +38,10 @@ var rnas=null;
 try {
 rnas=p$1.createRNAs.apply(this, []);
 for (var r, $r = rnas.iterator$(); $r.hasNext$()&&((r=($r.next$())),1);) {
-this.addModel$fr_orsay_lri_varna_applications_fragseq_FragSeqModel(Clazz.new_($I$(6).c$$fr_orsay_lri_varna_models_rna_RNA,[r]));
+this.addModel$fr_orsay_lri_varna_applications_fragseq_FragSeqModel(Clazz.new_($I$(6,1).c$$fr_orsay_lri_varna_models_rna_RNA,[r]));
 var nb=C$._rnd.nextInt$I(5);
 for (var i=0; i < nb; i++) {
-var data=Clazz.new_($I$(7).c$$S$S,[r.getID$(), "" + i + "-" + r.getID$() ]);
+var data=Clazz.new_([r.getID$(), "" + i + "-" + r.getID$() ],$I$(7,1).c$$S$S);
 $I$(7).addRandomAnnotations$fr_orsay_lri_varna_models_rna_RNA$fr_orsay_lri_varna_applications_fragseq_FragSeqAnnotationDataModel(r, data);
 this.addModel$fr_orsay_lri_varna_applications_fragseq_FragSeqModel(data);
 }
@@ -122,7 +111,7 @@ Clazz.newMeth(C$, 'getPath$', function () {
 return this._path;
 });
 
-Clazz.newMeth(C$, ['compareTo$fr_orsay_lri_varna_applications_fragseq_FragSeqFileModel','compareTo$','compareTo$TT'], function (o) {
+Clazz.newMeth(C$, ['compareTo$fr_orsay_lri_varna_applications_fragseq_FragSeqFileModel','compareTo$O'], function (o) {
 return this._caption.compareTo$S(o._caption);
 });
 
@@ -133,7 +122,7 @@ this.load$();
 });
 
 Clazz.newMeth(C$, 'addModel$fr_orsay_lri_varna_applications_fragseq_FragSeqModel', function (f) {
-this._models.add$TE(f);
+this._models.add$O(f);
 });
 
 Clazz.newMeth(C$, 'createRNAs', function () {
@@ -141,9 +130,13 @@ var r=$I$(8).loadSecStr$S(this._path);
 for (var r2, $r2 = r.iterator$(); $r2.hasNext$()&&((r2=($r2.next$())),1);) {
 r2.drawRNARadiate$();
 }
-return Clazz.new_($I$(2).c$$java_util_Collection,[r]);
+return Clazz.new_($I$(2,1).c$$java_util_Collection,[r]);
 }, p$1);
+
+C$.$static$=function(){C$.$static$=0;
+C$._rnd=Clazz.new_($I$(1,1));
+};
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:42 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:18 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

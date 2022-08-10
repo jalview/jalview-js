@@ -1,26 +1,16 @@
-(function(){var P$=Clazz.newPackage("org.jmol.quantum"),I$=[[0,'org.jmol.util.Logger','java.util.Hashtable','org.jmol.viewer.FileManager','javajs.util.Rdr','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MepCalculation", null, 'org.jmol.quantum.QuantumCalculation');
+(function(){var P$=Clazz.newPackage("org.jmol.quantum"),I$=[[0,'org.jmol.util.Logger','java.util.Hashtable','org.jmol.viewer.FileManager','javajs.util.Rdr','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MepCalculation", null, 'org.jmol.quantum.QuantumCalculation');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.distanceMode=0;
-this.potentials=null;
-this.atomCoordAngstroms=null;
-this.bsSelected=null;
-this.vwr=null;
-this.htAtomicPotentials=null;
-this.resourceName=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.distanceMode=0;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['distanceMode'],'S',['resourceName'],'O',['potentials','float[]','atomCoordAngstroms','javajs.util.P3[]','bsSelected','javajs.util.BS','vwr','org.jmol.viewer.Viewer','htAtomicPotentials','java.util.Map']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.rangeBohrOrAngstroms=8;
 this.distanceMode=0;
 this.unitFactor=1;
@@ -39,7 +29,7 @@ f=NaN;
 } else {
 f=this.getTabulatedPotential$org_jmol_modelset_Atom(atoms[i]);
 if (Float.isNaN$F(f)) f=0;
-}if ($I$(1).debugging) $I$(1).debug$S(atoms[i].getInfo$() + " " + new Float(f).toString() );
+}if ($I$(1).debugging) $I$(1,"debug$S",[atoms[i].getInfo$() + " " + new Float(f).toString() ]);
 potentials[i]=f;
 }
 });
@@ -75,7 +65,7 @@ Clazz.newMeth(C$, 'process$', function () {
 for (var atomIndex=this.qmAtoms.length; --atomIndex >= 0; ) {
 if ((this.thisAtom=this.qmAtoms[atomIndex]) == null ) continue;
 var x0=this.potentials[atomIndex];
-if ($I$(1).debugging) $I$(1).debug$S("process map for atom " + atomIndex + this.thisAtom + "  charge=" + new Float(x0).toString() );
+if ($I$(1).debugging) $I$(1,"debug$S",["process map for atom " + atomIndex + this.thisAtom + "  charge=" + new Float(x0).toString() ]);
 this.thisAtom.setXYZ$org_jmol_quantum_QuantumCalculation$Z(this, true);
 for (var ix=this.xMax; --ix >= this.xMin; ) {
 var dX=this.X2[ix];
@@ -118,7 +108,7 @@ return (Clazz.instanceOf(o, "java.lang.Float") ? (o).floatValue$() : NaN);
 
 Clazz.newMeth(C$, 'getAtomicPotentials$S$S', function (data, resourceName) {
 var br=null;
-this.htAtomicPotentials=Clazz.new_($I$(2));
+this.htAtomicPotentials=Clazz.new_($I$(2,1));
 try {
 br=(data == null  ? $I$(3).getBufferedReaderForResource$org_jmol_viewer_Viewer$O$S$S(this.vwr, this, "org/jmol/quantum/", resourceName) : $I$(4).getBR$S(data));
 var line;
@@ -127,12 +117,12 @@ if (line.startsWith$S("#")) continue;
 var vs=$I$(5).getTokens$S(line);
 if (vs.length < 2) continue;
 if ($I$(1).debugging) $I$(1).debug$S(line);
-this.htAtomicPotentials.put$TK$TV(vs[0], Float.valueOf$F($I$(5).parseFloat$S(vs[1])));
+this.htAtomicPotentials.put$O$O(vs[0], Float.valueOf$F($I$(5).parseFloat$S(vs[1])));
 }
 br.close$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(1).error$S("Exception " + e.toString() + " in getResource " + resourceName );
+$I$(1,"error$S",["Exception " + e.toString() + " in getResource " + resourceName ]);
 try {
 br.close$();
 } catch (ee) {
@@ -150,4 +140,4 @@ throw e;
 Clazz.newMeth(C$, 'createCube$', function () {
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:40 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

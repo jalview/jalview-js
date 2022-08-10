@@ -1,30 +1,22 @@
-(function(){var P$=Clazz.newPackage("org.jmol.atomdata"),I$=[[0,['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "RadiusData", function(){
+(function(){var P$=Clazz.newPackage("org.jmol.atomdata"),I$=[[0,['org.jmol.atomdata.RadiusData','.EnumType'],'org.jmol.c.VDW','javajs.util.SB']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "RadiusData", function(){
 Clazz.newInstance(this, arguments,0,C$);
 });
+C$.$classes$=[['EnumType',25]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.info=null;
-this.factorType=null;
-this.vdwType=null;
-this.value=0;
-this.valueExtended=0;
-this.values=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.factorType=$I$(1).ABSOLUTE;
 this.vdwType=$I$(2).AUTO;
 this.value=NaN;
 this.valueExtended=0;
-}, 1);
+},1);
+
+C$.$fields$=[['F',['value','valueExtended'],'S',['info'],'O',['factorType','org.jmol.atomdata.RadiusData.EnumType','vdwType','org.jmol.c.VDW','values','float[]']]]
 
 Clazz.newMeth(C$, 'c$$FA$F$org_jmol_atomdata_RadiusData_EnumType$org_jmol_c_VDW', function (values, value, factorType, vdwType) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 if (values != null ) {
 this.values=values;
 this.value=2147483647;
@@ -37,7 +29,7 @@ if (vdwType != null ) this.vdwType=vdwType;
 
 Clazz.newMeth(C$, 'toString', function () {
 if (Float.isNaN$F(this.value)) return "";
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 switch (this.factorType) {
 case $I$(1).ABSOLUTE:
 sb.appendF$F(this.value);
@@ -55,20 +47,22 @@ sb.appendI$I((this.value|0));
 return sb.toString();
 });
 ;
-(function(){var C$=Clazz.newClass(P$.RadiusData, "EnumType", function(){
+(function(){/*e*/var C$=Clazz.newClass(P$.RadiusData, "EnumType", function(){
 Clazz.newInstance(this, arguments[0],false,C$);
 }, 'Enum');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
+C$.$clinit$=2;
+
+Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$static$=function(){C$.$static$=0;
 $vals=Clazz.array(C$,[0]);
 Clazz.newEnumConst($vals, C$.c$, "ABSOLUTE", 0, []);
 Clazz.newEnumConst($vals, C$.c$, "OFFSET", 1, []);
 Clazz.newEnumConst($vals, C$.c$, "FACTOR", 2, []);
 Clazz.newEnumConst($vals, C$.c$, "SCREEN", 3, []);
-}
-
-Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+};
 
 Clazz.newMeth(C$);
 var $vals=[];
@@ -78,4 +72,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

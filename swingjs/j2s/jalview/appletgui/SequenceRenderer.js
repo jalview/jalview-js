@@ -1,48 +1,38 @@
-(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'jalview.renderer.ResidueColourFinder','java.awt.Color','java.awt.Font','jalview.util.Comparison']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SequenceRenderer", null, null, 'jalview.api.SequenceRenderer');
+(function(){var P$=Clazz.newPackage("jalview.appletgui"),p$1={},I$=[[0,'jalview.renderer.ResidueColourFinder','java.awt.Color','java.awt.Font','jalview.util.Comparison']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SequenceRenderer", null, null, 'jalview.api.SequenceRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.av=null;
-this.fm=null;
-this.renderGaps=false;
-this.allGroups=null;
-this.resBoxColour=null;
-this.graphics=null;
-this.resColourFinder=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.renderGaps=true;
 this.allGroups=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignViewport', function (av) {
-C$.$init$.apply(this);
+C$.$fields$=[['Z',['renderGaps'],'O',['av','jalview.appletgui.AlignViewport','fm','java.awt.FontMetrics','allGroups','jalview.datamodel.SequenceGroup[]','resBoxColour','java.awt.Color','graphics','java.awt.Graphics','resColourFinder','jalview.renderer.ResidueColourFinder']]]
+
+Clazz.newMeth(C$, 'c$$jalview_appletgui_AlignViewport',  function (av) {
+;C$.$init$.apply(this);
 this.av=av;
-this.resColourFinder=Clazz.new_($I$(1));
+this.resColourFinder=Clazz.new_($I$(1,1));
 }, 1);
 
-Clazz.newMeth(C$, 'prepare$java_awt_Graphics$Z', function (g, renderGaps) {
+Clazz.newMeth(C$, 'prepare$java_awt_Graphics$Z',  function (g, renderGaps) {
 this.graphics=g;
 this.fm=g.getFontMetrics$();
 this.renderGaps=renderGaps;
 });
 
-Clazz.newMeth(C$, ['getResidueColour$jalview_datamodel_SequenceI$I$jalview_renderer_seqfeatures_FeatureColourFinder','getResidueColour$'], function (seq, position, finder) {
+Clazz.newMeth(C$, 'getResidueColour$jalview_datamodel_SequenceI$I$jalview_renderer_seqfeatures_FeatureColourFinder',  function (seq, position, finder) {
 return this.resColourFinder.getResidueColour$Z$jalview_renderer_ResidueShaderI$jalview_datamodel_SequenceGroupA$jalview_datamodel_SequenceI$I$jalview_renderer_seqfeatures_FeatureColourFinder(this.av.getShowBoxes$(), this.av.getResidueShading$(), this.allGroups, seq, position, finder);
 });
 
-Clazz.newMeth(C$, 'findSequenceColour$jalview_datamodel_SequenceI$I', function (seq, i) {
+Clazz.newMeth(C$, 'findSequenceColour$jalview_datamodel_SequenceI$I',  function (seq, i) {
 this.allGroups=this.av.getAlignment$().findAllGroups$jalview_datamodel_SequenceI(seq);
 this.drawBoxes$jalview_datamodel_SequenceI$I$I$I(seq, i, i, 0);
 return this.resBoxColour;
 });
 
-Clazz.newMeth(C$, 'drawSequence$jalview_datamodel_SequenceI$jalview_datamodel_SequenceGroupA$I$I$I', function (seq, sg, start, end, y1) {
+Clazz.newMeth(C$, 'drawSequence$jalview_datamodel_SequenceI$jalview_datamodel_SequenceGroupA$I$I$I',  function (seq, sg, start, end, y1) {
 if (seq == null ) {
 return;
 }this.allGroups=sg;
@@ -51,7 +41,7 @@ if (this.av.validCharWidth) {
 this.drawText$jalview_datamodel_SequenceI$I$I$I(seq, start, end, y1);
 }});
 
-Clazz.newMeth(C$, 'drawBoxes$jalview_datamodel_SequenceI$I$I$I', function (seq, start, end, y1) {
+Clazz.newMeth(C$, 'drawBoxes$jalview_datamodel_SequenceI$I$I$I',  function (seq, start, end, y1) {
 var i=start;
 var length=seq.getLength$();
 var curStart=-1;
@@ -78,18 +68,18 @@ curWidth=avCharWidth;
 tempColour=resBoxColour;
 } else {
 curWidth+=avCharWidth;
-}i++;
+}++i;
 }
 this.graphics.fillRect$I$I$I$I(avCharWidth * (curStart - start), y1, curWidth, avCharHeight);
 });
 
-Clazz.newMeth(C$, 'drawText$jalview_datamodel_SequenceI$I$I$I', function (seq, start, end, y1) {
+Clazz.newMeth(C$, 'drawText$jalview_datamodel_SequenceI$I$I$I',  function (seq, start, end, y1) {
 var avCharWidth=this.av.getCharWidth$();
 var avCharHeight=this.av.getCharHeight$();
 var boldFont=null;
 var bold=false;
 if (this.av.isUpperCasebold$()) {
-boldFont=Clazz.new_($I$(3).c$$S$I$I,[this.av.getFont$().getName$(), 1, avCharHeight]);
+boldFont=Clazz.new_([this.av.getFont$().getName$(), 1, avCharHeight],$I$(3,1).c$$S$I$I);
 this.graphics.setFont$java_awt_Font(this.av.getFont$());
 }y1+=avCharHeight - (avCharHeight/5|0);
 var charOffset=0;
@@ -136,14 +126,14 @@ this.graphics.drawString$S$I$I(String.valueOf$C(s), charOffset + avCharWidth * (
 }
 });
 
-Clazz.newMeth(C$, 'getDisplayChar$Z$I$C$C$jalview_datamodel_SequenceGroup', function (usesrep, position, sequenceChar, conservedChar, currentGroup) {
+Clazz.newMeth(C$, 'getDisplayChar$Z$I$C$C$jalview_datamodel_SequenceGroup',  function (usesrep, position, sequenceChar, conservedChar, currentGroup) {
 var conschar=(usesrep) ? (currentGroup == null  || position < currentGroup.getStartRes$()  || position > currentGroup.getEndRes$()  ? this.av.getAlignment$().getSeqrep$().getCharAt$I(position) : (currentGroup.getSeqrep$() != null  ? currentGroup.getSeqrep$().getCharAt$I(position) : this.av.getAlignment$().getSeqrep$().getCharAt$I(position))) : (currentGroup != null  && currentGroup.getConsensus$() != null   && position >= currentGroup.getStartRes$()  && position <= currentGroup.getEndRes$()  && currentGroup.getConsensus$().annotations.length > position ) ? currentGroup.getConsensus$().annotations[position].displayCharacter.charAt$I(0) : this.av.getAlignmentConsensusAnnotation$().annotations[position].displayCharacter.charAt$I(0);
 if (!$I$(4).isGap$C(conschar) && (sequenceChar == conschar || sequenceChar.$c() + -32 == conschar.$c()  ) ) {
 sequenceChar=conservedChar;
 }return sequenceChar;
 }, p$1);
 
-Clazz.newMeth(C$, 'drawHighlightedText$jalview_datamodel_SequenceI$I$I$I$I', function (seq, start, end, x1, y1) {
+Clazz.newMeth(C$, 'drawHighlightedText$jalview_datamodel_SequenceI$I$I$I$I',  function (seq, start, end, x1, y1) {
 var avCharWidth=this.av.getCharWidth$();
 var avCharHeight=this.av.getCharHeight$();
 var pady=(avCharHeight/5|0);
@@ -161,7 +151,7 @@ this.graphics.drawString$S$I$I(String.valueOf$C(s), charOffset + x1 + avCharWidt
 }
 }});
 
-Clazz.newMeth(C$, 'drawCursor$jalview_datamodel_SequenceI$I$I$I', function (seq, res, x1, y1) {
+Clazz.newMeth(C$, 'drawCursor$jalview_datamodel_SequenceI$I$I$I',  function (seq, res, x1, y1) {
 var pady=(this.av.getCharHeight$()/5|0);
 var charOffset=0;
 this.graphics.setColor$java_awt_Color($I$(2).black);
@@ -176,4 +166,4 @@ this.graphics.drawString$S$I$I(String.valueOf$C(s), charOffset + x1, (y1 + this.
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:07 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:28 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

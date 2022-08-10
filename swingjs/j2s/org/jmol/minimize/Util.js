@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.jmol.minimize"),I$=[[0,'java.util.Random']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Util");
+(function(){var P$=Clazz.newPackage("org.jmol.minimize"),I$=[[0,'java.util.Random']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Util");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'sub$DA$DA$javajs_util_V3d', function (a, b, result) {
 result.set$D$D$D(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
@@ -126,7 +125,7 @@ return rab;
 }, 1);
 
 Clazz.newMeth(C$, 'randomizeUnitVector$javajs_util_V3d', function (v) {
-var ptr=Clazz.new_($I$(1));
+var ptr=Clazz.new_($I$(1,1));
 var l;
 do {
 v.set$D$D$D(ptr.nextFloat$() - 0.5, ptr.nextFloat$() - 0.5, ptr.nextFloat$() - 0.5);
@@ -274,4 +273,4 @@ return theta;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:37 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

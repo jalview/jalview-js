@@ -1,37 +1,25 @@
-(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.GridBagConstraints','java.awt.Point','java.awt.Dimension','java.awt.GridBagLayoutInfo','java.util.Arrays',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Rectangle']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "GridBagLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
+(function(){var P$=Clazz.newPackage("java.awt"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.GridBagConstraints','java.awt.Point','java.awt.Dimension','java.awt.GridBagLayoutInfo','java.util.Arrays',['java.awt.Component','.BaselineResizeBehavior'],'java.awt.Rectangle']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "GridBagLayout", null, null, ['java.awt.LayoutManager2', 'java.io.Serializable']);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.comptable=null;
-this.defaultConstraints=null;
-this.layoutInfo=null;
-this.columnWidths=null;
-this.rowHeights=null;
-this.columnWeights=null;
-this.rowWeights=null;
-this.componentAdjusting=null;
-this.rightToLeft=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.rightToLeft=false;
+},1);
+
+C$.$fields$=[['Z',['rightToLeft'],'O',['comptable','java.util.Hashtable','defaultConstraints','java.awt.GridBagConstraints','layoutInfo','java.awt.GridBagLayoutInfo','columnWidths','int[]','+rowHeights','columnWeights','double[]','+rowWeights','componentAdjusting','java.awt.Component']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
+this.comptable=Clazz.new_($I$(1,1));
+this.defaultConstraints=Clazz.new_($I$(2,1));
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-this.comptable=Clazz.new_($I$(1));
-this.defaultConstraints=Clazz.new_($I$(2));
-}, 1);
-
-Clazz.newMeth(C$, 'setConstraints$java_awt_Component$java_awt_GridBagConstraints', function (comp, constraints) {
-this.comptable.put$TK$TV(comp, constraints.clone$());
+Clazz.newMeth(C$, 'setConstraints$java_awt_Component$java_awt_GridBagConstraints',  function (comp, constraints) {
+this.comptable.put$O$O(comp, constraints.clone$());
 });
 
-Clazz.newMeth(C$, 'getConstraints$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'getConstraints$java_awt_Component',  function (comp) {
 var constraints=this.comptable.get$O(comp);
 if (constraints == null ) {
 this.setConstraints$java_awt_Component$java_awt_GridBagConstraints(comp, this.defaultConstraints);
@@ -39,7 +27,7 @@ constraints=this.comptable.get$O(comp);
 }return constraints.clone$();
 });
 
-Clazz.newMeth(C$, 'lookupConstraints$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'lookupConstraints$java_awt_Component',  function (comp) {
 var constraints=this.comptable.get$O(comp);
 if (constraints == null ) {
 this.setConstraints$java_awt_Component$java_awt_GridBagConstraints(comp, this.defaultConstraints);
@@ -47,19 +35,19 @@ constraints=this.comptable.get$O(comp);
 }return constraints;
 });
 
-Clazz.newMeth(C$, 'removeConstraints$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'removeConstraints$java_awt_Component',  function (comp) {
 this.comptable.remove$O(comp);
 }, p$1);
 
-Clazz.newMeth(C$, 'getLayoutOrigin$', function () {
-var origin=Clazz.new_($I$(3).c$$I$I,[0, 0]);
+Clazz.newMeth(C$, 'getLayoutOrigin$',  function () {
+var origin=Clazz.new_($I$(3,1).c$$I$I,[0, 0]);
 if (this.layoutInfo != null ) {
 origin.x=this.layoutInfo.startx;
 origin.y=this.layoutInfo.starty;
 }return origin;
 });
 
-Clazz.newMeth(C$, 'getLayoutDimensions$', function () {
+Clazz.newMeth(C$, 'getLayoutDimensions$',  function () {
 if (this.layoutInfo == null ) return Clazz.array(Integer.TYPE, [2, 0]);
 var dim=Clazz.array(Integer.TYPE, [2, null]);
 dim[0]=Clazz.array(Integer.TYPE, [this.layoutInfo.width]);
@@ -69,7 +57,7 @@ System.arraycopy$O$I$O$I$I(this.layoutInfo.minHeight, 0, dim[1], 0, this.layoutI
 return dim;
 });
 
-Clazz.newMeth(C$, 'getLayoutWeights$', function () {
+Clazz.newMeth(C$, 'getLayoutWeights$',  function () {
 if (this.layoutInfo == null ) return Clazz.array(Double.TYPE, [2, 0]);
 var weights=Clazz.array(Double.TYPE, [2, null]);
 weights[0]=Clazz.array(Double.TYPE, [this.layoutInfo.width]);
@@ -79,8 +67,8 @@ System.arraycopy$O$I$O$I$I(this.layoutInfo.weightY, 0, weights[1], 0, this.layou
 return weights;
 });
 
-Clazz.newMeth(C$, 'location$I$I', function (x, y) {
-var loc=Clazz.new_($I$(3).c$$I$I,[0, 0]);
+Clazz.newMeth(C$, 'location$I$I',  function (x, y) {
+var loc=Clazz.new_($I$(3,1).c$$I$I,[0, 0]);
 var i;
 var d;
 if (this.layoutInfo == null ) return loc;
@@ -95,7 +83,7 @@ for (i=this.layoutInfo.width - 1; i >= 0; i--) {
 if (d > x) break;
 d+=this.layoutInfo.minWidth[i];
 }
-i++;
+++i;
 }loc.x=i;
 d=this.layoutInfo.starty;
 for (i=0; i < this.layoutInfo.height; i++) {
@@ -106,58 +94,58 @@ loc.y=i;
 return loc;
 });
 
-Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component', function (name, comp) {
+Clazz.newMeth(C$, 'addLayoutComponent$S$java_awt_Component',  function (name, comp) {
 });
 
-Clazz.newMeth(C$, 'addLayoutComponent$java_awt_Component$O', function (comp, constraints) {
+Clazz.newMeth(C$, 'addLayoutComponent$java_awt_Component$O',  function (comp, constraints) {
 if (Clazz.instanceOf(constraints, "java.awt.GridBagConstraints")) {
 this.setConstraints$java_awt_Component$java_awt_GridBagConstraints(comp, constraints);
 } else if (constraints != null ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["cannot add to layout: constraints must be a GridBagConstraint"]);
 }});
 
-Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component', function (comp) {
+Clazz.newMeth(C$, 'removeLayoutComponent$java_awt_Component',  function (comp) {
 p$1.removeConstraints$java_awt_Component.apply(this, [comp]);
 });
 
-Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'preferredLayoutSize$java_awt_Container',  function (parent) {
 var info=this.getLayoutInfo$java_awt_Container$I(parent, 2);
 return this.getMinSize$java_awt_Container$java_awt_GridBagLayoutInfo(parent, info);
 });
 
-Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'minimumLayoutSize$java_awt_Container',  function (parent) {
 var info=this.getLayoutInfo$java_awt_Container$I(parent, 1);
 return this.getMinSize$java_awt_Container$java_awt_GridBagLayoutInfo(parent, info);
 });
 
-Clazz.newMeth(C$, 'maximumLayoutSize$java_awt_Container', function (target) {
-return Clazz.new_($I$(4).c$$I$I,[2147483647, 2147483647]);
+Clazz.newMeth(C$, 'maximumLayoutSize$java_awt_Container',  function (target) {
+return Clazz.new_($I$(4,1).c$$I$I,[2147483647, 2147483647]);
 });
 
-Clazz.newMeth(C$, 'getLayoutAlignmentX$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'getLayoutAlignmentX$java_awt_Container',  function (parent) {
 return 0.5;
 });
 
-Clazz.newMeth(C$, 'getLayoutAlignmentY$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'getLayoutAlignmentY$java_awt_Container',  function (parent) {
 return 0.5;
 });
 
-Clazz.newMeth(C$, 'invalidateLayout$java_awt_Container', function (target) {
+Clazz.newMeth(C$, 'invalidateLayout$java_awt_Container',  function (target) {
 });
 
-Clazz.newMeth(C$, 'layoutContainer$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'layoutContainer$java_awt_Container',  function (parent) {
 this.arrangeGrid$java_awt_Container(parent);
 });
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 return this.getClass$().getName$();
 });
 
-Clazz.newMeth(C$, 'getLayoutInfo$java_awt_Container$I', function (parent, sizeflag) {
+Clazz.newMeth(C$, 'getLayoutInfo$java_awt_Container$I',  function (parent, sizeflag) {
 return this.GetLayoutInfo$java_awt_Container$I(parent, sizeflag);
 });
 
-Clazz.newMeth(C$, 'preInitMaximumArraySizes$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'preInitMaximumArraySizes$java_awt_Container',  function (parent) {
 var components=parent.getChildArray$();
 var comp;
 var constraints;
@@ -193,7 +181,7 @@ returnArray[1]=preMaximumArrayYIndex;
 return returnArray;
 }, p$1);
 
-Clazz.newMeth(C$, 'GetLayoutInfo$java_awt_Container$I', function (parent, sizeflag) {
+Clazz.newMeth(C$, 'GetLayoutInfo$java_awt_Container$I',  function (parent, sizeflag) {
 /*sync org.eclipse.jdt.core.dom.MethodInvocation*/(parent.getTreeLock$());
 {
 var r;
@@ -227,8 +215,8 @@ var anchor;
 layoutWidth=layoutHeight=0;
 curRow=curCol=-1;
 var arraySizes=p$1.preInitMaximumArraySizes$java_awt_Container.apply(this, [parent]);
-maximumArrayXIndex=(2 * arraySizes[0] > 2147483647) ? 2147483647 : 2 * (arraySizes[0]|0);
-maximumArrayYIndex=(2 * arraySizes[1] > 2147483647) ? 2147483647 : 2 * (arraySizes[1]|0);
+maximumArrayXIndex=(Long.$gt(Long.$mul(2,arraySizes[0]),2147483647 )) ? 2147483647 : 2 * Long.$ival(arraySizes[0]);
+maximumArrayYIndex=(Long.$gt(Long.$mul(2,arraySizes[1]),2147483647 )) ? 2147483647 : 2 * Long.$ival(arraySizes[1]);
 if (this.rowHeights != null ) {
 maximumArrayXIndex=Math.max(maximumArrayXIndex, this.rowHeights.length);
 }if (this.columnWidths != null ) {
@@ -288,7 +276,7 @@ if (constraints.gridheight == 0 && curRow < 0 ) curCol=curX + curWidth;
 }
 if (this.columnWidths != null  && layoutWidth < this.columnWidths.length ) layoutWidth=this.columnWidths.length;
 if (this.rowHeights != null  && layoutHeight < this.rowHeights.length ) layoutHeight=this.rowHeights.length;
-r=Clazz.new_($I$(5).c$$I$I,[layoutWidth, layoutHeight]);
+r=Clazz.new_($I$(5,1).c$$I$I,[layoutWidth, layoutHeight]);
 curRow=curCol=-1;
 $I$(6).fill$IA$I(xMaxArray, 0);
 $I$(6).fill$IA$I(yMaxArray, 0);
@@ -405,53 +393,53 @@ constraints=this.lookupConstraints$java_awt_Component(comp);
 if (constraints.tempWidth == i) {
 px=constraints.tempX + constraints.tempWidth;
 weight_diff=constraints.weightx;
-for (k=constraints.tempX; k < px; k++) weight_diff -= r.weightX[k];
+for (k=constraints.tempX; k < px; k++) weight_diff-=r.weightX[k];
 
 if (weight_diff > 0.0 ) {
 weight=0.0;
-for (k=constraints.tempX; k < px; k++) weight += r.weightX[k];
+for (k=constraints.tempX; k < px; k++) weight+=r.weightX[k];
 
 for (k=constraints.tempX; weight > 0.0  && k < px ; k++) {
 var wt=r.weightX[k];
 var dx=(wt * weight_diff) / weight;
-r.weightX[k] += dx;
-weight_diff -= dx;
-weight -= wt;
+r.weightX[k]+=dx;
+weight_diff-=dx;
+weight-=wt;
 }
-r.weightX[px - 1] += weight_diff;
+r.weightX[px - 1]+=weight_diff;
 }pixels_diff=constraints.minWidth + constraints.ipadx + constraints.insets.left + constraints.insets.right ;
 for (k=constraints.tempX; k < px; k++) pixels_diff-=r.minWidth[k];
 
 if (pixels_diff > 0) {
 weight=0.0;
-for (k=constraints.tempX; k < px; k++) weight += r.weightX[k];
+for (k=constraints.tempX; k < px; k++) weight+=r.weightX[k];
 
 for (k=constraints.tempX; weight > 0.0  && k < px ; k++) {
 var wt=r.weightX[k];
 var dx=(((wt * (pixels_diff)) / weight)|0);
 r.minWidth[k]+=dx;
 pixels_diff-=dx;
-weight -= wt;
+weight-=wt;
 }
 r.minWidth[px - 1]+=pixels_diff;
 }} else if (constraints.tempWidth > i && constraints.tempWidth < nextSize ) nextSize=constraints.tempWidth;
 if (constraints.tempHeight == i) {
 py=constraints.tempY + constraints.tempHeight;
 weight_diff=constraints.weighty;
-for (k=constraints.tempY; k < py; k++) weight_diff -= r.weightY[k];
+for (k=constraints.tempY; k < py; k++) weight_diff-=r.weightY[k];
 
 if (weight_diff > 0.0 ) {
 weight=0.0;
-for (k=constraints.tempY; k < py; k++) weight += r.weightY[k];
+for (k=constraints.tempY; k < py; k++) weight+=r.weightY[k];
 
 for (k=constraints.tempY; weight > 0.0  && k < py ; k++) {
 var wt=r.weightY[k];
 var dy=(wt * weight_diff) / weight;
-r.weightY[k] += dy;
-weight_diff -= dy;
-weight -= wt;
+r.weightY[k]+=dy;
+weight_diff-=dy;
+weight-=wt;
 }
-r.weightY[py - 1] += weight_diff;
+r.weightY[py - 1]+=weight_diff;
 }pixels_diff=-1;
 if (hasBaseline) {
 switch (constraints.anchor) {
@@ -483,14 +471,14 @@ pixels_diff=constraints.minHeight + constraints.ipady + constraints.insets.top +
 
 if (pixels_diff > 0) {
 weight=0.0;
-for (k=constraints.tempY; k < py; k++) weight += r.weightY[k];
+for (k=constraints.tempY; k < py; k++) weight+=r.weightY[k];
 
 for (k=constraints.tempY; weight > 0.0  && k < py ; k++) {
 var wt=r.weightY[k];
 var dy=(((wt * (pixels_diff)) / weight)|0);
 r.minHeight[k]+=dy;
 pixels_diff-=dy;
-weight -= wt;
+weight-=wt;
 }
 r.minHeight[py - 1]+=pixels_diff;
 }} else if (constraints.tempHeight > i && constraints.tempHeight < nextSize ) nextSize=constraints.tempHeight;
@@ -499,7 +487,7 @@ r.minHeight[py - 1]+=pixels_diff;
 return r;
 }});
 
-Clazz.newMeth(C$, 'calculateBaseline$java_awt_Component$java_awt_GridBagConstraints$java_awt_Dimension', function (c, constraints, size) {
+Clazz.newMeth(C$, 'calculateBaseline$java_awt_Component$java_awt_GridBagConstraints$java_awt_Dimension',  function (c, constraints, size) {
 var anchor=constraints.anchor;
 if (anchor == 256 || anchor == 512  || anchor == 768 ) {
 var w=size.width + constraints.ipadx;
@@ -518,7 +506,7 @@ if (h % 2 == 0) {
 if (baseline != nextBaseline) {
 constraints.centerPadding=1;
 }} else if (baseline == nextBaseline) {
-constraints.centerOffset--;
+--constraints.centerOffset;
 constraints.centerPadding=1;
 }}}return true;
 } else {
@@ -526,11 +514,11 @@ constraints.ascent=-1;
 return false;
 }}, p$1);
 
-Clazz.newMeth(C$, 'adjustForGravity$java_awt_GridBagConstraints$java_awt_Rectangle', function (constraints, r) {
+Clazz.newMeth(C$, 'adjustForGravity$java_awt_GridBagConstraints$java_awt_Rectangle',  function (constraints, r) {
 this.AdjustForGravity$java_awt_GridBagConstraints$java_awt_Rectangle(constraints, r);
 });
 
-Clazz.newMeth(C$, 'AdjustForGravity$java_awt_GridBagConstraints$java_awt_Rectangle', function (constraints, r) {
+Clazz.newMeth(C$, 'AdjustForGravity$java_awt_GridBagConstraints$java_awt_Rectangle',  function (constraints, r) {
 var diffx;
 var diffy;
 var cellY=r.y;
@@ -658,7 +646,7 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["illegal anchor va
 }
 });
 
-Clazz.newMeth(C$, 'alignOnBaseline$java_awt_GridBagConstraints$java_awt_Rectangle$I$I', function (cons, r, cellY, cellHeight) {
+Clazz.newMeth(C$, 'alignOnBaseline$java_awt_GridBagConstraints$java_awt_Rectangle$I$I',  function (cons, r, cellY, cellHeight) {
 if (cons.ascent >= 0) {
 if (cons.baselineResizeBehavior === $I$(7).CONSTANT_DESCENT ) {
 var maxY=cellY + cellHeight - this.layoutInfo.maxDescent[cons.tempY + cons.tempHeight - 1] + cons.descent - cons.insets.bottom;
@@ -707,7 +695,7 @@ var lower=cellY + cellHeight - r.y - cons.minHeight - cons.insets.bottom;
 var delta=Math.min(upper, lower);
 delta+=delta;
 if (delta > 0 && ((cons.minHeight + cons.centerPadding + delta )/2|0) + cons.centerOffset != baseline ) {
-delta--;
+--delta;
 }r.height=cons.minHeight + delta;
 r.y=cellY + baseline - ((r.height + cons.centerPadding)/2|0) - cons.centerOffset;
 }break;
@@ -720,7 +708,7 @@ break;
 p$1.centerVertically$java_awt_GridBagConstraints$java_awt_Rectangle$I.apply(this, [cons, r, cellHeight]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'alignAboveBaseline$java_awt_GridBagConstraints$java_awt_Rectangle$I$I', function (cons, r, cellY, cellHeight) {
+Clazz.newMeth(C$, 'alignAboveBaseline$java_awt_GridBagConstraints$java_awt_Rectangle$I$I',  function (cons, r, cellY, cellHeight) {
 if (this.layoutInfo.hasBaseline$I(cons.tempY)) {
 var maxY;
 if (this.layoutInfo.hasConstantDescent$I(cons.tempY)) {
@@ -737,7 +725,7 @@ r.y=maxY - r.height;
 p$1.centerVertically$java_awt_GridBagConstraints$java_awt_Rectangle$I.apply(this, [cons, r, cellHeight]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'alignBelowBaseline$java_awt_GridBagConstraints$java_awt_Rectangle$I$I', function (cons, r, cellY, cellHeight) {
+Clazz.newMeth(C$, 'alignBelowBaseline$java_awt_GridBagConstraints$java_awt_Rectangle$I$I',  function (cons, r, cellY, cellHeight) {
 if (this.layoutInfo.hasBaseline$I(cons.tempY)) {
 if (this.layoutInfo.hasConstantDescent$I(cons.tempY)) {
 r.y=cellY + cellHeight - this.layoutInfo.maxDescent[cons.tempY];
@@ -749,17 +737,17 @@ r.height=cellY + cellHeight - r.y - cons.insets.bottom;
 p$1.centerVertically$java_awt_GridBagConstraints$java_awt_Rectangle$I.apply(this, [cons, r, cellHeight]);
 }}, p$1);
 
-Clazz.newMeth(C$, 'centerVertically$java_awt_GridBagConstraints$java_awt_Rectangle$I', function (cons, r, cellHeight) {
+Clazz.newMeth(C$, 'centerVertically$java_awt_GridBagConstraints$java_awt_Rectangle$I',  function (cons, r, cellHeight) {
 if (!cons.isVerticallyResizable$()) {
 r.y+=Math.max(0, ((cellHeight - cons.insets.top - cons.insets.bottom - cons.minHeight - cons.ipady )/2|0));
 }}, p$1);
 
-Clazz.newMeth(C$, 'getMinSize$java_awt_Container$java_awt_GridBagLayoutInfo', function (parent, info) {
+Clazz.newMeth(C$, 'getMinSize$java_awt_Container$java_awt_GridBagLayoutInfo',  function (parent, info) {
 return this.GetMinSize$java_awt_Container$java_awt_GridBagLayoutInfo(parent, info);
 });
 
-Clazz.newMeth(C$, 'GetMinSize$java_awt_Container$java_awt_GridBagLayoutInfo', function (parent, info) {
-var d=Clazz.new_($I$(4));
+Clazz.newMeth(C$, 'GetMinSize$java_awt_Container$java_awt_GridBagLayoutInfo',  function (parent, info) {
+var d=Clazz.new_($I$(4,1));
 var i;
 var t;
 var insets=parent.getInsets$();
@@ -774,18 +762,18 @@ d.height=t + insets.top + insets.bottom ;
 return d;
 });
 
-Clazz.newMeth(C$, 'arrangeGrid$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'arrangeGrid$java_awt_Container',  function (parent) {
 p$1.arrangeGridPriv$java_awt_Container.apply(this, [parent]);
 });
 
-Clazz.newMeth(C$, 'arrangeGridPriv$java_awt_Container', function (parent) {
+Clazz.newMeth(C$, 'arrangeGridPriv$java_awt_Container',  function (parent) {
 var comp;
 var compindex;
 var constraints;
 var insets=parent.getInsets$();
 var n=parent.getComponentCount$();
 var d;
-var r=Clazz.new_($I$(8));
+var r=Clazz.new_($I$(8,1));
 var i;
 var diffw;
 var diffh;
@@ -805,7 +793,7 @@ r.height=d.height;
 diffw=parent.width - r.width;
 if (diffw != 0) {
 weight=0.0;
-for (i=0; i < info.width; i++) weight += info.weightX[i];
+for (i=0; i < info.width; i++) weight+=info.weightX[i];
 
 if (weight > 0.0 ) {
 for (i=0; i < info.width; i++) {
@@ -822,7 +810,7 @@ diffw=0;
 }diffh=parent.height - r.height;
 if (diffh != 0) {
 weight=0.0;
-for (i=0; i < info.height; i++) weight += info.weightY[i];
+for (i=0; i < info.height; i++) weight+=info.weightY[i];
 
 if (weight > 0.0 ) {
 for (i=0; i < info.height; i++) {
@@ -880,4 +868,4 @@ comp.setBounds$I$I$I$I(r.x, r.y, r.width, r.height);
 }, p$1);
 var $k$;
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:22 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

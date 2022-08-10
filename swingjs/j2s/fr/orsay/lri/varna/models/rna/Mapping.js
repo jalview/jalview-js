@@ -1,39 +1,34 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'java.util.Hashtable']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Mapping", null, null, 'java.io.Serializable');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.rna"),I$=[[0,'java.util.Hashtable']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "Mapping", null, null, 'java.io.Serializable');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._mapping=null;
-this._invMapping=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._mapping=Clazz.new_($I$(1));
-this._invMapping=Clazz.new_($I$(1));
-}, 1);
+this._mapping=Clazz.new_($I$(1,1));
+this._invMapping=Clazz.new_($I$(1,1));
+},1);
+
+C$.$fields$=[['O',['_mapping','java.util.Hashtable','+_invMapping']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'addCouple$I$I', function (i, j) {
 if (this._mapping.containsKey$O(new Integer(i)) || this._invMapping.containsKey$O(new Integer(j)) ) {
 throw Clazz.new_(Clazz.load('fr.orsay.lri.varna.exceptions.MappingException').c$$I,[1]);
-}this._mapping.put$TK$TV( new Integer(i),  new Integer(j));
-this._invMapping.put$TK$TV( new Integer(j),  new Integer(i));
+}this._mapping.put$O$O( new Integer(i),  new Integer(j));
+this._invMapping.put$O$O( new Integer(j),  new Integer(i));
 });
 
 Clazz.newMeth(C$, 'getPartner$I', function (i) {
 if (!this._mapping.containsKey$O(new Integer(i))) return -1;
- else return (this._mapping.get$O(new Integer(i))).intValue$();
+ else return (this._mapping.get$O(new Integer(i))).valueOf();
 });
 
 Clazz.newMeth(C$, 'getAncestor$I', function (j) {
 if (!this._invMapping.containsKey$O(new Integer(j))) return -1;
- else return (this._invMapping.get$O(new Integer(j))).intValue$();
+ else return (this._invMapping.get$O(new Integer(j))).valueOf();
 });
 
 Clazz.newMeth(C$, 'getSourceElems$', function () {
@@ -41,7 +36,7 @@ var elems=Clazz.array(Integer.TYPE, [this._mapping.size$()]);
 var en=this._mapping.keys$();
 var i=0;
 while (en.hasMoreElements$()){
-var a=(en.nextElement$()).intValue$();
+var a=(en.nextElement$()).valueOf();
 elems[i]=a;
 i++;
 }
@@ -53,7 +48,7 @@ var elems=Clazz.array(Integer.TYPE, [this._invMapping.size$()]);
 var en=this._invMapping.keys$();
 var i=0;
 while (en.hasMoreElements$()){
-var a=(en.nextElement$()).intValue$();
+var a=(en.nextElement$()).valueOf();
 elems[i]=a;
 i++;
 }
@@ -130,8 +125,8 @@ var maxIndex=0;
 while (en.hasMoreElements$()){
 var i=en.nextElement$();
 var j=this._mapping.get$O(i);
-l1=Math.max(l1, (i).intValue$());
-l2=Math.max(l2, (j).intValue$());
+l1=Math.max(l1, (i).valueOf());
+l2=Math.max(l2, (j).valueOf());
 tmp += "(" + i + "," + j + ")" ;
 }
 maxIndex=Math.max(maxIndex, Math.max(l1, l2));
@@ -143,12 +138,12 @@ var j=l2;
 while (en.hasMoreElements$()){
 var a=en.nextElement$();
 var b=this._mapping.get$O(a);
-while ((a).intValue$() < i ){
+while ((a).valueOf() < i ){
 tmp1='x' + tmp1;
 tmp2='-' + tmp2;
 i--;
 }
-while ((b).intValue$() < j ){
+while ((b).valueOf() < j ){
 tmp1='-' + tmp1;
 tmp2='x' + tmp2;
 j--;
@@ -161,4 +156,4 @@ j--;
 return tmp + "\n" + tmp1 + "\n" + tmp2 ;
 });
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,11 +1,10 @@
-(function(){var P$=Clazz.newPackage("org.apache.harmony.luni.util"),I$=[[0,'StringBuilder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "Msg");
+(function(){var P$=Clazz.newPackage("org.apache.harmony.luni.util"),I$=[[0,'StringBuilder']],$I$=function(i,n){return(i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i};
+/*c*/var C$=Clazz.newClass(P$, "Msg");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'getString$S', function (msg) {
 return C$.getMsg$S(msg);
@@ -38,7 +37,7 @@ return (pt < 0 ? msg : msg.substring$I$I(pt + 6, msg.indexOf$S$I("\r", pt)));
 }, 1);
 
 Clazz.newMeth(C$, 'format$S$OA', function (format, args) {
-var answer=Clazz.new_($I$(1).c$$I,[format.length$() + (args.length * 20)]);
+var answer=Clazz.new_($I$(1,1).c$$I,[format.length$() + (args.length * 20)]);
 var argStrings=Clazz.array(String, [args.length]);
 for (var i=0; i < args.length; ++i) {
 if (args[i] == null ) argStrings[i]="<null>";
@@ -72,4 +71,4 @@ var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:30 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.8-v2');//Created 2020-02-19 10:58:20 Java2ScriptVisitor version 3.2.8-v2 net.sf.j2s.core.jar version 3.2.8-v2

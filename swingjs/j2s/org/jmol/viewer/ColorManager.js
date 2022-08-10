@@ -1,43 +1,31 @@
-(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'org.jmol.util.ColorEncoder','org.jmol.c.PAL','javajs.util.AU','org.jmol.viewer.JC','org.jmol.util.Elements','org.jmol.util.C','org.jmol.util.Logger']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ColorManager");
+(function(){var P$=Clazz.newPackage("org.jmol.viewer"),p$1={},I$=[[0,'org.jmol.util.ColorEncoder','org.jmol.c.PAL','javajs.util.AU','org.jmol.viewer.JC','org.jmol.util.Elements','org.jmol.util.C','org.jmol.util.Logger']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ColorManager");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ce=null;
-this.vwr=null;
-this.g3d=null;
-this.argbsCpk=null;
-this.altArgbsCpk=null;
-this.colorData=null;
-this.isDefaultColorRasmol=false;
-this.colixRubberband=0;
-this.colixBackgroundContrast=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.colixRubberband=22;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isDefaultColorRasmol'],'H',['colixRubberband','colixBackgroundContrast'],'O',['ce','org.jmol.util.ColorEncoder','vwr','org.jmol.viewer.Viewer','g3d','org.jmol.util.GData','argbsCpk','int[]','+altArgbsCpk','colorData','float[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_viewer_Viewer$org_jmol_util_GData', function (vwr, gdata) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.vwr=vwr;
-this.ce=Clazz.new_($I$(1).c$$org_jmol_util_ColorEncoder$org_jmol_viewer_Viewer,[null, vwr]);
+this.ce=Clazz.new_($I$(1,1).c$$org_jmol_util_ColorEncoder$org_jmol_viewer_Viewer,[null, vwr]);
 this.g3d=gdata;
 this.argbsCpk=$I$(2).argbsCpk;
-this.altArgbsCpk=$I$(3).arrayCopyRangeI$IA$I$I($I$(4).altArgbsCpk, 0, -1);
+this.altArgbsCpk=$I$(3,"arrayCopyRangeI$IA$I$I",[$I$(4).altArgbsCpk, 0, -1]);
 }, 1);
 
 Clazz.newMeth(C$, 'setDefaultColors$Z', function (isRasmol) {
 if (isRasmol) {
 this.isDefaultColorRasmol=true;
-this.argbsCpk=$I$(3).arrayCopyI$IA$I($I$(1).getRasmolScale$(), -1);
+this.argbsCpk=$I$(3,"arrayCopyI$IA$I",[$I$(1).getRasmolScale$(), -1]);
 } else {
 this.isDefaultColorRasmol=false;
 this.argbsCpk=$I$(2).argbsCpk;
-}this.altArgbsCpk=$I$(3).arrayCopyRangeI$IA$I$I($I$(4).altArgbsCpk, 0, -1);
+}this.altArgbsCpk=$I$(3,"arrayCopyRangeI$IA$I$I",[$I$(4).altArgbsCpk, 0, -1]);
 this.ce.createColorScheme$S$Z$Z((isRasmol ? "Rasmol=" : "Jmol="), true, true);
 for (var i=$I$(2).argbsCpk.length; --i >= 0; ) this.g3d.changeColixArgb$I$I(i, this.argbsCpk[i]);
 
@@ -83,7 +71,7 @@ if (id > 0) return this.g3d.getChangeableColix$I$I($I$(5).elementNumberMax + id,
 id=$I$(5).getElementNumber$I(id0);
 return this.g3d.getChangeableColix$I$I(id, this.argbsCpk[id]);
 case 2:
-index=$I$(1).quantize4$F$F$F$I(atom.getPartialCharge$(), -1, 1, $I$(4).PARTIAL_CHARGE_RANGE_SIZE);
+index=$I$(1,"quantize4$F$F$F$I",[atom.getPartialCharge$(), -1, 1, $I$(4).PARTIAL_CHARGE_RANGE_SIZE]);
 return this.g3d.getChangeableColix$I$I($I$(4).PARTIAL_CHARGE_COLIX_RED + index, $I$(4).argbsRwbScale[index]);
 case 3:
 index=atom.getFormalCharge$() - -4;
@@ -170,8 +158,8 @@ Clazz.newMeth(C$, 'setElementArgb$I$I', function (id, argb) {
 if (argb == 1073741991 && this.argbsCpk === $I$(2).argbsCpk  ) return $s$[0] = 0, $s$[0];
 argb=p$1.getJmolOrRasmolArgb$I$I.apply(this, [id, argb]);
 if (this.argbsCpk === $I$(2).argbsCpk ) {
-this.argbsCpk=$I$(3).arrayCopyRangeI$IA$I$I($I$(2).argbsCpk, 0, -1);
-this.altArgbsCpk=$I$(3).arrayCopyRangeI$IA$I$I($I$(4).altArgbsCpk, 0, -1);
+this.argbsCpk=$I$(3,"arrayCopyRangeI$IA$I$I",[$I$(2).argbsCpk, 0, -1]);
+this.altArgbsCpk=$I$(3,"arrayCopyRangeI$IA$I$I",[$I$(4).altArgbsCpk, 0, -1]);
 }if (id < $I$(5).elementNumberMax) {
 if (argb == 2147483647) return $I$(6).getColix$I(this.argbsCpk[id]);
 this.argbsCpk[id]=argb;
@@ -206,7 +194,7 @@ this.setPropertyColorRange$F$F(this.ce.lo, this.ce.hi);
 
 Clazz.newMeth(C$, 'setPropertyColorRange$F$F', function (min, max) {
 this.ce.setRange$F$F$Z(min, max, min > max );
-if ($I$(7).debugging) $I$(7).debug$S("ColorManager: color \"" + this.ce.getCurrentColorSchemeName$() + "\" range " + new Float(min).toString() + " " + new Float(max).toString() );
+if ($I$(7).debugging) $I$(7,"debug$S",["ColorManager: color \"" + this.ce.getCurrentColorSchemeName$() + "\" range " + new Float(min).toString() + " " + new Float(max).toString() ]);
 });
 
 Clazz.newMeth(C$, 'setPropertyColorScheme$S$Z$Z', function (colorScheme, isTranslucent, isOverloaded) {
@@ -220,12 +208,12 @@ this.ce.isTranslucent=isTranslucent;
 
 Clazz.newMeth(C$, 'getColorSchemeList$S', function (colorScheme) {
 var iPt=(colorScheme == null  || colorScheme.length$() == 0 ) ? this.ce.currentPalette : this.ce.createColorScheme$S$Z$Z(colorScheme, true, false);
-return $I$(1).getColorSchemeList$IA(this.ce.getColorSchemeArray$I(iPt));
+return $I$(1,"getColorSchemeList$IA",[this.ce.getColorSchemeArray$I(iPt)]);
 });
 
 Clazz.newMeth(C$, 'getColorEncoder$S', function (colorScheme) {
 if (colorScheme == null  || colorScheme.length$() == 0 ) return this.ce;
-var c=Clazz.new_($I$(1).c$$org_jmol_util_ColorEncoder$org_jmol_viewer_Viewer,[this.ce, this.vwr]);
+var c=Clazz.new_($I$(1,1).c$$org_jmol_util_ColorEncoder$org_jmol_viewer_Viewer,[this.ce, this.vwr]);
 c.currentPalette=c.createColorScheme$S$Z$Z(colorScheme, false, true);
 return (c.currentPalette == 2147483647 ? null : c);
 });
@@ -233,4 +221,4 @@ var $s$ = new Int16Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:55 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:53 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,65 +1,58 @@
-(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.image.ColorModel']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "OffScreenImageSource", null, null, 'java.awt.image.ImageProducer');
+(function(){var P$=Clazz.newPackage("sun.awt.image"),p$1={},I$=[[0,'java.util.Hashtable','java.awt.image.ColorModel']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "OffScreenImageSource", null, null, 'java.awt.image.ImageProducer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.image=null;
-this.width=0;
-this.height=0;
-this.properties=null;
-this.theConsumer=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_awt_image_BufferedImage$java_util_Hashtable', function (image, properties) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['width','height'],'O',['image','java.awt.image.BufferedImage','properties','java.util.Hashtable','theConsumer','java.awt.image.ImageConsumer']]]
+
+Clazz.newMeth(C$, 'c$$java_awt_image_BufferedImage$java_util_Hashtable',  function (image, properties) {
+;C$.$init$.apply(this);
 this.image=image;
+image.getRaster$().getDataBuffer$().秘setUntrackable$();
 if (properties != null ) {
 this.properties=properties;
 } else {
-this.properties=Clazz.new_($I$(1));
+this.properties=Clazz.new_($I$(1,1));
 }this.width=image.getWidth$();
 this.height=image.getHeight$();
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_image_BufferedImage', function (image) {
+Clazz.newMeth(C$, 'c$$java_awt_image_BufferedImage',  function (image) {
 C$.c$$java_awt_image_BufferedImage$java_util_Hashtable.apply(this, [image, null]);
 }, 1);
 
-Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'addConsumer$java_awt_image_ImageConsumer',  function (ic) {
 this.theConsumer=ic;
 p$1.produce.apply(this, []);
 });
 
-Clazz.newMeth(C$, 'isConsumer$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'isConsumer$java_awt_image_ImageConsumer',  function (ic) {
 return (ic === this.theConsumer );
 });
 
-Clazz.newMeth(C$, 'removeConsumer$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'removeConsumer$java_awt_image_ImageConsumer',  function (ic) {
 if (this.theConsumer === ic ) {
 this.theConsumer=null;
 }});
 
-Clazz.newMeth(C$, 'startProduction$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'startProduction$java_awt_image_ImageConsumer',  function (ic) {
 this.addConsumer$java_awt_image_ImageConsumer(ic);
 });
 
-Clazz.newMeth(C$, 'requestTopDownLeftRightResend$java_awt_image_ImageConsumer', function (ic) {
+Clazz.newMeth(C$, 'requestTopDownLeftRightResend$java_awt_image_ImageConsumer',  function (ic) {
 });
 
-Clazz.newMeth(C$, 'sendPixels', function () {
+Clazz.newMeth(C$, 'sendPixels',  function () {
 var cm=this.image.getColorModel$();
-this.image.checkHavePixels$();
 var raster=this.image.getRaster$();
 var numDataElements=raster.getNumDataElements$();
 var dataType=raster.getDataBuffer$().getDataType$();
 var scanline=Clazz.array(Integer.TYPE, [this.width * numDataElements]);
 var needToCvt=true;
+raster.getDataBuffer$().秘setDoCheckImage$Z(false);
 if (Clazz.instanceOf(cm, "java.awt.image.IndexColorModel")) {
 var pixels=Clazz.array(Byte.TYPE, [this.width]);
 this.theConsumer.setColorModel$java_awt_image_ColorModel(cm);
@@ -74,7 +67,7 @@ needToCvt=false;
 for (var y=0; y < this.height; y++) {
 raster.getPixels$I$I$I$I$IA(0, y, this.width, 1, scanline);
 for (var x=0; x < this.width; x++) {
-pixels[x]=((scanline[x]|0)|0);
+pixels[x]=(scanline[x]|0);
 }
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$BA$I$I(0, y, this.width, 1, cm, pixels, 0, this.width);
 }
@@ -126,9 +119,10 @@ scanline[x]=this.image.getRGB$I$I(x, y);
 }
 this.theConsumer.setPixels$I$I$I$I$java_awt_image_ColorModel$IA$I$I(0, y, this.width, 1, newcm, scanline, 0, this.width);
 }
-}}, p$1);
+}raster.getDataBuffer$().秘setDoCheckImage$Z(true);
+}, p$1);
 
-Clazz.newMeth(C$, 'produce', function () {
+Clazz.newMeth(C$, 'produce',  function () {
 try {
 this.theConsumer.setDimensions$I$I(this.image.getWidth$(), this.image.getHeight$());
 this.theConsumer.setProperties$java_util_Hashtable(this.properties);
@@ -146,4 +140,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:36 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

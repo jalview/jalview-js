@@ -1,44 +1,43 @@
-(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.HashMap','jalview.datamodel.Sequence','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],['jalview.commands.EditCommand','.Edit'],'jalview.datamodel.SequenceI','jalview.util.StringUtils','jalview.datamodel.SearchResults','jalview.datamodel.SequenceGroup','jalview.util.Comparison','java.util.Arrays','jalview.datamodel.AlignedCodonFrame','java.util.ArrayList','jalview.analysis.AlignmentSorter','jalview.datamodel.AlignmentOrder','jalview.commands.OrderCommand','jalview.util.ReverseListIterator']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MappingUtils");
+(function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'jalview.bin.Console','java.util.HashMap','jalview.datamodel.Sequence','jalview.commands.EditCommand',['jalview.commands.EditCommand','.Action'],['jalview.commands.EditCommand','.Edit'],'jalview.datamodel.SequenceI','jalview.util.StringUtils','jalview.datamodel.SearchResults','jalview.datamodel.SequenceGroup','jalview.util.Comparison','java.util.Arrays','jalview.datamodel.AlignedCodonFrame','java.util.ArrayList','jalview.analysis.AlignmentSorter','jalview.datamodel.AlignmentOrder','jalview.commands.OrderCommand','jalview.util.ReverseListIterator']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MappingUtils");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'mapCutOrPaste$jalview_commands_EditCommand_Edit$Z$java_util_List$jalview_commands_EditCommand$java_util_List', function (edit, undo, targetSeqs, result, mappings) {
+Clazz.newMeth(C$, 'mapCutOrPaste$jalview_commands_EditCommand_Edit$Z$java_util_List$jalview_commands_EditCommand$java_util_List',  function (edit, undo, targetSeqs, result, mappings) {
 var action=edit.getAction$();
 if (undo) {
 action=action.getUndoAction$();
-}System.err.println$S("MappingUtils.mapCutOrPaste not yet implemented");
+}$I$(1).error$S("MappingUtils.mapCutOrPaste not yet implemented");
 }, 1);
 
-Clazz.newMeth(C$, 'mapEditCommand$jalview_commands_EditCommand$Z$jalview_datamodel_AlignmentI$C$java_util_List', function (command, undo, mapTo, gapChar, mappings) {
+Clazz.newMeth(C$, 'mapEditCommand$jalview_commands_EditCommand$Z$jalview_datamodel_AlignmentI$C$java_util_List',  function (command, undo, mapTo, gapChar, mappings) {
 if (!mapTo.isNucleotide$()) {
 return null;
-}var targetCopies=Clazz.new_($I$(1));
+}var targetCopies=Clazz.new_($I$(2,1));
 for (var seq, $seq = mapTo.getSequences$().iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
 var ds=seq.getDatasetSequence$();
 if (ds != null ) {
-var copy=Clazz.new_($I$(2).c$$jalview_datamodel_SequenceI,[seq]);
+var copy=Clazz.new_($I$(3,1).c$$jalview_datamodel_SequenceI,[seq]);
 copy.setDatasetSequence$jalview_datamodel_SequenceI(ds);
-targetCopies.put$TK$TV(ds, copy);
+targetCopies.put$O$O(ds, copy);
 }}
 var originalSequences=command.priorState$Z(undo);
-var result=Clazz.new_($I$(3));
+var result=Clazz.new_($I$(4,1));
 var edits=command.getEditIterator$Z(!undo);
 while (edits.hasNext$()){
 var edit=edits.next$();
-if (edit.getAction$() === $I$(4).CUT  || edit.getAction$() === $I$(4).PASTE  ) {
+if (edit.getAction$() === $I$(5).CUT  || edit.getAction$() === $I$(5).PASTE  ) {
 C$.mapCutOrPaste$jalview_commands_EditCommand_Edit$Z$java_util_List$jalview_commands_EditCommand$java_util_List(edit, undo, mapTo.getSequences$(), result, mappings);
-} else if (edit.getAction$() === $I$(4).INSERT_GAP  || edit.getAction$() === $I$(4).DELETE_GAP  ) {
+} else if (edit.getAction$() === $I$(5).INSERT_GAP  || edit.getAction$() === $I$(5).DELETE_GAP  ) {
 C$.mapInsertOrDelete$jalview_commands_EditCommand_Edit$Z$java_util_Map$java_util_List$java_util_Map$C$jalview_commands_EditCommand$java_util_List(edit, undo, originalSequences, mapTo.getSequences$(), targetCopies, gapChar, result, mappings);
 }}
 return result.getSize$() > 0 ? result : null;
 }, 1);
 
-Clazz.newMeth(C$, 'mapInsertOrDelete$jalview_commands_EditCommand_Edit$Z$java_util_Map$java_util_List$java_util_Map$C$jalview_commands_EditCommand$java_util_List', function (edit, undo, originalSequences, targetSeqs, targetCopies, gapChar, result, mappings) {
+Clazz.newMeth(C$, 'mapInsertOrDelete$jalview_commands_EditCommand_Edit$Z$java_util_Map$java_util_List$java_util_Map$C$jalview_commands_EditCommand$java_util_List',  function (edit, undo, originalSequences, targetSeqs, targetCopies, gapChar, result, mappings) {
 var action=edit.getAction$();
 if (undo) {
 action=action.getUndoAction$();
@@ -61,39 +60,39 @@ var match=sr.getResults$jalview_datamodel_SequenceI$I$I(copyTarget, 0, copyTarge
 if (match != null ) {
 var ratio=3;
 var mappedCount=count * 3;
-var mappedEditPos=action === $I$(4).DELETE_GAP  ? match[0] - mappedCount : match[0];
-var e=Clazz.new_($I$(5).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$C, [result, null, action, Clazz.array($I$(6), -1, [targetSeq]), mappedEditPos, mappedCount, gapChar]);
+var mappedEditPos=action === $I$(5).DELETE_GAP  ? match[0] - mappedCount : match[0];
+var e=Clazz.new_([result, null, action, Clazz.array($I$(7), -1, [targetSeq]), mappedEditPos, mappedCount, gapChar],$I$(6,1).c$$jalview_commands_EditCommand_Action$jalview_datamodel_SequenceIA$I$I$C);
 result.addEdit$jalview_commands_EditCommand_Edit(e);
-if (action === $I$(4).INSERT_GAP ) {
-copyTarget.setSequence$S( String.instantialize($I$(7).insertCharAt$CA$I$I$C(copyTarget.getSequence$(), mappedEditPos, mappedCount, gapChar)));
-} else if (action === $I$(4).DELETE_GAP ) {
-copyTarget.setSequence$S( String.instantialize($I$(7).deleteChars$CA$I$I(copyTarget.getSequence$(), mappedEditPos, mappedEditPos + mappedCount)));
+if (action === $I$(5).INSERT_GAP ) {
+copyTarget.setSequence$S( String.instantialize($I$(8,"insertCharAt$CA$I$I$C",[copyTarget.getSequence$(), mappedEditPos, mappedCount, gapChar])));
+} else if (action === $I$(5).DELETE_GAP ) {
+copyTarget.setSequence$S( String.instantialize($I$(8,"deleteChars$CA$I$I",[copyTarget.getSequence$(), mappedEditPos, mappedEditPos + mappedCount])));
 }}}
-}if (action === $I$(4).INSERT_GAP ) {
-actedOn.setSequence$S( String.instantialize($I$(7).insertCharAt$CA$I$I$C(actedOn.getSequence$(), editPos, count, gapChar)));
-} else if (action === $I$(4).DELETE_GAP ) {
-actedOn.setSequence$S( String.instantialize($I$(7).deleteChars$CA$I$I(actedOn.getSequence$(), editPos, editPos + count)));
+}if (action === $I$(5).INSERT_GAP ) {
+actedOn.setSequence$S( String.instantialize($I$(8,"insertCharAt$CA$I$I$C",[actedOn.getSequence$(), editPos, count, gapChar])));
+} else if (action === $I$(5).DELETE_GAP ) {
+actedOn.setSequence$S( String.instantialize($I$(8,"deleteChars$CA$I$I",[actedOn.getSequence$(), editPos, editPos + count])));
 }}
 }, 1);
 
-Clazz.newMeth(C$, 'buildSearchResults$jalview_datamodel_SequenceI$I$java_util_List', function (seq, index, seqmappings) {
-var results=Clazz.new_($I$(8));
+Clazz.newMeth(C$, 'buildSearchResults$jalview_datamodel_SequenceI$I$java_util_List',  function (seq, index, seqmappings) {
+var results=Clazz.new_($I$(9,1));
 C$.addSearchResults$jalview_datamodel_SearchResultsI$jalview_datamodel_SequenceI$I$java_util_List(results, seq, index, seqmappings);
 return results;
 }, 1);
 
-Clazz.newMeth(C$, 'addSearchResults$jalview_datamodel_SearchResultsI$jalview_datamodel_SequenceI$I$java_util_List', function (results, seq, index, seqmappings) {
+Clazz.newMeth(C$, 'addSearchResults$jalview_datamodel_SearchResultsI$jalview_datamodel_SequenceI$I$java_util_List',  function (results, seq, index, seqmappings) {
 if (index >= seq.getStart$() && index <= seq.getEnd$() ) {
 for (var acf, $acf = seqmappings.iterator$(); $acf.hasNext$()&&((acf=($acf.next$())),1);) {
 acf.markMappedRegion$jalview_datamodel_SequenceI$I$jalview_datamodel_SearchResultsI(seq, index, results);
 }
 }}, 1);
 
-Clazz.newMeth(C$, 'mapSequenceGroup$jalview_datamodel_SequenceGroup$jalview_api_AlignViewportI$jalview_api_AlignViewportI', function (sg, mapFrom, mapTo) {
+Clazz.newMeth(C$, 'mapSequenceGroup$jalview_datamodel_SequenceGroup$jalview_api_AlignViewportI$jalview_api_AlignViewportI',  function (sg, mapFrom, mapTo) {
 var targetIsNucleotide=mapTo.isNucleotide$();
 var protein=targetIsNucleotide ? mapFrom : mapTo;
 var codonFrames=protein.getAlignment$().getCodonFrames$();
-var mappedGroup=Clazz.new_($I$(9).c$$jalview_datamodel_SequenceGroup,[sg]);
+var mappedGroup=Clazz.new_($I$(10,1).c$$jalview_datamodel_SequenceGroup,[sg]);
 mappedGroup.setColourScheme$jalview_schemes_ColourSchemeI(mapTo.getGlobalColourScheme$());
 mappedGroup.clear$();
 var minStartCol=-1;
@@ -102,25 +101,24 @@ var selectionStartRes=sg.getStartRes$();
 var selectionEndRes=sg.getEndRes$();
 for (var selected, $selected = sg.getSequences$().iterator$(); $selected.hasNext$()&&((selected=($selected.next$())),1);) {
 var firstUngappedPos=selectionStartRes;
-while (firstUngappedPos <= selectionEndRes && $I$(10).isGap$C(selected.getCharAt$I(firstUngappedPos)) ){
-firstUngappedPos++;
+while (firstUngappedPos <= selectionEndRes && $I$(11,"isGap$C",[selected.getCharAt$I(firstUngappedPos)]) ){
+++firstUngappedPos;
 }
 if (firstUngappedPos > selectionEndRes) {
 continue;
 }var lastUngappedPos=selectionEndRes;
-while (lastUngappedPos >= selectionStartRes && $I$(10).isGap$C(selected.getCharAt$I(lastUngappedPos)) ){
-lastUngappedPos--;
+while (lastUngappedPos >= selectionStartRes && $I$(11,"isGap$C",[selected.getCharAt$I(lastUngappedPos)]) ){
+--lastUngappedPos;
 }
 var startResiduePos=selected.findPosition$I(firstUngappedPos);
 var endResiduePos=selected.findPosition$I(lastUngappedPos);
-for (var acf, $acf = codonFrames.iterator$(); $acf.hasNext$()&&((acf=($acf.next$())),1);) {
-var mappedSequence=targetIsNucleotide ? acf.getDnaForAaSeq$jalview_datamodel_SequenceI(selected) : acf.getAaForDnaSeq$jalview_datamodel_SequenceI(selected);
-if (mappedSequence != null ) {
 for (var seq, $seq = mapTo.getAlignment$().getSequences$().iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
 var mappedStartResidue=0;
 var mappedEndResidue=0;
-if (seq.getDatasetSequence$() === mappedSequence ) {
-var mapping=$I$(11).asList$TTA(Clazz.array($I$(12), -1, [acf]));
+for (var acf, $acf = codonFrames.iterator$(); $acf.hasNext$()&&((acf=($acf.next$())),1);) {
+for (var map, $map = acf.getMappings$().iterator$(); $map.hasNext$()&&((map=($map.next$())),1);) {
+if (map.covers$jalview_datamodel_SequenceI(selected) && map.covers$jalview_datamodel_SequenceI(seq) ) {
+var mapping=$I$(12,"asList$OA",[Clazz.array($I$(13), -1, [acf])]);
 var sr=C$.buildSearchResults$jalview_datamodel_SequenceI$I$java_util_List(selected, startResiduePos, mapping);
 for (var m, $m = sr.getResults$().iterator$(); $m.hasNext$()&&((m=($m.next$())),1);) {
 mappedStartResidue=m.getStart$();
@@ -138,45 +136,47 @@ maxEndCol=maxEndCol == -1 ? mappedEndCol : Math.max(maxEndCol, mappedEndCol);
 mappedGroup.addSequence$jalview_datamodel_SequenceI$Z(seq, false);
 break;
 }}
-}}
+}
+}
 }
 mappedGroup.setStartRes$I(minStartCol < 0 ? 0 : minStartCol);
 mappedGroup.setEndRes$I(maxEndCol < 0 ? 0 : maxEndCol);
 return mappedGroup;
 }, 1);
 
-Clazz.newMeth(C$, 'mapOrderCommand$jalview_commands_OrderCommand$Z$jalview_datamodel_AlignmentI$java_util_List', function (command, undo, mapTo, mappings) {
+Clazz.newMeth(C$, 'mapOrderCommand$jalview_commands_OrderCommand$Z$jalview_datamodel_AlignmentI$java_util_List',  function (command, undo, mapTo, mappings) {
 var sortOrder=command.getSequenceOrder$Z(undo);
-var mappedOrder=Clazz.new_($I$(13));
+var mappedOrder=Clazz.new_($I$(14,1));
 var j=0;
 var mappingToNucleotide=mapTo.isNucleotide$();
 for (var seq, $seq = 0, $$seq = sortOrder; $seq<$$seq.length&&((seq=($$seq[$seq])),1);$seq++) {
 for (var acf, $acf = mappings.iterator$(); $acf.hasNext$()&&((acf=($acf.next$())),1);) {
-var mappedSeq=mappingToNucleotide ? acf.getDnaForAaSeq$jalview_datamodel_SequenceI(seq) : acf.getAaForDnaSeq$jalview_datamodel_SequenceI(seq);
-if (mappedSeq != null ) {
 for (var seq2, $seq2 = mapTo.getSequences$().iterator$(); $seq2.hasNext$()&&((seq2=($seq2.next$())),1);) {
-if (seq2.getDatasetSequence$() === mappedSeq ) {
-mappedOrder.add$TE(seq2);
-j++;
+var peptide=mappingToNucleotide ? seq2 : seq;
+var cds=mappingToNucleotide ? seq : seq2;
+var s2s=acf.getCoveringMapping$jalview_datamodel_SequenceI$jalview_datamodel_SequenceI(cds, peptide);
+if (s2s != null ) {
+mappedOrder.add$O(seq2);
+++j;
 break;
 }}
-}}
+}
 }
 if (j == 0) {
 return null;
 }if (j < mapTo.getHeight$()) {
 for (var seq, $seq = mapTo.getSequences$().iterator$(); $seq.hasNext$()&&((seq=($seq.next$())),1);) {
 if (!mappedOrder.contains$O(seq)) {
-mappedOrder.add$TE(seq);
+mappedOrder.add$O(seq);
 }}
-}var mappedOrderArray=mappedOrder.toArray$TTA(Clazz.array($I$(6), [mappedOrder.size$()]));
+}var mappedOrderArray=mappedOrder.toArray$OA(Clazz.array($I$(7), [mappedOrder.size$()]));
 var oldOrder=mapTo.getSequencesArray$();
-$I$(14).sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder(mapTo, Clazz.new_($I$(15).c$$jalview_datamodel_SequenceIA,[mappedOrderArray]));
-var result=Clazz.new_($I$(16).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI,[command.getDescription$(), oldOrder, mapTo]);
+$I$(15,"sortBy$jalview_datamodel_AlignmentI$jalview_datamodel_AlignmentOrder",[mapTo, Clazz.new_($I$(16,1).c$$jalview_datamodel_SequenceIA,[mappedOrderArray])]);
+var result=Clazz.new_([command.getDescription$(), oldOrder, mapTo],$I$(17,1).c$$S$jalview_datamodel_SequenceIA$jalview_datamodel_AlignmentI);
 return result;
 }, 1);
 
-Clazz.newMeth(C$, 'mapColumnSelection$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_api_AlignViewportI$jalview_api_AlignViewportI$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns', function (colsel, hiddencols, mapFrom, mapTo, newColSel, newHidden) {
+Clazz.newMeth(C$, 'mapColumnSelection$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns$jalview_api_AlignViewportI$jalview_api_AlignViewportI$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns',  function (colsel, hiddencols, mapFrom, mapTo, newColSel, newHidden) {
 var targetIsNucleotide=mapTo.isNucleotide$();
 var protein=targetIsNucleotide ? mapFrom : mapTo;
 var codonFrames=protein.getAlignment$().getCodonFrames$();
@@ -195,7 +195,7 @@ C$.mapHiddenColumns$IA$java_util_List$jalview_datamodel_HiddenColumns$java_util_
 return;
 }, 1);
 
-Clazz.newMeth(C$, 'mapHiddenColumns$IA$java_util_List$jalview_datamodel_HiddenColumns$java_util_List$java_util_List$C', function (hidden, mappings, mappedColumns, fromSequences, toSequences, fromGapChar) {
+Clazz.newMeth(C$, 'mapHiddenColumns$IA$java_util_List$jalview_datamodel_HiddenColumns$java_util_List$java_util_List$C',  function (hidden, mappings, mappedColumns, fromSequences, toSequences, fromGapChar) {
 for (var col=hidden[0]; col <= hidden[1]; col++) {
 var mappedTo=C$.findMappedColumns$I$java_util_List$java_util_List$java_util_List$C(col, mappings, fromSequences, toSequences, fromGapChar);
 if (mappedTo != null ) {
@@ -203,7 +203,7 @@ mappedColumns.hideColumns$I$I(mappedTo[0] - 1, mappedTo[1] - 1);
 }}
 }, 1);
 
-Clazz.newMeth(C$, 'mapColumn$I$java_util_List$jalview_datamodel_ColumnSelection$java_util_List$java_util_List$C', function (col, mappings, mappedColumns, fromSequences, toSequences, fromGapChar) {
+Clazz.newMeth(C$, 'mapColumn$I$java_util_List$jalview_datamodel_ColumnSelection$java_util_List$java_util_List$C',  function (col, mappings, mappedColumns, fromSequences, toSequences, fromGapChar) {
 var mappedTo=C$.findMappedColumns$I$java_util_List$java_util_List$java_util_List$C(col, mappings, fromSequences, toSequences, fromGapChar);
 if (mappedTo != null ) {
 for (var i=mappedTo[0]; i <= mappedTo[1]; i++) {
@@ -211,7 +211,7 @@ mappedColumns.addElement$I(i - 1);
 }
 }}, 1);
 
-Clazz.newMeth(C$, 'findMappedColumns$I$java_util_List$java_util_List$java_util_List$C', function (col, mappings, fromSequences, toSequences, fromGapChar) {
+Clazz.newMeth(C$, 'findMappedColumns$I$java_util_List$java_util_List$java_util_List$C',  function (col, mappings, fromSequences, toSequences, fromGapChar) {
 var mappedTo=Clazz.array(Integer.TYPE, -1, [2147483647, -2147483648]);
 var found=false;
 for (var fromSeq, $fromSeq = fromSequences.iterator$(); $fromSeq.hasNext$()&&((fromSeq=($fromSeq.next$())),1);) {
@@ -224,7 +224,7 @@ var mappedStartResidue=m.getStart$();
 var mappedEndResidue=m.getEnd$();
 var mappedSeq=m.getSequence$();
 for (var toSeq, $toSeq = toSequences.iterator$(); $toSeq.hasNext$()&&((toSeq=($toSeq.next$())),1);) {
-if (toSeq.getDatasetSequence$() === mappedSeq ) {
+if (toSeq.getDatasetSequence$() === mappedSeq  && mappedStartResidue >= toSeq.getStart$()  && mappedEndResidue <= toSeq.getEnd$() ) {
 var mappedStartCol=toSeq.findIndex$I(mappedStartResidue);
 var mappedEndCol=toSeq.findIndex$I(mappedEndResidue);
 mappedTo[0]=Math.min(mappedTo[0], mappedStartCol);
@@ -237,8 +237,8 @@ break;
 return found ? mappedTo : null;
 }, 1);
 
-Clazz.newMeth(C$, 'findCodonsFor$jalview_datamodel_SequenceI$I$java_util_List', function (seq, col, mappings) {
-var result=Clazz.new_($I$(13));
+Clazz.newMeth(C$, 'findCodonsFor$jalview_datamodel_SequenceI$I$java_util_List',  function (seq, col, mappings) {
+var result=Clazz.new_($I$(14,1));
 var dsPos=seq.findPosition$I(col);
 for (var mapping, $mapping = mappings.iterator$(); $mapping.hasNext$()&&((mapping=($mapping.next$())),1);) {
 if (mapping.involvesSequence$jalview_datamodel_SequenceI(seq)) {
@@ -249,7 +249,7 @@ result.addAll$java_util_Collection(codons);
 return result;
 }, 1);
 
-Clazz.newMeth(C$, 'flattenRanges$IA', function (ranges) {
+Clazz.newMeth(C$, 'flattenRanges$IA',  function (ranges) {
 var count=0;
 for (var i=0; i < ranges.length - 1; i+=2) {
 count+=Math.abs(ranges[i + 1] - ranges[i]) + 1;
@@ -268,12 +268,12 @@ from+=step;
 return result;
 }, 1);
 
-Clazz.newMeth(C$, 'findMappingsForSequence$jalview_datamodel_SequenceI$java_util_List', function (sequence, mappings) {
+Clazz.newMeth(C$, 'findMappingsForSequence$jalview_datamodel_SequenceI$java_util_List',  function (sequence, mappings) {
 return C$.findMappingsForSequenceAndOthers$jalview_datamodel_SequenceI$java_util_List$java_util_List(sequence, mappings, null);
 }, 1);
 
-Clazz.newMeth(C$, 'findMappingsForSequenceAndOthers$jalview_datamodel_SequenceI$java_util_List$java_util_List', function (sequence, mappings, filterList) {
-var result=Clazz.new_($I$(13));
+Clazz.newMeth(C$, 'findMappingsForSequenceAndOthers$jalview_datamodel_SequenceI$java_util_List$java_util_List',  function (sequence, mappings, filterList) {
+var result=Clazz.new_($I$(14,1));
 if (sequence == null  || mappings == null  ) {
 return result;
 }for (var mapping, $mapping = mappings.iterator$(); $mapping.hasNext$()&&((mapping=($mapping.next$())),1);) {
@@ -284,22 +284,22 @@ var otherDataset=otherseq.getDatasetSequence$();
 if (otherseq === sequence  || otherseq === sequence.getDatasetSequence$()   || (otherDataset != null  && (otherDataset === sequence  || otherDataset === sequence.getDatasetSequence$()  ) ) ) {
 continue;
 }if (mapping.involvesSequence$jalview_datamodel_SequenceI(otherseq)) {
-result.add$TE(mapping);
+result.add$O(mapping);
 break;
 }}
 } else {
-result.add$TE(mapping);
+result.add$O(mapping);
 }}}
 return result;
 }, 1);
 
-Clazz.newMeth(C$, 'getLength$java_util_List', function (ranges) {
+Clazz.newMeth(C$, 'getLength$java_util_List',  function (ranges) {
 if (ranges == null ) {
 return 0;
 }var length=0;
 for (var range, $range = ranges.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
 if (range.length % 2 != 0) {
-System.err.println$S("Error unbalance start/end ranges: " + ranges.toString());
+$I$(1,"error$S",["Error unbalance start/end ranges: " + ranges.toString()]);
 return 0;
 }for (var i=0; i < range.length - 1; i+=2) {
 length+=Math.abs(range[i + 1] - range[i]) + 1;
@@ -308,7 +308,7 @@ length+=Math.abs(range[i + 1] - range[i]) + 1;
 return length;
 }, 1);
 
-Clazz.newMeth(C$, 'contains$java_util_List$I', function (ranges, value) {
+Clazz.newMeth(C$, 'contains$java_util_List$I',  function (ranges, value) {
 if (ranges == null ) {
 return false;
 }for (var range, $range = ranges.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
@@ -320,10 +320,10 @@ return true;
 return false;
 }, 1);
 
-Clazz.newMeth(C$, 'removeStartPositions$I$IA', function (removeCount, ranges) {
+Clazz.newMeth(C$, 'removeStartPositions$I$IA',  function (removeCount, ranges) {
 if (removeCount <= 0) {
 return ranges;
-}var copy=$I$(11).copyOf$IA$I(ranges, ranges.length);
+}var copy=$I$(12).copyOf$IA$I(ranges, ranges.length);
 var sxpos=-1;
 var cdspos=0;
 for (var x=0; x < copy.length && sxpos == -1 ; x+=2) {
@@ -343,7 +343,7 @@ return nxon;
 }return copy;
 }, 1);
 
-Clazz.newMeth(C$, 'rangeContains$IA$IA', function (range, queryRange) {
+Clazz.newMeth(C$, 'rangeContains$IA$IA',  function (range, queryRange) {
 if (range == null  || queryRange == null   || range.length != 2  || queryRange.length != 2 ) {
 return false;
 }var min=Math.min(range[0], range[1]);
@@ -351,17 +351,17 @@ var max=Math.max(range[0], range[1]);
 return (min <= queryRange[0] && max >= queryRange[0]  && min <= queryRange[1]  && max >= queryRange[1] );
 }, 1);
 
-Clazz.newMeth(C$, 'removeEndPositions$I$java_util_List', function (positions, ranges) {
+Clazz.newMeth(C$, 'removeEndPositions$I$java_util_List',  function (positions, ranges) {
 var toRemove=positions;
-var it=Clazz.new_($I$(17).c$$java_util_List,[ranges]);
+var it=Clazz.new_($I$(18,1).c$$java_util_List,[ranges]);
 while (toRemove > 0){
 var endRange=it.next$();
 if (endRange.length != 2) {
-System.err.println$S("MappingUtils.removeEndPositions doesn\'t handle multiple  ranges");
+$I$(1).error$S("MappingUtils.removeEndPositions doesn\'t handle multiple  ranges");
 return;
 }var length=endRange[1] - endRange[0] + 1;
 if (length <= 0) {
-System.err.println$S("MappingUtils.removeEndPositions doesn\'t handle reverse strand");
+$I$(1).error$S("MappingUtils.removeEndPositions doesn\'t handle reverse strand");
 return;
 }if (length > toRemove) {
 endRange[1]-=toRemove;
@@ -372,6 +372,36 @@ it.remove$();
 }}
 }, 1);
 
+Clazz.newMeth(C$, 'rangeListToArray$java_util_List',  function (ranges) {
+var rangeCount=ranges.size$();
+var result=Clazz.array(Integer.TYPE, [rangeCount * 2]);
+var j=0;
+for (var i=0; i < rangeCount; i++) {
+var range=ranges.get$I(i);
+result[j++]=range[0];
+result[j++]=range[1];
+}
+return result;
+}, 1);
+
+Clazz.newMeth(C$, 'findOverlap$java_util_List$I$I',  function (ranges, begin, end) {
+var foundStart=false;
+var from=0;
+var to=0;
+for (var range, $range = ranges.iterator$(); $range.hasNext$()&&((range=($range.next$())),1);) {
+if (!foundStart) {
+if (range[0] >= begin) {
+foundStart=true;
+from=Math.max(range[0], begin);
+} else if (range[1] >= begin) {
+foundStart=true;
+from=begin;
+}}if (range[0] <= end) {
+to=Math.min(end, range[1]);
+}}
+return foundStart && to >= from  ? Clazz.array(Integer.TYPE, -1, [from, to]) : null;
+}, 1);
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:17 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

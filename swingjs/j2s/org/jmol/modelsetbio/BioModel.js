@@ -1,28 +1,20 @@
-(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'org.jmol.modelsetbio.BioModelSet','javajs.util.AU','org.jmol.api.Interface','org.jmol.modelsetbio.BioPolymer','javajs.util.BS','javajs.util.Lst','java.util.Hashtable','org.jmol.util.Escape','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BioModel", null, 'org.jmol.modelset.Model');
+(function(){var P$=Clazz.newPackage("org.jmol.modelsetbio"),p$1={},I$=[[0,'org.jmol.modelsetbio.BioModelSet','javajs.util.AU','org.jmol.api.Interface','org.jmol.modelsetbio.BioPolymer','javajs.util.BS','javajs.util.Lst','java.util.Hashtable','org.jmol.util.Escape','javajs.util.SB']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BioModel", null, 'org.jmol.modelset.Model');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vwr=null;
-this.bioPolymerCount=0;
-this.bioPolymers=null;
-this.isMutated=false;
-this.defaultStructure=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.bioPolymerCount=0;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isMutated'],'I',['bioPolymerCount'],'S',['defaultStructure'],'O',['vwr','org.jmol.viewer.Viewer','bioPolymers','org.jmol.modelsetbio.BioPolymer[]']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_modelset_ModelSet$I$I$S$java_util_Properties$java_util_Map', function (modelSet, modelIndex, trajectoryBaseIndex, jmolData, properties, auxiliaryInfo) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this.vwr=modelSet.vwr;
 this.set$org_jmol_modelset_ModelSet$I$I$S$java_util_Properties$java_util_Map(modelSet, modelIndex, trajectoryBaseIndex, jmolData, properties, auxiliaryInfo);
 this.isBioModel=true;
-if (modelSet.bioModelset == null ) modelSet.bioModelset=Clazz.new_($I$(1)).set$org_jmol_viewer_Viewer$org_jmol_modelset_ModelSet(this.vwr, this.ms);
+if (modelSet.bioModelset == null ) modelSet.bioModelset=Clazz.new_($I$(1,1)).set$org_jmol_viewer_Viewer$org_jmol_modelset_ModelSet(this.vwr, this.ms);
 this.clearBioPolymers$();
 modelSet.am[modelIndex]=this;
 this.pdbID=auxiliaryInfo.get$O("name");
@@ -90,12 +82,12 @@ return true;
 Clazz.newMeth(C$, 'getBioBranches$javajs_util_Lst', function (biobranches) {
 var bsBranch;
 for (var j=0; j < this.bioPolymerCount; j++) {
-bsBranch=Clazz.new_($I$(5));
+bsBranch=Clazz.new_($I$(5,1));
 this.bioPolymers[j].getRange$javajs_util_BS$Z(bsBranch, this.isMutated);
 var iAtom=bsBranch.nextSetBit$I(0);
 if (iAtom >= 0) {
-if (biobranches == null ) biobranches=Clazz.new_($I$(6));
-biobranches.addLast$TV(bsBranch);
+if (biobranches == null ) biobranches=Clazz.new_($I$(6,1));
+biobranches.addLast$O(bsBranch);
 }}
 return biobranches;
 });
@@ -105,12 +97,12 @@ return this.bioPolymerCount;
 });
 
 Clazz.newMeth(C$, 'getCachedAnnotationMap$S$O', function (key, ann) {
-var cache=(this.dssrCache == null  && ann != null   ? this.dssrCache=Clazz.new_($I$(7)) : this.dssrCache);
+var cache=(this.dssrCache == null  && ann != null   ? this.dssrCache=Clazz.new_($I$(7,1)) : this.dssrCache);
 if (cache == null ) return null;
 var annotv=cache.get$O(key);
 if (annotv == null  && ann != null  ) {
 annotv=(Clazz.instanceOf(ann, "org.jmol.script.SV") || Clazz.instanceOf(ann, "java.util.Hashtable")  ? ann : this.vwr.parseJSONMap$S(ann));
-cache.put$TK$TV(key, annotv);
+cache.put$O$O(key, annotv);
 }return (Clazz.instanceOf(annotv, "org.jmol.script.SV") || Clazz.instanceOf(annotv, "java.util.Hashtable")  ? annotv : null);
 });
 
@@ -122,7 +114,7 @@ var atoms=this.ms.at;
 var g=null;
 var ch="\u0000";
 var conformationIndex=conformationIndex0;
-var bsFound=Clazz.new_($I$(5));
+var bsFound=Clazz.new_($I$(5,1));
 for (var i=bsAtoms.nextSetBit$I(0); i >= 0; i=bsAtoms.nextSetBit$I(i + 1)) {
 var atom=atoms[i];
 var altloc=atom.altloc;
@@ -146,12 +138,12 @@ if (doSet) for (var j=this.bioPolymerCount; --j >= 0; ) this.bioPolymers[j].setC
 });
 
 Clazz.newMeth(C$, 'getDefaultLargePDBRendering$javajs_util_SB$I', function (sb, maxAtoms) {
-var bs=Clazz.new_($I$(5));
+var bs=Clazz.new_($I$(5,1));
 if (this.getBondCount$() == 0) bs=this.bsAtoms;
 if (bs !== this.bsAtoms ) for (var i=0; i < this.bioPolymerCount; i++) this.bioPolymers[i].getRange$javajs_util_BS$Z(bs, this.isMutated);
 
 if (bs.nextSetBit$I(0) < 0) return;
-var bs2=Clazz.new_($I$(5));
+var bs2=Clazz.new_($I$(5,1));
 if (bs === this.bsAtoms ) {
 bs2=bs;
 } else {
@@ -180,7 +172,7 @@ this.ms.bioModelset.getBioExt$().getPdbDataM$org_jmol_modelsetbio_BioModel$org_j
 
 Clazz.newMeth(C$, 'getRasmolHydrogenBonds$javajs_util_BS$javajs_util_BS$javajs_util_Lst$Z$I$Z$javajs_util_BS$I', function (bsA, bsB, vHBonds, nucleicOnly, nMax, dsspIgnoreHydrogens, bsHBonds, version) {
 var doAdd=(vHBonds == null );
-if (doAdd) vHBonds=Clazz.new_($I$(6));
+if (doAdd) vHBonds=Clazz.new_($I$(6,1));
 if (nMax < 0) nMax=2147483647;
 var asDSSX=(bsB == null );
 var bp;
@@ -222,7 +214,7 @@ if (bsHBonds != null ) bsHBonds.set$I(index);
 });
 
 Clazz.newMeth(C$, 'getUnitID$org_jmol_modelset_Atom$I', function (atom, flags) {
-var sb=Clazz.new_($I$(9));
+var sb=Clazz.new_($I$(9,1));
 var m=atom.group;
 var noTrim=((flags & 16) != 16);
 var ch=((flags & 8) == 8 ? m.getInsertionCode$() : "\u0000");
@@ -247,7 +239,7 @@ for (var ip=0; ip < this.bioPolymerCount; ip++) this.bioPolymers[ip].recalculate
 });
 
 Clazz.newMeth(C$, 'resetRasmolBonds$javajs_util_BS$I', function (bs, dsspVersion) {
-var bsDelete=Clazz.new_($I$(5));
+var bsDelete=Clazz.new_($I$(5,1));
 this.hasRasmolHBonds=false;
 var am=this.ms.am;
 var bo=this.ms.bo;
@@ -265,4 +257,4 @@ if (this.auxiliaryInfo.containsKey$O("dssr")) this.vwr.getAnnotationParser$Z(tru
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:35:54 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,21 +1,15 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),I$=[[0,'fr.orsay.lri.varna.models.export.SecStrDrawingProducer','java.io.FileWriter','fr.orsay.lri.varna.exceptions.ExceptionWritingForbidden']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SecStrProducerGraphics", null, null, 'fr.orsay.lri.varna.models.export.VueVARNAGraphics');
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models.export"),I$=[[0,'fr.orsay.lri.varna.models.export.SecStrDrawingProducer','java.io.FileWriter','fr.orsay.lri.varna.exceptions.ExceptionWritingForbidden']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SecStrProducerGraphics", null, null, 'fr.orsay.lri.varna.models.export.VueVARNAGraphics');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._ss=null;
-this._thickness=0;
-this._color=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['D',['_thickness'],'O',['_ss','fr.orsay.lri.varna.models.export.SecStrDrawingProducer','_color','java.awt.Color']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_models_export_SecStrDrawingProducer', function (ss) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._ss=ss;
 }, 1);
 
@@ -87,12 +81,12 @@ this._thickness=t;
 Clazz.newMeth(C$, 'saveToDisk$S', function (path) {
 var fout;
 try {
-fout=Clazz.new_($I$(2).c$$S,[path]);
+fout=Clazz.new_($I$(2,1).c$$S,[path]);
 fout.write$S(this._ss.export$());
 fout.close$();
 } catch (e) {
 if (Clazz.exceptionOf(e,"java.io.IOException")){
-throw Clazz.new_($I$(3).c$$S,[e.getMessage$()]);
+throw Clazz.new_([e.getMessage$()],$I$(3,1).c$$S);
 } else {
 throw e;
 }
@@ -101,4 +95,4 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:45 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

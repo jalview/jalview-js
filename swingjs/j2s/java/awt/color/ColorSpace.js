@@ -1,28 +1,22 @@
 (function(){var P$=Clazz.newPackage("java.awt.color"),I$=[];
-var C$=Clazz.newClass(P$, "ColorSpace");
-C$.sRGBspace=null;
+/*c*/var C$=Clazz.newClass(P$, "ColorSpace");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.type=0;
-this.numComponents=0;
-this.compName=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.compName=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$I$I', function (type, numcomponents) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['type','numComponents'],'O',['compName','String[]']]
+,['O',['sRGBspace','java.awt.color.ColorSpace','+GRAYspace']]]
+
+Clazz.newMeth(C$, 'c$$I$I',  function (type, numcomponents) {
+;C$.$init$.apply(this);
 this.type=type;
 this.numComponents=numcomponents;
 }, 1);
 
-Clazz.newMeth(C$, 'getInstance$I', function (colorspace) {
+Clazz.newMeth(C$, 'getInstance$I',  function (colorspace) {
 var theColorSpace;
 switch (colorspace) {
 default:
@@ -31,31 +25,37 @@ if (C$.sRGBspace == null ) {
 C$.sRGBspace=Clazz.new_(C$.c$$I$I,[5, 3]);
 }theColorSpace=C$.sRGBspace;
 break;
+case 1003:
+{
+if (C$.GRAYspace == null ) {
+C$.GRAYspace=Clazz.new_(C$.c$$I$I,[6, 1]);
+}theColorSpace=C$.GRAYspace;
+}break;
 }
 return theColorSpace;
 }, 1);
 
-Clazz.newMeth(C$, 'isCS_sRGB$', function () {
+Clazz.newMeth(C$, 'isCS_sRGB$',  function () {
 return (this === C$.sRGBspace );
 });
 
-Clazz.newMeth(C$, 'toRGB$FA', function (colorvalue) {
+Clazz.newMeth(C$, 'toRGB$FA',  function (colorvalue) {
 return colorvalue;
 });
 
-Clazz.newMeth(C$, 'fromRGB$FA', function (rgbvalue) {
+Clazz.newMeth(C$, 'fromRGB$FA',  function (rgbvalue) {
 return rgbvalue;
 });
 
-Clazz.newMeth(C$, 'getType$', function () {
+Clazz.newMeth(C$, 'getType$',  function () {
 return this.type;
 });
 
-Clazz.newMeth(C$, 'getNumComponents$', function () {
+Clazz.newMeth(C$, 'getNumComponents$',  function () {
 return this.numComponents;
 });
 
-Clazz.newMeth(C$, 'getName$I', function (idx) {
+Clazz.newMeth(C$, 'getName$I',  function (idx) {
 if ((idx < 0) || (idx > this.numComponents - 1) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Component index out of range: " + idx]);
 }if (this.compName == null ) {
@@ -103,13 +103,13 @@ this.compName=tmp;
 }return this.compName[idx];
 });
 
-Clazz.newMeth(C$, 'getMinValue$I', function (component) {
+Clazz.newMeth(C$, 'getMinValue$I',  function (component) {
 if ((component < 0) || (component > this.numComponents - 1) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Component index out of range: " + component]);
 }return 0.0;
 });
 
-Clazz.newMeth(C$, 'getMaxValue$I', function (component) {
+Clazz.newMeth(C$, 'getMaxValue$I',  function (component) {
 if ((component < 0) || (component > this.numComponents - 1) ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Component index out of range: " + component]);
 }return 1.0;
@@ -117,4 +117,4 @@ throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["Component index o
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:26 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:50 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

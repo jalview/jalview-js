@@ -1,25 +1,20 @@
-(function(){var P$=Clazz.newPackage("javax.swing.event"),p$1={},I$=[[0,'java.lang.reflect.Array']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "EventListenerList");
-C$.NULL_ARRAY=null;
+(function(){var P$=Clazz.newPackage("javax.swing.event"),p$1={},I$=[[0,'java.lang.reflect.Array']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "EventListenerList");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.NULL_ARRAY=Clazz.array(java.lang.Object, [0]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.listenerList=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.listenerList=C$.NULL_ARRAY;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getListenerList$', function () {
+C$.$fields$=[['O',['+listenerList']]
+,['O',['NULL_ARRAY','Object[]']]]
+
+Clazz.newMeth(C$, 'getListenerList$',  function () {
 return this.listenerList;
 });
 
-Clazz.newMeth(C$, 'getListeners$Class', function (t) {
+Clazz.newMeth(C$, 'getListeners$Class',  function (t) {
 var lList=this.listenerList;
 var n=p$1.getListenerCount$OA$Class.apply(this, [lList, t]);
 var result=Clazz.array(t, n);
@@ -31,24 +26,24 @@ result[j++]=lList[i + 1];
 return result;
 });
 
-Clazz.newMeth(C$, 'getListenerCount$', function () {
+Clazz.newMeth(C$, 'getListenerCount$',  function () {
 return (this.listenerList.length/2|0);
 });
 
-Clazz.newMeth(C$, 'getListenerCount$Class', function (t) {
+Clazz.newMeth(C$, 'getListenerCount$Class',  function (t) {
 var lList=this.listenerList;
 return p$1.getListenerCount$OA$Class.apply(this, [lList, t]);
 });
 
-Clazz.newMeth(C$, 'getListenerCount$OA$Class', function (list, t) {
+Clazz.newMeth(C$, 'getListenerCount$OA$Class',  function (list, t) {
 var count=0;
 for (var i=0; i < list.length; i+=2) {
-if (t === list[i] ) count++;
+if (t === list[i] ) ++count;
 }
 return count;
 }, p$1);
 
-Clazz.newMeth(C$, 'add$Class$TT', function (t, l) {
+Clazz.newMeth(C$, 'add$Class$java_util_EventListener',  function (t, l) {
 if (l == null ) {
 return;
 }if (this.listenerList === C$.NULL_ARRAY ) {
@@ -62,7 +57,7 @@ tmp[i + 1]=l;
 this.listenerList=tmp;
 }});
 
-Clazz.newMeth(C$, 'remove$Class$TT', function (t, l) {
+Clazz.newMeth(C$, 'remove$Class$java_util_EventListener',  function (t, l) {
 if (l == null ) {
 return;
 }var index=-1;
@@ -78,17 +73,21 @@ if (index < tmp.length) System.arraycopy$O$I$O$I$I(this.listenerList, index + 2,
 this.listenerList=(tmp.length == 0) ? C$.NULL_ARRAY : tmp;
 }});
 
-Clazz.newMeth(C$, 'toString', function () {
+Clazz.newMeth(C$, 'toString',  function () {
 var lList=this.listenerList;
 var s="EventListenerList: ";
-s += (lList.length/2|0) + " listeners: ";
+s+=(lList.length/2|0) + " listeners: ";
 for (var i=0; i <= lList.length - 2; i+=2) {
-s += " type " + (lList[i]).getName$();
-s += " listener " + lList[i + 1];
+s+=" type " + (lList[i]).getName$();
+s+=" listener " + lList[i + 1];
 }
 return s;
 });
 
+C$.$static$=function(){C$.$static$=0;
+C$.NULL_ARRAY=Clazz.array(java.lang.Object, [0]);
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:09:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

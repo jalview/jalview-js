@@ -1,209 +1,21 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models"),p$1={},I$=[[0,'java.util.ArrayList','fr.orsay.lri.varna.models.rna.RNA','fr.orsay.lri.varna.models.VARNAConfig','java.awt.Dimension','java.awt.Color',['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],'fr.orsay.lri.varna.exceptions.ExceptionParameterError','fr.orsay.lri.varna.models.rna.ModelBaseStyle','fr.orsay.lri.varna.VARNAPanel','Boolean','java.net.URL','java.io.InputStreamReader','fr.orsay.lri.varna.factories.RNAFactory','java.io.BufferedReader','fr.orsay.lri.varna.exceptions.ExceptionFileFormatOrSyntax','fr.orsay.lri.varna.models.rna.ModeleColorMap','java.io.File','java.io.FileReader','fr.orsay.lri.varna.models.annotations.HighlightRegionAnnotation','fr.orsay.lri.varna.models.annotations.ChemProbAnnotation','fr.orsay.lri.varna.models.rna.ModeleBP','fr.orsay.lri.varna.models.annotations.TextAnnotation']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VARNAConfigLoader");
-C$.algoOpt=null;
-C$.annotationsOpt=null;
-C$.applyBasesStyleOpt=null;
-C$.auxBPsOpt=null;
-C$.autoHelicesOpt=null;
-C$.autoInteriorLoopsOpt=null;
-C$.autoTerminalLoopsOpt=null;
-C$.backboneColorOpt=null;
-C$.backgroundColorOpt=null;
-C$.baseInnerColorOpt=null;
-C$.baseNameColorOpt=null;
-C$.baseNumbersColorOpt=null;
-C$.baseOutlineColorOpt=null;
-C$.basesStyleOpt=null;
-C$.borderOpt=null;
-C$.bondColorOpt=null;
-C$.bpIncrementOpt=null;
-C$.bpStyleOpt=null;
-C$.colorMapOpt=null;
-C$.colorMapCaptionOpt=null;
-C$.colorMapDefOpt=null;
-C$.colorMapMinOpt=null;
-C$.colorMapMaxOpt=null;
-C$.comparisonModeOpt=null;
-C$.chemProbOpt=null;
-C$.customBasesOpt=null;
-C$.customBPsOpt=null;
-C$.drawNCOpt=null;
-C$.drawBasesOpt=null;
-C$.drawTertiaryOpt=null;
-C$.drawColorMapOpt=null;
-C$.drawBackboneOpt=null;
-C$.errorOpt=null;
-C$.fillBasesOpt=null;
-C$.firstSequenceForComparisonOpt=null;
-C$.firstStructureForComparisonOpt=null;
-C$.flatExteriorLoopOpt=null;
-C$.flipOpt=null;
-C$.gapsBaseColorOpt=null;
-C$.highlightRegionOpt=null;
-C$.nonStandardColorOpt=null;
-C$.numColumnsOpt=null;
-C$.numRowsOpt=null;
-C$.orientationOpt=null;
-C$.modifiableOpt=null;
-C$.periodNumOpt=null;
-C$.rotationOpt=null;
-C$.secondSequenceForComparisonOpt=null;
-C$.secondStructureForComparisonOpt=null;
-C$.sequenceOpt=null;
-C$.spaceBetweenBasesOpt=null;
-C$.structureOpt=null;
-C$.titleOpt=null;
-C$.titleColorOpt=null;
-C$.titleSizeOpt=null;
-C$.URLOpt=null;
-C$.warningOpt=null;
-C$.zoomOpt=null;
-C$.zoomAmountOpt=null;
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.models"),p$1={},I$=[[0,'java.util.ArrayList','fr.orsay.lri.varna.models.rna.RNA','fr.orsay.lri.varna.models.VARNAConfig','java.awt.Dimension','java.awt.Color',['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],'fr.orsay.lri.varna.exceptions.ExceptionParameterError','fr.orsay.lri.varna.models.rna.ModelBaseStyle','fr.orsay.lri.varna.VARNAPanel','Boolean','java.net.URL','java.io.InputStreamReader','fr.orsay.lri.varna.factories.RNAFactory','java.io.BufferedReader','fr.orsay.lri.varna.exceptions.ExceptionFileFormatOrSyntax','fr.orsay.lri.varna.models.rna.ModeleColorMap','java.io.File','java.io.FileReader','fr.orsay.lri.varna.models.annotations.HighlightRegionAnnotation','fr.orsay.lri.varna.models.annotations.ChemProbAnnotation','fr.orsay.lri.varna.models.rna.ModeleBP','fr.orsay.lri.varna.models.annotations.TextAnnotation']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VARNAConfigLoader");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.algoOpt="algorithm";
-C$.annotationsOpt="annotations";
-C$.applyBasesStyleOpt="applyBasesStyle";
-C$.auxBPsOpt="auxBPs";
-C$.autoHelicesOpt="autoHelices";
-C$.autoInteriorLoopsOpt="autoInteriorLoops";
-C$.autoTerminalLoopsOpt="autoTerminalLoops";
-C$.backboneColorOpt="backbone";
-C$.backgroundColorOpt="background";
-C$.baseInnerColorOpt="baseInner";
-C$.baseNameColorOpt="baseName";
-C$.baseNumbersColorOpt="baseNum";
-C$.baseOutlineColorOpt="baseOutline";
-C$.basesStyleOpt="basesStyle";
-C$.borderOpt="border";
-C$.bondColorOpt="bp";
-C$.bpIncrementOpt="bpIncrement";
-C$.bpStyleOpt="bpStyle";
-C$.colorMapOpt="colorMap";
-C$.colorMapCaptionOpt="colorMapCaption";
-C$.colorMapDefOpt="colorMapStyle";
-C$.colorMapMinOpt="colorMapMin";
-C$.colorMapMaxOpt="colorMapMax";
-C$.comparisonModeOpt="comparisonMode";
-C$.chemProbOpt="chemProb";
-C$.customBasesOpt="customBases";
-C$.customBPsOpt="customBPs";
-C$.drawNCOpt="drawNC";
-C$.drawBasesOpt="drawBases";
-C$.drawTertiaryOpt="drawTertiary";
-C$.drawColorMapOpt="drawColorMap";
-C$.drawBackboneOpt="drawBackbone";
-C$.errorOpt="error";
-C$.fillBasesOpt="fillBases";
-C$.firstSequenceForComparisonOpt="firstSequence";
-C$.firstStructureForComparisonOpt="firstStructure";
-C$.flatExteriorLoopOpt="flat";
-C$.flipOpt="flip";
-C$.gapsBaseColorOpt="gapsColor";
-C$.highlightRegionOpt="highlightRegion";
-C$.nonStandardColorOpt="nsBasesColor";
-C$.numColumnsOpt="rows";
-C$.numRowsOpt="columns";
-C$.orientationOpt="orientation";
-C$.modifiableOpt="modifiable";
-C$.periodNumOpt="periodNum";
-C$.rotationOpt="rotation";
-C$.secondSequenceForComparisonOpt="secondSequence";
-C$.secondStructureForComparisonOpt="secondStructure";
-C$.sequenceOpt="sequenceDBN";
-C$.spaceBetweenBasesOpt="spaceBetweenBases";
-C$.structureOpt="structureDBN";
-C$.titleOpt="title";
-C$.titleColorOpt="titleColor";
-C$.titleSizeOpt="titleSize";
-C$.URLOpt="url";
-C$.warningOpt="warning";
-C$.zoomOpt="zoom";
-C$.zoomAmountOpt="zoomAmount";
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._algo=null;
-this._annotations=null;
-this._chemProbs=null;
-this._rotation=0;
-this._sseq=null;
-this._sstruct=null;
-this._numRows=0;
-this._numColumns=0;
-this._title=null;
-this._titleSize=0;
-this._titleColor=null;
-this._auxBPs=null;
-this._highlightRegion=null;
-this._autoHelices=false;
-this._autoInteriorLoops=false;
-this._autoTerminalLoops=false;
-this._drawBackbone=false;
-this._backboneColor=null;
-this._bondColor=null;
-this._bpStyle=null;
-this._baseOutlineColor=null;
-this._baseInnerColor=null;
-this._baseNumColor=null;
-this._baseNameColor=null;
-this._gapsColor=null;
-this._nonStandardColor=null;
-this._flatExteriorLoop=false;
-this._flip=null;
-this._customBases=null;
-this._customBPs=null;
-this._colorMapStyle=null;
-this._colorMapCaption=null;
-this._colorMapValues=null;
-this._colorMapMin=0;
-this._colorMapMax=0;
-this._spaceBetweenBases=0;
-this._drawNC=false;
-this._drawBases=false;
-this._drawTertiary=false;
-this._drawColorMap=false;
-this._fillBases=false;
-this._periodResNum=0;
-this._border=null;
-this._backgroundColor=null;
-this._orientation=null;
-this._warning=false;
-this._error=false;
-this._modifiable=false;
-this._zoom=0;
-this._zoomAmount=0;
-this._basesStyleList=null;
-this._comparisonMode=false;
-this._firstSequence=null;
-this._secondSequence=null;
-this._firstStructure=null;
-this._secondStructure=null;
-this._mainSurface=null;
-this._useNonStandardColor=false;
-this._useGapsColor=false;
-this._bpIncrement=0;
-this._useInnerBaseColor=false;
-this._useBaseNameColor=false;
-this._useBaseNumbersColor=false;
-this._useBaseOutlineColor=false;
-this._URL=null;
-this._VARNAPanelList=null;
-this._optionProducer=null;
-this._defaultRNA=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this._colorMapMin=4.9E-324;
 this._colorMapMax=1.7976931348623157E308;
 this._spaceBetweenBases=4.9E-324;
-this._VARNAPanelList=Clazz.new_($I$(1));
-this._defaultRNA=Clazz.new_($I$(2));
-}, 1);
+this._VARNAPanelList=Clazz.new_($I$(1,1));
+this._defaultRNA=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['Z',['_autoHelices','_autoInteriorLoops','_autoTerminalLoops','_drawBackbone','_flatExteriorLoop','_drawNC','_drawBases','_drawTertiary','_drawColorMap','_fillBases','_warning','_error','_modifiable','_comparisonMode','_useNonStandardColor','_useGapsColor','_useInnerBaseColor','_useBaseNameColor','_useBaseNumbersColor','_useBaseOutlineColor'],'D',['_rotation','_colorMapMin','_colorMapMax','_spaceBetweenBases','_zoom','_zoomAmount','_bpIncrement'],'I',['_numRows','_numColumns','_titleSize','_periodResNum'],'S',['_algo','_annotations','_chemProbs','_sseq','_sstruct','_title','_auxBPs','_highlightRegion','_flip','_customBases','_customBPs','_colorMapStyle','_colorMapCaption','_colorMapValues','_orientation','_firstSequence','_secondSequence','_firstStructure','_secondStructure','_URL'],'O',['_titleColor','java.awt.Color','+_backboneColor','+_bondColor','_bpStyle','fr.orsay.lri.varna.models.VARNAConfig.BP_STYLE','_baseOutlineColor','java.awt.Color','+_baseInnerColor','+_baseNumColor','+_baseNameColor','+_gapsColor','+_nonStandardColor','_border','java.awt.Dimension','_backgroundColor','java.awt.Color','_basesStyleList','java.util.ArrayList','_mainSurface','fr.orsay.lri.varna.VARNAPanel','_VARNAPanelList','java.util.ArrayList','_optionProducer','fr.orsay.lri.varna.interfaces.InterfaceParameterLoader','_defaultRNA','fr.orsay.lri.varna.models.rna.RNA']]
+,['S',['algoOpt','annotationsOpt','applyBasesStyleOpt','auxBPsOpt','autoHelicesOpt','autoInteriorLoopsOpt','autoTerminalLoopsOpt','backboneColorOpt','backgroundColorOpt','baseInnerColorOpt','baseNameColorOpt','baseNumbersColorOpt','baseOutlineColorOpt','basesStyleOpt','borderOpt','bondColorOpt','bpIncrementOpt','bpStyleOpt','colorMapOpt','colorMapCaptionOpt','colorMapDefOpt','colorMapMinOpt','colorMapMaxOpt','comparisonModeOpt','chemProbOpt','customBasesOpt','customBPsOpt','drawNCOpt','drawBasesOpt','drawTertiaryOpt','drawColorMapOpt','drawBackboneOpt','errorOpt','fillBasesOpt','firstSequenceForComparisonOpt','firstStructureForComparisonOpt','flatExteriorLoopOpt','flipOpt','gapsBaseColorOpt','highlightRegionOpt','nonStandardColorOpt','numColumnsOpt','numRowsOpt','orientationOpt','modifiableOpt','periodNumOpt','rotationOpt','secondSequenceForComparisonOpt','secondStructureForComparisonOpt','sequenceOpt','spaceBetweenBasesOpt','structureOpt','titleOpt','titleColorOpt','titleSizeOpt','URLOpt','warningOpt','zoomOpt','zoomAmountOpt']]]
 
 Clazz.newMeth(C$, 'c$$fr_orsay_lri_varna_interfaces_InterfaceParameterLoader', function (il) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this._optionProducer=il;
 }, 1);
 
@@ -240,7 +52,7 @@ this._drawBases=true;
 this._fillBases=true;
 this._drawNC=true;
 this._drawTertiary=true;
-this._border=Clazz.new_($I$(4).c$$I$I,[0, 0]);
+this._border=Clazz.new_($I$(4,1).c$$I$I,[0, 0]);
 this._sseq="";
 this._sstruct="";
 this._periodResNum=10;
@@ -321,21 +133,21 @@ return info;
 Clazz.newMeth(C$, 'retrieveParametersValues', function () {
 this._numRows=1;
 this._numColumns=1;
-this._basesStyleList=Clazz.new_($I$(1));
+this._basesStyleList=Clazz.new_($I$(1,1));
 try {
-this._numRows=Integer.parseInt$S(this._optionProducer.getParameterValue$(C$.numRowsOpt, "" + this._numRows));
+this._numRows=Integer.parseInt$S(this._optionProducer.getParameterValue$S$S(C$.numRowsOpt, "" + this._numRows));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.numRowsOpt, "" + this._numRows) + "' is not a integer value for the number of rows !" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.numRowsOpt, "" + this._numRows) + "' is not a integer value for the number of rows !" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._numColumns=Integer.parseInt$S(this._optionProducer.getParameterValue$(C$.numColumnsOpt, "" + this._numColumns));
+this._numColumns=Integer.parseInt$S(this._optionProducer.getParameterValue$S$S(C$.numColumnsOpt, "" + this._numColumns));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.numColumnsOpt, "" + this._numColumns) + "' is not a integer value for the number of columns !" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.numColumnsOpt, "" + this._numColumns) + "' is not a integer value for the number of columns !" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
@@ -343,9 +155,9 @@ throw e;
 var tmp=null;
 for (var i=0; i < 50; i++) {
 var opt=C$.basesStyleOpt + i;
-tmp=this._optionProducer.getParameterValue$(opt, null);
+tmp=this._optionProducer.getParameterValue$S$S(opt, null);
 if (tmp != null ) {
-var msb=Clazz.new_($I$(8));
+var msb=Clazz.new_($I$(8,1));
 try {
 msb.assignParameters$S(tmp);
 } catch (e) {
@@ -355,9 +167,9 @@ $I$(9).emitWarningStatic$Exception$java_awt_Component(e, null);
 throw e;
 }
 }
-this._basesStyleList.add$TE(msb);
+this._basesStyleList.add$O(msb);
 } else {
-this._basesStyleList.add$TE(null);
+this._basesStyleList.add$O(null);
 }}
 var x;
 var n;
@@ -371,59 +183,59 @@ if ((this._numColumns == 1) && (this._numRows == 1) ) {
 n="";
 }this._useGapsColor=false;
 this._useNonStandardColor=false;
-tmp=this._optionProducer.getParameterValue$(C$.baseNameColorOpt + n, "");
+tmp=this._optionProducer.getParameterValue$S$S(C$.baseNameColorOpt + n, "");
 if (!tmp.equals$O("")) {
 this._useBaseNameColor=true;
 this._baseNameColor=C$.getSafeColor$S$java_awt_Color(tmp, this._baseNameColor);
-}tmp=this._optionProducer.getParameterValue$(C$.baseNumbersColorOpt + n, "");
+}tmp=this._optionProducer.getParameterValue$S$S(C$.baseNumbersColorOpt + n, "");
 if (!tmp.equals$O("")) {
 this._useBaseNumbersColor=true;
 this._baseNumColor=C$.getSafeColor$S$java_awt_Color(tmp, this._baseNumColor);
-}tmp=this._optionProducer.getParameterValue$(C$.baseOutlineColorOpt + n, "");
+}tmp=this._optionProducer.getParameterValue$S$S(C$.baseOutlineColorOpt + n, "");
 if (!tmp.equals$O("")) {
 this._useBaseOutlineColor=true;
 this._baseOutlineColor=C$.getSafeColor$S$java_awt_Color(tmp, this._baseOutlineColor);
-}tmp=this._optionProducer.getParameterValue$(C$.baseInnerColorOpt + n, "");
+}tmp=this._optionProducer.getParameterValue$S$S(C$.baseInnerColorOpt + n, "");
 if (!tmp.equals$O("")) {
 this._useInnerBaseColor=true;
 this._baseInnerColor=C$.getSafeColor$S$java_awt_Color(tmp, this._baseInnerColor);
-}tmp=this._optionProducer.getParameterValue$(C$.nonStandardColorOpt + n, "");
+}tmp=this._optionProducer.getParameterValue$S$S(C$.nonStandardColorOpt + n, "");
 if (!tmp.equals$O("")) {
 this._nonStandardColor=C$.getSafeColor$S$java_awt_Color(tmp, this._nonStandardColor);
 this._useNonStandardColor=true;
-}tmp=this._optionProducer.getParameterValue$(C$.gapsBaseColorOpt + n, this._gapsColor.toString());
+}tmp=this._optionProducer.getParameterValue$S$S(C$.gapsBaseColorOpt + n, this._gapsColor.toString());
 if (!tmp.equals$O("")) {
 this._gapsColor=C$.getSafeColor$S$java_awt_Color(tmp, this._gapsColor);
 this._useGapsColor=true;
 }try {
-this._rotation=Double.parseDouble$S(this._optionProducer.getParameterValue$(C$.rotationOpt + n, Double.toString$D(this._rotation)));
+this._rotation=Double.parseDouble$S(this._optionProducer.getParameterValue$S$S(C$.rotationOpt + n, Double.toString$D(this._rotation)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.rotationOpt + n, "" + new Double(this._rotation).toString()) + "' is not a valid float value for rotation!" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.rotationOpt + n, "" + new Double(this._rotation).toString()) + "' is not a valid float value for rotation!" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._colorMapMin=Double.parseDouble$S(this._optionProducer.getParameterValue$(C$.colorMapMinOpt + n, Double.toString$D(this._colorMapMin)));
+this._colorMapMin=Double.parseDouble$S(this._optionProducer.getParameterValue$S$S(C$.colorMapMinOpt + n, Double.toString$D(this._colorMapMin)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.colorMapMinOpt + n, "" + new Double(this._colorMapMin).toString()) + "' is not a valid double value for min color map values range!" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.colorMapMinOpt + n, "" + new Double(this._colorMapMin).toString()) + "' is not a valid double value for min color map values range!" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._colorMapMax=Double.parseDouble$S(this._optionProducer.getParameterValue$(C$.colorMapMaxOpt + n, Double.toString$D(this._colorMapMax)));
+this._colorMapMax=Double.parseDouble$S(this._optionProducer.getParameterValue$S$S(C$.colorMapMaxOpt + n, Double.toString$D(this._colorMapMax)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.colorMapMaxOpt + n, "" + new Double(this._colorMapMax).toString()) + "' is not a valid double value for max color map values range!" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.colorMapMaxOpt + n, "" + new Double(this._colorMapMax).toString()) + "' is not a valid double value for max color map values range!" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._bpIncrement=Double.parseDouble$S(this._optionProducer.getParameterValue$(C$.bpIncrementOpt + n, Double.toString$D(this._bpIncrement)));
+this._bpIncrement=Double.parseDouble$S(this._optionProducer.getParameterValue$S$S(C$.bpIncrementOpt + n, Double.toString$D(this._bpIncrement)));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
 } else {
@@ -431,95 +243,95 @@ throw e;
 }
 }
 try {
-this._periodResNum=Integer.parseInt$S(this._optionProducer.getParameterValue$(C$.periodNumOpt + n, "" + this._periodResNum));
+this._periodResNum=Integer.parseInt$S(this._optionProducer.getParameterValue$S$S(C$.periodNumOpt + n, "" + this._periodResNum));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.periodNumOpt + n, "" + this._periodResNum) + "' is not a valid integer value for the period of residue numbers!" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.periodNumOpt + n, "" + this._periodResNum) + "' is not a valid integer value for the period of residue numbers!" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._titleSize=Integer.parseInt$S(this._optionProducer.getParameterValue$(C$.titleSizeOpt + n, "" + this._titleSize));
+this._titleSize=Integer.parseInt$S(this._optionProducer.getParameterValue$S$S(C$.titleSizeOpt + n, "" + this._titleSize));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.titleSizeOpt + n, "" + this._titleSize) + "' is not a valid integer value for the number of rows !" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.titleSizeOpt + n, "" + this._titleSize) + "' is not a valid integer value for the number of rows !" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._zoom=Double.parseDouble$S(this._optionProducer.getParameterValue$(C$.zoomOpt + n, "" + new Double(this._zoom).toString()));
+this._zoom=Double.parseDouble$S(this._optionProducer.getParameterValue$S$S(C$.zoomOpt + n, "" + new Double(this._zoom).toString()));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.zoomOpt + n, "" + new Double(this._zoom).toString()) + "' is not a valid integer value for the zoom !" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.zoomOpt + n, "" + new Double(this._zoom).toString()) + "' is not a valid integer value for the zoom !" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._zoomAmount=Double.parseDouble$S(this._optionProducer.getParameterValue$(C$.zoomAmountOpt + n, "" + new Double(this._zoomAmount).toString()));
+this._zoomAmount=Double.parseDouble$S(this._optionProducer.getParameterValue$S$S(C$.zoomAmountOpt + n, "" + new Double(this._zoomAmount).toString()));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.zoomAmountOpt + n, "" + new Double(this._zoomAmount).toString()) + "' is not a valid integer value for the zoom amount!" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.zoomAmountOpt + n, "" + new Double(this._zoomAmount).toString()) + "' is not a valid integer value for the zoom amount!" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 try {
-this._spaceBetweenBases=Double.parseDouble$S(this._optionProducer.getParameterValue$(C$.spaceBetweenBasesOpt + n, "" + new Double(this._spaceBetweenBases).toString()));
+this._spaceBetweenBases=Double.parseDouble$S(this._optionProducer.getParameterValue$S$S(C$.spaceBetweenBasesOpt + n, "" + new Double(this._spaceBetweenBases).toString()));
 } catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "'" + this._optionProducer.getParameterValue$(C$.spaceBetweenBasesOpt + n, "" + new Double(this._spaceBetweenBases).toString()) + "' is not a valid integer value for the base spacing!" ]);
+throw Clazz.new_([e.getMessage$(), "'" + this._optionProducer.getParameterValue$S$S(C$.spaceBetweenBasesOpt + n, "" + new Double(this._spaceBetweenBases).toString()) + "' is not a valid integer value for the base spacing!" ],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
-this._drawBases=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.drawBasesOpt + n, "" + this._drawBases));
-this._fillBases=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.fillBasesOpt + n, "" + this._fillBases));
-this._autoHelices=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.autoHelicesOpt + n, "" + this._autoHelices));
-this._drawColorMap=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.drawColorMapOpt + n, "" + this._drawColorMap));
-this._drawBackbone=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.drawBackboneOpt + n, "" + this._drawBackbone));
-this._colorMapValues=this._optionProducer.getParameterValue$(C$.colorMapOpt + n, this._colorMapValues);
-this._autoTerminalLoops=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.autoTerminalLoopsOpt + n, "" + this._autoTerminalLoops));
-this._autoInteriorLoops=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.autoInteriorLoopsOpt + n, "" + this._autoInteriorLoops));
-this._drawNC=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.drawNCOpt + n, "" + this._drawNC));
-this._flatExteriorLoop=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.flatExteriorLoopOpt + n, "" + this._flatExteriorLoop));
-this._drawTertiary=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.drawTertiaryOpt + n, "" + this._drawTertiary));
-this._warning=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.warningOpt + n, "false"));
-this._error=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.errorOpt + n, "true"));
-this._border=p$1.parseDimension$S.apply(this, [this._optionProducer.getParameterValue$(C$.borderOpt + n, "0X0")]);
-this._comparisonMode=$I$(10).parseBoolean$S(this._optionProducer.getParameterValue$(C$.comparisonModeOpt + n, "false"));
-this._firstSequence=this._optionProducer.getParameterValue$(C$.firstSequenceForComparisonOpt + n, this._firstSequence);
-this._firstStructure=this._optionProducer.getParameterValue$(C$.firstStructureForComparisonOpt + n, this._firstStructure);
-this._secondSequence=this._optionProducer.getParameterValue$(C$.secondSequenceForComparisonOpt + n, this._secondSequence);
-this._secondStructure=this._optionProducer.getParameterValue$(C$.secondStructureForComparisonOpt + n, this._secondStructure);
-this._annotations=this._optionProducer.getParameterValue$(C$.annotationsOpt + n, this._annotations);
-this._URL=this._optionProducer.getParameterValue$(C$.URLOpt + n, this._URL);
-this._algo=this._optionProducer.getParameterValue$(C$.algoOpt + n, this._algo);
-this._customBases=this._optionProducer.getParameterValue$(C$.customBasesOpt + n, this._customBases);
-this._auxBPs=this._optionProducer.getParameterValue$(C$.auxBPsOpt + n, this._auxBPs);
-this._highlightRegion=this._optionProducer.getParameterValue$(C$.highlightRegionOpt + n, this._highlightRegion);
-this._chemProbs=this._optionProducer.getParameterValue$(C$.chemProbOpt + n, this._chemProbs);
-this._customBPs=this._optionProducer.getParameterValue$(C$.customBPsOpt + n, this._customBPs);
-this._colorMapStyle=this._optionProducer.getParameterValue$(C$.colorMapDefOpt + n, this._colorMapStyle);
-this._colorMapCaption=this._optionProducer.getParameterValue$(C$.colorMapCaptionOpt + n, this._colorMapCaption);
-this._backboneColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$(C$.backboneColorOpt + n, this._backboneColor.toString()), this._backboneColor);
-this._backgroundColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$(C$.backgroundColorOpt + n, this._backgroundColor.toString()), this._backgroundColor);
-this._bondColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$(C$.bondColorOpt + n, this._bondColor.toString()), this._bondColor);
-this._bpStyle=p$1.getSafeBPStyle$S$fr_orsay_lri_varna_models_VARNAConfig_BP_STYLE.apply(this, [this._optionProducer.getParameterValue$(C$.bpStyleOpt + n, ""), this._bpStyle]);
-this._flip=this._optionProducer.getParameterValue$(C$.flipOpt + n, this._flip);
-this._orientation=this._optionProducer.getParameterValue$(C$.orientationOpt + n, this._orientation);
-this._titleColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$(C$.titleColorOpt + n, this._titleColor.toString()), this._titleColor);
+this._drawBases=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.drawBasesOpt + n, "" + this._drawBases)]);
+this._fillBases=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.fillBasesOpt + n, "" + this._fillBases)]);
+this._autoHelices=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.autoHelicesOpt + n, "" + this._autoHelices)]);
+this._drawColorMap=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.drawColorMapOpt + n, "" + this._drawColorMap)]);
+this._drawBackbone=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.drawBackboneOpt + n, "" + this._drawBackbone)]);
+this._colorMapValues=this._optionProducer.getParameterValue$S$S(C$.colorMapOpt + n, this._colorMapValues);
+this._autoTerminalLoops=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.autoTerminalLoopsOpt + n, "" + this._autoTerminalLoops)]);
+this._autoInteriorLoops=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.autoInteriorLoopsOpt + n, "" + this._autoInteriorLoops)]);
+this._drawNC=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.drawNCOpt + n, "" + this._drawNC)]);
+this._flatExteriorLoop=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.flatExteriorLoopOpt + n, "" + this._flatExteriorLoop)]);
+this._drawTertiary=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.drawTertiaryOpt + n, "" + this._drawTertiary)]);
+this._warning=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.warningOpt + n, "false")]);
+this._error=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.errorOpt + n, "true")]);
+this._border=p$1.parseDimension$S.apply(this, [this._optionProducer.getParameterValue$S$S(C$.borderOpt + n, "0X0")]);
+this._comparisonMode=$I$(10,"parseBoolean$S",[this._optionProducer.getParameterValue$S$S(C$.comparisonModeOpt + n, "false")]);
+this._firstSequence=this._optionProducer.getParameterValue$S$S(C$.firstSequenceForComparisonOpt + n, this._firstSequence);
+this._firstStructure=this._optionProducer.getParameterValue$S$S(C$.firstStructureForComparisonOpt + n, this._firstStructure);
+this._secondSequence=this._optionProducer.getParameterValue$S$S(C$.secondSequenceForComparisonOpt + n, this._secondSequence);
+this._secondStructure=this._optionProducer.getParameterValue$S$S(C$.secondStructureForComparisonOpt + n, this._secondStructure);
+this._annotations=this._optionProducer.getParameterValue$S$S(C$.annotationsOpt + n, this._annotations);
+this._URL=this._optionProducer.getParameterValue$S$S(C$.URLOpt + n, this._URL);
+this._algo=this._optionProducer.getParameterValue$S$S(C$.algoOpt + n, this._algo);
+this._customBases=this._optionProducer.getParameterValue$S$S(C$.customBasesOpt + n, this._customBases);
+this._auxBPs=this._optionProducer.getParameterValue$S$S(C$.auxBPsOpt + n, this._auxBPs);
+this._highlightRegion=this._optionProducer.getParameterValue$S$S(C$.highlightRegionOpt + n, this._highlightRegion);
+this._chemProbs=this._optionProducer.getParameterValue$S$S(C$.chemProbOpt + n, this._chemProbs);
+this._customBPs=this._optionProducer.getParameterValue$S$S(C$.customBPsOpt + n, this._customBPs);
+this._colorMapStyle=this._optionProducer.getParameterValue$S$S(C$.colorMapDefOpt + n, this._colorMapStyle);
+this._colorMapCaption=this._optionProducer.getParameterValue$S$S(C$.colorMapCaptionOpt + n, this._colorMapCaption);
+this._backboneColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$S$S(C$.backboneColorOpt + n, this._backboneColor.toString()), this._backboneColor);
+this._backgroundColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$S$S(C$.backgroundColorOpt + n, this._backgroundColor.toString()), this._backgroundColor);
+this._bondColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$S$S(C$.bondColorOpt + n, this._bondColor.toString()), this._bondColor);
+this._bpStyle=p$1.getSafeBPStyle$S$fr_orsay_lri_varna_models_VARNAConfig_BP_STYLE.apply(this, [this._optionProducer.getParameterValue$S$S(C$.bpStyleOpt + n, ""), this._bpStyle]);
+this._flip=this._optionProducer.getParameterValue$S$S(C$.flipOpt + n, this._flip);
+this._orientation=this._optionProducer.getParameterValue$S$S(C$.orientationOpt + n, this._orientation);
+this._titleColor=C$.getSafeColor$S$java_awt_Color(this._optionProducer.getParameterValue$S$S(C$.titleColorOpt + n, this._titleColor.toString()), this._titleColor);
 if (!this._URL.equals$O("")) {
 this._sstruct="";
 this._sseq="";
 this._title="";
-}this._title=this._optionProducer.getParameterValue$(C$.titleOpt + n, this._title);
+}this._title=this._optionProducer.getParameterValue$S$S(C$.titleOpt + n, this._title);
 if (this._comparisonMode && this._firstSequence != null   && this._firstStructure != null   && this._secondSequence != null   && this._secondStructure != null  ) {
 } else {
-this._sseq=this._optionProducer.getParameterValue$(C$.sequenceOpt + n, this._sseq);
-this._sstruct=this._optionProducer.getParameterValue$(C$.structureOpt + n, this._sstruct);
+this._sseq=this._optionProducer.getParameterValue$S$S(C$.sequenceOpt + n, this._sseq);
+this._sstruct=this._optionProducer.getParameterValue$S$S(C$.structureOpt + n, this._sstruct);
 if (!this._sseq.equals$O("") && !this._sstruct.equals$O("") ) {
 this._URL="";
 }this._comparisonMode=false;
@@ -573,21 +385,21 @@ if (this._algo.equals$O("circular")) algoCode=1;
  else if (this._algo.equals$O("motifview")) algoCode=6;
  else algoCode=2;
 if (this._comparisonMode) {
-this._mainSurface=Clazz.new_($I$(9).c$$S$S$S$S$I$S,[this._firstSequence, this._firstStructure, this._secondSequence, this._secondStructure, algoCode, ""]);
+this._mainSurface=Clazz.new_($I$(9,1).c$$S$S$S$S$I$S,[this._firstSequence, this._firstStructure, this._secondSequence, this._secondStructure, algoCode, ""]);
 } else {
-this._mainSurface=Clazz.new_($I$(9));
-}this._VARNAPanelList.add$TE(this._mainSurface);
+this._mainSurface=Clazz.new_($I$(9,1));
+}this._VARNAPanelList.add$O(this._mainSurface);
 this._mainSurface.setSpaceBetweenBases$D(this._spaceBetweenBases);
 this._mainSurface.setTitle$S(this._title);
 if (!this._URL.equals$O("")) {
 var url=null;
 try {
 this._mainSurface.setSpaceBetweenBases$D(this._spaceBetweenBases);
-url=Clazz.new_($I$(11).c$$S,[this._URL]);
+url=Clazz.new_($I$(11,1).c$$S,[this._URL]);
 var connexion=url.openConnection$();
 connexion.setUseCaches$Z(false);
 var r=connexion.getInputStream$();
-var inr=Clazz.new_($I$(12).c$$java_io_InputStream,[r]);
+var inr=Clazz.new_($I$(12,1).c$$java_io_InputStream,[r]);
 if (this._URL.toLowerCase$().endsWith$S($I$(9).VARNA_SESSION_EXTENSION)) {
 var f;
 f=$I$(9).importSession$java_io_InputStream$S(r, this._URL);
@@ -595,9 +407,9 @@ this._mainSurface.setConfig$fr_orsay_lri_varna_models_VARNAConfig(f.config);
 this._mainSurface.showRNA$fr_orsay_lri_varna_models_rna_RNA(f.rna);
 applyOptions=false;
 } else {
-var rnas=$I$(13).loadSecStr$java_io_BufferedReader$fr_orsay_lri_varna_factories_RNAFactory_RNAFileType(Clazz.new_($I$(14).c$$java_io_Reader,[inr]), $I$(13).guessFileTypeFromExtension$S(this._URL));
+var rnas=$I$(13,"loadSecStr$java_io_BufferedReader$fr_orsay_lri_varna_factories_RNAFactory_RNAFileType",[Clazz.new_($I$(14,1).c$$java_io_Reader,[inr]), $I$(13).guessFileTypeFromExtension$S(this._URL)]);
 if (rnas.isEmpty$()) {
-throw Clazz.new_($I$(15).c$$S,["No RNA in file '" + this._URL + "'." ]);
+throw Clazz.new_($I$(15,1).c$$S,["No RNA in file '" + this._URL + "'." ]);
 }var rna=rnas.iterator$().next$();
 rna.drawRNA$I$fr_orsay_lri_varna_models_VARNAConfig(algoCode, this._mainSurface.getConfig$());
 this._mainSurface.drawRNA$fr_orsay_lri_varna_models_rna_RNA$I(rna, algoCode);
@@ -701,8 +513,8 @@ Clazz.newMeth(C$, 'applyBasesStyle$S', function (n) {
 var tmp=null;
 for (var numStyle=0; numStyle < this._basesStyleList.size$(); numStyle++) {
 if (this._basesStyleList.get$I(numStyle) != null ) {
-tmp=this._optionProducer.getParameterValue$(C$.applyBasesStyleOpt + (numStyle) + "on" + n , null);
-var indicesList=Clazz.new_($I$(1));
+tmp=this._optionProducer.getParameterValue$S$S(C$.applyBasesStyleOpt + (numStyle) + "on" + n , null);
+var indicesList=Clazz.new_($I$(1,1));
 if (tmp != null ) {
 var basesList=tmp.split$S(",");
 for (var k=0; k < basesList.length; k++) {
@@ -713,25 +525,25 @@ if (args.length == 1) {
 var baseNum=Integer.parseInt$S(cand);
 var index=this._mainSurface.getRNA$().getIndexFromBaseNumber$I(baseNum);
 if (index != -1) {
-indicesList.add$TE(new Integer(index));
+indicesList.add$O(new Integer(index));
 }} else if (args.length == 2) {
 var baseNumFrom=Integer.parseInt$S(args[0].trim$());
 var indexFrom=this._mainSurface.getRNA$().getIndexFromBaseNumber$I(baseNumFrom);
 var baseNumTo=Integer.parseInt$S(args[1].trim$());
 var indexTo=this._mainSurface.getRNA$().getIndexFromBaseNumber$I(baseNumTo);
 if ((indexFrom != -1) && (indexTo != -1) ) {
-for (var l=indexFrom; l <= indexTo; l++) indicesList.add$TE(new Integer(l));
+for (var l=indexFrom; l <= indexTo; l++) indicesList.add$O(new Integer(l));
 
 }}} catch (e) {
 if (Clazz.exceptionOf(e,"NumberFormatException")){
-throw Clazz.new_($I$(7).c$$S$S,[e.getMessage$(), "Bad Base Index: " + basesList[k]]);
+throw Clazz.new_([e.getMessage$(), "Bad Base Index: " + basesList[k]],$I$(7,1).c$$S$S);
 } else {
 throw e;
 }
 }
 }
 for (var k=0; k < indicesList.size$(); k++) {
-var index=(indicesList.get$I(k)).intValue$();
+var index=(indicesList.get$I(k)).valueOf();
 if ((index >= 0) && (index < this._mainSurface.getRNA$().get_listeBases$().size$()) ) {
 this._mainSurface.getRNA$().get_listeBases$().get$I(index).setStyleBase$fr_orsay_lri_varna_models_rna_ModelBaseStyle(this._basesStyleList.get$I(numStyle));
 }}
@@ -745,10 +557,10 @@ vp.setColorMap$fr_orsay_lri_varna_models_rna_ModeleColorMap($I$(16).parseColorMa
 
 Clazz.newMeth(C$, 'applyColorMapValues$fr_orsay_lri_varna_VARNAPanel', function (vp) {
 if (!this._colorMapValues.equals$O("")) {
-var f=Clazz.new_($I$(17).c$$S,[this._colorMapValues]);
+var f=Clazz.new_($I$(17,1).c$$S,[this._colorMapValues]);
 if (f.exists$() && !f.isDirectory$() ) {
 try {
-vp.readValues$java_io_Reader(Clazz.new_($I$(18).c$$java_io_File,[f]));
+vp.readValues$java_io_Reader(Clazz.new_($I$(18,1).c$$java_io_File,[f]));
 vp.drawColorMap$Z(true);
 System.err.println$S("Loaded " + this._colorMapValues);
 } catch (e) {
@@ -760,10 +572,10 @@ throw e;
 }
 } else {
 var values=this._colorMapValues.split$S("[;,]");
-var vals=Clazz.new_($I$(1));
+var vals=Clazz.new_($I$(1,1));
 for (var i=0; i < values.length; i++) {
 try {
-vals.add$TE(new Double(Double.parseDouble$S(values[i])));
+vals.add$O(new Double(Double.parseDouble$S(values[i])));
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 } else {
@@ -772,7 +584,7 @@ throw e;
 }
 }
 var result=Clazz.array(Double, [vals.size$()]);
-vals.toArray$TTA(result);
+vals.toArray$OA(result);
 vp.setColorMapValues$DoubleA(result);
 }var cm=vp.getColorMap$();
 if (this._colorMapMin != 4.9E-324 ) {
@@ -825,7 +637,7 @@ throw e;
 }, p$1);
 
 Clazz.newMeth(C$, 'parseDimension$S', function (s) {
-var d=Clazz.new_($I$(4).c$$I$I,[0, 0]);
+var d=Clazz.new_($I$(4,1).c$$I$I,[0, 0]);
 try {
 s=s.toLowerCase$();
 var i=s.indexOf$I("x");
@@ -887,7 +699,7 @@ var b=Integer.parseInt$S(data2[1]);
 var c=vp.getRNA$().getIndexFromBaseNumber$I(a);
 var d=vp.getRNA$().getIndexFromBaseNumber$I(b);
 var mbl=vp.getRNA$().get_listeBases$();
-var cpa=Clazz.new_($I$(20).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase$S,[mbl.get$I(c), mbl.get$I(d), style]);
+var cpa=Clazz.new_([mbl.get$I(c), mbl.get$I(d), style],$I$(20,1).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase$S);
 vp.getRNA$().addChemProbAnnotation$fr_orsay_lri_varna_models_annotations_ChemProbAnnotation(cpa);
 }}} catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
@@ -916,7 +728,7 @@ var a=Integer.parseInt$S(s1.substring$I(1));
 var b=Integer.parseInt$S(s2.substring$I$I(0, s2.length$() - 1));
 var c=vp.getRNA$().getIndexFromBaseNumber$I(a);
 var d=vp.getRNA$().getIndexFromBaseNumber$I(b);
-var msbp=Clazz.new_($I$(21).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase,[vp.getRNA$().get_listeBases$().get$I(c), vp.getRNA$().get_listeBases$().get$I(d)]);
+var msbp=Clazz.new_([vp.getRNA$().get_listeBases$().get$I(c), vp.getRNA$().get_listeBases$().get$I(d)],$I$(21,1).c$$fr_orsay_lri_varna_models_rna_ModeleBase$fr_orsay_lri_varna_models_rna_ModeleBase);
 if (data.length >= 2) {
 var style=data[1];
 msbp.assignParameters$S(style);
@@ -973,6 +785,68 @@ vp.addAnnotation$fr_orsay_lri_varna_models_annotations_TextAnnotation(ann);
 }
 }, p$1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.algoOpt="algorithm";
+C$.annotationsOpt="annotations";
+C$.applyBasesStyleOpt="applyBasesStyle";
+C$.auxBPsOpt="auxBPs";
+C$.autoHelicesOpt="autoHelices";
+C$.autoInteriorLoopsOpt="autoInteriorLoops";
+C$.autoTerminalLoopsOpt="autoTerminalLoops";
+C$.backboneColorOpt="backbone";
+C$.backgroundColorOpt="background";
+C$.baseInnerColorOpt="baseInner";
+C$.baseNameColorOpt="baseName";
+C$.baseNumbersColorOpt="baseNum";
+C$.baseOutlineColorOpt="baseOutline";
+C$.basesStyleOpt="basesStyle";
+C$.borderOpt="border";
+C$.bondColorOpt="bp";
+C$.bpIncrementOpt="bpIncrement";
+C$.bpStyleOpt="bpStyle";
+C$.colorMapOpt="colorMap";
+C$.colorMapCaptionOpt="colorMapCaption";
+C$.colorMapDefOpt="colorMapStyle";
+C$.colorMapMinOpt="colorMapMin";
+C$.colorMapMaxOpt="colorMapMax";
+C$.comparisonModeOpt="comparisonMode";
+C$.chemProbOpt="chemProb";
+C$.customBasesOpt="customBases";
+C$.customBPsOpt="customBPs";
+C$.drawNCOpt="drawNC";
+C$.drawBasesOpt="drawBases";
+C$.drawTertiaryOpt="drawTertiary";
+C$.drawColorMapOpt="drawColorMap";
+C$.drawBackboneOpt="drawBackbone";
+C$.errorOpt="error";
+C$.fillBasesOpt="fillBases";
+C$.firstSequenceForComparisonOpt="firstSequence";
+C$.firstStructureForComparisonOpt="firstStructure";
+C$.flatExteriorLoopOpt="flat";
+C$.flipOpt="flip";
+C$.gapsBaseColorOpt="gapsColor";
+C$.highlightRegionOpt="highlightRegion";
+C$.nonStandardColorOpt="nsBasesColor";
+C$.numColumnsOpt="rows";
+C$.numRowsOpt="columns";
+C$.orientationOpt="orientation";
+C$.modifiableOpt="modifiable";
+C$.periodNumOpt="periodNum";
+C$.rotationOpt="rotation";
+C$.secondSequenceForComparisonOpt="secondSequence";
+C$.secondStructureForComparisonOpt="secondStructure";
+C$.sequenceOpt="sequenceDBN";
+C$.spaceBetweenBasesOpt="spaceBetweenBases";
+C$.structureOpt="structureDBN";
+C$.titleOpt="title";
+C$.titleColorOpt="titleColor";
+C$.titleSizeOpt="titleSize";
+C$.URLOpt="url";
+C$.warningOpt="warning";
+C$.zoomOpt="zoom";
+C$.zoomAmountOpt="zoomAmount";
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:44 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:21 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

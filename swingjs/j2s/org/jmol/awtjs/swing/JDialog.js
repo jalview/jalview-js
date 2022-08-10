@@ -1,34 +1,23 @@
-(function(){var P$=Clazz.newPackage("org.jmol.awtjs.swing"),p$1={},I$=[[0,'org.jmol.awtjs.swing.JContentPane','javajs.awt.Color','javajs.util.SB']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JDialog", null, 'javajs.awt.Container');
+(function(){var P$=Clazz.newPackage("org.jmol.awtjs.swing"),p$1={},I$=[[0,'org.jmol.awtjs.swing.JContentPane','org.jmol.awtjs.swing.Color','javajs.util.SB']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JDialog", null, 'org.jmol.awtjs.swing.Container');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.defaultWidth=0;
-this.defaultHeight=0;
-this.contentPane=null;
-this.title=null;
-this.html=null;
-this.zIndex=0;
-this.loc=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.defaultWidth=600;
 this.defaultHeight=300;
 this.zIndex=9000;
-}, 1);
+},1);
+
+C$.$fields$=[['I',['defaultWidth','defaultHeight','zIndex'],'S',['title','html'],'O',['contentPane','org.jmol.awtjs.swing.JContentPane','loc','int[]']]]
 
 Clazz.newMeth(C$, 'setZIndex$I', function (zIndex) {
 this.zIndex=zIndex;
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$$S.apply(this, ["JD"]);
-C$.$init$.apply(this);
-this.add$javajs_awt_Component(this.contentPane=Clazz.new_($I$(1)));
+;C$.superclazz.c$$S.apply(this,["JD"]);C$.$init$.apply(this);
+this.add$org_jmol_awtjs_swing_Component(this.contentPane=Clazz.new_($I$(1,1)));
 this.setBackground$javajs_api_GenericColor($I$(2).get3$I$I$I(210, 210, 240));
 this.contentPane.setBackground$javajs_api_GenericColor($I$(2).get3$I$I$I(230, 230, 230));
 }, 1);
@@ -83,7 +72,7 @@ if (this.renderWidth == 0) this.renderWidth=this.defaultWidth;
 this.renderHeight=Math.max(this.height, this.contentPane.getSubcomponentHeight$());
 if (this.renderHeight == 0) this.renderHeight=this.defaultHeight;
 var h=this.renderHeight - 25;
-var sb=Clazz.new_($I$(3));
+var sb=Clazz.new_($I$(3,1));
 sb.append$S("\n<div id='" + this.id + "' class='JDialog' style='" + this.getCSSstyle$I$I(0, 0) + "z-index:" + this.zIndex + ";position:relative;top:0px;left:0px;reize:both;'>\n" );
 sb.append$S("\n<div id='" + this.id + "_title' class='JDialogTitle' style='width:100%;height:25px;padding:5px 5px 5px 5px;height:" + 25 + "px'>" + "<span style='text-align:center;'>" + this.title + "</span><span style='position:absolute;text-align:right;right:1px;'>" + "<input type=button id='" + this.id + "_closer' onclick='SwingController.windowClosing(this)' value='x' /></span></div>\n" );
 sb.append$S("\n<div id='" + this.id + "_body' class='JDialogBody' style='width:100%;height:" + h + "px;" + "position: relative;left:0px;top:0px'>\n" );
@@ -98,4 +87,4 @@ SwingController.setFront(this);
 }
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:06 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:30 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,34 +1,30 @@
-(function(){var P$=Clazz.newPackage("jalview.bin"),I$=[[0,'java.util.Vector','java.net.URLDecoder']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ArgsParser");
+(function(){var P$=Clazz.newPackage("jalview.bin"),I$=[[0,'java.util.Vector','java.net.URLDecoder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ArgsParser");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.vargs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.vargs=null;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$SA', function (args) {
-C$.$init$.apply(this);
-this.vargs=Clazz.new_($I$(1));
+C$.$fields$=[['O',['vargs','java.util.Vector']]]
+
+Clazz.newMeth(C$, 'c$$SA',  function (args) {
+;C$.$init$.apply(this);
+this.vargs=Clazz.new_($I$(1,1));
 for (var i=0; i < args.length; i++) {
 var arg=args[i].trim$();
 if (arg.charAt$I(0) == "-") {
 arg=arg.substring$I(1);
-}this.vargs.addElement$TE(arg);
+}this.vargs.addElement$O(arg);
 }
 }, 1);
 
-Clazz.newMeth(C$, 'getValue$S', function (arg) {
+Clazz.newMeth(C$, 'getValue$S',  function (arg) {
 return this.getValue$S$Z(arg, false);
 });
 
-Clazz.newMeth(C$, 'getValue$S$Z', function (arg, utf8decode) {
+Clazz.newMeth(C$, 'getValue$S$Z',  function (arg, utf8decode) {
 var index=this.vargs.indexOf$O(arg);
 var dc=null;
 var ret=null;
@@ -49,7 +45,7 @@ throw e;
 }}return ret;
 });
 
-Clazz.newMeth(C$, 'contains$S', function (arg) {
+Clazz.newMeth(C$, 'contains$S',  function (arg) {
 if (this.vargs.contains$O(arg)) {
 this.vargs.removeElement$O(arg);
 return true;
@@ -57,14 +53,14 @@ return true;
 return false;
 }});
 
-Clazz.newMeth(C$, 'nextValue$', function () {
+Clazz.newMeth(C$, 'nextValue$',  function () {
 return this.vargs.remove$I(0);
 });
 
-Clazz.newMeth(C$, 'getSize$', function () {
+Clazz.newMeth(C$, 'getSize$',  function () {
 return this.vargs.size$();
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:08 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

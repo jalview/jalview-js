@@ -1,121 +1,104 @@
-(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'java.util.Random','jalview.util.MessageManager','javax.swing.JMenuItem','javax.swing.JMenu','java.awt.event.MouseAdapter','java.util.Collections','jalview.datamodel.PDBEntry','jalview.datamodel.SequenceI','jalview.gui.ProgressBar','jalview.gui.JalviewChimeraBindingModel','Thread','javax.swing.event.InternalFrameAdapter','jalview.gui.Desktop','jalview.gui.JvOptionPane','java.util.ArrayList','jalview.gui.JvSwingUtils','StringBuilder','java.io.File','jalview.util.Platform','jalview.gui.OOMWarning','jalview.bin.Cache','jalview.io.DataSourceType','jalview.ws.dbsources.Pdb','jalview.util.BrowserLauncher','java.io.FileInputStream',['jalview.gui.StructureViewer','.ViewerType']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ChimeraViewFrame", null, 'jalview.gui.StructureViewerBase');
+(function(){var P$=Clazz.newPackage("jalview.gui"),p$1={},I$=[[0,'javax.swing.JMenuItem','jalview.util.MessageManager','javax.swing.JMenu','java.awt.event.MouseAdapter','java.util.Collections','jalview.datamodel.PDBEntry','jalview.datamodel.SequenceI','jalview.gui.ProgressBar','Thread','javax.swing.event.InternalFrameAdapter','jalview.gui.JalviewChimeraBindingModel',['jalview.datamodel.PDBEntry','.Type'],'jalview.gui.Desktop','jalview.gui.JvOptionPane','StringBuilder','java.util.ArrayList','java.io.File','jalview.util.Platform','jalview.gui.OOMWarning','jalview.bin.Console','jalview.io.DataSourceType',['jalview.gui.StructureViewer','.ViewerType']]],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ChimeraViewFrame", null, 'jalview.gui.StructureViewerBase');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.jmb=null;
-this.progressBar=null;
-this.chimeraSessionFile=null;
-this.random=null;
-this.myWidth=0;
-this.myHeight=0;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.progressBar=null;
 this.chimeraSessionFile=null;
-this.random=Clazz.new_($I$(1));
 this.myWidth=500;
 this.myHeight=150;
-}, 1);
+this.writeFeatures=null;
+this.fetchAttributes=null;
+},1);
 
-Clazz.newMeth(C$, 'initMenus$', function () {
+C$.$fields$=[['I',['myWidth','myHeight'],'S',['chimeraSessionFile'],'O',['jmb','jalview.ext.rbvi.chimera.JalviewChimeraBinding','writeFeatures','javax.swing.JMenuItem','fetchAttributes','javax.swing.JMenu']]]
+
+Clazz.newMeth(C$, 'initMenus$',  function () {
 C$.superclazz.prototype.initMenus$.apply(this, []);
-this.viewerActionMenu.setText$S($I$(2).getString$S("label.chimera"));
-this.viewerColour.setText$S($I$(2).getString$S("label.colour_with_chimera"));
-this.viewerColour.setToolTipText$S($I$(2).getString$S("label.let_chimera_manage_structure_colours"));
-this.helpItem.setText$S($I$(2).getString$S("label.chimera_help"));
 this.savemenu.setVisible$Z(false);
 this.viewMenu.add$javax_swing_JMenuItem(this.fitToWindow);
-var writeFeatures=Clazz.new_($I$(3).c$$S,[$I$(2).getString$S("label.create_chimera_attributes")]);
-writeFeatures.setToolTipText$S($I$(2).getString$S("label.create_chimera_attributes_tip"));
-writeFeatures.addActionListener$java_awt_event_ActionListener(((P$.ChimeraViewFrame$1||
-(function(){var C$=Clazz.newClass(P$, "ChimeraViewFrame$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+this.writeFeatures=Clazz.new_([$I$(2).getString$S("label.create_viewer_attributes")],$I$(1,1).c$$S);
+this.writeFeatures.setToolTipText$S($I$(2).getString$S("label.create_viewer_attributes_tip"));
+this.writeFeatures.addActionListener$java_awt_event_ActionListener(((P$.ChimeraViewFrame$1||
+(function(){/*a*/var C$=Clazz.newClass(P$, "ChimeraViewFrame$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 this.b$['jalview.gui.ChimeraViewFrame'].sendFeaturesToChimera$.apply(this.b$['jalview.gui.ChimeraViewFrame'], []);
 });
 })()
-), Clazz.new_(P$.ChimeraViewFrame$1.$init$, [this, null])));
-this.viewerActionMenu.add$javax_swing_JMenuItem(writeFeatures);
-var fetchAttributes=Clazz.new_($I$(4).c$$S,[$I$(2).getString$S("label.fetch_chimera_attributes")]);
-fetchAttributes.setToolTipText$S($I$(2).getString$S("label.fetch_chimera_attributes_tip"));
-fetchAttributes.addMouseListener$java_awt_event_MouseListener(((P$.ChimeraViewFrame$2||
-(function(){var C$=Clazz.newClass(P$, "ChimeraViewFrame$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
+), Clazz.new_(P$.ChimeraViewFrame$1.$init$,[this, null])));
+this.viewerActionMenu.add$javax_swing_JMenuItem(this.writeFeatures);
+this.fetchAttributes=Clazz.new_([$I$(2,"formatMessage$S$OA",["label.fetch_viewer_attributes", Clazz.array(java.lang.Object, -1, [this.getViewerName$()])])],$I$(3,1).c$$S);
+this.fetchAttributes.setToolTipText$S($I$(2,"formatMessage$S$OA",["label.fetch_viewer_attributes_tip", Clazz.array(java.lang.Object, -1, [this.getViewerName$()])]));
+this.fetchAttributes.addMouseListener$java_awt_event_MouseListener(((P$.ChimeraViewFrame$2||
+(function(){/*a*/var C$=Clazz.newClass(P$, "ChimeraViewFrame$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent', function (e) {
-this.b$['jalview.gui.ChimeraViewFrame'].buildAttributesMenu$javax_swing_JMenu.apply(this.b$['jalview.gui.ChimeraViewFrame'], [this.$finals$.fetchAttributes]);
+Clazz.newMeth(C$, 'mouseEntered$java_awt_event_MouseEvent',  function (e) {
+this.b$['jalview.gui.ChimeraViewFrame'].buildAttributesMenu$javax_swing_JMenu.apply(this.b$['jalview.gui.ChimeraViewFrame'], [this.b$['jalview.gui.ChimeraViewFrame'].fetchAttributes]);
 });
 })()
-), Clazz.new_($I$(5), [this, {fetchAttributes: fetchAttributes}],P$.ChimeraViewFrame$2)));
-this.viewerActionMenu.add$javax_swing_JMenuItem(fetchAttributes);
+), Clazz.new_($I$(4,1),[this, null],P$.ChimeraViewFrame$2)));
+this.viewerActionMenu.add$javax_swing_JMenuItem(this.fetchAttributes);
 });
 
-Clazz.newMeth(C$, 'buildAttributesMenu$javax_swing_JMenu', function (attributesMenu) {
-var atts=this.jmb.sendChimeraCommand$S$Z("list resattr", true);
-if (atts == null ) {
-return;
-}attributesMenu.removeAll$();
-$I$(6).sort$java_util_List(atts);
-for (var att, $att = atts.iterator$(); $att.hasNext$()&&((att=($att.next$())),1);) {
-var attName=att.split$S(" ")[1];
-if (!attName.startsWith$S("jv_")) {
-var menuItem=Clazz.new_($I$(3).c$$S,[attName]);
+Clazz.newMeth(C$, 'buildActionMenu$',  function () {
+C$.superclazz.prototype.buildActionMenu$.apply(this, []);
+this.viewerActionMenu.add$javax_swing_JMenuItem(this.writeFeatures);
+this.viewerActionMenu.add$javax_swing_JMenuItem(this.fetchAttributes);
+});
+
+Clazz.newMeth(C$, 'buildAttributesMenu$javax_swing_JMenu',  function (attributesMenu) {
+var atts=this.jmb.getChimeraAttributes$();
+attributesMenu.removeAll$();
+$I$(5).sort$java_util_List(atts);
+for (var attName, $attName = atts.iterator$(); $attName.hasNext$()&&((attName=($attName.next$())),1);) {
+var menuItem=Clazz.new_($I$(1,1).c$$S,[attName]);
 menuItem.addActionListener$java_awt_event_ActionListener(((P$.ChimeraViewFrame$3||
-(function(){var C$=Clazz.newClass(P$, "ChimeraViewFrame$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ChimeraViewFrame$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
-this.b$['jalview.gui.ChimeraViewFrame'].getChimeraAttributes$S.apply(this.b$['jalview.gui.ChimeraViewFrame'], [this.$finals$.attName]);
-});
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
+if (this.b$['jalview.gui.ChimeraViewFrame'].getBinding$.apply(this.b$['jalview.gui.ChimeraViewFrame'], []).copyStructureAttributesToFeatures$S$jalview_gui_AlignmentPanel(this.$finals$.attName, this.b$['jalview.gui.StructureViewerBase'].getAlignmentPanel$.apply(this.b$['jalview.gui.StructureViewerBase'], [])) > 0) {
+this.b$['jalview.gui.StructureViewerBase'].getAlignmentPanel$.apply(this.b$['jalview.gui.StructureViewerBase'], []).getFeatureRenderer$().featuresAdded$();
+}});
 })()
-), Clazz.new_(P$.ChimeraViewFrame$3.$init$, [this, {attName: attName}])));
+), Clazz.new_(P$.ChimeraViewFrame$3.$init$,[this, {attName:attName}])));
 attributesMenu.add$javax_swing_JMenuItem(menuItem);
-}}
+}
 });
 
-Clazz.newMeth(C$, 'getChimeraAttributes$S', function (attName) {
-this.jmb.copyStructureAttributesToFeatures$S$jalview_api_AlignmentViewPanel(attName, this.getAlignmentPanel$());
-});
-
-Clazz.newMeth(C$, 'sendFeaturesToChimera$', function () {
+Clazz.newMeth(C$, 'sendFeaturesToChimera$',  function () {
 var count=this.jmb.sendFeaturesToViewer$jalview_api_AlignmentViewPanel(this.getAlignmentPanel$());
-this.statusBar.setText$S($I$(2).formatMessage$S$OA("label.attributes_set", [new Integer(count)]));
+this.statusBar.setText$S($I$(2,"formatMessage$S$OA",["label.attributes_set", Clazz.array(java.lang.Object, -1, [Integer.valueOf$I(count), this.getViewerName$()])]));
 });
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_gui_AlignmentPanel', function (pdbentry, seq, chains, ap) {
+Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_gui_AlignmentPanel',  function (pdbentry, seq, chains, ap) {
 C$.c$.apply(this, []);
-p$1.openNewChimera$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA.apply(this, [ap, Clazz.array($I$(7), -1, [pdbentry]), Clazz.array($I$(8), -2, [seq])]);
+p$1.openNewChimera$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA.apply(this, [ap, Clazz.array($I$(6), -1, [pdbentry]), Clazz.array($I$(7), -2, [seq])]);
 }, 1);
 
-Clazz.newMeth(C$, 'createProgressBar$', function () {
-if (this.progressBar == null ) {
-this.progressBar=Clazz.new_($I$(9).c$$javax_swing_JPanel$javax_swing_JLabel,[this.statusPanel, this.statusBar]);
+Clazz.newMeth(C$, 'createProgressBar$',  function () {
+if (this.getProgressIndicator$() == null ) {
+this.setProgressIndicator$jalview_gui_IProgressIndicator(Clazz.new_($I$(8,1).c$$javax_swing_JPanel$javax_swing_JLabel,[this.statusPanel, this.statusBar]));
 }});
 
-Clazz.newMeth(C$, 'openNewChimera$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA', function (ap, pdbentrys, seqs) {
+Clazz.newMeth(C$, 'openNewChimera$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA',  function (ap, pdbentrys, seqs) {
 this.createProgressBar$();
-this.jmb=Clazz.new_($I$(10).c$$jalview_gui_ChimeraViewFrame$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType,[this, ap.getStructureSelectionManager$(), pdbentrys, seqs, null]);
+this.jmb=this.newBindingModel$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA(ap, pdbentrys, seqs);
 this.addAlignmentPanel$jalview_gui_AlignmentPanel(ap);
 this.useAlignmentPanelForColourbyseq$jalview_gui_AlignmentPanel(ap);
 if (pdbentrys.length > 1) {
@@ -124,56 +107,70 @@ this.useAlignmentPanelForSuperposition$jalview_gui_AlignmentPanel(ap);
 this.setSize$I$I(this.myWidth, this.myHeight);
 this.initMenus$();
 this.addingStructures=false;
-this.worker=Clazz.new_($I$(11).c$$Runnable,[this]);
+this.worker=Clazz.new_($I$(9,1).c$$Runnable,[this]);
 this.worker.start$();
 this.addInternalFrameListener$javax_swing_event_InternalFrameListener(((P$.ChimeraViewFrame$4||
-(function(){var C$=Clazz.newClass(P$, "ChimeraViewFrame$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.event.InternalFrameAdapter'), null, 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "ChimeraViewFrame$4", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('javax.swing.event.InternalFrameAdapter'), null, 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'internalFrameClosing$javax_swing_event_InternalFrameEvent', function (internalFrameEvent) {
-this.b$['jalview.gui.ChimeraViewFrame'].closeViewer$Z.apply(this.b$['jalview.gui.ChimeraViewFrame'], [false]);
+Clazz.newMeth(C$, 'internalFrameClosing$javax_swing_event_InternalFrameEvent',  function (internalFrameEvent) {
+this.b$['jalview.gui.StructureViewerBase'].closeViewer$Z.apply(this.b$['jalview.gui.StructureViewerBase'], [false]);
 });
 })()
-), Clazz.new_($I$(12), [this, null],P$.ChimeraViewFrame$4)));
+), Clazz.new_($I$(10,1),[this, null],P$.ChimeraViewFrame$4)));
 }, p$1);
 
-Clazz.newMeth(C$, 'c$$S$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$Z$Z$S', function (chimeraSessionFile, alignPanel, pdbArray, seqsArray, colourByChimera, colourBySequence, newViewId) {
+Clazz.newMeth(C$, 'newBindingModel$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA',  function (ap, pdbentrys, seqs) {
+return Clazz.new_([this, ap.getStructureSelectionManager$(), pdbentrys, seqs, null],$I$(11,1).c$$jalview_gui_ChimeraViewFrame$jalview_structure_StructureSelectionManager$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$jalview_io_DataSourceType);
+});
+
+Clazz.newMeth(C$, 'c$$jalview_datamodel_StructureViewerModel$jalview_gui_AlignmentPanel$S$S',  function (viewerData, alignPanel, sessionFile, vid) {
 C$.c$.apply(this, []);
-this.setViewId$S(newViewId);
-this.chimeraSessionFile=chimeraSessionFile;
+this.setViewId$S(vid);
+this.chimeraSessionFile=sessionFile;
+var pdbData=viewerData.getFileData$();
+var pdbArray=Clazz.array($I$(6), [pdbData.size$()]);
+var seqsArray=Clazz.array($I$(7), [pdbData.size$(), null]);
+var i=0;
+for (var data, $data = pdbData.values$().iterator$(); $data.hasNext$()&&((data=($data.next$())),1);) {
+var pdbentry=Clazz.new_([data.getPdbId$(), null, $I$(12).PDB, data.getFilePath$()],$I$(6,1).c$$S$S$jalview_datamodel_PDBEntry_Type$S);
+pdbArray[i]=pdbentry;
+var sequencesForPdb=data.getSeqList$();
+seqsArray[i]=sequencesForPdb.toArray$OA(Clazz.array($I$(7), [sequencesForPdb.size$()]));
+++i;
+}
 p$1.openNewChimera$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA.apply(this, [alignPanel, pdbArray, seqsArray]);
-if (colourByChimera) {
+if (viewerData.isColourByViewer$()) {
 this.jmb.setColourBySequence$Z(false);
 this.seqColour.setSelected$Z(false);
 this.viewerColour.setSelected$Z(true);
-} else if (colourBySequence) {
+} else if (viewerData.isColourWithAlignPanel$()) {
 this.jmb.setColourBySequence$Z(true);
 this.seqColour.setSelected$Z(true);
 this.viewerColour.setSelected$Z(false);
 }}, 1);
 
-Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntryA$Z$jalview_datamodel_SequenceIAA$jalview_gui_AlignmentPanel', function (pe, alignAdded, seqs, ap) {
+Clazz.newMeth(C$, 'c$$jalview_datamodel_PDBEntryA$Z$jalview_datamodel_SequenceIAA$jalview_gui_AlignmentPanel',  function (pe, alignAdded, seqs, ap) {
 C$.c$.apply(this, []);
 this.setAlignAddedStructures$Z(alignAdded);
 p$1.openNewChimera$jalview_gui_AlignmentPanel$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA.apply(this, [ap, pe, seqs]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 this.setDefaultCloseOperation$I(0);
 }, 1);
 
-Clazz.newMeth(C$, 'initChimera$', function () {
+Clazz.newMeth(C$, 'initChimera$',  function () {
 this.jmb.setFinishedInit$Z(false);
-$I$(13).addInternalFrame$javax_swing_JInternalFrame$S$I$I(this, this.jmb.getViewerTitle$S$Z(this.getViewerName$(), true), this.getBounds$().width, this.getBounds$().height);
+$I$(13,"addInternalFrame$javax_swing_JInternalFrame$S$I$I",[this, this.jmb.getViewerTitle$S$Z(this.getViewerName$(), true), this.getBounds$().width, this.getBounds$().height]);
 if (!this.jmb.launchChimera$()) {
-$I$(14).showMessageDialog$java_awt_Component$S$S$I($I$(13).desktop, $I$(2).getString$S("label.chimera_failed"), $I$(2).getString$S("label.error_loading_file"), 0);
+$I$(14,"showMessageDialog$java_awt_Component$S$S$I",[$I$(13).desktop, $I$(2,"formatMessage$S$OA",["label.open_viewer_failed", Clazz.array(java.lang.Object, -1, [this.getViewerName$()])]), $I$(2).getString$S("label.error_loading_file"), 0]);
+this.jmb.closeViewer$Z(true);
 this.dispose$();
 return;
 }if (this.chimeraSessionFile != null ) {
@@ -183,41 +180,12 @@ System.err.println$S("An error occurred opening Chimera session file " + this.ch
 }}this.jmb.startChimeraListener$();
 });
 
-Clazz.newMeth(C$, 'showSelectedChains$', function () {
-var toshow=Clazz.new_($I$(15));
-for (var i=0; i < this.chainMenu.getItemCount$(); i++) {
-if (Clazz.instanceOf(this.chainMenu.getItem$I(i), "javax.swing.JCheckBoxMenuItem")) {
-var item=this.chainMenu.getItem$I(i);
-if (item.isSelected$()) {
-toshow.add$TE(item.getText$());
-}}}
-this.jmb.showChains$java_util_List(toshow);
-});
-
-Clazz.newMeth(C$, 'closeViewer$Z', function (closeChimera) {
-if (this.jmb != null  && this.jmb.isChimeraRunning$() ) {
-if (!closeChimera) {
-var prompt=$I$(2).formatMessage$S$OA("label.confirm_close_chimera", Clazz.array(java.lang.Object, -1, [this.jmb.getViewerTitle$S$Z(this.getViewerName$(), false)]));
-prompt=$I$(16).wrapTooltip$Z$S(true, prompt);
-var confirm=$I$(14).showConfirmDialog$java_awt_Component$O$S$I(this, prompt, $I$(2).getString$S("label.close_viewer"), 1);
-if (confirm == 2 || confirm == -1 ) {
-return;
-}closeChimera=confirm == 0;
-}this.jmb.closeViewer$Z(closeChimera);
-}this.setAlignmentPanel$jalview_gui_AlignmentPanel(null);
-this._aps.clear$();
-this._alignwith.clear$();
-this._colourwith.clear$();
-this.jmb=null;
-this.dispose$();
-});
-
-Clazz.newMeth(C$, 'run$', function () {
+Clazz.newMeth(C$, 'run$',  function () {
 this._started=true;
-var errormsgs=Clazz.new_($I$(17).c$$I,[128]);
-var files=Clazz.new_($I$(17).c$$I,[128]);
-var filePDB=Clazz.new_($I$(15));
-var filePDBpos=Clazz.new_($I$(15));
+var errormsgs=Clazz.new_($I$(15,1).c$$I,[128]);
+var files=Clazz.new_($I$(15,1).c$$I,[128]);
+var filePDB=Clazz.new_($I$(16,1));
+var filePDBpos=Clazz.new_($I$(16,1));
 var thePdbEntry=null;
 var pdb=null;
 try {
@@ -226,11 +194,11 @@ for (var pi=0; pi < this.jmb.getPdbCount$(); pi++) {
 var file=null;
 thePdbEntry=this.jmb.getPdbEntry$I(pi);
 if (thePdbEntry.getFile$() == null ) {
-file=p$1.fetchPdbFile$jalview_datamodel_PDBEntry.apply(this, [thePdbEntry]);
+file=this.fetchPdbFile$jalview_datamodel_PDBEntry(thePdbEntry);
 if (file == null ) {
 errormsgs.append$S("'" + thePdbEntry.getId$() + "' " );
 }} else {
-file=Clazz.new_($I$(18).c$$S,[thePdbEntry.getFile$()]).getAbsoluteFile$().getPath$();
+file=Clazz.new_([thePdbEntry.getFile$()],$I$(17,1).c$$S).getAbsoluteFile$().getPath$();
 if (curfiles != null  && curfiles.length > 0 ) {
 this.addingStructures=true;
 for (var c=0; c < curfiles.length; c++) {
@@ -239,15 +207,15 @@ file=null;
 break;
 }}
 }}if (file != null ) {
-filePDB.add$TE(thePdbEntry);
-filePDBpos.add$TE(Integer.valueOf$I(pi));
-files.append$S(" \"" + $I$(19).escapeString$S(file) + "\"" );
+filePDB.add$O(thePdbEntry);
+filePDBpos.add$O(Integer.valueOf$I(pi));
+files.append$S(" \"" + $I$(18).escapeBackslashes$S(file) + "\"" );
 }}
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"OutOfMemoryError")){
 var oomerror = e$$;
 {
-Clazz.new_($I$(20).c$$S$OutOfMemoryError,["Retrieving PDB files: " + thePdbEntry.getId$(), oomerror]);
+Clazz.new_(["Retrieving PDB files: " + thePdbEntry.getId$(), oomerror],$I$(19,1).c$$S$OutOfMemoryError);
 }
 } else if (Clazz.exceptionOf(e$$,"Exception")){
 var ex = e$$;
@@ -260,7 +228,7 @@ throw e$$;
 }
 }
 if (errormsgs.length$() > 0) {
-$I$(14).showInternalMessageDialog$java_awt_Component$S$S$I($I$(13).desktop, $I$(2).formatMessage$S$OA("label.pdb_entries_couldnt_be_retrieved", Clazz.array(java.lang.Object, -1, [errormsgs.toString()])), $I$(2).getString$S("label.couldnt_load_file"), 0);
+$I$(14,"showInternalMessageDialog$java_awt_Component$S$S$I",[$I$(13).desktop, $I$(2,"formatMessage$S$OA",["label.pdb_entries_couldnt_be_retrieved", Clazz.array(java.lang.Object, -1, [errormsgs.toString()])]), $I$(2).getString$S("label.couldnt_load_file"), 0]);
 }if (files.length$() > 0) {
 this.jmb.setFinishedInit$Z(false);
 if (!this.addingStructures) {
@@ -268,47 +236,49 @@ try {
 this.initChimera$();
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
-$I$(21).log.error$O$Throwable("Couldn\'t open Chimera viewer!", ex);
+$I$(20).error$S$Throwable("Couldn\'t open Chimera viewer!", ex);
 } else {
 throw ex;
 }
 }
+}if (!this.jmb.isViewerRunning$()) {
+return;
 }var num=-1;
 for (var pe, $pe = filePDB.iterator$(); $pe.hasNext$()&&((pe=($pe.next$())),1);) {
-num++;
+++num;
 if (pe.getFile$() != null ) {
 try {
 var pos=filePDBpos.get$I(num).intValue$();
 var startTime=this.startProgressBar$S(this.getViewerName$() + " " + $I$(2).getString$S("status.opening_file_for") + " " + pe.getId$() );
 this.jmb.openFile$jalview_datamodel_PDBEntry(pe);
 this.jmb.addSequence$I$jalview_datamodel_SequenceIA(pos, this.jmb.getSequence$()[pos]);
-var fl=Clazz.new_($I$(18).c$$S,[pe.getFile$()]);
-var protocol=$I$(22).URL;
+var fl=Clazz.new_([pe.getFile$()],$I$(17,1).c$$S);
+var protocol=$I$(21).URL;
 try {
 if (fl.exists$()) {
-protocol=$I$(22).FILE;
+protocol=$I$(21).FILE;
 }} catch (e) {
 } finally {
 this.stopProgressBar$S$J("", startTime);
 }
-pdb=this.jmb.getSsm$().setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(this.jmb.getSequence$()[pos], this.jmb.getChains$()[pos], pe.getFile$(), protocol, this.progressBar);
-p$1.stashFoundChains$jalview_io_StructureFile$S.apply(this, [pdb, pe.getFile$()]);
+pdb=this.jmb.getSsm$().setMapping$jalview_datamodel_SequenceIA$SA$S$jalview_io_DataSourceType$jalview_gui_IProgressIndicator(this.jmb.getSequence$()[pos], this.jmb.getChains$()[pos], pe.getFile$(), protocol, this.getProgressIndicator$());
+this.jmb.stashFoundChains$jalview_io_StructureFile$S(pdb, pe.getFile$());
 } catch (e$$) {
 if (Clazz.exceptionOf(e$$,"OutOfMemoryError")){
 var oomerror = e$$;
 {
-Clazz.new_($I$(20).c$$S$OutOfMemoryError,["When trying to open and map structures from Chimera!", oomerror]);
+Clazz.new_($I$(19,1).c$$S$OutOfMemoryError,["When trying to open and map structures from Chimera!", oomerror]);
 }
 } else if (Clazz.exceptionOf(e$$,"Exception")){
 var ex = e$$;
 {
-$I$(21).log.error$O$Throwable("Couldn't open " + pe.getFile$() + " in Chimera viewer!" , ex);
+$I$(20,"error$S$Throwable",["Couldn't open " + pe.getFile$() + " in Chimera viewer!" , ex]);
 }
 } else {
 throw e$$;
 }
 } finally {
-$I$(21).log.debug$O("File locations are " + files);
+$I$(20).debug$S("File locations are " + files);
 }
 }}
 this.jmb.refreshGUI$();
@@ -321,161 +291,38 @@ fr.featuresAdded$();
 this.jmb.updateColours$O(ap);
 }
 if (this.alignAddedStructures) {
-Clazz.new_($I$(11).c$$Runnable,[((P$.ChimeraViewFrame$5||
-(function(){var C$=Clazz.newClass(P$, "ChimeraViewFrame$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+Clazz.new_([((P$.ChimeraViewFrame$5||
+(function(){/*a*/var C$=Clazz.newClass(P$, "ChimeraViewFrame$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'run$', function () {
-this.b$['jalview.gui.ChimeraViewFrame'].alignStructs_withAllAlignPanels$.apply(this.b$['jalview.gui.ChimeraViewFrame'], []);
+Clazz.newMeth(C$, 'run$',  function () {
+this.b$['jalview.gui.StructureViewerBase'].alignStructsWithAllAlignPanels$.apply(this.b$['jalview.gui.StructureViewerBase'], []);
 });
 })()
-), Clazz.new_(P$.ChimeraViewFrame$5.$init$, [this, null]))]).start$();
+), Clazz.new_(P$.ChimeraViewFrame$5.$init$,[this, null]))],$I$(9,1).c$$Runnable).start$();
 }this.addingStructures=false;
 }this._started=false;
 this.worker=null;
 });
 
-Clazz.newMeth(C$, 'stashFoundChains$jalview_io_StructureFile$S', function (pdb, file) {
-for (var i=0; i < pdb.getChains$().size$(); i++) {
-var chid= String.instantialize(pdb.getId$() + ":" + pdb.getChains$().elementAt$I(i).id );
-this.jmb.getChainNames$().add$TE(chid);
-this.jmb.getChainFile$().put$TK$TV(chid, file);
-}
-}, p$1);
-
-Clazz.newMeth(C$, 'fetchPdbFile$jalview_datamodel_PDBEntry', function (processingEntry) {
-var filePath=null;
-var pdbclient=Clazz.new_($I$(23));
-var pdbseq=null;
-var pdbid=processingEntry.getId$();
-var handle=System.currentTimeMillis$() + $I$(11).currentThread$().hashCode$();
-var msg=$I$(2).formatMessage$S$OA("status.fetching_pdb", Clazz.array(java.lang.Object, -1, [pdbid]));
-this.getAlignmentPanel$().alignFrame.setProgressBar$S$J(msg, handle);
-try {
-pdbseq=pdbclient.getSequenceRecords$S(pdbid);
-} catch (oomerror) {
-if (Clazz.exceptionOf(oomerror,"OutOfMemoryError")){
-Clazz.new_($I$(20).c$$S$OutOfMemoryError,["Retrieving PDB id " + pdbid, oomerror]);
-} else {
-throw oomerror;
-}
-} finally {
-msg=pdbid + " " + $I$(2).getString$S("label.state_completed") ;
-this.getAlignmentPanel$().alignFrame.setProgressBar$S$J(msg, handle);
-}
-if (pdbseq != null  && pdbseq.getHeight$() > 0 ) {
-filePath=Clazz.new_($I$(18).c$$S,[pdbseq.getSequenceAt$I(0).getAllPDBEntries$().elementAt$I(0).getFile$()]).getAbsolutePath$();
-processingEntry.setFile$S(filePath);
-}return filePath;
-}, p$1);
-
-Clazz.newMeth(C$, 'startProgressBar$S', function (msg) {
-var tm=this.random.nextLong$();
-if (this.progressBar != null ) {
-this.progressBar.setProgressBar$S$J(msg, tm);
-}return tm;
-});
-
-Clazz.newMeth(C$, 'stopProgressBar$S$J', function (msg, handle) {
-if (this.progressBar != null ) {
-this.progressBar.setProgressBar$S$J(msg, handle);
-}});
-
-Clazz.newMeth(C$, 'makePDBImage$jalview_util_ImageMaker_TYPE', function (imageType) {
+Clazz.newMeth(C$, 'makePDBImage$jalview_util_ImageMaker_TYPE',  function (imageType) {
 throw Clazz.new_(Clazz.load('UnsupportedOperationException').c$$S,["Image export for Chimera is not implemented"]);
 });
 
-Clazz.newMeth(C$, 'showHelp_actionPerformed$java_awt_event_ActionEvent', function (actionEvent) {
-try {
-$I$(24).openURL$S("https://www.cgl.ucsf.edu/chimera/docs/UsersGuide");
-} catch (ex) {
-if (Clazz.exceptionOf(ex,"java.io.IOException")){
-} else {
-throw ex;
-}
-}
-});
-
-Clazz.newMeth(C$, 'getBinding$', function () {
+Clazz.newMeth(C$, 'getBinding$',  function () {
 return this.jmb;
 });
 
-Clazz.newMeth(C$, 'saveSession$S', function (filepath) {
-var pathUsed=filepath;
-try {
-if (pathUsed == null ) {
-var tempFile=$I$(18).createTempFile$S$S("chimera", ".py");
-tempFile.deleteOnExit$();
-pathUsed=tempFile.getPath$();
-}var result=this.jmb.saveSession$S(pathUsed);
-if (result) {
-this.chimeraSessionFile=pathUsed;
-return pathUsed;
-}} catch (e) {
-if (Clazz.exceptionOf(e,"java.io.IOException")){
-} else {
-throw e;
-}
-}
-return null;
+Clazz.newMeth(C$, 'getViewerType$',  function () {
+return $I$(22).CHIMERA;
 });
 
-Clazz.newMeth(C$, 'getStateInfo$', function () {
-var sessionFile=this.saveSession$S(null);
-if (sessionFile == null ) {
-return "";
-}var is=null;
-try {
-var f=Clazz.new_($I$(18).c$$S,[sessionFile]);
-var bytes=Clazz.array(Byte.TYPE, [(f.length$()|0)]);
-is=Clazz.new_($I$(25).c$$S,[sessionFile]);
-is.read$BA(bytes);
-return  String.instantialize(bytes);
-} catch (e) {
-if (Clazz.exceptionOf(e,"java.io.IOException")){
-return "";
-} else {
-throw e;
-}
-} finally {
-if (is != null ) {
-try {
-is.close$();
-} catch (e) {
-if (Clazz.exceptionOf(e,"java.io.IOException")){
-} else {
-throw e;
-}
-}
-}}
-});
-
-Clazz.newMeth(C$, 'fitToWindow_actionPerformed$', function () {
-this.jmb.focusView$();
-});
-
-Clazz.newMeth(C$, 'getViewerType$', function () {
-return $I$(26).CHIMERA;
-});
-
-Clazz.newMeth(C$, 'getViewerName$', function () {
+Clazz.newMeth(C$, 'getViewerName$',  function () {
 return "Chimera";
 });
-
-Clazz.newMeth(C$, 'alignStructs_withAllAlignPanels$', function () {
-var reply=C$.superclazz.prototype.alignStructs_withAllAlignPanels$.apply(this, []);
-if (reply != null ) {
-this.statusBar.setText$S("Superposition failed: " + reply);
-}return reply;
-});
-
-Clazz.newMeth(C$, 'getIProgressIndicator$', function () {
-return this.progressBar;
-});
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-05-24 12:54:11 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:33 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

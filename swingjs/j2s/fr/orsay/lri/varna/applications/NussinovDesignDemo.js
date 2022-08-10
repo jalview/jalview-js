@@ -1,60 +1,35 @@
-(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications"),p$1={},p$2={},I$=[[0,'java.util.ArrayList','java.math.BigInteger','javax.swing.JLabel','javax.swing.JPanel','javax.swing.JButton','javax.swing.BorderFactory','java.awt.BorderLayout','fr.orsay.lri.varna.applications.NussinovDesignDemo','java.awt.Color','fr.orsay.lri.varna.models.rna.RNA','java.awt.Font',['fr.orsay.lri.varna.applications.NussinovDesignDemo','.InfoPanel'],'javax.swing.JComboBox','fr.orsay.lri.varna.models.rna.ModelBaseStyle','fr.orsay.lri.varna.VARNAPanel','java.awt.Dimension','javax.swing.DefaultComboBoxModel','java.awt.GridLayout','javax.swing.JSplitPane',['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],['fr.orsay.lri.varna.applications.NussinovDesignDemo','.Temporizer']]],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "NussinovDesignDemo", function(){
+(function(){var P$=Clazz.newPackage("fr.orsay.lri.varna.applications"),p$1={},p$2={},I$=[[0,'Thread','java.util.ArrayList','java.math.BigInteger','javax.swing.JLabel','javax.swing.JPanel','javax.swing.JButton','javax.swing.BorderFactory','java.awt.BorderLayout','fr.orsay.lri.varna.applications.NussinovDesignDemo','java.awt.Color','fr.orsay.lri.varna.models.rna.RNA','java.awt.Font',['fr.orsay.lri.varna.applications.NussinovDesignDemo','.InfoPanel'],'javax.swing.JComboBox','fr.orsay.lri.varna.models.rna.ModelBaseStyle','fr.orsay.lri.varna.VARNAPanel','java.awt.Dimension','javax.swing.DefaultComboBoxModel','java.awt.GridLayout','javax.swing.JSplitPane',['fr.orsay.lri.varna.models.VARNAConfig','.BP_STYLE'],['fr.orsay.lri.varna.applications.NussinovDesignDemo','.Temporizer']]],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "NussinovDesignDemo", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'javax.swing.JFrame', ['fr.orsay.lri.varna.interfaces.InterfaceVARNAListener', 'fr.orsay.lri.varna.interfaces.InterfaceVARNABasesListener', 'java.awt.event.ItemListener']);
-C$.labelsFont=null;
-C$._bases=null;
-C$._basesComp=null;
+C$.$classes$=[['Temporizer',2],['InfoPanel',1]];
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.labelsFont=$I$(11).decode$S("Dialog-BOLD-25");
-C$._bases=Clazz.array(String, -1, ["A", "C", "G", "U"]);
-C$._basesComp=Clazz.array(String, -1, ["U", "G", "C", "A"]);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._vpMaster=null;
-this._vpTarget=null;
-this._infos=null;
-this._tools=null;
-this._input=null;
-this._seqPanel=null;
-this._structPanel=null;
-this._actions=null;
-this._struct=null;
-this._seq1=null;
-this._structLabel=null;
-this._seqLabel=null;
-this._switchButton=null;
-this._backgroundColor=null;
-this._okColor=null;
-this._koColor=null;
-this._cache=null;
-this._cacheStructs=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._infos=Clazz.new_($I$(12), [this, null]);
-this._tools=Clazz.new_($I$(4));
-this._input=Clazz.new_($I$(4));
-this._seqPanel=Clazz.new_($I$(4));
-this._structPanel=Clazz.new_($I$(4));
-this._actions=Clazz.new_($I$(3));
-this._struct=Clazz.new_($I$(13));
-this._seq1=Clazz.new_($I$(3));
-this._structLabel=Clazz.new_($I$(3).c$$S,["Structure Cible"]);
-this._seqLabel=Clazz.new_($I$(3).c$$S,["Sequence d\'ARN"]);
-this._switchButton=Clazz.new_($I$(5).c$$S,["Reset"]);
-this._backgroundColor=$I$(9).white;
-this._okColor=$I$(9).decode$S("#E33729");
-this._koColor=Clazz.new_($I$(9).c$$I$I$I,[250, 200, 200]);
+this._infos=Clazz.new_($I$(13,1),[this, null]);
+this._tools=Clazz.new_($I$(5,1));
+this._input=Clazz.new_($I$(5,1));
+this._seqPanel=Clazz.new_($I$(5,1));
+this._structPanel=Clazz.new_($I$(5,1));
+this._actions=Clazz.new_($I$(4,1));
+this._struct=Clazz.new_($I$(14,1));
+this._seq1=Clazz.new_($I$(4,1));
+this._structLabel=Clazz.new_($I$(4,1).c$$S,["Structure Cible"]);
+this._seqLabel=Clazz.new_($I$(4,1).c$$S,["Sequence d\'ARN"]);
+this._switchButton=Clazz.new_($I$(6,1).c$$S,["Reset"]);
+this._backgroundColor=$I$(10).white;
+this._okColor=$I$(10).decode$S("#E33729");
+this._koColor=Clazz.new_($I$(10,1).c$$I$I$I,[250, 200, 200]);
 this._cache="";
-this._cacheStructs=Clazz.new_($I$(1));
-}, 1);
+this._cacheStructs=Clazz.new_($I$(2,1));
+},1);
+
+C$.$fields$=[['S',['_cache'],'O',['_vpMaster','fr.orsay.lri.varna.VARNAPanel','+_vpTarget','_infos','fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel','_tools','javax.swing.JPanel','+_input','+_seqPanel','+_structPanel','_actions','javax.swing.JLabel','_struct','javax.swing.JComboBox','_seq1','javax.swing.JLabel','+_structLabel','+_seqLabel','_switchButton','javax.swing.JButton','_backgroundColor','java.awt.Color','+_okColor','+_koColor','_cacheStructs','java.util.ArrayList']]
+,['O',['labelsFont','java.awt.Font','_bases','String[]','+_basesComp']]]
 
 Clazz.newMeth(C$, 'createStyle$S', function (txt) {
-var result=Clazz.new_($I$(14));
+var result=Clazz.new_($I$(15,1));
 try {
 result.assignParameters$S(txt);
 } catch (e$$) {
@@ -86,11 +61,10 @@ vp.repaint$();
 });
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.superclazz.c$.apply(this, []);
-C$.$init$.apply(this);
+;C$.superclazz.c$.apply(this,[]);C$.$init$.apply(this);
 try {
-this._vpMaster=Clazz.new_($I$(15).c$$S$S,[this.getSeq$(), ""]);
-this._vpTarget=Clazz.new_($I$(15));
+this._vpMaster=Clazz.new_([this.getSeq$(), ""],$I$(16,1).c$$S$S);
+this._vpTarget=Clazz.new_($I$(16,1));
 } catch (e) {
 if (Clazz.exceptionOf(e,"fr.orsay.lri.varna.exceptions.ExceptionNonEqualLength")){
 this._vpMaster.errorDialog$Exception(e);
@@ -98,83 +72,81 @@ this._vpMaster.errorDialog$Exception(e);
 throw e;
 }
 }
-this._vpMaster.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[600, 600]));
-this._vpTarget.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[600, 600]));
+this._vpMaster.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[600, 600]));
+this._vpTarget.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[600, 600]));
 p$1.RNAPanelDemoInit.apply(this, []);
 }, 1);
 
 Clazz.newMeth(C$, 'RNAPanelDemoInit', function () {
 var marginTools=250;
-var textFieldsFont=$I$(11).decode$S("MonoSpaced-BOLD-16");
+var textFieldsFont=$I$(12).decode$S("MonoSpaced-BOLD-16");
 this._seq1.setFont$java_awt_Font(textFieldsFont.deriveFont$F(25.0));
 this.setBackground$java_awt_Color(this._backgroundColor);
 this._structLabel.setFont$java_awt_Font(C$.labelsFont.deriveFont$I(0));
 var secstr=Clazz.array(String, -1, ["(((((((..)))))))", "(((())))(((())))", "(.((.((..).)).))", "((((((())))(((())(()))))))", "(((())))(((())))(((())))(((())))(((())))(((())))"]);
-var cm=Clazz.new_($I$(17).c$$TEA,[secstr]);
+var cm=Clazz.new_($I$(18,1).c$$OA,[secstr]);
 this._struct.setModel$javax_swing_ComboBoxModel(cm);
 this._struct.addActionListener$java_awt_event_ActionListener(((P$.NussinovDesignDemo$1||
-(function(){var C$=Clazz.newClass(P$, "NussinovDesignDemo$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "NussinovDesignDemo$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 System.out.println$S(e.getActionCommand$());
 this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo'].setTarget$S.apply(this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo'], [(e.getSource$()).getSelectedItem$().toString()]);
 });
 })()
-), Clazz.new_(P$.NussinovDesignDemo$1.$init$, [this, null])));
+), Clazz.new_(P$.NussinovDesignDemo$1.$init$,[this, null])));
 this._struct.setFont$java_awt_Font(textFieldsFont);
 this._struct.setEnabled$Z(true);
 this._struct.setEditable$Z(true);
 this._switchButton.addActionListener$java_awt_event_ActionListener(((P$.NussinovDesignDemo$2||
-(function(){var C$=Clazz.newClass(P$, "NussinovDesignDemo$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "NussinovDesignDemo$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (e) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (e) {
 this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo'].setTarget$S.apply(this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo'], [this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo']._struct.getSelectedItem$().toString()]);
 });
 })()
-), Clazz.new_(P$.NussinovDesignDemo$2.$init$, [this, null])));
-this._seqPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+), Clazz.new_(P$.NussinovDesignDemo$2.$init$,[this, null])));
+this._seqPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 this._seqPanel.add$java_awt_Component$O(this._seqLabel, "West");
 this._seqPanel.add$java_awt_Component$O(this._seq1, "Center");
-this._seqPanel.setBorder$javax_swing_border_Border($I$(6).createEmptyBorder$I$I$I$I(5, 5, 5, 5));
-this._structLabel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[marginTools, 15]));
+this._seqPanel.setBorder$javax_swing_border_Border($I$(7).createEmptyBorder$I$I$I$I(5, 5, 5, 5));
+this._structLabel.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[marginTools, 15]));
 this._structLabel.setHorizontalTextPosition$I(2);
-this._structPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+this._structPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 this._structPanel.add$java_awt_Component$O(this._structLabel, "West");
 this._structPanel.add$java_awt_Component$O(this._struct, "Center");
-this._input.setLayout$java_awt_LayoutManager(Clazz.new_($I$(18).c$$I$I,[0, 1]));
+this._input.setLayout$java_awt_LayoutManager(Clazz.new_($I$(19,1).c$$I$I,[0, 1]));
 this._input.add$java_awt_Component(this._structPanel);
-var goPanel=Clazz.new_($I$(4));
-goPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+var goPanel=Clazz.new_($I$(5,1));
+goPanel.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 this._infos.setFont$java_awt_Font(C$.labelsFont);
 C$.formatLabel$javax_swing_JLabel(this._seqLabel);
 C$.formatLabel$javax_swing_JLabel(this._seq1);
-this._tools.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+this._tools.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 this._tools.add$java_awt_Component$O(this._input, "Center");
 this._tools.add$java_awt_Component$O(this._actions, "South");
 this._tools.add$java_awt_Component$O(goPanel, "East");
-this._tools.setBorder$javax_swing_border_Border($I$(6).createEmptyBorder$I$I$I$I(5, 5, 5, 5));
+this._tools.setBorder$javax_swing_border_Border($I$(7).createEmptyBorder$I$I$I$I(5, 5, 5, 5));
 goPanel.add$java_awt_Component$O(this._switchButton, "Center");
-this.getContentPane$().setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
-var VARNAs=Clazz.new_($I$(19).c$$I,[1]);
-VARNAs.setBorder$javax_swing_border_Border($I$(6).createBevelBorder$I(0));
-var mast2=Clazz.new_($I$(4));
-mast2.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+this.getContentPane$().setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
+var VARNAs=Clazz.new_($I$(20,1).c$$I,[1]);
+VARNAs.setBorder$javax_swing_border_Border($I$(7).createBevelBorder$I(0));
+var mast2=Clazz.new_($I$(5,1));
+mast2.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 mast2.add$java_awt_Component$O(this._seqPanel, "North");
 mast2.add$java_awt_Component$O(this._infos, "South");
-var mast=Clazz.new_($I$(4));
-mast.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+var mast=Clazz.new_($I$(5,1));
+mast.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 mast.add$java_awt_Component$O(this._vpMaster, "Center");
 mast.add$java_awt_Component$O(mast2, "South");
 VARNAs.add$java_awt_Component(mast);
@@ -186,27 +158,27 @@ this.getContentPane$().add$java_awt_Component$O(this._tools, "North");
 this.setVisible$Z(true);
 this._vpMaster.setBackground$java_awt_Color(this._backgroundColor);
 this._vpMaster.addVARNAListener$fr_orsay_lri_varna_interfaces_InterfaceVARNAListener(this);
-this._vpMaster.setTitle$S("Meilleur repliement - S\u00e9quence courante");
-this._vpMaster.setBPStyle$fr_orsay_lri_varna_models_VARNAConfig_BP_STYLE($I$(20).SIMPLE);
+this._vpMaster.setTitle$S("Meilleur repliement - S\ufffdquence courante");
+this._vpMaster.setBPStyle$fr_orsay_lri_varna_models_VARNAConfig_BP_STYLE($I$(21).SIMPLE);
 this._vpMaster.getVARNAUI$().UIRadiate$();
 this._vpMaster.setTitleFontSize$F(26.0);
 this._vpMaster.setTitleFontStyle$I(0);
-this._vpTarget.setBackground$java_awt_Color($I$(9).decode$S("#308099"));
+this._vpTarget.setBackground$java_awt_Color($I$(10).decode$S("#308099"));
 this._vpTarget.setModifiable$Z(false);
 this._vpTarget.setTitle$S("Repliement cible");
-this._vpTarget.setBPStyle$fr_orsay_lri_varna_models_VARNAConfig_BP_STYLE($I$(20).SIMPLE);
-this._vpTarget.setBackboneColor$java_awt_Color($I$(9).white);
-this._vpTarget.setDefaultBPColor$java_awt_Color($I$(9).white);
-this._vpTarget.setBaseNumbersColor$java_awt_Color($I$(9).white);
-this._vpTarget.setBaseOutlineColor$java_awt_Color($I$(9).white);
-this._vpTarget.setTitleColor$java_awt_Color($I$(9).white);
+this._vpTarget.setBPStyle$fr_orsay_lri_varna_models_VARNAConfig_BP_STYLE($I$(21).SIMPLE);
+this._vpTarget.setBackboneColor$java_awt_Color($I$(10).white);
+this._vpTarget.setDefaultBPColor$java_awt_Color($I$(10).white);
+this._vpTarget.setBaseNumbersColor$java_awt_Color($I$(10).white);
+this._vpTarget.setBaseOutlineColor$java_awt_Color($I$(10).white);
+this._vpTarget.setTitleColor$java_awt_Color($I$(10).white);
 this._vpTarget.setTitleFontSize$F(26.0);
-this._okColor=$I$(9).decode$S("#F39126");
-this._koColor=Clazz.new_($I$(9).c$$I$I$I,[250, 200, 200]);
-this._seqPanel.setBackground$java_awt_Color($I$(9).decode$S("#E33729"));
-this._infos.setBackground$java_awt_Color($I$(9).decode$S("#E33729"));
+this._okColor=$I$(10).decode$S("#F39126");
+this._koColor=Clazz.new_($I$(10,1).c$$I$I$I,[250, 200, 200]);
+this._seqPanel.setBackground$java_awt_Color($I$(10).decode$S("#E33729"));
+this._infos.setBackground$java_awt_Color($I$(10).decode$S("#E33729"));
 this._vpMaster.addVARNABasesListener$fr_orsay_lri_varna_interfaces_InterfaceVARNABasesListener(this);
-this.setTitle$S("F\u00eate de la science 2015 - Inria AMIB - Design d\'ARN");
+this.setTitle$S("F\ufffdte de la science 2015 - Inria AMIB - Design d\'ARN");
 this.setTarget$S(secstr[0]);
 }, p$1);
 
@@ -215,14 +187,14 @@ var sols=this.getStructs$();
 this._infos.setInfo$java_util_ArrayList$java_math_BigInteger(sols, this.count$S(this.getSeq$()));
 if ((sols.size$() == 1) && (sols.get$I(0).equals$O(this._struct.getSelectedItem$().toString())) ) {
 } else {
-this._vpMaster.setTitle$S("Meilleur repliement - S\u00e9quence courante");
+this._vpMaster.setTitle$S("Meilleur repliement - S\ufffdquence courante");
 }}, p$1);
 
 Clazz.newMeth(C$, 'setTarget$S', function (target) {
 try {
 this._vpTarget.drawRNA$S$S(String.format$S$OA("%" + target.length$() + "s" , [""]), target);
-this._vpTarget.setBaseNumbersColor$java_awt_Color($I$(9).white);
-this._vpTarget.setBaseOutlineColor$java_awt_Color($I$(9).white);
+this._vpTarget.setBaseNumbersColor$java_awt_Color($I$(10).white);
+this._vpTarget.setBaseOutlineColor$java_awt_Color($I$(10).white);
 p$1.createDummySeq.apply(this, []);
 p$1.showSolution.apply(this, []);
 this.onStructureRedrawn$();
@@ -242,7 +214,7 @@ for (var i=0; i < r.getSize$(); i++) {
 seq += "A";
 }
 try {
-var rn=Clazz.new_($I$(10));
+var rn=Clazz.new_($I$(11,1));
 rn.setRNA$S$S(seq, r.getStructDBN$());
 for (var mbp, $mbp = r.getAllBPs$().iterator$(); $mbp.hasNext$()&&((mbp=($mbp.next$())),1);) {
 rn.getBaseAt$I(mbp.getIndex5$()).setContent$S("A");
@@ -381,23 +353,23 @@ return tab;
 });
 
 Clazz.newMeth(C$, 'combine$D$java_util_ArrayList$java_util_ArrayList', function (bonus, part1, part2) {
-var base=Clazz.new_($I$(1));
+var base=Clazz.new_($I$(2,1));
 for (var d1, $d1 = part1.iterator$(); $d1.hasNext$()&&((d1=($d1.next$()).objectValue$()),1);) {
 for (var d2, $d2 = part2.iterator$(); $d2.hasNext$()&&((d2=($d2.next$()).objectValue$()),1);) {
-base.add$TE(new Double(bonus + d1 + d2 ));
+base.add$O(new Double(bonus + d1 + d2 ));
 }
 }
 return base;
 }, 1);
 
 Clazz.newMeth(C$, 'selectBests$java_util_ArrayList', function (base) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(2,1));
 var best=-Infinity;
 for (var val, $val = base.iterator$(); $val.hasNext$()&&((val=($val.next$()).objectValue$()),1);) {
 best=Math.max(val, best);
 }
 for (var val, $val = base.iterator$(); $val.hasNext$()&&((val=($val.next$()).objectValue$()),1);) {
-if (val == best ) result.add$TE(new Double(val));
+if (val == best ) result.add$O(new Double(val));
 }
 return result;
 }, 1);
@@ -407,18 +379,18 @@ return p$1.backtrack$DAA$S$I$I.apply(this, [tab, seq, 0, seq.length$() - 1]);
 }, p$1);
 
 Clazz.newMeth(C$, 'backtrack$DAA$S$I$I', function (tab, seq, i, j) {
-var result=Clazz.new_($I$(1));
+var result=Clazz.new_($I$(2,1));
 if (i < j) {
-var indices=Clazz.new_($I$(1));
-indices.add$TE(new Integer(-1));
+var indices=Clazz.new_($I$(2,1));
+indices.add$O(new Integer(-1));
 for (var k=i + 1; k <= j; k++) {
-indices.add$TE(new Integer(k));
+indices.add$O(new Integer(k));
 }
 for (var k, $k = indices.iterator$(); $k.hasNext$()&&((k=($k.next$()).intValue$()),1);) {
 if (k == -1) {
 if (tab[i][j] == tab[i + 1][j] ) {
 for (var s, $s = p$1.backtrack$DAA$S$I$I.apply(this, [tab, seq, i + 1, j]).iterator$(); $s.hasNext$()&&((s=($s.next$())),1);) {
-result.add$TE("." + s);
+result.add$O("." + s);
 }
 }} else {
 if (p$1.canBasePair$C$C.apply(this, [seq.charAt$I(i), seq.charAt$I(k)])) {
@@ -431,38 +403,38 @@ fact2=tab[k + 1][j];
 }if (tab[i][j] == p$1.basePairScore$C$C.apply(this, [seq.charAt$I(i), seq.charAt$I(k)]) + fact1 + fact2  ) {
 for (var s1, $s1 = p$1.backtrack$DAA$S$I$I.apply(this, [tab, seq, i + 1, k - 1]).iterator$(); $s1.hasNext$()&&((s1=($s1.next$())),1);) {
 for (var s2, $s2 = p$1.backtrack$DAA$S$I$I.apply(this, [tab, seq, k + 1, j]).iterator$(); $s2.hasNext$()&&((s2=($s2.next$())),1);) {
-result.add$TE("(" + s1 + ")" + s2 );
+result.add$O("(" + s1 + ")" + s2 );
 }
 }
 }}}}
 } else if (i == j) {
-result.add$TE(".");
+result.add$O(".");
 } else {
-result.add$TE("");
+result.add$O("");
 }return result;
 }, p$1);
 
 Clazz.newMeth(C$, 'count$S', function (seq) {
 var n=seq.length$();
-var tab=Clazz.array($I$(2), [n, n]);
+var tab=Clazz.array($I$(3), [n, n]);
 for (var m=1; m <= n; m++) {
 for (var i=0; i < n - m + 1; i++) {
 var j=i + m - 1;
-tab[i][j]=$I$(2).ZERO;
+tab[i][j]=$I$(3).ZERO;
 if (i < j) {
 tab[i][j]=tab[i][j].add$java_math_BigInteger(tab[i + 1][j]);
 for (var k=i + 1; k <= j; k++) {
 if (p$1.canBasePair$C$C.apply(this, [seq.charAt$I(i), seq.charAt$I(k)])) {
-var fact1=$I$(2).ONE;
+var fact1=$I$(3).ONE;
 if (k > i + 1) {
 fact1=tab[i + 1][k - 1];
-}var fact2=$I$(2).ONE;
+}var fact2=$I$(3).ONE;
 if (k < j) {
 fact2=tab[k + 1][j];
 }tab[i][j]=tab[i][j].add$java_math_BigInteger(fact1.multiply$java_math_BigInteger(fact2));
 }}
 } else {
-tab[i][j]=$I$(2).ONE;
+tab[i][j]=$I$(3).ONE;
 }}
 }
 return tab[0][n - 1];
@@ -517,7 +489,7 @@ Clazz.newMeth(C$, 'onLoaded$', function () {
 Clazz.newMeth(C$, 'onUINewStructure$fr_orsay_lri_varna_models_VARNAConfig$fr_orsay_lri_varna_models_rna_RNA', function (v, r) {
 });
 
-Clazz.newMeth(C$, ['onBaseClicked$fr_orsay_lri_varna_models_rna_ModeleBase$java_awt_event_MouseEvent','onBaseClicked$'], function (mb, e) {
+Clazz.newMeth(C$, 'onBaseClicked$fr_orsay_lri_varna_models_rna_ModeleBase$java_awt_event_MouseEvent', function (mb, e) {
 var index=-1;
 for (var i=0; i < C$._bases.length; i++) {
 if (mb.getContent$().equalsIgnoreCase$S(C$._bases[i])) {
@@ -531,7 +503,7 @@ var mbPartner=this._vpMaster.getRNA$().getBaseAt$I(partners.get$I(0).getIndex$()
 mbPartner.setContent$S(C$._basesComp[index].toUpperCase$());
 }this._vpMaster.repaint$();
 this._seq1.setText$S(this._vpMaster.getRNA$().getSeq$());
-Clazz.new_($I$(21).c$$S, [this, null, this._vpMaster.getRNA$().getSeq$()]).start$();
+Clazz.new_([this, null, this._vpMaster.getRNA$().getSeq$()],$I$(22,1).c$$S).start$();
 });
 
 Clazz.newMeth(C$, 'onZoomLevelChanged$', function () {
@@ -540,46 +512,48 @@ Clazz.newMeth(C$, 'onZoomLevelChanged$', function () {
 Clazz.newMeth(C$, 'onTranslationChanged$', function () {
 });
 
-Clazz.newMeth(C$, ['itemStateChanged$java_awt_event_ItemEvent','itemStateChanged$'], function (arg0) {
+Clazz.newMeth(C$, 'itemStateChanged$java_awt_event_ItemEvent', function (arg0) {
 System.out.println$();
 });
 
 Clazz.newMeth(C$, 'formatLabel$javax_swing_JLabel', function (j) {
 j.setHorizontalTextPosition$I(2);
-j.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[250, 25]));
+j.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[250, 25]));
 j.setFont$java_awt_Font(C$.labelsFont);
-j.setForeground$java_awt_Color($I$(9).white);
+j.setForeground$java_awt_Color($I$(10).white);
 }, 1);
 
 Clazz.newMeth(C$, 'formatLabel$javax_swing_JTextArea', function (j) {
-j.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(16).c$$I$I,[250, 25]));
+j.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[250, 25]));
 j.setFont$java_awt_Font(C$.labelsFont);
-j.setForeground$java_awt_Color($I$(9).white);
+j.setForeground$java_awt_Color($I$(10).white);
 }, 1);
+
+C$.$static$=function(){C$.$static$=0;
+C$.labelsFont=$I$(12).decode$S("Dialog-BOLD-25");
+C$._bases=Clazz.array(String, -1, ["A", "C", "G", "U"]);
+C$._basesComp=Clazz.array(String, -1, ["U", "G", "C", "A"]);
+};
 ;
-(function(){var C$=Clazz.newClass(P$.NussinovDesignDemo, "Temporizer", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.NussinovDesignDemo, "Temporizer", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'Thread');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._seq=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['S',['_seq']]]
 
 Clazz.newMeth(C$, 'c$$S', function (seq) {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 this._seq=seq;
 }, 1);
 
 Clazz.newMeth(C$, 'run$', function () {
 try {
-this.sleep$J(1000);
+$I$(1).sleep$J(1000);
 if (this.this$0._vpMaster.getRNA$().getSeq$().equalsIgnoreCase$S(this._seq)) {
 p$1.showSolution.apply(this.this$0, []);
 }} catch (e) {
@@ -594,104 +568,90 @@ throw e;
 Clazz.newMeth(C$);
 })()
 ;
-(function(){var C$=Clazz.newClass(P$.NussinovDesignDemo, "InfoPanel", function(){
+(function(){/*c*/var C$=Clazz.newClass(P$.NussinovDesignDemo, "InfoPanel", function(){
 Clazz.newInstance(this, arguments[0],true,C$);
 }, 'javax.swing.JPanel');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this._sols=null;
-this._nbFolds=null;
-this._text=null;
-this._subopts=null;
-this._suboptBrowser=null;
-this._suboptCount=null;
-this._selectedIndex=0;
-this.next=null;
-this.previous=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this._sols=Clazz.new_($I$(1));
-this._nbFolds=$I$(2).ZERO;
-this._text=Clazz.new_($I$(3).c$$S,[""]);
-this._subopts=Clazz.new_($I$(3).c$$S,[""]);
-this._suboptBrowser=Clazz.new_($I$(4));
-this._suboptCount=Clazz.new_($I$(4));
+this._sols=Clazz.new_($I$(2,1));
+this._nbFolds=$I$(3).ZERO;
+this._text=Clazz.new_($I$(4,1).c$$S,[""]);
+this._subopts=Clazz.new_($I$(4,1).c$$S,[""]);
+this._suboptBrowser=Clazz.new_($I$(5,1));
+this._suboptCount=Clazz.new_($I$(5,1));
 this._selectedIndex=0;
-this.next=Clazz.new_($I$(5).c$$S,[">"]);
-this.previous=Clazz.new_($I$(5).c$$S,["<"]);
-}, 1);
+this.next=Clazz.new_($I$(6,1).c$$S,[">"]);
+this.previous=Clazz.new_($I$(6,1).c$$S,["<"]);
+},1);
+
+C$.$fields$=[['I',['_selectedIndex'],'O',['_sols','java.util.ArrayList','_nbFolds','java.math.BigInteger','_text','javax.swing.JLabel','+_subopts','_suboptBrowser','javax.swing.JPanel','+_suboptCount','next','javax.swing.JButton','+previous']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
-this.setBorder$javax_swing_border_Border($I$(6).createEmptyBorder$I$I$I$I(5, 5, 5, 5));
-this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+Clazz.super_(C$, this);
+this.setBorder$javax_swing_border_Border($I$(7).createEmptyBorder$I$I$I$I(5, 5, 5, 5));
+this.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 this.add$java_awt_Component$O(this._suboptBrowser, "South");
 this.add$java_awt_Component$O(this._suboptCount, "North");
 this.next.addActionListener$java_awt_event_ActionListener(((P$.NussinovDesignDemo$InfoPanel$1||
-(function(){var C$=Clazz.newClass(P$, "NussinovDesignDemo$InfoPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "NussinovDesignDemo$InfoPanel$1", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (arg0) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (arg0) {
 if (this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel']._sols.size$() > 0) {
 this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel'].setSelectedIndex$I.apply(this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel'], [(this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel']._selectedIndex + 1) % this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel']._sols.size$()]);
 }});
 })()
-), Clazz.new_(P$.NussinovDesignDemo$InfoPanel$1.$init$, [this, null])));
+), Clazz.new_(P$.NussinovDesignDemo$InfoPanel$1.$init$,[this, null])));
 this.previous.addActionListener$java_awt_event_ActionListener(((P$.NussinovDesignDemo$InfoPanel$2||
-(function(){var C$=Clazz.newClass(P$, "NussinovDesignDemo$InfoPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+(function(){/*a*/var C$=Clazz.newClass(P$, "NussinovDesignDemo$InfoPanel$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$'], function (arg0) {
+Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent', function (arg0) {
 if (this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel']._sols.size$() > 0) {
 this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel'].setSelectedIndex$I.apply(this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel'], [(this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel']._selectedIndex + this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel']._sols.size$() - 1) % this.b$['fr.orsay.lri.varna.applications.NussinovDesignDemo.InfoPanel']._sols.size$()]);
 }});
 })()
-), Clazz.new_(P$.NussinovDesignDemo$InfoPanel$2.$init$, [this, null])));
+), Clazz.new_(P$.NussinovDesignDemo$InfoPanel$2.$init$,[this, null])));
 this.next.setEnabled$Z(false);
 this.previous.setEnabled$Z(false);
-var nbLab=Clazz.new_($I$(3).c$$S,["#Repliements"]);
-$I$(8).formatLabel$javax_swing_JLabel(nbLab);
-var cooptlab=Clazz.new_($I$(3).c$$S,["#Co-optimaux"]);
-$I$(8).formatLabel$javax_swing_JLabel(cooptlab);
-$I$(8).formatLabel$javax_swing_JLabel(this._text);
-$I$(8).formatLabel$javax_swing_JLabel(this._subopts);
-this._suboptCount.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+var nbLab=Clazz.new_($I$(4,1).c$$S,["#Repliements"]);
+$I$(9).formatLabel$javax_swing_JLabel(nbLab);
+var cooptlab=Clazz.new_($I$(4,1).c$$S,["#Co-optimaux"]);
+$I$(9).formatLabel$javax_swing_JLabel(cooptlab);
+$I$(9).formatLabel$javax_swing_JLabel(this._text);
+$I$(9).formatLabel$javax_swing_JLabel(this._subopts);
+this._suboptCount.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 this._suboptCount.add$java_awt_Component$O(nbLab, "West");
 this._suboptCount.add$java_awt_Component$O(this._text, "Center");
-this._suboptCount.setBackground$java_awt_Color($I$(9).decode$S("#E33729"));
-var commands=Clazz.new_($I$(4));
+this._suboptCount.setBackground$java_awt_Color($I$(10).decode$S("#E33729"));
+var commands=Clazz.new_($I$(5,1));
 commands.add$java_awt_Component(this.previous);
 commands.add$java_awt_Component(this.next);
-commands.setBackground$java_awt_Color($I$(9).decode$S("#E33729"));
-var jp=Clazz.new_($I$(4));
-jp.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+commands.setBackground$java_awt_Color($I$(10).decode$S("#E33729"));
+var jp=Clazz.new_($I$(5,1));
+jp.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 jp.add$java_awt_Component$O(this._subopts, "West");
 jp.add$java_awt_Component$O(commands, "Center");
-jp.setBackground$java_awt_Color($I$(9).decode$S("#E33729"));
-this._suboptBrowser.setLayout$java_awt_LayoutManager(Clazz.new_($I$(7)));
+jp.setBackground$java_awt_Color($I$(10).decode$S("#E33729"));
+this._suboptBrowser.setLayout$java_awt_LayoutManager(Clazz.new_($I$(8,1)));
 this._suboptBrowser.add$java_awt_Component$O(cooptlab, "West");
 this._suboptBrowser.add$java_awt_Component$O(jp, "Center");
-this._suboptBrowser.setBackground$java_awt_Color($I$(9).decode$S("#E33729"));
+this._suboptBrowser.setBackground$java_awt_Color($I$(10).decode$S("#E33729"));
 }, 1);
 
 Clazz.newMeth(C$, 'setSelectedIndex$I', function (i) {
 this._selectedIndex=i;
-var rfolded=Clazz.new_($I$(10));
+var rfolded=Clazz.new_($I$(11,1));
 try {
 rfolded.setRNA$S$S(this.this$0.getSeq$.apply(this.this$0, []), this._sols.get$I(i));
 var target=this.this$0._vpTarget.getRNA$();
@@ -699,17 +659,17 @@ for (var mb, $mb = rfolded.get_listeBases$().iterator$(); $mb.hasNext$()&&((mb=(
 var mbref=target.getBaseAt$I(mb.getIndex$());
 if (mb.getElementStructure$() == mbref.getElementStructure$()) {
 mb.getStyleBase$().setBaseInnerColor$java_awt_Color(this.this$0._okColor);
-mb.getStyleBase$().setBaseNameColor$java_awt_Color($I$(9).white);
+mb.getStyleBase$().setBaseNameColor$java_awt_Color($I$(10).white);
 }}
 for (var mb, $mb = target.get_listeBases$().iterator$(); $mb.hasNext$()&&((mb=($mb.next$())),1);) {
 var mbref=rfolded.getBaseAt$I(mb.getIndex$());
 if (mb.getElementStructure$() == mbref.getElementStructure$()) {
 mb.getStyleBase$().setBaseInnerColor$java_awt_Color(this.this$0._okColor);
 } else {
-mb.getStyleBase$().setBaseInnerColor$java_awt_Color($I$(9).white);
+mb.getStyleBase$().setBaseInnerColor$java_awt_Color($I$(10).white);
 }}
 rfolded.drawRNARadiate$fr_orsay_lri_varna_models_VARNAConfig(this.this$0._vpMaster.getConfig$());
-if ((this._sols.size$() == 1) && (target.getStructDBN$().equals$O(this._sols.get$I(0))) ) rfolded.setName$S("F\u00e9licitations !");
+if ((this._sols.size$() == 1) && (target.getStructDBN$().equals$O(this._sols.get$I(0))) ) rfolded.setName$S("F\ufffdlicitations !");
  else rfolded.setName$S("Repliement stable - " + (i + 1) + "/" + this._sols.size$() );
 this.this$0._vpMaster.showRNAInterpolated$fr_orsay_lri_varna_models_rna_RNA(rfolded);
 this.this$0._vpTarget.repaint$();
@@ -746,4 +706,4 @@ this.previous.setEnabled$Z(this._sols.size$() > 1);
 }, p$2);
 })()
 })();
-;Clazz.setTVer('3.2.4.06');//Created 2019-01-21 23:29:41 Java2ScriptVisitor version 3.2.4.06 net.sf.j2s.core.jar version 3.2.4.06
+;Clazz.setTVer('3.2.9-v1');//Created 2020-03-23 09:06:17 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

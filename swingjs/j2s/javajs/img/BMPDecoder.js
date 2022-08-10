@@ -1,23 +1,18 @@
-(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},I$=[[0,'javajs.util.Rdr']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "BMPDecoder");
+(function(){var P$=Clazz.newPackage("javajs.img"),p$1={},I$=[[0,'javajs.util.Rdr']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "BMPDecoder");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.bis=null;
-this.temp=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[['O',['bis','java.io.BufferedInputStream','temp','byte[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'decodeWindowsBMP$BA', function (bytes) {
+Clazz.newMeth(C$, 'decodeWindowsBMP$BA',  function (bytes) {
 try {
 this.bis=$I$(1).getBIS$BA(bytes);
 this.temp=Clazz.array(Byte.TYPE, [4]);
@@ -124,30 +119,30 @@ throw e;
 return null;
 });
 
-Clazz.newMeth(C$, 'pad$I', function (npad) {
+Clazz.newMeth(C$, 'pad$I',  function (npad) {
 for (var i=0; i < npad; i++) p$1.readByte.apply(this, []);
 
 return true;
 }, p$1);
 
-Clazz.newMeth(C$, 'readColor$I', function (n) {
+Clazz.newMeth(C$, 'readColor$I',  function (n) {
 this.bis.read$BA$I$I(this.temp, 0, n);
 return -16777216 | ((this.temp[2] & 255) << 16) | ((this.temp[1] & 255) << 8) | this.temp[0] & 255;
 }, p$1);
 
-Clazz.newMeth(C$, 'readInt', function () {
+Clazz.newMeth(C$, 'readInt',  function () {
 this.bis.read$BA$I$I(this.temp, 0, 4);
 return ((this.temp[3] & 255) << 24) | ((this.temp[2] & 255) << 16) | ((this.temp[1] & 255) << 8) | this.temp[0] & 255 ;
 }, p$1);
 
-Clazz.newMeth(C$, 'readShort', function () {
+Clazz.newMeth(C$, 'readShort',  function () {
 this.bis.read$BA$I$I(this.temp, 0, 2);
 return ((this.temp[1] & 255) << 8) | this.temp[0] & 255;
 }, p$1);
 
-Clazz.newMeth(C$, 'readByte', function () {
+Clazz.newMeth(C$, 'readByte',  function () {
 this.bis.read$BA$I$I(this.temp, 0, 1);
 return this.temp[0] & 255;
 }, p$1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:59 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 17:13:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

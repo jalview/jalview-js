@@ -1,27 +1,16 @@
-(function(){var P$=Clazz.newPackage("java.awt.font"),p$1={},I$=[[0,'sun.font.Decoration','sun.font.FontResolver','java.util.Vector','sun.text.CodePointIterator','java.awt.font.TextAttribute','java.awt.Toolkit','java.util.HashMap']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "StyledParagraph");
-C$.INITIAL_SIZE=0;
+(function(){var P$=Clazz.newPackage("java.awt.font"),p$1={},I$=[[0,'sun.font.Decoration','sun.font.FontResolver','java.util.Vector','sun.text.CodePointIterator','java.awt.font.TextAttribute','java.awt.Toolkit','java.util.HashMap']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "StyledParagraph");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-C$.INITIAL_SIZE=8;
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.length=0;
-this.decoration=null;
-this.font=null;
-this.decorations=null;
-this.decorationStarts=null;
-this.fonts=null;
-this.fontStarts=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$CA', function (aci, chars) {
-C$.$init$.apply(this);
+C$.$fields$=[['I',['length'],'O',['decoration','sun.font.Decoration','font','java.lang.Object','decorations','java.util.Vector','decorationStarts','int[]','fonts','java.util.Vector','fontStarts','int[]']]
+,['I',['INITIAL_SIZE']]]
+
+Clazz.newMeth(C$, 'c$$java_text_AttributedCharacterIterator$CA',  function (aci, chars) {
+;C$.$init$.apply(this);
 var start=aci.getBeginIndex$();
 var end=aci.getEndIndex$();
 this.length=end - start;
@@ -48,13 +37,13 @@ this.decorationStarts=C$.addToVector$O$I$java_util_Vector$IA(this, this.length, 
 this.fontStarts=C$.addToVector$O$I$java_util_Vector$IA(this, this.length, this.fonts, this.fontStarts);
 }}, 1);
 
-Clazz.newMeth(C$, 'insertInto$I$IA$I', function (pos, starts, numStarts) {
+Clazz.newMeth(C$, 'insertInto$I$IA$I',  function (pos, starts, numStarts) {
 while (starts[--numStarts] > pos){
 starts[numStarts]+=1;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'insertChar$java_text_AttributedCharacterIterator$CA$I$java_awt_font_StyledParagraph', function (aci, chars, insertPos, oldParagraph) {
+Clazz.newMeth(C$, 'insertChar$java_text_AttributedCharacterIterator$CA$I$java_awt_font_StyledParagraph',  function (aci, chars, insertPos, oldParagraph) {
 var ch=aci.setIndex$I(insertPos);
 var relativePos=Math.max(insertPos - aci.getBeginIndex$() - 1 , 0);
 var attributes=C$.addInputMethodAttrs$java_util_Map(aci.getAttributes$());
@@ -76,13 +65,13 @@ C$.insertInto$I$IA$I(relativePos, oldParagraph.fontStarts, oldParagraph.fonts.si
 }return oldParagraph;
 }, 1);
 
-Clazz.newMeth(C$, 'deleteFrom$I$IA$I', function (deleteAt, starts, numStarts) {
+Clazz.newMeth(C$, 'deleteFrom$I$IA$I',  function (deleteAt, starts, numStarts) {
 while (starts[--numStarts] > deleteAt){
 starts[numStarts]-=1;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'deleteChar$java_text_AttributedCharacterIterator$CA$I$java_awt_font_StyledParagraph', function (aci, chars, deletePos, oldParagraph) {
+Clazz.newMeth(C$, 'deleteChar$java_text_AttributedCharacterIterator$CA$I$java_awt_font_StyledParagraph',  function (aci, chars, deletePos, oldParagraph) {
 deletePos-=aci.getBeginIndex$();
 if (oldParagraph.decorations == null  && oldParagraph.fonts == null  ) {
 oldParagraph.length-=1;
@@ -98,7 +87,7 @@ C$.deleteFrom$I$IA$I(deletePos, oldParagraph.fontStarts, oldParagraph.fonts.size
 }return oldParagraph;
 }, 1);
 
-Clazz.newMeth(C$, 'getRunLimit$I', function (index) {
+Clazz.newMeth(C$, 'getRunLimit$I',  function (index) {
 if (index < 0 || index >= this.length ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["index out of range"]);
 }var limit1=this.length;
@@ -112,7 +101,7 @@ limit2=this.fontStarts[run + 1];
 }return Math.min(limit1, limit2);
 });
 
-Clazz.newMeth(C$, 'getDecorationAt$I', function (index) {
+Clazz.newMeth(C$, 'getDecorationAt$I',  function (index) {
 if (index < 0 || index >= this.length ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["index out of range"]);
 }if (this.decorations == null ) {
@@ -121,7 +110,7 @@ return this.decoration;
 return this.decorations.elementAt$I(run);
 });
 
-Clazz.newMeth(C$, 'getFontOrGraphicAt$I', function (index) {
+Clazz.newMeth(C$, 'getFontOrGraphicAt$I',  function (index) {
 if (index < 0 || index >= this.length ) {
 throw Clazz.new_(Clazz.load('IllegalArgumentException').c$$S,["index out of range"]);
 }if (this.fonts == null ) {
@@ -130,16 +119,16 @@ return this.font;
 return this.fonts.elementAt$I(run);
 });
 
-Clazz.newMeth(C$, 'findRunContaining$I$IA', function (index, starts) {
+Clazz.newMeth(C$, 'findRunContaining$I$IA',  function (index, starts) {
 for (var i=1; true; i++) {
 if (starts[i] > index) {
 return i - 1;
 }}
 }, 1);
 
-Clazz.newMeth(C$, 'addToVector$O$I$java_util_Vector$IA', function (obj, index, v, starts) {
+Clazz.newMeth(C$, 'addToVector$O$I$java_util_Vector$IA',  function (obj, index, v, starts) {
 if (!v.lastElement$().equals$O(obj)) {
-v.addElement$TE(obj);
+v.addElement$O(obj);
 var count=v.size$();
 if (starts.length == count) {
 var temp=Clazz.array(Integer.TYPE, [starts.length * 2]);
@@ -149,37 +138,37 @@ starts=temp;
 }return starts;
 }, 1);
 
-Clazz.newMeth(C$, 'addDecoration$sun_font_Decoration$I', function (d, index) {
+Clazz.newMeth(C$, 'addDecoration$sun_font_Decoration$I',  function (d, index) {
 if (this.decorations != null ) {
 this.decorationStarts=C$.addToVector$O$I$java_util_Vector$IA(d, index, this.decorations, this.decorationStarts);
 } else if (this.decoration == null ) {
 this.decoration=d;
 } else {
 if (!this.decoration.equals$O(d)) {
-this.decorations=Clazz.new_($I$(3).c$$I,[C$.INITIAL_SIZE]);
-this.decorations.addElement$TE(this.decoration);
-this.decorations.addElement$TE(d);
+this.decorations=Clazz.new_($I$(3,1).c$$I,[C$.INITIAL_SIZE]);
+this.decorations.addElement$O(this.decoration);
+this.decorations.addElement$O(d);
 this.decorationStarts=Clazz.array(Integer.TYPE, [C$.INITIAL_SIZE]);
 this.decorationStarts[0]=0;
 this.decorationStarts[1]=index;
 }}}, p$1);
 
-Clazz.newMeth(C$, 'addFont$O$I', function (f, index) {
+Clazz.newMeth(C$, 'addFont$O$I',  function (f, index) {
 if (this.fonts != null ) {
 this.fontStarts=C$.addToVector$O$I$java_util_Vector$IA(f, index, this.fonts, this.fontStarts);
 } else if (this.font == null ) {
 this.font=f;
 } else {
 if (!this.font.equals$O(f)) {
-this.fonts=Clazz.new_($I$(3).c$$I,[C$.INITIAL_SIZE]);
-this.fonts.addElement$TE(this.font);
-this.fonts.addElement$TE(f);
+this.fonts=Clazz.new_($I$(3,1).c$$I,[C$.INITIAL_SIZE]);
+this.fonts.addElement$O(this.font);
+this.fonts.addElement$O(f);
 this.fontStarts=Clazz.array(Integer.TYPE, [C$.INITIAL_SIZE]);
 this.fontStarts[0]=0;
 this.fontStarts[1]=index;
 }}}, p$1);
 
-Clazz.newMeth(C$, 'addFonts$CA$java_util_Map$I$I', function (chars, attributes, start, limit) {
+Clazz.newMeth(C$, 'addFonts$CA$java_util_Map$I$I',  function (chars, attributes, start, limit) {
 var resolver=$I$(2).getInstance$();
 var iter=$I$(4).create$CA$I$I(chars, start, limit);
 for (var runStart=iter.charIndex$(); runStart < limit; runStart=iter.charIndex$()) {
@@ -188,7 +177,7 @@ p$1.addFont$O$I.apply(this, [resolver.getFont$I$java_util_Map(fontIndex, attribu
 }
 }, p$1);
 
-Clazz.newMeth(C$, 'addInputMethodAttrs$java_util_Map', function (oldStyles) {
+Clazz.newMeth(C$, 'addInputMethodAttrs$java_util_Map',  function (oldStyles) {
 var value=oldStyles.get$O($I$(5).INPUT_METHOD_HIGHLIGHT);
 try {
 if (value != null ) {
@@ -209,7 +198,7 @@ if (imStyles == null ) {
 var tk=$I$(6).getDefaultToolkit$();
 imStyles=tk.mapInputMethodHighlight$java_awt_im_InputMethodHighlight(hl);
 }if (imStyles != null ) {
-var newStyles=Clazz.new_($I$(7).c$$I$F,[5, 0.9]);
+var newStyles=Clazz.new_($I$(7,1).c$$I$F,[5, 0.9]);
 newStyles.putAll$java_util_Map(oldStyles);
 newStyles.putAll$java_util_Map(imStyles);
 return newStyles;
@@ -222,7 +211,7 @@ throw e;
 return oldStyles;
 }, 1);
 
-Clazz.newMeth(C$, 'getGraphicOrFont$java_util_Map', function (attributes) {
+Clazz.newMeth(C$, 'getGraphicOrFont$java_util_Map',  function (attributes) {
 var value=attributes.get$O($I$(5).CHAR_REPLACEMENT);
 if (value != null ) {
 return value;
@@ -232,6 +221,10 @@ return value;
 }return null;
 }, 1);
 
+C$.$static$=function(){C$.$static$=0;
+C$.INITIAL_SIZE=8;
+};
+
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:29 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:52 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

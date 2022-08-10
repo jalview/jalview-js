@@ -1,14 +1,13 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.P3','java.util.Hashtable','javajs.util.BS','javajs.util.CU','javajs.util.PT']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "ObjReader", null, 'org.jmol.jvxl.readers.PmeshReader');
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),I$=[[0,'javajs.util.P3','java.util.Hashtable','javajs.util.BS','javajs.util.CU','javajs.util.PT']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "ObjReader", null, 'org.jmol.jvxl.readers.PmeshReader');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
 
 Clazz.newMeth(C$, 'c$', function () {
-Clazz.super_(C$, this,1);
+Clazz.super_(C$, this);
 }, 1);
 
 Clazz.newMeth(C$, 'init2$org_jmol_jvxl_readers_SurfaceGenerator$java_io_BufferedReader', function (sg, br) {
@@ -19,7 +18,7 @@ this.setHeader$();
 
 Clazz.newMeth(C$, 'readVertices$', function () {
 this.pmeshError="pmesh ERROR: invalid vertex/face list";
-var pt=Clazz.new_($I$(1));
+var pt=Clazz.new_($I$(1,1));
 var color=0;
 var ia;
 var ib;
@@ -27,14 +26,14 @@ var ic;
 var id=0;
 var i=0;
 var nPts=0;
-var htPymol=Clazz.new_($I$(2));
+var htPymol=Clazz.new_($I$(2,1));
 var ipt=null;
 var spt=null;
 var pymolMap=Clazz.array(Integer.TYPE, [3]);
-var bsOK=Clazz.new_($I$(3));
+var bsOK=Clazz.new_($I$(3,1));
 while (this.rd$() != null ){
 if (this.line.length$() < 2 || this.line.charAt$I(1) != " " ) {
-if (this.params.readAllData && this.line.startsWith$S("usemtl") ) color=$I$(4).getArgbFromString$S("[x" + this.line.substring$I(8) + "]" );
+if (this.params.readAllData && this.line.startsWith$S("usemtl") ) color=$I$(4,"getArgbFromString$S",["[x" + this.line.substring$I(8) + "]" ]);
 continue;
 }switch ((this.line.charCodeAt$I(0))) {
 case 118:
@@ -54,7 +53,7 @@ if (this.isAnisotropic) this.setVertexAnisotropy$javajs_util_T3(pt);
 j=this.addVertexCopy$javajs_util_T3$F$I$Z(pt, 0, this.nVertices++, true);
 if (j >= 0) bsOK.set$I(i);
 }pymolMap[nPts % 3]=j;
-if (addHt) htPymol.put$TK$TV(spt, Integer.valueOf$I(i));
+if (addHt) htPymol.put$O$O(spt, Integer.valueOf$I(i));
 nPts++;
 if (htPymol != null  && nPts > 3 ) htPymol=null;
 break;
@@ -87,7 +86,7 @@ break;
 case 103:
 htPymol=null;
 if (this.params.readAllData) try {
-color=$I$(5).parseIntRadix$S$I(this.line.substring$I(3), 16);
+color=$I$(5,"parseIntRadix$S$I",[this.line.substring$I(3), 16]);
 } catch (e) {
 color=0;
 }
@@ -102,4 +101,4 @@ Clazz.newMeth(C$, 'readPolygons$', function () {
 return true;
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:05 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,21 +1,15 @@
 (function(){var P$=Clazz.newPackage("org.jmol.modelsetbio");
-var C$=Clazz.newClass(P$, "BasePair");
+/*c*/var C$=Clazz.newClass(P$, "BasePair");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.info=null;
-this.g1=null;
-this.g2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-}, 1);
+},1);
+
+C$.$fields$=[['O',['info','java.util.Map','g1','org.jmol.modelsetbio.NucleicMonomer','+g2']]]
 
 Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 }, 1);
 
 Clazz.newMeth(C$, 'add$java_util_Map$org_jmol_modelsetbio_NucleicMonomer$org_jmol_modelsetbio_NucleicMonomer', function (info, g1, g2) {
@@ -35,4 +29,4 @@ Clazz.newMeth(C$, 'toString', function () {
 return this.info.toString();
 });
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:18 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:39 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

@@ -1,46 +1,25 @@
-(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','org.jmol.jvxl.readers.Parameters','org.jmol.jvxl.data.MeshData','org.jmol.jvxl.data.JvxlData','org.jmol.jvxl.data.VolumeData','javajs.util.PT','javajs.util.AU','org.jmol.util.Logger','org.jmol.jvxl.readers.SurfaceReader','javajs.util.P4','org.jmol.jvxl.data.JvxlCoder','javajs.util.Rdr','org.jmol.jvxl.readers.VolumeFileReader','org.jmol.viewer.FileManager','javajs.util.Measure','javajs.util.BS']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "SurfaceGenerator");
+(function(){var P$=Clazz.newPackage("org.jmol.jvxl.readers"),p$1={},I$=[[0,'javajs.util.V3','javajs.util.P3','org.jmol.jvxl.readers.Parameters','org.jmol.jvxl.data.MeshData','org.jmol.jvxl.data.JvxlData','org.jmol.jvxl.data.VolumeData','javajs.util.PT','javajs.util.AU','org.jmol.util.Logger','org.jmol.jvxl.readers.SurfaceReader','javajs.util.P4','org.jmol.jvxl.data.JvxlCoder','javajs.util.Rdr','org.jmol.jvxl.readers.VolumeFileReader','org.jmol.viewer.FileManager','javajs.util.Measure','javajs.util.BS']],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "SurfaceGenerator");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.params=null;
-this.jvxlData=null;
-this.meshData=null;
-this.volumeDataTemp=null;
-this.meshDataServer=null;
-this.atomDataServer=null;
-this.marchingSquares=null;
-this.version=null;
-this.isValid=false;
-this.fileType=null;
-this.bsVdw=null;
-this.colorPtr=0;
-this.surfaceReader=null;
-this.out=null;
-this.readerData=null;
-this.vAB=null;
-this.vNorm=null;
-this.ptRef=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.isValid=true;
-this.vAB=Clazz.new_($I$(1));
-this.vNorm=Clazz.new_($I$(1));
+this.vAB=Clazz.new_($I$(1,1));
+this.vNorm=Clazz.new_($I$(1,1));
 this.ptRef=$I$(2).new3$F$F$F(0, 0, 9.9999999E14);
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['isValid'],'I',['colorPtr'],'S',['version','fileType'],'O',['params','org.jmol.jvxl.readers.Parameters','jvxlData','org.jmol.jvxl.data.JvxlData','meshData','org.jmol.jvxl.data.MeshData','volumeDataTemp','org.jmol.jvxl.data.VolumeData','meshDataServer','org.jmol.jvxl.api.MeshDataServer','atomDataServer','org.jmol.atomdata.AtomDataServer','marchingSquares','org.jmol.jvxl.calc.MarchingSquares','bsVdw','javajs.util.BS','surfaceReader','org.jmol.jvxl.readers.SurfaceReader','out','javajs.util.OC','readerData','java.lang.Object','vAB','javajs.util.V3','+vNorm','ptRef','javajs.util.P3']]]
 
 Clazz.newMeth(C$, 'c$$org_jmol_atomdata_AtomDataServer$org_jmol_jvxl_api_MeshDataServer$org_jmol_jvxl_data_MeshData$org_jmol_jvxl_data_JvxlData', function (atomDataServer, meshDataServer, meshData, jvxlData) {
-C$.$init$.apply(this);
+;C$.$init$.apply(this);
 this.atomDataServer=atomDataServer;
 this.meshDataServer=meshDataServer;
-this.params=Clazz.new_($I$(3));
-this.meshData=(meshData == null  ? Clazz.new_($I$(4)) : meshData);
-this.jvxlData=(jvxlData == null  ? Clazz.new_($I$(5)) : jvxlData);
-this.volumeDataTemp=Clazz.new_($I$(6));
+this.params=Clazz.new_($I$(3,1));
+this.meshData=(meshData == null  ? Clazz.new_($I$(4,1)) : meshData);
+this.jvxlData=(jvxlData == null  ? Clazz.new_($I$(5,1)) : jvxlData);
+this.volumeDataTemp=Clazz.new_($I$(6,1));
 this.initializeIsosurface$();
 }, 1);
 
@@ -50,12 +29,12 @@ if (jvxlData != null ) jvxlData.version=this.version;
 });
 
 Clazz.newMeth(C$, 'setProp$S$O$javajs_util_BS', function (propertyName, value, bs) {
-if ("debug" == propertyName) {
+if ("debug" === propertyName ) {
 var TF=(value).booleanValue$();
 this.params.logMessages=TF;
 this.params.logCube=TF;
 return true;
-}if ("init" == propertyName) {
+}if ("init" === propertyName ) {
 this.initializeIsosurface$();
 if (Clazz.instanceOf(value, "org.jmol.jvxl.readers.Parameters")) {
 this.params=value;
@@ -64,59 +43,59 @@ this.params.script=value;
 if (this.params.script != null  && this.params.script.indexOf$S(";#") >= 0 ) {
 this.params.script=$I$(7).rep$S$S$S(this.params.script, ";#", "; #");
 }}return false;
-}if ("silent" == propertyName) {
+}if ("silent" === propertyName ) {
 this.params.isSilent=true;
 return true;
-}if ("map" == propertyName) {
+}if ("map" === propertyName ) {
 this.params.resetForMapping$Z((value).booleanValue$());
 if (this.surfaceReader != null ) this.surfaceReader.minMax=null;
 return true;
-}if ("finalize" == propertyName) {
+}if ("finalize" === propertyName ) {
 this.initializeIsosurface$();
 return true;
-}if ("clear" == propertyName) {
+}if ("clear" === propertyName ) {
 if (this.surfaceReader != null ) this.surfaceReader.discardTempData$Z(true);
 return false;
-}if ("fileIndex" == propertyName) {
+}if ("fileIndex" === propertyName ) {
 this.params.fileIndex=(value).intValue$();
 if (this.params.fileIndex < 0) this.params.fileIndex=0;
 this.params.readAllData=false;
 return true;
-}if ("blockData" == propertyName) {
+}if ("blockData" === propertyName ) {
 this.params.blockCubeData=(value).booleanValue$();
 return true;
-}if ("withinPoints" == propertyName) {
+}if ("withinPoints" === propertyName ) {
 this.params.boundingBox=(value)[1];
 return true;
-}if ("boundingBox" == propertyName) {
+}if ("boundingBox" === propertyName ) {
 var pts=value;
 this.params.boundingBox=Clazz.array($I$(2), -1, [$I$(2).newP$javajs_util_T3(pts[0]), $I$(2).newP$javajs_util_T3(pts[pts.length - 1])]);
 return true;
-}if ("func" == propertyName) {
+}if ("func" === propertyName ) {
 this.params.func=value;
 return true;
-}if ("intersection" == propertyName) {
+}if ("intersection" === propertyName ) {
 this.params.intersection=value;
 return true;
-}if ("bsSolvent" == propertyName) {
+}if ("bsSolvent" === propertyName ) {
 this.params.bsSolvent=value;
 return true;
-}if ("select" == propertyName) {
+}if ("select" === propertyName ) {
 this.params.bsSelected=value;
 return true;
-}if ("ignore" == propertyName) {
+}if ("ignore" === propertyName ) {
 this.params.bsIgnore=value;
 return true;
-}if ("propertySmoothing" == propertyName) {
+}if ("propertySmoothing" === propertyName ) {
 this.params.propertySmoothing=(value).booleanValue$();
 return true;
-}if ("propertyDistanceMax" == propertyName) {
+}if ("propertyDistanceMax" === propertyName ) {
 this.params.propertyDistanceMax=(value).floatValue$();
 return true;
-}if ("propertySmoothingPower" == propertyName) {
+}if ("propertySmoothingPower" === propertyName ) {
 this.params.propertySmoothingPower=(value).intValue$();
 return true;
-}if ("title" == propertyName) {
+}if ("title" === propertyName ) {
 if (value == null ) {
 this.params.title=null;
 return true;
@@ -125,74 +104,74 @@ this.params.title=value;
 if ($I$(9).debugging) for (var i=0; i < this.params.title.length; i++) if (this.params.title[i].length$() > 0) $I$(9).info$S(this.params.title[i]);
 
 }return true;
-}if ("sigma" == propertyName) {
+}if ("sigma" === propertyName ) {
 this.params.cutoff=this.params.sigma=(value).floatValue$();
-this.params.isPositiveOnly=false;
 this.params.cutoffAutomatic=false;
 return true;
-}if ("cutoff" == propertyName) {
+}if ("cutoff" === propertyName ) {
 this.params.cutoff=(value).floatValue$();
 this.params.isPositiveOnly=false;
 this.params.cutoffAutomatic=false;
 return true;
-}if ("parameters" == propertyName) {
+}if ("parameters" === propertyName ) {
 this.params.parameters=$I$(8).ensureLengthA$FA$I(value, 2);
 if (this.params.parameters.length > 0 && this.params.parameters[0] != 0  ) this.params.cutoff=this.params.parameters[0];
 return true;
-}if ("cutoffPositive" == propertyName) {
+}if ("cutoffPositive" === propertyName ) {
 this.params.cutoff=(value).floatValue$();
 this.params.isPositiveOnly=true;
+this.params.isCutoffAbsolute=false;
 return true;
-}if ("cap" == propertyName || "slab" == propertyName ) {
+}if ("cap" === propertyName  || "slab" === propertyName  ) {
 if (value != null ) this.params.addSlabInfo$OA(value);
 return true;
-}if ("scale" == propertyName) {
+}if ("scale" === propertyName ) {
 this.params.scale=(value).floatValue$();
 return true;
-}if ("scale3d" == propertyName) {
+}if ("scale3d" === propertyName ) {
 this.params.scale3d=(value).floatValue$();
 return true;
-}if ("angstroms" == propertyName) {
+}if ("angstroms" === propertyName ) {
 this.params.isAngstroms=true;
 return true;
-}if ("resolution" == propertyName) {
+}if ("resolution" === propertyName ) {
 var resolution=(value).floatValue$();
 this.params.resolution=(resolution > 0  ? resolution : 3.4028235E38);
 return true;
-}if ("downsample" == propertyName) {
+}if ("downsample" === propertyName ) {
 var rate=(value).intValue$();
 this.params.downsampleFactor=(rate >= 0 ? rate : 0);
 return true;
-}if ("anisotropy" == propertyName) {
+}if ("anisotropy" === propertyName ) {
 if ((this.params.dataType & 32) == 0) this.params.setAnisotropy$javajs_util_P3(value);
 return true;
-}if ("eccentricity" == propertyName) {
+}if ("eccentricity" === propertyName ) {
 this.params.setEccentricity$javajs_util_P4(value);
 return true;
-}if ("addHydrogens" == propertyName) {
+}if ("addHydrogens" === propertyName ) {
 this.params.addHydrogens=(value).booleanValue$();
 return true;
-}if ("squareData" == propertyName) {
+}if ("squareData" === propertyName ) {
 this.params.isSquared=(value == null  ? false : (value).booleanValue$());
 return true;
-}if ("squareLinear" == propertyName) {
+}if ("squareLinear" === propertyName ) {
 this.params.isSquaredLinear=(value == null  ? false : (value).booleanValue$());
 return true;
-}if ("gridPoints" == propertyName) {
+}if ("gridPoints" === propertyName ) {
 this.params.iAddGridPoints=true;
 return true;
-}if ("atomIndex" == propertyName) {
+}if ("atomIndex" === propertyName ) {
 this.params.atomIndex=(value).intValue$();
 return true;
-}if ("insideOut" == propertyName) {
+}if ("insideOut" === propertyName ) {
 this.params.insideOut=true;
 return true;
-}if ("sign" == propertyName) {
-this.params.isCutoffAbsolute=true;
+}if ("sign" === propertyName ) {
+this.params.isCutoffAbsolute=!this.params.isPositiveOnly;
 this.params.colorBySign=true;
 this.colorPtr=0;
 return true;
-}if ("colorRGB" == propertyName) {
+}if ("colorRGB" === propertyName ) {
 var rgb=(value).intValue$();
 this.params.colorRgb=this.params.colorPos=this.params.colorPosLCAO=rgb;
 if (this.colorPtr++ == 0) {
@@ -200,19 +179,19 @@ this.params.colorNeg=this.params.colorNegLCAO=rgb;
 } else {
 this.params.colorRgb=2147483647;
 }return true;
-}if ("monteCarloCount" == propertyName) {
+}if ("monteCarloCount" === propertyName ) {
 this.params.psi_monteCarloCount=(value).intValue$();
 return true;
-}if ("rangeAll" == propertyName) {
+}if ("rangeAll" === propertyName ) {
 this.params.rangeAll=true;
 return true;
-}if ("rangeSelected" == propertyName) {
+}if ("rangeSelected" === propertyName ) {
 this.params.rangeSelected=true;
 return true;
-}if ("red" == propertyName) {
+}if ("red" === propertyName ) {
 this.params.valueMappedToRed=(value).floatValue$();
 return true;
-}if ("blue" == propertyName) {
+}if ("blue" === propertyName ) {
 this.params.valueMappedToBlue=(value).floatValue$();
 if (this.params.valueMappedToRed > this.params.valueMappedToBlue ) {
 var f=this.params.valueMappedToRed;
@@ -222,39 +201,39 @@ this.params.isColorReversed=!this.params.isColorReversed;
 }this.params.rangeDefined=true;
 this.params.rangeAll=false;
 return true;
-}if ("reverseColor" == propertyName) {
+}if ("reverseColor" === propertyName ) {
 this.params.isColorReversed=true;
 return true;
-}if ("setColorScheme" == propertyName) {
+}if ("setColorScheme" === propertyName ) {
 p$1.getSurfaceSets.apply(this, []);
 this.params.colorBySets=true;
 p$1.mapSurface.apply(this, []);
 return true;
-}if ("center" == propertyName) {
+}if ("center" === propertyName ) {
 this.params.center.setT$javajs_util_T3(value);
 return true;
-}if ("origin" == propertyName) {
+}if ("origin" === propertyName ) {
 this.params.origin=value;
 return true;
-}if ("step" == propertyName) {
+}if ("step" === propertyName ) {
 this.params.steps=value;
 return true;
-}if ("modelInvRotation" == propertyName) {
+}if ("modelInvRotation" === propertyName ) {
 this.params.modelInvRotation=value;
 return true;
-}if ("point" == propertyName) {
+}if ("point" === propertyName ) {
 this.params.points=value;
 return true;
-}if ("withinDistance" == propertyName) {
+}if ("withinDistance" === propertyName ) {
 this.params.distance=(value).floatValue$();
 return true;
-}if ("withinPoint" == propertyName) {
+}if ("withinPoint" === propertyName ) {
 this.params.point=value;
 return true;
-}if ("progressive" == propertyName) {
+}if ("progressive" === propertyName ) {
 this.params.isXLowToHigh=true;
 return true;
-}if ("phase" == propertyName) {
+}if ("phase" === propertyName ) {
 var color=value;
 this.params.isCutoffAbsolute=true;
 this.params.colorBySign=true;
@@ -270,36 +249,36 @@ this.params.state=3;
 this.params.isBicolorMap=true;
 this.surfaceReader.applyColorScale$();
 }return true;
-}if ("radius" == propertyName) {
+}if ("radius" === propertyName ) {
 $I$(9).info$S("solvent probe radius set to " + value);
 this.params.atomRadiusData=value;
 return true;
-}if ("envelopeRadius" == propertyName) {
+}if ("envelopeRadius" === propertyName ) {
 this.params.envelopeRadius=(value).floatValue$();
 return true;
-}if ("cavityRadius" == propertyName) {
+}if ("cavityRadius" === propertyName ) {
 this.params.cavityRadius=(value).floatValue$();
 return true;
-}if ("cavity" == propertyName) {
+}if ("cavity" === propertyName ) {
 this.params.isCavity=true;
 return true;
-}if ("doFullMolecular" == propertyName) {
+}if ("doFullMolecular" === propertyName ) {
 this.params.doFullMolecular=true;
 return true;
-}if ("pocket" == propertyName) {
+}if ("pocket" === propertyName ) {
 this.params.pocket=value;
 this.params.fullyLit=this.params.pocket.booleanValue$();
 return true;
-}if ("minset" == propertyName) {
+}if ("minset" === propertyName ) {
 this.params.minSet=(value).intValue$();
 return true;
-}if ("maxset" == propertyName) {
+}if ("maxset" === propertyName ) {
 this.params.maxSet=(value).intValue$();
 return true;
-}if ("plane" == propertyName) {
+}if ("plane" === propertyName ) {
 this.params.setPlane$javajs_util_P4(value);
 return true;
-}if ("contour" == propertyName) {
+}if ("contour" === propertyName ) {
 this.params.isContoured=true;
 var n;
 if ($I$(8).isAF$O(value)) {
@@ -327,40 +306,40 @@ if (n == 0) this.params.nContours=9;
  else if (n > 0) this.params.nContours=n;
  else this.params.thisContour=-n;
 }return true;
-}if ("colorDiscrete" == propertyName) {
+}if ("colorDiscrete" === propertyName ) {
 this.params.contourColixes=value;
 return true;
-}if ("colorDensity" == propertyName) {
+}if ("colorDensity" === propertyName ) {
 this.params.colorDensity=true;
 if (value != null ) this.params.pointSize=(value).floatValue$();
 return false;
-}if ("fullPlane" == propertyName) {
+}if ("fullPlane" === propertyName ) {
 this.params.contourFromZero=!(value).booleanValue$();
 return true;
-}if ("mapLattice" == propertyName) {
+}if ("mapLattice" === propertyName ) {
 this.params.mapLattice=value;
 return true;
-}if ("extendGrid" == propertyName) {
+}if ("extendGrid" === propertyName ) {
 this.params.extendGrid=(value).floatValue$();
 return true;
-}if ("property" == propertyName) {
+}if ("property" === propertyName ) {
 this.params.dataType=1208;
 this.params.theProperty=value;
 p$1.mapSurface.apply(this, []);
 return true;
-}if ("sphere" == propertyName) {
+}if ("sphere" === propertyName ) {
 this.params.setSphere$F$Z((value).floatValue$(), false);
 this.readerData=Float.valueOf$F(this.params.distance);
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("geodesic" == propertyName) {
+}if ("geodesic" === propertyName ) {
 this.params.setSphere$F$Z((value).floatValue$(), true);
 this.readerData=Float.valueOf$F(this.params.distance);
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("ellipsoid" == propertyName) {
+}if ("ellipsoid" === propertyName ) {
 if (Clazz.instanceOf(value, "javajs.util.P4")) this.params.setEllipsoidP4$javajs_util_P4(value);
  else if ($I$(8).isAF$O(value)) this.params.setEllipsoidAF$FA(value);
  else return true;
@@ -368,31 +347,31 @@ this.readerData=Float.valueOf$F(this.params.distance);
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("ellipsoid3" == propertyName) {
+}if ("ellipsoid3" === propertyName ) {
 this.params.setEllipsoidAF$FA(value);
 this.readerData=Float.valueOf$F(this.params.distance);
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("lp" == propertyName) {
+}if ("lp" === propertyName ) {
 this.params.setLp$javajs_util_P4(value);
 this.readerData=Clazz.array(Float.TYPE, -1, [3, 2, 0, 15, 0]);
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("rad" == propertyName) {
+}if ("rad" === propertyName ) {
 this.params.setRadical$javajs_util_P4(value);
 this.readerData=Clazz.array(Float.TYPE, -1, [3, 2, 0, 15, 0]);
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("lobe" == propertyName) {
+}if ("lobe" === propertyName ) {
 this.params.setLobe$javajs_util_P4(value);
 this.readerData=Clazz.array(Float.TYPE, -1, [3, 2, 0, 15, 0]);
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("hydrogenOrbital" == propertyName) {
+}if ("hydrogenOrbital" === propertyName ) {
 if (!this.params.setAtomicOrbital$FA(value)) {
 this.isValid=false;
 return true;
@@ -400,57 +379,57 @@ return true;
 this.surfaceReader=p$1.newReader$S.apply(this, ["IsoShapeReader"]);
 p$1.processState.apply(this, []);
 return true;
-}if ("functionXY" == propertyName) {
+}if ("functionXY" === propertyName ) {
 this.params.setFunctionXY$javajs_util_Lst(value);
 if (this.params.isContoured) this.volumeDataTemp.setPlaneParameters$javajs_util_P4(this.params.thePlane == null  ? this.params.thePlane=$I$(11).new4$F$F$F$F(0, 0, 1, 0) : this.params.thePlane);
 if ((this.params.functionInfo.get$I(0)).indexOf$S("_xyz") >= 0) p$1.getFunctionZfromXY.apply(this, []);
 p$1.processState.apply(this, []);
 return true;
-}if ("functionXYZ" == propertyName) {
+}if ("functionXYZ" === propertyName ) {
 this.params.setFunctionXYZ$javajs_util_Lst(value);
 p$1.processState.apply(this, []);
 return true;
-}if ("lcaoType" == propertyName) {
+}if ("lcaoType" === propertyName ) {
 this.params.setLcao$S$I(value, this.colorPtr);
 return true;
-}if ("lcaoCartoonCenter" == propertyName) {
+}if ("lcaoCartoonCenter" === propertyName ) {
 if (++this.params.state != 2) return true;
 if (Float.isNaN$F(this.params.center.x)) this.params.center.setT$javajs_util_T3(value);
 return false;
-}if ("molecular" == propertyName || "solvent" == propertyName  || "sasurface" == propertyName  || "nomap" == propertyName ) {
+}if ("molecular" === propertyName  || "solvent" === propertyName   || "sasurface" === propertyName   || "nomap" === propertyName  ) {
 this.params.setSolvent$S$F(propertyName, (value).floatValue$());
 if (!this.params.isSilent) $I$(9).info$S(this.params.calculationType);
 p$1.processState.apply(this, []);
 return true;
-}if ("moData" == propertyName) {
+}if ("moData" === propertyName ) {
 this.params.moData=value;
 return true;
-}if ("mepCalcType" == propertyName) {
+}if ("mepCalcType" === propertyName ) {
 this.params.mep_calcType=(value).intValue$();
 return true;
-}if ("mep" == propertyName) {
+}if ("mep" === propertyName ) {
 this.params.setMep$FA$Z(value, false);
 p$1.processState.apply(this, []);
 return true;
-}if ("mlp" == propertyName) {
+}if ("mlp" === propertyName ) {
 this.params.setMep$FA$Z(value, true);
 p$1.processState.apply(this, []);
 return true;
-}if ("nci" == propertyName) {
+}if ("nci" === propertyName ) {
 var isPromolecular=(value).booleanValue$();
 this.params.setNci$Z(isPromolecular);
 if (isPromolecular) p$1.processState.apply(this, []);
 return true;
-}if ("calculationType" == propertyName) {
+}if ("calculationType" === propertyName ) {
 this.params.calculationType=value;
 return true;
-}if ("charges" == propertyName) {
+}if ("charges" === propertyName ) {
 this.params.theProperty=value;
 return true;
-}if ("randomSeed" == propertyName) {
+}if ("randomSeed" === propertyName ) {
 this.params.randomSeed=(value).intValue$();
 return true;
-}if ("molecularOrbital" == propertyName) {
+}if ("molecularOrbital" === propertyName ) {
 var iMo=0;
 var linearCombination=null;
 if (Clazz.instanceOf(value, "java.lang.Integer")) {
@@ -461,36 +440,36 @@ linearCombination=value;
 $I$(9).info$S(this.params.calculationType);
 p$1.processState.apply(this, []);
 return true;
-}if ("fileType" == propertyName) {
+}if ("fileType" === propertyName ) {
 this.fileType=value;
 return true;
-}if ("fileName" == propertyName) {
+}if ("fileName" === propertyName ) {
 this.params.fileName=value;
 return true;
-}if ("filesData" == propertyName) {
+}if ("filesData" === propertyName ) {
 this.params.filesData=value;
 return true;
-}if ("outputChannel" == propertyName) {
+}if ("outputChannel" === propertyName ) {
 this.out=value;
 return true;
-}if ("readFile" == propertyName) {
+}if ("readFile" === propertyName ) {
 if ((this.surfaceReader=p$1.setFileData$org_jmol_viewer_Viewer$O.apply(this, [this.atomDataServer, value])) == null ) {
 $I$(9).error$S("Could not set the surface data");
 return true;
 }this.surfaceReader.setOutputChannel$javajs_util_OC(this.out);
 p$1.generateSurface.apply(this, []);
 return true;
-}if ("mapColor" == propertyName) {
+}if ("mapColor" === propertyName ) {
 if ((this.surfaceReader=p$1.setFileData$org_jmol_viewer_Viewer$O.apply(this, [this.atomDataServer, value])) == null ) {
 $I$(9).error$S("Could not set the mapping data");
 return true;
 }this.surfaceReader.setOutputChannel$javajs_util_OC(this.out);
 p$1.mapSurface.apply(this, []);
 return true;
-}if ("getSurfaceSets" == propertyName) {
+}if ("getSurfaceSets" === propertyName ) {
 p$1.getSurfaceSets.apply(this, []);
 return true;
-}if ("periodic" == propertyName) {
+}if ("periodic" === propertyName ) {
 this.params.isPeriodic=true;
 }return false;
 });
@@ -513,7 +492,7 @@ var x=Clazz.forName("org.jmol.jvxl.readers." + name);
 return (x == null  ? null : x.newInstance$());
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
-$I$(9).error$S("Interface.java Error creating instance for " + name + ": \n" + e.toString() );
+$I$(9,"error$S",["Interface.java Error creating instance for " + name + ": \n" + e.toString() ]);
 return null;
 } else {
 throw e;
@@ -662,8 +641,8 @@ if (this.meshDataServer != null ) this.meshDataServer.notifySurfaceMappingComple
 });
 
 Clazz.newMeth(C$, 'getProperty$S$I', function (property, index) {
-if (property == "jvxlFileData") return $I$(12).jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S(this.jvxlData, null, this.params.title, "", true, index, null, null);
-if (property == "jvxlFileInfo") return $I$(12).jvxlGetInfo$org_jmol_jvxl_data_JvxlData(this.jvxlData);
+if (property === "jvxlFileData" ) return $I$(12).jvxlGetFile$org_jmol_jvxl_data_JvxlData$org_jmol_jvxl_data_MeshData$SA$S$Z$I$S$S(this.jvxlData, null, this.params.title, "", true, index, null, null);
+if (property === "jvxlFileInfo" ) return $I$(12).jvxlGetInfo$org_jmol_jvxl_data_JvxlData(this.jvxlData);
 return null;
 });
 
@@ -696,7 +675,7 @@ if (fileType == null ) fileType=$I$(15).determineSurfaceFileType$java_io_Buffere
 if (fileType != null  && fileType.startsWith$S("UPPSALA") ) {
 var fname=this.params.fileName;
 fname=fname.substring$I$I(0, fname.indexOf$S$I("/", 10));
-fname += $I$(7).getQuotedStringAt$S$I(fileType, fileType.indexOf$S("A HREF") + 1);
+fname += $I$(7,"getQuotedStringAt$S$I",[fileType, fileType.indexOf$S("A HREF") + 1]);
 this.params.fileName=fname;
 value=this.atomDataServer.getBufferedInputStream$S(fname);
 if (value == null ) {
@@ -757,10 +736,10 @@ vectors[i]=$I$(1).new3$F$F$F(info.y, info.z, info.w);
 }
 var nx=counts[0];
 var ny=counts[1];
-var pt=Clazz.new_($I$(2));
-var pta=Clazz.new_($I$(2));
-var ptb=Clazz.new_($I$(2));
-var ptc=Clazz.new_($I$(2));
+var pt=Clazz.new_($I$(2,1));
+var pta=Clazz.new_($I$(2,1));
+var ptb=Clazz.new_($I$(2,1));
+var ptc=Clazz.new_($I$(2,1));
 var data=this.params.functionInfo.get$I(5);
 var data2=Clazz.array(Float.TYPE, [nx, ny]);
 var d;
@@ -778,7 +757,7 @@ pt.z=p$1.distanceVerticalToPlane$F$F$javajs_util_P3$javajs_util_P3$javajs_util_P
 }data2[i][j]=pt.z;
 }
 
-this.params.functionInfo.set$I$TE(5, data2);
+this.params.functionInfo.set$I$O(5, data2);
 }, p$1);
 
 Clazz.newMeth(C$, 'distanceVerticalToPlane$F$F$javajs_util_P3$javajs_util_P3$javajs_util_P3', function (x, y, pta, ptb, ptc) {
@@ -842,7 +821,7 @@ this.meshDataServer.setOutputChannel$javajs_api_GenericBinaryDocument$javajs_uti
 
 Clazz.newMeth(C$, 'fillAtomData$org_jmol_atomdata_AtomData$I', function (atomData, mode) {
 if ((mode & 2) != 0 && atomData.bsSelected != null  ) {
-if (this.bsVdw == null ) this.bsVdw=Clazz.new_($I$(17));
+if (this.bsVdw == null ) this.bsVdw=Clazz.new_($I$(17,1));
 this.bsVdw.or$javajs_util_BS(atomData.bsSelected);
 }this.atomDataServer.fillAtomData$org_jmol_atomdata_AtomData$I(atomData, mode);
 });
@@ -853,4 +832,4 @@ return (this.surfaceReader.volumeData == null  ? null : this.surfaceReader.volum
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:36 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

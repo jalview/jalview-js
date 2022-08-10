@@ -1,49 +1,22 @@
-(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'org.jmol.util.Point3fi','javajs.util.P3','javajs.util.V3','org.jmol.shape.Shape','org.jmol.util.Vibration']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "VectorsRenderer", null, 'org.jmol.render.ShapeRenderer');
+(function(){var P$=Clazz.newPackage("org.jmol.renderspecial"),p$1={},I$=[[0,'org.jmol.util.Point3fi','javajs.util.P3','javajs.util.V3','org.jmol.shape.Shape','org.jmol.util.Vibration']],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$[0][i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "VectorsRenderer", null, 'org.jmol.render.ShapeRenderer');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.ptTemp=null;
-this.pointVectorStart=null;
-this.pointVectorEnd=null;
-this.pointArrowHead=null;
-this.screenVectorStart=null;
-this.screenVectorEnd=null;
-this.screenArrowHead=null;
-this.headOffsetVector=null;
-this.pTemp3=null;
-this.diameter=0;
-this.headWidthPixels=0;
-this.vectorScale=0;
-this.vectorSymmetry=false;
-this.headScale=0;
-this.drawShaft=false;
-this.vibTemp=null;
-this.vectorsCentered=false;
-this.standardVector=false;
-this.vibrationOn=false;
-this.drawCap=false;
-this.showModVecs=false;
-this.vectorTrail=0;
-this.ptTemp4=null;
-this.ptTemp2=null;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
-this.ptTemp=Clazz.new_($I$(1));
-this.pointVectorStart=Clazz.new_($I$(2));
-this.pointVectorEnd=Clazz.new_($I$(1));
-this.pointArrowHead=Clazz.new_($I$(2));
-this.screenVectorStart=Clazz.new_($I$(2));
-this.screenVectorEnd=Clazz.new_($I$(2));
-this.screenArrowHead=Clazz.new_($I$(2));
-this.headOffsetVector=Clazz.new_($I$(3));
-this.pTemp3=Clazz.new_($I$(2));
+this.ptTemp=Clazz.new_($I$(1,1));
+this.pointVectorStart=Clazz.new_($I$(2,1));
+this.pointVectorEnd=Clazz.new_($I$(1,1));
+this.pointArrowHead=Clazz.new_($I$(2,1));
+this.screenVectorStart=Clazz.new_($I$(2,1));
+this.screenVectorEnd=Clazz.new_($I$(2,1));
+this.screenArrowHead=Clazz.new_($I$(2,1));
+this.headOffsetVector=Clazz.new_($I$(3,1));
+this.pTemp3=Clazz.new_($I$(2,1));
 this.standardVector=true;
-}, 1);
+},1);
+
+C$.$fields$=[['Z',['vectorSymmetry','drawShaft','vectorsCentered','standardVector','vibrationOn','drawCap','showModVecs'],'F',['vectorScale','headScale'],'I',['diameter','headWidthPixels','vectorTrail'],'O',['ptTemp','org.jmol.util.Point3fi','pointVectorStart','javajs.util.P3','pointVectorEnd','org.jmol.util.Point3fi','pointArrowHead','javajs.util.P3','+screenVectorStart','+screenVectorEnd','+screenArrowHead','headOffsetVector','javajs.util.V3','pTemp3','javajs.util.P3','vibTemp','org.jmol.util.Vibration','ptTemp4','javajs.util.P3','+ptTemp2']]]
 
 Clazz.newMeth(C$, 'render$', function () {
 var vectors=this.shape;
@@ -76,7 +49,7 @@ needTranslucent=true;
 continue;
 }p$1.renderVector$org_jmol_modelset_Atom$org_jmol_util_Vibration.apply(this, [atom, vib]);
 if (this.vectorSymmetry) {
-if (this.vibTemp == null ) this.vibTemp=Clazz.new_($I$(5));
+if (this.vibTemp == null ) this.vibTemp=Clazz.new_($I$(5,1));
 this.vibTemp.setT$javajs_util_T3(vib);
 this.vibTemp.scale$F(-1);
 p$1.transform$H$org_jmol_modelset_Atom$org_jmol_util_Vibration$org_jmol_api_JmolModulationSet.apply(this, [mads[i], atom, this.vibTemp, null]);
@@ -158,8 +131,8 @@ return true;
 Clazz.newMeth(C$, 'renderVector$org_jmol_modelset_Atom$org_jmol_util_Vibration', function (atom, vib) {
 if (vib != null  && this.vectorTrail > 0 ) {
 if (this.ptTemp4 == null ) {
-this.ptTemp4=Clazz.new_($I$(2));
-this.ptTemp2=Clazz.new_($I$(2));
+this.ptTemp4=Clazz.new_($I$(2,1));
+this.ptTemp2=Clazz.new_($I$(2,1));
 }var d=Math.max(1, this.diameter >> 2);
 var pts=vib.addTracePt$I$org_jmol_util_Point3fi(this.vectorTrail, this.vibrationOn ? this.pointVectorEnd : null);
 this.tm.transformPtScrT3$javajs_util_T3$javajs_util_T3(atom, this.ptTemp4);
@@ -167,17 +140,16 @@ if (pts != null ) for (var i=pts.length, p=this.vectorTrail; --i >= 0; ) {
 var pt=pts[--p];
 if (pt == null ) break;
 this.tm.transformPtScrT3$javajs_util_T3$javajs_util_T3(pt, this.ptTemp2);
-this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), d, this.ptTemp4, this.ptTemp2);
+this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, d, this.ptTemp4, this.ptTemp2);
 }
 }if (this.drawShaft) {
 this.pTemp3.set$F$F$F(atom.sX, atom.sY, atom.sZ);
-if (this.standardVector) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.pTemp3, this.screenArrowHead);
- else this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(($b$[0] = 2, $b$[0]), this.diameter, this.screenVectorStart, this.screenArrowHead);
-}if (this.drawCap) this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(($b$[0] = 2, $b$[0]), this.headWidthPixels, this.screenArrowHead, this.screenVectorEnd, false);
+if (this.standardVector) this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.pTemp3, this.screenArrowHead);
+ else this.g3d.fillCylinderBits$B$I$javajs_util_P3$javajs_util_P3(2, this.diameter, this.screenVectorStart, this.screenArrowHead);
+}if (this.drawCap) this.g3d.fillConeScreen3f$B$I$javajs_util_P3$javajs_util_P3$Z(2, this.headWidthPixels, this.screenArrowHead, this.screenVectorEnd, false);
 }, p$1);
 var $s$ = new Int16Array(1);
-var $b$ = new Int8Array(1);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-13 22:36:16 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.2.9-v1');//Created 2020-06-01 14:49:42 Java2ScriptVisitor version 3.2.9-v1 net.sf.j2s.core.jar version 3.2.9-v1

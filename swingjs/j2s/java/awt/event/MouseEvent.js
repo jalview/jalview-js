@@ -1,39 +1,29 @@
-(function(){var P$=Clazz.newPackage("java.awt.event"),p$1={},I$=[[0,'java.awt.Point','StringBuilder','java.awt.Toolkit']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "MouseEvent", null, 'java.awt.event.InputEvent');
+(function(){var P$=Clazz.newPackage("java.awt.event"),p$1={},I$=[[0,'java.awt.Point','StringBuilder','java.awt.Toolkit','java.awt.event.InputEvent']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "MouseEvent", null, 'java.awt.event.InputEvent');
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
-
-Clazz.newMeth(C$, '$init0$', function () {
-var c;if((c = C$.superclazz) && (c = c.$init0$))c.apply(this);
-this.x=0;
-this.y=0;
-this.xAbs=0;
-this.yAbs=0;
-this.clickCount=0;
-this.button=0;
-this.popupTrigger=false;
-}, 1);
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
 this.popupTrigger=false;
-}, 1);
+},1);
 
-Clazz.newMeth(C$, 'getLocationOnScreen$', function () {
-return Clazz.new_($I$(1).c$$I$I,[this.xAbs, this.yAbs]);
+C$.$fields$=[['Z',['popupTrigger'],'I',['x','y','xAbs','yAbs','clickCount','button']]]
+
+Clazz.newMeth(C$, 'getLocationOnScreen$',  function () {
+return Clazz.new_($I$(1,1).c$$I$I,[this.xAbs, this.yAbs]);
 });
 
-Clazz.newMeth(C$, 'getXOnScreen$', function () {
+Clazz.newMeth(C$, 'getXOnScreen$',  function () {
 return this.xAbs;
 });
 
-Clazz.newMeth(C$, 'getYOnScreen$', function () {
+Clazz.newMeth(C$, 'getYOnScreen$',  function () {
 return this.yAbs;
 });
 
-Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$Z$I', function (source, id, when, modifiers, x, y, clickCount, popupTrigger, button) {
+Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$Z$I',  function (source, id, when, modifiers, x, y, clickCount, popupTrigger, button) {
 C$.c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I.apply(this, [source, id, when, modifiers, x, y, 0, 0, clickCount, popupTrigger, button]);
-var eventLocationOnScreen=Clazz.new_($I$(1).c$$I$I,[0, 0]);
+var eventLocationOnScreen=Clazz.new_($I$(1,1).c$$I$I,[0, 0]);
 try {
 eventLocationOnScreen=source.getLocationOnScreen$();
 this.xAbs=eventLocationOnScreen.x + x;
@@ -48,13 +38,12 @@ throw e;
 }
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$Z', function (source, id, when, modifiers, x, y, clickCount, popupTrigger) {
+Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$Z',  function (source, id, when, modifiers, x, y, clickCount, popupTrigger) {
 C$.c$$java_awt_Component$I$J$I$I$I$I$Z$I.apply(this, [source, id, when, modifiers, x, y, clickCount, popupTrigger, 0]);
 }, 1);
 
-Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I', function (source, id, when, modifiers, x, y, xAbs, yAbs, clickCount, popupTrigger, button) {
-C$.superclazz.c$$java_awt_Component$I$J$I.apply(this, [source, id, when, modifiers]);
-C$.$init$.apply(this);
+Clazz.newMeth(C$, 'c$$java_awt_Component$I$J$I$I$I$I$I$I$Z$I',  function (source, id, when, modifiers, x, y, xAbs, yAbs, clickCount, popupTrigger, button) {
+;C$.superclazz.c$$java_awt_Component$I$J$I.apply(this,[source, id, when, modifiers]);C$.$init$.apply(this);
 this.x=x;
 this.y=y;
 this.xAbs=xAbs;
@@ -70,42 +59,42 @@ p$1.setNewModifiers.apply(this, []);
 p$1.setOldModifiers.apply(this, []);
 }}, 1);
 
-Clazz.newMeth(C$, 'getX$', function () {
+Clazz.newMeth(C$, 'getX$',  function () {
 return this.x;
 });
 
-Clazz.newMeth(C$, 'getY$', function () {
+Clazz.newMeth(C$, 'getY$',  function () {
 return this.y;
 });
 
-Clazz.newMeth(C$, 'getPoint$', function () {
+Clazz.newMeth(C$, 'getPoint$',  function () {
 var x;
 var y;
 {
 x=this.x;
 y=this.y;
-}return Clazz.new_($I$(1).c$$I$I,[x, y]);
+}return Clazz.new_($I$(1,1).c$$I$I,[x, y]);
 });
 
-Clazz.newMeth(C$, 'translatePoint$I$I', function (x, y) {
+Clazz.newMeth(C$, 'translatePoint$I$I',  function (x, y) {
 this.x+=x;
 this.y+=y;
 });
 
-Clazz.newMeth(C$, 'getClickCount$', function () {
+Clazz.newMeth(C$, 'getClickCount$',  function () {
 return this.clickCount;
 });
 
-Clazz.newMeth(C$, 'getButton$', function () {
+Clazz.newMeth(C$, 'getButton$',  function () {
 return this.button;
 });
 
-Clazz.newMeth(C$, 'isPopupTrigger$', function () {
+Clazz.newMeth(C$, 'isPopupTrigger$',  function () {
 return this.popupTrigger;
 });
 
-Clazz.newMeth(C$, 'getMouseModifiersText$I', function (modifiers) {
-var buf=Clazz.new_($I$(2));
+Clazz.newMeth(C$, 'getMouseModifiersText$I',  function (modifiers) {
+var buf=Clazz.new_($I$(2,1));
 if ((modifiers & 8) != 0) {
 buf.append$S($I$(3).getProperty$S$S("AWT.alt", "Alt"));
 buf.append$S("+");
@@ -135,21 +124,21 @@ buf.setLength$I(buf.length$() - 1);
 }return buf.toString();
 }, 1);
 
-Clazz.newMeth(C$, 'paramString$', function () {
-var str=Clazz.new_($I$(2).c$$I,[80]);
+Clazz.newMeth(C$, 'paramString$',  function () {
+var str=Clazz.new_($I$(2,1).c$$I,[80]);
 str.append$S(C$.getIdString$I(this.id));
-str.append$S(",(" + this.x).append$S("," + this.y).append$S("," + this.when).append$S(")");
+str.append$S(",(" + this.x).append$S("," + this.y).append$S("," + Long.$s(this.when)).append$S(")");
 str.append$S(",absolute(").append$S("" + this.xAbs).append$S(",").append$S("" + this.yAbs).append$S(")");
 str.append$S(",button=").append$S("" + this.getButton$());
 if (this.getModifiers$() != 0) {
 str.append$S(",modifiers=").append$S(C$.getMouseModifiersText$I(this.modifiers));
 }if (this.getModifiersEx$() != 0) {
-str.append$S(",extModifiers=").append$S(P$.InputEvent.getModifiersExText$I(this.modifiers));
+str.append$S(",extModifiers=").append$S($I$(4).getModifiersExText$I(this.modifiers));
 }str.append$S(",clickCount=").append$S("" + this.clickCount);
 return str.toString();
 });
 
-Clazz.newMeth(C$, 'getIdString$I', function (id) {
+Clazz.newMeth(C$, 'getIdString$I',  function (id) {
 switch (id) {
 case 501:
 return "MOUSE_PRESSED";
@@ -172,7 +161,7 @@ return "unknown type";
 }
 }, 1);
 
-Clazz.newMeth(C$, 'setNewModifiers', function () {
+Clazz.newMeth(C$, 'setNewModifiers',  function () {
 if (this.id == 501 || this.id == 502  || this.id == 500 ) {
 if ((this.modifiers & 16) != 0) {
 this.button=1;
@@ -208,7 +197,7 @@ this.modifiers|=4096;
 this.modifiers|=256;
 }}}}, p$1);
 
-Clazz.newMeth(C$, 'setOldModifiers', function () {
+Clazz.newMeth(C$, 'setOldModifiers',  function () {
 if (this.id == 501 || this.id == 502  || this.id == 500 ) {
 switch (this.button) {
 case 1:
@@ -242,4 +231,4 @@ this.modifiers|=32;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:02:28 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-22 00:08:51 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

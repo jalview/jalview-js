@@ -1,18 +1,19 @@
-(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'sun.awt.image.SunWritableRaster']],$I$=function(i){return I$[i]||(I$[i]=Clazz.load(I$[0][i]))};
-var C$=Clazz.newClass(P$, "JSGraphicsCompositor");
-C$.mat6=null;
+(function(){var P$=Clazz.newPackage("swingjs"),I$=[[0,'sun.awt.image.SunWritableRaster']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+/*c*/var C$=Clazz.newClass(P$, "JSGraphicsCompositor");
 
-C$.$clinit$ = function() {Clazz.load(C$, 1);
-}
+C$.$clinit$=2;
 
 Clazz.newMeth(C$, '$init$', function () {
+},1);
+
+C$.$fields$=[[]
+,['O',['mat6','double[]']]]
+
+Clazz.newMeth(C$, 'c$',  function () {
+;C$.$init$.apply(this);
 }, 1);
 
-Clazz.newMeth(C$, 'c$', function () {
-C$.$init$.apply(this);
-}, 1);
-
-Clazz.newMeth(C$, 'setGraphicsCompositeAlpha$swingjs_JSGraphics2D$I', function (g, alphaRule) {
+Clazz.newMeth(C$, 'setGraphicsCompositeAlpha$swingjs_JSGraphics2D$I',  function (g, alphaRule) {
 var s=null;
 switch (alphaRule) {
 default:
@@ -50,11 +51,8 @@ g.ctx.globalCompositeOperation = s;
 return true;
 }, 1);
 
-Clazz.newMeth(C$, 'drawImageOp$swingjs_JSGraphics2D$java_awt_image_BufferedImage$java_awt_image_BufferedImageOp$I$I', function (g, img, op, x, y) {
-var type=0;
-{
-type = op.swingJStype;
-}
+Clazz.newMeth(C$, 'drawImageOp$swingjs_JSGraphics2D$java_awt_image_BufferedImage$java_awt_image_BufferedImageOp$I$I',  function (g, img, op, x, y) {
+var type=op.swingJStype ||0;
 switch (type) {
 case 82:
 var rop=op;
@@ -67,7 +65,7 @@ break;
 }
 if (canDo) {
 g.setAlpha$F(scaleFactors[3]);
-g.drawImagePriv$java_awt_Image$I$I$java_awt_image_ImageObserver(img, x, y, null);
+g.drawImageFromPixelsOrRaster$java_awt_Image$I$I$java_awt_image_ImageObserver(img, x, y, null);
 g.setAlpha$F(1);
 return true;
 }break;
@@ -81,7 +79,7 @@ break;
 return false;
 }, 1);
 
-Clazz.newMeth(C$, 'filterRaster$java_awt_image_Raster$java_awt_image_WritableRaster$java_awt_image_RasterOp', function (src, dst, op) {
+Clazz.newMeth(C$, 'filterRaster$java_awt_image_Raster$java_awt_image_WritableRaster$java_awt_image_RasterOp',  function (src, dst, op) {
 if (dst == null ) {
 dst=op.createCompatibleDestRaster$java_awt_image_Raster(src);
 }var retRaster=null;
@@ -117,19 +115,19 @@ $I$(1).markDirty$java_awt_image_WritableRaster(retRaster);
 }return retRaster;
 }, 1);
 
-Clazz.newMeth(C$, 'convolveRaster$java_awt_image_Raster$java_awt_image_WritableRaster$java_awt_image_Kernel$I', function (src, dst, kernel, edgeCondition) {
+Clazz.newMeth(C$, 'convolveRaster$java_awt_image_Raster$java_awt_image_WritableRaster$java_awt_image_Kernel$I',  function (src, dst, kernel, edgeCondition) {
 return 0;
 }, 1);
 
-Clazz.newMeth(C$, 'transformRaster$java_awt_image_Raster$java_awt_image_WritableRaster$DA$I', function (src, dst, matrix, interpolationType) {
+Clazz.newMeth(C$, 'transformRaster$java_awt_image_Raster$java_awt_image_WritableRaster$DA$I',  function (src, dst, matrix, interpolationType) {
 return 0;
 }, 1);
 
-Clazz.newMeth(C$, 'lookupByteRaster$java_awt_image_Raster$java_awt_image_WritableRaster$BAA', function (src, dst, table) {
+Clazz.newMeth(C$, 'lookupByteRaster$java_awt_image_Raster$java_awt_image_WritableRaster$BAA',  function (src, dst, table) {
 return 0;
 }, 1);
 
-Clazz.newMeth(C$, 'filterImage$java_awt_image_BufferedImage$java_awt_image_BufferedImage$java_awt_image_BufferedImageOp', function (src, dst, op) {
+Clazz.newMeth(C$, 'filterImage$java_awt_image_BufferedImage$java_awt_image_BufferedImage$java_awt_image_BufferedImageOp',  function (src, dst, op) {
 var retBI=null;
 var type=0;
 {
@@ -140,7 +138,7 @@ default:
 retBI=op.filter$java_awt_image_BufferedImage$java_awt_image_BufferedImage(src, dst);
 break;
 case 65:
-var g=dst.getImageGraphic$();
+var g=dst.秘getImageGraphic$();
 g.drawImage$java_awt_Image$java_awt_geom_AffineTransform$java_awt_image_ImageObserver(src, (op).getTransform$(), null);
 retBI=dst;
 break;
@@ -162,31 +160,12 @@ retBI=dst;
 return retBI;
 }, 1);
 
-Clazz.newMeth(C$, 'convolveBI$java_awt_image_BufferedImage$java_awt_image_BufferedImage$java_awt_image_Kernel$I', function (src, dst, kernel, edgeCondition) {
+Clazz.newMeth(C$, 'convolveBI$java_awt_image_BufferedImage$java_awt_image_BufferedImage$java_awt_image_Kernel$I',  function (src, dst, kernel, edgeCondition) {
 return 0;
 }, 1);
 
-Clazz.newMeth(C$, 'lookupByteBI$java_awt_image_BufferedImage$java_awt_image_BufferedImage$BAA', function (src, dst, table) {
+Clazz.newMeth(C$, 'lookupByteBI$java_awt_image_BufferedImage$java_awt_image_BufferedImage$BAA',  function (src, dst, table) {
 return 0;
-}, 1);
-
-Clazz.newMeth(C$, 'createImageNode$java_awt_Image', function (img) {
-var imgNode=null;
-{
-imgNode = img._imgNode;
-}
-if (imgNode == null  && Clazz.instanceOf(img, "java.awt.image.BufferedImage") ) {
-var w=(img).getWidth$();
-var h=(img).getHeight$();
-{
-var canvas = img._canvas;
-if (canvas == null) { img.getGraphics$();
-canvas = img._canvas;
-} imgNode = canvas;
-imgNode.style.width = w + "px";
-imgNode.style.height = h + "px";
-}
-}return imgNode;
 }, 1);
 })();
-;Clazz.setTVer('3.2.4.07');//Created 2019-04-17 18:03:42 Java2ScriptVisitor version 3.2.4.07 net.sf.j2s.core.jar version 3.2.4.07
+;Clazz.setTVer('3.3.1-v1');//Created 2021-07-28 16:08:28 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
