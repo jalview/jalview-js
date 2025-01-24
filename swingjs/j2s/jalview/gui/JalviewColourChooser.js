@@ -23,7 +23,7 @@ Clazz.newMeth(C$, '$init$', function () {
 /*lambda_E*/
 Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed$O'],  function (evt) { return (this.$finals$.listener.colourSelected$java_awt_Color(this.$finals$.colorChooser.getColor$()));});
 })()
-), Clazz.new_(P$.JalviewColourChooser$lambda1.$init$,[this, {listener:listener,colorChooser:colorChooser}]));
+), Clazz.new_(P$.JalviewColourChooser$lambda1.$init$,[this, {colorChooser:colorChooser,listener:listener}]));
 var onCancel=((P$.JalviewColourChooser$lambda2||
 (function(){/*m*/var C$=Clazz.newClass(P$, "JalviewColourChooser$lambda2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
@@ -67,4 +67,4 @@ Clazz.newMeth(C$, 'cancel$',  function () {
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:34 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

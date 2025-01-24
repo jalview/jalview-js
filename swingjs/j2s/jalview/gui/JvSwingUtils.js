@@ -154,7 +154,7 @@ Clazz.newMeth(C$, 'mouseExited$java_awt_event_MouseEvent',  function (e) {
 this.$finals$.combo.setToolTipText$S(null);
 });
 })()
-), Clazz.new_($I$(13,1),[this, {combo:combo,tooltips:tooltips}],P$.JvSwingUtils$1));
+), Clazz.new_($I$(13,1),[this, {tooltips:tooltips,combo:combo}],P$.JvSwingUtils$1));
 for (var c, $c = 0, $$c = combo.getComponents$(); $c<$$c.length&&((c=($$c[$c])),1);$c++) {
 c.addMouseListener$java_awt_event_MouseListener(mouseListener);
 }
@@ -173,4 +173,4 @@ return titledBorder;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:34 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

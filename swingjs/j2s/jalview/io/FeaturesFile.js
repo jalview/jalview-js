@@ -613,4 +613,4 @@ this.processAsFasta$jalview_datamodel_AlignmentI$java_util_List(align, newseqs);
 System.err.println$S("Ignoring unknown pragma: " + line);
 }});
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:37 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

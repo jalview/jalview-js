@@ -66,7 +66,7 @@ $I$(8,"Refresh$java_awt_Component$S$Z$Z",[this.$finals$.ap, this.$finals$.av.get
 this.b$['jalview.gui.AlignmentPanel'].alignmentChanged$.apply(this.b$['jalview.gui.AlignmentPanel'], []);
 }});
 })()
-), Clazz.new_(P$.AlignmentPanel$2.$init$,[this, {av:av,ap:ap}]));
+), Clazz.new_(P$.AlignmentPanel$2.$init$,[this, {ap:ap,av:av}]));
 av.addPropertyChangeListener$java_beans_PropertyChangeListener(this.propertyChangeListener);
 av.getRanges$().addPropertyChangeListener$jalview_viewmodel_ViewportListenerI(this);
 this.fontChanged$();
@@ -796,4 +796,4 @@ return this.calculationDialog;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

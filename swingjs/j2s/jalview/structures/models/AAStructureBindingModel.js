@@ -480,11 +480,11 @@ Clazz.newMeth(C$, 'run$',  function () {
 this.$finals$.theViewer.stopProgressBar$S$J(null, this.$finals$.handle);
 });
 })()
-), Clazz.new_(P$.AAStructureBindingModel$1$1.$init$,[this, {handle:this.$finals$.handle,theViewer:this.$finals$.theViewer}]))]);
+), Clazz.new_(P$.AAStructureBindingModel$1$1.$init$,[this, {theViewer:this.$finals$.theViewer,handle:this.$finals$.handle}]))]);
 }}
 });
 })()
-), Clazz.new_(P$.AAStructureBindingModel$1.$init$,[this, {handle:handle,cmds:cmds,theViewer:theViewer,msg:msg}])), threadName],$I$(17,1).c$$Runnable$S).start$();
+), Clazz.new_(P$.AAStructureBindingModel$1.$init$,[this, {theViewer:theViewer,msg:msg,cmds:cmds,handle:handle}])), threadName],$I$(17,1).c$$Runnable$S).start$();
 return null;
 });
 
@@ -857,4 +857,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

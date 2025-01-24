@@ -106,7 +106,7 @@ this.b$['jalview.gui.AnnotationLabels'].ap.av.getAlignment$().setAnnotationIndex
 }this.b$['jalview.gui.AnnotationLabels'].ap.refresh$Z(true);
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$1.$init$,[this, {addNew:addNew,annotation:annotation,dialog:dialog}])));
+), Clazz.new_(P$.AnnotationLabels$1.$init$,[this, {annotation:annotation,addNew:addNew,dialog:dialog}])));
 });
 
 Clazz.newMeth(C$, 'mousePressed$java_awt_event_MouseEvent',  function (evt) {
@@ -204,7 +204,7 @@ this.$finals$.ap.av.setIgnoreGapsConsensus$Z$jalview_api_AlignmentViewPanel(this
 }this.$finals$.ap.alignmentChanged$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$3.$init$,[this, {ap:ap,aaa:aaa,cbmi:cbmi}])));
+), Clazz.new_(P$.AnnotationLabels$3.$init$,[this, {aaa:aaa,ap:ap,cbmi:cbmi}])));
 pop.add$javax_swing_JMenuItem(cbmi);
 if (aaa.groupRef != null ) {
 var chist=Clazz.new_([$I$(2).getString$S("label.show_group_histogram"), ann.groupRef.isShowConsensusHistogram$()],$I$(12,1).c$$S$Z);
@@ -221,7 +221,7 @@ this.$finals$.aaa.groupRef.setShowConsensusHistogram$Z(this.$finals$.chist.getSt
 this.$finals$.ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$4.$init$,[this, {ap:ap,aaa:aaa,chist:chist}])));
+), Clazz.new_(P$.AnnotationLabels$4.$init$,[this, {aaa:aaa,ap:ap,chist:chist}])));
 pop.add$javax_swing_JMenuItem(chist);
 var cprofl=Clazz.new_([$I$(2).getString$S("label.show_group_logo"), ann.groupRef.isShowSequenceLogo$()],$I$(12,1).c$$S$Z);
 cprofl.addActionListener$java_awt_event_ActionListener(((P$.AnnotationLabels$5||
@@ -237,7 +237,7 @@ this.$finals$.aaa.groupRef.setshowSequenceLogo$Z(this.$finals$.cprofl.getState$(
 this.$finals$.ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$5.$init$,[this, {ap:ap,cprofl:cprofl,aaa:aaa}])));
+), Clazz.new_(P$.AnnotationLabels$5.$init$,[this, {aaa:aaa,ap:ap,cprofl:cprofl}])));
 pop.add$javax_swing_JMenuItem(cprofl);
 var cproflnorm=Clazz.new_([$I$(2).getString$S("label.normalise_group_logo"), ann.groupRef.isNormaliseSequenceLogo$()],$I$(12,1).c$$S$Z);
 cproflnorm.addActionListener$java_awt_event_ActionListener(((P$.AnnotationLabels$6||
@@ -254,7 +254,7 @@ this.$finals$.aaa.groupRef.setshowSequenceLogo$Z(true);
 this.$finals$.ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$6.$init$,[this, {ap:ap,cproflnorm:cproflnorm,aaa:aaa}])));
+), Clazz.new_(P$.AnnotationLabels$6.$init$,[this, {aaa:aaa,ap:ap,cproflnorm:cproflnorm}])));
 pop.add$javax_swing_JMenuItem(cproflnorm);
 } else {
 var chist=Clazz.new_([$I$(2).getString$S("label.show_histogram"), ap.av.isShowConsensusHistogram$()],$I$(12,1).c$$S$Z);
@@ -289,7 +289,7 @@ this.$finals$.ap.alignFrame.setMenusForViewport$();
 this.$finals$.ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$8.$init$,[this, {cprof:cprof,ap:ap}])));
+), Clazz.new_(P$.AnnotationLabels$8.$init$,[this, {ap:ap,cprof:cprof}])));
 pop.add$javax_swing_JMenuItem(cprof);
 var cprofnorm=Clazz.new_([$I$(2).getString$S("label.normalise_logo"), ap.av.isNormaliseSequenceLogo$()],$I$(12,1).c$$S$Z);
 cprofnorm.addActionListener$java_awt_event_ActionListener(((P$.AnnotationLabels$9||
@@ -635,4 +635,4 @@ C$.COPYCONS_SEQ=$I$(2).getString$S("label.copy_consensus_sequence");
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:33 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

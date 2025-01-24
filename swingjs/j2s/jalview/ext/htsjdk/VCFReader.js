@@ -95,7 +95,7 @@ Clazz.newMeth(C$, 'close$',  function () {
 this.$finals$.it.close$();
 });
 })()
-), Clazz.new_(P$.VCFReader$1.$init$,[this, {start:start,end:end,chrom:chrom,it:it}]));
+), Clazz.new_(P$.VCFReader$1.$init$,[this, {it:it,start:start,end:end,chrom:chrom}]));
 });
 
 Clazz.newMeth(C$, 'getFileHeader$',  function () {
@@ -108,4 +108,4 @@ return this.indexed;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

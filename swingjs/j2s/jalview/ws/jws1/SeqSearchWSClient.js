@@ -126,7 +126,7 @@ var msa=this.$finals$.af.gatherSeqOrMsaForSecStrPrediction$();
 Clazz.new_([this.$finals$.sh, this.$finals$.af.getTitle$(), msa, null, this.$finals$.af.getViewport$().getAlignment$().getDataset$(), this.$finals$.af],$I$(13,1).c$$ext_vamsas_ServiceHandle$S$jalview_datamodel_AlignmentView$S$jalview_datamodel_AlignmentI$jalview_gui_AlignFrame);
 });
 })()
-), Clazz.new_(P$.SeqSearchWSClient$1.$init$,[this, {af:af,sh:sh}])));
+), Clazz.new_(P$.SeqSearchWSClient$1.$init$,[this, {sh:sh,af:af}])));
 for (var db=0; dbs != null  && db < dbs.length ; db++) {
 var dbmenu=dbsrchs.get$O(dbs[db]);
 if (dbmenu == null ) {
@@ -148,7 +148,7 @@ var msa=this.$finals$.af.gatherSeqOrMsaForSecStrPrediction$();
 Clazz.new_([this.$finals$.sh, this.$finals$.af.getTitle$(), msa, this.$finals$.searchdb, this.$finals$.af.getViewport$().getAlignment$().getDataset$(), this.$finals$.af],$I$(13,1).c$$ext_vamsas_ServiceHandle$S$jalview_datamodel_AlignmentView$S$jalview_datamodel_AlignmentI$jalview_gui_AlignFrame);
 });
 })()
-), Clazz.new_(P$.SeqSearchWSClient$2.$init$,[this, {af:af,searchdb:searchdb,sh:sh}])));
+), Clazz.new_(P$.SeqSearchWSClient$2.$init$,[this, {sh:sh,af:af,searchdb:searchdb}])));
 }
 var e=newdbsrch.elements$();
 while (e.hasMoreElements$()){
@@ -166,4 +166,4 @@ C$.dbParamsForEndpoint=Clazz.new_($I$(1,1));
 };
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

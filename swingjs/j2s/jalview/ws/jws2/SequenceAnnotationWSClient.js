@@ -111,7 +111,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 Clazz.new_($I$(10,1).c$$jalview_ws_jws2_jabaws2_Jws2Instance$jalview_gui_AlignFrame$jalview_ws_params_WsParamSetI$Z,[this.$finals$.service, this.$finals$.alignFrame, this.$finals$.preset, false]);
 });
 })()
-), Clazz.new_(P$.SequenceAnnotationWSClient$3.$init$,[this, {service:service,alignFrame:alignFrame,preset:preset}])));
+), Clazz.new_(P$.SequenceAnnotationWSClient$3.$init$,[this, {service:service,preset:preset,alignFrame:alignFrame}])));
 presetlist.add$javax_swing_JMenuItem(methodR);
 }
 wsmenu.add$javax_swing_JMenuItem(presetlist);
@@ -135,4 +135,4 @@ annotservice.setToolTipText$S($I$(12,"wrapTooltip$Z$S",[true, $I$(6,"formatMessa
 wsmenu.add$javax_swing_JMenuItem(annotservice);
 }}});
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

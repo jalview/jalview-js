@@ -180,7 +180,7 @@ throw e;
 this.b$['jalview.gui.StructureViewerBase'].addStructure$jalview_datamodel_PDBEntry$jalview_datamodel_SequenceIA$SA$jalview_gui_IProgressIndicator.apply(this.b$['jalview.gui.StructureViewerBase'], [this.$finals$.pdbentry, this.$finals$.seqs, this.$finals$.chains, this.$finals$.alignFrame]);
 });
 })()
-), Clazz.new_(P$.StructureViewerBase$1.$init$,[this, {alignFrame:alignFrame,pdbentry:pdbentry,chains:chains,seqs:seqs}]))],$I$(6,1).c$$Runnable).start$();
+), Clazz.new_(P$.StructureViewerBase$1.$init$,[this, {seqs:seqs,alignFrame:alignFrame,pdbentry:pdbentry,chains:chains}]))],$I$(6,1).c$$Runnable).start$();
 return;
 }}this.getBinding$().addSequenceAndChain$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA$SAA(Clazz.array($I$(7), -1, [pdbentry]), Clazz.array($I$(8), -2, [seqs]), Clazz.array(String, -2, [chains]));
 this.addingStructures=true;
@@ -781,4 +781,4 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -244,4 +244,4 @@ C$.$getAnn$ = function(){ return [
   [['M:createJalviewUserColours','javax.xml.bind.JAXBElement<jalview.xml.binding.jalview.JalviewUserColours>','createJalviewUserColours$jalview_xml_binding_jalview_JalviewUserColours',['javax.xml.bind.annotation.XmlElementDecl']],['namespace="www.jalview.org/colours" name="JalviewUserColours" ']],
   [['M:createWebServiceParameterSet','javax.xml.bind.JAXBElement<jalview.xml.binding.jalview.WebServiceParameterSet>','createWebServiceParameterSet$jalview_xml_binding_jalview_WebServiceParameterSet',['javax.xml.bind.annotation.XmlElementDecl']],['namespace="www.jalview.org/xml/wsparamset" name="WebServiceParameterSet" ']]]}
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

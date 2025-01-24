@@ -90,7 +90,7 @@ var msa=this.$finals$.alignFrame.gatherSequencesForAlignment$();
 Clazz.new_([this.$finals$.serviceHandle, this.$finals$.alignFrame.getTitle$(), msa, false, true, this.$finals$.alignFrame.getViewport$().getAlignment$().getDataset$(), this.$finals$.alignFrame],$I$(9,1).c$$ext_vamsas_ServiceHandle$S$jalview_datamodel_AlignmentView$Z$Z$jalview_datamodel_AlignmentI$jalview_gui_AlignFrame);
 });
 })()
-), Clazz.new_(P$.MsaWSClient$1.$init$,[this, {serviceHandle:serviceHandle,alignFrame:alignFrame}])));
+), Clazz.new_(P$.MsaWSClient$1.$init$,[this, {alignFrame:alignFrame,serviceHandle:serviceHandle}])));
 msawsmenu.add$javax_swing_JMenuItem(method);
 if (p$1.canSubmitGaps.apply(this, [])) {
 var methodR=Clazz.new_([serviceHandle.getName$() + " Realign"],$I$(8,1).c$$S);
@@ -108,8 +108,8 @@ var msa=this.$finals$.alignFrame.gatherSequencesForAlignment$();
 Clazz.new_([this.$finals$.serviceHandle, this.$finals$.alignFrame.getTitle$(), msa, true, true, this.$finals$.alignFrame.getViewport$().getAlignment$().getDataset$(), this.$finals$.alignFrame],$I$(9,1).c$$ext_vamsas_ServiceHandle$S$jalview_datamodel_AlignmentView$Z$Z$jalview_datamodel_AlignmentI$jalview_gui_AlignFrame);
 });
 })()
-), Clazz.new_(P$.MsaWSClient$2.$init$,[this, {serviceHandle:serviceHandle,alignFrame:alignFrame}])));
+), Clazz.new_(P$.MsaWSClient$2.$init$,[this, {alignFrame:alignFrame,serviceHandle:serviceHandle}])));
 msawsmenu.add$javax_swing_JMenuItem(methodR);
 }});
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -306,7 +306,7 @@ Clazz.newMeth(C$, 'run$',  function () {
 this.$finals$.us.openLinkedAlignmentAs$jalview_datamodel_AlignmentI$S$Z(this.$finals$.al, this.$finals$.title, true);
 });
 })()
-), Clazz.new_(P$.AlignViewport$2.$init$,[this, {title:title,us:us,al:al}]))).setResponseHandler$O$Runnable(Integer.valueOf$I(2), ((P$.AlignViewport$3||
+), Clazz.new_(P$.AlignViewport$2.$init$,[this, {al:al,title:title,us:us}]))).setResponseHandler$O$Runnable(Integer.valueOf$I(2), ((P$.AlignViewport$3||
 (function(){/*a*/var C$=Clazz.newClass(P$, "AlignViewport$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
 C$.$clinit$=2;
@@ -318,7 +318,7 @@ Clazz.newMeth(C$, 'run$',  function () {
 this.$finals$.us.openLinkedAlignmentAs$jalview_datamodel_AlignmentI$S$Z(this.$finals$.al, this.$finals$.title, false);
 });
 })()
-), Clazz.new_(P$.AlignViewport$3.$init$,[this, {title:title,us:us,al:al}])));
+), Clazz.new_(P$.AlignViewport$3.$init$,[this, {al:al,title:title,us:us}])));
 dialog.showDialog$S$S$I$I$javax_swing_Icon$OA$O(question, $I$(17).getString$S("label.open_split_window"), -1, -1, null, options, options[0]);
 });
 
@@ -470,4 +470,4 @@ this.viewName=viewName;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

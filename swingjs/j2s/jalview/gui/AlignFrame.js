@@ -548,7 +548,7 @@ Clazz.newMeth(C$, 'run$',  function () {
 this.$finals$.nfs.frame.setBounds$java_awt_Rectangle(this.$finals$.fspos);
 });
 })()
-), Clazz.new_(P$.AlignFrame$9.$init$,[this, {nfs:nfs,fspos:fspos}]))]);
+), Clazz.new_(P$.AlignFrame$9.$init$,[this, {fspos:fspos,nfs:nfs}]))]);
 this.featureSettings.close$();
 this.featureSettings=null;
 }this.closeMenuItem_actionPerformed$Z(true);
@@ -689,7 +689,7 @@ this.b$['jalview.gui.AlignFrame'].lastSaveSuccessful=backupfiles.rollBackupsAndR
 $I$(31,"debug$S",["ALIGNFRAME performed rollBackupsAndRenameTempFile " + (this.b$['jalview.gui.AlignFrame'].lastSaveSuccessful ? "" : "un") + "successfully" ]);
 }}});
 })()
-), Clazz.new_(P$.AlignFrame$11.$init$,[this, {file:file,format:format,options:options}]));
+), Clazz.new_(P$.AlignFrame$11.$init$,[this, {format:format,options:options,file:file}]));
 if ($I$(39).isNeeded$jalview_api_AlignViewportI$jalview_io_FileFormatI(this.viewport, format)) {
 var choices=Clazz.new_([this.alignPanel.getAlignViewport$(), format, options],$I$(39,1).c$$jalview_api_AlignViewportI$jalview_io_FileFormatI$jalview_api_AlignExportSettingsI);
 choices.setResponseAction$O$Runnable(Integer.valueOf$I(0), outputAction);
@@ -2198,7 +2198,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 this.b$['jalview.gui.AlignFrame'].showProductsFor$jalview_datamodel_SequenceIA$Z$S.apply(this.b$['jalview.gui.AlignFrame'], [this.$finals$.af.viewport.getSequenceSelection$(), this.$finals$.dna, this.$finals$.source]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$21.$init$,[this, {dna:dna,source:source,af:af}])));
+), Clazz.new_(P$.AlignFrame$21.$init$,[this, {af:af,source:source,dna:dna}])));
 this.showProducts.add$javax_swing_JMenuItem(xtype);
 }
 this.showProducts.setVisible$Z(showp);
@@ -2386,7 +2386,7 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.AlignFrame$22.$init$,[this, {files:files,thisaf:thisaf}]))],$I$(21,1).c$$Runnable).start$();
+), Clazz.new_(P$.AlignFrame$22.$init$,[this, {thisaf:thisaf,files:files}]))],$I$(21,1).c$$Runnable).start$();
 }});
 
 Clazz.newMeth(C$, 'loadJalviewDataFile$O$jalview_io_DataSourceType$jalview_io_FileFormatI$jalview_datamodel_SequenceI',  function (file, sourceType, format, assocSeq) {
@@ -3047,7 +3047,7 @@ var seqs=this.b$['jalview.gui.AlignFrame'].viewport.getAlignment$().getSequences
 Clazz.new_($I$(120,1).c$$S,[choice]).loadVCF$jalview_datamodel_SequenceIA$jalview_api_AlignViewControllerGuiI(seqs, this.$finals$.us);
 });
 })()
-), Clazz.new_(P$.AlignFrame$26.$init$,[this, {us:us,chooser:chooser}])));
+), Clazz.new_(P$.AlignFrame$26.$init$,[this, {chooser:chooser,us:us}])));
 chooser.showOpenDialog$java_awt_Component(null);
 });
 
@@ -3061,4 +3061,4 @@ return this.lastFeatureSettingsBounds;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

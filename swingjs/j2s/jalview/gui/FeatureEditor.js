@@ -148,7 +148,7 @@ this.b$['jalview.gui.FeatureEditor'].fr.setColour$S$jalview_api_FeatureColourI(t
 this.b$['jalview.gui.FeatureEditor'].updateColourButton$javax_swing_JPanel$javax_swing_JLabel$jalview_api_FeatureColourI.apply(this.b$['jalview.gui.FeatureEditor'], [this.b$['jalview.gui.FeatureEditor'].mainPanel, this.$finals$.colour, this.b$['jalview.gui.FeatureEditor'].featureColour]);
 });
 })()
-), Clazz.new_(P$.FeatureEditor$5$2.$init$,[this, {colour:this.$finals$.colour,ft:ft,type:type}])));
+), Clazz.new_(P$.FeatureEditor$5$2.$init$,[this, {ft:ft,type:type,colour:this.$finals$.colour}])));
 }});
 })()
 ), Clazz.new_($I$(14,1),[this, {colour:colour}],P$.FeatureEditor$5)));
@@ -439,4 +439,4 @@ C$.lastFeatureGroupAdded="Jalview";
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:34 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

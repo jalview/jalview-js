@@ -252,7 +252,7 @@ this.b$['jalview.gui.Preferences'].filterTB.setText$S("");
 this.$finals$.sorter.setRowFilter$javax_swing_RowFilter(this.$finals$.customUrlFilter);
 });
 })()
-), Clazz.new_(P$.Preferences$4.$init$,[this, {sorter:sorter,customUrlFilter:customUrlFilter}]));
+), Clazz.new_(P$.Preferences$4.$init$,[this, {customUrlFilter:customUrlFilter,sorter:sorter}]));
 this.userOnly.addActionListener$java_awt_event_ActionListener(onCustomOnly);
 this.filterTB.getDocument$().addDocumentListener$javax_swing_event_DocumentListener(((P$.Preferences$5||
 (function(){/*a*/var C$=Clazz.newClass(P$, "Preferences$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'javax.swing.event.DocumentListener', 1);
@@ -852,4 +852,4 @@ this.b$['jalview.gui.Preferences'].editLink.setEnabled$Z(false);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:35 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

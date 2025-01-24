@@ -100,7 +100,7 @@ $I$(10,"Refresh$java_awt_Component$S$Z$Z",[this.$finals$.ap, this.$finals$.av.ge
 this.b$['jalview.appletgui.AlignmentPanel'].alignmentChanged$.apply(this.b$['jalview.appletgui.AlignmentPanel'], []);
 }});
 })()
-), Clazz.new_(P$.AlignmentPanel$2.$init$,[this, {ap:ap,av:av}])));
+), Clazz.new_(P$.AlignmentPanel$2.$init$,[this, {av:av,ap:ap}])));
 av.getRanges$().addPropertyChangeListener$jalview_viewmodel_ViewportListenerI(this);
 }, 1);
 
@@ -566,4 +566,4 @@ this.setToScrollComplementPanel$Z(true);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:27 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

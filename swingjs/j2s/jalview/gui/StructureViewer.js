@@ -66,7 +66,7 @@ this.b$['jalview.gui.StructureViewer'].sview.addToExistingViewer$jalview_datamod
 this.b$['jalview.gui.StructureViewer'].sview.updateTitleAndMenus$();
 });
 })()
-), Clazz.new_(P$.StructureViewer$1.$init$,[this, {ap:ap,theSeqs:theSeqs,pdbsForFile:pdbsForFile}]))],$I$(5,1).c$$Runnable).start$();
+), Clazz.new_(P$.StructureViewer$1.$init$,[this, {pdbsForFile:pdbsForFile,ap:ap,theSeqs:theSeqs}]))],$I$(5,1).c$$Runnable).start$();
 return this.sview;
 }if (viewerType.equals$O($I$(2).JMOL)) {
 this.sview=Clazz.new_($I$(6,1).c$$jalview_gui_AlignmentPanel$Z$jalview_datamodel_PDBEntryA$jalview_datamodel_SequenceIAA,[ap, this.superposeAdded, pdbsForFile, theSeqs]);
@@ -216,4 +216,4 @@ Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($val
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

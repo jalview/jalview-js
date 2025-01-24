@@ -145,7 +145,7 @@ this.b$['jalview.gui.ViewSelectionMenu'].$enabled=true;
 this.b$['jalview.gui.ViewSelectionMenu']._handler.itemStateChanged$java_awt_event_ItemEvent(e);
 }}});
 })()
-), Clazz.new_(P$.ViewSelectionMenu$5.$init$,[this, {ap:ap,checkBox:checkBox}])));
+), Clazz.new_(P$.ViewSelectionMenu$5.$init$,[this, {checkBox:checkBox,ap:ap}])));
 var us=this;
 checkBox.addMouseListener$java_awt_event_MouseListener(((P$.ViewSelectionMenu$6||
 (function(){/*a*/var C$=Clazz.newClass(P$, "ViewSelectionMenu$6", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.MouseAdapter'), null, 1);
@@ -187,4 +187,4 @@ this.add$javax_swing_JMenuItem(checkBox);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -483,7 +483,7 @@ this.b$['jalview.jbgui.GStructureChooser'].tabRefresh$.apply(this.b$['jalview.jb
 this.b$['jalview.jbgui.GStructureChooser'].validateSelections$.apply(this.b$['jalview.jbgui.GStructureChooser'], []);
 }}});
 })()
-), Clazz.new_(P$.GStructureChooser$17.$init$,[this, {foundStructureSummary:foundStructureSummary,btn_cancel:btn_cancel,configureCols:configureCols}]));
+), Clazz.new_(P$.GStructureChooser$17.$init$,[this, {configureCols:configureCols,foundStructureSummary:foundStructureSummary,btn_cancel:btn_cancel}]));
 this.pnl_filter.addChangeListener$javax_swing_event_ChangeListener(changeListener);
 this.pnl_filter.setPreferredSize$java_awt_Dimension(Clazz.new_([(width).$c(), (height).$c()],$I$(27,1).c$$I$I));
 this.pnl_filter.add$S$java_awt_Component(foundStructureSummary, scrl_foundStructures);
@@ -676,4 +676,4 @@ return comp;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:39 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

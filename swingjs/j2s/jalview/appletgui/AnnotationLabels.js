@@ -308,7 +308,7 @@ this.$finals$.aaa.groupRef.setshowSequenceLogo$Z(this.$finals$.cprofl.getState$(
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$4.$init$,[this, {cprofl:cprofl,aaa:aaa}])));
+), Clazz.new_(P$.AnnotationLabels$4.$init$,[this, {aaa:aaa,cprofl:cprofl}])));
 popup.add$java_awt_MenuItem(cprofl);
 var cprofn=Clazz.new_([$I$(15).getString$S("label.normalise_group_logo"), aa[this.selectedRow].groupRef.isNormaliseSequenceLogo$()],$I$(19,1).c$$S$Z);
 cprofn.addItemListener$java_awt_event_ItemListener(((P$.AnnotationLabels$5||
@@ -325,7 +325,7 @@ this.$finals$.aaa.groupRef.setNormaliseSequenceLogo$Z(this.$finals$.cprofn.getSt
 this.b$['jalview.appletgui.AnnotationLabels'].ap.repaint$();
 });
 })()
-), Clazz.new_(P$.AnnotationLabels$5.$init$,[this, {aaa:aaa,cprofn:cprofn}])));
+), Clazz.new_(P$.AnnotationLabels$5.$init$,[this, {cprofn:cprofn,aaa:aaa}])));
 popup.add$java_awt_MenuItem(cprofn);
 } else {
 var chist=Clazz.new_([$I$(15).getString$S("label.show_histogram"), this.av.isShowConsensusHistogram$()],$I$(19,1).c$$S$Z);
@@ -503,4 +503,4 @@ C$.COPYCONS_SEQ="Copy Consensus Sequence";
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:27 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

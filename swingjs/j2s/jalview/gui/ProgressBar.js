@@ -55,7 +55,7 @@ this.b$['jalview.gui.ProgressBar'].progressBars.put$O$O(Long.valueOf$J(this.$fin
 }this.b$['jalview.gui.ProgressBar'].refreshLayout$.apply(this.b$['jalview.gui.ProgressBar'], []);
 });
 })()
-), Clazz.new_(P$.ProgressBar$1.$init$,[this, {message:message,id:id}]))]);
+), Clazz.new_(P$.ProgressBar$1.$init$,[this, {id:id,message:message}]))]);
 });
 
 Clazz.newMeth(C$, 'refreshLayout$',  function () {
@@ -111,14 +111,14 @@ this.$finals$.handler.cancelActivity$J(this.$finals$.id);
 this.$finals$.us.setProgressBar$S$J($I$(9,"formatMessage$S$OA",["label.cancelled_params", Clazz.array(java.lang.Object, -1, [(this.$finals$.progressPanel.getComponent$I(0)).getText$()])]), this.$finals$.id);
 });
 })()
-), Clazz.new_(P$.ProgressBar$2$1.$init$,[this, {us:this.$finals$.us,progressPanel:progressPanel,handler:this.$finals$.handler,id:this.$finals$.id}])));
+), Clazz.new_(P$.ProgressBar$2$1.$init$,[this, {handler:this.$finals$.handler,progressPanel:progressPanel,id:this.$finals$.id,us:this.$finals$.us}])));
 progressPanel.add$java_awt_Component$O(cancel, "East");
 this.b$['jalview.gui.ProgressBar'].refreshLayout$.apply(this.b$['jalview.gui.ProgressBar'], []);
 });
 })()
-), Clazz.new_(P$.ProgressBar$2.$init$,[this, {us:us,handler:handler,id:id}]))]);
+), Clazz.new_(P$.ProgressBar$2.$init$,[this, {handler:handler,id:id,us:us}]))]);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:35 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

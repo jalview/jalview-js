@@ -339,7 +339,7 @@ Clazz.newMeth(C$, 'exportImage$java_awt_Graphics',  function (g) {
 this.b$['jalview.gui.TreePanel'].treeCanvas.draw$java_awt_Graphics$I$I(g, this.$finals$.width, this.$finals$.height);
 });
 })()
-), Clazz.new_(P$.TreePanel$6.$init$,[this, {height:height,width:width}]));
+), Clazz.new_(P$.TreePanel$6.$init$,[this, {width:width,height:height}]));
 var tree=$I$(11).getString$S("label.tree");
 var exporter=Clazz.new_($I$(28,1).c$$jalview_gui_ImageExporter_ImageWriterI$jalview_gui_IProgressIndicator$jalview_util_ImageMaker_TYPE$S,[writer, null, imageFormat, tree]);
 exporter.doExport$java_io_File$java_awt_Component$I$I$S(null, this, width, height, tree.toLowerCase$java_util_Locale($I$(29).ROOT));
@@ -468,4 +468,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

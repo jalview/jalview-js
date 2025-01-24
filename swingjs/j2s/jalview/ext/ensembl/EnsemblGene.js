@@ -310,4 +310,4 @@ C$.$ACCESSION_REGEX=Clazz.new_($I$(1,1).c$$S,[".*"]);
 C$.FEATURES_TO_FETCH=Clazz.array($I$(2), -1, [$I$(2).gene, $I$(2).transcript, $I$(2).exon, $I$(2).cds, $I$(2).variation]);
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

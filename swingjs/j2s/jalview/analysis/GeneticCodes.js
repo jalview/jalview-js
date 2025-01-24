@@ -155,7 +155,7 @@ Clazz.newMeth(C$, 'getName$',  function () {
 return this.$finals$.name;
 });
 })()
-), Clazz.new_(P$.GeneticCodes$1.$init$,[this, {name:name,codons:codons,id:id}])));
+), Clazz.new_(P$.GeneticCodes$1.$init$,[this, {name:name,id:id,codons:codons}])));
 });
 
 Clazz.newMeth(C$, 'getAmbiguousTranslation$S$java_util_Map$jalview_analysis_GeneticCodeI',  function (codon, ambiguous, codeTable) {
@@ -197,4 +197,4 @@ C$.NUCS_COUNT_CUBED=C$.NUCS_COUNT * C$.NUCS_COUNT * C$.NUCS_COUNT ;
 C$.instance=Clazz.new_(C$);
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:26 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

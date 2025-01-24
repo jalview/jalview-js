@@ -589,7 +589,7 @@ $I$(13).debug$S("AUTHENTICATOR after trying to get PasswordAuthentication");
 return null;
 });
 })()
-), Clazz.new_($I$(37,1),[this, {httpsPort:httpsPort,httpPassword:httpPassword,customProxySet:customProxySet,httpHost:httpHost,displayHttpPw:displayHttpPw,httpPort:httpPort,httpsUser:httpsUser,httpsPassword:httpsPassword,httpsHost:httpsHost,httpUser:httpUser}],P$.Cache$2))]);
+), Clazz.new_($I$(37,1),[this, {httpsHost:httpsHost,displayHttpPw:displayHttpPw,httpsUser:httpsUser,httpUser:httpUser,httpPassword:httpPassword,httpHost:httpHost,httpPort:httpPort,httpsPort:httpsPort,customProxySet:customProxySet,httpsPassword:httpsPassword}],P$.Cache$2))]);
 }$I$(13).debug$S("AUTHENTICATOR setting property \'jdk.http.auth.tunneling.disabledSchemes\' to \"\"");
 System.setProperty$S$S("jdk.http.auth.tunneling.disabledSchemes", "");
 } catch (e) {
@@ -733,4 +733,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -361,7 +361,7 @@ this.$finals$.menuItem.removeActionListener$java_awt_event_ActionListener(this.$
 }$I$(42).windowMenu.remove$javax_swing_JMenuItem(this.$finals$.menuItem);
 });
 })()
-), Clazz.new_($I$(43,1),[this, {menuItem:menuItem,frame:frame}],P$.Desktop$11)));
+), Clazz.new_($I$(43,1),[this, {frame:frame,menuItem:menuItem}],P$.Desktop$11)));
 menuItem.addActionListener$java_awt_event_ActionListener(((P$.Desktop$12||
 (function(){/*a*/var C$=Clazz.newClass(P$, "Desktop$12", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
@@ -570,7 +570,7 @@ Clazz.new_($I$(38,1)).LoadFile$jalview_gui_AlignViewport$O$jalview_io_DataSource
 Clazz.new_($I$(38,1)).LoadFile$S$jalview_io_DataSourceType$jalview_io_FileFormatI(url, $I$(37).URL, format);
 }}});
 })()
-), Clazz.new_(P$.Desktop$15.$init$,[this, {history:history,viewport:viewport}]));
+), Clazz.new_(P$.Desktop$15.$init$,[this, {viewport:viewport,history:history}]));
 var dialogOption=$I$(6).getString$S("label.input_alignment_from_url");
 $I$(57).newOptionDialog$java_awt_Component(C$.desktop).setResponseHandler$O$Runnable(Integer.valueOf$I(0), action).showInternalDialog$javax_swing_JPanel$S$I$I$javax_swing_Icon$OA$S(panel, dialogOption, 1, -1, null, options, $I$(6).getString$S("action.ok"));
 });
@@ -816,7 +816,7 @@ throw e$$;
 this.b$['jalview.gui.Desktop'].setProgressBar$S$J.apply(this.b$['jalview.gui.Desktop'], [null, this.$finals$.chosenFile.hashCode$()]);
 });
 })()
-), Clazz.new_(P$.Desktop$17.$init$,[this, {me:me,chosenFile:chosenFile}]))],$I$(2,1).c$$Runnable).start$();
+), Clazz.new_(P$.Desktop$17.$init$,[this, {chosenFile:chosenFile,me:me}]))],$I$(2,1).c$$Runnable).start$();
 }});
 
 Clazz.newMeth(C$, 'saveAsState_actionPerformed$java_awt_event_ActionEvent',  function (e) {
@@ -879,7 +879,7 @@ throw e$$;
 }
 });
 })()
-), Clazz.new_(P$.Desktop$18$1.$init$,[this, {selectedFile:selectedFile,choice:choice}])), "Project Loader"],$I$(2,1).c$$Runnable$S).start$();
+), Clazz.new_(P$.Desktop$18$1.$init$,[this, {choice:choice,selectedFile:selectedFile}])), "Project Loader"],$I$(2,1).c$$Runnable$S).start$();
 });
 })()
 ), Clazz.new_(P$.Desktop$18.$init$,[this, {chooser:chooser}])));
@@ -1238,7 +1238,7 @@ this.$finals$.handler.cancelActivity$J(this.$finals$.id);
 this.$finals$.us.setProgressBar$S$J($I$(6,"formatMessage$S$OA",["label.cancelled_params", Clazz.array(java.lang.Object, -1, [(this.$finals$.progressPanel.getComponent$I(0)).getText$()])]), this.$finals$.id);
 });
 })()
-), Clazz.new_(P$.Desktop$22.$init$,[this, {handler:handler,progressPanel:progressPanel,us:us,id:id}])));
+), Clazz.new_(P$.Desktop$22.$init$,[this, {handler:handler,id:id,us:us,progressPanel:progressPanel}])));
 progressPanel.add$java_awt_Component$O(cancel, "East");
 }});
 
@@ -1852,4 +1852,4 @@ g.drawString$S$I$I($I$(6,"formatMessage$S$OA",["label.memory_stats", Clazz.array
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:34 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -130,7 +130,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 this.$finals$.me.ap.alignFrame.avc.sortAlignmentByFeatureScore$java_util_List($I$(16,"asList$OA",[Clazz.array(String, -1, [this.$finals$.type])]));
 });
 })()
-), Clazz.new_(P$.FeatureSettings$4.$init$,[this, {type:type,me:me}])));
+), Clazz.new_(P$.FeatureSettings$4.$init$,[this, {me:me,type:type}])));
 var dens=Clazz.new_([$I$(8).getString$S("label.sort_by_density")],$I$(15,1).c$$S);
 dens.addActionListener$java_awt_event_ActionListener(((P$.FeatureSettings$5||
 (function(){/*a*/var C$=Clazz.newClass(P$, "FeatureSettings$5", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
@@ -144,7 +144,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 this.$finals$.me.ap.alignFrame.avc.sortAlignmentByFeatureDensity$java_util_List($I$(16,"asList$OA",[Clazz.array(String, -1, [this.$finals$.type])]));
 });
 })()
-), Clazz.new_(P$.FeatureSettings$5.$init$,[this, {type:type,me:me}])));
+), Clazz.new_(P$.FeatureSettings$5.$init$,[this, {me:me,type:type}])));
 men.add$java_awt_MenuItem(dens);
 if (minmax != null ) {
 var typeMinMax=minmax.get$O(type);
@@ -167,7 +167,7 @@ this.$finals$.check.updateColor$jalview_api_FeatureColourI(this.b$['jalview.appl
 Clazz.new_($I$(18,1).c$$jalview_appletgui_FeatureSettings$S$jalview_api_FeatureColourI,[this.$finals$.me, this.$finals$.check.type, this.$finals$.typeCol]);
 }});
 })()
-), Clazz.new_(P$.FeatureSettings$6.$init$,[this, {type:type,check:check,typeCol:typeCol,me:me}])));
+), Clazz.new_(P$.FeatureSettings$6.$init$,[this, {typeCol:typeCol,me:me,check:check,type:type}])));
 }}var selectContaining=Clazz.new_([$I$(8).getString$S("label.select_columns_containing")],$I$(15,1).c$$S);
 selectContaining.addActionListener$java_awt_event_ActionListener(((P$.FeatureSettings$7||
 (function(){/*a*/var C$=Clazz.newClass(P$, "FeatureSettings$7", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
@@ -181,7 +181,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 this.$finals$.me.ap.alignFrame.avc.markColumnsContainingFeatures$Z$Z$Z$S(false, false, false, this.$finals$.type);
 });
 })()
-), Clazz.new_(P$.FeatureSettings$7.$init$,[this, {type:type,me:me}])));
+), Clazz.new_(P$.FeatureSettings$7.$init$,[this, {me:me,type:type}])));
 men.add$java_awt_MenuItem(selectContaining);
 var selectNotContaining=Clazz.new_([$I$(8).getString$S("label.select_columns_not_containing")],$I$(15,1).c$$S);
 selectNotContaining.addActionListener$java_awt_event_ActionListener(((P$.FeatureSettings$8||
@@ -196,7 +196,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 this.$finals$.me.ap.alignFrame.avc.markColumnsContainingFeatures$Z$Z$Z$S(true, false, false, this.$finals$.type);
 });
 })()
-), Clazz.new_(P$.FeatureSettings$8.$init$,[this, {type:type,me:me}])));
+), Clazz.new_(P$.FeatureSettings$8.$init$,[this, {me:me,type:type}])));
 men.add$java_awt_MenuItem(selectNotContaining);
 var hideContaining=Clazz.new_([$I$(8).getString$S("label.hide_columns_containing")],$I$(15,1).c$$S);
 hideContaining.addActionListener$java_awt_event_ActionListener(((P$.FeatureSettings$9||
@@ -504,4 +504,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:28 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

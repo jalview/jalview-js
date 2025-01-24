@@ -2860,7 +2860,7 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.Jalview2XML$6.$init$,[this, {af:af,sviewid:sviewid,viewerType:viewerType,sessionPath:sessionPath,viewerModel:viewerModel}]))]);
+), Clazz.new_(P$.Jalview2XML$6.$init$,[this, {sessionPath:sessionPath,af:af,viewerModel:viewerModel,viewerType:viewerType,sviewid:sviewid}]))]);
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"java.lang.reflect.InvocationTargetException") || Clazz.exceptionOf(ex,"InterruptedException")){
 $I$(8).warn$S$Throwable("Unexpected error when opening " + viewerType + " structure viewer" , ex);
@@ -3151,4 +3151,4 @@ this.template=jaa;
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

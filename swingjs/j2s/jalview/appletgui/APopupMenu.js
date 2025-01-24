@@ -249,7 +249,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 this.b$['jalview.appletgui.APopupMenu'].ap.alignFrame.showURL$S$S(this.$finals$.url, this.$finals$.target);
 });
 })()
-), Clazz.new_(P$.APopupMenu$2.$init$,[this, {target:target,url:url}])));
+), Clazz.new_(P$.APopupMenu$2.$init$,[this, {url:url,target:target}])));
 linkMenu.add$java_awt_MenuItem(item);
 }, p$1);
 
@@ -800,10 +800,10 @@ $I$(12,"showOrHideSequenceAnnotations$jalview_datamodel_AlignmentI$java_util_Col
 this.b$['jalview.appletgui.APopupMenu'].refresh$.apply(this.b$['jalview.appletgui.APopupMenu'], []);
 });
 })()
-), Clazz.new_(P$.APopupMenu$3.$init$,[this, {forSequences:forSequences,actionIsShow:actionIsShow,allTypes:allTypes,types:types}])));
+), Clazz.new_(P$.APopupMenu$3.$init$,[this, {actionIsShow:actionIsShow,types:types,allTypes:allTypes,forSequences:forSequences}])));
 showOrHideMenu.add$java_awt_MenuItem(item);
 });
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:26 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

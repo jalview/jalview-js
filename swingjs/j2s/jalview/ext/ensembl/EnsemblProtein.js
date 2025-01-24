@@ -61,4 +61,4 @@ C$.$static$=function(){C$.$static$=0;
 C$.$ACCESSION_REGEX=Clazz.new_(["(ENS([A-Z]{3}|)P[0-9]{11}$)|(CCDS[0-9.]{3,}$)"],$I$(1,1).c$$S);
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

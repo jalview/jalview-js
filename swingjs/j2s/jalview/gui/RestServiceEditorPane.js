@@ -165,7 +165,7 @@ p$1.initGuiWith$jalview_ws_rest_RestServiceDescription.apply(this.b$['jalview.gu
 this.b$['jalview.gui.RestServiceEditorPane'].rdata.setSelectedIndex$I(this.$finals$.rdatasel);
 });
 })()
-), Clazz.new_(P$.RestServiceEditorPane$3.$init$,[this, {rdatasel:rdatasel,type:type}])));
+), Clazz.new_(P$.RestServiceEditorPane$3.$init$,[this, {type:type,rdatasel:rdatasel}])));
 }
 popup.show$java_awt_Component$I$I(this.rdata, mouse.getX$(), mouse.getY$());
 }});
@@ -299,4 +299,4 @@ Clazz.newMeth(C$, 'getEditedRestService$',  function () {
 return this.finalService;
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:35 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

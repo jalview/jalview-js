@@ -137,7 +137,7 @@ throw x;
 this.b$['jalview.fts.service.threedbeacons.TDBeaconsFTSPanel'].seqFetcher.parseResult$jalview_datamodel_AlignmentI$S$jalview_io_FileFormatI$jalview_api_FeatureSettingsModelI(allSeqs, "3D-Beacons models for " + this.$finals$.searchTerm, $I$(14).MMCif, null);
 });
 })()
-), Clazz.new_(P$.TDBeaconsFTSPanel$2.$init$,[this, {selectedIdsSet:selectedIdsSet,searchTerm:searchTerm}]))]);
+), Clazz.new_(P$.TDBeaconsFTSPanel$2.$init$,[this, {searchTerm:searchTerm,selectedIdsSet:selectedIdsSet}]))]);
 this.delayAndEnableActionButtons$();
 });
 
@@ -180,4 +180,4 @@ C$.tempUserPrefs=Clazz.new_($I$(2,1));
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

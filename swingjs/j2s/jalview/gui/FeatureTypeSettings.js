@@ -717,7 +717,7 @@ if (this.b$['jalview.gui.FeatureTypeSettings'].updateFilter$javax_swing_JComboBo
 this.b$['jalview.gui.FeatureTypeSettings'].filtersChanged$.apply(this.b$['jalview.gui.FeatureTypeSettings'], []);
 }}});
 })()
-), Clazz.new_(P$.FeatureTypeSettings$17.$init$,[this, {patternField:patternField,attCombo:attCombo,filterIndex:filterIndex,condCombo:condCombo}]));
+), Clazz.new_(P$.FeatureTypeSettings$17.$init$,[this, {filterIndex:filterIndex,condCombo:condCombo,patternField:patternField,attCombo:attCombo}]));
 var itemListener=((P$.FeatureTypeSettings$18||
 (function(){/*a*/var C$=Clazz.newClass(P$, "FeatureTypeSettings$18", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ItemListener', 1);
 
@@ -748,7 +748,7 @@ this.b$['jalview.gui.FeatureTypeSettings'].populateConditions$S$jalview_util_mat
 this.$finals$.actionListener.actionPerformed$java_awt_event_ActionEvent(null);
 });
 })()
-), Clazz.new_(P$.FeatureTypeSettings$19.$init$,[this, {patternField:patternField,actionListener:actionListener,attCombo:attCombo,condCombo:condCombo}])));
+), Clazz.new_(P$.FeatureTypeSettings$19.$init$,[this, {condCombo:condCombo,actionListener:actionListener,patternField:patternField,attCombo:attCombo}])));
 filterRow.add$java_awt_Component(attCombo);
 this.populateConditions$S$jalview_util_matcher_Condition$javax_swing_JComboBox$javax_swing_JTextField(filterBy, cond, condCombo, patternField);
 condCombo.setPreferredSize$java_awt_Dimension(Clazz.new_($I$(17,1).c$$I$I,[150, 20]));
@@ -948,4 +948,4 @@ C$.DECFMT_2_2=Clazz.new_($I$(3,1).c$$S,["##.##"]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:34 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

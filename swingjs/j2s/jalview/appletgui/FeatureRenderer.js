@@ -41,7 +41,7 @@ Clazz.newMeth(C$, 'textValueChanged$java_awt_event_TextEvent',  function (e) {
 this.b$['jalview.appletgui.FeatureRenderer'].warnIfTypeHidden$java_awt_Frame$S.apply(this.b$['jalview.appletgui.FeatureRenderer'], [this.$finals$.ap.alignFrame, this.$finals$.name.getText$()]);
 });
 })()
-), Clazz.new_(P$.FeatureRenderer$1.$init$,[this, {name:name,ap:ap}])));
+), Clazz.new_(P$.FeatureRenderer$1.$init$,[this, {ap:ap,name:name}])));
 group.addTextListener$java_awt_event_TextListener(((P$.FeatureRenderer$2||
 (function(){/*a*/var C$=Clazz.newClass(P$, "FeatureRenderer$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.TextListener', 1);
 
@@ -54,7 +54,7 @@ Clazz.newMeth(C$, 'textValueChanged$java_awt_event_TextEvent',  function (e) {
 this.b$['jalview.appletgui.FeatureRenderer'].warnIfGroupHidden$java_awt_Frame$S.apply(this.b$['jalview.appletgui.FeatureRenderer'], [this.$finals$.ap.alignFrame, this.$finals$.group.getText$()]);
 });
 })()
-), Clazz.new_(P$.FeatureRenderer$2.$init$,[this, {group:group,ap:ap}])));
+), Clazz.new_(P$.FeatureRenderer$2.$init$,[this, {ap:ap,group:group}])));
 this.colourPanel=Clazz.new_($I$(9,1),[this, null]);
 this.colourPanel.setSize$I$I(110, 15);
 var fr=this;
@@ -101,7 +101,7 @@ col=Clazz.new_($I$(15,1).c$$java_awt_Color,[generatedColour]);
 }this.b$['jalview.appletgui.FeatureRenderer'].colourPanel.updateColor$jalview_api_FeatureColourI(col);
 });
 })()
-), Clazz.new_(P$.FeatureRenderer$3.$init$,[this, {start:start,overlaps:overlaps,sequences:sequences,group:group,end:end,description:description,name:name,features:features,ap:ap}])));
+), Clazz.new_(P$.FeatureRenderer$3.$init$,[this, {overlaps:overlaps,features:features,description:description,start:start,end:end,sequences:sequences,ap:ap,name:name,group:group}])));
 panel.add$java_awt_Component(tmp);
 }tmp=Clazz.new_($I$(4,1));
 panel.add$java_awt_Component(tmp);
@@ -177,7 +177,7 @@ Clazz.new_([this.$finals$.ap.alignFrame, this.$finals$.name.getText$()],$I$(19,1
 this.$finals$.dialog.transferFocus$();
 }});
 })()
-), Clazz.new_($I$(20,1),[this, {fr:fr,name:name,ap:ap,dialog:dialog}],P$.FeatureRenderer$5)));
+), Clazz.new_($I$(20,1),[this, {dialog:dialog,fr:fr,ap:ap,name:name}],P$.FeatureRenderer$5)));
 dialog.setVisible$Z(true);
 var ffile=Clazz.new_($I$(21,1));
 var enteredType=name.getText$().trim$();
@@ -318,4 +318,4 @@ g.fillRect$I$I$I$I((d.width/2|0), 0, (d.width/2|0), d.height);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:28 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

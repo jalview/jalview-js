@@ -34,7 +34,7 @@ C$.ALT_DOWN_MASK=$I$(3).ALT_DOWN_MASK;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.awt.GraphicsEnvironment','java.awt.Toolkit']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "ShortcutKeyMaskExWrapper8", null, null, 'jalview.util.ShortcutKeyMaskExWrapperI');
 
@@ -68,7 +68,7 @@ C$.ALT_DOWN_MASK=8;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.net.URL']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "HttpUtils");
 
@@ -119,7 +119,7 @@ return connection.getResponseCode$() == 200;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.util"),I$=[];
 /*c*/var C$=Clazz.newClass(P$, "IntRangeComparator", null, null, 'java.util.Comparator');
 
@@ -148,7 +148,7 @@ C$.DESCENDING=Clazz.new_(C$.c$$Z,[false]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'jalview.util.Platform','org.json.JSONObject']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "JSONUtils");
 
@@ -180,7 +180,7 @@ return Clazz.new_($I$(2,1).c$$O,[obj]).toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.util"),I$=[[0,'java.util.HashMap','java.util.Properties','java.util.ArrayList','java.util.Arrays','javax.swing.ImageIcon','java.io.File','java.io.FileInputStream']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "ChannelProperties");
 
@@ -351,7 +351,7 @@ C$.iconList.add$O(logo);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.util"),I$=[];
 /*i*/var C$=Clazz.newInterface(P$, "ShortcutKeyMaskExWrapperI");
 
@@ -363,7 +363,7 @@ C$.SHIFT_DOWN_MASK=0;
 C$.ALT_DOWN_MASK=0;
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.bin"),I$=[[0,'java.awt.Taskbar',['java.awt.Taskbar','.Feature'],'jalview.util.ChannelProperties']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "JalviewTaskbar");
 
@@ -387,7 +387,7 @@ tb.setIconImage$java_awt_Image(image);
 System.out.println$S("Unable to setIconImage()");
 }}}}, 1);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.jbgui"),I$=[];
 /*c*/var C$=Clazz.newClass(P$, "FilterOption");
 
@@ -461,7 +461,7 @@ return ("" + this.name + ":" + this.value ).hashCode$() + (this.view != null  ? 
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:39 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.jbgui"),p$1={},I$=[[0,'javax.swing.JTextArea','javax.swing.JScrollPane','java.awt.BorderLayout','javax.swing.JMenuBar','javax.swing.JMenu','javax.swing.JMenuItem','javax.swing.JPanel','javax.swing.JButton','jalview.gui.JvSwingUtils','jalview.util.MessageManager','javax.swing.KeyStroke','jalview.util.ShortcutKeyMaskExWrapper','java.awt.Font','java.awt.event.MouseAdapter']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "GCutAndPasteTransfer", null, 'javax.swing.JInternalFrame');
 
@@ -648,7 +648,7 @@ this.textarea.selectAll$();
 Clazz.newMeth(C$, 'save_actionPerformed$java_awt_event_ActionEvent',  function (e) {
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:39 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'java.util.HashSet']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*e*/var C$=Clazz.newClass(P$, "Species", null, 'Enum');
 
@@ -709,7 +709,7 @@ var $vals=[];
 Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),p$1={},I$=[[0,['jalview.ext.ensembl.EnsemblSequenceFetcher','.EnsemblFeatureType'],'java.util.ArrayList','jalview.datamodel.Alignment','jalview.datamodel.SequenceI','jalview.datamodel.Sequence','jalview.util.JSONUtils','jalview.datamodel.SequenceFeature','StringBuffer','java.net.URL']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "EnsemblFeatures", null, 'jalview.ext.ensembl.EnsemblRestClient');
 
@@ -831,7 +831,7 @@ this.featuresWanted=features;
 return this.getSequenceRecords$S(accId);
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:30 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'java.net.URL','java.util.Arrays','java.util.Collections','jalview.datamodel.Mapping','jalview.util.MapList','jalview.datamodel.GeneLocus','jalview.bin.Console']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "EnsemblLookup", null, 'jalview.ext.ensembl.EnsemblRestClient');
 
@@ -960,7 +960,7 @@ throw e;
 return null;
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'StringBuilder','java.net.URL','java.util.ArrayList','jalview.ext.ensembl.Species']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "EnsemblSymbol", null, 'jalview.ext.ensembl.EnsemblXref');
 
@@ -1032,7 +1032,7 @@ return result;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ext.ensembl"),I$=[[0,'java.util.ArrayList','jalview.util.DBRefUtils','jalview.datamodel.DBRefEntry','java.net.URL']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "EnsemblXref", null, 'jalview.ext.ensembl.EnsemblRestClient');
 
@@ -1110,7 +1110,7 @@ throw e;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.io.gff"),p$1={},I$=[[0,'java.util.ArrayList','java.util.HashMap','java.util.Collections']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "SequenceOntologyLite", null, null, 'jalview.io.gff.SequenceOntologyI');
 
@@ -1180,11 +1180,11 @@ $I$(3).sort$java_util_List$java_util_Comparator(this.termsNotFound, String.CASE_
 return this.termsNotFound;
 }});
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:38 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[];
 /*i*/var C$=Clazz.newInterface(P$, "SequenceOntologyI");
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:38 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.io.gff"),I$=[[0,'jalview.io.gff.SequenceOntologyLite']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "SequenceOntologyFactory");
 
@@ -1208,7 +1208,7 @@ C$.instance=so;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:38 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[[0,'java.util.ArrayList']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "ReactionType");
 
@@ -1246,7 +1246,7 @@ C$.$getAnn$ = function(){ return [
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
 /*c*/var C$=Clazz.newClass(P$, "InteractantType");
 
@@ -1288,7 +1288,7 @@ C$.$getAnn$ = function(){ return [
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.xml.binding.uniprot"),I$=[];
 /*c*/var C$=Clazz.newClass(P$, "MoleculeType");
 
@@ -1321,11 +1321,11 @@ C$.$getAnn$ = function(){ return [
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.fts.api"),I$=[];
 /*i*/var C$=Clazz.newInterface(P$, "StructureFTSRestClientI");
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:31 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.fts.service.threedbeacons"),p$1={},I$=[[0,'jalview.util.Platform','jalview.javascript.web.Client','jalview.javascript.web.ClientResponse','java.util.Map','jalview.fts.core.FTSRestClient','jalview.util.MessageManager','jalview.fts.core.FTSRestResponse','jalview.util.JSONUtils','java.util.ArrayList','jalview.fts.service.threedbeacons.TDB_FTSData',['jalview.fts.core.FTSDataColumnPreferences','.PreferenceSource']]],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "TDBeaconsFTSRestClient", null, 'jalview.fts.core.FTSRestClient', 'jalview.fts.api.StructureFTSRestClientI');
 
@@ -1513,7 +1513,7 @@ C$.DEFAULT_THREEDBEACONS_DOMAIN=C$.TDB_PROD_API;
 C$.instance=null;
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:32 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.HashMap','jalview.util.Platform','javax.swing.JOptionPane','java.util.Arrays']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "JvOptionPane", null, 'javax.swing.JOptionPane', ['jalview.util.dialogrunner.DialogRunnerI', 'java.beans.PropertyChangeListener']);
 
@@ -1790,7 +1790,7 @@ C$.interactiveMode=true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:34 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.awt.Dimension','jalview.gui.SplashScreen','java.awt.Font','java.awt.Color','javax.swing.JPanel','java.awt.BorderLayout','java.awt.event.MouseAdapter','jalview.util.Platform','javax.swing.JLabel','jalview.util.ChannelProperties','java.awt.MediaTracker','jalview.gui.Desktop','javax.swing.JInternalFrame','javax.swing.JLayeredPane','Thread']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "SplashScreen", function(){
 Clazz.newInstance(this, arguments,0,C$);
@@ -2007,7 +2007,7 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui.structurechooser"),I$=[[0,'jalview.gui.structurechooser.PDBStructureChooserQuerySource','jalview.gui.structurechooser.ThreeDBStructureChooserQuerySource','java.util.Objects','java.util.Locale','jalview.fts.core.FTSRestResponse']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "StructureChooserQuerySource");
 
@@ -2116,7 +2116,7 @@ C$.$static$=function(){C$.$static$=0;
 C$.MAX_QLENGTH=7820;
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui.structurechooser"),p$1={},I$=[[0,'java.util.LinkedHashSet','jalview.fts.service.threedbeacons.TDBeaconsFTSRestClient','jalview.fts.core.FTSDataColumnPreferences',['jalview.fts.core.FTSDataColumnPreferences','.PreferenceSource'],'java.util.Locale','jalview.gui.structurechooser.PDBStructureChooserQuerySource','jalview.fts.core.FTSRestRequest','jalview.jbgui.FilterOption','jalview.gui.structurechooser.TDBResultAnalyser','jalview.fts.core.FTSRestResponse','jalview.datamodel.PDBEntry','java.util.Arrays','jalview.gui.structurechooser.StructureChooserQuerySource',['jalview.datamodel.PDBEntry','.Type'],'jalview.bin.Console','java.util.ArrayList','java.util.HashSet','StringBuilder']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "ThreeDBStructureChooserQuerySource", null, 'jalview.gui.structurechooser.StructureChooserQuerySource');
 
@@ -2304,7 +2304,7 @@ var o2_xt=(((this.$finals$.restable.getValueAt$I$I((o2).$c(), this.$finals$.up_e
 return o2_xt - o1_xt;
 });
 })()
-), Clazz.new_(P$.ThreeDBStructureChooserQuerySource$1.$init$,[this, {up_start_idx:up_start_idx,restable:restable,up_end_idx:up_end_idx}]))]);
+), Clazz.new_(P$.ThreeDBStructureChooserQuerySource$1.$init$,[this, {restable:restable,up_end_idx:up_end_idx,up_start_idx:up_start_idx}]))]);
 for (var row, $row = 0, $$row = sellist; $row<$$row.length&&((row=($$row[$row]).intValue$()),1);$row++) {
 var pdbIdStr=restable.getValueAt$I$I(row, idColumnIndex).toString();
 var urlStr=restable.getValueAt$I$I(row, urlColumnIndex).toString();
@@ -2433,7 +2433,7 @@ return (row);
 return null;
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui.structurechooser"),p$1={},I$=[[0,'java.util.Arrays','java.util.Locale','java.util.ArrayList','java.util.Collections','jalview.gui.structurechooser.TDBResultAnalyser','java.util.BitSet']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "TDBResultAnalyser");
 
@@ -2601,7 +2601,7 @@ C$.EXP_CATEGORIES=$I$(1,"asList$OA",[Clazz.array(String, -1, ["EXPERIMENTALLY DE
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui.structurechooser"),I$=[[0,'jalview.fts.service.pdb.PDBFTSRestClient','jalview.fts.core.FTSDataColumnPreferences',['jalview.fts.core.FTSDataColumnPreferences','.PreferenceSource'],'StringBuilder','java.util.LinkedHashSet','java.util.HashSet','java.util.Locale','java.util.Objects','jalview.fts.core.FTSRestRequest','java.util.ArrayList','jalview.jbgui.FilterOption','jalview.util.MessageManager','jalview.datamodel.PDBEntry','jalview.gui.structurechooser.StructureChooserQuerySource',['jalview.datamodel.PDBEntry','.Type']]],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "PDBStructureChooserQuerySource", null, 'jalview.gui.structurechooser.StructureChooserQuerySource');
 
@@ -2785,7 +2785,7 @@ C$.$static$=function(){C$.$static$=0;
 C$.$MAX_QLENGTH=7820;
 };
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'javax.swing.SwingUtilities','jalview.util.MessageManager','jalview.io.JalviewFileChooser','jalview.bin.Cache','jalview.io.JalviewFileView','java.io.PrintWriter','java.io.FileWriter','java.awt.Toolkit','java.awt.datatransfer.StringSelection','java.awt.datatransfer.DataFlavor','jalview.io.IdentifyFile','jalview.io.DataSourceType','jalview.bin.Jalview','jalview.gui.JvOptionPane','jalview.gui.Desktop','jalview.io.AppletFormatAdapter','jalview.io.FormatAdapter','jalview.gui.AlignFrame','jalview.json.binding.biojson.v1.ColourSchemeMapper','javax.swing.JPopupMenu','javax.swing.JMenuItem']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "CutAndPasteTransfer", null, 'jalview.jbgui.GCutAndPasteTransfer');
 
@@ -2998,7 +2998,7 @@ popup.add$javax_swing_JMenuItem(item);
 popup.show$java_awt_Component$I$I(this, e.getX$() + 10, e.getY$() + this.textarea.getY$() + 40 );
 }});
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:33 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.gui"),I$=[[0,'java.util.ArrayList','jalview.util.MessageManager','jalview.analysis.CrossRef','jalview.ws.SequenceFetcher','jalview.analysis.AlignmentUtils','jalview.bin.Cache','jalview.gui.AlignFrame','jalview.gui.Desktop','jalview.gui.SplitFrame','jalview.gui.OOMWarning','jalview.bin.Console','java.util.HashMap','jalview.ext.ensembl.EnsemblInfo','jalview.util.DBRefUtils','jalview.ext.ensembl.EnsemblMap','jalview.util.MappingUtils','jalview.gui.JvOptionPane','jalview.structure.StructureSelectionManager','jalview.datamodel.SequenceI','jalview.datamodel.Alignment']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "CrossRefAction", null, null, 'Runnable');
 
@@ -3201,7 +3201,7 @@ return Clazz.new_(C$.c$$jalview_gui_AlignFrame$jalview_datamodel_SequenceIA$Z$S,
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:33 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.datamodel"),p$1={},I$=[[0,'java.util.ArrayList','jalview.datamodel.Mapping',['jalview.datamodel.AlignedCodonFrame','.SequenceToSequenceMapping'],'jalview.datamodel.SequenceI','jalview.util.MapList','jalview.util.MappingUtils']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "AlignedCodonFrame", function(){
 Clazz.newInstance(this, arguments,0,C$);
@@ -3613,7 +3613,7 @@ sr.addResult$jalview_datamodel_SequenceI$I$I(mappedSeq, codon[i], codon[i + 1]);
 Clazz.newMeth(C$);
 })()
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.structure"),I$=[];
 /*i*/var C$=Clazz.newInterface(P$, "StructureCommandsI", function(){
 });
@@ -3641,7 +3641,7 @@ Clazz.newMeth(C$, 'values$', function() { return $vals }, 1);
 Clazz.newMeth(C$, 'valueOf$S', function(name) { for (var val in $vals){ if ($vals[val].name == name) return $vals[val]} return null }, 1);
 })()
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.structure"),p$1={},I$=[[0,'jalview.structure.AtomSpecModel','StringBuilder','java.util.ArrayList','jalview.structure.StructureCommand',['jalview.structure.StructureCommandsI','.AtomSpecType']]],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "StructureCommandsBase", null, null, 'jalview.structure.StructureCommandsI');
 
@@ -3750,11 +3750,11 @@ return null;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.structure"),I$=[];
 /*i*/var C$=Clazz.newInterface(P$, "StructureCommandI");
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.structure"),I$=[[0,'java.util.TreeMap','java.util.BitSet','java.util.ArrayList']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "AtomSpecModel");
 
@@ -3809,7 +3809,7 @@ start=bs.nextSetBit$I(end);
 }}return ranges;
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.structure"),I$=[[0,'java.util.ArrayList','StringBuilder']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "StructureCommand", null, null, 'jalview.structure.StructureCommandI');
 
@@ -3892,7 +3892,7 @@ return true;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:40 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ws.utils"),I$=[[0,'java.nio.file.Files','java.nio.file.attribute.FileAttribute','java.net.URL','java.nio.channels.Channels','java.io.FileOutputStream','java.nio.file.Paths','java.nio.file.CopyOption','java.nio.file.StandardCopyOption','jalview.util.Platform']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "UrlDownloadClient");
 
@@ -3959,7 +3959,7 @@ C$.download$S$S(urlstring, tempFile.toString());
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),I$=[[0,'com.stevesoft.pat.Regex','java.io.File','jalview.ws.utils.UrlDownloadClient','jalview.util.MessageManager','jalview.io.FileFormat','jalview.io.FormatAdapter','jalview.io.DataSourceType','java.util.ArrayList','jalview.datamodel.DBRefEntry','jalview.datamodel.SequenceFeature','jalview.io.PDBFeatureSettings']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "EBIAlfaFold", null, 'jalview.ws.dbsources.EbiFileRetrievedProxy');
 
@@ -4094,7 +4094,7 @@ Clazz.newMeth(C$, 'getFeatureColourScheme$',  function () {
 return Clazz.new_($I$(11,1));
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ws.dbsources"),p$1={},I$=[[0,'com.stevesoft.pat.Regex','jalview.ws.ebi.EBIFetchClient','java.util.Locale','jalview.io.FileParse','jalview.io.DataSourceType','jalview.io.EmblFlatFile','jalview.datamodel.Alignment','jalview.bin.Console']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "EmblFlatfileSource", null, 'jalview.ws.dbsources.EbiFileRetrievedProxy');
 
@@ -4174,7 +4174,7 @@ C$.ACCESSION_REGEX=Clazz.new_($I$(1,1).c$$S,["^[A-Z]+[0-9]+"]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("jalview.ws"),I$=[[0,'jalview.ws.SequenceFetcher']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "SequenceFetcherFactory");
 
@@ -4196,7 +4196,7 @@ C$.instance=sf;
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("org.json.simple.parser"),I$=[[0,'StringBuffer']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "ParseException", null, 'Exception');
 
@@ -4267,11 +4267,11 @@ return sb.toString();
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("swingjs.api"),I$=[];
 /*i*/var C$=Clazz.newInterface(P$, "JSUtilI");
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:44 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:48 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInt']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "Start", null, 'com.stevesoft.pat.Pattern');
 
@@ -4312,7 +4312,7 @@ return Clazz.new_(C$.c$$Z,[this.retIsStart]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:24 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 (function(){var P$=Clazz.newPackage("com.stevesoft.pat"),I$=[[0,'com.stevesoft.pat.patInt']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "Boundary", null, 'com.stevesoft.pat.Pattern');
 
@@ -4371,5 +4371,5 @@ return Clazz.new_(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:23 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:41 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
 })(Clazz,Clazz.setTVer,Clazz.toLong,Clazz.incrAN,Clazz.array,Clazz.assert,Clazz.clone,Clazz.exceptionOf,Clazz.forName,Clazz.getClass,Clazz.instanceOf,Clazz.load,Clazz.new_,Clazz.newClass,Clazz.newEnumConst,Clazz.newInstance,Clazz.newInterface,Clazz.newMeth,Clazz.newPackage,Clazz.super_);

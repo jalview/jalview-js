@@ -1,4 +1,4 @@
-(function(){var P$=Clazz.newPackage("jalview.javascript"),I$=[[0,'netscape.javascript.JSObject','jalview.bin.JalviewLite','StringBuffer','java.net.URL','Thread']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+(function(){var P$=Clazz.newPackage("jalview.javascript"),I$=[[0,'jalview.bin.JalviewLite','StringBuffer','java.net.URL','Thread']],I$0=I$[0],$I$=function(i,n){return((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "JSFunctionExec", null, null, 'Runnable');
 
 C$.$clinit$=2;
@@ -93,7 +93,7 @@ Clazz.newMeth(C$, 'run$',  function () {
 try {
 var scriptObject=null;
 try {
-scriptObject=$I$(1).getWindow$java_applet_Applet(this.b$['jalview.javascript.JSFunctionExec'].jvlite);
+;
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 } else {
@@ -101,19 +101,19 @@ throw ex;
 }
 }
 ;if (scriptObject != null ) {
-if ($I$(2).debug && this.$finals$.dbgMsg != null  ) {
+if ($I$(1).debug && this.$finals$.dbgMsg != null  ) {
 System.err.println$S(this.$finals$.dbgMsg);
 }scriptObject.call$S$OA(this.$finals$._listener, this.$finals$.objects);
 }} catch (jex) {
 if (Clazz.exceptionOf(jex,"Exception")){
 if (!(Clazz.instanceOf(jex, "java.net.MalformedURLException"))) {
-if ($I$(2).debug) {
+if ($I$(1).debug) {
 System.err.println$O(jex);
 }if (Clazz.instanceOf(jex, "netscape.javascript.JSException") && this.b$['jalview.javascript.JSFunctionExec'].jvlite.jsfallbackEnabled ) {
 this.$finals$.jsex[0]=jex;
-if ($I$(2).debug) {
+if ($I$(1).debug) {
 System.err.println$S("Falling back to javascript: url call");
-}var sb=Clazz.new_(["javascript:" + this.$finals$._listener + "(" ],$I$(3,1).c$$S);
+}var sb=Clazz.new_(["javascript:" + this.$finals$._listener + "(" ],$I$(2,1).c$$S);
 for (var i=0; this.$finals$.objects != null  && i < this.$finals$.objects.length ; i++) {
 if (i > 0) {
 sb.append$S(",");
@@ -123,11 +123,11 @@ sb.append$S(this.$finals$.objects[i].toString());
 }sb.append$S("\"");
 }
 sb.append$S(")");
-if ($I$(2).debug) {
+if ($I$(1).debug) {
 System.err.println$S(sb.toString());
 }var url=null;
 try {
-url=Clazz.new_([sb.toString()],$I$(4,1).c$$S);
+url=Clazz.new_([sb.toString()],$I$(3,1).c$$S);
 this.b$['jalview.javascript.JSFunctionExec'].jvlite.getAppletContext$().showDocument$java_net_URL(url);
 jex=null;
 } catch (uex) {
@@ -148,10 +148,10 @@ throw jex;
 }
 });
 })()
-), Clazz.new_(P$.JSFunctionExec$1.$init$,[this, {dbgMsg:dbgMsg,objects:objects,jsex:jsex,async:async,_listener:_listener}]));
+), Clazz.new_(P$.JSFunctionExec$1.$init$,[this, {objects:objects,dbgMsg:dbgMsg,async:async,_listener:_listener,jsex:jsex}]));
 if (async) {
 if (this.executor == null ) {
-this.executor=Clazz.new_([Clazz.new_(C$.c$$jalview_bin_JalviewLite,[this.jvlite])],$I$(5,1).c$$Runnable);
+this.executor=Clazz.new_([Clazz.new_(C$.c$$jalview_bin_JalviewLite,[this.jvlite])],$I$(4,1).c$$Runnable);
 this.executor.start$();
 }{
 this.jsExecQueue.addElement$O(exec);
@@ -164,4 +164,4 @@ throw (jsex[0]);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:38 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:46 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

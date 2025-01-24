@@ -1655,7 +1655,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (evt) 
 this.b$['jalview.appletgui.AlignFrame'].sortByTree$jalview_appletgui_TreePanel$S.apply(this.b$['jalview.appletgui.AlignFrame'], [this.$finals$.treePanel, this.$finals$.title]);
 });
 })()
-), Clazz.new_(P$.AlignFrame$2.$init$,[this, {treePanel:treePanel,title:title}])));
+), Clazz.new_(P$.AlignFrame$2.$init$,[this, {title:title,treePanel:treePanel}])));
 treePanel.addWindowListener$java_awt_event_WindowListener(((P$.AlignFrame$3||
 (function(){/*a*/var C$=Clazz.newClass(P$, "AlignFrame$3", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
@@ -1674,7 +1674,7 @@ Clazz.newMeth(C$, 'windowClosing$java_awt_event_WindowEvent',  function (e) {
 this.b$['jalview.appletgui.AlignFrame'].sortByTreeMenu.remove$java_awt_MenuComponent(this.$finals$.item);
 });
 })()
-), Clazz.new_($I$(64,1),[this, {treePanel:treePanel,item:item,title:title}],P$.AlignFrame$3)));
+), Clazz.new_($I$(64,1),[this, {title:title,treePanel:treePanel,item:item}],P$.AlignFrame$3)));
 });
 
 Clazz.newMeth(C$, 'sortBy$jalview_datamodel_AlignmentOrder$S',  function (alorder, undoname) {
@@ -2142,7 +2142,7 @@ Clazz.newMeth(C$, 'focusGained$java_awt_event_FocusEvent',  function (e) {
 this.$finals$.theApplet.currentAlignFrame=this.$finals$.me;
 });
 })()
-), Clazz.new_(P$.AlignFrame$5.$init$,[this, {me:me,theApplet:theApplet}])));
+), Clazz.new_(P$.AlignFrame$5.$init$,[this, {theApplet:theApplet,me:me}])));
 theApplet.validate$();
 });
 
@@ -2402,4 +2402,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:27 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

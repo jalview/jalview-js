@@ -185,7 +185,7 @@ var o2_xt=(((this.$finals$.restable.getValueAt$I$I((o2).$c(), this.$finals$.up_e
 return o2_xt - o1_xt;
 });
 })()
-), Clazz.new_(P$.ThreeDBStructureChooserQuerySource$1.$init$,[this, {up_start_idx:up_start_idx,restable:restable,up_end_idx:up_end_idx}]))]);
+), Clazz.new_(P$.ThreeDBStructureChooserQuerySource$1.$init$,[this, {restable:restable,up_end_idx:up_end_idx,up_start_idx:up_start_idx}]))]);
 for (var row, $row = 0, $$row = sellist; $row<$$row.length&&((row=($$row[$row]).intValue$()),1);$row++) {
 var pdbIdStr=restable.getValueAt$I$I(row, idColumnIndex).toString();
 var urlStr=restable.getValueAt$I$I(row, urlColumnIndex).toString();
@@ -314,4 +314,4 @@ return (row);
 return null;
 });
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:36 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

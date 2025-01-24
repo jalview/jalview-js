@@ -235,7 +235,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 Clazz.new_($I$(20,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_AlignmentAnnotation$jalview_gui_AlignmentPanel,[this.$finals$.seq, this.$finals$.aa, this.$finals$.alignPanel]);
 });
 })()
-), Clazz.new_(P$.PopupMenu$4.$init$,[this, {seq:seq,alignPanel:alignPanel,aa:aa}])));
+), Clazz.new_(P$.PopupMenu$4.$init$,[this, {aa:aa,seq:seq,alignPanel:alignPanel}])));
 this.rnaStructureMenu.add$javax_swing_JMenuItem(menuItem);
 }}
 }if (seq.getAnnotation$() != null ) {
@@ -256,7 +256,7 @@ Clazz.newMeth(C$, 'actionPerformed$java_awt_event_ActionEvent',  function (e) {
 Clazz.new_($I$(20,1).c$$jalview_datamodel_SequenceI$jalview_datamodel_AlignmentAnnotation$jalview_gui_AlignmentPanel,[this.$finals$.seq, this.$finals$.aa, this.$finals$.alignPanel]);
 });
 })()
-), Clazz.new_(P$.PopupMenu$5.$init$,[this, {seq:seq,alignPanel:alignPanel,aa:aa}])));
+), Clazz.new_(P$.PopupMenu$5.$init$,[this, {aa:aa,seq:seq,alignPanel:alignPanel}])));
 this.rnaStructureMenu.add$javax_swing_JMenuItem(menuItem);
 }}
 }if (this.rnaStructureMenu.getItemCount$() == origCount) {
@@ -547,7 +547,7 @@ $I$(35,"showOrHideSequenceAnnotations$jalview_datamodel_AlignmentI$java_util_Col
 this.b$['jalview.gui.PopupMenu'].refresh$.apply(this.b$['jalview.gui.PopupMenu'], []);
 });
 })()
-), Clazz.new_(P$.PopupMenu$11.$init$,[this, {actionIsShow:actionIsShow,allTypes:allTypes,forSequences:forSequences,types:types}])));
+), Clazz.new_(P$.PopupMenu$11.$init$,[this, {forSequences:forSequences,actionIsShow:actionIsShow,types:types,allTypes:allTypes}])));
 showOrHideMenu.add$javax_swing_JMenuItem(item);
 });
 
@@ -1444,7 +1444,7 @@ this.b$['jalview.gui.PopupMenu'].ap.alignFrame.addHistoryItem$jalview_commands_C
 this.b$['jalview.gui.PopupMenu'].ap.av.firePropertyChange$S$O$O("alignment", null, this.b$['jalview.gui.PopupMenu'].ap.av.getAlignment$().getSequences$());
 });
 })()
-), Clazz.new_(P$.PopupMenu$43.$init$,[this, {sg:sg,dialog:dialog}])));
+), Clazz.new_(P$.PopupMenu$43.$init$,[this, {dialog:dialog,sg:sg}])));
 }});
 
 Clazz.newMeth(C$, 'changeColour_actionPerformed$S',  function (colourSchemeName) {
@@ -1458,4 +1458,4 @@ sg.cs.setConsensus$jalview_datamodel_ProfilesI($I$(46,"calculate$java_util_List$
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:35 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:45 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

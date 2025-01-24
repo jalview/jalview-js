@@ -140,7 +140,7 @@ Clazz.newMeth(C$, 'menuDeselected$javax_swing_event_MenuEvent',  function (arg0)
 Clazz.newMeth(C$, 'menuCanceled$javax_swing_event_MenuEvent',  function (arg0) {
 });
 })()
-), Clazz.new_(P$.Jws2Client$3.$init$,[this, {aaConEnabled:aaConEnabled,modifyParams:modifyParams,alignFrame:alignFrame,aaui:aaui}])));
+), Clazz.new_(P$.Jws2Client$3.$init$,[this, {alignFrame:alignFrame,aaConEnabled:aaConEnabled,modifyParams:modifyParams,aaui:aaui}])));
 }return true;
 });
 
@@ -189,4 +189,4 @@ Clazz.newMeth(C$, 'removeCurrentAAConWorkerFor$jalview_ws_uimodel_AlignAnalysisU
 alignFrame.getViewport$().getCalcManager$().removeRegisteredWorkersOfClass$Class(aaui.getClient$());
 }, 1);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:42 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:47 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1

@@ -1,4 +1,4 @@
-(function(){var P$=Clazz.newPackage("jalview.bin"),p$1={},p$2={},I$=[[0,'jalview.bin.JalviewLite','jalview.io.DataSourceType','jalview.util.HttpUtils',['jalview.bin.JalviewLite','.LoadJmolThread'],'Thread','jalview.analysis.AlignmentUtils','jalview.appletgui.SplitFrame','jalview.io.IdentifyFile','jalview.io.AppletFormatAdapter','jalview.appletgui.AlignFrame','jalview.util.MessageManager','jalview.io.FileParse','java.util.Vector','jalview.analysis.SequenceIdMatcher','jalview.datamodel.PDBEntry','java.util.StringTokenizer','jalview.datamodel.SequenceI','java.util.ArrayList','jalview.structure.StructureSelectionManager','jalview.io.JPredFile','jalview.io.JnetAnnotationMaker','jalview.io.AnnotationFile','jalview.appletgui.FeatureSettings','jalview.io.NewickFile','java.awt.Button','java.util.Hashtable','StringBuffer','java.util.Locale','java.awt.EventQueue','jalview.datamodel.SequenceGroup','jalview.datamodel.ColumnSelection','jalview.io.FileFormats','jalview.datamodel.Alignment','jalview.datamodel.AlignmentOrder','jalview.javascript.MouseOverListener','jalview.javascript.JsSelectionSender','jalview.javascript.MouseOverStructureListener','java.io.BufferedReader','java.io.InputStreamReader','netscape.javascript.JSObject','Error','java.awt.Color',['jalview.bin.JalviewLite','.LoadingThread'],'jalview.javascript.JSFunctionExec','java.awt.event.WindowAdapter','java.awt.Font','jalview.util.ColorUtils','java.net.URL']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
+(function(){var P$=Clazz.newPackage("jalview.bin"),p$1={},p$2={},I$=[[0,'jalview.bin.JalviewLite','jalview.io.DataSourceType','jalview.util.HttpUtils',['jalview.bin.JalviewLite','.LoadJmolThread'],'Thread','jalview.analysis.AlignmentUtils','jalview.appletgui.SplitFrame','jalview.io.IdentifyFile','jalview.io.AppletFormatAdapter','jalview.appletgui.AlignFrame','jalview.util.MessageManager','jalview.io.FileParse','java.util.Vector','jalview.analysis.SequenceIdMatcher','jalview.datamodel.PDBEntry','java.util.StringTokenizer','jalview.datamodel.SequenceI','java.util.ArrayList','jalview.structure.StructureSelectionManager','jalview.io.JPredFile','jalview.io.JnetAnnotationMaker','jalview.io.AnnotationFile','jalview.appletgui.FeatureSettings','jalview.io.NewickFile','java.awt.Button','java.util.Hashtable','StringBuffer','java.util.Locale','java.awt.EventQueue','jalview.datamodel.SequenceGroup','jalview.datamodel.ColumnSelection','jalview.io.FileFormats','jalview.datamodel.Alignment','jalview.datamodel.AlignmentOrder','jalview.javascript.MouseOverListener','jalview.javascript.JsSelectionSender','jalview.javascript.MouseOverStructureListener','java.io.BufferedReader','java.io.InputStreamReader','Error','java.awt.Color',['jalview.bin.JalviewLite','.LoadingThread'],'jalview.javascript.JSFunctionExec','java.awt.event.WindowAdapter','java.awt.Font','jalview.util.ColorUtils','java.net.URL']],I$0=I$[0],$I$=function(i,n,m){return m?$I$(i)[n].apply(null,m):((i=(I$[i]||(I$[i]=Clazz.load(I$0[i])))),!n&&i.$load$&&Clazz.load(i,2),i)};
 /*c*/var C$=Clazz.newClass(P$, "JalviewLite", function(){
 Clazz.newInstance(this, arguments,0,C$);
 }, 'java.applet.Applet', ['jalview.api.StructureSelectionManagerProvider', 'jalview.javascript.JalviewLiteJsApi']);
@@ -93,7 +93,7 @@ Clazz.newMeth(C$, ['run$','run'],  function () {
 $I$(19).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider(this.$finals$.me).mouseOverVamsasSequence$jalview_datamodel_SequenceI$I$jalview_structure_VamsasSource(this.$finals$.sq, this.$finals$.sq.findIndex$I(this.$finals$.pos), null);
 });
 })()
-), Clazz.new_(P$.JalviewLite$1.$init$,[this, {pos:pos,me:me,sq:sq}]))]);
+), Clazz.new_(P$.JalviewLite$1.$init$,[this, {pos:pos,sq:sq,me:me}]))]);
 } else {
 $I$(29,"invokeLater$Runnable",[((P$.JalviewLite$2||
 (function(){/*a*/var C$=Clazz.newClass(P$, "JalviewLite$2", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
@@ -107,7 +107,7 @@ Clazz.newMeth(C$, ['run$','run'],  function () {
 $I$(19).getStructureSelectionManager$jalview_api_StructureSelectionManagerProvider(this.$finals$.me).mouseOverVamsasSequence$jalview_datamodel_SequenceI$I$jalview_structure_VamsasSource(this.$finals$.sq, this.$finals$.pos, null);
 });
 })()
-), Clazz.new_(P$.JalviewLite$2.$init$,[this, {pos:pos,me:me,sq:sq}]))]);
+), Clazz.new_(P$.JalviewLite$2.$init$,[this, {pos:pos,sq:sq,me:me}]))]);
 }}});
 
 Clazz.newMeth(C$, ['select$S$S','select'],  function (sequenceIds, columns) {
@@ -259,7 +259,7 @@ Clazz.newMeth(C$, ['run$','run'],  function () {
 this.$finals$.alf.select$jalview_datamodel_SequenceGroup$jalview_datamodel_ColumnSelection$jalview_datamodel_HiddenColumns(this.$finals$.sel, this.$finals$.csel, this.$finals$.alf.getAlignViewport$().getAlignment$().getHiddenColumns$());
 });
 })()
-), Clazz.new_(P$.JalviewLite$3.$init$,[this, {sel:sel,csel:csel,alf:alf}]))]);
+), Clazz.new_(P$.JalviewLite$3.$init$,[this, {sel:sel,alf:alf,csel:csel}]))]);
 }});
 
 Clazz.newMeth(C$, ['getSelectedSequencesAsAlignment$S$S','getSelectedSequencesAsAlignment'],  function (format, suffix) {
@@ -571,7 +571,7 @@ throw e;
 }
 });
 })()
-), Clazz.new_(P$.JalviewLite$4.$init$,[this, {pdbResNum:pdbResNum,chain:chain,me:me,pdbfile:pdbfile}]))]);
+), Clazz.new_(P$.JalviewLite$4.$init$,[this, {pdbfile:pdbfile,pdbResNum:pdbResNum,chain:chain,me:me}]))]);
 });
 
 Clazz.newMeth(C$, ['scrollViewToIn$jalview_appletgui_AlignFrame$S$S','scrollViewToIn'],  function (alf, topRow, leftHandColumn) {
@@ -596,7 +596,7 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.JalviewLite$5.$init$,[this, {leftHandColumn:leftHandColumn,alf:alf,topRow:topRow}]))]);
+), Clazz.new_(P$.JalviewLite$5.$init$,[this, {leftHandColumn:leftHandColumn,topRow:topRow,alf:alf}]))]);
 });
 
 Clazz.newMeth(C$, ['scrollViewToRowIn$jalview_appletgui_AlignFrame$S','scrollViewToRowIn'],  function (alf, topRow) {
@@ -621,7 +621,7 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.JalviewLite$6.$init$,[this, {alf:alf,topRow:topRow}]))]);
+), Clazz.new_(P$.JalviewLite$6.$init$,[this, {topRow:topRow,alf:alf}]))]);
 });
 
 Clazz.newMeth(C$, ['scrollViewToColumnIn$jalview_appletgui_AlignFrame$S','scrollViewToColumnIn'],  function (alf, leftHandColumn) {
@@ -646,7 +646,7 @@ throw ex;
 }
 });
 })()
-), Clazz.new_(P$.JalviewLite$7.$init$,[this, {leftHandColumn:leftHandColumn,alf:alf}]))]);
+), Clazz.new_(P$.JalviewLite$7.$init$,[this, {alf:alf,leftHandColumn:leftHandColumn}]))]);
 });
 
 Clazz.newMeth(C$, 'initBuildDetails$',  function () {
@@ -696,7 +696,7 @@ C$.debug="true".equalsIgnoreCase$S(this.getParameter$S("debug"));
 try {
 if (C$.debug) {
 System.err.println$S("Applet context is '" + this.getAppletContext$().getClass$().toString() + "'" );
-}var scriptObject=$I$(40).getWindow$java_applet_Applet(this);
+}var scriptObject;
 if (C$.debug && scriptObject != null  ) {
 System.err.println$S("Applet has Javascript callback support.");
 }} catch (ex) {
@@ -725,7 +725,7 @@ this.separator=sep;
 if (C$.debug) {
 System.err.println$S("Separator set to '" + this.separator + "'" );
 }} else {
-throw Clazz.new_([$I$(11).getString$S("error.invalid_separator_parameter")],$I$(41,1).c$$S);
+throw Clazz.new_([$I$(11).getString$S("error.invalid_separator_parameter")],$I$(40,1).c$$S);
 }}var r=255;
 var g=255;
 var b=255;
@@ -747,7 +747,7 @@ throw ex;
 }param=this.getParameter$S("label");
 if (param != null ) {
 this.launcher.setLabel$S(param);
-}this.setBackground$java_awt_Color(Clazz.new_($I$(42,1).c$$I$I$I,[r, g, b]));
+}this.setBackground$java_awt_Color(Clazz.new_($I$(41,1).c$$I$I$I,[r, g, b]));
 this.file=this.getParameter$S("file");
 if (this.file == null ) {
 var data=Clazz.new_($I$(27,1).c$$S,["PASTE"]);
@@ -762,16 +762,16 @@ this.file=data.toString();
 this.file2=this.getParameter$S("file2");
 }this.embedded="true".equalsIgnoreCase$S(this.getParameter$S("embedded"));
 if (this.embedded) {
-var loader=Clazz.new_($I$(43,1).c$$S$S$jalview_bin_JalviewLite,[this, null, this.file, this.file2, this]);
+var loader=Clazz.new_($I$(42,1).c$$S$S$jalview_bin_JalviewLite,[this, null, this.file, this.file2, this]);
 loader.start$();
 } else if (this.file != null ) {
 if ("false".equalsIgnoreCase$S(this.getParameter$S("showbutton"))) {
-var loader=Clazz.new_($I$(43,1).c$$S$S$jalview_bin_JalviewLite,[this, null, this.file, this.file2, this]);
+var loader=Clazz.new_($I$(42,1).c$$S$S$jalview_bin_JalviewLite,[this, null, this.file, this.file2, this]);
 loader.start$();
 } else {
 this.add$java_awt_Component(this.launcher);
-this.launcher.addActionListener$java_awt_event_ActionListener(((P$.JalviewLite$8||
-(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewLite$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
+this.launcher.addActionListener$java_awt_event_ActionListener(((P$.JalviewLite$40657||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewLite$40657", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'java.awt.event.ActionListener', 1);
 
 C$.$clinit$=2;
 
@@ -779,11 +779,11 @@ Clazz.newMeth(C$, '$init$', function () {
 },1);
 
 Clazz.newMeth(C$, ['actionPerformed$java_awt_event_ActionEvent','actionPerformed'],  function (e) {
-var loader=Clazz.new_($I$(43,1).c$$S$S$jalview_bin_JalviewLite,[this, null, this.b$['jalview.bin.JalviewLite'].file, this.b$['jalview.bin.JalviewLite'].file2, this.b$['jalview.bin.JalviewLite']]);
+var loader=Clazz.new_($I$(42,1).c$$S$S$jalview_bin_JalviewLite,[this, null, this.b$['jalview.bin.JalviewLite'].file, this.b$['jalview.bin.JalviewLite'].file2, this.b$['jalview.bin.JalviewLite']]);
 loader.start$();
 });
 })()
-), Clazz.new_(P$.JalviewLite$8.$init$,[this, null])));
+), Clazz.new_(P$.JalviewLite$40657.$init$,[this, null])));
 }} else {
 this.file="NO FILE";
 this.fileFound=false;
@@ -807,7 +807,7 @@ throw q;
 ;if (tries++ > 0) {
 System.err.println$S("LiveConnect request thread woken up.");
 }try {
-var scriptObject=$I$(40).getWindow$java_applet_Applet(this);
+var scriptObject;
 if (scriptObject.eval$S("navigator") != null ) {
 notFailed=true;
 }} catch (jsex) {
@@ -828,7 +828,7 @@ return;
 if (initjscallback.length$() > 0) {
 var scriptObject=null;
 try {
-scriptObject=$I$(40).getWindow$java_applet_Applet(this);
+;
 } catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 } else {
@@ -838,7 +838,7 @@ throw ex;
 ;p$2.initLiveConnect.apply(this, []);
 if (scriptObject != null ) {
 try {
-Clazz.new_($I$(44,1).c$$jalview_bin_JalviewLite,[this]).executeJavascriptFunction$Z$S$OA$S(true, initjscallback, null, "Calling oninit callback '" + initjscallback + "'." );
+Clazz.new_($I$(43,1).c$$jalview_bin_JalviewLite,[this]).executeJavascriptFunction$Z$S$OA$S(true, initjscallback, null, "Calling oninit callback '" + initjscallback + "'." );
 } catch (e) {
 if (Clazz.exceptionOf(e,"Exception")){
 System.err.println$S("Exception when executing _oninit callback '" + initjscallback + "'." );
@@ -857,8 +857,8 @@ C$.lastFrameX+=40;
 C$.lastFrameY+=40;
 frame.setSize$I$I(width, height);
 frame.setTitle$S(title);
-frame.addWindowListener$java_awt_event_WindowListener(((P$.JalviewLite$9||
-(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewLite$9", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
+frame.addWindowListener$java_awt_event_WindowListener(((P$.JalviewLite$8||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewLite$8", function(){Clazz.newInstance(this, arguments[0],1,C$);}, Clazz.load('java.awt.event.WindowAdapter'), null, 1);
 
 C$.$clinit$=2;
 
@@ -889,21 +889,21 @@ System.err.println$S("Activated window " + this.$finals$.frame);
 }}C$.superclazz.prototype.windowActivated$java_awt_event_WindowEvent.apply(this, [e]);
 });
 })()
-), Clazz.new_($I$(45,1),[this, {frame:frame}],P$.JalviewLite$9)));
+), Clazz.new_($I$(44,1),[this, {frame:frame}],P$.JalviewLite$8)));
 frame.setVisible$Z(true);
 }, 1);
 
 Clazz.newMeth(C$, ['paint$java_awt_Graphics','paint'],  function (g) {
 if (!this.fileFound) {
-g.setColor$java_awt_Color(Clazz.new_($I$(42,1).c$$I$I$I,[200, 200, 200]));
-g.setColor$java_awt_Color($I$(42).cyan);
+g.setColor$java_awt_Color(Clazz.new_($I$(41,1).c$$I$I$I,[200, 200, 200]));
+g.setColor$java_awt_Color($I$(41).cyan);
 g.fillRect$I$I$I$I(0, 0, this.getSize$().width, this.getSize$().height);
-g.setColor$java_awt_Color($I$(42).red);
+g.setColor$java_awt_Color($I$(41).red);
 g.drawString$S$I$I($I$(11).getString$S("label.jalview_cannot_open_file"), 5, 15);
 g.drawString$S$I$I("\"" + this.file + "\"" , 5, 30);
 } else if (this.embedded) {
-g.setColor$java_awt_Color($I$(42).black);
-g.setFont$java_awt_Font(Clazz.new_($I$(46,1).c$$S$I$I,["Arial", 1, 24]));
+g.setColor$java_awt_Color($I$(41).black);
+g.setFont$java_awt_Font(Clazz.new_($I$(45,1).c$$S$I$I,["Arial", 1, 24]));
 g.drawString$S$I$I($I$(11).getString$S("label.jalview_applet"), 50, (this.getSize$().height/2|0) - 30);
 g.drawString$S$I$I($I$(11).getString$S("label.loading_data") + "...", 50, (this.getSize$().height/2|0));
 }});
@@ -1006,8 +1006,8 @@ return this.arrayToSeparatorList$SA(alf.getFeatureGroupsOfState$Z(visible));
 
 Clazz.newMeth(C$, ['setFeatureGroupStateOn$jalview_appletgui_AlignFrame$S$Z','setFeatureGroupStateOn'],  function (alf, groups, state) {
 var st=state;
-$I$(29,"invokeLater$Runnable",[((P$.JalviewLite$10||
-(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewLite$10", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
+$I$(29,"invokeLater$Runnable",[((P$.JalviewLite$9||
+(function(){/*a*/var C$=Clazz.newClass(P$, "JalviewLite$9", function(){Clazz.newInstance(this, arguments[0],1,C$);}, null, 'Runnable', 1);
 
 C$.$clinit$=2;
 
@@ -1018,7 +1018,7 @@ Clazz.newMeth(C$, ['run$','run'],  function () {
 this.$finals$.alf.setFeatureGroupState$SA$Z(this.b$['jalview.bin.JalviewLite'].separatorListToArray$S.apply(this.b$['jalview.bin.JalviewLite'], [this.$finals$.groups]), this.$finals$.st);
 });
 })()
-), Clazz.new_(P$.JalviewLite$10.$init$,[this, {groups:groups,st:st,alf:alf}]))]);
+), Clazz.new_(P$.JalviewLite$9.$init$,[this, {alf:alf,groups:groups,st:st}]))]);
 });
 
 Clazz.newMeth(C$, ['setFeatureGroupState$S$Z','setFeatureGroupState'],  function (groups, state) {
@@ -1111,7 +1111,7 @@ Clazz.newMeth(C$, ['getDefaultColourParameter$S$java_awt_Color','getDefaultColou
 var colprop=this.getParameter$S(colparam);
 if (colprop == null  || colprop.trim$().length$() == 0 ) {
 return defcolour;
-}var col=$I$(47).parseColourString$S(colprop);
+}var col=$I$(46).parseColourString$S(colprop);
 if (col == null ) {
 System.err.println$S("Couldn't parse '" + colprop + "' as a colour for " + colparam );
 }return (col == null ) ? defcolour : col;
@@ -1156,9 +1156,9 @@ System.err.println$S("Show url (prepended " + prepend + " - toggle resolvetocode
 if (C$.debug) {
 System.err.println$S("Show url: " + url);
 }}if (url.indexOf$S("javascript:") == 0) {
-this.getAppletContext$().showDocument$java_net_URL(Clazz.new_($I$(48,1).c$$S,[url]));
+this.getAppletContext$().showDocument$java_net_URL(Clazz.new_($I$(47,1).c$$S,[url]));
 } else {
-this.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(48,1).c$$S,[url]), target);
+this.getAppletContext$().showDocument$java_net_URL$S(Clazz.new_($I$(47,1).c$$S,[url]), target);
 }} catch (ex) {
 if (Clazz.exceptionOf(ex,"Exception")){
 ex.printStackTrace$();
@@ -1567,4 +1567,4 @@ Clazz.newMeth(C$);
 
 Clazz.newMeth(C$);
 })();
-;Clazz.setTVer('3.3.1-v1');//Created 2022-07-13 14:45:29 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
+;Clazz.setTVer('3.3.1-v1');//Created 2025-01-24 11:21:43 Java2ScriptVisitor version 3.3.1-v1 net.sf.j2s.core.jar version 3.3.1-v1
